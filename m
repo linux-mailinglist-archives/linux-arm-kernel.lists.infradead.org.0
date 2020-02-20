@@ -2,89 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35681669AF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:15:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B0D91669BE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:21:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cBKWa4BBe0KQ02bHeTzoxuY0E2eq/lHf/iMuu8joqw8=; b=PurfxvAUptr8Qv
-	ADK+fgBbMeTLT4Ti7BVMzfChegCdrtQlyH+JiIJC882yVq2BtCK+3TZpigpjQVx/kokRjb/pnRLo0
-	kGQ9KqjpNNkumwnt/icr3i6nmBJaH4RJzgfda86h76uLu+Xq4rE1PutYoqS/pnGbjYGxxWLlIA1hu
-	Sj5D7ZG0Z0QqynfhEe9TPrlTsxgm3Wxh4j8qCwiCY2N/wZD2xA65nIDnmw8CfyIjEE6bg0sJ4hfkK
-	eeBCHf/Hfkf4jO9dbaSKH5Kfr71HQB6D3+NfJFaa+nc3EPS6zi8KZmwLF4RzSAlgPbN9Byant5pVb
-	7rc5gHm/3WXABoGP3GBw==;
+	List-Owner; bh=7uEWGF6xyaOtUOmqLf/Fs+cYQvP6UNBBOCSPluEJ8OA=; b=ZYkSRqElb/xYAj
+	vN3cjNVsCnKqGFoDvungfi1bbvK02E0UqCYhSqB+uEUbrcNPvOwCz+vZmkVrYMxT6WqA0kcaK0K6j
+	Vqbr59fjLrx4iGIpGFTefqk0OiQvhrpTnpTDElLXNoZ6KJTxAYuE8LuiG+t86aXnTEVDxotkYNiAk
+	/YfoeNcc9Za5lOqVAOw8tj18jgbogxId4Fo39MQVjSSmK+S+dhZkp5iEVQfbjQlqA9KnWTc6Yq0AS
+	TH7Wy+tFlW5bYo/7H+4wv6wMD33j9LKiKMh/jx8lvx8awJ0xcK2BmNnaC9WREM9nu9qYrAnlMERgl
+	Y+XfU84QY6iwLYMEBm7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4tAS-0004gy-Pi; Thu, 20 Feb 2020 21:15:32 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1j4tGO-0007KP-W6; Thu, 20 Feb 2020 21:21:41 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4tAE-0004fH-T6; Thu, 20 Feb 2020 21:15:20 +0000
-Received: by mail-ed1-x543.google.com with SMTP id m13so35421740edb.6;
- Thu, 20 Feb 2020 13:15:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=E0r8UtKklC8vn0exQFm1xc2bM7Px85fwUILOFwxpfXc=;
- b=Zk+cdZTJrrQGLS4LPCXUuDR4TnwujssZT/tflyRWzR4m5EuB74oGIb4XNsW8ZpTcV6
- 0bMOKocFAC5Aws/uPZuTdgEtDPOjoyukKgAGlNmDCD977jXJDA419hAYFYPI1NXVuJQo
- h430UdKqeKyZxLWCK4GO4NKiUkni6qDd7foBhauhsIrn9EgNs9smHTIWE+gilQ/16aAA
- qfn6Hasa8dA4DT4sDD1+nxpUPc7G2OPFgzjY066Dx0k/Rav91/e4+SBstXos/38maA95
- wnZg7wriDejBaAEUGOUJBhPWdWDn0GFAE47f0mBxFDKwa5X6dxLRje0PnLK0qSHVgZ26
- oMsw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=E0r8UtKklC8vn0exQFm1xc2bM7Px85fwUILOFwxpfXc=;
- b=DktQ0ADLk0yIomADJM/oBKZ+oz3KyvjicwJJLh4XSSqZjUYOJFHaQsybXc4lkHrTRI
- tmVXj8Jy6rcFLQ7cOOBySk4w/KG7HzdAphzPnDJfTR31bs5dY1TaARPp4Xz+UEIOZ8sH
- Z2AkA+p6MWhKosIgQZhNvMo/e220p1qzhd3k6KFmRNZLivvbb3oezX9JVythWQ5MqOrP
- ZuuRYK+4oU7HUqHCHaJmKh/yoxgCGO+cq6m1k+eDOswaEhVKqSyDiRI0YkOeQjAhQkRv
- iXYH1gKqQsLAybhYupWd9KxAUckEjM7YRhKotRwqZV8cG7aMDUBbu4tOofvgadX2rd5K
- xJQw==
-X-Gm-Message-State: APjAAAU/1t2juVZ0GjUawswdu/etU/73TjFVKu+VawIcdNajzy5roLms
- tLz34mV8j/tCZKdjfAUXepAGNGKZidiYUR5jMe4=
-X-Google-Smtp-Source: APXvYqwXYPTGE8gx5kvAp7lnVSFQVA+NMeL3QVC6+h/cuRK/8EgB3ahTv0Vbyn5nmgxN9HxsBKLSAoZv7ayNwuuXxTA=
-X-Received: by 2002:a05:6402:2037:: with SMTP id
- ay23mr29262250edb.146.1582233317366; 
- Thu, 20 Feb 2020 13:15:17 -0800 (PST)
+ id 1j4tGG-0007Jo-5a
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 21:21:33 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 6003D8092B;
+ Thu, 20 Feb 2020 22:21:22 +0100 (CET)
+Date: Thu, 20 Feb 2020 22:21:20 +0100
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH 3/6] dt-bindings: Add Guangdong Neweast Optoelectronics
+ CO. LTD vendor prefix
+Message-ID: <20200220212120.GA24526@ravnborg.org>
+References: <20200220083508.792071-1-anarsoul@gmail.com>
+ <20200220083508.792071-4-anarsoul@gmail.com>
+ <20200220135608.GE4998@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-References: <20200216173446.1823-1-linux.amoon@gmail.com>
- <20200216173446.1823-4-linux.amoon@gmail.com>
- <1jmu9hzlo2.fsf@starbuckisacylon.baylibre.com>
- <CANAwSgSaQgU=H3h0S9deT11HA8z9R=Fhy5Kawii9tSBxKf2Wgw@mail.gmail.com>
-In-Reply-To: <CANAwSgSaQgU=H3h0S9deT11HA8z9R=Fhy5Kawii9tSBxKf2Wgw@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Thu, 20 Feb 2020 22:15:06 +0100
-Message-ID: <CAFBinCCSosE1XfwbKZOR9G+DVYg8zFcKShmTNWUhh1e8W0VoAQ@mail.gmail.com>
-Subject: Re: [PATCHv1 3/3] clk: meson: g12a: set cpu clock divider flags too
- CLK_IS_CRITICAL
-To: Anand Moon <linux.amoon@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200220135608.GE4998@pendragon.ideasonboard.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=XpTUx2N9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=f-gQsFuhAAAA:8
+ a=Yq3xfVepBXnQ4hnRxQcA:9 a=CjuIK1q_8ugA:10 a=rK24_1OTlYzjfT9fWsed:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_131518_935988_47B7477C 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_132132_391682_F53A3D76 
+X-CRM114-Status: UNSURE (   9.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [109.247.116.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,42 +71,38 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org,
- "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Rob Herring <robh+dt@kernel.org>,
+ Stephan Gerhold <stephan@gerhold.net>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Torsten Duwe <duwe@suse.de>, Samuel Holland <samuel@sholland.org>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
+ Jonas Karlman <jonas@kwiboo.se>, Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anand,
+Hi Laurent.
 
-On Mon, Feb 17, 2020 at 2:30 PM Anand Moon <linux.amoon@gmail.com> wrote:
-[...]
-> > > @@ -681,7 +682,7 @@ static struct clk_regmap g12b_cpub_clk = {
-> > >                       &g12a_sys_pll.hw
-> > >               },
-> > >               .num_parents = 2,
-> > > -             .flags = CLK_SET_RATE_PARENT,
-> > > +             .flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
-> >
-> > Why not. Neil what do you think of this ?
-> > If nothing is claiming this clock and enabling it then I suppose it
-> > could make sense.
-> >
-> I would like core developers to handle this.
-> Sorry for the noise.
-can you please resend this patch with only the change to g12b_cpub_clk?
-I have no G12B board myself so it would be great if you could take care of this!
+> > +  "^neweast,.*":
+> > +    description: Guangdong Neweast Optoelectronics CO., LT
+> 
+> Google only returns two hits for this name, beside the ones related to
+> this patch series. Are you sure this is the correct company name ?
 
+Seems legit:
+http://www.eastbl.com/
 
-Martin
+But maybe their chinese name was better a basis for vendor prefix?
+
+Guangdong New Oriental Optoelectronics
+
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
