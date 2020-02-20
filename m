@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AB921654E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 03:12:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07C51165562
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 03:58:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xhvjMCPboayd1r9bK+0PMHwWMy/90P4LiuJs3ByFIbA=; b=UA2kLVRq9MLjRP9IYS/tQ4ozX6
-	87vaTidzoEmx5xvPL8r8AV/gdn51qJW9uKzAgiKD3t3KAWGyhj/tIN3FnK3In/JN4By0gMbDxENE0
-	182XeWtBrZukQqxCZZo0GT2rSKGuOjEEscqf2I5dbsRk1dQRF00ZBgbRIhMmdh18ifL8Kiwolucv9
-	JvvSaHskys78m1Rp2SmCQWHVRwop9/Aq1xfp2ZnURlk0MGJclGI/HHc2JjhK20vGV12zNBd/SmSXn
-	m63LAKyYYxXBgIsY1FBH9Eo5xdUp5hK/HLh7TCXskqPeSCPqDR4vzP6VcTT9ekwFukRZb+xo7ZNwQ
-	VPc2AoWA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=q5wr0rIlMY+8Co2hmObbLVNonvTMs0UpzjSywEG09h4=; b=NRV
+	DCTAlv7vBYzaHCE3RMy+NxyUcWXVJxkLEGMiTXD0bh+wLCB7+C1GYN9B7IIIzpp/+6MQuRlTfV5Y8
+	OhmXBWlljSibNih1354uu4cklM+k7ya7q+k6qFi2kiianhwDDqUEscJ6kfiw2BWug2qt+SNN1aIKT
+	xF6Yedzn6n5y6GGRUSVON6n5xz+LkLR//zwknA0vpBWyJdsftG19UmZoQKzHO6nJVD2T3gwFVTzrF
+	2Ys092mWEexqbFZvpok01DwinzbvcYGyVjmGNk4p0IFtKqejPyxZnZXmYYH8k7lBbDzJjdToXoJw5
+	GQ62Il2Tlm5wOss+gsHnkzQ4cINJPSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4bKb-0002j6-Up; Thu, 20 Feb 2020 02:12:49 +0000
+	id 1j4c30-0000rE-DO; Thu, 20 Feb 2020 02:58:42 +0000
 Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4bK1-0002Kw-NJ
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 02:12:18 +0000
+ id 1j4c2L-0000NY-AM
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 02:58:04 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1582164737; h=References: In-Reply-To: Message-Id: Date:
- Subject: Cc: To: From: Sender;
- bh=t15n6yBKLX2ibvF8ZHGW5Z7Dt9gbYeMrwtq2d0/Wg3w=;
- b=spyQlMJmJuKANlknrO2TEVt9t8rj6/IzF58RgSeEdm5eO08HTWRD1bodm1EbB3loPrEHOiT1
- qlkX6VRly2Ik03INuj85XJZlBqoDHE1UDgOndYHd4Jb8oLbUKep/iZqqbs8Ez+gw75WUiOnx
- BH1mzGq5aDPJcW1NEZ4fDuD9OY4=
+ s=smtp; t=1582167483; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=maU3Pns7JRQnq6kS3D6USOvQxwO2Ev/vCO5JSfnzuSw=;
+ b=BngRSNtlxIDertTZujTgY570O3XaPBf7HDKlmCdfJ3aOAvd1kv81/7oQIUsdd8ghxrg5n387
+ 0Y7sFN+WwYS40YrhvEh77Rrbjr6oahMQ7Yc5GACCRu/7GU1ykGrYZ5AMtIrnECm7lTiluE73
+ wT86P439MwK02UcQxTPYfCgGkOM=
 X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e4deaf4.7f27a723a2d0-smtp-out-n03;
- Thu, 20 Feb 2020 02:12:04 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e4df5b1.7f6365d9b1f0-smtp-out-n03;
+ Thu, 20 Feb 2020 02:57:53 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 7D9D2C433A2; Thu, 20 Feb 2020 02:12:03 +0000 (UTC)
+ id 3B2B3C4479F; Thu, 20 Feb 2020 02:57:53 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from sidgup-linux.qualcomm.com (i-global254.qualcomm.com
  [199.106.103.254])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: sidgup)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E5DE5C447A2;
- Thu, 20 Feb 2020 02:12:01 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E5DE5C447A2
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 55CF4C43383;
+ Thu, 20 Feb 2020 02:57:52 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 55CF4C43383
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  spf=none smtp.mailfrom=sidgup@codeaurora.org
 From: Siddharth Gupta <sidgup@codeaurora.org>
-To: ohad@wizery.com,
-	bjorn.andersson@linaro.org
-Subject: [PATCH 2/2] remoteproc: core: Prevent sleep when rproc crashes
-Date: Wed, 19 Feb 2020 18:11:53 -0800
-Message-Id: <1582164713-6413-3-git-send-email-sidgup@codeaurora.org>
+To: agross@kernel.org,
+	bjorn.andersson@linaro.org,
+	ohad@wizery.com
+Subject: [PATCH 0/6] remoteproc: qcom: Add callbacks for remoteproc events
+Date: Wed, 19 Feb 2020 18:57:39 -0800
+Message-Id: <1582167465-2549-1-git-send-email-sidgup@codeaurora.org>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
-References: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_181217_344384_22BE3FC9 
-X-CRM114-Status: GOOD (  11.29  )
+X-CRM114-CacheID: sfid-20200219_185803_397533_95F91AF2 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -101,37 +99,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remoteproc recovery should be fast and any delay will have an impact on the
-user-experience. Use power management APIs (pm_stay_awake and pm_relax) to
-ensure that the system does not go to sleep.
+This patch series adds the usecases for SSR and Sysmon subdevices which are
+used by remoteprocs and kernel client drivers relying on those remoteprocs.
 
-Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
----
- drivers/remoteproc/remoteproc_core.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Patch 1-3 adds callbacks for prepare, start and unprepare events, and also type
+          of sysmon notification.
+Patch 4-6 adds a per subsystem notifier chain, callbacks for prepare, start
+          and stop events for ssr subdevice.
 
-diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-index 5ab65a4..52e318c 100644
---- a/drivers/remoteproc/remoteproc_core.c
-+++ b/drivers/remoteproc/remoteproc_core.c
-@@ -1712,6 +1712,8 @@ static void rproc_crash_handler_work(struct work_struct *work)
- 
- 	if (!rproc->recovery_disabled)
- 		rproc_trigger_recovery(rproc);
-+
-+	pm_relax(&rproc->dev);
- }
- 
- /**
-@@ -2242,6 +2244,8 @@ void rproc_report_crash(struct rproc *rproc, enum rproc_crash_type type)
- 		return;
- 	}
- 
-+	pm_stay_awake(&rproc->dev);
-+
- 	dev_err(&rproc->dev, "crash detected in %s: type %s\n",
- 		rproc->name, rproc_crash_to_string(type));
- 
+Rishabh Bhatnagar (1):
+  drivers: remoteproc: Add name field for every subdevice
+
+Siddharth Gupta (5):
+  remoteproc: sysmon: Add ability to send type of notification
+  remoteproc: sysmon: Add notifications for events
+  remoteproc: sysmon: Inform current rproc about all active rprocs
+  remoteproc: qcom: Add per subsystem SSR notification
+  remoteproc: qcom: Add notification types to SSR
+
+ drivers/remoteproc/qcom_common.c      |  86 ++++++++++++++++++++++++----
+ drivers/remoteproc/qcom_common.h      |   1 +
+ drivers/remoteproc/qcom_sysmon.c      | 103 ++++++++++++++++++++++++++++------
+ drivers/soc/qcom/glink_ssr.c          |  20 ++++++-
+ include/linux/remoteproc.h            |  17 ++++++
+ include/linux/remoteproc/qcom_rproc.h |  17 ++++--
+ 6 files changed, 209 insertions(+), 35 deletions(-)
+
 -- 
 Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
