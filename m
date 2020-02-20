@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D0BB166433
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:19:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2A61166443
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:21:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u5/gr4+mmK88ggp5V63D2Mm+94rUuPF/NT2mqbXyWXw=; b=dWMwKF6ggT0Xz5
-	U8BQDEhQ/mVfmKprRjnnl1paTY+g5qLrMRX5K6FIWf1JF7e/UfphF3ygN/ThhiOGSYOEFEhM9oEvE
-	AsQvRk9nBqpK8OWHWtuavw6lvJNn1y/NvuTgYfUSOhEHx4ScrEhiixRom+x/i6Ifo9Z5vcqk1GXbO
-	pnou+zdZqfAXdq6C6iGmMuHrZGm1cMagffREIO8zUJJ2TlVg+bsQHoU7W9iFcT6y97jTNe1wNlsmA
-	iDspZzkTGQsp4j67ozmdrSDApwqD9or7k9bLGiupwgKk1DGJu5dkkRKfWo2J6H9yIJQCVw7VwJMq5
-	0i+RCYTXWAmkCZEFs4KA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9C18StawpqIY0Do+r+drwQ4y0m2M06b2NawgVQTRwiw=; b=DQpaHUa9uFaYGmL1llB6gE/Cf
+	9+JgRKhwxQH5yPFvPhB9MxhvtnkbR/4YDbZWoTmTt1SMAFxO0iEEhn9QzA0OLKlBTutoTwL32BNOh
+	CvEa1Jq1M/FT81QCxciP1ScchVSYOfDF2scgjZjd5oaIsAbxqTFGjO5XFLfydfnGXJ1ngybhjQV6L
+	31EMK2tfkGChqC3LoAw0mtgvCqQ+vjaClGU25FxgQsIjuxsx1X0fBFgtP4swbP5qLR7WINNbeO0Ro
+	cdOV+UljURcUaDYT+nxd+v2WyI1PkwJgUxpBG1qt4zbQXuj1vYjBG7ODmdw7Cxr1oDZTHSoig90Vu
+	pTUyL8PXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4pTu-0000UQ-B6; Thu, 20 Feb 2020 17:19:22 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4pTi-0000Tv-Di
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:19:11 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z7so5456946wrl.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 09:19:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=thegoodpenguin-co-uk.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=boCKpekBoONnu2x2vJLKUmcg4VOjDu6Z9N8Skkewyns=;
- b=Q13xE83+LcPqrhNEh6NHQ1au8Z2/JdUbzmH/YLYPtNTl7+yBHFo+N44wCR6BcWL64h
- qDDU/nED0VcmMpdOrIIWijZATAFcEesI6K53ZBUyGnTA257zjvpBTObdSBEoIVMFW084
- w3bofiy4YocKcnWyPfO/IjtVY5KJO7gD9ldqZDn/YKapVyXablODffPaZnXim8QAXyod
- JEiGZse4W9m+DuLYCD94g+KYCWiSlC4xLHlwyceulK0sYwmKqDrsQW36S072RVSWko4w
- +A4VFlEdGAzmsR+9xGGvJZM1NjF2F0Rgqp5FcIiEW/YL8oE4/eBhgmdeSIBZ0UBUOOVW
- +3hw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=boCKpekBoONnu2x2vJLKUmcg4VOjDu6Z9N8Skkewyns=;
- b=JUQ4asIRcEXVwy3hAvMIc1bX88eINU2K+3q5lqnBHLr5yqLgKwIihApwZ3WvQQnOv4
- ifQzzkIdD9Ja0PiGesh7P29aKuE8PWMNvEAulrtwal5gjOGnaXllSemKh5U3EYYIvbaC
- /Iw4J78AhcSSoz9MT5UQoBZVNewHbuATEBocWacpC/Df23IpCE5fjVsaNL2yjZ2pJXRR
- A6upaPePPL/zYlGxcZ8uZHRSr3mSLUKyy25/XiVC943XqYcfEqpuSwbMAwXTWnhm5SyA
- bNQOT6t/MvL3cTkwqnDncqTFKR/N0ssgwC+pgR/TbwnfFY1A4+10ZPlcrrgI4S+qRjTb
- 0qdw==
-X-Gm-Message-State: APjAAAV9N3dFPkibOLYXNwaL8uANcRcy/3NbfMaX+aDDoehyXCnFQO3y
- xGxNOBf/uZutFYFBWeoU+ahBVw==
-X-Google-Smtp-Source: APXvYqwHG2Hc/+mR7YXbYt7FoyW6wjBkMtpEc3eYy6RMHqggBSxh2ZgyVipp8ipV9eepl//YQQFw3g==
-X-Received: by 2002:adf:dfce:: with SMTP id q14mr44306523wrn.324.1582219149052; 
- Thu, 20 Feb 2020 09:19:09 -0800 (PST)
-Received: from big-machine ([2a00:23c5:dd80:8400:98d8:49e6:cdcc:25df])
- by smtp.gmail.com with ESMTPSA id q1sm264777wrw.5.2020.02.20.09.19.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 20 Feb 2020 09:19:08 -0800 (PST)
-Date: Thu, 20 Feb 2020 17:19:06 +0000
-From: Andrew Murray <amurray@thegoodpenguin.co.uk>
-To: Zhiqiang Hou <Zhiqiang.Hou@nxp.com>
-Subject: Re: [PATCHv10 02/13] PCI: mobiveil: Move the host initialization
- into a function
-Message-ID: <20200220171906.GE19388@big-machine>
-References: <20200213040644.45858-1-Zhiqiang.Hou@nxp.com>
- <20200213040644.45858-3-Zhiqiang.Hou@nxp.com>
+	id 1j4pWF-00024T-F7; Thu, 20 Feb 2020 17:21:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4pW7-00023z-8y
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:21:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A769931B;
+ Thu, 20 Feb 2020 09:21:38 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3533A3F68F;
+ Thu, 20 Feb 2020 09:21:37 -0800 (PST)
+Subject: Re: [PATCH 1/2] dma-mapping: support setting memory uncached in place
+To: Christoph Hellwig <hch@lst.de>, Jonas Bonn <jonas@southpole.se>,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ Stafford Horne <shorne@gmail.com>
+References: <20200220170139.387354-1-hch@lst.de>
+ <20200220170139.387354-2-hch@lst.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <502fa745-ddad-f91b-52bc-52edecf8fdbc@arm.com>
+Date: Thu, 20 Feb 2020 17:21:35 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200213040644.45858-3-Zhiqiang.Hou@nxp.com>
+In-Reply-To: <20200220170139.387354-2-hch@lst.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_091910_460784_1C40F671 
-X-CRM114-Status: GOOD (  18.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200220_092139_402061_61319463 
+X-CRM114-Status: GOOD (  26.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,111 +66,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- m.karthikeyan@mobiveil.co.in, arnd@arndb.de, linux-pci@vger.kernel.org,
- l.subrahmanya@mobiveil.co.in, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, Minghuan.Lian@nxp.com,
- robh+dt@kernel.org, Mingkai.Hu@nxp.com, Xiaowei.Bao@nxp.com,
- catalin.marinas@arm.com, bhelgaas@google.com, andrew.murray@arm.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-arch@vger.kernel.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ openrisc@lists.librecores.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 12:06:33PM +0800, Zhiqiang Hou wrote:
-> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+On 20/02/2020 5:01 pm, Christoph Hellwig wrote:
+> We currently only support remapping memory as uncached through vmap
+> or a magic uncached segment provided by some architectures.  But there
+> is a simpler and much better way available on some architectures where
+> we can just remap the memory in place.  The advantages are:
 > 
-> Move the host initialization related operations into a new
-> routine such that it can be reused by other incoming platform's
-> PCIe host driver, in which the Mobiveil GPEX is integrated.
+>   1) no aliasing is possible, which prevents speculating into the
+>      cached alias
+>   2) there is no need to allocate new ptes and thus no need for a special
+>      pre-allocated pool of memory that can be used with GFP_ATOMIC DMA
+>      allocations
 > 
-> Change the subject and change log slightly.
-> Change the function mobiveil_pcie_host_probe to static.
-> Add back the comments that was lost in v9.
-
-Are these three lines above supposed to be in the history below the
---- ?
-
-Perhaps Lorenzo can change that when he applies it.
-
-Reviewed-by: Andrew Murray <amurray@thegoodpenguin.co.uk>
-
+> The downside is that architectures must provide a way to set arbitrary
+> pages uncached in the kernel mapping, which might not be possible on
+> architecture that have a special implicit kernel mapping, and requires
+> splitting of huge page kernel mappings where they exist.
 > 
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 > ---
-> V10:
->  - Refined the subject and change log.
->  - Changed the mobiveil_pcie_host_probe() to a static function.
->  - Added back the lost comments.
+>   include/linux/dma-noncoherent.h |  3 +++
+>   kernel/dma/Kconfig              |  8 ++++++++
+>   kernel/dma/direct.c             | 28 ++++++++++++++++++----------
+>   3 files changed, 29 insertions(+), 10 deletions(-)
 > 
->  drivers/pci/controller/pcie-mobiveil.c | 39 +++++++++++++++-----------
->  1 file changed, 23 insertions(+), 16 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> index d4de560cd711..01df04ea5b48 100644
-> --- a/drivers/pci/controller/pcie-mobiveil.c
-> +++ b/drivers/pci/controller/pcie-mobiveil.c
-> @@ -873,27 +873,15 @@ static int mobiveil_pcie_init_irq_domain(struct mobiveil_pcie *pcie)
->  	return 0;
->  }
->  
-> -static int mobiveil_pcie_probe(struct platform_device *pdev)
-> +static int mobiveil_pcie_host_probe(struct mobiveil_pcie *pcie)
->  {
-> -	struct mobiveil_pcie *pcie;
-> +	struct mobiveil_root_port *rp = &pcie->rp;
-> +	struct pci_host_bridge *bridge = rp->bridge;
-> +	struct device *dev = &pcie->pdev->dev;
->  	struct pci_bus *bus;
->  	struct pci_bus *child;
-> -	struct pci_host_bridge *bridge;
-> -	struct device *dev = &pdev->dev;
-> -	struct mobiveil_root_port *rp;
->  	int ret;
->  
-> -	/* allocate the PCIe port */
-> -	bridge = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
-> -	if (!bridge)
-> -		return -ENOMEM;
+> diff --git a/include/linux/dma-noncoherent.h b/include/linux/dma-noncoherent.h
+> index ca9b5770caee..0820ec58f119 100644
+> --- a/include/linux/dma-noncoherent.h
+> +++ b/include/linux/dma-noncoherent.h
+> @@ -111,4 +111,7 @@ static inline void arch_dma_prep_coherent(struct page *page, size_t size)
+>   void *uncached_kernel_address(void *addr);
+>   void *cached_kernel_address(void *addr);
+>   
+> +int arch_dma_set_uncached(void *cpu_addr, size_t size);
+> +void arch_dma_clear_uncached(void *cpu_addr, size_t size);
+> +
+>   #endif /* _LINUX_DMA_NONCOHERENT_H */
+> diff --git a/kernel/dma/Kconfig b/kernel/dma/Kconfig
+> index 4c103a24e380..7bc0b77f1243 100644
+> --- a/kernel/dma/Kconfig
+> +++ b/kernel/dma/Kconfig
+> @@ -83,6 +83,14 @@ config DMA_DIRECT_REMAP
+>   	bool
+>   	select DMA_REMAP
+>   
+> +#
+> +# Should be selected if the architecture can remap memory from the page
+> +# allocator and CMA as uncached and provides the arch_dma_set_uncached and
+> +# arch_dma_clear_uncached helpers
+> +#
+> +config ARCH_HAS_DMA_SET_UNCACHED
+> +	bool
+> +
+>   config DMA_CMA
+>   	bool "DMA Contiguous Memory Allocator"
+>   	depends on HAVE_DMA_CONTIGUOUS && CMA
+> diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+> index 6af7ae83c4ad..73fe65a4cbc0 100644
+> --- a/kernel/dma/direct.c
+> +++ b/kernel/dma/direct.c
+> @@ -169,11 +169,8 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+>   		ret = dma_common_contiguous_remap(page, PAGE_ALIGN(size),
+>   				dma_pgprot(dev, PAGE_KERNEL, attrs),
+>   				__builtin_return_address(0));
+> -		if (!ret) {
+> -			dma_free_contiguous(dev, page, size);
+> -			return ret;
+> -		}
 > -
-> -	pcie = pci_host_bridge_priv(bridge);
-> -	rp = &pcie->rp;
-> -	rp->bridge = bridge;
-> -
-> -	pcie->pdev = pdev;
-> -
->  	ret = mobiveil_pcie_parse_dt(pcie);
->  	if (ret) {
->  		dev_err(dev, "Parsing DT failed, ret: %x\n", ret);
-> @@ -956,6 +944,25 @@ static int mobiveil_pcie_probe(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +static int mobiveil_pcie_probe(struct platform_device *pdev)
-> +{
-> +	struct mobiveil_pcie *pcie;
-> +	struct pci_host_bridge *bridge;
-> +	struct device *dev = &pdev->dev;
+> +		if (!ret)
+> +			goto out_free_pages;
+>   		memset(ret, 0, size);
+>   		goto done;
+>   	}
+> @@ -186,8 +183,7 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+>   		 * so log an error and fail.
+>   		 */
+>   		dev_info(dev, "Rejecting highmem page from CMA.\n");
+> -		dma_free_contiguous(dev, page, size);
+> -		return NULL;
+> +		goto out_free_pages;
+>   	}
+>   
+>   	ret = page_address(page);
+> @@ -196,10 +192,15 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+>   
+>   	memset(ret, 0, size);
+>   
+> -	if (IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT) &&
+> -	    dma_alloc_need_uncached(dev, attrs)) {
+> +	if (dma_alloc_need_uncached(dev, attrs)) {
+>   		arch_dma_prep_coherent(page, size);
+> -		ret = uncached_kernel_address(ret);
 > +
-> +	/* allocate the PCIe port */
-> +	bridge = devm_pci_alloc_host_bridge(dev, sizeof(*pcie));
-> +	if (!bridge)
-> +		return -ENOMEM;
-> +
-> +	pcie = pci_host_bridge_priv(bridge);
-> +	pcie->rp.bridge = bridge;
-> +
-> +	pcie->pdev = pdev;
-> +
-> +	return mobiveil_pcie_host_probe(pcie);
-> +}
-> +
->  static const struct of_device_id mobiveil_pcie_of_match[] = {
->  	{.compatible = "mbvl,gpex40-pcie",},
->  	{},
-> -- 
-> 2.17.1
+> +		if (IS_ENABLED(CONFIG_ARCH_HAS_DMA_SET_UNCACHED)) {
+> +			if (!arch_dma_set_uncached(ret, size))
+> +				goto out_free_pages;
+> +		} else if (IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT)) {
+> +			ret = uncached_kernel_address(ret);
+
+Hmm, would we actually need to keep ARCH_HAS_UNCACHED_SEGMENT? If 
+arch_dma_set_uncached() returned void*/ERR_PTR instead, then it could 
+work for both cases (with arch_dma_clear_uncached() being a no-op for 
+segments).
+
+Robin.
+
+> +		}
+>   	}
+>   done:
+>   	if (force_dma_unencrypted(dev))
+> @@ -207,6 +208,9 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+>   	else
+>   		*dma_handle = phys_to_dma(dev, page_to_phys(page));
+>   	return ret;
+> +out_free_pages:
+> +	dma_free_contiguous(dev, page, size);
+> +	return NULL;
+>   }
+>   
+>   void dma_direct_free_pages(struct device *dev, size_t size, void *cpu_addr,
+> @@ -230,6 +234,8 @@ void dma_direct_free_pages(struct device *dev, size_t size, void *cpu_addr,
+>   
+>   	if (IS_ENABLED(CONFIG_DMA_REMAP) && is_vmalloc_addr(cpu_addr))
+>   		vunmap(cpu_addr);
+> +	else if (IS_ENABLED(CONFIG_ARCH_HAS_DMA_SET_UNCACHED))
+> +		arch_dma_clear_uncached(cpu_addr, size);
+>   
+>   	dma_free_contiguous(dev, dma_direct_to_page(dev, dma_addr), size);
+>   }
+> @@ -238,6 +244,7 @@ void *dma_direct_alloc(struct device *dev, size_t size,
+>   		dma_addr_t *dma_handle, gfp_t gfp, unsigned long attrs)
+>   {
+>   	if (!IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT) &&
+> +	    !IS_ENABLED(CONFIG_ARCH_HAS_DMA_SET_UNCACHED) &&
+>   	    !IS_ENABLED(CONFIG_DMA_DIRECT_REMAP) &&
+>   	    dma_alloc_need_uncached(dev, attrs))
+>   		return arch_dma_alloc(dev, size, dma_handle, gfp, attrs);
+> @@ -248,6 +255,7 @@ void dma_direct_free(struct device *dev, size_t size,
+>   		void *cpu_addr, dma_addr_t dma_addr, unsigned long attrs)
+>   {
+>   	if (!IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT) &&
+> +	    !IS_ENABLED(CONFIG_ARCH_HAS_DMA_SET_UNCACHED) &&
+>   	    !IS_ENABLED(CONFIG_DMA_DIRECT_REMAP) &&
+>   	    dma_alloc_need_uncached(dev, attrs))
+>   		arch_dma_free(dev, size, cpu_addr, dma_addr, attrs);
 > 
 
 _______________________________________________
