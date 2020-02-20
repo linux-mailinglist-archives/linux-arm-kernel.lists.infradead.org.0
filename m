@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51A931654DE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 03:12:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 462C81654E0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 03:12:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZLUXuyUMIg40t9IX8R2VJSjNKEkKBXHmIjmecx7Fqq0=; b=UGJ
-	S0oKTsIkU7pyGq9OAsgCl0x6emZCSlgzBW7RChn5tSfFVhb/t2hm6P20ArSGKOGqY/C3PWBivRbNF
-	bfiHz7xQEctS0WikHEHnK9Ljp6erV+Yloh71XXNbNcEuQfZYlApfXXbhzJObyLu9BqIWbEKRt/zt7
-	pYnXLSV/CkfaRSQPG7JatHofSncdoaGFDGpgO6glz86D8Tuc1762rGm6ACMY9++Q1NpBqKHKZFW7f
-	XPq9CgF9K2lB2Dt5M5KFKyeIom4Oq7vADywY1R/vaOGze+N0hHzBI4jzxgNrD0bKUdhlWYh8FeX9B
-	DINJNwliDq1gC0tz8KnnsZURnfWUIXQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=D7iD57liagH8BB9TRE9BpGWCDYSI6k/+UCdA/s//w0k=; b=ismpZX5/Zw2gpBINNsyUy6ek43
+	oNtOCiLt11Hb2n/I97435rSYmigZq62lRSrNnb8V7Mtyu7++VVlLBkXqUm9eRL+lqgqYShCAbsn5b
+	O1gI2kIdKwZckMIdxuWKKQG38hDSugpH4Q99vg2xFmFqIHWa1ELF9DYcuoq0V03dlcOkZ37kKvlBO
+	E78ub1ug47JlkDyIXk4UCLj1FgmuIagH0lLwPrvvBIMEPjahnfts4QDrv5i57xYm5GhDuNKL5knoi
+	VzZXKaJi+vyIl+HOWkD1iV0m9JuPMMD+9spuR76chE5g20/oCotdnV1P87HrXfQKgWV00tPtjobd3
+	0MM412+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4bK6-0002Ju-WA; Thu, 20 Feb 2020 02:12:19 +0000
+	id 1j4bKO-0002SV-3O; Thu, 20 Feb 2020 02:12:36 +0000
 Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4bJu-0002JC-Dx
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 02:12:09 +0000
+ id 1j4bJw-0002JX-VV
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 02:12:12 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1582164728; h=Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=krljadlfWUlVstbceTJH6Iska/S9qoO8kda4t3UJPeQ=;
- b=bAh3uq3ez5/tLslprBOtt9KWiLMTFUzf0DVYKfiuhRj80xuFBps1Klhowwz2yffIycFmEvoC
- MisHdImA12cD5CAdUKi6IqaKA9VZVnjTyJqUnS5K4ryKmwj+9eGlbaxNspi79sCQLKs8zHNR
- HM66WZn6JjwPeX4XvnuKURCjgwc=
+ s=smtp; t=1582164731; h=References: In-Reply-To: Message-Id: Date:
+ Subject: Cc: To: From: Sender;
+ bh=G0N2LK4yBTzqvnQc6T2DASLm9WXe508wiQLbyaNYBZI=;
+ b=LECZGoy61vO4mUJfk8xh5CJ4Wi/HV1ayaFMzNYPQA7E2UW/7A+YzovV5G2/botyUehphp4uT
+ BniTHWt0Fh7WS5Um5SU4jPZg6m6LeKPjz7BDTVBihcrCBfFW0cb07AEq0WOPRL46z7DmaqsB
+ SEjF6rGVRVk/SdPjdd99g6wsTzY=
 X-Mailgun-Sending-Ip: 104.130.122.27
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e4deaf1.7fabc27b37d8-smtp-out-n01;
- Thu, 20 Feb 2020 02:12:01 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e4deaf3.7fc0441f0308-smtp-out-n01;
+ Thu, 20 Feb 2020 02:12:03 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 657CBC4479D; Thu, 20 Feb 2020 02:12:01 +0000 (UTC)
+ id 5067EC4479D; Thu, 20 Feb 2020 02:12:02 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=ham autolearn_force=no version=3.4.0
+ autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from sidgup-linux.qualcomm.com (i-global254.qualcomm.com
  [199.106.103.254])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: sidgup)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B788AC43383;
- Thu, 20 Feb 2020 02:12:00 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B788AC43383
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 56F5EC433A2;
+ Thu, 20 Feb 2020 02:12:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 56F5EC433A2
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
@@ -57,14 +59,16 @@ Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
 From: Siddharth Gupta <sidgup@codeaurora.org>
 To: ohad@wizery.com,
 	bjorn.andersson@linaro.org
-Subject: [PATCH 0/2] remoteproc: core: Add core functionality to the
- remoteproc framework
-Date: Wed, 19 Feb 2020 18:11:51 -0800
-Message-Id: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
+Subject: [PATCH 1/2] remoteproc: core: Add an API for booting with firmware
+ name
+Date: Wed, 19 Feb 2020 18:11:52 -0800
+Message-Id: <1582164713-6413-2-git-send-email-sidgup@codeaurora.org>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
+References: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_181208_357011_948F1CC3 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20200219_181211_180596_5DEBD8B3 
+X-CRM114-Status: GOOD (  15.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -98,21 +102,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds core functionality to the remoteproc framework.
+Add an API which allows to change the name of the firmware to be booted on
+the specified rproc. This change gives us the flixibility to change the
+firmware at run-time depending on the usecase. Some remoteprocs might use
+a different firmware for testing, production and development purposes,
+which may be selected based on the fuse settings during bootup.
 
-Patch 1 adds a new API to the framework which allows kernel clients to update
-        the firmware name for the specified remoteproc.
-Patch 2 intends to improve the user experience by preventing the system from
-        going to sleep while the remoteproc is recovering from a crash.
-
-Siddharth Gupta (2):
-  remoteproc: core: Add an API for booting with firmware name
-  remoteproc: core: Prevent sleep when rproc crashes
-
- drivers/remoteproc/remoteproc_core.c | 38 ++++++++++++++++++++++++++++++++++++
+Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+---
+ drivers/remoteproc/remoteproc_core.c | 34 ++++++++++++++++++++++++++++++++++
  include/linux/remoteproc.h           |  1 +
- 2 files changed, 39 insertions(+)
+ 2 files changed, 35 insertions(+)
 
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index 097f33e..5ab65a4 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -1779,6 +1779,40 @@ int rproc_boot(struct rproc *rproc)
+ EXPORT_SYMBOL(rproc_boot);
+ 
+ /**
++ * rproc_boot_with_fw() - boot a remote processor with the specified firmware
++ * @rproc: handle of a remote processor
++ * @firmware: name of the firmware to boot with
++ *
++ * Change the name of the firmware to be loaded to @firmware in the rproc
++ * structure, and call rproc_boot().
++ *
++ * Returns 0 on success, and an appropriate error value otherwise.
++ */
++int rproc_boot_with_fw(struct rproc *rproc, const char *firmware)
++{
++	char *p;
++
++	if (!rproc) {
++		pr_err("invalid rproc handle\n");
++		return -EINVAL;
++	}
++
++	if (firmware) {
++		p = kstrdup(firmware, GFP_KERNEL);
++		if (!p)
++			return -ENOMEM;
++
++		mutex_lock(&rproc->lock);
++		kfree(rproc->firmware);
++		rproc->firmware = p;
++		mutex_unlock(&rproc->lock);
++	}
++
++	return rproc_boot(rproc);
++}
++EXPORT_SYMBOL(rproc_boot_with_fw);
++
++/**
+  * rproc_shutdown() - power off the remote processor
+  * @rproc: the remote processor
+  *
+diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+index 16ad666..e2eaba9 100644
+--- a/include/linux/remoteproc.h
++++ b/include/linux/remoteproc.h
+@@ -609,6 +609,7 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
+ 			     u32 da, const char *name, ...);
+ 
+ int rproc_boot(struct rproc *rproc);
++int rproc_boot_with_fw(struct rproc *rproc, const char *firmware);
+ void rproc_shutdown(struct rproc *rproc);
+ void rproc_report_crash(struct rproc *rproc, enum rproc_crash_type type);
+ int rproc_coredump_add_segment(struct rproc *rproc, dma_addr_t da, size_t size);
 -- 
 Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
