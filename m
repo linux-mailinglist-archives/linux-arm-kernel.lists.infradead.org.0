@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 849F61656E3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 06:29:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 540FB1656EB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 06:29:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FjVsCDG5tkkg+dIcfR2QQSrJquO6HPmPEGhPSJPaOJ4=; b=XZpvz9Epk5wC3zdwP8L/ExbK6o
-	HQW+8eqqdynpY7Fp1ka0xTAsG/ijdj2RrxZ3bDzCgu45IAj6E4GX2ITKk9s3tzAZO3q0YZHBCSxbx
-	sViv7ySErspoXW45dob15iVSE1ZmmLcfTelR/mEgJNrkmgiYXJObOj5xp1WWNSOuyYYGTyYuXDKEb
-	8a9swHVJx94b9ORd1qLkN/RmFc1TDPUE8/nDy/OQX7RrLEoSqMvJXeuQt/fDv65fiwqC75yQD3LZB
-	FUkDr7mRuf+dt7LzCgUi9vcyYa21j6lz0oywr1bcENfDC3mq83DQwtLUCoXOji9chB/Gp40FoyZcP
-	rHV6unDg==;
+	bh=9Qt7ye/4OHkdlrDiE3FtXdrTTWOUtzaJ8bKxkUOzafA=; b=C6v2egTSz1BRGB7VDzfqeTxyp1
+	GTCGGLHi42ePCjgsJnR8TvTX8yyofzzX00hZUMqFkzkSRFHvvnpQxr6sBadPsncNtPrLaq0oQIO38
+	Yol4aLLsyhkBtd/c384/YRaJxgDjeshr4blhMnEV/KdGv7ytsGLTVj0VAUIqDx4eNREsDGbQRX0Dj
+	QVDqHdftaLl376d5mYdnE0S65nNfNZOdT+lnbYSogdh96SGzoP2UNg2SzL6hcWS4yNCLSpm6brJjD
+	rYT5Eq2PXZHZwAdlsOTylC5kAmYhnmfsq44qRLStGF3NGYOkz2xWtRBn5BB8xhgi8H3GKTjJd9Qaf
+	A1voDqaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4eOb-0002VR-SX; Thu, 20 Feb 2020 05:29:09 +0000
+	id 1j4eOm-0002kZ-NN; Thu, 20 Feb 2020 05:29:20 +0000
 Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4eNu-0001zO-86
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 05:28:28 +0000
-Received: by mail-pf1-x444.google.com with SMTP id b185so1318416pfb.7
+ id 1j4eO5-00029a-Gx
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 05:28:40 +0000
+Received: by mail-pf1-x444.google.com with SMTP id j9so1314107pfa.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 21:28:25 -0800 (PST)
+ Wed, 19 Feb 2020 21:28:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=k8d4kmIccAidADFe+MdrG7ylohXu5nRgFPNyr4D4gnE=;
- b=B4R6/j6TkXEcNb0cGsNW/UtwR61rs/DnLFsdw6EqYmbnBzbQJJ7s9M0FY67z5uwYgA
- p31L6Gh121GL+N+2fBiynbasV3w/nXAUn30xYWWT6fKF4T5lQ+gD1pvCgDGCfey4edKn
- a0duIjYt+ZWPsMoEs+Mx776KNj+zmZIIuFK8YnarRbuXhPo6JeJB12rOFqRJBcjpEthU
- fhb7A3AZc4gxSz9gECh2zgp0ntAZcQU6Q99x5Hv7AsMIx/DnpIpl6soRAx8EEjJ0IH/c
- tfVl4jrZHNM8uwIwjmbdLb3oMUfkQ5w0XoVko4PfteOhpEGZlmvMoLbfIRR7ajCSW3yf
- JqOw==
+ bh=Qm7dOX6BJPU8t8EeV5guhioxUn3G/S82qxut/ZQCG/Y=;
+ b=YMJWJ76PiWBpfKwBtY8n224agzsTTrpvlIh1EsZtXyIRZtGFoXj2+ruqGUJ3mQxvFm
+ nAI7m/LvA/Qx7/ydA9uI4gl+cQXG2QOxF1DKy8xA8Ng2h8dvLAsEj93WZ3JUJgB5TPBl
+ ftl0OLn47eRr/getcCwiSvKZi75qCrkfmu3mUxMRfO2olgiBmsc7BjM/ED9GyUunWGQo
+ 0r1NOGJE4q2a/umAg4MvWunk6uuOwtC/019bczrehXplTfwgCYTYE9yV+OvXbVXJ/nX4
+ QPOSD214OHcJQMLrrO5vtbXh0WYZexx0oMvbZCKcPqwHv993tOGZ9PvLzkaEfZcI+4NX
+ 4Mbw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=k8d4kmIccAidADFe+MdrG7ylohXu5nRgFPNyr4D4gnE=;
- b=dxbcwnHJdx7NZoC2eI+iUBA9qIdd09hj+6I7dAzyA0awRuclPo1cceI07cD/9++BNC
- XdfZDxCWNmINElVMYCBVF2v5jTvG714TA4cdLDfLaXB8E+NlYSSG3Fwwc2zpB0mBOXXw
- +DQvBCGWcXsxsoJDOhTnEn8bCjZKhKiflgM0Bw8b+qbtWNzoehlRteXvOucvJnVirnQQ
- OtWe/8VureWK9NadbaTWYLKo/snnAeSDbNdnYpYBS+yVne+BJq2PzOSRIFAS9z0Rp45s
- 1Pzi4uTJ7CRNd1x6b2CDuf9pdeK7Jq32LsHuno9mIqxnhSvPdiae9L7ROO82cBGJISwU
- nKjA==
-X-Gm-Message-State: APjAAAU/TlgX5voARQYFtDJTWSMtXN6YxjcuZiI3oxhB7KJsAPjmJKT2
- T2pgoWBUFJRovYzpXBvFazxPFA==
-X-Google-Smtp-Source: APXvYqwIVRZqP4ZuGnM9wjkZvs/dywF7Z5InBLQvdw5dIrKQub2KF8eGlCVr4GWpYML1MDb82Xak8Q==
-X-Received: by 2002:a65:6454:: with SMTP id s20mr32221795pgv.386.1582176505177; 
- Wed, 19 Feb 2020 21:28:25 -0800 (PST)
+ bh=Qm7dOX6BJPU8t8EeV5guhioxUn3G/S82qxut/ZQCG/Y=;
+ b=Of+uvb5rkCbZbKqphPjvmzthTcOROYWaff4QklMRnm3PcO6Gwr4LNZxsDFzJKYv47Y
+ bNUOQAjqsmxwUp9+QVq1TSZA6wWF3GkCzHYA+34KQftN9xkmvyG7UrqcnLN2bey67LO1
+ 213tRw4YNfvcqMtk61oCi1J96X/0jBOiYWJ1Hd8N2EUrB4qtr6YejzVzAbvwr0LGxHEY
+ QOnbddyWE69NSkZRJliMe2L+L9nOqfwelJ4NO6Z3pIhq65HE0KSkUDJYGO6dZMmQvEF/
+ afwizIdJCWUKbt6lfjbkSjpVeKbBjclSxdM/vK93+rBcBt2rlSR828NBrBEpUhKXSYJn
+ GPUQ==
+X-Gm-Message-State: APjAAAWb62AHcuC5qy9rrlhrD3sYP1rfSLRWJmQkQb0D2trvwfl6z/Td
+ /j9PHwkxFH4N5VoYsDaR2V6/kg==
+X-Google-Smtp-Source: APXvYqytjzoPU7uU68W8L5mqwVAqh1Cd4Cj3JOjjKWOXfVSRBhO6GePmtB+F7KLWfHYso5/mAmMCIA==
+X-Received: by 2002:a63:9856:: with SMTP id l22mr29974631pgo.344.1582176516647; 
+ Wed, 19 Feb 2020 21:28:36 -0800 (PST)
 Received: from localhost.localdomain (li1441-214.members.linode.com.
  [45.118.134.214])
- by smtp.gmail.com with ESMTPSA id l69sm1535663pgd.1.2020.02.19.21.28.14
+ by smtp.gmail.com with ESMTPSA id l69sm1535663pgd.1.2020.02.19.21.28.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 21:28:24 -0800 (PST)
+ Wed, 19 Feb 2020 21:28:36 -0800 (PST)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -68,15 +68,15 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Coresight ML <coresight@lists.linaro.org>
-Subject: [PATCH v5 4/9] perf cs-etm: Support thread stack
-Date: Thu, 20 Feb 2020 13:26:56 +0800
-Message-Id: <20200220052701.7754-5-leo.yan@linaro.org>
+Subject: [PATCH v5 5/9] perf cs-etm: Support branch filter
+Date: Thu, 20 Feb 2020 13:26:57 +0800
+Message-Id: <20200220052701.7754-6-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200220052701.7754-1-leo.yan@linaro.org>
 References: <20200220052701.7754-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_212826_338028_5A422811 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20200219_212837_604690_DF51BEC3 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -112,108 +112,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since Arm CoreSight doesn't support thread stack, the decoding cannot
-display symbols with indented spaces to reflect the stack depth.
+If user specifies option '-F,+callindent' or call chain related options,
+it means users only care about function calls and returns; for these
+cases, it's pointless to generate samples for the branches within
+function.  But unlike other hardware trace handling (e.g. Intel's pt or
+bts), Arm CoreSight doesn't filter branch types for these options and
+generate samples for all branches, this causes Perf to output many
+spurious blanks if the branch is not a function call or return.
 
-This patch adds support thread stack for Arm CoreSight, this allows
-'perf script' to display properly for option '-F,+callindent'.
+To only output pairs of calls and returns, this patch introduces branch
+filter and the filter is set according to synthetic options.  Finally,
+Perf can output only for calls and returns and avoid to output other
+unnecessary blanks.
 
 Before:
 
   # perf script -F,+callindent
-            main  2808          1          branches: coresight_test1                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
-            main  2808          1          branches: printf@plt                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
-            main  2808          1          branches: printf@plt                           aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
-            main  2808          1          branches: _init                                aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
-            main  2808          1          branches: _dl_fixup                            ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.so)
-            main  2808          1          branches: _dl_lookup_symbol_x                  ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                 coresight_test1@plt                                  aaaaba8d37d8 main+0x14 (/root/coresight_test/main)
+            main  2808          1          branches:                     coresight_test1@plt                              aaaaba8d367c coresight_test1@plt+0xc (/root/coresight_test/main)
+            main  2808          1          branches:                     _init                                            aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
+            main  2808          1          branches:                     _dl_fixup                                        ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.s
+            main  2808          1          branches:                         _dl_lookup_symbol_x                          ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                                                                      ffff8636a3f4 _dl_lookup_symbol_x+0x5c (/lib/aarch64-linux-gnu/ld-2.28.s
+            main  2808          1          branches:                                                                      ffff8636a3f4 _dl_lookup_symbol_x+0x5c (/lib/aarch64-linux-gnu/ld-2.28.s
+            main  2808          1          branches:                                                                      ffff8636a3f4 _dl_lookup_symbol_x+0x5c (/lib/aarch64-linux-gnu/ld-2.28.s
+            main  2808          1          branches:                                                                      ffff8636a3f4 _dl_lookup_symbol_x+0x5c (/lib/aarch64-linux-gnu/ld-2.28.s
+            main  2808          1          branches:                                                                      ffff8636a3f4 _dl_lookup_symbol_x+0x5c (/lib/aarch64-linux-gnu/ld-2.28.s
   [...]
 
 After:
 
   # perf script -F,+callindent
-            main  2808          1          branches:                 coresight_test1                                      ffff8634f5c8 coresight_test1+0x3c (/root/coresight_test/libcstest.so)
-            main  2808          1          branches:                 printf@plt                                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
-            main  2808          1          branches:                     printf@plt                                       aaaaba8d36bc printf@plt+0xc (/root/coresight_test/main)
-            main  2808          1          branches:                     _init                                            aaaaba8d3650 _init+0x30 (/root/coresight_test/main)
+            main  2808          1          branches:                 coresight_test1@plt                                  aaaaba8d37d8 main+0x14 (/root/coresight_test/main)
             main  2808          1          branches:                     _dl_fixup                                        ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.s
             main  2808          1          branches:                         _dl_lookup_symbol_x                          ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                             do_lookup_x                              ffff8636a49c _dl_lookup_symbol_x+0x104 (/lib/aarch64-linux-gnu/ld-2.28.
+            main  2808          1          branches:                                 check_match                          ffff86369bf0 do_lookup_x+0x238 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                                     strcmp                           ffff86369888 check_match+0x70 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                 printf@plt                                           aaaaba8d37ec main+0x28 (/root/coresight_test/main)
+            main  2808          1          branches:                     _dl_fixup                                        ffff86373b4c _dl_runtime_resolve+0x40 (/lib/aarch64-linux-gnu/ld-2.28.s
+            main  2808          1          branches:                         _dl_lookup_symbol_x                          ffff8636e078 _dl_fixup+0xb8 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                             do_lookup_x                              ffff8636a49c _dl_lookup_symbol_x+0x104 (/lib/aarch64-linux-gnu/ld-2.28.
+            main  2808          1          branches:                                 _dl_name_match_p                     ffff86369af0 do_lookup_x+0x138 (/lib/aarch64-linux-gnu/ld-2.28.so)
+            main  2808          1          branches:                                     strcmp                           ffff8636f7f0 _dl_name_match_p+0x18 (/lib/aarch64-linux-gnu/ld-2.28.so)
   [...]
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 44 ++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 44 insertions(+)
+ tools/perf/util/cs-etm.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index f3ba2cfb634f..08ca919aa2b1 100644
+index 08ca919aa2b1..1b08b650b090 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -1138,6 +1138,45 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
- 			   sample->insn_len, (void *)sample->insn);
- }
+@@ -56,6 +56,7 @@ struct cs_etm_auxtrace {
  
-+static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
-+				    struct cs_etm_traceid_queue *tidq)
-+{
-+	struct cs_etm_auxtrace *etm = etmq->etm;
-+	u8 trace_chan_id = tidq->trace_chan_id;
-+	int insn_len;
-+	u64 from_ip, to_ip;
-+
-+	if (etm->synth_opts.thread_stack) {
-+		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
-+		to_ip = cs_etm__first_executed_instr(tidq->packet);
-+
-+		insn_len = cs_etm__instr_size(etmq, trace_chan_id,
-+					      tidq->prev_packet->isa, from_ip);
-+
-+		/*
-+		 * Create thread stacks by keeping track of calls and returns;
-+		 * any call pushes thread stack, return pops the stack, and
-+		 * flush stack when the trace is discontinuous.
-+		 */
-+		thread_stack__event(tidq->thread, tidq->prev_packet->cpu,
-+				    tidq->prev_packet->flags,
-+				    from_ip, to_ip, insn_len,
-+				    etmq->buffer->buffer_nr + 1);
-+	} else {
-+		/*
-+		 * The thread stack can be output via thread_stack__process();
-+		 * thus the detailed information about paired calls and returns
-+		 * will be facilitated by Python script for the db-export.
-+		 *
-+		 * Need to set trace buffer number and flush thread stack if the
-+		 * trace buffer number has been alternate.
-+		 */
-+		thread_stack__set_trace_nr(tidq->thread,
-+					   tidq->prev_packet->cpu,
-+					   etmq->buffer->buffer_nr + 1);
-+	}
-+}
-+
- static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 					    struct cs_etm_traceid_queue *tidq,
- 					    u64 addr, u64 period)
-@@ -1382,6 +1421,9 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
- 	    tidq->prev_packet->last_instr_taken_branch)
- 		cs_etm__update_last_branch_rb(etmq, tidq);
+ 	int num_cpu;
+ 	u32 auxtrace_type;
++	u32 branches_filter;
+ 	u64 branches_sample_type;
+ 	u64 branches_id;
+ 	u64 instructions_sample_type;
+@@ -1239,6 +1240,10 @@ static int cs_etm__synth_branch_sample(struct cs_etm_queue *etmq,
+ 	} dummy_bs;
+ 	u64 ip;
  
-+	if (tidq->prev_packet->last_instr_taken_branch)
-+		cs_etm__add_stack_event(etmq, tidq);
++	if (etm->branches_filter &&
++	    !(etm->branches_filter & tidq->prev_packet->flags))
++		return 0;
 +
- 	if (etm->sample_instructions &&
- 	    tidq->period_instructions >= etm->instructions_sample_period) {
- 		/*
-@@ -2730,6 +2772,8 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
- 		itrace_synth_opts__set_default(&etm->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
- 		etm->synth_opts.callchain = false;
-+		etm->synth_opts.thread_stack =
-+				session->itrace_synth_opts->thread_stack;
+ 	ip = cs_etm__last_executed_instr(tidq->prev_packet);
+ 
+ 	event->sample.header.type = PERF_RECORD_SAMPLE;
+@@ -2776,6 +2781,13 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
+ 				session->itrace_synth_opts->thread_stack;
  	}
  
++	if (etm->synth_opts.calls)
++		etm->branches_filter |= PERF_IP_FLAG_CALL | PERF_IP_FLAG_ASYNC |
++					PERF_IP_FLAG_TRACE_END;
++	if (etm->synth_opts.returns)
++		etm->branches_filter |= PERF_IP_FLAG_RETURN |
++					PERF_IP_FLAG_TRACE_BEGIN;
++
  	err = cs_etm__synth_events(etm, session);
+ 	if (err)
+ 		goto err_delete_thread;
 -- 
 2.17.1
 
