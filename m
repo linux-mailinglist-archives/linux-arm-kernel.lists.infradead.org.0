@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FE82166953
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 21:58:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FCD016698D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:07:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G7A99RvxbyY1eosraUpECQt1ylMw7Qzil5QX4BzFoRI=; b=a++S7pHWKZJUwS
-	LsEe/UQPudZkeQeltN/KJo/35LnXEhyPQAnWRpFpvczvRP/S/e3TlQjvOnmUPZ8dD1erBdSGyQf/V
-	CSFu6HgJN7x+xR/V0iS2QT6/ynzPtLlqDchWy4RI1oo3VksLr9jCdVT1jlMfIsrg+EuEH+Yht4G1P
-	pA77bllKGASBTWUGm8xP9g++98pMtdkH1f53MkZuiZfQmYfyDrIcwlkgnMTrf8ixplYUy/z3VLCK8
-	brwbcd3IU1as2fzxQK8jepqFNqBQViiMqm7WF+Mg/NGZ2kxOWcZhtsWsOdR+6nH7Lr1psNN2Lhhcg
-	KSuMQN8gRnuNotuSdDBQ==;
+	List-Owner; bh=CjPIYULYR/CpMygHMy4KvN9MQAW6xRLzBdSdcovEZ/U=; b=Gu+Fub7QJvvq49
+	xcEcxRZwaIbFAvsfpsfiOZo7SwM8T2ZXaTq133axVdxyYgAVICp5Q5xjMaHodgxf8z0BEXxl2zZff
+	zhMlvMrBFGlH1IB69Ug6D0hv4xyUCnzYk+7GrTGtYZ6uIg002ct/QisCk4vZ8colpg4veoeSiGcZ7
+	PxJsYYeJ3yFSwv5TgTF6bqkMdt5KZbamH8B280vbS975w6LhwXk1ZsO8mmOXX72tvk5qcIf58rJYH
+	JxJlms20SB6v0lIRYJNGwyWRLUx6bYCOv3kfohCSQgB9MEwRVnwLlZT6up/RAbWB+jUYB216XPt3q
+	+5Aik+ZQQadYmqPjpY4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4suE-0004jn-KY; Thu, 20 Feb 2020 20:58:46 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j4t1v-0000qf-VQ; Thu, 20 Feb 2020 21:06:44 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4st0-0003jy-RG; Thu, 20 Feb 2020 20:57:32 +0000
-Received: by mail-wm1-x342.google.com with SMTP id s10so22569wmh.3;
- Thu, 20 Feb 2020 12:57:30 -0800 (PST)
+ id 1j4t1m-0000qA-1N; Thu, 20 Feb 2020 21:06:35 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q9so34550wmj.5;
+ Thu, 20 Feb 2020 13:06:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Bwoyk38+KjVuFBIAFpxZD18LSNp56TI+0ElsisrHqow=;
- b=vfn5iJ2Z8U6M4aFOQZmB3EqLtTKrPqYv1PCK7ThDbKlHmOL0fDumNItGoaEevQcVSJ
- f1IeHJ0+VAbkIksdOPvXo323Msr5ReczzFFZJPchJwEFQmjkXR3QvSPpznM+c2B5hHWU
- lD7Zmf4PioPIpGae8YLziUGYNt5oB9yi5b92P6X3AzD53zGTg+q1WxzDeTFDu8bSe5tk
- 3ZjzyMxcTt1V2SR9JrKUhdP2RGsbj/TtbZr65G1zUfFsx9s49ywpkvJMaXRsjh2oYKbj
- oCxZVYYRgiSibVs/M85BLKirbLBdXgLWTysePEIkYKGDOJSpAPCQm2uMXti3wNy4NGG7
- zk/g==
+ bh=9bvxNllD/h/tIfcnwcp/ikzTsK4qk40squRSx5BVJWI=;
+ b=ZwAuFsVo3Pe7ETQAAL4612rYE/HJ3sVsV1Mh3E711A2zkizXsTWHj9PxGshh7H2NsH
+ KwD8FZPL+FGbomqp3jJ1asbTshYPBJBEePQg4dwNYIPF/mgf9GrN3RSorv7pDD1gpUnI
+ v4px7zvo2T3jERww2WC+0KtG6WWqCJgMFvVXVc+wQSKhwETG8SHswD9SMf2/lNrzjUDf
+ W8h4w9+2DruCe7g2LWJTG+P+j9Ob8pdEw7aUT4LxjJU22iOIh+BVVyWg+GiBdu2O6eln
+ IwBYnRxfCwCjxhfNQSuNyeEG5qEpZJTaAOFiPMrsliJ7DyznxNvaJDC4NLiA2fIcQv4n
+ zjEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Bwoyk38+KjVuFBIAFpxZD18LSNp56TI+0ElsisrHqow=;
- b=Upy/4Pnp/r5ZvUDL0qdMULeg7xSLA7RSpDttHsflhYcsY5nNsMz09lAqp2xiOJi97E
- v1xDSZsU7yj5dZ2rEl0zS9nBy4XWtAIs9HUVpTRgakC8yCPzT+GGwiXwqEjoEDu6KLZJ
- qAGtppaKIjWsr0KuQI+gpIgwT/lNLO9hG4yexDZyvkzruqr8hKk6ThboB7NJVCVyvzqR
- 0bZ6UEZMB56/9OElyA9ThBAEn6BFCJjD8nZBApd+BzC1gFJTEs2N424/UNiSyxyG3cP6
- vjZfASeqJgfOx23h7Nis4VmnvFP/NdPmUx4vRwo3qwlHLR2eUpoxRyyChqI4YSl7jFnj
- iYXg==
-X-Gm-Message-State: APjAAAV9wxEjZdh7w6NfyB9+lcqVsUEM7rRylh3p25oxQfgNFBaT8L1Z
- Ro76ebaj+aE7hJgwso1jl+mBV5Sv
-X-Google-Smtp-Source: APXvYqz39LInxcAPV0c1O9LZFR53k6cJ7U0rEodvw32A9jYeRvuq5oOBg4rCZYv7BGJrngAYb7Vonw==
-X-Received: by 2002:a7b:c958:: with SMTP id i24mr6444236wml.180.1582232248599; 
- Thu, 20 Feb 2020 12:57:28 -0800 (PST)
+ bh=9bvxNllD/h/tIfcnwcp/ikzTsK4qk40squRSx5BVJWI=;
+ b=WY7CtXp/4E6slCl6fNjbiuReUKASHQOf67Ds/UGg0cguhCo0W7FNFe620YoTV3XZ/W
+ 7La6Oc4ZULm8F3IX7x8F9GDnDmI321PzPzjySnoLVv/5+KArrvw5AZ/VQqO+c3eLHVSM
+ FbCTz2Z2ppvEnIhn7o36u9nBN4zMorH6wVsCJizD/D4fiFNvIvJvfuSGZLOL1NyKrjx1
+ Auif7Rf93waEroVGpaM+4AwAg54QfNkk5n4w5Dt4wxHS0RJxohXHXsIl6dfm69rRvl0h
+ bvKezkL2Z3rra4yTOpUu1ZUPPIW+PXDFhjlsX5J0ed5zwbFNVA0UmXR/PVZs2MIDUy6w
+ VSHQ==
+X-Gm-Message-State: APjAAAUopk6wcW1HLW7U+RcxV5V3Z2Fmhu5Q6CnoXGm0lTB6m8RZuILk
+ KyyzRbj4ra1CnYeUuQRT1Y+uBP75
+X-Google-Smtp-Source: APXvYqyo9cnjdaNEnf4aNiIi8Adcr6dK9khtbv9hfozmotk1/mnuqtqR25hCoGJa+/65v0l7GDsIKQ==
+X-Received: by 2002:a1c:3b09:: with SMTP id i9mr6288475wma.31.1582232792577;
+ Thu, 20 Feb 2020 13:06:32 -0800 (PST)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id y185sm755675wmg.2.2020.02.20.12.57.27
+ by smtp.gmail.com with ESMTPSA id b17sm1018956wrp.49.2020.02.20.13.06.31
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 20 Feb 2020 12:57:27 -0800 (PST)
-Subject: Re: [PATCH v3,1/8] arm64: dts: mt8183: add thermal zone node
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Michael Kao <michael.kao@mediatek.com>
+ Thu, 20 Feb 2020 13:06:31 -0800 (PST)
+Subject: Re: [PATCH v3,2/8] arm64: dts: mt8183: add/update dynamic power
+ coefficients
+To: Michael Kao <michael.kao@mediatek.com>
 References: <20200103064407.19861-1-michael.kao@mediatek.com>
- <20200103064407.19861-2-michael.kao@mediatek.com>
- <00c8be46-3ba1-571a-0230-7c722ce1901e@linaro.org>
- <1581391046.31005.12.camel@mtksdccf07>
- <270efbcf-51bb-629f-c64b-fa343b3d2988@linaro.org>
+ <20200103064407.19861-3-michael.kao@mediatek.com>
+ <963f6a16-152f-f3b0-56fc-4edb3f1023f3@gmail.com>
+ <1581386733.31005.6.camel@mtksdccf07>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -138,23 +137,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <4fab7d40-d7d9-883e-1c50-0507ee1dd750@gmail.com>
-Date: Thu, 20 Feb 2020 21:57:26 +0100
+Message-ID: <1ab274b4-22d0-98da-889c-f521ce5c30a5@gmail.com>
+Date: Thu, 20 Feb 2020 22:06:30 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <270efbcf-51bb-629f-c64b-fa343b3d2988@linaro.org>
+In-Reply-To: <1581386733.31005.6.camel@mtksdccf07>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_125730_992954_412E6B73 
-X-CRM114-Status: GOOD (  18.24  )
+X-CRM114-CacheID: sfid-20200220_130634_113507_BFB65529 
+X-CRM114-Status: GOOD (  18.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [matthias.bgg[at]gmail.com]
@@ -180,10 +179,10 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Eduardo Valentin <edubezval@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- hsinyi@chromium.org, Zhang Rui <rui.zhang@intel.com>,
- linux-arm-kernel@lists.infradead.org
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -191,46 +190,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 20/02/2020 12:52, Daniel Lezcano wrote:
-> On 11/02/2020 04:17, Michael Kao wrote:
->> On Thu, 2020-01-09 at 12:31 +0100, Daniel Lezcano wrote:
->>> On 03/01/2020 07:44, Michael Kao wrote:
->>>> From: "michael.kao" <michael.kao@mediatek.com>
->>>>
->>>> Add thermal zone node to Mediatek MT8183 dts file.
->>>>
->>>> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
->>>> ---
->>>>  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 85 ++++++++++++++++++++++++
->>>>  1 file changed, 85 insertions(+)
->>>>
->>>> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
->>>> index 10b32471bc7b..a2793cf3d994 100644
->>>> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
->>>> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
->>>> @@ -570,6 +570,88 @@
->>>>  			status = "disabled";
->>>>  		};
->>>>  
->>>> +		thermal: thermal@1100b000 {
->>>> +			#thermal-sensor-cells = <1>;
->>>> +			compatible = "mediatek,mt8183-thermal";
->>>> +			reg = <0 0x1100b000 0 0x1000>;
->>>> +			interrupts = <0 76 IRQ_TYPE_LEVEL_LOW>;
->>>
->>> What is this interrupt for?
->>
->> The interrupts pin is designed in our SoC. But it is not used in our
->> upstream thermal code now. There is also add the settings but not use
->> for mt8173.dtsi. To align the thermal dtsi format, I follow the past
->> experience to add the interrupt settings of this project first.
+On 11/02/2020 03:05, Michael Kao wrote:
+> On Fri, 2020-01-10 at 15:40 +0100, Matthias Brugger wrote:
+>> I suppose it need rewording.
 > 
-> Assuming the interrupt can be set by the driver to fire when a specified
-> temperature is set, I suggest to change your driver to handle it so you
-> can get rid of the polling waking up the SoC every second.
+> Hi Matthias,
+> 
+> This patch was resent following with the patch series,Add Mediatek
+> thermal driver and dtsi.
+> I have write all the changes in the cover letter.
+> There is no change in this patch.
+> 
+> Do you mean that I need to add some word to commit message or
+> change the dynamic power coefficients?
 > 
 
-For the record the interrupt is a required property by the binding description.
+Your commit message says:
+"Add dynamic power coefficients for all cores and update those of CPU0 and CPU4."
+
+But the power coefficients for CPU0-4 are not updated, but added.
+
+I fixed the commit message and pushed to v5.6-next/dts64
+
+Please double check that everything is correct.
 
 Regards,
 Matthias
