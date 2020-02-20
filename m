@@ -2,80 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 186A9165B83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 11:29:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C1CC165B91
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 11:32:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ghe+s5ZmUY8LM7IJP+Xdn+XFsVnhp/A5DvKgjyMeF7w=; b=l84TNfDYKlkpofTSABvoM7iS5
-	4b4iBuRYh2luepO+lUHVdyHlY2v6PZd5P82+8tBkGLmB97Y/ApY3pOkf+3c7EfkmhgMU7RYSwQXR9
-	NYKNYcQce6CqpImdR/F/1X/rHaKIea0WVui5WG8es8M3G2y8y9m7wwp3GA1xT5sUg/EIosFVhphhQ
-	FqR9i8gGFhzl6qDpEac8KQQK+zKfm7JKFdTSorv6roBJCem/NKKeUAjl7/qw3Ur+QR8NbwTJ+qrwE
-	w2SqtwuMD25jARdnq3ujg6qpG33cm78SN6a90TRYzUX26w9xQvRWOov71Y7nx7b/jE2uY7L7uWuVa
-	wcwbtbypA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iZPjZUvB4l6NfGCv9GgQtjBGuwPmv8+bLTT3G+36mGI=; b=hFsPBrfgLfLcbC
+	Ne5bl0ICJl6drdI9nes2R9IdDWJAzBrBx+Oy1fR4k5Nw1AE7LQzyf9L69xCxTMtrXrOjZAW5CVX4x
+	UPKpMqRWJvF2YzA7ph6Jz/PYSahM+WcZVtlM/3UvHHiJas9knGw5pIQPplA9VrIFCaQyJLkerLIFR
+	brNGoHMJHrzp06MQLWrxDyhPgS1+QcPBTmPyZbJS7v3smfFC1464OOHz4sD9cTRQdje5zYGXjI4C/
+	Kvhn/Eco3B4nD304fzHTJnZYj0ayx+dHnAOfE8Avcr986944/mACLHcjqboA4DFtNlffMYKDzh3Vp
+	NiAvsXcCLEObtsOFKvKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4j5A-00072A-3y; Thu, 20 Feb 2020 10:29:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4j7g-0000Vw-SD; Thu, 20 Feb 2020 10:32:00 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4j4z-00071V-Ps
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 10:29:15 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5BF7C20801;
- Thu, 20 Feb 2020 10:29:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582194553;
- bh=89ixU0szikhKLR+8AWYd9tNddCd483x7QZqiB73/Uco=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=JeR9EVZCzgexZ6fjQV7E14xQO/TIF++cY0/wAZwh8aOBHdJe2DzMtcZYuoHsMi+k6
- YY+hiAp/34k9+IefUfaLKdW9OLyr4CTj//t7rwxabjvF/OwgtM99osg+kVoFeOpptK
- pUiaBngxgCh1evcY65CNc81K5XeY09g0f7hp8waw=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j4j4x-006hip-NY; Thu, 20 Feb 2020 10:29:11 +0000
+ id 1j4j7V-0007KZ-6S
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 10:31:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=D0QfwFe5VuXoN5X68rznn8NM7G9XUwQSimuTofmWdzU=; b=vSR+XvWkpGnlcBg6aNao4QTKw
+ xFC+BcQ2mM96psVEya2zQ23e9cMBU4hfolxoeZjgFxZJiBU/0LEWzzY+LLoIvM3MGK5FYTinJ2CuF
+ c9hmOHiEX3xdZ7yyhlDqYylpuFaaFePYU+jsLt9M3H2LSmV+1d0SwPa6jzeJAeOxE/DYUtUPz/dl6
+ A2GkfelkbNH7rt+/rbgtmhj26ayw/csp8lGsMqIDZIPEudO0UtSAsOoFhMMb8T7cii7mLo/BwDzOh
+ kvlMZ+w9xDKZzDsB7h3tHUtJDK1TrbLEGL3EYf6M77VCuTwcQM77sXK0gU3QZ5/hdgXx72iJBoOYt
+ 9TKxJetSw==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:50344)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1j4j5G-0002gg-Iy; Thu, 20 Feb 2020 10:29:30 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1j4j5D-0002Li-75; Thu, 20 Feb 2020 10:29:27 +0000
+Date: Thu, 20 Feb 2020 10:29:27 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [CFT 4/8] net: axienet: use resolved link config in mac_link_up()
+Message-ID: <20200220102927.GX25745@shell.armlinux.org.uk>
+References: <20200217172242.GZ25745@shell.armlinux.org.uk>
+ <E1j3k7t-00072J-RS@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
-Date: Thu, 20 Feb 2020 10:29:11 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Jan Kiszka <jan.kiszka@siemens.com>
-Subject: Re: [RFC PATCH 0/5] Removing support for 32bit KVM/arm host
-In-Reply-To: <ea7bc1d0-0a11-8ed6-da70-d603d8107bf6@siemens.com>
-References: <20200210141324.21090-1-maz@kernel.org>
- <CAK8P3a3V=ur4AgLfat2cSyw8GrkCS2t06eqkzC-gXcc0xBpEPw@mail.gmail.com>
- <ea7bc1d0-0a11-8ed6-da70-d603d8107bf6@siemens.com>
-Message-ID: <535d8a4498d81b4901dfab232638d865@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: jan.kiszka@siemens.com, arnd@arndb.de,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, pbonzini@redhat.com, Christoffer.Dall@arm.com,
- will@kernel.org, qperret@google.com, linux@arm.linux.org.uk,
- vladimir.murzin@arm.com, anders.berg@lsi.com, jailhouse-dev@googlegroups.com,
- jean-philippe.brucker@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <E1j3k7t-00072J-RS@rmk-PC.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_022913_874549_F3B416BE 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200220_023149_239974_BBA21804 
+X-CRM114-Status: GOOD (  16.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,7 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,88 +87,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jailhouse-dev@googlegroups.com, Anders Berg <anders.berg@lsi.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>,
- Russell King <linux@arm.linux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
- kvm list <kvm@vger.kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- jean-philippe.brucker@arm.com, Quentin Perret <qperret@google.com>,
- Christoffer Dall <Christoffer.Dall@arm.com>, James Morse <james.morse@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-19 15:46, Jan Kiszka wrote:
-> On 19.02.20 16:09, Arnd Bergmann wrote:
->> On Mon, Feb 10, 2020 at 3:13 PM Marc Zyngier <maz@kernel.org> wrote:
->>> 
->>> KVM/arm was merged just over 7 years ago, and has lived a very quiet
->>> life so far. It mostly works if you're prepared to deal with its
->>> limitations, it has been a good prototype for the arm64 version,
->>> but it suffers a few problems:
->>> 
->>> - It is incomplete (no debug support, no PMU)
->>> - It hasn't followed any of the architectural evolutions
->>> - It has zero users (I don't count myself here)
->>> - It is more and more getting in the way of new arm64 developments
->>> 
->>> So here it is: unless someone screams and shows that they rely on
->>> KVM/arm to be maintained upsteam, I'll remove 32bit host support
->>> form the tree. One of the reasons that makes me confident nobody is
->>> using it is that I never receive *any* bug report. Yes, it is 
->>> perfect.
->>> But if you depend on KVM/arm being available in mainline, please 
->>> shout.
->>> 
->>> To reiterate: 32bit guest support for arm64 stays, of course. Only
->>> 32bit host goes. Once this is merged, I plan to move virt/kvm/arm to
->>> arm64, and cleanup all the now unnecessary abstractions.
->>> 
->>> The patches have been generated with the -D option to avoid spamming
->>> everyone with huge diffs, and there is a kvm-arm/goodbye branch in
->>> my kernel.org repository.
->> 
->> Just one more thought before it's gone: is there any shared code
->> (header files?) that is used by the jailhouse hypervisor?
->> 
->> If there is, are there any plans to merge that into the mainline 
->> kernel
->> for arm32 in the near future?
->> 
->> I'm guessing the answer to at least one of those questions is 'no', so
->> we don't need to worry about it, but it seems better to ask.
+Hi Andre,
+
+Are you able to give this (along with patch 1) some testing please?
+The series can be grabbed from:
+
+  https://patchwork.ozlabs.org/series/159037/mbox/
+
+Strangely, google doesn't find it in the lore.kernel.org archives,
+but does in spinics.net archives and patchwork...
+
+On Mon, Feb 17, 2020 at 05:24:09PM +0000, Russell King wrote:
+> Convert the Xilinx AXI ethernet driver to use the finalised link
+> parameters in mac_link_up() rather than the parameters in mac_config().
 > 
-> Good that you mention it: There is one thing we share on ARM (and
-> ARM64), and that is the hypervisor enabling stub, to install our own
-> vectors. If that was to be removed as well, we would have to patch it
-> back downstream. So far, we only carry few EXPORT_SYMBOL patches for
-> essential enabling.
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> ---
+>  .../net/ethernet/xilinx/xilinx_axienet_main.c | 38 +++++++++----------
+>  1 file changed, 19 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> index 197740781157..c2f4c5ca2e80 100644
+> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+> @@ -1440,6 +1440,22 @@ static void axienet_mac_an_restart(struct phylink_config *config)
+>  
+>  static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
+>  			       const struct phylink_link_state *state)
+> +{
+> +	/* nothing meaningful to do */
+> +}
+> +
+> +static void axienet_mac_link_down(struct phylink_config *config,
+> +				  unsigned int mode,
+> +				  phy_interface_t interface)
+> +{
+> +	/* nothing meaningful to do */
+> +}
+> +
+> +static void axienet_mac_link_up(struct phylink_config *config,
+> +				struct phy_device *phy,
+> +				unsigned int mode, phy_interface_t interface,
+> +				int speed, int duplex,
+> +				bool tx_pause, bool rx_pause)
+>  {
+>  	struct net_device *ndev = to_net_dev(config->dev);
+>  	struct axienet_local *lp = netdev_priv(ndev);
+> @@ -1448,7 +1464,7 @@ static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
+>  	emmc_reg = axienet_ior(lp, XAE_EMMC_OFFSET);
+>  	emmc_reg &= ~XAE_EMMC_LINKSPEED_MASK;
+>  
+> -	switch (state->speed) {
+> +	switch (speed) {
+>  	case SPEED_1000:
+>  		emmc_reg |= XAE_EMMC_LINKSPD_1000;
+>  		break;
+> @@ -1467,33 +1483,17 @@ static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
+>  	axienet_iow(lp, XAE_EMMC_OFFSET, emmc_reg);
+>  
+>  	fcc_reg = axienet_ior(lp, XAE_FCC_OFFSET);
+> -	if (state->pause & MLO_PAUSE_TX)
+> +	if (tx_pause)
+>  		fcc_reg |= XAE_FCC_FCTX_MASK;
+>  	else
+>  		fcc_reg &= ~XAE_FCC_FCTX_MASK;
+> -	if (state->pause & MLO_PAUSE_RX)
+> +	if (rx_pause)
+>  		fcc_reg |= XAE_FCC_FCRX_MASK;
+>  	else
+>  		fcc_reg &= ~XAE_FCC_FCRX_MASK;
+>  	axienet_iow(lp, XAE_FCC_OFFSET, fcc_reg);
+>  }
+>  
+> -static void axienet_mac_link_down(struct phylink_config *config,
+> -				  unsigned int mode,
+> -				  phy_interface_t interface)
+> -{
+> -	/* nothing meaningful to do */
+> -}
+> -
+> -static void axienet_mac_link_up(struct phylink_config *config,
+> -				struct phy_device *phy,
+> -				unsigned int mode, phy_interface_t interface,
+> -				int speed, int duplex,
+> -				bool tx_pause, bool rx_pause)
+> -{
+> -	/* nothing meaningful to do */
+> -}
+> -
+>  static const struct phylink_mac_ops axienet_phylink_ops = {
+>  	.validate = axienet_validate,
+>  	.mac_pcs_get_state = axienet_mac_pcs_get_state,
+> -- 
+> 2.20.1
+> 
+> 
 
-I actually have a few extra patches on top of the series, one of them
-actually removing the ability to register new vectors (mostly because
-I don't like leaving unused stuff behind), see [1]. I'll post an update
-so that we can discuss whether we want this particular to stay or not.
-
-> That said, I was also starting to think about how long we will
-> continue to support Jailhouse on 32-bit ARM. We currently have no
-> supported SoC there that comes with an SMMU, and I doubt to see one
-> still showing up. So, Jailhouse on ARM is really just a testing/demo
-> case, maybe useful (but I didn't get concrete feedback) for cleaner
-> collaborative AMP for real-time purposes, without security concerns. I
-> assume 32-bit ARM will never be part of what would be proposed of
-> Jailhouse for upstream.
-
-I guess we all come to the same conclusion...
-
-         M.
-
-[1] 
-https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git/commit/?h=kvm-arm/goodbye&id=0943dd119105b65197adffda52c402cce28da56d
 -- 
-Jazz is not dead. It just smells funny...
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
