@@ -2,86 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 102261659B8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 10:04:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F291D1659BB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 10:04:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4HEfQfz60q+93fY4On1KHzuvDcWbNjXXfieYs8SP7CY=; b=SMPmQ5pBZYPNZ2
-	uoOQcs7l1yLBpDEikfXSf1ca7D38n9szZJ219tXQpg4N95y/DXFP78+PeaXWwCcFgL1VN7C/4SWZG
-	DNUhEf02Cp/NMY+yay30me2tvsoaovOV7pMceQTwrbGD1RVFt1MCqHh6hkN2AwEa+z+xrOcL1A5r8
-	++swAIVw4dgOzldgpqlXk+qoqODe0XQMOWIyAenZSTNQb0+Y1JzW+IylpTqjJDfLKMRSGXRa5X2dJ
-	omcdVHRpTdfve3MR048r2d3KPZy9umfujzLhEPfDoY4vTcphwygqV9Ruy9XuFmZAbrbWTeMpUUQUm
-	O1GEm21mIVy3vDDSCgxA==;
+	List-Owner; bh=TGP2laoJUp7D2N24W1Uq/VRgQwVY7f4Z4i3TJx3JwS0=; b=T0MciJUJsxOat6
+	iGP8tAIEwcEknkJkRzMJlSpsV4LWjJHioEaL0pEiMqg3714+FI+8RZxcWaXxKLNZHxrczP0jn48XE
+	s2+mr7q2bh7mE5KCx/MnuRA0P4nwUTDG1wHJYXeuqrp4uhcYrt/PzfQniM06jNdZpcutpf1FDot3p
+	qGb5bgdXZL289zzZOhhpaT2nkof2KLDkkld6HIgtnokQrDPqkkcMinRu+Sh3hAgTgag8zzd8O13GR
+	gNKg+T6qW5H9ccZDPibrPO1sy4DA+zcfIEqspm6gptev4nYgs91SNQYJZTHRRYFi+5Hx5mWT4giQE
+	rM9bAy5APYVaGMEZTZLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4hkd-0002P5-Su; Thu, 20 Feb 2020 09:04:07 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j4hl2-0002dq-Aj; Thu, 20 Feb 2020 09:04:32 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4hkV-0002Of-7m
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 09:04:00 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e8so3697703wrm.5
+ id 1j4hku-0002dQ-0o
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 09:04:25 +0000
+Received: by mail-lj1-x241.google.com with SMTP id q8so3393008ljb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 01:03:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kMRJMCeq8NZAOuDhnXD2Su6XH/Sug9+vybd1xVTnymM=;
- b=Oy34RglTmxJLtibBbGM0mOjmtCzIfi1VS84tpOVQPStsdzxw9bmDP/ccxGzVt8EqPJ
- QgLiArXg4cjojuSERHhIa8fgsIP1QgM9Y4K2rm2zhkxpu0w437Y9GZmAO3VH0xMokTRz
- k2FKaPRh7wlIh0Y5psMsLLpt9MsedKuXboQgLTepMW028eMy0jzy+79GZyDB5g4hAoJq
- Qx4XnhKsULmuMEOYNSwksD/UxjfS7UUshP7vMMiaZx7nx8msR2ipdxYAbwN4S2EapKrU
- YeQSP1DqMUaFtolcdN9QHhpD0ftXFGsefLviHaerCUre5Vivd3fft/J8fGZIIi8XtGvq
- ygXg==
+ Thu, 20 Feb 2020 01:04:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=EtwFUgXnzMG7xRSPK5ep4NdZQoJPGdlrXdQuPq3LaPs=;
+ b=vT3CEAkG5tcsFFbFsHJmyzP1bPuTG0lGWwl1/VHgibZrTrs+dGGrWXcCh6PlmIp5qj
+ aLgO0RmwGAPNzx4Nlh/SK0OT2bZRl+6Nbo728uQ5K/iZ81592QfwkpdE+20vagx4oR0+
+ eI0H1ro6G/lRK06d1YjZsqpf0VfyEkiY4d2QL659oZeFIX18QVpWALrSOP71+V1A4po0
+ t9o/0o+QOl5vxyAInUQI47v3hxI3qkAfCH4zZlcAh96LBiAHOgoWYyYe8xtZCw5UrOyc
+ S9BoCwWMrdEyXAoa2NPb5Et5PKm+203P6MtFZ6d6P1Vxz2ExgOVAtLusSPRKYp5NqXIP
+ UztQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kMRJMCeq8NZAOuDhnXD2Su6XH/Sug9+vybd1xVTnymM=;
- b=n2WMtzxrxEiHPi8Een7jfJfck0kDcE3jPy5vyakSHI9SePOh9weMNA5zM1D42HAgpv
- zYuB+Wi4Ejs/oIlKbJE6Ehm7QaV6xtIH4Fc4r+/mtNsG4Qpj4cF6vUPK0dw189K/cH+K
- c0hjKKK+5PAGNd3HICa3K+DDXFel02OfT/In2gCgGujGVzrq684vJ5NP8prfBcLm5uBw
- /GFHY4ymKjpuABHv2wlxXbpWGzJxrii/CYJAMuvUfdnkRtoCRNK4+/mjLthMLkJkpS0C
- 3lDIHl+S9DxoJoOv6Ht13W65XjBgvR/28ds4W9Bxl0i78N9WfvrGAcycuY52NpMJXf9t
- nOXg==
-X-Gm-Message-State: APjAAAXNHdHwz5XyjlFUoVqCTvht5JLjflSXrLsn0wZDXrfyzKqIvzgA
- iRHf97wGmfm9V8Qs4egxrIc=
-X-Google-Smtp-Source: APXvYqyCkswrHjGraF8RCaW0bFvKpMzVB9ieAPAAGbQvXepjaII3MJ2D1bNhg/qX3pKIgcJCJ4JAbQ==
-X-Received: by 2002:a5d:5152:: with SMTP id u18mr40578019wrt.214.1582189432341; 
- Thu, 20 Feb 2020 01:03:52 -0800 (PST)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id b21sm3635764wmd.37.2020.02.20.01.03.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 20 Feb 2020 01:03:51 -0800 (PST)
-Date: Thu, 20 Feb 2020 10:03:50 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Daniel Jordan <daniel.m.jordan@oracle.com>
-Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
-Message-ID: <20200220090350.GA19858@Red>
-References: <20200217204803.GA13479@Red>
- <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=EtwFUgXnzMG7xRSPK5ep4NdZQoJPGdlrXdQuPq3LaPs=;
+ b=S3ua1HuTR20M5g6wbkUpW0rSPQSd1kU9F4TQd4l0cY/S9v8fwy3rjTtkn8BMbz9ULD
+ VNGCkRbuT8rUn3usOB4z1HRzFOSR2gknQXBIG6sfiFu5RK5ducb+qYUw5FekCilAKW21
+ Tf5AuaVQkp8N7X7pP9nunIlUVA++6zORKeoT0mY862qgMcACLVuvW0JxlORLfK25fDvl
+ EK1hVITp3ERkh2BpIcS8SpOnv8cB9pr2jveV/gwiUAtLriD0uvUWKNVgdzQud2Rdr4Im
+ YXxRuJpTcdxSQS+Nzy0J9rP+c2XEZI9tPXaLxJAm+AErjQTU6lHR6AcCwV5s7gGhjVwz
+ TmNw==
+X-Gm-Message-State: APjAAAUvhVjU9WjHA0ZMLYlX2uZV0yiqec/BGYpY5Se2kJtm0M96SuN7
+ CbL20siqA7rSObF3KdDdHQIQTA0uk4fEumZWNDGm/g==
+X-Google-Smtp-Source: APXvYqykxTk2UJC6Vt5ZX+50V0sBVT8b6IEsTzEaCbxY0/TQGOpkj5sPXy865IF+LfcUD/8rZA4hCZqDPn22AA/jsNQ=
+X-Received: by 2002:a2e:7d0c:: with SMTP id y12mr19074270ljc.39.1582189462310; 
+ Thu, 20 Feb 2020 01:04:22 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200219143229.18084-1-alexandre.torgue@st.com>
+ <20200219143229.18084-3-alexandre.torgue@st.com>
+In-Reply-To: <20200219143229.18084-3-alexandre.torgue@st.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 20 Feb 2020 10:04:11 +0100
+Message-ID: <CACRpkdZ7uq4U6GBQQQh=pTLf4wW3KfH3Zrz9z_3ZQgoaJD9Ynw@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] pinctrl: stm32: Add level interrupt support to
+ gpio irq chip
+To: Alexandre Torgue <alexandre.torgue@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_010359_304594_47EDE4DD 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20200220_010424_117543_07D8DB89 
+X-CRM114-Status: UNSURE (   7.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,64 +93,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
- linux-crypto@vger.kernel.org, tj@kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Marek Vasut <marex@denx.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 11:35:04AM -0500, Daniel Jordan wrote:
-> Hi Corentin,
-> 
-> On Mon, Feb 17, 2020 at 09:48:03PM +0100, Corentin Labbe wrote:
-> > When running some CI test jobs (targeting crypto tests), I always get the following WARNING:
-> 
-> Can you be more specific about which test triggers this?  I used the config
-> option you mention and failed to reproduce after doing the boot-time crypto
-> tests and running various tcrypt incantations.
-> 
+On Wed, Feb 19, 2020 at 3:32 PM Alexandre Torgue
+<alexandre.torgue@st.com> wrote:
 
-Hello
+> GPIO hardware block is directly linked to EXTI block but EXTI handles
+> external interrupts only on edge. To be able to handle GPIO interrupt on
+> level a "hack" is done in gpio irq chip: parent interrupt (exti irq chip)
+> is retriggered following interrupt type and gpio line value.
+>
+> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+> Tested-by: Marek Vasut <marex@denx.de>
 
-It appears before any user space start. But according to the "Modules linked", probably ghash is already loaded and perhaps tested.
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
-Removing GHASH lead to:
-[    7.920931] ------------[ cut here ]------------
-[    7.920955] WARNING: CPU: 1 PID: 120 at kernel/workqueue.c:1469 __queue_work+0x370/0x388
-[    7.920960] Modules linked in: ccm
+If Marc want to merge it with patch 1/2 go ahead!
 
-And removing CCM lead to
-[    7.798877] ------------[ cut here ]------------
-[    7.798902] WARNING: CPU: 2 PID: 127 at kernel/workqueue.c:1469 __queue_work+0x370/0x388
-[    7.798907] Modules linked in: ctr
+Alternatively I can merge both patches.
 
-So it confirm that the problem is not related to the tested crypto algorithm.
+Thanks to you & Marek for hashing this out, excellent work!
 
-> > [    7.886361] ------------[ cut here ]------------
-> > [    7.886388] WARNING: CPU: 2 PID: 147 at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
-> > [    7.886394] Modules linked in: ghash_generic
-> > [    7.886409] CPU: 2 PID: 147 Comm: modprobe Not tainted 5.6.0-rc1-next-20200214-00068-g166c9264f0b1-dirty #545
-> 
-> I was using just plain next-20200214.  Can't find 166c9264f0b1, what tag/branch
-> were you using exactly?
-> 
-
-The pasted example has some commit to try to debug it.
-But I got the same with plain next (like yesterday 5.6.0-rc2-next-20200219 and tomorow 5.6.0-rc2-next-20200220) and master got the same issue.
-
-But for reproductability on different hardware, I agree it is difficult.
-For the moment, I got it only on Allwinner H5, A64, H6 SoCs and imx8q.
-[    6.611449] ------------[ cut here ]------------
-[    6.613234] WARNING: CPU: 1 PID: 157 at /srv/data/clabbe/linux-next/kernel/workqueue.c:1471 __queue_work+0x324/0x3b0
-[    6.623809] Modules linked in: ghash_generic
-[    6.628101] CPU: 1 PID: 157 Comm: modprobe Not tainted 5.6.0-rc2-next-20200220 #82
-[    6.635710] Hardware name: NXP i.MX8MNano DDR4 EVK board (DT)
-
-I tried amlogic boards and some qemu "virt" without success.
-
-(I have added linux-crypto@vger.kernel.org to the CC)
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
