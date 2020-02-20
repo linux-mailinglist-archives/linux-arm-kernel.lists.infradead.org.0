@@ -2,74 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD04716661B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:19:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27A5B166623
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:23:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HT22VpDFG8i9Mb8aubCz0Kt6HveIYEHrSokRSV+P72I=; b=k77UyK67COy6EX
-	lH/ZTaKIpF04hrKMdTLYbyUZmxXDoGh5AeT8VoMnwDXQByircHFFk08aLbKfv7/ZZy2IDUta0xhYY
-	pr1q4MmgI41dmvj0AedwXtiN9eDz3YgFhIBS69Nv+Q5QYZYhntklDVK9o0w9Xyh59EYNT3p/0KyM8
-	gb7vBUKsv547+A9rCh55f+kPRohtzQ7VKv4PpjD4y3pzkM2/AYVwwWdICgNbJ4llQ7SyphJzb5fjp
-	KqHQyAaWAk5+g7a07x2gCTKV3tWYCLVF9zz24h0hoouikHGpViQqxhhxB4RtDw9rsAX34i9Xmh/FL
-	WSgDo7VhwV8wrZT4NIWw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6ysaaUXWLPImJ63+nUd5vvWz3NREhE6cH5hxQmvHNbY=; b=Z/dNalG6P84GFI
+	dl1KBieLYVFaU+hB8PRlGGM62+9az7aZXIT6i+mf+O6RV1yL4DhZdpHL4nqntcjoPmElY1lGcPHZy
+	JkeiVK5md6ljnGFqWRhbECElgib27agtci1FWNwt0Go62DsXyJrxUGpChmrLD2oiw3QTMScARwDM7
+	w3tlyJ5ElUXfBghHEy+CtfCCP5OAJOY93VtURkDzxPUhfo+r66ZBQ3hf3vKwma6j390i9VS6hAl5l
+	AxJq7rtNqTNQGyfKxKMzJXqvjk1RWPoCibqYbdh5D7XEpwZvYzCb4JdrzWtGiPifTJvpFpZsnF6aR
+	U1tTIyx2MoSUie/lWQeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4qQG-00047u-E6; Thu, 20 Feb 2020 18:19:40 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1j4qTU-0005tF-4O; Thu, 20 Feb 2020 18:23:00 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4qPy-00040x-Ox
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:19:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=1KiLvVtdTJR08lV/a34E5gQuMJ2KUL9LQ6F89vXsum0=; b=zp9UMwZdckhNFcCl8erkEJXK9
- 5tIcna2TJdIQFd8JU2hRRsOEpFKGz1GqKM3w270neVuhiPBlCj1GWZWMo2nTIrv93zEEJx9mc1ttu
- uX8XzuYd0PLXSF3hLiVSnkwIxGPcn3xSb16zAi6rB/oeotzKathridIKV8n97g1XVePisctZn1T4e
- sFQxPBEo1xZUZzmNgGDUfSAcWtQv1jGefwoAgkq2JYfy+Xh5EBzaXtOnW7cLbQDSzYwWn/tOHjai4
- y9egWVNm5mfDx9Q9E/xinXsAbyY/5iYRuU/QNxuUJm0UsP2whRIwz8+moZn21m/SDqiPYBomi140F
- y3fiTvylw==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:54628)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j4qPq-0004se-4M; Thu, 20 Feb 2020 18:19:14 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j4qPo-0002jJ-1o; Thu, 20 Feb 2020 18:19:12 +0000
-Date: Thu, 20 Feb 2020 18:19:12 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [REGRESSION] gpio hogging fails with pinctrl gpio drivers
-Message-ID: <20200220181911.GD25745@shell.armlinux.org.uk>
-References: <20200206173247.GX25745@shell.armlinux.org.uk>
- <CACRpkdbzjBnaeXJg3XvZ6G2FdtQQa0u7MPy9bgN-uo-F1vSpbQ@mail.gmail.com>
- <CAHQ1cqFeMKrb-MxnifVJXfGciQH8wsjS1dSSeTTc0R06jLT+Cw@mail.gmail.com>
+ id 1j4qTL-0005sk-Mo
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:22:53 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01KIMSYg068103;
+ Thu, 20 Feb 2020 12:22:28 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1582222948;
+ bh=K5dPu3+Wa7CxKbU5shKv6WcPAdBvfaqlk76SVCdHdLA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=l0M0ZVSv3fmfMS9j84mE8lFOURm3UA0yk69gHqQocp+dURS2y8WzJ7wefa+JZ3r6h
+ Zm1UAWCanpIgV89obYfddTMQ1IV1OVIPpzf0e1wfh4cD4NN2mZBsj+NLmFgA//Rgo4
+ ikfFFtZjBcSv/8X0vbpbrdV8Hk+XNV6a/8s7ZMUg=
+Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01KIMSfh002895
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 20 Feb 2020 12:22:28 -0600
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 20
+ Feb 2020 12:22:28 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 20 Feb 2020 12:22:28 -0600
+Received: from [10.250.77.18] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01KIMRVw100737;
+ Thu, 20 Feb 2020 12:22:27 -0600
+Subject: Re: omap-secure.c:undefined reference to `__arm_smccc_smc'
+To: Tony Lindgren <tony@atomide.com>
+References: <202002131856.VeW4PhBJ%lkp@intel.com>
+ <20200220155429.GH37466@atomide.com>
+ <55ddcd29-ed8b-529e-dd54-cbac5cf74e42@ti.com>
+ <20200220162012.GI37466@atomide.com>
+ <d7b685b6-16a2-3743-1786-a5240726ed9c@ti.com>
+ <20200220163703.GK37466@atomide.com> <20200220171305.GL37466@atomide.com>
+ <281e895b-720d-5bab-63cf-8b3e389dc767@ti.com>
+ <20200220175744.GQ37466@atomide.com> <20200220181141.GR37466@atomide.com>
+From: "Andrew F. Davis" <afd@ti.com>
+Message-ID: <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
+Date: Thu, 20 Feb 2020 13:22:27 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHQ1cqFeMKrb-MxnifVJXfGciQH8wsjS1dSSeTTc0R06jLT+Cw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200220181141.GR37466@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_101922_829149_F44F7D06 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_102251_829471_A34157A5 
+X-CRM114-Status: GOOD (  20.54  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,68 +98,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Peter Rosin <peda@axentia.se>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Marc Zyngier <maz@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 09:28:14AM -0800, Andrey Smirnov wrote:
-> On Thu, Feb 20, 2020 at 12:18 AM Linus Walleij <linus.walleij@linaro.org> wrote:
-> >
-> > On Thu, Feb 6, 2020 at 6:33 PM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> >
-> > > It seems that sometime between 4.20 and 5.5, something has broken the
-> > > ability to specify gpio-hogs in DT for GPIOs that are written around
-> > > pinctrl drivers.
-> > (explanation that makes perfect sense)
-> > > Consequently, adding a gpio-hog to DT for this driver results in the
-> > > driver endlessly returning -EPROBE_DEFER.
-> >
-> > I suspect this is sx150x-specific and suspect these two commits:
-> >
-> > 1a1d39e1b8dd pinctrl: sx150x: Register pinctrl before adding the gpiochip
-> > b930151e5b55 pinctrl: sx150x: Add a static gpio/pinctrl pin range mapping
-> >
-> > I suppose people weren't using hogs very much with the sx150x and
-> > it didn't turn up in testing so far.
-> >
-> > I don't think for example pinctrl-stmfx.c has this problem, as it registers
-> > the pin ranges from the device tree as part of the core code.
-> > But other drivers calling gpiochip_add_pin_range() may be experiencing
-> > this.
-> >
-> > Peter/Andrey, do you have some idea? Have you tested this usecase (hogs)
-> > with the sx150x?
-> >
+On 2/20/20 1:11 PM, Tony Lindgren wrote:
+> * Tony Lindgren <tony@atomide.com> [200220 17:58]:
+>> * Andrew F. Davis <afd@ti.com> [200220 17:39]:
+>>> On 2/20/20 12:13 PM, Tony Lindgren wrote:
+>>>> * Tony Lindgren <tony@atomide.com> [200220 16:37]:
+>>>>> * Andrew F. Davis <afd@ti.com> [200220 16:24]:
+>>>>>> On 2/20/20 11:20 AM, Tony Lindgren wrote:
+>>>>>>> * Andrew F. Davis <afd@ti.com> [200220 16:04]:
+>>>>>>>> On 2/20/20 10:54 AM, Tony Lindgren wrote:
+>>>>>>>>> Andrew,
+>>>>>>>>>
+>>>>>>>>> * kbuild test robot <lkp@intel.com> [200213 10:27]:
+>>>>>>>>>> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git master
+>>>>>>>>>> head:   0bf999f9c5e74c7ecf9dafb527146601e5c848b9
+>>>>>>>>>> commit: c37baa06f8a970e4a533d41f7d33e5e57de5ad25 ARM: OMAP2+: Fix undefined reference to omap_secure_init
+>>>>>>>>>> date:   3 weeks ago
+>>>>>>>>>> config: arm-randconfig-a001-20200213 (attached as .config)
+>>>>>>>>>> compiler: arm-linux-gnueabi-gcc (GCC) 7.5.0
+>>>>>>>>>> reproduce:
+>>>>>>>>>>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>>>>>>>>>>         chmod +x ~/bin/make.cross
+>>>>>>>>>>         git checkout c37baa06f8a970e4a533d41f7d33e5e57de5ad25
+>>>>>>>>>>         # save the attached .config to linux build tree
+>>>>>>>>>>         GCC_VERSION=7.5.0 make.cross ARCH=arm 
+>>>>>>>>>>
+>>>>>>>>>> If you fix the issue, kindly add following tag
+>>>>>>>>>> Reported-by: kbuild test robot <lkp@intel.com>
+>>>>>>>>>>
+>>>>>>>>>> All errors (new ones prefixed by >>):
+>>>>>>>>>>
+>>>>>>>>>>    arch/arm/mach-omap2/omap-secure.o: In function `omap_smccc_smc':
+>>>>>>>>>>>> omap-secure.c:(.text+0x94): undefined reference to `__arm_smccc_smc'
+>>>>>>>>>
+>>>>>>>>> Have you looked at this one? Looks like there's still an unhandled
+>>>>>>>>> randconfig build case.
+>>>>>>>>>
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> I've had a quick look, all the ARM config does:
+>>>>>>>>
+>>>>>>>> select HAVE_ARM_SMCCC if CPU_V7
+>>>>>>>>
+>>>>>>>> so I don't think this will happen in any real config, but if we want to
+>>>>>>>> prevent randconfig issue this we could force ARCH_OMAP2PLUS to "depend"
+>>>>>>>> on it.
+>>>>>>>
+>>>>>>> Seems to happen at least with omap2 only config where we don't have
+>>>>>>> CPU_V7. Something like below seems to fix it.
+>>>>>>>
+>>>>>>> If that looks OK to you, I'll send out a proper fix.
+>>>>>>>
+>>>>>>
+>>>>>>
+>>>>>> This looks fine to me.
+>>>>>>
+>>>>>> A better later fix might be to later stub out the actual __arm_smccc_smc
+>>>>>> in common code if CONFIG_HAVE_ARM_SMCCC is not set, so any platform will
+>>>>>> get the fix.
+>>>>>
+>>>>> Yeah seems that might be better. Adding Aaro and Marc to Cc.
+>>>>
+>>>> But if we can in theory have some arm11 machine with smccc, then this
+>>>> local ifdef below is probably the way to go.
+>>>>
+>>>
+>>> If the machine has SMCCC then it will also have the
+>>> CONFIG_HAVE_ARM_SMCCC set and so nothing would change.
+>>
+>> Hmm yeah good point.
 > 
-> Haven't done any GPIO hogging on sx150x, unfortunately. My use-cases were:
+> So the patch below seems like the way to go then. Anybody have issues
+> with the patch below?
 > 
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/vf610-zii-dev-rev-c.dts
+> Regards,
 > 
-> and
+> Tony
 > 
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-> 
-> which didn't have any hogs so far (there's a chance Russell is using
-> the former for his experiments, so maybe that'll change). I don't any
-> useful input on this regression, sorry. I do have Rev C. board readily
-> available, so I can provide Tested-by's if I am CC'd on fixes.
+> 8< -------------------------
+> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> --- a/include/linux/arm-smccc.h
+> +++ b/include/linux/arm-smccc.h
+> @@ -121,6 +121,7 @@ struct arm_smccc_quirk {
+>  	} state;
+>  };
+>  
+> +#ifdef CONFIG_HAVE_ARM_SMCCC
+>  /**
+>   * __arm_smccc_smc() - make SMC calls
+>   * @a0-a7: arguments passed in registers 0 to 7
+> @@ -137,6 +138,14 @@ asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
+>  			unsigned long a2, unsigned long a3, unsigned long a4,
+>  			unsigned long a5, unsigned long a6, unsigned long a7,
+>  			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
+> +#else
+> +static inline void __arm_smccc_smc(unsigned long a0, unsigned long a1,
+> +			unsigned long a2, unsigned long a3, unsigned long a4,
+> +			unsigned long a5, unsigned long a6, unsigned long a7,
+> +			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk)
+> +{
 
-The ZII dev rev C is where I had the hog as a means of kicking the
-88x3310 PHY out of reset.
 
-I've now converted it to a proper MDIO bus-level reset, so I no
-longer have the hog, and I no longer care about the regression - but
-that's not to say it shouldn't be fixed, as the code is wrong.
+Maybe a warning? If you do not have SMC on your platform but are still
+making SMC calls then something is broken and it looks like it would
+fail silently here.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Andrew
+
+
+> +}
+> +#endif
+>  
+>  /**
+>   * __arm_smccc_hvc() - make HVC calls
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
