@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA61C16558A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 04:18:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE4FF165592
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 04:22:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V8nZJLP5E7dC5D3Puzcv3a9y3e9nfOK4kdMWpa2b+3g=; b=PNFcpsZ2VhpV91IwzrbP90edg
-	i0boSahlC6Edtgkard3GomJFK48khI3O1viwQfeTly8HFu25JZOu9OcHcNV1DgQcGjnjaAogg36As
-	ZAC0b8yAihlbsCqktrF+7SquVUmBnjqqWzGuQOEuRJnaZeMM1fK2x2cRf41XK4dGGdgoEGqQS7v1q
-	HyH1ONJjgQjl0Aqdi/ARFaAwy2s3FglWFKvJYRvUl2dumOruhlIyoW1FafThHL8zev3Y4jPIOkmbN
-	Ybuxgs6P5y0Jx8afKHTh12t4PyDIA7fwvO6JVmMMxjgNF8i6qdRiaSZnxxSu6Yq3hNjXfwYQJ/f7T
-	uTBsdLSXg==;
+	 bh=L/iDIxWtjSB++w+QdZP0S6j+MOJSFhqIxKekmLTdMqQ=; b=LVDF7sODUfM5y5ASRTvlMk6TP
+	7DlQDWkbTQYRYXi645ASl1Z92FcgV5UeC+BjDKRtHsFDoDop3Nr2X5VqNVdDV8anlCXiClYFgwSku
+	x+BimNBa9aufq7IOgEMM8RkvaHUVCyI28OZD0Aj3CQrNT/ogLXEcrBLmC4nd1ps+BSphwCSReNjI2
+	338TgSsmgQxuzKJSsSILCK+SSJnhLO2UcdIExk5c+kMev8NN6h4idNe/6C+Yviw9mgoUJ5tPcItEf
+	8KrJJJXofa12xOpb5rNEF5Vt72dpkg9Pq3HSzNEJDc9IEbHJ5sdJXWyl1esAZT6yY1w+lsg7S5MZO
+	CSX+n4Qfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4cLs-00007A-1i; Thu, 20 Feb 2020 03:18:12 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1j4cPf-0001ix-4O; Thu, 20 Feb 2020 03:22:07 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4cLj-00006G-J8
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 03:18:04 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 4EA016CB1DDE32654D92;
- Thu, 20 Feb 2020 11:17:57 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS402-HUB.china.huawei.com
- (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Thu, 20 Feb 2020
- 11:17:49 +0800
-Subject: Re: [PATCH v4 04/20] irqchip/gic-v4.1: Map the ITS SGIR register page
+ id 1j4cPW-0001hY-Mq
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 03:22:00 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 8EB969452846FC500A28;
+ Thu, 20 Feb 2020 11:21:52 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Thu, 20 Feb 2020
+ 11:21:44 +0800
+Subject: Re: [PATCH v4 05/20] irqchip/gic-v4.1: Plumb skeletal VSGI irqchip
 To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>
 References: <20200214145736.18550-1-maz@kernel.org>
- <20200214145736.18550-5-maz@kernel.org>
+ <20200214145736.18550-6-maz@kernel.org>
 From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <154bd918-de16-e810-d10d-e7642e340415@huawei.com>
-Date: Thu, 20 Feb 2020 11:17:47 +0800
+Message-ID: <b1053b00-721a-cfd3-8f2f-04c674490121@huawei.com>
+Date: Thu, 20 Feb 2020 11:21:43 +0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <20200214145736.18550-5-maz@kernel.org>
+In-Reply-To: <20200214145736.18550-6-maz@kernel.org>
 Content-Language: en-US
 X-Originating-IP: [10.173.222.27]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_191803_806788_A0B9E1C4 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20200219_192158_914939_105FE4F6 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,18 +79,18 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+
+
 On 2020/2/14 22:57, Marc Zyngier wrote:
-> One of the new features of GICv4.1 is to allow virtual SGIs to be
-> directly signaled to a VPE. For that, the ITS has grown a new
-> 64kB page containing only a single register that is used to
-> signal a SGI to a given VPE.
+> Since GICv4.1 has the capability to inject 16 SGIs into each VPE,
+> and that I'm keen not to invent too many specific interfaces to
+> manupulate these interrupts, let's pretend that each of these SGIs
+manipulate?
+
+> is an actual Linux interrupt.
 > 
-> Add a second mapping covering this new 64kB range, and take this
-> opportunity to limit the original mapping to 64kB, which is enough
-> to cover the span of the ITS registers.
-
-Yes, no need to do ioremap for the translation register.
-
+> For that matter, let's introduce a minimal irqchip and irqdomain
+> setup that will get fleshed up in the following patches.
 > 
 > Signed-off-by: Marc Zyngier<maz@kernel.org>
 
