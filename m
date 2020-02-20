@@ -2,99 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5F08165386
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 01:25:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FD1A1653AE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 01:38:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=n+Qukg2brRwKU2b8RJIupkggKYcs+CSI6gFMBMkNE4g=; b=SNmfLzw77hwLqA9Re7ndno/LTI
-	6GI+PXVZ69wZP+AZGXY1EzKgNerQvbviE5J+8wDp7lLkUf5T7vwIC0kF9db8QVF/SrQroGLpZSzSL
-	FZh1r6+KKxguId1lhNKBCI8C+ZxebWIN/C0L6IIjSt6o7cTtb/jYFk5U30MbQaTJcDKCqTzT0FVY4
-	gIxI58fI6nbFbjYQeDXJ9B9SdYTxrIXZfZrAI3v/GFhbVKCzkSgXg76ZeopoCGtqrg1JI2ddcrL4j
-	g7TfjfHgcNeEruoNUE4XUaQLxTk1sCJeOf6hoYnAKhgykCPFH9wVMcchvvnYx3wNvdif3oDMTGTdh
-	+wV8OIPQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jKUcJtVjZeHHdrNX+F2SDHSFdhkAA/3wOMVYLKOit4s=; b=TeqK3Fs7c47szb
+	Inl7BFQndwLS8/Scrh9mI0OLZu3X4WaxxH+hymktNX36MqJPeTlyINTgRMJgTqWRPF5ayJ98dMyf/
+	YRInW5ZPKR0Brs9G709hO/p0wSBB9/R6KN6EBM/BG0Z5OUroOYDFzb4jP/OKQMrBBRpZ3rsEdYDCd
+	f9fB0Pm1eXA9huez5ZzPz2VA7CgkHhs45IUEEJ+cp+91AE0nSD81dpAhuJ0bzKLkBElP/Vc5ssFQ+
+	K17LLHIPR+9aL8IG7Ee9ZU9WyyyT4pY5O1zsTkice7YDZ8XvOe46x+wFHzFT+/488Sc52quttnx/X
+	V0Av6KvzA/+e/hy5fSWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Zeq-0007bx-SL; Thu, 20 Feb 2020 00:25:36 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1j4Zqy-0003bU-45; Thu, 20 Feb 2020 00:38:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Zeh-0007ak-Dx
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 00:25:28 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id C38167403;
- Wed, 19 Feb 2020 19:25:19 -0500 (EST)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 19 Feb 2020 19:25:19 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to
- :subject:content-type; s=fm2; bh=ETRepjY32Q6DdRrxXYMas4ZgO/c7BVj
- rXiFe89IwJKw=; b=p9J2m3z/kladxjeMWX8wh1ouyA0ceWph0+WnH+NhjtnfEeI
- NcfLYlB+3Gd5scBDnF4pNkG70Hvk0Aq2Xbsja9lSdgclRNH3Q1IXE3zQ/HAPn13E
- Jtdbv9q8Eyd6sduZ5Nikr1Qj4rFhaICRq2IXfKwMvnRHUSRENaBY7H4YHQMrXO3p
- WSgUiYAGK0UY4FUPvtH5TtyHEtlBTfhWGlHg5bEQTKiBqlkQl78Qbs12iS4skVZ4
- f4iHJJI4HyiDOV8Vp77CUlQq+bCW82O9sCuAbQMpAQXavLDvIcRuAB8MFXc+OmHk
- XqTBeysh98nLodGdr9X3f05Y5CGU7rvmBQH4Lcw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ETRepj
- Y32Q6DdRrxXYMas4ZgO/c7BVjrXiFe89IwJKw=; b=ytqVAfavlMnvH1MsgcwdhE
- t0Snl9wKxDCotuyyHSgv6cn6qyA8z7q8M5NgMyfJU+C8N3GNfAAfFN+971V3hgfD
- MGJ0yghLia39Zn9JiHU2fFlowACvcKcTDhRqYEe7D57y44SKpDgIUhN1bTa99tMO
- 58UM8EPpyyEje+4dLzBdUucDfr8pxFRy5kvwnP0DKVoCsGRZBbgvdIVfoue0YO0C
- /xU8uUma99ch+E2P20pf9HYSwOkWkJPX0mXKrHuu0a/CLXoeaqX/rSjWDEd8tYXg
- FdXXJtOfPrZ0VaUV16bmnJwd2u9wfjC7fupRHd7pXPXyvlrBo8G6CbRg+Oxj0msQ
- ==
-X-ME-Sender: <xms:7dFNXvGKlglqhK7rOkbCc3Qxdwndl-SFwTFYOFU2x3w6aBkRtUaZtQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedugddvfecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
- htvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
- rdhiugdrrghu
-X-ME-Proxy: <xmx:7dFNXoicFFnJWcyHIGoMYTJmX6Ycak3ABe0OYetg8OOixGZtbgakVg>
- <xmx:7dFNXkCMZyrTWAx8td5AD_q6nrgrlKDtqdkKBNAdMCTo51SV3DUnpg>
- <xmx:7dFNXrs5HL2rX_aOsn3wsELb9FJyYFbrE3HFPUhQNxkr1yl_4frShQ>
- <xmx:79FNXuMwKCHMcz5a5RN-_EenwnMdLv21wKCP8EQ5HlRq4NmtnVGOWA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id E3BD2E00B2; Wed, 19 Feb 2020 19:25:16 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-802-g7a41c81-fmstable-20200203v1
-Mime-Version: 1.0
-Message-Id: <5d295199-d0d7-4d58-be29-4621738d7f28@www.fastmail.com>
-In-Reply-To: <20200218031315.562-1-rentao.bupt@gmail.com>
-References: <20200218031315.562-1-rentao.bupt@gmail.com>
-Date: Thu, 20 Feb 2020 10:55:10 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Tao Ren" <rentao.bupt@gmail.com>, "Felipe Balbi" <balbi@kernel.org>,
- "Greg Kroah-Hartman" <gregkh@linuxfoundation.org>,
- "Joel Stanley" <joel@jms.id.au>,
- "Benjamin Herrenschmidt" <benh@kernel.crashing.org>,
- "Chunfeng Yun" <chunfeng.yun@mediatek.com>,
- "Colin King" <colin.king@canonical.com>,
- "Stephen Boyd" <swboyd@chromium.org>, "Rob Herring" <robh+dt@kernel.org>,
- "Mark Rutland" <mark.rutland@arm.com>, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- openbmc@lists.ozlabs.org, "Tao Ren" <taoren@fb.com>
-Subject: Re: [PATCH v3 0/5] aspeed-g6: enable usb support
+ id 1j4Zqp-0003b6-Os
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 00:38:01 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DC03524672
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 00:37:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582159079;
+ bh=wVkJ6ZeLNIZiy6+11L33texKMe0DidKfbB80UOC5yMU=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=JvX8juVh7tpKnAmn/OnSmnaV1SywCv8p99C7KMYuMuHchY1f3H9mbVcavJ5WDnIDx
+ fd+LRfCcjhWysTgGbamLuebqnSq3BvPmfgPMFn0qDXokqCkHRWDJPwS+cfv2x5o2Ex
+ chnRTRGQGmTzPo9HAVCm/o/09yN/GqdL8fcXlZ7E=
+Received: by mail-qk1-f173.google.com with SMTP id b7so2008562qkl.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 16:37:58 -0800 (PST)
+X-Gm-Message-State: APjAAAW31ok/hjgF4shE9ikObV7yU1MXLheV+nMLhcb8flARsX7ghPLV
+ qkRM80U5QNfTrIz9pkYuzwc/YrKK6iCcDlKAYg==
+X-Google-Smtp-Source: APXvYqxK/YCRP+U9ZJ5s6W0p8TrvM7fN8CRsbqJZJ6kYIYqE9CGU40AmveoZ5T5GaZM7MUrQWu/w4Dbohg3zeMtMQ3A=
+X-Received: by 2002:ae9:f205:: with SMTP id m5mr26414050qkg.152.1582159078007; 
+ Wed, 19 Feb 2020 16:37:58 -0800 (PST)
+MIME-Version: 1.0
+References: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
+ <1582097265-20170-2-git-send-email-peng.fan@nxp.com>
+ <20200219140921.GA7031@bogus>
+ <AM0PR04MB44814713955807D7BB3E2CD088100@AM0PR04MB4481.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB44814713955807D7BB3E2CD088100@AM0PR04MB4481.eurprd04.prod.outlook.com>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 19 Feb 2020 18:37:46 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJWzax7eAc=qzWiSWtNtDuSyZ9OsnZ_rZNBSUgOQ7+fiQ@mail.gmail.com>
+Message-ID: <CAL_JsqJWzax7eAc=qzWiSWtNtDuSyZ9OsnZ_rZNBSUgOQ7+fiQ@mail.gmail.com>
+Subject: Re: [PATCH 1/9] dt-bindings: remoteproc: Convert imx-rproc to
+ json-schema
+To: Peng Fan <peng.fan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_162527_618596_6DEBCE42 
-X-CRM114-Status: GOOD (  10.00  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200219_163759_850461_32A08DF7 
+X-CRM114-Status: GOOD (  15.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,34 +89,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "ohad@wizery.com" <ohad@wizery.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Feb 19, 2020 at 8:34 AM Peng Fan <peng.fan@nxp.com> wrote:
+>
+> Hi Rob,
+>
+> > Subject: Re: [PATCH 1/9] dt-bindings: remoteproc: Convert imx-rproc to
+> > json-schema
+> >
+> > On Wed, 19 Feb 2020 15:27:37 +0800, peng.fan@nxp.com wrote:
+> > > From: Peng Fan <peng.fan@nxp.com>
+> > >
+> > > Convert the i.MX remoteproc binding to DT schema format using
+> > > json-schema
+> > >
+> > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > > ---
+> > >  .../devicetree/bindings/remoteproc/imx-rproc.txt   | 33 ------------
+> > >  .../devicetree/bindings/remoteproc/imx-rproc.yaml  | 61
+> > > ++++++++++++++++++++++
+> > >  2 files changed, 61 insertions(+), 33 deletions(-)  delete mode
+> > > 100644 Documentation/devicetree/bindings/remoteproc/imx-rproc.txt
+> > >  create mode 100644
+> > > Documentation/devicetree/bindings/remoteproc/imx-rproc.yaml
+> > >
+> >
+> > My bot found errors running 'make dt_binding_check' on your patch:
+>
+> My command:
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/remoteproc/imx-rproc.yaml
+>
+> and output:
+>
+>   CHKDT   Documentation/devicetree/bindings/remoteproc/imx-rproc.yaml
+>   SCHEMA  Documentation/devicetree/bindings/processed-schema.yaml
+>   DTC     Documentation/devicetree/bindings/remoteproc/imx-rproc.example.dt.yaml
+>   CHECK   Documentation/devicetree/bindings/remoteproc/imx-rproc.example.dt.yaml
 
+Make sure dtschema is up to date though I'm not sure this could have
+ever passed. 'items' value is clearly wrong.
 
-On Tue, 18 Feb 2020, at 13:43, rentao.bupt@gmail.com wrote:
-> From: Tao Ren <rentao.bupt@gmail.com>
-> 
-> The patch series aims at enabling USB Host and Gadget support on AST2600
-> platforms.
-> 
-> Patch #1 replaces hardcoded vhub port/endpoint number with device tree
-> properties, so that it's more convenient to add support for ast2600-vhub
-> which provides more downstream ports and endpoints.
-
-Ah, something I should have mentioned on the previous series is you'll need
-to update the binding documentation with the new properties.
-
-> 
-> Patch #2 enables ast2600 support in aspeed-vhub usb gadget driver.
-
-Also need to add the 2600 support to the dt binding document.
-
-Looks good to me otherwise.
-
-Andrew
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
