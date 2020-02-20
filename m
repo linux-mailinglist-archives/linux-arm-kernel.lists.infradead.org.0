@@ -2,62 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42B9E165E14
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 14:02:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE78D165E3F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 14:07:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JUKah+L9LpRwOmappvTxsan6sEhAZX8gWmHhjhdbYsI=; b=ZUexlWjWc35Jbg
-	nhqyvwPHVUkU812ieU0+rkUF9q9yT4TWUVnbLh6XGWsBB8l5KwacrUfvcfdFdjcAQmR5BDEhvSez5
-	octQIveWMkHP2l2t/pr12hkktHof4XlFjy60xyhsh5GOOS1O5jIPE8cGPZLinzPjpP5mMshrwWuuX
-	jijQlmrirr6jrN9hx4Q451JvIV3hUIsBdM8OT3cumy0fXOUOAg7yOiKxAs8K9SVjdfm+MYeAuZbHo
-	vQ4lh8YoPhAx2aN1NxGued0/wf0Zup8ey5aTCqHXdhN83YmroG0jE8/Yz2ObB9y3ySmLxIGH10grN
-	UoHGhIJ8ZY7PRtFMkkwQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MUhrzEzZEVbPCptPXHtJ1peirwwb2St1aiZ6jrbhd1w=; b=OW11/GaxUpUJ1A
+	8yxcS/mSpEUaHQyaCWKvlMe1bymoqW9flIJbMDIwwzsBpwDXYJtAX0vN6QbBjjnJgY7dPCf0qwYfU
+	BnLfHXBzQQPUqD4q33emjcp2kWWt2k0l9wilRu1yvXI3n7ZsIxXxmL9Jj9ZbqbxoPFLZAu3Oygagx
+	m+L+ZudMmJC/bQO2gdOIGVaiEMhA+NOFnbPYRHDfWG6ogOTl9AvV9LSifY598pNGY27JikUE3S/yi
+	gJtdZqmFU51cVatoGJDKpRDamfdfsn48IHZ3tz8mm9lmouqFSXAyL+LtW06c1ShDsTNqfSaicPT0j
+	PCwh/aI9I4Ib/VNux+aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4lTS-0003Ip-LK; Thu, 20 Feb 2020 13:02:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4lTK-0003Hl-A5
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 13:02:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8924D31B;
- Thu, 20 Feb 2020 05:02:27 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F05B53F703;
- Thu, 20 Feb 2020 05:02:26 -0800 (PST)
-Date: Thu, 20 Feb 2020 13:02:22 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [arm64, debug] PTRACE_SINGLESTEP does not single-step a valid
- instruction
-Message-ID: <20200220130222.GA28634@lakrids.cambridge.arm.com>
-References: <1eed6d69-d53d-9657-1fc9-c089be07f98c@linaro.org>
- <20191118131525.GA4180@willie-the-truck>
- <b3a9ae7e-8a45-7c14-7bc6-1d3b62728a0c@linaro.org>
- <307ece3d-4e9d-21c4-0abf-9f4f3b313e74@linaro.org>
- <82cb3dea-db82-1c71-3b08-957102b85c93@linaro.org>
- <20200213120115.GD1405@willie-the-truck>
+	id 1j4lYE-0005Ek-9a; Thu, 20 Feb 2020 13:07:34 +0000
+Received: from mga02.intel.com ([134.134.136.20])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4lY5-0004sa-Bi
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 13:07:26 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 20 Feb 2020 05:05:23 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,464,1574150400"; d="scan'208";a="283399590"
+Received: from linux.intel.com ([10.54.29.200])
+ by FMSMGA003.fm.intel.com with ESMTP; 20 Feb 2020 05:05:21 -0800
+Received: from [10.125.252.166] (abudanko-mobl.ccr.corp.intel.com
+ [10.125.252.166])
+ by linux.intel.com (Postfix) with ESMTP id 253CC580472;
+ Thu, 20 Feb 2020 05:05:12 -0800 (PST)
+Subject: Re: [PATCH v5 01/10] capabilities: introduce CAP_PERFMON to kernel
+ and user space
+From: Alexey Budankov <alexey.budankov@linux.intel.com>
+To: Thomas Gleixner <tglx@linutronix.de>, Stephen Smalley
+ <sds@tycho.nsa.gov>, Serge Hallyn <serge@hallyn.com>,
+ James Morris <jmorris@namei.org>
+References: <875zgizkyk.fsf@nanos.tec.linutronix.de>
+ <7d6f4210-423f-e454-3910-9f8e17dff1aa@linux.intel.com>
+Organization: Intel Corp.
+Message-ID: <95aa57e6-4d78-39df-386c-a98734f19777@linux.intel.com>
+Date: Thu, 20 Feb 2020 16:05:11 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200213120115.GD1405@willie-the-truck>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <7d6f4210-423f-e454-3910-9f8e17dff1aa@linux.intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_050230_441901_68BAA9B8 
-X-CRM114-Status: GOOD (  27.39  )
+X-CRM114-CacheID: sfid-20200220_050725_449971_74D3AA7F 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [134.134.136.20 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,160 +78,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Luis Machado <luis.machado@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Paul Mackerras <paulus@samba.org>, Jiri Olsa <jolsa@redhat.com>,
+ Alexei Starovoitov <alexei.starovoitov@gmail.com>,
+ Andi Kleen <ak@linux.intel.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Igor Lubashev <ilubashe@akamai.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Robert Richter <rric@kernel.org>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Stephane Eranian <eranian@google.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Andy Lutomirski <luto@amacapital.net>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will, Luis,
-
-On Thu, Feb 13, 2020 at 12:01:16PM +0000, Will Deacon wrote:
-> Sorry for the very slow reply. I talked to Mark about this a bit but it
-> seems that we never followed up here.
-> 
-> On Tue, Dec 10, 2019 at 05:00:18PM -0300, Luis Machado wrote:
-> > Do you have any input regarding this particular situation?
-> > 
-> > It would be nice to get this fixed before the release of another GDB
-> > version, if the fix is to live in GDB itself.
-> 
-> Basically, I'm very nervous about fixing this in the kernel because
-> whatever we do will be visible to userspace. On the other hand, this
-> part of the ptrace interface is only seriously used by GDB and we should
-> make sure that it works well.
-> 
-> Does the diff below solve the problem? If so, can you confirm that it
-> doesn't appear to regress anything else for GDB?
-> 
-> Cheers,
-> 
-> Will
-
-> 
-> --->8
-> 
-> diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
-> index 7619f473155f..d825e3585e28 100644
-> --- a/arch/arm64/include/asm/debug-monitors.h
-> +++ b/arch/arm64/include/asm/debug-monitors.h
-> @@ -109,6 +109,8 @@ void disable_debug_monitors(enum dbg_active_el el);
->  
->  void user_rewind_single_step(struct task_struct *task);
->  void user_fastforward_single_step(struct task_struct *task);
-> +void user_regs_reset_single_step(struct user_pt_regs *regs,
-> +				 struct task_struct *task);
->  
->  void kernel_enable_single_step(struct pt_regs *regs);
->  void kernel_disable_single_step(void);
-> diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-> index 48222a4760c2..7569deb1eac1 100644
-> --- a/arch/arm64/kernel/debug-monitors.c
-> +++ b/arch/arm64/kernel/debug-monitors.c
-> @@ -141,17 +141,20 @@ postcore_initcall(debug_monitors_init);
->  /*
->   * Single step API and exception handling.
->   */
-> -static void set_regs_spsr_ss(struct pt_regs *regs)
-> +static void set_user_regs_spsr_ss(struct user_pt_regs *regs)
->  {
->  	regs->pstate |= DBG_SPSR_SS;
->  }
-> -NOKPROBE_SYMBOL(set_regs_spsr_ss);
-> +NOKPROBE_SYMBOL(set_user_regs_spsr_ss);
->  
-> -static void clear_regs_spsr_ss(struct pt_regs *regs)
-> +static void clear_user_regs_spsr_ss(struct user_pt_regs *regs)
->  {
->  	regs->pstate &= ~DBG_SPSR_SS;
->  }
-> -NOKPROBE_SYMBOL(clear_regs_spsr_ss);
-> +NOKPROBE_SYMBOL(clear_user_regs_spsr_ss);
-> +
-> +#define set_regs_spsr_ss(r)	set_user_regs_spsr_ss(&(r)->user_regs)
-> +#define clear_regs_spsr_ss(r)	clear_user_regs_spsr_ss(&(r)->user_regs)
->  
->  static DEFINE_SPINLOCK(debug_hook_lock);
->  static LIST_HEAD(user_step_hook);
-> @@ -404,6 +407,15 @@ void user_fastforward_single_step(struct task_struct *task)
->  		clear_regs_spsr_ss(task_pt_regs(task));
->  }
->  
-> +void user_regs_reset_single_step(struct user_pt_regs *regs,
-> +				 struct task_struct *task)
-> +{
-> +	if (test_tsk_thread_flag(task, TIF_SINGLESTEP))
-> +		set_user_regs_spsr_ss(regs);
-> +	else
-> +		clear_user_regs_spsr_ss(regs);
-> +}
-> +
->  /* Kernel API */
->  void kernel_enable_single_step(struct pt_regs *regs)
->  {
-> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-> index cd6e5fa48b9c..d479fbcbd0d2 100644
-> --- a/arch/arm64/kernel/ptrace.c
-> +++ b/arch/arm64/kernel/ptrace.c
-> @@ -1934,8 +1934,8 @@ static int valid_native_regs(struct user_pt_regs *regs)
->   */
->  int valid_user_regs(struct user_pt_regs *regs, struct task_struct *task)
->  {
-> -	if (!test_tsk_thread_flag(task, TIF_SINGLESTEP))
-> -		regs->pstate &= ~DBG_SPSR_SS;
-> +	/* https://lore.kernel.org/lkml/20191118131525.GA4180@willie-the-truck */
-> +	user_regs_reset_single_step(regs, task);
-
-I think this change means we do the right thing for signal entry/return
-and ptrace messing with the regs. Instruction emulation seems to do the
-right thing via skip_faulting_instruction().
-
-I think there are a few more single-step edge cases lying around (e.g.
-uprobes, rseq), but it looks like those have to be fixed separately. I
-fear fixing uprobes might require a largler structural change to single
-step, but ignoring uprobes the changes above seem to be sound.
-
-If userspace doesn't consume the SS value today, I wonder if we should
-hide it when dumping the SPSR to userspace, so that userspace has a
-consistent view regardless of whether it's being stepped.
-
-I'll try to dig into the uprobes stuff this afternoon, just in case that
-needs us to do something substantially different.
-
-The existing logic in valid_user_regs() doesn't make sense to me, given
-SPSR_EL1.SS is immaterial unless MSCDR_EL1.SS == 1. I'm not sure if that
-was overzealous or I've forgotten an edge case that we cared about in
-the past.
-
->  
->  	if (is_compat_thread(task_thread_info(task)))
->  		return valid_compat_regs(regs);
-> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> index 339882db5a91..bc54bdbfd760 100644
-> --- a/arch/arm64/kernel/signal.c
-> +++ b/arch/arm64/kernel/signal.c
-> @@ -505,8 +505,12 @@ static int restore_sigframe(struct pt_regs *regs,
->  	forget_syscall(regs);
->  
->  	err |= !valid_user_regs(&regs->user_regs, current);
-> -	if (err == 0)
-> +
-> +	if (err == 0) {
-> +		/* Make it look like we stepped the sigreturn system call */
-> +		user_fastforward_single_step(current);
->  		err = parse_user_sigframe(&user, sf);
-> +	}
-
-I don't understand this. AFAICT  we don't likewise for other SVCs, so
-either I'm missing that, or there's something else I'm missing.
-
-Why do we need to step sigreturn but not SVC generally?
-
-Thanks,
-Mark.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDA3LjAyLjIwMjAgMTY6MzksIEFsZXhleSBCdWRhbmtvdiB3cm90ZToKPiAKPiBPbiAwNy4w
+Mi4yMDIwIDE0OjM4LCBUaG9tYXMgR2xlaXhuZXIgd3JvdGU6Cj4+IEFsZXhleSBCdWRhbmtvdiA8
+YWxleGV5LmJ1ZGFua292QGxpbnV4LmludGVsLmNvbT4gd3JpdGVzOgo+Pj4gT24gMjIuMDEuMjAy
+MCAxNzoyNSwgQWxleGV5IEJ1ZGFua292IHdyb3RlOgo+Pj4+IE9uIDIyLjAxLjIwMjAgMTc6MDcs
+IFN0ZXBoZW4gU21hbGxleSB3cm90ZToKPj4+Pj4+IEl0IGtlZXBzIHRoZSBpbXBsZW1lbnRhdGlv
+biBzaW1wbGUgYW5kIHJlYWRhYmxlLiBUaGUgaW1wbGVtZW50YXRpb24gaXMgbW9yZQo+Pj4+Pj4g
+cGVyZm9ybWFudCBpbiB0aGUgc2Vuc2Ugb2YgY2FsbGluZyB0aGUgQVBJIC0gb25lIGNhcGFibGUo
+KSBjYWxsIGZvciBDQVBfUEVSRk1PTgo+Pj4+Pj4gcHJpdmlsZWdlZCBwcm9jZXNzLgo+Pj4+Pj4K
+Pj4+Pj4+IFllcywgaXQgYmxvYXRzIGF1ZGl0IGxvZyBmb3IgQ0FQX1NZU19BRE1JTiBwcml2aWxl
+Z2VkIGFuZCB1bnByaXZpbGVnZWQgcHJvY2Vzc2VzLAo+Pj4+Pj4gYnV0IHRoaXMgYmxvYXRpbmcg
+YWxzbyBhZHZlcnRpc2VzIGFuZCBsZXZlcmFnZXMgdXNpbmcgbW9yZSBzZWN1cmUgQ0FQX1BFUkZN
+T04KPj4+Pj4+IGJhc2VkIGFwcHJvYWNoIHRvIHVzZSBwZXJmX2V2ZW50X29wZW4gc3lzdGVtIGNh
+bGwuCj4+Pj4+Cj4+Pj4+IEkgY2FuIGxpdmUgd2l0aCB0aGF0LsKgIFdlIGp1c3QgbmVlZCB0byBk
+b2N1bWVudCB0aGF0IHdoZW4geW91IHNlZQo+Pj4+PiBib3RoIGEgQ0FQX1BFUkZNT04gYW5kIGEg
+Q0FQX1NZU19BRE1JTiBhdWRpdCBtZXNzYWdlIGZvciBhIHByb2Nlc3MsCj4+Pj4+IHRyeSBvbmx5
+IGFsbG93aW5nIENBUF9QRVJGTU9OIGZpcnN0IGFuZCBzZWUgaWYgdGhhdCByZXNvbHZlcyB0aGUK
+Pj4+Pj4gaXNzdWUuwqAgV2UgaGF2ZSBhIHNpbWlsYXIgaXNzdWUgd2l0aCBDQVBfREFDX1JFQURf
+U0VBUkNIIHZlcnN1cwo+Pj4+PiBDQVBfREFDX09WRVJSSURFLgo+Pj4+Cj4+Pj4gcGVyZiBzZWN1
+cml0eSBbMV0gZG9jdW1lbnQgY2FuIGJlIHVwZGF0ZWQsIGF0IGxlYXN0LCB0byBhbGlnbiBhbmQg
+ZG9jdW1lbnQgCj4+Pj4gdGhpcyBhdWRpdCBsb2dnaW5nIHNwZWNpZmljcy4KPj4+Cj4+PiBBbmQg
+SSBwbGFuIHRvIHVwZGF0ZSB0aGUgZG9jdW1lbnQgcmlnaHQgYWZ0ZXIgdGhpcyBwYXRjaCBzZXQg
+aXMgYWNjZXB0ZWQuCj4+PiBGZWVsIGZyZWUgdG8gbGV0IG1lIGtub3cgb2YgdGhlIHBsYWNlcyBp
+biB0aGUga2VybmVsIGRvY3MgdGhhdCBhbHNvCj4+PiByZXF1aXJlIHVwZGF0ZSB3LnIudCBDQVBf
+UEVSRk1PTiBleHRlbnNpb24uCj4+Cj4+IFRoZSBkb2N1bWVudGF0aW9uIHVwZGF0ZSB3YW50cyBi
+ZSBwYXJ0IG9mIHRoZSBwYXRjaCBzZXQgYW5kIG5vdCBwbGFubmVkCj4+IHRvIGJlIGRvbmUgX2Fm
+dGVyXyB0aGUgcGF0Y2ggc2V0IGlzIG1lcmdlZC4KPiAKPiBXZWxsLCBhY2NlcHRlZC4gSXQgaXMg
+Z29pbmcgdG8gbWFrZSBwYXRjaGVzICMxMSBhbmQgYmV5b25kLgoKUGF0Y2hlcyAjMTEgYW5kICMx
+MiBvZiB2NyBbMV0gY29udGFpbiBpbmZvcm1hdGlvbiBvbiBDQVBfUEVSRk1PTiBpbnRlbnRpb24g
+YW5kIHVzYWdlLgpQYXRjaCBmb3IgbWFuLXBhZ2VzIFsyXSBleHRlbmRzIHBlcmZfZXZlbnRfb3Bl
+bi4yIGRvY3VtZW50YXRpb24uCgpUaGFua3MsCkFsZXhleQoKLS0tClsxXSBodHRwczovL2xvcmUu
+a2VybmVsLm9yZy9sa21sL2M4ZGU5MzdhLTBiM2EtNzE0Ny1mNWVmLTY5ZjQ2N2U4N2ExM0BsaW51
+eC5pbnRlbC5jb20vClsyXSBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzE4ZDEwODNkLWVm
+ZTUtZjVmOC1jNTMxLWQxNDJjMGU1YzFhOEBsaW51eC5pbnRlbC5jb20vCgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
