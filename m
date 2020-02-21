@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54745167EED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 14:45:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BA01167EF7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 14:47:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q0QYpvn3X7IM/MQRleY8XzwQWHoEGhTGz9M9vCOLn1c=; b=UDcIYv5APRuaud
-	aqFe23jmocz4Dy2tbO7khbK3MRE0m27PDOR5LKbp1A2Blixc+1AKA6zhggaIXqM2KT0+UvxrFmfrf
-	LF+uR/mlBw8lqeauh6JRuBWdwg0ERZFWMIK/aVbQ9mEijcOBbGQWF9Xw53OgQvnpJ7NNYAyLfDLNA
-	/CVFXMTaCrVZtb8s+tnbN3xmgKnZA8L6mg4wo9PFKl56UHzuXe7YfKGw89JuQ0GXLhlN/XzWvn12n
-	Y7UMAK/cLb7dVqtV2cColLUGYg9P4vJV2ClMyQBuDOQoOsjMa0rfsE3Sgl4np6r5DyEvl7MZEbxOF
-	2EubkuwYlCINOyXI2Knw==;
+	List-Owner; bh=aUlWAvlbQDEYEnf7s9GQnppZY1rlJoMg/JfMro4jtbE=; b=EDPb1l3HwA5eSz
+	0TPtOhauDuYgOtceqZk/32g32WKacIRmmF2u1PC/P3adIudRUXmar9eyzaJUxVk2j6bDyhnybglas
+	vq/+DjakC3cnjsFFqkDcP6TyvYfbSRgJC3AEPv6qR+rWLKJZ1P+X0mfBXfzTW2FgylM60JJUN6yyL
+	UT7FA7gSiEuwDzTm8gVwjd2lTJY+l3iNBe0Cwh8LhaXJNOdHNXyl6HMcKECyS1vg81YH7F4l+HLPE
+	zf417F9iraUfIq3sotKJtfW9QiqmfFWUWgtDGnq7q2RotOfbjXDihbLwMNnKNCnpx9OpugTm/VXjS
+	2bzNtBJFnqV0L2ttnJBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j58cO-0007WP-QK; Fri, 21 Feb 2020 13:45:24 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1j58ea-0008CA-6D; Fri, 21 Feb 2020 13:47:40 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j58cG-0007W5-B1
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 13:45:17 +0000
-Received: by mail-lf1-x141.google.com with SMTP id f24so1535651lfh.3
+ id 1j58eO-00089J-RC
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 13:47:30 +0000
+Received: by mail-lj1-x241.google.com with SMTP id w1so2245030ljh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 05:45:15 -0800 (PST)
+ Fri, 21 Feb 2020 05:47:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hndYq/hvuTQ2lgb+uDJJiLZLvwvgOhX4+x+wDseLksM=;
- b=D6m5Gx7huhhh7gdrPjKZZTKodPH+VJBd7jLXv4HQu/pErnlqMfDSIeF+/Fk9ho8Xi6
- SDtlO70M+qTWb26Zg9yOElNX3DNkm9LOKpwL0Z55aq4wKWR9W9+nTTVQaRecUvfhoviz
- sbC6aEIkyg2dn4VyOEH0N6Q9LZ86xAFpLQeT8CBKtMg3gaJ+P+X9DVwTAK5GXipVDZHp
- XS0l90I6ZHZZCYafFBiJ/XuwaSlrwsHRA8tTQ+tzApIbRHimQdkd1BQpqEj9c5Q5L3Qk
- ujZ3ZW+23ztbeDUWoeGMPmIb9DY3xy27O+oGZnb9dAMSh9muZh1kMSqaJQ75GVtEYRYM
- 24sw==
+ :cc; bh=6RiDIgBnM17s0MhdLFdue8lQDMd7IU/QHmr8wXGck+U=;
+ b=LrtzUHshefW35GP6ZfEoYXl7PU7Ew/G3Olj5e9FBDEm0N0uRMbD106U333sP+XdFGl
+ oKIZmvtCNOzaLh17pnvgyRA9+mFeV7G+9zCVGN0pjQV4Y6p/E5NGzkm9wYYrevaEQjpH
+ ejXx6bANY0OhMZKX5OJROiRHYzuvZONL0JDjbAp3mz/MMI1EqSr30aiIXqeP7kOVSXWj
+ EOhrQ/o5tEXWomMLfszjof3ypPYs9bKQv/l9AgrwdmLRkYA9mvJuvmRj7Qgwl/h/viag
+ DdLp7ObOU0eqfNlWn6lSSo0GUTsCIW+Bmq7+zPEFXWsJrqPGQr0cUm0eWkN6FTONdaeK
+ chrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=hndYq/hvuTQ2lgb+uDJJiLZLvwvgOhX4+x+wDseLksM=;
- b=IgwdWdDnZ3YIRlmDUr0nDEUL3Uy35IHbRjfQcqBKRzKdoLIOMmd1qJ2XB6ZlhZ8bCT
- vRNdyB5tFLtrGZPqjy6Na1RslCCnbUXdMdzZayCIlJyIr3Rk53XI/vu/WyYOqiXICVjh
- b/iVGhGihPjgzqTC4iOiTGXm5+Qh0EdUefpHA4bhynESAcWDNug2ZNKeAmCOU+JQB88t
- VGsI/enr3BT2+mxhLub0S7VO0YJhlONh//k+exWKLHKXqjsM8WFiZ7/nr8FMdWhGYOoa
- /UJrF9OhesODId6lgXI+bpU6vn56RcfOmDfSYRqJD8TeTt28Hnc5Eu+YMwLZo74n1pIT
- Hy8w==
-X-Gm-Message-State: APjAAAXq2e1tg04gFEDyypdzBxsH6YwYsCbe2heLEiyFBv9CRFYItGQU
- 15df2hKcT572JksSZ3JtKSJNeDAn9CSI9YkehjiawQ==
-X-Google-Smtp-Source: APXvYqxoapboUoEkJoxhUkJEVbZMdob4xVZCqQ+cCbE7awK32LSRAnI4GtKJTVv6OiaV3ZNjbPljMj3NANKLQQjyDLA=
-X-Received: by 2002:a19:ed0b:: with SMTP id y11mr799008lfy.77.1582292713960;
- Fri, 21 Feb 2020 05:45:13 -0800 (PST)
+ bh=6RiDIgBnM17s0MhdLFdue8lQDMd7IU/QHmr8wXGck+U=;
+ b=VSBcbt/+h9cusftRuPMv0h/Krm75SGwy2il7r8oH0BwKG/j257vTM+hKwLvaZBa0Lg
+ ELs2jvsSmSpFWmZ0D4NsIiFbaiF92ttdrbUAvjG6NpwLmsvuVzH9NEPq3gQKNFGPi/05
+ qEw8nzYQGQUM4FtkwIjZcipljA82qsB5hlbWzWcd4aKNcPwWWV4lEe6eRtdYHY0+sOzZ
+ ZsmVv8If3Og8d6AOEWyq/Y+gygxA2TUMKS3TcfaAzQAtzIqrNwlDaIVdOINeAFGmItfz
+ uh46qck+MXtDQLuDCkrdg9EbbEi2qtiFzXc4WM65B46pf2PWIvfwBVtzjWptRKODNRb9
+ 9+Tw==
+X-Gm-Message-State: APjAAAVR63YFNzugTiEjvfY+GB5dfhYpyN0Md0GZabxy5MIDuC6R6qJ5
+ u5dsh9l+aLawbSvf3KTkf8seKePl1ADxMXvrORWVtQ==
+X-Google-Smtp-Source: APXvYqy0v9gcI71kNOOkUK7oygUEUPyQ1/Vc5JOaBADO6tiKLQPSAXDQnjesGOK/oFE4d/DSEaPhvt5lW2ObMIsj1nI=
+X-Received: by 2002:a2e:2a84:: with SMTP id
+ q126mr21375720ljq.258.1582292846656; 
+ Fri, 21 Feb 2020 05:47:26 -0800 (PST)
 MIME-Version: 1.0
-References: <1581942793-19468-1-git-send-email-srinivas.neeli@xilinx.com>
-In-Reply-To: <1581942793-19468-1-git-send-email-srinivas.neeli@xilinx.com>
+References: <20200125113355.GA22220@Mani-XPS-13-9360>
+ <20200214071856.197028-1-matheus@castello.eng.br>
+In-Reply-To: <20200214071856.197028-1-matheus@castello.eng.br>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 21 Feb 2020 14:45:03 +0100
-Message-ID: <CACRpkdbL4rSDfbzJSF67o93WEPaDB6th2MtaQQG=JQ6r_3DxFA@mail.gmail.com>
-Subject: Re: [PATCH V3 0/7] gpio: zynq: Update on gpio-zynq driver
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>
+Date: Fri, 21 Feb 2020 14:47:15 +0100
+Message-ID: <CACRpkdYbxCi3WGq7WBWVHmNmGSaWO4=VrxruBy87MKLK0464mQ@mail.gmail.com>
+Subject: Re: [PATCH v3] pinctrl: actions: Fix functions groups names for S700
+ SoC
+To: Matheus Castello <matheus@castello.eng.br>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_054516_383626_CD77AF4F 
-X-CRM114-Status: GOOD (  10.73  )
+X-CRM114-CacheID: sfid-20200221_054728_883488_209AE697 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,41 +94,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Michal Simek <michal.simek@xilinx.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, git@xilinx.com,
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, pn@denx.de,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 1:33 PM Srinivas Neeli
-<srinivas.neeli@xilinx.com> wrote:
+On Fri, Feb 14, 2020 at 8:20 AM Matheus Castello
+<matheus@castello.eng.br> wrote:
 
-> This patch series does the following:
-> -protect direction in/out with a spinlock
-> -Add binding for Versal gpio
-> -Add binding for pmc gpio node
-> -Add Versal support
-> -Disable the irq if it is not a wakeup source
-> -Add pmc gpio support
-> -Remove error prints in EPROBE_DEFER
+> Group names by function do not match their respective structures and
+> documentation defined names.
 >
+> This fixes following errors when groups names defined on documentation are used:
+> [    4.262778] pinctrl-s700 e01b0000.pinctrl: invalid group "sd0_d1_mfp" for function "sd0"
+> [    4.271394] pinctrl-s700 e01b0000.pinctrl: invalid group "sd0_d2_d3_mfp" for function "sd0"
+> [    4.280248] pinctrl-s700 e01b0000.pinctrl: invalid group "sd1_d0_d3_mfp" for function "sd0"
+> [    4.289122] pinctrl-s700 e01b0000.pinctrl: invalid group "sd0_cmd_mfp" for function "sd0"
+>
+> Fixes: 81c9d563cc74 (pinctrl: actions: Add Actions Semi S700 pinctrl driver)
+> Signed-off-by: Matheus Castello <matheus@castello.eng.br>
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > ---
-> Changes in V2:
-> - In previous series [PATCH 1/8] already applied on "linux-next".
-> - Fixed checkpatch warning for spinlock description.
-> - Added description for Versal PS_GPIO and PMC_GPIO.
-> Changes in V3:
-> - Updated commit description for PATCH 4 and 6.
+>
+> Thanks Manivannan for the review.
+>
+> Changes since v2:
+> - Mention s700 SoC on subject
 
-I agree with Bartosz, this looks really good.
+I already fixed up the subject and applied :)
 
-If you fix the remaining commit messages and post a v4
-we can apply this series.
+Please check the result.
 
 Yours,
 Linus Walleij
