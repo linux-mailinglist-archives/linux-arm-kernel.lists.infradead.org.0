@@ -2,80 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B84E3168492
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:13:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 941DF168485
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:11:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jfPQHl1MNrRy8mC7NowIDQcvJGmDpixqTHrWiXD/GBA=; b=CUm3CZ+zYGr3QO
-	F3qjaQnqbgpetGUwm9qG5JLwtuIbMkx06o4gj39B4AHgZmDf+llo1Zx8FwQiaVNcXS+rHC/wvEw2I
-	L5HRUZES43MnqX6hcLV5qQS18YnmBzpLLTDepClHNT1orG8wLZhbmIDdjDblnWGgmVlLckdYPsC2V
-	78m37ke/l95OWvW/s/fu9FQK4ab2mA2w6uYqbBerGLxwdCxwDCHbkCeyLshHDEvjOmhFIj+5eE6Gr
-	NHeq2jJrADfJJ+dvC59bU33AhmI0BHplmryNziHC2nSPAWhH24dBfryXs/fMC7br1kAIjecUZO64v
-	bQjFdm0Z30MWD0qI8idg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Dm6aFE045BZFzBBM7pUvmGYj3HKmFOr1EOoulzXdzUo=; b=IBL9nXtlEHLktizmofUbNgGoF
+	J5O8VuCLfvPx0HuI9zzrtkG6Ab+VfXnBPuyilI161XcgVc3Pyg7vvgH9EgfqEtnWELBo8q/ccVrUT
+	qN8fDcjx3vnibGfhGmUKRN6S1MBFZ/tf35TUjIayMaLsBgfGREhf47QAdV9oppgf/+XyafnCmmdxk
+	dhud2MFJk1fHBQ6efZ97breqA3W6A65zSoNuDSxJ2B7YMWt+RMyghm8t69rg+zsX6tnF1+SXcFWMO
+	097qPLDnD/E4Bp5IGpz9xDr0O+lmxoH1z1DvxUesfFPE4zNJy8VWt8q3WVLPgqe1n0sJzgqTPDU0x
+	Djw6/o8xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5BrD-0001NB-HM; Fri, 21 Feb 2020 17:12:55 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5Br2-0008El-F6
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:12:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=bp1lWcxGkXI1dOKZa2p+oi0pswujYwX0tBwQBCst0zM=; b=REgQwD+8Du6hBrxoBK+zFIs0Z
- 6A92OGFjwvYnNCRJJ4qpiWJuwucUoi9OHxhYoVQDQTqgVMyaLdK99gZoOtjJRNalWF75yRLvkGVrx
- INHqGMXfpmgKCx6R82YcA0tWuC5c2i3Gq6M97zYis9unSS1TXNpFEWC36zXygXPLHbv2SQJGmJDmd
- KvyqZZIlkf0TWJOJ8yKuJ+dKNLqFI2LVLkvRj1wRGfas03zBgiNIX56pOMgwo8RJPrpZ9XpuWF5QC
- DJ2P8BGlVXy6JKxT8HFqs342ASPkC203Kc66tMqLZ746HkX28SgQ2NBwi7bw1sDQUIoQKdUuKpu3w
- VaFWa05lQ==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:43400)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j5Bop-0002S1-IA; Fri, 21 Feb 2020 17:10:27 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j5Bom-0003fn-Jw; Fri, 21 Feb 2020 17:10:24 +0000
-Date: Fri, 21 Feb 2020 17:10:24 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+	id 1j5Bq1-0000Mc-SC; Fri, 21 Feb 2020 17:11:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5Bpq-0000M5-AN
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:11:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 52BA730E;
+ Fri, 21 Feb 2020 09:11:29 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BCA313F68F;
+ Fri, 21 Feb 2020 09:11:28 -0800 (PST)
+Date: Fri, 21 Feb 2020 17:11:27 +0000
+From: Mark Brown <broonie@kernel.org>
 To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH net] net: macb: Properly handle phylink on at91rm9200
-Message-ID: <20200221171024.GK25745@shell.armlinux.org.uk>
-References: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
- <661c1e61-11c8-0c54-83a2-5e81674246e0@gmail.com>
+Subject: Re: [PATCH v2 1/2] PCI: brcmstb: Add regulator support
+Message-ID: <20200221171127.GH5546@sirena.org.uk>
+References: <20200221033640.55163-1-jaedon.shin@gmail.com>
+ <20200221033640.55163-2-jaedon.shin@gmail.com>
+ <20200221121231.GA5546@sirena.org.uk>
+ <40c4de9c-efdc-4fae-ad6d-1ba51fbbece1@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <661c1e61-11c8-0c54-83a2-5e81674246e0@gmail.com>
+In-Reply-To: <40c4de9c-efdc-4fae-ad6d-1ba51fbbece1@gmail.com>
+X-Cookie: Dead?	No excuse for laying off work.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_091244_509171_E6836CB9 
-X-CRM114-Status: GOOD (  15.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200221_091130_402685_DEF82368 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,61 +67,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jim Quinlan <james.quinlan@Broadcom.com>, linux-gpio@vger.kernel.org,
+ linux-pci@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Jaedon Shin <jaedon.shin@gmail.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, Gregory Fong <gregory.0xf0@gmail.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
+Content-Type: multipart/mixed; boundary="===============1445904468811001498=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 02:03:47PM -0800, Florian Fainelli wrote:
-> 
-> 
-> On 2/17/2020 2:43 AM, Alexandre Belloni wrote:
-> > at91ether_init was handling the phy mode and speed but since the switch to
-> > phylink, the NCFGR register got overwritten by macb_mac_config().
-> > 
-> > Add new phylink callbacks to handle emac and at91rm9200 properly.
-> > 
-> > Fixes: 7897b071ac3b ("net: macb: convert to phylink")
-> > Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> > ---
-> 
-> [snip]
-> 
-> > +static void at91ether_mac_link_up(struct phylink_config *config,
-> > +				  unsigned int mode,
-> > +				  phy_interface_t interface,
-> > +				  struct phy_device *phy)
-> > +{
-> > +	struct net_device *ndev = to_net_dev(config->dev);
-> > +	struct macb *bp = netdev_priv(ndev);
-> > +
-> > +	/* Enable Rx and Tx */
-> > +	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(RE) | MACB_BIT(TE));
-> > +
-> > +	netif_tx_wake_all_queues(ndev);
-> 
-> So this happens to be copied from the mvpp2 driver, if this is a
-> requirement, should not this be moved to the phylink implementation
-> since it already manages the carrier? Those two drivers are the only
-> ones doing this.
 
-Looking at mvneta, it does stuff with managing the queues itself, and
-I suspect adding that into phylink will mess that driver up.  Maybe
-someone with more knowledge can take a look.
+--===============1445904468811001498==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="rCwQ2Y43eQY6RBgR"
+Content-Disposition: inline
 
-But, IMHO, two drivers doing something is not grounds for moving it
-into higher layers.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+--rCwQ2Y43eQY6RBgR
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Fri, Feb 21, 2020 at 08:33:36AM -0800, Florian Fainelli wrote:
+> On 2/21/2020 4:12 AM, Mark Brown wrote:
+
+> > No, this isn't a good idea - the set of supplies the device has is
+> > fixed when the silicon is produced, it's not something that needs to
+> > vary per board.  This means that the binding should have a fixed list of
+> > supplies, per SoC if that's needed.
+
+> These are not the supplies for the PCIe I/Os on the SoCs side, but the
+> supplies for the PCIe end-point connected to the SoCs. More on that below.
+
+Then the "slots" (obviously at least some of these are soldered down
+rather than on actual slots) should be represented in DT and the
+controller or bus should know that it needs to iterate over them to
+bring up the chips.  I would also expect that there are standard names
+in the PCI specs for the standard supplies that go into devices as part
+of the bus spec which would mean that there should still be no need to
+encode names like this.
+
+> If you describe the regulators as properties of the PCIe EP nodes which
+> are child nodes of the PCIe RC node (as we should), you will not be able
+> to manage all of them within your pci_driver instance, because if there
+> is no power to the EP you just do not enumerate it, therefore no
+> pci_device is created.
+
+The framework and/or driver can enumerate firmware information without
+actually powering up the devices of course.
+
+I would not be surprised to learn that most systems just mark the device
+supplies always on, it's not like the devices will be able to use them
+normally anyway.
+
+--rCwQ2Y43eQY6RBgR
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5QDz4ACgkQJNaLcl1U
+h9D7MQf/YeQ1FAZw9dB7Kfcm1KJh5ahq4yucqHlg1gPLoilrZyl49an8LGVphqrg
+xaSJ/iWvuoiYz9WkG8/18my3ckt8bdexU8rsw3FJOvljJxY4bL4caT9uRovqO/Gx
+8aYf2FGDqaTWNA5MWDRHYP4vS6OSlu2Dq8QZAp8B4nII2XP+Y+FHi0X+oLGAsSub
+owUznmwx0P/KsCEhWJP722VTq1+il5WrZZnqgE4Qvf9EtIwvBgz5EA+GVqWG+QGT
+9qep25/GEqCx/kfgVzYvldCdzezJc7T43T8bNMrDNyRF7g2wQFoPy4aX/Tn8QL4v
+t1AWpMfPlRi8XT/pENcm0eEBl5aRQg==
+=GtTF
+-----END PGP SIGNATURE-----
+
+--rCwQ2Y43eQY6RBgR--
+
+
+--===============1445904468811001498==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1445904468811001498==--
+
