@@ -2,144 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D1B2168123
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 16:06:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B18D7168165
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 16:22:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mjjj3ENd3fkNjO3a2kKlH0W90nuHlwZ8Oty/8r6VJjM=; b=t+zhN/ZJnyPGU4
-	kqo+DhdWQUDaq/MGHu6KgPyoH7ayKy2/++Wnd9BOz3WBCemVButaxXK3PgwhMck+4SYKp8uBZ+EWG
-	IkJgNBbihYhKKqsIrzEEA21NzBwwH7htAJ6lkkk0fW6tdkhkHcyiBgkiaHlGiy+TlJhv4Xl457Jcc
-	bUnsSwZ1wpDs2k2jBO+2ccbV4o/MiaEb4oEuJ5dAA5ap6A89PiTwmDWJv0LL13gam9dbM9Ad0NGMu
-	NqOht2EJD7f3GbB3QthO4O7o2C4M92JUTdLWNKD2GXWT4zeCxZaxSh9b33xQ/NTmwRll3GqAtBOpe
-	kc5A/d9a3osIK4A1LW4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Ruhouq5GAZHIs7KMQjoh0kh0IVWFsohTP0RGmd78AoQ=; b=tcVoMBgVMe91DqA1h01K3nMBUh
+	Gt3qy5Ym6M19bDVPBxhrI4yUQnT3rd8vuf53zrYLldq0642YC36HbVRJeGpPc9Z01h9ZTHLgCWX5a
+	7arr3JBgZl+8LlO2V+qQ9POCVSnkbBadVjd6zvF5oTW1EyvZ8KdtJeG4W0T6gt/faLHr2eB/xduRu
+	prxbZgdvItT95KDPV/QESj97J72BfplMNBUIJhs7iIJnq2VcMpok1tfhooQD9Rkp5TrFeQEKXWe+b
+	8YijKuXkEpBkRiwOH/OVX6wYmrLlXG3ZHBVwtxIDdi8BDIkl2haatR1or9SFGQnhNwOJkircC4UA4
+	yQfIcEGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j59sg-0001nT-9F; Fri, 21 Feb 2020 15:06:18 +0000
-Received: from gateway20.websitewelcome.com ([192.185.48.38])
+	id 1j5A8i-0007lO-55; Fri, 21 Feb 2020 15:22:52 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j59sW-0001mK-3D
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 15:06:09 +0000
-Received: from cm13.websitewelcome.com (cm13.websitewelcome.com [100.42.49.6])
- by gateway20.websitewelcome.com (Postfix) with ESMTP id C919E400D889B
+ id 1j5A8Z-0007k6-5u
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 15:22:45 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y11so2491147wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 07:51:50 -0600 (CST)
-Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
- id 59sIjPjfYRP4z59sIjpZwi; Fri, 21 Feb 2020 09:05:54 -0600
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=embeddedor.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=cRboVsbWUEPwGuWfgqo+v5EtxXTlBTRHmRBEEMttca4=; b=A9eCgCb71huWTqs9SOPBKMuYwO
- kEfPPdcGnmXb8mZRplFMKZNbkAWcQSnEFgFSpzVq0FzlAhFidI/haLmlO1wTILipUSKdY7Hu1TjYc
- UpxENZfWd0xNx7EwefdEWZ+zZNneAlc5YATUgl7yw2/NHiZFKnK24oCSZfAHh8JM6haiqpjOX6H7h
- +a3BLkmEiVGhZIBuSfkek6C9GrLNE3NH8x3hhjWWamQppyjbOHs8KRcYy3ZxH8JumrRhGBKRA7g7t
- o3wQdBmOpjZzkqYiEENu1RW+dxhAcyR+32eVXpLI5ocfc1qfHeJboEkE8OlD0T9IoKlVmiSQZGxSh
- vu2LYb+g==;
-Received: from [200.68.141.13] (port=18808 helo=[192.168.43.131])
- by gator4166.hostgator.com with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <gustavo@embeddedor.com>)
- id 1j59sI-003VkV-Hk; Fri, 21 Feb 2020 09:05:54 -0600
-Subject: Re: [PATCH] firmware: arm_scmi: driver: Replace zero-length array
- with flexible-array member
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <20200211231045.GA13956@embeddedor> <20200220171840.GB44840@bogus>
-From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-Autocrypt: addr=gustavo@embeddedor.com; keydata=
- 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
- VtSixD1uOgytAP7RWS474w==
-Message-ID: <b79e117f-1e1f-c3ab-9622-ed57914b530b@embeddedor.com>
-Date: Fri, 21 Feb 2020 09:08:38 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Fri, 21 Feb 2020 07:22:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=MWznUWcF0+GyJXpKc77sr8V6T2rancb73H0vzc+QLOc=;
+ b=zYcfxKYh5GVdsZmg/VVJtJjJHidVAdAv1fnWLBYz9Qrz9X2tuzafr/TrwUnnZgrVJ0
+ oo/BGktTtz5M5+iAIBxO/IZGYNX5JtB/f0qTHFByoAUnTTSWHZyr/vy4DNdhXAAnrd6p
+ w9UC8cXQyanPoaRPr57NkWERkM+O7GE+0v3vDXHYVz7yirmIDpPSlTLARtU9LAKMwDGc
+ AEGrmIdAQreDdhoms69YXG+cNkuylJ81TqDCurkrK8BVsmuNIz2Gmm92vbpHfdExJeNh
+ kiivhGNsMa7XBrLqrpIuZCXL/vk00lxZEJ19nL9AqHm9selU5roj/NJmSNle5A+btUU8
+ B/OA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=MWznUWcF0+GyJXpKc77sr8V6T2rancb73H0vzc+QLOc=;
+ b=cFvk80bdDzGFLwYYNugF4CLeQuXhD0GjSyniUVvK5pO6kbaRjHLKGZhfvtWtPcE2D0
+ rjaPHrnE3xLYTHxvJMH1akNg6vzhqbClgV+iiPbl6UDM3JcyB4iq4Mj4VL6E1aaMZHYo
+ /jDvJPb/+K4rgOXwSROMxE6omTR7rtwZ9HTAiH2S9ZO+9lqaLbs3RWtZvB1WuJ5ibZi2
+ a20WvSBzzHBbgxT+kHJoY5l5fJXVyH258vfJiurJ+c13spPfitqedjoIzG0uT6kXInIa
+ YVL5SjYuR/C/D3oq98Rd9CJisVOwSD34dveyBHYSE9h2FgHvLyzEYghXSxfrS8rS9j8z
+ t8qg==
+X-Gm-Message-State: APjAAAUcHWd6sWRxKqR4oXGtQS/Sksg6nfLYEC5CMF/fdUaOMa40rfkD
+ 7zIhCoFl5ETStXOY2Weo0KehUg==
+X-Google-Smtp-Source: APXvYqzC5K20NkO6ffmWnXnuQxw7QWs99/LdHFkp7c8I5pDrFUq2vNJSnU4dgWi0dy2FTPOqHv04Eg==
+X-Received: by 2002:adf:e8ca:: with SMTP id k10mr46562839wrn.50.1582298561100; 
+ Fri, 21 Feb 2020 07:22:41 -0800 (PST)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id z6sm4367616wrw.36.2020.02.21.07.22.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 21 Feb 2020 07:22:40 -0800 (PST)
+References: <20200220205711.77953-1-martin.blumenstingl@googlemail.com>
+ <20200220205711.77953-4-martin.blumenstingl@googlemail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ broonie@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ alsa-devel@alsa-project.org, devicetree@vger.kernel.org,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH 3/3] ASoC: meson: aiu: add support for the Meson8 and
+ Meson8b SoC families
+In-reply-to: <20200220205711.77953-4-martin.blumenstingl@googlemail.com>
+Date: Fri, 21 Feb 2020 16:22:39 +0100
+Message-ID: <1jmu9c2ce8.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <20200220171840.GB44840@bogus>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - embeddedor.com
-X-BWhitelist: no
-X-Source-IP: 200.68.141.13
-X-Source-L: No
-X-Exim-ID: 1j59sI-003VkV-Hk
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: ([192.168.43.131]) [200.68.141.13]:18808
-X-Source-Auth: gustavo@embeddedor.com
-X-Email-Count: 13
-X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
-X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_070608_277371_17D6E236 
-X-CRM114-Status: UNSURE (   6.68  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20200221_072243_214359_AA625D74 
+X-CRM114-Status: GOOD (  22.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [200.68.141.13 listed in zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.48.38 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -153,29 +100,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, tiwai@suse.com, lgirdwood@gmail.com,
+ linux-arm-kernel@lists.infradead.org, perex@perex.cz
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+On Thu 20 Feb 2020 at 21:57, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 
-On 2/20/20 11:18, Sudeep Holla wrote:
+> The AIU audio controller on the Meson8 and Meson8b SoC families is
+> compatible with the one found in the later GXBB family. Add compatible
+> strings for these two older SoC families so the driver can be loaded for
+> them.
+>
+> Instead of using the I2S divider from the AIU_CLK_CTRL_MORE register we
+> need to use the I2S divider from the AIU_CLK_CTRL register. This older
+> register is less flexible because it only supports four divider settings
+> (1, 2, 4, 8) compared to the AIU_CLK_CTRL_MORE register (which supports
+> dividers in the range 0..64).
+>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  sound/soc/meson/Kconfig           |  2 +-
+>  sound/soc/meson/aiu-encoder-i2s.c | 92 +++++++++++++++++++++++--------
+>  sound/soc/meson/aiu.c             |  9 +++
+>  sound/soc/meson/aiu.h             |  1 +
+>  4 files changed, 81 insertions(+), 23 deletions(-)
+>
+> diff --git a/sound/soc/meson/Kconfig b/sound/soc/meson/Kconfig
+> index 897a706dcda0..d27e9180b453 100644
+> --- a/sound/soc/meson/Kconfig
+> +++ b/sound/soc/meson/Kconfig
+> @@ -10,7 +10,7 @@ config SND_MESON_AIU
+>  	imply SND_SOC_HDMI_CODEC if DRM_MESON_DW_HDMI
+>  	help
+>  	  Select Y or M to add support for the Audio output subsystem found
+> -	  in the Amlogic GX SoC family
+> +	  in the Amlogic Meson8, Meson8b and GX SoC families
+>  
+>  config SND_MESON_AXG_FIFO
+>  	tristate
+> diff --git a/sound/soc/meson/aiu-encoder-i2s.c b/sound/soc/meson/aiu-encoder-i2s.c
+> index 4900e38e7e49..cc73b5d5c2b7 100644
+> --- a/sound/soc/meson/aiu-encoder-i2s.c
+> +++ b/sound/soc/meson/aiu-encoder-i2s.c
+> @@ -111,34 +111,40 @@ static int aiu_encoder_i2s_setup_desc(struct snd_soc_component *component,
+>  	return 0;
+>  }
+>  
+> -static int aiu_encoder_i2s_set_clocks(struct snd_soc_component *component,
+> -				      struct snd_pcm_hw_params *params)
+> +static int aiu_encoder_i2s_set_legacy_div(struct snd_soc_component *component,
+> +					  struct snd_pcm_hw_params *params,
+> +					  unsigned int bs)
+>  {
+> -	struct aiu *aiu = snd_soc_component_get_drvdata(component);
+> -	unsigned int srate = params_rate(params);
+> -	unsigned int fs, bs;
+> -
+> -	/* Get the oversampling factor */
+> -	fs = DIV_ROUND_CLOSEST(clk_get_rate(aiu->i2s.clks[MCLK].clk), srate);
+> +	switch (bs) {
+> +	case 1:
+> +	case 2:
+> +	case 4:
+> +	case 8:
+> +		/* These are the only valid legacy dividers */
+> +		break;
+>  
+> -	if (fs % 64)
+> +	default:
+> +		dev_err(component->dev, "Unsupported i2s divider: %u\n", bs);
+>  		return -EINVAL;
+> +	};
 
->>
->> [1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
->> [2] https://github.com/KSPP/linux/issues/21
->> [3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
->>
->> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
-> 
-> Applied these 3 patches [0][1][2] for v5.7
-> 
+Not major but this semicolon should be removed (Thx coccinelle!)
 
-Thanks, Sudeep.
---
-Gustavo
+>  
+> -	/* Send data MSB first */
+> -	snd_soc_component_update_bits(component, AIU_I2S_DAC_CFG,
+> -				      AIU_I2S_DAC_CFG_MSB_FIRST,
+> -				      AIU_I2S_DAC_CFG_MSB_FIRST);
+> +	snd_soc_component_update_bits(component, AIU_CLK_CTRL,
+> +				      AIU_CLK_CTRL_I2S_DIV,
+> +				      FIELD_PREP(AIU_CLK_CTRL_I2S_DIV,
+> +						 __ffs(bs)));
+>  
+> -	/* Set bclk to lrlck ratio */
+> -	snd_soc_component_update_bits(component, AIU_CODEC_DAC_LRCLK_CTRL,
+> -				      AIU_CODEC_DAC_LRCLK_CTRL_DIV,
+> -				      FIELD_PREP(AIU_CODEC_DAC_LRCLK_CTRL_DIV,
+> -						 64 - 1));
+> +	snd_soc_component_update_bits(component, AIU_CLK_CTRL_MORE,
+> +				      AIU_CLK_CTRL_MORE_I2S_DIV,
+> +				      FIELD_PREP(AIU_CLK_CTRL_MORE_I2S_DIV,
+> +						 0));
+>  
+> -	/* Use CLK_MORE for mclk to bclk divider */
+> -	snd_soc_component_update_bits(component, AIU_CLK_CTRL,
+> -				      AIU_CLK_CTRL_I2S_DIV, 0);
+> +	return 0;
+> +}
+>  
+> +static int aiu_encoder_i2s_set_more_div(struct snd_soc_component *component,
+> +					struct snd_pcm_hw_params *params,
+> +					unsigned int bs)
+> +{
+>  	/*
+>  	 * NOTE: this HW is odd.
+>  	 * In most configuration, the i2s divider is 'mclk / blck'.
+> @@ -146,7 +152,6 @@ static int aiu_encoder_i2s_set_clocks(struct snd_soc_component *component,
+>  	 * increased by 50% to get the correct output rate.
+>  	 * No idea why !
+>  	 */
+> -	bs = fs / 64;
+>  	if (params_width(params) == 16 && params_channels(params) == 8) {
+>  		if (bs % 2) {
+>  			dev_err(component->dev,
+> @@ -156,11 +161,54 @@ static int aiu_encoder_i2s_set_clocks(struct snd_soc_component *component,
+>  		bs += bs / 2;
+>  	}
+>  
+> +	/* Use CLK_MORE for mclk to bclk divider */
+> +	snd_soc_component_update_bits(component, AIU_CLK_CTRL,
+> +				      AIU_CLK_CTRL_I2S_DIV,
+> +				      FIELD_PREP(AIU_CLK_CTRL_I2S_DIV, 0));
+> +
+>  	snd_soc_component_update_bits(component, AIU_CLK_CTRL_MORE,
+>  				      AIU_CLK_CTRL_MORE_I2S_DIV,
+>  				      FIELD_PREP(AIU_CLK_CTRL_MORE_I2S_DIV,
+>  						 bs - 1));
+>  
+> +	return 0;
+> +}
+> +
+> +static int aiu_encoder_i2s_set_clocks(struct snd_soc_component *component,
+> +				      struct snd_pcm_hw_params *params)
+> +{
+> +	struct aiu *aiu = snd_soc_component_get_drvdata(component);
+> +	unsigned int srate = params_rate(params);
+> +	unsigned int fs, bs;
+> +	int ret;
+> +
+> +	/* Get the oversampling factor */
+> +	fs = DIV_ROUND_CLOSEST(clk_get_rate(aiu->i2s.clks[MCLK].clk), srate);
+> +
+> +	if (fs % 64)
+> +		return -EINVAL;
+> +
+> +	/* Send data MSB first */
+> +	snd_soc_component_update_bits(component, AIU_I2S_DAC_CFG,
+> +				      AIU_I2S_DAC_CFG_MSB_FIRST,
+> +				      AIU_I2S_DAC_CFG_MSB_FIRST);
+> +
+> +	/* Set bclk to lrlck ratio */
+> +	snd_soc_component_update_bits(component, AIU_CODEC_DAC_LRCLK_CTRL,
+> +				      AIU_CODEC_DAC_LRCLK_CTRL_DIV,
+> +				      FIELD_PREP(AIU_CODEC_DAC_LRCLK_CTRL_DIV,
+> +						 64 - 1));
+> +
+> +	bs = fs / 64;
+> +
+> +	if (aiu->platform->has_clk_ctrl_more_i2s_div)
+> +		ret = aiu_encoder_i2s_set_more_div(component, params, bs);
+> +	else
+> +		ret = aiu_encoder_i2s_set_legacy_div(component, params, bs);
+> +
+> +	if (ret)
+> +		return ret;
+> +
+>  	/* Make sure amclk is used for HDMI i2s as well */
+>  	snd_soc_component_update_bits(component, AIU_CLK_CTRL_MORE,
+>  				      AIU_CLK_CTRL_MORE_HDMI_AMCLK,
+> diff --git a/sound/soc/meson/aiu.c b/sound/soc/meson/aiu.c
+> index 38209312a8c3..dc35ca79021c 100644
+> --- a/sound/soc/meson/aiu.c
+> +++ b/sound/soc/meson/aiu.c
+> @@ -351,15 +351,24 @@ static int aiu_remove(struct platform_device *pdev)
+>  
+>  static const struct aiu_platform_data aiu_gxbb_pdata = {
+>  	.has_acodec = false,
+> +	.has_clk_ctrl_more_i2s_div = true,
+>  };
+>  
+>  static const struct aiu_platform_data aiu_gxl_pdata = {
+>  	.has_acodec = true,
+> +	.has_clk_ctrl_more_i2s_div = true,
+> +};
+> +
+> +static const struct aiu_platform_data aiu_meson8_pdata = {
+> +	.has_acodec = false,
+> +	.has_clk_ctrl_more_i2s_div = false,
+>  };
+>  
+>  static const struct of_device_id aiu_of_match[] = {
+>  	{ .compatible = "amlogic,aiu-gxbb", .data = &aiu_gxbb_pdata },
+>  	{ .compatible = "amlogic,aiu-gxl", .data = &aiu_gxl_pdata },
+> +	{ .compatible = "amlogic,aiu-meson8", .data = &aiu_meson8_pdata },
+> +	{ .compatible = "amlogic,aiu-meson8b", .data = &aiu_meson8_pdata },
+>  	{}
+>  };
+>  MODULE_DEVICE_TABLE(of, aiu_of_match);
+> diff --git a/sound/soc/meson/aiu.h b/sound/soc/meson/aiu.h
+> index ab003638d5e5..87aa19ac4af3 100644
+> --- a/sound/soc/meson/aiu.h
+> +++ b/sound/soc/meson/aiu.h
+> @@ -29,6 +29,7 @@ struct aiu_interface {
+>  
+>  struct aiu_platform_data {
+>  	bool has_acodec;
+> +	bool has_clk_ctrl_more_i2s_div;
+>  };
+>  
+>  struct aiu {
+
 
 _______________________________________________
 linux-arm-kernel mailing list
