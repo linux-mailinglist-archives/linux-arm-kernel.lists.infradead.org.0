@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB368167FE3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 15:15:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2740167FE8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 15:16:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+3NITcq6ULl4FZSGCE4ICiDn9d3rIwBmiZxgqt/gRQs=; b=UKTHa93aSBaD76
-	EJnOTy3Bf7KN8mx/7E3k/xu4IQ5vRZcCsGkEfy9GL7SAe61s6ynO2rRa8Xjw+U7W+BAAo4fR06qwz
-	ln9rHX9fehf2BXpuOFUNqXK3CXndqBkuy6QHNMFXYaF5pmnOu79aB4PjiogZ5xpMPhsbbGeWch3pZ
-	p2mQEgAjBWaQyzgsjXRXOUUgVL+oZ1GDdP/CSu4G1v7t9tKw7vdx+dw1cAxSf4EPLGb5slLx+2IDJ
-	doVWLAJtpY3wHBkEaFFLQx7bzOeqEkt1XkXk/1Pkb7G/MKgL+uF4PhNSnEPKnaZiKBQmr4SiVzg0D
-	WYwEZSk02EzuMMUBBrZQ==;
+	List-Owner; bh=CyJEVgkAWn9GqXLZX2gwrT8V1S7Ew4NOM1UAV0TDsyk=; b=jPfYzH20fffujq
+	IuexhShqUNgyq7NZz7u1msgJw8ojsUMLIJkg4VKmoSKj+fVAfvyjbG7mXLf3ucFS9UqHtElAibIrT
+	Y5Ujmhs0eAjjny1dWkPrpF2q2crt73AhVJAxBqcplMun1wAzv0uUSzDbQjJEHQG8iD8mq7G4Ca8Fh
+	HKIjTnvUcsXXaTT2l28vGj5dtL9EEvBfw1O/Oip6jj+fuPLhECt6cGPhoNTr9wXB5MMDEdCch7//H
+	NyUt5tX6UPB9/acBRIDMB8aUQT1XjBBrYigsbrPbVCHlVrv4FWZD2JzRyIxVL96M+kY67ndhaAjX4
+	YTbTlUce9uxSLqwB4fJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j595b-00024k-15; Fri, 21 Feb 2020 14:15:35 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1j596D-0002nW-82; Fri, 21 Feb 2020 14:16:13 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j595F-0001y0-GM
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 14:15:14 +0000
-Received: by mail-lf1-x141.google.com with SMTP id l18so1621939lfc.1
+ id 1j5964-0002lo-GC
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 14:16:05 +0000
+Received: by mail-lj1-x242.google.com with SMTP id a13so2324786ljm.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 06:15:13 -0800 (PST)
+ Fri, 21 Feb 2020 06:16:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AkDE61A38BuP/ygTbozBgf5MHpH9Vo95SRLvSWO439k=;
- b=t6Dtm2xouaekc2EYrWLEiRUk9zuzsx/ycSUdwto1vsa8hH21/0n0fsS5EpTujeRKQY
- 8cObip8/t43obcYamNuVdIlHszzzCp5VGj6iyMSEieDfy/vR/lx5E6LccTtYZ83AOfyP
- oZECnvFBM1fTQI9Hc933Gn3ZkAOWB0Exf7IQsnk3yy+tySMBmH1NCFPCdUsmF7AiPWXH
- VKMqvJr6BsuzUCZxCOut1irILOrmr8G6HWBoZcUMvtJbz6e6OPfpV0CUqlZO9WuoScWy
- Nt4NTixxcAszC3FBbeBToY0zMqja6JoruuxoS5PaAyrp82LcAs4KNPi7QOHqHXoKyOdB
- Ap/Q==
+ :cc; bh=9bkxUVE/BaGEsePvJG94FHSx4HKNwzho1ZimVG4ZU7U=;
+ b=NHFJssvv1/a6TfSVnJMOtNTzSVZKMxcb+si901Fg2lUVauvB20CGGqCqJGgoe+1e1g
+ Lbj4ou8rjIPF9xv9DKAYH90jZ+mObOp0rIjvZ7Dg9ySiio4iaK/btk0x2htCZeXbtCIs
+ s/6iqp5Gry2+Cn6zijm95lF/j4t7ZzDSE8o0BWPX8/4eSxMP10r0KunPtjnJkN+cxZLS
+ hrO4qp8YYuGoiQqOtGRt/oBkz38Qo3VLeSWUeTdL0KgCXOFPncrLa26IHW488Fp/bAVV
+ JyVPUu8OgRqzn7esCc+CO76f3ej/1vpiQrHunvANngKpIiFP9V0rPnMltKixXQJd4lQO
+ EcCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=AkDE61A38BuP/ygTbozBgf5MHpH9Vo95SRLvSWO439k=;
- b=DtzuuAQLO7ps1Xrv5H4XbRHqs8KMQWTLxX86kApEND1bQ5Ocj1bh4qsJ23vHohV3CZ
- /nnrETHDMb8GRTevmMJ2USC5j23Bp12Pn8K7tDeik1S2B4QOIY4291tG52qHgIeDy6ZI
- BBzHELL9XQa3EVABIZdFkng0oj/MwUmXNABZfcYTlbstQ61W2uDBumsZKCcCh91l5szk
- 6rH9W1Ij2YBB0KyMgsDIBLGOEaOnzOX2Ycum0OYBoEVXOn9eYf3rYn1X0PrmdIFBYxfa
- Hr6XhG22Xh+thqrf55K7xskO3g8Rk6jmYQTRy551p8Cj0o2If5TR7Zk7ITecnMmVu40X
- QDPA==
-X-Gm-Message-State: APjAAAWnQRS2V4aXNF4vpJnKlfTH3mW4V0/OUyhAjj6yJKMDSk1M8ugK
- lRXCi32/NK6F07njQ6rPZM8HYh41ueZy6BdhZch9nw==
-X-Google-Smtp-Source: APXvYqzecyE8QpYi6cdaz/TQalK+k7VYi+YdD5LPqzgQdo1IqXlfsRa0zlv4Hf96qBf+2V4EYlojhnrFM8/XTBOXs04=
-X-Received: by 2002:a19:5e1d:: with SMTP id s29mr20122200lfb.21.1582294511956; 
- Fri, 21 Feb 2020 06:15:11 -0800 (PST)
+ bh=9bkxUVE/BaGEsePvJG94FHSx4HKNwzho1ZimVG4ZU7U=;
+ b=GSiC20gs1gZMLc+0aPXqdyCoTWXTT+rkbSPEBMu/8MMTx2KDJyRGVJx+9H74dgJ2Ki
+ 6ncIcmxZ0SI10PKchFOzgEI2OXBoTfNd4k45VMjM8/cxUz4Tdy71rbc4Vd01UXX44SDv
+ kUtZx35JvpRawjFftN/5tQA7DqXaXrJCZWWvdIBkdUpg8y0Gij8ZrvsoVpR1eNlU2BPq
+ 3Ksno7fZS0ZxhMjZbMo/KnV/KuGdVCVrEQ5OIHPFDhJA2GLOJnoWLved/6g96dCDbkY8
+ CSncPP+VViTT3OfMuXMdB3xXBw+QjoCoiFQ+7VOWAAToersmauCiXHBPre9xB3wMHKSe
+ ABDw==
+X-Gm-Message-State: APjAAAVr7Bm3TyyCzbdxo+ekOjriVUGW+IMEdJnLj/HlYD+WT6FJw7de
+ 7tRpEb9TEOtJpf91RuAiIcnPEV2z1/0xmi3kLbNEKw==
+X-Google-Smtp-Source: APXvYqyMEW7xOoeU5aAqEunqkJEjZidoADakWQrFSuJrs2CPUv7HagGQ0QOJnoIk9QZdE7SPDJb+a06x21oCDVibGj4=
+X-Received: by 2002:a2e:7d0c:: with SMTP id y12mr23122512ljc.39.1582294562607; 
+ Fri, 21 Feb 2020 06:16:02 -0800 (PST)
 MIME-Version: 1.0
 References: <20200117213340.47714-1-samuel@sholland.org>
-In-Reply-To: <20200117213340.47714-1-samuel@sholland.org>
+ <20200117213340.47714-2-samuel@sholland.org>
+In-Reply-To: <20200117213340.47714-2-samuel@sholland.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 21 Feb 2020 15:15:01 +0100
-Message-ID: <CACRpkdYtmRWai8X4yAxNt57zT2eUyLdkDaYCmB=0BU62zAa81g@mail.gmail.com>
-Subject: Re: [PATCH 1/2] pinctrl: sunxi: Forward calls to irq_set_irq_wake
+Date: Fri, 21 Feb 2020 15:15:51 +0100
+Message-ID: <CACRpkdajokCMpJ98yfFp-s23jG96wO_N9R2ZXvXB+hU6XMs=ng@mail.gmail.com>
+Subject: Re: [PATCH 2/2] pinctrl: sunxi: Mask non-wakeup IRQs on suspend
 To: Samuel Holland <samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_061513_567262_37DEFB24 
-X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-CacheID: sfid-20200221_061604_544099_EEC0E25C 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -69,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,16 +104,14 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Jan 17, 2020 at 10:33 PM Samuel Holland <samuel@sholland.org> wrote:
 
-> The pinctrl irqchip may be connected to an irqchip that implements the
-> .irq_set_wake callback, such as the R_INTC on A31 and newer sunxi SoCs.
-> In order for GPIOs to be able to trigger wakeup, the IRQ from the
-> pinctrl to the upper irqchip must also be enabled for wakeup. Since the
-> kernel's IRQ core already manages the "wake_depth" of each IRQ, no
-> additional accounting is needed in the pinctrl driver.
+> The pin controller hardware does not distinguish IRQs intended for
+> wakeup from other IRQs, so we must mask non-wakeup IRQs in software to
+> prevent inadvertent wakeups. This is accomplished at the irqchip level
+> via the IRQCHIP_MASK_ON_SUSPEND flag.
 >
 > Signed-off-by: Samuel Holland <samuel@sholland.org>
 
-Patch applied with Maxime's ACK.
+Patch applied.
 
 Yours,
 Linus Walleij
