@@ -2,86 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02FD516792C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:16:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C90C416793A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:20:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uB0a2Q7W8uwfS3Ps77sZPp2GejFW2Xzh2yFE9Y0vAVk=; b=FD/2Y03dxzE7f7
-	LUGiuA4T1nfjZDSXCKWf+apUuv9kzchg5n0V1r+PvbFqKRTs+17H12BIOtnxnQOt2eGpVVPa2Ac6Y
-	IoLKtCq+09sP9mmvXa9WAlPGoLAgpDVK8taPA/VtTNjZFJlzXV3TfjYxNhbJOeXbT6dBMZSMMAvnF
-	8Ff3T+rrLUfFggbgw9b0tho22si9K0sWu9p+GKaRNlwFeRi7wYaCqEz/PAgRBtNJwKI3PSw8gMHiy
-	IpUhjLvtCYax4oFkFN9EL9DIOzHQr21PsV6Y1Y+G9IMOhT+GQZiSy/ScpNuEpZDftU5UjwP4z7CyE
-	bkX4//l/q4mCmqTZ6HDA==;
+	List-Owner; bh=Vp6H0VVLAcFsbsRqQk4qg8LuotGcTAC1EcUDMd/UAkE=; b=OwU2Rig0xMFAcp
+	lRC+xLGQoT36LAuAjsC+9n3ZBVrmxAINHvwEHEZxKDeoqE0aJmSFwfESG9zn0YeJZ/jk24NnCaI5w
+	qZ1eA4fji2weEvazSj6/S/7avZr2+0+kYeJnWooYjVHdd0jsJLhMIvkZWi8S5ZwhJ3Zf0H6GQA/MN
+	gEdyrivP/RoGGtN2yHXE/PZJvtX5kKx6UKt3b0EfqolpSsbomW37bxBiy3x8RMXawt0hPVDtUYgLw
+	pUGfOz6tUN5/f+MBsBTaCo+EEftEfv8F1mNKUtxzisVMiRtQiijFKcdNQ6NPN8cEGQp79KfLmjFv5
+	kTLEtWJbZCwrhm6JMn2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j54QM-0004O4-MB; Fri, 21 Feb 2020 09:16:42 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j54To-00064L-C6; Fri, 21 Feb 2020 09:20:16 +0000
+Received: from conssluserg-04.nifty.com ([210.131.2.83])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j54PP-0003Z0-38
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 09:15:45 +0000
-Received: by mail-wr1-x443.google.com with SMTP id t3so1105997wru.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 01:15:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=m6wyWMfpOh6h06xGncQF4ABfwmrzTVZCtOS7mfMUTXc=;
- b=CNFUz9XmIGI1z3rF1pEQXHmcssshI74bztcBFdr5a3SNe8JI0QnKTDTONXkWHH9iU/
- 1eebI/r4y8loG5bVOhU6pdkLGCN5nrE/3kav0FjA3/aL2kZW+YnOi4bEfufZeb1YlMe2
- Vwvu4n7MSvGJTpXARLUUFFOnVPTgcNtI9q/afAfvgXfFAs6z8e8QmA5EoXZiVzZYOr+H
- tO8mSVpr+1CctLXYHLI58XWXawcWuBeLuWxDaEDInc8YpVYiJnDdPi2XAynDIlszY61M
- vumDIplpMEdW772nhgM3/9AqF4XsghWLQOM7sMw+GZGCmRJG+LWXJDKWwAGXw4hMqCWw
- 7J7Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=m6wyWMfpOh6h06xGncQF4ABfwmrzTVZCtOS7mfMUTXc=;
- b=aHaNO+9uWI5KMveeuhvsh+dznWXBSMfuTf3LhAksor/awGA/+XdbfUMAMkqZUPfGo0
- K3e6Xprv6gwSYIKBRI9tHdB3OnhqTjCeh0FChlXYQPnc9T4NVGegYYntoy+YNZh/EHhJ
- euSZKBH4zpUzsgpj/LHOnGgquOGPODRXzu+zh1Dod2XzMLoacxg4S4UPBAqbKep6ffEj
- WVEGAhsZtL3s5CgGS/1kbR78oV4fuc9nNLJxB85nKHxG/K4/67l6n6sicuCRNdMjXtVR
- qFSwrXFJOEKS/4Z00Ryll/52/RNyrmrBa1CMBESHEoukqQEBCjVU562pyRBtQEJzANZt
- RHWw==
-X-Gm-Message-State: APjAAAUbkcP4nARq2hS57LORXaWz/Raf7zt2roYUPwwbw4GC68Mym7Y9
- VH6OpI96tZwvaJBRLO87EIunLg==
-X-Google-Smtp-Source: APXvYqx/yoZp80GSQF39ZZMKaradH9pBESsqZ0SCSnPQWB0IlpiAxndOzpHoTVL08u7ug6/J7HxbTQ==
-X-Received: by 2002:adf:db84:: with SMTP id u4mr48270400wri.317.1582276541693; 
- Fri, 21 Feb 2020 01:15:41 -0800 (PST)
-Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858])
- by smtp.gmail.com with ESMTPSA id
- o15sm3257837wra.83.2020.02.21.01.15.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 21 Feb 2020 01:15:41 -0800 (PST)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: balbi@kernel.org,
-	khilman@baylibre.com
-Subject: [PATCH v4 3/3] arm64: dts: g12-common: add parkmode_disable_ss_quirk
- on DWC3 controller
-Date: Fri, 21 Feb 2020 10:15:32 +0100
-Message-Id: <20200221091532.8142-4-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20200221091532.8142-1-narmstrong@baylibre.com>
-References: <20200221091532.8142-1-narmstrong@baylibre.com>
+ id 1j54Tb-0005Eo-3E; Fri, 21 Feb 2020 09:20:05 +0000
+Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com
+ [209.85.221.174]) (authenticated)
+ by conssluserg-04.nifty.com with ESMTP id 01L9JRK8023932;
+ Fri, 21 Feb 2020 18:19:27 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com 01L9JRK8023932
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1582276768;
+ bh=VmuyVpcSR865JyPo0oVfgzMcmXUB4YPWqRffdg846F0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=k6u9vPdhI6KhWgKFa+85uXqNS1YYMM3fPKwoQ0+mXFsCqC7Qtlm+j6wX6feBp9XGB
+ 1BUxPU3PkoHO0BiRd2yZ2GByfUpx2+NP2NrIFgVObece6IUxFK2PRcUi6twQPO1gfY
+ JBNqel9zTN4MB38yKaZgPGo43xybEJenJCh0+WTcb2kMMpi9ShcEqSpv/q8kJpQ6pE
+ wlvStdWh0o5oQLZD9jkzu7XGI0oUs1yDNxY9A1jlyDo2S3apE1l/wh2hRBM5LlrFYN
+ ElbrhVjxY+Edkw76jlulz1LngNsLOKencNnkq1Bf51eNsfukbttbhAgvjQTyVvfFPY
+ nahV40hzNGuiw==
+X-Nifty-SrcIP: [209.85.221.174]
+Received: by mail-vk1-f174.google.com with SMTP id g7so368429vkl.12;
+ Fri, 21 Feb 2020 01:19:27 -0800 (PST)
+X-Gm-Message-State: APjAAAWy9sTKuYnEvS8CmJyeKKSdIF1Bt+BwDBnqdJx3iumG5f1rqDDw
+ /BzKcPdU3zL045nj9T2LsKOzL5dbqp3Qml6O/hQ=
+X-Google-Smtp-Source: APXvYqzaz0mPSZK/ntfmxfvFupJ42NyBQt0nUrM/n8cwK4Ehx6Qt0V2MsrTaIIELjQXW5ad1WZ9ao8dfI393Harrrkg=
+X-Received: by 2002:a1f:72c3:: with SMTP id n186mr16153825vkc.12.1582276766520; 
+ Fri, 21 Feb 2020 01:19:26 -0800 (PST)
 MIME-Version: 1.0
+References: <CGME20200221085039eucas1p2b439c37eb04870cc020f452b7ad31929@eucas1p2.samsung.com>
+ <20200216154502.26478-1-masahiroy@kernel.org>
+ <e0212512-bc44-fc3a-a647-47eff86983b7@samsung.com>
+In-Reply-To: <e0212512-bc44-fc3a-a647-47eff86983b7@samsung.com>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Fri, 21 Feb 2020 18:18:50 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQqsLnZc4h_XEMifS2hX+E39-vxD-BL5C59Aj+TaQo+eA@mail.gmail.com>
+Message-ID: <CAK7LNAQqsLnZc4h_XEMifS2hX+E39-vxD-BL5C59Aj+TaQo+eA@mail.gmail.com>
+Subject: Re: [PATCH] kbuild: use KBUILD_DEFCONFIG as the fallback for
+ DEFCONFIG_LIST
+To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_011543_164903_C68E7E98 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200221_012003_378204_AAF7DE43 
+X-CRM114-Status: GOOD (  28.97  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.83 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,50 +83,248 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Tim <elatllat@gmail.com>,
- Dongjin Kim <tobetter@gmail.com>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Rich Felker <dalias@libc.org>, Linux-sh list <linux-sh@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Guo Ren <guoren@kernel.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux <sparclinux@vger.kernel.org>,
+ "open list:SIFIVE DRIVERS" <linux-riscv@lists.infradead.org>,
+ Vincent Chen <deanbo422@gmail.com>, Will Deacon <will@kernel.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Richard Weinberger <richard@nod.at>, X86 ML <x86@kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Albert Ou <aou@eecs.berkeley.edu>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
+ Borislav Petkov <bp@alien8.de>, Greentime Hu <green.hu@gmail.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Nick Hu <nickhu@andestech.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Palmer Dabbelt <palmer@dabbelt.com>, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When high load on the DWC3 SuperSpeed port, the controller crashes with:
-[  221.141621] xhci-hcd xhci-hcd.0.auto: xHCI host not responding to stop endpoint command.
-[  221.157631] xhci-hcd xhci-hcd.0.auto: Host halt failed, -110
-[  221.157635] xhci-hcd xhci-hcd.0.auto: xHCI host controller not responding, assume dead
-[  221.159901] xhci-hcd xhci-hcd.0.auto: xHCI host not responding to stop endpoint command.
-[  221.159961] hub 2-1.1:1.0: hub_ext_port_status failed (err = -22)
-[  221.160076] xhci-hcd xhci-hcd.0.auto: HC died; cleaning up
-[  221.165946] usb 2-1.1-port1: cannot reset (err = -22)
+On Fri, Feb 21, 2020 at 5:50 PM Marek Szyprowski
+<m.szyprowski@samsung.com> wrote:
+>
+> Dear All,
+>
+> On 16.02.2020 16:45, Masahiro Yamada wrote:
+> > Most of the Kconfig commands (except defconfig and all*config) read the
+> > .config file as a base set of CONFIG options.
+> >
+> > When it does not exist, the files in DEFCONFIG_LIST are searched in this
+> > order and loaded if found.
+> >
+> > I do not see much sense in the last two entries in DEFCONFIG_LIST.
+> >
+> > [1] ARCH_DEFCONFIG
+> >
+> > The entry for DEFCONFIG_LIST is guarded by 'depends on !UML'. So, the
+> > ARCH_DEFCONFIG definition in arch/x86/um/Kconfig is meaningless.
+> >
+> > arch/{sh,sparc,x86}/Kconfig define ARCH_DEFCONFIG depending on 32 or 64
+> > bit variant symbols. This is a little bit strange; ARCH_DEFCONFIG should
+> > be a fixed string because the base config file is loaded before the symbol
+> > evaluation stage.
+> >
+> > Using KBUILD_DEFCONFIG is saner because it is fixed before Kconfig is
+> > invoked. Fortunately, arch/{sh,sparc,x86}/Makefile define it in the
+> > same way, and it works as expected. Hence, replace ARCH_DEFCONFIG with
+> > "arch/$(SRCARCH)/configs/$(KBUILD_DEFCONFIG)".
+> >
+> > [2] arch/$(ARCH)/defconfig
+> >
+> > This file path is no longer valid. The defconfig files are always located
+> > in the arch configs/ directories.
+> >
+> >    $ find arch -name defconfig | sort
+> >    arch/alpha/configs/defconfig
+> >    arch/arm64/configs/defconfig
+> >    arch/csky/configs/defconfig
+> >    arch/nds32/configs/defconfig
+> >    arch/riscv/configs/defconfig
+> >    arch/s390/configs/defconfig
+> >    arch/unicore32/configs/defconfig
+> >
+> > The path arch/*/configs/defconfig is already covered by
+> > "arch/$(SRCARCH)/configs/$(KBUILD_DEFCONFIG)". So, this file path is
+> > not necessary.
+> >
+> > Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+>
+> This patch landed in today's linux-next (next-20200221) and broke arm64
+> builds:
+>
+> --->8---
+>
+> $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
+> *** Default configuration is based on 'defconfig'
+> #
+> # configuration written to .config
+> #
+> $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image.gz
+> scripts/kconfig/conf  --syncconfig Kconfig
+> scripts/kconfig/conf  --syncconfig Kconfig
+> scripts/kconfig/conf  --syncconfig Kconfig
+> scripts/kconfig/conf  --syncconfig Kconfig
+> scripts/kconfig/conf  --syncconfig Kconfig
+> ...
+>
+> (endless loop)
+>
+> --->8---
+>
+> Reverting it fixes the issue:
 
-Setting the parkmode_disable_ss_quirk quirk fixes the issue.
 
-CC: Dongjin Kim <tobetter@gmail.com>
-Cc: Jianxin Pan <jianxin.pan@amlogic.com>
-Reported-by: Tim <elatllat@gmail.com>
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 1 +
- 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index abe04f4ad7d8..87b9a47a51b9 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -2220,6 +2220,7 @@
- 				dr_mode = "host";
- 				snps,dis_u2_susphy_quirk;
- 				snps,quirk-frame-length-adjustment;
-+				snps,parkmode-disable-ss-quirk;
- 			};
- 		};
- 
+My bad.
+
+This is because arch/arm64/Makefile does not define
+KBUILD_DEFCONFIG.
+
+
+
+I will drop it.
+
+Sorry about that.
+
+
+
+
+
+>
+> --->8---
+>
+> $ git revert cdd5d1a207d6a3a06c9e627a0234d9a6af6ad347
+> [detached HEAD 1080d6a13b6d] Revert "kbuild: use KBUILD_DEFCONFIG as the
+> fallback for DEFCONFIG_LIST"
+>   5 files changed, 22 insertions(+), 1 deletion(-)
+> $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
+> *** Default configuration is based on 'defconfig'
+> #
+> # No change to .config
+> #
+> $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image.gz
+> scripts/kconfig/conf  --syncconfig Kconfig
+>    UPD     include/config/kernel.release
+>    UPD     include/generated/utsrelease.h
+>    CC      scripts/mod/empty.o
+> ...
+>
+> $ aarch64-linux-gnu-gcc --version
+> aarch64-linux-gnu-gcc (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) 7.4.0
+> Copyright (C) 2017 Free Software Foundation, Inc.
+> This is free software; see the source for copying conditions. There is NO
+> warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+> --->8---
+>
+> It looks that the issue is similar to the one described here:
+>
+> https://patchwork.kernel.org/patch/10453685/
+>
+> I hope this report helps fixing the issue.
+>
+> > ---
+> >
+> >   arch/sh/Kconfig     | 5 -----
+> >   arch/sparc/Kconfig  | 5 -----
+> >   arch/x86/Kconfig    | 5 -----
+> >   arch/x86/um/Kconfig | 5 -----
+> >   init/Kconfig        | 3 +--
+> >   5 files changed, 1 insertion(+), 22 deletions(-)
+> >
+> > diff --git a/arch/sh/Kconfig b/arch/sh/Kconfig
+> > index 9ece111b0254..b4f0e37b83eb 100644
+> > --- a/arch/sh/Kconfig
+> > +++ b/arch/sh/Kconfig
+> > @@ -87,11 +87,6 @@ config SUPERH64
+> >       select HAVE_EXIT_THREAD
+> >       select KALLSYMS
+> >
+> > -config ARCH_DEFCONFIG
+> > -     string
+> > -     default "arch/sh/configs/shx3_defconfig" if SUPERH32
+> > -     default "arch/sh/configs/cayman_defconfig" if SUPERH64
+> > -
+> >   config GENERIC_BUG
+> >       def_bool y
+> >       depends on BUG && SUPERH32
+> > diff --git a/arch/sparc/Kconfig b/arch/sparc/Kconfig
+> > index c1dd6dd642f4..0de15380d1fc 100644
+> > --- a/arch/sparc/Kconfig
+> > +++ b/arch/sparc/Kconfig
+> > @@ -95,11 +95,6 @@ config SPARC64
+> >       select PCI_DOMAINS if PCI
+> >       select ARCH_HAS_GIGANTIC_PAGE
+> >
+> > -config ARCH_DEFCONFIG
+> > -     string
+> > -     default "arch/sparc/configs/sparc32_defconfig" if SPARC32
+> > -     default "arch/sparc/configs/sparc64_defconfig" if SPARC64
+> > -
+> >   config ARCH_PROC_KCORE_TEXT
+> >       def_bool y
+> >
+> > diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+> > index beea77046f9b..98935f4387f9 100644
+> > --- a/arch/x86/Kconfig
+> > +++ b/arch/x86/Kconfig
+> > @@ -240,11 +240,6 @@ config OUTPUT_FORMAT
+> >       default "elf32-i386" if X86_32
+> >       default "elf64-x86-64" if X86_64
+> >
+> > -config ARCH_DEFCONFIG
+> > -     string
+> > -     default "arch/x86/configs/i386_defconfig" if X86_32
+> > -     default "arch/x86/configs/x86_64_defconfig" if X86_64
+> > -
+> >   config LOCKDEP_SUPPORT
+> >       def_bool y
+> >
+> > diff --git a/arch/x86/um/Kconfig b/arch/x86/um/Kconfig
+> > index a8985e1f7432..95d26a69088b 100644
+> > --- a/arch/x86/um/Kconfig
+> > +++ b/arch/x86/um/Kconfig
+> > @@ -27,11 +27,6 @@ config X86_64
+> >       def_bool 64BIT
+> >       select MODULES_USE_ELF_RELA
+> >
+> > -config ARCH_DEFCONFIG
+> > -     string
+> > -     default "arch/um/configs/i386_defconfig" if X86_32
+> > -     default "arch/um/configs/x86_64_defconfig" if X86_64
+> > -
+> >   config 3_LEVEL_PGTABLES
+> >       bool "Three-level pagetables" if !64BIT
+> >       default 64BIT
+> > diff --git a/init/Kconfig b/init/Kconfig
+> > index 452bc1835cd4..6ccdb168dee5 100644
+> > --- a/init/Kconfig
+> > +++ b/init/Kconfig
+> > @@ -6,8 +6,7 @@ config DEFCONFIG_LIST
+> >       default "/lib/modules/$(shell,uname -r)/.config"
+> >       default "/etc/kernel-config"
+> >       default "/boot/config-$(shell,uname -r)"
+> > -     default ARCH_DEFCONFIG
+> > -     default "arch/$(ARCH)/defconfig"
+> > +     default "arch/$(SRCARCH)/configs/$(KBUILD_DEFCONFIG)"
+> >
+> >   config CC_IS_GCC
+> >       def_bool $(success,$(CC) --version | head -n 1 | grep -q gcc)
+>
+> Best regards
+> --
+> Marek Szyprowski, PhD
+> Samsung R&D Institute Poland
+>
+
+
 -- 
-2.22.0
-
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
