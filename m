@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 297D0166CF4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 03:39:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EADB166CFC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 03:39:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+SZ7BbIOsPDvztwkN0hfU/afPOf83inShxgFpmlwrC4=; b=bkkPKJ1nZ0ZbCN
-	TakpK0MYjbdG0RM3JbWlf7mK7Os3NvSC7VHjD/AA+rcSHmCGn4l9N7FCyATNRkn4ndb6YVLFf1Pz5
-	ffwVs61amkfsEZ01V/Z38a5t1AHDFMaj2JK9v93Pj6ATKh/50RaSjOvsi9k8sv0q95Kjk1yU73n81
-	+yoYAGrVSjAAkt7dNuftpV4UM9tEerFiFExXC7/l2wBPt2H3z+uV3b0D+g/1TYsUC0FBevFJby/Qh
-	tiGFeoeRGS7hPPq9Zhl1YTmaLYXyFLcs0tYn2V7Ot4DKZgtdG9rkNTE0AyDPWnE5T20w1cIiSYk+J
-	Pw7nJsAgU0sHfUCJ0z0g==;
+	List-Owner; bh=n+EyrNxzi2QeARun+BQTZiXsky25mVzfxC4RvRVK12Y=; b=tvoXVmA6wPcxkq
+	pPmjyrADQuKaAQaSjls/DLF3zunmcBc1nX3wCEeZwYR0J2a1CrvMCnZ/yGO7jjvmuG6qybtY3yVSl
+	JU0jQnRCVaL9ty/pXJsrt9JE5MlXGerV0v5wCQB4kFuLpzkevZozCs1EHoBHC8P0da8qjlEjSn7wN
+	Onfe8Qeehv1hilana1Jmwz70Zzl3jlGS7AONRlRm6AXKcEea2Bm1BmRPrdc4iMwIXxol3v+IG01YU
+	qRj/fAsfOboQNc6NZB6ixCouvIgGO50FkWTbbWa8aiGHDT1eM3DmXjMmFkjo/zuNsK6L3DNhgd+Cs
+	gL+ApGXvGibaJfagRbdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4yDT-0007wd-If; Fri, 21 Feb 2020 02:38:59 +0000
-Received: from mail-eopbgr10065.outbound.protection.outlook.com ([40.107.1.65]
+	id 1j4yDi-0008F6-9Q; Fri, 21 Feb 2020 02:39:14 +0000
+Received: from mail-eopbgr10073.outbound.protection.outlook.com ([40.107.1.73]
  helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4yCv-0007iq-V0
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 02:38:27 +0000
+ id 1j4yD0-0007l1-LE
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 02:38:32 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NLV0/hdYeoUAB1+y624pw8JZi6tCOcL58oJSuLmZJe5sVhmqcD07OwHFloV4htI48ZSyNhG0xLWf5/MO2X3biQ2+mB4Pg0PtUkwJWm6Rx91E0yRVjHAaIFRTy2mMChHhQlDV+9tRQTQd1Q8o8LKt6tmO3ItCs3li1AMKFlj2p6crXqhvCnCrP62NTqVlZw4IwaSpwouSKjg8Wbx+b53VP54HKYhMkoaVhpoUrtOgK6IWRMTSQVroHtiS5bn9gfCersrda3uFrZY04inF4mWA+mP3tC5rrfFjnwgaFFGxQGPbjAqa9eNC2O9L0nrG8O5M1f9or6XlTWFLXllEtvjCTw==
+ b=ljxrUqEqh9kIaQrVAwcOO2+UBdNO1TCVzL/NjYqeFcWCFjMG4VACn4I71KMAyKEuM1oi13rM96RgN/4ku4LDuta/5t+6KH1F0KDzXIPU9VdsDMrWZlpIwU8onkiH4y8FM7gM/Ed5+HgGGLNQfckEYr2eSvtldbZAT6iWoUAWYW88UvJzt6WzS50uSMQHdMk6sZqY+YucrlT6p28oMV8PbEmbx7KBLTrTEYyZ8ChfwwK7v5VhojTEV11Igz2JKw0sKi6E0/ZcbKim+4Z8Tvdd+vGIexL+BiBwM3AnpnYDk6kTZj1YwF9Ykw2yZ6AI6wbDUwu3S6qBgHZFT9fcXkwI1Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1pHpzxEIbDKi2Xx5kdCK1RS4J/36DfLqAvV+tLY9f1I=;
- b=Ei1pnIRyBObs0tC9O6fNjgS3JeIYGnkW7bc3GvGlfvQasR+kk4sM1gK8GfZdYodLtHwT71ssswfVlFKLaVoP3ROWBsAhuozAYyEYlB3p/1NJRaAQdZt9b6jVwMhn4dLK9ESguRS6EuqgYdnlhetPLCVk5bCq3TrRzzZ1TxFwvttMNvMtfv7LXlawNhCwyi4Oerdm0R8ES8llnL8Vh9yHyt6am+ywGIV4c9oc+8N69X7n398w5dz1rCRt/03n3XZUYnxBeIkM5C+kAyAK8kAPATt4f+M9j2HgpOdQ5hBB7S41XorTy+ITQw6o88vcOKPOdMm3O01/4Vq9LA7vnv44yg==
+ bh=2DoQ2c0wWcVtlw44EiO8dgJ20B75pVwEVOAPkPcH9fA=;
+ b=kL/B9ktlTUWLSCX6ZRclBEjIUhmnvX/9YuD8L3zelJBB0X94CEJCpGN3lWWyOrdejbSNizKiZgfingDtHObauMzoi0yCNHfrs19DrvRoAxIlWdY4prqmDxrelE/8WLIVKrvY4ckH3zhjN2HPgchJopMZX9cjyDoGhjstZ3WaXNW7mZQFNR0vubjxueKfROxuSEWy2hQ3cDXIa0OA7GbiKdD7ks/FMsqmCq8GyM/Ic7YXAXtJDsKdAzPmNYQh8Fhx1X8Y9aqhhCKySNTtSUwjQ2TMySir3IL0zm9N0MfS6EAd/bUVwn4Dh8hbw4ktWizewyeR3klgsYd+AggMKf08Sw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1pHpzxEIbDKi2Xx5kdCK1RS4J/36DfLqAvV+tLY9f1I=;
- b=pOlGpCCwfD/a2e7PugDOgjzNE3nV6dq/DsaC30XRkxPt2IMGt/YS+yySG6sa51S0TmAFbP1UQljCy5rnCtlYv+WLl4xlN5RymQsdE9hQbd2g8Cfyx6/uJ8TF8/i6EooKB0XQfQdNgiXD75qmufADN3lbpL5vXMoVn8KjOSWTFIc=
+ bh=2DoQ2c0wWcVtlw44EiO8dgJ20B75pVwEVOAPkPcH9fA=;
+ b=CEjvtLoh/EMHqWVbWUIQ70d0tAkunLoJBL2jkCZ9wwZvoENv43VVceVQolc+40ZTsp/q54PwQOulvZBlWdZsxcNEc8e2nW9Jd3U9s4UxidvfjaOmhVB7ql5OBKvnDoIg2PfESGvsQuvHQBnK24x9t6o8zs0U6mct1UG1+6XwEm0=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB5281.eurprd04.prod.outlook.com (52.134.89.96) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.25; Fri, 21 Feb 2020 02:38:24 +0000
+ 15.20.2729.25; Fri, 21 Feb 2020 02:38:28 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2729.033; Fri, 21 Feb 2020
- 02:38:24 +0000
+ 02:38:28 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org,
 	s.hauer@pengutronix.de
-Subject: [PATCH V5 1/2] firmware: imx: add dummy functions
-Date: Fri, 21 Feb 2020 10:32:18 +0800
-Message-Id: <1582252339-15733-2-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V5 2/2] soc: imx: increase build coverage for imx8m soc driver
+Date: Fri, 21 Feb 2020 10:32:19 +0800
+Message-Id: <1582252339-15733-3-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582252339-15733-1-git-send-email-peng.fan@nxp.com>
 References: <1582252339-15733-1-git-send-email-peng.fan@nxp.com>
@@ -64,19 +64,19 @@ MIME-Version: 1.0
 Received: from localhost.localdomain (119.31.174.66) by
  HK2PR04CA0057.apcprd04.prod.outlook.com (2603:1096:202:14::25) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2750.17 via Frontend Transport; Fri, 21 Feb 2020 02:38:20 +0000
+ 15.20.2750.17 via Frontend Transport; Fri, 21 Feb 2020 02:38:24 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 6d75dcb9-c7c7-4d62-d080-08d7b6771f47
+X-MS-Office365-Filtering-Correlation-Id: 2b1ced16-262c-4e7a-6bef-08d7b67721aa
 X-MS-TrafficTypeDiagnostic: AM0PR04MB5281:|AM0PR04MB5281:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB52815A54BD10E6614419595788120@AM0PR04MB5281.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB528130FD3A798CD91947CD5888120@AM0PR04MB5281.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
 X-Forefront-PRVS: 0320B28BE1
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(136003)(366004)(346002)(39860400002)(189003)(199004)(2616005)(9686003)(26005)(4326008)(956004)(478600001)(6506007)(36756003)(5660300002)(6486002)(6512007)(16526019)(8676002)(86362001)(8936002)(52116002)(69590400006)(2906002)(186003)(66946007)(81166006)(66556008)(81156014)(316002)(66476007);
+ SFS:(10009020)(4636009)(376002)(396003)(136003)(366004)(346002)(39860400002)(189003)(199004)(2616005)(9686003)(26005)(4326008)(956004)(478600001)(6506007)(36756003)(5660300002)(6486002)(6512007)(16526019)(8676002)(86362001)(8936002)(6666004)(52116002)(69590400006)(2906002)(186003)(66946007)(81166006)(66556008)(81156014)(316002)(66476007)(32563001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5281;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -84,26 +84,26 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: IlGIXc2fupVgG9aHsM9c2/HOGkMQvE5iDr/twPvxqzM83IWYK94CP6U5rZgFwLZkem0sH+giiTW6nfjuW8P1vVFllCAGtl9JkFxPr/A5bixbOGRZIVkLtkrxLy3LaHnnpl6HY5fSvYgO46KSinCeZ3f8Nt7LyrXS3hXrSFqbDUQ7LSLoEDVPQd+y0Co8J1/5bDGX0YXlC77JM5H1OnQmow2xbnpjALFvZDJvcj3Bh1Mf/uSjOlrdrLVXmlpuMGlU1DIXVNPAqLoy+e0By8QPzyoHBvPL5Jk52t6i8GnJZDtn7iJn2DrplAq6UP3wIdmQTcAhgDMrF9z/qoZh8We1H2VFiUvG6krK+ww7OBhcRIe/T2Xr7VCE7EQFXWXsALk7HrQ3nTyCd3vQru7kS8jVpPEcgwRcfnVNdZimHspW7nRj8Vccjw+JiYncFzJNlGeVSWi6LAtW10VV1PcYCxjk7AfPwJIglM0LbM+GEOpqtHbldt/dyU1rUVDv4N7/CFzNFL5C+0QawgF6F3vk6TR1Lw8axdFYGfMyFNEznICxc2Q=
-X-MS-Exchange-AntiSpam-MessageData: S04rmBY6VoneMLkxg4OlS4ZMNLgzeU8//g57muue28C7ytN8nJY3v6tOKkVTpG8H+zFKi+PDwS2HYv6ZlVTmZPeCRyLbDkg78XNkHVR0KCxq5nt2lqbE26GjXSl569oSLYcpUXdqGWuUGNVhUIdXsA==
+X-Microsoft-Antispam-Message-Info: oyuM6WgTO29dWQRADM8WTrA54CT2USCYckef7YDa81NIPuOYK3Zz/fTuWJU0k6ffAEq4t6o5w/+v5Evu35XBX4a4QyWfczjIhtoVFKTN7mSY1CzGIf9OgtaLnUWzM9R2GAmhq6EzzETT2mDTpE/zV4n5CdYuKfmkTm/1HiZQ3TxW2koO50xXGOOy3sbDsUXSkNTjzkPA4rDMUO0I4e7tzNvvaKRjRS8PXDA6BKpwFk6rB4cc1SXFvYPpQdclfBTybXVViDhC1ImKPqBRPZrNwQrWrGGgUtviuZzxaZf19dvbX2gu+wW65999oVhsF+LzlFWl+kuQtpqDyIp0od8QNj663FvKj4yqSr06iPmOyB6XsYilU1F/PJCeR7yvN88hI8HmsZs7d18FFCQlrOS5X3nKMOdqRbQkendALYjFpU5AjQBEMsO5kKUyD7ze2WsJa/YHElBOUNwMIAfgZ7CpKMHpolUNDvzHfu64i8sTXr4URn4klE8ISYIgiQDRxFKIZMiOnT0Se5yPbX3b1kY3WLv24jaJboiM2aiABTe8iaEK4jf2DfWIdYtsd9fWxL0F
+X-MS-Exchange-AntiSpam-MessageData: GiRT9MspXr3FcS8Yt1SUUPk+c4zWT3z4v4NJ14oK/V4F9H3ucF9aiHUbBvfrJa7L1AqMILpYAUkAfWyeIKN8k+6HQWkGlO5MXVgb+aCujkzob0b+Bh5UfwdGDW3E573s98Od/xATgfUTrCYYP+S4/Q==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6d75dcb9-c7c7-4d62-d080-08d7b6771f47
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Feb 2020 02:38:24.0456 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2b1ced16-262c-4e7a-6bef-08d7b67721aa
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Feb 2020 02:38:28.0343 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: E5y7Ax4UvaMPdggOTzs9YxbG/CUdBWumgI1wmC2DUsR8JAU1ZNtwf6K1ND51egFcAaw4kgkiYawDOWzVrq+s/A==
+X-MS-Exchange-CrossTenant-UserPrincipalName: yrvTh/VooBOhReNdE4PjSBflCqjB7XV+d5je1yMZa7O04R5o3c0QOIJazfvt/Ln7XZvZhG6MWGXypUoOQVf8cQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5281
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_183826_006394_4F80877E 
-X-CRM114-Status: GOOD (  11.03  )
+X-CRM114-CacheID: sfid-20200220_183830_788615_E0876B42 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.65 listed in list.dnswl.org]
+ no trust [40.107.1.73 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -136,119 +136,70 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-IMX_SCU_SOC could be enabled with COMPILE_TEST, however there is
-no dummy functions when CONFIG_IMX_SCU not defined. Then there
-will be build failure.
+The soc-imx8.c driver is actually for i.MX8M family, so rename it
+to soc-imx8m.c.
 
-So add dummy functions to avoid build failure for COMPILE_TEST
+Use CONFIG_SOC_IMX8M as build gate, not CONFIG_ARCH_MXC, to control
+whether build this driver, also make it possible for compile test.
+
+Default set it to y for ARCH_MXC && ARM64
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- include/linux/firmware/imx/ipc.h      | 13 +++++++++++++
- include/linux/firmware/imx/sci.h      | 22 ++++++++++++++++++++++
- include/linux/firmware/imx/svc/misc.h | 19 +++++++++++++++++++
- 3 files changed, 54 insertions(+)
+ drivers/soc/Makefile                        | 2 +-
+ drivers/soc/imx/Kconfig                     | 9 +++++++++
+ drivers/soc/imx/Makefile                    | 2 +-
+ drivers/soc/imx/{soc-imx8.c => soc-imx8m.c} | 0
+ 4 files changed, 11 insertions(+), 2 deletions(-)
+ rename drivers/soc/imx/{soc-imx8.c => soc-imx8m.c} (100%)
 
-diff --git a/include/linux/firmware/imx/ipc.h b/include/linux/firmware/imx/ipc.h
-index 6312c8cb084a..30475082f472 100644
---- a/include/linux/firmware/imx/ipc.h
-+++ b/include/linux/firmware/imx/ipc.h
-@@ -35,6 +35,7 @@ struct imx_sc_rpc_msg {
- 	uint8_t func;
- };
+diff --git a/drivers/soc/Makefile b/drivers/soc/Makefile
+index 8b49d782a1ab..a39f17cea376 100644
+--- a/drivers/soc/Makefile
++++ b/drivers/soc/Makefile
+@@ -11,7 +11,7 @@ obj-$(CONFIG_ARCH_DOVE)		+= dove/
+ obj-$(CONFIG_MACH_DOVE)		+= dove/
+ obj-y				+= fsl/
+ obj-$(CONFIG_ARCH_GEMINI)	+= gemini/
+-obj-$(CONFIG_ARCH_MXC)		+= imx/
++obj-y				+= imx/
+ obj-$(CONFIG_ARCH_IXP4XX)	+= ixp4xx/
+ obj-$(CONFIG_SOC_XWAY)		+= lantiq/
+ obj-y				+= mediatek/
+diff --git a/drivers/soc/imx/Kconfig b/drivers/soc/imx/Kconfig
+index 0281ef9a1800..70019cefa617 100644
+--- a/drivers/soc/imx/Kconfig
++++ b/drivers/soc/imx/Kconfig
+@@ -17,4 +17,13 @@ config IMX_SCU_SOC
+ 	  Controller Unit SoC info module, it will provide the SoC info
+ 	  like SoC family, ID and revision etc.
  
-+#ifdef CONFIG_IMX_SCU
- /*
-  * This is an function to send an RPC message over an IPC channel.
-  * It is called by client-side SCFW API function shims.
-@@ -56,4 +57,16 @@ int imx_scu_call_rpc(struct imx_sc_ipc *ipc, void *msg, bool have_resp);
-  * @return Returns an error code (0 = success, failed if < 0)
-  */
- int imx_scu_get_handle(struct imx_sc_ipc **ipc);
-+#else
-+static inline int imx_scu_call_rpc(struct imx_sc_ipc *ipc, void *msg,
-+				   bool have_resp)
-+{
-+	return -ENOTSUPP;
-+}
++config SOC_IMX8M
++	bool "i.MX8M SoC family support"
++	depends on ARCH_MXC || COMPILE_TEST
++	default ARCH_MXC && ARM64
++	help
++	  If you say yes here you get support for the NXP i.MX8M family
++	  support, it will provide the SoC info like SoC family,
++	  ID and revision etc.
 +
-+static inline int imx_scu_get_handle(struct imx_sc_ipc **ipc)
-+{
-+	return -ENOTSUPP;
-+}
-+#endif
- #endif /* _SC_IPC_H */
-diff --git a/include/linux/firmware/imx/sci.h b/include/linux/firmware/imx/sci.h
-index 17ba4e405129..7ea875b186e3 100644
---- a/include/linux/firmware/imx/sci.h
-+++ b/include/linux/firmware/imx/sci.h
-@@ -16,8 +16,30 @@
- #include <linux/firmware/imx/svc/misc.h>
- #include <linux/firmware/imx/svc/pm.h>
- 
-+#ifdef CONFIG_IMX_SCU
- int imx_scu_enable_general_irq_channel(struct device *dev);
- int imx_scu_irq_register_notifier(struct notifier_block *nb);
- int imx_scu_irq_unregister_notifier(struct notifier_block *nb);
- int imx_scu_irq_group_enable(u8 group, u32 mask, u8 enable);
-+#else
-+static inline int imx_scu_enable_general_irq_channel(struct device *dev)
-+{
-+	return -ENOTSUPP;
-+}
-+
-+static inline int imx_scu_irq_register_notifier(struct notifier_block *nb)
-+{
-+	return -ENOTSUPP;
-+}
-+
-+static inline int imx_scu_irq_unregister_notifier(struct notifier_block *nb)
-+{
-+	return -ENOTSUPP;
-+}
-+
-+static inline int imx_scu_irq_group_enable(u8 group, u32 mask, u8 enable)
-+{
-+	return -ENOTSUPP;
-+}
-+#endif
- #endif /* _SC_SCI_H */
-diff --git a/include/linux/firmware/imx/svc/misc.h b/include/linux/firmware/imx/svc/misc.h
-index 031dd4d3c766..760db08a67fc 100644
---- a/include/linux/firmware/imx/svc/misc.h
-+++ b/include/linux/firmware/imx/svc/misc.h
-@@ -46,6 +46,7 @@ enum imx_misc_func {
-  * Control Functions
-  */
- 
-+#ifdef CONFIG_IMX_SCU
- int imx_sc_misc_set_control(struct imx_sc_ipc *ipc, u32 resource,
- 			    u8 ctrl, u32 val);
- 
-@@ -54,5 +55,23 @@ int imx_sc_misc_get_control(struct imx_sc_ipc *ipc, u32 resource,
- 
- int imx_sc_pm_cpu_start(struct imx_sc_ipc *ipc, u32 resource,
- 			bool enable, u64 phys_addr);
-+#else
-+static inline int imx_sc_misc_set_control(struct imx_sc_ipc *ipc,
-+					  u32 resource, u8 ctrl, u32 val)
-+{
-+	return -ENOTSUPP;
-+}
- 
-+static inline int imx_sc_misc_get_control(struct imx_sc_ipc *ipc,
-+					  u32 resource, u8 ctrl, u32 *val)
-+{
-+	return -ENOTSUPP;
-+}
-+
-+static inline int imx_sc_pm_cpu_start(struct imx_sc_ipc *ipc, u32 resource,
-+				      bool enable, u64 phys_addr)
-+{
-+	return -ENOTSUPP;
-+}
-+#endif
- #endif /* _SC_MISC_API_H */
+ endmenu
+diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
+index cf9ca42ff739..103e2c93c342 100644
+--- a/drivers/soc/imx/Makefile
++++ b/drivers/soc/imx/Makefile
+@@ -1,5 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
+ obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
+-obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
++obj-$(CONFIG_SOC_IMX8M) += soc-imx8m.o
+ obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8m.c
+similarity index 100%
+rename from drivers/soc/imx/soc-imx8.c
+rename to drivers/soc/imx/soc-imx8m.c
 -- 
 2.16.4
 
