@@ -2,78 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCC501683CE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:41:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFDAA1683F5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:47:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hJkBFQWYnkPWX7W84beh2NDDWCTmR0DGmM9nqNzqKdc=; b=tdiJP+Egbc2wFM
-	wxDIvHc5iLpH40RLsUG7EqxvgAR3vhJAL8hM8sikyCRj7Lnb2gO4eayOenkPj6jUMuI56WI1iIKn4
-	orQo/1COoLetWKgCN8TE8w17FpcHp3BaU4R7MKfDc0xn1QWZEETjt8FthMTfdLs2nRocv3HSrPWk4
-	2j5esPVR3YjqT4QZ+13Z1yKBv8DHP+y+/Y3gWLgNQvu+X8tr9uhtLdsWs37b79gF8Qo9m3KR1Vn3i
-	5fFp6NbyJJWPzqYjnoFdSSCofwvsHMV+Al4h7hik32rFJY+pnsWULyNmFXrB7u6eqkCGngOdZmRAl
-	24MS+n4d4RrgBrA8s2ag==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0gCTN+K/3MvLshCYhJlukWfIA/xsR13TL+OlGV8Jt3g=; b=Nupuh15Y4OOILl
+	Vc670egZCM05cYfX/ZCGhtJ5z/Z+FJwbMFQOMBNnQu8ULNSw0po7du/pUnD66tx53sEAjBA9rL8Sh
+	2qYLCZI0cp7XszE4JFQDA4q94I35WXQxWwlL0rQ4Y1zH5Hn1vgxJM7mMrP8aqqOAnRlKICePfh/Cb
+	K4UEy61NiV3Z8A0oPIMFVdi6iHHOoxxi8mB2XUaRa0MqRthOFHRr1QnkqtuAlu1j2HBwnTOxJhcdW
+	5m7KH6QPrABvpVwiTXTzdRYV0si1GWqTTX2Q8in8osHkU9n8fzRzHGGkgoP7QDsuK+qXlFv0ReKeB
+	oLqkw77/Q+DT7ghlH61g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5BMj-00039h-FN; Fri, 21 Feb 2020 16:41:25 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1j5BSr-00068U-Gm; Fri, 21 Feb 2020 16:47:45 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5BMY-00038d-Qf
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:41:16 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48PHK21SMHz1rd1Q;
- Fri, 21 Feb 2020 17:41:10 +0100 (CET)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48PHK20WlYz1r0bZ;
- Fri, 21 Feb 2020 17:41:10 +0100 (CET)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id T2YKWe-QNZdI; Fri, 21 Feb 2020 17:41:08 +0100 (CET)
-X-Auth-Info: tPcD5NT6YuYT6cAPtv9wImntzVhf6GYyvo9WLMRjP8E=
-Received: from [127.0.0.1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1j5BSh-000684-Or
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:47:37 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Fri, 21 Feb 2020 17:41:08 +0100 (CET)
-Subject: Re: [PATCH v2 0/2] Add GPIO level-sensitive interrupt support
-To: Alexandre Torgue <alexandre.torgue@st.com>,
- Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
- Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>
-References: <20200218131218.10789-1-alexandre.torgue@st.com>
- <b5a2dcab-06db-4863-ac5c-28f4ef0c5ac9@denx.de>
- <32e409e6-d475-802a-6a90-c8ba6c0cf6d5@st.com>
- <088e786c-511e-cf95-fc41-5343b8134407@denx.de>
- <d271f09b-6391-779a-b133-66bcdfbb0ec6@st.com>
- <38e7cf57-2f89-7615-0841-316355a9102f@denx.de>
- <66520848-f630-e210-aecb-96c8828605b7@st.com>
-From: Marek Vasut <marex@denx.de>
-Message-ID: <faf55c81-e28f-20ed-ffdc-d20f00e3aefc@denx.de>
-Date: Fri, 21 Feb 2020 17:41:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ by mail.kernel.org (Postfix) with ESMTPSA id 564182465D
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 16:47:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582303655;
+ bh=UFnupkuEDoqrc04q8jdKLGfA1GzFl1b0UoKJJZMQFao=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=wuDLptutO0uDqtoV5jd77T1qy+Hhi4cSREJS/MW38kle9cteOozL9nV01o4KCEyCF
+ YDZWP2Nfoby7MVf/WKLvlnu7YRf77WNnqpNcMlVDLZ3stmkpK/fH2mZpofMhIu6KHY
+ QuDJWk/nQzcfx42rLA5JUCo7bS9WkZ3jMaak0UsU=
+Received: by mail-qk1-f173.google.com with SMTP id z19so2396153qkj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 08:47:35 -0800 (PST)
+X-Gm-Message-State: APjAAAU5B9ykxcCldLcRiE1enewKoxpwmUhZ2DenC7gpsmymdv9Rd9MS
+ xnyTTdOzCepPDq5uoTSGuUZj3yZ5ANP4Zq4hlg==
+X-Google-Smtp-Source: APXvYqwzykXA/llhTIK2x1jpCbxq/lDy9xawSBtgCPgf1YfnTn4ax60XEuwwK1egxvgGS6LsTn4b9eLD25XV52HLTz4=
+X-Received: by 2002:ae9:f205:: with SMTP id m5mr35008078qkg.152.1582303654430; 
+ Fri, 21 Feb 2020 08:47:34 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <66520848-f630-e210-aecb-96c8828605b7@st.com>
-Content-Language: en-US
+References: <20200117211628.27888-1-robh@kernel.org>
+ <2d04f201-3457-08ad-db8e-735f8315d74e@redhat.com>
+ <7ac3f864-6c39-76e9-ee4a-21be03abc044@arm.com>
+ <CAL_JsqJRSD-7U8UH1tevBdD2P6qPWzApQLpXU-SVBmZ8=Yiy0A@mail.gmail.com>
+ <d49b62f2-74f4-c3e0-ad97-a4fedd169b27@arm.com>
+ <CAL_JsqKY1_WmwLOKySwBasyZ5Kb=Rx-Y6m8bDppRKVxzoY58xg@mail.gmail.com>
+ <49847ca9-3ee8-4c08-a772-a93f10aa817f@arm.com>
+In-Reply-To: <49847ca9-3ee8-4c08-a772-a93f10aa817f@arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Fri, 21 Feb 2020 10:47:23 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJam8qO-XAfQTXNZ0y_gLdOx0LAX28XnKjXd2yh7y3_Uw@mail.gmail.com>
+Message-ID: <CAL_JsqJam8qO-XAfQTXNZ0y_gLdOx0LAX28XnKjXd2yh7y3_Uw@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation
+ support
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_084115_173065_C7A9A0EF 
-X-CRM114-Status: GOOD (  17.96  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200221_084735_848329_4B862975 
+X-CRM114-Status: GOOD (  23.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,78 +92,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Joerg Roedel <joro@8bytes.org>, Auger Eric <eric.auger@redhat.com>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/20/20 2:09 PM, Alexandre Torgue wrote:
-> Hi Marek
+On Fri, Feb 21, 2020 at 10:19 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 20/02/2020 5:54 pm, Rob Herring wrote:
+> > On Mon, Feb 17, 2020 at 1:17 PM Robin Murphy <robin.murphy@arm.com> wrote:
+> >>
+> >> On 13/02/2020 9:49 pm, Rob Herring wrote:
+> >>> On Thu, Jan 30, 2020 at 11:34 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> >>>>
+> >>>> On 30/01/2020 3:06 pm, Auger Eric wrote:
+> >>>>> Hi Rob,
+> >>>>> On 1/17/20 10:16 PM, Rob Herring wrote:
+> >>>>>> Arm SMMUv3.2 adds support for TLB range invalidate operations.
+> >>>>>> Support for range invalidate is determined by the RIL bit in the IDR3
+> >>>>>> register.
+> >>>>>>
+> >>>>>> The range invalidate is in units of the leaf page size and operates on
+> >>>>>> 1-32 chunks of a power of 2 multiple pages. First, we determine from the
+> >>>>>> size what power of 2 multiple we can use. Then we calculate how many
+> >>>>>> chunks (1-31) of the power of 2 size for the range on the iteration. On
+> >>>>>> each iteration, we move up in size by at least 5 bits.
+> >>>>>>
+> >>>>>> Cc: Eric Auger <eric.auger@redhat.com>
+> >>>>>> Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> >>>>>> Cc: Will Deacon <will@kernel.org>
+> >>>>>> Cc: Robin Murphy <robin.murphy@arm.com>
+> >>>>>> Cc: Joerg Roedel <joro@8bytes.org>
+> >>>>>> Signed-off-by: Rob Herring <robh@kernel.org>
+> >>>
+> >>>
+> >>>>>> @@ -2003,7 +2024,7 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
+> >>>>>>     {
+> >>>>>>        u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
+> >>>>>>        struct arm_smmu_device *smmu = smmu_domain->smmu;
+> >>>>>> -    unsigned long start = iova, end = iova + size;
+> >>>>>> +    unsigned long start = iova, end = iova + size, num_pages = 0, tg = 0;
+> >>>>>>        int i = 0;
+> >>>>>>        struct arm_smmu_cmdq_ent cmd = {
+> >>>>>>                .tlbi = {
+> >>>>>> @@ -2022,12 +2043,50 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
+> >>>>>>                cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
+> >>>>>>        }
+> >>>>>>
+> >>>>>> +    if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
+> >>>>>> +            /* Get the leaf page size */
+> >>>>>> +            tg = __ffs(smmu_domain->domain.pgsize_bitmap);
+> >>>>>> +
+> >>>>>> +            /* Convert page size of 12,14,16 (log2) to 1,2,3 */
+> >>>>>> +            cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
+> >>>>
+> >>>> Given the comment, I think "(tg - 10) / 2" would suffice ;)
+> >>>
+> >>> Well, duh...
+> >>>
+> >>>>
+> >>>>>> +
+> >>>>>> +            /* Determine what level the granule is at */
+> >>>>>> +            cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
+> >>>>
+> >>>> Is it possible to rephrase that with logs and shifts to avoid the division?
+> >>>
+> >>> Well, with a loop is the only other way I came up with:
+> >>>
+> >>> bpl = tg - 3;
+> >>> ttl = 3;
+> >>> mask = BIT(bpl) - 1;
+> >>> while ((granule & (mask << ((4 - ttl) * bpl + 3))) == 0)
+> >>>       ttl--;
+> >>>
+> >>> Doesn't seem like much improvement to me given we have h/w divide...
+> >>
+> >> Sure, it doesn't take too many extra instructions to start matching
+> >> typical IDIV latency, so there's no point being silly if there really
+> >> isn't a clean alternative.
+> >>
+> >> Some quick scribbling suggests "4 - ilog2(granule) / 10" might actually
+> >> be close enough, but perhaps that's a bit too cheeky.
+> >
+> > How does divide by 10 save a divide?
+>
+> Well, by that point I was more just thinking about the smallest
+> expression, since *some* division seems unavoidable. Although GCC does
+> apparently still think that transforming constant division is a win ;)
 
-Hi,
+Okay. Still, divide by 10 happens to work, but it is very much not
+obvious. It also doesn't work for level 1 and 16 or 64KB pages (though
+we'll never see that granule). Subtracting 3 is not that obvious
+either, but is at least in the spec for calculating the bits per
+level.
 
-> On 2/19/20 6:24 PM, Marek Vasut wrote:
->> On 2/19/20 10:20 AM, Alexandre Torgue wrote:
->> Hi,
->> [...]
->>>>>>> This series adds the possibility to handle gpio interrupts on level.
->>>>>>>
->>>>>>> GPIO hardware block is directly linked to EXTI block but EXTI
->>>>>>> handles
->>>>>>> external interrupts only on edge. To be able to handle GPIO
->>>>>>> interrupt on
->>>>>>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq
->>>>>>> chip)
->>>>>>> is retriggered following interrupt type and gpio line value.
->>>>>>>
->>>>>>> In exti irq chip, retrigger ops function is added.
->>>>>>
->>>>>> btw. this might be unrelated, but is it possible to have e.g. gpioC2
->>>>>> set
->>>>>> as trigger-level-low and gpioD2 set as trigger-edge-falling ? It
->>>>>> seems
->>>>>> 8eb2dfee9fb1 ("pinctrl: stm32: add lock mechanism for irqmux
->>>>>> selection")
->>>>>> prevents that.
->>>>>>
->>>>>
->>>>> No it's not possible. Each gpio line doesn't have a dedicated Exti
->>>>> line
->>>>> Each Exti line is muxing between gpio banks.
->>>>
->>>> OK, that confirms my assumption.
->>>>
->>>>> Mapping is done as following:
->>>>>
->>>>> EXTI0 = A0 or B0 or C0 .... or Z0 : selected by Mux
->>>>> EXTI1 = A1 or B1 or C1 ....or Z1 : selected by Mux
->>>>> EXTI2 = A2 or B2 or C2 ....or Z2 : selected by Mux
->>>>> ...
->>>>
->>>> Is it at least possible to have IRQs of the same type on the same exti
->>>> line? E.g. gpioA2 of trigger-edge-falling and gpioB2
->>>> trigger-edge-falling ?
->>>>
->>>
->>> Sorry I don't catch your point. If you already succeed to get gpioA2,
->>> then you will failed to get gpioB2 but looking at function call stack we
->>> could get an other issue.
->>
->> Considering the EXTI line limitations, I'd like to know what kind of IRQ
->> input configuration is allowed/valid and what kind of configuration is
->> not valid.
-> 
-> As a mux is used to select which GPIO[A..Z]_X has to be mapped on exti_X
-> line, only one GPIO can be used on the EXTI line.
-> 
-> For example, on EXTI2 you could map either gpioa2 or gpiob2 or
-> ....gpioz2 but not gpioa2 and gpiob2 in the same time.
+I think we've spent enough time micro-optimizing this and have better
+things to worry about.
 
-Got it, thank you for the clarification.
-
-Maybe that could be something to improve for MP2 :-)
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
