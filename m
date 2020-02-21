@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FE7E1683A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:35:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE5DA1683A6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:36:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3G8IfKcU9/hR+IRsJ6PA3BnRlIirqClUVMGjZUkXdp4=; b=ArPoycE2wdYXM2
-	+5VTyL3Q4g1ctKk4AKM5VFxrY1VMAvPvxPCymuK8EuGWlil2egiIv/3m+cds6DHR9kjOXClP4lPHL
-	usplVs3CRNVUo8ATr3VmD07cEaGpOkKnTXQ18pMjnITQoBRwUHIDY7XF+7VP44fcESsYT2ceQRDR6
-	Hj/T7mzmyAMhG4GNY/ZIEzx0xFU+pLnbnIW1tiO7vd2Z9UfpR3KfROK8SXC8uhIoqjRyetgudXYVB
-	hXZLpSyvF4Uf3O9QtRQlFLoDKIS6YzMrsxrPlDNfRYpzLcD1YrbE+tBXdthjrgykS9xETgevPgiS1
-	rI9wSTaOHFoMAIIx4mKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6QLFeHnNG46ETfSBCLmjwfyl6dEwBa0kpjSs47x0nEY=; b=rNUJjaU25ta9K1
+	cbxtCo7OOfQOQU/Lx5bKUM/HcfknidaXa/In65I62i3QSjODpCGU4KQ2D1UW6Ab9lOeOq0B0VaXdV
+	e8u6Wr5O2py+D+Hnaiq4px47HwdsCrJJPZOI3+7H0CKriSYrReD4OcWxPwJa9CF1IYagNrgLRGH7b
+	NpfNrt7paUNzWNu6dR58gRxoYjaHbgqU9lQE4dg3GAugMTHS919gyvyfFhlq2KXPANGpFXCQnOtFI
+	zrXUrvzdMYuYhQT5VdxfGJZ8fKmNNZW8L3aGjIWEyR2kkKsxKrjqvXoQROtSUSCV1KVs/87h1RSn/
+	McwuMI47VndY9lfY6eQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5BH8-0008N6-1b; Fri, 21 Feb 2020 16:35:38 +0000
+	id 1j5BHO-0000Cc-Co; Fri, 21 Feb 2020 16:35:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5BGr-0008M8-RD
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:35:23 +0000
+ id 1j5BGv-0008Na-2V
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:35:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 379A430E;
- Fri, 21 Feb 2020 08:35:21 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 71FF531B;
+ Fri, 21 Feb 2020 08:35:24 -0800 (PST)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6D1F23F68F;
- Fri, 21 Feb 2020 08:35:20 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A88273F68F;
+ Fri, 21 Feb 2020 08:35:23 -0800 (PST)
 From: James Morse <james.morse@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/4] firmware: arm_sdei: cleanup locking issues
-Date: Fri, 21 Feb 2020 16:35:05 +0000
-Message-Id: <20200221163509.47254-1-james.morse@arm.com>
+Subject: [PATCH 1/4] firmware: arm_sdei: fix double-lock on hibernate with
+ shared events
+Date: Fri, 21 Feb 2020 16:35:06 +0000
+Message-Id: <20200221163509.47254-2-james.morse@arm.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200221163509.47254-1-james.morse@arm.com>
+References: <20200221163509.47254-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_083521_923943_F7A711A5 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200221_083525_250750_B643A544 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,40 +70,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+SDEI has private events that must be registered on each CPU. When
+CPUs come and go they must re-register and re-enable their private
+events. Each event has flags to indicate whether this should happen
+to protect against an event being registered on a CPU coming online,
+while all the others are unregistering the event.
 
-Liguang Zhang spotted the SDEI driver would try to take the same
-lock twice on its resume from hibernate path. Testing this uncovered
-that the re-enable flags are updated in the wrong place, meaning the
-driver never tries to re-register shared events on resume from
-hibernate. Oops.
+These flags are protected by the sdei_list_lock spinlock, because
+the cpuhp callbacks can't take the mutex.
 
-The first two patches fix these two issues. As the bug was found
-by inspection, and its always been broken, I think this can wait for
-v5.7.
+Hibernate needs to unregister all events, but keep the in-memory
+re-register and re-enable as they are. sdei_unregister_shared()
+takes the spinlock to walk the list, then calls _sdei_event_unregister()
+on each shared event. _sdei_event_unregister() tries to take the
+same spinlock to update re-register and re-enable. This doesn't go
+so well.
 
-The last two patches cleanup some unnecessary work, and close
-another cpuhp race by grabbing cpus_read_lock().
+Push the re-register and re-enable updates out to their callers.
+sdei_unregister_shared() doesn't want these values updated, so
+doesn't need to do anything.
 
-Any chance this can go via arm64, which is the route all the patches
-to this file have taken so far? The SOC tree is the obvious alternative.
-If its easier, I can send a pull request.
+This also fixes shared events getting lost over hibernate as this
+path made them look unregistered.
 
-Bugs welcome,
+Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system power states")
+Reported-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+ drivers/firmware/arm_sdei.c | 32 +++++++++++++++-----------------
+ 1 file changed, 15 insertions(+), 17 deletions(-)
 
-Thanks,
-
-James Morse (2):
-  firmware: arm_sdei: fix double-lock on hibernate with shared events
-  firmware: arm_sdei: Use cpus_read_lock() to avoid races with cpuhp
-
-Liguang Zhang (2):
-  firmware: arm_sdei: fix possible double-lock on hibernate error path
-  firmware: arm_sdei: clean up sdei_event_create()
-
- drivers/firmware/arm_sdei.c | 71 +++++++++++++++++++------------------
- 1 file changed, 36 insertions(+), 35 deletions(-)
-
+diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
+index a479023fa036..77eaa9a2fd15 100644
+--- a/drivers/firmware/arm_sdei.c
++++ b/drivers/firmware/arm_sdei.c
+@@ -491,11 +491,6 @@ static int _sdei_event_unregister(struct sdei_event *event)
+ {
+ 	lockdep_assert_held(&sdei_events_lock);
+ 
+-	spin_lock(&sdei_list_lock);
+-	event->reregister = false;
+-	event->reenable = false;
+-	spin_unlock(&sdei_list_lock);
+-
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		return sdei_api_event_unregister(event->event_num);
+ 
+@@ -518,6 +513,11 @@ int sdei_event_unregister(u32 event_num)
+ 			break;
+ 		}
+ 
++		spin_lock(&sdei_list_lock);
++		event->reregister = false;
++		event->reenable = false;
++		spin_unlock(&sdei_list_lock);
++
+ 		err = _sdei_event_unregister(event);
+ 		if (err)
+ 			break;
+@@ -585,26 +585,15 @@ static int _sdei_event_register(struct sdei_event *event)
+ 
+ 	lockdep_assert_held(&sdei_events_lock);
+ 
+-	spin_lock(&sdei_list_lock);
+-	event->reregister = true;
+-	spin_unlock(&sdei_list_lock);
+-
+ 	if (event->type == SDEI_EVENT_TYPE_SHARED)
+ 		return sdei_api_event_register(event->event_num,
+ 					       sdei_entry_point,
+ 					       event->registered,
+ 					       SDEI_EVENT_REGISTER_RM_ANY, 0);
+ 
+-
+ 	err = sdei_do_cross_call(_local_event_register, event);
+-	if (err) {
+-		spin_lock(&sdei_list_lock);
+-		event->reregister = false;
+-		event->reenable = false;
+-		spin_unlock(&sdei_list_lock);
+-
++	if (err)
+ 		sdei_do_cross_call(_local_event_unregister, event);
+-	}
+ 
+ 	return err;
+ }
+@@ -632,8 +621,17 @@ int sdei_event_register(u32 event_num, sdei_event_callback *cb, void *arg)
+ 			break;
+ 		}
+ 
++		spin_lock(&sdei_list_lock);
++		event->reregister = true;
++		spin_unlock(&sdei_list_lock);
++
+ 		err = _sdei_event_register(event);
+ 		if (err) {
++			spin_lock(&sdei_list_lock);
++			event->reregister = false;
++			event->reenable = false;
++			spin_unlock(&sdei_list_lock);
++
+ 			sdei_event_destroy(event);
+ 			pr_warn("Failed to register event %u: %d\n", event_num,
+ 				err);
 -- 
 2.24.1
 
