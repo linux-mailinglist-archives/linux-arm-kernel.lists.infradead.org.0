@@ -2,48 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFED616703A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 08:37:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB9BE16703B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 08:38:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lskF0pcfIDWyHIdg5yGMcnUhz25Ko3kSSv7pMaOwABw=; b=ohG
-	y/VMTY65aWm6VBR7yIYpllWcVOR2f1NDMZOHdlmZBB599lfK3zdkrWvmsY9Dn+6vRZcSpRoFfLZEO
-	pVY2fwN4LBj58sJWw9NlrJOW6/gAr4qiswGgeNWKBiqwEsfe2My4Fk+CyiGudypdjWG2ctZhCbJDg
-	19Ki9P5x/DdrmNleiWLxUu9/r0Gof0CIFSVOL4yxUmjxw0INC4VNbkdv4LdrGwep376nRulFjQrGU
-	czfWnmeg8PWOwev0B7kfBexzF/K3wcUIGdXRwOgHIGAXNnZCT/0Fd2oF6nBqqu8hJHKgCfIIrEGcT
-	uyHYsZVKytvimDI/q6Q5vjKDJcm1zhw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+D4IAPdwoZv0IscFwJ2trPaWgnwBMHzi3g8P1diDttU=; b=F1HrwPAcWgtoztFRiZKF/uRLHQ
+	dgfiu0uCiJxd2YnNQyMWuxVHhvz3pTUxs3whceABHS6L39n1t4bhKLsCcFJc6TJREeyCN29yfUL7R
+	C0UwXYsoGK3AH/dqrjl4JUG0T8Y/SUUa9mMN/xPnSCRljTcYnkhzTnTE71vp2hBODqE66vgaM48UW
+	CQY92AjIhaJOa6G+1vQuaiHb3fNXIpAee19+mTY0jTvXAbgP2uq2mVF2J1411FG2fzfdXsW8Vd/+u
+	bDrUSr8NOTk9mCe05qzsh2IYx/A+hCNLcSHEMy6w5LirgNIoRU6fVbhYSdYqunciJXUcCOwD3AGRd
+	EzipM96A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j52sd-0004mi-Is; Fri, 21 Feb 2020 07:37:47 +0000
+	id 1j52sr-0004yF-Oq; Fri, 21 Feb 2020 07:38:01 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j52sN-0004lW-Su
+ id 1j52sN-0004lZ-RN
  for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 07:37:33 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 21 Feb 2020 16:37:28 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 20ED3603AB;
- Fri, 21 Feb 2020 16:37:29 +0900 (JST)
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 21 Feb 2020 16:37:30 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 34FFD18008C;
+ Fri, 21 Feb 2020 16:37:30 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Fri, 21 Feb 2020 16:37:29 +0900
+ Fri, 21 Feb 2020 16:37:30 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 9E7961A01BB;
- Fri, 21 Feb 2020 16:37:28 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id D8D541A01BB;
+ Fri, 21 Feb 2020 16:37:29 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Vinod Koul <vkoul@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
  Masahiro Yamada <yamada.masahiro@socionext.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v4 0/2] dmaengine: Add UniPhier XDMAC driver
-Date: Fri, 21 Feb 2020 16:37:24 +0900
-Message-Id: <1582270646-29161-1-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v4 1/2] dt-bindings: dmaengine: Add UniPhier external DMA
+ controller bindings
+Date: Fri, 21 Feb 2020 16:37:25 +0900
+Message-Id: <1582270646-29161-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1582270646-29161-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1582270646-29161-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_233732_038148_F54E7D39 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20200220_233732_004235_7B3E8A0F 
+X-CRM114-Status: GOOD (  16.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,35 +79,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for UniPhier external DMA controller (XDMAC), that is
-implemented in Pro4, Pro5, PXs2, LD11, LD20 and PXs3 SoCs.
+Add devicetree binding documentation for external DMA controller
+implemented on Socionext UniPhier SOCs.
 
-Changes since v3:
-- dt-bindings: Fix typo
-
-Changes since v2:
-- dt-bindings: Fix SPDX and some properties
-- Fix iteration count calculation for memcpy
-- Replace zero-length array with flexible-array member in struct
-  uniphier_xdmac_device.
-
-Changes since v1:
-- dt-bindings: Rewrite with DT schema.
-- Change return type of uniphier_xdmac_chan_init() to void,
-  and remove error return in probe.
-
-Kunihiko Hayashi (2):
-  dt-bindings: dmaengine: Add UniPhier external DMA controller bindings
-  dmaengine: uniphier-xdmac: Add UniPhier external DMA controller driver
-
- .../bindings/dma/socionext,uniphier-xdmac.yaml     |  63 +++
- drivers/dma/Kconfig                                |  11 +
- drivers/dma/Makefile                               |   1 +
- drivers/dma/uniphier-xdmac.c                       | 611 +++++++++++++++++++++
- 4 files changed, 686 insertions(+)
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+---
+ .../bindings/dma/socionext,uniphier-xdmac.yaml     | 63 ++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
- create mode 100644 drivers/dma/uniphier-xdmac.c
 
+diff --git a/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+new file mode 100644
+index 00000000..dc7c477
+--- /dev/null
++++ b/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+@@ -0,0 +1,63 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/dma/socionext,uniphier-xdmac.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Socionext UniPhier external DMA controller
++
++description: |
++  This describes the devicetree bindings for an external DMA engine to perform
++  memory-to-memory or peripheral-to-memory data transfer capable of supporting
++  16 channels, implemented in Socionext UniPhier SoCs.
++
++maintainers:
++  - Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
++
++allOf:
++  - $ref: "dma-controller.yaml#"
++
++properties:
++  compatible:
++    const: socionext,uniphier-xdmac
++
++  reg:
++    items:
++      - description: XDMAC base register region (offset and length)
++      - description: XDMAC extension register region (offset and length)
++
++  interrupts:
++    maxItems: 1
++
++  "#dma-cells":
++    const: 2
++    description: |
++      DMA request from clients consists of 2 cells:
++        1. Channel index
++        2. Transfer request factor number, If no transfer factor, use 0.
++           The number is SoC-specific, and this should be specified with
++           relation to the device to use the DMA controller.
++
++  dma-channels:
++    minimum: 1
++    maximum: 16
++
++additinalProperties: false
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - "#dma-cells"
++
++examples:
++  - |
++    xdmac: dma-controller@5fc10000 {
++        compatible = "socionext,uniphier-xdmac";
++        reg = <0x5fc10000 0x1000>, <0x5fc20000 0x800>;
++        interrupts = <0 188 4>;
++        #dma-cells = <2>;
++        dma-channels = <16>;
++    };
++
++...
 -- 
 2.7.4
 
