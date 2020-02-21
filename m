@@ -2,63 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68EB51678F2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:06:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63BAD1678FE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:09:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Az1dtm6OvgX+qLyGJYdeuD1/r3qA1DOm5R6vuzF/8o4=; b=Cb5T/oA5uqvO+wsHcKPq21oGo
-	Hg4ZB1Plm1Vygf1Sea6fBNV2WpC2pgQ3FtxrcZkUS0A3K0/4XcJ1K+Fy5Xrhbqjz53Mzg4ulaXKoA
-	JSCVXi4MAJQ9g6nvSWEUdAY1+cqVOD7O12VQ33GDaGf7ZG9gHt3Uo2Ev67cGd1LtPQpDJlFGxm9Ax
-	eQA65gZMuKhXxD4AidRKKJjutOFEfiR8SztqGOgI0j2EVd/gM5i28tiTEecgzVmV9f6IWOmxdd7pD
-	TtZ50K3BUrnxIAUkrbyiqLDZPiOxHpoXEI3Fg2sYTwTyy3lVuEMPFmweoX/j1VRnsxaIaC3SVIw+h
-	OsqhDE+hw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rhfm3v+UWTxKGUI7vME58xsUr5S4K2XjE2xrwH5fa4o=; b=R9GfKAaAdQIp5A
+	3rgh9j80qh5nwWd0Dd9VkDWH9gb32tcTUXSZ/gHYPMrxsZm8HiYmYTyeNNJjuol8XiLJqTi8V5SjL
+	ybAIMb/0cczFdMo4lnf78EVjs//hhkXc6Fwb5BlpcGCoEp0AfGIdHOL0peBtaUm1jDQ1nPWilrqoe
+	ibBAdS+BLzJvtJOAlE2O4HA6EJlpqrbqespJpTXzqMRKinngH+WfspTgZJoCQ2ZEJl52pIfA1AW81
+	39390jQgJjaW6M7VpP2Jv5HTYAQ37yDpPF+tkyjeRu8iPF665QMU9LKKsJSxWHY1djc5P6AYouK8O
+	augAs+pJU+/8X58ZEK0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j54GM-00066R-VY; Fri, 21 Feb 2020 09:06:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j54GD-00064L-9A; Fri, 21 Feb 2020 09:06:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2835A31B;
- Fri, 21 Feb 2020 01:06:09 -0800 (PST)
-Received: from [10.162.16.116] (a075563-lin.blr.arm.com [10.162.16.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 233B23F68F;
- Fri, 21 Feb 2020 01:06:04 -0800 (PST)
-Subject: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ in
- vmcoreinfo
-To: Bhupesh Sharma <bhsharma@redhat.com>, Dave Anderson
- <anderson@redhat.com>, James Morse <james.morse@arm.com>
-References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
- <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
- <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
- <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
- <f791e777-781c-86ce-7619-1de3fe3e7b90@arm.com>
- <351975548.1986001.1578682810951.JavaMail.zimbra@redhat.com>
- <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <974f3601-25f8-f4e6-43a8-ff4275e9c174@arm.com>
-Date: Fri, 21 Feb 2020 14:36:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1j54J0-0006XO-G6; Fri, 21 Feb 2020 09:09:06 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j54Ik-0006Vj-SV
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 09:08:52 +0000
+Received: by mail-wm1-x344.google.com with SMTP id q9so846850wmj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 01:08:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3kb32uRYkhezIHBTmj+5SdLW5ETiBbDtA9WwDv9jFqg=;
+ b=MHq30fHLCK1yAJBfIiqeZy2r0lRKlMQNNi0H+yiAO1uObLJy/V8lgFd0bW7GRlbdZA
+ pVm+zKouDVsFeYirga2GLz6wxiIIIXU73yRTJnQWpy3+2jzqpfvbRD0GzW1r6Kfwahhq
+ 9em/BTeVTo9+SWaF0nC8xs4UoEhcx2w7NhKWVJpP77auP3klD1qQPWIwj1tSXmIRUmPp
+ rRm7bqD8lP+V5f8+tZn6Iy7XDqtZJXzu3n1VCNq0Nyq+cSXoXbaCPtApVhwnN2UFx/8a
+ 8Pk7xV8Me2jOJ+nIvyIBR0AVtt5DEm/ZQQhklA60Qwjfv4CEyIeXbYS/rSRF5eBX9XZP
+ 0wQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3kb32uRYkhezIHBTmj+5SdLW5ETiBbDtA9WwDv9jFqg=;
+ b=t5n07pBXceuVBnaVtIz/n/hbyEBFTtXpWeKYhlglRNjkSI57kTqFFwI9UtwF29sAzS
+ FgSnByNc6ywWXQKD9D2qrN/ByTyr6ilGxLoykOCNj5TZuWi1qQ9q37gteQrd1BBhnGaU
+ wrmCdPwUsRJ7pF4jRvAfsmscBnNKFEq+n6rpFQs2y44cXqPdgn3rJHAHq7cwps1U31wo
+ LXIpbTk+RJfkFRHrBp2Si3FrCK/PtHut4X/wx5Y6ZVtmBpzYQiF+x0Dpy6/IEcIQh2eD
+ wya6jg/7imnv3q1kw6O+sfV6cSTx8ayXthCXbD2/lgAJq6dk9MRxbtKidGwiLOGisIfb
+ wQ7Q==
+X-Gm-Message-State: APjAAAUhjNakjdAi8Ycvl9xNs4PAmUdeCo9oudanrJJ0AMsk6CG6KwQr
+ dLOpphYfVzKPY4Snkt/m/k3g3Q==
+X-Google-Smtp-Source: APXvYqyASv2VhtyTE+GbLI9Iyxv1oYm6p8uGHIxc63RjQjtV3HCvpFF/TwD2nkmX9SvFBq2eEeVOoQ==
+X-Received: by 2002:a05:600c:414e:: with SMTP id
+ h14mr2419247wmm.179.1582276128899; 
+ Fri, 21 Feb 2020 01:08:48 -0800 (PST)
+Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858])
+ by smtp.gmail.com with ESMTPSA id
+ h5sm3173288wmf.8.2020.02.21.01.08.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 21 Feb 2020 01:08:48 -0800 (PST)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: daniel@ffwll.ch,
+	dri-devel@lists.freedesktop.org
+Subject: [PATCH 0/4] drm/meson: add support for Amlogic Video FBC
+Date: Fri, 21 Feb 2020 10:08:41 +0100
+Message-Id: <20200221090845.7397-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_010613_410218_64E99157 
-X-CRM114-Status: GOOD (  29.27  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200221_010850_920640_0AA2B6D3 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,108 +95,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- bhupesh linux <bhupesh.linux@gmail.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQmh1cGVzaCwKCk9uIDEvMTMvMjAgNTo0NCBQTSwgQmh1cGVzaCBTaGFybWEgd3JvdGU6Cj4g
-SGkgSmFtZXMsCj4gCj4gT24gMDEvMTEvMjAyMCAxMjozMCBBTSwgRGF2ZSBBbmRlcnNvbiB3cm90
-ZToKPj4KPj4gLS0tLS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0tLQo+Pj4gSGkgQmh1cGVzaCwKPj4+
-Cj4+PiBPbiAyNS8xMi8yMDE5IDE5OjAxLCBCaHVwZXNoIFNoYXJtYSB3cm90ZToKPj4+PiBPbiAx
-Mi8xMi8yMDE5IDA0OjAyIFBNLCBKYW1lcyBNb3JzZSB3cm90ZToKPj4+Pj4gT24gMjkvMTEvMjAx
-OSAxOTo1OSwgQmh1cGVzaCBTaGFybWEgd3JvdGU6Cj4+Pj4+PiB2YWJpdHNfYWN0dWFsIHZhcmlh
-YmxlIG9uIGFybTY0IGluZGljYXRlcyB0aGUgYWN0dWFsIFZBIHNwYWNlIHNpemUsCj4+Pj4+PiBh
-bmQgYWxsb3dzIGEgc2luZ2xlIGJpbmFyeSB0byBzdXBwb3J0IGJvdGggNDgtYml0IGFuZCA1Mi1i
-aXQgVkEKPj4+Pj4+IHNwYWNlcy4KPj4+Pj4+Cj4+Pj4+PiBJZiB0aGUgQVJNdjguMi1MVkEgb3B0
-aW9uYWwgZmVhdHVyZSBpcyBwcmVzZW50LCBhbmQgd2UgYXJlIHJ1bm5pbmcKPj4+Pj4+IHdpdGgg
-YSA2NEtCIHBhZ2Ugc2l6ZTsgdGhlbiBpdCBpcyBwb3NzaWJsZSB0byB1c2UgNTItYml0cyBvZiBh
-ZGRyZXNzCj4+Pj4+PiBzcGFjZSBmb3IgYm90aCB1c2Vyc3BhY2UgYW5kIGtlcm5lbCBhZGRyZXNz
-ZXMuIEhvd2V2ZXIsIGFueSBrZXJuZWwKPj4+Pj4+IGJpbmFyeSB0aGF0IHN1cHBvcnRzIDUyLWJp
-dCBtdXN0IGFsc28gYmUgYWJsZSB0byBmYWxsIGJhY2sgdG8gNDgtYml0Cj4+Pj4+PiBhdCBlYXJs
-eSBib290IHRpbWUgaWYgdGhlIGhhcmR3YXJlIGZlYXR1cmUgaXMgbm90IHByZXNlbnQuCj4+Pj4+
-Pgo+Pj4+Pj4gU2luY2UgVENSX0VMMS5UMVNaIGluZGljYXRlcyB0aGUgc2l6ZSBvZmZzZXQgb2Yg
-dGhlIG1lbW9yeSByZWdpb24KPj4+Pj4+IGFkZHJlc3NlZCBieSBUVEJSMV9FTDEgKGFuZCBoZW5j
-ZSBjYW4gYmUgdXNlZCBmb3IgZGV0ZXJtaW5pbmcgdGhlCj4+Pj4+PiB2YWJpdHNfYWN0dWFsIHZh
-bHVlKSBpdCBtYWtlcyBtb3JlIHNlbnNlIHRvIGV4cG9ydCB0aGUgc2FtZSBpbgo+Pj4+Pj4gdm1j
-b3JlaW5mbyByYXRoZXIgdGhhbiB2YWJpdHNfYWN0dWFsIHZhcmlhYmxlLCBhcyB0aGUgbmFtZSBv
-ZiB0aGUKPj4+Pj4+IHZhcmlhYmxlIGNhbiBjaGFuZ2UgaW4gZnV0dXJlIGtlcm5lbCB2ZXJzaW9u
-cywgYnV0IHRoZSBhcmNoaXRlY3R1cmFsCj4+Pj4+PiBjb25zdHJ1Y3RzIGxpa2UgVENSX0VMMS5U
-MVNaIGNhbiBiZSB1c2VkIGJldHRlciB0byBpbmRpY2F0ZSBpbnRlbmRlZAo+Pj4+Pj4gc3BlY2lm
-aWMgZmllbGRzIHRvIHVzZXItc3BhY2UuCj4+Pj4+Pgo+Pj4+Pj4gVXNlci1zcGFjZSB1dGlsaXRp
-ZXMgbGlrZSBtYWtlZHVtcGZpbGUgYW5kIGNyYXNoLXV0aWxpdHksIG5lZWQgdG8KPj4+Pj4+IHJl
-YWQvd3JpdGUgdGhpcyB2YWx1ZSBmcm9tL3RvIHZtY29yZWluZm8KPj4+Pj4KPj4+Pj4gKHdyaXRl
-PykKPj4+Pgo+Pj4+IFllcywgYWxzbyB3cml0ZSBzbyB0aGF0IHRoZSB2bWNvcmVpbmZvIGZyb20g
-YW4gKGNyYXNoaW5nKSBhcm02NCAKPj4+PiBzeXN0ZW0gY2FuCj4+Pj4gYmUgdXNlZCBmb3IKPj4+
-PiBhbmFseXNpcyBvZiB0aGUgcm9vdC1jYXVzZSBvZiBwYW5pYy9jcmFzaCBvbiBzYXkgYW4geDg2
-XzY0IGhvc3QgdXNpbmcKPj4+PiB1dGlsaXRpZXMgbGlrZQo+Pj4+IGNyYXNoLXV0aWxpdHkvZ2Ri
-Lgo+Pj4KPj4+IEkgcmVhZCB0aGlzIGFzIGFzICJVc2VyLXNwYWNlIFsuLi5dIG5lZWRzIHRvIHdy
-aXRlIHRvIHZtY29yZWluZm8iLgo+IAo+IFRoYXQncyBjb3JyZWN0LiBCdXQgZm9yIHdyaXRpbmcg
-dG8gdm1jb3JlIGR1bXAgaW4gdGhlIGtkdW1wIGtlcm5lbCwgd2UgCj4gbmVlZCB0byByZWFkIHRo
-ZSBzeW1ib2xzIGZyb20gdGhlIHZtY29yZWluZm8gaW4gdGhlIHByaW1hcnkga2VybmVsLgo+IAo+
-Pj4+Pj4gZm9yIGRldGVybWluaW5nIGlmIGEgdmlydHVhbCBhZGRyZXNzIGxpZXMgaW4gdGhlIGxp
-bmVhciBtYXAgcmFuZ2UuCj4+Pj4+Cj4+Pj4+IEkgdGhpbmsgdGhpcyBpcyBhIGZyYWdpbGUgZXhh
-bXBsZS4gVGhlIGRlYnVnZ2VyIHNob3VsZG4ndCBuZWVkIHRvIGtub3cKPj4+Pj4gdGhpcy4KPj4+
-Pgo+Pj4+IFdlbGwgdGhhdCB0aGUgY3VycmVudCB1c2VyLXNwYWNlIHV0aWxpdHkgZGVzaWduLCBz
-byBJIGFtIG5vdCBzdXJlIHdlIAo+Pj4+IGNhbgo+Pj4+IHR3ZWFrIHRoYXQgdG9vIG11Y2guCj4+
-Pj4KPj4+Pj4+IFRoZSB1c2VyLXNwYWNlIGNvbXB1dGF0aW9uIGZvciBkZXRlcm1pbmluZyB3aGV0
-aGVyIGFuIGFkZHJlc3MgbGllcyBpbgo+Pj4+Pj4gdGhlIGxpbmVhciBtYXAgcmFuZ2UgaXMgdGhl
-IHNhbWUgYXMgd2UgaGF2ZSBpbiBrZXJuZWwtc3BhY2U6Cj4+Pj4+Pgo+Pj4+Pj4gwqDCoMKgICNk
-ZWZpbmUgX19pc19sbV9hZGRyZXNzKGFkZHIpwqDCoMKgICghKCgodTY0KWFkZHIpICYgCj4+Pj4+
-PiBCSVQodmFiaXRzX2FjdHVhbCAtCj4+Pj4+PiDCoMKgwqAgMSkpKQo+Pj4+Pgo+Pj4+PiBUaGlz
-IHdhcyBjaGFuZ2VkIHdpdGggMTRjMTI3Yzk1N2MxICgiYXJtNjQ6IG1tOiBGbGlwIGtlcm5lbCBW
-QSAKPj4+Pj4gc3BhY2UiKS4gSWYKPj4+Pj4gdXNlci1zcGFjZQo+Pj4+PiB0b29scyByZWx5IG9u
-ICdrbm93aW5nJyB0aGUga2VybmVsIG1lbW9yeSBsYXlvdXQsIHRoZXkgbXVzdCBoYXZlIHRvCj4+
-Pj4+IGNvbnN0YW50bHkgYmUgZml4ZWQKPj4+Pj4gYW5kIHVwZGF0ZWQuIFRoaXMgaXMgYSBwb29y
-IGFyZ3VtZW50IGZvciBhZGRpbmcgdGhpcyB0byBzb21ldGhpbmcgdGhhdAo+Pj4+PiBlbmRzIHVw
-IGFzIEFCSS4KPj4+Pgo+Pj4+IFNlZSBhYm92ZS4gVGhlIHVzZXItc3BhY2UgaGFzIHRvIHJlbHkg
-b24gc29tZSBBQkkvZ3VhcmFudGVlZAo+Pj4+IGhhcmR3YXJlLXN5bWJvbHMgd2hpY2ggY2FuIGJl
-Cj4+Pj4gdXNlZCBmb3IgJ2RldGVybWluaW5nJyB0aGUga2VybmVsIG1lbW9yeSBsYXlvdXQuCj4+
-Pgo+Pj4gSSBkaXNhZ3JlZS4gRXZlcnl0aGluZyBhbmQgYW55dGhpbmcgaW4gdGhlIGtlcm5lbCB3
-aWxsIGNoYW5nZS4gVGhlIAo+Pj4gQUJJIHJ1bGVzIGFwcGx5IHRvCj4+PiBzdHVmZiBleHBvc2Vk
-IHZpYSBzeXNjYWxscyBhbmQga2VybmVsIGZpbGVzeXN0ZW1zLiBJdCBkb2VzIG5vdCBhcHBseSAK
-Pj4+IHRvIGtlcm5lbCBpbnRlcm5hbHMsCj4+PiBsaWtlIHRoZSBtZW1vcnkgbGF5b3V0IHdlIHVz
-ZWQgeWVzdGVyZGF5LiAxNGMxMjdjOTU3YzEgaXMgYSBjYXNlIGluIAo+Pj4gcG9pbnQuCj4+Pgo+
-Pj4gQSBkZWJ1Z2dlciB0cnlpbmcgdG8gcmVseSBvbiB0aGlzIHNvcnQgb2YgdGhpbmcgd291bGQg
-aGF2ZSB0byBwbGF5IAo+Pj4gY2F0Y2h1cCB3aGVuZXZlciBpdAo+Pj4gY2hhbmdlcy4KPj4KPj4g
-RXhhY3RseS7CoCBUaGF0J3MgdGhlIHdob2xlIHBvaW50Lgo+Pgo+PiBUaGUgY3Jhc2ggdXRpbGl0
-eSBhbmQgbWFrZWR1bXBmaWxlIGFyZSBub3QgaW4gdGhlIHNhbWUgbGVhZ3VlIGFzIG90aGVyIAo+
-PiB1c2VyLXNwYWNlIHRvb2xzLgo+PiBUaGV5IGhhdmUgYWx3YXlzIGhhZCB0byAicGxheSBjYXRj
-aHVwIiBwcmVjaXNlbHkgYmVjYXVzZSB0aGV5IGRlcGVuZCAKPj4gdXBvbiBrZXJuZWwgaW50ZXJu
-YWxzLAo+PiB3aGljaCBjb25zdGFudGx5IGNoYW5nZS4KPiAKPiBJIGFncmVlIHdpdGggeW91IGFu
-ZCBEYXZlQSBoZXJlLiBTb2Z0d2FyZSB1c2VyLXNwYWNlIGRlYnVnZ2VycyBhcmUgCj4gZGVwZW5k
-ZW50IG9uIGtlcm5lbCBpbnRlcm5hbHMgKHdoaWNoIGNhbiBjaGFuZ2UgZnJvbSB0aW1lLXRvLXRp
-bWUpIGFuZCAKPiB3aWxsIGhhdmUgdG8gcGxheSBjYXRjaC11cCAod2hpY2ggaGFzIGJlZW4gdGhl
-IGNhc2Ugc2luY2UgdGhlIHZlcnkgc3RhcnQpLgo+IAo+IFVuZm9ydHVuYXRlbHkgd2UgZG9uJ3Qg
-aGF2ZSBhbnkgY2xlYXIgQUJJIGZvciBzb2Z0d2FyZSBkZWJ1Z2dpbmcgdG9vbHMgLSAKPiBtYXkg
-YmUgc29tZXRoaW5nIHRvIGxvb2sgZm9yIGluIGZ1dHVyZS4KPiAKPiBBIGNhc2UgaW4gcG9pbnQg
-aXMgZ2RiL2tnZGIsIHdoaWNoIHN0aWxsIG5lZWRzIHRvIHJ1biB3aXRoIEtBU0xSIAo+IHR1cm5l
-ZC1vZmYgKG5va2FzbHIpIGZvciBkZWJ1Z2dpbmcsIGFzIGl0IGNvbmZ1c2VzIGdkYiB3aGljaCBy
-ZXNvbHZlIAo+IGtlcm5lbCBzeW1ib2wgYWRkcmVzcyBmcm9tIHN5bWJvbCB0YWJsZSBvZiB2bWxp
-bnV4LiBCdXQgd2UgY2FuIAo+IHdvcmstYXJvdW5kIHRoZSBzYW1lIGluIG1ha2VkdW1wZmlsZS9j
-cmFzaCBieSByZWFkaW5nIHRoZSAna2FzbHJfb2Zmc2V0JyAKPiB2YWx1ZS4gQW5kIEkgaGF2ZSBz
-ZXZlcmFsIHVzZXJzIHRlbGxpbmcgbWUgbm93IHRoZXkgY2Fubm90IHVzZSBnZGIgb24gCj4gS0FT
-TFIgZW5hYmxlZCBrZXJuZWwgdG8gZGVidWcgcGFuaWNzLCBidXQgY2FuIG1ha2VkdW1wZmlsZSAr
-IGNyYXNoIAo+IGNvbWJpbmF0aW9uIHRvIGFjaGlldmUgdGhlIHNhbWUuCj4gCj4gU28sIHdlIHNo
-b3VsZCBiZSBsb29raW5nIHRvIGZpeCB0aGVzZSB1dGlsaXRpZXMgd2hpY2ggYXJlIGJyb2tlbiBz
-aW5jZSAKPiB0aGUgNTItYml0IGNoYW5nZXMgZm9yIGFybTY0LiBBY2NvcmRpbmdseSwgSSB3aWxs
-IHRyeSB0byBzZW5kIHRoZSB2Ngo+IHNvb24gd2hpbGUgaW5jb3Jwb3JhdGluZyB0aGUgY29tbWVu
-dHMgcG9zdGVkIG9uIHRoZSB2NS4KCkFueSB1cGRhdGUgb24gdGhlIG5leHQgdjYgdmVyc2lvbi4g
-U2luY2UgdGhpcyBwYXRjaCBzZXJpZXMgaXMgZml4aW5nIHRoZSAKY3VycmVudCBicm9rZW4ga2R1
-bXAgc28gbmVlZCB0aGlzIHNlcmllcyB0byBhZGQgc29tZSBtb3JlIGZpZWxkcyBpbiAKdm1jb3Jl
-aW5mbyBmb3IgUG9pbnRlciBBdXRoZW50aWNhdGlvbiB3b3JrLgoKVGhhbmtzLApBbWl0IERhbmll
-bAo+IAo+IFRoYW5rcywKPiBCaHVwZXNoCj4gCj4gCj4gCj4gCj4gCj4gX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+Amlogic uses a proprietary lossless image compression protocol and format
+for their hardware video codec accelerators, either video decoders or
+video input encoders.
+
+It considerably reduces memory bandwidth while writing and reading
+frames in memory.
+
+The underlying storage is considered to be 3 components, 8bit or 10-bit
+per component, YCbCr 420, single plane :
+- DRM_FORMAT_YUV420_8BIT
+- DRM_FORMAT_YUV420_10BIT
+
+This modifier will be notably added to DMA-BUF frames imported from the V4L2
+Amlogic VDEC decoder.
+
+At least two options are supported :
+- Scatter mode: the buffer is filled with a IOMMU scatter table referring
+  to the encoder current memory layout. This mode if more efficient in terms
+  of memory allocation but frames are not dumpable and only valid during until
+  the buffer is freed and back in control of the encoder
+- Memory saving: when the pixel bpp is 8b, the size of the superblock can
+  be reduced, thus saving memory.
+
+This serie adds the missing register, updated the FBC decoder registers
+content to be committed by the crtc code.
+
+The Amlogic FBC has been tested with compressed content from the Amlogic
+HW VP9 decoder on S905X (GXL), S905D2 (G12A) and S905X3 (SM1) in 8bit
+(Scatter+Mem Saving on G12A/SM1, Mem Saving on GXL) and 10bit
+(Scatter on G12A/SM1, default on GXL).
+
+It's expected to work as-is on GXM and G12B SoCs.
+
+Changes since v1 at [1]:
+- s/VD1_AXI_SEL_AFB/VD1_AXI_SEL_AFBC/ into meson_registers.h
+
+[1] https://patchwork.freedesktop.org/series/73722/#rev1
+
+Neil Armstrong (4):
+  drm/fourcc: Add modifier definitions for describing Amlogic Video
+    Framebuffer Compression
+  drm/meson: add Amlogic Video FBC registers
+  drm/meson: overlay: setup overlay for Amlogic FBC
+  drm/meson: crtc: handle commit of Amlogic FBC frames
+
+ drivers/gpu/drm/meson/meson_crtc.c      | 118 ++++++++---
+ drivers/gpu/drm/meson/meson_drv.h       |  16 ++
+ drivers/gpu/drm/meson/meson_overlay.c   | 257 +++++++++++++++++++++++-
+ drivers/gpu/drm/meson/meson_registers.h |  22 ++
+ include/uapi/drm/drm_fourcc.h           |  56 ++++++
+ 5 files changed, 431 insertions(+), 38 deletions(-)
+
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
