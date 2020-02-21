@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A7B61672C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:06:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EC06167427
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:19:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZwMbUn/dvc/RmEoe3GW7NUZZWwYOVEN/GgoImejnOvQ=; b=fsLIyrG+sKvMIZ
-	47Rv/1KAwXyhPBsE3oJHDtC3Hl8QKPNCQqSJlska8JngI5kwlmiUbJtxU4GQgZExxTBXv1H1/SiWI
-	cP8xlh6h9I7/p/IKyirzjdgVnKx1lhJ4Y4YQPm0EcLuIBz8CYA5ueOEYUOPw4lVQa9GeVFCQufyk4
-	WG3ihSy0S5UQyUm3EKXq/YCJOt0kNMiVCYffO3CHNnSh7ukvGJamOqOulvPJm3KLsswacDUX4+Fb6
-	7k2Fh+ZV1evP5WYwzyqopJnXwEfcK8I0niSFOusLGutivz3c32E+GBYQfCBFZK5ibxMRD+bLMmBfz
-	Rpyr2FGMFD4L+MIqMZlQ==;
+	List-Owner; bh=qaPfeOb8A6o9LQBtCTvaCHgyjRJu26i84gCwzGZOAfo=; b=XbGbLOlWaO1VzA
+	kcTQ0h1KZYjNx3PU1JOuO+q3jDRLgsH3wJncHpKZ2ndcbK8xfwY9iueIPQQVQWXlnWIybjBxLYMrZ
+	XoQF4WG4fVX8DsLvm8Gd/3DsAULNTomFWG0O+thZVcTiaEwNOBKBd8AsJeM9t9TCFdBx/C9pkU76r
+	6CxBLAVtbENhNBiSVVXwdv+MtXvpJVNB3VwPD0KouhcLGGyH2EhmmzvIzAcwpvxM47ZRlAJSuRoK1
+	X5QItBPainqkgdhD0YndAWeIwdqv4txka2DfjOD4DixAhBj1MTPml+CIvfJZep8RIuU5UkQYym64n
+	2ZT0geBzG09PEeMCmb7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j53KN-0004F4-NM; Fri, 21 Feb 2020 08:06:27 +0000
+	id 1j53Wi-0001jN-C4; Fri, 21 Feb 2020 08:19:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j53K4-00046c-Tq
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:06:10 +0000
+ id 1j53WY-0001iW-Kw
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:19:03 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 255AA20578;
- Fri, 21 Feb 2020 08:06:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4FC0F2468E;
+ Fri, 21 Feb 2020 08:19:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582272368;
- bh=kJWdcJPvZE287SU5CAesXG1gRxh01xitM8yvtMiSSGw=;
+ s=default; t=1582273141;
+ bh=RMhyLwjHo+FIB9P37K7aaJm4nJKilhyzbJgF6malxW4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=BAG/iDVdjqS1YCwK53rjEKDE3Z/Yr0/JBYS4wiKF1df39XEBB0UUQ5okFmAGZd+yZ
- q0t+miFpOZ500hjMSUgwYwb5nZJBcgrFwNgMbxkbC8fovA6PsA1+CtZ455rLqIg377
- SDrPFHznmO1l9WL1JCG9oPO5m6lfmVYHBw/SEjD4=
+ b=dXOpYmfGa1spEf9CYilpe6KvFcmwurKoXcoY4cHxR6qxFd27D5ZEZezBpVLihur35
+ A/ghoozbbfoVwMM1qo8d+bAhGhzmGTUr/VzgO4oFOgEE7k3fb8pdtktFrTS4k1qCPz
+ zHIkIIWrw49QjUKtn/uuJhRn4byKlHEiBJymIE6w=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.4 117/344] ARM: dts: imx6: rdu2: Limit USBH1 to Full Speed
-Date: Fri, 21 Feb 2020 08:38:36 +0100
-Message-Id: <20200221072359.524645578@linuxfoundation.org>
+Subject: [PATCH 4.19 062/191] ARM: dts: imx6: rdu2: Disable WP for USDHC2 and
+ USDHC3
+Date: Fri, 21 Feb 2020 08:40:35 +0100
+Message-Id: <20200221072258.852020820@linuxfoundation.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200221072349.335551332@linuxfoundation.org>
-References: <20200221072349.335551332@linuxfoundation.org>
+In-Reply-To: <20200221072250.732482588@linuxfoundation.org>
+References: <20200221072250.732482588@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_000608_981302_EC46CE9E 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20200221_001902_708855_785AF358 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -85,11 +87,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 
-[ Upstream commit 6bb1e09c4c375db29770444f689f35f5cbe696bc ]
+[ Upstream commit cd58a174e58649426fb43d7456e5f7d7eab58af1 ]
 
-Cabling used to connect devices to USBH1 on RDU2 does not meet USB
-spec cable quality and cable length requirements to operate at High
-Speed, so limit the port to Full Speed only.
+RDU2 production units come with resistor connecting WP pin to
+correpsonding GPIO DNPed for both SD card slots. Drop any WP related
+configuration and mark both slots with "disable-wp".
 
 Reported-by: Chris Healy <cphealy@gmail.com>
 Reviewed-by: Chris Healy <cphealy@gmail.com>
@@ -103,21 +105,47 @@ Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-index 7b5c0e9b0fcff..a66c4fac6baf0 100644
+index 315d0e7615f33..56d6e82b75337 100644
 --- a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
 +++ b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-@@ -774,6 +774,7 @@
- &usbh1 {
- 	vbus-supply = <&reg_5p0v_main>;
- 	disable-over-current;
-+	maximum-speed = "full-speed";
- 	status = "okay";
- };
+@@ -657,7 +657,7 @@
+ 	pinctrl-0 = <&pinctrl_usdhc2>;
+ 	bus-width = <4>;
+ 	cd-gpios = <&gpio2 2 GPIO_ACTIVE_LOW>;
+-	wp-gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
++	disable-wp;
+ 	vmmc-supply = <&reg_3p3v_sd>;
+ 	vqmmc-supply = <&reg_3p3v>;
+ 	no-1-8-v;
+@@ -670,7 +670,7 @@
+ 	pinctrl-0 = <&pinctrl_usdhc3>;
+ 	bus-width = <4>;
+ 	cd-gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
+-	wp-gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
++	disable-wp;
+ 	vmmc-supply = <&reg_3p3v_sd>;
+ 	vqmmc-supply = <&reg_3p3v>;
+ 	no-1-8-v;
+@@ -1081,7 +1081,6 @@
+ 			MX6QDL_PAD_SD2_DAT1__SD2_DATA1		0x17059
+ 			MX6QDL_PAD_SD2_DAT2__SD2_DATA2		0x17059
+ 			MX6QDL_PAD_SD2_DAT3__SD2_DATA3		0x17059
+-			MX6QDL_PAD_NANDF_D3__GPIO2_IO03		0x40010040
+ 			MX6QDL_PAD_NANDF_D2__GPIO2_IO02		0x40010040
+ 		>;
+ 	};
+@@ -1094,7 +1093,6 @@
+ 			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x17059
+ 			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x17059
+ 			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x17059
+-			MX6QDL_PAD_NANDF_D1__GPIO2_IO01		0x40010040
+ 			MX6QDL_PAD_NANDF_D0__GPIO2_IO00		0x40010040
  
+ 		>;
 -- 
 2.20.1
 
