@@ -2,92 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A797167B19
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:47:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86000167B63
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:53:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=852CbQkPJKeXwQtI/46FMeVMM0O1LBPbHooXWaoB5GI=; b=HbKLqNPflQku3b9EQreIlA7tTm
-	ThDcnK4zInEWSOeB5Xmf6PrAf5EwS+eDx/3Dl5RaXGZigsLUCkHKOLzmc69+mgaOEBfSloZq6w09Y
-	rxWz/8EbdncB6D49jQfsqsoxHG0MINlExPrdOhPDddbN67jGBuBY01glcS1zIpEeymPStEd5ESdl+
-	fKCxLaVH2IrEOWq/+EZ9rRpOQrWlreyEsVvHZmD0KcheJtnPX35wGpqPQ69f+4OP2sptU1+c/36ES
-	BJ/HW+e3PziXXKVDJCPRgxboCcKdJL0219+cJeZGsnxau2PfxSY4KHDnMWR4FJVV//ObSetvgwlCH
-	af0vkeog==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c1lkWfuevBxOPAQSR29BU8xt9NM9oYh0bzQyO9BuU+Q=; b=DdwQMh902K6M3y
+	YYMsAb/f2xnZgEwHwsYgQCVE/OWs17Z1Pj7QyYZz77DiuqNm/QZTDGfo0ZTnfSeMEDQ1FaM2Qm+al
+	wosVInBhSNA72KrLKQflFuDdgTBcrHdOyFq/ZN0a1wBmk1R/griTbIPedBbNN5UMXs913E5nVBDh+
+	pmznW9houi9vKUIiQ7CJV5N3YqUbr8jayMtn1g25iIXAV7S4j/fHz/XcRoK13TFsli+twapQp/nh2
+	gkp3Ta0Xtrs7oZqGH2IKd1V0hyD/UxSLMqbZ9pxP9iDDT0PZLwCzyTbbwR1eGzwI8Lf4U5I5MZJRx
+	ms++XI1R+sQbGMK7H4Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j55pu-0002M7-Hn; Fri, 21 Feb 2020 10:47:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j55w4-0004VR-GV; Fri, 21 Feb 2020 10:53:32 +0000
+Received: from plasma5.jpberlin.de ([80.241.58.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j55pk-0002LC-3x
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 10:47:01 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z7so1437548wrl.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 02:47:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=f7yu7K3JlqyMe87m1GSh91P+I8Cu0Gpj7XsTeWNuw/0=;
- b=RGDqo7t7PQPwtANjW5Ko22b90oJlbS9Mbf6ViJpbXRNCF7YDRSRfcvNmdV/zT3QepT
- HThU/ZP44u6O6LrZKKLyVd+22OjfZ3zbVn9pls+kj3owR3PMIQhitrXFftNz3SitokNR
- T9mPMwW3fNVmP5iOQ7p/HA3l3Lb9CdcHBngtcXO3U2oV+r0IdSKHXiUM1sOKePr8qnea
- qM00U+ZEW0OciRHwoyROaCyh+gPx7YMiHu61+a2gOcvloFrncIu++N35yGAmyMzsdyPd
- AJlP1Ycpd3nkKQbMNXSKVsxgYoPo4JjmEbtslNFQNYDgbTxTqTyI+1Cf0wwACm5gt6AC
- arcA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=f7yu7K3JlqyMe87m1GSh91P+I8Cu0Gpj7XsTeWNuw/0=;
- b=Qvr0M6DvUiPXppE2lqFfTDntG6AsHu6zrmjyUANaD8QIHH0uT8inliKvWEbobnM3Sa
- EvD4TdULjEzgPylwP2IX7Y243e+Mb+0YPORl4GINl6cc9ZuiC0e/aNvJIdXJm5qq0AME
- FyDqDKeKazsfGbs1I8eby0dkBte+v6qFB0PqrH3AB7EOM2FR+qzMqSZtkX6IK74OdzKY
- O3HOTNvTDLFQcd3kuEd/GTfk6/HpGe+NOe7Lrok2iGQekDADoiSnluHWiVny03hlQjYU
- H8awfiadV0YWaj6Mq0KWxPMNA1rw04WgCOdeI6RV2RM91GjWlv5RouPMiUPXqqz4X5yp
- No8A==
-X-Gm-Message-State: APjAAAULSj+uaH/wHrHwDIebM6b22pBDnrp5OFkLy89Dh6ixF4MubJhl
- YX7JyIj1uGEVp28P45JFmiEDWQ==
-X-Google-Smtp-Source: APXvYqwsELLBhCREi3H11GBspa/fR2fMvBqx3YW0qemlsSfDpaHyhrVRZwlk5hC2zFPbUNrDKhRDaQ==
-X-Received: by 2002:adf:f28f:: with SMTP id k15mr47355503wro.230.1582282018874; 
- Fri, 21 Feb 2020 02:46:58 -0800 (PST)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id q1sm3376647wrw.5.2020.02.21.02.46.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 21 Feb 2020 02:46:58 -0800 (PST)
-References: <20200220204433.67113-1-martin.blumenstingl@googlemail.com>
- <74a8613c-ba30-5f42-9edd-b5af1d7f330c@baylibre.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH] clk: meson: meson8b: set audio output clock hierarchy
-In-reply-to: <74a8613c-ba30-5f42-9edd-b5af1d7f330c@baylibre.com>
-Date: Fri, 21 Feb 2020 11:46:57 +0100
-Message-ID: <1jpne82p5q.fsf@starbuckisacylon.baylibre.com>
+ id 1j55vv-0004UZ-AT
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 10:53:25 +0000
+Received: from spamfilter06.heinlein-hosting.de
+ (spamfilter06.heinlein-hosting.de [80.241.56.125])
+ by plasma.jpberlin.de (Postfix) with ESMTP id 1525DA7E27;
+ Fri, 21 Feb 2020 11:53:14 +0100 (CET)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from plasma.jpberlin.de ([80.241.56.68])
+ by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
+ [80.241.56.125]) (amavisd-new, port 10030)
+ with ESMTP id DUmwbhc8CKRj; Fri, 21 Feb 2020 11:53:10 +0100 (CET)
+Received: from webmail.opensynergy.com (unknown [217.66.60.5])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (Client CN "webmail.opensynergy.com",
+ Issuer "GeoTrust EV RSA CA 2018" (not verified))
+ (Authenticated sender: opensynergy@jpberlin.de)
+ by plasma.jpberlin.de (Postfix) with ESMTPSA id 23FAEA06E0;
+ Fri, 21 Feb 2020 11:53:10 +0100 (CET)
+Received: from [10.25.40.95] (10.25.255.1) by MXS01.open-synergy.com
+ (10.25.10.17) with Microsoft SMTP Server (TLS) id 14.3.468.0; Fri, 21 Feb
+ 2020 11:53:08 +0100
+Subject: Re: [PATCH] Add virtio SCMI device specification
+To: <virtio-comment@lists.oasis-open.org>
+References: <20200220193715.12097-1-peter.hilber@opensynergy.com>
+From: Peter Hilber <peter.hilber@opensynergy.com>
+Autocrypt: addr=peter.hilber@opensynergy.com; prefer-encrypt=mutual; keydata=
+ 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
+ lbekkuPTQs/m
+Message-ID: <66ca6765-4ed8-cb4a-fe20-ab5ace8f9d10@opensynergy.com>
+Date: Fri, 21 Feb 2020 11:53:09 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200220193715.12097-1-peter.hilber@opensynergy.com>
+Content-Language: en-US
+X-Originating-IP: [10.25.255.1]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_024700_165571_A4DDCE11 
-X-CRM114-Status: UNSURE (   6.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200221_025323_670749_4BDFBF34 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.58.36 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,25 +121,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Souvik.Chakravarty@arm.com, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 20.02.20 20:37, Peter Hilber wrote:
+> This patch proposes a new virtio device for the Arm SCMI protocol.
+> 
+> The device provides a simple transport for the Arm SCMI protocol[1]. The
+> *S*ystem *C*ontroller *M*anagement *I*nterface protocol allows speaking
+> to embedded system controllers that allow orchestrating things like
+> power management, system state management and sensor access. The SCMI
+> protocol is used on SoCs where multiple cores and co-processors need
+> access to these resources.
+> 
+> The virtio transport allows making use of this protocol in virtualized
+> embedded systems.
+> 
+> OpenSynergy has a prototype implementation, and plans to upstream the
+> Linux kernel driver.
+> 
+> The PDF output (with ugly fonts, apologies) is available at [2].
+> 
+> [1] https://developer.arm.com/docs/den0056/b
+> [2] https://share.mailbox.org/ajax/share/0d959c190d5a1c47d18eb2fd5a1c40ad81e8d7897ab9ca1e/1/8/Mjk/MjkvOA
 
-On Fri 21 Feb 2020 at 09:28, Neil Armstrong <narmstrong@baylibre.com> wrote:
+For completeness: Our prototype implementation does not yet
+provide the VIRTIO_SCMI_F_P2A_CHANNELS and VIRTIO_SCMI_F_SHARED_MEMORY
+features.
 
-> On 20/02/2020 21:44, Martin Blumenstingl wrote:
->> The aiu devices peripheral clocks needs the aiu and aiu_glue clocks to
->> operate. Reflect this hierarchy in the clock tree.
->> 
->> Fixes: e31a1900c1ff73 ("meson: clk: Add support for clock gates")
->> Suggested-by: Jerome Brunet <jbrunet@baylibre.com>
->> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-
-Applied, Thx !
+Any feedback would be greatly appreciated.
 
 _______________________________________________
 linux-arm-kernel mailing list
