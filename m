@@ -2,84 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEE7B166DD7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 04:37:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8CED166DD8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 04:37:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VfH4ut1b/x97X8v6sLWyjwfCMeVPrpZvVBVPpgsQK40=; b=aR7hc4N1fSRERY
-	PvLz84Jzb74DdhK1VwQ+PCOio9va3UlUVEQkFjwFaYJ4r6vlGQniQvP/Q+dHT+nXXCAEDvZ6GweBp
-	bbSt+D7LKIxXk8lfSFR9vMBpfUxlF8tKrIfJcGJptC4rV+nXOJ/ZfLwT/J9qB11woDlpLgC4QdUOu
-	1oSk08FE9Hyg+L7nkLGexH75iPwzVBIs5gu8C3DrVPTE3l8WuzSpErhRbjebZy2SEnnhlVKl6GTVq
-	ayfLp3SrR5YItO161ktTUteUde9ezOgYrRy/vwOwKg4FvJIl225Rr5XjHxHDg6fLBs7O58GlqLnew
-	Du26vH1rRWLIAAWc3M/A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p8oAiuv5Vv+KtSwPV1TVa/fg+3u7aPZU2Cdl84AWNAU=; b=prRtcgX8xw195c
+	ybskNr+GkkuXNSoTHZrOfI5/wAquwF3wolOY8Q+3RCarlV7Ejgl61mJ6y+TbND8F00OgWsqB1n1Wh
+	cpnzfSDReFHF5PMPuD287iTazuXh9WErKrCzjfCCLCoPwNEDJr9Imhg9gG1iKKkvF8/j/N0GpdF1n
+	NFV7xP7t+yGdsf1/sc62tq2x/RkrOLbhjTzXtDiI+YGrrfo+cVZFsESAlbaPMBcQ1gDMsbw8b4qB7
+	eylbCc/+0sgKYpxPiDuIhGnMPQI78rKxODtYTEwcYfJadhcCb3Cti8mZOs0jlFoGU2TRmTjZdaFH3
+	RWlfvaKSC6UyyMTrKfNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4z7f-0000EQ-Bv; Fri, 21 Feb 2020 03:37:03 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1j4z7w-0000M9-B0; Fri, 21 Feb 2020 03:37:20 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4z7X-0000DG-Lu
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 03:36:57 +0000
-Received: by mail-pf1-x442.google.com with SMTP id i19so489503pfa.2
+ id 1j4z7b-0000Ed-4G
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 03:37:00 +0000
+Received: by mail-pg1-x541.google.com with SMTP id d6so288890pgn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 19:36:54 -0800 (PST)
+ Thu, 20 Feb 2020 19:36:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/ZVITalxr0zACv67WhCn8mXrnEG7g8ElF3YeRI2boGk=;
- b=ACaSaiEVherPWZpY/4OhNEaNJCeHRnGC0qiiAfVBniFEjAdY0MOlJZIcDV8yBF4veE
- lcsxsyJcTZ0YIMDqQ/CKYzqI+eg319ks8PIlv+6YyHmygs5ZCz9OM0tjpATNuDAOC12H
- +M9iAuji08j3cwakHNrIbfpBtHalWZLoeptIqHWzZ6Joxegiox25CjOBltcwJEChhT+2
- +3fZ89oenXQiPPMAAjZV3Oel6xCGHLQdjensxfa2rw4kBbyNbhitPXNGP/d/dqHkC8jG
- WN7MQoobVFjRMUP0ZPFWBdvXxyAewa7Bi14Sd1YtnXwNyMPggMHtKVdBGcZ8TAXvlmVl
- r16g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Ix9Y2nFQkgNaD5RyzKlb0GalKo293yFxFO24g2Hr7BE=;
+ b=cSv8qlub9fbpZ3p/6Hvn1F3xU7QIFUacsg2CgrAfvXwZQj/D6PZ620DrFibo38PxUJ
+ J34fRp6oUTIXSibPUTAXaD8rgQ7zU3sOFnI5a9/5QdNsWgWIlFUD8CyiFPWwyNV5ABgm
+ L+DlPtVj5MSjZ+mutI1SAySDC+ABp7/8kiTbGKkNPreuEiq4de7HGCn/DKR3mePmeowp
+ FHNAZTPjBdjOF/AhNahU+MjlivUYcIqEOWQxI7axsuEnlQ9q1Iur7aEl31PCQsVtaT+g
+ ncFzZWNNx0X6Ld+S2aUdXJnoqzPnEsSVr7PbY8yBFhP5BJt5A2YtGuD47bG5p3GNlUUj
+ MZqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/ZVITalxr0zACv67WhCn8mXrnEG7g8ElF3YeRI2boGk=;
- b=NCod/EtOwqr4Q5voIi7qMZeeHdl+TTrlhvvteeO0bJtMemtC5ZaZJL/Nn5EIOe2Zt1
- HvG51wSQRkiX3zOWKY6l38Vb5cmGzV/H01IbmAgkZw0b80GRJwKBaj9jtJ2xjOUb1gNY
- i52CONxqHMLOlj8Blkxqpps5EH2cRkXe0VP56av/SAOIfkpCcqcjCZBjo/sljXYYMKwG
- f3FBeamsXaspSFKMVU2PJNdrjihKU1VLdIA7aRO9AESxe8vRJ6DBH6FzrSbBraEHPJ3t
- c8r2vruJTfa62WKjwpvxxy3yN3oWzwvJg9X5dJRZAznY/BaVKA4+jy/Ns9vsoNaPgXhJ
- ecAQ==
-X-Gm-Message-State: APjAAAVcyG8Ec3HdyO+yK6S/Iu+ab4FADA3Hd4ShbMEu8wMgWIydveD9
- UCyVtHjRz41qgvL7/jY2Vqw=
-X-Google-Smtp-Source: APXvYqz3vCnJLqlVJxxqA+HHKpIJcZ0nTQQOE9j3jO9o9J1n5iRzsN1qIxwi9EnSS0fkXtv5NQiq4g==
-X-Received: by 2002:a65:420c:: with SMTP id c12mr35065463pgq.270.1582256214283; 
- Thu, 20 Feb 2020 19:36:54 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Ix9Y2nFQkgNaD5RyzKlb0GalKo293yFxFO24g2Hr7BE=;
+ b=LgPaenLGBOoX2vW8FfZ2msEv6tPYYgZyInh6hdT1+UfV669LiAtn04mtStU3K4L2k0
+ twtSvAMc7X2k/BjxiY1wgvpf9NjOAYak7W5Rp34tGQBXwe2HiA5eG+LZVvC20nebO9dy
+ xaHgkUe/SofL2dFJoWW5ZZZDON85Wy6r/7A1YM8U7BanZGan4b9fjpYuDOhtC+5xJDz8
+ g1IYR4jdL7NhUdP5tqh6oWlS4kOp9dJ84fsLXLO1AyI1AWgi287jHJBZNmIe/jon693X
+ sjUGL8GZGH6hOuLheoJQErvHObu/IQaSBLBDo0lsmH6VEESMJwbfU/+d7eq08oeE0eqW
+ Kcwg==
+X-Gm-Message-State: APjAAAUCZX7Y36KF6yTVtLmcHgBnLtJCYmwNhuJt55DX3HB59YCzTWP7
+ x+rsXLN9oiyDkzEGl7NwDfQ=
+X-Google-Smtp-Source: APXvYqyWhRoVOloNoo9kNtSguiV4jK6MA9XFVaDLEVL3Di0Yq0mE5Kxtw6jjVq1rdjQwBwZJA7LT2Q==
+X-Received: by 2002:a63:4823:: with SMTP id v35mr35446928pga.177.1582256218382; 
+ Thu, 20 Feb 2020 19:36:58 -0800 (PST)
 Received: from localhost.localdomain ([125.130.116.2])
- by smtp.gmail.com with ESMTPSA id d4sm781340pjz.12.2020.02.20.19.36.49
+ by smtp.gmail.com with ESMTPSA id d4sm781340pjz.12.2020.02.20.19.36.54
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 20 Feb 2020 19:36:53 -0800 (PST)
+ Thu, 20 Feb 2020 19:36:58 -0800 (PST)
 From: Jaedon Shin <jaedon.shin@gmail.com>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Florian Fainelli <f.fainelli@gmail.com>,
  bcm-kernel-feedback-list@broadcom.com, Mark Brown <broonie@kernel.org>
-Subject: [PATCH v2 0/2] PCI: brcmstb: Add Broadcom STB support
-Date: Fri, 21 Feb 2020 12:36:38 +0900
-Message-Id: <20200221033640.55163-1-jaedon.shin@gmail.com>
+Subject: [PATCH v2 1/2] PCI: brcmstb: Add regulator support
+Date: Fri, 21 Feb 2020 12:36:39 +0900
+Message-Id: <20200221033640.55163-2-jaedon.shin@gmail.com>
 X-Mailer: git-send-email 2.21.0 (Apple Git-122)
+In-Reply-To: <20200221033640.55163-1-jaedon.shin@gmail.com>
+References: <20200221033640.55163-1-jaedon.shin@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_193655_743454_7A1EDEB7 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20200220_193659_217821_66FA3DB0 
+X-CRM114-Status: GOOD (  15.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [jaedon.shin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -111,24 +113,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series supports GPIO based regulator supplies for its power supplies.
-and this has an improvement on devm_ APIs.
+ARM-based Broadcom STB SoCs have GPIO-based voltage regulator for PCIe
+turning off/on power supplies.
 
-Changes v2:
-- Remove incomplete 7445 based Broadcom STB SoC enable codes.
-- Add devicetree description for supply-names.
-- Use -EPROBE_DEFER if the GPIO system is not available.
-- Remove unnecessary #ifdef CONFIG_REGULATOR
-- Use devm_regulator_bulk_* instead of devm_regulator_*
-
-Jaedon Shin (2):
-  PCI: brcmstb: Add regulator support
-  PCI: brcmstb: Drop clk_put when probe fails and remove
-
+Signed-off-by: Jaedon Shin <jaedon.shin@gmail.com>
+---
  .../bindings/pci/brcm,stb-pcie.yaml           |  3 ++
- drivers/pci/controller/pcie-brcmstb.c         | 37 ++++++++++++++++++-
- 2 files changed, 39 insertions(+), 1 deletion(-)
+ drivers/pci/controller/pcie-brcmstb.c         | 36 +++++++++++++++++++
+ 2 files changed, 39 insertions(+)
 
+diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+index 77d3e81a437b..efa5c885724b 100644
+--- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+@@ -56,6 +56,9 @@ properties:
+     description: Indicates usage of spread-spectrum clocking.
+     type: boolean
+ 
++  supply-names:
++    description: List of regulator supplies to use for PCIe
++
+ required:
+   - reg
+   - dma-ranges
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index d20aabc26273..8968ef7fa55d 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -23,6 +23,7 @@
+ #include <linux/of_platform.h>
+ #include <linux/pci.h>
+ #include <linux/printk.h>
++#include <linux/regulator/consumer.h>
+ #include <linux/sizes.h>
+ #include <linux/slab.h>
+ #include <linux/string.h>
+@@ -173,6 +174,8 @@ struct brcm_pcie {
+ 	int			gen;
+ 	u64			msi_target_addr;
+ 	struct brcm_msi		*msi;
++	struct regulator_bulk_data *vreg_bulk;
++	int			num_vregs;
+ };
+ 
+ /*
+@@ -898,6 +901,7 @@ static void __brcm_pcie_remove(struct brcm_pcie *pcie)
+ {
+ 	brcm_msi_remove(pcie);
+ 	brcm_pcie_turn_off(pcie);
++	regulator_bulk_disable(pcie->num_vregs, pcie->vreg_bulk);
+ 	clk_disable_unprepare(pcie->clk);
+ 	clk_put(pcie->clk);
+ }
+@@ -920,6 +924,8 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+ 	struct brcm_pcie *pcie;
+ 	struct pci_bus *child;
+ 	struct resource *res;
++	struct regulator_bulk_data *bulk;
++	int i;
+ 	int ret;
+ 
+ 	bridge = devm_pci_alloc_host_bridge(&pdev->dev, sizeof(*pcie));
+@@ -955,6 +961,36 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	ret = of_property_count_strings(np, "supply-names");
++	pcie->num_vregs = (ret < 0) ? 0 : ret;
++
++	if (pcie->num_vregs) {
++		bulk = devm_kcalloc(pcie->dev, pcie->num_vregs, sizeof(*bulk),
++				    GFP_KERNEL);
++		if (!bulk) {
++			clk_disable_unprepare(pcie->clk);
++			return -ENOMEM;
++		}
++
++		for (i = 0; i < pcie->num_vregs; i++)
++			of_property_read_string_index(np, "supply-names", i,
++						      &bulk[i].supply);
++
++		ret = devm_regulator_bulk_get(pcie->dev, pcie->num_vregs, bulk);
++		if (ret < 0) {
++			clk_disable_unprepare(pcie->clk);
++			return ret;
++		}
++
++		pcie->vreg_bulk = bulk;
++	}
++
++	ret = regulator_bulk_enable(pcie->num_vregs, pcie->vreg_bulk);
++	if (ret) {
++		clk_disable_unprepare(pcie->clk);
++		return ret;
++	}
++
+ 	ret = brcm_pcie_setup(pcie);
+ 	if (ret)
+ 		goto fail;
 -- 
 2.21.0
 
