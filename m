@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03CA31685AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:55:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A43741685BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:57:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jBNAs+18I3Zj9kwy8oVFMhcRglgs2kOdFosF369ysXo=; b=uS4QeUMMMktB2U
-	R0ue+rhPaO2IKBSBUpp/WKAAmHZhIz9seAXIpmj9tnRK/nssrFmTvalHVCNl4oVxBtKe9MgI6sYBJ
-	naBx+EPHYyHp53jJ+SDFiTuA65raYejXDSJDX1c7l5wwh0jk0XcoWbT9l7ug3KpZ1RjGb+d4tQRnx
-	zYTKLRLdY+WLOGF+wUZZZ5Wo7hePSALVkkhpqHGXCHFQk0zkDkyIBf/NUt8Um3ZLybP0oYPXBiMxY
-	xFf9HKeOPQ6Cy4tjKtCvnEAzL4xC4NZMk3O/cwXBREXb3qJHeTWH3Ym9WM4vtNq2dQ0QiaUFYDQfS
-	Do4rCrl8nviymByPSmdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Bd6yAfQUTh1UWTsDKwR5AxGqMe0bkUyfGzPmcPFI/Zg=; b=GlMajk7YJIZ5qGTytxxfyNOnu
+	JQlUWZu07mu1tN1jtotGDOTw9wMpS60RvXxD0ziOjE7YEVG8us/SnLWSuq1PtZSg7rtAzk+N7mwAP
+	Xe2/N1O0AAJFJste5GhatU4iXPIeNdTxVjY+qSJRc9GEsyHfVKvTgYjVPvnGEktYp4k+amr9J69cR
+	AEhHCU7yC4J/X7QBLOAoy7eFfs0z7NqfeTgMSAQoWNJ9AalSosJIM9Sq/VuhwOerYEnpDayKxYjBJ
+	BWgTv2EH0jvMP8t7CPb1RgDrKyndD2Jg1cwwm24U2UYE0LVDvIJdfslqM6fl+gCb33nHJutTE1/oL
+	MRLv97C2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5CWA-0004qw-1Y; Fri, 21 Feb 2020 17:55:14 +0000
-Received: from muru.com ([72.249.23.125])
+	id 1j5CY8-0006fc-Eq; Fri, 21 Feb 2020 17:57:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5CVq-0004qU-0V
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:54:55 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 711B0807E;
- Fri, 21 Feb 2020 17:55:37 +0000 (UTC)
-Date: Fri, 21 Feb 2020 09:54:49 -0800
-From: Tony Lindgren <tony@atomide.com>
-To: "Andrew F. Davis" <afd@ti.com>
-Subject: Re: omap-secure.c:undefined reference to `__arm_smccc_smc'
-Message-ID: <20200221175449.GZ37466@atomide.com>
-References: <20200220155429.GH37466@atomide.com>
- <55ddcd29-ed8b-529e-dd54-cbac5cf74e42@ti.com>
- <20200220162012.GI37466@atomide.com>
- <d7b685b6-16a2-3743-1786-a5240726ed9c@ti.com>
- <20200220163703.GK37466@atomide.com>
- <20200220171305.GL37466@atomide.com>
- <281e895b-720d-5bab-63cf-8b3e389dc767@ti.com>
- <20200220175744.GQ37466@atomide.com>
- <20200220181141.GR37466@atomide.com>
- <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
+ id 1j5CXz-0006ed-St
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:57:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 557BE30E;
+ Fri, 21 Feb 2020 09:57:07 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 969893F6CF;
+ Fri, 21 Feb 2020 09:57:06 -0800 (PST)
+Date: Fri, 21 Feb 2020 17:57:03 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v2 1/2] PCI: brcmstb: Add regulator support
+Message-ID: <20200221175703.GJ5546@sirena.org.uk>
+References: <20200221033640.55163-1-jaedon.shin@gmail.com>
+ <20200221033640.55163-2-jaedon.shin@gmail.com>
+ <20200221121231.GA5546@sirena.org.uk>
+ <40c4de9c-efdc-4fae-ad6d-1ba51fbbece1@gmail.com>
+ <20200221171127.GH5546@sirena.org.uk>
+ <aff7e72b-c6d3-9d66-2726-1014a040b601@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
+In-Reply-To: <aff7e72b-c6d3-9d66-2726-1014a040b601@gmail.com>
+X-Cookie: Dead?	No excuse for laying off work.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_095454_096029_D0E5016B 
-X-CRM114-Status: GOOD (  22.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200221_095707_978119_49992418 
+X-CRM114-Status: GOOD (  17.72  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,138 +69,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Marc Zyngier <maz@kernel.org>,
- linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jim Quinlan <james.quinlan@Broadcom.com>, linux-gpio@vger.kernel.org,
+ linux-pci@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Jaedon Shin <jaedon.shin@gmail.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, Gregory Fong <gregory.0xf0@gmail.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
+Content-Type: multipart/mixed; boundary="===============7046375786085223329=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Andrew F. Davis <afd@ti.com> [200220 10:23]:
-> On 2/20/20 1:11 PM, Tony Lindgren wrote:
-> > * Tony Lindgren <tony@atomide.com> [200220 17:58]:
-> >> * Andrew F. Davis <afd@ti.com> [200220 17:39]:
-> >>> On 2/20/20 12:13 PM, Tony Lindgren wrote:
-> >>>> * Tony Lindgren <tony@atomide.com> [200220 16:37]:
-> >>>>> * Andrew F. Davis <afd@ti.com> [200220 16:24]:
-> >>>>>> On 2/20/20 11:20 AM, Tony Lindgren wrote:
-> >>>>>>> * Andrew F. Davis <afd@ti.com> [200220 16:04]:
-> >>>>>>>> On 2/20/20 10:54 AM, Tony Lindgren wrote:
-> >>>>>>>>> Andrew,
-> >>>>>>>>>
-> >>>>>>>>> * kbuild test robot <lkp@intel.com> [200213 10:27]:
-> >>>>>>>>>> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git master
-> >>>>>>>>>> head:   0bf999f9c5e74c7ecf9dafb527146601e5c848b9
-> >>>>>>>>>> commit: c37baa06f8a970e4a533d41f7d33e5e57de5ad25 ARM: OMAP2+: Fix undefined reference to omap_secure_init
-> >>>>>>>>>> date:   3 weeks ago
-> >>>>>>>>>> config: arm-randconfig-a001-20200213 (attached as .config)
-> >>>>>>>>>> compiler: arm-linux-gnueabi-gcc (GCC) 7.5.0
-> >>>>>>>>>> reproduce:
-> >>>>>>>>>>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-> >>>>>>>>>>         chmod +x ~/bin/make.cross
-> >>>>>>>>>>         git checkout c37baa06f8a970e4a533d41f7d33e5e57de5ad25
-> >>>>>>>>>>         # save the attached .config to linux build tree
-> >>>>>>>>>>         GCC_VERSION=7.5.0 make.cross ARCH=arm 
-> >>>>>>>>>>
-> >>>>>>>>>> If you fix the issue, kindly add following tag
-> >>>>>>>>>> Reported-by: kbuild test robot <lkp@intel.com>
-> >>>>>>>>>>
-> >>>>>>>>>> All errors (new ones prefixed by >>):
-> >>>>>>>>>>
-> >>>>>>>>>>    arch/arm/mach-omap2/omap-secure.o: In function `omap_smccc_smc':
-> >>>>>>>>>>>> omap-secure.c:(.text+0x94): undefined reference to `__arm_smccc_smc'
-> >>>>>>>>>
-> >>>>>>>>> Have you looked at this one? Looks like there's still an unhandled
-> >>>>>>>>> randconfig build case.
-> >>>>>>>>>
-> >>>>>>>>
-> >>>>>>>>
-> >>>>>>>> I've had a quick look, all the ARM config does:
-> >>>>>>>>
-> >>>>>>>> select HAVE_ARM_SMCCC if CPU_V7
-> >>>>>>>>
-> >>>>>>>> so I don't think this will happen in any real config, but if we want to
-> >>>>>>>> prevent randconfig issue this we could force ARCH_OMAP2PLUS to "depend"
-> >>>>>>>> on it.
-> >>>>>>>
-> >>>>>>> Seems to happen at least with omap2 only config where we don't have
-> >>>>>>> CPU_V7. Something like below seems to fix it.
-> >>>>>>>
-> >>>>>>> If that looks OK to you, I'll send out a proper fix.
-> >>>>>>>
-> >>>>>>
-> >>>>>>
-> >>>>>> This looks fine to me.
-> >>>>>>
-> >>>>>> A better later fix might be to later stub out the actual __arm_smccc_smc
-> >>>>>> in common code if CONFIG_HAVE_ARM_SMCCC is not set, so any platform will
-> >>>>>> get the fix.
-> >>>>>
-> >>>>> Yeah seems that might be better. Adding Aaro and Marc to Cc.
-> >>>>
-> >>>> But if we can in theory have some arm11 machine with smccc, then this
-> >>>> local ifdef below is probably the way to go.
-> >>>>
-> >>>
-> >>> If the machine has SMCCC then it will also have the
-> >>> CONFIG_HAVE_ARM_SMCCC set and so nothing would change.
-> >>
-> >> Hmm yeah good point.
-> > 
-> > So the patch below seems like the way to go then. Anybody have issues
-> > with the patch below?
-> > 
-> > Regards,
-> > 
-> > Tony
-> > 
-> > 8< -------------------------
-> > diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-> > --- a/include/linux/arm-smccc.h
-> > +++ b/include/linux/arm-smccc.h
-> > @@ -121,6 +121,7 @@ struct arm_smccc_quirk {
-> >  	} state;
-> >  };
-> >  
-> > +#ifdef CONFIG_HAVE_ARM_SMCCC
-> >  /**
-> >   * __arm_smccc_smc() - make SMC calls
-> >   * @a0-a7: arguments passed in registers 0 to 7
-> > @@ -137,6 +138,14 @@ asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
-> >  			unsigned long a2, unsigned long a3, unsigned long a4,
-> >  			unsigned long a5, unsigned long a6, unsigned long a7,
-> >  			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
-> > +#else
-> > +static inline void __arm_smccc_smc(unsigned long a0, unsigned long a1,
-> > +			unsigned long a2, unsigned long a3, unsigned long a4,
-> > +			unsigned long a5, unsigned long a6, unsigned long a7,
-> > +			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk)
-> > +{
-> 
-> 
-> Maybe a warning? If you do not have SMC on your platform but are still
-> making SMC calls then something is broken and it looks like it would
-> fail silently here.
 
-Actually I'll go back to the earlier local fix. With above changes,
-we now start getting uninitialized struct arm_smccc_res res warning
-in omap_smccc_smc(). And it's a bit unclear if and with what value
-a0 should be initialized. Probably should be SMCCC_RET_NOT_SUPPORTED,
-but that then requires moving defines around too. And if it turns
-out being version specific define, then we keep piling up more code.
+--===============7046375786085223329==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="wRtZRu2mMGBZ6YQ7"
+Content-Disposition: inline
 
-My guess is that it's only few SoCs that might have ARMv6 and v7
-both built, so it's not like we'd have to patch all over the place
-anyways.
 
-Regards,
+--wRtZRu2mMGBZ6YQ7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Tony
+On Fri, Feb 21, 2020 at 09:50:42AM -0800, Florian Fainelli wrote:
+> On 2/21/20 9:11 AM, Mark Brown wrote:
+
+> > The framework and/or driver can enumerate firmware information without
+> > actually powering up the devices of course.
+
+> The issue is not enumeration, it is ensuring that you will be able to
+> establish the PCIe link with the EP. If there is no pci_device created
+> because the bus scanning returned a link down, there is not much that
+> can be done. Also the question is whether this logic belongs in the PCI
+> bus layer or the driver.
+
+Given that the interface with the devices is all standardized I'd have
+expected it to be in the bus code as a first pass.
+
+> > I would not be surprised to learn that most systems just mark the device
+> > supplies always on, it's not like the devices will be able to use them
+> > normally anyway.
+
+> In the downstream PCIe driver which is this one is just a subset of
+> until we close the gap, we have some additional logical to determine
+> whether the EP device is wakeup enabled in order to leave its regulators
+> turned on during system sleep so as to permit Wake-on-WLAN for instance.
+
+Is that just using standard PCI stuff or is it custom for embedded
+applications?
+
+--wRtZRu2mMGBZ6YQ7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5QGe8ACgkQJNaLcl1U
+h9DPMgf/e4r5Gwi7L6QWp74/t0ncNlE8lT+mvnemgaNumxi8HWK/smVU+t35gvxo
+dbdIrGGZLffZHrlCjmYjeVNjVLcWTFFr8XlczAjrSnbnlf1pnefF5Y+nN80hSZtR
+mwQ50gnCPgM11jx7xybWdvJQczugxSG1bQnhSgi+E8wLtZi1MoGFo3NWkv1jMNr8
+WcLdLgWdfAHnmhTVXYEuyxnpaO3HSDrmlQl8RGSalG/GvjrfSAjdQKVVmttjPGYc
+HUgkJOLoTbNKtCMhZAQf3Y2hm8VAPuOlBkD0t1P1086I29uIctKE7LhxF553P3TR
+mROjcuI9gQATJMw7UINisqe11KMyGw==
+=88yz
+-----END PGP SIGNATURE-----
+
+--wRtZRu2mMGBZ6YQ7--
+
+
+--===============7046375786085223329==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7046375786085223329==--
+
