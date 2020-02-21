@@ -2,99 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A416167326
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:09:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A70B91674C0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:26:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZqXcWKLVjjxqYas8xE0t/LNpYjKA+RvG/pOVzaO/Od8=; b=ltb9SuXqRoqCur
-	v84pIxKxEJlD3CD8PanK6zYRDBUFkFwXbre5z2lihDMOL4cOBdwGNdhQuFDYlfDSnVzs161rH4nAh
-	uGy+83nDO+jiCCZgLvfVWgnxxNHPvA/IMtoV5WJ/92E7yHfcr/a/C/NkjaKQGsQX6YfQw+uTEe0mn
-	uY25X/zujoghRYOeBan80j1PYRgo8+HqCg70RXvJ64YgHKq43ZVdpoM/tos38aqK3G98rvFTqxyLl
-	TVGgSTY079w+Bwlr9BHbmRrtru7QGYfGWHbnYYyLUds+8kBHXd07c2FoB28EqsMUyzo35fm2/nncC
-	YFC5HsWHnxll5QXnVzMg==;
+	List-Owner; bh=d4AaKehY8LCKyEpogQVurTxGQlMKL/sSGiuV5FVsdBE=; b=plQbkCVvcz/PN7
+	Y0f7poibx1mSBV2c64tm/dxOqiF/MuYLavnNublzkpPd6oxuj55amBJ8sKmSOw7rPs6Vkn6JwCbti
+	4f6qf4SqNPQl3SwfZhE+Knph0RLSTB0S9Bq+C9zry3d7BOVABl2qdPFzTj4yjDW000rA1pNqmmgJ6
+	gg4UyY1VPyRO9Z9wFQIatdHlk5VpI5G5B3SnHEIT56ytOA9wkL2XnUdNtfFCwMQaSq1aY1rXW3JNU
+	hxCWUj+xswtBm6IZU1oz/p0CF6mkGhQZiRRx6A14OndzIKEk0AU/ei/DB6TrEYcQoi/Rmj0feYcgl
+	y8NY0FBTAbIj0NyzzXwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j53Nb-0005MW-5g; Fri, 21 Feb 2020 08:09:47 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j53dF-0005fH-Lt; Fri, 21 Feb 2020 08:25:57 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j53NO-0005Kv-Hm
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:09:37 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mkl@pengutronix.de>)
- id 1j53NH-0003OX-CY; Fri, 21 Feb 2020 09:09:27 +0100
-Received: from [IPv6:2a03:f580:87bc:d400:6ccf:3365:1a9c:55ad] (unknown
- [IPv6:2a03:f580:87bc:d400:6ccf:3365:1a9c:55ad])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
- SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
- (Client CN "mkl@blackshift.org",
- Issuer "StartCom Class 1 Client CA" (not verified))
- (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id C89614BCCA9;
- Fri, 21 Feb 2020 08:09:24 +0000 (UTC)
-Subject: Re: [PATCH v2 2/3] can: m_can: m_can_platform: Add support for
- enabling transceiver
-To: Faiz Abbas <faiz_abbas@ti.com>, Dan Murphy <dmurphy@ti.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, netdev@vger.kernel.org, linux-can@vger.kernel.org
-References: <20200217142836.23702-1-faiz_abbas@ti.com>
- <20200217142836.23702-3-faiz_abbas@ti.com>
- <250f905a-33c3-dd17-15c9-e282299dd742@ti.com>
- <8885c00b-7b73-0448-7e9d-ecb19fe84adf@ti.com>
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
- mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
- zu8T6kZP2wEIpM9RjEL3jdBjZNCsjSS6x1qzpc2+2ivjdiJsqeaagIgvy2JWy7vUa4/PyGfx
- QyUeXOxdj59DvLwAx8I6hOgeHx2X/ntKAMUxwawYfPZpP3gwTNKc27dJWSomOLgp+gbmOmgc
- 6U5KwhAxPTEb3CsT5RicsC+uQQFumdl5I6XS+pbeXZndXwnj5t84M+HEj7RN6bUfV2WZO/AB
- Xt5+qFkC/AVUcj/dcHvZwQJlGeZxoi4veCoOT2MYqfR0ax1MmN+LVRvKm29oSyD4Ts/97cbs
- XsZDRxnEG3z/7Winiv0ZanclA7v7CQwrzsbpCv+oj+zokGuKasofzKdpywkjAfSE1zTyF+8K
- nxBAmzwEqeQ3iKqBc3AcCseqSPX53mPqmwvNVS2GqBpnOfY7Mxr1AEmxdEcRYbhG6Xdn+ACq
- Dq0Db3A++3PhMSaOu125uIAIwMXRJIzCXYSqXo8NIeo9tobk0C/9w3fUfMTrBDtSviLHqlp8
- eQEP8+TDSmRP/CwmFHv36jd+XGmBHzW5I7qw0OORRwNFYBeEuiOIgxAfjjbLGHh9SRwEqXAL
- kw+WVTwh0MN1k7I9/CDVlGvc3yIKS0sA+wudYiselXzgLuP5cQARAQABtCZNYXJjIEtsZWlu
- ZS1CdWRkZSA8bWtsQHBlbmd1dHJvbml4LmRlPokCVAQTAQoAPgIbAwIeAQIXgAULCQgHAwUV
- CgkICwUWAgMBABYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUsSbBQkM366zAAoJECte4hHF
- iupUgkAP/2RdxKPZ3GMqag33jKwKAbn/fRqAFWqUH9TCsRH3h6+/uEPnZdzhkL4a9p/6OeJn
- Z6NXqgsyRAOTZsSFcwlfxLNHVxBWm8pMwrBecdt4lzrjSt/3ws2GqxPsmza1Gs61lEdYvLST
- Ix2vPbB4FAfE0kizKAjRZzlwOyuHOr2ilujDsKTpFtd8lV1nBNNn6HBIBR5ShvJnwyUdzuby
- tOsSt7qJEvF1x3y49bHCy3uy+MmYuoEyG6zo9udUzhVsKe3hHYC2kfB16ZOBjFC3lH2U5An+
- yQYIIPZrSWXUeKjeMaKGvbg6W9Oi4XEtrwpzUGhbewxCZZCIrzAH2hz0dUhacxB201Y/faY6
- BdTS75SPs+zjTYo8yE9Y9eG7x/lB60nQjJiZVNvZ88QDfVuLl/heuIq+fyNajBbqbtBT5CWf
- mOP4Dh4xjm3Vwlz8imWW/drEVJZJrPYqv0HdPbY8jVMpqoe5jDloyVn3prfLdXSbKPexlJaW
- 5tnPd4lj8rqOFShRnLFCibpeHWIumqrIqIkiRA9kFW3XMgtU6JkIrQzhJb6Tc6mZg2wuYW0d
- Wo2qvdziMgPkMFiWJpsxM9xPk9BBVwR+uojNq5LzdCsXQ2seG0dhaOTaaIDWVS8U/V8Nqjrl
- 6bGG2quo5YzJuXKjtKjZ4R6k762pHJ3tnzI/jnlc1sXz
-Message-ID: <8a001afe-dc97-fa1e-4e80-20da89eb2105@pengutronix.de>
-Date: Fri, 21 Feb 2020 09:09:18 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j53d6-0005eE-KA
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:25:50 +0000
+Received: by mail-wr1-x442.google.com with SMTP id w15so950342wru.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 00:25:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=TXvq+EuElcafseyPa7Xn9BIOxypv/HGxoGPqvN1nfZA=;
+ b=0vR7OpRWb43/h5/gI3hfsOzbo8AUJRSYzECLw98e+lDQF7+xvGznDeOc2G3WpPAQkx
+ msqWiqCw5bHAate/jXi91zGVeflcUoUvr2K9M+T85G0KWwTRcpU/eNYQ/hSaG/FK++El
+ ZOP4g5IrXVoiB1UhWTS5xu/wvkdVO+l0TQUB3w5JPSSv/1rF1QYbx0aaqPvh+zd1UxIZ
+ hkvUB1iXdtefkWb8Le7+KtoKPUVs3Zu3NLrrrNO2chU9C/6+8FVt4Q2PZbBrm2xkcR/t
+ fsAq+07bhFEbHFLwd8V0UDLiibpnqxdi5ANL8EkyNxwlXaPJMsRpqeXnrXH8Non/ak5F
+ Tfvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=TXvq+EuElcafseyPa7Xn9BIOxypv/HGxoGPqvN1nfZA=;
+ b=Sq812BsKmcVDHvVo9GxtIVV9etxwltds7mnlxNaCODCUs10/xbuEv+4N46pM4ftlIt
+ HNR0Z82qFNOvICPnCrFe+u3UX48CDKtFlqU9zdY8vFdtdkFr7KOF/Ihgyt5N/NVGpKNc
+ 4NWiudeIny+CYxJcSJF25bDcqDztHx6iSUNQAN/g/Xb8Y/BF5qCXNRUl2DyHVZIHjEmo
+ 4/D557SxDLfI0yYhqMCe5t5RUGwo0qnwxFAja1t3dtjGtm1YbxuNEUKIj9mic6W1FOTj
+ L/8Gee1VZDIL4lzOTVoUVrjajrbPafHFmzwKb6NaoLQ3HQkmMRKpzYfWxfw4knkzb/zY
+ WM+A==
+X-Gm-Message-State: APjAAAUi2Gg4h/yVbDjPCX0rsvLoYkKDJ/WFnlow1mGF8sOd6NsC/2bK
+ sK6sACuPWEKE1jb66rtQVlWJyw==
+X-Google-Smtp-Source: APXvYqwWNTLg5jYxYhcBRVc0+kdrHr6iJ8Fa1H5VxAKW7NSwQQEg6HjJBqUFt17tnQm+zo2bJx1O5A==
+X-Received: by 2002:a5d:5347:: with SMTP id t7mr47046590wrv.401.1582273546143; 
+ Fri, 21 Feb 2020 00:25:46 -0800 (PST)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858?
+ ([2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858])
+ by smtp.gmail.com with ESMTPSA id f65sm2752337wmf.29.2020.02.21.00.25.44
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 21 Feb 2020 00:25:45 -0800 (PST)
+Subject: Re: [PATCH] dt-bindings: power: Fix dt_binding_check error
+To: Jianxin Pan <jianxin.pan@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
+ devicetree@vger.kernel.org
+References: <1582269169-17557-1-git-send-email-jianxin.pan@amlogic.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <b3da2987-a226-b230-4379-1ff4d57ef7fe@baylibre.com>
+Date: Fri, 21 Feb 2020 09:25:44 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <8885c00b-7b73-0448-7e9d-ecb19fe84adf@ti.com>
-Content-Language: en-GB
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <1582269169-17557-1-git-send-email-jianxin.pan@amlogic.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_000934_590764_5938B258 
-X-CRM114-Status: GOOD (  16.17  )
+X-CRM114-CacheID: sfid-20200221_002548_682926_BEB8F976 
+X-CRM114-Status: GOOD (  14.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,53 +149,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, sriram.dash@samsung.com,
- lgirdwood@gmail.com, robh+dt@kernel.org, broonie@kernel.org, wg@grandegger.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Victor Wan <victor.wan@amlogic.com>, linux-pm@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMi8yMS8yMCA4OjU0IEFNLCBGYWl6IEFiYmFzIHdyb3RlOgo+IEhpIERhbiwKPiAKPiBPbiAx
-Ny8wMi8yMCA4OjQwIHBtLCBEYW4gTXVycGh5IHdyb3RlOgo+PiBGYWl6Cj4+Cj4+IE9uIDIvMTcv
-MjAgODoyOCBBTSwgRmFpeiBBYmJhcyB3cm90ZToKPj4+IENBTiB0cmFuc2NlaXZlcnMgb24gc29t
-ZSBib2FyZHMgaGF2ZSBhIHN0YW5kYnkgbGluZSB3aGljaCBjYW4gYmUKPj4+IHRvZ2dsZWQgdG8g
-ZW5hYmxlL2Rpc2FibGUgdGhlIHRyYW5zY2VpdmVyLiBNb2RlbCB0aGlzIGFzIGFuIG9wdGlvbmFs
-Cj4+PiBmaXhlZCB4Y2VpdmVyIHJlZ3VsYXRvci4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBGYWl6
-IEFiYmFzIDxmYWl6X2FiYmFzQHRpLmNvbT4KPj4+IEFja2VkLWJ5OiBTcmlyYW0gRGFzaCA8c3Jp
-cmFtLmRhc2hAc2Ftc3VuZy5jb20+Cj4+PiAtLS0KPj4+IMKgIGRyaXZlcnMvbmV0L2Nhbi9tX2Nh
-bi9tX2Nhbl9wbGF0Zm9ybS5jIHwgNiArKysrKysKPj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCA2IGlu
-c2VydGlvbnMoKykKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9uZXQvY2FuL21fY2FuL21f
-Y2FuX3BsYXRmb3JtLmMKPj4+IGIvZHJpdmVycy9uZXQvY2FuL21fY2FuL21fY2FuX3BsYXRmb3Jt
-LmMKPj4+IGluZGV4IDM4ZWE1ZTYwMGZiOC4uNzE5NDY4ZmFiNTA3IDEwMDY0NAo+Pj4gLS0tIGEv
-ZHJpdmVycy9uZXQvY2FuL21fY2FuL21fY2FuX3BsYXRmb3JtLmMKPj4+ICsrKyBiL2RyaXZlcnMv
-bmV0L2Nhbi9tX2Nhbi9tX2Nhbl9wbGF0Zm9ybS5jCj4+PiBAQCAtNiw2ICs2LDcgQEAKPj4+IMKg
-IC8vIENvcHlyaWdodCAoQykgMjAxOC0xOSBUZXhhcyBJbnN0cnVtZW50cyBJbmNvcnBvcmF0ZWQg
-LQo+Pj4gaHR0cDovL3d3dy50aS5jb20vCj4+PiDCoCDCoCAjaW5jbHVkZSA8bGludXgvcGxhdGZv
-cm1fZGV2aWNlLmg+Cj4+PiArI2luY2x1ZGUgPGxpbnV4L3JlZ3VsYXRvci9jb25zdW1lci5oPgo+
-Pj4gwqAgwqAgI2luY2x1ZGUgIm1fY2FuLmgiCj4+PiDCoCBAQCAtNTcsNiArNTgsNyBAQCBzdGF0
-aWMgaW50IG1fY2FuX3BsYXRfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZQo+Pj4gKnBkZXYp
-Cj4+PiDCoCB7Cj4+PiDCoMKgwqDCoMKgIHN0cnVjdCBtX2Nhbl9jbGFzc2RldiAqbWNhbl9jbGFz
-czsKPj4+IMKgwqDCoMKgwqAgc3RydWN0IG1fY2FuX3BsYXRfcHJpdiAqcHJpdjsKPj4+ICvCoMKg
-wqAgc3RydWN0IHJlZ3VsYXRvciAqcmVnX3hjZWl2ZXI7Cj4+PiDCoMKgwqDCoMKgIHN0cnVjdCBy
-ZXNvdXJjZSAqcmVzOwo+Pj4gwqDCoMKgwqDCoCB2b2lkIF9faW9tZW0gKmFkZHI7Cj4+PiDCoMKg
-wqDCoMKgIHZvaWQgX19pb21lbSAqbXJhbV9hZGRyOwo+Pj4gQEAgLTExMSw2ICsxMTMsMTAgQEAg
-c3RhdGljIGludCBtX2Nhbl9wbGF0X3Byb2JlKHN0cnVjdAo+Pj4gcGxhdGZvcm1fZGV2aWNlICpw
-ZGV2KQo+Pj4gwqAgwqDCoMKgwqDCoCBtX2Nhbl9pbml0X3JhbShtY2FuX2NsYXNzKTsKPj4+IMKg
-ICvCoMKgwqAgcmVnX3hjZWl2ZXIgPSBkZXZtX3JlZ3VsYXRvcl9nZXRfb3B0aW9uYWwoJnBkZXYt
-PmRldiwgInhjZWl2ZXIiKTsKPj4+ICvCoMKgwqAgaWYgKFBUUl9FUlIocmVnX3hjZWl2ZXIpID09
-IC1FUFJPQkVfREVGRVIpCj4+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FUFJPQkVfREVGRVI7
-Cj4+PiArCj4+Cj4+IFdoZXJlIGlzIHRoaXMgcmVndWxhdG9yIGVuYWJsZWQ/Cj4gCj4gSSBoYXZl
-IHNldCByZWd1bGF0b3ItYm9vdC1vbiBmbGFnIGluIHRoZSBkdCBzbyB0aGlzIGRpZG4ndCByZXF1
-aXJlIGFuCj4gZW5hYmxlLgoKUGxlYXNlIGRvbid0IGRvIHRoaXMsIHBsZWFzZSBoYW5kbGUgaXQg
-cHJvcGVybHkuCgo+PiBTaG91bGRuJ3QgdGhlIHJlZ3VsYXRvciBiZSBtYW5hZ2VkIGJ5IHJ1bnRp
-bWUgUE0gYXMgd2VsbD8KCklmIHNvLCB0aGVuIG1ha2UgdGhlIHJ1bnRpbWUgcG0ga2NvbmZpZyBv
-cHRpb24gbWFuZGF0b3J5LgoKTWFyYwoKLS0gClBlbmd1dHJvbml4IGUuSy4gICAgICAgICAgICAg
-ICAgIHwgTWFyYyBLbGVpbmUtQnVkZGUgICAgICAgICAgIHwKRW1iZWRkZWQgTGludXggICAgICAg
-ICAgICAgICAgICAgfCBodHRwczovL3d3dy5wZW5ndXRyb25peC5kZSAgfApWZXJ0cmV0dW5nIFdl
-c3QvRG9ydG11bmQgICAgICAgICB8IFBob25lOiArNDktMjMxLTI4MjYtOTI0ICAgICB8CkFtdHNn
-ZXJpY2h0IEhpbGRlc2hlaW0sIEhSQSAyNjg2IHwgRmF4OiAgICs0OS01MTIxLTIwNjkxNy01NTU1
-IHwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+On 21/02/2020 08:12, Jianxin Pan wrote:
+> Missing ';' in the end of secure-monitor example node.
+> 
+> Fixes: f50b4108ede1 ("dt-bindings: power: add Amlogic secure power domains bindings")
+> Reported-by: Rob Herring<robh+dt@kernel.org>
+> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> ---
+>  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> index af32209..bc4e037 100644
+> --- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> @@ -36,5 +36,5 @@ examples:
+>              compatible = "amlogic,meson-a1-pwrc";
+>              #power-domain-cells = <1>;
+>          };
+> -    }
+> +    };
+>  
+> 
+
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
