@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 738F11682C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:05:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71FCD1682C4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:06:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tSWWIWg1KbMiBaFIZUHRKk/Y3ddzIKEa3ItT846dMyw=; b=m6nyNmSA1DpnRG
-	ReNg5XZtPZIeMhS/4lXc4/J0J0Ox7Weo1v8wvSCgA5ugdgp2SW1W6tkvxTwP2tMZzV6ByvUgHB73r
-	koKH1SHqDkH42Ps6co/84VCApaMlja44duu/OO0eQVCLfVTOPBQpJNz1n2N80NV9PFrFObPKtPPR3
-	MeCztnHCFvqT/bKuc2WnBjWt1SAu3cJICXrT5PXP1CE8tszER7LUfGc4cPeg+wpdqZgNGGd2gD+ik
-	/GQcsWXInzv9txnQZ5UhmXe/ySeKIVuwTpEZv/t9Z6GuM8OYdQLYiLrgoT1Gsahl7fFw/UpR8Vwea
-	9PQQBCdLpiHt2BraUCcw==;
+	List-Owner; bh=g6YElcgSApThkGPcycQZ7wTxwSc+4UD83pJqM66uFrY=; b=aWg4tw7jYnplkB
+	/e6yksU0wjBjVw99jtL30CQQoRmWvjh1XSHo87d/Bz6QdaEdxtqYCCvEZ4YDQ/bERAgpdVVMZVGte
+	hhdJatZczU3nvW5RJYCCS2EEd8cmtSh48jEp1kBcIM1MgZbCf6nDUuzDxYrhZmeXonRfrk5wvkLDc
+	Fyy7HKRghCZ8seUP9tSxNRZNdO4XnO6ZNPTsoxqoe5bf2q0poDEo4z3QIntPXj7RvCYJrOaeiHtBb
+	FR1OHHJNLDo80XEKFlSovKoHk957or0RPBjlVae5RjYEZ9iDyRdaK795EX8xdbc8fL1ifx55KumtE
+	E23eogMPzgm7ESIuVwYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5AoH-0002ZZ-QA; Fri, 21 Feb 2020 16:05:49 +0000
+	id 1j5AoT-0002oA-Bq; Fri, 21 Feb 2020 16:06:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5AnY-0001Gc-MX
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:05:06 +0000
+ id 1j5Ana-0001PX-5T
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:05:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 75189FEC;
- Fri, 21 Feb 2020 08:05:04 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 76A5F30E;
+ Fri, 21 Feb 2020 08:05:05 -0800 (PST)
 Received: from e121345-lin.cambridge.arm.com (e121345-lin.cambridge.arm.com
  [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A05FA3F68F;
- Fri, 21 Feb 2020 08:05:03 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AA0933F68F;
+ Fri, 21 Feb 2020 08:05:04 -0800 (PST)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org,
 	catalin.marinas@arm.com,
 	mark.rutland@arm.com
-Subject: [PATCH 2/3] dt-bindings: ARM: Add recent Cortex/Neoverse PMUs
-Date: Fri, 21 Feb 2020 16:04:57 +0000
-Message-Id: <3954ca0b86641e5e6a1935886df6658b9305ec4a.1582300927.git.robin.murphy@arm.com>
+Subject: [PATCH 3/3] arm64: perf: Support new DT compatibles
+Date: Fri, 21 Feb 2020 16:04:58 +0000
+Message-Id: <6dbd695863346bda1e5d2133643ffade6227bd9a.1582300927.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.23.0.dirty
 In-Reply-To: <cover.1582300927.git.robin.murphy@arm.com>
 References: <cover.1582300927.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_080504_790709_E88F94F8 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20200221_080506_256831_C35A1997 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,38 +70,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add new PMU definitions to correspond with the CPU bindings.
+Add support for matching the new PMUs. For now, this just wires them up
+as generic PMUv3 such that people writing DTs for new SoCs can do the
+right thing, and at least have architectural and raw events be usable.
+We can come back and fill in event maps for sysfs and/or perf tools at
+a later date.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- Documentation/devicetree/bindings/arm/pmu.yaml | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ arch/arm64/kernel/perf_event.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/pmu.yaml b/Documentation/devicetree/bindings/arm/pmu.yaml
-index 52ae094ce330..cc52195d0e9e 100644
---- a/Documentation/devicetree/bindings/arm/pmu.yaml
-+++ b/Documentation/devicetree/bindings/arm/pmu.yaml
-@@ -21,11 +21,20 @@ properties:
-       - enum:
-           - apm,potenza-pmu
-           - arm,armv8-pmuv3
-+          - arm,neoverse-n1-pmu
-+          - arm,neoverse-e1-pmu
-+          - arm,cortex-a77-pmu
-+          - arm,cortex-a76-pmu
-+          - arm,cortex-a75-pmu
-           - arm,cortex-a73-pmu
-           - arm,cortex-a72-pmu
-+          - arm,cortex-a65-pmu
-           - arm,cortex-a57-pmu
-+          - arm,cortex-a55-pmu
-           - arm,cortex-a53-pmu
-           - arm,cortex-a35-pmu
-+          - arm,cortex-a34-pmu
-+          - arm,cortex-a32-pmu
-           - arm,cortex-a17-pmu
-           - arm,cortex-a15-pmu
-           - arm,cortex-a12-pmu
+diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+index e40b65645c86..28ce582e049e 100644
+--- a/arch/arm64/kernel/perf_event.c
++++ b/arch/arm64/kernel/perf_event.c
+@@ -1105,11 +1105,19 @@ static int armv8_vulcan_pmu_init(struct arm_pmu *cpu_pmu)
+ 
+ static const struct of_device_id armv8_pmu_of_device_ids[] = {
+ 	{.compatible = "arm,armv8-pmuv3",	.data = armv8_pmuv3_init},
++	{.compatible = "arm,cortex-a34-pmu",	.data = armv8_pmuv3_init},
+ 	{.compatible = "arm,cortex-a35-pmu",	.data = armv8_a35_pmu_init},
+ 	{.compatible = "arm,cortex-a53-pmu",	.data = armv8_a53_pmu_init},
++	{.compatible = "arm,cortex-a55-pmu",	.data = armv8_pmuv3_init},
+ 	{.compatible = "arm,cortex-a57-pmu",	.data = armv8_a57_pmu_init},
++	{.compatible = "arm,cortex-a65-pmu",	.data = armv8_pmuv3_init},
+ 	{.compatible = "arm,cortex-a72-pmu",	.data = armv8_a72_pmu_init},
+ 	{.compatible = "arm,cortex-a73-pmu",	.data = armv8_a73_pmu_init},
++	{.compatible = "arm,cortex-a75-pmu",	.data = armv8_pmuv3_init},
++	{.compatible = "arm,cortex-a76-pmu",	.data = armv8_pmuv3_init},
++	{.compatible = "arm,cortex-a77-pmu",	.data = armv8_pmuv3_init},
++	{.compatible = "arm,neoverse-e1-pmu",	.data = armv8_pmuv3_init},
++	{.compatible = "arm,neoverse-n1-pmu",	.data = armv8_pmuv3_init},
+ 	{.compatible = "cavium,thunder-pmu",	.data = armv8_thunder_pmu_init},
+ 	{.compatible = "brcm,vulcan-pmu",	.data = armv8_vulcan_pmu_init},
+ 	{},
 -- 
 2.23.0.dirty
 
