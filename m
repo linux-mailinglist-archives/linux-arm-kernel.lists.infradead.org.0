@@ -2,64 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 760AC1684BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:19:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AD681684E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:26:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=D4JOHhkUDVZvvxotdakJDtotUvC1PIJQlmVIYLuM+LU=; b=R6gCTkYmDWpKuj8pmO6lJznyD
-	9NciRvhUqaTuOQMrT9aWeVDYa6m9OYaJ7Yokf3Zsf2boCD9cIy5MNyqPwEWrYjNq3WeVNLI6vc6Gq
-	eL0vZOuxoZuqilKDxF2YhGDISN0tj73+eHM8zNzOMuE+5BnJLDlRYIwWFqkF/irLWrorat0CJYoh6
-	xKJeIwW+aHPjAFp0wkoH0sr5bTLPY1lcSmyrNedJ7dZxEtzjab9UqcspfyvjxNhd8OAg3HIJ8Droq
-	yNrItkyp3znIkl9fz88yuyyxiXfUYsJnEPXEMYuSi1Tv78E4VB7R3tWJepMhOCtELTnWLYB/uPrsR
-	MFLAFEC+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dxa0SLUd3fFdkF9UTbq7gGsf/YsRSJw0nl7xfH1urvc=; b=JfS1uoFanRu39l
+	X/regmOh/Y9useQrvUR8vKZAMwyBqLFWaY2rukhubmpmaE/2BxxPfUaohSdFbTawZeAgpntTVPOFU
+	A3XvZh6MQ75W98ppvusisumLaKFWb8OkYXkgo0dTOZgVjge5S4QK4pKbekrEv6C1dqlaEpPqmRSqY
+	Kq/cg74RGHdyWRymSgS2/jSR1IOBKXsnOpO2oMbkRn6V09cOqDAp08cEOrzxzj5PSyNZZ7Kd0uYZ4
+	5+dnQuVx+TV55HoWsTszP0HVvHvrYOCLqB3VHEdzo9AIRJWQDWKG00/1zhpo8V0sA3e20m1cm1MVK
+	LD5LtE2uJsNsSYf6kfaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5Bxn-0004IL-Pc; Fri, 21 Feb 2020 17:19:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1j5C4a-0007fh-Ao; Fri, 21 Feb 2020 17:26:44 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5Bxf-0004Hs-Sd
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:19:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6756B30E;
- Fri, 21 Feb 2020 09:19:34 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E1253F68F;
- Fri, 21 Feb 2020 09:19:33 -0800 (PST)
-Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation
- support
-To: Rob Herring <robh@kernel.org>
-References: <20200117211628.27888-1-robh@kernel.org>
- <2d04f201-3457-08ad-db8e-735f8315d74e@redhat.com>
- <7ac3f864-6c39-76e9-ee4a-21be03abc044@arm.com>
- <CAL_JsqJRSD-7U8UH1tevBdD2P6qPWzApQLpXU-SVBmZ8=Yiy0A@mail.gmail.com>
- <d49b62f2-74f4-c3e0-ad97-a4fedd169b27@arm.com>
- <CAL_JsqKY1_WmwLOKySwBasyZ5Kb=Rx-Y6m8bDppRKVxzoY58xg@mail.gmail.com>
- <49847ca9-3ee8-4c08-a772-a93f10aa817f@arm.com>
- <CAL_JsqJam8qO-XAfQTXNZ0y_gLdOx0LAX28XnKjXd2yh7y3_Uw@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <67635b64-5db4-8425-e513-62d96a359906@arm.com>
-Date: Fri, 21 Feb 2020 17:19:31 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j5C4S-0007en-1Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:26:37 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 90018807E;
+ Fri, 21 Feb 2020 17:27:19 +0000 (UTC)
+Date: Fri, 21 Feb 2020 09:26:31 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: "Andrew F. Davis" <afd@ti.com>
+Subject: Re: omap-secure.c:undefined reference to `__arm_smccc_smc'
+Message-ID: <20200221172631.GY37466@atomide.com>
+References: <20200220155429.GH37466@atomide.com>
+ <55ddcd29-ed8b-529e-dd54-cbac5cf74e42@ti.com>
+ <20200220162012.GI37466@atomide.com>
+ <d7b685b6-16a2-3743-1786-a5240726ed9c@ti.com>
+ <20200220163703.GK37466@atomide.com>
+ <20200220171305.GL37466@atomide.com>
+ <281e895b-720d-5bab-63cf-8b3e389dc767@ti.com>
+ <20200220175744.GQ37466@atomide.com>
+ <20200220181141.GR37466@atomide.com>
+ <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqJam8qO-XAfQTXNZ0y_gLdOx0LAX28XnKjXd2yh7y3_Uw@mail.gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_091936_013251_DB4031D9 
-X-CRM114-Status: GOOD (  21.40  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200221_092636_123716_E6A56882 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,119 +67,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Joerg Roedel <joro@8bytes.org>, Auger Eric <eric.auger@redhat.com>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Marc Zyngier <maz@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/02/2020 4:47 pm, Rob Herring wrote:
-> On Fri, Feb 21, 2020 at 10:19 AM Robin Murphy <robin.murphy@arm.com> wrote:
->>
->> On 20/02/2020 5:54 pm, Rob Herring wrote:
->>> On Mon, Feb 17, 2020 at 1:17 PM Robin Murphy <robin.murphy@arm.com> wrote:
->>>>
->>>> On 13/02/2020 9:49 pm, Rob Herring wrote:
->>>>> On Thu, Jan 30, 2020 at 11:34 AM Robin Murphy <robin.murphy@arm.com> wrote:
->>>>>>
->>>>>> On 30/01/2020 3:06 pm, Auger Eric wrote:
->>>>>>> Hi Rob,
->>>>>>> On 1/17/20 10:16 PM, Rob Herring wrote:
->>>>>>>> Arm SMMUv3.2 adds support for TLB range invalidate operations.
->>>>>>>> Support for range invalidate is determined by the RIL bit in the IDR3
->>>>>>>> register.
->>>>>>>>
->>>>>>>> The range invalidate is in units of the leaf page size and operates on
->>>>>>>> 1-32 chunks of a power of 2 multiple pages. First, we determine from the
->>>>>>>> size what power of 2 multiple we can use. Then we calculate how many
->>>>>>>> chunks (1-31) of the power of 2 size for the range on the iteration. On
->>>>>>>> each iteration, we move up in size by at least 5 bits.
->>>>>>>>
->>>>>>>> Cc: Eric Auger <eric.auger@redhat.com>
->>>>>>>> Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
->>>>>>>> Cc: Will Deacon <will@kernel.org>
->>>>>>>> Cc: Robin Murphy <robin.murphy@arm.com>
->>>>>>>> Cc: Joerg Roedel <joro@8bytes.org>
->>>>>>>> Signed-off-by: Rob Herring <robh@kernel.org>
->>>>>
->>>>>
->>>>>>>> @@ -2003,7 +2024,7 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
->>>>>>>>      {
->>>>>>>>         u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
->>>>>>>>         struct arm_smmu_device *smmu = smmu_domain->smmu;
->>>>>>>> -    unsigned long start = iova, end = iova + size;
->>>>>>>> +    unsigned long start = iova, end = iova + size, num_pages = 0, tg = 0;
->>>>>>>>         int i = 0;
->>>>>>>>         struct arm_smmu_cmdq_ent cmd = {
->>>>>>>>                 .tlbi = {
->>>>>>>> @@ -2022,12 +2043,50 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
->>>>>>>>                 cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
->>>>>>>>         }
->>>>>>>>
->>>>>>>> +    if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
->>>>>>>> +            /* Get the leaf page size */
->>>>>>>> +            tg = __ffs(smmu_domain->domain.pgsize_bitmap);
->>>>>>>> +
->>>>>>>> +            /* Convert page size of 12,14,16 (log2) to 1,2,3 */
->>>>>>>> +            cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
->>>>>>
->>>>>> Given the comment, I think "(tg - 10) / 2" would suffice ;)
->>>>>
->>>>> Well, duh...
->>>>>
->>>>>>
->>>>>>>> +
->>>>>>>> +            /* Determine what level the granule is at */
->>>>>>>> +            cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
->>>>>>
->>>>>> Is it possible to rephrase that with logs and shifts to avoid the division?
->>>>>
->>>>> Well, with a loop is the only other way I came up with:
->>>>>
->>>>> bpl = tg - 3;
->>>>> ttl = 3;
->>>>> mask = BIT(bpl) - 1;
->>>>> while ((granule & (mask << ((4 - ttl) * bpl + 3))) == 0)
->>>>>        ttl--;
->>>>>
->>>>> Doesn't seem like much improvement to me given we have h/w divide...
->>>>
->>>> Sure, it doesn't take too many extra instructions to start matching
->>>> typical IDIV latency, so there's no point being silly if there really
->>>> isn't a clean alternative.
->>>>
->>>> Some quick scribbling suggests "4 - ilog2(granule) / 10" might actually
->>>> be close enough, but perhaps that's a bit too cheeky.
->>>
->>> How does divide by 10 save a divide?
->>
->> Well, by that point I was more just thinking about the smallest
->> expression, since *some* division seems unavoidable. Although GCC does
->> apparently still think that transforming constant division is a win ;)
+* Andrew F. Davis <afd@ti.com> [200220 10:23]:
+> On 2/20/20 1:11 PM, Tony Lindgren wrote:
+> > * Tony Lindgren <tony@atomide.com> [200220 17:58]:
+> >> * Andrew F. Davis <afd@ti.com> [200220 17:39]:
+> >>> If the machine has SMCCC then it will also have the
+> >>> CONFIG_HAVE_ARM_SMCCC set and so nothing would change.
+> >>
+> >> Hmm yeah good point.
+> > 
+> > So the patch below seems like the way to go then. Anybody have issues
+> > with the patch below?
+> > 
+> > Regards,
+> > 
+> > Tony
+> > 
+> > 8< -------------------------
+> > diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> > --- a/include/linux/arm-smccc.h
+> > +++ b/include/linux/arm-smccc.h
+> > @@ -121,6 +121,7 @@ struct arm_smccc_quirk {
+> >  	} state;
+> >  };
+> >  
+> > +#ifdef CONFIG_HAVE_ARM_SMCCC
+> >  /**
+> >   * __arm_smccc_smc() - make SMC calls
+> >   * @a0-a7: arguments passed in registers 0 to 7
+> > @@ -137,6 +138,14 @@ asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
+> >  			unsigned long a2, unsigned long a3, unsigned long a4,
+> >  			unsigned long a5, unsigned long a6, unsigned long a7,
+> >  			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
+> > +#else
+> > +static inline void __arm_smccc_smc(unsigned long a0, unsigned long a1,
+> > +			unsigned long a2, unsigned long a3, unsigned long a4,
+> > +			unsigned long a5, unsigned long a6, unsigned long a7,
+> > +			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk)
+> > +{
 > 
-> Okay. Still, divide by 10 happens to work, but it is very much not
-> obvious. It also doesn't work for level 1 and 16 or 64KB pages (though
-
-(FWIW the more subtle part of the trick is that 16K doesn't allow level 
-1 blocks, and even in the vanishingly unlikely 64K level 1 case TTL=0 
-isn't "wrong")
-
-> we'll never see that granule). Subtracting 3 is not that obvious
-> either, but is at least in the spec for calculating the bits per
-> level.
 > 
-> I think we've spent enough time micro-optimizing this and have better
-> things to worry about.
+> Maybe a warning? If you do not have SMC on your platform but are still
+> making SMC calls then something is broken and it looks like it would
+> fail silently here.
 
-Agreed! Invalidation performance has just been the bogeyman for so long 
-that it's an area to which I've become overly sensitive.
+OK I'll add that and send out a  proper patch.
 
-Cheers,
-Robin.
+Thanks,
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
