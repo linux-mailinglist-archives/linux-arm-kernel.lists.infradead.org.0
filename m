@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81C05168599
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:52:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03CA31685AA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:55:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NumOqutTzHvW7BK+4F9dTkk8iSa5vgMnxF06HjtUL8A=; b=PzLtgwADpnQyFb
-	dgfPYlmLbSJCaI58cMsiE2A3a9f0cFgCCBCgjuZp+vBb3q3ofB15hrGgj4ooPG89BzVPZteIE78iz
-	p2m2PKkqS347LdVM7p0gOv9gmXzD27otl4wiM0UyyyQrlWfAX4x1S4xHduV/Fnl5O/6/lT6cevqB7
-	zqY3EjfMWSSm6ulzk/z+QPJvTKTW7zOIvignXkzcOLqGnixIxgKtza4CLgRdeg4Lc04wfKCrsO36v
-	bnQFTWEtkaxtmk+CPcl4sIgR6gkvKT/RGYotIdKxHzrMZM4eRvDmde5C0ZEe9P40IeBYbLQ4zFG23
-	N1ak2zeBSLsQtF+GXN7w==;
+	List-Owner; bh=jBNAs+18I3Zj9kwy8oVFMhcRglgs2kOdFosF369ysXo=; b=uS4QeUMMMktB2U
+	R0ue+rhPaO2IKBSBUpp/WKAAmHZhIz9seAXIpmj9tnRK/nssrFmTvalHVCNl4oVxBtKe9MgI6sYBJ
+	naBx+EPHYyHp53jJ+SDFiTuA65raYejXDSJDX1c7l5wwh0jk0XcoWbT9l7ug3KpZ1RjGb+d4tQRnx
+	zYTKLRLdY+WLOGF+wUZZZ5Wo7hePSALVkkhpqHGXCHFQk0zkDkyIBf/NUt8Um3ZLybP0oYPXBiMxY
+	xFf9HKeOPQ6Cy4tjKtCvnEAzL4xC4NZMk3O/cwXBREXb3qJHeTWH3Ym9WM4vtNq2dQ0QiaUFYDQfS
+	Do4rCrl8nviymByPSmdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5CT3-0004K8-Nc; Fri, 21 Feb 2020 17:52:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1j5CWA-0004qw-1Y; Fri, 21 Feb 2020 17:55:14 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5CSE-0003n0-21
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:51:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E589C30E;
- Fri, 21 Feb 2020 09:51:08 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0C39F3F6CF;
- Fri, 21 Feb 2020 09:51:07 -0800 (PST)
-Date: Fri, 21 Feb 2020 17:51:05 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 3/3] arm64: perf: Support new DT compatibles
-Message-ID: <20200221175105.GC27382@lakrids.cambridge.arm.com>
-References: <cover.1582300927.git.robin.murphy@arm.com>
- <6dbd695863346bda1e5d2133643ffade6227bd9a.1582300927.git.robin.murphy@arm.com>
- <20200221173847.2e9789af@donnerap.cambridge.arm.com>
+ id 1j5CVq-0004qU-0V
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:54:55 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 711B0807E;
+ Fri, 21 Feb 2020 17:55:37 +0000 (UTC)
+Date: Fri, 21 Feb 2020 09:54:49 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: "Andrew F. Davis" <afd@ti.com>
+Subject: Re: omap-secure.c:undefined reference to `__arm_smccc_smc'
+Message-ID: <20200221175449.GZ37466@atomide.com>
+References: <20200220155429.GH37466@atomide.com>
+ <55ddcd29-ed8b-529e-dd54-cbac5cf74e42@ti.com>
+ <20200220162012.GI37466@atomide.com>
+ <d7b685b6-16a2-3743-1786-a5240726ed9c@ti.com>
+ <20200220163703.GK37466@atomide.com>
+ <20200220171305.GL37466@atomide.com>
+ <281e895b-720d-5bab-63cf-8b3e389dc767@ti.com>
+ <20200220175744.GQ37466@atomide.com>
+ <20200220181141.GR37466@atomide.com>
+ <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200221173847.2e9789af@donnerap.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_095110_205692_2164DDE9 
-X-CRM114-Status: GOOD (  20.75  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200221_095454_096029_D0E5016B 
+X-CRM114-Status: GOOD (  22.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,85 +67,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org, devicetree@vger.kernel.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org,
- catalin.marinas@arm.com
+Cc: Rob Herring <robh@kernel.org>, kbuild-all@lists.01.org,
+ kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Marc Zyngier <maz@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 21, 2020 at 05:38:47PM +0000, Andre Przywara wrote:
-> On Fri, 21 Feb 2020 16:04:58 +0000
-> Robin Murphy <robin.murphy@arm.com> wrote:
-> 
-> Hi,
-> 
-> > Add support for matching the new PMUs. For now, this just wires them up
-> > as generic PMUv3 such that people writing DTs for new SoCs can do the
-> > right thing, and at least have architectural and raw events be usable.
-> > We can come back and fill in event maps for sysfs and/or perf tools at
-> > a later date.
-> 
-> as mentioned already in a reply to another patch:
-> 
-> Is that really the right way? Isn't that calling for the intended usage of a compatible fall-back string?
-> So that a machine can just ship DTBs with for instance:
-> 	"arm,neoverse-n1-pmu", "arm,armv8-pmuv3";
-> and that would magically work with all older and newer kernels already, without any patch?
-> 
-> As it stands right now (with a single compatible), only newer kernels could use the PMU on those SoCs (ignoring tedious backports not reaching every user).
-> 
-> All that would be needed for that is to officially allow two compatible strings in the binding.
-> 
-> Cheers,
-> Andre.
-> 
-> P.S. Still thinking about dropping those compatible strings at all and using the MIDR somehow, because then also ACPI users would benefit from core specific events.
-
-For ACPI we've said that the way forward is the userspace mappings, so
-that's already solved (and to a much greater degree than we could do
-within the kernel).
-
-The names for DT are an unfortunate legacy thing that we simply have to
-carry on with going forward in for the UAPI under sysfs.
-
-I don't want to go mapping MIDRs to names, and open other worm cans.
-
-Thanksm
-Mark.
-
->  
-> > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > ---
-> >  arch/arm64/kernel/perf_event.c | 8 ++++++++
-> >  1 file changed, 8 insertions(+)
+* Andrew F. Davis <afd@ti.com> [200220 10:23]:
+> On 2/20/20 1:11 PM, Tony Lindgren wrote:
+> > * Tony Lindgren <tony@atomide.com> [200220 17:58]:
+> >> * Andrew F. Davis <afd@ti.com> [200220 17:39]:
+> >>> On 2/20/20 12:13 PM, Tony Lindgren wrote:
+> >>>> * Tony Lindgren <tony@atomide.com> [200220 16:37]:
+> >>>>> * Andrew F. Davis <afd@ti.com> [200220 16:24]:
+> >>>>>> On 2/20/20 11:20 AM, Tony Lindgren wrote:
+> >>>>>>> * Andrew F. Davis <afd@ti.com> [200220 16:04]:
+> >>>>>>>> On 2/20/20 10:54 AM, Tony Lindgren wrote:
+> >>>>>>>>> Andrew,
+> >>>>>>>>>
+> >>>>>>>>> * kbuild test robot <lkp@intel.com> [200213 10:27]:
+> >>>>>>>>>> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git master
+> >>>>>>>>>> head:   0bf999f9c5e74c7ecf9dafb527146601e5c848b9
+> >>>>>>>>>> commit: c37baa06f8a970e4a533d41f7d33e5e57de5ad25 ARM: OMAP2+: Fix undefined reference to omap_secure_init
+> >>>>>>>>>> date:   3 weeks ago
+> >>>>>>>>>> config: arm-randconfig-a001-20200213 (attached as .config)
+> >>>>>>>>>> compiler: arm-linux-gnueabi-gcc (GCC) 7.5.0
+> >>>>>>>>>> reproduce:
+> >>>>>>>>>>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+> >>>>>>>>>>         chmod +x ~/bin/make.cross
+> >>>>>>>>>>         git checkout c37baa06f8a970e4a533d41f7d33e5e57de5ad25
+> >>>>>>>>>>         # save the attached .config to linux build tree
+> >>>>>>>>>>         GCC_VERSION=7.5.0 make.cross ARCH=arm 
+> >>>>>>>>>>
+> >>>>>>>>>> If you fix the issue, kindly add following tag
+> >>>>>>>>>> Reported-by: kbuild test robot <lkp@intel.com>
+> >>>>>>>>>>
+> >>>>>>>>>> All errors (new ones prefixed by >>):
+> >>>>>>>>>>
+> >>>>>>>>>>    arch/arm/mach-omap2/omap-secure.o: In function `omap_smccc_smc':
+> >>>>>>>>>>>> omap-secure.c:(.text+0x94): undefined reference to `__arm_smccc_smc'
+> >>>>>>>>>
+> >>>>>>>>> Have you looked at this one? Looks like there's still an unhandled
+> >>>>>>>>> randconfig build case.
+> >>>>>>>>>
+> >>>>>>>>
+> >>>>>>>>
+> >>>>>>>> I've had a quick look, all the ARM config does:
+> >>>>>>>>
+> >>>>>>>> select HAVE_ARM_SMCCC if CPU_V7
+> >>>>>>>>
+> >>>>>>>> so I don't think this will happen in any real config, but if we want to
+> >>>>>>>> prevent randconfig issue this we could force ARCH_OMAP2PLUS to "depend"
+> >>>>>>>> on it.
+> >>>>>>>
+> >>>>>>> Seems to happen at least with omap2 only config where we don't have
+> >>>>>>> CPU_V7. Something like below seems to fix it.
+> >>>>>>>
+> >>>>>>> If that looks OK to you, I'll send out a proper fix.
+> >>>>>>>
+> >>>>>>
+> >>>>>>
+> >>>>>> This looks fine to me.
+> >>>>>>
+> >>>>>> A better later fix might be to later stub out the actual __arm_smccc_smc
+> >>>>>> in common code if CONFIG_HAVE_ARM_SMCCC is not set, so any platform will
+> >>>>>> get the fix.
+> >>>>>
+> >>>>> Yeah seems that might be better. Adding Aaro and Marc to Cc.
+> >>>>
+> >>>> But if we can in theory have some arm11 machine with smccc, then this
+> >>>> local ifdef below is probably the way to go.
+> >>>>
+> >>>
+> >>> If the machine has SMCCC then it will also have the
+> >>> CONFIG_HAVE_ARM_SMCCC set and so nothing would change.
+> >>
+> >> Hmm yeah good point.
 > > 
-> > diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> > index e40b65645c86..28ce582e049e 100644
-> > --- a/arch/arm64/kernel/perf_event.c
-> > +++ b/arch/arm64/kernel/perf_event.c
-> > @@ -1105,11 +1105,19 @@ static int armv8_vulcan_pmu_init(struct arm_pmu *cpu_pmu)
+> > So the patch below seems like the way to go then. Anybody have issues
+> > with the patch below?
+> > 
+> > Regards,
+> > 
+> > Tony
+> > 
+> > 8< -------------------------
+> > diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> > --- a/include/linux/arm-smccc.h
+> > +++ b/include/linux/arm-smccc.h
+> > @@ -121,6 +121,7 @@ struct arm_smccc_quirk {
+> >  	} state;
+> >  };
 > >  
-> >  static const struct of_device_id armv8_pmu_of_device_ids[] = {
-> >  	{.compatible = "arm,armv8-pmuv3",	.data = armv8_pmuv3_init},
-> > +	{.compatible = "arm,cortex-a34-pmu",	.data = armv8_pmuv3_init},
-> >  	{.compatible = "arm,cortex-a35-pmu",	.data = armv8_a35_pmu_init},
-> >  	{.compatible = "arm,cortex-a53-pmu",	.data = armv8_a53_pmu_init},
-> > +	{.compatible = "arm,cortex-a55-pmu",	.data = armv8_pmuv3_init},
-> >  	{.compatible = "arm,cortex-a57-pmu",	.data = armv8_a57_pmu_init},
-> > +	{.compatible = "arm,cortex-a65-pmu",	.data = armv8_pmuv3_init},
-> >  	{.compatible = "arm,cortex-a72-pmu",	.data = armv8_a72_pmu_init},
-> >  	{.compatible = "arm,cortex-a73-pmu",	.data = armv8_a73_pmu_init},
-> > +	{.compatible = "arm,cortex-a75-pmu",	.data = armv8_pmuv3_init},
-> > +	{.compatible = "arm,cortex-a76-pmu",	.data = armv8_pmuv3_init},
-> > +	{.compatible = "arm,cortex-a77-pmu",	.data = armv8_pmuv3_init},
-> > +	{.compatible = "arm,neoverse-e1-pmu",	.data = armv8_pmuv3_init},
-> > +	{.compatible = "arm,neoverse-n1-pmu",	.data = armv8_pmuv3_init},
-> >  	{.compatible = "cavium,thunder-pmu",	.data = armv8_thunder_pmu_init},
-> >  	{.compatible = "brcm,vulcan-pmu",	.data = armv8_vulcan_pmu_init},
-> >  	{},
+> > +#ifdef CONFIG_HAVE_ARM_SMCCC
+> >  /**
+> >   * __arm_smccc_smc() - make SMC calls
+> >   * @a0-a7: arguments passed in registers 0 to 7
+> > @@ -137,6 +138,14 @@ asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
+> >  			unsigned long a2, unsigned long a3, unsigned long a4,
+> >  			unsigned long a5, unsigned long a6, unsigned long a7,
+> >  			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
+> > +#else
+> > +static inline void __arm_smccc_smc(unsigned long a0, unsigned long a1,
+> > +			unsigned long a2, unsigned long a3, unsigned long a4,
+> > +			unsigned long a5, unsigned long a6, unsigned long a7,
+> > +			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk)
+> > +{
 > 
+> 
+> Maybe a warning? If you do not have SMC on your platform but are still
+> making SMC calls then something is broken and it looks like it would
+> fail silently here.
+
+Actually I'll go back to the earlier local fix. With above changes,
+we now start getting uninitialized struct arm_smccc_res res warning
+in omap_smccc_smc(). And it's a bit unclear if and with what value
+a0 should be initialized. Probably should be SMCCC_RET_NOT_SUPPORTED,
+but that then requires moving defines around too. And if it turns
+out being version specific define, then we keep piling up more code.
+
+My guess is that it's only few SoCs that might have ARMv6 and v7
+both built, so it's not like we'd have to patch all over the place
+anyways.
+
+Regards,
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
