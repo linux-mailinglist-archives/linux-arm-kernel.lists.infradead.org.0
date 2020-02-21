@@ -2,75 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16EFC16B545
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:22:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCF2616B617
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:57:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uHOgew3+CK0ujZiHNqyHWWSYvRb84LA090zlmBlc2Rs=; b=HGs01XUZU6lHY5
-	TG+tQAMMt3x36SKL4AfwNCmkxbUFIcnX5U1GxJ3e4LmZ6vyF8S1+1uQEExg/fihJkEbWAXCBUhJeM
-	n+A4+tmIcj5VD2Swqx80K4rqlOYCG7AfnPWBJja9kOmrimGim7Q1b7kcj1zdBv43V2BZrrS7j0vVZ
-	L1IZ4vt94ZRvOVnYqkjf050I6aiZ1EWe7GMIS93XsuhjvL1SumweH8ZgW53i2VCOMjJg80H9xLGvz
-	wO5bm6wC1527aTXNrOIsw+SmHsNNo64eYPzgue0URaDxa8MI329d1XGhwB1uddjBMrbAJpoA7YN2i
-	NDqWDACA/gUgfV4dJqIQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O+Ujt+OtSlQ5Kn0h0jOslA6R+Ptx1XsYPVRC2m+Oh28=; b=S8j5412Ar+crMd
+	fwwNopofRbr9adpcr4cf809BXUHGboIIcnc1SUI1eNg6uYp8LBsyGlDgjITzIbu1C3cWhlWwzv27X
+	WksNDHdcGDuXrVbWth6HANRcQww+dPRM/bDGQ2PLx7+6rS9bYuWBBAGh3QXM/YrdQ79CInqTey/Q6
+	6AIyXQfDA4RuvJPyIgR1WQBs8B6acxgrK9CG57U8dDB1mHUujsnhd/b8smqhJ2DJ3hLEZTqGJ0nkl
+	a6h3JO+zOfLyyHpSoktOKOFxiB87pAEvPeHDLQ75NxKrcZKWxJM2bTN6hg5Nnnf04CMoF96hMmvBa
+	ns5Y5rSyD6DHdC+LfA6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6N3Y-0002Hu-2W; Mon, 24 Feb 2020 23:22:32 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1j6NbM-0001x0-9W; Mon, 24 Feb 2020 23:57:28 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6N35-000287-Um
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:22:05 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01ONM0NJ112718;
- Mon, 24 Feb 2020 17:22:00 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1582586520;
- bh=ZVSUMQFxNeZRVQyvOiDtYbyJXJEga1SqaPqBVAWiyrA=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=ik6kW5Obui2h57ezbUa+FLLkzxlHJ1x/unPPEs2wTNyQBTw4Gi2dmSGJ+hUjkBUhU
- 6CZ1VZsvgypbr+x+ZwvAjY8Gr9MaYAMR6ry9snMr/CpZ0r4dc4pVJ/3rq7yLsbaXOO
- USS1+7YMmdTjqQplw1SjqM+8H8GTW619CxZEDs7A=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01ONM0U9074852;
- Mon, 24 Feb 2020 17:22:00 -0600
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 24
- Feb 2020 17:22:00 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 24 Feb 2020 17:22:00 -0600
-Received: from lelv0597.itg.ti.com (lelv0597.itg.ti.com [10.181.64.32])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01ONM05D060856;
- Mon, 24 Feb 2020 17:22:00 -0600
-Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
- by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 01ONM0CS021246;
- Mon, 24 Feb 2020 17:22:00 -0600
-From: Suman Anna <s-anna@ti.com>
-To: Tony Lindgren <tony@atomide.com>
-Subject: [PATCH 3/3] ARM: OMAP4: hwmod_data: Remove OMAP4 IPU hwmod data
-Date: Mon, 24 Feb 2020 17:21:52 -0600
-Message-ID: <20200224232152.25562-4-s-anna@ti.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20200224232152.25562-1-s-anna@ti.com>
-References: <20200224232152.25562-1-s-anna@ti.com>
+ id 1j6NbC-0001wE-L5
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:57:20 +0000
+Received: from zyt.lan (unknown [IPv6:2a02:169:3df5::564])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id 667575C4EBF;
+ Tue, 25 Feb 2020 00:57:07 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1582588627;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=knLzyUSaJSbGxSDiQWBKWSmgmd9VevAPMusi7YBYNHE=;
+ b=ceeCpOs0KDH76Fhq1yqjouLmKosOdGCevr1YfOv4yVjc8Z+OsDMJwrNk6say9sS1HJ/wmm
+ eVdwfy/QLoagc0p2slD6o4t9+eTdOq6u/MVGyTs9ScrjpKXY7WkgphAb9iB88PMxDBpoiL
+ JBVu74Lybsi108UWChsqo1JKUK5xrSc=
+From: Stefan Agner <stefan@agner.ch>
+To: linux@armlinux.org.uk
+Subject: [PATCH] ARM: use assembly mnemonics for VFP register access
+Date: Fri, 21 Feb 2020 07:34:21 +0100
+Message-Id: <8bb16ac4b15a7e28a8e819ef9aae20bfc3f75fbc.1582266841.git.stefan@agner.ch>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_152204_066838_A003383C 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200224_155718_840694_22777D86 
+X-CRM114-Status: GOOD (  12.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -79,7 +59,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,117 +70,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tero Kristo <t-kristo@ti.com>, linux-omap@vger.kernel.org,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: arnd@arndb.de, linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
+ jiancai@google.com, clang-built-linux@googlegroups.com, manojgupta@google.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The OMAP4 IPU hwmod is currently not used in DT, and the new DTS
-node shall be added as per the new OMAP remoteproc bindings with
-the underneath MMU device relying on the ti-sysc infrastructure.
-Drop the legacy hwmod data for OMAP4 IPU as this will not be used
-going forward.
+Clang's integrated assembler does not allow to to use the mcr
+instruction to access floating point co-processor registers:
+arch/arm/vfp/vfpmodule.c:342:2: error: invalid operand for instruction
+        fmxr(FPEXC, fpexc & ~(FPEXC_EX|FPEXC_DEX|FPEXC_FP2V|FPEXC_VV|FPEXC_TRAP_MASK));
+        ^
+arch/arm/vfp/vfpinstr.h:79:6: note: expanded from macro 'fmxr'
+        asm("mcr p10, 7, %0, " vfpreg(_vfp_) ", cr0, 0 @ fmxr   " #_vfp_ ", %0" \
+            ^
+<inline asm>:1:6: note: instantiated into assembly here
+        mcr p10, 7, r0, cr8, cr0, 0 @ fmxr      FPEXC, r0
+            ^
 
-Signed-off-by: Suman Anna <s-anna@ti.com>
+The GNU assembler supports the .fpu directive at least since 2.17 (when
+documentation has been added). Since Linux requires binutils 2.21 it is
+safe to use .fpu directive. Use the .fpu directive and mnemonics for VFP
+register access.
+
+This allows to build vfpmodule.c with Clang and its integrated assembler.
+
+Link: https://github.com/ClangBuiltLinux/linux/issues/905
+Signed-off-by: Stefan Agner <stefan@agner.ch>
 ---
- arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 51 ----------------------
- 1 file changed, 51 deletions(-)
+ arch/arm/vfp/vfpinstr.h | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-index 1d4359a43cab..a616ddf8fb52 100644
---- a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-@@ -706,39 +706,6 @@ static struct omap_hwmod omap44xx_gpmc_hwmod = {
- 	},
- };
+diff --git a/arch/arm/vfp/vfpinstr.h b/arch/arm/vfp/vfpinstr.h
+index 38dc154e39ff..799ccf065406 100644
+--- a/arch/arm/vfp/vfpinstr.h
++++ b/arch/arm/vfp/vfpinstr.h
+@@ -62,21 +62,17 @@
+ #define FPSCR_C (1 << 29)
+ #define FPSCR_V	(1 << 28)
  
--
 -/*
-- * 'ipu' class
-- * imaging processor unit
+- * Since we aren't building with -mfpu=vfp, we need to code
+- * these instructions using their MRC/MCR equivalents.
 - */
+-#define vfpreg(_vfp_) #_vfp_
 -
--static struct omap_hwmod_class omap44xx_ipu_hwmod_class = {
--	.name	= "ipu",
--};
--
--/* ipu */
--static struct omap_hwmod_rst_info omap44xx_ipu_resets[] = {
--	{ .name = "cpu0", .rst_shift = 0 },
--	{ .name = "cpu1", .rst_shift = 1 },
--};
--
--static struct omap_hwmod omap44xx_ipu_hwmod = {
--	.name		= "ipu",
--	.class		= &omap44xx_ipu_hwmod_class,
--	.clkdm_name	= "ducati_clkdm",
--	.rst_lines	= omap44xx_ipu_resets,
--	.rst_lines_cnt	= ARRAY_SIZE(omap44xx_ipu_resets),
--	.main_clk	= "ducati_clk_mux_ck",
--	.prcm = {
--		.omap4 = {
--			.clkctrl_offs = OMAP4_CM_DUCATI_DUCATI_CLKCTRL_OFFSET,
--			.rstctrl_offs = OMAP4_RM_DUCATI_RSTCTRL_OFFSET,
--			.context_offs = OMAP4_RM_DUCATI_DUCATI_CONTEXT_OFFSET,
--			.modulemode   = MODULEMODE_HWCTRL,
--		},
--	},
--};
--
- /*
-  * 'iss' class
-  * external images sensor pixel data processor
-@@ -1245,14 +1212,6 @@ static struct omap_hwmod_ocp_if omap44xx_debugss__l3_main_2 = {
- 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
- };
+ #define fmrx(_vfp_) ({			\
+ 	u32 __v;			\
+-	asm("mrc p10, 7, %0, " vfpreg(_vfp_) ", cr0, 0 @ fmrx	%0, " #_vfp_	\
++	asm(".fpu	vfpv2\n"	\
++	    "vmrs	%0, " #_vfp_	\
+ 	    : "=r" (__v) : : "cc");	\
+ 	__v;				\
+  })
  
--/* ipu -> l3_main_2 */
--static struct omap_hwmod_ocp_if omap44xx_ipu__l3_main_2 = {
--	.master		= &omap44xx_ipu_hwmod,
--	.slave		= &omap44xx_l3_main_2_hwmod,
--	.clk		= "l3_div_ck",
--	.user		= OCP_USER_MPU | OCP_USER_SDMA,
--};
--
- /* iss -> l3_main_2 */
- static struct omap_hwmod_ocp_if omap44xx_iss__l3_main_2 = {
- 	.master		= &omap44xx_iss_hwmod,
-@@ -1549,14 +1508,6 @@ static struct omap_hwmod_ocp_if omap44xx_l3_main_2__gpmc = {
- 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
- };
+ #define fmxr(_vfp_,_var_)		\
+-	asm("mcr p10, 7, %0, " vfpreg(_vfp_) ", cr0, 0 @ fmxr	" #_vfp_ ", %0"	\
++	asm(".fpu	vfpv2\n"	\
++	    "vmsr	" #_vfp_ ", %0"	\
+ 	   : : "r" (_var_) : "cc")
  
--/* l3_main_2 -> ipu */
--static struct omap_hwmod_ocp_if omap44xx_l3_main_2__ipu = {
--	.master		= &omap44xx_l3_main_2_hwmod,
--	.slave		= &omap44xx_ipu_hwmod,
--	.clk		= "l3_div_ck",
--	.user		= OCP_USER_MPU | OCP_USER_SDMA,
--};
--
- /* l3_main_2 -> iss */
- static struct omap_hwmod_ocp_if omap44xx_l3_main_2__iss = {
- 	.master		= &omap44xx_l3_main_2_hwmod,
-@@ -1696,7 +1647,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
- 	&omap44xx_l4_cfg__l3_main_1,
- 	&omap44xx_mpu__l3_main_1,
- 	&omap44xx_debugss__l3_main_2,
--	&omap44xx_ipu__l3_main_2,
- 	&omap44xx_iss__l3_main_2,
- 	&omap44xx_iva__l3_main_2,
- 	&omap44xx_l3_main_1__l3_main_2,
-@@ -1734,7 +1684,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
- 	&omap44xx_l3_main_2__dss_venc,
- 	&omap44xx_l4_per__dss_venc,
- 	&omap44xx_l3_main_2__gpmc,
--	&omap44xx_l3_main_2__ipu,
- 	&omap44xx_l3_main_2__iss,
- 	/* &omap44xx_iva__sl2if, */
- 	&omap44xx_l3_main_2__iva,
+ u32 vfp_single_cpdo(u32 inst, u32 fpscr);
 -- 
-2.23.0
+2.25.1
 
 
 _______________________________________________
