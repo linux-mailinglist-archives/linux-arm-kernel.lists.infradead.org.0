@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 319381670C6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 08:49:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D87311670C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 08:49:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7uFsK7KhhoZdte3taZwTs5VqJ3G0CUruJiRJj64KEds=; b=PvE5ahACfDzdqE
-	KL0nGgAhYBMBeoCAN8MfnizKlltahNwxt2MpPE8l1S+/9L1OVzjKLWjCHjw2c3YCYd494eQh/IouO
-	FedF+sUr4L6WaIAPyiivSZe54i1ZQGKLRGc3zRUOwzrIbWGX0f8EXAsGR5ZzCLFBz3b0cdJDJdCbv
-	9gOr+xX0I5jTgYCzLRbYpRcrCvs0oVjNTaEaQK9cPrvUWm8bmicitNsmQ/5a2DcJXR9YFFqdBequn
-	sxQBsQR1HTjTmTwHr8ySp1rMuwlij0YeV29bQfG7aZy4hboXuQ7GLnha+4t8HSO3w2vXU346KcJAE
-	MPvFrkKQ0iH6H4lEnEVA==;
+	List-Owner; bh=DPqQgiGDMcSBjpnqvMvS101HrV9mAkvhXguImwo+2D0=; b=ajV3tuQxU1pvx/
+	5Bf2n47lix9KrLSaSfIcq3tknLN9m+QyOLBFj056NY7hRbAvOznTT/xaTCa4Qwxe2nyS18QCVdg0D
+	ftsNJG8+p2+W8gAF3Mea0dKtx3YdYPbm77o7cV8rf0N/vk3oU96eAq0wTQDcAE0n63Pqa/ojvIBQb
+	xzS+Y2eLEVwTzJ0QYLuGucuzHjmhhJ7YPCx2U9v+9kKHq1T2M81VmnyWcsedhBmM1ouRe1d2ejB8A
+	/NyNupFC1UheMojnxOsOf73eDDCEfvChiSHWwWK4AQp2F7Uj/T72tTznNN+qp7YuXm7ExKtWfoR6b
+	ZE4G1UKlvHOxeJNfSEgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j533g-0001in-A4; Fri, 21 Feb 2020 07:49:12 +0000
+	id 1j533u-0001rC-IK; Fri, 21 Feb 2020 07:49:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j533X-0001i9-4B
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 07:49:04 +0000
+ id 1j533b-0001jj-K2
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 07:49:09 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C4504207FD;
- Fri, 21 Feb 2020 07:49:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CBEE824650;
+ Fri, 21 Feb 2020 07:49:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582271342;
- bh=wEbTmDAFGEJyYKw5bAkSrdfMG8SVFgSc3UHab2BPGXw=;
+ s=default; t=1582271347;
+ bh=bnOL5fjRatBmkkTriyNL4q9SJ8zUH9lQkVmaEAXikjo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qtilP83MTe9gp5WleA87WNq4264uY2azYp4kRjeHJB/+Af3SjZV6uvJDYoKW9+KVe
- h2MH5TKVyUKnzje3ULqoOlAZWnnAXZKRGUYlM8fOhdIioHu35bijm591qf3GQP6PaE
- OYeMJ5yWrO1zomhMwWdjH3MT+/RCvm07ZD8Qa/aw=
+ b=b0j3rFfkIgliR/MiDcrSNohCZynRwiE3l/YY4Fy210bP+wL/GPhcNgbF5bpjTYA1B
+ DZgvrJZUQ3lFHlSDIRrE5vM/SJ+Us/kiInxO+4mQoxIkAjV26VwaOLsfzMluIGaA9k
+ D7TeNyHRbBHjcyx5v1zpPKtwYI6K6y6kSu6WnDgE=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.5 130/399] ARM: dts: imx6: rdu2: Disable WP for USDHC2 and
- USDHC3
-Date: Fri, 21 Feb 2020 08:37:35 +0100
-Message-Id: <20200221072415.120491159@linuxfoundation.org>
+Subject: [PATCH 5.5 131/399] ARM: dts: imx6: rdu2: Limit USBH1 to Full Speed
+Date: Fri, 21 Feb 2020 08:37:36 +0100
+Message-Id: <20200221072415.204550872@linuxfoundation.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200221072402.315346745@linuxfoundation.org>
 References: <20200221072402.315346745@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_234903_189786_5EA90BC5 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200220_234907_712072_9AFDD6FB 
+X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -87,11 +85,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrey Smirnov <andrew.smirnov@gmail.com>
 
-[ Upstream commit cd58a174e58649426fb43d7456e5f7d7eab58af1 ]
+[ Upstream commit 6bb1e09c4c375db29770444f689f35f5cbe696bc ]
 
-RDU2 production units come with resistor connecting WP pin to
-correpsonding GPIO DNPed for both SD card slots. Drop any WP related
-configuration and mark both slots with "disable-wp".
+Cabling used to connect devices to USBH1 on RDU2 does not meet USB
+spec cable quality and cable length requirements to operate at High
+Speed, so limit the port to Full Speed only.
 
 Reported-by: Chris Healy <cphealy@gmail.com>
 Reviewed-by: Chris Healy <cphealy@gmail.com>
@@ -105,47 +103,21 @@ Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-index a2a4f33a3e3ef..4ec9fb332610e 100644
+index 4ec9fb332610e..cbafadbe86f45 100644
 --- a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
 +++ b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-@@ -629,7 +629,7 @@
- 	pinctrl-0 = <&pinctrl_usdhc2>;
- 	bus-width = <4>;
- 	cd-gpios = <&gpio2 2 GPIO_ACTIVE_LOW>;
--	wp-gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
-+	disable-wp;
- 	vmmc-supply = <&reg_3p3v_sd>;
- 	vqmmc-supply = <&reg_3p3v>;
- 	no-1-8-v;
-@@ -642,7 +642,7 @@
- 	pinctrl-0 = <&pinctrl_usdhc3>;
- 	bus-width = <4>;
- 	cd-gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
--	wp-gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
-+	disable-wp;
- 	vmmc-supply = <&reg_3p3v_sd>;
- 	vqmmc-supply = <&reg_3p3v>;
- 	no-1-8-v;
-@@ -1056,7 +1056,6 @@
- 			MX6QDL_PAD_SD2_DAT1__SD2_DATA1		0x17059
- 			MX6QDL_PAD_SD2_DAT2__SD2_DATA2		0x17059
- 			MX6QDL_PAD_SD2_DAT3__SD2_DATA3		0x17059
--			MX6QDL_PAD_NANDF_D3__GPIO2_IO03		0x40010040
- 			MX6QDL_PAD_NANDF_D2__GPIO2_IO02		0x40010040
- 		>;
- 	};
-@@ -1069,7 +1068,6 @@
- 			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x17059
- 			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x17059
- 			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x17059
--			MX6QDL_PAD_NANDF_D1__GPIO2_IO01		0x40010040
- 			MX6QDL_PAD_NANDF_D0__GPIO2_IO00		0x40010040
+@@ -776,6 +776,7 @@
+ &usbh1 {
+ 	vbus-supply = <&reg_5p0v_main>;
+ 	disable-over-current;
++	maximum-speed = "full-speed";
+ 	status = "okay";
+ };
  
- 		>;
 -- 
 2.20.1
 
