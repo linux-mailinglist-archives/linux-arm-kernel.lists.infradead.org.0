@@ -2,84 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D14B167DC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 13:55:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6232167DF1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 14:05:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PxUrwlMClIJpblvvcBDa7kSYMSdFgOYxn5gEpxTlWKQ=; b=G0GqamrMdEXPCjXJfzDevXQds
-	hJBuz08yFzC1+vYp3yNbaebVECaVLeG5kNgqxrokaqrQI+JTfEBKzW7TkKsjE0P19XMJxePIMh1Z6
-	8nPMO4RXCCuGvjw0QDa2RI8IeBxbbyJPODDRhczNg4BGIRZUVa0A2TB2tpjxIDJ8cjhNH+YYAz4tt
-	K4YnXXor2VQ8ZizvV70643Ata5j9JicqCfWI7sJAzU0s8bmc9j+VCHX879qHcZlEvJNC8xUBB0BZY
-	LeonxnHUbkUiv6K966l/7KeShG128CQLeUARYentNt/nM/MjnC/4VwdArbmLNuvwalrJ31gqyQW4D
-	ZwkGwo2tQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RrdyYmMjeq7E57Pgtn0Axpu3Dvgd8wamcJjfo5v4qzw=; b=s5nYmeXL23aJKY
+	FYD1FU0mPAaXwN1mcq36MHxo3PwVkyqKNMBL0CoX02IB7DzAx7BByVyZewqSAMm0ODzIvS4k3SsDn
+	vVrMBpAMoHPvFgKrGR3/F/ci8ojHEz+XB+7XVUn76/Z0C9hZ3/0vo1gcDAornhTkuOr455NZLOZi4
+	kkrIZKnVG1lsqP8yfxxGhYQ1CbyKOcsMbkg37iHapSeAkni9r88paD5eDJ+FirF18yz+MBm2cXm09
+	3OGz0R2YU7FKADYr6whoAUwVZq/2AXRc+eNcYpuhuAivXnZpA3fmyyjkXYakdmRi9NeYVom7ZOcZB
+	VeZp82sy4P4wKWrXbpDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j57q3-0003nY-6J; Fri, 21 Feb 2020 12:55:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j57pu-0003n2-VH
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 12:55:20 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 094EC206EF;
- Fri, 21 Feb 2020 12:55:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582289718;
- bh=bCHIKq7xRJ3aaXYyj+S6libfKhwz5P3LINS5aKJYKJ4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=vF1yCqUpEJpjFfoNbS8nSY6aPEFoswx0L3DHVJ27X/8r8+/FA/5rZWg0jfsL8E4+e
- av1xfnVFCOnWnpwNqxoazJ7u55ILnpdlu3SokNkLRAqUhkiF0LoOnoIgVQAwCRAK+y
- W2AOnGpzrYBlxViDcoq5QZIgM51kRZId5sP/5nQo=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j57ps-0072NR-Ah; Fri, 21 Feb 2020 12:55:16 +0000
+	id 1j57zh-0007PP-DF; Fri, 21 Feb 2020 13:05:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j57zF-0005zD-BT
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 13:04:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8903530E;
+ Fri, 21 Feb 2020 05:04:53 -0800 (PST)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 388F73F703;
+ Fri, 21 Feb 2020 05:04:52 -0800 (PST)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] clocksource: Fix arm_arch_timer clockmode when vDSO disabled
+Date: Fri, 21 Feb 2020 13:03:55 +0000
+Message-Id: <20200221130355.21373-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Date: Fri, 21 Feb 2020 12:55:16 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 0/3] KVM: arm64: Ask the compiler to __always_inline
- functions used by KVM at HYP
-In-Reply-To: <20200220165839.256881-1-james.morse@arm.com>
-References: <20200220165839.256881-1-james.morse@arm.com>
-Message-ID: <cb56f509ea0a4a9e1809af76f319daa2@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, catalin.marinas@arm.com, will@kernel.org,
- ard.biesheuvel@linaro.org, samitolvanen@google.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_045519_031470_1A604CF4 
-X-CRM114-Status: GOOD (  11.96  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200221_050457_432289_7EB46719 
+X-CRM114-Status: GOOD (  10.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,55 +61,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- linux-arm-kernel@lists.infradead.org, Sami Tolvanen <samitolvanen@google.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: catalin.marinas@arm.com, will.deacon@arm.com, linux@armlinux.org.uk,
+ luto@kernel.org, tglx@linutronix.de, vincenzo.frascino@arm.com,
+ m.szyprowski@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
-
-On 2020-02-20 16:58, James Morse wrote:
-> Hello!
-> 
-> It turns out KVM relies on the inline hint being honoured by the 
-> compiler
-> in quite a few more places than expected. Something about the Shadow 
-> Call
-> Stack support[0] causes the compiler to avoid inline-ing and to place
-> these functions outside the __hyp_text. This ruins KVM's day.
-> 
-> Add the simon-says __always_inline annotation to all the static
-> inlines that KVM calls from HYP code.
-> 
-> This series based on v5.6-rc2.
-
-Many thanks for going through all this.
-
-I'm happy to take it if Catalin or Will ack the arm64 patches.
-It case we decide to go the other way around:
-
-Acked-by: Marc Zyngier <maz@kernel.org>
-
-One thing I'd like to look into though is a compile-time check that
-nothing in the hyp_text section has a reference to a non-hyp_text
-symbol.
-
-We already have checks around non-init symbols pointing to init symbols,
-and I was wondering if we could reuse this for fun and profit...
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGFybV9hcmNoX3RpbWVyIHJlcXVpcmVzIHRoYXQgVkRTT19DTE9DS01PREVfQVJDSFRJTUVS
+IHRvIGJlCmRlZmluZWQgdG8gY29tcGlsZSBjb3JyZWN0bHkuIE9uIGFybSB0aGUgdkRTTyBjYW4g
+YmUgZGlzYWJsZWQgYW5kIHdoZW4KdGhpcyBpcyB0aGUgY2FzZSB0aGUgY29tcGlsYXRpb24gZW5k
+cyBwcmVtYXR1cmVseSB3aXRoIGFuIGVycm9yOgoKICQgbWFrZSBBUkNIPWFybSBtdWx0aV92N19k
+ZWZjb25maWcKICQgLi9zY3JpcHRzL2NvbmZpZyAtZCBWRFNPCiAkIG1ha2UKCmRyaXZlcnMvY2xv
+Y2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYzo3Mzo0NDogZXJyb3I6CuKAmFZEU09fQ0xPQ0tNT0RF
+X0FSQ0hUSU1FUuKAmSB1bmRlY2xhcmVkIGhlcmUgKG5vdCBpbiBhIGZ1bmN0aW9uKQogIHN0YXRp
+YyBlbnVtIHZkc29fY2xvY2tfbW9kZSB2ZHNvX2RlZmF1bHQgPSBWRFNPX0NMT0NLTU9ERV9BUkNI
+VElNRVI7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4Kc2Ny
+aXB0cy9NYWtlZmlsZS5idWlsZDoyNjc6IHJlY2lwZSBmb3IgdGFyZ2V0Cidkcml2ZXJzL2Nsb2Nr
+c291cmNlL2FybV9hcmNoX3RpbWVyLm8nIGZhaWxlZAptYWtlWzJdOiAqKiogW2RyaXZlcnMvY2xv
+Y2tzb3VyY2UvYXJtX2FyY2hfdGltZXIub10gRXJyb3IgMQptYWtlWzJdOiAqKiogV2FpdGluZyBm
+b3IgdW5maW5pc2hlZCBqb2JzLi4uLgpzY3JpcHRzL01ha2VmaWxlLmJ1aWxkOjUwNTogcmVjaXBl
+IGZvciB0YXJnZXQgJ2RyaXZlcnMvY2xvY2tzb3VyY2UnIGZhaWxlZAptYWtlWzFdOiAqKiogW2Ry
+aXZlcnMvY2xvY2tzb3VyY2VdIEVycm9yIDIKbWFrZVsxXTogKioqIFdhaXRpbmcgZm9yIHVuZmlu
+aXNoZWQgam9icy4uLi4KTWFrZWZpbGU6MTY4MzogcmVjaXBlIGZvciB0YXJnZXQgJ2RyaXZlcnMn
+IGZhaWxlZAptYWtlOiAqKiogW2RyaXZlcnNdIEVycm9yIDIKCkRlZmluZSBWRFNPX0NMT0NLTU9E
+RV9BUkNIVElNRVIgYXMgVkRTT19DTE9DS01PREVfTk9ORSB3aGVuIHRoZSB2RFNPcyBhcmUKbm90
+IGVuYWJsZWQgdG8gYWRkcmVzcyB0aGUgaXNzdWUuCgpGaXhlczogNWUzYzZhMzEyYTA5ICgiQVJN
+L2FybTY0OiB2ZHNvOiBVc2UgY29tbW9uIHZkc28gY2xvY2sgbW9kZSBzdG9yYWdlIikKQ2M6IFJ1
+c3NlbGwgS2luZyA8bGludXhAYXJtbGludXgub3JnLnVrPgpDYzogVGhvbWFzIEdsZWl4bmVyIDx0
+Z2x4QGxpbnV0cm9uaXguZGU+ClJlcG9ydGVkLWJ5OiBNYXJlayBTenlwcm93c2tpIDxtLnN6eXBy
+b3dza2lAc2Ftc3VuZy5jb20+ClNpZ25lZC1vZmYtYnk6IFZpbmNlbnpvIEZyYXNjaW5vIDx2aW5j
+ZW56by5mcmFzY2lub0Bhcm0uY29tPgotLS0KIGRyaXZlcnMvY2xvY2tzb3VyY2UvYXJtX2FyY2hf
+dGltZXIuYyB8IDUgKysrKysKIDEgZmlsZSBjaGFuZ2VkLCA1IGluc2VydGlvbnMoKykKCmRpZmYg
+LS1naXQgYS9kcml2ZXJzL2Nsb2Nrc291cmNlL2FybV9hcmNoX3RpbWVyLmMgYi9kcml2ZXJzL2Ns
+b2Nrc291cmNlL2FybV9hcmNoX3RpbWVyLmMKaW5kZXggZWUyNDIwZDU2ZjY3Li42MTk4MzkyMjFm
+OTQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvY2xvY2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYworKysg
+Yi9kcml2ZXJzL2Nsb2Nrc291cmNlL2FybV9hcmNoX3RpbWVyLmMKQEAgLTQ5LDYgKzQ5LDExIEBA
+CiAjZGVmaW5lIENOVFZfVFZBTAkweDM4CiAjZGVmaW5lIENOVFZfQ1RMCTB4M2MKIAorI2lmbmRl
+ZiBDT05GSUdfR0VORVJJQ19HRVRUSU1FT0ZEQVkKKy8qIFRoZSBkZWZpbmUgYmVsb3cgaXMgcmVx
+dWlyZWQgYmVjYXVzZSBvbiBhcm0gdGhlIFZEU09zIGNhbiBiZSBkaXNhYmxlZCAqLworI2RlZmlu
+ZSBWRFNPX0NMT0NLTU9ERV9BUkNIVElNRVIJVkRTT19DTE9DS01PREVfTk9ORQorI2VuZGlmIC8q
+IENPTkZJR19HRU5FUklDX0dFVFRJTUVPRkRBWSAqLworCiBzdGF0aWMgdW5zaWduZWQgYXJjaF90
+aW1lcnNfcHJlc2VudCBfX2luaXRkYXRhOwogCiBzdGF0aWMgdm9pZCBfX2lvbWVtICphcmNoX2Nv
+dW50ZXJfYmFzZTsKLS0gCjIuMjUuMAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
