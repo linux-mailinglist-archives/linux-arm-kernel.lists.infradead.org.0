@@ -2,88 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49C1F1687F3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:56:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82E5B168812
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 21:06:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W8RtfVK7xMBbOEYBgV5mjB4oCTkXZR8wQF+qQzj4jNA=; b=LdgOqgZJ3F0pd0
-	fgUUbPdPAW21RKakpa/ucQ7rumaZZeNOUDh72Ebt4K6Euj9ZUC/dryqVKqK3WbFdqbvbvI/F5qNaJ
-	R8r1grspV1BgRqWs+5f9dvY1/9vOTfG0Jd6jYi3ZXe5y2zABFJK0M3z13BZhTKSfrZkkXcc8kfORX
-	4iRta+LZ89vOBT3mT/xcpjmyQ+WRzwujHw4mZNK8zqjRJDZsK/UcD7kf9IGYfoaCJJCsEYWG9dVs6
-	KKndeyQn2b/oRoy7jjTm+sIm42v9WZWHjeXLfg/ieQ/FWGLPU3Z4T28wq2UqoMh2jZwwaRj3NLgqW
-	Xc0bzQsiuxFdPZ5whv9Q==;
+	List-Owner; bh=n2DFQRYx8Hegn7yI2YUFnZ3COWgNQxKnIJLQjvxkOxc=; b=AHfkTBPYaFzXJA
+	DLpbCzWBzXMq5dzkHNRFL5N8xBb0c0UxQmZjMs4HSL2yqicAPYNObnpwbfHcLWJIB9YoUPfDH/97E
+	KIMFqss+yAhejpPw4sMQUCYGRTDtTHP3EAdiCubPdSAmrpz5PXi9mmil0/zYH/KbU1zRfXI+QbUs+
+	6KMaPUKoduL489DkutaMgvfH1WPwqUmhmDt6QZ/M/3NSJP6ADRY+QT2501vCFKgHTI3755ymyNa7a
+	sG1NJDe1jxhWciSEXZ/9cgJ0Xg4vg8vbWwa6+qKrLE5oEFJ8nknYyhy6lwlfGYw1znybDNy89oG/I
+	CC5sk/MSeEjLkqucS0uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5EP6-0000Ic-MS; Fri, 21 Feb 2020 19:56:04 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j5EYp-0004mF-HZ; Fri, 21 Feb 2020 20:06:07 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5EOw-0000Hr-K3
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 19:55:56 +0000
-Received: by mail-wr1-x443.google.com with SMTP id y11so3357643wrt.6
+ id 1j5EYg-0004ln-7g
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 20:06:00 +0000
+Received: from mail-qt1-f171.google.com ([209.85.160.171]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MxmBi-1jMTEd0f54-00zBwW for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 21 Feb 2020 21:05:53 +0100
+Received: by mail-qt1-f171.google.com with SMTP id n17so2190235qtv.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 11:55:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/RkItNieDgV0spCBrAvgEKW6jVdvnCXvHYuZAXnr8OA=;
- b=x5u940o4PeMZz2zVQ/GgLDPvzLJ6lEY39zGpB6qUtCALbWWKmQaVV3Y3/YnyXXOW4q
- wz98PZAHt6fk9wghSdnefuCgGUaxGVKrVYqf2hxKyBzO77vsiPIlqBDmrDh7XNgoFFok
- W8k1IeN+CgHIlCXZMyBtbWARspburRc0CAe3AtIO78A3BNELLFeh/r22R9UZja2npkHR
- KLCC0KryrADvmUm8J5b7HXXWJpeWRK+jMDJn7C1cE+TxpqUfpevGO5EKtWObGYp+97Si
- daBjhDePFtR5sLz4BDDshyr+KTaS+pqcYssnMGixj3kj/VhFvMLeFfKHBvbLqcCSlsbW
- UOkQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/RkItNieDgV0spCBrAvgEKW6jVdvnCXvHYuZAXnr8OA=;
- b=dHHHwGsheHx4+l5SlkmjW4vdow5WY0tdQDt6ZuXsnJZPOl0iSyyZrnCHA1Qd36ZSZV
- 9UHkhXbMb/thWyj6kyLyjjTrDsT8vg5AeehHdbUE0yb9NrLoDDpi204CIRkZHgknef9S
- dfoqNwNcrAjkLdDQW4X2SkeDBBCR/7DSQdzEyN4ozDxY7FkzrodAcAcAiDnKSJyXL0jD
- 8WsvObxMRAKdPirNKbFpcFlbTlGfxY1veaHnUqcu0vj3xLC3/XfS/5bRUYJCfakmZQOE
- eWelz+fv3D9qQGdgWlJlru0LT5b9+ijgysOrtGp/S+zhQRiwtkgDI3DzK7sS8NGWImlg
- HyBA==
-X-Gm-Message-State: APjAAAViqBVo/CBQEjd/Yxh1peg+Z9eA3lb3gqmRCw97oLF6ST3omC/Q
- rrLg5ZVfiKn4U5LNAIxdR2RcqA==
-X-Google-Smtp-Source: APXvYqzuKtU50Hh3qFOFhMh2kC8UV6DBRqImeOmDnHM6EvrvnQ2IZngIOzQKoWMqRuLAwslEHRLoXA==
-X-Received: by 2002:a5d:4acb:: with SMTP id y11mr21913792wrs.111.1582314952493; 
- Fri, 21 Feb 2020 11:55:52 -0800 (PST)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id y12sm5130730wmj.6.2020.02.21.11.55.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 21 Feb 2020 11:55:51 -0800 (PST)
-Date: Fri, 21 Feb 2020 20:55:49 +0100
-From: LABBE Corentin <clabbe@baylibre.com>
-To: Eric Biggers <ebiggers@kernel.org>
-Subject: Re: [PATCH] crypto: arm64: CE: implement export/import
-Message-ID: <20200221195549.GA29499@Red>
-References: <1582128037-18644-1-git-send-email-clabbe@baylibre.com>
- <20200219181654.GB2312@sol.localdomain>
+ Fri, 21 Feb 2020 12:05:51 -0800 (PST)
+X-Gm-Message-State: APjAAAVqZKY0/3rvClbOAKrZzBXx7AaIBe07NhhyToVpRSucKLJd9J5i
+ UH8kgb3hZpFENwUDVpjni7jxlUPAfzkhFzg8T64=
+X-Google-Smtp-Source: APXvYqx42gswlIBQGfi7okQrtqeFEqiicpefxVgLD/zbkLUQv/uLhsMFE3QEhmg8k9YNPL1ulGl97PB0mG7GNmnxYno=
+X-Received: by 2002:ac8:768d:: with SMTP id g13mr33583872qtr.7.1582315551015; 
+ Fri, 21 Feb 2020 12:05:51 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200219181654.GB2312@sol.localdomain>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200221180901.15812-1-tony@atomide.com>
+In-Reply-To: <20200221180901.15812-1-tony@atomide.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 21 Feb 2020 21:05:34 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a2C6EV0En1hGuFxCRGzgf2t3-5DAPDUDQc5BmGHm1-t9w@mail.gmail.com>
+Message-ID: <CAK8P3a2C6EV0En1hGuFxCRGzgf2t3-5DAPDUDQc5BmGHm1-t9w@mail.gmail.com>
+Subject: Re: [PATCH] ARM: OMAP2+: Fix compile if CONFIG_HAVE_ARM_SMCCC is not
+ set
+To: Tony Lindgren <tony@atomide.com>
+X-Provags-ID: V03:K1:wH/pMtZiRmBWJtvVAGEPj3VLvU6hrL9AvbULgZvZswEoDEvQPoA
+ OotxEkqlLTlDSTq+ssaKsdMeyUEtgoRQEmkGwDnXJxjwOH4RTfa1yTcQPZWYlPoBB6Cu1PI
+ HXIV50+UEBHw03RaGPBpFPQr/hzewvqdvqH4UoAdz5VI2nbGU+03koy88BiKLyccp3h0OS+
+ 0e7M+NRwE0LyQSCkIvsFg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:YOpCOJNBiF4=:8g1KislWGounLI9lyDierS
+ pDtIzv1thhIw/CKJVmUY5E+UydwFoKPQBkT80GY7mvVTPKaJLBRkMFNwpwe+yiqgpMO59dI2T
+ bdheP2OalBiRYwHjTwSPeLmKJczelbvNuEUVzDScsvV/rzZzaGdgqLNWkAkGwfoytr23fR93L
+ gCBtOPujAY/gmaIKD5r8QQ06XSTRjzFIb7wQ51QxkOmi2pRcZjS5YXQcKnD6TFEQVgelm3NBr
+ WcXptJ493BFlQoh2nCciceVNU0LkK019XXenbubYaNMy11NhAhaZPu5oJD2vXp53LcNj5CWaA
+ SPEjbiq9oZZeVzfHHB5FUcvnJyrGUvX3e3VODyudxJotoA8oKLJsA1ZmBDB5WjK9ruz5Impsm
+ iL/TVbex6h1+I1ZiHyK6atNjoTvndBP2tO4pUsiwhMsG3e72Gj730FVEcsdbp4Mq0CKhyBCGv
+ pGBSWNSCi8RJBpP1uY9+c3zr7XTOU5qS0UGCzoDadmvVL12fi7XaxNGEMqBjQ+ayetqQY+DLq
+ l5KS5tXe2orQOL3EBLWomK0wLW/31ttoP0sLyVoB266qMBPacu8YZNfp+QsiDOW48amLG2986
+ IVl/m+86S5SmfhJs2WoOqaiteacvks9XeUheHgrV2Rq4IEaTX6HuWNxOdwcbXgddyvCyyNHqy
+ NvWL40d5VTmQL8wTkXANZVNUx+JYqppaoa32imiVPOabWLvYggk16mDer+tpsEgp64ErMxK4p
+ Vy44oKBSEKtf3u6+UeN9peWJlJsx79WKwbXbctMCVrMmuq4TQVNCzpvFgJff06kdGkmNNkO36
+ p3CU8Nyz+EMZqAfHUA4DJnHa+U8xuuJpdf+nxrMVXljRMiETcc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_115554_717317_D3B8A3F6 
-X-CRM114-Status: GOOD (  17.98  )
+X-CRM114-CacheID: sfid-20200221_120558_569052_18CDDC15 
+X-CRM114-Status: GOOD (  15.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,65 +88,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: herbert@gondor.apana.org.au, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, kbuild test robot <lkp@intel.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Catalin Marinas <catalin.marinas@arm.com>, "Andrew F . Davis" <afd@ti.com>,
+ Marc Zyngier <maz@kernel.org>, Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-omap <linux-omap@vger.kernel.org>, Will Deacon <will@kernel.org>,
+ Steven Price <steven.price@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 10:16:54AM -0800, Eric Biggers wrote:
-> On Wed, Feb 19, 2020 at 04:00:37PM +0000, Corentin Labbe wrote:
-> > When an ahash algorithm fallback to another ahash and that fallback is
-> > shaXXX-CE, doing export/import lead to error like this:
-> > alg: ahash: sha1-sun8i-ce export() overran state buffer on test vector 0, cfg=\"import/export\"
-> > 
-> > This is due to the descsize of shaxxx-ce larger than struct shaxxx_state off by an u32.
-> > For fixing this, let's implement export/import which rip the finalize
-> > variant instead of using generic export/import.
-> > 
-> > Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
-> > ---
-> >  arch/arm64/crypto/sha1-ce-glue.c | 20 ++++++++++++++++++++
-> >  arch/arm64/crypto/sha2-ce-glue.c | 23 +++++++++++++++++++++++
-> >  2 files changed, 43 insertions(+)
-> > 
-> > diff --git a/arch/arm64/crypto/sha1-ce-glue.c b/arch/arm64/crypto/sha1-ce-glue.c
-> > index 63c875d3314b..dc44d48415cd 100644
-> > --- a/arch/arm64/crypto/sha1-ce-glue.c
-> > +++ b/arch/arm64/crypto/sha1-ce-glue.c
-> > @@ -91,12 +91,32 @@ static int sha1_ce_final(struct shash_desc *desc, u8 *out)
-> >  	return sha1_base_finish(desc, out);
-> >  }
-> >  
-> > +static int sha1_ce_export(struct shash_desc *desc, void *out)
-> > +{
-> > +	struct sha1_ce_state *sctx = shash_desc_ctx(desc);
-> > +
-> > +	memcpy(out, sctx, sizeof(struct sha1_state));
-> > +	return 0;
-> > +}
-> > +
-> > +static int sha1_ce_import(struct shash_desc *desc, const void *in)
-> > +{
-> > +	struct sha1_ce_state *sctx = shash_desc_ctx(desc);
-> > +
-> > +	memcpy(sctx, in, sizeof(struct sha1_state));
-> > +	sctx->finalize = 0;
-> > +	return 0;
-> > +}
-> 
-> Can you use '&sctx->sst' instead of 'sctx' so that we aren't relying on the
-> 'struct sha1_state' being located at the beginning of the struct?
-> 
-> Likewise for SHA-2.
+On Fri, Feb 21, 2020 at 7:09 PM Tony Lindgren <tony@atomide.com> wrote:
+>
+> Recent omap changes added runtime checks to use omap_smccc_smc()
+> when optee is configured in dts. As the omap-secure code can be
+> built for ARMv6 only without ARMv7 and use custom smc calls, we
+> now get a build error:
+>
+> omap-secure.c:(.text+0x94): undefined reference to `__arm_smccc_smc'
+>
+> Let's just ifdef out omap_smccc_smc() unless the CPU has selected
+> CONFIG_HAVE_ARM_SMCCC. The other option discussed was to add an
+> inline function to arm-smccc.h, but we'd still also have to add
+> ifdef around omap_smccc_smc() to avoid a warning for uninitialized
+> value for struct arm_smccc_res in omap_smccc_smc(). And we probably
+> should not start initializing values in arm-smccc.h if disabled.
+>
+> Let's also warn on trying to use omap_smccc_smc() if disabled as
+> suggested by Andrew F. Davis <afd@ti.com>.
+>
+> +#ifdef CONFIG_HAVE_ARM_SMCCC
+>  void omap_smccc_smc(u32 fn, u32 arg)
+>  {
+>         struct arm_smccc_res res;
+> @@ -85,6 +86,12 @@ void omap_smccc_smc(u32 fn, u32 arg)
+>                       0, 0, 0, 0, 0, 0, &res);
+>         WARN(res.a0, "Secure function call 0x%08x failed\n", fn);
+>  }
+> +#else
 
-Yes, I will do that, it is better.
-thanks
+Looking through the callers again, this can and is only called
+for ARMv7 CPUs, so can't you just avoid the #else path and
+turn it into a link error if we ever get callers on ARMv6-only builds?
 
-Regards
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
