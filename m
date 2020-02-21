@@ -2,142 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23A0B1674C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:28:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82952167590
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:31:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yeDnYBMYxJ8YqrZC7KuzGK4E3E9PhG2hhAmhzxT1rAQ=; b=FMGGpuSw1iESwb
-	HdJdIgxUsMMyoNsJ/NadwPjii+ArRRBJ+sts3ipduebcqtnbz1IvSS7XKUwI/anRT9K+gEN5fav7n
-	Vi0d4ObOC5RZNl47qvYGAShOSb+9M8FwluZ0TFjYtv89qT31f6/NzXj7tCFWf+5TKpQNqXF92YkAX
-	6dpPPP8KK9eSAAS6XWJX2Zw+Ku4Vgxo+I/1lUgNTw/B/C+3izidNt4RZosSJkaYsNuV7lwNxcNKaz
-	Lxa6VElsoh2fTWFCYASVqkS/cb7MrC+iY6yc77mNl85KpB1xRnD7RXlSM+JqowbUS3yl4zOq1TqYi
-	QS8+gO3LV/a/kjWbLJ5Q==;
+	List-Owner; bh=f6U3euJQr0xkqIWKSprB1lQShCKZwwuSfwhXJgIaOuk=; b=ovh7avwP+lg7tz
+	aToEXWOJlXayCIbTvurKDRCmx604L8NY4R1KD7YUuHKV+DvC+JMi7YLEgsRxD0s8pMqm3Q4tiLfNR
+	PU7ho0ZgL+UmNIn2wbIHNRBt8ubgJ1oM8TiYM8+7D6bItXpVYk0DG7wJn21B7cVt1Vu8Du2+aKNbv
+	DzK7iwM4VnyF6Urrl3xU+6LPyIF5kWSeHlSfxaujF2Uj3ZVBraXBL3vZXoza6z8675YX2R84hmx9F
+	6Imdjnf7EzPo3IkA1iINPKE6jgRjNV1X7qg8fQZTeF6FdfVy4hdIzh+G1nh2TXfRudX9ASu3H55vF
+	vsnIp38pwHel02rsXxVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j53fZ-0006AE-SI; Fri, 21 Feb 2020 08:28:21 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j53iY-0008SR-Tn; Fri, 21 Feb 2020 08:31:26 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j53fR-00069D-Bi
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:28:14 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p9so730765wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 00:28:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=fCJ3KmigEs8DpBpdDcdTMD9jPsQq/gPkh1GOkuMWIrk=;
- b=Ph1daRZgQrXTOABYhqK6etF+hn4Krad4bRIU/5HaO4vhUNxhFornWMCiOjZQ0N4c67
- j4cagpxl8XlE1TRNwmzURH9TrAW+rOsoXRXxUgTnPsFNOEhktk8REO6+Room1yYQI+yh
- H1iA0XYP9Po7bLwxW5m1QLPEihZEpxvzXcginRu4o4GYKqVbtEvXVeTGoszx8LzxoScc
- 77mwF9lyrQkNO3bLsKDFOhqg0YUK1oAKveDFUXfsDbtGXFp6O5Nibx22VDTbTBgZkIsr
- kUvMsDi3zULvXWUOL/6LCnBv0gfpQs5Lpz96N+O0vNe4HgluWdMcRSnVnIeZc1HufT3A
- G4dw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=fCJ3KmigEs8DpBpdDcdTMD9jPsQq/gPkh1GOkuMWIrk=;
- b=k+WJOI05qkIORHEbze4TKCH/TmA9lhafRRNvZuUCWk+rVOUJOUd2V24oHzuoYF1lq9
- C/zBRaM2E2SeiRfgIoTr/r9cZ7yhjCSqsOIT2MYV//fLm7BaEhXCgHh3Cgt0w6KxzPdc
- IrCfGJ0GMMTGF24/vhp4qIlBYIvlxH3FLUCH55DmbV4vCBv4gzxfBHF/mtkJDvqCiwVA
- migCAi2PF1c0X2O/NUg1JBgjnYWfvhG1P8n6hAAtHxdhQs++7JgEqQ93EKmd67znNYlL
- fwNMJQqQroQHCwLSqVaZhnXSKT7WE24USuorBbLJ3re7nyOtsCkSafcWzrBPajzwSh2T
- mCZg==
-X-Gm-Message-State: APjAAAX8vRKAnJQhqCmNRk6J2V4iS510CXSGjokE6hWnRPxNV2CkITNT
- XHtCO3L383BGDyIj9J2098PfiQ==
-X-Google-Smtp-Source: APXvYqwzjlP0HTv4FL0F1MqSuF9uKA6+BP8tD+yxfzTz5t4OJUiTFFRHyLp2o35NMyA52dyHPuzrbA==
-X-Received: by 2002:a1c:7919:: with SMTP id l25mr2186757wme.135.1582273691154; 
- Fri, 21 Feb 2020 00:28:11 -0800 (PST)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858?
- ([2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858])
- by smtp.gmail.com with ESMTPSA id m9sm3008198wrx.55.2020.02.21.00.28.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 21 Feb 2020 00:28:10 -0800 (PST)
-Subject: Re: [PATCH] clk: meson: meson8b: set audio output clock hierarchy
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org, jbrunet@baylibre.com
-References: <20200220204433.67113-1-martin.blumenstingl@googlemail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <74a8613c-ba30-5f42-9edd-b5af1d7f330c@baylibre.com>
-Date: Fri, 21 Feb 2020 09:28:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j53iP-0008Ro-7Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:31:18 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1j53iK-0006kK-Ge; Fri, 21 Feb 2020 09:31:12 +0100
+Received: from [IPv6:2a03:f580:87bc:d400:6ccf:3365:1a9c:55ad] (unknown
+ [IPv6:2a03:f580:87bc:d400:6ccf:3365:1a9c:55ad])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits))
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id B31CD4BCCD0;
+ Fri, 21 Feb 2020 08:31:09 +0000 (UTC)
+Subject: Re: [PATCH v2 1/3] dt-bindings: m_can: Add Documentation for
+ transceiver regulator
+To: Faiz Abbas <faiz_abbas@ti.com>, Rob Herring <robh@kernel.org>
+References: <20200217142836.23702-1-faiz_abbas@ti.com>
+ <20200217142836.23702-2-faiz_abbas@ti.com> <20200219203529.GA21085@bogus>
+ <a987bcd7-ca1c-dfda-72f3-cd2004a87ea5@ti.com>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
+ zu8T6kZP2wEIpM9RjEL3jdBjZNCsjSS6x1qzpc2+2ivjdiJsqeaagIgvy2JWy7vUa4/PyGfx
+ QyUeXOxdj59DvLwAx8I6hOgeHx2X/ntKAMUxwawYfPZpP3gwTNKc27dJWSomOLgp+gbmOmgc
+ 6U5KwhAxPTEb3CsT5RicsC+uQQFumdl5I6XS+pbeXZndXwnj5t84M+HEj7RN6bUfV2WZO/AB
+ Xt5+qFkC/AVUcj/dcHvZwQJlGeZxoi4veCoOT2MYqfR0ax1MmN+LVRvKm29oSyD4Ts/97cbs
+ XsZDRxnEG3z/7Winiv0ZanclA7v7CQwrzsbpCv+oj+zokGuKasofzKdpywkjAfSE1zTyF+8K
+ nxBAmzwEqeQ3iKqBc3AcCseqSPX53mPqmwvNVS2GqBpnOfY7Mxr1AEmxdEcRYbhG6Xdn+ACq
+ Dq0Db3A++3PhMSaOu125uIAIwMXRJIzCXYSqXo8NIeo9tobk0C/9w3fUfMTrBDtSviLHqlp8
+ eQEP8+TDSmRP/CwmFHv36jd+XGmBHzW5I7qw0OORRwNFYBeEuiOIgxAfjjbLGHh9SRwEqXAL
+ kw+WVTwh0MN1k7I9/CDVlGvc3yIKS0sA+wudYiselXzgLuP5cQARAQABtCZNYXJjIEtsZWlu
+ ZS1CdWRkZSA8bWtsQHBlbmd1dHJvbml4LmRlPokCVAQTAQoAPgIbAwIeAQIXgAULCQgHAwUV
+ CgkICwUWAgMBABYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUsSbBQkM366zAAoJECte4hHF
+ iupUgkAP/2RdxKPZ3GMqag33jKwKAbn/fRqAFWqUH9TCsRH3h6+/uEPnZdzhkL4a9p/6OeJn
+ Z6NXqgsyRAOTZsSFcwlfxLNHVxBWm8pMwrBecdt4lzrjSt/3ws2GqxPsmza1Gs61lEdYvLST
+ Ix2vPbB4FAfE0kizKAjRZzlwOyuHOr2ilujDsKTpFtd8lV1nBNNn6HBIBR5ShvJnwyUdzuby
+ tOsSt7qJEvF1x3y49bHCy3uy+MmYuoEyG6zo9udUzhVsKe3hHYC2kfB16ZOBjFC3lH2U5An+
+ yQYIIPZrSWXUeKjeMaKGvbg6W9Oi4XEtrwpzUGhbewxCZZCIrzAH2hz0dUhacxB201Y/faY6
+ BdTS75SPs+zjTYo8yE9Y9eG7x/lB60nQjJiZVNvZ88QDfVuLl/heuIq+fyNajBbqbtBT5CWf
+ mOP4Dh4xjm3Vwlz8imWW/drEVJZJrPYqv0HdPbY8jVMpqoe5jDloyVn3prfLdXSbKPexlJaW
+ 5tnPd4lj8rqOFShRnLFCibpeHWIumqrIqIkiRA9kFW3XMgtU6JkIrQzhJb6Tc6mZg2wuYW0d
+ Wo2qvdziMgPkMFiWJpsxM9xPk9BBVwR+uojNq5LzdCsXQ2seG0dhaOTaaIDWVS8U/V8Nqjrl
+ 6bGG2quo5YzJuXKjtKjZ4R6k762pHJ3tnzI/jnlc1sXz
+Message-ID: <20b86553-9b98-1a9d-3757-54174aa67c62@pengutronix.de>
+Date: Fri, 21 Feb 2020 09:31:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200220204433.67113-1-martin.blumenstingl@googlemail.com>
-Content-Language: en-US
+In-Reply-To: <a987bcd7-ca1c-dfda-72f3-cd2004a87ea5@ti.com>
+Content-Language: de-DE
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_002813_400236_30965B87 
-X-CRM114-Status: GOOD (  15.87  )
+X-CRM114-CacheID: sfid-20200221_003117_272970_046342AC 
+X-CRM114-Status: GOOD (  14.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,70 +103,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lgirdwood@gmail.com,
+ netdev@vger.kernel.org, sriram.dash@samsung.com, linux-kernel@vger.kernel.org,
+ linux-can@vger.kernel.org, broonie@kernel.org, wg@grandegger.com,
+ catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org, dmurphy@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/02/2020 21:44, Martin Blumenstingl wrote:
-> The aiu devices peripheral clocks needs the aiu and aiu_glue clocks to
-> operate. Reflect this hierarchy in the clock tree.
+On 2/21/20 9:31 AM, Faiz Abbas wrote:
+> Hi Rob,
 > 
-> Fixes: e31a1900c1ff73 ("meson: clk: Add support for clock gates")
-> Suggested-by: Jerome Brunet <jbrunet@baylibre.com>
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
-> This takes Jerome's patch for GXBB and ports it to the Meson8* SoCs.
-> Hence the Suggested-by.
+> On 20/02/20 2:05 am, Rob Herring wrote:
+>> On Mon, Feb 17, 2020 at 07:58:34PM +0530, Faiz Abbas wrote:
+>>> Some CAN transceivers have a standby line that needs to be asserted
+>>> before they can be used. Model this GPIO lines as an optional
+>>> fixed-regulator node. Document bindings for the same.
+>>>
+>>> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+>>> ---
+>>>  Documentation/devicetree/bindings/net/can/m_can.txt | 3 +++
+>>>  1 file changed, 3 insertions(+)
+>>
+>> This has moved to DT schema in my tree, so please adjust it and resend.
 > 
+> Ok.
+>>
+>>> diff --git a/Documentation/devicetree/bindings/net/can/m_can.txt b/Documentation/devicetree/bindings/net/can/m_can.txt
+>>> index ed614383af9c..f17e2a5207dc 100644
+>>> --- a/Documentation/devicetree/bindings/net/can/m_can.txt
+>>> +++ b/Documentation/devicetree/bindings/net/can/m_can.txt
+>>> @@ -48,6 +48,9 @@ Optional Subnode:
+>>>  			  that can be used for CAN/CAN-FD modes. See
+>>>  			  Documentation/devicetree/bindings/net/can/can-transceiver.txt
+>>>  			  for details.
+>>> +
+>>> +- xceiver-supply: Regulator that powers the CAN transceiver.
+>>
+>> The supply for a transceiver should go in the transceiver node.
+>>
 > 
->  drivers/clk/meson/meson8b.c | 21 +++++++++++++--------
->  1 file changed, 13 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-> index 9fd31f23b2a9..34a70c4b4899 100644
-> --- a/drivers/clk/meson/meson8b.c
-> +++ b/drivers/clk/meson/meson8b.c
-> @@ -2605,14 +2605,6 @@ static MESON_GATE(meson8b_spi, HHI_GCLK_MPEG0, 30);
->  static MESON_GATE(meson8b_i2s_spdif, HHI_GCLK_MPEG1, 2);
->  static MESON_GATE(meson8b_eth, HHI_GCLK_MPEG1, 3);
->  static MESON_GATE(meson8b_demux, HHI_GCLK_MPEG1, 4);
-> -static MESON_GATE(meson8b_aiu_glue, HHI_GCLK_MPEG1, 6);
-> -static MESON_GATE(meson8b_iec958, HHI_GCLK_MPEG1, 7);
-> -static MESON_GATE(meson8b_i2s_out, HHI_GCLK_MPEG1, 8);
-> -static MESON_GATE(meson8b_amclk, HHI_GCLK_MPEG1, 9);
-> -static MESON_GATE(meson8b_aififo2, HHI_GCLK_MPEG1, 10);
-> -static MESON_GATE(meson8b_mixer, HHI_GCLK_MPEG1, 11);
-> -static MESON_GATE(meson8b_mixer_iface, HHI_GCLK_MPEG1, 12);
-> -static MESON_GATE(meson8b_adc, HHI_GCLK_MPEG1, 13);
->  static MESON_GATE(meson8b_blkmv, HHI_GCLK_MPEG1, 14);
->  static MESON_GATE(meson8b_aiu, HHI_GCLK_MPEG1, 15);
->  static MESON_GATE(meson8b_uart1, HHI_GCLK_MPEG1, 16);
-> @@ -2659,6 +2651,19 @@ static MESON_GATE(meson8b_vclk2_vencl, HHI_GCLK_OTHER, 25);
->  static MESON_GATE(meson8b_vclk2_other, HHI_GCLK_OTHER, 26);
->  static MESON_GATE(meson8b_edp, HHI_GCLK_OTHER, 31);
->  
-> +/* AIU gates */
-> +#define MESON_AIU_GLUE_GATE(_name, _reg, _bit) \
-> +	MESON_PCLK(_name, _reg, _bit, &meson8b_aiu_glue.hw)
-> +
-> +static MESON_PCLK(meson8b_aiu_glue, HHI_GCLK_MPEG1, 6, &meson8b_aiu.hw);
-> +static MESON_AIU_GLUE_GATE(meson8b_iec958, HHI_GCLK_MPEG1, 7);
-> +static MESON_AIU_GLUE_GATE(meson8b_i2s_out, HHI_GCLK_MPEG1, 8);
-> +static MESON_AIU_GLUE_GATE(meson8b_amclk, HHI_GCLK_MPEG1, 9);
-> +static MESON_AIU_GLUE_GATE(meson8b_aififo2, HHI_GCLK_MPEG1, 10);
-> +static MESON_AIU_GLUE_GATE(meson8b_mixer, HHI_GCLK_MPEG1, 11);
-> +static MESON_AIU_GLUE_GATE(meson8b_mixer_iface, HHI_GCLK_MPEG1, 12);
-> +static MESON_AIU_GLUE_GATE(meson8b_adc, HHI_GCLK_MPEG1, 13);
-> +
->  /* Always On (AO) domain gates */
->  
->  static MESON_GATE(meson8b_ao_media_cpu, HHI_GCLK_AO, 0);
-> 
+> Marc, while I have you here, do you agree with this?
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+I'll look into the details later today.
+
+Marc
+
+-- 
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
