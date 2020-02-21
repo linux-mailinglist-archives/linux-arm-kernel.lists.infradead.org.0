@@ -2,110 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF2EC167959
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:26:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C875167960
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:27:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HUUzVzBjmpw5VkxK3qzf8GASnvb2H0UdOei460xaZ3I=; b=FJcsk+uAryAdWf
-	xBMGN2fA2GbJ1XcMkZYfVFQ7xloZmd9/UDyKB6XcKU9SmKsh/rJ1Ktu9EAnppwuRbZxRjmrcQXtIn
-	JNNtPd2PbmfMNBnORAe1Kgg0VOiK1taZXFhg7rSGDujFK7YhGyJb64pINFdaNGkW548/31DFI9yAq
-	pb0y/okNHJXszAfJM5pXZ9iMH6gqrIe4wQrm3Dxg85BfnukwXCDwOOqk6vZ+DZRJLgr6u5uX9eXjB
-	GKhebk3NCAnmTuxyWkDHyL57ByHlBrwxQXBxyk9VmWyOpeiYCuD9WmEUY4B+9ot+OVraei7L/9D05
-	ld58RyiXN0lMJaQiUKuQ==;
+	List-Owner; bh=RnlgpKMPhxh4IMDmr1Xwljz3AsK6npg2QsUh+AJeLzc=; b=tCBOA+L/Wk6PXQ
+	87aUuQU1D9ywVP758NDdpvz08cOEJxaCw7ewTzrR8l41rdFmY7Hr9dhZgRh8u+yHcAAXp4TOWbdKo
+	JyLCxsm4bG6nf2oKhQuaCvaF1p4/s/HMOeFWl0f2YFd8nNtJbvKuV5Gy4Gra3ga2Db0iYQW1wrMBV
+	fWcqDhZ8S4McrzN8WRr4s2H7VXSxhNOENI4Nw70KsZVEbU11HPFFVC1pyapmEeqw0rU6pObbtcD1T
+	pV/g8p4vEC8geXxXGXsl21RYAlJfkYwz7cVs2daFJwvdVhuIw0eKJdJMPRb5RuXldpw0HoBWAwJrm
+	QMhjxStZzK6ggbZLK+Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j54a3-0000Qb-4m; Fri, 21 Feb 2020 09:26:43 +0000
-Received: from mail-eopbgr30049.outbound.protection.outlook.com ([40.107.3.49]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1j54aw-0000nV-0b; Fri, 21 Feb 2020 09:27:38 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j54Zt-0000Ot-RO
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 09:26:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=oDRmH9arAq3dFlz5BPv5KEa1L6+aYcpL/tpK+kMFhu6QECXeQ6gKZhx8q3M8TU0bX5vt37oYSinzoTUK5dcY9CNEkQxgT24Hi9qmnW8uiIwZn/FsjeBIIlIv/WZZGg2+ZBKhV8kAn8kr0m0KrtgXQYpYxzkDKNA5mgEKo+YT8Q6jbUh2S4qsH3VtzWd4WV1srB8XPvlCIr1eXDFmW6ak9vnnLGCCaKRGfrP7Z6j12StCx263qb6FzPkexsakhNL2U9s9kzxpNTXD4EO9Znk2v+KvzeXZJQ7IxU2xbzgSfCMVUkIXu6YJDYh8BNgQAN45fOs1zYRXiykyHD3ja6VX4Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s0giFPnSvmnjpbwqhx8Hne85FcxFlRSPX0nwydJJbV0=;
- b=ea71PZEa7psZhZ/zU0IXl40vQpKiKh2FF/mgHXJiaULjFCPEZdYF8DA+1IbQddivzXRx39k6aETbML2wGEsJnCv7yTh19uJRpDp9dInPnELmLwlHyoOFItGbMR+LAgfFKjrhHWpUFnFEpkTsASKRP2hudhOO0kyIxLrqxvrPzRAxiMYDfxt4my2uUlcjAcrn8gX2uclBXGTGcFNENe1+vv862xCW8AtHOYrKg+diD7tveQEoGK8RWWFtrLU5SXMOJKcTSTJPUZDINOGUhxJPkbJv8NMT343VTpL7m87VeqtxnqUBtSiq7wLJ/PGUzf8p9NgK/sVtx5YRmAg+0BLXqA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s0giFPnSvmnjpbwqhx8Hne85FcxFlRSPX0nwydJJbV0=;
- b=fgBAY7wQ5rrlqTVa5i5oJVN868rO1ymlSsWHP4cXuPz3xegrijO5Gm9D3dVFKQkHno2ocYOTAQ9gXi/HvYtkBVkEBxR+Eqs7VHR2DOTw1bYqhBgqY52D8CA+9qzHmFCuvZRRO995xv/cgFfENHeU3It9zOhw879SoNvbZNV9L+4=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3737.eurprd04.prod.outlook.com (52.134.66.144) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.23; Fri, 21 Feb 2020 09:26:29 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2729.033; Fri, 21 Feb 2020
- 09:26:29 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: RE: [PATCH V15 RESEND 2/5] thermal: of-thermal: add API for getting
- sensor ID from DT
-Thread-Topic: [PATCH V15 RESEND 2/5] thermal: of-thermal: add API for getting
- sensor ID from DT
-Thread-Index: AQHV54twqrQqqnnsY0eYUhsqk5r9AKglXqIAgAADj2A=
-Date: Fri, 21 Feb 2020 09:26:29 +0000
-Message-ID: <DB3PR0402MB39161BB726FE5413F30F0263F5120@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1582161028-2844-1-git-send-email-Anson.Huang@nxp.com>
- <1582161028-2844-2-git-send-email-Anson.Huang@nxp.com>
- <20200221091112.GA10516@linaro.org>
-In-Reply-To: <20200221091112.GA10516@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [220.161.57.125]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: e40dc78a-034b-4243-515d-08d7b6b021cc
-x-ms-traffictypediagnostic: DB3PR0402MB3737:|DB3PR0402MB3737:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3737A1FE521DD5D7155104F4F5120@DB3PR0402MB3737.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 0320B28BE1
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(136003)(366004)(39860400002)(396003)(376002)(189003)(199004)(44832011)(9686003)(66946007)(6506007)(66476007)(71200400001)(7696005)(2906002)(54906003)(66446008)(66556008)(64756008)(478600001)(4326008)(26005)(6916009)(8936002)(86362001)(7416002)(55016002)(76116006)(81166006)(8676002)(186003)(81156014)(316002)(52536014)(33656002)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3737;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: zO4VrkzUXXZXpFJqPsWE2OvpQjaaM0Wu066Dw4MX8udYfK5S8H03IR8tLBlybzHcNY7/kYFYVPBU68WBwqUL/sBeGiqc8oZ3PZ4ieRzgzph1w+/WKLSSbgEifO9nM5VzD0E9B20258hx6e5r/3iWmZ7qA9KQfmCWFnxL/yW0GNpbISkrt6gB5czTOOiqaPgcI9wk0K46PqJFse9NWfYJiR5EpywHOUGvMrAKsdW3y9D7yKXM7PmwkbsV1A70p9Clr2tZewh0vm8Fg2qp0eAmpqaRDOps9h0krUGGtX4y7H0uRsprXmyT4jti4s7BxlY8ulRhJ0Wz+nKKzVXI+460UBskFFxU9i08/+OAq1fx23Gnecim4e7CY1ZVRENFHEATO+HINOBHz4DBdphm7llI/ZXI7SsJgNmsvhGsvYZe31O3JKa+z4eL/jmADzSLuOQr
-x-ms-exchange-antispam-messagedata: kcMEX8JNac2kGJTadbF7k9I+B4iORTg2BVPIE/IGZv7grFZlJFF98ymJHD/YLr/l0luyYF8Co0/7YndxxiyJc05Qrx67ZOFZDO/nbbqO2c83P7w4O8Hd/U9b6gchiWWez87hZFI+Um5RGsxQYZOgiw==
+ id 1j54ag-0000lX-6l; Fri, 21 Feb 2020 09:27:28 +0000
+X-UUID: 8d0c7fd5e41a4c32b5f1089e5166d696-20200221
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=xtQVmXJH4GNtdqJc6//nA3nfWidVuWpS9hv2OZGn7I4=; 
+ b=Z22Ylokvgnb5mQAbC5uzOOjkFyVjnRLONGCj/MjLm5uE7uNgxKkcidqA5JFqr9//3uDFJitPn211/tgiB4jDIgJJMLX2nK3hqJqyTqXFtU6XaljmnL70/HBSKyyHAHQKDzh31AcfSce2PaNbeOR5CEAQfo6xl0Cn/hwbO3cndWQ=;
+X-UUID: 8d0c7fd5e41a4c32b5f1089e5166d696-20200221
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1297650235; Fri, 21 Feb 2020 01:27:18 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 21 Feb 2020 01:27:44 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 21 Feb 2020 17:25:22 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 21 Feb 2020 17:27:39 +0800
+Message-ID: <1582277229.25992.9.camel@mtksdaap41>
+Subject: Re: [PATCH v8 0/6] arm/arm64: mediatek: Fix mmsys device probing
+From: CK Hu <ck.hu@mediatek.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Fri, 21 Feb 2020 17:27:09 +0800
+In-Reply-To: <7a87b486-1622-7f27-f5af-427b94a14c00@collabora.com>
+References: <20200220172147.919996-1-enric.balletbo@collabora.com>
+ <1582259996.1846.7.camel@mtksdaap41>
+ <7a87b486-1622-7f27-f5af-427b94a14c00@collabora.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e40dc78a-034b-4243-515d-08d7b6b021cc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Feb 2020 09:26:29.1703 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: IQAKJOZtFIi4RJviNGgYUDwsOUUHcY7vBTkGvPGzsvT73sTIHv8pj54HosqOxhw/Y64myy/gs1sQnMqR7+wYpg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3737
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_012633_961208_6059FA95 
-X-CRM114-Status: GOOD (  24.38  )
+X-CRM114-CacheID: sfid-20200221_012726_357916_8EAF6D20 
+X-CRM114-Status: GOOD (  30.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.49 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -113,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,161 +84,200 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Peng Fan <peng.fan@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "srinivas.kandagatla@linaro.org" <srinivas.kandagatla@linaro.org>,
- Leonard Crestez <leonard.crestez@nxp.com>, "will@kernel.org" <will@kernel.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- "festevam@gmail.com" <festevam@gmail.com>, "krzk@kernel.org" <krzk@kernel.org>,
- "marcin.juszkiewicz@linaro.org" <marcin.juszkiewicz@linaro.org>,
- dl-linux-imx <linux-imx@nxp.com>, "rui.zhang@intel.com" <rui.zhang@intel.com>,
- "linux@roeck-us.net" <linux@roeck-us.net>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Weiyi Lu <weiyi.lu@mediatek.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ wens@csie.org, Allison Randal <allison@lohutok.net>,
+ mtk01761 <wendell.lin@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ p.zabel@pengutronix.de, frank-w@public-files.de,
+ Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Thomas
+ Gleixner <tglx@linutronix.de>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Matthias Brugger <mbrugger@suse.com>,
+ Fabien Parent <fparent@baylibre.com>, sboyd@kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Daniel
+Hi, Enric:
 
-> Subject: Re: [PATCH V15 RESEND 2/5] thermal: of-thermal: add API for getting
-> sensor ID from DT
+On Fri, 2020-02-21 at 09:56 +0100, Enric Balletbo i Serra wrote:
+> Hi CK,
 > 
-> Hi,
+> Thanks for your quick answer.
 > 
-> On Thu, Feb 20, 2020 at 09:10:25AM +0800, Anson Huang wrote:
-> > This patch adds new API thermal_zone_of_get_sensor_id() to provide the
-> > feature of getting sensor ID from DT thermal zone's node. It's useful
-> > for thermal driver to register the specific thermal zone devices from
-> > DT in a common way.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> > ---
-> > Changes since V14:
-> > 	- improve the commit message and comment, no code change.
-> > ---
-> >  drivers/thermal/of-thermal.c | 65 +++++++++++++++++++++++++++++++++-
-> ----------
-> >  include/linux/thermal.h      | 10 +++++++
-> >  2 files changed, 59 insertions(+), 16 deletions(-)
-> >
-> > diff --git a/drivers/thermal/of-thermal.c
-> > b/drivers/thermal/of-thermal.c index ef0baa9..0f57108 100644
-> > --- a/drivers/thermal/of-thermal.c
-> > +++ b/drivers/thermal/of-thermal.c
-> > @@ -449,6 +449,53 @@ thermal_zone_of_add_sensor(struct device_node
-> > *zone,  }
-> >
-> >  /**
-> > + * thermal_zone_of_get_sensor_id - get sensor ID from a DT thermal
-> > + zone
-> > + * @tz_np: a valid thermal zone device node.
-> > + * @sensor_np: a sensor node of a valid sensor device.
-> > + * @id: the sensor ID returned if success.
-> > + *
-> > + * This function will get sensor ID from a given thermal zone node
-> > + and
-> > + * the sensor node must match the temperature provider @sensor_np.
-> > + *
-> > + * Return: 0 on success, proper error code otherwise.
-> > + */
-> > +
-> > +int thermal_zone_of_get_sensor_id(struct device_node *tz_np,
-> > +				  struct device_node *sensor_np,
-> > +				  u32 *id)
-> > +{
-> > +	struct of_phandle_args sensor_specs;
-> > +	int ret;
-> > +
-> > +	ret = of_parse_phandle_with_args(tz_np,
-> > +					 "thermal-sensors",
-> > +					 "#thermal-sensor-cells",
-> > +					 0,
-> > +					 &sensor_specs);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	if (sensor_specs.np != sensor_np) {
-> > +		of_node_put(sensor_specs.np);
-> > +		return -ENODEV;
-> > +	}
-> > +
-> > +	if (sensor_specs.args_count >= 1) {
+> On 21/2/20 5:39, CK Hu wrote:
+> > Hi, Enric:
+> > 
+> > On Thu, 2020-02-20 at 18:21 +0100, Enric Balletbo i Serra wrote:
+> >> Dear all,
+> >>
+> >> Those patches are intended to solve an old standing issue on some
+> >> Mediatek devices (mt8173, mt2701 and mt2712) in a slightly different way
+> >> to the precedent series.
+> >>
+> >> Up to now both drivers, clock and drm are probed with the same device tree
+> >> compatible. But only the first driver get probed, which in effect breaks
+> >> graphics on those devices.
+> >>
+> >> The version eight of the series tries to solve the problem with a
+> >> different approach than the previous series but similar to how is solved
+> >> on other Mediatek devices.
+> >>
+> >> The MMSYS (Multimedia subsystem) in Mediatek SoCs has some registers to
+> >> control clock gates (which is used in the clk driver) and some registers
+> >> to set the routing and enable the differnet blocks of the display
+> >> and MDP (Media Data Path) subsystem. On this series the clk driver is
+> >> not a pure clock controller but a system controller that can provide
+> >> access to the shared registers between the different drivers that need
+> >> it (mediatek-drm and mediatek-mdp). And the biggest change is, that in
+> >> this version, clk driver is the entry point (parent) which will trigger
+> >> the probe of the corresponding mediatek-drm driver and pass its MMSYS
+> >> platform data for display configuration.
+> > 
+> > When mmsys is a system controller, I prefer to place mmsys in
+> > drivers/soc/mediatek, and it share registers for clock, display, and mdp
+> > driver. This means the probe function is placed in
+> > drivers/soc/mediatek ,its display clock function, mdp clock function are
+> > placed in drivers/clk, display routing are placed in drivers/gpu/drm,
+> > and mdp routing are placed in dirvers/video.
+> > 
 > 
-> For the sake of clarity, move the sanity tests before:
-> 
-> 	if (sensor_specs.args_count > 1)
-> 		pr_warn("...");
-> 
-> 	*id = sensor_specs.args_count ? sensor_specs.args[0] : 0;
+> I understand what you mean but I am not sure this makes the code clearer and
+> useful. The driver in drivers/soc/mediatek will be a simple dummy implementation
+> of a "simple-mfd" device (a driver that simply matches with
+> "mediatek,mt8173-mmsys" and instantiates the "clk-mt8173-mm" and the
+> "mediatek-drm" driver (note that mediatek-mdp" is already instantiated via
+> device-tree).
 > 
 
-Make sense, will improve it in V16.
+It's clear that mmsys is neither a pure clock controller nor a pure
+routing controller for display and mdp. 
 
-> > +		*id = sensor_specs.args[0];
-> > +		WARN(sensor_specs.args_count > 1,
-> > +		     "%pOFn: too many cells in sensor specifier %d\n",
-> > +		     sensor_specs.np, sensor_specs.args_count);
-> > +	} else {
-> > +		*id = 0;
-> > +	}
-> > +
-> > +	of_node_put(sensor_specs.np);
-> > +
-> > +	return 0;
-> > +}
-> > +EXPORT_SYMBOL_GPL(thermal_zone_of_get_sensor_id);
-> > +
-> > +/**
-> >   * thermal_zone_of_sensor_register - registers a sensor to a DT thermal
-> zone
-> >   * @dev: a valid struct device pointer of a sensor device. Must contain
-> >   *       a valid .of_node, for the sensor node.
-> > @@ -499,36 +546,22 @@ thermal_zone_of_sensor_register(struct device
-> *dev, int sensor_id, void *data,
-> >  	sensor_np = of_node_get(dev->of_node);
-> >
-> >  	for_each_available_child_of_node(np, child) {
-> > -		struct of_phandle_args sensor_specs;
-> >  		int ret, id;
-> >
-> >  		/* For now, thermal framework supports only 1 sensor per
-> zone */
-> > -		ret = of_parse_phandle_with_args(child, "thermal-sensors",
-> > -						 "#thermal-sensor-cells",
-> > -						 0, &sensor_specs);
-> > +		ret = thermal_zone_of_get_sensor_id(child, sensor_np, &id);
-> >  		if (ret)
-> >  			continue;
-> >
-> > -		if (sensor_specs.args_count >= 1) {
-> > -			id = sensor_specs.args[0];
-> > -			WARN(sensor_specs.args_count > 1,
-> > -			     "%pOFn: too many cells in sensor specifier %d\n",
-> > -			     sensor_specs.np, sensor_specs.args_count);
-> > -		} else {
-> > -			id = 0;
-> > -		}
+> It'd be nice had a proper device-tree with a "simple-mfd" for mmsys from the
+> beginning representing how really hardwware is, but I think that, change this
+> now, will break backward compatibility.
+
+Maybe this is a solution. Current device tree would work only on old
+kernel version with a bug, so this mean there is no any device tree
+works on kernel version without bug. Why do we compatible with such
+device tree?
+
+Regards,
+CK
+
 > 
-> Please take also the opportunity to factor out the function
-> thermal_zone_of_sensor_register().
+> IMHO I think that considering the clk driver as entry point is fine, but this is
+> something that the clock maintainers should decide.
+> 
+> Also note that this is not only a MT8173 problem I am seeing the same problem on
+> all other Mediatek SoCs.
+> 
+> Thanks.
+> 
+> > Regards,
+> > CK
+> > 
+> >>
+> >> All this series was tested on the Acer R13 Chromebook only.
+> >>
+> >> For reference, here are the links to the old discussions:
+> >>
+> >> * v7: https://patchwork.kernel.org/project/linux-mediatek/list/?series=241217
+> >> * v6: https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
+> >> * v5: https://patchwork.kernel.org/project/linux-mediatek/list/?series=44063
+> >> * v4:
+> >>   * https://patchwork.kernel.org/patch/10530871/
+> >>   * https://patchwork.kernel.org/patch/10530883/
+> >>   * https://patchwork.kernel.org/patch/10530885/
+> >>   * https://patchwork.kernel.org/patch/10530911/
+> >>   * https://patchwork.kernel.org/patch/10530913/
+> >> * v3:
+> >>   * https://patchwork.kernel.org/patch/10367857/
+> >>   * https://patchwork.kernel.org/patch/10367861/
+> >>   * https://patchwork.kernel.org/patch/10367877/
+> >>   * https://patchwork.kernel.org/patch/10367875/
+> >>   * https://patchwork.kernel.org/patch/10367885/
+> >>   * https://patchwork.kernel.org/patch/10367883/
+> >>   * https://patchwork.kernel.org/patch/10367889/
+> >>   * https://patchwork.kernel.org/patch/10367907/
+> >>   * https://patchwork.kernel.org/patch/10367909/
+> >>   * https://patchwork.kernel.org/patch/10367905/
+> >> * v2: No relevant discussion, see v3
+> >> * v1:
+> >>   * https://patchwork.kernel.org/patch/10016497/
+> >>   * https://patchwork.kernel.org/patch/10016499/
+> >>   * https://patchwork.kernel.org/patch/10016505/
+> >>   * https://patchwork.kernel.org/patch/10016507/
+> >>
+> >> Best regards,
+> >>  Enric
+> >>
+> >> Changes in v8:
+> >> - Be a builtin_platform_driver like other mediatek mmsys drivers.
+> >> - New patches introduced in this series.
+> >>
+> >> Changes in v7:
+> >> - Add R-by from CK
+> >> - Add R-by from CK
+> >> - Fix check of return value of of_clk_get
+> >> - Fix identation
+> >> - Free clk_data->clks as well
+> >> - Get rid of private data structure
+> >>
+> >> Enric Balletbo i Serra (2):
+> >>   drm/mediatek: Move MMSYS configuration to include/linux/platform_data
+> >>   clk/drm: mediatek: Fix mediatek-drm device probing
+> >>
+> >> Matthias Brugger (4):
+> >>   drm/mediatek: Use regmap for register access
+> >>   drm/mediatek: Omit warning on probe defers
+> >>   media: mtk-mdp: Check return value of of_clk_get
+> >>   clk: mediatek: mt8173: Switch MMSYS to platform driver
+> >>
+> >>  drivers/clk/mediatek/Kconfig                  |   6 +
+> >>  drivers/clk/mediatek/Makefile                 |   1 +
+> >>  drivers/clk/mediatek/clk-mt2701-mm.c          |  30 +++
+> >>  drivers/clk/mediatek/clk-mt2712-mm.c          |  44 +++++
+> >>  drivers/clk/mediatek/clk-mt8173-mm.c          | 172 ++++++++++++++++++
+> >>  drivers/clk/mediatek/clk-mt8173.c             | 104 -----------
+> >>  drivers/gpu/drm/mediatek/mtk_disp_color.c     |   5 +-
+> >>  drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |   5 +-
+> >>  drivers/gpu/drm/mediatek/mtk_disp_rdma.c      |   5 +-
+> >>  drivers/gpu/drm/mediatek/mtk_dpi.c            |  12 +-
+> >>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |   4 +-
+> >>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c        |  53 +++---
+> >>  drivers/gpu/drm/mediatek/mtk_drm_ddp.h        |   4 +-
+> >>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h   |  56 +-----
+> >>  drivers/gpu/drm/mediatek/mtk_drm_drv.c        | 113 +-----------
+> >>  drivers/gpu/drm/mediatek/mtk_drm_drv.h        |  13 +-
+> >>  drivers/gpu/drm/mediatek/mtk_dsi.c            |   8 +-
+> >>  drivers/gpu/drm/mediatek/mtk_hdmi.c           |   4 +-
+> >>  drivers/media/platform/mtk-mdp/mtk_mdp_comp.c |   6 +
+> >>  include/linux/platform_data/mtk_mmsys.h       |  73 ++++++++
+> >>  20 files changed, 401 insertions(+), 317 deletions(-)
+> >>  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
+> >>  create mode 100644 include/linux/platform_data/mtk_mmsys.h
+> >>
+> > 
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
-Sorry, I do NOT quite understand terms "factor out the function ...", could you please advise more detail?
-
-Thanks,
-Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
