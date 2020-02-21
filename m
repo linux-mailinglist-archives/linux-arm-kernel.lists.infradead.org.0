@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4E03167AF5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:41:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFD79167AF8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:41:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -11,78 +11,78 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=MMuTcXVCCV/FSGLD7PMgtagKHXrNJpMutmyiMSkQFiE=; b=UmH9VWLg3/gD/JNZ/0TTbFGXsf
-	jW3J1zkllPxTZKHkCDoDNQbCDvbaVxraf+VA1hKM1b5eZDXKlsDkoAZRoeGbnr3p5lowgK6ZoP5kD
-	tw59NbxLJWdTDE3apGpyW/b2SHw6qCVxugmLyg2QbDho1kFEQHc/TZQXdVH6O92rZz+G3wWWLlJXs
-	IkbFSDlRvC3I0U75a1UZvbP/NowHVAZbROlKGK6EfhiROdOPZGbLy9fMX6CCNVo35RfEqqukVNPAW
-	DJIcU4af8s/jWMjcjixnznt2V9HNGaKpvB/zNSWQG8oCN14bGucHPuZm1j0g3745vQnVoXAfFehMf
-	GePOo29Q==;
+	bh=GgmVfq3z5/0nIxPmBkYrDlXWyNQTLNT2N/BJsqFAG10=; b=Z2Ee72tdpf3nDuYcQFIedncnbQ
+	DFyl3/Zmhp5iRfldyELn9gBpQVCNpJjiGMyzE9kTKxLZViD+ZXJSbTesvupvppzxD0RJVGzouCLLq
+	T5T/h3V4F6ZZXLxvm9O+oOo5+hkZI+W585HpQ3TsvnEvJRIeK+ePRT8DnAIrjYCyNB09Oz1ntsjqS
+	QVNJR6rMasysGXoWgx9vJjurXKZTA3fHHbJFcxoGO6gpqzVvwAZmcGhzZlcHMDtwGvWqV4nqxm9f8
+	K5VfntOsxa1dGJeuZQ+Oke07WxeACc9bn5KwP5aJfJHC9FFkzs1T0dQWjyMjlrJ0BI8S0+ckJSRXo
+	Wtz8n9dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j55kK-0007X8-1W; Fri, 21 Feb 2020 10:41:24 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j55kf-0007r5-56; Fri, 21 Feb 2020 10:41:45 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j55k9-0007V4-9Y
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 10:41:15 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z7so1414392wrl.13
+ id 1j55kO-0007ka-GX
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 10:41:31 +0000
+Received: by mail-wr1-x444.google.com with SMTP id y11so1445740wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 02:41:12 -0800 (PST)
+ Fri, 21 Feb 2020 02:41:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=references:user-agent:from:to:cc:subject:in-reply-to:date
  :message-id:mime-version;
- bh=nC38uQjZDz3wMRzUDRjp52c9Hy5uCnGBGkiYQn+GewE=;
- b=jFRFDwIWQUOtcfddu0setQkrtBAAsg+QM4SFFjMIfs1t2qtIm0uY7i8crq9De6BNzc
- Dtmli57wfgiv+8hXV/TFGnq9teiaSzgi8MwR1QQlhBXnc+XRDK0+UQ4NT5WD1X+CDrV+
- sJBDa7KYxgxHPFHz4VxYS/x5pJK+EguZ4u447bTGH5MPg5CdBX3mmARRiypZ7ZyZPr2e
- FKJTapXALLySo1mmmxFw0kI+65Y+YiqMiLgxJ67v6SZEA35vfk0WbL1/9p0xWJ6+W3pn
- BizqQ5sktYD0I+kUvccg9I9+ICSSgWYFz/5SmlbSxoi1InaZoRSpRNS//odmTCwExi2r
- spEQ==
+ bh=vbdL14wqd+TXUD1iwQ6ZI35nUpnOaOq+sk6GuqOnbiE=;
+ b=YfODzCNoQjL+RoLE6G4sgkjuvQVwbC1wGb/3uuoOAX+cZ+vm57ycU5Sc+QVisCixDa
+ r/040sq+Uk40zYsNSm7wFoNnJHRoPnIhcpT1S7SEwyrPUvhwNbdZ9P+8GT4CZx42KErf
+ X9XrtzP9Pg+SjqKYBE2T1DlSTsPVowfyOnrVzh6L1Fl/cRoaEg4WnnUw4g2y+CCSAR41
+ fbyyJzg6sNZhmzCRl3w5DcbOLuyjgmkBmnsKjGHOznHgXteWEQfSQdGXhUMAKira8Fnq
+ HP/hvYn7UA6H+yJAhTy8ytah0Mvmfm/7L0P3DOr3Msnxh+hB9A0/E8Q4pNJqPf3MLVMa
+ 8XtQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:references:user-agent:from:to:cc:subject
  :in-reply-to:date:message-id:mime-version;
- bh=nC38uQjZDz3wMRzUDRjp52c9Hy5uCnGBGkiYQn+GewE=;
- b=jME76+cg2uVouMxXmA33j+Wps7qCCBky8syB8ataSsOBbpxfcVl0TTuMx41fmbKUvj
- utAAFvneSwYmR/ezWxsXhshaisp+VG+4mngGJDII4M4C1rDfwIh+6L1tHmPsr48uCjKQ
- HIhY2MQ4QAvWm4UrdBU7AMQzyDuHgbp7RcpUfMevcC94afYsq5mv2Hor/JQIJjbfHKtv
- Ei/O/QI9dW6GmYeg0Kw1fPEJDGkrSs1wqK+D2w8bGV7Lmmhl1qRXfXkQ1YiGRslwA6md
- b9alYKCzMAg2+dZo1je4CQnnOGoLNHtHEzxRM4qA9G8zsv+5geeLzJ4RTGiYHVURjHHG
- f2Lw==
-X-Gm-Message-State: APjAAAVx10IJttE9/z7toiZvAUiM4ka6n5I9tV41YZKCZh3FDCxUK0WY
- s6tJMqqRL6YjPjHdPQz0GhLKDg==
-X-Google-Smtp-Source: APXvYqy2Z7KXJqoiyg14kzMzg6EQiEnMDyNve9Bd9jHVjubhjmti6d9+RBVLDiLaHEsRbCPSAAbbmw==
-X-Received: by 2002:adf:a453:: with SMTP id e19mr45872540wra.48.1582281671269; 
- Fri, 21 Feb 2020 02:41:11 -0800 (PST)
+ bh=vbdL14wqd+TXUD1iwQ6ZI35nUpnOaOq+sk6GuqOnbiE=;
+ b=Z7VK/JUQpb76FvyJUHxrPl0Hb5xYgMeqBgsvVD9j/yvAkuoZI6BaLAcwOGl+4Ei75g
+ MLJKqs3lWEQKtal1ZVUWlYI+HxieSR7OhcOj65oiYDZS2MB1z0CZc7jkpjHnjPtNV/Ga
+ ApMyKnbOgXpU9R4QYFN5TnBUTedzwVZNKl/o7o7EJ8mf6xBH2jggQyGWTUv1M+vXHuaq
+ cOo2SmxhCXv7404uiuYFUEI8tYMcvfte43Gtq5VUTXnl8QVggRSW2Ed1mgZdE228WHeF
+ kGpUAzqmdLAwPJ0SR3iplcouneTjEzQFqI4j//UTgDtKEuTr1LZj01G0ghWZk5674jfM
+ FSRQ==
+X-Gm-Message-State: APjAAAUS+AaKr311SEQdVX7gKpwul7fZWi9Og21goNQSbRQ8jK2bNCTl
+ yPs26AShli3MBDOt4NVz2psJ7A==
+X-Google-Smtp-Source: APXvYqyoHnkyxs6lUkgFkTdeB46dWH5MVKdPDqMKHGWBBWrmCgoMEtbFZmYRbm2shz9WS4nVuZDt2Q==
+X-Received: by 2002:a5d:6284:: with SMTP id k4mr49219802wru.398.1582281686837; 
+ Fri, 21 Feb 2020 02:41:26 -0800 (PST)
 Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
  [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id q9sm3437231wrx.18.2020.02.21.02.41.10
+ by smtp.gmail.com with ESMTPSA id b67sm3501249wmc.38.2020.02.21.02.41.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 21 Feb 2020 02:41:10 -0800 (PST)
+ Fri, 21 Feb 2020 02:41:26 -0800 (PST)
 References: <20200220205711.77953-1-martin.blumenstingl@googlemail.com>
- <20200220205711.77953-2-martin.blumenstingl@googlemail.com>
+ <20200220205711.77953-3-martin.blumenstingl@googlemail.com>
 User-agent: mu4e 1.3.3; emacs 26.3
 From: Jerome Brunet <jbrunet@baylibre.com>
 To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  broonie@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
  alsa-devel@alsa-project.org, devicetree@vger.kernel.org,
  linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH 1/3] ASoC: meson: aiu: Document Meson8 and Meson8b support
- in the dt-bindings
-In-reply-to: <20200220205711.77953-2-martin.blumenstingl@googlemail.com>
-Date: Fri, 21 Feb 2020 11:41:09 +0100
-Message-ID: <1jtv3k2pfe.fsf@starbuckisacylon.baylibre.com>
+Subject: Re: [PATCH 2/3] ASoC: meson: aiu: introduce a struct for platform
+ specific information
+In-reply-to: <20200220205711.77953-3-martin.blumenstingl@googlemail.com>
+Date: Fri, 21 Feb 2020 11:41:25 +0100
+Message-ID: <1jsgj42pey.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_024113_359530_F45341C9 
-X-CRM114-Status: GOOD (  11.69  )
+X-CRM114-CacheID: sfid-20200221_024128_610385_03E6FDFB 
+X-CRM114-Status: GOOD (  17.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,30 +110,88 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu 20 Feb 2020 at 21:57, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 
-> The AIU audio output controller on the Meson8 and Meson8b SoC families
-> is compatible with the one found in the GXBB family. Document the
-> compatible string for these two older SoCs.
+> Introduce a struct aiu_platform_data to make the driver aware of
+> platform specific information. Convert the existing check for the
+> internal stereo audio codec (only available on GXL) to this new struct.
+> Support for the 32-bit SoCs will need this as well because the
+> AIU_CLK_CTRL_MORE register doesn't have the I2S divider bits (and we
+> need to use the I2S divider from AIU_CLK_CTRL instead).
 >
 > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
 
 > ---
->  Documentation/devicetree/bindings/sound/amlogic,aiu.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  sound/soc/meson/aiu.c | 19 ++++++++++++++++---
+>  sound/soc/meson/aiu.h |  5 +++++
+>  2 files changed, 21 insertions(+), 3 deletions(-)
 >
-> diff --git a/Documentation/devicetree/bindings/sound/amlogic,aiu.yaml b/Documentation/devicetree/bindings/sound/amlogic,aiu.yaml
-> index 3ef7632dcb59..a61bccf915d8 100644
-> --- a/Documentation/devicetree/bindings/sound/amlogic,aiu.yaml
-> +++ b/Documentation/devicetree/bindings/sound/amlogic,aiu.yaml
-> @@ -21,6 +21,8 @@ properties:
->        - enum:
->          - amlogic,aiu-gxbb
->          - amlogic,aiu-gxl
-> +        - amlogic,aiu-meson8
-> +        - amlogic,aiu-meson8b
->        - const:
->            amlogic,aiu
+> diff --git a/sound/soc/meson/aiu.c b/sound/soc/meson/aiu.c
+> index d3e2d40e9562..38209312a8c3 100644
+> --- a/sound/soc/meson/aiu.c
+> +++ b/sound/soc/meson/aiu.c
+> @@ -273,6 +273,11 @@ static int aiu_probe(struct platform_device *pdev)
+>  	aiu = devm_kzalloc(dev, sizeof(*aiu), GFP_KERNEL);
+>  	if (!aiu)
+>  		return -ENOMEM;
+> +
+> +	aiu->platform = device_get_match_data(dev);
+> +	if (!aiu->platform)
+> +		return -ENODEV;
+> +
+>  	platform_set_drvdata(pdev, aiu);
+>  
+>  	ret = device_reset(dev);
+> @@ -322,7 +327,7 @@ static int aiu_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	/* Register the internal dac control component on gxl */
+> -	if (of_device_is_compatible(dev->of_node, "amlogic,aiu-gxl")) {
+> +	if (aiu->platform->has_acodec) {
+>  		ret = aiu_acodec_ctrl_register_component(dev);
+>  		if (ret) {
+>  			dev_err(dev,
+> @@ -344,9 +349,17 @@ static int aiu_remove(struct platform_device *pdev)
+>  	return 0;
+>  }
+>  
+> +static const struct aiu_platform_data aiu_gxbb_pdata = {
+> +	.has_acodec = false,
+> +};
+> +
+> +static const struct aiu_platform_data aiu_gxl_pdata = {
+> +	.has_acodec = true,
+> +};
+> +
+>  static const struct of_device_id aiu_of_match[] = {
+> -	{ .compatible = "amlogic,aiu-gxbb", },
+> -	{ .compatible = "amlogic,aiu-gxl", },
+> +	{ .compatible = "amlogic,aiu-gxbb", .data = &aiu_gxbb_pdata },
+> +	{ .compatible = "amlogic,aiu-gxl", .data = &aiu_gxl_pdata },
+>  	{}
+>  };
+>  MODULE_DEVICE_TABLE(of, aiu_of_match);
+> diff --git a/sound/soc/meson/aiu.h b/sound/soc/meson/aiu.h
+> index 06a968c55728..ab003638d5e5 100644
+> --- a/sound/soc/meson/aiu.h
+> +++ b/sound/soc/meson/aiu.h
+> @@ -27,11 +27,16 @@ struct aiu_interface {
+>  	int irq;
+>  };
+>  
+> +struct aiu_platform_data {
+> +	bool has_acodec;
+> +};
+> +
+>  struct aiu {
+>  	struct clk *pclk;
+>  	struct clk *spdif_mclk;
+>  	struct aiu_interface i2s;
+>  	struct aiu_interface spdif;
+> +	const struct aiu_platform_data *platform;
+>  };
+>  
+>  #define AIU_FORMATS (SNDRV_PCM_FMTBIT_S16_LE |	\
 
 
 _______________________________________________
