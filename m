@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A70B91674C0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:26:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23A0B1674C4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 09:28:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d4AaKehY8LCKyEpogQVurTxGQlMKL/sSGiuV5FVsdBE=; b=plQbkCVvcz/PN7
-	Y0f7poibx1mSBV2c64tm/dxOqiF/MuYLavnNublzkpPd6oxuj55amBJ8sKmSOw7rPs6Vkn6JwCbti
-	4f6qf4SqNPQl3SwfZhE+Knph0RLSTB0S9Bq+C9zry3d7BOVABl2qdPFzTj4yjDW000rA1pNqmmgJ6
-	gg4UyY1VPyRO9Z9wFQIatdHlk5VpI5G5B3SnHEIT56ytOA9wkL2XnUdNtfFCwMQaSq1aY1rXW3JNU
-	hxCWUj+xswtBm6IZU1oz/p0CF6mkGhQZiRRx6A14OndzIKEk0AU/ei/DB6TrEYcQoi/Rmj0feYcgl
-	y8NY0FBTAbIj0NyzzXwA==;
+	List-Owner; bh=yeDnYBMYxJ8YqrZC7KuzGK4E3E9PhG2hhAmhzxT1rAQ=; b=FMGGpuSw1iESwb
+	HdJdIgxUsMMyoNsJ/NadwPjii+ArRRBJ+sts3ipduebcqtnbz1IvSS7XKUwI/anRT9K+gEN5fav7n
+	Vi0d4ObOC5RZNl47qvYGAShOSb+9M8FwluZ0TFjYtv89qT31f6/NzXj7tCFWf+5TKpQNqXF92YkAX
+	6dpPPP8KK9eSAAS6XWJX2Zw+Ku4Vgxo+I/1lUgNTw/B/C+3izidNt4RZosSJkaYsNuV7lwNxcNKaz
+	Lxa6VElsoh2fTWFCYASVqkS/cb7MrC+iY6yc77mNl85KpB1xRnD7RXlSM+JqowbUS3yl4zOq1TqYi
+	QS8+gO3LV/a/kjWbLJ5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j53dF-0005fH-Lt; Fri, 21 Feb 2020 08:25:57 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j53fZ-0006AE-SI; Fri, 21 Feb 2020 08:28:21 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j53d6-0005eE-KA
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:25:50 +0000
-Received: by mail-wr1-x442.google.com with SMTP id w15so950342wru.4
+ id 1j53fR-00069D-Bi
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 08:28:14 +0000
+Received: by mail-wm1-x342.google.com with SMTP id p9so730765wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 00:25:47 -0800 (PST)
+ Fri, 21 Feb 2020 00:28:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:autocrypt:organization:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=TXvq+EuElcafseyPa7Xn9BIOxypv/HGxoGPqvN1nfZA=;
- b=0vR7OpRWb43/h5/gI3hfsOzbo8AUJRSYzECLw98e+lDQF7+xvGznDeOc2G3WpPAQkx
- msqWiqCw5bHAate/jXi91zGVeflcUoUvr2K9M+T85G0KWwTRcpU/eNYQ/hSaG/FK++El
- ZOP4g5IrXVoiB1UhWTS5xu/wvkdVO+l0TQUB3w5JPSSv/1rF1QYbx0aaqPvh+zd1UxIZ
- hkvUB1iXdtefkWb8Le7+KtoKPUVs3Zu3NLrrrNO2chU9C/6+8FVt4Q2PZbBrm2xkcR/t
- fsAq+07bhFEbHFLwd8V0UDLiibpnqxdi5ANL8EkyNxwlXaPJMsRpqeXnrXH8Non/ak5F
- Tfvg==
+ bh=fCJ3KmigEs8DpBpdDcdTMD9jPsQq/gPkh1GOkuMWIrk=;
+ b=Ph1daRZgQrXTOABYhqK6etF+hn4Krad4bRIU/5HaO4vhUNxhFornWMCiOjZQ0N4c67
+ j4cagpxl8XlE1TRNwmzURH9TrAW+rOsoXRXxUgTnPsFNOEhktk8REO6+Room1yYQI+yh
+ H1iA0XYP9Po7bLwxW5m1QLPEihZEpxvzXcginRu4o4GYKqVbtEvXVeTGoszx8LzxoScc
+ 77mwF9lyrQkNO3bLsKDFOhqg0YUK1oAKveDFUXfsDbtGXFp6O5Nibx22VDTbTBgZkIsr
+ kUvMsDi3zULvXWUOL/6LCnBv0gfpQs5Lpz96N+O0vNe4HgluWdMcRSnVnIeZc1HufT3A
+ G4dw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=TXvq+EuElcafseyPa7Xn9BIOxypv/HGxoGPqvN1nfZA=;
- b=Sq812BsKmcVDHvVo9GxtIVV9etxwltds7mnlxNaCODCUs10/xbuEv+4N46pM4ftlIt
- HNR0Z82qFNOvICPnCrFe+u3UX48CDKtFlqU9zdY8vFdtdkFr7KOF/Ihgyt5N/NVGpKNc
- 4NWiudeIny+CYxJcSJF25bDcqDztHx6iSUNQAN/g/Xb8Y/BF5qCXNRUl2DyHVZIHjEmo
- 4/D557SxDLfI0yYhqMCe5t5RUGwo0qnwxFAja1t3dtjGtm1YbxuNEUKIj9mic6W1FOTj
- L/8Gee1VZDIL4lzOTVoUVrjajrbPafHFmzwKb6NaoLQ3HQkmMRKpzYfWxfw4knkzb/zY
- WM+A==
-X-Gm-Message-State: APjAAAUi2Gg4h/yVbDjPCX0rsvLoYkKDJ/WFnlow1mGF8sOd6NsC/2bK
- sK6sACuPWEKE1jb66rtQVlWJyw==
-X-Google-Smtp-Source: APXvYqwWNTLg5jYxYhcBRVc0+kdrHr6iJ8Fa1H5VxAKW7NSwQQEg6HjJBqUFt17tnQm+zo2bJx1O5A==
-X-Received: by 2002:a5d:5347:: with SMTP id t7mr47046590wrv.401.1582273546143; 
- Fri, 21 Feb 2020 00:25:46 -0800 (PST)
+ bh=fCJ3KmigEs8DpBpdDcdTMD9jPsQq/gPkh1GOkuMWIrk=;
+ b=k+WJOI05qkIORHEbze4TKCH/TmA9lhafRRNvZuUCWk+rVOUJOUd2V24oHzuoYF1lq9
+ C/zBRaM2E2SeiRfgIoTr/r9cZ7yhjCSqsOIT2MYV//fLm7BaEhXCgHh3Cgt0w6KxzPdc
+ IrCfGJ0GMMTGF24/vhp4qIlBYIvlxH3FLUCH55DmbV4vCBv4gzxfBHF/mtkJDvqCiwVA
+ migCAi2PF1c0X2O/NUg1JBgjnYWfvhG1P8n6hAAtHxdhQs++7JgEqQ93EKmd67znNYlL
+ fwNMJQqQroQHCwLSqVaZhnXSKT7WE24USuorBbLJ3re7nyOtsCkSafcWzrBPajzwSh2T
+ mCZg==
+X-Gm-Message-State: APjAAAX8vRKAnJQhqCmNRk6J2V4iS510CXSGjokE6hWnRPxNV2CkITNT
+ XHtCO3L383BGDyIj9J2098PfiQ==
+X-Google-Smtp-Source: APXvYqwzjlP0HTv4FL0F1MqSuF9uKA6+BP8tD+yxfzTz5t4OJUiTFFRHyLp2o35NMyA52dyHPuzrbA==
+X-Received: by 2002:a1c:7919:: with SMTP id l25mr2186757wme.135.1582273691154; 
+ Fri, 21 Feb 2020 00:28:11 -0800 (PST)
 Received: from ?IPv6:2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858?
  ([2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858])
- by smtp.gmail.com with ESMTPSA id f65sm2752337wmf.29.2020.02.21.00.25.44
+ by smtp.gmail.com with ESMTPSA id m9sm3008198wrx.55.2020.02.21.00.28.10
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 21 Feb 2020 00:25:45 -0800 (PST)
-Subject: Re: [PATCH] dt-bindings: power: Fix dt_binding_check error
-To: Jianxin Pan <jianxin.pan@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
- devicetree@vger.kernel.org
-References: <1582269169-17557-1-git-send-email-jianxin.pan@amlogic.com>
+ Fri, 21 Feb 2020 00:28:10 -0800 (PST)
+Subject: Re: [PATCH] clk: meson: meson8b: set audio output clock hierarchy
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, jbrunet@baylibre.com
+References: <20200220204433.67113-1-martin.blumenstingl@googlemail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -115,23 +115,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <b3da2987-a226-b230-4379-1ff4d57ef7fe@baylibre.com>
-Date: Fri, 21 Feb 2020 09:25:44 +0100
+Message-ID: <74a8613c-ba30-5f42-9edd-b5af1d7f330c@baylibre.com>
+Date: Fri, 21 Feb 2020 09:28:09 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <1582269169-17557-1-git-send-email-jianxin.pan@amlogic.com>
+In-Reply-To: <20200220204433.67113-1-martin.blumenstingl@googlemail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_002548_682926_BEB8F976 
-X-CRM114-Status: GOOD (  14.77  )
+X-CRM114-CacheID: sfid-20200221_002813_400236_30965B87 
+X-CRM114-Status: GOOD (  15.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -149,37 +149,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Victor Wan <victor.wan@amlogic.com>, linux-pm@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/02/2020 08:12, Jianxin Pan wrote:
-> Missing ';' in the end of secure-monitor example node.
+On 20/02/2020 21:44, Martin Blumenstingl wrote:
+> The aiu devices peripheral clocks needs the aiu and aiu_glue clocks to
+> operate. Reflect this hierarchy in the clock tree.
 > 
-> Fixes: f50b4108ede1 ("dt-bindings: power: add Amlogic secure power domains bindings")
-> Reported-by: Rob Herring<robh+dt@kernel.org>
-> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> Fixes: e31a1900c1ff73 ("meson: clk: Add support for clock gates")
+> Suggested-by: Jerome Brunet <jbrunet@baylibre.com>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > ---
->  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> This takes Jerome's patch for GXBB and ports it to the Meson8* SoCs.
+> Hence the Suggested-by.
 > 
-> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-> index af32209..bc4e037 100644
-> --- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-> @@ -36,5 +36,5 @@ examples:
->              compatible = "amlogic,meson-a1-pwrc";
->              #power-domain-cells = <1>;
->          };
-> -    }
-> +    };
+> 
+>  drivers/clk/meson/meson8b.c | 21 +++++++++++++--------
+>  1 file changed, 13 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
+> index 9fd31f23b2a9..34a70c4b4899 100644
+> --- a/drivers/clk/meson/meson8b.c
+> +++ b/drivers/clk/meson/meson8b.c
+> @@ -2605,14 +2605,6 @@ static MESON_GATE(meson8b_spi, HHI_GCLK_MPEG0, 30);
+>  static MESON_GATE(meson8b_i2s_spdif, HHI_GCLK_MPEG1, 2);
+>  static MESON_GATE(meson8b_eth, HHI_GCLK_MPEG1, 3);
+>  static MESON_GATE(meson8b_demux, HHI_GCLK_MPEG1, 4);
+> -static MESON_GATE(meson8b_aiu_glue, HHI_GCLK_MPEG1, 6);
+> -static MESON_GATE(meson8b_iec958, HHI_GCLK_MPEG1, 7);
+> -static MESON_GATE(meson8b_i2s_out, HHI_GCLK_MPEG1, 8);
+> -static MESON_GATE(meson8b_amclk, HHI_GCLK_MPEG1, 9);
+> -static MESON_GATE(meson8b_aififo2, HHI_GCLK_MPEG1, 10);
+> -static MESON_GATE(meson8b_mixer, HHI_GCLK_MPEG1, 11);
+> -static MESON_GATE(meson8b_mixer_iface, HHI_GCLK_MPEG1, 12);
+> -static MESON_GATE(meson8b_adc, HHI_GCLK_MPEG1, 13);
+>  static MESON_GATE(meson8b_blkmv, HHI_GCLK_MPEG1, 14);
+>  static MESON_GATE(meson8b_aiu, HHI_GCLK_MPEG1, 15);
+>  static MESON_GATE(meson8b_uart1, HHI_GCLK_MPEG1, 16);
+> @@ -2659,6 +2651,19 @@ static MESON_GATE(meson8b_vclk2_vencl, HHI_GCLK_OTHER, 25);
+>  static MESON_GATE(meson8b_vclk2_other, HHI_GCLK_OTHER, 26);
+>  static MESON_GATE(meson8b_edp, HHI_GCLK_OTHER, 31);
 >  
+> +/* AIU gates */
+> +#define MESON_AIU_GLUE_GATE(_name, _reg, _bit) \
+> +	MESON_PCLK(_name, _reg, _bit, &meson8b_aiu_glue.hw)
+> +
+> +static MESON_PCLK(meson8b_aiu_glue, HHI_GCLK_MPEG1, 6, &meson8b_aiu.hw);
+> +static MESON_AIU_GLUE_GATE(meson8b_iec958, HHI_GCLK_MPEG1, 7);
+> +static MESON_AIU_GLUE_GATE(meson8b_i2s_out, HHI_GCLK_MPEG1, 8);
+> +static MESON_AIU_GLUE_GATE(meson8b_amclk, HHI_GCLK_MPEG1, 9);
+> +static MESON_AIU_GLUE_GATE(meson8b_aififo2, HHI_GCLK_MPEG1, 10);
+> +static MESON_AIU_GLUE_GATE(meson8b_mixer, HHI_GCLK_MPEG1, 11);
+> +static MESON_AIU_GLUE_GATE(meson8b_mixer_iface, HHI_GCLK_MPEG1, 12);
+> +static MESON_AIU_GLUE_GATE(meson8b_adc, HHI_GCLK_MPEG1, 13);
+> +
+>  /* Always On (AO) domain gates */
+>  
+>  static MESON_GATE(meson8b_ao_media_cpu, HHI_GCLK_AO, 0);
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
