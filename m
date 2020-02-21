@@ -2,83 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CF85167AD7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:33:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88C57167AD6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:33:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sNudifTx/bFtfSVI1mPMs77wVZPTsUFxDO3TUGKcM/I=; b=Cc3aZzio5SGhv1
-	xLNsTeQeD2vY/uOZSWPwMsyymsCXO2y69wCk24CwxivponvH7hUWkvULW9EmUC1w5orvxofdA+Y63
-	GpUTuR/OLHp7RCn7otWS+iZDR7/IAQktIjZs1ZrLoaJn/nsdA6XpIdOpuv+SeJqPvZl9ru4FYEjwv
-	NELbsvZaEwV839GGUuWft8i3tT9qIq1gDT0zpJTPbb5eZHPu+MTwH5RxfwY+TomAlatQKCbtZpN/N
-	W0gmWyvnkkiP+YlHk1Za0shd1oVNqUJzF4bVeknzGGSjgJ3HNaJLps1uM8JtBnU9cZgtfdh6vfj8K
-	psKsKj+4daVQe/TvLAIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zscO1J3voZi9AjXF8fhRUL8cPZEeUMr8KJ96hGow2xw=; b=XdxJenn5qtOmv1aMPR3EvUdu2
+	Gxv1nvhZwvh6XbFM5MW/ExKf2E7UbsxHVjkF0xpklnl3QQQFM0sIKROY8Xzj0tUTFtjVAKaOFFDCD
+	aCsDG3UGrJIQMg2PBBmmEB1a9C7W2Xqt4mIWWoYHGoOI88Z5oYYq2/WQGqym9qH6xQLjdZWg2ByeN
+	38faYRMCzmnM/TtWsXeWKG4krXQ1yceKbRy3xzUxVJ1uJKxdBwZw1H7yr7Dxdt9E4U1QJA3cJE8xP
+	JB/RrzVNE01iYEE3mXjDJM5xtaf76SuYwgc7uo9Fr7GEYScJdRdu4ERdv19jnYiM5t0dXEU81OW72
+	BVrR+gPhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j55cs-0003cV-Ly; Fri, 21 Feb 2020 10:33:43 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j55cj-0003c4-EB; Fri, 21 Feb 2020 10:33:34 +0000
-X-UUID: b25c21c3736e4ecf9c580e5eb5460010-20200221
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=9GF943aZdupXgIlWbr1tM9dp52aP/OtDRXFu16nBKsU=; 
- b=u3AJW8nLcjG4YYRvG+aYOWurkYxWQrMb9Q6bFv2Edoq+9llIMsJn3ZjZP1011vNZw8o8HfizgaiksK29NQHvWSrBXZmQSCiaGDUxvmDf4rt8TseCiGDJ/AwhFqr4hx7pBArZk9p0VLI8Mue2K47ZgRYPcIjcWiACtcBsR/g1h+Q=;
-X-UUID: b25c21c3736e4ecf9c580e5eb5460010-20200221
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1675544727; Fri, 21 Feb 2020 02:33:31 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 21 Feb 2020 02:23:58 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 21 Feb 2020 18:22:46 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 21 Feb 2020 18:22:44 +0800
-Message-ID: <1582280608.19053.27.camel@mtkswgap22>
-Subject: Re: [PATCH v7 0/7] Add basic SoC support for mt6765
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Stephen Boyd <sboyd@kernel.org>
-Date: Fri, 21 Feb 2020 18:23:28 +0800
-In-Reply-To: <158213769281.184098.14491216159423631295@swboyd.mtv.corp.google.com>
-References: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
- <158155109134.184098.10100489231587620578@swboyd.mtv.corp.google.com>
- <bf5e1a64-1aaa-e1e0-00bf-c0e750dd27ed@gmail.com>
- <1581999138.19053.21.camel@mtkswgap22>
- <2c6728a5-7789-4ca2-a173-67df57fe5f1e@gmail.com>
- <158213769281.184098.14491216159423631295@swboyd.mtv.corp.google.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+	id 1j55cO-0003NX-He; Fri, 21 Feb 2020 10:33:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j55cF-0003MR-T0
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 10:33:05 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4350131B;
+ Fri, 21 Feb 2020 02:32:59 -0800 (PST)
+Received: from [10.37.12.243] (unknown [10.37.12.243])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 21EB53F68F;
+ Fri, 21 Feb 2020 02:32:55 -0800 (PST)
+Subject: Re: [RESEND PATCH v2 0/2] Enable Odroid-XU3/4 to use Energy Model and
+ Energy Aware Scheduler
+To: Krzysztof Kozlowski <krzk@kernel.org>
+References: <20200220095636.29469-1-lukasz.luba@arm.com>
+ <20200220180040.GA8338@kozik-lap>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <597f1475-754c-d77a-b599-0fa07d8ee948@arm.com>
+Date: Fri, 21 Feb 2020 10:32:53 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FDD232F52A5E189BADF5D5BF6B5B255DDCAC9D3340344A6748231A437ADA98A62000:8
-X-MTK: N
+In-Reply-To: <20200220180040.GA8338@kozik-lap>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_023333_485220_CEBABCB3 
-X-CRM114-Status: GOOD (  17.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200221_023304_029353_1D53DA40 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,79 +65,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Loda Chou <loda.chou@mediatek.com>, Fabien
- Parent <fparent@baylibre.com>, Mars Cheng <mars.cheng@mediatek.com>, Will
- Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
- Ryder Lee <Ryder.Lee@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
- Evan Green <evgreen@chromium.org>, linux-arm-kernel@lists.infradead.org,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, mtk01761 <wendell.lin@mediatek.com>,
- Owen Chen <owen.chen@mediatek.com>, devicetree@vger.kernel.org,
- Joerg Roedel <jroedel@suse.de>, Marc Zyngier <marc.zyngier@arm.com>,
- Sean Wang <Sean.Wang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Yong Wu <yong.wu@mediatek.com>, CC Hwang <cc.hwang@mediatek.com>,
- linux-kernel@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
+ b.zolnierkie@samsung.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ cw00.choi@samsung.com, kyungmin.park@samsung.com, kgene@kernel.org,
+ myungjoo.ham@samsung.com, dietmar.eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Matthias Brugger and Stephen Boyd wrote:
-> Quoting Matthias Brugger (2020-02-18 08:45:42)
-> > 
-> > On 18/02/2020 05:12, Macpaul Lin wrote:
-> > > On Sat, 2020-02-15 at 02:47 +0100, Matthias Brugger wrote:
-> > > 
-> > > Hi Stephen,
-> > > 
-> > >> Hi Stephen,
-> > >>
-> > >> On 13/02/2020 00:44, Stephen Boyd wrote:
-> > >>> Quoting Macpaul Lin (2020-02-07 01:20:43)
-> > >>>> This patch adds basic SoC support for Mediatek's new 8-core SoC,
-> > >>>> MT6765, which is mainly for smartphone application.
-> > >>>
-> > >>> Clock patches look OK to me. Can you resend them without the defconfig
-> > >>> and dts patches and address Matthias' question?
-> > >>>
-> > >>
-> > >> I'm not sure if I understand you. Do you prefer to have just the clock parts
-> > >> send as an independent version so that you can easier apply the patches to your
-> > >> tree?
-> > >>
-> > >> Patch 2, 5, 6 and 7 should go through my tree.
-> > >> So do you want a series with patches 1, 3 and 4?
-> > >>
-> > >> Regards,
-> > >> Matthias
-> > > 
-> > > Yup, I've got a little bit confused, too.
-> > > Should I separate and resend these patches into 2 patch sets?
-> > > The 1st patch set includes #1, #3, and #4?
-> > > And the other includes #2, #5, #6, and #7?
-> > > 
-> > 
-> > Yes please do so. I think that's what Stephen referred to.
-> > 
-> 
-> If those are the ones that aren't dts or defconfig patches sounds good
-> to me.
+Hi Krzysztof,
 
-Here comes the spilt patch sets.
-1. [New] Add basic clock support for mt6765.
-  https://patchwork.kernel.org/cover/11395997/
-2. [PATCH v8] Add basic SoC support for mt6765
-  https://patchwork.kernel.org/patch/11396019/
-  But it's a little bit strange I cannot find patch v8's cover-letter
-  in patchwork. Only records which patches has been taken from v7.
-  If resend cover-letter is required please let me know.
+On 2/20/20 6:00 PM, Krzysztof Kozlowski wrote:
+> On Thu, Feb 20, 2020 at 09:56:34AM +0000, Lukasz Luba wrote:
+>> Hi all,
+>>
+>> This is just a resend, now with proper v2 in the patches subject.
+>>
+>> The Odroid-XU4/3 is a decent and easy accessible ARM big.LITTLE platform,
+>> which might be used for research and development.
+>>
+>> This small patch set provides possibility to run Energy Aware Scheduler (EAS)
+>> on Odroid-XU4/3 and experiment with it.
+>>
+>> The patch 1/2 provides 'dynamic-power-coefficient' in CPU DT nodes, which is
+>> then used by the Energy Model (EM).
+>> The patch 2/2 enables SCHED_MC (which adds another level in scheduling domains)
+>> and enables EM making EAS possible to run (when schedutil is set as a CPUFreq
+>> governor).
+>>
+>> 1. Test results
+>>
+>> Two types of different tests have been executed. The first is energy test
+>> case showing impact on energy consumption of this patch set. It is using a
+>> synthetic set of tasks (rt-app based). The second is the performance test
+>> case which is using hackbench (less time to complete is better).
+>> In both tests schedutil has been used as cpufreq governor. In all tests
+>> PROVE_LOCKING has not been compiled into the kernels.
+>>
+>> 1.1 Energy test case
+>>
+>> 10 iterations of 24 periodic rt-app tasks (16ms period, 10% duty-cycle)
+>> with energy measurement. The cpufreq governor - schedutil. Unit is Joules.
+>> The energy is calculated based on hwmon0 and hwmon3 power1_input.
+>> The goal is to save energy, lower is better.
+>>
+>> +-----------+-----------------+------------------------+
+>> |           | Without patches | With patches           |
+>> +-----------+--------+--------+----------------+-------+
+>> | benchmark |  Mean  | RSD*   | Mean           | RSD*  |
+>> +-----------+--------+--------+----------------+-------+
+>> | 24 rt-app |  21.56 |  1.37% |  19.85 (-9.2%) | 0.92% |
+>> |    tasks  |        |        |                |       |
+>> +-----------+--------+--------+----------------+-------+
+>>
+>> 1.2 Performance test case
+>>
+>> 10 consecutive iterations of hackbench (hackbench -l 500 -s 4096),
+>> no delay between two successive executions.
+>> The cpufreq governor - schedutil. Units in seconds.
+>> The goal is to see not regression, lower completion time is better.
+>>
+>> +-----------+-----------------+------------------------+
+>> |           | Without patches | With patches           |
+>> +-----------+--------+--------+----------------+-------+
+>> | benchmark | Mean   | RSD*   | Mean           | RSD*  |
+>> +-----------+--------+--------+----------------+-------+
+>> | hackbench |  8.15  | 2.86%  |  7.95 (-2.5%)  | 0.60% |
+>> +-----------+--------+--------+----------------+-------+
+>>
+>> *RSD: Relative Standard Deviation (std dev / mean)
+> 
+> Nice measurements!
+
+Glad to hear that.
+
+> 
+> Applied both, thank you.
+> 
+> Best regards,
+> Krzysztof
+> 
+
+Thank you for applying this.
 
 Regards,
-Macpaul Lin
+Lukasz
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
