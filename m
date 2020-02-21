@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F25916877B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:35:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC16F16877E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:36:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k8RjYJKq2iCM+yGgCZ6w8TvK+BHkuK6t46lsMdPU2m0=; b=rooWtMI2+fqaxk
-	M3Y0GBKHY8ffej8DEFKCsLOmw2wiRJDXt+g7yAaHl13onYIpAKR2YQvrSyJHcHDvic3FNCrbaHs95
-	4OMMhSrk1c3mwheQ8M0joDb/qzXykjW1lv8mNStMrThoY04icxDnQo7FxjzhUXIIKJ2TxT4DbR4gH
-	sIhoNT+8J6xcMN7re7/EZhWIcfPW6zCOz0BZX+Ec494TqgSPQNhxPLdZ2/F6ivcHdP8nSuoRD97c8
-	miVp6mY8lzsb/y0l6uyJAYkZ9kYYtBOcuxe7C7TYxx+HXOkEszywy41tnZ7X+btwdpdTDg74s+yBL
-	CKRquzI1wkkwTUT47IzA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sCQpiJf6KNERRRSBwjGlIYoLm9RunxaZ7tFpjasNGpY=; b=ECWasR+9aAb8hu
+	BxZUibJa8DxneCffwqJ8h75tiBDaRs+k8l7fuVYA16sC6bw/RVxXYiu6DhzJAkk6VSZZmybgy0qke
+	Nz8Uvi45ojnoxCl83GHvtutdyH67WlI3oLQ3IRQz589lkth9HrH3dknjHRX6I59Pnaci/me9FM0aL
+	cg9Te3Ny4wFTlpLoT56qcguEb2FIytlX9sM2ujDEIl2wgj6ItAlcWrQaHbKdKxQGpipdx3Z4T1o93
+	/hfEOmU3eCSzSoc91OdFbB2UNQfXJT6+NITpUxAPLcqRIYsY+ALwNbB3AkBaDXdzPXO4CtTansD8a
+	KytD6Rc2pRCOrupGoIpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5E5T-0004tZ-OK; Fri, 21 Feb 2020 19:35:47 +0000
+	id 1j5E63-0005QO-HW; Fri, 21 Feb 2020 19:36:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5E5L-0004sl-Uv
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 19:35:41 +0000
+ id 1j5E5L-0004sk-Ux
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 19:35:42 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7944D30E;
- Fri, 21 Feb 2020 11:35:36 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 788B531B;
+ Fri, 21 Feb 2020 11:35:37 -0800 (PST)
 Received: from e121345-lin.cambridge.arm.com (e121345-lin.cambridge.arm.com
  [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A54343F6CF;
- Fri, 21 Feb 2020 11:35:35 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AC3313F6CF;
+ Fri, 21 Feb 2020 11:35:36 -0800 (PST)
 From: Robin Murphy <robin.murphy@arm.com>
 To: will@kernel.org,
 	catalin.marinas@arm.com,
 	mark.rutland@arm.com
-Subject: [PATCH v2 0/5] arm64 CPU DT binding updates
-Date: Fri, 21 Feb 2020 19:35:27 +0000
-Message-Id: <cover.1582312530.git.robin.murphy@arm.com>
+Subject: [PATCH v2 1/5] dt-bindings: ARM: Add recent Cortex/Neoverse CPUs
+Date: Fri, 21 Feb 2020 19:35:28 +0000
+Message-Id: <79ef74956befe089d7994ad24ab25132e95e9ac9.1582312530.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.23.0.dirty
+In-Reply-To: <cover.1582312530.git.robin.murphy@arm.com>
+References: <cover.1582312530.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_113540_050212_2B4AF4B0 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200221_113540_046116_9BC3A91C 
+X-CRM114-Status: GOOD (  10.45  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,27 +70,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+The CPU group has been busy since we last updated these bindings...
+Add definitions for all the new Cortex-A and Neoverse cores now
+available.
 
-Here's a quick turnaround from v1 so I don't have to remember where
-to pick up from next week :)
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+---
 
-Thanks,
-Robin.
+v2: no change, just resending for completeness
 
+ Documentation/devicetree/bindings/arm/cpus.yaml | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-Robin Murphy (5):
-  dt-bindings: ARM: Add recent Cortex/Neoverse CPUs
-  dt-bindings: ARM: Add recent Cortex/Neoverse PMUs
-  dt-bindings: ARM: Clean up PMU compatible list
-  arm64: perf: Refactor PMU init callbacks
-  arm64: perf: Support new DT compatibles
-
- .../devicetree/bindings/arm/cpus.yaml         |   9 +
- .../devicetree/bindings/arm/pmu.yaml          |  41 +++--
- arch/arm64/kernel/perf_event.c                | 168 ++++++++----------
- 3 files changed, 111 insertions(+), 107 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
+index 7a9c3ce2dbef..41e22b5320da 100644
+--- a/Documentation/devicetree/bindings/arm/cpus.yaml
++++ b/Documentation/devicetree/bindings/arm/cpus.yaml
+@@ -123,11 +123,18 @@ properties:
+       - arm,cortex-a12
+       - arm,cortex-a15
+       - arm,cortex-a17
++      - arm,cortex-a32
++      - arm,cortex-a34
++      - arm,cortex-a35
+       - arm,cortex-a53
+       - arm,cortex-a55
+       - arm,cortex-a57
++      - arm,cortex-a65
+       - arm,cortex-a72
+       - arm,cortex-a73
++      - arm,cortex-a75
++      - arm,cortex-a76
++      - arm,cortex-a77
+       - arm,cortex-m0
+       - arm,cortex-m0+
+       - arm,cortex-m1
+@@ -136,6 +143,8 @@ properties:
+       - arm,cortex-r4
+       - arm,cortex-r5
+       - arm,cortex-r7
++      - arm,neoverse-e1
++      - arm,neoverse-n1
+       - brcm,brahma-b15
+       - brcm,brahma-b53
+       - brcm,vulcan
 -- 
 2.23.0.dirty
 
