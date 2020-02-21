@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55568167AB2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:22:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FFF7167A48
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 11:12:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4Rcl6QvlidxOXaY42LoXpEM6uzsRMDPZjvfM1Dz9kyI=; b=OwwXulqFgVwngs
-	+9LUSHqrFSGkrnco7SAl1B+5jo+iZ41zULhzYvH1Sa5CWszeAHRdZQSyyw6P2j3UyVUWGIonmxVEK
-	qkg4u2TOz+KokHIYhhiM50VLNBvubcu58JRadjEuR8ObCBN1v2/rldNy0v9WXyPeuzXW7Rh+eRq59
-	c7JLFOVVQNAPqd7KDT2b6Rz2SVAYa7QMmHRUsfms++A364t0QO1k9VdUSK73ts4CLuIxrGcHp57Vv
-	vqvR/7K1yu9eVJ383L6f+JRqEGKpPKzPjeYmn0eRRG45c2yxRtVSBfPMBVRL4mR8pw+HhXK8ZLKDU
-	dHMulPaDGCbJBWUrnTvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hPWx2Mjizg/3PvAKeQb5E1KQj2O7ldzgidTCuIFel5M=; b=DUQoza0Q4bbnet
+	dtWOuclYg+P0n2U79EIPczWmpyLGDcB4kSq1wyE73juT/5d9j/hSae2YLkeZUALdU+bKKIIBDUl4Q
+	IM1aIJnYYJt22tH/l2zYVVBmz+gzI3Rz0FomsDJVHw/+kP72qBpytpr3KFinaDpjKufnFcge+NpdV
+	vE7MkjFyNMaDAd4iqA24MWIBu8+YOSDe1e4iQp0140zX4AHtOR4EGjpdopjMsrh2j1B1rruCRYcjp
+	qCzbceU3KN3TsmQQpiODrkY/PlDoAWMecU0RwsZJrAhkC8Irv7BJr3cNQcDucdsURvWpy8alyQ9gI
+	yABhPI40MQSzQCRdFALg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j55SB-0007jg-Cm; Fri, 21 Feb 2020 10:22:39 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j55IO-0002Yp-1y; Fri, 21 Feb 2020 10:12:32 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j55Rx-0007i9-UK; Fri, 21 Feb 2020 10:22:27 +0000
-X-UUID: 8f1d503ab46c4029bb068720f729b1c5-20200221
+ id 1j55IB-0002XC-LR; Fri, 21 Feb 2020 10:12:20 +0000
+X-UUID: 51f0811f407742a88a834b2f26852e84-20200221
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=BeBQELOP6/jjvwXwwsxHmMAHpAErb5cdnorUWLKW/vk=; 
- b=g4sm7Q9u/NwE+PBb8TOga72lL9ZKm5fT27j3XwL/hx5k/w+LVfPeevcWFLp3rV+U1sUKQ6vJ7XNbKPaoiIKCEEbb2vHm+vd6Yj4bvbXX3Z9wGw76WLpc2ftuMGKYLGZgqatXLHygrb5GTEUFXkWzLwWmSywYx7SaC/0JlvZuu2A=;
-X-UUID: 8f1d503ab46c4029bb068720f729b1c5-20200221
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=TVQktop5jTm1qN64BgjPr0+gtyXH176xixAbATCVuRM=; 
+ b=p1tgaV6pxx8KL8Hp/Gzq+8/ePYKCb76/FLfDBHKD7GLW125sHH6pExVU6wDkrCU+S4rsJms55bWxqKUmpKr31xbPnVifsPVm5A3yQ7KkaDd2kfC84IPYP9P1qyylZbwT1W03xas6frGnR/I7qStR1SB5hAvgZgdlLpXGBbPMEFE=;
+X-UUID: 51f0811f407742a88a834b2f26852e84-20200221
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <macpaul.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 534051904; Fri, 21 Feb 2020 02:22:22 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 21 Feb 2020 02:13:15 -0800
+ with ESMTP id 602195578; Fri, 21 Feb 2020 02:12:15 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 21 Feb 2020 02:12:12 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 21 Feb 2020 18:11:30 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 21 Feb 2020 18:11:21 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Fri, 21 Feb 2020 18:11:53 +0800
@@ -57,21 +57,26 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
  <linux-clk@vger.kernel.org>
-Subject: [PATCH v8 0/4] Add basic SoC support for mt6765
-Date: Fri, 21 Feb 2020 18:12:05 +0800
-Message-ID: <1582279929-11535-1-git-send-email-macpaul.lin@mediatek.com>
+Subject: [PATCH v8 1/4] dt-bindings: mediatek: Add smi dts binding for
+ Mediatek MT6765 SoC
+Date: Fri, 21 Feb 2020 18:12:06 +0800
+Message-ID: <1582279929-11535-2-git-send-email-macpaul.lin@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1582279929-11535-1-git-send-email-macpaul.lin@mediatek.com>
+References: <1582279929-11535-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: DA3DDA379D4AE327C2F9F2B41F4294B902761E1F5B0BC745B996EC5B115CB3212000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_022225_986845_69857063 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20200221_021219_711298_AAE8B145 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -103,92 +108,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds basic SoC support for Mediatek's new 8-core SoC,
-MT6765, which is mainly for smartphone application.
+From: Mars Cheng <mars.cheng@mediatek.com>
 
-Changes in V8:
-1. Origin V7 patchset:
-   https://patchwork.kernel.org/cover/11370105/
-   Split origin V7 patchset into 2 patchset,
-   keep remain patches #2, #5, #6, and #7 in the same order as this
-   V8 patchset.
-   [v7,2/7] dt-bindings: mediatek: Add smi dts binding for Mediatek
-            MT6765 SoC
-   [v7,5/7] soc: mediatek: add MT6765 scpsys and subdomain support
-   [v7,6/7] arm64: dts: mediatek: add mt6765 support
-   [v7,7/7] arm64: defconfig: add CONFIG_COMMON_CLK_MT6765_XXX clocks
+This patch adds MT6765 smi binding document
 
-Changes in V7:
-1. Adapt V6's patchset to latest kernel tree 5.5-rc1.
-   Origin V6 patchset:
-   https://patchwork.kernel.org/cover/11041963/
-2. Correct 2 clock-controller type in documentation:
-   mipi0 and venc_gcon.
-   [v7 1/7] dt-bindings: clock: mediatek: document clk bindings
-3. Remove V6's patch 03 because it has been taken into 5.5-next-soc
-   [v6, 03/08] dt-bindings: mediatek: add MT6765 power dt-bindings
-3. Update Reviewed-by: Rob Herring <robh@kernel.org> for
-   [v6, 04/08] clk: mediatek: add mt6765 clock IDs
-   --> [v7, 03/07] clk: mediatek: add mt6765 clock IDs
-4. Update SPDX tag for
-   [v6, 05/08] clk: mediatek: Add MT6765 clock support
-   --> [v7, 04/07] clk: mediatek: Add MT6765 clock support
-
-Changes in V6:
-1. Adapt V5's patchset to latest kernel tree.
-   Origin V5 patchset.
-   https://lore.kernel.org/patchwork/cover/963612/
-2. Due to clk's common code has been submit by other platform,
-   this patch set will have dependencies with the following patchsets
-   as the following orders.
-   2.a. [v8,00/21] MT8183 IOMMU SUPPORT
-        https://patchwork.kernel.org/cover/11023585/
-   2.b. [v11,0/6] Add basic node support for Mediatek MT8183 SoC
-        https://patchwork.kernel.org/cover/10962385/
-   2.c. [v6,00/14] Mediatek MT8183 scpsys support
-        https://patchwork.kernel.org/cover/11005751/
-3. Correct power related patches into dt-binding patches.
-4. Re-order V5's 4/11, 6/11, and 7/11 due clk common code change
-   and make dependencies in order.
-5. Update some commit message in clk related patches.
-
-Changes in V5:
-1. add clk support
-
-Changes in V4:
-1. add gic's settings in reg properties
-2. remove some patches about dt-bindings since GKH already took them
-
-Changes in V3:
-1. split dt-binding document patchs
-2. fix mt6765.dtsi warnings with W=12
-3. remove uncessary PPI affinity for timer
-4. add gicc base for gic dt node
-
-Changes in V2:
-1. fix clk properties in uart dts node
-2. fix typo in submit title
-3. add simple-bus in mt6765.dtsi
-4. use correct SPDX license format
-
-Mars Cheng (3):
-  dt-bindings: mediatek: Add smi dts binding for Mediatek MT6765 SoC
-  soc: mediatek: add MT6765 scpsys and subdomain support
-  arm64: dts: mediatek: add mt6765 support
-
-Owen Chen (1):
-  arm64: defconfig: add CONFIG_COMMON_CLK_MT6765_XXX clocks
-
+Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
+Signed-off-by: Owen Chen <owen.chen@mediatek.com>
+Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+Acked-by: Rob Herring <robh@kernel.org>
+---
  .../memory-controllers/mediatek,smi-common.txt     |    1 +
- arch/arm64/boot/dts/mediatek/Makefile              |    1 +
- arch/arm64/boot/dts/mediatek/mt6765-evb.dts        |   33 +++
- arch/arm64/boot/dts/mediatek/mt6765.dtsi           |  253 ++++++++++++++++++++
- arch/arm64/configs/defconfig                       |    6 +
- drivers/soc/mediatek/mtk-scpsys.c                  |  130 ++++++++++
- 6 files changed, 424 insertions(+)
- create mode 100644 arch/arm64/boot/dts/mediatek/mt6765-evb.dts
- create mode 100644 arch/arm64/boot/dts/mediatek/mt6765.dtsi
+ 1 file changed, 1 insertion(+)
 
+diff --git a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt
+index b478ade..3f96d1e 100644
+--- a/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt
++++ b/Documentation/devicetree/bindings/memory-controllers/mediatek,smi-common.txt
+@@ -18,6 +18,7 @@ Required properties:
+ - compatible : must be one of :
+ 	"mediatek,mt2701-smi-common"
+ 	"mediatek,mt2712-smi-common"
++	"mediatek,mt6765-smi-common", "syscon"
+ 	"mediatek,mt7623-smi-common", "mediatek,mt2701-smi-common"
+ 	"mediatek,mt8173-smi-common"
+ 	"mediatek,mt8183-smi-common"
 -- 
 1.7.9.5
 _______________________________________________
