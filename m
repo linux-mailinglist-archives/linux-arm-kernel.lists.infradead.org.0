@@ -2,59 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12AF2167E78
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 14:25:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 339E4167E79
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 14:26:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=81fjqPtvO0Zkr9ePDN9I/wAUlCwyEsChHTc/4I4ovWM=; b=brvXKlTZ+C53Xfw/yaFSmxVGj
-	rCdmz2DGdpwuln9FOmN3IV9c/HQgb0rNhy77nIL6RTw/oZKlHWf0XCtK4RUdALLwt5l8uQlj1/seg
-	iyImJShHwKCTpsE2m/RzfJS9b7ZsbqRL7ivVzwO9++k9QicZD9c6GJP8yfYoi9XGEyjMYfPq6oyT9
-	en+30bRpeI9FSQrXbeoeyBRfPkCdv3x4vnhRgCWv9Z2idYe36MmrJn70PjPRPXOF2C/3f1dllsp0u
-	StBW2g8+u2i4Ttw2Dvn6nhiBvSpfF1Sqlc7rlbHs5XeCY4diZk2qmjH409Lnxg5zXd06sISqht53r
-	QhfBDoWZg==;
+	 bh=Raf3MDpF3uXfU7Emx8Ph2qVr8aqGHeWOHN9oKD8k0GU=; b=EJ/5JgtE6LTNp8decNKJbUWv0
+	51zX+AY7gtkZ81CcY03AurwmflKyl3vXycLeKHtz6RhhwG3LbTVsAKdwDcff9+LnWMZMUxxAIIOcz
+	HipeXU/DlYRw/2P9lAoi69U/svVwjmqv51XpPMltL2BTJG+38hkuLOtJqKKm/kEbiLPmPyVEGTvkR
+	Tayah0LdZurHPcFUsCHiuRRi9mU9SdEsI9obZDVb9hdr7SX8kMN8+HKBz6u1lHQBJzlP696YwS1iM
+	msS9S+onWRjvfa0QV9w30mDfxHboezN48HngSQkRvD2mw/ekhmy2mfRcIXERTR2bfol0CowjXmn+C
+	bCRoyU4nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j58J4-0008Pn-O5; Fri, 21 Feb 2020 13:25:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j58Iv-0008P8-Qx
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 13:25:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD74730E;
- Fri, 21 Feb 2020 05:25:16 -0800 (PST)
-Received: from [10.37.12.243] (unknown [10.37.12.243])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 315133F703;
- Fri, 21 Feb 2020 05:25:14 -0800 (PST)
-Subject: Re: [RFC PATCH v2 07/13] firmware: arm_scmi: Add notification
- dispatch and delivery
-To: Cristian Marussi <cristian.marussi@arm.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20200214153535.32046-1-cristian.marussi@arm.com>
- <20200214153535.32046-8-cristian.marussi@arm.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <e45e87e2-aaaf-c35b-b864-c080fd6e0ba6@arm.com>
-Date: Fri, 21 Feb 2020 13:25:12 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j58KF-0000Em-1f; Fri, 21 Feb 2020 13:26:39 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j58K4-0000EE-9o
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 13:26:29 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 6128821D25;
+ Fri, 21 Feb 2020 08:26:21 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Fri, 21 Feb 2020 08:26:21 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=gVU2eTz5BGWktfD3OmcPbB4Fnbr
+ h4G05fM39zqichlk=; b=kXmy1NEkzkfppwmu4OEbS5Zr9wgfLIfcY7QwojdFs+J
+ nUnEORzVLWPbfRV7dxPhOPWDe1q+MFh3MNnE7iqMYIM0z0fXQLbIy6cwN7HOGH8n
+ nBJ22EEvqhyLtNNxhVWBHzeLjMJ/4rO8d4MDkNtwR4EBEc2yEg/QegGQJfwyzwXN
+ OAHfuFwF1xeusbaILP0ZJGyjGARXIBTevYfoCq3UgwpF3CXOHWv7UG69GG0YF4oy
+ ALo/zPP4PbLEQeZ7OjElRVXUC88VVE/1++EPWYrNXuQ/q7s+xa1v2stq6uxMe+n+
+ HpvV2UC7toVCyXWBwwzCaPu4KqlM4Y6+eeOAhFK4c6g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=gVU2eT
+ z5BGWktfD3OmcPbB4Fnbrh4G05fM39zqichlk=; b=IshiBhERftd1y2cVr7BD0C
+ 8tp917z+XmZiifYyjZolgTJX7A/1lAGwdY/68YhGggyOEnLfZJal8QfantlJS5WR
+ iLPOtjDZBjrvYQBvTyQ4SX0EbYJX9VHUhExmSv1KqorVwc/3sll2qdmHoZLlhrbn
+ JFL6szNG+qWeL6Dmi9wALnFJ6OmznpBd3YRPbkRbfqg1guVuh0EJsfpoOX406Qsf
+ Bu0Ajg/ChqPq7F8BJPeWq3M7s1HQgD1xnxGozBc6UsxfntIHUz1lg89PoYGwtF7J
+ ZYVY1j3sFP1hDyatvQ0T9KtKnVnmVXsPF9A9gkM/Aeo5LNxghd1GIFJ6LfinLB9w
+ ==
+X-ME-Sender: <xms:fNpPXjzstiSr5Wo4m0u-LknVmeTTlBavU1W-JSfL5zGOvnkyTuapRg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkeeggdehvdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfhfgggtuggjsehgtderre
+ dttddvnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghr
+ nhhordhtvggthheqnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuih
+ iivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordht
+ vggthh
+X-ME-Proxy: <xmx:fNpPXpPFqR_T5YaW0DVyaTMigHzQPk-ekrEx0OSfQsquJZhEskprqQ>
+ <xmx:fNpPXvpywJfKZ8Ya56ya0Ivst16xu3umgYKeK4PYmyp63flYdIQHgQ>
+ <xmx:fNpPXiHreJeNZ6H1IHDvVAwOcRc5voIV6izaldULNH8ajBgKlkXDCQ>
+ <xmx:fdpPXsTdkNJG1MdqsGv9l7q3uQVCO_LvWz56KXpryXc9YXHtWYsZpg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 9F0F63280064;
+ Fri, 21 Feb 2020 08:26:20 -0500 (EST)
+Date: Fri, 21 Feb 2020 14:26:18 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [PATCH] drm/sun4i: tcon: Support LVDS on the A33
+Message-ID: <20200221132618.lonh563jzmzbyfmd@gilmour.lan>
+References: <20200214120934.107924-1-maxime@cerno.tech>
+ <CAGb2v67L9uMQJfx7BBgGUSq7D=LEE1w89s-kYQX+u3iPtrJX_A@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200214153535.32046-8-cristian.marussi@arm.com>
-Content-Language: en-US
+In-Reply-To: <CAGb2v67L9uMQJfx7BBgGUSq7D=LEE1w89s-kYQX+u3iPtrJX_A@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_052517_915916_3A49B29B 
-X-CRM114-Status: GOOD (  22.29  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200221_052628_709126_7CB86BA7 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,78 +106,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan.Cameron@Huawei.com, james.quinlan@broadcom.com,
- sudeep.holla@arm.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>
+Content-Type: multipart/mixed; boundary="===============8576315257757905366=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Cristian,
 
-I didn't want to jump into your discussion with Jim in other broader
-thread with this small thought, so I added a comment below.
+--===============8576315257757905366==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="iggi2um5qsfmp5qg"
+Content-Disposition: inline
 
-On 2/14/20 3:35 PM, Cristian Marussi wrote:
-> Add core SCMI Notifications dispatch and delivery support logic which is
-> able, at first, to dispatch well-known received events from the RX ISR to
-> the dedicated deferred worker, and then, from there, to final deliver the
-> events to the registered users' callbacks.
-> 
-> Dispatch and delivery is just added here, still not enabled.
-> 
-> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
-> ---
-> V1 --> V2
-> - splitted out of V1 patch 04
-> - moved from IDR maps to real HashTables to store event_handlers
-> - simplified delivery logic
-> ---
->   drivers/firmware/arm_scmi/notify.c | 242 ++++++++++++++++++++++++++++-
->   drivers/firmware/arm_scmi/notify.h |  22 +++
->   2 files changed, 262 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/firmware/arm_scmi/notify.c b/drivers/firmware/arm_scmi/notify.c
-> index 1339b6de0a4c..c2341c5304cf 100644
-> --- a/drivers/firmware/arm_scmi/notify.c
-> +++ b/drivers/firmware/arm_scmi/notify.c
-> @@ -48,13 +48,44 @@
->    * particular event coming only from a well defined source (like CPU vs GPU).
->    * When the source is not specified the user callback will be registered for
->    * all existing sources for that event (if any).
 
-[snip]
+--iggi2um5qsfmp5qg
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
->   
-> @@ -840,6 +1071,11 @@ static struct scmi_notify_ops notify_ops = {
->    */
->   int scmi_notification_init(struct scmi_handle *handle)
->   {
-> +	scmi_notify_wq = alloc_workqueue("scmi_notify",
-> +					 WQ_UNBOUND | WQ_FREEZABLE, 0);
+Hi
 
-I think it might limit some platforms. It depends on their workload.
-If they have some high priority workloads which rely on this mechanisms,
-they might need a RT task here. The workqueues would be scheduled in
-CFS, so it depends on workload in there (we might even see 10s ms delays
-in scheduling-up them). If we use RT we would grab the CPU from CFS.
+On Fri, Feb 21, 2020 at 11:10:47AM +0800, Chen-Yu Tsai wrote:
+> On Fri, Feb 14, 2020 at 8:09 PM Maxime Ripard <maxime@cerno.tech> wrote:
+> >
+> > The A33 TCON supports LVDS, so we can toggle the support switch.
+> >
+> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+>
+> Acked-by: Chen-Yu Tsai <wens@csie.org>
+>
+> The user manual doesn't list the bits for LVDS signal polarity though.
+> I assume this was verified with the BSP or actual testing? (or rather,
+> will be in the LVDS signal polarity patches.)
 
-It would be good if it is a customization option: which mechanism
-to use based on some a parameter. Then we could create:
-a) workqueue with the flags above
-b) workqueue with WQ_HIGHPRI (limited by minimum nice)
-c) kthread_create_worker() with RT/DL/FIFO sched policy
-   (with also a parameterized priority)
+The polarity stuff is a separate series :)
 
-In default clients might use a) but when they want to tune their
-platform, they might change only a parameter in their scmi code,
-not maintaining a patch for the RT function out of tree.
+But yeah, both were tested on hardware.
 
-Regards,
-Lukasz
+I've applied it, thanks!
+Maxime
 
+--iggi2um5qsfmp5qg
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk/aegAKCRDj7w1vZxhR
+xe1WAQDRAxv0CunuTF31mcwpiIU+JC7FQfX0s4f8uDnNOsDMeAD/ZTPT+nfs0zkL
+fOUlgcv9iMCTEFVI5O4e9K1rt352aQs=
+=Py7j
+-----END PGP SIGNATURE-----
+
+--iggi2um5qsfmp5qg--
+
+
+--===============8576315257757905366==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8576315257757905366==--
+
