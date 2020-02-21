@@ -2,67 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 485E8166D3C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 04:08:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F4DE166D41
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 04:11:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Fw4QVyQUK4LsH1iVdz6fwVZSgmswnUt8tHXfHym409c=; b=FA+
-	0ePlQFLmNwy3WHTfdmRn/hnXgIcdF/F6DfpzHN/f4EMZkLARWmWabudTROmiu6WfbMx4Ygo+/JKvU
-	DcXD6IglwbP2mxyabRn2SAL/biNtlZ5rIzdAFw3a1PUbQh6+BnLTkhRINqM10iuADFaNa5qstyRSJ
-	HLNnylS8AD3+p4tEfIdfIu5zHySdswmYL2OvmsU1uMAvzlvH/XhghuVkPwYVYQl+ytlnNYX26a9z6
-	wGxgSOQmzcBnoO/zDJa/ZaDqa+JDVkR8Zw8X8l6WMkKjgXz17EcQkd/P9QbaPSaGsuwlXe4A1jxnB
-	NcRxAyEWWw0XPHVao1DZrcMkVznoZHA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QQTuAS7zhHDiALPuJRL0dAnHooJqA+yOaObZJSNdHhM=; b=pjX+9uoAHSi1m3
+	GND8reUCfSm2G4uJoiqzYRCIfvQTLMzQlEG1r0umqcb8mvDU7Jlf+qWddtqMgkWtJP1HWRrIqnCHL
+	HUfq25RM5Sm04VYiL730i+tZ0eyVq8xR3Sd5McqIDZBQ+IfAKPIVgOP4VB1jpP84stR7nzP2PKTbJ
+	D1VjCVAMFCaBOfq6ZJAWKHDa+oFmbj/efx4otV1dQIYwGGYICCg1TTODSPczAXiI3OfQ1Bw4CFoNn
+	c8ywO2zXh6NQ+90IHL8yLtbwcQHlDyY/GBzkoRFqbgtTFOu8BRj+Z7YHOGeyInQZ8fPhchWFyhJjI
+	sdVWC2+RLSBuGu+Es14A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4yfc-0005m9-QG; Fri, 21 Feb 2020 03:08:04 +0000
-Received: from conuserg-10.nifty.com ([210.131.2.77])
+	id 1j4yic-0007Pz-Py; Fri, 21 Feb 2020 03:11:10 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4yfS-0005jq-DS
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 03:07:56 +0000
-Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
- [153.142.97.92]) (authenticated)
- by conuserg-10.nifty.com with ESMTP id 01L37I3Y000971;
- Fri, 21 Feb 2020 12:07:18 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com 01L37I3Y000971
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1582254439;
- bh=Ylca/nhJZzm9YX87gCCuGP3STinxK4tvxFG6fALXuaw=;
- h=From:To:Cc:Subject:Date:From;
- b=OGCa9t1qm11PkrlL3Oh1a/KETNzQrTocCkRiu3MXaW+RSjwh7Jb+8Urqw8YDVCgXa
- naewYXcv8TETu6kpdbK3AxU0pco2oQqA6GEa+zROhhkiB94L0qBJwooACn3ry51w+t
- OTaRQUrvQYZDiUS9deUdL36G8wetFgpQDjUd95mIivq8HOCtSB9Ta3hJYvVtbXJPss
- T4kyHElgkD97kHx0LoSnfENYUvbXps7Wu3LL4Y9/Ip617elgnjcWJiKvR9WMQtVu3t
- 3N7uJR2xYqWZgeNvMulLhYla9ueLeiZ6CgiHmvEy/EYHqRaMauvqd/9pfZqH71lX50
- RDVK8n3v4maSg==
-X-Nifty-SrcIP: [153.142.97.92]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH] dt-bindings: interrupt-controller: Convert UniPhier AIDET to
- json-schema
-Date: Fri, 21 Feb 2020 12:07:13 +0900
-Message-Id: <20200221030713.438-1-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
+ id 1j4yiS-0007PV-JI
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 03:11:02 +0000
+Received: by mail-ed1-f68.google.com with SMTP id p14so558525edy.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 19:11:00 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5IR9MInLSyig3scu1SFmQNLrc98r/Dsahj0QMhBQSvg=;
+ b=DBYJdWIRPK9btNFq2SgLocTWeIhX/GTloSUKLH95n40Oe+G+IT4eScdG4Rk5L+I5Lz
+ YmcZnVw0XB+8Hu/g+RKxmlEPUwMEisUCM89v8CYtyIxu1hQ6TpsXMcJ1D/7lEO31DMmb
+ zB7cWtyYFOrudA+rIzga9absQ9B4aKhuTHgUOsBMrUK28nfqMSpYKN1wZEeMJOqLkDJk
+ ZRtvxnwd9Va8MuIKzKTDA00davW+m2TwiIRdj5bDfcHHlhzRNoXwm4M9KDiKrD42T3GZ
+ EeZNz+oNvtB2PImMZaKUnc8A0sYXLid4zFH5UzNXIL0o/kNm18LkLiQBtoKckj1oTrUb
+ 21yA==
+X-Gm-Message-State: APjAAAXLRzIXmX+Q+igDO6eNN8eejBpqJXWnsyDKAfqCDv9EQUKGkTbJ
+ y9YQawEwNooT2ZJ1C4TGOSWGcg7grMk=
+X-Google-Smtp-Source: APXvYqzyg1JodGQ2zoRx5S5NH5B9FxZEY3a9jYM4jPJyzMJTS4bk9uoQ3Ug4mHHEjMS7Q84wyFQcKA==
+X-Received: by 2002:a17:906:504d:: with SMTP id
+ e13mr32871707ejk.103.1582254659165; 
+ Thu, 20 Feb 2020 19:10:59 -0800 (PST)
+Received: from mail-wr1-f44.google.com (mail-wr1-f44.google.com.
+ [209.85.221.44])
+ by smtp.gmail.com with ESMTPSA id w5sm90316eje.14.2020.02.20.19.10.58
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 20 Feb 2020 19:10:58 -0800 (PST)
+Received: by mail-wr1-f44.google.com with SMTP id e8so349942wrm.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 19:10:58 -0800 (PST)
+X-Received: by 2002:a5d:640d:: with SMTP id z13mr44015219wru.181.1582254658558; 
+ Thu, 20 Feb 2020 19:10:58 -0800 (PST)
+MIME-Version: 1.0
+References: <20200214120934.107924-1-maxime@cerno.tech>
+In-Reply-To: <20200214120934.107924-1-maxime@cerno.tech>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Fri, 21 Feb 2020 11:10:47 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67L9uMQJfx7BBgGUSq7D=LEE1w89s-kYQX+u3iPtrJX_A@mail.gmail.com>
+Message-ID: <CAGb2v67L9uMQJfx7BBgGUSq7D=LEE1w89s-kYQX+u3iPtrJX_A@mail.gmail.com>
+Subject: Re: [PATCH] drm/sun4i: tcon: Support LVDS on the A33
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_190754_689015_1A3A26D1 
-X-CRM114-Status: GOOD (  16.11  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200220_191100_634830_3EDBEFCC 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.77 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.77 listed in wl.mailspike.net]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wens213[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [wens213[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,173 +97,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jason Cooper <jason@lakedaemon.net>,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Thomas Gleixner <tglx@linutronix.de>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Maxime Ripard <mripard@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the UniPhier AIDET (ARM Interrupt Detector) binding to DT
-schema format.
+On Fri, Feb 14, 2020 at 8:09 PM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> The A33 TCON supports LVDS, so we can toggle the support switch.
+>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
+Acked-by: Chen-Yu Tsai <wens@csie.org>
 
-Some qeustions:
-
-I was wondering when 'additionalProperties: false' should be added.
-
-If I add it to a bus controller device (e.g. I2C),
-I see some schema warnings because various sub-nodes
-are added depending on which device you connect.
-
-On the other hand, the interrupt controller like this
-does not have a subnode.
-So, probably this is the case where we can add
-'additionalProperties: false'.
-
-Is this correct?
-
-One more thing.
-
-There are multiple ways to do a similar thing:
-
-   compatible:
-     enum:
-        - socionext,uniphier-ld4-aidet
-        - socionext,uniphier-pro4-aidet
-        ...
-vs
-
-   compatible:
-     oneOf:
-        - const: socionext,uniphier-ld4-aidet
-        - const: socionext,uniphier-pro4-aidet
-        ...
-
-I adopted the former because I can save 'const'.
-If there is a preferred way, I will follow it.
-
-
- .../socionext,uniphier-aidet.txt              | 32 ----------
- .../socionext,uniphier-aidet.yaml             | 61 +++++++++++++++++++
- 2 files changed, 61 insertions(+), 32 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt
- create mode 100644 Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml
-
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt b/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt
-deleted file mode 100644
-index 48e71d3ac2ad..000000000000
---- a/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt
-+++ /dev/null
-@@ -1,32 +0,0 @@
--UniPhier AIDET
--
--UniPhier AIDET (ARM Interrupt Detector) is an add-on block for ARM GIC (Generic
--Interrupt Controller).  GIC itself can handle only high level and rising edge
--interrupts.  The AIDET provides logic inverter to support low level and falling
--edge interrupts.
--
--Required properties:
--- compatible: Should be one of the following:
--    "socionext,uniphier-ld4-aidet"  - for LD4 SoC
--    "socionext,uniphier-pro4-aidet" - for Pro4 SoC
--    "socionext,uniphier-sld8-aidet" - for sLD8 SoC
--    "socionext,uniphier-pro5-aidet" - for Pro5 SoC
--    "socionext,uniphier-pxs2-aidet" - for PXs2/LD6b SoC
--    "socionext,uniphier-ld11-aidet" - for LD11 SoC
--    "socionext,uniphier-ld20-aidet" - for LD20 SoC
--    "socionext,uniphier-pxs3-aidet" - for PXs3 SoC
--- reg: Specifies offset and length of the register set for the device.
--- interrupt-controller: Identifies the node as an interrupt controller
--- #interrupt-cells : Specifies the number of cells needed to encode an interrupt
--  source.  The value should be 2.  The first cell defines the interrupt number
--  (corresponds to the SPI interrupt number of GIC).  The second cell specifies
--  the trigger type as defined in interrupts.txt in this directory.
--
--Example:
--
--	aidet: aidet@5fc20000 {
--		compatible = "socionext,uniphier-pro4-aidet";
--		reg = <0x5fc20000 0x200>;
--		interrupt-controller;
--		#interrupt-cells = <2>;
--	};
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml b/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml
-new file mode 100644
-index 000000000000..e61748df2e2c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml
-@@ -0,0 +1,61 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/interrupt-controller/socionext,uniphier-aidet.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: UniPhier AIDET
-+
-+description: |
-+  UniPhier AIDET (ARM Interrupt Detector) is an add-on block for ARM GIC
-+  (Generic Interrupt Controller). GIC itself can handle only high level and
-+  rising edge interrupts. The AIDET provides logic inverter to support low
-+  level and falling edge interrupts.
-+
-+maintainers:
-+  - Masahiro Yamada <yamada.masahiro@socionext.com>
-+
-+allOf:
-+  - $ref: /schemas/interrupt-controller.yaml#
-+
-+properties:
-+  compatible:
-+    enum:
-+      - socionext,uniphier-ld4-aidet
-+      - socionext,uniphier-pro4-aidet
-+      - socionext,uniphier-sld8-aidet
-+      - socionext,uniphier-pro5-aidet
-+      - socionext,uniphier-pxs2-aidet
-+      - socionext,uniphier-ld6b-aidet
-+      - socionext,uniphier-ld11-aidet
-+      - socionext,uniphier-ld20-aidet
-+      - socionext,uniphier-pxs3-aidet
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupt-controller: true
-+
-+  '#interrupt-cells':
-+    description: |
-+      The first cell defines the interrupt number (corresponds to the SPI
-+      interrupt number of GIC). The second cell specifies the trigger type as
-+      defined in interrupts.txt in this directory.
-+    const: 2
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupt-controller
-+  - '#interrupt-cells'
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    aidet: aidet@5fc20000 {
-+        compatible = "socionext,uniphier-pro4-aidet";
-+        reg = <0x5fc20000 0x200>;
-+        interrupt-controller;
-+        #interrupt-cells = <2>;
-+    };
--- 
-2.17.1
-
+The user manual doesn't list the bits for LVDS signal polarity though.
+I assume this was verified with the BSP or actual testing? (or rather,
+will be in the LVDS signal polarity patches.)
 
 _______________________________________________
 linux-arm-kernel mailing list
