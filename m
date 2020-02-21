@@ -2,116 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2338E1687A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:46:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A37B1687AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:48:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rvs+qzExqt9Pgwno33zJCbTsyoDtSLMb4TpsTn8UqIE=; b=Y6MXBe8LAjgkEN
-	Fk+Kt7aIU+8l9Pu8xi8wQgjNDvDWDFQhq+KA0HOSY3zTOu+3xiPeSMItF5f8crjRC9KTI9q7hhv3s
-	O0Vzh1TJT3LgXzfxol1s8zlYgK0SNmLHTOrxvejyxR27LAhgu0TA5/a06azu7My+qWyma/orbpSIQ
-	zFH2c1B3pIB772t5dPSsG6WSP4HXAYrdFgePZ9dcoM41blRWZLHY5sgV2ki8sj3/vHT5T3nTV0lpZ
-	ADKGhh7yS+3EIOPxNkzTneUkbP7Zx8SUpfho7wdb3mTPNJ0UdB+C5y8uZ0yUvGZVlT4sIw0xrrp3n
-	8cK3me9sWi+LfomJLeGQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+71+wgwe+3K7WWHGgPzCCzdBDo4K7PNbq1e3maIzPOk=; b=cN7
+	LExGRCHCaOv1ndi4dtvVtn/rK9o9sft/9KG/bUw6jwepFRU+0gqOicMqHwkfsGxMhJFDLRoNs2tnO
+	Yfr0+k8dCLsa2sW8GBHz960dcDEhFd4p+GO3Ul/h+r8s9HmlnHemGlHEqqbKmmcNWrmHNlrzK3Rhx
+	MZDkigtuY/lJ53K3Kzwzm6xmnpbarblZIXlRSlJ6rz1iDYQ3MxsZFQV7KKs7B+t9CGBO+l4decr1E
+	k5/RMsWKrO1McDapbq6Qglr10mY4XLY/dGv+jr6L3q/wWd9g6CVlEJdVY6BX3xwzKz1jVZe/hRRQl
+	Nha+BFnlpafPXXgJoVdNBw4sZwWmeyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5EFF-00019v-NI; Fri, 21 Feb 2020 19:45:53 +0000
-Received: from plasma5.jpberlin.de ([80.241.58.36])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5EF5-00011e-Cs
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 19:45:45 +0000
-Received: from spamfilter01.heinlein-hosting.de
- (spamfilter01.heinlein-hosting.de [80.241.56.115])
- by plasma.jpberlin.de (Postfix) with ESMTP id 7B235A72FA;
- Fri, 21 Feb 2020 20:45:34 +0100 (CET)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from plasma.jpberlin.de ([80.241.56.68])
- by spamfilter01.heinlein-hosting.de (spamfilter01.heinlein-hosting.de
- [80.241.56.115]) (amavisd-new, port 10030)
- with ESMTP id TyEsdkVzIIMa; Fri, 21 Feb 2020 20:45:32 +0100 (CET)
-Received: from webmail.opensynergy.com (unknown [217.66.60.5])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (Client CN "webmail.opensynergy.com",
- Issuer "GeoTrust EV RSA CA 2018" (not verified))
- (Authenticated sender: opensynergy@jpberlin.de)
- by plasma.jpberlin.de (Postfix) with ESMTPSA id BE5F6B8EBC;
- Fri, 21 Feb 2020 20:45:32 +0100 (CET)
-Received: from [10.25.40.95] (10.25.255.1) by MXS01.open-synergy.com
- (10.25.10.17) with Microsoft SMTP Server (TLS) id 14.3.468.0; Fri, 21 Feb
- 2020 20:45:31 +0100
-Subject: Re: [PATCH] Add virtio SCMI device specification
-To: Souvik Chakravarty <Souvik.Chakravarty@arm.com>,
- "virtio-comment@lists.oasis-open.org" <virtio-comment@lists.oasis-open.org>
-References: <20200220193715.12097-1-peter.hilber@opensynergy.com>
- <DBBPR08MB47902B48AE4B6F9B446EF4BD82120@DBBPR08MB4790.eurprd08.prod.outlook.com>
-From: Peter Hilber <peter.hilber@opensynergy.com>
-Autocrypt: addr=peter.hilber@opensynergy.com; prefer-encrypt=mutual; keydata=
- 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
- lbekkuPTQs/m
-Message-ID: <88588437-56c5-f5ca-e17f-ca283c1d154b@opensynergy.com>
-Date: Fri, 21 Feb 2020 20:45:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <DBBPR08MB47902B48AE4B6F9B446EF4BD82120@DBBPR08MB4790.eurprd08.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.25.255.1]
+	id 1j5EHM-0001jh-5Q; Fri, 21 Feb 2020 19:48:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5EHC-0001jK-5U; Fri, 21 Feb 2020 19:47:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D56F30E;
+ Fri, 21 Feb 2020 11:47:53 -0800 (PST)
+Received: from e123648.arm.com (unknown [10.37.12.243])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D09A63F703;
+ Fri, 21 Feb 2020 11:47:42 -0800 (PST)
+From: Lukasz Luba <lukasz.luba@arm.com>
+To: linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-imx@nxp.com
+Subject: [PATCH v3 0/4] Add support for devices in the Energy Model
+Date: Fri, 21 Feb 2020 19:47:27 +0000
+Message-Id: <20200221194731.13814-1-lukasz.luba@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_114543_746561_83A3E5CD 
-X-CRM114-Status: GOOD (  30.79  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200221_114754_297880_89997715 
+X-CRM114-Status: GOOD (  16.25  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.58.36 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,194 +60,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Sudeep Holla <Sudeep.Holla@arm.com>
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
+ bsegall@google.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, daniel.lezcano@linaro.org, steven.price@arm.com,
+ cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
+ alyssa.rosenzweig@collabora.com, orjan.eide@arm.com, daniel@ffwll.ch,
+ b.zolnierkie@samsung.com, s.hauer@pengutronix.de, rostedt@goodmis.org,
+ matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com, airlied@linux.ie,
+ javi.merino@arm.com, tomeu.vizoso@collabora.com, qperret@google.com,
+ sboyd@kernel.org, rjw@rjwysocki.net, agross@kernel.org, kernel@pengutronix.de,
+ sudeep.holla@arm.com, patrick.bellasi@matbug.net, shawnguo@kernel.org,
+ lukasz.luba@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21.02.20 12:22, Souvik Chakravarty wrote:
-> Hi Peter,
-> 
-> The overall proposal is mostly in sync with the SCMI specification. A few comments below.
+Hi all,
 
-Hi Souvik,
+This patch set introduces support for devices in the Energy Model (EM)
+framework. It will unify the power model for thermal subsystem and make it
+simpler. The 1st patch refactors EM framework and adds support for devices.
+The 2nd patch changes dev_pm_opp_of_register_em() in OPP/OF which now should
+take as an argument struct device pointer. It touches a few trees
+(OMAP, NXP, Mediatek) updating their CPUfreq drivers to the new interface.
+Patch 3/4 changes thermal devfreq cooling removing old code for calculating
+local power table. It simplifies the code and uses EM for requested power
+calculation. Last patch 4/4 adds EM to Panfrost driver.
 
-thanks for the review.
+The patch set is based on linux-next tag next-20200221.
 
-> 
->> -----Original Message-----
->> From: Peter Hilber <peter.hilber@opensynergy.com>
->> Sent: Thursday, February 20, 2020 7:37 PM
->>
->> This patch proposes a new virtio device for the Arm SCMI protocol.
->>
->> The device provides a simple transport for the Arm SCMI protocol[1]. The
->> *S*ystem *C*ontroller *M*anagement *I*nterface protocol allows speaking to
-> 
-> Its "System Control and Management Interface" (some recurrences are there below which I haven't pointed out).
-> 
->> embedded system controllers that allow orchestrating things like power
-> 
-> If we are using Virtio, the system controller is probably no longer "embedded".
-> 
->> management, system state management and sensor access. The SCMI protocol
->> is used on SoCs where multiple cores and co-processors need access to these
->> resources.
->>
->> The virtio transport allows making use of this protocol in virtualized embedded
->> systems.
-> 
-> Again, what stops this from being deployed beyond embedded?
-> There is scope for hypervisors which might implement the full SCMI device for non-embedded usages as well.
+Changes:
+v3:
+- added back the cpumask 'cpus' in the em_perf_domain due potential cache misses
+- removed _is_cpu_em() since there is no need for it
+- changed function name from em_pd_energy() to em_cpu_energy(), which is
+  optimized for usage from the scheduler making some assumptions and not
+  validating arguments to speed-up, there is a comment stressing that it should
+  be used only for CPUs em_perf_domain
+- changed em_get_pd() to em_pd_get() which is now aligned with em_cpu_get()
+  naming
+- extended comment in em_cpu_get() describing the need for this function
+- fixed build warning reported on x86 by kbuild test robot in devfreq_cooling.c
+- updated documentation in the energy-model.rst
+- changed print messages from 'energy_model' to 'EM'
+- changed dev_warn to dev_dbg, should calm down test scripts in case the
+  platform has OPPs less efficient in the OPP table (some of them are there for
+  cooling reasons, we shouldn't warn in this case, debug info is enough)
 
-I will update the commit message and device intro text for the next
-patch version according to the above comments.
+v2 [2]:
+- changed EM API em_register_perf_domain() adding cpumask_t pointer
+  as last argument (which was discussed with Dietmar and Quentin)
+- removed dependency on PM_OPP, thanks to the cpumask_t argument
+- removed enum em_type and em->type dependent code
+- em_get_pd() can handle CPU device as well as devfreq device
+- updated EM documentation
+- in devfreq cooling added code which prevents from race condition with
+  devfreq governors which are trying to use OPPs while thermal is in the middle
+  of disabling them.
+- in devfreq cooling added code which updates state of the devfreq device to
+  avoid working on stale data when governor has not updated it for a long time
+- in devfreq cooling added backward compatibility frequency table for drivers
+  which did not provide EM
+- added Steven's Reviewed-by to trace code in thermal
+- added another CPUFreq driver which needs to be updated to the new API
 
-> 
->>
->> OpenSynergy has a prototype implementation, and plans to upstream the Linux
->> kernel driver.
->>
->> The PDF output (with ugly fonts, apologies) is available at [2].
->>
->> [1] https://developer.arm.com/docs/den0056/b
->> [2]
->> https://share.mailbox.org/ajax/share/0d959c190d5a1c47d18eb2fd5a1c40ad81
->> e8d7897ab9ca1e/1/8/Mjk/MjkvOA
->>
->> Signed-off-by: Peter Hilber <peter.hilber@opensynergy.com>
->> ---
->>  conformance.tex  |  27 ++++-
->>  content.tex      |   1 +
->>  introduction.tex |   3 +
->>  virtio-scmi.tex  | 269
->> +++++++++++++++++++++++++++++++++++++++++++++++
->>  4 files changed, 297 insertions(+), 3 deletions(-)  create mode 100644 virtio-
->> scmi.tex
->>
-> 
-> <SNIP>
-> 
->> +
->> +\subsubsection{cmdq Operation}\label{sec:Device Types / SCMI Device /
->> +Device Operation / cmdq Operation}
->> +
->> +Each buffer in the cmdq holds a single SCMI command once the buffer has
->> +been made available. When the buffer has been marked as used, it
->> +contains the SCMI response. Conceptually, each SCMI message transmitted
->> +over the cmdq uses its own short-lived SCMI A2P (agent to platform)
->> +channel.
-> 
-> Any special significance of the "short-lived" phrase. Does it have any implications on how it will interact with the SCMI driver?
+The v1 can be found here [1].
 
-"Short-lived" should just illustrate that the conceptual channel is used
-for the lifetime of a single message.
+Regards,
+Lukasz Luba
 
-The motivation to introduce this concept: It should be clear that both
-device and driver may send multiple messages at once (subject to the
-other requirements). But the SCMI spec might be read to imply e.g. that
-the platform must wait until the P2A "channel is now free and can be
-used to send a further message" (DEN0056B p. 12). For the virtio
-transport, since each message uses its own (conceptual) channel, it's
-clear that the message's channel can never be considered occupied by
-another message.
+[1] https://lkml.org/lkml/2020/1/16/619
+[2] https://lkml.org/lkml/2020/2/6/377
 
-I think the short-lived channels don't match the meaning of channels in
-the Linux kernel SCMI driver. From that driver POV, all messages in the
-A2P resp. P2A direction would still go over the same channel (i.e. one
-struct scmi_chan_info for A2P, one for P2A).
 
-I'd try to reword the paragraph so the intent becomes more clear.
+Lukasz Luba (4):
+  PM / EM: add devices to Energy Model
+  OPP: change parameter to device pointer in dev_pm_opp_of_register_em()
+  thermal: devfreq_cooling: Refactor code and switch to use Energy Model
+  drm/panfrost: Register to the Energy Model with devfreq device
 
-> 
->> +
->> +The SCMI response is in the same virtio buffer as the corresponding
->> +SCMI command. The response contains the return values which SCMI
->> +specifies for each command, whether synchronous or asynchronous.
->> +Delayed responses are distinct SCMI messages transmitted over the eventq.
->> +
->> +Buffers in the cmdq contain both the request and the response. A
->> +request has the following layout:
->> +
->> +\begin{lstlisting}
->> +struct virtio_scmi_request {
->> +        le32 len;
->> +        le32 hdr;
->> +        u8 params[<actual parameters size>]; }; \end{lstlisting}
->> +
->> +The virtio_scmi_request fields are interpreted as follows:
->> +
->> +\begin{description}
->> +\item[\field{len}] (device-readable) size of \field{hdr} and actual
->> +\field{params} in bytes \item[\field{hdr}] (device-readable) contains
->> +the SCMI message header \item[\field{params}] (device-readable)
->> +comprises the SCMI message parameters \end{description}
->> +
->> +A cmdq response has the following layout:
->> +
->> +\begin{lstlisting}
->> +struct virtio_scmi_response {
->> +        le32 len;
->> +        le32 hdr;
->> +        u8 ret_values[<actual return values size>]; }; \end{lstlisting}
->> +
->> +The virtio_scmi_response fields are interpreted as follows:
->> +
-> 
-> <SNIP>
-> 
->> +\subsubsection{eventq Operation}
->> +
->> +Each buffer in the eventq holds (once the buffer is marked as used)
->> +either a single SCMI notification, or a single SCMI delayed response.
->> +Conceptually, each SCMI message transmitted over the eventq uses its
->> +own short-lived SCMI P2A (platform to agent) channel. Buffers in the
->> +eventq have the following layout:
-> 
-> Same question. Any special significance of the "short-lived" phrase?
+ Documentation/power/energy-model.rst        | 133 +++---
+ Documentation/scheduler/sched-energy.rst    |   2 +-
+ drivers/cpufreq/cpufreq-dt.c                |   2 +-
+ drivers/cpufreq/imx6q-cpufreq.c             |   2 +-
+ drivers/cpufreq/mediatek-cpufreq.c          |   2 +-
+ drivers/cpufreq/omap-cpufreq.c              |   2 +-
+ drivers/cpufreq/qcom-cpufreq-hw.c           |   2 +-
+ drivers/cpufreq/scmi-cpufreq.c              |  11 +-
+ drivers/cpufreq/scpi-cpufreq.c              |   2 +-
+ drivers/cpufreq/vexpress-spc-cpufreq.c      |   2 +-
+ drivers/gpu/drm/panfrost/panfrost_devfreq.c |   3 +
+ drivers/opp/of.c                            |  45 +--
+ drivers/thermal/cpufreq_cooling.c           |  10 +-
+ drivers/thermal/devfreq_cooling.c           | 425 +++++++++-----------
+ include/linux/devfreq_cooling.h             |  17 -
+ include/linux/energy_model.h                | 107 +++--
+ include/linux/pm_opp.h                      |  14 +-
+ include/trace/events/thermal.h              |  19 +-
+ kernel/power/energy_model.c                 | 400 ++++++++++++++----
+ kernel/sched/fair.c                         |   2 +-
+ kernel/sched/topology.c                     |   4 +-
+ 21 files changed, 711 insertions(+), 495 deletions(-)
 
-Please see answer above.
+-- 
+2.17.1
 
-> 
->> +
->> +\begin{lstlisting}
->> +struct virtio_scmi_event_msg {
->> +        /* start of device-writable data */
->> +        le32 len;
->> +        le32 hdr;
->> +        u8 payload[<actual payload size>]; }; \end{lstlisting}
->> +
->> +\begin{description}
->> +\item[\field{len}] (device-writable) size of \field{hdr} and actual
->> +\field{payload} in bytes \item[\field{hdr}] (device-writable) contains
->> +the SCMI message header \item[\field{payload}] (device-writable)
->> +comprises the SCMI message payload \end{description}
->> +
->> +\devicenormative{\paragraph}{eventq Operation}{Device Types / SCMI
->> +Device / Device Operation / eventq Operation}
->> +
->> +If the device intends to send a notification and there are no available
->> +buffers in the eventq, the device SHOULD send a corresponding
->> +notification later, once enough buffers become available.
-> 
-> Any reason why this is mandated? It should be possible for the device to drop the notification if there is no buffer available since this provides an implicit flow control as well, since the guest in this case is clearly unable to consume the notifications at a sufficient rate.
-> Can we make this Recommended instead?
-
-I was concerned that dropping non-periodic notifications during a
-temporary overload could be problematic. If virtio driver
-authors/integrators had the same concern, this could result in
-unnecessarily large virtqueues to cover infrequent scenarios. By adding
-this requirement, I intended to shift the responsibility for the
-overload scenario to the virtio device authors.
-
-If this is considered over-engineering, I will demote it to a
-recommendation.
-
-Best regards,
-
-Peter
 
 _______________________________________________
 linux-arm-kernel mailing list
