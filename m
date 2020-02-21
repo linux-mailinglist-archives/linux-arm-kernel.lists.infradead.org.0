@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 310281688BA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 22:04:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93BB5168900
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 22:10:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HLZm7gG18cZeMZc+VoACiJg717A3jeBF4erQmAg1Y+8=; b=DBjux0zUxCNIHA
-	18DM9IusCC5EBP30QqjcE4Wd+s1RJS2mwvOK1tdoIheW0J0DoKjiKW/e3wq9iJSBUGwTkUD7q8Z7Q
-	c3WaKs0GW6FXdG8EAo46lDXQ0Sw1SwcCoOWuQZraRohD3TZ3a9bnOWpzfdGDDbNp5RNt14Azl3/eA
-	5ByN53gJAQ9xXEbLCqXsiasFl4+s7v1iCN1hWdsZ6YmKhuu7l+JbqpPLlNTC1AoAdAM4FJuHI+Mjn
-	SMPFA7vFpCVKszjatLbpGM/8uheQLzxV9q6isNxI4+dPl1aN3xw6xId2UtRi+2rMGW7gLRreDlKGI
-	GRYR0135cXIjlm8fZkGA==;
+	List-Owner; bh=EXmr32T4ISDuCS56POFtht5D8osGMstnck0Uy8mYujg=; b=heINIvW5aejy6G
+	pYI5iBPxJBgDkyY1fNlHzl0zLcTAp5eHg42XVjq84d+MJ6T7reSiOac0oyQqGteCRGVoDooW1Wvs/
+	XHBG5vPoRyL1coj8RR9isAosxz6EsJFDm0sisSd9iMkhQHiBmcxTOeI8eBoRGf9q5/gUKTfG3kpgG
+	25O3wLmFaqm2m/vezPS85KCK/+kbJR9d40jK+I+PJ0+1IviPYF3KAZVu81qjDVVWRf1DYRvk1mdau
+	a2a2GeJUddSjmhkJ0X832nj4iaRwEWX0rHCMSTcV9Ipy8IxmHYya0nJCgx+C8OTn94lnFfuGtkzXx
+	M0n78QQ1x21DZ97HRo7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5FTX-0008Io-3M; Fri, 21 Feb 2020 21:04:43 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j5FYc-0002Ka-Kb; Fri, 21 Feb 2020 21:09:58 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5FTA-00087y-4H
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 21:04:21 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a5so3165540wmb.0
+ id 1j5FYU-0002Jr-Rn
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 21:09:52 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 185so1903851pfv.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 13:04:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=HAoa+ReMwHomgBUwnpPQde3KSJuaKiY678ziXw+Di+w=;
- b=JUcZUdSolVLSScJmZ4pac+fLPoptZYAMcXTFnstu23DOwylMJ5O5W4taZWhttty3Mu
- hbyGk+GcTTVOoxC89GipeyReR/b6mHRz38H/WKGKCJeuHSflpn/4Di3is3fHSYWEbPAD
- CiAzZTvk3JxSwukoFtIRgCcNVmJfj9axPoURE=
+ Fri, 21 Feb 2020 13:09:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zUPeoJQT4bo8QV8qvKihcroSkp75IgeOGG1W4e7sFl0=;
+ b=Skd5KPmLOe5oAWgkoaQAhCuUl+WupDAuS3+iBV2bvTTT3rS6NfVOxYAHw/8XIxN5If
+ RB2NwsC9jldeHpLN9P+oXY7kT29XOqSva4NORrRu37MarwF+9vJuwMHVv9bv/rmz2Zl/
+ scJoDDEQrARI0SmgBk5F0m0zuQ/k6aazhojuz+KXiMfMRJN0DQ960YlEpqnDW4ggcFND
+ FoNlqleGW3K19KQJSS226/FT7lqBgTzS6+wix7El/j/bqRoYYZ2Et4oMf3OoZROCX9fK
+ JDBbCFQbtfD8AZaEQws4/3FFkHQkbf73hS+WNrge2MgCZh2ExijXcKQwQTyr7fcowd0x
+ G3uQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=HAoa+ReMwHomgBUwnpPQde3KSJuaKiY678ziXw+Di+w=;
- b=QBG9Y8W431FnrbuMFUqeGJ98ODiuEeXEVRyvy2Fws2gK3uIY2xqulMzc5J0pZjhDFQ
- xwuGB+DqE1PdkFiKqd6Wf64IIPyaHgqGUMEIy3tm2sRzBu/Mh2+guxydmrcHQCHSZJvo
- Q2ZUHNQNX8+G7zsOWvKJNTrro9uXLR3oXpiCSJDreKyKSKjJVe5ruGj/hqPnq2iA1XBL
- 64uXMnZNIa8/kQJwILriEuJpZMc9DzFWcqZooHAeZAQPPIpA2oQ2ROjy/cgwVnh94785
- kx7WmDqKgfBfhF9YFFdk9MLfBh2PsTfkASXNaTlzZuUsJXnOFIsyn+iPs+ruDfrMxLxM
- 9cxQ==
-X-Gm-Message-State: APjAAAVYjMGEeg+EmetMkFNaR6ch68ENGV6RiOdsU+jFbcsn5u8IvBOO
- OzOboZX536UBA3+vcQQm82NTHQ==
-X-Google-Smtp-Source: APXvYqxE6d0z/PJ8kwl5QVJU6aMhteu81Ji4eCz5l4YndZMRUkDhwPSabGxBRoO884TWZ32cbROk7Q==
-X-Received: by 2002:a1c:9602:: with SMTP id y2mr5536410wmd.23.1582319058948;
- Fri, 21 Feb 2020 13:04:18 -0800 (PST)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id z6sm5483930wrw.36.2020.02.21.13.04.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 21 Feb 2020 13:04:18 -0800 (PST)
-From: Daniel Vetter <daniel.vetter@ffwll.ch>
-To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 38/51] drm/stm: Drop explicit drm_mode_config_cleanup call
-Date: Fri, 21 Feb 2020 22:03:06 +0100
-Message-Id: <20200221210319.2245170-39-daniel.vetter@ffwll.ch>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200221210319.2245170-1-daniel.vetter@ffwll.ch>
-References: <20200221210319.2245170-1-daniel.vetter@ffwll.ch>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zUPeoJQT4bo8QV8qvKihcroSkp75IgeOGG1W4e7sFl0=;
+ b=EO70tY1kKJ5a4mdAmW4cWZ6rBbKGoNePV+Cuygk593HV/SRDGGy+IAAS+PrLY/w8ej
+ 437DNqZ7JDJLsEEtpLToaN1TukFE5BuxV2tmafbm6a7bzvDkoGFs7RVV2AUkCwe9FVy1
+ emrSySRliJdgo3Iz+rx6dZG6C6bzvtykgz/H+R4XbzkjJudaySZg1WrdCPlXHtGsV34o
+ bPQmu0ppYESS+iWMB3KSdPYw6Mew5BvNIX9jsRTgmRKAFuPiYvEYtF0bsCNt1WfKsHT4
+ aF7T84coHMm5TmQ9Bik6R1J9fWKKhU/4Fb9YegxeUOUozQ1XvuzYDAu8W5gO1LjMT+V5
+ xDIg==
+X-Gm-Message-State: APjAAAVYtKMhrJuRWSsX/Bx0KL3x0XSgF9ifyfJxQBYhHmq4OJTSDyZP
+ ub4pnjwf4Gdm06vMzTxiU7J0X91Pki7xwawzIXSi2w==
+X-Google-Smtp-Source: APXvYqxTAEN55Hi4n404sGxe5/oMDfTK3qYhtSibFhpCiew17vX1FZ0iWAA+sEUEDbLslT1dhSUwoqJjOXPGrIC7SLw=
+X-Received: by 2002:a65:6412:: with SMTP id a18mr14625753pgv.10.1582319387058; 
+ Fri, 21 Feb 2020 13:09:47 -0800 (PST)
 MIME-Version: 1.0
+References: <ab67c7c5a1f96af6d22240e57fc27ba766d4193d.1580943526.git.stefan@agner.ch>
+ <20200205235440.GW25745@shell.armlinux.org.uk>
+In-Reply-To: <20200205235440.GW25745@shell.armlinux.org.uk>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Fri, 21 Feb 2020 13:09:36 -0800
+Message-ID: <CAKwvOdkxg8vG4FZAFJehMouUHNqXaKT+J2AWtK7mn2EXJKOE5g@mail.gmail.com>
+Subject: Re: [PATCH] ARM: kexec: drop invalid assembly argument
+To: Stefan Agner <stefan@agner.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_130420_167630_55834A23 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200221_130950_924919_F16C4086 
+X-CRM114-Status: GOOD (  25.80  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,6 +84,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,93 +97,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Philippe Cornu <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Daniel Vetter <daniel.vetter@intel.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's right above the drm_dev_put().
+On Wed, Feb 5, 2020 at 3:54 PM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+>
+> On Wed, Feb 05, 2020 at 11:59:26PM +0100, Stefan Agner wrote:
+> > The tst menomic has only a single #<const> argument in Thumb mode. There
+> > is an ARM variant which allows to write #<const> as #<byte>, #<rot>
+> > which probably is where the current syntax comes from.
+> >
+> > It seems that binutils does not care about the additional parameter.
+> > Clang however complains in Thumb2 mode:
+> > arch/arm/kernel/relocate_kernel.S:28:12: error: too many operands for
+> > instruction
+> >  tst r3,#1,0
+> >            ^
+> >
+> > Drop the unnecessary parameter. This fixes building this file in Thumb2
+> > mode with the Clang integrated assembler.
+> >
+> > Link: https://github.com/ClangBuiltLinux/linux/issues/770
+> > Signed-off-by: Stefan Agner <stefan@agner.ch>
+>
+> Please drop it in the patch system, thanks.
 
-This is made possible by a preceeding patch which added a drmm_
-cleanup action to drm_mode_config_init(), hence all we need to do to
-ensure that drm_mode_config_cleanup() is run on final drm_device
-cleanup is check the new error code for _init().
+Hi Stefan, did you add this to the patch tracking system? Looks like a
+bunch got accepted, but I didn't see it in:
+https://www.armlinux.org.uk/developer/patches/section.php?section=20&page=132
 
-Aside: Another driver with a bit much devm_kzalloc, which should
-probably use drmm_kzalloc instead ...
+>
+> > ---
+> >  arch/arm/kernel/relocate_kernel.S | 8 ++++----
+> >  1 file changed, 4 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/arch/arm/kernel/relocate_kernel.S b/arch/arm/kernel/relocate_kernel.S
+> > index 7eaa2ae7aff5..72a08786e16e 100644
+> > --- a/arch/arm/kernel/relocate_kernel.S
+> > +++ b/arch/arm/kernel/relocate_kernel.S
+> > @@ -25,26 +25,26 @@ ENTRY(relocate_new_kernel)
+> >       ldr     r3, [r0],#4
+> >
+> >       /* Is it a destination page. Put destination address to r4 */
+> > -     tst     r3,#1,0
+> > +     tst     r3,#1
+> >       beq     1f
+> >       bic     r4,r3,#1
+> >       b       0b
+> >  1:
+> >       /* Is it an indirection page */
+> > -     tst     r3,#2,0
+> > +     tst     r3,#2
+> >       beq     1f
+> >       bic     r0,r3,#2
+> >       b       0b
+> >  1:
+> >
+> >       /* are we done ? */
+> > -     tst     r3,#4,0
+> > +     tst     r3,#4
+> >       beq     1f
+> >       b       2f
+> >
+> >  1:
+> >       /* is it source ? */
+> > -     tst     r3,#8,0
+> > +     tst     r3,#8
+> >       beq     0b
+> >       bic r3,r3,#8
+> >       mov r6,#1024
+> > --
+> > 2.25.0
+> >
+> >
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> >
+>
+> --
+> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+> According to speedtest.net: 11.9Mbps down 500kbps up
+>
+> --
+> You received this message because you are subscribed to the Google Groups "Clang Built Linux" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to clang-built-linux+unsubscribe@googlegroups.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/clang-built-linux/20200205235440.GW25745%40shell.armlinux.org.uk.
 
-v2: Explain why this cleanup is possible (Laurent).
 
-Acked-by: Philippe Cornu <philippe.cornu@st.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-Cc: Yannick Fertre <yannick.fertre@st.com>
-Cc: Philippe Cornu <philippe.cornu@st.com>
-Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Cc: Vincent Abriou <vincent.abriou@st.com>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
----
- drivers/gpu/drm/stm/drv.c | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
-index ea9fcbdc68b3..5b374531dd8c 100644
---- a/drivers/gpu/drm/stm/drv.c
-+++ b/drivers/gpu/drm/stm/drv.c
-@@ -88,7 +88,9 @@ static int drv_load(struct drm_device *ddev)
- 
- 	ddev->dev_private = (void *)ldev;
- 
--	drm_mode_config_init(ddev);
-+	ret = drm_mode_config_init(ddev);
-+	if (ret)
-+		return ret;
- 
- 	/*
- 	 * set max width and height as default value.
-@@ -103,7 +105,7 @@ static int drv_load(struct drm_device *ddev)
- 
- 	ret = ltdc_load(ddev);
- 	if (ret)
--		goto err;
-+		return ret;
- 
- 	drm_mode_config_reset(ddev);
- 	drm_kms_helper_poll_init(ddev);
-@@ -111,9 +113,6 @@ static int drv_load(struct drm_device *ddev)
- 	platform_set_drvdata(pdev, ddev);
- 
- 	return 0;
--err:
--	drm_mode_config_cleanup(ddev);
--	return ret;
- }
- 
- static void drv_unload(struct drm_device *ddev)
-@@ -122,7 +121,6 @@ static void drv_unload(struct drm_device *ddev)
- 
- 	drm_kms_helper_poll_fini(ddev);
- 	ltdc_unload(ddev);
--	drm_mode_config_cleanup(ddev);
- }
- 
- static __maybe_unused int drv_suspend(struct device *dev)
 -- 
-2.24.1
-
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
