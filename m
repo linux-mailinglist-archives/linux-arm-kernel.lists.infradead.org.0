@@ -2,72 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 984F9168339
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:25:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39E70168341
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 17:27:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wA0snlqgPpu+2jRsUeqUo0OQEXml97tePlObe/27uTg=; b=EJGP4Fy3WEwBPTr9mAUVbTMYm
-	ONoylXpTW6XxHjiP/NBBFhFVNZOdak6qCqn5+fQ8ifyNfHo8uwBY3ve2jIM7/dNkxjhnxgmzSzxod
-	JRvwQtLfgIc1e8LCKbyKFZfDn5GF7pyYwUWhA8NgsR1U2NKUILEXZxQ/LUo1NoMsmaejmlvB7crZY
-	govjqLgoo+7naiwceFPcceVbentM4Uyjtaz8+Rx8WcvrvAGRUW5G2Uf/pmYt5tSdqGlAUrAVPOtZH
-	oNM7iWVOJBGrVOBflMu1P5KTs8AgpqFqVVVjNmaMu0CrdX2n/9vyCrOLAcnO6LSPq6dRAz2U9side
-	XbCoKddhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v8xORRESqa6yxs0jXz/LKoITdePDlkbiOe4JGbvXa8Y=; b=FTHZwhVfIW5F1n
+	69Bc0SYUuaYHkMMKL3UUBnjxUEK1MxxbAsL9E/Ss2wBopZQev3P7RY0Z0JzpiGjsdIzmutic3Yepy
+	H3sJ6n0h/HvG2k725asMflOWOWf9gKmXpADhtemrgwCW1VOoGul038UaTdlk6kd9GYdb6TZ3RsXPi
+	3HRuOrfIOupUk9nssVckBRQUiDhpnoAnM5TZZRDDYajvOmykxK24/GRm9Dup/G/m8JQZJvR3W/A+l
+	Y06+jx+07t5hYWnQY82IKkO5h2INByEl4hforZ1VXaFgiv3PozeKplrrtwYBl3itj7M5+YsBPle20
+	xK2d13ECedALmxsg0hgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5B74-0001is-9A; Fri, 21 Feb 2020 16:25:14 +0000
+	id 1j5B8s-0003Im-4j; Fri, 21 Feb 2020 16:27:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5B6n-0001i2-C8
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:24:59 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1j5B8j-0003II-A4
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 16:26:58 +0000
+Received: from mail-qt1-f181.google.com (mail-qt1-f181.google.com
+ [209.85.160.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D44AC20578;
- Fri, 21 Feb 2020 16:24:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 70E0E24653
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 16:26:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582302297;
- bh=3fw8Z+13XXcXQdUbHBpVHdnEy61aCCDAIOza8cOqswg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=swYWU67SROlL4WRC3Ck2gqT/A/dG09f8N3UiYYTfFhYpoWNcC1zL1KxJ0bYTKUeh0
- BdhEZv0AnvNIw4LOF6KKU991WyGfm8VKVzqTg0j0RQSPRB3hN5Fdejk2JmZKAlUYPN
- SrLM5mMA6fvwtQGe1t2Kp50QtDdF1k/ExsYPBqmo=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j5B6l-0074uC-61; Fri, 21 Feb 2020 16:24:55 +0000
+ s=default; t=1582302416;
+ bh=t1V43wNRmlXXbwHM5UCwthYHCaU8uRTSqTXicUUb1OA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=nDNTY3NxX7sVLdRIdt3YPByd9Kv7CBWyk5mK1+pILwo8B/tIagUKlZB2GyeE65jg7
+ qKK/qvZs6rVBVnfHKWFiaAWtbzhYCyxkcY6pzo6HGUKrpiDlaQQPJNCo6V4TrOiA7P
+ fzA4sFEipaf1po4oM4UyDnGBcLq3/XPdySgDs+9Y=
+Received: by mail-qt1-f181.google.com with SMTP id w47so1668276qtk.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 08:26:56 -0800 (PST)
+X-Gm-Message-State: APjAAAUABxgscQ64DwAzjgbpyD/JJRp7QZepql9/yxv1qvvcrzHc/yok
+ btE3RIeOIsL8rGHr8sySyqNWaqZJPcjko4Vuag==
+X-Google-Smtp-Source: APXvYqy3IJCfMKCYhwtA6Nh648QtdiZGkAdnsHguH4t6HAx9AAKqow0Va6pQMhbNm4jzkgv6vsm3zB5p0PonBGVLLc4=
+X-Received: by 2002:ac8:1415:: with SMTP id k21mr33281075qtj.300.1582302415519; 
+ Fri, 21 Feb 2020 08:26:55 -0800 (PST)
 MIME-Version: 1.0
-Date: Fri, 21 Feb 2020 16:24:55 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH] clocksource: Fix arm_arch_timer clockmode when vDSO
- disabled
-In-Reply-To: <ccc457a4-dfc2-dedb-06a4-3ffb11a3c587@arm.com>
-References: <20200221130355.21373-1-vincenzo.frascino@arm.com>
- <a81251e813d54caddd56b9aac4b55e85@kernel.org>
- <c438aa7e-2c96-8c11-bb87-204929a01a20@arm.com>
- <6df28d31cf6d4dd6109415fbd73a9c48@kernel.org>
- <ccc457a4-dfc2-dedb-06a4-3ffb11a3c587@arm.com>
-Message-ID: <076d13fd01ca5e17f278cdb1db53b9ff@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: vincenzo.frascino@arm.com, linux-arch@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux@armlinux.org.uk,
- luto@kernel.org, tglx@linutronix.de, m.szyprowski@samsung.com,
- mark.rutland@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+References: <cover.1582300927.git.robin.murphy@arm.com>
+ <3954ca0b86641e5e6a1935886df6658b9305ec4a.1582300927.git.robin.murphy@arm.com>
+In-Reply-To: <3954ca0b86641e5e6a1935886df6658b9305ec4a.1582300927.git.robin.murphy@arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Fri, 21 Feb 2020 10:26:42 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKgz7N=nsA=TgJx=G9Zad77s39gyd3fwJV71-hdqokQpg@mail.gmail.com>
+Message-ID: <CAL_JsqKgz7N=nsA=TgJx=G9Zad77s39gyd3fwJV71-hdqokQpg@mail.gmail.com>
+Subject: Re: [PATCH 2/3] dt-bindings: ARM: Add recent Cortex/Neoverse PMUs
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_082457_455322_3993286C 
-X-CRM114-Status: GOOD (  20.02  )
+X-CRM114-CacheID: sfid-20200221_082657_375913_C96AEAA5 
+X-CRM114-Status: GOOD (  15.57  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,157 +86,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, mark.rutland@arm.com, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- luto@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, devicetree@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-21 15:56, Vincenzo Frascino wrote:
-> Hi Marc,
-> 
-> On 21/02/2020 15:28, Marc Zyngier wrote:
-> 
-> [...]
-> 
->> 
->> This isn't what I'm saying. What I'm suggesting here is that there is
->> possibly a missing indirection, which defaults to ARCH_TIMER when the
->> VDSO is selected, and NONE when it isn't.
->> 
->> Overloading a known symbol feels like papering over the issue.
->> 
->> Ideally, this default symbol would be provided by asm/clocksource.h, 
->> but
->> that may not even be the right thing to do.
->> 
-> 
-> I must admit I really like this idea :), how about:
-> 
-> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-> index 03bbfc312fe7..97864aabc2a6 100644
-> --- a/arch/arm/Kconfig
-> +++ b/arch/arm/Kconfig
-> @@ -3,6 +3,7 @@ config ARM
->         bool
->         default y
->         select ARCH_32BIT_OFF_T
-> +       select ARCH_CLOCKSOURCE_DATA
->         select ARCH_HAS_BINFMT_FLAT
->         select ARCH_HAS_DEBUG_VIRTUAL if MMU
->         select ARCH_HAS_DEVMEM_IS_ALLOWED
-> diff --git a/arch/arm/include/asm/clocksource.h
-> b/arch/arm/include/asm/clocksource.h
-> index 73beb7f131de..e37f6d74ba49 100644
-> --- a/arch/arm/include/asm/clocksource.h
-> +++ b/arch/arm/include/asm/clocksource.h
-> @@ -1,7 +1,18 @@
->  #ifndef _ASM_CLOCKSOURCE_H
->  #define _ASM_CLOCKSOURCE_H
-> 
-> +/*
-> + * Unused required for compilation only
-> + */
-> +struct arch_clocksource_data {
-> +       bool __reserved;
-> +};
-> +
-> +#ifdef CONFIG_GENERIC_GETTIMEOFDAY
->  #define VDSO_ARCH_CLOCKMODES   \
->         VDSO_CLOCKMODE_ARCHTIMER
-> +#else
-> +#define VDSO_CLOCKMODE_ARCHTIMER       VDSO_CLOCKMODE_NONE
-> +#endif
+On Fri, Feb 21, 2020 at 10:05 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> Add new PMU definitions to correspond with the CPU bindings.
+>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  Documentation/devicetree/bindings/arm/pmu.yaml | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/arm/pmu.yaml b/Documentation/devicetree/bindings/arm/pmu.yaml
+> index 52ae094ce330..cc52195d0e9e 100644
+> --- a/Documentation/devicetree/bindings/arm/pmu.yaml
+> +++ b/Documentation/devicetree/bindings/arm/pmu.yaml
+> @@ -21,11 +21,20 @@ properties:
+>        - enum:
+>            - apm,potenza-pmu
+>            - arm,armv8-pmuv3
+> +          - arm,neoverse-n1-pmu
+> +          - arm,neoverse-e1-pmu
 
-Which is exactly the same thing as before. It's not an indirection,
-it is just another overloading of an existing symbol.
+We've managed to do some interesting sorting here. Oh well.
 
->> Fair enough. But don't override the symbol locally. Create a new one:
->> 
-> 
-> I see what you mean now, you mean to not overload the semantical 
-> meaning of the
-> symbol. The symbol (VDSO_CLOCKMODE_ARCHTIMER) at this point is never 
-> defined
-> when VDSO=n, but I agree with you it can cause confusion.
+I'll take patches 1 and 2.
 
-Exactly. It breaks the expectation that if VDSO_CLOCKMODE_ARCHTIMER 
-exists,
-it has a unique, known value. Yes, the outcome is the same. That doesn't
-make it acceptable though.
-
-So building on your above example, here's what I'd like to see:
-
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 1dcc64bd3621..202b41dae05b 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -3,6 +3,7 @@ config ARM
-         bool
-         default y
-         select ARCH_32BIT_OFF_T
-+       select ARCH_CLOCKSOURCE_DATA
-         select ARCH_HAS_BINFMT_FLAT
-         select ARCH_HAS_DEBUG_VIRTUAL if MMU
-         select ARCH_HAS_DEVMEM_IS_ALLOWED
-diff --git a/arch/arm/include/asm/clocksource.h 
-b/arch/arm/include/asm/clocksource.h
-index 73beb7f131de..bd4347865f6d 100644
---- a/arch/arm/include/asm/clocksource.h
-+++ b/arch/arm/include/asm/clocksource.h
-@@ -1,7 +1,17 @@
-  #ifndef _ASM_CLOCKSOURCE_H
-  #define _ASM_CLOCKSOURCE_H
-
-+struct arch_clocksource_data {
-+       /* Empty on purpose */
-+};
-+
-+#ifdef CONFIG_GENERIC_GETTIMEOFDAY
-  #define VDSO_ARCH_CLOCKMODES   \
-         VDSO_CLOCKMODE_ARCHTIMER
-
-+#define ARCH_VDSO_DEFAULT_CLOCKMODE    VDSO_CLOCKMODE_ARCHTIMER
-+#else
-+#define ARCH_VDSO_DEFAULT_CLOCKMODE    VDSO_CLOCKMODE_NONE
-+#endif
-+
-  #endif
-diff --git a/arch/arm64/include/asm/clocksource.h 
-b/arch/arm64/include/asm/clocksource.h
-index eb82e9d95c5d..de706362fa81 100644
---- a/arch/arm64/include/asm/clocksource.h
-+++ b/arch/arm64/include/asm/clocksource.h
-@@ -5,4 +5,6 @@
-  #define VDSO_ARCH_CLOCKMODES   \
-         VDSO_CLOCKMODE_ARCHTIMER
-
-+#define ARCH_VDSO_DEFAULT_CLOCKMODE    VDSO_CLOCKMODE_ARCHTIMER
-+
-  #endif
-diff --git a/drivers/clocksource/arm_arch_timer.c 
-b/drivers/clocksource/arm_arch_timer.c
-index ee2420d56f67..8b7081583eeb 100644
---- a/drivers/clocksource/arm_arch_timer.c
-+++ b/drivers/clocksource/arm_arch_timer.c
-@@ -69,7 +69,7 @@ static enum arch_timer_ppi_nr arch_timer_uses_ppi = 
-ARCH_TIMER_VIRT_PPI;
-  static bool arch_timer_c3stop;
-  static bool arch_timer_mem_use_virtual;
-  static bool arch_counter_suspend_stop;
--static enum vdso_clock_mode vdso_default = VDSO_CLOCKMODE_ARCHTIMER;
-+static enum vdso_clock_mode vdso_default = ARCH_VDSO_DEFAULT_CLOCKMODE;
-
-  static cpumask_t evtstrm_available = CPU_MASK_NONE;
-  static bool evtstrm_enable = 
-IS_ENABLED(CONFIG_ARM_ARCH_TIMER_EVTSTREAM);
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+> +          - arm,cortex-a77-pmu
+> +          - arm,cortex-a76-pmu
+> +          - arm,cortex-a75-pmu
+>            - arm,cortex-a73-pmu
+>            - arm,cortex-a72-pmu
+> +          - arm,cortex-a65-pmu
+>            - arm,cortex-a57-pmu
+> +          - arm,cortex-a55-pmu
+>            - arm,cortex-a53-pmu
+>            - arm,cortex-a35-pmu
+> +          - arm,cortex-a34-pmu
+> +          - arm,cortex-a32-pmu
+>            - arm,cortex-a17-pmu
+>            - arm,cortex-a15-pmu
+>            - arm,cortex-a12-pmu
+> --
+> 2.23.0.dirty
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
