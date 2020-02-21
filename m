@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D207F1680C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 15:51:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 162EA1680C6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 15:51:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=04ON5wLWoMvKn1urH2370mltOIYIYIv152t2DoEbbMU=; b=SEffTNcotf88IiX0EGtDkalO14
-	wCTHZHfHK+LU8EwYVrY5UcIeezAef/3y0WSlPIDae+NM1FamCNbISVbBch/7SPHKuWonlbRPGgCFb
-	tIP35rwt7mXjzn9m69Zav7Kxj8AQoXrLZzA64qhzdqunnINxJN3qFP/d6884Fk5CHp1KOzXe8yCG0
-	vvB1upZQYu479yOYmM2N3FRdO9S/TeEIF3d43nKVuBNxjRsTXjtCuLhrvh82ZbrfX0nSaR9KAGaFi
-	HTfaydVCMn7Ekl6+COL2qnrNLdg6c+0ww3EaYrOookRGAU2+ChSgKueMDnmX7UW/wdxhsl0Tk5fBE
-	SKh7NiIA==;
+	bh=rjk1XiMIo7RwYJ8WsxDKWB+iRi6fGdtSykivVnBMBTQ=; b=uAxwRcWYh/w3zdRivOl4wXNe5O
+	UR4VjhSwaYF5UUWJJMfBv+4wEkk1F1RanIE33hRErSHGVaSZXQNNYfNFsVxZFrNvQDWSJqL4FfQRF
+	wZ6OjMgYW32Ba1fEtUeuPtw9HT8wiO3IQgNq8tzz14+X3CwHmqzWeEcFP8JOvNnVNU9xcnY84XSKl
+	9GPafLemXUnPy5grwXWmO+hg5T3JPujU04n1oR3Bfo5RxFywit55vr7Y+Xh/xnBiZw7M6RTBhad0f
+	YDIiDZgSptksXZPFwn4vu6ZAD+oJfkT07JNsyCwB4CAP+Mp5wnx0+yJE3VT8YpHTADkKaJDIXhv0n
+	CVCkfZhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j59dp-0002TJ-Nv; Fri, 21 Feb 2020 14:50:57 +0000
+	id 1j59e5-0002kb-LG; Fri, 21 Feb 2020 14:51:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j59dR-0002Kf-Bc
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 14:50:35 +0000
+ id 1j59dT-0002L7-5U
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 14:50:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8193030E;
- Fri, 21 Feb 2020 06:50:32 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFF841FB;
+ Fri, 21 Feb 2020 06:50:34 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4D6A93F703;
- Fri, 21 Feb 2020 06:50:31 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8BF163F703;
+ Fri, 21 Feb 2020 06:50:33 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCHv2 1/2] arm64: cpufeature: add cpus_have_final_cap()
-Date: Fri, 21 Feb 2020 14:50:21 +0000
-Message-Id: <20200221145022.27217-2-mark.rutland@arm.com>
+Subject: [PATCHv2 2/2] arm64: kvm: hyp: use cpus_have_final_cap()
+Date: Fri, 21 Feb 2020 14:50:22 +0000
+Message-Id: <20200221145022.27217-3-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200221145022.27217-1-mark.rutland@arm.com>
 References: <20200221145022.27217-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_065033_481716_CC95CFEF 
-X-CRM114-Status: GOOD (  15.83  )
+X-CRM114-CacheID: sfid-20200221_065035_304458_68B82928 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,147 +71,183 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When cpus_have_const_cap() was originally introduced it was intended to
-be safe in hyp context, where it is not safe to access the cpu_hwcaps
-array as cpus_have_cap() did. For more details see commit:
+The KVM hyp code is only run after system capabilities have been
+finalized, and thus all const cap checks have been patched. This is
+noted in in __cpu_init_hyp_mode(), where we BUG() if called too early:
 
-  a4023f682739439b ("arm64: Add hypervisor safe helper for checking constant capabilities")
+| /*
+|  * Call initialization code, and switch to the full blown HYP code.
+|  * If the cpucaps haven't been finalized yet, something has gone very
+|  * wrong, and hyp will crash and burn when it uses any
+|  * cpus_have_const_cap() wrapper.
+|  */
 
-We then made use of cpus_have_const_cap() throughout the kernel.
+Given this, the hyp code can use cpus_have_final_cap() and avoid
+generating code to check the cpu_hwcaps array, which would be unsafe to
+run in hyp context.
 
-Subsequently, we had to defer updating the static_key associated with
-each capability in order to avoid lockdep complaints. To avoid breaking
-kernel-wide usage of cpus_have_const_cap(), this was updated to fall
-back to the cpu_hwcaps array if called before the static_keys were
-updated. As the kvm hyp code was only called later than this, the
-fallback is redundant but not functionally harmful. For more details,
-see commit:
-
-  63a1e1c95e60e798 ("arm64/cpufeature: don't use mutex in bringup path")
-
-Today we have more users of cpus_have_const_cap() which are only called
-once the relevant static keys are initialized, and it would be
-beneficial to avoid the redundant code.
-
-To that end, this patch adds a new cpus_have_final_cap(), helper which
-is intend to be used in code which is only run once capabilities have
-been finalized, and will never check the cpus_hwcap array. This helps
-the compiler to generate better code as it no longer needs to generate
-code to address and test the cpus_hwcap array. To help catch misuse,
-cpus_have_final_cap() will BUG() if called before capabilities are
-finalized.
-
-In hyp context, BUG() will result in a hyp panic, but the specific BUG()
-instance will not be identified in the usual way.
-
-Comments are added to the various cpus_have_*_cap() helpers to describe
-the constraints on when they can be used. For clarity cpus_have_cap() is
-moved above the other helpers. Similarly the helpers are updated to use
-system_capabilities_finalized() consistently, and this is made
-__always_inline as required by its new callers.
+This patch migrate the KVM hyp code to cpus_have_final_cap(), avoiding
+this redundant code generation, and making it possible to detect if we
+accidentally invoke this code too early. In the latter case, the BUG()
+in cpus_have_final_cap() will cause a hyp panic.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Reviewed-by: Marc Zyngier <maz@kernel.org>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/cpufeature.h | 58 ++++++++++++++++++++++++++++++-------
- 1 file changed, 47 insertions(+), 11 deletions(-)
+ arch/arm64/kvm/hyp/switch.c    | 14 +++++++-------
+ arch/arm64/kvm/hyp/sysreg-sr.c |  8 ++++----
+ arch/arm64/kvm/hyp/tlb.c       |  8 ++++----
+ 3 files changed, 15 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index 92ef9539874a..940b2b67b428 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -390,14 +390,16 @@ unsigned long cpu_get_elf_hwcap2(void);
- #define cpu_set_named_feature(name) cpu_set_feature(cpu_feature(name))
- #define cpu_have_named_feature(name) cpu_have_feature(cpu_feature(name))
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index dfe8dd172512..27fcdff08dd6 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -127,7 +127,7 @@ static void __hyp_text __activate_traps_nvhe(struct kvm_vcpu *vcpu)
  
--/* System capability check for constant caps */
--static __always_inline bool __cpus_have_const_cap(int num)
-+static __always_inline bool system_capabilities_finalized(void)
+ 	write_sysreg(val, cptr_el2);
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
+ 		struct kvm_cpu_context *ctxt = &vcpu->arch.ctxt;
+ 
+ 		isb();
+@@ -146,12 +146,12 @@ static void __hyp_text __activate_traps(struct kvm_vcpu *vcpu)
  {
--	if (num >= ARM64_NCAPS)
--		return false;
--	return static_branch_unlikely(&cpu_hwcap_keys[num]);
-+	return static_branch_likely(&arm64_const_caps_ready);
+ 	u64 hcr = vcpu->arch.hcr_el2;
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_TX2_219_TVM))
++	if (cpus_have_final_cap(ARM64_WORKAROUND_CAVIUM_TX2_219_TVM))
+ 		hcr |= HCR_TVM;
+ 
+ 	write_sysreg(hcr, hcr_el2);
+ 
+-	if (cpus_have_const_cap(ARM64_HAS_RAS_EXTN) && (hcr & HCR_VSE))
++	if (cpus_have_final_cap(ARM64_HAS_RAS_EXTN) && (hcr & HCR_VSE))
+ 		write_sysreg_s(vcpu->arch.vsesr_el2, SYS_VSESR_EL2);
+ 
+ 	if (has_vhe())
+@@ -181,7 +181,7 @@ static void __hyp_text __deactivate_traps_nvhe(void)
+ {
+ 	u64 mdcr_el2 = read_sysreg(mdcr_el2);
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
+ 		u64 val;
+ 
+ 		/*
+@@ -328,7 +328,7 @@ static bool __hyp_text __populate_fault_info(struct kvm_vcpu *vcpu)
+ 	 * resolve the IPA using the AT instruction.
+ 	 */
+ 	if (!(esr & ESR_ELx_S1PTW) &&
+-	    (cpus_have_const_cap(ARM64_WORKAROUND_834220) ||
++	    (cpus_have_final_cap(ARM64_WORKAROUND_834220) ||
+ 	     (esr & ESR_ELx_FSC_TYPE) == FSC_PERM)) {
+ 		if (!__translate_far_to_hpfar(far, &hpfar))
+ 			return false;
+@@ -498,7 +498,7 @@ static bool __hyp_text fixup_guest_exit(struct kvm_vcpu *vcpu, u64 *exit_code)
+ 	if (*exit_code != ARM_EXCEPTION_TRAP)
+ 		goto exit;
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_TX2_219_TVM) &&
++	if (cpus_have_final_cap(ARM64_WORKAROUND_CAVIUM_TX2_219_TVM) &&
+ 	    kvm_vcpu_trap_get_class(vcpu) == ESR_ELx_EC_SYS64 &&
+ 	    handle_tx2_tvm(vcpu))
+ 		return true;
+@@ -555,7 +555,7 @@ static bool __hyp_text fixup_guest_exit(struct kvm_vcpu *vcpu, u64 *exit_code)
+ 
+ static inline bool __hyp_text __needs_ssbd_off(struct kvm_vcpu *vcpu)
+ {
+-	if (!cpus_have_const_cap(ARM64_SSBD))
++	if (!cpus_have_final_cap(ARM64_SSBD))
+ 		return false;
+ 
+ 	return !(vcpu->arch.workaround_flags & VCPU_WORKAROUND_2_FLAG);
+diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+index 7672a978926c..75b1925763f1 100644
+--- a/arch/arm64/kvm/hyp/sysreg-sr.c
++++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+@@ -71,7 +71,7 @@ static void __hyp_text __sysreg_save_el2_return_state(struct kvm_cpu_context *ct
+ 	ctxt->gp_regs.regs.pc		= read_sysreg_el2(SYS_ELR);
+ 	ctxt->gp_regs.regs.pstate	= read_sysreg_el2(SYS_SPSR);
+ 
+-	if (cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
++	if (cpus_have_final_cap(ARM64_HAS_RAS_EXTN))
+ 		ctxt->sys_regs[DISR_EL1] = read_sysreg_s(SYS_VDISR_EL2);
  }
  
-+/*
-+ * Test for a capability with a runtime check.
-+ *
-+ * Before the capability is detected, this returns false.
-+ */
- static inline bool cpus_have_cap(unsigned int num)
- {
- 	if (num >= ARM64_NCAPS)
-@@ -405,14 +407,53 @@ static inline bool cpus_have_cap(unsigned int num)
- 	return test_bit(num, cpu_hwcaps);
+@@ -118,7 +118,7 @@ static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
+ 	write_sysreg(ctxt->sys_regs[MPIDR_EL1],		vmpidr_el2);
+ 	write_sysreg(ctxt->sys_regs[CSSELR_EL1],	csselr_el1);
+ 
+-	if (!cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
++	if (!cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
+ 		write_sysreg_el1(ctxt->sys_regs[SCTLR_EL1],	SYS_SCTLR);
+ 		write_sysreg_el1(ctxt->sys_regs[TCR_EL1],	SYS_TCR);
+ 	} else	if (!ctxt->__hyp_running_vcpu) {
+@@ -149,7 +149,7 @@ static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
+ 	write_sysreg(ctxt->sys_regs[PAR_EL1],		par_el1);
+ 	write_sysreg(ctxt->sys_regs[TPIDR_EL1],		tpidr_el1);
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE) &&
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE) &&
+ 	    ctxt->__hyp_running_vcpu) {
+ 		/*
+ 		 * Must only be done for host registers, hence the context
+@@ -194,7 +194,7 @@ __sysreg_restore_el2_return_state(struct kvm_cpu_context *ctxt)
+ 	write_sysreg_el2(ctxt->gp_regs.regs.pc,		SYS_ELR);
+ 	write_sysreg_el2(pstate,			SYS_SPSR);
+ 
+-	if (cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
++	if (cpus_have_final_cap(ARM64_HAS_RAS_EXTN))
+ 		write_sysreg_s(ctxt->sys_regs[DISR_EL1], SYS_VDISR_EL2);
  }
  
-+/*
-+ * Test for a capability without a runtime check.
-+ *
-+ * Before capabilities are finalized, this returns false.
-+ * After capabilities are finalized, this is patched to avoid a runtime check.
-+ *
-+ * @num must be a compile-time constant.
-+ */
-+static __always_inline bool __cpus_have_const_cap(int num)
-+{
-+	if (num >= ARM64_NCAPS)
-+		return false;
-+	return static_branch_unlikely(&cpu_hwcap_keys[num]);
-+}
-+
-+/*
-+ * Test for a capability, possibly with a runtime check.
-+ *
-+ * Before capabilities are finalized, this behaves as cpus_have_cap().
-+ * After capabilities are finalized, this is patched to avoid a runtime check.
-+ *
-+ * @num must be a compile-time constant.
-+ */
- static __always_inline bool cpus_have_const_cap(int num)
- {
--	if (static_branch_likely(&arm64_const_caps_ready))
-+	if (system_capabilities_finalized())
- 		return __cpus_have_const_cap(num);
- 	else
- 		return cpus_have_cap(num);
- }
+diff --git a/arch/arm64/kvm/hyp/tlb.c b/arch/arm64/kvm/hyp/tlb.c
+index 92f560e3e1aa..ceaddbe4279f 100644
+--- a/arch/arm64/kvm/hyp/tlb.c
++++ b/arch/arm64/kvm/hyp/tlb.c
+@@ -23,7 +23,7 @@ static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm *kvm,
  
-+/*
-+ * Test for a capability without a runtime check.
-+ *
-+ * Before capabilities are finalized, this will BUG().
-+ * After capabilities are finalized, this is patched to avoid a runtime check.
-+ *
-+ * @num must be a compile-time constant.
-+ */
-+static __always_inline bool cpus_have_final_cap(int num)
-+{
-+	if (system_capabilities_finalized())
-+		return __cpus_have_const_cap(num);
-+	else
-+		BUG();
-+}
-+
- static inline void cpus_set_cap(unsigned int num)
- {
- 	if (num >= ARM64_NCAPS) {
-@@ -613,11 +654,6 @@ static inline bool system_has_prio_mask_debugging(void)
- 	       system_uses_irq_prio_masking();
- }
+ 	local_irq_save(cxt->flags);
  
--static inline bool system_capabilities_finalized(void)
--{
--	return static_branch_likely(&arm64_const_caps_ready);
--}
--
- #define ARM64_BP_HARDEN_UNKNOWN		-1
- #define ARM64_BP_HARDEN_WA_NEEDED	0
- #define ARM64_BP_HARDEN_NOT_REQUIRED	1
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_VHE)) {
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_VHE)) {
+ 		/*
+ 		 * For CPUs that are affected by ARM errata 1165522 or 1530923,
+ 		 * we cannot trust stage-1 to be in a correct state at that
+@@ -63,7 +63,7 @@ static void __hyp_text __tlb_switch_to_guest_vhe(struct kvm *kvm,
+ static void __hyp_text __tlb_switch_to_guest_nvhe(struct kvm *kvm,
+ 						  struct tlb_inv_context *cxt)
+ {
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
+ 		u64 val;
+ 
+ 		/*
+@@ -103,7 +103,7 @@ static void __hyp_text __tlb_switch_to_host_vhe(struct kvm *kvm,
+ 	write_sysreg(HCR_HOST_VHE_FLAGS, hcr_el2);
+ 	isb();
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_VHE)) {
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_VHE)) {
+ 		/* Restore the registers to what they were */
+ 		write_sysreg_el1(cxt->tcr, SYS_TCR);
+ 		write_sysreg_el1(cxt->sctlr, SYS_SCTLR);
+@@ -117,7 +117,7 @@ static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+ {
+ 	write_sysreg(0, vttbr_el2);
+ 
+-	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
++	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
+ 		/* Ensure write of the host VMID */
+ 		isb();
+ 		/* Restore the host's TCR_EL1 */
 -- 
 2.11.0
 
