@@ -2,91 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 719EC168593
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:50:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B49B0168596
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 18:51:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bd31FAZy2b0WfJSiQWnOF5wV0Q/0m2IEC1AwX36z/FM=; b=lO6xj1gtaqGqfG
-	LdViwMdenjBPhLOf4iZPCXhOpvPxyfdLRwHB7rZjq79D1sszeKoDvx5mHJLqQsxSBSLI0X1vsVcXx
-	dgVsU9LO4voom2jfDDloZ5zvKDA0Ugoo2CWCWOCPuhiacOrawzNfnaXFjF6d15xBP3RQYVrVR/ALW
-	vIxCg9pb1rs9G7T7WzD+7x8/pyOOly/J8w41EnuBXGTLIVqTqoObkKezSRVDPuW1v+n6ZrkYaRx4w
-	gCz0AuFEvHCjUobvfhTvFC6zA0OQaY8IwjTKB217MSm+cjCEG1ZK14n9sVgNEUBuJasYq+BYeWVOD
-	XGpyCITuDDBvd8lkdq6g==;
+	List-Owner; bh=r507n0Iuw44DFYsgKxI6MhZ+hT0qWjrKO5iehynbnEA=; b=mVy11HLMVa4X63
+	37jAqC4z9VtzPi3Doabwku3FduHleZBDqHDPtKZ3aviRrPRRjtqCrtuan7HhpbTh0xCsKboYP+YNF
+	kRINWce5cC3utlXz0CQOGQyvnr6BQN09hdiK924RWm76g1YJQ66dwAI/5skuNyGj2VdngFcOm6UY/
+	tMnK7+vmPkfuJ9YeBoQfrUEi/IjoIClQ3E1eEWRW3AD2S6vo2r6vzLUWlfS0FUbkgRB1z16N8Kc6t
+	GI78bDwS+2rZfSUfSqFvdklxtVNZU3fq4UYaRbS4WTS13OD09Q8Yoz7GXbB49ASGAF9+noo3DXYnX
+	dJBf4YSSaeYw+WVf3YUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5CRr-0003Cu-EH; Fri, 21 Feb 2020 17:50:47 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5CPb-0008JB-6S
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:48:29 +0000
-Received: from mwalle01.sab.local. (unknown [213.135.10.150])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 4B2CE23E6A;
- Fri, 21 Feb 2020 18:48:15 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1582307295;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=oKAX3BGInq2OpMzz4CsyiOeJ6b7EAJW7O+YBkeufuTY=;
- b=pr+O3RDJKJVx39YNuuUF41ggl/uH01I8Uo0r4VvIMWSG5v2Caf5W1MKnecoQ5+wIcXAX6v
- xZ6oQalKR3sLVAfXhqKr0o53HRp3WYlVHeqDX5Llb+6RnNBPUaXuoJijteH1LZXrV2zYHP
- q4g07IdN/4n+bRa5vuD1mPXo5mupF2s=
-From: Michael Walle <michael@walle.cc>
-To: linux-serial@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 9/9] arm64: dts: ls1028a: add missing LPUART nodes
-Date: Fri, 21 Feb 2020 18:47:54 +0100
-Message-Id: <20200221174754.5295-10-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200221174754.5295-1-michael@walle.cc>
-References: <20200221174754.5295-1-michael@walle.cc>
+	id 1j5CSY-0003rj-Oy; Fri, 21 Feb 2020 17:51:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5CQF-0000Sw-G1
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 17:49:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BCDA930E;
+ Fri, 21 Feb 2020 09:49:06 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F21073F6CF;
+ Fri, 21 Feb 2020 09:49:05 -0800 (PST)
+Date: Fri, 21 Feb 2020 17:49:03 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 3/3] arm64: perf: Support new DT compatibles
+Message-ID: <20200221174903.GB27382@lakrids.cambridge.arm.com>
+References: <cover.1582300927.git.robin.murphy@arm.com>
+ <6dbd695863346bda1e5d2133643ffade6227bd9a.1582300927.git.robin.murphy@arm.com>
+ <20200221171558.GA27382@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 4B2CE23E6A
-X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.782]; DKIM_SIGNED(0.00)[];
- DBL_PROHIBIT(0.00)[0.34.163.48:email,0.34.202.64:email,0.34.124.32:email,0.34.241.80:email];
- RCPT_COUNT_TWELVE(0.00)[13]; MID_CONTAINS_FROM(1.00)[];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:12941, ipnet:213.135.0.0/19, country:DE];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+Content-Disposition: inline
+In-Reply-To: <20200221171558.GA27382@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_094827_407628_CD4A07E6 
-X-CRM114-Status: GOOD (  10.68  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200221_094907_777026_7FF9CC76 
+X-CRM114-Status: GOOD (  17.20  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,112 +65,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Peng Fan <peng.fan@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Li Yang <leoyang.li@nxp.com>,
- Michael Walle <michael@walle.cc>, Rob Herring <robh+dt@kernel.org>,
- Vabhav Sharma <vabhav.sharma@nxp.com>, Jiri Slaby <jslaby@suse.com>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: catalin.marinas@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The LS1028A has six LPUART controllers. Add the nodes.
+On Fri, Feb 21, 2020 at 05:15:59PM +0000, Mark Rutland wrote:
+> On Fri, Feb 21, 2020 at 04:04:58PM +0000, Robin Murphy wrote:
+> > Add support for matching the new PMUs. For now, this just wires them up
+> > as generic PMUv3 such that people writing DTs for new SoCs can do the
+> > right thing, and at least have architectural and raw events be usable.
+> > We can come back and fill in event maps for sysfs and/or perf tools at
+> > a later date.
+> > 
+> > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> 
+> Thanks for this, it looks fine to me:
+> 
+> Acked-by: Mark Rutland <mark.rutland@arm.com>
 
-This was tested on a custom board.
+Argh, this isn't quite right, sorry. :/
 
-Signed-off-by: Michael Walle <michael@walle.cc>
----
- .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 73 +++++++++++++++++++
- 1 file changed, 73 insertions(+)
+> > ---
+> >  arch/arm64/kernel/perf_event.c | 8 ++++++++
+> >  1 file changed, 8 insertions(+)
+> > 
+> > diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> > index e40b65645c86..28ce582e049e 100644
+> > --- a/arch/arm64/kernel/perf_event.c
+> > +++ b/arch/arm64/kernel/perf_event.c
+> > @@ -1105,11 +1105,19 @@ static int armv8_vulcan_pmu_init(struct arm_pmu *cpu_pmu)
+> >  
+> >  static const struct of_device_id armv8_pmu_of_device_ids[] = {
+> >  	{.compatible = "arm,armv8-pmuv3",	.data = armv8_pmuv3_init},
+> > +	{.compatible = "arm,cortex-a34-pmu",	.data = armv8_pmuv3_init},
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index f1909fee391d..3ece3f8446d3 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -390,6 +390,79 @@
- 			status = "disabled";
- 		};
- 
-+
-+		lpuart0: serial@2260000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2260000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 32>,
-+			       <&edma0 1 33>;
-+			status = "disabled";
-+		};
-+
-+		lpuart1: serial@2270000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2270000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 30>,
-+			       <&edma0 1 31>;
-+			status = "disabled";
-+		};
-+
-+		lpuart2: serial@2280000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2280000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 28>,
-+			       <&edma0 1 29>;
-+			status = "disabled";
-+		};
-+
-+		lpuart3: serial@2290000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2290000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 26>,
-+			       <&edma0 1 27>;
-+			status = "disabled";
-+		};
-+
-+		lpuart4: serial@22a0000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x22a0000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 24>,
-+			       <&edma0 1 25>;
-+			status = "disabled";
-+		};
-+
-+		lpuart5: serial@22b0000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x22b0000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 22>,
-+			       <&edma0 1 23>;
-+			status = "disabled";
-+		};
-+
- 		edma0: dma-controller@22c0000 {
- 			#dma-cells = <2>;
- 			compatible = "fsl,ls1028a-edma", "fsl,vf610-edma";
--- 
-2.20.1
+Unfortunately, these need their own .data so that they can be given
+appropriate names under sysfs.
 
+We're stuck doing that forever for DT, though at least we learned for
+ACPI...
+
+Mark.
+
+> >  	{.compatible = "arm,cortex-a35-pmu",	.data = armv8_a35_pmu_init},
+> >  	{.compatible = "arm,cortex-a53-pmu",	.data = armv8_a53_pmu_init},
+> > +	{.compatible = "arm,cortex-a55-pmu",	.data = armv8_pmuv3_init},
+> >  	{.compatible = "arm,cortex-a57-pmu",	.data = armv8_a57_pmu_init},
+> > +	{.compatible = "arm,cortex-a65-pmu",	.data = armv8_pmuv3_init},
+> >  	{.compatible = "arm,cortex-a72-pmu",	.data = armv8_a72_pmu_init},
+> >  	{.compatible = "arm,cortex-a73-pmu",	.data = armv8_a73_pmu_init},
+> > +	{.compatible = "arm,cortex-a75-pmu",	.data = armv8_pmuv3_init},
+> > +	{.compatible = "arm,cortex-a76-pmu",	.data = armv8_pmuv3_init},
+> > +	{.compatible = "arm,cortex-a77-pmu",	.data = armv8_pmuv3_init},
+> > +	{.compatible = "arm,neoverse-e1-pmu",	.data = armv8_pmuv3_init},
+> > +	{.compatible = "arm,neoverse-n1-pmu",	.data = armv8_pmuv3_init},
+> >  	{.compatible = "cavium,thunder-pmu",	.data = armv8_thunder_pmu_init},
+> >  	{.compatible = "brcm,vulcan-pmu",	.data = armv8_vulcan_pmu_init},
+> >  	{},
+> > -- 
+> > 2.23.0.dirty
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
