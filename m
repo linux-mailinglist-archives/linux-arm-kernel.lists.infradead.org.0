@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00CB71687EE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:55:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 742D21687F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 20:55:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E2hmHtvjQkBycpgN7hL8zG0pDSwQriQmJB5CAuf6esc=; b=NlrTUvhkthHAJY
-	cX/zapAoi3nct7oZveNbbqHoQhvpO1zJIfnjedh3y9RbZeyWT+pTh8CBdsvtdLrWjuGvFKe+7Ornm
-	2b0WDVouwTJrbdiOIHRrmMk9EiIiCFj++sOZIZIhgzvWR5c1HroOvCOi9iBkIpmjSP+RNqstynJoI
-	pIQ2sSkyqdTIoKNbOpyE2gdTVUQvaETsdr1yMklh70IHFaC1py6sr+VBfQV5SIYTLl0QfJzFrCCJl
-	QOKWXAuaaedln4i5qarTq5CjpOdUIPWkcSgGKWphTkB+FA7d7avRcXmSmtTzUT9yWrvPrrnM/E/VQ
-	idduVizt6kVSXLHOSsiQ==;
+	List-Owner; bh=gxzQRFIMbQ65Y4u6au0SBgVWowSoPa+2BjnWZozj3BI=; b=LXEHqc44WP1CVI
+	2bT18/V7wjcVG+kmloZNNpv6FiosASgCcSb6tTu7hFiuHnuMwwdJ3whCJcdfyoiGykay/FIa5cwfM
+	Co0jyfu2tZ4Z93p8uFm4pVYNjbHNot2D81bKq1sC/HLw0JYAyVP6gIw1485uWUuTUjmppeU27KBzH
+	pOLYiDBcO3Krk2t5msAL1jd+RYjpeYSp4aTjBUAX6UO+pOWf81xv9lS1CGO1GG3+W2mFYxrvHhSwM
+	UnQsjVKqlqCAnde0EGRo8Vq8MFiHWVowoGVynmlR6tfYZ8CgSkSkNv8tLLc0/ICHlMM8UWnp4QULX
+	xSOb9F8pId4Oj1JC92iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5ENv-0006mo-8b; Fri, 21 Feb 2020 19:54:51 +0000
+	id 1j5EOI-00070M-51; Fri, 21 Feb 2020 19:55:14 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5EMT-0005SE-R2
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 19:53:24 +0000
+ id 1j5EMX-0005UW-7Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 19:53:28 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 4EF8E814A;
- Fri, 21 Feb 2020 19:54:04 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 5DCD8807E;
+ Fri, 21 Feb 2020 19:54:07 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 6/7] bus: ti-sysc: Implement SoC revision handling
-Date: Fri, 21 Feb 2020 11:52:55 -0800
-Message-Id: <20200221195256.54016-7-tony@atomide.com>
+Subject: [PATCH 7/7] bus: ti-sysc: Handle module unlock quirk needed for some
+ RTC
+Date: Fri, 21 Feb 2020 11:52:56 -0800
+Message-Id: <20200221195256.54016-8-tony@atomide.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200221195256.54016-1-tony@atomide.com>
 References: <20200221195256.54016-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_115322_013785_9D9C5860 
-X-CRM114-Status: GOOD (  18.46  )
+X-CRM114-CacheID: sfid-20200221_115325_541265_430139C8 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -60,176 +61,204 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
  Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
- "H . Nikolaus Schaller" <hns@goldelico.com>, linux-kernel@vger.kernel.org,
+ "H. Nikolaus Schaller" <hns@goldelico.com>, linux-kernel@vger.kernel.org,
  =?UTF-8?q?Andr=C3=A9=20Hentschel?= <nerv@dawncrow.de>,
  "Andrew F . Davis" <afd@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
  Faiz Abbas <faiz_abbas@ti.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Suman Anna <s-anna@ti.com>,
  Adam Ford <aford173@gmail.com>, linux-arm-kernel@lists.infradead.org,
  Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2UgbmVlZCB0byBrbm93IFNvQyB0eXBlIGFuZCBmZWF0dXJlcyBmb3IgY2FzZXMgd2hlcmUgdGhl
-IHNhbWUgU29DCm1heSBiZSBpbnN0YWxsZWQgaW4gdmFyaW91cyB2ZXJzaW9ucyBvbiB0aGUgc2Ft
-ZSBib2FyZCBhbmQgd291bGQgbmVlZAphIHNlcGFyYXRlIGR0cyBmaWxlIG90aGVyd2lzZSBmb3Ig
-dGhlIGRpZmZlcmVudCB2YXJpYW50cy4KCkZvciBleGFtcGxlLCBhbTM3MDMgaXMgcGluIGNvbXBh
-dGlibGUgd2l0aCBvbWFwMzYzMCwgYnV0IGhhcyBzZ3ggYW5kCml2YSBhY2NlbGVyYXRvcnMgZGlz
-YWJsZWQuIFdlIG11c3Qgbm90IHRyeSB0byBhY2Nlc3MgdGhlIHNneCBvciBpdmEKbW9kdWxlIHJl
-Z2lzdGVycyBvbiBhbTM3MDMsIGFuZCBuZWVkIHRvIHNldCB0aGUgdW5hdmFpbGFibGUgZGV2aWNl
-cwpkaXNhYmxlZCBlYXJseS4KCkxldCdzIGFsc28gZGV0ZWN0IG9tYXAzNDMwIGFzIHRoYXQgaXMg
-bmVlZGVkIGZvciBkaXNwbGF5IHN1YnN5c3RlbQooRFNTKSByZXNldCBsYXRlciBvbiwgYW5kIEdQ
-IHZzIEVNVSBvciBIUyBkZXZpY2VzLiBGdXJ0aGVyIFNvQwpzcGVjaWZpYyBkaXNhYmxlZCBkZXZp
-Y2UgZGV0ZWN0aW9uIGNhbiBiZSBhZGRlZCBhcyBuZWVkZWQsIHN1Y2ggYXMKZHJhNzF4IHZzIGRy
-YTc2eCBydGMgYW5kIHVzYjQuCgpDYzogQWRhbSBGb3JkIDxhZm9yZDE3M0BnbWFpbC5jb20+CkNj
-OiBBbmRyw6kgSGVudHNjaGVsIDxuZXJ2QGRhd25jcm93LmRlPgpDYzogSC4gTmlrb2xhdXMgU2No
-YWxsZXIgPGhuc0Bnb2xkZWxpY28uY29tPgpDYzogS2VlcnRoeSA8ai1rZWVydGh5QHRpLmNvbT4K
-U2lnbmVkLW9mZi1ieTogVG9ueSBMaW5kZ3JlbiA8dG9ueUBhdG9taWRlLmNvbT4KLS0tCiBhcmNo
-L2FybS9tYWNoLW9tYXAyL3BkYXRhLXF1aXJrcy5jICAgIHwgICA2ICsKIGRyaXZlcnMvYnVzL3Rp
-LXN5c2MuYyAgICAgICAgICAgICAgICAgfCAxOTQgKysrKysrKysrKysrKysrKysrKysrKysrKy0K
-IGluY2x1ZGUvbGludXgvcGxhdGZvcm1fZGF0YS90aS1zeXNjLmggfCAgIDEgKwogMyBmaWxlcyBj
-aGFuZ2VkLCAyMDAgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2Fy
-Y2gvYXJtL21hY2gtb21hcDIvcGRhdGEtcXVpcmtzLmMgYi9hcmNoL2FybS9tYWNoLW9tYXAyL3Bk
-YXRhLXF1aXJrcy5jCi0tLSBhL2FyY2gvYXJtL21hY2gtb21hcDIvcGRhdGEtcXVpcmtzLmMKKysr
-IGIvYXJjaC9hcm0vbWFjaC1vbWFwMi9wZGF0YS1xdWlya3MuYwpAQCAtMzk3LDEwICszOTcsMTYg
-QEAgc3RhdGljIGludCB0aV9zeXNjX3NodXRkb3duX21vZHVsZShzdHJ1Y3QgZGV2aWNlICpkZXYs
-CiAJcmV0dXJuIG9tYXBfaHdtb2Rfc2h1dGRvd24oY29va2llLT5kYXRhKTsKIH0KIAorc3RhdGlj
-IGJvb2wgdGlfc3lzY19zb2NfdHlwZV9ncCh2b2lkKQoreworCXJldHVybiBvbWFwX3R5cGUoKSA9
-PSBPTUFQMl9ERVZJQ0VfVFlQRV9HUDsKK30KKwogc3RhdGljIHN0cnVjdCBvZl9kZXZfYXV4ZGF0
-YSBvbWFwX2F1eGRhdGFfbG9va3VwW107CiAKIHN0YXRpYyBzdHJ1Y3QgdGlfc3lzY19wbGF0Zm9y
-bV9kYXRhIHRpX3N5c2NfcGRhdGEgPSB7CiAJLmF1eGRhdGEgPSBvbWFwX2F1eGRhdGFfbG9va3Vw
-LAorCS5zb2NfdHlwZV9ncCA9IHRpX3N5c2Nfc29jX3R5cGVfZ3AsCiAJLmluaXRfY2xvY2tkb21h
-aW4gPSB0aV9zeXNjX2Nsa2RtX2luaXQsCiAJLmNsa2RtX2RlbnlfaWRsZSA9IHRpX3N5c2NfY2xr
-ZG1fZGVueV9pZGxlLAogCS5jbGtkbV9hbGxvd19pZGxlID0gdGlfc3lzY19jbGtkbV9hbGxvd19p
-ZGxlLApkaWZmIC0tZ2l0IGEvZHJpdmVycy9idXMvdGktc3lzYy5jIGIvZHJpdmVycy9idXMvdGkt
-c3lzYy5jCi0tLSBhL2RyaXZlcnMvYnVzL3RpLXN5c2MuYworKysgYi9kcml2ZXJzL2J1cy90aS1z
-eXNjLmMKQEAgLTcsNiArNyw3IEBACiAjaW5jbHVkZSA8bGludXgvY2xrLmg+CiAjaW5jbHVkZSA8
-bGludXgvY2xrZGV2Lmg+CiAjaW5jbHVkZSA8bGludXgvZGVsYXkuaD4KKyNpbmNsdWRlIDxsaW51
-eC9saXN0Lmg+CiAjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+CiAjaW5jbHVkZSA8bGludXgvcGxh
-dGZvcm1fZGV2aWNlLmg+CiAjaW5jbHVkZSA8bGludXgvcG1fZG9tYWluLmg+CkBAIC0xNSwxNSAr
-MTYsNDcgQEAKICNpbmNsdWRlIDxsaW51eC9vZl9hZGRyZXNzLmg+CiAjaW5jbHVkZSA8bGludXgv
-b2ZfcGxhdGZvcm0uaD4KICNpbmNsdWRlIDxsaW51eC9zbGFiLmg+CisjaW5jbHVkZSA8bGludXgv
-c3lzX3NvYy5oPgogI2luY2x1ZGUgPGxpbnV4L2lvcG9sbC5oPgogCiAjaW5jbHVkZSA8bGludXgv
-cGxhdGZvcm1fZGF0YS90aS1zeXNjLmg+CiAKICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9idXMvdGkt
-c3lzYy5oPgogCisjZGVmaW5lIERJU19JU1AJCUJJVCgyKQorI2RlZmluZSBESVNfSVZBCQlCSVQo
-MSkKKyNkZWZpbmUgRElTX1NHWAkJQklUKDApCisKKyNkZWZpbmUgU09DX0ZMQUcobWF0Y2gsIGZs
-YWcpCXsgLm1hY2hpbmUgPSBtYXRjaCwgLmRhdGEgPSAodm9pZCAqKShmbGFnKSwgfQorCiAjZGVm
-aW5lIE1BWF9NT0RVTEVfU09GVFJFU0VUX1dBSVQJCTEwMDAwCiAKLXN0YXRpYyBjb25zdCBjaGFy
-ICogY29uc3QgcmVnX25hbWVzW10gPSB7ICJyZXYiLCAic3lzYyIsICJzeXNzIiwgfTsKK2VudW0g
-c3lzY19zb2MgeworCVNPQ19VTktOT1dOLAorCVNPQ18yNDIwLAorCVNPQ18yNDMwLAorCVNPQ18z
-NDMwLAorCVNPQ18zNjMwLAorCVNPQ180NDMwLAorCVNPQ180NDYwLAorCVNPQ180NDcwLAorCVNP
-Q181NDMwLAorCVNPQ19BTTMsCisJU09DX0FNNCwKKwlTT0NfRFJBNywKK307CisKK3N0cnVjdCBz
-eXNjX2FkZHJlc3MgeworCXVuc2lnbmVkIGxvbmcgYmFzZTsKKwlzdHJ1Y3QgbGlzdF9oZWFkIG5v
-ZGU7Cit9OworCitzdHJ1Y3Qgc3lzY19zb2NfaW5mbyB7CisJdW5zaWduZWQgbG9uZyBnZW5lcmFs
-X3B1cnBvc2U6MTsKKwllbnVtIHN5c2Nfc29jIHNvYzsKKwlzdHJ1Y3QgbXV0ZXggbGlzdF9sb2Nr
-OwkJCS8qIGRpc2FibGVkIG1vZHVsZXMgbGlzdCBsb2NrICovCisJc3RydWN0IGxpc3RfaGVhZCBk
-aXNhYmxlZF9tb2R1bGVzOworfTsKIAogZW51bSBzeXNjX2Nsb2NrcyB7CiAJU1lTQ19GQ0ssCkBA
-IC0zOSw2ICs3Miw4IEBAIGVudW0gc3lzY19jbG9ja3MgewogCVNZU0NfTUFYX0NMT0NLUywKIH07
-CiAKK3N0YXRpYyBzdHJ1Y3Qgc3lzY19zb2NfaW5mbyAqc3lzY19zb2M7CitzdGF0aWMgY29uc3Qg
-Y2hhciAqIGNvbnN0IHJlZ19uYW1lc1tdID0geyAicmV2IiwgInN5c2MiLCAic3lzcyIsIH07CiBz
-dGF0aWMgY29uc3QgY2hhciAqIGNvbnN0IGNsb2NrX25hbWVzW1NZU0NfTUFYX0NMT0NLU10gPSB7
-CiAJImZjayIsICJpY2siLCAib3B0MCIsICJvcHQxIiwgIm9wdDIiLCAib3B0MyIsICJvcHQ0IiwK
-IAkib3B0NSIsICJvcHQ2IiwgIm9wdDciLApAQCAtMjM4Miw2ICsyNDE3LDE1NCBAQCBzdGF0aWMg
-dm9pZCB0aV9zeXNjX2lkbGUoc3RydWN0IHdvcmtfc3RydWN0ICp3b3JrKQogCQlwbV9ydW50aW1l
-X3B1dF9zeW5jKGRkYXRhLT5kZXYpOwogfQogCisvKgorICogU29DIG1vZGVsIGFuZCBmZWF0dXJl
-cyBkZXRlY3Rpb24uIE9ubHkgbmVlZGVkIGZvciBTb0NzIHRoYXQgbmVlZAorICogc3BlY2lhbCBo
-YW5kbGluZyBmb3IgcXVpcmtzLCBubyBuZWVkIHRvIGxpc3Qgb3RoZXJzLgorICovCitzdGF0aWMg
-Y29uc3Qgc3RydWN0IHNvY19kZXZpY2VfYXR0cmlidXRlIHN5c2Nfc29jX21hdGNoW10gPSB7CisJ
-U09DX0ZMQUcoIk9NQVAyNDIqIiwgU09DXzI0MjApLAorCVNPQ19GTEFHKCJPTUFQMjQzKiIsIFNP
-Q18yNDMwKSwKKwlTT0NfRkxBRygiT01BUDNbNDVdKiIsIFNPQ18zNDMwKSwKKwlTT0NfRkxBRygi
-T01BUDNbNjddKiIsIFNPQ18zNjMwKSwKKwlTT0NfRkxBRygiT01BUDQ0MyoiLCBTT0NfNDQzMCks
-CisJU09DX0ZMQUcoIk9NQVA0NDYqIiwgU09DXzQ0NjApLAorCVNPQ19GTEFHKCJPTUFQNDQ3KiIs
-IFNPQ180NDcwKSwKKwlTT0NfRkxBRygiT01BUDU0KiIsIFNPQ181NDMwKSwKKwlTT0NfRkxBRygi
-QU00MzMiLCBTT0NfQU0zKSwKKwlTT0NfRkxBRygiQU00MyoiLCBTT0NfQU00KSwKKwlTT0NfRkxB
-RygiRFJBNyoiLCBTT0NfRFJBNyksCisKKwl7IC8qIHNlbnRpbmVsICovIH0sCit9OworCisvKgor
-ICogTGlzdCBvZiBTb0NzIHZhcmlhbnRzIHdpdGggZGlzYWJsZWQgZmVhdHVyZXMuIEJ5IGRlZmF1
-bHQgd2UgYXNzdW1lIGFsbAorICogZGV2aWNlcyBpbiB0aGUgZGV2aWNlIHRyZWUgYXJlIGF2YWls
-YWJsZSBzbyBubyBuZWVkIHRvIGxpc3QgdGhvc2UgU29Dcy4KKyAqLworc3RhdGljIGNvbnN0IHN0
-cnVjdCBzb2NfZGV2aWNlX2F0dHJpYnV0ZSBzeXNjX3NvY19mZWF0X21hdGNoW10gPSB7CisJLyog
-T01BUDM0MzAvMzUzMCBhbmQgQU0zNTE3IHZhcmlhbnRzIHdpdGggc29tZSBhY2NlbGVyYXRvcnMg
-ZGlzYWJsZWQgKi8KKwlTT0NfRkxBRygiQU0zNTA1IiwgRElTX1NHWCksCisJU09DX0ZMQUcoIk9N
-QVAzNTI1IiwgRElTX1NHWCksCisJU09DX0ZMQUcoIk9NQVAzNTE1IiwgRElTX0lWQSB8IERJU19T
-R1gpLAorCVNPQ19GTEFHKCJPTUFQMzUwMyIsIERJU19JU1AgfCBESVNfSVZBIHwgRElTX1NHWCks
-CisKKwkvKiBPTUFQMzYzMC9ETTM3MzAgdmFyaWFudHMgd2l0aCBzb21lIGFjY2VsZXJhdG9ycyBk
-aXNhYmxlZCAqLworCVNPQ19GTEFHKCJBTTM3MDMiLCBESVNfSVZBIHwgRElTX1NHWCksCisJU09D
-X0ZMQUcoIkRNMzcyNSIsIERJU19TR1gpLAorCVNPQ19GTEFHKCJPTUFQMzYxMSIsIERJU19JU1Ag
-fCBESVNfSVZBIHwgRElTX1NHWCksCisJU09DX0ZMQUcoIk9NQVAzNjE1L0FNMzcxNSIsIERJU19J
-VkEpLAorCVNPQ19GTEFHKCJPTUFQMzYyMSIsIERJU19JU1ApLAorCisJeyAvKiBzZW50aW5lbCAq
-LyB9LAorfTsKKworc3RhdGljIGludCBzeXNjX2FkZF9kaXNhYmxlZCh1bnNpZ25lZCBsb25nIGJh
-c2UpCit7CisJc3RydWN0IHN5c2NfYWRkcmVzcyAqZGlzYWJsZWRfbW9kdWxlOworCisJZGlzYWJs
-ZWRfbW9kdWxlID0ga3phbGxvYyhzaXplb2YoKmRpc2FibGVkX21vZHVsZSksIEdGUF9LRVJORUwp
-OworCWlmICghZGlzYWJsZWRfbW9kdWxlKQorCQlyZXR1cm4gLUVOT01FTTsKKworCWRpc2FibGVk
-X21vZHVsZS0+YmFzZSA9IGJhc2U7CisKKwltdXRleF9sb2NrKCZzeXNjX3NvYy0+bGlzdF9sb2Nr
-KTsKKwlsaXN0X2FkZCgmZGlzYWJsZWRfbW9kdWxlLT5ub2RlLCAmc3lzY19zb2MtPmRpc2FibGVk
-X21vZHVsZXMpOworCW11dGV4X3VubG9jaygmc3lzY19zb2MtPmxpc3RfbG9jayk7CisKKwlyZXR1
-cm4gMDsKK30KKworLyoKKyAqIE9uZSB0aW1lIGluaXQgdG8gZGV0ZWN0IHRoZSBib290ZWQgU29D
-IGFuZCBkaXNhYmxlIHVuYXZhaWxhYmxlIGZlYXR1cmVzLgorICogTm90ZSB0aGF0IHdlIGluaXRp
-YWxpemUgc3RhdGljIGRhdGEgc2hhcmVkIGFjcm9zcyBhbGwgdGktc3lzYyBpbnN0YW5jZXMKKyAq
-IHNvIGRkYXRhIGlzIG9ubHkgdXNlZCBmb3IgU29DIHR5cGUuIFRoaXMgY2FuIGJlIGNhbGxlZCBm
-cm9tIG1vZHVsZV9pbml0CisgKiBvbmNlIHdlIG5vIGxvbmdlciBuZWVkIHRvIHJlbHkgb24gcGxh
-dGZvcm0gZGF0YS4KKyAqLworc3RhdGljIGludCBzeXNjX2luaXRfc29jKHN0cnVjdCBzeXNjICpk
-ZGF0YSkKK3sKKwljb25zdCBzdHJ1Y3Qgc29jX2RldmljZV9hdHRyaWJ1dGUgKm1hdGNoOworCXN0
-cnVjdCB0aV9zeXNjX3BsYXRmb3JtX2RhdGEgKnBkYXRhOworCXVuc2lnbmVkIGxvbmcgZmVhdHVy
-ZXMgPSAwOworCisJaWYgKHN5c2Nfc29jKQorCQlyZXR1cm4gMDsKKworCXN5c2Nfc29jID0ga3ph
-bGxvYyhzaXplb2YoKnN5c2Nfc29jKSwgR0ZQX0tFUk5FTCk7CisJaWYgKCFzeXNjX3NvYykKKwkJ
-cmV0dXJuIC1FTk9NRU07CisKKwltdXRleF9pbml0KCZzeXNjX3NvYy0+bGlzdF9sb2NrKTsKKwlJ
-TklUX0xJU1RfSEVBRCgmc3lzY19zb2MtPmRpc2FibGVkX21vZHVsZXMpOworCXN5c2Nfc29jLT5n
-ZW5lcmFsX3B1cnBvc2UgPSB0cnVlOworCisJcGRhdGEgPSBkZXZfZ2V0X3BsYXRkYXRhKGRkYXRh
-LT5kZXYpOworCWlmIChwZGF0YSAmJiBwZGF0YS0+c29jX3R5cGVfZ3ApCisJCXN5c2Nfc29jLT5n
-ZW5lcmFsX3B1cnBvc2UgPSBwZGF0YS0+c29jX3R5cGVfZ3AoKTsKKworCW1hdGNoID0gc29jX2Rl
-dmljZV9tYXRjaChzeXNjX3NvY19tYXRjaCk7CisJaWYgKG1hdGNoICYmIG1hdGNoLT5kYXRhKQor
-CQlzeXNjX3NvYy0+c29jID0gKGludCltYXRjaC0+ZGF0YTsKKworCW1hdGNoID0gc29jX2Rldmlj
-ZV9tYXRjaChzeXNjX3NvY19mZWF0X21hdGNoKTsKKwlpZiAoIW1hdGNoKQorCQlyZXR1cm4gMDsK
-KworCWlmIChtYXRjaC0+ZGF0YSkKKwkJZmVhdHVyZXMgPSAodW5zaWduZWQgbG9uZyltYXRjaC0+
-ZGF0YTsKKworCS8qCisJICogQWRkIGRpc2FibGVkIGRldmljZXMgdG8gdGhlIGxpc3QgYmFzZWQg
-b24gdGhlIG1vZHVsZSBiYXNlLgorCSAqIE5vdGUgdGhhdCB0aGlzIG11c3QgYmUgZG9uZSBiZWZv
-cmUgd2UgYXR0ZW1wdCB0byBhY2Nlc3MgdGhlCisJICogZGV2aWNlIGFuZCBoYXZlIG1vZHVsZSBy
-ZXZpc2lvbiBjaGVja3Mgd29ya2luZy4KKwkgKi8KKwlpZiAoZmVhdHVyZXMgJiBESVNfSVNQKQor
-CQlzeXNjX2FkZF9kaXNhYmxlZCgweDQ4MGJkNDAwKTsKKwlpZiAoZmVhdHVyZXMgJiBESVNfSVZB
-KQorCQlzeXNjX2FkZF9kaXNhYmxlZCgweDVkMDAwMDAwKTsKKwlpZiAoZmVhdHVyZXMgJiBESVNf
-U0dYKQorCQlzeXNjX2FkZF9kaXNhYmxlZCgweDUwMDAwMDAwKTsKKworCXJldHVybiAwOworfQor
-CitzdGF0aWMgdm9pZCBzeXNjX2NsZWFudXBfc29jKHZvaWQpCit7CisJc3RydWN0IHN5c2NfYWRk
-cmVzcyAqZGlzYWJsZWRfbW9kdWxlOworCXN0cnVjdCBsaXN0X2hlYWQgKnBvcywgKnRtcDsKKwor
-CWlmICghc3lzY19zb2MpCisJCXJldHVybjsKKworCW11dGV4X2xvY2soJnN5c2Nfc29jLT5saXN0
-X2xvY2spOworCWxpc3RfZm9yX2VhY2hfc2FmZShwb3MsIHRtcCwgJnN5c2Nfc29jLT5kaXNhYmxl
-ZF9tb2R1bGVzKSB7CisJCWRpc2FibGVkX21vZHVsZSA9IGxpc3RfZW50cnkocG9zLCBzdHJ1Y3Qg
-c3lzY19hZGRyZXNzLCBub2RlKTsKKwkJbGlzdF9kZWwocG9zKTsKKwkJa2ZyZWUoZGlzYWJsZWRf
-bW9kdWxlKTsKKwl9CisJbXV0ZXhfdW5sb2NrKCZzeXNjX3NvYy0+bGlzdF9sb2NrKTsKK30KKwor
-c3RhdGljIGludCBzeXNjX2NoZWNrX2Rpc2FibGVkX2RldmljZXMoc3RydWN0IHN5c2MgKmRkYXRh
-KQoreworCXN0cnVjdCBzeXNjX2FkZHJlc3MgKmRpc2FibGVkX21vZHVsZTsKKwlzdHJ1Y3QgbGlz
-dF9oZWFkICpwb3M7CisJaW50IGVycm9yID0gMDsKKworCW11dGV4X2xvY2soJnN5c2Nfc29jLT5s
-aXN0X2xvY2spOworCWxpc3RfZm9yX2VhY2gocG9zLCAmc3lzY19zb2MtPmRpc2FibGVkX21vZHVs
-ZXMpIHsKKwkJZGlzYWJsZWRfbW9kdWxlID0gbGlzdF9lbnRyeShwb3MsIHN0cnVjdCBzeXNjX2Fk
-ZHJlc3MsIG5vZGUpOworCQlpZiAoZGRhdGEtPm1vZHVsZV9wYSA9PSBkaXNhYmxlZF9tb2R1bGUt
-PmJhc2UpIHsKKwkJCWRldl9kYmcoZGRhdGEtPmRldiwgIm1vZHVsZSBkaXNhYmxlZCBmb3IgdGhp
-cyBTb0NcbiIpOworCQkJZXJyb3IgPSAtRU5PREVWOworCQkJYnJlYWs7CisJCX0KKwl9CisJbXV0
-ZXhfdW5sb2NrKCZzeXNjX3NvYy0+bGlzdF9sb2NrKTsKKworCXJldHVybiBlcnJvcjsKK30KKwog
-c3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgc3lzY19tYXRjaF90YWJsZVtdID0gewog
-CXsgLmNvbXBhdGlibGUgPSAic2ltcGxlLWJ1cyIsIH0sCiAJeyAvKiBzZW50aW5lbCAqLyB9LApA
-QCAtMjQwMCw2ICsyNTgzLDEwIEBAIHN0YXRpYyBpbnQgc3lzY19wcm9iZShzdHJ1Y3QgcGxhdGZv
-cm1fZGV2aWNlICpwZGV2KQogCWRkYXRhLT5kZXYgPSAmcGRldi0+ZGV2OwogCXBsYXRmb3JtX3Nl
-dF9kcnZkYXRhKHBkZXYsIGRkYXRhKTsKIAorCWVycm9yID0gc3lzY19pbml0X3NvYyhkZGF0YSk7
-CisJaWYgKGVycm9yKQorCQlyZXR1cm4gZXJyb3I7CisKIAllcnJvciA9IHN5c2NfaW5pdF9tYXRj
-aChkZGF0YSk7CiAJaWYgKGVycm9yKQogCQlyZXR1cm4gZXJyb3I7CkBAIC0yNDMwLDYgKzI2MTcs
-MTAgQEAgc3RhdGljIGludCBzeXNjX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYp
-CiAKIAlzeXNjX2luaXRfZWFybHlfcXVpcmtzKGRkYXRhKTsKIAorCWVycm9yID0gc3lzY19jaGVj
-a19kaXNhYmxlZF9kZXZpY2VzKGRkYXRhKTsKKwlpZiAoZXJyb3IpCisJCXJldHVybiBlcnJvcjsK
-KwogCWVycm9yID0gc3lzY19nZXRfY2xvY2tzKGRkYXRhKTsKIAlpZiAoZXJyb3IpCiAJCXJldHVy
-biBlcnJvcjsKQEAgLTI1NjAsNiArMjc1MSw3IEBAIHN0YXRpYyB2b2lkIF9fZXhpdCBzeXNjX2V4
-aXQodm9pZCkKIHsKIAlidXNfdW5yZWdpc3Rlcl9ub3RpZmllcigmcGxhdGZvcm1fYnVzX3R5cGUs
-ICZzeXNjX25iKTsKIAlwbGF0Zm9ybV9kcml2ZXJfdW5yZWdpc3Rlcigmc3lzY19kcml2ZXIpOwor
-CXN5c2NfY2xlYW51cF9zb2MoKTsKIH0KIG1vZHVsZV9leGl0KHN5c2NfZXhpdCk7CiAKZGlmZiAt
-LWdpdCBhL2luY2x1ZGUvbGludXgvcGxhdGZvcm1fZGF0YS90aS1zeXNjLmggYi9pbmNsdWRlL2xp
-bnV4L3BsYXRmb3JtX2RhdGEvdGktc3lzYy5oCi0tLSBhL2luY2x1ZGUvbGludXgvcGxhdGZvcm1f
-ZGF0YS90aS1zeXNjLmgKKysrIGIvaW5jbHVkZS9saW51eC9wbGF0Zm9ybV9kYXRhL3RpLXN5c2Mu
-aApAQCAtMTQxLDYgKzE0MSw3IEBAIHN0cnVjdCBjbGs7CiAKIHN0cnVjdCB0aV9zeXNjX3BsYXRm
-b3JtX2RhdGEgewogCXN0cnVjdCBvZl9kZXZfYXV4ZGF0YSAqYXV4ZGF0YTsKKwlib29sICgqc29j
-X3R5cGVfZ3ApKHZvaWQpOwogCWludCAoKmluaXRfY2xvY2tkb21haW4pKHN0cnVjdCBkZXZpY2Ug
-KmRldiwgc3RydWN0IGNsayAqZmNrLAogCQkJCXN0cnVjdCBjbGsgKmljaywgc3RydWN0IHRpX3N5
-c2NfY29va2llICpjb29raWUpOwogCXZvaWQgKCpjbGtkbV9kZW55X2lkbGUpKHN0cnVjdCBkZXZp
-Y2UgKmRldiwKLS0gCjIuMjUuMQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+The RTC modules on am3 and am4 need quirk handling to unlock and lock
+them for reset so let's add the quirk handling based on what we already
+have for legacy platform data. In later patches we will simply drop the
+RTC related platform data and the old quirk handling.
+
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ drivers/bus/ti-sysc.c                 | 74 ++++++++++++++++++++++++---
+ include/linux/platform_data/ti-sysc.h |  1 +
+ 2 files changed, 69 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -110,6 +110,8 @@ static const char * const clock_names[SYSC_MAX_CLOCKS] = {
+  * @reset_done_quirk: module specific reset done quirk
+  * @module_enable_quirk: module specific enable quirk
+  * @module_disable_quirk: module specific disable quirk
++ * @module_unlock_quirk: module specific sysconfig unlock quirk
++ * @module_lock_quirk: module specific sysconfig lock quirk
+  */
+ struct sysc {
+ 	struct device *dev;
+@@ -137,6 +139,8 @@ struct sysc {
+ 	void (*reset_done_quirk)(struct sysc *sysc);
+ 	void (*module_enable_quirk)(struct sysc *sysc);
+ 	void (*module_disable_quirk)(struct sysc *sysc);
++	void (*module_unlock_quirk)(struct sysc *sysc);
++	void (*module_lock_quirk)(struct sysc *sysc);
+ };
+ 
+ static void sysc_parse_dts_quirks(struct sysc *ddata, struct device_node *np,
+@@ -896,6 +900,22 @@ static void sysc_show_registers(struct sysc *ddata)
+ 		buf);
+ }
+ 
++/**
++ * sysc_write_sysconfig - handle sysconfig quirks for register write
++ * @ddata: device driver data
++ * @value: register value
++ */
++static void sysc_write_sysconfig(struct sysc *ddata, u32 value)
++{
++	if (ddata->module_unlock_quirk)
++		ddata->module_unlock_quirk(ddata);
++
++	sysc_write(ddata, ddata->offsets[SYSC_SYSCONFIG], value);
++
++	if (ddata->module_lock_quirk)
++		ddata->module_lock_quirk(ddata);
++}
++
+ #define SYSC_IDLE_MASK	(SYSC_NR_IDLEMODES - 1)
+ #define SYSC_CLOCACT_ICK	2
+ 
+@@ -942,7 +962,7 @@ static int sysc_enable_module(struct device *dev)
+ 
+ 	reg &= ~(SYSC_IDLE_MASK << regbits->sidle_shift);
+ 	reg |= best_mode << regbits->sidle_shift;
+-	sysc_write(ddata, ddata->offsets[SYSC_SYSCONFIG], reg);
++	sysc_write_sysconfig(ddata, reg);
+ 
+ set_midle:
+ 	/* Set MIDLE mode */
+@@ -961,14 +981,14 @@ static int sysc_enable_module(struct device *dev)
+ 
+ 	reg &= ~(SYSC_IDLE_MASK << regbits->midle_shift);
+ 	reg |= best_mode << regbits->midle_shift;
+-	sysc_write(ddata, ddata->offsets[SYSC_SYSCONFIG], reg);
++	sysc_write_sysconfig(ddata, reg);
+ 
+ set_autoidle:
+ 	/* Autoidle bit must enabled separately if available */
+ 	if (regbits->autoidle_shift >= 0 &&
+ 	    ddata->cfg.sysc_val & BIT(regbits->autoidle_shift)) {
+ 		reg |= 1 << regbits->autoidle_shift;
+-		sysc_write(ddata, ddata->offsets[SYSC_SYSCONFIG], reg);
++		sysc_write_sysconfig(ddata, reg);
+ 	}
+ 
+ 	if (ddata->module_enable_quirk)
+@@ -1026,7 +1046,7 @@ static int sysc_disable_module(struct device *dev)
+ 
+ 	reg &= ~(SYSC_IDLE_MASK << regbits->midle_shift);
+ 	reg |= best_mode << regbits->midle_shift;
+-	sysc_write(ddata, ddata->offsets[SYSC_SYSCONFIG], reg);
++	sysc_write_sysconfig(ddata, reg);
+ 
+ set_sidle:
+ 	/* Set SIDLE mode */
+@@ -1049,7 +1069,7 @@ static int sysc_disable_module(struct device *dev)
+ 	if (regbits->autoidle_shift >= 0 &&
+ 	    ddata->cfg.sysc_val & BIT(regbits->autoidle_shift))
+ 		reg |= 1 << regbits->autoidle_shift;
+-	sysc_write(ddata, ddata->offsets[SYSC_SYSCONFIG], reg);
++	sysc_write_sysconfig(ddata, reg);
+ 
+ 	return 0;
+ }
+@@ -1301,6 +1321,8 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
+ 	SYSC_QUIRK("gpu", 0x50000000, 0x14, -ENODEV, -ENODEV, 0x00010201, 0xffffffff, 0),
+ 	SYSC_QUIRK("gpu", 0x50000000, 0xfe00, 0xfe10, -ENODEV, 0x40000000 , 0xffffffff,
+ 		   SYSC_MODULE_QUIRK_SGX),
++	SYSC_QUIRK("rtc", 0, 0x74, 0x78, -ENODEV, 0x4eb01908, 0xffff00f0,
++		   SYSC_MODULE_QUIRK_RTC_UNLOCK),
+ 	SYSC_QUIRK("usb_otg_hs", 0, 0x400, 0x404, 0x408, 0x00000050,
+ 		   0xffffffff, SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_SWSUP_MSTANDBY),
+ 	SYSC_QUIRK("usb_otg_hs", 0, 0, 0x10, -ENODEV, 0x4ea2080d, 0xffffffff,
+@@ -1356,7 +1378,6 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
+ 	SYSC_QUIRK("slimbus", 0, 0, 0x10, -ENODEV, 0x40002903, 0xffffffff, 0),
+ 	SYSC_QUIRK("spinlock", 0, 0, 0x10, -ENODEV, 0x50020000, 0xffffffff, 0),
+ 	SYSC_QUIRK("rng", 0, 0x1fe0, 0x1fe4, -ENODEV, 0x00000020, 0xffffffff, 0),
+-	SYSC_QUIRK("rtc", 0, 0x74, 0x78, -ENODEV, 0x4eb01908, 0xffff00f0, 0),
+ 	SYSC_QUIRK("timer32k", 0, 0, 0x4, -ENODEV, 0x00000060, 0xffffffff, 0),
+ 	SYSC_QUIRK("usbhstll", 0, 0, 0x10, 0x14, 0x00000004, 0xffffffff, 0),
+ 	SYSC_QUIRK("usbhstll", 0, 0, 0x10, 0x14, 0x00000008, 0xffffffff, 0),
+@@ -1478,6 +1499,40 @@ static void sysc_post_reset_quirk_i2c(struct sysc *ddata)
+ 	sysc_clk_quirk_i2c(ddata, true);
+ }
+ 
++/* RTC on am3 and 4 needs to be unlocked and locked for sysconfig */
++static void sysc_quirk_rtc(struct sysc *ddata, bool lock)
++{
++	u32 val, kick0_val = 0, kick1_val = 0;
++	unsigned long flags;
++	int error;
++
++	if (!lock) {
++		kick0_val = 0x83e70b13;
++		kick1_val = 0x95a4f1e0;
++	}
++
++	local_irq_save(flags);
++	/* RTC_STATUS BUSY bit may stay active for 1/32768 seconds (~30 usec) */
++	error = readl_poll_timeout(ddata->module_va + 0x44, val,
++				   !(val & BIT(0)), 100, 50);
++	if (error)
++		dev_warn(ddata->dev, "rtc busy timeout\n");
++	/* Now we have ~15 microseconds to read/write various registers */
++	sysc_write(ddata, 0x6c, kick0_val);
++	sysc_write(ddata, 0x70, kick1_val);
++	local_irq_restore(flags);
++}
++
++static void sysc_module_unlock_quirk_rtc(struct sysc *ddata)
++{
++	sysc_quirk_rtc(ddata, false);
++}
++
++static void sysc_module_lock_quirk_rtc(struct sysc *ddata)
++{
++	sysc_quirk_rtc(ddata, true);
++}
++
+ /* 36xx SGX needs a quirk for to bypass OCP IPG interrupt logic */
+ static void sysc_module_enable_quirk_sgx(struct sysc *ddata)
+ {
+@@ -1532,6 +1587,13 @@ static void sysc_init_module_quirks(struct sysc *ddata)
+ 	if (ddata->cfg.quirks & SYSC_MODULE_QUIRK_AESS)
+ 		ddata->module_enable_quirk = sysc_module_enable_quirk_aess;
+ 
++	if (ddata->cfg.quirks & SYSC_MODULE_QUIRK_RTC_UNLOCK) {
++		ddata->module_unlock_quirk = sysc_module_unlock_quirk_rtc;
++		ddata->module_lock_quirk = sysc_module_lock_quirk_rtc;
++
++		return;
++	}
++
+ 	if (ddata->cfg.quirks & SYSC_MODULE_QUIRK_SGX)
+ 		ddata->module_enable_quirk = sysc_module_enable_quirk_sgx;
+ 
+diff --git a/include/linux/platform_data/ti-sysc.h b/include/linux/platform_data/ti-sysc.h
+--- a/include/linux/platform_data/ti-sysc.h
++++ b/include/linux/platform_data/ti-sysc.h
+@@ -49,6 +49,7 @@ struct sysc_regbits {
+ 	s8 emufree_shift;
+ };
+ 
++#define SYSC_MODULE_QUIRK_RTC_UNLOCK	BIT(22)
+ #define SYSC_QUIRK_CLKDM_NOAUTO		BIT(21)
+ #define SYSC_QUIRK_FORCE_MSTANDBY	BIT(20)
+ #define SYSC_MODULE_QUIRK_AESS		BIT(19)
+-- 
+2.25.1
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
