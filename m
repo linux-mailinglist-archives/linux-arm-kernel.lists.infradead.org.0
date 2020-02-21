@@ -2,73 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9045167925
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:15:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CECD4167928
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 10:16:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0442QbwzVcr4na0cVlzUiuiXf2JtTdD7qEtP+xiaO/8=; b=o0JJjSlBfvBjsr
-	+pN0UKZyuT+ypJpgxD06RtQU2q5nSezljzehbaPW6zlhz05zX0oiVTyQ3EQnLa7cv2wNbvvs8C238
-	dxwgfVHOChH5Ep9+j3zkLKKlLBVhTR1PgRtkYh+IipuNTWmxFs7Hz/OzSK9EkE7FjpCEahMDFxDJE
-	xtvL6IzvHMDWMDzGLHOcKlBzJEi2eSCWheBoJGcjO4RvKStrS+HjBmIXdfgoYj2cUatledW/IOSyd
-	f71ARIu4MHeyky9c4gLh060auAXGxAl4CSVcb7+54xKJhTpm5FBhiaU/5WMR53k2uVFJSiGGAXKXF
-	5Bn1iXpFbONQkAcj99kg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K0Rd0PQpPDcTkpqN2OML7TJhET5iOaOZU2TP8+3TWxs=; b=KO8CSmixpSwQ2G
+	2Qlj4+AijWvUEAUMgiPVwNVrDm467JX7MdmnK1xXHDcX2vE2b4DgLyQjMcR1eQMMHnWmjZLiw1Gwq
+	RKF4PT5CEr4fVN3+eyill1gAZ1+QxB7N3pXxQf74cTGMDt6CXEP3EU5ckm6LTNUTjeddCQuYS8T7D
+	0azYIeHari3rDF6jfI9l8JsgRWPe2RhFeCxcGqHBU+nCWBDb/dTB05qf1vSkRdcnnoRTO4SzAM/o1
+	qezMdpr7SitxMnf9531NkMGHLLmz8nLpE+lSX525kvYbchuBSOHNkdicdCz6Jz4ul0WjDw4OtY673
+	8spgK+MZn4+PkcyyM4Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j54PX-0003ZC-Iw; Fri, 21 Feb 2020 09:15:51 +0000
+	id 1j54Po-0003pB-Gj; Fri, 21 Feb 2020 09:16:08 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j54PL-0003S5-81
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 09:15:41 +0000
-Received: by mail-wr1-x442.google.com with SMTP id g3so1092222wrs.12
+ id 1j54PM-0003XQ-Ci
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 09:15:42 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t3so1105839wru.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 01:15:39 -0800 (PST)
+ Fri, 21 Feb 2020 01:15:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bEVtSXMN2wxEExI4lH+Up8MQyxBldRZrbHcNZQGtFA0=;
- b=cHgClTJ05Rp4GvKFcbANPp3eANEP91ZtAnQuF7p4BkIc2AZeGLyVVGDl/cmZjHCXBe
- kpC+5YEtNprjLE1VOU6R8Y/ypyBhlZXu1raolt9vSnki0QV4Q/5dCKVNW9ZLZ54mxgvC
- CJGctsijTZQfUB5Lp6oQf7/5dJrc7MwlyiW5z2N/rhORM9sRf8vzkgDakvPi5WoTgRmS
- +6RN+Jjt+dhFOV4uhtiadJldz3vQDm4r23F+nl+qBNGSPHpErOYMxFWh02GKcGPVfnRC
- Hr843caZYawjhvC+knNV98fWCceOc+0fyZIjJrM6H+Tzpmiu6E9Wbt5OT44LtEwbNzr3
- XVCg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=cskzhIjwtS0ZVRi8zMZa+kHk4M1kBjG50N69LQL60P8=;
+ b=lK15oznkmE7fuECcUv45VNqmPJJHug5zq8zfFtk6asoOdoXNE8Ncepmk6uu778oaRb
+ Wb5ADtEcDnQ1EoHLqd9x0hDO5Zfon8zRMFSAH3D55szfBAnIoMh5/8gqJqjERYn6z7CK
+ XrtoYQCsOXL16av6t6Mdss1v/p6VCWn4Sx5PtMWtn8PmEsqzJvgSfDSeNd8wJcTim5y+
+ YpDWz//queWKkrXbRBzoOqidSN8hslbIgUtrEFT74IISO51Y4qL45svbFHnAqa3Fmpkb
+ 400SJQUNjWCrbsCZsGX26tBkAiu5lPFKsnhs1hlVXw93LQvck3x54xy2xbRGbD0DX3b2
+ X44w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=bEVtSXMN2wxEExI4lH+Up8MQyxBldRZrbHcNZQGtFA0=;
- b=n/JcoQWJdhOeLZzUcjnEEGiZNMcHjweiUgLmeWDqsuT6E2ZpmnoyVi4zQiNoV+cAPF
- JYNCdIBFGXr74nreh8AQkrhtua7XZgSKPQXqO2J8SFql/OXoMV6Z0pUbvmoSCYr5GCky
- ZCavvvtl5xd4Mg43/BZrjt1NtpouMQk/DQ/RZEfRSQNCCoXDevVZMQ28J11+AZR1Oo8V
- CSYFaxzUZR0zcuGbFACyXPgvwL0290V43WI+E+f/kWlA0gICMooWC3c07q+jXKy/ZU8W
- UBUs5M/lXADCueHtRUDeqkR9LwXPD5NmdR76J+KmwQW5VGg3PPdFCI1jj3mMRhanqU4L
- YGVw==
-X-Gm-Message-State: APjAAAWVCNgy4FvCsHAa+WybqE03C4UZXd9aViKebTpjnGHgEfc4vqvb
- WaOhvBe2F/63PRuxwucUtlbB5g==
-X-Google-Smtp-Source: APXvYqwWqLydfUTa++1rHDsmS2lwyqPlQNNoap63wh2ujfgZkGStivmdKat61euYqdKxWzpwpuFEiQ==
-X-Received: by 2002:a5d:4447:: with SMTP id x7mr47327713wrr.393.1582276537677; 
- Fri, 21 Feb 2020 01:15:37 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=cskzhIjwtS0ZVRi8zMZa+kHk4M1kBjG50N69LQL60P8=;
+ b=meo6Csj/M1K8FLA+EMiRYCvCPY8W8P141voiN28xA0Dlaon/aKLRQXvgfo0+VCS9sl
+ cqmz9TdaUxhMs6rsE65ROQG1SKtappScUmwoMGOQ5PhV1b20rzccEK71QWPg+wICv5UB
+ I/2jyHyLNun2X2U9urjCQtomSvoYkfEPi9uPjNo1XwMK3+kF3thTyuZPtkUu9rIqqy6S
+ KzkTE3Xgk6MnL4pedVa30Cm15fPku/MX1+cT+gav6cp80MyZcKuS0bFr0HfwcbjTE8rG
+ cq2ZUEDqJcndKZ/xLgDMgOZPf32V7fowvUDncUWDkuzVb53jp7SRipL01GLxCGUa9Q19
+ jQ7g==
+X-Gm-Message-State: APjAAAXZbDtAPQ/bKSpmjlfJ/jqXyFHfwZ/fMCTk3BLQek3jJoUxKmA2
+ 40DM200TNlMTEB8B3LD9NV31AA==
+X-Google-Smtp-Source: APXvYqw1IrIayRzEm5+L4hNTMttvykUESXzbqguy+LbKUkETLLIIENqD5GsBuIotlJYN9+0XYuZ30g==
+X-Received: by 2002:adf:b1c9:: with SMTP id r9mr47715116wra.339.1582276539064; 
+ Fri, 21 Feb 2020 01:15:39 -0800 (PST)
 Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:4ca8:b25b:98e4:858])
  by smtp.gmail.com with ESMTPSA id
- o15sm3257837wra.83.2020.02.21.01.15.36
+ o15sm3257837wra.83.2020.02.21.01.15.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 21 Feb 2020 01:15:37 -0800 (PST)
+ Fri, 21 Feb 2020 01:15:38 -0800 (PST)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: balbi@kernel.org,
-	khilman@baylibre.com
-Subject: [PATCH v4 0/3] usb: dwc3: parkmode_disable_ss_quirk on DWC3 controller
-Date: Fri, 21 Feb 2020 10:15:29 +0100
-Message-Id: <20200221091532.8142-1-narmstrong@baylibre.com>
+	khilman@baylibre.com,
+	devicetree@vger.kernel.org
+Subject: [PATCH v4 1/3] doc: dt: bindings: usb: dwc3: Update entries for
+ disabling SS instances in park mode
+Date: Fri, 21 Feb 2020 10:15:30 +0100
+Message-Id: <20200221091532.8142-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20200221091532.8142-1-narmstrong@baylibre.com>
+References: <20200221091532.8142-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_011539_284900_0533C770 
-X-CRM114-Status: GOOD (  11.87  )
+X-CRM114-CacheID: sfid-20200221_011540_428045_8703C40D 
+X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -93,63 +98,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Rob Herring <robh@kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Tim <elatllat@gmail.com>,
+ Jun Li <lijun.kernel@gmail.com>, Dongjin Kim <tobetter@gmail.com>,
+ linux-amlogic@lists.infradead.org, Thinh Nguyen <thinhn@synopsys.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In certain circumstances, the XHCI SuperSpeed instance in park mode
-can fail to recover, thus on Amlogic G12A/G12B/SM1 SoCs when there is high
-load on the single XHCI SuperSpeed instance, the controller can crash like:
-xhci-hcd xhci-hcd.0.auto: xHCI host not responding to stop endpoint command.
-xhci-hcd xhci-hcd.0.auto: Host halt failed, -110
-xhci-hcd xhci-hcd.0.auto: xHCI host controller not responding, assume dead
-xhci-hcd xhci-hcd.0.auto: xHCI host not responding to stop endpoint command.
-hub 2-1.1:1.0: hub_ext_port_status failed (err = -22)
-xhci-hcd xhci-hcd.0.auto: HC died; cleaning up
-usb 2-1.1-port1: cannot reset (err = -22)
+This patch updates the documentation with the information related
+to the quirks that needs to be added for disabling all SuperSpeed XHCI
+instances in park mode.
 
-Setting the PARKMODE_DISABLE_SS bit in the DWC3_USB3_GUCTL1 mitigates
-the issue. The bit is described as :
-"When this bit is set to '1' all SS bus instances in park mode are disabled"
+Cc: Dongjin Kim <tobetter@gmail.com>
+Cc: Jianxin Pan <jianxin.pan@amlogic.com>
+Cc: Thinh Nguyen <thinhn@synopsys.com>
+Cc: Jun Li <lijun.kernel@gmail.com>
+Reported-by: Tim <elatllat@gmail.com>
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Acked-by: Rob Herring <robh@kernel.org>
+---
+ Documentation/devicetree/bindings/usb/dwc3.txt | 2 ++
+ 1 file changed, 2 insertions(+)
 
-The bug has been reproduced by Jun Li <lijun.kernel@gmail.com> and confirmed
-by Thinh Nguyen <Thinh.Nguyen@synopsys.com> with the explanation:
-> The GUCTL1.PARKMODE_DISABLE_SS is only available in dwc_usb3 controller 
-> running in host mode. This should not be set for other IPs.
-> This can be disabled by default based on IP, but I recommend to have a 
-> property to enable this feature for devices that need this.
-
-Changes since v3 at [3]:
-- fixed patch 3 subject
-
-Changes since v2 at [2]:
-- rebased on v5.6-rc2
-
-Changes since v1 at [1]:
-- added rob review tag
-- added Thinh Nguyen in commit log
-
-[1] https://lore.kernel.org/linux-usb/20191014141718.22603-1-narmstrong@baylibre.com
-[2] https://lore.kernel.org/linux-usb/20200109101535.26812-1-narmstrong@baylibre.com
-[3] https://lore.kernel.org/linux-usb/20200219141817.24521-1-narmstrong@baylibre.com
-
-Neil Armstrong (3):
-  doc: dt: bindings: usb: dwc3: Update entries for disabling SS
-    instances in park mode
-  usb: dwc3: core: add support for disabling SS instances in park mode
-  arm64: dts: g12-common: add parkmode_disable_ss_quirk on DWC3
-    controller
-
- Documentation/devicetree/bindings/usb/dwc3.txt    | 2 ++
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 1 +
- drivers/usb/dwc3/core.c                           | 5 +++++
- drivers/usb/dwc3/core.h                           | 4 ++++
- 4 files changed, 12 insertions(+)
-
+diff --git a/Documentation/devicetree/bindings/usb/dwc3.txt b/Documentation/devicetree/bindings/usb/dwc3.txt
+index 66780a47ad85..c977a3ba2f35 100644
+--- a/Documentation/devicetree/bindings/usb/dwc3.txt
++++ b/Documentation/devicetree/bindings/usb/dwc3.txt
+@@ -75,6 +75,8 @@ Optional properties:
+ 			from P0 to P1/P2/P3 without delay.
+  - snps,dis-tx-ipgap-linecheck-quirk: when set, disable u2mac linestate check
+ 			during HS transmit.
++ - snps,parkmode-disable-ss-quirk: when set, all SuperSpeed bus instances in
++			park mode are disabled.
+  - snps,dis_metastability_quirk: when set, disable metastability workaround.
+ 			CAUTION: use only if you are absolutely sure of it.
+  - snps,is-utmi-l1-suspend: true when DWC3 asserts output signal
 -- 
 2.22.0
 
