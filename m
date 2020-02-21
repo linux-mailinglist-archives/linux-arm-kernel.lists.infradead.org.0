@@ -2,50 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BA7116701B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 08:14:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42888167027
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 08:28:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6XDhjkhBT5CDnX6jFRFibNYKT7fJ2mysxwz2xh2hK7w=; b=IFazvHa7sj4evb
-	meZEGHw4gYGK4T9aRyhRjgMO9gyHBZIdWggHgtVM/XXFHmtpVXXp/vIAae4jWe0iwsJd73RbSo5uP
-	VCN8By1FCH4DHA3w+VasbsUhxoiqKCjCjkTpGRyfR9F8HzwY9oOLTdVg2n/6/v6zANWBy36k7Bova
-	SF8qM6xkapqhkIsUSFwE21keVrBamOV0zT5uEZceUoNN08vx8C2dBvGwUKBBMqlPRLzom69YYyYmH
-	nvpcwlA1rb97K0EEwSrNhhJLvhcLTbnBZUvXWhIzt1NGUJn5SxfF7MN0X9F1hgMIOUoB5tEViP18e
-	puIetOytIu9sdrkR99oA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q105W/oELj8uP0peK3wmApHLXdn8W3IkbenHraN7cTg=; b=Bfs1tYzSR9UBZA
+	dR7sg+vtH3L4Zomkw4GFPzREorM3Fp/MTY4DkSbe5uId46t9EtGTEZk1MuqNxvVHCdCyk2XKrnTSp
+	pQtemj4hmHaxe6s4jQKIKIrwutvudnHRaDpaEwUUL2Jw2elPK2EMMojOHl0TKbQjcG3FskyC3/ZPp
+	asE5qD30Frt2NnWA15HE0dsC47PY2qxSk+LXJqNfG6hSEztr3ZC/DqAa+f/lwp94wUhHvCGdDeWhW
+	KjFSekx48XqvyrfvBuKremf6r6XcS2KzQOFkRstSKK9XxgsvnWnDBskn8EsjyEvEutRLqcBOcFnBQ
+	Xs1sVmn8LFyyySoESG7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j52W7-0003rv-1H; Fri, 21 Feb 2020 07:14:31 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1j52jG-00015N-Tt; Fri, 21 Feb 2020 07:28:06 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j52Vw-0003qs-Fe; Fri, 21 Feb 2020 07:14:23 +0000
-Received: from [10.18.91.136] (10.18.91.136) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Fri, 21 Feb
- 2020 15:14:42 +0800
-Subject: Re: [PATCH v6 2/4] dt-bindings: power: add Amlogic secure power
- domains bindings
-To: Rob Herring <robh+dt@kernel.org>
-References: <1579087831-94965-1-git-send-email-jianxin.pan@amlogic.com>
- <1579087831-94965-3-git-send-email-jianxin.pan@amlogic.com>
- <CAL_JsqJwYChw_S4anOPGhH4r3uwD9SVCnRqa_5BwRvwVicjwrg@mail.gmail.com>
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-Message-ID: <8c7f2a8e-edbd-37e6-7328-e2985284f307@amlogic.com>
-Date: Fri, 21 Feb 2020 15:14:29 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1j52j8-00014l-Cl
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 07:27:59 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1j52j1-00065e-VW; Fri, 21 Feb 2020 08:27:51 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1j52j1-0003Sq-Gc; Fri, 21 Feb 2020 08:27:51 +0100
+Date: Fri, 21 Feb 2020 08:27:51 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v3 1/2] ARM: dts: imx6: phycore-som: fix arm and soc
+ minimum voltage
+Message-ID: <20200221072751.5z7xhlrfecexrwiz@pengutronix.de>
+References: <20200116140108.6069-1-m.felsch@pengutronix.de>
+ <20200213125940.GP11096@dragon>
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqJwYChw_S4anOPGhH4r3uwD9SVCnRqa_5BwRvwVicjwrg@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.18.91.136]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+Content-Disposition: inline
+In-Reply-To: <20200213125940.GP11096@dragon>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:26:00 up 97 days, 22:44, 122 users,  load average: 0.43, 0.33,
+ 0.29
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_231422_215342_566D3583 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20200220_232758_433808_8B58F2B6 
+X-CRM114-Status: GOOD (  17.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,104 +76,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: s.riedmueller@phytec.de, festevam@gmail.com, chf.fritz@googlemail.com,
+ robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
+ s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Shawn,
 
-Hi Rob,
+On 20-02-13 20:59, Shawn Guo wrote:
+> On Thu, Jan 16, 2020 at 03:01:07PM +0100, Marco Felsch wrote:
+> > The current set minimum voltage of 730000=B5V seems to be wrong. I don't
+> > know the document which specifies that but the imx6qdl datasheets says
+> > that the minimum voltage should be 0.925V for VDD_ARM (LDO bypassed,
+> > lowest opp) and 1.15V for VDD_SOC (LDO bypassed, lowest opp).
+> > =
 
-Sorry to introduce this mistake. I have sent a patch to fix it.
-Thanks for your time.
+> > Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i=
+.MX 6 SOM")
+> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> =
 
-On 2020/2/20 21:27, Rob Herring wrote:
-> On Wed, Jan 15, 2020 at 5:30 AM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
->>
->> Add the bindings for the Amlogic Secure power domains, controlling the
->> secure power domains.
->>
->> The bindings targets the Amlogic A1 and C1 compatible SoCs, in which the
->> power domain registers are in secure world.
->>
->> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
->> ---
->>  .../bindings/power/amlogic,meson-sec-pwrc.yaml     | 40 ++++++++++++++++++++++
->>  include/dt-bindings/power/meson-a1-power.h         | 32 +++++++++++++++++
->>  2 files changed, 72 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->>  create mode 100644 include/dt-bindings/power/meson-a1-power.h
->>
->> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> new file mode 100644
->> index 00000000..af32209
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> @@ -0,0 +1,40 @@
->> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +# Copyright (c) 2019 Amlogic, Inc
->> +# Author: Jianxin Pan <jianxin.pan@amlogic.com>
->> +%YAML 1.2
->> +---
->> +$id: "http://devicetree.org/schemas/power/amlogic,meson-sec-pwrc.yaml#"
->> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
->> +
->> +title: Amlogic Meson Secure Power Domains
->> +
->> +maintainers:
->> +  - Jianxin Pan <jianxin.pan@amlogic.com>
->> +
->> +description: |+
->> +  Secure Power Domains used in Meson A1/C1 SoCs, and should be the child node
->> +  of secure-monitor.
->> +
->> +properties:
->> +  compatible:
->> +    enum:
->> +      - amlogic,meson-a1-pwrc
->> +
->> +  "#power-domain-cells":
->> +    const: 1
->> +
->> +required:
->> +  - compatible
->> +  - "#power-domain-cells"
->> +
->> +examples:
->> +  - |
->> +    secure-monitor {
->> +        compatible = "amlogic,meson-gxbb-sm";
->> +
->> +        pwrc: power-controller {
->> +            compatible = "amlogic,meson-a1-pwrc";
->> +            #power-domain-cells = <1>;
->> +        };
->> +    }
-> 
-> Missing ';':
-> 
-> Error: Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.example.dts:27.5-6
-> syntax error
-> FATAL ERROR: Unable to parse input tree
-> 
-> Please fix this as linux-next is now failing dt_binding_check.
-> 
-> Rob
-> 
-> .
-> 
+> I failed to apply it.  Please rebase and resend.
 
+Which base commit did you use? I rebased the patch on v5.6-rc1 without
+problems.
+
+Regards,
+  Marco
+
+> Shawn
+> =
+
+> > ---
+> > v3:
+> > - fix commit message
+> > v2:
+> > - use ldo bypassed values
+> > ---
+> >  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 ++--
+> >  1 file changed, 2 insertions(+), 2 deletions(-)
+> > =
+
+> > diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/a=
+rm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > index a1e2c5094d58..51a47a242783 100644
+> > --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > @@ -111,14 +111,14 @@
+> >  		regulators {
+> >  			vdd_arm: buck1 {
+> >  				regulator-name =3D "vdd_arm";
+> > -				regulator-min-microvolt =3D <730000>;
+> > +				regulator-min-microvolt =3D <925000>;
+> >  				regulator-max-microvolt =3D <1380000>;
+> >  				regulator-always-on;
+> >  			};
+> >  =
+
+> >  			vdd_soc: buck2 {
+> >  				regulator-name =3D "vdd_soc";
+> > -				regulator-min-microvolt =3D <730000>;
+> > +				regulator-min-microvolt =3D <1150000>;
+> >  				regulator-max-microvolt =3D <1380000>;
+> >  				regulator-always-on;
+> >  			};
+> > -- =
+
+> > 2.20.1
+> > =
+
+> =
+
+
+-- =
+
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
