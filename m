@@ -2,68 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C92F71689D7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 23:12:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCEE01689DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 23:15:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cgafz7FPj1mk9bR4MevrUM0LBVaOmiuayp/YNSaHEwk=; b=UFAJw4rsr+yR/i
-	ZHqVWgEJnYMyrJrIHxEqDyTGduZRkcYNms9j31qQ3GwTwsUHrCcJ54+d2WaWnwT4XYTaFpn4ppwTC
-	PCqJ06IbMFneC7A+gyOSdYxTn1arDc6JxGnDDpsX8RtPv4vsTZbVAsEoEASesPB1KeWD+yKha8IM1
-	1/lYjxqRIMfKx5PQLbJTzsfn85mnrV+rL94/jIgxSCvB9gHvi5qkTrEgOe0JIosbTlyVQYSCrS7mx
-	ekJDOgh662QSBSzD0aldChx668+u0nKbWWosqujNnFTJHW5mt9ZQkFzHJKNi8Bbr3Hr29KnPJ6vkU
-	L0r+yIdKe7Lxnx727cHw==;
+	List-Owner; bh=m3181k2+QoEMTlhBX5y3TnL5fiY2SO9rClIG7SScIRY=; b=hjRXZ/q4svRJwJ
+	9mat9BsXEoW5fq3EIE+VqfJhgJhs1tWRP4tRr+fPEkzVEjIwnvUCuPGTfYOxqk4++fKgU1QZWPdSC
+	6wQqNCwIlbr5G6s9ZXwLREzZxJzeWWXLHTF9WqbS/KlG4ZS1cgOgukq9vFaGCnm+xgyMxdtaWDd4G
+	x+NCQ6MIfDOUlM/Ixx48LY1UH3qwuXuhHHUFtgH3e5EgwbbQzqRM5C9pMVbxVGZFdmZDjCv+bga9D
+	g74sFzhYN3FOgZYyfe5p3XyE31sHCpVKQASGcaY/rmwbaV6cybCEowlAdwMBp3jhd9J2l9jQ44Djn
+	JwNKSa6zAHiQBOyRbyxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5GWg-00038p-SD; Fri, 21 Feb 2020 22:12:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j5GZf-0003bZ-EO; Fri, 21 Feb 2020 22:15:07 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5GWY-00038S-71; Fri, 21 Feb 2020 22:11:56 +0000
-Received: from mail-qv1-f47.google.com (mail-qv1-f47.google.com
- [209.85.219.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 20A8D24676;
- Fri, 21 Feb 2020 22:11:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582323113;
- bh=bf2RsaSvZhMI79nHgHionWDyrsV17B3qT+29dL6QM30=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=uLjEhdPGfBBs8J8kMdI9gKpPjMd/M6RazcBBvo02LI5gk5BBFs1us7fw56ebDGrNr
- hDqGewgjxff4DzdXTjm8dNTCjRJxHnGbNdbxaZF/ZCJqBbS4adXiRUSQWuVIIS7L26
- e7yPR4613FuK8IHfzY0sRp0MoZGPOYUofpaCd1UI=
-Received: by mail-qv1-f47.google.com with SMTP id n8so1656530qvg.11;
- Fri, 21 Feb 2020 14:11:53 -0800 (PST)
-X-Gm-Message-State: APjAAAXGhcUPfC+3xfS5Gia/oWbL3/jMf2cApNz19uxUD9y/p1j9acdV
- sT63qoDV+McdFe/H4ZVI5vwzIJJ+Y7mnK+uivg==
-X-Google-Smtp-Source: APXvYqyYbXN85xYUMFaOgLv6Q5mUpNeZ8NyF/CcoNZ4CxdRu4RUYJEOgtcn8M4e8AKdcB5TiFQMt27ZRzzmiMvhInMw=
-X-Received: by 2002:a0c:f68f:: with SMTP id p15mr31162876qvn.79.1582323112146; 
- Fri, 21 Feb 2020 14:11:52 -0800 (PST)
+ id 1j5GZQ-0003b0-AV
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 22:14:53 +0000
+Received: by mail-pf1-x441.google.com with SMTP id j9so1980071pfa.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 14:14:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=W8KaZGmDosurwlNJD9BGtUyzNAa4jQOZ04o70/FjZgc=;
+ b=kGkAs4Nbpvsh0LSiFUur6Wb/TbQ7PlbWJAOcbz65Qdv1Uw+Vl3ItNQQMcq77KAYZtJ
+ m2urSGoIRXXmBgm7E9zWqbYRJ+5nnXrjCjuYwEMSV5irgIy80/nbHWZ2XU6OXDiBPYJv
+ szqdDyeVflofbn6119zAg2Af45wfFrvegUCV58BoK/8EFrO8aWmVrRGB0AEm3jHvnZwq
+ g1wiEIh+kkSJDiHR4tM7g/to6tuY6/ds7sh5OENeLGPrw7vXXN0mSnsFAVAAIUn5CXPR
+ b8xb4ji8dTq0+IsQw7wVgeeGwqWP+aZc8EV+CmH2yRI8/SyKIhiNvK3/B5nUMCwO2jKu
+ gxvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=W8KaZGmDosurwlNJD9BGtUyzNAa4jQOZ04o70/FjZgc=;
+ b=RVyLW7WzbBSAF1A0admdU7rVlwiwqUmq8Z1VkDuqhciM5HbK0rtsrbneRetdGPNQsl
+ XILjYZDihAXWHEcRHKpmbNBc6mzQpMUhxNHFpQwpi6GG1vQ9NwWR1QEto5UkSB5E1nmq
+ 3c7fSWrHHopsP9exSXR0ZytvonzsuhIHtpsuO8QdtciMW4rWvyi38xaypCQCUu4Sgq2T
+ zzOsRiiSvxArKZmry7SbohL31BUvHcR/cxPTKA2VRtF/aa2ipKQdvsyBcj4lAjVIy9Ek
+ peir36yXcW+a/xc6mbh1MyZmfk0zJ8LVEAC+T1fh3ovZt9gD3Hr9Fp+CXsFUzQ0qjWQi
+ 37WQ==
+X-Gm-Message-State: APjAAAUvYkMbOwEBzOnzp6U7HY0WthY6wzq75WQ1EM2wgo73qi5qfl8l
+ 4F2Wbkf+CXH1PX0IUkwdJBU=
+X-Google-Smtp-Source: APXvYqzuFzGOe6xFIcYN9MIIJZs1pHKUSIf83YFRjQMgSwSuWxPGqeqGheyj2Ocv0clngLUDLTvy9A==
+X-Received: by 2002:aa7:8805:: with SMTP id c5mr17210828pfo.142.1582323291138; 
+ Fri, 21 Feb 2020 14:14:51 -0800 (PST)
+Received: from localhost (g183.222-224-185.ppp.wakwak.ne.jp. [222.224.185.183])
+ by smtp.gmail.com with ESMTPSA id h3sm4051033pfr.15.2020.02.21.14.14.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 21 Feb 2020 14:14:50 -0800 (PST)
+Date: Sat, 22 Feb 2020 07:14:47 +0900
+From: Stafford Horne <shorne@gmail.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 2/2] openrisc: use the generic in-place uncached DMA
+ allocator
+Message-ID: <20200221221447.GA7926@lianli.shorne-pla.net>
+References: <20200220170139.387354-1-hch@lst.de>
+ <20200220170139.387354-3-hch@lst.de>
 MIME-Version: 1.0
-References: <20200221053802.70716-1-evanbenn@chromium.org>
- <20200221163717.v2.1.I02ebc5b8743b1a71e0e15f68ea77e506d4e6f840@changeid>
-In-Reply-To: <20200221163717.v2.1.I02ebc5b8743b1a71e0e15f68ea77e506d4e6f840@changeid>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 21 Feb 2020 16:11:40 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqL94vtBEmV2gNWx-D==sLiRXjxBBFZS8fw1cR6=KjS7XQ@mail.gmail.com>
-Message-ID: <CAL_JsqL94vtBEmV2gNWx-D==sLiRXjxBBFZS8fw1cR6=KjS7XQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: watchdog: Add mt8173, smc-wdt watchdog
-To: Evan Benn <evanbenn@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <20200220170139.387354-3-hch@lst.de>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_141154_297469_1B2FBB69 
-X-CRM114-Status: GOOD (  18.54  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200221_141452_364437_ABAF10D3 
+X-CRM114-Status: UNSURE (   9.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [shorne[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -71,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,104 +102,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Julius Werner <jwerner@chromium.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- "David S. Miller" <davem@davemloft.net>, Guenter Roeck <linux@roeck-us.net>
+Cc: Jonas Bonn <jonas@southpole.se>, Mark Rutland <mark.rutland@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
+ linux-arch@vger.kernel.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 11:38 PM Evan Benn <evanbenn@chromium.org> wrote:
->
-> This watchdog can be used on ARM systems with a Secure
-> Monitor firmware to forward watchdog operations to
-> firmware via a Secure Monitor Call.
->
-> Signed-off-by: Evan Benn <evanbenn@chromium.org>
-> ---
->
-> Changes in v2:
-> - Change name arm > mt8173
->
->  .../bindings/watchdog/mt8173,smc-wdt.yaml     | 30 +++++++++++++++++++
->  MAINTAINERS                                   |  6 ++++
->  2 files changed, 36 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/watchdog/mt8173,smc-wdt.yaml
->
-> diff --git a/Documentation/devicetree/bindings/watchdog/mt8173,smc-wdt.yaml b/Documentation/devicetree/bindings/watchdog/mt8173,smc-wdt.yaml
-> new file mode 100644
-> index 0000000000000..ff45e13bc548b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/watchdog/mt8173,smc-wdt.yaml
-> @@ -0,0 +1,30 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/watchdog/mt8173,smc-wdt.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ARM Secure Monitor Call based watchdog
-> +
-> +allOf:
-> +  - $ref: "watchdog.yaml#"
-> +
-> +maintainers:
-> +  - Julius Werner <jwerner@chromium.org>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mt8173,smc-wdt
+On Thu, Feb 20, 2020 at 09:01:39AM -0800, Christoph Hellwig wrote:
+> Switch openrisc to use the dma-direct allocator and just provide the
+> hooks for setting memory uncached or cached.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-compatible strings are in the form <vendor>,<device>. 'mt8173' is not a vendor.
+Reviewed-by: Stafford Horne <shorne@gmail.com>
 
-> +
-> +required:
-> +  - compatible
-> +
-> +examples:
-> +  - |
-> +    watchdog {
-
-This should be a child of some Mediatek firmware node. I assume
-watchdog is not the *only* function.
-
-> +      compatible = "mt8173,smc-wdt";
-> +      timeout-sec = <15>;
-> +    };
-> +
-> +...
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index e48ab79879ace..59e8779363c12 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -1421,6 +1421,12 @@ S:       Maintained
->  F:     Documentation/devicetree/bindings/interrupt-controller/amazon,al-fic.txt
->  F:     drivers/irqchip/irq-al-fic.c
->
-> +ARM SMC WATCHDOG DRIVER
-> +M:     Julius Werner <jwerner@chromium.org>
-> +R:     Evan Benn <evanbenn@chromium.org>
-> +S:     Maintained
-> +F:     devicetree/bindings/watchdog/mt8173,smc-wdt.yaml
-> +
->  ARM SMMU DRIVERS
->  M:     Will Deacon <will@kernel.org>
->  R:     Robin Murphy <robin.murphy@arm.com>
-> --
-> 2.25.0.265.gbab2e86ba0-goog
->
+Also, I test booted openrisc with linux 5.5 + these patches.  Thanks for
+continuing to shrink my code base.
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
