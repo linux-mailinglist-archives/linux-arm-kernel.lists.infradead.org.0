@@ -2,60 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EED54166B69
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 01:16:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BC82166B82
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 01:21:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GCYALErd6XoXr9OpVz95KA/na0tJ4V/dRYKgj2EMfQU=; b=vDVg6tjuvQLEcX0MllPodKDJ7
-	TIeRFlc1AQ7FG4IajWfThs84vBivYis3gASjpKVYuqW6mRa3PLpyYI17CoxQyZJQbcvXs8/Ay58WT
-	qTn/yqTGaG5totoMY6m/PIO/Ffb+B6p57Kohl0vDOZDj7Oc1QexrYsdRLaWmtBZNhefD6mFJ0s6SR
-	/N9CVNZ4lwVq3TmwhEjk56WQa9JkN9pHNNeIoho6pR0mdLszUC0qvX1tSUQd30Mez82TiaOWNqZ8I
-	zCJ6hQbeL+lqyeTBafer4ZixXcQoMlknjnwdKa384vwYIhRb8tRElpCFTvu/i2CLJKcSr9N6OkIZz
-	kREa1qJaA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DAizzo7NE4+tHQJfXSkj/VA4YbxWEMTbYpQDijDFp50=; b=ARCp67RsNywPs/
+	v7MK5qa+fIE8+pTFtpsgw4ng5pB+8H9/uwB/IjCKKfSC3AT6UKbgV3Er3Szi9nD0oHt2jYZlR9yHz
+	J3niTxayImqOznjXWTJdlPNfwEKpf9tzSjy9LzIXDjFf8MhJzo7vnhkn6Rbg+rJQfaa0j00dmWPKl
+	/czB6deizbJKKOxc3K5AqV/yhF9MfqyDhYzvd7X8whMvv3drItTQ0inwo49M8ZsdWdMMwVBWQo9F4
+	mQcTmJO2T7tEDdX4Fn2znXkOZ0hJ7zILFa3NsVLRmYGFQFz9+qI1WD2Pk8zlwgbaBnLxdDLaGeurJ
+	a0yAs/KPeif6vux97CXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4vzA-00013E-BN; Fri, 21 Feb 2020 00:16:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4vz2-00012Z-LK
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 00:15:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC99531B;
- Thu, 20 Feb 2020 16:15:52 -0800 (PST)
-Received: from [10.37.12.72] (unknown [10.37.12.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 27B4B3F6CF;
- Thu, 20 Feb 2020 16:15:49 -0800 (PST)
-Subject: Re: [PATCH v9 08/15] coresight: cti: Enable CTI associated with
- devices.
-To: mike.leach@linaro.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, coresight@lists.linaro.org,
- linux-doc@vger.kernel.org
-References: <20200210213924.20037-1-mike.leach@linaro.org>
- <20200210213924.20037-9-mike.leach@linaro.org>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <04b739fd-7bb3-bd28-8013-918e7d4dfcb7@arm.com>
-Date: Fri, 21 Feb 2020 00:20:17 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1j4w4A-0002zF-Ap; Fri, 21 Feb 2020 00:21:14 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4w41-0002yA-0b
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 00:21:06 +0000
+Received: by mail-pf1-x443.google.com with SMTP id j9so251833pfa.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 16:21:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=a4/ljhrEhbsVqKPnJ2k+YSVwNBU/denU+0a+fK/lh98=;
+ b=EVv11Zk8AYB9hS7c/Lkhd52HNoMejxxMg8MSwFwHJcv1rgn10PAhKhBkvQKJZ9BaG4
+ NskY5M0YE8o7EDmxnYtEItF+4qEF9oy85BAypdcQLsWCfoUN5s6/K5sf4UBUKmZFHt21
+ sPDTaDsivhrGrdnpq+r/7LFFJ6iUnNpEAJYJXg8Ee0SInqr6LR18ucHGaTIv12TSpOY7
+ T3kbv9FZQGel1oR9RlWLR13Zh+N6dF1UN7NKb9P1kVE3+7PHhjs68qRSxLFcCG6rbc83
+ bG7S9Xx0Y70mXDOROUbqjhVu+2fpCEoIw+v7N18ETcmTnwuHDxcgjGu+SiaRh2I9/UOe
+ 84zg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=a4/ljhrEhbsVqKPnJ2k+YSVwNBU/denU+0a+fK/lh98=;
+ b=AsqokEbVyVqapn+oO8NlvK31hbaCZX2dZX/E3FwxRCvrNtuTaCs6OucSdNcWVTdLSr
+ a9mlFHDYP6ZL/hvKj19QGOkQ322RwC8LcqDZ2wYl2I5yrBomEYE0gp94wmcqzxd/Wn/b
+ XM5VAAKwmJSiiBjko5EdWAsY2ukwDzEZA+9sU46PogfZAgTYTKhc/hkrLGhxuRuEdAnz
+ OHCV6GTGVv2BMnQ1qEbDTM29pOf+W4fJHAUjLXowSGsZBrCbJGhqE3VsKiDxxfi30Yao
+ fDtWfNrE2lyEPz84iVBdR4U6JfMc6OxiXfAbeEQ5G5SBg5wNBmEtg2lWqPhpbsDilUVh
+ iJbA==
+X-Gm-Message-State: APjAAAWgyFQRz4OwieX6osQY0U5aZNgCVuDwxZnnbrJ6Cnlj7ST13/PM
+ +43Ex3S8/hzBFRpQa++zkS8=
+X-Google-Smtp-Source: APXvYqyjiF/VG6y/NeQCdPXrhpSws4JsxzMcf4IkrfSRa3KYM7f7ExChm9MNA6NOGinrsiWkqQIdvQ==
+X-Received: by 2002:a63:3e05:: with SMTP id l5mr35763336pga.293.1582244463971; 
+ Thu, 20 Feb 2020 16:21:03 -0800 (PST)
+Received: from taoren-ubuntu-R90MNF91 ([2620:10d:c090:500::6:8f30])
+ by smtp.gmail.com with ESMTPSA id t11sm541459pjo.21.2020.02.20.16.21.02
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 20 Feb 2020 16:21:03 -0800 (PST)
+Date: Thu, 20 Feb 2020 16:20:59 -0800
+From: Tao Ren <rentao.bupt@gmail.com>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH 2/2] usb: gadget: aspeed: fixup usb1 device descriptor at
+ init time
+Message-ID: <20200221002059.GB7815@taoren-ubuntu-R90MNF91>
+References: <20200218235600.6763-1-rentao.bupt@gmail.com>
+ <20200218235600.6763-3-rentao.bupt@gmail.com>
+ <55e77bcb37ec780094b8d226f89bd5557e30d913.camel@kernel.crashing.org>
 MIME-Version: 1.0
-In-Reply-To: <20200210213924.20037-9-mike.leach@linaro.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <55e77bcb37ec780094b8d226f89bd5557e30d913.camel@kernel.crashing.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_161556_789018_16CABFA4 
-X-CRM114-Status: GOOD (  23.98  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200220_162105_060937_9B436637 
+X-CRM114-Status: GOOD (  23.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rentao.bupt[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,84 +102,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, mathieu.poirier@linaro.org, corbet@lwn.net,
- linux-arm-msm@vger.kernel.org, liviu.dudau@arm.com, agross@kernel.org,
- robh+dt@kernel.org, maxime@cerno.tech, sudeep.holla@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, taoren@fb.com,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike
-
-Sorry for the delay. one minor comment below.
-
-On 02/10/2020 09:39 PM, Mike Leach wrote:
-> The CoreSight subsystem enables a path of devices from source to sink.
-> Any CTI devices associated with the path devices must be enabled at the
-> same time.
+On Thu, Feb 20, 2020 at 12:39:45PM +1100, Benjamin Herrenschmidt wrote:
+> On Tue, 2020-02-18 at 15:56 -0800, rentao.bupt@gmail.com wrote:
+> > From: Tao Ren <rentao.bupt@gmail.com>
+> > 
+> > This patch moves fixup-usb1-device-descriptor logic from get_descriptor
+> > handler to "ast_vhub_fixup_dev_desc" function so the device descriptor
+> > is only patched once (at vhub init time).
 > 
-> This patch adds an associated coresight_device element to the main
-> coresight device structure, and uses this to create associations between
-> the CTI and other devices based on the device tree data. The associated
-> device element is used to enable CTI in conjunction with the path elements.
-> 
-> CTI devices are reference counted so where a single CTI is associated with
-> multiple elements on the path, it will be enabled on the first associated
-> device enable, and disabled with the last associated device disable.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->   drivers/hwtracing/coresight/coresight-cti.c  | 129 +++++++++++++++++++
->   drivers/hwtracing/coresight/coresight-cti.h  |   1 +
->   drivers/hwtracing/coresight/coresight-priv.h |  12 ++
->   drivers/hwtracing/coresight/coresight.c      |  71 +++++++++-
->   include/linux/coresight.h                    |   4 +
->   5 files changed, 212 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-> index 77c2af247917..c4494923d030 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti.c
-> @@ -4,6 +4,7 @@
->    * Author: Mike Leach <mike.leach@linaro.org>
->    */
->   
-> +#include <linux/property.h>
->   #include "coresight-cti.h"
->   
->   /**
-> @@ -440,6 +441,131 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
->   	return err;
->   }
->   
-> +/*
-> + * Look for a matching connection device name in the list of connections.
-> + * If found then swap in the csdev name, set trig con association pointer
-> + * and return found.
-> + */
-> +static bool
-> +cti_match_fixup_csdev(struct cti_device *ctidev, const char *node_name,
-> +		      struct coresight_device *csdev)
-> +{
-> +	struct cti_trig_con *tc;
-> +	const char *csdev_name;
-> +
-> +	list_for_each_entry(tc, &ctidev->trig_cons, node) {
-> +		if (tc->con_dev_name) {
-> +			if (!strcmp(node_name, tc->con_dev_name)) {
-> +				/* match: so swap in csdev name & dev */
-> +				csdev_name = dev_name(&csdev->dev);
-> +				tc->con_dev_name =
-> +					devm_kstrdup(&csdev->dev, csdev_name,
-> +						     GFP_KERNEL);
+> I don't like this either. We should make ast_vhub_dev_desc and patch a
+> copy here too. I know today there's only one instance of the vhub in a
+> given SoC but that might not always be the case.
 
-In the extreme rare case of an allocation failure, we may want to
-check if the allocation was successful or not, rather than silently
-ignoring it. With that fixed,
+Sure. I will introduce per-hub descripor instances in patch v2.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+
+Cheers,
+
+Tao
+> 
+> > Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+> > ---
+> >  drivers/usb/gadget/udc/aspeed-vhub/hub.c | 20 +++++++++-----------
+> >  1 file changed, 9 insertions(+), 11 deletions(-)
+> > 
+> > diff --git a/drivers/usb/gadget/udc/aspeed-vhub/hub.c b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
+> > index 4e3ef83283a6..b8bf54b12adc 100644
+> > --- a/drivers/usb/gadget/udc/aspeed-vhub/hub.c
+> > +++ b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
+> > @@ -76,13 +76,6 @@ static struct usb_device_descriptor ast_vhub_dev_desc = {
+> >  	.bNumConfigurations	= 1,
+> >  };
+> >  
+> > -/* Patches to the above when forcing USB1 mode */
+> > -static void ast_vhub_patch_dev_desc_usb1(struct usb_device_descriptor *desc)
+> > -{
+> > -	desc->bcdUSB = cpu_to_le16(0x0100);
+> > -	desc->bDeviceProtocol = 0;
+> > -}
+> > -
+> >  /*
+> >   * Configuration descriptor: same comments as above
+> >   * regarding handling USB1 mode.
+> > @@ -316,10 +309,6 @@ static int ast_vhub_rep_desc(struct ast_vhub_ep *ep,
+> >  	if (len > dsize)
+> >  		len = dsize;
+> >  
+> > -	/* Patch it if forcing USB1 */
+> > -	if (desc_type == USB_DT_DEVICE && ep->vhub->force_usb1)
+> > -		ast_vhub_patch_dev_desc_usb1(ep->buf);
+> > -
+> >  	/* Shoot it from the EP buffer */
+> >  	return ast_vhub_reply(ep, NULL, len);
+> >  }
+> > @@ -878,6 +867,15 @@ static void ast_vhub_fixup_dev_desc(struct ast_vhub *vhub)
+> >  		if (of_str[id])
+> >  			ast_vhub_str_array[i].s = of_str[id];
+> >  	}
+> > +
+> > +	/*
+> > +	 * Update USB Release Number and Protocol code if vhub is running
+> > +	 * at USB 1.x speed.
+> > +	 */
+> > +	if (vhub->force_usb1) {
+> > +		ast_vhub_dev_desc.bcdUSB = cpu_to_le16(0x0100);
+> > +		ast_vhub_dev_desc.bDeviceProtocol = 0;
+> > +	}
+> >  }
+> >  
+> >  void ast_vhub_init_hub(struct ast_vhub *vhub)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
