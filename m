@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B512C167FEF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 15:17:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ED98168008
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 15:21:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HfB0xosH0BugGzWN4ajkh/wgLMbj/uqDxGGzg3tPJzQ=; b=VNngzo2VvfDiEt
-	O8MFkeiABpO73bkpjSU82nXhrCKTVo9/Gb1MyilcMnfg5pVoOCC8u5LGMQ9Kp/G7apGcSz0RhEawZ
-	vICjdvNanETDYKXcmdE7g2szTwxKmluWt8hiRikKweezH73/0zGH/oHiOXjScgeAaHeHO513ulbii
-	H0YGJ6N4jniNog+RI+lurZK5YpqnVykha31G5tYENpI4IxcjfelbxHBHK0WtUmmDK3WJILKR44c31
-	xWZ5aKdqjgcMKhuTz0cZ3uoX/9O4fvHbD+Ab50ABIq8abxzpRD9ydkoLQCpRpq9wSPJqzeqWcS6AD
-	S1d+pHjCpVuyh6E4EfdQ==;
+	References:List-Owner; bh=jdawlzd7bLVmiLJTGcWR4Vs9tt4WECeYfiNmQOmO/L4=; b=dA0
+	f6FKK2ALv+geTLndLNkUFrhXkXHIIlq16KnLeOw81WYKkufzKrOMzcA00fFb1/Ogs4w1dCGDhIq9S
+	EtC9RJPE0SMh3bngJYFzQoinKzNaayg/It0CIrvG2/FzTN1gYHSoQnoEtu1N9sEevVrn/hrYKkQ9x
+	17QQCjJGUZ0wj69i/+J5HeavnuztLbliByYvUyzTMyldPIYGCIMHivt059mrM/JoBU7Un77XuTp73
+	qMO8FPFMWJpkDHQy1pN6G8p3oU3WShHda0OGa13VbnP7FatbFljpln/aW1f+7SjbfCU+yYgwOlOWl
+	uc+QW4OLeLDWDXZn6GC/rW7LiHZchtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j597B-00034n-Gc; Fri, 21 Feb 2020 14:17:13 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j596y-00034D-6T
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 14:17:01 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 36BC968BFE; Fri, 21 Feb 2020 15:16:57 +0100 (CET)
-Date: Fri, 21 Feb 2020 15:16:56 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 1/2] dma-mapping: support setting memory uncached in place
-Message-ID: <20200221141656.GF6968@lst.de>
-References: <20200220170139.387354-1-hch@lst.de>
- <20200220170139.387354-2-hch@lst.de>
- <502fa745-ddad-f91b-52bc-52edecf8fdbc@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <502fa745-ddad-f91b-52bc-52edecf8fdbc@arm.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+	id 1j59B9-0005Sn-SN; Fri, 21 Feb 2020 14:21:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j59B0-0005S0-97
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 14:21:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7BD8130E;
+ Fri, 21 Feb 2020 06:21:09 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E6AD83F703;
+ Fri, 21 Feb 2020 06:21:08 -0800 (PST)
+Date: Fri, 21 Feb 2020 14:21:07 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Applied "ASoC: sun8i-codec: Remove unused dev from codec struct" to
+ the asoc tree
+In-Reply-To: <20200217064250.15516-5-samuel@sholland.org>
+Message-Id: <applied-20200217064250.15516-5-samuel@sholland.org>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_061700_391244_C5236A32 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200221_062110_364870_64377490 
+X-CRM114-Status: GOOD (  14.58  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,41 +63,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonas Bonn <jonas@southpole.se>, Mark Rutland <mark.rutland@arm.com>,
- linux-kernel@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
- linux-arch@vger.kernel.org, Stafford Horne <shorne@gmail.com>,
- Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>,
+ =?UTF-8?q?Myl=C3=A8ne=20Josserand?= <mylene.josserand@free-electrons.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 05:21:35PM +0000, Robin Murphy wrote:
->> @@ -196,10 +192,15 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
->>     	memset(ret, 0, size);
->>   -	if (IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT) &&
->> -	    dma_alloc_need_uncached(dev, attrs)) {
->> +	if (dma_alloc_need_uncached(dev, attrs)) {
->>   		arch_dma_prep_coherent(page, size);
->> -		ret = uncached_kernel_address(ret);
->> +
->> +		if (IS_ENABLED(CONFIG_ARCH_HAS_DMA_SET_UNCACHED)) {
->> +			if (!arch_dma_set_uncached(ret, size))
->> +				goto out_free_pages;
->> +		} else if (IS_ENABLED(CONFIG_ARCH_HAS_UNCACHED_SEGMENT)) {
->> +			ret = uncached_kernel_address(ret);
->
-> Hmm, would we actually need to keep ARCH_HAS_UNCACHED_SEGMENT? If 
-> arch_dma_set_uncached() returned void*/ERR_PTR instead, then it could work 
-> for both cases (with arch_dma_clear_uncached() being a no-op for segments).
+The patch
 
-Yes, I think so.  I was a little worried about what to do with
-cached_kernel_address() in that scheme, but it turns out with the recent
-round of dma-direct cleanup that is actually entirely unused now.
+   ASoC: sun8i-codec: Remove unused dev from codec struct
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.7
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 150cbf8e66ec86966c13fd7a0e3de8813bca03d8 Mon Sep 17 00:00:00 2001
+From: Samuel Holland <samuel@sholland.org>
+Date: Mon, 17 Feb 2020 00:42:20 -0600
+Subject: [PATCH] ASoC: sun8i-codec: Remove unused dev from codec struct
+
+This field is not used anywhere in the driver, so remove it.
+
+Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+Acked-by: Chen-Yu Tsai <wens@csie.org>
+Link: https://lore.kernel.org/r/20200217064250.15516-5-samuel@sholland.org
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/sunxi/sun8i-codec.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/sound/soc/sunxi/sun8i-codec.c b/sound/soc/sunxi/sun8i-codec.c
+index 55798bc8eae2..41471bd01042 100644
+--- a/sound/soc/sunxi/sun8i-codec.c
++++ b/sound/soc/sunxi/sun8i-codec.c
+@@ -85,7 +85,6 @@
+ #define SUN8I_AIF1CLK_CTRL_AIF1_BCLK_DIV_MASK	GENMASK(12, 9)
+ 
+ struct sun8i_codec {
+-	struct device	*dev;
+ 	struct regmap	*regmap;
+ 	struct clk	*clk_module;
+ 	struct clk	*clk_bus;
+@@ -541,8 +540,6 @@ static int sun8i_codec_probe(struct platform_device *pdev)
+ 	if (!scodec)
+ 		return -ENOMEM;
+ 
+-	scodec->dev = &pdev->dev;
+-
+ 	scodec->clk_module = devm_clk_get(&pdev->dev, "mod");
+ 	if (IS_ERR(scodec->clk_module)) {
+ 		dev_err(&pdev->dev, "Failed to get the module clock\n");
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
