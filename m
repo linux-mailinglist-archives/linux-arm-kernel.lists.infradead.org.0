@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E1A0167C36
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 12:33:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86431167C52
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 12:38:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=muHUJSiqktxAo004qhIX9ELxpUHWz4h9sMtd3OA/XOo=; b=ph+96b3sBZSun5
-	a7PCiOt5BHQYn86QnpH2BYwgeiRYylZtbF8RZF/bhNU87MZ3RruCNAMlC617+mBRGqoNcJUXS9Crr
-	LI540QE7BsWA0VY6H6WqaaLoxaibpPLtGKDNoTOHarZGYFm2p7wEAtkXH0BjnBUTc1FK32WQ21GHs
-	Nvi6rSxY3sDcaVoDZRz/DTGIt2am5qxp/+EfaMEQsjRxeCRqXBsTIfwvw5vMALsJ7ExLqqLMNG4Pa
-	qyJFniycAnTxZS6+garclXfX3+6bQ8acdnXJbhghiwcs6T0avx6MSxOu3PlD8KtwtlDMhTy4Pp2E6
-	AFjsBzt5B5M80v39xCsg==;
+	List-Owner; bh=9qs1Ndm6uhYo2sckunLVcg25EUaSmX5KOkH5dogjdVg=; b=iH+kLa5KvanF6g
+	XJipWcj6TwgX9sMabM7UWHt2q5YD42czTlxcDGkFd/sRicSBAwjykxH3tYBA3YaE+2SrCQ8AaIRGx
+	loD5QWEXL+Ss+RiQiOen8f04YtMYilLambgu2KN6nEBrdyfmLCsKoJqjaACmztOuxyMNu5nT6mKx6
+	I6IJ4zDUAGZvxt2fcYyNwgfn8HlKYNb2lZRi1PeODRWnSnOsRGnfLwavyMnLZnEFWsPHZgRkH6fjR
+	xQ85PlMNZN3cxtdaHShYzk+mPSIh9KAUh4jGvNU1TJJxCBvdmclAQkSyVgZepDQFa2nWxl6f7xrl2
+	r0mXlQYv84RePfvP6F/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j56YO-0002vR-JC; Fri, 21 Feb 2020 11:33:08 +0000
+	id 1j56dx-0005g0-2k; Fri, 21 Feb 2020 11:38:53 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j56Xf-0002NE-PO; Fri, 21 Feb 2020 11:32:25 +0000
-X-UUID: 4e8226352c7647acb64c885e5e3dfa60-20200221
+ id 1j56dl-0005eR-6H; Fri, 21 Feb 2020 11:38:42 +0000
+X-UUID: bbf146e2489c438699cfbf369ed5cf94-20200221
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=zFZhXk7fCqXKk9Mb/Rx6jZKFuJRDTSRGsr1lm/b+5DU=; 
- b=ovexBTzC48RueZbJWZ+GrTK/Hn7xV7SIeRvMI8QvWXNouMt+mRI45xOOZMYQ56YgnItVtHVPx1zQqPqEX1FFtOoCoPOg33SJiApGb4RuZWKPH2JfBYn4NurRWrdJ9285hC2nn+3Utvb/YNqgZ/b69tpbPMRtvVBZTv8zN/Ik6Go=;
-X-UUID: 4e8226352c7647acb64c885e5e3dfa60-20200221
+ bh=FEmqX8k1XxKtpg6LtV267K/kVK82s0J/+1oiECAtDr8=; 
+ b=eiVtWza7lzxEFCLndw31k7qJIWOII6gD5pjTPkjq/6wrO8p1+SXSIDEU4d+sQdcYZflsnpyx5f0FyhTtRO5o15kP27VGaj+YJFzX3f/1jDUqVL7WuFHyDNDfsJhDCaNLVSR/g9MF9i4E8NNFnZB7U6ykVxUol6xQ2o+9CwF/l8s=;
+X-UUID: bbf146e2489c438699cfbf369ed5cf94-20200221
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 597208939; Fri, 21 Feb 2020 03:32:18 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 21 Feb 2020 03:28:41 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 21 Feb 2020 19:23:59 +0800
+ with ESMTP id 1087187791; Fri, 21 Feb 2020 03:38:39 -0800
+Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 21 Feb 2020 03:29:05 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N2.mediatek.inc
+ (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 21 Feb 2020 19:29:09 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
  MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Fri, 21 Feb 2020 19:27:34 +0800
+ 15.0.1395.4 via Frontend Transport; Fri, 21 Feb 2020 19:27:35 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH v6 1/4] dt-bindings: display: mediatek: update dpi supported
- chips
-Date: Fri, 21 Feb 2020 19:28:25 +0800
-Message-ID: <20200221112828.55837-2-jitao.shi@mediatek.com>
+Subject: [PATCH v6 2/4] drm/mediatek: dpi dual edge support
+Date: Fri, 21 Feb 2020 19:28:26 +0800
+Message-ID: <20200221112828.55837-3-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20200221112828.55837-1-jitao.shi@mediatek.com>
 References: <20200221112828.55837-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 45350EF9107AC20D662E832B95D598681BBB945A8E95C707967860581846053F2000:8
+X-TM-SNTS-SMTP: 636B543D83D9CE9FA7A8E41EE0DC7016EB30FCD39AC3129F92B4388D8A2F89C72000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_033223_828735_8ACEC1A0 
-X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-CacheID: sfid-20200221_033841_236421_F836CDA8 
+X-CRM114-Status: UNSURE (   9.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -100,56 +99,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add decriptions about supported chips, including MT2701 & MT8173 &
-mt8183
-
-1. Add more chips support. ex. MT2701 & MT8173 & MT8183
-2. Add property "dpi_pin_mode_swap" and "pinctrl-names" gpio mode dpi mode and
-   gpio oupput-low to avoid leakage current.
-3. Add property "dpi_dual_edge" to config the dpi pin output mode dual edge or
-   single edge sample data.
+DPI sample the data both rising and falling edge.
+It can reduce half data io pins.
 
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 ---
- .../bindings/display/mediatek/mediatek,dpi.txt        | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_dpi.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-index b6a7e7397b8b..cd6a1469c8b7 100644
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-@@ -7,6 +7,7 @@ output bus.
+diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+index 01fa8b8d763d..36e4dbd27d1b 100644
+--- a/drivers/gpu/drm/mediatek/mtk_dpi.c
++++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+@@ -75,6 +75,7 @@ struct mtk_dpi {
+ 	enum mtk_dpi_out_bit_num bit_num;
+ 	enum mtk_dpi_out_channel_swap channel_swap;
+ 	int refcount;
++	bool dual_edge;
+ };
  
- Required properties:
- - compatible: "mediatek,<chip>-dpi"
-+  the supported chips are mt2701 , mt8173 and mt8183.
- - reg: Physical base address and length of the controller's registers
- - interrupts: The interrupt signal from the function block.
- - clocks: device clocks
-@@ -16,6 +17,11 @@ Required properties:
-   Documentation/devicetree/bindings/graph.txt. This port should be connected
-   to the input port of an attached HDMI or LVDS encoder chip.
+ static inline struct mtk_dpi *mtk_dpi_from_encoder(struct drm_encoder *e)
+@@ -348,6 +349,13 @@ static void mtk_dpi_config_disable_edge(struct mtk_dpi *dpi)
+ 		mtk_dpi_mask(dpi, dpi->conf->reg_h_fre_con, 0, EDGE_SEL_EN);
+ }
  
-+Optional properties:
-+- dpi_pin_mode_swap: Swap the pin mode between dpi mode and gpio mode.
-+- pinctrl-names: Contain "gpiomode" and "dpimode".
-+- dpi_dual_edge: Control the RGB 24bit data on 12 pins or 24 pins.
++static void mtk_dpi_enable_dual_edge(struct mtk_dpi *dpi)
++{
++	mtk_dpi_mask(dpi, DPI_DDR_SETTING, DDR_EN | DDR_4PHASE,
++		     DDR_EN | DDR_4PHASE);
++	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, EDGE_SEL, EDGE_SEL);
++}
 +
- Example:
+ static void mtk_dpi_config_color_format(struct mtk_dpi *dpi,
+ 					enum mtk_dpi_out_color_format format)
+ {
+@@ -439,7 +447,8 @@ static int mtk_dpi_set_display_mode(struct mtk_dpi *dpi,
+ 	pll_rate = clk_get_rate(dpi->tvd_clk);
  
- dpi0: dpi@1401d000 {
-@@ -26,6 +32,11 @@ dpi0: dpi@1401d000 {
- 		 <&mmsys CLK_MM_DPI_ENGINE>,
- 		 <&apmixedsys CLK_APMIXED_TVDPLL>;
- 	clock-names = "pixel", "engine", "pll";
-+	dpi_dual_edge;
-+	dpi_pin_mode_swap;
-+	pinctrl-names = "gpiomode", "dpimode";
-+	pinctrl-0 = <&dpi_pin_gpio>;
-+	pinctrl-1 = <&dpi_pin_func>;
+ 	vm.pixelclock = pll_rate / factor;
+-	clk_set_rate(dpi->pixel_clk, vm.pixelclock);
++	clk_set_rate(dpi->pixel_clk,
++		     vm.pixelclock * (dpi->dual_edge ? 2 : 1));
+ 	vm.pixelclock = clk_get_rate(dpi->pixel_clk);
  
- 	port {
- 		dpi0_out: endpoint {
+ 	dev_dbg(dpi->dev, "Got  PLL %lu Hz, pixel clock %lu Hz\n",
+@@ -504,6 +513,8 @@ static int mtk_dpi_set_display_mode(struct mtk_dpi *dpi,
+ 	mtk_dpi_config_color_format(dpi, dpi->color_format);
+ 	mtk_dpi_config_2n_h_fre(dpi);
+ 	mtk_dpi_config_disable_edge(dpi);
++	if (dpi->dual_edge)
++		mtk_dpi_enable_dual_edge(dpi);
+ 	mtk_dpi_sw_reset(dpi, false);
+ 
+ 	return 0;
+@@ -689,6 +700,7 @@ static int mtk_dpi_probe(struct platform_device *pdev)
+ 
+ 	dpi->dev = dev;
+ 	dpi->conf = (struct mtk_dpi_conf *)of_device_get_match_data(dev);
++	dpi->dual_edge = of_property_read_bool(dev->of_node, "dpi_dual_edge");
+ 
+ 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	dpi->regs = devm_ioremap_resource(dev, mem);
 -- 
 2.21.0
 _______________________________________________
