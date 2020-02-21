@@ -2,85 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA48F167C41
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 12:37:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CC8B167C6B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 12:45:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sU9XWB9VcDIFcS/nRhV+hdk0HN0bT6dAr8102FaoXwA=; b=Du0BTnG/EN/EHG
-	HlG8bMAukFjIczeTxogoJwQ6yWeC7fso+kPJSaY7+kO1KuTRn8L2Tkah9M90MQmdbC7Ma3e+5PgTh
-	uxGdV0GEdKI+GD6YpXMOraGAZIO2dS2OgIQbaZcYYjZ8vHKR02Ni4B1GFu36ofrDfFxyBehG671EO
-	JpdyiOMQtsdl0iWUVTGtqnf1kMmTXOHHuQjjzja4utAxCIv0fZmqCsy6iT1hcSZu67IPbTMrlds1l
-	ngdtZZaQHbCs6BGQVaYFTY/gPB3TtwP9/s21tjewrlZP101/wJQe2swNA7/VYT2JgqBkA6VfFbOfU
-	sypjavvUrr47gGDAyIQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=d7ukrvXneey/DHoMP0tqB2ASXWj1maQz9COVSgpt6iA=; b=I0T6u0dWeOptLZYuXXDdhARLe
+	MW8/AzTSpFK+ZSusLVkfc1EB/uwA/Fwg2qataovLymPoB2fL0p+cyOG82b6lpCSmB1iZp3q+UFKh8
+	Cg32AhNGwBmgIetLRjZDtPs2lJfWIuHvzY/Tu5KEkkPpKv/0HxPA8ezWNlF0q/ZivCqwjSwi+5lu4
+	EmLa3byqLCI6CyAYuuxQZG/+55U2sw54qAJ68yU4/HE0XZSszLmsKI77e8gTl+LAOW8KqaAPpvptB
+	K/934eJfWTRAtplBE4onKO2Q01Dkqk6rm8wTJlBB7qt2QE8uknFrwml+AgS6SX0RrVN3V+5C4QLC7
+	tJm3t6p1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j56cG-0004p5-JR; Fri, 21 Feb 2020 11:37:08 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1j56kB-0000Du-54; Fri, 21 Feb 2020 11:45:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j56c2-0004nK-9v; Fri, 21 Feb 2020 11:36:56 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01LBaeiV060451;
- Fri, 21 Feb 2020 05:36:40 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1582285000;
- bh=EcRsLSr8W7nw5h4+Jtj+iHEI5lrm+n8a9Rg2plUXAEg=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=uLFB0+JoRywtNV6I1qOYMV6dmYyC57xd8KPxR+txKiEfEG1DweTd+v3WwJ5sSkbtN
- 2q8PQiNtcue3WO1R/bNqQIKWaKiI1nyKKtpPrSbdyl+3KwqRWTNW/Gi9j935WWuHeg
- t9it8jXfe9oTRL0TwGhlIZBxxVa/gVGn2ukRbCIc=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01LBaeYs094127
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 21 Feb 2020 05:36:40 -0600
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 21
- Feb 2020 05:36:40 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 21 Feb 2020 05:36:40 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01LBaXsg070114;
- Fri, 21 Feb 2020 05:36:34 -0600
-Subject: Re: [PATCH v4 3/6] PCI: endpoint: Add support to handle multiple base
- for mapping outbound memory
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>, Bjorn Helgaas
- <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, Catalin Marinas <catalin.marinas@arm.com>, Will
- Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jingoo Han <jingoohan1@gmail.com>, Gustavo Pimentel
- <gustavo.pimentel@synopsys.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>, Shawn Lin
- <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-References: <20200208183641.6674-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200208183641.6674-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <ea5fa2ec-3c0c-0343-0b14-9bbfa93feaa3@ti.com>
-Date: Fri, 21 Feb 2020 17:10:15 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1j56jv-000803-T6
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 11:45:05 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8C402222C4;
+ Fri, 21 Feb 2020 11:45:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582285502;
+ bh=DN28cyesGvMLBRp+abQEK7tw6NRN/zFrBOEZl5ix8Ew=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=vrdYqlaBIhgSHR9JsiBJAucF2E+rUbhixe/r+FaVNpFzd5VmdRKUAezofk3z8m+19
+ wHX+u+Z3rScWBJfQX2djEUgunSSFnZJ2TSdE02EQwhUw0Wzw/wfyDY1XUNFG0nvj6Z
+ ZFAE1hqVGGUaC16hqvy2lt0PXqh6eDrF5GvjLzE0=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j56js-0071fC-Rr; Fri, 21 Feb 2020 11:45:00 +0000
 MIME-Version: 1.0
-In-Reply-To: <20200208183641.6674-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Date: Fri, 21 Feb 2020 11:45:00 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Michal Simek <michal.simek@xilinx.com>
+Subject: Re: [PATCH 2/3] irqchip: xilinx: Enable generic irq multi handler
+In-Reply-To: <5813deafd27acf07b936ef7a2ac029b7a95ee7be.1581496793.git.michal.simek@xilinx.com>
+References: <cover.1581496793.git.michal.simek@xilinx.com>
+ <5813deafd27acf07b936ef7a2ac029b7a95ee7be.1581496793.git.michal.simek@xilinx.com>
+Message-ID: <10c6d32ccb4c087275dab42e8c7f0d82@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: michal.simek@xilinx.com, linux-kernel@vger.kernel.org,
+ monstr@monstr.eu, git@xilinx.com, stefan.asserhall@xilinx.com,
+ jason@lakedaemon.net, mubinusm@xilinx.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_033654_477921_D5437298 
-X-CRM114-Status: GOOD (  28.22  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200221_034503_988281_8D943199 
+X-CRM114-Status: GOOD (  20.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,251 +91,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Stefan Asserhall <stefan.asserhall@xilinx.com>, monstr@monstr.eu,
+ Jason Cooper <jason@lakedaemon.net>, linux-kernel@vger.kernel.org,
+ git@xilinx.com, Thomas Gleixner <tglx@linutronix.de>,
+ Mubin Sayyed <mubinusm@xilinx.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+Michal,
 
-On 09/02/20 12:06 am, Lad Prabhakar wrote:
-> R-Car PCIe controller has support to map multiple memory regions for
-> mapping the outbound memory in local system also the controller limits
-> single allocation for each region (that is, once a chunk is used from the
-> region it cannot be used to allocate a new one). This features inspires to
-> add support for handling multiple memory bases in endpoint framework.
+On 2020-02-12 08:39, Michal Simek wrote:
+> Register default arch handler via driver instead of directly pointing 
+> to
+> xilinx intc controller. This patch makes architecture code more 
+> generic.
 > 
-> With this patch pci_epc_mem_init() now accepts multiple regions, also
-> page_size for each memory region is passed during initialization so as
-> to handle single allocation for each region by setting the page_size to
-> window_size.
-
-This patch looks much better now except for one comment below..
-> 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> Reviewed-by: Stefan Asserhall <stefan.asserhall@xilinx.com>
 > ---
->  drivers/pci/controller/cadence/pcie-cadence-ep.c |   7 +-
->  drivers/pci/controller/dwc/pcie-designware-ep.c  |  29 ++--
->  drivers/pci/controller/pcie-rockchip-ep.c        |   7 +-
->  drivers/pci/endpoint/pci-epc-mem.c               | 166 ++++++++++++++++-------
->  include/linux/pci-epc.h                          |  39 ++++--
->  5 files changed, 168 insertions(+), 80 deletions(-)
 > 
-.
-.
-<snip>
-.
-.
-> diff --git a/drivers/pci/endpoint/pci-epc-mem.c b/drivers/pci/endpoint/pci-epc-mem.c
-> index d2b174c..b3eedee 100644
-> --- a/drivers/pci/endpoint/pci-epc-mem.c
-> +++ b/drivers/pci/endpoint/pci-epc-mem.c
-> @@ -38,57 +38,76 @@ static int pci_epc_mem_get_order(struct pci_epc_mem *mem, size_t size)
->  /**
->   * __pci_epc_mem_init() - initialize the pci_epc_mem structure
->   * @epc: the EPC device that invoked pci_epc_mem_init
-> - * @phys_base: the physical address of the base
-> - * @size: the size of the address space
-> - * @page_size: size of each page
-> + * @windows: pointer to windows supported by the device
-> + * @num_windows: number of windows device supports
->   *
->   * Invoke to initialize the pci_epc_mem structure used by the
->   * endpoint functions to allocate mapped PCI address.
->   */
-> -int __pci_epc_mem_init(struct pci_epc *epc, phys_addr_t phys_base, size_t size,
-> -		       size_t page_size)
-> +int __pci_epc_mem_init(struct pci_epc *epc, struct pci_epc_mem_window *windows,
-> +		       int num_windows)
+>  arch/microblaze/Kconfig           |  1 +
+>  arch/microblaze/include/asm/irq.h |  3 ---
+>  arch/microblaze/kernel/irq.c      | 16 +---------------
+>  drivers/irqchip/irq-xilinx-intc.c | 22 +++++++++++++++++++++-
+>  4 files changed, 23 insertions(+), 19 deletions(-)
+> 
+> diff --git a/arch/microblaze/Kconfig b/arch/microblaze/Kconfig
+> index 6a331bd57ea8..3a314aa2efa1 100644
+> --- a/arch/microblaze/Kconfig
+> +++ b/arch/microblaze/Kconfig
+> @@ -47,6 +47,7 @@ config MICROBLAZE
+>  	select CPU_NO_EFFICIENT_FFS
+>  	select MMU_GATHER_NO_RANGE if MMU
+>  	select SPARSE_IRQ
+> +	select GENERIC_IRQ_MULTI_HANDLER
+> 
+>  # Endianness selection
+>  choice
+> diff --git a/arch/microblaze/include/asm/irq.h
+> b/arch/microblaze/include/asm/irq.h
+> index eac2fb4b3fb9..5166f0893e2b 100644
+> --- a/arch/microblaze/include/asm/irq.h
+> +++ b/arch/microblaze/include/asm/irq.h
+> @@ -14,7 +14,4 @@
+>  struct pt_regs;
+>  extern void do_IRQ(struct pt_regs *regs);
+> 
+> -/* should be defined in each interrupt controller driver */
+> -extern unsigned int xintc_get_irq(void);
+> -
+>  #endif /* _ASM_MICROBLAZE_IRQ_H */
+> diff --git a/arch/microblaze/kernel/irq.c 
+> b/arch/microblaze/kernel/irq.c
+> index 903dad822fad..1f8cb4c4f74f 100644
+> --- a/arch/microblaze/kernel/irq.c
+> +++ b/arch/microblaze/kernel/irq.c
+> @@ -20,27 +20,13 @@
+>  #include <linux/irqchip.h>
+>  #include <linux/of_irq.h>
+> 
+> -static u32 concurrent_irq;
+> -
+>  void __irq_entry do_IRQ(struct pt_regs *regs)
 >  {
-> -	int ret;
-> -	struct pci_epc_mem *mem;
-> -	unsigned long *bitmap;
-> +	struct pci_epc_mem *mem = NULL;
-> +	unsigned long *bitmap = NULL;
->  	unsigned int page_shift;
-> -	int pages;
-> +	size_t page_size;
->  	int bitmap_size;
+> -	unsigned int irq;
+>  	struct pt_regs *old_regs = set_irq_regs(regs);
+>  	trace_hardirqs_off();
+> 
+>  	irq_enter();
+> -	irq = xintc_get_irq();
+> -next_irq:
+> -	BUG_ON(!irq);
+> -	generic_handle_irq(irq);
 > -
-> -	if (page_size < PAGE_SIZE)
-> -		page_size = PAGE_SIZE;
-> -
-> -	page_shift = ilog2(page_size);
-> -	pages = size >> page_shift;
-> -	bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> -
-> -	mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> -	if (!mem) {
-> -		ret = -ENOMEM;
-> -		goto err;
+> -	irq = xintc_get_irq();
+> -	if (irq != -1U) {
+> -		pr_debug("next irq: %d\n", irq);
+> -		++concurrent_irq;
+> -		goto next_irq;
 > -	}
 > -
-> -	bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> -	if (!bitmap) {
-> -		ret = -ENOMEM;
-> -		goto err_mem;
-> +	int pages;
-> +	int ret;
-> +	int i;
-> +
-> +	epc->mem_windows = 0;
-> +
-> +	if (!windows)
-> +		return -EINVAL;
-> +
-> +	if (num_windows <= 0)
-> +		return -EINVAL;
-> +
-> +	epc->mem = kcalloc(num_windows, sizeof(*mem), GFP_KERNEL);
-> +	if (!epc->mem)
-> +		return -EINVAL;
-> +
-> +	for (i = 0; i < num_windows; i++) {
-> +		page_size = windows[i].page_size;
-> +		if (page_size < PAGE_SIZE)
-> +			page_size = PAGE_SIZE;
-> +		page_shift = ilog2(page_size);
-> +		pages = windows[i].size >> page_shift;
-> +		bitmap_size = BITS_TO_LONGS(pages) * sizeof(long);
-> +
-> +		mem = kzalloc(sizeof(*mem), GFP_KERNEL);
-> +		if (!mem) {
-> +			ret = -ENOMEM;
-> +			goto err_mem;
-> +		}
-> +
-> +		bitmap = kzalloc(bitmap_size, GFP_KERNEL);
-> +		if (!bitmap) {
-> +			ret = -ENOMEM;
-> +			goto err_mem;
-> +		}
-> +
-> +		mem->bitmap = bitmap;
-> +		mem->window.phys_base = windows[i].phys_base;
-> +		mem->page_size = page_size;
-> +		mem->pages = pages;
-> +		mem->window.size = windows[i].size;
-> +		epc->mem[i] = mem;
->  	}
-> -
-> -	mem->bitmap = bitmap;
-> -	mem->phys_base = phys_base;
-> -	mem->page_size = page_size;
-> -	mem->pages = pages;
-> -	mem->size = size;
-> -
-> -	epc->mem = mem;
-> +	epc->mem_windows = num_windows;
->  
->  	return 0;
->  
->  err_mem:
-> -	kfree(mem);
-> +	for (; i >= 0; i--) {
-> +		mem = epc->mem[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->mem);
->  
-> -err:
-> -return ret;
-> +	return ret;
+> +	handle_arch_irq(regs);
+>  	irq_exit();
+>  	set_irq_regs(old_regs);
+
+If you're going to embrace common code, maybe you should do it fully,
+see below.
+
+>  	trace_hardirqs_on();
+> diff --git a/drivers/irqchip/irq-xilinx-intc.c
+> b/drivers/irqchip/irq-xilinx-intc.c
+> index cf1bb470d7b5..ad9e678c24ac 100644
+> --- a/drivers/irqchip/irq-xilinx-intc.c
+> +++ b/drivers/irqchip/irq-xilinx-intc.c
+> @@ -125,7 +125,7 @@ static unsigned int xintc_get_irq_local(struct
+> xintc_irq_chip *irqc)
+>  	return irq;
 >  }
->  EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
->  
-> @@ -101,11 +120,21 @@ EXPORT_SYMBOL_GPL(__pci_epc_mem_init);
->   */
->  void pci_epc_mem_exit(struct pci_epc *epc)
+> 
+> -unsigned int xintc_get_irq(void)
+> +static unsigned int xintc_get_irq(void)
 >  {
-> -	struct pci_epc_mem *mem = epc->mem;
-> +	struct pci_epc_mem *mem;
-> +	int i;
-> +
-> +	if (!epc->mem_windows)
-> +		return;
-> +
-> +	for (i = 0; i <= epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +		kfree(mem->bitmap);
-> +		kfree(mem);
-> +	}
-> +	kfree(epc->mem);
->  
->  	epc->mem = NULL;
-> -	kfree(mem->bitmap);
-> -	kfree(mem);
-> +	epc->mem_windows = 0;
+>  	u32 hwirq;
+>  	unsigned int irq = -1;
+> @@ -178,6 +178,25 @@ static void xil_intc_irq_handler(struct irq_desc 
+> *desc)
+>  	chained_irq_exit(chip, desc);
 >  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  
-> @@ -121,20 +150,30 @@ EXPORT_SYMBOL_GPL(pci_epc_mem_exit);
->  void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  				     phys_addr_t *phys_addr, size_t size)
->  {
-> -	int pageno;
-> -	void __iomem *virt_addr;
-> -	struct pci_epc_mem *mem = epc->mem;
-> -	unsigned int page_shift = ilog2(mem->page_size);
-> +	void __iomem *virt_addr = NULL;
-> +	struct pci_epc_mem *mem;
-> +	unsigned int page_shift;
-> +	int pageno = -EINVAL;
->  	int order;
-> +	int i;
->  
-> -	size = ALIGN(size, mem->page_size);
-> -	order = pci_epc_mem_get_order(mem, size);
-> +	for (i = 0; i < epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
-> +		size = ALIGN(size, mem->page_size);
-> +		order = pci_epc_mem_get_order(mem, size);
+> 
+> +static u32 concurrent_irq;
 > +
-> +		pageno = bitmap_find_free_region(mem->bitmap, mem->pages,
-> +						 order);
-> +		if (pageno >= 0)
-> +			break;
-> +	}
->  
-> -	pageno = bitmap_find_free_region(mem->bitmap, mem->pages, order);
->  	if (pageno < 0)
->  		return NULL;
->  
-> -	*phys_addr = mem->phys_base + ((phys_addr_t)pageno << page_shift);
-> +	page_shift = ilog2(mem->page_size);
-> +	*phys_addr = mem->window.phys_base +
-> +		     ((phys_addr_t)pageno << page_shift);
->  	virt_addr = ioremap(*phys_addr, size);
->  	if (!virt_addr)
->  		bitmap_release_region(mem->bitmap, pageno, order);
-> @@ -143,6 +182,22 @@ void __iomem *pci_epc_mem_alloc_addr(struct pci_epc *epc,
->  }
->  EXPORT_SYMBOL_GPL(pci_epc_mem_alloc_addr);
->  
-> +struct pci_epc_mem *pci_epc_get_matching_window(struct pci_epc *epc,
-> +						phys_addr_t phys_addr)
+> +static void xil_intc_handle_irq(struct pt_regs *regs)
 > +{
-> +	struct pci_epc_mem *mem;
-> +	int i;
+> +	unsigned int irq;
 > +
-> +	for (i = 0; i < epc->mem_windows; i++) {
-> +		mem = epc->mem[i];
+> +	irq = xintc_get_irq();
+> +next_irq:
+> +	BUG_ON(!irq);
+
+Don't BUG_ON() for something that is probably a spurious interrupt.
+Handle it gracefully instead.
+
+> +	generic_handle_irq(irq);
 > +
-> +		if (mem->window.phys_base == phys_addr)
-> +			return mem;
+> +	irq = xintc_get_irq();
+> +	if (irq != -1U) {
+> +		pr_debug("next irq: %d\n", irq);
 
-This will work only if the phys_addr is same as start of windows base.
-This need not be true for all the platforms and will fail for all the
-allocations except the first allocation.
+You already have debug information in xintc_get_irq(). Do you need more?
 
-Thanks
-Kishon
+> +		++concurrent_irq;
+
+What is the purpose of this "concurrent_irq"? It's not concurrent at all
+(it is actually broken in an SMP context), and nothing reads it.
+
+> +		goto next_irq;
+> +	}
+
+Overall, this could be written in a much more elegant way:
+
+         irq_hw_number_t hwirq;
+         do {
+                 hwirq = xintc_read(IVR);
+                 if (likely(irq != -1UL))
+                         handle_domain_irq(xintc_irqc->root_domain,
+                                           hwirq, regs);
+         } while (hwirq != -1UL);
+
+and you can get rid of most of do_IRQ() (all the set_irq_regs,
+irq_enter logic is taken care of) as well as xintc_get_irq().
+
+> +}
+> +
+>  static int __init xilinx_intc_of_init(struct device_node *intc,
+>  					     struct device_node *parent)
+>  {
+> @@ -248,6 +267,7 @@ static int __init xilinx_intc_of_init(struct
+> device_node *intc,
+>  	} else {
+>  		primary_intc = irqc;
+>  		irq_set_default_host(primary_intc->root_domain);
+> +		set_handle_irq(xil_intc_handle_irq);
+>  	}
+> 
+>  	return 0;
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
