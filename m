@@ -2,72 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EB43166FD6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 07:49:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A2CF166FDE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 07:52:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=42TbIOKOfkxWUzVfqLJetscaGTXOInT3/1+M8wVzLI0=; b=aNczicZRVZ9Cke
-	+dNKp0YTaf3FokQJ5xZXIusuisTdT+i1OAxw4F3/oVfgBQSv6y6+/GXL2em6xgioEU3+Dt99fXIv5
-	E8uKpyDVMjSQYohhVMBxRehcJ5P6qxk8iSzSdb4mb8HtmvkIva4AYdOeepIWRDgi7K2W08iqn9TZv
-	iGgWuTFg76afh7AOxwvSNByJ2Fu/+1udCrc4m/AwIiiMoDDR9MFiezGAz/ilE5V2V7ZjFbTxQLp86
-	y2iggwTzVUMz8bF0wTW+YiMp/GpWBqfB9fg5V201zptS5QEA80hn0mq7ZSpLTF3U0G09C2sZgDDaE
-	AXlnVj4fF8h/Wt/37Mdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tg1f6bOOu4OQ6yZCFLmUjJ8kAwVHJ0nK8wP6fy5/RnM=; b=pxnri8rJ69gZ8toM/oNchiRMl
+	a44PNmaa9AK7+uInIwyhqTjLT3nzzR6ZZSAqiN+cM7Pwun1rnea36umcpDlCMxK8PjPcvmlq8sPg7
+	PNVCHe4pe9+WbXVKtxhIyZ/unk/aijBndyBp/2Ym55hT1kopfvyhQQLd8YB4K9/5WrdElmSdar3DX
+	XTOEIjE64NTaIxdYb+VlMw/i+dmpyAgp3TDONz12ixaRqgKE4eqhLdPlmtq91m/2lEI6dfD/w/FvN
+	jOnVjkj+ylf0uiSgRnpu2nriXKtE4WjBaHXy3htw7uXsWteBaxLGXqGrnYAeCzJr8QpdrjJg+AAeq
+	dWPONVORQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j527c-0001Ri-5P; Fri, 21 Feb 2020 06:49:12 +0000
-Received: from first.geanix.com ([116.203.34.67])
+	id 1j52AO-0003QQ-Fb; Fri, 21 Feb 2020 06:52:04 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j526T-0000Nx-Mu
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 06:48:04 +0000
-Received: from localhost (87-49-45-242-mobile.dk.customer.tdc.net
- [87.49.45.242])
- by first.geanix.com (Postfix) with ESMTPSA id BA1EFAEB4D;
- Fri, 21 Feb 2020 06:47:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=geanix.com; s=first;
- t=1582267678; bh=C6ldIWGff5T8O4HfbemgNQNVmUkFjfJUuuR+sw4Z36I=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=f6uD2QwqPaGqlBPWb77tKNPtvgUki/99sA2qGfEsCVviAs3B69DuhQNNxzdhzzKfJ
- cefu9iWzttf08ePuGff5VIZuVxRdFm7jDb+/SQxDeYWWMCWm85XfrLZ4bK6KWoMDWH
- dvhvPqHwNqw9bjUsImIFl0KknSudsplJgr0NnUZUdrPkidqxz+FPoT3R80fF9qKLDU
- Ul1r+hvgx68L9S3a4bQk4JuuAekDVN3y5bcDY3ASQmSMYedXr+6D1EogxEctfFTGnI
- 3WANSs4OjCwJ3ZuuR/x46OAwawFmBYW0AzOThx/7svC5T6yf1aoKqwo5dNg2TU/ArX
- 4fZshi2Bay9HA==
-From: Esben Haabendal <esben@geanix.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net v2 4/4] net: ll_temac: Handle DMA halt condition caused by
- buffer underrun
-Date: Fri, 21 Feb 2020 07:47:58 +0100
-Message-Id: <9d7cb658d37577895b9755a434eacba36a62f580.1582267079.git.esben@geanix.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <cover.1582267079.git.esben@geanix.com>
-References: <cover.1582108989.git.esben@geanix.com>
- <cover.1582267079.git.esben@geanix.com>
+ id 1j52AB-0003Pg-34
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 06:51:52 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1j52A2-00025k-KS; Fri, 21 Feb 2020 07:51:42 +0100
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1j52A0-0001pi-RL; Fri, 21 Feb 2020 07:51:40 +0100
+Date: Fri, 21 Feb 2020 07:51:40 +0100
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH 0/9] remoteproc: imx_rproc: support i.MX8/8M/7ULP
+Message-ID: <20200221065140.mn4wxk5c2xayqwan@pengutronix.de>
+References: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
-X-Spam-Status: No, score=-2.1 required=4.0 tests=BAYES_00,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,UNPARSEABLE_RELAY,URIBL_BLOCKED
- autolearn=disabled version=3.4.4
-X-Spam-Checker-Version: SpamAssassin 3.4.4 (2020-01-24) on 05ff821c8cf1
+In-Reply-To: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 07:49:19 up 97 days, 22:07, 121 users,  load average: 0.00, 0.05,
+ 0.07
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_224802_074811_9FE9D25F 
-X-CRM114-Status: GOOD (  16.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_225151_137799_F1ED173A 
+X-CRM114-Status: GOOD (  18.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,181 +73,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Michal Simek <michal.simek@xilinx.com>,
- linux-kernel@vger.kernel.org, =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: ohad@wizery.com, devicetree@vger.kernel.org, festevam@gmail.com,
+ s.hauer@pengutronix.de, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8571710504609634852=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SDMA engine used by TEMAC halts operation when it has finished
-processing of the last buffer descriptor in the buffer ring.
-Unfortunately, no interrupt event is generated when this happens,
-so we need to setup another mechanism to make sure DMA operation is
-restarted when enough buffers have been added to the ring.
 
-Fixes: 92744989533c ("net: add Xilinx ll_temac device driver")
-Signed-off-by: Esben Haabendal <esben@geanix.com>
----
- drivers/net/ethernet/xilinx/ll_temac.h      |  3 ++
- drivers/net/ethernet/xilinx/ll_temac_main.c | 58 +++++++++++++++++++--
- 2 files changed, 56 insertions(+), 5 deletions(-)
+--===============8571710504609634852==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="r3mvuywgdhewmqq6"
+Content-Disposition: inline
 
-diff --git a/drivers/net/ethernet/xilinx/ll_temac.h b/drivers/net/ethernet/xilinx/ll_temac.h
-index 99fe059e5c7f..53fb8141f1a6 100644
---- a/drivers/net/ethernet/xilinx/ll_temac.h
-+++ b/drivers/net/ethernet/xilinx/ll_temac.h
-@@ -380,6 +380,9 @@ struct temac_local {
- 	/* DMA channel control setup */
- 	u32 tx_chnl_ctrl;
- 	u32 rx_chnl_ctrl;
-+	u8 coalesce_count_rx;
-+
-+	struct delayed_work restart_work;
- };
- 
- /* Wrappers for temac_ior()/temac_iow() function pointers above */
-diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
-index 255207f2fd27..9461acec6f70 100644
---- a/drivers/net/ethernet/xilinx/ll_temac_main.c
-+++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
-@@ -51,6 +51,7 @@
- #include <linux/ip.h>
- #include <linux/slab.h>
- #include <linux/interrupt.h>
-+#include <linux/workqueue.h>
- #include <linux/dma-mapping.h>
- #include <linux/processor.h>
- #include <linux/platform_data/xilinx-ll-temac.h>
-@@ -866,8 +867,11 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
- 	skb_dma_addr = dma_map_single(ndev->dev.parent, skb->data,
- 				      skb_headlen(skb), DMA_TO_DEVICE);
- 	cur_p->len = cpu_to_be32(skb_headlen(skb));
--	if (WARN_ON_ONCE(dma_mapping_error(ndev->dev.parent, skb_dma_addr)))
--		return NETDEV_TX_BUSY;
-+	if (WARN_ON_ONCE(dma_mapping_error(ndev->dev.parent, skb_dma_addr))) {
-+		dev_kfree_skb_any(skb);
-+		ndev->stats.tx_dropped++;
-+		return NETDEV_TX_OK;
-+	}
- 	cur_p->phys = cpu_to_be32(skb_dma_addr);
- 	ptr_to_txbd((void *)skb, cur_p);
- 
-@@ -897,7 +901,9 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
- 			dma_unmap_single(ndev->dev.parent,
- 					 be32_to_cpu(cur_p->phys),
- 					 skb_headlen(skb), DMA_TO_DEVICE);
--			return NETDEV_TX_BUSY;
-+			dev_kfree_skb_any(skb);
-+			ndev->stats.tx_dropped++;
-+			return NETDEV_TX_OK;
- 		}
- 		cur_p->phys = cpu_to_be32(skb_dma_addr);
- 		cur_p->len = cpu_to_be32(skb_frag_size(frag));
-@@ -920,6 +926,17 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
- 	return NETDEV_TX_OK;
- }
- 
-+static int ll_temac_recv_buffers_available(struct temac_local *lp)
-+{
-+	int available;
-+
-+	if (!lp->rx_skb[lp->rx_bd_ci])
-+		return 0;
-+	available = 1 + lp->rx_bd_tail - lp->rx_bd_ci;
-+	if (available <= 0)
-+		available += RX_BD_NUM;
-+	return available;
-+}
- 
- static void ll_temac_recv(struct net_device *ndev)
- {
-@@ -990,6 +1007,18 @@ static void ll_temac_recv(struct net_device *ndev)
- 			lp->rx_bd_ci = 0;
- 	} while (rx_bd != lp->rx_bd_tail);
- 
-+	/* DMA operations will halt when the last buffer descriptor is
-+	 * processed (ie. the one pointed to by RX_TAILDESC_PTR).
-+	 * When that happens, no more interrupt events will be
-+	 * generated.  No IRQ_COAL or IRQ_DLY, and not even an
-+	 * IRQ_ERR.  To avoid stalling, we schedule a delayed work
-+	 * when there is a potential risk of that happening.  The work
-+	 * will call this function, and thus re-schedule itself until
-+	 * enough buffers are available again.
-+	 */
-+	if (ll_temac_recv_buffers_available(lp) < lp->coalesce_count_rx)
-+		schedule_delayed_work(&lp->restart_work, HZ / 1000);
-+
- 	/* Allocate new buffers for those buffer descriptors that were
- 	 * passed to network stack.  Note that GFP_ATOMIC allocations
- 	 * can fail (e.g. when a larger burst of GFP_ATOMIC
-@@ -1045,6 +1074,18 @@ static void ll_temac_recv(struct net_device *ndev)
- 	spin_unlock_irqrestore(&lp->rx_lock, flags);
- }
- 
-+/* Function scheduled to ensure a restart in case of DMA halt
-+ * condition caused by running out of buffer descriptors.
-+ */
-+static void ll_temac_restart_work_func(struct work_struct *work)
-+{
-+	struct temac_local *lp = container_of(work, struct temac_local,
-+					      restart_work.work);
-+	struct net_device *ndev = lp->ndev;
-+
-+	ll_temac_recv(ndev);
-+}
-+
- static irqreturn_t ll_temac_tx_irq(int irq, void *_ndev)
- {
- 	struct net_device *ndev = _ndev;
-@@ -1137,6 +1178,8 @@ static int temac_stop(struct net_device *ndev)
- 
- 	dev_dbg(&ndev->dev, "temac_close()\n");
- 
-+	cancel_delayed_work_sync(&lp->restart_work);
-+
- 	free_irq(lp->tx_irq, ndev);
- 	free_irq(lp->rx_irq, ndev);
- 
-@@ -1258,6 +1301,7 @@ static int temac_probe(struct platform_device *pdev)
- 	lp->dev = &pdev->dev;
- 	lp->options = XTE_OPTION_DEFAULTS;
- 	spin_lock_init(&lp->rx_lock);
-+	INIT_DELAYED_WORK(&lp->restart_work, ll_temac_restart_work_func);
- 
- 	/* Setup mutex for synchronization of indirect register access */
- 	if (pdata) {
-@@ -1364,6 +1408,7 @@ static int temac_probe(struct platform_device *pdev)
- 		 */
- 		lp->tx_chnl_ctrl = 0x10220000;
- 		lp->rx_chnl_ctrl = 0xff070000;
-+		lp->coalesce_count_rx = 0x07;
- 
- 		/* Finished with the DMA node; drop the reference */
- 		of_node_put(dma_np);
-@@ -1395,11 +1440,14 @@ static int temac_probe(struct platform_device *pdev)
- 				(pdata->tx_irq_count << 16);
- 		else
- 			lp->tx_chnl_ctrl = 0x10220000;
--		if (pdata->rx_irq_timeout || pdata->rx_irq_count)
-+		if (pdata->rx_irq_timeout || pdata->rx_irq_count) {
- 			lp->rx_chnl_ctrl = (pdata->rx_irq_timeout << 24) |
- 				(pdata->rx_irq_count << 16);
--		else
-+			lp->coalesce_count_rx = pdata->rx_irq_count;
-+		} else {
- 			lp->rx_chnl_ctrl = 0xff070000;
-+			lp->coalesce_count_rx = 0x07;
-+		}
- 	}
- 
- 	/* Error handle returned DMA RX and TX interrupts */
--- 
-2.25.0
 
+--r3mvuywgdhewmqq6
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Peng,
+
+i can't apply your patches on kernel master HEAD. Do I need some
+extras?
+
+Please add me to CC for this driver next time.
+
+On Wed, Feb 19, 2020 at 03:27:36PM +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+>=20
+> This patchset aim to replace NXP vendor imx_rpmsg.c driver.
+>=20
+> This patchset is tested with Loic PALLARDY's patch
+> "remoteproc: add support for co-processor loaded and booted before kernel"
+> https://patchwork.kernel.org/patch/11265869/,
+> and inspried from st's remoteproc early boot support.
+> Since Loic's patch is still under review, just expect your comments :)
+>=20
+> Patch [1,2]/9: dt-bindings convert to json and new SoC support
+> Patch 3/9: skip firmware load when recovery. To i.MX8, firmware is not
+>            handled by Linux.
+>=20
+> Patch [4-9]/9: i.MX specific part to support rpmsg/virtio with mbox.
+>       because NXP release image not have resoure table, so add resource
+>       table in dts
+>=20
+> My test dts diff for i.MX8QXP MEK, but I have tested this patchset
+> for i.MX8QXP MEK, i.MX8MM EVK, i.MX7ULP EVK:
+>=20
+> +
+> +	imx8x-cm4 {
+> +		compatible =3D "fsl,imx8qxp-cm4";
+> +		rsrc-table =3D <
+> +			0x1 0x2 0x0 0x0 0x18 0x5c
+> +			3
+> +			/*fw_rsc_vdev*/
+> +			7 0 1 0 0 0x200
+> +			/*fw_rsc_vdev_vring*/
+> +			0x90000000 4096 256 1 0
+> +			0x90008000 4096 256 2 0
+> +			3
+> +			/*fw_rsc_vdev*/
+> +			7 1 1 0 0 0x200
+> +			/*fw_rsc_vdev_vring*/
+> +			0x90010000 4096 256 1 0
+> +			0x90018000 4096 256 2 0
+> +		>;
+> +		early-booted;
+> +		mbox-names =3D "tx", "rx", "rxdb";
+> +		mboxes =3D <&lsio_mu5 0 1
+> +			  &lsio_mu5 1 1
+> +			  &lsio_mu5 3 1>;
+> +		mub-partition =3D <3>;
+> +		memory-region =3D <&vdev0vring0>, <&vdev0vring1>, <&vdev0buffer>,
+> +				<&vdev1vring0>, <&vdev1vring1>, <&vdev0buffer>;
+> +	};
+> +
+> +	reserved-memory {
+> +		#address-cells =3D <2>;
+> +		#size-cells =3D <2>;
+> +		ranges;
+> +
+> +		vdev0vring0: vdev0vring0@90000000 {
+> +                       compatible =3D "shared-dma-pool";
+> +			reg =3D <0 0x90000000 0 0x8000>;
+> +			no-map;
+> +		};
+> +
+> +		vdev0vring1: vdev0vring1@90008000 {
+> +                       compatible =3D "shared-dma-pool";
+> +			reg =3D <0 0x90008000 0 0x8000>;
+> +			no-map;
+> +		};
+> +
+> +		vdev1vring0: vdev1vring0@90010000 {
+> +                       compatible =3D "shared-dma-pool";
+> +			reg =3D <0 0x90010000 0 0x8000>;
+> +			no-map;
+> +		};
+> +
+> +		vdev1vring1: vdev1vring1@90018000 {
+> +                       compatible =3D "shared-dma-pool";
+> +			reg =3D <0 0x90018000 0 0x8000>;
+> +			no-map;
+> +		};
+> +
+> +		vdev0buffer: vdev0buffer {
+> +                       compatible =3D "shared-dma-pool";
+> +			reg =3D <0 0x90400000 0 0x100000>;
+> +			no-map;
+> +		};
+> +	};
+> +
+>=20
+> Peng Fan (9):
+>   dt-bindings: remoteproc: Convert imx-rproc to json-schema
+>   dt-bindings: remoteproc: imx-rproc: support i.MX[8,8M,7ULP]
+>   remoteproc: add support to skip firmware load when recovery
+>   remoteproc: imx_rproc: surport early booted remote processor
+>   remoteproc: imx_rproc: parse early-booted property
+>   remoteproc: imx_proc: enable virtio/mailbox
+>   remoteproc: imx_rproc: add i.MX8QM/QXP
+>   remoteproc: imx_rproc: support i.MX7ULP
+>   remoteproc: imx_rproc: add i.MX8MM support
+>=20
+>  .../devicetree/bindings/remoteproc/imx-rproc.txt   |  33 --
+>  .../devicetree/bindings/remoteproc/imx-rproc.yaml  |  95 +++++
+>  drivers/remoteproc/imx_rproc.c                     | 455 +++++++++++++++=
+++++--
+>  drivers/remoteproc/remoteproc_core.c               |  19 +-
+>  include/linux/remoteproc.h                         |   1 +
+>  5 files changed, 531 insertions(+), 72 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/remoteproc/imx-rpro=
+c.txt
+>  create mode 100644 Documentation/devicetree/bindings/remoteproc/imx-rpro=
+c.yaml
+>=20
+> --=20
+> 2.16.4
+>=20
+>=20
+>=20
+
+--=20
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+--r3mvuywgdhewmqq6
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl5PffgACgkQ4omh9DUa
+UbMWkA//dIL2GgJzXR5afPwRrdvi0TCi5UXzzaX2RR4Up15wPHZC+lNzmH5yOBo+
+lDWxKth8CuPMk26g7x+WkrIZvJM8Hbdk/0Y1csnEWTt7IMf4o+FHec5XoJ8WCIIw
+ZEBSbytGL2AIfZCAUJ9J2PK64ZHW37HMgeI5S2t92wn7bV49OPEmR77vzevLZM/y
+FBORX6zWFKvWgXj0ulMaGU6q8/67ZSjoAqcyDkCMMhF7AQplT3yyy1FAgNKNFy5p
+N+W60csZiCMQHza7jYQmovsv2tgBSEYxCYmw2BYglQTDeTK9dolDTlJ+rCQNWR8u
+7Mzj+PUX/jyeHZBSQ9Irkg+sHgbzjsPVkb8+U5DOpHa6IBi3oV6aKkwFGp/agfhd
+7ZVI1bk02clGnM14/AypY1zogzHwo2CkMMXN0bOXFre72YMdNGLo42Op7Cq3tJ+N
+lejlAFc71+/DBjBxwSbUpuXqKt4TAZX8MD5vPmryEcFMPlSMdyftOQ6r7hhx/vNZ
+Svg8RI21V7HBsNfB3NlcqTjDXBK/cCVrgOSzzR3FDLq2EkmIBDvx4jHdteTwrsJO
+S1Mc2C3c1o1/WUnJAjyuuK/pl2wT4vrE5eaom9REedveO0BI8azwfzcfy8bxg5ei
+Xkc3/us2iWNeux1/x/V9wlrfcV4kpHnKtkDfvZP4vx5iSH0q2ak=
+=KJgP
+-----END PGP SIGNATURE-----
+
+--r3mvuywgdhewmqq6--
+
+
+--===============8571710504609634852==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8571710504609634852==--
+
