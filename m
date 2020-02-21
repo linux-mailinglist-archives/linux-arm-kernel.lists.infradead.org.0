@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D81BC16864A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 19:19:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFFBF168647
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 19:19:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6yFw9vqezymFql+ch1ha3eUxxMrp/AhIDCeEjLihi7g=; b=PoorLZGAf6ijF5
-	boajci1n9n5Q7XKHJiOpajyEiIgkN1hjI1LC5nFbyKF63Jk44MwM9WZByNf64defMjqaxiQMF3Fkf
-	1WDDnOLZFKqtPo1+lBecOqRQQeIxWYm6I7Fzyok1GN57v3VHtjXwp5DSSE7vcRnQ92Pqh8Zi8i4pB
-	UR9m8T+/hdTF07+Il8p9Zrux7AaXt9J5BOd+1966ri3JcCc0jzJ0/TrhhD5D150KQ0P8Zwvi4UVUK
-	rqp3oJck3StWxTwtMdIOLJBI5N6w+XrhFH4NU95GmWVinzwfUWhrT/YEYEfN/R5JiWIYWojaMVv/B
-	FC+ddlmxuIHIe4PsDXag==;
+	List-Owner; bh=CIete9iZRNblDSpx5mjtC50REiNb1mpuzABW3uwSEb4=; b=PBqeehuEymcL2f
+	llPNJaZKUgWKHeaKKyOGDlIQBQ5S4CCdNktMe67Jsd+8/3Bu4XqIH6uIud3jpSXiPzIsE17tJLI0i
+	lHOCmiR8GV5hTCtdRP3ZvPgFNGqoL37svlJ4ygySu102NCuIVM1esBO3CUiermli0Q5qPNKxtgd/W
+	Az/3kKUQZfVhTCPMCwy2nYrNpPzvWSjg41OerHXjqLfr9lSotIN5kv1phriSYk7zf9PcKUc3iuUEg
+	twnYzSSBNKvfOPq4zzJb6PFEq8Xy2DkqVI+h5gP59wcAN2mBFoRVZzygjoDhYlsSmVdT3BsDRqcOR
+	vCorbm1G47FuSGXC3PSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5Ctt-0007OQ-Mn; Fri, 21 Feb 2020 18:19:45 +0000
+	id 1j5CtP-0006zo-JQ; Fri, 21 Feb 2020 18:19:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5CtE-0006y7-B5
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 18:19:07 +0000
+ id 1j5CtE-0006yK-B6
+ for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 18:19:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C808831B;
- Fri, 21 Feb 2020 10:19:01 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A300FEC;
+ Fri, 21 Feb 2020 10:19:03 -0800 (PST)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 42DF23F6CF;
- Fri, 21 Feb 2020 10:19:00 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 068653F6CF;
+ Fri, 21 Feb 2020 10:19:01 -0800 (PST)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v2 1/3] arm: clocksource: Add VDSO default clockmode
-Date: Fri, 21 Feb 2020 18:18:47 +0000
-Message-Id: <20200221181849.40351-2-vincenzo.frascino@arm.com>
+Subject: [PATCH v2 2/3] arm64: clocksource: Add VDSO default clockmode
+Date: Fri, 21 Feb 2020 18:18:48 +0000
+Message-Id: <20200221181849.40351-3-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200221181849.40351-1-vincenzo.frascino@arm.com>
 References: <20200221181849.40351-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_101904_438634_09BA69B0 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20200221_101904_437391_29612B80 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,53 +72,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arm_arch_timer requires that VDSO_CLOCKMODE_ARCHTIMER to be
-defined to compile correctly. On arm the vDSO can be disabled and when
-this is the case the compilation ends prematurely with an error.
-
 Define VDSO_CLOCKMODE_ARCH_DEFAULT to represent the default vDSO
 clockmode for arm_arch_timer.
 
-Cc: Russell King <linux@armlinux.org.uk>
+The change to arm_arch_timer will be in the next patch of this
+series.
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will.deacon@arm.com>
 Cc: Thomas Gleixner <tglx@linutronix.de>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm/Kconfig                   |  1 +
- arch/arm/include/asm/clocksource.h | 10 ++++++++++
- 2 files changed, 11 insertions(+)
+ arch/arm64/include/asm/clocksource.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 03bbfc312fe7..97864aabc2a6 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -3,6 +3,7 @@ config ARM
- 	bool
- 	default y
- 	select ARCH_32BIT_OFF_T
-+	select ARCH_CLOCKSOURCE_DATA
- 	select ARCH_HAS_BINFMT_FLAT
- 	select ARCH_HAS_DEBUG_VIRTUAL if MMU
- 	select ARCH_HAS_DEVMEM_IS_ALLOWED
-diff --git a/arch/arm/include/asm/clocksource.h b/arch/arm/include/asm/clocksource.h
-index 73beb7f131de..3f7812d5764f 100644
---- a/arch/arm/include/asm/clocksource.h
-+++ b/arch/arm/include/asm/clocksource.h
-@@ -1,7 +1,17 @@
- #ifndef _ASM_CLOCKSOURCE_H
- #define _ASM_CLOCKSOURCE_H
+diff --git a/arch/arm64/include/asm/clocksource.h b/arch/arm64/include/asm/clocksource.h
+index eb82e9d95c5d..36a2cca213ae 100644
+--- a/arch/arm64/include/asm/clocksource.h
++++ b/arch/arm64/include/asm/clocksource.h
+@@ -4,5 +4,6 @@
  
-+struct arch_clocksource_data {
-+	/* Empty on purpose */
-+};
-+
-+#ifdef CONFIG_GENERIC_GETTIMEOFDAY
  #define VDSO_ARCH_CLOCKMODES	\
  	VDSO_CLOCKMODE_ARCHTIMER
 +#define VDSO_CLOCKMODE_ARCH_DEFAULT	VDSO_CLOCKMODE_ARCHTIMER
-+#else
-+/* The define below is required because on arm the VDSOs can be disabled */
-+#define VDSO_CLOCKMODE_ARCH_DEFAULT	VDSO_CLOCKMODE_NONE
-+#endif
  
  #endif
 -- 
