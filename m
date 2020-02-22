@@ -2,74 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15531168A9C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 00:58:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B5E8168AB5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 01:06:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IebXw6dXoVqwYcqRYvBBz9fk91gVc26cZ8Cv7Cr1iIc=; b=gVWgGY3O+OPNg1
-	kFQSGctOVn1UNGpaFnHYNc9w16VbruMqT6mywJutfxxuG7vlvYhBghroyNWKQ0Tomo8JVtYIJlK0H
-	HkEXpuakMODF1wkXyVOw3haco/u5xnWXOyZUdqVP6348UkjCCQvD6ghghzOx9RpAKl8XOyFdfAr2C
-	IWXpIjZ+vwWr+1ZTL8JVNWyXia1rEZeMdErdCrNJKoREiDihCBFWZ+pIbgyo6Ot1ApxmR99dgAVT8
-	E7lAeoF5c5TE1b4eNfklm+zowgT2bNllx9iPdGBdvpIhtDiCrKUSVBPVUMuV8jnsejyjuG6+FYb2R
-	R3O91O1xA+HUiwJ61uOQ==;
+	List-Owner; bh=xdvPlNjQGeIoy1Bd7lXiGFtiSObr/zKvsxPoCtM6Wfk=; b=kOhiXHz0ukAyDu
+	Q9ljpaTrFsDMrupq9u4iM8p3LSHm3DAJ1H8ApEDtZ8XLHnaXA9fTDlj5CXeRra/6N0LI8sptKDJsD
+	zbGWscyqKr1KXasdXiyRlEwrF1srJYZ5Vt8nJZOl+WOToJUpGfvkh4kK0uC9BE9X8E1Ewsy1FRGuZ
+	y8v1wRY1Q+A+1fDDJkBBii5k4ZEZgwbS5nTD3mJ27Ne9VDYtU3IhN7XcG+1lFX1C8xxPdFP1QWkS0
+	T4MCCdW3sD5EfvY/uTgF+gj90CzMTR7KKAysxZIgLpEb5BI3rR7ejRTeJD5WqXDGQi0cxeltF96Ge
+	qkqW9YWuaipg3dsWxqhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5IBH-00078C-Al; Fri, 21 Feb 2020 23:58:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j5IIz-0002iI-6X; Sat, 22 Feb 2020 00:06:01 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5IB6-00077V-Vk
- for linux-arm-kernel@lists.infradead.org; Fri, 21 Feb 2020 23:57:54 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 92B862068F;
- Fri, 21 Feb 2020 23:57:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582329472;
- bh=n0vjHVM2DuhbpPYoxUKATWLMuk00e4mnD7YQoWp4vUk=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=OIc0H/6FEBoyV45z3mlrdQOZGlTjYb5cKOX8tyqwAiMmkIlY4O9/GD+thIk3aXxsG
- jIjtFlVnom2DIHf7DacvmaOFcDdyLjsT6f8EY9Pmpo3a9lwbkeFP/VA7/hGESogbek
- ZcPYRqs8Jucy3hrPeOGTK7yh2xCobn+qyOSRBAc4=
-MIME-Version: 1.0
-In-Reply-To: <1582266716-19821-1-git-send-email-Anson.Huang@nxp.com>
-References: <1582266716-19821-1-git-send-email-Anson.Huang@nxp.com>
-Subject: Re: [PATCH] clk: imx: pll14xx: Return error if pll type is invalid
-From: Stephen Boyd <sboyd@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>, festevam@gmail.com,
- kernel@pengutronix.de, leonard.crestez@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
- ping.bai@nxp.com, s.hauer@pengutronix.de, shawnguo@kernel.org,
- yuehaibing@huawei.com
-Date: Fri, 21 Feb 2020 15:57:51 -0800
-Message-ID: <158232947182.258574.584668677246692139@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+ id 1j5IIp-0002hZ-QX
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 00:05:53 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 3710C15828FFF;
+ Fri, 21 Feb 2020 16:05:48 -0800 (PST)
+Date: Fri, 21 Feb 2020 16:05:47 -0800 (PST)
+Message-Id: <20200221.160547.1967010307076185614.davem@davemloft.net>
+To: esben@geanix.com
+Subject: Re: [PATCH net v2 0/4] net: ll_temac: Bugfixes
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <cover.1582267079.git.esben@geanix.com>
+References: <cover.1582108989.git.esben@geanix.com>
+ <cover.1582267079.git.esben@geanix.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Fri, 21 Feb 2020 16:05:48 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_155753_036061_67179CE6 
-X-CRM114-Status: UNSURE (   5.78  )
+X-CRM114-CacheID: sfid-20200221_160551_860774_44A4B694 
+X-CRM114-Status: UNSURE (   6.72  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,20 +64,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: andrew@lunn.ch, netdev@vger.kernel.org, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, ynezz@true.cz,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson Huang (2020-02-20 22:31:56)
-> When pll type is invalid, ONLY output error message is NOT enough,
-> should return error immediately.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
+From: Esben Haabendal <esben@geanix.com>
+Date: Fri, 21 Feb 2020 07:47:09 +0100
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> Fix a number of bugs which have been present since the first commit.
+> 
+> The bugs fixed in patch 1,2 and 4 have all been observed in real systems, and
+> was relatively easy to reproduce given an appropriate stress setup.
+> 
+> Changes since v1:
+> 
+> - Changed error handling of of dma_map_single() in temac_start_xmit() to drop
+>   packet instead of returning NETDEV_TX_BUSY.
+
+Series applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
