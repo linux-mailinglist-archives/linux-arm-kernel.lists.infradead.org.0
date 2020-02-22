@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A82A168ADE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 01:16:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A6E1168ADF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 01:16:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=t/ANMiFd8UVhgamWWngDZGYh1Lc4cw5xfSrfCuelE44=; b=T/SIF/SboxrhDw/ruos33LZche
-	FGXIT7OxbN0EwKMnwaO5FqWgNeE8fI2fAsA/Nap1xQfc8zAaJ/HQ1/KOcAZkw6uct2quKX0cloGjy
-	42P9qrLZIIxAexgD/dwWgm4xbTbNtfrXvW+Klh/7iM2Hz4KXUoBD1HckjyDPF61uMARGduqeBc52X
-	yoqwWj4OeEHEYpsA67iupwdoQhK7GplyKqQ3wjcAPw8lFAwQsoNd5ZVrHDPyc4YgVceqKXIV2Kkgr
-	5/TiLiTAihRHkLfQAyrUO4AjEwL/ikm/6NBENPn7sSA+ozO97kuUCqISz7soYPcfImMQvRD3hBP8h
-	av/xAE3Q==;
+	bh=1kHa0vqaFEj0UmeRd9+fkiJLJWZb+I5jZl5a7pBYess=; b=dwSSTOHbzemDOuEHgMZed/hmro
+	gfDS2L8szisT8vOSyf13na9fMC8nAhuxiCEMS9klvZrHOPnxO0fz7Xdy2MbB5/4i4i6CP73HZ7nOa
+	x78zCniGbK7nkMqNep+sySGewg1KdREWtwYOt7rwQqZEsasvsfBSAeKVR+nj2F+u//KLoNiH/j3Ej
+	mWz5Xh7B5pnwTvKUCZZh8zTXIRmduqjx0nItva+95b/WZZL82l6Fp5Q+O2WY5vUwY+rlMAFid+zLc
+	YIcnmTde0biAi0t8tt14jsxLx+Td3h5mrbdgVGELzcmsGjWAm5OXwxIn4mzo3Kv7ni/gqmeFE5+kc
+	2dtlWTUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5ISj-0007CR-LC; Sat, 22 Feb 2020 00:16:05 +0000
+	id 1j5ISx-0007QC-To; Sat, 22 Feb 2020 00:16:19 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5IRy-0006WI-6y
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 00:15:19 +0000
+ id 1j5IRz-0006X4-25
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 00:15:20 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D728A2018CF;
- Sat, 22 Feb 2020 01:15:16 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A2722201B49;
+ Sat, 22 Feb 2020 01:15:17 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 73C0320196F;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8392F201AF4;
  Sat, 22 Feb 2020 01:15:01 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id EBB67402E3;
- Sat, 22 Feb 2020 08:14:45 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 05562402E6;
+ Sat, 22 Feb 2020 08:14:47 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -47,17 +47,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  marcin.juszkiewicz@linaro.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH V16 4/5] defconfig: arm64: add i.MX system controller thermal
- support
-Date: Sat, 22 Feb 2020 08:08:51 +0800
-Message-Id: <1582330132-13461-4-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V16 5/5] arm64: dts: imx: add i.MX8QXP thermal support
+Date: Sat, 22 Feb 2020 08:08:52 +0800
+Message-Id: <1582330132-13461-5-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582330132-13461-1-git-send-email-Anson.Huang@nxp.com>
 References: <1582330132-13461-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_161518_413429_2975F282 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20200221_161519_287989_ADF2CAD2 
+X-CRM114-Status: UNSURE (   7.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -86,27 +85,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch enables CONFIG_IMX_SC_THERMAL as module.
+Add i.MX8QXP CPU thermal zone support.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No change.
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 36 ++++++++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 1c74437..1ff479c 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -453,6 +453,7 @@ CONFIG_THERMAL_GOV_POWER_ALLOCATOR=y
- CONFIG_CPU_THERMAL=y
- CONFIG_THERMAL_EMULATION=y
- CONFIG_QORIQ_THERMAL=m
-+CONFIG_IMX_SC_THERMAL=m
- CONFIG_ROCKCHIP_THERMAL=m
- CONFIG_RCAR_THERMAL=y
- CONFIG_RCAR_GEN3_THERMAL=y
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index fb5f752..0a14fe4 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -11,6 +11,7 @@
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/pinctrl/pads-imx8qxp.h>
++#include <dt-bindings/thermal/thermal.h>
+ 
+ / {
+ 	interrupt-parent = <&gic>;
+@@ -189,6 +190,11 @@
+ 			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
+ 			timeout-sec = <60>;
+ 		};
++
++		tsens: thermal-sensor {
++			compatible = "fsl,imx8qxp-sc-thermal", "fsl,imx-sc-thermal";
++			#thermal-sensor-cells = <1>;
++		};
+ 	};
+ 
+ 	timer {
+@@ -586,4 +592,34 @@
+ 			#clock-cells = <1>;
+ 		};
+ 	};
++
++	thermal_zones: thermal-zones {
++		cpu-thermal0 {
++			polling-delay-passive = <250>;
++			polling-delay = <2000>;
++			thermal-sensors = <&tsens IMX_SC_R_SYSTEM>;
++			trips {
++				cpu_alert0: trip0 {
++					temperature = <107000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++				cpu_crit0: trip1 {
++					temperature = <127000>;
++					hysteresis = <2000>;
++					type = "critical";
++				};
++			};
++			cooling-maps {
++				map0 {
++					trip = <&cpu_alert0>;
++					cooling-device =
++						<&A35_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&A35_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&A35_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&A35_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++			};
++		};
++	};
+ };
 -- 
 2.7.4
 
