@@ -2,42 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AD63168B1E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 01:42:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 955CB168C7E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 06:21:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uRGBrR5QjhRVLyGTYZmotlB7I8vVpFVKwAgLlwbsDCQ=; b=rHI8fW1sZPjmap
-	wZojoXmu9Yt6qm4rl0mTm8xFcXBVr/0O8yzNsVD6vdfZc+RvQV/EszlKF50wwj+Arxu7nO0SN8Ln8
-	BOESc2MHK+P7FBkIvAsTMk3jetzSE9Hjvy3A2uj3WUFstmQsDOjGoVy/vu/H2a3LfOl/r7rI9+dzD
-	JLki7W4EXiuISepZn2mKgWSl9+GnJ3rAqm7FChRjM4XtxFGlegPp6blwSctT1JvJV8m0tqHCHBGPg
-	mYLH3ts8xNxYzSVvFf2EZkX0FC2z5iLlE/k0kG2FbwiQfhtBJN1i9JbBuFKkSvWIX6w7euqPw1cE4
-	svsfbVdtKwNDjW4X+1/A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FoDeqC0Ai6aw9bQ5wfZ7b0r6fe5caZRL4SMq8EsX2XU=; b=hzTNIlu/kY4FE8
+	yjDEVSNsVQmDzG453kE/5Fr0GBaOHv2iK7j4eAcpKFWvvoMA+UUzJDQAHwpvMeQhyRPZWw0sCupIw
+	II55sNJxVmYBywYrJy9gzXHaj4nSjXyr8lFggsnwcxrdhuo531u/PT/s+u2RwMXtqX05RbUC7Zuq4
+	/B13OR6d0f0JeVDog3Xxy/+p8pE4N6axqIcRcxPIH8fHOOFO/n99SV8W51c73/srdnY93NPgP2hCo
+	SYPV8gr4X3JDt5V0rlnBvuPSpTzckMfQiUx6XTCvSpN5hYkyFaPu2GWUO7hGxHZXBUrBM1qyl6KkQ
+	QPpbWMWuF3J7tvG988RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5IsL-0000Xg-D9; Sat, 22 Feb 2020 00:42:33 +0000
-Received: from [2601:1c0:6280:3f0::19c2]
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5Is1-0000Tu-Eh; Sat, 22 Feb 2020 00:42:19 +0000
-Subject: Re: [PATCH v3 1/4] PM / EM: add devices to Energy Model
-To: Lukasz Luba <lukasz.luba@arm.com>, linux-kernel@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- dri-devel@lists.freedesktop.org, linux-omap@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-imx@nxp.com
-References: <20200221194731.13814-1-lukasz.luba@arm.com>
- <20200221194731.13814-2-lukasz.luba@arm.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <4ac6a187-1a09-335d-5c05-bf810ff81aaa@infradead.org>
-Date: Fri, 21 Feb 2020 16:42:10 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1j5NE0-0004He-Qu; Sat, 22 Feb 2020 05:21:12 +0000
+Received: from conssluserg-02.nifty.com ([210.131.2.81])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5NDp-0004Gw-4l
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 05:21:05 +0000
+Received: from mail-vk1-f170.google.com (mail-vk1-f170.google.com
+ [209.85.221.170]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id 01M5KaG5004260
+ for <linux-arm-kernel@lists.infradead.org>; Sat, 22 Feb 2020 14:20:37 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 01M5KaG5004260
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1582348837;
+ bh=YKumM6nl7wDW7iBXi9YToiaP0C6K2ymg4jrBCpX08fE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=0EoB32tRjcYyXjBskhEVHxvbQUuHzD9oUgSFQWaex7AW1gPRVL7YIs9NaI3sljXKg
+ HTbmHsXsbiEgQjV9U3wxlN7Xu7EJTIIadkVRd1wyFJYvzVjnFkN8EwBRRRwef6hpPp
+ lait7OkvHVGxupON+CusjwCHCKaF3A9ZIF5aKqICTafZVpI5Zm0u/fU8dorEO+R9SF
+ fUPMntDoe0dCRGnn6Oz0VPvirFFrWeyd0ctnfmFAWcvWNBapCQTakHBDSM+pHn00wu
+ mqTgPAEoeY72Q87eKu6J/3iWCobU+oGd4dSK9+Tlj80yYcsQdWk++/4KjmS6f04Bsz
+ RkjpK0E2M2iOw==
+X-Nifty-SrcIP: [209.85.221.170]
+Received: by mail-vk1-f170.google.com with SMTP id i4so1193906vkc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 21 Feb 2020 21:20:37 -0800 (PST)
+X-Gm-Message-State: APjAAAUfwAQURnFgGThQg6I7jiLsuLhGeL1Wb89DRQngeYk0Xqy/hxNo
+ e8SOqtT4ngkoybSBemonfRngJfqTkwyQ4OX7oXE=
+X-Google-Smtp-Source: APXvYqxjngNGYOqQSFORfjCOAcW75hxKKdFrDL8gdS/YktQZrg2mNGMXCeQL1YMeVqq9jyAzI3zQoyABnxgxvjdJyvM=
+X-Received: by 2002:a1f:bfc2:: with SMTP id p185mr19206254vkf.73.1582348835888; 
+ Fri, 21 Feb 2020 21:20:35 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200221194731.13814-2-lukasz.luba@arm.com>
-Content-Language: en-US
+References: <20200221021002.18795-1-yamada.masahiro@socionext.com>
+ <20200221152546.GA1327@bogus>
+In-Reply-To: <20200221152546.GA1327@bogus>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Sat, 22 Feb 2020 14:20:00 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQnJPOB7-e8GCjmXb4HpNdYqz0TsDvQ8_SJpcN9vsgeqA@mail.gmail.com>
+Message-ID: <CAK7LNAQnJPOB7-e8GCjmXb4HpNdYqz0TsDvQ8_SJpcN9vsgeqA@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: arm: Convert UniPhier board/SoC bindings
+ to json-schema
+To: Rob Herring <robh@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200221_212101_490213_CD57A4D8 
+X-CRM114-Status: GOOD (  15.24  )
+X-Spam-Score: 1.0 (+)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (1.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.81 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -49,59 +84,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
- bsegall@google.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
- robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
- khilman@kernel.org, daniel.lezcano@linaro.org, steven.price@arm.com,
- cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
- alyssa.rosenzweig@collabora.com, orjan.eide@arm.com, daniel@ffwll.ch,
- b.zolnierkie@samsung.com, s.hauer@pengutronix.de, rostedt@goodmis.org,
- matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com, airlied@linux.ie,
- javi.merino@arm.com, tomeu.vizoso@collabora.com, qperret@google.com,
- sboyd@kernel.org, rjw@rjwysocki.net, agross@kernel.org, kernel@pengutronix.de,
- sudeep.holla@arm.com, patrick.bellasi@matbug.net, shawnguo@kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-One minor nit. Please see inline:
+Hi Rob,
 
-On 2/21/20 11:47 AM, Lukasz Luba wrote:
-> Add support of other devices into the Energy Model framework not only the
-> CPUs. Change the interface to be more unified which can handle other
-> devices as well.
-> 
-> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
-> ---
->  Documentation/power/energy-model.rst     | 133 ++++----
-> 
-> diff --git a/Documentation/power/energy-model.rst b/Documentation/power/energy-model.rst
-> index 90a345d57ae9..7576820664e5 100644
-> --- a/Documentation/power/energy-model.rst
-> +++ b/Documentation/power/energy-model.rst
+On Sat, Feb 22, 2020 at 12:25 AM Rob Herring <robh@kernel.org> wrote:
+>
+> On Fri, 21 Feb 2020 11:10:00 +0900, Masahiro Yamada wrote:
+> > Convert the Socionext UniPhier board/SoC binding to DT schema format.
+> >
+> > Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+> > ---
+> >
+> >  .../bindings/arm/socionext/uniphier.txt       | 47 -------------
+> >  .../bindings/arm/socionext/uniphier.yaml      | 70 +++++++++++++++++++
+> >  MAINTAINERS                                   |  2 +-
+> >  3 files changed, 71 insertions(+), 48 deletions(-)
+> >  delete mode 100644 Documentation/devicetree/bindings/arm/socionext/uniphier.txt
+> >  create mode 100644 Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+> >
+>
+> My bot found errors running 'make dt_binding_check' on your patch:
+>
+> Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+> Error: Documentation/devicetree/bindings/arm/socionext/uniphier.example.dts:18.9-10 syntax error
+> FATAL ERROR: Unable to parse input tree
+> scripts/Makefile.lib:300: recipe for target 'Documentation/devicetree/bindings/arm/socionext/uniphier.example.dt.yaml' failed
+> make[1]: *** [Documentation/devicetree/bindings/arm/socionext/uniphier.example.dt.yaml] Error 1
+> Makefile:1263: recipe for target 'dt_binding_check' failed
+> make: *** [dt_binding_check] Error 2
+>
+> See https://patchwork.ozlabs.org/patch/1241745
+> Please check and re-submit.
 
-> @@ -85,13 +89,20 @@ API.
->  2.3 Accessing performance domains
->  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
->  
-> +There is two API functions which provide the access to the energy model:
 
-   There are two
+I checked 'make dtbs_check',
+but did not test 'make dt_binding_check'.
 
-> +em_cpu_get() which takes CPU id as an argument and em_pd_get() with device
-> +pointer as an argument. It depends on the subsystem which interface it is
-> +going to use, but in case of CPU devices both functions return the same
-> +performance domain.
-> +
+I remember that
+'make dtbs_check' no longer check example.dts after
+93512dad334deb444619505f1fbb761156f7471b
 
 
-cheers.
--- 
-~Randy
 
+Anyway, the example is fold into the plugin node,
+so I cannot avoid the schema error about $nodename.
+
+/home/masahiro/workspace/linux-unph/Documentation/devicetree/bindings/arm/socionext/uniphier.example.dt.yaml:
+example-0: $nodename:0: '/' was expected
+
+
+I will remove this example.
+
+
+--
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
