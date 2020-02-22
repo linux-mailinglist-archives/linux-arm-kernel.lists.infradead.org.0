@@ -2,65 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C78101691B3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 21:01:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB76E1691E6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 22:32:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:
-	Subject:From:To:Date:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=knB5zDgNDxB1+LiMOlBJ+iG2WAMxUTYYK2XpdmKbSf4=; b=UpkGiLJ7MRlvNA
-	Ml+pmLRHLAir+3TgrpmR+dam5d7pK3J6jz9aRzDWX4PZtmURcZYzxU2upOPQAg1pCFJgYkhYe9wY5
-	dy5jPTruGNqR1BqSlxnbKgGP38aigZ21soQPSw0wcl51P2A1Y7v2u6kC9K1f/SccAYFsCecJVUXC+
-	kaheOSMPJ6ARCCU13Qbhyp6E4t51Ay8xVYuTeim3UCHNV2iP8ZL/6ziQBQpxa9aBT84NLuukam+Eq
-	LQXaNoS0IBpr2nQ7rwoE0MUq0xuPBUr+rsqLLGfbJHREmq9CkE++ORTJCUaaOgBQ7fNk6QPzyj8ei
-	mficQNznZXz16jDP/Vjw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z1K8a7L2Z7ZWQyLWEYixbKI+yYxncUQH7wHF+y9UmF4=; b=tHZdq+8B1HDYdQ
+	+q2tK+DstZkwNadjEFsVP80Wh6LiporwB9URrHDuKzaFim8NqBJ3FXbPcusJ/6KQTiY1d+1nawhEM
+	7kPQw5Vrvm0zm+wTpCBj1x04LAyQS0VaVZAGMy+Ig3SD8BnEmEexhDS6SNWzvKVwTB6o0eJ2WBLrU
+	aAnp7IhCVjKlOQ316M+7lgGtF6qcM+js05pYsnUOoPtlPk2KQ5dWNpzaCX0YU0KfT1SWu3EdW0ejm
+	meVMQ2U0hza60t9yfVFbjDkxl78yuR5qeI1vqPNM4WmxbxteY+DGIPxBD7QPP10OzAuaBzzGOaoR+
+	tkTROIlwFav9MBiMLMlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5axm-0005ZV-7f; Sat, 22 Feb 2020 20:01:22 +0000
-Received: from mail-40134.protonmail.ch ([185.70.40.134])
+	id 1j5cNh-0002q3-O7; Sat, 22 Feb 2020 21:32:13 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5axc-0005SX-Dk; Sat, 22 Feb 2020 20:01:14 +0000
-Date: Sat, 22 Feb 2020 20:00:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=protonmail.com;
- s=default; t=1582401668;
- bh=9QTCFtpYa096BcF+fNJ+hFEpUdDElt7IQEIk4DEbu8Q=;
- h=Date:To:From:Cc:Reply-To:Subject:Feedback-ID:From;
- b=UdXKmzUu7Gi5seNkwIDeLnuW+YM0twYXl5lC4KsTW2NdfsR/GKPL61yxUPlMHnvaO
- /k2uDlMfAaUmVWjahNU81RmYhYo/u0YVf6HavZMoh4QI3Uw15U3nVqedWKwqidDfm4
- jmA98Tq5/2163O55NCtKoeFvTuS9RIaBYsksRTEE=
-To: devicetree@vger.kernel.org
-From: =?UTF-8?Q?N=C3=ADcolas_F=2E_R=2E_A=2E_Prado?= <nfraprado@protonmail.com>
-Subject: [PATCH v2] dt-bindings: rng: Convert BCM2835 to DT schema
-Message-ID: <20200222200037.3203931-1-nfraprado@protonmail.com>
-Feedback-ID: cwTKJQq-dqva77NrgNeIaWzOvcDQqfI9VSy7DoyJdvgY6-nEE7fD-E-3GiKFHexW4OBWbzutmMZN6q4SflMDRw==:Ext:ProtonMail
+ id 1j5cNV-0002ow-9l
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 21:32:03 +0000
+Received: from mail-lf1-f49.google.com ([209.85.167.49]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MQ5jC-1ijfeC2UWe-00M6Lu for <linux-arm-kernel@lists.infradead.org>; Sat,
+ 22 Feb 2020 22:31:52 +0100
+Received: by mail-lf1-f49.google.com with SMTP id 7so4045341lfz.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 22 Feb 2020 13:31:51 -0800 (PST)
+X-Gm-Message-State: APjAAAXhLulIc6iJqn/+8U8msRE+i6b3OMbTKo8ywClaj4+QMFzFkUrD
+ mZ385A016RDLYGuaFAR0nbLI0HrHjjJkl2rLEjU=
+X-Google-Smtp-Source: APXvYqw08WaVpwqyvapB9jwmtZ9FkkkQyrz5uYJ12nY2XRMB6nrK7EaFW5taPH3fOq3Exia34Hd+8TSqfX93FnPLHNA=
+X-Received: by 2002:ac2:5f62:: with SMTP id c2mr4862268lfc.207.1582407110902; 
+ Sat, 22 Feb 2020 13:31:50 -0800 (PST)
 MIME-Version: 1.0
-X-Spam-Status: No, score=-1.2 required=7.0 tests=ALL_TRUSTED,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM shortcircuit=no
- autolearn=disabled version=3.4.4
-X-Spam-Checker-Version: SpamAssassin 3.4.4 (2020-01-24) on mail.protonmail.ch
+References: <20200210141324.21090-1-maz@kernel.org>
+ <20200222154030.5625fa5f.takashi@yoshi.email>
+In-Reply-To: <20200222154030.5625fa5f.takashi@yoshi.email>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sat, 22 Feb 2020 22:31:40 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a3iaDqU7RRpoL2XyempBiKN8k22rNAM7C23n8JNpPm4qw@mail.gmail.com>
+Message-ID: <CAK8P3a3iaDqU7RRpoL2XyempBiKN8k22rNAM7C23n8JNpPm4qw@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/5] Removing support for 32bit KVM/arm host
+To: Takashi Yoshi <takashi@yoshi.email>
+X-Provags-ID: V03:K1:INSxYxS3EfKBhKrjAg8YOzdaJ80sIWP2/7MXPuBaekg04BZC8zM
+ 4u2qFc/iSSKOWzB/fSQtHUsu0phHb1FOwlCAFfg6wYNd3WAOUfhGqWXt044PGBhO0fCpSFd
+ ahkOMbs30XwxZY/F4jSrGfNX+jP/0fJiFi3RudMubbA732Hr/Tq382YaVGGJy08u7m9SOJU
+ gnKgJG5hiNchnxZXPfisA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tKIG9PEum8U=:smWscvzp7KuVpnfv5UItAb
+ EGdixgdcnRAD7FhMoEkGXS3srveSShbfx+Cx/Pc7X7tTWTLE48AwXz+g4A9Dn8HZnm1akPqhJ
+ nOgvwSMi9WIGJlKOgfvAMz9E0y5GY4MYluDwCGw7UDQxVIkRg32YJeLVAmNhtpq53G5+cb81C
+ NS+q/EPQ/TD4NG77n83Z0Q8owcVtzD2gPhkwXk/I/jGvLQ0EG/7LyCUISd4GETuFay4a8aY+7
+ SHbezglSbX4R6duQdFx96xF2IEZFM1mAuDMPFBnhVo2dbG7mYb6I4txjAg5ClDumio0lUOXTh
+ X1rJrXGVJRNTE4wwkymEZjPkanO5LcXiQEb8CLNDeSTYcOgVXCJF3xy3xnptwaUbUUcZkiyd6
+ r2udAioHuUbeHA4twLrUd7LK0hepTW156+DzjPCArZuyljGOoLwD3t7iM6vxAuZEDn+H9Ox8H
+ w3+9r5+hGQa1kgPjISxYAN0OEHEG08sqV7JhQn0P5o6i7rIvdraCGrHSP1EiSl9Gjmh9snUmQ
+ VueXK0NHNa66DGhce6H/ClpWXvxcw054gzFODBSVZHXN8+7+/4OQEngDl0fyzAaY3J859VFwo
+ UYSQ5zMQAwNX7ugpdC7Q6noc8hYaVmh4/bwruuOqtrBHTUUaqdQhRPSG3JvUOeJ42rsJ09JsZ
+ jgZu9iwhOXudPGjuMOKdjkJk5CpMusJURLNjASaDKao/cJE9OUupX04oFMDhADiyvXFe2v1ju
+ zi+04e9zu33DYXJR3V3sukOSbOmLksa7vVreRzBxc9egus2BmK6giNckM+1zs1eC9Mr/AGLcd
+ NDCc3MxjTKKQASkRtQFXk7G5y+3VbnG7ZH5au96pYBcoL+uM1U=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_120112_772906_3D460258 
-X-CRM114-Status: GOOD (  11.60  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200222_133201_634457_1464D423 
+X-CRM114-Status: GOOD (  29.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.70.40.134 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [nfraprado[at]protonmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,80 +86,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: =?UTF-8?Q?N=C3=ADcolas_F=2E_R=2E_A=2E_Prado?=
- <nfraprado@protonmail.com>
-Cc: Mark Rutland <mark.rutland@arm.com>, lkcamp@lists.libreplanetbr.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>, linux-arm-kernel@lists.infradead.org,
- Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-crypto@vger.kernel.org, Matt Mackall <mpm@selenic.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Anders Berg <anders.berg@lsi.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Russell King <linux@arm.linux.org.uk>, kvm list <kvm@vger.kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Quentin Perret <qperret@google.com>,
+ Christoffer Dall <Christoffer.Dall@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q29udmVydCBCQ00yODM1LzYzNjggUmFuZG9tIG51bWJlciBnZW5lcmF0b3IgYmluZGluZ3MgdG8g
-RFQgc2NoZW1hLgoKU2lnbmVkLW9mZi1ieTogTsOtY29sYXMgRi4gUi4gQS4gUHJhZG8gPG5mcmFw
-cmFkb0Bwcm90b25tYWlsLmNvbT4KLS0tCgpDaGFuZ2VzIGluIHYyOgotIFJlbW92ZSBkZXNjcmlw
-dGlvbiBmb3IgY29tbW9uIHByb3BlcnRpZXMKLSBEcm9wIGxhYmVsIGZyb20gZXhhbXBsZQoKVGhp
-cyBwYXRjaCB3YXMgdGVzdGVkIHdpdGg6Cm1ha2UgQVJDSD1hcm0gZHRfYmluZGluZ19jaGVjawpt
-YWtlIEFSQ0g9YXJtIERUX1NDSEVNQV9GSUxFUz1Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3Mvcm5nL2JyY20sYmNtMjgzNS55YW1sIGR0YnNfY2hlY2sKClRoYW5rcywKTsOtY29sYXMK
-CiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcvYnJjbSxiY20yODM1LnR4dCAgfCA0MCAtLS0t
-LS0tLS0tLS0tCiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcvYnJjbSxiY20yODM1LnlhbWwg
-fCA1OSArKysrKysrKysrKysrKysrKysrCiAyIGZpbGVzIGNoYW5nZWQsIDU5IGluc2VydGlvbnMo
-KyksIDQwIGRlbGV0aW9ucygtKQogZGVsZXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2
-aWNldHJlZS9iaW5kaW5ncy9ybmcvYnJjbSxiY20yODM1LnR4dAogY3JlYXRlIG1vZGUgMTAwNjQ0
-IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcvYnJjbSxiY20yODM1LnlhbWwK
-CmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvcm5nL2JyY20s
-YmNtMjgzNS50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvcm5nL2JyY20s
-YmNtMjgzNS50eHQKZGVsZXRlZCBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IGFhYWM3OTc1ZjYxYy4u
-MDAwMDAwMDAwMDAwCi0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcv
-YnJjbSxiY20yODM1LnR4dAorKysgL2Rldi9udWxsCkBAIC0xLDQwICswLDAgQEAKLUJDTTI4MzUv
-NjM2OCBSYW5kb20gbnVtYmVyIGdlbmVyYXRvcgotCi1SZXF1aXJlZCBwcm9wZXJ0aWVzOgotCi0t
-IGNvbXBhdGlibGUgOiBzaG91bGQgYmUgb25lIG9mCi0JImJyY20sYmNtMjgzNS1ybmciCi0JImJy
-Y20sYmNtLW5zcC1ybmciCi0JImJyY20sYmNtNTMwMXgtcm5nIiBvcgotCSJicmNtLGJjbTYzNjgt
-cm5nIgotLSByZWcgOiBTcGVjaWZpZXMgYmFzZSBwaHlzaWNhbCBhZGRyZXNzIGFuZCBzaXplIG9m
-IHRoZSByZWdpc3RlcnMuCi0KLU9wdGlvbmFsIHByb3BlcnRpZXM6Ci0KLS0gY2xvY2tzIDogcGhh
-bmRsZSB0byBjbG9jay1jb250cm9sbGVyIHBsdXMgY2xvY2stc3BlY2lmaWVyIHBhaXIKLS0gY2xv
-Y2stbmFtZXMgOiAiaXBzZWMiIGFzIGEgY2xvY2sgbmFtZQotCi1PcHRpb25hbCBwcm9wZXJ0aWVz
-OgotCi0tIGludGVycnVwdHM6IHNwZWNpZnkgdGhlIGludGVycnVwdCBmb3IgdGhlIFJORyBibG9j
-awotCi1FeGFtcGxlOgotCi1ybmcgewotCWNvbXBhdGlibGUgPSAiYnJjbSxiY20yODM1LXJuZyI7
-Ci0JcmVnID0gPDB4N2UxMDQwMDAgMHgxMD47Ci0JaW50ZXJydXB0cyA9IDwyIDI5PjsKLX07Ci0K
-LXJuZ0AxODAzMzAwMCB7Ci0JY29tcGF0aWJsZSA9ICJicmNtLGJjbS1uc3Atcm5nIjsKLQlyZWcg
-PSA8MHgxODAzMzAwMCAweDE0PjsKLX07Ci0KLXJhbmRvbTogcm5nQDEwMDA0MTgwIHsKLQljb21w
-YXRpYmxlID0gImJyY20sYmNtNjM2OC1ybmciOwotCXJlZyA9IDwweDEwMDA0MTgwIDB4MTQ+Owot
-Ci0JY2xvY2tzID0gPCZwZXJpcGhfY2xrIDE4PjsKLQljbG9jay1uYW1lcyA9ICJpcHNlYyI7Ci19
-OwpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3JuZy9icmNt
-LGJjbTI4MzUueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcvYnJj
-bSxiY20yODM1LnlhbWwKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwLi40
-MmQ5YTM4ZTRlMWEKLS0tIC9kZXYvbnVsbAorKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3Mvcm5nL2JyY20sYmNtMjgzNS55YW1sCkBAIC0wLDAgKzEsNTkgQEAKKyMgU1BEWC1M
-aWNlbnNlLUlkZW50aWZpZXI6IChHUEwtMi4wIE9SIEJTRC0yLUNsYXVzZSkKKyVZQU1MIDEuMgor
-LS0tCiskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9zY2hlbWFzL3JuZy9icmNtLGJjbTI4MzUu
-eWFtbCMKKyRzY2hlbWE6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9tZXRhLXNjaGVtYXMvY29yZS55
-YW1sIworCit0aXRsZTogQkNNMjgzNS82MzY4IFJhbmRvbSBudW1iZXIgZ2VuZXJhdG9yCisKK21h
-aW50YWluZXJzOgorICAtIFN0ZWZhbiBXYWhyZW4gPHN0ZWZhbi53YWhyZW5AaTJzZS5jb20+Cisg
-IC0gRmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+CisgIC0gSGVyYmVydCBY
-dSA8aGVyYmVydEBnb25kb3IuYXBhbmEub3JnLmF1PgorCitwcm9wZXJ0aWVzOgorICBjb21wYXRp
-YmxlOgorICAgIGVudW06CisgICAgICAtIGJyY20sYmNtMjgzNS1ybmcKKyAgICAgIC0gYnJjbSxi
-Y20tbnNwLXJuZworICAgICAgLSBicmNtLGJjbTUzMDF4LXJuZworICAgICAgLSBicmNtLGJjbTYz
-Njgtcm5nCisKKyAgcmVnOgorICAgIG1heEl0ZW1zOiAxCisKKyAgY2xvY2tzOgorICAgIG1heEl0
-ZW1zOiAxCisKKyAgY2xvY2stbmFtZXM6CisgICAgY29uc3Q6IGlwc2VjCisKKyAgaW50ZXJydXB0
-czoKKyAgICBtYXhJdGVtczogMQorCityZXF1aXJlZDoKKyAgLSBjb21wYXRpYmxlCisgIC0gcmVn
-CisKK2V4YW1wbGVzOgorICAtIHwKKyAgICBybmcgeworICAgICAgICBjb21wYXRpYmxlID0gImJy
-Y20sYmNtMjgzNS1ybmciOworICAgICAgICByZWcgPSA8MHg3ZTEwNDAwMCAweDEwPjsKKyAgICAg
-ICAgaW50ZXJydXB0cyA9IDwyIDI5PjsKKyAgICB9OworCisgIC0gfAorICAgIHJuZ0AxODAzMzAw
-MCB7CisgICAgICAgIGNvbXBhdGlibGUgPSAiYnJjbSxiY20tbnNwLXJuZyI7CisgICAgICAgIHJl
-ZyA9IDwweDE4MDMzMDAwIDB4MTQ+OworICAgIH07CisKKyAgLSB8CisgICAgcm5nQDEwMDA0MTgw
-IHsKKyAgICAgICAgY29tcGF0aWJsZSA9ICJicmNtLGJjbTYzNjgtcm5nIjsKKyAgICAgICAgcmVn
-ID0gPDB4MTAwMDQxODAgMHgxND47CisKKyAgICAgICAgY2xvY2tzID0gPCZwZXJpcGhfY2xrIDE4
-PjsKKyAgICAgICAgY2xvY2stbmFtZXMgPSAiaXBzZWMiOworICAgIH07Ci0tIAoyLjI1LjAKCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Sat, Feb 22, 2020 at 3:40 PM Takashi Yoshi <takashi@yoshi.email> wrote:
+> On Monday, 10.02.2020, 14:13 +0000 Marc Zyngier wrote:
+> > KVM/arm was merged just over 7 years ago, and has lived a very quiet
+> > life so far. It mostly works if you're prepared to deal with its
+> > limitations, it has been a good prototype for the arm64 version,
+> > but it suffers a few problems:
+> >
+> > - It is incomplete (no debug support, no PMU)
+> > - It hasn't followed any of the architectural evolutions
+> > - It has zero users (I don't count myself here)
+>
+> I might not be an important user, but I have been for multiple years
+> and still am a regular user of KVM/arm32 on different devices.
+>
+> I use KVM on my Tegra K1 Chromebook for app development and have
+> multiple SBCs at home on which I run VMs on using KVM+libvirt.
+>
+> Sure, neither of these devices has many resources available, but they
+> are working fine. I would love to keep them in service since I haven't
+> found arm64-based replacements that don't require hours upon hours of
+> tinkering to just get a basic OS installation running with a mainline
+> kernel.
+>
+> As an example that they can still be of use in 2020 I'd like to point
+> out that one of the SBCs is running my DNS resolver, LDAP server,
+> RSS reader, IRC bouncer, and shared todo list just fine, each in their
+> separate VM.
+
+Thank you for providing an important data point to this question.
+
+> > - It is more and more getting in the way of new arm64 developments
+> >
+> > So here it is: unless someone screams and shows that they rely on
+> > KVM/arm to be maintained upsteam, I'll remove 32bit host support
+> > form the tree.
+>
+> *scream*
+>
+> > One of the reasons that makes me confident nobody is
+> > using it is that I never receive *any* bug report. Yes, it is
+> > perfect.
+>
+> This assumption is deeply flawed. Most users (including me) are not
+> subscribed to this mailing list and will never find this thread at all.
+> I myself stumbled upon this discussion just by chance while I was
+> browsing the web trying to find something completely unrelated.
+>
+> I've been using KVM on x86, ppc and arm for many years, yet I never
+> felt the need to report a bug on the mailing list.
+> (This is to be interpreted as a compliment to the great work the devs
+> of KVM have done!)
+>
+> Just going by the number of bugs reported on a developers mailing list
+> is not going to paint an accurate picture.
+>
+> I am convinced that I'm not the only one relying on KVM/arm32 in the
+> mainline kernel and would ask you to please reconsider keeping arm32 in
+> the mainline kernel for a few more years until adequate arm64
+> replacements are available on the market and have gained proper support
+> in the mainline kernel.
+
+Can you provide some more information about how you use KVM on 32-bit
+machines, to make it possible to better estimate how many others might
+do the same, and how long you will need to upgrade to newer kernels for?
+
+In particular:
+
+- What is the smallest amount of physical RAM that you have to found to
+   make a usable ARM/KVM host? Note that the 4GB configuration of the
+   Tegra K1 (an rk3288) Chromebooks seems to be extremely rare in other
+   devices, while most new 32-bit SBCs come with 1GB or less these days.
+
+- How often do you update the host kernels on those 32-bit machines that
+  you still use to newer releases? What is the oldest/newest you run at the
+  moment?
+
+- Are you able to move the host installation to a distribution with a long-term
+  stable release cycle such as Debian, Ubuntu that gives you a ~five year
+  support after a kernel release?
+
+         Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
