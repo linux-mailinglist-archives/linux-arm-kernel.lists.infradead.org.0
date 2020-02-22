@@ -2,81 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5C4316913E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 19:22:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2366E16918B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 20:33:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H8oZ8atoYOpl4w9gHk5nMpwNYBrPf8QELa5p3nFcBrc=; b=CTGaTadD4uSUjT
-	VxAzHof284Vsgf2TFktjj2RjMxd6nGTX/yzmLlWDEgTTPIumlUhX1OQr2ACQINpQFtgDMwPomklsd
-	khjbXgvqxH9bmd6hRY+AfWU/uYZrNMuhQTLFRe7mQ0pxggmc2OysqxBKcVO172Jhle5sgRiz72C+w
-	JOlBWmYCY1LR44SfGwVP2kmmbbdxKfG5pcRsrpYVV89F8upPPj4868xjPIprNzw8e352G149AHNPA
-	NrKzJ2HbRH43sqrUH2CcSvo5I0t6I+tc9HGGQ6RPt8bVRxCsg8khwduO38cu89E0rxX26lJ1D1430
-	x4320S08D52jBMg/XtBw==;
+	List-Owner; bh=ZnBYtVzUrkJkszFzE9t9q0B3NsR5oY8Jyb0cU0wF06M=; b=OSuysBipPPFZjO
+	uT+8IGV0jvPcQ3/74X/MWDDYspf+9e/KCrzwcvv+dshEFHa2V7nPGkxZ4vQK0oJyj/MSYXjydQB7e
+	i20smRr9aq4uebZNebo2pcHHXoS1Ovbv+7hZNeCJlUwKEGolCjzTBAOQEWTGgNvzREeEcA78cWFBt
+	Iq5pSg8FClFUaPoMpYYAqbKaUEShxJm2GM9bL4TM4QdE/kZRNmdUFwVB/9f1glFhRfsQyMaAuBAXh
+	mmfwmRXBJDEZ+dgRQolcqtWA8FxOv0mcMQVmx9Au9bHj56Fhzn+/IdD4uzBRv2W2aTH6u+iMekJr/
+	HbeNaWCupViqcpV12OBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5ZPa-0003MG-UT; Sat, 22 Feb 2020 18:21:58 +0000
-Received: from mail-pl1-f196.google.com ([209.85.214.196])
+	id 1j5aWP-0002vu-DU; Sat, 22 Feb 2020 19:33:05 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5ZPQ-0003Lt-VN
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 18:21:50 +0000
-Received: by mail-pl1-f196.google.com with SMTP id y1so2246255plp.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 22 Feb 2020 10:21:48 -0800 (PST)
+ id 1j5aWH-0002va-L8; Sat, 22 Feb 2020 19:32:58 +0000
+Received: by mail-ed1-x544.google.com with SMTP id p3so6797107edx.7;
+ Sat, 22 Feb 2020 11:32:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=abOo/01onxmCrl2+HYFGD4dtsZsCLfGBQC3tyHMZjis=;
+ b=VVA+Y0w2cTzdFoO/atz+136TaD3pxtmudXz5C974oxFGSuVuye4uBLm4qLRipvyvov
+ qIN4c/bWLfPMqXqWgV301z5bAYGmkahHY2wN/vwxRWeHdML97rpGAipSHtswTjK7F9Ux
+ N9V9n3PCg97usS9WmJMO5+zMabE2ZMcu/vMjC14pWNNE//T2NNt1WX/pP2QA0sx6Ylun
+ SY5sMJ2s1d3hXWFGYNoqRr6ih6wcvO8ubyo3eExk9clA8G9jriHTdaFppv1TApjRMINX
+ gUlsX9eExM3ic02lxpue7imTI97AKYJAQhYUYYyEHiJCoox7GC3foF0L4X+fAn4r5PZJ
+ Lfmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=iCwcVv4xnWxcWa1WsgaUhoEXl3ZCR2vSZR6hr5gWHNc=;
- b=s4pIcBG7KWJI20BmP+DjS+Yr6BZVhkKvQrkm8wKws9hsawHZrB1u/n6/Cw5gejV5yT
- Xk0Ua5Kuqgn6JlxGlViQ/s+ssHKcc4FMq01KNPkMEjOI8rH5L1AJT3Umgu3CkebxpAn5
- NbiweDCn/OoK47NaN0tof/YgHSMels7NdReLLGhiFFingO2Af/lvBvu19sWA8Malm05k
- 6Phfe6rKVl6NEMGaHcWUbk7Q0VABqUvW2qxY7kls8Zr271Pw0xMHmv6eEltrHhT80oed
- sEo4FwjCr0srKlZKzpQyUdGQC6xd3CNYOnOIeTejQy3kg/dmmGFGx0vUJiZP7LsoRgDV
- rrqQ==
-X-Gm-Message-State: APjAAAV8+lffB5YBN8sbIZdIObq2C9fjjgj+8ZLhftqKox0HSuAttpRc
- Wvx59UUR5LQ3O+EddLFjrIdQBYYBaIjSqw==
-X-Google-Smtp-Source: APXvYqwGViPPPxaNS7z+K4MXgi0LZN0EVHaNC8Lcr39w9C6uZBgZpJBc7aRJ3CH2jofuSwKjOzKP/Q==
-X-Received: by 2002:a17:90a:9dc3:: with SMTP id
- x3mr10376777pjv.45.1582395707660; 
- Sat, 22 Feb 2020 10:21:47 -0800 (PST)
-Received: from localhost ([2601:647:5b00:710:ffa7:88dc:9c39:76d9])
- by smtp.gmail.com with ESMTPSA id z3sm7012747pfz.155.2020.02.22.10.21.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 22 Feb 2020 10:21:46 -0800 (PST)
-Date: Sat, 22 Feb 2020 10:21:45 -0800
-From: Moritz Fischer <mdf@kernel.org>
-To: Michal Simek <michal.simek@xilinx.com>
-Subject: Re: [PATCH] fpga: zynq: Remove clk_get error message for probe defer
-Message-ID: <20200222182145.GA4905@epycbox.lan>
-References: <0060e55f0b8d3a57e129d7eb096267cc96eae846.1581517026.git.michal.simek@xilinx.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=abOo/01onxmCrl2+HYFGD4dtsZsCLfGBQC3tyHMZjis=;
+ b=AaED02dduSvEkqsJ76XAs6YcVTAo14t05I13xX0C7sJEaW+AQs5cAS04g8YIwrDJW6
+ NH8Cs5jrsx0ugqHKUDvx5Ypu1TQXLyiwHLwHNyhGPSeWvPKdKPFWRMpMEigAnh8rm3tg
+ oq6IpvxuqObz8+0Dc21H6J2ngiVvnz3VvlgnwXzagPKvQd9GveoiQjK/c4TWA/Tki71D
+ pIdE7aOCV6Mt2Vmj9AT/bSDzfZ9Vdc+1wYSjL/SSOgM5VGRfUM6QkdTQ/Ia1UzGpv2VS
+ oJg1yGAu3LTnDvnnUKBM9ERypatwmoFaU2PKN0RdM3NHGFNiAy7R7XN8OpgBIteq5J80
+ t5fQ==
+X-Gm-Message-State: APjAAAUwqGwtcv8JD5eH7sfEhNJaJJkZbM5zjDDZ8bunzX7Hb6ldyG+N
+ 6wiW7aWAUJZSG3u/14emRZeza7DM4FxyXxCX3Xw=
+X-Google-Smtp-Source: APXvYqwSDLn063dC13fCS2x5o5KSt+86sLTD3VApIdIahY8Td3TAnjcZDxUtKhOk4AFeH5hrqEFUhOchgc+A2h2gJIQ=
+X-Received: by 2002:a05:6402:3c6:: with SMTP id
+ t6mr37429429edw.110.1582399975292; 
+ Sat, 22 Feb 2020 11:32:55 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0060e55f0b8d3a57e129d7eb096267cc96eae846.1581517026.git.michal.simek@xilinx.com>
+References: <202002230135.WpIL6nAs%lkp@intel.com>
+ <20200222170154.GA119396@e50d7db646c3>
+In-Reply-To: <20200222170154.GA119396@e50d7db646c3>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Sat, 22 Feb 2020 20:32:44 +0100
+Message-ID: <CAFBinCAveBrxYDH-SQpbYjF8rdzR5vDPOvXdzWyZyUG5A_-X3A@mail.gmail.com>
+Subject: Re: [PATCH] ASoC: meson: aiu: fix semicolon.cocci warnings
+To: kbuild test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_102149_012124_46B95CD4 
-X-CRM114-Status: GOOD (  17.49  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200222_113257_718103_5C4F7DDE 
+X-CRM114-Status: UNSURE (   6.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.196 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [moritz.fischer.private[at]gmail.com]
+ provider [martin.blumenstingl[at]googlemail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,53 +94,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: monstr@monstr.eu, linux-fpga@vger.kernel.org,
- Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
- linux-kernel@vger.kernel.org, Moritz Fischer <mdf@kernel.org>, git@xilinx.com,
- linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, kbuild-all@lists.01.org,
+ Kevin Hilman <khilman@baylibre.com>, Takashi Iwai <tiwai@suse.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
+ Mark Brown <broonie@kernel.org>, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 03:17:08PM +0100, Michal Simek wrote:
-> From: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
-> 
-> In probe, the driver checks for devm_clk_get return and print error
-> message in the failing case. However for -EPROBE_DEFER this message is
-> confusing so avoid it.
-> 
-> The similar change was done also by commit 28910cee898c
-> ("fpga: xilinx-pr-decoupler: Remove clk_get error message for probe defer")
-> 
-> Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-> ---
-> 
->  drivers/fpga/zynq-fpga.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/fpga/zynq-fpga.c b/drivers/fpga/zynq-fpga.c
-> index ee7765049607..07fa8d9ec675 100644
-> --- a/drivers/fpga/zynq-fpga.c
-> +++ b/drivers/fpga/zynq-fpga.c
-> @@ -583,7 +583,8 @@ static int zynq_fpga_probe(struct platform_device *pdev)
->  
->  	priv->clk = devm_clk_get(dev, "ref_clk");
->  	if (IS_ERR(priv->clk)) {
-> -		dev_err(dev, "input clock not found\n");
-> +		if (PTR_ERR(priv->clk) != -EPROBE_DEFER)
-> +			dev_err(dev, "input clock not found\n");
->  		return PTR_ERR(priv->clk);
->  	}
->  
-> -- 
-> 2.25.0
-> 
-Applied to for-next.
+On Sat, Feb 22, 2020 at 6:02 PM kbuild test robot <lkp@intel.com> wrote:
+>
+> From: kbuild test robot <lkp@intel.com>
+>
+> sound/soc/meson/aiu-encoder-i2s.c:129:2-3: Unneeded semicolon
+>
+>
+>  Remove unneeded semicolon.
+>
+> Generated by: scripts/coccinelle/misc/semicolon.cocci
+>
+> Fixes: 3e25c44598aa ("ASoC: meson: aiu: add support for the Meson8 and Meson8b SoC families")
+> CC: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: kbuild test robot <lkp@intel.com>
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-Thanks,
-Moritz
+and also (as reply to my original patch yesterday):
+Reported-by: Jerome Brunet <jbrunet@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
