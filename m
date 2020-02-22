@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5AA7168E94
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 12:44:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8FF3168E9F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 12:55:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lJeUnlhKejCTLIplLT0iBKPIhEjkHYGI+e28+YbjKKs=; b=iX5X9X/9Mdh+gmfCWDvuO81+6
-	MBkeOW5gzfYGInvoXDDTlxC10BfgzfYMBuJjZ0AoJBWphNLQpknEX3uSoEWHBePdYeAp+ATox1S5j
-	aC5xJvfQBMxSEK3aWTIxqjOjazv6fmBUFqfHqY8pCdiogyLwjupx/A1jEz+pjrYV0v5faAv+JDMZf
-	6a4GfZkPVWoXKkqF/UBltHvwdkfy8WSWG3lAsLh06OdvHarFBX91Fdd9dEvF6D0YVdgZJKSORp/eq
-	sHmF0+fxLZE5j1HgZE/Yp5k5JniA8GgHBlVyo1i9pTrYC0slO8RZRTeUN6dPvlkeYkSL4qEQJ9wSR
-	sKoN2keXg==;
+	 bh=3uHd78TUu03RcnCMyjNu61/jUcCSKwrxXKPuWZFGs1E=; b=U1By5ceOiePkxyX2nA/9Ph6mL
+	dM1yRcOt462vRDXewrQymcqSjMFbQ0V4xQYIMQv+FbyptwZndfDIspFvfjNfAZASTrYbWmGjfUFnt
+	tCDWJ98EwSZMNksHA//48cIqsn0gldfwzhYGBBQjvf/j69VVK11k1MdP7bNa6ifcT0jFnpDpN+nkE
+	638LgOU1svet67Zf1ANvWiaryqWm6C/9SmmzqMuaKypZ/qnvPVo5zsuo+0vc9j0A5to5SDA5ZGWrb
+	tSWNc48+YpIJly26XyPr+/6XVzile0Xs8SdU7dZdWu0jx4mdXfTS5ZJjbL5npbz+m3eKOJhQvA9md
+	HNbMXYv+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5TDB-0007ei-KH; Sat, 22 Feb 2020 11:44:45 +0000
+	id 1j5TNm-00041u-LO; Sat, 22 Feb 2020 11:55:42 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5TD1-0007eJ-IH
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 11:44:38 +0000
+ id 1j5TNd-00041d-N9
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 11:55:35 +0000
 Received: from localhost (p5486C6B7.dip0.t-ipconnect.de [84.134.198.183])
- by pokefinder.org (Postfix) with ESMTPSA id 2399A2C07F9;
- Sat, 22 Feb 2020 12:44:34 +0100 (CET)
-Date: Sat, 22 Feb 2020 12:44:33 +0100
+ by pokefinder.org (Postfix) with ESMTPSA id D139E2C07F9;
+ Sat, 22 Feb 2020 12:55:32 +0100 (CET)
+Date: Sat, 22 Feb 2020 12:55:32 +0100
 From: Wolfram Sang <wsa@the-dreams.de>
-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-Subject: Re: [PATCH v3 3/6] i2c: at91: Send bus clear command if SDA is down
-Message-ID: <20200222114433.GC1716@kunai>
-References: <20200115115422.17097-1-codrin.ciubotariu@microchip.com>
- <20200115115422.17097-4-codrin.ciubotariu@microchip.com>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH] i2c: imx: implement master_xfer_atomic callback
+Message-ID: <20200222115532.GE1716@kunai>
+References: <20200120093650.12911-1-m.felsch@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <20200115115422.17097-4-codrin.ciubotariu@microchip.com>
+In-Reply-To: <20200120093650.12911-1-m.felsch@pengutronix.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_034435_756148_E893CFCE 
-X-CRM114-Status: GOOD (  12.48  )
+X-CRM114-CacheID: sfid-20200222_035533_904316_DB975817 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -59,103 +59,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alexandre.belloni@bootlin.com,
- kamel.bouhara@bootlin.com, linux-kernel@vger.kernel.org,
- Ludovic.Desroches@microchip.com, linux-i2c@vger.kernel.org, peda@axentia.se,
- linux@armlinux.org.uk, robh@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3282927592083646049=="
+Cc: shawnguo@kernel.org, s.hauer@pengutronix.de, stefan@agner.ch,
+ linux@rempel-privat.de, Oleksij Rempel <o.rempel@pengutronix.de>,
+ linux-imx@nxp.com, kernel@pengutronix.de,
+ Stefan Lengfeld <contact@stefanchrist.eu>, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============5983873423207827959=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3282927592083646049==
+--===============5983873423207827959==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="2/5bycvrmDh4d1IB"
+	protocol="application/pgp-signature"; boundary="FN+gV9K+162wdwwF"
 Content-Disposition: inline
 
 
---2/5bycvrmDh4d1IB
+--FN+gV9K+162wdwwF
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Jan 15, 2020 at 01:54:19PM +0200, Codrin Ciubotariu wrote:
-> After a transfer timeout, some faulty I2C slave devices might hold down
-> the SDA pin. We can generate a bus clear command, hoping that the slave
-> might release the pins.
-> If the CLEAR command is not supported, we will use gpio recovery, if
-> available, to reset the bus.
+On Mon, Jan 20, 2020 at 10:36:50AM +0100, Marco Felsch wrote:
+> From: Stefan Lengfeld <contact@stefanchrist.eu>
 >=20
-> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> Rework the read and write code paths in the driver to support operation
+> in atomic contexts. To achieve this, the driver must not rely on IRQs
+> and not call schedule(), e.g. via a sleep routine, in these cases.
+>=20
+> With this patch the driver supports normal operation, DMA transfers and
+> now the polling mode or also called sleep-free or IRQ-less operation. It
+> makes the code not simpler or easier to read, but atomic I2C transfers
+> are needed on some hardware configurations, e.g. to trigger reboots on
+> an external PMIC chip.
+>=20
+> Signed-off-by: Stefan Lengfeld <contact@stefanchrist.eu>
+> [m.felsch@pengutronix.de: integrate https://patchwork.ozlabs.org/patch/10=
+85943/ review feedback]
+> [m.felsch@pengutronix.de: adapt commit message]
+> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> Acked-by: Oleksij Rempel <o.rempel@pengutronix.de>
 
-One thing to improve:
-
-> +	/*
-> +	 * some faulty I2C slave devices might hold SDA down;
-> +	 * we can send a bus clear command, hoping that the pins will be
-> +	 * released
-> +	 */
-> +	if (has_clear_cmd) {
-> +		if (!(dev->transfer_status & AT91_TWI_SDA)) {
-> +			dev_dbg(dev->dev,
-> +				"SDA is down; sending bus clear command\n");
-> +			if (dev->use_alt_cmd) {
-> +				unsigned int acr;
-> +
-> +				acr =3D at91_twi_read(dev, AT91_TWI_ACR);
-> +				acr &=3D ~AT91_TWI_ACR_DATAL_MASK;
-> +				at91_twi_write(dev, AT91_TWI_ACR, acr);
-> +			}
-> +			at91_twi_write(dev, AT91_TWI_CR, AT91_TWI_CLEAR);
-> +		}
-
-The inner if-block should be a seperate function, then you could do in
-probe:
-
-	if (has_clear_cmd)
-		rinfo->recover_bus =3D <the above function>;
-	else
-		rinfo->recover_bus =3D i2c_generic_scl_recovery;
-
-Then, i2c_recover_bus() will always do the right thing. More readable
-and better maintainable IMO.
-
-If this is not possible (maybe I overlooked some logic), then maybe this
-will work:
-
-	rinfo->recover_bus =3D <your custom function>;
-
-and put the
-
-	if (has_clear_cmd)
-
-block there.
+Applied to for-next, thanks!
 
 
---2/5bycvrmDh4d1IB
+--FN+gV9K+162wdwwF
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl5RFCEACgkQFA3kzBSg
-KbawZQ//djH+GtmK3cq1f/dFHYW7brVxy999V22SKk3jREpntfZkN3nb23ARpOvR
-JxIHA71f3FR5XIIyLWV0xzU04ZsmwZctcQ5jS15KPNHzHShSRgXWq0ioGAjzxkX2
-AKqutS55+2qUGELcX7C/KKeIaLLOfzdvrol4ZPqowCaMrP/DbqcNh/7qL2JB244N
-5giSlvyaOmOMIO8ZdMqrA85G+OwHMDcChti8Ba9TxzSmDJRas46XQ9HkwvEEpdca
-iUoPbSj3hFaAlplTUVs/j4NlOV0fIjxeC3fGYgXTVIGOD1KvGfh4+f+YI2lV9YDx
-lAHcIM6fUTx0+uC4dFWJdaqq+9QfyxHPnCOiH8wIr8XKDvOQbAIu2kP/C80QvhL3
-WeK3fl/JMwxLC3b4fFeAvki9Kdzt42IFK2EDXw/uWyDa39Vl1smk3vRDqHkDzKoB
-DUZ+BWF9VB/y5qdgN2lvT510u0oiCMW0EuaOgZHrvvB08+e7Z5PNZvJb+JzUaXYo
-oSVCsdevMNE7yBX+aBjjOegU8p2ip9jIHCGRiKALM1ab1Vr1co/x3U02hecgTBNd
-VOfHwyBQbdukaExvFAmcrCBeWDOCLUj1F6Wy8g38hBhwKcT1kG/xqYflmQdeTKJk
-taBIAgbnPcMxpcqh+yphRZv69GXo3KQ9fwygszyHw4KWp4d0p50=
-=P68w
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl5RFrQACgkQFA3kzBSg
+KbYPkw/9Hi3Vx9RCtmCXXbRYJxXGiQbNjKeAxC3gOUFsMyMWGOOaM8QJTA3MgnV4
+R8FBuv9oZ/aKU0kyIiphAEcSAYM4z7Il/vT/5T7Ko4fnhm9r2iuiKMC9jlgBrRrs
+R6lIS/GnZMLomeTR1kPoVLLpq9Gq5Isj345ElhfdM5sEpb0ap7Elt6a1/QYoG8OQ
+8xA9VyD2V5sfzbBbukESbScyfGmOpQzSP3SHZSuib5FBUAlrQNhWMhVLLR7Si+36
+svVMjx1FbHLA3JX8gGhmA+XC+b/Yd3uVoRje1I3RtFEKiwJANKjKgyD6PR2wPlZS
+jVCJ+3SBmv8Uclubnt7aDgXbewZpYnxzkTWtN3oDP2/UooCWS63TaIlCpbsJb/iu
+HzDGIrpl6YGa1hcXCvkTEFZ9v/z81a3mzgDE0ZXyfr1Rb296Nw10TBXp1xA8ZKXV
+kNvd/3JmcEpspaWrvtfmXSpJOecB02MgvLGeX+l4c0juHlZViUa7YDvbBb6Y9bIP
+sgLPucEEPQ/jyfhXwrAIgoRJDjuVMxfRCTB8xtAJ4dgmwcqphCIJfSu1gdPN2P+j
+biqjULPVFHoCVNDi4wev4PcKH3+ynG3ElTfh7syU4XOO4xT/3SbifUQM+OgZkP6b
+14W1oKXeVPg7B6/64+8wxPpJ9LujjWtGSilsoqxglSMDEVXsRys=
+=u/DY
 -----END PGP SIGNATURE-----
 
---2/5bycvrmDh4d1IB--
+--FN+gV9K+162wdwwF--
 
 
---===============3282927592083646049==
+--===============5983873423207827959==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -166,5 +137,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3282927592083646049==--
+--===============5983873423207827959==--
 
