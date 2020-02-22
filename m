@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB07A168AE0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 01:16:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A82A168ADE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 01:16:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UhaWUYBGPAqDQp4WjDbf71pq5Dx/UENVvaDydFKouFc=; b=Xp6jL+jNNcEaDfa9gvf6BxGdIM
-	XLjil7XVsvv9x4qRCt27RBC1LfcLw87q8MBwzvbeTtUdKUgHU6bT+Ie825IiFZxgwgw3fTewjrUL4
-	JLNabZ0qSdK/glvDMPXVNcUITTa78+Xxp9jUOnFQ/V9vUH3sf0YEtWoahZ2OeFwREps6IV5CQeije
-	N4vsNVUGKJtCzNDYvAOGthPcaPsKdIOemGlQyRCYowokZH+OZ2d16RNfbApnx/OWyu8s4IMVoXj4m
-	SkF0zhV1nqC8ehr6DYtYDfIcTE/RLrDRd3UGxydMFgTz6FSpaNcunXwg29UBU328sH9o+x84bDU+5
-	jIoO3pcg==;
+	bh=t/ANMiFd8UVhgamWWngDZGYh1Lc4cw5xfSrfCuelE44=; b=T/SIF/SboxrhDw/ruos33LZche
+	FGXIT7OxbN0EwKMnwaO5FqWgNeE8fI2fAsA/Nap1xQfc8zAaJ/HQ1/KOcAZkw6uct2quKX0cloGjy
+	42P9qrLZIIxAexgD/dwWgm4xbTbNtfrXvW+Klh/7iM2Hz4KXUoBD1HckjyDPF61uMARGduqeBc52X
+	yoqwWj4OeEHEYpsA67iupwdoQhK7GplyKqQ3wjcAPw8lFAwQsoNd5ZVrHDPyc4YgVceqKXIV2Kkgr
+	5/TiLiTAihRHkLfQAyrUO4AjEwL/ikm/6NBENPn7sSA+ozO97kuUCqISz7soYPcfImMQvRD3hBP8h
+	av/xAE3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5IT6-0007fk-2N; Sat, 22 Feb 2020 00:16:28 +0000
+	id 1j5ISj-0007CR-LC; Sat, 22 Feb 2020 00:16:05 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5IS7-0006gV-Jj
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 00:15:29 +0000
+ id 1j5IRy-0006WI-6y
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 00:15:19 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1CAC7200E74;
- Sat, 22 Feb 2020 01:15:25 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D728A2018CF;
+ Sat, 22 Feb 2020 01:15:16 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6B42C201B3A;
- Sat, 22 Feb 2020 01:15:09 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 73C0320196F;
+ Sat, 22 Feb 2020 01:15:01 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E6996402E0;
- Sat, 22 Feb 2020 08:14:43 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id EBB67402E3;
+ Sat, 22 Feb 2020 08:14:45 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
@@ -47,17 +47,18 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  marcin.juszkiewicz@linaro.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-pm@vger.kernel.org
-Subject: [PATCH V16 3/5] thermal: imx_sc: add i.MX system controller thermal
+Subject: [PATCH V16 4/5] defconfig: arm64: add i.MX system controller thermal
  support
-Date: Sat, 22 Feb 2020 08:08:50 +0800
-Message-Id: <1582330132-13461-3-git-send-email-Anson.Huang@nxp.com>
+Date: Sat, 22 Feb 2020 08:08:51 +0800
+Message-Id: <1582330132-13461-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582330132-13461-1-git-send-email-Anson.Huang@nxp.com>
 References: <1582330132-13461-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_161527_972062_0E1605D3 
-X-CRM114-Status: GOOD (  16.60  )
+X-CRM114-CacheID: sfid-20200221_161518_413429_2975F282 
+X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -85,217 +86,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller
-inside, the system controller is in charge of controlling power,
-clock and thermal sensors etc..
-
-This patch adds i.MX system controller thermal driver support,
-Linux kernel has to communicate with system controller via MU
-(message unit) IPC to get each thermal sensor's temperature,
-it supports multiple sensors which are passed from device tree,
-please see the binding doc for details.
+This patch enables CONFIG_IMX_SC_THERMAL as module.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
-Changes since V15:
-	- Improve the compile dependency;
-	- Fix the copyright year;
-	- Add .remove callback.
+No change.
 ---
- drivers/thermal/Kconfig          |  11 +++
- drivers/thermal/Makefile         |   1 +
- drivers/thermal/imx_sc_thermal.c | 148 +++++++++++++++++++++++++++++++++++++++
- 3 files changed, 160 insertions(+)
- create mode 100644 drivers/thermal/imx_sc_thermal.c
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-index 5a05db5..3502ee8 100644
---- a/drivers/thermal/Kconfig
-+++ b/drivers/thermal/Kconfig
-@@ -251,6 +251,17 @@ config IMX_THERMAL
- 	  cpufreq is used as the cooling device to throttle CPUs when the
- 	  passive trip is crossed.
- 
-+config IMX_SC_THERMAL
-+	tristate "Temperature sensor driver for NXP i.MX SoCs with System Controller"
-+	depends on IMX_SCU || COMPILE_TEST
-+	depends on OF
-+	help
-+	  Support for Temperature Monitor (TEMPMON) found on NXP i.MX SoCs with
-+	  system controller inside, Linux kernel has to communicate with system
-+	  controller via MU (message unit) IPC to get temperature from thermal
-+	  sensor. It supports one critical trip point and one
-+	  passive trip point for each thermal sensor.
-+
- config MAX77620_THERMAL
- 	tristate "Temperature sensor driver for Maxim MAX77620 PMIC"
- 	depends on MFD_MAX77620
-diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-index 9fb88e2..a11a6d8 100644
---- a/drivers/thermal/Makefile
-+++ b/drivers/thermal/Makefile
-@@ -43,6 +43,7 @@ obj-$(CONFIG_DB8500_THERMAL)	+= db8500_thermal.o
- obj-$(CONFIG_ARMADA_THERMAL)	+= armada_thermal.o
- obj-$(CONFIG_TANGO_THERMAL)	+= tango_thermal.o
- obj-$(CONFIG_IMX_THERMAL)	+= imx_thermal.o
-+obj-$(CONFIG_IMX_SC_THERMAL)	+= imx_sc_thermal.o
- obj-$(CONFIG_MAX77620_THERMAL)	+= max77620_thermal.o
- obj-$(CONFIG_QORIQ_THERMAL)	+= qoriq_thermal.o
- obj-$(CONFIG_DA9062_THERMAL)	+= da9062-thermal.o
-diff --git a/drivers/thermal/imx_sc_thermal.c b/drivers/thermal/imx_sc_thermal.c
-new file mode 100644
-index 0000000..4955dfd
---- /dev/null
-+++ b/drivers/thermal/imx_sc_thermal.c
-@@ -0,0 +1,148 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Copyright 2018-2020 NXP.
-+ */
-+
-+#include <linux/err.h>
-+#include <linux/firmware/imx/sci.h>
-+#include <linux/firmware/imx/types.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/slab.h>
-+#include <linux/thermal.h>
-+
-+#include "thermal_core.h"
-+
-+#define IMX_SC_MISC_FUNC_GET_TEMP	13
-+
-+static struct imx_sc_ipc *thermal_ipc_handle;
-+
-+struct imx_sc_sensor {
-+	struct thermal_zone_device *tzd;
-+	u32 resource_id;
-+};
-+
-+struct req_get_temp {
-+	u16 resource_id;
-+	u8 type;
-+} __packed;
-+
-+struct resp_get_temp {
-+	u16 celsius;
-+	u8 tenths;
-+} __packed;
-+
-+struct imx_sc_msg_misc_get_temp {
-+	struct imx_sc_rpc_msg hdr;
-+	union {
-+		struct req_get_temp req;
-+		struct resp_get_temp resp;
-+	} data;
-+};
-+
-+static int imx_sc_thermal_get_temp(void *data, int *temp)
-+{
-+	struct imx_sc_msg_misc_get_temp msg;
-+	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-+	struct imx_sc_sensor *sensor = data;
-+	int ret;
-+
-+	msg.data.req.resource_id = sensor->resource_id;
-+	msg.data.req.type = IMX_SC_C_TEMP;
-+
-+	hdr->ver = IMX_SC_RPC_VERSION;
-+	hdr->svc = IMX_SC_RPC_SVC_MISC;
-+	hdr->func = IMX_SC_MISC_FUNC_GET_TEMP;
-+	hdr->size = 2;
-+
-+	ret = imx_scu_call_rpc(thermal_ipc_handle, &msg, true);
-+	if (ret) {
-+		dev_err(&sensor->tzd->device, "read temp sensor %d failed, ret %d\n",
-+			sensor->resource_id, ret);
-+		return ret;
-+	}
-+
-+	*temp = msg.data.resp.celsius * 1000 + msg.data.resp.tenths * 100;
-+
-+	return 0;
-+}
-+
-+static const struct thermal_zone_of_device_ops imx_sc_thermal_ops = {
-+	.get_temp = imx_sc_thermal_get_temp,
-+};
-+
-+static int imx_sc_thermal_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np, *child, *sensor_np;
-+	struct imx_sc_sensor *sensor;
-+	int ret;
-+
-+	ret = imx_scu_get_handle(&thermal_ipc_handle);
-+	if (ret)
-+		return ret;
-+
-+	np = of_find_node_by_name(NULL, "thermal-zones");
-+	if (!np)
-+		return -ENODEV;
-+
-+	sensor_np = of_node_get(pdev->dev.of_node);
-+
-+	for_each_available_child_of_node(np, child) {
-+		sensor = devm_kzalloc(&pdev->dev, sizeof(*sensor), GFP_KERNEL);
-+		if (!sensor) {
-+			of_node_put(sensor_np);
-+			return -ENOMEM;
-+		}
-+
-+		ret = thermal_zone_of_get_sensor_id(child,
-+						    sensor_np,
-+						    &sensor->resource_id);
-+		if (ret < 0) {
-+			dev_err(&pdev->dev,
-+				"failed to get valid sensor resource id: %d\n",
-+				ret);
-+			break;
-+		}
-+
-+		sensor->tzd = devm_thermal_zone_of_sensor_register(&pdev->dev,
-+								   sensor->resource_id,
-+								   sensor,
-+								   &imx_sc_thermal_ops);
-+		if (IS_ERR(sensor->tzd)) {
-+			dev_err(&pdev->dev, "failed to register thermal zone\n");
-+			ret = PTR_ERR(sensor->tzd);
-+			break;
-+		}
-+	}
-+
-+	of_node_put(sensor_np);
-+
-+	return ret;
-+}
-+
-+static int imx_sc_thermal_remove(struct platform_device *pdev)
-+{
-+	return 0;
-+}
-+
-+static const struct of_device_id imx_sc_thermal_table[] = {
-+	{ .compatible = "fsl,imx-sc-thermal", },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, imx_sc_thermal_table);
-+
-+static struct platform_driver imx_sc_thermal_driver = {
-+		.probe = imx_sc_thermal_probe,
-+		.remove	= imx_sc_thermal_remove,
-+		.driver = {
-+			.name = "imx-sc-thermal",
-+			.of_match_table = imx_sc_thermal_table,
-+		},
-+};
-+module_platform_driver(imx_sc_thermal_driver);
-+
-+MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
-+MODULE_DESCRIPTION("Thermal driver for NXP i.MX SoCs with system controller");
-+MODULE_LICENSE("GPL v2");
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 1c74437..1ff479c 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -453,6 +453,7 @@ CONFIG_THERMAL_GOV_POWER_ALLOCATOR=y
+ CONFIG_CPU_THERMAL=y
+ CONFIG_THERMAL_EMULATION=y
+ CONFIG_QORIQ_THERMAL=m
++CONFIG_IMX_SC_THERMAL=m
+ CONFIG_ROCKCHIP_THERMAL=m
+ CONFIG_RCAR_THERMAL=y
+ CONFIG_RCAR_GEN3_THERMAL=y
 -- 
 2.7.4
 
