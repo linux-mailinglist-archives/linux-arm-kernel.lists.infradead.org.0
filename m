@@ -2,84 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57211168E4B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 11:40:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43713168E58
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 12:05:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iZxRxwkzLJG0ZdYeoatpmy3+gSsQ+N2kix7zqbLey0I=; b=ZXbZYQztz1oeQo
-	FEgnZBZGGjULG2x5oKbUncknJtm3y+Ac0uX81oW5KU0h+tJSshJZ73OtO+ij9ajQ9qAUa5ur4WkXl
-	Rdav/r+JRjB0v9ZeC49omq9ypfWSBtOSyZcWO3P3oV/stW8v0DruZF4oNXthELAVTczH76kF6hvec
-	Goophee4sbUuoim0gbtgkfg4NhMO8E7cBD7hwsoM447p8xUPwr7Z3VNH+L9nBRoXe8X/tLoVe6u/h
-	4RxDumlqyn3TtXfwrhbmn9EYz62F8iYB0YrRh0zgK+gmGXoVZdNm49s9sck4jNOVHfkdXID2EWyAg
-	CHqgj+n6V0SjsjSGUqCA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+48+bKnDjhYdUH287cJIvGmOAfW6ovcRfbPDO7ejG+k=; b=IpJ
+	4eVkhjnHdxApder7iOC/1IIezKQ4uQFbIoSpnWJayeNHtZXPbgAZhlV1iXOzGaTEMx4zhN8j3wgUA
+	+p9/jN6nXHSRftcxG3XQAJMH/OyK1AbDdqX2XiBiEee9lIW7YDJFVxvfVAJwMO4ib8eNo7aXnvL+H
+	Re9Rv0oZ3LV4pVlgOQqP0794UFGsToK6umB4HvQB57/wVniRYvj3eoH5WysJNrkIxFHx0RyKvBFoX
+	3LX1HxHfgd5nmcXLJHlVVA79RSPnGe96fSyQHlPSoYU/Sox9JznvJhr8dn/SNd64ST2eidzYaFt9C
+	L+1o20KBl5/ACe1Pcv9iK/PqRUzkYSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5SCq-0002XP-Mu; Sat, 22 Feb 2020 10:40:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j5Sau-00021S-Kw; Sat, 22 Feb 2020 11:05:12 +0000
+Received: from conuserg-10.nifty.com ([210.131.2.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5SCi-0002Q9-VC
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 10:40:14 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D7B7D206E2;
- Sat, 22 Feb 2020 10:40:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582368009;
- bh=6Wmafw7bm+Sez1pspQxTJG8ckuulq3Dz0SOXvtDrc8A=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hJ8vBz5YImwnzyR06r0PXFCCN11xWNCuBXVBewnggMEXfopP9vYh1WEsVMg+gPhTA
- Pta7BW5qW7O0b8swPoD0AcoUJLoyU8UZTxeguzE+JF5jwVXQCY094k+ou6/5ZW+9d2
- wWxV4aYnWdNzE/lGr7ZsYz7aTDrMVRFADKpQVn80=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j5SCc-007C3Z-NX; Sat, 22 Feb 2020 10:40:06 +0000
-Date: Sat, 22 Feb 2020 10:40:05 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v2 0/3] Fix arm_arch_timer clockmode when vDSO disabled
-Message-ID: <20200222104005.6fc4019d@why>
-In-Reply-To: <20200221181849.40351-1-vincenzo.frascino@arm.com>
-References: <20200221181849.40351-1-vincenzo.frascino@arm.com>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: vincenzo.frascino@arm.com, linux-arch@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- catalin.marinas@arm.com, will.deacon@arm.com, linux@armlinux.org.uk,
- tglx@linutronix.de, luto@kernel.org, m.szyprowski@samsung.com,
- Mark.Rutland@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+ id 1j5Sah-0001lv-34
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 11:05:01 +0000
+Received: from grover.flets-west.jp (softbank126093102113.bbtec.net
+ [126.93.102.113]) (authenticated)
+ by conuserg-10.nifty.com with ESMTP id 01MB4alo020451;
+ Sat, 22 Feb 2020 20:04:36 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com 01MB4alo020451
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1582369476;
+ bh=QUtc/zt9J0Re8J3lue0pAvtGUOq+B5S2sXMyFuVNQpw=;
+ h=From:To:Cc:Subject:Date:From;
+ b=tL77W5FH0U9kZMw1COHxjPFCyr0/vNN3EXD2Hhli6b/WVxmfuVq4a2s+CnV9vbm9t
+ B2H7i8eAw7IMRQtB8vWpV5/78B+XyR7WpiLsI4Lxp6S84yoNJSgSthZE9SKvrKHDf8
+ bpFLa4XqcVVjnt3dLiWkWwAeU/SSCWdThIaMYTQk5DzNF8X7WSmMdW9UZsAaVZf5zc
+ L4Q4+S5rWB/8CkahNwQwRfFizi2hOZQs22KeIjndcEFXlUqAds5F0jP/3ttRHlmteh
+ WMeXaOhQCVI0LWjJOjwA0M9l12HEFcgDTcEvS8mMzjR2kW1+37T/lv5EfK/MRjxiJ+
+ q/wBwDrQAx75g==
+X-Nifty-SrcIP: [126.93.102.113]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] dt-bindings: interrupt-controller: Convert UniPhier AIDET
+ to json-schema
+Date: Sat, 22 Feb 2020 20:04:35 +0900
+Message-Id: <20200222110435.18772-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_024013_043710_D15A867F 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200222_030459_453499_1A224246 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.77 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.77 listed in wl.mailspike.net]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,53 +74,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Mark.Rutland@arm.com, catalin.marinas@arm.com,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- luto@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ masahiroy@kernel.org, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMSBGZWIgMjAyMCAxODoxODo0NiArMDAwMApWaW5jZW56byBGcmFzY2lubyA8dmlu
-Y2Vuem8uZnJhc2Npbm9AYXJtLmNvbT4gd3JvdGU6Cgo+IFRoZSBhcm1fYXJjaF90aW1lciByZXF1
-aXJlcyB0aGF0IFZEU09fQ0xPQ0tNT0RFX0FSQ0hUSU1FUiB0byBiZQo+IGRlZmluZWQgdG8gY29t
-cGlsZSBjb3JyZWN0bHkuIE9uIGFybSB0aGUgdkRTTyBjYW4gYmUgZGlzYWJsZWQgYW5kIHdoZW4K
-PiB0aGlzIGlzIHRoZSBjYXNlIHRoZSBjb21waWxhdGlvbiBlbmRzIHByZW1hdHVyZWx5IHdpdGgg
-YW4gZXJyb3I6Cj4gCj4gICQgbWFrZSBBUkNIPWFybSBtdWx0aV92N19kZWZjb25maWcKPiAgJCAu
-L3NjcmlwdHMvY29uZmlnIC1kIFZEU08KPiAgJCBtYWtlCj4gCj4gIGRyaXZlcnMvY2xvY2tzb3Vy
-Y2UvYXJtX2FyY2hfdGltZXIuYzo3Mzo0NDogZXJyb3I6Cj4gIOKAmFZEU09fQ0xPQ0tNT0RFX0FS
-Q0hUSU1FUuKAmSB1bmRlY2xhcmVkIGhlcmUgKG5vdCBpbiBhIGZ1bmN0aW9uKQo+ICBzdGF0aWMg
-ZW51bSB2ZHNvX2Nsb2NrX21vZGUgdmRzb19kZWZhdWx0ID0gVkRTT19DTE9DS01PREVfQVJDSFRJ
-TUVSOwo+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXgo+ICBz
-Y3JpcHRzL01ha2VmaWxlLmJ1aWxkOjI2NzogcmVjaXBlIGZvciB0YXJnZXQKPiAgJ2RyaXZlcnMv
-Y2xvY2tzb3VyY2UvYXJtX2FyY2hfdGltZXIubycgZmFpbGVkCj4gIG1ha2VbMl06ICoqKiBbZHJp
-dmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5vXSBFcnJvciAxCj4gIG1ha2VbMl06ICoq
-KiBXYWl0aW5nIGZvciB1bmZpbmlzaGVkIGpvYnMuLi4uCj4gIHNjcmlwdHMvTWFrZWZpbGUuYnVp
-bGQ6NTA1OiByZWNpcGUgZm9yIHRhcmdldCAnZHJpdmVycy9jbG9ja3NvdXJjZScgZmFpbGVkCj4g
-IG1ha2VbMV06ICoqKiBbZHJpdmVycy9jbG9ja3NvdXJjZV0gRXJyb3IgMgo+ICBtYWtlWzFdOiAq
-KiogV2FpdGluZyBmb3IgdW5maW5pc2hlZCBqb2JzLi4uLgo+ICBNYWtlZmlsZToxNjgzOiByZWNp
-cGUgZm9yIHRhcmdldCAnZHJpdmVycycgZmFpbGVkCj4gIG1ha2U6ICoqKiBbZHJpdmVyc10gRXJy
-b3IgMgo+IAo+IFRoaXMgcGF0Y2ggc2VyaWVzIGFkZHJlc3NlcyB0aGUgaXNzdWUgZGVmaW5pbmcg
-YSBkZWZhdWx0IGFyY2ggY2xvY2ttb2RlCj4gZm9yIGFybSBhbmQgYXJtNjQgYW5kIHVzaW5nIGl0
-IHRvIGluaXRpYWxpemUgdGhlIGFybV9hcmNoX3RpbWVyLgoKYXJtIG9ubHkuIGFybTY0IGlzIGp1
-c3QgZmluZS4KCj4gCj4gQ2hhbmdlczoKPiAtLS0tLS0tLQo+IHYyOgo+ICAgLSBBZGRyZXNzZWQg
-TWFyYyBaeW5naWVyIGNvbW1lbnRzLgo+ICAgLSBSZWJhc2VkIG9uIDUuNi1yYzIuCgpUaGlzIGRv
-ZXNuJ3QgYXBwbHkgdG8gLXJjMiwgYW5kIGlzIHJhdGhlciBhZ2FpbnN0IG5leHQuCgo+IAo+IENj
-OiBDYXRhbGluIE1hcmluYXMgPGNhdGFsaW4ubWFyaW5hc0Bhcm0uY29tPgo+IENjOiBXaWxsIERl
-YWNvbiA8d2lsbC5kZWFjb25AYXJtLmNvbT4KPiBDYzogUnVzc2VsbCBLaW5nIDxsaW51eEBhcm1s
-aW51eC5vcmcudWs+Cj4gQ2M6IFRob21hcyBHbGVpeG5lciA8dGdseEBsaW51dHJvbml4LmRlPgo+
-IENjOiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwub3JnPgo+IENjOiBNYXJrIFJ1dGxhbmQgPE1h
-cmsuUnV0bGFuZEBhcm0uY29tPgo+IENjOiBNYXJlayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lA
-c2Ftc3VuZy5jb20+Cj4gU2lnbmVkLW9mZi1ieTogVmluY2Vuem8gRnJhc2Npbm8gPHZpbmNlbnpv
-LmZyYXNjaW5vQGFybS5jb20+Cj4gCj4gVmluY2Vuem8gRnJhc2Npbm8gKDMpOgo+ICAgYXJtOiBj
-bG9ja3NvdXJjZTogQWRkIFZEU08gZGVmYXVsdCBjbG9ja21vZGUKPiAgIGFybTY0OiBjbG9ja3Nv
-dXJjZTogQWRkIFZEU08gZGVmYXVsdCBjbG9ja21vZGUKPiAgIGNsb2Nrc291cmNlOiBGaXggYXJt
-X2FyY2hfdGltZXIgY2xvY2ttb2RlIHdoZW4gdkRTTyBkaXNhYmxlZAoKUGxlYXNlIHNxdWFzaCB0
-aGUgdGhyZWUgcGF0Y2hlcyBpbnRvIGEgc2luZ2xlIG9uZS4gVGhlcmUgaXMgemVybyBwb2ludApp
-biBoYXZpbmcgMyBwYXRjaGVzIGZvciBzb21ldGhpbmcgdGhhdCBzbWFsbC4KCglNLgotLSAKSmF6
-eiBpcyBub3QgZGVhZC4gSXQganVzdCBzbWVsbHMgZnVubnkuLi4KCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Convert the UniPhier AIDET (ARM Interrupt Detector) binding to DT
+schema format.
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Some qeustions:
+
+I was wondering when 'additionalProperties: false' should be added.
+
+If I add it to a bus controller device (e.g. I2C),
+I see some schema warnings because various sub-nodes
+are added depending on which device you connect.
+
+On the other hand, the interrupt controller like this
+does not have a subnode.
+So, probably this is the case where we can add
+'additionalProperties: false'.
+
+Is this correct?
+
+One more thing.
+
+There are multiple ways to do a similar thing:
+
+   compatible:
+     enum:
+        - socionext,uniphier-ld4-aidet
+        - socionext,uniphier-pro4-aidet
+        ...
+vs
+
+   compatible:
+     oneOf:
+        - const: socionext,uniphier-ld4-aidet
+        - const: socionext,uniphier-pro4-aidet
+        ...
+
+I adopted the former because I can save 'const'.
+If there is a preferred way, I will follow it.
+
+END
+
+---
+
+Changes in v2:
+  - fix the schema warning in the example
+
+ .../socionext,uniphier-aidet.txt              | 32 ----------
+ .../socionext,uniphier-aidet.yaml             | 61 +++++++++++++++++++
+ 2 files changed, 61 insertions(+), 32 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt
+ create mode 100644 Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml
+
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt b/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt
+deleted file mode 100644
+index 48e71d3ac2ad..000000000000
+--- a/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.txt
++++ /dev/null
+@@ -1,32 +0,0 @@
+-UniPhier AIDET
+-
+-UniPhier AIDET (ARM Interrupt Detector) is an add-on block for ARM GIC (Generic
+-Interrupt Controller).  GIC itself can handle only high level and rising edge
+-interrupts.  The AIDET provides logic inverter to support low level and falling
+-edge interrupts.
+-
+-Required properties:
+-- compatible: Should be one of the following:
+-    "socionext,uniphier-ld4-aidet"  - for LD4 SoC
+-    "socionext,uniphier-pro4-aidet" - for Pro4 SoC
+-    "socionext,uniphier-sld8-aidet" - for sLD8 SoC
+-    "socionext,uniphier-pro5-aidet" - for Pro5 SoC
+-    "socionext,uniphier-pxs2-aidet" - for PXs2/LD6b SoC
+-    "socionext,uniphier-ld11-aidet" - for LD11 SoC
+-    "socionext,uniphier-ld20-aidet" - for LD20 SoC
+-    "socionext,uniphier-pxs3-aidet" - for PXs3 SoC
+-- reg: Specifies offset and length of the register set for the device.
+-- interrupt-controller: Identifies the node as an interrupt controller
+-- #interrupt-cells : Specifies the number of cells needed to encode an interrupt
+-  source.  The value should be 2.  The first cell defines the interrupt number
+-  (corresponds to the SPI interrupt number of GIC).  The second cell specifies
+-  the trigger type as defined in interrupts.txt in this directory.
+-
+-Example:
+-
+-	aidet: aidet@5fc20000 {
+-		compatible = "socionext,uniphier-pro4-aidet";
+-		reg = <0x5fc20000 0x200>;
+-		interrupt-controller;
+-		#interrupt-cells = <2>;
+-	};
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml b/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml
+new file mode 100644
+index 000000000000..f89ebde76dab
+--- /dev/null
++++ b/Documentation/devicetree/bindings/interrupt-controller/socionext,uniphier-aidet.yaml
+@@ -0,0 +1,61 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/interrupt-controller/socionext,uniphier-aidet.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: UniPhier AIDET
++
++description: |
++  UniPhier AIDET (ARM Interrupt Detector) is an add-on block for ARM GIC
++  (Generic Interrupt Controller). GIC itself can handle only high level and
++  rising edge interrupts. The AIDET provides logic inverter to support low
++  level and falling edge interrupts.
++
++maintainers:
++  - Masahiro Yamada <yamada.masahiro@socionext.com>
++
++allOf:
++  - $ref: /schemas/interrupt-controller.yaml#
++
++properties:
++  compatible:
++    enum:
++      - socionext,uniphier-ld4-aidet
++      - socionext,uniphier-pro4-aidet
++      - socionext,uniphier-sld8-aidet
++      - socionext,uniphier-pro5-aidet
++      - socionext,uniphier-pxs2-aidet
++      - socionext,uniphier-ld6b-aidet
++      - socionext,uniphier-ld11-aidet
++      - socionext,uniphier-ld20-aidet
++      - socionext,uniphier-pxs3-aidet
++
++  reg:
++    maxItems: 1
++
++  interrupt-controller: true
++
++  '#interrupt-cells':
++    description: |
++      The first cell defines the interrupt number (corresponds to the SPI
++      interrupt number of GIC). The second cell specifies the trigger type as
++      defined in interrupts.txt in this directory.
++    const: 2
++
++required:
++  - compatible
++  - reg
++  - interrupt-controller
++  - '#interrupt-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    interrupt-controller@5fc20000 {
++        compatible = "socionext,uniphier-pro4-aidet";
++        reg = <0x5fc20000 0x200>;
++        interrupt-controller;
++        #interrupt-cells = <2>;
++    };
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
