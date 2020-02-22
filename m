@@ -2,98 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B30716901C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 17:02:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EAA316904B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 17:25:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f7IOUDT6iP+BqrYK8fVuVO/TS8LIBpD78M5vAAzsStE=; b=O9RDGtUnF71+3U
-	w7BkgkdOsaYVMTkkyEHV6YwvNSSMwxeZArrl0R9uPgIRkyxXTUDGmoG1aIVEoFnisV6bHnrKUTPp6
-	Sesx4H50bmpoNe8ssrPCg/2ivp3y+cXtQd2RDvrrXCaYymqacrEj2MTWCtyBXt1Uu7g2oRnIlUXNw
-	IlbNhenja6GpueyuOyp0d0MGCFn72ZL0ckxYSzfkziQ776nbrgzbDdoGFcDkE74xEsf3s9SrIOM68
-	4E6qpVJDDEWQRAi0o4mBzmmg5aGf4MnC7y9sASxT98PrbZq8jmYbgdo0RRdjXhyOjOSahhszLKhdz
-	AlCRRiH2ESzOD076Qjrw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=dkS14iI+IxnIPNpjrwAmAz3h0FgoJXBUTrbh94ZrFgQ=; b=jyV
+	yglcFfgJ7b7TH+ScbR3+yYCST+P0z5jFq5hXI3pK6fp/zVDdf5vYyoMsYw1OOqc9Jq3nuaq6ZUioI
+	briawVsJ/H1umYDLrwaItmOChofb36chunNgbj1BaySmSKAGre0g2XpqWyUW0Oo1GWoL2QyIEa1UF
+	FPl6E5fEWczFs2ZwCOU6gsrPkXsAVK6tzsLbBHy3WRj/+dLJQrE1caKlGw8ElALtz0w8LUKN0Cgpi
+	rxx1bD9t8pRiJ/CDsjLtCcZUePh1fT6RCOCBkwn0zTE9QNGw5dVb+zSEbfn8D21wrPehVcGvmqo8T
+	SmdPeExwCjJJhegZHrlwv7xSmxinOig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5XEb-0000Xu-Cq; Sat, 22 Feb 2020 16:02:29 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1j5Xak-0000Uv-Ef; Sat, 22 Feb 2020 16:25:22 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5XET-0000XI-Gs
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 16:02:22 +0000
-Received: by mail-pl1-x643.google.com with SMTP id y1so2168600plp.7
+ id 1j5XaS-0007wx-2h
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 16:25:05 +0000
+Received: by mail-pl1-x644.google.com with SMTP id g6so2180784plp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 22 Feb 2020 08:02:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=xcfWc07VJgwKZWSeCtj3dYfSkWoqRHSEjLvzNesnjm8=;
- b=e4W4iJzwkVD5G8ryoMxoC3o2gWbdwIv9HJtioaVLJ7r/aeVIXyg7ksO3Y+tiCeVfgk
- +p6CZizrNgdd+J+pFWQJW4dVn2MO5KGHhReEfjK3ZqtjG02RsHwVOt4LDX5SNiI25D/f
- 8XKNUzx889WR5FX93+ydAxbkqOuot7q4Y5TNZ5aJ7tpUqnV4oSEwWDglgi/dhYeNT/XI
- JlldbMY5iRlj04KnA6LYgsOm3iMR0pM0PP4V9G0bBL4mP1OKz9Ol8NiZFPtXRpCoVRX4
- QrTv8I6iSu07vNSkj2kH3/AG4CZSFh1CZxIaWCf0pcVAQAmKA/TwhAKJbdCcCqCBWl+L
- fbQg==
+ Sat, 22 Feb 2020 08:25:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=Ks7y/QSYAArJm8l8kQ7dWIxmdbWnSg+WMxAzD2T6n1c=;
+ b=AdCuHZNFaRFDtgAAkhhYnFi/ZD1m9YBfJU01emxU4mSbXwDRhs1uDdwwYPrHYE+eBS
+ GI4xxETIdZE/1zzNfMz0oVP3qlaf87/HfcgBXY8m6U6baMqi6/WQ+LdXInCdLcoIQZAL
+ xDMNi2jguKXQ3LInFv0OtDfbUBxZMH2wUAyK/84KntG2ZEAl7rbKPGl+gWanNGicIdFp
+ q0KASqHTpV2HD0HgSzBkiNVEIMJd41sWk+X/XsdK/vN5/ZV2yHZ4ism2B0qFGQ+JruDV
+ RjnkFLntq729UCaXVHPF74Pq3Ajg2YR/Z+DO9qGH2xd4nLDuQvzBEksJJShR6Ggdbwhw
+ Q2dQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=xcfWc07VJgwKZWSeCtj3dYfSkWoqRHSEjLvzNesnjm8=;
- b=h4kTrWmZczu+NV3fowbsONCsz1c45D0ISWeXdGeOz5JH6H33mjgwV7AcB87c0oMUM+
- xrhSilHegRmlZNGIvYuxmVnzuIuX1AGMYDMYZcFwjA5WflWMTXhdudRYos5RzMfRNHTL
- 0EA+CcI3y1MOgQfI60L4SCT5tDys+ve/zNKgtg3WJdiJKLNcyBnI0AHZRV96OJ2HAl4P
- 5jIr5NdzdStk/StGJIP5Z7Jg9C7VO/9aZfPYF6zDmTF0BIEFYO5maj0OdCSpV/hU9BL7
- rOGX4DcJXWYYJ8A+eUA7r+DZS6R6dlqcqpiwZOS06fOFXkUBgnAQd9NyF5lfjme8SFG+
- IMuQ==
-X-Gm-Message-State: APjAAAUXgOH1jW/fpBqLZiKwu2tx/NDkWlQloPnHPkYZnBOTnUj6HyLU
- IgScnD8oP8PwzAM5IBiURsg=
-X-Google-Smtp-Source: APXvYqyUxZTcZApAopyQ3ulF1Kav/0gLlUvfK+oVe/98iwN5Xsh9EpL6rdRREX1moN7GmZOsUIiAEg==
-X-Received: by 2002:a17:902:82c5:: with SMTP id
- u5mr41030877plz.219.1582387339765; 
- Sat, 22 Feb 2020 08:02:19 -0800 (PST)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id e7sm6909915pfj.114.2020.02.22.08.02.18
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 22 Feb 2020 08:02:18 -0800 (PST)
-Date: Sat, 22 Feb 2020 08:02:18 -0800
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 3/3] watchdog: imx2_wdt: Remove unused include of init.h
-Message-ID: <20200222160218.GA12740@roeck-us.net>
-References: <1582250430-8872-1-git-send-email-Anson.Huang@nxp.com>
- <1582250430-8872-3-git-send-email-Anson.Huang@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1582250430-8872-3-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Ks7y/QSYAArJm8l8kQ7dWIxmdbWnSg+WMxAzD2T6n1c=;
+ b=JOkOIkelL4TdHSJT5DWeTu+djO0Q04p7ezFhXqGtm4L5wxtpmLFoPrjGnZ06qeB5oh
+ XSBH7CG1P5jspTj9/JPRg1WzfaLIuGAVQNA65VSLr1rMtRqJIz9eOg+h2g8R4QL1wJK5
+ o7huuAStLlIWg7rjUNSgZfKpB6t3qgi8w3llEmX73KpBwnC6z4kHjx7ESW1KnJIXTSiU
+ AH+PX4oOx89Mc7/8UkRj4saJcn3nEAU9Y/BxF0SnyrddYVqaNaNfn/UKBe+pw7fjbvdd
+ hC5rLHfSA1GOC+mP6z41MCb2cGM4KXJ6gRTsYjmXl5iF0DobDySh55LbGXskiAcYwYLh
+ EjjQ==
+X-Gm-Message-State: APjAAAUGr+nbvO0gyCMCxBFqRXtuE0RLG9blpR1QxRc75QJlNw2zrkDs
+ siEkXvPgDztpS7QqIuCoN6Rf
+X-Google-Smtp-Source: APXvYqwDqWgruAJNxa7ONzq20wF+AVoEojPMgADvEuzyv7YdZNMt2utDAZTxPjtcVVj83OJFNZAHgQ==
+X-Received: by 2002:a17:90a:fe02:: with SMTP id
+ ck2mr9841156pjb.10.1582388701954; 
+ Sat, 22 Feb 2020 08:25:01 -0800 (PST)
+Received: from localhost.localdomain ([2409:4072:801:b38c:89e8:305c:23c4:b77f])
+ by smtp.gmail.com with ESMTPSA id q17sm6851296pfg.123.2020.02.22.08.24.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 22 Feb 2020 08:25:01 -0800 (PST)
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: matthias.bgg@gmail.com,
+	robh+dt@kernel.org
+Subject: [PATCH 0/4] Add I2C controller support for MT6797 SoC
+Date: Sat, 22 Feb 2020 21:54:40 +0530
+Message-Id: <20200222162444.11590-1-manivannan.sadhasivam@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_080221_563632_86459699 
-X-CRM114-Status: GOOD (  12.89  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200222_082504_126703_25550420 
+X-CRM114-Status: GOOD (  11.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,40 +93,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- wim@linux-watchdog.org, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ adamboardman@gmail.com,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 21, 2020 at 10:00:30AM +0800, Anson Huang wrote:
-> There is nothing in use from init.h, remove it.
-> 
+Hello,
 
-NACK, sorry; this driver uses __init and __exit_p.
+This patchset adds I2C controller support for Mediatek MT6797 SoC. There
+are a total of 8 I2C controllers in this SoC (2 being shared) and they are
+same as the controllers present in MT6577 SoC. Hence, the driver support is
+added with DT fallback method.
 
-Guenter
+As per the datasheet, there are controllers with _imm prefix like i2c2_imm
+and i2c3_imm. These appears to be in different memory regions but sharing
+the same pins with i2c2 and i2c3 respectively. Since there is no clear
+evidence of what they really are, I've adapted the numbering/naming scheme
+from the downstream code by Mediatek.
 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
->  drivers/watchdog/imx2_wdt.c | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
-> index f8d58bf..ce28e40 100644
-> --- a/drivers/watchdog/imx2_wdt.c
-> +++ b/drivers/watchdog/imx2_wdt.c
-> @@ -20,7 +20,6 @@
->  
->  #include <linux/clk.h>
->  #include <linux/delay.h>
-> -#include <linux/init.h>
->  #include <linux/interrupt.h>
->  #include <linux/io.h>
->  #include <linux/kernel.h>
+This patchset has been tested on 96Boards X20 development board.
+
+Thanks,
+Mani
+
+Manivannan Sadhasivam (4):
+  dt-bindings: i2c: Document I2C controller binding for MT6797 SoC
+  arm64: dts: mediatek: Add I2C support for MT6797 SoC
+  arm64: dts: mediatek: Enable I2C support for 96Boards X20 Development
+    board
+  arm64: dts: mediatek: Switch to SPDX license identifier for MT6797 SoC
+
+ .../devicetree/bindings/i2c/i2c-mt65xx.txt    |   1 +
+ .../boot/dts/mediatek/mt6797-x20-dev.dts      |  49 ++++
+ arch/arm64/boot/dts/mediatek/mt6797.dtsi      | 229 +++++++++++++++++-
+ 3 files changed, 271 insertions(+), 8 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
