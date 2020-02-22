@@ -2,80 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97414168CB5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 06:33:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E3D168CCC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 07:05:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x4oIgxUQS0DQe+TgHk0oZF9QUMpCFqJmIL8fALik8qg=; b=hzyBwl51be1RxP
-	s6xyXT1twDH4wczuZrR8akIjy6ajziuNsyIUAZR7s57UvWssYR2SBEFiNfhWVQikda/ROt3jMxyDA
-	rJV3ZIYTL/bJG2tYoUgGr/ekSC6VepLt+kMwp6qfOvJLQl3tm30tmmUIg2cpTyGhjh5qHBxumspnC
-	THTg0ZBeBHuw3s+V6/Hgqqjy2q2RcKN9uGMCNPNBuLA2ejWQ7xZc/YitytiJpYierUTQA5e2FFq5S
-	ui/DG2t3yA7tY+r5m6D+pA+0/aFlFI0uercqaB3uFyGqpwi1goYu96N33Iqm/fHlwWZN1mRf/75a0
-	iiCNC1MzPjfaQmyaJg1g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=JgfmGmdIhbQtTrdEi3rRRlKSIFwOuwCLiANuuDwS5mQ=; b=D4s
+	HyfJiLBk8R4MjouZO56sboOHYITMN7X35hXI/hCD2dNddO3KT78fNRyupnpoWnt7GyFv8qMC2QYSQ
+	G8Ro7CL5N6HI98yikPEeia/HB2zH5lTY0YpjBCwf4oOguSrloIvgib1ohrYr6Ai4/VlafImEqaM2n
+	X4mV9nvY4fJD35SNAFRAIa9BqZm1kF04Ie0WalzjBUAiFlEXCfHySWucymlYBUqoi2ApY+MJTydvS
+	rpM7zrJrXMfco9BJ1J+E+cTx1xCSzh/bC+0+Quw+x9kWIHVwWYD2UgrMp+ze3Qq9vfc8t/x868MN+
+	ZK07yTCnIO7VDjjk2ArNirOWLIAJW7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5NQK-0008JR-T5; Sat, 22 Feb 2020 05:33:56 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1j5Nuy-00033I-Hk; Sat, 22 Feb 2020 06:05:36 +0000
+Received: from conuserg-11.nifty.com ([210.131.2.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5NQ8-0008IZ-FG
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 05:33:46 +0000
-Received: from mail-vk1-f178.google.com (mail-vk1-f178.google.com
- [209.85.221.178]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id 01M5XDL0023033
- for <linux-arm-kernel@lists.infradead.org>; Sat, 22 Feb 2020 14:33:14 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com 01M5XDL0023033
+ id 1j5Num-00032P-5G
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 06:05:28 +0000
+Received: from grover.flets-west.jp (softbank126093102113.bbtec.net
+ [126.93.102.113]) (authenticated)
+ by conuserg-11.nifty.com with ESMTP id 01M64cSJ007264;
+ Sat, 22 Feb 2020 15:04:38 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com 01M64cSJ007264
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1582349594;
- bh=kfkRB8NqTSB8RfnnWhYO851m+pZCn26htPS02MwccbU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=jGpTyMmaQFCA/yAC8SI4sEY5rRsGwV7n37iHBsYx0Tf7yhCGxJurnEkRnYv7mXkEJ
- JsG/XgCkElNDfWpzULElIwahEskifFcCgfbfMXCevqXYv/LoxA47zlm0vQm2c+wXks
- 9sU0GorFjzp+hiEZTdTagyKsg7jPMB0IirRAzwYH6j1ZvpUe4A//reJSJZAgZdootB
- 2g7WnMlVvqwRfef0X7RYd/XXHwhTzr55mpoceajykax0eZUJhKShxiuBLuEbqxsn9r
- 23cnn4NQdvEhPKtWkgxQp/tWiyQ7DXLBQ2ZGCkxLv13OY12pHAVXycTmv8OGqxec2N
- bHWw0f1u66WqQ==
-X-Nifty-SrcIP: [209.85.221.178]
-Received: by mail-vk1-f178.google.com with SMTP id m195so1185878vkh.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 21 Feb 2020 21:33:13 -0800 (PST)
-X-Gm-Message-State: APjAAAULQpav9FNktg2r7dfXPZiYZaTjGZ2amZhr/UxnLNC9Tz//RDDi
- ZpfdEZk288wBDF7KPcvEW+y2BpCOBpZkLENBzp8=
-X-Google-Smtp-Source: APXvYqw0koqWOvytLQ0hXmAEc9eS7xUecajG9z93OX8duyLUDb6bva5IL7M/xtzmqsUqDWyYc6mF9iWEJjnMvLa+UjA=
-X-Received: by 2002:a1f:1bc3:: with SMTP id b186mr19356263vkb.96.1582349592746; 
- Fri, 21 Feb 2020 21:33:12 -0800 (PST)
-MIME-Version: 1.0
-References: <20200221021002.18795-1-yamada.masahiro@socionext.com>
- <20200221021002.18795-2-yamada.masahiro@socionext.com>
- <20200221153215.GA9815@bogus>
-In-Reply-To: <20200221153215.GA9815@bogus>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Sat, 22 Feb 2020 14:32:36 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARhXbyUwMwXK=afXLnBVzg_MPv2D=oyn5qWkZtv12zmRg@mail.gmail.com>
-Message-ID: <CAK7LNARhXbyUwMwXK=afXLnBVzg_MPv2D=oyn5qWkZtv12zmRg@mail.gmail.com>
-Subject: Re: [PATCH 2/3] dt-bindings: gpio: Convert UniPhier GPIO to
- json-schema
-To: Rob Herring <robh@kernel.org>
+ s=dec2015msa; t=1582351479;
+ bh=tZ/Fv+Hm02lylfP8gzd4irqcz0a8ojTD90nzr+or0w0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ymyB8kZzlnIkSU9Y+ArJQ/rpOTO4Svg1KDeKqwH4avIj0rPAbso4qj04CwHxfUsGL
+ ZClkNY51eu/GmOMo+C/V5Qj5wn9ljIG1eCmgLPkrSJn3C6kHZxQdDmVnECEdZi27Um
+ tRlMqOfIua7AxijHT0Go2VxdjiHQA5o9L/M9WoNzaGm8WhfBF6onIM+Jp6rMMBXyr9
+ w5DnzTa5fxZS1HvV9mKdh/wgriqsYLry4SYoRODSaEC0LXR5a00uXq9CgQk4UUZR47
+ /6CDH6GRJBaTstM23L2uKh2kCA4KnaJhS1W9F0icZxL3LnbU5Zfczvjo9X7Q1qVLPf
+ ca3YQ+kRsV/9Q==
+X-Nifty-SrcIP: [126.93.102.113]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org
+Subject: [PATCH v2 1/3] dt-bindings: arm: Convert UniPhier board/SoC bindings
+ to json-schema
+Date: Sat, 22 Feb 2020 15:04:33 +0900
+Message-Id: <20200222060435.971-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_213344_739095_DB538F3B 
-X-CRM114-Status: GOOD (  23.60  )
+X-CRM114-CacheID: sfid-20200221_220524_419591_B7D6165B 
+X-CRM114-Status: GOOD (  11.76  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
- [210.131.2.80 listed in bl.mailspike.net]
+ no trust [210.131.2.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.78 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,106 +74,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
  Jonathan Cameron <Jonathan.Cameron@huawei.com>,
  Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Convert the Socionext UniPhier board/SoC binding to DT schema format.
 
-On Sat, Feb 22, 2020 at 12:32 AM Rob Herring <robh@kernel.org> wrote:
->
-> On Fri, 21 Feb 2020 11:10:01 +0900, Masahiro Yamada wrote:
-> > Convert the UniPhier GPIO controller binding to DT schema format.
-> >
-> > I omitted the 'gpio-ranges' property because it is defined in the
-> > dt-schema project (/schemas/gpio/gpio.yaml).
-> >
-> > As of writing, the 'gpio-ranges-group-names' is not defined in that
-> > file despite it is a common property described in
-> > Documentation/devicetree/bindings/gpio/gpio.txt
-> > So, I defined it in this schema.
-> >
-> > Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-> > ---
-> >
-> > I have a question about the range about 'ngpio'.
-> >
-> >   ngpios:
-> >     minimum: 0
-> >     maximum: 512
-> >
-> > The 'ngpio' property is already defined as 'uint32' in the dt-schema tool:
-> > https://github.com/robherring/dt-schema/blob/master/schemas/gpio/gpio.yaml#L20
-> >
-> > 'uint32' is unsigned, so 'minimum: 0' looks too obvious.
-> >
-> > I cannot omit the minimum because minimum and maximum depend on each other.
-> > I just put a sensible number, 512, in maximum.
-> >
-> > If this range is entirely unneeded, I will delete it.
->
-> This property is generally for when you can have some number less
-> than a maximum number implied by the compatible string.
->
-> If there is really no max (e.g. 2^32 - 1 is valid), then just do
-> 'ngpios: true'
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
 
+Changes in v2:
+  - Remove 'examples' because examples are fold into /example-0 node
+    and there is no way to meet
+      $nodename:
+         const: '/'
 
-What does ': true' mean?
+ .../bindings/arm/socionext/uniphier.txt       | 47 --------------
+ .../bindings/arm/socionext/uniphier.yaml      | 61 +++++++++++++++++++
+ MAINTAINERS                                   |  2 +-
+ 3 files changed, 62 insertions(+), 48 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/socionext/uniphier.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
 
-
-If it is documented somewhere,
-could you point me to the reference?
-
-Even if I remove the 'ngpio' entirely
-from my dt-schema, the 'ngpio' is checked
-correctly.
-
-
-
-
->
-> >
-> >
-> >  .../bindings/gpio/gpio-uniphier.txt           | 51 -----------
-> >  .../gpio/socionext,uniphier-gpio.yaml         | 89 +++++++++++++++++++
-> >  MAINTAINERS                                   |  2 +-
-> >  3 files changed, 90 insertions(+), 52 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/gpio/gpio-uniphier.txt
-> >  create mode 100644 Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.yaml
-> >
->
-> My bot found errors running 'make dt_binding_check' on your patch:
->
-> Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
-> Error: Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.example.dts:38.34-35 syntax error
-> FATAL ERROR: Unable to parse input tree
-> scripts/Makefile.lib:300: recipe for target 'Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.example.dt.yaml' failed
-> make[1]: *** [Documentation/devicetree/bindings/gpio/socionext,uniphier-gpio.example.dt.yaml] Error 1
-> Makefile:1263: recipe for target 'dt_binding_check' failed
-> make: *** [dt_binding_check] Error 2
->
-> See https://patchwork.ozlabs.org/patch/1241747
-> Please check and re-submit.
-
-OK, I will.
-
-
-
+diff --git a/Documentation/devicetree/bindings/arm/socionext/uniphier.txt b/Documentation/devicetree/bindings/arm/socionext/uniphier.txt
+deleted file mode 100644
+index b3ed1033740e..000000000000
+--- a/Documentation/devicetree/bindings/arm/socionext/uniphier.txt
++++ /dev/null
+@@ -1,47 +0,0 @@
+-Socionext UniPhier SoC family
+------------------------------
+-
+-Required properties in the root node:
+-  - compatible: should contain board and SoC compatible strings
+-
+-SoC and board compatible strings:
+-  (sorted chronologically)
+-
+-  - LD4 SoC:  "socionext,uniphier-ld4"
+-      - Reference Board: "socionext,uniphier-ld4-ref"
+-
+-  - Pro4 SoC: "socionext,uniphier-pro4"
+-      - Reference Board: "socionext,uniphier-pro4-ref"
+-      - Ace Board:       "socionext,uniphier-pro4-ace"
+-      - Sanji Board:     "socionext,uniphier-pro4-sanji"
+-
+-  - sLD8 SoC: "socionext,uniphier-sld8"
+-      - Reference Board: "socionext,uniphier-sld8-ref"
+-
+-  - PXs2 SoC: "socionext,uniphier-pxs2"
+-      - Gentil Board:    "socionext,uniphier-pxs2-gentil"
+-      - Vodka Board:     "socionext,uniphier-pxs2-vodka"
+-
+-  - LD6b SoC: "socionext,uniphier-ld6b"
+-      - Reference Board: "socionext,uniphier-ld6b-ref"
+-
+-  - LD11 SoC: "socionext,uniphier-ld11"
+-      - Reference Board: "socionext,uniphier-ld11-ref"
+-      - Global Board:    "socionext,uniphier-ld11-global"
+-
+-  - LD20 SoC: "socionext,uniphier-ld20"
+-      - Reference Board: "socionext,uniphier-ld20-ref"
+-      - Global Board:    "socionext,uniphier-ld20-global"
+-
+-  - PXs3 SoC: "socionext,uniphier-pxs3"
+-      - Reference Board: "socionext,uniphier-pxs3-ref"
+-
+-Example:
+-
+-/dts-v1/;
+-
+-/ {
+-	compatible = "socionext,uniphier-ld20-ref", "socionext,uniphier-ld20";
+-
+-	...
+-};
+diff --git a/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml b/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+new file mode 100644
+index 000000000000..65ad6d8a3c99
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+@@ -0,0 +1,61 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/arm/socionext/uniphier.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Socionext UniPhier platform device tree bindings
++
++maintainers:
++  - Masahiro Yamada <yamada.masahiro@socionext.com>
++
++properties:
++  $nodename:
++    const: /
++  compatible:
++    oneOf:
++      - description: LD4 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-ld4-ref
++          - const: socionext,uniphier-ld4
++      - description: Pro4 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-pro4-ace
++            - socionext,uniphier-pro4-ref
++            - socionext,uniphier-pro4-sanji
++          - const: socionext,uniphier-pro4
++      - description: sLD8 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-sld8-ref
++          - const: socionext,uniphier-sld8
++      - description: PXs2 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-pxs2-gentil
++            - socionext,uniphier-pxs2-vodka
++          - const: socionext,uniphier-pxs2
++      - description: LD6b SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-ld6b-ref
++          - const: socionext,uniphier-ld6b
++      - description: LD11 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-ld11-global
++            - socionext,uniphier-ld11-ref
++          - const: socionext,uniphier-ld11
++      - description: LD20 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-ld20-global
++            - socionext,uniphier-ld20-ref
++          - const: socionext,uniphier-ld20
++      - description: PXs3 SoC boards
++        items:
++          - enum:
++            - socionext,uniphier-pxs3-ref
++          - const: socionext,uniphier-pxs3
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 4beb8dc4c7eb..93ccb6708ae9 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2546,7 +2546,7 @@ M:	Masahiro Yamada <yamada.masahiro@socionext.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-uniphier.git
+ S:	Maintained
+-F:	Documentation/devicetree/bindings/arm/socionext/uniphier.txt
++F:	Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+ F:	Documentation/devicetree/bindings/gpio/gpio-uniphier.txt
+ F:	Documentation/devicetree/bindings/pinctrl/socionext,uniphier-pinctrl.txt
+ F:	arch/arm/boot/dts/uniphier*
 -- 
-Best Regards
-Masahiro Yamada
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
