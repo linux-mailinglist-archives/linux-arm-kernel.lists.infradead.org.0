@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FA92169222
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 23:33:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEA81169239
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 00:15:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q+5a6L33lPIVFXQveyd4BZfCohY9OIjJCppGLUAkJ3Q=; b=oCgegrCTv6BZRD
-	ESQal35oiNuMui0FCfIgboKWB1v6JNVjqVkpKTGr6aD2oCoQj7bvOuaxBjmRyMhuJ4OCGp4gXa8gE
-	zobMW/QeDjUabxa7vEf0jRuuQyIt7NBTBZpG7jX5tktfv8e5NllYvcVzYRPaRD/UHvFtqWzE1n7Uf
-	V90UFz3Hrb5QIAU2RYeZ2HKjZhqEwXDhqYRgefF+kcgL6+t4eLObTl7mdltSegt0SbwRohg5aVpSY
-	Yfz2LJzK2bqJ+pqwMu4kmi5dBg3y+X43QYXZfySOreXCE012YG388s0gidWA0hf+l6OtsV1vzLzKe
-	cPlX6utW2QW7zOrtunFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5qE00HDtqT35/m+lXkTHvavM9yBhJQwoAG/j2JzdGTM=; b=Lem7/pakiJLskb
+	gjmP3aJ3y97r7yRurexwxFFdMQzi1psFRQUc6j3TdVM2xbuz0zVxz5c5mcSmq3qcRSYkj0Q/1Nh5p
+	2xCAZ1lJrnipE+U/YYOXksvcEvx1uessjPIRy2f6vemlhZbVRxM5SLCLrcNR48plmJyPZgmqEid7o
+	0EJmbWaomptAGFzHIWqiSlN3ZtATrMQ45156FFLFKTzC5qiOKavn20gZeun4lI6ldZQvxAZtDm/bo
+	uKkRa+fCZv/hvIDzBw8BfIxKnJ+CpplfUUWfnQM+ojffCBhBZzyfrvEyldaKynrs3dC5aekjOuvrC
+	1RsBF1J+7904bn8GJAbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5dKi-0002mX-6Z; Sat, 22 Feb 2020 22:33:12 +0000
+	id 1j5dzX-0007zp-EL; Sat, 22 Feb 2020 23:15:23 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5dJX-0001rX-8b
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 22:32:01 +0000
+ id 1j5dyk-0007YS-MO
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 23:14:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582410717; bh=JXyUwfOt5qQZMrdIu4ex8maESbx2epZpUJC0gC9L4w4=;
- h=From:To:Cc:Subject:Date:References:From;
- b=AUYJNq8I8IHJuRrgU97v7kcLO4ytgLad+vrkMhZa1fJO9jjlC+X/sS6h3G5NFAgFg
- 4sOA6z6mAqm85JzyZElUYrIjUnGeXw8fkXPK16MAdCnbXudapqntos2Mb4FYL9aItt
- 3YUU54zQa0yTtHBfR8mlfZRX4t7AhE8SHY6zL6bk=
+ t=1582413271; bh=O+L3Dgir8ylc0hRKhh+YvNvVJjhY/rU659XZD2GVYnY=;
+ h=From:To:Cc:Subject:Date:From;
+ b=fCtF4hhmMcBT3t3pgLRjHBXlVS22ppcJg2B6akTO8amSo0XYfOoIBYZvmUnQ9kXk2
+ Z13/B3H07CMJb+3mz8qmpzNj4dRSfc4AGdUmb3rTIfhf3MCpnlrLYtKYCrB7XdSC8j
+ QfzFykHW+lf7whEzPV56NJ5N/20/re4ljiLnX5+U=
 From: Ondrej Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com, Maxime Ripard <mripard@kernel.org>,
+To: linux-sunxi@googlegroups.com, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 4/4] ARM: dts: sun8i-a83t-tbs-a711: Drop superfluous dr_mode
-Date: Sat, 22 Feb 2020 23:31:54 +0100
-Message-Id: <20200222223154.221632-5-megous@megous.com>
-In-Reply-To: <20200222223154.221632-1-megous@megous.com>
-References: <20200222223154.221632-1-megous@megous.com>
+Subject: [PATCH 0/4] Add support for vibrator motor for TBS A711 Tablet
+Date: Sun, 23 Feb 2020 00:14:24 +0100
+Message-Id: <20200222231428.233621-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_143159_469954_15981358 
-X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-CacheID: sfid-20200222_151435_070651_83CF04E9 
+X-CRM114-Status: UNSURE (   7.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -68,35 +67,33 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Tomas Novotny <tomas@novotny.cz>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Luca Weiss <luca@z3ntu.xyz>, Tomas Novotny <tomas@novotny.cz>,
+ linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Property dr_mode = "otg" is the default in sun8i-a83t.dtsi
+The tablet has a vibrator. Expose it via input subsystem (EV_FF).
 
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
- arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts | 1 -
- 1 file changed, 1 deletion(-)
+Please take a look.
 
-diff --git a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-index 32fa64a44d8b4..267653775203e 100644
---- a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-+++ b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-@@ -490,7 +490,6 @@ gnss {
- };
- 
- &usb_otg {
--	dr_mode = "otg";
- 	status = "okay";
- };
- 
+thank you and regards,
+  Ondrej Jirman
+
+Ondrej Jirman (4):
+  dt-bindings: input: gpio-vibrator: Don't require enable-gpios
+  input: gpio-vibra: Allow to use vcc-supply alone to control the
+    vibrator
+  ARM: dts: sun8i-a83t-tbs-a711: Add support for the vibrator motor
+  ARM: dts: sun8i-a83t-tbs-a711: Increase voltage on the vibrator
+
+ .../devicetree/bindings/input/gpio-vibrator.yaml         | 1 -
+ arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts                | 9 +++++++--
+ drivers/input/misc/gpio-vibra.c                          | 3 ++-
+ 3 files changed, 9 insertions(+), 4 deletions(-)
+
 -- 
 2.25.1
 
