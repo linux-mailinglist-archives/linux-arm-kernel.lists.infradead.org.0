@@ -2,42 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A11BF1691EE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 22:42:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10CD01691F1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 22 Feb 2020 22:46:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WHcjhU6xP/x4vaORmdgV3AEUxGbfv/1vn9NNPBeeBVc=; b=j/Vc86OE5ATLu3
-	w+KXyX4GsuY8Yykz3Hv377BJv+PlRvLyyh5SgH/pb3apAlq0QiI81ky0o5/Wm32kZ7l09tYol6nww
-	0WqUZLU8EIPruHVeJ9SOSqFJRkEina9775tJ192U29PX2h97ANGFO05u/jLnVMxhvjZGz6M5OnxQb
-	5WvITuO1IEeHlirtR+goQK/OitrH/H3h0Q+oAvly9uIdxqsbSW2hbvOAeUxho6piyOqAQwuczvolb
-	ar9y/iKioZkg/JPiTVXCw77Tbao/XXYKmt7z1K1aQfme6XLt6DX6Z8vVFyzFUo7slnMtny9xNN5EA
-	hzLzvl6Dbmf8EbthixmA==;
+	List-Owner; bh=e++0yynWpTYMFYyaQxV4Zvrk37CrkeXdy4+j0+aWn7M=; b=hXvufybNhlhTvq
+	lkoG4ZgHqt/3XBwznQZXVJ3DMmYKtVpaEqzriygE/9CjV7oblC1Yt03MHVwjGAR6s6/UUbR+RIZqp
+	smA3BAPkU/5C65NmR8Y1PqfVdCHrt2YzWlmiKK5bGaEwguRbhJVojcJz6uWw0VjESJduWDyLJcH5r
+	qCfpo0lAruZjR+v2RFp3KfpiobDXKyN7mI2JejFZz7J63Epr6bcEcxD5+A6RQsjJ11K2m/8t3Ufrm
+	mUmU/3Ww0oC6D9X183G1UwydWH+vF28N87ajztzStJHe8dy1fxG92Gm6/VD/d5Oad06W9LdC8BY3e
+	1G4U6wimH8MptVWOgtjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5cXn-0006LZ-5H; Sat, 22 Feb 2020 21:42:39 +0000
+	id 1j5cav-0007yp-Nn; Sat, 22 Feb 2020 21:45:53 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5cXb-0006L2-R7
- for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 21:42:29 +0000
+ id 1j5cam-0007xr-Qp
+ for linux-arm-kernel@lists.infradead.org; Sat, 22 Feb 2020 21:45:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582407746; bh=dcKJ6GDfjw8QBMbjUXyPISDFnoMrCuLTTe5c0g7pVbw=;
+ t=1582407943; bh=Y7u8gzOQF+zIIN95lvE+eXroq85RkvPktNaOVSqAk90=;
  h=From:To:Cc:Subject:Date:From;
- b=rQJKas5ihA94WS3YO+z1mztUCIwTlTp/jxaMTXLH3Ef6PrauCTy22n+MVavgSn9Sl
- +Lb98w5y3t/hfRZm9t/AVvt99h/rLMisJa56FvDaAA1oHDkcNR2u2NZB18sbFdrCz/
- eKpMSBvmkdM+3U1P6r6rC2o+IkAz085jyjUYwad4=
+ b=Y9jA0iQ5XLDNRTUxLDPuVKtHDRMpgKK1DEqOA78E6FvJDnVo6nvCwh30p9Ya+uz5m
+ 3Qr2TfxP8ujHWBelU+jvfIdvIofJ5Lj/M88p0jTbGNXH9DSN9Ni1UIZOOBmHyRvwOG
+ yu39vPbrs9UlU3v2yD0RDB2KVtbPwpaAQ1lm6yOA=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com
-Subject: [PATCH] ARM: dts: sun8i-h3: Add thermal trip points/cooling maps
-Date: Sat, 22 Feb 2020 22:42:24 +0100
-Message-Id: <20200222214224.209860-1-megous@megous.com>
+Subject: [PATCH] arm64: dts: sun50i-h5-orange-pi-pc2: Add CPUX voltage
+ regulator
+Date: Sat, 22 Feb 2020 22:45:41 +0100
+Message-Id: <20200222214541.210318-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_134228_048334_E9F9FA35 
-X-CRM114-Status: UNSURE (   6.84  )
+X-CRM114-CacheID: sfid-20200222_134545_042305_E224B678 
+X-CRM114-Status: UNSURE (   8.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -76,57 +77,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This enables passive cooling by down-regulating CPU voltage
-and frequency.
+Orange Pi PC2 features sy8106a regulator just like Orange Pi PC.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- arch/arm/boot/dts/sun8i-h3.dtsi | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+ .../dts/allwinner/sun50i-h5-orangepi-pc2.dts  | 29 +++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
-index 7d2e30a00cd2a..dca51548881a8 100644
---- a/arch/arm/boot/dts/sun8i-h3.dtsi
-+++ b/arch/arm/boot/dts/sun8i-h3.dtsi
-@@ -41,6 +41,7 @@
-  */
- 
- #include "sunxi-h3-h5.dtsi"
-+#include <dt-bindings/thermal/thermal.h>
- 
- / {
- 	cpus {
-@@ -204,6 +205,30 @@ cpu_thermal: cpu-thermal {
- 			polling-delay-passive = <0>;
- 			polling-delay = <0>;
- 			thermal-sensors = <&ths 0>;
-+
-+			trips {
-+				cpu_hot_trip: cpu-hot {
-+					temperature = <80000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
-+
-+				cpu_very_hot_trip: cpu-very-hot {
-+					temperature = <100000>;
-+					hysteresis = <0>;
-+					type = "critical";
-+				};
-+			};
-+
-+			cooling-maps {
-+				cpu-hot-limit {
-+					trip = <&cpu_hot_trip>;
-+					cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+							 <&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
- 		};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+index 70b5f09984218..5feedde95b5fc 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+@@ -85,6 +85,10 @@ reg_usb0_vbus: usb0-vbus {
  	};
  };
+ 
++&cpu0 {
++	cpu-supply = <&reg_vdd_cpux>;
++};
++
+ &codec {
+ 	allwinner,audio-routing =
+ 		"Line Out", "LINEOUT",
+@@ -180,6 +184,31 @@ flash@0 {
+ 	};
+ };
+ 
++&r_i2c {
++	status = "okay";
++
++	reg_vdd_cpux: regulator@65 {
++		compatible = "silergy,sy8106a";
++		reg = <0x65>;
++		regulator-name = "vdd-cpux";
++		silergy,fixed-microvolt = <1200000>;
++		/*
++		 * The datasheet uses 1.1V as the minimum value of VDD-CPUX,
++		 * however both the Armbian DVFS table and the official one
++		 * have operating points with voltage under 1.1V, and both
++		 * DVFS table are known to work properly at the lowest
++		 * operating point.
++		 *
++		 * Use 1.0V as the minimum voltage instead.
++		 */
++		regulator-min-microvolt = <1000000>;
++		regulator-max-microvolt = <1400000>;
++		regulator-ramp-delay = <200>;
++		regulator-boot-on;
++		regulator-always-on;
++	};
++};
++
+ &uart0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&uart0_pa_pins>;
 -- 
 2.25.1
 
