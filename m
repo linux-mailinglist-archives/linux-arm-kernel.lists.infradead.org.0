@@ -2,60 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26E06169904
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 18:30:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F238169948
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 19:00:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N0e7XMjF81dtwSu4q2FWonsrkWUVHuM+AVAFCmZMdQI=; b=LLz9zU0hJHzOcY
-	dbicaRfMamPYIPKIIslhz7TYYRyYXiZAW1Hz0Z8SAmqp6vF6E3Apyi6EmHrYZ+oP8tWBp4/21GDpH
-	1TSDGXE/2AIgtLCZHQ5lvfhZGw24+Ub+7Yi03u/2Bt3FmdCioQjX8He27WgmNEhoVX/Sh9QrFW6V+
-	ICZXvHxazdZn/SCnh57zYJiQs6G+5rNAgFIEeOxDjTNajy94RemSzwtCu3wJ4Mcl3leNvdQNpuIuk
-	5ptk7JdsHuCGjZjjda+WktJlX9pKphgdXefqFR2pqnLPVEeXfEMmccmiORP5aX5tF9PB1Pq+b38/p
-	feViC5wzg4nGq+RWQVAg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2izDxiX6vmJ+eda1wGST0tigtoFNBzoeqjmDEDkSCag=; b=d4cAGt72y7J2ZX
+	XI6RU8k8yl91fswn0iOvpM6l5oxc5Aswi4DADVIuOyA7QzdoeWaJSOKBo/jRlCclFJDxU8TefimSh
+	2xyKDYJfevNN2hhlcD6h6mCsEumqFbugwodMs7Y8JYQ0qFzftYQ9IWC+oy+3L3USL2kkPv1s714LQ
+	PGvSXGEOknCVqNASGXTuWEmofj4AjRqJNazq++RTmry1rsuPd9JP9OJpPjAmeJwVbr9ohpxxUq751
+	Lkb6q0x3S6s3slrD2n74Yu+KHXIxM1gpvCU+yw0oMJwFRzE51ymmi0y/mG7SBXyWhoN/KwtXrTPo3
+	Qsar3k2lrdF/cv+k+c1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5v5O-0008QG-58; Sun, 23 Feb 2020 17:30:34 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1j5vYL-0000iT-KF; Sun, 23 Feb 2020 18:00:29 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5v4L-0006Xi-Cj
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 17:29:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582478966; bh=nYjRE42O8TZ0UQythdBEtkVY0pFM4voKWIXFp4mwsM8=;
- h=From:To:Cc:Subject:Date:References:From;
- b=sHbX+Q0rsKk4TaP+hTIf87Boz7laVCWZHrz6vsXgkrct+eQld00O9iqKtkZyUUI9s
- 1CNz0gnZS6M628hTF7+/EvsPZ9eWgF47Bee+UKC1fk3J8J2ZBLOzDdC4Yn9ZgeDgEJ
- URkqVq0TAZ7ut6H5eMn4EyJ9RNQTaQ/7QnnhPvcI=
-From: Ondrej Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 3/3] arm64: dts: allwinner: Add initial support for Pine64
- PinePhone
-Date: Sun, 23 Feb 2020 18:29:16 +0100
-Message-Id: <20200223172916.843379-4-megous@megous.com>
-In-Reply-To: <20200223172916.843379-1-megous@megous.com>
-References: <20200223172916.843379-1-megous@megous.com>
+ id 1j5vYD-0000hm-HH; Sun, 23 Feb 2020 18:00:23 +0000
+Received: from [192.168.1.183] ([37.4.249.121]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MWAjC-1iuOAk0uhm-00Xfn4; Sun, 23 Feb 2020 19:00:00 +0100
+Subject: Re: [PATCH v2] irqchip/bcm2835: Quiesce IRQs left enabled by
+ bootloader
+To: Lukas Wunner <lukas@wunner.de>, Marc Zyngier <maz@kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>
+References: <20200212123651.apio6kno2cqhcskb@wunner.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ xsFNBFt6gBMBEACub/pBevHxbvJefyZG32JINmn2bsEPX25V6fejmyYwmCGKjFtL/DoUMEVH
+ DxCJ47BMXo344fHV1C3AnudgN1BehLoBtLHxmneCzgH3KcPtWW7ptj4GtJv9CQDZy27SKoEP
+ xyaI8CF0ygRxJc72M9I9wmsPZ5bUHsLuYWMqQ7JcRmPs6D8gBkk+8/yngEyNExwxJpR1ylj5
+ bjxWDHyYQvuJ5LzZKuO9LB3lXVsc4bqXEjc6VFuZFCCk/syio/Yhse8N+Qsx7MQagz4wKUkQ
+ QbfXg1VqkTnAivXs42VnIkmu5gzIw/0tRJv50FRhHhxpyKAI8B8nhN8Qvx7MVkPc5vDfd3uG
+ YW47JPhVQBcUwJwNk/49F9eAvg2mtMPFnFORkWURvP+G6FJfm6+CvOv7YfP1uewAi4ln+JO1
+ g+gjVIWl/WJpy0nTipdfeH9dHkgSifQunYcucisMyoRbF955tCgkEY9EMEdY1t8iGDiCgX6s
+ 50LHbi3k453uacpxfQXSaAwPksl8MkCOsv2eEr4INCHYQDyZiclBuuCg8ENbR6AGVtZSPcQb
+ enzSzKRZoO9CaqID+favLiB/dhzmHA+9bgIhmXfvXRLDZze8po1dyt3E1shXiddZPA8NuJVz
+ EIt2lmI6V8pZDpn221rfKjivRQiaos54TgZjjMYI7nnJ7e6xzwARAQABzSlTdGVmYW4gV2Fo
+ cmVuIDxzdGVmYW4ud2FocmVuQGluLXRlY2guY29tPsLBdwQTAQgAIQUCXIdehwIbAwULCQgH
+ AgYVCAkKCwIEFgIDAQIeAQIXgAAKCRCUgewPEZDy2yHTD/9UF7QlDkGxzQ7AaCI6N95iQf8/
+ 1oSUaDNu2Y6IK+DzQpb1TbTOr3VJwwY8a3OWz5NLSOLMWeVxt+osMmlQIGubD3ODZJ8izPlG
+ /JrNt5zSdmN5IA5f3esWWQVKvghZAgTDqdpv+ZHW2EmxnAJ1uLFXXeQd3UZcC5r3/g/vSaMo
+ 9xek3J5mNuDm71lEWsAs/BAcFc+ynLhxwBWBWwsvwR8bHtJ5DOMWvaKuDskpIGFUe/Kb2B+j
+ ravQ3Tn6s/HqJM0cexSHz5pe+0sGvP+t9J7234BFQweFExriey8UIxOr4XAbaabSryYnU/zV
+ H9U1i2AIQZMWJAevCvVgQ/U+NeRhXude9YUmDMDo2sB2VAFEAqiF2QUHPA2m8a7EO3yfL4rM
+ k0iHzLIKvh6/rH8QCY8i3XxTNL9iCLzBWu/NOnCAbS+zlvLZaiSMh5EfuxTtv4PlVdEjf62P
+ +ZHID16gUDwEmazLAMrx666jH5kuUCTVymbL0TvB+6L6ARl8ANyM4ADmkWkpyM22kCuISYAE
+ fQR3uWXZ9YgxaPMqbV+wBrhJg4HaN6C6xTqGv3r4B2aqb77/CVoRJ1Z9cpHCwiOzIaAmvyzP
+ U6MxCDXZ8FgYlT4v23G5imJP2zgX5s+F6ACUJ9UQPD0uTf+J9Da2r+skh/sWOnZ+ycoHNBQv
+ ocZENAHQf87BTQRbeoATARAA2Hd0fsDVK72RLSDHby0OhgDcDlVBM2M+hYYpO3fX1r++shiq
+ PKCHVAsQ5bxe7HmJimHa4KKYs2kv/mlt/CauCJ//pmcycBM7GvwnKzmuXzuAGmVTZC6WR5Lk
+ akFrtHOzVmsEGpNv5Rc9l6HYFpLkbSkVi5SPQZJy+EMgMCFgjrZfVF6yotwE1af7HNtMhNPa
+ LDN1oUKF5j+RyRg5iwJuCDknHjwBQV4pgw2/5vS8A7ZQv2MbW/TLEypKXif78IhgAzXtE2Xr
+ M1n/o6ZH71oRFFKOz42lFdzdrSX0YsqXgHCX5gItLfqzj1psMa9o1eiNTEm1dVQrTqnys0l1
+ 8oalRNswYlQmnYBwpwCkaTHLMHwKfGBbo5dLPEshtVowI6nsgqLTyQHmqHYqUZYIpigmmC3S
+ wBWY1V6ffUEmkqpAACEnL4/gUgn7yQ/5d0seqnAq2pSBHMUUoCcTzEQUWVkiDv3Rk7hTFmhT
+ sMq78xv2XRsXMR6yQhSTPFZCYDUExElEsSo9FWHWr6zHyYcc8qDLFvG9FPhmQuT2s9Blx6gI
+ 323GnEq1lwWPJVzP4jQkJKIAXwFpv+W8CWLqzDWOvdlrDaTaVMscFTeH5W6Uprl65jqFQGMp
+ cRGCs8GCUW13H0IyOtQtwWXA4ny+SL81pviAmaSXU8laKaRu91VOVaF9f4sAEQEAAcLBXwQY
+ AQIACQUCW3qAEwIbDAAKCRCUgewPEZDy2+oXD/9cHHRkBZOfkmSq14Svx062PtU0KV470TSn
+ p/jWoYJnKIw3G0mXIRgrtH2dPwpIgVjsYyRSVMKmSpt5ZrDf9NtTbNWgk8VoLeZzYEo+J3oP
+ qFrTMs3aYYv7e4+JK695YnmQ+mOD9nia915tr5AZj95UfSTlyUmyic1d8ovsf1fP7XCUVRFc
+ RjfNfDF1oL/pDgMP5GZ2OwaTejmyCuHjM8IR1CiavBpYDmBnTYk7Pthy6atWvYl0fy/CqajT
+ Ksx7+p9xziu8ZfVX+iKBCc+He+EDEdGIDhvNZ/IQHfOB2PUXWGS+s9FNTxr/A6nLGXnA9Y6w
+ 93iPdYIwxS7KXLoKJee10DjlzsYsRflFOW0ZOiSihICXiQV1uqM6tzFG9gtRcius5UAthWaO
+ 1OwUSCQmfCOm4fvMIJIA9rxtoS6OqRQciF3crmo0rJCtN2awZfgi8XEif7d6hjv0EKM9XZoi
+ AZYZD+/iLm5TaKWN6oGIti0VjJv8ZZOZOfCb6vqFIkJW+aOu4orTLFMz28aoU3QyWpNC8FFm
+ dYsVua8s6gN1NIa6y3qa/ZB8bA/iky59AEz4iDIRrgUzMEg8Ak7Tfm1KiYeiTtBDCo25BvXj
+ bqsyxkQD1nkRm6FAVzEuOPIe8JuqW2xD9ixGYvjU5hkRgJp3gP5b+cnG3LPqquQ2E6goKUML AQ==
+Message-ID: <61cc6b74-3dd2-38d0-6da0-eb3fbd87c598@i2se.com>
+Date: Sun, 23 Feb 2020 18:59:56 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <20200212123651.apio6kno2cqhcskb@wunner.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:7RUdhOS5DmSTuTmyGi4Iq7MfLsGumlvnrS8JS/sT0MC8iUH4rq1
+ Mf3npUo9rknsG0G5d6d9Eua0pA+hc2fvfH+vnrwlA4IrURXqhVyTuMU5Ber5wHB8x0ZLSpl
+ h5vngHdp2FpvlIr5Bl/UMVwndwZsmoWcjCH54nRpa5Sv+h2QA41yoxpAKCovMg5X5fVAhUm
+ WDmjRMXd7pQXapxUcKdbQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:RqMdS6zK+wI=:Zh5w/V9yi2756qUbnmgCN4
+ rp+YR8zKxip4Uf7W2RSe4jF2f+zPnoXQ9laOnfEAmGaRDU0tG7c/9Hg3HrEGQWIxECXBePIwh
+ lbKaOkeQ8MN9mSDjFCvnWT8DZ3F4iN50sHONmeYaZ1Y9e6ho1+p0VoyY2tm+8isjB3JHsZnUK
+ tz0Lau06optUm7gWNRKih+WfXWKzm3p4XuuOmhYqfuMTWc5F7m4xrDTEXgJfUyWaZ9O6m7f3m
+ ODJT8thNsoDESFmlxqpjDw1Mv4HwBx6CvfnSwoOxUXBwTd2MGUYnKTwH/w22VDysQaZ9JUEzP
+ knmaxeaUyZWecUe5VaE++24G6tyGHq7qtiQzrp0OsNut6zBlcmMAqa4/ZcIMSLmr22qIzIKcD
+ QV7u70WBYDyEbl6P2yA9pUCyjzfh0XezalXwLCUcDUJDlFksIycA/8l4lPGCNOLUpd+LSxspW
+ 9vPv06Zbec0y53Uqtb9mMc4hSI9IQfwlVvDcD+iAsNZWqM81xIE/v4FQ0RwDgN1Cr5P/3LDCp
+ j30PV3GhDcDsw+tTmPn3l7VGEtkRfCisINQkGKSzn89fSWDiCjqj+gcC6CsaUjq9im+Mo99sK
+ EJ0QlLLsYawV+fGG2uh9TzcUvPNkirpit0MhXs1mPi50kD2G1xHE96FS7z9OCZhITXDGfcKXG
+ HikDzO+DOmPl7pV44kAbAUqVFbuyR0TtisxBU40rM/3m3mbwPY/kHF0bx6qoAigeyvO0rOFM7
+ eEkeCac0JqBf9uwChnwoCSZG+nxymfdUUXJF0ta4dL16EXssw3z5yER8SyoqMjTdUdYsj4das
+ XbP0LqpodrLqDSZB5a9pRcwV59OCU7eZfoXbDzKQmGl0chdJBc1ZLrTdI2rtR1DP4vgGv49
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_092929_777001_07EBDB77 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200223_100021_871102_686A61C9 
+X-CRM114-Status: GOOD (  32.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,491 +122,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
- Samuel Holland <samuel@sholland.org>, Bhushan Shah <bshah@kde.org>,
- linux-kernel@vger.kernel.org, Luca Weiss <luca@z3ntu.xyz>,
- Martijn Braam <martijn@brixit.nl>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- devicetree@vger.kernel.org, Corentin Labbe <clabbe@baylibre.com>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Cc: linux-arm-kernel@lists.infradead.org, Matthias Brugger <mbrugger@suse.com>,
+ Jason Cooper <jason@lakedaemon.net>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Serge Schneider <serge@raspberrypi.org>,
+ linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Martin Sperl <kernel@martin.sperl.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Kristina Brooks <notstina@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-At them moment PinePhone comes in two slightly incompatible variants:
+Hi Lukas,
 
-- 1.0: Early Developer Batch
-- 1.1: Braveheart Batch
+Am 12.02.20 um 13:36 schrieb Lukas Wunner:
+> On Tue, Feb 11, 2020 at 08:47:05PM -0800, Florian Fainelli wrote:
+>> The commit message is a bit long and starts
+>> going into details that I am not sure add anything
+> I adhere to the school of thought which holds that commit messages
+> shall provide complete context, including numbers to back up claims,
+> user-visible impact, affected versions, genesis of the fix and so on.
+> By that logic there's no such a thing as a too long commit message.
+>
+> Nevertheless please find a shortened version below, complete with
+> the Fixes tag you requested as well as your R-b.
+>
+>
+> On Wed, Feb 12, 2020 at 08:13:29AM +0000, Marc Zyngier wrote:
+>> It otherwise looks good. You can either resend it with a fixed commit
+>> message,
+>> or provide me with a commit message that I can stick there while applying
+>> it.
+> The below also contains the patch itself, so can be applied directly
+> with git am --scissors.  Feel free to tweak as you see fit.
+> Shout if I've missed anything.  Thanks.
 
-There will be at least one more incompatible variant in the very near
-future, so let's start by sharing the dtsi among multiple variants,
-right away, even though the HW description doesn't yet include the
-different bits.
+thanks for all the investigation. Unfortunately the patch below doesn't
+compile, since it lacks the definiton of REG_FIQ_ENABLE.
 
-This is a basic DT that includes only features that are already
-supported by mainline drivers.
+Btw the name is a little bit unlucky because it defines a single flag
+within REG_FIQ_CONTROL instead of a separate register.
 
-Co-developed-by: Samuel Holland <samuel@sholland.org>
-Signed-off-by: Samuel Holland <samuel@sholland.org>
-Co-developed-by: Martijn Braam <martijn@brixit.nl>
-Signed-off-by: Martijn Braam <martijn@brixit.nl>
-Co-developed-by: Luca Weiss <luca@z3ntu.xyz>
-Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
-Signed-off-by: Bhushan Shah <bshah@kde.org>
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
- arch/arm64/boot/dts/allwinner/Makefile        |   2 +
- .../allwinner/sun50i-a64-pinephone-1.0.dts    |  11 +
- .../allwinner/sun50i-a64-pinephone-1.1.dts    |  11 +
- .../dts/allwinner/sun50i-a64-pinephone.dtsi   | 385 ++++++++++++++++++
- 4 files changed, 409 insertions(+)
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
- create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+Regards
+Stefan
 
-diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
-index cf4f78617c3f3..79ca263672c38 100644
---- a/arch/arm64/boot/dts/allwinner/Makefile
-+++ b/arch/arm64/boot/dts/allwinner/Makefile
-@@ -9,6 +9,8 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-orangepi-win.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pine64-lts.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pine64-plus.dtb sun50i-a64-pine64.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pinebook.dtb
-+dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pinephone-1.0.dtb
-+dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pinephone-1.1.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-sopine-baseboard.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-teres-i.dtb
- dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-bananapi-m2-plus.dtb
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
-new file mode 100644
-index 0000000000000..0c42272106afa
---- /dev/null
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
-@@ -0,0 +1,11 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (C) 2020 Ondrej Jirman <megous@megous.com>
-+
-+/dts-v1/;
-+
-+#include "sun50i-a64-pinephone.dtsi"
-+
-+/ {
-+	model = "Pine64 PinePhone Developer Batch (1.0)";
-+	compatible = "pine64,pinephone-1.0", "allwinner,sun50i-a64";
-+};
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
-new file mode 100644
-index 0000000000000..06a775c41664b
---- /dev/null
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
-@@ -0,0 +1,11 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (C) 2020 Ondrej Jirman <megous@megous.com>
-+
-+/dts-v1/;
-+
-+#include "sun50i-a64-pinephone.dtsi"
-+
-+/ {
-+	model = "Pine64 PinePhone Braveheart (1.1)";
-+	compatible = "pine64,pinephone-1.1", "allwinner,sun50i-a64";
-+};
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
-new file mode 100644
-index 0000000000000..d0cf21d82c9e9
---- /dev/null
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
-@@ -0,0 +1,385 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+// Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.xyz>
-+// Copyright (C) 2020 Ondrej Jirman <megous@megous.com>
-+
-+#include "sun50i-a64.dtsi"
-+#include "sun50i-a64-cpu-opp.dtsi"
-+
-+#include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/input/input.h>
-+#include <dt-bindings/leds/common.h>
-+#include <dt-bindings/pwm/pwm.h>
-+
-+/ {
-+	aliases {
-+		serial0 = &uart0;
-+	};
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		blue {
-+			function = LED_FUNCTION_INDICATOR;
-+			function-enumerator = <1>;
-+			color = <LED_COLOR_ID_BLUE>;
-+			gpios = <&pio 3 20 GPIO_ACTIVE_HIGH>; /* PD20 */
-+		};
-+
-+		green {
-+			function = LED_FUNCTION_INDICATOR;
-+			function-enumerator = <2>;
-+			color = <LED_COLOR_ID_GREEN>;
-+			gpios = <&pio 3 18 GPIO_ACTIVE_HIGH>; /* PD18 */
-+		};
-+
-+		red {
-+			function = LED_FUNCTION_INDICATOR;
-+			function-enumerator = <3>;
-+			color = <LED_COLOR_ID_RED>;
-+			gpios = <&pio 3 19 GPIO_ACTIVE_HIGH>; /* PD19 */
-+		};
-+	};
-+
-+	speaker_amp: audio-amplifier {
-+		compatible = "simple-audio-amplifier";
-+		enable-gpios = <&pio 2 7 GPIO_ACTIVE_HIGH>; /* PC7 */
-+		sound-name-prefix = "Speaker Amp";
-+	};
-+
-+	vibrator {
-+		compatible = "gpio-vibrator";
-+		enable-gpios = <&pio 3 2 GPIO_ACTIVE_HIGH>; /* PD2 */
-+		vcc-supply = <&reg_dcdc1>;
-+	};
-+};
-+
-+&codec {
-+	status = "okay";
-+};
-+
-+&codec_analog {
-+	cpvdd-supply = <&reg_eldo1>;
-+	status = "okay";
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
-+&cpu1 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
-+&cpu2 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
-+&cpu3 {
-+	cpu-supply = <&reg_dcdc2>;
-+};
-+
-+&dai {
-+	status = "okay";
-+};
-+
-+&ehci0 {
-+	status = "okay";
-+};
-+
-+&ehci1 {
-+	status = "okay";
-+};
-+
-+&i2c1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c1_pins>;
-+	status = "okay";
-+
-+	/* Magnetometer */
-+	lis3mdl@1e {
-+		compatible = "st,lis3mdl-magn";
-+		reg = <0x1e>;
-+		vdd-supply = <&reg_dldo1>;
-+		vddio-supply = <&reg_dldo1>;
-+	};
-+
-+	/* Accelerometer/gyroscope */
-+	mpu6050@68 {
-+		compatible = "invensense,mpu6050";
-+		reg = <0x68>;
-+		interrupt-parent = <&pio>;
-+		interrupts = <7 5 IRQ_TYPE_EDGE_RISING>; /* PH5 */
-+		vdd-supply = <&reg_dldo1>;
-+		vddio-supply = <&reg_dldo1>;
-+	};
-+};
-+
-+/* Connected to pogo pins */
-+&i2c2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c2_pins>;
-+	status = "okay";
-+};
-+
-+&lradc {
-+	vref-supply = <&reg_aldo3>;
-+	status = "okay";
-+
-+	button-200 {
-+		label = "Volume Up";
-+		linux,code = <KEY_VOLUMEUP>;
-+		channel = <0>;
-+		voltage = <200000>;
-+	};
-+
-+	button-400 {
-+		label = "Volume Down";
-+		linux,code = <KEY_VOLUMEDOWN>;
-+		channel = <0>;
-+		voltage = <400000>;
-+	};
-+};
-+
-+&mmc0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc0_pins>;
-+	vmmc-supply = <&reg_dcdc1>;
-+	vqmmc-supply = <&reg_dcdc1>;
-+	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
-+	disable-wp;
-+	bus-width = <4>;
-+	status = "okay";
-+};
-+
-+&mmc2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc2_pins>;
-+	vmmc-supply = <&reg_dcdc1>;
-+	vqmmc-supply = <&reg_dcdc1>;
-+	bus-width = <8>;
-+	non-removable;
-+	cap-mmc-hw-reset;
-+	status = "okay";
-+};
-+
-+&ohci0 {
-+	status = "okay";
-+};
-+
-+&ohci1 {
-+	status = "okay";
-+};
-+
-+&pio {
-+	vcc-pb-supply = <&reg_dcdc1>;
-+	vcc-pc-supply = <&reg_dcdc1>;
-+	vcc-pd-supply = <&reg_dcdc1>;
-+	vcc-pe-supply = <&reg_aldo1>;
-+	vcc-pf-supply = <&reg_dcdc1>;
-+	vcc-pg-supply = <&reg_dldo4>;
-+	vcc-ph-supply = <&reg_dcdc1>;
-+};
-+
-+&r_pio {
-+	/*
-+	 * FIXME: We can't add that supply for now since it would
-+	 * create a circular dependency between pinctrl, the regulator
-+	 * and the RSB Bus.
-+	 *
-+	 * vcc-pl-supply = <&reg_aldo2>;
-+	 */
-+};
-+
-+&r_rsb {
-+	status = "okay";
-+
-+	axp803: pmic@3a3 {
-+		compatible = "x-powers,axp803";
-+		reg = <0x3a3>;
-+		interrupt-parent = <&r_intc>;
-+		interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
-+	};
-+};
-+
-+#include "axp803.dtsi"
-+
-+&ac_power_supply {
-+	status = "okay";
-+};
-+
-+&battery_power_supply {
-+	status = "okay";
-+};
-+
-+&reg_aldo1 {
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "dovdd-csi";
-+};
-+
-+&reg_aldo2 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "vcc-pl";
-+};
-+
-+&reg_aldo3 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <2700000>;
-+	regulator-max-microvolt = <3300000>;
-+	regulator-name = "vcc-pll-avcc";
-+};
-+
-+&reg_dcdc1 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <3300000>;
-+	regulator-max-microvolt = <3300000>;
-+	regulator-name = "vcc-3v3";
-+};
-+
-+&reg_dcdc2 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1000000>;
-+	regulator-max-microvolt = <1300000>;
-+	regulator-name = "vdd-cpux";
-+};
-+
-+/* DCDC3 is polyphased with DCDC2 */
-+
-+&reg_dcdc5 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1200000>;
-+	regulator-max-microvolt = <1200000>;
-+	regulator-name = "vcc-dram";
-+};
-+
-+&reg_dcdc6 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1100000>;
-+	regulator-max-microvolt = <1100000>;
-+	regulator-name = "vdd-sys";
-+};
-+
-+&reg_dldo1 {
-+	regulator-min-microvolt = <3300000>;
-+	regulator-max-microvolt = <3300000>;
-+	regulator-name = "vcc-dsi-sensor";
-+};
-+
-+&reg_dldo2 {
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "vcc-mipi-io";
-+};
-+
-+&reg_dldo3 {
-+	regulator-min-microvolt = <2800000>;
-+	regulator-max-microvolt = <2800000>;
-+	regulator-name = "avdd-csi";
-+};
-+
-+&reg_dldo4 {
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <3300000>;
-+	regulator-name = "vcc-wifi-io";
-+};
-+
-+&reg_eldo1 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "vcc-lpddr";
-+};
-+
-+&reg_eldo3 {
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "dvdd-1v8-csi";
-+};
-+
-+&reg_fldo1 {
-+	regulator-min-microvolt = <1200000>;
-+	regulator-max-microvolt = <1200000>;
-+	regulator-name = "vcc-1v2-hsic";
-+};
-+
-+&reg_fldo2 {
-+	regulator-always-on;
-+	regulator-min-microvolt = <1100000>;
-+	regulator-max-microvolt = <1100000>;
-+	regulator-name = "vdd-cpus";
-+};
-+
-+&reg_ldo_io0 {
-+	regulator-min-microvolt = <3300000>;
-+	regulator-max-microvolt = <3300000>;
-+	regulator-name = "vcc-lcd-ctp-stk";
-+	status = "okay";
-+};
-+
-+&reg_ldo_io1 {
-+	regulator-min-microvolt = <1800000>;
-+	regulator-max-microvolt = <1800000>;
-+	regulator-name = "vcc-1v8-typec";
-+	status = "okay";
-+};
-+
-+&reg_rtc_ldo {
-+	regulator-name = "vcc-rtc";
-+};
-+
-+&sound {
-+	status = "okay";
-+	simple-audio-card,aux-devs = <&codec_analog>, <&speaker_amp>;
-+	simple-audio-card,widgets = "Microphone", "Headset Microphone",
-+				    "Microphone", "Internal Microphone",
-+				    "Headphone", "Headphone Jack",
-+				    "Speaker", "Internal Earpiece",
-+				    "Speaker", "Internal Speaker";
-+	simple-audio-card,routing =
-+			"Headphone Jack", "HP",
-+			"Internal Earpiece", "EARPIECE",
-+			"Internal Speaker", "Speaker Amp OUTL",
-+			"Internal Speaker", "Speaker Amp OUTR",
-+			"Speaker Amp INL", "LINEOUT",
-+			"Speaker Amp INR", "LINEOUT",
-+			"Left DAC", "AIF1 Slot 0 Left",
-+			"Right DAC", "AIF1 Slot 0 Right",
-+			"AIF1 Slot 0 Left ADC", "Left ADC",
-+			"AIF1 Slot 0 Right ADC", "Right ADC",
-+			"Internal Microphone", "MBIAS",
-+			"MIC1", "Internal Microphone",
-+			"Headset Microphone", "HBIAS",
-+			"MIC2", "Headset Microphone";
-+};
-+
-+&uart0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart0_pb_pins>;
-+	status = "okay";
-+};
-+
-+/* Connected to the modem */
-+&uart3 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart3_pins>;
-+	status = "okay";
-+};
-+
-+&usb_otg {
-+	dr_mode = "peripheral";
-+	status = "okay";
-+};
-+
-+&usb_power_supply {
-+	status = "okay";
-+};
-+
-+&usbphy {
-+	status = "okay";
-+};
--- 
-2.25.1
-
+>
+> -- >8 --
+> From: Lukas Wunner <lukas@wunner.de>
+> Subject: [PATCH] irqchip/bcm2835: Quiesce IRQs left enabled by bootloader
+>
+> Per the spec, the BCM2835's IRQs are all disabled when coming out of
+> power-on reset.  Its IRQ driver assumes that's still the case when the
+> kernel boots and does not perform any initialization of the registers.
+> However the Raspberry Pi Foundation's bootloader leaves the USB
+> interrupt enabled when handing over control to the kernel.
+>
+> Quiesce IRQs and the FIQ if they were left enabled and log a message to
+> let users know that they should update the bootloader once a fixed
+> version is released.
+>
+> If the USB interrupt is not quiesced and the USB driver later on claims
+> the FIQ (as it does on the Raspberry Pi Foundation's downstream kernel),
+> interrupt latency for all other peripherals increases and occasional
+> lockups occur.  That's because both the FIQ and the normal USB interrupt
+> fire simultaneously.
+>
+> On a multicore Raspberry Pi, if normal interrupts are routed to CPU 0
+> and the FIQ to CPU 1 (hardcoded in the Foundation's kernel), then a USB
+> interrupt causes CPU 0 to spin in bcm2836_chained_handle_irq() until the
+> FIQ on CPU 1 has cleared it.  Other peripherals' interrupts are starved
+> as long.  I've seen CPU 0 blocked for up to 2.9 msec.  eMMC throughput
+> on a Compute Module 3 irregularly dips to 23.0 MB/s without this commit
+> but remains relatively constant at 23.5 MB/s with this commit.
+>
+> The lockups occur when CPU 0 receives a USB interrupt while holding a
+> lock which CPU 1 is trying to acquire while the FIQ is temporarily
+> disabled on CPU 1.  At best users get RCU CPU stall warnings, but most
+> of the time the system just freezes.
+>
+> Fixes: 89214f009c1d ("ARM: bcm2835: add interrupt controller driver")
+> Signed-off-by: Lukas Wunner <lukas@wunner.de>
+> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: stable@vger.kernel.org # v3.7+
+> Cc: Serge Schneider <serge@raspberrypi.org>
+> Cc: Kristina Brooks <notstina@gmail.com>
+> ---
+>  drivers/irqchip/irq-bcm2835.c | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
+>
+> diff --git a/drivers/irqchip/irq-bcm2835.c b/drivers/irqchip/irq-bcm2835.c
+> index 418245d..eca9ac7 100644
+> --- a/drivers/irqchip/irq-bcm2835.c
+> +++ b/drivers/irqchip/irq-bcm2835.c
+> @@ -135,6 +135,7 @@ static int __init armctrl_of_init(struct device_node *node,
+>  {
+>  	void __iomem *base;
+>  	int irq, b, i;
+> +	u32 reg;
+>  
+>  	base = of_iomap(node, 0);
+>  	if (!base)
+> @@ -157,6 +158,19 @@ static int __init armctrl_of_init(struct device_node *node,
+>  				handle_level_irq);
+>  			irq_set_probe(irq);
+>  		}
+> +
+> +		reg = readl_relaxed(intc.enable[b]);
+> +		if (reg) {
+> +			writel_relaxed(reg, intc.disable[b]);
+> +			pr_err(FW_BUG "Bootloader left irq enabled: "
+> +			       "bank %d irq %*pbl\n", b, IRQS_PER_BANK, &reg);
+> +		}
+> +	}
+> +
+> +	reg = readl_relaxed(base + REG_FIQ_CONTROL);
+> +	if (reg & REG_FIQ_ENABLE) {
+> +		writel_relaxed(0, base + REG_FIQ_CONTROL);
+> +		pr_err(FW_BUG "Bootloader left fiq enabled\n");
+>  	}
+>  
+>  	if (is_2836) {
 
 _______________________________________________
 linux-arm-kernel mailing list
