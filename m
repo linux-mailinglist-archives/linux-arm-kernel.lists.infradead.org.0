@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFA721699BF
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 20:31:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B65C1699C0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 20:31:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=X+5DJk3nBVs8P3MDoJjG8/pUKy2pcoj24bpOrXXulY8=; b=rgdcAgxrslFTsLPsaBnUnlSL2w
-	lI9NelWwUtI5jRFScOQF18FYteR51olAWvCSQ7CHPYV9SxYqlhSxTgLxgSSj69PRASiYCA4+3BNGr
-	MjkY6M4FD+G3Zff1Jw7XI7ry+GAJfGxrqOOTXwuocSRnhT1imXN+XJUnz2eUiB8nBYJ1ues8WiP+Y
-	UfUNiVjNzi0tE5HxlqnKCk5bKoLf1lknSTybnSj4EZeZVLj1M8rHpJcpptUb5YGspDMpa9PNEYX8R
-	mCTuhp/vmx/q5YOzBgJWBfaoZZEiu7EHdrZoskEJ2sTB8KP0aXkjbcyLVDfVFZ4paM18y1kw6iXIy
-	axhKn1lw==;
+	bh=bGyJXWL/6fRWxzoL1qIEFxcOLLOEDBjoSztt9eJNUxY=; b=kPJ6UD/+3YmFJHVgZ4dTbwzTTF
+	7olVxuM2wbhJ5+2sYLdrC+c/qxjJxfj66Ln4o71LPiDevOnt0bjiRNkZqPZMAYXM3touV6ALd1Mkb
+	cP79mflTdmB6oAIvoFnxA+B61LE5cHv95nk44BZKRmsQQwJSuOLB6ox7B40FlpYv3gLpTm0AsT9hX
+	+A6p5L7vJI0uVzXpyyQRd1BpweK5t2lSiHbmFhFDh8817PRYHEkn5D2HwxK3IIMOSTVX1PdY8v4wa
+	siHGnmkcYyeb1jH2un6pjdyPHjfuVcG/UoYxn4tDNRD35j3Zu0yjoXiyjn5M9U2zjOM1wH0TpPgc6
+	XRVUw3Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5wy0-0003Bp-CX; Sun, 23 Feb 2020 19:31:04 +0000
+	id 1j5wyA-0003T0-VA; Sun, 23 Feb 2020 19:31:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5wwz-0001IJ-7n
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 19:30:03 +0000
+ id 1j5wx2-0001RL-1s
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 19:30:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7C03A139F;
- Sun, 23 Feb 2020 11:30:00 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D69A30E;
+ Sun, 23 Feb 2020 11:30:03 -0800 (PST)
 Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
  [10.1.195.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7D2473F6CF;
- Sun, 23 Feb 2020 11:29:59 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B1E333F6CF;
+ Sun, 23 Feb 2020 11:30:00 -0800 (PST)
 From: Qais Yousef <qais.yousef@arm.com>
 To: Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH v3 05/15] arm64: Don't use disable_nonboot_cpus()
-Date: Sun, 23 Feb 2020 19:29:32 +0000
-Message-Id: <20200223192942.18420-6-qais.yousef@arm.com>
+Subject: [PATCH v3 06/15] arm64: hibernate.c: Create a new function to handle
+ cpu_up(sleep_cpu)
+Date: Sun, 23 Feb 2020 19:29:33 +0000
+Message-Id: <20200223192942.18420-7-qais.yousef@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200223192942.18420-1-qais.yousef@arm.com>
 References: <20200223192942.18420-1-qais.yousef@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_113001_760085_3CCFE96D 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200223_113004_393157_64B4CF85 
+X-CRM114-Status: GOOD (  14.83  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,8 +63,16 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Paul E . McKenney" <paulmck@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org,
+ "Paul E . McKenney" <paulmck@kernel.org>, Steve Capper <steve.capper@arm.com>,
+ "Peter Zijlstra \(Intel\)" <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Pavankumar Kondeti <pkondeti@codeaurora.org>,
+ Zhenzhong Duan <zhenzhong.duan@oracle.com>,
+ Nicholas Piggin <npiggin@gmail.com>, Ingo Molnar <mingo@kernel.org>,
+ Richard Fontana <rfontana@redhat.com>, James Morse <james.morse@arm.com>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, Jiri Kosina <jkosina@suse.cz>,
  Will Deacon <will@kernel.org>, Qais Yousef <qais.yousef@arm.com>,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
@@ -72,44 +81,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-disable_nonboot_cpus() is not safe to use when doing machine_down(),
-because it relies on freeze_secondary_cpus() which in turn is
-a suspend/resume related freeze and could abort if the logic detects any
-pending activities that can prevent finishing the offlining process.
-
-Beside disable_nonboot_cpus() is dependent on CONFIG_PM_SLEEP_SMP which
-is an othogonal config to rely on to ensure this function works
-correctly.
-
-Use `reboot_cpu` variable instead of hardcoding 0 as the reboot cpu.
+In preparation to make cpu_up/down private - move the user in arm64
+hibernate.c to use a new generic function that provides what arm64
+needs.
 
 Signed-off-by: Qais Yousef <qais.yousef@arm.com>
 CC: Catalin Marinas <catalin.marinas@arm.com>
 CC: Will Deacon <will@kernel.org>
+CC: Steve Capper <steve.capper@arm.com>
+CC: Richard Fontana <rfontana@redhat.com>
+CC: James Morse <james.morse@arm.com>
+CC: Mark Rutland <mark.rutland@arm.com>
+CC: Thomas Gleixner <tglx@linutronix.de>
+CC: Josh Poimboeuf <jpoimboe@redhat.com>
+CC: Ingo Molnar <mingo@kernel.org>
+CC: "Peter Zijlstra (Intel)" <peterz@infradead.org>
+CC: Nicholas Piggin <npiggin@gmail.com>
+CC: Daniel Lezcano <daniel.lezcano@linaro.org>
+CC: Jiri Kosina <jkosina@suse.cz>
+CC: Pavankumar Kondeti <pkondeti@codeaurora.org>
+CC: Zhenzhong Duan <zhenzhong.duan@oracle.com>
 CC: linux-arm-kernel@lists.infradead.org
 CC: linux-kernel@vger.kernel.org
 ---
- arch/arm64/kernel/process.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/hibernate.c | 13 +++++--------
+ include/linux/cpu.h           |  1 +
+ kernel/cpu.c                  | 24 ++++++++++++++++++++++++
+ 3 files changed, 30 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index bbb0f0c145f6..b33b415fb32e 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -141,11 +141,11 @@ void arch_cpu_idle_dead(void)
-  * to execute e.g. a RAM-based pin loop is not sufficient. This allows the
-  * kexec'd kernel to use any and all RAM as it sees fit, without having to
-  * avoid any code or data used by any SW CPU pin loop. The CPU hotplug
-- * functionality embodied in disable_nonboot_cpus() to achieve this.
-+ * functionality embodied in smpt_shutdown_nonboot_cpus() to achieve this.
-  */
- void machine_shutdown(void)
- {
--	disable_nonboot_cpus();
-+	smp_shutdown_nonboot_cpus(reboot_cpu);
- }
+diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+index 590963c9c609..5b73e92c99e3 100644
+--- a/arch/arm64/kernel/hibernate.c
++++ b/arch/arm64/kernel/hibernate.c
+@@ -166,14 +166,11 @@ int arch_hibernation_header_restore(void *addr)
+ 		sleep_cpu = -EINVAL;
+ 		return -EINVAL;
+ 	}
+-	if (!cpu_online(sleep_cpu)) {
+-		pr_info("Hibernated on a CPU that is offline! Bringing CPU up.\n");
+-		ret = cpu_up(sleep_cpu);
+-		if (ret) {
+-			pr_err("Failed to bring hibernate-CPU up!\n");
+-			sleep_cpu = -EINVAL;
+-			return ret;
+-		}
++
++	ret = bringup_hibernate_cpu(sleep_cpu);
++	if (ret) {
++		sleep_cpu = -EINVAL;
++		return ret;
+ 	}
  
- /*
+ 	resume_hdr = *hdr;
+diff --git a/include/linux/cpu.h b/include/linux/cpu.h
+index 64a246e9c8db..aebe8186cb07 100644
+--- a/include/linux/cpu.h
++++ b/include/linux/cpu.h
+@@ -93,6 +93,7 @@ int add_cpu(unsigned int cpu);
+ void notify_cpu_starting(unsigned int cpu);
+ extern void cpu_maps_update_begin(void);
+ extern void cpu_maps_update_done(void);
++extern int bringup_hibernate_cpu(unsigned int sleep_cpu);
+ 
+ #else	/* CONFIG_SMP */
+ #define cpuhp_tasks_frozen	0
+diff --git a/kernel/cpu.c b/kernel/cpu.c
+index 03c727195b65..bf39c5bfb6d9 100644
+--- a/kernel/cpu.c
++++ b/kernel/cpu.c
+@@ -1275,6 +1275,30 @@ int add_cpu(unsigned int cpu)
+ }
+ EXPORT_SYMBOL_GPL(add_cpu);
+ 
++/**
++ * bringup_hibernate_cpu - Bring up the CPU that we hibernated on
++ * @sleep_cpu: The cpu we hibernated on and should be brought up.
++ *
++ * On some archs like arm64, we can hibernate on any CPU, but on wake up the
++ * CPU we hibernated on might be offline as a side effect of using maxcpus= for
++ * example.
++ */
++int bringup_hibernate_cpu(unsigned int sleep_cpu)
++{
++	int ret;
++
++	if (!cpu_online(sleep_cpu)) {
++		pr_info("Hibernated on a CPU that is offline! Bringing CPU up.\n");
++		ret = cpu_up(sleep_cpu);
++		if (ret) {
++			pr_err("Failed to bring hibernate-CPU up!\n");
++			return ret;
++		}
++	}
++
++	return 0;
++}
++
+ #ifdef CONFIG_PM_SLEEP_SMP
+ static cpumask_var_t frozen_cpus;
+ 
 -- 
 2.17.1
 
