@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56566169717
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 10:58:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B035169723
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 11:02:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LIk9T3rc3xVGqYKXq+krZ8YohlOvcqoqyrmVx70KLxE=; b=VTbvoTH2TSdLM7
-	J9xlcPnseSqYX1YmreeU/TvjgCxKxyq/ue9lrX9yGRlNn+rjZCvcCoam+m5+lmCXYLvku8Nkm1tld
-	adykNl3XtiiFrZuzRWkFQfqzVQiNmzOaKHhXKBq5lbezObR7WgiA7FidYMQkM98Uy9utD8SmuB28C
-	2muOPLzNMHQ/oh2YV03aUiJRTaXDe9Yo80XFVSgPppa2uY5NNK+D6S2kxJ9tHB9X6tE4WMRCjY/jk
-	GFeAGQtjIh8tNGXDPs79LUfR8RT/Se3w/VhMUvwfujPs3lYY6RprJhgvp/RSTOX0DhL5HrrTEPGOE
-	ajo7As0B4GceZRHyhzig==;
+	List-Owner; bh=EFHDWl8to9F5Q7JCAVGnjcIfEr1rJ7F2hz/NmAwfPfI=; b=HEawA3ut+JGbW3
+	61mTzW/iyXmIGxE/ZXeNYA4qnG4sLnXEhe+/Au9iLInOYY8AdtH3sDJMb+pDUkQcIO9whtTrTcnz3
+	SQ921UwDKouu6CKcFtZLhCBPVBIBtgC1a5+QtxLQNz6wFF8VgPnhu73h8FSmf+bK2w6TW3oUlL4CZ
+	49UKAtXq2DKeqMILhogwOOOcjonC1uHWYI+14Oiypm2kLTcJvUMrwui7YpcGeKWQJSCuTjOIxKDCK
+	oZHLIgzIlSTwYvTWa4jOZDQr0cmuARrKyy+LCSyWN6YNYsahxfmkxi19w3Ng3H8AHniJrFe5+dkBd
+	oVbVMSTBoAlij7eU9U1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5o1M-0003sC-0S; Sun, 23 Feb 2020 09:57:56 +0000
+	id 1j5o5t-0005kW-RV; Sun, 23 Feb 2020 10:02:37 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5o1C-0003rI-1W
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 09:57:47 +0000
+ id 1j5o5j-0005k7-AG
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 10:02:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582451857; bh=Hc3Q/e3isq42FZVZz5Pj1+rkdYA5T7YqVfZ3lSbKHwM=;
+ t=1582452145; bh=ZLOyODypymrlYWhAyRXBc5vQ3z2suv+ka0Ds1dIXppg=;
  h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=KBLgQTYNtOdfr0C8KgWxzTcFc9H4LySTQ3Y2+AYmD1O0bUlSZ7CqOWG9Bnmy4p0aN
- UHCxvhQuuCvVN/Eathp3L8kX54EJBUF2WnR1EY0HTlyZJ/EEWGNPCbqE5N2n7BnzCf
- v4yNsINPB0peqyQ18CwD8sYkROsvuULDUSk5C2J0=
-Date: Sun, 23 Feb 2020 10:57:36 +0100
+ b=RMa8HcLbYgAb1fS1SFCnKRuGxHeANm6erMaQXhCMz6vy3LGJptsw8NeVlT51V6xjq
+ Jo+GWZ56u2dY5+QGZnC3KaOuf6SRBsPKjEyfctS3mZGRfR1/dlXrTJTIkJrT1xtlmp
+ BDnt13ikBk4X35zHfrGTVAl5+r7SXtPaZYYF9fgI=
+Date: Sun, 23 Feb 2020 11:02:25 +0100
 From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
 To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [linux-sunxi] [PATCH 2/4] ARM: dts: sun8i-a83t-tbs-a711: HM5065
- doesn't like such a high voltage
-Message-ID: <20200223095736.5c3dr66734kv3ypg@core.my.home>
+Subject: Re: [linux-sunxi] [PATCH 1/4] ARM: dts: sun8i-a83t-tbs-a711: OOB
+ WiFi interrupt doesn't work
+Message-ID: <20200223100225.6e6n65mc3mj365wy@core.my.home>
 Mail-Followup-To: Chen-Yu Tsai <wens@csie.org>,
  linux-sunxi <linux-sunxi@googlegroups.com>,
  Maxime Ripard <mripard@kernel.org>,
@@ -44,18 +44,20 @@ Mail-Followup-To: Chen-Yu Tsai <wens@csie.org>,
  <devicetree@vger.kernel.org>, 
  "moderated list:ARM/Allwinner sunXi SoC support"
  <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>
+ open list <linux-kernel@vger.kernel.org>,
+ Arend van Spriel <arend.vanspriel@broadcom.com>
 References: <20200222223154.221632-1-megous@megous.com>
- <20200222223154.221632-3-megous@megous.com>
- <CAGb2v67uOXE7_28yn8Q2uo320vE1FsqL-ewG4p1nViim3q0xbw@mail.gmail.com>
+ <20200222223154.221632-2-megous@megous.com>
+ <CAGb2v67XwrYA8FLF9wpnngm9F-F9UV2m+rr+r3t+KUVv5-EMiw@mail.gmail.com>
+ <CAGb2v66G5P_souwFHodO0_NYhWyQ+dGE4fbqLLK3qd9ue7Kk9g@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAGb2v67uOXE7_28yn8Q2uo320vE1FsqL-ewG4p1nViim3q0xbw@mail.gmail.com>
+In-Reply-To: <CAGb2v66G5P_souwFHodO0_NYhWyQ+dGE4fbqLLK3qd9ue7Kk9g@mail.gmail.com>
 X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
  <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_015746_255754_B81AC598 
-X-CRM114-Status: GOOD (  21.28  )
+X-CRM114-CacheID: sfid-20200223_020227_525589_FA6B0B21 
+X-CRM114-Status: GOOD (  22.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -83,9 +85,10 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Rob Herring <robh+dt@kernel.org>, Tomas Novotny <tomas@novotny.cz>,
+ <devicetree@vger.kernel.org>, Arend van Spriel <arend.vanspriel@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
+ Tomas Novotny <tomas@novotny.cz>,
  "moderated list:ARM/Allwinner sunXi SoC support"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -93,64 +96,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
-
-On Sun, Feb 23, 2020 at 11:39:17AM +0800, Chen-Yu Tsai wrote:
-> On Sun, Feb 23, 2020 at 6:32 AM Ondrej Jirman <megous@megous.com> wrote:
+On Sun, Feb 23, 2020 at 12:03:46PM +0800, Chen-Yu Tsai wrote:
+> On Sun, Feb 23, 2020 at 11:26 AM Chen-Yu Tsai <wens@csie.org> wrote:
 > >
-> > Lowering the voltage solves the quick image degradation over time
-> > (minutes), that was probably caused by overheating.
+> > Hi,
 > >
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> >
+> > On Sun, Feb 23, 2020 at 6:32 AM Ondrej Jirman <megous@megous.com> wrote:
+> > >
+> > > It just causes a constant rate of 5000 interrupts per second for both
+> > > GPIO and MMC, even if nothing is happening. Rely on in-band interrupts
+> > > instead.
+> > >
+> > > Fixes: 0e23372080def7bb ("arm: dts: sun8i: Add the TBS A711 tablet devicetree")
+> > > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> >
+> > What WiFi chip/module does this use? It might be worth asking Broadcom
+> > people to help with this and fix the driver.
 > 
-> Makes sense. A lot of camera sensors run their digital parts off 1.8V.
-> This one is no different.
+> Based on the comments in the device tree file, it uses an AP6210, which
+> is a BCM43362 inside for SDIO-based WiFi. There is a recent fix in 5.6-rc1
+> for this,
 > 
-> Acked-by: Chen-Yu Tsai <wens@csie.org>
+>     8c8e60fb86a9 brcmfmac: sdio: Fix OOB interrupt initialization on brcm43362
 > 
-> The whole CSI stuff isn't enabled in the device tree yet though, and
-> there are a lot of regulators with CSI in their names. Will this get
-> worked on?
+> which seems to fix things for me. Could you try it on your end?
 
-Yes, I'm preparing support for both cameras in this branch:
+Interesting, thanks for finding out! I'll test it.
 
-  https://megous.com/git/linux/log/?h=cam-5.6
-
-Both already work quite well. I'm just sending some fixes early.
-
-Both cameras work best at 1.8V for the digital part.
+I think it will work, since my tablet started having overheating issue recently,
+and I tracked it down to this.
 
 regards,
 	o.
 
 > ChenYu
 > 
-> > ---
-> >  arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> > ChenYu
 > >
-> > diff --git a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-> > index ee5ce3556b2ad..ae1fd2ee3bcce 100644
-> > --- a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-> > +++ b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
-> > @@ -371,8 +371,8 @@ &reg_dldo2 {
-> >  };
-> >
-> >  &reg_dldo3 {
-> > -       regulator-min-microvolt = <2800000>;
-> > -       regulator-max-microvolt = <2800000>;
-> > +       regulator-min-microvolt = <1800000>;
-> > +       regulator-max-microvolt = <1800000>;
-> >         regulator-name = "vdd-csi";
-> >  };
-> >
-> > --
-> > 2.25.1
-> >
-> > --
-> > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
-> > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
-> > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20200222223154.221632-3-megous%40megous.com.
+> > > ---
+> > >  arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts | 3 ---
+> > >  1 file changed, 3 deletions(-)
+> > >
+> > > diff --git a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
+> > > index 2fd31a0a0b344..ee5ce3556b2ad 100644
+> > > --- a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
+> > > +++ b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
+> > > @@ -214,9 +214,6 @@ &mmc1 {
+> > >         brcmf: wifi@1 {
+> > >                 reg = <1>;
+> > >                 compatible = "brcm,bcm4329-fmac";
+> > > -               interrupt-parent = <&r_pio>;
+> > > -               interrupts = <0 3 IRQ_TYPE_LEVEL_LOW>; /* PL3 WL_WAKE_UP */
+> > > -               interrupt-names = "host-wake";
+> > >         };
+> > >  };
+> > >
+> > > --
+> > > 2.25.1
+> > >
+> > > --
+> > > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> > > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> > > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20200222223154.221632-2-megous%40megous.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
