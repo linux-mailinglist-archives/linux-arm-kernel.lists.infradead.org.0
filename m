@@ -2,106 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B02EF169276
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 01:12:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C960016927A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 01:16:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UGB3A5hneoMX9sTVCcXRNLrhhzFBJcS154pFh/Dvs8o=; b=j8Ff++alalVnCs
-	53H/eCvmR7FH1XPkO/I1NWLCA1xMtwh0SjnsvMGC0UEowIYjhQB985MHJuvs1amQlvlbcFzOWZTBC
-	8nyd/TxO3UenYAYRtPut53gPE6pHd29xJaYHdS61Jq/p2W+EaaRPnvQtZBCMyorx7otL/PlA1LTyK
-	Chm6WMAU/44f5sdX265rfB921YzrOiUp/htFSu6UWowj1k0bLRKMNZJiD2Pslq1aFWkHXEe8sbUwU
-	31OFqPJRgZo2mGuBFCoQZLDK0DJ2k0bNnoTeDK0E2oeU6UUxByWDEtVo2dxKTHbjNJeIfPxyrW8+E
-	zmNqEIAu9VGLEtDAgDdA==;
+	List-Owner; bh=7H9ciQeqqKowxGaOJdxmxFDAr87dqyFGO/EIlJBvZKs=; b=cS/sinqVUljze3
+	dWCwVsonWCxwNM/HPn+mOYdzE5iCjM55BhLZxPThDzk35Dq4XO29DeXzlFKknZfRUScwaEzRJANOh
+	BTsnIvbdj78Ey7eYjdlXtOWGKIM7EWr3UG0WNahpBVkfqudkfTiWdI+dSiY2f/4HqeaJ55CKEngvF
+	bql6khzo5ZHzT8S96OYqDQ13noh3wDrvgSZVU4m80kX1HzpzQlUY9iy+EtVwdLmt1QzT9iC9Sbeqc
+	gt00/yVfY9rM8T7NI1BkFXZ4YMg7tXAGbuioUoaajEy9j5sINQ7HADKhMARq/+o13LQl4YhwO/gRM
+	i7G01qVoRkXqjTpf0jBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5esP-0006JH-3r; Sun, 23 Feb 2020 00:12:05 +0000
-Received: from mail-eopbgr30081.outbound.protection.outlook.com ([40.107.3.81]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1j5ewo-00085B-Ci; Sun, 23 Feb 2020 00:16:38 +0000
+Received: from mail-eopbgr60065.outbound.protection.outlook.com ([40.107.6.65]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5esF-0006Ix-IH
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 00:11:57 +0000
+ id 1j5ewe-00083B-J2
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 00:16:29 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=jVhy7TZ1Uc3XTmv3kKGI/xxykR2PzYOw02Ltb8BNsdpaMtW177uFwMJE2oqtCZCUwGELPZDhcPbtYq6I2UwyneUPqt8WY2hfhCRtEzuDR2CSjCFcZTljZ34XjVyb5Tw3N4acgQow+ZZ36CZmyug4EbIOkHU9kLht6kou0Wiy837JW1JM3ibVpUg/0+hjX/FGD5+xWfyaUnl24AVyQ3iTU7rAqBCzMTg/eU58xMaa7p3bArYdlHG1ANob9foVN0QUCzbaYAWcE/Q0mQYnOrBjLiDjMzceIQiSQSDOvHLVkYCvERtwve+ifbKd8clJ/HIS5hE71GioQQf1Rsal4VoKpg==
+ b=laG8eGh7AVIJJWT84jjkp/ViX0dpKSK7YkCfVvh+cKtArYJ0vqyiSyx2w6umRFiubVIHEHOc77UFLODkGYbf9gLZzjQxNXC3Fxe8QA+dsb0UXmGa3llDWohdmP3Fuy2uWVV+2sI3bE4RFbKJz/n6/YPS57mjLzzLyLxS0az9K4ap2rMBePiAlsMgzOZfmSKz/IPiJtepRvXoEgxYQtmk19pcTD6fdI6OlWUSNgGPaPaOuPYJSm7hY3U0ncyTmBE0TxzQ1CyYQ3B2J65wvBd8DWupJzJ9DCz0GxY/1Tl1bvsFl9e/W3JBJSMXwPNBfVaG8MiOwLoZYtGd8uoc9Y3h9Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B4o+r2wDMxw3rW5ZvK8Q/Cj6vGlgk5qpR0cj3XmRMLQ=;
- b=My7mTYnuhfdxbMW3ja+EZ9HM1zIlB/34Qwsinb/HXu+LZeFmCZz16azw/3tDokKDV+ZP2aFw16TSfB/IvTpBbljL1iI6uzpqsFCh4IRFeK4nBu3xtBga3LHaXEnAQhgb1KXZFwl1DMModFPws1QkcxXc9Z1hPOIf10KG5TjjDzpOCluR6ZnoetHxhYTvwetv/HhHByeTojdXUiNwHLru95lf9WDK10F1urGxLAlWcLvbhNPNen+KmS2zDDLPScrePK5YRxhTuZXxTkcYHS5FonqzCGJhdAcGpOJYjj5+xjSbep54MErBFyBXwMQ/zFbrTn0fGA/CQmSMWpDXx5yR3Q==
+ bh=h1NiWeV1/eyy22ii5pupV6V05cwK8o2beU2pvNYmiDA=;
+ b=MzphhQYa/SRWwxX3LA4ADxqcTpyJTVc+OtMcMcWqKkIkATUH8MC0WtwI+h6Oe7vDca/Qerc0ubqcju5ORvKLMM/dGXR0L1ra2LIXW+xH4CWcJR47qPfLPYU/BgcMW+7EmA37iJFXMVXqDh4cvTKvB1BYXUVi1lWeZBVFT5WNwUCzf3Med4VIEw36xaGssusNXUlEqTmVjKRDc6FxQzIxIzJtUD6+8r//YI2EyUmaVtvl8d6Hh4dGnkQVRKswTVNkTxjEKZqqbj5m7YONxKUueliDPun/TJ2t0ySMoM62dkfvZb1NBnx4dfB03StsC2dCy0yTmazi9+4kFuHA1SF+4g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B4o+r2wDMxw3rW5ZvK8Q/Cj6vGlgk5qpR0cj3XmRMLQ=;
- b=PtMT/NNyooJUFBuUZtNOJDOoZ79IhqsUMDhyGPtBN1UhPnVKEVZgca+iT0qsM3A+/lK9wZMCF1Ru9lppR2IYR3Op+LhVoJMTC5xuQr0hvGbw9Jl45JfRgTLCWo8Rf63kMN4fi5kiN1mFcV/Bboz/wUWAJaXUIsjPt5xcWwrKXCs=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB7090.eurprd04.prod.outlook.com (10.186.131.79) with Microsoft SMTP
+ bh=h1NiWeV1/eyy22ii5pupV6V05cwK8o2beU2pvNYmiDA=;
+ b=kKVG2sm2JcC6fyMPtM2Yqcqn/1n7/nfRH4BogUPwiJ3CkytprG7Eh+JGsnRvE2pxbbqySrthQ95RjFvAW/ChDU20UgOmC4CRUuwNfq5lKk1p9l/drmv8GVqbwMOsp0y6F4qVeq8MQb0fIehwZ/k6fbCCxmL6qSdp6JO0FnYbUVw=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3755.eurprd04.prod.outlook.com (52.134.71.155) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.21; Sun, 23 Feb 2020 00:11:51 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2729.033; Sun, 23 Feb 2020
- 00:11:51 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: RE: [PATCH 5/9] remoteproc: imx_rproc: parse early-booted property
-Thread-Topic: [PATCH 5/9] remoteproc: imx_rproc: parse early-booted property
-Thread-Index: AQHV5vbyD0uyt2f6hkqWNb+JRXycMagmNX+AgAG3jNA=
-Date: Sun, 23 Feb 2020 00:11:51 +0000
-Message-ID: <AM0PR04MB4481882E603D1C83C637183788EF0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
- <1582097265-20170-6-git-send-email-peng.fan@nxp.com>
- <20200221215605.GC10368@xps15>
-In-Reply-To: <20200221215605.GC10368@xps15>
+ 15.20.2750.21; Sun, 23 Feb 2020 00:16:26 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2750.021; Sun, 23 Feb 2020
+ 00:16:25 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: RE: [PATCH 3/3] watchdog: imx2_wdt: Remove unused include of init.h
+Thread-Topic: [PATCH 3/3] watchdog: imx2_wdt: Remove unused include of init.h
+Thread-Index: AQHV6FuH8+3BpoBnsE6HuBUDScQ3YKgnYjMAgACJsTA=
+Date: Sun, 23 Feb 2020 00:16:25 +0000
+Message-ID: <DB3PR0402MB3916C4CC9A79BFA49441EBEAF5EF0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1582250430-8872-1-git-send-email-Anson.Huang@nxp.com>
+ <1582250430-8872-3-git-send-email-Anson.Huang@nxp.com>
+ <20200222160218.GA12740@roeck-us.net>
+In-Reply-To: <20200222160218.GA12740@roeck-us.net>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [117.82.241.14]
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [220.161.57.125]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c536a0fe-03fb-48a8-f797-08d7b7f4fb7e
-x-ms-traffictypediagnostic: AM0PR04MB7090:|AM0PR04MB7090:
+x-ms-office365-filtering-correlation-id: 6ea07bfa-d0d3-44d7-2139-08d7b7f59f06
+x-ms-traffictypediagnostic: DB3PR0402MB3755:|DB3PR0402MB3755:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB7090B6C2F6A9B86CDABB36D788EF0@AM0PR04MB7090.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-microsoft-antispam-prvs: <DB3PR0402MB375558408A168F98161776A7F5EF0@DB3PR0402MB3755.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3968;
 x-forefront-prvs: 0322B4EDE1
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(346002)(136003)(396003)(366004)(199004)(189003)(2906002)(86362001)(71200400001)(54906003)(55016002)(316002)(33656002)(4326008)(7416002)(966005)(76116006)(478600001)(186003)(66476007)(6916009)(66446008)(66556008)(64756008)(9686003)(52536014)(66946007)(5660300002)(7696005)(26005)(81156014)(81166006)(44832011)(8936002)(8676002)(6506007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB7090;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ SFS:(10009020)(4636009)(376002)(366004)(396003)(346002)(39860400002)(136003)(189003)(199004)(86362001)(52536014)(81166006)(8676002)(81156014)(4744005)(8936002)(6916009)(7696005)(4326008)(54906003)(76116006)(66476007)(66946007)(66556008)(5660300002)(71200400001)(316002)(64756008)(66446008)(6506007)(44832011)(26005)(186003)(2906002)(33656002)(55016002)(9686003)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3755;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: K2VUt0n4TGNql8wH54NmGE3OjzTOfogIxn7gehC8my6tVn5rEjbty8aDLiopnOkcN9xofsraS3RMcjqPg9eNsPexAjVTjJa7FZlcizo7Bg3f2JsvMWuDfCG4rXJsZ9ME/eHsslsxfjDuXxEAUUIpeolP7KNZGM754jK2F4ZmZ/9JdlK5Ar+ZrtdfxoDQqragLXpFezlmjnDpynRlEbnTfGcNT49vG20L2iZnYg4ulwB5NwkoDY4QksTVMGmGOhaDDUBImFYSuj+4Qn13chsYCHmyksZMDkYInWgHG+TGle/3sfeT/qh3x9WtXqo7E+lPG62P9Qir9+Lul8achEJrNobLO9HRLlsu2gqsItBgVTGFlnYHiOFgRRi01quU3DU93evvfznJpxnQ/ICx4sP8HYpx0SIaRsESn4QIQBofkZ1ngTB7fTBz7N0iVcK5YIZh8QaaKHoctLTk0PdtCe0ABls6weBE4S8e/LbslGusmHmcGLTCYvPPLz7d0NHVANv64/xBNkSIYaoM3n+rpPznPg==
-x-ms-exchange-antispam-messagedata: zATgaAsMxHfe9CMz+YiogORXbaGMR2qNq3q9bP7o9IEV2txzgBnIN8JFKPFOfpklbBU1wTlEmxeqylPAu9l6nNWKUwku/i9lJGFeqNdRwVmCQ4GuRJRA60dN4n8Gkb4D8uR3rNO1wIe718V6q6n/QA==
+x-microsoft-antispam-message-info: 5V12hKo/vKASdUg5yIFT7RhEl98ozkXR/DIS2xcdCpmJr2FtOGDFFrfm/ScwN8613i7+W1ynePnfIXNKsvizx2ceu1juhAhdL69DmM8PIKTEh/RDYFJejpdxZFbNyZOG/pxOvzyoFod552p2hzJWe93WQYHBBToTcQyAjuu7unGvPAGYITdt93WtONpNO9dyGP14l2FdW9OWXWdcGyuJb071WEWWAmiQgLrQ+oxIBdvP80ljrKoQVvmDg2bLNH7N2U/bK/OtpJLcP9iwhBrnfGaQemWNGvNfsie91DNTFalmMyc02vXJu6CPYFC0akLmXN1wdQ4AInn6EgfEbT0+9toq/uMsi9T8yYWCukXvB7OD6XnqiN7z4jpHn3M219Lq68a7s8ZXFaR5mn8IzFUHuJ52NTr+EOTvUSojkx35mYYBP8jX8lkQDE6p3BgveBZv
+x-ms-exchange-antispam-messagedata: Kxksb9hv51nXHCUx/8VnHdgWVqI25rCj0RUEb7vWh0aY28Y7WFUhqUJGzXwZv492AAHNni8YBrbTcPUoULuW05RIhagF2fPZOC8PFkWC0Jg9Tk/oOJwK8x4zsd11ULVwAlojz3oqBWB1mLnl4/Dwbw==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c536a0fe-03fb-48a8-f797-08d7b7f4fb7e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Feb 2020 00:11:51.4200 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6ea07bfa-d0d3-44d7-2139-08d7b7f59f06
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Feb 2020 00:16:25.5975 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tXA0K82kth63PuivgoP6OuawyHMeLoraxNO+gemvnRkVVtCuSiBOoRXCmKxuUqxNqlwtWOi4QwAzHiAM7SARQQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB7090
+X-MS-Exchange-CrossTenant-userprincipalname: ODHdt42rzOcTjhMQNdNjFMN0m8+cnN/qDWAdCy4f0GM/Kbk5KSB+iQDbohzoyD5OPZmj5PPgIHj9q6X6GVp3JQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3755
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_161155_608083_86A9DD10 
-X-CRM114-Status: GOOD (  16.75  )
+X-CRM114-CacheID: sfid-20200222_161628_631993_008490B4 
+X-CRM114-Status: GOOD (  14.35  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.81 listed in list.dnswl.org]
+ no trust [40.107.6.65 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -122,95 +122,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "ohad@wizery.com" <ohad@wizery.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-remoteproc@vger.kernel.org" <linux-remoteproc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
+Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
  "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: Re: [PATCH 5/9] remoteproc: imx_rproc: parse early-booted property
-> 
-> On Wed, Feb 19, 2020 at 03:27:41PM +0800, peng.fan@nxp.com wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > If early-property exists, there is no need to check syscon.
-> > Just mark early_boot as true.
-> >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >  drivers/remoteproc/imx_rproc.c | 18 +++++++++++-------
-> >  1 file changed, 11 insertions(+), 7 deletions(-)
-> >
-> > diff --git a/drivers/remoteproc/imx_rproc.c
-> > b/drivers/remoteproc/imx_rproc.c index b9fabe269fd2..e31ea1090cf3
-> > 100644
-> > --- a/drivers/remoteproc/imx_rproc.c
-> > +++ b/drivers/remoteproc/imx_rproc.c
-> > @@ -483,7 +483,9 @@ static int imx_rproc_configure_mode(struct
-> imx_rproc *priv)
-> >  	int ret;
-> >  	u32 val;
-> >
-> > -	if (of_get_property(dev->of_node, "early-booted", NULL)) {
-> > +	if (dcfg->variants == IMX7ULP) {
-> 
-> Where does dcfg->variants comes from?
-> 
-> This patch doesn't compile, nor does the one before it.  I will not review
-> another patchset like that.
+Hi, Guenter
 
-Ah. Weird. variants should be variant. 
-See https://patchwork.kernel.org/patch/11390559/
+> Subject: Re: [PATCH 3/3] watchdog: imx2_wdt: Remove unused include of
+> init.h
+> 
+> On Fri, Feb 21, 2020 at 10:00:30AM +0800, Anson Huang wrote:
+> > There is nothing in use from init.h, remove it.
+> >
+> 
+> NACK, sorry; this driver uses __init and __exit_p.
 
-I need wait early boot related functions in
-remoteproc-core.c ready, then post v2.
-
+Ah, yes, just notice them. But I don't understand why the .probe callback needs
+__init and .remove callback needs __exit_p? Should they need to be removed?
+ 
 Thanks,
-Peng.
-> 
-> > +		priv->early_boot = true;
-> > +	} else if (of_get_property(dev->of_node, "early-booted", NULL)) {
-> >  		priv->early_boot = true;
-> >  	} else {
-> >  		ret = regmap_read(priv->regmap, dcfg->src_reg, &val); @@ -509,15
-> > +511,17 @@ static int imx_rproc_probe(struct platform_device *pdev)
-> >  	struct rproc *rproc;
-> >  	struct regmap_config config = { .name = "imx-rproc" };
-> >  	const struct imx_rproc_dcfg *dcfg;
-> > -	struct regmap *regmap;
-> > +	struct regmap *regmap = NULL;
-> >  	int ret;
-> >
-> > -	regmap = syscon_regmap_lookup_by_phandle(np, "syscon");
-> > -	if (IS_ERR(regmap)) {
-> > -		dev_err(dev, "failed to find syscon\n");
-> > -		return PTR_ERR(regmap);
-> > +	if (!of_get_property(np, "early-booted", NULL)) {
-> > +		regmap = syscon_regmap_lookup_by_phandle(np, "syscon");
-> > +		if (IS_ERR(regmap)) {
-> > +			dev_err(dev, "failed to find syscon\n");
-> > +			return PTR_ERR(regmap);
-> > +		}
-> > +		regmap_attach_dev(dev, regmap, &config);
-> >  	}
-> > -	regmap_attach_dev(dev, regmap, &config);
-> >
-> >  	/* set some other name then imx */
-> >  	rproc = rproc_alloc(dev, "imx-rproc", &imx_rproc_ops,
-> > --
-> > 2.16.4
-> >
+Anson
 
+> Guenter
+> 
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> >  drivers/watchdog/imx2_wdt.c | 1 -
+> >  1 file changed, 1 deletion(-)
+> >
+> > diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
+> > index f8d58bf..ce28e40 100644
+> > --- a/drivers/watchdog/imx2_wdt.c
+> > +++ b/drivers/watchdog/imx2_wdt.c
+> > @@ -20,7 +20,6 @@
+> >
+> >  #include <linux/clk.h>
+> >  #include <linux/delay.h>
+> > -#include <linux/init.h>
+> >  #include <linux/interrupt.h>
+> >  #include <linux/io.h>
+> >  #include <linux/kernel.h>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
