@@ -2,84 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15BA7169572
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:00:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58528169582
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:17:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eHHh72GIbV/bFvIUjzwYe6SxU31Y+HBEmId/wuRo5mw=; b=c/rS2lA4xt76sf
-	46o7UO836OkBlBoMRNvlmwpvsc4IkNgkUumYn4n4NAljGo7Wv98K0Gjku3jj7SW8ci1/xoUNZug+b
-	tjXskSu1OVqUxPBQabI3QSxMvDLJsW00LqSfuzddrbwbFNSX6VduIoBOUeGHEtEEzRYMHxPDYIsTg
-	RdaWW+fOga2pxjMHKudAQ0kCc3BjkoWXhgzFfEBpLVhYhRtAbpiucihstAIgsG37R7NoBBuV4uaZC
-	L1weW2x0BVqfjojptob1L6Jl2JJzqFbx2wSkxL4OXk+9WeVSZesTkuZBeBZT2TMlrG49EWzcosO79
-	cEJMN//ktJ94DINCmEng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3n2Z7zzdj8qwIRpZGA9b3wp9911Z+VRBeQ7SMXBQ7jE=; b=ajCvdWH1mJ5L4t
+	dD8mhoqgW0TFfy8nDqvP25qYpxa3ikcvBH2v+LsCcg8P1O8zqPxytSod2gdA+jCi9AWFdoOHywu7Y
+	LA37iAMoUXLA/1g5goRZ65mOC01FyLj7vQcP8+pKGCZ0a+Uo2TOoOaoGXMk1nUWleJt1o/1xyHX8E
+	xBhvhFvEd8ddX5XuO4dyyDy4rTElOwodWUZPTd5dtF2403GJKGvlgt7nxQA1aUNe8gtv9rpLnd177
+	/yDVYsgp630T0kKU+v8NwbnnWsUPt+zXpT93xbqi6emv288mc70UfhvnD/C6PItwzeA4+YBWztLny
+	Ee0Nz09uVRxwy5ubSfsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5hVc-0001WU-DX; Sun, 23 Feb 2020 03:00:44 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1j5hlQ-0007ja-Gn; Sun, 23 Feb 2020 03:17:04 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5hHl-0002gn-21
- for linux-arm-kernel@bombadil.infradead.org; Sun, 23 Feb 2020 02:46:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=rpjH7PkG8mlQ5IwpXF+0JavZIV89r1ibkKlkKEezGMA=; b=ZSZQIxKIV2t2Z7W+K9BEpsG9vQ
- Pt0zIDyizAWvkqxC2VQwqeAyqLj2OXf11D5KYeYZgjWkWcRVZcTHLyg7liRzdcRVcYUxB3fhXZMpi
- tRN6kmXFTe3VmT1CoLYYYfYwDierQJHNxR1DvzuFwmzzVBfGTb54GQvaxFs/dPv4wdcYNsN0O+Vj1
- 7R6+pm8jqKpfN0OzZOOVVjvHK3EmrJDMtCsfxHbjQcyGx7xxXYi1ozupO40apxfsjUdMRCGO0Ow3V
- bu9mPOhPrsQZun6sFodyn/l5ZTDa41l+eORHk1Af33+PfZ5DG0bsXmcqekMD6KmcOuulZDjdIIYgF
- wmPLJOFQ==;
-Received: from mail.kernel.org ([198.145.29.99])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5gx7-0007tD-7p
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 02:25:06 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D7D1424673;
- Sun, 23 Feb 2020 02:25:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582424704;
- bh=bIEcXbkcDGAtFRHevsBRWkFZdGSxx9gvCVYRqCiSmYY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1ILzwIyOARDqD91F6UtY4/4doKG2qpVWAi2V+w+WqpyrqAO2QRm5wQddJOgPnP7s3
- napZ5KoyJvHi+uswYg5h9m2mgMw7Fg1iJgNyt3FpdEl1/7iGeXcjE58g1a6IFESi/r
- iYayQMi2QGZahVLU2dTlAqwwVNWPYpFB7ZAcmLUw=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 4/7] arm/ftrace: Fix BE text poking
-Date: Sat, 22 Feb 2020 21:24:56 -0500
-Message-Id: <20200223022459.2594-4-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200223022459.2594-1-sashal@kernel.org>
-References: <20200223022459.2594-1-sashal@kernel.org>
+ id 1j5hkh-0007GF-3O
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 03:16:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1582427776; bh=x4ETbhklf9C5iN2AAibtBUXNgpDN11ycD8F1mG47eMs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=l8Tf0h9KZfoXwcar7dNECQUNppL6t+Q2ZCVJyIc+Sm5Y/xzkaYlxhELRRlcAL8U6s
+ E9Ye2E+H/QruMazofyY3hlsrJAsKOkngPI5oKipvVb9MqDeYLQPHk6z2d4UFj9DReT
+ hek33f/l/90bKn+HzwcvfPnGB1cq0oJ9fAM+HI8c=
+From: Ondrej Jirman <megous@megous.com>
+To: linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>
+Subject: [PATCH 0/3] Add support for PocketBook Touch Lux 3 e-book reader
+Date: Sun, 23 Feb 2020 04:16:11 +0100
+Message-Id: <20200223031614.515563-1-megous@megous.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-5.2 points)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200222_191619_486531_337538F5 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,54 +65,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Sasha Levin <sashal@kernel.org>,
- Dmitry Osipenko <digetx@gmail.com>, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Ondrej Jirman <megous@megous.com>, Mark Rutland <mark.rutland@arm.com>,
+ Stephan Gerhold <stephan@gerhold.net>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Corentin Labbe <clabbe@baylibre.com>, Sunil Mohan Adapa <sunil@medhas.org>,
+ Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peter Zijlstra <peterz@infradead.org>
+This series adds a fairly complete support for this e-book reader.
 
-[ Upstream commit be993e44badc448add6a18d6f12b20615692c4c3 ]
+Missing parts are eink display driver and the touch panel driver.
+Support for both is available out-of-tree for now at:
+  https://megous.com/git/linux/log/?h=pb-5.6
 
-The __patch_text() function already applies __opcode_to_mem_*(), so
-when __opcode_to_mem_*() is not the identity (BE*), it is applied
-twice, wrecking the instruction.
+The rest of the board is supported by the mainline drivers.
 
-Fixes: 42e51f187f86 ("arm/ftrace: Use __patch_text()")
-Reported-by: Dmitry Osipenko <digetx@gmail.com>
-Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-Signed-off-by: Ingo Molnar <mingo@kernel.org>
-Tested-by: Dmitry Osipenko <digetx@gmail.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/kernel/ftrace.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+Please take a look.
 
-diff --git a/arch/arm/kernel/ftrace.c b/arch/arm/kernel/ftrace.c
-index faa9a905826ee..7982409e5c27f 100644
---- a/arch/arm/kernel/ftrace.c
-+++ b/arch/arm/kernel/ftrace.c
-@@ -105,13 +105,10 @@ static int ftrace_modify_code(unsigned long pc, unsigned long old,
- {
- 	unsigned long replaced;
- 
--	if (IS_ENABLED(CONFIG_THUMB2_KERNEL)) {
-+	if (IS_ENABLED(CONFIG_THUMB2_KERNEL))
- 		old = __opcode_to_mem_thumb32(old);
--		new = __opcode_to_mem_thumb32(new);
--	} else {
-+	else
- 		old = __opcode_to_mem_arm(old);
--		new = __opcode_to_mem_arm(new);
--	}
- 
- 	if (validate) {
- 		if (probe_kernel_read(&replaced, (void *)pc, MCOUNT_INSN_SIZE))
+thank you and regards,
+  Ondrej Jirman
+
+Ondrej Jirman (3):
+  dt-bindings: vendor-prefixes: Add prefix for PocketBook International
+    SA
+  dt-bindings: arm: sunxi: Add PocketBook Touch Lux 3
+  ARM: dts: sun5i: Add PocketBook Touch Lux 3 support
+
+ .../devicetree/bindings/arm/sunxi.yaml        |   5 +
+ .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
+ arch/arm/boot/dts/Makefile                    |   1 +
+ .../dts/sun5i-a13-pocketbook-touch-lux-3.dts  | 257 ++++++++++++++++++
+ 4 files changed, 265 insertions(+)
+ create mode 100644 arch/arm/boot/dts/sun5i-a13-pocketbook-touch-lux-3.dts
+
 -- 
-2.20.1
+2.25.1
 
 
 _______________________________________________
