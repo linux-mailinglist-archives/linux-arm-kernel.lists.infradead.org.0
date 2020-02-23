@@ -2,86 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B8BF1696E1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 09:54:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB3851696EC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 10:00:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=22r7nsLCr8nbNc7/ISVSpfTWZZexy26CyGWgzuUjaI4=; b=M9M17eC4CcGw6y
-	DLrY9/kUe4H2gerA+SdaYkw5C04nYgIE1OfXs8dYiuSJO3/zYPCX+E/4esJv8XR11hU/7RCwnBUx0
-	6HE51gpwGZ40n9i3UlWxcNnG7K7Q1+RH46iX9cFAn5Pn42dVYzmnsEgADfErgLCcVnoK0KylEy8Gl
-	PwIhXZs/Yq9gmKuaXoZMLcZXi6MMtt89MdV4VTYxLpQZ7177xa2t+bDvd7KYwXZBT1R6BbXnmae8N
-	e7uV8LWfb9H8kXlQoQC4DxvQA/Csfce/qtI4CQGZu21GoF39prXeelN8CbDD9bw4epaqdGpmBeNwG
-	yrZSE6nsAFkMIa6CRmyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=P0QTAI5Bfur5e1CjYFe/KHa4Y9k0WvXe/sJjF0TXudM=; b=V0LiZuw9OD1sq6
+	API/48OgMj8JVDuCZcOBISIsH+UNLD8kQPfvoiJ8P8/TCAnWIG8xWsJycXVATpwaGM9ju79cWQNpR
+	EqW6m4OEjp+PazirAh0y99sGK+q7P78ZO0qef7pP37CzY00hDh9B+ce2AfwZhgLL90Q/O87BV72aB
+	qwzJ34EpGrmuddk2Ac7Pg3+75KRptB/vQz6D3jfj7+TjpElV2odLPv6uvtilvfumVsi8mkpriU1Lg
+	X3lINLSbn68jO5vgQ/2AocTJOsaEJG/jAfCwT+yzMfotYx6ME3G3Y8RrxcSO1ZaVtCrwwS0BsB2iF
+	mvgWGCBXYG0xkDdAAGDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5n1Q-0005hb-MY; Sun, 23 Feb 2020 08:53:56 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5n1G-0005gb-Of; Sun, 23 Feb 2020 08:53:48 +0000
-X-UUID: edd0024c387f4852a6105783383ae6c4-20200223
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=L6+Le50jyFOltKwz1JENBOZc2qg1uyeNTqnh9DLfcl4=; 
- b=WnM6R2F75bga3qqX7bdF+i6UDekkzY4y8slHZtEFTxxHqj0R3TmWLYniNfaMKj9YLekaSJCowU+6KZ8ZD8PJ8yyndwNiq0OIXeDBNL6BXyL2Gx9flOZYilIVHas3Wn0zK6zVs0OBjQH49DaWz9jVmcXYkUaqAP0pVN2qpbbWHtY=;
-X-UUID: edd0024c387f4852a6105783383ae6c4-20200223
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 584089265; Sun, 23 Feb 2020 00:53:37 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 23 Feb 2020 00:54:08 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 23 Feb 2020 16:52:09 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Sun, 23 Feb 2020 16:52:29 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>, Shen Jing
- <jingx.shen@intel.com>, Sasha Levin <sashal@kernel.org>, John Stultz
- <john.stultz@linaro.org>, Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- Vincent Pelletier <plr.vincent@gmail.com>, Jerry Zhang
- <zhangjerry@google.com>, <linux-usb@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, Mediatek WSD Upstream
- <wsd_upstream@mediatek.com>, CC Hwang <cc.hwang@mediatek.com>, Loda Chou
- <loda.chou@mediatek.com>, Al Viro <viro@zeniv.linux.org.uk>
-Subject: [PATCH] usb: gadget: f_fs: try to fix AIO issue under ARM 64 bit
- TAGGED mode
-Date: Sun, 23 Feb 2020 16:53:12 +0800
-Message-ID: <1582447993-7594-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <n>
-References: <n>
+	id 1j5n7g-0000Tx-GT; Sun, 23 Feb 2020 09:00:24 +0000
+Received: from [80.156.29.194] (helo=bombadil.infradead.org)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5n7F-0007ZW-MS; Sun, 23 Feb 2020 08:59:57 +0000
+Received: from mchehab by bombadil.infradead.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@bombadil.infradead.org>)
+ id 1j5n7D-001RYm-3q; Sun, 23 Feb 2020 09:59:55 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH] docs: dt: fix several broken doc references
+Date: Sun, 23 Feb 2020 09:59:53 +0100
+Message-Id: <0e530494349b37eb2eab4a8eccf56626e0b18e6d.1582448388.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-MTK: N
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_005346_807911_95BEB678 
-X-CRM114-Status: GOOD (  10.80  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,65 +43,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Macpaul Lin <macpaul.lin@mediatek.com>
+Cc: alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
+ =?UTF-8?q?J=C3=A9r=C3=B4me=20Pouiller?= <jerome.pouiller@silabs.com>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Vignesh Raghavendra <vigneshr@ti.com>, devel@driverdev.osuosl.org,
+ Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Richard Weinberger <richard@nod.at>, Piotr Sroka <piotrs@cadence.com>,
+ devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-spi@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This issue was found when adbd trying to open functionfs with AIO mode.
-Usually, we need to set "setprop sys.usb.ffs.aio_compat 0" to enable
-adbd with AIO mode on Android.
+There are several DT doc references that require manual fixes.
+I found 3 cases fixed on this patch:
 
-When adbd is opening functionfs, it will try to read 24 bytes at the
-fisrt read I/O control. If this reading has been failed, adbd will
-try to send FUNCTIONFS_CLEAR_HALT to functionfs. When adbd is in AIO
-mode, functionfs will be acted with asyncronized I/O path. After the
-successful read transfer has been completed by gadget hardware, the
-following series of functions will be called.
-  ffs_epfile_async_io_complete() -> ffs_user_copy_worker() ->
-    copy_to_iter() -> _copy_to_iter() -> copyout() ->
-    iterate_and_advance() -> iterate_iovec()
+	- directory named "binding/" instead of "bindings/";
+	- .txt to .yaml renames;
+	- file renames (still on txt format);
 
-Adding debug trace to these functions, it has been found that in
-copyout(), access_ok() will check if the user space address is valid
-to write. However if CONFIG_ARM64_TAGGED_ADDR_ABI is enabled, adbd
-always passes user space address start with "0x3C" to gdaget's AIO
-blocks. This tagged address will cause access_ok() check always fail.
-Which causes later calculation in iterate_iovec() turn zero.
-Copyout() won't copy data to userspace since the length to be copied
-"v.iov_len" will be zero. Finally leads ffs_copy_to_iter() always return
--EFAULT, causes adbd cannot open functionfs and send
-FUNCTIONFS_CLEAR_HALT.
-
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 ---
- drivers/usb/gadget/function/f_fs.c |    3 +++
- 1 file changed, 3 insertions(+)
+ .../devicetree/bindings/mtd/cadence-nand-controller.txt       | 2 +-
+ .../devicetree/bindings/net/brcm,bcm7445-switch-v4.0.txt      | 2 +-
+ Documentation/devicetree/bindings/sound/st,stm32-sai.txt      | 2 +-
+ Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt  | 2 +-
+ Documentation/devicetree/bindings/spi/st,stm32-spi.yaml       | 2 +-
+ MAINTAINERS                                                   | 4 ++--
+ .../devicetree/bindings/net/wireless/siliabs,wfx.txt          | 2 +-
+ 7 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/usb/gadget/function/f_fs.c b/drivers/usb/gadget/function/f_fs.c
-index ce1d023..b21541a 100644
---- a/drivers/usb/gadget/function/f_fs.c
-+++ b/drivers/usb/gadget/function/f_fs.c
-@@ -35,6 +35,7 @@
- #include <linux/mmu_context.h>
- #include <linux/poll.h>
- #include <linux/eventfd.h>
-+#include <linux/thread_info.h>
+diff --git a/Documentation/devicetree/bindings/mtd/cadence-nand-controller.txt b/Documentation/devicetree/bindings/mtd/cadence-nand-controller.txt
+index f3893c4d3c6a..d2eada5044b2 100644
+--- a/Documentation/devicetree/bindings/mtd/cadence-nand-controller.txt
++++ b/Documentation/devicetree/bindings/mtd/cadence-nand-controller.txt
+@@ -27,7 +27,7 @@ Required properties of NAND chips:
+   - reg: shall contain the native Chip Select ids from 0 to max supported by
+     the cadence nand flash controller
  
- #include "u_fs.h"
- #include "u_f.h"
-@@ -826,6 +827,8 @@ static void ffs_user_copy_worker(struct work_struct *work)
- 	if (io_data->read && ret > 0) {
- 		mm_segment_t oldfs = get_fs();
+-See Documentation/devicetree/bindings/mtd/nand.txt for more details on
++See Documentation/devicetree/bindings/mtd/nand-controller.yaml for more details on
+ generic bindings.
  
-+		if (IS_ENABLED(CONFIG_ARM64_TAGGED_ADDR_ABI))
-+			set_thread_flag(TIF_TAGGED_ADDR);
- 		set_fs(USER_DS);
- 		use_mm(io_data->mm);
- 		ret = ffs_copy_to_iter(io_data->buf, ret, &io_data->data);
+ Example:
+diff --git a/Documentation/devicetree/bindings/net/brcm,bcm7445-switch-v4.0.txt b/Documentation/devicetree/bindings/net/brcm,bcm7445-switch-v4.0.txt
+index 48a7f916c5e4..88b57b0ca1f4 100644
+--- a/Documentation/devicetree/bindings/net/brcm,bcm7445-switch-v4.0.txt
++++ b/Documentation/devicetree/bindings/net/brcm,bcm7445-switch-v4.0.txt
+@@ -45,7 +45,7 @@ Optional properties:
+   switch queue
+ 
+ - resets: a single phandle and reset identifier pair. See
+-  Documentation/devicetree/binding/reset/reset.txt for details.
++  Documentation/devicetree/bindings/reset/reset.txt for details.
+ 
+ - reset-names: If the "reset" property is specified, this property should have
+   the value "switch" to denote the switch reset line.
+diff --git a/Documentation/devicetree/bindings/sound/st,stm32-sai.txt b/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
+index 944743dd9212..c42b91e525fa 100644
+--- a/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
++++ b/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
+@@ -36,7 +36,7 @@ SAI subnodes required properties:
+   - clock-names: Must contain "sai_ck".
+ 	Must also contain "MCLK", if SAI shares a master clock,
+ 	with a SAI set as MCLK clock provider.
+-  - dmas: see Documentation/devicetree/bindings/dma/stm32-dma.txt
++  - dmas: see Documentation/devicetree/bindings/dma/st,stm32-dma.yaml
+   - dma-names: identifier string for each DMA request line
+ 	"tx": if sai sub-block is configured as playback DAI
+ 	"rx": if sai sub-block is configured as capture DAI
+diff --git a/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt b/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt
+index 33826f2459fa..ca9101777c44 100644
+--- a/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt
++++ b/Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt
+@@ -10,7 +10,7 @@ Required properties:
+   - clock-names: must contain "kclk"
+   - interrupts: cpu DAI interrupt line
+   - dmas: DMA specifiers for audio data DMA and iec control flow DMA
+-    See STM32 DMA bindings, Documentation/devicetree/bindings/dma/stm32-dma.txt
++    See STM32 DMA bindings, Documentation/devicetree/bindings/dma/st,stm32-dma.yaml
+   - dma-names: two dmas have to be defined, "rx" and "rx-ctrl"
+ 
+ Optional properties:
+diff --git a/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml b/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
+index f0d979664f07..e49ecbf715ba 100644
+--- a/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
++++ b/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
+@@ -49,7 +49,7 @@ properties:
+   dmas:
+     description: |
+       DMA specifiers for tx and rx dma. DMA fifo mode must be used. See
+-      the STM32 DMA bindings Documentation/devicetree/bindings/dma/stm32-dma.txt.
++      the STM32 DMA bindings Documentation/devicetree/bindings/dma/st,stm32-dma.yaml.
+     items:
+       - description: rx DMA channel
+       - description: tx DMA channel
+diff --git a/MAINTAINERS b/MAINTAINERS
+index d81701ea3336..6b30a58bd77b 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -4480,7 +4480,7 @@ L:	linux-media@vger.kernel.org
+ T:	git git://linuxtv.org/media_tree.git
+ S:	Maintained
+ F:	drivers/media/platform/sunxi/sun6i-csi/
+-F:	Documentation/devicetree/bindings/media/sun6i-csi.txt
++F:	Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
+ 
+ CW1200 WLAN driver
+ M:	Solomon Peachy <pizza@shaftnet.org>
+@@ -15955,7 +15955,7 @@ F:	drivers/*/stm32-*timer*
+ F:	drivers/pwm/pwm-stm32*
+ F:	include/linux/*/stm32-*tim*
+ F:	Documentation/ABI/testing/*timer-stm32
+-F:	Documentation/devicetree/bindings/*/stm32-*timer*
++F:	Documentation/devicetree/bindings/*/*stm32-*timer*
+ F:	Documentation/devicetree/bindings/pwm/pwm-stm32*
+ 
+ STMMAC ETHERNET DRIVER
+diff --git a/drivers/staging/wfx/Documentation/devicetree/bindings/net/wireless/siliabs,wfx.txt b/drivers/staging/wfx/Documentation/devicetree/bindings/net/wireless/siliabs,wfx.txt
+index ffec79c14786..17db67559f5e 100644
+--- a/drivers/staging/wfx/Documentation/devicetree/bindings/net/wireless/siliabs,wfx.txt
++++ b/drivers/staging/wfx/Documentation/devicetree/bindings/net/wireless/siliabs,wfx.txt
+@@ -94,5 +94,5 @@ Some properties are recognized either by SPI and SDIO versions:
+    Must contains 64 hexadecimal digits. Not supported in current version.
+ 
+ WFx driver also supports `mac-address` and `local-mac-address` as described in
+-Documentation/devicetree/binding/net/ethernet.txt
++Documentation/devicetree/bindings/net/ethernet.txt
+ 
 -- 
-1.7.9.5
+2.24.1
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
