@@ -2,103 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A892169807
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 15:08:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AD9B16981B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 15:38:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MrHN67KEYxeNMlAM4PpyHLToDRG4PL3cX+VilmkwjE4=; b=AhOBfV+5DPyhYWZRudgBERVwD
-	GUBEoU+f2ABI4+4l2dndHEfDNiJ0D+cnmj0N2ztDs1ncjKxibi020TvbE2cFaDyLQNRVTIH6DJVP2
-	2pDENZKyJgRStnVD66yt+vdSuqBXQsHwlXSLEawYpWPtb0Vxq2l/jCpVLqu0W18bVp27HOcO9WX6X
-	KfP9ZFoe3/5uKhqieJ3ye1DEokbE0KRd5gR+BravWIy0SSnZew1EIfZ+Z5yT+ezOajoIL5xLQs5cM
-	pxFPn8wu8zxngWKtUc2nAAA8HQMiT6UCfnD4dIOo4CsGShVnZe5KFjOoVO3W+42j1RIc1x43GQU5T
-	i/nq3acWg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N0NEWg0u7OWlUpch0j3oFbujvOw2I1knby9LxUw2qzM=; b=ApWLD5DvYW1B/e
+	OfLFoz59QRPxTSq1/bToYnp5iDmTorf7zwnrRfYKNezpCjy5E2jDgmVkCrcoNUw/0+VZi3OTJFKQ/
+	c8UGCVfghApTyGoWNfk8EoaJdNYFfE6ZpMTpJkoLrSiRGYE5uVFnP00GPhoGrJoW1QAqmMZ3Y9i7V
+	FJSN/vUE2o3IDmgcdoSjUjxKQpWdDtMZ/jLJ128P6YKALQUHepwYIfzjHZtbxoIR1mtLPb6XauweX
+	CUVnIrB3eYYneJHxxOxhktqDJWB/G3MILnoNdCq4o8J8Wg2jRhlePrH1AvxWWTdY/sfJRb4n3FExP
+	lPMdrxmQsSAoyGCB26cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5rvd-0005wx-AE; Sun, 23 Feb 2020 14:08:17 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1j5sOf-00068m-7e; Sun, 23 Feb 2020 14:38:17 +0000
+Received: from mail-out.m-online.net ([212.18.0.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5rvV-0005wc-Ms
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 14:08:11 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y8so2868858pll.13
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 23 Feb 2020 06:08:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=XD21Leo6kLR5qlxiWjZstdOKlqxFlzQ6WlHQ2R8Sm0g=;
- b=VVCuNFRsY5ktZtLIbg4z3N8VwcmqYJBXpWys4vupuwKDJZlvbzDme9m7YEjlXPgiA9
- 81UmvGYiq1GjTqCaZAxN3K2/jbxnvHqXhK1yMjGMh01Y09EhgWshlqZfWgZA7XUorjUL
- 5OfNgTpl0eic4MB/ueEz/STh6MpbFRheO103tdYu9lqhRbp+ukkHvp5EkVzbK5RKDRWi
- R6nGaa3fh8ZOI7mOkNh6LNhI+Hq1+p4ukyvrxXrKv6dcsMGZPikHDBI/JH0XOyBg0oCC
- r3tNVn8xKnwJ17JhhE81csZ5xm5Ot8vJ2gYSK0fTsG0n5VAHokfCqQs68d7oGKklBoVJ
- 7Okw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=XD21Leo6kLR5qlxiWjZstdOKlqxFlzQ6WlHQ2R8Sm0g=;
- b=M+QkrYAJlXvE159EpFNH32D1RW7SEhch0kDXBdVslPXPg4zorzD53n5wiQpgIoMRIl
- 1fNSFa6BHp2cZSI0/GI8DpxJbUukmHPGO5PCMAQxM8s0xP+gE/4AcWENjCyt4/YFLlak
- MSUdY5hyGXU9EZrsf8cEWCD0Yeuzj3NSFqvozeVXfE4DnsoUiV9DjeyryxCBuJL7HdPy
- cPQ1/ROlszu47QgjsyFD9UNhSf4A06ywJkw8jp/NGSRIBSSmVjSUokawOIv0XTP3tHGg
- tozkjQqIvVgp3ayGB2/Cgz8iwz/4cl6/2Rzn2Ba4GLy5KZYgvMgGHxYlCPRVZB0/iRSI
- v3/A==
-X-Gm-Message-State: APjAAAUeg1dbQbJgY//KW5n/9mRLOLvqEBs2z++ahJZv0DLIoWrcI/Qd
- pfEf2RFt2RZjin6m+7/vIVI=
-X-Google-Smtp-Source: APXvYqynmSayN+effdTkIadEzkTXnzmsvurSXr0zsGFqccNp3FIydiJaZFYwNsYn2B/4oHoTAkLumg==
-X-Received: by 2002:a17:902:8a8e:: with SMTP id
- p14mr45705255plo.28.1582466888756; 
- Sun, 23 Feb 2020 06:08:08 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- v8sm9132919pfn.172.2020.02.23.06.08.07
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 23 Feb 2020 06:08:07 -0800 (PST)
-Subject: Re: [PATCH 3/3] watchdog: imx2_wdt: Remove unused include of init.h
-To: Anson Huang <anson.huang@nxp.com>
-References: <1582250430-8872-1-git-send-email-Anson.Huang@nxp.com>
- <1582250430-8872-3-git-send-email-Anson.Huang@nxp.com>
- <20200222160218.GA12740@roeck-us.net>
- <DB3PR0402MB3916C4CC9A79BFA49441EBEAF5EF0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <a45aeb79-7918-42e9-1c47-3cc631057a59@roeck-us.net>
-Date: Sun, 23 Feb 2020 06:08:06 -0800
+ id 1j5sOR-00068I-Ht
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 14:38:05 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 48QSTx58wTz1rcBT;
+ Sun, 23 Feb 2020 15:37:57 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 48QSTx4R7hz1r0cR;
+ Sun, 23 Feb 2020 15:37:57 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id DRg4d07ql-mS; Sun, 23 Feb 2020 15:37:56 +0100 (CET)
+X-Auth-Info: qbc25jYxOW4DR+2yuAUozJmjPr9Hme7XPCIo3LNOuy0=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Sun, 23 Feb 2020 15:37:56 +0100 (CET)
+Subject: Re: [PATCH V2 6/6] ARM: dts: stm32: Add DH Electronics DHCOM STM32MP1
+ SoM and PDK2 board
+To: Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200119191143.50033-1-marex@denx.de>
+ <20200119191143.50033-6-marex@denx.de>
+ <1b288811-8ffb-a150-71ef-4c006e6d5740@st.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <1ec643e9-217d-c83d-793f-c05d6c4502bd@denx.de>
+Date: Sun, 23 Feb 2020 15:37:55 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <DB3PR0402MB3916C4CC9A79BFA49441EBEAF5EF0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <1b288811-8ffb-a150-71ef-4c006e6d5740@st.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_060809_772324_AC1BE045 
-X-CRM114-Status: GOOD (  16.67  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200223_063803_744231_DB357D91 
+X-CRM114-Status: GOOD (  14.21  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.10 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,54 +81,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/22/20 4:16 PM, Anson Huang wrote:
-> Hi, Guenter
-> 
->> Subject: Re: [PATCH 3/3] watchdog: imx2_wdt: Remove unused include of
->> init.h
->>
->> On Fri, Feb 21, 2020 at 10:00:30AM +0800, Anson Huang wrote:
->>> There is nothing in use from init.h, remove it.
->>>
->>
->> NACK, sorry; this driver uses __init and __exit_p.
-> 
-> Ah, yes, just notice them. But I don't understand why the .probe callback needs
-> __init and .remove callback needs __exit_p? Should they need to be removed?
->   
-
-That is not a matter of "needs". __init causes the code to be removed after
-initialization. This is ok and desirable if it is known that the hardware is
-built-in and will only ever be probed once.
-
-exit_p causes the code to be removed if it is built into the kernel. This is
-desirable and makes sense if the device is known to never be removed.
-
-Having said that, what _is_ unnecessary is the remove function. Registration
-could use devm_watchdog_register_device(), and the watchdog subsystem should
-prevent removal if the watchdog is running. Plus, the removal function is
-buggy: It doesn' call clk_disable_unprepare() (but that could be handled
-with devm_add_action_or_reset() in the probe function). In my opinion,
-fixing all that would be more valuable than trying to drop an include file.
-
-Thanks,
-Guenter
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMi8xMC8yMCA1OjM1IFBNLCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3RlOgo+IEhpIE1hcmVrCgpI
+aSwKCj4gT24gMS8xOS8yMCA4OjExIFBNLCBNYXJlayBWYXN1dCB3cm90ZToKPj4gQWRkIHN1cHBv
+cnQgZm9yIERIIEVsZWN0cm9uaWNzIERIQ09NIFNvTSBhbmQgUERLMiByZXYuIDQwMCBjYXJyaWVy
+Cj4+IGJvYXJkLiBUaGlzIGlzIGFuIFNvTSB3aXRoIFNUTTMyTVAxNTdDIGFuZCBhbiBldmFsdWF0
+aW9uIGtpdC4gVGhlCj4+IGJhc2Vib2FyZCBwcm92aWRlcyBFdGhlcm5ldCwgVUFSVCwgVVNCLCBD
+QU4gYW5kIG9wdGlvbmFsIGRpc3BsYXkuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IE1hcmVrIFZhc3V0
+IDxtYXJleEBkZW54LmRlPgo+PiBDYzogQWxleGFuZHJlIFRvcmd1ZSA8YWxleGFuZHJlLnRvcmd1
+ZUBzdC5jb20+Cj4+IENjOiBNYXhpbWUgQ29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5j
+b20+Cj4+IENjOiBQYXRyaWNlIENob3RhcmQgPHBhdHJpY2UuY2hvdGFyZEBzdC5jb20+Cj4+IENj
+OiBQYXRyaWNrIERlbGF1bmF5IDxwYXRyaWNrLmRlbGF1bmF5QHN0LmNvbT4KPj4gQ2M6IGxpbnV4
+LXN0bTMyQHN0LW1kLW1haWxtYW4uc3Rvcm1yZXBseS5jb20KPj4gVG86IGxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+PiAtLS0KPj4gVjI6IC0gQWRkIHN0bTMybXAxIGludG8g
+dGhlIHN1YmplY3QgYW5kIGNvbW1pdCBtZXNzYWdlCj4+IMKgwqDCoMKgIC0gU29ydCBEVCBhbHBo
+YW51bWVyaWNhbGx5Cj4+IMKgwqDCoMKgIC0gTW92ZSBhbGwgcGluY29udHJvbCBlbnRyaWVzIGlu
+dG8gc3RtMzJtcDE1LXBpbmN0cmwuZHRzaQo+PiAtLS0KPiAKPiBUaGFua3MgdG8gYWRkIGEgbmV3
+IFNUTTMyIGJvYXJkLgo+IAo+IFNlcmllcyBhcHBsaWVkIG9uIHN0bTMyLW5leHQuCgpIb3cgY29t
+ZSB0aGVzZSBhcmUgbm90IGluIG5leHQvbWFzdGVyIHlldCwgaXMgdGhlIGJyYW5jaCBub3QgYmVp
+bmcKbWVyZ2VkIGludG8gbmV4dCByZWd1bGFybHkgPwoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
