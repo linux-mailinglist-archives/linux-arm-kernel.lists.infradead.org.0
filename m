@@ -2,100 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDBFD16958E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:27:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45335169591
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:29:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gM9rI8fL7JST7B/Ks4CdyuedaMVTRFfGCEb3ozZ4qOM=; b=dxCNeevHNgs/QJ
-	r7O+VD+mKoQUTkGESkQns7ZMrkx4LKn58MJjB9/nWg7Zb97VeVR5xVp8s1joXwJvhe/knwcSrk8yW
-	I0Lzmet4kvmNf2cNMnhKUdbyvd8ASUhIKUH8zv+NLq0/0GovywcNMdv1+t3pBaFYEScMqKHs2feke
-	6Q/APt9YVsDCWZ3fDp2Iy9E+RetM2Geola2H0mIisEGTZUhUA8wgZeaJTF68XRczeY1cgARvdGKNN
-	uEwZBYQO1OujUI8O3ymSUzJx/h3cdDf/KBvg8QWP69G9J4BGo8ZslW5mJYeAxKJqeqpXL8VKZuLCY
-	+VAjHateiCp30VyJhY+w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c2QHnFQXzfVDLNTQgkt3O20pykCCjnUfBOjolAbjqb4=; b=PZsvqJd5JmDjbz
+	I3bxf78sZByJWG/hDhHgLn+4xpf8iS4IG7zc2DFKS0wCPzMbv01hDEDfrKIL6vcRnotPWoI4xYbYF
+	619jz3cXW4CYfLzxrXBf8/BCLIyPZzZXwu0BXlH9L6faoodWLpeeSyQtPJuw60nzAj9Id/f3DoheU
+	5ghfPvnYttdDUN+dxXDo3dQOztA4XgqVcLb/4ou1jKJOz/Y5KT1sxwnYNWnWaPD+ub/ZAqs3oQW3q
+	/qLxwDmd9jI72PfAD7mSpiT40QpUpiPornPmnWoSdGIZoIXfG2IpP1QLNMeJe7pae2UlmMJaDhtXo
+	EnEvL+tXZkEpV3UHQZAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5hv1-0002z6-MJ; Sun, 23 Feb 2020 03:26:59 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1j5hxR-0003Q5-SB; Sun, 23 Feb 2020 03:29:29 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5huo-0002q8-2U
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 03:26:47 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailout.nyi.internal (Postfix) with ESMTP id 1A122218C1;
- Sat, 22 Feb 2020 22:26:32 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Sat, 22 Feb 2020 22:26:32 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=F
- q5Pvne5G6qnjZTjneNRiu68lwry5vZNmNqyfbQkjQw=; b=WrBCbsyrPncJazhGd
- RFrLkBgpnZme+BBLjPPxZnmwb6gkKDFTPRbjKCFgDWDKSq/8Dp8MH15qTOq1xA2v
- 7WK40fZZJsfXO+8RjGCaTIW/AjTta277InhLQSW2UJ6uAYGps+NX+tz3yxfN2V+N
- OnoYYt7sPmWYCZYFsV705QR4P8y2wpWOI/X7Pp7iLK1g0vPxKK6T/oa2ZTwmdkW1
- Gbq+Dnc0LUw2EhMSQsdI7LS0IL34/BLldhFhEcYoe8aKP++cCKUjMeWBRYySi4T1
- gkfU7n1bPDyQdjq5vDOkLBKpCN08X6J/kHRsudP2wBN6DTLjd1EYERKYzpJXsh21
- ZxesQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=Fq5Pvne5G6qnjZTjneNRiu68lwry5vZNmNqyfbQkj
- Qw=; b=MxDbz8MtvjBLZkouhiXHV0VhDLj+qXp9f9f3QaqRLsNtD7/9RBUHLXFCE
- PwwM/muhJ7nnWsXZlT3D6yevyRolrnnHpRYllWTtGhELiyBbyHrKb6GtG9yoeB45
- ZRYlSB9MSYJNioKXpFYke9aHlAceTmlnYZRuQgqqosbASagu29wPP6zEoOsk00hD
- Kqvgpk2q2tdE/FRy371s4xQgm2XgxcowsvLgMxIV9OzWJMQwdGoqJQEIykHJOfNR
- QU2osY8N5JmnppDG1mFfxQrjmbImF78xjIDOkth16T2gTI0BjhHDYf+dGS3HzczC
- v7OIJw1yprP+MqJupcq4GAWTfVF0A==
-X-ME-Sender: <xms:5_BRXnY4iB3lHEO-NYIBXxVc6VOviTaU6HdPyqCCSoZuRw-azHySEA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkeejgdehiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
- epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
- rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:5_BRXim6JjmIQXBUvawqqipBFfS3Fa7opxNXzPzB13LO_wXOA28nhw>
- <xmx:5_BRXhGAWlH8mhWT3Tycr_xkjzUTDd0MkRBj1bPfsCt1oe9122fjeQ>
- <xmx:5_BRXpMvz66UiGqpTz7F9SdUCkX0KXDvrWpOCnxaovCM2kMA9ycRgA>
- <xmx:6PBRXie4gW5iu5GhKuQMgadwWf_ebG3_uzh2GEtPTXb0Ab6wRfeXWQ>
-Received: from [192.168.50.169]
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 123BE328005A;
- Sat, 22 Feb 2020 22:26:31 -0500 (EST)
-Subject: Re: [linux-sunxi] [PATCH] arm64: dts: sun50i-h5-orange-pi-pc2: Add
- CPUX voltage regulator
-To: megous@megous.com, linux-sunxi@googlegroups.com
-References: <20200222214541.210318-1-megous@megous.com>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <92a2b808-8280-7ad4-cfb4-8ff9488c02c8@sholland.org>
-Date: Sat, 22 Feb 2020 21:26:30 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1j5hxH-0003PR-WA
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 03:29:21 +0000
+Received: by mail-ed1-f66.google.com with SMTP id r18so7589111edl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 22 Feb 2020 19:29:19 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CblN7nCexE9hCYpZuW6auACpdPiU3JSJPvxkqoB8jC4=;
+ b=LrQfhw904K/yy3QvuSrVTiLxEFzNMSgTCebecT8Qn5As0EiaINNdZx+uZzI4HXEdZ9
+ yMgKshU0rnol9RXAkVR/LfHNaB8B2unFuMsc7PHlV+mWcTinPDPIpEOwDJyRnqM0YgHZ
+ T02ivDYZAxfzxTPkKFYUbdes7YE9gwQepBCdabpXcuiVgcPWesDl/hs/o6ccBDvLLiti
+ v9BkZtE1ZOdp0o4TCtBmI1BcaO0l2yMmD4UjmzmDKFHeawPf3/pJd/IxSxK6bnz0giat
+ MhY2Hc18mUkLZHUkAtLsFO+f6hct5U2Q3uTAg92cipR4TgnXfx6KYuDp/dYJLW33Jpkf
+ jgKg==
+X-Gm-Message-State: APjAAAVYDGPgxMwZBzNBefzbRQ5me0C37AANDd0UUJ1JibEIjD6xKPJX
+ 3j1YPQ/wbhgQaQaHZxBZfIlYvFelaAw=
+X-Google-Smtp-Source: APXvYqxV5M+GFEEKk7fD2qBIZf21AwEW5cmUpvWB9di3Ur37pWhe+d3i6il5GfPlsSOCbiKIZlT1xg==
+X-Received: by 2002:a05:6402:1347:: with SMTP id
+ y7mr41062666edw.140.1582428558145; 
+ Sat, 22 Feb 2020 19:29:18 -0800 (PST)
+Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com.
+ [209.85.221.50])
+ by smtp.gmail.com with ESMTPSA id br7sm603278ejb.13.2020.02.22.19.29.17
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 22 Feb 2020 19:29:17 -0800 (PST)
+Received: by mail-wr1-f50.google.com with SMTP id e8so6371579wrm.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 22 Feb 2020 19:29:17 -0800 (PST)
+X-Received: by 2002:a5d:534b:: with SMTP id t11mr57232727wrv.120.1582428557465; 
+ Sat, 22 Feb 2020 19:29:17 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200222214541.210318-1-megous@megous.com>
-Content-Language: en-US
+References: <20200222214039.209426-1-megous@megous.com>
+In-Reply-To: <20200222214039.209426-1-megous@megous.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Sun, 23 Feb 2020 11:29:07 +0800
+X-Gmail-Original-Message-ID: <CAGb2v647zKVrDvnHeLvwNPEZLX+yTgPq-x7MJkp9=duzkQN3mw@mail.gmail.com>
+Message-ID: <CAGb2v647zKVrDvnHeLvwNPEZLX+yTgPq-x7MJkp9=duzkQN3mw@mail.gmail.com>
+Subject: Re: [PATCH] ARM: dts: sun8i-a83t: Add thermal trip points/cooling maps
+To: Ondrej Jirman <megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_192646_269527_9C1661CD 
-X-CRM114-Status: GOOD (  18.22  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200222_192920_033457_BC3F6960 
+X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [wens213[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wens213[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,7 +100,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>,
  "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
  Rob Herring <robh+dt@kernel.org>,
  "moderated list:ARM/Allwinner sunXi SoC support"
  <linux-arm-kernel@lists.infradead.org>
@@ -119,83 +109,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ondrej,
+Hi,
 
-On 2/22/20 3:45 PM, Ondrej Jirman wrote:
-> Orange Pi PC2 features sy8106a regulator just like Orange Pi PC.
-> 
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  .../dts/allwinner/sun50i-h5-orangepi-pc2.dts  | 29 +++++++++++++++++++
->  1 file changed, 29 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
-> index 70b5f09984218..5feedde95b5fc 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
-> @@ -85,6 +85,10 @@ reg_usb0_vbus: usb0-vbus {
->  	};
->  };
->  
-> +&cpu0 {
-> +	cpu-supply = <&reg_vdd_cpux>;
-> +};
-> +
+On Sun, Feb 23, 2020 at 5:40 AM Ondrej Jirman <megous@megous.com> wrote:
+>
+> This enables passive cooling by down-regulating CPU voltage
+> and frequency.
 
-This should go alphabetically after "codec".
+Please state for the record how the trip points were derived. Were they from
+the BSP? Or the user manual?
 
->  &codec {
->  	allwinner,audio-routing =
->  		"Line Out", "LINEOUT",
-> @@ -180,6 +184,31 @@ flash@0 {
->  	};
->  };
->  
-> +&r_i2c {
-
-This should go alphabetically before "spi0".
-
-> +	status = "okay";
-> +
-> +	reg_vdd_cpux: regulator@65 {
-> +		compatible = "silergy,sy8106a";
-> +		reg = <0x65>;
-> +		regulator-name = "vdd-cpux";
-> +		silergy,fixed-microvolt = <1200000>;
-
-The resistors in the datasheet (10k/11.8k) make this 1.1V.
-
-> +		/*
-> +		 * The datasheet uses 1.1V as the minimum value of VDD-CPUX,
-> +		 * however both the Armbian DVFS table and the official one
-> +		 * have operating points with voltage under 1.1V, and both
-> +		 * DVFS table are known to work properly at the lowest
-> +		 * operating point.
-> +		 *
-> +		 * Use 1.0V as the minimum voltage instead.
-> +		 */
-
-The datasheet I have for H5 has "TBD" for the VDD-CPUX volatage range. I think
-this comment only applies to H3 and is not necessary here.
-
-> +		regulator-min-microvolt = <1000000>;
-> +		regulator-max-microvolt = <1400000>;
-> +		regulator-ramp-delay = <200>;
-> +		regulator-boot-on;
-> +		regulator-always-on;
-> +	};
-> +};
-> +
->  &uart0 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&uart0_pa_pins>;
-> 
-
-Otherwise,
-Reviewed-by: Samuel Holland <samuel@sholland.org>
-
-Regards,
-Samuel
+ChenYu
 
 _______________________________________________
 linux-arm-kernel mailing list
