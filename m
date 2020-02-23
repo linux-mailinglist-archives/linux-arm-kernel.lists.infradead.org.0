@@ -2,58 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A7B2169981
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 19:50:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 032EF1699A2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 20:26:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TWXiB/xa60dAEr7bl6QB8RnzZXNL7xAfDbS5LSfACts=; b=D+hqK6bxOd+8/X
-	6ry9BXA5bpDzW26SsfeyzieKU9mgifQNuK5uDiPojupOKpKRfxdOAJNkWParBj5eZTGvY6AwwCEV8
-	DVf3USqMWmJuy6c4k6bvG1aXIGZJao5S1i97+e3rUrk1FQy7EMdpOlbxnl3KEzE9uGkDQLfAyPX79
-	RmfRE2aZw/lZwMst/2kKgw6HurO2lhvAL+NpBB5U6fgQP+R4eEfdsfIkcBpdv3MSKjLUxYQK7hIBe
-	QDNgzvgG9/Tb31iAR6Thdwm2YDz3d5/+IFA4Z1EuPq1W2Vnc1dTtOSJBoSdD13XCNlrRsp4X2UkmL
-	hh+xYxCCHSldZThPLAMw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Cj7LPeg+qWCuNI4WAZ/iTYJFuupLJopnCAye53k5RcQ=; b=XXp648F9AHtlqj
+	O8IgF8g/PRlMII+GtBUgft+hcxQ3uUl3Mo6EVcYHDGsFSmCuUWOimQc81QgLpK908OMtkXXChNjrt
+	SS7t+rz++AvueOpZo4/SXz4sOZn8f1gtDoV4vHqL6mUPLcpsieRbKZcWFRM/H7V2sZsUftabPNZOt
+	fH3UYBKrFewTyNIl6IgkbQ5peUHrnoUlzVbl3XTNwtrWfkLwHIuyKownmloDeTQBsOUIlbQ1aCx8o
+	m02mE+UNQLB1XHvYPiJhvYMt+cO+1/JKxYuNC0eM9AEBa8AkbskUPieHG5vX4srHJL96skhdYB7S4
+	3BI0ghXLZT5aGK6w5iVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5wJs-0005w7-S4; Sun, 23 Feb 2020 18:49:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5wJf-0005un-L4
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 18:49:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9A0AA30E;
- Sun, 23 Feb 2020 10:49:17 -0800 (PST)
-Received: from localhost (unknown [10.1.198.53])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 377B73F703;
- Sun, 23 Feb 2020 10:49:17 -0800 (PST)
-Date: Sun, 23 Feb 2020 18:49:15 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH v3 6/7] arm64: use activity monitors for frequency
- invariance
-Message-ID: <20200223184915.GA22925@arm.com>
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-7-ionela.voinescu@arm.com>
- <9eeda406-78a8-a910-f6ef-a367bf407a19@arm.com>
+	id 1j5wtN-0000X3-IS; Sun, 23 Feb 2020 19:26:17 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5wsh-00005l-7l
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 19:25:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582485930;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=zSCIh7K7Y8FlgneHdFGaX0aZ5L1KSsvBwva6avjhk6c=;
+ b=HBx1+UjOleEW+akgZvat4a1gYo/nBdHV+kQmYCWMGs9YuAUPeEmkFokyfRiwMDjKQSqqfg
+ Gw5rxcn+mUfhFUKuXIFc0ccQbCfDmIJ3lMGCDfx8NGiEvCjkY3JjkqxKq1o7ZHu8nbHl4R
+ +guK6+0HNMfFIchJLVrSb/eMsGY302I=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-220-3QBvPW4zM2Wmt9n2PN-D1A-1; Sun, 23 Feb 2020 14:25:25 -0500
+X-MC-Unique: 3QBvPW4zM2Wmt9n2PN-D1A-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 56230184B122;
+ Sun, 23 Feb 2020 19:25:24 +0000 (UTC)
+Received: from mail (ovpn-120-118.rdu2.redhat.com [10.10.120.118])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 4A44B5C241;
+ Sun, 23 Feb 2020 19:25:21 +0000 (UTC)
+From: Andrea Arcangeli <aarcange@redhat.com>
+To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Rafael Aquini <aquini@redhat.com>, Mark Salter <msalter@redhat.com>
+Subject: [PATCH 0/3] arm64: tlb: skip tlbi broadcast v2
+Date: Sun, 23 Feb 2020 14:25:17 -0500
+Message-Id: <20200223192520.20808-1-aarcange@redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9eeda406-78a8-a910-f6ef-a367bf407a19@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_104923_782745_D0614D47 
-X-CRM114-Status: GOOD (  34.78  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200223_112535_351364_75822D88 
+X-CRM114-Status: GOOD (  22.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,193 +85,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
- linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- mingo@redhat.com, viresh.kumar@linaro.org,
- linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
- lukasz.luba@arm.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: QI Fuli <qi.fuli@fujitsu.com>, Jon Masters <jcm@jonmasters.org>,
+ linux-kernel@vger.kernel.org, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVmFsZW50aW4sCgpTb3JyeSBmb3IgdGhlIGRlbGF5IGluIG15IHJlcGx5IGFuZCB0aGFuayB5
-b3UgdmVyeSBtdWNoIGZvciB0aGUgcmV2aWV3IQoKSSB3aWxsIHB1c2ggdjQgdmVyeSBzb29uIHdp
-dGggdGhlc2UgY2hhbmdlcy4KCk9uIE1vbmRheSAxNyBGZWIgMjAyMCBhdCAxNjo1OToyNCAoKzAw
-MDApLCBWYWxlbnRpbiBTY2huZWlkZXIgd3JvdGU6Cj4gPiArCSAqIFByZS1jb21wdXRlIHRoZSBm
-aXhlZCByYXRpbyBiZXR3ZWVuIHRoZSBmcmVxdWVuY3kgb2YgdGhlIGNvbnN0YW50Cj4gPiArCSAq
-IGNvdW50ZXIgYW5kIHRoZSBtYXhpbXVtIGZyZXF1ZW5jeSBvZiB0aGUgQ1BVLgo+ID4gKwkgKgo+
-ID4gKwkgKgkJCSAgICAgIGNvbnN0X2ZyZXEKPiA+ICsJICogYXJjaF9tYXhfZnJlcV9zY2FsZSA9
-ICAgLS0tLS0tLS0tLS0tLS0tLSAqIFNDSEVEX0NBUEFDSVRZX1NDQUxFwrIKPiA+ICsJICoJCQkg
-ICBjcHVpbmZvX21heF9mcmVxCj4gPiArCSAqCj4gPiArCSAqIFdlIHVzZSBhIGZhY3RvciBvZiAy
-ICogU0NIRURfQ0FQQUNJVFlfU0hJRlQgLT4gU0NIRURfQ0FQQUNJVFlfU0NBTEXCsgo+ID4gKwkg
-KiBpbiBvcmRlciB0byBlbnN1cmUgYSBnb29kIHJlc29sdXRpb24gZm9yIGFyY2hfbWF4X2ZyZXFf
-c2NhbGUgZm9yCj4gPiArCSAqIHZlcnkgbG93IGFyY2ggdGltZXIgZnJlcXVlbmNpZXMgKHVwIHRv
-IHRoZSBLSHogcmFuZ2Ugd2hpY2ggc2hvdWxkIGJlCj4gICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICBeXl5eXgo+IDxwZWRhbnRpYyBoYXQgb24+OiBzL3VwIHRvL2Rv
-d24gdG8vCgpEb25lIQoKPiA+ICsJICogdW5saWtlbHkpLgo+ID4gKwkgKi8KPiA+ICsJcmF0aW8g
-PSAodTY0KWFyY2hfdGltZXJfZ2V0X3JhdGUoKSA8PCAoMiAqIFNDSEVEX0NBUEFDSVRZX1NISUZU
-KTsKPiA+ICsJcmF0aW8gPSBkaXY2NF91NjQocmF0aW8sIG1heF9mcmVxX2h6KTsKPiA+ICsJaWYg
-KCFyYXRpbykgewo+ID4gKwkJcHJfZXJyKCJTeXN0ZW0gdGltZXIgZnJlcXVlbmN5IHRvbyBsb3cu
-XG4iKTsKPiAKPiBTaG91bGQgdGhhdCBiZSBhIFdBUk5fT05DRSgpIGluc3RlYWQ/IElmIHRoZSBh
-cmNoIHRpbWVyIGZyZXEgaXMgdG9vIGxvdywKPiB3ZSdsbCBlbmQgdXAgc3BhbW1pbmcgdGhpcyBt
-ZXNzYWdlLCBzaW5jZSB3ZSBnbyB0aHJvdWdoIHRoaXMgZm9yIGFsbCBDUFVzLgoKRG9uZSEKCj4g
-PiArCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICsJfQo+ID4gKwo+ID4gKwlwZXJfY3B1KGFyY2hfbWF4
-X2ZyZXFfc2NhbGUsIGNwdSkgPSAodW5zaWduZWQgbG9uZylyYXRpbzsKPiA+ICsKPiAKPiBJdCBv
-Y2N1cnJlZCB0byBtZSB0aGF0IHRoaXMgaXNuJ3Qgc3RyaWN0bHkgc3BlYWtpbmcgYSBwZXItQ1BV
-IGluZm9ybWF0aW9uIGFzCj4gaXQgb25seSBkZXBlbmRzIG9uIHRoZSBtYXggcG9zc2libGUgZnJl
-cXVlbmN5LiBOb3QgcmVhbGx5IHdvcnRoIGJvdGhlcmluZwo+IGFib3V0IHRob3VnaCwgSSB0aGlu
-ay4KPiAKClllcywgaXQgZGVwZW5kcyBvbiB0aGUgbWF4IHBvc3NpYmxlIGZyZXF1ZW5jeSBvZiBh
-bGwgQ1BVcyBpbiBhIGZyZXF1ZW5jeQpkb21haW4uIEJ1dCBJIHdhbnRlZCB0byBwdXQgdGhpcyBm
-YWN0b3IgaW4gYSBwZXItY3B1IHZhcmlhYmxlIGluIG9yZGVyCnRvIGJlIGFibGUgdG8gcmV0cmll
-dmUgaXQgZmFzdGVyIGluIHRvcG9sb2d5X3NjYWxlX2ZyZXFfdGljaywgcmF0aGVyCnRoYW4gaGF2
-aW5nIHRvIGNvbnNpZGVyIHBvbGljaWVzIGFuZCByZWxhdGVkIENQVXMgaW4gdGhhdCBmdW5jdGlv
-bi4KCj4gPiArCXJldHVybiAwOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgaW5saW5lIGludAo+
-ID4gK2VuYWJsZV9wb2xpY3lfZnJlcV9jb3VudGVycyhpbnQgY3B1LCBjcHVtYXNrX3Zhcl90IHZh
-bGlkX2NwdXMpCj4gPiArewo+ID4gKwlzdHJ1Y3QgY3B1ZnJlcV9wb2xpY3kgKnBvbGljeSA9IGNw
-dWZyZXFfY3B1X2dldChjcHUpOwo+ID4gKwo+ID4gKwlpZiAoIXBvbGljeSkgewo+ID4gKwkJcHJf
-ZGVidWcoIkNQVSVkOiBObyBjcHVmcmVxIHBvbGljeSBmb3VuZC5cbiIsIGNwdSk7Cj4gPiArCQly
-ZXR1cm4gZmFsc2U7Cj4gPiArCX0KPiA+ICsKPiA+ICsJaWYgKGNwdW1hc2tfc3Vic2V0KHBvbGlj
-eS0+cmVsYXRlZF9jcHVzLCB2YWxpZF9jcHVzKSkgewo+ID4gKwkJY3B1bWFza19vcihhbXVfZmll
-X2NwdXMsIHBvbGljeS0+cmVsYXRlZF9jcHVzLAo+ID4gKwkJCSAgIGFtdV9maWVfY3B1cyk7Cj4g
-PiArCQlwcl9pbmZvKCJDUFVzWyUqcGJsXTogY291bnRlcnMgd2lsbCBiZSB1c2VkIGZvciBGSUUu
-IiwKPiA+ICsJCQljcHVtYXNrX3ByX2FyZ3MoYW11X2ZpZV9jcHVzKSk7Cj4gCj4gQ291bGQgd2Ug
-aGF2ZSBhIHNpbmdsZSBwcmludCBvZiBhbGwgQ1BVcyBpbiBvbmUgZ28/IEFJVUkgdGhpcyB3aWxs
-IGdlbmVyYXRlIGEKPiBsaW5lIHBlciBjcHVmcmVxIHBvbGljeS4gTWF5YmUganVzdCBzb21ldGhp
-bmcgYXQgdGhlIHRhaWwgb2YgaW5pdF9hbXVfZmllKCk6Cj4gCj4gaWYgKCFjcHVtYXNrX2VtcHR5
-KGFtdV9maWVfY3B1cykpCj4gCXByX2luZm8oPGJsYWg+KTsKPiAKCkRvbmUuIEkndmUgdXNlZCB0
-aGlzIGxvY2F0aW9uIGFzIHdlbGwgdG8gc2V0IHRoZSBzdGF0aWMga2V5IHRoYXQgeW91J3ZlCnN1
-Z2dlc3RlZCBiZWxvdy4KCj4gPiArCX0KPiA+ICsKPiA+ICsJY3B1ZnJlcV9jcHVfcHV0KHBvbGlj
-eSk7Cj4gPiArCj4gPiArCXJldHVybiB0cnVlOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMgaW50
-IF9faW5pdCBpbml0X2FtdV9maWUodm9pZCkKPiA+ICt7Cj4gPiArCWNwdW1hc2tfdmFyX3QgdmFs
-aWRfY3B1czsKPiA+ICsJYm9vbCBoYXZlX3BvbGljeSA9IGZhbHNlOwo+ID4gKwlpbnQgY3B1Owo+
-ID4gKwo+ID4gKwlpZiAoIXphbGxvY19jcHVtYXNrX3ZhcigmdmFsaWRfY3B1cywgR0ZQX0tFUk5F
-TCkgfHwKPiA+ICsJICAgICF6YWxsb2NfY3B1bWFza192YXIoJmFtdV9maWVfY3B1cywgR0ZQX0tF
-Uk5FTCkpCj4gPiArCQlyZXR1cm4gLUVOT01FTTsKPiA+ICsKPiA+ICsJZm9yX2VhY2hfcG9zc2li
-bGVfY3B1KGNwdSkgewo+ID4gKwkJaWYgKHZhbGlkYXRlX2NwdV9mcmVxX2ludmFyaWFuY2VfY291
-bnRlcnMoY3B1KSkKPiA+ICsJCQljb250aW51ZTsKPiA+ICsJCWNwdW1hc2tfc2V0X2NwdShjcHUs
-IHZhbGlkX2NwdXMpOwo+ID4gKwkJaGF2ZV9wb2xpY3kgPSBlbmFibGVfcG9saWN5X2ZyZXFfY291
-bnRlcnMoY3B1LCB2YWxpZF9jcHVzKSB8fAo+ID4gKwkJCSAgICAgIGhhdmVfcG9saWN5Owo+IAo+
-IFdoYXQgYWJvdXQ6Cj4gCQloYXZlX3BvbGljeSB8PSBlbmFibGVfcG9saWN5X2ZyZXFfY291bnRl
-cnMoY3B1LCB2YWxpZF9jcHVzKTsKPiAKCkRvbmUgYXMgd2VsbC4KCj4gPiArCX0KPiA+ICsKPiA+
-ICsJaWYgKCFoYXZlX3BvbGljeSkgewo+ID4gKwkJLyoKPiA+ICsJCSAqIElmIHdlIGFyZSBub3Qg
-cmVzdHJpY3RlZCBieSBjcHVmcmVxIHBvbGljaWVzLCB3ZSBvbmx5IGVuYWJsZQo+ID4gKwkJICog
-dGhlIHVzZSBvZiB0aGUgQU1VIGZlYXR1cmUgZm9yIEZJRSBpZiBhbGwgQ1BVcyBzdXBwb3J0IEFN
-VS4KPiA+ICsJCSAqIE90aGVyd2lzZSwgZW5hYmxlX3BvbGljeV9mcmVxX2NvdW50ZXJzIGhhcyBh
-bHJlYWR5IGVuYWJsZWQKPiA+ICsJCSAqIHBvbGljeSBjcHVzLgo+ID4gKwkJICovCj4gPiArCQlp
-ZiAoY3B1bWFza19lcXVhbCh2YWxpZF9jcHVzLCBjcHVfcG9zc2libGVfbWFzaykpIHsKPiAKPiBN
-bW0gc28gSSdtIHRoaW5raW5nIHdoYXQgd2Ugd2FudCBoZXJlIGlzIHRoZSBjcHVfcHJlc2VudF9t
-YXNrIHJhdGhlciB0aGFuCj4gdGhlIHBvc3NpYmxlIG9uZS4gVGhpcyBpcyB2ZXJ5IGNvcm5lci1j
-YXN5LCBidXQgSSB0aGluayB0aGF0IGlmIHdlIGZhaWwgdG8KPiBib290IGEgc2Vjb25kYXJ5LCB3
-ZSdsbCBoYXZlIGl0IHBvc3NpYmxlIGJ1dCBub3QgcHJlc2VudC4KPgoKWWVzLCB0aGlzIGlzIGNv
-cnJlY3QuIEl0IGRvZXMgZGVwZW5kIG9uIHRoZSBzdGFnZSBpdCBmYWlscyBhdDogZm9yCmV4YW1w
-bGUgaWYgc29tZSBmZWF0dXJlIGNoZWNrcyBmYWlsLCBhIENQVSB3aWxsIG5vdCBiZSBtYXJrZWQg
-aW4KY3B1X3ByZXNlbnRfbWFzayAoc2VlIGNwdV9kaWVfZWFybHkoKSksIHdoaWxlIHRoZSBmb2xs
-b3dpbmcgd2lsbCByZXN1bHQKaW4gcG9zc2libGUgPT0gcHJlc2VudC4KCi0tLQpbICAgIDAuMDU2
-NTI0XSBFRkkgc2VydmljZXMgd2lsbCBub3QgYmUgYXZhaWxhYmxlLgpbICAgIDAuMDY1NjkwXSBz
-bXA6IEJyaW5naW5nIHVwIHNlY29uZGFyeSBDUFVzIC4uLgpbICAgIDAuMDk4MDEwXSBwc2NpOiBm
-YWlsZWQgdG8gYm9vdCBDUFUxICgtMjIpClsgICAgMC4wOTgwMzddIENQVTE6IGZhaWxlZCB0byBi
-b290OiAtMjIKWyAgICAwLjEzMDI5MF0gcHNjaTogZmFpbGVkIHRvIGJvb3QgQ1BVMiAoLTIyKQpb
-ICAgIDAuMTMwMzE1XSBDUFUyOiBmYWlsZWQgdG8gYm9vdDogLTIyClsgICAgMC4xNjI1NjhdIHBz
-Y2k6IGZhaWxlZCB0byBib290IENQVTMgKC0yMikKWyAgICAwLjE2MjU5NF0gQ1BVMzogZmFpbGVk
-IHRvIGJvb3Q6IC0yMgpbICAgIDAuMTk0ODkwXSBEZXRlY3RlZCBQSVBUIEktY2FjaGUgb24gQ1BV
-NApbICAgIDAuMTk0OTkwXSBHSUN2MzogQ1BVNDogZm91bmQgcmVkaXN0cmlidXRvciAxMDAgcmVn
-aW9uCjA6MHgwMDAwMDAwMDJmMTIwMDAwClsgICAgMC4xOTUwNDZdIEdJQ3YzOiBDUFU0OiB1c2lu
-ZyBhbGxvY2F0ZWQgTFBJIHBlbmRpbmcgdGFibGUKQDB4MDAwMDAwMDBmYzBkMDAwMApbICAgIDAu
-MTk1MTMzXSBDUFU0OiBCb290ZWQgc2Vjb25kYXJ5IHByb2Nlc3NvciAweDAwMDAwMDAxMDAKWzB4
-NDEwZmQwZjBdClsgICAgMC4yMjcxOTBdIHBzY2k6IGZhaWxlZCB0byBib290IENQVTUgKC0yMikK
-WyAgICAwLjIyNzQxMl0gQ1BVNTogZmFpbGVkIHRvIGJvb3Q6IC0yMgpbICAgIDAuMjU5NDMxXSBw
-c2NpOiBmYWlsZWQgdG8gYm9vdCBDUFU2ICgtMjIpClsgICAgMC4yNTk1MjJdIENQVTY6IGZhaWxl
-ZCB0byBib290OiAtMjIKWyAgICAwLjI5MTY4M10gcHNjaTogZmFpbGVkIHRvIGJvb3QgQ1BVNyAo
-LTIyKQpbICAgIDAuMjkxNzA5XSBDUFU3OiBmYWlsZWQgdG8gYm9vdDogLTIyClsgICAgMC4yOTE5
-OTBdIHNtcDogQnJvdWdodCB1cCAxIG5vZGUsIDIgQ1BVcyAgClsuLl0Kcm9vdEBidWlsZHJvb3Q6
-fiMgY2F0IHByZXNlbnQKMC03CnJvb3RAYnVpbGRyb290On4jIGNhdCBwb3NzaWJsZQowLTcKClRo
-aXMgZmFpbHVyZSBoYXBwZW5zIHdoaWxlIHRoZSBDUFUgaXMgYmVpbmcgYnJvdWdodCB1cCAoX19j
-cHVfdXApLgpJJ20gbm90IHN1cmUgaWYgdGhpcyBzaG91bGQgcmVzdWx0IGluIHNldF9jcHVfcHJl
-c2VudChjcHUsIDApIGFzIHdlbGwuCkJ1dCBpdCdzIHVucmVsYXRlZCB0byB0aGlzLi4KCkluIGFu
-eSBjYXNlLCB5b3VyIHN1Z2dlc3Rpb24gaXMgdmFsaWQgYW5kIGNwdV9wcmVzZW50X21hc2sgaXMg
-YmV0dGVyIHRvCmJlIHVzZWQgaGVyZS4KCgo+IFdoaWxlIGF0IGl0IHlvdSBjb3VsZCBtYWtlIHRo
-ZSBsb29wIG9ubHkgdGFyZ2V0IHByZXNlbnQgQ1BVcywgYnV0IEkgdGhpbmsgdGhlCj4gb25lIGJp
-dCB0aGF0IG1hdHRlcnMgaXMgdGhpcyBjaGVjayByaWdodCBoZXJlICghcHJlc2VudCBzaG91bGQg
-ZmFpbCBhdAo+IHZhbGlkYXRlX2NwdV9mcmVxX2ludmFyaWFuY2VfY291bnRlcnMoKSkuCj4gCgpX
-aWxsIGNoYW5nZSB0aGUgbG9vcCBhcyB3ZWxsLiBUaGFua3MhCgo+ID4gKwkJCWNwdW1hc2tfb3Io
-YW11X2ZpZV9jcHVzLCBhbXVfZmllX2NwdXMsIHZhbGlkX2NwdXMpOwo+ID4gKwkJCXByX2luZm8o
-IkNQVXNbJSpwYmxdOiBjb3VudGVycyB3aWxsIGJlIHVzZWQgZm9yIEZJRS4iLAo+ID4gKwkJCQlj
-cHVtYXNrX3ByX2FyZ3MoYW11X2ZpZV9jcHVzKSk7Cj4gPiArCQl9Cj4gPiArCX0KPiA+ICsKPiA+
-ICsJZnJlZV9jcHVtYXNrX3Zhcih2YWxpZF9jcHVzKTsKPiA+ICsKPiA+ICsJcmV0dXJuIDA7Cj4g
-PiArfQo+ID4gK2xhdGVfaW5pdGNhbGxfc3luYyhpbml0X2FtdV9maWUpOwo+ID4gKwo+ID4gK2Jv
-b2wgdG9wb2xvZ3lfY3B1X2ZyZXFfY291bnRlcnMoc3RydWN0IGNwdW1hc2sgKmNwdXMpCj4gPiAr
-ewo+ID4gKwlyZXR1cm4gY3B1bWFza19hdmFpbGFibGUoYW11X2ZpZV9jcHVzKSAmJgo+ID4gKwkg
-ICAgICAgY3B1bWFza19zdWJzZXQoY3B1cywgYW11X2ZpZV9jcHVzKTsKPiA+ICt9Cj4gPiArCj4g
-PiArdm9pZCB0b3BvbG9neV9zY2FsZV9mcmVxX3RpY2sodm9pZCkKPiA+ICt7Cj4gPiArCXU2NCBw
-cmV2X2NvcmVfY250LCBwcmV2X2NvbnN0X2NudDsKPiA+ICsJdTY0IGNvcmVfY250LCBjb25zdF9j
-bnQsIHNjYWxlOwo+ID4gKwlpbnQgY3B1ID0gc21wX3Byb2Nlc3Nvcl9pZCgpOwo+ID4gKwo+ID4g
-KwlpZiAoIWNwdW1hc2tfYXZhaWxhYmxlKGFtdV9maWVfY3B1cykgfHwKPiA+ICsJICAgICFjcHVt
-YXNrX3Rlc3RfY3B1KGNwdSwgYW11X2ZpZV9jcHVzKSkKPiA+ICsJCXJldHVybjsKPiAKPiBJdCBt
-aWdodCBiZSBhIGdvb2QgaWRlYSB0byBoYXZlIGEgc3RhdGljIGtleSB0byBnYXRlIG91ciBlbnRy
-eSBpbnRvIHRoaXMKPiBmdW5jdGlvbiAtIHRoYXQgd2F5IHdlIGNhbiBsZXNzZW4gb3VyIGltcGFj
-dCBvbiBvbGRlciBwbGF0Zm9ybXMgKHdpdGhvdXQgQU1VcykKPiBydW5uaW5nIGEgcmVjZW50IGtl
-cm5lbCB3aXRoIENPTkZJR19BUk02NF9BTVVfRVhUTj15Lgo+IAo+IHg4NiBkb2VzIGp1c3QgdGhh
-dCwgaWYgeW91IGxvb2sgYXQgdGhlaXIgYXJjaF9zY2FsZV9mcmVxX3RpY2soKQo+IGltcGxlbWVu
-dGF0aW9uLiBGV0lXIEkgZG9uJ3QgdGhpbmsgd2Ugc2hvdWxkIGJvdGhlciB3aXRoIHBsYXlpbmcg
-d2l0aCB0aGUKPiBrZXkgY291bnRlciB0byBjb3VudCBBTVUtZW5hYmxlZCBDUFVzLCBqdXN0IGVu
-YWJsZSBpdCBhdCBzdGFydHVwIGlmIHdlIGhhdmUKPiA+IDEgc3VjaCBDUFUgYW5kIGxldCB0aGUg
-Y3B1bWFzayBkcml2ZSB0aGUgcmVzdC4KPiAKPiBJbiB5b3VyIGNoZWNrIGhlcmUsIHRoZSBzdGF0
-aWMga2V5IGNoZWNrIGNvdWxkIHJlcGxhY2UgdGhlIGNwdW1hc2tfYXZhaWxhYmxlKCkKPiBjaGVj
-ay4gVGhlIHN0YXRpYyBrZXkgY291bGQgYWxzbyBiZSB1c2VkIGZvciB0b3BvbG9neV9jcHVfZnJl
-cV9jb3VudGVycygpLgo+CgpWZXJ5IGdvb2QgaWRlYSEgRG9uZSBhcyB3ZWxsLiBZZXMsIHRoZSBj
-b3VudGVyIChudW1iZXIgb2YgQU1VIGVuYWJsZWQKQ1BVcykgd291bGQgbm90IGJlIG9mIG11Y2gg
-aGVscCBmb3IgdGhlIG1vbWVudC4KCj4gPiArCj4gPiArCWNvbnN0X2NudCA9IHJlYWRfc3lzcmVn
-X3MoU1lTX0FNRVZDTlRSMF9DT05TVF9FTDApOwo+ID4gKwljb3JlX2NudCA9IHJlYWRfc3lzcmVn
-X3MoU1lTX0FNRVZDTlRSMF9DT1JFX0VMMCk7Cj4gPiArCXByZXZfY29uc3RfY250ID0gdGhpc19j
-cHVfcmVhZChhcmNoX2NvbnN0X2N5Y2xlc19wcmV2KTsKPiA+ICsJcHJldl9jb3JlX2NudCA9IHRo
-aXNfY3B1X3JlYWQoYXJjaF9jb3JlX2N5Y2xlc19wcmV2KTsKPiA+ICsKPiA+ICsJaWYgKHVubGlr
-ZWx5KGNvcmVfY250IDw9IHByZXZfY29yZV9jbnQgfHwKPiA+ICsJCSAgICAgY29uc3RfY250IDw9
-IHByZXZfY29uc3RfY250KSkKPiA+ICsJCWdvdG8gc3RvcmVfYW5kX2V4aXQ7Cj4gPiArCj4gPiAr
-CS8qCj4gPiArCSAqCSAgICAvXGNvcmUgICAgYXJjaF9tYXhfZnJlcV9zY2FsZQo+ID4gKwkgKiBz
-Y2FsZSA9ICAtLS0tLS0tICogLS0tLS0tLS0tLS0tLS0tLS0tLS0KPiA+ICsJICoJICAgIC9cY29u
-c3QgICBTQ0hFRF9DQVBBQ0lUWV9TQ0FMRQo+ID4gKwkgKgo+ID4gKwkgKiBXZSBzaGlmdCBieSBT
-Q0hFRF9DQVBBQ0lUWV9TSElGVCAoZGl2aWRlIGJ5IFNDSEVEX0NBUEFDSVRZX1NDQUxFKQo+ID4g
-KwkgKiBpbiBvcmRlciB0byBjb21wZW5zYXRlIGZvciB0aGUgU0NIRURfQ0FQQUNJVFlfU0NBTEXC
-siBmYWN0b3IgaW4KPiA+ICsJICogYXJjaF9tYXhfZnJlcV9zY2FsZSAodXNlZCB0byBlbnN1cmUg
-aXRzIHJlc29sdXRpb24pIHdoaWxlIGtlZXBpbmcKPiA+ICsJICogdGhlIHNjYWxlIHZhbHVlIGlu
-IHRoZSAwLVNDSEVEX0NBUEFDSVRZX1NDQUxFIGNhcGFjaXR5IHJhbmdlLgo+ID4gKwkgKi8KPiAK
-PiBBIHNpbXBsZSAiU2VlIHZhbGlkYXRlX2NwdV9mcmVxX2ludmFyaWFuY2VfY291bnRlcnMoKSBm
-b3IgZGV0YWlscyBvbiB0aGUKPiBzY2FsZSBmYWN0b3IiIHdvdWxkIHN1ZmZpY2Ugd3J0IHRoZSBz
-aGlmdGluZyBkZXRhaWxzLgo+CgpEb25lIQoKVGhhbmsgeW91LApJb25lbGEuCgo+ID4gKwlzY2Fs
-ZSA9IGNvcmVfY250IC0gcHJldl9jb3JlX2NudDsKPiA+ICsJc2NhbGUgKj0gdGhpc19jcHVfcmVh
-ZChhcmNoX21heF9mcmVxX3NjYWxlKTsKPiA+ICsJc2NhbGUgPSBkaXY2NF91NjQoc2NhbGUgPj4g
-U0NIRURfQ0FQQUNJVFlfU0hJRlQsCj4gPiArCQkJICBjb25zdF9jbnQgLSBwcmV2X2NvbnN0X2Nu
-dCk7Cj4gPiArCj4gPiArCXNjYWxlID0gbWluX3QodW5zaWduZWQgbG9uZywgc2NhbGUsIFNDSEVE
-X0NBUEFDSVRZX1NDQUxFKTsKPiA+ICsJdGhpc19jcHVfd3JpdGUoZnJlcV9zY2FsZSwgKHVuc2ln
-bmVkIGxvbmcpc2NhbGUpOwo+ID4gKwo+ID4gK3N0b3JlX2FuZF9leGl0Ogo+ID4gKwl0aGlzX2Nw
-dV93cml0ZShhcmNoX2NvcmVfY3ljbGVzX3ByZXYsIGNvcmVfY250KTsKPiA+ICsJdGhpc19jcHVf
-d3JpdGUoYXJjaF9jb25zdF9jeWNsZXNfcHJldiwgY29uc3RfY250KTsKPiA+ICt9Cj4gPiArI2Vu
-ZGlmIC8qIENPTkZJR19BUk02NF9BTVVfRVhUTiAqLwo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMv
-YmFzZS9hcmNoX3RvcG9sb2d5LmMgYi9kcml2ZXJzL2Jhc2UvYXJjaF90b3BvbG9neS5jCj4gPiBp
-bmRleCAxZWI4MWYxMTM3ODYuLjFhYjJiNzUwM2Q2MyAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMv
-YmFzZS9hcmNoX3RvcG9sb2d5LmMKPiA+ICsrKyBiL2RyaXZlcnMvYmFzZS9hcmNoX3RvcG9sb2d5
-LmMKPiA+IEBAIC0yOSw2ICsyOSwxNCBAQCB2b2lkIGFyY2hfc2V0X2ZyZXFfc2NhbGUoc3RydWN0
-IGNwdW1hc2sgKmNwdXMsIHVuc2lnbmVkIGxvbmcgY3VyX2ZyZXEsCj4gPiAgCXVuc2lnbmVkIGxv
-bmcgc2NhbGU7Cj4gPiAgCWludCBpOwo+ID4gIAo+ID4gKwkvKgo+ID4gKwkgKiBJZiB0aGUgdXNl
-IG9mIGNvdW50ZXJzIGZvciBGSUUgaXMgZW5hYmxlZCwganVzdCByZXR1cm4gYXMgd2UgZG9uJ3QK
-PiA+ICsJICogd2FudCB0byB1cGRhdGUgdGhlIHNjYWxlIGZhY3RvciB3aXRoIGluZm9ybWF0aW9u
-IGZyb20gQ1BVRlJFUS4KPiA+ICsJICogSW5zdGVhZCB0aGUgc2NhbGUgZmFjdG9yIHdpbGwgYmUg
-dXBkYXRlZCBmcm9tIGFyY2hfc2NhbGVfZnJlcV90aWNrLgo+ID4gKwkgKi8KPiA+ICsJaWYgKGFy
-Y2hfY3B1X2ZyZXFfY291bnRlcnMoY3B1cykpCj4gPiArCQlyZXR1cm47Cj4gPiArCj4gPiAgCXNj
-YWxlID0gKGN1cl9mcmVxIDw8IFNDSEVEX0NBUEFDSVRZX1NISUZUKSAvIG1heF9mcmVxOwo+ID4g
-IAo+ID4gIAlmb3JfZWFjaF9jcHUoaSwgY3B1cykKPiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xp
-bnV4L3RvcG9sb2d5LmggYi9pbmNsdWRlL2xpbnV4L3RvcG9sb2d5LmgKPiA+IGluZGV4IGViMmZl
-NmVkZDczYy4uMzk3YWFkNmFlMTYzIDEwMDY0NAo+ID4gLS0tIGEvaW5jbHVkZS9saW51eC90b3Bv
-bG9neS5oCj4gPiArKysgYi9pbmNsdWRlL2xpbnV4L3RvcG9sb2d5LmgKPiA+IEBAIC0yMjcsNSAr
-MjI3LDEyIEBAIHN0YXRpYyBpbmxpbmUgY29uc3Qgc3RydWN0IGNwdW1hc2sgKmNwdV9jcHVfbWFz
-ayhpbnQgY3B1KQo+ID4gIAlyZXR1cm4gY3B1bWFza19vZl9ub2RlKGNwdV90b19ub2RlKGNwdSkp
-Owo+ID4gIH0KPiA+ICAKPiA+ICsjaWZuZGVmIGFyY2hfY3B1X2ZyZXFfY291bnRlcnMKPiA+ICtz
-dGF0aWMgX19hbHdheXNfaW5saW5lCj4gPiArYm9vbCBhcmNoX2NwdV9mcmVxX2NvdW50ZXJzKHN0
-cnVjdCBjcHVtYXNrICpjcHVzKQo+ID4gK3sKPiA+ICsJcmV0dXJuIGZhbHNlOwo+ID4gK30KPiA+
-ICsjZW5kaWYKPiA+ICAKPiA+ICAjZW5kaWYgLyogX0xJTlVYX1RPUE9MT0dZX0ggKi8KPiA+IAoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+Hello,
+
+This is introducing a nr_active_mm that allows to optimize away the
+tlbi broadcast also for multi threaded processes, it doesn't rely
+anymore on mm_users <= 1.
+
+This also optimizes away all TLB flushes (including local ones) when
+the process is not running in any cpu (including during exit_mmap with
+lazy tlb state).
+
+This optimization is generally only observable when there are parallel
+TLB flushes from different processes in multiple CPUs. One possible
+use case is an userland malloc libs freeing small objects with
+MADV_DONTNEED and causing a frequent tiny tlb flushes as demonstrated
+by the tcmalloc testsuite.
+
+All memory intensive apps dealing a multitude of frequently freed
+small objects tend to opt-out of glibc and they opt-in jemalloc or
+tcmalloc, so this should facilitate the SMP/NUMA scalability of long
+lived apps with small objects running in different containers if
+they're issuing frequent MADV_DONTNEED tlb flushes while the other
+threads of the process are not running.
+
+I was suggested to implement the mm_cpumask the standard way in
+order to optimize multithreaded apps too and to avoid restricting the
+optimization to mm_users <= 1. So initially I had two bitmasks allocated
+as shown at the bottom of this cover letter, by setting
+ARCH_NR_MM_CPUMASK to 2 with the below patch applied... however I
+figured a single atomic per-mm achieves the exact same runtime behavior
+of the extra bitmap, so I just dropped the extra bitmap and I replaced
+it with nr_active_mm as an optimization.
+
+If the switch_mm atomic ops in the switch_mm fast path would be a
+concern (they're still faster than the cpumask_set_cpu/clear_cpu, with
+less than 256-512 CPUs), it's worth mentioning it'd be possible to
+remove all atomic ops from the switch_mm fast path by restricting this
+optimization to single threaded processes by checking mm_users <= 1
+and < 1 instead of nr_active_mm <= 1 and < 1 similarly to what the
+earlier version of this patchset was doing.
+
+Thanks,
+Andrea
+
+Andrea Arcangeli (3):
+  mm: use_mm: fix for arches checking mm_users to optimize TLB flushes
+  arm64: select CPUMASK_OFFSTACK if NUMA
+  arm64: tlb: skip tlbi broadcast
+
+ arch/arm64/Kconfig                   |  1 +
+ arch/arm64/include/asm/efi.h         |  2 +-
+ arch/arm64/include/asm/mmu.h         |  4 +-
+ arch/arm64/include/asm/mmu_context.h | 33 ++++++++--
+ arch/arm64/include/asm/tlbflush.h    | 95 +++++++++++++++++++++++++++-
+ arch/arm64/mm/context.c              | 54 ++++++++++++++++
+ mm/mmu_context.c                     |  2 +
+ 7 files changed, 180 insertions(+), 11 deletions(-)
+
+Early attempt with the standard mm_cpumask follows:
+
+From: Andrea Arcangeli <aarcange@redhat.com>
+Subject: mm: allow per-arch mm_cpumasks based on ARCH_NR_MM_CPUMASK
+
+Allow archs to allocate multiple mm_cpumasks in the mm_struct per-arch
+by definining a ARCH_NR_MM_CPUMASK > 1 (to be included before
+"linux/mm_types.h").
+
+Those extra per-mm cpumasks can be referenced with
+__mm_cpumask(N, mm), where N == 0 points to the mm_cpumask()
+known by the common code and N > 0 points to the per-arch private
+ones.
+---
+ drivers/firmware/efi/efi.c |  3 ++-
+ include/linux/mm_types.h   | 17 +++++++++++++++--
+ kernel/fork.c              |  3 ++-
+ mm/init-mm.c               |  2 +-
+ 4 files changed, 20 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+index 5da0232ae33f..608c9bf181e5 100644
+--- a/drivers/firmware/efi/efi.c
++++ b/drivers/firmware/efi/efi.c
+@@ -86,7 +86,8 @@ struct mm_struct efi_mm = {
+ 	.mmap_sem		= __RWSEM_INITIALIZER(efi_mm.mmap_sem),
+ 	.page_table_lock	= __SPIN_LOCK_UNLOCKED(efi_mm.page_table_lock),
+ 	.mmlist			= LIST_HEAD_INIT(efi_mm.mmlist),
+-	.cpu_bitmap		= { [BITS_TO_LONGS(NR_CPUS)] = 0},
++	.cpu_bitmap		= { [BITS_TO_LONGS(NR_CPUS) *
++				     ARCH_NR_MM_CPUMASK] = 0},
+ };
+ 
+ struct workqueue_struct *efi_rts_wq;
+diff --git a/include/linux/mm_types.h b/include/linux/mm_types.h
+index f29bba20bba1..b53d5622b3b2 100644
+--- a/include/linux/mm_types.h
++++ b/include/linux/mm_types.h
+@@ -531,6 +531,9 @@ struct mm_struct {
+ 	RH_KABI_RESERVE(7)
+ 	RH_KABI_RESERVE(8)
+ 
++#ifndef ARCH_NR_MM_CPUMASK
++#define ARCH_NR_MM_CPUMASK 1
++#endif
+ 	/*
+ 	 * The mm_cpumask needs to be at the end of mm_struct, because it
+ 	 * is dynamically sized based on nr_cpu_ids.
+@@ -544,15 +547,25 @@ extern struct mm_struct init_mm;
+ static inline void mm_init_cpumask(struct mm_struct *mm)
+ {
+ 	unsigned long cpu_bitmap = (unsigned long)mm;
++	int i;
+ 
+ 	cpu_bitmap += offsetof(struct mm_struct, cpu_bitmap);
+-	cpumask_clear((struct cpumask *)cpu_bitmap);
++	for (i = 0; i < ARCH_NR_MM_CPUMASK; i++) {
++		cpumask_clear((struct cpumask *)cpu_bitmap);
++		cpu_bitmap += cpumask_size();
++	}
+ }
+ 
+ /* Future-safe accessor for struct mm_struct's cpu_vm_mask. */
++static inline cpumask_t *__mm_cpumask(int index, struct mm_struct *mm)
++{
++	return (struct cpumask *)((unsigned long)&mm->cpu_bitmap +
++				  cpumask_size() * index);
++}
++
+ static inline cpumask_t *mm_cpumask(struct mm_struct *mm)
+ {
+-	return (struct cpumask *)&mm->cpu_bitmap;
++	return __mm_cpumask(0, mm);
+ }
+ 
+ struct mmu_gather;
+diff --git a/kernel/fork.c b/kernel/fork.c
+index 1dad2f91fac3..a6cbbc1b6008 100644
+--- a/kernel/fork.c
++++ b/kernel/fork.c
+@@ -2418,7 +2418,8 @@ void __init proc_caches_init(void)
+ 	 * dynamically sized based on the maximum CPU number this system
+ 	 * can have, taking hotplug into account (nr_cpu_ids).
+ 	 */
+-	mm_size = sizeof(struct mm_struct) + cpumask_size();
++	mm_size = sizeof(struct mm_struct) + cpumask_size() * \
++		ARCH_NR_MM_CPUMASK;
+ 
+ 	mm_cachep = kmem_cache_create_usercopy("mm_struct",
+ 			mm_size, ARCH_MIN_MMSTRUCT_ALIGN,
+diff --git a/mm/init-mm.c b/mm/init-mm.c
+index a787a319211e..d975f8ce270e 100644
+--- a/mm/init-mm.c
++++ b/mm/init-mm.c
+@@ -35,6 +35,6 @@ struct mm_struct init_mm = {
+ 	.arg_lock	=  __SPIN_LOCK_UNLOCKED(init_mm.arg_lock),
+ 	.mmlist		= LIST_HEAD_INIT(init_mm.mmlist),
+ 	.user_ns	= &init_user_ns,
+-	.cpu_bitmap	= { [BITS_TO_LONGS(NR_CPUS)] = 0},
++	.cpu_bitmap	= { [BITS_TO_LONGS(NR_CPUS) * ARCH_NR_MM_CPUMASK] = 0},
+ 	INIT_MM_CONTEXT(init_mm)
+ };
+
+
+[bitmap version depending on the above follows]
+
+@@ -248,6 +260,42 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+ 		cpu_switch_mm(mm->pgd, mm);
+ }
+ 
++enum tlb_flush_types tlb_flush_check(struct mm_struct *mm, unsigned int cpu)
++{
++	if (cpumask_any_but(mm_cpumask(mm), cpu) >= nr_cpu_ids) {
++		bool is_local = cpumask_test_cpu(cpu, mm_cpumask(mm));
++		cpumask_t *stale_cpumask = __mm_cpumask(1, mm);
++		int next_zero = cpumask_next_zero(-1, stale_cpumask);
++		bool local_is_clear = false;
++		if (next_zero < nr_cpu_ids &&
++		    (is_local && next_zero == cpu)) {
++			next_zero = cpumask_next_zero(next_zero, stale_cpumask);
++			local_is_clear = true;
++		}
++		if (next_zero < nr_cpu_ids) {
++			cpumask_setall(stale_cpumask);
++			local_is_clear = false;
++		}
++
++		/*
++		 * Enforce CPU ordering between the
++		 * cpumask_setall() and cpumask_any_but().
++		 */
++		smp_mb();
++
++		if (likely(cpumask_any_but(mm_cpumask(mm),
++					   cpu) >= nr_cpu_ids)) {
++			if (is_local) {
++				if (!local_is_clear)
++					cpumask_clear_cpu(cpu, stale_cpumask);
++				return TLB_FLUSH_LOCAL;
++			}
++			return TLB_FLUSH_NO;
++		}
++	}
++	return TLB_FLUSH_BROADCAST;
++}
++
+ /* Errata workaround post TTBRx_EL1 update. */
+ asmlinkage void post_ttbr_update_workaround(void)
+ {
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
