@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF211697A9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 14:15:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECA941697AB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 14:15:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FZBs80C7r3YkQTRG93CY7/BOlSxzu53V81j59AbYTHM=; b=Vcj9C61aIyJN3Y
-	fMZLspH+9tnby+65AQYAwzDwjSVY5le/Fxh5Ck80nMSAJNgL7FHJHSaqamO9x0PpMqYjVZ3/XL7Xi
-	WaL3Xln2WhybyzOWZkRnS5jUKO1FcxYrRYvvcs6AwviSeGHsdzdXUBLOo+4hZ/OB8phgezaKl4aBp
-	EZBCzdG0pxB3pKY4z63llPlox+tgU7pjIgcdB6/h6ameOPuoJczPE8YWFkgUZbRi3+1xtjsaO99yA
-	6RrnORVofLV0n3wQn+SZgT19u+EjTaq0cHmwFOFrO0OidZfnNoFJbwdIiWdJQP37lFJnvtpPos0+P
-	7gs7Jd4A1yqgkqshknvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KWvH6T4FLE8K60jTtLDDg94Xc7N2TAQJxCuQdKWfBM4=; b=c3G1cm7fHmD2+u
+	2k9MCYTlU5z26GChV2JUNCDgAItXfB1FXXJR0SelCK/haQvDKUa3rLtOWZs9/ZucuJDpw/eyai1U3
+	odSpI+3bdNzwWtwIl8tVCq9Q8kpZHZMD/9QKgSruzlRUe+yR/fSmvO3zp/IDCUUZBzKq82W56rY7I
+	p2CEtUbPxofS3bZJ4Kb3liqwfwupDmEnZQFrn0rDNrpsRtox+SOxbLqin1/+Tihy9E301Qlw6biax
+	LTvFZp01pqvD7Zjitmee5SosOdghcUJUV5Lxtx6xpUXVMHtMCtAhOCBLJu5rgc/x4JWRGmb1N7817
+	z5fFPNlw/XZa9dVPdIFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5r6V-0005dx-5s; Sun, 23 Feb 2020 13:15:27 +0000
+	id 1j5r6v-00064o-BD; Sun, 23 Feb 2020 13:15:53 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5r5v-00049I-ID
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 13:14:53 +0000
+ id 1j5r5v-00049J-IC
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 13:14:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582463688; bh=7u5RcG9coKsFNhS7jd0YQxz5uywiYal8+aKSaymmgCs=;
- h=From:To:Cc:Subject:Date:From;
- b=X2KI36Vnmx99OdMgF7wGS1IBvl6b+VOpvnu1QvmrwBfUFfuTUlzpAEeCN7KXqK5qk
- k1jiQkZY4u6kewOrR7rOOqIMAEvyMNIzbFq3sc5sEmUQkK0Sdg1QaxeT1QAnoQya/Y
- f0pUPdzycHCQ5dgFIf8tq4fuxs0U5NY/6Kpshii8=
+ t=1582463688; bh=54xRUvTGkyMdNnk2rkB4/jjx5Pxs9Bu2zPWHTbo071c=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=Fx68tUzrMaT6Zx3ogeXuS/EuwQ/VR0ubxBgXvpNRbq2SWOrAY0bPpSM9f1lhlSbYu
+ kAuBvr+0OHOjhyVClPIvqc247aXGz9ytldoXD4bs6Drr632oAP4KbvS9dfjDYXU5bd
+ ih4c6a4n5lWwEzMwvrMJMsmKmEgPythG0hxvhEDM=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com,
  Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
  Dan Murphy <dmurphy@ti.com>, Rob Herring <robh+dt@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH 0/4] Add support for charger LED for AXP813 and TBS A711 Tablet
-Date: Sun, 23 Feb 2020 14:14:31 +0100
-Message-Id: <20200223131435.681620-1-megous@megous.com>
+Subject: [PATCH 1/4] dt-bindings: leds: Add a binding for AXP813 charger led
+Date: Sun, 23 Feb 2020 14:14:32 +0100
+Message-Id: <20200223131435.681620-2-megous@megous.com>
+In-Reply-To: <20200223131435.681620-1-megous@megous.com>
+References: <20200223131435.681620-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_051451_942355_9BBB9569 
-X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-CacheID: sfid-20200223_051451_947857_7D1A4016 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -76,33 +78,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The tablet has a charger LED exposed on the top. This LED is controlled
-by AXP813 PMIC. Add support for enabling the LED and using it either
-for charging indication (handled by PMIC automatically) or for other uses
-via user control.
+The AXP813 PMIC can control one LED. Add binding to represent the LED.
 
-Please take a look.
-
-thank you and regards,
-  Ondrej Jirman
-
-Ondrej Jirman (4):
-  dt-bindings: leds: Add a binding for AXP813 charger led
-  leds: axp20x: Support charger LED on AXP20x like PMICs
-  ARM: dts: axp813: Add charger LED
-  ARM: dts: sun8i-a83t-tbs-a711: Enable charging LED
-
- .../devicetree/bindings/leds/leds-axp20x.yaml |  24 ++
- arch/arm/boot/dts/axp81x.dtsi                 |   5 +
- arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts     |   4 +
- drivers/leds/Kconfig                          |   7 +
- drivers/leds/Makefile                         |   1 +
- drivers/leds/leds-axp20x.c                    | 240 ++++++++++++++++++
- drivers/mfd/axp20x.c                          |   3 +
- 7 files changed, 284 insertions(+)
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ .../devicetree/bindings/leds/leds-axp20x.yaml | 24 +++++++++++++++++++
+ 1 file changed, 24 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/leds/leds-axp20x.yaml
- create mode 100644 drivers/leds/leds-axp20x.c
 
+diff --git a/Documentation/devicetree/bindings/leds/leds-axp20x.yaml b/Documentation/devicetree/bindings/leds/leds-axp20x.yaml
+new file mode 100644
+index 0000000000000..79282d55764bf
+--- /dev/null
++++ b/Documentation/devicetree/bindings/leds/leds-axp20x.yaml
+@@ -0,0 +1,24 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/leds/leds-axp20x.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: LED driver for AXP813 PMIC from X-Powers.
++
++maintainers:
++  - Ondrej Jirman <megous@megous.com>
++
++description: |
++  This module is part of the AXP20x MFD device. For more details
++  see Documentation/devicetree/bindings/mfd/axp20x.txt.
++
++  The LED controller is represented as a sub-node of the PMIC node on
++  the device tree.
++
++properties:
++  compatible:
++    const: x-powers,axp813-charger-led
++
++required:
++  - compatible
 -- 
 2.25.1
 
