@@ -2,81 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 134621696FC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 10:10:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56566169717
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 10:58:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=3Gfg2ipqKltA+frcsw4Oycbr3Qknc256JXTewpfqFIk=; b=A/4
-	5wwa0oXhL+5tLMivsT+/dZ9LPwl4B+nitK1ZGyp8OG0Kogj0erQxs5Clyf7e4erV/uhEXVUDCseeo
-	X/U2+5qgJUqTmbXF2DxOJXZFoBQDXAH9QlCx/ddiWZRsZFTR2gqMgKDlF6+but4J+IYRk8x5WK+70
-	WPE563zR6wbI/phrnDydvk2eN1ycKrYZrxY/8MUsepoKC5eIIoD4wRLNarcsFDaCmh69GaGFI6fyq
-	I5xMihsr7E95ET72mnffwFsz36ZoMqYRhqPiKhKqm3ZnEVgraUM+XrI9xJfhyl8ewALTtXnupVSA/
-	o1qHYDL0OeRsvAlUcpH7EGtnfdc/F+g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LIk9T3rc3xVGqYKXq+krZ8YohlOvcqoqyrmVx70KLxE=; b=VTbvoTH2TSdLM7
+	J9xlcPnseSqYX1YmreeU/TvjgCxKxyq/ue9lrX9yGRlNn+rjZCvcCoam+m5+lmCXYLvku8Nkm1tld
+	adykNl3XtiiFrZuzRWkFQfqzVQiNmzOaKHhXKBq5lbezObR7WgiA7FidYMQkM98Uy9utD8SmuB28C
+	2muOPLzNMHQ/oh2YV03aUiJRTaXDe9Yo80XFVSgPppa2uY5NNK+D6S2kxJ9tHB9X6tE4WMRCjY/jk
+	GFeAGQtjIh8tNGXDPs79LUfR8RT/Se3w/VhMUvwfujPs3lYY6RprJhgvp/RSTOX0DhL5HrrTEPGOE
+	ajo7As0B4GceZRHyhzig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5nHD-0003JO-KA; Sun, 23 Feb 2020 09:10:15 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j5o1M-0003sC-0S; Sun, 23 Feb 2020 09:57:56 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5nGz-0002wr-Lw
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 09:10:03 +0000
-Received: by mail-wr1-x443.google.com with SMTP id r11so6799012wrq.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 23 Feb 2020 01:09:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=ZNp+EvVTHUsQTuzdSBoBSK7Xad89HXC39l9IXgu0L6k=;
- b=qgn/kwOXb6rkHNyIZ6bRJng6LH3lH/HQl5AZwfwLmx0GS4J8ExGX9cHMVHTZ6gusnp
- IxdZB3kMaWI9O5J58icoAOeghd7kIJXFSaavCppXoXS0C5m3QARTQhU6Q57ozihS0u7K
- BM8LR6pw3Q2yk8nHMMjekoD5UTYdHdJ3hrjbUTWeJncaHnsoJk74/rvV9u/jbZD6CjH/
- 1yjLIPRfXIQKpf6Bn68PMnc8yvQrLQ4yW+qAI90qtMXww/UmKLdkGUPgI9+ZqqmGRzWc
- bb2CfW3OuE9pYU3+GjUS0v/aUAcKONVTMl8Q7cxujjpxhnQwr0+XE1q+d9nSeEyDWDLr
- wSLQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ZNp+EvVTHUsQTuzdSBoBSK7Xad89HXC39l9IXgu0L6k=;
- b=T5D2mMpHl9Gjb6qDiiNb2K+2PWudY1R37e1ONlduIqvze7BVJ6kjl7vnEMGsdJUafP
- qSAyH9NCz+LoWgybOWU/pyWWPTi7SMYzvGxvjU1DZKSHIjWGG/2Khw4sLwjCOW5/qbZh
- BbgXSumU0PHcuQ3iEn8PphKTK51XBTD2h1qdscY8sw42kHXVvK/dpOJxnEO1RDw61+wa
- DLi9XCLLZ3rB+hhDeIVS7UV5X0rTBtVw5Ju1hMtPAoeE6GmaOpIBC9iyDtpl9J+mIghQ
- aqgPzaMJQcKyGjNmoHiEFyVYTj6g3knQFurCWpxRstlcQ6W/grOcf6cMOhx0ebBG5plR
- PgXA==
-X-Gm-Message-State: APjAAAW9QRrfum2Jr7dxsoSD4a7Sfy9IAYcXCNPx4ql5vE487FzjVbbh
- 9KP1bXrW0JRfeWUp+ivXnac=
-X-Google-Smtp-Source: APXvYqynWcijyO/xnVA8R+8xgwTevrjbD+iuKtHMtHFQDIaNbai1TGHrC8jRZpNnLtRHAd/Ruv6k3g==
-X-Received: by 2002:a5d:5381:: with SMTP id d1mr58709265wrv.259.1582448998448; 
- Sun, 23 Feb 2020 01:09:58 -0800 (PST)
-Received: from felia.fritz.box ([2001:16b8:2de2:db00:5dbb:1717:2cb6:4104])
- by smtp.gmail.com with ESMTPSA id d9sm12657464wrx.94.2020.02.23.01.09.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 23 Feb 2020 01:09:58 -0800 (PST)
-From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
-To: David Daney <david.daney@cavium.com>,
- Robert Richter <rrichter@marvell.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH] MAINTAINERS: clean up PCIE DRIVER FOR CAVIUM THUNDERX
-Date: Sun, 23 Feb 2020 10:09:50 +0100
-Message-Id: <20200223090950.5259-1-lukas.bulwahn@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1j5o1C-0003rI-1W
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 09:57:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1582451857; bh=Hc3Q/e3isq42FZVZz5Pj1+rkdYA5T7YqVfZ3lSbKHwM=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=KBLgQTYNtOdfr0C8KgWxzTcFc9H4LySTQ3Y2+AYmD1O0bUlSZ7CqOWG9Bnmy4p0aN
+ UHCxvhQuuCvVN/Eathp3L8kX54EJBUF2WnR1EY0HTlyZJ/EEWGNPCbqE5N2n7BnzCf
+ v4yNsINPB0peqyQ18CwD8sYkROsvuULDUSk5C2J0=
+Date: Sun, 23 Feb 2020 10:57:36 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [linux-sunxi] [PATCH 2/4] ARM: dts: sun8i-a83t-tbs-a711: HM5065
+ doesn't like such a high voltage
+Message-ID: <20200223095736.5c3dr66734kv3ypg@core.my.home>
+Mail-Followup-To: Chen-Yu Tsai <wens@csie.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Tomas Novotny <tomas@novotny.cz>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, 
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>
+References: <20200222223154.221632-1-megous@megous.com>
+ <20200222223154.221632-3-megous@megous.com>
+ <CAGb2v67uOXE7_28yn8Q2uo320vE1FsqL-ewG4p1nViim3q0xbw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAGb2v67uOXE7_28yn8Q2uo320vE1FsqL-ewG4p1nViim3q0xbw@mail.gmail.com>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_011001_742015_89058750 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200223_015746_255754_B81AC598 
+X-CRM114-Status: GOOD (  21.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lukas.bulwahn[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -95,56 +81,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-pci@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Joe Perches <joe@perches.com>,
- Lukas Bulwahn <lukas.bulwahn@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Rob Herring <robh+dt@kernel.org>, Tomas Novotny <tomas@novotny.cz>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit e1ac611f57c9 ("dt-bindings: PCI: Convert generic host binding to
-DT schema") combines all information from pci-thunder-{pem,ecam}.txt
-into host-generic-pci.yaml, and deleted the two files in
-Documentation/devicetree/bindings/pci/.
+Hello,
 
-Since then, ./scripts/get_maintainer.pl --self-test complains:
+On Sun, Feb 23, 2020 at 11:39:17AM +0800, Chen-Yu Tsai wrote:
+> On Sun, Feb 23, 2020 at 6:32 AM Ondrej Jirman <megous@megous.com> wrote:
+> >
+> > Lowering the voltage solves the quick image degradation over time
+> > (minutes), that was probably caused by overheating.
+> >
+> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> 
+> Makes sense. A lot of camera sensors run their digital parts off 1.8V.
+> This one is no different.
+> 
+> Acked-by: Chen-Yu Tsai <wens@csie.org>
+> 
+> The whole CSI stuff isn't enabled in the device tree yet though, and
+> there are a lot of regulators with CSI in their names. Will this get
+> worked on?
 
-  no file matches F: Documentation/devicetree/bindings/pci/pci-thunder-*
+Yes, I'm preparing support for both cameras in this branch:
 
-As the PCIE DRIVER FOR CAVIUM THUNDERX-relevant information is only a
-small part of the host-generic-pci.yaml, do not add this file to the
-PCIE DRIVER FOR CAVIUM THUNDERX entry, and only drop the reference to
-the removed files.
+  https://megous.com/git/linux/log/?h=cam-5.6
 
-Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
----
-Robert, are you still the maintainer of this driver?
-Rob Herring, please pick this patch.
-applies cleanly on current master and next-20200221
+Both already work quite well. I'm just sending some fixes early.
 
- MAINTAINERS | 1 -
- 1 file changed, 1 deletion(-)
+Both cameras work best at 1.8V for the digital part.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 2af5fa73155e..d43a8f9769db 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12953,7 +12953,6 @@ M:	Robert Richter <rrichter@marvell.com>
- L:	linux-pci@vger.kernel.org
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- S:	Supported
--F:	Documentation/devicetree/bindings/pci/pci-thunder-*
- F:	drivers/pci/controller/pci-thunder-*
- 
- PCIE DRIVER FOR HISILICON
--- 
-2.17.1
+regards,
+	o.
 
+> ChenYu
+> 
+> > ---
+> >  arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts | 4 ++--
+> >  1 file changed, 2 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
+> > index ee5ce3556b2ad..ae1fd2ee3bcce 100644
+> > --- a/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
+> > +++ b/arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts
+> > @@ -371,8 +371,8 @@ &reg_dldo2 {
+> >  };
+> >
+> >  &reg_dldo3 {
+> > -       regulator-min-microvolt = <2800000>;
+> > -       regulator-max-microvolt = <2800000>;
+> > +       regulator-min-microvolt = <1800000>;
+> > +       regulator-max-microvolt = <1800000>;
+> >         regulator-name = "vdd-csi";
+> >  };
+> >
+> > --
+> > 2.25.1
+> >
+> > --
+> > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20200222223154.221632-3-megous%40megous.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
