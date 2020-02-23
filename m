@@ -2,87 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D1DA1693DB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 03:26:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15BA7169572
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:00:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1HrkOgltklQv4jt5uSgpGT4M6Bq5oy7bVB3VNK+aHFY=; b=jVIORCHuQbs4mD
-	K9Rqa5CYRHZS5BFA6Bg/56778ExdGOsz5JdjrXnrH4Y5g9vhwJSmZ34cF9Axxs5q4+rzV7RFPrcOI
-	WLwIidyPJfkGGH6M2ZvxY6k4KkwbOFjJ/bd2WVrRzwDpSE2Sd09jcnHJK6LMUHh3ZaKAYR05oSbLu
-	p/PgvR4buVX7MQ2v5jZWfIFBnAFAQ93Px7yw6JV00xZLHmP9iwpzq61CZ3FJZnXJlba5KNkDS6cCZ
-	U+q/re54+K+vtDQWE2PYW7yCT3/NxQX+O1ZoJsUc8rmADucRfS6x8/+d7YpxFZGckSvHXCvlJdC6p
-	wXJu2gtf5/Kv1wUrIHpA==;
+	List-Owner; bh=eHHh72GIbV/bFvIUjzwYe6SxU31Y+HBEmId/wuRo5mw=; b=c/rS2lA4xt76sf
+	46o7UO836OkBlBoMRNvlmwpvsc4IkNgkUumYn4n4NAljGo7Wv98K0Gjku3jj7SW8ci1/xoUNZug+b
+	tjXskSu1OVqUxPBQabI3QSxMvDLJsW00LqSfuzddrbwbFNSX6VduIoBOUeGHEtEEzRYMHxPDYIsTg
+	RdaWW+fOga2pxjMHKudAQ0kCc3BjkoWXhgzFfEBpLVhYhRtAbpiucihstAIgsG37R7NoBBuV4uaZC
+	L1weW2x0BVqfjojptob1L6Jl2JJzqFbx2wSkxL4OXk+9WeVSZesTkuZBeBZT2TMlrG49EWzcosO79
+	cEJMN//ktJ94DINCmEng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5gy3-0005uY-4p; Sun, 23 Feb 2020 02:26:03 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1j5hVc-0001WU-DX; Sun, 23 Feb 2020 03:00:44 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5gwv-0003r7-9A
- for linux-arm-kernel@bombadil.infradead.org; Sun, 23 Feb 2020 02:24:53 +0000
+ id 1j5hHl-0002gn-21
+ for linux-arm-kernel@bombadil.infradead.org; Sun, 23 Feb 2020 02:46:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=H6Z6SUE82vZfmI3P6QL2Jm60uoGhgDc35m7XO2cM4wk=; b=azKGUqsBlKmFbhHq98sjVvgSxh
- 4/57cubLfDElQRFSyhJYirT0v58lJ4saSR6HFmxdst50fPOs0MZWRqQJWSxXkYukJ3WrbWRTqjvFL
- i34Hcl/5rRIgx8ys73syHsnrW5p+PxvD5/EZ3lY0NAxtgIdOl+JfFu5whueYPy5iVTqo2iFTbovCd
- aIK1Xci41qx0KSKHrZStG/6clT/pDZ/wqPgLbv4hAd1MeHCAVvgi5ML4xrCERFBJPEo2myJMcegXI
- fCE+lrogUDql87OgcM3xf+vpVbz9kvWp0/Zko9WElNm4hFqM2cUWd067/BAgEUngz7Hp5kcvgNPpi
- jP2R1rTA==;
+ bh=rpjH7PkG8mlQ5IwpXF+0JavZIV89r1ibkKlkKEezGMA=; b=ZSZQIxKIV2t2Z7W+K9BEpsG9vQ
+ Pt0zIDyizAWvkqxC2VQwqeAyqLj2OXf11D5KYeYZgjWkWcRVZcTHLyg7liRzdcRVcYUxB3fhXZMpi
+ tRN6kmXFTe3VmT1CoLYYYfYwDierQJHNxR1DvzuFwmzzVBfGTb54GQvaxFs/dPv4wdcYNsN0O+Vj1
+ 7R6+pm8jqKpfN0OzZOOVVjvHK3EmrJDMtCsfxHbjQcyGx7xxXYi1ozupO40apxfsjUdMRCGO0Ow3V
+ bu9mPOhPrsQZun6sFodyn/l5ZTDa41l+eORHk1Af33+PfZ5DG0bsXmcqekMD6KmcOuulZDjdIIYgF
+ wmPLJOFQ==;
 Received: from mail.kernel.org ([198.145.29.99])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5gwq-0004Ie-Bb
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 02:24:51 +0000
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j5gx7-0007tD-7p
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 02:25:06 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B61124682;
- Sun, 23 Feb 2020 02:24:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D7D1424673;
+ Sun, 23 Feb 2020 02:25:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582424686;
- bh=iu4YqlFBr8NwRxfR43xbHq3M3RJ2xt42vY3xtDy23XY=;
+ s=default; t=1582424704;
+ bh=bIEcXbkcDGAtFRHevsBRWkFZdGSxx9gvCVYRqCiSmYY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pT9b8yHRRuk/HoiDSzBLBZcGoSmdsOsBwFkkje4c1j5gL8+klpAniGT4U3SoziqD1
- T2Xe5UYbF3xEIMkt/PwTv5YIIcFmqpcoEFRFUU+A0+VjI/A1kDo8gYcUP1zsyh+hez
- 8SjWW8XA+M+BhLy6ptJahIsVVe1dh+PlPxDF9fsU=
+ b=1ILzwIyOARDqD91F6UtY4/4doKG2qpVWAi2V+w+WqpyrqAO2QRm5wQddJOgPnP7s3
+ napZ5KoyJvHi+uswYg5h9m2mgMw7Fg1iJgNyt3FpdEl1/7iGeXcjE58g1a6IFESi/r
+ iYayQMi2QGZahVLU2dTlAqwwVNWPYpFB7ZAcmLUw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 06/16] arm/ftrace: Fix BE text poking
-Date: Sat, 22 Feb 2020 21:24:28 -0500
-Message-Id: <20200223022438.2398-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 4/7] arm/ftrace: Fix BE text poking
+Date: Sat, 22 Feb 2020 21:24:56 -0500
+Message-Id: <20200223022459.2594-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200223022438.2398-1-sashal@kernel.org>
-References: <20200223022438.2398-1-sashal@kernel.org>
+In-Reply-To: <20200223022459.2594-1-sashal@kernel.org>
+References: <20200223022459.2594-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_022449_281448_80004637 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: -7.1 (-------)
-X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
- Content analysis details:   (-7.1 points, 5.0 required)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -122,7 +118,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 2 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm/kernel/ftrace.c b/arch/arm/kernel/ftrace.c
-index 414e60ed02573..58a01083b0415 100644
+index faa9a905826ee..7982409e5c27f 100644
 --- a/arch/arm/kernel/ftrace.c
 +++ b/arch/arm/kernel/ftrace.c
 @@ -105,13 +105,10 @@ static int ftrace_modify_code(unsigned long pc, unsigned long old,
