@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 622D7169903
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 18:30:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26E06169904
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 18:30:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hx+ef8nxRq8DZtdAkdQjV6QGfo02ZIEtxXOUh/5+rW8=; b=Cn7ybUPoe8Htva
-	KxutWS/xcGLFxHDCtyvN/X8rhVChfFf5HGAB600neRBn7wmS4B0hZ3jkAE5Izqqdv1rO1Sm7EuNzW
-	8yfKKRTKFW0aDEioaZTyQzUP1v+WAll8upIZjYN2wyjC1EuG4XvqmpyErbcxCIldbXDqk8lbXgL3M
-	oRUsSUku39tH4HSvbKMWWm9t9kZXi7d/j8KTYI84DWJXe5qnzRHKNqlNX6Ygx7kzvxKsShEi+jIuh
-	wjxKhF/hoGXxJ7Y1FwgyNIBFieYpClgMsoPa3CM+BsrzVcJP6YsA7y7BfDFRBdWInBIjdfUY+n45L
-	n5IYPNoufOSPPUCJ/mBA==;
+	List-Owner; bh=N0e7XMjF81dtwSu4q2FWonsrkWUVHuM+AVAFCmZMdQI=; b=LLz9zU0hJHzOcY
+	dbicaRfMamPYIPKIIslhz7TYYRyYXiZAW1Hz0Z8SAmqp6vF6E3Apyi6EmHrYZ+oP8tWBp4/21GDpH
+	1TSDGXE/2AIgtLCZHQ5lvfhZGw24+Ub+7Yi03u/2Bt3FmdCioQjX8He27WgmNEhoVX/Sh9QrFW6V+
+	ICZXvHxazdZn/SCnh57zYJiQs6G+5rNAgFIEeOxDjTNajy94RemSzwtCu3wJ4Mcl3leNvdQNpuIuk
+	5ptk7JdsHuCGjZjjda+WktJlX9pKphgdXefqFR2pqnLPVEeXfEMmccmiORP5aX5tF9PB1Pq+b38/p
+	feViC5wzg4nGq+RWQVAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5v58-00070M-Vz; Sun, 23 Feb 2020 17:30:19 +0000
+	id 1j5v5O-0008QG-58; Sun, 23 Feb 2020 17:30:34 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5v4L-0006Xd-Ck
+ id 1j5v4L-0006Xi-Cj
  for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 17:29:32 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582478966; bh=xWvIq2K8vFLnETTDs7Gq4WrOOk7m+WA+aN0LYzNvStA=;
+ t=1582478966; bh=nYjRE42O8TZ0UQythdBEtkVY0pFM4voKWIXFp4mwsM8=;
  h=From:To:Cc:Subject:Date:References:From;
- b=QDN6KAniOV+RdBqj3rt/ejmUhdo5aZhXStUvI1yDle2O9TE9uWeWy2cNRxQCc5P6a
- 2OBa0J9QjN4SH4q/DUTIMTX6+xoK+OhfSQcemVVjYsqNNEhoNmlmGaGZHyo8LTWuxV
- 5Crw9lAlkDdgsg+2sKpv5sFEFp0uOqkaJC2dngGs=
+ b=sHbX+Q0rsKk4TaP+hTIf87Boz7laVCWZHrz6vsXgkrct+eQld00O9iqKtkZyUUI9s
+ 1CNz0gnZS6M628hTF7+/EvsPZ9eWgF47Bee+UKC1fk3J8J2ZBLOzDdC4Yn9ZgeDgEJ
+ URkqVq0TAZ7ut6H5eMn4EyJ9RNQTaQ/7QnnhPvcI=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 2/3] dt-bindings: arm: sunxi: Add PinePhone 1.0 and 1.1
- bindings
-Date: Sun, 23 Feb 2020 18:29:15 +0100
-Message-Id: <20200223172916.843379-3-megous@megous.com>
+Subject: [PATCH 3/3] arm64: dts: allwinner: Add initial support for Pine64
+ PinePhone
+Date: Sun, 23 Feb 2020 18:29:16 +0100
+Message-Id: <20200223172916.843379-4-megous@megous.com>
 In-Reply-To: <20200223172916.843379-1-megous@megous.com>
 References: <20200223172916.843379-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_092929_777788_96894B9D 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200223_092929_777001_07EBDB77 
+X-CRM114-Status: GOOD (  15.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,37 +79,476 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Document board compatible names for Pine64 PinePhone:
+At them moment PinePhone comes in two slightly incompatible variants:
 
-- 1.0 - Developer variant
-- 1.1 - Braveheart variant
+- 1.0: Early Developer Batch
+- 1.1: Braveheart Batch
 
+There will be at least one more incompatible variant in the very near
+future, so let's start by sharing the dtsi among multiple variants,
+right away, even though the HW description doesn't yet include the
+different bits.
+
+This is a basic DT that includes only features that are already
+supported by mainline drivers.
+
+Co-developed-by: Samuel Holland <samuel@sholland.org>
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+Co-developed-by: Martijn Braam <martijn@brixit.nl>
+Signed-off-by: Martijn Braam <martijn@brixit.nl>
+Co-developed-by: Luca Weiss <luca@z3ntu.xyz>
+Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
+Signed-off-by: Bhushan Shah <bshah@kde.org>
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- Documentation/devicetree/bindings/arm/sunxi.yaml | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/boot/dts/allwinner/Makefile        |   2 +
+ .../allwinner/sun50i-a64-pinephone-1.0.dts    |  11 +
+ .../allwinner/sun50i-a64-pinephone-1.1.dts    |  11 +
+ .../dts/allwinner/sun50i-a64-pinephone.dtsi   | 385 ++++++++++++++++++
+ 4 files changed, 409 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+ create mode 100644 arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
 
-diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-index 327ce67308237..e24e0fac58f04 100644
---- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-+++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-@@ -636,6 +636,16 @@ properties:
-           - const: pine64,pinebook
-           - const: allwinner,sun50i-a64
- 
-+      - description: Pine64 PinePhone Developer Batch (1.0)
-+        items:
-+          - const: pine64,pinephone-1.0
-+          - const: allwinner,sun50i-a64
+diff --git a/arch/arm64/boot/dts/allwinner/Makefile b/arch/arm64/boot/dts/allwinner/Makefile
+index cf4f78617c3f3..79ca263672c38 100644
+--- a/arch/arm64/boot/dts/allwinner/Makefile
++++ b/arch/arm64/boot/dts/allwinner/Makefile
+@@ -9,6 +9,8 @@ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-orangepi-win.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pine64-lts.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pine64-plus.dtb sun50i-a64-pine64.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pinebook.dtb
++dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pinephone-1.0.dtb
++dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-pinephone-1.1.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-sopine-baseboard.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-a64-teres-i.dtb
+ dtb-$(CONFIG_ARCH_SUNXI) += sun50i-h5-bananapi-m2-plus.dtb
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
+new file mode 100644
+index 0000000000000..0c42272106afa
+--- /dev/null
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.0.dts
+@@ -0,0 +1,11 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++// Copyright (C) 2020 Ondrej Jirman <megous@megous.com>
 +
-+      - description: Pine64 PinePhone Braveheart (1.1)
-+        items:
-+          - const: pine64,pinephone-1.1
-+          - const: allwinner,sun50i-a64
++/dts-v1/;
 +
-       - description: Pine64 SoPine Baseboard
-         items:
-           - const: pine64,sopine-baseboard
++#include "sun50i-a64-pinephone.dtsi"
++
++/ {
++	model = "Pine64 PinePhone Developer Batch (1.0)";
++	compatible = "pine64,pinephone-1.0", "allwinner,sun50i-a64";
++};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+new file mode 100644
+index 0000000000000..06a775c41664b
+--- /dev/null
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
+@@ -0,0 +1,11 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++// Copyright (C) 2020 Ondrej Jirman <megous@megous.com>
++
++/dts-v1/;
++
++#include "sun50i-a64-pinephone.dtsi"
++
++/ {
++	model = "Pine64 PinePhone Braveheart (1.1)";
++	compatible = "pine64,pinephone-1.1", "allwinner,sun50i-a64";
++};
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+new file mode 100644
+index 0000000000000..d0cf21d82c9e9
+--- /dev/null
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -0,0 +1,385 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++// Copyright (C) 2019 Icenowy Zheng <icenowy@aosc.xyz>
++// Copyright (C) 2020 Ondrej Jirman <megous@megous.com>
++
++#include "sun50i-a64.dtsi"
++#include "sun50i-a64-cpu-opp.dtsi"
++
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++#include <dt-bindings/leds/common.h>
++#include <dt-bindings/pwm/pwm.h>
++
++/ {
++	aliases {
++		serial0 = &uart0;
++	};
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		blue {
++			function = LED_FUNCTION_INDICATOR;
++			function-enumerator = <1>;
++			color = <LED_COLOR_ID_BLUE>;
++			gpios = <&pio 3 20 GPIO_ACTIVE_HIGH>; /* PD20 */
++		};
++
++		green {
++			function = LED_FUNCTION_INDICATOR;
++			function-enumerator = <2>;
++			color = <LED_COLOR_ID_GREEN>;
++			gpios = <&pio 3 18 GPIO_ACTIVE_HIGH>; /* PD18 */
++		};
++
++		red {
++			function = LED_FUNCTION_INDICATOR;
++			function-enumerator = <3>;
++			color = <LED_COLOR_ID_RED>;
++			gpios = <&pio 3 19 GPIO_ACTIVE_HIGH>; /* PD19 */
++		};
++	};
++
++	speaker_amp: audio-amplifier {
++		compatible = "simple-audio-amplifier";
++		enable-gpios = <&pio 2 7 GPIO_ACTIVE_HIGH>; /* PC7 */
++		sound-name-prefix = "Speaker Amp";
++	};
++
++	vibrator {
++		compatible = "gpio-vibrator";
++		enable-gpios = <&pio 3 2 GPIO_ACTIVE_HIGH>; /* PD2 */
++		vcc-supply = <&reg_dcdc1>;
++	};
++};
++
++&codec {
++	status = "okay";
++};
++
++&codec_analog {
++	cpvdd-supply = <&reg_eldo1>;
++	status = "okay";
++};
++
++&cpu0 {
++	cpu-supply = <&reg_dcdc2>;
++};
++
++&cpu1 {
++	cpu-supply = <&reg_dcdc2>;
++};
++
++&cpu2 {
++	cpu-supply = <&reg_dcdc2>;
++};
++
++&cpu3 {
++	cpu-supply = <&reg_dcdc2>;
++};
++
++&dai {
++	status = "okay";
++};
++
++&ehci0 {
++	status = "okay";
++};
++
++&ehci1 {
++	status = "okay";
++};
++
++&i2c1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&i2c1_pins>;
++	status = "okay";
++
++	/* Magnetometer */
++	lis3mdl@1e {
++		compatible = "st,lis3mdl-magn";
++		reg = <0x1e>;
++		vdd-supply = <&reg_dldo1>;
++		vddio-supply = <&reg_dldo1>;
++	};
++
++	/* Accelerometer/gyroscope */
++	mpu6050@68 {
++		compatible = "invensense,mpu6050";
++		reg = <0x68>;
++		interrupt-parent = <&pio>;
++		interrupts = <7 5 IRQ_TYPE_EDGE_RISING>; /* PH5 */
++		vdd-supply = <&reg_dldo1>;
++		vddio-supply = <&reg_dldo1>;
++	};
++};
++
++/* Connected to pogo pins */
++&i2c2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&i2c2_pins>;
++	status = "okay";
++};
++
++&lradc {
++	vref-supply = <&reg_aldo3>;
++	status = "okay";
++
++	button-200 {
++		label = "Volume Up";
++		linux,code = <KEY_VOLUMEUP>;
++		channel = <0>;
++		voltage = <200000>;
++	};
++
++	button-400 {
++		label = "Volume Down";
++		linux,code = <KEY_VOLUMEDOWN>;
++		channel = <0>;
++		voltage = <400000>;
++	};
++};
++
++&mmc0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc0_pins>;
++	vmmc-supply = <&reg_dcdc1>;
++	vqmmc-supply = <&reg_dcdc1>;
++	cd-gpios = <&pio 5 6 GPIO_ACTIVE_LOW>; /* PF6 */
++	disable-wp;
++	bus-width = <4>;
++	status = "okay";
++};
++
++&mmc2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc2_pins>;
++	vmmc-supply = <&reg_dcdc1>;
++	vqmmc-supply = <&reg_dcdc1>;
++	bus-width = <8>;
++	non-removable;
++	cap-mmc-hw-reset;
++	status = "okay";
++};
++
++&ohci0 {
++	status = "okay";
++};
++
++&ohci1 {
++	status = "okay";
++};
++
++&pio {
++	vcc-pb-supply = <&reg_dcdc1>;
++	vcc-pc-supply = <&reg_dcdc1>;
++	vcc-pd-supply = <&reg_dcdc1>;
++	vcc-pe-supply = <&reg_aldo1>;
++	vcc-pf-supply = <&reg_dcdc1>;
++	vcc-pg-supply = <&reg_dldo4>;
++	vcc-ph-supply = <&reg_dcdc1>;
++};
++
++&r_pio {
++	/*
++	 * FIXME: We can't add that supply for now since it would
++	 * create a circular dependency between pinctrl, the regulator
++	 * and the RSB Bus.
++	 *
++	 * vcc-pl-supply = <&reg_aldo2>;
++	 */
++};
++
++&r_rsb {
++	status = "okay";
++
++	axp803: pmic@3a3 {
++		compatible = "x-powers,axp803";
++		reg = <0x3a3>;
++		interrupt-parent = <&r_intc>;
++		interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
++	};
++};
++
++#include "axp803.dtsi"
++
++&ac_power_supply {
++	status = "okay";
++};
++
++&battery_power_supply {
++	status = "okay";
++};
++
++&reg_aldo1 {
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-name = "dovdd-csi";
++};
++
++&reg_aldo2 {
++	regulator-always-on;
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-name = "vcc-pl";
++};
++
++&reg_aldo3 {
++	regulator-always-on;
++	regulator-min-microvolt = <2700000>;
++	regulator-max-microvolt = <3300000>;
++	regulator-name = "vcc-pll-avcc";
++};
++
++&reg_dcdc1 {
++	regulator-always-on;
++	regulator-min-microvolt = <3300000>;
++	regulator-max-microvolt = <3300000>;
++	regulator-name = "vcc-3v3";
++};
++
++&reg_dcdc2 {
++	regulator-always-on;
++	regulator-min-microvolt = <1000000>;
++	regulator-max-microvolt = <1300000>;
++	regulator-name = "vdd-cpux";
++};
++
++/* DCDC3 is polyphased with DCDC2 */
++
++&reg_dcdc5 {
++	regulator-always-on;
++	regulator-min-microvolt = <1200000>;
++	regulator-max-microvolt = <1200000>;
++	regulator-name = "vcc-dram";
++};
++
++&reg_dcdc6 {
++	regulator-always-on;
++	regulator-min-microvolt = <1100000>;
++	regulator-max-microvolt = <1100000>;
++	regulator-name = "vdd-sys";
++};
++
++&reg_dldo1 {
++	regulator-min-microvolt = <3300000>;
++	regulator-max-microvolt = <3300000>;
++	regulator-name = "vcc-dsi-sensor";
++};
++
++&reg_dldo2 {
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-name = "vcc-mipi-io";
++};
++
++&reg_dldo3 {
++	regulator-min-microvolt = <2800000>;
++	regulator-max-microvolt = <2800000>;
++	regulator-name = "avdd-csi";
++};
++
++&reg_dldo4 {
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <3300000>;
++	regulator-name = "vcc-wifi-io";
++};
++
++&reg_eldo1 {
++	regulator-always-on;
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-name = "vcc-lpddr";
++};
++
++&reg_eldo3 {
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-name = "dvdd-1v8-csi";
++};
++
++&reg_fldo1 {
++	regulator-min-microvolt = <1200000>;
++	regulator-max-microvolt = <1200000>;
++	regulator-name = "vcc-1v2-hsic";
++};
++
++&reg_fldo2 {
++	regulator-always-on;
++	regulator-min-microvolt = <1100000>;
++	regulator-max-microvolt = <1100000>;
++	regulator-name = "vdd-cpus";
++};
++
++&reg_ldo_io0 {
++	regulator-min-microvolt = <3300000>;
++	regulator-max-microvolt = <3300000>;
++	regulator-name = "vcc-lcd-ctp-stk";
++	status = "okay";
++};
++
++&reg_ldo_io1 {
++	regulator-min-microvolt = <1800000>;
++	regulator-max-microvolt = <1800000>;
++	regulator-name = "vcc-1v8-typec";
++	status = "okay";
++};
++
++&reg_rtc_ldo {
++	regulator-name = "vcc-rtc";
++};
++
++&sound {
++	status = "okay";
++	simple-audio-card,aux-devs = <&codec_analog>, <&speaker_amp>;
++	simple-audio-card,widgets = "Microphone", "Headset Microphone",
++				    "Microphone", "Internal Microphone",
++				    "Headphone", "Headphone Jack",
++				    "Speaker", "Internal Earpiece",
++				    "Speaker", "Internal Speaker";
++	simple-audio-card,routing =
++			"Headphone Jack", "HP",
++			"Internal Earpiece", "EARPIECE",
++			"Internal Speaker", "Speaker Amp OUTL",
++			"Internal Speaker", "Speaker Amp OUTR",
++			"Speaker Amp INL", "LINEOUT",
++			"Speaker Amp INR", "LINEOUT",
++			"Left DAC", "AIF1 Slot 0 Left",
++			"Right DAC", "AIF1 Slot 0 Right",
++			"AIF1 Slot 0 Left ADC", "Left ADC",
++			"AIF1 Slot 0 Right ADC", "Right ADC",
++			"Internal Microphone", "MBIAS",
++			"MIC1", "Internal Microphone",
++			"Headset Microphone", "HBIAS",
++			"MIC2", "Headset Microphone";
++};
++
++&uart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart0_pb_pins>;
++	status = "okay";
++};
++
++/* Connected to the modem */
++&uart3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart3_pins>;
++	status = "okay";
++};
++
++&usb_otg {
++	dr_mode = "peripheral";
++	status = "okay";
++};
++
++&usb_power_supply {
++	status = "okay";
++};
++
++&usbphy {
++	status = "okay";
++};
 -- 
 2.25.1
 
