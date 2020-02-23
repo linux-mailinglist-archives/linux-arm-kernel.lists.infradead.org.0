@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CC4816957F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:16:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E84BB169580
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 04:16:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SFVG2mmFtNxJ/rjp2dW5hTAF1Wrd4kzAeMcY0/8NwPQ=; b=jKo0J25FvhXwqL
-	yauXNAxXj+DV1/MsAeiQH/DdS6PuWFiX5Hie3geIlOUUIxGi8PfNl20IV7Y8cGdy5f9foPbPbEmP7
-	LuMpzBhyc+g+yRTtn7yAdQ0c1nXza+cx/F8j+4gj6CHBkllL39e6fb7mPbNUt6j+bcG301Zq/XcMJ
-	c4Qfrnu5BMuFVF09jsOUxR9++EkB0gq3eGIyxNw645xuVQkqjlqAEhy0IEG/KaXJZzCO5jG00jvA0
-	6YYaPyYQCTD3lsuZYukOHyiZnP3i3h5Aohm9M8vhPpLUWa6QfSi+gi54V+NnN1T5ATQmawZoAqY7l
-	ZKpPwthiH4fqOZ12ZXwA==;
+	List-Owner; bh=JTWoNOxFOCWTTLUUg7uQ5rEIW0OTvpQhOI3U0gznmG4=; b=gv7QFayvExTqXh
+	o2/nMUTH3ymlvoeTT5EXI6X4TQIjE7ZQioQMmDEXZEENuLQ9aJDYMagQSsBxh+UIDf1S7MNjouagl
+	6MzMXxDyRXMY78gEvRH8U76jysZ+6JKwE/EBl8RpMM2mvmOvZ4Wqz6AQk2WKWItNq0VlTWdcclysa
+	6k2n3Q5cDyzd3vpFuyqoaQLUg2s5zXotfujIRlJxA8DS01sS0DRecwIgKbNY50RV+MkHR2I+wv6Lq
+	8Ri1PNV2RZ6XoVPCChCHXN9yK8WvDc9tCVca/nPh8xxAmn1XaU/2JXopj06I+y/szvgaGOaE4+qq0
+	UWLIz2gktagdeayBXdFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5hkt-0007Hl-GU; Sun, 23 Feb 2020 03:16:31 +0000
+	id 1j5hl8-0007Qg-4h; Sun, 23 Feb 2020 03:16:46 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5hkh-0007GG-3P
+ id 1j5hkh-0007GH-3N
  for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 03:16:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582427776; bh=tDnwYEW9GEDNmkZUKddg1nhKcHJVjXNH6bPtCqGCOp0=;
+ t=1582427777; bh=cBWlfj++s2/S0YKuROSJoDR9+u4sdEc4wNQ7e2Fs0jY=;
  h=From:To:Cc:Subject:Date:References:From;
- b=HuM57RWFdI2ZY7MHHYC1x7XzTYzPYsuReQuZAjAE0sDuVdb7bZfCBNsF1nRK2vRzs
- MaVAolXkqtwLPMo8ulUS8d2wNLD/yoE+Ut0x4EhoxyS7Fn+yNRpB/2ZpSteph6vUBE
- cPTIlwYcZgawCLuGePBc3Xk4hvneTLQhAv2Sbm18=
+ b=qkebOUzMI3/k2FfAPeGVxwK3frmTSAeccUBgAEAh8GHxNjg84YQylgMLeVYA+cxsF
+ LfM2f4DBfi/SBolGyZTChppIGnxvDGfYn8Tl+QrnPjfUxBqWyoxafME4YCoFmBKPVE
+ LyWYDtb1x1vddjK0Ple3VBmEdv/MvSvR//ljZ31Y=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH 1/3] dt-bindings: vendor-prefixes: Add prefix for PocketBook
- International SA
-Date: Sun, 23 Feb 2020 04:16:12 +0100
-Message-Id: <20200223031614.515563-2-megous@megous.com>
+Subject: [PATCH 2/3] dt-bindings: arm: sunxi: Add PocketBook Touch Lux 3
+Date: Sun, 23 Feb 2020 04:16:13 +0100
+Message-Id: <20200223031614.515563-3-megous@megous.com>
 In-Reply-To: <20200223031614.515563-1-megous@megous.com>
 References: <20200223031614.515563-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_191619_484964_357674F4 
-X-CRM114-Status: UNSURE (   7.16  )
+X-CRM114-CacheID: sfid-20200222_191619_484969_02832037 
+X-CRM114-Status: UNSURE (   7.01  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -79,26 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Call it "pocketbook".
+Add a new board name.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ Documentation/devicetree/bindings/arm/sunxi.yaml | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-index 9e67944bec9c6..434cf7de691d2 100644
---- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-+++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-@@ -761,6 +761,8 @@ patternProperties:
-     description: Broadcom Corporation (formerly PLX Technology)
-   "^pni,.*":
-     description: PNI Sensor Corporation
-+  "^pocketbook,.*":
-+    description: PocketBook International SA
-   "^polaroid,.*":
-     description: Polaroid Corporation
-   "^portwell,.*":
+diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
+index 327ce67308237..7c4be977be37f 100644
+--- a/Documentation/devicetree/bindings/arm/sunxi.yaml
++++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
+@@ -647,6 +647,11 @@ properties:
+           - const: pineriver,mini-xplus
+           - const: allwinner,sun4i-a10
+ 
++      - description: PocketBook Touch Lux 3
++        items:
++          - const: pocketbook,touch-lux-3
++          - const: allwinner,sun5i-a13
++
+       - description: Point of View Protab2-IPS9
+         items:
+           - const: pov,protab2-ips9
 -- 
 2.25.1
 
