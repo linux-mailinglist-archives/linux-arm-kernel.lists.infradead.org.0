@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A742616933F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 03:22:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEB8516934F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 03:22:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l3RvOFvD9rW7Ds2uV1R1++dX9lxjALSaGrzsQLXuIqc=; b=ifFhnHaOduSqLv
-	aY+HwE3KHmbYYiSaxNHop4xs4hCQIhkVMLsGAJBSCAdvGVJ5PC9r13RBmhhvPbesgz6kXRgdCClBA
-	ZrWTF+XLflTB+Hs7nqgyjZOe9vSbhTn6bw5dLXJZ/e+eWFo8a58QfQZQm6ts18VITsBH9Ae64gMFi
-	Ar6LRbjEfRLqjymdpvGjwXNx/Qmez+r99ll/TknaU+/WXT/qbzlzQcY5xrB25t6yvTTyTw52xiGpZ
-	uSgIz0+oUVQjKjLba/tu5MURb2K7hD89A43V1ATR/gS1+DdapLJBDDDA/GjwQhRZ3hwByqVJ2tA5E
-	hTt66ZiNRE+avvmTyU+A==;
+	List-Owner; bh=/gtosaM8Akt4sK4enEYffKrIa4xsI1vlRjux+umqqLo=; b=Qj2PDbB2f4n+Xn
+	CaR2aZI798Vp0IBIuJnLTZ67Q17z4Le9bee1W/TpovzYdBxcGE9JaF+d6U9DRlif0OEyCz2fDaOTO
+	SP2gK+MK9Lni+uh7WOp8dy2mLA75fHBL0DyzDuhP8PkT8qScsPsUisHTeGogPwSgTgtNBZPCKlUB3
+	dd6RfYycEEqCnwuh2OPTcl76qnrb9JJ55TR+bw4xIHVUgNdroChKjUmfJ79JHsn903TmUcQYtdDr3
+	B3CEt0f+N/5H8TgaRgZyontj4K9qIj5PGMN9XiuXymCw4E+VABPXSSru28UeeMNYT447caitES0kx
+	VBeDb/P17SYZJTeMpZ2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5gu9-0001Og-MA; Sun, 23 Feb 2020 02:22:01 +0000
+	id 1j5guQ-0001Zq-5i; Sun, 23 Feb 2020 02:22:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5gtm-0001CB-SF
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 02:21:40 +0000
+ id 1j5gtu-0001IM-Fj
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 02:21:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D404A2067D;
- Sun, 23 Feb 2020 02:21:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AD362214DB;
+ Sun, 23 Feb 2020 02:21:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582424498;
- bh=4BypovxFTpsOw6CslQIrS8l2iIcg0DbMZ7zyR66ltGs=;
+ s=default; t=1582424505;
+ bh=b0T7XcKyF7fdfoO4CCzBX1iv4p+VefjFERsskt64TYA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dv3kiQmtt6761JCgZYY03CFN+QlNwSo1CwJvsCanXJ+2I72bKs/32RzgYM4fJElqu
- eEciJP/o9KWz7aHkvy+aYyuSr1Yi9k7PgwDQsAtb8Xq54Wh3+M/rIFnLWlVaPLmefG
- iKk19ODzQnSWXp0CcQs6rO3vnmeRI+uVSjRS1/cg=
+ b=i77Vk/J7TDJqXKm6002HID74eMcTfYAZSaWrtUgisXwgqrP7uaWz+jsZd1UfIdSuY
+ qVGo6Vda6oDP2e/05DGGsRZGdZNb8ewq5oAlwSNhKimgt/Lm1KkstX7O9aYljVb0+O
+ upakQSOxY5hobZaEu1y+Wx4hIC5hzRD/tCgjuNn0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 15/58] arm/ftrace: Fix BE text poking
-Date: Sat, 22 Feb 2020 21:20:36 -0500
-Message-Id: <20200223022119.707-15-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 21/58] ARM: dts: sti: fixup sound frame-inversion
+ for stihxxx-b2120.dtsi
+Date: Sat, 22 Feb 2020 21:20:42 -0500
+Message-Id: <20200223022119.707-21-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200223022119.707-1-sashal@kernel.org>
 References: <20200223022119.707-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_182138_926799_93FF3806 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20200222_182146_712903_55F10D3A 
+X-CRM114-Status: GOOD (  10.87  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,52 +80,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>, Sasha Levin <sashal@kernel.org>,
- Dmitry Osipenko <digetx@gmail.com>, Ingo Molnar <mingo@kernel.org>,
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peter Zijlstra <peterz@infradead.org>
+From: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
 
-[ Upstream commit be993e44badc448add6a18d6f12b20615692c4c3 ]
+[ Upstream commit f24667779b5348279e5e4328312a141a730a1fc7 ]
 
-The __patch_text() function already applies __opcode_to_mem_*(), so
-when __opcode_to_mem_*() is not the identity (BE*), it is applied
-twice, wrecking the instruction.
+frame-inversion is "flag" not "uint32".
+This patch fixup it.
 
-Fixes: 42e51f187f86 ("arm/ftrace: Use __patch_text()")
-Reported-by: Dmitry Osipenko <digetx@gmail.com>
-Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-Signed-off-by: Ingo Molnar <mingo@kernel.org>
-Tested-by: Dmitry Osipenko <digetx@gmail.com>
+Signed-off-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/kernel/ftrace.c | 7 ++-----
- 1 file changed, 2 insertions(+), 5 deletions(-)
+ arch/arm/boot/dts/stihxxx-b2120.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/kernel/ftrace.c b/arch/arm/kernel/ftrace.c
-index bda949fd84e8b..93caf757f1d5d 100644
---- a/arch/arm/kernel/ftrace.c
-+++ b/arch/arm/kernel/ftrace.c
-@@ -81,13 +81,10 @@ static int ftrace_modify_code(unsigned long pc, unsigned long old,
- {
- 	unsigned long replaced;
- 
--	if (IS_ENABLED(CONFIG_THUMB2_KERNEL)) {
-+	if (IS_ENABLED(CONFIG_THUMB2_KERNEL))
- 		old = __opcode_to_mem_thumb32(old);
--		new = __opcode_to_mem_thumb32(new);
--	} else {
-+	else
- 		old = __opcode_to_mem_arm(old);
--		new = __opcode_to_mem_arm(new);
--	}
- 
- 	if (validate) {
- 		if (probe_kernel_read(&replaced, (void *)pc, MCOUNT_INSN_SIZE))
+diff --git a/arch/arm/boot/dts/stihxxx-b2120.dtsi b/arch/arm/boot/dts/stihxxx-b2120.dtsi
+index 60e11045ad762..d051f080e52ec 100644
+--- a/arch/arm/boot/dts/stihxxx-b2120.dtsi
++++ b/arch/arm/boot/dts/stihxxx-b2120.dtsi
+@@ -46,7 +46,7 @@
+ 			/* DAC */
+ 			format = "i2s";
+ 			mclk-fs = <256>;
+-			frame-inversion = <1>;
++			frame-inversion;
+ 			cpu {
+ 				sound-dai = <&sti_uni_player2>;
+ 			};
 -- 
 2.20.1
 
