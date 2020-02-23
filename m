@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1E5D1697AE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 14:16:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7A471697C4
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 14:27:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8zo+36G9RTUoR9TIr2SoVFEGjpRJHgf5WVvc+joIhRw=; b=g7KEjYHEwuIbIy
-	yNWGFZDSNHYRe4XOsOYInkB3ZHCYckNWOJv9mvakoMmBUFVHE0ZGuHrZHubPBHhYnwnXdIrSPb0TD
-	2qpRAzZPZMtSij4YdbBRSxSCXndrLhRbfnAyDwzlb+yf46Y5IlGK/Krq5ZeHoRG5JaZ1rgKPnjNLN
-	OTa6jLa7VeboN+g2JpgKZrHXHUCSLn85MDqqVRyoBACAFSVa234QCQtkbAmZ32onGgn6CqSHvwHw3
-	TTkkeE2+kwJ3esYhHBzRv8pBvdARaxRkCwy4LvpFPKSj8VoZdd4Jb8EfLf9USnmxRT2jh7FTalINM
-	2Ym7VPID4UU5TcussQPQ==;
+	List-Owner; bh=GegM+c4SZbwQI1Dp/gBqMp87McnHSTwGHlPX/2lEnI0=; b=uCGG8LHAIXR9FY
+	xr360pAK8aQ2XYvpUbf1/PuKoHoPblHrZKUW1WIqdQC+XMppzRu0dnX4ZgrecXjBJWlA27IyE7J2/
+	H1eNX2wFl5sNLZfSL3SU8yMTSgbKtKXVxewWde0HAxrGnzuKkhG5GyhhI/TXbvoUcedQDxG9UFXO4
+	zJwNUXEKK/fjJMC4a5TQgV4e/coRIDvMvxJeShjc0BphxilP+PuiDoO9e8Sluqj4EWJ2cygeuzlts
+	fbtHu/Ei48cNe5Ee3yUZAZkZm8MhNhtkRylANGsixDiUlGnBbrpEA/tRxQthrIiRpUCKLHaRA2+cU
+	jcx4aXzhjAcMGXm6kDVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5r7T-0006j7-Pf; Sun, 23 Feb 2020 13:16:27 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j5rIO-0001US-3v; Sun, 23 Feb 2020 13:27:44 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5r6M-0005gL-Tc; Sun, 23 Feb 2020 13:15:21 +0000
-X-UUID: 2ebd4369d3ae473390d23de979aea5aa-20200223
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=HUcMinlJztCOhwy6UvhkEzNXlyN6matYqtCW9mEf2tg=; 
- b=cyjb4Jh2uiN5gqUWXcDwNSbbBVQ3VHvCM2Bac0nMvB+TU+UEj1X0VX443+da8woBc78lZX2D00EuYgtDBxqrxzXVnpF/zvaNrtN7oOulBxQJJ5XSmN6RM2SeAzYcvbTPeIwqoYFR2vF7IIKMvWuCsA2LkzSg713ZlOzSXTT6XpQ=;
-X-UUID: 2ebd4369d3ae473390d23de979aea5aa-20200223
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 568044871; Sun, 23 Feb 2020 05:15:16 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 23 Feb 2020 05:15:13 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 23 Feb 2020 21:11:02 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 23 Feb 2020 21:14:50 +0800
-Message-ID: <1582463706.19053.32.camel@mtkswgap22>
-Subject: Re: [PATCH] lib: iov_iter.c: fix a possible calculation error on
- remaining bytes
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Al Viro <viro@zeniv.linux.org.uk>
-Date: Sun, 23 Feb 2020 21:15:06 +0800
-In-Reply-To: <20200218124142.GJ23230@ZenIV.linux.org.uk>
-References: <1582011672-17189-1-git-send-email-macpaul.lin@mediatek.com>
- <20200218124142.GJ23230@ZenIV.linux.org.uk>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1j5rIC-0001TY-SZ
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 13:27:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1582464450; bh=6aDHgxpbScn4fEVS27fALRMx2ilXcZswkQLdJ3FPyzw=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=EADMqKyXxVdzmDWQ76/XPfZr0J4bY28ZjFJgZp6eZVs0oKk9Qu4ZdzLjoNnda5haC
+ EE6YUVmcGbmMRLGzcqabEl7qSFRk76ACaqycPpE9Lax0k6vPypwIgs0VsOjk6f7+Nm
+ F1997+wQHVRDj0QyIfubsgMu/GlqqVAXVRrB4giE=
+Date: Sun, 23 Feb 2020 14:27:30 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: linux-sunxi@googlegroups.com,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>,
+ Pavel Machek <pavel@ucw.cz>, Dan Murphy <dmurphy@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH 0/4] Add support for charger LED for AXP813 and TBS A711
+ Tablet
+Message-ID: <20200223132730.6g7tnm2f263oubhv@core.my.home>
+Mail-Followup-To: linux-sunxi@googlegroups.com,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>,
+ Pavel Machek <pavel@ucw.cz>, Dan Murphy <dmurphy@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Lee Jones <lee.jones@linaro.org>, linux-leds@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+References: <20200223131435.681620-1-megous@megous.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: D743D5FFED43F9BC952FE27FF4BE8AE9BAFC6F359885D5FD278658A4DF9A560E2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200223131435.681620-1-megous@megous.com>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_051519_000657_00CF5B30 
-X-CRM114-Status: GOOD (  23.12  )
+X-CRM114-CacheID: sfid-20200223_052733_094219_FF17BDAC 
+X-CRM114-Status: GOOD (  15.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -72,8 +71,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,86 +82,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Shen Jing <jingx.shen@intel.com>,
- CC Hwang <cc.hwang@mediatek.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Jerry Zhang <zhangjerry@google.com>, linux-usb@vger.kernel.org,
- Loda Chou <loda.chou@mediatek.com>, linux-kernel@vger.kernel.org,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- John Stultz <john.stultz@linaro.org>,
- Vincent Pelletier <plr.vincent@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Lee Jones <lee.jones@linaro.org>, linux-leds@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2020-02-18 at 12:41 +0000, Al Viro wrote:
-> On Tue, Feb 18, 2020 at 03:41:12PM +0800, Macpaul Lin wrote:
-> > This issue was found when adbd trying to open functionfs with AIO mode.
-> > Usually, we need to set "setprop sys.usb.ffs.aio_compat 0" to enable
-> > adbd with AIO mode on Android.
-> > 
-> > When adbd is opening functionfs, it will try to read 24 bytes at the
-> > fisrt read I/O control. If this reading has been failed, adbd will
-> > try to send FUNCTIONFS_CLEAR_HALT to functionfs. When adbd is in AIO
-> > mode, functionfs will be acted with asyncronized I/O path. After the
-> > successful read transfer has been completed by gadget hardware, the
-> > following series of functions will be called.
-> >   ffs_epfile_async_io_complete() -> ffs_user_copy_worker() ->
-> >     copy_to_iter() -> _copy_to_iter() -> copyout() ->
-> >     iterate_and_advance() -> iterate_iovec()
-> > 
-> > Adding debug trace to these functions, it has been found that in
-> > iterate_iovec(), the calculation result of n will be turned into zero.
-> >    n = wanted - n; /* 0 == n = 24 - 24; */
-> > Which causes copyout() won't copy data to userspace since the length
-> > to be copied "v.iov_len" will be zero, which isn't correct. This also
-> > leads ffs_copy_to_iter() always return -EFAULT. Finally adbd cannot
-> > open functionfs and send FUNCTIONFS_CLEAR_HALT.
-> > 
-> > Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> > ---
-> >  lib/iov_iter.c | 3 ++-
-> >  1 file changed, 2 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/lib/iov_iter.c b/lib/iov_iter.c
-> > index fb29c02c6a3c..f9334144e259 100644
-> > --- a/lib/iov_iter.c
-> > +++ b/lib/iov_iter.c
-> > @@ -36,7 +36,8 @@
-> >  		skip = __v.iov_len;			\
-> >  		n -= __v.iov_len;			\
-> >  	}						\
-> > -	n = wanted - n;					\
-> > +	if (n != wanted)				\
-> > +		n = wanted - n;				\
-> >  }
-> 
-> 	First of all, nothing in that line can possibly *cause*
-> copyout() to do anything - it's after the calls of step.  What's
-> more, this changes behaviour only when wanted would've been equal to
-> n, doesn't it?  Which translates into "no decrements of n have
-> happened at all", i.e. "nothing has been copied".  IOW, it's
-> a consequence of no copyout, not the cause of such.  You can
-> make copy_to_iter() lie and pretend if has copied everything
-> when it has copied nothing, but that won't change the underlying
-> bug.
-> 
-> 	So I'm afraid your debugging is not finished - you
-> still need to find out what causes the copyout failures and/or
-> BS iov_iter padded by caller.
+On Sun, Feb 23, 2020 at 02:14:31PM +0100, megous hlavni wrote:
+> The tablet has a charger LED exposed on the top. This LED is controlled
+> by AXP813 PMIC. Add support for enabling the LED and using it either
+> for charging indication (handled by PMIC automatically) or for other uses
+> via user control.
 
-Thanks for your explanation. After these days, I've found this issue
-only happened on arm 64-bit system, while arm 32-bit system works well.
-After more debugging, it looks like arm 64 tagged ABI related issue.
-I've update a new patch here: 
-    usb: gadget: f_fs: try to fix AIO issue under ARM 64 bit TAGGED mode
-    https://lkml.org/lkml/2020/2/23/16.
+Dang, I just noticed someone sent a similar driver recently, although I had this
+one prepared for quite some time (since 2017) in my tree. I guess I should have
+sent it earlier.
 
-Thanks.
-Macpaul Lin.
+Please ignore.
+
+regards,
+	o.
+
+
+> Please take a look.
+> 
+> thank you and regards,
+>   Ondrej Jirman
+> 
+> Ondrej Jirman (4):
+>   dt-bindings: leds: Add a binding for AXP813 charger led
+>   leds: axp20x: Support charger LED on AXP20x like PMICs
+>   ARM: dts: axp813: Add charger LED
+>   ARM: dts: sun8i-a83t-tbs-a711: Enable charging LED
+> 
+>  .../devicetree/bindings/leds/leds-axp20x.yaml |  24 ++
+>  arch/arm/boot/dts/axp81x.dtsi                 |   5 +
+>  arch/arm/boot/dts/sun8i-a83t-tbs-a711.dts     |   4 +
+>  drivers/leds/Kconfig                          |   7 +
+>  drivers/leds/Makefile                         |   1 +
+>  drivers/leds/leds-axp20x.c                    | 240 ++++++++++++++++++
+>  drivers/mfd/axp20x.c                          |   3 +
+>  7 files changed, 284 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/leds/leds-axp20x.yaml
+>  create mode 100644 drivers/leds/leds-axp20x.c
+> 
+> -- 
+> 2.25.1
+> 
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
