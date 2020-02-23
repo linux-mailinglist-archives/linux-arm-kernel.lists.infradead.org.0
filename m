@@ -2,81 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFD07169619
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 06:42:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B38B61696BC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 23 Feb 2020 09:08:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DTJWZix7mQh3hZHG7HHBE45ZF1gR77oQeWk5s0sdp7Q=; b=maD
-	xgkqrJNWIPdicWLe62Vzjwb9I5RyNFiTJFQCQp2vCMJHHwCzQJcgGI3tkHiaSAK4znJByAVbhsh9q
-	WmhXojlPijDQ35rlH1zJ6jOLTNdwxfN67ePdwdOoIWIn+0cYZ/Fe7SwF59neMQmJbeJX76GSgq/Bk
-	oj8/LEHsZBwAmI8ttWor0nyIqwGWrqingGrLMl64FSvaKwQPMOgoRkRbUhclQ+Qe2luy8W0LnlK7H
-	6vYPkeVUrmHn3XIPAuUIA3rfVK392OgXsqEo7oLmXlnKTok9/b48YSBt1lDHFcu5EqjonRdYaPQIg
-	OOpglCuzbS83y+XtJZdH962N6AHUiEw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vjvpAl4qwXWKlc7x6RjDm0D+kB06KNBsFlN1PPrLsYY=; b=Ob1nsgoAkiAae2
+	E80JwkxI/gpcxF/HWFx8QCZQ/hshumk1tJBxRs4fBSS4x9fos0I63/kvlndFsd6GYeceBuUel1Xp6
+	it/AVlGyEBcN+iBnGUmX0JydxFIncT41bBej8MrDp1c0h5hlVfAuB2C+zaefp0URY7tPfa1PQIVcM
+	J2KI98fFK0FVf8+uCMlKhfYmAJuL6y/7UGIf2EHl9wumdChz2oXzBpZyi6DhmKyy7S1eAv6CfG7/U
+	0lWRMseX7iP9eAiKZcQEe/dwNvKqm+JrBIh8JM8z8nABryvDjV4RHPnTAuUJW/tHmFXgOvPrna0PN
+	35xRST4RMGuXKu2/ZR2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j5k2O-0008Em-G3; Sun, 23 Feb 2020 05:42:44 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1j5mJM-0006jY-Q6; Sun, 23 Feb 2020 08:08:24 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j5k2H-0008De-DU
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 05:42:38 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id ep11so2612418pjb.2
+ id 1j5mJD-0006jA-Oa
+ for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 08:08:17 +0000
+Received: by mail-pl1-x643.google.com with SMTP id j7so2713559plt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 22 Feb 2020 21:42:36 -0800 (PST)
+ Sun, 23 Feb 2020 00:08:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=sBcpUEikr4BVNDaC5sxBh2nBjtOfILlrf6tgzXt34O8=;
- b=IKPPeRPih+jfKOW4lu6ThGJsCEPhs768DPYXk+92Sg2BK6jnvCSVIv031QOpfQk8zu
- HBtlh2wZ63/JKwpBxnv7EktCFn7HmsK2nDHg5w/6AO6VLpkztl6JXjQn7rh770uH3r5b
- Tms281tqAloYvjz+GSzFUz6M/BqEye8qcVp0Dtu1vprx7fNeZZZh6+VKyYKgEZxBGL9I
- VDPJDJ9wGzSFnM+U/ZtVPPh7/qE4eqgwxlFgo2K3b/XrXw9USs8thwum2bWBReImjfAa
- 8UEz5bolUrJ3HwPOZMTBuqBnOpsIUaGl+0leqvkI4BrEFB1gVe9C6C2Ncd5Tg6S7LwDh
- Zq0w==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=yQk1zoKwLwWh37FUIzsv76O7XQbXKjoLP/vDR2rhq5Q=;
+ b=qdG6a5mHwcoXs7RTbNh6kmru0Q2NPXRRviemSasiC2o4e01Hef3Y3Me1I5bBzz1/uO
+ 56D5yukc3T4KdRu9TgG5a+36a7OugpCRC8yaRLHrThJeDdfQ4rZhUvHfOKlo2SPRQ84F
+ JWa885rbJ3z6h5PodG2mj4Kr9ZehV5e0X8fufvVJUyuiY2xNfrTnM/kQS086qlseDDlD
+ jvk+qTi3wR7HpW9u8nNCE7EUhsQgVXElj0GG2TvQ3e1AdNp+rpXnq3q7pGx8/CxBEVyW
+ AgMqJ6YTI6x4EhJ3yWiyAjGbrChD6TiAFG8XrawPeskkAEcUp/HkXJr5S1YSbA0ti1f1
+ 1j0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=sBcpUEikr4BVNDaC5sxBh2nBjtOfILlrf6tgzXt34O8=;
- b=mu7vPku8Vl/p9+E1f3EVgRim0ybbqWej79tkGmUwJQUXXEhV/PKUeWEveomuj67cXX
- aaIlR3NirAl1M4sLyKxTYNOklZYFKZRaAb47BQlKwKL06FN+rgQ1txo9IA4wao9RlrrM
- 6xQx1VokkBO6tAlgz9dZwz4JVC+HikrNNC+8975bKEVAfkre0g9nJgdsSB/4iO8W8wYp
- 7nL+rtoec+m4P96nujVXbykH6y4pKnMuNwev78uPuDGm8AJUjfD/VW0LkpInPHmwanvH
- POyxazuOkCOSy+j0dV0XTOHAoZ7foEn+O2PmsznbRSgozbFgCbF3lOn5HPUw+vpDO2U5
- /kJA==
-X-Gm-Message-State: APjAAAWGJoIXiP5wcG4UNc6ZdjPCg0SuaXttsniuSWMGm5hlt1y84BXV
- OQ+QxUlBDXQPAH/8TaL2sTg=
-X-Google-Smtp-Source: APXvYqzjsPedUCsVxjjtx79y1TvT2dc0ATqNmiVnXjfR7ppxUrfFB3YGktpiD3Kp1Z70qscXjV6Z0Q==
-X-Received: by 2002:a17:90a:8c0f:: with SMTP id
- a15mr13348002pjo.86.1582436555656; 
- Sat, 22 Feb 2020 21:42:35 -0800 (PST)
-Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id g72sm8306239pfb.11.2020.02.22.21.42.34
- (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Sat, 22 Feb 2020 21:42:35 -0800 (PST)
-From: qiwuchen55@gmail.com
-To: linux@armlinux.org.uk,
-	jejb@linux.ibm.com,
-	martin.petersen@oracle.com
-Subject: [PATCH] scsi: arm: list_for_each() -> list_for_each_entry()
-Date: Sun, 23 Feb 2020 13:42:31 +0800
-Message-Id: <1582436551-14244-1-git-send-email-qiwuchen55@gmail.com>
-X-Mailer: git-send-email 1.9.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=yQk1zoKwLwWh37FUIzsv76O7XQbXKjoLP/vDR2rhq5Q=;
+ b=i4wUugNAELjb6gIb96hExyiZkRkERRF4nATtYSJRkV0Myb9rML+D1UvOuBAdDxwWbZ
+ nZ/zECM+CcQRxXLxdIQKVKz7HX9Jjs+Gcqcc6HKMpvDEgu+cmN6iyhsCBi+Df9P2SRNp
+ IzKg34RUHL9bpxhb5iFZky+/TMCF+921CDI3g9oSST5jvwxMME7c0z7R8qIOALbRV5/2
+ f7AEL7DeV9qL3jdRmEklCSc+qbqLqvbEHB88DtnJ2o1pzjC1x3ydYsbWvGXlaJ1EjkTg
+ 1e9eg4gBC8V/nsbIP7U7r718MJlTk3DgYyV1WckiXU3YNCF8+Ob3QIyKyclhIggNig7C
+ 4cSw==
+X-Gm-Message-State: APjAAAWaXLi4yVF7hHxB0tslz1Wt7KV9JjVFbmj0xhePMTUwIKWJmLtT
+ EAdX9NvoOxSLI0PatM/eRKA=
+X-Google-Smtp-Source: APXvYqwiTY7/62F2gOlXwYs8R/dmD9HUIJ8WtLe7LvqVjiyj6uzrb8cWFT7iegdF6/n7O6JgYId+mw==
+X-Received: by 2002:a17:902:426:: with SMTP id
+ 35mr44071795ple.176.1582445294652; 
+ Sun, 23 Feb 2020 00:08:14 -0800 (PST)
+Received: from gmail.com ([2601:600:817f:a132:df3e:521d:99d5:710d])
+ by smtp.gmail.com with ESMTPSA id t8sm7876146pjy.20.2020.02.23.00.08.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 23 Feb 2020 00:08:13 -0800 (PST)
+Date: Sun, 23 Feb 2020 00:08:11 -0800
+From: Andrei Vagin <avagin@gmail.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH 0/5] arm64: add the time namespace support
+Message-ID: <20200223080811.GA349924@gmail.com>
+References: <20200204175913.74901-1-avagin@gmail.com>
+ <2d982452-12e5-5c0b-6e4c-adadb7a34616@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2d982452-12e5-5c0b-6e4c-adadb7a34616@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200222_214237_483263_62674756 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: 3.6 (+++)
+X-CRM114-CacheID: sfid-20200223_000815_826220_03E3BDF3 
+X-CRM114-Status: GOOD (  19.48  )
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.6 points)
+ Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [43.224.245.179 listed in zen.spamhaus.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [qiwuchen55[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
+ 1.8 FSL_HELO_FAKE          No description available.
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [qiwuchen55[at]gmail.com]
+ provider [avagin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,105 +101,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chenqiwu <chenqiwu@xiaomi.com>, linux-scsi@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Thomas Gleixner <tglx@linutronix.de>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Dmitry Safonov <dima@arista.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: chenqiwu <chenqiwu@xiaomi.com>
+On Thu, Feb 20, 2020 at 12:40:47PM +0000, Vincenzo Frascino wrote:
+> Hi Andrei,
+> 
+> On 04/02/2020 17:59, Andrei Vagin wrote:
+> > Allocate the time namespace page among VVAR pages and add the logic
+> > to handle faults on VVAR properly.
+> > 
+> > If a task belongs to a time namespace then the VVAR page which contains
+> > the system wide VDSO data is replaced with a namespace specific page
+> > which has the same layout as the VVAR page. That page has vdso_data->seq
+> > set to 1 to enforce the slow path and vdso_data->clock_mode set to
+> > VCLOCK_TIMENS to enforce the time namespace handling path.
+> > 
+> > The extra check in the case that vdso_data->seq is odd, e.g. a concurrent
+> > update of the VDSO data is in progress, is not really affecting regular
+> > tasks which are not part of a time namespace as the task is spin waiting
+> > for the update to finish and vdso_data->seq to become even again.
+> > 
+> > If a time namespace task hits that code path, it invokes the corresponding
+> > time getter function which retrieves the real VVAR page, reads host time
+> > and then adds the offset for the requested clock which is stored in the
+> > special VVAR page.
+> > 
+> 
+> Thank you for adding the arm64 support of time namespaces. Overall it looks fine
+> to me even if I have few comments. I will test it in the coming days just to
+> make sure I did not miss something major. I will keep you updated on the results.
 
-Use list_for_each_entry() instead of list_for_each() to
-simplify code.
+Thank you for the review. All comments look reasonable and I will
+address them and post a second version.
 
-Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
----
- drivers/scsi/arm/queue.c | 25 ++++++++++---------------
- 1 file changed, 10 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/scsi/arm/queue.c b/drivers/scsi/arm/queue.c
-index e5559f2..da39597 100644
---- a/drivers/scsi/arm/queue.c
-+++ b/drivers/scsi/arm/queue.c
-@@ -158,12 +158,11 @@ static struct scsi_cmnd *__queue_remove(Queue_t *queue, struct list_head *ent)
- struct scsi_cmnd *queue_remove_exclude(Queue_t *queue, unsigned long *exclude)
- {
- 	unsigned long flags;
--	struct list_head *l;
-+	QE_t *q;
- 	struct scsi_cmnd *SCpnt = NULL;
- 
- 	spin_lock_irqsave(&queue->queue_lock, flags);
--	list_for_each(l, &queue->head) {
--		QE_t *q = list_entry(l, QE_t, list);
-+	list_for_each_entry(q, &queue->head, list) {
- 		if (!test_bit(q->SCpnt->device->id * 8 +
- 			      (u8)(q->SCpnt->device->lun & 0x7), exclude)) {
- 			SCpnt = __queue_remove(queue, l);
-@@ -207,12 +206,11 @@ struct scsi_cmnd *queue_remove_tgtluntag(Queue_t *queue, int target, int lun,
- 					 int tag)
- {
- 	unsigned long flags;
--	struct list_head *l;
-+	QE_t *q;
- 	struct scsi_cmnd *SCpnt = NULL;
- 
- 	spin_lock_irqsave(&queue->queue_lock, flags);
--	list_for_each(l, &queue->head) {
--		QE_t *q = list_entry(l, QE_t, list);
-+	list_for_each_entry(q, &queue->head, list) {
- 		if (q->SCpnt->device->id == target && q->SCpnt->device->lun == lun &&
- 		    q->SCpnt->tag == tag) {
- 			SCpnt = __queue_remove(queue, l);
-@@ -234,11 +232,10 @@ struct scsi_cmnd *queue_remove_tgtluntag(Queue_t *queue, int target, int lun,
- void queue_remove_all_target(Queue_t *queue, int target)
- {
- 	unsigned long flags;
--	struct list_head *l;
-+	QE_t *q;
- 
- 	spin_lock_irqsave(&queue->queue_lock, flags);
--	list_for_each(l, &queue->head) {
--		QE_t *q = list_entry(l, QE_t, list);
-+	list_for_each_entry(q, &queue->head, list) {
- 		if (q->SCpnt->device->id == target)
- 			__queue_remove(queue, l);
- 	}
-@@ -257,12 +254,11 @@ void queue_remove_all_target(Queue_t *queue, int target)
- int queue_probetgtlun (Queue_t *queue, int target, int lun)
- {
- 	unsigned long flags;
--	struct list_head *l;
-+	QE_t *q;
- 	int found = 0;
- 
- 	spin_lock_irqsave(&queue->queue_lock, flags);
--	list_for_each(l, &queue->head) {
--		QE_t *q = list_entry(l, QE_t, list);
-+	list_for_each_entry(q, &queue->head, list) {
- 		if (q->SCpnt->device->id == target && q->SCpnt->device->lun == lun) {
- 			found = 1;
- 			break;
-@@ -283,12 +279,11 @@ int queue_probetgtlun (Queue_t *queue, int target, int lun)
- int queue_remove_cmd(Queue_t *queue, struct scsi_cmnd *SCpnt)
- {
- 	unsigned long flags;
--	struct list_head *l;
-+	QE_t *q;
- 	int found = 0;
- 
- 	spin_lock_irqsave(&queue->queue_lock, flags);
--	list_for_each(l, &queue->head) {
--		QE_t *q = list_entry(l, QE_t, list);
-+	list_for_each_entry(q, &queue->head, list) {
- 		if (q->SCpnt == SCpnt) {
- 			__queue_remove(queue, l);
- 			found = 1;
--- 
-1.9.1
-
+Thanks,
+Andrei
 
 _______________________________________________
 linux-arm-kernel mailing list
