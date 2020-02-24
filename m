@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 544AE16A0C3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:56:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65BFF16A0C8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:57:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RjpkWzrpgrKY6vzVnyIx02+Rs4QMm3EtbH66fn8YIEY=; b=BIPQw+ZXd2elsA
-	r/eZMF6WwrH/Lh2ahJyyWfPO3fTjdYeazXiGWF0YqQPMIe8o1OrHhmadNxKQ6Qyg475pn0ASo05nh
-	vFkSN9hAQcGYVHTox7BGZEXnIm0INYV1j2wL+VaD73skr8ALK2qq/R2WCimvPwOY9yi+0J0dXMTYz
-	FDSxhGesrV3VdY+tupW8AMoYrKEZ86nMa7uIjau6msWsd2BCKZV4LlL2AQYKOhW2jNB5Juy/kPNIo
-	+Dwqbunc4KAYM8YgpKUUrSonNZjbuBQQNuEd0q0UGMePvnFJgrjboGY1npnkSJz+NVKlYOvgqgsE0
-	CjRXJ9cAEGStS8ffmK4Q==;
+	List-Owner; bh=bDM/1+mJPzvq8/ISjK+8d4LSEa2h+vzAtOQq/pJ81JU=; b=AF1RBeqhPxPM28
+	yTOE6ys3CT7XrbNTMJwFkXYEGYZyf7yLa2S+mTWSB+ZsE1uJBnzndJ4s4aFfO4POaHHZvLU/Eg/BZ
+	pEMiusT5eqzwAhRh4HSMKcaZ5Fpfuh+F8s0iMUqKYdOlDj/Wz5aJKl+PRY/oHcSmj8NfgO0+miubh
+	cJgEiigxQMHbWolJnjH8FfLszdfUHTxGWkTdlGDbOiO/5q+FO5FXE90d2qNaTnoJFTrSbkXunmk9P
+	oLeda4IvRi0BHnZxUbRqIP+xmZA47QHx3ceTDvc/MmxOtlv90wkEw5KF0XIwpPF/h5RZ4VDX9nf2r
+	tbvhQsKOKx7Bg7mCZMEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69Xd-0002ZO-LG; Mon, 24 Feb 2020 08:56:41 +0000
+	id 1j69Xy-0002xU-R6; Mon, 24 Feb 2020 08:57:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69Ur-0007FH-Cc; Mon, 24 Feb 2020 08:53:51 +0000
+ id 1j69Uu-0007HL-Ir; Mon, 24 Feb 2020 08:53:54 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 937492187F;
- Mon, 24 Feb 2020 08:53:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0C665222C2;
+ Mon, 24 Feb 2020 08:53:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534428;
- bh=LUxYTwwdwf6SHIjajoLDNPMJKCyZMEOBchMPulk8V+o=;
+ s=default; t=1582534431;
+ bh=wDd04J+iEhOXCJYxcPWpK+K6rE650aIVNXcP80WLgxk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Xf6bxCQVjrbPD1yNAqNMJxDdwz23WBF6fa9g7Ckp6zWe+GxeC0iSpZYdMccNPNm7E
- M4Xq4O3XW/jHdWxMaXt+dXlhJ4MlVsDUlntN4Kvc0eD5Fo/E5bDY4Lx3fOUBb4gIX+
- WsPc+pfW9mph/3bgGuTnd6NS8B3GDoYjYYxZoZ1A=
+ b=VQBE86gm/pYpfaRe5yzJ2NwPpYp7HP27+Qr6vSROFZds1Hky63UENJzmjksN0W0ro
+ 3U5lvHx+yQWw12Ol+vwvZS385sRdKe3ZNCl7E9u2as7X03nHw/VBuJ3H2U/dvvbxlc
+ c6aSbg1yvBadAw9cDiWnxhjyOnkHkllzcW9YDcbA=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 10/18] net/alteon: Properly report FW version
-Date: Mon, 24 Feb 2020 10:53:03 +0200
-Message-Id: <20200224085311.460338-11-leon@kernel.org>
+Subject: [PATCH net-next v1 11/18] net/althera: Delete hardcoded driver version
+Date: Mon, 24 Feb 2020 10:53:04 +0200
+Message-Id: <20200224085311.460338-12-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005349_550591_255807F3 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20200224_005352_747707_AFE472BE 
+X-CRM114-Status: UNSURE (   8.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -99,30 +99,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-The acenic driver assigns FW version in driver version field,
-as part of cleanup driver version, set FW version properly.
+Convert to use default version provided by ethtool.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
- drivers/net/ethernet/alteon/acenic.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/altera/altera_tse_ethtool.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/alteon/acenic.c b/drivers/net/ethernet/alteon/acenic.c
-index f366faf88eee..5d192d551623 100644
---- a/drivers/net/ethernet/alteon/acenic.c
-+++ b/drivers/net/ethernet/alteon/acenic.c
-@@ -2699,9 +2699,8 @@ static void ace_get_drvinfo(struct net_device *dev,
- 	struct ace_private *ap = netdev_priv(dev);
+diff --git a/drivers/net/ethernet/altera/altera_tse_ethtool.c b/drivers/net/ethernet/altera/altera_tse_ethtool.c
+index 23823464f2e7..4299f1301149 100644
+--- a/drivers/net/ethernet/altera/altera_tse_ethtool.c
++++ b/drivers/net/ethernet/altera/altera_tse_ethtool.c
+@@ -67,7 +67,6 @@ static void tse_get_drvinfo(struct net_device *dev,
+ 	u32 rev = ioread32(&priv->mac_dev->megacore_revision);
 
- 	strlcpy(info->driver, "acenic", sizeof(info->driver));
--	snprintf(info->version, sizeof(info->version), "%i.%i.%i",
--		 ap->firmware_major, ap->firmware_minor,
--		 ap->firmware_fix);
-+	snprintf(info->fw_version, sizeof(info->version), "%i.%i.%i",
-+		 ap->firmware_major, ap->firmware_minor, ap->firmware_fix);
-
- 	if (ap->pdev)
- 		strlcpy(info->bus_info, pci_name(ap->pdev),
+ 	strcpy(info->driver, "altera_tse");
+-	strcpy(info->version, "v8.0");
+ 	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "v%d.%d",
+ 		 rev & 0xFFFF, (rev & 0xFFFF0000) >> 16);
+ 	sprintf(info->bus_info, "platform");
 --
 2.24.1
 
