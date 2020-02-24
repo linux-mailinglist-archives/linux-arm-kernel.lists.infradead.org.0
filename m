@@ -2,149 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CE7B16ADFE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:48:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADE6D16AE28
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:54:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GDaCyJG6h26Kk3ktc3FnkiTld5/Gthnl8KvS2K6vYiM=; b=B4wdMNBF9I5GQc
-	21LfuU0bgZUrDFvH5bnBYI2Jkc9lmK5eWFtkHoG6n8sCanAQngqikWxo9/kFYh2CaXX7mcBskqV9q
-	nMfB0f7rUaOjE1yvQDV5/VHOo6ncg4f1k6Y4lWSgXn/dyElR0dseR5JoOrtrGVY03LG1GT/h6X/36
-	r5DUkmZhP95dmtAnAkO+kxre6OFpaTGHwa+/nRka/3PCz0pbRu4X1Iyie09Uwvoqb5tMsnSkOO+uV
-	n03ANEI3uT2d8YeqtwZyvugFqT2DPkRJp+o/1PgoxB4WCdFvppJUJ6MK783vmmRI7yyLg9aEOt3y+
-	mokcYy7yqm8skJlxQDcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SUcNy9WwpB8w+KZMjKhTzLd/sA8gs/cuNDzHD9oetpY=; b=spUx7WO1ukdJqf
+	7eP9DpEj45jRM2RhziJsD3NCBQRYfwhWfLuqDjpHzTwKXrHkiWXInNWNKITO54OVVR0DYbcs/DmFT
+	Db9mqXbkRE4rLLwnmaY+mTDFahQtjT+d0oqT4JkAhsS6MKB3SqYaccrhsYnjk9wY0Zf9TcH7GIisn
+	y2e2WL4XckJk8Em/Bpiprd5/5g28IBZJFps49nAR5pM604hxSkxh0vA2aWYKOujIOJKG823OUK+XH
+	Lcq2jlNU635VrnFR1KsGCo0cLw9IFMjroLjFnq7z5ctnaki/fDcQh1w4t7Mh2TEumNQwusSJ93hXP
+	ZtXii612UDYxNdmNirVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6HqZ-0006P8-JA; Mon, 24 Feb 2020 17:48:47 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1j6Hvh-0000bW-Q6; Mon, 24 Feb 2020 17:54:05 +0000
+Received: from mail-bn8nam11on2064.outbound.protection.outlook.com
+ ([40.107.236.64] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6HqO-0006OY-Us; Mon, 24 Feb 2020 17:48:38 +0000
-Received: by mail-ed1-x543.google.com with SMTP id m13so12923599edb.6;
- Mon, 24 Feb 2020 09:48:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Z+KZXMS6j42BojKvkiav0VXiRWw9IxLJElIvzW43DQY=;
- b=aVGCobCqf2sWOQzEqSAW4JCob1J7OcSBugENcmhWXqcxmbGYgDGSNfhSXqmI+CwcC3
- 8MFcWUm1lUF2elGspd9V4ho3/PSJyrbxne/tvLbSSuquR4g9E3ewd2pYFCr+sjfVY4Or
- RKikPQnAVCt8I5bsPK3oBfqDpfAAo4pH3PDDQQjlbitXoGI2VKApwyBl8vJRBDTeGkf3
- eREbdkPlC9V4DF34hslgPZHOGiGK76X6sDpIAibkbtEyvemgIY1SuRDFT9eJFQ3oK4Aw
- AThy3HQjCuUhBNXF+ONKGv1OapczKnW2nBMe+xE5S57PiH8SVB1Vd3OjL5CrADQPInLp
- s7cg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=Z+KZXMS6j42BojKvkiav0VXiRWw9IxLJElIvzW43DQY=;
- b=Nel0M3Iiph4GeDnVs6hpQk/K6w1ESaqElY/1ki36Itm6e4F9ts0Zw9855sbOSF0dfT
- UVUzTrqmTy+Z/HGyU+cZN/TMsJlnB6HVjXVsr4glwPpY21AJZMsMaLb3a0YNQKq42VBF
- EHbe3tv3TY2jM93i/XkajyJQwNG2SAQ7wB8UlHg+cFNDQ0ND0mHA+ChIzfdqWruh3TF9
- rFTAIaUMBHReeGMe8GO0JtYuNXKwPBV8RWEcnPo5DVuyTxCwo0cadyzjRM54EFKuye2d
- Jcn0957dq5WL9ghc7B/4srkK1kprHStqTq5ueoE6xKMQl/UTpIPa/gyp2WohHhy8XrpO
- H7lQ==
-X-Gm-Message-State: APjAAAXTocbFsRRc0iSOAXEXeeveU08bHkd70BcUJQeYRWxJTuCCmXo1
- ijHSfYzw5813hPhlodW8r7U=
-X-Google-Smtp-Source: APXvYqz7i5Pc/5H53tWitQMIaIwBEIzHzproXsr4EugsBJJuMu/ktD2Wu69Zq4vnQ09DUeWodGqgSw==
-X-Received: by 2002:a50:875c:: with SMTP id 28mr48180095edv.271.1582566515662; 
- Mon, 24 Feb 2020 09:48:35 -0800 (PST)
-Received: from [10.67.50.18] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id f13sm1016733edq.26.2020.02.24.09.48.27
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 24 Feb 2020 09:48:34 -0800 (PST)
-Subject: Re: [PATCH 02/89] dt-bindings: i2c: brcmstb: Add BCM2711 BSC/AUTO-I2C
- binding
-To: Maxime Ripard <maxime@cerno.tech>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Eric Anholt <eric@anholt.net>
-References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <9e427ff22fa40b7146b44aee6468559499deb1f1.1582533919.git-series.maxime@cerno.tech>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <fb3e10e0-9d87-66c0-ad4c-fa8474f6fac0@gmail.com>
-Date: Mon, 24 Feb 2020 09:48:17 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j6HuP-00083W-7B
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:52:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TZApe+1DUC6JB4zBCfDq/FX/U3bX1odAxZ5Zlz7K3LTVZOQrCDEIbRJ5LU1CIn2fdjAlNqjBrRHt6ZQur8+XsVKORpt2TWKrPMrTPePNG5K9FsY1iuT0+P+VTKA6j+W1FPS9MIxjut9VehrmQqzuwXJdGKhlMANmocWGj1+iT9gsk50JG4frdJdHIuaKIZsYqgq6yw/fi/OeUlnzoYHs4JWv8rUk/V+5RPbqgGGMq0rxMQO2ZFIDOnmIxgaUZdHLNWQcieHpkYRWxbVJz857PETg/Feub0J7Ln/jVS8b8q6TChuE2IM5OBnCN4femXvoF2Ggw1Uzl+XCIg7OYrZ82Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=venyR6vZWrgCT4es/xxKiuvmhiuCwrOOCN7yCb3dZJ0=;
+ b=kWF8/ymMjyzStmEi9WEX8aQ+CSnJRkyvjJoPhjCeJEOCQXrmkjWHjMJ4GW1sG9FM03iFvb6q6o4wjGJUtvvZ5jy76uTpGNhUaTU1nFVgKiRZ2NmCDS1zVShNMRAMQUPKQN/Ye5Hs6esCf1D5IJNb0vJq4quhYXJ3StS7AXRHRXhpKIXqACoOksmxWiqaaX6KYRENCpVSTmJo1I6RIbZnur9icaA5ONwc91JY10z3dbNeh3jugL+UkZWTEXsq7b8n870+ijdYF4bLt5w09wLoS1WUvTaFYsNQ3Pufezk9vc0Q7fbtlYH73nNoNBMWHGgdYt0TadwuHZCGFhz5YddgzA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=venyR6vZWrgCT4es/xxKiuvmhiuCwrOOCN7yCb3dZJ0=;
+ b=sAVWJpSeUFp1s9jJwjDGoyWlES5zxqwoSmuMrSgHdMZWjm2ezOkfxpabbCn3fz6IsEzOhUMDlHcDcp4fAEkkWsF+jKhyvQIILgfaiWjSfHaSBRQZ4E9MQdKjXL424ZX+Tdvf/l5RFgwQ8vE9Y8/yRBZCJJ3a9/x8mOMWU9Ayc8g=
+Received: from CY4PR02CA0040.namprd02.prod.outlook.com (2603:10b6:903:117::26)
+ by DM6PR02MB5628.namprd02.prod.outlook.com (2603:10b6:5:76::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.21; Mon, 24 Feb
+ 2020 17:52:41 +0000
+Received: from SN1NAM02FT040.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::203) by CY4PR02CA0040.outlook.office365.com
+ (2603:10b6:903:117::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.18 via Frontend
+ Transport; Mon, 24 Feb 2020 17:52:41 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT040.mail.protection.outlook.com (10.152.72.195) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2750.18
+ via Frontend Transport; Mon, 24 Feb 2020 17:52:41 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <ben.levinsky@xilinx.com>)
+ id 1j6HuK-0006VE-O0; Mon, 24 Feb 2020 09:52:40 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <ben.levinsky@xilinx.com>)
+ id 1j6HuF-0007aa-Ki; Mon, 24 Feb 2020 09:52:35 -0800
+Received: from xsj-pvapsmtp01 (maildrop.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 01OHqVrA001811; 
+ Mon, 24 Feb 2020 09:52:31 -0800
+Received: from [172.19.2.206] (helo=xsjblevinsk50.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <ben.levinsky@xilinx.com>)
+ id 1j6HuB-0007aE-H1; Mon, 24 Feb 2020 09:52:31 -0800
+From: Ben Levinsky <ben.levinsky@xilinx.com>
+To: ohad@wizery.com, bjorn.andersson@linaro.org, michal.simek@xilinx.com,
+ jollys@xilinx.com, rajan.vaja@xilinx.com, robh+dt@kernel.org,
+ mark.rutland@arm.com
+Subject: [PATCH 0/5] remoteproc: Add zynqmp_r5 driver
+Date: Mon, 24 Feb 2020 09:52:26 -0800
+Message-Id: <1582566751-13118-1-git-send-email-ben.levinsky@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(189003)(199004)(336012)(7696005)(186003)(81166006)(8676002)(8936002)(2906002)(5660300002)(426003)(81156014)(4326008)(26005)(9786002)(498600001)(70206006)(44832011)(70586007)(2616005)(36756003)(6666004)(356004);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB5628; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
-In-Reply-To: <9e427ff22fa40b7146b44aee6468559499deb1f1.1582533919.git-series.maxime@cerno.tech>
-Content-Language: en-US
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: de16fee8-3cac-4fe9-b845-08d7b9525817
+X-MS-TrafficTypeDiagnostic: DM6PR02MB5628:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB5628B44EE871996F43B5484AB5EC0@DM6PR02MB5628.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:2733;
+X-Forefront-PRVS: 032334F434
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: h4HZ7EHKxSu3mmWJRZLp2zFoHzPa3dAMnyfUNhUv0DhVbGisQIQEZtSsNlKw3NHjvhMUfphyzzLxgVpAyAULzoli38zljBQTqHPQ8cjyioConW2PBlPqwa8QFD1vwXVbKcp7zgY/A4c/tUngCPtDvDP8fWMuYfmdsx/YYgMfWJA/D+ppLnNvrkQfRIy2tvWfrQ12q+P7KsTHfTrlbpvU4O548j6vAcUp6lwg79sxUc4U+Nc63der8+oOEqxFY2krCIWrLY1DwGrrWJWJF74thrVlAu3Jj3FSFrkgTVZEYL9rH7MmZqnnqQnYLs2e4kGGiXsmkXpSIeETTYe5esUva6fZgsEvcCUngQhP4aBvgx6PC+O9ZLf9nypMjjT2/X9pP2m4zJCFKUVuwJIbgkTlMAoqHXwmWOI0NGdXzMm1AWzZA3BBynJ61SwNylwtLl/w
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2020 17:52:41.1439 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: de16fee8-3cac-4fe9-b845-08d7b9525817
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB5628
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_094837_111117_F0DD524A 
-X-CRM114-Status: GOOD (  15.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200224_095245_257555_4CBD4C6A 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.236.64 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -157,45 +140,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Wolfram Sang <wsa@the-dreams.de>, Kamal Dasu <kdasu.kdev@gmail.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/24/20 1:06 AM, Maxime Ripard wrote:
-> The HDMI blocks in the BCM2771 have an i2c controller to retrieve the
-> EDID. This block is split into two parts, the BSC and the AUTO_I2C,
-> lying in two separate register areas.
-> 
-> The AUTO_I2C block has a mailbox-like interface and will take away the
-> BSC control from the CPU if enabled. However, the BSC is the actually
-> the same controller than the one supported by the brcmstb driver, and
-> the AUTO_I2C doesn't really bring any immediate benefit.
-> 
-> We can model it in the DT as a single device with two register range,
-> which will allow us to use or or the other in the driver without
-> changing anything in the DT.
-> 
-> Cc: Kamal Dasu <kdasu.kdev@gmail.com>
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: Wolfram Sang <wsa@the-dreams.de>
-> Cc: bcm-kernel-feedback-list@broadcom.com
-> Cc: linux-i2c@vger.kernel.org
-> Cc: devicetree@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+There are Cortex-R5 processors on Xilinx ZynqMP UltraScale+
+MPSoC.
+This patch is to add an Xilinx ZynqMP R5 remoteproc driver to
+enable Linux kernel to bringup R5, and enable communication
+between Linux kernel and R5.
 
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+Ben Levinsky (3):
+  firmware: xilinx: Add ZynqMP firmware ioctl enums for RPU
+    configuration.
+  firmware: xilinx: Add shutdown/wakeup APIs
+  firmware: xilinx: Add zynqmp_get_node_status API
+
+Jason Wu (2):
+  dt-bindings: remoteproc: Add documentation for ZynqMP R5 rproc
+    bindings
+  remoteproc: Add initial zynqmp R5 remoteproc driver
+
+ .../remoteproc/xilinx,zynqmp-r5-remoteproc.txt     | 135 +++
+ drivers/firmware/xilinx/zynqmp.c                   |  81 ++
+ drivers/remoteproc/Kconfig                         |  10 +
+ drivers/remoteproc/Makefile                        |   1 +
+ drivers/remoteproc/zynqmp_r5_remoteproc.c          | 913 +++++++++++++++++++++
+ include/linux/firmware/xlnx-zynqmp.h               |  30 +
+ 6 files changed, 1170 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/remoteproc/xilinx,zynqmp-r5-remoteproc.txt
+ create mode 100644 drivers/remoteproc/zynqmp_r5_remoteproc.c
+
 -- 
-Florian
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
