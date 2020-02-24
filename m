@@ -2,81 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9AD116A496
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:05:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8329516A49A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:07:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2aFomtCSYtxqyK+9OLVdCn6WagpfWk7MF8YdYJKvw4o=; b=QJPG84b9Z4Afyo
-	fPDvUElajLQ1HaampJ19oy4NFk631l9Wo1HRnw3gzCCWgxetMnObF57letsxPUZ5/+EMjKvUc+9+a
-	r5IYupbFR7FByVpYQnsySjF3UFlQPlgsoyiYtdNOAxIXRJQJrOef89ErRYlSsSkeLra/NnN10YPJy
-	RP7tLClLJjnp88mbNHYkt1j1O1ySAoRkZjhsQifVU0/qOM2z2UU1x2Lfu9njyOkSssccVWPU/AHmC
-	RklI8SLQ7TewrjvEK994vpd/xnXrzy6yUW+7+9Ke15Cw2qtQ+YJh5rho6ONE9IEg2xHl0WPXK2mjY
-	SZuuF05yN/kENNN1ok3Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LjcQ0Ekaeb1PxH5hiQLbNrYoyMDGSEYAx68OEmFJIR8=; b=OQnlop5tftm43e
+	RTfjUQlXyNm8++p0TL1/PG3ZBofgdIWWtp0snRN3q+Nn/VsMhScUOWt/+jlruz7JAgM5fzF49oMM4
+	uyLZntkN5yLOm1CTR2e1WMcX8lLun/3gRp+3n4SsQKgeLOrM+ErWF5/u31nKuS6H9CMfb67el+zZl
+	/TJa7xly9kU9xPxkDHbtyXe7gJRqpxcE7u+F5rljpc04YeYnZ60ZuEcuH/c8nylQZqMeoHwCrM9mR
+	j3aUXtV3jB+4pA8ZT8J2D54cNXO3gXDGbqprmlRq9+TTvcrqP7vFUQMAl5h+l3QhHmbrlAUp7VMH5
+	Q767NrnOAQmxDzFVk1MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6BYK-0003Kd-3r; Mon, 24 Feb 2020 11:05:32 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6BY8-0003JK-Qp
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:05:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sHN98KwOYJN+qlU1gS3IfqAfcMQjoxoEW1b1XK4/Ab4=; b=pFXROtpW4Kw2pEqeoBtfAsJFb
- +so3asbo5T812Z5px71FZ2Wwa9TAXgPUhXtGMu8BPzVOKTBMxLS3ewPh/pfTXsPYAHuydcIZxwOdC
- ieQGxSzCm/7G81F0aTMU49A7vEXs3JUvKSM7ZlHakqQDjErOOWbSgp1e7iUgYTo65WbJfpRVpKb50
- BOeypRUBduVR9I3CvI3VV9Bzzd8ROMT/5OVNBQQW6oLseDtoFUNQNBrMhJCX1sht5dKc73u78B2Lo
- qhhhm2OXeHyB0xn/KfI4ZdpPFWdMYV49wQLgQvmkXyQoJwOib5ZRLOTwcEm+SU6ii+MmixJRsxpi0
- XGa8QihZA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:56244)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j6BXx-0002I2-VT; Mon, 24 Feb 2020 11:05:10 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j6BXw-0006Ms-Ve; Mon, 24 Feb 2020 11:05:09 +0000
-Date: Mon, 24 Feb 2020 11:05:08 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: yifeng wu <y1feng.wu1234@gmail.com>
-Subject: Re: Subject: [PATCH] arm/kernel/head.S: optimize
- __create_page_tables function
-Message-ID: <20200224110508.GP25745@shell.armlinux.org.uk>
-References: <CAKy1Xqcnkfm7Dn9UvJ7Ufio-szQ75kbGS+GurBjuUFBydi21GA@mail.gmail.com>
+	id 1j6BZl-0003ep-L2; Mon, 24 Feb 2020 11:07:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6BZa-0003eO-Qy
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:06:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CD7030E;
+ Mon, 24 Feb 2020 03:06:45 -0800 (PST)
+Received: from [10.1.25.164] (e121487-lin.cambridge.arm.com [10.1.25.164])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D19B73F703;
+ Mon, 24 Feb 2020 03:06:44 -0800 (PST)
+Subject: Re: [PATCH] arm64: context: Fix ASID limit in boot warning
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ catalin.marinas@arm.com, will@kernel.org
+References: <20200224103934.137314-1-jean-philippe@linaro.org>
+From: Vladimir Murzin <vladimir.murzin@arm.com>
+Message-ID: <a54c1498-2fff-8d97-5220-e378966d3853@arm.com>
+Date: Mon, 24 Feb 2020 11:06:43 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKy1Xqcnkfm7Dn9UvJ7Ufio-szQ75kbGS+GurBjuUFBydi21GA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200224103934.137314-1-jean-philippe@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_030520_871565_B5A72056 
-X-CRM114-Status: UNSURE (   8.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200224_030650_919221_6187ACF7 
+X-CRM114-Status: GOOD (  21.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,23 +64,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBGZWIgMjQsIDIwMjAgYXQgMDY6Mzg6MjJQTSArMDgwMCwgeWlmZW5nIHd1IHdyb3Rl
-Ogo+IEknbSBzb3JyeSB0aGF0IG15IGNvbXB1dGVyIGNhbid0IGNvbmZpZ3VyZSBnaXQgc2VuZC1l
-bWFpbCwgc28gSSdsbCBzZW5kIHlvdQo+IHRoZSBwYXRjaCBhcyBhbiBhdHRhY2htZW50LCBhbmQg
-SSdsbCBzaG93IG15IGNoYW5nZXMgaW4gdGhlIGVtYWlsIHRleHQsCj4gZXhwZWN0aW5nIGEgcmVw
-bHkgLS0tLS0tLWFuIGVuZ2luZWVyIHdobyBzdWJtaXR0ZWQgdGhlIHBhdGNoIGZvciB0aGUgZmly
-c3QKPiB0aW1l44CCCgpQbGVhc2UgZXhwbGFpbiB3aHkgeW91IHdpc2ggdG8gb3B0aW1pc2UgdGhp
-cywgYW5kIGhvdyBtdWNoIGVmZmVjdCBpdApoYXMuCgotLSAKUk1LJ3MgUGF0Y2ggc3lzdGVtOiBo
-dHRwczovL3d3dy5hcm1saW51eC5vcmcudWsvZGV2ZWxvcGVyL3BhdGNoZXMvCkZUVEMgYnJvYWRi
-YW5kIGZvciAwLjhtaWxlIGxpbmUgaW4gc3VidXJiaWE6IHN5bmMgYXQgMTIuMU1icHMgZG93biA2
-MjJrYnBzIHVwCkFjY29yZGluZyB0byBzcGVlZHRlc3QubmV0OiAxMS45TWJwcyBkb3duIDUwMGti
-cHMgdXAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+Hi Jean,
+
+On 2/24/20 10:39 AM, Jean-Philippe Brucker wrote:
+> Since commit f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI
+> is not in use"), the NUM_USER_ASIDS macro doesn't correspond to the
+> effective number of ASIDs when KPTI is enabled. Fix the number of
+> available ASIDs in the boot warning.
+> 
+> Fixes: f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI is not in use")
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>  arch/arm64/mm/context.c | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+> index 8ef73e89d514..121aba5b1941 100644
+> --- a/arch/arm64/mm/context.c
+> +++ b/arch/arm64/mm/context.c
+> @@ -262,12 +262,16 @@ asmlinkage void post_ttbr_update_workaround(void)
+>  
+>  static int asids_init(void)
+>  {
+> +	unsigned long num_available_asids;
+> +	bool kpti = IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0);
+> +
+>  	asid_bits = get_cpu_asid_bits();
+>  	/*
+>  	 * Expect allocation after rollover to fail if we don't have at least
+>  	 * one more ASID than CPUs. ASID #0 is reserved for init_mm.
+>  	 */
+> -	WARN_ON(NUM_USER_ASIDS - 1 <= num_possible_cpus());
+> +	num_available_asids = (1UL << (asid_bits - kpti)) - 1;
+> +	WARN_ON(num_available_asids <= num_possible_cpus());
+>  	atomic64_set(&asid_generation, ASID_FIRST_VERSION);
+>  	asid_map = kcalloc(BITS_TO_LONGS(NUM_USER_ASIDS), sizeof(*asid_map),
+>  			   GFP_KERNEL);
+> @@ -280,7 +284,7 @@ static int asids_init(void)
+>  	 * caps are not finalized yet, so it is safer to assume KPTI
+>  	 * and reserve kernel ASID's from beginning.
+>  	 */
+> -	if (IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
+> +	if (kpti)
+>  		set_kpti_asid_bits();
+>  
+>  	pr_info("ASID allocator initialised with %lu entries\n", NUM_USER_ASIDS);
+> 
+
+I agree with what you say about  NUM_USER_ASIDS, yet looking at comment explaining
+warning is seems that we may get extra ASIDs later on rollover, so warning might be
+seen as false positive. Can we move the warning later on when we know how many ASIDs
+we have after all CPU's are up? Maybe late_initcall?
+
+Cheers
+Vladimir
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
