@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 871D916A8A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:42:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B69F16A8AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:43:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=S+IVo1sgMM3nUvqpjeDNuM844dnWH0Ab5aI7NBI5ogM=; b=kX0t9SHZkLI6aFO8pap7Dy/u60
-	F1JwBn2KTJaNFkBCBzIr51s99fHcyf5yz0mw2lddlmXwU3SPby8f52zqLIeLGEeJHJeqPmC5biziI
-	duv3HbT2UyTjGkbvVWXSEXCq8haBstiUM3e7fy0Zh2f8kldMNOSkAB0irZ2VlVa9XRk/5GPE/NHhi
-	XklZyIniO0L9Tp11gAXHv/EcJcsR+JHl1ckR7qPBztVWuD/NnL2bpF+XdK4WFesJxFAHAYWoCYEUI
-	3c9qS2k/oAA7dJb+EnxIHxQnnCndCW3LIE5k1ADQACZUpO2mRbRl3XhJAD8hDEfsLFvc22ydmMGr+
-	peYyooEA==;
+	bh=E5a9Wy5GS7IS6F5xi/UbMqj/dxfqV7Lm5eYXgTeDYVI=; b=px4kRV8mY8tmUmfcubLxwi1Fa5
+	2k/ow0fs+NMqV7AIBax9eML6PbhV1YAZQ1OXRKark/ZFPrIAJW4/zn6i7CXMKou+aJAZkWv9PdTfc
+	v/f3eEmZjmFFeLgIn3l2k4/XVAacHd3//s9KkuCJGS1as1GaBHWYzwxkwuO9YTez0WcJoEkq617D9
+	JDa2Q0F1TBkdogrP/PGaZpb+mEGI2xGwnhUznL1N+O6nBBF37BMEk8XODaocd6Ggq5r2CkWr0CPU8
+	0J3IzFTOYXpwC0VkjO/2TfAQ7wkjJECjadTxnb+3t61oePVP5huXGCudaY6blmaGnmJRpPYTDImzZ
+	MUcp58Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6EwW-0003Nq-PL; Mon, 24 Feb 2020 14:42:44 +0000
+	id 1j6Ewp-0003cX-AE; Mon, 24 Feb 2020 14:43:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Evv-00036A-VF
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:42:09 +0000
+ id 1j6Evx-00036Q-45
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:42:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8939D31B;
- Mon, 24 Feb 2020 06:42:07 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB81A1063;
+ Mon, 24 Feb 2020 06:42:08 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8A6323F534;
- Mon, 24 Feb 2020 06:42:06 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BCB923F534;
+ Mon, 24 Feb 2020 06:42:07 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH v3 01/13] firmware: arm_scmi: Add receive buffer support
- for notifications
-Date: Mon, 24 Feb 2020 14:41:12 +0000
-Message-Id: <20200224144124.2008-2-cristian.marussi@arm.com>
+Subject: [RFC PATCH v3 02/13] firmware: arm_scmi: Update protocol commands and
+ notification list
+Date: Mon, 24 Feb 2020 14:41:13 +0000
+Message-Id: <20200224144124.2008-3-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200224144124.2008-1-cristian.marussi@arm.com>
 References: <20200224144124.2008-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_064208_088828_1C998C0B 
-X-CRM114-Status: GOOD (  13.69  )
+X-CRM114-CacheID: sfid-20200224_064209_221943_4B446A36 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,101 +75,84 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Sudeep Holla <sudeep.holla@arm.com>
 
-With all the plumbing in place, let's just add the separate dedicated
-receive buffers to handle notifications that can arrive asynchronously
-from the platform firmware to OS.
-
-Also add one check to see if the platform supports any receive channels
-before allocating the receive buffers: since those buffers are optionally
-supported though, the whole xfer initialization is also postponed to be
-able to check for their existence in advance.
+Add commands' enumerations and messages definitions for all existing
+notify-enable commands across all protocols.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-[Changed parameters in __scmi_xfer_info_init()]
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
-V1 --> V2:
-- reviewed commit message
-- reviewed parameters of __scmi_xfer_info_init()
----
- drivers/firmware/arm_scmi/driver.c | 24 ++++++++++++++++++------
- 1 file changed, 18 insertions(+), 6 deletions(-)
+ drivers/firmware/arm_scmi/base.c    | 7 +++++++
+ drivers/firmware/arm_scmi/perf.c    | 5 +++++
+ drivers/firmware/arm_scmi/power.c   | 6 ++++++
+ drivers/firmware/arm_scmi/sensors.c | 4 ++++
+ 4 files changed, 22 insertions(+)
 
-diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index dbec767222e9..efb660c34b57 100644
---- a/drivers/firmware/arm_scmi/driver.c
-+++ b/drivers/firmware/arm_scmi/driver.c
-@@ -76,6 +76,7 @@ struct scmi_xfers_info {
-  *	implementation version and (sub-)vendor identification.
-  * @handle: Instance of SCMI handle to send to clients
-  * @tx_minfo: Universal Transmit Message management info
-+ * @rx_minfo: Universal Receive Message management info
-  * @tx_idr: IDR object to map protocol id to Tx channel info pointer
-  * @rx_idr: IDR object to map protocol id to Rx channel info pointer
-  * @protocols_imp: List of protocols implemented, currently maximum of
-@@ -89,6 +90,7 @@ struct scmi_info {
- 	struct scmi_revision_info version;
- 	struct scmi_handle handle;
- 	struct scmi_xfers_info tx_minfo;
-+	struct scmi_xfers_info rx_minfo;
- 	struct idr tx_idr;
- 	struct idr rx_idr;
- 	u8 *protocols_imp;
-@@ -525,13 +527,13 @@ int scmi_handle_put(const struct scmi_handle *handle)
- 	return 0;
- }
- 
--static int scmi_xfer_info_init(struct scmi_info *sinfo)
-+static int __scmi_xfer_info_init(struct scmi_info *sinfo,
-+				 struct scmi_xfers_info *info)
- {
- 	int i;
- 	struct scmi_xfer *xfer;
- 	struct device *dev = sinfo->dev;
- 	const struct scmi_desc *desc = sinfo->desc;
--	struct scmi_xfers_info *info = &sinfo->tx_minfo;
- 
- 	/* Pre-allocated messages, no more than what hdr.seq can support */
- 	if (WARN_ON(desc->max_msg >= MSG_TOKEN_MAX)) {
-@@ -566,6 +568,16 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
- 	return 0;
- }
- 
-+static int scmi_xfer_info_init(struct scmi_info *sinfo)
-+{
-+	int ret = __scmi_xfer_info_init(sinfo, &sinfo->tx_minfo);
+diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
+index f804e8af6521..ce7d9203e41b 100644
+--- a/drivers/firmware/arm_scmi/base.c
++++ b/drivers/firmware/arm_scmi/base.c
+@@ -14,6 +14,13 @@ enum scmi_base_protocol_cmd {
+ 	BASE_DISCOVER_LIST_PROTOCOLS = 0x6,
+ 	BASE_DISCOVER_AGENT = 0x7,
+ 	BASE_NOTIFY_ERRORS = 0x8,
++	BASE_SET_DEVICE_PERMISSIONS = 0x9,
++	BASE_SET_PROTOCOL_PERMISSIONS = 0xa,
++	BASE_RESET_AGENT_CONFIGURATION = 0xb,
++};
 +
-+	if (!ret && idr_find(&sinfo->rx_idr, SCMI_PROTOCOL_BASE))
-+		ret = __scmi_xfer_info_init(sinfo, &sinfo->rx_minfo);
-+
-+	return ret;
-+}
-+
- static int scmi_chan_setup(struct scmi_info *info, struct device *dev,
- 			   int prot_id, bool tx)
- {
-@@ -699,10 +711,6 @@ static int scmi_probe(struct platform_device *pdev)
- 	info->desc = desc;
- 	INIT_LIST_HEAD(&info->node);
++enum scmi_base_protocol_notify {
++	BASE_ERROR_EVENT = 0x0,
+ };
  
--	ret = scmi_xfer_info_init(info);
--	if (ret)
--		return ret;
--
- 	platform_set_drvdata(pdev, info);
- 	idr_init(&info->tx_idr);
- 	idr_init(&info->rx_idr);
-@@ -715,6 +723,10 @@ static int scmi_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
+ struct scmi_msg_resp_base_attributes {
+diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
+index ec81e6f7e7a4..88509ec637d0 100644
+--- a/drivers/firmware/arm_scmi/perf.c
++++ b/drivers/firmware/arm_scmi/perf.c
+@@ -27,6 +27,11 @@ enum scmi_performance_protocol_cmd {
+ 	PERF_DESCRIBE_FASTCHANNEL = 0xb,
+ };
  
-+	ret = scmi_xfer_info_init(info);
-+	if (ret)
-+		return ret;
++enum scmi_performance_protocol_notify {
++	PERFORMANCE_LIMITS_CHANGED = 0x0,
++	PERFORMANCE_LEVEL_CHANGED = 0x1,
++};
 +
- 	ret = scmi_base_protocol_init(handle);
- 	if (ret) {
- 		dev_err(dev, "unable to communicate with SCMI(%d)\n", ret);
+ struct scmi_opp {
+ 	u32 perf;
+ 	u32 power;
+diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
+index 214886ce84f1..cf7f0312381b 100644
+--- a/drivers/firmware/arm_scmi/power.c
++++ b/drivers/firmware/arm_scmi/power.c
+@@ -12,6 +12,12 @@ enum scmi_power_protocol_cmd {
+ 	POWER_STATE_SET = 0x4,
+ 	POWER_STATE_GET = 0x5,
+ 	POWER_STATE_NOTIFY = 0x6,
++	POWER_STATE_CHANGE_REQUESTED_NOTIFY = 0x7,
++};
++
++enum scmi_power_protocol_notify {
++	POWER_STATE_CHANGED = 0x0,
++	POWER_STATE_CHANGE_REQUESTED = 0x1,
+ };
+ 
+ struct scmi_msg_resp_power_attributes {
+diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
+index eba61b9c1f53..db1b1ab303da 100644
+--- a/drivers/firmware/arm_scmi/sensors.c
++++ b/drivers/firmware/arm_scmi/sensors.c
+@@ -14,6 +14,10 @@ enum scmi_sensor_protocol_cmd {
+ 	SENSOR_READING_GET = 0x6,
+ };
+ 
++enum scmi_sensor_protocol_notify {
++	SENSOR_TRIP_POINT_EVENT = 0x0,
++};
++
+ struct scmi_msg_resp_sensor_attributes {
+ 	__le16 num_sensors;
+ 	u8 max_requests;
 -- 
 2.17.1
 
