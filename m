@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 010A816B089
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 20:46:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A00616B093
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 20:50:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d5ANt614J6MinA6J2eOX2YIFJ6LzIHTr9vOqXH4orxg=; b=N1kLuKznnBuIWP
-	wOQUysm/A8hifOV1EdpbKtGbpfA0GVXrlHRrjQtnXqn+MpIpj6FmdqVkf3U8wG2O5LgHi8qCTQgKh
-	rWHpXuHL8Iyg/ybrWcyfJJwdVp0JsDSuA2VIabFg7g2i72vdmL0CgJ2TiI2OSqGnWItJGinSj9I/7
-	GT+QSvdNcsbY2ZgE+I6PKK4khJt2d7P51yRn3T9RczawCmiXrD8pg9Ync5K1+qvwqw/1dUf4W2ZGg
-	jaJWAyiUqQ3PfwgdX96B0xYdEgN2GqXFr46CBL0pFg1kK/XnoT0WsgkpAjeWonDVJuOTOE0JtUaYt
-	EqZNaUSLue+j0wNe9FDQ==;
+	List-Owner; bh=tiXBklpYkhLsjFyTEkzz8W+lZZTIPl64JvA7cnESr74=; b=FqxGLfCt5Yyc8H
+	L30gwCdrx/ZlvWpF19HhU5ByfAzQMZuao8qCYcGkcrdUxSKN/ROrLlxjt5MyKdGgEh2sGeV4sIsNq
+	sRp4pwFxIrxbBsCvOGOAEydm/HQBa7sr6AsqmvAdf4kNBgTHnq+HAeq448l7J6hwTYtd7/iEBGpzc
+	d2cEmbWge+oymQwVWVfeOT7ItNFr3IeLT+XZFkcDD1ONRnbUMz72/f4WIKPgwKuluXiEobxC1sCZT
+	+NvhR1DaxYzPt4KkICyfglkL3yDmgzvI+goaCtQZ+d1vns6xQyLmnaCKl8sYVqHBFcsNoUAvwZbKd
+	AjVwcop/a37vPbUmGKyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6JgY-0000pu-BK; Mon, 24 Feb 2020 19:46:34 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1j6JkA-0003ez-Hu; Mon, 24 Feb 2020 19:50:18 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6JfZ-0008Jo-U9
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 19:45:36 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 4E85268B05; Mon, 24 Feb 2020 20:45:29 +0100 (CET)
-Date: Mon, 24 Feb 2020 20:45:28 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Stafford Horne <shorne@gmail.com>
-Subject: Re: [PATCH 2/2] openrisc: use the generic in-place uncached DMA
- allocator
-Message-ID: <20200224194528.GA10155@lst.de>
-References: <20200220170139.387354-1-hch@lst.de>
- <20200220170139.387354-3-hch@lst.de>
- <20200221221447.GA7926@lianli.shorne-pla.net>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200221221447.GA7926@lianli.shorne-pla.net>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+ id 1j6Jjw-0002mW-OS; Mon, 24 Feb 2020 19:50:06 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id A1700120F5DF5;
+ Mon, 24 Feb 2020 11:49:55 -0800 (PST)
+Date: Mon, 24 Feb 2020 11:49:52 -0800 (PST)
+Message-Id: <20200224.114952.1670161895162956201.davem@davemloft.net>
+To: leon@kernel.org
+Subject: Re: [PATCH net-next v1 00/18] Clean driver, module and FW versions
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
+References: <20200224085311.460338-1-leon@kernel.org>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Mon, 24 Feb 2020 11:49:56 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_114534_125519_96CD46A7 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200224_115004_800675_122814AC 
+X-CRM114-Status: UNSURE (   4.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,33 +62,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonas Bonn <jonas@southpole.se>, Mark Rutland <mark.rutland@arm.com>,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- iommu@lists.linux-foundation.org, openrisc@lists.librecores.org,
- linux-arch@vger.kernel.org, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: thor.thayer@linux.intel.com, heiko@sntech.de, irusskikh@marvell.com,
+ andreas@gaisler.com, chris.snook@gmail.com, dave@thedillows.org,
+ jes@trained-monkey.org, iyappan@os.amperecomputing.com,
+ quan@os.amperecomputing.com, linux-acenic@sunsite.dk, andy@greyhouse.net,
+ akiyano@amazon.com, linux-rockchip@lists.infradead.org, wens@csie.org,
+ LinoSanfilippo@gmx.de, vfalico@gmail.com, kuba@kernel.org,
+ thomas.lendacky@amd.com, jcliburn@gmail.com, j.vosburgh@gmail.com,
+ keyur@os.amperecomputing.com, mripard@kernel.org, leonro@mellanox.com,
+ pcnet32@frontier.com, nios2-dev@lists.rocketboards.org,
+ linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, ionut@badula.org, netanel@amazon.com,
+ mark.einon@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 22, 2020 at 07:14:47AM +0900, Stafford Horne wrote:
-> On Thu, Feb 20, 2020 at 09:01:39AM -0800, Christoph Hellwig wrote:
-> > Switch openrisc to use the dma-direct allocator and just provide the
-> > hooks for setting memory uncached or cached.
-> > 
-> > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> 
-> Reviewed-by: Stafford Horne <shorne@gmail.com>
-> 
-> Also, I test booted openrisc with linux 5.5 + these patches.  Thanks for
-> continuing to shrink my code base.
+From: Leon Romanovsky <leon@kernel.org>
+Date: Mon, 24 Feb 2020 10:52:53 +0200
 
-I just resent a new version that changes how the hooks work based on
-feedback from Robin.  Everything should work as-is, but if you have
-some time to retest that would be great.
+> From: Leon Romanovsky <leonro@mellanox.com>
+> 
+> Change log:
+>  v1:
+>   * Split all FW cleanups patches to separate patches
+>   * Fixed commit message
+>   * Deleted odd DRV_RELDATE
+>   * Added everyone from MAINTAINERS file
+>  v0: https://lore.kernel.org/netdev/20200220145855.255704-1-leon@kernel.org
+
+Series applied, thanks Leon.
 
 _______________________________________________
 linux-arm-kernel mailing list
