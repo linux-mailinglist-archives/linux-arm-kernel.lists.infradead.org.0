@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3462E16A0E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:58:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4635216A0E3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:58:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UOdPOT6c0sfu84KL4A5Ig2VvagZwEPRFwML9+6lDgFg=; b=uPZCsd5xJMx/9A
-	5kvVBbctF3vVJCE11miYXCJALnwgnNIkPAtiM2CGPbCjY8vzkyK09tYJwCf8Mn91Feph/8wPfen3x
-	KkfofBfU0XlF01nNS0D6YDhViBVs3vrJzdR6sFGODzXOSHqgUKso2mF3o0Tkhp9i8f9I333Mx2smR
-	lWG2d0Le0RorAX2kwsmv+L1tXtOhiCpXWRh/airO/iT5zWKJl7HUBXqEIUlXhYVC/SnjVJbNiL1Xd
-	3xelL1HTKTt08Ju+ZAh1d5SJ1pAswShWgMVY83r6UgzVx5QhzTeCQu7njJ6YTRLJl5wpcGzSX2bAI
-	ea+n1/EkiVDA3JqvOXLA==;
+	List-Owner; bh=GstcgQ/2Sr2lzLP9quz7+cnB6832WPOnalDg/hBPci0=; b=h3f2jGpsoQSAXp
+	30dd0yDJyxg023LmywceHW1qIP8e/+BJEoD+oAwQhcBD5b7r5jW9wXDYq9WqGsQIHoRie3VBEyPvH
+	NP5u3qz+bCpuE61QgRFK7whQpSFUqq7NZYoymhFy0t5Tpe4BzI6R/RAVouQ63KVouZzByfhai8TNE
+	DWxXvMiI0XMxL9+ifnNF7N0QTFyNP/WnaJfnRYDIinDIznGCfR6R/FFwPz5i9tp77tfAv3VrLG6HJ
+	sN5TGZOWuSpTLnge8olI7oOdPRerN6wJc/eK4ip0gcxwqHonzIrWhb4268g9WkhUgqI1U4qVnEGlP
+	pwfbqwPl7vifuVi+/Qzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69Z7-0004Cf-EI; Mon, 24 Feb 2020 08:58:13 +0000
+	id 1j69ZN-0004U8-PQ; Mon, 24 Feb 2020 08:58:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69V8-0007TW-GI; Mon, 24 Feb 2020 08:54:07 +0000
+ id 1j69VB-0007X7-SM; Mon, 24 Feb 2020 08:54:13 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BDE072086A;
- Mon, 24 Feb 2020 08:54:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4262A2173E;
+ Mon, 24 Feb 2020 08:54:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534445;
- bh=jyTuYbkOx/qFl/ghU7khrY1Sboh+eGIbH2DRwV3peeI=;
+ s=default; t=1582534449;
+ bh=xrrfTjqUA3ZASNnw1o4uS2gmW3iXWsgg3RblIOSWWqI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vGsg7GJZqiMJzCQGqK+jMAi+LsSkpS3MURNIW/WgjCKtog/6l1dfEP1AtfQ5va1rI
- eO4f8QZaTdQZLZpQKKKIVDWIZued0dVu8tIgk66RRxFsmwXSeLBLqFhwfAVNKN3Lk/
- mR6zaw20ZjTWclTRqVC16mxvJNd7N2ycZtZc3HAU=
+ b=A5iZmhTRmUn/EPy32nqLlSWM5WfQttuKqn4dbBy8VG02OxsrjPuaD+8W4A6q5F9DM
+ FZ2FOcmPYjlGCraRdBnSQi97CVacB1XRy4LwwP2A+nkfH9aWiXmQw3g8kSwgc/6IVW
+ J6CH/BqFSwYKOHGgISLqxhlzEzGahYBe36/Sk1UU=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 15/18] net/apm: Properly mark absence of FW
-Date: Mon, 24 Feb 2020 10:53:08 +0200
-Message-Id: <20200224085311.460338-16-leon@kernel.org>
+Subject: [PATCH net-next v1 16/18] net/aquantia: Delete module version
+Date: Mon, 24 Feb 2020 10:53:09 +0200
+Message-Id: <20200224085311.460338-17-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005406_649647_3AA1CB7F 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200224_005411_033112_2922E10B 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -99,38 +98,94 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-There is no need to set "N/A" if FW is not available.
+There is no need to keep module and driver versions in in-tree
+kernel code.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
- drivers/net/ethernet/apm/xgene-v2/ethtool.c         | 1 -
- drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c | 1 -
- 2 files changed, 2 deletions(-)
+ drivers/net/ethernet/aquantia/atlantic/aq_cfg.h     |  4 ----
+ drivers/net/ethernet/aquantia/atlantic/aq_common.h  |  1 -
+ drivers/net/ethernet/aquantia/atlantic/aq_ethtool.c |  1 -
+ drivers/net/ethernet/aquantia/atlantic/aq_main.c    |  1 -
+ drivers/net/ethernet/aquantia/atlantic/ver.h        | 12 ------------
+ 5 files changed, 19 deletions(-)
+ delete mode 100644 drivers/net/ethernet/aquantia/atlantic/ver.h
 
-diff --git a/drivers/net/ethernet/apm/xgene-v2/ethtool.c b/drivers/net/ethernet/apm/xgene-v2/ethtool.c
-index da748beb7047..b78d1a99fe81 100644
---- a/drivers/net/ethernet/apm/xgene-v2/ethtool.c
-+++ b/drivers/net/ethernet/apm/xgene-v2/ethtool.c
-@@ -89,7 +89,6 @@ static void xge_get_drvinfo(struct net_device *ndev,
- 	struct platform_device *pdev = pdata->pdev;
+diff --git a/drivers/net/ethernet/aquantia/atlantic/aq_cfg.h b/drivers/net/ethernet/aquantia/atlantic/aq_cfg.h
+index f0c41f7408e5..7560f5506e55 100644
+--- a/drivers/net/ethernet/aquantia/atlantic/aq_cfg.h
++++ b/drivers/net/ethernet/aquantia/atlantic/aq_cfg.h
+@@ -9,8 +9,6 @@
+ #ifndef AQ_CFG_H
+ #define AQ_CFG_H
 
- 	strcpy(info->driver, "xgene-enet-v2");
--	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "N/A");
- 	sprintf(info->bus_info, "%s", pdev->name);
- }
+-#include <generated/utsrelease.h>
+-
+ #define AQ_CFG_VECS_DEF   8U
+ #define AQ_CFG_TCS_DEF    1U
 
-diff --git a/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c b/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c
-index 4e7a95bd83d7..ada70425b48c 100644
---- a/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c
-+++ b/drivers/net/ethernet/apm/xgene/xgene_enet_ethtool.c
-@@ -103,7 +103,6 @@ static void xgene_get_drvinfo(struct net_device *ndev,
- 	struct platform_device *pdev = pdata->pdev;
+@@ -85,7 +83,5 @@
+ #define AQ_CFG_DRV_AUTHOR      "aQuantia"
+ #define AQ_CFG_DRV_DESC        "aQuantia Corporation(R) Network Driver"
+ #define AQ_CFG_DRV_NAME        "atlantic"
+-#define AQ_CFG_DRV_VERSION	UTS_RELEASE \
+-				AQ_CFG_DRV_VERSION_SUFFIX
 
- 	strcpy(info->driver, "xgene_enet");
--	snprintf(info->fw_version, ETHTOOL_FWVERS_LEN, "N/A");
- 	sprintf(info->bus_info, "%s", pdev->name);
- }
+ #endif /* AQ_CFG_H */
+diff --git a/drivers/net/ethernet/aquantia/atlantic/aq_common.h b/drivers/net/ethernet/aquantia/atlantic/aq_common.h
+index 42ea8d8daa46..c8c402b013bb 100644
+--- a/drivers/net/ethernet/aquantia/atlantic/aq_common.h
++++ b/drivers/net/ethernet/aquantia/atlantic/aq_common.h
+@@ -12,7 +12,6 @@
+ #include <linux/etherdevice.h>
+ #include <linux/pci.h>
+ #include <linux/if_vlan.h>
+-#include "ver.h"
+ #include "aq_cfg.h"
+ #include "aq_utils.h"
 
+diff --git a/drivers/net/ethernet/aquantia/atlantic/aq_ethtool.c b/drivers/net/ethernet/aquantia/atlantic/aq_ethtool.c
+index 7b55633d2cb9..0bdaa0d785b7 100644
+--- a/drivers/net/ethernet/aquantia/atlantic/aq_ethtool.c
++++ b/drivers/net/ethernet/aquantia/atlantic/aq_ethtool.c
+@@ -132,7 +132,6 @@ static void aq_ethtool_get_drvinfo(struct net_device *ndev,
+ 	regs_count = aq_nic_get_regs_count(aq_nic);
+
+ 	strlcat(drvinfo->driver, AQ_CFG_DRV_NAME, sizeof(drvinfo->driver));
+-	strlcat(drvinfo->version, AQ_CFG_DRV_VERSION, sizeof(drvinfo->version));
+
+ 	snprintf(drvinfo->fw_version, sizeof(drvinfo->fw_version),
+ 		 "%u.%u.%u", firmware_version >> 24,
+diff --git a/drivers/net/ethernet/aquantia/atlantic/aq_main.c b/drivers/net/ethernet/aquantia/atlantic/aq_main.c
+index 538f460a3da7..9fcab646cbd5 100644
+--- a/drivers/net/ethernet/aquantia/atlantic/aq_main.c
++++ b/drivers/net/ethernet/aquantia/atlantic/aq_main.c
+@@ -19,7 +19,6 @@
+ #include <linux/udp.h>
+
+ MODULE_LICENSE("GPL v2");
+-MODULE_VERSION(AQ_CFG_DRV_VERSION);
+ MODULE_AUTHOR(AQ_CFG_DRV_AUTHOR);
+ MODULE_DESCRIPTION(AQ_CFG_DRV_DESC);
+
+diff --git a/drivers/net/ethernet/aquantia/atlantic/ver.h b/drivers/net/ethernet/aquantia/atlantic/ver.h
+deleted file mode 100644
+index 597654b51e01..000000000000
+--- a/drivers/net/ethernet/aquantia/atlantic/ver.h
++++ /dev/null
+@@ -1,12 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- * aQuantia Corporation Network Driver
+- * Copyright (C) 2014-2017 aQuantia Corporation. All rights reserved
+- */
+-
+-#ifndef VER_H
+-#define VER_H
+-
+-#define AQ_CFG_DRV_VERSION_SUFFIX "-kern"
+-
+-#endif /* VER_H */
 --
 2.24.1
 
