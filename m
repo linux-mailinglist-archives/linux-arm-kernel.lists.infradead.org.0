@@ -2,79 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF07516A515
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:41:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9A7C16A560
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:44:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xs1szjKoO8G06c9VZp4IUd3kMgTrpySMpzt38nXWIgw=; b=VOTBDWQMvd/xuV
-	/lmCxKP5rAMxD77URUCqkIfZHN54W2CJCV8+s4CoK+xkolF2cfMMpG7u4o6vkwUGd/ADc8sTTraTN
-	FW6QRK5aZCXEP2FpKWJMO1HEJIuGQ2gi5pXTxhZ+JnY/rj00t0lHOxgmd3V4SiFWzJ9VHS/qTGuG6
-	hCCXAZYOyDroFTbpC1b+dWuwS3bkggrMErmFQ0TFjZTO2ryAouRVCsy0pewXdt1HHC/HqrKMi2vZh
-	tUZIGBjZhU28C8TyELZ+gyTYTBLBpO+f0/I+ZPCiaWdB2yizSXcSA97nNXqtzyYodFdr1vxyWAJqS
-	+CUBQ/qfcJwhJfSBw3Gg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zl7xYZepdtI5dSiNIA7gg0FjHAiEJdJRi4ihXN0x9A4=; b=hOB3AFJXeCJCME
+	3tXFxd7m76qZnY+zQMqA3NOl/TzEDEp4nVIuw6Jtd6HnIoTnaLacdRbGxA6XupHx+LF+l/rRKSfVn
+	kM5qRIoaLZqYhwDY5crujofEkkapUnl1GmY235pz2Aaj/rQUEHKHcKUHFdtsEYZkEOY+ETmTQll4w
+	DBELswlnSTj0eOxA7PwZcdnChkE9Zwjm7BqCnLukOkxuBDnKv89EZZdu8EneMj0kP+KHFgFyfwE9s
+	aURmgYAeFpUogJ0hrPvTnDqBscPgMRnH3/yH4XXWo3lJyZUq931BiFbqOKlzE+Y2VfXWRkHIVjDGb
+	yBPe2YnkOMrbGJdiXI3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6C7A-0007zo-9W; Mon, 24 Feb 2020 11:41:32 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j6CA9-0008RW-JH; Mon, 24 Feb 2020 11:44:37 +0000
+Received: from mail-eopbgr00068.outbound.protection.outlook.com ([40.107.0.68]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6C6z-0007xo-6v
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:41:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582544478;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=o9F+8/0eY6bBfYeKnS0y1j6KEbiMQczJ7qFt1eUs+fE=;
- b=BrgTjbZB529oXtF08XhN89RVkXmlk9kcp7NYauOcNtVbwmR6loPp7+93UnjLB0HTmbM2O3
- mx5k1vzAZqOv/+BTSSTZPowZmZg1wxQ7v9IY+2yfTg5/PtkS9TIe9FxU8mnGq2Jc5AoqPZ
- 8d9j4gijGUIlcweGcTni6EW0qFKBxSs=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-119-MHQupH5TOuejso0T4JRw9w-1; Mon, 24 Feb 2020 06:41:06 -0500
-X-MC-Unique: MHQupH5TOuejso0T4JRw9w-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 96C938017CC;
- Mon, 24 Feb 2020 11:41:04 +0000 (UTC)
-Received: from [10.36.116.59] (ovpn-116-59.ams2.redhat.com [10.36.116.59])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 77A5B5D9CD;
- Mon, 24 Feb 2020 11:41:02 +0000 (UTC)
-Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation
- support
-To: Rob Herring <robh@kernel.org>
-References: <20200117211628.27888-1-robh@kernel.org>
- <2d04f201-3457-08ad-db8e-735f8315d74e@redhat.com>
- <CAL_Jsq+3=YbcUi=wte-Cmiq-BuD7hRXwSEnHN7E9_bSnHHxG1g@mail.gmail.com>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <118a2dde-7b2b-9250-d70c-5bb2ea614de0@redhat.com>
-Date: Mon, 24 Feb 2020 12:41:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <CAL_Jsq+3=YbcUi=wte-Cmiq-BuD7hRXwSEnHN7E9_bSnHHxG1g@mail.gmail.com>
+ id 1j6C9y-0008Qu-Ld
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:44:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IdqvaJl7vOKV7oAPU6X+dOb0IeZK03Dab4yVrd/isHt/+j/rZ0Ww0H3UdzDQT0QFB7kpMdbGgcmLbr6TB0+q+ZjtkwEvU043J/w8R3EVzb3O51LWba2y0HEHvMt8nNiw8DQXTniWP2Fb8IwCORfrH8R+jbDrkjvkxYYhuMYpgEwH88FbHsIeLCWJWB0uoXhnf+xEN0t9iFiCOGKUTdOFr62VALPEnDbNqnkqi7zRzKXeKwYJLmLglSmjy1XOSf6kmvj5sfhP6lSjGvBO0RfMb67y6RO8/PaLl5+OGaX2QXQVAs2Q1Pt80hX7q+ppO8HxlXriiWbiPBSTvCv/Q90eUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zdYtt9nnoIB/5q1WHfjK0FVNHr/LKcNeEH7NMeuHnHE=;
+ b=aL/9J9DLIhXz12h18rvYJBAiRMEKkqlLZIHif6CMYn3LQpv3l0eWdJXukUD4chs4k+DvYNCnT1p6j5ygf501FFaL1ZPjRJP93s+GTBe0Rg/aMFmpzyX8J74E/GtxC6oojRJxqazEqdC6tynbxkqJ3xNn8NRX5dCR2dHBM7XbQqMDhhv/nsW1jBsjMGW50aQt7k2pkm25eOHANxTPdjamC0lgQ9mG/4p9Lyw2nM4zlVvfedUPWmqEAJQT2147oT1wFSWhBTFxQdHo13Djpcsxf9dZPbQ6ULJ2f2ktp9XmFnYZgcU9YtURqyRSSZUQn7qQO+eW1VMwPY0gHprXxnaboA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zdYtt9nnoIB/5q1WHfjK0FVNHr/LKcNeEH7NMeuHnHE=;
+ b=qRSxe55oQrQsvGPLGDOgqLwNJgQOxZMH22PZLJpSXjnRU0HFAG36HlQh/6pwVVf+nvd8o04Z5YRWv+dhA4QF45olsOLeQkvYis3mTt9j3H/hQm/2DbRhkvtzmXUqZ55MG0aH4QapsO6xMNrzvhfDfZZj0so3ib1a0JYYOHL39DU=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3658.eurprd04.prod.outlook.com (52.134.65.28) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.31; Mon, 24 Feb 2020 11:44:23 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2750.021; Mon, 24 Feb 2020
+ 11:44:23 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>
+Subject: RE: [PATCH] watchdog: imx2_wdt: Drop .remove callback
+Thread-Topic: [PATCH] watchdog: imx2_wdt: Drop .remove callback
+Thread-Index: AQHV6r4pAecyWfgb902OwJH5EZ8Ix6gqIxCAgAAQU5A=
+Date: Mon, 24 Feb 2020 11:44:22 +0000
+Message-ID: <DB3PR0402MB391637EB54A1FD37059FBE47F5EC0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1582512687-13312-1-git-send-email-Anson.Huang@nxp.com>
+ <20200224102211.clzqw4vtzc4nz5df@pengutronix.de>
+In-Reply-To: <20200224102211.clzqw4vtzc4nz5df@pengutronix.de>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 81c0c538-46f1-43ac-8177-08d7b91ee489
+x-ms-traffictypediagnostic: DB3PR0402MB3658:|DB3PR0402MB3658:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB365819E08248EE6577205138F5EC0@DB3PR0402MB3658.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 032334F434
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(376002)(39860400002)(396003)(366004)(136003)(189003)(199004)(5660300002)(66476007)(81166006)(8676002)(64756008)(66446008)(81156014)(2906002)(8936002)(66946007)(76116006)(66556008)(33656002)(71200400001)(86362001)(7416002)(478600001)(55016002)(6506007)(9686003)(44832011)(26005)(186003)(7696005)(6916009)(316002)(54906003)(52536014)(4326008)(142923001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3658;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: R+S6AQ6HACqVDGItV/695xHu+qD+NVKA6mcZYg5NjWYR9mbbWZ3Iz06yOa9z1PyXUx8tQv1zMQ0frt/RwA7WnAgfJ3Gl3e/kFiifkoRuQ2Du/zrqx8QzxWYWgVHLTN6qcdmqi1OvwdUZIyUGjlKAPU/TOYs3BP1eqJzVsw+lEs9lL2v2Mi1l+QSicOTm6emF9eoQ2/frktwqasoQavtN4bdv1ZJ6Ap+2MCqsHmElmJGjXxDXW3IHBjMjiqelRfH3NEekOd7BtQnYCCN1VxCATCByFLfCb0nHEi6CW6ilPm3QCRK5eb7eFw9EA417zak076956ubzShI4J6jw6m6+JMMeqswzIDKaQoFo4qcuOLfYHxdlRv4+sAnV0+1StTtZmFONZs9CP+/9hAFj506FCcvvWJD638LWflDhtPagt/WBjqpHF1vsxNwRTj1+397Xq00s9BNw9nLECEgRdviL2bJlxlCARRcGocoYNfNiPeleug297H0cU72dvyiirohO
+x-ms-exchange-antispam-messagedata: du15b1p3kV5XsNf2TGR6FGomFJqhdsaC7o41a12jWwnV19a5A3OukrN4UaUWKdCV1zlUMkluU/1o9Opcz8F9U1/rRdbg7KePuIjab8kMMIF7CQ5j5wBRm4o91LIHyN+uB9/qcXtsNMrw/2psTAeZ8A==
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 81c0c538-46f1-43ac-8177-08d7b91ee489
+X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Feb 2020 11:44:22.9929 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: wr0uJqGwjdL6O7wsJkQHjN9FFAgIj8U2otibbOcF7SQxF5Axbz/eFQz7qEQ9TqD2yVKrqP13CxoT/o2ohJZlyw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3658
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_034121_332063_2B421944 
-X-CRM114-Status: GOOD (  25.65  )
+X-CRM114-CacheID: sfid-20200224_034426_822135_BD0BD290 
+X-CRM114-Status: GOOD (  26.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.0.68 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,7 +110,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,145 +121,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux@roeck-us.net" <linux@roeck-us.net>, dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Hi, Uwe
 
-On 2/13/20 8:54 PM, Rob Herring wrote:
-> On Thu, Jan 30, 2020 at 9:06 AM Auger Eric <eric.auger@redhat.com> wrote:
->>
->> Hi Rob,
->> On 1/17/20 10:16 PM, Rob Herring wrote:
->>> Arm SMMUv3.2 adds support for TLB range invalidate operations.
->>> Support for range invalidate is determined by the RIL bit in the IDR3
->>> register.
->>>
->>> The range invalidate is in units of the leaf page size and operates on
->>> 1-32 chunks of a power of 2 multiple pages. First, we determine from the
->>> size what power of 2 multiple we can use. Then we calculate how many
->>> chunks (1-31) of the power of 2 size for the range on the iteration. On
->>> each iteration, we move up in size by at least 5 bits.
->>>
->>> Cc: Eric Auger <eric.auger@redhat.com>
->>> Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
->>> Cc: Will Deacon <will@kernel.org>
->>> Cc: Robin Murphy <robin.murphy@arm.com>
->>> Cc: Joerg Roedel <joro@8bytes.org>
->>> Signed-off-by: Rob Herring <robh@kernel.org>
->>> ---
->>>  drivers/iommu/arm-smmu-v3.c | 66 ++++++++++++++++++++++++++++++++++++-
->>>  1 file changed, 65 insertions(+), 1 deletion(-)
+> Subject: Re: [PATCH] watchdog: imx2_wdt: Drop .remove callback
 > 
+> On Mon, Feb 24, 2020 at 10:51:27AM +0800, Anson Huang wrote:
+> > .remove callback implementation doesn' call clk_disable_unprepare()
+> > which is buggy, actually, we can just use
+> > devm_watchdog_register_device() and
+> > devm_add_action_or_reset() to handle all necessary operations for
+> > remove action, then .remove callback can be dropped.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> >  drivers/watchdog/imx2_wdt.c | 37
+> > ++++++++++---------------------------
+> >  1 file changed, 10 insertions(+), 27 deletions(-)
+> >
+> > diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
+> > index f8d58bf..1fe472f 100644
+> > --- a/drivers/watchdog/imx2_wdt.c
+> > +++ b/drivers/watchdog/imx2_wdt.c
+> > @@ -244,6 +244,11 @@ static const struct regmap_config
+> imx2_wdt_regmap_config = {
+> >  	.max_register = 0x8,
+> >  };
+> >
+> > +static void imx2_wdt_action(void *data) {
+> > +	clk_disable_unprepare(data);
 > 
->>> @@ -2003,7 +2024,7 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
->>>  {
->>>       u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
->>>       struct arm_smmu_device *smmu = smmu_domain->smmu;
->>> -     unsigned long start = iova, end = iova + size;
->>> +     unsigned long start = iova, end = iova + size, num_pages = 0, tg = 0;
->>>       int i = 0;
->>>       struct arm_smmu_cmdq_ent cmd = {
->>>               .tlbi = {
->>> @@ -2022,12 +2043,50 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
->>>               cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
->>>       }
->>>
->>> +     if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
->>> +             /* Get the leaf page size */
->>> +             tg = __ffs(smmu_domain->domain.pgsize_bitmap);
->>> +
->>> +             /* Convert page size of 12,14,16 (log2) to 1,2,3 */
->>> +             cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
->>> +
->>> +             /* Determine what level the granule is at */
->>> +             cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
->>> +
->>> +             num_pages = size / (1UL << tg);
->>> +     }
->>> +
->>>       while (iova < end) {
->>>               if (i == CMDQ_BATCH_ENTRIES) {
->>>                       arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, false);
->>>                       i = 0;
->>>               }
->>>
->>> +             if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
->>> +                     /*
->>> +                      * On each iteration of the loop, the range is 5 bits
->>> +                      * worth of the aligned size remaining.
->>> +                      * The range in pages is:
->>> +                      *
->>> +                      * range = (num_pages & (0x1f << __ffs(num_pages)))
->>> +                      */
->>> +                     unsigned long scale, num;
->>> +
->>> +                     /* Determine the power of 2 multiple number of pages */
->>> +                     scale = __ffs(num_pages);
->>> +                     cmd.tlbi.scale = scale;
->>> +
->>> +                     /* Determine how many chunks of 2^scale size we have */
->>> +                     num = (num_pages >> scale) & CMDQ_TLBI_RANGE_NUM_MAX;
->>> +                     cmd.tlbi.num = num - 1;
->>> +
->>> +                     /* range is num * 2^scale * pgsize */
->>> +                     granule = num << (scale + tg);
->>> +
->>> +                     /* Clear out the lower order bits for the next iteration */
->>> +                     num_pages -= num << scale;
->> Regarding the 2 options given in
->> https://lore.kernel.org/linux-arm-kernel/CAL_JsqKABoE+0crGwyZdNogNgEoG=MOOpf6deQgH6s73c0UNdA@mail.gmail.com/raw,
->>
->> I understand you implemented 2) but I still do not understand why you
->> preferred that one against 1).
->>
->> In your case of 1023*4k pages this will invalidate by 31 32*2^0*4K +
->> 31*2^0*4K pages
->> whereas you could achieve that with 10 invalidations with the 1st algo.
->> I did not get the case where it is more efficient. Please can you detail.
-> 
-> No, it's only 2 commands. We do 31*4K and then 31*2^5*4K. Here's a the
-> output of a test case:
-> 
-> iova=10001000, num_pages=0x3e0, granule=1f000, num=31, scale=0, ttl=3
-> iova=10020000, num_pages=0x0, granule=3e0000, num=31, scale=5, ttl=3
-> 
-> (num_pages being what's left at end of the loop)
+> Does this have the effect of stopping the watchdog? Maybe we can have a
+> more expressive function name here (imx2_wdt_stop_clk or similar)?
+
+This action is ONLY called when probe failed or device is removed, and if watchdog
+is running, the core driver will prevent it from being removed.
 
 > 
-> As I mentioned on v1, worst case is 4 commands for up to 4GB. It's
-> 20-bits of size (32-12) and each loop processes a minimum of 5 bits.
-> Each loop becomes a larger aligned size, so scale goes up each pass.
-> This is what I tried to explain in the top comment.
+> Is there some watchdog core policy that tells if the watchdog should be
+> stopped on unload?
 
-Sorry for the delay, I was out of the office. Yes indeed I misunderstood
-the code and the algo looks good to me now.
-
-just a minor comment, I would use a dedicated "inv_range" loop block
-local variable instead of "granule".
-
-Besides
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
-
-Thanks
-
-Eric
-
-
-
+watchdog_stop_on_unregister() should be called in .probe function to make core
+policy stop the watchdog before removing it, but I think this driver does NOT call
+it, maybe I should add the API call, need Guenter to help confirm.
 
 > 
-> Rob
+> > +}
+> > +
+> >  static int __init imx2_wdt_probe(struct platform_device *pdev)  {
+> >  	struct device *dev = &pdev->dev;
+> > @@ -292,6 +297,10 @@ static int __init imx2_wdt_probe(struct
+> platform_device *pdev)
+> >  	if (ret)
+> >  		return ret;
+> >
+> > +	ret = devm_add_action_or_reset(dev, imx2_wdt_action, wdev->clk);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> >  	regmap_read(wdev->regmap, IMX2_WDT_WRSR, &val);
+> >  	wdog->bootstatus = val & IMX2_WDT_WRSR_TOUT ?
+> WDIOF_CARDRESET : 0;
+> >
+> > @@ -315,32 +324,7 @@ static int __init imx2_wdt_probe(struct
+> platform_device *pdev)
+> >  	 */
+> >  	regmap_write(wdev->regmap, IMX2_WDT_WMCR, 0);
+> >
+> > -	ret = watchdog_register_device(wdog);
+> > -	if (ret)
+> > -		goto disable_clk;
+> > -
+> > -	dev_info(dev, "timeout %d sec (nowayout=%d)\n",
+> > -		 wdog->timeout, nowayout);
 > 
+> Does the core put this info in the kernel log? If not dropping it isn't obviously
+> right enough to be done en passant.
 
+This is just an info for user which I think NOT unnecessary, so I drop it in this patch
+as well.
 
+> 
+> > -	return 0;
+> > -
+> > -disable_clk:
+> > -	clk_disable_unprepare(wdev->clk);
+> > -	return ret;
+> > -}
+> > -
+> > -static int __exit imx2_wdt_remove(struct platform_device *pdev) -{
+> > -	struct watchdog_device *wdog = platform_get_drvdata(pdev);
+> > -	struct imx2_wdt_device *wdev = watchdog_get_drvdata(wdog);
+> > -
+> > -	watchdog_unregister_device(wdog);
+> > -
+> > -	if (imx2_wdt_is_running(wdev)) {
+> > -		imx2_wdt_ping(wdog);
+> > -		dev_crit(&pdev->dev, "Device removed: Expect reboot!\n");
+> > -	}
+> 
+> I also wonder about this one. This changes the timing behaviour and so
+> IMHO shouldn't be done as a side effect of a cleanup patch.
+
+Guenter has a comment of "use devm_watchdog_register_device(), and the watchdog subsystem
+should prevent removal if the watchdog is running ", so I thought no need to check the watchdog's
+status here, but after further check the core code of watchdog_cdev_unregister() function, I ONLY
+see it will check whether need to stop watchdog before unregister,
+
+...
+
+1083         if (watchdog_active(wdd) &&
+1084             test_bit(WDOG_STOP_ON_UNREGISTER, &wdd->status)) {
+1085                 watchdog_stop(wdd);
+1086         }
+
+Hi, Guenter
+	Do you think watchdog_stop_on_unregister() should be called in .probe function to
+make watchdog stop before unregister?
+
+Thanks,
+Anson.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
