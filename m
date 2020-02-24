@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E321A16A0A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:55:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F14B16A0A9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:55:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KOQ8iASr+ApfuypEzy8iqIQ1Ng0Cq9rILkQvvbXe0Go=; b=lOUblhSeEDUNdK
-	D+cBJgZB/bNR93WTNAYxfWdsfUqdWbSXkDPYPZbKZH1YOwwpI9QqneOSmpSzCcTh6sev7dxt1/dAu
-	id+kmespDt61LfvjUUKkjFAkYBIqCle5W/MoQP9hkEsJG8Sv1HDxaXm4SkGpDB9PD3LhWZIsQX4Q4
-	SV6TBQiWoHyN5g2lae10BA9q6P0XMxBzeNNrvi1xOermy8/83WvhxPWrkSVr9oQvvjzIJNDX11wF5
-	4aQKU/mDlbQW1JuU6A82z1f4QplDC56lo9F6Fyu60jvlf3CLmzHdjQDXW6fpcjNoEP2mPftgitLDf
-	/7mmRlMOuQoO5xNlhsXw==;
+	List-Owner; bh=9sQYSBINoXaWpA8CXaF+AtOzymUIjok3I3ZudPyhbVs=; b=t9atelkSw89UEt
+	bNh7Itzx/hRObO18QyG0mEJhF+yDlyhHsgxHILstYj3K6IJNvuTgUldSfvRvJeP2twGXOCXmiKyFF
+	5zpX1pXKTnc4XYD9jS1Tckd1Ag1rfLl36Q/pMu0E+FNVcM60N8Toi3BZsEVxz9sKn8HfM29LipqKV
+	dJglQxtrhqeVdPwecS+hi3hkRk7qdSsrma1TeAKpr7C1jNSwy/TFy2nquDj0/pJvKAjs1nENHwixO
+	j7S5CoZrmDBDyLvu8w8exoVwFnhwvfgruUl6Cx061cA7ygmtjC5YdQ1bl09TWZ3whRWqkbY5R3HJL
+	VRW++CAFll0tEz3V8jtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69WL-0008GU-Dm; Mon, 24 Feb 2020 08:55:21 +0000
+	id 1j69Wb-0001LE-91; Mon, 24 Feb 2020 08:55:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69Ua-00072h-0W; Mon, 24 Feb 2020 08:53:33 +0000
+ id 1j69Ud-00075N-3U; Mon, 24 Feb 2020 08:53:36 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6EC7B20842;
- Mon, 24 Feb 2020 08:53:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CAAD120873;
+ Mon, 24 Feb 2020 08:53:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534411;
- bh=fwyEnmlIREl3D/2DAJB5xBeyPEhsItC0Id93bVsKlCQ=;
+ s=default; t=1582534414;
+ bh=nrWXIO2cKt+l5f9n7vJSGmI71F6uR6BEZmicU0hhgmA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZQo6V81dD9/8lqg5RyNdNF83dmSjs798+p0gMldHgO41djQ59+NJpTWtOFB4kSJeb
- Xss4daEX6+EaDojwPpwtLMcn+EryXGmsMBBaXzkN9od+d0G+Td2hr1bpJ049qvxW65
- 73Jh8aJA2t7c2A04e6fwZd3m4gTyNO9EVX/qxQBE=
+ b=umtcPjqghGRrWjyBDZWqCTVgQvaugrUeKU6ih8xHkorjGHrOCzpVr1/mW+5cIs/Q3
+ QxBVS9VdIqJ2xk++SJKbSsYbmf0G9A2ROOojB17KXqpERmHoK6gVpb5cV0D11KZCXv
+ wlECjlsV1sUuwo7uQMvyaqFikBq0WO2AF+SoTpcA=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 04/18] net/adaptec: Clean driver versions
-Date: Mon, 24 Feb 2020 10:52:57 +0200
-Message-Id: <20200224085311.460338-5-leon@kernel.org>
+Subject: [PATCH net-next v1 05/18] net/aeroflex: Clean ethtool_info struct
+ assignments
+Date: Mon, 24 Feb 2020 10:52:58 +0200
+Message-Id: <20200224085311.460338-6-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005332_111066_239B0B96 
-X-CRM114-Status: GOOD (  12.31  )
+X-CRM114-CacheID: sfid-20200224_005335_213278_A3EF3DA9 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -98,81 +99,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-Delete useless driver version in favor of default ones.
+If FW version is not available, it is enough to leave that field as
+empty, there is no need to write N/A.
+
+The driver version is replaced in favor of generally available
+in-tree variant.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
- drivers/net/ethernet/adaptec/starfire.c | 19 +------------------
- 1 file changed, 1 insertion(+), 18 deletions(-)
+ drivers/net/ethernet/aeroflex/greth.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/adaptec/starfire.c b/drivers/net/ethernet/adaptec/starfire.c
-index 165d18405b0c..2db42211329f 100644
---- a/drivers/net/ethernet/adaptec/starfire.c
-+++ b/drivers/net/ethernet/adaptec/starfire.c
-@@ -27,8 +27,6 @@
- */
+diff --git a/drivers/net/ethernet/aeroflex/greth.c b/drivers/net/ethernet/aeroflex/greth.c
+index 2a9f8643629c..198f1544e271 100644
+--- a/drivers/net/ethernet/aeroflex/greth.c
++++ b/drivers/net/ethernet/aeroflex/greth.c
+@@ -1114,7 +1114,6 @@ static void greth_get_drvinfo(struct net_device *dev, struct ethtool_drvinfo *in
 
- #define DRV_NAME	"starfire"
--#define DRV_VERSION	"2.1"
--#define DRV_RELDATE	"July  6, 2008"
-
- #include <linux/interrupt.h>
- #include <linux/module.h>
-@@ -47,6 +45,7 @@
- #include <asm/processor.h>		/* Processor type for cache alignment. */
- #include <linux/uaccess.h>
- #include <asm/io.h>
-+#include <linux/vermagic.h>
-
- /*
-  * The current frame processor firmware fails to checksum a fragment
-@@ -165,15 +164,9 @@ static int rx_copybreak /* = 0 */;
- #define FIRMWARE_RX	"adaptec/starfire_rx.bin"
- #define FIRMWARE_TX	"adaptec/starfire_tx.bin"
-
--/* These identify the driver base version and may not be removed. */
--static const char version[] =
--KERN_INFO "starfire.c:v1.03 7/26/2000  Written by Donald Becker <becker@scyld.com>\n"
--" (unofficial 2.2/2.4 kernel port, version " DRV_VERSION ", " DRV_RELDATE ")\n";
--
- MODULE_AUTHOR("Donald Becker <becker@scyld.com>");
- MODULE_DESCRIPTION("Adaptec Starfire Ethernet driver");
- MODULE_LICENSE("GPL");
--MODULE_VERSION(DRV_VERSION);
- MODULE_FIRMWARE(FIRMWARE_RX);
- MODULE_FIRMWARE(FIRMWARE_TX);
-
-@@ -654,13 +647,6 @@ static int starfire_init_one(struct pci_dev *pdev,
- 	int drv_flags, io_size;
- 	int boguscnt;
-
--/* when built into the kernel, we only print version if device is found */
--#ifndef MODULE
--	static int printed_version;
--	if (!printed_version++)
--		printk(version);
--#endif
--
- 	if (pci_enable_device (pdev))
- 		return -EIO;
-
-@@ -1853,7 +1839,6 @@ static void get_drvinfo(struct net_device *dev, struct ethtool_drvinfo *info)
- {
- 	struct netdev_private *np = netdev_priv(dev);
- 	strlcpy(info->driver, DRV_NAME, sizeof(info->driver));
--	strlcpy(info->version, DRV_VERSION, sizeof(info->version));
- 	strlcpy(info->bus_info, pci_name(np->pci_dev), sizeof(info->bus_info));
+ 	strlcpy(info->driver, dev_driver_string(greth->dev),
+ 		sizeof(info->driver));
+-	strlcpy(info->version, "revision: 1.0", sizeof(info->version));
+ 	strlcpy(info->bus_info, greth->dev->bus->name, sizeof(info->bus_info));
+ 	strlcpy(info->fw_version, "N/A", sizeof(info->fw_version));
  }
-
-@@ -2073,8 +2058,6 @@ static int __init starfire_init (void)
- {
- /* when a module, this is printed whether or not devices are found in probe */
- #ifdef MODULE
--	printk(version);
--
- 	printk(KERN_INFO DRV_NAME ": polling (NAPI) enabled\n");
- #endif
-
 --
 2.24.1
 
