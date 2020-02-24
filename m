@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA07916A119
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:10:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD45A16A131
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:10:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/zLCDUmVGZwcQMKQeUQDp78O5ApwFLF99jaKBTkadu8=; b=KO5E2B+XeYdlIb
-	QfKUeG/MpTDAI1AXogF0ty5lH6VcaYpYiBvxHF9GBDKB/NSSAXn8nytfdmxg5Mzp00OvVjmqihH0n
-	XCEARFI2QkDova3NebaZDRfW4v01uxDBIAQEDhqrMKke2esu5FHFC7groJ+msjogGWDmOrj+iKnjh
-	aXohdHqnT5iDiHdzn21XgqRk3DjjEeLL07/9GbOkOUsujPkFSpFpXC0FXQ1ClRuFK9nbJxB+MqUUz
-	/dkF2iyvFUQFRrxDHnL88g9GoTK8lT1D6lZyEpKrYnZezsysOdcdzNJHJUuNQYtoy2elcWOlGAVe1
-	YHG7groHcBvK7PRfCtoQ==;
+	List-Owner; bh=ZvoCzsOkQ7Ooj5V4DQ9ctWI0fpuLu1H/rjk91hf1uBo=; b=ei2BxvpifeLLNP
+	//iVpLG20aaR7QrvJ4c7Spn74N0GBZQV2wu0A9YgUDoQnWMzaAGjYu4D8PS3CELMwWFjUeAne2Net
+	QAwIYPHOJCvTvcZFpxgplIJ7vC8Ml/S0ZNV3KmauS/PsDTHyR+A9ZenwmNxGvU5zqkHaGi/kc0UQ4
+	NvGoZw7JtYCsGQ5gc75kdDwlbgjB7lq1Si/EAZWTqIkqDnZzwEM01pGjpADGRALdEqNhDm1VcEuT6
+	LuFjR45sx+v98m+YcxYIJl3Sk3jycCQ9EeIRuUQoFLc1Wmo6aILqY8btNHljm8JOSzFpv/9YvA3GJ
+	0Gi5mekaLOqcS/tFM7Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69kM-0001Ti-6E; Mon, 24 Feb 2020 09:09:50 +0000
+	id 1j69lL-0001yW-A6; Mon, 24 Feb 2020 09:10:51 +0000
 Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69ja-0001Qs-4m; Mon, 24 Feb 2020 09:09:06 +0000
+ id 1j69ja-0001Qq-Tp; Mon, 24 Feb 2020 09:09:07 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id 5CCBB54F;
+ by mailnew.west.internal (Postfix) with ESMTP id 5AF454CD;
  Mon, 24 Feb 2020 04:08:56 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
+Received: from mailfrontend2 ([10.202.2.163])
  by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:08:57 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=mPma2BR0l1tBP
- abwm95lyd5UfLZW9fXkUpmHIiAKdz8=; b=yK5Ohju6603q5LvF1eeHhCRAciomk
- a88acboqocKkpJ56P/NHvNfJ8kHkYXP4hC7WYenUQjMOvkXnrEchJAipm1JnPP3l
- hzXdyuDyRIOaQLsk1ZQh957sTlqq8f1M+jtITQVmvn3tu6QrwxzU7OspOKXvDglc
- Xaij5T7+V279+aKKitTuFkniHGZ14Kad8cf++MHTMzF922tcHkMIoLOdEIZSO25k
- q2z7eSWxAWMNR0suJRdG+E5B8q4HLDuwwKUTnoCrL9mHIY7jErY6ipN9s1ApdAjt
- dCtj3XN34jiy1QBhXcchA6eZNPyucu0mcSMOuINVy65D2lsLVmdNrtM5g==
+ :mime-version:content-transfer-encoding; s=fm2; bh=8vrsYnMg3+xlG
+ wkxA2xqTXt5S7dQQOBwNLJokfKT5TI=; b=MeEGm8ydYTSDljDyxAs5wLbVVWQrV
+ ZLc+D4bpc6kIWpyJTtjbRUZAdIm7Ho4neycCK2r7oX5b2WQI9O4AzKdlL+6zzD9z
+ eMCb0E8IAaRikxxmmaHPI7zNa6oaMXBPgho3XFDnZPz+B8muLWHE+JnIAtPMbST2
+ WdqreU0RTYMSF5vcnSBLgUTYhP/FTo9lRBtqt90SUajuBoeWphrqja3NHLAtJTS6
+ h7BL0HGfEE9KUUfOTuOmIcUYR/6dd0cEJCF8Ta6jc0hmC+3Ms+YXvSxbbY5WV129
+ By0cqCutzcXGKC8E2by+EnNBJlvoqtgGMjR9FE0Y/cHbnHh0twqb1BtjA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=mPma2BR0l1tBPabwm95lyd5UfLZW9fXkUpmHIiAKdz8=; b=SiqE15r0
- jST1WHM2j4nwUY3KRPrRZgAtqyYqAdIhCa210Bc6inU6yieqSj+FkK0ReZ31ughB
- 2L72ugc1q9PVsp3X9jSQWYyWkIMWjxAgpQMZaTHXvnghbPrs2DU2R97KqMpzYXUR
- evmKCRZRz5IuE39aRKouTH1Zooiy1Nw6z2qfUEAAKDAfLXNYaq1ZDqflCjdBhcRE
- xfZyb6wAG98Gnd71/Bd9rpfnRg0SJd3iLcu74xj66lAdLraLoelEBwlqjcuJBVkX
- LuRbWZibnGwxyv8SiDwiMagxSmlg6AXrbfV/1x/HuJqEf4uRTJgZDpYUcDVrqkae
- d1y1mSEUGbFK2w==
-X-ME-Sender: <xms:pJJTXtgKVwHM_3O-v7pJ9fNUvFDN1t-SGoJPw2wtCM-EFCtmRoawVw>
+ fm2; bh=8vrsYnMg3+xlGwkxA2xqTXt5S7dQQOBwNLJokfKT5TI=; b=zzlQpzty
+ TQi+s9EWJWK2dZJ3xg6Rrr/ChaWBFHaPKGXqTxduw6vEWfblw87uof8xbmFmV0gL
+ OIMvoutCNzlimhGippaMJBNmnY4cpX/eoQuovotdlX2c581aEfwKruTrQfnQm5zc
+ VRMs8gUwP9ELDykd49fk7oJrrN3rCYShYffseJQvf9ARD4xiVlohsb9/KoVgWg8A
+ WJLsLegxr3un88Js5NBTyDIjCvOoIa7f7xf1PHhBg5ljrEFHe40tB9riscSvmK+2
+ YZax7iskHT1iH3bBjKnTujW1TF/Nw4wxjMvde5xhVebtGILX5orSXl7ffljcDmsu
+ Zsvn3NTHszT1qA==
+X-ME-Sender: <xms:ppJTXjTmQpTuM8_FjJ4Lcv_wIY6cYU5OJjn656Dm8k2QC7jyeh2s4w>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotffvucfrrh
  hofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgenuceurghi
  lhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurh
  ephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcutfhi
  phgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrkeelrd
- eikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhho
+ eikedrjeeinecuvehluhhsthgvrhfuihiivgepudenucfrrghrrghmpehmrghilhhfrhho
  mhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:pJJTXix9Y3ulNkmav60cdqJtJzRB0eDhJ25b12-2X_35iSJPswp44w>
- <xmx:pJJTXpPykQdFZzlJ0PJYOPMDqOCx5ngeyKcn8HBcE_qQHq_pgPZdvw>
- <xmx:pJJTXjXRoICUAXNIZjtmbH35ojG9eghAedET_ASqQf2o0EVy6HCxrA>
- <xmx:qJJTXiS2ml6O3QORmCFbxt_L5y5Cbk-Nwiwxpu04jQJiNKnkjwRy-FdEIjA>
+X-ME-Proxy: <xmx:ppJTXsWL0OGsKJoUQUu_qHB-GBs4IF5zq4_afrl4OfY2LE01e5Y-uQ>
+ <xmx:ppJTXoeLpU0IHK2dJP-nL9wOWpJ8K7n9H_DjmfWma_018eFICKL2-A>
+ <xmx:ppJTXvwR_zBnusltx-lZlhZShIXI-9zuW-QuSh6E4tbH3lE8Vzjxww>
+ <xmx:qJJTXsdgiH4mN_Q1Y_kAZwvirdItS31sFpZWycjD-4YKr5qjkm-WTw22ksI>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 71D9D328005A;
- Mon, 24 Feb 2020 04:08:52 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id E275F3060F9B;
+ Mon, 24 Feb 2020 04:08:53 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH 02/89] dt-bindings: i2c: brcmstb: Add BCM2711 BSC/AUTO-I2C
- binding
-Date: Mon, 24 Feb 2020 10:06:04 +0100
-Message-Id: <9e427ff22fa40b7146b44aee6468559499deb1f1.1582533919.git-series.maxime@cerno.tech>
+Subject: [PATCH 03/89] i2c: brcmstb: Support BCM2711 HDMI BSC controllers
+Date: Mon, 24 Feb 2020 10:06:05 +0100
+Message-Id: <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_010902_420008_BAE2C2A4 
-X-CRM114-Status: GOOD (  12.48  )
+X-CRM114-CacheID: sfid-20200224_010903_012407_9D266AFD 
+X-CRM114-Status: GOOD (  12.82  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,15 +103,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
  Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>,
  Wolfram Sang <wsa@the-dreams.de>, Kamal Dasu <kdasu.kdev@gmail.com>,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-i2c@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>
+ linux-i2c@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org, Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -127,89 +125,81 @@ BSC control from the CPU if enabled. However, the BSC is the actually
 the same controller than the one supported by the brcmstb driver, and
 the AUTO_I2C doesn't really bring any immediate benefit.
 
-We can model it in the DT as a single device with two register range,
-which will allow us to use or or the other in the driver without
-changing anything in the DT.
+Let's use the BSC then, but let's also tie the AUTO_I2C registers with a
+separate compatible so that we can enable AUTO_I2C if needed in the
+future.
+
+The AUTO_I2C is enabled by default at boot though, so we first need to
+release the BSC from the AUTO_I2C control.
 
 Cc: Kamal Dasu <kdasu.kdev@gmail.com>
 Cc: Florian Fainelli <f.fainelli@gmail.com>
-Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Wolfram Sang <wsa@the-dreams.de>
 Cc: bcm-kernel-feedback-list@broadcom.com
 Cc: linux-i2c@vger.kernel.org
-Cc: devicetree@vger.kernel.org
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- Documentation/devicetree/bindings/i2c/brcm,brcmstb-i2c.yaml | 40 ++++++-
- 1 file changed, 39 insertions(+), 1 deletion(-)
+ drivers/i2c/busses/i2c-brcmstb.c | 33 +++++++++++++++++++++++++++++++++-
+ 1 file changed, 33 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/i2c/brcm,brcmstb-i2c.yaml b/Documentation/devicetree/bindings/i2c/brcm,brcmstb-i2c.yaml
-index 3189d74096e8..edbca2476128 100644
---- a/Documentation/devicetree/bindings/i2c/brcm,brcmstb-i2c.yaml
-+++ b/Documentation/devicetree/bindings/i2c/brcm,brcmstb-i2c.yaml
-@@ -15,11 +15,21 @@ allOf:
- properties:
-   compatible:
-     enum:
-+      - brcm,bcm2711-hdmi-i2c
-       - brcm,brcmstb-i2c
-       - brcm,brcmper-i2c
+diff --git a/drivers/i2c/busses/i2c-brcmstb.c b/drivers/i2c/busses/i2c-brcmstb.c
+index 506991596b68..169a2836922d 100644
+--- a/drivers/i2c/busses/i2c-brcmstb.c
++++ b/drivers/i2c/busses/i2c-brcmstb.c
+@@ -580,6 +580,31 @@ static void brcmstb_i2c_set_bsc_reg_defaults(struct brcmstb_i2c_dev *dev)
+ 	brcmstb_i2c_set_bus_speed(dev);
+ }
  
-   reg:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 2
-+    items:
-+      - description: BSC register range
-+      - description: Auto-I2C register range
++#define AUTOI2C_CTRL0		0x26c
++#define AUTOI2C_CTRL0_RELEASE_BSC	BIT(1)
 +
-+  reg-names:
-+    items:
-+      - const: bsc
-+      - const: auto-i2c
++static int bcm2711_release_bsc(struct brcmstb_i2c_dev *dev)
++{
++	struct platform_device *pdev = to_platform_device(dev->device);
++	struct resource *iomem;
++	void __iomem *autoi2c;
++
++	/* Map hardware registers */
++	iomem = platform_get_resource_byname(pdev, IORESOURCE_MEM, "auto-i2c");
++	autoi2c = devm_ioremap_resource(&pdev->dev, iomem);
++	if (IS_ERR(autoi2c))
++		return PTR_ERR(autoi2c);
++
++	writel(AUTOI2C_CTRL0_RELEASE_BSC, autoi2c + AUTOI2C_CTRL0);
++	devm_iounmap(&pdev->dev, autoi2c);
++
++	/* We need to reset the controller after the release */
++	dev->bsc_regmap->iic_enable = 0;
++	bsc_writel(dev, dev->bsc_regmap->iic_enable, iic_enable);
++
++	return 0;
++}
++
+ static int brcmstb_i2c_probe(struct platform_device *pdev)
+ {
+ 	int rc = 0;
+@@ -609,6 +634,13 @@ static int brcmstb_i2c_probe(struct platform_device *pdev)
+ 		goto probe_errorout;
+ 	}
  
-   interrupts:
-     maxItems: 1
-@@ -45,6 +55,26 @@ required:
- 
- unevaluatedProperties: false
- 
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        enum:
-+          - brcm,bcm2711-hdmi-i2c
++	if (of_device_is_compatible(dev->device->of_node,
++				    "brcm,bcm2711-hdmi-i2c")) {
++		rc = bcm2711_release_bsc(dev);
++		if (rc)
++			goto probe_errorout;
++	}
 +
-+then:
-+  properties:
-+    reg:
-+      minItems: 2
-+
-+  required:
-+    - reg-names
-+
-+else:
-+  properties:
-+    reg:
-+      maxItems: 1
-+
- examples:
-   - |
-       bsca: i2c@f0406200 {
-@@ -56,4 +86,12 @@ examples:
-           interrupt-names = "upg_bsca";
-       };
- 
-+  - |
-+      ddc0: i2c@7ef04500 {
-+          compatible = "brcm,bcm2711-hdmi-i2c";
-+          reg = <0x7ef04500 0x100>, <0x7ef00b00 0x300>;
-+          reg-names = "bsc", "auto-i2c";
-+          clock-frequency = <390000>;
-+      };
-+
- ...
+ 	rc = of_property_read_string(dev->device->of_node, "interrupt-names",
+ 				     &int_name);
+ 	if (rc < 0)
+@@ -705,6 +737,7 @@ static SIMPLE_DEV_PM_OPS(brcmstb_i2c_pm, brcmstb_i2c_suspend,
+ static const struct of_device_id brcmstb_i2c_of_match[] = {
+ 	{.compatible = "brcm,brcmstb-i2c"},
+ 	{.compatible = "brcm,brcmper-i2c"},
++	{.compatible = "brcm,bcm2711-hdmi-i2c"},
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, brcmstb_i2c_of_match);
 -- 
 git-series 0.9.1
 
