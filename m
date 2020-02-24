@@ -2,89 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AE9A169FC1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:11:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E68716A01E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:35:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BhyZw4ckU/QhxgxF59fsxIfy+SSa4yS/qLHERy0z6Gk=; b=R/JAyDJeQpwr+P
-	d0zKpt7dEXei24pKv+zvXMxMcpI5w1/ZnQQaGHUMZgGBYu2tEGmhSDK1ViD3Ac98nPMUJ+Xevv8XU
-	lnj8qUioKl9smEaov2XV+NAdQe5nXUh5nXBzHJ1rcI1RSdMZWEXBT2xhR96xgZoJqTt3jTkL+4Tt7
-	IWOg5QOcDaKBsBc4o7lVWxxpXv0jMwQ21JB2JOmeOCEZHQhAFssjyFR4StwkpfloitrCeqHbfu/RZ
-	QlgAxKzIpgFyTnWtMGb8k3zOQOAfUcu0rq1CFY7VLQdJWYD1Dpy9j/6cPksb9IestROgxWQHw6FJX
-	n9ZG15XYQU+P07wxvudw==;
+	List-Owner; bh=FxPnbU4EKleW2E8TdHTSY+nQkQWvOyiBrfef+YTkNu8=; b=O3qsj6TVXTlkby
+	mCJrKKrpVjiIsrgq+c36K0dQXmqaiymxJrT2ZuaQRppJVplVaMxFrbWTVRQsr8PWZFmho+rFpzHzF
+	lKB2lI+xURXStBk4Zux8y7833JasiZwQMAv+PQ48n9wkegI5Yyl/UhMZTZorgTg1Hs98FKhClAv21
+	pmgHsbpozRVzNT1Qx+kWxXdh3RJJb2U+lEW9XoQ7mAnMtQAfVSyosaGILv9XvLMFLJCciJzMpdNpg
+	zPymMeetrVx7QjcMFoa6NCw7Ekei2amyNYiCITUGCSwg+W/l9pW3gFhq89BSAfGFdslm4WvoQZWND
+	o9RrX+j/pdlz+d0iXtng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j68pt-0000Qp-4h; Mon, 24 Feb 2020 08:11:29 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1j69DN-000861-C5; Mon, 24 Feb 2020 08:35:45 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j68pk-0000QK-3S
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 08:11:21 +0000
-Received: from mwalle01.sab.local. (unknown [213.135.10.150])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 7C5B122ED5;
- Mon, 24 Feb 2020 09:11:17 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1582531878;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=uunZrjy3s12DlnbMOTQxFCthmdhavGDhtf/Hy0AGfm4=;
- b=m9o9jxnJg36uapNHQq8CiIPZZ86tRsoXEi2xbTjK5WeVWxg1a1X3z/QkoZVdwrQgymsIsx
- YNvAOcuus8KyqKkUNvDDZQrM8CyYSbKuSUyS/Tq+PQ5SNfwbAA0dVxjM3YQkUOmp16v8SO
- pBdHRGdFQ157gdiJUdjz9ZF7weMgNA8=
-From: Michael Walle <michael@walle.cc>
-To: xiaowei.bao@nxp.com
-Subject: Re: [PATCH v6 2/3] arm64: dts: ls1028a: Add PCIe controller DT nodes
-Date: Mon, 24 Feb 2020 09:11:05 +0100
-Message-Id: <20200224081105.13878-1-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190902034319.14026-2-xiaowei.bao@nxp.com>
-References: <20190902034319.14026-2-xiaowei.bao@nxp.com>
+ id 1j69DB-00085N-EO
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 08:35:37 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01O8STP6003173; Mon, 24 Feb 2020 09:35:25 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=7PELC+vweWKrffU05WDizALZGrVFR9H5KIm3RrEooxQ=;
+ b=wRAQs8o8BEZqlLbBZ1wvX6wvXH7UNrKHG13FBW/Ti8d6aGeSSshAVDNMLH31SKfZOarv
+ Xmbxj/bSW5C2YMf334oQCkox5EKvCAEjEJbiBuY9qBXHPmc1SoTCggIuY5cy2+iRYX8n
+ FS+AMngbggT+7rFUIkIke3J0xn88p64gk9KzemQkv/FyUfXOGXEDPclKIVs0D26uiL/D
+ kAFmKfeevfCJ49NejpLt0XCrLkm8jwWVvwylhRGBFkyGVGVysQ3PJgeu4h0DS+/CPqy9
+ 8YoHhlN/0vd4ZVU5uT8edVZBXExC+zKTecm0xbrG7rQlFhOEchteElHK3V7VwFkE8D3x xQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yatn5rnad-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 24 Feb 2020 09:35:25 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 14F5110002A;
+ Mon, 24 Feb 2020 09:35:23 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F305D2B0958;
+ Mon, 24 Feb 2020 09:35:22 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
+ (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 24 Feb
+ 2020 09:35:22 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Mon, 24 Feb 2020 09:35:22 +0100
+From: Patrick DELAUNAY <patrick.delaunay@st.com>
+To: Marek Vasut <marex@denx.de>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH V2 6/6] ARM: dts: stm32: Add DH Electronics DHCOM STM32MP1
+ SoM and PDK2 board
+Thread-Topic: [PATCH V2 6/6] ARM: dts: stm32: Add DH Electronics DHCOM
+ STM32MP1 SoM and PDK2 board
+Thread-Index: AQHVzvxWZmvQfipRJEWVD8cExEN3RagUsYEAgBRNboCAATz3oA==
+Date: Mon, 24 Feb 2020 08:35:22 +0000
+Message-ID: <5efd7978050e48d783d10c989b5e78f5@SFHDAG6NODE3.st.com>
+References: <20200119191143.50033-1-marex@denx.de>
+ <20200119191143.50033-6-marex@denx.de>
+ <1b288811-8ffb-a150-71ef-4c006e6d5740@st.com>
+ <1ec643e9-217d-c83d-793f-c05d6c4502bd@denx.de>
+In-Reply-To: <1ec643e9-217d-c83d-793f-c05d6c4502bd@denx.de>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
 MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 7C5B122ED5
-X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.765]; DKIM_SIGNED(0.00)[];
- DBL_PROHIBIT(0.00)[0.51.225.64:email,0.53.103.224:email];
- RCPT_COUNT_TWELVE(0.00)[17]; MID_CONTAINS_FROM(1.00)[];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:12941, ipnet:213.135.0.0/19, country:DE];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-24_02:2020-02-21,
+ 2020-02-24 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_001120_459541_AC69B904 
-X-CRM114-Status: GOOD (  16.04  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200224_003533_935160_C4CD8714 
+X-CRM114-Status: GOOD (  16.66  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,129 +107,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- roy.zang@nxp.com, linux-pci@vger.kernel.org, Zhiqiang.Hou@nxp.com,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, minghuan.Lian@nxp.com,
- Michael Walle <michael@walle.cc>, robh+dt@kernel.org, mingkai.hu@nxp.com,
- bhelgaas@google.com, shawnguo@kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrice CHOTARD <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Xiaowei, Hi Shawn,
-
-> LS1028a implements 2 PCIe 3.0 controllers.
-
-Patch 1/3 and 3/3 are in Linus' tree but nobody seems to care about this patch
-anymore :(
-
-This doesn't work well with the IOMMU, because the iommu-map property is
-missing. The bootloader needs the &smmu phandle to fixup the entry. See
-below.
-
-Shawn, will you add this patch to your tree once its fixed, considering it
-just adds the device tree node for the LS1028A?
-
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> ---
-> v2:
->  - Fix up the legacy INTx allocate failed issue.
-> v3:
->  - No change.
-> v4:
->  - Remove the num-lanes property.
-> v5:
->  - Add the num-viewport property.
-> v6:
->  - move num-viewport to 8.
-> 
->  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 52 ++++++++++++++++++++++++++
->  1 file changed, 52 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> index 72b9a75..c043b1d 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> @@ -625,6 +625,58 @@
->  			};
->  		};
->  
-> +		pcie@3400000 {
-> +			compatible = "fsl,ls1028a-pcie";
-> +			reg = <0x00 0x03400000 0x0 0x00100000   /* controller registers */
-> +			       0x80 0x00000000 0x0 0x00002000>; /* configuration space */
-> +			reg-names = "regs", "config";
-> +			interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-> +				     <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>; /* aer interrupt */
-> +			interrupt-names = "pme", "aer";
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			device_type = "pci";
-> +			dma-coherent;
-> +			num-viewport = <8>;
-> +			bus-range = <0x0 0xff>;
-> +			ranges = <0x81000000 0x0 0x00000000 0x80 0x00010000 0x0 0x00010000   /* downstream I/O */
-> +				  0x82000000 0x0 0x40000000 0x80 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +			msi-parent = <&its>;
-iommu-map = <0 &smmu 0 0>; /* fixed up by bootloader */
-
-> +			#interrupt-cells = <1>;
-> +			interrupt-map-mask = <0 0 0 7>;
-> +			interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0000 0 0 2 &gic 0 0 GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0000 0 0 3 &gic 0 0 GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0000 0 0 4 &gic 0 0 GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
-> +			status = "disabled";
-> +		};
-> +
-> +		pcie@3500000 {
-> +			compatible = "fsl,ls1028a-pcie";
-> +			reg = <0x00 0x03500000 0x0 0x00100000   /* controller registers */
-> +			       0x88 0x00000000 0x0 0x00002000>; /* configuration space */
-> +			reg-names = "regs", "config";
-> +			interrupts = <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>;
-> +			interrupt-names = "pme", "aer";
-> +			#address-cells = <3>;
-> +			#size-cells = <2>;
-> +			device_type = "pci";
-> +			dma-coherent;
-> +			num-viewport = <8>;
-> +			bus-range = <0x0 0xff>;
-> +			ranges = <0x81000000 0x0 0x00000000 0x88 0x00010000 0x0 0x00010000   /* downstream I/O */
-> +				  0x82000000 0x0 0x40000000 0x88 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-> +			msi-parent = <&its>;
-likewise
-
-
-With these two fixes:
-
-Tested-by: Michael Walle <michael@walle.cc>
-
--michael
-
-> +			#interrupt-cells = <1>;
-> +			interrupt-map-mask = <0 0 0 7>;
-> +			interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0000 0 0 2 &gic 0 0 GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0000 0 0 3 &gic 0 0 GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
-> +					<0000 0 0 4 &gic 0 0 GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
-> +			status = "disabled";
-> +		};
-> +
->  		pcie@1f0000000 { /* Integrated Endpoint Root Complex */
->  			compatible = "pci-host-ecam-generic";
->  			reg = <0x01 0xf0000000 0x0 0x100000>;
-> -- 
-> 2.9.5
-> 
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyZWssDQoNCj4gRnJvbTogTWFyZWsgVmFzdXQgPG1hcmV4QGRlbnguZGU+DQo+IFNlbnQ6
+IGRpbWFuY2hlIDIzIGbDqXZyaWVyIDIwMjAgMTU6MzgNCj4gDQo+IE9uIDIvMTAvMjAgNTozNSBQ
+TSwgQWxleGFuZHJlIFRvcmd1ZSB3cm90ZToNCj4gPiBIaSBNYXJlaw0KPiANCj4gSGksDQo+IA0K
+PiA+IE9uIDEvMTkvMjAgODoxMSBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6DQo+ID4+IEFkZCBzdXBw
+b3J0IGZvciBESCBFbGVjdHJvbmljcyBESENPTSBTb00gYW5kIFBESzIgcmV2LiA0MDAgY2Fycmll
+cg0KPiA+PiBib2FyZC4gVGhpcyBpcyBhbiBTb00gd2l0aCBTVE0zMk1QMTU3QyBhbmQgYW4gZXZh
+bHVhdGlvbiBraXQuIFRoZQ0KPiA+PiBiYXNlYm9hcmQgcHJvdmlkZXMgRXRoZXJuZXQsIFVBUlQs
+IFVTQiwgQ0FOIGFuZCBvcHRpb25hbCBkaXNwbGF5Lg0KPiA+Pg0KPiA+PiBTaWduZWQtb2ZmLWJ5
+OiBNYXJlayBWYXN1dCA8bWFyZXhAZGVueC5kZT4NCj4gPj4gQ2M6IEFsZXhhbmRyZSBUb3JndWUg
+PGFsZXhhbmRyZS50b3JndWVAc3QuY29tPg0KPiA+PiBDYzogTWF4aW1lIENvcXVlbGluIDxtY29x
+dWVsaW4uc3RtMzJAZ21haWwuY29tPg0KPiA+PiBDYzogUGF0cmljZSBDaG90YXJkIDxwYXRyaWNl
+LmNob3RhcmRAc3QuY29tPg0KPiA+PiBDYzogUGF0cmljayBEZWxhdW5heSA8cGF0cmljay5kZWxh
+dW5heUBzdC5jb20+DQo+ID4+IENjOiBsaW51eC1zdG0zMkBzdC1tZC1tYWlsbWFuLnN0b3JtcmVw
+bHkuY29tDQo+ID4+IFRvOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcNCj4g
+Pj4gLS0tDQo+ID4+IFYyOiAtIEFkZCBzdG0zMm1wMSBpbnRvIHRoZSBzdWJqZWN0IGFuZCBjb21t
+aXQgbWVzc2FnZQ0KPiA+PiDCoMKgwqDCoCAtIFNvcnQgRFQgYWxwaGFudW1lcmljYWxseQ0KPiA+
+PiDCoMKgwqDCoCAtIE1vdmUgYWxsIHBpbmNvbnRyb2wgZW50cmllcyBpbnRvIHN0bTMybXAxNS1w
+aW5jdHJsLmR0c2kNCj4gPj4gLS0tDQo+ID4NCj4gPiBUaGFua3MgdG8gYWRkIGEgbmV3IFNUTTMy
+IGJvYXJkLg0KPiA+DQo+ID4gU2VyaWVzIGFwcGxpZWQgb24gc3RtMzItbmV4dC4NCj4gDQo+IEhv
+dyBjb21lIHRoZXNlIGFyZSBub3QgaW4gbmV4dC9tYXN0ZXIgeWV0LCBpcyB0aGUgYnJhbmNoIG5v
+dCBiZWluZyBtZXJnZWQgaW50bw0KPiBuZXh0IHJlZ3VsYXJseSA/DQoNClRoaXMgYWNjZXB0ZWQg
+cGF0Y2ggaXMgYWxyZWFkeSBpbiBzdG0zMi1tYXN0ZXIsIGluY2x1ZGVkIGluIGxhc3RlZCBwdWxs
+IHJlcXVlc3QgdS1ib290LXN0bTMyLTIwMjAwMjE0DQoNClNIQTEgPSAxOTk1MzczMDliYTUzZDI5
+NGMzMTI4MzA2NGQ2M2RhZmM5OTVmYmVkDQoNCk1lcmdlZCBpbiB1LWJvb3QvbWFzdGVyIGp1c3Rl
+IGFmdGVyIHYyMDIwLjA0LXJjMg0KDQpSZWdhcmRzLA0KDQpQYXRyaWNrDQpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
