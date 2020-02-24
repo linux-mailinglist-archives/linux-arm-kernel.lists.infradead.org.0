@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F14B16A0A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:55:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B176916A0AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:55:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9sQYSBINoXaWpA8CXaF+AtOzymUIjok3I3ZudPyhbVs=; b=t9atelkSw89UEt
-	bNh7Itzx/hRObO18QyG0mEJhF+yDlyhHsgxHILstYj3K6IJNvuTgUldSfvRvJeP2twGXOCXmiKyFF
-	5zpX1pXKTnc4XYD9jS1Tckd1Ag1rfLl36Q/pMu0E+FNVcM60N8Toi3BZsEVxz9sKn8HfM29LipqKV
-	dJglQxtrhqeVdPwecS+hi3hkRk7qdSsrma1TeAKpr7C1jNSwy/TFy2nquDj0/pJvKAjs1nENHwixO
-	j7S5CoZrmDBDyLvu8w8exoVwFnhwvfgruUl6Cx061cA7ygmtjC5YdQ1bl09TWZ3whRWqkbY5R3HJL
-	VRW++CAFll0tEz3V8jtw==;
+	List-Owner; bh=hy1SFBTchMec7xdiL7/HUGfDev3ziXuhjdchCf9NOEU=; b=kiit5IWKCYAft9
+	a7nfgBCLnT7igzmDyPigR/wVUTAqyG+qw5Rdbn37U+2u9082a0UUTRfEanJhMJNgx5KUBU8JiXOeB
+	iXXuxCmOF5IjZosjpWxsae48ue7Ypb3Y/8KxNPSCn2by0+F/kH4fjmm12p4sJ7XZWWqR5Owfkj5gS
+	WMQFoo4DjPUYe/T246hOwAbE6c7qSpQxKcyuSiuSFFHb1abBUWz5vT5OF8D9BVsWwlutvsw+lkP9G
+	CABFSgokay4fR+DHm/b9UiY9rZvIcFwud7MU52kA3SLAwNCR9/B7gSy8RfT8o6buffKT9llQLTgix
+	k2ah2xwM43tUB5bMm+1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69Wb-0001LE-91; Mon, 24 Feb 2020 08:55:37 +0000
+	id 1j69Wm-0001Ym-Tb; Mon, 24 Feb 2020 08:55:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69Ud-00075N-3U; Mon, 24 Feb 2020 08:53:36 +0000
+ id 1j69Uh-00078D-Al; Mon, 24 Feb 2020 08:53:41 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CAAD120873;
- Mon, 24 Feb 2020 08:53:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 440D520880;
+ Mon, 24 Feb 2020 08:53:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534414;
- bh=nrWXIO2cKt+l5f9n7vJSGmI71F6uR6BEZmicU0hhgmA=;
+ s=default; t=1582534418;
+ bh=jLtAPhwXKRIYi8hoepp1P4IjkM/yEjLYulzEjNIxRGk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=umtcPjqghGRrWjyBDZWqCTVgQvaugrUeKU6ih8xHkorjGHrOCzpVr1/mW+5cIs/Q3
- QxBVS9VdIqJ2xk++SJKbSsYbmf0G9A2ROOojB17KXqpERmHoK6gVpb5cV0D11KZCXv
- wlECjlsV1sUuwo7uQMvyaqFikBq0WO2AF+SoTpcA=
+ b=zOsEW4IkEySlpKnb+omU7upJ/n3o+YVnJdQAlFCltuNHSYGo24LD6X9lQzg2l2f7+
+ 9FEIZVW7B7RzvsHVAZp7u7D+k+JQ+9scK+PChBYFZYVRuSQ41KrEDHMqkuWLJwO2SD
+ XG4pyBDFae1Zi5ccsI3yazBlOvx7NpMoa9ZWbde4=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 05/18] net/aeroflex: Clean ethtool_info struct
- assignments
-Date: Mon, 24 Feb 2020 10:52:58 +0200
-Message-Id: <20200224085311.460338-6-leon@kernel.org>
+Subject: [PATCH net-next v1 06/18] net/aeroflex: Don't assign FW if it is not
+ available
+Date: Mon, 24 Feb 2020 10:52:59 +0200
+Message-Id: <20200224085311.460338-7-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005335_213278_A3EF3DA9 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200224_005339_581938_6414ED10 
+X-CRM114-Status: GOOD (  10.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,26 +102,23 @@ From: Leon Romanovsky <leonro@mellanox.com>
 If FW version is not available, it is enough to leave that field as
 empty, there is no need to write N/A.
 
-The driver version is replaced in favor of generally available
-in-tree variant.
-
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
  drivers/net/ethernet/aeroflex/greth.c | 1 -
  1 file changed, 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/aeroflex/greth.c b/drivers/net/ethernet/aeroflex/greth.c
-index 2a9f8643629c..198f1544e271 100644
+index 198f1544e271..bf546118dbc6 100644
 --- a/drivers/net/ethernet/aeroflex/greth.c
 +++ b/drivers/net/ethernet/aeroflex/greth.c
-@@ -1114,7 +1114,6 @@ static void greth_get_drvinfo(struct net_device *dev, struct ethtool_drvinfo *in
-
+@@ -1115,7 +1115,6 @@ static void greth_get_drvinfo(struct net_device *dev, struct ethtool_drvinfo *in
  	strlcpy(info->driver, dev_driver_string(greth->dev),
  		sizeof(info->driver));
--	strlcpy(info->version, "revision: 1.0", sizeof(info->version));
  	strlcpy(info->bus_info, greth->dev->bus->name, sizeof(info->bus_info));
- 	strlcpy(info->fw_version, "N/A", sizeof(info->fw_version));
+-	strlcpy(info->fw_version, "N/A", sizeof(info->fw_version));
  }
+
+ static void greth_get_regs(struct net_device *dev, struct ethtool_regs *regs, void *p)
 --
 2.24.1
 
