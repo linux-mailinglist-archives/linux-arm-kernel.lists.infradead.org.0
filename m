@@ -2,73 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E66FF16B047
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 20:32:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B24D616B04B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 20:32:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/3BtFbjygZZ34iD3k5QWy5Kfn0ygzvPJ2bdaHb64rbY=; b=Cjx
-	TOPCvUII39oE1o0YQCzZdkuvJ48ss7HqNsBj3Wz/YT5jCCvgTRK0HXhqtiUBhT3pdrhtXHkzuSRos
-	dnglZ8o2JH8fFJDsC9brXh0R+gEuU5OFmqyAcG72VD7P03i00hQ0ip9xjO78Q6dX5ADciuCZte8Cx
-	25skj3IRFbEN9EIA3rjU/s9lw+5qrdnXJEeaS2WbJOWYLpXkf28oZlVr/hgtawN8cYtM/2hAJOBbV
-	LNMYk9u8Oy6xWMtQZGbeV7b5ZqofPFiWTlgyQSki+DLLON77JMqGR4ccSLFViTUzGBeqYoOpdAEfh
-	4JxIl8vNkI140ym5cfq9jSyrIRJfZ5w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=gaVhoAZvsbUnq4S8U/EQqAv4A70Q4IuLz2cWmfcC5bM=; b=M6i8dGGZM595Xx89sYdMx103J+
+	4k2XuGoqxUTEDHhO7bdAdsyOmLanWfr/y0YBV70nuxVDxA/lighcwPK1ZVBh3PiGF94xmfSoAjhg7
+	5ZdwhHmHCGZH5m1r6+USbhaHntwMciIlZk6JAibqyd/TwHK+V6vScLgKxjzOPORA0nl1rdpCEKxxU
+	OpbCO5ieqSOymTeA6y5kHlaEPBcDRmYXfDifMGauuTop7soyd968W2oqlB1ygtUXJsypYAlWQctJj
+	RfIZ9DNfhDNItREfb0iIejKMlt95UvV22q+/VFQ9Gpe7y3lfhdI0DxsQrKSb9ObNjUut5D838E6Hs
+	KzGRBeag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6JSo-0001Fs-Mu; Mon, 24 Feb 2020 19:32:22 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
+	id 1j6JTB-0001PE-0y; Mon, 24 Feb 2020 19:32:45 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6JSc-0001FD-WC
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 19:32:12 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id o18so4657768qvf.1
+ id 1j6JSf-0001Fd-O1
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 19:32:15 +0000
+Received: by mail-qt1-x842.google.com with SMTP id j23so7341601qtr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 11:32:10 -0800 (PST)
+ Mon, 24 Feb 2020 11:32:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=x4yd6m5lZvhtdhwwlGTOfDjtSjiOhT0+HADbBAmE+VA=;
- b=hydi7pddSHrbRFgtm3FgHuxHSMjJ8FH30cUJkSNo47Kuq7FxZRCGmjsGh4IzWJh6JI
- 3mVkGb8cdwzAAusGz3TGmNfxx3o+4Jkwo7BsDh+Zf92A6N9pq0gfmKwvfcRJeeyVJl9W
- A45RUy7SJI/RvLjXj/PouCDTxAJgaUjX9ZqbBWF101pBgfdTiS9hVjwfUBLgw2L8l5qL
- itV7ejKhkXoXay5vOjmI2DfLHD63G0oBK5UNtnjCmiyRLprZTDziu7ivqSHNQITmrNr/
- jMzYGa5Jtgj00MztcGtkIjMrHOgmzOYvQXTDl76Qp5+jUGIx+x6soz2EHN5h5maWaUdx
- bfug==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=HUqSnpvTiE+ijTtZntWm2LE0h5zqza8ni/pcodmR7cE=;
+ b=uz2pf6y3Pj+mp+nGW36cVi0RIVtm+dROc0c7UgTnj5HHImnAgP4B0F6ubyHA3o3aX+
+ CBi8nGpTAGG3INulS2oAn0KTvGKnXvYQuTFUNdnK5KzvxxaeMF+RJo5qoTBfyrA3juHP
+ TcamhatBOkBz216gwzFLm1nsPDvCS1pPH5eGez7Y2CWO/Q3IkVPVW4LyK27eWRssomYh
+ t7oA/5eSn2rnM/sHgQuOH81qYxhFWTikDb6F2ID9fcZz8S5Cn9uf+PnZgH+3cBGqNygv
+ 7K+CkTmTzK1Gwcm6F0c5/a/A0mB/KVzRFPAaJB/RhM8wK3WBGiQHI7ZWujRf0XjJXy6B
+ /IcQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=x4yd6m5lZvhtdhwwlGTOfDjtSjiOhT0+HADbBAmE+VA=;
- b=HMx4sAnoBlxMFy1t6PzcLwtQ1fNPabIK7vok9bezFLc/kJhd9kpNLtICnL9F8DdxlP
- UU+4hG2bC2td4Vv687z5ytHM8akxDrqN77aID+vXRsfTCLwukbzgEDcCLjqIqLZpQy0T
- LnLCcPDKrbIvCnh8NwipMUtNhxDq22qIpGhqNTTWae+M9RnB33yt8VefUlwkejvdvkUP
- FNao0hyd5oQuH0p3dhSZUtXcXq3UEP2WjFIhX7w3hKGtndhLsZ2NW9qibuZX2RfhNy36
- 7IJ3T2IAguwMWVZnmW1dQIYQNcumx4ykP3Vu337LUTCi3StsRJq2SzRDo4tjyqwws4pY
- 5LTw==
-X-Gm-Message-State: APjAAAXxh1fbgvxlBLnpkimWqe51PJDDVbWuK+BHV2gwKdcPfdq451ai
- YlVhh50kytV3lxHY+7ybuxg=
-X-Google-Smtp-Source: APXvYqy/5ljyQP9AEyz4NqOnMG7r7/B9JIq1RAerCCfudb4WJW+gKeaJqAPo5mEBJYrd29qopTU7Ug==
-X-Received: by 2002:ad4:518b:: with SMTP id b11mr47494346qvp.195.1582572729548; 
- Mon, 24 Feb 2020 11:32:09 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=HUqSnpvTiE+ijTtZntWm2LE0h5zqza8ni/pcodmR7cE=;
+ b=bbzjKFu5lR9GVy798KR25/D4AugU2ca1KFWc950mX7NqSqE1VpsIV6KqiJrL758zT0
+ HI6gkPk/uH8Gw0zXfnlj6czFxlUYoYlq58Z/0RckKgdKfBfOKE9HLjN5Kku9/ctrbmCt
+ kiXByeEaaAUkAHotW1UstgoANekE+4Tk38vrRpa3tlzzGM0nQiuODcnNYJdBeKTlseox
+ jxCNmnvbs54kZ7bjvUnrVOpOjEH4KQNF7V659/gvHAr4kxX5TG0RZwPYGMgXgG+mJ1ru
+ dCCiPeq9YPnAmHdzYak9YoGfH3zzkv8pNTHemkVLZvj3FuKF1EVV4ESARmUtYIY4n2x9
+ r0YA==
+X-Gm-Message-State: APjAAAXduSuFZfzsdz894OVvb4z/PLEaUyeNUAEnXf1TwRrcul18TSiz
+ tW4LG54Rsaxp/friK9JLeVQ=
+X-Google-Smtp-Source: APXvYqypKI9DyXImhQO4ZXzY5R8YIznL6jBZn2xX/sKdyxy5t8X5DCx8JHOYYhrMRBb7hazPHkF9Mg==
+X-Received: by 2002:aed:3242:: with SMTP id y60mr48391936qtd.254.1582572732507; 
+ Mon, 24 Feb 2020 11:32:12 -0800 (PST)
 Received: from localhost.localdomain ([2804:14c:482:5bb::2])
- by smtp.gmail.com with ESMTPSA id g2sm6182497qkb.27.2020.02.24.11.32.06
+ by smtp.gmail.com with ESMTPSA id g2sm6182497qkb.27.2020.02.24.11.32.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 11:32:08 -0800 (PST)
+ Mon, 24 Feb 2020 11:32:11 -0800 (PST)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH 1/6] dt-bindings: arm: fsl: Add TechNexion boards
-Date: Mon, 24 Feb 2020 16:31:55 -0300
-Message-Id: <20200224193200.2773-1-festevam@gmail.com>
+Subject: [PATCH 2/6] ARM: dts: imx7d-pico: Add support for the dwarf baseboard
+Date: Mon, 24 Feb 2020 16:31:56 -0300
+Message-Id: <20200224193200.2773-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200224193200.2773-1-festevam@gmail.com>
+References: <20200224193200.2773-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_113211_060306_B727A41D 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200224_113213_778576_60DAF5C7 
+X-CRM114-Status: GOOD (  15.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -99,35 +105,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add entries for the existing TechNexion boards based on i.MX6UL and i.MX7D.
+Add support for the imx7d pico board with dwarf baseboard combination.
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
- Documentation/devicetree/bindings/arm/fsl.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../devicetree/bindings/arm/fsl.yaml          |  1 +
+ arch/arm/boot/dts/Makefile                    |  1 +
+ arch/arm/boot/dts/imx7d-pico-dwarf.dts        | 87 +++++++++++++++++++
+ 3 files changed, 89 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx7d-pico-dwarf.dts
 
 diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index e654a6376bc4..bad56df60f87 100644
+index bad56df60f87..098aee4930a0 100644
 --- a/Documentation/devicetree/bindings/arm/fsl.yaml
 +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -225,6 +225,8 @@ properties:
-               - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
-               - kontron,imx6ul-n6310-som  # Kontron N6310 SOM
-               - kontron,imx6ul-n6311-som  # Kontron N6311 SOM
-+              - technexion,imx6ul-pico-hobbit  # TechNexion i.MX6UL Pico-Hobbit
-+              - technexion,imx6ul-pico-pi      # TechNexion i.MX6UL Pico-Pi
-           - const: fsl,imx6ul
- 
-       - description: Kontron N6310 S Board
-@@ -284,6 +286,8 @@ properties:
+@@ -286,6 +286,7 @@ properties:
                - fsl,imx7d-sdb             # i.MX7 SabreSD Board
                - fsl,imx7d-sdb-reva        # i.MX7 SabreSD Rev-A Board
                - novtech,imx7d-meerkat96   # i.MX7 Meerkat96 Board
-+              - technexion,imx7d-pico-hobbit  # TechNexion i.MX7D Pico-Hobbit
-+              - technexion,imx7d-pico-pi      # TechNexion i.MX7D Pico-Pi
++              - technexion,imx7d-pico-dwarf   # TechNexion i.MX7D Pico-Dwarf
+               - technexion,imx7d-pico-hobbit  # TechNexion i.MX7D Pico-Hobbit
+               - technexion,imx7d-pico-pi      # TechNexion i.MX7D Pico-Pi
                - toradex,colibri-imx7d                   # Colibri iMX7 Dual Module
-               - toradex,colibri-imx7d-emmc              # Colibri iMX7 Dual 1GB (eMMC) Module
-               - toradex,colibri-imx7d-emmc-eval-v3      # Colibri iMX7 Dual 1GB (eMMC) Module on Colibri Evaluation Board V3
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index 732933318a61..888eaa8b1f92 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -615,6 +615,7 @@ dtb-$(CONFIG_SOC_IMX7D) += \
+ 	imx7d-mba7.dtb \
+ 	imx7d-meerkat96.dtb \
+ 	imx7d-nitrogen7.dtb \
++	imx7d-pico-dwarf.dtb \
+ 	imx7d-pico-hobbit.dtb \
+ 	imx7d-pico-pi.dtb \
+ 	imx7d-sbc-imx7.dtb \
+diff --git a/arch/arm/boot/dts/imx7d-pico-dwarf.dts b/arch/arm/boot/dts/imx7d-pico-dwarf.dts
+new file mode 100644
+index 000000000000..ff734936b77b
+--- /dev/null
++++ b/arch/arm/boot/dts/imx7d-pico-dwarf.dts
+@@ -0,0 +1,87 @@
++// SPDX-License-Identifier: (GPL-2.0 OR MIT)
++//
++// Copyright 2015 Technexion Ltd.
++//
++// Author: Wig Cheng  <wig.cheng@technexion.com>
++//	   Richard Hu <richard.hu@technexion.com>
++//	   Tapani Utriainen <tapani@technexion.com>
++/dts-v1/;
++
++#include "imx7d-pico.dtsi"
++/ {
++	model = "TechNexion PICO-IMX7D and DWARF baseboard";
++	compatible = "technexion,imx7d-pico-dwarf", "fsl,imx7d";
++
++	sound {
++		compatible = "fsl,imx-audio-sgtl5000";
++		model = "imx7d-sgtl5000";
++		audio-cpu = <&sai1>;
++		audio-codec = <&sgtl5000>;
++		audio-routing =
++			"LINE_IN", "Line In Jack",
++			"MIC_IN", "Mic Jack",
++			"Mic Jack", "Mic Bias",
++			"Headphone Jack", "HP_OUT";
++	};
++
++	sys_mclk: clock-sys-mclk {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <24576000>;
++	};
++};
++
++&i2c1 {
++	clock_frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++	status = "okay";
++
++	sgtl5000: codec@a {
++		reg = <0x0a>;
++		compatible = "fsl,sgtl5000";
++		clocks = <&sys_mclk>;
++		VDDA-supply = <&reg_2p5v>;
++		VDDIO-supply = <&reg_3p3v>;
++	};
++
++	pressure-sensor@60 {
++		compatible = "fsl,mpl3115";
++		reg = <0x60>;
++	};
++};
++
++&i2c4 {
++	clock_frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++	status = "okay";
++
++	pca9554: io-expander@25 {
++		compatible = "nxp,pca9554";
++		gpio-controller;
++		#gpio-cells = <2>;
++		#interrupt-cells = <2>;
++		reg = <0x25>;
++	};
++
++	touchscreen@38 {
++		compatible = "edt,edt-ft5x06";
++		reg = <0x38>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_touchscreen>;
++		interrupt-parent = <&gpio2>;
++		interrupts = <13 IRQ_TYPE_EDGE_FALLING>;
++		reset-gpios = <&pca9554 4 GPIO_ACTIVE_LOW>;
++		touchscreen-size-x = <800>;
++		touchscreen-size-y = <480>;
++	};
++};
++
++&iomuxc {
++	pinctrl_touchscreen: touchscreengrp {
++		fsl,pins = <
++			MX7D_PAD_EPDC_DATA13__GPIO2_IO13	0x14
++		>;
++	};
++};
 -- 
 2.17.1
 
