@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73E9716B4E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:11:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72BCA16B4E7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:12:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=lwKaUGVoO1nQ8W0oZiU04ljDBoSFqkbkICNvwXJbS+E=; b=WSfp0D6uprXILlVc1y/70IU1AJ
-	EGSnF4uvCJKD70VxYxJfHZ5qNO+7PZQB3dikrtv1Cs9HrkXYRdxVEhdKrICCCO871Mbw5iIv3nPLX
-	84QQxgYbgw/YMIZd1i07UV2Cya0dI0KpQr/F2qNOHIr1h3rFZkbOuC0VvT7dAhT2EHjjmY9XrgvlZ
-	3dWEky0ymhxk8T71qbtyKxxM68wfO6fe6SFcLGHxdr3WC2uOIL/QCCfg6WTZyW1NumgU5pm8gDl/t
-	LYnJcwyJME+T4yrGVZp0G06C1ufuWdGP8C7w9/agrrN+v+Ve17k4MhhNUwrVNFSAzg96bpGPVdi3S
-	4IAp/oeQ==;
+	bh=KCi8GXyHF/cAdaUmY1kuSt595KFqwNQ1ym0mllEcwBw=; b=Gxy+gf1TS+d/2XR5lMYGLSPT2o
+	y5a+ARujTfckFSdDfslqfFKEvTjEH0tVySaBcqgPnYPUx2JqJqPoEcfgrNBzZPl6Lbna5VleeCqXQ
+	1uS0onPfDWfGs4c7UJHh3MVe65a5mYE6X5AhK2dtGiOIz5OVaHdT0AHGA1FM15T/V3AaZZMWbwtH1
+	8sRMo8vCZAkDx02CF4oTt2Lh+Godg1byxjXVLmjzZzBmAo/0gT3IYZa1zW9L0Mw432LBkcrhM5WWU
+	5IjAHlD5+Rn7NApT0jpAVxM2/SuPfphlDl4F+6GjZpIqhA6VwoZIyeDhA3vZweYV0mVome+OgIQGw
+	S2OBIzIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Msa-0005YV-1h; Mon, 24 Feb 2020 23:11:12 +0000
+	id 1j6Mtq-0006ut-UX; Mon, 24 Feb 2020 23:12:30 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Mq8-0002SU-Nn
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:43 +0000
+ id 1j6MqA-0002TV-Cz
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:45 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A9151B0786;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 690011B0794;
  Tue, 25 Feb 2020 00:08:32 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E8CEC1B0794;
- Tue, 25 Feb 2020 00:08:31 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 314C41B0795;
+ Tue, 25 Feb 2020 00:08:32 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 762EB40A85; Mon, 24 Feb 2020 16:08:31 -0700 (MST)
+ B646A40A55; Mon, 24 Feb 2020 16:08:31 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 10/15] arm64: defconfig: Enable QorIQ GPIO driver
-Date: Mon, 24 Feb 2020 17:08:05 -0600
-Message-Id: <1582585690-463-11-git-send-email-leoyang.li@nxp.com>
+Subject: [PATCH 11/15] arm64: defconfig: Enable ARM Mali display driver
+Date: Mon, 24 Feb 2020 17:08:06 -0600
+Message-Id: <1582585690-463-12-git-send-email-leoyang.li@nxp.com>
 X-Mailer: git-send-email 1.9.0
 In-Reply-To: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_150840_933921_3449CB68 
-X-CRM114-Status: UNSURE (   7.25  )
+X-CRM114-CacheID: sfid-20200224_150842_612747_B36D6BC3 
+X-CRM114-Status: UNSURE (   7.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,8 +75,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables generic GPIO driver for varous QorIQ SoCs.  The driver can only
-be built-in right now.
+Enables the Mali display driver for the display port on NXP LS1028a SoC.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
@@ -84,17 +83,17 @@ Signed-off-by: Li Yang <leoyang.li@nxp.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index a625e322fa27..7da63af7c9a1 100644
+index 7da63af7c9a1..557d2cefba6d 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -439,6 +439,7 @@ CONFIG_PINCTRL_SM8150=y
- CONFIG_GPIO_ALTERA=m
- CONFIG_GPIO_DWAPB=y
- CONFIG_GPIO_MB86S7X=y
-+CONFIG_GPIO_MPC8XXX=y
- CONFIG_GPIO_PL061=y
- CONFIG_GPIO_RCAR=y
- CONFIG_GPIO_UNIPHIER=y
+@@ -548,6 +548,7 @@ CONFIG_VIDEO_RENESAS_FCP=m
+ CONFIG_VIDEO_RENESAS_VSP1=m
+ CONFIG_DRM=m
+ CONFIG_DRM_I2C_NXP_TDA998X=m
++CONFIG_DRM_MALI_DISPLAY=m
+ CONFIG_DRM_NOUVEAU=m
+ CONFIG_DRM_EXYNOS=m
+ CONFIG_DRM_EXYNOS5433_DECON=y
 -- 
 2.17.1
 
