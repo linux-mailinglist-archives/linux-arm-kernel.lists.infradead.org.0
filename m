@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFC35169E7E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:32:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CC4A169E78
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:31:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3hoAz5bXa6tztQJdTXRiAfJb8bZGs/v6LWUA6Hr3QZo=; b=g7QlbD+9Gk4w/Ab35KoMVP93eP
-	oiqKYbEdkHlFUDztjsLQOd+MWtSe4B9wF1+KUOv1qbhWsQJMOF4zYs1p06cOOwvpHoGeidXyISgid
-	tLdbo4NY9lLTdS3Zz6juvMt+n612cyn31c1lTPAilDkLTmThzOSHakdNitSEEvgvHB7m1W4kJNevF
-	DCZmX/bEgk7FFkwLKcffMGCMUk/MfV6NNpWJUaf83gqax8EFT9P8bF3ECxFKu4xlR0i2fMpEuRsIy
-	iKVgu0/9GZXlLhtQmT3yKJAsUDkB0qCppiS4P02mkUGPftKVEFb4wxc9NcTnra/UHOJ/AWiWxM5Th
-	NSbA4WkQ==;
+	bh=Jn9NtYDQQ2IFcdbKU6815bwb6p9PtnDMYRhBQFj0LJg=; b=qf6oAmlbOGAH+f4qh28M5iyQiH
+	LsrPKJImHSnp4x3zBjHUlZ6Cwj9KFFVGztH8xsjl7gEp8dY7sfIPg/ILH8o3Xy3tlnX2imU5tNo/r
+	lpTj3ebYANXuwbMkhII1BDad+r8J2Ldp4vFC1XWKA0xX/gUQyv0gjvcndp1T2B1VMwrSR5x8byVmO
+	S/EXvQeEvu0FXZs6LSwTVqleop9Gwzo9f7woQGpWQUR5yKZC8vnLhJNuY150LjWiVfioOxx0U+44S
+	tvwvsiwlhsm6/EH0eT63YymsOlrR0osngtemVMS/HhotUHu5L9gW/GFbAyApMb9rz1Hsq/V2jcPY/
+	NQov2vqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j67IE-0006Zu-NA; Mon, 24 Feb 2020 06:32:38 +0000
+	id 1j67HN-0005XS-5Y; Mon, 24 Feb 2020 06:31:45 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j67H9-0005Ze-8U
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:31:34 +0000
+ id 1j67Gg-00056u-Tu
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:31:05 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 5AEA9E031B;
- Sun, 23 Feb 2020 22:30:59 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id C7BD0E03D4;
+ Sun, 23 Feb 2020 22:31:02 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id AnUqeA9WwopK; Sun, 23 Feb 2020 22:30:58 -0800 (PST)
+ with ESMTP id keeVhDmLfNLf; Sun, 23 Feb 2020 22:31:02 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de
-Subject: [PATCH v3 3/8] arm64: dts: librem5-devkit: allow modem to wake the
- system from suspend
-Date: Mon, 24 Feb 2020 07:29:12 +0100
-Message-Id: <20200224062917.4895-4-martin.kepplinger@puri.sm>
+Subject: [PATCH v3 4/8] arm64: dts: librem5-devkit: add a vbus supply to usb0
+Date: Mon, 24 Feb 2020 07:29:13 +0100
+Message-Id: <20200224062917.4895-5-martin.kepplinger@puri.sm>
 In-Reply-To: <20200224062917.4895-1-martin.kepplinger@puri.sm>
 References: <20200224062917.4895-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_223131_427294_507E63BC 
-X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-CacheID: sfid-20200223_223102_962350_7A13F4F9 
+X-CRM114-Status: UNSURE (   7.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,41 +74,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-Connect the WoWWAN signal to a gpio key to wake up the system from suspend.
+Without a VBUS supply the dwc3 driver won't go into otg mode.
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
 ---
- .../arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index ed4a10255bad..66d6b7c6dca7 100644
+index 66d6b7c6dca7..823d5c60a8fa 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -55,6 +55,15 @@
- 			wakeup-source;
- 			linux,code = <KEY_HP>;
- 		};
-+
-+		wwan-wake {
-+			label = "WWAN_WAKE";
-+			gpios = <&gpio3 8 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio3>;
-+			interrupts = <8 GPIO_ACTIVE_LOW>;
-+			wakeup-source;
-+			linux,code = <KEY_PHONE>;
-+		};
- 	};
+@@ -872,6 +872,7 @@
+ };
  
- 	leds {
-@@ -576,6 +585,7 @@
- 			MX8MQ_IOMUXC_SAI2_RXFS_GPIO4_IO21	0x16
- 			MX8MQ_IOMUXC_SAI2_RXC_GPIO4_IO22	0x16
- 			MX8MQ_IOMUXC_SAI5_RXC_GPIO3_IO20	0x180  /* HP_DET */
-+			MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8	0x80   /* nWoWWAN */
- 		>;
- 	};
+ &usb3_phy0 {
++	vbus-supply = <&reg_5v_p>;
+ 	status = "okay";
+ };
  
 -- 
 2.20.1
