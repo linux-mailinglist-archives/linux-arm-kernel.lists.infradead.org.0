@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94A1E16ADD8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:41:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD0BF16ADDA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:42:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vvo/36ptrbKoJpbFx535+fPSFiyagzD1+jFgw4UUDKQ=; b=Wb1LSJKjHOh64i
-	bdy+1E9pZxMkvYhk8OvmYtKaB++yYWc9cqLnvtgNVBLmanpkeSALnHPwKm4jSGfQ7XYmmkhe7RqNY
-	umvtf2+37vt6d4s8qq8aka9xaPNbRZDhWNhnCgft9f73rjfwkPY5ViuaFTST8zwBu2TMgYXZkCBQU
-	OxkOCmqP2lNpDp3BBGgT5FOo0LFetdJZCmYGKfamn9Qnioi/fRNbQF7TC7UVoZqCgJ2ddNVDr7rNv
-	D5Z0qw3sWN36yiltehYtr6pm+57EhRuZzSmHV5b1Dfb8IYuXnWd9qGhNORUwkSKwlQJ40GDf3dk9j
-	pI+5URZKvbQVo85K7Rlg==;
+	List-Owner; bh=trCRIyEJccdhzQTanA4hkbLgkaO5hmrJSqy1Ps7GfkA=; b=e89kZIDapTbrAL
+	s+3qLrmSQ55K7BBws5yr4i7JbTQzXt7nn3jo/v1QpJFsYrGlGADHxpcpdpsFdQrwEnHvJ7eJcesuW
+	jm3LtHa0JiD4AuC9GqhWdpoSyyeqPIazc0Peg/F0MI4hqSrsYXxtQmK0/eJu2AGOVXGrdu6TR6qt/
+	g/FDbRU7KsCnlcM3eM9wdpbq2r5J1MqvqJLt5fUijwotHPA0h9P2deH8zimmzT7UigZLqkaaZVJm4
+	1ID/lRR5TXF8EmWHFH2zvD+duo04h5cik3zFPFGtJ75JLbJv/lc5WB6vuTXQ58f3KTZ6+ak0qbDcu
+	fOB1brew8d2hGJgj7EcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Hjl-0002NR-ST; Mon, 24 Feb 2020 17:41:45 +0000
-Received: from mailoutvs56.siol.net ([185.57.226.247] helo=mail.siol.net)
+	id 1j6Hk9-0002a3-Jw; Mon, 24 Feb 2020 17:42:09 +0000
+Received: from mailoutvs15.siol.net ([185.57.226.206] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6HhU-00089X-TN
+ id 1j6HhV-0008Ab-AS
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:39:27 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id A6940523703;
- Mon, 24 Feb 2020 18:39:21 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id D633A5236FC;
+ Mon, 24 Feb 2020 18:39:23 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id NodN5chrT5Df; Mon, 24 Feb 2020 18:39:21 +0100 (CET)
+ with ESMTP id bQ31Av_L3CjJ; Mon, 24 Feb 2020 18:39:23 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 0C400523723;
- Mon, 24 Feb 2020 18:39:21 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 6F5505236BE;
+ Mon, 24 Feb 2020 18:39:23 +0100 (CET)
 Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
  [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id B00F1523703;
- Mon, 24 Feb 2020 18:39:18 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id 118EE52373C;
+ Mon, 24 Feb 2020 18:39:21 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH 5/7] drm/sun4i: de2: csc_mode in de2 format struct is mostly
- redundant
-Date: Mon, 24 Feb 2020 18:38:59 +0100
-Message-Id: <20200224173901.174016-6-jernej.skrabec@siol.net>
+Subject: [PATCH 6/7] drm/sun4i: de2: Don't return de2_fmt_info struct
+Date: Mon, 24 Feb 2020 18:39:00 +0100
+Message-Id: <20200224173901.174016-7-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200224173901.174016-1-jernej.skrabec@siol.net>
 References: <20200224173901.174016-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_093925_294207_B30D8A10 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20200224_093925_602582_7B850D81 
+X-CRM114-Status: GOOD (  13.95  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.247 listed in list.dnswl.org]
+ low trust [185.57.226.206 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,352 +79,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For RGB formats CSC mode is always set to none and for YUV formats
-almost always set to YUV to RGB.
+Now that de2_fmt_info contains only DRM <-> HW format mapping, it
+doesn't make sense to return pointer to structure when searching by DRM
+format. Rework that to return only HW format instead.
 
-Add a helper function to deduce CSC mode from format.
+This doesn't make any functional change.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/gpu/drm/sun4i/sun8i_mixer.c    | 48 --------------------------
- drivers/gpu/drm/sun4i/sun8i_mixer.h    |  6 ++--
- drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 24 +++++++++++--
- 3 files changed, 23 insertions(+), 55 deletions(-)
+ drivers/gpu/drm/sun4i/sun8i_mixer.c    | 15 +++++++++++----
+ drivers/gpu/drm/sun4i/sun8i_mixer.h    |  7 +------
+ drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 10 +++++-----
+ drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 12 ++++++------
+ 4 files changed, 23 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-index 45e3cd9e718c..e078ec96de2d 100644
+index e078ec96de2d..56cc037fd312 100644
 --- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
 +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-@@ -31,250 +31,202 @@ static const struct de2_fmt_info de2_formats[] = {
- 	{
- 		.drm_fmt = DRM_FORMAT_ARGB8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ARGB8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ABGR8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ABGR8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGBA8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBA8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGRA8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRA8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_XRGB8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_XRGB8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_XBGR8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_XBGR8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGBX8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBX8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGRX8888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRX8888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGB888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGB888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGR888,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGR888,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGB565,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGB565,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGR565,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGR565,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ARGB4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ARGB4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_XRGB4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ARGB4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ABGR4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ABGR4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_XBGR4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ABGR4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGBA4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBA4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_RGBX4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBA4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGRA4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRA4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_BGRX4444,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRA4444,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ARGB1555,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ARGB1555,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_XRGB1555,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ARGB1555,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ABGR1555,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ABGR1555,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_XBGR1555,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ABGR1555,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGBA5551,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBA5551,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_RGBX5551,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBA5551,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGRA5551,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRA5551,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		/* for DE2 VI layer which ignores alpha */
- 		.drm_fmt = DRM_FORMAT_BGRX5551,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRA5551,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ARGB2101010,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ARGB2101010,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_ABGR2101010,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_ABGR2101010,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_RGBA1010102,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_RGBA1010102,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_BGRA1010102,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_BGRA1010102,
--		.csc = SUN8I_CSC_MODE_OFF,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_UYVY,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_UYVY,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_VYUY,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_VYUY,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YUYV,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUYV,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YVYU,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YVYU,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_NV16,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_NV16,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_NV61,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_NV61,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_NV12,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_NV12,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_NV21,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_NV21,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YUV422,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUV422,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YUV420,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUV420,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YUV411,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUV411,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YVU422,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUV422,
--		.csc = SUN8I_CSC_MODE_YVU2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YVU420,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUV420,
--		.csc = SUN8I_CSC_MODE_YVU2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_YVU411,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_YUV411,
--		.csc = SUN8I_CSC_MODE_YVU2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_P010,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_P010_YUV,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- 	{
- 		.drm_fmt = DRM_FORMAT_P210,
- 		.de2_fmt = SUN8I_MIXER_FBFMT_P210_YUV,
--		.csc = SUN8I_CSC_MODE_YUV2RGB,
- 	},
- };
- 
-diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.h b/drivers/gpu/drm/sun4i/sun8i_mixer.h
-index 447ad0b01b00..0dd4a347fa06 100644
---- a/drivers/gpu/drm/sun4i/sun8i_mixer.h
-+++ b/drivers/gpu/drm/sun4i/sun8i_mixer.h
-@@ -10,7 +10,6 @@
- #include <linux/regmap.h>
- #include <linux/reset.h>
- 
--#include "sun8i_csc.h"
+@@ -27,6 +27,11 @@
+ #include "sun8i_vi_layer.h"
  #include "sunxi_engine.h"
  
- #define SUN8I_MIXER_SIZE(w, h)			(((h) - 1) << 16 | ((w) - 1))
-@@ -145,9 +144,8 @@
- #define SUN50I_MIXER_CDC1_EN			0xd8000
- 
- struct de2_fmt_info {
--	u32			drm_fmt;
--	u32			de2_fmt;
--	enum sun8i_csc_mode	csc;
++struct de2_fmt_info {
 +	u32	drm_fmt;
 +	u32	de2_fmt;
++};
++
+ static const struct de2_fmt_info de2_formats[] = {
+ 	{
+ 		.drm_fmt = DRM_FORMAT_ARGB8888,
+@@ -230,15 +235,17 @@ static const struct de2_fmt_info de2_formats[] = {
+ 	},
  };
  
- /**
-diff --git a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
-index a2eb4371026d..d783c2bfc77e 100644
---- a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
-+++ b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
-@@ -12,6 +12,7 @@
- #include <drm/drm_plane_helper.h>
- #include <drm/drm_probe_helper.h>
+-const struct de2_fmt_info *sun8i_mixer_format_info(u32 format)
++int sun8i_mixer_drm_format_to_hw(u32 format, u32 *hw_format)
+ {
+ 	unsigned int i;
  
-+#include "sun8i_csc.h"
- #include "sun8i_vi_layer.h"
- #include "sun8i_mixer.h"
- #include "sun8i_vi_scaler.h"
-@@ -210,13 +211,29 @@ static int sun8i_vi_layer_update_coord(struct sun8i_mixer *mixer, int channel,
- 	return 0;
+ 	for (i = 0; i < ARRAY_SIZE(de2_formats); ++i)
+-		if (de2_formats[i].drm_fmt == format)
+-			return &de2_formats[i];
++		if (de2_formats[i].drm_fmt == format) {
++			*hw_format = de2_formats[i].de2_fmt;
++			return 0;
++		}
+ 
+-	return NULL;
++	return -EINVAL;
  }
  
-+static bool sun8i_vi_layer_get_csc_mode(const struct drm_format_info *format)
-+{
-+	if (!format->is_yuv)
-+		return SUN8I_CSC_MODE_OFF;
-+
-+	switch (format->format) {
-+	case DRM_FORMAT_YVU411:
-+	case DRM_FORMAT_YVU420:
-+	case DRM_FORMAT_YVU422:
-+	case DRM_FORMAT_YVU444:
-+		return SUN8I_CSC_MODE_YVU2RGB;
-+	default:
-+		return SUN8I_CSC_MODE_YUV2RGB;
-+	}
-+}
-+
- static int sun8i_vi_layer_update_formats(struct sun8i_mixer *mixer, int channel,
+ static void sun8i_mixer_commit(struct sunxi_engine *engine)
+diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.h b/drivers/gpu/drm/sun4i/sun8i_mixer.h
+index 0dd4a347fa06..7576b523fdbb 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_mixer.h
++++ b/drivers/gpu/drm/sun4i/sun8i_mixer.h
+@@ -143,11 +143,6 @@
+ #define SUN50I_MIXER_CDC0_EN			0xd0000
+ #define SUN50I_MIXER_CDC1_EN			0xd8000
+ 
+-struct de2_fmt_info {
+-	u32	drm_fmt;
+-	u32	de2_fmt;
+-};
+-
+ /**
+  * struct sun8i_mixer_cfg - mixer HW configuration
+  * @vi_num: number of VI channels
+@@ -207,5 +202,5 @@ sun8i_channel_base(struct sun8i_mixer *mixer, int channel)
+ 		return DE2_CH_BASE + channel * DE2_CH_SIZE;
+ }
+ 
+-const struct de2_fmt_info *sun8i_mixer_format_info(u32 format);
++int sun8i_mixer_drm_format_to_hw(u32 format, u32 *hw_format);
+ #endif /* _SUN8I_MIXER_H_ */
+diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+index 99ee19a00415..a64aaea1ba74 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
++++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+@@ -174,20 +174,20 @@ static int sun8i_ui_layer_update_formats(struct sun8i_mixer *mixer, int channel,
  					 int overlay, struct drm_plane *plane)
  {
  	struct drm_plane_state *state = plane->state;
- 	const struct de2_fmt_info *fmt_info;
+-	const struct de2_fmt_info *fmt_info;
  	const struct drm_format_info *fmt;
 -	u32 val, ch_base;
-+	u32 val, ch_base, csc_mode;
++	u32 val, ch_base, hw_fmt;
++	int ret;
  
  	ch_base = sun8i_channel_base(mixer, channel);
  
-@@ -232,8 +249,9 @@ static int sun8i_vi_layer_update_formats(struct sun8i_mixer *mixer, int channel,
+ 	fmt = state->fb->format;
+-	fmt_info = sun8i_mixer_format_info(fmt->format);
+-	if (!fmt_info || fmt->is_yuv) {
++	ret = sun8i_mixer_drm_format_to_hw(fmt->format, &hw_fmt);
++	if (ret || fmt->is_yuv) {
+ 		DRM_DEBUG_DRIVER("Invalid format\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	val = fmt_info->de2_fmt << SUN8I_MIXER_CHAN_UI_LAYER_ATTR_FBFMT_OFFSET;
++	val = hw_fmt << SUN8I_MIXER_CHAN_UI_LAYER_ATTR_FBFMT_OFFSET;
+ 	regmap_update_bits(mixer->engine.regs,
+ 			   SUN8I_MIXER_CHAN_UI_LAYER_ATTR(ch_base, overlay),
+ 			   SUN8I_MIXER_CHAN_UI_LAYER_ATTR_FBFMT_MASK, val);
+diff --git a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+index d783c2bfc77e..b1e1ba2da663 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
++++ b/drivers/gpu/drm/sun4i/sun8i_vi_layer.c
+@@ -231,20 +231,20 @@ static int sun8i_vi_layer_update_formats(struct sun8i_mixer *mixer, int channel,
+ 					 int overlay, struct drm_plane *plane)
+ {
+ 	struct drm_plane_state *state = plane->state;
+-	const struct de2_fmt_info *fmt_info;
++	u32 val, ch_base, csc_mode, hw_fmt;
+ 	const struct drm_format_info *fmt;
+-	u32 val, ch_base, csc_mode;
++	int ret;
+ 
+ 	ch_base = sun8i_channel_base(mixer, channel);
+ 
+ 	fmt = state->fb->format;
+-	fmt_info = sun8i_mixer_format_info(fmt->format);
+-	if (!fmt_info) {
++	ret = sun8i_mixer_drm_format_to_hw(fmt->format, &hw_fmt);
++	if (ret) {
+ 		DRM_DEBUG_DRIVER("Invalid format\n");
+-		return -EINVAL;
++		return ret;
+ 	}
+ 
+-	val = fmt_info->de2_fmt << SUN8I_MIXER_CHAN_VI_LAYER_ATTR_FBFMT_OFFSET;
++	val = hw_fmt << SUN8I_MIXER_CHAN_VI_LAYER_ATTR_FBFMT_OFFSET;
+ 	regmap_update_bits(mixer->engine.regs,
  			   SUN8I_MIXER_CHAN_VI_LAYER_ATTR(ch_base, overlay),
  			   SUN8I_MIXER_CHAN_VI_LAYER_ATTR_FBFMT_MASK, val);
- 
--	if (fmt_info->csc != SUN8I_CSC_MODE_OFF) {
--		sun8i_csc_set_ccsc_coefficients(mixer, channel, fmt_info->csc,
-+	csc_mode = sun8i_vi_layer_get_csc_mode(fmt);
-+	if (csc_mode != SUN8I_CSC_MODE_OFF) {
-+		sun8i_csc_set_ccsc_coefficients(mixer, channel, csc_mode,
- 						state->color_encoding,
- 						state->color_range);
- 		sun8i_csc_enable_ccsc(mixer, channel, true);
 -- 
 2.25.1
 
