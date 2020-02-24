@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84FAF16AF6B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:40:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A85F16AF73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:41:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GafVfZKhIvlByWlRhwCnfiOWIZtmtmcCHnGdcRfZ0Lo=; b=QexFg9AtVtN3V7S/YkImnKzqMq
-	rcxomFMySjLttPD6Pi7/53RhPCG50kl+tydj7g4BUt1oGFG4z9oRCWZLR15QQfsm8AeIcS56y3PKD
-	Fq2xc4o1VkUO6h+zeS1jqDZ3KX+8i8o1xbNYtxt4yJw3NtZNgC/9KPwaTDEneKn+/I/tzAEyhLC+z
-	FHNZoB1dTmXO/UAc48itZm01Yp2UrJ2BkYH9mEOrh/oFlDOEdt1pK05XtDStPTTOdUSZLceUPJPyj
-	5q5DNDYFfRHvFZ6e8Sx855awBpe1u/3+MslZAVfa7RxQPbeLGGlBrjE2GVw/ClBSK3bn/SuzxS62b
-	GFyHyFIw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N78rv2WVEGwSmPdhw0uMuajzHsWszHt0cfRi/5h5Gs4=; b=cAZy1hYik/MF1/
+	LmCJWObPYD6askxv2hH4aONLzEabdyoMmMVKcaIWU4qdTFESO7T/aTnzsNNaZYC+AIzvgF0amw7/y
+	iUtt5a27q2k7bmNTSC1G95xp7/Rw5WmFYsgc5QjpxmkIsddAurXsZTvwHEnmJTz147Uwr5LsgkxPM
+	cbFmivMU35d/s33OejIA1d9/CcBVVwaqxf4MUXS6yI4inWrW/LYwUyaD0uXLxdHup1l16N4lu0DZ3
+	xylBwo+Q8ucGtCeoOKln+gHqylZ6s3xC2gXB1S1IaAb4R2WAFnMT8IP9ZntLboE1I30Jc3uyUjDnc
+	+YUBO4D3eYq0YdbeDdnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Iey-0003vx-1j; Mon, 24 Feb 2020 18:40:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Iep-0003vE-De
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:40:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E67821FB;
- Mon, 24 Feb 2020 10:40:42 -0800 (PST)
-Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B57113F703;
- Mon, 24 Feb 2020 10:40:40 -0800 (PST)
-References: <20200224141142.25445-1-ionela.voinescu@arm.com>
- <20200224141142.25445-7-ionela.voinescu@arm.com>
-User-agent: mu4e 0.9.17; emacs 26.3
-From: Valentin Schneider <valentin.schneider@arm.com>
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-Subject: Re: [PATCH v4 6/7] arm64: use activity monitors for frequency
- invariance
-In-reply-to: <20200224141142.25445-7-ionela.voinescu@arm.com>
-Date: Mon, 24 Feb 2020 18:40:38 +0000
-Message-ID: <jhjmu97ygk9.fsf@arm.com>
+	id 1j6IfM-0004Cc-6I; Mon, 24 Feb 2020 18:41:16 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6IfG-0004Bz-0v; Mon, 24 Feb 2020 18:41:11 +0000
+Received: by mail-ot1-f66.google.com with SMTP id i6so9642480otr.7;
+ Mon, 24 Feb 2020 10:41:09 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+sVRf7GGeylhrZHXm0oszIDVdS6Xo7uktXxhGGTwofg=;
+ b=ebCTRezqaw4+cyHGIAOJZ9iSQxxT+yoKC93sEHnn5vM7HxLkfosa2cM6S0fBy0jdOA
+ Pyz0ba/1Jkkv3Y0y/8bmQ0u7poNNxMpSTM9ahlEcW2odBUAXviooc7ECGAl8JgyN8yGn
+ KjI51Ck2RCKgqbtHq7PqAGak5Qs4lbbogqpDJgR+8X8Dgsy9yGf1k7xM57hAbvzQmykR
+ oLPF032bNFK3g3N2czBkuIXkUwpAGdc9Gmj2duHy/dWP7H96t8JJEAG83PixpxRlecIp
+ Lz8b4IGiF0ywvRVae8drlI9fLknC+ZWhWnDR41V/RKziaSUIHZmdR9gsho8XKaeFgLLI
+ id7w==
+X-Gm-Message-State: APjAAAVaRQpYcVBHdiRcnjkeeAAlkkHCdp/jEFAuAPzu6buzIEL/F/mY
+ aTwa/a4DqmN4U4iTPE5HZQ==
+X-Google-Smtp-Source: APXvYqwOcQ+Wis2rH/zphuGcXoi5E6fO/77Hc1wq8cqj519RKyKMhXx/ovrxEJoXA98US2+hSw3maw==
+X-Received: by 2002:a9d:6e02:: with SMTP id e2mr42973744otr.194.1582569668643; 
+ Mon, 24 Feb 2020 10:41:08 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id i6sm4685288oto.62.2020.02.24.10.41.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 24 Feb 2020 10:41:08 -0800 (PST)
+Received: (nullmailer pid 5865 invoked by uid 1000);
+ Mon, 24 Feb 2020 18:41:07 -0000
+Date: Mon, 24 Feb 2020 12:41:07 -0600
+From: Rob Herring <robh@kernel.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH 29/89] dt-bindings: display: Convert VC4 bindings to
+ schemas
+Message-ID: <20200224184107.GA4189@bogus>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <bf8aa2deea50cc3599caeb9ed1a07556353415df.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <bf8aa2deea50cc3599caeb9ed1a07556353415df.1582533919.git-series.maxime@cerno.tech>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_104043_542744_AB76EE7F 
-X-CRM114-Status: GOOD (  12.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200224_104110_060250_9C26F826 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,104 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
- linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- mingo@redhat.com, viresh.kumar@linaro.org,
- linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
- dietmar.eggemann@arm.com, lukasz.luba@arm.com
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Maxime Ripard <maxime@cerno.tech>, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 24 Feb 2020 10:06:31 +0100, Maxime Ripard wrote:
+> The BCM283x SoCs have a display pipeline composed of several controllers
+> with device tree bindings that are supported by Linux.
+> 
+> Now that we have the DT validation in place, let's split into separate
+> files and convert the device tree bindings for those controllers to
+> schemas.
+> 
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt              | 174 +------------------------------------------------------------------------
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml         |  66 +++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml        |  73 ++++++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml        |  75 +++++++++++++++++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml         |  37 +++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml |  40 +++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml         |  37 +++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml         |  42 +++++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml         |  34 ++++++++++++++-
+>  Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml         |  44 ++++++++++++++++++-
+>  MAINTAINERS                                                             |   2 +-
+>  11 files changed, 449 insertions(+), 175 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml
+> 
 
-Ionela Voinescu writes:
+My bot found errors running 'make dt_binding_check' on your patch:
 
-> Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
+warning: no schema found in file: Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml: ignoring, error in schema: properties
+Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml: properties: '#clock-cells' is a dependency of 'clock-output-names'
+Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.example.dts' failed
+make[1]: *** [Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.example.dts] Error 1
+Makefile:1263: recipe for target 'dt_binding_check' failed
+make: *** [dt_binding_check] Error 2
 
-With the small nits below:
-
-Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
-
-> diff --git a/arch/arm64/kernel/topology.c b/arch/arm64/kernel/topology.c
-> index fa9528dfd0ce..7606cbd63517 100644
-> --- a/arch/arm64/kernel/topology.c
-> +++ b/arch/arm64/kernel/topology.c
-> +
-> +static inline int
-
-That should be bool, seeing what it returns.
-
-> +enable_policy_freq_counters(int cpu, cpumask_var_t valid_cpus)
-> +{
-> +	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
-> +
-> +	if (!policy) {
-> +		pr_debug("CPU%d: No cpufreq policy found.\n", cpu);
-> +		return false;
-> +	}
-> +
-> +	if (cpumask_subset(policy->related_cpus, valid_cpus))
-> +		cpumask_or(amu_fie_cpus, policy->related_cpus,
-> +			   amu_fie_cpus);
-> +
-> +	cpufreq_cpu_put(policy);
-> +
-> +	return true;
-> +}
-> diff --git a/drivers/base/arch_topology.c b/drivers/base/arch_topology.c
-> index 1eb81f113786..1ab2b7503d63 100644
-> --- a/drivers/base/arch_topology.c
-> +++ b/drivers/base/arch_topology.c
-> @@ -29,6 +29,14 @@ void arch_set_freq_scale(struct cpumask *cpus, unsigned long cur_freq,
->       unsigned long scale;
->       int i;
->
-> +	/*
-> +	 * If the use of counters for FIE is enabled, just return as we don't
-> +	 * want to update the scale factor with information from CPUFREQ.
-> +	 * Instead the scale factor will be updated from arch_scale_freq_tick.
-> +	 */
-> +	if (arch_cpu_freq_counters(cpus))
-> +		return;
-> +
->       scale = (cur_freq << SCHED_CAPACITY_SHIFT) / max_freq;
->
->       for_each_cpu(i, cpus)
-> diff --git a/include/linux/topology.h b/include/linux/topology.h
-> index eb2fe6edd73c..397aad6ae163 100644
-> --- a/include/linux/topology.h
-> +++ b/include/linux/topology.h
-> @@ -227,5 +227,12 @@ static inline const struct cpumask *cpu_cpu_mask(int cpu)
->       return cpumask_of_node(cpu_to_node(cpu));
->  }
->
-> +#ifndef arch_cpu_freq_counters
-> +static __always_inline
-> +bool arch_cpu_freq_counters(struct cpumask *cpus)
-> +{
-> +	return false;
-> +}
-> +#endif
->
-
-Apologies for commenting on this only now, I had missed it in my earlier
-round of review.
-
-I would've liked to keep this contained within arm64 stuff until we agreed
-on a more generic counter-driven FIE interface, but seems like we can't evade
-it due to the arch_topology situation.
-
-Would it make sense to relocate this stub to arch_topology.h instead, at
-least for the time being? That way the only non-arm64 changes are condensed
-in arch_topology (even if it doesn't change much in terms of header files,
-since topology.h imports arch_topology.h)
-
->  #endif /* _LINUX_TOPOLOGY_H */
+See https://patchwork.ozlabs.org/patch/1242907
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
