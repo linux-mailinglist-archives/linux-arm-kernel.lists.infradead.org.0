@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7FF316A1AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:16:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A665016A17D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:14:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4qWz/bqZYk0cB+NHAik9kxiWf1jbyPrHnH3dZ7rIaGM=; b=M5N9dfnhE6UNFD
-	R7mxNRiReztEAZX9xia07IiztAu54BTFyiKfTdNuR0RsQrH/SAMQj3QjeEsulonskxBDISBWGcav1
-	7oIO8R/vp43i2PDucTRuRJvCIR3zUhvOHSX+98Nys4P4j1BV3EeCI1FJ0m+lnPLIUcIb1lbtry2/x
-	o4wdiE6wQFeqEw7Uj9CyKx6EFnxrpY597JYLDBsanjvE4HmjwLD5WTpVvZxF+tvVSPr4/5K0yHtlG
-	aw3BF5ZEPJ4KGZVt5YeYX1tjm2Udey3gBLFzxYY5rY22g4l1xiya0ENQIJNtMdw6uuiwfT3AV+ZO/
-	8pz1TKXk5XbjVynjxOaA==;
+	List-Owner; bh=pKBi5mpDp2LLBz+/Nwc5CQTxrihMl7T0kMgoTGbN1Wg=; b=a9kYVBKb9PyBwO
+	xc6E3RYtB73jc96rKTHU1W4A7KB8ND3im2SdZ7g8GQwCovin2aaVGP+zH5rWZUBwOx0zZ0pyOJ6wM
+	ZpEhNLQNU1hXDu2VRS2QSFICPWvbjlxA/I66fUbb0QdC4xeneHh3ECJlvCE/DrIfVR+L7AYyi8x05
+	FnN5Aq0xhYxSSICokT0NElEgz8YrOzP0YesdkqveqZI2N0H8aWycmJtuDDdUnbwu9r/KPHr40ym8i
+	SzBVksenX/xXr+HHKLSbIgZyMBFHjBYgSQ0jeVgGIdAlzPNNxq7o7vXaf5fh2XqTCrlrTWrTfjpkR
+	YJGRtXrCDVvK89GPQsIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69qk-0007yY-Kr; Mon, 24 Feb 2020 09:16:26 +0000
+	id 1j69ok-0005iR-Or; Mon, 24 Feb 2020 09:14:22 +0000
 Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69jl-0001Wl-0W; Mon, 24 Feb 2020 09:09:17 +0000
+ id 1j69jk-0001Wk-R6; Mon, 24 Feb 2020 09:09:15 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id E70965ED;
- Mon, 24 Feb 2020 04:09:08 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:09:09 -0500
+ by mailnew.west.internal (Postfix) with ESMTP id 550C35F3;
+ Mon, 24 Feb 2020 04:09:10 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:09:11 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=yfyJY9G17qrJj
- XohnDOqJFpG8FxZglZ0yvMVK3Y0mkc=; b=w1xpShNMEm0WP4xbqD59Z7UmcGOv4
- icc5QZ2m3GVw8eE+WjmtuxXK+ro8wetqbUcv020I/qNva0YzK9zkUqQGC8WFrBxv
- jA2/frzieUdpOeDmQVRkgkZkuiNDhmEpfLuN7N9lLRMIm6d2cAGG/O2/lTS4b97X
- BN98hy9DiAwd3ztQEeFITFu9JsOXTvWiFGjWlQ4kj+kh6Wvq6MgTZuP8Ts7fbaG8
- jeXWwT79f/HTtUhoMCILYPJvjPEVMEzuKHpbetKa/UV4LOf9ZK6aeEk1bzKi8bbi
- h8dasIhzm/bFm0n5vMStQpJZbJRyXwKVg7VtBj65NoXAxSDj3hpg517qA==
+ :mime-version:content-transfer-encoding; s=fm2; bh=k4Hi29ghrG4JQ
+ tlhyZiPN5PiSDk2Gt5z3+0c/vRW2Ag=; b=MJAftrcZMyY1DD1GO0BTeFYfjJDjD
+ utcSPShPIAVxU1RL9zdAZ9LvBI21X/IJrjq7TgFPZUjWDIIyKkUwXgfRcUDIRB44
+ 8s8Kyo6LIDlREzkXEDWyeRA2sIkX6oBzpdD7AWgVpKvIAzUuCXZ4cFFfsCRj3YZF
+ 3+u85KXqtR55Fp28+wYod8ALdEuu6ZKfBGq8PwLaI9nE6pAvpkzVRstovYso0u3b
+ J/nsLrVpQdjZt8ht7JnyRcp4hzMdS2me/qXVcuRF7DFHGmav7qoO8SLLp3l9DeRK
+ yfLpiwj16d1VIcnfzZlpU1lvOhBnCJKJxD5jsw6PUWnZvDTpUrf+4xOkQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=yfyJY9G17qrJjXohnDOqJFpG8FxZglZ0yvMVK3Y0mkc=; b=qFq9xRnz
- 9bNYXpjwYpXXbgidYsvVGElx2PQvywqaT4RQOVHcE9vgFG8GwPJ3QTBLHdcQAiq0
- ix6UkVmkd4rijEPgLPJXaCfG3HjG9XAelvTzIT3aJawgQTsCgdwCtGb70arpfcMZ
- Xxu7wuUM6m13kg8tP6ZumCApnI8pQGygxpNXkpchzYbRsYoIdjevD6Xi+nWUlh1z
- puOhUS4ladmdjr/EdeEQ6q/0AFvCC0jzD4uo8xZmGsHEfrOVYxfmdVku7SHY+EKW
- 5EDV+kjiSa5JzNsaBjR7+tZcr23ECt/2PDdkEaKITTYOiBqu8fer2OJScHyq9P+q
- tJCeBGN5d5QufA==
-X-ME-Sender: <xms:tJJTXvDoW7qOocvwX6hGfYXq8bL4HOdYhS4klV7OoxCp8ocSMuaB3Q>
+ fm2; bh=k4Hi29ghrG4JQtlhyZiPN5PiSDk2Gt5z3+0c/vRW2Ag=; b=b44btDP5
+ 93gWjsAMI1gsy3de+Q+ZAAxu9hi3McZaN2oD3iwnUkhnBpVoT//zQztvALyhg4ri
+ LcipPzKUvE8UkItIgAKtQZFvirwLARBmgW3RFYrAbokyHgXDvj76KQ4zv+MRec/A
+ XDReBJUvxwDSx5bO2jd1oMIAgp7tkRAIW1KRQwm7r7U+VIN+wRKyIfNtRNQv3ex2
+ PJ/87PXkkQVQ1CTmIUpJb1llhWnY0JCbV23dIBji0AvLnZTKc4QmADIUwYGC56c2
+ Armp8BsosWSvasNrsjyiZKW0v8YEEv32JVJyWCG9kvOVWiuCiSlbPrsIkd7vohDU
+ LSO2yHITSkkQkw==
+X-ME-Sender: <xms:tZJTXirPO2Ve2Yg82zTnZMcO1vFD1sKbhG_8A-wKMrZJ6vU4LZ2HHw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotffvucfrrh
  hofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgenuceurghi
  lhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurh
@@ -55,27 +55,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotf
  phgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrkeelrd
  eikedrjeeinecuvehluhhsthgvrhfuihiivgepleenucfrrghrrghmpehmrghilhhfrhho
  mhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:tJJTXgft2VgKiqHTp10tXoY17B-O46UrYVT02JaT3zGqEoLN3M7pOQ>
- <xmx:tJJTXpmsOkL9e0kkVoUCU39c9NOwXq0Lt6Vr8F_xYX5sTPFJhJqTtQ>
- <xmx:tJJTXnH35rNZO5mubA75zCIZwGqsh8YoVLIGmPwfaniL_g8djf65sA>
- <xmx:tJJTXgh-y41J72gfSdeIMy_RppAAMHWSdpcl4rg7z6sMf04YiCqASsvXRwE>
+X-ME-Proxy: <xmx:tZJTXjY9mWVOPCuPpcHi9_q4T0y4d1iwDs1BuU3P6w5Jxt2ggb8XTg>
+ <xmx:tZJTXkEvYsRTQ-DGA_LGVJHP5uU78ZwAPW_a6wHlwdJF4PUb492MMQ>
+ <xmx:tZJTXpY1Lb_79HaUorehnrUMu0WH2nLLXn1jzP2rlozSvSl7VsgNbg>
+ <xmx:tZJTXqgPuZ_AvPCA3oefzntlq7YxAdTvycSvlDhACZDWphsW00cB2o_os1U>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 368143060FE0;
- Mon, 24 Feb 2020 04:09:08 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 963F9328005A;
+ Mon, 24 Feb 2020 04:09:09 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH 13/89] clk: bcm: rpi: Switch to clk_hw_register_clkdev
-Date: Mon, 24 Feb 2020 10:06:15 +0100
-Message-Id: <75dd8f658a253649c176509f0d8d3dd10354ce51.1582533919.git-series.maxime@cerno.tech>
+Subject: [PATCH 14/89] clk: bcm: rpi: Make sure the clkdev lookup is removed
+Date: Mon, 24 Feb 2020 10:06:16 +0100
+Message-Id: <1779dd1489125be571fb3c2ee3e04c32f9875420.1582533919.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_010913_159050_DDDE104E 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20200224_010912_988159_6FD290A9 
+X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -115,47 +115,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we don't care about retrieving the clk_lookup structure pointer
-returned by clkdev_hw_create, we can just use the clk_hw_register_clkdev
-function.
+The clkdev lookup created for the cpufreq device is never removed if
+there's an issue later in probe or at module removal time.
+
+Let's convert to the managed variant of the clk_hw_register_clkdev function
+to make sure it happens.
 
 Cc: Michael Turquette <mturquette@baylibre.com>
 Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: linux-clk@vger.kernel.org
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 0c1d6c292302..b97c7ec61376 100644
+index b97c7ec61376..b8b55134ba3f 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -237,7 +237,6 @@ static struct clk_fixed_factor raspberrypi_clk_pllb_arm = {
- 
- static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
- {
--	struct clk_lookup *pllb_arm_lookup;
- 	int ret;
- 
- 	ret = devm_clk_hw_register(rpi->dev, &raspberrypi_clk_pllb_arm.hw);
-@@ -246,11 +245,11 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
+@@ -245,8 +245,9 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
  		return ret;
  	}
  
--	pllb_arm_lookup = clkdev_hw_create(&raspberrypi_clk_pllb_arm.hw,
--					   NULL, "cpu0");
--	if (!pllb_arm_lookup) {
--		dev_err(rpi->dev, "Failed to initialize pllb_arm_lookup\n");
--		return -ENOMEM;
-+	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
-+				     NULL, "cpu0");
-+	if (ret) {
-+		dev_err(rpi->dev, "Failed to initialize clkdev\n");
-+		return ret;
- 	}
- 
- 	return 0;
+-	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
+-				     NULL, "cpu0");
++	ret = devm_clk_hw_register_clkdev(rpi->dev,
++					  &raspberrypi_clk_pllb_arm.hw,
++					  NULL, "cpu0");
+ 	if (ret) {
+ 		dev_err(rpi->dev, "Failed to initialize clkdev\n");
+ 		return ret;
 -- 
 git-series 0.9.1
 
