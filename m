@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CC94169EBD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:47:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C32D2169EC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:49:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XyCUXK8dbHzogw7HKOjiMwmEZhu6B0cX5lM6Qemeifk=; b=C5n9oirXGUcK2q
-	g6PuxuP4Z5IEamCobcL8tS1u4jrJV3R0hMNFVunedOT/nSAOeG13HPkxkSktS/INpQJq3UYvDZB2i
-	a9wzyU8R1MSwE1jcHzN+9nMymZ6s1AGi105exQeBTvAuQxfNkSHieygORyawRmS47iSiZDcBot9t4
-	hRLnAHhuyQRVBu9CYeAn765B2G7Gi8TAH/xglegV5aCvtVgrMEYmb1umhIKFVJMfCu5IBtzWAyX7I
-	uRYwbE2qXaImecboM6Ikw6oi+HPRxXZVvpUWBVrqgQ2FQ870DkhxIHWjMycnf0raYZxQmwKkxjNHY
-	kv1yF7ZT6jzGpX7Bfumg==;
+	List-Owner; bh=V/zlQmxPRjTy8nHj9VLAD85eMBWMEnfzVBgDQBxWIIk=; b=dD730qFs4kxr3j
+	ThdiHp587MSrAZYAUKS8PqTIpdGI5FQ3+aoo5/8pNnlgk+tflyK7DIwZvDvKgbTGP58Z0ZEjMp1wW
+	0r1qkDA/cw8NDIm/mcul7k1gR94cV/YH8LApIJKiWXIupyHnyXhWppMGyhiQElyqvjyEJOiSpkeQJ
+	o/MUJMIyo21ktWxvMW+r4o1mdZIf85A3ABeb0CnymT2BP/ID9WSrle0HJTRINDbQuKcDpQzEoTFfM
+	a3dFu18nqb7W+hVZyV54PgkQfXjF+eSfQS+HzhUyJnvqCuILK7FPkQWWvHyOpaMoqU6N6zgxZlUbV
+	Lhba2MWDKVuyd6blAIbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j67WC-0003ch-Fv; Mon, 24 Feb 2020 06:47:04 +0000
+	id 1j67YN-0004Mm-E6; Mon, 24 Feb 2020 06:49:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j67W3-0003cP-3q
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:46:56 +0000
+ id 1j67YE-0004MT-JF
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:49:12 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 532D420661;
- Mon, 24 Feb 2020 06:46:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D782F20661;
+ Mon, 24 Feb 2020 06:49:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582526814;
- bh=jMHs99MTUgghzmoqUYEVaz24J+3LwffIzHLVCYal7V0=;
+ s=default; t=1582526950;
+ bh=fTou/t6Toy7plljj7+N7mWKQn3888V8JTKmo35a07jI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KjiLCCYt7d2qcU98+2vWL86B3WCIy1pydCcKXuSYoxJOxkh21lYOtbJDDsPHORAqX
- 3kcX+l6s+uqVuNinnHkiOzIK4Dep3kpSYlX/0GHl5QpTfr1PpaYFKO9GUcSfnj63sn
- qcQcRDTn0qADM7Mtp6A9y2XXJ8Lws9kHD0iuLzeY=
-Date: Mon, 24 Feb 2020 14:46:49 +0800
+ b=sPT3ZFIVKprGq8oPF95m5UZYZ1ZXiO5d7MjVA+D0jKUBg/S5Gz8zFNMIWWd2xd7eR
+ CyBGDMPXhrDlSn14kdppX3YoIlCQOgr6WR9ceujxFu5/v3UOa6aco5oeS7ICpO7DT3
+ X99wKAhoYUMjoeJnQWBkgWRUGRW2FtL1kD7MXXnI=
+Date: Mon, 24 Feb 2020 14:49:05 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] firmware: imx: Remove IMX_SC_RPC_SVC_ABORT
-Message-ID: <20200224064649.GO27688@dragon>
-References: <08d91d4455f71c116644aec6b27b36fca32e038d.1582214035.git.leonard.crestez@nxp.com>
+Subject: Re: [PATCH] firmware: imx: scu: Fix corruption of header
+Message-ID: <20200224064904.GP27688@dragon>
+References: <4389d4185aabbb94dfcbe79a9d0937fb57182335.1582215013.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <08d91d4455f71c116644aec6b27b36fca32e038d.1582214035.git.leonard.crestez@nxp.com>
+In-Reply-To: <4389d4185aabbb94dfcbe79a9d0937fb57182335.1582215013.git.leonard.crestez@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_224655_175575_1D5AE2C6 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200223_224911_294820_C374DF66 
+X-CRM114-Status: GOOD (  23.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,16 +85,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 05:56:49PM +0200, Leonard Crestez wrote:
-> This is not used by linux and not supported as part of imx SCU api, it
-> was added by mistake.
+On Thu, Feb 20, 2020 at 06:12:22PM +0200, Leonard Crestez wrote:
+> From: Franck LENORMAND <franck.lenormand@nxp.com>
 > 
-> The constant value "9" has since been reassigned in firmware to a
-> different service.
+> The header of the message to send can be changed if the
+> response is longer than the request:
+>  - 1st word, the header is sent
+>  - the remaining words of the message are sent
+>  - the response is received asynchronously during the
+>    execution of the loop, changing the size field in
+>    the header
+>  - the for loop test the termination condition using
+>    the corrupted header
 > 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> It is the case for the API build_info which has just a
+> header as request but 3 words in response.
+> 
+> This issue is fixed by storing the header locally instead of
+> using a pointer on it.
+> 
+> Fixes: edbee095fafb (firmware: imx: add SCU firmware driver support)
+> Signed-off-by: Franck LENORMAND <franck.lenormand@nxp.com>
+> Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 
-Applied, thanks.
+When you forward a patch from someone else, it should have your SoB.
+
+Shawn
+
+> Cc: stable@vger.kernel.org
+> ---
+>  drivers/firmware/imx/imx-scu.c | 10 +++++-----
+>  1 file changed, 5 insertions(+), 5 deletions(-)
+> 
+> This can manifest as random crashes so Cc: stable
+> 
+> diff --git a/drivers/firmware/imx/imx-scu.c b/drivers/firmware/imx/imx-scu.c
+> index 03b43b7a6d1d..2cf09f8a075c 100644
+> --- a/drivers/firmware/imx/imx-scu.c
+> +++ b/drivers/firmware/imx/imx-scu.c
+> @@ -132,24 +132,24 @@ static void imx_scu_rx_callback(struct mbox_client *c, void *msg)
+>  		complete(&sc_ipc->done);
+>  }
+>  
+>  static int imx_scu_ipc_write(struct imx_sc_ipc *sc_ipc, void *msg)
+>  {
+> -	struct imx_sc_rpc_msg *hdr = msg;
+> +	struct imx_sc_rpc_msg hdr = *(struct imx_sc_rpc_msg *)msg;
+>  	struct imx_sc_chan *sc_chan;
+>  	u32 *data = msg;
+>  	int ret;
+>  	int i;
+>  
+>  	/* Check size */
+> -	if (hdr->size > IMX_SC_RPC_MAX_MSG)
+> +	if (hdr.size > IMX_SC_RPC_MAX_MSG)
+>  		return -EINVAL;
+>  
+> -	dev_dbg(sc_ipc->dev, "RPC SVC %u FUNC %u SIZE %u\n", hdr->svc,
+> -		hdr->func, hdr->size);
+> +	dev_dbg(sc_ipc->dev, "RPC SVC %u FUNC %u SIZE %u\n", hdr.svc,
+> +		hdr.func, hdr.size);
+>  
+> -	for (i = 0; i < hdr->size; i++) {
+> +	for (i = 0; i < hdr.size; i++) {
+>  		sc_chan = &sc_ipc->chans[i % 4];
+>  		ret = mbox_send_message(sc_chan->ch, &data[i]);
+>  		if (ret < 0)
+>  			return ret;
+>  	}
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
