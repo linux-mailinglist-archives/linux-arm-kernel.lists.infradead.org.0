@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B930916A614
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 13:24:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77E7016A676
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 13:51:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1SMYjBQM3nmf30+qjdWHTbRdZMyw8xIlHAr9JpmYTr4=; b=psNMX/hqcGda9I
-	h90THELGVZhHLFPwJt9PzAy3cJK8G0JG7u5Eh6SV7TsRdYRgi03PnG1tx1aHmbX3UqfqmBK4t0wnm
-	F3BPoBA1+5H4mh4F1HkFmYE5/NZ39S+HJjGCcCW1mho0S9AryNzQjHmE50MSMYgqEq+u576KIQGGU
-	fWWWuzKPTftCvSVjp4SagRgCOd20nwGpzLRtwQRVGI0xACxthT4OZhu8kEgv3lI1GSy3KuZAx860D
-	ENn7lg/tN4OY3zfLdwFL2riYEDO+0dRXPx2VoqL55C4GvDmaHxDdBHFkHuTAtyAHzIlyZlYb6s/Lx
-	xRtDHwgp1Y5Xq+sXtJ6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cHHKQffp9tYeflITmszq6ZQXHyc8Ehw0LbF1HpHXiIs=; b=bVWjSI5WRxNiNQ
+	ZEJ0UbH12d417EtoHlmz9nfzrENC/PmMb9gac1TzkmwkiXerpLaDFCaxR1lakLkEgx+4QzhitUh0s
+	beXA8TkcGa9rKKz4/VIN9vdGrgzXvqtTHJPJV6TIXSHHK3VmZiKOkxTFX9ETanXJ6a6owA6hbqZMF
+	1Y5rl1dpBA1e5kZPCYPWAJhseDWnyyOzhme4kVdOCtP6CgC4T8SBH9/8aZfawz+oByfeAzNgYeHeG
+	e/hJc3cIYDDeReaFxBm5hPdD2bPfKcu7LCYLheWNLhnqC3pIkVJx5JBL7aXSrDYRUXD6Pd7YkKuIe
+	sHEOrkkebYWhPymNkdZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Cmx-0003rt-N2; Mon, 24 Feb 2020 12:24:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Cmn-0003rH-0w
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:24:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ABD1730E;
- Mon, 24 Feb 2020 04:24:28 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6A0E03F534;
- Mon, 24 Feb 2020 04:24:27 -0800 (PST)
-Date: Mon, 24 Feb 2020 12:24:21 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Russell King <rmk+kernel@armlinux.org.uk>
-Subject: Re: [CFT 4/8] net: axienet: use resolved link config in mac_link_up()
-Message-ID: <20200224122421.616c8271@donnerap.cambridge.arm.com>
-In-Reply-To: <E1j3k7t-00072J-RS@rmk-PC.armlinux.org.uk>
-References: <20200217172242.GZ25745@shell.armlinux.org.uk>
- <E1j3k7t-00072J-RS@rmk-PC.armlinux.org.uk>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1j6DCq-0006bu-Uk; Mon, 24 Feb 2020 12:51:28 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6DCi-0006aS-Kb
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:51:22 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 276CB1AECE6;
+ Mon, 24 Feb 2020 13:51:17 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1B0351AECE0;
+ Mon, 24 Feb 2020 13:51:17 +0100 (CET)
+Received: from fsr-ub1864-014.ea.freescale.net
+ (fsr-ub1864-014.ea.freescale.net [10.171.95.219])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 7E781203CB;
+ Mon, 24 Feb 2020 13:51:16 +0100 (CET)
+From: =?UTF-8?q?Horia=20Geant=C4=83?= <horia.geanta@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] arm64: dts: imx8mp: add crypto node
+Date: Mon, 24 Feb 2020 14:50:23 +0200
+Message-Id: <20200224125023.29780-1-horia.geanta@nxp.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_042433_154985_29DB4A96 
-X-CRM114-Status: GOOD (  17.88  )
+X-CRM114-CacheID: sfid-20200224_045120_817541_D3383AB2 
+X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,115 +67,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- netdev@vger.kernel.org, Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 17 Feb 2020 17:24:09 +0000
-Russell King <rmk+kernel@armlinux.org.uk> wrote:
-
-Hi Russell,
-
-> Convert the Xilinx AXI ethernet driver to use the finalised link
-> parameters in mac_link_up() rather than the parameters in mac_config().
-
-Many thanks for this series, a quite neat solution for the problems I saw!
-
-I picked 1/8 and 4/8 on top of net-next/master as of today: c3e042f54107376 ("igmp: remove unused macro IGMP_Vx_UNSOLICITED_REPORT_INTERVAL") and it worked great on my FPGA board using SGMII (but no in-band negotiation over that link). I had the 64-bit DMA patches on top, but that doesn't affect this series.
-
-Tested-by: Andre Przywara <andre.przywara@arm.com>
-
-Is this heading for 5.7?
-
-Cheers,
-Andre.
-
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> ---
->  .../net/ethernet/xilinx/xilinx_axienet_main.c | 38 +++++++++----------
->  1 file changed, 19 insertions(+), 19 deletions(-)
-> 
-> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> index 197740781157..c2f4c5ca2e80 100644
-> --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> @@ -1440,6 +1440,22 @@ static void axienet_mac_an_restart(struct phylink_config *config)
->  
->  static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
->  			       const struct phylink_link_state *state)
-> +{
-> +	/* nothing meaningful to do */
-> +}
-> +
-> +static void axienet_mac_link_down(struct phylink_config *config,
-> +				  unsigned int mode,
-> +				  phy_interface_t interface)
-> +{
-> +	/* nothing meaningful to do */
-> +}
-> +
-> +static void axienet_mac_link_up(struct phylink_config *config,
-> +				struct phy_device *phy,
-> +				unsigned int mode, phy_interface_t interface,
-> +				int speed, int duplex,
-> +				bool tx_pause, bool rx_pause)
->  {
->  	struct net_device *ndev = to_net_dev(config->dev);
->  	struct axienet_local *lp = netdev_priv(ndev);
-> @@ -1448,7 +1464,7 @@ static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
->  	emmc_reg = axienet_ior(lp, XAE_EMMC_OFFSET);
->  	emmc_reg &= ~XAE_EMMC_LINKSPEED_MASK;
->  
-> -	switch (state->speed) {
-> +	switch (speed) {
->  	case SPEED_1000:
->  		emmc_reg |= XAE_EMMC_LINKSPD_1000;
->  		break;
-> @@ -1467,33 +1483,17 @@ static void axienet_mac_config(struct phylink_config *config, unsigned int mode,
->  	axienet_iow(lp, XAE_EMMC_OFFSET, emmc_reg);
->  
->  	fcc_reg = axienet_ior(lp, XAE_FCC_OFFSET);
-> -	if (state->pause & MLO_PAUSE_TX)
-> +	if (tx_pause)
->  		fcc_reg |= XAE_FCC_FCTX_MASK;
->  	else
->  		fcc_reg &= ~XAE_FCC_FCTX_MASK;
-> -	if (state->pause & MLO_PAUSE_RX)
-> +	if (rx_pause)
->  		fcc_reg |= XAE_FCC_FCRX_MASK;
->  	else
->  		fcc_reg &= ~XAE_FCC_FCRX_MASK;
->  	axienet_iow(lp, XAE_FCC_OFFSET, fcc_reg);
->  }
->  
-> -static void axienet_mac_link_down(struct phylink_config *config,
-> -				  unsigned int mode,
-> -				  phy_interface_t interface)
-> -{
-> -	/* nothing meaningful to do */
-> -}
-> -
-> -static void axienet_mac_link_up(struct phylink_config *config,
-> -				struct phy_device *phy,
-> -				unsigned int mode, phy_interface_t interface,
-> -				int speed, int duplex,
-> -				bool tx_pause, bool rx_pause)
-> -{
-> -	/* nothing meaningful to do */
-> -}
-> -
->  static const struct phylink_mac_ops axienet_phylink_ops = {
->  	.validate = axienet_validate,
->  	.mac_pcs_get_state = axienet_mac_pcs_get_state,
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIG5vZGUgZm9yIENBQU0gLSBDcnlwdG9ncmFwaGljIEFjY2VsZXJhdGlvbiBhbmQgQXNzdXJh
+bmNlIE1vZHVsZS4KClNpZ25lZC1vZmYtYnk6IEhvcmlhIEdlYW50xIMgPGhvcmlhLmdlYW50YUBu
+eHAuY29tPgotLS0KIGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2lteDhtcC5kdHNpIHwg
+MzAgKysrKysrKysrKysrKysrKysrKysrKysKIDEgZmlsZSBjaGFuZ2VkLCAzMCBpbnNlcnRpb25z
+KCspCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUvaW14OG1wLmR0
+c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9pbXg4bXAuZHRzaQppbmRleCA2MWNm
+MzczYWQyNjguLmJlZTE3MGJkMjgyYSAxMDA2NDQKLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9m
+cmVlc2NhbGUvaW14OG1wLmR0c2kKKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9mcmVlc2NhbGUv
+aW14OG1wLmR0c2kKQEAgLTQ0Myw2ICs0NDMsMzYgQEAKIAkJCQlzdGF0dXMgPSAiZGlzYWJsZWQi
+OwogCQkJfTsKIAorCQkJY3J5cHRvOiBjcnlwdG9AMzA5MDAwMDAgeworCQkJCWNvbXBhdGlibGUg
+PSAiZnNsLHNlYy12NC4wIjsKKwkJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKKwkJCQkjc2l6ZS1j
+ZWxscyA9IDwxPjsKKwkJCQlyZWcgPSA8MHgzMDkwMDAwMCAweDQwMDAwPjsKKwkJCQlyYW5nZXMg
+PSA8MCAweDMwOTAwMDAwIDB4NDAwMDA+OworCQkJCWludGVycnVwdHMgPSA8R0lDX1NQSSA5MSBJ
+UlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCQljbG9ja3MgPSA8JmNsayBJTVg4TVBfQ0xLX0FIQj4s
+CisJCQkJCSA8JmNsayBJTVg4TVBfQ0xLX0lQR19ST09UPjsKKwkJCQljbG9jay1uYW1lcyA9ICJh
+Y2xrIiwgImlwZyI7CisKKwkJCQlzZWNfanIwOiBqckAxMDAwIHsKKwkJCQkJY29tcGF0aWJsZSA9
+ICJmc2wsc2VjLXY0LjAtam9iLXJpbmciOworCQkJCQlyZWcgPSA8MHgxMDAwIDB4MTAwMD47CisJ
+CQkJCWludGVycnVwdHMgPSA8R0lDX1NQSSAxMDUgSVJRX1RZUEVfTEVWRUxfSElHSD47CisJCQkJ
+fTsKKworCQkJCXNlY19qcjE6IGpyQDIwMDAgeworCQkJCQljb21wYXRpYmxlID0gImZzbCxzZWMt
+djQuMC1qb2ItcmluZyI7CisJCQkJCXJlZyA9IDwweDIwMDAgMHgxMDAwPjsKKwkJCQkJaW50ZXJy
+dXB0cyA9IDxHSUNfU1BJIDEwNiBJUlFfVFlQRV9MRVZFTF9ISUdIPjsKKwkJCQl9OworCisJCQkJ
+c2VjX2pyMjoganJAMzAwMCB7CisJCQkJCWNvbXBhdGlibGUgPSAiZnNsLHNlYy12NC4wLWpvYi1y
+aW5nIjsKKwkJCQkJcmVnID0gPDB4MzAwMCAweDEwMDA+OworCQkJCQlpbnRlcnJ1cHRzID0gPEdJ
+Q19TUEkgMTE0IElSUV9UWVBFX0xFVkVMX0hJR0g+OworCQkJCX07CisJCQl9OworCiAJCQlpMmMx
+OiBpMmNAMzBhMjAwMDAgewogCQkJCWNvbXBhdGlibGUgPSAiZnNsLGlteDhtcC1pMmMiLCAiZnNs
+LGlteDIxLWkyYyI7CiAJCQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47Ci0tIAoyLjE3LjEKCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
