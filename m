@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8771C16B4DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:10:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52EB316B4E4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:12:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jsDOStkqGKe9VzyFgJQ9u8rtWdBQEx6a2CYkCgeAua4=; b=OXCzmiwdNhN/UCmTYgPruRHI7M
-	bhZ7BJ5DnpwIgySexSEXwpy6LF4hdKUIiFot7ihxe4nrFSI2g1MtPxDw0Cb4C+l8EviXZupDvVyhL
-	0U5Rtw6btLzNPeooYF4bAU9oWEHoyL/yVRihk+4uSZV7xV7kKafXqOzhgchNiBDPZzUe/oC23Gcly
-	+7UswyuU3pplmDovgNiQfILyn9IxQWcobn1iBLI9wgcmDz+ZaXktC1Ggo/e5bLMGPzBItVv8T7Rri
-	Ufkcv0MVvsA1bkgpd09BsZgoPC0Sg+AgbTqWOehlJZx8YmwsOL23QGb6jGoyTNihKraWKip/+yrCX
-	tG+Zydng==;
+	bh=u6hb5CYCDZAyaUvRfAVpJKLrmy3iPjLv9eoClliXvEU=; b=Xl8/m0bxL6uUKhciuWWusgDVhE
+	chqY/ECSvpync1UMqBo5Q7eqoG8xJpUODNc9N5t8VfEildL4iAY7f72zhecB/FLBhGoUdFMwNAu8E
+	coLDJOINVttL0MDUV7/mtAz6zwU0Nu0CWZTyl3SAV7gAcVGjZNyAiH40I2tOsYPUfKHRvGhHN6rp1
+	4pr3oN1CiRmhQ+FPV7KU4kFhhym6/YUnHcEN1dIlzgGbaS5vxE8ufpcHpj7MgnuavB/Ix8mc9uL/G
+	hzVOuQQKg4n9zeXqjPj0EmFw2QCl7ogy6Q7ULeGx8zGsz4D384gpwO49PYM/TNS2h2gar+YOdwOyR
+	u/5vjLDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6MrH-0003Ap-GH; Mon, 24 Feb 2020 23:09:51 +0000
+	id 1j6MtG-0006Ek-Fy; Mon, 24 Feb 2020 23:11:54 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Mq6-0002Ol-0H
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:41 +0000
+ id 1j6Mq6-0002Om-3o
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:43 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7A1F41A4BBB;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B27391B0790;
  Tue, 25 Feb 2020 00:08:30 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 44D831A4BAF;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7D1861B0786;
  Tue, 25 Feb 2020 00:08:30 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 81C6C40AB3; Mon, 24 Feb 2020 16:08:29 -0700 (MST)
+ C1AF540A55; Mon, 24 Feb 2020 16:08:29 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 02/15] arm64: defconfig: Enable NXP flexcan driver
-Date: Mon, 24 Feb 2020 17:07:57 -0600
-Message-Id: <1582585690-463-3-git-send-email-leoyang.li@nxp.com>
+Subject: [PATCH 03/15] arm64: defconfig: Enable QorIQ DPAA1 drivers
+Date: Mon, 24 Feb 2020 17:07:58 -0600
+Message-Id: <1582585690-463-4-git-send-email-leoyang.li@nxp.com>
 X-Mailer: git-send-email 1.9.0
 In-Reply-To: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_150838_232424_B93E366E 
-X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-CacheID: sfid-20200224_150838_366890_F8B4A424 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,27 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables driver for FLEXCAN device which is used on a wide range of NXP
-SoCs.  Also enabling the related CAN framework.
+Enables drivers for NXP DPAA1 framework and related Ethernet device which
+can be found on QorIQ SoCs such as LS1043a and LS1046a.  They are enabled
+as built-in to boot from network without an initramfs.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 618001ef5c81..747f233aca72 100644
+index 747f233aca72..54ac7c1558d8 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -161,6 +161,8 @@ CONFIG_QRTR=m
- CONFIG_QRTR_SMD=m
- CONFIG_QRTR_TUN=m
- CONFIG_BPF_JIT=y
-+CONFIG_CAN=m
-+CONFIG_CAN_FLEXCAN=m
- CONFIG_BT=m
- CONFIG_BT_HIDP=m
- # CONFIG_BT_HS is not set
+@@ -263,6 +263,8 @@ CONFIG_BNX2X=m
+ CONFIG_MACB=y
+ CONFIG_THUNDER_NIC_PF=y
+ CONFIG_FEC=y
++CONFIG_FSL_FMAN=y
++CONFIG_FSL_DPAA_ETH=y
+ CONFIG_HIX5HD2_GMAC=y
+ CONFIG_HNS_DSAF=y
+ CONFIG_HNS_ENET=y
+@@ -755,6 +757,7 @@ CONFIG_RPMSG_QCOM_GLINK_SMEM=m
+ CONFIG_RPMSG_QCOM_SMD=y
+ CONFIG_OWL_PM_DOMAINS=y
+ CONFIG_RASPBERRYPI_POWER=y
++CONFIG_FSL_DPAA=y
+ CONFIG_IMX_SCU_SOC=y
+ CONFIG_QCOM_AOSS_QMP=y
+ CONFIG_QCOM_GENI_SE=y
 -- 
 2.17.1
 
