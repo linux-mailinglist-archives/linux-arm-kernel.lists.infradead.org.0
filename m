@@ -2,72 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAD5116AC8E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:02:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D3BC16AC8D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:02:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8ZjhpJ0wrqguIFgyO2k4+VJhOvVNMnoj7nkOUVZoIa8=; b=HjMmlgiS7D9PYy
-	NZ9UGk6auFVJZa2kuW3cXS+2+Jv32PeC1pgLl24ah4lad/80EPV5rMPMJVcgHQ38SksTt2mtu95rz
-	VQW2SCZDkUAvavsBzzQjkBaPYTd1nIyX3kRcJ11ywzP7SF2/wUZakFWarodQlR2eedVHgS7mTHVsA
-	gDm5nhmbxp6hjpQMAF2A/OR+vFAkIoAOwaQeMcz44LQPDm2LXlNz1ZF6DuSKnMG1yCTlcP17GzkIF
-	pkbAEtmGSVhKhqOUhQwC4uxXA62wMtJbeAtCxIhIxFh+OOWsVOONyoVMweF2VdJZj8r2/CZu+RirW
-	c+JHi/6jGVIsaKaVi3wg==;
+	List-Owner; bh=0RQcnbqwCvOwtPMF99HU1vdMW5vNvfP8U4vVqytjt+0=; b=O3It6qyKMNiI+b
+	7NdPzGWYvcF9NHDahvl/cZoHaUjAkqhmib/nwvWwLC0qTzNLw6sDYcgvN0LAgljpZuhR58QKiFRYf
+	0csvHXFO/TJAiY0fLPdGL8RjC07Pk3Vo0bfD0uLfVGcIMn0ZYOJMOez0gAnuRxlcDnQ46L++0ZED7
+	QyqpCpH8DYIfcypy/W/bfp4UurT1q6prafQQdhpfLV7ao2AdDC2WGsm2jRDN5taNTMpcOQlvAUB/N
+	+RAfy9s9HGyeC4a1Wq1EmSRwgQFSEs4YpkYR9sKYfD2oZl7Mu4QzEqQeUSa//XCY+t6CiMQY3AP5Z
+	AfWWXjYXipSzAIevv0TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6H7d-0006Pu-F3; Mon, 24 Feb 2020 17:02:21 +0000
+	id 1j6H7N-0006Db-GL; Mon, 24 Feb 2020 17:02:05 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6H7G-0005LA-P8; Mon, 24 Feb 2020 17:01:58 +0000
+ id 1j6H7D-0005xR-RO
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 24 Feb 2020 17:01:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
  References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=2VvM3lboTem8DIEdR5Hta0xeZY3GBVsMd3V4LQLFdyY=; b=dIc+ElHvzBqoU+KpUTbSTTY7wC
- qhdlXNCB8JrN1Uqbk3N/E50n4wcXHXX+6q/R+J3iYMnbL0ouQt1hWAew1cUBGGzWr1X9cnF01Ay4Z
- ZpZrcBYJRdzChBbuZOjQwz0LINEmkwtxbVOSw8D9suMYhwUbfe0jc7SMhtxjHsgNfrrJI0YtRhrbK
- 3zGkMMZ0rFa05p8XkF8q8/cDGqExuI35FOFIKaYfhs3DHWhfkeMEEHwv9wyWlIf28JYsUnmVKOjBT
- xOFTZ462/xrhakmHR3oQ1Hms7+dB/grr+eb4VUmzUCe3OBAvU3+q7NZaNyUIdplXyxqTQI9eUupPe
- pcoHo/uQ==;
-Received: from mga12.intel.com ([192.55.52.136])
+ bh=d38vHUOYrA5Mqm0L22ZQxg4+Zp7TO9gMLCtMLvSyNbU=; b=tiKrNiqWHdq1aOLWg8u0YlvIm9
+ cOzRDRsotltdtcCt0Z5T6To72uKqN7AYW/qDAn3VAAzFybT+ynrUC2w5t6Ue6gqwt2KrVXhXTfdFn
+ KgKTR/A72L7ceJ+22s3ZrCejzOztcielXw7cvTy6BOylWtJgtrnYiVJDoZ5a22CYEhGOvrlgrje0Y
+ nw1x61+ULUxS+O5bSo5Q2TbNDksR0Lz2Uh63RnEG/FkCN+2/J6fOlmpb9FPE2KLhDnhnuj4FwgCrX
+ QtCQGiqD13fI1VkDXE0uSBgnnhg3oRVNrS8beAiRCRI/ZxRSPkGAiTBzofcJNZbisfNkd41wokscH
+ gjxvkKpA==;
+Received: from mail.kernel.org ([198.145.29.99])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Gtn-0002JR-6Y; Mon, 24 Feb 2020 16:48:04 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga106.fm.intel.com with ESMTP; 24 Feb 2020 08:47:54 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,480,1574150400"; d="scan'208";a="229890996"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga007.fm.intel.com with ESMTP; 24 Feb 2020 08:47:50 -0800
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1j6Gta-000FUS-Ae; Tue, 25 Feb 2020 00:47:50 +0800
-Date: Tue, 25 Feb 2020 00:47:41 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: [PATCH] clk: bcm: rpi: fix noderef.cocci warnings
-Message-ID: <20200224164741.GA25223@e50d7db646c3>
-References: <d197ab836d84b89b94ff1927872126767d921e94.1582533919.git-series.maxime@cerno.tech>
+ id 1j6Gvx-0002OS-TY
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 16:50:18 +0000
+Received: from localhost (unknown [122.182.199.233])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 74E0F20637;
+ Mon, 24 Feb 2020 16:50:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582563016;
+ bh=GUn4MNd/CYw0+WpEjK/beMt3O/nBhBrB0RzoGtzcI8E=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JF4umC8CRxfeuYkpdniHpcft7/Jjj5SFyBNEyJJI0OQX2Vtn6yqOvqNnG1KebGkyu
+ UwBybDebLapoJuPaZ5eh9raqocKdq8+ey1hVmwZQdZneolm3YIGA8FLPGBtEfrtdDk
+ Rrfh/v71QseZ5QGSxWrsF3XHXXjWedXhOm7hbA8A=
+Date: Mon, 24 Feb 2020 22:20:12 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Amelie Delaunay <amelie.delaunay@st.com>
+Subject: Re: [PATCH 0/6] STM32 MDMA driver fixes and improvements
+Message-ID: <20200224165012.GB2618@vkoul-mobl>
+References: <20200127085334.13163-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d197ab836d84b89b94ff1927872126767d921e94.1582533919.git-series.maxime@cerno.tech>
-X-Patchwork-Hint: ignore
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200127085334.13163-1-amelie.delaunay@st.com>
 X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,52 +87,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, kbuild-all@lists.01.org,
- Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-clk@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Maxime Ripard <maxime@cerno.tech>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: kbuild test robot <lkp@intel.com>
+On 27-01-20, 09:53, Amelie Delaunay wrote:
+> This series brings improvements to the MDMA driver, with support of power
+> management and descriptor reuse. Probe function gets a cleanup and to avoid
+> a race with vchan_complete, driver now adopts vchan_terminate_vdesc().
 
-drivers/clk/bcm/clk-raspberrypi.c:327:31-37: ERROR: application of sizeof to pointer
+Applied, thanks
 
- sizeof when applied to a pointer typed expression gives the size of
- the pointer
-
-Generated by: scripts/coccinelle/misc/noderef.cocci
-
-Fixes: 56ccc5cfbb47 ("clk: bcm: rpi: Discover the firmware clocks")
-CC: Maxime Ripard <maxime@cerno.tech>
-Signed-off-by: kbuild test robot <lkp@intel.com>
----
-
-url:    https://github.com/0day-ci/linux/commits/Maxime-Ripard/drm-vc4-Support-BCM2711-Display-Pipeline/20200224-172730
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/clk/linux.git clk-next
-
- clk-raspberrypi.c |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
---- a/drivers/clk/bcm/clk-raspberrypi.c
-+++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -324,7 +324,7 @@ static struct clk_hw *raspberrypi_clk_re
- 		return hw;
- 	}
- 
--	data = devm_kzalloc(rpi->dev, sizeof(data), GFP_KERNEL);
-+	data = devm_kzalloc(rpi->dev, sizeof(*data), GFP_KERNEL);
- 	if (!data)
- 		return ERR_PTR(-ENOMEM);
- 	data->rpi = rpi;
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
