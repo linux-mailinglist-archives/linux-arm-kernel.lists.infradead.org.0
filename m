@@ -2,87 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AE92169AF2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 00:30:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CFDA169B14
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 01:07:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WJgCHZSDqqMii3Jf+D/IwvFaPC8rNE5KetI+UQKwo7Y=; b=Gfc7ZXNITkW0NG
-	xyJVqBi70782QhTn2WBMZltXpfHj1mCBAn8JYFxtDJsWqf692oMQ5JC4uMRe88Mn9fI4l8DjB4NkS
-	wflorAubWniJKnaRVIQBgElpfK5t7EGssJ0vphOAW+dc1wQIWZPXNuTHCvJ4kCm9NDZXHJNTJp6mO
-	C2wpNLU7PDWi1YDi+V8zNAR1OyFUza6AhP5soPY7E4FUFbquW+o06r5N0f//oHANf60mDGVhE//eS
-	IvcCZ17YHcoCGq5VxpSnPE5ZgeZx5UmliWHuSV8lGFPXTjqm5dHhG73Zp/9n+GMptuE/wnoMQ0cFl
-	+Re2Yhgv/onU5POC5y7A==;
+	List-Owner; bh=vPNj2Q8UFpPuapNe8EzwSQ4TggVnbyQ5sPSzuBCh3Ps=; b=ILNhrTyEl+R07L
+	HX5FBLR1HVwLc7WeMP3zefGvXm5Bgo9Iibu7rnQj7EzD1FwS82P3zsts8vpcpWboZL8x1fv+K9gnW
+	FbvPvnxPCVpR2ATmJ6au0A6UWCGHUghmtKOma9xD6H959mAnw1YFnhSM9uPCNHISKZjEspwZvT0J+
+	rjipeNt7AKJR+eUGPCCwPLHGSlj+6JLwumE1fqZXhYznlfT1BOTcekhnXb9c1jEIVLZfkEltA6qVP
+	ao75n3f1UZH7oK4yhUqFufFjd7rKIRgUVmp01V+ZjlbvlXNZKGSS0Qg07E8No+/9zCC8nGJrxRidd
+	hQghTjZ6LSi1y3G0C3ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j60he-0006Dr-9J; Sun, 23 Feb 2020 23:30:26 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j61HK-0007tA-Km; Mon, 24 Feb 2020 00:07:18 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j60hV-0006DB-EF
- for linux-arm-kernel@lists.infradead.org; Sun, 23 Feb 2020 23:30:18 +0000
-Received: by mail-pf1-x444.google.com with SMTP id s1so4364786pfh.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 23 Feb 2020 15:30:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=BHvuL1JKTAOYifV/CjMNtfxfmXNZrw8/BIhfR9Y1A9A=;
- b=ggVP7LgwmoN8STUuj3mWba1bX30zmHY8CmaaZqN2n8hkUiwVxT2D236tdCePXHrakm
- NWqrvN0EDjd0EWtssVj7Q4gBFU/Kw+hsM8BYTpC4HPrfm7jo0koB5Hn9ba9AIBWpbVsa
- TMGDevIFAV7aMSY7npz2JijEoOxrC0EB30XKK37QyJMdRKLenkQcfvQFnh9dJvMgPN+m
- tVhDBNkq80xeU8slJPd6VOtdBnWMXHQAThm+FTb3uAFXn/49OIjnM8molXwhHBuM4rtx
- BB0GJgitUHg7+D9005tqrB6LQq6oKEwaQQQkQXhqJ+/f6y6Gzefkjw9n9Z4D454X9bDv
- +XOA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=BHvuL1JKTAOYifV/CjMNtfxfmXNZrw8/BIhfR9Y1A9A=;
- b=aT+efV6H/TaQ7cYrYXbPUjmHpwi9UqSKOSNJW+TadqPao1Dg8Na5SNdOVMx06qPRUE
- 9CY4oTLV1TVA5F+TJ7j2S3Z3sk1niFbXUEkqdbqsFn8oVlsCcYnvvEwiJIFpimCs2AHA
- ZMf+bRe9CY1ySEDrsaC83YVd8+2w2TqGE2ezpX/2J9fDRwgL0HAwp6XOgImP93IGW8dl
- QmNZ/SdNl22egm4ANVKkc1IZwbfFFI29BDwKuE0fdwG1jXjNyFfgO7M/RKwDLCCAk4DT
- AZMNwU922f3ILljrUCT+mlkkA2tC1m3tZ6vM1o7PFbdMfpCZCVMVrLxiqY8IjEdemQjW
- JH+Q==
-X-Gm-Message-State: APjAAAVqBfwW6YLA2uAiLKndbwy/1DP/lFrtrd4lplXOqOdq8T6M14qT
- DyDk4DygBzMwUHTvVP3awqY=
-X-Google-Smtp-Source: APXvYqwkvpjyGn5lU3qH+jbJ8b//vzZVj3gZxwDU6iE+AEDPoIzSjbWJzvdR3JYo8IjRWKxmWZPH6Q==
-X-Received: by 2002:a63:cb52:: with SMTP id m18mr12736278pgi.291.1582500615701; 
- Sun, 23 Feb 2020 15:30:15 -0800 (PST)
-Received: from gmail.com ([2601:600:817f:a132:df3e:521d:99d5:710d])
- by smtp.gmail.com with ESMTPSA id c19sm10303501pfc.144.2020.02.23.15.30.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 23 Feb 2020 15:30:14 -0800 (PST)
-Date: Sun, 23 Feb 2020 15:30:13 -0800
-From: Andrei Vagin <avagin@gmail.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH 5/5] arm64/vdso: Restrict splitting VVAR VMA
-Message-ID: <20200223233013.GB349924@gmail.com>
-References: <20200204175913.74901-1-avagin@gmail.com>
- <20200204175913.74901-6-avagin@gmail.com>
- <df8fa53c-5c21-b620-0254-ffefdd3a8834@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <df8fa53c-5c21-b620-0254-ffefdd3a8834@arm.com>
+ id 1j61HC-0007sg-AC
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 00:07:11 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 8C30F20A4B;
+ Sun, 23 Feb 2020 19:06:55 -0500 (EST)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Sun, 23 Feb 2020 19:06:55 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm2; bh=zjhLqXsGdwHmDXQ4loElGl5IBhTi4NI
+ teyaEj1OhzX0=; b=pMIvQxSM7Sx8a5nkQzbt7ZFK/MAHlcTi1D3f+ks+P/0EKLo
+ 6SAqSKgyK7eLnr9gb0WRoCjmsYSevkz8doLPRU1crKf5iem3xkd91XjVTtfyed2s
+ UbmZlOaMOEb59rUmSADPxSLYxolVKZoVbLe37IJ5wPtR9xDI5YCK31SYR4xq2Rci
+ ki5Nio2Ku7yuTJp5vz0QYgmRkmbr8xQgEivf7MMb5CdGnzUF8gIPfzyCe62xojx6
+ 8o5bo/Mht62rUZRbcPQuvEw2skBtB5C8IcZFPteC19ML2U7GcJQ0ppMkRxQjbVs+
+ x7m9qqyhICAxmAiCZS/lgflQwPX0tSrkAAS0x1w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=zjhLqX
+ sGdwHmDXQ4loElGl5IBhTi4NIteyaEj1OhzX0=; b=Kl9m75Lgt1kvotcVMiTCEa
+ JFVqY3d6ZyBArGZn0X/iKGaAt5+J2Cb747X2tw0H5gVULjjSILHn+yVRBwMZpKOY
+ omSWqe+HmTx3Ie6sjlPNWbb/gSWajKydpCgmKodvgaIgQFtPT++1JbTOc2VretjJ
+ uevH6h1m+YOWSDuXPZbOHvnL6rqrlGLqKL6+7VDmmPgSr5wPzwPTrdUZ3arjA2/E
+ plgeoIKlvPk1hB8roLOrX8o+HSTsgctZC9bIo3maQpEh6P1I6XqFwPaVXnsC7VrS
+ gYdbyKc0NuEvflaGG8hn21IuEVmU2Tlf7km9ao34juMTsOu415lpyzU83XkJzjPw
+ ==
+X-ME-Sender: <xms:nBNTXlGexT6W00zZwqe5NhyI45Mm3-x-EfUkj2m1tCDBTPa45nLLkQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkeelgddulecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
+ htvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
+ rdhiugdrrghu
+X-ME-Proxy: <xmx:nBNTXoDnePLBa_Y_9k7NJkxs4WhfSQp8lTAkWuV86lg67zuSOFyFNQ>
+ <xmx:nBNTXhko0weVkNUI0dB4G_laWk2E0gIVeuw7fS2hjoyfGZk3yLZYsg>
+ <xmx:nBNTXjSqxLmg3j9fEEBlhoG8sA6IUJPl3sLCZdb3uQrjMKSS4GwFZQ>
+ <xmx:nxNTXokN7xZ8q4h5XmrjbQQZMMPf4p_hbjDdjrAiAWe_PRVXSUi1Og>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id C3486E00D1; Sun, 23 Feb 2020 19:06:52 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-802-g7a41c81-fmstable-20200203v1
+Mime-Version: 1.0
+Message-Id: <020e9eb5-4fdc-44d0-b00e-42b6e6435110@www.fastmail.com>
+In-Reply-To: <20200222235152.242816-1-megous@megous.com>
+References: <20200222235152.242816-1-megous@megous.com>
+Date: Mon, 24 Feb 2020 10:36:47 +1030
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Ondrej Jirman" <megous@megous.com>, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] drm: aspeed: Fix GENMASK misuse
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_153017_507507_CCD20757 
-X-CRM114-Status: GOOD (  14.19  )
-X-Spam-Score: 2.4 (++)
+X-CRM114-CacheID: sfid-20200223_160710_425058_224C5096 
+X-CRM114-Status: UNSURE (   6.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (2.4 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 2.6 FSL_HELO_FAKE          No description available.
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [avagin[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,6 +92,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.25 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,54 +106,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Dmitry Safonov <dima@arista.com>
+Cc: "open list:DRM DRIVER FOR ASPEED BMC GFX" <linux-aspeed@lists.ozlabs.org>,
+ David Airlie <airlied@linux.ie>,
+ "open list:DRM DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Joel Stanley <joel@jms.id.au>, Daniel Vetter <daniel@ffwll.ch>,
+ "moderated list:ARM/ASPEED MACHINE SUPPORT"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 12:22:52PM +0000, Vincenzo Frascino wrote:
-> Hi Andrei,
+
+
+On Sun, 23 Feb 2020, at 10:21, Ondrej Jirman wrote:
+> Arguments to GENMASK should be msb >= lsb.
 > 
-> On 04/02/2020 17:59, Andrei Vagin wrote:
-> > Forbid splitting VVAR VMA resulting in a stricter ABI and reducing the
-> > amount of corner-cases to consider while working further on VDSO time
-> > namespace support.
-> > 
-> > As the offset from timens to VVAR page is computed compile-time, the pages
-> > in VVAR should stay together and not being partically mremap()'ed.
-> > 
-> 
-> I agree on the concept, but why do we need to redefine mremap?
-> special_mapping_mremap() (mm/mmap.c +3317) seems doing already the same thing if
-> we leave mremap == NULL as is.
-> 
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> ---
+> I just grepped the whole kernel tree for GENMASK argument order issues,
+> and this is one of the three that popped up. No testing was done.
 
-Hmmm. I have read the code of special_mapping_mremap() and I don't see where
-it restricts splitting the vvar mapping.
+I think someone's sent a patch previously, and last time it turned into a
+discussion about how the macros aren't actually used and could be
+removed.
 
-Here is the code what I see in the source:
+Regardless:
 
-static int special_mapping_mremap(struct vm_area_struct *new_vma)
-{
-        struct vm_special_mapping *sm = new_vma->vm_private_data;
-
-        if (WARN_ON_ONCE(current->mm != new_vma->vm_mm))
-                return -EFAULT;
-
-        if (sm->mremap)
-                return sm->mremap(sm, new_vma);
-
-        return 0;
-}
-
-And I have checked that without this patch, I can remap only one page of
-the vvar mapping.
-
-Thanks,
-Andrei
-
+Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 
 _______________________________________________
 linux-arm-kernel mailing list
