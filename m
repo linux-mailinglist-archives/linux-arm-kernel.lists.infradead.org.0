@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B63516AF1F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:29:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 610E716AF23
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:30:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jAf5blNXxzYiWYIltc0t+dqgeuajflxKDivTJYpP/sw=; b=Yzpk+mXyI3hzDe
-	CH6p99FtGDTJOOMg0iXUKrGlk6bdr4NKVPQgGDQ9xyU6oHPZqihRizr9DcxkB9Aebq+U1EuqVhf2q
-	/pWxnBJyd19HXVURMx9Gq4tR1gubawZc3eO3tkotwqOCOaXg8v1qqnELdvOmDMYCky3DmgPDEkX0a
-	rSeevBTsVRoz2eN2rx83+6KfXP1uyTqTblHovppgtCpRtvWdxC0OOSiZMoGPg7DPSUIcULN9mTox6
-	TDrqe+5NbJnQcLcQTB5WR5PU5JqthPu14cp9PjntxZeWjfPwqOCZiIZBphd35eY8+DDAljSD6/SzH
-	weHMh3/ML9eOkSlu2zww==;
+	List-Owner; bh=Rjn9mkLB7tl0KAT5zpLO05Hf5Kg9nhKFkZ7FY1AbQgQ=; b=bmRITPUlp8WABY
+	/RzhDhj1EJLjmd2hAwuG6cSbiZi4fsXmB9DCzVqZGasD0KNgNnVkhnrg0mUtGOTlhKST8ccxWb0eY
+	NZPaEXcMKUHmszy69v640TJAJi0HWpFlWmsAqaN/PFX6lF9FF80OuHBBdAg6Fl3RlBBK3uM2o0eZk
+	zjrfoC8pVlvbEGBzxOY2qzm+gSRjHYSZG0JCCixgENz8dOB9gIk7595i9T+3areR+vHZhQtr9hzSi
+	ZgHjOBg7DubvPmG3uWZ7mQMJe0lSiCm+I/lQMbnW+zauWpWBD207/IlPTt9xxLKk+x3lVR/YQwEBG
+	ld/LJ+9fDbjnlgEZ02BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6IUG-0002e8-6R; Mon, 24 Feb 2020 18:29:48 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j6IUq-00037z-Un; Mon, 24 Feb 2020 18:30:24 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6IPS-0005lQ-QU
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:24:53 +0000
-Received: by mail-wr1-x441.google.com with SMTP id t3so11560355wru.7
+ id 1j6IPU-0005m7-GQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:24:56 +0000
+Received: by mail-wr1-x442.google.com with SMTP id e8so11578132wrm.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 10:24:50 -0800 (PST)
+ Mon, 24 Feb 2020 10:24:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZmUwfBE2Jvvg1hKUoqTW1Tzu3Hjef3qChRCYp/V+4z4=;
- b=fxvvkF/Z32DjH84285DNlIPhJoi0kRLNJoxVIH7KOt2EDK83vWJJdX2p0ctjcP0+gm
- qisx9YvSxt+OhX+CZ8obez7cElrie6GQHcCW1oQ4UQb93k576+N2gpVIEqJVr9bohALT
- 6riHGDBI9q5MffRpe8+xohDweiZ/qUWIrGYHsajhyVDmsdv3l8uSOo5T9POpRTIIiapz
- FvwthMPXu+xQ8cHZx0EbY0+ZszexexopCdlk5+7lw+f4/+AQcZADd2kews00jYTIZqws
- RHpE2hpFC9DfAMDCdZxJmKNinpQ8YtMpz5/fZkrtYGwf+p++YWkknqDYg95TBwEvcHpE
- JJWg==
+ bh=OqyBSLsjWoTwUeyl/94+2rCzV9+vYMPMP4GIUnRD0qA=;
+ b=YllwiJrZdJ1NjO07lPuBqd6vBWp/2/geoV9/Zzog5cPbDrIrLFnmIwe3ONCoKCVSiG
+ ZAYw10/1nei1dfdmPsqeVoOWU9YTNhg6z5DCfIauUNueL2OSnQ7hdxBfDVjpfBwG5pr5
+ WlzCkO9JAW+/l+cBIHevykIdN1AVsIJ+/ItvELyk4F9HPziiDWRCPa6TCA+HVyDENaUx
+ YQ0aZDPJUpiBlN2ZSrd27WwxwNsN5H2lEPJj8yn1/e8hAZ12hdJY3fHnzNfUrlBxT7bQ
+ NxIifg85M9zkTlKSWlFIWhJbk1CamOGpKA+2XMby8Q9upRPoweAV5jj9BHvMdYmg3o2Q
+ u7pQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZmUwfBE2Jvvg1hKUoqTW1Tzu3Hjef3qChRCYp/V+4z4=;
- b=Rkb4w5FooH9UgTBDz6Hj5WDvIzEz9bHX3Ur+IE7e1zjK8pbfr0hOtsLB5utMRNGset
- gnOcfdsJM/2h3VPJvhcuKyXd6UArjcxYkqF5QWQq0b7rkBMW+i0wR21QBGLxd9sKTqdH
- 2rM/aEXO0dmLmz52MZP53zQF/V3BKcYKqHmDoDrM/Wht6ApCF1cDa325LgGPuNkvqMRQ
- 0FYUrXHTjC2uiEeD2Y/290mH11OOaJknf1blRCQnlP+wYZiy1QW9zZMrZHK0/7LdOq49
- T9IWxRPbNbzQlpC9/YB74Tm7OBeoeN4tX/xaswIOdp6fLOX1Wqkzicg9pCYsBdlijw4u
- sQzA==
-X-Gm-Message-State: APjAAAXFMy2b3xAv0TDLcnS1UjxI5Zqxf7aB6pEwXNTA22wWPi4TZhvS
- indDsyA3xJzDKFgWfNDp3dM2HQ==
-X-Google-Smtp-Source: APXvYqybBiQ3Y5uECJkf6wnUNdgrSmLMTNXn6Wwg6bg+H52TrB4b+jy0fSf/fGsZzyfFNyePzPdLuA==
-X-Received: by 2002:adf:df90:: with SMTP id z16mr66588301wrl.273.1582568689235; 
- Mon, 24 Feb 2020 10:24:49 -0800 (PST)
+ bh=OqyBSLsjWoTwUeyl/94+2rCzV9+vYMPMP4GIUnRD0qA=;
+ b=dxiJirgYoCbWnEuLkfx+7KlA8bgrMOexAaoYKmqnXXjY6EkePXZoV5tWe4yZoQ0LXO
+ 61P6Py4RglKK8Xk18X5oHqzyyUtdPY3SZhZDO174+iMxR4DdoHoo/G/85nF/M0xmbpI2
+ CXe+VX42IYpcUZN/ZpC2iORK1j+//mmUIqwdQP+ceWQAn7w2ejhyEaqv2s0OIHM3QAt+
+ Qrg90Zf2sTw1G/y1SHTIP1t4b1ZJVCkGkbIFGdgkHgAgWw0BuqK+vl42ODPQPNChFud/
+ MjnyG+6h9d79rPVoG5myS1KIKtysL9b6hA/BDpdla7pOVuhEq21M1Cy45xmVU5UgAQK1
+ 4XgQ==
+X-Gm-Message-State: APjAAAWvSHnmJvu4AcApGUbk55D5bJpJTkAn6iS5o+leX1VdnF7eHwtT
+ DIaLAPnIXNI2M2DcUK0Yd5HMBA==
+X-Google-Smtp-Source: APXvYqweLQT3Woeir8eRQoWOxeTHyd8FqFAJUftioLhxJBGnZqgw7j5oKrWyOIQLiBydPtpty1UXkw==
+X-Received: by 2002:a05:6000:188:: with SMTP id
+ p8mr66983633wrx.336.1582568690310; 
+ Mon, 24 Feb 2020 10:24:50 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id n3sm304255wmc.27.2020.02.24.10.24.48
+ by smtp.gmail.com with ESMTPSA id n3sm304255wmc.27.2020.02.24.10.24.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 10:24:48 -0800 (PST)
+ Mon, 24 Feb 2020 10:24:49 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v4 18/26] iommu/arm-smmu-v3: Hook up ATC invalidation to mm ops
-Date: Mon, 24 Feb 2020 19:23:53 +0100
-Message-Id: <20200224182401.353359-19-jean-philippe@linaro.org>
+Subject: [PATCH v4 19/26] iommu/arm-smmu-v3: Add support for Hardware
+ Translation Table Update
+Date: Mon, 24 Feb 2020 19:23:54 +0100
+Message-Id: <20200224182401.353359-20-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200224182401.353359-1-jean-philippe@linaro.org>
 References: <20200224182401.353359-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_102451_059600_FB6508E8 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20200224_102452_785735_F1CD48B8 
+X-CRM114-Status: GOOD (  16.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,109 +113,103 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
 
-The core calls us when an mm is modified. Perform the required ATC
-invalidations.
+If the SMMU supports it and the kernel was built with HTTU support, enable
+hardware update of access and dirty flags. This is essential for shared
+page tables, to reduce the number of access faults on the fault queue.
+
+We can enable HTTU even if CPUs don't support it, because the kernel
+always checks for HW dirty bit and updates the PTE flags atomically.
 
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 44 ++++++++++++++++++++++++++++++++-----
- 1 file changed, 38 insertions(+), 6 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 24 +++++++++++++++++++++++-
+ 1 file changed, 23 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 3973f7222864..95b4caceae1a 100644
+index 95b4caceae1a..015e8e59e0ef 100644
 --- a/drivers/iommu/arm-smmu-v3.c
 +++ b/drivers/iommu/arm-smmu-v3.c
-@@ -2354,6 +2354,20 @@ arm_smmu_atc_inv_to_cmd(int ssid, unsigned long iova, size_t size,
- 	size_t inval_grain_shift = 12;
- 	unsigned long page_start, page_end;
+@@ -57,6 +57,8 @@
+ #define IDR0_ASID16			(1 << 12)
+ #define IDR0_ATS			(1 << 10)
+ #define IDR0_HYP			(1 << 9)
++#define IDR0_HD				(1 << 7)
++#define IDR0_HA				(1 << 6)
+ #define IDR0_BTM			(1 << 5)
+ #define IDR0_COHACC			(1 << 4)
+ #define IDR0_TTF			GENMASK(3, 2)
+@@ -305,6 +307,9 @@
+ #define CTXDESC_CD_0_TCR_IPS		GENMASK_ULL(34, 32)
+ #define CTXDESC_CD_0_TCR_TBI0		(1ULL << 38)
  
-+	/*
-+	 * ATS and PASID:
-+	 *
-+	 * If substream_valid is clear, the PCIe TLP is sent without a PASID
-+	 * prefix. In that case all ATC entries within the address range are
-+	 * invalidated, including those that were requested with a PASID! There
-+	 * is no way to invalidate only entries without PASID.
-+	 *
-+	 * When using STRTAB_STE_1_S1DSS_SSID0 (reserving CD 0 for non-PASID
-+	 * traffic), translation requests without PASID create ATC entries
-+	 * without PASID, which must be invalidated with substream_valid clear.
-+	 * This has the unpleasant side-effect of invalidating all PASID-tagged
-+	 * ATC entries within the address range.
-+	 */
- 	*cmd = (struct arm_smmu_cmdq_ent) {
- 		.opcode			= CMDQ_OP_ATC_INV,
- 		.substream_valid	= !!ssid,
-@@ -2397,12 +2411,12 @@ arm_smmu_atc_inv_to_cmd(int ssid, unsigned long iova, size_t size,
- 	cmd->atc.size	= log2_span;
- }
- 
--static int arm_smmu_atc_inv_master(struct arm_smmu_master *master)
-+static int arm_smmu_atc_inv_master(struct arm_smmu_master *master, int ssid)
- {
- 	int i;
- 	struct arm_smmu_cmdq_ent cmd;
- 
--	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
-+	arm_smmu_atc_inv_to_cmd(ssid, 0, 0, &cmd);
- 
- 	for (i = 0; i < master->num_sids; i++) {
- 		cmd.atc.sid = master->sids[i];
-@@ -2874,7 +2888,7 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
- 	 * ATC invalidation via the SMMU.
- 	 */
- 	wmb();
--	arm_smmu_atc_inv_master(master);
-+	arm_smmu_atc_inv_master(master, 0);
- 	atomic_dec(&smmu_domain->nr_ats_masters);
- }
- 
-@@ -3065,7 +3079,22 @@ arm_smmu_iova_to_phys(struct iommu_domain *domain, dma_addr_t iova)
- static void arm_smmu_mm_invalidate(struct device *dev, int pasid, void *entry,
- 				   unsigned long iova, size_t size)
- {
--	/* TODO: Invalidate ATC */
-+	int i;
-+	struct arm_smmu_cmdq_ent cmd;
-+	struct arm_smmu_cmdq_batch cmds = {};
-+	struct arm_smmu_master *master = dev_to_master(dev);
++#define CTXDESC_CD_0_TCR_HA		(1UL << 43)
++#define CTXDESC_CD_0_TCR_HD		(1UL << 42)
 +
-+	if (!master->ats_enabled)
-+		return;
-+
-+	arm_smmu_atc_inv_to_cmd(pasid, iova, size, &cmd);
-+
-+	for (i = 0; i < master->num_sids; i++) {
-+		cmd.atc.sid = master->sids[i];
-+		arm_smmu_cmdq_batch_add(master->smmu, &cmds, &cmd);
-+	}
-+
-+	arm_smmu_cmdq_batch_submit(master->smmu, &cmds);
- }
+ #define CTXDESC_CD_0_AA64		(1UL << 41)
+ #define CTXDESC_CD_0_S			(1UL << 44)
+ #define CTXDESC_CD_0_R			(1UL << 45)
+@@ -646,6 +651,8 @@ struct arm_smmu_device {
+ #define ARM_SMMU_FEAT_E2H		(1 << 15)
+ #define ARM_SMMU_FEAT_BTM		(1 << 16)
+ #define ARM_SMMU_FEAT_SVA		(1 << 17)
++#define ARM_SMMU_FEAT_HA		(1 << 18)
++#define ARM_SMMU_FEAT_HD		(1 << 19)
+ 	u32				features;
  
- static int arm_smmu_mm_attach(struct device *dev, int pasid, void *entry,
-@@ -3089,6 +3118,7 @@ static void arm_smmu_mm_detach(struct device *dev, int pasid, void *entry,
- 			       bool detach_domain)
- {
- 	struct arm_smmu_ctx_desc *cd = entry;
-+	struct arm_smmu_master *master = dev_to_master(dev);
- 	struct iommu_domain *domain = iommu_get_domain_for_dev(dev);
- 	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
- 
-@@ -3102,9 +3132,11 @@ static void arm_smmu_mm_detach(struct device *dev, int pasid, void *entry,
- 		 * invalidation.
+ #define ARM_SMMU_OPT_SKIP_PREFETCH	(1 << 0)
+@@ -1665,10 +1672,17 @@ static int __arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+ 		 * this substream's traffic
  		 */
- 		arm_smmu_tlb_inv_asid(smmu_domain->smmu, cd->asid);
--	}
-+		arm_smmu_atc_inv_domain(smmu_domain, pasid, 0, 0);
+ 	} else { /* (1) and (2) */
++		u64 tcr = cd->tcr;
++
+ 		cdptr[1] = cpu_to_le64(cd->ttbr & CTXDESC_CD_1_TTB0_MASK);
+ 		cdptr[2] = 0;
+ 		cdptr[3] = cpu_to_le64(cd->mair);
  
--	/* TODO: invalidate ATC */
-+	} else if (master->ats_enabled) {
-+		arm_smmu_atc_inv_master(master, pasid);
++		if (!(smmu->features & ARM_SMMU_FEAT_HD))
++			tcr &= ~CTXDESC_CD_0_TCR_HD;
++		if (!(smmu->features & ARM_SMMU_FEAT_HA))
++			tcr &= ~CTXDESC_CD_0_TCR_HA;
++
+ 		/*
+ 		 * STE is live, and the SMMU might read dwords of this CD in any
+ 		 * order. Ensure that it observes valid values before reading
+@@ -1676,7 +1690,7 @@ static int __arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+ 		 */
+ 		arm_smmu_sync_cd(smmu_domain, ssid, true);
+ 
+-		val = cd->tcr |
++		val = tcr |
+ #ifdef __BIG_ENDIAN
+ 			CTXDESC_CD_0_ENDI |
+ #endif
+@@ -1919,10 +1933,12 @@ static struct arm_smmu_ctx_desc *arm_smmu_alloc_shared_cd(struct mm_struct *mm)
+ 		return old_cd;
+ 	}
+ 
++	/* HA and HD will be filtered out later if not supported by the SMMU */
+ 	tcr = FIELD_PREP(CTXDESC_CD_0_TCR_T0SZ, 64ULL - VA_BITS) |
+ 	      FIELD_PREP(CTXDESC_CD_0_TCR_IRGN0, ARM_LPAE_TCR_RGN_WBWA) |
+ 	      FIELD_PREP(CTXDESC_CD_0_TCR_ORGN0, ARM_LPAE_TCR_RGN_WBWA) |
+ 	      FIELD_PREP(CTXDESC_CD_0_TCR_SH0, ARM_LPAE_TCR_SH_IS) |
++	      CTXDESC_CD_0_TCR_HA | CTXDESC_CD_0_TCR_HD |
+ 	      CTXDESC_CD_0_TCR_EPD1 | CTXDESC_CD_0_AA64;
+ 
+ 	switch (PAGE_SIZE) {
+@@ -4211,6 +4227,12 @@ static int arm_smmu_device_hw_probe(struct arm_smmu_device *smmu)
+ 			smmu->features |= ARM_SMMU_FEAT_E2H;
+ 	}
+ 
++	if (reg & (IDR0_HA | IDR0_HD)) {
++		smmu->features |= ARM_SMMU_FEAT_HA;
++		if (reg & IDR0_HD)
++			smmu->features |= ARM_SMMU_FEAT_HD;
 +	}
- }
- 
- static void *arm_smmu_mm_alloc(struct mm_struct *mm)
++
+ 	/*
+ 	 * If the CPU is using VHE, but the SMMU doesn't support it, the SMMU
+ 	 * will create TLB entries for NH-EL1 world and will miss the
 -- 
 2.25.0
 
