@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A26FC169EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 08:03:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF80A169EF7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 08:15:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WBGYO/rgLbZt7ibAKN1DVovcy/YMuneeWlyXRarv04Q=; b=B3gAJfGIlKIPWN
-	0CjT6LfsRz7LTNVgbfyeABt7wk7K78I8xGH3fQw5F8rQLUEB5aVQQy8MKi5Ki9cSIOWloyDc29ou9
-	83IfbegPf61DeDS/JGUOM1CBUgNK61YGrWSXomNls3hbqby/qutly/K12ORm9tKWQW/qKH7sYAEvn
-	BCUFUZd6EiUh0n+/Rm/zmWveHskqWVfGiLTSJ2uAPtcHc4ZJ9525wKRf/bXh0g9YCld3T1OPy5nx8
-	l1JE8DPdHV6PSoAe7cC+mHYggcLrldRAucTZjevPnthMMbRGobOin3FAtst29/QoVHHsvu4ZNZEi1
-	YbvMwkvusTu5UXkUTLHQ==;
+	List-Owner; bh=lgzAszPC7tdsJbUBiUGlou3EfPCLLz3WSqiYNMWpl94=; b=IrTStqiLzVvYuA
+	vfeEuX1WUKaUGQoXyKQxlxuG0kxLJQ2uq/CDDUhFyo33qTexEA/2SMncyefH1SJGRmpqi6x6veVHn
+	+sfKKbCz8dhqaTaJ0NS7G+NH+hb/8u3OnPL/tww8an7hxU8B8WzHTyon6fajPJWOWb4hhpTbPLceN
+	eqf+PvnuAbhkO3sptBo7R9g1FQ3S9dWYHcUII9nkPNiYYzbiprdxjfETK5oM8iuWfuwrgflifpZK2
+	cKdaB3MkKcPzk+P+guXmcrst6c9eKCrJRks9p62BIeCDKesQgWCNnN9AnD+1/YI1azKDdR2RBwt6A
+	3Q0L27FdY44Mg/r+srjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j67lz-0000ma-5V; Mon, 24 Feb 2020 07:03:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j67xv-0005fr-3c; Mon, 24 Feb 2020 07:15:43 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j67ls-0000lz-OT
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 07:03:17 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F10F820675;
- Mon, 24 Feb 2020 07:03:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582527796;
- bh=mnE2FfKS0R6lKiiP1VHoJT4DloK/ZQrvXjCpTnE6nKk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vIVK9h0A7q7zFUK8uhhdpSsehDJGk/kzhCV1Tc+mP/enKwRdutpTzP2OIr/cJl8sn
- Fpk1MAjNlB9dUmHEmCjcfxWsH869Xkggqdlb5OBCoxlVpz0xa8UeXm4W3QQzK5C3iM
- OxOZmK/E0orzd0a1WHwvxhAQOZWsoM8lCb3lgmLI=
-Date: Mon, 24 Feb 2020 15:03:10 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] firmware: imx: scu: Ensure sequential TX
-Message-ID: <20200224070309.GQ27688@dragon>
-References: <ae051784024f8fcc458437e278c27b4e79c6fe7d.1582214881.git.leonard.crestez@nxp.com>
+ id 1j67xk-0005dl-G7
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 07:15:34 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1j67xc-0003s9-J8; Mon, 24 Feb 2020 08:15:24 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1j67xb-000289-6G; Mon, 24 Feb 2020 08:15:23 +0100
+Date: Mon, 24 Feb 2020 08:15:23 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: Re: [PATCH v3 1/2] ARM: dts: imx6: phycore-som: fix arm and soc
+ minimum voltage
+Message-ID: <20200224071523.3lwh563jkoxy2eng@pengutronix.de>
+References: <20200116140108.6069-1-m.felsch@pengutronix.de>
+ <20200213125940.GP11096@dragon>
+ <20200221072751.5z7xhlrfecexrwiz@pengutronix.de>
+ <20200224010648.GA14331@dragon>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ae051784024f8fcc458437e278c27b4e79c6fe7d.1582214881.git.leonard.crestez@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200224010648.GA14331@dragon>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:14:26 up 100 days, 22:33, 119 users,  load average: 0.03, 0.09,
+ 0.04
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_230316_818923_CAC00490 
-X-CRM114-Status: UNSURE (   9.42  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200223_231532_541765_F02E02B3 
+X-CRM114-Status: GOOD (  17.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,29 +78,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Richard Zhu <hongxing.zhu@nxp.com>, Jassi Brar <jassisinghbrar@gmail.com>,
- Oleksij Rempel <o.rempel@pengutronix.de>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: s.riedmueller@phytec.de, festevam@gmail.com, chf.fritz@googlemail.com,
+ robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
+ s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 06:10:01PM +0200, Leonard Crestez wrote:
-> SCU requires that all messages words are written sequentially but linux MU
-> driver implements multiple independent channels for each register so ordering
-> between different channels must be ensured by SCU API interface.
-> 
-> Wait for tx_done before every send to ensure that no queueing happens at the
-> mailbox channel level.
-> 
-> Fixes: edbee095fafb ("firmware: imx: add SCU firmware driver support")
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Cc: <stable@vger.kernel.org>
+On 20-02-24 09:06, Shawn Guo wrote:
+> On Fri, Feb 21, 2020 at 08:27:51AM +0100, Marco Felsch wrote:
+> > Hi Shawn,
+> > =
 
-Applied, thanks.
+> > On 20-02-13 20:59, Shawn Guo wrote:
+> > > On Thu, Jan 16, 2020 at 03:01:07PM +0100, Marco Felsch wrote:
+> > > > The current set minimum voltage of 730000=B5V seems to be wrong. I =
+don't
+> > > > know the document which specifies that but the imx6qdl datasheets s=
+ays
+> > > > that the minimum voltage should be 0.925V for VDD_ARM (LDO bypassed,
+> > > > lowest opp) and 1.15V for VDD_SOC (LDO bypassed, lowest opp).
+> > > > =
+
+> > > > Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCO=
+RE-i.MX 6 SOM")
+> > > > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> > > =
+
+> > > I failed to apply it.  Please rebase and resend.
+> > =
+
+> > Which base commit did you use? I rebased the patch on v5.6-rc1 without
+> > problems.
+> =
+
+> But 'git am' fails on v5.6-rc1.
+
+Mh.. don't see why git am complains on my side.. Anyway I will send a
+new version =3D)
+
+Regards,
+  Marco
+
+> Applying: ARM: dts: imx6: phycore-som: fix arm and soc minimum voltage
+> error: patch failed: arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi:111
+> error: arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi: patch does not =
+apply
+> Patch failed at 0001 ARM: dts: imx6: phycore-som: fix arm and soc minimum=
+ voltage
+> Use 'git am --show-current-patch' to see the failed patch
+> When you have resolved this problem, run "git am --continue".
+> If you prefer to skip this patch, run "git am --skip" instead.
+> To restore the original branch and stop patching, run "git am --abort".
+> =
+
+> Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
