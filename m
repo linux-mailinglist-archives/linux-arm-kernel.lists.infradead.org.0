@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89E6F16B4DF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:10:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7BA816B4DE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:10:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=eZAR/1FyHhfSaAJaxAmtKHwMj+Vu2Hb3LBhUCQ/lxU8=; b=YyGr6FLMv+xb20IjfU9K30NK/i
-	aUyv31RjYReqzixWUOhsB0KuxnQK6UiKyGE2OGXbQovfDblcWnQP5P0csavrf8guWIJMmU84jdQ71
-	UwqMDywHWgNyySeXcEatHuuD62RzLuj+V5ZOjP6UDoR7l9c389ZIgBe0foF3pHLhBhlE6JcMVrnVq
-	XtPyf3xpVkqbHlgkf76t7jsy5SzEpBPtpPnAgAkxBSSqxgiQcrOklexx8H02XBxkATOIxh6dhkwPK
-	i0+NzKs56vf9/5RyGp66zlHN6WpL1vJLBhcX3Mv7sXkvME16/zzWn1Gm+Fh4XQBJTFC9IuZ/BZdXW
-	iYPfgQyw==;
+	bh=cBTOJKt2id+X0HtCkZ6eyLN9nWxL8tuCDyC8paFvwMY=; b=i1aOdzf2OnxGpXRaatJ3zdnkiV
+	N0xNvIg0KPSHnegt/LEqln4G5TngNXfwLGsS9Y/BtqMTCulICVPTAbKM6AbP3JgwlDPzM04ghLH04
+	m/0vVuFO1VngefG/4aEmL1E8E7xKbDjaoj2HS3z7AflTk6+9JYsNTCOHD9q8wN9kpGRHxbEUIADe7
+	iLSyqKdNxGRzNzamLxzqgklQPyfj3ysT6MxTGeHhMZ0iJ2wgR5T5Q27SiTbVZi6avFfw6CAIssP9l
+	QobhZ3dUtNweaAU/Sor1minfJtcs8pqXCTfrm4lifzOEWH19B5hPJR/JXq45I3Jtlrf9nzHjswFM6
+	WYvHbFkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6MsB-000584-W0; Mon, 24 Feb 2020 23:10:48 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j6Mry-0004vO-0i; Mon, 24 Feb 2020 23:10:34 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Mq6-0002Op-20
+ id 1j6Mq6-0002Oo-0c
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:41 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2FA1D210041;
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2F5A41B0793;
  Tue, 25 Feb 2020 00:08:31 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E990B210045;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E80471A4BAF;
  Tue, 25 Feb 2020 00:08:30 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 3AF9E40BCF; Mon, 24 Feb 2020 16:08:30 -0700 (MST)
+ 71DCF40A85; Mon, 24 Feb 2020 16:08:30 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 05/15] arm64: defconfig: Enable ENETC Ethernet controller and
- FELIX switch
-Date: Mon, 24 Feb 2020 17:08:00 -0600
-Message-Id: <1582585690-463-6-git-send-email-leoyang.li@nxp.com>
+Subject: [PATCH 06/15] arm64: defconfig: Enable NXP/FSL SPI controller drivers
+Date: Mon, 24 Feb 2020 17:08:01 -0600
+Message-Id: <1582585690-463-7-git-send-email-leoyang.li@nxp.com>
 X-Mailer: git-send-email 1.9.0
 In-Reply-To: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_150838_286291_015637BD 
-X-CRM114-Status: UNSURE (   6.28  )
+X-CRM114-CacheID: sfid-20200224_150838_259802_3393AC04 
+X-CRM114-Status: UNSURE (   6.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -55,7 +54,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,46 +75,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables drivers for NXP ENETC Ethernet controller and FELIX Ethernet
-switch used on QorIQ LS1028a SoC.
+Enables SPI controller drivers used in various NXP/FSL SoCs.
 
-The ENETC ethernet drivers are enabled as built-in to boot from network
-without an initramfs.
+Enabled as built-in to load RFS from SPI flash without requiring
+initramfs.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 9eaf0993cca5..7390c8f3838d 100644
+index 7390c8f3838d..e97ef8b944b8 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -154,6 +154,7 @@ CONFIG_IP6_NF_NAT=m
- CONFIG_IP6_NF_TARGET_MASQUERADE=m
- CONFIG_BRIDGE=m
- CONFIG_BRIDGE_VLAN_FILTERING=y
-+CONFIG_NET_DSA=m
- CONFIG_VLAN_8021Q=m
- CONFIG_VLAN_8021Q_GVRP=y
- CONFIG_VLAN_8021Q_MVRP=y
-@@ -256,6 +257,7 @@ CONFIG_MACVTAP=m
- CONFIG_TUN=y
- CONFIG_VETH=m
- CONFIG_VIRTIO_NET=y
-+CONFIG_NET_DSA_MSCC_FELIX=m
- CONFIG_AMD_XGBE=y
- CONFIG_NET_XGENE=y
- CONFIG_ATL1C=m
-@@ -267,6 +269,8 @@ CONFIG_FEC=y
- CONFIG_FSL_FMAN=y
- CONFIG_FSL_DPAA_ETH=y
- CONFIG_FSL_DPAA2_ETH=y
-+CONFIG_FSL_ENETC=y
-+CONFIG_FSL_ENETC_VF=y
- CONFIG_HIX5HD2_GMAC=y
- CONFIG_HNS_DSAF=y
- CONFIG_HNS_ENET=y
+@@ -398,8 +398,11 @@ CONFIG_SPI=y
+ CONFIG_SPI_ARMADA_3700=y
+ CONFIG_SPI_BCM2835=m
+ CONFIG_SPI_BCM2835AUX=m
++CONFIG_SPI_FSL_LPSPI=y
++CONFIG_SPI_FSL_QUADSPI=y
+ CONFIG_SPI_NXP_FLEXSPI=y
+ CONFIG_SPI_IMX=m
++CONFIG_SPI_FSL_DSPI=y
+ CONFIG_SPI_MESON_SPICC=m
+ CONFIG_SPI_MESON_SPIFC=m
+ CONFIG_SPI_ORION=y
 -- 
 2.17.1
 
