@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00DCA169F77
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 08:47:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E076169F7E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 08:50:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yvQiA6UBNTITrIh6adpCMyWxwhTaEZDP9oQKVhWbehc=; b=t+Em/XcEJIAQJk
-	cL0nUSVZJhoNe4xZ8szgV7K7HdjHVP08glF8CfbmUD8xZa7rzBeBIxsEb6AG+S0KasSoBzZBx58n/
-	c941RubKvtr6hhWwtai3dRgvha5e+w5KR2OUHQu+2awAQSrmkFwm+OZ7AbiJWS2uvcvo5PpOi4MWV
-	tXbi1OngAapUm6NIBCRxOHvvVya88BB6FmhclUafInh+DPIPukR8uHW2PKeSnZkkEcvPCEpX/N8z6
-	r+bvVBTVFOZbPjbV2+FlhQKzUQ5YNwbOoyKdrLzDbwtLl/rK9poRlkJ5d9gVdxnYxET7GOSIM7xP1
-	5iOQQKYNi7y2vZan+eHg==;
+	List-Owner; bh=KySxWVbUDw9zQM2SzseECzQPwQKq+MLbRZpjzzflM90=; b=fnHFCb/CUWDV8g
+	EJm/N6tizQXbn9X1osL6mvyNPPpoLHGnyGHB9yoMIzHAWrpz53DGFJ0qprt9tsDt26nPFfy/2U9qg
+	GtDECVbyJhOBCi+CiqTzQ3eKQDggD5VtU+AojyRiisUZl1oy7HXEk5aS7s/3/hbGye6ScO8AxJvkL
+	cEert8LA/doNonK9mqBhNt1H3nk+TTdLCK3IAh0UtHTU+UdYbVXi1mtkIRmfVvUFxRzI0hn/gfuKz
+	cgwdiaQ0o1fnYcNQeejoRy8n2/X1mMBTDCv1vx4tL3tdgZtXik6sul57mfBLipjCexSQDMV2KnJGG
+	SG6R9HZIOd96bt92SBDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j68SK-0008L3-4V; Mon, 24 Feb 2020 07:47:08 +0000
+	id 1j68VL-0000CN-CB; Mon, 24 Feb 2020 07:50:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j68S9-0008Kh-C6
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 07:46:59 +0000
+ id 1j68V5-0000Bv-EA
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 07:50:00 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F042420675;
- Mon, 24 Feb 2020 07:46:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 777B020675;
+ Mon, 24 Feb 2020 07:49:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582530417;
- bh=x8vWVdrCVtYmpsdSTYu+lTyddkui5cEZft/LbfgJlQc=;
+ s=default; t=1582530599;
+ bh=uN/mf/cIKhX+Ioyz/MHScF/+mLz2fKQr2PZkKgF9n+E=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lipfdEm0MWk7qTMKMmxondt7aV1ammLyd8fB/RxWmkr1XyGtJfqwrRvwIQAGwIEKv
- LnAP/074CSmXimzPb6CvuA7a29S2hRnrX88pD1gVZvYfGzpndwAalCpPfWMSOvNjP6
- xc0EDxlse5qaYwzPUn+qoKrIc/cKKJMQ361HFP7o=
-Date: Mon, 24 Feb 2020 15:46:49 +0800
+ b=ip3DBLS7gV1Oa6Wrpcxg2sWfSCPThUYY6QXhso9dMzTugE6rwFvimMUU9w1wEF21h
+ fuGdZS0cGc95R16nBOJXFNvE8JCg0EAsc/v3L22HYgp88n8r3jImZjz7tXA6pO/Jnm
+ j8X6J0BNj0cHZFPAEXOhU1w+J2LrZKpekKW63KTs=
+Date: Mon, 24 Feb 2020 15:49:51 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH] ARM: dts: imx: Align ocotp node name
-Message-ID: <20200224074648.GZ27688@dragon>
-References: <1582253153-22053-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx: clk-sscg-pll: Drop unnecessary initialization
+Message-ID: <20200224074950.GA27688@dragon>
+References: <1582268376-1672-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582253153-22053-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1582268376-1672-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_234658_168794_686585D5 
-X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-CacheID: sfid-20200223_234959_497108_6DC17A8A 
+X-CRM114-Status: UNSURE (   8.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -77,18 +77,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: abel.vesa@nxp.com, sboyd@kernel.org, mturquette@baylibre.com,
+ jonas.gorski@gmail.com, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ john@phrozen.org, festevam@gmail.com, s.hauer@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, heiko@sntech.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 21, 2020 at 10:45:53AM +0800, Anson Huang wrote:
-> Node name should be generic, use "ocotp-ctrl" instead of "ocotp"
-> for all i.MX6 SoCs.
+On Fri, Feb 21, 2020 at 02:59:36PM +0800, Anson Huang wrote:
+> No need to initialize 'ret' in many functions, as it will get
+> the return value from function call, so remove the initializtion
+> of 'ret'.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
