@@ -2,72 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B2D316A980
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 16:11:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 274AA16A9BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 16:16:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v9MZ25jPG6n02fAjPREsEkb6uJ+Rw/j1IDiO8hdUM/w=; b=aVUmE3ANHqQJOc
-	hacAuRNulk9UqTEZhuMH0hdiT5r66PPc8Br0FPS8ZNqqP16UjdVZwjoFgP9Grgahd4d+pTrnhXMfH
-	msQCYREab2g39uCufhYCpO6d+RkbwnQUgKQwDTjPUAQT6K5mr2yN10NVjEaQNFgiUCu6NDZMsQo2/
-	ePaAa1Jaenpc5wApuKS3aL/eNWVceI4x7Ut7ArVEOiyw4kLMwDRTRKsUS91zU4+p8V+9/p6YL6Z93
-	1yrVxsbx9rHmDK/K6h+HfBYGOU1Hf24EqR/OezkQIr3TzXi8hZtvi6+HSPnfebDEmvLPETPPE1cpQ
-	CZTB5L1xJGSjiBBsvKfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=96hrJRHnaUyWMSDD2JStUjeYp0KPOLkT4yGItuiQIEY=; b=mU1Cu6ZoS+kMAg
+	x7YMEHisN9LYZpgyYMK7DVhaCZNng+q9Db61KFthYtQjNve/IpCV9WvPYX9Xclr2+Gy2gyjUvIfd+
+	tnhbY6Lvh5odesckPP39aZfVk2cZ8GkQDdSkACNymbM/5UidvDLzVABavukmpmD5D4gg20UXSfl4S
+	K0Rj1QyPv8posW4VC/hEVWWb75OOViTHjZzc+9G1MWqQ5of+Fr2ixpQ3IXl7IV9ffPTiOQsG64I5r
+	1b7+utGu4ak/wcwoj5xLbR4qopAyE3iAjW7PIKN2/vlyqhKTKgT93ApLRnBBFQLi1XhC+XVgVo6Sr
+	o6wuvtnNWuBH2QMaoBJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6FOY-0001h6-Lw; Mon, 24 Feb 2020 15:11:42 +0000
-Received: from vps.xff.cz ([195.181.215.36])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6FOQ-0001gF-5i
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 15:11:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582557091; bh=9aE+a8E4LVEOkt4HFGQF11TSms2VZ1eBDyNQaeKqK74=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=tfQ1X2cSGvWyWkk8cfn533l5XKTK8qIsCqHpeifhVET6YwxrfV/c4HQ7kAgDyZtg1
- EemSNHRmabcJvOtTSMSP1I33wJwaxrfobg/YeZItZIRq2JW7elPmz3bbDuCsibqTVH
- aM1WXmMSCOmobj2LdNFrUK8MQqCd/7ErnT0+zGIU=
-Date: Mon, 24 Feb 2020 16:11:31 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v2] arm64: dts: sun50i-h5-orange-pi-pc2: Add CPUX voltage
- regulator
-Message-ID: <20200224151131.fw7to7pmegj5ylqy@core.my.home>
-Mail-Followup-To: Maxime Ripard <maxime@cerno.tech>,
- linux-sunxi@googlegroups.com, Samuel Holland <samuel@sholland.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>, 
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, 
- open list <linux-kernel@vger.kernel.org>
-References: <20200223104019.527587-1-megous@megous.com>
- <20200224092704.gnnjwds3zmmravrw@gilmour.lan>
+	id 1j6FSy-000425-Pe; Mon, 24 Feb 2020 15:16:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6FSr-00041e-Ac
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 15:16:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 31D9E1FB;
+ Mon, 24 Feb 2020 07:16:08 -0800 (PST)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A05783F534;
+ Mon, 24 Feb 2020 07:16:06 -0800 (PST)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v3] clocksource: Fix arm_arch_timer clockmode when vDSO
+ disabled
+Date: Mon, 24 Feb 2020 15:15:52 +0000
+Message-Id: <20200224151552.57274-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200224092704.gnnjwds3zmmravrw@gilmour.lan>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_071134_548045_36A98003 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200224_071609_410041_3F8DC787 
+X-CRM114-Status: GOOD (  10.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,80 +62,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Samuel Holland <samuel@sholland.org>,
- Chen-Yu Tsai <wens@csie.org>, open list <linux-kernel@vger.kernel.org>,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark.Rutland@arm.com, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux@armlinux.org.uk, luto@kernel.org, maz@kernel.org, tglx@linutronix.de,
+ vincenzo.frascino@arm.com, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 10:27:04AM +0100, Maxime Ripard wrote:
-> On Sun, Feb 23, 2020 at 11:40:19AM +0100, Ondrej Jirman wrote:
-> > Orange Pi PC2 features sy8106a regulator just like Orange Pi PC.
-> >
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> > Reviewed-by: Samuel Holland <samuel@sholland.org>
-> > ---
-> >  .../dts/allwinner/sun50i-h5-orangepi-pc2.dts  | 20 +++++++++++++++++++
-> >  1 file changed, 20 insertions(+)
-> 
-> Having a changelog would be great
-> 
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
-> > index 70b5f09984218..7b2572dc84857 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
-> > @@ -93,6 +93,10 @@ &codec {
-> >  	status = "okay";
-> >  };
-> >
-> > +&cpu0 {
-> > +	cpu-supply = <&reg_vdd_cpux>;
-> > +};
-> > +
-> >  &de {
-> >  	status = "okay";
-> >  };
-> > @@ -168,6 +172,22 @@ &ohci3 {
-> >  	status = "okay";
-> >  };
-> >
-> > +&r_i2c {
-> > +	status = "okay";
-> > +
-> > +	reg_vdd_cpux: regulator@65 {
-> > +		compatible = "silergy,sy8106a";
-> > +		reg = <0x65>;
-> > +		regulator-name = "vdd-cpux";
-> > +		silergy,fixed-microvolt = <1100000>;
-> > +		regulator-min-microvolt = <1000000>;
-> > +		regulator-max-microvolt = <1400000>;
-> > +		regulator-ramp-delay = <200>;
-> > +		regulator-boot-on;
-> > +		regulator-always-on;
-> > +	};
-> > +};
-> > +
-> 
-> Looks like you fixed the issues reported by Samuel though. I've
-> applied it.
-
-Sorry, yes, I just did that. Re-ordering + removing a comment and changing the
-fixed voltage.
-
-Thank you,
-	o.
-
-> Maxime
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGFybV9hcmNoX3RpbWVyIHJlcXVpcmVzIHRoYXQgVkRTT19DTE9DS01PREVfQVJDSFRJTUVS
+IHRvIGJlCmRlZmluZWQgdG8gY29tcGlsZSBjb3JyZWN0bHkuIE9uIGFybSB0aGUgdkRTTyBjYW4g
+YmUgZGlzYWJsZWQgYW5kIHdoZW4KdGhpcyBpcyB0aGUgY2FzZSB0aGUgY29tcGlsYXRpb24gZW5k
+cyBwcmVtYXR1cmVseSB3aXRoIGFuIGVycm9yOgoKICQgbWFrZSBBUkNIPWFybSBtdWx0aV92N19k
+ZWZjb25maWcKICQgLi9zY3JpcHRzL2NvbmZpZyAtZCBWRFNPCiAkIG1ha2UKCmRyaXZlcnMvY2xv
+Y2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYzo3Mzo0NDogZXJyb3I6CuKAmFZEU09fQ0xPQ0tNT0RF
+X0FSQ0hUSU1FUuKAmSB1bmRlY2xhcmVkIGhlcmUgKG5vdCBpbiBhIGZ1bmN0aW9uKQogIHN0YXRp
+YyBlbnVtIHZkc29fY2xvY2tfbW9kZSB2ZHNvX2RlZmF1bHQgPSBWRFNPX0NMT0NLTU9ERV9BUkNI
+VElNRVI7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4Kc2Ny
+aXB0cy9NYWtlZmlsZS5idWlsZDoyNjc6IHJlY2lwZSBmb3IgdGFyZ2V0Cidkcml2ZXJzL2Nsb2Nr
+c291cmNlL2FybV9hcmNoX3RpbWVyLm8nIGZhaWxlZAptYWtlWzJdOiAqKiogW2RyaXZlcnMvY2xv
+Y2tzb3VyY2UvYXJtX2FyY2hfdGltZXIub10gRXJyb3IgMQptYWtlWzJdOiAqKiogV2FpdGluZyBm
+b3IgdW5maW5pc2hlZCBqb2JzLi4uLgpzY3JpcHRzL01ha2VmaWxlLmJ1aWxkOjUwNTogcmVjaXBl
+IGZvciB0YXJnZXQgJ2RyaXZlcnMvY2xvY2tzb3VyY2UnIGZhaWxlZAptYWtlWzFdOiAqKiogW2Ry
+aXZlcnMvY2xvY2tzb3VyY2VdIEVycm9yIDIKbWFrZVsxXTogKioqIFdhaXRpbmcgZm9yIHVuZmlu
+aXNoZWQgam9icy4uLi4KTWFrZWZpbGU6MTY4MzogcmVjaXBlIGZvciB0YXJnZXQgJ2RyaXZlcnMn
+IGZhaWxlZAptYWtlOiAqKiogW2RyaXZlcnNdIEVycm9yIDIKCkRlZmluZSBWRFNPX0NMT0NLTU9E
+RV9BUkNIVElNRVIgYXMgVkRTT19DTE9DS01PREVfTk9ORSB3aGVuIHRoZSB2RFNPcyBhcmUKbm90
+IGVuYWJsZWQgdG8gYWRkcmVzcyB0aGUgaXNzdWUuCgpGaXhlczogNWUzYzZhMzEyYTA5ICgiQVJN
+L2FybTY0OiB2ZHNvOiBVc2UgY29tbW9uIHZkc28gY2xvY2sgbW9kZSBzdG9yYWdlIikKQ2M6IE1h
+cmMgWnluZ2llciA8bWF6QGtlcm5lbC5vcmc+CkNjOiBNYXJrIFJ1dGxhbmQgPE1hcmsuUnV0bGFu
+ZEBhcm0uY29tPgpDYzogUnVzc2VsbCBLaW5nIDxsaW51eEBhcm1saW51eC5vcmcudWs+CkNjOiBU
+aG9tYXMgR2xlaXhuZXIgPHRnbHhAbGludXRyb25peC5kZT4KUmVwb3J0ZWQtYnk6IE1hcmVrIFN6
+eXByb3dza2kgPG0uc3p5cHJvd3NraUBzYW1zdW5nLmNvbT4KU2lnbmVkLW9mZi1ieTogVmluY2Vu
+em8gRnJhc2Npbm8gPHZpbmNlbnpvLmZyYXNjaW5vQGFybS5jb20+Ci0tLQogZHJpdmVycy9jbG9j
+a3NvdXJjZS9hcm1fYXJjaF90aW1lci5jIHwgNCArKysrCiAxIGZpbGUgY2hhbmdlZCwgNCBpbnNl
+cnRpb25zKCspCgpUaGlzIHBhdGNoIGhhcyBiZWVuIHJlYmFzZWQgYW5kIHRlc3RlZCBvbiB0aXAv
+dGltZXJzL2NvcmUuCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90
+aW1lci5jIGIvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5jCmluZGV4IGVlMjQy
+MGQ1NmY2Ny4uZDUzZjRjN2NjYWFlIDEwMDY0NAotLS0gYS9kcml2ZXJzL2Nsb2Nrc291cmNlL2Fy
+bV9hcmNoX3RpbWVyLmMKKysrIGIvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5j
+CkBAIC02OSw3ICs2OSwxMSBAQCBzdGF0aWMgZW51bSBhcmNoX3RpbWVyX3BwaV9uciBhcmNoX3Rp
+bWVyX3VzZXNfcHBpID0gQVJDSF9USU1FUl9WSVJUX1BQSTsKIHN0YXRpYyBib29sIGFyY2hfdGlt
+ZXJfYzNzdG9wOwogc3RhdGljIGJvb2wgYXJjaF90aW1lcl9tZW1fdXNlX3ZpcnR1YWw7CiBzdGF0
+aWMgYm9vbCBhcmNoX2NvdW50ZXJfc3VzcGVuZF9zdG9wOworI2lmZGVmIENPTkZJR19HRU5FUklD
+X0dFVFRJTUVPRkRBWQogc3RhdGljIGVudW0gdmRzb19jbG9ja19tb2RlIHZkc29fZGVmYXVsdCA9
+IFZEU09fQ0xPQ0tNT0RFX0FSQ0hUSU1FUjsKKyNlbHNlCitzdGF0aWMgZW51bSB2ZHNvX2Nsb2Nr
+X21vZGUgdmRzb19kZWZhdWx0ID0gVkRTT19DTE9DS01PREVfTk9ORTsKKyNlbmRpZiAvKiBDT05G
+SUdfR0VORVJJQ19HRVRUSU1FT0ZEQVkgKi8KIAogc3RhdGljIGNwdW1hc2tfdCBldnRzdHJtX2F2
+YWlsYWJsZSA9IENQVV9NQVNLX05PTkU7CiBzdGF0aWMgYm9vbCBldnRzdHJtX2VuYWJsZSA9IElT
+X0VOQUJMRUQoQ09ORklHX0FSTV9BUkNIX1RJTUVSX0VWVFNUUkVBTSk7Ci0tIAoyLjI1LjAKCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
