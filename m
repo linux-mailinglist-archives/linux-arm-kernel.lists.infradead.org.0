@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF7D116B4E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:11:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73E9716B4E1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:11:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r+wp+8hSILHAd2qYoE2+iUAANaaL3nl4vp5slh+uoC0=; b=LObVFHYhkH/B/B8GDMWAbkThtX
-	T/O49/HTeQp31JN/BNGwu6WQIaYVKvYdRve3a29anAfIivMLJztAF/gy7ub7rnLFFNFhFUzgFwYX1
-	NAC7Ys4Fv3VocnE2fCjUhVZ6jXXguegzS6j2SjD+c1qtQ7GJV/IlY8jJbkkpIkityvxgK/pB+g6K/
-	JDQbYhlvgr8ryymbT8ER8X3ehTpyFr1g8J1LQVggdCGHjqWR8FNV6K8tgjQynkbAgj28Wz2Sgmn1C
-	zLYd7CVoq7gtCVqHBZGFA6debPoaJXuFwkfyvze/v0qdrTZBmV9RQyBD9BjRtZ4nBMo7IzZOEXqic
-	Ud4ydurg==;
+	bh=lwKaUGVoO1nQ8W0oZiU04ljDBoSFqkbkICNvwXJbS+E=; b=WSfp0D6uprXILlVc1y/70IU1AJ
+	EGSnF4uvCJKD70VxYxJfHZ5qNO+7PZQB3dikrtv1Cs9HrkXYRdxVEhdKrICCCO871Mbw5iIv3nPLX
+	84QQxgYbgw/YMIZd1i07UV2Cya0dI0KpQr/F2qNOHIr1h3rFZkbOuC0VvT7dAhT2EHjjmY9XrgvlZ
+	3dWEky0ymhxk8T71qbtyKxxM68wfO6fe6SFcLGHxdr3WC2uOIL/QCCfg6WTZyW1NumgU5pm8gDl/t
+	LYnJcwyJME+T4yrGVZp0G06C1ufuWdGP8C7w9/agrrN+v+Ve17k4MhhNUwrVNFSAzg96bpGPVdi3S
+	4IAp/oeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Msp-0005nQ-Pk; Mon, 24 Feb 2020 23:11:27 +0000
+	id 1j6Msa-0005YV-1h; Mon, 24 Feb 2020 23:11:12 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Mq8-0002SV-OB
+ id 1j6Mq8-0002SU-Nn
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:43 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E05211B0792;
- Tue, 25 Feb 2020 00:08:31 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A9151B0786;
+ Tue, 25 Feb 2020 00:08:32 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A8A281B0786;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E8CEC1B0794;
  Tue, 25 Feb 2020 00:08:31 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 3608440A63; Mon, 24 Feb 2020 16:08:31 -0700 (MST)
+ 762EB40A85; Mon, 24 Feb 2020 16:08:31 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 09/15] arm64: defconfig: Enable QorIQ IFC NAND controller
- driver
-Date: Mon, 24 Feb 2020 17:08:04 -0600
-Message-Id: <1582585690-463-10-git-send-email-leoyang.li@nxp.com>
+Subject: [PATCH 10/15] arm64: defconfig: Enable QorIQ GPIO driver
+Date: Mon, 24 Feb 2020 17:08:05 -0600
+Message-Id: <1582585690-463-11-git-send-email-leoyang.li@nxp.com>
 X-Mailer: git-send-email 1.9.0
 In-Reply-To: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_150840_944542_599EF100 
-X-CRM114-Status: UNSURE (   8.29  )
+X-CRM114-CacheID: sfid-20200224_150840_933921_3449CB68 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -76,34 +75,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables NXP/FSL QorIQ IFC flash controller driver for NAND.  Enabled as
-built-in to load RFS from nand flash without initramfs.
+Enables generic GPIO driver for varous QorIQ SoCs.  The driver can only
+be built-in right now.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index d2d5d470a6fc..a625e322fa27 100644
+index a625e322fa27..7da63af7c9a1 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -217,6 +217,7 @@ CONFIG_MTD_BLOCK=y
- CONFIG_MTD_RAW_NAND=y
- CONFIG_MTD_NAND_DENALI_DT=y
- CONFIG_MTD_NAND_MARVELL=y
-+CONFIG_MTD_NAND_FSL_IFC=y
- CONFIG_MTD_NAND_QCOM=y
- CONFIG_MTD_SPI_NOR=y
- CONFIG_SPI_CADENCE_QUADSPI=y
-@@ -801,7 +802,6 @@ CONFIG_ARCH_K3_J721E_SOC=y
- CONFIG_TI_SCI_PM_DOMAINS=y
- CONFIG_EXTCON_USB_GPIO=y
- CONFIG_EXTCON_USBC_CROS_EC=y
--CONFIG_MEMORY=y
- CONFIG_IIO=y
- CONFIG_EXYNOS_ADC=y
- CONFIG_QCOM_SPMI_ADC5=m
+@@ -439,6 +439,7 @@ CONFIG_PINCTRL_SM8150=y
+ CONFIG_GPIO_ALTERA=m
+ CONFIG_GPIO_DWAPB=y
+ CONFIG_GPIO_MB86S7X=y
++CONFIG_GPIO_MPC8XXX=y
+ CONFIG_GPIO_PL061=y
+ CONFIG_GPIO_RCAR=y
+ CONFIG_GPIO_UNIPHIER=y
 -- 
 2.17.1
 
