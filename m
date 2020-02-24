@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D347169E70
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:31:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92F53169E73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:31:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OR3RsTy/tuReoepqWUyFHO8K1t5AeI26M0oRxofAkH0=; b=sbp1mw+LUFybhU5GOclnU/RCbw
-	x3ofzwXSfnwaoSS2DcGPsh+RE46qDHypWs8GfHZSsphOej0GdJfr36/sXASt3vVUUNlQ5PbAVYQ8P
-	yOMw8ZtCBDFAlgWZAJQhWK6IzJangXFjFL3a5r85TF9Bqb13ezn+yrGPRk1hVd0hxf9ju9ywHx+J4
-	DwYm8YhxDfxnjhkb5rF0lHFElbovcl9H96C4z083tNET+Suf8QJkj2v8wjZfO1A/mu0Xjr6dyFrib
-	+E7TEfiIdsdUAevo0n/jlGdclfrApMUjOHQGfvv4Hs8DzUX2M6Kr03X84bH59kx15DIxDPwV1lpSM
-	mFcAl3Jg==;
+	bh=fk67xHWoQ3AA7lfRNBFdr0ZXlL2+PhT5YoXP/1wq/BM=; b=OHPSSbsPd2+T8T8ej3ozarfgzI
+	w0pBpkfgi+KvCTWNX/oSBn+GINOAUyzI2HQb1J9dkTv58ybDGFneHR24hYw/EIZEAqgyB3H0rtgyu
+	vJmC1xjCLhr8H/yle236OCXSFoTi9NlDR9VYdlGJ2e9qNvVCTSmnvFFcks5144xbvN6UO0kR0nad7
+	uSTsBcCSvinEI3JwNqNEiXep4tVwyT5tJagR+9+ITEVwH72AtTtLNdSshPzEXaGOqs6/fXpzlntzV
+	d0yQSXLLhwtrctQMLK+giOqxR+tFJKoYjtjhBIVOVhogV1hZvsRdHERWzSC6Nk5GiUL4pA0d5prxC
+	+yacs64g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j67Gp-00057v-LO; Mon, 24 Feb 2020 06:31:11 +0000
+	id 1j67H5-0005Fo-OQ; Mon, 24 Feb 2020 06:31:27 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j67Gg-00056F-5m
+ id 1j67Gg-00056E-5p
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:31:04 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 01DB5E03AF;
- Sun, 23 Feb 2020 22:30:52 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id 49BE0E03E1;
+ Sun, 23 Feb 2020 22:30:56 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id QO5qkPPxzVBj; Sun, 23 Feb 2020 22:30:51 -0800 (PST)
+ with ESMTP id C8mV3RRo4uOg; Sun, 23 Feb 2020 22:30:55 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de
-Subject: [PATCH v3 1/8] arm64: dts: librem5-devkit: enable sai2 and sai6 audio
- interface
-Date: Mon, 24 Feb 2020 07:29:10 +0100
-Message-Id: <20200224062917.4895-2-martin.kepplinger@puri.sm>
+Subject: [PATCH v3 2/8] arm64: dts: librem5-devkit: add the simcom 7100 modem
+ and sgtl5000 audio codec
+Date: Mon, 24 Feb 2020 07:29:11 +0100
+Message-Id: <20200224062917.4895-3-martin.kepplinger@puri.sm>
 In-Reply-To: <20200224062917.4895-1-martin.kepplinger@puri.sm>
 References: <20200224062917.4895-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_223102_221715_12C3087A 
-X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-CacheID: sfid-20200223_223102_221337_28BF0C9D 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,71 +75,94 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-Add missing sai2 and sai6 audio interface and pinctrl definitions for the
-Librem 5 devkit.
+Add the simcomm modem and the sgtl5000 audio codec.
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
 ---
- .../dts/freescale/imx8mq-librem5-devkit.dts   | 38 +++++++++++++++++++
- 1 file changed, 38 insertions(+)
+ .../dts/freescale/imx8mq-librem5-devkit.dts   | 62 +++++++++++++++++++
+ 1 file changed, 62 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 007c14eec676..25135b08d4f8 100644
+index 25135b08d4f8..ed4a10255bad 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -567,6 +567,25 @@
- 		>;
+@@ -148,6 +148,55 @@
+ 		regulator-always-on;
  	};
  
-+	pinctrl_sai2: sai2grp {
-+		fsl,pins = <
-+			MX8MQ_IOMUXC_SAI2_TXFS_SAI2_TX_SYNC	0xd6
-+			MX8MQ_IOMUXC_SAI2_TXC_SAI2_TX_BCLK	0xd6
-+			MX8MQ_IOMUXC_SAI2_TXD0_SAI2_TX_DATA0	0xd6
-+			MX8MQ_IOMUXC_SAI2_RXD0_SAI2_RX_DATA0	0xd6
-+			MX8MQ_IOMUXC_SAI2_MCLK_SAI2_MCLK	0xd6
-+		>;
++	wwan_codec: sound-wwan-codec {
++		compatible = "option,gtm601";
++		#sound-dai-cells = <0>;
 +	};
 +
-+	pinctrl_sai6: sai6grp {
-+		fsl,pins = <
-+			MX8MQ_IOMUXC_SAI1_RXD5_SAI6_RX_DATA0	0xd6
-+			MX8MQ_IOMUXC_SAI1_RXD6_SAI6_RX_SYNC	0xd6
-+			MX8MQ_IOMUXC_SAI1_TXD4_SAI6_RX_BCLK     0xd6
-+			MX8MQ_IOMUXC_SAI1_TXD5_SAI6_TX_DATA0	0xd6
-+		>;
++	sound {
++		compatible = "simple-audio-card";
++		simple-audio-card,name = "sgtl5000";
++		simple-audio-card,format = "i2s";
++		simple-audio-card,widgets =
++			"Microphone", "Microphone Jack",
++			"Headphone", "Headphone Jack",
++			"Speaker", "Speaker Ext",
++			"Line", "Line In Jack";
++		simple-audio-card,routing =
++			"MIC_IN", "Microphone Jack",
++			"Microphone Jack", "Mic Bias",
++			"LINE_IN", "Line In Jack",
++			"Headphone Jack", "HP_OUT",
++			"Speaker Ext", "LINE_OUT";
++
++		simple-audio-card,cpu {
++			sound-dai = <&sai2>;
++		};
++
++		simple-audio-card,codec {
++			sound-dai = <&sgtl5000>;
++			clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
++			frame-master;
++			bitclock-master;
++		};
 +	};
 +
- 	pinctrl_typec: typecgrp {
- 		fsl,pins = <
- 			MX8MQ_IOMUXC_NAND_DATA06_GPIO3_IO12		0x16
-@@ -742,6 +761,25 @@
- 	status = "okay";
- };
++	sound-wwan {
++		compatible = "simple-audio-card";
++		simple-audio-card,name = "SIMCom SIM7100";
++		simple-audio-card,format = "dsp_a";
++
++		simple-audio-card,cpu {
++			sound-dai = <&sai6>;
++		};
++
++		telephony_link_master: simple-audio-card,codec {
++			sound-dai = <&wwan_codec>;
++			frame-master;
++			bitclock-master;
++		};
++	};
++
+ 	vibrator {
+ 		compatible = "gpio-vibrator";
+ 		pinctrl-names = "default";
+@@ -426,6 +475,19 @@
+ 		vddio-supply = <&reg_3v3_p>;
+ 	};
  
-+&sai2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sai2>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
-+	assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
-+	assigned-clock-rates = <24576000>;
-+	status = "okay";
-+};
++	sgtl5000: audio-codec@a {
++		compatible = "fsl,sgtl5000";
++		clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
++		assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
++		assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
++		assigned-clock-rates = <24576000>;
++		#sound-dai-cells = <0>;
++		reg = <0x0a>;
++		VDDD-supply = <&reg_1v8_p>;
++		VDDIO-supply = <&reg_3v3_p>;
++		VDDA-supply = <&reg_3v3_p>;
++	};
 +
-+&sai6 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sai6>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_SAI6>;
-+	assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
-+	assigned-clock-rates = <24576000>;
-+	fsl,sai-synchronous-rx;
-+	status = "okay";
-+};
-+
- &uart1 { /* console */
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_uart1>;
+ 	touchscreen@5d {
+ 		compatible = "goodix,gt5688";
+ 		reg = <0x5d>;
 -- 
 2.20.1
 
