@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB15C16A24B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:30:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CE3216A213
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:23:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RgeC8MYj/ZHagugQq2yNWebQaQ2OUSNOKDOklDbgjDA=; b=fTXqORuwTUYYTT
-	7y+pC4JAK5H9GDXc2x9aAuWx8+Pedjwn85tncVadArY4svi9zSsFV+mOiw2Q+rOLdLqSvpu1CM5pg
-	MB5c4Ekp+2mmjL6YpASWlLr87eVHwCl4ax2c6rvGhyfcX+a0QfYtHXH6eXtGIR6S8V5hLTzSIicab
-	hbI2NZH3wH7k4QZpj0HQh0yUlLd9ZzNk7asdwUEuYAqSBiYP+cANHAs1Tr2DY2J46KFJsE/Gh9900
-	d/kHG39PBhyT31Oz1DG3OAstBQn9NyirvlWwyWcmvojxD9Q3GzfdMAdJCjpAJt/SLfwvl7m1gdZ0U
-	azgzWiezyAdREiMxsEnQ==;
+	List-Owner; bh=xMjgVHxih84RyKBJ928VtCIWUf3Bnb5+aouzNt8PTrc=; b=SPHbWGUd4EANgj
+	TU+qR/mX9g2JwZC75z2V7K6RhloQsEezwAsn7vptdKdrBt1//NUq4E1NKWTAJePp/Bw1Sa70UXtkJ
+	BlB4cUqRmDgFBh2RErRgvt1Ygw8FhEd3O8n8fEhFcwhbXliIP9+U8rcbdj2S2AvvdUTZQ1BH9uF52
+	nX1cekTEVdjL4eMw6QURcw5l0A2ngTIZylbns1QNPN3oEViM9WnFmOeiPsMWsiS1dY18dwW8M2Unz
+	9swvAz7NrdErPfaWA8K6+WyscJeRqQFe9D0MfJ4V4PiBQisigbuPbU1io2pZyjUTu7TDnnYYwGXqN
+	pKrI55amOJzOR1HTNIcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6A41-0005Yf-PV; Mon, 24 Feb 2020 09:30:09 +0000
+	id 1j69xF-0006Tu-Ut; Mon, 24 Feb 2020 09:23:09 +0000
 Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69kJ-0001ta-2r; Mon, 24 Feb 2020 09:09:50 +0000
+ id 1j69kM-0001wN-DB; Mon, 24 Feb 2020 09:09:52 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id B4686642;
- Mon, 24 Feb 2020 04:09:44 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:09:45 -0500
+ by mailnew.west.internal (Postfix) with ESMTP id ED45C616;
+ Mon, 24 Feb 2020 04:09:48 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:09:49 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=rwIPW5Rarf5vi
- ZX1mLAZ2WDXchic4euofCpdg0WseoM=; b=OHc5s5PO0n/n5ZT6n+KJde2B40EMi
- fuk2VdePddrCfJ7SBpneKochjTr68MO1B4F9JmOfCd/2ssMdujXYslafGYXnfeGW
- RGN6ZWcSvYIs6UT8cslH/PjdRueWW0MOjalaD92cO+oviTPU3enjLFAPii5959kJ
- eL/Nb9g0CkVe3cf6R6/wQ+y3obqdwfr1wf4O0EccQl1fS8mGD0cgFetcJy/jYbMC
- JP9tgVGsKpfYpak/Tw/B/tbm+ApivPsxPwnJu1Qjr/kFCp/w/w6tBgWqeG5MhEKV
- ILI8DQVioS6RbccIh8vvhrVoc3OKDoLnOi7bZfrLQBt4nZ+nqC4AvfMMQ==
+ :mime-version:content-transfer-encoding; s=fm2; bh=CXHdiG9U8EDuW
+ CnCZKkwdZQss3NgmVso6HcYjtytaAQ=; b=osFzyJsfTKDvzGTpTfY1rRAaGSv5q
+ CtnReunvWD65+Vx0qX6cLKx33W6FMlPy3S4HraLj+IhaLrkB2ymofYxnru/GhlOm
+ +lOUnbgqYh+0DF5GXttQfb7WNTRzprLomG6IJQpQqATFiGOAF65mX9PhgnTUxhBh
+ w35tupkgGSR0dQmAMyjVIH4vrYto6iBmGVCp1+y3EEknBuKyuhVMYweQwTXiYoYq
+ oa8rG1XViFwsrAxf+E/+h/KVhFi52FdhkYvz5YbQsuXKJC6Jd8N/ILgG5QDP9r6K
+ cBDJ/F27oxstoO9U4K0Nqm8ylhwsbbd3H+FFPnS2RFT6D1bJeIc1ZxT7A==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=rwIPW5Rarf5viZX1mLAZ2WDXchic4euofCpdg0WseoM=; b=v7NYCHWE
- w7N9d7xpNsPjJKEV5rM7sJKt0kvvxKZUj3dk1mfUJzjKrmB6R9VLifNX+TjU9x3J
- F1eLyuOnYbLVi/qbMnrWamc8h8XeMHgQkKqugi9OuZG6t83Up66b5mpCwRZyLlab
- lKoPE1bKzB/djvYiGTLzKpoKiMg7FWuxtPUJcI6P0xEmlZOCIs9bgNUGRowiGz9e
- XmPEbApO4D4apaypjlakkyMmIl19PIZWIDRrmHqbs0Iayz/KP+RY3u5ADbxwyzcD
- A4UH+DlLvN+V7MlAgTMfzq8Jr5Bmmy699lY6kcU2BvHL6/XY2HGNFgcfRKgeYLgF
- aOvGNvpJ6Xwusg==
-X-ME-Sender: <xms:2JJTXhJvfgm2rdPtjDUtDX1JXKoY6r36WB4LmzFiW0sz9xSUFhNtRw>
+ fm2; bh=CXHdiG9U8EDuWCnCZKkwdZQss3NgmVso6HcYjtytaAQ=; b=LPeOci/a
+ gbhbUBPHNFLNaBXjAK60H6jOdGImhxFj1WaRItVITvh/JG5bl2n4lWE3VwZ+ndxU
+ eFTNWxLyeoYdVzfV2AZbeRniIrazHhaemWDx0fz337tsia8kMJ1+x+LiHTGfyPT5
+ yF0K0GDUzkfV8Zt9+VH9ALnhztzaLX8sQnoMa6n/4B/Fd5Uf1PExq+f+mmz9/sSd
+ y3BEcgEMuee77aSa8xOKKS0RQIb5AlRSPF8XK1KlODpCmPWNfalB2LCsGxUF3R4y
+ XDJdn9SMQxz+2GjmqxpX8aCEDweMhkyRzIcTGwxDWFJnB/joIWj4+o5XsN4FDOhq
+ TuDyF8f88RhUhQ==
+X-ME-Sender: <xms:3JJTXnBgvbA_29t1Xq1e6VGI9r1Mg_rrO3_Xu_YA4YSNsJePksnnhQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotffvucfrrh
  hofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgenuceurghi
  lhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurh
  ephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcutfhi
  phgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrkeelrd
- eikedrjeeinecuvehluhhsthgvrhfuihiivgepfedunecurfgrrhgrmhepmhgrihhlfhhr
+ eikedrjeeinecuvehluhhsthgvrhfuihiivgepfeehnecurfgrrhgrmhepmhgrihhlfhhr
  ohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:2JJTXokoaW1w_gNU65k_xr4DkF9vF0W-KPaYmNVVnfRR6ozioANuCg>
- <xmx:2JJTXtTtFQ19nQe1ImB6G-d826LLcYGMV5TdxU865G757ts-tFjNiQ>
- <xmx:2JJTXrbaeTDWtpshCOUdsJFpTQVmg5u50qCL5Z3pvXjYk10BzaUp_A>
- <xmx:2JJTXlircmIK9wyey68oC21VlcLVr6zqmOm5wJJKLPQUzuYwWiPlpERUGM0>
+X-ME-Proxy: <xmx:3JJTXhxMgTra0UJPiBbf6Wi7FAEIgfA23LcGHF8E_WtK99bqYhshNQ>
+ <xmx:3JJTXmKDj4d0k95F0uCDl7mQTDpbmAT0_mKF5oENiSiwchj3vUBCWQ>
+ <xmx:3JJTXo4NqRrimlNKpwALHc4ATqGugWrxHaGjnRFTrKxZyIn_eYFSHg>
+ <xmx:3JJTXuLqzzTUrjIMXjoXVm3nOvnwDCyUP6WzligyfBAX-2ydy60v3VrrKTA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id F3BBD328005E;
- Mon, 24 Feb 2020 04:09:43 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 4A9243060BD1;
+ Mon, 24 Feb 2020 04:09:48 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH 38/89] drm/vc4: plane: Move planes creation to its own function
-Date: Mon, 24 Feb 2020 10:06:40 +0100
-Message-Id: <d00444566d017b4a4c9b20cd013321b60a5f59e6.1582533919.git-series.maxime@cerno.tech>
+Subject: [PATCH 41/89] drm/vc4: plane: Create overlays for any CRTC
+Date: Mon, 24 Feb 2020 10:06:43 +0100
+Message-Id: <faaea57a74a0e35ae6d8f22cf120cd9b56c9c329.1582533919.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_010947_584127_454A7BB8 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20200224_010950_619407_455339E3 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,100 +113,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The planes so far were created as part of the CRTC binding code with
-each planes created associated only to one CRTC. However, the hardware
-in the vc4 doesn't really have such constraint and can be used with any
-CRTC.
+Now that we have everything in place, we can now register all the overlay
+planes that can be assigned to all the CRTCs.
 
-In order to rework this, let's first move the overlay and cursor planes
-creation to a function of its own.
+This has two side effects:
+
+  - The number of overlay planes is reduced from 24 to 8. This is temporary
+    and will be increased again in the next patch.
+
+  - The ID of the various planes is changed again, and we will now have all
+    the primary planes, then all the overlay planes and finally the cursor
+    planes. This shouldn't cause any issue since the ordering between
+    primary, overlay and cursor planes is preserved.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c  | 33 +++---------------------------
- drivers/gpu/drm/vc4/vc4_drv.h   |  2 ++-
- drivers/gpu/drm/vc4/vc4_plane.c | 38 ++++++++++++++++++++++++++++++++++-
- 3 files changed, 44 insertions(+), 29 deletions(-)
+ drivers/gpu/drm/vc4/vc4_plane.c | 35 +++++++++++++++++-----------------
+ 1 file changed, 18 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index 381702b9f057..43cfc9ba18ba 100644
---- a/drivers/gpu/drm/vc4/vc4_crtc.c
-+++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -1141,7 +1141,7 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
- 	struct drm_device *drm = dev_get_drvdata(master);
- 	struct vc4_crtc *vc4_crtc;
- 	struct drm_crtc *crtc;
--	struct drm_plane *primary_plane, *cursor_plane, *destroy_plane, *temp;
-+	struct drm_plane *primary_plane, *destroy_plane, *temp;
- 	const struct of_device_id *match;
- 	int ret, i;
- 
-@@ -1189,34 +1189,9 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
- 	 */
- 	drm_crtc_enable_color_mgmt(crtc, 0, true, crtc->gamma_size);
- 
--	/* Set up some arbitrary number of planes.  We're not limited
--	 * by a set number of physical registers, just the space in
--	 * the HVS (16k) and how small an plane can be (28 bytes).
--	 * However, each plane we set up takes up some memory, and
--	 * increases the cost of looping over planes, which atomic
--	 * modesetting does quite a bit.  As a result, we pick a
--	 * modest number of planes to expose, that should hopefully
--	 * still cover any sane usecase.
--	 */
--	for (i = 0; i < 8; i++) {
--		struct drm_plane *plane =
--			vc4_plane_init(drm, DRM_PLANE_TYPE_OVERLAY);
--
--		if (IS_ERR(plane))
--			continue;
--
--		plane->possible_crtcs = drm_crtc_mask(crtc);
--	}
--
--	/* Set up the legacy cursor after overlay initialization,
--	 * since we overlay planes on the CRTC in the order they were
--	 * initialized.
--	 */
--	cursor_plane = vc4_plane_init(drm, DRM_PLANE_TYPE_CURSOR);
--	if (!IS_ERR(cursor_plane)) {
--		cursor_plane->possible_crtcs = drm_crtc_mask(crtc);
--		crtc->cursor = cursor_plane;
--	}
-+	ret = vc4_plane_create_additional_planes(drm, crtc);
-+	if (ret)
-+		goto err_destroy_planes;
- 
- 	vc4_crtc_get_cob_allocation(vc4_crtc);
- 
-diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
-index 63c05c764942..cc73c06e019d 100644
---- a/drivers/gpu/drm/vc4/vc4_drv.h
-+++ b/drivers/gpu/drm/vc4/vc4_drv.h
-@@ -848,6 +848,8 @@ int vc4_kms_load(struct drm_device *dev);
- /* vc4_plane.c */
- struct drm_plane *vc4_plane_init(struct drm_device *dev,
- 				 enum drm_plane_type type);
-+int vc4_plane_create_additional_planes(struct drm_device *dev,
-+				       struct drm_crtc *crtc);
- u32 vc4_plane_write_dlist(struct drm_plane *plane, u32 __iomem *dlist);
- u32 vc4_plane_dlist_size(const struct drm_plane_state *state);
- void vc4_plane_async_set_fb(struct drm_plane *plane,
 diff --git a/drivers/gpu/drm/vc4/vc4_plane.c b/drivers/gpu/drm/vc4/vc4_plane.c
-index 26e96b15e9b4..e4dab514efef 100644
+index 1dcb2ccd65bb..ea1d848aad14 100644
 --- a/drivers/gpu/drm/vc4/vc4_plane.c
 +++ b/drivers/gpu/drm/vc4/vc4_plane.c
-@@ -1371,3 +1371,41 @@ struct drm_plane *vc4_plane_init(struct drm_device *dev,
+@@ -1378,26 +1378,27 @@ int vc4_plane_create_additional_planes(struct drm_device *drm)
+ 	struct drm_crtc *crtc;
+ 	unsigned int i;
  
- 	return plane;
- }
-+
-+int vc4_plane_create_additional_planes(struct drm_device *drm,
-+				       struct drm_crtc *crtc)
-+{
-+	struct drm_plane *cursor_plane;
-+	unsigned int i;
-+
+-	drm_for_each_crtc(crtc, drm) {
+-		/* Set up some arbitrary number of planes.  We're not limited
+-		 * by a set number of physical registers, just the space in
+-		 * the HVS (16k) and how small an plane can be (28 bytes).
+-		 * However, each plane we set up takes up some memory, and
+-		 * increases the cost of looping over planes, which atomic
+-		 * modesetting does quite a bit.  As a result, we pick a
+-		 * modest number of planes to expose, that should hopefully
+-		 * still cover any sane usecase.
+-		 */
+-		for (i = 0; i < 8; i++) {
+-			struct drm_plane *plane =
+-				vc4_plane_init(drm, DRM_PLANE_TYPE_OVERLAY);
 +	/* Set up some arbitrary number of planes.  We're not limited
 +	 * by a set number of physical registers, just the space in
 +	 * the HVS (16k) and how small an plane can be (28 bytes).
@@ -219,25 +164,22 @@ index 26e96b15e9b4..e4dab514efef 100644
 +	for (i = 0; i < 8; i++) {
 +		struct drm_plane *plane =
 +			vc4_plane_init(drm, DRM_PLANE_TYPE_OVERLAY);
-+
+ 
+-			if (IS_ERR(plane))
+-				continue;
 +		if (IS_ERR(plane))
 +			continue;
-+
-+		plane->possible_crtcs = drm_crtc_mask(crtc);
+ 
+-			plane->possible_crtcs = drm_crtc_mask(crtc);
+-		}
++		plane->possible_crtcs =
++			GENMASK(drm->mode_config.num_crtc - 1, 0);
 +	}
-+
-+	/* Set up the legacy cursor after overlay initialization,
-+	 * since we overlay planes on the CRTC in the order they were
-+	 * initialized.
-+	 */
-+	cursor_plane = vc4_plane_init(drm, DRM_PLANE_TYPE_CURSOR);
-+	if (!IS_ERR(cursor_plane)) {
-+		cursor_plane->possible_crtcs = drm_crtc_mask(crtc);
-+		crtc->cursor = cursor_plane;
-+	}
-+
-+	return 0;
-+}
+ 
++	drm_for_each_crtc(crtc, drm) {
+ 		/* Set up the legacy cursor after overlay initialization,
+ 		 * since we overlay planes on the CRTC in the order they were
+ 		 * initialized.
 -- 
 git-series 0.9.1
 
