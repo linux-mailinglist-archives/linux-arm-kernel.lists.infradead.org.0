@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2459169C0C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 02:59:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7163C169C15
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 03:01:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wwi99+09cqWl4m7xxuZiRYtYD5iSm1ApxUT9srTbu30=; b=mbgSxxyz2sJ+9T
-	MaGpF2AhjqsH1d4dZuHRs/k8qL5R6BTcN/3pqRf+nEcxDvQqx1O9zWY2Eegj0SvvmleRM5NuzW2pH
-	m6qLJs/h3v3o0tfwQNxQnBePDShXIBq0rvdRrQA47zKZjGM7EpZ56gqC3UYyIZwT76TocnG6QtTZp
-	AAONoFskFrjRRrAwf5lDHwiDntKQ0OLi/v2N/oepCCESqpzP4vc8T48lk7CagbCwBiJxwlh/jgTfj
-	sw4gOd+5pOXSVZ/E769mLRAvd8X8s27/iM+VlMZSvRiyuZWBKxtQ4wj1GtGXOkPeKJzjRk/GcmRDo
-	FINhBwfJlfEUyivGEJRg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4Hn/INPLoXueCh8B49+woyiPCeZchVRL+ByzKH579GI=; b=caxYpigCSN6l8o
+	kJLPy5RcbUNcUwSerUjUgUx+raFV1K5DEer7w124tAw1NP4RFQjyEJsl5+cMNrygmMs8eNm+TLgk+
+	4ho/P0heXDkvfMLRSqkOOwfDiEnOpIJmCYdCEDb9ql8+l9KSXYRphSZy+mWJ2LgkhShQsS8iaPxLu
+	Wf9Dz5PI8Du5pm+CCTJts20Zlb0ijmCGp7wtxt395Z+XePifrxZfStTfoLsBU5XnFgLMPQxNO29SO
+	3QdimTXu0GEPLiwR0ybJTPqVyPCz0WZx5rPd2WF80cBu18TAkmeaV6NLQRDp37/ss7OAb52I6gCAz
+	SR46yJzISJItkKFa3Anw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j631V-0001gr-41; Mon, 24 Feb 2020 01:59:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j631M-0001ft-Rd; Mon, 24 Feb 2020 01:58:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E20D41FB;
- Sun, 23 Feb 2020 17:58:53 -0800 (PST)
-Received: from [10.162.16.95] (p8cg001049571a15.blr.arm.com [10.162.16.95])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 97E1F3F6CF;
- Sun, 23 Feb 2020 17:58:46 -0800 (PST)
-Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
- table helpers
-To: linux-mm@kvack.org
-References: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <fac4f03a-0cd3-29ad-b5e2-9aca2dd07b39@arm.com>
-Date: Mon, 24 Feb 2020 07:28:46 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1j633q-0003Id-6V; Mon, 24 Feb 2020 02:01:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j633e-0003IH-Tg
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 02:01:20 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 471FB205C9;
+ Mon, 24 Feb 2020 02:01:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582509678;
+ bh=axFW7bEh8+eVcpf/My/7t/8mqtcesmwale7L6FdGbQc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=L3qDPbiRb3tIg7oWaK/qPmhpSpgRp5fW8pJcQLlJO+kUCvsL0myrRhM3IiXNOfunh
+ sBBNM0vUfP+hPr17+ttytHuxQICnKMia/w1TylUulL4Qzh0fXu0oxIpZL2tK/1eQzA
+ kjjUlwmfjleDEYKsRk5KxfwtHRKOpKhswXb++wHg=
+Date: Mon, 24 Feb 2020 10:01:10 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Martin Kepplinger <martin.kepplinger@puri.sm>
+Subject: Re: [PATCH v2 3/9] arm64: dts: librem5-devkit: add the simcom 7100
+ modem and sgtl5000 audio codec
+Message-ID: <20200224020109.GE27688@dragon>
+References: <20200218084942.4884-1-martin.kepplinger@puri.sm>
+ <20200218084942.4884-4-martin.kepplinger@puri.sm>
 MIME-Version: 1.0
-In-Reply-To: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200218084942.4884-4-martin.kepplinger@puri.sm>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_175856_939307_9ACEF481 
-X-CRM114-Status: GOOD (  15.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200223_180119_002515_9BE130B1 
+X-CRM114-Status: GOOD (  14.96  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,60 +78,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Cc: mark.rutland@arm.com, robh@kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
+ devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/17/2020 08:47 AM, Anshuman Khandual wrote:
-> This adds a test validation for architecture exported page table helpers.
-> Patch adds basic transformation tests at various levels of the page table.
+On Tue, Feb 18, 2020 at 09:49:36AM +0100, Martin Kepplinger wrote:
+> From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 > 
-> This test was originally suggested by Catalin during arm64 THP migration
-> RFC discussion earlier. Going forward it can include more specific tests
-> with respect to various generic MM functions like THP, HugeTLB etc and
-> platform specific tests.
+> Add the simcomm modem and the sgtl5000 audio codec.
 > 
-> https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
+> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
+> Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
+> ---
+>  .../dts/freescale/imx8mq-librem5-devkit.dts   | 60 +++++++++++++++++++
+>  1 file changed, 60 insertions(+)
 > 
-> Needs to be applied on linux V5.6-rc2
-> 
-> Changes in V14:
-> 
-> - Disabled DEBUG_VM_PGFLAGS for IA64 and ARM (32 Bit) per Andrew and Christophe
-> - Updated DEBUG_VM_PGFLAGS documentation wrt EXPERT and disabled platforms
-> - Updated RANDOM_[OR|NZ]VALUE open encodings with GENMASK() per Catalin
-> - Updated s390 constraint bits from 12 to 4 (S390_MASK_BITS) per Gerald
-> - Updated in-code documentation for RANDOM_ORVALUE per Gerald
-> - Updated pxx_basic_tests() to use invert functions first per Catalin
-> - Dropped ARCH_HAS_4LEVEL_HACK check from pud_basic_tests()
-> - Replaced __ARCH_HAS_[4|5]LEVEL_HACK with __PAGETABLE_[PUD|P4D]_FOLDED per Catalin
-> - Trimmed the CC list on the commit message per Catalin
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> index 25135b08d4f8..ec12477d925d 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> @@ -148,6 +148,53 @@
+>  		regulator-always-on;
+>  	};
+>  
+> +	wwan_codec: sound-wwan-codec {
+> +		compatible = "option,gtm601";
+> +		#sound-dai-cells = <0>;
+> +	};
+> +
+> +	sound {
+> +		compatible = "simple-audio-card";
+> +		simple-audio-card,name = "sgtl5000";
+> +		simple-audio-card,format = "i2s";
+> +		simple-audio-card,widgets =
+> +			"Microphone", "Microphone Jack",
+> +			"Headphone", "Headphone Jack",
+> +			"Speaker", "Speaker Ext",
+> +			"Line", "Line In Jack";
+> +		simple-audio-card,routing =
+> +			"MIC_IN", "Microphone Jack",
+> +			"Microphone Jack", "Mic Bias",
+> +			"LINE_IN", "Line In Jack",
+> +			"Headphone Jack", "HP_OUT",
+> +			"Speaker Ext", "LINE_OUT";
+> +
+> +		simple-audio-card,cpu {
+> +			sound-dai = <&sai2>;
+> +		};
+> +
+> +		simple-audio-card,codec {
+> +			sound-dai = <&audio_codec>;
+> +			clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
+> +			frame-master;
+> +			bitclock-master;
+> +		};
+> +	};
+> +
+> +	sound-wwan {
+> +		compatible = "simple-audio-card";
+> +		simple-audio-card,name = "SIMCom SIM7100";
+> +		simple-audio-card,format = "dsp_a";
 
-Hello Andrew,
+newline
 
-As there are no further comments on this patch from last week, wondering
-if you would possibly consider this patch. But if you feel there is still
-something which need to be taken care here, please do let me know.
+> +		simple-audio-card,cpu {
+> +			sound-dai = <&sai6>;
+> +		};
 
-Thank you.
+newline
 
-- Anshuman
+> +		telephony_link_master: simple-audio-card,codec {
+> +			sound-dai = <&wwan_codec>;
+> +			frame-master;
+> +			bitclock-master;
+> +		};
+> +	};
+> +
+>  	vibrator {
+>  		compatible = "gpio-vibrator";
+>  		pinctrl-names = "default";
+> @@ -426,6 +473,19 @@
+>  		vddio-supply = <&reg_3v3_p>;
+>  	};
+>  
+> +	audio_codec: sgtl5000@a {
+
+Node name needs to be generic, not the label name.  So it should be:
+
+	sgtl5000: audio-codec@a {
+
+Shawn
+
+> +		compatible = "fsl,sgtl5000";
+> +		clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
+> +		assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
+> +		assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
+> +		assigned-clock-rates = <24576000>;
+> +		#sound-dai-cells = <0>;
+> +		reg = <0x0a>;
+> +		VDDD-supply = <&reg_1v8_p>;
+> +		VDDIO-supply = <&reg_3v3_p>;
+> +		VDDA-supply = <&reg_3v3_p>;
+> +	};
+> +
+>  	touchscreen@5d {
+>  		compatible = "goodix,gt5688";
+>  		reg = <0x5d>;
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
