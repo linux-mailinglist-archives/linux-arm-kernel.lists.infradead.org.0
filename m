@@ -2,62 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D5C016A34A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:57:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD30216A342
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:56:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=j/azdjaW/C5VIP2d0gHQdRollc8rMS/DWtMZnx5tGH8=; b=aQ7qInXVIIp9DVA26gMz5Ec7A4
-	3iLY0hNgY7J6M08pkjvycDwxkVb0hyxq3ORXKgVXjPcbIjG4PSskJOhFk6IG4ztdOo2YBzeUC1PKP
-	71TwP24bQYdZDFPU9odaDFDjbmx6AVwiljgaBtMO+6nN0qR+p0tkBuQgTpSO5J46YHZLb8qjd/PIQ
-	5vVt5rv9Nnyf2DAyqp7GKFUYh9mHxCmQg0KLdm6ynQeZ/gsB4D9EDJJ9eJrqypnZGUo5tUmoUmYvW
-	0m2A7cll3tZN37Cr2uUvcYuXwo/5QLOBMUjWbAI+deDQhApC0Q44rSppZeIEar1VlXqOttdqt7xtR
-	ONWUP0Jg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WsIUY/Y+3b+tl9yOX1kZFXqt6vCD/x3BJWbzrlsSmZ4=; b=QduSNs50Ex9UCJ+TD0ryiDdyt
+	9bQWtoLJW/hzUZV0uTLOpY4M1fIHMDthke24HXrPuskSsZJ0bXi3euXOd7vCgeNwh0B4v9/mO5hRQ
+	MjpEZvJWJSlVl5KdTeKLW/vcaOWAeJ3d0PzVtVha0ZCiHoKmPSmHfkh4Pfm7Vw+FYTc7BmaSue9gE
+	1NVPcJ/gmslVEoHaOk9H1OOeI7BvrC2thjJSafebgcEPrOhBitj/Ly60WEsEzjD/eWrZNnvR3OuQw
+	ezM/dHNShObH6Wft7sXbNmVW5A5PGq+dqRejxML7TkDAIfzWZYTUIZdkLrY8IybMp1/2Rk2O+4sIF
+	b7AzqeYoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6AUl-0004vx-8P; Mon, 24 Feb 2020 09:57:47 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j6ATI-0003Ro-N8; Mon, 24 Feb 2020 09:56:16 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6AMj-0003Yu-Fd
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 09:49:38 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2716F20DC44;
- Mon, 24 Feb 2020 10:49:28 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2B71B20DC35;
- Mon, 24 Feb 2020 10:49:22 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 131B3402B3;
- Mon, 24 Feb 2020 17:49:15 +0800 (SGT)
-From: Sherry Sun <sherry.sun@nxp.com>
-To: bp@alien8.de, mchehab@kernel.org, tony.luck@intel.com, james.morse@arm.com,
- rrichter@marvell.com, michal.simek@xilinx.com
-Subject: [PATCH 3/3] EDAC: synopsys: Add useful output information for 64 bit
- systems
-Date: Mon, 24 Feb 2020 17:42:37 +0800
-Message-Id: <1582537357-10339-4-git-send-email-sherry.sun@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1582537357-10339-1-git-send-email-sherry.sun@nxp.com>
-References: <1582537357-10339-1-git-send-email-sherry.sun@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1j6AHW-0005Dr-Jm; Mon, 24 Feb 2020 09:44:08 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 403056F45;
+ Mon, 24 Feb 2020 04:44:03 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:44:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=8D6LuRxaoCzIVrsMtMaDax+b3gC
+ RwpjTTxEPY3vi8sw=; b=QyiSrbuZDxmS0/3x848Zpki0l0UZmW5Yf8y/ybpvHvj
+ abrv3S7nodrCGVcZ3sQDUk43E61bIuadELNRNr7dUd5PxzKA7gZj3Gm3FYNewMjI
+ QIXGP958QZhd1d9S4+yYbBuCzjvQdcatRjxyC6PK6+tJlb96xbrFbyzWlfxb9oYx
+ z7U64L8WPHFmS/Iq9JrZKGlCIIzFoUMpicsXbAHwLivvm94QhX2Bwbqjaof4+TjT
+ D/7ZvO3hyLDFcnCyPGHQRkanznRYHRGd5h0n0YPd5gj2OtnYEirxnAmfWwfy89oY
+ Qy8t+zwMPxBE7yqIwjvLO7068uWs7nMCkKFoDjNWuEg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=8D6LuR
+ xaoCzIVrsMtMaDax+b3gCRwpjTTxEPY3vi8sw=; b=CP7WwY699l786hOUiAf6by
+ x+rtB9SqF4VItFWahkIJvBCFerSGh96TPZBN/xlAlZHdGfNu7co/Sdtv7QbjH3Vn
+ PjJGuwmCWIxTLxmVNQlt92ACsrOrji6++jG9UXrHIXH5hPC9Qt1AfZzUR71He+MD
+ +BD/xi2ZZSAVmEAmet6mlzjZxYDBE1A372+B5qbNOp+/eYk6LBnAy4vP5Hk5PaBd
+ OvlzhHu7Hu2XLO7TRUCY29tQ/3quEhJA+ZB5DDBNXl8BDnwpult6ZPsKMDuEVOoW
+ b47LhPXTDhFttduUuL/GBfA0f9vICjcQL/z7eWCY9wqJOzYcy75KYKTQekD6peuA
+ ==
+X-ME-Sender: <xms:4JpTXrBS8PvxoPN3aNrnvWeIr6vKHF5DhVRlbmO1vLTtzSaDaSHHfA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtgddtjecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:4JpTXuOghxf55SQ45Xzn2t26MYdJiU5nBulwT8t8eIChzKP6rdHjNA>
+ <xmx:4JpTXqdVfYQUWKMrIzWesJaxoUkspZQTqu91Rps0AxTOaVTTOcoE_Q>
+ <xmx:4JpTXn51C2oCOSGhVLu1wrcmiaPQsRMBbGzBhWUWMddKZobl_qHEJQ>
+ <xmx:45pTXpHYENYFLJ05uceH-qzs201WXROOgFkCY2-ug9XZqkeAMOglMg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 7FF6A3280059;
+ Mon, 24 Feb 2020 04:44:00 -0500 (EST)
+Date: Mon, 24 Feb 2020 10:43:59 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Leon Romanovsky <leon@kernel.org>
+Subject: Re: [PATCH net-next v1 09/18] net/allwinner: Remove driver version
+Message-ID: <20200224094359.t2qevsxzilgq3faj@gilmour.lan>
+References: <20200224085311.460338-1-leon@kernel.org>
+ <20200224085311.460338-10-leon@kernel.org>
+MIME-Version: 1.0
+In-Reply-To: <20200224085311.460338-10-leon@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_014929_890163_BC39F2A4 
-X-CRM114-Status: GOOD (  13.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200224_014406_799779_3FD67795 
+X-CRM114-Status: UNSURE (   6.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,297 +106,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-imx@nxp.com, frank.li@nxp.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Thor Thayer <thor.thayer@linux.intel.com>, Heiko Stuebner <heiko@sntech.de>,
+ Igor Russkikh <irusskikh@marvell.com>, Andreas Larsson <andreas@gaisler.com>,
+ Chris Snook <chris.snook@gmail.com>, David Dillow <dave@thedillows.org>,
+ Jes Sorensen <jes@trained-monkey.org>,
+ Iyappan Subramanian <iyappan@os.amperecomputing.com>,
+ Quan Nguyen <quan@os.amperecomputing.com>, linux-acenic@sunsite.dk,
+ Andy Gospodarek <andy@greyhouse.net>, Arthur Kiyanovski <akiyano@amazon.com>,
+ linux-rockchip@lists.infradead.org, Chen-Yu Tsai <wens@csie.org>,
+ Lino Sanfilippo <LinoSanfilippo@gmx.de>, Veaceslav Falico <vfalico@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Tom Lendacky <thomas.lendacky@amd.com>,
+ Jay Cliburn <jcliburn@gmail.com>, Jay Vosburgh <j.vosburgh@gmail.com>,
+ Keyur Chudgar <keyur@os.amperecomputing.com>,
+ Leon Romanovsky <leonro@mellanox.com>, Don Fry <pcnet32@frontier.com>,
+ nios2-dev@lists.rocketboards.org, linux-arm-kernel@lists.infradead.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ion Badulescu <ionut@badula.org>, Netanel Belgazal <netanel@amazon.com>,
+ Mark Einon <mark.einon@gmail.com>, "David S. Miller" <davem@davemloft.net>
+Content-Type: multipart/mixed; boundary="===============4984532383341135420=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now the synopsys_edac driver only support to output the 32-bit error
-data, but for 64 bit systems, such as i.MX8MP, 64 bit error data is
-needed. At the same time, when CE/UE happens, syndrome data is also
-useful to showed to user. So here add data_high and syndrome data for
-64-bit systems.
 
-And in order to distinguish 64-bit systems and other systems, here
-adjust the position of the zynqmp_get_dtype(), so we can called
-this function to distinguish it. To ensure that functions of the same
-function are in the same position, here adjust the position of the
-zynq_get_dtype() too.
+--===============4984532383341135420==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="3l2hq75myvlmy434"
+Content-Disposition: inline
 
-Signed-off-by: Sherry Sun <sherry.sun@nxp.com>
----
- drivers/edac/synopsys_edac.c | 182 ++++++++++++++++++++---------------
- 1 file changed, 102 insertions(+), 80 deletions(-)
 
-diff --git a/drivers/edac/synopsys_edac.c b/drivers/edac/synopsys_edac.c
-index ef7e907c7956..ae541efefeb8 100644
---- a/drivers/edac/synopsys_edac.c
-+++ b/drivers/edac/synopsys_edac.c
-@@ -278,18 +278,22 @@
-  * @col:	Column number.
-  * @bank:	Bank number.
-  * @bitpos:	Bit position.
-- * @data:	Data causing the error.
-+ * @data_low:	Low bit data causing the error.
-+ * @data_high:	High bit data causing the error(used for 64 bit systems).
-  * @bankgrpnr:	Bank group number.
-  * @blknr:	Block number.
-+ * @syndrome:	Syndrome of the error.
-  */
- struct ecc_error_info {
- 	u32 row;
- 	u32 col;
- 	u32 bank;
- 	u32 bitpos;
--	u32 data;
-+	u32 data_low;
-+	u32 data_high;
- 	u32 bankgrpnr;
- 	u32 blknr;
-+	u32 syndrome;
- };
- 
- /**
-@@ -354,6 +358,70 @@ struct synps_platform_data {
- 	int quirks;
- };
- 
-+/**
-+ * zynq_get_dtype - Return the controller memory width.
-+ * @base:	DDR memory controller base address.
-+ *
-+ * Get the EDAC device type width appropriate for the current controller
-+ * configuration.
-+ *
-+ * Return: a device type width enumeration.
-+ */
-+static enum dev_type zynq_get_dtype(const void __iomem *base)
-+{
-+	enum dev_type dt;
-+	u32 width;
-+
-+	width = readl(base + CTRL_OFST);
-+	width = (width & CTRL_BW_MASK) >> CTRL_BW_SHIFT;
-+
-+	switch (width) {
-+	case DDRCTL_WDTH_16:
-+		dt = DEV_X2;
-+		break;
-+	case DDRCTL_WDTH_32:
-+		dt = DEV_X4;
-+		break;
-+	default:
-+		dt = DEV_UNKNOWN;
-+	}
-+
-+	return dt;
-+}
-+
-+/**
-+ * zynqmp_get_dtype - Return the controller memory width.
-+ * @base:	DDR memory controller base address.
-+ *
-+ * Get the EDAC device type width appropriate for the current controller
-+ * configuration.
-+ *
-+ * Return: a device type width enumeration.
-+ */
-+static enum dev_type zynqmp_get_dtype(const void __iomem *base)
-+{
-+	enum dev_type dt;
-+	u32 width;
-+
-+	width = readl(base + CTRL_OFST);
-+	width = (width & ECC_CTRL_BUSWIDTH_MASK) >> ECC_CTRL_BUSWIDTH_SHIFT;
-+	switch (width) {
-+	case DDRCTL_EWDTH_16:
-+		dt = DEV_X2;
-+		break;
-+	case DDRCTL_EWDTH_32:
-+		dt = DEV_X4;
-+		break;
-+	case DDRCTL_EWDTH_64:
-+		dt = DEV_X8;
-+		break;
-+	default:
-+		dt = DEV_UNKNOWN;
-+	}
-+
-+	return dt;
-+}
-+
- /**
-  * zynq_get_error_info - Get the current ECC error info.
-  * @priv:	DDR memory controller private instance data.
-@@ -385,9 +453,9 @@ static int zynq_get_error_info(struct synps_edac_priv *priv)
- 	p->ceinfo.row = (regval & ADDR_ROW_MASK) >> ADDR_ROW_SHIFT;
- 	p->ceinfo.col = regval & ADDR_COL_MASK;
- 	p->ceinfo.bank = (regval & ADDR_BANK_MASK) >> ADDR_BANK_SHIFT;
--	p->ceinfo.data = readl(base + CE_DATA_31_0_OFST);
-+	p->ceinfo.data_low = readl(base + CE_DATA_31_0_OFST);
- 	edac_dbg(3, "CE bit position: %d data: %d\n", p->ceinfo.bitpos,
--		 p->ceinfo.data);
-+		 p->ceinfo.data_low);
- 	clearval = ECC_CTRL_CLR_CE_ERR;
- 
- ue_err:
-@@ -399,7 +467,7 @@ static int zynq_get_error_info(struct synps_edac_priv *priv)
- 	p->ueinfo.row = (regval & ADDR_ROW_MASK) >> ADDR_ROW_SHIFT;
- 	p->ueinfo.col = regval & ADDR_COL_MASK;
- 	p->ueinfo.bank = (regval & ADDR_BANK_MASK) >> ADDR_BANK_SHIFT;
--	p->ueinfo.data = readl(base + UE_DATA_31_0_OFST);
-+	p->ueinfo.data_low = readl(base + UE_DATA_31_0_OFST);
- 	clearval |= ECC_CTRL_CLR_UE_ERR;
- 
- out:
-@@ -443,10 +511,14 @@ static int zynqmp_get_error_info(struct synps_edac_priv *priv)
- 	p->ceinfo.bankgrpnr = (regval &	ECC_CEADDR1_BNKGRP_MASK) >>
- 					ECC_CEADDR1_BNKGRP_SHIFT;
- 	p->ceinfo.blknr = (regval & ECC_CEADDR1_BLKNR_MASK);
--	p->ceinfo.data = readl(base + ECC_CSYND0_OFST);
--	edac_dbg(2, "ECCCSYN0: 0x%08X ECCCSYN1: 0x%08X ECCCSYN2: 0x%08X\n",
--		 readl(base + ECC_CSYND0_OFST), readl(base + ECC_CSYND1_OFST),
--		 readl(base + ECC_CSYND2_OFST));
-+	p->ceinfo.data_low = readl(base + ECC_CSYND0_OFST);
-+	if (zynqmp_get_dtype(base) == DEV_X8) {
-+		p->ceinfo.data_high = readl(base + ECC_CSYND1_OFST);
-+		p->ceinfo.syndrome = readl(base + ECC_CSYND2_OFST);
-+		edac_dbg(2, "CE data_low: 0x%08X data_high: 0x%08X syndrome: 0x%08X\n",
-+			 p->ceinfo.data_low, p->ceinfo.data_high,
-+			 p->ceinfo.syndrome);
-+	}
- ue_err:
- 	if (!p->ue_cnt)
- 		goto out;
-@@ -459,7 +531,14 @@ static int zynqmp_get_error_info(struct synps_edac_priv *priv)
- 	p->ueinfo.bank = (regval & ECC_CEADDR1_BNKNR_MASK) >>
- 					ECC_CEADDR1_BNKNR_SHIFT;
- 	p->ueinfo.blknr = (regval & ECC_CEADDR1_BLKNR_MASK);
--	p->ueinfo.data = readl(base + ECC_UESYND0_OFST);
-+	p->ueinfo.data_low = readl(base + ECC_UESYND0_OFST);
-+	if (zynqmp_get_dtype(base) == DEV_X8) {
-+		p->ueinfo.data_high = readl(base + ECC_UESYND1_OFST);
-+		p->ueinfo.syndrome = readl(base + ECC_UESYND2_OFST);
-+		edac_dbg(2, "UE data_low: 0x%08X data_high: 0x%08X syndrome: 0x%08X\n",
-+			 p->ueinfo.data_low, p->ueinfo.data_high,
-+			 p->ueinfo.syndrome);
-+	}
- out:
- 	clearval = ECC_CTRL_CLR_CE_ERR | ECC_CTRL_CLR_CE_ERRCNT;
- 	clearval |= ECC_CTRL_CLR_UE_ERR | ECC_CTRL_CLR_UE_ERRCNT;
-@@ -480,6 +559,7 @@ static void handle_error(struct mem_ctl_info *mci, struct synps_ecc_status *p)
- {
- 	struct synps_edac_priv *priv = mci->pvt_info;
- 	struct ecc_error_info *pinf;
-+	int n;
- 
- 	if (p->ce_cnt) {
- 		pinf = &p->ceinfo;
-@@ -487,13 +567,19 @@ static void handle_error(struct mem_ctl_info *mci, struct synps_ecc_status *p)
- 			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
- 				 "DDR ECC error type:%s Row %d Bank %d Col %d Bit Position: %d Data: 0x%08x",
- 				 "CE", pinf->row, pinf->bank, pinf->col,
--				 pinf->bitpos, pinf->data);
-+				 pinf->bitpos, pinf->data_low);
- 		} else {
--			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
--				 "DDR ECC error type:%s Row %d Bank %d BankGroup Number %d Block Number %d Bit Position: %d Data: 0x%08x",
--				 "CE", pinf->row, pinf->bank,
--				 pinf->bankgrpnr, pinf->blknr,
--				 pinf->bitpos, pinf->data);
-+			n = snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
-+				     "DDR ECC error type:%s Row %d Bank %d BankGroup Number %d Block Number %d Bit Position: %d Data: 0x%08x",
-+				     "CE", pinf->row, pinf->bank,
-+				     pinf->bankgrpnr, pinf->blknr,
-+				     pinf->bitpos, pinf->data_low);
-+
-+			if (zynqmp_get_dtype(priv->baseaddr) == DEV_X8)
-+				snprintf(priv->message + n,
-+					SYNPS_EDAC_MSG_SIZE - n,
-+					" Data_high: 0x%08x Syndrome: 0x%08x",
-+					pinf->data_high, pinf->syndrome);
- 		}
- 
- 		edac_mc_handle_error(HW_EVENT_ERR_CORRECTED, mci,
-@@ -636,70 +722,6 @@ static void check_errors(struct mem_ctl_info *mci)
- 		 priv->ce_cnt, priv->ue_cnt);
- }
- 
--/**
-- * zynq_get_dtype - Return the controller memory width.
-- * @base:	DDR memory controller base address.
-- *
-- * Get the EDAC device type width appropriate for the current controller
-- * configuration.
-- *
-- * Return: a device type width enumeration.
-- */
--static enum dev_type zynq_get_dtype(const void __iomem *base)
--{
--	enum dev_type dt;
--	u32 width;
--
--	width = readl(base + CTRL_OFST);
--	width = (width & CTRL_BW_MASK) >> CTRL_BW_SHIFT;
--
--	switch (width) {
--	case DDRCTL_WDTH_16:
--		dt = DEV_X2;
--		break;
--	case DDRCTL_WDTH_32:
--		dt = DEV_X4;
--		break;
--	default:
--		dt = DEV_UNKNOWN;
--	}
--
--	return dt;
--}
--
--/**
-- * zynqmp_get_dtype - Return the controller memory width.
-- * @base:	DDR memory controller base address.
-- *
-- * Get the EDAC device type width appropriate for the current controller
-- * configuration.
-- *
-- * Return: a device type width enumeration.
-- */
--static enum dev_type zynqmp_get_dtype(const void __iomem *base)
--{
--	enum dev_type dt;
--	u32 width;
--
--	width = readl(base + CTRL_OFST);
--	width = (width & ECC_CTRL_BUSWIDTH_MASK) >> ECC_CTRL_BUSWIDTH_SHIFT;
--	switch (width) {
--	case DDRCTL_EWDTH_16:
--		dt = DEV_X2;
--		break;
--	case DDRCTL_EWDTH_32:
--		dt = DEV_X4;
--		break;
--	case DDRCTL_EWDTH_64:
--		dt = DEV_X8;
--		break;
--	default:
--		dt = DEV_UNKNOWN;
--	}
--
--	return dt;
--}
--
- /**
-  * zynq_get_ecc_state - Return the controller ECC enable/disable status.
-  * @base:	DDR memory controller base address.
--- 
-2.17.1
+--3l2hq75myvlmy434
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Mon, Feb 24, 2020 at 10:53:02AM +0200, Leon Romanovsky wrote:
+> From: Leon Romanovsky <leonro@mellanox.com>
+>
+> There is no need in custom driver version for in-tree code.
+>
+> Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
+
+Acked-by: Maxime Ripard <mripard@kernel.org>
+
+Thanks!
+Maxime
+
+--3l2hq75myvlmy434
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlOa3wAKCRDj7w1vZxhR
+xcbKAQD34RQIuVr/Eh3rqW6wAmdRFzMj82wPjjPCwVxOnFdvRgEA5ad/HOXd1R53
+M1v0PShtjx6kM890phDjQwlRq6EvWAE=
+=V9ws
+-----END PGP SIGNATURE-----
+
+--3l2hq75myvlmy434--
+
+
+--===============4984532383341135420==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4984532383341135420==--
+
