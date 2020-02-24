@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D430F16A255
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:31:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FF1116A256
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:31:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/722jvDg7uQtacO/Qokg/AO1jK0Xs9P2UhTq+8xnN0Y=; b=AiCS7keyiV1Ev0
-	hyNstm82DwaYwAd/ix+Q0DzrsYnwjoB8gkVNzYi397DgmfMNKhxbeo7FKuNT/xJj1oeWSJu4qQ7FN
-	oTfocYi30+9D858pigCqazh2fwxgp7TgwkeIv4a/Ks5IPKUgq2xttBqNhocI4OXgxyzL3yJO47CFR
-	hdfmzEUqyc2YjCs5s1w9xwJ8t4GLVVK8DcOFQEvjBEZbRxB7fkt5ugT4sxxU9WQXh3ctON5xRYH/8
-	llzHd7UWRRvsbKAFs0i+tbg1wKDIOil7dEOloRbIRt97f7BhtbXWVnAxHf1L2EJccKRDAtjAIU47P
-	dgR7HK2MSZCaDJAbCGwg==;
+	List-Owner; bh=xQVlZVU2Ums/w85wVVSvVobp36bW01Cd0NrxjXQEjMw=; b=YS1ggGq30ABP6b
+	aJ2VMxd452NzHVBiYhXbi3HO6zhC4ju4YBghSCJza4aTzjq18P+pUTIWCClC0YaKzKken4XExSYt4
+	8klCGIf4SXeWZXzt19bqPATRqwz0rts/yM5JoAIgmCPVQ2Brs8anxkX6YrsC7ZfFo9en5VzragSxM
+	83ckH0syKkBOeqgTmH44R08Y0LURGCjLCYfw/Me/U1ZEyPS0HJTadvA0uHkrWGY4YpM8VLr6B3H2a
+	FNXLbdK2nemhnq8PCNV0sP9UoY1HAUlDJEA6Ont9uvkOD133cc1miqR4FzMkS5tkQ00k8Yh/WR/X+
+	m6Oqcs0Hk6bUUwIz6Njg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6A5K-00081y-FR; Mon, 24 Feb 2020 09:31:30 +0000
+	id 1j6A5d-0008LY-Nr; Mon, 24 Feb 2020 09:31:49 +0000
 Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69ki-0002cZ-3B; Mon, 24 Feb 2020 09:10:14 +0000
+ id 1j69ki-0002jN-V4; Mon, 24 Feb 2020 09:10:15 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id 3A54C63D;
- Mon, 24 Feb 2020 04:10:09 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:10:09 -0500
+ by mailnew.west.internal (Postfix) with ESMTP id 92A2064A;
+ Mon, 24 Feb 2020 04:10:10 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:10:11 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=ZtAyc22Qh+7fe
- I99EvhdXdqmDRkKwoe6XlTATcY7g/o=; b=y/H4KcsooNRcnF5dlYeOo1adfOydi
- rh0bwK+josehPn7ebG1k+2G5WTVK0nLc23+nZHdgp5fRcU4Lok6HF3llGL9iMhe+
- aGbu3B1CTr6pmUSpb6KLR4/KlRi9Y+ZoAQd74cF0Kh/EHQcGtHARWbNyyykpWIgZ
- 09I9g3UljLBXR65qL29AUZfgxret8ETHAe+9tjRDQXW2ZTwvZy4cwKGy0k68h7+s
- 2QY/daQmksoPGmifYWAwgCgjlAHgOT8PRdzEl1jd/vA06sveLDunNrcwJiaakdhk
- ZpcysJaJSkdr34w8HSeXabkcpSM9n3dQCZNtAgZMG9Wmp2UF31kPWhtwg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=dCChNX6FMZlCN
+ ueoWIvqsRwLBjCvrd5jh3HlRZlOXsQ=; b=Rw4EK0w/cbVi4eTw2OZjPh/Tclk3v
+ HCd3zmuFQoRMgTCbECzWoYvFkhawsaDpiM0P2/eAH9rkmcwGFN8daEpxtL5AiIge
+ y9Sq+VQ8H6Vdsx+9x4L6u56RuHT3ctKKAkR28bUAF3DQdYYUpPTPZmNFmsBAai5V
+ 5wWSjf1qGJm5v80Qgz/kC0+NgJzLYRCSDMoqNmrPp3KdctjUsadNDEW3OvG2WlqD
+ gGkAEbLz35SOuif5QFK03RM/7GKPzzRXa4h+1ShOye83zFn3DmLZvjZZ1GWAzUOK
+ JD24tWbrSEm2SDeWVOpnYza4KCqsQ9RqTktfN9OCjbVQw1F4wlLIoU08g==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=ZtAyc22Qh+7feI99EvhdXdqmDRkKwoe6XlTATcY7g/o=; b=kQmw8tc7
- iWGG/r85ESIM71uX5o6/ZYj5z440vhXrhkaPdyMAu1qbXp11ny47KbZSoySMNClR
- WDB/onzDawq5gvp+zj+Jr3LBHNTEovGB3jIAwJM+Z/Xw7l8oN3hLofuhYmZIzPsj
- j17+trS6F8XsZlQZLUJGtDd3Ejco5qvc3r3EHk5Bwdhvy6LAITNHsgJ1cRQf8JmI
- FZD9trpoOVnHYQ+EaLPOWqyk2PpQIGZkUC773oWswSSB9G+FY4CgSpkmyxhIqzt8
- 2M9dd9y/0J/udRHvu3cyKIN6Tw8d0LdyM+4iecMNg2Ct+qr7PLyFmfV3RDDxyLsu
- tamIm8dgE1AGhQ==
-X-ME-Sender: <xms:8JJTXibGeYttQ4m5vyoMhe5CCyppODTaS2ckHcmhe0c5DOmROSFtWg>
+ fm2; bh=dCChNX6FMZlCNueoWIvqsRwLBjCvrd5jh3HlRZlOXsQ=; b=RJhZlgvN
+ 3yfJQi8HUOrXPqRG4EsBgm1xLNp294flcOw63/ChP7VKkrCgwav6fxRbhU1Th27G
+ I060P/UvGNSGYFRgDGBwfadKl9gtYKeL0yFVpfWuPz+ew38Xs/M5RvekWAATcRtj
+ scTmVvsTS+7GvATCfpSlhkFNTPM8dFODortsOywWEewFt+wwfq8SIEbBWle2Biff
+ CfU+bUnjutH7HlSS7NypgcW0cQS6DJTvk480ogmCfBpARmmNVGbCza6/vhqhLxQl
+ 7CaFctg/WR0LsmWzMn477O/2MaJ7sftOHVSeqxc6bQ5IvTP1bJuwQ9eLO2I2uE49
+ Oj4Qab7v04TYPQ==
+X-ME-Sender: <xms:8pJTXkeCB41ym8md0m3NjMjgy5JIQzSP06lZmtOJyw4koMSCj98q4A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotffvucfrrh
  hofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgenuceurghi
  lhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurh
@@ -55,27 +55,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotf
  phgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrkeelrd
  eikedrjeeinecuvehluhhsthgvrhfuihiivgepgeeknecurfgrrhgrmhepmhgrihhlfhhr
  ohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:8JJTXuO-p3QQdIbDsigbiIHerg8GFY174XQCVITBX9Hj7BCntGoSSw>
- <xmx:8JJTXjSBmceG2HEdw7XV62TfsK941wK7ihD7MvewRrZpHygcPZ1yJg>
- <xmx:8JJTXrQw7QuBP8KJtDY_eYPzZBDMSR4e2ekPlc2n-B0zRDU7Yhi2mA>
- <xmx:8JJTXitThrGOVQb3Q5LVxWYxpJQ-MbH94mKrxp_JgpQkysdyDnoLnlwk9nw>
+X-ME-Proxy: <xmx:8pJTXvCxxc2mayxuQyTRcJyJFbb1I8epe7kmRPXgKYaF1c_9Drwxkw>
+ <xmx:8pJTXscdH2afqrIfdncj5DInIN9JoqhrKzCWtNcRRpf35YGNZNpi6g>
+ <xmx:8pJTXjit5z8sEQg8vjMztB8ZeQJxkOnYPtyqpxi24AOLgpNyIp-WZA>
+ <xmx:8pJTXqsOpzCeVTSqI1LQUHly2dY43rZ7Z8zcxHEr91V5tw7el9a-DxUlcrU>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7C22A30610DB;
- Mon, 24 Feb 2020 04:10:08 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id D9196328005E;
+ Mon, 24 Feb 2020 04:10:09 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH 55/89] drm/vc4: crtc: Rename HDMI encoder type to HDMI0
-Date: Mon, 24 Feb 2020 10:06:57 +0100
-Message-Id: <67ac540760a9025410aeb6ec9bfe7646aaea8207.1582533919.git-series.maxime@cerno.tech>
+Subject: [PATCH 56/89] drm/vc4: crtc: Add HDMI1 encoder type
+Date: Mon, 24 Feb 2020 10:06:58 +0100
+Message-Id: <bca207588770faae4db427c729bae8da3fd6e849.1582533919.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_011012_561665_5E4B4EA9 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20200224_011013_655944_15B590C5 
+X-CRM114-Status: UNSURE (   7.65  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -113,56 +114,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The previous generations were only supporting a single HDMI controller, but
-that's about to change, so put an index as well to differentiate between
-the two controllers.
+The BCM2711 sports a second HDMI controller, so let's add that second HDMI
+encoder type.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 2 +-
- drivers/gpu/drm/vc4/vc4_drv.h  | 2 +-
- drivers/gpu/drm/vc4/vc4_hdmi.c | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/vc4/vc4_drv.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index 1dd0a9fb1c02..34e914b3c686 100644
---- a/drivers/gpu/drm/vc4/vc4_crtc.c
-+++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -1109,7 +1109,7 @@ static const struct vc4_crtc_data bcm2835_pv2_data = {
- 	.fifo_depth = 64,
- 	.pixels_per_clock = 1,
- 	.encoder_types = {
--		[PV_CONTROL_CLK_SELECT_DPI_SMI_HDMI] = VC4_ENCODER_TYPE_HDMI,
-+		[PV_CONTROL_CLK_SELECT_DPI_SMI_HDMI] = VC4_ENCODER_TYPE_HDMI0,
- 		[PV_CONTROL_CLK_SELECT_VEC] = VC4_ENCODER_TYPE_VEC,
- 	},
- };
 diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
-index 967d57d0ab08..c262c7a388a4 100644
+index c262c7a388a4..1e44a3a8c2b0 100644
 --- a/drivers/gpu/drm/vc4/vc4_drv.h
 +++ b/drivers/gpu/drm/vc4/vc4_drv.h
-@@ -427,7 +427,7 @@ to_vc4_plane_state(struct drm_plane_state *state)
- 
+@@ -428,6 +428,7 @@ to_vc4_plane_state(struct drm_plane_state *state)
  enum vc4_encoder_type {
  	VC4_ENCODER_TYPE_NONE,
--	VC4_ENCODER_TYPE_HDMI,
-+	VC4_ENCODER_TYPE_HDMI0,
+ 	VC4_ENCODER_TYPE_HDMI0,
++	VC4_ENCODER_TYPE_HDMI1,
  	VC4_ENCODER_TYPE_VEC,
  	VC4_ENCODER_TYPE_DSI0,
  	VC4_ENCODER_TYPE_DSI1,
-diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index cea18dc15f77..0c3cfa552239 100644
---- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-+++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -1305,7 +1305,7 @@ static int vc4_hdmi_bind(struct device *dev, struct device *master, void *data)
- 					GFP_KERNEL);
- 	if (!vc4_hdmi_encoder)
- 		return -ENOMEM;
--	vc4_hdmi_encoder->base.type = VC4_ENCODER_TYPE_HDMI;
-+	vc4_hdmi_encoder->base.type = VC4_ENCODER_TYPE_HDMI0;
- 	hdmi->encoder = &vc4_hdmi_encoder->base.base;
- 
- 	hdmi->pdev = pdev;
 -- 
 git-series 0.9.1
 
