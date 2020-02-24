@@ -2,110 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DA91169E06
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 06:51:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8CAE169E0F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 06:53:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Yva5oJyGEAE2aXRL6bDWzGnP5+tkHpYvfcMwo0DC/k=; b=NYTrDhCnhZ6y/D
-	3EcrhkPESZCIW9RfV8pC6jQqOWjCRqFgu9e3ldXHNzwfSINJMJTqravtzUAxkXMJ+uumNMjKY2vGo
-	oKTFJjEPAB+RcEPCP2mckBFPCg7ezXm3eTxoeEWoIIMjgiYYGVRzir8OezR63hT1QHVR8L0Dh5Bl3
-	0cw9QATikSqY9SQL9aotRWji98VJczm8sBnxzrYUl7lJD9ZtSEnvBWKmOQvKlEJwZBbz0ylD8uekz
-	3Uv29psqSQO80Wzc+CmhxLLbayFisndkPTVN82r8EI7S8twXUoqLqDuav+ehWN2bMKofirFiN1vMS
-	ikMji3YOvK2JYgjBrNBQ==;
+	List-Owner; bh=TwXjtz4OziiKOecCs3MRvYxS7V7nEbS1+zjTP+CPfVs=; b=QXdFsqQOye9qFu
+	tp0y5zjR36Y8DuU8ZGNajQH/BD+a0l2MQlTe/uBnfW2PG1b31flM7v/xsORTPUfoOFdhzEyQoHI0n
+	KsrKaiG85mg9ZcTA774P5DQ7NV473y6k8WibgX87lghxLm+B7mTWV1a/hn8ZVkY40nP17KbNn6wqU
+	SMaa8AHeLTl9Ox1NBtK7eupEa6PB47Gdl3JjNLaYFRBFg8QSg9O3x4rnlUgmXBlJAcp511MKD98EU
+	Nb/cp6sqEc5oorViE6LcmdNjmOwNSj3/yAPBevsEvfkrc5h+ovFtHe9+C0D8+l7etV1VVQtD8TwdH
+	28h1XLk3wsaWupfLBy5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j66eT-0007vu-HA; Mon, 24 Feb 2020 05:51:33 +0000
-Received: from mail-eopbgr00066.outbound.protection.outlook.com ([40.107.0.66]
- helo=EUR02-AM5-obe.outbound.protection.outlook.com)
+	id 1j66fi-0008ID-HM; Mon, 24 Feb 2020 05:52:50 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j66dk-0007Os-Bv
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 05:50:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AymeNxJZeJyhqU6tqKpbNdH7arCub7NAjyvEnffxxeDMa69XF+3Y+pxlOcPu3Zae7TN6CrN8I8hienFbvV+1GcP/bFiHiVrTSqtD3WthQUPaYFRwL/JnSWvtMuqDfJbX8tf/3K48RcHbyEwkFSyHLUN4Ml/Y9LmdgKVdmi/qKfS+YnENIm6p0lYX7Px/nqisjR62F1cad6brt9CuuhkHMb0scT1Es8n+y07ICYsha6HYgPGhMIGt71vNq6Y1gPlQl14fKh2iYf/IfoCGjqtKTVCbP7BcQ3FqeFFrK7BURSj1IH0xF16uHoJ1rIRJEI49J+2sBBtXEpWFaSZbddLmYw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PS6OZGNwMhTMLfvO4Aq5DDb+DgfRzXWN1fZVDpjWv3Q=;
- b=bqe/VOTb7mWtvhgv3iPmOgvvSVv3TonjS86c2pskay5XB5Nl/4mi+GS5mbyPvhIF9zvLG/a4JwDX17Hxn0eINgzf54VgxSFSeu/Ob631WiQ6BlbjKzQKeunFQV8Hnx7ekxCzFekhH1dyxM4hljer/0wPCXi71RR/JGLP277nI8TdO+6g5/iU5AxH6x8XZmeV6Tl6kp0teslmDPK1DNrDdJabmPinY/dQZIfilLp5aVb8RzdCKl4n6UGkC5h23/yupbKVT8i3WW9hPTnnxrnYIBh0wAHh1Tf9KwH3eUt3qZxt4CC5CZOyJh8LT1xq9nCxCMgfn1cbxUH49UC5wmxYLw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PS6OZGNwMhTMLfvO4Aq5DDb+DgfRzXWN1fZVDpjWv3Q=;
- b=aAkSBNMuRj4cxiItv5UmyITY/6VKsoUV4NtzSRjGL4GEpH7lZYOlc9H30Ptl47+iGlZ5NqMm+5shG4gqy/3ZMM/5mc0hU0gUPArW7b2XzHL4Z9bTL9dFblXzEst585j3nzoosoGJY7nA3xhcipEIvNyG3idg/TuS3dxR/ly88Qg=
-Received: from DB8PR04MB6747.eurprd04.prod.outlook.com (20.179.250.159) by
- DB8PR04MB6539.eurprd04.prod.outlook.com (20.179.249.18) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.22; Mon, 24 Feb 2020 05:50:45 +0000
-Received: from DB8PR04MB6747.eurprd04.prod.outlook.com
- ([fe80::104b:e88b:b0d3:cdaa]) by DB8PR04MB6747.eurprd04.prod.outlook.com
- ([fe80::104b:e88b:b0d3:cdaa%4]) with mapi id 15.20.2750.021; Mon, 24 Feb 2020
- 05:50:45 +0000
-From: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-To: Andrew Murray <amurray@thegoodpenguin.co.uk>
-Subject: RE: [PATCHv10 11/13] PCI: mobiveil: Add PCIe Gen4 RC driver for NXP
- Layerscape SoCs
-Thread-Topic: [PATCHv10 11/13] PCI: mobiveil: Add PCIe Gen4 RC driver for NXP
- Layerscape SoCs
-Thread-Index: AQHV4iOTEmxDsNIeN0CS4VCaC9w0dagkZiwAgAWCPAA=
-Date: Mon, 24 Feb 2020 05:50:45 +0000
-Message-ID: <DB8PR04MB67476E5DF5946784B9E924D084EC0@DB8PR04MB6747.eurprd04.prod.outlook.com>
-References: <20200213040644.45858-1-Zhiqiang.Hou@nxp.com>
- <20200213040644.45858-12-Zhiqiang.Hou@nxp.com>
- <20200220174314.GK19388@big-machine>
-In-Reply-To: <20200220174314.GK19388@big-machine>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=zhiqiang.hou@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 3a7b1277-56bd-4fec-b129-08d7b8ed7e19
-x-ms-traffictypediagnostic: DB8PR04MB6539:|DB8PR04MB6539:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB8PR04MB653959766EE6849825EFFA5A84EC0@DB8PR04MB6539.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:49;
-x-forefront-prvs: 032334F434
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(6029001)(4636009)(376002)(39860400002)(136003)(346002)(366004)(396003)(199004)(189003)(6916009)(55016002)(9686003)(33656002)(2906002)(186003)(26005)(478600001)(8676002)(8936002)(53546011)(7416002)(4326008)(86362001)(66946007)(30864003)(7696005)(81156014)(81166006)(76116006)(71200400001)(66556008)(66446008)(5660300002)(316002)(52536014)(54906003)(66476007)(64756008)(6506007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR04MB6539;
- H:DB8PR04MB6747.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: pQAVrFrTIgELRXwRV/Bb2Pg2LgZiZSlMZd/eEaFKe0uN6542jKgnlP54hzS3J2+vH5C7fGxKuHbBhtgnEJvBDQfrrwl+t27QFlA2A1jRUnB2z1+NaNCreNnUjIEGLf11y1MUOo6PcIQ92fKigBvWkhn19rMi5CuzLSO/8t8iz8G38Ey8JhC3lNyVgtmNdiL5f5pT3xUTTlMZusZXyITyYBcT3XYcqT2+xvTPfJX7TJJxXc5k5QNifh2fh9nEnWBACVXqrcxOXbfzH/NqW5MUo3ESTsF+U/3uzC2Oi3CvGWLZ4qgYYmeJQ210moHkzKIYhXJHGNiUzMogNGRaP0VbN+CwvRmG0zwjx9GVcbCA8O7mVBJ+7hvrQPZZXr7/q1lyNqE5zuBYI3s3JtZdsT80+m4xglaA1FD4GLsPhBICZkvbeIiz7I9aTn2wnsfM74WE
-x-ms-exchange-antispam-messagedata: Qx5p994VTAlvQfFdQGUnlLdSm3GFBIkzlVcLJ3KYaxGRykSYSY8pQHrAoD8o9wAtkLOOqFlF3AFKRL5zZ1CI3avPhTjh6upvxfT5mFZ8DpPcKk8t46fTsbDHQaJbbwJZd1pTDCP3gk72iSixC3WCrw==
+ id 1j66fU-0008Gk-Jw; Mon, 24 Feb 2020 05:52:38 +0000
+X-UUID: 00e5534e590641ba952c72857c7e4b9c-20200223
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=MgR5hqOB+Pl8hI5WFalVP9Mi+aEEm/a6WvQwaKs1ckk=; 
+ b=KFKkhEtfeUFqX93c1GJEF5KGcpT+cQWmJzicHS7Vw6C+BjF/mXWjdPqjBPzqO/Tj/0XOgqqhU/C48T+erXBOYJr9s3ejnwQNr7XE0N0X0c1mWbbtM+tE57zBOXglTrvas6R38kJ2YvLQS9/WRpz0+IuwKA10onFbfV9VTVb5I6U=;
+X-UUID: 00e5534e590641ba952c72857c7e4b9c-20200223
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 617613312; Sun, 23 Feb 2020 21:52:28 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 23 Feb 2020 21:53:00 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Feb 2020 13:53:19 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 24 Feb 2020 13:52:41 +0800
+Message-ID: <1582523544.25316.2.camel@mtksdaap41>
+Subject: Re: [PATCH v8 0/6] arm/arm64: mediatek: Fix mmsys device probing
+From: CK Hu <ck.hu@mediatek.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Mon, 24 Feb 2020 13:52:24 +0800
+In-Reply-To: <d9ad35c0-57df-ebb2-67e8-4aae55dd2fcb@collabora.com>
+References: <20200220172147.919996-1-enric.balletbo@collabora.com>
+ <1582259996.1846.7.camel@mtksdaap41>
+ <7a87b486-1622-7f27-f5af-427b94a14c00@collabora.com>
+ <1582277229.25992.9.camel@mtksdaap41>
+ <1393a8c5-065f-cccb-2563-8b159c951d4b@suse.com>
+ <1582283518.5889.10.camel@mtksdaap41>
+ <6deab0a4-44a6-a15f-ac01-374f818b267c@collabora.com>
+ <6eb9da70-9a0c-27fc-6c31-3ac62ede5a35@suse.com>
+ <d9ad35c0-57df-ebb2-67e8-4aae55dd2fcb@collabora.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3a7b1277-56bd-4fec-b129-08d7b8ed7e19
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Feb 2020 05:50:45.7627 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 0WeD2VyuwLS+0CakI0Sl+jargjGJkK+AcF51E1/+DtJgxW1JgWxGE63hqxFy8tYewe8bDW0ZxJI+iYJ0lQpMaQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB6539
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_215048_581030_041F6BD7 
-X-CRM114-Status: GOOD (  24.04  )
+X-CRM114-CacheID: sfid-20200223_215236_669864_5C624B4F 
+X-CRM114-Status: GOOD (  43.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.0.66 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -113,6 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,256 +90,384 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>, Weiyi
+ Lu <weiyi.lu@mediatek.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ wens@csie.org, Allison Randal <allison@lohutok.net>,
+ mtk01761 <wendell.lin@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ p.zabel@pengutronix.de, frank-w@public-files.de,
+ Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Mauro
+ Carvalho Chehab <mchehab@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <mbrugger@suse.com>, Fabien Parent <fparent@baylibre.com>,
+ sboyd@kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ rdunlap@infradead.org, linux-kernel@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, matthias.bgg@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQW5kcmV3LA0KDQpUaGFua3MgYSBsb3QgZm9yIHlvdXIgcmV2aWV3IQ0KDQpUaGFua3MsDQpa
-aGlxaWFuZw0KDQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IEFuZHJldyBN
-dXJyYXkgPGFtdXJyYXlAdGhlZ29vZHBlbmd1aW4uY28udWs+DQo+IFNlbnQ6IDIwMjDlubQy5pyI
-MjHml6UgMTo0Mw0KPiBUbzogWi5xLiBIb3UgPHpoaXFpYW5nLmhvdUBueHAuY29tPg0KPiBDYzog
-bGludXgtcGNpQHZnZXIua2VybmVsLm9yZzsgbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRl
-YWQub3JnOw0KPiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZzsgbGludXgta2VybmVsQHZnZXIu
-a2VybmVsLm9yZzsNCj4gYmhlbGdhYXNAZ29vZ2xlLmNvbTsgcm9iaCtkdEBrZXJuZWwub3JnOyBh
-bmRyZXcubXVycmF5QGFybS5jb207DQo+IGFybmRAYXJuZGIuZGU7IG1hcmsucnV0bGFuZEBhcm0u
-Y29tOyBsLnN1YnJhaG1hbnlhQG1vYml2ZWlsLmNvLmluOw0KPiBzaGF3bmd1b0BrZXJuZWwub3Jn
-OyBtLmthcnRoaWtleWFuQG1vYml2ZWlsLmNvLmluOyBMZW8gTGkNCj4gPGxlb3lhbmcubGlAbnhw
-LmNvbT47IGxvcmVuem8ucGllcmFsaXNpQGFybS5jb207DQo+IGNhdGFsaW4ubWFyaW5hc0Bhcm0u
-Y29tOyB3aWxsLmRlYWNvbkBhcm0uY29tOyBNaW5na2FpIEh1DQo+IDxtaW5na2FpLmh1QG54cC5j
-b20+OyBNLmguIExpYW4gPG1pbmdodWFuLmxpYW5AbnhwLmNvbT47IFhpYW93ZWkgQmFvDQo+IDx4
-aWFvd2VpLmJhb0BueHAuY29tPg0KPiBTdWJqZWN0OiBSZTogW1BBVENIdjEwIDExLzEzXSBQQ0k6
-IG1vYml2ZWlsOiBBZGQgUENJZSBHZW40IFJDIGRyaXZlciBmb3INCj4gTlhQIExheWVyc2NhcGUg
-U29Dcw0KPiANCj4gT24gVGh1LCBGZWIgMTMsIDIwMjAgYXQgMTI6MDY6NDJQTSArMDgwMCwgWmhp
-cWlhbmcgSG91IHdyb3RlOg0KPiA+IEZyb206IEhvdSBaaGlxaWFuZyA8WmhpcWlhbmcuSG91QG54
-cC5jb20+DQo+ID4NCj4gPiBUaGlzIFBDSWUgY29udHJvbGxlciBpcyBiYXNlZCBvbiB0aGUgTW9i
-aXZlaWwgR1BFWCBJUCwgd2hpY2ggaXMNCj4gPiBjb21wYXRpYmxlIHdpdGggdGhlIFBDSSBFeHBy
-ZXNz4oSiIEJhc2UgU3BlY2lmaWNhdGlvbiwgUmV2aXNpb24gNC4wLg0KPiA+DQo+ID4gU2lnbmVk
-LW9mZi1ieTogSG91IFpoaXFpYW5nIDxaaGlxaWFuZy5Ib3VAbnhwLmNvbT4NCj4gPiBSZXZpZXdl
-ZC1ieTogTWluZ2h1YW4gTGlhbiA8TWluZ2h1YW4uTGlhbkBueHAuY29tPg0KPiANCj4gUmV2aWV3
-ZWQtYnk6IEFuZHJldyBNdXJyYXkgPGFtdXJyYXlAdGhlZ29vZHBlbmd1aW4uY28udWs+DQo+IA0K
-PiA+IC0tLQ0KPiA+IFYxMDoNCj4gPiAgLSBDaGFuZ2VkIHRoZSByZXR1cm4gdHlwZSBvZiBsc19w
-Y2llX2c0X3JlaW5pdF9odygpIHRvIHZvaWQuDQo+ID4gIC0gTW92ZWQgSGVhZGVyIFR5cGUgY2hl
-Y2sgdG8gbW9iaXZlaWxfcGNpZV9ob3N0X3Byb2JlKCkuDQo+ID4NCj4gPiAgZHJpdmVycy9wY2kv
-Y29udHJvbGxlci9tb2JpdmVpbC9LY29uZmlnICAgICAgIHwgICA5ICsNCj4gPiAgZHJpdmVycy9w
-Y2kvY29udHJvbGxlci9tb2JpdmVpbC9NYWtlZmlsZSAgICAgIHwgICAxICsNCj4gPiAgLi4uL21v
-Yml2ZWlsL3BjaWUtbGF5ZXJzY2FwZS1nZW40LmMgICAgICAgICAgIHwgMjY3DQo+ICsrKysrKysr
-KysrKysrKysrKw0KPiA+ICAuLi4vcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1tb2JpdmVp
-bC5oICAgfCAgMTYgKy0NCj4gPiAgNCBmaWxlcyBjaGFuZ2VkLCAyOTEgaW5zZXJ0aW9ucygrKSwg
-MiBkZWxldGlvbnMoLSkgIGNyZWF0ZSBtb2RlDQo+ID4gMTAwNjQ0IGRyaXZlcnMvcGNpL2NvbnRy
-b2xsZXIvbW9iaXZlaWwvcGNpZS1sYXllcnNjYXBlLWdlbjQuYw0KPiA+DQo+ID4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvS2NvbmZpZw0KPiA+IGIvZHJpdmVy
-cy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9LY29uZmlnDQo+ID4gaW5kZXggNTQxNjFkNGRkYjEx
-Li43NDM5OTkxZWU4MmMgMTAwNjQ0DQo+ID4gLS0tIGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9t
-b2JpdmVpbC9LY29uZmlnDQo+ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVp
-bC9LY29uZmlnDQo+ID4gQEAgLTIxLDQgKzIxLDEzIEBAIGNvbmZpZyBQQ0lFX01PQklWRUlMX1BM
-QVQNCj4gPiAgCSAgU29mdCBJUC4gSXQgaGFzIHVwIHRvIDggb3V0Ym91bmQgYW5kIGluYm91bmQg
-d2luZG93cw0KPiA+ICAJICBmb3IgYWRkcmVzcyB0cmFuc2xhdGlvbiBhbmQgaXQgaXMgYSBQQ0ll
-IEdlbjQgSVAuDQo+ID4NCj4gPiArY29uZmlnIFBDSUVfTEFZRVJTQ0FQRV9HRU40DQo+ID4gKwli
-b29sICJGcmVlc2NhbGUgTGF5ZXJzY2FwZSBQQ0llIEdlbjQgY29udHJvbGxlciINCj4gPiArCWRl
-cGVuZHMgb24gUENJDQo+ID4gKwlkZXBlbmRzIG9uIE9GICYmIChBUk02NCB8fCBBUkNIX0xBWUVS
-U0NBUEUpDQo+ID4gKwlkZXBlbmRzIG9uIFBDSV9NU0lfSVJRX0RPTUFJTg0KPiA+ICsJc2VsZWN0
-IFBDSUVfTU9CSVZFSUxfSE9TVA0KPiA+ICsJaGVscA0KPiA+ICsJICBTYXkgWSBoZXJlIGlmIHlv
-dSB3YW50IFBDSWUgR2VuNCBjb250cm9sbGVyIHN1cHBvcnQgb24NCj4gPiArCSAgTGF5ZXJzY2Fw
-ZSBTb0NzLg0KPiA+ICBlbmRtZW51DQo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRy
-b2xsZXIvbW9iaXZlaWwvTWFrZWZpbGUNCj4gPiBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9i
-aXZlaWwvTWFrZWZpbGUNCj4gPiBpbmRleCA5ZmI2ZDFjNjUwNGQuLjk5ZDg3OWRlMzJkNiAxMDA2
-NDQNCj4gPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL01ha2VmaWxlDQo+
-ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9NYWtlZmlsZQ0KPiA+IEBA
-IC0yLDMgKzIsNCBAQA0KPiA+ICBvYmotJChDT05GSUdfUENJRV9NT0JJVkVJTCkgKz0gcGNpZS1t
-b2JpdmVpbC5vDQo+ID4gIG9iai0kKENPTkZJR19QQ0lFX01PQklWRUlMX0hPU1QpICs9IHBjaWUt
-bW9iaXZlaWwtaG9zdC5vDQo+ID4gIG9iai0kKENPTkZJR19QQ0lFX01PQklWRUlMX1BMQVQpICs9
-IHBjaWUtbW9iaXZlaWwtcGxhdC5vDQo+ID4gK29iai0kKENPTkZJR19QQ0lFX0xBWUVSU0NBUEVf
-R0VONCkgKz0gcGNpZS1sYXllcnNjYXBlLWdlbjQubw0KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJz
-L3BjaS9jb250cm9sbGVyL21vYml2ZWlsL3BjaWUtbGF5ZXJzY2FwZS1nZW40LmMNCj4gPiBiL2Ry
-aXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1sYXllcnNjYXBlLWdlbjQuYw0KPiA+
-IG5ldyBmaWxlIG1vZGUgMTAwNjQ0DQo+ID4gaW5kZXggMDAwMDAwMDAwMDAwLi5mM2JkNWY1YWQy
-MjkNCj4gPiAtLS0gL2Rldi9udWxsDQo+ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9t
-b2JpdmVpbC9wY2llLWxheWVyc2NhcGUtZ2VuNC5jDQo+ID4gQEAgLTAsMCArMSwyNjcgQEANCj4g
-PiArLy8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjANCj4gPiArLyoNCj4gPiArICog
-UENJZSBHZW40IGhvc3QgY29udHJvbGxlciBkcml2ZXIgZm9yIE5YUCBMYXllcnNjYXBlIFNvQ3MN
-Cj4gPiArICoNCj4gPiArICogQ29weXJpZ2h0IDIwMTktMjAyMCBOWFANCj4gPiArICoNCj4gPiAr
-ICogQXV0aG9yOiBaaGlxaWFuZyBIb3UgPFpoaXFpYW5nLkhvdUBueHAuY29tPiAgKi8NCj4gPiAr
-DQo+ID4gKyNpbmNsdWRlIDxsaW51eC9rZXJuZWwuaD4NCj4gPiArI2luY2x1ZGUgPGxpbnV4L2lu
-dGVycnVwdC5oPg0KPiA+ICsjaW5jbHVkZSA8bGludXgvaW5pdC5oPg0KPiA+ICsjaW5jbHVkZSA8
-bGludXgvb2ZfcGNpLmg+DQo+ID4gKyNpbmNsdWRlIDxsaW51eC9vZl9wbGF0Zm9ybS5oPg0KPiA+
-ICsjaW5jbHVkZSA8bGludXgvb2ZfaXJxLmg+DQo+ID4gKyNpbmNsdWRlIDxsaW51eC9vZl9hZGRy
-ZXNzLmg+DQo+ID4gKyNpbmNsdWRlIDxsaW51eC9wY2kuaD4NCj4gPiArI2luY2x1ZGUgPGxpbnV4
-L3BsYXRmb3JtX2RldmljZS5oPg0KPiA+ICsjaW5jbHVkZSA8bGludXgvcmVzb3VyY2UuaD4NCj4g
-PiArI2luY2x1ZGUgPGxpbnV4L21mZC9zeXNjb24uaD4NCj4gPiArI2luY2x1ZGUgPGxpbnV4L3Jl
-Z21hcC5oPg0KPiA+ICsNCj4gPiArI2luY2x1ZGUgInBjaWUtbW9iaXZlaWwuaCINCj4gPiArDQo+
-ID4gKy8qIExVVCBhbmQgUEYgY29udHJvbCByZWdpc3RlcnMgKi8NCj4gPiArI2RlZmluZSBQQ0lF
-X0xVVF9PRkYJCQkweDgwMDAwDQo+ID4gKyNkZWZpbmUgUENJRV9QRl9PRkYJCQkweGMwMDAwDQo+
-ID4gKyNkZWZpbmUgUENJRV9QRl9JTlRfU1RBVAkJMHgxOA0KPiA+ICsjZGVmaW5lIFBGX0lOVF9T
-VEFUX1BBQlJTVAkJQklUKDMxKQ0KPiA+ICsNCj4gPiArI2RlZmluZSBQQ0lFX1BGX0RCRwkJCTB4
-N2ZjDQo+ID4gKyNkZWZpbmUgUEZfREJHX0xUU1NNX01BU0sJCTB4M2YNCj4gPiArI2RlZmluZSBQ
-Rl9EQkdfTFRTU01fTDAJCQkweDJkIC8qIEwwIHN0YXRlICovDQo+ID4gKyNkZWZpbmUgUEZfREJH
-X1dFCQkJQklUKDMxKQ0KPiA+ICsjZGVmaW5lIFBGX0RCR19QQUJSCQkJQklUKDI3KQ0KPiA+ICsN
-Cj4gPiArI2RlZmluZSB0b19sc19wY2llX2c0KHgpCQlwbGF0Zm9ybV9nZXRfZHJ2ZGF0YSgoeCkt
-PnBkZXYpDQo+ID4gKw0KPiA+ICtzdHJ1Y3QgbHNfcGNpZV9nNCB7DQo+ID4gKwlzdHJ1Y3QgbW9i
-aXZlaWxfcGNpZSBwY2k7DQo+ID4gKwlzdHJ1Y3QgZGVsYXllZF93b3JrIGR3b3JrOw0KPiA+ICsJ
-aW50IGlycTsNCj4gPiArfTsNCj4gPiArDQo+ID4gK3N0YXRpYyBpbmxpbmUgdTMyIGxzX3BjaWVf
-ZzRfbHV0X3JlYWRsKHN0cnVjdCBsc19wY2llX2c0ICpwY2llLCB1MzINCj4gPiArb2ZmKSB7DQo+
-ID4gKwlyZXR1cm4gaW9yZWFkMzIocGNpZS0+cGNpLmNzcl9heGlfc2xhdmVfYmFzZSArIFBDSUVf
-TFVUX09GRiArIG9mZik7DQo+ID4gK30NCj4gPiArDQo+ID4gK3N0YXRpYyBpbmxpbmUgdm9pZCBs
-c19wY2llX2c0X2x1dF93cml0ZWwoc3RydWN0IGxzX3BjaWVfZzQgKnBjaWUsDQo+ID4gKwkJCQkJ
-IHUzMiBvZmYsIHUzMiB2YWwpDQo+ID4gK3sNCj4gPiArCWlvd3JpdGUzMih2YWwsIHBjaWUtPnBj
-aS5jc3JfYXhpX3NsYXZlX2Jhc2UgKyBQQ0lFX0xVVF9PRkYgKyBvZmYpOyB9DQo+ID4gKw0KPiA+
-ICtzdGF0aWMgaW5saW5lIHUzMiBsc19wY2llX2c0X3BmX3JlYWRsKHN0cnVjdCBsc19wY2llX2c0
-ICpwY2llLCB1MzINCj4gPiArb2ZmKSB7DQo+ID4gKwlyZXR1cm4gaW9yZWFkMzIocGNpZS0+cGNp
-LmNzcl9heGlfc2xhdmVfYmFzZSArIFBDSUVfUEZfT0ZGICsgb2ZmKTsgfQ0KPiA+ICsNCj4gPiAr
-c3RhdGljIGlubGluZSB2b2lkIGxzX3BjaWVfZzRfcGZfd3JpdGVsKHN0cnVjdCBsc19wY2llX2c0
-ICpwY2llLA0KPiA+ICsJCQkJCXUzMiBvZmYsIHUzMiB2YWwpDQo+ID4gK3sNCj4gPiArCWlvd3Jp
-dGUzMih2YWwsIHBjaWUtPnBjaS5jc3JfYXhpX3NsYXZlX2Jhc2UgKyBQQ0lFX1BGX09GRiArIG9m
-Zik7IH0NCj4gPiArDQo+ID4gK3N0YXRpYyBpbnQgbHNfcGNpZV9nNF9saW5rX3VwKHN0cnVjdCBt
-b2JpdmVpbF9wY2llICpwY2kpIHsNCj4gPiArCXN0cnVjdCBsc19wY2llX2c0ICpwY2llID0gdG9f
-bHNfcGNpZV9nNChwY2kpOw0KPiA+ICsJdTMyIHN0YXRlOw0KPiA+ICsNCj4gPiArCXN0YXRlID0g
-bHNfcGNpZV9nNF9wZl9yZWFkbChwY2llLCBQQ0lFX1BGX0RCRyk7DQo+ID4gKwlzdGF0ZSA9CXN0
-YXRlICYgUEZfREJHX0xUU1NNX01BU0s7DQo+ID4gKw0KPiA+ICsJaWYgKHN0YXRlID09IFBGX0RC
-R19MVFNTTV9MMCkNCj4gPiArCQlyZXR1cm4gMTsNCj4gPiArDQo+ID4gKwlyZXR1cm4gMDsNCj4g
-PiArfQ0KPiA+ICsNCj4gPiArc3RhdGljIHZvaWQgbHNfcGNpZV9nNF9kaXNhYmxlX2ludGVycnVw
-dChzdHJ1Y3QgbHNfcGNpZV9nNCAqcGNpZSkgew0KPiA+ICsJc3RydWN0IG1vYml2ZWlsX3BjaWUg
-Km12X3BjaSA9ICZwY2llLT5wY2k7DQo+ID4gKw0KPiA+ICsJbW9iaXZlaWxfY3NyX3dyaXRlbCht
-dl9wY2ksIDAsIFBBQl9JTlRQX0FNQkFfTUlTQ19FTkIpOyB9DQo+ID4gKw0KPiA+ICtzdGF0aWMg
-dm9pZCBsc19wY2llX2c0X2VuYWJsZV9pbnRlcnJ1cHQoc3RydWN0IGxzX3BjaWVfZzQgKnBjaWUp
-IHsNCj4gPiArCXN0cnVjdCBtb2JpdmVpbF9wY2llICptdl9wY2kgPSAmcGNpZS0+cGNpOw0KPiA+
-ICsJdTMyIHZhbDsNCj4gPiArDQo+ID4gKwkvKiBDbGVhciB0aGUgaW50ZXJydXB0IHN0YXR1cyAq
-Lw0KPiA+ICsJbW9iaXZlaWxfY3NyX3dyaXRlbChtdl9wY2ksIDB4ZmZmZmZmZmYsIFBBQl9JTlRQ
-X0FNQkFfTUlTQ19TVEFUKTsNCj4gPiArDQo+ID4gKwl2YWwgPSBQQUJfSU5UUF9JTlRYX01BU0sg
-fCBQQUJfSU5UUF9NU0kgfCBQQUJfSU5UUF9SRVNFVCB8DQo+ID4gKwkgICAgICBQQUJfSU5UUF9Q
-Q0lFX1VFIHwgUEFCX0lOVFBfSUVfUE1SRURJIHwgUEFCX0lOVFBfSUVfRUM7DQo+ID4gKwltb2Jp
-dmVpbF9jc3Jfd3JpdGVsKG12X3BjaSwgdmFsLCBQQUJfSU5UUF9BTUJBX01JU0NfRU5CKTsgfQ0K
-PiA+ICsNCj4gPiArc3RhdGljIGludCBsc19wY2llX2c0X3JlaW5pdF9odyhzdHJ1Y3QgbHNfcGNp
-ZV9nNCAqcGNpZSkgew0KPiA+ICsJc3RydWN0IG1vYml2ZWlsX3BjaWUgKm12X3BjaSA9ICZwY2ll
-LT5wY2k7DQo+ID4gKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmbXZfcGNpLT5wZGV2LT5kZXY7DQo+
-ID4gKwl1MzIgdmFsLCBhY3Rfc3RhdDsNCj4gPiArCWludCB0byA9IDEwMDsNCj4gPiArDQo+ID4g
-KwkvKiBQb2xsIGZvciBwYWJfY3NiX3Jlc2V0IHRvIHNldCBhbmQgUEFCIGFjdGl2aXR5IHRvIGNs
-ZWFyICovDQo+ID4gKwlkbyB7DQo+ID4gKwkJdXNsZWVwX3JhbmdlKDEwLCAxNSk7DQo+ID4gKwkJ
-dmFsID0gbHNfcGNpZV9nNF9wZl9yZWFkbChwY2llLCBQQ0lFX1BGX0lOVF9TVEFUKTsNCj4gPiAr
-CQlhY3Rfc3RhdCA9IG1vYml2ZWlsX2Nzcl9yZWFkbChtdl9wY2ksIFBBQl9BQ1RJVklUWV9TVEFU
-KTsNCj4gPiArCX0gd2hpbGUgKCgodmFsICYgUEZfSU5UX1NUQVRfUEFCUlNUKSA9PSAwIHx8IGFj
-dF9zdGF0KSAmJiB0by0tKTsNCj4gPiArCWlmICh0byA8IDApIHsNCj4gPiArCQlkZXZfZXJyKGRl
-diwgIlBvbGwgUEFCUlNUJlBBQkFDVCB0aW1lb3V0XG4iKTsNCj4gPiArCQlyZXR1cm4gLUVJTzsN
-Cj4gPiArCX0NCj4gPiArDQo+ID4gKwkvKiBjbGVhciBQRVhfUkVTRVQgYml0IGluIFBFWF9QRjBf
-REJHIHJlZ2lzdGVyICovDQo+ID4gKwl2YWwgPSBsc19wY2llX2c0X3BmX3JlYWRsKHBjaWUsIFBD
-SUVfUEZfREJHKTsNCj4gPiArCXZhbCB8PSBQRl9EQkdfV0U7DQo+ID4gKwlsc19wY2llX2c0X3Bm
-X3dyaXRlbChwY2llLCBQQ0lFX1BGX0RCRywgdmFsKTsNCj4gPiArDQo+ID4gKwl2YWwgPSBsc19w
-Y2llX2c0X3BmX3JlYWRsKHBjaWUsIFBDSUVfUEZfREJHKTsNCj4gPiArCXZhbCB8PSBQRl9EQkdf
-UEFCUjsNCj4gPiArCWxzX3BjaWVfZzRfcGZfd3JpdGVsKHBjaWUsIFBDSUVfUEZfREJHLCB2YWwp
-Ow0KPiA+ICsNCj4gPiArCXZhbCA9IGxzX3BjaWVfZzRfcGZfcmVhZGwocGNpZSwgUENJRV9QRl9E
-QkcpOw0KPiA+ICsJdmFsICY9IH5QRl9EQkdfV0U7DQo+ID4gKwlsc19wY2llX2c0X3BmX3dyaXRl
-bChwY2llLCBQQ0lFX1BGX0RCRywgdmFsKTsNCj4gPiArDQo+ID4gKwltb2JpdmVpbF9ob3N0X2lu
-aXQobXZfcGNpLCB0cnVlKTsNCj4gPiArDQo+ID4gKwl0byA9IDEwMDsNCj4gPiArCXdoaWxlICgh
-bHNfcGNpZV9nNF9saW5rX3VwKG12X3BjaSkgJiYgdG8tLSkNCj4gPiArCQl1c2xlZXBfcmFuZ2Uo
-MjAwLCAyNTApOw0KPiA+ICsJaWYgKHRvIDwgMCkgew0KPiA+ICsJCWRldl9lcnIoZGV2LCAiUENJ
-ZSBsaW5rIHRyYWluaW5nIHRpbWVvdXRcbiIpOw0KPiA+ICsJCXJldHVybiAtRUlPOw0KPiA+ICsJ
-fQ0KPiA+ICsNCj4gPiArCXJldHVybiAwOw0KPiA+ICt9DQo+ID4gKw0KPiA+ICtzdGF0aWMgaXJx
-cmV0dXJuX3QgbHNfcGNpZV9nNF9pc3IoaW50IGlycSwgdm9pZCAqZGV2X2lkKSB7DQo+ID4gKwlz
-dHJ1Y3QgbHNfcGNpZV9nNCAqcGNpZSA9IChzdHJ1Y3QgbHNfcGNpZV9nNCAqKWRldl9pZDsNCj4g
-PiArCXN0cnVjdCBtb2JpdmVpbF9wY2llICptdl9wY2kgPSAmcGNpZS0+cGNpOw0KPiA+ICsJdTMy
-IHZhbDsNCj4gPiArDQo+ID4gKwl2YWwgPSBtb2JpdmVpbF9jc3JfcmVhZGwobXZfcGNpLCBQQUJf
-SU5UUF9BTUJBX01JU0NfU1RBVCk7DQo+ID4gKwlpZiAoIXZhbCkNCj4gPiArCQlyZXR1cm4gSVJR
-X05PTkU7DQo+ID4gKw0KPiA+ICsJaWYgKHZhbCAmIFBBQl9JTlRQX1JFU0VUKSB7DQo+ID4gKwkJ
-bHNfcGNpZV9nNF9kaXNhYmxlX2ludGVycnVwdChwY2llKTsNCj4gPiArCQlzY2hlZHVsZV9kZWxh
-eWVkX3dvcmsoJnBjaWUtPmR3b3JrLCBtc2Vjc190b19qaWZmaWVzKDEpKTsNCj4gPiArCX0NCj4g
-PiArDQo+ID4gKwltb2JpdmVpbF9jc3Jfd3JpdGVsKG12X3BjaSwgdmFsLCBQQUJfSU5UUF9BTUJB
-X01JU0NfU1RBVCk7DQo+ID4gKw0KPiA+ICsJcmV0dXJuIElSUV9IQU5ETEVEOw0KPiA+ICt9DQo+
-ID4gKw0KPiA+ICtzdGF0aWMgaW50IGxzX3BjaWVfZzRfaW50ZXJydXB0X2luaXQoc3RydWN0IG1v
-Yml2ZWlsX3BjaWUgKm12X3BjaSkgew0KPiA+ICsJc3RydWN0IGxzX3BjaWVfZzQgKnBjaWUgPSB0
-b19sc19wY2llX2c0KG12X3BjaSk7DQo+ID4gKwlzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2
-ID0gbXZfcGNpLT5wZGV2Ow0KPiA+ICsJc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsN
-Cj4gPiArCWludCByZXQ7DQo+ID4gKw0KPiA+ICsJcGNpZS0+aXJxID0gcGxhdGZvcm1fZ2V0X2ly
-cV9ieW5hbWUocGRldiwgImludHIiKTsNCj4gPiArCWlmIChwY2llLT5pcnEgPCAwKSB7DQo+ID4g
-KwkJZGV2X2VycihkZXYsICJDYW4ndCBnZXQgJ2ludHInIElSUSwgZXJybm8gPSAlZFxuIiwgcGNp
-ZS0+aXJxKTsNCj4gPiArCQlyZXR1cm4gcGNpZS0+aXJxOw0KPiA+ICsJfQ0KPiA+ICsJcmV0ID0g
-ZGV2bV9yZXF1ZXN0X2lycShkZXYsIHBjaWUtPmlycSwgbHNfcGNpZV9nNF9pc3IsDQo+ID4gKwkJ
-CSAgICAgICBJUlFGX1NIQVJFRCwgcGRldi0+bmFtZSwgcGNpZSk7DQo+ID4gKwlpZiAocmV0KSB7
-DQo+ID4gKwkJZGV2X2VycihkZXYsICJDYW4ndCByZWdpc3RlciBQQ0llIElSUSwgZXJybm8gPSAl
-ZFxuIiwgcmV0KTsNCj4gPiArCQlyZXR1cm4gIHJldDsNCj4gPiArCX0NCj4gPiArDQo+ID4gKwly
-ZXR1cm4gMDsNCj4gPiArfQ0KPiA+ICsNCj4gPiArc3RhdGljIHZvaWQgbHNfcGNpZV9nNF9yZXNl
-dChzdHJ1Y3Qgd29ya19zdHJ1Y3QgKndvcmspIHsNCj4gPiArCXN0cnVjdCBkZWxheWVkX3dvcmsg
-KmR3b3JrID0gY29udGFpbmVyX29mKHdvcmssIHN0cnVjdCBkZWxheWVkX3dvcmssDQo+ID4gKwkJ
-CQkJCSAgd29yayk7DQo+ID4gKwlzdHJ1Y3QgbHNfcGNpZV9nNCAqcGNpZSA9IGNvbnRhaW5lcl9v
-Zihkd29yaywgc3RydWN0IGxzX3BjaWVfZzQsIGR3b3JrKTsNCj4gPiArCXN0cnVjdCBtb2JpdmVp
-bF9wY2llICptdl9wY2kgPSAmcGNpZS0+cGNpOw0KPiA+ICsJdTE2IGN0cmw7DQo+ID4gKw0KPiA+
-ICsJY3RybCA9IG1vYml2ZWlsX2Nzcl9yZWFkdyhtdl9wY2ksIFBDSV9CUklER0VfQ09OVFJPTCk7
-DQo+ID4gKwljdHJsICY9IH5QQ0lfQlJJREdFX0NUTF9CVVNfUkVTRVQ7DQo+ID4gKwltb2JpdmVp
-bF9jc3Jfd3JpdGV3KG12X3BjaSwgY3RybCwgUENJX0JSSURHRV9DT05UUk9MKTsNCj4gPiArDQo+
-ID4gKwlpZiAoIWxzX3BjaWVfZzRfcmVpbml0X2h3KHBjaWUpKQ0KPiA+ICsJCXJldHVybjsNCj4g
-PiArDQo+ID4gKwlsc19wY2llX2c0X2VuYWJsZV9pbnRlcnJ1cHQocGNpZSk7DQo+ID4gK30NCj4g
-PiArDQo+ID4gK3N0YXRpYyBzdHJ1Y3QgbW9iaXZlaWxfcnBfb3BzIGxzX3BjaWVfZzRfcnBfb3Bz
-ID0gew0KPiA+ICsJLmludGVycnVwdF9pbml0ID0gbHNfcGNpZV9nNF9pbnRlcnJ1cHRfaW5pdCwg
-fTsNCj4gPiArDQo+ID4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgbW9iaXZlaWxfcGFiX29wcyBsc19w
-Y2llX2c0X3BhYl9vcHMgPSB7DQo+ID4gKwkubGlua191cCA9IGxzX3BjaWVfZzRfbGlua191cCwN
-Cj4gPiArfTsNCj4gPiArDQo+ID4gK3N0YXRpYyBpbnQgX19pbml0IGxzX3BjaWVfZzRfcHJvYmUo
-c3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikgew0KPiA+ICsJc3RydWN0IGRldmljZSAqZGV2
-ID0gJnBkZXYtPmRldjsNCj4gPiArCXN0cnVjdCBwY2lfaG9zdF9icmlkZ2UgKmJyaWRnZTsNCj4g
-PiArCXN0cnVjdCBtb2JpdmVpbF9wY2llICptdl9wY2k7DQo+ID4gKwlzdHJ1Y3QgbHNfcGNpZV9n
-NCAqcGNpZTsNCj4gPiArCXN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAgPSBkZXYtPm9mX25vZGU7DQo+
-ID4gKwlpbnQgcmV0Ow0KPiA+ICsNCj4gPiArCWlmICghb2ZfcGFyc2VfcGhhbmRsZShucCwgIm1z
-aS1wYXJlbnQiLCAwKSkgew0KPiA+ICsJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGZpbmQgbXNp
-LXBhcmVudFxuIik7DQo+ID4gKwkJcmV0dXJuIC1FSU5WQUw7DQo+ID4gKwl9DQo+ID4gKw0KPiA+
-ICsJYnJpZGdlID0gZGV2bV9wY2lfYWxsb2NfaG9zdF9icmlkZ2UoZGV2LCBzaXplb2YoKnBjaWUp
-KTsNCj4gPiArCWlmICghYnJpZGdlKQ0KPiA+ICsJCXJldHVybiAtRU5PTUVNOw0KPiA+ICsNCj4g
-PiArCXBjaWUgPSBwY2lfaG9zdF9icmlkZ2VfcHJpdihicmlkZ2UpOw0KPiA+ICsJbXZfcGNpID0g
-JnBjaWUtPnBjaTsNCj4gPiArDQo+ID4gKwltdl9wY2ktPnBkZXYgPSBwZGV2Ow0KPiA+ICsJbXZf
-cGNpLT5vcHMgPSAmbHNfcGNpZV9nNF9wYWJfb3BzOw0KPiA+ICsJbXZfcGNpLT5ycC5vcHMgPSAm
-bHNfcGNpZV9nNF9ycF9vcHM7DQo+ID4gKwltdl9wY2ktPnJwLmJyaWRnZSA9IGJyaWRnZTsNCj4g
-PiArDQo+ID4gKwlwbGF0Zm9ybV9zZXRfZHJ2ZGF0YShwZGV2LCBwY2llKTsNCj4gPiArDQo+ID4g
-KwlJTklUX0RFTEFZRURfV09SSygmcGNpZS0+ZHdvcmssIGxzX3BjaWVfZzRfcmVzZXQpOw0KPiA+
-ICsNCj4gPiArCXJldCA9IG1vYml2ZWlsX3BjaWVfaG9zdF9wcm9iZShtdl9wY2kpOw0KPiA+ICsJ
-aWYgKHJldCkgew0KPiA+ICsJCWRldl9lcnIoZGV2LCAiRmFpbCB0byBwcm9iZVxuIik7DQo+ID4g
-KwkJcmV0dXJuICByZXQ7DQo+ID4gKwl9DQo+ID4gKw0KPiA+ICsJbHNfcGNpZV9nNF9lbmFibGVf
-aW50ZXJydXB0KHBjaWUpOw0KPiA+ICsNCj4gPiArCXJldHVybiAwOw0KPiA+ICt9DQo+ID4gKw0K
-PiA+ICtzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2RldmljZV9pZCBsc19wY2llX2c0X29mX21hdGNo
-W10gPSB7DQo+ID4gKwl7IC5jb21wYXRpYmxlID0gImZzbCxseDIxNjBhLXBjaWUiLCB9LA0KPiA+
-ICsJeyB9LA0KPiA+ICt9Ow0KPiA+ICsNCj4gPiArc3RhdGljIHN0cnVjdCBwbGF0Zm9ybV9kcml2
-ZXIgbHNfcGNpZV9nNF9kcml2ZXIgPSB7DQo+ID4gKwkuZHJpdmVyID0gew0KPiA+ICsJCS5uYW1l
-ID0gImxheWVyc2NhcGUtcGNpZS1nZW40IiwNCj4gPiArCQkub2ZfbWF0Y2hfdGFibGUgPSBsc19w
-Y2llX2c0X29mX21hdGNoLA0KPiA+ICsJCS5zdXBwcmVzc19iaW5kX2F0dHJzID0gdHJ1ZSwNCj4g
-PiArCX0sDQo+ID4gK307DQo+ID4gKw0KPiA+ICtidWlsdGluX3BsYXRmb3JtX2RyaXZlcl9wcm9i
-ZShsc19wY2llX2c0X2RyaXZlciwgbHNfcGNpZV9nNF9wcm9iZSk7DQo+ID4gZGlmZiAtLWdpdCBh
-L2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1tb2JpdmVpbC5oDQo+ID4gYi9k
-cml2ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL3BjaWUtbW9iaXZlaWwuaA0KPiA+IGluZGV4
-IDcyYzYyYjRkOGY3Yi4uN2I2YTQwM2E5ZmMwIDEwMDY0NA0KPiA+IC0tLSBhL2RyaXZlcnMvcGNp
-L2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1tb2JpdmVpbC5oDQo+ID4gKysrIGIvZHJpdmVycy9w
-Y2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWlsLmgNCj4gPiBAQCAtNDMsNiArNDMs
-OCBAQA0KPiA+ICAjZGVmaW5lICBQQUdFX0xPX01BU0sJCQkweDNmZg0KPiA+ICAjZGVmaW5lICBQ
-QUdFX1NFTF9PRkZTRVRfU0hJRlQJCTEwDQo+ID4NCj4gPiArI2RlZmluZSBQQUJfQUNUSVZJVFlf
-U1RBVAkJMHg4MWMNCj4gPiArDQo+ID4gICNkZWZpbmUgUEFCX0FYSV9QSU9fQ1RSTAkJMHgwODQw
-DQo+ID4gICNkZWZpbmUgIEFQSU9fRU5fTUFTSwkJCTB4Zg0KPiA+DQo+ID4gQEAgLTUxLDggKzUz
-LDE4IEBADQo+ID4NCj4gPiAgI2RlZmluZSBQQUJfSU5UUF9BTUJBX01JU0NfRU5CCQkweDBiMGMN
-Cj4gPiAgI2RlZmluZSBQQUJfSU5UUF9BTUJBX01JU0NfU1RBVAkJMHgwYjFjDQo+ID4gLSNkZWZp
-bmUgIFBBQl9JTlRQX0lOVFhfTUFTSwkJMHgwMWUwDQo+ID4gLSNkZWZpbmUgIFBBQl9JTlRQX01T
-SV9NQVNLCQkweDgNCj4gPiArI2RlZmluZSAgUEFCX0lOVFBfUkVTRVQJCQlCSVQoMSkNCj4gPiAr
-I2RlZmluZSAgUEFCX0lOVFBfTVNJCQkJQklUKDMpDQo+ID4gKyNkZWZpbmUgIFBBQl9JTlRQX0lO
-VEEJCQlCSVQoNSkNCj4gPiArI2RlZmluZSAgUEFCX0lOVFBfSU5UQgkJCUJJVCg2KQ0KPiA+ICsj
-ZGVmaW5lICBQQUJfSU5UUF9JTlRDCQkJQklUKDcpDQo+ID4gKyNkZWZpbmUgIFBBQl9JTlRQX0lO
-VEQJCQlCSVQoOCkNCj4gPiArI2RlZmluZSAgUEFCX0lOVFBfUENJRV9VRQkJQklUKDkpDQo+ID4g
-KyNkZWZpbmUgIFBBQl9JTlRQX0lFX1BNUkVESQkJQklUKDI5KQ0KPiA+ICsjZGVmaW5lICBQQUJf
-SU5UUF9JRV9FQwkJCUJJVCgzMCkNCj4gPiArI2RlZmluZSAgUEFCX0lOVFBfTVNJX01BU0sJCVBB
-Ql9JTlRQX01TSQ0KPiA+ICsjZGVmaW5lICBQQUJfSU5UUF9JTlRYX01BU0sJCShQQUJfSU5UUF9J
-TlRBIHwNCj4gUEFCX0lOVFBfSU5UQiB8XA0KPiA+ICsJCQkJCVBBQl9JTlRQX0lOVEMgfCBQQUJf
-SU5UUF9JTlREKQ0KPiA+DQo+ID4gICNkZWZpbmUgUEFCX0FYSV9BTUFQX0NUUkwod2luKQkJUEFC
-X1JFR19BRERSKDB4MGJhMCwNCj4gd2luKQ0KPiA+ICAjZGVmaW5lICBXSU5fRU5BQkxFX1NISUZU
-CQkwDQo+ID4gLS0NCj4gPiAyLjE3LjENCj4gPg0KX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+Hi,
+
+On Fri, 2020-02-21 at 18:10 +0100, Enric Balletbo i Serra wrote:
+> Hi,
+> 
+> On 21/2/20 12:53, Matthias Brugger wrote:
+> > 
+> > 
+> > On 21/02/2020 12:37, Enric Balletbo i Serra wrote:
+> >> Hi CK and Matthias,
+> >>
+> >> On 21/2/20 12:11, CK Hu wrote:
+> >>> Hi, Matthias:
+> >>>
+> >>> On Fri, 2020-02-21 at 11:24 +0100, Matthias Brugger wrote:
+> >>>>
+> >>>> On 21/02/2020 10:27, CK Hu wrote:
+> >>>>> Hi, Enric:
+> >>>>>
+> >>>>> On Fri, 2020-02-21 at 09:56 +0100, Enric Balletbo i Serra wrote:
+> >>>>>> Hi CK,
+> >>>>>>
+> >>>>>> Thanks for your quick answer.
+> >>>>>>
+> >>>>>> On 21/2/20 5:39, CK Hu wrote:
+> >>>>>>> Hi, Enric:
+> >>>>>>>
+> >>>>>>> On Thu, 2020-02-20 at 18:21 +0100, Enric Balletbo i Serra wrote:
+> >>>>>>>> Dear all,
+> >>>>>>>>
+> >>>>>>>> Those patches are intended to solve an old standing issue on some
+> >>>>>>>> Mediatek devices (mt8173, mt2701 and mt2712) in a slightly different way
+> >>>>>>>> to the precedent series.
+> >>>>>>>>
+> >>>>>>>> Up to now both drivers, clock and drm are probed with the same device tree
+> >>>>>>>> compatible. But only the first driver get probed, which in effect breaks
+> >>>>>>>> graphics on those devices.
+> >>>>>>>>
+> >>>>>>>> The version eight of the series tries to solve the problem with a
+> >>>>>>>> different approach than the previous series but similar to how is solved
+> >>>>>>>> on other Mediatek devices.
+> >>>>>>>>
+> >>>>>>>> The MMSYS (Multimedia subsystem) in Mediatek SoCs has some registers to
+> >>>>>>>> control clock gates (which is used in the clk driver) and some registers
+> >>>>>>>> to set the routing and enable the differnet blocks of the display
+> >>>>>>>> and MDP (Media Data Path) subsystem. On this series the clk driver is
+> >>>>>>>> not a pure clock controller but a system controller that can provide
+> >>>>>>>> access to the shared registers between the different drivers that need
+> >>>>>>>> it (mediatek-drm and mediatek-mdp). And the biggest change is, that in
+> >>>>>>>> this version, clk driver is the entry point (parent) which will trigger
+> >>>>>>>> the probe of the corresponding mediatek-drm driver and pass its MMSYS
+> >>>>>>>> platform data for display configuration.
+> >>>>>>>
+> >>>>>>> When mmsys is a system controller, I prefer to place mmsys in
+> >>>>>>> drivers/soc/mediatek, and it share registers for clock, display, and mdp
+> >>>>>>> driver. This means the probe function is placed in
+> >>>>>>> drivers/soc/mediatek ,its display clock function, mdp clock function are
+> >>>>>>> placed in drivers/clk, display routing are placed in drivers/gpu/drm,
+> >>>>>>> and mdp routing are placed in dirvers/video.
+> >>>>>>>
+> >>>>>>
+> >>>>>> I understand what you mean but I am not sure this makes the code clearer and
+> >>>>>> useful. The driver in drivers/soc/mediatek will be a simple dummy implementation
+> >>>>>> of a "simple-mfd" device (a driver that simply matches with
+> >>>>>> "mediatek,mt8173-mmsys" and instantiates the "clk-mt8173-mm" and the
+> >>>>>> "mediatek-drm" driver (note that mediatek-mdp" is already instantiated via
+> >>>>>> device-tree).
+> >>>>>>
+> >>>>>
+> >>>>> It's clear that mmsys is neither a pure clock controller nor a pure
+> >>>>> routing controller for display and mdp. 
+> >>>>>
+> >>>>>> It'd be nice had a proper device-tree with a "simple-mfd" for mmsys from the
+> >>>>>> beginning representing how really hardwware is, but I think that, change this
+> >>>>>> now, will break backward compatibility.
+> >>>>>
+> >>>>> Maybe this is a solution. Current device tree would work only on old
+> >>>>> kernel version with a bug, so this mean there is no any device tree
+> >>>>> works on kernel version without bug. Why do we compatible with such
+> >>>>> device tree?
+> >>>>>
+> >>>>
+> >>
+> >> So the only reason why current DT worked at some point is because there was a
+> >> kernel bug?
+> >>
+> > 
+> > I'd say you can call it a kernel bug:
+> > https://patchwork.kernel.org/patch/10367877/#22078767
+> > 
+> > 
+> >> If that's the case I think we shouldn't worry about break DT compatibility (I'm
+> >> sorry for those that having a buggy kernel makes display working)
+> >>
+> >>>> The idea behind this is, that the device-tree could be passed by some boot
+> >>>> firmware, so that the OS do not care about it. For this we need a stable DTS as
+> >>>> otherwise newer kernel with older FW would break.
+> >>>>
+> >>>> DTS is supposed to be just a different description of the HW like ACPI. So it
+> >>>> has to be compatible (newer kernel with older DTS and if possible vice versa).
+> >>>
+> >>> In my view, there is no FW (except some bug-inside FW) which works on
+> >>> this dts, so this dts is in a initial state. I think the compatibility
+> >>> is based on that dts correctly describe the HW. If we find this dts does
+> >>> not correctly describe the HW and it's in a initial state, should we
+> >>> still make it compatible?
+> >>>
+> >>
+> >> In this case I think we don't need to worry about buggy kernels, the only thing
+> >> that we need to take in consideration is that mmsys is instantiated on both (the
+> >> old DT and the new DT), we shouldn't expect display working (because never
+> >> worked, right?)
+> >>
+> >> With that in mind, I agree that is a good opportunity to fix properly the HW
+> >> topology.
+> >>
+> >> What thing that worries me is that I see this pattern on all Mediatek SoCs, does
+> >> this mean that display was never well supported for Mediatek SoCs?
+> >>
+> > 
+> > That's exactly the case. Actually there were some patches for mt762x (can't
+> > remember if mt7623 or mt7622) whcih got pushed back, because we would need to
+> > fix the mmsys problem first.
+> > 
+> > Ok, so if we come to the conclusion that this actually only worked because of a
+> > bug, then we can remodel the whole thing.
+> > In this case, I think the best would be to do what CK proposed:
+> > https://patchwork.kernel.org/patch/11381201/#23158169
+> > 
+> > Making everything below 0x14000000 a subdevice of mmsys (mdp, ovl, rdma, you
+> > name it).
+> > 
+> 
+> 
+> I see the MMSYS space as config registers to route the different ports in the
+> drm and video subsystem, so, as phandle of the display (drivers/gpur/drm) and
+> video (drivers/video) subsystem. What about something like this?
+> 
+> mmsys: syscon@14000000 {
+> 	compatible = "mediatek,mt8173-mmsys", "syscon";
+> 	reg = <0 0x14000000 0 0x1000>;
+> 	power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+> 	assigned-clocks = <&topckgen CLK_TOP_MM_SEL>;
+> 	assigned-clock-rates = <400000000>;
+> 	#clock-cells = <1>;
+> };
+> 
+> Basically is what we have with
+> 
+> * [PATCH v8 4/6] clk: mediatek: mt8173: Switch MMSYS to platform driver
+> 
+> And
+> 
+> display-subsystem {
+> 	compatible = "mediatek,display-subsystem";
+> 	mediatek,mmsys = <&mmsys>; /* phandle to the routing config registers */
+> 	ports = <&ovl0>, <&ovl1>, < ... >
+> }
+> 
+> We are introducing a new compatible that is not describing hardware but how
+> hardware is grouped, which I think is fine.
+> 
+> The mediatek-drm driver will need a bit of rework but not much I guess.
+> 
+> What is still not clear to me is the mdp part because doesn't seem to have an
+> entry point like the display part, instead it uses one port as entry point.
+> 
+> 	mdp_rdma0: rdma@14001000 {
+> 		compatible = "mediatek,mt8173-mdp-rdma",
+> 			     "mediatek,mt8173-mdp";
+> 
+> AFAICS that driver is not touching MMSYS config registers to route the mdp path,
+> only is getting the clocks, but I assume it will do in the future. In such case,
+> maybe we could do something similar to the display-subsystem node?
+> 
+
+Your proposal is to probe clock driver by mmsys device and probe display driver by another device. You have two choice to probe display driver: one is to create a virtual device that group display devices and probe display driver by this device. Another one is to choose one display device, such as OVL, to probe display driver.
+
+I do not like a virtual device solution. In some Mediatek SoC, the routing is so flexible that one function block could be placed in display pipe or mdp pipe by different routing.
+
+mmsys device control the display routing and display clock. OVL control. display overlay function. Both devices control partial display function, so probing display driver by which one looks the same for me.
+
+I prefer to probe display driver by mmsys device because it has more information of display pipe line and OVL just focus on overlay function. Only when it's difficult to probe display driver by mmsys device, we have to probe display driver by OVL.
+
+I think mmsys is really a multi-function device, and the device tree description may look like:
+
+mmsys: system-controller@14000000 {
+	compatible = "mediatek,mt8173-mmsys", "syscon", "simple-mfd";
+	reg = <0 0x14000000 0 0x1000>;
+	power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+	assigned-clocks = <&topckgen CLK_TOP_MM_SEL>;
+	assigned-clock-rates = <400000000>;
+	#clock-cells = <1>;
+
+	route {
+		compatible = "mediatek,mt8173-mmsys-route";
+	};
+
+	clock {
+		compatible = "mediatek,mt8173-mmsys-clk";
+	};
+};
+
+But from mt6797 register map [1], mmsys have many function such as fake engine, memory delay, reset,....
+Should we break each function into a sub device?
+Or we do not break any function (include clock and routing) into sub device?
+Or just break these two function into device, remove "simple-mfd" from mmsys, so the rest control is in mmsys top device?
+
+[1] https://www.96boards.org/documentation/consumer/mediatekx20/additional-docs/docs/MT6797_Register_Table_Part_2.pdf
+
+Regards,
+CK
+
+
+> Regards,
+>  Enric
+> 
+> 
+> > Regards,
+> > Matthias
+> > 
+> >> Thanks.
+> >>
+> >>> If you have better solution, just let's forget this.
+> >>>
+> >>> Regards,
+> >>> CK
+> >>>
+> >>>>
+> >>>> Regards,
+> >>>> Matthias
+> >>>>
+> >>>>> Regards,
+> >>>>> CK
+> >>>>>
+> >>>>>>
+> >>>>>> IMHO I think that considering the clk driver as entry point is fine, but this is
+> >>>>>> something that the clock maintainers should decide.
+> >>>>>>
+> >>>>>> Also note that this is not only a MT8173 problem I am seeing the same problem on
+> >>>>>> all other Mediatek SoCs.
+> >>>>>>
+> >>>>>> Thanks.
+> >>>>>>
+> >>>>>>> Regards,
+> >>>>>>> CK
+> >>>>>>>
+> >>>>>>>>
+> >>>>>>>> All this series was tested on the Acer R13 Chromebook only.
+> >>>>>>>>
+> >>>>>>>> For reference, here are the links to the old discussions:
+> >>>>>>>>
+> >>>>>>>> * v7: https://patchwork.kernel.org/project/linux-mediatek/list/?series=241217
+> >>>>>>>> * v6: https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
+> >>>>>>>> * v5: https://patchwork.kernel.org/project/linux-mediatek/list/?series=44063
+> >>>>>>>> * v4:
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10530871/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10530883/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10530885/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10530911/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10530913/
+> >>>>>>>> * v3:
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367857/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367861/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367877/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367875/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367885/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367883/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367889/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367907/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367909/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10367905/
+> >>>>>>>> * v2: No relevant discussion, see v3
+> >>>>>>>> * v1:
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10016497/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10016499/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10016505/
+> >>>>>>>>   * https://patchwork.kernel.org/patch/10016507/
+> >>>>>>>>
+> >>>>>>>> Best regards,
+> >>>>>>>>  Enric
+> >>>>>>>>
+> >>>>>>>> Changes in v8:
+> >>>>>>>> - Be a builtin_platform_driver like other mediatek mmsys drivers.
+> >>>>>>>> - New patches introduced in this series.
+> >>>>>>>>
+> >>>>>>>> Changes in v7:
+> >>>>>>>> - Add R-by from CK
+> >>>>>>>> - Add R-by from CK
+> >>>>>>>> - Fix check of return value of of_clk_get
+> >>>>>>>> - Fix identation
+> >>>>>>>> - Free clk_data->clks as well
+> >>>>>>>> - Get rid of private data structure
+> >>>>>>>>
+> >>>>>>>> Enric Balletbo i Serra (2):
+> >>>>>>>>   drm/mediatek: Move MMSYS configuration to include/linux/platform_data
+> >>>>>>>>   clk/drm: mediatek: Fix mediatek-drm device probing
+> >>>>>>>>
+> >>>>>>>> Matthias Brugger (4):
+> >>>>>>>>   drm/mediatek: Use regmap for register access
+> >>>>>>>>   drm/mediatek: Omit warning on probe defers
+> >>>>>>>>   media: mtk-mdp: Check return value of of_clk_get
+> >>>>>>>>   clk: mediatek: mt8173: Switch MMSYS to platform driver
+> >>>>>>>>
+> >>>>>>>>  drivers/clk/mediatek/Kconfig                  |   6 +
+> >>>>>>>>  drivers/clk/mediatek/Makefile                 |   1 +
+> >>>>>>>>  drivers/clk/mediatek/clk-mt2701-mm.c          |  30 +++
+> >>>>>>>>  drivers/clk/mediatek/clk-mt2712-mm.c          |  44 +++++
+> >>>>>>>>  drivers/clk/mediatek/clk-mt8173-mm.c          | 172 ++++++++++++++++++
+> >>>>>>>>  drivers/clk/mediatek/clk-mt8173.c             | 104 -----------
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_disp_color.c     |   5 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |   5 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_disp_rdma.c      |   5 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_dpi.c            |  12 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |   4 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c        |  53 +++---
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_drm_ddp.h        |   4 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h   |  56 +-----
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_drm_drv.c        | 113 +-----------
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_drm_drv.h        |  13 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_dsi.c            |   8 +-
+> >>>>>>>>  drivers/gpu/drm/mediatek/mtk_hdmi.c           |   4 +-
+> >>>>>>>>  drivers/media/platform/mtk-mdp/mtk_mdp_comp.c |   6 +
+> >>>>>>>>  include/linux/platform_data/mtk_mmsys.h       |  73 ++++++++
+> >>>>>>>>  20 files changed, 401 insertions(+), 317 deletions(-)
+> >>>>>>>>  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
+> >>>>>>>>  create mode 100644 include/linux/platform_data/mtk_mmsys.h
+> >>>>>>>>
+> >>>>>>>
+> >>>>>>
+> >>>>>> _______________________________________________
+> >>>>>> Linux-mediatek mailing list
+> >>>>>> Linux-mediatek@lists.infradead.org
+> >>>>>> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> >>>>>
+> >>>>
+> >>>> _______________________________________________
+> >>>> Linux-mediatek mailing list
+> >>>> Linux-mediatek@lists.infradead.org
+> >>>> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> >>>
+> > 
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
