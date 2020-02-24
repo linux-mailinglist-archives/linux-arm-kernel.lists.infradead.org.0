@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D043A16AC89
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:00:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2339D16AC8A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:00:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PfLpfLUD9hjnaxgXIPeA9lJpDcOh/0GFHt0bBqaZgNY=; b=M4aRSCnKcso0GV
-	tUiGjOkyVCrRTVaIKRXAkPOtO43hCMdXe5D4GDW5HewUEpCXP4DkTse4qB3sC5fx1faWm07Ld8vkl
-	9gshcbiLnvye8dTWAIOqdsmTdeiv/hmJ5j9veKFe5m76uRaJ6CfG2UIg5i8yCZmDurOvZ4Bggbwsq
-	gf0f7aEKgwIDU9UCRgHkRlJ7KuhXHL6aHWZbYT/JdS3oH21M0Ecrhpd/oOGbl3RI2itzFP/kT0B+r
-	PjoqXCyuoHLdxII9Z9vWGwJDwu+g076+DKwRMRto+JHuirnR66RfSXZhRy3U6q8ZqXpeEbxjr2Zb0
-	qrIf0Y24+/O3ewkzsoOw==;
+	List-Owner; bh=kng4mEmAnmKbsiEjR2fzyI+7MkUIC/8eBPn87GU2sd4=; b=T3fgEExZY4B9sJ
+	/bx/7zgyXTH8iG6PYKhNG+yRY+7/vRzTseByay+hgqRl0TBuncFmTCa9VPiSOd7R6gDoxK8JAmZbJ
+	H4gEFTv7L5nNsthnfMuefbpuiDt9hGUVirtYzQW2Xsw9SgX9vUz6TRFW6AV94pRmOc16uuB6xJYoA
+	ge/xgtJzUFiIANytAYJzK9z+SV9J99bsQBqQXffAho9BW87poDy5DdIL/QCOh05PyMh+38JymI3gP
+	KJzPJh6SUdc8QKd1oLBp5k8UaQzdrIgYstdtkb4lVFUABfSws/hyN2SL0DRSlPeYevpXoQHcJkHKm
+	jv5Qi8sDUz6Cjj7EOFgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6H5y-0004XK-Ve; Mon, 24 Feb 2020 17:00:38 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j6H6C-0004rH-Ad; Mon, 24 Feb 2020 17:00:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6H4V-0002GP-WF
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 16:59:09 +0000
-Received: by mail-wm1-x343.google.com with SMTP id t23so55498wmi.1
+ id 1j6H4X-0002HZ-B5
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 16:59:11 +0000
+Received: by mail-wm1-x342.google.com with SMTP id q9so31958wmj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 08:59:07 -0800 (PST)
+ Mon, 24 Feb 2020 08:59:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=HsNqDpM5GYOb0rP3SKvjSjiXAgrPp7/dDnFzXTvMfm0=;
- b=fxdWSvL7/PlqMuOjCbpoyDK0oOMZfWMx8Bn0sQViiqiE3H2JO3U4xq75c/gD0NU1IB
- 5LX+dV8sT5h1EGNCfmF3/Oc4OwWIiPSscSgJ9EdoXDkOLYlFea7GgkHZEKGQ4n3RX2xc
- tE0Z9fTNGrynG92HHnK+qNkjvWnd1/LmhQMR8Wkp+U8ifjROHa1WaQQXNc85lp2jIC+P
- lz56h7v5lvnlEFIVnmE4jx/Q/BDcbY3YEs++7gzkztWZ4dCkTt2gdyf4zasHzdwGusEP
- V4s2WLd6VesfOZIZPnXJjsJsg1FHR6SX/xW3H+Vqf2K7q/htUfeBaETDNaFwfGHo9nb3
- TUyw==
+ bh=8wR4JvjjnPlxADINM207T0IRGzt73ZsNoWPOZadfSNk=;
+ b=MVNhbcg8wD57oQ9I2JyLERVR2yKCiLO+U8+KIMgmDXq5uE3Xz17SRqISJlYfd4ir0f
+ R4kd49dYtzzGIjmUKtm2Nil6peOKseDxSX6LLgZymQYn3PjxOlFG7DMwufOltiWTpMwW
+ nAvv/0bXQehpLWgHnz/JM8FzL1XTmsAaoNNKJDC2OGvlpi33JinznQOQFLaMEP8oSMB6
+ p2D8+W5IrG6gxs6dgpvB2oEc9zTKeiWuWpX4iz8pcAiJETSzXOdN8W2cI7+0K3InfFhi
+ mhvq6KoZzQD35eEblEKVN/M5SfSNB4cjLRfBZyi4z0D6gsum8FD4M5GXqNy0vqyUQ8Ek
+ kgJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HsNqDpM5GYOb0rP3SKvjSjiXAgrPp7/dDnFzXTvMfm0=;
- b=Q59qq63Hizxvc+Z1faHnDiSXrL8IREsjWaH1qZIFf8pY1n6GxdFXqIPxf/z/FLKYz9
- mZH23NQQyZiWwczDMBlumf/UzvmeGfwUtsa+lNSoXEnOTnzO3KQwN9F387AZaF1bw0Bh
- PFRobVscmK/qLbURDJVU4bWq+MByPjGbHaSJGNSsf+/wLqPTHF0Yv2RViFNtXdI3W5kF
- MFMJleobsDlrVkq9bvWD9KStvBHX2l6hTd6ll8UD8JlCP1iQFaDnmFIHXgkkpJSBwZBS
- YD74bSC4pMMvRWxpGjEGDN5C4YDhB8uXAHusEtP4c6z6xNq2B2sXgM04tVYh3KZXnF49
- Dsxw==
-X-Gm-Message-State: APjAAAXaIFuX+ng2+P6GjzlkFm8i8BqyCifK8AMvvklnO8RSqiRIJ0dR
- KqbHSDwO+z0JLuIIY5s0I9pXjw==
-X-Google-Smtp-Source: APXvYqxzLvSxV15TQeDzuS7Vx3zfQgb1/0PPrdplrfLn1QNB4Up5cq5+1azMjxbcKStUM/cjgwhbxA==
-X-Received: by 2002:a7b:c416:: with SMTP id k22mr35940wmi.10.1582563546869;
- Mon, 24 Feb 2020 08:59:06 -0800 (PST)
+ bh=8wR4JvjjnPlxADINM207T0IRGzt73ZsNoWPOZadfSNk=;
+ b=qypHcmfuAKI/IIu2Fnkoqm/8kg0ZV0wdd/E7XAe4UFqvNBl5Cp4k3jvsvt9ybU3CKY
+ fEkR3SHXx5rKY5W175Y0bME3EaOM8luKc6bvFEAW2sITSBGPK5TuOsIQaW1Br94me/1z
+ 9usltyjA6TE3LMIr5ciTUaW6Bfp/QYsbNAo3qiCK7bI/zmRBwrM0OZhLAgS24OerMQx3
+ rjhBjhe2SiOinIjDZqpC0H3zNsWk1Bz9PBYh64BBgJX7M+pzQyOJJX0wXNCX49k2yKRN
+ vsrzn5wsudsATaXE8fpU8vMRo2XoGZiR+6U2J/V4l3ukrngBiIZiLsokHDUENO4NCO16
+ ANng==
+X-Gm-Message-State: APjAAAUzw1b6abfTCwXy0xjbpJC9Lt3wfCoFbrg5eM+57ey/rRihmBcB
+ wwpXzT16S77RkCHyB7Y4tYFzMA==
+X-Google-Smtp-Source: APXvYqy5NCQ4cadqxMUKN5tm7gQWKMw6tJ7/zLaq1h3uCOJopLS3L3IpJR06WXC/akjTuCTTeW4gnw==
+X-Received: by 2002:a05:600c:54e:: with SMTP id
+ k14mr22152694wmc.115.1582563547735; 
+ Mon, 24 Feb 2020 08:59:07 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
  by smtp.gmail.com with ESMTPSA id b10sm19473978wrt.90.2020.02.24.08.59.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 08:59:06 -0800 (PST)
+ Mon, 24 Feb 2020 08:59:07 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  iommu@lists.linux-foundation.org, will@kernel.org, bhelgaas@google.com
-Subject: [PATCH v2 5/6] iommu/arm-smmu-v3: Batch context descriptor
- invalidation
-Date: Mon, 24 Feb 2020 17:58:45 +0100
-Message-Id: <20200224165846.345993-6-jean-philippe@linaro.org>
+Subject: [PATCH v2 6/6] iommu/arm-smmu-v3: Batch ATC invalidation commands
+Date: Mon, 24 Feb 2020 17:58:46 +0100
+Message-Id: <20200224165846.345993-7-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200224165846.345993-1-jean-philippe@linaro.org>
 References: <20200224165846.345993-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_085908_107567_90D9BCA3 
-X-CRM114-Status: GOOD (  11.79  )
+X-CRM114-CacheID: sfid-20200224_085909_408760_B2DAB501 
+X-CRM114-Status: GOOD (  15.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,41 +106,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rather than publishing one command at a time when invalidating a context
-descriptor, batch the commands for all SIDs in the domain.
+From: Rob Herring <robh@kernel.org>
 
+Similar to commit 2af2e72b18b4 ("iommu/arm-smmu-v3: Defer TLB
+invalidation until ->iotlb_sync()"), build up a list of ATC invalidation
+commands and submit them all at once to the command queue instead of
+one-by-one.
+
+As there is only one caller of arm_smmu_atc_inv_master() left, we can
+simplify it and avoid passing in struct arm_smmu_cmdq_ent.
+
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Cc: Will Deacon <will@kernel.org>
+Cc: Robin Murphy <robin.murphy@arm.com>
+Cc: Joerg Roedel <joro@8bytes.org>
+Signed-off-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 31 ++++++++++++++++++-------------
+ 1 file changed, 18 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index beeec366bc41..12b2a0fa747e 100644
+index 12b2a0fa747e..4f0a38dae6db 100644
 --- a/drivers/iommu/arm-smmu-v3.c
 +++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1512,6 +1512,7 @@ static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
- 	size_t i;
- 	unsigned long flags;
- 	struct arm_smmu_master *master;
-+	struct arm_smmu_cmdq_batch cmds = {};
- 	struct arm_smmu_device *smmu = smmu_domain->smmu;
- 	struct arm_smmu_cmdq_ent cmd = {
- 		.opcode	= CMDQ_OP_CFGI_CD,
-@@ -1525,12 +1526,12 @@ static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
- 	list_for_each_entry(master, &smmu_domain->devices, domain_head) {
- 		for (i = 0; i < master->num_sids; i++) {
- 			cmd.cfgi.sid = master->sids[i];
--			arm_smmu_cmdq_issue_cmd(smmu, &cmd);
-+			arm_smmu_cmdq_batch_add(smmu, &cmds, &cmd);
- 		}
- 	}
- 	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
- 
--	arm_smmu_cmdq_issue_sync(smmu);
-+	arm_smmu_cmdq_batch_submit(smmu, &cmds);
+@@ -2158,17 +2158,16 @@ arm_smmu_atc_inv_to_cmd(int ssid, unsigned long iova, size_t size,
+ 	cmd->atc.size	= log2_span;
  }
  
- static int arm_smmu_alloc_cd_leaf_table(struct arm_smmu_device *smmu,
+-static int arm_smmu_atc_inv_master(struct arm_smmu_master *master,
+-				   struct arm_smmu_cmdq_ent *cmd)
++static int arm_smmu_atc_inv_master(struct arm_smmu_master *master)
+ {
+ 	int i;
++	struct arm_smmu_cmdq_ent cmd;
+ 
+-	if (!master->ats_enabled)
+-		return 0;
++	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
+ 
+ 	for (i = 0; i < master->num_sids; i++) {
+-		cmd->atc.sid = master->sids[i];
+-		arm_smmu_cmdq_issue_cmd(master->smmu, cmd);
++		cmd.atc.sid = master->sids[i];
++		arm_smmu_cmdq_issue_cmd(master->smmu, &cmd);
+ 	}
+ 
+ 	return arm_smmu_cmdq_issue_sync(master->smmu);
+@@ -2177,10 +2176,11 @@ static int arm_smmu_atc_inv_master(struct arm_smmu_master *master,
+ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
+ 				   int ssid, unsigned long iova, size_t size)
+ {
+-	int ret = 0;
++	int i;
+ 	unsigned long flags;
+ 	struct arm_smmu_cmdq_ent cmd;
+ 	struct arm_smmu_master *master;
++	struct arm_smmu_cmdq_batch cmds = {};
+ 
+ 	if (!(smmu_domain->smmu->features & ARM_SMMU_FEAT_ATS))
+ 		return 0;
+@@ -2205,11 +2205,18 @@ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
+ 	arm_smmu_atc_inv_to_cmd(ssid, iova, size, &cmd);
+ 
+ 	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
+-	list_for_each_entry(master, &smmu_domain->devices, domain_head)
+-		ret |= arm_smmu_atc_inv_master(master, &cmd);
++	list_for_each_entry(master, &smmu_domain->devices, domain_head) {
++		if (!master->ats_enabled)
++			continue;
++
++		for (i = 0; i < master->num_sids; i++) {
++			cmd.atc.sid = master->sids[i];
++			arm_smmu_cmdq_batch_add(smmu_domain->smmu, &cmds, &cmd);
++		}
++	}
+ 	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+ 
+-	return ret ? -ETIMEDOUT : 0;
++	return arm_smmu_cmdq_batch_submit(smmu_domain->smmu, &cmds);
+ }
+ 
+ /* IO_PGTABLE API */
+@@ -2629,7 +2636,6 @@ static void arm_smmu_enable_ats(struct arm_smmu_master *master)
+ 
+ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+ {
+-	struct arm_smmu_cmdq_ent cmd;
+ 	struct arm_smmu_domain *smmu_domain = master->domain;
+ 
+ 	if (!master->ats_enabled)
+@@ -2641,8 +2647,7 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+ 	 * ATC invalidation via the SMMU.
+ 	 */
+ 	wmb();
+-	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
+-	arm_smmu_atc_inv_master(master, &cmd);
++	arm_smmu_atc_inv_master(master);
+ 	atomic_dec(&smmu_domain->nr_ats_masters);
+ }
+ 
 -- 
 2.25.0
 
