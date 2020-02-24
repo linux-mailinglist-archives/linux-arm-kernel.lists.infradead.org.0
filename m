@@ -2,110 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDE0D16A310
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:50:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FFCC16A316
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:52:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T134NUZlasCxIrAOqTg2aE34hu3uDt5lM4tMw4itexo=; b=KZ6kkeArrhWkH+
-	8rmehHjWC2R5C0YrieNBsGjuUfmWPH88I2fzfrYW3EiqCeSzwT6V4Yz6CLbFk7hJpgeENhHkMGA+D
-	Jz+ZGROydJWTPwsZx6zn+8DFIpUCPqri3OZXF4ZIjK0U+poBpwc3Dq8ncup7yh6tAzuG1WQMyuPsH
-	GMEXsJHkW9W9jnV1ZcyeMB7TGhcyMrglllXeMw0nBp5CLevw5UtfgUo6bNvOQKLdwIPxjSS+fmvv9
-	Zmix0x3X+wOrnzAgvwe0mn0e8VVq+sYgrX76NNkFcABQLlw6gqbf17mL5DpfAARhD9yA3OvM3DtZZ
-	y96nrj6QAHr76kpzTXSQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DuSjjx5c1Hs4VtMKBOr2saxmjSNiVorun7WO67rNZuo=; b=r6w9iJtXOoJSRRU0McR5xbeGD
+	BetqqKxUbL0fsPx9bebVqbuKjn6T3OHDFyhyI8QqD0/scbSpJkmRY1erfO+yaLgAqFnrfC6zAYKbq
+	2mz0dNYD7tOPkHzQ9w23d76jOcMLtdB0MC212abtrgWff9/VP8uJ7siLLF2EJlo4pa0rWSw3iv0jg
+	r35AFnXsLHz44VJGD+i+FMmSHE+ufrrpF9eWjTCNAtkUVqKLEWeYbKVVb6eJpqRgNYXjpg9jcfzf3
+	hWUsSpORVes74vjDvqIIiu+biCMw597UgVjZRdWkIXGHS0CqdOhwnbJ726hsGk4ooBiVxiNlF84WU
+	h163NakLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ANu-0005eR-CI; Mon, 24 Feb 2020 09:50:42 +0000
-Received: from mail-bn8nam12on2075.outbound.protection.outlook.com
- ([40.107.237.75] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1j6APE-0006se-DS; Mon, 24 Feb 2020 09:52:04 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69s8-000123-EI; Mon, 24 Feb 2020 09:17:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=npZnFCs63m88AEhgyI4D0uZUymm84RbhJSG26A9Rrdugag/CCd0gbBDKKQfqvn1XgtkzMLPthmFuUYUQ07SMLu/QnerS6TDW8KPdy49dS7USDf9Ldw5EhVLAfIto3EnBHefe2yWF9B0pBHHfE0/zA4zSPPH3Smqj5r8fr6gOl+uoS2rWsjHDVSBPO7Ms9flWiqVA0lHYADBOEOS9Fr0pnzecQ0kwFkQpYKFXLSxc4/A4ZPmeVa2bMgfDeuQRBQx5+7rCrr0o1goU/m229UJj3ypQC3lACtFC1yqYD8Qt+YPmNZWzP+QcXSwU731T2SXjvFDX3lvobKpL7zBVTLI++A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Vk2iaH+Vpc6pWopY2Wx/vFvzXcFnBYjy5WSegRObBkU=;
- b=GqoKf9d+odX2t7pz2VnTA8EJpKOeYg1MBAT20f+W4J97LQJRzrHbYVGHu5GKSHr7z9Q+k0PzeqGKSqRyOp8h6gbeSrITWSrfxwb/DDWcCDlFvJWvVrmbdSzYnhUr7meJCQJ1EQxQhF6Uuh07zb1iJkCYBtqSxCUeQ+zDF435qF6v3hfkXTXwR/87SY6AhmMTxbqxw0rRvQl46w9xmw6auqHUfBF91xq/U1C0BfmOQlSi17Ud/27IOBHzU/+fvwxyN+MIAaG2ws/oKbNJVT2pQiXoHTaofBZE3KSBcZYsYaLsaxhWPA7n8lyYB6jAdWl3NvnlWuXOhurrg01QiqJDSg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=silabs.com; dmarc=pass action=none header.from=silabs.com;
- dkim=pass header.d=silabs.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=silabs.onmicrosoft.com; s=selector2-silabs-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Vk2iaH+Vpc6pWopY2Wx/vFvzXcFnBYjy5WSegRObBkU=;
- b=fdqd95SO+jo2qFcQ06aTjhczLTyUVwxYrkgNGWWcjTI966zMWvUvhqjZU4g1oVEVCXAc9t4pYQJ61/Npfmafgnwl32NTfXQ5T9mCP8rsg4D0+QYRsbzN+1A0H/ytoHtXct7bq5uQKo6Yb08dN6QShcM/7RW9b1eZ63Iu181nLvY=
-Received: from MN2PR11MB4063.namprd11.prod.outlook.com (2603:10b6:208:13f::22)
- by MN2PR11MB3726.namprd11.prod.outlook.com (2603:10b6:208:ef::17)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.17; Mon, 24 Feb
- 2020 09:17:48 +0000
-Received: from MN2PR11MB4063.namprd11.prod.outlook.com
- ([fe80::ade4:5702:1c8b:a2b3]) by MN2PR11MB4063.namprd11.prod.outlook.com
- ([fe80::ade4:5702:1c8b:a2b3%7]) with mapi id 15.20.2750.021; Mon, 24 Feb 2020
- 09:17:48 +0000
-From: =?iso-8859-1?Q?J=E9r=F4me_Pouiller?= <Jerome.Pouiller@silabs.com>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH] docs: dt: fix several broken doc references
-Thread-Topic: [PATCH] docs: dt: fix several broken doc references
-Thread-Index: AQHV6ietodQMow/ON0qYMI30cMvXMagqEj+A
-Date: Mon, 24 Feb 2020 09:17:48 +0000
-Message-ID: <2091904.E9UJrs0rOF@pc-42>
-References: <0e530494349b37eb2eab4a8eccf56626e0b18e6d.1582448388.git.mchehab+huawei@kernel.org>
-In-Reply-To: <0e530494349b37eb2eab4a8eccf56626e0b18e6d.1582448388.git.mchehab+huawei@kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jerome.Pouiller@silabs.com; 
-x-originating-ip: [37.71.187.125]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 0c216210-b0e0-4f03-71de-08d7b90a6a8e
-x-ms-traffictypediagnostic: MN2PR11MB3726:
-x-microsoft-antispam-prvs: <MN2PR11MB3726D310E3AE89F7BD62ABB893EC0@MN2PR11MB3726.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2331;
-x-forefront-prvs: 032334F434
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(7916004)(346002)(136003)(376002)(39850400004)(366004)(396003)(199004)(189003)(478600001)(91956017)(66446008)(76116006)(64756008)(66556008)(66476007)(66946007)(33716001)(71200400001)(86362001)(6512007)(9686003)(2906002)(5660300002)(6486002)(316002)(8936002)(54906003)(26005)(4326008)(6506007)(8676002)(81166006)(81156014)(7416002)(186003)(39026012);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB3726;
- H:MN2PR11MB4063.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: silabs.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: tW26OkY59CNnY0uV4PGmD9XS4pbuQLM1pt4GQwiWWWTjwahJZptDgOqh6gEcUJRRUKnEesFW63AQ+nHlmwLL6ujNeNhsjhmmjCWQ46yFZw5E02yBSEb4fT317AxYu1Q2Q8KOsFadzCMUE3s3CEUNeZ+OMns8tRv8Xa0CHukBXBgrVCsIILH2aUoAl7wQl67J9LZHTDCB3/JuS7kmOZwaSe66pPrFgevejKjIYTBuZaPvIdPS6DzQlrbH4G425hyAK84yu5bQCGNqm/GU+rS5pSFBlspjnZoso63etQGlyjlP2smClxd8ON0HazuSFgvv9fc3G5Oi+TuwdT7/eUITINwhL4ZCuWO7NGRABq2lFRe7Fj9JF/GL+jO1uWuyeIpTKrYwlABrrT/F0DJcq06TykDW52G3Qoo8SmztbqH2+4rG8pB4LiFwShz1kpQa2HWacV6RACvegASwLAKxzGKaAR5OX2/Yxn7CpqrNwkp2PwU7j8D+dM2ltDToonuQJFVa
-x-ms-exchange-antispam-messagedata: AF0yrNqSJydrbDobr5+HTtfQccuCrmtFMqub6qCDUO+6bGqompj9fTm7j/3EHIz96Am9d2n3Y6oufwUu5SqccPbmSIQoDEGkPrk6ZECdmPwKgIRVBZEiuC4Wfk0BZ8jWv76rno3xBiwaCXdz7aAvOA==
-x-ms-exchange-transport-forked: True
-Content-ID: <A4AF2F212668DE49B684D505CA997FC5@namprd11.prod.outlook.com>
+ id 1j69sT-0001J3-Lj
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 09:18:15 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 758296FF4;
+ Mon, 24 Feb 2020 04:18:11 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:18:11 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=2VnOSy+3DXO97qhGNXt4Spz18WD
+ yHUSX81DuJnanSz8=; b=hNX7A17RBZUX4hBcqnYqP/48iwn86MHoidSrqwYYS3x
+ G7ezQglw0KIsme7t5JDgIJttVq4bmz25LTx7RQEuLXvRc2n3AeL7ABTTUVnN9THY
+ IJ1VFnTfIEcZAexmRLswPWx8L2Pq7TqMZV0lITGklUSvy8CjDEDnIAXFkFrPyinq
+ n5hECwBMFGKWZ1LZ2yWLtdqe5dqdCYFXfVBO9i00aRCNe94C6FSNYPociDLpd2qT
+ lNKcyJvVw5HD5jiiKSuq4uFJ80viZBxA2x2qTIw50Kcd/n3X0OpzEam5tc2tVnGI
+ C3Bj2saKp6Y4z1Jd01gIj7IhBSmvZMJBSIilxZzjBQA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=2VnOSy
+ +3DXO97qhGNXt4Spz18WDyHUSX81DuJnanSz8=; b=UB+LyOujSuXg63CQn1Qq31
+ 3VnV7fExDdzy6mqSgD1qW5Xv1ZWpuc1sd+H+zD6a+cvm9gq+AFww8jVGqrMIQ8yY
+ dDAzp6peQaQG/tUkwWjKo4CyRHSWcK464vOebPD2p9Hpdi72Sel07cFqMz8uv/uR
+ j7M/V6Wh5a2X7wl0R5bkYtOnAR/0LkweKdzj4I3ZuNBjVnolbCJnSEcmKaP/Hs0n
+ dIVVHyG5kiJevoWT+Ls0d8nCJNkpolaWCWw7TNUlkM95C0JgCQXoexnR1eGRlJNb
+ zhp6O43gzGZ7OG0Xn6W4dEsychjUfzfI5qPFtjQWhPC+tX0OG9utt70T65G50yKg
+ ==
+X-ME-Sender: <xms:05RTXv0YPnGmwVuKELFToEd_g0qRP8NQ9r7usG0QRHo9m7--3PpPWg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtgddtvdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
+ epmhgvghhouhhsrdgtohhmnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
+ rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
+ hordhtvggthh
+X-ME-Proxy: <xmx:05RTXoshoPK7pOxYrp0ct_K-uuwvbTrNpnSuL89eqQz4NcgReE_KRw>
+ <xmx:05RTXl7gFrS16oAeAPc3Rz1p0Nl6y5MrO3nZYhbmTQMo7EIBBei8JA>
+ <xmx:05RTXkf4AF8VryzMmEyQiq5z7VxyVom0FAxNUrFcdsfHxd5VkgrOaQ>
+ <xmx:05RTXhPMyrLR0BIG7cj9XXEnhFR4mWTC9lcgPoIuxTE49zNY7eBJRw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1547E3060FD3;
+ Mon, 24 Feb 2020 04:18:10 -0500 (EST)
+Date: Mon, 24 Feb 2020 10:18:09 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH 0/3] Add support for PocketBook Touch Lux 3 e-book reader
+Message-ID: <20200224091809.teqbrhpzgirda4cx@gilmour.lan>
+References: <20200223031614.515563-1-megous@megous.com>
 MIME-Version: 1.0
-X-OriginatorOrg: silabs.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 0c216210-b0e0-4f03-71de-08d7b90a6a8e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 24 Feb 2020 09:17:48.1208 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 54dbd822-5231-4b20-944d-6f4abcd541fb
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 2xQe5PXq5tYfLbiYko/qpVR7veZp92Wqc1rmW2c0HugRWr2C1F3wLQZdz5vAfsMHRGVfsqAf8K3AZnp+my/ATQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB3726
+In-Reply-To: <20200223031614.515563-1-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_011752_584881_E3C90AA5 
-X-CRM114-Status: GOOD (  12.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200224_011813_885587_468A7108 
+X-CRM114-Status: GOOD (  11.70  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.75 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,80 +106,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- Olivier Moysan <olivier.moysan@st.com>, Vignesh Raghavendra <vigneshr@ti.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- "linux-mtd@lists.infradead.org" <linux-mtd@lists.infradead.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "devel@driverdev.osuosl.org" <devel@driverdev.osuosl.org>,
- Jonathan Corbet <corbet@lwn.net>, Richard Weinberger <richard@nod.at>,
- Piotr Sroka <piotrs@cadence.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>, Mark Brown <broonie@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Liam Girdwood <lgirdwood@gmail.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>, "David S.
- Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stephan Gerhold <stephan@gerhold.net>, Sunil Mohan Adapa <sunil@medhas.org>,
+ Mark Brown <broonie@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, Corentin Labbe <clabbe@baylibre.com>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8408868077496436549=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sunday 23 February 2020 09:59:53 CET Mauro Carvalho Chehab wrote:
-> There are several DT doc references that require manual fixes.
-> I found 3 cases fixed on this patch:
-> =
 
->         - directory named "binding/" instead of "bindings/";
->         - .txt to .yaml renames;
->         - file renames (still on txt format);
-> =
+--===============8408868077496436549==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="fqx3qgvmmsrljpca"
+Content-Disposition: inline
 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-> ---
->  .../devicetree/bindings/mtd/cadence-nand-controller.txt       | 2 +-
->  .../devicetree/bindings/net/brcm,bcm7445-switch-v4.0.txt      | 2 +-
->  Documentation/devicetree/bindings/sound/st,stm32-sai.txt      | 2 +-
->  Documentation/devicetree/bindings/sound/st,stm32-spdifrx.txt  | 2 +-
->  Documentation/devicetree/bindings/spi/st,stm32-spi.yaml       | 2 +-
->  MAINTAINERS                                                   | 4 ++--
->  .../devicetree/bindings/net/wireless/siliabs,wfx.txt          | 2 +-
->  7 files changed, 8 insertions(+), 8 deletions(-)
-[...]
-> diff --git a/drivers/staging/wfx/Documentation/devicetree/bindings/net/wi=
-reless/siliabs,wfx.txt b/drivers/staging/wfx/Documentation/devicetree/bindi=
-ngs/net/wireless/siliabs,wfx.txt
-> index ffec79c14786..17db67559f5e 100644
-> --- a/drivers/staging/wfx/Documentation/devicetree/bindings/net/wireless/=
-siliabs,wfx.txt
-> +++ b/drivers/staging/wfx/Documentation/devicetree/bindings/net/wireless/=
-siliabs,wfx.txt
-> @@ -94,5 +94,5 @@ Some properties are recognized either by SPI and SDIO v=
-ersions:
->     Must contains 64 hexadecimal digits. Not supported in current version.
-> =
 
->  WFx driver also supports `mac-address` and `local-mac-address` as descri=
-bed in
-> -Documentation/devicetree/binding/net/ethernet.txt
-> +Documentation/devicetree/bindings/net/ethernet.txt
+--fqx3qgvmmsrljpca
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-For siliabs,wfx.txt:
+On Sun, Feb 23, 2020 at 04:16:11AM +0100, Ondrej Jirman wrote:
+> This series adds a fairly complete support for this e-book reader.
+>
+> Missing parts are eink display driver and the touch panel driver.
+> Support for both is available out-of-tree for now at:
+>   https://megous.com/git/linux/log/?h=pb-5.6
+>
+> The rest of the board is supported by the mainline drivers.
+>
+> Please take a look.
 
-Reviewed-by: J=E9r=F4me Pouiller <jerome.pouiller@silabs.com>
+Applied 2 and 3, thanks!
+Maxime
 
--- =
+--fqx3qgvmmsrljpca
+Content-Type: application/pgp-signature; name="signature.asc"
 
-J=E9r=F4me Pouiller
+-----BEGIN PGP SIGNATURE-----
 
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlOU0QAKCRDj7w1vZxhR
+xW2DAQCiFvMw9EjUs7TQc7LJ2hozvZzWnmOKjgfWyMWSbkjMxwEAzDPUWCF2EBy5
+Myv7TAuzmgu4b6L9Uo+lEOlaRvkBewQ=
+=mNCG
+-----END PGP SIGNATURE-----
+
+--fqx3qgvmmsrljpca--
+
+
+--===============8408868077496436549==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8408868077496436549==--
+
