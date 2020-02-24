@@ -2,76 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E86E216A4AD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:15:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8466D16A4B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:17:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a+CcoF6bE0j4DUY6LhwzHT3lSPM1JzifQdSl948MADM=; b=fRgc5ImDxig2Fy
-	h+IT3anJJpg2L0OVZdvR/TZBAD4oRabDUcFjmaWEQkIf2yvWhZhsomOH9jO7M28lzr28D8he6MXAi
-	lc1ugMIfksdz7FIcbw5OeN57W6hsDAmnN7follh/ftiVDtIsJfhF8PhjX0YV9otHv9IeMrLUulwhW
-	lC3FlUSyAavk35ILtwbCbDn54wLwUaL6nV1ZW8K+5gyj5+pq3PlMQ78AxYn8pHl0q+EWvL0954xqe
-	kSb1bVKQWe0Roa0xjnSILtieSvhhj8y1tKEz0ZODP1oYEiiJ1G7ZURfxT80l+44fBPKq36ay2SG0I
-	YEeA2G5i3MRV3cM+d3cQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K7sNAH7oYXuwMPF2NT0EPXbCljaVsnGB1hP9TCtXerk=; b=t4XqFDniP3NwrC
+	2w6ebYpCO4VAHqbSdkrw4u+61GokysLdyEfYHEtXM186M9UDyorGYJOvYdw5DN2nzEe1gls4lvlRx
+	BujgN7Bhw2s82WehSjJfhHF+oryb4dasv0IneiD6qx9HCWztciQ4x3TlNvq2FaTp1XsfS71BWpanu
+	+fw0xoA1Xy4X3OXz80Q4bjiBdBWyA4u3doF/qyamULxdFSZd4wUSPBfPC2hW7UIF+hvKt5kPN/i3n
+	IE4PaqsgPkRJEqfpZLRKESRmEY6uvQk46iTzO0Xr4DsZtw1F6riOdT4U2XhmbTjy3VcrGT9ogN3OF
+	prwJpYmcvCgVAo0b0DiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6BhV-0005aH-3z; Mon, 24 Feb 2020 11:15:01 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1j6BjU-00079L-Os; Mon, 24 Feb 2020 11:17:04 +0000
+Received: from mail-eopbgr760085.outbound.protection.outlook.com
+ ([40.107.76.85] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6BhM-0005Zl-FJ
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:14:53 +0000
-Received: by mail-oi1-f193.google.com with SMTP id r137so8570925oie.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 03:14:51 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6J56GZAIisN7s+G2kGZDSpihGRsq1TAS9IAl8pKmY94=;
- b=lDLqNXILXb6E9zJeVLOXVyqTxLKiYOrtJY9QSKs2o7f8XsFbwjXdcgbH2U1DrDp+pC
- eEQqNW18UkoD2/3gW0eDwBj+guHY7a72DUXg2pEZ2f7pAsDVPTrsYCnV9Zcz0HSfrFN3
- 0tnHB4Ja6tuM+ijW+u8GzcMw6VnxLw/T8gVwzrseApzuDVm3ZqXWqe42a/dJWSiPtFCa
- N4ltfOVM0vWvrE+NthdAI2G/d0xhMHNtd1zhHp3wgL+P7jaZr5I+DZ6vQjvidwhKlDmF
- QPnO6583eLWKULfwIqqQ6LWEY6/pL7Wcqqf8uYRm+IB63EtGWrkoGtL/7GFmq01ikooB
- A2Jw==
-X-Gm-Message-State: APjAAAX6b5qI9ZAaeZEHRWumW7sx1L7lCJeR01dzT5BRxglbnh8xje5+
- GeBxMZSRVqOvsnUyXtw07UVOCbc7kAzq45LOqr8=
-X-Google-Smtp-Source: APXvYqyJGLntakWARp86s91QH32t/qVwHjeTCsojy/gtzoQLTXH03yoyT3RIy6NniXxO35oP/uCuX+NiSRuYe1mWX5k=
-X-Received: by 2002:aca:b4c3:: with SMTP id
- d186mr11814856oif.131.1582542890533; 
- Mon, 24 Feb 2020 03:14:50 -0800 (PST)
+ id 1j6BjK-00078o-QY
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:16:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nLLMxOzo2X4DsbAO3mSaz12G8BlOk4ImDN/9sBVv086OW/fA2j2QEwn/l+A7TfcUwDHN1Sr8jPu0o/s8C72HiGoTdbF4Vnht8+tF+roqNiK3fqO4mpbun7DcR0y93A0J1tugd5Jw5J7O3VvsjqmVAhx1r1PTxVnjfvdfS1M/xkgJ1GbH7c53NmSj8OB6k8tVqyGex0o4a37pSieFAzx2yupv1cZ03R3LrSjca7+GI9BeD36KhZCVE5T8BqBhW8bT/GdvnFdBopmlgxjQALBY5cb4sDlh3OXkeI4uDkqNEnNo2eFKr5kn8znn3oCywisTEyG5hlFA/xVIqGROK9B19w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4Pr7gPEiD0+bE0kBCHf08UVzDpL18zDobWFqHourYQQ=;
+ b=Qg617cDdcO41of+fbZCoY/oXxEBpYPTdDfwNNnFWsgr8fKuylHrgBZyScYlWsmAcLDVpoqC8NHu0qYYylvZmKjDCfr2DuyZ3+Mctjjx3CGdYYBewGcSWCodWX2ZXYOei5xBFsXE0XLvyTBl5bLWbl2Cy2tgwHZUz1yu13tOHub982PTDL7zNLDxsdV5MndjaOOIP2Dl4nLvN1j8yn06D17wgumPXQhotxz3fG+c5A19QyOR3Etq7uvcr1dwjAqkF2am91VTlgYjkrlojnbWFwP0QYf7OMnzGbHm9GLJ3gY6DmTXfBaU3DivTDbwD9oPdKLWNClzb35mSAQjd9ZIn2g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4Pr7gPEiD0+bE0kBCHf08UVzDpL18zDobWFqHourYQQ=;
+ b=XMyKjqXjxtUAx7QyxnuNKuqSCQLTqJPZm7GGeO5dVAVmO0e1eVcbjEexl7Z9T7PvA48NVZM869Xp3LF/xnFYQUH9vtf2u479T5BqpD1j8lzapnW5DaKm6B2duY+oWiKyoKObjFXnKVQJgLEuFWUD0a3Vt/H3KAvBd9O8z5w7RRY=
+Received: from BL0PR02CA0078.namprd02.prod.outlook.com (2603:10b6:208:51::19)
+ by DM5PR02MB3877.namprd02.prod.outlook.com (2603:10b6:4:b9::34) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.21; Mon, 24 Feb
+ 2020 11:16:51 +0000
+Received: from SN1NAM02FT026.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e44::201) by BL0PR02CA0078.outlook.office365.com
+ (2603:10b6:208:51::19) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.17 via Frontend
+ Transport; Mon, 24 Feb 2020 11:16:51 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT026.mail.protection.outlook.com (10.152.72.97) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2750.19
+ via Frontend Transport; Mon, 24 Feb 2020 11:16:50 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1j6BjG-0004T4-7i; Mon, 24 Feb 2020 03:16:50 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1j6BjB-0000gg-4M; Mon, 24 Feb 2020 03:16:45 -0800
+Received: from [172.30.17.108] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1j6Bj5-0000fs-Su; Mon, 24 Feb 2020 03:16:40 -0800
+Subject: Re: [PATCH] rtc: zynqmp: Add calibration set and get support
+To: Srinivas Neeli <srinivas.neeli@xilinx.com>, a.zummo@towertech.it,
+ alexandre.belloni@bootlin.com, michal.simek@xilinx.com, sgoud@xilinx.com,
+ shubhraj@xilinx.com
+References: <1582191106-30431-1-git-send-email-srinivas.neeli@xilinx.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <00b3e6dd-50d6-f5a7-a861-e6db91f6eafb@xilinx.com>
+Date: Mon, 24 Feb 2020 12:16:36 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20180603201202.15468-1-robert.jarzmik@free.fr>
-In-Reply-To: <20180603201202.15468-1-robert.jarzmik@free.fr>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 24 Feb 2020 12:14:39 +0100
-Message-ID: <CAMuHMdU3uxfBwKd8SkOtZSDV5Ai3CKc3CWRhDy0Cz94T1Hn0iA@mail.gmail.com>
-Subject: non-existent SND_SOC_AC97_BUS_NEW (was: Re: [PATCH v9] ASoC: pxa:
- switch to new ac97 bus support)
-To: Robert Jarzmik <robert.jarzmik@free.fr>
+In-Reply-To: <1582191106-30431-1-git-send-email-srinivas.neeli@xilinx.com>
+Content-Language: en-US
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(136003)(346002)(396003)(376002)(189003)(199004)(26005)(478600001)(31696002)(6636002)(107886003)(316002)(5660300002)(2906002)(31686004)(8676002)(8936002)(356004)(9786002)(36756003)(426003)(186003)(2616005)(70586007)(81166006)(81156014)(44832011)(6666004)(336012)(70206006)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR02MB3877; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 4c0055e7-0c45-4e62-5bb0-08d7b91b0bb9
+X-MS-TrafficTypeDiagnostic: DM5PR02MB3877:
+X-Microsoft-Antispam-PRVS: <DM5PR02MB38772BCC31E42BF62A0E98F6C6EC0@DM5PR02MB3877.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
+X-Forefront-PRVS: 032334F434
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: WyCVdl8W3E/fdoqXSuRd94M9GmTHEcfgerXl8ImW4uRIydZFyfrPXJ18QArwrzVPjUmB+IvRL/wkmLL1hYstWnLkBgx2ZTtJ/QJjcTKEpIUyoSPv0FDUv/YMac2WvRoNgBtBk4ExwP7y6p+FAnKaGNaLqIU0U36IIlomNAhLO57L0uigmNowPdNWjfAxiMlfhyg+HwnFYGWU+heG3vM7MCeDwZ+l7xy3d9zMAs/92iOXO3RI5Xx/ItDV2IwRnnlgxA/KvxIEDYz8c5pMFNQj9V3kUxlJtUq4RXSNVMcTrX9rYLG/D16FxuNfzKmPkvzjVADiby2AqNbKsEr+3cRF+B70M6iPrFMOGpx+9wIe+pl25bGu/qx9SPb1apJqdcyBuTDYW1/m0oVqK7zmKGWUMUSIaZ91MV27ZawOlOJRoQZKuNuhLb5fn8Jka7ovfVod
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2020 11:16:50.6675 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4c0055e7-0c45-4e62-5bb0-08d7b91b0bb9
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR02MB3877
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_031452_513665_145717D7 
-X-CRM114-Status: GOOD (  13.00  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200224_031654_864565_2856907D 
+X-CRM114-Status: GOOD (  21.83  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [40.107.76.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,64 +138,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Haojian Zhuang <haojian.zhuang@gmail.com>,
- Takashi Iwai <tiwai@suse.com>, Mark Brown <broonie@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jaroslav Kysela <perex@perex.cz>, Daniel Mack <daniel@zonque.org>
+Cc: linux-rtc@vger.kernel.org, Srinivas Goud <srinivas.goud@xilinx.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ git@xilinx.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
+On 20. 02. 20 10:31, Srinivas Neeli wrote:
+> ZynqMp RTC controller has a calibration feature to compensate
+> time deviation due to input clock inaccuracy.
+> Set and get calibration API's are used for setting and getting
+> calibration value from the controller calibration register.
+> 
+> Signed-off-by: Srinivas Goud <srinivas.goud@xilinx.com>
+> Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
+> ---
+>  drivers/rtc/rtc-zynqmp.c | 78 ++++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 78 insertions(+)
+> 
+> diff --git a/drivers/rtc/rtc-zynqmp.c b/drivers/rtc/rtc-zynqmp.c
+> index 4b1077e2f826..b4118e9e4fcc 100644
+> --- a/drivers/rtc/rtc-zynqmp.c
+> +++ b/drivers/rtc/rtc-zynqmp.c
+> @@ -40,6 +40,12 @@
+>  #define RTC_CALIB_MASK		0x1FFFFF
+>  #define RTC_ALRM_MASK          BIT(1)
+>  #define RTC_MSEC               1000
+> +#define RTC_FR_MASK             0xF0000
+> +#define RTC_SEC_MAX_VAL         0xFFFFFFFF
+> +#define RTC_FR_MAX_TICKS        16
+> +#define RTC_OFFSET_MAX          150000
+> +#define RTC_OFFSET_MIN          -150000
+> +#define RTC_PPB                 1000000000LL
+>  
 
-On Sun, Jun 3, 2018 at 10:12 PM Robert Jarzmik <robert.jarzmik@free.fr> wrote:
-> Switch to the new ac97 bus support in sound/ac97 instead of the legacy
-> snd_ac97 one.
->
-> Signed-off-by: Robert Jarzmik <robert.jarzmik@free.fr>
+please use tabs here.
 
-This is commit 1c8bc7b3de5e76cb ("ASoC: pxa: switch to new ac97 bus
-support") in v4.20-rc1 and later.
+>  struct xlnx_rtc_dev {
+>  	struct rtc_device	*rtc;
+> @@ -184,12 +190,84 @@ static void xlnx_init_rtc(struct xlnx_rtc_dev *xrtcdev)
+>  	writel(xrtcdev->calibval, (xrtcdev->reg_base + RTC_CALIB_WR));
+>  }
+>  
+> +static int xlnx_rtc_read_offset(struct device *dev, long *offset)
+> +{
+> +	struct xlnx_rtc_dev *xrtcdev = dev_get_drvdata(dev);
+> +	long offset_val;
+> +	unsigned int reg;
+> +	unsigned int tick_mult = RTC_PPB / xrtcdev->calibval;
+> +
+> +	reg = readl(xrtcdev->reg_base + RTC_CALIB_RD);
+> +
+> +	/* Offset with seconds ticks */
+> +	offset_val = reg & RTC_TICK_MASK;
+> +	offset_val = offset_val - xrtcdev->calibval;
+> +	offset_val = offset_val * tick_mult;
+> +
+> +	/* Offset with fractional ticks */
+> +	if (reg & RTC_FR_EN)
+> +		offset_val += ((reg & RTC_FR_MASK) >> RTC_FR_DATSHIFT)
+> +			* (tick_mult / RTC_FR_MAX_TICKS);
+> +	*offset = offset_val;
+> +
+> +	return 0;
+> +}
+> +
+> +static int xlnx_rtc_set_offset(struct device *dev, long offset)
+> +{
+> +	struct xlnx_rtc_dev *xrtcdev = dev_get_drvdata(dev);
+> +	short int  max_tick;
+> +	unsigned char fract_tick = 0;
+> +	unsigned int  calibval;
 
-> --- a/sound/soc/pxa/Kconfig
-> +++ b/sound/soc/pxa/Kconfig
-> @@ -20,13 +20,12 @@ config SND_MMP_SOC
->
->  config SND_PXA2XX_AC97
->         tristate
-> -       select SND_AC97_CODEC
->
->  config SND_PXA2XX_SOC_AC97
->         tristate
-> -       select AC97_BUS
-> +       select AC97_BUS_NEW
->         select SND_PXA2XX_LIB_AC97
-> -       select SND_SOC_AC97_BUS
-> +       select SND_SOC_AC97_BUS_NEW
+double space.
 
-The actual SND_SOC_AC97_BUS_NEW symbol never made it upstream, although
-4 of its users did (3 have been removed in commit ea00d95200d02ece
-("ASoC: Use imply for SND_SOC_ALL_CODECS")).
+> +	int fract_offset;
+> +	unsigned int tick_mult = RTC_PPB / xrtcdev->calibval;
+> +
+> +	/* Make sure offset value is within supported range */
+> +	if (offset < RTC_OFFSET_MIN || offset > RTC_OFFSET_MAX)
+> +		return -ERANGE;
+> +
+> +	/* Number ticks for given offset */
+> +	max_tick = div_s64_rem(offset, tick_mult, &fract_offset);
+> +
+> +	/* Number fractional ticks for given offset */
+> +	if (fract_offset) {
+> +		if (fract_offset < 0) {
+> +			fract_offset = fract_offset + tick_mult;
+> +			max_tick--;
+> +		}
+> +		if (fract_offset > (tick_mult / RTC_FR_MAX_TICKS)) {
+> +			for (fract_tick = 1; fract_tick < 16; fract_tick++) {
+> +				if (fract_offset <=
+> +				    (fract_tick *
+> +				     (tick_mult / RTC_FR_MAX_TICKS)))
+> +					break;
+> +			}
+> +		}
+> +	}
+> +
+> +	/* Zynqmp RTC uses second and fractional tick
+> +	 * counters for compensation
+> +	 */
+> +	calibval = max_tick + xrtcdev->calibval;
+> +
+> +	if (fract_tick)
+> +		calibval |= RTC_FR_EN;
+> +
+> +	calibval |= (fract_tick <<  RTC_FR_DATSHIFT);
 
-The definition seems to have been dropped silently in v4 of the series.
-What should the select be replaced with? Or should it just be dropped?
+here is double space.
 
-Thanks!
+> +
+> +	writel(calibval, (xrtcdev->reg_base + RTC_CALIB_WR));
+> +
+> +	return 0;
+> +}
+> +
+>  static const struct rtc_class_ops xlnx_rtc_ops = {
+>  	.set_time	  = xlnx_rtc_set_time,
+>  	.read_time	  = xlnx_rtc_read_time,
+>  	.read_alarm	  = xlnx_rtc_read_alarm,
+>  	.set_alarm	  = xlnx_rtc_set_alarm,
+>  	.alarm_irq_enable = xlnx_rtc_alarm_irq_enable,
+> +	.read_offset    = xlnx_rtc_read_offset,
+> +	.set_offset     = xlnx_rtc_set_offset,
 
-Gr{oetje,eeting}s,
+use tabs as is done above.
 
-                        Geert
+>  };
+>  
+>  static irqreturn_t xlnx_rtc_interrupt(int irq, void *id)
+> 
 
+The rest looks good.
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Thanks,
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
