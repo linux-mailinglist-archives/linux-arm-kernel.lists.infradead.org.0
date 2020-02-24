@@ -2,148 +2,179 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98C3016ACA2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:06:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1822216ACB4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:09:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gDzlFVF2q37l+e7iQRxG1M5rxP6/y0evh7rGIYTOZ/k=; b=qwsCePYbMbb0Ho
-	AebsVRM3RHIFR8L9oDwyFvKdN1O4jDfSVYk5F/18RLQwWNFD3t6FgSp2Pen82OyMGMKDDzEffwNSb
-	D1mfm8VMxYGebdme5x7DvJwtTP8uPCoraTXCMEINQ8UQeD9+upSZ5SvdHEoVzoEsP7w334Y+qFXAB
-	RvRZj0gwOBUNtRlGxRQzAvtdYn41judHUnQupYkZaob/rjiG8BA6ESv8V8MRaa0G7LlkCze3Ty45V
-	k1ifOzf1lf0pNZqdKTon2SDN3pP7tN3c+zMjNvP4hj+BBHXEMU5gty0llR9PkSdNd2OD/4dmwKwOl
-	H0pq8IdoM7k/qBZCiJ0A==;
+	List-Owner; bh=bYIx1v4DuFeNTurG9Bn8oC5BjBPDuEK5tqWedLBaZUU=; b=eBXQTKexTdzu+Q
+	9ZuSlfiNYVDfv1TWLaOmeD5+nOZ0sruECu7WdiVJsKHUsvDObim65YzTIbRlg38lcS6U2c6PVC263
+	lvx0ABbYDAcwVgYzuRwBPgMhvEcKmbVkxgmVmIPyKR0EFbsn5Yxdnu9Z2FOurTQ72S+3zahNnSVjx
+	xBkYnONJZSh13pACk541VeB8IbwAKPddFKEGufnPxSqu12UNVeEElcaFdmHTMMeQK2981vnTpWChp
+	S29GOvpW1YWdo3FqbMtTG0zj3idnsu3iCdFJM4A/NehgTYSJP6/B8SevJMNa8/djmG15W6/ceJzK/
+	DFmdQPu15G/hyPYQTjHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6HBh-0008Tc-MI; Mon, 24 Feb 2020 17:06:33 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j6HDz-0000cC-7Y; Mon, 24 Feb 2020 17:08:55 +0000
+Received: from mail-eopbgr20081.outbound.protection.outlook.com ([40.107.2.81]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6HBY-0008Sw-HY
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:06:26 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a5so82644wmb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 09:06:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=FV1+URIh0vJGkDR+Y3sgl5GcK5Z91KqhxIrgPs2m0DY=;
- b=P607In2Fd4CMWizhD2Dp+XgvX5J21OTVO3M/zrdlEnePBi1j+EdqlODhZk9VNI2RxS
- yV9vgn07rxiOxdi1oeTea2Vsanjsmsg3bW82s/rvoJoG6SgI8ZEbs8lCrjcUghuJGmxZ
- V68cEH3CyvgKFafmHF+ZfQH6hLLT/74AzJbQfCkCb6pjLtkw/aw7kdY6TzdqAShE7X+c
- 0JrDF8xysaCATUr3QbFX4Sgjw7bkZ0Pdd+7KA1v4/2qi8+lO84pEeNlt1IqAkMjbthoy
- 3tVV1RoKkOBtY8pQkss4G2RXfEakw1sJIPbvcIrOm544+8ebLT7GRCln9WOoLR+60HOO
- l8AA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=FV1+URIh0vJGkDR+Y3sgl5GcK5Z91KqhxIrgPs2m0DY=;
- b=M7oCvlsMWIRh8EMO1BCLiYHo2NaPI3HbItP8ik0TjAHvlZjA9KEtsgLZI28Sdavadc
- eMN6bjpCuYnxQoibszyiVmQyEVGxMbQ2J1+WG0l9BnTD6a7mqgesFUpR78nVqMTC2LGj
- 1t77Zuk5Nrb49vBHSn30XoT31kh59TxnukFAm9r+n3CDa7S61G5qwYSYO7gi8AqvxvVN
- n8EViNbueoFCHNfOPaAnxLhGFzeImcXKzJrVEBvSNfJIoHw+WO7LoUDt+H4MMkQleW3s
- EmzB1xE63/O/UN1nTPBod9P6f+gn7qu4zYpjyE1mKwiArRSQzUdEYAmKQP9qTNLf0Gif
- 9avw==
-X-Gm-Message-State: APjAAAVcclCo/4j62PekwpwEakOqR61zjAR2DW3AdhNS83kylRg5P1u1
- RojTup1UGHKDnJYVEKYwhg0sxA==
-X-Google-Smtp-Source: APXvYqyvdVU6XrIfybjn/aVZi9uPZ1QB0thGmlars9DoePVBy4bV+vuFggKy8v0x+56p9oi82M1+1g==
-X-Received: by 2002:a1c:610a:: with SMTP id v10mr50621wmb.44.1582563982624;
- Mon, 24 Feb 2020 09:06:22 -0800 (PST)
-Received: from ?IPv6:2a01:e34:ed2f:f020:545a:2a71:2add:41f7?
- ([2a01:e34:ed2f:f020:545a:2a71:2add:41f7])
- by smtp.googlemail.com with ESMTPSA id c77sm44829wmd.12.2020.02.24.09.06.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 24 Feb 2020 09:06:21 -0800 (PST)
-Subject: Re: [PATCH v2] ARM: dts: sun8i-a83t: Add thermal trip points/cooling
- maps
-To: Ondrej Jirman <megous@megous.com>, linux-sunxi@googlegroups.com
-References: <20200224165417.334617-1-megous@megous.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <2e4213a6-2aaf-641c-f741-9503f3ffd5fe@linaro.org>
-Date: Mon, 24 Feb 2020 18:06:20 +0100
+ id 1j6HDm-0000be-FV
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:08:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5j5EbNtXhjI/xzwoRPqJRnzcOInSJH93pw/2oaS7uNI=;
+ b=UPMuqG9XjhTXkutYlN1FexM74XaFWAQ/PzjtVtdMo7Hyzmv/XX78CeqCsxkOsvtdc4IuTymPV84GkBXEAR9H8canMZdUQaJRHe2v0sNLaOzOls2NP9CMpArq0htae1aYXhOBZZHaFN0F9qov+SY1DVUTIqoPGU1XaAnZj+IlIF8=
+Received: from VI1PR08CA0195.eurprd08.prod.outlook.com (2603:10a6:800:d2::25)
+ by AM4PR0802MB2257.eurprd08.prod.outlook.com (2603:10a6:200:61::11)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.21; Mon, 24 Feb
+ 2020 17:08:36 +0000
+Received: from AM5EUR03FT032.eop-EUR03.prod.protection.outlook.com
+ (2a01:111:f400:7e08::209) by VI1PR08CA0195.outlook.office365.com
+ (2603:10a6:800:d2::25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.18 via Frontend
+ Transport; Mon, 24 Feb 2020 17:08:36 +0000
+Authentication-Results: spf=pass (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
+ dmarc=bestguesspass action=none header.from=arm.com;
+Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
+ 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
+ client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ AM5EUR03FT032.mail.protection.outlook.com (10.152.16.84) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.17 via Frontend Transport; Mon, 24 Feb 2020 17:08:36 +0000
+Received: ("Tessian outbound d1ceabc7047e:v42");
+ Mon, 24 Feb 2020 17:08:35 +0000
+X-CheckRecipientChecked: true
+X-CR-MTA-CID: 00ba86d25ee069a5
+X-CR-MTA-TID: 64aa7808
+Received: from cbbe8957c54d.2
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 5B71721C-5EB2-41BD-AE96-11CC6B3453B3.1; 
+ Mon, 24 Feb 2020 17:08:30 +0000
+Received: from EUR05-AM6-obe.outbound.protection.outlook.com
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id cbbe8957c54d.2
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Mon, 24 Feb 2020 17:08:30 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cPvm5GUlh/9u85VOLTje7QRTac82iQ7ZNE8OOjomN4LKKGU3Acig6PoaXz5WabPTriw+OUuubghTYIWbax4On2cpHA1dev4S64mdOoJzFf7c1i9G0OPWjDEuCfVUaVH0aQySdXlTRNcRahqwOw+accIqBXMlV1oFsi64RBZCZFNbG9b27K66HS0hbuQ8TbEc8jr/U2ZEbtt2kvDIOcJzrw+FDZ3zTwUPh6nOqZTXHKcBQmIyPyc9VEwUqAwsvHxYuJm8H9pO7PmEF/qU6wxuKXo1oZAPw7kwsN/J7C7YtMnqqx6pSyu0xanhdr4TvMvBXwfM03Fe1D0nIXjB+5DyrA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5j5EbNtXhjI/xzwoRPqJRnzcOInSJH93pw/2oaS7uNI=;
+ b=G0ymCWXsK0c4GSzf6U6Nn4JRC9VAJ85j+ASg9m9Z0/WssYMb/unDxVkwygoqLi++P00ORCYdcQJPQWQGwIlWmaFPNdG4BeIbPbecfYsDVMYLESPJ2icOGFRGphpLSxS49lnG0Lwon1LjwDwAJJhfnTro1CL1mzvJHKJpOKkel43BlLjLNG0/aIJLvxxhVIuU0gsgtZA3yytwi8ZuOSx/QweWCJ5qUECyar5ry7qFlxzqc+4ME4gLd5ioVr6u5Qx5qx21ewIwB0dKSyf27s4cMyKd0e4iLFf8LKNUVEHcfIZVYeaT/qAD5MedWE90R5qVOz7zQnoJ8S9AwNaGH732zA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5j5EbNtXhjI/xzwoRPqJRnzcOInSJH93pw/2oaS7uNI=;
+ b=UPMuqG9XjhTXkutYlN1FexM74XaFWAQ/PzjtVtdMo7Hyzmv/XX78CeqCsxkOsvtdc4IuTymPV84GkBXEAR9H8canMZdUQaJRHe2v0sNLaOzOls2NP9CMpArq0htae1aYXhOBZZHaFN0F9qov+SY1DVUTIqoPGU1XaAnZj+IlIF8=
+Authentication-Results-Original: spf=none (sender IP is )
+ smtp.mailfrom=James.Clark@arm.com; 
+Received: from DB6PR0802MB2519.eurprd08.prod.outlook.com (10.172.251.18) by
+ DB6PR0802MB2198.eurprd08.prod.outlook.com (10.172.227.20) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.21; Mon, 24 Feb 2020 17:08:29 +0000
+Received: from DB6PR0802MB2519.eurprd08.prod.outlook.com
+ ([fe80::1d47:e75a:d449:605c]) by DB6PR0802MB2519.eurprd08.prod.outlook.com
+ ([fe80::1d47:e75a:d449:605c%6]) with mapi id 15.20.2750.021; Mon, 24 Feb 2020
+ 17:08:28 +0000
+Subject: Re: [PATCH v4 4/4] perf tools: Support "branch-misses:pp" on arm64
+To: Adrian Hunter <adrian.hunter@intel.com>, jolsa@redhat.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20200210122509.GA2005279@krava>
+ <20200211140445.21986-1-james.clark@arm.com>
+ <20200211140445.21986-5-james.clark@arm.com>
+ <3114ea3a-5d9b-2c25-af41-cead352b6a02@intel.com>
+From: James Clark <james.clark@arm.com>
+Message-ID: <96a814b2-23b8-2ac0-9dc5-0a4b70ddf895@arm.com>
+Date: Mon, 24 Feb 2020 17:08:26 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200224165417.334617-1-megous@megous.com>
+In-Reply-To: <3114ea3a-5d9b-2c25-af41-cead352b6a02@intel.com>
 Content-Language: en-US
+X-ClientProxiedBy: LO2P123CA0015.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:a6::27) To DB6PR0802MB2519.eurprd08.prod.outlook.com
+ (2603:10a6:4:a0::18)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [10.32.36.33] (217.140.106.40) by
+ LO2P123CA0015.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:a6::27) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.18 via Frontend Transport; Mon, 24 Feb 2020 17:08:28 +0000
+X-Originating-IP: [217.140.106.40]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: fce13a75-c705-46da-7f3c-08d7b94c2f79
+X-MS-TrafficTypeDiagnostic: DB6PR0802MB2198:|DB6PR0802MB2198:|AM4PR0802MB2257:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM4PR0802MB225738BBE15588FE94400178E2EC0@AM4PR0802MB2257.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+NoDisclaimer: true
+X-MS-Oob-TLC-OOBClassifiers: OLM:4941;OLM:4941;
+X-Forefront-PRVS: 032334F434
+X-Forefront-Antispam-Report-Untrusted: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(346002)(136003)(396003)(376002)(39860400002)(189003)(199004)(53546011)(81156014)(66946007)(66476007)(4326008)(66556008)(44832011)(186003)(16526019)(16576012)(6486002)(81166006)(7416002)(54906003)(8936002)(36756003)(8676002)(5660300002)(2906002)(31696002)(31686004)(316002)(2616005)(956004)(26005)(86362001)(52116002)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB6PR0802MB2198;
+ H:DB6PR0802MB2519.eurprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+Received-SPF: None (protection.outlook.com: arm.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: 48L+5rSr2sWjEdKsVXhE+Nk09UMySIAdf9Bbf+G6WcGHSUcyMamyXX+IKh71KkMxYdZYZqzBCKbTc721KfPdnA1wYDp4DaWdx/RgLAo6//NNH6jxX2Vrv4lESGH2liEDevbYVof831viJhS4YRnegVBHh71YeudCm3lwudHfHUx5bFGtZT9rUnLfgiktx9oIWa0k/5Xt/6+FCnKOh/aI4t47c2lI12m0OqpIuhA7rNcR4REEyL4Bwjd7dtbwCoVTNjgbi9eGZ7GVrS3cqWBwjMY829FpNTB/qXyxBBCor/0TYPAxSNFsj5AoqA1e4WxVjPZYBfYDLnpQJYfXAtHVb3ircSdHqoMXsuwQNDF/s/NIk2YRWc1+UcMTQ44EFCqpv1kN8mOKs8QxE6zk+vRhyapUd3OENmEpepnASlSZidizHG44lzjgGIeC8yRKpn/f
+X-MS-Exchange-AntiSpam-MessageData: bnXmvizNkUB8Zghv/mcmEddA6V3icJPVXzfeSPN+SaQg2iExOoPtdplccSBwrk3eDuL/mCTuf4KKE748A8nlDpcI++ylzcjdzhhsrJUXslxbjHwufE+vE/XIH+jg6f76yqnZqjeUeyrmCzBFu+o5fw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0802MB2198
+Original-Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=James.Clark@arm.com; 
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT032.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; IPV:CAL; SCL:-1; CTRY:IE;
+ EFV:NLI; SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(396003)(376002)(39860400002)(346002)(189003)(199004)(316002)(53546011)(54906003)(107886003)(4326008)(26005)(336012)(2616005)(956004)(16576012)(44832011)(8676002)(81166006)(81156014)(31696002)(8936002)(70586007)(2906002)(36756003)(36906005)(31686004)(186003)(26826003)(478600001)(6486002)(5660300002)(86362001)(356004)(16526019)(70206006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM4PR0802MB2257;
+ H:64aa7808-outbound-1.mta.getcheckrecipient.com; FPR:; SPF:Pass; LANG:en;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; MX:1; A:1; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 3affae31-d935-4dce-d8f2-08d7b94c2aeb
+X-Forefront-PRVS: 032334F434
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 1cPL2usDHikFYG0hL/pvEpudBQ9WwHzLf1SPhqqjAiTijLO71dF632w2+xx2cbdEp+U3G0h619tJXd/9jVGGS0ZS5OShMgq7ur0gB/eD21wzelFclxeb7n6ReleEqvZix8HoFRhD0bCMLHkVXwPd8XRAr32KHENJrGqulWZMJIgaFjOZte3zymw0h+pd5zxZtlmNcU8sn6qNUd36tVdvL20dvev31PazEtwB3+Jh+Iy/QARCrYtyOj2BkMRbgL5p6uI0SG4AmIy7IJCPkEqOOU9DwQDvCkizX6k1Ir4YmlibDl+Tyusq9C8SBiqeq7ZSceEoaUCROny4lu7xX2PmC2iJkXaQE/ltwXQ8SLzQPATwc6T+E/2ygPLR6v04Uy9wsv3L2UhHMhS7eqaJnj8NKag9TEzgnxO42vipOc06OZ+/Xp9XpLL9buf4ySFBCQrv
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2020 17:08:36.0658 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fce13a75-c705-46da-7f3c-08d7b94c2f79
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM4PR0802MB2257
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_090624_603940_EC803F53 
-X-CRM114-Status: GOOD (  20.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200224_090842_728674_4C62EA71 
+X-CRM114-Status: GOOD (  15.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.2.81 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -155,89 +186,237 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <al.grant@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>, nd@arm.com,
+ Tan Xiaojun <tanxiaojun@huawei.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjQvMDIvMjAyMCAxNzo1NCwgT25kcmVqIEppcm1hbiB3cm90ZToKPiBUaGlzIGVuYWJsZXMg
-cGFzc2l2ZSBjb29saW5nIGJ5IGRvd24tcmVndWxhdGluZyBDUFUgdm9sdGFnZQo+IGFuZCBmcmVx
-dWVuY3kuCj4gCj4gRm9yIHRoZSB0cmlwIHBvaW50cywgSSB1c2VkIHZhbHVlcyBmcm9tIHRoZSBC
-U1AgY29kZSBkaXJlY3RseS4KPiAKPiBUaGUgY3JpdGljYWwgdHJpcCBwb2ludCB2YWx1ZSBpcyAz
-MMKwQyBhYm92ZSB0aGUgbWF4aW11bSByZWNvbW1lbmRlZAo+IGFtYmllbnQgdGVtcGVyYXR1cmUg
-KDcwwrBDKSBmb3IgdGhlIFNvQyBmcm9tIHRoZSBkYXRhc2hlZXQsIHNvIHRoZXJlJ3MKPiBzb21l
-IGhlYWRyb29tIGV2ZW4gYXQgc3VjaCBhIGhpZ2ggYW1iaWVudCB0ZW1wZXJhdHVyZS4KPiAKPiBT
-aWduZWQtb2ZmLWJ5OiBPbmRyZWogSmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4KPiAtLS0KPiAg
-YXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktYTgzdC5kdHNpIHwgNjAgKysrKysrKysrKysrKysrKysr
-KysrKysrKysrLS0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgNTQgaW5zZXJ0aW9ucygrKSwgNiBkZWxl
-dGlvbnMoLSkKPiAKPiB2MjoKPiAtIGFkZGVkIG1vcmUgZGV0YWlsIHRvIHRoZSBjb21taXQgZGVz
-Y3JpcHRpb24KPiAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktYTgzdC5k
-dHNpIGIvYXJjaC9hcm0vYm9vdC9kdHMvc3VuOGktYTgzdC5kdHNpCj4gaW5kZXggNzRhYzdlZTkz
-ODNjZi4uNTNjMmI2YTgzNmYyNyAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zdW44
-aS1hODN0LmR0c2kKPiArKysgYi9hcmNoL2FybS9ib290L2R0cy9zdW44aS1hODN0LmR0c2kKPiBA
-QCAtNzIsNyArNzIsNyBAQCBjcHUwOiBjcHVAMCB7Cj4gIAkJCSNjb29saW5nLWNlbGxzID0gPDI+
-Owo+ICAJCX07Cj4gIAo+IC0JCWNwdUAxIHsKPiArCQljcHUxOiBjcHVAMSB7Cj4gIAkJCWNvbXBh
-dGlibGUgPSAiYXJtLGNvcnRleC1hNyI7Cj4gIAkJCWRldmljZV90eXBlID0gImNwdSI7Cj4gIAkJ
-CWNsb2NrcyA9IDwmY2N1IENMS19DMENQVVg+Owo+IEBAIC04Myw3ICs4Myw3IEBAIGNwdUAxIHsK
-PiAgCQkJI2Nvb2xpbmctY2VsbHMgPSA8Mj47Cj4gIAkJfTsKPiAgCj4gLQkJY3B1QDIgewo+ICsJ
-CWNwdTI6IGNwdUAyIHsKPiAgCQkJY29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE3IjsKPiAgCQkJ
-ZGV2aWNlX3R5cGUgPSAiY3B1IjsKPiAgCQkJY2xvY2tzID0gPCZjY3UgQ0xLX0MwQ1BVWD47Cj4g
-QEAgLTk0LDcgKzk0LDcgQEAgY3B1QDIgewo+ICAJCQkjY29vbGluZy1jZWxscyA9IDwyPjsKPiAg
-CQl9Owo+ICAKPiAtCQljcHVAMyB7Cj4gKwkJY3B1MzogY3B1QDMgewo+ICAJCQljb21wYXRpYmxl
-ID0gImFybSxjb3J0ZXgtYTciOwo+ICAJCQlkZXZpY2VfdHlwZSA9ICJjcHUiOwo+ICAJCQljbG9j
-a3MgPSA8JmNjdSBDTEtfQzBDUFVYPjsKPiBAQCAtMTE2LDcgKzExNiw3IEBAIGNwdTEwMDogY3B1
-QDEwMCB7Cj4gIAkJCSNjb29saW5nLWNlbGxzID0gPDI+Owo+ICAJCX07Cj4gIAo+IC0JCWNwdUAx
-MDEgewo+ICsJCWNwdTEwMTogY3B1QDEwMSB7Cj4gIAkJCWNvbXBhdGlibGUgPSAiYXJtLGNvcnRl
-eC1hNyI7Cj4gIAkJCWRldmljZV90eXBlID0gImNwdSI7Cj4gIAkJCWNsb2NrcyA9IDwmY2N1IENM
-S19DMUNQVVg+Owo+IEBAIC0xMjcsNyArMTI3LDcgQEAgY3B1QDEwMSB7Cj4gIAkJCSNjb29saW5n
-LWNlbGxzID0gPDI+Owo+ICAJCX07Cj4gIAo+IC0JCWNwdUAxMDIgewo+ICsJCWNwdTEwMjogY3B1
-QDEwMiB7Cj4gIAkJCWNvbXBhdGlibGUgPSAiYXJtLGNvcnRleC1hNyI7Cj4gIAkJCWRldmljZV90
-eXBlID0gImNwdSI7Cj4gIAkJCWNsb2NrcyA9IDwmY2N1IENMS19DMUNQVVg+Owo+IEBAIC0xMzgs
-NyArMTM4LDcgQEAgY3B1QDEwMiB7Cj4gIAkJCSNjb29saW5nLWNlbGxzID0gPDI+Owo+ICAJCX07
-Cj4gIAo+IC0JCWNwdUAxMDMgewo+ICsJCWNwdTEwMzogY3B1QDEwMyB7Cj4gIAkJCWNvbXBhdGli
-bGUgPSAiYXJtLGNvcnRleC1hNyI7Cj4gIAkJCWRldmljZV90eXBlID0gImNwdSI7Cj4gIAkJCWNs
-b2NrcyA9IDwmY2N1IENMS19DMUNQVVg+Owo+IEBAIC0xMTg4LDEyICsxMTg4LDYwIEBAIGNwdTBf
-dGhlcm1hbDogY3B1MC10aGVybWFsIHsKPiAgCQkJcG9sbGluZy1kZWxheS1wYXNzaXZlID0gPDA+
-Owo+ICAJCQlwb2xsaW5nLWRlbGF5ID0gPDA+Owo+ICAJCQl0aGVybWFsLXNlbnNvcnMgPSA8JnRo
-cyAwPjsKPiArCj4gKwkJCXRyaXBzIHsKPiArCQkJCWNwdTBfaG90OiBjcHUtaG90IHsKPiArCQkJ
-CQl0ZW1wZXJhdHVyZSA9IDw4MDAwMD47Cj4gKwkJCQkJaHlzdGVyZXNpcyA9IDwyMDAwPjsKPiAr
-CQkJCQl0eXBlID0gInBhc3NpdmUiOwo+ICsJCQkJfTsKPiArCj4gKwkJCQljcHUwX3ZlcnlfaG90
-OiBjcHUtdmVyeS1ob3Qgewo+ICsJCQkJCXRlbXBlcmF0dXJlID0gPDEwMDAwMD47Cj4gKwkJCQkJ
-aHlzdGVyZXNpcyA9IDwwPjsKPiArCQkJCQl0eXBlID0gImNyaXRpY2FsIjsKPiArCQkJCX07Cj4g
-KwkJCX07Cj4gKwo+ICsJCQljb29saW5nLW1hcHMgewo+ICsJCQkJY3B1LWhvdC1saW1pdCB7Cj4g
-KwkJCQkJdHJpcCA9IDwmY3B1MF9ob3Q+Owo+ICsJCQkJCWNvb2xpbmctZGV2aWNlID0gPCZjcHUw
-IFRIRVJNQUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD4sCj4gKwkJCQkJCQkgPCZjcHUxIFRI
-RVJNQUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD4sCj4gKwkJCQkJCQkgPCZjcHUyIFRIRVJN
-QUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD4sCj4gKwkJCQkJCQkgPCZjcHUzIFRIRVJNQUxf
-Tk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD47Cj4gKwkJCQl9Owo+ICsJCQl9Owo+ICAJCX07Cj4g
-IAo+ICAJCWNwdTFfdGhlcm1hbDogY3B1MS10aGVybWFsIHsKPiAgCQkJcG9sbGluZy1kZWxheS1w
-YXNzaXZlID0gPDA+OwoKTm8gcG9sbGluZyB0byBtaXRpZ2F0ZT8KCj4gIAkJCXBvbGxpbmctZGVs
-YXkgPSA8MD47Cj4gIAkJCXRoZXJtYWwtc2Vuc29ycyA9IDwmdGhzIDE+Owo+ICsKPiArCQkJdHJp
-cHMgewo+ICsJCQkJY3B1MV9ob3Q6IGNwdS1ob3Qgewo+ICsJCQkJCXRlbXBlcmF0dXJlID0gPDgw
-MDAwPjsKPiArCQkJCQloeXN0ZXJlc2lzID0gPDIwMDA+Owo+ICsJCQkJCXR5cGUgPSAicGFzc2l2
-ZSI7CgpJJ20gY3VyaW91cywgY2FuIHlvdSByZWFsbHkgcmVhY2ggdGhpcyB0ZW1wZXJhdHVyZSB3
-aXRoIGEgY29ydGV4LWE3CnJ1bm5pbmcgYXQgMS4yR0h6IG1heD8KCj4gKwkJCQl9Owo+ICsKPiAr
-CQkJCWNwdTFfdmVyeV9ob3Q6IGNwdS12ZXJ5LWhvdCB7Cj4gKwkJCQkJdGVtcGVyYXR1cmUgPSA8
-MTAwMDAwPjsKPiArCQkJCQloeXN0ZXJlc2lzID0gPDA+Owo+ICsJCQkJCXR5cGUgPSAiY3JpdGlj
-YWwiOwo+ICsJCQkJfTsKPiArCQkJfTsKPiArCj4gKwkJCWNvb2xpbmctbWFwcyB7Cj4gKwkJCQlj
-cHUtaG90LWxpbWl0IHsKPiArCQkJCQl0cmlwID0gPCZjcHUxX2hvdD47Cj4gKwkJCQkJY29vbGlu
-Zy1kZXZpY2UgPSA8JmNwdTEwMCBUSEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+LAo+
-ICsJCQkJCQkJIDwmY3B1MTAxIFRIRVJNQUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD4sCj4g
-KwkJCQkJCQkgPCZjcHUxMDIgVEhFUk1BTF9OT19MSU1JVCBUSEVSTUFMX05PX0xJTUlUPiwKPiAr
-CQkJCQkJCSA8JmNwdTEwMyBUSEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+Owo+ICsJ
-CQkJfTsKPiArCQkJfTsKPiAgCQl9Owo+ICAKPiAgCQlncHVfdGhlcm1hbDogZ3B1LXRoZXJtYWwg
-ewo+IAoKCi0tIAogPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4g
-c291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3
-LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNv
-bS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1i
-bG9nLz4gQmxvZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+Hi Adrian,
+
+On 2/17/20 11:42 AM, Adrian Hunter wrote:
+> On 11/02/20 4:04 pm, James Clark wrote:
+>> From: Tan Xiaojun <tanxiaojun@huawei.com>
+>>
+>> At the suggestion of James Clark, use spe to support the precise
+>> ip of some events. Currently its support event is:
+>> branch-misses.
+>>
+>> Example usage:
+>>
+>> $ ./perf record -e branch-misses:pp dd if=/dev/zero of=/dev/null count=10000
+>> (:p/pp/ppp is same for this case.)
+>>
+>> $ ./perf report --stdio
+>> ("--stdio is not necessary")
+>>
+>> --------------------------------------------------------------------
+>> ...
+>>  # Samples: 14  of event 'branch-misses:pp'
+>>  # Event count (approx.): 14
+>>  #
+>>  # Children      Self  Command  Shared Object      Symbol
+>>  # ........  ........  .......  .................  ..........................
+>>  #
+>>     14.29%    14.29%  dd       [kernel.kallsyms]  [k] __arch_copy_from_user
+>>     14.29%    14.29%  dd       libc-2.28.so       [.] _dl_addr
+>>      7.14%     7.14%  dd       [kernel.kallsyms]  [k] __free_pages
+>>      7.14%     7.14%  dd       [kernel.kallsyms]  [k] __pi_memcpy
+>>      7.14%     7.14%  dd       [kernel.kallsyms]  [k] pagecache_get_page
+>>      7.14%     7.14%  dd       [kernel.kallsyms]  [k] unmap_single_vma
+>>      7.14%     7.14%  dd       dd                 [.] 0x00000000000025ec
+>>      7.14%     7.14%  dd       ld-2.28.so         [.] _dl_lookup_symbol_x
+>>      7.14%     7.14%  dd       ld-2.28.so         [.] check_match
+>>      7.14%     7.14%  dd       libc-2.28.so       [.] __mpn_rshift
+>>      7.14%     7.14%  dd       libc-2.28.so       [.] _nl_intern_locale_data
+>>      7.14%     7.14%  dd       libc-2.28.so       [.] read_alias_file
+>> ...
+>> --------------------------------------------------------------------
+>>
+>> Signed-off-by: Tan Xiaojun <tanxiaojun@huawei.com>
+>> Suggested-by: James Clark <James.Clark@arm.com>
+>> Tested-by: Qi Liu <liuqi115@hisilicon.com>
+>> Signed-off-by: James Clark <james.clark@arm.com>
+>> Cc: Will Deacon <will@kernel.org>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Cc: Peter Zijlstra <peterz@infradead.org>
+>> Cc: Ingo Molnar <mingo@redhat.com>
+>> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
+>> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+>> Cc: Jiri Olsa <jolsa@redhat.com>
+>> Cc: Tan Xiaojun <tanxiaojun@huawei.com>
+>> Cc: Al Grant <al.grant@arm.com>
+>> Cc: Namhyung Kim <namhyung@kernel.org>
+>> ---
+>>  tools/perf/arch/arm/util/auxtrace.c | 38 +++++++++++++++++++++++++++++
+>>  tools/perf/builtin-record.c         |  5 ++++
+>>  tools/perf/util/arm-spe.c           |  9 +++++++
+>>  tools/perf/util/arm-spe.h           |  3 +++
+>>  tools/perf/util/auxtrace.h          |  6 +++++
+>>  5 files changed, 61 insertions(+)
+>>
+>> diff --git a/tools/perf/arch/arm/util/auxtrace.c b/tools/perf/arch/arm/util/auxtrace.c
+>> index 0a6e75b8777a..18f0ea7556e7 100644
+>> --- a/tools/perf/arch/arm/util/auxtrace.c
+>> +++ b/tools/perf/arch/arm/util/auxtrace.c
+>> @@ -10,11 +10,25 @@
+>>  
+>>  #include "../../util/auxtrace.h"
+>>  #include "../../util/debug.h"
+>> +#include "../../util/env.h"
+>>  #include "../../util/evlist.h"
+>>  #include "../../util/pmu.h"
+>>  #include "cs-etm.h"
+>>  #include "arm-spe.h"
+>>  
+>> +#define SPE_ATTR_TS_ENABLE		BIT(0)
+>> +#define SPE_ATTR_PA_ENABLE		BIT(1)
+>> +#define SPE_ATTR_PCT_ENABLE		BIT(2)
+>> +#define SPE_ATTR_JITTER			BIT(16)
+>> +#define SPE_ATTR_BRANCH_FILTER		BIT(32)
+>> +#define SPE_ATTR_LOAD_FILTER		BIT(33)
+>> +#define SPE_ATTR_STORE_FILTER		BIT(34)
+>> +
+>> +#define SPE_ATTR_EV_RETIRED		BIT(1)
+>> +#define SPE_ATTR_EV_CACHE		BIT(3)
+>> +#define SPE_ATTR_EV_TLB			BIT(5)
+>> +#define SPE_ATTR_EV_BRANCH		BIT(7)
+>> +
+>>  static struct perf_pmu **find_all_arm_spe_pmus(int *nr_spes, int *err)
+>>  {
+>>  	struct perf_pmu **arm_spe_pmus = NULL;
+>> @@ -108,3 +122,27 @@ struct auxtrace_record
+>>  	*err = 0;
+>>  	return NULL;
+>>  }
+>> +
+>> +void auxtrace__preprocess_evlist(struct evlist *evlist)
+>> +{
+>> +	struct evsel *evsel;
+>> +	struct perf_pmu *pmu;
+>> +
+>> +	evlist__for_each_entry(evlist, evsel) {
+>> +		/* Currently only supports precise_ip for branch-misses on arm64 */
+>> +		if (!strcmp(perf_env__arch(evlist->env), "arm64")
+> 
+> Isn't config ambiguous unless you also check type i.e.
+> 
+> 			&& evsel->core.attr.type == PERF_TYPE_HARDWARE
+> 
+
+Yes you're right I will add this.
+
+>> +			&& evsel->core.attr.config == PERF_COUNT_HW_BRANCH_MISSES
+>> +			&& evsel->core.attr.precise_ip)
+>> +		{
+>> +			pmu = perf_pmu__find("arm_spe_0");
+>> +			if (pmu) {
+> 
+> Changing the event seems a bit weird.
+> 
+
+This is because there is no support in the kernel for the precise_ip attribute on Arm.
+SPE can give you precise ip data for the same event, but changing the event is required.
+ 
+>> +				evsel->pmu_name = pmu->name;
+>> +				evsel->core.attr.type = pmu->type;
+>> +				evsel->core.attr.config = SPE_ATTR_TS_ENABLE
+>> +							| SPE_ATTR_BRANCH_FILTER;
+>> +				evsel->core.attr.config1 = SPE_ATTR_EV_BRANCH;
+>> +				evsel->core.attr.precise_ip = 0;
+>> +			}
+>> +		}
+>> +	}
+>> +}
+>> \ No newline at end of file
+>> diff --git a/tools/perf/builtin-record.c b/tools/perf/builtin-record.c
+>> index 4c301466101b..3bc61f03d572 100644
+>> --- a/tools/perf/builtin-record.c
+>> +++ b/tools/perf/builtin-record.c
+>> @@ -2451,6 +2451,11 @@ int cmd_record(int argc, const char **argv)
+>>  
+>>  	argc = parse_options(argc, argv, record_options, record_usage,
+>>  			    PARSE_OPT_STOP_AT_NON_OPTION);
+>> +
+>> +	if (auxtrace__preprocess_evlist) {
+>> +		auxtrace__preprocess_evlist(rec->evlist);
+>> +	}
+>> +
+>>  	if (quiet)
+>>  		perf_quiet_option();
+>>  
+>> diff --git a/tools/perf/util/arm-spe.c b/tools/perf/util/arm-spe.c
+>> index 4ef22a0775a9..b21806c97dd8 100644
+>> --- a/tools/perf/util/arm-spe.c
+>> +++ b/tools/perf/util/arm-spe.c
+>> @@ -778,6 +778,15 @@ arm_spe_synth_events(struct arm_spe *spe, struct perf_session *session)
+>>  	attr.sample_id_all = evsel->core.attr.sample_id_all;
+>>  	attr.read_format = evsel->core.attr.read_format;
+>>  
+>> +	/* If it is in the precise ip mode, there is no need to
+>> +	 * synthesize new events. */
+>> +	if (!strncmp(evsel->name, "branch-misses", 13)) {
+>> +		spe->sample_branch_miss = true;
+>> +		spe->branch_miss_id = evsel->core.id[0];
+>> +
+>> +		return 0;
+>> +	}
+>> +
+>>  	/* create new id val to be a fixed offset from evsel id */
+>>  	id = evsel->core.id[0] + 1000000000;
+>>  
+>> diff --git a/tools/perf/util/arm-spe.h b/tools/perf/util/arm-spe.h
+>> index 98d3235781c3..8b1fb191d03a 100644
+>> --- a/tools/perf/util/arm-spe.h
+>> +++ b/tools/perf/util/arm-spe.h
+>> @@ -20,6 +20,8 @@ enum {
+>>  union perf_event;
+>>  struct perf_session;
+>>  struct perf_pmu;
+>> +struct evlist;
+>> +struct evsel;
+>>  
+>>  struct auxtrace_record *arm_spe_recording_init(int *err,
+>>  					       struct perf_pmu *arm_spe_pmu);
+>> @@ -28,4 +30,5 @@ int arm_spe_process_auxtrace_info(union perf_event *event,
+>>  				  struct perf_session *session);
+>>  
+>>  struct perf_event_attr *arm_spe_pmu_default_config(struct perf_pmu *arm_spe_pmu);
+>> +void arm_spe_precise_ip_support(struct evlist *evlist, struct evsel *evsel);
+>>  #endif
+>> diff --git a/tools/perf/util/auxtrace.h b/tools/perf/util/auxtrace.h
+>> index 80617b0d044d..4f89a3a31ab2 100644
+>> --- a/tools/perf/util/auxtrace.h
+>> +++ b/tools/perf/util/auxtrace.h
+>> @@ -584,6 +584,7 @@ void auxtrace__dump_auxtrace_sample(struct perf_session *session,
+>>  int auxtrace__flush_events(struct perf_session *session, struct perf_tool *tool);
+>>  void auxtrace__free_events(struct perf_session *session);
+>>  void auxtrace__free(struct perf_session *session);
+>> +void auxtrace__preprocess_evlist(struct evlist *evlist) __attribute__((weak));
+>>  
+>>  #define ITRACE_HELP \
+>>  "				i:	    		synthesize instructions events\n"		\
+>> @@ -728,6 +729,11 @@ void auxtrace__free(struct perf_session *session __maybe_unused)
+>>  {
+>>  }
+>>  
+>> +static inline
+>> +void auxtrace__preprocess_evlist(struct evlist *evlist __maybe_unused)
+>> +{
+>> +}
+>> +
+>>  static inline
+>>  int auxtrace_index__write(int fd __maybe_unused,
+>>  			  struct list_head *head __maybe_unused)
+>>
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
