@@ -2,66 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93D6416ADF0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:45:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CE7B16ADFE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:48:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ii4EKRakuNnmNBSGE5kqeL8aGR3VJqWDrYDTOwWlwCU=; b=sy1qDK8/efppmD
-	6LR+BFmVQ8lDUlBmoQUGkqoEUUyDkfZExUtR8GLjPC/Epyg+VTJAZk4ZMGU9Z/xlZnf5vC6MnpqpW
-	4KK6OnHc6mJDp1e9Gj3oVPYflKDaX09EBskUfwC83JjMr4ckHD7Kt63VxfEeUzfXH4d+qaQUt3Yr/
-	+/IF54JG3KQ0XzpCGcvSwU/s3jdHMz21Ujfpb19V2WNgz8n75Yu9ejstHaiFNIEczmZerATQi6wxf
-	JoDm+7dPWd0H2mQNAa9juEEi0t6/VJ7CvObsVKpYJlq8YaT0TpPwjKK+tRzTbE4YSw2NaE6tmZsmV
-	4LEO955ERpB1gqxRzBCA==;
+	List-Owner; bh=GDaCyJG6h26Kk3ktc3FnkiTld5/Gthnl8KvS2K6vYiM=; b=B4wdMNBF9I5GQc
+	21LfuU0bgZUrDFvH5bnBYI2Jkc9lmK5eWFtkHoG6n8sCanAQngqikWxo9/kFYh2CaXX7mcBskqV9q
+	nMfB0f7rUaOjE1yvQDV5/VHOo6ncg4f1k6Y4lWSgXn/dyElR0dseR5JoOrtrGVY03LG1GT/h6X/36
+	r5DUkmZhP95dmtAnAkO+kxre6OFpaTGHwa+/nRka/3PCz0pbRu4X1Iyie09Uwvoqb5tMsnSkOO+uV
+	n03ANEI3uT2d8YeqtwZyvugFqT2DPkRJp+o/1PgoxB4WCdFvppJUJ6MK783vmmRI7yyLg9aEOt3y+
+	mokcYy7yqm8skJlxQDcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6HnK-0003o3-RY; Mon, 24 Feb 2020 17:45:26 +0000
+	id 1j6HqZ-0006P8-JA; Mon, 24 Feb 2020 17:48:47 +0000
 Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Hmy-0003mr-NJ; Mon, 24 Feb 2020 17:45:06 +0000
-Received: by mail-ed1-x543.google.com with SMTP id c7so12907073edu.2;
- Mon, 24 Feb 2020 09:45:02 -0800 (PST)
+ id 1j6HqO-0006OY-Us; Mon, 24 Feb 2020 17:48:38 +0000
+Received: by mail-ed1-x543.google.com with SMTP id m13so12923599edb.6;
+ Mon, 24 Feb 2020 09:48:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=67fEgIo9zzjCq2cuI1Fk8dvCkAayQ97WCPRGpbQg75Q=;
- b=uSNSfSUfApPvd1/RX8RUbQKKpq/UQT8OpztfVuf7hUF2vBYnQL9y+9HWsCHpbkDd9m
- pvI6DQK6c/7vs4Znj4ghweLPP9fQku7pAbmOrzxvTnKDWoKBTW19QL51XG1hsAHdhLV4
- VnNYo76rIKCgTisoGoGv7SiqyIKA/TlJpgPg/QnvNpTLTDJseZpTqp9RPVFe/gsny/kU
- /NBdpVqNeF5LdmaGpSWsxg7Cvj6KS/giul+nKc5/HpVou8jRmjC29goKhTguTCMQZBqP
- xog1Tl0Zfhw3wCjYKuGb4mCauppCzLxCBm6auZLWwHBcncqWjUHIs9Wno+L7U5Y46usy
- OeCQ==
+ bh=Z+KZXMS6j42BojKvkiav0VXiRWw9IxLJElIvzW43DQY=;
+ b=aVGCobCqf2sWOQzEqSAW4JCob1J7OcSBugENcmhWXqcxmbGYgDGSNfhSXqmI+CwcC3
+ 8MFcWUm1lUF2elGspd9V4ho3/PSJyrbxne/tvLbSSuquR4g9E3ewd2pYFCr+sjfVY4Or
+ RKikPQnAVCt8I5bsPK3oBfqDpfAAo4pH3PDDQQjlbitXoGI2VKApwyBl8vJRBDTeGkf3
+ eREbdkPlC9V4DF34hslgPZHOGiGK76X6sDpIAibkbtEyvemgIY1SuRDFT9eJFQ3oK4Aw
+ AThy3HQjCuUhBNXF+ONKGv1OapczKnW2nBMe+xE5S57PiH8SVB1Vd3OjL5CrADQPInLp
+ s7cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=67fEgIo9zzjCq2cuI1Fk8dvCkAayQ97WCPRGpbQg75Q=;
- b=eZYfvxwsWVPb6nY7TBSRtPMFcUReHXKo7iZ083Mf0ZwqBYdv7hXHNijN4toyABhGdM
- EQoZK3WvmqLyiwCAYpYEYkenfYOomp5La3l9o+SXN0GAz5k0rbgGyqPDOzys1HkSQ0zA
- BzGO5tps5eBJ68mJK+uqFrB5QnA6GiEUih1k7hsTtRIy4T4s7c6GtQFjF7JLh7+RKoQi
- 6n8lZI2iPVM0nWhTsfKZqWSGps0MGSNH1DIWci+e75vV2bC6NsDL/v9uLeIn2Y0X+jwp
- 3edTKdy7/yS/4IS6oqBTr7r/ya2bJm579yzt3ABA+EzhrLeYk3MR6b2/FPrW2K7Yrh3k
- nn8g==
-X-Gm-Message-State: APjAAAVicIVofUQA7qsRH6CV5BCT6A6PAGD8XFGka9y2mUjWN7JTfKQ4
- 7vIpPH5FqVqdOanZJ4vcJFs=
-X-Google-Smtp-Source: APXvYqzpANUtq+X3kjA7XW1vOUgg7t6jX9FBe3hdx1JrNs8oxBnqXjVoZmoMBFCzZxDHR5Lz44tOFw==
-X-Received: by 2002:a05:6402:1595:: with SMTP id
- c21mr49388775edv.32.1582566301683; 
- Mon, 24 Feb 2020 09:45:01 -0800 (PST)
+ bh=Z+KZXMS6j42BojKvkiav0VXiRWw9IxLJElIvzW43DQY=;
+ b=Nel0M3Iiph4GeDnVs6hpQk/K6w1ESaqElY/1ki36Itm6e4F9ts0Zw9855sbOSF0dfT
+ UVUzTrqmTy+Z/HGyU+cZN/TMsJlnB6HVjXVsr4glwPpY21AJZMsMaLb3a0YNQKq42VBF
+ EHbe3tv3TY2jM93i/XkajyJQwNG2SAQ7wB8UlHg+cFNDQ0ND0mHA+ChIzfdqWruh3TF9
+ rFTAIaUMBHReeGMe8GO0JtYuNXKwPBV8RWEcnPo5DVuyTxCwo0cadyzjRM54EFKuye2d
+ Jcn0957dq5WL9ghc7B/4srkK1kprHStqTq5ueoE6xKMQl/UTpIPa/gyp2WohHhy8XrpO
+ H7lQ==
+X-Gm-Message-State: APjAAAXTocbFsRRc0iSOAXEXeeveU08bHkd70BcUJQeYRWxJTuCCmXo1
+ ijHSfYzw5813hPhlodW8r7U=
+X-Google-Smtp-Source: APXvYqz7i5Pc/5H53tWitQMIaIwBEIzHzproXsr4EugsBJJuMu/ktD2Wu69Zq4vnQ09DUeWodGqgSw==
+X-Received: by 2002:a50:875c:: with SMTP id 28mr48180095edv.271.1582566515662; 
+ Mon, 24 Feb 2020 09:48:35 -0800 (PST)
 Received: from [10.67.50.18] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id u9sm852559ejj.49.2020.02.24.09.44.58
+ by smtp.googlemail.com with ESMTPSA id f13sm1016733edq.26.2020.02.24.09.48.27
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 24 Feb 2020 09:45:00 -0800 (PST)
-Subject: Re: [PATCH 03/89] i2c: brcmstb: Support BCM2711 HDMI BSC controllers
+ Mon, 24 Feb 2020 09:48:34 -0800 (PST)
+Subject: Re: [PATCH 02/89] dt-bindings: i2c: brcmstb: Add BCM2711 BSC/AUTO-I2C
+ binding
 To: Maxime Ripard <maxime@cerno.tech>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
+ <9e427ff22fa40b7146b44aee6468559499deb1f1.1582533919.git-series.maxime@cerno.tech>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,16 +117,16 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <da7943a6-8fcc-6c79-e54e-c8d59dacf24c@gmail.com>
-Date: Mon, 24 Feb 2020 09:44:56 -0800
+Message-ID: <fb3e10e0-9d87-66c0-ad4c-fa8474f6fac0@gmail.com>
+Date: Mon, 24 Feb 2020 09:48:17 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
+In-Reply-To: <9e427ff22fa40b7146b44aee6468559499deb1f1.1582533919.git-series.maxime@cerno.tech>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_094504_766564_5BDC80A8 
-X-CRM114-Status: GOOD (  17.53  )
+X-CRM114-CacheID: sfid-20200224_094837_111117_F0DD524A 
+X-CRM114-Status: GOOD (  15.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -157,14 +157,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
  Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>,
  Wolfram Sang <wsa@the-dreams.de>, Kamal Dasu <kdasu.kdev@gmail.com>,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -180,38 +180,20 @@ On 2/24/20 1:06 AM, Maxime Ripard wrote:
 > the same controller than the one supported by the brcmstb driver, and
 > the AUTO_I2C doesn't really bring any immediate benefit.
 > 
-> Let's use the BSC then, but let's also tie the AUTO_I2C registers with a
-> separate compatible so that we can enable AUTO_I2C if needed in the
-> future.
-> 
-> The AUTO_I2C is enabled by default at boot though, so we first need to
-> release the BSC from the AUTO_I2C control.
+> We can model it in the DT as a single device with two register range,
+> which will allow us to use or or the other in the driver without
+> changing anything in the DT.
 > 
 > Cc: Kamal Dasu <kdasu.kdev@gmail.com>
 > Cc: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: Rob Herring <robh+dt@kernel.org>
 > Cc: Wolfram Sang <wsa@the-dreams.de>
 > Cc: bcm-kernel-feedback-list@broadcom.com
 > Cc: linux-i2c@vger.kernel.org
+> Cc: devicetree@vger.kernel.org
 > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 
-[snip]
-
-> @@ -705,6 +737,7 @@ static SIMPLE_DEV_PM_OPS(brcmstb_i2c_pm, brcmstb_i2c_suspend,
->  static const struct of_device_id brcmstb_i2c_of_match[] = {
->  	{.compatible = "brcm,brcmstb-i2c"},
->  	{.compatible = "brcm,brcmper-i2c"},
-> +	{.compatible = "brcm,bcm2711-hdmi-i2c"},
-
-You could have added the bcm2711_release_bsc here as a function attached
-with the of_device_id::data member of the structure and do:
-
-if (data && data->init_func)
-	rc = data->init_func(dev);
-
-But we can defer that until we have a second compatible string that
-requires the same approach.
-
-Akked-by: Florian Fainelli <f.fainelli@gmail.com>
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
 
