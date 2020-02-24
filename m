@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B69F16A8AB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:43:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2A9B16A8AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:43:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=E5a9Wy5GS7IS6F5xi/UbMqj/dxfqV7Lm5eYXgTeDYVI=; b=px4kRV8mY8tmUmfcubLxwi1Fa5
-	2k/ow0fs+NMqV7AIBax9eML6PbhV1YAZQ1OXRKark/ZFPrIAJW4/zn6i7CXMKou+aJAZkWv9PdTfc
-	v/f3eEmZjmFFeLgIn3l2k4/XVAacHd3//s9KkuCJGS1as1GaBHWYzwxkwuO9YTez0WcJoEkq617D9
-	JDa2Q0F1TBkdogrP/PGaZpb+mEGI2xGwnhUznL1N+O6nBBF37BMEk8XODaocd6Ggq5r2CkWr0CPU8
-	0J3IzFTOYXpwC0VkjO/2TfAQ7wkjJECjadTxnb+3t61oePVP5huXGCudaY6blmaGnmJRpPYTDImzZ
-	MUcp58Aw==;
+	bh=YEAnPZNZX+D12Xl1bLJuFqVHxTvSiG1nlpvWGrQki1o=; b=GxMieJsGsTTq957hYmhrnYfiip
+	p9qV/mUQEqRQykCrHu0NC7v9d3FiIUS78IP2j7m2djBp7t0eCJzqUrHKrGzwX1O7iGWfAqOV5C1tt
+	7czYrpy/XfjLf5uZXtfexj1R8KAXjHiWaScDNWX4jFbRbyROcYFwPqQZFbMwKG63peuMHfh3Nnnpr
+	BJIjpn7jobv8vlQmV2bn7b72xSxYqseryU3tAjjlOfcYxkLf3jWRmz+KXq0kAQRFp2Twj/wmHFMGB
+	UqO0cN0vPYNauiPuqBQ9b5XghYTfFIdikU9qioXLz43QU2DPqvH6do/ac9pWGqdrmyh6AWWxsfWoA
+	0FA17xZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Ewp-0003cX-AE; Mon, 24 Feb 2020 14:43:03 +0000
+	id 1j6Ex9-0003rW-Vb; Mon, 24 Feb 2020 14:43:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Evx-00036Q-45
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:42:10 +0000
+ id 1j6Evy-00036q-KF
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:42:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB81A1063;
- Mon, 24 Feb 2020 06:42:08 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F0D68106F;
+ Mon, 24 Feb 2020 06:42:09 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BCB923F534;
- Mon, 24 Feb 2020 06:42:07 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EFB8A3F534;
+ Mon, 24 Feb 2020 06:42:08 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH v3 02/13] firmware: arm_scmi: Update protocol commands and
- notification list
-Date: Mon, 24 Feb 2020 14:41:13 +0000
-Message-Id: <20200224144124.2008-3-cristian.marussi@arm.com>
+Subject: [RFC PATCH v3 03/13] firmware: arm_scmi: Add notifications support in
+ transport layer
+Date: Mon, 24 Feb 2020 14:41:14 +0000
+Message-Id: <20200224144124.2008-4-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200224144124.2008-1-cristian.marussi@arm.com>
 References: <20200224144124.2008-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_064209_221943_4B446A36 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200224_064210_758653_1068D03A 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,86 +72,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sudeep Holla <sudeep.holla@arm.com>
+Add common transport-layer methods to:
+ - fetch a notification instead of a response
+ - clear a pending notification
 
-Add commands' enumerations and messages definitions for all existing
-notify-enable commands across all protocols.
+Add also all the needed support in mailbox/shmem transports.
 
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Reviewed-by: Viresh Kumar <viresh.kumar@linaro.org>
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
- drivers/firmware/arm_scmi/base.c    | 7 +++++++
- drivers/firmware/arm_scmi/perf.c    | 5 +++++
- drivers/firmware/arm_scmi/power.c   | 6 ++++++
- drivers/firmware/arm_scmi/sensors.c | 4 ++++
- 4 files changed, 22 insertions(+)
+ drivers/firmware/arm_scmi/common.h  |  8 ++++++++
+ drivers/firmware/arm_scmi/mailbox.c | 17 +++++++++++++++++
+ drivers/firmware/arm_scmi/shmem.c   | 15 +++++++++++++++
+ 3 files changed, 40 insertions(+)
 
-diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
-index f804e8af6521..ce7d9203e41b 100644
---- a/drivers/firmware/arm_scmi/base.c
-+++ b/drivers/firmware/arm_scmi/base.c
-@@ -14,6 +14,13 @@ enum scmi_base_protocol_cmd {
- 	BASE_DISCOVER_LIST_PROTOCOLS = 0x6,
- 	BASE_DISCOVER_AGENT = 0x7,
- 	BASE_NOTIFY_ERRORS = 0x8,
-+	BASE_SET_DEVICE_PERMISSIONS = 0x9,
-+	BASE_SET_PROTOCOL_PERMISSIONS = 0xa,
-+	BASE_RESET_AGENT_CONFIGURATION = 0xb,
-+};
-+
-+enum scmi_base_protocol_notify {
-+	BASE_ERROR_EVENT = 0x0,
+diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+index 5ac06469b01c..3c2e5d0d7b68 100644
+--- a/drivers/firmware/arm_scmi/common.h
++++ b/drivers/firmware/arm_scmi/common.h
+@@ -178,6 +178,8 @@ struct scmi_chan_info {
+  * @send_message: Callback to send a message
+  * @mark_txdone: Callback to mark tx as done
+  * @fetch_response: Callback to fetch response
++ * @fetch_notification: Callback to fetch notification
++ * @clear_notification: Callback to clear a pending notification
+  * @poll_done: Callback to poll transfer status
+  */
+ struct scmi_transport_ops {
+@@ -190,6 +192,9 @@ struct scmi_transport_ops {
+ 	void (*mark_txdone)(struct scmi_chan_info *cinfo, int ret);
+ 	void (*fetch_response)(struct scmi_chan_info *cinfo,
+ 			       struct scmi_xfer *xfer);
++	void (*fetch_notification)(struct scmi_chan_info *cinfo,
++				   size_t max_len, struct scmi_xfer *xfer);
++	void (*clear_notification)(struct scmi_chan_info *cinfo);
+ 	bool (*poll_done)(struct scmi_chan_info *cinfo, struct scmi_xfer *xfer);
  };
  
- struct scmi_msg_resp_base_attributes {
-diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
-index ec81e6f7e7a4..88509ec637d0 100644
---- a/drivers/firmware/arm_scmi/perf.c
-+++ b/drivers/firmware/arm_scmi/perf.c
-@@ -27,6 +27,11 @@ enum scmi_performance_protocol_cmd {
- 	PERF_DESCRIBE_FASTCHANNEL = 0xb,
+@@ -222,5 +227,8 @@ void shmem_tx_prepare(struct scmi_shared_mem __iomem *shmem,
+ u32 shmem_read_header(struct scmi_shared_mem __iomem *shmem);
+ void shmem_fetch_response(struct scmi_shared_mem __iomem *shmem,
+ 			  struct scmi_xfer *xfer);
++void shmem_fetch_notification(struct scmi_shared_mem __iomem *shmem,
++			      size_t max_len, struct scmi_xfer *xfer);
++void shmem_clear_notification(struct scmi_shared_mem __iomem *shmem);
+ bool shmem_poll_done(struct scmi_shared_mem __iomem *shmem,
+ 		     struct scmi_xfer *xfer);
+diff --git a/drivers/firmware/arm_scmi/mailbox.c b/drivers/firmware/arm_scmi/mailbox.c
+index 73077bbc4ad9..19ee058f9f44 100644
+--- a/drivers/firmware/arm_scmi/mailbox.c
++++ b/drivers/firmware/arm_scmi/mailbox.c
+@@ -158,6 +158,21 @@ static void mailbox_fetch_response(struct scmi_chan_info *cinfo,
+ 	shmem_fetch_response(smbox->shmem, xfer);
+ }
+ 
++static void mailbox_fetch_notification(struct scmi_chan_info *cinfo,
++				       size_t max_len, struct scmi_xfer *xfer)
++{
++	struct scmi_mailbox *smbox = cinfo->transport_info;
++
++	shmem_fetch_notification(smbox->shmem, max_len, xfer);
++}
++
++static void mailbox_clear_notification(struct scmi_chan_info *cinfo)
++{
++	struct scmi_mailbox *smbox = cinfo->transport_info;
++
++	shmem_clear_notification(smbox->shmem);
++}
++
+ static bool
+ mailbox_poll_done(struct scmi_chan_info *cinfo, struct scmi_xfer *xfer)
+ {
+@@ -173,6 +188,8 @@ static struct scmi_transport_ops scmi_mailbox_ops = {
+ 	.send_message = mailbox_send_message,
+ 	.mark_txdone = mailbox_mark_txdone,
+ 	.fetch_response = mailbox_fetch_response,
++	.fetch_notification = mailbox_fetch_notification,
++	.clear_notification = mailbox_clear_notification,
+ 	.poll_done = mailbox_poll_done,
  };
  
-+enum scmi_performance_protocol_notify {
-+	PERFORMANCE_LIMITS_CHANGED = 0x0,
-+	PERFORMANCE_LEVEL_CHANGED = 0x1,
-+};
-+
- struct scmi_opp {
- 	u32 perf;
- 	u32 power;
-diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
-index 214886ce84f1..cf7f0312381b 100644
---- a/drivers/firmware/arm_scmi/power.c
-+++ b/drivers/firmware/arm_scmi/power.c
-@@ -12,6 +12,12 @@ enum scmi_power_protocol_cmd {
- 	POWER_STATE_SET = 0x4,
- 	POWER_STATE_GET = 0x5,
- 	POWER_STATE_NOTIFY = 0x6,
-+	POWER_STATE_CHANGE_REQUESTED_NOTIFY = 0x7,
-+};
-+
-+enum scmi_power_protocol_notify {
-+	POWER_STATE_CHANGED = 0x0,
-+	POWER_STATE_CHANGE_REQUESTED = 0x1,
- };
+diff --git a/drivers/firmware/arm_scmi/shmem.c b/drivers/firmware/arm_scmi/shmem.c
+index ca0ffd302ea2..e1ab05be90e3 100644
+--- a/drivers/firmware/arm_scmi/shmem.c
++++ b/drivers/firmware/arm_scmi/shmem.c
+@@ -67,6 +67,21 @@ void shmem_fetch_response(struct scmi_shared_mem __iomem *shmem,
+ 	memcpy_fromio(xfer->rx.buf, shmem->msg_payload + 4, xfer->rx.len);
+ }
  
- struct scmi_msg_resp_power_attributes {
-diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
-index eba61b9c1f53..db1b1ab303da 100644
---- a/drivers/firmware/arm_scmi/sensors.c
-+++ b/drivers/firmware/arm_scmi/sensors.c
-@@ -14,6 +14,10 @@ enum scmi_sensor_protocol_cmd {
- 	SENSOR_READING_GET = 0x6,
- };
- 
-+enum scmi_sensor_protocol_notify {
-+	SENSOR_TRIP_POINT_EVENT = 0x0,
-+};
++void shmem_fetch_notification(struct scmi_shared_mem __iomem *shmem,
++			      size_t max_len, struct scmi_xfer *xfer)
++{
++	/* Skip only the length of header in shmem area i.e 4 bytes */
++	xfer->rx.len = min_t(size_t, max_len, ioread32(&shmem->length) - 4);
 +
- struct scmi_msg_resp_sensor_attributes {
- 	__le16 num_sensors;
- 	u8 max_requests;
++	/* Take a copy to the rx buffer.. */
++	memcpy_fromio(xfer->rx.buf, shmem->msg_payload, xfer->rx.len);
++}
++
++void shmem_clear_notification(struct scmi_shared_mem __iomem *shmem)
++{
++	iowrite32(SCMI_SHMEM_CHAN_STAT_CHANNEL_FREE, &shmem->channel_status);
++}
++
+ bool shmem_poll_done(struct scmi_shared_mem __iomem *shmem,
+ 		     struct scmi_xfer *xfer)
+ {
 -- 
 2.17.1
 
