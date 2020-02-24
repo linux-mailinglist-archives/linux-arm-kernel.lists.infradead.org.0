@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F7B616B553
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:23:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEADF16B53D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:22:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RBK0S5bA9fI5KQzvcFzN/q8k3x04XJnJfpcKq+17ddo=; b=Wa5UEOfRb4zjnW
-	p7yAssnSRtLuCDGtuUmM83NWCheWxlqRt5PTEn81SPb6CfTC7uz2AGBAOxP+QAvqDljE1TmHwPW7I
-	Kpenj37EOeJ5h+MwJ449gOKSgWBfqyO5W0u9/3bvjO1LPnfa2t1a5G7G3oeCZDYWVZMsENOIqN0OB
-	yu3z993NX2gCqW9P572LQ9e5VRzgsklFcEql1Cupse2fOv0oIFyxrr6gaRFcjU9OwtihxuC0jQOk9
-	iGlH8gHv2vql3t00rEBY3XibZU6ImYwaGTglXVbJ2SVQRi2UX7VBtz6Y1wwseUOPpnpfPwmrFfzc0
-	FucZvXb7eFls+BCPxGvQ==;
+	List-Owner; bh=k7/v9TBbkG9r5YRPNFjeEok+D/EL7fxmmsIQPf15EcE=; b=EasmwwosaTkQWb
+	iPSos5gpTxs1F5PAqpZ9tSembDMPy69soxeLp5joPj4qK9/IxqKqBfA+xtgyLg9V2srHS/IVJyyCP
+	57UNUJ35UPJ8pYXD7NZxMmn23y66+OPykmmkGO+B6KdqqgkJZMuxvnPoXatQJjAd8MDvi89BkItLy
+	G/v5zj8PiImaohexwSrXpybmlrhheQK7TSb1BQjlD7mGEThdcnHuO3fgI22S9mNJI+oqNO1wxMbQO
+	HBLT9b3PaqUudzjrprl91fbO0U18f84v2HytxBjVXusP9EBRXkec6I5KZIBwqqLwKQPHfgJO1sn94
+	mag5N5+ajMOWLcb5N/og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6N3w-0002tK-SO; Mon, 24 Feb 2020 23:22:56 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1j6N3D-00029S-VT; Mon, 24 Feb 2020 23:22:11 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6N3A-000281-EN
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:22:10 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01ONLx8e054490;
+ id 1j6N34-00027y-Vg
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:22:04 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01ONLxv8102922;
  Mon, 24 Feb 2020 17:21:59 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
  s=ti-com-17Q1; t=1582586519;
- bh=kjOgXsrESZgMPcQh8nlroFzIl2u5v6OBTQCxTbw4U18=;
+ bh=vay2LoEaC3QocU8ZaOGWOzTWKhalWfYPbKQHNAgB/Ng=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=VO4EVSQgTlHQXGx2BocszJGJ8tcLmWILd+IJY3uiHOFtDMf+yNR/lGuxYdB3fDSJd
- YmT6qyvQH77a31s0naUq6dN8NuZN2kIXTwCeQq6xRM3/LseMOfh0qOmkCKFWvML0PG
- R0rcEy/AFlfSWpa3N7p1ZYtQLsF4WT/UQ4N45d2c=
-Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01ONLxk9095516
+ b=qG1/srkwsrG6iml94j23LvjlTX1IBu2wBbcWS8N+DAPN+gqrQiiBvWx/33YYQnUWU
+ F1Oupz+9/yR54f0tHY99960nlcJBb6ljBwHmhMxxeTMWVDJ8ozXHqbeE7pi6d/QK4z
+ wLQBwcYNeJaD0Xt/LUBSufzAoyTIY5feGkoQitW8=
+Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01ONLx8u109527
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
  Mon, 24 Feb 2020 17:21:59 -0600
-Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 24
  Feb 2020 17:21:59 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
  Frontend Transport; Mon, 24 Feb 2020 17:21:59 -0600
 Received: from lelv0597.itg.ti.com (lelv0597.itg.ti.com [10.181.64.32])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01ONLwS5117540;
- Mon, 24 Feb 2020 17:21:58 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01ONLxcu060845;
+ Mon, 24 Feb 2020 17:21:59 -0600
 Received: from localhost (irmo.dhcp.ti.com [128.247.58.153])
- by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 01ONLwVN021238;
- Mon, 24 Feb 2020 17:21:58 -0600
+ by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 01ONLx2W021241;
+ Mon, 24 Feb 2020 17:21:59 -0600
 From: Suman Anna <s-anna@ti.com>
 To: Tony Lindgren <tony@atomide.com>
-Subject: [PATCH 1/3] ARM: OMAP2+: Drop hwmod data for am3 and am4 PRUSS
-Date: Mon, 24 Feb 2020 17:21:50 -0600
-Message-ID: <20200224232152.25562-2-s-anna@ti.com>
+Subject: [PATCH 2/3] ARM: OMAP2+: Drop legacy platform data for OMAP4 DSP
+Date: Mon, 24 Feb 2020 17:21:51 -0600
+Message-ID: <20200224232152.25562-3-s-anna@ti.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20200224232152.25562-1-s-anna@ti.com>
 References: <20200224232152.25562-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_152208_599306_D1577FEE 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20200224_152203_125694_51EF7E50 
+X-CRM114-Status: GOOD (  11.04  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,201 +100,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PRUSS hwmod is currently not used in DT, and the new DTS
-nodes shall be added using the ti-sysc infrastructure and the
-omap-prm reset driver. Drop the legacy hwmod data for the
-PRUSS module on both the AM33xx and AM437x family of SoCs.
+The OMAP4 DSP hwmod is used in DT, but the DT node is not
+probing any real driver. The DSP device-tree node shall be
+updated as per the new OMAP remoteproc bindings with the
+underneath MMU device relying on the ti-sysc infrastructure.
+
+Drop the legacy hwmod data for the DSP device along with the
+custom ti,hwmods property. They have to be dropped together
+since the early platform data init code is based on the custom
+ti,hwmods property.
 
 Signed-off-by: Suman Anna <s-anna@ti.com>
 ---
- .../omap_hwmod_33xx_43xx_common_data.h        |  2 --
- .../omap_hwmod_33xx_43xx_interconnect_data.c  |  8 -----
- .../omap_hwmod_33xx_43xx_ipblock_data.c       | 33 -------------------
- arch/arm/mach-omap2/omap_hwmod_33xx_data.c    | 10 ------
- arch/arm/mach-omap2/omap_hwmod_43xx_data.c    |  9 -----
- 5 files changed, 62 deletions(-)
+ arch/arm/boot/dts/omap4.dtsi               |  1 -
+ arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 76 ----------------------
+ 2 files changed, 77 deletions(-)
 
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h
-index 5ef76fe3f33d..75aabbf5ff22 100644
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h
-@@ -24,7 +24,6 @@ extern struct omap_hwmod_ocp_if am33xx_l3_s__l4_wkup;
- extern struct omap_hwmod_ocp_if am33xx_l3_main__l3_instr;
- extern struct omap_hwmod_ocp_if am33xx_mpu__prcm;
- extern struct omap_hwmod_ocp_if am33xx_l3_s__l3_main;
--extern struct omap_hwmod_ocp_if am33xx_pruss__l3_main;
- extern struct omap_hwmod_ocp_if am33xx_gfx__l3_main;
- extern struct omap_hwmod_ocp_if am33xx_l3_main__gfx;
- extern struct omap_hwmod_ocp_if am33xx_l4_wkup__rtc;
-@@ -42,7 +41,6 @@ extern struct omap_hwmod am33xx_l3_instr_hwmod;
- extern struct omap_hwmod am33xx_l4_ls_hwmod;
- extern struct omap_hwmod am33xx_l4_wkup_hwmod;
- extern struct omap_hwmod am33xx_mpu_hwmod;
--extern struct omap_hwmod am33xx_pruss_hwmod;
- extern struct omap_hwmod am33xx_gfx_hwmod;
- extern struct omap_hwmod am33xx_prcm_hwmod;
- extern struct omap_hwmod am33xx_ocmcram_hwmod;
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c
-index ac7d5bb1a02f..4731946ee2ab 100644
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c
-@@ -74,14 +74,6 @@ struct omap_hwmod_ocp_if am33xx_l3_s__l3_main = {
- 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
- };
+diff --git a/arch/arm/boot/dts/omap4.dtsi b/arch/arm/boot/dts/omap4.dtsi
+index 9a87440d0b9d..48b97f818a68 100644
+--- a/arch/arm/boot/dts/omap4.dtsi
++++ b/arch/arm/boot/dts/omap4.dtsi
+@@ -108,7 +108,6 @@
  
--/* pru-icss -> l3 main */
--struct omap_hwmod_ocp_if am33xx_pruss__l3_main = {
--	.master		= &am33xx_pruss_hwmod,
--	.slave		= &am33xx_l3_main_hwmod,
--	.clk		= "l3_gclk",
--	.user		= OCP_USER_MPU | OCP_USER_SDMA,
--};
--
- /* gfx -> l3 main */
- struct omap_hwmod_ocp_if am33xx_gfx__l3_main = {
- 	.master		= &am33xx_gfx_hwmod,
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c
-index 78ec1bc8e3a1..dc2a684d375d 100644
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c
-@@ -133,34 +133,6 @@ struct omap_hwmod_class am33xx_wkup_m3_hwmod_class = {
- 	.name		= "wkup_m3",
+ 		dsp {
+ 			compatible = "ti,omap3-c64";
+-			ti,hwmods = "dsp";
+ 		};
+ 
+ 		iva {
+diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
+index b7c51ea8c9a6..1d4359a43cab 100644
+--- a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
++++ b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
+@@ -355,37 +355,6 @@ static struct omap_hwmod omap44xx_debugss_hwmod = {
+ 	},
  };
  
 -/*
-- * 'pru-icss' class
-- * Programmable Real-Time Unit and Industrial Communication Subsystem
+- * 'dsp' class
+- * dsp sub-system
 - */
--static struct omap_hwmod_class am33xx_pruss_hwmod_class = {
--	.name	= "pruss",
+-
+-static struct omap_hwmod_class omap44xx_dsp_hwmod_class = {
+-	.name	= "dsp",
 -};
 -
--static struct omap_hwmod_rst_info am33xx_pruss_resets[] = {
--	{ .name = "pruss", .rst_shift = 1 },
+-/* dsp */
+-static struct omap_hwmod_rst_info omap44xx_dsp_resets[] = {
+-	{ .name = "dsp", .rst_shift = 0 },
 -};
 -
--/* pru-icss */
--/* Pseudo hwmod for reset control purpose only */
--struct omap_hwmod am33xx_pruss_hwmod = {
--	.name		= "pruss",
--	.class		= &am33xx_pruss_hwmod_class,
--	.clkdm_name	= "pruss_ocp_clkdm",
--	.main_clk	= "pruss_ocp_gclk",
--	.prcm		= {
--		.omap4	= {
--			.modulemode	= MODULEMODE_SWCTRL,
+-static struct omap_hwmod omap44xx_dsp_hwmod = {
+-	.name		= "dsp",
+-	.class		= &omap44xx_dsp_hwmod_class,
+-	.clkdm_name	= "tesla_clkdm",
+-	.rst_lines	= omap44xx_dsp_resets,
+-	.rst_lines_cnt	= ARRAY_SIZE(omap44xx_dsp_resets),
+-	.main_clk	= "dpll_iva_m4x2_ck",
+-	.prcm = {
+-		.omap4 = {
+-			.clkctrl_offs = OMAP4_CM_TESLA_TESLA_CLKCTRL_OFFSET,
+-			.rstctrl_offs = OMAP4_RM_TESLA_RSTCTRL_OFFSET,
+-			.context_offs = OMAP4_RM_TESLA_TESLA_CONTEXT_OFFSET,
+-			.modulemode   = MODULEMODE_HWCTRL,
 -		},
 -	},
--	.rst_lines	= am33xx_pruss_resets,
--	.rst_lines_cnt	= ARRAY_SIZE(am33xx_pruss_resets),
 -};
 -
- /* gfx */
- /* Pseudo hwmod for reset control purpose only */
- static struct omap_hwmod_class am33xx_gfx_hwmod_class = {
-@@ -486,7 +458,6 @@ static void omap_hwmod_am33xx_clkctrl(void)
- 	CLKCTRL(am33xx_tptc1_hwmod, AM33XX_CM_PER_TPTC1_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_tptc2_hwmod, AM33XX_CM_PER_TPTC2_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_gfx_hwmod, AM33XX_CM_GFX_GFX_CLKCTRL_OFFSET);
--	CLKCTRL(am33xx_pruss_hwmod, AM33XX_CM_PER_PRUSS_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_mpu_hwmod , AM33XX_CM_MPU_MPU_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_l3_instr_hwmod , AM33XX_CM_PER_L3_INSTR_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_ocmcram_hwmod , AM33XX_CM_PER_OCMCRAM_CLKCTRL_OFFSET);
-@@ -494,7 +465,6 @@ static void omap_hwmod_am33xx_clkctrl(void)
- 
- static void omap_hwmod_am33xx_rst(void)
- {
--	RSTCTRL(am33xx_pruss_hwmod, AM33XX_RM_PER_RSTCTRL_OFFSET);
- 	RSTCTRL(am33xx_gfx_hwmod, AM33XX_RM_GFX_RSTCTRL_OFFSET);
- 	RSTST(am33xx_gfx_hwmod, AM33XX_RM_GFX_RSTST_OFFSET);
- }
-@@ -523,7 +493,6 @@ static void omap_hwmod_am43xx_clkctrl(void)
- 	CLKCTRL(am33xx_tptc1_hwmod, AM43XX_CM_PER_TPTC1_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_tptc2_hwmod, AM43XX_CM_PER_TPTC2_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_gfx_hwmod, AM43XX_CM_GFX_GFX_CLKCTRL_OFFSET);
--	CLKCTRL(am33xx_pruss_hwmod, AM43XX_CM_PER_PRUSS_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_mpu_hwmod , AM43XX_CM_MPU_MPU_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_l3_instr_hwmod , AM43XX_CM_PER_L3_INSTR_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_ocmcram_hwmod , AM43XX_CM_PER_OCMCRAM_CLKCTRL_OFFSET);
-@@ -531,9 +500,7 @@ static void omap_hwmod_am43xx_clkctrl(void)
- 
- static void omap_hwmod_am43xx_rst(void)
- {
--	RSTCTRL(am33xx_pruss_hwmod, AM43XX_RM_PER_RSTCTRL_OFFSET);
- 	RSTCTRL(am33xx_gfx_hwmod, AM43XX_RM_GFX_RSTCTRL_OFFSET);
--	RSTST(am33xx_pruss_hwmod, AM43XX_RM_PER_RSTST_OFFSET);
- 	RSTST(am33xx_gfx_hwmod, AM43XX_RM_GFX_RSTST_OFFSET);
- }
- 
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
-index f1ea8c604595..1c258616b9a9 100644
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
-@@ -233,14 +233,6 @@ static struct omap_hwmod_ocp_if am33xx_l4_wkup__wkup_m3 = {
+ /*
+  * 'dss' class
+  * display sub-system
+@@ -1236,14 +1205,6 @@ static struct omap_hwmod_ocp_if omap44xx_ocp_wp_noc__l3_instr = {
  	.user		= OCP_USER_MPU | OCP_USER_SDMA,
  };
  
--/* l4 hs -> pru-icss */
--static struct omap_hwmod_ocp_if am33xx_l4_hs__pruss = {
--	.master		= &am33xx_l4_hs_hwmod,
--	.slave		= &am33xx_pruss_hwmod,
--	.clk		= "dpll_core_m4_ck",
+-/* dsp -> l3_main_1 */
+-static struct omap_hwmod_ocp_if omap44xx_dsp__l3_main_1 = {
+-	.master		= &omap44xx_dsp_hwmod,
+-	.slave		= &omap44xx_l3_main_1_hwmod,
+-	.clk		= "l3_div_ck",
 -	.user		= OCP_USER_MPU | OCP_USER_SDMA,
 -};
 -
- /* l3_main -> debugss */
- static struct omap_hwmod_ocp_if am33xx_l3_main__debugss = {
- 	.master		= &am33xx_l3_main_hwmod,
-@@ -292,7 +284,6 @@ static struct omap_hwmod_ocp_if *am33xx_hwmod_ocp_ifs[] __initdata = {
- 	&am33xx_l3_main__l3_instr,
- 	&am33xx_l3_main__gfx,
- 	&am33xx_l3_s__l3_main,
--	&am33xx_pruss__l3_main,
- 	&am33xx_wkup_m3__l4_wkup,
- 	&am33xx_gfx__l3_main,
- 	&am33xx_l3_main__debugss,
-@@ -302,7 +293,6 @@ static struct omap_hwmod_ocp_if *am33xx_hwmod_ocp_ifs[] __initdata = {
- 	&am33xx_l4_wkup__smartreflex1,
- 	&am33xx_l4_wkup__timer1,
- 	&am33xx_l4_wkup__rtc,
--	&am33xx_l4_hs__pruss,
- 	&am33xx_l4_ls__timer2,
- 	&am33xx_l3_main__tpcc,
- 	&am33xx_l3_s__gpmc,
-diff --git a/arch/arm/mach-omap2/omap_hwmod_43xx_data.c b/arch/arm/mach-omap2/omap_hwmod_43xx_data.c
-index d0867dbd788e..e939dde4a5fe 100644
---- a/arch/arm/mach-omap2/omap_hwmod_43xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_43xx_data.c
-@@ -254,13 +254,6 @@ static struct omap_hwmod_ocp_if am43xx_l4_wkup__wkup_m3 = {
+ /* dss -> l3_main_1 */
+ static struct omap_hwmod_ocp_if omap44xx_dss__l3_main_1 = {
+ 	.master		= &omap44xx_dss_hwmod,
+@@ -1364,14 +1325,6 @@ static struct omap_hwmod_ocp_if omap44xx_l4_cfg__l3_main_3 = {
  	.user		= OCP_USER_MPU | OCP_USER_SDMA,
  };
  
--static struct omap_hwmod_ocp_if am43xx_l3_main__pruss = {
--	.master		= &am33xx_l3_main_hwmod,
--	.slave		= &am33xx_pruss_hwmod,
--	.clk		= "dpll_core_m4_ck",
--	.user		= OCP_USER_MPU,
+-/* dsp -> l4_abe */
+-static struct omap_hwmod_ocp_if omap44xx_dsp__l4_abe = {
+-	.master		= &omap44xx_dsp_hwmod,
+-	.slave		= &omap44xx_l4_abe_hwmod,
+-	.clk		= "ocp_abe_iclk",
+-	.user		= OCP_USER_MPU | OCP_USER_SDMA,
 -};
 -
- static struct omap_hwmod_ocp_if am43xx_l4_wkup__smartreflex0 = {
- 	.master		= &am33xx_l4_wkup_hwmod,
- 	.slave		= &am33xx_smartreflex0_hwmod,
-@@ -340,7 +333,6 @@ static struct omap_hwmod_ocp_if am43xx_l4_ls__dss_rfbi = {
+ /* l3_main_1 -> l4_abe */
+ static struct omap_hwmod_ocp_if omap44xx_l3_main_1__l4_abe = {
+ 	.master		= &omap44xx_l3_main_1_hwmod,
+@@ -1476,30 +1429,6 @@ static struct omap_hwmod_ocp_if omap44xx_l3_instr__debugss = {
+ 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
+ };
  
- static struct omap_hwmod_ocp_if *am43xx_hwmod_ocp_ifs[] __initdata = {
- 	&am33xx_l4_wkup__synctimer,
--	&am43xx_l3_main__pruss,
- 	&am33xx_mpu__l3_main,
- 	&am33xx_mpu__prcm,
- 	&am33xx_l3_s__l4_ls,
-@@ -351,7 +343,6 @@ static struct omap_hwmod_ocp_if *am43xx_hwmod_ocp_ifs[] __initdata = {
- 	&am33xx_l3_main__gfx,
- 	&am33xx_l3_s__l3_main,
- 	&am43xx_l3_main__emif,
--	&am33xx_pruss__l3_main,
- 	&am43xx_wkup_m3__l4_wkup,
- 	&am33xx_gfx__l3_main,
- 	&am43xx_l4_wkup__wkup_m3,
+-/* dsp -> iva */
+-static struct omap_hwmod_ocp_if omap44xx_dsp__iva = {
+-	.master		= &omap44xx_dsp_hwmod,
+-	.slave		= &omap44xx_iva_hwmod,
+-	.clk		= "dpll_iva_m5x2_ck",
+-	.user		= OCP_USER_DSP,
+-};
+-
+-/* dsp -> sl2if */
+-static struct omap_hwmod_ocp_if __maybe_unused omap44xx_dsp__sl2if = {
+-	.master		= &omap44xx_dsp_hwmod,
+-	.slave		= &omap44xx_sl2if_hwmod,
+-	.clk		= "dpll_iva_m5x2_ck",
+-	.user		= OCP_USER_DSP,
+-};
+-
+-/* l4_cfg -> dsp */
+-static struct omap_hwmod_ocp_if omap44xx_l4_cfg__dsp = {
+-	.master		= &omap44xx_l4_cfg_hwmod,
+-	.slave		= &omap44xx_dsp_hwmod,
+-	.clk		= "l4_div_ck",
+-	.user		= OCP_USER_MPU | OCP_USER_SDMA,
+-};
+-
+ /* l3_main_2 -> dss */
+ static struct omap_hwmod_ocp_if omap44xx_l3_main_2__dss = {
+ 	.master		= &omap44xx_l3_main_2_hwmod,
+@@ -1762,7 +1691,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
+ 	&omap44xx_iva__l3_instr,
+ 	&omap44xx_l3_main_3__l3_instr,
+ 	&omap44xx_ocp_wp_noc__l3_instr,
+-	&omap44xx_dsp__l3_main_1,
+ 	&omap44xx_dss__l3_main_1,
+ 	&omap44xx_l3_main_2__l3_main_1,
+ 	&omap44xx_l4_cfg__l3_main_1,
+@@ -1778,7 +1706,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
+ 	&omap44xx_l3_main_1__l3_main_3,
+ 	&omap44xx_l3_main_2__l3_main_3,
+ 	&omap44xx_l4_cfg__l3_main_3,
+-	&omap44xx_dsp__l4_abe,
+ 	&omap44xx_l3_main_1__l4_abe,
+ 	&omap44xx_mpu__l4_abe,
+ 	&omap44xx_l3_main_1__l4_cfg,
+@@ -1792,9 +1719,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
+ 	&omap44xx_l4_wkup__ctrl_module_wkup,
+ 	&omap44xx_l4_wkup__ctrl_module_pad_wkup,
+ 	&omap44xx_l3_instr__debugss,
+-	&omap44xx_dsp__iva,
+-	/* &omap44xx_dsp__sl2if, */
+-	&omap44xx_l4_cfg__dsp,
+ 	&omap44xx_l3_main_2__dss,
+ 	&omap44xx_l4_per__dss,
+ 	&omap44xx_l3_main_2__dss_dispc,
 -- 
 2.23.0
 
