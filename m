@@ -2,85 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1557216AD27
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:23:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A501D16AD3D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:23:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hHAG4AYcYtt9R/UiexQ3Tqsn/qHIRYV8GXEFp25TJ6w=; b=U/wJU8N2a7ZXHP
-	ecfQ/7jQIEGn2sJdbSZ3Q/Dz+mJLZUu5Z3aNGlrtf4QlXFLe9Vm6g66qWzmGNl145vAIdId6kVJhU
-	nu8P1Wv3xi9tIICdgt+NDCf5SVsFumtprf8aflQF95yaillmx6/pxvo7KXxJjObV/p/FOPJPx4/0s
-	y9gTyOqtgLQ4Wvy2H2lIR8XNACJWZiypDKbHSGpkQsq3SeDW+ZsuRzhLiOfeLk+l2ujuGuRDmVzkq
-	nihKb1KiObTFnaoOsppG2C1mx59W4B6+iex6C/dvp79juGmqS5uuL2ZIoNu9gS46Lios5h/17INmJ
-	jx6x30Ss3x9aNf48ZcOg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lFZBhX68YXwlObrwHlo1Kw4YTIBhVqCtubQoC4dSln8=; b=g7M/da3JEEoLh/
+	pUT3Jbv0Ais4jjSH9RqRKWoQ6Gu+0qhJoYgVeuEoaanK8LmSvoOs0osKVe1cDjNLFqFp92KBgfZ7c
+	7nwpZ0dNOmcfip19ZZA3FCdHFSIhtrFwjtpzBKVrlAch6imogh8XiRhQbhRD/3VY0bTctLgNFPbxn
+	j6nGWlMuBIqvNGWQErQ8vFBha26S1Kjp7vIQchjeaZMh/y4nDXmIIVzs6Y73u4lFCcw4T85IVyZ+L
+	fT95U6AEimj2+d3vzU+28P+WMtsm67T/TiAk4Mtj+xXwV5lYMsdMhSgCNP46xezYMeTA/NRrhcjOd
+	H8+IMBp1bvz22nF8+KOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6HRc-0007hR-DD; Mon, 24 Feb 2020 17:23:00 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1j6HSF-00080k-PI; Mon, 24 Feb 2020 17:23:39 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6HRS-0007gB-T3
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:22:52 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id 2B61C67A860;
- Mon, 24 Feb 2020 18:22:47 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Mon, 24 Feb
- 2020 18:22:46 +0100
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1913.005; Mon, 24 Feb 2020 18:22:46 +0100
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Dan Williams <dan.j.williams@intel.com>, Fabio Estevam
- <festevam@gmail.com>, Linus Walleij <linus.ml.walleij@gmail.com>, "NXP Linux
- Team" <linux-imx@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- "Vinod Koul" <vkoul@kernel.org>
-Subject: [PATCH] dma: imx-sdma: Fix the event id check to include RX event for
- UART6
-Thread-Topic: [PATCH] dma: imx-sdma: Fix the event id check to include RX
- event for UART6
-Thread-Index: AQHV6zcHvJnYHLnVJki1UPp7vKjn9Q==
-Date: Mon, 24 Feb 2020 17:22:46 +0000
-Message-ID: <20200224172236.22478-1-frieder.schrempf@kontron.de>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+ id 1j6HS6-0007zv-GN
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:23:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1582565008; bh=bd4Uuy+8NdF8pyhX5zAyIND0GOYY5+tfdsLIGI0STkY=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=h1RRqRCRYXFCxoDJO6jPP6II2ps9oswey4T2PFiwvq2vrZbVBQg2rrJiJzV7Xyk4r
+ kNPRhzIQeeePwaujC76aAlQCVufqcsuTc9SYASpY8Uj1FJxVnoc3Aim4E1c8LyGl97
+ GLzrudZoPO8yo1w/G52Ig9+sYovPq+/rJoTbsdrA=
+Date: Mon, 24 Feb 2020 18:23:28 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: Re: [PATCH v2] ARM: dts: sun8i-a83t: Add thermal trip points/cooling
+ maps
+Message-ID: <20200224172328.yauwfgov664ayrd6@core.my.home>
+Mail-Followup-To: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, 
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>
+References: <20200224165417.334617-1-megous@megous.com>
+ <2e4213a6-2aaf-641c-f741-9503f3ffd5fe@linaro.org>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 2B61C67A860.AF1C6
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: dan.j.williams@intel.com, dmaengine@vger.kernel.org,
- festevam@gmail.com, kernel@pengutronix.de,
- linus.ml.walleij@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-imx@nxp.com, linux-kernel@vger.kernel.org,
- s.hauer@pengutronix.de, shawnguo@kernel.org, stable@vger.kernel.org,
- vkoul@kernel.org
-X-Spam-Status: No
+Content-Disposition: inline
+In-Reply-To: <2e4213a6-2aaf-641c-f741-9503f3ffd5fe@linaro.org>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_092251_102707_AAB3D25D 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200224_092330_713031_52B66A89 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.208.41.69 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,55 +80,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stable@vger.kernel.org" <stable@vger.kernel.org>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
-
-On i.MX6 the DMA event for the RX channel of UART6 is '0'. To fix
-the broken DMA support for UART6, we change the check for event_id0
-to include '0' as a valid id.
-
-Fixes: 1ec1e82f2510 ("dmaengine: Add Freescale i.MX SDMA support")
-Cc: stable@vger.kernel.org
-Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
----
- drivers/dma/imx-sdma.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 066b21a32232..3d4aac97b1fc 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1331,7 +1331,7 @@ static void sdma_free_chan_resources(struct dma_chan *chan)
- 
- 	sdma_channel_synchronize(chan);
- 
--	if (sdmac->event_id0)
-+	if (sdmac->event_id0 >= 0)
- 		sdma_event_disable(sdmac, sdmac->event_id0);
- 	if (sdmac->event_id1)
- 		sdma_event_disable(sdmac, sdmac->event_id1);
-@@ -1631,7 +1631,7 @@ static int sdma_config(struct dma_chan *chan,
- 	memcpy(&sdmac->slave_config, dmaengine_cfg, sizeof(*dmaengine_cfg));
- 
- 	/* Set ENBLn earlier to make sure dma request triggered after that */
--	if (sdmac->event_id0) {
-+	if (sdmac->event_id0 >= 0) {
- 		if (sdmac->event_id0 >= sdmac->sdma->drvdata->num_events)
- 			return -EINVAL;
- 		sdma_event_enable(sdmac, sdmac->event_id0);
--- 
-2.17.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIAoKT24gTW9uLCBGZWIgMjQsIDIwMjAgYXQgMDY6MDY6MjBQTSArMDEwMCwgRGFuaWVsIExl
+emNhbm8gd3JvdGU6Cj4gT24gMjQvMDIvMjAyMCAxNzo1NCwgT25kcmVqIEppcm1hbiB3cm90ZToK
+PiA+IFRoaXMgZW5hYmxlcyBwYXNzaXZlIGNvb2xpbmcgYnkgZG93bi1yZWd1bGF0aW5nIENQVSB2
+b2x0YWdlCj4gPiAgCQkJY2xvY2tzID0gPCZjY3UgQ0xLX0MxQ1BVWD47Cj4gPiBAQCAtMTE4OCwx
+MiArMTE4OCw2MCBAQCBjcHUwX3RoZXJtYWw6IGNwdTAtdGhlcm1hbCB7Cj4gPiAgCQkJcG9sbGlu
+Zy1kZWxheS1wYXNzaXZlID0gPDA+Owo+ID4gIAkJCXBvbGxpbmctZGVsYXkgPSA8MD47Cj4gPiAg
+CQkJdGhlcm1hbC1zZW5zb3JzID0gPCZ0aHMgMD47Cj4gPiArCj4gPiArCQkJdHJpcHMgewo+ID4g
+KwkJCQljcHUwX2hvdDogY3B1LWhvdCB7Cj4gPiArCQkJCQl0ZW1wZXJhdHVyZSA9IDw4MDAwMD47
+Cj4gPiArCQkJCQloeXN0ZXJlc2lzID0gPDIwMDA+Owo+ID4gKwkJCQkJdHlwZSA9ICJwYXNzaXZl
+IjsKPiA+ICsJCQkJfTsKPiA+ICsKPiA+ICsJCQkJY3B1MF92ZXJ5X2hvdDogY3B1LXZlcnktaG90
+IHsKPiA+ICsJCQkJCXRlbXBlcmF0dXJlID0gPDEwMDAwMD47Cj4gPiArCQkJCQloeXN0ZXJlc2lz
+ID0gPDA+Owo+ID4gKwkJCQkJdHlwZSA9ICJjcml0aWNhbCI7Cj4gPiArCQkJCX07Cj4gPiArCQkJ
+fTsKPiA+ICsKPiA+ICsJCQljb29saW5nLW1hcHMgewo+ID4gKwkJCQljcHUtaG90LWxpbWl0IHsK
+PiA+ICsJCQkJCXRyaXAgPSA8JmNwdTBfaG90PjsKPiA+ICsJCQkJCWNvb2xpbmctZGV2aWNlID0g
+PCZjcHUwIFRIRVJNQUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD4sCj4gPiArCQkJCQkJCSA8
+JmNwdTEgVEhFUk1BTF9OT19MSU1JVCBUSEVSTUFMX05PX0xJTUlUPiwKPiA+ICsJCQkJCQkJIDwm
+Y3B1MiBUSEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+LAo+ID4gKwkJCQkJCQkgPCZj
+cHUzIFRIRVJNQUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD47Cj4gPiArCQkJCX07Cj4gPiAr
+CQkJfTsKPiA+ICAJCX07Cj4gPiAgCj4gPiAgCQljcHUxX3RoZXJtYWw6IGNwdTEtdGhlcm1hbCB7
+Cj4gPiAgCQkJcG9sbGluZy1kZWxheS1wYXNzaXZlID0gPDA+Owo+IAo+IE5vIHBvbGxpbmcgdG8g
+bWl0aWdhdGU/CgpQb2xsaW5nIHRvIG1pdGlnYXRlIHdoYXQ/CgpUaGUgZHJpdmVyIGlzIHVzaW5n
+IGludGVycnVwdHMgd2hlbmV2ZXIgbmV3IHJlYWRpbmcgaXMgYXZhaWxhYmxlLCBhbmQKbm90aWZp
+ZXMgdHogb2YgdGhlIGNoYW5nZS4gSSBkb24ndCBoYXZlIGEgcmVhc29uIHRvIGJlbGlldmUgYW55
+IG5ldwp2YWx1ZXMgYXJlIGF2YWlsYWJsZSBmcm9tIHRoZXJtYWwgc2Vuc29yIG91dHNpZGUgb2Yg
+dGhlIGludGVycnVwdApwZXJpb2QuCgo+ID4gIAkJCXBvbGxpbmctZGVsYXkgPSA8MD47Cj4gPiAg
+CQkJdGhlcm1hbC1zZW5zb3JzID0gPCZ0aHMgMT47Cj4gPiArCj4gPiArCQkJdHJpcHMgewo+ID4g
+KwkJCQljcHUxX2hvdDogY3B1LWhvdCB7Cj4gPiArCQkJCQl0ZW1wZXJhdHVyZSA9IDw4MDAwMD47
+Cj4gPiArCQkJCQloeXN0ZXJlc2lzID0gPDIwMDA+Owo+ID4gKwkJCQkJdHlwZSA9ICJwYXNzaXZl
+IjsKPiAKPiBJJ20gY3VyaW91cywgY2FuIHlvdSByZWFsbHkgcmVhY2ggdGhpcyB0ZW1wZXJhdHVy
+ZSB3aXRoIGEgY29ydGV4LWE3Cj4gcnVubmluZyBhdCAxLjJHSHogbWF4PwoKVGhhdCBkZXBlbmRz
+IG9uIGFtYmllbnQgdGVtcGVyYXR1cmUuIEknZCBzYXkgZWFzaWx5LiBNeSBBODNUIGlzIHJ1bm5p
+bmcKaW5pc2lkZSBlbmNsb3NlZCBzcGFjZSB3aXRoIG5vIGNvb2xpbmcgb3RoZXIgdGhhbiBkaXNz
+aXBhdGluZyBoZWF0IHRvCnRoZSBib2FyZC4KCkFueXdheSwgSSdtIHJ1bm5pbmcgbXkgQTgzVCBi
+b2FyZHMgYXQgMS44R0h6LiBBbmQgQTgzVCBjYW4gcnVuIHVwIHRvIDJHSHoKYXQgdGhlIGJlc3Qg
+U29DIGJpbi4KCkknbGwgcHJvYmFibHkgc3VibWl0IHVwZGF0ZWQgY3B1ZnJlcSB0YWJsZSBhdCBz
+b21lIHBvaW50IHRvbywgb25jZSBJIGZpeAppdCB1cCB0byB1c2UgdGhlIFNvQyBiaW4gaW5mb3Jt
+YXRpb24uCgpodHRwczovL21lZ291cy5jb20vZ2l0L2xpbnV4L2NvbW1pdC8/aD10aHMtNS42Jmlk
+PTE3MWI3YzNjM2RiOThiNTkzOWQyOGQwYzk2YjM4NGVkZGE5NWNlYzMKCnJlZ2FyZHMsCglvLgoK
+PiA+ICsJCQkJfTsKPiA+ICsKPiA+ICsJCQkJY3B1MV92ZXJ5X2hvdDogY3B1LXZlcnktaG90IHsK
+PiA+ICsJCQkJCXRlbXBlcmF0dXJlID0gPDEwMDAwMD47Cj4gPiArCQkJCQloeXN0ZXJlc2lzID0g
+PDA+Owo+ID4gKwkJCQkJdHlwZSA9ICJjcml0aWNhbCI7Cj4gPiArCQkJCX07Cj4gPiArCQkJfTsK
+PiA+ICsKPiA+ICsJCQljb29saW5nLW1hcHMgewo+ID4gKwkJCQljcHUtaG90LWxpbWl0IHsKPiA+
+ICsJCQkJCXRyaXAgPSA8JmNwdTFfaG90PjsKPiA+ICsJCQkJCWNvb2xpbmctZGV2aWNlID0gPCZj
+cHUxMDAgVEhFUk1BTF9OT19MSU1JVCBUSEVSTUFMX05PX0xJTUlUPiwKPiA+ICsJCQkJCQkJIDwm
+Y3B1MTAxIFRIRVJNQUxfTk9fTElNSVQgVEhFUk1BTF9OT19MSU1JVD4sCj4gPiArCQkJCQkJCSA8
+JmNwdTEwMiBUSEVSTUFMX05PX0xJTUlUIFRIRVJNQUxfTk9fTElNSVQ+LAo+ID4gKwkJCQkJCQkg
+PCZjcHUxMDMgVEhFUk1BTF9OT19MSU1JVCBUSEVSTUFMX05PX0xJTUlUPjsKPiA+ICsJCQkJfTsK
+PiA+ICsJCQl9Owo+ID4gIAkJfTsKPiA+ICAKPiA+ICAJCWdwdV90aGVybWFsOiBncHUtdGhlcm1h
+bCB7Cj4gPiAKPiAKPiAKPiAtLSAKPiAgPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5v
+cmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29Dcwo+IAo+IEZvbGxvdyBMaW5h
+cm86ICA8aHR0cDovL3d3dy5mYWNlYm9vay5jb20vcGFnZXMvTGluYXJvPiBGYWNlYm9vayB8Cj4g
+PGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo+IDxodHRwOi8vd3d3
+LmxpbmFyby5vcmcvbGluYXJvLWJsb2cvPiBCbG9nCj4gCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
