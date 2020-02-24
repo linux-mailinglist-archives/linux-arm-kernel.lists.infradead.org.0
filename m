@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBE9716AE54
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:07:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BFDC16AE77
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:15:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VC3Ng9UBXJzkoJqkHPBUbQ4l/rPapZNJsV6LF5p4kmg=; b=TrgWsQCmnNXfDC
-	MZsWhzLmgCOzIIKEOJ8Qij20n6NY7F84aAR1/QW8jqtqg9soVy+TeBW9y1/IHNT9F/Y9bKEbTPe28
-	b3pVI6pdN3Bz7wS7Lv3Umn2YX39NwekaoNMvvLux964KKk0iDi0gH0Egy/KDvR2Yj7xFqL8eJv0oF
-	xjWt/XxfNWljwaaoT3DjACrLi0OglPbNmvlMcjqZY0pvfnqxyJfgZmQVC5vXXnme1bPVM22kcRg5O
-	nb2jbXQE5KFZaJpPXE7Wmz2o1FRJ5xYl/DgFtK7e4IiHmqCPu1MWdLf/hFqtG//1dcEWBDbKtfGVY
-	84PyYoN8rMj9ABP9Qf0A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+lFsv6Zw1IkxuOCwPHnFWhfHHoxi/gU3kyLgIGX6Cq4=; b=bDuw0Riit+A986
+	AJfAEU/xakg/j3pqVL6MywqgCyoybneWURgIVD/5BMeUBYRdRX1Ri0+49nzoAucmQ4JDoiwf1vK8x
+	wqTXd3efM6PYArbMhu2hhW1+MBebC9Bq5NnWm17O0URpYCijOde0FGvzOtiN73JqS68pMqRj35i1s
+	wY3Gxq90ytTlSobscOS2MXkmLJ95I20C3aLxHZ3JP1z3bdlD+t0bVeIjI9ZrD93l3q3bhNO9RFcO0
+	Pve5a8L5MYQK9hzg/QHpRYoVmVSEaw949D5jLlZsVDHhaOpBvu8gND5b6BW6Bf4Ukeo1+MmKwDtsV
+	3x7rdxGX8u3X3WUSBA9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6I8n-0006fC-M7; Mon, 24 Feb 2020 18:07:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6I8c-0006eV-DK
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:07:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 285191FB;
- Mon, 24 Feb 2020 10:07:23 -0800 (PST)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5CEF83F703;
- Mon, 24 Feb 2020 10:07:22 -0800 (PST)
-Subject: Re: [PATCH v2] arm64:kgdb: Fix kernel single-stepping
-To: minyard@acm.org
-References: <20200219152403.3495-1-minyard@acm.org>
- <20200220142214.GC14459@willie-the-truck> <20200220163038.GJ3704@minyard.net>
- <20200220213040.GA2919@minyard.net>
-From: James Morse <james.morse@arm.com>
-Message-ID: <9e2eac0b-ab60-6316-4976-686a8ab7ac8f@arm.com>
-Date: Mon, 24 Feb 2020 18:07:17 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j6IFw-0000au-RF; Mon, 24 Feb 2020 18:15:00 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6IFi-0000ZC-G9; Mon, 24 Feb 2020 18:14:48 +0000
+Received: by mail-ot1-f68.google.com with SMTP id g64so9543147otb.13;
+ Mon, 24 Feb 2020 10:14:44 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4nmmGful+MegUr8aRgRCB1gCieEuCvrSiIBlqsABDmE=;
+ b=TksDOku6c0UqsoK6BHNsNS3vcl8klSg267QxMczLmXoVMgGqeJbpW9dsJXIRp8AB5U
+ TQLsK4JrM5EbTesOQrKpANVKUsCurn8oHqGF+0EgVw6Zo5QnkOJHWHphh7xdXlsS1pOS
+ VNTat6cGRLab/sRT8Q4ph1+BxJAcnnCj6r/vXA6spcbNrFSaaEXVVc1EnwN7kiCQ8io0
+ TW8PaxfF6mOe3md6vGaVigVH2mEsonQWTWGWSz9P+aIPUauLrYqIknfY1Roe1h474kM5
+ SLTZro+5XnU2owPQ4ikBib9LKy3i/dYZp8yXrdcFxZus9Cp5jf+VgvYH5lJJmHQOAmI3
+ pokQ==
+X-Gm-Message-State: APjAAAW8nI6HWPNvCKhAqYc5oy0dk7ANQT4Ct6/puO0hSlNE5QuMq5b/
+ T8gOtbrywv5DNVYEyCmEJw==
+X-Google-Smtp-Source: APXvYqzSAV62BhNi363gv0daEbhuDKzBdde3JmEZAlbjVYZ9GcAmP/tY+ZpDRe7P2Ti1DpLoIK6ciQ==
+X-Received: by 2002:a9d:68d9:: with SMTP id i25mr29162204oto.135.1582568083899; 
+ Mon, 24 Feb 2020 10:14:43 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id 60sm4761700otu.45.2020.02.24.10.14.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 24 Feb 2020 10:14:43 -0800 (PST)
+Received: (nullmailer pid 24218 invoked by uid 1000);
+ Mon, 24 Feb 2020 18:14:41 -0000
+Date: Mon, 24 Feb 2020 12:14:41 -0600
+From: Rob Herring <robh@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH 2/7] docs: dt: fix several broken references due to renames
+Message-ID: <20200224181441.GA23262@bogus>
+References: <cover.1582361737.git.mchehab+huawei@kernel.org>
+ <83c5df4acbbe0fa55a1d58d4c4a435b51cd2a7ad.1582361737.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200220213040.GA2919@minyard.net>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <83c5df4acbbe0fa55a1d58d4c4a435b51cd2a7ad.1582361737.git.mchehab+huawei@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_100726_539799_C0CDB552 
-X-CRM114-Status: GOOD (  22.94  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200224_101446_563399_C03D236D 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,86 +92,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Corey Minyard <cminyard@mvista.com>
+Cc: Stuart Yoder <stuyoder@gmail.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, Michael Turquette <mturquette@baylibre.com>,
+ dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Pavel Machek <pavel@ucw.cz>, linux-clk@vger.kernel.org,
+ linux-leds@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>, linux-aspeed@lists.ozlabs.org,
+ Jonathan Corbet <corbet@lwn.net>, Kevin Hilman <khilman@baylibre.com>,
+ openbmc@lists.ozlabs.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Joel Stanley <joel@jms.id.au>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Zhang Rui <rui.zhang@intel.com>,
+ Linus Walleij <linus.walleij@linaro.org>, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, Jyri Sarha <jsarha@ti.com>,
+ linux-gpio@vger.kernel.org, Jacek Anaszewski <jacek.anaszewski@gmail.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, Stephen Boyd <sboyd@kernel.org>,
+ Andy Gross <agross@kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Dan Murphy <dmurphy@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Corey,
+On Sat, Feb 22, 2020 at 10:00:02AM +0100, Mauro Carvalho Chehab wrote:
+> Several DT references got broken due to txt->yaml conversion.
+> 
+> Those are auto-fixed by running:
+> 
+> 	scripts/documentation-file-ref-check --fix
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> Reviewed-by: Dan Murphy <dmurphy@ti.com>
+> ---
+>  Documentation/devicetree/bindings/arm/arm,scmi.txt        | 2 +-
+>  Documentation/devicetree/bindings/arm/arm,scpi.txt        | 2 +-
+>  .../devicetree/bindings/arm/bcm/brcm,bcm63138.txt         | 2 +-
+>  .../devicetree/bindings/arm/hisilicon/hi3519-sysctrl.txt  | 2 +-
+>  .../devicetree/bindings/arm/msm/qcom,idle-state.txt       | 2 +-
+>  Documentation/devicetree/bindings/arm/omap/mpu.txt        | 2 +-
+>  Documentation/devicetree/bindings/arm/psci.yaml           | 2 +-
+>  .../devicetree/bindings/clock/qcom,gcc-apq8064.yaml       | 2 +-
+>  .../devicetree/bindings/display/tilcdc/tilcdc.txt         | 2 +-
+>  Documentation/devicetree/bindings/leds/common.yaml        | 2 +-
+>  .../devicetree/bindings/leds/register-bit-led.txt         | 2 +-
+>  .../devicetree/bindings/memory-controllers/ti/emif.txt    | 2 +-
+>  Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt   | 2 +-
+>  .../bindings/pinctrl/aspeed,ast2400-pinctrl.yaml          | 2 +-
+>  .../bindings/pinctrl/aspeed,ast2500-pinctrl.yaml          | 2 +-
+>  .../bindings/pinctrl/aspeed,ast2600-pinctrl.yaml          | 2 +-
+>  .../devicetree/bindings/power/amlogic,meson-ee-pwrc.yaml  | 2 +-
+>  .../devicetree/bindings/reset/st,stm32mp1-rcc.txt         | 2 +-
+>  .../devicetree/bindings/thermal/brcm,avs-ro-thermal.yaml  | 2 +-
+>  MAINTAINERS                                               | 8 ++++----
+>  20 files changed, 23 insertions(+), 23 deletions(-)
 
-On 20/02/2020 21:30, Corey Minyard wrote:
-> On Thu, Feb 20, 2020 at 10:30:38AM -0600, Corey Minyard wrote:
->> On Thu, Feb 20, 2020 at 02:22:14PM +0000, Will Deacon wrote:
->>> On Wed, Feb 19, 2020 at 09:24:03AM -0600, minyard@acm.org wrote:
->>>> After fixing this and doing some more testing, I ran into another issue:
->>>>
->>>> * Kernel enables the pt_regs single step
->>>> * Kernel returns from the exception with ERET.
->>>> * An interrupt or page fault happens on the instruction, causing the
->>>>   instruction to not be run, but the exception handler runs.
->>>
->>> This sounds like you've broken debug; we should take the step exception
->>> in the exception handler. That's the way this is supposed to work.
->>
->> Ok, here is the disconnect, I think.  If that is the case, then what I'm
->> seeing is working like it should.  That doesn't work with gdb, though,
->> gdb expects to be able to single-step and get to the next instruction.
->> The scenario I mentioned at the top of this email.
->>
->> Let me look at this a bit more.  I'll look at this on qemu and maybe a
->> pi.
+Applied.
 
-> Ok, this is the disconnect.  I was assuming that single step would stop
-> at the next instruction after returning from an exception.  qemu works
-> the same way the hardware I have does.  So I'm assuming arm64 doesn't
-> clear PTRACE.SS on an exception, even though that seems to be what the
-> manual says.
-
-PSTATE.SS isn't an enable bit for single step ... its part of a bigger state-machine.
-(my made-up terminology for it is 'PSTATE.Suppress-Step'...)
-
-The diagram in the Arm-Arm's D2.12.3 "The software step state machine" may help.
-
-MDSCR_EL1.SS enables single-step, if PSTATE.D is clear the CPU will now take step
-exceptions instead of pretty much anything else. (active pending state)
-To execute one instruction you need to ERET with SPSR_ELx.SS set. (active, not pending)
-The CPU will execute one instruction, then clear PSTATE.SS. (taking us back to active pending)
-
-Taking an exception clears PSTATE.SS so that you know you're in active-pending state, and
-will take a step exception once you re-enable debug with PSTATE.D. This lets you step the
-exception handlers.
-(if it was set, you wouldn't see the first instruction in the step handler, if it was
-inherited, you couldn't know if you would see the first instruction or not).
-If you take something other than a step exception, PSTATE.SS will be preserved in SPSR_EL1.SS.
-
-
-What I think you are seeing is the step exception once debug is re-enabled, after taking
-an exception you didn't want. This happens because MDSCR_EL1.SS is still set.
-
-
-> You can reproduce this by setting up kgdb on the kernel and hooking up
-> gdb, setting a breakpoint somewhere that has interrupts enabled, then
-> doing a "continue".  It will hit the same breakpoint again and again
-> because the PC doesn't get advanced by the single step and the timer
-> interrupt is always going to be pending.  I can do a more detailed set
-> of instructions with qemu, if you like.
-
-> I looked at kprobes a bit.  I don't think kprobes will have a problem
-> with this particular issue, it disables interrupts while single
-> stepping and doesn't allow a probe on any instruction that would modify
-> the interrupt settings.  I didn't look at page faults, but I assume that
-> it also won't allow a probe where there can be a page fault.
-
-Yes, arch_prepare_kprobe() checks search_exception_tables() for locations that we know may
-cause page faults. These are blacklisted.
-
-
-Thanks,
-
-James
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
