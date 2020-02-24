@@ -2,66 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC27A16A6B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 14:00:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82BC716A6BA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 14:01:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ka1joCBhE9xR/frBsO3FGj1SMtk7f5FL4DbFQzPlCq8=; b=TfzNad4A5Y/1ty
-	xzs/+klmakxak34jiUAolb3CQJDbDHPDyX1H7ZLDgArb1T9kq8tS6Y7pVaPGjJ/ak4LI9Q3yslvAQ
-	DRn2AaM3Qq3XyHciqVpYEmu7zzF2W9GOJgV2rixRTCP2tK1ymr6HR480/zWwFzyEB+BsUz7KCot2t
-	yieCqyzH+iH0vMijZm7ym6FP6CQii+Y0vJ0Ex7WxWAkWWQWf1BWnPKe+2UMwy/wUxPzEt4lJjWbSB
-	NGKtK7QyrkA15KHbK+6VS7B+pD8lCb3cWAUPD94UlBpu6T4rqnF4YeRc3ffM/t+JLLBxHf968On6O
-	arQ6f12UUz5T+HbJZpRA==;
+	List-Owner; bh=zvTo8JLvniheZgZCLfkiQb4Q+Pe3twFefTqWp2QyMws=; b=Z+VYr5mtiVosk1
+	fhxP+66DCA585yTYVdbXHT6FSnHbOgLNFxzZfeC0N44mMKOfFPilUiIaQKOFBBn6oNbZX0pPgUapl
+	6KLBjkUZc+cb/LRFQxqdkIMjANzs7M5/weqFjvBs9nDkOJ32hQopg+3fzZNEfp8EKLIkxiUlmAYN8
+	qqATlJig6b+DRv2FqxTN3dcxyU4hvTu9dHQUoB7hx6w7+Vtv65rPJHz4J0dL98HoHXR4Un+aaBZBq
+	S6mJXZLrDM6YMT+TmXjZRus38G2lSSRV4dMN90Osf9hT4uQDmwxlZqu6YcmFR8fI4aRdWrzxXIJcw
+	wni8JxXifBcU0aDiInDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6DL4-0000Z3-2L; Mon, 24 Feb 2020 12:59:58 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1j6DMs-0002ik-JI; Mon, 24 Feb 2020 13:01:50 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6DKt-0000Yk-Mp
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:59:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582549185; bh=9fyMxLMlwNi2Pk+BMp46DoE3AKNIuGLa/wjI2H1/1TI=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=ReGabWjx50JtBWZQvXOEPZalcv6O4nOrPEOA0yDYfRykQcuZ3agnsQV5wgtsd6W4n
- yr1RWff/zDZU/rJ9AOp3C5rmlya4/6RRiVFTVr0OB/lw8G8mIBPKbgQXFCBpoiysjw
- yzyyjqY5Fxsqg1cDwZhOnyUI+uM9SHFXIx4UYacg=
-Date: Mon, 24 Feb 2020 13:59:45 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 1/3] arm64: dts: sun50i-a64: Add i2c2 pins
-Message-ID: <20200224125945.dyl7reaqqiqds4ee@core.my.home>
-Mail-Followup-To: Maxime Ripard <maxime@cerno.tech>,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Mark Rutland <mark.rutland@arm.com>,
- Corentin Labbe <clabbe@baylibre.com>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- Samuel Holland <samuel@sholland.org>,
- Martijn Braam <martijn@brixit.nl>, Luca Weiss <luca@z3ntu.xyz>,
- Bhushan Shah <bshah@kde.org>, Icenowy Zheng <icenowy@aosc.io>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20200223172916.843379-1-megous@megous.com>
- <20200223172916.843379-2-megous@megous.com>
- <20200224110100.acwln7zv3j5y67b2@gilmour.lan>
+ id 1j6DMg-0002i3-Sm
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 13:01:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=h+3s0EUrRBksVeRKHsOpEHk0OsUdcbcFmyIf7lBNhVM=; b=wJkVsMngh1Jrz8dcG8Lqs1NAm
+ /VgObCegzrsxkD+qitQkA9efPrHot0fZMcl+SbxFIQCYrKYjfTZR5Rn0gma7y1DsWYMavDHPelqXw
+ l6tuoIA+Q8/DOvT+bsQQQpz19Zs+hzStgeVtCRiXVtLnwp0M/miaSTGjvBUz2RRzd/KZBeZKBRP1V
+ Av9KqPUdPSrdnlKkwIDVqxVXIawhdQMysiYhBTeQnH14fbWTo2YrPA5BmAFhhlTCZH/PeX+2y7I7Z
+ hMLHuEEjCYTo08znh2zuNqKYPU8Ya9a9Z2z//D58cSlwZi3X4UwQSRZt0+A2qXVsp91McEXSc2SPI
+ 9KyNV9iQQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:44630)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1j6DMQ-0002pF-KV; Mon, 24 Feb 2020 13:01:22 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1j6DMM-0006Rj-PS; Mon, 24 Feb 2020 13:01:18 +0000
+Date: Mon, 24 Feb 2020 13:01:18 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [CFT 4/8] net: axienet: use resolved link config in mac_link_up()
+Message-ID: <20200224130118.GR25745@shell.armlinux.org.uk>
+References: <20200217172242.GZ25745@shell.armlinux.org.uk>
+ <E1j3k7t-00072J-RS@rmk-PC.armlinux.org.uk>
+ <20200224122421.616c8271@donnerap.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200224110100.acwln7zv3j5y67b2@gilmour.lan>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+In-Reply-To: <20200224122421.616c8271@donnerap.cambridge.arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_045947_916205_CE0F80F4 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20200224_050138_933402_38F4FA49 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,55 +88,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Luca Weiss <luca@z3ntu.xyz>,
- linux-arm-kernel@lists.infradead.org, Samuel Holland <samuel@sholland.org>,
- Bhushan Shah <bshah@kde.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, Martijn Braam <martijn@brixit.nl>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe@baylibre.com>, devicetree@vger.kernel.org,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 12:01:00PM +0100, Maxime Ripard wrote:
-> On Sun, Feb 23, 2020 at 06:29:14PM +0100, Ondrej Jirman wrote:
-> > PinePhone needs I2C2 pins description. Add it.
-> >
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> > ---
-> >  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 5 +++++
-> >  1 file changed, 5 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> > index 862b47dc9dc90..0fdf5f400d743 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> > @@ -671,6 +671,11 @@ i2c1_pins: i2c1-pins {
-> >  				function = "i2c1";
-> >  			};
-> >
-> > +			i2c2_pins: i2c2-pins {
-> > +				pins = "PE14", "PE15";
-> > +				function = "i2c2";
-> > +			};
-> > +
+On Mon, Feb 24, 2020 at 12:24:21PM +0000, Andre Przywara wrote:
+> On Mon, 17 Feb 2020 17:24:09 +0000
+> Russell King <rmk+kernel@armlinux.org.uk> wrote:
 > 
-> Setting it as the default muxing for i2c2 would be great
+> Hi Russell,
+> 
+> > Convert the Xilinx AXI ethernet driver to use the finalised link
+> > parameters in mac_link_up() rather than the parameters in mac_config().
+> 
+> Many thanks for this series, a quite neat solution for the problems I saw!
+> 
+> I picked 1/8 and 4/8 on top of net-next/master as of today: c3e042f54107376 ("igmp: remove unused macro IGMP_Vx_UNSOLICITED_REPORT_INTERVAL") and it worked great on my FPGA board using SGMII (but no in-band negotiation over that link). I had the 64-bit DMA patches on top, but that doesn't affect this series.
+> 
+> Tested-by: Andre Przywara <andre.przywara@arm.com>
 
-Right, I checked the datasheet and it looks like this is the only pins where
-i2c2 can be muxed to.
+Great, thanks for testing!
 
-I will change it.
+> Is this heading for 5.7?
 
-regards,
-	o.
+Yes, that is my hope.
 
-> Maxime
-
-
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
