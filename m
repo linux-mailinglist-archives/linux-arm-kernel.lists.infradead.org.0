@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A31A316A5EC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 13:18:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C669416A5ED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 13:18:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=bXrS345szZZgNKdGn8uEYOEdnAnrrWYzt8x3YLsegYc=; b=WHd
-	xO6b3gX2X2Of0DqYmH0Flwz30l7gDPBUTH5Qg1Erz6bBF9+dWs5v8aGvdwI3wd+aGlN/xcQXym9TI
-	0iruGPSMQFXHhDyBYF84/FfsM8GjCEgpxKDonMCwzmN+mevWk4M7t0CvOh6IgkAnIJVHVZ/gEwwHs
-	dn50CQV6dQKDFK+wNPbTKWoIYoRgbbrvdFBYWsS0AjZsNrJ0rMwD3g8wqRnUk2t4OvFYOeoVDOSoM
-	mz91zqp1YaL7yNduJ7QtXAvFxa/v4hRGmdQ6dovDqoeiK19sJ63VGyVi2dRjcySpuYDpNdLw0Tp6Z
-	rvWIN4mJ9K+FhA+TTaOFanbQBWy5BBg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=toMHs9SxjEDho4lFjhNiPQXjtpzQQ1FlEgogTQjKMMc=; b=qnGbDp697F7ZINkBYwsV4gTFFH
+	6uj9sZFRkLiyPR170zyB26EG04z9Tao6e4nnzS4+Hf6fSMu0eh0F2q339rNKsm3ojuvdXivt3AeMD
+	3SpqZ5bWZa/QP7x807HoBCdq9efKaWWCCBzcHn0FUNKdWlKxsj2sf+4ZLW66upOfy0e0R2N0S16Nh
+	hB93s7qOqxbk6G3OlPXYN+0hSGBC4b3iQktTnOZEqlah+Dd5w/jlKuf72G+rB4rlwy+fxbfVArAAP
+	/Z1cGGY5/66GuEGWZRpzQ9EwrqG3onRuJ7gfpH4cwsUDPeUYzpvrCe/L9jg5umZZ6bOSB4fcHGjMV
+	JRF5fc9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6CgI-0007Zj-R1; Mon, 24 Feb 2020 12:17:50 +0000
+	id 1j6CgY-0007kc-Ki; Mon, 24 Feb 2020 12:18:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Cg8-0007Z5-IK
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:17:42 +0000
+ id 1j6CgA-0007ZM-40
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:17:43 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ED35820732;
- Mon, 24 Feb 2020 12:17:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1ED9A20838;
+ Mon, 24 Feb 2020 12:17:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582546659;
- bh=HTuLcUQIExJiaJfLi6SPA3zhg5MaRwZm2P9rC/AaJ0M=;
- h=From:To:Cc:Subject:Date:From;
- b=eXllGCHV32OjZ78rSJlVJfQ8Fq4HEk3CoinP2+xS09LOYGd4EPCLJom6rY+y+Zd6L
- YkdfsLt5aNlcTadeaxCwC2qX4FwX7FBNED4sZMZux++yXV+GKmkbv73+bSy0lcB4mJ
- lJ2XiFsUB0vx07gBf5rWgzv33xddbhc05c3Ggih4=
+ s=default; t=1582546661;
+ bh=u6UNh9AxsmaZvMVFcXaOuu9HBc8jrZmXLZzpHbnjRV4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=hYgbTdxwi6yCT/hMQnnjI1Fq0ei2PoBYS7CeQUddSaMyjzWEqyo4WTh6KiYOf0mV9
+ 0pQtmENszU7+wxVSV462uuVcWCgP/UZn64Ea5h6VB2rxKImgLWt3l4XGBQ6iZbOnR+
+ WUdmSu8po/EMHpr1tCTkDgMncCKhiMsy20ppbQEk=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v3 0/5] ARM: decompressor: use by-VA cache maintenance for v7
- cores
-Date: Mon, 24 Feb 2020 13:17:28 +0100
-Message-Id: <20200224121733.2202-1-ardb@kernel.org>
+Subject: [PATCH v3 1/5] efi/arm: Work around missing cache maintenance in
+ decompressor handover
+Date: Mon, 24 Feb 2020 13:17:29 +0100
+Message-Id: <20200224121733.2202-2-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200224121733.2202-1-ardb@kernel.org>
+References: <20200224121733.2202-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_041740_647114_369057A7 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20200224_041742_197453_EA8014BC 
+X-CRM114-Status: GOOD (  14.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,68 +88,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While making changes to the EFI stub startup code, I noticed that we are
-still doing set/way maintenance on the caches when booting on v7 cores.
-This works today on VMs by virtue of the fact that KVM traps set/way ops
-and cleans the whole address space by VA on behalf of the guest, and on
-most v7 hardware, the set/way ops are in fact sufficient when only one
-core is running, as there usually is no system cache. But on systems
-like SynQuacer, for which 32-bit firmware is available, the current cache
-maintenance only pushes the data out to the L3 system cache, where it
-is not visible to the CPU once it turns the MMU and caches off.
+The EFI stub executes within the context of the zImage as it was
+loaded by the firmware, which means it is treated as an ordinary
+PE/COFF executable, which is loaded into memory, and cleaned to
+the PoU to ensure that it can be executed safely while the MMU
+and caches are on.
 
-So instead, switch to the by-VA cache maintenance that the architecture
-requires for v7 and later (and ARM1176, as a side effect).
+When the EFI stub hands over to the decompressor, we clean the caches
+by set/way and disable the MMU and D-cache, to comply with the Linux
+boot protocol for ARM. However, cache maintenance by set/way is not
+sufficient to ensure that subsequent instruction fetches and data
+accesses done with the MMU off see the correct data. This means that
+proceeding as we do currently is not safe, especially since we also
+perform data accesses with the MMU off, from a literal pool as well as
+the stack.
 
-Changes since v2:
-- add a patch to factor out the code sequence that obtains the inflated image
-  size by doing an unaligned LE32 load from the end of the compressed data
-- use new macro to load the inflated image size instead of doing a potentially
-  unaligned load
-- omit the stack for getting the base and size of the self-relocated zImage
+So let's kick this can down the road a bit, and jump into the relocated
+zImage before disabling the caches. This removes the requirement to
+perform any by-VA cache maintenance on the original PE/COFF executable,
+but it does require that the relocated zImage is cleaned to the PoC,
+which is currently not the case. This will be addressed in a subsequent
+patch.
 
-Changes since v1:
-- include the EFI patch that was sent out separately before (#1)
-- split the preparatory work to pass the region to clean in r0/r1 in a EFI
-  specific one and one for the decompressor - this way, the first two patches
-  can go on a stable branch that is shared between the ARM tree and the EFI
-  tree
-- document the meaning of the values in r0/r1 upon entry to cache_clean_flush
-- take care to treat the region end address as exclusive
-- switch to clean+invalidate to align with the other implementations
-- drop some code that manages the stack pointer value before calling
-  cache_clean_flush(), which is no longer necessary
-- take care to clean the entire region that is covered by the relocated zImage
-  if it needs to relocate itself before decompressing
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm/boot/compressed/head.S | 20 ++++++++++++++------
+ 1 file changed, 14 insertions(+), 6 deletions(-)
 
-https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=arm32-efi-cache-ops
-
-[ Several people asked me offline why on earth I am running SynQuacer on 32 bit:
-  the answer is that this is simply to prove that it is currently broken, and
-  this implies that for 32-bit VMs running under KVM, we are relying on the
-  special, non-architectural cache management done by the hypervisor on behalf
-  of the guest to be able to run this code. ]
-
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: Nicolas Pitre <nico@fluxnic.net>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Tony Lindgren <tony@atomide.com>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-
-Ard Biesheuvel (5):
-  efi/arm: Work around missing cache maintenance in decompressor
-    handover
-  efi/arm: Pass start and end addresses to cache_clean_flush()
-  ARM: decompressor: factor out routine to obtain the inflated image
-    size
-  ARM: decompressor: prepare cache_clean_flush for doing by-VA
-    maintenance
-  ARM: decompressor: switch to by-VA cache maintenance for v7 cores
-
- arch/arm/boot/compressed/head.S | 166 +++++++++++---------
- 1 file changed, 91 insertions(+), 75 deletions(-)
-
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index 088b0a060876..39f7071d47c7 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -1461,6 +1461,17 @@ ENTRY(efi_stub_entry)
+ 		@ Preserve return value of efi_entry() in r4
+ 		mov	r4, r0
+ 		bl	cache_clean_flush
++
++		@ The PE/COFF loader might not have cleaned the code we are
++		@ running beyond the PoU, and so calling cache_off below from
++		@ inside the PE/COFF loader allocated region is unsafe. Let's
++		@ assume our own zImage relocation code did a better job, and
++		@ jump into its version of this routine before proceeding.
++		ldr	r0, [sp]			@ relocated zImage
++		ldr	r1, .Ljmp
++		sub	r1, r0, r1
++		mov	pc, r1				@ no mode switch
++0:
+ 		bl	cache_off
+ 
+ 		@ Set parameters for booting zImage according to boot protocol
+@@ -1469,18 +1480,15 @@ ENTRY(efi_stub_entry)
+ 		mov	r0, #0
+ 		mov	r1, #0xFFFFFFFF
+ 		mov	r2, r4
+-
+-		@ Branch to (possibly) relocated zImage that is in [sp]
+-		ldr	lr, [sp]
+-		ldr	ip, =start_offset
+-		add	lr, lr, ip
+-		mov	pc, lr				@ no mode switch
++		b	__efi_start
+ 
+ efi_load_fail:
+ 		@ Return EFI_LOAD_ERROR to EFI firmware on error.
+ 		ldr	r0, =0x80000001
+ 		ldmfd	sp!, {ip, pc}
+ ENDPROC(efi_stub_entry)
++		.align	2
++.Ljmp:		.long	start - 0b
+ #endif
+ 
+ 		.align
 -- 
 2.17.1
 
