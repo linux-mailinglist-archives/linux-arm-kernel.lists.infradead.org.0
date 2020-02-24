@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AAF716A1F4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:21:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A52AA16A206
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:22:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KKAgS0rObcNovYZOzrSBjA2j56UenIo4CSEJe1YDU/Y=; b=j0CBreRlIhaJGa
-	U3WekRQBx9K9w55xvNjJf5HaxywGexVwvzAoF+TlMa4JqrMAbsAYnuw8UH2XzUUXCx+cTL+g5PLfc
-	fjvbLPTCR3KkOFFkECUUlXUlwgEv+TKEkCu6yTTH8V8b8gN9ZxrxiBoipodgsIXIiX1FlTYR1s2Gu
-	24+yd9YytRtCuqNsHkbivyhSSUCSC48OAi8Js47Nj7aJZqcFQrWxl7fKIQq9zT8SlmoRE52nJ1MJv
-	37NaAzZ27bJZVm00nZZO8vlhcb/mibfTCGuE9CqqZ6qiaPAQooxa5CwPy9qpnAFuJHctvm2ebtJts
-	f8gdfMpQW92/zmkgbRDg==;
+	List-Owner; bh=kGZrDV3ryBU03v70iMMYDgBPAnZjZF6exFsy+OTjmPM=; b=Wpip118E755pB7
+	WAOIG+GxwU1h2E0FFdNUJxIrvCwuWoan7gdExcWborS16Oicg5znigy25C+RrvMdQ4UhZEllBCrZk
+	8BT7lxCMpB1bVQs796zL120B6gg/+ElvCm+Me4RCED50/B48rXPY5/859Yku0YGNwnPoKllNUDF4a
+	G/0wfp1lrRqEDkcMEtIjapuHMkaHPB5au584wfqe+Q6VJbPUwhEXt/A1Elim4tXIO+d/npaK9MWJJ
+	TH6cRBqN6h8fhusfwLmROgeXCrNFrGwVS/QPmns6Qrtp0cvzYqFEqypuhul6fwxEwzsXBFRr3L0jn
+	hOUTk1B8QeGsuKK8uvBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69vS-0004bQ-5m; Mon, 24 Feb 2020 09:21:18 +0000
+	id 1j69wD-0005PX-0n; Mon, 24 Feb 2020 09:22:05 +0000
 Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69kA-0001oG-0E; Mon, 24 Feb 2020 09:09:40 +0000
+ id 1j69kA-0001p0-6F; Mon, 24 Feb 2020 09:09:42 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.west.internal (Postfix) with ESMTP id B5261605;
- Mon, 24 Feb 2020 04:09:34 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:09:35 -0500
+ by mailnew.west.internal (Postfix) with ESMTP id 264EC630;
+ Mon, 24 Feb 2020 04:09:36 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:09:37 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=uLtns6AGYyhR2
- mHtFQT06p/ZWFfTJ2DIAXurRHKaoRw=; b=DhKd0P5GJvdLtV2/9K7KSzrx0m8W7
- khCKpVHiuVVcOUu6TxIZn8muLo/DnMOZDHAeTI0Zqody+6sf5+dHsohu0/fgVC5R
- 783wB/saX4Vrt1nGOtNgtfA9pMimCekab3vf3Ek0s2uIGoL+UtRP6jhZLQMkv2pB
- Prat/Ca2Tu0hc4lqpUpTeuNvM8dD8WW4a3P9ScWCtfUim5aaPUbY4sjNq/flfkrl
- OHaqSOWww28PO5NmqLAeKrinLosgQgQajrDo4tfrfX3o8Udz8rwxJffDZ0A2JLkh
- BiX8xtzJ9l2cEmyP4bCcPX86ECNCzAYow+vxcmwrDnNLw6bWEMBVuxTbg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=w4ZWS7I/FMi9e
+ iNUeFd2hb4b5Xeqa7Yfx7o20ZPZqYU=; b=JTA8tji+CZZpcxr0dtrdYDB1wPVQQ
+ /VOFhn2z+By0P4mIAASVzS79grqcegrA588V9gbnrqwShRQOpgKmIKMSdl4EYXKT
+ HYHWzTM4Y7+S+b/mbZeg9hfJVQnlpjmd95Ve9dmn91m/4BLUp/8gxa/AgOZmIT5S
+ ojS5vH+X9CKPJyvAZbnf7UE35xDKtKZOK58gjJAFjn9FbpVuv51y4s5z/7B9Fg1/
+ Wq1iZvfjteORphTjWKBia39YhJrskji8g6qpOfYAGgbJYpofYesYQ2AMOy8TQjBz
+ f1ytfYlJyRrFIaJMlZ1Jm0cEJCFkVh2C3+4hDoSPkNgE1brQV1jBQp6Wg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=uLtns6AGYyhR2mHtFQT06p/ZWFfTJ2DIAXurRHKaoRw=; b=sTNAt1mj
- oMS8EmjluG8H+wHX81rBGtVdfN49EiVSNigLtzI4gni1D4xmsWwptBGTVTM69QRZ
- eID30SGQtL0hPo8iH90qglpxzEvHQloAloeKuyzw13+0QyYiF9ouXH95F51ixjEw
- fZAsHPc+snBDobirtrJIDS1NtQ4Yyt0D4bqI1kPC+uWxctaqq9gftMuW+rN/r1WM
- B0ARXRERe0y6/zgPvwpgmnFRYrp5sOqC5p/52RZYaRd9C52W9QFvXF06ToxrLCRM
- sgpey00cPkOIwA/qihATQSp4O+B4YEF3BaD2czMeORtaG3sf5h233vxs67EeS7Sb
- NgzzA78oPsy7mw==
-X-ME-Sender: <xms:zpJTXkpLdbDEsQVcFoMwwWuA0HcTVgpPiqlK6VA1eovXohcUr_supw>
+ fm2; bh=w4ZWS7I/FMi9eiNUeFd2hb4b5Xeqa7Yfx7o20ZPZqYU=; b=amWnolIa
+ kFoo2t0Qg154lAVfe5TE2HlEjFaHlVHv77KNMzbQFBFDquXFV5WNfE9kzZVqYPx6
+ Zhm3S3ZQiZ26EAmtzdOfy9ji8LG0IJPtsWQSVq+8SZnnF4Y91NudksB7/caxeV+L
+ AkJ2ibzCQAFYdT7Na+oYuVjt+pBrF5QZXAEGD7c1s2wpNYJ4LTCAyanLWdfgu3hT
+ VXQ7aBn0tXyCldpwY4ch7xfHUYogDJ7nrH3ks7/rCf5es9nKoiM7Zvyx8ooVqsLf
+ 5Ls5hfYEjQNemQV58LDx+de/64am1DMIIhqV4K9kRJyRfFH7MTEO2aTfv3o3Qdhx
+ RAyo9C7LdnxHYA==
+X-ME-Sender: <xms:z5JTXomxGRuYd3rcagMms7q31v3p8KKh4RYmxNru9DRuJhAob61huw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotffvucfrrh
  hofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgenuceurghi
  lhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurh
@@ -55,28 +55,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtucetufdoteggodetrfdotf
  phgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrkeelrd
  eikedrjeeinecuvehluhhsthgvrhfuihiivgepvdegnecurfgrrhgrmhepmhgrihhlfhhr
  ohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:zpJTXkuVt7CQ83hN3gZ7xFqSMRLxlX1TcDRLwoB6SuidPnKHN43zVQ>
- <xmx:zpJTXuI-GuedMDFNpCDrehD0YfPYmpeNuRcBIDfqAqkrf-CxDqqohg>
- <xmx:zpJTXjq18WjfhbDKNyfHHZNrUsYyG6Io1EJHeXWmQsxJXGPJREnlQw>
- <xmx:zpJTXo9kaMLF9yFsVtMl1SmnKWDzBB1_lcIJbx24eNh9I6TQapW5AMod3Vo>
+X-ME-Proxy: <xmx:z5JTXo5kbv8w5Cpu0yHCM4ganFoIb3yjw8a58J9un34Xi7JCgSNi-Q>
+ <xmx:z5JTXpk5yP1pebAEim-iRflSjY78cC8SvmNTKK93ucYwvNRgEvUDNg>
+ <xmx:z5JTXiRC5gusWDkp-vxTHknINGROZzmn34cJ98PbkL9isZzrfzahlA>
+ <xmx:z5JTXnVB3Frk6-emshScC9ynE9lw3Vr9uqU9Vn1KdXzIoO7RryOiFQae03Q>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 021313060F9B;
- Mon, 24 Feb 2020 04:09:33 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 66969328005E;
+ Mon, 24 Feb 2020 04:09:35 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH 31/89] dt-bindings: display: vc4: dsi: Add missing clock
- properties
-Date: Mon, 24 Feb 2020 10:06:33 +0100
-Message-Id: <2d7aaa0bdf3f0cb66d14700fb77348453b3cd29a.1582533919.git-series.maxime@cerno.tech>
+Subject: [PATCH 32/89] dt-bindings: display: vc4: hdmi: Add missing
+ clock-names property
+Date: Mon, 24 Feb 2020 10:06:34 +0100
+Message-Id: <d549097789913d64104d6a5924af5b5981beef9b.1582533919.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_010938_115939_E32AAC43 
-X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-CacheID: sfid-20200224_010938_318626_78C0E35D 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -116,56 +116,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While the device tree and the driver expected a clock-names and a
-clock-cells properties, it wasn't explicitly documented in the previous
-binding. Make sure it is now.
+While the device tree and the driver expected a clock-names property, it
+wasn't explicitly documented in the previous binding. The documented order
+was wrong too, so make sure clock-names is there and in the proper order.
 
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: devicetree@vger.kernel.org
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml | 11 +++++++-
- 1 file changed, 11 insertions(+)
+ Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-index 3887675f844e..3c643b227a70 100644
---- a/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-+++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-@@ -10,6 +10,9 @@ maintainers:
-   - Eric Anholt <eric@anholt.net>
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+index 834cc5f1c254..52b3cdac0bdf 100644
+--- a/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+@@ -23,8 +23,13 @@ properties:
  
- properties:
-+  "#clock-cells":
-+    const: 1
+   clocks:
+     items:
+-      - description: The HDMI state machine clock
+       - description: The pixel clock
++      - description: The HDMI state machine clock
 +
-   compatible:
-     enum:
-       - brcm,bcm2835-dsi0
-@@ -24,6 +27,12 @@ properties:
-       - description: The DSI ESC clock
-       - description: The DSI pixel clock
- 
 +  clock-names:
 +    items:
-+      - const: phy
-+      - const: escape
 +      - const: pixel
-+
-   clock-output-names: true
-     # FIXME: The meta-schemas don't seem to allow it for now
-     # items:
-@@ -35,9 +44,11 @@ properties:
-     maxItems: 1
++      - const: hdmi
  
- required:
-+  - "#clock-cells"
-   - compatible
-   - reg
-   - clocks
-+  - clock-names
-   - clock-output-names
-   - interrupts
- 
+   ddc:
+     allOf:
 -- 
 git-series 0.9.1
 
