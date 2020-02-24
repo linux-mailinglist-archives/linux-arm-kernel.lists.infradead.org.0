@@ -2,79 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77EE516A6ED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 14:08:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5339816A741
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 14:24:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K19UGamqd8OEocL0h0k/orVydDfOPma5mi3QTOEyKDs=; b=YS1KBa4VwLvhlv
-	juBE4oXr6IHpD5GdPzgCI+bl2F+SoTFwVeQg4DNfUAECy3hTTkds5jlM1jztNn0bzgR7AnxG/8XvY
-	QmCmNeIUugZAbcYv3u/9AwFzUGYHnRDC+D++gHywJCQGpnxL7TlfYSC+17Q5iThM2JIZKnhJNV/QG
-	Y+RhJzMIaLrRDfpmR8Rg4r+iMoHlsRO81RlqZzRC2zpRiab+4HwRLP35anK52MKlsz+eQwhEKaDrD
-	s96yXRW50jxKBG1F33mQ+GM/XGY2JY5rgZnvB9NBG7azUHO35JATxPAfdbuqb3A8kt4VmQoxF+V8W
-	Wq6uxxrVoAPzMCVU94UQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LsULIpIHAKGrtTPWy/d5nj49NNg+WLYa/jpMTc3dMKI=; b=ZWgP4leIYQ/j5R
+	GBCrbpnjOkoAcbMGU+1w1tcjauAN9OyVPi+IM2o4nlV6tSdQO++4MJURl4FiicAMy00D/oFXiRTZg
+	2K/ZYx8a8W06iqRcl62ls/1mLSA79ko9/1uxueLbMyfistOsC1AYbcggyoAoECb2WkMU2+PL0FLHj
+	X/BefYPJ/Z0WbOpZ3E1TcuFdZ5PzPJO5rsIuq93wCIeZ+CitlxjpNmGKAupR/uC+PfQweeFvjBDrL
+	cHffvama1flmcGgBPmoZLxfy2igenxrAonKgMx1CmVv9OR3J9XDbNx4ludXpGzpYQFNTvBHVnuZk4
+	nEKEnp3BhtPhoMMLyxGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6DTE-00054d-JU; Mon, 24 Feb 2020 13:08:24 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1j6Dif-0002qA-5X; Mon, 24 Feb 2020 13:24:21 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6DSy-00052a-Nf
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 13:08:14 +0000
+ id 1j6DiT-0002pm-71
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 13:24:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582549687;
+ s=mimecast20190719; t=1582550647;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=8hYIHZTnTP03p6Yp4LlShbTvxf4UyOXsFmmyMPgeaYI=;
- b=ggAX4k2X/nrSgbEhTp+FSzWVvJrMksYG+aQw/fFewmeopr8t5GVMxVo8Ko0zK+ubk8SGlF
- slcxuKjlsB4HV3HQwEEAPxAoRubW2aGHP3ny957SSRsMQ4nXgMxVuNFfuWmPsz8ZWuE8fb
- Xrsh5GL39M8Fa5iDWYLTVJ0mm+w/AAE=
+ bh=AQSjOCN08tuHWwFl/AFZaF1M6yIcbXibQI3Uq0KWdfM=;
+ b=AtHmtCyjiE76EpWaqOfZ+tWC+l8VwlEJoAt/cBiAul4VpjiyZLrJSscDQwuFT7ZrZqWKZt
+ PSNufuLAqKrdsYDkZZ6u1mQz1GI2EbSU09VYR6azXQQu8WqA8By8O8Kc/tkUUMs5zUeABy
+ ZcHGHSmOkuRfjGdX38EmiLLl2+gxX/Q=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-463-1KFA4pPFOt-nSzxZ1v6H2w-1; Mon, 24 Feb 2020 08:08:01 -0500
-X-MC-Unique: 1KFA4pPFOt-nSzxZ1v6H2w-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
+ us-mta-25-vny8QQvLOrO2Y37m0onvfA-1; Mon, 24 Feb 2020 08:22:07 -0500
+X-MC-Unique: vny8QQvLOrO2Y37m0onvfA-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A47AB107ACCA;
- Mon, 24 Feb 2020 13:07:55 +0000 (UTC)
-Received: from [10.36.116.59] (ovpn-116-59.ams2.redhat.com [10.36.116.59])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id BF3FB909E9;
- Mon, 24 Feb 2020 13:07:44 +0000 (UTC)
-Subject: Re: [RFC PATCH 01/11] vfio: Remove Calxeda XGMAC reset driver
-To: Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, soc@kernel.org,
- Andre Przywara <andre.przywara@arm.com>,
- Robert Richter <rrichter@marvell.com>, Jon Loeliger <jdl@jdl.com>,
- Alexander Graf <graf@amazon.com>, Matthias Brugger <mbrugger@suse.com>,
- Mark Langsdorf <mlangsdo@redhat.com>
-References: <20200218171321.30990-1-robh@kernel.org>
- <20200218171321.30990-2-robh@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <23fda074-149e-9c77-5eee-4d6b591a6ebf@redhat.com>
-Date: Mon, 24 Feb 2020 14:07:42 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id F2DDC1005F6C;
+ Mon, 24 Feb 2020 13:22:04 +0000 (UTC)
+Received: from kamzik.brq.redhat.com (unknown [10.43.2.160])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 21E4C5C554;
+ Mon, 24 Feb 2020 13:22:02 +0000 (UTC)
+Date: Mon, 24 Feb 2020 14:22:00 +0100
+From: Andrew Jones <drjones@redhat.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 0/3] KVM: arm64: Ask the compiler to __always_inline
+ functions used by KVM at HYP
+Message-ID: <20200224132200.ho7hgmnah2zfh27x@kamzik.brq.redhat.com>
+References: <20200220165839.256881-1-james.morse@arm.com>
+ <cb56f509ea0a4a9e1809af76f319daa2@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200218171321.30990-2-robh@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+In-Reply-To: <cb56f509ea0a4a9e1809af76f319daa2@kernel.org>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_050808_851371_858D416B 
-X-CRM114-Status: GOOD (  23.11  )
+X-CRM114-CacheID: sfid-20200224_052409_331496_86792879 
+X-CRM114-Status: GOOD (  17.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,160 +92,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
- linux-ide@vger.kernel.org, Will Deacon <will@kernel.org>,
- linux-clk@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, devicetree@vger.kernel.org,
- linux-pm@vger.kernel.org, Alex Williamson <alex.williamson@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-edac@vger.kernel.org, Jens Axboe <axboe@kernel.dk>,
- Tony Luck <tony.luck@intel.com>, Stephen Boyd <sboyd@kernel.org>,
- netdev@vger.kernel.org, Cornelia Huck <cohuck@redhat.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, iommu@lists.linux-foundation.org,
- James Morse <james.morse@arm.com>, Robin Murphy <robin.murphy@arm.com>,
- "David S. Miller" <davem@davemloft.net>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Sami Tolvanen <samitolvanen@google.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob, Alex,
-
-On 2/18/20 6:13 PM, Rob Herring wrote:
-> Cc: Eric Auger <eric.auger@redhat.com>
-> Cc: Alex Williamson <alex.williamson@redhat.com>
-> Cc: Cornelia Huck <cohuck@redhat.com>
-> Cc: kvm@vger.kernel.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
-> Do not apply yet.
+On Fri, Feb 21, 2020 at 12:55:16PM +0000, Marc Zyngier wrote:
+> Hi James,
 > 
->  drivers/vfio/platform/reset/Kconfig           |  8 --
->  drivers/vfio/platform/reset/Makefile          |  2 -
->  .../reset/vfio_platform_calxedaxgmac.c        | 74 -------------------
->  3 files changed, 84 deletions(-)
->  delete mode 100644 drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c
+> On 2020-02-20 16:58, James Morse wrote:
+> > Hello!
+> > 
+> > It turns out KVM relies on the inline hint being honoured by the
+> > compiler
+> > in quite a few more places than expected. Something about the Shadow
+> > Call
+> > Stack support[0] causes the compiler to avoid inline-ing and to place
+> > these functions outside the __hyp_text. This ruins KVM's day.
+> > 
+> > Add the simon-says __always_inline annotation to all the static
+> > inlines that KVM calls from HYP code.
+> > 
+> > This series based on v5.6-rc2.
 > 
-> diff --git a/drivers/vfio/platform/reset/Kconfig b/drivers/vfio/platform/reset/Kconfig
-> index 1edbe9ee7356..3668d1d92909 100644
-> --- a/drivers/vfio/platform/reset/Kconfig
-> +++ b/drivers/vfio/platform/reset/Kconfig
-> @@ -1,12 +1,4 @@
->  # SPDX-License-Identifier: GPL-2.0-only
-> -config VFIO_PLATFORM_CALXEDAXGMAC_RESET
-> -	tristate "VFIO support for calxeda xgmac reset"
-> -	depends on VFIO_PLATFORM
-> -	help
-> -	  Enables the VFIO platform driver to handle reset for Calxeda xgmac
-> -
-> -	  If you don't know what to do here, say N.
-> -
->  config VFIO_PLATFORM_AMDXGBE_RESET
->  	tristate "VFIO support for AMD XGBE reset"
->  	depends on VFIO_PLATFORM
-> diff --git a/drivers/vfio/platform/reset/Makefile b/drivers/vfio/platform/reset/Makefile
-> index 7294c5ea122e..be7960ce5dbc 100644
-> --- a/drivers/vfio/platform/reset/Makefile
-> +++ b/drivers/vfio/platform/reset/Makefile
-> @@ -1,7 +1,5 @@
->  # SPDX-License-Identifier: GPL-2.0
-> -vfio-platform-calxedaxgmac-y := vfio_platform_calxedaxgmac.o
->  vfio-platform-amdxgbe-y := vfio_platform_amdxgbe.o
+> Many thanks for going through all this.
 > 
-> -obj-$(CONFIG_VFIO_PLATFORM_CALXEDAXGMAC_RESET) += vfio-platform-calxedaxgmac.o
->  obj-$(CONFIG_VFIO_PLATFORM_AMDXGBE_RESET) += vfio-platform-amdxgbe.o
->  obj-$(CONFIG_VFIO_PLATFORM_BCMFLEXRM_RESET) += vfio_platform_bcmflexrm.o
-> diff --git a/drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c b/drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c
-> deleted file mode 100644
-> index 09a9453b75c5..000000000000
-> --- a/drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c
-> +++ /dev/null
-> @@ -1,74 +0,0 @@
-> -// SPDX-License-Identifier: GPL-2.0-only
-> -/*
-> - * VFIO platform driver specialized for Calxeda xgmac reset
-> - * reset code is inherited from calxeda xgmac native driver
-> - *
-> - * Copyright 2010-2011 Calxeda, Inc.
-> - * Copyright (c) 2015 Linaro Ltd.
-> - *              www.linaro.org
-> - */
-> -
-> -#include <linux/module.h>
-> -#include <linux/kernel.h>
-> -#include <linux/init.h>
-> -#include <linux/io.h>
-> -
-> -#include "../vfio_platform_private.h"
-> -
-> -#define DRIVER_VERSION  "0.1"
-> -#define DRIVER_AUTHOR   "Eric Auger <eric.auger@linaro.org>"
-> -#define DRIVER_DESC     "Reset support for Calxeda xgmac vfio platform device"
-> -
-> -/* XGMAC Register definitions */
-> -#define XGMAC_CONTROL           0x00000000      /* MAC Configuration */
-> -
-> -/* DMA Control and Status Registers */
-> -#define XGMAC_DMA_CONTROL       0x00000f18      /* Ctrl (Operational Mode) */
-> -#define XGMAC_DMA_INTR_ENA      0x00000f1c      /* Interrupt Enable */
-> -
-> -/* DMA Control registe defines */
-> -#define DMA_CONTROL_ST          0x00002000      /* Start/Stop Transmission */
-> -#define DMA_CONTROL_SR          0x00000002      /* Start/Stop Receive */
-> -
-> -/* Common MAC defines */
-> -#define MAC_ENABLE_TX           0x00000008      /* Transmitter Enable */
-> -#define MAC_ENABLE_RX           0x00000004      /* Receiver Enable */
-> -
-> -static inline void xgmac_mac_disable(void __iomem *ioaddr)
-> -{
-> -	u32 value = readl(ioaddr + XGMAC_DMA_CONTROL);
-> -
-> -	value &= ~(DMA_CONTROL_ST | DMA_CONTROL_SR);
-> -	writel(value, ioaddr + XGMAC_DMA_CONTROL);
-> -
-> -	value = readl(ioaddr + XGMAC_CONTROL);
-> -	value &= ~(MAC_ENABLE_TX | MAC_ENABLE_RX);
-> -	writel(value, ioaddr + XGMAC_CONTROL);
-> -}
-> -
-> -static int vfio_platform_calxedaxgmac_reset(struct vfio_platform_device *vdev)
-> -{
-> -	struct vfio_platform_region *reg = &vdev->regions[0];
-> -
-> -	if (!reg->ioaddr) {
-> -		reg->ioaddr =
-> -			ioremap(reg->addr, reg->size);
-> -		if (!reg->ioaddr)
-> -			return -ENOMEM;
-> -	}
-> -
-> -	/* disable IRQ */
-> -	writel(0, reg->ioaddr + XGMAC_DMA_INTR_ENA);
-> -
-> -	/* Disable the MAC core */
-> -	xgmac_mac_disable(reg->ioaddr);
-> -
-> -	return 0;
-> -}
-> -
-> -module_vfio_reset_handler("calxeda,hb-xgmac", vfio_platform_calxedaxgmac_reset);
-> -
-> -MODULE_VERSION(DRIVER_VERSION);
-> -MODULE_LICENSE("GPL v2");
-> -MODULE_AUTHOR(DRIVER_AUTHOR);
-> -MODULE_DESCRIPTION(DRIVER_DESC);
-> --
-> 2.20.1
+> I'm happy to take it if Catalin or Will ack the arm64 patches.
+> It case we decide to go the other way around:
 > 
-I do not have access to this HW anymore and I use Seattle to test
-vfio-platform. So
+> Acked-by: Marc Zyngier <maz@kernel.org>
+> 
+> One thing I'd like to look into though is a compile-time check that
+> nothing in the hyp_text section has a reference to a non-hyp_text
+> symbol.
+> 
+> We already have checks around non-init symbols pointing to init symbols,
+> and I was wondering if we could reuse this for fun and profit...
 
-Acked-by: Eric Auger <eric.auger@redhat.com>
+Hi Marc,
 
-Thanks
+I recall that you've suggested that before, and I even tried it around
+that time [*]. I wasn't happy enough with it to post a proper patch
+though.
 
-Eric
+[*] https://lists.cs.columbia.edu/pipermail/kvmarm/2018-May/031629.html
+
+Thanks,
+drew
+
+> 
+> Thanks,
+> 
+>         M.
+> -- 
+> Jazz is not dead. It just smells funny...
+> _______________________________________________
+> kvmarm mailing list
+> kvmarm@lists.cs.columbia.edu
+> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
+> 
 
 
 _______________________________________________
