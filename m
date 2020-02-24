@@ -2,76 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D794416A5A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 13:03:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BC9016A5AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 13:04:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/g1lAbbwzVK44VOcxVYzDHFfbvv4yax+Z9DzbSJT2s=; b=RD7X++rhp4u2Kg
-	qSUhPZQsV4IGbsal5shF1Q0usXa4WiHcEwxfkZyud19uSNQUo/qMVJzRcsL90eLQR5yi6VC0NeVyj
-	mlxYJX6MJ2Mm9Qi8fxHV7qTndLV9vpDO4NGcqzzgDALA8+mphbNgrgcUW8M77V4t2CDEBO9mIPjwx
-	S/40PW1lQQ5lZmEnrKbtRxLv/YFtg9kyNXHmXq9baEL/49ZbYMmNvmlS04zw7SwjF3Bn6uZ6rT36W
-	G4d6d1NGkEutoiy7vYcvFK5BL84kzYw/uvuRe6+V/fTWlM3r9UBnQPv0GnrY0BlJICbKm+Adwo1o5
-	Af06Y/EdBdm3zH1/YePA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k9njAcTKUY7KxF/X/zqyDZ821PAYEutacOmQvMAdY38=; b=kizZ93d1w714Lz
+	M2Th21BBKfN5XiR7N7CVFT7nB7jf7lPpetrfA+1jiKEln4TcIRJNg6fjqLO1AQgsMMgBvp/Ofm4aS
+	p8uHbafRJ0+VVX0PWzUY6QyOUPHSeSjoxdhxBUXXBQci5rjNF15JOHpjLzqjjWCE/uwaoea1rsRsq
+	K4/h14caXDeQhRPkes52X94szsSIcWyi6gMKxBt5HuSczXk/EZA/8LW6QEsbp6kFcjdJc1Ar9BdJK
+	sWOUKpdPL9v1YCg0ot9rZkL3AE0uj75XP/jJnYXrjAM4Mu5OjHdMQWG4c/g1WtfJngVqVbrydSIhV
+	yd9JlTCKgLBU0/DLuJbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6CSL-0000qR-K9; Mon, 24 Feb 2020 12:03:25 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1j6CSo-00015R-Do; Mon, 24 Feb 2020 12:03:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6CSA-0000pj-T2
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:03:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=t5KPllfCzU4AasIlRCx7IzfWUIVfM/xDWS4+N7wn5YA=; b=g1I9RIlPEPLzZWdOSbIZxCjpj
- LpMV7CqOwjfFjrIcnMazJf2/Mmg90x8pv9//qmp8jQeSXfZjcEgb41hEb0Cpa+JHdndB/RDrHMXEl
- kWz02pgsYVHwIV4OEGIvsFv7Zm5QioaBlb2MUhpFH7eu7fQoVzymGUxZZ0fMCIkyqDk1cT36KuBGE
- iO73eFzbLIc6kluM0d8NpnNsm0iSbUFe1j3WLJFgVwOe69LzYFiPwTvkfQdqP98jFOyoqtFohXZQJ
- NGcvXqREeIXSER4KikTrW7pnujpKNi56cCH2F1FGoJqfsDl2o/y/N349pCffazDf2+vgVaH715U5T
- EkbTycHjg==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:56262)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j6CS5-0002Xr-Ky; Mon, 24 Feb 2020 12:03:09 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j6CRz-0006P7-9v; Mon, 24 Feb 2020 12:03:03 +0000
-Date: Mon, 24 Feb 2020 12:03:03 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: yifeng wu <y1feng.wu1234@gmail.com>
-Subject: Re: Subject: [PATCH] arm/kernel/head.S: optimize
- __create_page_tables function
-Message-ID: <20200224120303.GQ25745@shell.armlinux.org.uk>
-References: <CAKy1Xqcnkfm7Dn9UvJ7Ufio-szQ75kbGS+GurBjuUFBydi21GA@mail.gmail.com>
- <20200224110508.GP25745@shell.armlinux.org.uk>
- <CAKy1XqdBt=LNpk-7Rt2LXU3tky=fS9jHxD0DV5CKh4wYWxFVRQ@mail.gmail.com>
+ id 1j6CSc-00014u-OX
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 12:03:46 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 515B020828;
+ Mon, 24 Feb 2020 12:03:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582545822;
+ bh=n3HYTVSZQtrqxzqedkR11BsfRasDcYFWG20hf7fgCu4=;
+ h=Date:From:To:Cc:Subject:From;
+ b=dZjS0tKuZIbi/bmwLxEawiZb2eF2dsvxNGhwdgVdVVq8apqff8kIBZT0jHRoDxzEg
+ ujnMyizhal+djA85FXTayhsZESzDwuGA39zqT7dJrn9TL1f0QrHtXpsQj6tniDXHwq
+ /Fl0tYACRFUpSmGpJRWqIRPKwp8V8xPRT7vlTqpc=
+Date: Mon, 24 Feb 2020 20:03:35 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: soc@kernel.org, arm@kernel.org
+Subject: [GIT PULL] i.MX fixes for 5.6
+Message-ID: <20200224120334.GH27688@dragon>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKy1XqdBt=LNpk-7Rt2LXU3tky=fS9jHxD0DV5CKh4wYWxFVRQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_040316_958689_03B324EE 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200224_040342_834564_3F189905 
+X-CRM114-Status: GOOD (  13.86  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,26 +74,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
+ linux-imx@nxp.com, kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 
-On Mon, Feb 24, 2020 at 07:54:07PM +0800, yifeng wu wrote:
-> Thank you very much for your reply.
-> I have tested on my machine. It takes about 0.5 seconds to copy the memory
-> (16M size) with "str" instruction, and only 0.1 seconds with "stmia"
+  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
 
-ITYM 16k.  You say "copy" but we're setting memory to zero.  I'm quite
-surprised by that difference, which CPU was this measured on?
+are available in the Git repository at:
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-fixes-5.6
+
+for you to fetch changes up to f10e58a5d20e1cf3a39a842da92c9dd0c3c23849:
+
+  soc: imx-scu: Align imx sc msg structs to 4 (2020-02-24 15:29:43 +0800)
+
+----------------------------------------------------------------
+i.MX fixes for 5.6:
+
+ - Build v7_cpu_resume() unconditionally to fix system hang in case that
+   suspend is disabled but cpuidle support is enabled.
+ - Drop unexisting Ethernet PHY device from imx8qxp-mek board.
+ - Fix SRAM compatible strings on imx6dl-colibri-eval-v3 board.
+ - Fix imx-scu driver to make sure that all messages words are written
+   sequentially.
+ - A series from Leonard Crestez to fix i.MX SC API users, having all
+   messages aligned on 4 bytes.
+ - Fix eMMC supply for phycore-som board.
+ - Drop bogus frequency setting from imx7-colibri SD/MMC device, so that
+   HS200 mode starts working and delivers better performance.
+ - Fix opp-supported-hw for i.MX7D to get consumer and industrial parts
+   work with correct frequency settings.
+ - Restore MDIO compatible to the correct one for LS1021A SoC.
+
+----------------------------------------------------------------
+Ahmad Fatoum (1):
+      ARM: imx: build v7_cpu_resume() unconditionally
+
+Fabio Estevam (1):
+      arm64: dts: imx8qxp-mek: Remove unexisting Ethernet PHY
+
+Johan Hovold (1):
+      ARM: dts: imx6dl-colibri-eval-v3: fix sram compatible properties
+
+Leonard Crestez (5):
+      firmware: imx: scu: Ensure sequential TX
+      firmware: imx: misc: Align imx sc msg structs to 4
+      firmware: imx: scu-pd: Align imx sc msg structs to 4
+      firmware: imx: Align imx_sc_msg_req_cpu_start to 4
+      soc: imx-scu: Align imx sc msg structs to 4
+
+Marco Felsch (1):
+      ARM: dts: imx6: phycore-som: fix emmc supply
+
+Oleksandr Suvorov (1):
+      ARM: dts: imx7-colibri: Fix frequency for sd/mmc
+
+Peng Fan (1):
+      ARM: dts: imx7d: fix opp-supported-hw
+
+Vladimir Oltean (1):
+      ARM: dts: ls1021a: Restore MDIO compatible to gianfar
+
+ arch/arm/boot/dts/imx6dl-colibri-eval-v3.dts      |  4 ++--
+ arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi |  1 -
+ arch/arm/boot/dts/imx7-colibri.dtsi               |  1 -
+ arch/arm/boot/dts/imx7d.dtsi                      |  6 ++---
+ arch/arm/boot/dts/ls1021a.dtsi                    |  4 ++--
+ arch/arm/mach-imx/Makefile                        |  2 ++
+ arch/arm/mach-imx/common.h                        |  4 ++--
+ arch/arm/mach-imx/resume-imx6.S                   | 24 ++++++++++++++++++++
+ arch/arm/mach-imx/suspend-imx6.S                  | 14 ------------
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts     |  5 -----
+ drivers/firmware/imx/imx-scu.c                    | 27 +++++++++++++++++++++++
+ drivers/firmware/imx/misc.c                       |  8 +++----
+ drivers/firmware/imx/scu-pd.c                     |  2 +-
+ drivers/soc/imx/soc-imx-scu.c                     |  2 +-
+ 14 files changed, 68 insertions(+), 36 deletions(-)
+ create mode 100644 arch/arm/mach-imx/resume-imx6.S
 
 _______________________________________________
 linux-arm-kernel mailing list
