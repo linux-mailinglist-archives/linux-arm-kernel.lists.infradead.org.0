@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 012FC16AC88
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:00:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D043A16AC89
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:00:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kxDoDla3zdHHIb7iEHxxCRyb+uD/qp8/n1FMrzk60HY=; b=TrZpRMw3M2aFjT
-	Wn00/SUQMr8Zum9cMYl2zG90eE10wg+xqWAZ3ZAVpWEmjwO1FT9Rln1gntsoQnYGBvjuiCy768KYx
-	vIOqd0Fnum0UWUDssumdTRam2hnPayLYLjyQWIKVCkBH13NBv6vhC1IEqlKlHahUqB3tBA0dijsQJ
-	CbpGAyUU9I3AA95vd+q4X46N7/67vFKcTHm/yff51jjHDNS82A7dA2CfkbFeEo6+MvjwXoUpYQaR6
-	AcqV5TXmsX749izyqjtuzqVtFQX2biLHTH9D5N3ZSU8vzgC2Hm5YrLOziW9eS6X1gVUX8UCqxByPk
-	NKX5A3fELp98BY94J1UA==;
+	List-Owner; bh=PfLpfLUD9hjnaxgXIPeA9lJpDcOh/0GFHt0bBqaZgNY=; b=M4aRSCnKcso0GV
+	tUiGjOkyVCrRTVaIKRXAkPOtO43hCMdXe5D4GDW5HewUEpCXP4DkTse4qB3sC5fx1faWm07Ld8vkl
+	9gshcbiLnvye8dTWAIOqdsmTdeiv/hmJ5j9veKFe5m76uRaJ6CfG2UIg5i8yCZmDurOvZ4Bggbwsq
+	gf0f7aEKgwIDU9UCRgHkRlJ7KuhXHL6aHWZbYT/JdS3oH21M0Ecrhpd/oOGbl3RI2itzFP/kT0B+r
+	PjoqXCyuoHLdxII9Z9vWGwJDwu+g076+DKwRMRto+JHuirnR66RfSXZhRy3U6q8ZqXpeEbxjr2Zb0
+	qrIf0Y24+/O3ewkzsoOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6H5m-0004Kx-S8; Mon, 24 Feb 2020 17:00:26 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1j6H5y-0004XK-Ve; Mon, 24 Feb 2020 17:00:38 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6H4V-0002G1-Cl
+ id 1j6H4V-0002GP-WF
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 16:59:09 +0000
-Received: by mail-wm1-x341.google.com with SMTP id b17so71355wmb.0
+Received: by mail-wm1-x343.google.com with SMTP id t23so55498wmi.1
  for <linux-arm-kernel@lists.infradead.org>;
  Mon, 24 Feb 2020 08:59:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=XLHzcG1rM7CKaHACIaWqlr851SfTiMG1TWiRRSjmhnI=;
- b=cYA2Ki3712y1AnkYyhSFyI0gPtpDlkJM+1q36yhaQXLM5yHq3MpQEGpQGFn5acTJNq
- F0BBJHCxoFTbdxkeT2vlUqDSU2bBZcU0lb8elvwHyd4Vg/zVkkyjhd5+jJVBYTxNoe/1
- T887AvB5daQAFRCqRCHFVryjl79Ik52OOPX76rCW6nsW+PTelLhaY0/XaXm/hm7XJZOT
- bDtyCARPGJe9qEjvAqV4E1zbPS4JHztKZyP48RYwOQ+6UtYGoT41rVTvmBpGTezTRswQ
- jOK+z0mNca9ZAwbWfU/DpnD214mbXaRo45wfSK3F3fh4dc+SQHsQqOySm7gSx2MTFu0R
- hVPA==
+ bh=HsNqDpM5GYOb0rP3SKvjSjiXAgrPp7/dDnFzXTvMfm0=;
+ b=fxdWSvL7/PlqMuOjCbpoyDK0oOMZfWMx8Bn0sQViiqiE3H2JO3U4xq75c/gD0NU1IB
+ 5LX+dV8sT5h1EGNCfmF3/Oc4OwWIiPSscSgJ9EdoXDkOLYlFea7GgkHZEKGQ4n3RX2xc
+ tE0Z9fTNGrynG92HHnK+qNkjvWnd1/LmhQMR8Wkp+U8ifjROHa1WaQQXNc85lp2jIC+P
+ lz56h7v5lvnlEFIVnmE4jx/Q/BDcbY3YEs++7gzkztWZ4dCkTt2gdyf4zasHzdwGusEP
+ V4s2WLd6VesfOZIZPnXJjsJsg1FHR6SX/xW3H+Vqf2K7q/htUfeBaETDNaFwfGHo9nb3
+ TUyw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=XLHzcG1rM7CKaHACIaWqlr851SfTiMG1TWiRRSjmhnI=;
- b=kovvPzbFVRKAcbn/yjPMEFg/817xe48HiifILmIdz1641sjRt8P8Kv4rOTPbwG9832
- hxkoQZowbQ+IgagkSVb3kGa7ZzXv2Xk9zmz5JF3wiCcZ8DEd9+MMgORnfA9lBiVDd4f4
- Mv6hIfRfKjrxTSk/WubV90GuUH434mBDx5kBvWKgw1gNjRswKLypuHo6MJXMo85hk+Ly
- Ri93NYxGxZsygtYWZiu2O8DsyBO9y28UkFDvMrGi/R6GnliJo0fJNeYjV1XHGnO1zGjV
- o68UgNfsbQ0o3dlSQX4yYjuioCxzCN/6G9wvWgrsveMGzddzM4Pw47rZo6e4gPBNawD+
- tg5Q==
-X-Gm-Message-State: APjAAAXKkhOYRz/k3FDCzaWgVmNENhEk9W8dyF59RbL3bXRjMSVwFyXq
- jo2avwu7IehsfFwLXyvyPx9M9Q==
-X-Google-Smtp-Source: APXvYqyAQvDHFPlwol084YtmoxeK9ALvce8BoTf5MrLynyThLVJi07+L0kfZvMdagU1zen+M1p+zPA==
-X-Received: by 2002:a7b:c088:: with SMTP id r8mr33668wmh.18.1582563545996;
- Mon, 24 Feb 2020 08:59:05 -0800 (PST)
+ bh=HsNqDpM5GYOb0rP3SKvjSjiXAgrPp7/dDnFzXTvMfm0=;
+ b=Q59qq63Hizxvc+Z1faHnDiSXrL8IREsjWaH1qZIFf8pY1n6GxdFXqIPxf/z/FLKYz9
+ mZH23NQQyZiWwczDMBlumf/UzvmeGfwUtsa+lNSoXEnOTnzO3KQwN9F387AZaF1bw0Bh
+ PFRobVscmK/qLbURDJVU4bWq+MByPjGbHaSJGNSsf+/wLqPTHF0Yv2RViFNtXdI3W5kF
+ MFMJleobsDlrVkq9bvWD9KStvBHX2l6hTd6ll8UD8JlCP1iQFaDnmFIHXgkkpJSBwZBS
+ YD74bSC4pMMvRWxpGjEGDN5C4YDhB8uXAHusEtP4c6z6xNq2B2sXgM04tVYh3KZXnF49
+ Dsxw==
+X-Gm-Message-State: APjAAAXaIFuX+ng2+P6GjzlkFm8i8BqyCifK8AMvvklnO8RSqiRIJ0dR
+ KqbHSDwO+z0JLuIIY5s0I9pXjw==
+X-Google-Smtp-Source: APXvYqxzLvSxV15TQeDzuS7Vx3zfQgb1/0PPrdplrfLn1QNB4Up5cq5+1azMjxbcKStUM/cjgwhbxA==
+X-Received: by 2002:a7b:c416:: with SMTP id k22mr35940wmi.10.1582563546869;
+ Mon, 24 Feb 2020 08:59:06 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id b10sm19473978wrt.90.2020.02.24.08.59.05
+ by smtp.gmail.com with ESMTPSA id b10sm19473978wrt.90.2020.02.24.08.59.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 08:59:05 -0800 (PST)
+ Mon, 24 Feb 2020 08:59:06 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  iommu@lists.linux-foundation.org, will@kernel.org, bhelgaas@google.com
-Subject: [PATCH v2 4/6] iommu/arm-smmu-v3: Add command queue batching helpers
-Date: Mon, 24 Feb 2020 17:58:44 +0100
-Message-Id: <20200224165846.345993-5-jean-philippe@linaro.org>
+Subject: [PATCH v2 5/6] iommu/arm-smmu-v3: Batch context descriptor
+ invalidation
+Date: Mon, 24 Feb 2020 17:58:45 +0100
+Message-Id: <20200224165846.345993-6-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200224165846.345993-1-jean-philippe@linaro.org>
 References: <20200224165846.345993-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_085907_444090_FD37E1FA 
-X-CRM114-Status: GOOD (  13.98  )
+X-CRM114-CacheID: sfid-20200224_085908_107567_90D9BCA3 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,88 +106,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As more functions will implement command queue batching, add two helpers
-to simplify building a command list.
+Rather than publishing one command at a time when invalidating a context
+descriptor, batch the commands for all SIDs in the domain.
 
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 37 ++++++++++++++++++++++++++-----------
- 1 file changed, 26 insertions(+), 11 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 068a16d0eabe..beeec366bc41 100644
+index beeec366bc41..12b2a0fa747e 100644
 --- a/drivers/iommu/arm-smmu-v3.c
 +++ b/drivers/iommu/arm-smmu-v3.c
-@@ -548,6 +548,11 @@ struct arm_smmu_cmdq {
- 	atomic_t			lock;
- };
+@@ -1512,6 +1512,7 @@ static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
+ 	size_t i;
+ 	unsigned long flags;
+ 	struct arm_smmu_master *master;
++	struct arm_smmu_cmdq_batch cmds = {};
+ 	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	struct arm_smmu_cmdq_ent cmd = {
+ 		.opcode	= CMDQ_OP_CFGI_CD,
+@@ -1525,12 +1526,12 @@ static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
+ 	list_for_each_entry(master, &smmu_domain->devices, domain_head) {
+ 		for (i = 0; i < master->num_sids; i++) {
+ 			cmd.cfgi.sid = master->sids[i];
+-			arm_smmu_cmdq_issue_cmd(smmu, &cmd);
++			arm_smmu_cmdq_batch_add(smmu, &cmds, &cmd);
+ 		}
+ 	}
+ 	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
  
-+struct arm_smmu_cmdq_batch {
-+	u64				cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
-+	int				num;
-+};
-+
- struct arm_smmu_evtq {
- 	struct arm_smmu_queue		q;
- 	u32				max_stalls;
-@@ -1482,6 +1487,24 @@ static int arm_smmu_cmdq_issue_sync(struct arm_smmu_device *smmu)
- 	return arm_smmu_cmdq_issue_cmdlist(smmu, NULL, 0, true);
+-	arm_smmu_cmdq_issue_sync(smmu);
++	arm_smmu_cmdq_batch_submit(smmu, &cmds);
  }
  
-+static void arm_smmu_cmdq_batch_add(struct arm_smmu_device *smmu,
-+				    struct arm_smmu_cmdq_batch *cmds,
-+				    struct arm_smmu_cmdq_ent *cmd)
-+{
-+	if (cmds->num == CMDQ_BATCH_ENTRIES) {
-+		arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, false);
-+		cmds->num = 0;
-+	}
-+	arm_smmu_cmdq_build_cmd(&cmds->cmds[cmds->num * CMDQ_ENT_DWORDS], cmd);
-+	cmds->num++;
-+}
-+
-+static int arm_smmu_cmdq_batch_submit(struct arm_smmu_device *smmu,
-+				      struct arm_smmu_cmdq_batch *cmds)
-+{
-+	return arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, true);
-+}
-+
- /* Context descriptor manipulation functions */
- static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
- 			     int ssid, bool leaf)
-@@ -2220,10 +2243,9 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
- 				   size_t granule, bool leaf,
- 				   struct arm_smmu_domain *smmu_domain)
- {
--	u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
- 	struct arm_smmu_device *smmu = smmu_domain->smmu;
- 	unsigned long start = iova, end = iova + size;
--	int i = 0;
-+	struct arm_smmu_cmdq_batch cmds = {};
- 	struct arm_smmu_cmdq_ent cmd = {
- 		.tlbi = {
- 			.leaf	= leaf,
-@@ -2242,18 +2264,11 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
- 	}
- 
- 	while (iova < end) {
--		if (i == CMDQ_BATCH_ENTRIES) {
--			arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, false);
--			i = 0;
--		}
--
- 		cmd.tlbi.addr = iova;
--		arm_smmu_cmdq_build_cmd(&cmds[i * CMDQ_ENT_DWORDS], &cmd);
-+		arm_smmu_cmdq_batch_add(smmu, &cmds, &cmd);
- 		iova += granule;
--		i++;
- 	}
--
--	arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, true);
-+	arm_smmu_cmdq_batch_submit(smmu, &cmds);
- 
- 	/*
- 	 * Unfortunately, this can't be leaf-only since we may have
+ static int arm_smmu_alloc_cd_leaf_table(struct arm_smmu_device *smmu,
 -- 
 2.25.0
 
