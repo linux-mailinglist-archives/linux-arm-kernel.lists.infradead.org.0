@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61F3516B17F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 22:07:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AB7716B1DF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 22:12:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bvBpjD8cvu0keMWGGJVp/Sp7X9+D+GMZozCaP9Msizk=; b=iPYGjbkCrHY1OW
-	x9QYhfdru/8UX08tb43C5zwO/U7BY5WlxZnrBpuWSLn/toeEI5oC8gdI9DA4jzs4kmHk1obMAkJqe
-	pDRkcYqi2eh15kCkLvUROFJkCud7AsG/CKU74S/4ZkjtQn8eel5miQMOrxqdO9tg73EZ7/D9TyBGr
-	P0cT6AZX2EGcqTh6id59TFNM7SrHxq5WMH45xPDMj6QCOhbs30m70qFyH2fOZrylh6bHS3CybefyE
-	nWSBHNyS28/fmvaywXup6RGAnt8abC9HuxjO5NDBexeZps98eioe42w1VXvkRfGIjtpspsK4rIijv
-	2o+3aBFp2Ui8AYMnNuqw==;
+	List-Owner; bh=2cW4D038Yv0g5rczh8w0KhOEjiiFpT4/cgANf7rfoUA=; b=K/BsKo7ZRvW2uX
+	h/rHAaXayi8QxAKQdpx+BP+G1uHDN1PCogZDu4sKsDs+EKtYajBEmRbDPO1jENqxdqzV2EHYZGlRy
+	Rj1zKTRJVeh/45AegipCTXT0aab1sugV1egs6E16umnMggm2yLSP211N9xuCyGMCtv9lVbwSHUiv6
+	xIVkO/1Hk3zy/s5lLqcWI+AuoK1AOm0zEe94gOJZbMbxCvqN30nFWt1Db9zgWj2Z/5SBNY9oq7tkg
+	XdojknIhD1juOT1l5+2+ZF/S7FpketpGgVXNxVAlYWoua1lALC1pk5eJkhYoZYP90zlPFKKnql+px
+	XBZ/9TSh0pTSBV6NrkTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Kwz-00012N-3M; Mon, 24 Feb 2020 21:07:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j6L1s-0002ol-K9; Mon, 24 Feb 2020 21:12:40 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Kwo-00011g-Nw
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 21:07:28 +0000
-Received: from mail-qk1-f177.google.com (mail-qk1-f177.google.com
- [209.85.222.177])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6532D24672
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 21:07:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582578445;
- bh=BqA0O9YfAM+KWjpoJp8SHtZUFCZOd5pENvqj3XkLEKo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=aTfcyDzmhJ6ohj5L5ouOB1GrBgMSVOIQ6KY1C7WnaSekzO5LXMhdg4OJqCjfjJiRP
- qmwin1qsJfTZ/lSkkdC8vLIml58NtuaTagQHkq5YXaacUkhw2Po/uVtVVB9PhgU1N5
- /CrYKCDYBwO7x/8/cVwDqpJ7pr3YsOpGffy1RU6s=
-Received: by mail-qk1-f177.google.com with SMTP id 11so5906213qkd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 13:07:25 -0800 (PST)
-X-Gm-Message-State: APjAAAUlBmJuhtIy/G7DyiADLUOvGN5TjAqGDSVBUfHnCTWrK3B6OduX
- 8eHq3TCntIyxOCpZEe/mlZUK6NWYDHPl9a9bgQ==
-X-Google-Smtp-Source: APXvYqxyIKRl+ytGkrl8y4nsI9kuu2EzwIS1BL0FWJI4NahKo9eeHl3Hh9n0+DHUeLlg6eJeZeY8TyXLzwMa3boxSVU=
-X-Received: by 2002:a37:a750:: with SMTP id q77mr1484754qke.119.1582578444330; 
- Mon, 24 Feb 2020 13:07:24 -0800 (PST)
+ id 1j6L1f-0002nE-RK; Mon, 24 Feb 2020 21:12:29 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01OLCGe0072295;
+ Mon, 24 Feb 2020 15:12:16 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1582578736;
+ bh=7fKOJ3M2UjkXuGhNEojycNJyumHodeR9QVJFJrr3Hhw=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=mW/HohppwCft3VZJXOWyOaQKpqKSoin2c5Bdp4N4i7k4URIS/NwQ047QwNt1+Lxrz
+ yJSlNdpP6BrFR2ekj+0kmLt9URmj/Hg6wSN25YwrPvQbtIfiUTojajLuAkBn8/Vfqc
+ 51Y84n/oe49QWrgYRa3CX4p6I8jp0TlymqAbfXd4=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01OLCGki037258
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 24 Feb 2020 15:12:16 -0600
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 24
+ Feb 2020 15:12:15 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 24 Feb 2020 15:12:15 -0600
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01OLCG63022267;
+ Mon, 24 Feb 2020 15:12:16 -0600
+Date: Mon, 24 Feb 2020 15:12:15 -0600
+From: Bin Liu <b-liu@ti.com>
+To: Colin King <colin.king@canonical.com>
+Subject: Re: [PATCH] usb: musb: remove redundant assignment to variable ret
+Message-ID: <20200224211215.GA28269@iaqt7>
+Mail-Followup-To: Bin Liu <b-liu@ti.com>,
+ Colin King <colin.king@canonical.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+References: <20200222135420.135692-1-colin.king@canonical.com>
 MIME-Version: 1.0
-References: <20191230144402.30195-1-ulf.hansson@linaro.org>
- <20191230144402.30195-3-ulf.hansson@linaro.org>
- <CAL_Jsq+cAKEGOMnBwwvLt03zx8Gcxh4ijziaBnnY5TPEG0Mekg@mail.gmail.com>
- <CAPDyKFr_7qmKjpWcFegVBsfKBJePtukuriwW-8KX6c2a24ojEA@mail.gmail.com>
- <CAL_JsqJN3UtM9T2D71j+2CORxWjL3s7cjkFX579p85WQuKgPNA@mail.gmail.com>
- <CAPDyKFq=0Y=79pFzxmnqA=oFbOVVJ9T2UthOie8ok5JTp7ucRw@mail.gmail.com>
- <CAL_Jsq+NvVC0Jjb_g0SDACG0Q-wTR+w-VHEq+wzsMLyXhcjX8g@mail.gmail.com>
- <CAPDyKFp_rMvo==2NqV6L9V_Q0Dc8Qafc=1FNb=gGxsexM8MXwA@mail.gmail.com>
- <CAL_Jsq+e3Az6LV9Bc=idJ-uj6EOzrZ008NRX_ddVb=NuP0jbmA@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+e3Az6LV9Bc=idJ-uj6EOzrZ008NRX_ddVb=NuP0jbmA@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 24 Feb 2020 15:07:13 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKPO71LHhN_ZszDqrPbVQ64gxa2817KM5Ro-jpPctpz4w@mail.gmail.com>
-Message-ID: <CAL_JsqKPO71LHhN_ZszDqrPbVQ64gxa2817KM5Ro-jpPctpz4w@mail.gmail.com>
-Subject: Re: [PATCH v5 02/15] dt: psci: Update DT bindings to support
- hierarchical PSCI states
-To: Ulf Hansson <ulf.hansson@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <20200222135420.135692-1-colin.king@canonical.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_130726_825255_42E6F151 
-X-CRM114-Status: GOOD (  50.38  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200224_131227_977213_AAEEF5D0 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,295 +97,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 21, 2020 at 10:59 AM Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Mon, Jan 20, 2020 at 6:57 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> >
-> > On Fri, 17 Jan 2020 at 18:36, Rob Herring <robh+dt@kernel.org> wrote:
-> > >
-> > > On Fri, Jan 17, 2020 at 10:42 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > > >
-> > > > On Thu, 16 Jan 2020 at 19:19, Rob Herring <robh+dt@kernel.org> wrote:
-> > > > >
-> > > > > On Tue, Jan 14, 2020 at 11:55 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > > > > >
-> > > > > > On Mon, 13 Jan 2020 at 20:53, Rob Herring <robh+dt@kernel.org> wrote:
-> > > > > > >
-> > > > > > > On Mon, Dec 30, 2019 at 8:44 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > > > > > > >
-> > > > > > > > Update PSCI DT bindings to allow to represent idle states for CPUs and the
-> > > > > > > > CPU topology, by using a hierarchical layout. Primarily this is done by
-> > > > > > > > re-using the existing DT bindings for PM domains [1] and for PM domain idle
-> > > > > > > > states [2].
-> > > > > > > >
-> > > > > > > > Let's also add an example into the document for the PSCI DT bindings, to
-> > > > > > > > clearly show the new hierarchical based layout. The currently supported
-> > > > > > > > flattened layout, is already described in the ARM idle states bindings [3],
-> > > > > > > > so let's leave that as is.
-> > > > > > > >
-> > > > > > > > [1] Documentation/devicetree/bindings/power/power_domain.txt
-> > > > > > > > [2] Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > > > > > > [3] Documentation/devicetree/bindings/arm/idle-states.txt
-> > > > > > > >
-> > > > > > > > Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
-> > > > > > > > Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
-> > > > > > > > Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-> > > > > > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > > > > > > ---
-> > > > > > > >
-> > > > > > > > Changes in v5:
-> > > > > > > >         - None.
-> > > > > > >
-> > > > > > > First I'm seeing this as the DT list was not copied. The example has
-> > > > > > > problems when running 'make dt_binding_check':
-> > > > > > >
-> > > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
-> > > > > > > compatible: Additional items are not allowed ('arm,armv8' was
-> > > > > > > unexpected)
-> > > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@0:
-> > > > > > > compatible: ['arm,cortex-a53', 'arm,armv8'] is too long
-> > > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
-> > > > > > > compatible: Additional items are not allowed ('arm,armv8' was
-> > > > > > > unexpected)
-> > > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml: cpu@1:
-> > > > > > > compatible: ['arm,cortex-a57', 'arm,armv8'] is too long
-> > > > > > >
-> > > > > > > 'arm,armv8' is only valid for s/w models.
-> > > > > >
-> > > > > > Perhaps you have a different version of the tools than I have (I have
-> > > > > > tried both on v.5.5-rc5 and todays linux-next), because I can't
-> > > > > > reproduce these errors at my side when running "make
-> > > > > > dt_binding_check".
-> > > > > >
-> > > > > > Can you please check again?
-> > > > >
-> > > > > Are you setting DT_SCHEMA_FILES? If so, then arm/cpus.yaml (or any
-> > > > > other schema) isn't loaded and used for validation. That schema is the
-> > > > > source of this error.
-> > > >
-> > > > Yes. Aha, that's why then. Perhaps that needs to be clarified
-> > > > somewhere in the documentation of tool.
-> > >
-> > > Patches welcome. :) I'm kind of tired of writing documentation that no
-> > > one comments on and and seemingly only sometimes read. </rant> :(
-> >
-> > I understand your concerns. A patch is on it's way.
-> >
-> > >
-> > > > Anyway, I used because it was kind of hard to process all the error
-> > > > output one gets when building all yaml files at once.
-> > >
-> > > dtbs_check has a lot which is where setting DT_SCHEMA_FILES is
-> > > primarily useful. dt_binding_check should be error/warning free, but
-> > > yes linux-next and rc1/2 are frequently broken.
-> > >
-> > > > > It is failing in my CI job:
-> > > > > https://gitlab.com/robherring/linux-dt-bindings/-/jobs/405298185
-> > > > >
-> > > > > Is dt-schema up to date? Though I can't think of any recent changes
-> > > > > that would impact this. This check has been there a while and I fixed
-> > > > > all the dts files.
-> > > > >
-> > > > > Do you see psci.example.dt.yaml getting built?
-> > > >
-> > > > Yes, but with using DT_SCHEMA_FILES.
-> > > >
-> > > > Anyway, now I can re-produced the errors, so then I should be able to
-> > > > fix them. :-)
-> > > >
-> > > > >
-> > > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
-> > > > > > > idle-states: cluster-retention:compatible:0: 'arm,idle-state' was
-> > > > > > > expected
-> > > > > > > Documentation/devicetree/bindings/arm/psci.example.dt.yaml:
-> > > > > > > idle-states: cluster-power-down:compatible:0: 'arm,idle-state' was
-> > > > > > > expected
-> > > > > > >
-> > > > > > > The last 2 are due to my conversion of the idle-states binding which
-> > > > > > > is in my tree now. Probably need to add 'domain-idle-state' as a
-> > > > > > > compatible at a minimum. It looks like domain-idle-state.txt is pretty
-> > > > > > > much the same as arm/idle-state.txt, so we should perhaps merge them.
-> > > > > >
-> > > > > > Ahh, so maybe *all* of the above problems are caused by conflicts in
-> > > > > > the arm-soc tree with changes from your tree!?
-> > > > >
-> > > > > Shouldn't be. arm/cpus.yaml has been in place for a few cycles now.
-> > > > >
-> > > > > >
-> > > > > > In regards to merging files, I am fine by that if that helps.
-> > > > > >
-> > > > > > >
-> > > > > > > There's some bigger issues though.
-> > > > > > >
-> > > > > > > > ---
-> > > > > > > >  .../devicetree/bindings/arm/cpus.yaml         |  15 +++
-> > > > > > > >  .../devicetree/bindings/arm/psci.yaml         | 104 ++++++++++++++++++
-> > > > > > > >  2 files changed, 119 insertions(+)
-> > > > > > > >
-> > > > > > > > diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
-> > > > > > > > index c23c24ff7575..7a9c3ce2dbef 100644
-> > > > > > > > --- a/Documentation/devicetree/bindings/arm/cpus.yaml
-> > > > > > > > +++ b/Documentation/devicetree/bindings/arm/cpus.yaml
-> > > > > > > > @@ -242,6 +242,21 @@ properties:
-> > > > > > > >
-> > > > > > > >        where voltage is in V, frequency is in MHz.
-> > > > > > > >
-> > > > > > > > +  power-domains:
-> > > > > > > > +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> > > > > > > > +    description:
-> > > > > > > > +      List of phandles and PM domain specifiers, as defined by bindings of the
-> > > > > > > > +      PM domain provider (see also ../power_domain.txt).
-> > > > > > > > +
-> > > > > > > > +  power-domain-names:
-> > > > > > > > +    $ref: '/schemas/types.yaml#/definitions/string-array'
-> > > > > > > > +    description:
-> > > > > > > > +      A list of power domain name strings sorted in the same order as the
-> > > > > > > > +      power-domains property.
-> > > > > > > > +
-> > > > > > > > +      For PSCI based platforms, the name corresponding to the index of the PSCI
-> > > > > > > > +      PM domain provider, must be "psci".
-> > > > > > > > +
-> > > > > > > >    qcom,saw:
-> > > > > > > >      $ref: '/schemas/types.yaml#/definitions/phandle'
-> > > > > > > >      description: |
-> > > > > > > > diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-> > > > > > > > index 7abdf58b335e..8ef85420b2ab 100644
-> > > > > > > > --- a/Documentation/devicetree/bindings/arm/psci.yaml
-> > > > > > > > +++ b/Documentation/devicetree/bindings/arm/psci.yaml
-> > > > > > > > @@ -102,6 +102,34 @@ properties:
-> > > > > > > >        [1] Kernel documentation - ARM idle states bindings
-> > > > > > > >          Documentation/devicetree/bindings/arm/idle-states.txt
-> > > > > > > >
-> > > > > > > > +  "#power-domain-cells":
-> > > > > > >
-> > > > > > > This is wrong because you are saying the /psci node should have these
-> > > > > > > properties. You need to define the child nodes (at least a pattern you
-> > > > > > > can match on) and put these properties there.
-> > > > > >
-> > > > > > Right, good point.
-> > > > > >
-> > > > > > I searched for some similar examples for how to encode this, but
-> > > > > > couldn't really find something useful.
-> > > > >
-> > > > > You need something like:
-> > > > >
-> > > > > patternProperties:
-> > > > >   '^(cluster|cpu)-pd[0-9a-f]+$':
-> > > > >     type: object
-> > > > >     properties:
-> > > > >       ... and then the properties in the child nodes
-> > > > >
-> > > > > Note that its going to look weird for the 10th PD with 'cpu-pda'. So
-> > > > > maybe add a '-'.
-> > > > >
-> > > >
-> > > > Great, I try this! Thanks.
-> > > >
-> > > > > > One more thing, it seems like
-> > > > > > this change is also needed for the common power-domain bindings, as
-> > > > > > that also specifies parent/childs domains.
-> > > > >
-> > > > > Normally, we'd have a $ref to power-domain.yaml, but for that to work
-> > > > > here, you'll have to expand the node names ($nodename).
-> > > >
-> > > > Not sure I get that, but interpret this as it's not a good idea to use
-> > > > a $ref to power-domain.yaml. Right?
-> > >
-> > > It means either this binding is odd or power-domain.yaml needs some
-> > > more work or both. Ideally, we only have 1 type definition of any
-> > > property name.
-> > >
-> > > Probably the easiest thing to do is extend the node name pattern to
-> > > something like this:
-> > >
-> > > pattern: "^(power-controller|power-domain)([@\-].*)?$"
-> > >
-> > > And then name your nodes like this:
-> > >
-> > > power-domain-cpu-0
-> > > power-domain-cluster
-> > >
-> > > That's more consistent anyways.
-> >
-> > Looks like a good idea! I try that.
-> >
-> > >
-> > > > > > Anyway, I would really appreciate if you can suggest something more
-> > > > > > detailed for you think this should be done!?
-> > > > > >
-> > > > > > >
-> > > > > > > > +    description:
-> > > > > > > > +      The number of cells in a PM domain specifier as per binding in [3].
-> > > > > > > > +      Must be 0 as to represent a single PM domain.
-> > > > > > > > +
-> > > > > > > > +      ARM systems can have multiple cores, sometimes in an hierarchical
-> > > > > > > > +      arrangement. This often, but not always, maps directly to the processor
-> > > > > > > > +      power topology of the system. Individual nodes in a topology have their
-> > > > > > > > +      own specific power states and can be better represented hierarchically.
-> > > > > > > > +
-> > > > > > > > +      For these cases, the definitions of the idle states for the CPUs and the
-> > > > > > > > +      CPU topology, must conform to the binding in [3]. The idle states
-> > > > > > > > +      themselves must conform to the binding in [4] and must specify the
-> > > > > > > > +      arm,psci-suspend-param property.
-> > > > > > > > +
-> > > > > > > > +      It should also be noted that, in PSCI firmware v1.0 the OS-Initiated
-> > > > > > > > +      (OSI) CPU suspend mode is introduced. Using a hierarchical representation
-> > > > > > > > +      helps to implement support for OSI mode and OS implementations may choose
-> > > > > > > > +      to mandate it.
-> > > > > > > > +
-> > > > > > > > +      [3] Documentation/devicetree/bindings/power/power_domain.txt
-> > > > > > > > +      [4] Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > > > > > > +
-> > > > > > > > +  power-domains:
-> > > > > > > > +    $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> > > > > > > > +    description:
-> > > > > > > > +      List of phandles and PM domain specifiers, as defined by bindings of the
-> > > > > > > > +      PM domain provider.
-> > > > > > >
-> > > > > > > A schema for 'domain-idle-states' property is missing.
-> > > > > >
-> > > > > > Right, let's figure out the best way for how to add that.
-> > > > >
-> > > > > If power-domain.yaml is referenced, then don't need anything else
-> > > > > unless you can define the number of phandles (looks like you can't?).
-> > > >
-> > > > The number phandles should be one. At least, I think we can start with
-> > > > that and extend the binding if needed.
-> > >
-> > > But there's 2 for the cluster in the example.
-> >
-> > What example do you refer to?
-> >
-> > For each power controller node for psci, only one phandle needs to be
-> > specified in "power-domains", as that should be sufficient to describe
-> > the topology.
->
-> I was referring to 'domain-idle-states' in this patch:
->
-> +      CLUSTER_PD: cluster-pd {
-> +        #power-domain-cells = <0>;
-> +        domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
-> +      };
+Hi,
 
-Going to send a patch for all this? I'd like to not have warnings in v5.6.
+On Sat, Feb 22, 2020 at 01:54:20PM +0000, Colin King wrote:
+> From: Colin Ian King <colin.king@canonical.com>
+> 
+> Variable ret is being initialized with a value that is never read,
+> it is assigned a new value later on. The assignment is redundant
+> and can be removed.
+> 
+> Addresses-Coverity: ("Unused value")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 
-Rob
+Queued for v5.7-rc1. Thanks.
+
+-Bin.
 
 _______________________________________________
 linux-arm-kernel mailing list
