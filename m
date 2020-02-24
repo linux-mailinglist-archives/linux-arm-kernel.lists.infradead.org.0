@@ -2,48 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2C7C16A07B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:53:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B4A316A08A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:54:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZtATH7AYdz0MWOx0BiN696FjbzB/itIpSRVgXy17pf4=; b=DDRi/pfCW2KHeY
-	PT1vwbdx4x7PMj03UI4GtWV/TVmNZaVvFHX4S328+RcD6a2EGZv1AYsLJ42FnIRhSKFOAswLHefEy
-	Hi2fVT+UxIGJDPx7iFhEZ3TGrkw/EuwRaOMIcRM3OedHDAH+Yjb2QJvGCyAloZf0784KpgDodjLLT
-	XNkBHM6AthIsyx6FCY1bC0/Yj4Js/lE5VX8QfPe0B4oc6/wgVOQyPM7MDd+EXRAU1PlSY6GpYXPfG
-	K1zPvB+nzDyhZqAhCf2P9L3IaEH5gVJlX+gycjUUeJctz4DfESWwTaC5Ezy/gzdHUccYWPA49hs4Q
-	pZibHPhzSf+5mb/qzPwA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aKdrVMDNHz3cDQ4SL8jtY6S+nl6dZt+6wK4rQuogU8o=; b=YVeGZcVeUbbUKP
+	nVKTUxarWLYIh+WD1qA87aGMoWeqBAIcCOYEv1sYlYEDE/yaymShXdPXxQAOsPch5iC3sWjQ9w6pk
+	zNxusyO8MKzru1gtN5bdAS2mRFOOgegyT99MQTnVGCArtQcRApkq2lEI30RkiF1+xPuEYSsQTFvmQ
+	WHHG1wg2aRTCHfef33eBMUww6kUU4Q9KPvkutv1x21HxcrH1tFkVGK8t4TjXRCH+saMdADSZQ3MwL
+	SjYeDzpGXbTVQb7/HbWeakReXj0P8/esxFgoLbH+2wGOgIFN/TAcSVFONOTXwwREpkV1ye/NZgiQC
+	PB3re6iVFWrpSe2hZIIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69Ue-0006ur-6t; Mon, 24 Feb 2020 08:53:36 +0000
+	id 1j69VA-0007EZ-1q; Mon, 24 Feb 2020 08:54:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69UL-0006u4-V6; Mon, 24 Feb 2020 08:53:19 +0000
+ id 1j69UP-0006ud-Ad; Mon, 24 Feb 2020 08:53:22 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD2602080D;
- Mon, 24 Feb 2020 08:53:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2C58A20828;
+ Mon, 24 Feb 2020 08:53:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534397;
- bh=Ugc7dAKlC3R+DmK4jm+0O+ZH1JP8HnCfRCnDPMCyNBY=;
- h=From:To:Cc:Subject:Date:From;
- b=M6V5BoN3aIanBu9W67/8FCFljuvsP/AOnrv6eMUZzK50fmz1Ut13nmtdFHSs1q0Vy
- HTACB6z01GC4bHimMWIPhZNp5k7mp1ChYEo/5FMtLBa9lBD4EA1TXuO9j3UOV92K5c
- q2Cqf4vRkT37dayXHP2nuDpVFS+f1AXeAeGBLd4o=
+ s=default; t=1582534401;
+ bh=wxYZPzfXng0YXGKSFR56XoxCarvW4FF4dcA1IUsRgQM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=uyfipuKypot1ZNsk6pCK3NTpOJVPAuGsjK2Vokb4MqXOIax4jESjCNT72vVm24Soh
+ G62/NBCe5lbx0KQrvdKwtyjXXqPXuEOPHzDuEOQGBx2nPHd1s498k1XNxjHfDriFEI
+ 7dIPCwjfkkuoMdb/kCwH3ms4KPhhm0vzL7g+cqqs=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 00/18] Clean driver, module and FW versions
-Date: Mon, 24 Feb 2020 10:52:53 +0200
-Message-Id: <20200224085311.460338-1-leon@kernel.org>
+Subject: [PATCH net-next v1 01/18] net/bond: Delete driver and module versions
+Date: Mon, 24 Feb 2020 10:52:54 +0200
+Message-Id: <20200224085311.460338-2-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
+References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005318_047046_E1BBDFFC 
-X-CRM114-Status: GOOD (  11.82  )
+X-CRM114-CacheID: sfid-20200224_005321_408216_B565059D 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -96,117 +98,64 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-Change log:
- v1:
-  * Split all FW cleanups patches to separate patches
-  * Fixed commit message
-  * Deleted odd DRV_RELDATE
-  * Added everyone from MAINTAINERS file
- v0: https://lore.kernel.org/netdev/20200220145855.255704-1-leon@kernel.org
+The in-kernel code has already unique version, which is based
+on Linus's tag, update the bond driver to be consistent with that
+version.
 
-----------------------------------------------------------------------------
+Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
+---
+ drivers/net/bonding/bond_main.c    | 6 +-----
+ drivers/net/bonding/bonding_priv.h | 5 ++---
+ 2 files changed, 3 insertions(+), 8 deletions(-)
 
-Hi,
+diff --git a/drivers/net/bonding/bond_main.c b/drivers/net/bonding/bond_main.c
+index c68c1d1387ee..2e70e43c5df5 100644
+--- a/drivers/net/bonding/bond_main.c
++++ b/drivers/net/bonding/bond_main.c
+@@ -4370,7 +4370,6 @@ static void bond_ethtool_get_drvinfo(struct net_device *bond_dev,
+ 				     struct ethtool_drvinfo *drvinfo)
+ {
+ 	strlcpy(drvinfo->driver, DRV_NAME, sizeof(drvinfo->driver));
+-	strlcpy(drvinfo->version, DRV_VERSION, sizeof(drvinfo->version));
+ 	snprintf(drvinfo->fw_version, sizeof(drvinfo->fw_version), "%d",
+ 		 BOND_ABI_VERSION);
+ }
+@@ -5008,8 +5007,6 @@ static int __init bonding_init(void)
+ 	int i;
+ 	int res;
 
-This is first patchset to netdev (already sent RDMA [1] and arch/um [2])
-in attempt to unify the version management for in-tree kernel code.
-The patches follow already accepted ethtool change [3] to set as
-a default linux kernel version.
+-	pr_info("%s", bond_version);
+-
+ 	res = bond_check_params(&bonding_defaults);
+ 	if (res)
+ 		goto out;
+@@ -5064,6 +5061,5 @@ static void __exit bonding_exit(void)
+ module_init(bonding_init);
+ module_exit(bonding_exit);
+ MODULE_LICENSE("GPL");
+-MODULE_VERSION(DRV_VERSION);
+-MODULE_DESCRIPTION(DRV_DESCRIPTION ", v" DRV_VERSION);
++MODULE_DESCRIPTION(DRV_DESCRIPTION);
+ MODULE_AUTHOR("Thomas Davis, tadavis@lbl.gov and many others");
+diff --git a/drivers/net/bonding/bonding_priv.h b/drivers/net/bonding/bonding_priv.h
+index 5a4d81a9437c..45b77bc8c7b3 100644
+--- a/drivers/net/bonding/bonding_priv.h
++++ b/drivers/net/bonding/bonding_priv.h
+@@ -14,12 +14,11 @@
 
-It allows us to remove driver version and present to the users unified
-picture of driver version, which is similar to default MODULE_VERSION().
+ #ifndef _BONDING_PRIV_H
+ #define _BONDING_PRIV_H
++#include <linux/vermagic.h>
 
-As part of this series, I deleted various creative attempts to mark
-absence of FW. There is no need to set "N/A" in ethtool ->fw_version
-field and it is enough to do not set it.
+-#define DRV_VERSION	"3.7.1"
+-#define DRV_RELDATE	"April 27, 2011"
+ #define DRV_NAME	"bonding"
+ #define DRV_DESCRIPTION	"Ethernet Channel Bonding Driver"
 
-1.
-The code is compile tested and passes 0-day kbuild.
-2.
-The proposed changes are based on commit:
-  2bb07f4e1d86 ("tc-testing: updated tdc tests for basic filter")
-3.
-WIP branch is [4].
+-#define bond_version DRV_DESCRIPTION ": v" DRV_VERSION " (" DRV_RELDATE ")\n"
++#define bond_version DRV_DESCRIPTION ": v" UTS_RELEASE "\n"
 
-[1] https://lore.kernel.org/linux-rdma/20200220071239.231800-1-leon@kernel.org/
-[2] http://lists.infradead.org/pipermail/linux-um/2020-February/002913.html
-[3] https://lore.kernel.org/linux-rdma/20200127072028.19123-1-leon@kernel.org/
-[4] https://git.kernel.org/pub/scm/linux/kernel/git/leon/linux-rdma.git/log/?h=ethtool
-
-Thanks
-
-Leon Romanovsky (18):
-  net/bond: Delete driver and module versions
-  net/dummy: Ditch driver and module versions
-  net/3com: Delete driver and module versions from 3com drivers
-  net/adaptec: Clean driver versions
-  net/aeroflex: Clean ethtool_info struct assignments
-  net/aeroflex: Don't assign FW if it is not available
-  net/agere: Delete unneeded driver version
-  net/alacritech: Delete driver version
-  net/allwinner: Remove driver version
-  net/alteon: Properly report FW version
-  net/althera: Delete hardcoded driver version
-  net/amazon: Ensure that driver version is aligned to the linux kernel
-  net/amd: Remove useless driver version
-  net/apm: Remove useless driver version
-  net/apm: Properly mark absence of FW
-  net/aquantia: Delete module version
-  net/arc: Delete driver version
-  net/atheros: Clean atheros code from driver version
-
- drivers/net/bonding/bond_main.c               |  6 +-----
- drivers/net/bonding/bonding_priv.h            |  5 ++---
- drivers/net/dummy.c                           |  3 ---
- drivers/net/ethernet/3com/3c509.c             |  8 +-------
- drivers/net/ethernet/3com/3c515.c             | 16 +---------------
- drivers/net/ethernet/3com/3c589_cs.c          |  2 --
- drivers/net/ethernet/3com/typhoon.c           |  1 -
- drivers/net/ethernet/adaptec/starfire.c       | 19 +------------------
- drivers/net/ethernet/aeroflex/greth.c         |  2 --
- drivers/net/ethernet/agere/et131x.c           |  1 -
- drivers/net/ethernet/agere/et131x.h           |  1 -
- drivers/net/ethernet/alacritech/slicoss.c     |  3 ---
- drivers/net/ethernet/allwinner/sun4i-emac.c   |  2 --
- drivers/net/ethernet/alteon/acenic.c          |  5 ++---
- .../net/ethernet/altera/altera_tse_ethtool.c  |  1 -
- drivers/net/ethernet/amazon/ena/ena_ethtool.c |  1 -
- drivers/net/ethernet/amazon/ena/ena_netdev.c  | 17 ++---------------
- drivers/net/ethernet/amazon/ena/ena_netdev.h  | 11 -----------
- drivers/net/ethernet/amd/amd8111e.c           |  5 +----
- drivers/net/ethernet/amd/au1000_eth.c         |  5 -----
- drivers/net/ethernet/amd/nmclan_cs.c          |  9 +++------
- drivers/net/ethernet/amd/pcnet32.c            |  7 -------
- drivers/net/ethernet/amd/sunlance.c           | 10 ----------
- drivers/net/ethernet/amd/xgbe/xgbe-ethtool.c  |  1 -
- drivers/net/ethernet/amd/xgbe/xgbe-main.c     |  1 -
- drivers/net/ethernet/amd/xgbe/xgbe.h          |  1 -
- drivers/net/ethernet/apm/xgene-v2/ethtool.c   |  2 --
- drivers/net/ethernet/apm/xgene-v2/main.c      |  1 -
- drivers/net/ethernet/apm/xgene-v2/main.h      |  1 -
- .../ethernet/apm/xgene/xgene_enet_ethtool.c   |  2 --
- .../net/ethernet/apm/xgene/xgene_enet_main.c  |  1 -
- .../net/ethernet/apm/xgene/xgene_enet_main.h  |  1 -
- .../net/ethernet/aquantia/atlantic/aq_cfg.h   |  4 ----
- .../ethernet/aquantia/atlantic/aq_common.h    |  1 -
- .../ethernet/aquantia/atlantic/aq_ethtool.c   |  1 -
- .../net/ethernet/aquantia/atlantic/aq_main.c  |  1 -
- drivers/net/ethernet/aquantia/atlantic/ver.h  | 12 ------------
- drivers/net/ethernet/arc/emac.h               |  1 -
- drivers/net/ethernet/arc/emac_arc.c           |  2 --
- drivers/net/ethernet/arc/emac_main.c          |  1 -
- drivers/net/ethernet/arc/emac_rockchip.c      |  2 --
- drivers/net/ethernet/atheros/atl1c/atl1c.h    |  1 -
- .../ethernet/atheros/atl1c/atl1c_ethtool.c    |  2 --
- .../net/ethernet/atheros/atl1c/atl1c_main.c   |  5 -----
- drivers/net/ethernet/atheros/atl1e/atl1e.h    |  1 -
- .../ethernet/atheros/atl1e/atl1e_ethtool.c    |  2 --
- .../net/ethernet/atheros/atl1e/atl1e_main.c   |  4 ----
- drivers/net/ethernet/atheros/atlx/atl1.c      |  6 ------
- drivers/net/ethernet/atheros/atlx/atl2.c      | 10 ----------
- 49 files changed, 14 insertions(+), 193 deletions(-)
- delete mode 100644 drivers/net/ethernet/aquantia/atlantic/ver.h
-
+ #endif
 --
 2.24.1
 
