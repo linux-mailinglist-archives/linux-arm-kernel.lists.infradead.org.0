@@ -2,119 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5612716A32B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:54:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AC0E16A32F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 10:54:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:
-	In-Reply-To:Message-ID:Date:Subject:To:From:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3rgp0/ilozMhJJS5r5vs+1cvqTcH3UnwXibrOu6q+4Y=; b=N5jibPaTMkd7xD
-	8PvtbfeAAIIhde1MIg6yukjUI1FHpRtPtXcgrTzMw3t0EdPi4psnAc2P4FGPH3CRuM08zvuAhG6/c
-	GIIX3FByUf2Juy6S5Md5XtV/+c7bt/dJhWu9eFzf/Rf5cfFjlb3cQjjdG+AFbdBuXmv4Tfw6BsHmc
-	RuVVXAxwNT/bGTYyhVYT4LixBiNT8t4llZKbm71kNPY2EWhOG4xR90/EJzpX1OiNHzKQUNH4UewbP
-	jVB7E6snrAiT65LMFk/0Ebqx7hEvZA/8OugR/YpM6pIuZlKwgp2VA/F3ASdC3watxwt2MXLTGwe0a
-	PL8MXp6JSEckVTl8quMQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MChGgNSYNxoIIZvbGkwyYhElul9xTUP4GInRFR2mnwE=; b=lTUm5arz2JL19xAsJ1LBnwXKu
+	KL4Zkw8RnoXGiGW7kmk/5Su14ALC+TKAQTLZqFP0lJvZHcMET4C4bm8LAJ0NP98er9KlC9l1wqrKz
+	G0Vcjqn0YIgvM7Zd/I05QCN7w5yCYQSb1FZrntW1rEu24eQxGw6s/N+eIOoptFkl0DQv5lq1uK2iC
+	U1CV4vGJpT+DwKtnnjhhFS6rcINzUNr9pCBX1hWEei7p/G7mI/+5jaIuugVEJQUwW2k+9gCNvCzFD
+	pAy23mv9WzAqXKKOaQ8wtIPGzHnp+mp4vfdFQoS5rhN8FiCeQ78VbMaB148k+dW8dIwAFW1lRfURV
+	YeKWZlNhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ART-0000FZ-9y; Mon, 24 Feb 2020 09:54:23 +0000
-Received: from mail-vi1eur05on2049.outbound.protection.outlook.com
- ([40.107.21.49] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1j6ARi-0000Qp-Ow; Mon, 24 Feb 2020 09:54:38 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6A0l-0002ls-51
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 09:26:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eLhB7iH5YDJQd/UPqkLrfmxKIxhuOEeRo6o8Gcea5ND0iEi6k7xi2hbTiBGcZD6y9L8ZIeZ7GxgbKqzuCARa7/dxorkh2FV0tXrKJ8Ra3ueH2QOrhQR2BVB9ND61nTS6hiqe52Hw857jN0gmuASJvbtl52mlJGUcpB2VhpnKZ3Dqw7UEFFnx46aiueqYaDFc9MbpOdSY7X8GibnhUFK14SWvLTiaNrgW0TRlPxoyU6EH2PvLqam6QUHSR+kw1fqJbcKG+OWGwxp35cemaWPZDxuu4U7JyGfSybZXsBGdp7BbXCLhaHHQ+/HKYILfLsUnsj5/tYpZ96zDQo9S5zqmXw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tmGwAKElI2u+A0z/EETBIou5ic5kIe13D9NL0wb7U2M=;
- b=CGZrT9/zeWLslICwnV47CvnyCi4tEwQUvjqq4frvluTbtOh5IsXbUWZuRHjfuSArjnFQ7V8qGqVtI2g+xSErDkkqpOSMvLUpueUfM/Y9a9cvMUxhhRbsXuIIRghZMWr0aoiTyBh0F+ZkCM8+Y3hBx6wkGKIKjlk/4z7TKSRnyf7C+/w9hY+f31izRZKM57PBovCQDJhle01mAgeJWMacphqeZc477gRYs6vLNoJsWtMM5xovPP/PM0OZc9LqnyZrXo8PTjlcKfMmfh2jHrdSdSA+MTMjrhYqLuJajloIZjDMLL7d3s9hytgzdiyLTjnyRxL1AizGgpggJZlBlsKWag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 188.184.36.50) smtp.rcpttodomain=kernel.org smtp.mailfrom=cern.ch;
- dmarc=bestguesspass action=none header.from=cern.ch; dkim=none (message not
- signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cern.onmicrosoft.com; 
- s=selector2-cern-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=tmGwAKElI2u+A0z/EETBIou5ic5kIe13D9NL0wb7U2M=;
- b=treHLM/wuTE3F8KbK3ygj/ORGGmbE9HBEQqYgWyAmRwvSPW5jnP+JZ60wkplYx3/8FOYO8MRW3svCyvPlLsPYQKPlKNIaLUHO55uV6xCD9MQs9BFPL7WD+jRjhSKWoD25d/Kj3n/1EbzSGqtTHjsNsdj0qDL4wKrkQGEOj305CA=
-Received: from AM0PR06CA0026.eurprd06.prod.outlook.com (2603:10a6:208:ab::39)
- by HE1PR0601MB2617.eurprd06.prod.outlook.com (2603:10a6:3:4c::8) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.22; Mon, 24 Feb
- 2020 09:26:42 +0000
-Received: from VE1EUR02FT030.eop-EUR02.prod.protection.outlook.com
- (2a01:111:f400:7e06::205) by AM0PR06CA0026.outlook.office365.com
- (2603:10a6:208:ab::39) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.18 via Frontend
- Transport; Mon, 24 Feb 2020 09:26:42 +0000
-Authentication-Results: spf=pass (sender IP is 188.184.36.50)
- smtp.mailfrom=cern.ch; kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=bestguesspass action=none
- header.from=cern.ch;
-Received-SPF: Pass (protection.outlook.com: domain of cern.ch designates
- 188.184.36.50 as permitted sender) receiver=protection.outlook.com;
- client-ip=188.184.36.50; helo=cernmxgwlb4.cern.ch;
-Received: from cernmxgwlb4.cern.ch (188.184.36.50) by
- VE1EUR02FT030.mail.protection.outlook.com (10.152.12.127) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
- 15.20.2750.18 via Frontend Transport; Mon, 24 Feb 2020 09:26:41 +0000
-Received: from cernfe04.cern.ch (188.184.36.41) by cernmxgwlb4.cern.ch
- (188.184.36.50) with Microsoft SMTP Server (TLS) id 14.3.487.0; Mon, 24 Feb
- 2020 10:26:40 +0100
-Received: from pcbe13614.localnet (2001:1458:202:121::100:40) by smtp.cern.ch
- (2001:1458:201:66::100:14) with Microsoft SMTP Server (TLS) id
- 14.3.487.0; Mon, 24 Feb 2020 10:26:38 +0100
-From: Federico Vaga <federico.vaga@cern.ch>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH 3/7] docs: fix broken references to text files
-Date: Mon, 24 Feb 2020 10:26:39 +0100
-Message-ID: <3929512.qvrp2sLpzG@pcbe13614>
-In-Reply-To: <5cfeed6df208b74913312a1c97235ee615180f91.1582361737.git.mchehab+huawei@kernel.org>
-References: <cover.1582361737.git.mchehab+huawei@kernel.org>
- <5cfeed6df208b74913312a1c97235ee615180f91.1582361737.git.mchehab+huawei@kernel.org>
+ id 1j6A15-00038S-Oo
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 09:27:09 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id BD80C20A3C;
+ Mon, 24 Feb 2020 04:27:06 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 04:27:06 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=7U30ksunGq91DjO/yXEChQMx3ng
+ imz//YkooslE9lIU=; b=e3dGEldHtxihm3SnTWFiwqYkb7aEJ3wXwPQU9lJnfWS
+ Yal0lwDTmld81Z5+o0LF/0RtdhU1qg1qChHlZHvze1Vd+3fCHfXXyaDVIfPDulng
+ Eboi5uzYTkM1gWbrOtvUzqiffOgvpYTRQMAgRUyRfQKETUwbEVsKf7zW8VonYcEo
+ W99MirS8X48nLOqJ6f7zrlGYDU2D5U+P/9r1pQ6EkqIfdwuNEW3mcBqN0IvHSGcv
+ W5brblO/N/ObabFc39WfX9ONQ2LKdM+9VfCVQXtjeCa74gRAeMMcCCQo8CqZLta5
+ eYo2nivEU5qAOVpekaO2SP1vYMEfp4RBk17M+/fs+2w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=7U30ks
+ unGq91DjO/yXEChQMx3ngimz//YkooslE9lIU=; b=SbBzEUhtKguE8DTSpxnFaS
+ fBdUsEgGSx6UqxQJeGwPfzuWHqx6AMwn8GMHjurHLvXvpa/77o5tRocDlPVfvRoI
+ fbzOln9hnpRxyV5TrlKrZ6EDuvtVLzy1Shgfckuapybu/RzUhQjNfsuYBP9gXmqz
+ S/WVlHJxET5Y/gdxMfpt/P2Q6szbteNp4k8/sr/SibZ+ztFqPex8Fy3ZWHU+Ob6V
+ Bw+3T+hBOmGgBgWMqf/x7AxF4pfVt5ixc6QSGF4hcooxFQC+1zwXUXHo5hHgr3Rr
+ KWfY0JeLoYAW5VUzO777lENETuZpEw4U22FZZP/txRsCrpQzO60FebpUbpV3UgYA
+ ==
+X-ME-Sender: <xms:6ZZTXjOC_yWJgQ6mC7bbNKDYl94And8ilihzw5a1SWEXrOkt7662Dg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtgddtgecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:6ZZTXt3Aqh6Ho_ocPD0vwSmjtEr_Pr53SVQhaSY401HEzZliLXVepA>
+ <xmx:6ZZTXvmyjkBD-03PKjv50TTQt6JwGErOtn_q-GT-YGEtnyaMetuqqA>
+ <xmx:6ZZTXj6hyoTD_g8ISR0cFzvy0omAWfJdeH6OLjGfS3bNznErq-GqIA>
+ <xmx:6pZTXvdba5kCF1gUAxit4doFcvkziTOigOFR1wt7-THbc6J2LSfNNg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id A2EB8328005A;
+ Mon, 24 Feb 2020 04:27:05 -0500 (EST)
+Date: Mon, 24 Feb 2020 10:27:04 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH v2] arm64: dts: sun50i-h5-orange-pi-pc2: Add CPUX voltage
+ regulator
+Message-ID: <20200224092704.gnnjwds3zmmravrw@gilmour.lan>
+References: <20200223104019.527587-1-megous@megous.com>
 MIME-Version: 1.0
-X-Originating-IP: [2001:1458:202:121::100:40]
-X-EOPAttributedMessage: 0
-X-Forefront-Antispam-Report: CIP:188.184.36.50; IPV:; CTRY:CH; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(376002)(39860400002)(136003)(346002)(396003)(199004)(189003)(186003)(9686003)(16526019)(33716001)(26005)(2906002)(478600001)(9576002)(426003)(8676002)(44832011)(3450700001)(336012)(246002)(53546011)(8936002)(7416002)(4326008)(86362001)(7636002)(356004)(70206006)(316002)(54906003)(70586007)(5660300002)(39026012);
- DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0601MB2617; H:cernmxgwlb4.cern.ch; FPR:;
- SPF:Pass; LANG:en; PTR:cernmx11.cern.ch; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 07a24c03-738e-4624-7506-08d7b90ba88c
-X-MS-TrafficTypeDiagnostic: HE1PR0601MB2617:
-X-Microsoft-Antispam-PRVS: <HE1PR0601MB2617DD6A6BADE420AB7F4408EFEC0@HE1PR0601MB2617.eurprd06.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:2803;
-X-Forefront-PRVS: 032334F434
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 0qIX6XFVupoujn6tnMIXACZrhD5q3UXodzvYwqyh0hsK1Lsu+/pJ+LkIjl/NeexA/acueRAQl6tWpe3CFd900UWE/3Dp2zl9mkWVMfYl1qYpVkPmqLAGWnMEDEKi64JQPs3cOzEfTL3WjHbAxZ5gqNC3mLax0dvKusUdgcmqXKLya466pUHPmvk05PkmAw4VpLa35W1pVnc1avg4zQD+W+XccjzAi6cB/jeg95xVwyZEdY7wigcHbjHbZjeUw5bGbym667i307aOvjm5Vli7k+a11ZX1tZ2pjiiBWvLEYzJaJJQ2pSEH9ApQf6ZUYQ5f7TlyJmnEtMyipzP+fXgRIINxHtYghfwKLsQ7Fb2NPkqtE2mY/QN0LGNAE519BJMKJ2V6htEDDIZVXfSjSq9NkQg4un3jbv63EjF6kc6RkQ3fn2TRPhmkbiqtoHaEDIQdUEz7oStS5w1dmTB8Bw7vHuPaRBQq1lv0uJabtpvDjKCWQdNtDjiBIr3Z5wRpVLzv
-X-OriginatorOrg: cern.ch
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2020 09:26:41.7248 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 07a24c03-738e-4624-7506-08d7b90ba88c
-X-MS-Exchange-CrossTenant-Id: c80d3499-4a40-4a8c-986e-abce017d6b19
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=c80d3499-4a40-4a8c-986e-abce017d6b19; Ip=[188.184.36.50];
- Helo=[cernmxgwlb4.cern.ch]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0601MB2617
+In-Reply-To: <20200223104019.527587-1-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_012647_290182_1C9A743F 
-X-CRM114-Status: UNSURE (   8.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200224_012707_960402_DFD18A9E 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.49 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -127,61 +103,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: federico.vaga@cern.ch
-Cc: linux-arch@vger.kernel.org, linux-nfs@vger.kernel.org, kvm@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>, linux-rdma@vger.kernel.org,
- netdev@vger.kernel.org, Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- linux-unionfs@vger.kernel.org, kvm-ppc@vger.kernel.org, linux-mm@kvack.org,
- dri-devel@lists.freedesktop.org, linux-fsdevel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Samuel Holland <samuel@sholland.org>,
+ Chen-Yu Tsai <wens@csie.org>, open list <linux-kernel@vger.kernel.org>,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============3191044851100439123=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Saturday, February 22, 2020 10:00:03 AM CET Mauro Carvalho Chehab wrote:
-> Several references got broken due to txt to ReST conversion.
-> =
 
-> Several of them can be automatically fixed with:
-> =
+--===============3191044851100439123==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="w6i3mdfkts3errvh"
+Content-Disposition: inline
 
-> 	scripts/documentation-file-ref-check --fix
-> =
 
-> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+--w6i3mdfkts3errvh
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sun, Feb 23, 2020 at 11:40:19AM +0100, Ondrej Jirman wrote:
+> Orange Pi PC2 features sy8106a regulator just like Orange Pi PC.
+>
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> Reviewed-by: Samuel Holland <samuel@sholland.org>
 > ---
+>  .../dts/allwinner/sun50i-h5-orangepi-pc2.dts  | 20 +++++++++++++++++++
+>  1 file changed, 20 insertions(+)
+
+Having a changelog would be great
+
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+> index 70b5f09984218..7b2572dc84857 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-orangepi-pc2.dts
+> @@ -93,6 +93,10 @@ &codec {
+>  	status = "okay";
+>  };
+>
+> +&cpu0 {
+> +	cpu-supply = <&reg_vdd_cpux>;
+> +};
+> +
+>  &de {
+>  	status = "okay";
+>  };
+> @@ -168,6 +172,22 @@ &ohci3 {
+>  	status = "okay";
+>  };
+>
+> +&r_i2c {
+> +	status = "okay";
+> +
+> +	reg_vdd_cpux: regulator@65 {
+> +		compatible = "silergy,sy8106a";
+> +		reg = <0x65>;
+> +		regulator-name = "vdd-cpux";
+> +		silergy,fixed-microvolt = <1100000>;
+> +		regulator-min-microvolt = <1000000>;
+> +		regulator-max-microvolt = <1400000>;
+> +		regulator-ramp-delay = <200>;
+> +		regulator-boot-on;
+> +		regulator-always-on;
+> +	};
+> +};
+> +
+
+Looks like you fixed the issues reported by Samuel though. I've
+applied it.
+
+Maxime
+
+--w6i3mdfkts3errvh
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlOW6AAKCRDj7w1vZxhR
+xWtLAP4yR1HaRlwGnk2FD+X7VmQ1E2adEITk68bc4hxUIUKccwD8C/Rd+mzb3MJG
+pJZDFLurNHJRviqoRUqvCcAGuJPY9gI=
+=j0Ge
+-----END PGP SIGNATURE-----
+
+--w6i3mdfkts3errvh--
 
 
->  26) If any ioctl's are added by the patch, then also update
-> -    ``Documentation/ioctl/ioctl-number.rst``.
-> +    ``Documentation/userspace-api/ioctl/ioctl-number.rst``.
-> =
-
->  27) If your modified source code depends on or uses any of the kernel
->      APIs or features that are related to the following ``Kconfig`` symbo=
-ls,
-> diff --git a/Documentation/translations/it_IT/process/submit-checklist.rst
-> b/Documentation/translations/it_IT/process/submit-checklist.rst index
-> 995ee69fab11..3e575502690f 100644
-> --- a/Documentation/translations/it_IT/process/submit-checklist.rst
-> +++ b/Documentation/translations/it_IT/process/submit-checklist.rst
-> @@ -117,7 +117,7 @@ sottomissione delle patch, in particolare
->      sorgenti che ne spieghi la logica: cosa fanno e perch=E9.
-> =
-
->  25) Se la patch aggiunge nuove chiamate ioctl, allora aggiornate
-> -    ``Documentation/ioctl/ioctl-number.rst``.
-> +    ``Documentation/userspace-api/ioctl/ioctl-number.rst``.
-
-
-Acked-By: Federico Vaga <federico.vaga@vaga.pv.it>
-
-
-
+--===============3191044851100439123==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3191044851100439123==--
+
