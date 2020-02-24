@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5402216B3CA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 23:22:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 203C216B3CB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 23:23:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Nc3pdesxBhE94/mMATQ0crWDeny9hvancC0X3u31JE0=; b=VEH
-	SunM0v/wpECfPSFe2Aq49xfTFuTvZy8cHoZ9uwhHs0r+6GW9PA7rDsfcfIbZfX9iPX+c5DPgDiTxh
-	ME3dRCA6U0RBCrbusHP4z/9l9JUGQsY9/hJQe2jMAE1/i3hY+dPOs68pDuvDWBaG1N42CPhrc5VRg
-	UGnvAyX4EDWd8CM/hG7d1tgNfPsOzUbFj0CAwFPqHwkD36J1Rq5zeuwrMUUj1JpwX/P+HanDeeVh8
-	K9UsgfYbXppVZQmTcKYOAVB3ICoygfdeE/QUcPwwhxxD7HB2vDz8pVWNTrukkKljzevmAnYUlx3Yq
-	lx9Vk4epdztxeZRxU0Gfpbc6xqaEzHg==;
+	References:List-Owner; bh=E2Ieuzy4JbSH3p02L4M8w6w6EaBnfh5smtc93/CPHcU=; b=p8i
+	0WyuZFEWVgkR0lgqcpR0piMtnsveY8XdoVYtA1koiVKWAwV9cSvge5lKYRsjxNhX23OE0RwWShPLP
+	2hi4d4hdMM8XmkTl0kHZwfYgwYr/4u7TRojLJ2oQyJ6KwnDNZZ0SpFLKjOkz9Yntm1YhiVAAYoHC0
+	rxAvELRTDEwpY7B/zT5ZlpA0o6SDRA8VibjvvsEWYfG0iJwb3A8ouX4vYTC7fZzLvcZ/K2G/7Ewx8
+	lihd7DGUGg07mUbD38PD4m/DvUjokQG4tJRHcNKMEXBex3I2S/1ZJQBR+nPFysZbGJv1zcbgHc7w9
+	wbt3wAkF6oqLnUPCpzuIQHYZizh0zLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6M7Y-0001Vr-VM; Mon, 24 Feb 2020 22:22:36 +0000
+	id 1j6M7n-0001eM-T4; Mon, 24 Feb 2020 22:22:51 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6M7O-0001VT-1Q
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 22:22:27 +0000
+ id 1j6M7T-0001Xp-1h
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 22:22:32 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BAE0930E;
- Mon, 24 Feb 2020 14:22:24 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2AB2330E;
+ Mon, 24 Feb 2020 14:22:29 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 404503F534;
- Mon, 24 Feb 2020 14:22:24 -0800 (PST)
-Date: Mon, 24 Feb 2020 22:22:22 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A46033F534;
+ Mon, 24 Feb 2020 14:22:28 -0800 (PST)
+Date: Mon, 24 Feb 2020 22:22:27 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Applied "spi: pxa2xx: drv_data can't be NULL in ->remove()" to the
- spi tree
-In-Reply-To: <20200224154556.11627-2-andriy.shevchenko@linux.intel.com>
-Message-Id: <applied-20200224154556.11627-2-andriy.shevchenko@linux.intel.com>
+Subject: Applied "spi: pxa2xx: Return error codes from
+ pxa2xx_spi_init_pdata()" to the spi tree
+In-Reply-To: <20200224154556.11627-1-andriy.shevchenko@linux.intel.com>
+Message-Id: <applied-20200224154556.11627-1-andriy.shevchenko@linux.intel.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_142226_125044_D2D8C6CD 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20200224_142231_205590_DA5D3A8E 
+X-CRM114-Status: GOOD (  16.82  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -74,7 +74,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: pxa2xx: drv_data can't be NULL in ->remove()
+   spi: pxa2xx: Return error codes from pxa2xx_spi_init_pdata()
 
 has been applied to the spi tree at
 
@@ -99,37 +99,72 @@ to this mail.
 Thanks,
 Mark
 
-From 3d24b2a470466aa901ba8354468fc1899259fd84 Mon Sep 17 00:00:00 2001
+From 14af1df3b03309f6204661e12c40cdf71bc8f773 Mon Sep 17 00:00:00 2001
 From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Date: Mon, 24 Feb 2020 17:45:56 +0200
-Subject: [PATCH] spi: pxa2xx: drv_data can't be NULL in ->remove()
+Date: Mon, 24 Feb 2020 17:45:55 +0200
+Subject: [PATCH] spi: pxa2xx: Return error codes from pxa2xx_spi_init_pdata()
 
-There is no need for drv_data check against NULL, since it won't happen.
-Remove useless check.
+For better understanding what's going on on error path,
+return distinguished error codes instead of NULL pointer.
 
 Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Link: https://lore.kernel.org/r/20200224154556.11627-2-andriy.shevchenko@linux.intel.com
+Link: https://lore.kernel.org/r/20200224154556.11627-1-andriy.shevchenko@linux.intel.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 6 +-----
- 1 file changed, 1 insertion(+), 5 deletions(-)
+ drivers/spi/spi-pxa2xx.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 934bfe2c8a90..8e8e18023ded 100644
+index 4c7a71f0fb3e..934bfe2c8a90 100644
 --- a/drivers/spi/spi-pxa2xx.c
 +++ b/drivers/spi/spi-pxa2xx.c
-@@ -1884,11 +1884,7 @@ static int pxa2xx_spi_probe(struct platform_device *pdev)
- static int pxa2xx_spi_remove(struct platform_device *pdev)
- {
- 	struct driver_data *drv_data = platform_get_drvdata(pdev);
--	struct ssp_device *ssp;
--
--	if (!drv_data)
--		return 0;
--	ssp = drv_data->ssp;
-+	struct ssp_device *ssp = drv_data->ssp;
+@@ -1548,18 +1548,18 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ 	else if (pcidev_id)
+ 		type = (enum pxa_ssp_type)pcidev_id->driver_data;
+ 	else
+-		return NULL;
++		return ERR_PTR(-EINVAL);
  
- 	pm_runtime_get_sync(&pdev->dev);
+ 	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
+ 	if (!pdata)
+-		return NULL;
++		return ERR_PTR(-ENOMEM);
+ 
+ 	ssp = &pdata->ssp;
+ 
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	ssp->mmio_base = devm_ioremap_resource(&pdev->dev, res);
+ 	if (IS_ERR(ssp->mmio_base))
+-		return NULL;
++		return ERR_CAST(ssp->mmio_base);
+ 
+ 	ssp->phys_base = res->start;
+ 
+@@ -1573,11 +1573,11 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ 
+ 	ssp->clk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(ssp->clk))
+-		return NULL;
++		return ERR_CAST(ssp->clk);
+ 
+ 	ssp->irq = platform_get_irq(pdev, 0);
+ 	if (ssp->irq < 0)
+-		return NULL;
++		return ERR_PTR(ssp->irq);
+ 
+ 	ssp->type = type;
+ 	ssp->dev = &pdev->dev;
+@@ -1634,9 +1634,9 @@ static int pxa2xx_spi_probe(struct platform_device *pdev)
+ 	platform_info = dev_get_platdata(dev);
+ 	if (!platform_info) {
+ 		platform_info = pxa2xx_spi_init_pdata(pdev);
+-		if (!platform_info) {
++		if (IS_ERR(platform_info)) {
+ 			dev_err(&pdev->dev, "missing platform data\n");
+-			return -ENODEV;
++			return PTR_ERR(platform_info);
+ 		}
+ 	}
  
 -- 
 2.20.1
