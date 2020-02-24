@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A567169E80
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:33:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AADDB169E81
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 07:33:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=+u+m251Jt58LghgtTKGWyuxZoRYPe5L/8JIxx9qaGsY=; b=XNsX4nbrb6eZ4CwrM7iFNAcgcP
-	XbSB/WudXqzeD1xE4iXQ9ti5HlcIYKLXcsKrCbY7WiAQUOMybKHUGCqHqpsF4A4ULVZd6zvwF/Qjd
-	SZAbeznBSdb4jFYz8WAe5ZUQm05oG47hXyA6FwtE9DVYlT4J2qG8lIRz3dolMHcnJU/Im+agmRVUa
-	ps2mJQBx6MMbKRfU6wdhxYSx3SirVCYdNS1VzaWICqVn9bu9B67rzwPxws+K2rEzz4uEXSms11rTo
-	lMY4vZzWz/mfGvnvXz+zZv2CtY+nERezzI9SUMhkWEqJkCZl3J12Hw32M67Dlnnk+PQBm411L4HSH
-	qgbVVsqw==;
+	bh=vg/rg+iDUpFPJhmhUwR2mBaWrgnVJmS8WL8DMejM1LA=; b=Le75p1GEDCErXyaYlCt5oqT/8U
+	6o1jvTl1uNKvnKfYK8yZSx6aKfH5F3r53JSYwJSyRvuKPVQ0w33UuZSr1YmjRfArNtgj1/2Qplwcn
+	R5SabYZ7So7muzuuYrNHwbeIUU8RGDRqMOynKoGykVaZgiTKTO0meN0rUruDekdqmK7GuELphnFx/
+	Yb5jzUqaJ0pbSya5r7IJu3YeKZCmo5+PkY+rbthirG9ocuhjrBsPJkF+FFMDLk5ZzIll47cZ/7yn5
+	BN3zwx8Q3+4riAmZc7ZTlCS/aVN70lRuwyzvZKmdOtFOBWxuCYmXlMR2Daq6n8ce5y9zHsrwME9zZ
+	J8wP7T4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j67Ie-00071m-GW; Mon, 24 Feb 2020 06:33:04 +0000
+	id 1j67Iu-0007FO-BM; Mon, 24 Feb 2020 06:33:20 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j67HE-0005eg-9D
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:31:40 +0000
+ id 1j67HH-0005hE-OC
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 06:31:41 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id CBA64E03E6;
- Sun, 23 Feb 2020 22:31:05 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id E0285E03E5;
+ Sun, 23 Feb 2020 22:31:08 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id BIGCkQ3KEXq6; Sun, 23 Feb 2020 22:31:05 -0800 (PST)
+ with ESMTP id e-eYFGbcS2OL; Sun, 23 Feb 2020 22:31:08 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de
-Subject: [PATCH v3 5/8] arm64: dts: librem5-devkit: add the regulators for DVFS
-Date: Mon, 24 Feb 2020 07:29:14 +0100
-Message-Id: <20200224062917.4895-6-martin.kepplinger@puri.sm>
+Subject: [PATCH v3 6/8] arm64: dts: librem5-devkit: allow the redpine card to
+ be removed
+Date: Mon, 24 Feb 2020 07:29:15 +0100
+Message-Id: <20200224062917.4895-7-martin.kepplinger@puri.sm>
 In-Reply-To: <20200224062917.4895-1-martin.kepplinger@puri.sm>
 References: <20200224062917.4895-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_223136_397936_377D2231 
-X-CRM114-Status: UNSURE (   6.55  )
+X-CRM114-CacheID: sfid-20200223_223139_952829_8B5DAFEB 
+X-CRM114-Status: UNSURE (   9.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,41 +75,28 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-Specify which regulator is used for cpufreq DVFS.
+By adding broken-cd to the usdhc2 stanza the Redpine card can be
+detected when the HKS is turned off and on.
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
 ---
- .../boot/dts/freescale/imx8mq-librem5-devkit.dts | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 823d5c60a8fa..6ba65a807b25 100644
+index 6ba65a807b25..12a91d2d36db 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -227,6 +227,22 @@
- 	};
- };
- 
-+&A53_0 {
-+	cpu-supply = <&buck2_reg>;
-+};
-+
-+&A53_1 {
-+	cpu-supply = <&buck2_reg>;
-+};
-+
-+&A53_2 {
-+	cpu-supply = <&buck2_reg>;
-+};
-+
-+&A53_3 {
-+	cpu-supply = <&buck2_reg>;
-+};
-+
- &clk {
- 	assigned-clocks = <&clk IMX8MQ_AUDIO_PLL1>, <&clk IMX8MQ_AUDIO_PLL2>;
- 	assigned-clock-rates = <786432000>, <722534400>;
+@@ -947,7 +947,7 @@
+ 	bus-width = <4>;
+ 	vmmc-supply = <&reg_usdhc2_vmmc>;
+ 	power-supply = <&wifi_pwr_en>;
+-	non-removable;
++	broken-cd;
+ 	disable-wp;
+ 	cap-sdio-irq;
+ 	keep-power-in-suspend;
 -- 
 2.20.1
 
