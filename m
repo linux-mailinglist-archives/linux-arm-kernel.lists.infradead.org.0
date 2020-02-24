@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B15E16ADE6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:43:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93D6416ADF0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:45:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MfM7N1LRGwD36xIahZhTHeTO8PzTrkmsRfCBTzvih54=; b=ny6PBZgiXlxKkv
-	rbF6fWhCvEhnF9k0fwSd+sVdGCRjoCfXP+Gxa00rQx1jr3suOYUBb+j8UZPSKsOHD+CJs8YqIyuiW
-	HFp5wEusZPBsLDKpyudBS9/joDsPz5vSTg3fzD8TKNzLYhBLnowv7VUtu4M6phRc85wpaJvBErrG1
-	NwIlbmDy2eFEohg/5bz5Ldl6RkShk2zc85ud1MVgH6cuH52xuF7G5+z567Jh0Qes+uydSjVeElMCP
-	ZI1TxobIu2PHrYaPElOlKDUGLQb3CK4nH2/Cx0toWsTlpSn3YKatxlZ5Ue2u9CORhB+f8P5CKaTph
-	qE7jY0oUS4lmSBoUvQng==;
+	List-Owner; bh=ii4EKRakuNnmNBSGE5kqeL8aGR3VJqWDrYDTOwWlwCU=; b=sy1qDK8/efppmD
+	6LR+BFmVQ8lDUlBmoQUGkqoEUUyDkfZExUtR8GLjPC/Epyg+VTJAZk4ZMGU9Z/xlZnf5vC6MnpqpW
+	4KK6OnHc6mJDp1e9Gj3oVPYflKDaX09EBskUfwC83JjMr4ckHD7Kt63VxfEeUzfXH4d+qaQUt3Yr/
+	+/IF54JG3KQ0XzpCGcvSwU/s3jdHMz21Ujfpb19V2WNgz8n75Yu9ejstHaiFNIEczmZerATQi6wxf
+	JoDm+7dPWd0H2mQNAa9juEEi0t6/VJ7CvObsVKpYJlq8YaT0TpPwjKK+tRzTbE4YSw2NaE6tmZsmV
+	4LEO955ERpB1gqxRzBCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Hl5-0003N6-AU; Mon, 24 Feb 2020 17:43:07 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1j6HnK-0003o3-RY; Mon, 24 Feb 2020 17:45:26 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Hiv-0001vW-FV; Mon, 24 Feb 2020 17:40:55 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x185so5712446pfc.5;
- Mon, 24 Feb 2020 09:40:52 -0800 (PST)
+ id 1j6Hmy-0003mr-NJ; Mon, 24 Feb 2020 17:45:06 +0000
+Received: by mail-ed1-x543.google.com with SMTP id c7so12907073edu.2;
+ Mon, 24 Feb 2020 09:45:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=+MzVlJLpy0Myu6XtjU+oJu/3L77UvEbkJbcHWndy0Mw=;
- b=IUS3pY1l9zVYZ+tFKN38Bpv8qVINuwxCKkZ39IQeABEv+SgMtv+eR41iYTi/zjUU/P
- xqy7G8pn/unCdRYHZIug7nIzZkzKltl1TioC0e0H02pDmuNcyi2JKoKQlsZzkfVpEUNa
- 5Umm3QFfkTxgUyTsFpCteaha9/THoo5jwWJz46pfrCeaZD++PYj9OUrE45vleWZzaoDR
- wlUWfupYOAXJDreZQaDuaoOJLov3xsSj/37Jyj1g6KZg94YI2RP+es+D1BAAGMwcGYrt
- 2ieoMuqR36kyPu/gcgAx4bCFRrgfFfl3aZjVqNm1gZ0b5hXaN1hgAED9Dnn4eEfeIzmf
- 7TBQ==
+ bh=67fEgIo9zzjCq2cuI1Fk8dvCkAayQ97WCPRGpbQg75Q=;
+ b=uSNSfSUfApPvd1/RX8RUbQKKpq/UQT8OpztfVuf7hUF2vBYnQL9y+9HWsCHpbkDd9m
+ pvI6DQK6c/7vs4Znj4ghweLPP9fQku7pAbmOrzxvTnKDWoKBTW19QL51XG1hsAHdhLV4
+ VnNYo76rIKCgTisoGoGv7SiqyIKA/TlJpgPg/QnvNpTLTDJseZpTqp9RPVFe/gsny/kU
+ /NBdpVqNeF5LdmaGpSWsxg7Cvj6KS/giul+nKc5/HpVou8jRmjC29goKhTguTCMQZBqP
+ xog1Tl0Zfhw3wCjYKuGb4mCauppCzLxCBm6auZLWwHBcncqWjUHIs9Wno+L7U5Y46usy
+ OeCQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=+MzVlJLpy0Myu6XtjU+oJu/3L77UvEbkJbcHWndy0Mw=;
- b=bQHGtLKay4fQt770RwoVXKKrNvDo3/vpxLep7nUtzR7oI+KsxKI1hVTI7i8/SYBDpR
- eR7Ud041jO05SwqRAmJsEw7hTZBNB4oKybmkPhaRM72YWCbOgRKpMDaWLrv8xYwHQet7
- VtBOm5kuiFFUYBcaQkFup9E1XURJGw6xO2s/5vAW2w+k3/xov9zIPMeWbfRg8XhfOOTH
- wO0cq6OyjlsJJVehVI+SKc15kyn2NgzMihElugGT+BKTIyhLaTIH2U4AysXVcXjQ8Z/N
- IaUTXQYE+4oCbfh52Bwqg2GzCX1b1uuB1K4ITQtJxmwgpWZwrtucXJcg8dXYt9QDoS7U
- ZvPw==
-X-Gm-Message-State: APjAAAXUPVBaCgz10fdyFkct2T7Lal0F61n4XfAVY5YIffjqOYrjsbXs
- sgGeEIiXL7EtCQlSa5s81Xo=
-X-Google-Smtp-Source: APXvYqxRc5TdrIdfYjLIUgdJXNPXUlnhYtY2UdOofyCCjYFE+t0Aixa7rsG+uPt36ghvj2a76AQiMg==
-X-Received: by 2002:a63:2ad7:: with SMTP id
- q206mr51629358pgq.194.1582566051946; 
- Mon, 24 Feb 2020 09:40:51 -0800 (PST)
+ bh=67fEgIo9zzjCq2cuI1Fk8dvCkAayQ97WCPRGpbQg75Q=;
+ b=eZYfvxwsWVPb6nY7TBSRtPMFcUReHXKo7iZ083Mf0ZwqBYdv7hXHNijN4toyABhGdM
+ EQoZK3WvmqLyiwCAYpYEYkenfYOomp5La3l9o+SXN0GAz5k0rbgGyqPDOzys1HkSQ0zA
+ BzGO5tps5eBJ68mJK+uqFrB5QnA6GiEUih1k7hsTtRIy4T4s7c6GtQFjF7JLh7+RKoQi
+ 6n8lZI2iPVM0nWhTsfKZqWSGps0MGSNH1DIWci+e75vV2bC6NsDL/v9uLeIn2Y0X+jwp
+ 3edTKdy7/yS/4IS6oqBTr7r/ya2bJm579yzt3ABA+EzhrLeYk3MR6b2/FPrW2K7Yrh3k
+ nn8g==
+X-Gm-Message-State: APjAAAVicIVofUQA7qsRH6CV5BCT6A6PAGD8XFGka9y2mUjWN7JTfKQ4
+ 7vIpPH5FqVqdOanZJ4vcJFs=
+X-Google-Smtp-Source: APXvYqzpANUtq+X3kjA7XW1vOUgg7t6jX9FBe3hdx1JrNs8oxBnqXjVoZmoMBFCzZxDHR5Lz44tOFw==
+X-Received: by 2002:a05:6402:1595:: with SMTP id
+ c21mr49388775edv.32.1582566301683; 
+ Mon, 24 Feb 2020 09:45:01 -0800 (PST)
 Received: from [10.67.50.18] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id e28sm3038730pgn.21.2020.02.24.09.40.50
+ by smtp.googlemail.com with ESMTPSA id u9sm852559ejj.49.2020.02.24.09.44.58
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 24 Feb 2020 09:40:51 -0800 (PST)
-Subject: Re: [PATCH 01/89] dt-bindings: i2c: brcmstb: Convert the BRCMSTB
- binding to a schema
+ Mon, 24 Feb 2020 09:45:00 -0800 (PST)
+Subject: Re: [PATCH 03/89] i2c: brcmstb: Support BCM2711 HDMI BSC controllers
 To: Maxime Ripard <maxime@cerno.tech>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <6649111e9c585f267762bb6c6dd96128e5cfb4ba.1582533919.git-series.maxime@cerno.tech>
+ <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -118,23 +117,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <eb977d8f-66ee-ae71-bf5c-2a187bde6874@gmail.com>
-Date: Mon, 24 Feb 2020 09:40:49 -0800
+Message-ID: <da7943a6-8fcc-6c79-e54e-c8d59dacf24c@gmail.com>
+Date: Mon, 24 Feb 2020 09:44:56 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <6649111e9c585f267762bb6c6dd96128e5cfb4ba.1582533919.git-series.maxime@cerno.tech>
+In-Reply-To: <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_094053_642535_5A38DA08 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20200224_094504_766564_5BDC80A8 
+X-CRM114-Status: GOOD (  17.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -158,32 +157,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
  Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>,
  Wolfram Sang <wsa@the-dreams.de>, Kamal Dasu <kdasu.kdev@gmail.com>,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 2/24/20 1:06 AM, Maxime Ripard wrote:
-> Switch the DT binding to a YAML schema to enable the DT validation.
+> The HDMI blocks in the BCM2771 have an i2c controller to retrieve the
+> EDID. This block is split into two parts, the BSC and the AUTO_I2C,
+> lying in two separate register areas.
+> 
+> The AUTO_I2C block has a mailbox-like interface and will take away the
+> BSC control from the CPU if enabled. However, the BSC is the actually
+> the same controller than the one supported by the brcmstb driver, and
+> the AUTO_I2C doesn't really bring any immediate benefit.
+> 
+> Let's use the BSC then, but let's also tie the AUTO_I2C registers with a
+> separate compatible so that we can enable AUTO_I2C if needed in the
+> future.
+> 
+> The AUTO_I2C is enabled by default at boot though, so we first need to
+> release the BSC from the AUTO_I2C control.
 > 
 > Cc: Kamal Dasu <kdasu.kdev@gmail.com>
 > Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Rob Herring <robh+dt@kernel.org>
 > Cc: Wolfram Sang <wsa@the-dreams.de>
 > Cc: bcm-kernel-feedback-list@broadcom.com
 > Cc: linux-i2c@vger.kernel.org
-> Cc: devicetree@vger.kernel.org
 > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+[snip]
+
+> @@ -705,6 +737,7 @@ static SIMPLE_DEV_PM_OPS(brcmstb_i2c_pm, brcmstb_i2c_suspend,
+>  static const struct of_device_id brcmstb_i2c_of_match[] = {
+>  	{.compatible = "brcm,brcmstb-i2c"},
+>  	{.compatible = "brcm,brcmper-i2c"},
+> +	{.compatible = "brcm,bcm2711-hdmi-i2c"},
+
+You could have added the bcm2711_release_bsc here as a function attached
+with the of_device_id::data member of the structure and do:
+
+if (data && data->init_func)
+	rc = data->init_func(dev);
+
+But we can defer that until we have a second compatible string that
+requires the same approach.
+
+Akked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
 
