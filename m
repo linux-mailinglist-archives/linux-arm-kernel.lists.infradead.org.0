@@ -2,89 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1084F16A481
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:01:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2620716A48A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:03:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/DNo6194YNLrVOih+0ilC0h3Vhw9NZqsLEaFR7CnMpI=; b=id6ux8dY7xK5/chQKxnhwZ2tB
-	acBooUj/j6JNtGR/bnczkZ8qsgffsM7c5j6Z4VnTIWxl1BA/3qy3gKwur8R0oGzHIQfvW73VwUeSq
-	F5jxs18VAn3Sew3EialqVyKutxy7tE61IDldgjxsN25p/dU89GwbxxRyjBeWce7ttJS+NDHIDmD6Z
-	EU/Ca7Fsx1wo2pu9LAazHMa2lDCdfWbyZMii/h9uUtonCVpeoo2TwFeEU1HbNI6Rfz1Bc1uqINFFt
-	zscC22BMuJgRa3oH1Cj6jNKlOrQm08IPdLtoQ0pwh8NVqwUFia+kkD0UTAz4iJHGakrq5RzjUlkYs
-	sO5VWtdsA==;
+	 bh=S6polK2hcnfV9+qqrhqSasAnGZfXDYI3sTx15CyAPtY=; b=LouPZDtKNc0C34k+Mq5pzZeML
+	XE8IwoZOjOk8UDLjY/20dtjLg6JW9e7XMIfC84SKZdqq45e+018bcrrsR3aF0XOOruEpUVx3DJPoz
+	htGezb793De+jBJCEAQ3WFWx91JqQpxzfaol4CQiBCX29TNWt14I1ERpdN3kkmFSo5eas//qACiZe
+	UWjIM/+tOdJgc5xuiMvJSttXu7CMc5NfhgloVgKlRALyEa2Vf722qsBFlgwkJosbpI6VnAiG+HHz2
+	chJq7W1fuZzv+CzpnYGeBDVX59+yVT0TzHzG32rHen+KRTnHdXOQM49q/KYoXRydFjCG7I5R1psDs
+	IEjyB9oZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6BUI-0000px-3r; Mon, 24 Feb 2020 11:01:22 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1j6BVx-0001nI-ON; Mon, 24 Feb 2020 11:03:05 +0000
+Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6BU2-0000oX-9H
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:01:07 +0000
+ id 1j6BVn-0001mY-Ny
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:02:57 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id E5629762B;
- Mon, 24 Feb 2020 06:01:03 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 24 Feb 2020 06:01:03 -0500
+ by mailout.west.internal (Postfix) with ESMTP id C782F46F;
+ Mon, 24 Feb 2020 06:02:53 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 24 Feb 2020 06:02:54 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=ZcsAxlQzmgfp+248gfkt50f72yf
- XGFM0CMrpGGcfUak=; b=rqjz591JyJS7eCFFOrCKQhv/MhN/QfOGyBQHd2az1pe
- WoqWgpILpqn+XAr01g3Y/9dvYLq7Px2l+vOrWjirHSTKJ9M2TDOjem/FhVYW16Fy
- m5obfjQOt43XZUtCALzLBvYqNNG3eODcPaWqR4jTmSUAc6mOrjGkPGjbGwUyZtD5
- SIoR3MG7B6/ZG6IFXDdy8aSbSQM8ZkJ/lqAU9WNI2pcxWkfjlIYuPFUAgfqo4zMQ
- rZhrxUFTICGUBUF67QKAcjvOIlqY2/sOSn/Yrm6epoV5f0Nbhf1ribeFFlhzHgNh
- +68wIZz4oI/zTlcarut4v6Puy4ue/AXzsZbuTW6Tgog==
+ :content-type:in-reply-to; s=fm2; bh=xHt2MK1heAneZjk7lxOHA207z1m
+ V+6niWv3tm6W4trM=; b=oLgLtF9Af//57lWcVGNMlOihaz1k9FQCx+lIUsnnjQf
+ XuLwscDFImI1pV3dttYo285rMu/FvYuFuZs6FcbZMZ41Ajxe0ZaXd11YM1Dv4xzR
+ HyspdQnyE4KnGUlNBXHGPlm0rhVfZO3qLoS29RYcV/siui5UgAFe9iuJH2hPgIZc
+ JmGK7VbeTWHTIgqq0ZqkHjqP/q0Kf/BnyXSu0fVj/K0BKRByJTljuRG2qhtyoqdP
+ 0xRyeodSCVsshCMKRASEa6FheP4B7CCR6tdu4hVCUZN+/mwAsND79SZ7YFHj6Pap
+ nVSs0Q6oRYtuAI5H1nZour18aCD0e1sAab1uqVVBjkQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ZcsAxl
- Qzmgfp+248gfkt50f72yfXGFM0CMrpGGcfUak=; b=Jo4xIfDL4pFRKONJsrXrFG
- AeGka/mFhVhUhgta9DD9XrZ8f30gJMqjGgId7HQMTyVn0bQW082W2Qb2TdhRRrrq
- 37ExqrAwI5CPuPfaqeULjwziJWHym10gzeF5ZqiEjESUZO3fi1dGBrfvT4aTMtsS
- guieuIG1OY3sAKcVkzgsOJVA99XbSWzG1836DpPLesT8m525wfeqjZslrrj4hjpm
- /vDnIF1aG9IsN7izRd+EBRrdtWUmbwUVkkKs4sPNUCNJ42xYkoSJBSOOKI7/8nCP
- BYVmQXeFOzkGQ6yVHrH2Re2AInKDt5sJd0E8LyRBL6gUKEPYhimASk61+jiAGMWw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=xHt2MK
+ 1heAneZjk7lxOHA207z1mV+6niWv3tm6W4trM=; b=M6fHG36NgdH8xdAdDANRO5
+ F1LkjzYHOossC9uRzvXexUPrRjreGhNVVj1ikQRFTUN0TlzIoflwTDwut0/k8nRq
+ QgbITFTNV3W3yP2/mfGsykTkARfnRqEi5gW2Uq68OI4ZIg+DF24PjW8q/mlPMD9z
+ v5g7MDRwFFD17fhrb28y2k89Yrk0T1MNRANtYwLyMMP/zpA2xQffh8mLwT1y5ec7
+ vH6lZmGM7HxevW2kzoJPZIRGK++KzpuJeHiYgdZ7hgboVDJfUXhB+MA+6LiqQLFF
+ 4jssje7YzJi2vUCSf014B5Zsw1faGNPWm5Q3rRvPpgNSjKFpdxEhMHp2mL2IrZpg
  ==
-X-ME-Sender: <xms:7axTXmfCGfACAU-Go-6vz9eql4Q2BSZVUiXte9X8yotSfx2FCw1XUQ>
+X-ME-Sender: <xms:Wq1TXnEcBlSfOhJ8C0JNkgaSpKWsoXA3_8qG11wWKLY0KO_Zhw881A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledtgddvfecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhl
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedvnecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:7axTXkh9gpLI75GndVJ3GdD5soM5-p7zjLEBMKls7wFQRkKiZw7r-Q>
- <xmx:7axTXiYK4d3j8xndCEeDylH7DAgYfHrpspQOaMPMJ2zryJiOFBF_2Q>
- <xmx:7axTXvINQpa3s1NrVBiSHThpOsjpCYByxIgwTPYIhYnm3f3f7HhLDA>
- <xmx:76xTXguzJNiO0fOLLqMGRMeXVH-bHX0VrUTxCVQTQS6xoCpM9ZDL8Q>
+X-ME-Proxy: <xmx:Wq1TXlz0QizJwVtlb7NBSTi_b2j7ky9Sq2KgFgzjALWQY8YE4BvUSw>
+ <xmx:Wq1TXkjrkjETxdF64tBXJq5iHfJ3zM9-yNhEneghxHG7WVUQ_0u5tw>
+ <xmx:Wq1TXiLSr4vzEJmfeMyJbAaHLqXSre4dSUW0JC5IN-CW-z8gG8EFaw>
+ <xmx:Xa1TXkUAZW5yNro3fwZmf6i4muMubNGSs8O2zUAVHGqItmKKBeoXyg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 8B3CC3060FD3;
- Mon, 24 Feb 2020 06:01:01 -0500 (EST)
-Date: Mon, 24 Feb 2020 12:01:00 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id 057D8328005E;
+ Mon, 24 Feb 2020 06:02:49 -0500 (EST)
+Date: Mon, 24 Feb 2020 12:02:48 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH 1/3] arm64: dts: sun50i-a64: Add i2c2 pins
-Message-ID: <20200224110100.acwln7zv3j5y67b2@gilmour.lan>
-References: <20200223172916.843379-1-megous@megous.com>
- <20200223172916.843379-2-megous@megous.com>
+Subject: Re: [PATCH v2] bus: sunxi-rsb: Return correct data when mixing
+ 16-bit and 8-bit reads
+Message-ID: <20200224110248.hpi3dhp3t7q56hmm@gilmour.lan>
+References: <20200221202728.1583768-1-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <20200223172916.843379-2-megous@megous.com>
+In-Reply-To: <20200221202728.1583768-1-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_030106_461464_DCD87318 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20200224_030255_824738_A01FBFA1 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
+ low trust [64.147.123.25 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,70 +103,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Luca Weiss <luca@z3ntu.xyz>,
- linux-arm-kernel@lists.infradead.org, Samuel Holland <samuel@sholland.org>,
- Bhushan Shah <bshah@kde.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, Martijn Braam <martijn@brixit.nl>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe@baylibre.com>, devicetree@vger.kernel.org,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============8619318150289438811=="
+Cc: Samuel Holland <samuel@sholland.org>,
+ open list <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ linux-sunxi@googlegroups.com, Chen-Yu Tsai <wens@csie.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============2746926291989116690=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8619318150289438811==
+--===============2746926291989116690==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="itczx53dk2nynkp7"
+	protocol="application/pgp-signature"; boundary="srx47feia3nohrm4"
 Content-Disposition: inline
 
 
---itczx53dk2nynkp7
+--srx47feia3nohrm4
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sun, Feb 23, 2020 at 06:29:14PM +0100, Ondrej Jirman wrote:
-> PinePhone needs I2C2 pins description. Add it.
+On Fri, Feb 21, 2020 at 09:27:26PM +0100, Ondrej Jirman wrote:
+> When doing a 16-bit read that returns data in the MSB byte, the
+> RSB_DATA register will keep the MSB byte unchanged when doing
+> the following 8-bit read. sunxi_rsb_read() will then return
+> a result that contains high byte from 16-bit read mixed with
+> the 8-bit result.
+>
+> The consequence is that after this happens the PMIC's regmap will
+> look like this: (0x33 is the high byte from the 16-bit read)
+>
+> % cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
+> 00: 33
+> 01: 33
+> 02: 33
+> 03: 33
+> 04: 33
+> 05: 33
+> 06: 33
+> 07: 33
+> 08: 33
+> 09: 33
+> 0a: 33
+> 0b: 33
+> 0c: 33
+> 0d: 33
+> 0e: 33
+> [snip]
+>
+> Fix this by masking the result of the read with the correct mask
+> based on the size of the read. There are no 16-bit users in the
+> mainline kernel, so this doesn't need to get into the stable tree.
 >
 > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 5 +++++
->  1 file changed, 5 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> index 862b47dc9dc90..0fdf5f400d743 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> @@ -671,6 +671,11 @@ i2c1_pins: i2c1-pins {
->  				function = "i2c1";
->  			};
->
-> +			i2c2_pins: i2c2-pins {
-> +				pins = "PE14", "PE15";
-> +				function = "i2c2";
-> +			};
-> +
+> Acked-by: Chen-Yu Tsai <wens@csie.org>
 
-Setting it as the default muxing for i2c2 would be great
-
+Applied, thanks!
 Maxime
 
---itczx53dk2nynkp7
+--srx47feia3nohrm4
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlOs6wAKCRDj7w1vZxhR
-xWI6AP44VoFKHK85VXx0xXuA1V0bHXa63zvjVyvoz5TB5O0mBAEAkLlwyvfiL8mG
-2Ch1ACilRsLV/RB4PLsPCRzuHl8uNwU=
-=M8JW
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlOtWAAKCRDj7w1vZxhR
+xZ3GAQDQc1KfI9aGFO2vdN8rwe58X/8JKWbnV1gWWOW6MvI39wEAzTL/pyT7Z9hY
+YnHiJd9rQY5Llx/U60FxMs+RfZ15wAY=
+=Ggtt
 -----END PGP SIGNATURE-----
 
---itczx53dk2nynkp7--
+--srx47feia3nohrm4--
 
 
---===============8619318150289438811==
+--===============2746926291989116690==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -180,5 +186,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8619318150289438811==--
+--===============2746926291989116690==--
 
