@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0F1616AEEE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:25:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4855E16AEF9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:25:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3N1cQxNhQPOoJEIqv+8DdceHpOEj0TzEN3Q4hNxSN30=; b=uF7Q8ySpvqhGqp
-	W3/iHE02xO3PNr7FLpcGyuyw1ILdnKmhTjLKn+tO/FNK3gyzraFLS7ofx+XCBY0/7TuMH8U9tf/bc
-	icM9W1VfS4Ue3Hffe9UDECvxjL6n/AdS5vABxWK7qV+38MezMFefSLXLezUHWlMCTu3mZIfzjdl4k
-	uOPh4ArM3fFQR3e7O0S9HD8ZEHlnOx4GtpYghQhWkfrcDoFJSGq85te7XLKGXwSvHyhIpIGFquMZu
-	1Ge2Luv4OpllOdBilsoZ2kP5vXPELMvS2JCd1TwCj4k3brTaQ3ET7K/6IpsIUWrFmPlZYmzfQ+aVz
-	SGrfQYwlGKnG1suKelig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4Nzew6fHS+L1UTfcAZJ29OnDSKfI1U8HWj0lBhX7o4g=; b=I0+7Y53mXejiSK
+	lSmZ2lF+T3ux4WmBjnCwHZWioyjT+57m2Z+0K28AYxodQXs26ev+tO8Q1TrebPhP5SHF3/0ANVLhv
+	nOJqvRT71szOk1Uk5Ll7wS+Kthdc0AE88keoCH/6VyMRUAwhT0zNaZ2kAHcAWmR8xkfeMLp/28scz
+	A7H6jblmVeZHA2p1/SlslWdUBrOMGedWoaU6VUubge+ChFLL5sSKH+XqVFEc5L3ct9gu3NqgVw9oZ
+	r+kPOQ/TuZ1/4io6z7cDXGtcZ5WT6CImSVD6aBuvoNOcWhx0x1BRFsZa3KaUyH8qsK7F1zuD2llp2
+	hs+0EcDK5t71x+MXvA1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6IPZ-0005TA-SY; Mon, 24 Feb 2020 18:24:57 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j6IPy-0005wS-Ne; Mon, 24 Feb 2020 18:25:22 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6IP9-0005Rj-4j
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:24:32 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e8so11576775wrm.5
+ id 1j6IPA-0005S3-4v
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:24:33 +0000
+Received: by mail-wm1-x344.google.com with SMTP id c84so335895wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 10:24:30 -0800 (PST)
+ Mon, 24 Feb 2020 10:24:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=JRxfwTIy/8+3jEzlkFDZdgky1C85KqEMpExdkb37WLo=;
- b=s25B8T+S35H/O6yszlE4ht/8dnZTVbVI45eoc18FEdUcuiqMOkNv2En79g5o74Mjb1
- zO0yPt9INl3chhwisC9rzUkdJf0KZaX+EEaOzn4at8814D7OV6Ve3Y/q4pwkE9wi4gYu
- 4NYIQP85Zbbc1PlNfDZfjeA3U8wAvoenL2JO0jnQMn9vhAAuMTLgi9jQn9Q1AdYeuJJU
- BkB5JJMJxdDXUmmSYzWum50ng/h3NEbyy9CZzm/kqZ1bBayTgnMnxX3UOetLLAqiANAe
- ytqloaU+0oK0O/ROB9DQ4hPFo9/4wTvVQGYWlX4dBA8x+YHwhPudv6KQaaVQDMvhpCtT
- SQXg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=kbHJ4C4uglc6rYdZYTlW3Ff7m1UL228yD2k/lvDMteQ=;
+ b=BxwepHpIFjHRcQQpVZG+EplOFBe3rPSTVBngLVdFteqRT2sLkmijWsDNxP3gXAef7v
+ A9Ki3xgUFAgIDFoku0kKMZVVruyvYqZ8P8ImelWV3mtAtcAJTUGNA/kEnXYxrutWTloe
+ fmjk12xB0K+ir7axe3XxEzuiqhFr0/u9/5K9kFOyGIdcu5bt5VVq83gQymC8zsmkJCrv
+ voT9EkmQHwO+gN+4rzvID2aVflV2VnNv2bi6U866Sm6W2RilOTdNfOLgBgPttVSwqcS3
+ OsiGL9oPhNzw8EjsxCP7KMoEV62b+oEAsAdB6DLym25mnnvzgc/nSHXSofYo+yTjBwRE
+ C0Bg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=JRxfwTIy/8+3jEzlkFDZdgky1C85KqEMpExdkb37WLo=;
- b=X8fCSz20Ap5EDsfgrNgVtrO2xdALixPZxW/rvNll/J5+trRf+IBNoHkShF9GfzITf1
- O8Dovyz7Z2dzwyoh+XLQwtdQlNKZ5+neQa5XRpwhLoKVtNeLifPg084xOHHpEcZqXvxm
- bo0ChWlLvdnnVi4IzshrMnBkcVtZK3o95Nv+w3RT7cwX5Y5STiMQv32IJEX3MtZljiVg
- TGdiSZZm0d7rfHBE0uFvEgjYdRBxswRiyo0nOHkpA8aPTCf4Fqc1kIn/2YG0N2xQGFO8
- NcfZgJM1N7r7JAH2ZYj/Kem/wsIpkwASgY1DlWRZY9g2f9Iwdmi1YFmp0HtDdPmVDQVX
- vUIA==
-X-Gm-Message-State: APjAAAWjQ5PZJdt/DwBcvMqkxv5d6AfIvjAQLCDrEUt/0dfqFTRSr/tL
- BhW+M6FEV9ndzZYqYYDe9VUjjS2YC74=
-X-Google-Smtp-Source: APXvYqzE3blpq1LSjWRjclFKCyKwQ41mykQ2DJWxVVDjuNwoKAu6osDlQgygC/xn0dF39ObvsiZRIA==
-X-Received: by 2002:adf:fec4:: with SMTP id q4mr9813022wrs.368.1582568669522; 
- Mon, 24 Feb 2020 10:24:29 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=kbHJ4C4uglc6rYdZYTlW3Ff7m1UL228yD2k/lvDMteQ=;
+ b=o6gV6AxX/admk/Z/l9dtJde7eMP8gqM/418OCDsWSpfA5z7L5MSlgrozHpQKo/8so4
+ ssXrL3TyRjywZaWtqgEoAKmg4rB78qETzN5x2+/DW6lZ9bO3k7k9IgIYAbFUwyWJgMmY
+ yBYFJvCMHe+eTodE9dL4JUJ8iLZsHPWRWTdlsG+8ncp1CPesgTZFBDr8mxvm9n8cfUNQ
+ gqPIcGt7eUpq+6lZhPcuyQbLoD68Vk3mrKsW1u6dYeAkmNIOWki+/LmgAYAGlLpRk2Fr
+ v2VjffV/X6tfXdmlmyYT71DqTCm7l2et7O5TWRbo7AFiujfCQCWJgITBi/7Yw1d041sT
+ 2gXA==
+X-Gm-Message-State: APjAAAXJlzG3zXfXA4E2GVgP1x3BNBBNQJFyXa8KAcUSB/mE4il13tQ1
+ /kuV7K4dxZs2UJeZA8qtwgNoKw==
+X-Google-Smtp-Source: APXvYqxeEVL2FgAN9u8VRKK0cl4gGMwWc0V5xlt1mC7IWnfDQ/iqcXGTBT4xHtfN+pJg9F8k5m70JQ==
+X-Received: by 2002:a1c:7919:: with SMTP id l25mr284798wme.135.1582568670689; 
+ Mon, 24 Feb 2020 10:24:30 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id n3sm304255wmc.27.2020.02.24.10.24.28
+ by smtp.gmail.com with ESMTPSA id n3sm304255wmc.27.2020.02.24.10.24.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 10:24:29 -0800 (PST)
+ Mon, 24 Feb 2020 10:24:30 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v4 00/26] iommu: Shared Virtual Addressing and SMMUv3 support
-Date: Mon, 24 Feb 2020 19:23:35 +0100
-Message-Id: <20200224182401.353359-1-jean-philippe@linaro.org>
+Subject: [PATCH v4 01/26] mm/mmu_notifiers: pass private data down to
+ alloc_notifier()
+Date: Mon, 24 Feb 2020 19:23:36 +0100
+Message-Id: <20200224182401.353359-2-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200224182401.353359-1-jean-philippe@linaro.org>
+References: <20200224182401.353359-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_102431_186988_96112605 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20200224_102432_185463_BCAAC554 
+X-CRM114-Status: GOOD (  17.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,103 +101,131 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, kevin.tian@intel.com, jacob.jun.pan@linux.intel.com,
- catalin.marinas@arm.com, joro@8bytes.org, robin.murphy@arm.com,
+ Dimitri Sivanich <sivanich@sgi.com>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, catalin.marinas@arm.com,
+ joro@8bytes.org, robin.murphy@arm.com, Jason Gunthorpe <jgg@ziepe.ca>,
  robh+dt@kernel.org, yi.l.liu@intel.com, Jonathan.Cameron@huawei.com,
- zhangfei.gao@linaro.org, will@kernel.org, christian.koenig@amd.com,
- baolu.lu@linux.intel.com
+ zhangfei.gao@linaro.org, Andrew Morton <akpm@linux-foundation.org>,
+ will@kernel.org, christian.koenig@amd.com, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Shared Virtual Addressing (SVA) allows to share process page tables with
-devices using the IOMMU. Add a generic implementation of the IOMMU SVA
-API, and add support in the Arm SMMUv3 driver.
+The new allocation scheme introduced by 2c7933f53f6b ("mm/mmu_notifiers:
+add a get/put scheme for the registration") provides a convenient way
+for users to attach notifier data to an mm. However, it would be even
+better to create this notifier data atomically.
 
-Previous versions of this patchset were sent over a year ago [1][2] but
-we've made a lot of progress since then:
+Since the alloc_notifier() callback only takes an mm argument at the
+moment, some users have to perform the allocation in two times.
+alloc_notifier() initially creates an incomplete structure, which is
+then finalized using more context once mmu_notifier_get() returns. This
+second step requires carrying an initialization lock in the notifier
+data and playing dirty tricks to order memory accesses against live
+invalidation.
 
-* ATS support for SMMUv3 was merged in v5.2.
-* The bind() and fault reporting APIs have been merged in v5.3.
-* IOASID were added in v5.5.
-* SMMUv3 PASID was added in v5.6, with some pending for v5.7.
+To simplify MMU notifier allocation, pass an allocation context to
+mmu_notifier_get().
 
-* The first user of the bind() API will be merged in v5.7 [3]. The zip
-  accelerator is also the first piece of hardware that I've been able to
-  use for testing (previous versions were developed with software models)
-  and I now have tools for evaluating SVA performance. Unfortunately I
-  still don't have hardware that supports ATS and PRI; the zip accelerator
-  uses stall.
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Dimitri Sivanich <sivanich@sgi.com>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Jason Gunthorpe <jgg@ziepe.ca>
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+ drivers/misc/sgi-gru/grutlbpurge.c |  4 ++--
+ include/linux/mmu_notifier.h       | 10 ++++++----
+ mm/mmu_notifier.c                  |  6 ++++--
+ 3 files changed, 12 insertions(+), 8 deletions(-)
 
-These are the remaining changes for SVA support in SMMUv3. Since v3 [1]
-I fixed countless bugs and - I think - addressed everyone's comments.
-Thanks to recent MMU notifier rework, iommu-sva.c is a lot more
-straightforward. I'm still unhappy with the complicated locking in the
-SMMUv3 driver resulting from patch 12 (Seize private ASID), but I
-haven't found anything better.
-
-Please find all SVA patches on branches sva/current and sva/zip-devel at
-https://jpbrucker.net/git/linux
-
-[1] https://lore.kernel.org/linux-iommu/20180920170046.20154-1-jean-philippe.brucker@arm.com/
-[2] https://lore.kernel.org/linux-iommu/20180511190641.23008-1-jean-philippe.brucker@arm.com/
-[3] https://lore.kernel.org/linux-iommu/1581407665-13504-1-git-send-email-zhangfei.gao@linaro.org/
-
-Jean-Philippe Brucker (26):
-  mm/mmu_notifiers: pass private data down to alloc_notifier()
-  iommu/sva: Manage process address spaces
-  iommu: Add a page fault handler
-  iommu/sva: Search mm by PASID
-  iommu/iopf: Handle mm faults
-  iommu/sva: Register page fault handler
-  arm64: mm: Pin down ASIDs for sharing mm with devices
-  iommu/io-pgtable-arm: Move some definitions to a header
-  iommu/arm-smmu-v3: Manage ASIDs with xarray
-  arm64: cpufeature: Export symbol read_sanitised_ftr_reg()
-  iommu/arm-smmu-v3: Share process page tables
-  iommu/arm-smmu-v3: Seize private ASID
-  iommu/arm-smmu-v3: Add support for VHE
-  iommu/arm-smmu-v3: Enable broadcast TLB maintenance
-  iommu/arm-smmu-v3: Add SVA feature checking
-  iommu/arm-smmu-v3: Add dev_to_master() helper
-  iommu/arm-smmu-v3: Implement mm operations
-  iommu/arm-smmu-v3: Hook up ATC invalidation to mm ops
-  iommu/arm-smmu-v3: Add support for Hardware Translation Table Update
-  iommu/arm-smmu-v3: Maintain a SID->device structure
-  iommu/arm-smmu-v3: Ratelimit event dump
-  dt-bindings: document stall property for IOMMU masters
-  iommu/arm-smmu-v3: Add stall support for platform devices
-  PCI/ATS: Add PRI stubs
-  PCI/ATS: Export symbols of PRI functions
-  iommu/arm-smmu-v3: Add support for PRI
-
- .../devicetree/bindings/iommu/iommu.txt       |   18 +
- arch/arm64/include/asm/mmu.h                  |    1 +
- arch/arm64/include/asm/mmu_context.h          |   11 +-
- arch/arm64/kernel/cpufeature.c                |    1 +
- arch/arm64/mm/context.c                       |  103 +-
- drivers/iommu/Kconfig                         |   13 +
- drivers/iommu/Makefile                        |    2 +
- drivers/iommu/arm-smmu-v3.c                   | 1354 +++++++++++++++--
- drivers/iommu/io-pgfault.c                    |  533 +++++++
- drivers/iommu/io-pgtable-arm.c                |   27 +-
- drivers/iommu/io-pgtable-arm.h                |   30 +
- drivers/iommu/iommu-sva.c                     |  596 ++++++++
- drivers/iommu/iommu-sva.h                     |   64 +
- drivers/iommu/iommu.c                         |    1 +
- drivers/iommu/of_iommu.c                      |    5 +-
- drivers/misc/sgi-gru/grutlbpurge.c            |    4 +-
- drivers/pci/ats.c                             |    4 +
- include/linux/iommu.h                         |   73 +
- include/linux/mmu_notifier.h                  |   10 +-
- include/linux/pci-ats.h                       |    8 +
- mm/mmu_notifier.c                             |    6 +-
- 21 files changed, 2699 insertions(+), 165 deletions(-)
- create mode 100644 drivers/iommu/io-pgfault.c
- create mode 100644 drivers/iommu/io-pgtable-arm.h
- create mode 100644 drivers/iommu/iommu-sva.c
- create mode 100644 drivers/iommu/iommu-sva.h
-
+diff --git a/drivers/misc/sgi-gru/grutlbpurge.c b/drivers/misc/sgi-gru/grutlbpurge.c
+index 10921cd2608d..77610e1704f6 100644
+--- a/drivers/misc/sgi-gru/grutlbpurge.c
++++ b/drivers/misc/sgi-gru/grutlbpurge.c
+@@ -235,7 +235,7 @@ static void gru_invalidate_range_end(struct mmu_notifier *mn,
+ 		gms, range->start, range->end);
+ }
+ 
+-static struct mmu_notifier *gru_alloc_notifier(struct mm_struct *mm)
++static struct mmu_notifier *gru_alloc_notifier(struct mm_struct *mm, void *privdata)
+ {
+ 	struct gru_mm_struct *gms;
+ 
+@@ -266,7 +266,7 @@ struct gru_mm_struct *gru_register_mmu_notifier(void)
+ {
+ 	struct mmu_notifier *mn;
+ 
+-	mn = mmu_notifier_get_locked(&gru_mmuops, current->mm);
++	mn = mmu_notifier_get_locked(&gru_mmuops, current->mm, NULL);
+ 	if (IS_ERR(mn))
+ 		return ERR_CAST(mn);
+ 
+diff --git a/include/linux/mmu_notifier.h b/include/linux/mmu_notifier.h
+index 736f6918335e..06e68fa2b019 100644
+--- a/include/linux/mmu_notifier.h
++++ b/include/linux/mmu_notifier.h
+@@ -207,7 +207,7 @@ struct mmu_notifier_ops {
+ 	 * callbacks are currently running. It is called from a SRCU callback
+ 	 * and cannot sleep.
+ 	 */
+-	struct mmu_notifier *(*alloc_notifier)(struct mm_struct *mm);
++	struct mmu_notifier *(*alloc_notifier)(struct mm_struct *mm, void *privdata);
+ 	void (*free_notifier)(struct mmu_notifier *subscription);
+ };
+ 
+@@ -271,14 +271,16 @@ static inline int mm_has_notifiers(struct mm_struct *mm)
+ }
+ 
+ struct mmu_notifier *mmu_notifier_get_locked(const struct mmu_notifier_ops *ops,
+-					     struct mm_struct *mm);
++					     struct mm_struct *mm,
++					     void *privdata);
+ static inline struct mmu_notifier *
+-mmu_notifier_get(const struct mmu_notifier_ops *ops, struct mm_struct *mm)
++mmu_notifier_get(const struct mmu_notifier_ops *ops, struct mm_struct *mm,
++		 void *privdata)
+ {
+ 	struct mmu_notifier *ret;
+ 
+ 	down_write(&mm->mmap_sem);
+-	ret = mmu_notifier_get_locked(ops, mm);
++	ret = mmu_notifier_get_locked(ops, mm, privdata);
+ 	up_write(&mm->mmap_sem);
+ 	return ret;
+ }
+diff --git a/mm/mmu_notifier.c b/mm/mmu_notifier.c
+index ef3973a5d34a..8beb9dcbe0fd 100644
+--- a/mm/mmu_notifier.c
++++ b/mm/mmu_notifier.c
+@@ -734,6 +734,7 @@ find_get_mmu_notifier(struct mm_struct *mm, const struct mmu_notifier_ops *ops)
+  *                           the mm & ops
+  * @ops: The operations struct being subscribe with
+  * @mm : The mm to attach notifiers too
++ * @privdata: Initialization data passed down to ops->alloc_notifier()
+  *
+  * This function either allocates a new mmu_notifier via
+  * ops->alloc_notifier(), or returns an already existing notifier on the
+@@ -747,7 +748,8 @@ find_get_mmu_notifier(struct mm_struct *mm, const struct mmu_notifier_ops *ops)
+  * and can be converted to an active mm pointer via mmget_not_zero().
+  */
+ struct mmu_notifier *mmu_notifier_get_locked(const struct mmu_notifier_ops *ops,
+-					     struct mm_struct *mm)
++					     struct mm_struct *mm,
++					     void *privdata)
+ {
+ 	struct mmu_notifier *subscription;
+ 	int ret;
+@@ -760,7 +762,7 @@ struct mmu_notifier *mmu_notifier_get_locked(const struct mmu_notifier_ops *ops,
+ 			return subscription;
+ 	}
+ 
+-	subscription = ops->alloc_notifier(mm);
++	subscription = ops->alloc_notifier(mm, privdata);
+ 	if (IS_ERR(subscription))
+ 		return subscription;
+ 	subscription->ops = ops;
 -- 
 2.25.0
 
