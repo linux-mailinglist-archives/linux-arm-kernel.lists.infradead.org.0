@@ -2,33 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA63E16B081
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 20:45:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC7A716B07F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 20:45:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ibtGIOb/Rv1ougfu43yEZNfAQ0Ll1+OAa+P2a1iv3hs=; b=r2oGgiWfWCYaaL
-	eyb9elTyI91HeDvAdLwssAUopJOyhL4XXiBswb/Ae2kBdcECYeS3f1BVMIVBVSv5ZOLJr3IPNxMtP
-	yLyXjFjrrRLZvtB8bNlHd0FHSCyWT4bbPVaWWK9pca4HgVD0FpFXSC+IlXSD7VMCORQwvMPae3zSL
-	japXFIDc5g/85DciNRHTRKlKnsFFYuiHmalnYsNJl5QMcVdkQqZJPwyBFgIjSjp34CUdZdLRo4iND
-	QCb6P5QUXdVN+U11Ur7wvUZzgjr6XOxhiVMfz3ua3Q9wEqdp7t/ADoSRic+FwXWv82CPdD64iCEy3
-	613h+UtpgiZpm7kMVXMg==;
+	List-Owner; bh=3h4kjU4XfZnr1SMvmd84srFAsnmIG2tBwGOGwd2aY4U=; b=jC3AiNoTKBmV5X
+	PS/9qIUWx2z4rBjDql+/ftElZy+TevER1l8rwTRvmIQzp38F3JxYAt8XakJ4eyqSW1tAZa07De7Q6
+	HG1RSZQyaoQPnefcDqVomzobQXhryKsuTNiMFQ8LRbgluUq4wys+Ol3Ev7CHiixZsPRv8jCFV+fcj
+	z+TH1iuHTnVzSH9w1mfLKtlJMioLijAdoxFKfUX2d1Bsyr3RqdO2k9uSG+QayVbJabM/8/MgRhZ2/
+	Jv387bdvdEwP8HuKUxxF6p0Ipenh+gfdZsxymTqMwNw684la54Xt6j8nBppd3GLI2oF8NlyOSWrB7
+	jyGK35Asykdld4MO7VwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Jfc-0008AY-Tn; Mon, 24 Feb 2020 19:45:36 +0000
+	id 1j6JfP-0006fk-CR; Mon, 24 Feb 2020 19:45:23 +0000
 Received: from [4.28.11.157] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Jeq-0006X9-3L; Mon, 24 Feb 2020 19:44:48 +0000
+ id 1j6Jer-0006XE-BN; Mon, 24 Feb 2020 19:44:49 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Jonas Bonn <jonas@southpole.se>,
  Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
  Stafford Horne <shorne@gmail.com>
-Subject: [PATCH 1/5] dma-direct: remove the cached_kernel_address hook
-Date: Mon, 24 Feb 2020 11:44:41 -0800
-Message-Id: <20200224194446.690816-2-hch@lst.de>
+Subject: [PATCH 2/5] dma-direct: consolidate the error handling in
+ dma_direct_alloc_pages
+Date: Mon, 24 Feb 2020 11:44:42 -0800
+Message-Id: <20200224194446.690816-3-hch@lst.de>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224194446.690816-1-hch@lst.de>
 References: <20200224194446.690816-1-hch@lst.de>
@@ -54,119 +55,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dma-direct now finds the kernel address for coherent allocations based
-on the dma address, so the cached_kernel_address hooks is unused and
-can be removed entirely.
+Use a goto label to merge two error return cases.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/Kconfig                    |  2 +-
- arch/microblaze/mm/consistent.c |  7 -------
- arch/mips/mm/dma-noncoherent.c  |  5 -----
- arch/nios2/mm/dma-mapping.c     | 10 ----------
- arch/xtensa/kernel/pci-dma.c    | 10 ++--------
- include/linux/dma-noncoherent.h |  1 -
- 6 files changed, 3 insertions(+), 32 deletions(-)
+ kernel/dma/direct.c | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
 
-diff --git a/arch/Kconfig b/arch/Kconfig
-index 98de654b79b3..7994b239f155 100644
---- a/arch/Kconfig
-+++ b/arch/Kconfig
-@@ -249,7 +249,7 @@ config ARCH_HAS_SET_DIRECT_MAP
+diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
+index ac7956c38f69..9dfcc7be4903 100644
+--- a/kernel/dma/direct.c
++++ b/kernel/dma/direct.c
+@@ -157,11 +157,8 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+ 		ret = dma_common_contiguous_remap(page, PAGE_ALIGN(size),
+ 				dma_pgprot(dev, PAGE_KERNEL, attrs),
+ 				__builtin_return_address(0));
+-		if (!ret) {
+-			dma_free_contiguous(dev, page, size);
+-			return ret;
+-		}
+-
++		if (!ret)
++			goto out_free_pages;
+ 		memset(ret, 0, size);
+ 		goto done;
+ 	}
+@@ -174,8 +171,7 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+ 		 * so log an error and fail.
+ 		 */
+ 		dev_info(dev, "Rejecting highmem page from CMA.\n");
+-		dma_free_contiguous(dev, page, size);
+-		return NULL;
++		goto out_free_pages;
+ 	}
  
- #
- # Select if arch has an uncached kernel segment and provides the
--# uncached_kernel_address / cached_kernel_address symbols to use it
-+# uncached_kernel_address symbol to use it
- #
- config ARCH_HAS_UNCACHED_SEGMENT
- 	select ARCH_HAS_DMA_PREP_COHERENT
-diff --git a/arch/microblaze/mm/consistent.c b/arch/microblaze/mm/consistent.c
-index 8c5f0c332d8b..cede7c5e8135 100644
---- a/arch/microblaze/mm/consistent.c
-+++ b/arch/microblaze/mm/consistent.c
-@@ -49,11 +49,4 @@ void *uncached_kernel_address(void *ptr)
- 		pr_warn("ERROR: Your cache coherent area is CACHED!!!\n");
- 	return (void *)addr;
+ 	ret = page_address(page);
+@@ -195,6 +191,9 @@ void *dma_direct_alloc_pages(struct device *dev, size_t size,
+ 	else
+ 		*dma_handle = phys_to_dma(dev, page_to_phys(page));
+ 	return ret;
++out_free_pages:
++	dma_free_contiguous(dev, page, size);
++	return NULL;
  }
--
--void *cached_kernel_address(void *ptr)
--{
--	unsigned long addr = (unsigned long)ptr;
--
--	return (void *)(addr & ~UNCACHED_SHADOW_MASK);
--}
- #endif /* CONFIG_MMU */
-diff --git a/arch/mips/mm/dma-noncoherent.c b/arch/mips/mm/dma-noncoherent.c
-index dc42ffc83825..77dce28ad0a0 100644
---- a/arch/mips/mm/dma-noncoherent.c
-+++ b/arch/mips/mm/dma-noncoherent.c
-@@ -54,11 +54,6 @@ void *uncached_kernel_address(void *addr)
- 	return (void *)(__pa(addr) + UNCAC_BASE);
- }
  
--void *cached_kernel_address(void *addr)
--{
--	return __va(addr) - UNCAC_BASE;
--}
--
- static inline void dma_sync_virt(void *addr, size_t size,
- 		enum dma_data_direction dir)
- {
-diff --git a/arch/nios2/mm/dma-mapping.c b/arch/nios2/mm/dma-mapping.c
-index 0ed711e37902..f30f2749257c 100644
---- a/arch/nios2/mm/dma-mapping.c
-+++ b/arch/nios2/mm/dma-mapping.c
-@@ -75,13 +75,3 @@ void *uncached_kernel_address(void *ptr)
- 
- 	return (void *)ptr;
- }
--
--void *cached_kernel_address(void *ptr)
--{
--	unsigned long addr = (unsigned long)ptr;
--
--	addr &= ~CONFIG_NIOS2_IO_REGION_BASE;
--	addr |= CONFIG_NIOS2_KERNEL_REGION_BASE;
--
--	return (void *)ptr;
--}
-diff --git a/arch/xtensa/kernel/pci-dma.c b/arch/xtensa/kernel/pci-dma.c
-index 72b6222daa0b..6a685545d5c9 100644
---- a/arch/xtensa/kernel/pci-dma.c
-+++ b/arch/xtensa/kernel/pci-dma.c
-@@ -88,18 +88,12 @@ void arch_dma_prep_coherent(struct page *page, size_t size)
- 
- /*
-  * Memory caching is platform-dependent in noMMU xtensa configurations.
-- * The following two functions should be implemented in platform code
-- * in order to enable coherent DMA memory operations when CONFIG_MMU is not
-- * enabled.
-+ * This function should be implemented in platform code in order to enable
-+ * coherent DMA memory operations when CONFIG_MMU is not enabled.
-  */
- #ifdef CONFIG_MMU
- void *uncached_kernel_address(void *p)
- {
- 	return p + XCHAL_KSEG_BYPASS_VADDR - XCHAL_KSEG_CACHED_VADDR;
- }
--
--void *cached_kernel_address(void *p)
--{
--	return p + XCHAL_KSEG_CACHED_VADDR - XCHAL_KSEG_BYPASS_VADDR;
--}
- #endif /* CONFIG_MMU */
-diff --git a/include/linux/dma-noncoherent.h b/include/linux/dma-noncoherent.h
-index ca9b5770caee..b6b72e19b0cd 100644
---- a/include/linux/dma-noncoherent.h
-+++ b/include/linux/dma-noncoherent.h
-@@ -109,6 +109,5 @@ static inline void arch_dma_prep_coherent(struct page *page, size_t size)
- #endif /* CONFIG_ARCH_HAS_DMA_PREP_COHERENT */
- 
- void *uncached_kernel_address(void *addr);
--void *cached_kernel_address(void *addr);
- 
- #endif /* _LINUX_DMA_NONCOHERENT_H */
+ void dma_direct_free_pages(struct device *dev, size_t size, void *cpu_addr,
 -- 
 2.24.1
 
