@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 834CB16AF2E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:32:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CA4016AF2D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 19:31:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p4a/PbPQMtx/7wLdahWpg1AEWk3zKVPQwgAUacgdtzU=; b=P1d0HX2ma9udwV
-	/HjxBfhkp6UC6fBiEYc7O8P+zyk1WDjthaNnW7Zz7TPdk56dQIzqIdOurXTXjoUs3oY2sc+twm/vc
-	pYOxLkxlWiGxLmaOjJEwrC5/xzFbFUPbHlUQcCjd03NaXkCzSg/+B+KfgXmvLBJ9oJGOzmrOMZ5F9
-	Y3Wj+WC1isteI4Z2/Jljt1tCdMt+PzaZn1Bq3OJOroookduprtA28FuoaLZFwH6O5qnF9/O7PDGLD
-	iV31qPywiS0DeYY63jrqQKJNFydxy+JBkEGi9fgxFKoXcVs+c42sojv77uJ7yb6Q1y4CSwFuH31cn
-	NEbPpfbtKw7TRI/f0fTw==;
+	List-Owner; bh=a5fxDMGD5DA7u+PjGz9C0Aep0woeTB7tDK8ppe10omI=; b=nU/cKcI+WmFZ8h
+	xNpmAFtfSHuaCpg316zZWwlguvXHGgn/T+c3w9oFCRpPjDXMtRbKx0vll8zvxRhsJRxfNR8gUItc1
+	+AGIULlrAASnlaQVGPAThkjDcgt/qJ1L8VlFfptMGxLl4hDQgwT3PvWNra/WhTVe6Gbs4m36gKlse
+	FcbFiZDQd761dOLb9CIp0/mF8a6RG3PllgoiAcWZKhKAajlum3Bfwr21Qzrvoq1KPGnQofpG8Yp7t
+	i4PHVtiZfROShW9mxkQnNrI0b+7ge4i+yzlH5Z34IwkpBK0L5EHNjJ1/dMjVWRdYik0bsgkActrZs
+	uhKg+We3mjZMGikrBxwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6IWA-0005qR-Kw; Mon, 24 Feb 2020 18:31:46 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j6IVx-0005ZN-Hc; Mon, 24 Feb 2020 18:31:33 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6IPa-0005t7-0c
+ id 1j6IPa-0005uO-Ql
  for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 18:25:00 +0000
-Received: by mail-wr1-x444.google.com with SMTP id z3so11585777wru.3
+Received: by mail-wm1-x342.google.com with SMTP id p17so358050wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 24 Feb 2020 10:24:57 -0800 (PST)
+ Mon, 24 Feb 2020 10:24:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oVPY2SNV/SUayab6VGyitFWrI9RILHKqjSrcDOg3sBg=;
- b=OnFOZtrZEFufL7rTBOmlZ40Hq224mutQ/5o0VAFHjr/9ZW5PBMJ0Y7/GDS3/xR/dnD
- TEsPyQ+iLNysIg1dKsUqwcdOSjQuqzH7iLV5knh5wCpz5/PmbdVT8KcjMEYbg24is9zH
- t6ACUI7hhk9FGQPHZTGMTb2NY4PcnI9R5MLG1z3wtZTl3ODyonISTbNRfmBpEMohHa92
- CKN1L7n6QuxpTjQJxuOJ4Ho23RxS2Njg7SP7AcfdcAfbOXg6vAiEfIa4WG7H9/SStdt+
- Gm1dU1ozzhGu8153BnWCyrRxnsfeTzwGIutPWQZPh3v8U2NHd1wgZo4SDlNKF9ic1rWv
- Y4DA==
+ bh=L4b0/E9FteCzWtJ3m41x7utj4DLNM6J+Wsoo7xEmR/M=;
+ b=AaB0/woqy++LPMkoIBZ+m4G2UZnpMtnZvwcO6++TMOA9EU96huOkx2S0UskmT4cEpU
+ xMrifrssPWkaFWKgEl2sH4pudtTv9O5xP8UA1tGUign2rkYDTr5uz/QuiZzooFCt1UtE
+ rFYtkQKLo4kgyRbPCGQdQ0RkTH5WIdikmyUEt5mlxrO2m5pQuEYSi3SrHoKPrs6ir6C0
+ h1xnyNfpSIa1Ci4ubWuYL1OusT1Jg5137L60+g+2IYH6Io8VN2+J8l0BSyTJWIJ6meQH
+ bVi7Q64CjqZ4FvWJAUKwwHkRMFvfOpZv/R9jAdlHM31BS2Lo6e6itFaGlBgY5e1Zdzw/
+ 2HxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oVPY2SNV/SUayab6VGyitFWrI9RILHKqjSrcDOg3sBg=;
- b=QeCUf/aV7fhl7f/iaDJpOQwfaIuwMrbzTAJA0c9AGXomDSqn1Dt5nL+2pbiSx18iDI
- OiIgq9rbM2ejjyd1U693WUDi4FW4vCedBJWrJJ5H8qpegp9fQwKDIk/ShfsmhOFJXdLA
- L0fGRthVcyW9fMJ4eDMEivmqL7NmVUd+3pfgD455VnI7QsOmFYJK/WbMmMc4Yuw69Ak0
- YQe15tBTPliAy2rll2hUom5z2tEZL8FmiMvIZgUycC1bXgWe1+j2a/uLzPDSJ27BEpLO
- PDkrHEsuUItmMhepE6jX3xbDWUI5g9Xkkc9GA58XGUrO2iozN2EVnuePhGtSxIsCkOMn
- 0OEQ==
-X-Gm-Message-State: APjAAAUviAnqkeyFTe9kVkFPJF2CC3U/I8brXb1BCSBZHKGAPcxWls5k
- jcaiDKYSql6grGL1sOSo+nG+Cw==
-X-Google-Smtp-Source: APXvYqxjjLnHOC5PFDeOpyj527vO7u0PGvC49hWOgOh7ytPa88sYjcO6Bg19gqIDQUy51J2OFlu0Ew==
-X-Received: by 2002:a5d:4c52:: with SMTP id n18mr2796517wrt.403.1582568696322; 
- Mon, 24 Feb 2020 10:24:56 -0800 (PST)
+ bh=L4b0/E9FteCzWtJ3m41x7utj4DLNM6J+Wsoo7xEmR/M=;
+ b=C3SaIAlieX0q84wcVrilhyk0+W8OsWMMFnsohPQ+pAUtiV7xKKehozcMqyDoIuq7SH
+ MbMlUNW+4qgB56uCwnb9HZ38McLpf0ExmFg3lRC0pk0OhkxFigNPLyOa0iTlP41QY6Bu
+ 88HA8Y9uRAs1ZlxjSixGShEvSBl6wzNngBnRiuRGfcvcAaaj55PCjtwZVhzyTETrFkcJ
+ hqcebbOFEi9v+YFcn2BzDGX3IBO4lwRnPlNt6/xkFPYi4dVP8etuLnbvtHaM9fDfwA0p
+ Fart22FlHK8D7mh00PIDVud2jEOTKCg4SsZ0+Kqb3aEbrNJNMMlsiqs44D6MTvHLjPlR
+ iIRQ==
+X-Gm-Message-State: APjAAAV2fBKHjF9DpjDG4+QF2YnoWjndXzDY40QkSlXG4hWmmYlHC3Vg
+ 6/v+M7/C5uyZW8Ftgoh2AFyceQ==
+X-Google-Smtp-Source: APXvYqx6ypZ/kM3sOzy1vTskWfaUURVJkjgEhRCiqvXYI27Ek63kaa7GG0Ur7iiefNgxz5pwggvx6A==
+X-Received: by 2002:a7b:c249:: with SMTP id b9mr296154wmj.61.1582568697369;
+ Mon, 24 Feb 2020 10:24:57 -0800 (PST)
 Received: from localhost.localdomain
  ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id n3sm304255wmc.27.2020.02.24.10.24.55
+ by smtp.gmail.com with ESMTPSA id n3sm304255wmc.27.2020.02.24.10.24.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 24 Feb 2020 10:24:55 -0800 (PST)
+ Mon, 24 Feb 2020 10:24:56 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v4 24/26] PCI/ATS: Add PRI stubs
-Date: Mon, 24 Feb 2020 19:23:59 +0100
-Message-Id: <20200224182401.353359-25-jean-philippe@linaro.org>
+Subject: [PATCH v4 25/26] PCI/ATS: Export symbols of PRI functions
+Date: Mon, 24 Feb 2020 19:24:00 +0100
+Message-Id: <20200224182401.353359-26-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200224182401.353359-1-jean-philippe@linaro.org>
 References: <20200224182401.353359-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_102458_100400_6ABBF5D5 
-X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-CacheID: sfid-20200224_102458_979926_87CB1EC0 
+X-CRM114-Status: UNSURE (   9.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,33 +110,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SMMUv3 driver, which can be built without CONFIG_PCI, will soon gain
-support for PRI.  Partially revert commit c6e9aefbf9db ("PCI/ATS: Remove
-unused PRI and PASID stubs") to re-introduce the PRI stubs, and avoid
-adding more #ifdefs to the SMMU driver.
+The SMMUv3 driver uses pci_{enable,disable}_pri() and related
+functions. Export those functions to allow the driver to be built as a
+module.
 
 Cc: Bjorn Helgaas <bhelgaas@google.com>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- include/linux/pci-ats.h | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/pci/ats.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
-index f75c307f346d..e9e266df9b37 100644
---- a/include/linux/pci-ats.h
-+++ b/include/linux/pci-ats.h
-@@ -28,6 +28,14 @@ int pci_enable_pri(struct pci_dev *pdev, u32 reqs);
- void pci_disable_pri(struct pci_dev *pdev);
- int pci_reset_pri(struct pci_dev *pdev);
- int pci_prg_resp_pasid_required(struct pci_dev *pdev);
-+#else /* CONFIG_PCI_PRI */
-+static inline int pci_enable_pri(struct pci_dev *pdev, u32 reqs)
-+{ return -ENODEV; }
-+static inline void pci_disable_pri(struct pci_dev *pdev) { }
-+static inline int pci_reset_pri(struct pci_dev *pdev)
-+{ return -ENODEV; }
-+static inline int pci_prg_resp_pasid_required(struct pci_dev *pdev)
-+{ return 0; }
+diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
+index bbfd0d42b8b9..fc8fc6fc8bd5 100644
+--- a/drivers/pci/ats.c
++++ b/drivers/pci/ats.c
+@@ -197,6 +197,7 @@ void pci_pri_init(struct pci_dev *pdev)
+ 	if (status & PCI_PRI_STATUS_PASID)
+ 		pdev->pasid_required = 1;
+ }
++EXPORT_SYMBOL_GPL(pci_pri_init);
+ 
+ /**
+  * pci_enable_pri - Enable PRI capability
+@@ -243,6 +244,7 @@ int pci_enable_pri(struct pci_dev *pdev, u32 reqs)
+ 
+ 	return 0;
+ }
++EXPORT_SYMBOL_GPL(pci_enable_pri);
+ 
+ /**
+  * pci_disable_pri - Disable PRI capability
+@@ -322,6 +324,7 @@ int pci_reset_pri(struct pci_dev *pdev)
+ 
+ 	return 0;
+ }
++EXPORT_SYMBOL_GPL(pci_reset_pri);
+ 
+ /**
+  * pci_prg_resp_pasid_required - Return PRG Response PASID Required bit
+@@ -337,6 +340,7 @@ int pci_prg_resp_pasid_required(struct pci_dev *pdev)
+ 
+ 	return pdev->pasid_required;
+ }
++EXPORT_SYMBOL_GPL(pci_prg_resp_pasid_required);
  #endif /* CONFIG_PCI_PRI */
  
  #ifdef CONFIG_PCI_PASID
