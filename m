@@ -2,83 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 717F316ACE9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:16:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10F6C16ACFD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 18:21:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pwebGw+FOpbAYGxfdpOFXyh05Rw4hzheX0TSJnjfAug=; b=ESETvs7fYnNrQF
-	eqUHRzCNc4BTx45jLpnWhJv0K5KxMm5p+EVaZ41unHRKHcnwDB+K+tpgtJjXOqwuMv8/ZX+Q8q4Qw
-	uq6RYEWUNeSCbYgSx2tkp/WPdMKF/ubHUK2vc5n4itQ0GONUNDZldFVO+AyGRU+GS/Usd8aZ24HeH
-	m8RDPjZ/m+UxHbZyflJE0K+7rraQe1EnVpuiSTmLmr6ASnxsiqxzc+wD/+DtAT+HUIjDVb9hCzRmr
-	Y0a7dyQUJTkj9FrJuYf2LvZ9g6BQE8aOfzoCw+BVtLprbyJxjCNjfbX7ynRyhfcBavhqHo4Dn7Q2D
-	e53C2g1DIQ4TdWDOzLiw==;
+	List-Owner; bh=srC261IflID5wlxrzhrmvGxuW8VBN1ey1ORKo5cH510=; b=UgaccrKVIH5EpP
+	D41X9CZZzK71ZGY4x4T0xoGpONYZV4ve82rpWqnK2yOli3ALzbSq30OH08wmWUDASIib1N9rgvwgV
+	QWvbRdZJ3uxvrzsdqFIYt8Hbo7e9MtyV9I8Qv8gsIdOFrpKLs6mOmjuYf52PPneUWYoqZojkWgr3e
+	KSlc/la0+mWO1+mZ6i3ylaevvMI2bldSKORoMuydJMTbYlSwBpckVli0kVnkXldiIFL+mhlkJ6iVu
+	vhmb0z1WvzhZR1/NFf6d2fO0+qlyBwtfhq/+ZmirM/8OOk0xwLsebuDU8V8wRu6p/8O99OLNHkmm/
+	1VPIMHum+Pr91RySFmag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6HLA-00042u-7W; Mon, 24 Feb 2020 17:16:20 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1j6HPh-0006lJ-FY; Mon, 24 Feb 2020 17:21:01 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6HL1-00040t-2m
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:16:12 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id AAE8367A7D5;
- Mon, 24 Feb 2020 18:16:01 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Mon, 24 Feb
- 2020 18:16:01 +0100
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1913.005; Mon, 24 Feb 2020 18:16:01 +0100
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Dan Williams <dan.j.williams@intel.com>, Fabio Estevam
- <festevam@gmail.com>, Linus Walleij <linus.ml.walleij@gmail.com>, "NXP Linux
- Team" <linux-imx@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- "Vinod Koul" <vkoul@kernel.org>
-Subject: [PATCH] dma: imx-sdma: Fix the event id check to include RX event for
- UART6
-Thread-Topic: [PATCH] dma: imx-sdma: Fix the event id check to include RX
- event for UART6
-Thread-Index: AQHV6zYWVmd7WYLi20CvYMo8u04O/w==
-Date: Mon, 24 Feb 2020 17:16:01 +0000
-Message-ID: <20200224171531.22204-1-frieder.schrempf@kontron.de>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+ id 1j6HPX-0006kr-Fe
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 17:20:53 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <afa@pengutronix.de>)
+ id 1j6HPQ-0002Zy-Ja; Mon, 24 Feb 2020 18:20:44 +0100
+Received: from afa by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <afa@pengutronix.de>)
+ id 1j6HPN-0007hE-Pi; Mon, 24 Feb 2020 18:20:41 +0100
+From: Ahmad Fatoum <a.fatoum@pengutronix.de>
+To: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH] ARM: dts: stm32: add cpu clock-frequency property on
+ stm32mp15x
+Date: Mon, 24 Feb 2020 18:20:30 +0100
+Message-Id: <20200224172031.27868-1-a.fatoum@pengutronix.de>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: AAE8367A7D5.A05BA
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: dan.j.williams@intel.com, dmaengine@vger.kernel.org,
- festevam@gmail.com, kernel@pengutronix.de,
- linus.ml.walleij@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-imx@nxp.com, linux-kernel@vger.kernel.org,
- s.hauer@pengutronix.de, shawnguo@kernel.org, stable@vger.kernel,
- vkoul@kernel.org
-X-Spam-Status: No
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: afa@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_091611_287975_6053E14C 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200224_092051_524276_37EEF4DA 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.208.41.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,53 +67,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "stable@vger.kernel" <stable@vger.kernel>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Ahmad Fatoum <a.fatoum@pengutronix.de>,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Frieder Schrempf <frieder.schrempf@kontron.de>
+All of the STM32MP151[1], STM32MP153[2] and STM32MP157[3] have their
+Cortex-A7 cores running at 650 MHz.
 
-On i.MX6 the DMA event for the RX channel of UART6 is '0'. To fix
-the broken DMA support for UART6, we change the check for event_id0
-to include '0' as a valid id.
+Add the clock-frequency property to CPU nodes to avoid warnings about
+them missing.
 
-Fixes: 1ec1e82f2510 ("dmaengine: Add Freescale i.MX SDMA support")
-Cc: stable@vger.kernel
-Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+[1]: https://www.st.com/en/microcontrollers-microprocessors/stm32mp151.html
+[2]: https://www.st.com/en/microcontrollers-microprocessors/stm32mp153.html
+[3]: https://www.st.com/en/microcontrollers-microprocessors/stm32mp157.html
+
+Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
 ---
- drivers/dma/imx-sdma.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/stm32mp151.dtsi | 1 +
+ arch/arm/boot/dts/stm32mp153.dtsi | 1 +
+ 2 files changed, 2 insertions(+)
 
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 066b21a32232..3d4aac97b1fc 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1331,7 +1331,7 @@ static void sdma_free_chan_resources(struct dma_chan *chan)
+diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
+index fb41d0778b00..fd46a8e11126 100644
+--- a/arch/arm/boot/dts/stm32mp151.dtsi
++++ b/arch/arm/boot/dts/stm32mp151.dtsi
+@@ -17,6 +17,7 @@ cpus {
  
- 	sdma_channel_synchronize(chan);
- 
--	if (sdmac->event_id0)
-+	if (sdmac->event_id0 >= 0)
- 		sdma_event_disable(sdmac, sdmac->event_id0);
- 	if (sdmac->event_id1)
- 		sdma_event_disable(sdmac, sdmac->event_id1);
-@@ -1631,7 +1631,7 @@ static int sdma_config(struct dma_chan *chan,
- 	memcpy(&sdmac->slave_config, dmaengine_cfg, sizeof(*dmaengine_cfg));
- 
- 	/* Set ENBLn earlier to make sure dma request triggered after that */
--	if (sdmac->event_id0) {
-+	if (sdmac->event_id0 >= 0) {
- 		if (sdmac->event_id0 >= sdmac->sdma->drvdata->num_events)
- 			return -EINVAL;
- 		sdma_event_enable(sdmac, sdmac->event_id0);
+ 		cpu0: cpu@0 {
+ 			compatible = "arm,cortex-a7";
++			clock-frequency = <650000000>;
+ 			device_type = "cpu";
+ 			reg = <0>;
+ 		};
+diff --git a/arch/arm/boot/dts/stm32mp153.dtsi b/arch/arm/boot/dts/stm32mp153.dtsi
+index 2d759fc6015c..6d9ab08667fc 100644
+--- a/arch/arm/boot/dts/stm32mp153.dtsi
++++ b/arch/arm/boot/dts/stm32mp153.dtsi
+@@ -10,6 +10,7 @@ / {
+ 	cpus {
+ 		cpu1: cpu@1 {
+ 			compatible = "arm,cortex-a7";
++			clock-frequency = <650000000>;
+ 			device_type = "cpu";
+ 			reg = <1>;
+ 		};
 -- 
-2.17.1
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
