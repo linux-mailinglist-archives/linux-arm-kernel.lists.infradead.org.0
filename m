@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2712C16A7F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:13:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C17516A801
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:13:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dpSH5geuTwvxv7H1LYV6XlXENJMMvrKRj1aXeCZ7eCc=; b=H898cUDkEm4ndR3gRZDH8zzsir
-	yTNHgL08Q3QPTlQHVUSW2IGokPm19RgMWWF3LlPPivnp/+lctHx4xkOPZnZIVpRGbbzBkd9U56AO4
-	w8Q1x9lxRbBeTrFAQ8M9O4UtIE25lRx0i61V8n0GWyKhw7y0WBjJrr/lDhBw0vzscod3ufhLzZNNq
-	uCmLhzq7qjPDgCAp0bZlivW2d6N/CasAdnrGMxVaUH6CWQo5ROlgh0EOml3PjUN9Kpr2ZZLfs5mZg
-	is8auDiCToRRo2kxOokIcYIICZ1ZzhTIB9WmnUJmxe7CgdDcM/pfl/tkPZFW/QMcQRVL3/4CYKbEh
-	GGHoxdMg==;
+	bh=KP+Q1jhSsX/IEBCRihHs1M1AskVDN25i5enIS8pE1qk=; b=XgUZ7/j79JV4Hf1QMinv/6LyZq
+	BUyC2Lvq0inu71Yk95CzLZqIc9peUVoMfRWB29Ql9DxL4gqA1uNidqSpk8bjExSgcGyevpNbTyhb9
+	piYG9X6IDFetbsF+uYBPy86tm2c4VkNx3018+uWb8aY9PDG7s3EmYB18qqwSfcn66tn9jJ/geM4qp
+	f3hcmvTMexo/6SoFInqJAX0DjGazG36cIycP/XGLmxKoy60HmVyolZNyeFAC3/qhW3rZ14p4MmP7V
+	ohGzaR3gYII6FxzrCC50X+HK+khPE48SHCs3onmfrtIUnPJxHuclaZLiEksph6Tuh+WK106maxAE8
+	cjUvMhQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ETj-0006tb-1z; Mon, 24 Feb 2020 14:12:59 +0000
+	id 1j6EU3-0007Aq-MO; Mon, 24 Feb 2020 14:13:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6ETQ-0006qB-7D
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:12:42 +0000
+ id 1j6ETU-0006tt-CI
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:12:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C192930E;
- Mon, 24 Feb 2020 06:12:39 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A85F31B;
+ Mon, 24 Feb 2020 06:12:43 -0800 (PST)
 Received: from e108754-lin.cambridge.arm.com (unknown [10.1.198.53])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5CD133F534;
- Mon, 24 Feb 2020 06:12:37 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EABCB3F534;
+ Mon, 24 Feb 2020 06:12:40 -0800 (PST)
 From: Ionela Voinescu <ionela.voinescu@arm.com>
 To: catalin.marinas@arm.com, will@kernel.org, mark.rutland@arm.com,
  maz@kernel.org, suzuki.poulose@arm.com, sudeep.holla@arm.com,
  lukasz.luba@arm.com, valentin.schneider@arm.com, dietmar.eggemann@arm.com,
  rjw@rjwysocki.net, ionela.voinescu@arm.com
-Subject: [PATCH v4 2/7] arm64: trap to EL1 accesses to AMU counters from EL0
-Date: Mon, 24 Feb 2020 14:11:37 +0000
-Message-Id: <20200224141142.25445-3-ionela.voinescu@arm.com>
+Subject: [PATCH v4 3/7] arm64/kvm: disable access to AMU registers from kvm
+ guests
+Date: Mon, 24 Feb 2020 14:11:38 +0000
+Message-Id: <20200224141142.25445-4-ionela.voinescu@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200224141142.25445-1-ionela.voinescu@arm.com>
 References: <20200224141142.25445-1-ionela.voinescu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_061240_352392_96A55CCA 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20200224_061244_563847_23654392 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,84 +67,204 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-doc@vger.kernel.org, peterz@infradead.org, viresh.kumar@linaro.org,
  linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The activity monitors extension is an optional extension introduced
-by the ARMv8.4 CPU architecture. In order to access the activity
-monitors counters safely, if desired, the kernel should detect the
-presence of the extension through the feature register, and mediate
-the access.
+Access to the AMU counters should be disabled by default in kvm guests,
+as information from the counters might reveal activity in other guests
+or activity on the host.
 
-Therefore, disable direct accesses to activity monitors counters
-from EL0 (userspace) and trap them to EL1 (kernel).
-
-To be noted that the ARM64_AMU_EXTN kernel config and the disable_amu
-kernel parameter do not have an effect on this code. Given that the
-amuserenr_el0 resets to an UNKNOWN value, setting the trap of EL0
-accesses to EL1 is always attempted for safety and security
-considerations. Therefore firmware should still ensure accesses to
-AMU registers are not trapped in EL2/EL3 as this code cannot be
-bypassed if the CPU implements the Activity Monitors Unit.
+Therefore, disable access to AMU registers from EL0 and EL1 in kvm
+guests by:
+ - Hiding the presence of the extension in the feature register
+   (SYS_ID_AA64PFR0_EL1) on the VCPU.
+ - Disabling access to the AMU registers before switching to the guest.
+ - Trapping accesses and injecting an undefined instruction into the
+   guest.
 
 Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: James Morse <james.morse@arm.com>
+Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Steve Capper <steve.capper@arm.com>
 ---
- arch/arm64/include/asm/assembler.h | 10 ++++++++++
- arch/arm64/mm/proc.S               |  3 +++
- 2 files changed, 13 insertions(+)
+ arch/arm64/include/asm/kvm_arm.h |  1 +
+ arch/arm64/kvm/hyp/switch.c      | 14 ++++-
+ arch/arm64/kvm/sys_regs.c        | 93 +++++++++++++++++++++++++++++++-
+ 3 files changed, 105 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index 2cc0dd8bd9f7..2dc6d7b19831 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -443,6 +443,16 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
- 9000:
- 	.endm
+diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
+index 6e5d839f42b5..51c1d9918999 100644
+--- a/arch/arm64/include/asm/kvm_arm.h
++++ b/arch/arm64/include/asm/kvm_arm.h
+@@ -267,6 +267,7 @@
  
-+/*
-+ * reset_amuserenr_el0 - reset AMUSERENR_EL0 if AMUv1 present
-+ */
-+	.macro	reset_amuserenr_el0, tmpreg
-+	mrs	\tmpreg, id_aa64pfr0_el1	// Check ID_AA64PFR0_EL1
-+	ubfx	\tmpreg, \tmpreg, #ID_AA64PFR0_AMU_SHIFT, #4
-+	cbz	\tmpreg, .Lskip_\@		// Skip if no AMU present
-+	msr_s	SYS_AMUSERENR_EL0, xzr		// Disable AMU access from EL0
-+.Lskip_\@:
-+	.endm
- /*
-  * copy_page - copy src to dest using temp registers t1-t8
-  */
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index a1e0592d1fbc..d8aae1152c08 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -124,6 +124,7 @@ alternative_endif
- 	ubfx	x11, x11, #1, #1
- 	msr	oslar_el1, x11
- 	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
-+	reset_amuserenr_el0 x0			// Disable AMU access from EL0
- 
- alternative_if ARM64_HAS_RAS_EXTN
- 	msr_s	SYS_DISR_EL1, xzr
-@@ -415,6 +416,8 @@ ENTRY(__cpu_setup)
- 	isb					// Unmask debug exceptions now,
- 	enable_dbg				// since this is per-cpu
- 	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
-+	reset_amuserenr_el0 x0			// Disable AMU access from EL0
+ /* Hyp Coprocessor Trap Register */
+ #define CPTR_EL2_TCPAC	(1 << 31)
++#define CPTR_EL2_TAM	(1 << 30)
+ #define CPTR_EL2_TTA	(1 << 20)
+ #define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
+ #define CPTR_EL2_TZ	(1 << 8)
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index 72fbbd86eb5e..11b43a365743 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -90,6 +90,18 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
+ 	val = read_sysreg(cpacr_el1);
+ 	val |= CPACR_EL1_TTA;
+ 	val &= ~CPACR_EL1_ZEN;
 +
- 	/*
- 	 * Memory region attributes for LPAE:
- 	 *
++	/*
++	 * With VHE (HCR.E2H == 1), accesses to CPACR_EL1 are routed to
++	 * CPTR_EL2. In general, CPACR_EL1 has the same layout as CPTR_EL2,
++	 * except for some missing controls, such as TAM.
++	 * In this case, CPTR_EL2.TAM has the same position with or without
++	 * VHE (HCR.E2H == 1) which allows us to use here the CPTR_EL2.TAM
++	 * shift value for trapping the AMU accesses.
++	 */
++
++	val |= CPTR_EL2_TAM;
++
+ 	if (update_fp_enabled(vcpu)) {
+ 		if (vcpu_has_sve(vcpu))
+ 			val |= CPACR_EL1_ZEN;
+@@ -111,7 +123,7 @@ static void __hyp_text __activate_traps_nvhe(struct kvm_vcpu *vcpu)
+ 	__activate_traps_common(vcpu);
+ 
+ 	val = CPTR_EL2_DEFAULT;
+-	val |= CPTR_EL2_TTA | CPTR_EL2_TZ;
++	val |= CPTR_EL2_TTA | CPTR_EL2_TZ | CPTR_EL2_TAM;
+ 	if (!update_fp_enabled(vcpu)) {
+ 		val |= CPTR_EL2_TFP;
+ 		__activate_traps_fpsimd32(vcpu);
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index 9f2165937f7d..adeaa65a4cf0 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -1003,6 +1003,20 @@ static bool access_pmuserenr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+ 	{ SYS_DESC(SYS_PMEVTYPERn_EL0(n)),					\
+ 	  access_pmu_evtyper, reset_unknown, (PMEVTYPER0_EL0 + n), }
+ 
++static bool access_amu(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
++			     const struct sys_reg_desc *r)
++{
++	kvm_inject_undefined(vcpu);
++
++	return false;
++}
++
++/* Macro to expand the AMU counter and type registers*/
++#define AMU_AMEVCNTR0_EL0(n) { SYS_DESC(SYS_AMEVCNTR0_EL0(n)), access_amu }
++#define AMU_AMEVTYPE0_EL0(n) { SYS_DESC(SYS_AMEVTYPE0_EL0(n)), access_amu }
++#define AMU_AMEVCNTR1_EL0(n) { SYS_DESC(SYS_AMEVCNTR1_EL0(n)), access_amu }
++#define AMU_AMEVTYPE1_EL0(n) { SYS_DESC(SYS_AMEVTYPE1_EL0(n)), access_amu }
++
+ static bool trap_ptrauth(struct kvm_vcpu *vcpu,
+ 			 struct sys_reg_params *p,
+ 			 const struct sys_reg_desc *rd)
+@@ -1078,8 +1092,10 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
+ 			 (u32)r->CRn, (u32)r->CRm, (u32)r->Op2);
+ 	u64 val = raz ? 0 : read_sanitised_ftr_reg(id);
+ 
+-	if (id == SYS_ID_AA64PFR0_EL1 && !vcpu_has_sve(vcpu)) {
+-		val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
++	if (id == SYS_ID_AA64PFR0_EL1) {
++		if (!vcpu_has_sve(vcpu))
++			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
++		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
+ 	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
+ 		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
+ 			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
+@@ -1565,6 +1581,79 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+ 	{ SYS_DESC(SYS_TPIDR_EL0), NULL, reset_unknown, TPIDR_EL0 },
+ 	{ SYS_DESC(SYS_TPIDRRO_EL0), NULL, reset_unknown, TPIDRRO_EL0 },
+ 
++	{ SYS_DESC(SYS_AMCR_EL0), access_amu },
++	{ SYS_DESC(SYS_AMCFGR_EL0), access_amu },
++	{ SYS_DESC(SYS_AMCGCR_EL0), access_amu },
++	{ SYS_DESC(SYS_AMUSERENR_EL0), access_amu },
++	{ SYS_DESC(SYS_AMCNTENCLR0_EL0), access_amu },
++	{ SYS_DESC(SYS_AMCNTENSET0_EL0), access_amu },
++	{ SYS_DESC(SYS_AMCNTENCLR1_EL0), access_amu },
++	{ SYS_DESC(SYS_AMCNTENSET1_EL0), access_amu },
++	AMU_AMEVCNTR0_EL0(0),
++	AMU_AMEVCNTR0_EL0(1),
++	AMU_AMEVCNTR0_EL0(2),
++	AMU_AMEVCNTR0_EL0(3),
++	AMU_AMEVCNTR0_EL0(4),
++	AMU_AMEVCNTR0_EL0(5),
++	AMU_AMEVCNTR0_EL0(6),
++	AMU_AMEVCNTR0_EL0(7),
++	AMU_AMEVCNTR0_EL0(8),
++	AMU_AMEVCNTR0_EL0(9),
++	AMU_AMEVCNTR0_EL0(10),
++	AMU_AMEVCNTR0_EL0(11),
++	AMU_AMEVCNTR0_EL0(12),
++	AMU_AMEVCNTR0_EL0(13),
++	AMU_AMEVCNTR0_EL0(14),
++	AMU_AMEVCNTR0_EL0(15),
++	AMU_AMEVTYPE0_EL0(0),
++	AMU_AMEVTYPE0_EL0(1),
++	AMU_AMEVTYPE0_EL0(2),
++	AMU_AMEVTYPE0_EL0(3),
++	AMU_AMEVTYPE0_EL0(4),
++	AMU_AMEVTYPE0_EL0(5),
++	AMU_AMEVTYPE0_EL0(6),
++	AMU_AMEVTYPE0_EL0(7),
++	AMU_AMEVTYPE0_EL0(8),
++	AMU_AMEVTYPE0_EL0(9),
++	AMU_AMEVTYPE0_EL0(10),
++	AMU_AMEVTYPE0_EL0(11),
++	AMU_AMEVTYPE0_EL0(12),
++	AMU_AMEVTYPE0_EL0(13),
++	AMU_AMEVTYPE0_EL0(14),
++	AMU_AMEVTYPE0_EL0(15),
++	AMU_AMEVCNTR1_EL0(0),
++	AMU_AMEVCNTR1_EL0(1),
++	AMU_AMEVCNTR1_EL0(2),
++	AMU_AMEVCNTR1_EL0(3),
++	AMU_AMEVCNTR1_EL0(4),
++	AMU_AMEVCNTR1_EL0(5),
++	AMU_AMEVCNTR1_EL0(6),
++	AMU_AMEVCNTR1_EL0(7),
++	AMU_AMEVCNTR1_EL0(8),
++	AMU_AMEVCNTR1_EL0(9),
++	AMU_AMEVCNTR1_EL0(10),
++	AMU_AMEVCNTR1_EL0(11),
++	AMU_AMEVCNTR1_EL0(12),
++	AMU_AMEVCNTR1_EL0(13),
++	AMU_AMEVCNTR1_EL0(14),
++	AMU_AMEVCNTR1_EL0(15),
++	AMU_AMEVTYPE1_EL0(0),
++	AMU_AMEVTYPE1_EL0(1),
++	AMU_AMEVTYPE1_EL0(2),
++	AMU_AMEVTYPE1_EL0(3),
++	AMU_AMEVTYPE1_EL0(4),
++	AMU_AMEVTYPE1_EL0(5),
++	AMU_AMEVTYPE1_EL0(6),
++	AMU_AMEVTYPE1_EL0(7),
++	AMU_AMEVTYPE1_EL0(8),
++	AMU_AMEVTYPE1_EL0(9),
++	AMU_AMEVTYPE1_EL0(10),
++	AMU_AMEVTYPE1_EL0(11),
++	AMU_AMEVTYPE1_EL0(12),
++	AMU_AMEVTYPE1_EL0(13),
++	AMU_AMEVTYPE1_EL0(14),
++	AMU_AMEVTYPE1_EL0(15),
++
+ 	{ SYS_DESC(SYS_CNTP_TVAL_EL0), access_arch_timer },
+ 	{ SYS_DESC(SYS_CNTP_CTL_EL0), access_arch_timer },
+ 	{ SYS_DESC(SYS_CNTP_CVAL_EL0), access_arch_timer },
 -- 
 2.17.1
 
