@@ -2,57 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87CFC16A8BE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:45:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB46D16A8CA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 15:48:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=WgbONxvw87FQd+VCm3feJSGT/hUgPWtIoZMNS1q1esA=; b=ExNR5aIQkD6OD9HQYZ+HO0MvS2
-	HXk+D6J/h/MfbRpRIWd4KCqdN1hW+rcbVKN8gSZd+QLadSwDnoccLXK5WnuiaXYHNGOHqFrsSzMNi
-	oqK9DOo0ayQiTprCwx6k7kotIS7YdfPMB3t7Hy8i+bE4774QGacDRwXduT7Tsu6ctwA2UP2Z2E9Xe
-	NxpewyxZxZjBbrS7FMlmlCH1idtLjLlXiue3q/WinnE5LYybR7v2/kQ8d45meZ7gWDqjB9kjRHP99
-	tg1HXo2TIzZemrtNOamzWO/EgFnfDh+PH+pRrSxF++R29D2I6MElFoq8bqfz973laNNfQt7FcvDMi
-	/xGgkScg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OjhiCK/lEtZ+vnD0dLqdm11hSu6jZN94isUgxu3z3wU=; b=Zf0
+	DuZHV1FnByjymsR4xZbMTKP1iUHAx/QwHF61TdYGEU1ZfIDs4C0wCrMXVZ+TlkM+wrjZ4u9/hF4Xp
+	Z90tixbHUHawgG4tpnNwnnGG3zN3UmcxJmsjFvJRKzLmpxpWEwl2bfBH9nylAyvp40TL30+PRKbSb
+	X/De9qP4NL8YJ8Mx1/ToTMJYootXKEwcX9iSNNCu09vk0y0W4udCRpTQa1b4amsr61I18CKINvQ0b
+	c3aMldrjqoC8yyUfnEpeSXiKUhCh61IfZmTdC79rHsm4SxHDcHNJv+4iBi6++bQYfPWOlfKXXX0Jy
+	6OD87KPl0J4bOgm6gIQXrf/bTPKoQ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Ezb-0007Ql-TE; Mon, 24 Feb 2020 14:45:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6EwA-0003GU-Og
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:42:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7FC3330E;
- Mon, 24 Feb 2020 06:42:22 -0800 (PST)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 465AE3F534;
- Mon, 24 Feb 2020 06:42:21 -0800 (PST)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH v3 13/13] firmware: arm_scmi: Add Base notifications
- support
-Date: Mon, 24 Feb 2020 14:41:24 +0000
-Message-Id: <20200224144124.2008-14-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200224144124.2008-1-cristian.marussi@arm.com>
-References: <20200224144124.2008-1-cristian.marussi@arm.com>
+	id 1j6F1b-00007F-QI; Mon, 24 Feb 2020 14:47:59 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6F1R-0008WB-Qv
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 14:47:51 +0000
+Received: by mail-wr1-x442.google.com with SMTP id p18so7052780wre.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 24 Feb 2020 06:47:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=KDPBtGVPBVQPLZB50FaWbCJtaH0jJpShP4zemqcplEE=;
+ b=JSQ9hzcF3mCf5GvenAuVUKTcFJKeFCn0zzl4m6DPVldFFbHeRhui0mprbAZxqQSygM
+ S92kaHzJVaIZCzJGrZ+/UpI+laYz1EZ8q9bGWuhOVSysrEq0EEJ73+x5mQUWbWI2cHIv
+ plbbwLhaVkngP+8i01HCJNN0R1DyplTti2QXBbMft3QfAbN4PB9BIVyib3aTrpWhsgUa
+ xEbI2LltdPFa/9n190aN5C5cUZtYLyNmo0zq78INttuyUFgWL2annLHfekp3hWfJ/r9a
+ OOEJRGi+miGPreuQ+udReKLe7GC8EwnbKPVVR0JITLCtFW2YtRoLk+hCtaXRgvSnCFic
+ WlRQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=KDPBtGVPBVQPLZB50FaWbCJtaH0jJpShP4zemqcplEE=;
+ b=NXlnZB6fHPbGXigUKRFTK3FzPd0N5e5q3ifs/WndFhKqnXGWjRoNcKaq1mCdzlOas3
+ FL8hGDV89+lr3T9q4LrC/YBcACWIHLIXOFjEYyAsoQkP09/1t66LIsxrFp6wxZ0IHlRl
+ /sPdNl99EppQls7Vr7SMlD/ZV4TVifkhuQWKUlygs9XfR3jcZBc41JvoqqSk8tazjHOq
+ sUZue96Cu1V3IvaeFKz0GiM2qw4DoHlGAucurk3Mi2DMx3OL2eTSOOcq9UaSFhQVPimi
+ putypxrzFW7Z5MAZldfi7ANZUgQ+TQa9nT2EJXVeesdTrs8MpomaTR1rksTsYrMYKES+
+ HmaA==
+X-Gm-Message-State: APjAAAU3ecKznVcKWvVVh1ZTcwtUIDEVLHFCfX3NGhyYGMwQUzdpyNmG
+ 7MmU61APJ4qEDjSNxC6qMBivuQ==
+X-Google-Smtp-Source: APXvYqzGK4+c332KH5IGra98Ax5NpmLFd6tEuMOmZpD6uXoAmVEK8xtY+u8D/Db3A8UAroJjRuoxDg==
+X-Received: by 2002:a5d:6144:: with SMTP id y4mr65798433wrt.367.1582555667583; 
+ Mon, 24 Feb 2020 06:47:47 -0800 (PST)
+Received: from localhost.localdomain ([51.15.160.169])
+ by smtp.googlemail.com with ESMTPSA id w1sm19579363wro.72.2020.02.24.06.47.46
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 24 Feb 2020 06:47:46 -0800 (PST)
+From: Corentin Labbe <clabbe@baylibre.com>
+To: ard.biesheuvel@linaro.org, catalin.marinas@arm.com, davem@davemloft.net,
+ herbert@gondor.apana.org.au, will@kernel.org, ebiggers@kernel.org
+Subject: [PATCH v2] crypto: arm64: CE: implement export/import
+Date: Mon, 24 Feb 2020 14:47:41 +0000
+Message-Id: <1582555661-25737-1-git-send-email-clabbe@baylibre.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_064223_064062_D3C3C8BB 
-X-CRM114-Status: GOOD (  14.22  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200224_064749_923285_6D316D5C 
+X-CRM114-Status: GOOD (  10.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,190 +89,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan.Cameron@Huawei.com, cristian.marussi@arm.com,
- james.quinlan@broadcom.com, lukasz.luba@arm.com, sudeep.holla@arm.com
+Cc: Corentin Labbe <clabbe@baylibre.com>, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make SCMI Base protocol register with the notification core.
+When an ahash algorithm fallback to another ahash and that fallback is
+shaXXX-CE, doing export/import lead to error like this:
+alg: ahash: sha1-sun8i-ce export() overran state buffer on test vector 0, cfg=\"import/export\"
 
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
-V2 --> V3
-- added handle awareness
-V1 --> V2
-- simplified .set_notify_enabled() implementation moving the ALL_SRCIDs
-  logic out of protocol. ALL_SRCIDs logic is now in charge of the
-  notification core, together with proper reference counting of enables
-- switched to devres protocol-registration
----
- drivers/firmware/arm_scmi/base.c | 109 +++++++++++++++++++++++++++++++
- include/linux/scmi_protocol.h    |   8 +++
- 2 files changed, 117 insertions(+)
+This is due to the descsize of shaxxx-ce being larger than struct shaxxx_state
+off by an u32.
+For fixing this, let's implement export/import which rip the finalize
+variant instead of using generic export/import.
 
-diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
-index ce7d9203e41b..0d4bbf313a4a 100644
---- a/drivers/firmware/arm_scmi/base.c
-+++ b/drivers/firmware/arm_scmi/base.c
-@@ -6,6 +6,9 @@
-  */
- 
- #include "common.h"
-+#include "notify.h"
-+
-+#define SCMI_BASE_NUM_SOURCES	1
- 
- enum scmi_base_protocol_cmd {
- 	BASE_DISCOVER_VENDOR = 0x3,
-@@ -29,6 +32,19 @@ struct scmi_msg_resp_base_attributes {
- 	__le16 reserved;
- };
- 
-+struct scmi_msg_base_error_notify {
-+	__le32 event_control;
-+#define BASE_TP_NOTIFY_ALL	BIT(0)
-+};
-+
-+struct scmi_base_error_notify_payld {
-+	__le32 agent_id;
-+	__le32 error_status;
-+#define IS_FATAL_ERROR(x)	((x) & BIT(31))
-+#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
-+	__le64 msg_reports[8192];
-+};
-+
- /**
-  * scmi_base_attributes_get() - gets the implementation details
-  *	that are associated with the base protocol.
-@@ -222,6 +238,93 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
- 	return ret;
+Fixes: 6ba6c74dfc6b ("arm64/crypto: SHA-224/SHA-256 using ARMv8 Crypto Extensions")
+Fixes: 2c98833a42cd ("arm64/crypto: SHA-1 using ARMv8 Crypto Extensions")
+
+Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
+---
+Changes since v1:
+- memcpy directly &sctx->sst instead of sctx. As suggested by Eric Biggers
+
+ arch/arm64/crypto/sha1-ce-glue.c | 20 ++++++++++++++++++++
+ arch/arm64/crypto/sha2-ce-glue.c | 23 +++++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+diff --git a/arch/arm64/crypto/sha1-ce-glue.c b/arch/arm64/crypto/sha1-ce-glue.c
+index 63c875d3314b..565ef604ca04 100644
+--- a/arch/arm64/crypto/sha1-ce-glue.c
++++ b/arch/arm64/crypto/sha1-ce-glue.c
+@@ -91,12 +91,32 @@ static int sha1_ce_final(struct shash_desc *desc, u8 *out)
+ 	return sha1_base_finish(desc, out);
  }
  
-+static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
++static int sha1_ce_export(struct shash_desc *desc, void *out)
 +{
-+	int ret;
-+	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
-+	struct scmi_xfer *t;
-+	struct scmi_msg_base_error_notify *cfg;
++	struct sha1_ce_state *sctx = shash_desc_ctx(desc);
 +
-+	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
-+				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
-+	if (ret)
-+		return ret;
-+
-+	cfg = t->tx.buf;
-+	cfg->event_control = cpu_to_le32(evt_cntl);
-+
-+	ret = scmi_do_xfer(handle, t);
-+
-+	scmi_xfer_put(handle, t);
-+	return ret;
++	memcpy(out, &sctx->sst, sizeof(struct sha1_state));
++	return 0;
 +}
 +
-+static bool scmi_base_set_notify_enabled(const struct scmi_handle *handle,
-+					 u8 evt_id, u32 src_id, bool enable)
++static int sha1_ce_import(struct shash_desc *desc, const void *in)
 +{
-+	int ret;
++	struct sha1_ce_state *sctx = shash_desc_ctx(desc);
 +
-+	ret = scmi_base_error_notify(handle, enable);
-+	if (ret)
-+		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] ret:%d\n",
-+			SCMI_PROTOCOL_BASE, evt_id, ret);
-+
-+	return !ret ? true : false;
++	memcpy(&sctx->sst, in, sizeof(struct sha1_state));
++	sctx->finalize = 0;
++	return 0;
 +}
 +
-+static void *scmi_base_fill_custom_report(u8 evt_id, u64 timestamp,
-+					  const void *payld, size_t payld_sz,
-+					  void *report, u32 *src_id)
-+{
-+	void *rep = NULL;
-+
-+	switch (evt_id) {
-+	case BASE_ERROR_EVENT:
-+	{
-+		int i;
-+		const struct scmi_base_error_notify_payld *p = payld;
-+		struct scmi_base_error_report *r = report;
-+
-+		/*
-+		 * BaseError notification payload is variable in size but
-+		 * up to a maximum length determined by the struct ponted by p.
-+		 * Instead payld_sz is the effective length of this notification
-+		 * payload so cannot be greater of the maximum allowed size as
-+		 * pointed by p.
-+		 */
-+		if (sizeof(*p) < payld_sz)
-+			break;
-+
-+		r->timestamp = timestamp;
-+		r->agent_id = le32_to_cpu(p->agent_id);
-+		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
-+		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
-+		for (i = 0; i < r->cmd_count; i++)
-+			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
-+		*src_id = 0;
-+		rep = r;
-+		break;
-+	}
-+	default:
-+		break;
-+	}
-+
-+	return rep;
-+}
-+
-+static const struct scmi_event base_events[] = {
-+	{
-+		.evt_id = BASE_ERROR_EVENT,
-+		.max_payld_sz = 8192,
-+		.max_report_sz = sizeof(struct scmi_base_error_report),
-+	},
-+};
-+
-+static const struct scmi_protocol_event_ops base_event_ops = {
-+	.set_notify_enabled = scmi_base_set_notify_enabled,
-+	.fill_custom_report = scmi_base_fill_custom_report,
-+};
-+
- int scmi_base_protocol_init(struct scmi_handle *h)
- {
- 	int id, ret;
-@@ -256,6 +359,12 @@ int scmi_base_protocol_init(struct scmi_handle *h)
- 	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
- 		rev->num_agents);
+ static struct shash_alg alg = {
+ 	.init			= sha1_base_init,
+ 	.update			= sha1_ce_update,
+ 	.final			= sha1_ce_final,
+ 	.finup			= sha1_ce_finup,
++	.import			= sha1_ce_import,
++	.export			= sha1_ce_export,
+ 	.descsize		= sizeof(struct sha1_ce_state),
++	.statesize		= sizeof(struct sha1_state),
+ 	.digestsize		= SHA1_DIGEST_SIZE,
+ 	.base			= {
+ 		.cra_name		= "sha1",
+diff --git a/arch/arm64/crypto/sha2-ce-glue.c b/arch/arm64/crypto/sha2-ce-glue.c
+index a8e67bafba3d..9450d19b9e6e 100644
+--- a/arch/arm64/crypto/sha2-ce-glue.c
++++ b/arch/arm64/crypto/sha2-ce-glue.c
+@@ -109,12 +109,32 @@ static int sha256_ce_final(struct shash_desc *desc, u8 *out)
+ 	return sha256_base_finish(desc, out);
+ }
  
-+	scmi_register_protocol_events(handle,
-+				      SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
-+				      &base_event_ops, base_events,
-+				      ARRAY_SIZE(base_events),
-+				      SCMI_BASE_NUM_SOURCES);
++static int sha256_ce_export(struct shash_desc *desc, void *out)
++{
++	struct sha256_ce_state *sctx = shash_desc_ctx(desc);
 +
- 	for (id = 0; id < rev->num_agents; id++) {
- 		scmi_base_discover_agent_get(handle, id, name);
- 		dev_dbg(dev, "Agent %d: %s\n", id, name);
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 91c5fdf567d5..3a1bc8014f51 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -420,4 +420,12 @@ struct scmi_reset_issued_report {
- 	u32	reset_state;
- };
- 
-+struct scmi_base_error_report {
-+	ktime_t	timestamp;
-+	u32	agent_id;
-+	bool	fatal;
-+	u16	cmd_count;
-+	u64	reports[8192];
-+};
++	memcpy(out, &sctx->sst, sizeof(struct sha256_state));
++	return 0;
++}
 +
- #endif /* _LINUX_SCMI_PROTOCOL_H */
++static int sha256_ce_import(struct shash_desc *desc, const void *in)
++{
++	struct sha256_ce_state *sctx = shash_desc_ctx(desc);
++
++	memcpy(&sctx->sst, in, sizeof(struct sha256_state));
++	sctx->finalize = 0;
++	return 0;
++}
++
+ static struct shash_alg algs[] = { {
+ 	.init			= sha224_base_init,
+ 	.update			= sha256_ce_update,
+ 	.final			= sha256_ce_final,
+ 	.finup			= sha256_ce_finup,
++	.export			= sha256_ce_export,
++	.import			= sha256_ce_import,
+ 	.descsize		= sizeof(struct sha256_ce_state),
++	.statesize		= sizeof(struct sha256_state),
+ 	.digestsize		= SHA224_DIGEST_SIZE,
+ 	.base			= {
+ 		.cra_name		= "sha224",
+@@ -128,7 +148,10 @@ static struct shash_alg algs[] = { {
+ 	.update			= sha256_ce_update,
+ 	.final			= sha256_ce_final,
+ 	.finup			= sha256_ce_finup,
++	.export			= sha256_ce_export,
++	.import			= sha256_ce_import,
+ 	.descsize		= sizeof(struct sha256_ce_state),
++	.statesize		= sizeof(struct sha256_state),
+ 	.digestsize		= SHA256_DIGEST_SIZE,
+ 	.base			= {
+ 		.cra_name		= "sha256",
 -- 
-2.17.1
+2.24.1
 
 
 _______________________________________________
