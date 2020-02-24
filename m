@@ -2,71 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53D3F169C07
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 02:57:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2459169C0C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 02:59:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ixKTAXbRSNm8VlfJ/YJbzRQZxcSCOF+bwGtrOp5J2ps=; b=NNEdKTaVBL8BKP
-	ZAMo8+D0aprAeYgkHwT6WM+kpyWQ+1t//nwTkj+y8qhBX0EI8o0JKFWD6a2cOv2FsWqmx7hb4oPlC
-	zRfOhgPx08wkxeO71AwZ79r9oeCcOCRSh+rUrwu/Ig92ePqyZaH3iDmVd3zqdcls8uL7nXqSw18XS
-	f5q4TsgI/38PqZs0RcXm0rCUyuDPGH90jvBYR6WX55F5vcLeIfDbRjYxTc8yuaVmfQdRICnRpPEdv
-	AakSgpDOs6HwaOPJQRrbXvta32FwmkvVLakElJYnoEYj9uScWLKgLM4gzB9ESYak9f7EGcgt5mpyU
-	peNSuCsNyH0qceL1Njjg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wwi99+09cqWl4m7xxuZiRYtYD5iSm1ApxUT9srTbu30=; b=mbgSxxyz2sJ+9T
+	MaGpF2AhjqsH1d4dZuHRs/k8qL5R6BTcN/3pqRf+nEcxDvQqx1O9zWY2Eegj0SvvmleRM5NuzW2pH
+	m6qLJs/h3v3o0tfwQNxQnBePDShXIBq0rvdRrQA47zKZjGM7EpZ56gqC3UYyIZwT76TocnG6QtTZp
+	AAONoFskFrjRRrAwf5lDHwiDntKQ0OLi/v2N/oepCCESqpzP4vc8T48lk7CagbCwBiJxwlh/jgTfj
+	sw4gOd+5pOXSVZ/E769mLRAvd8X8s27/iM+VlMZSvRiyuZWBKxtQ4wj1GtGXOkPeKJzjRk/GcmRDo
+	FINhBwfJlfEUyivGEJRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j62zg-0001H4-BD; Mon, 24 Feb 2020 01:57:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j62zX-0001Ga-00
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 01:57:04 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 63F27205C9;
- Mon, 24 Feb 2020 01:56:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582509422;
- bh=RjjvelCSB3sw7rmvNAkcaVIPmUcD/FgzgrYTn+iASdE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=j4fhzQXNsZXLRXHVD4gJXXfoOlXDNkmr1ur5RYNLm+pZn2QJ9tIRNIo/HvWaxsHyd
- jRV/8HPCQtu3tEk1nBa1dSHBK2WOnVYL3rmSFf9UYo6ksDhy5ZXBzK7c5zgLTppRq3
- 9nCT7DtwGRLHdWCtmKb4AfmQITkZ62e2mjXwe4us=
-Date: Mon, 24 Feb 2020 09:56:51 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Martin Kepplinger <martin.kepplinger@puri.sm>
-Subject: Re: [PATCH v2 1/9] arm64: dts: librem5-devkit: add sai2 and sai6
- pinctrl definitions
-Message-ID: <20200224015650.GD27688@dragon>
-References: <20200218084942.4884-1-martin.kepplinger@puri.sm>
- <20200218084942.4884-2-martin.kepplinger@puri.sm>
+	id 1j631V-0001gr-41; Mon, 24 Feb 2020 01:59:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j631M-0001ft-Rd; Mon, 24 Feb 2020 01:58:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E20D41FB;
+ Sun, 23 Feb 2020 17:58:53 -0800 (PST)
+Received: from [10.162.16.95] (p8cg001049571a15.blr.arm.com [10.162.16.95])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 97E1F3F6CF;
+ Sun, 23 Feb 2020 17:58:46 -0800 (PST)
+Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
+ table helpers
+To: linux-mm@kvack.org
+References: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <fac4f03a-0cd3-29ad-b5e2-9aca2dd07b39@arm.com>
+Date: Mon, 24 Feb 2020 07:28:46 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200218084942.4884-2-martin.kepplinger@puri.sm>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_175703_058593_90B62550 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200223_175856_939307_9ACEF481 
+X-CRM114-Status: GOOD (  15.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,65 +63,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, robh@kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
- devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Vineet Gupta <vgupta@synopsys.com>,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 09:49:34AM +0100, Martin Kepplinger wrote:
-> From: "Angus Ainslie (Purism)" <angus@akkea.ca>
+On 02/17/2020 08:47 AM, Anshuman Khandual wrote:
+> This adds a test validation for architecture exported page table helpers.
+> Patch adds basic transformation tests at various levels of the page table.
 > 
-> Add missing sai2 and sai6 audio interface pinctrl definitions for the
-> Librem 5 devkit.
+> This test was originally suggested by Catalin during arm64 THP migration
+> RFC discussion earlier. Going forward it can include more specific tests
+> with respect to various generic MM functions like THP, HugeTLB etc and
+> platform specific tests.
 > 
-> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
+> https://lore.kernel.org/linux-mm/20190628102003.GA56463@arrakis.emea.arm.com/
+> 
+> Needs to be applied on linux V5.6-rc2
+> 
+> Changes in V14:
+> 
+> - Disabled DEBUG_VM_PGFLAGS for IA64 and ARM (32 Bit) per Andrew and Christophe
+> - Updated DEBUG_VM_PGFLAGS documentation wrt EXPERT and disabled platforms
+> - Updated RANDOM_[OR|NZ]VALUE open encodings with GENMASK() per Catalin
+> - Updated s390 constraint bits from 12 to 4 (S390_MASK_BITS) per Gerald
+> - Updated in-code documentation for RANDOM_ORVALUE per Gerald
+> - Updated pxx_basic_tests() to use invert functions first per Catalin
+> - Dropped ARCH_HAS_4LEVEL_HACK check from pud_basic_tests()
+> - Replaced __ARCH_HAS_[4|5]LEVEL_HACK with __PAGETABLE_[PUD|P4D]_FOLDED per Catalin
+> - Trimmed the CC list on the commit message per Catalin
 
-We do not need to be so verbose.  It can be squashed into patch #2.
+Hello Andrew,
 
-Shawn
+As there are no further comments on this patch from last week, wondering
+if you would possibly consider this patch. But if you feel there is still
+something which need to be taken care here, please do let me know.
 
-> ---
->  .../dts/freescale/imx8mq-librem5-devkit.dts   | 19 +++++++++++++++++++
->  1 file changed, 19 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index 007c14eec676..1e9fa80be647 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -567,6 +567,25 @@
->  		>;
->  	};
->  
-> +	pinctrl_sai2: sai2grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SAI2_TXFS_SAI2_TX_SYNC	0xd6
-> +			MX8MQ_IOMUXC_SAI2_TXC_SAI2_TX_BCLK	0xd6
-> +			MX8MQ_IOMUXC_SAI2_TXD0_SAI2_TX_DATA0	0xd6
-> +			MX8MQ_IOMUXC_SAI2_RXD0_SAI2_RX_DATA0	0xd6
-> +			MX8MQ_IOMUXC_SAI2_MCLK_SAI2_MCLK	0xd6
-> +		>;
-> +	};
-> +
-> +	pinctrl_sai6: sai6grp {
-> +		fsl,pins = <
-> +			MX8MQ_IOMUXC_SAI1_RXD5_SAI6_RX_DATA0	0xd6
-> +			MX8MQ_IOMUXC_SAI1_RXD6_SAI6_RX_SYNC	0xd6
-> +			MX8MQ_IOMUXC_SAI1_TXD4_SAI6_RX_BCLK     0xd6
-> +			MX8MQ_IOMUXC_SAI1_TXD5_SAI6_TX_DATA0	0xd6
-> +		>;
-> +	};
-> +
->  	pinctrl_typec: typecgrp {
->  		fsl,pins = <
->  			MX8MQ_IOMUXC_NAND_DATA06_GPIO3_IO12		0x16
-> -- 
-> 2.20.1
-> 
+Thank you.
+
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
