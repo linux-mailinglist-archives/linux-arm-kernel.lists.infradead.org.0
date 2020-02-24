@@ -2,64 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA5C616A39C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 11:13:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82CB216A3A3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 11:14:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JSh5HM1NfviXLG2tD+pfsKxy7MmQCOh7XuW0/6zOaRQ=; b=s4Dq2O2xvXFua8
-	eSNwAVYVp09lmAjNum/ANRt/n0vbjWtYATJiQt4EsTwGic2zo1/yHAPnzpqbMz+nx0tUJ0i5CDKD3
-	tNcNSHv/91Tdo8YJFZGRQhLwUhxv0JCQ4AtIPSptPYifcy1uxfAHdIszRujZO5qsLnOSc5kzRqrqI
-	ZASdGqn5T4RBxhEOFs5sNwF7aS4XuofjbYq9BPMzwcYoFPx0fGR00SDfuIELU9nFKxgHMXW+OnxXt
-	3S7EZAJS3xaLzAYpkOp9A5zvC/4OxHUamD/TA9cugx2Ry+Y71ISkG+/ghM/WZLxyAFvgkHTsjlk+o
-	J1ResPEmghSQwcNcT7Cw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GH7d8qL+ZhPJ5k57yH50cvm9ZrOgjlY/iKmv/Q/nFFw=; b=CSi6hyV4ezfqrC
+	aEVDPFbaX5PcnauknVh1KWBCNIn17pPqtbxSEP0MiK73/iuv7QkZPjxDSkl9MitYJcPOsZtPYkpna
+	V/WLGU5ZvC+8np4T4eGVfUS/Xsv4PihsiZIB59GCqYn1AgfUMjkqfbWGqaqT0kt0DpJsel0Zj7uEh
+	fwqyoRkFEITCiLay06LXAF2dXBGSYl93opMLUGWx7GmXV9PGgr7IhUg60CCnp7fVAMnuZU8j2W1Nm
+	CHYrtgUMUAskK1pox49gGLimupeaBXw5eMg56U2Hd5z0+A84iipZS/Om4PmpLOJI7vMAGE2aFZ5hT
+	oHWMPWIxHZJl1gTIKVlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Ak2-0003QF-AO; Mon, 24 Feb 2020 10:13:34 +0000
-Received: from [167.172.186.51] (helo=shell.v3.sk)
+	id 1j6Aks-0003gp-MH; Mon, 24 Feb 2020 10:14:26 +0000
+Received: from mail-mw2nam10on2084.outbound.protection.outlook.com
+ ([40.107.94.84] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Ajr-0003P1-Vd
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 10:13:26 +0000
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 0DA1BDFC1D;
- Mon, 24 Feb 2020 10:13:36 +0000 (UTC)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id IFH2P9OT5wRi; Mon, 24 Feb 2020 10:13:34 +0000 (UTC)
-Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 501DBDFFF3;
- Mon, 24 Feb 2020 10:13:34 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id oonGYw0Decx8; Mon, 24 Feb 2020 10:13:34 +0000 (UTC)
-Received: from localhost (unknown [109.183.109.54])
- by zimbra.v3.sk (Postfix) with ESMTPSA id C78A4DFC1D;
- Mon, 24 Feb 2020 10:13:33 +0000 (UTC)
-Date: Mon, 24 Feb 2020 11:13:16 +0100
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-Subject: Re: [PATCH v2 02/18] ARM: replace setup_irq() by request_irq()
-Message-ID: <20200224101034.GA119909@furthur.local>
-References: <cover.1582471508.git.afzal.mohd.ma@gmail.com>
- <cbc4859788bd30d6ddc9d9483ed641d6f2d0fd42.1582471508.git.afzal.mohd.ma@gmail.com>
+ id 1j6Akf-0003fe-0X
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 10:14:16 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=aYZri0V4VH7cRjcIS2MgrL182r2zdRR6k0+hB3GjyaAjhopOu5ugIC1k4cUKgo9KFbKWdy47nlWDayHdXpgLIudk4H9CazMfAh15NSXug77xu2G7KH3Xe2t3Flt36GIITSuY14eE4MyRH9MEROAM0mFaWEJAT8u8HATZ74AzHDcQNnL+ZcMcFEhg8jS/Z92gCsuDpO4/f6GdPn12k5jtN1f9Ig95AVVVMexaCY8WBAaG7BPwX1lkiu4qqqBqRqQiqse63HnHeYa/atLAhWdPqaw3GRfOqkyjsf4eOklMjW+lOEgz3WoVN2jYXy4faPfWa43a/yVzeEedK9WF9Mr1fA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cn58yo2QU5DYqiOAekmL7SfahA4VfYPp2zbGklzQqi8=;
+ b=ATyAUCEvAPlu71h2JF8yeGKr6+hCdk0IJ+/JfqqyV2AYr+iX0Ez0Y3jBQPE3/3i8LAnMfdfUYJHpeNTfIcC2amny0ZnX0rG6jZKufxsVYgKdnm6xjDMhTlxhpZ5NbFk5dDmnkrq1NxIXaF3oMzbAZK+1gzsIuujkCwrOEa7VzN2vWItuIIh9R9Vv20day47oVt4aDwLh5EAzEkNSR0IsCsaaGOndEe6lPEktcnwKDhn7r8nRqh+ZFZ67UocbqCNuAvpx0w/g5Z6LIMBKomovlGpFA0exYnj+F03L3lwmjYnr4DUAVceThrNVcPpDI5Yzkc1BkAR9iI+Os0Q1NJxkGw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=lists.infradead.org
+ smtp.mailfrom=xilinx.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com; dkim=none (message not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cn58yo2QU5DYqiOAekmL7SfahA4VfYPp2zbGklzQqi8=;
+ b=TvS60+xtNY4tNrtQdoO+OMqbnfAKbmA8e2iGNVykFZ3UeFZqpwuJJwWcC22/8yVWMwzKSVrvTttx2ecjYyHVaIGglmv9G5e6nHVWKSiO6Cl24bIpTnZlQaMXDYYvMszCFvpBWzQUux4JcAURKVU4dY2R4zGGxYojLD8r/iJsQIY=
+Received: from CY4PR02CA0035.namprd02.prod.outlook.com (2603:10b6:903:117::21)
+ by MWHPR02MB3165.namprd02.prod.outlook.com (2603:10b6:301:6c::18)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.21; Mon, 24 Feb
+ 2020 10:14:05 +0000
+Received: from BL2NAM02FT009.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::202) by CY4PR02CA0035.outlook.office365.com
+ (2603:10b6:903:117::21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.17 via Frontend
+ Transport; Mon, 24 Feb 2020 10:14:05 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; lists.infradead.org; dkim=none (message not signed)
+ header.d=none;lists.infradead.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ BL2NAM02FT009.mail.protection.outlook.com (10.152.77.68) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2750.18
+ via Frontend Transport; Mon, 24 Feb 2020 10:14:04 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1j6AkW-00049Y-5Z; Mon, 24 Feb 2020 02:14:04 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1j6AkR-0004gY-2d; Mon, 24 Feb 2020 02:13:59 -0800
+Received: from [172.30.17.108] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1j6AkG-0004f7-QV; Mon, 24 Feb 2020 02:13:49 -0800
+Subject: Re: [PATCH] i2c: xiic: Support disabling multi-master in DT
+To: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>,
+ "wsa@the-dreams.de" <wsa@the-dreams.de>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <481fe028-0ec6-eca3-7436-ebbb8527f3d8@xilinx.com>
+Date: Mon, 24 Feb 2020 11:13:46 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cbc4859788bd30d6ddc9d9483ed641d6f2d0fd42.1582471508.git.afzal.mohd.ma@gmail.com>
+In-Reply-To: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+Content-Language: en-US
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(376002)(346002)(39850400004)(396003)(199004)(189003)(110136005)(54906003)(356004)(426003)(8936002)(6666004)(336012)(478600001)(81156014)(8676002)(4326008)(81166006)(36756003)(31696002)(9786002)(44832011)(70586007)(31686004)(70206006)(107886003)(2616005)(5660300002)(26005)(186003)(966005)(316002)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR02MB3165; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 60ddf30d-9284-4954-56b9-08d7b9124717
+X-MS-TrafficTypeDiagnostic: MWHPR02MB3165:
+X-Microsoft-Antispam-PRVS: <MWHPR02MB316549AD03FF5FC525060EACC6EC0@MWHPR02MB3165.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 032334F434
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: ZxibxhWz0uWgJKch+i7DLFhGTegclqPk7iT8dBrkiC4wlR6omfBjUtnofjAzu85L+wjrQt9Vv6dGFraCj9dz3IfdiDMwoMd9t2Pr10/fsG0Ix7wPQRp9SdFwnbw+DAvs0YBwxlvr/N1dmR9rhMSSrKsi2pD7AgRX2D7XaPlVMZ2INxs6/JrHtRg/qVqYgbPuPTuyT5rgxaiFnukcfjET+WjvYDA8Fkc0G3eg0VpXRLjPvBJIkfqwX4j2TTKfniOKwZlt+bs4vTsyQlLkx4DOcB+V5DmnAThDLwEQwZifxDKqS53+ZiezfH3YM3IN283f9pJA0m+cSW9FgiZanNh/UT7ksqf4T49g8aUXGxfuktDtgbQw9+sodDbcvx0Kr2EkN4pgd6K6NHZzMox2bPB2jThI21gNH3wcgG8dSFW609BObQa3wUDcq4g6LBfyLAXYL/MElqzaC2rg63RpHp6bG6VWo16EX/p80kkH8HhyNN1h5e4vihzq4Oi+LYshW8NqTfW11oJGYk7FtHyfkYVxpA==
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2020 10:14:04.7054 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 60ddf30d-9284-4954-56b9-08d7b9124717
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR02MB3165
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_021324_331349_81C2C70D 
-X-CRM114-Status: GOOD (  18.24  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20200224_021415_104122_6A4DFD9D 
+X-CRM114-Status: GOOD (  29.39  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.94.84 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,497 +137,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Enrico Weigelt <info@metux.net>,
- Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
- Kevin Hilman <khilman@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Viresh Kumar <vireshk@kernel.org>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Hartley Sweeten <hsweeten@visionengravers.com>,
- Krzysztof Halasa <khalasa@piap.pl>, Allison Randal <allison@lohutok.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap@vger.kernel.org,
- Alexander Sverdlin <alexander.sverdlin@gmail.com>,
- Shiraz Hashim <shiraz.linux.kernel@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Shubhrajyoti Datta <shubhraj@xilinx.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "michal.simek@xilinx.com" <michal.simek@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 06:19:04AM +0530, afzal mohammed wrote:
-> request_irq() is preferred over setup_irq(). The early boot setup_irq()
-> invocations happen either via 'init_IRQ()' or 'time_init()', while
-> memory allocators are ready by 'mm_init()'.
+On 18. 02. 20 14:58, Laine Jaakko EXT wrote:
+> I2C master operating in multimaster mode can get stuck
+> indefinitely if I2C start is detected on bus, but no master
+> has a transaction going.
 > 
-> Per tglx[1], setup_irq() existed in olden days when allocators were not
-> ready by the time early interrupts were initialized.
+> This is a weakness in I2C standard, which defines no way
+> to recover, since all masters are indefinitely disallowed
+> from interrupting the currently operating master. A start
+> condition can be created for example by an electromagnetic
+> discharge applied near physical I2C lines. Or a already
+> operating master could get reset immediately after sending
+> a start.
 > 
-> Hence replace setup_irq() by request_irq().
+> If it is known during device tree creation that only a single
+> I2C master will be present on the bus, this deadlock of the
+> I2C bus could be avoided in the driver by ignoring the
+> bus_is_busy register of the xiic, since bus can never be
+> reserved by any other master.
 > 
-> Seldom remove_irq() usage has been observed coupled with setup_irq(),
-> wherever that has been found, it too has been replaced by free_irq().
+> This patch adds this support for detecting multi-master flag
+> in device tree and when not provided, improves I2C reliability
+> by ignoring the therefore unnecessary xiic bus_is_busy register.
 > 
-> [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+> Error can be reproduced by pulling I2C SDA -line temporarily low
+> by shorting it to ground, while linux I2C master is operating on
+> it using the xiic driver. The application using the bus will
+> start receiving linux error code 16: "Device or resource busy"
+> indefinitely:
 > 
-> Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
-> Acked-by: Alexander Sverdlin <alexander.sverdlin@gmail.com> # EP93xx
-> Tested-by: Alexander Sverdlin <alexander.sverdlin@gmail.com> # EP93xx
+> kernel: pca953x 0-0020: failed writing register
+> app: Error writing file, error: 16
+> 
+> With multi-master disabled device will instead receive error
+> code 5: "I/O error" while SDA is grounded, but recover normal
+> operation once short is removed.
+> 
+> kernel: pca953x 0-0020: failed reading register
+> app: Error reading file, error: 5
+> 
+> Signed-off-by: Jaakko Laine <ext-jaakko.laine@vaisala.com>
 > ---
 > 
-> v2:
->  * Replace pr_err("request_irq() on %s failed" by
->            pr_err("%s: request_irq() failed"
->  * Commit message massage
+> Applies against Linux 5.6-rc1 from master in
+> https://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git
 > 
->  arch/arm/mach-cns3xxx/core.c             | 10 +++-------
->  arch/arm/mach-ebsa110/core.c             | 10 +++-------
->  arch/arm/mach-ep93xx/timer-ep93xx.c      | 12 ++++--------
->  arch/arm/mach-footbridge/dc21285-timer.c | 11 +++--------
->  arch/arm/mach-footbridge/isa-irq.c       |  8 ++------
->  arch/arm/mach-footbridge/isa-timer.c     | 11 +++--------
->  arch/arm/mach-iop32x/time.c              | 12 ++++--------
->  arch/arm/mach-mmp/time.c                 | 11 +++--------
+> I would like to point out that that since this patch disables
+> multimaster mode based on the standard I2C multimaster property
+> in device tree (as it propably should) and since the driver has
+> previously supported multimaster even when this property doesn't
+> exist in device tree, there is a possible backwards
+> compatibility issue:
+> 
+> If there are devices relying on the multimaster mode to work
+> without defining the property in device tree, their I2C bus
+> might not work without issues anymore after this patch, since
+> the driver will asume it is the only master on bus and could
+> therefore interrupt the communication of some other master on
+> same bus.
+> 
+> Please suggest some alternative fix if this is not acceptable
+> as is. On the other hand supporting multimaster even on a bus
+> with only a single master does currently cause some
+> reliability issues since the bus can get indefinitely stuck.
+> I don't think there exists a I2C protocol compatible way to
+> resolve the deadlock on multimaster bus.
 
-Tested-by: Lubomir Rintel <lkundrak@v3.sk> (mmp)
+Wolfram: I don't think this feature is used on this driver a lot but
+clearly this breaks compatibility. Not sure how to handle this properly
+and I am fine with this solution.
+
+Shubhrajyoti: Any comment?
+
+> 
+>  drivers/i2c/busses/i2c-xiic.c | 52 +++++++++++++++++++++--------------
+>  1 file changed, 32 insertions(+), 20 deletions(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-xiic.c b/drivers/i2c/busses/i2c-xiic.c
+> index 90c1c362394d..37f8d6ee0577 100644
+> --- a/drivers/i2c/busses/i2c-xiic.c
+> +++ b/drivers/i2c/busses/i2c-xiic.c
+> @@ -46,19 +46,20 @@ enum xiic_endian {
+>  
+>  /**
+>   * struct xiic_i2c - Internal representation of the XIIC I2C bus
+> - * @dev:	Pointer to device structure
+> - * @base:	Memory base of the HW registers
+> - * @wait:	Wait queue for callers
+> - * @adap:	Kernel adapter representation
+> - * @tx_msg:	Messages from above to be sent
+> - * @lock:	Mutual exclusion
+> - * @tx_pos:	Current pos in TX message
+> - * @nmsgs:	Number of messages in tx_msg
+> - * @state:	See STATE_
+> - * @rx_msg:	Current RX message
+> - * @rx_pos:	Position within current RX message
+> - * @endianness: big/little-endian byte order
+> - * @clk:	Pointer to AXI4-lite input clock
+> + * @dev:		Pointer to device structure
+> + * @base:		Memory base of the HW registers
+> + * @wait:		Wait queue for callers
+> + * @adap:		Kernel adapter representation
+> + * @tx_msg:		Messages from above to be sent
+> + * @lock:		Mutual exclusion
+> + * @tx_pos:		Current pos in TX message
+> + * @nmsgs:		Number of messages in tx_msg
+> + * @state:		See STATE_
+> + * @rx_msg:		Current RX message
+> + * @rx_pos:		Position within current RX message
+> + * @endianness:		big/little-endian byte order
+> + * @multimaster:	Indicates bus has multiple masters
+> + * @clk:		Pointer to AXI4-lite input clock
+
+nit: I can't see reason for these changes above. I would do it in
+separate patch if you want to align.
 
 Thanks,
-Lubo
-
->  arch/arm/mach-omap1/pm.c                 | 22 +++++++++++++---------
->  arch/arm/mach-omap1/time.c               | 10 +++-------
->  arch/arm/mach-omap1/timer32k.c           | 10 +++-------
->  arch/arm/mach-omap2/timer.c              | 11 +++--------
->  arch/arm/mach-rpc/time.c                 |  8 ++------
->  arch/arm/mach-spear/time.c               |  9 ++-------
->  arch/arm/plat-orion/time.c               | 10 +++-------
->  15 files changed, 54 insertions(+), 111 deletions(-)
-> 
-> diff --git a/arch/arm/mach-cns3xxx/core.c b/arch/arm/mach-cns3xxx/core.c
-> index 1d61a7701c11..711d88b64f2e 100644
-> --- a/arch/arm/mach-cns3xxx/core.c
-> +++ b/arch/arm/mach-cns3xxx/core.c
-> @@ -189,12 +189,6 @@ static irqreturn_t cns3xxx_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction cns3xxx_timer_irq = {
-> -	.name		= "timer",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= cns3xxx_timer_interrupt,
-> -};
-> -
->  /*
->   * Set up the clock source and clock events devices
->   */
-> @@ -245,7 +239,9 @@ static void __init __cns3xxx_timer_init(unsigned int timer_irq)
->  	writel(val, cns3xxx_tmr1 + TIMER1_2_CONTROL_OFFSET);
->  
->  	/* Make irqs happen for the system timer */
-> -	setup_irq(timer_irq, &cns3xxx_timer_irq);
-> +	if (request_irq(timer_irq, cns3xxx_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "timer", NULL))
-> +		pr_err("%s: request_irq() failed\n", "timer");
->  
->  	cns3xxx_clockevents_init(timer_irq);
->  }
-> diff --git a/arch/arm/mach-ebsa110/core.c b/arch/arm/mach-ebsa110/core.c
-> index da2ff4f61d6b..dfe6da30a3e0 100644
-> --- a/arch/arm/mach-ebsa110/core.c
-> +++ b/arch/arm/mach-ebsa110/core.c
-> @@ -201,12 +201,6 @@ ebsa110_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction ebsa110_timer_irq = {
-> -	.name		= "EBSA110 Timer Tick",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= ebsa110_timer_interrupt,
-> -};
-> -
->  /*
->   * Set up timer interrupt.
->   */
-> @@ -221,7 +215,9 @@ void __init ebsa110_timer_init(void)
->  	__raw_writeb(COUNT & 0xff, PIT_T1);
->  	__raw_writeb(COUNT >> 8, PIT_T1);
->  
-> -	setup_irq(IRQ_EBSA110_TIMER0, &ebsa110_timer_irq);
-> +	if (request_irq(IRQ_EBSA110_TIMER0, ebsa110_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "EBSA110 Timer Tick", NULL))
-> +		pr_err("%s: request_irq() failed\n", "EBSA110 Timer Tick");
->  }
->  
->  static struct plat_serial8250_port serial_platform_data[] = {
-> diff --git a/arch/arm/mach-ep93xx/timer-ep93xx.c b/arch/arm/mach-ep93xx/timer-ep93xx.c
-> index de998830f534..01f7e2b0b9fe 100644
-> --- a/arch/arm/mach-ep93xx/timer-ep93xx.c
-> +++ b/arch/arm/mach-ep93xx/timer-ep93xx.c
-> @@ -117,13 +117,6 @@ static irqreturn_t ep93xx_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction ep93xx_timer_irq = {
-> -	.name		= "ep93xx timer",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= ep93xx_timer_interrupt,
-> -	.dev_id		= &ep93xx_clockevent,
-> -};
-> -
->  void __init ep93xx_timer_init(void)
->  {
->  	/* Enable and register clocksource and sched_clock on timer 4 */
-> @@ -136,7 +129,10 @@ void __init ep93xx_timer_init(void)
->  			     EP93XX_TIMER4_RATE);
->  
->  	/* Set up clockevent on timer 3 */
-> -	setup_irq(IRQ_EP93XX_TIMER3, &ep93xx_timer_irq);
-> +	if (request_irq(IRQ_EP93XX_TIMER3, ep93xx_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "ep93xx timer",
-> +			&ep93xx_clockevent))
-> +		pr_err("%s: request_irq() failed\n", "ep93xx timer");
->  	clockevents_config_and_register(&ep93xx_clockevent,
->  					EP93XX_TIMER123_RATE,
->  					1,
-> diff --git a/arch/arm/mach-footbridge/dc21285-timer.c b/arch/arm/mach-footbridge/dc21285-timer.c
-> index f76212d2dbf1..ce70931037c0 100644
-> --- a/arch/arm/mach-footbridge/dc21285-timer.c
-> +++ b/arch/arm/mach-footbridge/dc21285-timer.c
-> @@ -101,13 +101,6 @@ static irqreturn_t timer1_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction footbridge_timer_irq = {
-> -	.name		= "dc21285_timer1",
-> -	.handler	= timer1_interrupt,
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.dev_id		= &ckevt_dc21285,
-> -};
-> -
->  /*
->   * Set up timer interrupt.
->   */
-> @@ -118,7 +111,9 @@ void __init footbridge_timer_init(void)
->  
->  	clocksource_register_hz(&cksrc_dc21285, rate);
->  
-> -	setup_irq(ce->irq, &footbridge_timer_irq);
-> +	if (request_irq(ce->irq, timer1_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
-> +			"dc21285_timer1", &ckevt_dc21285))
-> +		pr_err("%s: request_irq() failed\n", "dc21285_timer1");
->  
->  	ce->cpumask = cpumask_of(smp_processor_id());
->  	clockevents_config_and_register(ce, rate, 0x4, 0xffffff);
-> diff --git a/arch/arm/mach-footbridge/isa-irq.c b/arch/arm/mach-footbridge/isa-irq.c
-> index 88a553932c33..a259d5d8eb20 100644
-> --- a/arch/arm/mach-footbridge/isa-irq.c
-> +++ b/arch/arm/mach-footbridge/isa-irq.c
-> @@ -96,11 +96,6 @@ static void isa_irq_handler(struct irq_desc *desc)
->  	generic_handle_irq(isa_irq);
->  }
->  
-> -static struct irqaction irq_cascade = {
-> -	.handler = no_action,
-> -	.name = "cascade",
-> -};
-> -
->  static struct resource pic1_resource = {
->  	.name	= "pic1",
->  	.start	= 0x20,
-> @@ -160,7 +155,8 @@ void __init isa_init_irq(unsigned int host_irq)
->  
->  		request_resource(&ioport_resource, &pic1_resource);
->  		request_resource(&ioport_resource, &pic2_resource);
-> -		setup_irq(IRQ_ISA_CASCADE, &irq_cascade);
-> +		if (request_irq(IRQ_ISA_CASCADE, no_action, 0, "cascade", NULL))
-> +			pr_err("%s: request_irq() failed\n", "cascade");
->  
->  		irq_set_chained_handler(host_irq, isa_irq_handler);
->  
-> diff --git a/arch/arm/mach-footbridge/isa-timer.c b/arch/arm/mach-footbridge/isa-timer.c
-> index 82f45591fb2c..6c7c6ea03804 100644
-> --- a/arch/arm/mach-footbridge/isa-timer.c
-> +++ b/arch/arm/mach-footbridge/isa-timer.c
-> @@ -25,17 +25,12 @@ static irqreturn_t pit_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction pit_timer_irq = {
-> -	.name		= "pit",
-> -	.handler	= pit_timer_interrupt,
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.dev_id		= &i8253_clockevent,
-> -};
-> -
->  void __init isa_timer_init(void)
->  {
->  	clocksource_i8253_init();
->  
-> -	setup_irq(i8253_clockevent.irq, &pit_timer_irq);
-> +	if (request_irq(i8253_clockevent.irq, pit_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "pit", &i8253_clockevent))
-> +		pr_err("%s: request_irq() failed\n", "pit");
->  	clockevent_i8253_init(false);
->  }
-> diff --git a/arch/arm/mach-iop32x/time.c b/arch/arm/mach-iop32x/time.c
-> index 18a4df5c1baa..422e298366bd 100644
-> --- a/arch/arm/mach-iop32x/time.c
-> +++ b/arch/arm/mach-iop32x/time.c
-> @@ -137,13 +137,6 @@ iop_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction iop_timer_irq = {
-> -	.name		= "IOP Timer Tick",
-> -	.handler	= iop_timer_interrupt,
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.dev_id		= &iop_clockevent,
-> -};
-> -
->  static unsigned long iop_tick_rate;
->  unsigned long get_iop_tick_rate(void)
->  {
-> @@ -168,7 +161,10 @@ void __init iop_init_time(unsigned long tick_rate)
->  	 */
->  	write_tmr0(timer_ctl & ~IOP_TMR_EN);
->  	write_tisr(1);
-> -	setup_irq(IRQ_IOP32X_TIMER0, &iop_timer_irq);
-> +	if (request_irq(IRQ_IOP32X_TIMER0, iop_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "IOP Timer Tick",
-> +			&iop_clockevent))
-> +		pr_err("%s: request_irq() failed\n", "IOP Timer Tick");
->  	iop_clockevent.cpumask = cpumask_of(0);
->  	clockevents_config_and_register(&iop_clockevent, tick_rate,
->  					0xf, 0xfffffffe);
-> diff --git a/arch/arm/mach-mmp/time.c b/arch/arm/mach-mmp/time.c
-> index c65cfc1ad99b..83af1db45c15 100644
-> --- a/arch/arm/mach-mmp/time.c
-> +++ b/arch/arm/mach-mmp/time.c
-> @@ -175,13 +175,6 @@ static void __init timer_config(void)
->  	__raw_writel(0x2, mmp_timer_base + TMR_CER);
->  }
->  
-> -static struct irqaction timer_irq = {
-> -	.name		= "timer",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= timer_interrupt,
-> -	.dev_id		= &ckevt,
-> -};
-> -
->  void __init mmp_timer_init(int irq, unsigned long rate)
->  {
->  	timer_config();
-> @@ -190,7 +183,9 @@ void __init mmp_timer_init(int irq, unsigned long rate)
->  
->  	ckevt.cpumask = cpumask_of(0);
->  
-> -	setup_irq(irq, &timer_irq);
-> +	if (request_irq(irq, timer_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
-> +			"timer", &ckevt))
-> +		pr_err("%s: request_irq() failed\n", "timer");
->  
->  	clocksource_register_hz(&cksrc, rate);
->  	clockevents_config_and_register(&ckevt, rate, MIN_DELTA, MAX_DELTA);
-> diff --git a/arch/arm/mach-omap1/pm.c b/arch/arm/mach-omap1/pm.c
-> index d068958d6f8a..a82e220783d1 100644
-> --- a/arch/arm/mach-omap1/pm.c
-> +++ b/arch/arm/mach-omap1/pm.c
-> @@ -596,11 +596,6 @@ static irqreturn_t omap_wakeup_interrupt(int irq, void *dev)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction omap_wakeup_irq = {
-> -	.name		= "peripheral wakeup",
-> -	.handler	= omap_wakeup_interrupt
-> -};
-> -
->  
->  
->  static const struct platform_suspend_ops omap_pm_ops = {
-> @@ -655,10 +650,19 @@ static int __init omap_pm_init(void)
->  
->  	arm_pm_idle = omap1_pm_idle;
->  
-> -	if (cpu_is_omap7xx())
-> -		setup_irq(INT_7XX_WAKE_UP_REQ, &omap_wakeup_irq);
-> -	else if (cpu_is_omap16xx())
-> -		setup_irq(INT_1610_WAKE_UP_REQ, &omap_wakeup_irq);
-> +	if (cpu_is_omap7xx()) {
-> +		if (request_irq(INT_7XX_WAKE_UP_REQ, omap_wakeup_interrupt, 0,
-> +				"peripheral wakeup", NULL)) {
-> +			pr_err("%s: request_irq() failed\n",
-> +			       "peripheral wakeup");
-> +		}
-> +	} else if (cpu_is_omap16xx()) {
-> +		if (request_irq(INT_1610_WAKE_UP_REQ, omap_wakeup_interrupt, 0,
-> +				"peripheral wakeup", NULL)) {
-> +			pr_err("%s: request_irq() failed\n",
-> +			       "peripheral wakeup");
-> +		}
-> +	}
->  
->  	/* Program new power ramp-up time
->  	 * (0 for most boards since we don't lower voltage when in deep sleep)
-> diff --git a/arch/arm/mach-omap1/time.c b/arch/arm/mach-omap1/time.c
-> index 524977a31a49..2bd6c4dc6c1f 100644
-> --- a/arch/arm/mach-omap1/time.c
-> +++ b/arch/arm/mach-omap1/time.c
-> @@ -155,15 +155,11 @@ static irqreturn_t omap_mpu_timer1_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction omap_mpu_timer1_irq = {
-> -	.name		= "mpu_timer1",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= omap_mpu_timer1_interrupt,
-> -};
-> -
->  static __init void omap_init_mpu_timer(unsigned long rate)
->  {
-> -	setup_irq(INT_TIMER1, &omap_mpu_timer1_irq);
-> +	if (request_irq(INT_TIMER1, omap_mpu_timer1_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "mpu_timer1", NULL))
-> +		pr_err("%s: request_irq() failed\n", "mpu_timer1");
->  	omap_mpu_timer_start(0, (rate / HZ) - 1, 1);
->  
->  	clockevent_mpu_timer1.cpumask = cpumask_of(0);
-> diff --git a/arch/arm/mach-omap1/timer32k.c b/arch/arm/mach-omap1/timer32k.c
-> index 0ae6c52a7d70..1435faca19d8 100644
-> --- a/arch/arm/mach-omap1/timer32k.c
-> +++ b/arch/arm/mach-omap1/timer32k.c
-> @@ -148,15 +148,11 @@ static irqreturn_t omap_32k_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction omap_32k_timer_irq = {
-> -	.name		= "32KHz timer",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= omap_32k_timer_interrupt,
-> -};
-> -
->  static __init void omap_init_32k_timer(void)
->  {
-> -	setup_irq(INT_OS_TIMER, &omap_32k_timer_irq);
-> +	if (request_irq(INT_OS_TIMER, omap_32k_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "32KHz timer", NULL))
-> +		pr_err("%s: request_irq() failed\n", "32KHz timer");
->  
->  	clockevent_32k_timer.cpumask = cpumask_of(0);
->  	clockevents_config_and_register(&clockevent_32k_timer,
-> diff --git a/arch/arm/mach-omap2/timer.c b/arch/arm/mach-omap2/timer.c
-> index 0d0a731cb476..7cf91f42dbd1 100644
-> --- a/arch/arm/mach-omap2/timer.c
-> +++ b/arch/arm/mach-omap2/timer.c
-> @@ -91,12 +91,6 @@ static irqreturn_t omap2_gp_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction omap2_gp_timer_irq = {
-> -	.name		= "gp_timer",
-> -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
-> -	.handler	= omap2_gp_timer_interrupt,
-> -};
-> -
->  static int omap2_gp_timer_set_next_event(unsigned long cycles,
->  					 struct clock_event_device *evt)
->  {
-> @@ -382,8 +376,9 @@ static void __init omap2_gp_clockevent_init(int gptimer_id,
->  				     &clockevent_gpt.name, OMAP_TIMER_POSTED);
->  	BUG_ON(res);
->  
-> -	omap2_gp_timer_irq.dev_id = &clkev;
-> -	setup_irq(clkev.irq, &omap2_gp_timer_irq);
-> +	if (request_irq(clkev.irq, omap2_gp_timer_interrupt,
-> +			IRQF_TIMER | IRQF_IRQPOLL, "gp_timer", &clkev))
-> +		pr_err("%s: request_irq() failed\n", "gp_timer");
->  
->  	__omap_dm_timer_int_enable(&clkev, OMAP_TIMER_INT_OVERFLOW);
->  
-> diff --git a/arch/arm/mach-rpc/time.c b/arch/arm/mach-rpc/time.c
-> index 1d750152b160..3b7d3baa8ac1 100644
-> --- a/arch/arm/mach-rpc/time.c
-> +++ b/arch/arm/mach-rpc/time.c
-> @@ -85,11 +85,6 @@ ioc_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction ioc_timer_irq = {
-> -	.name		= "timer",
-> -	.handler	= ioc_timer_interrupt
-> -};
-> -
->  /*
->   * Set up timer interrupt.
->   */
-> @@ -97,5 +92,6 @@ void __init ioc_timer_init(void)
->  {
->  	WARN_ON(clocksource_register_hz(&ioctime_clocksource, RPC_CLOCK_FREQ));
->  	ioctime_init();
-> -	setup_irq(IRQ_TIMER0, &ioc_timer_irq);
-> +	if (request_irq(IRQ_TIMER0, ioc_timer_interrupt, 0, "timer", NULL))
-> +		pr_err("%s: request_irq() failed\n", "timer");
->  }
-> diff --git a/arch/arm/mach-spear/time.c b/arch/arm/mach-spear/time.c
-> index 289e036c9c30..b69acc04db4a 100644
-> --- a/arch/arm/mach-spear/time.c
-> +++ b/arch/arm/mach-spear/time.c
-> @@ -181,12 +181,6 @@ static irqreturn_t spear_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction spear_timer_irq = {
-> -	.name = "timer",
-> -	.flags = IRQF_TIMER,
-> -	.handler = spear_timer_interrupt
-> -};
-> -
->  static void __init spear_clockevent_init(int irq)
->  {
->  	u32 tick_rate;
-> @@ -201,7 +195,8 @@ static void __init spear_clockevent_init(int irq)
->  
->  	clockevents_config_and_register(&clkevt, tick_rate, 3, 0xfff0);
->  
-> -	setup_irq(irq, &spear_timer_irq);
-> +	if (request_irq(irq, spear_timer_interrupt, IRQF_TIMER, "timer", NULL))
-> +		pr_err("%s: request_irq() failed\n", "timer");
->  }
->  
->  static const struct of_device_id timer_of_match[] __initconst = {
-> diff --git a/arch/arm/plat-orion/time.c b/arch/arm/plat-orion/time.c
-> index ffb93db68e9c..0a1faa95ecff 100644
-> --- a/arch/arm/plat-orion/time.c
-> +++ b/arch/arm/plat-orion/time.c
-> @@ -177,12 +177,6 @@ static irqreturn_t orion_timer_interrupt(int irq, void *dev_id)
->  	return IRQ_HANDLED;
->  }
->  
-> -static struct irqaction orion_timer_irq = {
-> -	.name		= "orion_tick",
-> -	.flags		= IRQF_TIMER,
-> -	.handler	= orion_timer_interrupt
-> -};
-> -
->  void __init
->  orion_time_set_base(void __iomem *_timer_base)
->  {
-> @@ -236,7 +230,9 @@ orion_time_init(void __iomem *_bridge_base, u32 _bridge_timer1_clr_mask,
->  	/*
->  	 * Setup clockevent timer (interrupt-driven).
->  	 */
-> -	setup_irq(irq, &orion_timer_irq);
-> +	if (request_irq(irq, orion_timer_interrupt, IRQF_TIMER, "orion_tick",
-> +			NULL))
-> +		pr_err("%s: request_irq() failed\n", "orion_tick");
->  	orion_clkevt.cpumask = cpumask_of(0);
->  	clockevents_config_and_register(&orion_clkevt, tclk, 1, 0xfffffffe);
->  }
-> -- 
-> 2.25.1
-> 
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
