@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33506169F38
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 08:28:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00D55169F3C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 08:29:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zY9B5Td+qAR9LG/PweRr3lrLhikNNIfC2rEEF8ArIIs=; b=TY++OHyqMx65af
-	ZJnrORIrLBr9rw2v8ydEwGNUvMWDSHEWTdfdf7CHYuvR7w/QPfo8ve8kCKgUdfl6pOH+UmAPZcV1S
-	xEWw3m3Y5niQ2wCKjU3wvQvUSWyQW/0LfFGatab0LO+1QN0Dk69ZFotI7PW4OtVKgMfktR0Y/ldk/
-	MwQgU8FrxcF0a5ePsS7WLObD+dF14wG3yaeZ0m/KMQULU5IBu8sN0AaaknA5Mc4GJOqE++VZyztV0
-	X6OiqmkkukZI+NlFaHyzcGAHwquqv7Q5jvPlyO1rdRQEr1FxRyE5exdQgw2c6NfFQA/ZOVBBpvPkZ
-	lXRg5Hz8Yx4HPTI/12Ew==;
+	List-Owner; bh=E9Uy0++gVi6SJD15dWsXo/G2I0y6wC44o3PHiglFDfQ=; b=SbNVVoxfBZ2nV5
+	hdCZl2QrylduXAzPu9XI2FBxiyW3lXrQubbgEstK0tq8mp+0l9pVPIZOeRMrzPi32v0X9MvvUD6gg
+	a0PNpH+6KHigo1dtBKNY2EkPJXf+m5MSOlBnho3loqsYMRtrAzC3LZH1js4K/JcXcDK/CfTQF4WtH
+	yMM73uPWlYUNlqEchQIh/ZLCd+JjAF5kOdBmFBgJrba/Yt6GQHlRbw/DMLbf7PcUNv7WqqsDKQBzL
+	J/y8jgmp1Mni6v6vTeiYpOjrl3Q1Uov8Q6iQFTAmqEhyaJH8K1t62xNQUj00VlPOADMWhUN95k5lg
+	C1lZopfp56NoP3TfrELg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j68AO-00014C-3N; Mon, 24 Feb 2020 07:28:36 +0000
+	id 1j68Aj-0001ID-4H; Mon, 24 Feb 2020 07:28:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j68AF-00013q-6k
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 07:28:28 +0000
+ id 1j68AY-0001He-W2
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 07:28:48 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8670E20578;
- Mon, 24 Feb 2020 07:28:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D20C120578;
+ Mon, 24 Feb 2020 07:28:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582529306;
- bh=UT7o8ME45O3oydZx0f3nD0anAxSyiu7DWY6wmBELUBA=;
+ s=default; t=1582529326;
+ bh=J6d4/zQ5bokX/jh/q9nTSIwMW4JfTe9fU6cuuaY23cg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=j04XlkcVj7zGetH++iayWjjYxOZJ6TuagInHORm/L8ezdhWhwK5tvleP8j9hg4NaN
- ODgGM+9xSSijf9ZYzpMasj1Mghc6fCfUOAcNZIYwnAo9rbo+F1wPt5Du+AGf9bwXEH
- V9yAmS3gstkQ+TP2/Tjrk/FD28w6IhK6QA/eG/Fs=
-Date: Mon, 24 Feb 2020 15:28:17 +0800
+ b=07M6sgQeO+jrmTc2UQUXKvxaz4sx2Kyf2yM0DVDS6/pCs+YBq3lFcVvTmGT2VVfmx
+ Lp1QIiWp5RsUhOcqipXCfV74BpQvMfLf9j0hXSr8BfTkGl9bsu4dbNvmu/CpD1APNA
+ /AyXbNMSEiXjK9kzNNdv3BTFC9mizsSlATiycpPc=
+Date: Mon, 24 Feb 2020 15:28:38 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v2 3/8] firmware: imx: misc: Align imx sc msg structs to 4
-Message-ID: <20200224072816.GT27688@dragon>
+Subject: Re: [PATCH v2 4/8] firmware: imx: scu-pd: Align imx sc msg structs
+ to 4
+Message-ID: <20200224072837.GU27688@dragon>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
- <582b80361beb66bd1844fda785aac2e800155d64.1582216144.git.leonard.crestez@nxp.com>
+ <23b7eb459829d088fb4da188aa8063c2011fc2ac.1582216144.git.leonard.crestez@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <582b80361beb66bd1844fda785aac2e800155d64.1582216144.git.leonard.crestez@nxp.com>
+In-Reply-To: <23b7eb459829d088fb4da188aa8063c2011fc2ac.1582216144.git.leonard.crestez@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_232827_267693_0FFB332B 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20200223_232847_049402_D3872E94 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,18 +95,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 06:29:34PM +0200, Leonard Crestez wrote:
+On Thu, Feb 20, 2020 at 06:29:35PM +0200, Leonard Crestez wrote:
 > The imx SC api strongly assumes that messages are composed out of
 > 4-bytes words but some of our message structs have odd sizeofs.
 > 
-> This produces many oopses with CONFIG_KASAN=y:
+> This produces many oopses with CONFIG_KASAN=y.
 > 
->     BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
+> Fix by marking with __aligned(4).
 > 
-> It shouldn't cause an issues in normal use because these structs are
-> always allocated on the stack.
-> 
-> Fixes: 15e1f2bc8b3b ("firmware: imx: add misc svc support")
+> Fixes: c800cd7824bd ("firmware: imx: add SCU power domain driver")
 > Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 
 Applied, thanks.
