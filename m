@@ -2,58 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04CCD16A58F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:54:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03F3F16A5A1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 12:59:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7oj9VHcG5oX038w1up+VpQ5g8DXZrSjVwCDE+dp4qwo=; b=DUC94jUnBWlDxo9FThpgIxAfz
-	kX6+k8fxaoJuBSg6O+i0Kmh9jslX6ulRMVVAPOl3xhFPTd1rEtqME6KO5cYl4B8lI+rp/+eOyTSUh
-	1W6tZAwtOw6kP3sBwHK4OGjiCTMMV+tj8J4VRruW8dkHmehQey75yofV1UqTb1b5irIAJ+5nnl7/9
-	FQ23znrzbc3/STy5YD1z6yLnejjAoThh77f2ikFI2JnjIoPlBe7fxdF1GhoeDJlHJQYOC1fXJtT8z
-	20x6Q13dMpI5Z3vIc290KNqv6FN1dFN22ZH2vaZuSMd659BPhgMRueF07+FQ5n40lTrZC7mr1FrCe
-	m5dDH3cXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4h6RfGrXucsxjhoDoG0+dqDw+GHdnwPAjh72sTts3tM=; b=sMTPHm/hWLursj
+	+62NZkHlXaV40eqspF8nyovCtjb5CS5iR/Xm3TWluihbu1l/0Q3F/9gnydKgqt5mWBk8lxMVubt/+
+	5FyFL9xDxSJ5t/VHUAOm7eo97qvuabnuulhLM5+C8GLet03RCibTEEdWapTWy3Y9DauTNTAz+qstP
+	dwUjtcOUrbaFB+XB4ie/lOFgAjbOpVwD0jKStNhONJH+PZsxzyln2w18+C8IsUVYM5C6LrTytFXoQ
+	5S+3PQ57AyVfVeg+inItsR1p9UZsvCtaRGBJZKss2d8BKy6nfHb5+seiGI3XeGnk8x1k4LMN1qAFk
+	i9SEc2YMQr2sK7hH+iWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6CJG-0004g4-1x; Mon, 24 Feb 2020 11:54:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6CJ5-0004fW-Pa; Mon, 24 Feb 2020 11:53:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E8F1930E;
- Mon, 24 Feb 2020 03:53:50 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7524E3F534;
- Mon, 24 Feb 2020 03:53:50 -0800 (PST)
-Date: Mon, 24 Feb 2020 11:53:49 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Subject: Re: [RFC PATCH v3 4/8] regulator: rename regulator_linear_range to
- linear_range
-Message-ID: <20200224115349.GD6215@sirena.org.uk>
-References: <cover.1582182989.git.matti.vaittinen@fi.rohmeurope.com>
- <f66749295e07448012c80c2054b1f14506d17d76.1582182989.git.matti.vaittinen@fi.rohmeurope.com>
+	id 1j6COG-0006tJ-CW; Mon, 24 Feb 2020 11:59:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6CO6-0006sp-SF
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 11:59:04 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B914D20828;
+ Mon, 24 Feb 2020 11:58:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582545542;
+ bh=527/P0PCxAx1P3oVPckFcLKVR2UnWZl2M0CPxqoBIk8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=GSTFUuC4JnlbirXZ+HGrAkvpP4DjdiSDsPM/8vaNQ/PdHplKpt7o8SMDP5X+QAGDZ
+ XphGKVbFzlZ5C7s1+3sNbaMLp+VUtyJuONxTUP57vTEcx6ETyWOG3/n1GH4nNwOo6K
+ eMFJVma+cPkZWrzifs/dc/QW0e3OmBlFzwoKoLWQ=
+Date: Mon, 24 Feb 2020 19:58:55 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH] arm64: dts: ls1028: sl28: explicitly enable network ports
+Message-ID: <20200224115854.GG27688@dragon>
+References: <20200224115052.27328-1-michael@walle.cc>
 MIME-Version: 1.0
-In-Reply-To: <f66749295e07448012c80c2054b1f14506d17d76.1582182989.git.matti.vaittinen@fi.rohmeurope.com>
-X-Cookie: How you look depends on where you go.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200224115052.27328-1-michael@walle.cc>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_035351_878532_92B6A886 
-X-CRM114-Status: GOOD (  10.49  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200224_035902_938049_A6CD4857 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,80 +76,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Milo Kim <milo.kim@ti.com>,
- Andrei Stefanescu <andrei.stefanescu@microchip.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>, Tony Lindgren <tony@atomide.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-samsung-soc@vger.kernel.org,
- linux-omap@vger.kernel.org, mazziesaccount@gmail.com,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Chen-Yu Tsai <wens@csie.org>,
- Andy Gross <agross@kernel.org>, Markus Laine <markus.laine@fi.rohmeurope.com>,
- devicetree@vger.kernel.org, Charles Keepax <ckeepax@opensource.cirrus.com>,
- linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- Richard Fitzgerald <rf@opensource.cirrus.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org,
- Support Opensource <support.opensource@diasemi.com>,
- Sangbeom Kim <sbkim73@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sebastian Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
- Mikko Mutanen <mikko.mutanen@fi.rohmeurope.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- patches@opensource.cirrus.com
-Content-Type: multipart/mixed; boundary="===============3342611330666596552=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Feb 24, 2020 at 12:50:52PM +0100, Michael Walle wrote:
+> Since commit b9213899d2b0 ("arm64: dts: ls1028a: disable all enetc ports
+> by default") all the network ports are disabled by default. This makes
+> sense, but now we have to enable them explicitly in the boards. Do so
+> for the sl28 module.
+> 
+> Since we are at it. Make sure the second port is only enabled for the
+> variant 4 of the module. Variant 3 has only one network port.
+> 
+> Signed-off-by: Michael Walle <michael@walle.cc>
 
---===============3342611330666596552==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="jL2BoiuKMElzg3CS"
-Content-Disposition: inline
-
-
---jL2BoiuKMElzg3CS
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Feb 20, 2020 at 09:36:10AM +0200, Matti Vaittinen wrote:
-> Rename the "regulator_linear_range" to more generic linear_range
-> as a first step towards converting the "regulator_linear_range"
-> to common helpers.
-
-Doesn't this introduce a build break when applied by itself?  Patches
-should be bisectable, if you want to split things up you should
-introduce the new API then use it.
-
---jL2BoiuKMElzg3CS
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5TuUwACgkQJNaLcl1U
-h9Bobgf/bBfZFX2V9zrXf7uOqfAy58lDJsCapCQsq1yXEzID+pwtN5eG6vVcW+fc
-sioaL8h3UtAeapwgAE0tJQgk1aRc88CsScuLJr0bmfSWQUvnq/UbL/NyyDnthYhd
-vPKEno1MAOH0pBRBqG8IZG9eLEc7aaOvaI4a4pl0Dis3FNPwEDaumpVvJYK1V7U8
-+0vvTWzZsX0yc0N+tdfOvP35v0NIqP3kZL6ztNEvuKx7RvTnyDyN4p/65O1dHZLd
-bhat1RJll7ITXDizfyEzi0zuPWeJuYOuvWgSyl2Ow4AzRz7zXNYnehsbS2yofZy1
-wDRxpH/9ARG4e9guroKxyuWFVFWgBg==
-=XevB
------END PGP SIGNATURE-----
-
---jL2BoiuKMElzg3CS--
-
-
---===============3342611330666596552==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3342611330666596552==--
-
