@@ -2,60 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55BA916A3CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 11:22:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AD4816A3DE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 11:27:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CVHrIGLGMIVl8Bz46/TEucIYC6VycVWEpdfqjv4CwiE=; b=NqDg/Q+v1hh/q5
-	4lCuMBTkiPFLczfWDwh8VUGqfKO18OdTJ6krct/ifDoDxozNxpeHspK2S1Fs/WLxokIvShuvLZYWu
-	j4qeL3zcNUXpZ5ycNTBllnRIXHnouRMupw9w6Ee2uY6ZP8SvHgq1/LqaOjGCiehX0YU3Y4IwoFqbp
-	lLrsQxrRaAOBB2diXjZizrbC568InLaN0/5k/hVmf84nUDA8//nhkjLv3bAYoN/qNgncGF/S0qtJu
-	dJMwj8MgXlQKdWDwv+UcXG4wNVqLAQbek8kLvgnC4IwlTboEfPKGd5IuriW4tNCBrHYzcYBxL6klc
-	phsE90NwYP25VSQinkgA==;
+	List-Owner; bh=/+s3cuP2Oeyd5K6wD/PK7+rt4pOOjiBV1j/W8FhJXfo=; b=i2SqmloKmjdUYJ
+	E1hvF8Pc69IrR/psnSET23y42bVGu8ONYXVPfXtw7o++wHC5OqRONDzkJY/8C02wc0ZABRWOVfYdg
+	GdUIA/waySkOJ+xuEGfRVtU7yfyPyFEYdARjDNVGIrzjg+2fifo3asGOzg4Gj9PszXL6kDAu2dPP8
+	d2rToJlwcD3VtYcnPDw1TtOC+f0gr14Pk13XQUBQ5/rVZh7H+XgWk0qC5mqYHmSDH1pEIDcIa8+kR
+	RISGna4FaRkp+vnfR5dSMirl4fnM4vfJzQdmq4BDCJ1IfdZO7S+aQ6yWi/fuWc/QZxnNrdEAbb++t
+	40R03rb5AgULr+XNnDqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Asg-0008RE-CB; Mon, 24 Feb 2020 10:22:30 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j6Ax6-0001nE-65; Mon, 24 Feb 2020 10:27:04 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6AsW-0008Qn-QL
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 10:22:22 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1j6AsO-0006AU-OD; Mon, 24 Feb 2020 11:22:12 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1j6AsN-00010t-EU; Mon, 24 Feb 2020 11:22:11 +0100
-Date: Mon, 24 Feb 2020 11:22:11 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH] watchdog: imx2_wdt: Drop .remove callback
-Message-ID: <20200224102211.clzqw4vtzc4nz5df@pengutronix.de>
-References: <1582512687-13312-1-git-send-email-Anson.Huang@nxp.com>
-MIME-Version: 1.0
+ id 1j6Awt-0001mU-CI
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 10:26:55 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01OAPHMM024077; Mon, 24 Feb 2020 02:26:42 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=date : from : to :
+ cc : subject : message-id : references : content-type : in-reply-to :
+ mime-version; s=pfpt0818; bh=rwyTeoFkSkKpb+yKNfh1/RiEe4+6DwPvTwU2MpxR9iA=;
+ b=u+9JZhJN+h4Q8xgh0Ppcfz8wMk9awqIykm52eS39pUjdM6OGLuJZRlLwCp4OfVVOjU9y
+ TTC8XME3VuQscWYumkRAx7GFuD2LmHRFV+Tv+BW2ZZMwQJeWm0U0m8oFwPVFg2NiV837
+ iWtHMRhKUzS6gzvHCwURUbn2eGLBXIIR87znz9qPe1l/CxpHOfW/f+tn8jGpHX0I1UL8
+ LHmf1Y6Impqjhiq+i424a9YzJHdq8k6dbN0FIQIEso0KtEnaBPDEzg/AZ7l4w+BGmsRW
+ tMlujdJre/cDHFLfY9pOPGX6mUnXonwvEbuj7PRpVipTmhTIP4LtOfsRuo3RGebj22zu JA== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2yb4pt5sdu-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Mon, 24 Feb 2020 02:26:42 -0800
+Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Mon, 24 Feb
+ 2020 02:26:40 -0800
+Received: from NAM04-BN3-obe.outbound.protection.outlook.com (104.47.46.50) by
+ SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1497.2 via Frontend Transport; Mon, 24 Feb 2020 02:26:40 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MKZmgrzdKKDrSo+oMtMJD37rVixhcpcL1XGpBjIVa8oo5XYnmeED6FvoujDTfPrxwRBCCs7mm8dbDfw2k+6mfbTEOk51OdElmYf7TMRYiQln7SslycrOsv19/N22tnFYv736WWEyyjidLYG1D39Q7BgRil2VuqA3+YuoPoLMJxxFIcQsYZdw2UX7GQOado4oiYv7q9fJNu7lqrQVUNGDLdHy/yrenwE8w8hPIv4e08UFXiCU4pWHiFlF0fQiw8k8y2v9aXWc6s8k6zeXmBs4Bzn/TzW5tCY1cYXjyAH73tbfk+cRiq6PmWmOacB6AEbX5FjwFJeX0pIRg5GXPwMhdg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rwyTeoFkSkKpb+yKNfh1/RiEe4+6DwPvTwU2MpxR9iA=;
+ b=G4f+8gorMmb54ftcgD/SpHYaa0ygGrae5HQRZpX1ete94mSywwL00Z0v1Oocki8bDXkKVJuZRBrKsPY/+VQx/D7BLxrvekVKmtyTLGfoeg3c1Xou4S3R/YKRUfx1HgMhECfFwvJXBDXBZqPq3hrb0cBbn+tOxqkzIGqxaAhuF1ChdKcZK0DmJDql+Pl71AbVeaebBa3L8t25UM9IDk/y0G3blmHcrKu0SAD8F3aB8w8Alz7FnHVsmJnQo96bDtxmdAdEPF1EPaY1aLUmoxNymyYlrC8rpP1gdrq2NiXlkynkXhBI6vXFN5HNCb+oLIIp4p+wcPSpy5aylQmWHa6xQw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rwyTeoFkSkKpb+yKNfh1/RiEe4+6DwPvTwU2MpxR9iA=;
+ b=OGCdSJgTt1xBjNlJutWKR24ZBTW4VhT5ULs9vaQybDwiXhiy48gN7+RKlsRw3FSFYv9bbVfJdlxHovWBQBS8uJyw4aubKcsGmWP75sF6Q3K/Mia2v0HRV+jgSQXrEZjGpMjFrzLWxpyl691bpp7dJ8glySMRo6i+R/xANF1wBWQ=
+Received: from MN2PR18MB3408.namprd18.prod.outlook.com (2603:10b6:208:165::10)
+ by MN2PR18MB3248.namprd18.prod.outlook.com (2603:10b6:208:16c::10)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.21; Mon, 24 Feb
+ 2020 10:26:39 +0000
+Received: from MN2PR18MB3408.namprd18.prod.outlook.com
+ ([fe80::30c4:52fe:fdf8:faff]) by MN2PR18MB3408.namprd18.prod.outlook.com
+ ([fe80::30c4:52fe:fdf8:faff%7]) with mapi id 15.20.2750.021; Mon, 24 Feb 2020
+ 10:26:39 +0000
+Date: Mon, 24 Feb 2020 11:26:31 +0100
+From: Robert Richter <rrichter@marvell.com>
+To: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+Subject: Re: [PATCH] MAINTAINERS: clean up PCIE DRIVER FOR CAVIUM THUNDERX
+Message-ID: <20200224102631.c5yluo6u5ipghyz4@rric.localdomain>
+References: <20200223090950.5259-1-lukas.bulwahn@gmail.com>
 Content-Disposition: inline
-In-Reply-To: <1582512687-13312-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20200223090950.5259-1-lukas.bulwahn@gmail.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-ClientProxiedBy: HE1PR0902CA0016.eurprd09.prod.outlook.com
+ (2603:10a6:3:e5::26) To MN2PR18MB3408.namprd18.prod.outlook.com
+ (2603:10b6:208:165::10)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from rric.localdomain (31.208.96.227) by
+ HE1PR0902CA0016.eurprd09.prod.outlook.com (2603:10a6:3:e5::26) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.18 via Frontend Transport; Mon, 24 Feb 2020 10:26:36 +0000
+X-Originating-IP: [31.208.96.227]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: cbc2b49a-9060-40e0-740b-08d7b9140850
+X-MS-TrafficTypeDiagnostic: MN2PR18MB3248:
+X-Microsoft-Antispam-PRVS: <MN2PR18MB3248FD63358A92416E31E6CAD9EC0@MN2PR18MB3248.namprd18.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
+X-Forefront-PRVS: 032334F434
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(376002)(396003)(366004)(136003)(199004)(189003)(4744005)(53546011)(6506007)(86362001)(54906003)(8936002)(6666004)(478600001)(81156014)(4326008)(6916009)(8676002)(7416002)(81166006)(16526019)(52116002)(7696005)(66476007)(26005)(186003)(5660300002)(66556008)(1076003)(956004)(316002)(55016002)(9686003)(66946007)(2906002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR18MB3248;
+ H:MN2PR18MB3408.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+Received-SPF: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: WcbjnANNbe0y6EasU91hh4AToRZy1Kr4obBDFIFtjC5fgqSJ0DliaEsA4jfoBbkuywXgagXshvcx0Ra5jPlpbwAIK82KBBYvv8h9JHnlmJSkqxmi/s7Lxs+QI0ZS1kOmwoO1cgbMTJ7lATgaZvKZEU2ygOdMYVjiW05iaWli6p2dX/Y96Tse6trWbyaeVAKiysThasjEtLQEoc/uLA1+KCIuyX9Szk7qhQA+kmFOCjx6dvgLNO96z2aLHohsDKXbDebRbm0vendvxyv7K+L4e3WZxqk2osAKwsVfeTTIKCfLux5oBg0vO4Cvx+Tbt08YANBSwrVrATyUD5j926RSC56GOPEzPtiyybTZoSPgDlHoIq+N1IGRNNlB1F+KeocXm84l9VZfe9AvLDLX8G+ovVL5p2MhwLwwIC0ssuwTbGKdgAzCTBLFEjd+aiR7FHTs
+X-MS-Exchange-AntiSpam-MessageData: ENropoDvTVnM2vdcYAZvvhbbRvlGYTptLW8l2VhabOEdyyHmejlcWEV7RrMlRjepzJDNnO5EJpxOUu6zxJkkECmAZ7AHiRy95pYTasMAjNt3kxQRPH54DmqsJKUajTrEVRXm11xjCrqM7M7cyd331A==
+X-MS-Exchange-CrossTenant-Network-Message-Id: cbc2b49a-9060-40e0-740b-08d7b9140850
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Feb 2020 10:26:38.8498 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6Ha3TaM+RftgQJenvcs4eFrBVsK0SJulT4trcZSzEepBA4KslhOueJ6z3ni0W824/CC//r416bhdoTE+x8XaXQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR18MB3248
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-24_02:2020-02-21,
+ 2020-02-24 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_022220_855357_9D957BA2 
-X-CRM114-Status: GOOD (  17.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200224_022651_597144_15CE0221 
+X-CRM114-Status: GOOD (  12.51  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,112 +148,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel@pengutronix.de, wim@linux-watchdog.org, festevam@gmail.com,
- linux@roeck-us.net, Linux-imx@nxp.com
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-pci@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Joe Perches <joe@perches.com>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 10:51:27AM +0800, Anson Huang wrote:
-> .remove callback implementation doesn' call clk_disable_unprepare() which
-> is buggy, actually, we can just use devm_watchdog_register_device() and
-> devm_add_action_or_reset() to handle all necessary operations for remove
-> action, then .remove callback can be dropped.
-> =
+Hi Lukas,
 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+On 23.02.20 10:09:50, Lukas Bulwahn wrote:
+> Commit e1ac611f57c9 ("dt-bindings: PCI: Convert generic host binding to
+> DT schema") combines all information from pci-thunder-{pem,ecam}.txt
+> into host-generic-pci.yaml, and deleted the two files in
+> Documentation/devicetree/bindings/pci/.
+> 
+> Since then, ./scripts/get_maintainer.pl --self-test complains:
+> 
+>   no file matches F: Documentation/devicetree/bindings/pci/pci-thunder-*
+> 
+> As the PCIE DRIVER FOR CAVIUM THUNDERX-relevant information is only a
+> small part of the host-generic-pci.yaml, do not add this file to the
+> PCIE DRIVER FOR CAVIUM THUNDERX entry, and only drop the reference to
+> the removed files.
+> 
+> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+
+Acked-by: Robert Richter <rrichter@marvell.com>
+
 > ---
->  drivers/watchdog/imx2_wdt.c | 37 ++++++++++---------------------------
->  1 file changed, 10 insertions(+), 27 deletions(-)
-> =
+> Robert, are you still the maintainer of this driver?
 
-> diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
-> index f8d58bf..1fe472f 100644
-> --- a/drivers/watchdog/imx2_wdt.c
-> +++ b/drivers/watchdog/imx2_wdt.c
-> @@ -244,6 +244,11 @@ static const struct regmap_config imx2_wdt_regmap_co=
-nfig =3D {
->  	.max_register =3D 0x8,
->  };
->  =
+Sure. I inherited the driver a couple of months ago from David who is
+no longer at Cavium/ Marvell.
 
-> +static void imx2_wdt_action(void *data)
-> +{
-> +	clk_disable_unprepare(data);
+Thanks,
 
-Does this have the effect of stopping the watchdog? Maybe we can have a
-more expressive function name here (imx2_wdt_stop_clk or similar)?
-
-Is there some watchdog core policy that tells if the watchdog should be
-stopped on unload?
-
-> +}
-> +
->  static int __init imx2_wdt_probe(struct platform_device *pdev)
->  {
->  	struct device *dev =3D &pdev->dev;
-> @@ -292,6 +297,10 @@ static int __init imx2_wdt_probe(struct platform_dev=
-ice *pdev)
->  	if (ret)
->  		return ret;
->  =
-
-> +	ret =3D devm_add_action_or_reset(dev, imx2_wdt_action, wdev->clk);
-> +	if (ret)
-> +		return ret;
-> +
->  	regmap_read(wdev->regmap, IMX2_WDT_WRSR, &val);
->  	wdog->bootstatus =3D val & IMX2_WDT_WRSR_TOUT ? WDIOF_CARDRESET : 0;
->  =
-
-> @@ -315,32 +324,7 @@ static int __init imx2_wdt_probe(struct platform_dev=
-ice *pdev)
->  	 */
->  	regmap_write(wdev->regmap, IMX2_WDT_WMCR, 0);
->  =
-
-> -	ret =3D watchdog_register_device(wdog);
-> -	if (ret)
-> -		goto disable_clk;
-> -
-> -	dev_info(dev, "timeout %d sec (nowayout=3D%d)\n",
-> -		 wdog->timeout, nowayout);
-
-Does the core put this info in the kernel log? If not dropping it isn't
-obviously right enough to be done en passant.
-
-> -	return 0;
-> -
-> -disable_clk:
-> -	clk_disable_unprepare(wdev->clk);
-> -	return ret;
-> -}
-> -
-> -static int __exit imx2_wdt_remove(struct platform_device *pdev)
-> -{
-> -	struct watchdog_device *wdog =3D platform_get_drvdata(pdev);
-> -	struct imx2_wdt_device *wdev =3D watchdog_get_drvdata(wdog);
-> -
-> -	watchdog_unregister_device(wdog);
-> -
-> -	if (imx2_wdt_is_running(wdev)) {
-> -		imx2_wdt_ping(wdog);
-> -		dev_crit(&pdev->dev, "Device removed: Expect reboot!\n");
-> -	}
-
-I also wonder about this one. This changes the timing behaviour and so
-IMHO shouldn't be done as a side effect of a cleanup patch.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+-Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
