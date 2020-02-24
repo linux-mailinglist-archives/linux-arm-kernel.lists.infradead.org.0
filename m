@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76E9F16A0AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:56:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64B7916A0B2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 24 Feb 2020 09:56:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jp20ZCimhNdIJ7mO3DosDOQ2MBZmDrdGI1y7XUhAv0o=; b=ouUkfxDSfKROSr
-	ag/FiVLL7ePWfMPDwVEvC6dGegpaKa09FjzC+4FENDLzCf58IRin4COGv20TGF1q9fn+HsARc3f9Q
-	UiFh8zYzzoE7sOYDRP2PxK6xGhUU8FYiJuoYgDlLaCoJGskoH2ZcFXLSsHtoIw4UUHhgrPBXkTv+n
-	Bh00y7/OFTbXkjz7DpPuwokEXeQbDW/GmFLM6nkIuxSbxwQ6terfxw2r6z+yPtTaxvmOi2NR+VDFA
-	Ilrhsm7JmG1vvtOxvxwSVQClZCcWZxBRWnF65ureoTITRaOqOC0o0f0CMJc2m1DGWPt0xsJxb30O4
-	ljFqCmixsaeAWsIHHSwQ==;
+	List-Owner; bh=PdB9Amqlx6RqiE1avPmzni3G1vwCx1741Y8QD09fEw8=; b=is4BA5jjWgoeBB
+	OaCB/x9cHP7hx3wQQJ08IMeAjVDvyYQmzMfQyNSdyRUQYvtJ946lhgyCc7hhvbw3YxNnrMOWXPGGz
+	y+WQc2nGxMQCNRMhkxCz0LuOkoY0EBFJZnBMp1sFUxAiFk/qtwoV4HzDBFLyTA6Pn8mB0vq4zhNmO
+	LPUolGLEdECYQoZiUNYws8YCiqdy+vNVPIHRDjre7STTjb7e+sICmrmY7XeRCEqx3Q8S00m0YKfBf
+	hobqPsYXxMmIAhFaKnT2hJbPju830GUbjOG/xBs7tJKDQLrc3ukqTnij7zYn7UwpdQ7Wau4T3W/P9
+	bYPmEfGS8PtJgQfq7wAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j69XG-00024g-OO; Mon, 24 Feb 2020 08:56:18 +0000
+	id 1j69XQ-0002IV-F1; Mon, 24 Feb 2020 08:56:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j69Ul-0007As-S2; Mon, 24 Feb 2020 08:53:46 +0000
+ id 1j69Uo-0007Cp-Ex; Mon, 24 Feb 2020 08:53:48 +0000
 Received: from localhost (unknown [213.57.247.131])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B6497214DB;
- Mon, 24 Feb 2020 08:53:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 28FC2217F4;
+ Mon, 24 Feb 2020 08:53:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582534421;
- bh=PqykvPQQ/udBG704OUeCLp9f/aB1NAyE9uTf+TCbpz8=;
+ s=default; t=1582534425;
+ bh=+JIpHlGXogS4+daEblPn5BSF0HuOG4JYDa5oxAD5hew=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=t/pjM/vcm8JA8QuRjS1Bu+1SaGDuSYghfazALvLx7jH4zI0/CnwUOeFhjLEyaBm0D
- oPdvP4f8CNmalkFD1hQDQg+pJMX2pb6mAEwS88pHG/k0RfcczV8h++l1QkKUbQFmOT
- Fll+u2HS/YvFQlHo70Zuj/eXl/5BtJ+uRmo30hj0=
+ b=j1Zttk1kJhM3Hj0TFsM2w9mHiyAsPqgLjc2gRGjor+Ms/Z4pAJiaeaLwQ16IEI8dT
+ HMryrOFqoN2ALr7uzjQqUUfFYPdZhJhxcwvks//FRX9c0ssGXhXwx44+gHk5F48qVA
+ 9Yhy0gXjPfjZ84UwLuRn7v0G7FDBV6RMgzzFmVlU=
 From: Leon Romanovsky <leon@kernel.org>
 To: "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>
-Subject: [PATCH net-next v1 07/18] net/agere: Delete unneeded driver version
-Date: Mon, 24 Feb 2020 10:53:00 +0200
-Message-Id: <20200224085311.460338-8-leon@kernel.org>
+Subject: [PATCH net-next v1 08/18] net/alacritech: Delete driver version
+Date: Mon, 24 Feb 2020 10:53:01 +0200
+Message-Id: <20200224085311.460338-9-leon@kernel.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200224085311.460338-1-leon@kernel.org>
 References: <20200224085311.460338-1-leon@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_005344_523706_0C087898 
-X-CRM114-Status: UNSURE (   9.50  )
+X-CRM114-CacheID: sfid-20200224_005346_552944_BE74751D 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -99,38 +99,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Leon Romanovsky <leonro@mellanox.com>
 
-There is no need in driver version for in-tree kernel code.
+Use standard variant of the driver version.
 
 Signed-off-by: Leon Romanovsky <leonro@mellanox.com>
 ---
- drivers/net/ethernet/agere/et131x.c | 1 -
- drivers/net/ethernet/agere/et131x.h | 1 -
- 2 files changed, 2 deletions(-)
+ drivers/net/ethernet/alacritech/slicoss.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/drivers/net/ethernet/agere/et131x.c b/drivers/net/ethernet/agere/et131x.c
-index cb6a761d5c11..1b19385ad8a9 100644
---- a/drivers/net/ethernet/agere/et131x.c
-+++ b/drivers/net/ethernet/agere/et131x.c
-@@ -2958,7 +2958,6 @@ static void et131x_get_drvinfo(struct net_device *netdev,
- 	struct et131x_adapter *adapter = netdev_priv(netdev);
+diff --git a/drivers/net/ethernet/alacritech/slicoss.c b/drivers/net/ethernet/alacritech/slicoss.c
+index 9daef4c8feef..6234fcd844ee 100644
+--- a/drivers/net/ethernet/alacritech/slicoss.c
++++ b/drivers/net/ethernet/alacritech/slicoss.c
+@@ -26,7 +26,6 @@
+ #include "slic.h"
 
- 	strlcpy(info->driver, DRIVER_NAME, sizeof(info->driver));
--	strlcpy(info->version, DRIVER_VERSION, sizeof(info->version));
- 	strlcpy(info->bus_info, pci_name(adapter->pdev),
- 		sizeof(info->bus_info));
+ #define DRV_NAME			"slicoss"
+-#define DRV_VERSION			"1.0"
+
+ static const struct pci_device_id slic_id_tbl[] = {
+ 	{ PCI_DEVICE(PCI_VENDOR_ID_ALACRITECH,
+@@ -1533,7 +1532,6 @@ static void slic_get_drvinfo(struct net_device *dev,
+ 	struct slic_device *sdev = netdev_priv(dev);
+
+ 	strlcpy(info->driver, DRV_NAME, sizeof(info->driver));
+-	strlcpy(info->version, DRV_VERSION, sizeof(info->version));
+ 	strlcpy(info->bus_info, pci_name(sdev->pdev), sizeof(info->bus_info));
  }
-diff --git a/drivers/net/ethernet/agere/et131x.h b/drivers/net/ethernet/agere/et131x.h
-index be9a11c02526..d0e922584d8a 100644
---- a/drivers/net/ethernet/agere/et131x.h
-+++ b/drivers/net/ethernet/agere/et131x.h
-@@ -46,7 +46,6 @@
-  */
 
- #define DRIVER_NAME "et131x"
--#define DRIVER_VERSION "v2.0"
-
- /* EEPROM registers */
-
+@@ -1852,4 +1850,3 @@ module_pci_driver(slic_driver);
+ MODULE_DESCRIPTION("Alacritech non-accelerated SLIC driver");
+ MODULE_AUTHOR("Lino Sanfilippo <LinoSanfilippo@gmx.de>");
+ MODULE_LICENSE("GPL");
+-MODULE_VERSION(DRV_VERSION);
 --
 2.24.1
 
