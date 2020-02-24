@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FEDA16B4D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:09:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B086A16B4E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 00:12:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PqFe4GRl9jwu/1DVn3PsRIhUVmbQQoQu7/+qc8BOd9I=; b=dONWzmlTLmIF30wmtsh5GiQ0Ph
-	LEqMq7GFpKHoPHCI8YsCfbAl2tsiE+Dtzr99CfhlAIfHudEFVU8jC8y10O75IXKUPw3PHMCzFe5Sl
-	kKXhiwhftTUlWOE2osDKnRT88pjsBCjzbdm0EZ03TohJXWqDrg7HFVXaojf+35ICHmC95grrF3QAx
-	twrabz0mqKkWVcZekoiccwRKrLzucyAY+vYBuSw3zXx3kN+NAXjYWfTxa1J/IbsT4J13cp/O2FFA4
-	RC1npbTsvmR339x9D2RhSRyindxxI/hMdMa62QPdoHknXLNu+506lKp82gQEKeDqqw+9/AuS7XJis
-	iJxiI28Q==;
+	bh=BYlB6TFu/C6ti0QCISH7TEMLn+50mEDPGUB/+H1LOxI=; b=GZuCMeAog666NSV54iWNkAT2Th
+	epgBMur8IseVCziPqcIX2NyWLMMHXNIBtfNnJf49gYOIa8MhbtXGe8jl8t3G0zgzIsouBfvTECEBu
+	2NG/umbg7wFIqBvKq0iX1bsdfDs95uYVCIapeTynCzf8WCEL2p5tK1VYHc/zvAxsM87zH9bKm0qLP
+	rZBLtUjLZxv9CLsPdq9Vjc/kbKSZgHH7fipKR7uJe6d6t7ARn1rRiFiz08/JkhjjlpRcbNABtPROr
+	YNOoA8BDBBrWAKrIJe3lt8TV0JTBQmsRY3s2k3adAPcCxfsEuT/RAuzxL0t7zJHupse8a/3SXri9h
+	x9Q2bxSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Mqf-0002dY-8c; Mon, 24 Feb 2020 23:09:13 +0000
+	id 1j6MtR-0006S6-KL; Mon, 24 Feb 2020 23:12:05 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Mq6-0002Ot-0a
- for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:39 +0000
+ id 1j6Mq8-0002SZ-Vy
+ for linux-arm-kernel@lists.infradead.org; Mon, 24 Feb 2020 23:08:44 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9FC3121004A;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E039A210045;
  Tue, 25 Feb 2020 00:08:32 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 67E1A210044;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A9BD721004B;
  Tue, 25 Feb 2020 00:08:32 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 0255E40A63; Mon, 24 Feb 2020 16:08:31 -0700 (MST)
+ 38A4740A85; Mon, 24 Feb 2020 16:08:32 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 12/15] arm64: defconfig: Enable flash device drivers for QorIQ
- boards
-Date: Mon, 24 Feb 2020 17:08:07 -0600
-Message-Id: <1582585690-463-13-git-send-email-leoyang.li@nxp.com>
+Subject: [PATCH 13/15] arm64: defconfig: Enable RTC devices for QorIQ boards
+Date: Mon, 24 Feb 2020 17:08:08 -0600
+Message-Id: <1582585690-463-14-git-send-email-leoyang.li@nxp.com>
 X-Mailer: git-send-email 1.9.0
 In-Reply-To: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_150838_226710_BF89264F 
-X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-CacheID: sfid-20200224_150841_212343_12F46B9A 
+X-CRM114-Status: UNSURE (   6.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [92.121.34.21 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,43 +75,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable the flash devices used on NXP/FSL QorIQ reference boards
-supported in mainline kernel.  Drivers are enabled as built-in for RFS
-access without initramfs.
+Enables the RTC devices used on QorIQ reference boards supported in
+mainline kernel.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 557d2cefba6d..f0d75bbaac80 100644
+index f0d75bbaac80..b092adecf724 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -214,6 +214,15 @@ CONFIG_SIMPLE_PM_BUS=y
- CONFIG_FSL_MC_BUS=y
- CONFIG_MTD=y
- CONFIG_MTD_BLOCK=y
-+CONFIG_MTD_CFI=y
-+CONFIG_MTD_CFI_ADV_OPTIONS=y
-+CONFIG_MTD_CFI_INTELEXT=y
-+CONFIG_MTD_CFI_AMDSTD=y
-+CONFIG_MTD_CFI_STAA=y
-+CONFIG_MTD_PHYSMAP=y
-+CONFIG_MTD_PHYSMAP_OF=y
-+CONFIG_MTD_DATAFLASH=y
-+CONFIG_MTD_SST25L=y
- CONFIG_MTD_RAW_NAND=y
- CONFIG_MTD_NAND_DENALI_DT=y
- CONFIG_MTD_NAND_MARVELL=y
-@@ -226,6 +235,7 @@ CONFIG_BLK_DEV_NBD=m
- CONFIG_VIRTIO_BLK=y
- CONFIG_BLK_DEV_NVME=m
- CONFIG_SRAM=y
-+CONFIG_EEPROM_AT24=m
- CONFIG_EEPROM_AT25=m
- # CONFIG_SCSI_PROC_FS is not set
- CONFIG_BLK_DEV_SD=y
+@@ -692,11 +692,14 @@ CONFIG_LEDS_TRIGGER_PANIC=y
+ CONFIG_EDAC=y
+ CONFIG_EDAC_GHES=y
+ CONFIG_RTC_CLASS=y
++CONFIG_RTC_DRV_DS1307=m
+ CONFIG_RTC_DRV_MAX77686=y
+ CONFIG_RTC_DRV_RK808=m
++CONFIG_RTC_DRV_PCF85363=m
+ CONFIG_RTC_DRV_RX8581=m
+ CONFIG_RTC_DRV_S5M=y
+ CONFIG_RTC_DRV_DS3232=y
++CONFIG_RTC_DRV_PCF2127=m
+ CONFIG_RTC_DRV_EFI=y
+ CONFIG_RTC_DRV_CROS_EC=y
+ CONFIG_RTC_DRV_S3C=y
 -- 
 2.17.1
 
