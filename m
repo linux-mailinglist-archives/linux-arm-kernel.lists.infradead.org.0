@@ -2,90 +2,127 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 287B716C35F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 15:08:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6768A16C367
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 15:09:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fOlL/C57xk9hpSDBOyuQhqwjANmdaoIk9MpM+XcBmJg=; b=NKZRkJCTI5Qplx
-	aJHEmTF3aRIC2PCqj4jXrAxY4rgOAy33VFQ1ivGMK4cUsXoDn3YHgBzuMpljXccJNk3lmHcu1dqs/
-	3CO57Cnv2z0z69U1R5oxzM1iHrZseBHjrph3MwjcG4RBg3G78NYFp5RCO1Z7s+r4VHanvSkQUMP8i
-	p+mHU6dtOcD6TwNSzjEcbWyvGSbO5+tLENACzpgFJw5tgmnJngdVfxOWywcHouF9f5d5UBc110T5U
-	dgLpLwF8P+QQTtuPA0ttpMK5Glil0EMBo+c/+y7tko4YKSmGuQymO5FlKyRvFgHI1d19TaXJThSgP
-	8m9nTEZgCR92w1jKzxLg==;
+	List-Owner; bh=lH9ybDAa4vSr5dR/i2/Yut6a4xk7qw0jDAhojeYJ3KY=; b=b5/3Ov560pkIU0
+	Zgt337NXWB+CaBaTfltbRvsXyio3IA8YEVgyVXeiHnSaAJFV4lc1Vzu3zK2nXiba3TfPuc263JIdC
+	MfnC69jwOvR7ykR/6o3/V4VQ2fXobQfaYcOmLBrl+zxZCDymFrfKhPdr6ZiI6XFECnh78+UH3jJ5V
+	GIVlpw1c5EVSAt8SUi41+KZwK9najpUIe/Y3CuuRh05cbZ9+q1ve1WUAI+WVAtqQyguv3fQu4YNNn
+	MneE/sS3zyQcaI8g1kleZRU7zqli95BNbq3wapDVfn6bKhPcmUraxZnUL+uYeu6kTCIZ7h5aU/ho1
+	k9Z3BmxaAsXwshXhpRgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6asz-00019P-Km; Tue, 25 Feb 2020 14:08:33 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1j6atG-0001M2-0I; Tue, 25 Feb 2020 14:08:50 +0000
+Received: from mail-eopbgr70072.outbound.protection.outlook.com ([40.107.7.72]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6asl-000185-J2
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 14:08:25 +0000
-Received: by mail-qk1-x744.google.com with SMTP id a2so11959900qko.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 06:08:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=rt78zreyzIjHr6yoxlPIHQMecYqp6DqMRSSz9rYV7h8=;
- b=Isrj4uisk1xkziFhawt/8rlAzaSUqp8STgmAQtTr204aEqpvtn33NNz3uBRGlTILtq
- mpyWpAoD6uNduHiL7HXHOhB8Qp4ymOGS5Sd+60cEBCq3seKkCyTFJierH2ip6ln3uFci
- ZA+aKPd1I1h+Bh7pYxiUdietKO7JVJzBXIz4XxcSE7+5Dfq2KFPATR8B2FbQa3Sb1OlF
- nlQLPzC3RedPDaZvQ+JqD/+8di3hj2TnyEdtdmjyjKXPSFHPmttr85IhBJwlgllvLlB2
- T3nZ6tG0sC/VDVBGYuQXY8FZ2FoIiQqFOAwhEGveqrKT84L0zsl1StN0KLacxl6FiNWQ
- 1dfQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=rt78zreyzIjHr6yoxlPIHQMecYqp6DqMRSSz9rYV7h8=;
- b=DfHKjKLlMRldY1l4nHYGDm9SsTyOjJE4CsdxW2+2QdyqJRRIuelXp+JleFtDslquhz
- KfoCQ1X1o2gEkvbOlUCqqzo1yikCFCXF1y5MgXF6yNQIUYCS3Qrnx0U+iHrQ8vMBycN9
- mtzFfoEJwt4gATfTj6kyPdoZMH2mSAdeu4VOdpegWOzCW1xV5B9ldr/X8ml6zyXSg6qS
- LGtwy1khaIrpfxmZXQPq9t/gzeKiwc/5QypUQD00b/hMWsjJcn1RCGKuy4lO9uQXtVbJ
- GnSW0EojM41eaBWo32tW5LFbijpfFGqj56Vw2FYayrDCTkvuDms9mjDchH0wxSwQuKmt
- fG1w==
-X-Gm-Message-State: APjAAAU9Q7kr4H6kyg3kaniUzEokzPDnC8CO38bNtQ+vbLXahFEgH7EC
- oqXIu2x4IBdoDWKxMlF7Akw5Mg==
-X-Google-Smtp-Source: APXvYqzoKfzZQNX2DE6QpwzMJc/kJ1wZx8yapE9f3rFQlORpnW5yrsgC7Cf2AglgqNASds83iDpsag==
-X-Received: by 2002:ae9:e711:: with SMTP id m17mr13060092qka.393.1582639695367; 
- Tue, 25 Feb 2020 06:08:15 -0800 (PST)
-Received: from ziepe.ca
- (hlfxns017vw-142-68-57-212.dhcp-dynamic.fibreop.ns.bellaliant.net.
- [142.68.57.212])
- by smtp.gmail.com with ESMTPSA id x14sm4057470qkf.99.2020.02.25.06.08.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 25 Feb 2020 06:08:14 -0800 (PST)
-Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
- (envelope-from <jgg@ziepe.ca>)
- id 1j6asg-0000Vc-2U; Tue, 25 Feb 2020 10:08:14 -0400
-Date: Tue, 25 Feb 2020 10:08:14 -0400
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 01/26] mm/mmu_notifiers: pass private data down to
- alloc_notifier()
-Message-ID: <20200225140814.GW31668@ziepe.ca>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-2-jean-philippe@linaro.org>
- <20200224190056.GT31668@ziepe.ca> <20200225092439.GB375953@myrica>
+ id 1j6asv-00019D-Rp
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 14:08:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=UmHiLRKKNSQBZUaMBpIYWGC8g5ObAwmoCOFf+hgDy36nfdymNq8YBIRnHRGv1oQMjtNChkfR2Vl1Ewojw1dYHZskLRY0bFEQ3SZ6Cpp+8lmV4IkM874aQtQTGiH2HAloGNnIjDfa6NbSKDnwCm9sM2+DPTr6S+cKPo28FapNvHT6WVOyllsOoj2Io1ASga9NnwoAHtoW08M+osjDjnXdrDtQSak5IrjJhYAxC/MbzX2r8fHrGZmv2wh+4bzCJvoP10+LtiGkkrmap1BUXbdaGS6Os5YICxijpvdzcZuMecWf/YkwnmZnrwYuIq0FY3sI1au8RkCg+6WquNbx80iQaA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5CNM5W7Qd+vEZc+2RXqmNdl/RxxDO8gHNCWHaDgrM/o=;
+ b=Zbpc0tHcbMv1MHZDJt6bdsbeZ2t9E4vJQmZiPsOgH5AvMmuvMhRPDZ69RweAkrfjVQ/w/pHcjp6KQ+bvY4jcxORpG+hmSSvzxDBqYTYCbABlDABY1WiDykODKZDRZEP9qhoaJam34zq8OKgUzoE6gWl+JihgrSHeRr42iv3szHSZK9sMilmS+aIGNDWN4rjbqG28bFqhBe9vEo3inavKWRMEHG3Hw/JK2//kjDSor8vNc28SNXi26pTPGaBAgf8sxktFiHzkHVnVKomLJRl/GB2VrH683Q4S/7Ez9KsZH1vMv+2SrZpt+dJrMGiycZXVureDI/UHghHvK85gJPc38w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vaisala.com; dmarc=pass action=none header.from=vaisala.com;
+ dkim=pass header.d=vaisala.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vaisala.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5CNM5W7Qd+vEZc+2RXqmNdl/RxxDO8gHNCWHaDgrM/o=;
+ b=p1hKSZ1rYrSdOT+oeUVMgy0nCgB6kg0ZTAJdLc6z1NcTUOzIWBiiXgafOpQfWaVHby/duUc14CyzW2HzaaxAY2qcwQq7ARM2bTpnV2psHZi65oo6o+qlYeyntW4gWNurOW1vQDhA0qpyqV8p32eFzo0Jc3VHYyrAprONpsH1qIg=
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com (20.178.82.25) by
+ AM0PR06MB5297.eurprd06.prod.outlook.com (20.178.82.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.21; Tue, 25 Feb 2020 14:08:23 +0000
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::586e:bd84:8aec:a50]) by AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::586e:bd84:8aec:a50%4]) with mapi id 15.20.2750.021; Tue, 25 Feb 2020
+ 14:08:23 +0000
+From: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>
+To: Michal Simek <michal.simek@xilinx.com>, "wsa@the-dreams.de"
+ <wsa@the-dreams.de>
+Subject: RE: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Topic: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Index: AQHV5mNyTIn2+pYf+Eu7yiopaV9KGKgqKWsAgAHJyWA=
+Date: Tue, 25 Feb 2020 14:08:22 +0000
+Message-ID: <AM0PR06MB518514EE9C057CB129079825D4ED0@AM0PR06MB5185.eurprd06.prod.outlook.com>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+ <481fe028-0ec6-eca3-7436-ebbb8527f3d8@xilinx.com>
+In-Reply-To: <481fe028-0ec6-eca3-7436-ebbb8527f3d8@xilinx.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Enabled=True;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SetDate=2020-02-25T14:08:21.0714500Z;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Name=Restricted;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_ActionId=d14ff242-82c5-49c6-9f21-31c73a957bbc;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Extended_MSFT_Method=Automatic;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Enabled=True;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SetDate=2020-02-25T14:08:21.0714500Z;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Name=No Label;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_ActionId=d14ff242-82c5-49c6-9f21-31c73a957bbc;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Parent=d5842b46-9b7a-431a-b662-8cc44ff92a4e;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Extended_MSFT_Method=Automatic
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=ext-jaakko.laine@vaisala.com; 
+x-originating-ip: [193.143.230.131]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: abe22bd2-2adc-4c0c-2316-08d7b9fc2ccf
+x-ms-traffictypediagnostic: AM0PR06MB5297:
+x-microsoft-antispam-prvs: <AM0PR06MB529720AF70EC689CC49B1DD9D4ED0@AM0PR06MB5297.eurprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0324C2C0E2
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(376002)(39860400002)(346002)(396003)(136003)(199004)(189003)(2906002)(86362001)(53546011)(81156014)(54906003)(110136005)(186003)(6506007)(478600001)(26005)(8936002)(66946007)(4326008)(81166006)(66476007)(8676002)(5660300002)(9686003)(66556008)(71200400001)(33656002)(52536014)(4744005)(316002)(7696005)(64756008)(66446008)(76116006)(55016002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR06MB5297;
+ H:AM0PR06MB5185.eurprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: vaisala.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: u8OOg5yjcyeWf6h3R3El4idhpJx33cPIhVWm8mWtef50JdJTPxq+OCxV3EFn4pN3EulacowfU1+94M3Lmlh1ByTwBwykQQNlV/k90j+Q3+71MwYGotfBMi6jGEhaQM7Z/tdi0CZx/4t13owDTLWrS6ZVSk6/8jRJRCEe04WqcVZ5czQUOKsn2n38PkimzYs6DMmtWn9Bom72Y2pbriESwZvkdl0WW9nCuYM0NPymlvLNJNn/hg5yd2Dl06+99rsHZ5AOxo1uFb6gk2255ZU/VKcMlEoG5e1a2ZrzDi3GjwDynb4ZPR5YBYZTq7hYMBl+LniPHVdJdhkHJuSiJkrW47rXh7MHxf6P6hMaOAQI+lwsEG2RAL31lgx7iDZ6DIrIMLDUBtteSDIdAsFwdjG1d3JZaWuS4/MfpOmxh/OmafS0Sdxt+BleMciK+bDD75Rf
+x-ms-exchange-antispam-messagedata: XB0h1KQ10JDA4D8/4SM1JMZIopQB4JG+8K+EYXXJnDtk70BdYFHv1C65eurKfenN1LDIk55u6Ua4v3wVB3jaKGQZoF2ypdB+Uq4BpxpOom3PsA2VehqQtzAVsFjBQevFcehXZt6tj9gB5qQfOSrcWg==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200225092439.GB375953@myrica>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: vaisala.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: abe22bd2-2adc-4c0c-2316-08d7b9fc2ccf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Feb 2020 14:08:23.0194 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 6d7393e0-41f5-4c2e-9b12-4c2be5da5c57
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: NUHECoOEbynyjBdKrO2+TA0DjPKYDaQk8DamtXuVeq25VT1aHKPrc4dLWujQxAU38/DLvfa88BxnCKRgpSiRCeN3vxW+q+bpm/DqfAXOxvI=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB5297
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_060820_012483_F855A8B9 
-X-CRM114-Status: GOOD (  25.62  )
+X-CRM114-CacheID: sfid-20200225_060829_971745_27724953 
+X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.7.72 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -105,87 +142,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-pci@vger.kernel.org, linux-mm@kvack.org,
- yi.l.liu@intel.com, will@kernel.org, Dimitri Sivanich <sivanich@sgi.com>,
- joro@8bytes.org, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, Arnd Bergmann <arnd@arndb.de>,
- robh+dt@kernel.org, Jonathan.Cameron@huawei.com,
- linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- iommu@lists.linux-foundation.org, Andrew Morton <akpm@linux-foundation.org>,
- robin.murphy@arm.com, christian.koenig@amd.com, baolu.lu@linux.intel.com
+Cc: "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ Shubhrajyoti Datta <shubhraj@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 10:24:39AM +0100, Jean-Philippe Brucker wrote:
-> On Mon, Feb 24, 2020 at 03:00:56PM -0400, Jason Gunthorpe wrote:
-> > On Mon, Feb 24, 2020 at 07:23:36PM +0100, Jean-Philippe Brucker wrote:
-> > > The new allocation scheme introduced by 2c7933f53f6b ("mm/mmu_notifiers:
-> > > add a get/put scheme for the registration") provides a convenient way
-> > > for users to attach notifier data to an mm. However, it would be even
-> > > better to create this notifier data atomically.
-> > > 
-> > > Since the alloc_notifier() callback only takes an mm argument at the
-> > > moment, some users have to perform the allocation in two times.
-> > > alloc_notifier() initially creates an incomplete structure, which is
-> > > then finalized using more context once mmu_notifier_get() returns. This
-> > > second step requires carrying an initialization lock in the notifier
-> > > data and playing dirty tricks to order memory accesses against live
-> > > invalidation.
-> > 
-> > This was the intended pattern. Tthere shouldn't be an real issue as
-> > there shouldn't be any data on which to invalidate, ie the later patch
-> > does:
-> > 
-> > +       list_for_each_entry_rcu(bond, &io_mm->devices, mm_head)
-> > 
-> > And that list is empty post-allocation, so no 'dirty tricks' required.
-> 
-> Before introducing this patch I had the following code:
-> 
-> +	list_for_each_entry_rcu(bond, &io_mm->devices, mm_head) {
-> +		/*
-> +		 * To ensure that we observe the initialization of io_mm fields
-> +		 * by io_mm_finalize() before the registration of this bond to
-> +		 * the list by io_mm_attach(), introduce an address dependency
-> +		 * between bond and io_mm. It pairs with the smp_store_release()
-> +		 * from list_add_rcu().
-> +		 */
-> +		io_mm = rcu_dereference(bond->io_mm);
+-----Original Message-----
+From: Michal Simek <michal.simek@xilinx.com> 
+Sent: Monday, 24 February, 2020 12:14
+To: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>; wsa@the-dreams.de
+Cc: linux-i2c@vger.kernel.org; michal.simek@xilinx.com; linux-arm-kernel@lists.infradead.org; Shubhrajyoti Datta <shubhraj@xilinx.com>
+Subject: Re: [PATCH] i2c: xiic: Support disabling multi-master in DT
 
-A rcu_dereference isn't need here, just a normal derference is fine.
+> nit: I can't see reason for these changes above. I would do it in
+> separate patch if you want to align.
 
-> +		io_mm->ops->invalidate(bond->sva.dev, io_mm->pasid, io_mm->ctx,
-> +				       start, end - start);
-> +	}
-> 
-> (1) io_mm_get() would obtain an empty io_mm from iommu_notifier_get().
-> (2) then io_mm_finalize() would initialize io_mm->ops, io_mm->ctx, etc.
-> (3) finally io_mm_attach() would add the bond to io_mm->devices.
-> 
-> Since the above code can run before (2) it needs to observe valid
-> io_mm->ctx, io_mm->ops initialized by (2) after obtaining the bond
-> initialized by (3). Which I believe requires the address dependency from
-> the rcu_dereference() above or some stronger barrier to pair with the
-> list_add_rcu().
+I tried to preserve the original authors' intention of having the
+lines aligned. My new parameter name was 1 character too
+long to fit properly in the original space. I don't have strong
+preference over aligned vs not.
 
-The list_for_each_entry_rcu() is an acquire that already pairs with
-the release in list_add_rcu(), all you need is a data dependency chain
-starting on bond to be correct on ordering.
+I will make V2 without aligning new parameter as suggested
+if this is otherwise ok. This will reduce changed line count.
 
-But this is super tricky :\
-
-> If io_mm->ctx and io_mm->ops are already valid before the
-> mmu notifier is published, then we don't need that stuff.
-
-So, this trickyness with RCU is not a bad reason to introduce the priv
-scheme, maybe explain it in the commit message?
-
-Jason
-
+Thank you for review,
+Jaakko
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
