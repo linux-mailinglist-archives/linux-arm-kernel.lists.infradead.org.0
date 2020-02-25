@@ -2,68 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 473F316B778
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 03:01:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB95F16B7A1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 03:16:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WBpkbWOiXyT2Ip+yBTN+hPdl/27ZoYetV2bclE4jDZA=; b=nuHhJldMq2G2yV
-	tiT0Pcwc6Y8AgDNGms+qfUVvbrJELIMX1ds/ZhkmCeWziNHUX1LiUi1xXB1rRq9VlfDZEBsSfzSRg
-	s3ytLAmvlXS7UyrBfNkxzqk1DgQVvvm9TYfYni2JWOf7fNbyqy1+VgBcXlBCfJ3Vg50buTrVzS/O8
-	P0D72nojZnMkxXDzgMtbLzJigkzHlNZVzDGhQiPYQlmT9I8HatFZSyJgYDEbK1kbA/lIiLJOsnABB
-	06pXKeUDV4QR4ZfLSKT9dDpC7GDR4UadFYRFKv04cSvbIKLFiciQVH12cTGsLntGbmYy8F9c8GTCd
-	yv/7PzhQuXt0GgDFAPiA==;
+	List-Owner; bh=el5YdcC6C/GeLCAppZSwhbeZt8zuX+EEExyWdSgLrHU=; b=Qzh036ZfR/dZ/D
+	2qkzXx1rZ8WOWtvF0nyGAML6xR4H4Q1rPcVpGoSD+Zn4xUQVMHb/8QOEQKR65khHkX8lH9RzOjVeD
+	v19Kh91COA3Surogm48c+TlDVVb8tD7ohMMwMC9Yon9sOuUkS7SV5NzHiI3iBlpw61J7vtYy2r+JK
+	WYD+7lj3KaMjJMQ7WSkbXaa1yrIXLc4ZZojaUjRbOrupCiK5tdVDKUQflRNtnr8P7Tu3yztgweGHQ
+	SU33muklgU2q/Jdn+vPkWAF/qjPdNdZxqA2J+VmgOISJg5jZRpPcw5y6vhemOpIkvLWj/Tbm5Ddry
+	VImMy62m0eAjCzMXM5jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6PWv-0002DE-VY; Tue, 25 Feb 2020 02:01:02 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j6Plg-0000eU-Oi; Tue, 25 Feb 2020 02:16:16 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6PWk-00027p-Ny; Tue, 25 Feb 2020 02:00:52 +0000
-X-UUID: 424f1fa82e994d1bb5ea31b65616bddf-20200224
+ id 1j6PlN-0000YQ-68; Tue, 25 Feb 2020 02:15:58 +0000
+X-UUID: eed7656bb2d2434d84ea8e692ce3671f-20200224
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=HaqLyinc6ZirvAps70soCVJsRIpjo20L+48UAgoY2jA=; 
- b=fgOxigzGsrgpnE0iUci3Grn0QRBfxYEd4U1Z6VoQljpcg5snYwxVj32J/b5XgDIpFFBM8UExHRZmsDRLGEXvxDLeq31HCBdNyBnoF9JZitrqssw3qkpMmn+jLLA6lLW5EJwoK234SIfX4v5AvWnO9owkl8s18HN5+i4JuQd/zXU=;
-X-UUID: 424f1fa82e994d1bb5ea31b65616bddf-20200224
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ bh=1GkVtHnMOGUYvyU+Z3t+4TNCCd4NtYShAbetZq0c0zI=; 
+ b=N6TqeEdBXrovHIN7+j91FZa6eCDCfPzFxjj85Io9UsSEone8wwmr4rexgCHVBqGTeHxPSxZ4A2q0Uo/o5b+gKvbT2zyBDJgL3NSn0MGC9/w0lXFuycanSgMEyvzudSM7ySzB0gEyacePOsanixfh4zJjbrUCaMFrp5vLhitmIQk=;
+X-UUID: eed7656bb2d2434d84ea8e692ce3671f-20200224
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 672726320; Mon, 24 Feb 2020 18:00:43 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 24 Feb 2020 18:01:44 -0800
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 25 Feb 2020 10:01:14 +0800
-Received: from [10.16.6.141] (10.16.6.141) by MTKCAS32.mediatek.inc
+ with ESMTP id 580559400; Mon, 24 Feb 2020 18:15:53 -0800
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Feb 2020 18:05:51 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N1.mediatek.inc
+ (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 25 Feb 2020 10:04:28 +0800
+Received: from [10.16.6.141] (10.16.6.141) by MTKCAS36.mediatek.inc
  (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 25 Feb 2020 10:01:07 +0800
-Message-ID: <1582596033.12484.1.camel@mszsdaap41>
+ Transport; Tue, 25 Feb 2020 10:04:30 +0800
+Message-ID: <1582596343.12484.6.camel@mszsdaap41>
 Subject: Re: [PATCH v6 1/4] dt-bindings: display: mediatek: update dpi
  supported chips
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>
-Date: Tue, 25 Feb 2020 10:00:33 +0800
-In-Reply-To: <1582530646.6520.2.camel@mtksdaap41>
+Date: Tue, 25 Feb 2020 10:05:43 +0800
+In-Reply-To: <1582533982.12922.5.camel@mtksdaap41>
 References: <20200221112828.55837-1-jitao.shi@mediatek.com>
  <20200221112828.55837-2-jitao.shi@mediatek.com>
- <1582530646.6520.2.camel@mtksdaap41>
+ <1582533982.12922.5.camel@mtksdaap41>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F8BB90EA16B0F142ADAEB685CD52782DC2B7D7467C6F174C8B79AFA650CE00C32000:8
+X-TM-SNTS-SMTP: DF4CC5F84BD1563D748466E071B8B5DE1401EC4BA0F4ADFB867FD7306FEC15252000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_180050_791175_BAA9448A 
-X-CRM114-Status: GOOD (  17.32  )
+X-CRM114-CacheID: sfid-20200224_181557_239849_401B165A 
+X-CRM114-Status: GOOD (  17.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,7 +101,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-02-24 at 15:50 +0800, CK Hu wrote:
+On Mon, 2020-02-24 at 16:46 +0800, CK Hu wrote:
 > Hi, Jitao:
 > 
 > On Fri, 2020-02-21 at 19:28 +0800, Jitao Shi wrote:
@@ -135,22 +137,28 @@ On Mon, 2020-02-24 at 15:50 +0800, CK Hu wrote:
 > >  
 > > +Optional properties:
 > > +- dpi_pin_mode_swap: Swap the pin mode between dpi mode and gpio mode.
+> > +- pinctrl-names: Contain "gpiomode" and "dpimode".
+> > +- dpi_dual_edge: Control the RGB 24bit data on 12 pins or 24 pins.
 > 
-> When you have both pinctrl-name of "gpiomode" and "dpimode", it imply
-> that dpi_pin_mode_swap = true, isn't it? If so, I think this property is
-> redundant.
+> I've find that in [1], there are already a property of "pclk-sample"
+> which like this, but it only have rising (1) or falling (0) status. Does
+> that property describe the same thing with this property? If they are
+> the same, I think you should add new state, dual (2), for "pclk-sample".
+> 
+> [1]
+> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/media/video-interfaces.txt?h=v5.6-rc3
 > 
 > Regards,
 > CK
+> 
 
-Yes,I'll fix it next verision.
+pclk-sample has two properties  rising or falling.
+It means to sample on rising or falling edge.
+
+But, dpi_dual_edge means to sample on both rising and falling edge.
 
 Best Regards
 Jitao
-
-> 
-> > +- pinctrl-names: Contain "gpiomode" and "dpimode".
-> > +- dpi_dual_edge: Control the RGB 24bit data on 12 pins or 24 pins.
 > > +
 > >  Example:
 > >  
