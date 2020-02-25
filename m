@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 438BA16EA8A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 16:51:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5FC416EA89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 16:50:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eVSZEgEw95qe7TvCinKBqnqIyL8CVHqawxlyjqay55c=; b=RSBTe6p0Md9HE4
-	MPmK4bw9l1IASgc/ETpDgMBv1LyNbmq6KhyNBfXeYnVoB7EBWfbVIXK88MxNE6F0n3RUa1mlmzzT9
-	i7hoPHSpsjG+TrcLkQTFZmK6Kqe3qPW3At7RniDGWzTmLw4z3B9qd5nmd4vpOlqDe1Yh3K55GPxDk
-	EvVc+Gy2FX7MdMtr2pv1cqc6wagPLd7lH+e6bW6UJj9Yx5A2nFsEg7bg/ry0QxQKtRWzKMx5wftbD
-	drjRQEp5HyyUo0lNTeSJolQIwEzi25bT9NmEQKxHFibDjYQjv58PQjOY9E0cpxAz4Y9LatlwUChCV
-	YfIN6iRzTitV0SRuJPJQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rgtUX+wQQhswWXUoZtoDlV39gv49EoAEyF8HVEvJDJI=; b=EwmeZ2o7lmR6Dg
+	AqD1Tqa5Sm8xnYg7U0PN+hlmk1NU4n8O9qAUQhDv/m8E+SGvRqSbFewz7Prdjy1Sw7kHbZezPG/SZ
+	KW3bkCYx7HSAi0jMCQAFfCHsOVuFWrdW9DL2bwMBixwjp7ir7CYVhYk8C8Mu1sIqRWyUJT2HJefHd
+	Uuxpu04/6F7z05j8MFQsHg86VBCy6LYbkvWDX4GH3I7IRHO+vJV7CSA3LOWDPL9TRqS71eWBz1Wf8
+	V6izOND73IYCoYZIDJBtUERiIe8E09UJlf/iaofymlaGQsFY1VLHJWPE6drlfoGGIYLoD8iTY3J3c
+	G0FXX4OYt+X0mgb/pw7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6cU9-0004vu-I6; Tue, 25 Feb 2020 15:51:01 +0000
+	id 1j6cTr-0004mc-3h; Tue, 25 Feb 2020 15:50:43 +0000
 Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6cTe-0004kk-Vi
+ id 1j6cTf-0004lD-1U
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 15:50:34 +0000
 Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
@@ -44,34 +44,37 @@ Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Wv+Si0dR4PIa4Fd4+dshtZunVdPt2kALIzHXWNfhOkIoruj948TOGCVA9wUdOV+r/MrbCJV35N
- BRACPKRNwE78A0LNXnmWkd+CpKEb+almYxQk0QIhbBoH1i5OTDIsxy8D5nb+HsVJZ2TgWewhQZ
- 0/yo/htPhrYMDFwRD9gJWjBx3f/7DlUtryfLe8efPBXg4U1OgsG34orYESmyG95oMysLB+IbtL
- El9w4FwjpLbxfplhE72LCfWlBYxo3kOJH0VqK6qrRQw8Uj6LAMXstIQOO15vZsKh82WngqIhFI
- E1Y=
-X-IronPort-AV: E=Sophos;i="5.70,484,1574146800"; d="scan'208";a="66666906"
+IronPort-SDR: IkbmceOaygJjke/hs1EmwM2AKJxP+2XwcgLSJMb+xVfq8OfnJkicMxQ2rOc6oVX/Y6vusFkJPU
+ PtVGPKabt77xBY7reClNZP7rEMF3NIHo6fsqDqopJQ9QwhCEC40DNLK/wwohtKUayDVotv/cif
+ yonlfFJgQJFNgEiywkPZbNvgp03BhQOd9sqnaJSsnz35/SBRzxD7hPv1Z5QETEtFfwlpSZ6yaf
+ QiboPBK9EU4TOaCkwbLhx5B8ym16RTpvZbIL5dqCJNhI7jFn+XG0ks/r8rmPrtbmHagE8qc4JU
+ NJI=
+X-IronPort-AV: E=Sophos;i="5.70,484,1574146800"; d="scan'208";a="66666934"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 Feb 2020 08:50:23 -0700
+ 25 Feb 2020 08:50:30 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 25 Feb 2020 08:50:15 -0700
+ 15.1.1713.5; Tue, 25 Feb 2020 08:50:24 -0700
 Received: from rob-ult-m19940.microchip.com (10.10.115.15) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 25 Feb 2020 08:50:25 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 25 Feb 2020 08:50:30 -0700
 From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 To: <linux-i2c@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>
-Subject: [PATCH v4 1/4] i2c: at91: Send bus clear command if SDA is down
-Date: Tue, 25 Feb 2020 17:50:09 +0200
-Message-ID: <20200225155012.22764-1-codrin.ciubotariu@microchip.com>
+Subject: [PATCH v4 2/4] ARM: at91/dt: sama5d3: add i2c gpio pinctrl
+Date: Tue, 25 Feb 2020 17:50:10 +0200
+Message-ID: <20200225155012.22764-2-codrin.ciubotariu@microchip.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200225155012.22764-1-codrin.ciubotariu@microchip.com>
+References: <20200225155012.22764-1-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_075031_033076_46ED3269 
-X-CRM114-Status: GOOD (  16.55  )
+X-CRM114-CacheID: sfid-20200225_075031_087369_BEC306F6 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -92,182 +95,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, wsa@the-dreams.de, linux@armlinux.org.uk,
- ludovic.desroches@microchip.com, robh+dt@kernel.org,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>, peda@axentia.se
+Cc: Kamel Bouhara <kamel.bouhara@bootlin.com>, alexandre.belloni@bootlin.com,
+ wsa@the-dreams.de, linux@armlinux.org.uk, ludovic.desroches@microchip.com,
+ robh+dt@kernel.org, Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+ peda@axentia.se
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After a transfer timeout, some faulty I2C slave devices might hold down
-the SDA pin. We can generate a bus clear command, hoping that the slave
-might release the pins.
-If the CLEAR command is not supported, we will use gpio recovery, if
-available, to reset the bus.
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
 
+Add the i2c gpio pinctrls to support the i2c bus recovery
+
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+[codrin.ciubotariu@microchip.com: removed gpio pull-ups]
 Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 ---
 
 Changes in v4:
- - moved the HW bus clear command in a recover_bus() function, to be able
-   to just call i2c_recover_bus() if a transfer fails;
- - recovery gpios are no longer taken if HW bus clear command is
-   supported;  
+ - added Acked-by tag from Ludovic;
 
 Changes in v3:
- - removed unnecessary condition from info print;
- - removed unneded declarations;
+ - removed gpio pull-ups;
 
 Changes in v2:
- - called i2c_recover_bus() after an error occurs, if SDA is down;
- - release gpios if recovery information is incomplete;
+  - none;
 
- drivers/i2c/busses/i2c-at91-core.c   |  2 ++
- drivers/i2c/busses/i2c-at91-master.c | 49 ++++++++++++++++++++++++----
- drivers/i2c/busses/i2c-at91.h        |  7 +++-
- 3 files changed, 50 insertions(+), 8 deletions(-)
+ arch/arm/boot/dts/sama5d3.dtsi | 33 ++++++++++++++++++++++++++++++---
+ 1 file changed, 30 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/i2c/busses/i2c-at91-core.c b/drivers/i2c/busses/i2c-at91-core.c
-index 3da1a8acecb5..e14edd236108 100644
---- a/drivers/i2c/busses/i2c-at91-core.c
-+++ b/drivers/i2c/busses/i2c-at91-core.c
-@@ -131,6 +131,7 @@ static struct at91_twi_pdata sama5d2_config = {
- 	.has_dig_filtr = true,
- 	.has_adv_dig_filtr = true,
- 	.has_ana_filtr = true,
-+	.has_clear_cmd = false,	/* due to errata, CLEAR cmd is not working */
- };
- 
- static struct at91_twi_pdata sam9x60_config = {
-@@ -142,6 +143,7 @@ static struct at91_twi_pdata sam9x60_config = {
- 	.has_dig_filtr = true,
- 	.has_adv_dig_filtr = true,
- 	.has_ana_filtr = true,
-+	.has_clear_cmd = true,
- };
- 
- static const struct of_device_id atmel_twi_dt_ids[] = {
-diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
-index 0aba51a7df32..776e95962ab6 100644
---- a/drivers/i2c/busses/i2c-at91-master.c
-+++ b/drivers/i2c/busses/i2c-at91-master.c
-@@ -480,7 +480,6 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
- 	unsigned long time_left;
- 	bool has_unre_flag = dev->pdata->has_unre_flag;
- 	bool has_alt_cmd = dev->pdata->has_alt_cmd;
--	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
- 
- 	/*
- 	 * WARNING: the TXCOMP bit in the Status Register is NOT a clear on
-@@ -641,11 +640,12 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
- 			       AT91_TWI_THRCLR | AT91_TWI_LOCKCLR);
- 	}
- 
--	if (rinfo->get_sda && !(rinfo->get_sda(&dev->adapter))) {
--		dev_dbg(dev->dev,
--			"SDA is down; clear bus using gpio\n");
--		i2c_recover_bus(&dev->adapter);
--	}
-+	/*
-+	 * some faulty I2C slave devices might hold SDA down;
-+	 * we can send a bus clear command, hoping that the pins will be
-+	 * released
-+	 */
-+	i2c_recover_bus(&dev->adapter);
- 
- 	return ret;
- }
-@@ -830,7 +830,7 @@ static void at91_unprepare_twi_recovery(struct i2c_adapter *adap)
- 	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
- }
- 
--static int at91_init_twi_recovery_info(struct platform_device *pdev,
-+static int at91_init_twi_recovery_gpio(struct platform_device *pdev,
- 				       struct at91_twi_dev *dev)
- {
- 	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
-@@ -880,6 +880,41 @@ static int at91_init_twi_recovery_info(struct platform_device *pdev,
- 	return 0;
- }
- 
-+static int at91_twi_recover_bus_cmd(struct i2c_adapter *adap)
-+{
-+	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
+diff --git a/arch/arm/boot/dts/sama5d3.dtsi b/arch/arm/boot/dts/sama5d3.dtsi
+index 203d40be70a5..f11b018e9173 100644
+--- a/arch/arm/boot/dts/sama5d3.dtsi
++++ b/arch/arm/boot/dts/sama5d3.dtsi
+@@ -159,8 +159,11 @@
+ 				dmas = <&dma0 2 AT91_DMA_CFG_PER_ID(7)>,
+ 				       <&dma0 2 AT91_DMA_CFG_PER_ID(8)>;
+ 				dma-names = "tx", "rx";
+-				pinctrl-names = "default";
++				pinctrl-names = "default", "gpio";
+ 				pinctrl-0 = <&pinctrl_i2c0>;
++				pinctrl-1 = <&pinctrl_i2c0_gpio>;
++				sda-gpios = <&pioA 30 GPIO_ACTIVE_HIGH>;
++				scl-gpios = <&pioA 31 GPIO_ACTIVE_HIGH>;
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
+ 				clocks = <&twi0_clk>;
+@@ -174,8 +177,11 @@
+ 				dmas = <&dma0 2 AT91_DMA_CFG_PER_ID(9)>,
+ 				       <&dma0 2 AT91_DMA_CFG_PER_ID(10)>;
+ 				dma-names = "tx", "rx";
+-				pinctrl-names = "default";
++				pinctrl-names = "default", "gpio";
+ 				pinctrl-0 = <&pinctrl_i2c1>;
++				pinctrl-1 = <&pinctrl_i2c1_gpio>;
++				sda-gpios = <&pioC 26 GPIO_ACTIVE_HIGH>;
++				scl-gpios = <&pioC 27 GPIO_ACTIVE_HIGH>;
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
+ 				clocks = <&twi1_clk>;
+@@ -357,8 +363,11 @@
+ 				dmas = <&dma1 2 AT91_DMA_CFG_PER_ID(11)>,
+ 				       <&dma1 2 AT91_DMA_CFG_PER_ID(12)>;
+ 				dma-names = "tx", "rx";
+-				pinctrl-names = "default";
++				pinctrl-names = "default", "gpio";
+ 				pinctrl-0 = <&pinctrl_i2c2>;
++				pinctrl-1 = <&pinctrl_i2c2_gpio>;
++				sda-gpios = <&pioA 18 GPIO_ACTIVE_HIGH>;
++				scl-gpios = <&pioA 19 GPIO_ACTIVE_HIGH>;
+ 				#address-cells = <1>;
+ 				#size-cells = <0>;
+ 				clocks = <&twi2_clk>;
+@@ -639,6 +648,12 @@
+ 							<AT91_PIOA 30 AT91_PERIPH_A AT91_PINCTRL_NONE	/* PA30 periph A TWD0 pin, conflicts with URXD1, ISI_VSYNC */
+ 							 AT91_PIOA 31 AT91_PERIPH_A AT91_PINCTRL_NONE>;	/* PA31 periph A TWCK0 pin, conflicts with UTXD1, ISI_HSYNC */
+ 					};
 +
-+	dev->transfer_status |= at91_twi_read(dev, AT91_TWI_SR);
-+	if (!(dev->transfer_status & AT91_TWI_SDA)) {
-+		dev_dbg(dev->dev, "SDA is down; sending bus clear command\n");
-+		if (dev->use_alt_cmd) {
-+			unsigned int acr;
-+
-+			acr = at91_twi_read(dev, AT91_TWI_ACR);
-+			acr &= ~AT91_TWI_ACR_DATAL_MASK;
-+			at91_twi_write(dev, AT91_TWI_ACR, acr);
-+		}
-+		at91_twi_write(dev, AT91_TWI_CR, AT91_TWI_CLEAR);
-+	}
-+
-+	return 0;
-+}
-+
-+static int at91_init_twi_recovery_info(struct platform_device *pdev,
-+				       struct at91_twi_dev *dev)
-+{
-+	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
-+	bool has_clear_cmd = dev->pdata->has_clear_cmd;
-+
-+	if (!has_clear_cmd)
-+		return at91_init_twi_recovery_gpio(pdev, dev);
-+
-+	rinfo->recover_bus = at91_twi_recover_bus_cmd;
-+	dev->adapter.bus_recovery_info = rinfo;
-+
-+	return 0;
-+}
-+
- int at91_twi_probe_master(struct platform_device *pdev,
- 			  u32 phy_addr, struct at91_twi_dev *dev)
- {
-diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
-index f57a6cab96b4..7e7b4955ca7f 100644
---- a/drivers/i2c/busses/i2c-at91.h
-+++ b/drivers/i2c/busses/i2c-at91.h
-@@ -36,6 +36,7 @@
- #define	AT91_TWI_SVDIS		BIT(5)	/* Slave Transfer Disable */
- #define	AT91_TWI_QUICK		BIT(6)	/* SMBus quick command */
- #define	AT91_TWI_SWRST		BIT(7)	/* Software Reset */
-+#define	AT91_TWI_CLEAR		BIT(15) /* Bus clear command */
- #define	AT91_TWI_ACMEN		BIT(16) /* Alternative Command Mode Enable */
- #define	AT91_TWI_ACMDIS		BIT(17) /* Alternative Command Mode Disable */
- #define	AT91_TWI_THRCLR		BIT(24) /* Transmit Holding Register Clear */
-@@ -69,6 +70,8 @@
- #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
- #define	AT91_TWI_EOSACC		BIT(11)	/* End Of Slave Access */
- #define	AT91_TWI_LOCK		BIT(23) /* TWI Lock due to Frame Errors */
-+#define	AT91_TWI_SCL		BIT(24) /* TWI SCL status */
-+#define	AT91_TWI_SDA		BIT(25) /* TWI SDA status */
++					pinctrl_i2c0_gpio: i2c0-gpio {
++						atmel,pins =
++							<AT91_PIOA 30 AT91_PERIPH_GPIO AT91_PINCTRL_NONE
++							 AT91_PIOA 31 AT91_PERIPH_GPIO AT91_PINCTRL_NONE>;
++					};
+ 				};
  
- #define	AT91_TWI_INT_MASK \
- 	(AT91_TWI_TXCOMP | AT91_TWI_RXRDY | AT91_TWI_TXRDY | AT91_TWI_NACK \
-@@ -81,7 +84,8 @@
- #define	AT91_TWI_THR		0x0034	/* Transmit Holding Register */
+ 				i2c1 {
+@@ -647,6 +662,12 @@
+ 							<AT91_PIOC 26 AT91_PERIPH_B AT91_PINCTRL_NONE	/* PC26 periph B TWD1 pin, conflicts with SPI1_NPCS1, ISI_D11 */
+ 							 AT91_PIOC 27 AT91_PERIPH_B AT91_PINCTRL_NONE>;	/* PC27 periph B TWCK1 pin, conflicts with SPI1_NPCS2, ISI_D10 */
+ 					};
++
++					pinctrl_i2c1_gpio: i2c1-gpio {
++						atmel,pins =
++							<AT91_PIOC 26 AT91_PERIPH_GPIO AT91_PINCTRL_NONE
++							 AT91_PIOC 27 AT91_PERIPH_GPIO AT91_PINCTRL_NONE>;
++					};
+ 				};
  
- #define	AT91_TWI_ACR		0x0040	/* Alternative Command Register */
--#define	AT91_TWI_ACR_DATAL(len)	((len) & 0xff)
-+#define	AT91_TWI_ACR_DATAL_MASK	GENMASK(15, 0)
-+#define	AT91_TWI_ACR_DATAL(len)	((len) & AT91_TWI_ACR_DATAL_MASK)
- #define	AT91_TWI_ACR_DIR	BIT(8)
+ 				i2c2 {
+@@ -655,6 +676,12 @@
+ 							<AT91_PIOA 18 AT91_PERIPH_B AT91_PINCTRL_NONE	/* TWD2 pin, conflicts with LCDDAT18, ISI_D2 */
+ 							 AT91_PIOA 19 AT91_PERIPH_B AT91_PINCTRL_NONE>; /* TWCK2 pin, conflicts with LCDDAT19, ISI_D3 */
+ 					};
++
++					pinctrl_i2c2_gpio: i2c2-gpio {
++						atmel,pins =
++							<AT91_PIOA 18 AT91_PERIPH_GPIO AT91_PINCTRL_NONE
++							 AT91_PIOA 19 AT91_PERIPH_GPIO AT91_PINCTRL_NONE>;
++					};
+ 				};
  
- #define AT91_TWI_FILTR		0x0044
-@@ -118,6 +122,7 @@ struct at91_twi_pdata {
- 	bool has_dig_filtr;
- 	bool has_adv_dig_filtr;
- 	bool has_ana_filtr;
-+	bool has_clear_cmd;
- 	struct at_dma_slave dma_slave;
- };
- 
+ 				isi {
 -- 
 2.20.1
 
