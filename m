@@ -2,79 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8AC916C185
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 14:00:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1A8D16C188
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 14:00:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U8o8bxcb48i6jYreW7wVCKV3cExNYNBi/qWDFOeOu3g=; b=TYtCqCJytjYsUGKAu6aInc50S
-	Y0lWAdpQHTPu9RvIDm6HDsjfkaF6bRGKcy7v0dp/KQmU90LtqP/jWjGF/C1WXMOUbXbYnM9YV75t3
-	+wNI4BvXG/ICgv4yGvN88OruaJMCA0WO3An+iiugZPs/IEz0HaRVpNzchJjIKjjYNfXuBqzHAOZZh
-	fSzFfXJZ0tE0f3v65CN3h7wi9fZg4H4Sc/S0OO+FpwPKzQ0jV5i2SPpNbEJK34kgrTIi065rsJEb7
-	v4eH5N7+SbdtIQH8IMp0wbB+qGikPNtba65PAeTWGnQxvBQf3lV66eEpWI6yuLZPx0LuocNleIuFj
-	90KS1PMJA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bIGHFujdoUYQElNH+z7tL6OmAs1xWoJcU7LwdI0t/EI=; b=rnirvmBwdqXlnW
+	BaVjzX+I6QNQjyAbE/hoKOKwiPqI0/zN8cOnLQUd1FCQ/mUKaWJQcJPxQuf3IQzxo4aIWkzCNpCNr
+	wh4YBP3EPdK5YeRVeNHxoMHp/8j0K7clogb3YyRFiw1NbdrF7mKpIPiW8UOQir4cupd6nwIt+EFF6
+	4iWq8hjd3an+Wf9fPLCVvxp9/mjYwuGLj5mso5G7LTRh/4A/vJwPC8O/Xq9nrysY9+eA7zWrLnqH2
+	wIxcmRa/OR4GK9SqBY3yQUTA9utRg96V2lw1BaPM0qVyrZOBWs/70TrAaNeTZVzewwrVGf9qPteO7
+	qVTQl57fNg+QQ/K4pncg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Zob-0008CC-2R; Tue, 25 Feb 2020 12:59:57 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1j6Zow-0008JV-Qc; Tue, 25 Feb 2020 13:00:18 +0000
+Received: from mail-eopbgr130078.outbound.protection.outlook.com
+ ([40.107.13.78] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6ZoN-0008A8-5x
+ id 1j6ZoP-0008AS-8q
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 12:59:48 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01PCxAnF093127;
- Tue, 25 Feb 2020 06:59:10 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1582635550;
- bh=bGd3RwTb8H7E4eSTshWOunqzeFmHbDqIl5e7AKSC+qs=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=qNjJXWqdoFq/wxtuIspMCurSNiSRATI1lIuaQjqMZsBM9mAkDReAJ76hOeKKA/Lno
- s3f8tA9Om4DIAC5peWhP2A5156hlLLADMDknhQPhleYRFMMlicTbU44BY1n4NDMxDH
- +gnbiYR+8FLJo36k+mttZ8lwqK8c+nA1GeBLX/VI=
-Received: from DLEE110.ent.ti.com (dlee110.ent.ti.com [157.170.170.21])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01PCxALl095593
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 25 Feb 2020 06:59:10 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 25
- Feb 2020 06:59:10 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 25 Feb 2020 06:59:09 -0600
-Received: from [10.250.65.13] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01PCx9lL033752;
- Tue, 25 Feb 2020 06:59:09 -0600
-Subject: Re: [PATCH 2/4] leds: axp20x: Support charger LED on AXP20x like PMICs
-To: Ondrej Jirman <megous@megous.com>, <linux-sunxi@googlegroups.com>, Jacek
- Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>, Rob
- Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Maxime Ripard
- <mripard@kernel.org>
-References: <20200223131435.681620-1-megous@megous.com>
- <20200223131435.681620-3-megous@megous.com>
-From: Dan Murphy <dmurphy@ti.com>
-Message-ID: <7f8a74e1-28ad-1b27-b491-9bd70f0c4e61@ti.com>
-Date: Tue, 25 Feb 2020 06:53:58 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ok0K3TyErFjgyMMV6JW1FIC9Zzgkyo0ffcyMAQMUG2G3cnArSya3D5H5WcPGi7ubfDnjGYvfCnpswQ8oPo9hEO/AT/xVtxPJYwOF4E1kG8Rkx/kzpLj9SMzwC6pBJ6Lggm/ht+2OlHl/STU9SGv0IYce2ufeVC841sP0UuDwslx/wafxC100XTIwwZ1k65xkYIKLMfU38w/WGej0B+S98ssOikUbMP9n0CqWd710JOaxz4y8jXSPe0VnY+P7uztjvuKIZMVWomeH0c4U0mFmqNN2ziic/zGUZY4eZtx3O9IGziCwdeinzSg1jQJh47YuZjHnrKtzLgXc1oh5NKDckw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uKqZAmkhGqHT8y9s2dTJuVDLWzMhJDhTNu1Q/4BUjsQ=;
+ b=hG1el1F2lpElwvwOaXbg6eFpneNy0IFroBaLyiM+IMunruugM+FUs1xQ/jQj+1v86iYVxg6h6GGDtwdXgz7ucUd0CSAc1CEXh70t5qOAt+V2geYwCWvf3HLpYSxinsIYxaEV5RwUPbJ3ZW8dZNBhtvgDWB+asTeIYsxNln/iU4aHjXJwsefjnnBhE3sBIybL9HSQQ1JTGoeceo3ax3qKT1d8+3fzYPfBxdXdr6EMJO2rOL++VlqGnJHo+1YeHLpR9uJbyVUUZLHKccc7HLpTXfH2JJ+fEgYwUvvbxaANJZks4LOEm43uLXZemvtZRxytTDVl2pNK51bJiN4BlkO2TA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uKqZAmkhGqHT8y9s2dTJuVDLWzMhJDhTNu1Q/4BUjsQ=;
+ b=WLXSkjcCpo5Ddh6kkPPWvIuzyHsKDz6jdLPyqnZNqFmtKU5f0Vg1dAS2qSztyyXl95UHgsuCniOHtv6OnUhUf6uo7kLR+uTB8RkG0mEpMTyftVfpR17vF4bA/zTjlGfy2AaHsxpVzsLMBHFz/aAYUV3O5nfbnnSm8l+Nkh7hqqU=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=qiangqing.zhang@nxp.com; 
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
+ DB7PR04MB4010.eurprd04.prod.outlook.com (52.135.128.30) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.22; Tue, 25 Feb 2020 12:59:33 +0000
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::5cb4:81c8:1618:5ca]) by DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::5cb4:81c8:1618:5ca%7]) with mapi id 15.20.2750.021; Tue, 25 Feb 2020
+ 12:59:33 +0000
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
+To: will@kernel.org,
+	mark.rutland@arm.com,
+	robin.murphy@arm.com
+Subject: [PATCH 1/2] perf/imx_ddr: Correct the CLEAR bit definition
+Date: Tue, 25 Feb 2020 20:56:43 +0800
+Message-Id: <20200225125644.18853-1-qiangqing.zhang@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: SG2PR06CA0186.apcprd06.prod.outlook.com (2603:1096:4:1::18)
+ To DB7PR04MB4618.eurprd04.prod.outlook.com
+ (2603:10a6:5:38::23)
 MIME-Version: 1.0
-In-Reply-To: <20200223131435.681620-3-megous@megous.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (119.31.174.71) by
+ SG2PR06CA0186.apcprd06.prod.outlook.com (2603:1096:4:1::18) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.18 via Frontend Transport; Tue, 25 Feb 2020 12:59:31 +0000
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [119.31.174.71]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 50e62a12-6354-47f0-7b93-08d7b9f28f0b
+X-MS-TrafficTypeDiagnostic: DB7PR04MB4010:|DB7PR04MB4010:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <DB7PR04MB4010607050DBECAFA35491D6E6ED0@DB7PR04MB4010.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4303;
+X-Forefront-PRVS: 0324C2C0E2
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(396003)(39860400002)(346002)(366004)(376002)(189003)(199004)(6512007)(6506007)(5660300002)(66946007)(316002)(478600001)(86362001)(4326008)(2906002)(81166006)(6486002)(8936002)(69590400006)(956004)(81156014)(2616005)(66556008)(6666004)(16526019)(36756003)(26005)(8676002)(186003)(66476007)(1076003)(52116002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4010;
+ H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: zx72QxmGI3ToUyid1pobF454tNHbmj7nGE10C1+U3tjsvj9oIuFAY5S4wefg71nowKfsn1bnlaigRNWBbkdvksjI56rsgUZUE35apjeTk9R3xySlXZ0wUqnSwSCsYSR5mrvKhNXIm9HeM05N7ZDsdK5f8LF9FgO9TeqTxxRMoDpHXQq/3/dzFyesj966ZmrB8B0ldeBeptWkMp+xesQstMMCe/uxvbq1lHQsHJ58bRZeLfN/KXafVNTbXOrfpjsWcOByLnx2sMa+vA8mzTQAwvBsAimaupgAXJaNNL7pscmmlagAPQLAGoO6BSthYO0dNwzHBm8/ZQI/bq4UXvBpEsqmEXvZLtNitKje47WvjmNJr7haQSE4Z5W6CM4U2TpUQ/MeT9pG7uaEUmm/i6g2BIjNe9Aa0AMrPqk7ZNB3KgBoPShWtfpq3tOKYiUo05Tj0ikwPFu0V2AXvFps4QVhL/b7ChDw+CA1T1jbq2pLFWuCVfBxZU+jahnX7jQToiHTQXRmqGxQ/kFvU1b7zXf6QPafktYZy6vYNYMUezuduFc=
+X-MS-Exchange-AntiSpam-MessageData: H00tBEMa+Q4QxJ9woCgvwRD4EojqHmJvqGwXt8SyZDAV6aT3bzwMIk6TYzW1KHLlJI7edVnnzPRnyzMnyluzAC5PFOwXvQAlBe69k0qZp6vBSIYePfma8VNl9tYilQsN2JSrZABs2RvEGrrRyggmKg==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 50e62a12-6354-47f0-7b93-08d7b9f28f0b
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Feb 2020 12:59:33.2331 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: O2FaUq+vb6EXiys+Frj8D3KPeWpHwZw20v256IIcUKog7qHJStZu4R3t27H4fDoxE5x4+benzvxt64hHdEdHsQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4010
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_045943_352879_7573119D 
-X-CRM114-Status: GOOD (  26.94  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200225_045945_404892_C0BE53DE 
+X-CRM114-Status: GOOD (  11.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -83,7 +113,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,247 +125,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Lee Jones <lee.jones@linaro.org>, linux-leds@vger.kernel.org
+Cc: linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ondrej
+ddr_perf_event_stop will firstly call ddr_perf_counter_enable to disable
+the counter, and then call ddr_perf_event_update to read the counter value.
 
-On 2/23/20 7:14 AM, Ondrej Jirman wrote:
-> There is single LED that can be turned on and off by the user, or set to
-> be controlled by the charger in 2 different modes.
->
-> The driver initializes the LED to be controlled by the charger, but
-> allows to switch it to user control, and change the mode of charging
-> indication via a sysfs.
->
-> The driver was developed on AXP813, but should work on other PMICs like
-> that without changes.
->
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->   drivers/leds/Kconfig       |   7 ++
->   drivers/leds/Makefile      |   1 +
->   drivers/leds/leds-axp20x.c | 240 +++++++++++++++++++++++++++++++++++++
->   drivers/mfd/axp20x.c       |   3 +
->   4 files changed, 251 insertions(+)
->   create mode 100644 drivers/leds/leds-axp20x.c
->
-> diff --git a/drivers/leds/Kconfig b/drivers/leds/Kconfig
-> index d82f1dea37111..80a3f31f6f4c3 100644
-> --- a/drivers/leds/Kconfig
-> +++ b/drivers/leds/Kconfig
-> @@ -846,6 +846,13 @@ config LEDS_TPS6105X
->   	  It is a single boost converter primarily for white LEDs and
->   	  audio amplifiers.
->   
-> +config LEDS_AXP20X
-> +	tristate "Charger LED support for AXP20X-like PMICs (AXP813, ...)"
-> +	depends on LEDS_CLASS && MFD_AXP20X
-> +	help
-> +	  This option enables support for on-chip LED driver on
-> +	  AXP20X-like PMICs.
-> +
->   comment "LED Triggers"
->   source "drivers/leds/trigger/Kconfig"
->   
-> diff --git a/drivers/leds/Makefile b/drivers/leds/Makefile
-> index d7e1107753fb1..80ea1bc4744b0 100644
-> --- a/drivers/leds/Makefile
-> +++ b/drivers/leds/Makefile
-> @@ -86,6 +86,7 @@ obj-$(CONFIG_LEDS_TI_LMU_COMMON)	+= leds-ti-lmu-common.o
->   obj-$(CONFIG_LEDS_LM3697)		+= leds-lm3697.o
->   obj-$(CONFIG_LEDS_LM36274)		+= leds-lm36274.o
->   obj-$(CONFIG_LEDS_TPS6105X)		+= leds-tps6105x.o
-> +obj-$(CONFIG_LEDS_AXP20X)		+= leds-axp20x.o
->   
->   # LED SPI Drivers
->   obj-$(CONFIG_LEDS_CR0014114)		+= leds-cr0014114.o
-> diff --git a/drivers/leds/leds-axp20x.c b/drivers/leds/leds-axp20x.c
-> new file mode 100644
-> index 0000000000000..e6c9853b84d52
-> --- /dev/null
-> +++ b/drivers/leds/leds-axp20x.c
-> @@ -0,0 +1,240 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later
-> +/*
-> + * LED Driver for X-Powers AXP813 PMIC and similar.
-> + *
-> + * Copyright(c) 2020 Ondrej Jirman <megous@megous.com>
-> + */
-> +
-> +#include <linux/module.h>
-> +#include <linux/kernel.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/leds.h>
-> +#include <linux/slab.h>
-> +#include <linux/of.h>
-> +#include <linux/of_device.h>
-> +#include <linux/mfd/axp20x.h>
-> +
-> +#define AXP20X_CHGLED_CTRL_MASK		BIT(3)
-> +#define AXP20X_CHGLED_CTRL_CHARGER	BIT(3)
-> +#define AXP20X_CHGLED_CTRL_USER		0
-> +
-> +#define AXP20X_CHRG_CTRL2_MODE		BIT(4)
-> +
-> +#define AXP20X_CHGLED_USER_STATE_MASK		GENMASK(5, 4)
-> +#define AXP20X_CHGLED_USER_STATE_OFF		(0 << 4)
-> +#define AXP20X_CHGLED_USER_STATE_BLINK_SLOW	(1 << 4)
-> +#define AXP20X_CHGLED_USER_STATE_BLINK_FAST	(2 << 4)
-> +#define AXP20X_CHGLED_USER_STATE_ON		(3 << 4)
-> +
-> +struct axp20x_led {
-> +	struct led_classdev cdev;
-> +	struct regmap *regmap;
-> +};
-> +
-> +static int axp20x_led_set(struct led_classdev *led_cdev,
-> +			   enum led_brightness value)
-> +{
-> +	struct axp20x_led *led =
-> +			container_of(led_cdev, struct axp20x_led, cdev);
-> +	unsigned int val;
-> +
-> +	val = value == LED_OFF ? AXP20X_CHGLED_USER_STATE_OFF :
-> +		AXP20X_CHGLED_USER_STATE_ON;
-> +
-> +	return regmap_update_bits(led->regmap, AXP20X_OFF_CTRL,
-> +				  AXP20X_CHGLED_USER_STATE_MASK, val);
-> +
-> +}
-> +
-> +static ssize_t charger_control_show(struct device *dev,
-> +				    struct device_attribute *attr, char *buf)
-> +{
-> +	struct led_classdev *led_cdev = dev_get_drvdata(dev);
-> +	struct axp20x_led *led =
-> +		container_of(led_cdev, struct axp20x_led, cdev);
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	ret = regmap_read(led->regmap, AXP20X_OFF_CTRL, &val);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return scnprintf(buf, PAGE_SIZE, "%u\n",
-> +			 val & AXP20X_CHGLED_CTRL_MASK ? 1 : 0);
-> +}
-> +
-> +static ssize_t charger_control_store(struct device *dev,
-> +				     struct device_attribute *attr,
-> +				     const char *buf, size_t len)
-> +{
-> +	struct led_classdev *led_cdev = dev_get_drvdata(dev);
-> +	struct axp20x_led *led =
-> +			container_of(led_cdev, struct axp20x_led, cdev);
-> +	bool status;
-> +	int ret;
-> +
-> +	ret = kstrtobool(buf, &status);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = regmap_update_bits(led->regmap, AXP20X_OFF_CTRL,
-> +				 AXP20X_CHGLED_CTRL_MASK,
-> +				 status ? AXP20X_CHGLED_CTRL_CHARGER :
-> +				 AXP20X_CHGLED_CTRL_USER);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return len;
-> +}
-> +
-> +static ssize_t charger_mode_show(struct device *dev,
-> +				 struct device_attribute *attr, char *buf)
-> +{
-> +	struct led_classdev *led_cdev = dev_get_drvdata(dev);
-> +	struct axp20x_led *led =
-> +		container_of(led_cdev, struct axp20x_led, cdev);
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	ret = regmap_read(led->regmap, AXP20X_CHRG_CTRL2, &val);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return scnprintf(buf, PAGE_SIZE, "%u\n",
-> +			 val & AXP20X_CHRG_CTRL2_MODE ? 1 : 0);
-> +}
-> +
-> +static ssize_t charger_mode_store(struct device *dev,
-> +				  struct device_attribute *attr,
-> +				  const char *buf, size_t len)
-> +{
-> +	struct led_classdev *led_cdev = dev_get_drvdata(dev);
-> +	struct axp20x_led *led =
-> +		container_of(led_cdev, struct axp20x_led, cdev);
-> +	unsigned int mode;
-> +	int ret;
-> +
-> +	ret = kstrtouint(buf, 0, &mode);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (mode > 1)
-> +		return -ERANGE;
-> +
-> +	ret = regmap_update_bits(led->regmap, AXP20X_CHRG_CTRL2,
-> +				 AXP20X_CHRG_CTRL2_MODE,
-> +				 mode ? AXP20X_CHRG_CTRL2_MODE : 0);
-> +	if (ret)
-> +		return ret;
-> +
-> +	return len;
-> +}
-> +
-> +static DEVICE_ATTR_RW(charger_control);
-> +static DEVICE_ATTR_RW(charger_mode);
-> +
-> +static struct attribute *axp20x_led_attrs[] = {
-> +	&dev_attr_charger_control.attr,
-> +	&dev_attr_charger_mode.attr,
-> +	NULL,
-> +};
-> +
-> +ATTRIBUTE_GROUPS(axp20x_led);
-> +
-> +static int axp20x_led_probe(struct platform_device *pdev)
-> +{
-> +	struct axp20x_dev *axp20x;
-> +	struct axp20x_led *led;
-> +	int ret;
-> +
-> +	if (!of_device_is_available(pdev->dev.of_node))
-> +		return -ENODEV;
-> +
-> +	axp20x = dev_get_drvdata(pdev->dev.parent);
-> +	if (!axp20x)
-> +		return -EINVAL;
-> +
-> +	led = devm_kzalloc(&pdev->dev,
-> +			   sizeof(struct axp20x_led),
-> +			   GFP_KERNEL);
-> +	if (!led)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, led);
-> +
-> +	led->regmap = axp20x->regmap;
-> +
-> +	led->cdev.name = "axp20x-chgarger-led";
+When disable the counter, it will write 0 into COUNTER_CNTL[CLEAR] bit
+which cause the counter value cleared. Counter value will always be 0
+when update the counter.
 
+The correct definition of CLEAR bit is that write 0 to clear the counter
+value.
 
-This does not follow the LED device naming convention please refer to 
-the leds-class.rst document
+Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+---
+ drivers/perf/fsl_imx8_ddr_perf.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-https://elixir.bootlin.com/linux/latest/source/Documentation/leds/leds-class.rst
+diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
+index 95dca2cb5265..90884d14f95f 100644
+--- a/drivers/perf/fsl_imx8_ddr_perf.c
++++ b/drivers/perf/fsl_imx8_ddr_perf.c
+@@ -388,9 +388,10 @@ static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
+ 
+ 	if (enable) {
+ 		/*
+-		 * must disable first, then enable again
+-		 * otherwise, cycle counter will not work
+-		 * if previous state is enabled.
++		 * cycle counter is special which should firstly write 0 then
++		 * write 1 into CLEAR bit to clear it. Other counters only
++		 * need write 0 into CLEAR bit and it turns out to be 1 by
++		 * hardware. Below enable flow is harmless for all counters.
+ 		 */
+ 		writel(0, pmu->base + reg);
+ 		val = CNTL_EN | CNTL_CLEAR;
+@@ -398,7 +399,8 @@ static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
+ 		writel(val, pmu->base + reg);
+ 	} else {
+ 		/* Disable counter */
+-		writel(0, pmu->base + reg);
++		val = readl_relaxed(pmu->base + reg) & CNTL_EN_MASK;
++		writel(val, pmu->base + reg);
+ 	}
+ }
+ 
+-- 
+2.17.1
 
-Dan
 
 _______________________________________________
 linux-arm-kernel mailing list
