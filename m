@@ -2,60 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77A5516B78B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 03:07:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB25716B7A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 03:16:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cpItAZ+tQXnktiWqXRzAGHlrmE/x3eWUhjYLsdaJGic=; b=JouAEZYEo2uJg4ZlTtFxBqLMH
-	b9hDGmcE9ND5cmXPSglhrw4fs+ZSCKNQoGnWii4Fo9fqJ90/EGuSzxUpSCt/aP77q94iqXNBnH1AJ
-	Jnub4LZ6qSEhGRTUq9L4VCKbZJT6Yv6ptngW19c4iCAUTZMFlTLwa9qpTpp0CkjO74mCBctXinve0
-	f13jZsRUBzjRPG6DAR9e2X6L8dhjkvRvFz4FYBSZcsayrHo4dDpnKBgxVDzKDiqrVPxKZciPgAv+P
-	IdyFOjyEOhsd6CG6m/kdT1ITBeI6BJh4TAZHSfYbsBVdoDenxwarriP248bx7904mqWBacoSSIN9s
-	n2zz3ag2Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G4JRZYDUkTx8MpwzTJGyg1OK6Ki7I9YBg8gINYfM8vo=; b=tnFShDZsLouIav
+	CFHdNNa8oxf8EFpDjPUGRRvb46F9Y0lwSHmrrs9N55UNDtU5m+nKnltBniDwmJBoxv8cWzcf9jUpP
+	I3+CwceAYYdCMspK5WXIHLm+bhcbS1iMhEhlQw2PApQjqgNb2SZdloAaEOLzIIqPUCLo9pQaVGK5P
+	o4YUF9DtPfRAoBJ0z+E3wURAhjyPgrbO5GbztrJFr20VuzjsngAT4brF3v/MBJLYD7CTm4jCoSnGV
+	vVxv4pdKvAw16pV7iBxhb0FyVMOLGT5Dk/i6OFGAfOWLiUWOJawrVtHBemFIWQNbMDsd+FJwRKzbZ
+	UHdCsSDIsXA3IaSO8Igg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Pcs-0004xj-9y; Tue, 25 Feb 2020 02:07:10 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1j6Plp-0000uR-IX; Tue, 25 Feb 2020 02:16:25 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Pch-0004wi-II
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 02:07:01 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 8828C5E565293787A2F6;
- Tue, 25 Feb 2020 10:06:48 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Tue, 25 Feb 2020
- 10:06:27 +0800
-Subject: Re: [PATCH] irqchip/gic-v3-its: Clear Valid before writing any bits
- else in VPENDBASER
-To: Marc Zyngier <maz@kernel.org>
-References: <20200224025029.92-1-yuzenghui@huawei.com>
- <bb7cdb29eda9cf160bcf85a58a9fc63d@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <6ce5c751-6d17-b9ee-4054-edad7de075bf@huawei.com>
-Date: Tue, 25 Feb 2020 10:06:26 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1j6PlN-0000ZB-69; Tue, 25 Feb 2020 02:15:58 +0000
+X-UUID: 4e06724025704201bcfdf617f47b2e6c-20200224
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=vFmdE11xim42gZLvGB5rqIwRp1BgTnnvR3iRXzqexqc=; 
+ b=juMGCsAhVnUVJYtIRXq5E4agPjE5ofssA9lZbTNh+w0IFQIrWhSej7rzlA/B56eRpor6ShGwcv38OLUkHSK4sFAh8rTvfr0qNqbdZy8ztwda96ruRpAD9fsniUmtmoMmJ7vOPU7k8rYBmhJ7e3zCMGmgsWNSm4KENOa7ThMZUVs=;
+X-UUID: 4e06724025704201bcfdf617f47b2e6c-20200224
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 388191961; Mon, 24 Feb 2020 18:15:53 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Feb 2020 18:13:57 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Feb 2020 10:13:03 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 25 Feb 2020 10:14:09 +0800
+Message-ID: <1582596836.31498.4.camel@mtksdaap41>
+Subject: Re: [PATCH v6 1/4] dt-bindings: display: mediatek: update dpi
+ supported chips
+From: CK Hu <ck.hu@mediatek.com>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Date: Tue, 25 Feb 2020 10:13:56 +0800
+In-Reply-To: <1582596343.12484.6.camel@mszsdaap41>
+References: <20200221112828.55837-1-jitao.shi@mediatek.com>
+ <20200221112828.55837-2-jitao.shi@mediatek.com>
+ <1582533982.12922.5.camel@mtksdaap41> <1582596343.12484.6.camel@mszsdaap41>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <bb7cdb29eda9cf160bcf85a58a9fc63d@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_180659_764519_DD972FD2 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200224_181557_240177_0B529A8B 
+X-CRM114-Status: GOOD (  20.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,83 +87,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanghaibin.wang@huawei.com, Yanlei Jia <jiayanlei@huawei.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cawa.cheng@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi, Jitao:
 
-On 2020/2/25 7:47, Marc Zyngier wrote:
-> Hi Zenghui,
+On Tue, 2020-02-25 at 10:05 +0800, Jitao Shi wrote:
+> On Mon, 2020-02-24 at 16:46 +0800, CK Hu wrote:
+> > Hi, Jitao:
+> > 
+> > On Fri, 2020-02-21 at 19:28 +0800, Jitao Shi wrote:
+> > > Add decriptions about supported chips, including MT2701 & MT8173 &
+> > > mt8183
+> > > 
+> > > 1. Add more chips support. ex. MT2701 & MT8173 & MT8183
+> > > 2. Add property "dpi_pin_mode_swap" and "pinctrl-names" gpio mode dpi mode and
+> > >    gpio oupput-low to avoid leakage current.
+> > > 3. Add property "dpi_dual_edge" to config the dpi pin output mode dual edge or
+> > >    single edge sample data.
+> > > 
+> > > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> > > ---
+> > >  .../bindings/display/mediatek/mediatek,dpi.txt        | 11 +++++++++++
+> > >  1 file changed, 11 insertions(+)
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> > > index b6a7e7397b8b..cd6a1469c8b7 100644
+> > > --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> > > +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> > > @@ -7,6 +7,7 @@ output bus.
+> > >  
+> > >  Required properties:
+> > >  - compatible: "mediatek,<chip>-dpi"
+> > > +  the supported chips are mt2701 , mt8173 and mt8183.
+> > >  - reg: Physical base address and length of the controller's registers
+> > >  - interrupts: The interrupt signal from the function block.
+> > >  - clocks: device clocks
+> > > @@ -16,6 +17,11 @@ Required properties:
+> > >    Documentation/devicetree/bindings/graph.txt. This port should be connected
+> > >    to the input port of an attached HDMI or LVDS encoder chip.
+> > >  
+> > > +Optional properties:
+> > > +- dpi_pin_mode_swap: Swap the pin mode between dpi mode and gpio mode.
+> > > +- pinctrl-names: Contain "gpiomode" and "dpimode".
+> > > +- dpi_dual_edge: Control the RGB 24bit data on 12 pins or 24 pins.
+> > 
+> > I've find that in [1], there are already a property of "pclk-sample"
+> > which like this, but it only have rising (1) or falling (0) status. Does
+> > that property describe the same thing with this property? If they are
+> > the same, I think you should add new state, dual (2), for "pclk-sample".
+> > 
+> > [1]
+> > https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/devicetree/bindings/media/video-interfaces.txt?h=v5.6-rc3
+> > 
+> > Regards,
+> > CK
+> > 
 > 
-> On 2020-02-24 02:50, Zenghui Yu wrote:
->> The Valid bit must be cleared before changing anything else when writing
->> GICR_VPENDBASER to avoid the UNPREDICTABLE behavior. This is exactly what
->> we've done on 32bit arm, but not on arm64.
+> pclk-sample has two properties  rising or falling.
+> It means to sample on rising or falling edge.
 > 
-> I'm not quite sure how you decide that Valid must be cleared before 
-> changing
-> anything else. The reason why we do it on 32bit is that we cannot update
-> the full 64bit register at once, so we start by clearing Valid so that
-> we can update the rest. arm64 doesn't require that.
-
-The problem came out from discussions with our GIC engineers and what we
-talked about at that time was IHI 0069E 9.11.36 - the description of the
-Valid field:
-
-"Writing a new value to any bit of GICR_VPENDBASER, other than
-GICR_VPENDBASER.Valid, when GICR_VPENDBASER.Valid==1 is UNPREDICTABLE."
-
-It looks like we should first clear the Valid and then write something
-else. We might have some mis-understanding about this statement..
-
+> But, dpi_dual_edge means to sample on both rising and falling edge.
 > 
-> For the rest of discussion, let's ignore GICv4.1 32bit support (I'm
-> pretty sure nobody cares about that).
-> 
->> This works fine on GICv4 where we only clear Valid for a vPE deschedule.
->> With the introduction of GICv4.1, we might also need to talk something 
->> else
->> (e.g., PendingLast, Doorbell) to the redistributor when clearing the 
->> Valid.
->> Let's port the 32bit gicr_write_vpendbaser() to arm64 so that hardware 
->> can
->> do the right thing after descheduling the vPE.
-> 
-> The spec says that:
-> 
-> "For a write that writes GICR_VPENDBASER.Valid from 1 to 0, if
-> GICR_VPENDBASER.PendingLast is written as 1 then 
-> GICR_VPENDBASER.PendingLast
-> takes an UNKNOWN value and GICR_VPENDBASER.Doorbell is treated as being 0."
-> 
-> and
-> 
-> "When GICR_VPENDBASER.Valid is written from 1 to 0, if there are 
-> outstanding
-> enabled pending interrupts GICR_VPENDBASER.Doorbell is treated as 0."
-> 
-> which indicate that PendingLast/Doorbell have to be written at the same 
-> time
-> as we clear Valid.
 
-Yes. I obviously missed these two points when writing this patch.
+It seems that both describe "When to sample data", so they are the same
+for me.
 
-> Can you point me to the bit of the v4.1 spec that makes
-> this "clear Valid before doing anything else" requirement explicit?
+I think we should prevent to invent a new property if there is already a
+one. Even though pclk-sample just have two state (rising or falling
+edge), I think we could add a new state (dual edge) to pclk-sample. 
 
-No, nothing in v4.1 spec supports me :-(  The above has been forwarded
-to Hisilicon and I will confirm these with them. It would be easy for
-hardware to handle the PendingLast/DB when clearing Valid, I think.
+Regards,
+CK
 
-
-Thank you,
-Zenghui
-
+> Best Regards
+> Jitao
+> > > +
+> > >  Example:
+> > >  
+> > >  dpi0: dpi@1401d000 {
+> > > @@ -26,6 +32,11 @@ dpi0: dpi@1401d000 {
+> > >  		 <&mmsys CLK_MM_DPI_ENGINE>,
+> > >  		 <&apmixedsys CLK_APMIXED_TVDPLL>;
+> > >  	clock-names = "pixel", "engine", "pll";
+> > > +	dpi_dual_edge;
+> > > +	dpi_pin_mode_swap;
+> > > +	pinctrl-names = "gpiomode", "dpimode";
+> > > +	pinctrl-0 = <&dpi_pin_gpio>;
+> > > +	pinctrl-1 = <&dpi_pin_func>;
+> > >  
+> > >  	port {
+> > >  		dpi0_out: endpoint {
+> > 
+> > 
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
