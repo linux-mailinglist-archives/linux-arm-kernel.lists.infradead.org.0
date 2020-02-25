@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2F1D16ECE7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:43:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B04B16ECE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:43:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L4guL+tbFKf33+5ytVN9gKKnR7j6PjFo3J11DE4ttMI=; b=j5YlFwuZir8HTh
-	a2mAZwGwC4Q21Xk6OwJ5sgZC/WzeHoNteEEiHiWwBqyXCOys3JbEMUu8bcIpKgJrFCTPLasqFauNz
-	o9y1auMoLhqj1Ye3SLsBV41iNYceXvauofmGQI9C2l4kLzvH8tP/4wvinkLrx9Q0jtrFhbFymgTOH
-	oppst4lg8Zs0msbPihio5yf9stVvS3Y89h0mcnTq9he0Jgx9mCxvWwlWGpW5B68gNz8zC4kChTNxt
-	HTH5ZUqwB2u3voTrjqTBCgHu9DnsbYObiDZ/01vl2w9sEstwbWTTxEW02rjEIRnS2R8QSci3tg1Mt
-	aKhdiWPl6l8k5QFsZzNg==;
+	List-Owner; bh=L1it+uvEiOM/yT7nI5jluIudApEg303EXIRJ82F2N4c=; b=k/N6nChbG0VJR4
+	GrSLGXl97+DPf/SNUWj8Y1nB+xBYOqcM5z2ks5fb/URWVs1Nx3XY5+H4DmxRfX2iUvX024aRVbqjO
+	9A0Ow9kblmWrITSGgMVxKmORLMiYrA2p129p9rfO4+wd4dni7VqWwHyIy9IFkR5jCKPbcoy+XUzy8
+	/zvAvn49ODZ2qWyVGB/CGhSpZlxHZzSTU3R6L4OVGhWaRmWoIFwpcY7gqk7YeeTTmx4kQeiLHyklv
+	LGDtyd8PM7xKV0I+PsWqchDnjvJccpG0FVjfozIgIUqqd6lqdwJOAtr3wbarP0BU+en+f/hxwLrdz
+	TTd7MspCzOAXwBs/H2Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6eEi-0005Mj-VY; Tue, 25 Feb 2020 17:43:13 +0000
-Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
+	id 1j6eF1-0005dR-B4; Tue, 25 Feb 2020 17:43:31 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6eBw-0002rM-KW
+ id 1j6eBx-0002sd-7B
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 17:40:22 +0000
-Received: by mail-qt1-x84a.google.com with SMTP id j5so230086qtp.19
+Received: by mail-pg1-x54a.google.com with SMTP id x16so9428640pgg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 09:40:18 -0800 (PST)
+ Tue, 25 Feb 2020 09:40:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=dz7r1q013n6NcVaMMRs0TXOzsYswHRkIsJwZpxS1u88=;
- b=QBeeCatb59qgm3CQxmHT7JLGqW/PuPjdCoZbQvbm+k2B2gheo4muBgiE4f7ONCN7VR
- lAYVpyyPlUwl6OA4RljVniPuT+hDv0cosEs/t4m8hpXrjzNL9Urd+IEnW4u8bDljje1l
- wu5nLRRoaqN/jAwFW/K6DIkx0dwMgaqZ8/LeiN29bDbMrYPsyzFVUMVsroJRTcBvIJhf
- ISKSmqwNtNSNi5gXe3gYSBJ7nU3QJZYZGBZK8ihD9fqGwoutuNqxaLbG0/igc3TfHWIp
- UccewLRDF+MiO82NG6d2plKU+SGpA+n1GlZzsd6mmwS7Ct/0J0WgIFIzrZ3MjtO+bCit
- H6Sg==
+ :cc; bh=S6rjWX4zh65J8qRPSZGN8zFIqvl385Xc8XQW3COWMIA=;
+ b=AG/N+nAHceAaZJA2t3Ejlewnc800yTOYWW+XxDFlkHuEYsEQXM8laR8JPO6q9sZexT
+ Qx9MR9PKuF1TFGK9rO4WrVGkhDFRUGBo3nTHm42lh1aY7DKUsRdqOVC006GRSybPTBpy
+ CwdI4+LxD7e+4hZQ2qE/GwtlmXo1ZC8r/ZErTUuiCdp5rmFmAgH5PeFSBDiA+eNFZEE1
+ 7vUfoZhf7+iQVtJY9b36r4K3TymVF9QDFXBobvvCwA1YLJK0qNYbbXNNu3MS1aQw9yMX
+ I0P+8rGbiMpOXi6P0ZHT3Ij2kkgGsyVJDrLVC8dfHFUYAz5mItfFosYAxy/OwBsM9sCx
+ TRAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=dz7r1q013n6NcVaMMRs0TXOzsYswHRkIsJwZpxS1u88=;
- b=uQaUZZ94Ocw1OBEXgsPdnAziUZTt9cCsY15lCAfrCEBEBfOsZfvTNimivnuQNrIUD4
- IsgIQNXYGXlE63x/mQlDR0r6SsplDdO7dvJgzldfgUc66X4+1tu/h2EM+S+zSLW9CU/P
- Lwl3U/Gsj8YysKWEb6wAyiiH2mxkCFxvrrJOXwRKCKwpT3DWFCfN6RYwpknWBK074amZ
- 0Pnmk3Y7QVnErszEJ9k+gEubtPFsSE18esXis+axmvC8GWxyWUJ3AUFoJD0rrgCGjdEw
- X+lep1C/Ew5Qntl3H+cxJfExkvuzW9f9z50CSR2XbWd9FAyLr4ZDmLCaRG+KwtZEtZsr
- 4RjA==
-X-Gm-Message-State: APjAAAVxbcQcaxSVLvg+kRTqud8qre4X7vcSEzo4JTVHigO52W7Qp4HV
- uyCxShKwG9fDfDpSzXtNMBWJJU248N2BgRr0+wU=
-X-Google-Smtp-Source: APXvYqxdy6rSOfurv0NH1mFMEAFvcqncWUlmBGdVDIxGZO12j+zNLVCFjC+X3DonlD/4S+Eforr6Y8tqp95Uin4nxVE=
-X-Received: by 2002:ad4:4e24:: with SMTP id dm4mr49827392qvb.170.1582652417166; 
- Tue, 25 Feb 2020 09:40:17 -0800 (PST)
-Date: Tue, 25 Feb 2020 09:39:32 -0800
+ bh=S6rjWX4zh65J8qRPSZGN8zFIqvl385Xc8XQW3COWMIA=;
+ b=Qm6LpYODszVJyhnHtYxsZpyHC7hw+VwgA2a1fZ0pyX5IwSMPlCQeeVRPq3cmg2CRvQ
+ igA4zJ4QXNHhgIk++D1PXw/qqhjwzs31YQDneBOuxwF03C7qBx6ShxWnnPwsqgasuIm2
+ V8I0Fcnxn9CUf1pEeeItZvcTu5Hf5nJMtnD5sR/njUiupKU0DcdOTR0Y3BY8DKWre7Tr
+ 5Vdjv4qAoQUMPnJg7gpjQeVpL546Rw0nn+cDxkekQkNoXg0kllCOmRul0oJhvt6sT9bn
+ tYF1eMzHpg4mgv9EZc2Ysvsg4ILa4T6TD9TE9KpalOGr37e97wUbqURBCQZ9dQ9SYwZD
+ 4EsQ==
+X-Gm-Message-State: APjAAAUKupxBlzjLiXyBMSc4zyBDTRSt69QA/SHoy+XlbuIM3hQq2qdB
+ mO6o+63kWc6vzy5ZT+84sYvxv44z5EuPpxQPi/o=
+X-Google-Smtp-Source: APXvYqxga1IezAaj/7lzDoz6ajYcBY13ZBQ7EtWObgAVtXX9jDsYBp8jjd+EWNf7mvFW/jyX4NCc+z3bne5DtOlbYaQ=
+X-Received: by 2002:a63:e044:: with SMTP id n4mr57741015pgj.338.1582652419605; 
+ Tue, 25 Feb 2020 09:40:19 -0800 (PST)
+Date: Tue, 25 Feb 2020 09:39:33 -0800
 In-Reply-To: <20200225173933.74818-1-samitolvanen@google.com>
-Message-Id: <20200225173933.74818-12-samitolvanen@google.com>
+Message-Id: <20200225173933.74818-13-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200225173933.74818-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.25.0.265.gbab2e86ba0-goog
-Subject: [PATCH v9 11/12] arm64: scs: add shadow stacks for SDEI
+Subject: [PATCH v9 12/12] efi/libstub: disable SCS
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  James Morse <james.morse@arm.com>, Steven Rostedt <rostedt@goodmis.org>, 
@@ -66,15 +66,16 @@ To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, 
  Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_094020_718656_D71B6D50 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20200225_094021_360581_575D3231 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -112,229 +113,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change adds per-CPU shadow call stacks for the SDEI handler.
-Similarly to how the kernel stacks are handled, we add separate shadow
-stacks for normal and critical events.
+Shadow stacks are not available in the EFI stub, filter out SCS flags.
 
+Suggested-by: James Morse <james.morse@arm.com>
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-Reviewed-by: James Morse <james.morse@arm.com>
-Tested-by: James Morse <james.morse@arm.com>
 ---
- arch/arm64/include/asm/scs.h |   2 +
- arch/arm64/kernel/entry.S    |  14 ++++-
- arch/arm64/kernel/scs.c      | 106 +++++++++++++++++++++++++++++------
- arch/arm64/kernel/sdei.c     |   7 +++
- 4 files changed, 112 insertions(+), 17 deletions(-)
+ drivers/firmware/efi/libstub/Makefile | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
-index c50d2b0c6c5f..8e327e14bc15 100644
---- a/arch/arm64/include/asm/scs.h
-+++ b/arch/arm64/include/asm/scs.h
-@@ -9,6 +9,7 @@
- #ifdef CONFIG_SHADOW_CALL_STACK
+diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
+index 98a81576213d..ee5c37c401c9 100644
+--- a/drivers/firmware/efi/libstub/Makefile
++++ b/drivers/firmware/efi/libstub/Makefile
+@@ -30,6 +30,9 @@ KBUILD_CFLAGS			:= $(cflags-y) -DDISABLE_BRANCH_PROFILING \
+ 				   $(call cc-option,-fno-stack-protector) \
+ 				   -D__DISABLE_EXPORTS
  
- extern void scs_init_irq(void);
-+extern int scs_init_sdei(void);
- 
- static __always_inline void scs_save(struct task_struct *tsk)
- {
-@@ -27,6 +28,7 @@ static inline void scs_overflow_check(struct task_struct *tsk)
- #else /* CONFIG_SHADOW_CALL_STACK */
- 
- static inline void scs_init_irq(void) {}
-+static inline int scs_init_sdei(void) { return 0; }
- static inline void scs_save(struct task_struct *tsk) {}
- static inline void scs_overflow_check(struct task_struct *tsk) {}
- 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 4b18c3bbdea5..2e2ce1b9ebf5 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -1050,13 +1050,16 @@ ENTRY(__sdei_asm_handler)
- 
- 	mov	x19, x1
- 
-+#if defined(CONFIG_VMAP_STACK) || defined(CONFIG_SHADOW_CALL_STACK)
-+	ldrb	w4, [x19, #SDEI_EVENT_PRIORITY]
-+#endif
++#  remove SCS flags from all objects in this directory
++KBUILD_CFLAGS := $(filter-out $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
 +
- #ifdef CONFIG_VMAP_STACK
- 	/*
- 	 * entry.S may have been using sp as a scratch register, find whether
- 	 * this is a normal or critical event and switch to the appropriate
- 	 * stack for this CPU.
- 	 */
--	ldrb	w4, [x19, #SDEI_EVENT_PRIORITY]
- 	cbnz	w4, 1f
- 	ldr_this_cpu dst=x5, sym=sdei_stack_normal_ptr, tmp=x6
- 	b	2f
-@@ -1066,6 +1069,15 @@ ENTRY(__sdei_asm_handler)
- 	mov	sp, x5
- #endif
- 
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	/* Use a separate shadow call stack for normal and critical events */
-+	cbnz	w4, 3f
-+	ldr_this_cpu dst=x18, sym=sdei_shadow_call_stack_normal_ptr, tmp=x6
-+	b	4f
-+3:	ldr_this_cpu dst=x18, sym=sdei_shadow_call_stack_critical_ptr, tmp=x6
-+4:
-+#endif
-+
- 	/*
- 	 * We may have interrupted userspace, or a guest, or exit-from or
- 	 * return-to either of these. We can't trust sp_el0, restore it.
-diff --git a/arch/arm64/kernel/scs.c b/arch/arm64/kernel/scs.c
-index eaadf5430baa..dddb7c56518b 100644
---- a/arch/arm64/kernel/scs.c
-+++ b/arch/arm64/kernel/scs.c
-@@ -10,31 +10,105 @@
- #include <asm/pgtable.h>
- #include <asm/scs.h>
- 
--DEFINE_PER_CPU(unsigned long *, irq_shadow_call_stack_ptr);
-+#define DECLARE_SCS(name)						\
-+	DECLARE_PER_CPU(unsigned long *, name ## _ptr);			\
-+	DECLARE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], name)
- 
--#ifndef CONFIG_SHADOW_CALL_STACK_VMAP
--DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], irq_shadow_call_stack)
--	__aligned(SCS_SIZE);
-+#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
-+#define DEFINE_SCS(name)						\
-+	DEFINE_PER_CPU(unsigned long *, name ## _ptr)
-+#else
-+/* Allocate a static per-CPU shadow stack */
-+#define DEFINE_SCS(name)						\
-+	DEFINE_PER_CPU(unsigned long *, name ## _ptr);			\
-+	DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], name)	\
-+		__aligned(SCS_SIZE)
-+#endif /* CONFIG_SHADOW_CALL_STACK_VMAP */
-+
-+DECLARE_SCS(irq_shadow_call_stack);
-+DECLARE_SCS(sdei_shadow_call_stack_normal);
-+DECLARE_SCS(sdei_shadow_call_stack_critical);
-+
-+DEFINE_SCS(irq_shadow_call_stack);
-+#ifdef CONFIG_ARM_SDE_INTERFACE
-+DEFINE_SCS(sdei_shadow_call_stack_normal);
-+DEFINE_SCS(sdei_shadow_call_stack_critical);
- #endif
- 
-+static int scs_alloc_percpu(unsigned long * __percpu *ptr, int cpu)
-+{
-+	unsigned long *p;
-+
-+	p = __vmalloc_node_range(PAGE_SIZE, SCS_SIZE,
-+				 VMALLOC_START, VMALLOC_END,
-+				 GFP_SCS, PAGE_KERNEL,
-+				 0, cpu_to_node(cpu),
-+				 __builtin_return_address(0));
-+
-+	if (!p)
-+		return -ENOMEM;
-+	per_cpu(*ptr, cpu) = p;
-+
-+	return 0;
-+}
-+
-+static void scs_free_percpu(unsigned long * __percpu *ptr, int cpu)
-+{
-+	unsigned long *p = per_cpu(*ptr, cpu);
-+
-+	if (p) {
-+		per_cpu(*ptr, cpu) = NULL;
-+		vfree(p);
-+	}
-+}
-+
-+static void scs_free_sdei(void)
-+{
-+	int cpu;
-+
-+	for_each_possible_cpu(cpu) {
-+		scs_free_percpu(&sdei_shadow_call_stack_normal_ptr, cpu);
-+		scs_free_percpu(&sdei_shadow_call_stack_critical_ptr, cpu);
-+	}
-+}
-+
- void scs_init_irq(void)
- {
- 	int cpu;
- 
- 	for_each_possible_cpu(cpu) {
--#ifdef CONFIG_SHADOW_CALL_STACK_VMAP
--		unsigned long *p;
-+		if (IS_ENABLED(CONFIG_SHADOW_CALL_STACK_VMAP))
-+			WARN_ON(scs_alloc_percpu(&irq_shadow_call_stack_ptr,
-+						 cpu));
-+		else
-+			per_cpu(irq_shadow_call_stack_ptr, cpu) =
-+				per_cpu(irq_shadow_call_stack, cpu);
-+	}
-+}
- 
--		p = __vmalloc_node_range(PAGE_SIZE, SCS_SIZE,
--					 VMALLOC_START, VMALLOC_END,
--					 GFP_SCS, PAGE_KERNEL,
--					 0, cpu_to_node(cpu),
--					 __builtin_return_address(0));
-+int scs_init_sdei(void)
-+{
-+	int cpu;
- 
--		per_cpu(irq_shadow_call_stack_ptr, cpu) = p;
--#else
--		per_cpu(irq_shadow_call_stack_ptr, cpu) =
--			per_cpu(irq_shadow_call_stack, cpu);
--#endif /* CONFIG_SHADOW_CALL_STACK_VMAP */
-+	if (!IS_ENABLED(CONFIG_ARM_SDE_INTERFACE))
-+		return 0;
-+
-+	for_each_possible_cpu(cpu) {
-+		if (IS_ENABLED(CONFIG_SHADOW_CALL_STACK_VMAP)) {
-+			if (scs_alloc_percpu(
-+				&sdei_shadow_call_stack_normal_ptr, cpu) ||
-+			    scs_alloc_percpu(
-+				&sdei_shadow_call_stack_critical_ptr, cpu)) {
-+				scs_free_sdei();
-+				return -ENOMEM;
-+			}
-+		} else {
-+			per_cpu(sdei_shadow_call_stack_normal_ptr, cpu) =
-+				per_cpu(sdei_shadow_call_stack_normal, cpu);
-+			per_cpu(sdei_shadow_call_stack_critical_ptr, cpu) =
-+				per_cpu(sdei_shadow_call_stack_critical, cpu);
-+		}
- 	}
-+
-+	return 0;
- }
-diff --git a/arch/arm64/kernel/sdei.c b/arch/arm64/kernel/sdei.c
-index d6259dac62b6..2854b9f7760a 100644
---- a/arch/arm64/kernel/sdei.c
-+++ b/arch/arm64/kernel/sdei.c
-@@ -13,6 +13,7 @@
- #include <asm/kprobes.h>
- #include <asm/mmu.h>
- #include <asm/ptrace.h>
-+#include <asm/scs.h>
- #include <asm/sections.h>
- #include <asm/stacktrace.h>
- #include <asm/sysreg.h>
-@@ -162,6 +163,12 @@ unsigned long sdei_arch_get_entry_point(int conduit)
- 			return 0;
- 	}
- 
-+	if (scs_init_sdei()) {
-+		if (IS_ENABLED(CONFIG_VMAP_STACK))
-+			free_sdei_stacks();
-+		return 0;
-+	}
-+
- 	sdei_exit_mode = (conduit == SMCCC_CONDUIT_HVC) ? SDEI_EXIT_HVC : SDEI_EXIT_SMC;
- 
- #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
+ GCOV_PROFILE			:= n
+ KASAN_SANITIZE			:= n
+ UBSAN_SANITIZE			:= n
 -- 
 2.25.0.265.gbab2e86ba0-goog
 
