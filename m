@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52DB816EC32
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:12:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 304A816EC53
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:16:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5tKo8rG7WJVuKQ+s68RpKrLKSj7pZPbEWF2lszPSc1I=; b=Qn7wWG0EFqb0tR
-	f+9xzEF8j/k3YhXfJEFWZpWiPyn4ZfAarwWNPft8+0obd/zSlWRFY83b7aty/whtjiZyK2nYehIUa
-	HbbM/xOvOuOPfgWd6hEN92p62Ur4vb1IoFjdOIzcPz3UDOH8UxmtVtMRzx1P9MW8KRbMlE8hKNdZP
-	pXcc7hFhQ8aXfmMwGRIG5SHcz7euaXYVNQUeY2ZwFMOIKlFReY4Hq2GtQvroscbXWR0V+Cj4HJxGO
-	hwAcGrNhDz4OMUBsd6Unj2iZP0hg4vR7oJvy36Hbvegt/fYJx7xGiqZEVrrWicmc4gf3F6fC+Cvum
-	QgX8iyvPKZlQb2vWjH5A==;
+	List-Owner; bh=O+GQ1zwj8pLy0zo9tZo7wcXbxlhUAkkOwpKb57GIo+c=; b=Jmr15VQrHizgPA
+	lfPwqg9IuyCmTqmPciFsmzmL4++rW5ccdPxBnOt/fJqVYJ0mfjhxGY4o1qS8O4ABXsA4cXi1saVcX
+	1jGgvs6xk43W2ys/9gURbmrHZOai3gc4ZnBMc7SJKmEMdJdeMwWXYIwb3eJ4N9iIfm52uoZoFMB40
+	lQQsLW9lFao2JnfnsIYS1wfp9q/rJA8ShTGV5E5EEwDV+I5uLinSxaQ3WYXqV/DTYRXVUejpgHrKU
+	aKnVIU4uAEMC2NbAdp/4eKRCKH5uGQaD6P1OanBTRv/na+3aCcT1Gapo+j9wID5fwV+VTEUA7NsHe
+	5WDsEnbPwX1RRFfH8TWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6dkb-0006gy-7a; Tue, 25 Feb 2020 17:12:05 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1j6dom-0000Ny-QX; Tue, 25 Feb 2020 17:16:24 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6dkS-0006gN-Ga
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 17:11:57 +0000
-Received: by mail-oi1-x242.google.com with SMTP id q81so70365oig.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 09:11:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FzXxl0jc8vGuT43gzS1YGwtn9EteCh5YO/BU5ueEHLE=;
- b=cj35R8/i4KpRP2IpILGBzTKkaEAEJZaLFTKrOt7V5PP0s58g8zZxh5n2q7dkuRgNPt
- SHK7n8EpzjSjAQQUSFoPG3xO1lZMboBRCfUZXKlDhovddr1Ot29arFh+xev0qKOH8+po
- G3xWbA5uSpABJZC09nA9eHOh0kWr1whVAewVk0onPBKVMvpk1aslUDhtYFfZFWoo0ZF0
- EMvo4zfdHqLLf1cp9sIuB6DPxZIpOryShGS1F4VcidITFwPXW4hD4m4kDtm3KPV5Rew8
- 6cKK2fxpizthEDORKxZnZYrvR5XwZ+/m6DLKEM5X26/dTl3vrVpCpSa5c6Ax0ud8UrvZ
- SVFg==
+ id 1j6doe-0000NR-N8; Tue, 25 Feb 2020 17:16:18 +0000
+Received: by mail-ot1-f66.google.com with SMTP id b3so236950otp.4;
+ Tue, 25 Feb 2020 09:16:16 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FzXxl0jc8vGuT43gzS1YGwtn9EteCh5YO/BU5ueEHLE=;
- b=PyyKl3W1YYORrJVtWjSLdqtK4LugiaYD/Q132XHnjjblIyy3fXK6MaVkSIqJacqBF2
- 0krvfOXLtsuitjq1uaYl+TvBhhO6ML1FO+uJ+3iPe29GaUXMIDyDL+FQLIyDAjav/omg
- fEl/rXZCVAhsqa2I7nYtoZyX4vBaT/yVaXDUI7ImOVvTcZCqEMcQI4V1WiqUFlEoMh0i
- qhfLOe4TaiVyLsNLkfZrUhH8vYO0cNPwkPQnp7/egKxjtrS/j7hghQZvaliXMKvaLb55
- tGyrIK7pLx4x3Jtp0h8jpd+/wozeFfXgbHYA2Q0qW02MLNIHTAKwb0bsj3s51EeN/B67
- oBfQ==
-X-Gm-Message-State: APjAAAXvaeIAkVbYF7s1iZ5jjhNiw4R4S4LeN1TtHWVP1JPaYdHS9XvP
- dLdEmS1nNehS/zLqwLjracTv1TjbS2juxJC6MtfYiXLS
-X-Google-Smtp-Source: APXvYqx9Fva4pYcNAqXgEIkCfxFTpZCO2q6cVL49M8m8ITMFrE/oGz8iuP7T9adp+643vBJeaY/06xYWXP94oDsnJCo=
-X-Received: by 2002:aca:df88:: with SMTP id w130mr3285963oig.172.1582650715502; 
- Tue, 25 Feb 2020 09:11:55 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=OE6eipVQm4bME6AE3KlIKW+8PF5MdzZLKNm5AdRaXEo=;
+ b=JpqLcTAor5LzQBOAjnQ+g74YI6iO46K7ghHm7X6dZ6pRLFQzN3P1THTQVAKvxW+Gy5
+ J19LRLey5izs/8rAO+CzUL7xaH/YdHVSsJ9mEgXJfgDfWJpmXsFimGzXIbCgi8BfRb57
+ zIumxx+gLsxTnlhR3bEOI+ROWxdq8Fee9KooGKz69kiMRu+ff0WvBxwIgkacauEukAJn
+ FpDrPRPT/EaOC2EuKUemPzKShjGfxxEz/ePxPBvWGpHXOUyD0E4pmeLUrjTGqGEPzvpM
+ eUdpGYvbYpqLiTsBq5bExHpbxwYR+LNuz7EPa2wYHAHatBFfD5FQ+itLTjrg8ijLzB/4
+ EMUw==
+X-Gm-Message-State: APjAAAWP3HQBu0cJlNVBOcvZyVUs0zgpPVbd6BUFK34kqpquUIFwk9T0
+ RysawpJtjN11aA2fKUxvAQ==
+X-Google-Smtp-Source: APXvYqwU0mKHqcSecaw+GXPaK947LH2SDNl/9+T8PUAMCjq938LQ4s7sM8N5fIiMZJA8eWGLsGru4g==
+X-Received: by 2002:a9d:760d:: with SMTP id k13mr43428788otl.42.1582650975368; 
+ Tue, 25 Feb 2020 09:16:15 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id t21sm5863311otr.42.2020.02.25.09.16.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 25 Feb 2020 09:16:14 -0800 (PST)
+Received: (nullmailer pid 13718 invoked by uid 1000);
+ Tue, 25 Feb 2020 17:16:13 -0000
+Date: Tue, 25 Feb 2020 11:16:13 -0600
+From: Rob Herring <robh@kernel.org>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Subject: Re: [PATCH v4 1/7] dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
+Message-ID: <20200225171613.GA7063@bogus>
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <20200207052627.130118-2-drinkcat@chromium.org>
 MIME-Version: 1.0
-References: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
- <f732995ffdbcde8d0d0935d68dc0d5a2@kernel.org>
- <CAJ+vNU13-57OeaYVw0kHt=FgJT+TsM_muWM+f-H_zETeJNjTiA@mail.gmail.com>
- <6f3ce71073f38fbd4e0f7b75852a8846@kernel.org>
- <CAJ+vNU3XVNkdHXbq-KJaRecSxpPxboVW5Cx7zVEv64Gm1dt+Vg@mail.gmail.com>
- <da8f38078ef8805200b102a1d24da4ae@kernel.org>
- <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
-In-Reply-To: <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Tue, 25 Feb 2020 09:11:44 -0800
-Message-ID: <CAJ+vNU0jF65=whGtgLhJuVdtTW4gvgo4gfhcQ1n1jJuABa9MUw@mail.gmail.com>
-Subject: Re: ARM64_SW_TTBR0_PAN enabled causing hangs on OcteonTX
-To: Robert Richter <rrichter@marvell.com>
+Content-Disposition: inline
+In-Reply-To: <20200207052627.130118-2-drinkcat@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_091156_548645_D4D842A2 
-X-CRM114-Status: GOOD (  19.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200225_091616_753685_886400E8 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,57 +92,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
- Sunil Goutham <sgoutham@marvell.com>, linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ ulf.hansson@linaro.org, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>, dri-devel@lists.freedesktop.org,
+ Steven Price <steven.price@arm.com>, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 8:35 AM Robert Richter <rrichter@marvell.com> wrote:
->
-> Marc,
->
-> On 25.02.20 16:27:41, Marc Zyngier wrote:
-> > On 2020-02-25 16:13, Tim Harvey wrote:
->
-> > > That does enable the erratum, disable KPTI and boot properly but I
-> > > misread the erratum and it shouldn't be needed for T81 pass 1.2... the
-> > > erratum is documented only needed for pass 1.0.
-> >
-> > Can you then remove the patch *and* disable KPTI?
-> >
-> > TX1 is broken beyond recognition and KPTI is known to explode on this HW
-> > (which is why we disable KPTI on it). We always attributed it to this
-> > erratum,
-> > but in the absence of any help from Cavium to identify the problem, we just
-> > keyed it on that.
-> >
-> > *IF* this HW is indeed unaffected by it, then it is probably the mix of
-> > KPTI and SWPAN that triggers the issue. If my suspicion is correct, you'll
-> > need to have a chat with Cavium/Marvell to understand what is happening
-> > there.
->
-> I checked the docs and Tim is right, this should be only visible on
-> pass 1.0. Thus, the rev range to enable the workaround as implemented
-> upstream should be ok. I have asked hw folks regarding this.
->
+On Fri, Feb 07, 2020 at 01:26:21PM +0800, Nicolas Boichat wrote:
+> Define a compatible string for the Mali Bifrost GPU found in
+> Mediatek's MT8183 SoCs.
+> 
+> Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+> Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
+> ---
+> 
+> v4:
+>  - Add power-domain-names description
+>    (kept Alyssa's reviewed-by as the change is minor)
+> v3:
+>  - No change
+> 
+>  .../bindings/gpu/arm,mali-bifrost.yaml        | 25 +++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> index 4ea6a8789699709..0d93b3981445977 100644
+> --- a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> +++ b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> @@ -17,6 +17,7 @@ properties:
+>      items:
+>        - enum:
+>            - amlogic,meson-g12a-mali
+> +          - mediatek,mt8183-mali
+>            - realtek,rtd1619-mali
+>            - rockchip,px30-mali
+>        - const: arm,mali-bifrost # Mali Bifrost GPU model/revision is fully discoverable
+> @@ -62,6 +63,30 @@ allOf:
+>            minItems: 2
+>        required:
+>          - resets
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: mediatek,mt8183-mali
+> +    then:
+> +      properties:
+> +        sram-supply: true
+> +        power-domains:
+> +          description:
+> +            List of phandle and PM domain specifier as documented in
+> +            Documentation/devicetree/bindings/power/power_domain.txt
+> +          minItems: 3
+> +          maxItems: 3
+> +        power-domain-names:
+> +          items:
+> +            - const: core0
+> +            - const: core1
+> +            - const: 2d
 
-Robert,
+AFAIK, there's no '2d' block in bifrost GPUs. A power domain for each 
+core group is correct though.
 
-Thank you - please keep me updated so we can get this resolved
-upstream in a proper fashion. The Marvell SDK currently supports Linux
-4.14 where you can easily reproduce this. I don't have any CN81XX
-boards handy - our boards all have CN80XX (we use
-CN8020/CN8021/CN8030/CN8031) which apparently Marvell is all but
-dropping support for as the current SDK produces boot firmware (BDK
-boot.bin from SDK won't even fit into the smaller CN80XX L2 cache
-without hacking the code up).
-
-Best Regards,
-
-Tim
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
