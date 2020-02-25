@@ -2,73 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69C7816B6E1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 01:50:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 147BB16B6F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 01:56:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ixOe+b+81ruIwUQrlZziyaVyeWzUMJBzEDEb0du2L40=; b=GkynXrhuJ8ftcEwpTUphC4Tr6
-	RGVI4iEgK8PVbex1Pi0EyVozYVl5A/GhEcpGnihITxcbpe1qMQ2qVufR73tkuoT7tqlYkL/eDUqbK
-	MRqnrBbOJ6tkxSA/GDdXLvi8WAa2rJQh+qdOaQZKRX/X03NhBQP2teoUBHHdtQ9YrDD4diE5f+C+X
-	MFqKX4NebT0ZqnLlC3cWdxguJo8+S3KULeLGTCiae4/a+VMuLmCzWojn9NiVHfZky8/LbgG4npyzu
-	8TZlhYqTIppZyGucf8FbA2Wz36GrRjMDQ3madgeulrBoQQ+1dZV2UvK/uCMBCmDxLuj+RI4g4j1lT
-	Tn6NiW3Mw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MnxmlmvEscH5sQriR6kNyr9WCe3taAENkPfYsthpLF8=; b=gPNzkq70E0OzgB
+	Ko8G/1lpxZbjIXZmjgTFMg6Vrxga0tWHBHAnQIcsWUoEW2F+FyP4urrJzAk90PuYPFB8ndtG1GOgX
+	isyKxfEzZBaxfp/R4uZkDj1uVH0wcb5FN9t2nZhBZ9qXTkSmepF/ocpSRzewq/kfUnh3+1m/F/RrK
+	5IqbcUjr1uChP69a8zo3nW10QGFoY8yye98EJp9ajlnaOdq5U+ld6n5fjGIopFoXJVe5oIL+qUuD+
+	GUg1tfIWQfQbQN6miI1WNTBkXYap8avI1rmxb22OLVaH9xtlvJfuSAS37aATxbDYOvRjdr1gw6YsO
+	5AKl6Cy8KguBzdskNXQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6OQc-0000hx-Tp; Tue, 25 Feb 2020 00:50:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j6OW6-0002M5-NP; Tue, 25 Feb 2020 00:56:06 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6OQU-0000hX-2k
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 00:50:19 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2FF4C2072D;
- Tue, 25 Feb 2020 00:50:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582591817;
- bh=3RXSjzj6urSwsIb6lFcUaT6BsG3CvR2pFSof028NTpE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=wr/mIj76ijHorR2BA/8ZiXzjx+vb4AtVZDTmjMsDpwg29hzSrRY0VOO5QJglcnIhT
- jTHlSHbjIKAKhw8oyznbsv2Ryt7iSk2T0KwoeT41aiVFSm/3qCKS26U/C5p5eAfhPA
- vL7dOaCdyptrcOgjP+X9Jwj/4SfzFe68/JiM9ogg=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j6OQR-007hJX-Bh; Tue, 25 Feb 2020 00:50:15 +0000
+ id 1j6OVy-0002Lf-MS
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 00:56:00 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01P0nELF104389;
+ Tue, 25 Feb 2020 00:55:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=31MRzhnfvXmHfHuyInzX+kikBMRvqfs+ou3IuqKMLEg=;
+ b=fAIIDpEFXGP7aUZmMbxuITAAmMV9SF9AJY+U/9yISYzNWrZqiR16phEQQ+PAvb7NvVPQ
+ epEjRTgrLKhP7owrIhI/PBN8pX1Leaq0aH3RCgyJrQLpr/+ndDaKYxuBgbaAEQmu3bPs
+ KWsaHuLfYGjmjjtJ9Vh2BKnXWXwA8VxKJbcwUymrhBqjXhfH0Oz3bmQDeEDGBt94rrYj
+ dCw+vSo2J4IciQ114D0eXK7j8G0xSk7FTz1Dw6/tZAPIkQcgOsaB2AWrlQZBk1yuJ8mh
+ xm8wIbenHF7bPRg4hJfGWlKXk7n/WmuffmQYTqS/rPM3gLgZahqN0DT1RC1Lwrsbrc2k ZQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by aserp2120.oracle.com with ESMTP id 2ybvr4q858-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 25 Feb 2020 00:55:56 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01P0lvEP116871;
+ Tue, 25 Feb 2020 00:55:55 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3020.oracle.com with ESMTP id 2ybe12h2ek-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 25 Feb 2020 00:55:55 +0000
+Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 01P0ts12004722;
+ Tue, 25 Feb 2020 00:55:54 GMT
+Received: from localhost (/10.159.137.222)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 24 Feb 2020 16:55:53 -0800
+Date: Mon, 24 Feb 2020 16:55:53 -0800
+From: "Darrick J. Wong" <darrick.wong@oracle.com>
+To: Eric Sandeen <sandeen@redhat.com>
+Subject: Re: [PATCH] xfs: mark ARM OABI as incompatible in Kconfig
+Message-ID: <20200225005553.GD6740@magnolia>
+References: <ee78c5dd-5ee4-994c-47e2-209e38a9e986@redhat.com>
 MIME-Version: 1.0
-Date: Tue, 25 Feb 2020 00:50:15 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Tim Harvey <tharvey@gateworks.com>
-Subject: Re: ARM64_SW_TTBR0_PAN enabled causing hangs on OcteonTX
-In-Reply-To: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
-References: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
-Message-ID: <f732995ffdbcde8d0d0935d68dc0d5a2@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: tharvey@gateworks.com, linux-arm-kernel@lists.infradead.org,
- will@kernel.org, catalin.marinas@arm.com, sgoutham@marvell.com,
- rrichter@marvell.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <ee78c5dd-5ee4-994c-47e2-209e38a9e986@redhat.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9541
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ spamscore=0
+ suspectscore=0 malwarescore=0 phishscore=0 bulkscore=0 mlxscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2002250003
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9541
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ spamscore=0
+ clxscore=1011 adultscore=0 lowpriorityscore=0 malwarescore=0
+ priorityscore=1501 mlxscore=0 impostorscore=0 suspectscore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2002250003
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_165018_166229_51D6314E 
-X-CRM114-Status: GOOD (  13.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200224_165558_822243_A576B2EB 
+X-CRM114-Status: GOOD (  15.29  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -77,6 +97,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -89,79 +111,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>,
- Sunil Goutham <sgoutham@marvell.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-xfs <linux-xfs@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tim,
-
-On 2020-02-25 00:35, Tim Harvey wrote:
-> Greetings,
+On Mon, Feb 24, 2020 at 04:49:12PM -0800, Eric Sandeen wrote:
+> The old ARM OABI's structure alignment quirks break xfs disk structures,
+> let's just move on and disallow it rather than playing whack-a-mole
+> for the infrequent times someone selects this old config, which is
+> usually during "make randconfig" tests.
 > 
-> I'm trying to understand why enabling CONFIG_ARM64_SW_TTBR0_PAN on an
-> OcteonTX (CN80XX) SoC would cause the kernel to hang.
+> Signed-off-by: Eric Sandeen <sandeen@redhat.com>
+> ---
 > 
-> Here's what I'm seeing using arch/arm64/defconfig +
-> CONFIG_ARM64_SW_TTBR0_PAN=y on a Gateworks Newport board with a
-> CN8030-1500BG676-SCP-P12-G SoC using the Marvell SDK-10.1.1.0 boot
-> firmware:
+> diff --git a/fs/xfs/Kconfig b/fs/xfs/Kconfig
+> index e685299eb3d2..043624bd4ab2 100644
+> --- a/fs/xfs/Kconfig
+> +++ b/fs/xfs/Kconfig
+> @@ -2,6 +2,8 @@
+>  config XFS_FS
+>  	tristate "XFS filesystem support"
+>  	depends on BLOCK
+> +	# We don't support OABI structure alignment on ARM
+
+Should this limitation be documented in the help screen?
+
+> +	depends on (!ARM || AEABI)
+>  	select EXPORTFS
+>  	select LIBCRC32C
+>  	select FS_IOMAP
 > 
-> Starting kernel ...
-> 
-> [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x430f0a22]
-> [    0.000000] Linux version 5.5.0-00001-g2028a3b (tharvey@tharvey)
-> (gcc version 7.3.0 (Marvell Inc. Version: Marvell GCC7 build 238.0))
-> #2 SMP PREEMPT Mon Feb 24 16:20:24 PST 2020
-> [    0.000000] Machine model: Gateworks Newport CN80XX GW6404
-> [    0.000000] efi: Getting EFI parameters from FDT:
-> [    0.000000] efi: UEFI not found.
-> [    0.000000] cma: Reserved 64 MiB at 0x000000007c000000
-> [    0.000000] NUMA: NODE_DATA [mem 0x7bbe5100-0x7bbe6fff]
-> [    0.000000] Zone ranges:
-> [    0.000000]   DMA      [mem 0x0000000000500000-0x000000003fffffff]
-> [    0.000000]   DMA32    [mem 0x0000000040000000-0x000000007fffffff]
-> [    0.000000]   Normal   empty
-> [    0.000000] Movable zone start for each node
-> [    0.000000] Early memory node ranges
-> [    0.000000]   node   0: [mem 0x0000000000500000-0x000000007fffffff]
-> [    0.000000] Initmem setup node 0 [mem 
-> 0x0000000000500000-0x000000007fffffff]
-> [    0.000000] On node 0 totalpages: 523008
-> [    0.000000]   DMA zone: 4076 pages used for memmap
-> [    0.000000]   DMA zone: 0 pages reserved
-> [    0.000000]   DMA zone: 260864 pages, LIFO batch:63
-> [    0.000000]   DMA32 zone: 4096 pages used for memmap
-> [    0.000000]   DMA32 zone: 262144 pages, LIFO batch:63
-> [    0.000000] psci: probing for conduit method from DT.
-> [    0.000000] psci: PSCIv1.1 detected in firmware.
-> [    0.000000] psci: Using standard PSCI v0.2 function IDs
-> [    0.000000] psci: Trusted OS resident on physical CPU 0x0
-> [    0.000000] psci: SMC Calling Convention v1.1
-> [    0.000000] percpu: Embedded 22 pages/cpu s53016 r8192 d28904 u90112
-> [    0.000000] pcpu-alloc: s53016 r8192 d28904 u90112 alloc=22*4096
-> [    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3
-> [    0.000000] Detected VIPT I-cache on CPU0
-> [    0.000000] CPU features: detected: GIC system register CPU 
-> interface
-> [    0.000000] CPU features: detected: Cavium erratum 30115
-> [    0.000000] CPU features: detected: Kernel page table isolation 
-> (KPTI)
-
-If this CPU is just another version of TX1, KPTI shouldn't get enabled 
-on
-this HW, as it definitely breaks (see erratum 27456 and its 
-consequences).
-Can you please enable CONFIG_CAVIUM_ERRATUM_27456 and report back?
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
