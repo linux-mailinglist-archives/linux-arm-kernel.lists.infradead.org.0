@@ -2,93 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 147BB16B6F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 01:56:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F2B016B6F7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 01:58:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MnxmlmvEscH5sQriR6kNyr9WCe3taAENkPfYsthpLF8=; b=gPNzkq70E0OzgB
-	Ko8G/1lpxZbjIXZmjgTFMg6Vrxga0tWHBHAnQIcsWUoEW2F+FyP4urrJzAk90PuYPFB8ndtG1GOgX
-	isyKxfEzZBaxfp/R4uZkDj1uVH0wcb5FN9t2nZhBZ9qXTkSmepF/ocpSRzewq/kfUnh3+1m/F/RrK
-	5IqbcUjr1uChP69a8zo3nW10QGFoY8yye98EJp9ajlnaOdq5U+ld6n5fjGIopFoXJVe5oIL+qUuD+
-	GUg1tfIWQfQbQN6miI1WNTBkXYap8avI1rmxb22OLVaH9xtlvJfuSAS37aATxbDYOvRjdr1gw6YsO
-	5AKl6Cy8KguBzdskNXQw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O8UFhW3qa1IncOF6SE8fJ8/WifCGvvilB/vcOK6uWjE=; b=H4ZRoiVB/3OX0S
+	whZnY9wFvRuKfwJGFyvweEKzsOEEWpD7G7eYsJyiVsEPwIt25wiYZLlwHJWJf5dxQspxFAanbYjKr
+	aON71vBmoXhykPEmN3hLsvOS0H+sVPBXQyQyjsJ3GyxmxsuAp3YI7jMZdqmNmeyMnk1cLfIXuNmoO
+	UDmDZ5fzgdcZitIHwTx4yqxNRw8Gm2eV4H7OgIMzAJHSLe9RnIZvKL2YqqiE4P+y09vptymV2naKZ
+	yTexJjn2h+Qg0Npcc0C6JP6r+g4GL8lgLxaGyIGrpUj3B7jvDdJHpyxmtpA9W+FaOqlq21FDMbPl2
+	ul8goXbiKHu9p/+RQvfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6OW6-0002M5-NP; Tue, 25 Feb 2020 00:56:06 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1j6OYZ-0002iB-Kn; Tue, 25 Feb 2020 00:58:39 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6OVy-0002Lf-MS
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 00:56:00 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01P0nELF104389;
- Tue, 25 Feb 2020 00:55:56 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=31MRzhnfvXmHfHuyInzX+kikBMRvqfs+ou3IuqKMLEg=;
- b=fAIIDpEFXGP7aUZmMbxuITAAmMV9SF9AJY+U/9yISYzNWrZqiR16phEQQ+PAvb7NvVPQ
- epEjRTgrLKhP7owrIhI/PBN8pX1Leaq0aH3RCgyJrQLpr/+ndDaKYxuBgbaAEQmu3bPs
- KWsaHuLfYGjmjjtJ9Vh2BKnXWXwA8VxKJbcwUymrhBqjXhfH0Oz3bmQDeEDGBt94rrYj
- dCw+vSo2J4IciQ114D0eXK7j8G0xSk7FTz1Dw6/tZAPIkQcgOsaB2AWrlQZBk1yuJ8mh
- xm8wIbenHF7bPRg4hJfGWlKXk7n/WmuffmQYTqS/rPM3gLgZahqN0DT1RC1Lwrsbrc2k ZQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2120.oracle.com with ESMTP id 2ybvr4q858-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 25 Feb 2020 00:55:56 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01P0lvEP116871;
- Tue, 25 Feb 2020 00:55:55 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by userp3020.oracle.com with ESMTP id 2ybe12h2ek-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 25 Feb 2020 00:55:55 +0000
-Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 01P0ts12004722;
- Tue, 25 Feb 2020 00:55:54 GMT
-Received: from localhost (/10.159.137.222)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 24 Feb 2020 16:55:53 -0800
-Date: Mon, 24 Feb 2020 16:55:53 -0800
-From: "Darrick J. Wong" <darrick.wong@oracle.com>
-To: Eric Sandeen <sandeen@redhat.com>
+ id 1j6OYO-0002hI-W0
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 00:58:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582592305;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=CPxO742Yg2htipAZnGp09mYX5mYzlET/AFjMh0MMQoY=;
+ b=ZVImKFU9rBtGyHsstOYvXH7mP707Uk1asQrQjM5o+5ojcX2n28S/TYe3+d0nN6xB/p1cic
+ vyTQ609XPum/uP11Qedh0UtMPWJDoxy50a+RLPS1NamuhYFNw4iIPJuEHV4Au89mvnmCWH
+ ixq+VxOWrFLO2qj8zus8CVyqXSyjUsw=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-494-REDMlangMR28id7Q-aRZEw-1; Mon, 24 Feb 2020 19:58:22 -0500
+X-MC-Unique: REDMlangMR28id7Q-aRZEw-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4206D800D53;
+ Tue, 25 Feb 2020 00:58:21 +0000 (UTC)
+Received: from Liberator.local (ovpn04.gateway.prod.ext.phx2.redhat.com
+ [10.5.9.4])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 0865D393;
+ Tue, 25 Feb 2020 00:58:20 +0000 (UTC)
 Subject: Re: [PATCH] xfs: mark ARM OABI as incompatible in Kconfig
-Message-ID: <20200225005553.GD6740@magnolia>
+To: "Darrick J. Wong" <darrick.wong@oracle.com>
 References: <ee78c5dd-5ee4-994c-47e2-209e38a9e986@redhat.com>
+ <20200225005553.GD6740@magnolia>
+From: Eric Sandeen <sandeen@redhat.com>
+Message-ID: <79faa339-d6b8-d8eb-0857-7d755a780805@redhat.com>
+Date: Mon, 24 Feb 2020 16:58:20 -0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
+ Gecko/20100101 Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ee78c5dd-5ee4-994c-47e2-209e38a9e986@redhat.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9541
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- spamscore=0
- suspectscore=0 malwarescore=0 phishscore=0 bulkscore=0 mlxscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002250003
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9541
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- spamscore=0
- clxscore=1011 adultscore=0 lowpriorityscore=0 malwarescore=0
- priorityscore=1501 mlxscore=0 impostorscore=0 suspectscore=0 phishscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002250003
+In-Reply-To: <20200225005553.GD6740@magnolia>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_165558_822243_A576B2EB 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200224_165829_106913_01A5D8FA 
+X-CRM114-Status: GOOD (  13.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -97,8 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -117,32 +98,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 04:49:12PM -0800, Eric Sandeen wrote:
-> The old ARM OABI's structure alignment quirks break xfs disk structures,
-> let's just move on and disallow it rather than playing whack-a-mole
-> for the infrequent times someone selects this old config, which is
-> usually during "make randconfig" tests.
+On 2/24/20 4:55 PM, Darrick J. Wong wrote:
+> On Mon, Feb 24, 2020 at 04:49:12PM -0800, Eric Sandeen wrote:
+>> The old ARM OABI's structure alignment quirks break xfs disk structures,
+>> let's just move on and disallow it rather than playing whack-a-mole
+>> for the infrequent times someone selects this old config, which is
+>> usually during "make randconfig" tests.
+>>
+>> Signed-off-by: Eric Sandeen <sandeen@redhat.com>
+>> ---
+>>
+>> diff --git a/fs/xfs/Kconfig b/fs/xfs/Kconfig
+>> index e685299eb3d2..043624bd4ab2 100644
+>> --- a/fs/xfs/Kconfig
+>> +++ b/fs/xfs/Kconfig
+>> @@ -2,6 +2,8 @@
+>>  config XFS_FS
+>>  	tristate "XFS filesystem support"
+>>  	depends on BLOCK
+>> +	# We don't support OABI structure alignment on ARM
 > 
-> Signed-off-by: Eric Sandeen <sandeen@redhat.com>
-> ---
-> 
-> diff --git a/fs/xfs/Kconfig b/fs/xfs/Kconfig
-> index e685299eb3d2..043624bd4ab2 100644
-> --- a/fs/xfs/Kconfig
-> +++ b/fs/xfs/Kconfig
-> @@ -2,6 +2,8 @@
->  config XFS_FS
->  	tristate "XFS filesystem support"
->  	depends on BLOCK
-> +	# We don't support OABI structure alignment on ARM
+> Should this limitation be documented in the help screen?
 
-Should this limitation be documented in the help screen?
+Yeah probably.
 
-> +	depends on (!ARM || AEABI)
->  	select EXPORTFS
->  	select LIBCRC32C
->  	select FS_IOMAP
-> 
+But now looking at
+
+aa2dd0ad4d6d xfs: remove __arch_pack
+
+hch indicates that some non-arm architectures have similar problems,
+so is there any point to excluding this one config on this one arch?
+
+-Eric
+
 
 _______________________________________________
 linux-arm-kernel mailing list
