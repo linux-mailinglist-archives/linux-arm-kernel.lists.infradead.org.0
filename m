@@ -2,86 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AD8B16E948
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 16:04:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B17E716E961
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 16:06:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wQQ0vihHT6kAELe+TRM3co+A2PmG9GkW5IEN4t57vtg=; b=QNSS6di7wt7P6A
-	0uHL9HuodGvO5OKtxq3tOcBks2rxQS9raGHxLp31ML/jFLcEFyoX86PvixxXpfd/ThlB57yfcwsP3
-	5pPNr2ZGche1x7Omv/ANKD6gBw28Yp2Fo6Yjx9jS1yl2+pHc+2a5slSPvPjjYtMM2cKr+FaKHazAe
-	tGgqrYKn+w8SpNVUB1OHcBjQ3KiUULPnwg+eOmQ3qq58nCiwcIHQeP8J3hBfFwSj3oTzZf3109f4d
-	sUSCVqR+1xHjO4dOzUoP2Lp6AaLI8fi3SoVHHFCWbuBxUSYZbgVd8sady0U8vkyb3RBacRqR/aP1j
-	4bYnBzlE9434SKxEHpdg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zOIy3qIR74gGpP8jC9zdnTp6h7Yy1YzSl9aYzghCMnY=; b=Z2jrvUocn+XHqf
+	AYNANZ4OMiRnAywMwImgl0U40jMcfNmfVg1FoqV5PbZcmin45G63nfmhtijuv9utNYbzvRCFphLai
+	25Q6wEQvz6wjSkCJotH8etav03Ap/TfOKRAvHCjrQx+0RqrWiWiyGwoMM9oshpDf9OUH960/Fhqxe
+	AkrjrFMX31o2MQfNNS1PpgWFyCyooFsJqeu91jwSEkAsTRpqnNSnz7NZYJkDtTtDyK4njvflrtGsT
+	Ml4H8B0iZcnH1Vo6TyJPZDUPUZ2lCIwf1Ick1YGWHMdoS/yZCM5KAan9qAe18y57o7GCSANjBBzyM
+	bZFXP9ELr7kPGBxPVJag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6bkQ-0004qU-DK; Tue, 25 Feb 2020 15:03:46 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1j6bnH-0006WU-LC; Tue, 25 Feb 2020 15:06:43 +0000
+Received: from mail-eopbgr10070.outbound.protection.outlook.com ([40.107.1.70]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6bkE-0004pw-Aw
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 15:03:38 +0000
-Received: by mail-qk1-x742.google.com with SMTP id b7so12150084qkl.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 07:03:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wAHb7rK639CcDCtnM7iJQZElyiD2uywLhpHa6tq57/0=;
- b=j3YeRKujuPj9zGjGOLEkt6wdH3hlRbWvAzwSpsAFnd+E0Vl11Qkczyj0JZGkg6Rd/d
- OyORz2UcsIwsakv9MMRaOoz/C/BbwKMHNX+pXr3AtBb/VtQ53CsVk5jd5v340Qua6VDw
- Bedv2EeiN5pdEZFaYMTd0GQB1lnUxvpYO8pOg5bT7QO/OU9WQ8naLOVo/67Z56BjwymC
- kDH5k9Hxz+ZkY7KLoxOgPswpMct6k9BAX2ni0w86KyYaNEohu20Ed8BOJuZ8U2M5MFKj
- nacWEMMAjE6jXiWafw8SOxqrluPoCzTYzDOgvLqI2nsE5BlNorCr2l81nYX9/nayT6iB
- PMyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wAHb7rK639CcDCtnM7iJQZElyiD2uywLhpHa6tq57/0=;
- b=p9iMTsOSe2l/TVZ4JuabnseHe9AcE8MmNt04/ucVoPwgJHSKWMddFgMQP8ntlZ+T9K
- L7I09aP0CV5Z0EuZ/58GgSBM3DP9LWbuMTqxP4z1pxhMGaeUoOchjND41CjUASZ//yDE
- jLQQ49cOIyFR/4az3a3MCih8nKLn5eDhxygcrc5v9/HrtuUxnv77aqBlqjXskUV7ezdW
- eCcssfYF2VtD7yEyrCVKeq04GQPsy5bg4Vwl6m5vXcQ3gqeyDOAxwAXpjqXRhK9G4P+f
- MKCD6yy5y9AC/R81aBxLQtnoHXshqXlBHdLvSPzFNnVIwtp5dKD7pEtRCCr2F+/6D5B7
- orvg==
-X-Gm-Message-State: APjAAAWfgCRb7XL2ynDMGYOn4XFfy7SQ5OkfKW3rxQW5Z4AoYCG0HuJp
- hbYxKiudkho7ji14bAgJrv1SfqZ44LI36xwr/OXidA5P
-X-Google-Smtp-Source: APXvYqzigvoxgWcb3ZmCCwvHRtpN3dxkcq9+kpu7VpR9hQ20upkiH0Yza2Z8PIe6Eb+Flk9FSwpWt8uJ4z71H80aDnk=
-X-Received: by 2002:a37:a9c3:: with SMTP id s186mr4972168qke.118.1582643009968; 
- Tue, 25 Feb 2020 07:03:29 -0800 (PST)
+ id 1j6bn4-0006TK-S8
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 15:06:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ROmbGCyegoAVu+nh5neyEXqFeFIYIWSUB2s2JliRg0LlCjzHLDGM+twsd4vo9pfQbCmZlz4QxEKgu1CFwXQcNSGpbB2lP+6VlxYFd/aGZXwCKeWElGZElRpelE9P2DepQ90V36bL/K3wTIThQ/zE5rIE7LMIujeZfchJP5TyfC+ZbszjXb+dEs5vcQ4IALVwDWVSTZ7NvGavXcpn/jIl19TEnzMCRCi0yf+xBJKxcqWzlcfy7QGfE/4/0SwO+wYG7P8pUlh1KFDpQVOsLjGgFDt9WJUB6OWWMLlWYDVamq/M3qmmBgouqXFDtentDchxNzslhYQoUqbhPO/ZcjQK3A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=eBqCmOeixAWzJIuE2AMrwhb1irciOUUFnofOCOHo9GI=;
+ b=MdiuJvv5I4f3AHeXZmKmnULjvyl/KYSHOYTxzviH670QdQAEOSuE8h92a8f8uUI5rn9JC/LlwtVZWgrK8l5e7id7N4PlyHQYqH+guToxX+yRHAetoFG2I00Aw+WDTQztrUg+WEYnJs/HGiZZx5MOlxLMuUdrpFdjOWuKcP7l+FBL/qVQYp0LGxR/Kz0o7ppkCN/fZRJP7vrTBYJEI+O2HNXEE1yi/heVVx7m1BDvTWEdqjZK4KnjqXYFCyVh12tzsWDEisnT5Cl3qSCAKEhNrXbEcKj7rA5V2fqkksFpYXOPx2+SwFoBH3eDfx15Y99BolATtdT2yHA6F89ZmOXqMg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=eBqCmOeixAWzJIuE2AMrwhb1irciOUUFnofOCOHo9GI=;
+ b=i8mWQUOL9Qq5hsINbNyAbrDFn6cK6nf+LlNtuoROG4SCFOGEiJcpkpcC2ii4Lf/MKpPhN0iJb56yqdLLegFEuO/B/k/YxKg7n4ty++aerh0Kklk37V9qNHqNzTZpJR56OiW5IOBT1TIijrp84EwQI+QjMFtTGesZ5c4aBpLzO2E=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=dragos.rosioru@oss.nxp.com; 
+Received: from AM0PR04MB3970.eurprd04.prod.outlook.com (52.134.92.143) by
+ AM0PR04MB4308.eurprd04.prod.outlook.com (52.134.91.158) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.18; Tue, 25 Feb 2020 15:06:24 +0000
+Received: from AM0PR04MB3970.eurprd04.prod.outlook.com
+ ([fe80::799f:d3bb:67ee:9544]) by AM0PR04MB3970.eurprd04.prod.outlook.com
+ ([fe80::799f:d3bb:67ee:9544%5]) with mapi id 15.20.2750.021; Tue, 25 Feb 2020
+ 15:06:24 +0000
+From: "Dragos Rosioru (OSS)" <dragos.rosioru@oss.nxp.com>
+To: Herbert Xu <herbert@gondor.apana.org.au>,
+ "David S. Miller" <davem@davemloft.net>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] crypto: dcp - fix scatterlist linearization for hash
+Date: Tue, 25 Feb 2020 17:05:52 +0200
+Message-Id: <1582643152-17278-1-git-send-email-dragos.rosioru@oss.nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: AM5PR0201CA0005.eurprd02.prod.outlook.com
+ (2603:10a6:203:3d::15) To AM0PR04MB3970.eurprd04.prod.outlook.com
+ (2603:10a6:208:5b::15)
 MIME-Version: 1.0
-References: <20200210213924.20037-1-mike.leach@linaro.org>
- <20200210213924.20037-9-mike.leach@linaro.org>
- <04b739fd-7bb3-bd28-8013-918e7d4dfcb7@arm.com> <20200221165134.GA25043@xps15>
-In-Reply-To: <20200221165134.GA25043@xps15>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Tue, 25 Feb 2020 15:03:18 +0000
-Message-ID: <CAJ9a7VjJMtftam3t_e25ckOW_dufncbqdLkHeV3G8e7W9K5bCw@mail.gmail.com>
-Subject: Re: [PATCH v9 08/15] coresight: cti: Enable CTI associated with
- devices.
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from fsr-ub1664-206.ea.freescale.net (89.37.124.34) by
+ AM5PR0201CA0005.eurprd02.prod.outlook.com (2603:10a6:203:3d::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2750.18 via Frontend
+ Transport; Tue, 25 Feb 2020 15:06:23 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [89.37.124.34]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: fa1806e6-ddc2-46d1-e419-08d7ba0447ea
+X-MS-TrafficTypeDiagnostic: AM0PR04MB4308:|AM0PR04MB4308:
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM0PR04MB4308277C950E64FDE2BFDC68DFED0@AM0PR04MB4308.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Forefront-PRVS: 0324C2C0E2
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(396003)(39860400002)(366004)(346002)(136003)(189003)(199004)(81166006)(6666004)(110136005)(66556008)(478600001)(2906002)(66946007)(5660300002)(316002)(6506007)(6512007)(54906003)(66476007)(52116002)(2616005)(186003)(26005)(8936002)(8676002)(956004)(16526019)(86362001)(6486002)(7416002)(4326008)(81156014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4308;
+ H:AM0PR04MB3970.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:0; 
+Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: kKk3qRlsOSgajc++4BTnxKibk+NLoodS97VZ4CLxUcdgZlNpVuQRU2ziGt1wNNtVPNDC2Uw7zJz/mfEIGNrTiKqJYS124fdw1Qq8UvyKRYj1fdX9wtD7T4EgOEUV6SIjakhYCSXikt8jak0ZcVe7J0fR3btkM3qtacRqZP8V6NrtqFXBiEZ6oJqwb20ECnO/qXkO8PPDFzfkUHoSjQnB/cCafwOhzxUnUeHaIbsglY3UlkxI7TLBtYynhf5Q6OVgl3Q6LUFYkEfEPgS8Y5+MGWHhHV3sdbEMzBqgqBe3ACGmrfWtmLhuaqKjHrTB8mO28gGsHjqksJpOi01UZjA9brwi7t3Y8RpIvTVRwvIaLovCxMEcccsRBv9jmLqeSqXc5drUGJV1Ex+B/fLapPcmGFVwFlg6O00wlrTt20R9TFzy+dbrMUUYWHGLCjSgzOVr
+X-MS-Exchange-AntiSpam-MessageData: ZoFN2rve7HI5K+IuEJntnI5Dg94dmnu7Mkp3BIv5bSfk8jdBV64+DuRLTSKdGRM7OKCXzLBq0/+I6DM/fRNISlPlX+3+3U8zHX+5lXzlMqWTSLErj7rIlHflM0i2dB6wiuLH2SDr5J7xs8u/wfaDvA==
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fa1806e6-ddc2-46d1-e419-08d7ba0447ea
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 Feb 2020 15:06:24.7415 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: jc9+2itHUxVYdzm0uoqcP8EZdZ49GJaoPyGCWI6KGuek01BfMO8kdYCASKTT22u0PEpmTOv59jeelBORbJi2AQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4308
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_070334_377803_5E238F05 
-X-CRM114-Status: GOOD (  25.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200225_070630_936892_6B1A1463 
+X-CRM114-Status: GOOD (  15.32  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
+ no trust [40.107.1.70 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,116 +124,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- linux-arm-msm@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <maxime@cerno.tech>, Sudeep Holla <sudeep.holla@arm.com>,
- Jonathan Corbet <corbet@lwn.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Marek Vasut <marex@denx.de>, Horia Geanta <horia.geanta@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-crypto@vger.kernel.org,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ NXP Linux Team <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As using devm_... for allocation, there is no need to explicitly free
-up tc->con_dev_name, also the lifetime of the connection is linked to
-the lifetime of csdev, so we can drop the devm_kstrdup in the csdev
-case so this becomes
+From: Rosioru Dragos <dragos.rosioru@nxp.com>
 
-/* match: so swap in csdev name & dev */
-               tc->con_dev_name = dev_name(&csdev->dev);
-                tc->con_dev = csdev;
-                return true;
+The incorrect traversal of the scatterlist, during the linearization phase
+lead to computing the hash value of the wrong input buffer.
+New implementation uses scatterwalk_map_and_copy()
+to address this issue.
 
-Same true for similar link in patch 1, removing 2 un-needed
-allocations, leaving 1 to be fixed up with error checking
+Cc: <stable@vger.kernel.org>
+Fixes: 15b59e7c3733 ("crypto: mxs - Add Freescale MXS DCP driver")
+Signed-off-by: Rosioru Dragos <dragos.rosioru@nxp.com>
+---
+ drivers/crypto/mxs-dcp.c | 58 +++++++++++++++++++++++-------------------------
+ 1 file changed, 28 insertions(+), 30 deletions(-)
 
-Mike
+diff --git a/drivers/crypto/mxs-dcp.c b/drivers/crypto/mxs-dcp.c
+index 435ac1c..d845302 100644
+--- a/drivers/crypto/mxs-dcp.c
++++ b/drivers/crypto/mxs-dcp.c
+@@ -20,6 +20,7 @@
+ #include <crypto/sha.h>
+ #include <crypto/internal/hash.h>
+ #include <crypto/internal/skcipher.h>
++#include <crypto/scatterwalk.h>
+ 
+ #define DCP_MAX_CHANS	4
+ #define DCP_BUF_SZ	PAGE_SIZE
+@@ -611,49 +612,46 @@ static int dcp_sha_req_to_buf(struct crypto_async_request *arq)
+ 	struct dcp_async_ctx *actx = crypto_ahash_ctx(tfm);
+ 	struct dcp_sha_req_ctx *rctx = ahash_request_ctx(req);
+ 	struct hash_alg_common *halg = crypto_hash_alg_common(tfm);
+-	const int nents = sg_nents(req->src);
+ 
+ 	uint8_t *in_buf = sdcp->coh->sha_in_buf;
+ 	uint8_t *out_buf = sdcp->coh->sha_out_buf;
+ 
+-	uint8_t *src_buf;
+-
+ 	struct scatterlist *src;
+ 
+-	unsigned int i, len, clen;
++	unsigned int i, len, clen, oft = 0;
+ 	int ret;
+ 
+ 	int fin = rctx->fini;
+ 	if (fin)
+ 		rctx->fini = 0;
+ 
+-	for_each_sg(req->src, src, nents, i) {
+-		src_buf = sg_virt(src);
+-		len = sg_dma_len(src);
+-
+-		do {
+-			if (actx->fill + len > DCP_BUF_SZ)
+-				clen = DCP_BUF_SZ - actx->fill;
+-			else
+-				clen = len;
+-
+-			memcpy(in_buf + actx->fill, src_buf, clen);
+-			len -= clen;
+-			src_buf += clen;
+-			actx->fill += clen;
++	src = req->src;
++	len = req->nbytes;
+ 
+-			/*
+-			 * If we filled the buffer and still have some
+-			 * more data, submit the buffer.
+-			 */
+-			if (len && actx->fill == DCP_BUF_SZ) {
+-				ret = mxs_dcp_run_sha(req);
+-				if (ret)
+-					return ret;
+-				actx->fill = 0;
+-				rctx->init = 0;
+-			}
+-		} while (len);
++	while (len) {
++		if (actx->fill + len > DCP_BUF_SZ)
++			clen = DCP_BUF_SZ - actx->fill;
++		else
++			clen = len;
++
++		scatterwalk_map_and_copy(in_buf + actx->fill, src, oft, clen,
++					 0);
++
++		len -= clen;
++		oft += clen;
++		actx->fill += clen;
++
++		/*
++		 * If we filled the buffer and still have some
++		 * more data, submit the buffer.
++		 */
++		if (len && actx->fill == DCP_BUF_SZ) {
++			ret = mxs_dcp_run_sha(req);
++			if (ret)
++				return ret;
++			actx->fill = 0;
++			rctx->init = 0;
++		}
+ 	}
+ 
+ 	if (fin) {
+-- 
+2.7.4
 
-
-On Fri, 21 Feb 2020 at 16:51, Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
->
-> On Fri, Feb 21, 2020 at 12:20:17AM +0000, Suzuki K Poulose wrote:
-> > Hi Mike
-> >
-> > Sorry for the delay. one minor comment below.
-> >
-> > On 02/10/2020 09:39 PM, Mike Leach wrote:
-> > > The CoreSight subsystem enables a path of devices from source to sink.
-> > > Any CTI devices associated with the path devices must be enabled at the
-> > > same time.
-> > >
-> > > This patch adds an associated coresight_device element to the main
-> > > coresight device structure, and uses this to create associations between
-> > > the CTI and other devices based on the device tree data. The associated
-> > > device element is used to enable CTI in conjunction with the path elements.
-> > >
-> > > CTI devices are reference counted so where a single CTI is associated with
-> > > multiple elements on the path, it will be enabled on the first associated
-> > > device enable, and disabled with the last associated device disable.
-> > >
-> > > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> > > ---
-> > >   drivers/hwtracing/coresight/coresight-cti.c  | 129 +++++++++++++++++++
-> > >   drivers/hwtracing/coresight/coresight-cti.h  |   1 +
-> > >   drivers/hwtracing/coresight/coresight-priv.h |  12 ++
-> > >   drivers/hwtracing/coresight/coresight.c      |  71 +++++++++-
-> > >   include/linux/coresight.h                    |   4 +
-> > >   5 files changed, 212 insertions(+), 5 deletions(-)
-> > >
-> > > diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-> > > index 77c2af247917..c4494923d030 100644
-> > > --- a/drivers/hwtracing/coresight/coresight-cti.c
-> > > +++ b/drivers/hwtracing/coresight/coresight-cti.c
-> > > @@ -4,6 +4,7 @@
-> > >    * Author: Mike Leach <mike.leach@linaro.org>
-> > >    */
-> > > +#include <linux/property.h>
-> > >   #include "coresight-cti.h"
-> > >   /**
-> > > @@ -440,6 +441,131 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
-> > >     return err;
-> > >   }
-> > > +/*
-> > > + * Look for a matching connection device name in the list of connections.
-> > > + * If found then swap in the csdev name, set trig con association pointer
-> > > + * and return found.
-> > > + */
-> > > +static bool
-> > > +cti_match_fixup_csdev(struct cti_device *ctidev, const char *node_name,
-> > > +                 struct coresight_device *csdev)
-> > > +{
-> > > +   struct cti_trig_con *tc;
-> > > +   const char *csdev_name;
-> > > +
-> > > +   list_for_each_entry(tc, &ctidev->trig_cons, node) {
-> > > +           if (tc->con_dev_name) {
-> > > +                   if (!strcmp(node_name, tc->con_dev_name)) {
-> > > +                           /* match: so swap in csdev name & dev */
-> > > +                           csdev_name = dev_name(&csdev->dev);
-> > > +                           tc->con_dev_name =
-> > > +                                   devm_kstrdup(&csdev->dev, csdev_name,
-> > > +                                                GFP_KERNEL);
-> >
-> > In the extreme rare case of an allocation failure, we may want to
-> > check if the allocation was successful or not, rather than silently
-> > ignoring it. With that fixed,
->
-> Line 419 and 423 in patch 1 need the same attention.
->
-> >
-> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-
-
-
---
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
