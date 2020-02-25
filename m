@@ -2,116 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7B8316C1F8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 14:18:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E50716C252
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 14:29:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wo62OoxgQfbKD9EhTXbZ1QHhMUgxMWBhbYWvftzS0tE=; b=SWtPOHRUxrmJE0
-	PEW860HD4Y/V3/t+IhhwT3nUVph6kcVtQOFckFd5idr/J7LtieaWVgta7tzDxPTbN103OPFT15hiH
-	iqUpZhTxj3wYWeTLac9JawoSwxlA1FS6TysE6VJ4OXQLvuDKqMCAdcuZnqQHTtgfpcCFxeI1KMtjK
-	SsGMIEEtU8jw5O9hpPezzZgKPgwyexrSGVBeUS4A23dn6yFzV+W0/DpSrOvQ8ByePSlir0CYJYEmm
-	/ZzLAR1N2hViZW1c3xA2tVBPRQtzMF7qU3BOY/Lsm62WKMlcr4HAA5kZ8nJ5Veq4IAkkPMl+Jf1Lg
-	6YSOqY/21nurgUqLCyZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tKZaNx2P6f+6mdSPyrlVBW0BCNtRbUJRWt86d2fqQ7Y=; b=MMD+auO8mpA/y/J5fJ5vnjgeY
+	cnL6OMCdJkqgAIY5JVEZ2t04OSg+i7DIlmKCJ77rmzzhonpakKwoAG2vlSFElaCA2mvmSgA327OWp
+	lctS1KBHsY+AZnIYDLr3svtKnm6HJJ9Mnn/UC4+7SZF8HzBkd2tr9MKuFHXuBZmJdLFOe8HwW1gZX
+	mhJ35p4Wzw3ekWpdArvnM1btk1tRBMeKmqI5ip/aZ+opk09UxTOLXVmoQiG0Eri9BpSj9Bf48DDPF
+	aQZ+eJo+w4egvM/XveNb4TLpvJHNjwiAUr1Q4ERFLwh4Zt/Wn3qru6RX4ufC1HF36wjk8ovR1cItu
+	kwZPaheYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6a6p-0008Av-VE; Tue, 25 Feb 2020 13:18:47 +0000
-Received: from mail-eopbgr150040.outbound.protection.outlook.com
- ([40.107.15.40] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6a6a-0008AE-TT
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 13:18:34 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HEunnffjM+MzhFvNIsYjXXMa9t7ftyNui/QGA4wfJ+CdMod8qYqOd4/mgCGa25svk+9qkuHtEQ+drKGtnysRsz/MbcWGyaEhCEfz4EQjwjpnK+T40R/HfTIyayxSYMxseM0iyYbZCNkK0o5kdpqAywkb5yEj1jW6R9zZgE5OfP1euDBUkKq0anTk9bGri2IhTaBhmy2+yHre07Kjzjx1wVQwvAtSOCdNZrejlJ3Ss9c4kfGyfmXDC2s3QcSpsPnEFRP5KM7hguG005+zYIJyebMZNNNfu6M9N8nBYlJXVKvqijmbwv12smwbJbfdgk3XgWRSXmYwwuCtsamxEx3ZUw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JIIIs4GqHpVivBNY6K/ds+zxz3M1YhN7rGtj8fz8rJA=;
- b=J75MaKpv+FHhD0cq7cnSNkZ8H3zCQ9Z68UyGJxix6MES99gw28td8RjbGRxmy6Fpr90VhU6E4uZjVeuQ+SeqjekLtaiGfszda/1QdCAoXF5zb1Z7K/IpOWlUmQ2SnZyjpwFQmrKG6z57Sa7IJc5YnIFfIZ9LaDBaFkZ5WfNw/VX3heF5RswW/wpTa5oDTjLnqXwZW1IlrIeb0C8z3kCpQ2fzt/CCRRtkWG3GAmoLuwYAFfDItQknnKL0Dw+QKRks0R77428JKs4p2WQsazWeplIvsr9UMr4IH4ShRp/Z43GWrEwAJleR47UNHadsrHlf61+pi6G+NYK9dA1pa3oEyw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JIIIs4GqHpVivBNY6K/ds+zxz3M1YhN7rGtj8fz8rJA=;
- b=POWk9i9C8nuyiwNBVak1mw4mTuqRd6KGSL7+Cp5wrdO4IIfxcwlXIEccwNQmwfUx30g1dFXXHbvm/9XdFfLF6xoNyn3dKgs4OPMDCS3R5n+qQQCveO05yuawUWqNjZwYPVT6R5bgXnwfIkPMOyyHEP7g5a0jrnJTspNrJgQk7V8=
-Received: from VI1PR04MB5327.eurprd04.prod.outlook.com (20.177.51.23) by
- VI1PR04MB5616.eurprd04.prod.outlook.com (20.178.126.29) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.22; Tue, 25 Feb 2020 13:18:30 +0000
-Received: from VI1PR04MB5327.eurprd04.prod.outlook.com
- ([fe80::9547:9dfa:76b8:71b1]) by VI1PR04MB5327.eurprd04.prod.outlook.com
- ([fe80::9547:9dfa:76b8:71b1%7]) with mapi id 15.20.2750.021; Tue, 25 Feb 2020
- 13:18:30 +0000
-From: Peter Chen <peter.chen@nxp.com>
-To: Michal Simek <monstr@monstr.eu>, LKML <linux-kernel@vger.kernel.org>, git
- <git@xilinx.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: RE: [PATCH] usb: gadget: udc-xilinx: Fix xudc_stop() kernel-doc format
-Thread-Topic: [PATCH] usb: gadget: udc-xilinx: Fix xudc_stop() kernel-doc
- format
-Thread-Index: AQHV4ZORQFzPlcxWKkmSJAY3DwHopKgr3PcAgAAb4hA=
-Date: Tue, 25 Feb 2020 13:18:30 +0000
-Message-ID: <VI1PR04MB5327D2970A145441FC7A34B08BED0@VI1PR04MB5327.eurprd04.prod.outlook.com>
-References: <c753b529bdcdfdd40a3cf69121527ec8c63775cb.1581505183.git.michal.simek@xilinx.com>
- <CAHTX3dJN5No9wUSDnmcMQXsGRKXKcLrDx_OhP-MF2yL+dXFu7w@mail.gmail.com>
-In-Reply-To: <CAHTX3dJN5No9wUSDnmcMQXsGRKXKcLrDx_OhP-MF2yL+dXFu7w@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peter.chen@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 63fa49d9-790b-4df1-b3e1-08d7b9f534f1
-x-ms-traffictypediagnostic: VI1PR04MB5616:|VI1PR04MB5616:
-x-microsoft-antispam-prvs: <VI1PR04MB561658965AFD1FC607AC53FF8BED0@VI1PR04MB5616.eurprd04.prod.outlook.com>
-x-ms-exchange-transport-forked: True
-x-ms-oob-tlc-oobclassifiers: OLM:2733;
-x-forefront-prvs: 0324C2C0E2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(366004)(136003)(376002)(396003)(199004)(189003)(8936002)(33656002)(7696005)(8676002)(81156014)(6506007)(81166006)(478600001)(2906002)(9686003)(55016002)(4326008)(66446008)(76116006)(66946007)(66476007)(66556008)(64756008)(4744005)(5660300002)(44832011)(71200400001)(26005)(316002)(186003)(52536014)(66574012)(86362001)(54906003)(110136005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5616;
- H:VI1PR04MB5327.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: qAiOJvXEmJQHGLWERTa7Z0UkSCDaNT3SyNmsgaWv2Nk4BfaTKWE4pnf2E+IlDzpb5Xj+LTs9DtOWsXiD256vK6Pfrer9fg9PQ3CSeW+7yaEQm91UzeG30XaOr1Fs3vb9m2mkCJqrk3WHG+zKKuglBECEY9kS7UFjD/g6nILMAWy0xEKTzck0PVNHujkQE5EIQQ/2Eu+U1Aw0K40BXN3EM0ljYyUVirbbe/SBytWZPc47Sl8Y5GZpSWj2RsQ6OUE7KZXtysvjAqDBHe+BAPczUi2lTmTStGETlOKO9wcYDzQYjnLKOPO/YoF8wFKkzSjisBZL+1wVu7AQ/wCUoq63vXKF3+qknDX3R7A7QIYxiBa8EOLP7Ql/AdXZP9KwZGtslsrCyP8xWRfhwPWlP83VuEWQznDRHuBPOfK4JGmFlDrjwq6LHiqygWLJFAoL2UYV
-x-ms-exchange-antispam-messagedata: w7P4HrbyAdPrBm7Zj/4/yUwdWf4qAFvgWuc+awdkQl1sD8Vw1ydDcTXwPO6zXUCWsTcQr1aMIcAgQ95S8ibGUh+R/mDSzmO+aKA1M0kA0K9Afam2ipUABvW7qDiJK4p1MJTy5d6Wk6vdl78a3vhFPA==
+	id 1j6aGv-0003CL-VJ; Tue, 25 Feb 2020 13:29:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6aGk-0003B3-JY
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 13:29:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 429BFFEC;
+ Tue, 25 Feb 2020 05:28:58 -0800 (PST)
+Received: from [10.162.16.116] (a075563-lin.blr.arm.com [10.162.16.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE1763F703;
+ Tue, 25 Feb 2020 05:28:49 -0800 (PST)
+Subject: Re: [PATCH v6 05/11] arm64: elf: Enable BTI at exec based on ELF
+ program properties
+To: Mark Brown <broonie@kernel.org>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+References: <20200212192906.53366-1-broonie@kernel.org>
+ <20200212192906.53366-6-broonie@kernel.org>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <275b9cdb-7835-0dfe-9bea-acb0d8301e36@arm.com>
+Date: Tue, 25 Feb 2020 18:58:50 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 63fa49d9-790b-4df1-b3e1-08d7b9f534f1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Feb 2020 13:18:30.1526 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Puym10WGAFuaOR9af+3JawVsbPiFvdxU5gt0fru5OwhbetyMMy11fsmUYB3SBmxmCV4jAciGDiy5w3nsZvT3ew==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5616
+In-Reply-To: <20200212192906.53366-6-broonie@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_051832_957541_23254489 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200225_052902_731029_69793DF1 
+X-CRM114-Status: GOOD (  26.89  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.40 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,35 +66,231 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm <linux-arm-kernel@lists.infradead.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- Peter Chen <peter.chen@freescale.com>, Felipe Balbi <balbi@ti.com>,
- Stephen Boyd <swboyd@chromium.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ "H . J . Lu" <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ =?UTF-8?Q?Kristina_Mart=c5=a1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-IA0KPiANCj4gc3QgMTIuIDIuIDIwMjAgdiAxMTo1OSBvZGVzw61sYXRlbCBNaWNoYWwgU2ltZWsg
-PG1pY2hhbC5zaW1la0B4aWxpbnguY29tPiBuYXBzYWw6DQo+ID4NCj4gPiBUaGUgcGF0Y2ggcmVt
-b3ZlcyAiZHJpdmVyIiBwYXJhbWV0ZXIgd2hpY2ggaGFzIGJlZW4gcmVtb3ZlZCB3aXRob3V0DQo+
-ID4gdXBkYXRpbmcga2VybmVsLWRvYyBmb3JtYXQuDQo+ID4NCj4gPiBGaXhlczogMjI4MzViODA3
-ZTdjICgidXNiOiBnYWRnZXQ6IHJlbW92ZSB1bm5lY2Vzc2FyeSAnZHJpdmVyJw0KPiA+IGFyZ3Vt
-ZW50IikNCj4gPiBTaWduZWQtb2ZmLWJ5OiBNaWNoYWwgU2ltZWsgPG1pY2hhbC5zaW1la0B4aWxp
-bnguY29tPg0KPiA+IC0tLQ0KPiA+DQo+ID4gIGRyaXZlcnMvdXNiL2dhZGdldC91ZGMvdWRjLXhp
-bGlueC5jIHwgMSAtDQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxIGRlbGV0aW9uKC0pDQo+ID4NCj4g
-PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2IvZ2FkZ2V0L3VkYy91ZGMteGlsaW54LmMNCj4gPiBi
-L2RyaXZlcnMvdXNiL2dhZGdldC91ZGMvdWRjLXhpbGlueC5jDQo+ID4gaW5kZXggMjlkOGU1Zjhi
-YjU4Li5iMWNmYzgyNzljM2QgMTAwNjQ0DQo+ID4gLS0tIGEvZHJpdmVycy91c2IvZ2FkZ2V0L3Vk
-Yy91ZGMteGlsaW54LmMNCj4gPiArKysgYi9kcml2ZXJzL3VzYi9nYWRnZXQvdWRjL3VkYy14aWxp
-bnguYw0KPiA+IEBAIC0xMzk5LDcgKzEzOTksNiBAQCBzdGF0aWMgaW50IHh1ZGNfc3RhcnQoc3Ry
-dWN0IHVzYl9nYWRnZXQgKmdhZGdldCwNCj4gPiAgLyoqDQo+ID4gICAqIHh1ZGNfc3RvcCAtIHN0
-b3BzIHRoZSBkZXZpY2UuDQo+ID4gICAqIEBnYWRnZXQ6IHBvaW50ZXIgdG8gdGhlIHVzYiBnYWRn
-ZXQgc3RydWN0dXJlDQo+ID4gLSAqIEBkcml2ZXI6IHBvaW50ZXIgdG8gdXNiIGdhZGdldCBkcml2
-ZXIgc3RydWN0dXJlDQo+ID4gICAqDQo+ID4gICAqIFJldHVybjogemVybyBhbHdheXMNCj4gPiAg
-ICovDQo+ID4gLS0NCj4gPiAyLjI1LjANCj4gPg0KPiANCj4gQ2FuIHNvbWVvbmUgdGFrZSBhIGxv
-b2sgYXQgdGhpcyBwYXRjaD8NCj4gDQogDQpSZXZpZXdlZC1ieTogUGV0ZXIgQ2hlbiA8cGV0cmUu
-Y2hlbkBueHAuY29tPg0KDQpQZXRlcg0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+
+On 2/13/20 12:59 AM, Mark Brown wrote:
+> From: Dave Martin <Dave.Martin@arm.com>
+> 
+> For BTI protection to be as comprehensive as possible, it is
+> desirable to have BTI enabled from process startup.  If this is not
+> done, the process must use mprotect() to enable BTI for each of its
+> executable mappings, but this is painful to do in the libc startup
+> code.  It's simpler and more sound to have the kernel do it
+> instead.
+> 
+> To this end, detect BTI support in the executable (or ELF
+> interpreter, as appropriate), via the
+> NT_GNU_PROGRAM_PROPERTY_TYPE_0 note, and tweak the initial prot
+> flags for the process' executable pages to include PROT_BTI as
+> appropriate.
+> 
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+> ---
+>   arch/arm64/Kconfig           |  3 +++
+>   arch/arm64/include/asm/elf.h | 50 ++++++++++++++++++++++++++++++++++++
+>   arch/arm64/kernel/process.c  | 19 ++++++++++++++
+>   include/linux/elf.h          |  6 ++++-
+>   include/uapi/linux/elf.h     |  6 +++++
+>   5 files changed, 83 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index e37f4f07b990..d65d226a77ec 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -9,6 +9,7 @@ config ARM64
+>   	select ACPI_MCFG if (ACPI && PCI)
+>   	select ACPI_SPCR_TABLE if ACPI
+>   	select ACPI_PPTT if ACPI
+> +	select ARCH_BINFMT_ELF_STATE
+>   	select ARCH_CLOCKSOURCE_DATA
+>   	select ARCH_HAS_DEBUG_VIRTUAL
+>   	select ARCH_HAS_DEVMEM_IS_ALLOWED
+> @@ -33,6 +34,7 @@ config ARM64
+>   	select ARCH_HAS_SYSCALL_WRAPPER
+>   	select ARCH_HAS_TEARDOWN_DMA_OPS if IOMMU_SUPPORT
+>   	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
+> +	select ARCH_HAVE_ELF_PROT
+>   	select ARCH_HAVE_NMI_SAFE_CMPXCHG
+>   	select ARCH_INLINE_READ_LOCK if !PREEMPTION
+>   	select ARCH_INLINE_READ_LOCK_BH if !PREEMPTION
+> @@ -62,6 +64,7 @@ config ARM64
+>   	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
+>   	select ARCH_KEEP_MEMBLOCK
+>   	select ARCH_USE_CMPXCHG_LOCKREF
+> +	select ARCH_USE_GNU_PROPERTY if BINFMT_ELF
+>   	select ARCH_USE_QUEUED_RWLOCKS
+>   	select ARCH_USE_QUEUED_SPINLOCKS
+>   	select ARCH_SUPPORTS_MEMORY_FAILURE
+> diff --git a/arch/arm64/include/asm/elf.h b/arch/arm64/include/asm/elf.h
+> index b618017205a3..fca3a48e9db5 100644
+> --- a/arch/arm64/include/asm/elf.h
+> +++ b/arch/arm64/include/asm/elf.h
+> @@ -114,7 +114,11 @@
+>   
+>   #ifndef __ASSEMBLY__
+>   
+> +#include <uapi/linux/elf.h>
+>   #include <linux/bug.h>
+> +#include <linux/errno.h>
+> +#include <linux/fs.h>
+> +#include <linux/types.h>
+>   #include <asm/processor.h> /* for signal_minsigstksz, used by ARCH_DLINFO */
+>   
+>   typedef unsigned long elf_greg_t;
+> @@ -224,6 +228,52 @@ extern int aarch32_setup_additional_pages(struct linux_binprm *bprm,
+>   
+>   #endif /* CONFIG_COMPAT */
+>   
+> +struct arch_elf_state {
+> +	int flags;
+> +};
+> +
+> +#define ARM64_ELF_BTI		(1 << 0)
+> +
+> +#define INIT_ARCH_ELF_STATE {			\
+> +	.flags = 0,				\
+> +}
+> +
+> +static inline int arch_parse_elf_property(u32 type, const void *data,
+> +					  size_t datasz, bool compat,
+> +					  struct arch_elf_state *arch)
+> +{
+
+Does this check here make sense to skip running extra code?
+     if (!system_supports_bti())
+              return 0;
+Although this check is there in arch_validate_prot.
+
+> +	/* No known properties for AArch32 yet */
+> +	if (IS_ENABLED(CONFIG_COMPAT) && compat)
+> +		return 0;
+> +
+> +	if (type == GNU_PROPERTY_AARCH64_FEATURE_1_AND) {
+> +		const u32 *p = data;
+> +
+> +		if (datasz != sizeof(*p))
+> +			return -ENOEXEC;
+> +
+> +		if (IS_ENABLED(CONFIG_ARM64_BTI) &&
+> +		    (*p & GNU_PROPERTY_AARCH64_FEATURE_1_BTI))
+> +			arch->flags |= ARM64_ELF_BTI;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static inline int arch_elf_pt_proc(void *ehdr, void *phdr,
+> +				   struct file *f, bool is_interp,
+> +				   struct arch_elf_state *state)
+> +{
+> +	return 0;
+> +}
+> +
+> +static inline int arch_check_elf(void *ehdr, bool has_interp,
+> +				 void *interp_ehdr,
+> +				 struct arch_elf_state *state)
+> +{
+> +	return 0;
+> +}
+> +
+>   #endif /* !__ASSEMBLY__ */
+>   
+>   #endif
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index bbb0f0c145f6..7545a3f743c4 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -11,6 +11,7 @@
+>   
+>   #include <linux/compat.h>
+>   #include <linux/efi.h>
+> +#include <linux/elf.h>
+>   #include <linux/export.h>
+>   #include <linux/sched.h>
+>   #include <linux/sched/debug.h>
+> @@ -18,6 +19,7 @@
+>   #include <linux/sched/task_stack.h>
+>   #include <linux/kernel.h>
+>   #include <linux/lockdep.h>
+> +#include <linux/mman.h>
+>   #include <linux/mm.h>
+>   #include <linux/stddef.h>
+>   #include <linux/sysctl.h>
+> @@ -649,3 +651,20 @@ asmlinkage void __sched arm64_preempt_schedule_irq(void)
+>   	if (system_capabilities_finalized())
+>   		preempt_schedule_irq();
+>   }
+> +
+> +#ifdef CONFIG_BINFMT_ELF
+> +int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
+> +			 bool has_interp, bool is_interp)
+> +{
+> +	if (is_interp != has_interp)
+> +		return prot;
+> +
+> +	if (!(state->flags & ARM64_ELF_BTI))
+> +		return prot;
+> +
+> +	if (prot & PROT_EXEC)
+> +		prot |= PROT_BTI;
+> +
+> +	return prot;
+> +}
+> +#endif
+> diff --git a/include/linux/elf.h b/include/linux/elf.h
+> index 1b6e8955c597..5d5b0321da0b 100644
+> --- a/include/linux/elf.h
+> +++ b/include/linux/elf.h
+> @@ -63,7 +63,11 @@ extern int elf_coredump_extra_notes_size(void);
+>   extern int elf_coredump_extra_notes_write(struct coredump_params *cprm);
+>   #endif
+>   
+> -/* NT_GNU_PROPERTY_TYPE_0 header */
+> +/*
+> + * NT_GNU_PROPERTY_TYPE_0 header:
+> + * Keep this internal until/unless there is an agreed UAPI definition.
+> + * pr_type values (GNU_PROPERTY_*) are public and defined in the UAPI header.
+> + */
+>   struct gnu_property {
+>   	u32 pr_type;
+>   	u32 pr_datasz;
+> diff --git a/include/uapi/linux/elf.h b/include/uapi/linux/elf.h
+> index 20900f4496b7..c6dd0215482e 100644
+> --- a/include/uapi/linux/elf.h
+> +++ b/include/uapi/linux/elf.h
+> @@ -448,4 +448,10 @@ typedef struct elf64_note {
+>     Elf64_Word n_type;	/* Content type */
+>   } Elf64_Nhdr;
+>   
+> +/* .note.gnu.property types for EM_AARCH64: */
+> +#define GNU_PROPERTY_AARCH64_FEATURE_1_AND	0xc0000000
+> +
+> +/* Bits for GNU_PROPERTY_AARCH64_FEATURE_1_BTI */
+> +#define GNU_PROPERTY_AARCH64_FEATURE_1_BTI	(1U << 0)
+> +
+>   #endif /* _UAPI_LINUX_ELF_H */
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
