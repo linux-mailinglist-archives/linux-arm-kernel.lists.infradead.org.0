@@ -2,58 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7327516F050
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 21:42:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD7D116F0B7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 21:58:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3QnkoxIiF/IHRMj8803rbKtnsPdoI4+bSb4BOnxKp60=; b=n8u5zBOKIfWK/M
-	qDB8OGaKiAOGpXNcJ4XjC+M6vMZ8NjpT4Fw7vL2AV0h6tVmq8I0S7sTZ/KXMTgklIhZzQeCsbAsyO
-	A8p0JDtLtutBPFXsSxovoI9QL1WS+9DP+6dO0GmnmBbPG66Sb+JPzZ3OV1FWYxJ8EA+kPD32VoOk1
-	cq6KsJy5OcdqAS20X7vBFCL7vnchcC2xaJWk6Xi20GwgVA1EA6AKW8XEpJhCHfFNn8HUv1IunRqVd
-	P7+wi3hox5fsPW6aRxDGKyBjtVY56i7g5aAHdxQVkUpYidvr8ZcDdIcdB1+ZacEMv8i61gXnOwjJN
-	GDknaJZZ9Ii1zRTvZ+TQ==;
+	List-Owner; bh=rjKleUnGJKTaSo7tQNzCPhhGy5ZRIVaiA9t8slZnAX4=; b=XYl0iJAXCql/wy
+	HWQdZ9uN9tCM/LfaD+2MWOstwMPQGBi34vhajr6VmC3s0J2dp9ymURQIRl91etlenUIt0R/SR3an9
+	a91mVRz95SS+uJLsFLHhUnCHVDYjn4kgvIpOvg8zGIIgYf4Z8RdyJ6E0LupOE1EwQ6+WBBHEj8PqS
+	a43Jml4dFpxP+paiw31PUsjiJQJ/0UjqRr+vDlbhCldpB1karwd+IIbvkPgDPgUDwLFNXhQEWJMUA
+	aLLnmoyV1DxS1PAnEOF+iA6vLCpyV11xRReSbwskUaa6cjbvZGlOtYna1j1kRpPEprn5UrubAfBVt
+	DJ8NmjASRiZOGGd2fyoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6h1q-00019J-Qu; Tue, 25 Feb 2020 20:42:06 +0000
+	id 1j6hHA-00063X-Vv; Tue, 25 Feb 2020 20:57:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6h1g-00018p-O7
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 20:41:58 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1j6hH2-00062x-TI; Tue, 25 Feb 2020 20:57:50 +0000
+Received: from mail-qk1-f174.google.com (mail-qk1-f174.google.com
+ [209.85.222.174])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F88F20675;
- Tue, 25 Feb 2020 20:41:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E8B2124650;
+ Tue, 25 Feb 2020 20:57:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582663315;
- bh=YYC4xaOlh2BnEG7cTijsktqQkfUcqWoUPp+Gy0hHL5U=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=oyQo5IPJ8L0EIKxeaAFS2wAcDllxRfr2eyVyy1hLk8AAcr8z8/gIQPFmVOAcK45//
- 0PSaDa7pEC5LX/x8Hl6kxwy8zvjscYilZIkwDkR1kel/bGuxKAII++UJ/QCGZ7bqbi
- CL+pgiEvxS2wgZ9W/4jpN7F68Cg0E7zmzKk678t0=
-Date: Tue, 25 Feb 2020 21:41:51 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH 1/2] tty: serial: samsung_tty: build it for any platform
-Message-ID: <20200225204151.GA13254@kroah.com>
-References: <CGME20200220121333eucas1p26befa95831b44a793822b4f07b37d2cc@eucas1p2.samsung.com>
- <20200220102628.3371996-1-gregkh@linuxfoundation.org>
- <b04ad319-9986-c357-ad37-937bbb06bc02@samsung.com>
- <CAMuHMdXzPPNqQom82frY1B6LMre+VD9fPAf98BZ3eo2DhgwoYg@mail.gmail.com>
+ s=default; t=1582664268;
+ bh=rEf2Wh9b2Cqc5tJSuDzSluIyGn5h8PEv+2AGQEQ1p7s=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=gg6Rej+lEjdE3MacAgPmABGfeEK4naM3qOPYaKvI6VDiP+dnMybL0IxoHGVGDs7yy
+ E3V+I76+lUu0xY/bwpiOuR2QpnM95bq/0c4t6LVntRLm17lQNFftdzZSonrfhuEA9D
+ oR7Ir/7pF1qi7QFUxPXnrZq2XPZK6VAIOSpFAbUg=
+Received: by mail-qk1-f174.google.com with SMTP id h4so598788qkm.0;
+ Tue, 25 Feb 2020 12:57:47 -0800 (PST)
+X-Gm-Message-State: APjAAAVEvXCRwOQNlytJiPliqSziECC7nDX4CiFbQTs/gef8BFjZyhEw
+ BVwHHI4ZhLfa6Q3cuvIHcC20yF/gqY+70AgdCA==
+X-Google-Smtp-Source: APXvYqz2R5nikNFiKQzE3WzYAa4JRDhsDEPVyRy8hsiD3YIxfbq2k/r6k7Ue9axTsmsjn+eGEtYJoB+gv797DdDBI14=
+X-Received: by 2002:a37:a750:: with SMTP id q77mr933467qke.119.1582664267060; 
+ Tue, 25 Feb 2020 12:57:47 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdXzPPNqQom82frY1B6LMre+VD9fPAf98BZ3eo2DhgwoYg@mail.gmail.com>
+References: <20200221194731.13814-1-lukasz.luba@arm.com>
+ <20200221194731.13814-5-lukasz.luba@arm.com>
+In-Reply-To: <20200221194731.13814-5-lukasz.luba@arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 25 Feb 2020 14:57:36 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ1D6Cf2cxdskDS2JCEe8ja6uUeoSpA3i-wxNgi=S1SYA@mail.gmail.com>
+Message-ID: <CAL_JsqJ1D6Cf2cxdskDS2JCEe8ja6uUeoSpA3i-wxNgi=S1SYA@mail.gmail.com>
+Subject: Re: [PATCH v3 4/4] drm/panfrost: Register to the Energy Model with
+ devfreq device
+To: Lukasz Luba <lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_124156_807590_0C3D049E 
-X-CRM114-Status: GOOD (  17.92  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200225_125748_990346_CA589E97 
+X-CRM114-Status: GOOD (  17.50  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
@@ -62,6 +67,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,58 +84,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Donghoon Yu <hoony.yu@samsung.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+Cc: Nishanth Menon <nm@ti.com>, juri.lelli@redhat.com,
+ Peter Zijlstra <peterz@infradead.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, dri-devel <dri-devel@lists.freedesktop.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, bsegall@google.com,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ Morten Rasmussen <Morten.Rasmussen@arm.com>, patrick.bellasi@matbug.net,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Steven Price <steven.price@arm.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Ingo Molnar <mingo@redhat.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Zhang Rui <rui.zhang@intel.com>, mgorman@suse.de, orjan.eide@arm.com,
+ Daniel Vetter <daniel@ffwll.ch>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Steven Rostedt <rostedt@goodmis.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-omap <linux-omap@vger.kernel.org>, Dietmar.Eggemann@arm.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, David Airlie <airlied@linux.ie>,
+ javi.merino@arm.com, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ qperret@google.com, Stephen Boyd <sboyd@kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Shinbeom Choi <sbeom.choi@samsung.com>,
- Hyunki Koo <kkoos00@naver.com>, Kukjin Kim <kgene@kernel.org>,
- HYUN-KI KOO <hyunki00.koo@samsung.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Sascha Hauer <kernel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 09:52:38AM +0100, Geert Uytterhoeven wrote:
-> On Thu, Feb 20, 2020 at 1:13 PM Bartlomiej Zolnierkiewicz
-> <b.zolnierkie@samsung.com> wrote:
-> > On 2/20/20 11:26 AM, Greg Kroah-Hartman wrote:
-> > > There is no need to tie this driver to only a specific SoC, or compile
-> > > test, so remove that dependancy from the Kconfig rules.
-> >
-> > samsung_tty driver is hardware specific driver so why should we
-> > build it for any platform?
+On Fri, Feb 21, 2020 at 1:48 PM Lukasz Luba <lukasz.luba@arm.com> wrote:
+>
+> Add device to the Energy Model framework. It will create a dedicated
+> and unified data structures used i.e. in the thermal framework.
+> The power model used in dev_pm_opp subsystem is simplified and created
+> based on DT 'dynamic-power-coefficient', volatage and frequency. It is
 
-Why not?
+typo.
 
-Seriously, this "only this one specific SoC is allowed to build this
-driver" is crazy.  It prevents anyone from building a generic kernel
-with drivers as a module which are loaded as needed.
+> similar to the CPU model used in Energy Aware Scheduler.
+>
+> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+> ---
+>  drivers/gpu/drm/panfrost/panfrost_devfreq.c | 3 +++
+>  1 file changed, 3 insertions(+)
+>
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_devfreq.c b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+> index 413987038fbf..d527a5113950 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+> +++ b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+> @@ -105,6 +105,8 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
+>         }
+>         pfdev->devfreq.devfreq = devfreq;
+>
+> +       dev_pm_opp_of_register_em(dev, NULL);
 
-That needs to be fixed, and removing this unneeded dependancy on this
-driver allows it to be build for any system and then only loaded when
-needed.
+Can't fail?
 
-> > This change seems to defeat the whole purpose behind COMPILE_TEST
-> > config option (which allows us to build hardware-specific drivers
-> > without needlessly presenting the user with tons of non-relevant
-> > config options).
-> >
-> > Please explain this change some more, are you planing to remove
-> > COMPILE_TEST config option?
+> +
+>         cooling = of_devfreq_cooling_register(dev->of_node, devfreq);
+>         if (IS_ERR(cooling))
+>                 DRM_DEV_INFO(dev, "Failed to register cooling device\n");
+> @@ -118,6 +120,7 @@ void panfrost_devfreq_fini(struct panfrost_device *pfdev)
+>  {
+>         if (pfdev->devfreq.cooling)
+>                 devfreq_cooling_unregister(pfdev->devfreq.cooling);
+> +       dev_pm_opp_of_unregister_em(&pfdev->pdev->dev);
+>         dev_pm_opp_of_remove_table(&pfdev->pdev->dev);
 
-I want to get rid of this:
+Does it make sense to keep this (and the registration side) as
+separate calls? Perhaps there's some ordering requirement with
+everything between dev_pm_opp_of_add_table() and
+dev_pm_opp_of_register_em()?
 
-> > > -     depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
+While you're just adding 2 lines, it seems there's a lot of complexity
+exposed to the driver just to initialize devfreq/opp.
 
-We should not need PLAT_SAMSUNG or ARCH_EXYNOS at all, we should be able
-to build an arm64 kernel for all platforms.
-
-thanks,
-
-greg k-h
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
