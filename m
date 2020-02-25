@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E150516BDC9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 10:46:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C02EC16BE12
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 10:58:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=C/VKH/dArvGYVCC6DhkL89izX9U71JRkNBHMlW+un5Q=; b=ptjQX32YG8goJtto6QbAXiX3C
-	gtoFDfLgn44PBfM1IRPqKkWvayLvMFyvVEVXkaHWgKkaj7xmRjY8O9kfRY4XyzN6lrDOCru6elTAA
-	vlKu30zCAzOS8nf+nUATMBAx7IkIBagQDXU8FBaFVGVOpzT2TeN9rkLAc2J1zibGnF+mcuSHDFwCY
-	vWiMxOwAazU5addKsntNl2LJpxUEBuewSKINdhpE3WzrkoOySAd8NVQXLMuqfkQ3nTbR32n49OHh2
-	McOoH3NWDP/edEgQniql2L7WWC82RSJzInMK4j8EHehE9fFMC9mOiKui/9uJZ+UZOK3Y6rahTFDLc
-	PgnSgUN8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Date:
+	From:References:In-Reply-To:Message-Id:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=NOMv4r3sujgA6IgoCI80FPtqziK7hwaOVWM6RogLTp4=; b=OShXmM7AgC+FmgHwxj368aY/JS
+	2HIZXZ8mv8ABlCkIMBhowxDn+WXkn7y14Y9oLuwnEfNHCjx4G+/dVnQYGCbeYSkS9TScbdjmaMbci
+	1ElnDT3QPiamyVQv7CX1B5DONZUJK26M2KmU3XQv6xyt04qQjLhxzVZrUIJcnLuxbFieUuJrS1cyC
+	+1kSM5m7WMRBKc8dDSI6AxesppomUYJXycap/vvEzRpIrFiRv77kdl7n3Q/b7Jeqcf+MZxX3hISSR
+	Xsxf87Ja+AoH3u4OGojSgPn8goJl4elpwFzEbegEM0enO1vEty90f9tfDyDCYLd2pqtycgRkqnCeV
+	kWO9xfMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Wml-0002j9-TF; Tue, 25 Feb 2020 09:45:51 +0000
-Received: from olimex.com ([2001:470:0:1f2::b869:4820])
+	id 1j6WzD-0000nL-Q2; Tue, 25 Feb 2020 09:58:43 +0000
+Received: from mailout2.hostsharing.net ([2a01:37:3000::53df:4ee9:0])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6WmZ-0002eD-Uy
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 09:45:42 +0000
-Received: from 94.155.250.134 ([94.155.250.134]) by olimex.com with ESMTPSA
- (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
- (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
- for <linux-arm-kernel@lists.infradead.org>; Tue, 25 Feb 2020 01:45:33 -0800
-Subject: Re: [linux-sunxi] [PATCH v3 1/1] drm: sun4i: hdmi: Add support for
- sun4i HDMI encoder audio
-To: wens@kernel.org, Stefan Mavrodiev <stefan@olimex.com>
-References: <20200128140642.8404-1-stefan@olimex.com>
- <20200128140642.8404-2-stefan@olimex.com>
- <CAGb2v66kEACD0oOqoL2sx8JJJAnZzZc+EwEK8+74bZx48L-Z5A@mail.gmail.com>
-From: Stefan Mavrodiev <stefan@olimex.com>
-Message-ID: <81b0a464-22f7-4d36-e9bc-f08a52accdbc@olimex.com>
-Date: Tue, 25 Feb 2020 11:45:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <CAGb2v66kEACD0oOqoL2sx8JJJAnZzZc+EwEK8+74bZx48L-Z5A@mail.gmail.com>
-Content-Language: en-US
+ id 1j6Wyr-0000i1-Tp; Tue, 25 Feb 2020 09:58:23 +0000
+Received: from h08.hostsharing.net (h08.hostsharing.net
+ [IPv6:2a01:37:1000::53df:5f1c:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client CN "*.hostsharing.net",
+ Issuer "COMODO RSA Domain Validation Secure Server CA" (not verified))
+ by mailout2.hostsharing.net (Postfix) with ESMTPS id 1E07D1008D00B;
+ Tue, 25 Feb 2020 10:50:42 +0100 (CET)
+Received: from localhost (unknown [87.130.102.138])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by h08.hostsharing.net (Postfix) with ESMTPSA id CC23461146E6;
+ Tue, 25 Feb 2020 10:50:41 +0100 (CET)
+X-Mailbox-Line: From f97868ba4e9b86ddad71f44ec9d8b3b7d8daa1ea Mon Sep 17
+ 00:00:00 2001
+Message-Id: <f97868ba4e9b86ddad71f44ec9d8b3b7d8daa1ea.1582618537.git.lukas@wunner.de>
+In-Reply-To: <1a5735e8-b876-92e4-9f1e-687f5abf8708@i2se.com>
+References: <1a5735e8-b876-92e4-9f1e-687f5abf8708@i2se.com>
+From: Lukas Wunner <lukas@wunner.de>
+Date: Tue, 25 Feb 2020 10:50:41 +0100
+Subject: [PATCH v4] irqchip/bcm2835: Quiesce IRQs left enabled by bootloader
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_014540_011553_E9D41092 
-X-CRM114-Status: GOOD (  22.55  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200225_015822_137152_93679CBB 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,706 +66,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- Lars-Peter Clausen <lars@metafoo.de>, Chen-Yu Tsai <wens@csie.org>,
- Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
- Takashi Iwai <tiwai@suse.com>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Mark Brown <broonie@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, Jaroslav Kysela <perex@perex.cz>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Kristina Brooks <notstina@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Serge Schneider <serge@raspberrypi.org>,
+ linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Matthias Brugger <mbrugger@suse.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
+ linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Per the spec, the BCM2835's IRQs are all disabled when coming out of
+power-on reset.  Its IRQ driver assumes that's still the case when the
+kernel boots and does not perform any initialization of the registers.
+However the Raspberry Pi Foundation's bootloader leaves the USB
+interrupt enabled when handing over control to the kernel.
 
-On 1/29/20 6:34 PM, Chen-Yu Tsai wrote:
-> On Tue, Jan 28, 2020 at 10:07 PM Stefan Mavrodiev <stefan@olimex.com> wrote:
->> Add HDMI audio support for the sun4i-hdmi encoder, used on
->> the older Allwinner chips - A10, A20, A31.
->>
->> Most of the code is based on the BSP implementation. In it
->> dditional formats are supported (S20_3LE and S24_LE), however
->> there where some problems with them and only S16_LE is left.
->>
->> Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
->> ---
->> Changes for v3:
->>   - Instead of platfrom_driver dynammicly register/unregister card
->>   - Add Kconfig dependencies
->>   - Restrore drvdata after card unregistering
->>
->> Changes for v2:
->>   - Create a new platform driver instead of using the HDMI encoder
->>   - Expose a new kcontrol to the userspace holding the ELD data
->>   - Wrap all macro arguments in parentheses
->>
->>   drivers/gpu/drm/sun4i/Kconfig            |  11 +
->>   drivers/gpu/drm/sun4i/Makefile           |   3 +
->>   drivers/gpu/drm/sun4i/sun4i_hdmi.h       |  37 ++
->>   drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c | 450 +++++++++++++++++++++++
->>   drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c   |  14 +
->>   5 files changed, 515 insertions(+)
->>   create mode 100644 drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c
-> Since this is actually an audio driver, please include all the ALSA / ASoC
-> maintainers and mailing lists (CC-ed).
->
->> diff --git a/drivers/gpu/drm/sun4i/Kconfig b/drivers/gpu/drm/sun4i/Kconfig
->> index 37e90e42943f..ca2ab5d53dd4 100644
->> --- a/drivers/gpu/drm/sun4i/Kconfig
->> +++ b/drivers/gpu/drm/sun4i/Kconfig
->> @@ -23,6 +23,17 @@ config DRM_SUN4I_HDMI
->>            Choose this option if you have an Allwinner SoC with an HDMI
->>            controller.
->>
->> +config DRM_SUN4I_HDMI_AUDIO
->> +       bool "Allwinner A10 HDMI Audio Support"
->> +       default y
->> +       depends on DRM_SUN4I_HDMI
->> +       depends on SND_SOC=y || SND_SOC=DRM_SUN4I_HDMI
->> +       select SND_PCM_ELD
->> +       select SND_SOC_GENERIC_DMAENGINE_PCM
->> +       help
->> +         Choose this option if you have an Allwinner SoC with an HDMI
->> +         controller and want to use audio.
->> +
->>   config DRM_SUN4I_HDMI_CEC
->>          bool "Allwinner A10 HDMI CEC Support"
->>          depends on DRM_SUN4I_HDMI
->> diff --git a/drivers/gpu/drm/sun4i/Makefile b/drivers/gpu/drm/sun4i/Makefile
->> index 0d04f2447b01..492bfd28ad2e 100644
->> --- a/drivers/gpu/drm/sun4i/Makefile
->> +++ b/drivers/gpu/drm/sun4i/Makefile
->> @@ -5,6 +5,9 @@ sun4i-frontend-y                += sun4i_frontend.o
->>   sun4i-drm-y                    += sun4i_drv.o
->>   sun4i-drm-y                    += sun4i_framebuffer.o
->>
->> +ifdef CONFIG_DRM_SUN4I_HDMI_AUDIO
->> +sun4i-drm-hdmi-y               += sun4i_hdmi_audio.o
->> +endif
->>   sun4i-drm-hdmi-y               += sun4i_hdmi_ddc_clk.o
->>   sun4i-drm-hdmi-y               += sun4i_hdmi_enc.o
->>   sun4i-drm-hdmi-y               += sun4i_hdmi_i2c.o
->> diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi.h b/drivers/gpu/drm/sun4i/sun4i_hdmi.h
->> index 7ad3f06c127e..28621d289655 100644
->> --- a/drivers/gpu/drm/sun4i/sun4i_hdmi.h
->> +++ b/drivers/gpu/drm/sun4i/sun4i_hdmi.h
->> @@ -42,7 +42,32 @@
->>   #define SUN4I_HDMI_VID_TIMING_POL_VSYNC                BIT(1)
->>   #define SUN4I_HDMI_VID_TIMING_POL_HSYNC                BIT(0)
->>
->> +#define SUN4I_HDMI_AUDIO_CTRL_REG      0x040
->> +#define SUN4I_HDMI_AUDIO_CTRL_ENABLE           BIT(31)
->> +#define SUN4I_HDMI_AUDIO_CTRL_RESET            BIT(30)
->> +
->> +#define SUN4I_HDMI_AUDIO_FMT_REG       0x048
->> +#define SUN4I_HDMI_AUDIO_FMT_SRC               BIT(31)
->> +#define SUN4I_HDMI_AUDIO_FMT_LAYOUT            BIT(3)
->> +#define SUN4I_HDMI_AUDIO_FMT_CH_CFG(n)         ((n) - 1)
->> +#define SUN4I_HDMI_AUDIO_FMT_CH_CFG_MASK       GENMASK(2, 0)
->> +
->> +#define SUN4I_HDMI_AUDIO_PCM_REG       0x4c
->> +#define SUN4I_HDMI_AUDIO_PCM_CH_MAP(n, m)      (((m) - 1) << ((n) * 4))
->> +#define SUN4I_HDMI_AUDIO_PCM_CH_MAP_MASK(n)    (GENMASK(2, 0) << ((n) * 4))
->> +
->> +#define SUN4I_HDMI_AUDIO_CTS_REG       0x050
->> +#define SUN4I_HDMI_AUDIO_CTS(n)                        ((n) & GENMASK(19, 0))
->> +
->> +#define SUN4I_HDMI_AUDIO_N_REG         0x054
->> +#define SUN4I_HDMI_AUDIO_N(n)                  ((n) & GENMASK(19, 0))
->> +
->> +#define SUN4I_HDMI_AUDIO_STAT0_REG     0x58
->> +#define SUN4I_HDMI_AUDIO_STAT0_FREQ(n)         ((n) << 24)
->> +#define SUN4I_HDMI_AUDIO_STAT0_FREQ_MASK       GENMASK(27, 24)
->> +
->>   #define SUN4I_HDMI_AVI_INFOFRAME_REG(n)        (0x080 + (n))
->> +#define SUN4I_HDMI_AUDIO_INFOFRAME_REG(n)      (0x0a0 + (n))
->>
->>   #define SUN4I_HDMI_PAD_CTRL0_REG       0x200
->>   #define SUN4I_HDMI_PAD_CTRL0_BIASEN            BIT(31)
->> @@ -242,6 +267,11 @@ struct sun4i_hdmi_variant {
->>          bool                    ddc_fifo_has_dir;
->>   };
->>
->> +struct sun4i_hdmi_audio {
->> +       struct snd_soc_card             *card;
->> +       u8                              channels;
->> +};
->> +
->>   struct sun4i_hdmi {
->>          struct drm_connector    connector;
->>          struct drm_encoder      encoder;
->> @@ -283,9 +313,14 @@ struct sun4i_hdmi {
->>          struct regmap_field     *field_ddc_sda_en;
->>          struct regmap_field     *field_ddc_sck_en;
->>
->> +
->>          struct sun4i_drv        *drv;
->>
->>          bool                    hdmi_monitor;
->> +       bool                    hdmi_audio;
->> +
->> +       struct sun4i_hdmi_audio audio;
->> +
->>          struct cec_adapter      *cec_adap;
->>
->>          const struct sun4i_hdmi_variant *variant;
->> @@ -294,5 +329,7 @@ struct sun4i_hdmi {
->>   int sun4i_ddc_create(struct sun4i_hdmi *hdmi, struct clk *clk);
->>   int sun4i_tmds_create(struct sun4i_hdmi *hdmi);
->>   int sun4i_hdmi_i2c_create(struct device *dev, struct sun4i_hdmi *hdmi);
->> +int sun4i_hdmi_audio_create(struct sun4i_hdmi *hdmi);
->> +void sun4i_hdmi_audio_destroy(struct sun4i_hdmi *hdmi);
->>
->>   #endif /* _SUN4I_HDMI_H_ */
->> diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c
->> new file mode 100644
->> index 000000000000..f42f2cea4e9e
->> --- /dev/null
->> +++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_audio.c
->> @@ -0,0 +1,450 @@
->> +// SPDX-License-Identifier: GPL-2.0-or-later
->> +/*
->> + * Copyright (C) 2020 Olimex Ltd.
->> + *   Author: Stefan Mavrodiev <stefan@olimex.com>
->> + */
->> +#include <linux/dma-mapping.h>
->> +#include <linux/dmaengine.h>
->> +#include <linux/module.h>
->> +#include <linux/of_dma.h>
->> +#include <linux/regmap.h>
->> +
->> +#include <drm/drm_print.h>
->> +
->> +#include <sound/dmaengine_pcm.h>
->> +#include <sound/pcm_drm_eld.h>
->> +#include <sound/pcm_params.h>
->> +#include <sound/soc.h>
->> +
->> +#include "sun4i_hdmi.h"
->> +
->> +static int sun4i_hdmi_audio_ctl_eld_info(struct snd_kcontrol *kcontrol,
->> +                                        struct snd_ctl_elem_info *uinfo)
->> +{
->> +       uinfo->type = SNDRV_CTL_ELEM_TYPE_BYTES;
->> +       uinfo->count = MAX_ELD_BYTES;
->> +       return 0;
->> +}
->> +
->> +static int sun4i_hdmi_audio_ctl_eld_get(struct snd_kcontrol *kcontrol,
->> +                                       struct snd_ctl_elem_value *ucontrol)
->> +{
->> +       struct snd_soc_component *component = snd_kcontrol_chip(kcontrol);
->> +       struct snd_soc_card *card = snd_soc_component_get_drvdata(component);
->> +       struct sun4i_hdmi *hdmi = snd_soc_card_get_drvdata(card);
->> +
->> +       memcpy(ucontrol->value.bytes.data,
->> +              hdmi->connector.eld,
->> +              MAX_ELD_BYTES);
->> +
->> +       return 0;
->> +}
->> +
->> +static const struct snd_kcontrol_new sun4i_hdmi_audio_controls[] = {
->> +       {
->> +               .access = SNDRV_CTL_ELEM_ACCESS_READ |
->> +                         SNDRV_CTL_ELEM_ACCESS_VOLATILE,
->> +               .iface = SNDRV_CTL_ELEM_IFACE_PCM,
->> +               .name = "ELD",
->> +               .info = sun4i_hdmi_audio_ctl_eld_info,
->> +               .get = sun4i_hdmi_audio_ctl_eld_get,
->> +       },
->> +};
->> +
->> +static const struct snd_soc_dapm_widget sun4i_hdmi_audio_widgets[] = {
->> +       SND_SOC_DAPM_OUTPUT("TX"),
->> +};
->> +
->> +static const struct snd_soc_dapm_route sun4i_hdmi_audio_routes[] = {
->> +       { "TX", NULL, "Playback" },
->> +};
->> +
->> +static const struct snd_soc_component_driver sun4i_hdmi_audio_component = {
->> +       .controls               = sun4i_hdmi_audio_controls,
->> +       .num_controls           = ARRAY_SIZE(sun4i_hdmi_audio_controls),
->> +       .dapm_widgets           = sun4i_hdmi_audio_widgets,
->> +       .num_dapm_widgets       = ARRAY_SIZE(sun4i_hdmi_audio_widgets),
->> +       .dapm_routes            = sun4i_hdmi_audio_routes,
->> +       .num_dapm_routes        = ARRAY_SIZE(sun4i_hdmi_audio_routes),
->> +};
->> +
->> +static int sun4i_hdmi_audio_startup(struct snd_pcm_substream *substream,
->> +                                   struct snd_soc_dai *dai)
->> +{
->> +       struct snd_soc_card *card = snd_soc_dai_get_drvdata(dai);
->> +       struct sun4i_hdmi *hdmi = snd_soc_card_get_drvdata(card);
->> +       u32 reg;
->> +       int ret;
->> +
->> +       regmap_write(hdmi->regmap, SUN4I_HDMI_AUDIO_CTRL_REG, 0);
->> +       regmap_write(hdmi->regmap,
->> +                    SUN4I_HDMI_AUDIO_CTRL_REG,
->> +                    SUN4I_HDMI_AUDIO_CTRL_RESET);
->> +       ret = regmap_read_poll_timeout(hdmi->regmap,
->> +                                      SUN4I_HDMI_AUDIO_CTRL_REG,
->> +                                      reg, !reg, 100, 50000);
->> +       if (ret < 0) {
->> +               DRM_ERROR("Failed to reset HDMI Audio\n");
->> +               return ret;
->> +       }
->> +
->> +       regmap_write(hdmi->regmap,
->> +                    SUN4I_HDMI_AUDIO_CTRL_REG,
->> +                    SUN4I_HDMI_AUDIO_CTRL_ENABLE);
->> +
->> +       return snd_pcm_hw_constraint_eld(substream->runtime,
->> +                                       hdmi->connector.eld);
->> +}
->> +
->> +static void sun4i_hdmi_audio_shutdown(struct snd_pcm_substream *substream,
->> +                                     struct snd_soc_dai *dai)
->> +{
->> +       struct snd_soc_card *card = snd_soc_dai_get_drvdata(dai);
->> +       struct sun4i_hdmi *hdmi = snd_soc_card_get_drvdata(card);
->> +
->> +       regmap_write(hdmi->regmap, SUN4I_HDMI_AUDIO_CTRL_REG, 0);
->> +}
->> +
->> +static int sun4i_hdmi_setup_audio_infoframes(struct sun4i_hdmi *hdmi)
->> +{
->> +       union hdmi_infoframe frame;
->> +       u8 buffer[14];
->> +       int i, ret;
->> +
->> +       ret = hdmi_audio_infoframe_init(&frame.audio);
->> +       if (ret < 0) {
->> +               DRM_ERROR("Failed to init HDMI audio infoframe\n");
->> +               return ret;
->> +       }
->> +
->> +       frame.audio.coding_type = HDMI_AUDIO_CODING_TYPE_STREAM;
->> +       frame.audio.sample_frequency = HDMI_AUDIO_SAMPLE_FREQUENCY_STREAM;
->> +       frame.audio.sample_size = HDMI_AUDIO_SAMPLE_SIZE_STREAM;
->> +       frame.audio.channels = hdmi->audio.channels;
->> +
->> +       ret = hdmi_infoframe_pack(&frame, buffer, sizeof(buffer));
->> +       if (ret < 0) {
->> +               DRM_ERROR("Failed to pack HDMI audio infoframe\n");
->> +               return ret;
->> +       }
->> +
->> +       for (i = 0; i < sizeof(buffer); i++)
->> +               writeb(buffer[i],
->> +                      hdmi->base + SUN4I_HDMI_AUDIO_INFOFRAME_REG(i));
->> +
->> +       return 0;
->> +}
->> +
->> +static void sun4i_hdmi_audio_set_cts_n(struct sun4i_hdmi *hdmi,
->> +                                      struct snd_pcm_hw_params *params)
->> +{
->> +       struct drm_encoder *encoder = &hdmi->encoder;
->> +       struct drm_crtc *crtc = encoder->crtc;
->> +       const struct drm_display_mode *mode = &crtc->state->adjusted_mode;
->> +       u32 rate = params_rate(params);
->> +       u32 n, cts;
->> +       u64 tmp;
->> +
->> +       /**
->> +        * Calculate Cycle Time Stamp (CTS) and Numerator (N):
->> +        *
->> +        * N = 128 * Samplerate / 1000
->> +        * CTS = (Ftdms * N) / (128 * Samplerate)
->> +        */
->> +
->> +       n = 128 * rate / 1000;
->> +       tmp = (u64)(mode->clock * 1000) * n;
->> +       do_div(tmp, 128 * rate);
->> +       cts = tmp;
->> +
->> +       regmap_write(hdmi->regmap,
->> +                    SUN4I_HDMI_AUDIO_CTS_REG,
->> +                    SUN4I_HDMI_AUDIO_CTS(cts));
->> +
->> +       regmap_write(hdmi->regmap,
->> +                    SUN4I_HDMI_AUDIO_N_REG,
->> +                    SUN4I_HDMI_AUDIO_N(n));
->> +}
->> +
->> +static int sun4i_hdmi_audio_set_hw_rate(struct sun4i_hdmi *hdmi,
->> +                                       struct snd_pcm_hw_params *params)
->> +{
->> +       u32 rate = params_rate(params);
->> +       u32 val;
->> +
->> +       switch (rate) {
->> +       case 44100:
->> +               val = 0x0;
->> +               break;
->> +       case 48000:
->> +               val = 0x2;
->> +               break;
->> +       case 32000:
->> +               val = 0x3;
->> +               break;
->> +       case 88200:
->> +               val = 0x8;
->> +               break;
->> +       case 96000:
->> +               val = 0x9;
->> +               break;
->> +       case 176400:
->> +               val = 0xc;
->> +               break;
->> +       case 192000:
->> +               val = 0xe;
->> +               break;
->> +       default:
->> +               return -EINVAL;
->> +       }
->> +
->> +       regmap_update_bits(hdmi->regmap,
->> +                          SUN4I_HDMI_AUDIO_STAT0_REG,
->> +                          SUN4I_HDMI_AUDIO_STAT0_FREQ_MASK,
->> +                          SUN4I_HDMI_AUDIO_STAT0_FREQ(val));
->> +
->> +       return 0;
->> +}
->> +
->> +static int sun4i_hdmi_audio_set_hw_channels(struct sun4i_hdmi *hdmi,
->> +                                           struct snd_pcm_hw_params *params)
->> +{
->> +       u32 channels = params_channels(params);
->> +
->> +       if (channels > 8)
->> +               return -EINVAL;
->> +
->> +       hdmi->audio.channels = channels;
->> +
->> +       regmap_update_bits(hdmi->regmap,
->> +                          SUN4I_HDMI_AUDIO_FMT_REG,
->> +                          SUN4I_HDMI_AUDIO_FMT_LAYOUT,
->> +                          (channels > 2) ? SUN4I_HDMI_AUDIO_FMT_LAYOUT : 0);
->> +
->> +       regmap_update_bits(hdmi->regmap,
->> +                          SUN4I_HDMI_AUDIO_FMT_REG,
->> +                          SUN4I_HDMI_AUDIO_FMT_CH_CFG_MASK,
->> +                          SUN4I_HDMI_AUDIO_FMT_CH_CFG(channels));
->> +
->> +       regmap_write(hdmi->regmap, SUN4I_HDMI_AUDIO_PCM_REG, 0x76543210);
->> +
->> +       /**
->> +        * If only one channel is required, send the same sample
->> +        * to the sink device as a left and right channel.
->> +        */
->> +       if (channels == 1)
->> +               regmap_update_bits(hdmi->regmap,
->> +                                  SUN4I_HDMI_AUDIO_PCM_REG,
->> +                                  SUN4I_HDMI_AUDIO_PCM_CH_MAP_MASK(1),
->> +                                  SUN4I_HDMI_AUDIO_PCM_CH_MAP(1, 1));
->> +
->> +       return 0;
->> +}
->> +
->> +static int sun4i_hdmi_audio_hw_params(struct snd_pcm_substream *substream,
->> +                                     struct snd_pcm_hw_params *params,
->> +                                     struct snd_soc_dai *dai)
->> +{
->> +       struct snd_soc_card *card = snd_soc_dai_get_drvdata(dai);
->> +       struct sun4i_hdmi *hdmi = snd_soc_card_get_drvdata(card);
->> +       int ret;
->> +
->> +       ret = sun4i_hdmi_audio_set_hw_rate(hdmi, params);
->> +       if (ret < 0)
->> +               return ret;
->> +
->> +       ret = sun4i_hdmi_audio_set_hw_channels(hdmi, params);
->> +       if (ret < 0)
->> +               return ret;
->> +
->> +       sun4i_hdmi_audio_set_cts_n(hdmi, params);
->> +
->> +       return 0;
->> +}
->> +
->> +static int sun4i_hdmi_audio_trigger(struct snd_pcm_substream *substream,
->> +                                   int cmd,
->> +                                   struct snd_soc_dai *dai)
->> +{
->> +       struct snd_soc_card *card = snd_soc_dai_get_drvdata(dai);
->> +       struct sun4i_hdmi *hdmi = snd_soc_card_get_drvdata(card);
->> +       int ret = 0;
->> +
->> +       switch (cmd) {
->> +       case SNDRV_PCM_TRIGGER_START:
->> +               ret = sun4i_hdmi_setup_audio_infoframes(hdmi);
->> +               break;
->> +       default:
->> +               break;
->> +       }
->> +
->> +       return ret;
->> +}
->> +
->> +static const struct snd_soc_dai_ops sun4i_hdmi_audio_dai_ops = {
->> +       .startup = sun4i_hdmi_audio_startup,
->> +       .shutdown = sun4i_hdmi_audio_shutdown,
->> +       .hw_params = sun4i_hdmi_audio_hw_params,
->> +       .trigger = sun4i_hdmi_audio_trigger,
->> +};
->> +
->> +static int sun4i_hdmi_audio_dai_probe(struct snd_soc_dai *dai)
->> +{
->> +       struct snd_dmaengine_dai_dma_data *dma_data;
->> +
->> +       dma_data = devm_kzalloc(dai->dev, sizeof(*dma_data), GFP_KERNEL);
->> +       if (!dma_data)
->> +               return -ENOMEM;
->> +
->> +       dma_data->addr_width = DMA_SLAVE_BUSWIDTH_4_BYTES;
->> +       dma_data->maxburst = 8;
->> +
->> +       snd_soc_dai_init_dma_data(dai, dma_data, NULL);
->> +
->> +       return 0;
->> +}
->> +
->> +static struct snd_soc_dai_driver sun4i_hdmi_audio_dai = {
->> +       .name = "HDMI",
->> +       .ops = &sun4i_hdmi_audio_dai_ops,
->> +       .probe = sun4i_hdmi_audio_dai_probe,
->> +       .playback = {
->> +               .stream_name    = "Playback",
->> +               .channels_min   = 1,
->> +               .channels_max   = 8,
->> +               .formats        = SNDRV_PCM_FMTBIT_S16_LE,
->> +               .rates          = SNDRV_PCM_RATE_8000_192000,
->> +       },
->> +};
->> +
->> +static const struct snd_pcm_hardware sun4i_hdmi_audio_pcm_hardware = {
->> +       .info                   = SNDRV_PCM_INFO_INTERLEAVED |
->> +                                 SNDRV_PCM_INFO_BLOCK_TRANSFER |
->> +                                 SNDRV_PCM_INFO_MMAP |
->> +                                 SNDRV_PCM_INFO_MMAP_VALID |
->> +                                 SNDRV_PCM_INFO_PAUSE |
->> +                                 SNDRV_PCM_INFO_RESUME,
->> +       .formats                = SNDRV_PCM_FMTBIT_S16_LE,
->> +       .rates                  = SNDRV_PCM_RATE_8000_192000,
->> +       .rate_min               = 8000,
->> +       .rate_max               = 192000,
->> +       .channels_min           = 1,
->> +       .channels_max           = 8,
->> +       .buffer_bytes_max       = 128 * 1024,
->> +       .period_bytes_min       = 4 * 1024,
->> +       .period_bytes_max       = 32 * 1024,
->> +       .periods_min            = 2,
->> +       .periods_max            = 8,
->> +       .fifo_size              = 128,
->> +};
->> +
->> +static const struct snd_dmaengine_pcm_config sun4i_hdmi_audio_pcm_config = {
->> +       .chan_names[SNDRV_PCM_STREAM_PLAYBACK] = "audio-tx",
->> +       .pcm_hardware = &sun4i_hdmi_audio_pcm_hardware,
->> +       .prealloc_buffer_size = 128 * 1024,
->> +       .prepare_slave_config = snd_dmaengine_pcm_prepare_slave_config,
->> +};
->> +
->> +struct snd_soc_card sun4i_hdmi_audio_card = {
->> +       .name = "sun4i-hdmi",
->> +};
->> +
->> +int sun4i_hdmi_audio_create(struct sun4i_hdmi *hdmi)
->> +{
->> +       struct snd_soc_card *card = &sun4i_hdmi_audio_card;
->> +       struct snd_soc_dai_link_component *comp;
->> +       struct snd_soc_dai_link *link;
->> +       int ret;
->> +
->> +       ret = snd_dmaengine_pcm_register(hdmi->dev,
->> +                                        &sun4i_hdmi_audio_pcm_config, 0);
->> +       if (ret < 0) {
->> +               DRM_ERROR("Could not register PCM\n");
->> +               return ret;
->> +       }
->> +
->> +       ret = snd_soc_register_component(hdmi->dev,
->> +                                        &sun4i_hdmi_audio_component,
->> +                                        &sun4i_hdmi_audio_dai, 1);
->> +       if (ret < 0) {
->> +               DRM_ERROR("Could not register DAI\n");
->> +               goto unregister_pcm;
->> +       }
->> +
->> +       link = devm_kzalloc(hdmi->dev, sizeof(*link), GFP_KERNEL);
->> +       if (!link) {
->> +               ret = -ENOMEM;
->> +               goto unregister_component;
->> +       }
->> +
->> +       comp = devm_kzalloc(hdmi->dev, sizeof(*comp) * 3, GFP_KERNEL);
->> +       if (!comp) {
->> +               ret = -ENOMEM;
->> +               goto unregister_component;
->> +       }
->> +
->> +       link->cpus = &comp[0];
->> +       link->codecs = &comp[1];
->> +       link->platforms = &comp[2];
->> +
->> +       link->num_cpus = 1;
->> +       link->num_codecs = 1;
->> +       link->num_platforms = 1;
->> +
->> +       link->playback_only = 1;
->> +
->> +       link->name = "SUN4I-HDMI";
->> +       link->stream_name = "SUN4I-HDMI PCM";
->> +
->> +       link->codecs->name = dev_name(hdmi->dev);
->> +       link->codecs->dai_name  = sun4i_hdmi_audio_dai.name;
->> +
->> +       link->cpus->dai_name = dev_name(hdmi->dev);
->> +
->> +       link->platforms->name = dev_name(hdmi->dev);
->> +
->> +       link->dai_fmt = SND_SOC_DAIFMT_I2S;
->> +
->> +       card->dai_link = link;
->> +       card->num_links = 1;
->> +       card->dev = hdmi->dev;
->> +
->> +       hdmi->audio.card = card;
->> +
->> +       /**
->> +        * snd_soc_register_card() will overwrite the driver_data pointer.
->> +        * So before registering the card, store the original pointer in
->> +        * card->drvdata.
->> +        */
->> +       snd_soc_card_set_drvdata(card, hdmi);
->> +       ret = snd_soc_register_card(card);
->> +       if (ret)
->> +               goto unregister_component;
-> So using ASoC with all the components IMHO is just adding dead weight. The
-> audio interface for this particular hardware is just a FIFO that needs to
-> be written to by an external DMA engine, and a bunch of controls to setup
-> the parameters of the HDMI audio stream. There's no power sequencing to do,
-> and no actual individual components to control. There's no reason you couldn't
-> use just the ALSA DMAENGINE helpers to create a simple ALSA sound card.
->
-> (Maybe we could clean it up after it's merged? Would there be any issues
->   with backward compatibility?)
->
-> I think the only example of this besides ASoC is the PXA2xx sound library
-> and AC97 driver:
->
->    - sound/arm/pxa2xx-pcm-lib.c
->    - sound/arm/pxa2xx-ac97.c
->
-> Regards
-> ChenYu
->
->
-Hi,
+Quiesce IRQs and the FIQ if they were left enabled and log a message to
+let users know that they should update the bootloader once a fixed
+version is released.
 
-I'd like to hear Maxime opinion on this. I get it why it's overkill to 
-use ASoC.
-However it will take only couple of lines to make the changes for v4. On 
-the other
-side with dropping the ASoC, the driver must be almost rewritten. It's 
-not such a big deal,
-but I want to know that this is the right thing to do.
+If the USB interrupt is not quiesced and the USB driver later on claims
+the FIQ (as it does on the Raspberry Pi Foundation's downstream kernel),
+interrupt latency for all other peripherals increases and occasional
+lockups occur.  That's because both the FIQ and the normal USB interrupt
+fire simultaneously:
 
-Best regards,
-Stefan Mavrodiev
+On a multicore Raspberry Pi, if normal interrupts are routed to CPU 0
+and the FIQ to CPU 1 (hardcoded in the Foundation's kernel), then a USB
+interrupt causes CPU 0 to spin in bcm2836_chained_handle_irq() until the
+FIQ on CPU 1 has cleared it.  Other peripherals' interrupts are starved
+as long.  I've seen CPU 0 blocked for up to 2.9 msec.  eMMC throughput
+on a Compute Module 3 irregularly dips to 23.0 MB/s without this commit
+but remains relatively constant at 23.5 MB/s with this commit.
 
+The lockups occur when CPU 0 receives a USB interrupt while holding a
+lock which CPU 1 is trying to acquire while the FIQ is temporarily
+disabled on CPU 1.  At best users get RCU CPU stall warnings, but most
+of the time the system just freezes.
 
-P.S. Sorry for the long break.
+Fixes: 89214f009c1d ("ARM: bcm2835: add interrupt controller driver")
+Signed-off-by: Lukas Wunner <lukas@wunner.de>
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: stable@vger.kernel.org # v3.7+
+Cc: Serge Schneider <serge@raspberrypi.org>
+Cc: Kristina Brooks <notstina@gmail.com>
+Cc: Stefan Wahren <wahrenst@gmx.net>
+---
+v4:
+* Add missing REG_FIQ_ENABLE macro, rename to FIQ_CONTROL_ENABLE (Stefan)
 
->> +
->> +       return 0;
->> +
->> +unregister_component:
->> +       snd_soc_unregister_component(hdmi->dev);
->> +unregister_pcm:
->> +       snd_dmaengine_pcm_unregister(hdmi->dev);
->> +       return ret;
->> +}
->> +
->> +void sun4i_hdmi_audio_destroy(struct sun4i_hdmi *hdmi)
->> +{
->> +       struct snd_soc_card *card = hdmi->audio.card;
->> +       void *data;
->> +
->> +       /**
->> +        * Before removing the card, restore the previously stored driver_data.
->> +        * This will ensure proper removal of the sun4i-hdmi module, since it
->> +        * uses dev_get_drvdata() in the unbind function.
->> +        */
->> +       data = snd_soc_card_get_drvdata(card);
->> +
->> +       snd_soc_unregister_card(card);
->> +       snd_soc_unregister_component(hdmi->dev);
->> +       snd_dmaengine_pcm_unregister(hdmi->dev);
->> +
->> +       dev_set_drvdata(hdmi->dev, data);
->> +}
->> diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
->> index 68d4644ac2dc..4cd35c97c503 100644
->> --- a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
->> +++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
->> @@ -23,6 +23,8 @@
->>   #include <drm/drm_print.h>
->>   #include <drm/drm_probe_helper.h>
->>
->> +#include <sound/soc.h>
->> +
->>   #include "sun4i_backend.h"
->>   #include "sun4i_crtc.h"
->>   #include "sun4i_drv.h"
->> @@ -87,6 +89,10 @@ static void sun4i_hdmi_disable(struct drm_encoder *encoder)
->>
->>          DRM_DEBUG_DRIVER("Disabling the HDMI Output\n");
->>
->> +#ifdef CONFIG_DRM_SUN4I_HDMI_AUDIO
->> +       sun4i_hdmi_audio_destroy(hdmi);
->> +#endif
->> +
->>          val = readl(hdmi->base + SUN4I_HDMI_VID_CTRL_REG);
->>          val &= ~SUN4I_HDMI_VID_CTRL_ENABLE;
->>          writel(val, hdmi->base + SUN4I_HDMI_VID_CTRL_REG);
->> @@ -114,6 +120,11 @@ static void sun4i_hdmi_enable(struct drm_encoder *encoder)
->>                  val |= SUN4I_HDMI_VID_CTRL_HDMI_MODE;
->>
->>          writel(val, hdmi->base + SUN4I_HDMI_VID_CTRL_REG);
->> +
->> +#ifdef CONFIG_DRM_SUN4I_HDMI_AUDIO
->> +       if (hdmi->hdmi_audio && sun4i_hdmi_audio_create(hdmi))
->> +               DRM_ERROR("Couldn't create the HDMI audio adapter\n");
->> +#endif
->>   }
->>
->>   static void sun4i_hdmi_mode_set(struct drm_encoder *encoder,
->> @@ -218,6 +229,9 @@ static int sun4i_hdmi_get_modes(struct drm_connector *connector)
->>          if (!edid)
->>                  return 0;
->>
->> +#ifdef CONFIG_DRM_SUN4I_HDMI_AUDIO
->> +       hdmi->hdmi_audio = drm_detect_monitor_audio(edid);
->> +#endif
->>          hdmi->hdmi_monitor = drm_detect_hdmi_monitor(edid);
->>          DRM_DEBUG_DRIVER("Monitor is %s monitor\n",
->>                           hdmi->hdmi_monitor ? "an HDMI" : "a DVI");
->> --
->> 2.17.1
->>
->> --
->> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
->> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
->> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20200128140642.8404-2-stefan%40olimex.com.
+v3: (submitted as inline patch)
+* Shorten commit message (Florian, Marc)
+
+v2:
+* Use "relaxed" MMIO accessors to avoid memory barriers (Marc)
+* Use u32 instead of int for register access (Marc)
+* Quiesce FIQ as well (Marc)
+* Quiesce IRQs after mapping them for better readability
+* Drop alternative approach from commit message (Marc)
+
+ drivers/irqchip/irq-bcm2835.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/drivers/irqchip/irq-bcm2835.c b/drivers/irqchip/irq-bcm2835.c
+index 418245d31921..a1e004af23e7 100644
+--- a/drivers/irqchip/irq-bcm2835.c
++++ b/drivers/irqchip/irq-bcm2835.c
+@@ -61,6 +61,7 @@
+ 					| SHORTCUT1_MASK | SHORTCUT2_MASK)
+ 
+ #define REG_FIQ_CONTROL		0x0c
++#define FIQ_CONTROL_ENABLE	BIT(7)
+ 
+ #define NR_BANKS		3
+ #define IRQS_PER_BANK		32
+@@ -135,6 +136,7 @@ static int __init armctrl_of_init(struct device_node *node,
+ {
+ 	void __iomem *base;
+ 	int irq, b, i;
++	u32 reg;
+ 
+ 	base = of_iomap(node, 0);
+ 	if (!base)
+@@ -157,6 +159,19 @@ static int __init armctrl_of_init(struct device_node *node,
+ 				handle_level_irq);
+ 			irq_set_probe(irq);
+ 		}
++
++		reg = readl_relaxed(intc.enable[b]);
++		if (reg) {
++			writel_relaxed(reg, intc.disable[b]);
++			pr_err(FW_BUG "Bootloader left irq enabled: "
++			       "bank %d irq %*pbl\n", b, IRQS_PER_BANK, &reg);
++		}
++	}
++
++	reg = readl_relaxed(base + REG_FIQ_CONTROL);
++	if (reg & FIQ_CONTROL_ENABLE) {
++		writel_relaxed(0, base + REG_FIQ_CONTROL);
++		pr_err(FW_BUG "Bootloader left fiq enabled\n");
+ 	}
+ 
+ 	if (is_2836) {
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
