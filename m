@@ -2,74 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAC1216B8D6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 06:13:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45EB316B8E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 06:14:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QD9TeuxDYix9NVub6zRCXx4mb7dMae+3sBssDL1rREk=; b=E1SoDOrHrO8zw/
-	qPR6gpMrXvz7C6elntByc4IbSYhGI7CR8ekZNmXjM3c/qtX98xk/xlMs1OeOg9AJQedPmPA9pFrdO
-	kcfJeOTi1qHmWzi3RcP/UcfNmITfgHGnSikzUQJDvZvL10vkNSGkEQAU9mJy/7JSmdWfRKTAwOpig
-	TFAUxclwcoQXOUZ+M4gwCRixSUmqSJ9WmV71wZshiCSETjuv225y69eHgFmSw4SlZ0V9ZAVmMnLKM
-	/qSDuFikGWp+jh7hfpQqxgGqX9EEOaPIlqk14PacG+sjEAswMweYea70FFCBV9BtseCpSI44UJ3Pz
-	qoMerNgntbDiNJocoRUw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5Tl0unxSCCxZ5migwPqkB0y2Eyz6PXixbSKzmZq6Jp0=; b=oPXJ6JdKN/VzKZ
+	YbN/e2xGTSTN5gVju1OTTJ+nRZhqPR1ubuAuyCS7DDpD8AoEnliBrW4WWh/IBw+J1tigEuqRQtc/v
+	U715JrI2XJa+e9dO9DLLkD0VoqxYFTJduRH1ABG/rDqW+m/Sw/AizOwVSms98zE36jETjpJzJ3e6O
+	vMIhQHveuB4I3rYglgtidsaLnmggfn0c2QJid5DJtD4fOqoUZp0Hwt/li1gANLZE6kOCiRkWjQays
+	YyXF3FEfc3hdrGkdXjAEz7il94Hvj+gHw7MDEAg9MbZTkwPyfsbGKnRtD224yagaUhADX6pvWI/h9
+	IIFVaN55LJoKJo05Lz1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6SXU-0006mY-3J; Tue, 25 Feb 2020 05:13:48 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1j6SYD-0007V0-8D; Tue, 25 Feb 2020 05:14:33 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6SWw-0006Zu-KG
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 05:13:16 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id q39so766634pjc.0
+ id 1j6SWx-0006aC-7s
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 05:13:17 +0000
+Received: by mail-pl1-x642.google.com with SMTP id t14so4993275plr.8
  for <linux-arm-kernel@lists.infradead.org>;
  Mon, 24 Feb 2020 21:13:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CQB4rWAgQlshK2jar7JtwK95ipRQeMQdrfjF9c60b3Q=;
- b=LFrOdVRmnVadjqGd8oJrAQjMoolYjWN9vYwc3EwXw87IXTST26Jz+ZUqqf3Cwz9CoS
- 8nvpcKutc2DDmK9larltPBH0crdkmid8hDBB1a3PpJF4ipvEpIkrP1nwnZd6QtbZKUqw
- THv95WvZqUUgZ2hYd5vk1iRfZrXdVhQeyUBzQ=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=YYkEUMiwoqC9g5twl30uamAlKq3Tsh5NtF9u9M+qrn4=;
+ b=avzQkIzWP11XHI9dfw+sintU7jSdYyOmCfUcrZbVfI3neNkexyxVoipAlC0aEClJyH
+ aCOUDg37itfNNyo5WKHg3hVZ3VCLg6AxDzjoOQ4lSK1OaOhtw93wixoun6PIjwoxoYId
+ BANd3swsVOiMeZkStF0wE5AKrSqy5u7EzvUzA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CQB4rWAgQlshK2jar7JtwK95ipRQeMQdrfjF9c60b3Q=;
- b=pNzxrVwJXph++/L+3KBdD5YVyyTfQoYru5FHiP0VG1Ya5uqtYBNXLKIgSm5svP5RPu
- nCHqNU6zOgsYc8Z5K8XNjeAJdiy/f7I9B7NH+gvPolBehYCEVYR13frDpVfj6RJZCq+K
- EC5MMxQMJUGIoJ7HIyXaPBS75JuB86yTrfjc/VxIuj10EoEM2LuJ/G6Gwih1SbQsOlq5
- Xted7jVljeT9AGOVnyfeV8rhKzu8t1+M05oT58Pvn+4IFK0ewK5Gf/sSr1k3ZkQDbcuQ
- LmU9uEikEbO19MF4dhXQdzYf5PJ7pLSSVkLNr8FWNDyhp5KGlKfz32Pj8N0rPT4fccBp
- QwuA==
-X-Gm-Message-State: APjAAAXiXfTAdrlJizwc+cySHVtJO46gITEWLW5iY6sLhsoBstFqG04D
- fVVgqiUdPSAxoz37KofqDWPxYA==
-X-Google-Smtp-Source: APXvYqyEp2DduArcsAfDzCxBtvCjTHJyL0Kka4MDfFR/IyZ8Q21kRRLDuvjt0qN6ORbpfkkeenKrsA==
-X-Received: by 2002:a17:90a:da03:: with SMTP id
- e3mr3139897pjv.57.1582607592644; 
- Mon, 24 Feb 2020 21:13:12 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=YYkEUMiwoqC9g5twl30uamAlKq3Tsh5NtF9u9M+qrn4=;
+ b=br9FtAsOFzGrOox+2LOboGjgjtfN1Egdu41+mv273nR6D8PmuCUe1nkOav/fA3AJ2N
+ xmjlHoyrbh0MtVMdNagGFD7ZSMhOBigElHmBcPHfLA/50YZznm6KAMV5tUjenhQlMgSk
+ ZbRdzZVv7SvABIjXC3VfcvjAxyo7XgzacOhrAcmB1Xuw0DOW60C0eU4lhqgV7xord7ob
+ HDvpigY1NGy459Hro/TVCBKGx6/npLIB3Ifntl9yspONMBdqnsH7L4pqtkdOj4I2h6bt
+ zkRb/yAPjEQzoKV2KPeyUTJoVqhdFLO8HjcgBVmvFQNzHEKXmGMCxb27UhxBEFVA5fGZ
+ 5l1g==
+X-Gm-Message-State: APjAAAXo9yueCxNvIJ/hN1tGhsfnuhEVJSa8zSiV9xL+MrqMhPnhna8U
+ JKGZzIlK6jt5QjL/R+NoB94NBb57Fsw=
+X-Google-Smtp-Source: APXvYqzBUEzonruL33z1bqgvonSPWOcLoIk/bYLtdQnry1U+j3ClgjvqG2nmE0zuEw4fCLKGWa37Yw==
+X-Received: by 2002:a17:902:b617:: with SMTP id
+ b23mr54721739pls.285.1582607594502; 
+ Mon, 24 Feb 2020 21:13:14 -0800 (PST)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id h13sm1274471pjc.9.2020.02.24.21.13.11
+ by smtp.gmail.com with ESMTPSA id l69sm14547852pgd.1.2020.02.24.21.13.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Mon, 24 Feb 2020 21:13:11 -0800 (PST)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@alien8.de>
-Subject: [PATCH v4 0/6] binfmt_elf: Update READ_IMPLIES_EXEC logic for modern
- CPUs
-Date: Mon, 24 Feb 2020 21:13:01 -0800
-Message-Id: <20200225051307.6401-1-keescook@chromium.org>
+Subject: [PATCH v4 1/6] x86/elf: Add table to document READ_IMPLIES_EXEC
+Date: Mon, 24 Feb 2020 21:13:02 -0800
+Message-Id: <20200225051307.6401-2-keescook@chromium.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200225051307.6401-1-keescook@chromium.org>
+References: <20200225051307.6401-1-keescook@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_211314_690437_9BDC01AF 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20200224_211315_277112_62D17F53 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,90 +99,46 @@ Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
  Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
  Hector Marco-Gisbert <hecmargi@upv.es>, Russell King <linux@armlinux.org.uk>,
  linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@ziepe.ca>,
- kernel-hardening@lists.openwall.com, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Jason Gunthorpe <jgg@mellanox.com>, kernel-hardening@lists.openwall.com,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-This is a refresh of my earlier attempt to fix READ_IMPLIES_EXEC. I
-think it incorporates the feedback from v2 (there are no code changes
-between v3 and v4; I've just added Reviews/Acks and directed at Boris,
-as it seems Ingo is busy). The selftest from v3 has been remove from v4,
-as I will land it separately via Shuah's selftest tree.
-
-This series is for x86, arm, and arm64; I'd like it to go via -tip,
-though, just to keep this change together with the selftest. To
-that end, I'd like to collect Acks from the respective architecture
-maintainers. (Note that most other architectures don't suffer from this
-problem. e.g. powerpc's behavior appears to already be correct. MIPS may
-need adjusting but the history of CPU features and toolchain behavior
-is very unclear to me.)
-
-Repeating the commit log from later in the series:
-
-
-The READ_IMPLIES_EXEC work-around was designed for old toolchains that
-lacked the ELF PT_GNU_STACK marking under the assumption that toolchains
-that couldn't specify executable permission flags for the stack may not
-know how to do it correctly for any memory region.
-
-This logic is sensible for having ancient binaries coexist in a system
-with possibly NX memory, but was implemented in a way that equated having
-a PT_GNU_STACK marked executable as being as "broken" as lacking the
-PT_GNU_STACK marking entirely. Things like unmarked assembly and stack
-trampolines may cause PT_GNU_STACK to need an executable bit, but they
-do not imply all mappings must be executable.
-
-This confusion has led to situations where modern programs with explicitly
-marked executable stack are forced into the READ_IMPLIES_EXEC state when
-no such thing is needed. (And leads to unexpected failures when mmap()ing
-regions of device driver memory that wish to disallow VM_EXEC[1].)
-
-In looking for other reasons for the READ_IMPLIES_EXEC behavior, Jann
-Horn noted that glibc thread stacks have always been marked RWX (until
-2003 when they started tracking the PT_GNU_STACK flag instead[2]). And
-musl doesn't support executable stacks at all[3]. As such, no breakage
-for multithreaded applications is expected from this change.
-
-[1] https://lkml.kernel.org/r/20190418055759.GA3155@mellanox.com
-[2] https://sourceware.org/git/?p=glibc.git;a=commitdiff;h=54ee14b3882
-[3] https://lkml.kernel.org/r/20190423192534.GN23599@brightrain.aerifal.cx
-
-
--Kees
-
-
-v4:
- - split selftest into separate series to go via Shuah's tree
- - add Reviews/Acks
-v3: https://lore.kernel.org/lkml/20200210193049.64362-1-keescook@chromium.org
-v2: https://lore.kernel.org/lkml/20190424203408.GA11386@beast/
-v1: https://lore.kernel.org/lkml/20190423181210.GA2443@beast/
-
-Kees Cook (6):
-  x86/elf: Add table to document READ_IMPLIES_EXEC
-  x86/elf: Split READ_IMPLIES_EXEC from executable GNU_STACK
-  x86/elf: Disable automatic READ_IMPLIES_EXEC for 64-bit address spaces
-  arm32/64, elf: Add tables to document READ_IMPLIES_EXEC
-  arm32/64, elf: Split READ_IMPLIES_EXEC from executable GNU_STACK
-  arm64, elf: Disable automatic READ_IMPLIES_EXEC for 64-bit address
-    spaces
-
- arch/arm/kernel/elf.c        | 27 +++++++++++++++++++++++----
- arch/arm64/include/asm/elf.h | 23 ++++++++++++++++++++++-
- arch/x86/include/asm/elf.h   | 22 +++++++++++++++++++++-
- fs/compat_binfmt_elf.c       |  5 +++++
- 4 files changed, 71 insertions(+), 6 deletions(-)
-
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIGEgdGFibGUgdG8gZG9jdW1lbnQgdGhlIGN1cnJlbnQgYmVoYXZpb3Igb2YgUkVBRF9JTVBM
+SUVTX0VYRUMgaW4KcHJlcGFyYXRpb24gZm9yIGNoYW5naW5nIHRoZSBiZWhhdmlvci4KClNpZ25l
+ZC1vZmYtYnk6IEtlZXMgQ29vayA8a2Vlc2Nvb2tAY2hyb21pdW0ub3JnPgpSZXZpZXdlZC1ieTog
+SmFzb24gR3VudGhvcnBlIDxqZ2dAbWVsbGFub3guY29tPgotLS0KIGFyY2gveDg2L2luY2x1ZGUv
+YXNtL2VsZi5oIHwgMTkgKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDE5IGlu
+c2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9hcmNoL3g4Ni9pbmNsdWRlL2FzbS9lbGYuaCBiL2Fy
+Y2gveDg2L2luY2x1ZGUvYXNtL2VsZi5oCmluZGV4IDY5YzBmODkyZTMxMC4uNzMzZjY5YzJiMDUz
+IDEwMDY0NAotLS0gYS9hcmNoL3g4Ni9pbmNsdWRlL2FzbS9lbGYuaAorKysgYi9hcmNoL3g4Ni9p
+bmNsdWRlL2FzbS9lbGYuaApAQCAtMjgxLDYgKzI4MSwyNSBAQCBleHRlcm4gdTMyIGVsZl9od2Nh
+cDI7CiAvKgogICogQW4gZXhlY3V0YWJsZSBmb3Igd2hpY2ggZWxmX3JlYWRfaW1wbGllc19leGVj
+KCkgcmV0dXJucyBUUlVFIHdpbGwKICAqIGhhdmUgdGhlIFJFQURfSU1QTElFU19FWEVDIHBlcnNv
+bmFsaXR5IGZsYWcgc2V0IGF1dG9tYXRpY2FsbHkuCisgKgorICogVGhlIGRlY2lzaW9uIHByb2Nl
+c3MgZm9yIGRldGVybWluaW5nIHRoZSByZXN1bHRzIGFyZToKKyAqCisgKiDCoCDCoCDCoCDCoCDC
+oCDCoCDCoENQVTogfCBsYWNrcyBOWCogwqB8IGhhcyBOWCwgaWEzMiDCoCDCoCB8IGhhcyBOWCwg
+eDg2XzY0IHwKKyAqIEVMRjogwqAgwqAgwqAgwqAgwqAgwqAgwqB8IMKgIMKgIMKgIMKgIMKgIMKg
+fCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoHwgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqB8Cisg
+KiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tfC0tLS0tLS0tLS0tLS0tLS0tLXwtLS0t
+LS0tLS0tLS0tLS0tfAorICogbWlzc2luZyBHTlVfU1RBQ0sgfCBleGVjLWFsbCDCoCB8IGV4ZWMt
+YWxsIMKgIMKgIMKgIMKgIHwgZXhlYy1hbGwgwqAgwqAgwqAgfAorICogR05VX1NUQUNLID09IFJX
+WCDCoHwgZXhlYy1hbGwgwqAgfCBleGVjLWFsbCDCoCDCoCDCoCDCoCB8IGV4ZWMtYWxsIMKgIMKg
+IMKgIHwKKyAqIEdOVV9TVEFDSyA9PSBSVyDCoCB8IGV4ZWMtbm9uZSDCoHwgZXhlYy1ub25lIMKg
+IMKgIMKgIMKgfCBleGVjLW5vbmUgwqAgwqAgwqB8CisgKgorICogIGV4ZWMtYWxsICA6IGFsbCBQ
+Uk9UX1JFQUQgdXNlciBtYXBwaW5ncyBhcmUgZXhlY3V0YWJsZSwgZXhjZXB0IHdoZW4KKyAqICAg
+ICAgICAgICAgICBiYWNrZWQgYnkgZmlsZXMgb24gYSBub2V4ZWMtZmlsZXN5c3RlbS4KKyAqICBl
+eGVjLW5vbmUgOiBvbmx5IFBST1RfRVhFQyB1c2VyIG1hcHBpbmdzIGFyZSBleGVjdXRhYmxlLgor
+ICoKKyAqICAqdGhpcyBjb2x1bW4gaGFzIG5vIGFyY2hpdGVjdHVyYWwgZWZmZWN0OiBOWCBtYXJr
+aW5ncyBhcmUgaWdub3JlZCBieQorICogICBoYXJkd2FyZSwgYnV0IG1heSBoYXZlIGJlaGF2aW9y
+YWwgZWZmZWN0cyB3aGVuICJ3YW50cyBYIiBjb2xsaWRlcyB3aXRoCisgKiAgICJjYW5ub3QgYmUg
+WCIgY29uc3RyYWludHMgaW4gbWVtb3J5IHBlcm1pc3Npb24gZmxhZ3MsIGFzIGluCisgKiAgIGh0
+dHBzOi8vbGttbC5rZXJuZWwub3JnL3IvMjAxOTA0MTgwNTU3NTkuR0EzMTU1QG1lbGxhbm94LmNv
+bQorICoKICAqLwogI2RlZmluZSBlbGZfcmVhZF9pbXBsaWVzX2V4ZWMoZXgsIGV4ZWN1dGFibGVf
+c3RhY2spCVwKIAkoZXhlY3V0YWJsZV9zdGFjayAhPSBFWFNUQUNLX0RJU0FCTEVfWCkKLS0gCjIu
+MjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
