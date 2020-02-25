@@ -2,79 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5505716F112
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 22:22:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 448DC16F11C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 22:26:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qd8pX64EmFS3h/nJULO55Gf8+6+Yfe7ga3+M2qZcX/Q=; b=joJCaoFE4mdpHA
-	HB2HbcQw1Dlh9erCE1e94Bnw5IPG+cy23amAGFY4NUW5G9LvexaWqCcIeIJHFwNr/zOQTs9urjQAE
-	MRkYQJN1gkP3+Z8FdkEN706Bp8Kp3EXiuCYeu7S94uJPqoIbhknX4dyJivjrAG415f1MMfZAe/Knn
-	eLkB8sSWwzI6xnZz6nOUH9EZlgM8R0YBPO+EG0vq2FVVaj+hTJmwATZFPdiZEK55sbLKhQch4g+A8
-	rZK4K37g0BRIgj17kwEcl0yDUgtlqOQNPxcpf7k5GwR78zLyxQcroW9YlcSTCmpLHAntu7NTfftbY
-	9J8LGCZGUvKETrQZeP6Q==;
+	List-Owner; bh=1UkflalzgOr3Bv4uCMlQoFclZwbYzapR/5+EjXjwO9I=; b=FK3HNENgtlU5Qz
+	e7GES+Pdykvn5XNWrMsgHdB2VgwAJAcvf2TsyuolN2132yx7w38XCEZjrkWZw2OAWeqSOTqGXioe1
+	NCJntAg2qJpg+qrT1bixg0c4as4GdnQZ13kJZGnf3rDy/aW4k96xvSmpVv2iad7PIQKVfslk/BxTT
+	b2CnSM0mw/C+On2tNgZao0y1A95mgND1lvvPpVT5pCFjjOWV90ClkL706i41L8LuLso4x9I6jXFe6
+	zb9ycuFLZ1bp/cv88GLYYdwR+q3buYD4CtZReGSWefA1MJXvjR7Y6k2otcoqIo86dAcgHelel9kKD
+	k0ymqOxEjnCMEQig0MdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6hf2-0006F2-9A; Tue, 25 Feb 2020 21:22:36 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1j6hic-0007qi-Ng; Tue, 25 Feb 2020 21:26:18 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6hep-0006EL-VV
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 21:22:25 +0000
-Received: by mail-ot1-f68.google.com with SMTP id b3so928237otp.4
+ id 1j6hiT-0007q6-BY
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 21:26:11 +0000
+Received: by mail-lf1-x144.google.com with SMTP id z5so276234lfd.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 13:22:23 -0800 (PST)
+ Tue, 25 Feb 2020 13:26:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=aofyHzaDTN0lQyvXH5K7/Dsq6NCi7oRX0/IGVa1FXi4=;
+ b=uueMW7BOmqE0QQOS1mbvF7IU74dsu1owWz+9+1VZfJibjcicp9C18dm3HxlrUdZmRs
+ dArUgOAdxWfas3S0DJH4qNTUg599vjDAdrSmgJaQnZ8OV9Lc/SoO9RSgXv8zWkx7a/pV
+ FdUpI89WhBjGp05ZdUQhAzXKiQQKvHyX46w08laYEQ7lqvELHXtLMp4gkdXwoz6xpHPB
+ pjGZvzCG82zwpYToB3DiLPdt+zH3QuXCLMnkDZtvjMqlf4d5u710j6woA2/SReNXj5di
+ TlRoNXsWvKfSpn3E/838ngPcl7ddAGAiBs8yp9MyROObOwLrjabqeLdJBuQK6758BZUJ
+ tyig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=cWg7LhjnlzN8qbXzmL1qgYcPfVtZZxDcF8WgDS4BNis=;
- b=POef5KLlvQOHJncpRex4NRneLydViYTLy9JL25OyTnc8WmzJaq+dbdF8yIx58I1St3
- SidbLpM2GiN/NYvNT+bs2tEWbbPwsrZQtC+O02h4wxYecmsQxQRGIfArR5fH4V4PFUq3
- 4UFqgHG64p2SYRFwJWaLy1a4OFwqQsnv6LMe9KYrLzJFo1QzbR4HM3SqqLSLHdLuGijX
- AvrplfhXZDSEpnBc31BZEtDGd2RRsEiGGiSVzJjEpp2U1/tUlOaJm0DaKwRm+3lJApiY
- VAIAjsxtShrru0OptqrhBByAaePYGyNRa83q9iBGism6jtNvMmB5MsBqwajFDdmE6Wyu
- utXg==
-X-Gm-Message-State: APjAAAVGRHFXyPLV04ejnZcOzM45joyohleJsUfv583kyfm1srI5LT9O
- kkCs6cS16wQWn5ClJQaUfTVV1WHYzmDvwgIYcWU=
-X-Google-Smtp-Source: APXvYqxe+316UT/SCWiuy4sLEY7XWxPrYWUERMzqJz9VPqMqTetdKn7vGBnMQS3GJcbzUtVO/pJmDbNDP3BO9m3K+Bg=
-X-Received: by 2002:a9d:5c0c:: with SMTP id o12mr428811otk.145.1582665742600; 
- Tue, 25 Feb 2020 13:22:22 -0800 (PST)
+ bh=aofyHzaDTN0lQyvXH5K7/Dsq6NCi7oRX0/IGVa1FXi4=;
+ b=Meu6h3IUeTIy9JiBReHfkUdXQzesVI9XaS/hz4VO4pBSr7V3Jk8+IR0Yrav57vszlK
+ wsTQhkilcmSexqEJJrYAsuNwY9uSWD8gbp0XrxFe24jVN6uByrMoLjsB4uRqm7G6qFi9
+ ER0G3GVAyNlfriZ6MBkhEV3DT6rhpdtJ/zV7VM4/1raTH0oveW0pQui+432cQOVAAXKM
+ FCLofaATrKpmdTDqbk4GLpY2LsLHilZZY2GWGisN+zlcbER3T55i4/Gvl6tdUh9kzqEy
+ BwmDZ2dj2qzslJ4ujtPt//8xsx+O3gbaPByvNECEdzrCEheKOmS7UNqimj6UzSb5oeBZ
+ hNtQ==
+X-Gm-Message-State: APjAAAUGYgjq2OXpHCnxJ1ZBzdRC12+eytDeJo90KbnX4fxOZLWkg2Ml
+ 44w9pc+JH2T748x+eE7qfdmllENLlfu4+uyzbwdjPRkLrYw=
+X-Google-Smtp-Source: APXvYqz/1gJiL8Y4EWaD1mX1Yw2qmsSfjoZtbQUJRWIbo1atsLY4gyHZEXUZoN8OKlAQW72JOeE9fvGcYJlHD2YWjkQ=
+X-Received: by 2002:ac2:44a5:: with SMTP id c5mr424248lfm.4.1582665967222;
+ Tue, 25 Feb 2020 13:26:07 -0800 (PST)
 MIME-Version: 1.0
-References: <CGME20200220121333eucas1p26befa95831b44a793822b4f07b37d2cc@eucas1p2.samsung.com>
- <20200220102628.3371996-1-gregkh@linuxfoundation.org>
- <b04ad319-9986-c357-ad37-937bbb06bc02@samsung.com>
- <CAMuHMdXzPPNqQom82frY1B6LMre+VD9fPAf98BZ3eo2DhgwoYg@mail.gmail.com>
- <20200225204151.GA13254@kroah.com>
-In-Reply-To: <20200225204151.GA13254@kroah.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 25 Feb 2020 22:22:11 +0100
-Message-ID: <CAMuHMdVrVe37JyUNFSf9KRZTcndrvDaZvrVoBxzm_7J2nhg1kg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] tty: serial: samsung_tty: build it for any platform
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <20200224121733.2202-1-ardb@kernel.org>
+ <CACRpkda5VFzMHE483MPj86VN7uU7w4bNibY=ZeLUHyED=JD7Cw@mail.gmail.com>
+ <CAKv+Gu8MOZHFLw-Of5yK15Q1z9gpOmdQNmYF405XRAkeiCoXDw@mail.gmail.com>
+In-Reply-To: <CAKv+Gu8MOZHFLw-Of5yK15Q1z9gpOmdQNmYF405XRAkeiCoXDw@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 25 Feb 2020 22:25:55 +0100
+Message-ID: <CACRpkda1er-gahEAAFLJHimSKo8YwXXTmJAn=0ff9fGdgA0ciQ@mail.gmail.com>
+Subject: Re: [PATCH v3 0/5] ARM: decompressor: use by-VA cache maintenance for
+ v7 cores
+To: Ard Biesheuvel <ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_132224_015083_441E3ADB 
-X-CRM114-Status: GOOD (  23.46  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200225_132609_420861_AD1988B8 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,87 +93,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Donghoon Yu <hoony.yu@samsung.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Shinbeom Choi <sbeom.choi@samsung.com>,
- Hyunki Koo <kkoos00@naver.com>, Kukjin Kim <kgene@kernel.org>,
- HYUN-KI KOO <hyunki00.koo@samsung.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-efi <linux-efi@vger.kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Tony Lindgren <tony@atomide.com>, Marc Zyngier <maz@kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Greg,
+On Tue, Feb 25, 2020 at 6:18 PM Ard Biesheuvel <ardb@kernel.org> wrote:
+> On Tue, 25 Feb 2020 at 16:48, Linus Walleij <linus.walleij@linaro.org> wrote:
 
-On Tue, Feb 25, 2020 at 9:41 PM Greg Kroah-Hartman
-<gregkh@linuxfoundation.org> wrote:
-> On Tue, Feb 25, 2020 at 09:52:38AM +0100, Geert Uytterhoeven wrote:
-> > On Thu, Feb 20, 2020 at 1:13 PM Bartlomiej Zolnierkiewicz
-> > <b.zolnierkie@samsung.com> wrote:
-> > > On 2/20/20 11:26 AM, Greg Kroah-Hartman wrote:
-> > > > There is no need to tie this driver to only a specific SoC, or compile
-> > > > test, so remove that dependancy from the Kconfig rules.
-> > >
-> > > samsung_tty driver is hardware specific driver so why should we
-> > > build it for any platform?
+> > I took this v3 patch set for a ride on some ARMv7 and ARMv6
+> > (hardware) boards using zImage:s so the compressed path
+> > should be exercised:
+> >
+> > - Ux500 (ARMv7 Cortex A9 x 2) works like a charm
+> > - RealView PB11MPCore (ARM1176 x 4 MPCore) works like a charm
+> >
+> > Tested-by: Linus Walleij <linus.walleij@linaro.org>
+> >
+> > I can do more thorough tests with more boards if needed.
 >
-> Why not?
+> Thanks Linus. Do you happen to have any boards that boot with appended DTB?
 
-Because this driver won't bind to a device anyway, when the kernel is
-configured without Samsung SoC support.  It will just bloat the kernel,
-and asking this question is a silly waste of time for anyone building a
-(non-generic) kernel for a non-Samsung SoC.
+Oh, both of these use appended DTB so it's definitely working.
 
-> Seriously, this "only this one specific SoC is allowed to build this
-> driver" is crazy.  It prevents anyone from building a generic kernel
-> with drivers as a module which are loaded as needed.
-
-A generic kernel will include Samsung SoC support, hence PLAT_SAMSUNG
-or ARCH_EXYNOS will be enabled.
-
-> That needs to be fixed, and removing this unneeded dependancy on this
-> driver allows it to be build for any system and then only loaded when
-> needed.
-
-It can only be loaded on a Samsung system, which requires PLAT_SAMSUNG
-or ARCH_EXYNOS anyway.
-It's not like a Samsung serial device can be plugged into your PC's PCI
-bus or so, it only exists on Samsung SoCs.
-
-> > > This change seems to defeat the whole purpose behind COMPILE_TEST
-> > > config option (which allows us to build hardware-specific drivers
-> > > without needlessly presenting the user with tons of non-relevant
-> > > config options).
-> > >
-> > > Please explain this change some more, are you planing to remove
-> > > COMPILE_TEST config option?
->
-> I want to get rid of this:
-
-IMHO we need _more_ of these dependencies, to avoid all these silly questions
-when they don't make sense.
-
-> > > > -     depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
->
-> We should not need PLAT_SAMSUNG or ARCH_EXYNOS at all, we should be able
-> to build an arm64 kernel for all platforms.
-
-An arm64 kernel for all platforms will have ARCH_EXYNOS enabled.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
