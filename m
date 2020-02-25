@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C7A816F3D6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 00:51:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4B5916F3D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 00:50:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yk38RPn/+pxHp+Llp8LOqmQnQX2nvDBRh4eDtGrDFA4=; b=ZP9+K7oi9tWbqyP9SIIpXlffB2
-	DA5I/7H4pfQjN+W2qUVNVPxshZxTi+T81ls6d1EyFBva7NE/IMpw+5qa2gEHAND3Lvp+EyOfKZL5R
-	45LT3VFPTtL5kVLrjT8q65limd8chogtg00G+mXqHY/jquvnkeVqBRNjMSFz/Qq9rcn5VnWeIb/uX
-	mRP0Ldwc+7OUTvpcRjw5ZDJk12y7U+lsEQrDbaDuPTKrnpuJoTzt9GSh/wFqRM+LnMFsuXAON9LCR
-	MLe0IASQ0gsv47QzNCotiV2C7KRvLgr8ctLnBoI5fsnbOlz1Q7szzVZo3rkbLmuQMBXH2Trt0saL8
-	JD1L7uKA==;
+	bh=oHA58rw/B2YZl13W9VY/Zi0nVpzOSS36Z5X9a6JCYw4=; b=nwZL3oeaQ9xuV+av7khCBUhbT3
+	0t/yD7zX6r0E+EtByyzDVgQzpvZrbT84dhqV4tR4bCAGvMudlkeY7DWiobnD96nsuxrO4l4J/3xJm
+	U8DP5/94lY1Hgtnmouyok19xaORoBUQEzEtSkFzcRsQkXtuxyZOiwYgqCi6epN/gWUQFcbuB9QClW
+	VHAhKY8Vvp9VOU2ksFs1ya++iOpkD8GwEbOe+JHa1Fl2Wd5SgqKJPFN/v12aKP5l5l0ti/92qMXhF
+	aP4tI05uKGS94Cm8XaMScViSnnrHFWoaEg/KobqPn5W9j6fOg9jVG8LGRpD8mZjwbI1kcurr91QWh
+	J6UZnOSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6jyh-0003aB-So; Tue, 25 Feb 2020 23:51:03 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j6jyT-0003MA-5O; Tue, 25 Feb 2020 23:50:49 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6juf-0007MG-6Q
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 23:46:59 +0000
-Received: by mail-wm1-x344.google.com with SMTP id c84so1083010wme.4
+ id 1j6juf-0007Mz-Um
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 23:46:58 +0000
+Received: by mail-wm1-x341.google.com with SMTP id t23so1070854wmi.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 15:46:52 -0800 (PST)
+ Tue, 25 Feb 2020 15:46:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=K/OQ1Jgex7gK828pBxgz7p1Ugpl7TPPOgqjJJN6erjc=;
- b=nVUraBxbJKkaPFCjPytTTh/YfSsf1RvTOFOCuOJX2oLryitwK46Ga8mVQ+pNT084+x
- D5LiTLHKAJUDVTWGqnzrOfkkJJvYVG5VBF21v7i3iX9nq4GSf6UG5VK1qrxsFS2tpOkB
- U2XLtyjjtzt9lVzCz3W+lKUXsGwf0omxKgAjXcP6TVfUVL0pZxDDMNNg1vcPNLVIQ0Bd
- 2TlHAzkVmSo0Rf2QoKMWzoN5Lk/cuR5jUvsncb2sFliLdMZW0o75jZ6esGnLtXByh6WO
- Iz0e2ld1kk59/b2ZC2i2OOd28DS+xPff9yDMny8m33aq1opGY70fahsmFlGxNRQ5f0xk
- t+VA==
+ bh=TYlyvESdtJkkzEIVJoYhQjClltnzu2fIaM1HVjBTbAU=;
+ b=Krc9sIsewtpswOvKmk7/S+COuYzreBWD7Ca8jY17fZ3k6AjVVACajXiS4CMmO1Nwtj
+ v8D7QrhulrHl9PWsix3qtVdoUc2Z8N6LW9X0B7qS0YEKS5IP19BbEUnU++EaiUjj6wci
+ KiRACC46tsHkWepzwmCV9H+GZZHdDtj4UyIxnM/IRi47C99hdartYCGwy3BZ0xASNVP+
+ MDXYP48thmVn9W5WTj36Vv0peDrX/4uGae7VRvlPqThnWBRRgrTXWvdiSL88lAULo4Dx
+ h6br15BkZNibYmn5UzAy/nL1OWM3dcCqrOunkGIbZP4T1dlmHaldJ/e+1HE3qalfG4tK
+ 03wQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=K/OQ1Jgex7gK828pBxgz7p1Ugpl7TPPOgqjJJN6erjc=;
- b=UVIu7APfUGZVjutRzQbVw2ImC+rKB18YnPQnC/kaLmrqs/p8L77EDyyJx8g3DGLNdg
- qwovnz4iVA1iMMxT4iFCtvyYAPr0wceMCDNYLLCII7j5XYhRaZ2e96Zod6DLROgeBJro
- TxNtV+5UJ/xWTsftDTPWBvlLtqlYAt4yFtIQ6S3yemqj31BfvOZjDRUosexIPRAEuh+y
- Sje1vSUceAu6MfCDNIzuiGzjbVFi8cHusZrMAHHHI/dN9TYtCi6pJ7e1l30dsiUfB1ux
- emsh0tiumkmR2x9s5n2Tdj5m9YtgGwCr0aKS42fMYAwc0rfPlK2kKI5y36Yp1Lq7ZpJP
- 5iIw==
-X-Gm-Message-State: APjAAAV2g9pYjrsqwgSJkOPxdawucorFSK9Slb2ATgzbCrkRafblLit8
- XyOjV0lzAR1Qc4fp6SfNZusOEkzNyrM=
-X-Google-Smtp-Source: APXvYqz+D71iATXM8+5498XmjPrVNOEv+QvmeehX5g1+lJv3PGOJ0TuC212DvYtuNjcJpaiqdQQtLg==
-X-Received: by 2002:a05:600c:2c4d:: with SMTP id
- r13mr987795wmg.112.1582674410694; 
- Tue, 25 Feb 2020 15:46:50 -0800 (PST)
+ bh=TYlyvESdtJkkzEIVJoYhQjClltnzu2fIaM1HVjBTbAU=;
+ b=TryRp+AHlJBR0fUmCJxDm2+t3VAopKsd0OzFBZkV51G+AZJqEqdP2blwRj+Jn15hc8
+ 7rMI/NNQl0dcsqthy7fyQ2cKTtatVeR0n14qxULTuJ3Emy1IlcnUNoWU7wJePR6WBZr8
+ 6BGlixXwt53O71jhHjdwsnOL0egOYgIPVzZbMifjHmzo5ILS0GZ+g8045IcnVSTjTzjl
+ wIa7O1XYaUepUI2gpkqiX4Bv4Q5cThuKmFpGUaTWWRWVJXd/Hp9ObCWtOU7bca/Fery6
+ nz/dqyzONBicZrhTUcU2VePTSZU9NFhwOsRVsl2qJ5qpuN5ZLe7X+T2yfXfcfHRRcdJN
+ EZig==
+X-Gm-Message-State: APjAAAW6nAUV5uueA78lTBqEB01zpMZSyqtpqmMdn1K9XGGjtNteiCOH
+ Qm7yOnC1pTvwhmHuiEYVOlEcmQtdXQM=
+X-Google-Smtp-Source: APXvYqwY6Dl9BUk+IfJpxezAcmeZBSNghy55b16qrsor7bN8A4eNGfhfbLFlczmxqOt85MjNWpJtWg==
+X-Received: by 2002:a1c:7ec5:: with SMTP id z188mr1582353wmc.52.1582674412106; 
+ Tue, 25 Feb 2020 15:46:52 -0800 (PST)
 Received: from linaro.org ([2a00:23c5:6815:3901:186c:5f6c:221d:5ce])
- by smtp.gmail.com with ESMTPSA id t133sm356278wmf.31.2020.02.25.15.46.49
+ by smtp.gmail.com with ESMTPSA id t133sm356278wmf.31.2020.02.25.15.46.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 25 Feb 2020 15:46:50 -0800 (PST)
+ Tue, 25 Feb 2020 15:46:51 -0800 (PST)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  coresight@lists.linaro.org, linux-doc@vger.kernel.org
-Subject: [PATCH v10 14/15] docs: sysfs: coresight: Add sysfs ABI documentation
- for CTI
-Date: Tue, 25 Feb 2020 23:46:10 +0000
-Message-Id: <20200225234611.11067-15-mike.leach@linaro.org>
+Subject: [PATCH v10 15/15] Update MAINTAINERS to add reviewer for CoreSight
+Date: Tue, 25 Feb 2020 23:46:11 +0000
+Message-Id: <20200225234611.11067-16-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200225234611.11067-1-mike.leach@linaro.org>
 References: <20200225234611.11067-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_154653_358674_EA0337D3 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20200225_154654_096980_143829CF 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,241 +106,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add API usage document for sysfs API in CTI driver.
+Added myself as a designated reviewer for the CoreSight infrastructure
+at the request of Mathieu Poirier.
 
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
 ---
- .../testing/sysfs-bus-coresight-devices-cti   | 221 ++++++++++++++++++
- 1 file changed, 221 insertions(+)
- create mode 100644 Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
+ MAINTAINERS | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/ABI/testing/sysfs-bus-coresight-devices-cti b/Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
-new file mode 100644
-index 000000000000..5ed54d196a17
---- /dev/null
-+++ b/Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
-@@ -0,0 +1,221 @@
-+What:		/sys/bus/coresight/devices/<cti-name>/enable
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Enable/Disable the CTI hardware.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/ctmid
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Display the associated CTM ID
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/nr_trigger_cons
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Number of devices connected to triggers on this CTI
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/name
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Name of connected device <N>
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/in_signals
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Input trigger signals from connected device <N>
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/in_types
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Functional types for the input trigger signals
-+		from connected device <N>
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/out_signals
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Output trigger signals to connected device <N>
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/triggers<N>/out_types
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Functional types for the output trigger signals
-+		to connected device <N>
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/inout_sel
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Select the index for inen and outen registers.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/inen
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Read or write the CTIINEN register selected by inout_sel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/outen
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Read or write the CTIOUTEN register selected by inout_sel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/gate
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Read or write CTIGATE register.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/asicctl
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Read or write ASICCTL register.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/intack
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Write the INTACK register.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/appset
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Set CTIAPPSET register to activate channel. Read back to
-+		determine current value of register.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/appclear
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Write APPCLEAR register to deactivate channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/apppulse
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Write APPPULSE to pulse a channel active for one clock
-+		cycle.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/chinstatus
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) Read current status of channel inputs.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/choutstatus
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) read current status of channel outputs.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/triginstatus
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) read current status of input trigger signals
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/regs/trigoutstatus
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) read current status of output trigger signals.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/trigin_attach
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Attach a CTI input trigger to a CTM channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/trigin_detach
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Detach a CTI input trigger from a CTM channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/trigout_attach
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Attach a CTI output trigger to a CTM channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/trigout_detach
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Detach a CTI output trigger from a CTM channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_gate_enable
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Enable CTIGATE for single channel (W) or list enabled
-+		channels through the gate (R).
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_gate_disable
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Disable CTIGATE for single channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_set
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Activate a single channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_clear
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Deactivate a single channel.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_pulse
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Pulse a single channel - activate for a single clock cycle.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/trigout_filtered
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) List of output triggers filtered across all connections.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/trig_filter_enable
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Enable or disable trigger output signal filtering.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_inuse
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) show channels with at least one attached trigger signal.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_free
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(R) show channels with no attached trigger signals.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_xtrigs_view
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(RW) Write channel number to select a channel to view, read to
-+		see triggers attached to selected channel on this CTI.
-+
-+What:		/sys/bus/coresight/devices/<cti-name>/channels/chan_xtrigs_reset
-+Date:		Jan 2020
-+KernelVersion	5.6
-+Contact:	Mike Leach or Mathieu Poirier
-+Description:	(W) Clear all channel / trigger programming.
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 80e908129509..a2ef2633ddea 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1676,6 +1676,7 @@ F:	arch/arm/mach-ep93xx/micro9.c
+ ARM/CORESIGHT FRAMEWORK AND DRIVERS
+ M:	Mathieu Poirier <mathieu.poirier@linaro.org>
+ R:	Suzuki K Poulose <suzuki.poulose@arm.com>
++R:	Mike Leach <mike.leach@linaro.org>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	drivers/hwtracing/coresight/*
 -- 
 2.17.1
 
