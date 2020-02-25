@@ -2,89 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6158F16BC87
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 09:52:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B8A716BC92
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 09:53:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ayrp9ZlBaJtAkTf1+dClm9LnPNu5I8WA2sk6Btt63zY=; b=lAI3HPHmLjfUe6
-	YeEE5hRvTIlJOOSSPlg3wdnfjv143pSF562+mN0lzZ9/0AQDvqWJT03FAghTlJNYyVD8Ni1gdb16z
-	79KWXca59h9k0vpBuiAHeLgk4wwxEIWAJq0E9VMPT4b1D+j0tbbbLXiNEp/7bBI1qEQrU1d3SAHyy
-	vLnoZNh/IjU8cPymu9leaw/ohWD5rnDPdhcUpXitxKDT+0YyT5Jqq0VJSQmvOk09ClTSU/l0yEQVJ
-	EuH1RK5UrBIkrjTyDGMSz7x8XnW/yqYsattTEark3uvx4LiBaSFIXl8zXSs0rQenkU1+qaTWisjs1
-	uiKnOETomU4sfjgD1rlQ==;
+	List-Owner; bh=VDB3zYxoHPdPKPLQl3QKReyzCFLVKr6AVAOUZ86KHHQ=; b=d5W+DAStJMzTE5
+	yzqL5yHKD7mV1fA+7EjoYyEZeIy1OtI15auLUqMKZjFR5SZ3ig/4kTevtScR5QRsV+t3fM9ieSvjh
+	lk6FzPLd/d048rkh2qv9kBXeqeOg5lyoc5Y9Lgc3Jtx8mVLZ3v/W9cGwPnYeDFmwXzBXrukpWu2Cd
+	y32O78qRZdpWtj7L052VziNOmGLr/tXlVTRvBvJOEegBcBZSIFTswTyu9fEl+mnvF8IWfGL+sbeLq
+	Fklt9jse1m1lS6WsmH3ex7cUCi42cytNrNCQtVy+rDFLNJSjayclvY+HGIYw72HxV003RZKJOE/hS
+	3EUKQZFcW8ALrNEH/Eyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6VxL-0001Re-Po; Tue, 25 Feb 2020 08:52:43 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1j6Vxh-0001gm-UO; Tue, 25 Feb 2020 08:53:05 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6VxB-0001RA-Oe
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 08:52:35 +0000
-Received: by mail-ed1-f67.google.com with SMTP id dc19so15310909edb.10
+ id 1j6VxS-0001eD-57
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 08:52:51 +0000
+Received: by mail-oi1-f196.google.com with SMTP id a142so11814457oii.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 00:52:32 -0800 (PST)
+ Tue, 25 Feb 2020 00:52:49 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=K+2A/gft6LrFZSl1mPAmF46n0w4UjXc0APhIZ+UJahU=;
- b=uocEcLoyM3RsTBLUAjvu+FapLeJ71lssN7fTrEdWZj6MBrJavqpbUwx+TN9xVE1tas
- nBP5/S9Si3Ee2BV9UOw+nsvdo7bU+FD4mvKWtZNyWkxjU0c5SxCOrlFQRX4wzvpPUuSa
- F8kOTAp9PDqiCHx5RG5Q1Q6YfaaCrtXBKSG3TVUoNtBZYqV+ysCCvdYLw6ZaiTxtVCXU
- lYPypi1js+B6CKpwd8daD66aRZvG+9FZzNNNHXKFLzr/F/sZ4GjixjVgk5QEWT7m7Y8D
- UK1pg5Pef/0Sb4ybfh2ZDjnAAyMSAYBkavKXeEzwWERk7Dppineorr/uCwj5WQqhW0rC
- iFvg==
-X-Gm-Message-State: APjAAAVbZ6fWfHoN/SFDCotKFGyLeY5n2a7kzToM9APVm5y+9mbN7nOj
- 2veTEWtRpn3wctJ5wWp7mku4rJzJkU0=
-X-Google-Smtp-Source: APXvYqzIcTNlC8CGZdXRhCbwjPswfwmgROQnLqLIp3KkU7xoXU0QCyNPH2OGMgz51iEpMsWt4blzxg==
-X-Received: by 2002:a05:6402:b3a:: with SMTP id
- bo26mr49113526edb.242.1582620751245; 
- Tue, 25 Feb 2020 00:52:31 -0800 (PST)
-Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com.
- [209.85.221.42])
- by smtp.gmail.com with ESMTPSA id n14sm893841ejx.11.2020.02.25.00.52.30
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 25 Feb 2020 00:52:31 -0800 (PST)
-Received: by mail-wr1-f42.google.com with SMTP id m16so13636758wrx.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 00:52:30 -0800 (PST)
-X-Received: by 2002:a5d:604a:: with SMTP id j10mr5439322wrt.181.1582620750522; 
- Tue, 25 Feb 2020 00:52:30 -0800 (PST)
+ bh=NCcXPgvLR7piGFPRQkQUMaxV6B+dhlZh7qpZmokhosQ=;
+ b=OR34D9syM8V9g51Zxdr13eXdfbquf8q/grxOTJSpCEOSzewXDQYgnXwU/YdN5EM/sq
+ 4eAU2NRoRewnDps4j/XOTLWMBV3BW8aoM/9uRvjfP70Uula6TOyx//9VtoyvQB5d9Iq4
+ 5JiwSTd9cKtYBqx4uWzfZNqGg4e/MLvPvAEEHFsHI4J5gQfbx0zCyIag8gaDT+LYh0Cs
+ Rdmd2VqjAAajwN2RhhieKwbStRY3sP4R1MNL9YhdDF+U9Qbr9+6K7JczFF9hJt29T+IV
+ p2SSgrSSqdzOfrq58zp6kV7XJDAOZMg+HTvFfPeAH7dMRPMkhXxzpFoO3Q2jw7mAt1nI
+ kJYg==
+X-Gm-Message-State: APjAAAX1wqejSLuFh9Bm6why/gc15Uo2+NDLQ43aU1t89qGfi3Fde+Kf
+ GwZ+C6h5/2AZyU65Xn9/kyeJp3dP/wlFLsWO/I4=
+X-Google-Smtp-Source: APXvYqz7lmhUeSfLmWKkIYk5sXq/O3b4LGrwEfCtT6NjjC+E5sVm0CRMbzawuf071lueIUP7GDqOPvgv08/U/Hcn99E=
+X-Received: by 2002:aca:52d0:: with SMTP id g199mr2443241oib.153.1582620769070; 
+ Tue, 25 Feb 2020 00:52:49 -0800 (PST)
 MIME-Version: 1.0
-References: <20200224173901.174016-1-jernej.skrabec@siol.net>
- <20200224173901.174016-7-jernej.skrabec@siol.net>
- <20200225083448.6upblnctjjrbarje@gilmour.lan>
-In-Reply-To: <20200225083448.6upblnctjjrbarje@gilmour.lan>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 25 Feb 2020 16:52:18 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64g7Q4e+ic08pA7tbamgToOjyYzuzqP0bpqBZjRuRUrPA@mail.gmail.com>
-Message-ID: <CAGb2v64g7Q4e+ic08pA7tbamgToOjyYzuzqP0bpqBZjRuRUrPA@mail.gmail.com>
-Subject: Re: [PATCH 6/7] drm/sun4i: de2: Don't return de2_fmt_info struct
-To: Maxime Ripard <maxime@cerno.tech>, Jernej Skrabec <jernej.skrabec@siol.net>
+References: <CGME20200220121333eucas1p26befa95831b44a793822b4f07b37d2cc@eucas1p2.samsung.com>
+ <20200220102628.3371996-1-gregkh@linuxfoundation.org>
+ <b04ad319-9986-c357-ad37-937bbb06bc02@samsung.com>
+In-Reply-To: <b04ad319-9986-c357-ad37-937bbb06bc02@samsung.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 25 Feb 2020 09:52:38 +0100
+Message-ID: <CAMuHMdXzPPNqQom82frY1B6LMre+VD9fPAf98BZ3eo2DhgwoYg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] tty: serial: samsung_tty: build it for any platform
+To: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_005233_801078_4CB41596 
-X-CRM114-Status: GOOD (  24.50  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200225_005250_199237_7A5B369A 
+X-CRM114-Status: GOOD (  18.32  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
+ [209.85.167.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
+ provider [geert.uytterhoeven[at]gmail.com]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -98,88 +83,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Donghoon Yu <hoony.yu@samsung.com>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Shinbeom Choi <sbeom.choi@samsung.com>,
+ Hyunki Koo <kkoos00@naver.com>, Kukjin Kim <kgene@kernel.org>,
+ HYUN-KI KOO <hyunki00.koo@samsung.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 4:35 PM Maxime Ripard <maxime@cerno.tech> wrote:
+On Thu, Feb 20, 2020 at 1:13 PM Bartlomiej Zolnierkiewicz
+<b.zolnierkie@samsung.com> wrote:
+> On 2/20/20 11:26 AM, Greg Kroah-Hartman wrote:
+> > There is no need to tie this driver to only a specific SoC, or compile
+> > test, so remove that dependancy from the Kconfig rules.
 >
-> Hi,
+> samsung_tty driver is hardware specific driver so why should we
+> build it for any platform?
 >
-> On Mon, Feb 24, 2020 at 06:39:00PM +0100, Jernej Skrabec wrote:
-> > Now that de2_fmt_info contains only DRM <-> HW format mapping, it
-> > doesn't make sense to return pointer to structure when searching by DRM
-> > format. Rework that to return only HW format instead.
-> >
-> > This doesn't make any functional change.
-> >
-> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > ---
-> >  drivers/gpu/drm/sun4i/sun8i_mixer.c    | 15 +++++++++++----
-> >  drivers/gpu/drm/sun4i/sun8i_mixer.h    |  7 +------
-> >  drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 10 +++++-----
-> >  drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 12 ++++++------
-> >  4 files changed, 23 insertions(+), 21 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-> > index e078ec96de2d..56cc037fd312 100644
-> > --- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
-> > +++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-> > @@ -27,6 +27,11 @@
-> >  #include "sun8i_vi_layer.h"
-> >  #include "sunxi_engine.h"
-> >
-> > +struct de2_fmt_info {
-> > +     u32     drm_fmt;
-> > +     u32     de2_fmt;
-> > +};
-> > +
-> >  static const struct de2_fmt_info de2_formats[] = {
-> >       {
-> >               .drm_fmt = DRM_FORMAT_ARGB8888,
-> > @@ -230,15 +235,17 @@ static const struct de2_fmt_info de2_formats[] = {
-> >       },
-> >  };
-> >
-> > -const struct de2_fmt_info *sun8i_mixer_format_info(u32 format)
-> > +int sun8i_mixer_drm_format_to_hw(u32 format, u32 *hw_format)
-> >  {
-> >       unsigned int i;
-> >
-> >       for (i = 0; i < ARRAY_SIZE(de2_formats); ++i)
-> > -             if (de2_formats[i].drm_fmt == format)
-> > -                     return &de2_formats[i];
-> > +             if (de2_formats[i].drm_fmt == format) {
-> > +                     *hw_format = de2_formats[i].de2_fmt;
-> > +                     return 0;
-> > +             }
-> >
-> > -     return NULL;
-> > +     return -EINVAL;
-> >  }
+> This change seems to defeat the whole purpose behind COMPILE_TEST
+> config option (which allows us to build hardware-specific drivers
+> without needlessly presenting the user with tons of non-relevant
+> config options).
 >
-> I'm not too sure about that one. It breaks the consistency with the
-> other functions, and I don't really see a particular benefit to it?
+> Please explain this change some more, are you planing to remove
+> COMPILE_TEST config option?
 
-I guess we could just define an "invalid" value, and have the function
-return that if can't find a match? I'm guessing 0x0 is valid, so maybe
-0xffffffff or 0xdeadbeef ?
++1
 
-That would keep consistency with everything else all the while
-removing the level of indirection you wanted to.
+I was just going to send a revert...
 
-ChenYu
+> > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
+> > --- a/drivers/tty/serial/Kconfig
+> > +++ b/drivers/tty/serial/Kconfig
+> > @@ -237,7 +237,6 @@ config SERIAL_CLPS711X_CONSOLE
+> >
+> >  config SERIAL_SAMSUNG
+> >       tristate "Samsung SoC serial support"
+> > -     depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
+> >       select SERIAL_CORE
+> >       help
+> >         Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
+> >
+> > base-commit: 11a48a5a18c63fd7621bb050228cebf13566e4d8
 
-> The rest of the series is
-> Acked-by: Maxime Ripard <mripard@kernel.org>
->
-> Maxime
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
