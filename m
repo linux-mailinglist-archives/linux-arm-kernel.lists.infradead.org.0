@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC5EF16BA06
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 07:47:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D87C916BA24
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 07:57:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XTvGIp2g921dTPc3gGxDue1SUvmaFf5SlhZcLTBSxqM=; b=R0PufJ395CpUMa
-	pA05jqJ6IWRNp6/9ufSKEB7Pzpqpds9JlLU7YJceQoUZ1sz9zz4/DpAd3pNpA1kOF/LYEIEJxA7cC
-	53+dWvzZ5S+oCTPQxfrvgugjlBucdUIb9P1VerquojqJWzK34EqCtHUApT1/9rPPCbEVXQmayvmF6
-	Zp0a9DiulAG8EHyojEHfy0rRq/8rxgxDw7qWo/ZmO/01Q+/n/+P4so1fxIH3B/l6Zake581je/IUw
-	8JJ+KYxkCGmknM9I+RabOBrCW/KrkS5thVRQEc8gqerKpJ2Ph4ymEAfSLVUIjk/+cg0tbQ4upaSVy
-	O8dLfSAOUx3x82Ksw9ng==;
+	List-Owner; bh=XJdXrntECjnzJ1j4hlWbfoYUFt+WBgG8J0FHJrwMH70=; b=iUOlnLtTFkfEAj
+	3HvvHASM+/YSzNVU2vfevNAM4wxyQldFYaIjnchFAAbofHiJLr9TbZepKoYm5mCMwudvxMcELo11p
+	C1u6W7x0INrqr2hJIulbNfLB4BMiRacwt3paBv4SvIjarRYNA/JlgLNEIwc0oM9IHd7185wQACyQ6
+	wbsQsKQZTlSi6hj7RjKB0QqIVTAI0fyFd+TJbx8GROK6A6duxHpwHvh63u9b8sLva+Khz7L5y9taS
+	sMmvgudFO6K2dRP7jRHWRukw0WytYiL0pAPafnPtQTexfY9/xwILRS5qFV2pkB+UQEajjGLJdS0IJ
+	oA9XIujBUDYXpfHCTMiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Tzz-0005zw-RK; Tue, 25 Feb 2020 06:47:19 +0000
+	id 1j6U9X-0002Zu-6W; Tue, 25 Feb 2020 06:57:11 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Tzc-0005wM-Re; Tue, 25 Feb 2020 06:46:58 +0000
-X-UUID: 4770f55765a44380a90e361ff2e10a0b-20200224
+ id 1j6U98-0002LT-Fj; Tue, 25 Feb 2020 06:56:47 +0000
+X-UUID: 6f3a997872da45d0ab22cf04d735f123-20200224
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=XR2ppAD5uxrVIqeYRVReyXmjp0MHBUPGhrr7FaNU7Hc=; 
- b=K0cJVJjFRtuJFmX01fuH+CSx0tV2+29+DPcI+ZK7SmZQsget8GqdMXDfbOLKq3uOUrAxEXI5S0m2WjM4CcZPtWg/Gu8wNrokrtzIclvcmEik+20RKR+tzrzyig3yYTx6dM9sVfb9opjbvNCgdXrdbs6LLaPVMqETFkDKcjLbJlg=;
-X-UUID: 4770f55765a44380a90e361ff2e10a0b-20200224
+ bh=2mRvrq0KsqWRkawRW7l0SARbfmn7cZF3ZQwEkeOJVU8=; 
+ b=byN4NZ1bpLDmR2YaHalWcZpIV1Nf9OsdBnl57YIvRDvR+cedwqRbVIPHoRo57kDCN7enNn6URW6yKj+UbozExR4jrxWnFWmmPt83+v0tUm7UI09c4Zhca1T0+ZVzwb7FOUCWBreeWeoKWLA/itMk9S4N/dOAgVfffv+MW8sKZfU=;
+X-UUID: 6f3a997872da45d0ab22cf04d735f123-20200224
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1512895240; Mon, 24 Feb 2020 22:46:50 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 24 Feb 2020 22:46:48 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33DR.mediatek.inc
- (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 25 Feb 2020 14:42:52 +0800
+ with ESMTP id 519440700; Mon, 24 Feb 2020 22:56:42 -0800
+Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Feb 2020 22:47:25 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N2.mediatek.inc
+ (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 25 Feb 2020 14:47:23 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
  MTKCAS36.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Tue, 25 Feb 2020 14:45:27 +0800
+ 15.0.1395.4 via Frontend Transport; Tue, 25 Feb 2020 14:45:29 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH v7 2/4] drm/mediatek: dpi sample mode support
-Date: Tue, 25 Feb 2020 14:46:36 +0800
-Message-ID: <20200225064638.112282-3-jitao.shi@mediatek.com>
+Subject: [PATCH v7 3/4] drm/mediatek: add mt8183 dpi clock factor
+Date: Tue, 25 Feb 2020 14:46:37 +0800
+Message-ID: <20200225064638.112282-4-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20200225064638.112282-1-jitao.shi@mediatek.com>
 References: <20200225064638.112282-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F530CDD1AE990674843909EBD598AE1A7B6D596DFB8696F3C5AA950F8906ABF92000:8
+X-TM-SNTS-SMTP: AB392C234C931E3602719C4560FAD2E9A09EB13288F548CCAECD362BB4CC18A12000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_224656_905118_5E8D74EE 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200224_225646_526787_C9A21BC5 
+X-CRM114-Status: UNSURE (   9.79  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,79 +101,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DPI can sample on falling, rising or both edge.
-When DPI sample the data both rising and falling edge.
-It can reduce half data io pins.
+The factor depends on the divider of DPI in MT8183, therefore,
+we should fix this factor to the right and new one.
 
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_dpi.c | 18 ++++++++++++++++--
- 1 file changed, 16 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_dpi.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-index 01fa8b8d763d..08299042dda7 100644
+index 08299042dda7..c3e631b93c2e 100644
 --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
 +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-@@ -75,6 +75,7 @@ struct mtk_dpi {
- 	enum mtk_dpi_out_bit_num bit_num;
- 	enum mtk_dpi_out_channel_swap channel_swap;
- 	int refcount;
-+	u32 pclk_sample;
- };
- 
- static inline struct mtk_dpi *mtk_dpi_from_encoder(struct drm_encoder *e)
-@@ -348,6 +349,13 @@ static void mtk_dpi_config_disable_edge(struct mtk_dpi *dpi)
- 		mtk_dpi_mask(dpi, dpi->conf->reg_h_fre_con, 0, EDGE_SEL_EN);
+@@ -676,6 +676,16 @@ static unsigned int mt2701_calculate_factor(int clock)
+ 		return 1;
  }
  
-+static void mtk_dpi_enable_pclk_sample_dual_edge(struct mtk_dpi *dpi)
++static unsigned int mt8183_calculate_factor(int clock)
 +{
-+	mtk_dpi_mask(dpi, DPI_DDR_SETTING, DDR_EN | DDR_4PHASE,
-+		     DDR_EN | DDR_4PHASE);
-+	mtk_dpi_mask(dpi, DPI_OUTPUT_SETTING, EDGE_SEL, EDGE_SEL);
++	if (clock <= 27000)
++		return 8;
++	else if (clock <= 167000)
++		return 4;
++	else
++		return 2;
 +}
 +
- static void mtk_dpi_config_color_format(struct mtk_dpi *dpi,
- 					enum mtk_dpi_out_color_format format)
+ static const struct mtk_dpi_conf mt8173_conf = {
+ 	.cal_factor = mt8173_calculate_factor,
+ 	.reg_h_fre_con = 0xe0,
+@@ -687,6 +697,11 @@ static const struct mtk_dpi_conf mt2701_conf = {
+ 	.edge_sel_en = true,
+ };
+ 
++static const struct mtk_dpi_conf mt8183_conf = {
++	.cal_factor = mt8183_calculate_factor,
++	.reg_h_fre_con = 0xe0,
++};
++
+ static int mtk_dpi_probe(struct platform_device *pdev)
  {
-@@ -439,7 +447,8 @@ static int mtk_dpi_set_display_mode(struct mtk_dpi *dpi,
- 	pll_rate = clk_get_rate(dpi->tvd_clk);
+ 	struct device *dev = &pdev->dev;
+@@ -784,6 +799,9 @@ static const struct of_device_id mtk_dpi_of_ids[] = {
+ 	{ .compatible = "mediatek,mt8173-dpi",
+ 	  .data = &mt8173_conf,
+ 	},
++	{ .compatible = "mediatek,mt8183-dpi",
++	  .data = &mt8183_conf,
++	},
+ 	{ },
+ };
  
- 	vm.pixelclock = pll_rate / factor;
--	clk_set_rate(dpi->pixel_clk, vm.pixelclock);
-+	clk_set_rate(dpi->pixel_clk,
-+		     vm.pixelclock * (dpi->pclk_sample > 1 ? 2 : 1));
- 	vm.pixelclock = clk_get_rate(dpi->pixel_clk);
- 
- 	dev_dbg(dpi->dev, "Got  PLL %lu Hz, pixel clock %lu Hz\n",
-@@ -450,7 +459,8 @@ static int mtk_dpi_set_display_mode(struct mtk_dpi *dpi,
- 	limit.y_bottom = 0x0010;
- 	limit.y_top = 0x0FE0;
- 
--	dpi_pol.ck_pol = MTK_DPI_POLARITY_FALLING;
-+	dpi_pol.ck_pol = dpi->pclk_sample == 1 ?
-+			 MTK_DPI_POLARITY_RISING : MTK_DPI_POLARITY_FALLING;
- 	dpi_pol.de_pol = MTK_DPI_POLARITY_RISING;
- 	dpi_pol.hsync_pol = vm.flags & DISPLAY_FLAGS_HSYNC_HIGH ?
- 			    MTK_DPI_POLARITY_FALLING : MTK_DPI_POLARITY_RISING;
-@@ -504,6 +514,8 @@ static int mtk_dpi_set_display_mode(struct mtk_dpi *dpi,
- 	mtk_dpi_config_color_format(dpi, dpi->color_format);
- 	mtk_dpi_config_2n_h_fre(dpi);
- 	mtk_dpi_config_disable_edge(dpi);
-+	if (dpi->pclk_sample > 1)
-+		mtk_dpi_enable_pclk_sample_dual_edge(dpi);
- 	mtk_dpi_sw_reset(dpi, false);
- 
- 	return 0;
-@@ -689,6 +701,8 @@ static int mtk_dpi_probe(struct platform_device *pdev)
- 
- 	dpi->dev = dev;
- 	dpi->conf = (struct mtk_dpi_conf *)of_device_get_match_data(dev);
-+	dpi->pclk_sample = of_property_read_u32_index(dev->of_node,
-+						      "pclk-sample");
- 
- 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	dpi->regs = devm_ioremap_resource(dev, mem);
 -- 
 2.21.0
 _______________________________________________
