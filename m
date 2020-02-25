@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0695516B944
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 06:45:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56F8316B97D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 07:12:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y0fpecfUMl9TvpPbS1OIR/uq7WaumNBl0kZOaJvyi6U=; b=QkKKo/wjeaUiDH
-	nPyW6Qw+EDtHJbZmMHCEp28PgPMqU6EjZ3N6znAulimU3Zf9xwmy5gu2o0xNSewik5VH3kHrXEXWy
-	/r8oeHKJKaJXamq0C0r8xa/M+m4PbXCvWeZ/JkbBy7d6FcTApRRmgDf9Ry5qjes+6mUIoG+V9/Nkl
-	eTXigf9lMjOIwUXv4EgP2Zkj7JDctjY5Vv4zUm148zs3cFPS3XJjpTWJoo3jrfdbDAABv89LMTnTx
-	biRUdqEOF+B2KHuWgFoO2Tayctcy/izkM9Kux5ffZ8yaj+iB0Br0gtvWzzLZaAIM2TneIaSvz6Gbi
-	lroMMAXS42D0cGrBQzpg==;
+	List-Owner; bh=UrdkBXcx06zQfDLCAj5ep5RtFVu9rOL5XPuI7J2tIoY=; b=WroxB/bzqjc2dX
+	1z2HPrC4IIglgFX5c6Eu1KbpEq4qlmZsUFKdGdxFjahFGzjrE27SkGRIIgZkha7hgu7/WN3i2yZWR
+	RS+JniFLRg7Tj/VJ6nGv20nZSxq3MYmhPidDY9eYiwOWi1H7A1PWMV0BJuWH9zlrwLaFvZFtTNCjG
+	y3mmC8iPHIA4AdTiz5mNodqFGBvqYWI3IqKu0h/+kyP6jZ/NpjW7MUMGZ1sMJNhk9lDdwAeWMHLTa
+	mFokpqD4+ZxwEj/C52UzoRRZ+D3vqdP+h/nVZXZo4OaUUmosfPRwewXJmz4Wl/lx2uU7IlGs9J2mX
+	WNN0jzUt5Q83M7/tzAGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6T28-0002R8-0I; Tue, 25 Feb 2020 05:45:28 +0000
+	id 1j6TSM-0002Uh-Ij; Tue, 25 Feb 2020 06:12:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6T20-0002Qp-2y
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 05:45:21 +0000
+ id 1j6TSC-0002UI-IS
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 06:12:25 +0000
 Received: from localhost (unknown [122.167.120.28])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 421E2222C2;
- Tue, 25 Feb 2020 05:45:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 557BE2082F;
+ Tue, 25 Feb 2020 06:12:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582609519;
- bh=j47OslZ9784bwULG/PPlCt7joegvFmVDiWVpyxhkBOo=;
+ s=default; t=1582611144;
+ bh=fxLOFtVYfe/xZb9HlC6PvDLWrLnNe/I7p4/iU1LvhUc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GMw66R3/uvqjEjYGCq2fhzTOA1W2l6ouvKd+EQSx4Zj472u9nMo+0nEKWCsAHdkWT
- 7ccU6etf4Zy7O3d3E8Psqsc3YajJkmx2m9AP0PoRpYUCbJFybI2muZOQ2DhMBTu7np
- zr3YDDKZkWx2d9lbYmIt1G2f134h89TdhzXFIXsY=
-Date: Tue, 25 Feb 2020 11:15:14 +0530
+ b=igezpnXUhAdO5oTgHW459emyzcdKLBnR/P1Gw8dY0ve+VGQoVDDraV4MdWqHfMtUo
+ irHddwFcD3/HwfcnJC3CLI42i2sQhWVZDSfb4Le8MzAg+4Y7KyjJHdT5Y4cbqeHPMg
+ nyKpzGOjwpeRbizs0vyFNvNeGOUDVctNjc9bfEyc=
+Date: Tue, 25 Feb 2020 11:42:20 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Amelie Delaunay <amelie.delaunay@st.com>
-Subject: Re: [PATCH 0/8] STM32 DMA driver fixes and improvements
-Message-ID: <20200225054514.GG2618@vkoul-mobl>
-References: <20200129153628.29329-1-amelie.delaunay@st.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH] dma: imx-sdma: Fix the event id check to include RX
+ event for UART6
+Message-ID: <20200225061220.GK2618@vkoul-mobl>
+References: <20200224172236.22478-1-frieder.schrempf@kontron.de>
+ <CAOMZO5CyYbAZRZrGLJNJXNJiekJXptUTu8tOfVw6y7-n-CXesg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200129153628.29329-1-amelie.delaunay@st.com>
+In-Reply-To: <CAOMZO5CyYbAZRZrGLJNJXNJiekJXptUTu8tOfVw6y7-n-CXesg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_214520_148731_84BFB7B3 
-X-CRM114-Status: UNSURE (   8.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200224_221224_631028_93E525C8 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,25 +77,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.ml.walleij@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29-01-20, 16:36, Amelie Delaunay wrote:
-> This series brings improvements to the STM32 DMA driver, with support of
-> power management and descriptor reuse. Probe function gets a cleanup and
-> properties like copy_align and max_segment_size are set.
-> A "sleeping function called from invalid context" bug is also fixed. And
-> to avoid a race with vchan_complete, driver now adopts
-> vchan_terminate_vdesc().
+On 24-02-20, 15:43, Fabio Estevam wrote:
+> Hi Frieder,
+> 
+> On Mon, Feb 24, 2020 at 2:22 PM Schrempf Frieder
+> <frieder.schrempf@kontron.de> wrote:
+> >
+> > From: Frieder Schrempf <frieder.schrempf@kontron.de>
+> >
+> > On i.MX6 the DMA event for the RX channel of UART6 is '0'. To fix
+> 
+> I would suggest being a bit more specific than saying i.MX6.
+> 
+> I see UART6 is present on i.MX6UL/i.MX6SX, but not on i.MX6Q/i.MX6DL,
+> so it would be better to specify it in the commit log.
+> 
+> imx6ul.dtsi does not have dma nodes under uart6, so I guess you fixed
+> it for imx6sx.
 
-Applied, thanks
+and use right subsystem tag dmaengine. Git log of the file should tell
+you the right one to use :)
+
+> 
+> > the broken DMA support for UART6, we change the check for event_id0
+> > to include '0' as a valid id.
+> >
+> > Fixes: 1ec1e82f2510 ("dmaengine: Add Freescale i.MX SDMA support")
+> > Cc: stable@vger.kernel.org
+> > Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+> 
+> Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 -- 
 ~Vinod
