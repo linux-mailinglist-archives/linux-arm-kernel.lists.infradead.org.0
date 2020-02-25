@@ -2,87 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C8DA16BCED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 10:04:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14A4916BCF0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 10:05:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iJDqblmlFxRYgxhjPHfLTsTiup33wXpeZ6uVVi49yrc=; b=AY5dSULn9ZygnY6eL1FKIlD6G
-	YSMHnwNujgSGUP2Kxtz5smg4VoMtExWdk/gaE3k1Yba29flCOEYq+0Cwo4h3Oa6eESsLbvbQWpJO0
-	r33+hYz/aEAb4r6JK5EYyhIHv8PuA1fqUaNOOjX2q4912E3d4o6/csZw8zj00bu3AVT98R9lJMcDi
-	4A/kOWnCQJrclmxytKKIOLPW7WOreMleN74hdmaysYi8saypZ9PS+LHfpwprkY/UtmBCurnXy9VEo
-	UeUDrGx6IO9P1EqT7oBivTdSIDW+tQ0COZqL1Q59VcT7At5V52H9zFd1tRSOR2rRZICntiIdUZsed
-	B+MktyMPA==;
+	 bh=NRPBpei9eWEDPmBnNIkcjCw7ZPK0r58zqhM7UMsJmuQ=; b=MDJqoraTOhlQSyDDib3m8ewVX
+	P0zEtdxp1DOG6aDVsBBL0A6dVKz9KoTyK5CTIXKSQTTocOPuoYHDfU+HQda/4LFN39dsLL4/C0H1T
+	jwZQ1cV/3szoPpaS4PZlQKAVB0+QpqaCbL9DFJe8z5WIzXV11XZUj9FDHcqGo6sMJMvMiiNkcetdb
+	cqKPdjPsdytNfwdecc8eRqiWObXKOY0ScvkbHhRl6biGe0vuTv0hvASGUwQB5TEGlqLMJ+yvZXaWG
+	5R5wwONydeE9qvx75M92XyzeJsXX3enzXy/s4+s+UmbltQM9NfmEexC6CmFbbHyH0dOKBbWwzSr0N
+	v9/kuYORA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6W95-0007aY-3z; Tue, 25 Feb 2020 09:04:51 +0000
+	id 1j6W9a-0000eX-VD; Tue, 25 Feb 2020 09:05:22 +0000
 Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6W8s-0007XP-Kc
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 09:04:40 +0000
+ id 1j6W9P-0000dc-O1
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 09:05:13 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id EF26521EBC;
- Tue, 25 Feb 2020 04:04:37 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Tue, 25 Feb 2020 04:04:37 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id CEA3722085;
+ Tue, 25 Feb 2020 04:05:07 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Tue, 25 Feb 2020 04:05:07 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=2uAmNfXp/nheDUf7m8Ia1NiqBIQ
- 3V0NGUD9iv59hcp4=; b=mNh/y5Q5V+86oXAGiuYeZGyl+cz1NeKGf87d3IWOPuX
- 1mcIvKqtuB54mFf+guwXj3Vzgd5tYu3z68DpW3+kvlW8AR0hM6J75bWzsRekEvzi
- honPhHYUQ4R1cODry3KIGz7ZT3eVBgY4I2apfXVs+dqqyFlJvuCsye6ETz8RQjRS
- ZYkqPzRFrBckAqYJ4Pzl3uNNE1rggJrbtVYn/KjDws9UadCnlRSfiq30VDZhHNM+
- UogALCSNTRN2cLQI/+RZ1r4lsfTomU9Fhbuni03Jg/4gnUQP1nUmAOOZenO2vzRP
- RpjyJ8H/zBVhZ/Ms2HbeWjGiccHM2dVJojOqZB/8bjw==
+ :content-type:in-reply-to; s=fm2; bh=hKt9OOfB9XeD3ZLSEgsAq6xaJ/6
+ rxoPVZNvP3Ww5CRw=; b=aF6UJQFgDWDX+W6sZ6uarr50+bF/ndtyBmSx9iedziC
+ QMoILY2bSbT+Pyatw/rSDIE9wGNOhjNSp6OMcDIqRKSbfpuA9fdhpJOrIot/fHvl
+ d7R8b4yFQsu6DIK/SdQVZ+vc710I7aZ9GRqm3sIL4+u4rtVdRYnaaVLWqh50Qzft
+ VxRIHd4TYkAnaiybjvRKCBcU//kcMWfCWlhU0lc/CLzhN4ofa+G9bD6BQYZ17cs/
+ Ck04yDs/1QhySXrwNdSTin6ao8SVJrH0Bzfl7CGbfgHFjGelcs3yTA6As+1g0wA3
+ bqn5+fUdsgDGpbwGdgK8r9OdVFs4KrB8PvHfIC/g+xA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=2uAmNf
- Xp/nheDUf7m8Ia1NiqBIQ3V0NGUD9iv59hcp4=; b=dfnhGt4viOhr0msPYsbcQG
- xXsa8gS83w1IXfAHqqr30p+DTcfYz05K3XdnKwWkXEsg8w63OCoHa6ita2hSuEjp
- XRQLaxiOYciSnwcJLdUyqBOlPaZtepjuBUO9BXEZaZUZWOyPVEdZY7o7QGdA/qC5
- z+Pl9xhAV4vU8tnYIvcxvBjjZOGbx43bpGFh9+40qg0z0bbgDYOoJbZVTzstcnXU
- W6IFFOq6ONzwSZsi7VHJD7fZ0G/04Z3t29cnyAxj3rujrc2uZg9xHTI2BfU58vv8
- UUj7fTvVlOdcCU34lD15/gnFh927GboKnb9B9AUHBAwP8DSgpo0Hsagx3EIEOT2A
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=hKt9OO
+ fB9XeD3ZLSEgsAq6xaJ/6rxoPVZNvP3Ww5CRw=; b=OQfE9EZS6U5GwpmMsz2WTQ
+ HBZ+eikiYPUFE0eJiEERN/Tux0JUueQw0YlqKxtGVsgRzbNlPN9Swo68DVtdojAh
+ HLX1Q1YenlnHHaP4b+7IOR5C6GbKTkJNuQjOaMvI63vkT/O0SWLq78oQvD4rNWOK
+ LyG07ViY3+Ya7S/aywwDDcPQdN0FYwRcLN7obt9ORk1qLyQtu8b9yx/ynbd0ZDGv
+ T1oRgl0MiLD3Nb0OOmylJQ18txU3hwVcyP/D3F0LMZKlBls1qLA7cbkGL32mUJK0
+ qR6CXWIoP8sqcw3IpOXI0TauIeJXRETCgLfze0fS1RyPH9oEFHiUKW5by+XUnFjw
  ==
-X-ME-Sender: <xms:JeNUXrs5YgpmXGtb0xXXAElj8Qk55Y-aAOiJRDgrrxKwpEUASQ5OKQ>
+X-ME-Sender: <xms:Q-NUXhdSGO21088RZoqhnwU-N9Z2TZhsRXqtw8gl1QaKUpR-l8P7Kg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrledugdduvdekucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddunecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepudenucfrrghrrghmpehmrghi
  lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:JeNUXvZ4yM6zyMkpw137PUbeSSFlcpLfIgQ78HK8f2cDck0hEjS9vg>
- <xmx:JeNUXiLsniPtUUmOpwjwEUfDddgf_R7tgkCa5c-ZVdEUAtfmulLsrA>
- <xmx:JeNUXhsDmPiSHHKx-N2khh8XQIFw3dEQR96EYtNT9Srqe8lBeR6uCg>
- <xmx:JeNUXvtgDT0RHboTZzj-O4yTQb28Xc-3HjQYNfFV54YyRc92pINBtQ>
+X-ME-Proxy: <xmx:Q-NUXjeTdA0LaTk9oFS3bfmdqTPNIZI6_h763JfXq3VkckM7WeMVFw>
+ <xmx:Q-NUXlgFRaFwZf9-FscMZvjqZAtCQNqeuHpo6xzEfNZl8-k1t6Y9dg>
+ <xmx:Q-NUXvRfT_njXx0BBTIHubCLo8Yxw_TGcbjiI_eVw5Gc6TtURtrwQg>
+ <xmx:Q-NUXpvbwx2KCPU45bA4GJylYdbpbnMCtciTsU6k9hu3iaqB39F-RQ>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 376A33060F09;
- Tue, 25 Feb 2020 04:04:37 -0500 (EST)
-Date: Tue, 25 Feb 2020 10:04:35 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id 5F6BE3280065;
+ Tue, 25 Feb 2020 04:05:07 -0500 (EST)
+Date: Tue, 25 Feb 2020 10:05:06 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH v2] ARM: dts: sun8i-h3: Add thermal trip points/cooling
+Subject: Re: [PATCH v2] ARM: dts: sun8i-a83t: Add thermal trip points/cooling
  maps
-Message-ID: <20200225090435.63licyt55thlievi@gilmour.lan>
-References: <20200224165446.334712-1-megous@megous.com>
+Message-ID: <20200225090506.4fnylq56bscuhtf3@gilmour.lan>
+References: <20200224165417.334617-1-megous@megous.com>
 MIME-Version: 1.0
-In-Reply-To: <20200224165446.334712-1-megous@megous.com>
+In-Reply-To: <20200224165417.334617-1-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_010438_814867_E17CD1C5 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20200225_010511_931367_7495CC16 
+X-CRM114-Status: GOOD (  10.82  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.26 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [66.111.4.26 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -94,6 +92,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -113,29 +113,27 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Rob Herring <robh+dt@kernel.org>,
  "moderated list:ARM/Allwinner sunXi SoC support"
  <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7828624573041558096=="
+Content-Type: multipart/mixed; boundary="===============6603314544935771702=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7828624573041558096==
+--===============6603314544935771702==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ef37cxbs77ojiiit"
+	protocol="application/pgp-signature"; boundary="vwpjjsjg2oauasuz"
 Content-Disposition: inline
 
 
---ef37cxbs77ojiiit
+--vwpjjsjg2oauasuz
 Content-Type: text/plain; charset=iso-8859-1
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Feb 24, 2020 at 05:54:46PM +0100, Ondrej Jirman wrote:
+On Mon, Feb 24, 2020 at 05:54:17PM +0100, Ondrej Jirman wrote:
 > This enables passive cooling by down-regulating CPU voltage
 > and frequency.
 >
-> For trip points, I used a slightly lowered values from the BSP
-> code. The critical temperature of 110=B0C from BSP code seemed
-> like a lot, so I rounded it off to 100=B0C.
+> For the trip points, I used values from the BSP code directly.
 >
 > The critical trip point value is 30=B0C above the maximum recommended
 > ambient temperature (70=B0C) for the SoC from the datasheet, so there's
@@ -143,25 +141,24 @@ On Mon, Feb 24, 2020 at 05:54:46PM +0100, Ondrej Jirman wrote:
 >
 > Signed-off-by: Ondrej Jirman <megous@megous.com>
 
-Applied, thanks
-
+Applied, thanks!
 Maxime
 
---ef37cxbs77ojiiit
+--vwpjjsjg2oauasuz
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHQEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlTjIwAKCRDj7w1vZxhR
-xdrDAPiY7uUqle4oy7ZfhyvwkJMp0IoCHkzpKm/956C+OumXAQCLjcgwO1IKcKvQ
-+/R56Jp7e0RC+a7+tovDO/hPn153Dg==
-=vEfK
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlTjQgAKCRDj7w1vZxhR
+xYalAP9vnW4VdHS9SOdq6rECbAh1zFYhmhM1JDb6JlXtDGMdNwEAvKgrrmVt/jfK
+sa2LzjhCPTU65QA8na0nLnyQC3clbwM=
+=gevU
 -----END PGP SIGNATURE-----
 
---ef37cxbs77ojiiit--
+--vwpjjsjg2oauasuz--
 
 
---===============7828624573041558096==
+--===============6603314544935771702==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -172,5 +169,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7828624573041558096==--
+--===============6603314544935771702==--
 
