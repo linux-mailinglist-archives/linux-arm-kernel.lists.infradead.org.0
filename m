@@ -2,74 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CD7416B76E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 02:55:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 473F316B778
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 03:01:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jWgr5utlm/FVkIlXs25LkWaj1+zq7Pn/ccTOi5q7f24=; b=qmTusnsbQ0Wu2AHE4E7kcqNXW
-	qXybqmN1+18lfy+UXtuRN+aHYgtqkBdXlH54FGiCZTWCRjbpEIHLZAL0SBaSJ01xYRo+KR/g69108
-	rOQhYKiy0s+18mAlfuE+x3NMde3VKot+n+JYOd1dzj/e2yC2Cu8e4ySnimNo22EQnuwwv00odYqsr
-	JrkfBO9CE3+/MJL1uSxrNET5cuovveQP7KhJtBIx08zervIzSS0oSvZzVr/2oPIB6R2CLZ8zDC5Oi
-	ZTsh8wqOpk/3al6kAVrpuWavivDo7mHwSgjvGdyT8bmQaEM69xQXJeyUfc7NtdAGetBQz0AQ3kNRz
-	QbxaJtvWg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WBpkbWOiXyT2Ip+yBTN+hPdl/27ZoYetV2bclE4jDZA=; b=nuHhJldMq2G2yV
+	tiT0Pcwc6Y8AgDNGms+qfUVvbrJELIMX1ds/ZhkmCeWziNHUX1LiUi1xXB1rRq9VlfDZEBsSfzSRg
+	s3ytLAmvlXS7UyrBfNkxzqk1DgQVvvm9TYfYni2JWOf7fNbyqy1+VgBcXlBCfJ3Vg50buTrVzS/O8
+	P0D72nojZnMkxXDzgMtbLzJigkzHlNZVzDGhQiPYQlmT9I8HatFZSyJgYDEbK1kbA/lIiLJOsnABB
+	06pXKeUDV4QR4ZfLSKT9dDpC7GDR4UadFYRFKv04cSvbIKLFiciQVH12cTGsLntGbmYy8F9c8GTCd
+	yv/7PzhQuXt0GgDFAPiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6PRe-00007v-Vm; Tue, 25 Feb 2020 01:55:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j6PWv-0002DE-VY; Tue, 25 Feb 2020 02:01:02 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6PRW-00007U-FR
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 01:55:28 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 76B89218AC;
- Tue, 25 Feb 2020 01:55:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582595725;
- bh=BKoZoiZOzWMUlicGnA5j0dsvAcNX2LUFo3je98EtSm8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=ul3Lt4z2Pfx9duRcQtXilwpx2XlsCDGOZQz9V6BzNHT57bmNxhF7vxNRkVKaItL18
- tb20jakqK13mbvKrfUnpgPFdYxvPDPr7yPEfcWk2lSlSjikZyfCuSPjhKIZWQq00rC
- Bc2EQbkfiL05npIpvZgDIGq2pZjyojAhk4iaGeuA=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j6PRT-007hzP-PS; Tue, 25 Feb 2020 01:55:23 +0000
+ id 1j6PWk-00027p-Ny; Tue, 25 Feb 2020 02:00:52 +0000
+X-UUID: 424f1fa82e994d1bb5ea31b65616bddf-20200224
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=HaqLyinc6ZirvAps70soCVJsRIpjo20L+48UAgoY2jA=; 
+ b=fgOxigzGsrgpnE0iUci3Grn0QRBfxYEd4U1Z6VoQljpcg5snYwxVj32J/b5XgDIpFFBM8UExHRZmsDRLGEXvxDLeq31HCBdNyBnoF9JZitrqssw3qkpMmn+jLLA6lLW5EJwoK234SIfX4v5AvWnO9owkl8s18HN5+i4JuQd/zXU=;
+X-UUID: 424f1fa82e994d1bb5ea31b65616bddf-20200224
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <jitao.shi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 672726320; Mon, 24 Feb 2020 18:00:43 -0800
+Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 24 Feb 2020 18:01:44 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N2.mediatek.inc
+ (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 25 Feb 2020 10:01:14 +0800
+Received: from [10.16.6.141] (10.16.6.141) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 25 Feb 2020 10:01:07 +0800
+Message-ID: <1582596033.12484.1.camel@mszsdaap41>
+Subject: Re: [PATCH v6 1/4] dt-bindings: display: mediatek: update dpi
+ supported chips
+From: Jitao Shi <jitao.shi@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>
+Date: Tue, 25 Feb 2020 10:00:33 +0800
+In-Reply-To: <1582530646.6520.2.camel@mtksdaap41>
+References: <20200221112828.55837-1-jitao.shi@mediatek.com>
+ <20200221112828.55837-2-jitao.shi@mediatek.com>
+ <1582530646.6520.2.camel@mtksdaap41>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Date: Tue, 25 Feb 2020 01:55:23 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Tim Harvey <tharvey@gateworks.com>
-Subject: Re: ARM64_SW_TTBR0_PAN enabled causing hangs on OcteonTX
-In-Reply-To: <CAJ+vNU13-57OeaYVw0kHt=FgJT+TsM_muWM+f-H_zETeJNjTiA@mail.gmail.com>
-References: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
- <f732995ffdbcde8d0d0935d68dc0d5a2@kernel.org>
- <CAJ+vNU13-57OeaYVw0kHt=FgJT+TsM_muWM+f-H_zETeJNjTiA@mail.gmail.com>
-Message-ID: <6f3ce71073f38fbd4e0f7b75852a8846@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: tharvey@gateworks.com, linux-arm-kernel@lists.infradead.org,
- will@kernel.org, catalin.marinas@arm.com, sgoutham@marvell.com,
- rrichter@marvell.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+X-TM-SNTS-SMTP: F8BB90EA16B0F142ADAEB685CD52782DC2B7D7467C6F174C8B79AFA650CE00C32000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_175526_558620_AAF35169 
-X-CRM114-Status: GOOD (  18.86  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200224_180050_791175_BAA9448A 
+X-CRM114-Status: GOOD (  17.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,109 +86,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>,
- Sunil Goutham <sgoutham@marvell.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cawa.cheng@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-25 01:16, Tim Harvey wrote:
-> On Mon, Feb 24, 2020 at 4:50 PM Marc Zyngier <maz@kernel.org> wrote:
->> 
->> Tim,
->> 
->> On 2020-02-25 00:35, Tim Harvey wrote:
->> > Greetings,
->> >
->> > I'm trying to understand why enabling CONFIG_ARM64_SW_TTBR0_PAN on an
->> > OcteonTX (CN80XX) SoC would cause the kernel to hang.
->> >
->> > Here's what I'm seeing using arch/arm64/defconfig +
->> > CONFIG_ARM64_SW_TTBR0_PAN=y on a Gateworks Newport board with a
->> > CN8030-1500BG676-SCP-P12-G SoC using the Marvell SDK-10.1.1.0 boot
->> > firmware:
->> >
->> > Starting kernel ...
->> >
->> > [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x430f0a22]
->> > [    0.000000] Linux version 5.5.0-00001-g2028a3b (tharvey@tharvey)
->> > (gcc version 7.3.0 (Marvell Inc. Version: Marvell GCC7 build 238.0))
->> > #2 SMP PREEMPT Mon Feb 24 16:20:24 PST 2020
->> > [    0.000000] Machine model: Gateworks Newport CN80XX GW6404
->> > [    0.000000] efi: Getting EFI parameters from FDT:
->> > [    0.000000] efi: UEFI not found.
->> > [    0.000000] cma: Reserved 64 MiB at 0x000000007c000000
->> > [    0.000000] NUMA: NODE_DATA [mem 0x7bbe5100-0x7bbe6fff]
->> > [    0.000000] Zone ranges:
->> > [    0.000000]   DMA      [mem 0x0000000000500000-0x000000003fffffff]
->> > [    0.000000]   DMA32    [mem 0x0000000040000000-0x000000007fffffff]
->> > [    0.000000]   Normal   empty
->> > [    0.000000] Movable zone start for each node
->> > [    0.000000] Early memory node ranges
->> > [    0.000000]   node   0: [mem 0x0000000000500000-0x000000007fffffff]
->> > [    0.000000] Initmem setup node 0 [mem
->> > 0x0000000000500000-0x000000007fffffff]
->> > [    0.000000] On node 0 totalpages: 523008
->> > [    0.000000]   DMA zone: 4076 pages used for memmap
->> > [    0.000000]   DMA zone: 0 pages reserved
->> > [    0.000000]   DMA zone: 260864 pages, LIFO batch:63
->> > [    0.000000]   DMA32 zone: 4096 pages used for memmap
->> > [    0.000000]   DMA32 zone: 262144 pages, LIFO batch:63
->> > [    0.000000] psci: probing for conduit method from DT.
->> > [    0.000000] psci: PSCIv1.1 detected in firmware.
->> > [    0.000000] psci: Using standard PSCI v0.2 function IDs
->> > [    0.000000] psci: Trusted OS resident on physical CPU 0x0
->> > [    0.000000] psci: SMC Calling Convention v1.1
->> > [    0.000000] percpu: Embedded 22 pages/cpu s53016 r8192 d28904 u90112
->> > [    0.000000] pcpu-alloc: s53016 r8192 d28904 u90112 alloc=22*4096
->> > [    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3
->> > [    0.000000] Detected VIPT I-cache on CPU0
->> > [    0.000000] CPU features: detected: GIC system register CPU
->> > interface
->> > [    0.000000] CPU features: detected: Cavium erratum 30115
->> > [    0.000000] CPU features: detected: Kernel page table isolation
->> > (KPTI)
->> 
->> If this CPU is just another version of TX1, KPTI shouldn't get enabled
->> on
->> this HW, as it definitely breaks (see erratum 27456 and its
->> consequences).
->> Can you please enable CONFIG_CAVIUM_ERRATUM_27456 and report back?
->> 
+On Mon, 2020-02-24 at 15:50 +0800, CK Hu wrote:
+> Hi, Jitao:
 > 
-> Marc,
+> On Fri, 2020-02-21 at 19:28 +0800, Jitao Shi wrote:
+> > Add decriptions about supported chips, including MT2701 & MT8173 &
+> > mt8183
+> > 
+> > 1. Add more chips support. ex. MT2701 & MT8173 & MT8183
+> > 2. Add property "dpi_pin_mode_swap" and "pinctrl-names" gpio mode dpi mode and
+> >    gpio oupput-low to avoid leakage current.
+> > 3. Add property "dpi_dual_edge" to config the dpi pin output mode dual edge or
+> >    single edge sample data.
+> > 
+> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> > ---
+> >  .../bindings/display/mediatek/mediatek,dpi.txt        | 11 +++++++++++
+> >  1 file changed, 11 insertions(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> > index b6a7e7397b8b..cd6a1469c8b7 100644
+> > --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> > +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> > @@ -7,6 +7,7 @@ output bus.
+> >  
+> >  Required properties:
+> >  - compatible: "mediatek,<chip>-dpi"
+> > +  the supported chips are mt2701 , mt8173 and mt8183.
+> >  - reg: Physical base address and length of the controller's registers
+> >  - interrupts: The interrupt signal from the function block.
+> >  - clocks: device clocks
+> > @@ -16,6 +17,11 @@ Required properties:
+> >    Documentation/devicetree/bindings/graph.txt. This port should be connected
+> >    to the input port of an attached HDMI or LVDS encoder chip.
+> >  
+> > +Optional properties:
+> > +- dpi_pin_mode_swap: Swap the pin mode between dpi mode and gpio mode.
 > 
-> This is a CN8030 Pass 1.2 part so erratum 27456 does appear to be
-> needed and it is indeed enabled already in the kernel by default.
+> When you have both pinctrl-name of "gpiomode" and "dpimode", it imply
+> that dpi_pin_mode_swap = true, isn't it? If so, I think this property is
+> redundant.
+> 
+> Regards,
+> CK
 
-And yet the kernel doesn't seem to detect an affected silicon.
-Can you please apply the following patch and report what happens
-(including the full dmesg):
+Yes,I'll fix it next verision.
 
-diff --git a/arch/arm64/kernel/cpu_errata.c 
-b/arch/arm64/kernel/cpu_errata.c
-index 703ad0a84f99..c0890d882e56 100644
---- a/arch/arm64/kernel/cpu_errata.c
-+++ b/arch/arm64/kernel/cpu_errata.c
-@@ -672,7 +672,7 @@ const struct midr_range cavium_erratum_27456_cpus[] 
-= {
-  	/* Cavium ThunderX, T88 pass 1.x - 2.1 */
-  	MIDR_RANGE(MIDR_THUNDERX, 0, 0, 1, 1),
-  	/* Cavium ThunderX, T81 pass 1.0 */
--	MIDR_REV(MIDR_THUNDERX_81XX, 0, 0),
-+	MIDR_ALL_VERSIONS(MIDR_THUNDERX_81XX),
-  	{},
-  };
-  #endif
+Best Regards
+Jitao
 
-Thanks,
-
-         M.
-
--- 
-Jazz is not dead. It just smells funny...
+> 
+> > +- pinctrl-names: Contain "gpiomode" and "dpimode".
+> > +- dpi_dual_edge: Control the RGB 24bit data on 12 pins or 24 pins.
+> > +
+> >  Example:
+> >  
+> >  dpi0: dpi@1401d000 {
+> > @@ -26,6 +32,11 @@ dpi0: dpi@1401d000 {
+> >  		 <&mmsys CLK_MM_DPI_ENGINE>,
+> >  		 <&apmixedsys CLK_APMIXED_TVDPLL>;
+> >  	clock-names = "pixel", "engine", "pll";
+> > +	dpi_dual_edge;
+> > +	dpi_pin_mode_swap;
+> > +	pinctrl-names = "gpiomode", "dpimode";
+> > +	pinctrl-0 = <&dpi_pin_gpio>;
+> > +	pinctrl-1 = <&dpi_pin_func>;
+> >  
+> >  	port {
+> >  		dpi0_out: endpoint {
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
