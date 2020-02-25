@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FA2016EB5B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 17:25:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87C8D16EB61
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 17:26:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S5xJ+lzBvKUqlxrd2cdjWhW+e6eF7L4JbaSfhJZ90dk=; b=kCqco2rPuWHKsZCR9ULQMfalZ
-	oySljjX3sxmaBGRJ+nOTas8eef7WG1nu/qXxzax1qZqCxESuvpLN8lkoPBcreu+ctNJPHEb4lR382
-	x7G37xlEGzijyw0M7IP9hGTApNjGAfz9NeFWf1e34UDjHk0lF2rwmiqwv+phh9jvWCRHb8OEigXVb
-	YXUpS7SrgJM1Op6tAUxFJVNG9odzNGHynvKrjUw43tTBMnajUSX3kVNXXSxCDrntl6+HB7mzZx4Gr
-	gzhtvM+UYxrXGKQRvcuJBY30+BEvvLv5K6lOHaU1V73foMQTkBIaJOzVoEybhsoJCtrOkz9NtkORM
-	D2MFEZ+Dw==;
+	 bh=pt+i3wr0v3wVfDRVz+6N8uh9XOaLS/ySek113++ikX8=; b=tdhUXhbBm5oIsKXHjhjEU4Wq6
+	+5Dal1uLvN/rYkaCNyFahVkZ5ZLRura7hphK+aCeNWvDDN1ug2+t30rim7pZGCf9fj4/YgglvKbhz
+	uuy8SV8mvyNZ/Er2jMVFxXsymKmbJC7xEBHg8zUg5fQMSoKo2cNIn3MWt+76CFr+dmJah2xTTVDfz
+	ZGds2F7RHiCHaVC4K1p9EZ2G3wKLM3rYXHsMTU3/Jrym13JcPImJvX8dC8eJ6C5cZbNbNqFvjNagM
+	eXsvaJv/HMFAhO4YKj26t23l/fVu0RSkRhaMJ4fGI32U9paBqUCqFYHaW0EMrlhTjO1TFwIpQPhsZ
+	B0A5Xh60g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6d1M-0005LL-B8; Tue, 25 Feb 2020 16:25:20 +0000
+	id 1j6d2O-0005dq-V6; Tue, 25 Feb 2020 16:26:24 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6d13-00044h-QS; Tue, 25 Feb 2020 16:25:07 +0000
+ id 1j6d2G-0005dJ-5g; Tue, 25 Feb 2020 16:26:17 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 827DFACD9;
- Tue, 25 Feb 2020 16:25:00 +0000 (UTC)
-Message-ID: <8b703bac366d947d4af4027d93551df501a6859a.camel@suse.de>
-Subject: Re: [PATCH 16/89] clk: bcm: rpi: Add clock id to data
+ by mx2.suse.de (Postfix) with ESMTP id 6C079AD48;
+ Tue, 25 Feb 2020 16:26:14 +0000 (UTC)
+Message-ID: <0b93ed0c1332e9966616c8c2aaeac35503096f8f.camel@suse.de>
+Subject: Re: [PATCH 17/89] clk: bcm: rpi: Pass the clocks data to the
+ firmware function
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: Maxime Ripard <maxime@cerno.tech>, Eric Anholt <eric@anholt.net>
-Date: Tue, 25 Feb 2020 17:24:58 +0100
-In-Reply-To: <3028e04887c7b8a6ffc150c016aa63281461b434.1582533919.git-series.maxime@cerno.tech>
+Date: Tue, 25 Feb 2020 17:26:12 +0100
+In-Reply-To: <5a02a46e899abfca7257a725678f1131490e6b11.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <3028e04887c7b8a6ffc150c016aa63281461b434.1582533919.git-series.maxime@cerno.tech>
+ <5a02a46e899abfca7257a725678f1131490e6b11.1582533919.git-series.maxime@cerno.tech>
 User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_082506_564153_E0C679F6 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200225_082616_358063_DACE5BC1 
+X-CRM114-Status: GOOD (  10.59  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -47,10 +47,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -70,27 +70,24 @@ Cc: Tim Gover <tim.gover@raspberrypi.com>,
  linux-clk@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8412862278789142638=="
+Content-Type: multipart/mixed; boundary="===============2890044787379505007=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8412862278789142638==
+--===============2890044787379505007==
 Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-kFhVNmqO+6FeO9XJjOhQ"
+	protocol="application/pgp-signature"; boundary="=-k7HUefi2lZk06DdeDb2b"
 
 
---=-kFhVNmqO+6FeO9XJjOhQ
+--=-k7HUefi2lZk06DdeDb2b
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
 On Mon, 2020-02-24 at 10:06 +0100, Maxime Ripard wrote:
-> The driver has really only supported one clock so far and has hardcoded t=
-he
-> ID used in communications with the firmware in all the functions
-> implementing the clock framework hooks. Let's store that in the clock dat=
-a
-> structure so that we can support more clocks later on.
+> The raspberry_clock_property only takes the clock ID as an argument, but
+> now that we have a clock data structure it makes more sense to just pass
+> that structure instead.
 >=20
 > Cc: Michael Turquette <mturquette@baylibre.com>
 > Cc: Stephen Boyd <sboyd@kernel.org>
@@ -103,28 +100,28 @@ Thanks!
 Nicolas
 
 
---=-kFhVNmqO+6FeO9XJjOhQ
+--=-k7HUefi2lZk06DdeDb2b
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5VSloACgkQlfZmHno8
-x/4D9Af/Y7Qj4X5FsF/GzS/2DBIgz6V527mtmE4PC/0JNsHVCgqGnX440QwhasIo
-NaZqxEBUI7pLHB0po3ZrIJRaNSVCIBORtaz68EIrwhtGYYK8XQbA19SOmCZonANA
-uEtLWx1YMEh6n6o8fTF9+RSYl9VzVBISP4nnmxEKFaZIBc+fs9YewL5m8fuM4Ou3
-/kiCXXOFcJyyJwsbdrWoPKBUpplYLxoW+CIZ+1+keIBm88WSa5G2TMFSVv3miiqO
-y9zVU+SPzwXByhU7lMBEvjeIosFu+NI+9//qDA6bw9rX1bQmYogTloy0qlrlF8I1
-i+ZPFj9Ye53hWmjN8N/eMX1bf2dXSA==
-=vNir
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5VSqQACgkQlfZmHno8
+x/5d1wgAqGqboihG+8tsmV0N9IYrcZjuNVb4fKhnZwB2UhnwGBfzoV3LQiRwimoy
+w0VJB+ITS3nxs6gnUyb6c+wJmBalGd0odtCJd9IzkUsv+Zh6byikhlzDhPflCQ8S
+Qhcj4sMHLfuFW51+zTMw9WYtGiXmgDu3zUore5LCMO0cTQumDmwg1dqEr5MoCgPA
+N9rRKRtqTcs1JNlhxlT6XBv0zGTuwUOKkcab5dZ8P7TnZlcwNo6nvKpDHAy+ihC9
+1uai4H/hT3A0rDOeiEHhkVFL2SbFZaouYyAGSeZ04LmO9/LSQV7AWPJ9Afn4qkJQ
+mrf5zAjSWTH9A9xRPbUhLXrcGgeapA==
+=00Mu
 -----END PGP SIGNATURE-----
 
---=-kFhVNmqO+6FeO9XJjOhQ--
+--=-k7HUefi2lZk06DdeDb2b--
 
 
 
---===============8412862278789142638==
+--===============2890044787379505007==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -135,6 +132,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8412862278789142638==--
+--===============2890044787379505007==--
 
 
