@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA49016EB31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 17:20:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A418E16EB52
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 17:24:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uhsxHWbskSDB49UokkJedICIc5o4wy+VnhcIJYSTJJw=; b=e1dxhyWM+OjZ9fRCDsmS+UpKz
-	LiFt+Ls66ITAE6J01GytV3WSI+x8B/TJT5+4IljLW3++oxGWowPmmfTU2gW83aGX02UX/EZWIH8rZ
-	9ENGRQIhFCjMLUhLOlCq8lV0cTCUh93gzZYD3IRsu25RcnRoyvhffI2imyjwoAVi1tuWPUfYGJSDg
-	cuDf6Fmxb//hgumHqGqQVr82zpiJ0liRqbGz1ZnLTkbhtaQbYiBRYz+lkEtDAJCqIrPZsX3rW2Ls9
-	BEGg55fCpD6FO6aDdNHKoPnetx3xRSi9m1yqmV5qLr2IpwBTlfwVmA4jp9jiEV0om9f479V/6TabW
-	9hKZBg/Kw==;
+	 bh=v22/KUz3Z8M5JjZlSLPXF6u7WMRAROQFz0LNmMJ7KBo=; b=HlPLDKLjqBwSkark44/CHrtiZ
+	Mv8OWY9ntDt2SUQWL3WOm66+Hejzdv+oEfVIMSWSHtK0SC6bCxQ7xI2Z+Gj7xEzKyJbkfkY2Cczeu
+	iSOPkROmi1VXQ5zWHj338z0qjsVBHLdOX6PjbL0bz8Gpa0ja4WlBQ8Ia6pijxsasIUK3faLvn+BRf
+	e/+KairM7enbEq1srEXwoU8sJlKoh6hYz+Rv0h4EN6WfeX62IeN5F3cQHZmUOfV1Sgq/SkhUri/VP
+	6fDlYzQT4Dl+iFVdD2bl+tf92FqCiCSmBhsw4ShZFffq2a4vZfBRtMT5HmRQOHrVvArVfC39BBYg1
+	b1x10fV9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6cwA-0001Ya-Jq; Tue, 25 Feb 2020 16:19:58 +0000
+	id 1j6d0O-0003ne-Lw; Tue, 25 Feb 2020 16:24:20 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6cw0-0001Xo-Pu; Tue, 25 Feb 2020 16:19:50 +0000
+ id 1j6d0F-0003mn-7S; Tue, 25 Feb 2020 16:24:12 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 2B9B3ABD7;
- Tue, 25 Feb 2020 16:19:47 +0000 (UTC)
-Message-ID: <18ff8ba02028d6b299e450eed6a9a374fa4adda8.camel@suse.de>
-Subject: Re: [PATCH 14/89] clk: bcm: rpi: Make sure the clkdev lookup is
- removed
+ by mx2.suse.de (Postfix) with ESMTP id CB7D8AD48;
+ Tue, 25 Feb 2020 16:24:06 +0000 (UTC)
+Message-ID: <b411e2a675dd1b2e688815fa3eb0bd3c7c86946d.camel@suse.de>
+Subject: Re: [PATCH 15/89] clk: bcm: rpi: Create a data structure for the
+ clocks
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: Maxime Ripard <maxime@cerno.tech>, Eric Anholt <eric@anholt.net>
-Date: Tue, 25 Feb 2020 17:19:45 +0100
-In-Reply-To: <1779dd1489125be571fb3c2ee3e04c32f9875420.1582533919.git-series.maxime@cerno.tech>
+Date: Tue, 25 Feb 2020 17:24:02 +0100
+In-Reply-To: <adc5810f9ed6400940f36be6e0a3a7255c557687.1582533919.git-series.maxime@cerno.tech>
 References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <1779dd1489125be571fb3c2ee3e04c32f9875420.1582533919.git-series.maxime@cerno.tech>
+ <adc5810f9ed6400940f36be6e0a3a7255c557687.1582533919.git-series.maxime@cerno.tech>
 User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_081948_982134_34E94834 
-X-CRM114-Status: UNSURE (   9.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200225_082411_420363_8E6EC166 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,30 +67,32 @@ Cc: Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>,
  Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Phil Elwell <phil@raspberrypi.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-clk@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8876577386515263554=="
+Content-Type: multipart/mixed; boundary="===============6550099061577533251=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8876577386515263554==
+--===============6550099061577533251==
 Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-hMIQmfGcVIyBQCc/oHBm"
+	protocol="application/pgp-signature"; boundary="=-NxrkRqtfUvDY/OjkZYGj"
 
 
---=-hMIQmfGcVIyBQCc/oHBm
+--=-NxrkRqtfUvDY/OjkZYGj
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
 On Mon, 2020-02-24 at 10:06 +0100, Maxime Ripard wrote:
-> The clkdev lookup created for the cpufreq device is never removed if
-> there's an issue later in probe or at module removal time.
+> So far the driver has really only been providing a single clock, and stor=
+ed
+> both the data associated to that clock in particular with the data
+> associated to the "controller".
 >=20
-> Let's convert to the managed variant of the clk_hw_register_clkdev functi=
-on
-> to make sure it happens.
+> Since we will change that in the future, let's decouple the clock data fr=
+om
+> the provider data.
 >=20
 > Cc: Michael Turquette <mturquette@baylibre.com>
 > Cc: Stephen Boyd <sboyd@kernel.org>
@@ -104,28 +105,28 @@ Thanks!
 Nicolas
 
 
---=-hMIQmfGcVIyBQCc/oHBm
+--=-NxrkRqtfUvDY/OjkZYGj
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5VSSEACgkQlfZmHno8
-x/7VmQgAmYGPf8jpPjktSqZ2UXKC/Wen7oa7/UnmKQxF8fVy94130kl/8DXSL3uE
-FuQjC4vVQjHJG6wLR5mRiZRb340mXcTY37UI41QZoOIdHucCaCE3B1/pKPCpvlah
-m/ql1Cfi+E57jyUVIWcjZxIqn1vomGlOD9X3Brjs4ikCOy0qVx/qoVaBWGFtV9/h
-STUgXbIwX8vgp6TzB97vABc6ZtsYbwRX+BA+mAS5CrZv4/TC+DD2QkYG9p2t+pjQ
-6r/mWIUTyOVya/v6h5q0VgjEMp3Kux8hZsJCL+Tfwx2nTcgJfKRAMZgHXV8n8eFn
-Z+nLK/AgUGgaisN18b7dPeb1g5P6Dw==
-=ZqkQ
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5VSiIACgkQlfZmHno8
+x/67cQf9ElW7VnzLZaFV3c8EcEp/LDyKUov3/WaAU+cOAeaQeXhBsw6PuOhDYoe4
+WBbwNikei9qvSn48Vq/kH00pkXvoHQsVY2BY4O7ImbuHTEyYkeIguWeAtVHLFv0m
+sP35lY0G/MeI1MZkPO8NCCNXoQPvLqyVU65gnjAAsnEvpfKe2PCzbjmGp+E85Yov
+oRxeevriB34mlrTDEIDQ2cxPvku3YO2yHyPqbq+1CLHjqJV4nK1JJq/b7vcTKbue
+OkhCsNJb+ddOD4J7MMJGTdiZJrfO2tPe7PyFAEuaAK7ytHLy/G0S1kvBWW/e2+XV
+jOLl9CnX6QQBZoLloLB+OplaQFqj5A==
+=73tJ
 -----END PGP SIGNATURE-----
 
---=-hMIQmfGcVIyBQCc/oHBm--
+--=-NxrkRqtfUvDY/OjkZYGj--
 
 
 
---===============8876577386515263554==
+--===============6550099061577533251==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -136,6 +137,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8876577386515263554==--
+--===============6550099061577533251==--
 
 
