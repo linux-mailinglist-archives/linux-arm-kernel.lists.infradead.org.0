@@ -2,52 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E298716EBDC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 17:58:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ADA616EBF4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:00:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zv5RpEP2q/YpykJeATHgjISJxdzMkwW04Svtxcum5pc=; b=rYMcoLbz2HozIH
-	dEdYdEjlJafRyGijDRMiECx9a027HoUMrm5N2DMpVIMrcDJflx1mTzes3YqbRPO8FoekJY5ND8+7n
-	h5c0CvskRrw3q5gv/J1kJtMvMrCUT9gL3NjUWtvv8nQZ2Hv1YE4o82JM2b6DOTBWWLvnJSCk7ZVaC
-	iRAFmq9LHCPGn/aWpFzrQPrOqw0O+MCJF6+iIJ0Sh1JztrTiJ6W2jaBbd8pw+ZBFLOjfTYlVOUNhw
-	0eOplE5MhfWdoR0tID4ZdGHXxnKZhFpNPdDIZfUCVNnd1LHtcAT6FzRI84rBP1TeKvkJQQrSHAwQc
-	iUSTmq6Ddekt3eacFY0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iajKfyp4gP0g+F0l3e68k7x7sUS1Y4HqDJserZ22K9w=; b=oxIxqlyDUWPVKqS2PQct/FbzS
+	QRmN9x1v1di/w4MlHh++I4fOmJjYrdIWyvmIc+OI1K0M1UqfBe0rkC1oDatdiEEUg2EAb9ILG0IAP
+	AWnz80xPtJPAxstiqRx251sgX5O0fLpOfAii54yi1NputtfRu50dqEQJ1KthRI2C4nVGFSHAc5XGO
+	hIpLOAx6nJjFqylQeVtPVOF0yh25mkwvfhwBx9tPKMQEnBIKtLFx8kijQpqi+sk0+xjpfG6+acIMP
+	Oqd5vWf/vf3YuiwhI7GGIm8Ceaqkxzfe7UXFvKnw3dF4t40IwNYVwduG/I6/UshRalQgSziNxPXtk
+	LZhjmcM0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6dWs-00007K-7x; Tue, 25 Feb 2020 16:57:54 +0000
+	id 1j6dZW-0001tu-6R; Tue, 25 Feb 2020 17:00:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6dWd-00005G-9S
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 16:57:40 +0000
-Received: from kernel.org (unknown [104.132.0.74])
+ id 1j6dZL-0001t5-Ai
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 17:00:30 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A80ED2082F;
- Tue, 25 Feb 2020 16:57:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DEEA32084E;
+ Tue, 25 Feb 2020 17:00:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582649858;
- bh=mN+4NXT9hq0vzpcYMZ5Qam3JcNxRlpUxh0JHOicfY4w=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=ZJ0guP9ehOqjXHAwvWlQDTXBo2MlpIDbtuVrJdgnfqyavv/g7rjd7z7eW+QVFXljP
- nCrzlj/nBLnU5bCiJ7RYyHvSWuZrzEXLGyo0QllGzDB/f2gviD08/jGvIcou7o4Ovf
- 71/d0HzIYzEYBnkR/Vj5Szu51BlFVlVoleKONq5I=
+ s=default; t=1582650027;
+ bh=vny+UcnilUnzqvBTsqujJvON5/YgTPLycNLkjK+3Rvo=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=zXFQVZK2lxT1dtDfLTEJ53jaDC8VgVagGFUbtsQHvhoURzbHkJjbcXvq+5+iSTPth
+ IxreC0Uf6Do4mglqJ5KnI5WkQFzChaFkQCB27XwkitKpDyPfCzrO7lvgkjmzvCaXGd
+ 9ZsesVoRKL2sdESquJasAQrOlC+CvLscJEYLqdPQ=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j6dZI-007sMZ-TK; Tue, 25 Feb 2020 17:00:25 +0000
 MIME-Version: 1.0
-In-Reply-To: <20200217125759.GA3671@dragon>
-References: <20200217125759.GA3671@dragon>
-Subject: Re: [GIT PULL] i.MX clock fixes for 5.6
-From: Stephen Boyd <sboyd@kernel.org>
-To: Shawn Guo <shawnguo@kernel.org>
-Date: Tue, 25 Feb 2020 08:57:37 -0800
-Message-ID: <158264985790.177367.1236565584424790778@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+Date: Tue, 25 Feb 2020 17:00:24 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Robert Richter <rrichter@marvell.com>
+Subject: Re: ARM64_SW_TTBR0_PAN enabled causing hangs on OcteonTX
+In-Reply-To: <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
+References: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
+ <f732995ffdbcde8d0d0935d68dc0d5a2@kernel.org>
+ <CAJ+vNU13-57OeaYVw0kHt=FgJT+TsM_muWM+f-H_zETeJNjTiA@mail.gmail.com>
+ <6f3ce71073f38fbd4e0f7b75852a8846@kernel.org>
+ <CAJ+vNU3XVNkdHXbq-KJaRecSxpPxboVW5Cx7zVEv64Gm1dt+Vg@mail.gmail.com>
+ <da8f38078ef8805200b102a1d24da4ae@kernel.org>
+ <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
+Message-ID: <8f2efa884c7cb642a9b9fa66c7949607@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: rrichter@marvell.com, tharvey@gateworks.com,
+ linux-arm-kernel@lists.infradead.org, will@kernel.org, catalin.marinas@arm.com,
+ sgoutham@marvell.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_085739_351618_0D4686F8 
-X-CRM114-Status: UNSURE (   7.28  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200225_090029_554313_BFA8F0B4 
+X-CRM114-Status: GOOD (  14.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,30 +95,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Tim Harvey <tharvey@gateworks.com>, Will Deacon <will@kernel.org>,
+ Sunil Goutham <sgoutham@marvell.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Shawn Guo (2020-02-17 04:58:01)
-> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+On 2020-02-25 16:35, Robert Richter wrote:
+> Marc,
 > 
->   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+> On 25.02.20 16:27:41, Marc Zyngier wrote:
+>> On 2020-02-25 16:13, Tim Harvey wrote:
 > 
-> are available in the Git repository at:
+>> > That does enable the erratum, disable KPTI and boot properly but I
+>> > misread the erratum and it shouldn't be needed for T81 pass 1.2... the
+>> > erratum is documented only needed for pass 1.0.
+>> 
+>> Can you then remove the patch *and* disable KPTI?
+>> 
+>> TX1 is broken beyond recognition and KPTI is known to explode on this 
+>> HW
+>> (which is why we disable KPTI on it). We always attributed it to this
+>> erratum,
+>> but in the absence of any help from Cavium to identify the problem, we 
+>> just
+>> keyed it on that.
+>> 
+>> *IF* this HW is indeed unaffected by it, then it is probably the mix 
+>> of
+>> KPTI and SWPAN that triggers the issue. If my suspicion is correct, 
+>> you'll
+>> need to have a chat with Cavium/Marvell to understand what is 
+>> happening
+>> there.
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-clk-fixes-5.6
-> 
-> for you to fetch changes up to 5eb40257047fb11085d582b7b9ccd0bffe900726:
-> 
->   clk: imx8mn: Fix incorrect clock defines (2020-02-17 15:18:00 +0800)
-> 
-> ----------------------------------------------------------------
+> I checked the docs and Tim is right, this should be only visible on
+> pass 1.0. Thus, the rev range to enable the workaround as implemented
+> upstream should be ok. I have asked hw folks regarding this.
 
-Thanks. Pulled into clk-fixes.
+Then it could well be that our disabling of KPTI on TX1 is keyed on the 
+wrong
+erratum. In the absence of a clear explanation of what is going on, we 
+made
+an educated guess. If oyu're going to find out about what breaks this 
+CPU,
+it'd be good to understand whether this is the same problem that affects 
+all
+the other revisions.
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
