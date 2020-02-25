@@ -2,63 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD7D116EC5A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:19:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F03416EC5D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:19:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SuBqATEUzCGx1QZR6ACnfPKGi1PfPc23XpDyVXpLeWk=; b=YRydaSp7jFUiiO
-	e+2pF8W461WBkjJKSIHqCQr7vttVS4/vs5QXJjPPdG0RVW3tqJTPImiB/dlFRdJ0EVi+JyE3Xj2nX
-	guf3noSjf5NZvH/xL6wQ9O4tIjNBhOKv+6MDqJ0hCh50oXh27LvIL4HeIYn52ts7b2bxQvXaRE//Z
-	YSoNLiVmYl8Kd0owayplfksCfc0Sxj94a3LPLBr9V2faOMmhEWtR3IhRP58Lfc/n/d8fH5jPffbk5
-	XkRJFEQ/smkl6TGwAWLgmeOvuIVBkQjNYtrEmdmioNZIKNEOBRR4HAESXFgKbETbEryhz/nmaOsem
-	OWqEopSk1IRYtB/ERQYw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=toNgwv0UMv8vI4nASXc2RV9k4wOQDt2TDt12bWmfIkU=; b=U8agaa4i1CDEDnfFjVbTtXGNn
+	0eDaZ2vlgA5hnBDzPB2kAieiHSghrbuiisLqe8VH+gsaSuc9vP+8YyW8mWQ1qGhJRldFq4tfuq2ax
+	+CiMlnc7raSrr7U0vx3cOX4XCE+UvChE76xAEqY+7W5v3QwmYsb/UYCA34nS/DOrMFCvZOtHpcl6z
+	TDN9iGTt/4/P42nXQdwVPB8ToUGegwwtd9yq0nVLBBmElxS6akyW6GOrGQ7RXPu/1IcpGxBtrLJgl
+	fB1zdOIDgq64Zlf14FHMAo1MwL7dj446etAoHrPjNluc9djSneDpot+4es8vMYuex5oYm2jI5Q3lF
+	Ko9uZ+MXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6dr8-0000sO-0V; Tue, 25 Feb 2020 17:18:50 +0000
+	id 1j6dsA-0001Bp-92; Tue, 25 Feb 2020 17:19:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6dqy-0000rq-DY
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 17:18:41 +0000
-Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com
- [209.85.221.50])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1j6ds0-0001BH-Gl
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 17:19:45 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6D6BE20CC7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 17:18:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1122F20732;
+ Tue, 25 Feb 2020 17:19:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582651119;
- bh=+F4U+sOep1GUuMewVSxeKmkBJjpEiPlWvavN4NfHTHU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Kru2iniyKJHsWA+T8AbmkDlWGZy/SsNdIrWrlIx4x5YceVZAiApOq0pbfSafk//tE
- RsrjP32S9Ugn9DcNptAU53mw+SmZQH+UQh9S8x6fYgc3yaiAfzDyQwgcC0L8jqCVDu
- alpc0kCIuTtj3pLnx6jm/x11nWtVqjqyUWp3Mh+A=
-Received: by mail-wr1-f50.google.com with SMTP id t3so15674625wru.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 09:18:39 -0800 (PST)
-X-Gm-Message-State: APjAAAW8I9cdbEM52vAGHh0XmGeTYMdxEf5IN5JHVeIQtfOgBfYs4Jkm
- syNpnZRhjAa1OnxFZOrxiWasBZjW86jhB71e6go1/g==
-X-Google-Smtp-Source: APXvYqzYe231PioAseymuBII5pEJ4PmKcp/FnPlpetDo58wKXzoTddejVCBAiPi7eocYSe9R4qFUdAtU8Ed+ufBj7Dk=
-X-Received: by 2002:adf:a411:: with SMTP id d17mr203784wra.126.1582651117870; 
- Tue, 25 Feb 2020 09:18:37 -0800 (PST)
+ s=default; t=1582651184;
+ bh=a6iFnKGMipeBty9nEgeDb+roCYys7jV0D4PvGM3Lj7o=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=1orlWGdqMm/jlFOeZM4Qip0rcD6x/j4QlH+YqdmCSnEP+3axbtxLVDV3F2IrLOslr
+ +KSMxgyJHcf0k2oYRHDFIh0+HZ3y1vRyhVUEdKTD7nLPofX6ZIFi0TtMKmjve+uNxP
+ Sd+VISprU6VjFGMPLM5pxJmiJl8YHRGxFeU63ojI=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j6dry-007scZ-CR; Tue, 25 Feb 2020 17:19:42 +0000
 MIME-Version: 1.0
-References: <20200224121733.2202-1-ardb@kernel.org>
- <CACRpkda5VFzMHE483MPj86VN7uU7w4bNibY=ZeLUHyED=JD7Cw@mail.gmail.com>
-In-Reply-To: <CACRpkda5VFzMHE483MPj86VN7uU7w4bNibY=ZeLUHyED=JD7Cw@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 25 Feb 2020 18:18:26 +0100
-X-Gmail-Original-Message-ID: <CAKv+Gu8MOZHFLw-Of5yK15Q1z9gpOmdQNmYF405XRAkeiCoXDw@mail.gmail.com>
-Message-ID: <CAKv+Gu8MOZHFLw-Of5yK15Q1z9gpOmdQNmYF405XRAkeiCoXDw@mail.gmail.com>
-Subject: Re: [PATCH v3 0/5] ARM: decompressor: use by-VA cache maintenance for
- v7 cores
-To: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 25 Feb 2020 17:19:42 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Tim Harvey <tharvey@gateworks.com>
+Subject: Re: ARM64_SW_TTBR0_PAN enabled causing hangs on OcteonTX
+In-Reply-To: <CAJ+vNU0d5_LsnzFq0_5=6-i5G5y5AjvWZhO5x_TVBLjor--TtQ@mail.gmail.com>
+References: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
+ <f732995ffdbcde8d0d0935d68dc0d5a2@kernel.org>
+ <CAJ+vNU13-57OeaYVw0kHt=FgJT+TsM_muWM+f-H_zETeJNjTiA@mail.gmail.com>
+ <6f3ce71073f38fbd4e0f7b75852a8846@kernel.org>
+ <CAJ+vNU3XVNkdHXbq-KJaRecSxpPxboVW5Cx7zVEv64Gm1dt+Vg@mail.gmail.com>
+ <da8f38078ef8805200b102a1d24da4ae@kernel.org>
+ <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
+ <8f2efa884c7cb642a9b9fa66c7949607@kernel.org>
+ <CAJ+vNU0d5_LsnzFq0_5=6-i5G5y5AjvWZhO5x_TVBLjor--TtQ@mail.gmail.com>
+Message-ID: <82811bd7d5269431f99462b8daa0f4b2@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: tharvey@gateworks.com, rrichter@marvell.com,
+ linux-arm-kernel@lists.infradead.org, will@kernel.org, catalin.marinas@arm.com,
+ sgoutham@marvell.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_091840_484385_63CA2669 
-X-CRM114-Status: GOOD (  19.74  )
+X-CRM114-CacheID: sfid-20200225_091944_599380_920AFE51 
+X-CRM114-Status: GOOD (  16.87  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,46 +97,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
- Tony Lindgren <tony@atomide.com>, Marc Zyngier <maz@kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Robert Richter <rrichter@marvell.com>, Will Deacon <will@kernel.org>,
+ Sunil Goutham <sgoutham@marvell.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 25 Feb 2020 at 16:48, Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> On Mon, Feb 24, 2020 at 1:17 PM Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> > While making changes to the EFI stub startup code, I noticed that we are
-> > still doing set/way maintenance on the caches when booting on v7 cores.
-> > This works today on VMs by virtue of the fact that KVM traps set/way ops
-> > and cleans the whole address space by VA on behalf of the guest, and on
-> > most v7 hardware, the set/way ops are in fact sufficient when only one
-> > core is running, as there usually is no system cache. But on systems
-> > like SynQuacer, for which 32-bit firmware is available, the current cache
-> > maintenance only pushes the data out to the L3 system cache, where it
-> > is not visible to the CPU once it turns the MMU and caches off.
-> >
-> > So instead, switch to the by-VA cache maintenance that the architecture
-> > requires for v7 and later (and ARM1176, as a side effect).
->
-> I took this v3 patch set for a ride on some ARMv7 and ARMv6
-> (hardware) boards using zImage:s so the compressed path
-> should be exercised:
->
-> - Ux500 (ARMv7 Cortex A9 x 2) works like a charm
-> - RealView PB11MPCore (ARM1176 x 4 MPCore) works like a charm
->
-> Tested-by: Linus Walleij <linus.walleij@linaro.org>
->
-> I can do more thorough tests with more boards if needed.
->
+On 2020-02-25 17:04, Tim Harvey wrote:
+> On Tue, Feb 25, 2020 at 9:00 AM Marc Zyngier <maz@kernel.org> wrote:
+>> 
+>> On 2020-02-25 16:35, Robert Richter wrote:
+>> > Marc,
+>> >
+>> > On 25.02.20 16:27:41, Marc Zyngier wrote:
+>> >> On 2020-02-25 16:13, Tim Harvey wrote:
+>> >
+>> >> > That does enable the erratum, disable KPTI and boot properly but I
+>> >> > misread the erratum and it shouldn't be needed for T81 pass 1.2... the
+>> >> > erratum is documented only needed for pass 1.0.
+>> >>
+>> >> Can you then remove the patch *and* disable KPTI?
+>> >>
+>> >> TX1 is broken beyond recognition and KPTI is known to explode on this
+>> >> HW
+>> >> (which is why we disable KPTI on it). We always attributed it to this
+>> >> erratum,
+>> >> but in the absence of any help from Cavium to identify the problem, we
+>> >> just
+>> >> keyed it on that.
+>> >>
+>> >> *IF* this HW is indeed unaffected by it, then it is probably the mix
+>> >> of
+>> >> KPTI and SWPAN that triggers the issue. If my suspicion is correct,
+>> >> you'll
+>> >> need to have a chat with Cavium/Marvell to understand what is
+>> >> happening
+>> >> there.
+>> >
+>> > I checked the docs and Tim is right, this should be only visible on
+>> > pass 1.0. Thus, the rev range to enable the workaround as implemented
+>> > upstream should be ok. I have asked hw folks regarding this.
+>> 
+>> Then it could well be that our disabling of KPTI on TX1 is keyed on 
+>> the
+>> wrong
+>> erratum. In the absence of a clear explanation of what is going on, we
+>> made
+>> an educated guess. If oyu're going to find out about what breaks this
+>> CPU,
+>> it'd be good to understand whether this is the same problem that 
+>> affects
+>> all
+>> the other revisions.
+>> 
+> 
+> Marc,
+> 
+> What's the right way to disable KPTI for ARM64? It seems 'nopti' and
+> 'pti=off' are not honored for arm64?
 
-Thanks Linus. Do you happen to have any boards that boot with appended DTB?
+kpti=0, as documented in 
+Documentation/admin-guide/kernel-parameters.txt.
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
