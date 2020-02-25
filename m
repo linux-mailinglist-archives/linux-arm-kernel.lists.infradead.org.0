@@ -2,107 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FB2416EF6C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 20:52:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28CDD16EF80
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 21:00:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=cxtSm7TWmztMt31NwnZxDwEOUqzSIOVsF/tIxAA1d4M=; b=uOY4Z5qMjLW9Lh
-	L0RdDP/1t7DabaH7tk0aq1/O2dvWAAw56AYI5ESlewNsG76I5d9k1Ah9cxdoTGTgO45CZxyIFuPL6
-	/ZB2334Ii/XRo+08rc3TPLDjjUr7Oc/8H87aCiuQM/WowHwgXEE1DnHDs0NP+pt1By2LopTO7Vm2h
-	CH6ZAV+1QTeh0adOieJEtbec7SOEpUrRp8AbEjbi0l52G+bOFnHZf+U75bT7oBQig3bOIzRQ25/of
-	polRFY6QGUmlRBSJFR+iPr3LG8w6DWn098W+Uyv8RUoOnga5ZB19pmZje+fLtttwlXI8OF+5+IE91
-	Myw8OXEbmM3+KCL1KcKA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
+	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8MWiatpssFze1rJLUDKsXaFR/vEEded7kWMtSXKFr6s=; b=V9ZZNekz1fXyxQ
+	qkhy7tkvvY7zSw7T6Ypc7e+Mg8t6bo/iN59DVYDAYRENj6mV8M1PsKi1N2Cu3Ddaa522LCxhHjFhY
+	MpGm5+dWWtTkL0PSW9/Go9cWujMp7/01OxWrWau9juaAy0+YMQ05D+Z1ZGEq/3A7a7IuYn+Q/lH2b
+	EnwGbzXDFV2xPP51gdky0sQDYcql7MUv/I9YFU167WRlyBuISfwiT0oIfR5G+OfMG9JcxWqYgrllU
+	amcOmYQPW2o4v8qPFnr0Q7FKKiSAb/p6klIv9mXlLoywQuRePnJEpNR1O1IA1Z4R+wyVRNuuvjFgz
+	Ra0cYgnS32JwlurDoQcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6gFn-0007Ng-BC; Tue, 25 Feb 2020 19:52:27 +0000
-Received: from mail-eopbgr140059.outbound.protection.outlook.com
- ([40.107.14.59] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1j6gNp-0002ff-T2; Tue, 25 Feb 2020 20:00:45 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6gFc-0007N4-9j
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 19:52:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=g20X/YjAl96f4DgaL9lyj6bSAZT91CRZiVIqwMSwtiRAsakeg/OKCX28qCjWlVyb9X0pK7DhKs1Fc9ndTxRZPA/v6LiqV5Da+Saec7lck2Z1tM5ZCivgvVnoBtTZ/KXmyUxI2mRz6z91B+dNwfByH67afUskGMcx3LcTSWtePWK9i+QIxT9u0dz+S0cF1WxG/mpU7ydhIP2jmO8BMiQ3eiIGtDor/t9+3KD24IgiBlf7heIcwVzhXw8ddoUZRSpBI+c/Xa48TUEr6q6vsPjJpek2c/hZr0yZUb6D0iKYafMnaNTOfpQs3RNObCQ99pTtWgVloydzNs3QKoP0Hm1llQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=k1w3IaeqaKJQ9ao+ZY6IJ7LzRgJ4ethUkinZUzVbXfI=;
- b=AX0Ovwj6qBNDW+cIeCy5Y/MftXo25RpU8nDOLH8Y+ip5WbpJwz0BH0v1PA///7M8GfeizKocIc/DK+OMmrva/q2w2koU6LYig1YlyCtvosCz6h5e49Bd7fwZMrwKlOa/GtfUttziwjLwZ1hW1qixnNr3cbHiVHT2JMUdE0ZzEYYMtF+qCAEO83S5jvTqRpKZB/F92l9zhvLdQ9o/eVssKeRpBwvKa8OE9Mwo7tJthwsWlRJW9rho1/Gd80slkWjHeHCfLDZLVASu47bqs7ciJx8ebk1Eg10+qr62+UQfRkWBAevuGIblH88OZ8T005Bs3T/qZNKyUsBJIViQn4Iwag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=k1w3IaeqaKJQ9ao+ZY6IJ7LzRgJ4ethUkinZUzVbXfI=;
- b=doZZm6jVCIkLthAjcWszujyG1BPU7AxtW90Io3rUqGFei0ss+TrEBZQsOZM8rTgLtdgZdZRdJDRPxk3aZUN8FY7dGtqmneiGrLbsqGYQ7tEmUiYjenezYnFFgdou2iOkczUJJD5sZjhO+st26gsEbZjy47VMYCsoE+81maT3dQM=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB3037.eurprd04.prod.outlook.com (10.170.228.147) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.22; Tue, 25 Feb 2020 19:52:12 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::58c5:f02f:2211:4953]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::58c5:f02f:2211:4953%7]) with mapi id 15.20.2750.021; Tue, 25 Feb 2020
- 19:52:12 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
-Thread-Topic: [PATCH v2 1/8] clk: imx: Align imx sc clock msg structs to 4
-Thread-Index: AQHV6Ar29fUTh/h0xEeUNN9RFuY7RA==
-Date: Tue, 25 Feb 2020 19:52:11 +0000
-Message-ID: <VI1PR04MB70233A098DC4A2A82B114E93EEED0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <cover.1582216144.git.leonard.crestez@nxp.com>
- <10e97a04980d933b2cfecb6b124bf9046b6e4f16.1582216144.git.leonard.crestez@nxp.com>
- <158264951569.54955.16797064769391310232@swboyd.mtv.corp.google.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 231cdba8-69f8-47fc-cc6e-08d7ba2c34a5
-x-ms-traffictypediagnostic: VI1PR04MB3037:|VI1PR04MB3037:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB3037B83F9671C7EB58A12B12EEED0@VI1PR04MB3037.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0324C2C0E2
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(366004)(396003)(376002)(346002)(136003)(199004)(189003)(86362001)(81156014)(66476007)(53546011)(64756008)(8936002)(5660300002)(54906003)(76116006)(186003)(66556008)(2906002)(316002)(81166006)(91956017)(52536014)(6506007)(7696005)(8676002)(110136005)(66446008)(66946007)(44832011)(7416002)(71200400001)(9686003)(4326008)(26005)(478600001)(33656002)(55016002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3037;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: s4/+eK8PSo27/WoLXVyMTYJnto+UT8zbBREqDgxJT7/hvi2ldQRWGUXWTz7N8l7JnsY37oJTnAL3CZ9Bx9VauqVd1L/6aX7qyg1p1r2wKhpwsxEGKYjgj47GK9ZNLHOF7RqSMYDWt8r3XFPlxAbrO1YZne26Es2KDO5pfkfjkGpdgrbRouuuJFyW3ZvDNChPoOb5Mm3Bb3qrsFUG+JmZ2YuozMEBn3m2ialsGQ6kN4gI1Xqx04IF1DqNyHCWHDuHdT+BJfLQjZUb0OVVU0syvBSQ9YF5hHl3vDR0MZmbXmz/4ZrpRAVMBLV4OAgU2UQv9BzePCD+LQX9In7xWsbfjoSBJufkPrWh8KEMuk6UU7IIogt54F/iuzjk13pYakK25Bbc0Ygl3GgrJvhZqoscWVpLbGZtEatqZbtWsypTnlA32e6QnYeojCAjWesGjH0h
-x-ms-exchange-antispam-messagedata: kWgcToToX50inIeJEyLWRZl4BiOnOVoR/MpRnhdGahasP2Urwqxv5iCUAmpV6/4DL1zyeabL6GYlp7agPB+Mc6yTzmnpvK4NQhfm6TIJm/j3uL3Fxf5qQIe1YbqMK9rq+XoB7xHhvMWKHGuyU32QhQ==
+ id 1j6gNf-0002e3-Gc
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 20:00:37 +0000
+Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id 570BF5C3734;
+ Tue, 25 Feb 2020 21:00:32 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1582660832;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=4pbXjCTmSWvRoORcqT8xdio5aWElTyodfDE1yRwxE88=;
+ b=fiBYar2G/FyAj0rGQCdcDOsJCqXNCqszfBq8dZigfTqmWS+tLIEW0neeI804TrlxLJifMa
+ 1HPUdZmB6ic3W68C63TuiBA0p28gC+eEavJlWTzyGQtOdhiHIAyb442lak/sbUJJ3J3Xlc
+ r4VrpgUqOqIDPIowtDZgzmq74SNHJ6g=
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 231cdba8-69f8-47fc-cc6e-08d7ba2c34a5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Feb 2020 19:52:11.9190 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: a38YSWqTZSsf3taIuy0Y/ZXtnc+U8pxKmpu1FC5WIhh5jkiSpzJ+cOqKRH8+zsVhasd2gseOKR2jD4gq+Fohvw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3037
+Date: Tue, 25 Feb 2020 21:00:32 +0100
+From: Stefan Agner <stefan@agner.ch>
+To: Robin Murphy <robin.murphy@arm.com>, Nick Desaulniers
+ <ndesaulniers@google.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH] ARM: use assembly mnemonics for VFP register access
+In-Reply-To: <d7047fca-7efb-94bc-51aa-c33934df0721@arm.com>
+References: <8bb16ac4b15a7e28a8e819ef9aae20bfc3f75fbc.1582266841.git.stefan@agner.ch>
+ <CAKwvOdmV80xgvBnhB6ZpqYaqkxKi-_p+StnMojwNnf3kdxTT1A@mail.gmail.com>
+ <CAKv+Gu881ZSwvuACmsbBnpfdeJpNYsEQxLSoepJBbZ=O6D6Rcg@mail.gmail.com>
+ <d7047fca-7efb-94bc-51aa-c33934df0721@arm.com>
+User-Agent: Roundcube Webmail/1.4.1
+Message-ID: <0e4196b528284b07d088dec086f3378a@agner.ch>
+X-Sender: stefan@agner.ch
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_115216_362402_35852538 
-X-CRM114-Status: GOOD (  23.33  )
+X-CRM114-CacheID: sfid-20200225_120035_849485_1D94ACC5 
+X-CRM114-Status: GOOD (  16.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.59 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.14.59 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -123,133 +78,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>, Stefan Agner <stefan@agner.ch>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- Franck Lenormand <franck.lenormand@nxp.com>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
+ LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Manoj Gupta <manojgupta@google.com>, Jian Cai <jiancai@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25.02.2020 18:52, Stephen Boyd wrote:
-> Quoting Leonard Crestez (2020-02-20 08:29:32)
->> The imx SC api strongly assumes that messages are composed out of
->> 4-bytes words but some of our message structs have odd sizeofs.
->>
->> This produces many oopses with CONFIG_KASAN=y.
->>
->> Fix by marking with __aligned(4).
->>
->> Fixes: fe37b4820417 ("clk: imx: add scu clock common part")
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> ---
->>   drivers/clk/imx/clk-scu.c | 6 +++---
->>   1 file changed, 3 insertions(+), 3 deletions(-)
->>
->> diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
->> index fbef740704d0..3c5c42d8833e 100644
->> --- a/drivers/clk/imx/clk-scu.c
->> +++ b/drivers/clk/imx/clk-scu.c
->> @@ -41,16 +41,16 @@ struct clk_scu {
->>   struct imx_sc_msg_req_set_clock_rate {
->>          struct imx_sc_rpc_msg hdr;
->>          __le32 rate;
->>          __le16 resource;
->>          u8 clk;
->> -} __packed;
->> +} __packed __aligned(4);
-> 
-> Sorry, this still doesn't make sense to me. Having __aligned(4) means
-> that the struct is placed on the stack at some alignment, great, but it
-> still has __packed so the sizeof this struct is some odd number like 11.
-> If this struct is the last element on the stack it will end at some
-> unaligned address and the mailbox code will read a few bytes beyond the
-> end of the stack.
-
-I checked again and marking the struct with __aligned(4) makes it have 
-sizeof == 12 as intended. It was 11 before.
-
-     static_assert(sizeof(struct imx_sc_msg_req_set_clock_rate) == 12);
-
-After reading through your email and gcc docs again I'm not sure if this 
-portable/reliable this is but as far as I understand "sizeof" needs to 
-account for alignment. Or is this just an accident with my compiler?
-
-Marking a structure both __packed and __aligned(4) means that __packed 
-only affects internal struct member layout but sizeof is still rounded 
-up to a multiple of 4:
-
-struct test {
-	u8	a;
-	u16	b;
-} __packed __aligned(4);
-
-static_assert(sizeof(struct test) == 4);
-static_assert(offsetof(struct test, a) == 0);
-static_assert(offsetof(struct test, b) == 1);
-
-This test is not realistic because I don't think SCU messages have any 
-such oddly-aligned members.
-
-> 
-> I see that the calling code puts 3 as the 'size' for this struct in
-> clk_scu_set_rate().
-> 
-> 	hdr->size = 3;
-> 
-> That seems to say that the struct is 3 words long, or 12 bytes. Then we
-> call imx_scu_call_rpc(), passing the pointer to this struct on the stack
-> and that eventually gets into imx_scu_ipc_write() calling
-> mbox_send_message() with u32 pointers.
-> 
-> 	for (i = 0; i < hdr->size; i++) {
-> 		sc_chan = &sc_ipc->chans[i % 4];
-> 		ret = mbox_send_message(sc_chan->ch, &data[i]);
-> 
-> So we've taken the 11 byte struct (data in this case) and casted it to a
-> u32 array with 3 elements, which is bad. This is what kasan is warning
-> about. Adding aligned sometimes fixes it because the compiler will place
-> the next stack variable at the naturally aligned location and thus we
-> get the one byte padding but I don't see how that works when it's the
-> last stack element. The stack will end at some unaligned address.
-> 
-> The better solution would be to drop __aligned(4) and make a union of
-> the struct with whatever size number of words the message is or do a
-> copy of the struct into a u32 array that is passed to
-> imx_scu_call_rpc().
-> 
-> For example:
-> 
-> 	struct imx_sc_msg_req_set_clock_rate {
-> 		union {
-> 			struct packed_message {
-> 				struct imx_sc_rpc_msg hdr;
-> 				__le32 rate;
-> 				__le16 resource;
-> 				u8 clk;
-> 			} __packed;
-> 			u32 data[3];
-> 		};
-> 	};
-> 
-> If the union approach was used then each time imx_scu_call_rpc() is
-> called we can simply pass the 'data' member and make the second argument
-> 'msg' strongly typed to be a u32 pointer. kasan should be happy too.
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wMi0yNSAyMDo0NSwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDIwMjAtMDItMjUg
+NzozMyBwbSwgQXJkIEJpZXNoZXV2ZWwgd3JvdGU6Cj4+IE9uIFR1ZSwgMjUgRmViIDIwMjAgYXQg
+MjA6MTAsIE5pY2sgRGVzYXVsbmllcnMgPG5kZXNhdWxuaWVyc0Bnb29nbGUuY29tPiB3cm90ZToK
+Pj4+Cj4+PiBPbiBNb24sIEZlYiAyNCwgMjAyMCBhdCA5OjIyIFBNIFN0ZWZhbiBBZ25lciA8c3Rl
+ZmFuQGFnbmVyLmNoPiB3cm90ZToKPj4+Pgo+Pj4+IENsYW5nJ3MgaW50ZWdyYXRlZCBhc3NlbWJs
+ZXIgZG9lcyBub3QgYWxsb3cgdG8gdG8gdXNlIHRoZSBtY3IKPj4+PiBpbnN0cnVjdGlvbiB0byBh
+Y2Nlc3MgZmxvYXRpbmcgcG9pbnQgY28tcHJvY2Vzc29yIHJlZ2lzdGVyczoKPj4+PiBhcmNoL2Fy
+bS92ZnAvdmZwbW9kdWxlLmM6MzQyOjI6IGVycm9yOiBpbnZhbGlkIG9wZXJhbmQgZm9yIGluc3Ry
+dWN0aW9uCj4+Pj4gICAgICAgICAgZm14cihGUEVYQywgZnBleGMgJiB+KEZQRVhDX0VYfEZQRVhD
+X0RFWHxGUEVYQ19GUDJWfEZQRVhDX1ZWfEZQRVhDX1RSQVBfTUFTSykpOwo+Pj4+ICAgICAgICAg
+IF4KPj4+PiBhcmNoL2FybS92ZnAvdmZwaW5zdHIuaDo3OTo2OiBub3RlOiBleHBhbmRlZCBmcm9t
+IG1hY3JvICdmbXhyJwo+Pj4+ICAgICAgICAgIGFzbSgibWNyIHAxMCwgNywgJTAsICIgdmZwcmVn
+KF92ZnBfKSAiLCBjcjAsIDAgQCBmbXhyICAgIiAjX3ZmcF8gIiwgJTAiIFwKPj4+PiAgICAgICAg
+ICAgICAgXgo+Pj4+IDxpbmxpbmUgYXNtPjoxOjY6IG5vdGU6IGluc3RhbnRpYXRlZCBpbnRvIGFz
+c2VtYmx5IGhlcmUKPj4+PiAgICAgICAgICBtY3IgcDEwLCA3LCByMCwgY3I4LCBjcjAsIDAgQCBm
+bXhyICAgICAgRlBFWEMsIHIwCj4+Pj4gICAgICAgICAgICAgIF4KPj4+Pgo+Pj4+IFRoZSBHTlUg
+YXNzZW1ibGVyIHN1cHBvcnRzIHRoZSAuZnB1IGRpcmVjdGl2ZSBhdCBsZWFzdCBzaW5jZSAyLjE3
+ICh3aGVuCj4+Pj4gZG9jdW1lbnRhdGlvbiBoYXMgYmVlbiBhZGRlZCkuIFNpbmNlIExpbnV4IHJl
+cXVpcmVzIGJpbnV0aWxzIDIuMjEgaXQgaXMKPj4+PiBzYWZlIHRvIHVzZSAuZnB1IGRpcmVjdGl2
+ZS4gVXNlIHRoZSAuZnB1IGRpcmVjdGl2ZSBhbmQgbW5lbW9uaWNzIGZvciBWRlAKPj4+PiByZWdp
+c3RlciBhY2Nlc3MuCj4+Pj4KPj4+PiBUaGlzIGFsbG93cyB0byBidWlsZCB2ZnBtb2R1bGUuYyB3
+aXRoIENsYW5nIGFuZCBpdHMgaW50ZWdyYXRlZCBhc3NlbWJsZXIuCj4+Pj4KPj4+PiBMaW5rOiBo
+dHRwczovL2dpdGh1Yi5jb20vQ2xhbmdCdWlsdExpbnV4L2xpbnV4L2lzc3Vlcy85MDUKPj4+PiBT
+aWduZWQtb2ZmLWJ5OiBTdGVmYW4gQWduZXIgPHN0ZWZhbkBhZ25lci5jaD4KPj4+PiAtLS0KPj4+
+PiAgIGFyY2gvYXJtL3ZmcC92ZnBpbnN0ci5oIHwgMTIgKysrKy0tLS0tLS0tCj4+Pj4gICAxIGZp
+bGUgY2hhbmdlZCwgNCBpbnNlcnRpb25zKCspLCA4IGRlbGV0aW9ucygtKQo+Pj4+Cj4+Pj4gZGlm
+ZiAtLWdpdCBhL2FyY2gvYXJtL3ZmcC92ZnBpbnN0ci5oIGIvYXJjaC9hcm0vdmZwL3ZmcGluc3Ry
+LmgKPj4+PiBpbmRleCAzOGRjMTU0ZTM5ZmYuLjc5OWNjZjA2NTQwNiAxMDA2NDQKPj4+PiAtLS0g
+YS9hcmNoL2FybS92ZnAvdmZwaW5zdHIuaAo+Pj4+ICsrKyBiL2FyY2gvYXJtL3ZmcC92ZnBpbnN0
+ci5oCj4+Pj4gQEAgLTYyLDIxICs2MiwxNyBAQAo+Pj4+ICAgI2RlZmluZSBGUFNDUl9DICgxIDw8
+IDI5KQo+Pj4+ICAgI2RlZmluZSBGUFNDUl9WICAgICAgICAoMSA8PCAyOCkKPj4+Pgo+Pj4+IC0v
+Kgo+Pj4+IC0gKiBTaW5jZSB3ZSBhcmVuJ3QgYnVpbGRpbmcgd2l0aCAtbWZwdT12ZnAsIHdlIG5l
+ZWQgdG8gY29kZQo+Pj4+IC0gKiB0aGVzZSBpbnN0cnVjdGlvbnMgdXNpbmcgdGhlaXIgTVJDL01D
+UiBlcXVpdmFsZW50cy4KPj4+PiAtICovCj4+Pj4gLSNkZWZpbmUgdmZwcmVnKF92ZnBfKSAjX3Zm
+cF8KPj4+PiAtCj4+Pj4gICAjZGVmaW5lIGZtcngoX3ZmcF8pICh7ICAgICAgICAgICAgICAgICBc
+Cj4+Pj4gICAgICAgICAgdTMyIF9fdjsgICAgICAgICAgICAgICAgICAgICAgICBcCj4+Pj4gLSAg
+ICAgICBhc20oIm1yYyBwMTAsIDcsICUwLCAiIHZmcHJlZyhfdmZwXykgIiwgY3IwLCAwIEAgZm1y
+eCAgICUwLCAiICNfdmZwXyAgICBcCj4+Pj4gKyAgICAgICBhc20oIi5mcHUgICAgICAgdmZwdjJc
+biIgICAgICAgIFwKPj4+PiArICAgICAgICAgICAidm1ycyAgICAgICAlMCwgIiAjX3ZmcF8gICAg
+XAo+Pj4+ICAgICAgICAgICAgICA6ICI9ciIgKF9fdikgOiA6ICJjYyIpOyAgICAgXAo+Pj4+ICAg
+ICAgICAgIF9fdjsgICAgICAgICAgICAgICAgICAgICAgICAgICAgXAo+Pj4+ICAgIH0pCj4+Pj4K
+Pj4+PiAgICNkZWZpbmUgZm14cihfdmZwXyxfdmFyXykgICAgICAgICAgICAgIFwKPj4+PiAtICAg
+ICAgIGFzbSgibWNyIHAxMCwgNywgJTAsICIgdmZwcmVnKF92ZnBfKSAiLCBjcjAsIDAgQCBmbXhy
+ICAgIiAjX3ZmcF8gIiwgJTAiIFwKPj4+PiArICAgICAgIGFzbSgiLmZwdSAgICAgICB2ZnB2Mlxu
+IiAgICAgICAgXAo+Pj4+ICsgICAgICAgICAgICJ2bXNyICAgICAgICIgI192ZnBfICIsICUwIiBc
+Cj4+Pj4gICAgICAgICAgICAgOiA6ICJyIiAoX3Zhcl8pIDogImNjIikKPj4+Pgo+Pj4+ICAgdTMy
+IHZmcF9zaW5nbGVfY3Bkbyh1MzIgaW5zdCwgdTMyIGZwc2NyKTsKPj4+PiAtLQo+Pj4KPj4+IEhp
+IFN0ZWZhbiwKPj4+IFRoYW5rcyBmb3IgdGhlIHBhdGNoLiAgUmVhZGluZyB0aHJvdWdoOgo+Pj4g
+LSBGTVJYLCBGTVhSLCBhbmQgRk1TVEFUOgo+Pj4gaHR0cDovL2luZm9jZW50ZXIuYXJtLmNvbS9o
+ZWxwL2luZGV4LmpzcD90b3BpYz0vY29tLmFybS5kb2MuZHVpMDA2OGIvQmNmYmRpaGkuaHRtbAo+
+Pj4gLSBWTVJTIGFuZCBWTVNSOgo+Pj4gaHR0cDovL2luZm9jZW50ZXIuYXJtLmNvbS9oZWxwL2lu
+ZGV4LmpzcD90b3BpYz0vY29tLmFybS5kb2MuZHVpMDIwNGgvQmNmYmRpaGkuaHRtbAo+Pj4KPj4+
+IFNob3VsZCBhIG1hY3JvIGNhbGxlZCBgZm1yeGAgdGhhdCBoYWQgYSBjb21tZW50IGFib3V0IGBm
+bXJ4YCBiZSB1c2luZwo+Pj4gYHZtcnNgIGluIHBsYWNlIG9mIGBmbXJ4YD8KPj4+Cj4+PiBJdCBs
+b29rcyBsaWtlIENsYW5nIHRyZWF0cyB0aGVtIHRoZSBzYW1lLCBidXQgR0NDIGtlZXBzIHRoZW0g
+c2VwYXJhdGU6Cj4+PiBodHRwczovL2dvZGJvbHQub3JnL3ovWUttU0FzCj4+PiBBaCwgdGhpcyBp
+cyBvbmx5IHdoZW4gc3RyZWFtaW5nIHRvIGFzc2VtYmx5LiBMb29rcyBsaWtlIHRoZXkgaGF2ZSB0
+aGUKPj4+IHNhbWUgZW5jb2RpbmcsIGFuZCBwcm9kdWNlIHRoZSBzYW1lIGRpc2Fzc2VtYmx5LiAo
+R29kYm9sdCBlbWl0cwo+Pj4gYXNzZW1ibHkgYnkgZGVmYXVsdCwgYW5kIGhhcyB0aGUgb3B0aW9u
+IHRvIGNvbXBpbGUsIHRoZW4gZGlzYXNzZW1ibGUpLgo+Pj4gSWYgSSB0YWtlIG15IGNhc2UgZnJv
+bSBnb2Rib2x0IGFib3ZlOgo+Pj4KPj4+IOKenCAgL3RtcCBhcm0tbGludXgtZ251ZWFiaWhmLWdj
+YyAtTzIgLWMgeC5jCj4+PiDinpwgIC90bXAgbGx2bS1vYmpkdW1wIC1kciB4Lm8KPj4+Cj4+PiB4
+Lm86IGZpbGUgZm9ybWF0IGVsZjMyLWFybS1saXR0bGUKPj4+Cj4+Pgo+Pj4gRGlzYXNzZW1ibHkg
+b2Ygc2VjdGlvbiAudGV4dDoKPj4+Cj4+PiAwMDAwMDAwMCBiYXI6Cj4+PiAgICAgICAgIDA6IGYx
+IGVlIDEwIDBhICAgICAgICAgICAgICAgICAgdm1ycyByMCwgZnBzY3IKPj4+ICAgICAgICAgNDog
+NzAgNDcgICAgICAgICAgICAgICAgICAgICAgICBieCBscgo+Pj4gICAgICAgICA2OiAwMCBiZiAg
+ICAgICAgICAgICAgICAgICAgICAgIG5vcAo+Pj4KPj4+IDAwMDAwMDA4IGJhejoKPj4+ICAgICAg
+ICAgODogZjEgZWUgMTAgMGEgICAgICAgICAgICAgICAgICB2bXJzIHIwLCBmcHNjcgo+Pj4gICAg
+ICAgICBjOiA3MCA0NyAgICAgICAgICAgICAgICAgICAgICAgIGJ4IGxyCj4+PiAgICAgICAgIGU6
+IDAwIGJmICAgICAgICAgICAgICAgICAgICAgICAgbm9wCj4+Pgo+Pj4gU28gaW5kZWVkIGEgc2lt
+aWxhciBlbmNvZGluZyBleGlzdHMgZm9yIHRoZSB0d28gZGlmZmVyZW50IGFzc2VtYmxlcgo+Pj4g
+aW5zdHJ1Y3Rpb25zLgo+Pgo+PiBEb2VzIHRoYXQgaG9sZCBmb3IgQVJNIChBMzIpIGluc3RydWN0
+aW9ucyBhcyB3ZWxsPwo+IAo+IEl0IHNob3VsZCBkbyAtIHRoZXkncmUgYWxsIHRoZSBzYW1lIHRo
+aW5nIHVuZGVybmVhdGguIFRoZSBVQUwgc3ludGF4Cj4ganVzdCByZW5hbWVkIGFsbCB0aGUgbGVn
+YWN5IFZGUCBtbmVtb25pY3MgZnJvbSBGeHh4IHRvIFZ4eHggZm9ybSwKPiBhcGFydCBmcm9tIGEg
+Y291cGxlIG9mIHRoaW5ncyB0aGF0IHdlcmUgYWxyZWFkeSBkZXByZWNhdGVkLiBHQVMgc3RpbGwK
+PiBhY2NlcHRzIGJvdGggcmVnYXJkbGVzcyBvZiAiLnN5bnRheCB1bmlmaWVkIiwgYW5kIGFzIGEg
+cmVzdWx0IEdDQwo+IG5ldmVyIHNhdyBhIHJlYXNvbiB0byBzdG9wIGVtaXR0aW5nIHRoZSBvbGQg
+bW5lbW9uaWNzLgo+IAoKWWVzIHRoaXMgaXMgcmVhbGx5IG9ubHkgYSBtbmVtb25pYyBjaGFuZ2Ug
+d2hlbiB1bmlmaWVkIGFzc2VtYmxlcgpsYW5ndWFnZSAoVUFMKSBnb3QgaW50cm9kdWNlLCB0aGUg
+QVJNIEFSTSBoYXMgYSBsaXN0IG9mIG1uZW1vbmljIGNoYW5nZXMKaW4gdGhlIGFwcGVuZGl4LgoK
+SnVzdCBkbyBtYWtlIHN1cmUgSSBhbHNvIGRpZCBjb21wYXJlIHRoZSBkaXNhc3NlbWJsZWQgb2Jq
+ZWN0IGZpbGUgb2YKdmZwbW9kdWxlLmMgYmVmb3JlIGFuZCBhZnRlciB0aGlzIGNoYW5nZS4KCkkg
+Z3Vlc3Mgd2UgY291bGQgKHNob3VsZD8pIGFsc28gY2hhbmdlIHRoZSBtYWNybyBuYW1lLCBidXQg
+SSBndWVzcyB0aGF0CnNob3VsZCBiZSBhIHNlcGFyYXRlIGNvbW1pdCBhbnl3YXkuCgotLQpTdGVm
+YW4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
