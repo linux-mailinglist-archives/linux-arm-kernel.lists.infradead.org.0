@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBFB516C18B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 14:01:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7BC016C197
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 14:02:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9zyf0yuLegZmrho4C0vZ+ib8rV036RmEmwZ+5IjIVVY=; b=YMyHAaACms4MOuvdNXtUXi2C+
-	KCmCAOwOcnnFUuKrzYcpktsyv8OfS83eh66baOrsGxvUFaMvMMuItM9splLGCmZ+19m3hy2sDxKG8
-	yJ3HuDeo/G7j6eBO1ojCJM182Jg/zO3TjvcnWlQ3qz/F/E+zCmAenwYEM+jLjAJwZe+KZOrUYUVbB
-	EHTQqenb8yyEnDj9OrQwXJB3M/giK5fFH8FyNeguuvW3jE+i1buhB6jyetQN32s5JzAjXWMr9oiJU
-	MK8S6e2WI1mag84OgdCcev+gWrqi9g4qZaZWFY9MatFQp8Hk67T50aZ6XZlXMY0I/k1ZYW2JFlMth
-	XM1ajlzVA==;
+	 bh=K/N1X5f5d8Y3WDrI95LwIug1NIqo10FpHyqJXRu4wxk=; b=a3VOM7nyZgZ2jxyVdlYjGRUHV
+	qQ5Ni17IpLETm7CTykdpOUCmuJIj0s4kAbiafoVnOIdnacKEE+UBBy+PRwlJCKbYef6wbn77fYeNp
+	47zW6ICSlFPEqM8JgCw9HfXvuJKpP6Tb+93FpxzB6j8JbrO1Sv6EnnbyG0+rV5bHypd6kRMFWqK/O
+	AjarAbSK1IyGWmd5WmN2df4V4oHwMZ7GE4SbCGXH/DGtFHleaJSvNhUPXU84QF/DiU1Dr542E6pAI
+	UC2OyY3myAHrEnGPoIwtnIVjk0fcTkfEX0VtNoVADlmTOXBOE+ZpFW+ZpCvnatfVXKVatfO7Fk67j
+	nhJIjtgUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ZpX-0001j4-Oc; Tue, 25 Feb 2020 13:00:55 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1j6Zqp-0002O8-Ub; Tue, 25 Feb 2020 13:02:15 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6ZpA-0001Yr-Sm
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 13:00:36 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01PD0LHw123433;
- Tue, 25 Feb 2020 07:00:21 -0600
+ id 1j6Zqd-0002IW-2m
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 13:02:04 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01PD1pN4052659;
+ Tue, 25 Feb 2020 07:01:51 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1582635621;
- bh=n4t+iSnVQ8VDVIb2I48j7hH+y8NZ1XyrKycrJ1RQK90=;
+ s=ti-com-17Q1; t=1582635711;
+ bh=oXx7cuB8ADrmQ3vOUgyN9ou7IhxwTR3y4ztgLQsmi6c=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Em9lWr5gFGAJGIVefw5xY+a+Dwwp3Pn1zqurQTmTa86QzSJfB61woe0HHUX/g8ehS
- XLAlCnUyKrUCjo5oq/k/ku4iF5vXr4pkDEUhadl/PRi+CaazR50RDc2zCa/81FX0cB
- wuXtBSeggje7gf1NyIoD0IKvmhnN45jt4LHXNtzo=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01PD0LKB096983
+ b=ByaN7ylnnHP1DrKCw/8xkcyNg8CLYK2IQXegD0Klr8ETbKC/0oU1LFFJX/9mGFS3J
+ Q5rQVBPXdvAcP5/RWgJTkIm/J4D0StamwNuvv6JfSWV/5G0qrZSeXfUuO3pHk30T/8
+ ZsbbhuU1ABVMArXDiDH//ZijNO9MIHEgTEpkFhZg=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01PD1pB2107735
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 25 Feb 2020 07:00:21 -0600
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 25 Feb 2020 07:01:51 -0600
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 25
- Feb 2020 07:00:20 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ Feb 2020 07:01:50 -0600
+Received: from localhost.localdomain (10.64.41.19) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 25 Feb 2020 07:00:20 -0600
+ Frontend Transport; Tue, 25 Feb 2020 07:01:50 -0600
 Received: from [10.250.65.13] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01PD0KFe036379;
- Tue, 25 Feb 2020 07:00:20 -0600
-Subject: Re: [PATCH 1/4] dt-bindings: leds: Add a binding for AXP813 charger
- led
+ by localhost.localdomain (8.15.2/8.15.2) with ESMTP id 01PD1o78075900;
+ Tue, 25 Feb 2020 07:01:50 -0600
+Subject: Re: [PATCH 3/4] ARM: dts: axp813: Add charger LED
 To: Ondrej Jirman <megous@megous.com>, <linux-sunxi@googlegroups.com>, Jacek
  Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>, Rob
  Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>, Maxime Ripard
  <mripard@kernel.org>
 References: <20200223131435.681620-1-megous@megous.com>
- <20200223131435.681620-2-megous@megous.com>
+ <20200223131435.681620-4-megous@megous.com>
 From: Dan Murphy <dmurphy@ti.com>
-Message-ID: <8c4b9ef7-0c18-d5c1-9672-b7fc683c3ce9@ti.com>
-Date: Tue, 25 Feb 2020 06:55:09 -0600
+Message-ID: <3d7c078b-362d-6eab-0915-8079768a729e@ti.com>
+Date: Tue, 25 Feb 2020 06:56:39 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200223131435.681620-2-megous@megous.com>
+In-Reply-To: <20200223131435.681620-4-megous@megous.com>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_050033_038549_EE923D46 
-X-CRM114-Status: GOOD (  18.23  )
+X-CRM114-CacheID: sfid-20200225_050203_212547_ECD95020 
+X-CRM114-Status: GOOD (  19.11  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,61 +98,29 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Lee Jones <lee.jones@linaro.org>, linux-leds@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Ondrej
-
-On 2/23/20 7:14 AM, Ondrej Jirman wrote:
-> The AXP813 PMIC can control one LED. Add binding to represent the LED.
->
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->   .../devicetree/bindings/leds/leds-axp20x.yaml | 24 +++++++++++++++++++
->   1 file changed, 24 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/leds/leds-axp20x.yaml
->
-> diff --git a/Documentation/devicetree/bindings/leds/leds-axp20x.yaml b/Documentation/devicetree/bindings/leds/leds-axp20x.yaml
-> new file mode 100644
-> index 0000000000000..79282d55764bf
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/leds/leds-axp20x.yaml
-> @@ -0,0 +1,24 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/leds/leds-axp20x.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: LED driver for AXP813 PMIC from X-Powers.
-> +
-> +maintainers:
-> +  - Ondrej Jirman <megous@megous.com>
-> +
-> +description: |
-> +  This module is part of the AXP20x MFD device. For more details
-> +  see Documentation/devicetree/bindings/mfd/axp20x.txt.
-> +
-> +  The LED controller is represented as a sub-node of the PMIC node on
-> +  the device tree.
-> +
-> +properties:
-> +  compatible:
-> +    const: x-powers,axp813-charger-led
-> +
-> +required:
-> +  - compatible
-
-You need to add the color and function properties for proper LED device 
-name presentation per the bindings/leds/common.yaml binding.
-
-Dan
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T25kcmVqCgpPbiAyLzIzLzIwIDc6MTQgQU0sIE9uZHJlaiBKaXJtYW4gd3JvdGU6Cj4gUE1JQyBz
+dXBwb3J0cyBjaGFyZ2luZyBzdGF0dXMgaW5kaWNhdGlvbiB2aWEgYSBMRUQuIEFkZCBzdXBwb3J0
+Cj4gZm9yIGl0Lgo+Cj4gU2lnbmVkLW9mZi1ieTogT25kcmVqIEppcm1hbiA8bWVnb3VzQG1lZ291
+cy5jb20+Cj4gLS0tCj4gICBhcmNoL2FybS9ib290L2R0cy9heHA4MXguZHRzaSB8IDUgKysrKysK
+PiAgIDEgZmlsZSBjaGFuZ2VkLCA1IGluc2VydGlvbnMoKykKPgo+IGRpZmYgLS1naXQgYS9hcmNo
+L2FybS9ib290L2R0cy9heHA4MXguZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL2F4cDgxeC5kdHNp
+Cj4gaW5kZXggMWRmZWVjZWFiZjRjMy4uMDBiMDkyZjk0NDMzZCAxMDA2NDQKPiAtLS0gYS9hcmNo
+L2FybS9ib290L2R0cy9heHA4MXguZHRzaQo+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL2F4cDgx
+eC5kdHNpCj4gQEAgLTE3NSw0ICsxNzUsOSBAQCByZWdfZHJpdmV2YnVzOiBkcml2ZXZidXMgewo+
+ICAgCXVzYl9wb3dlcl9zdXBwbHk6IHVzYi1wb3dlci1zdXBwbHkgewo+ICAgCQljb21wYXRpYmxl
+ID0gIngtcG93ZXJzLGF4cDgxMy11c2ItcG93ZXItc3VwcGx5IjsKPiAgIAl9Owo+ICsKPiArCWNo
+YXJnZXJfbGVkOiBjaGFyZ2VyLWxlZCB7Cj4gKwkJY29tcGF0aWJsZSA9ICJ4LXBvd2VycyxheHA4
+MTMtY2hhcmdlci1sZWQiOwo+ICsJCXN0YXR1cyA9ICJkaXNhYmxlZCI7CgpBcyBJIGNvbW1lbnRl
+ZCBiZWZvcmUgeW91IG5lZWQgdG8gYWRkIGZ1bmN0aW9uIGFuZCBjb2xvciB0byB0aGlzIG5vZGUg
+CmFuZCByZWFkIGl0IGZyb20gdGhlIGRyaXZlci7CoCBPciB5b3UgY2FuIGFkZCB0aGVtIHRvIHRo
+ZSBvdmVyIHJpZGUgZm9yIAp0aGUgc3BlY2lmaWMgdXNlIGNhc2UuCgpBbm90aGVyIHF1ZXN0aW9u
+IGlzIGlzIHRoaXMgTEVEIG9ubHkgdXNlZCBmb3IgY2hhcmdpbmcgb3IgY2FuIGl0IGJlIAptdWx0
+aSBwdXJwb3NlPwoKRGFuCgoKPiArCX07Cj4gICB9OwoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
