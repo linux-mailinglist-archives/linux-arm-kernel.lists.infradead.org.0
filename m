@@ -2,85 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DA4216EC29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:11:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52DB816EC32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 18:12:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Lto7QEncLvlc3JI9AZtYeS5wMwRN+Genht6HlsdsvQ=; b=OHpyc8Lhw9KQsF
-	aCL1z+s7ZPXOdP3iXvO62S1SmEXBEIV2JwXp7fc0+4PPAfjX7eJ4ktBGDGD3iOc1aZrfwT6pXq+B2
-	c9egmYQgv/IME0JrhYQNwHkFminMYmUnRrlxsgCXh/lKmA3+r4YAAKX/oMJhkqFcoyh79F5vB5miF
-	1ybTBZPHSonRbliZIsvfZBYetTtTLaqeB9GubYK1WLMLW9ukAMrHLmi9U6Et8BXzc7dgzx5ADSHFo
-	7C1KM32GicQLSvqfrzQNns0mOwjqDpxIBJvF8jZL10cgvQoc0MPn0tZXU+luLU83MkJI8sTFf/DbE
-	D/WUEzCh2+wSxQoTs2kA==;
+	List-Owner; bh=5tKo8rG7WJVuKQ+s68RpKrLKSj7pZPbEWF2lszPSc1I=; b=Qn7wWG0EFqb0tR
+	f+9xzEF8j/k3YhXfJEFWZpWiPyn4ZfAarwWNPft8+0obd/zSlWRFY83b7aty/whtjiZyK2nYehIUa
+	HbbM/xOvOuOPfgWd6hEN92p62Ur4vb1IoFjdOIzcPz3UDOH8UxmtVtMRzx1P9MW8KRbMlE8hKNdZP
+	pXcc7hFhQ8aXfmMwGRIG5SHcz7euaXYVNQUeY2ZwFMOIKlFReY4Hq2GtQvroscbXWR0V+Cj4HJxGO
+	hwAcGrNhDz4OMUBsd6Unj2iZP0hg4vR7oJvy36Hbvegt/fYJx7xGiqZEVrrWicmc4gf3F6fC+Cvum
+	QgX8iyvPKZlQb2vWjH5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6djf-0006O9-N5; Tue, 25 Feb 2020 17:11:07 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1j6dkb-0006gy-7a; Tue, 25 Feb 2020 17:12:05 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6djV-0006Mq-Bw; Tue, 25 Feb 2020 17:10:58 +0000
-Received: by mail-oi1-f195.google.com with SMTP id q84so44111oic.4;
- Tue, 25 Feb 2020 09:10:55 -0800 (PST)
+ id 1j6dkS-0006gN-Ga
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 17:11:57 +0000
+Received: by mail-oi1-x242.google.com with SMTP id q81so70365oig.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Feb 2020 09:11:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FzXxl0jc8vGuT43gzS1YGwtn9EteCh5YO/BU5ueEHLE=;
+ b=cj35R8/i4KpRP2IpILGBzTKkaEAEJZaLFTKrOt7V5PP0s58g8zZxh5n2q7dkuRgNPt
+ SHK7n8EpzjSjAQQUSFoPG3xO1lZMboBRCfUZXKlDhovddr1Ot29arFh+xev0qKOH8+po
+ G3xWbA5uSpABJZC09nA9eHOh0kWr1whVAewVk0onPBKVMvpk1aslUDhtYFfZFWoo0ZF0
+ EMvo4zfdHqLLf1cp9sIuB6DPxZIpOryShGS1F4VcidITFwPXW4hD4m4kDtm3KPV5Rew8
+ 6cKK2fxpizthEDORKxZnZYrvR5XwZ+/m6DLKEM5X26/dTl3vrVpCpSa5c6Ax0ud8UrvZ
+ SVFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WxYxKuDCjw2ta/VcYxfG6H2pyMpZknzieLnpy09W8ak=;
- b=InEs9+kEfvylaD8+fntT1/FzNUDbP3nDkVK2EcU03nOu9Vz9fFx1eR7Oas0MueyUB6
- QMtpx18uP8CTjN8u15o6Npu83+gy9J+7xx9BKtGmEvgMYvl0glBlngAAJc5Ap18wIDz/
- mWhvSCRfc8m5EIG+0Iq+DCAqRD2Eqioiycvy93rmp9JEfeuV2MARX1Dzwo5IS3QcPWpe
- W5ENERersUfWEjCj1blQxO0Xsy3qcNkQsucnFLL1irlwValYN0qT5iIzFVfNriSr69ER
- 05RTjGFnr3jvGaS+NtXCC9OBEyLL1tEFcy5cP/G8W1Enxyu343uLQEygrkjVldmU9aNI
- C/Cg==
-X-Gm-Message-State: APjAAAURp4FkW+0GrkgoJ8vvuaJPe7H2zqPEBcDTFzfWGoi5YCgtCn0Y
- hhc5/cFvXS+fcz06aDRETg==
-X-Google-Smtp-Source: APXvYqyNZeSueBjr4b/f5cuT3NJLbY2PjOkM3NiotToiEr0JE4LRnFFXTwEwBP5qHj5CvNRnu0FATA==
-X-Received: by 2002:aca:c401:: with SMTP id u1mr9332oif.62.1582650654724;
- Tue, 25 Feb 2020 09:10:54 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m18sm5830700otf.6.2020.02.25.09.10.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 25 Feb 2020 09:10:53 -0800 (PST)
-Received: (nullmailer pid 6373 invoked by uid 1000);
- Tue, 25 Feb 2020 17:10:52 -0000
-Date: Tue, 25 Feb 2020 11:10:52 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [PATCH v8 2/7] dt-bindings: display: mediatek: update dpi
- supported chips
-Message-ID: <20200225171052.GA6002@bogus>
-References: <20200225094057.120144-1-jitao.shi@mediatek.com>
- <20200225094057.120144-3-jitao.shi@mediatek.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FzXxl0jc8vGuT43gzS1YGwtn9EteCh5YO/BU5ueEHLE=;
+ b=PyyKl3W1YYORrJVtWjSLdqtK4LugiaYD/Q132XHnjjblIyy3fXK6MaVkSIqJacqBF2
+ 0krvfOXLtsuitjq1uaYl+TvBhhO6ML1FO+uJ+3iPe29GaUXMIDyDL+FQLIyDAjav/omg
+ fEl/rXZCVAhsqa2I7nYtoZyX4vBaT/yVaXDUI7ImOVvTcZCqEMcQI4V1WiqUFlEoMh0i
+ qhfLOe4TaiVyLsNLkfZrUhH8vYO0cNPwkPQnp7/egKxjtrS/j7hghQZvaliXMKvaLb55
+ tGyrIK7pLx4x3Jtp0h8jpd+/wozeFfXgbHYA2Q0qW02MLNIHTAKwb0bsj3s51EeN/B67
+ oBfQ==
+X-Gm-Message-State: APjAAAXvaeIAkVbYF7s1iZ5jjhNiw4R4S4LeN1TtHWVP1JPaYdHS9XvP
+ dLdEmS1nNehS/zLqwLjracTv1TjbS2juxJC6MtfYiXLS
+X-Google-Smtp-Source: APXvYqx9Fva4pYcNAqXgEIkCfxFTpZCO2q6cVL49M8m8ITMFrE/oGz8iuP7T9adp+643vBJeaY/06xYWXP94oDsnJCo=
+X-Received: by 2002:aca:df88:: with SMTP id w130mr3285963oig.172.1582650715502; 
+ Tue, 25 Feb 2020 09:11:55 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200225094057.120144-3-jitao.shi@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <CAJ+vNU3mhhFbE6ZZTNUbnQVLAepffzba9Dsm4uwccQ_cH8RrtA@mail.gmail.com>
+ <f732995ffdbcde8d0d0935d68dc0d5a2@kernel.org>
+ <CAJ+vNU13-57OeaYVw0kHt=FgJT+TsM_muWM+f-H_zETeJNjTiA@mail.gmail.com>
+ <6f3ce71073f38fbd4e0f7b75852a8846@kernel.org>
+ <CAJ+vNU3XVNkdHXbq-KJaRecSxpPxboVW5Cx7zVEv64Gm1dt+Vg@mail.gmail.com>
+ <da8f38078ef8805200b102a1d24da4ae@kernel.org>
+ <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
+In-Reply-To: <20200225163507.3ob4k3wzek5gypis@rric.localdomain>
+From: Tim Harvey <tharvey@gateworks.com>
+Date: Tue, 25 Feb 2020 09:11:44 -0800
+Message-ID: <CAJ+vNU0jF65=whGtgLhJuVdtTW4gvgo4gfhcQ1n1jJuABa9MUw@mail.gmail.com>
+Subject: Re: ARM64_SW_TTBR0_PAN enabled causing hangs on OcteonTX
+To: Robert Richter <rrichter@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_091057_408530_2DA7AAD3 
-X-CRM114-Status: GOOD (  10.25  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200225_091156_548645_D4D842A2 
+X-CRM114-Status: GOOD (  19.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,34 +93,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jitao Shi <jitao.shi@mediatek.com>, bibby.hsieh@mediatek.com,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- huijuan.xie@mediatek.com, stonea168@163.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, cawa.cheng@mediatek.com, ck.hu@mediatek.com,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
+ Sunil Goutham <sgoutham@marvell.com>, linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 25 Feb 2020 17:40:52 +0800, Jitao Shi wrote:
-> Add descriptions about supported chips, including MT2701 & MT8173 &
-> mt8183
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  .../devicetree/bindings/display/mediatek/mediatek,dpi.txt        | 1 +
->  1 file changed, 1 insertion(+)
-> 
+On Tue, Feb 25, 2020 at 8:35 AM Robert Richter <rrichter@marvell.com> wrote:
+>
+> Marc,
+>
+> On 25.02.20 16:27:41, Marc Zyngier wrote:
+> > On 2020-02-25 16:13, Tim Harvey wrote:
+>
+> > > That does enable the erratum, disable KPTI and boot properly but I
+> > > misread the erratum and it shouldn't be needed for T81 pass 1.2... the
+> > > erratum is documented only needed for pass 1.0.
+> >
+> > Can you then remove the patch *and* disable KPTI?
+> >
+> > TX1 is broken beyond recognition and KPTI is known to explode on this HW
+> > (which is why we disable KPTI on it). We always attributed it to this
+> > erratum,
+> > but in the absence of any help from Cavium to identify the problem, we just
+> > keyed it on that.
+> >
+> > *IF* this HW is indeed unaffected by it, then it is probably the mix of
+> > KPTI and SWPAN that triggers the issue. If my suspicion is correct, you'll
+> > need to have a chat with Cavium/Marvell to understand what is happening
+> > there.
+>
+> I checked the docs and Tim is right, this should be only visible on
+> pass 1.0. Thus, the rev range to enable the workaround as implemented
+> upstream should be ok. I have asked hw folks regarding this.
+>
 
-Please add Acked-by/Reviewed-by tags when posting new versions. However,
-there's no need to repost patches *only* to add the tags. The upstream
-maintainer will do that for acks received on the version they apply.
+Robert,
 
-If a tag was not added on purpose, please state why and what changed.
+Thank you - please keep me updated so we can get this resolved
+upstream in a proper fashion. The Marvell SDK currently supports Linux
+4.14 where you can easily reproduce this. I don't have any CN81XX
+boards handy - our boards all have CN80XX (we use
+CN8020/CN8021/CN8030/CN8031) which apparently Marvell is all but
+dropping support for as the current SDK produces boot firmware (BDK
+boot.bin from SDK won't even fit into the smaller CN80XX L2 cache
+without hacking the code up).
+
+Best Regards,
+
+Tim
 
 _______________________________________________
 linux-arm-kernel mailing list
