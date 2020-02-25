@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42CC316BE52
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 11:10:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F158716BE55
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 11:10:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HfomY5NnWJjsCsOoEujKifpekEyfSJ5A6jMwCcWbEJU=; b=Mjpa45JnRg2Uc1
-	tlXR2pe/di4bVhaJfGBpQ1EwyT9cbwxHX5fgp4tbwJo3KJ0Qo5HyaLPO9ijb1v0sSajvX9iiGQvEe
-	QyHyyA9OmxW74wCJIF3SErb+ZMowdGoI4DGBENjL1LgOjLyuKC62q43THKBad+ABEsEfPfCY0VM+A
-	/pI9Ya14uUybU8tnXs1aenw7ZEVaIl0XB2vop7jEFcGO/2ONQuvjEAfPbA9z6LXjIZGF1cIhpXLBL
-	1xUrizRlQ2BXJ3VT0ObjV6le23+2uZ1te59e7hKyterEhFpbtVOSC0HahkN38VezZNZ3ankKlGevL
-	x5ucDqwZuo0VjQ/pCvgA==;
+	List-Owner; bh=KHnxhH1VADrSjbaHZ+R5gHEbs3SDv6yEMTJbC+nJBEY=; b=tWJbqb3StpnNFG
+	pVKppdC9/j0HhRvQS8CexAgJScInxhiVPSgcRhIaPX2x04X/3hO77u+JMz7J5ZdEgtoniyWLIAGPS
+	7m9hb1XglFdCC9aPRWy7E2QlK4snLcgyttGT+8i/ce5hUxA8z4g2FVShtou2/JD4PdnUq+8JO33lm
+	dw7elJmLfiHpKl0EUNi6/V2BeDDCBJ6WF9thCJuULkYJDJepW/kWFtNpye9+Aew2VTGIero2SORh7
+	+UBO2bH4UjP7wKideDMaqwYfbZGdNGuY3Oau0ERLdVkPDBEYOByiAAh/HZpJwcGCs2KEiM8jOsAu4
+	Cl9XDGVrlIgqivhOvmRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6XA8-0005Ou-Au; Tue, 25 Feb 2020 10:10:00 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1j6XAg-0006qX-NZ; Tue, 25 Feb 2020 10:10:34 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6X9w-0005O7-8Z
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 10:09:49 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y5so6914217pfb.11
+ id 1j6XAM-0006p4-VD
+ for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 10:10:23 +0000
+Received: by mail-pg1-x544.google.com with SMTP id u12so6632674pgb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 02:09:46 -0800 (PST)
+ Tue, 25 Feb 2020 02:10:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Wh/aV6f8G9P8NFi86qh7LhwbQJ/WhimCuc3W3RTKcZE=;
- b=KFlPaymx0DYUd8m3GIFgxt2xLl5otTfghyORLQBRAKY/JXiEDUAVl14Fq0LOhXd3OP
- BYs0TTqBSzUJQeeX7D3QoHk0dHWQ31xJXe+Yhrn6loPk/pLsuoBW+58LUUXeOXRh5c4w
- kffKXxC0pxA6WaWERdiPRpxhwX4LvfZiHeRe4FHKqZqX9dnUHAkMt105JgVtuxkqstNQ
- vsXEPlFVreZI4LBgeEL7pSmHeS89OnPs9SVG1whCPo0FQwDWSHtqcR46u2munqOjGTcX
- ihNvpq9o2/M6Upu2oD0eRNWLuFAl9lX6S9T4Zfx/vjya35tC5JBP2LWBRFdbbFNtXaRP
- EOKg==
+ bh=DyMpEJKs+8inuT3JzdxHRTYW4XbPRxYmHFS7rJcMiTo=;
+ b=FxNo9rOoXFWu5407FfbtyWpGIRbj9KKxjTY8RxTKLZ/mRamBivEBBBF8o7iguYZCS8
+ o7FmpgVAUMoOvpOlaV53Ni+rnyeUxpEmSlCDQzAgq3EMp5LZgTchDOR4Rtbjchc0ShZA
+ xPmjexB8VS+oFN3Szxr7y2OW1DzelczMzVdBWqwUAnW9cqWia+40vQjvQcPpzoTafSwj
+ w2kkhPlcAJE/2wVnad5TQ6WRXyttnLoLu3HSQjyg4YU5qRw4xBJMHDlPb6lt1f80TGTK
+ EF8lLM32t+LGLvX18eHSOWak+36hGKwbYTMWsfqp7yTAuT5LIeNmjg2MjynP5A+0ch8j
+ 3Sjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Wh/aV6f8G9P8NFi86qh7LhwbQJ/WhimCuc3W3RTKcZE=;
- b=gWO90kGNvAaNtikkkqIjruPODYXe0m+XhCv5/iLL9yWSfQ2aMKOA+zOTYEeEgi/A9T
- hPEPXlEA3K9wgX5/xDPI3i4ejrSlEK4ZNENiXvE+e7GxW4bMWqlWZfUzU4iAYClOlpLB
- xEi56zrWyJ7Fji1RCPdLaqRmRDdfSDP1Te9xMxcbsMTmRnvTGxcBf47g4MExYN312gj4
- Fl/SkrqkYM7qQ+sSY4qwAIzJZTsUo4+vWozAB2eyLBWZhSTI5bPo+73yeoYvx0iiOLli
- smS8M86VUPOtlYgZ8+dpIwVz1dMb5ITwy3mut+IkqO6akbGL3a6zkbqJOzP5yVmwa9jG
- rLgQ==
-X-Gm-Message-State: APjAAAUkvmil0MX6zOkgfQ/imryKzLvTE5UFahBH7hW+FpSL2W598lfX
- WPyeWikhZ5hM+hQDPEoSUc4=
-X-Google-Smtp-Source: APXvYqx8Yfc4lFhAWYyQXx8bh8cKTSKSygqvlznUOWE2jNOZJYYzwPYWixn6hqZq7vx8iXGletOiug==
-X-Received: by 2002:a63:3c4b:: with SMTP id i11mr58936564pgn.123.1582625385752; 
- Tue, 25 Feb 2020 02:09:45 -0800 (PST)
+ bh=DyMpEJKs+8inuT3JzdxHRTYW4XbPRxYmHFS7rJcMiTo=;
+ b=P5IE77OfZeoPPX2QZ23O3hMDJIIBHCqD3Kr8cSwidFvrUSbLBKs2PZC18XSOMuTWRM
+ IxE1A8057iQo5mFm3S9apTHJIw3JMHwvEdNR/0sPYTIsXpqJ+oA4sLirr9dt8S8Frfq4
+ 1umuZC2kcSaCTCV77gi2RACQqNGSDBO2U3UoGpWiRCO+DbkIRMP46eqN7kfASfQWsbxo
+ QosGdfcimpDfrweVh+l2nJT7W5J7T6N+Q73CEeYt+EurZbak7Ni6CVIUUrCr4XeQHTYP
+ Py9vk/7CajdtvENcLJBgMin3JlSYa2zC/zt1sfZtpGeYhaRpQb1S7x0iMTbBGgUewHj/
+ 6mxg==
+X-Gm-Message-State: APjAAAUyNepbUcJQzuG1XPpE6Eh6i+Jh67SfQWpnkzH31EkHZ36uhqOw
+ KBh3GzTylZA6XsHcNxhKMU0=
+X-Google-Smtp-Source: APXvYqz0j531hOiU4KYMfzFOo5zoLMaozISOegwSY9/l8Sa7mBFi1nfsYrnWAhTfioijX7BIKX/e5g==
+X-Received: by 2002:aa7:946b:: with SMTP id t11mr55120817pfq.57.1582625414317; 
+ Tue, 25 Feb 2020 02:10:14 -0800 (PST)
 Received: from localhost (g183.222-224-185.ppp.wakwak.ne.jp. [222.224.185.183])
- by smtp.gmail.com with ESMTPSA id b27sm16151184pgl.77.2020.02.25.02.09.44
+ by smtp.gmail.com with ESMTPSA id r7sm17083740pfg.34.2020.02.25.02.10.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 25 Feb 2020 02:09:44 -0800 (PST)
-Date: Tue, 25 Feb 2020 19:09:42 +0900
+ Tue, 25 Feb 2020 02:10:13 -0800 (PST)
+Date: Tue, 25 Feb 2020 19:10:10 +0900
 From: Stafford Horne <shorne@gmail.com>
 To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 5/5] openrisc: use the generic in-place uncached DMA
+Subject: Re: [PATCH 2/2] openrisc: use the generic in-place uncached DMA
  allocator
-Message-ID: <20200225100942.GB7926@lianli.shorne-pla.net>
-References: <20200224194446.690816-1-hch@lst.de>
- <20200224194446.690816-6-hch@lst.de>
+Message-ID: <20200225101010.GC7926@lianli.shorne-pla.net>
+References: <20200220170139.387354-1-hch@lst.de>
+ <20200220170139.387354-3-hch@lst.de>
+ <20200221221447.GA7926@lianli.shorne-pla.net>
+ <20200224194528.GA10155@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200224194446.690816-6-hch@lst.de>
+In-Reply-To: <20200224194528.GA10155@lst.de>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_020948_329715_8D3649CA 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20200225_021019_902831_79867853 
+X-CRM114-Status: GOOD (  16.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,19 +115,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 11:44:45AM -0800, Christoph Hellwig wrote:
-> Switch openrisc to use the dma-direct allocator and just provide the
-> hooks for setting memory uncached or cached.
+On Mon, Feb 24, 2020 at 08:45:28PM +0100, Christoph Hellwig wrote:
+> On Sat, Feb 22, 2020 at 07:14:47AM +0900, Stafford Horne wrote:
+> > On Thu, Feb 20, 2020 at 09:01:39AM -0800, Christoph Hellwig wrote:
+> > > Switch openrisc to use the dma-direct allocator and just provide the
+> > > hooks for setting memory uncached or cached.
+> > > 
+> > > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> > 
+> > Reviewed-by: Stafford Horne <shorne@gmail.com>
+> > 
+> > Also, I test booted openrisc with linux 5.5 + these patches.  Thanks for
+> > continuing to shrink my code base.
 > 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> I just resent a new version that changes how the hooks work based on
+> feedback from Robin.  Everything should work as-is, but if you have
+> some time to retest that would be great.
 
-Reviewed-by: Stafford Horne <shorne@gmail.com>
-
-I also test booted this series with linux 5.5 on my OpenRISC target.  There are
-no issues.  Note, I had an issue with patch 3/5 not cleanly applying with 'git am'
-but it worked fine using just patch, I didn't get any other details.
-
--Stafford
+No problem.
 
 _______________________________________________
 linux-arm-kernel mailing list
