@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F5F116BCC6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 09:55:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82A0D16BCCE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 25 Feb 2020 09:56:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=vM/p7JcZP4oDBSs/Gf8F/H/3h98i0UOhUTGRLtjN0+4=; b=Qbo
-	Y1jaX94DpJpfmexxEd4JEUilnCCBT+rH55wih5tHN0S/NaG6UosQTuzO9BIrNxn+kcs3sKXYJGYXN
-	pQgl7AfsWXy9TA0DNCmdeMvsn2eyxQuW++QO/YzUF1jLt6b1GhJj9RbmNDwNRRnvFBbVU67Utewf5
-	t2E9EOXw3iG3y5CJackmGDvpw7a4zdLIrb3wTFy2yVGr3pus/ZmsvjD2KsrJZ6emDCUr0bSrnS2YQ
-	yyMtO2Fdl/XjJFrWyiTFwFbbljtf445kwesH4F9EEPzgBJWet9cPtIiUAhj75Ie+bNavrhcowEhp3
-	KUM4jP5hdLXmk4/K79xMoxSbVFMHQrw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=rilqhcIhOkbNf6UvUwbcZjJcQSpEWZi1EnpcuGFMc3E=; b=t6tNu61eCNDjcXu78AcgxtArXk
+	wy156+dyZl5ng0RESoKwRKul8X26KdYYDrp0U/cIR5k3FzO0IZvKFhWJiGP3Vl9WQ/D0yno4QQrbQ
+	mkkj8BPRho0FOJ1kmYnmDvPYhcjjAr9fHECV6K395w2iW13oSNGfvgnyUEJv3Ho9hGzA1MuRwQyWt
+	vKcRtAVblP8sbBIm+nn5uYAY4EAvsnCxAkhOD4aYJ7CcDNYJ90lp8KiFUv1ttkssqe0KfSeMaCmI6
+	OlyQXb5p3ne6C9xZywvbKA4enzRd4iLV4G2pwyVh2AhOtrjkyp+YJ5x62tc1CPrI5qtfKnZeqpX3o
+	CpiY2Lag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6W0H-0003px-89; Tue, 25 Feb 2020 08:55:45 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1j6W0W-000417-9G; Tue, 25 Feb 2020 08:56:00 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6W03-0003oL-TF
+ id 1j6W03-0003oO-Vk
  for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 08:55:33 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 68C081B35C6;
- Tue, 25 Feb 2020 09:55:28 +0100 (CET)
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 26AEA204ACF;
+ Tue, 25 Feb 2020 09:55:30 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id D294D1B35AE;
- Tue, 25 Feb 2020 09:55:20 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 87318212C09;
+ Tue, 25 Feb 2020 09:55:22 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1FCDF402B3;
- Tue, 25 Feb 2020 16:55:12 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 57F83402CA;
+ Tue, 25 Feb 2020 16:55:13 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  leonard.crestez@nxp.com, abel.vesa@nxp.com, peng.fan@nxp.com,
  ping.bai@nxp.com, fugang.duan@nxp.com, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 1/4] clk: imx8mn: A53 core clock no need to be critical
-Date: Tue, 25 Feb 2020 16:49:11 +0800
-Message-Id: <1582620554-32689-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/4] clk: imx8mm: A53 core clock no need to be critical
+Date: Tue, 25 Feb 2020 16:49:12 +0800
+Message-Id: <1582620554-32689-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1582620554-32689-1-git-send-email-Anson.Huang@nxp.com>
+References: <1582620554-32689-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_005532_098058_E18F072A 
-X-CRM114-Status: UNSURE (   7.62  )
+X-CRM114-CacheID: sfid-20200225_005532_179285_16E46A3D 
+X-CRM114-Status: UNSURE (   7.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -55,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -84,39 +87,39 @@ operations to after critical clock 'ARM_CLK' setup finished.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/clk/imx/clk-imx8mn.c | 8 ++++----
+ drivers/clk/imx/clk-imx8mm.c | 8 ++++----
  1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-index 83618af..0bc7070 100644
---- a/drivers/clk/imx/clk-imx8mn.c
-+++ b/drivers/clk/imx/clk-imx8mn.c
-@@ -428,7 +428,7 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
- 	hws[IMX8MN_CLK_GPU_SHADER_DIV] = hws[IMX8MN_CLK_GPU_SHADER];
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 9feda4f..9256704 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -440,7 +440,7 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MM_CLK_GPU2D_DIV] = hws[IMX8MM_CLK_GPU2D_CORE];
  
  	/* CORE SEL */
--	hws[IMX8MN_CLK_A53_CORE] = imx_clk_hw_mux2_flags("arm_a53_core", base + 0x9880, 24, 1, imx8mn_a53_core_sels, ARRAY_SIZE(imx8mn_a53_core_sels), CLK_IS_CRITICAL);
-+	hws[IMX8MN_CLK_A53_CORE] = imx_clk_hw_mux2("arm_a53_core", base + 0x9880, 24, 1, imx8mn_a53_core_sels, ARRAY_SIZE(imx8mn_a53_core_sels));
+-	hws[IMX8MM_CLK_A53_CORE] = imx_clk_hw_mux2_flags("arm_a53_core", base + 0x9880, 24, 1, imx8mm_a53_core_sels, ARRAY_SIZE(imx8mm_a53_core_sels), CLK_IS_CRITICAL);
++	hws[IMX8MM_CLK_A53_CORE] = imx_clk_hw_mux2("arm_a53_core", base + 0x9880, 24, 1, imx8mm_a53_core_sels, ARRAY_SIZE(imx8mm_a53_core_sels));
  
  	/* BUS */
- 	hws[IMX8MN_CLK_MAIN_AXI] = imx8m_clk_hw_composite_critical("main_axi", imx8mn_main_axi_sels, base + 0x8800);
-@@ -559,15 +559,15 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MM_CLK_MAIN_AXI] = imx8m_clk_hw_composite_critical("main_axi",  imx8mm_main_axi_sels, base + 0x8800);
+@@ -608,15 +608,15 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MM_CLK_DRAM_ALT_ROOT] = imx_clk_hw_fixed_factor("dram_alt_root", "dram_alt", 1, 4);
+ 	hws[IMX8MM_CLK_DRAM_CORE] = imx_clk_hw_mux2_flags("dram_core_clk", base + 0x9800, 24, 1, imx8mm_dram_core_sels, ARRAY_SIZE(imx8mm_dram_core_sels), CLK_IS_CRITICAL);
  
- 	hws[IMX8MN_CLK_DRAM_ALT_ROOT] = imx_clk_hw_fixed_factor("dram_alt_root", "dram_alt", 1, 4);
- 
--	clk_hw_set_parent(hws[IMX8MN_CLK_A53_SRC], hws[IMX8MN_SYS_PLL1_800M]);
--	clk_hw_set_parent(hws[IMX8MN_CLK_A53_CORE], hws[IMX8MN_ARM_PLL_OUT]);
+-	clk_hw_set_parent(hws[IMX8MM_CLK_A53_SRC], hws[IMX8MM_SYS_PLL1_800M]);
+-	clk_hw_set_parent(hws[IMX8MM_CLK_A53_CORE], hws[IMX8MM_ARM_PLL_OUT]);
 -
- 	hws[IMX8MN_CLK_ARM] = imx_clk_hw_cpu("arm", "arm_a53_core",
- 					   hws[IMX8MN_CLK_A53_CORE]->clk,
- 					   hws[IMX8MN_CLK_A53_CORE]->clk,
- 					   hws[IMX8MN_ARM_PLL_OUT]->clk,
- 					   hws[IMX8MN_CLK_A53_DIV]->clk);
+ 	hws[IMX8MM_CLK_ARM] = imx_clk_hw_cpu("arm", "arm_a53_core",
+ 					   hws[IMX8MM_CLK_A53_CORE]->clk,
+ 					   hws[IMX8MM_CLK_A53_CORE]->clk,
+ 					   hws[IMX8MM_ARM_PLL_OUT]->clk,
+ 					   hws[IMX8MM_CLK_A53_DIV]->clk);
  
-+	clk_hw_set_parent(hws[IMX8MN_CLK_A53_SRC], hws[IMX8MN_SYS_PLL1_800M]);
-+	clk_hw_set_parent(hws[IMX8MN_CLK_A53_CORE], hws[IMX8MN_ARM_PLL_OUT]);
++	clk_hw_set_parent(hws[IMX8MM_CLK_A53_SRC], hws[IMX8MM_SYS_PLL1_800M]);
++	clk_hw_set_parent(hws[IMX8MM_CLK_A53_CORE], hws[IMX8MM_ARM_PLL_OUT]);
 +
- 	imx_check_clk_hws(hws, IMX8MN_CLK_END);
+ 	imx_check_clk_hws(hws, IMX8MM_CLK_END);
  
  	ret = of_clk_add_hw_provider(np, of_clk_hw_onecell_get, clk_hw_data);
 -- 
