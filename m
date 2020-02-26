@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 412081707AD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:27:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BBB21707B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:28:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4nu5WebUSHVhu2HMXVv+mASSgXt976X7cxHd5kTu0+Y=; b=SC/78QPYhlAC9l/AMR4Qss3y6
-	A8F0nmrdWnqtkrZqBsjt7bSskKAI90p+OOEf3R5QyHufAB1b5xD5W8o9jKBecY0inHVlZ3bIah8px
-	Ci1O2MibBS1lb0Od9f8FmGJ+ZPJ1kSvkke2VHUktmjrreDFLPNo8yQES3tlJ99t6PbfNeea+kaK/i
-	5UvW4b+sVuUrycWNXcjPGgSRlxXrIkM8oI+qIWmV+KoR3eC00VJ/DZMFSGwlzOb5+pMDBHF1FSrFf
-	H56uucUJN/pXEPEtjJZlpoCJF3hvCeqjbTTHRaJBXqI/ypzUZcyt4xNBDGhIA5ERL0bCGnIQmCZrz
-	PtDk8abkA==;
+	 bh=j6dB8GPmOoL0yn8Dyrjt/e2b/TIXClvqwhELhac191Y=; b=ZGGM/Q3Kg3rhlaokBYOYaNZtW
+	9JL1AZmD9feAoRkLwKs0O/iA4P1776ON2RNrzCEY8aQMTl1PmBaaTGTW7ZD2fxSE3GsD7PRYncWDb
+	7sXqZa6kHgx+X1DpdcvkZ4c2nTbNLgUJUwoq3fzYVkrGdMETdE005eOkxI9kb+oVHRspbCpsb9XGV
+	DEwSnXXY/1klCIb4RlCK1vPToU3TLcQaIq4lKdrkG2uym95lsJFt4Xp4oUf/EmzKMHebYeDW4eFFy
+	UhndwGVXgHC24fb1AWs8PVu5xJn37zxkK4El4yUvMraAkkV9ec+Nbz7ArOpsTgLL0tgCTqFlwoqcR
+	ifECioHdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j71Oe-0007vy-0P; Wed, 26 Feb 2020 18:27:00 +0000
+	id 1j71Pc-0008Hx-4a; Wed, 26 Feb 2020 18:28:00 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j71OM-0007rw-Vq
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:26:44 +0000
+ id 1j71PQ-0008HC-FY
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:27:50 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 173AE632B;
- Wed, 26 Feb 2020 13:26:39 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 9DBD02911;
+ Wed, 26 Feb 2020 13:27:47 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Wed, 26 Feb 2020 13:26:39 -0500
+ by compute3.internal (MEProxy); Wed, 26 Feb 2020 13:27:47 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=ZbZ/0vhYA4XlNPugmzBODvVTf7d
- FFmG6XFvRhLGolH0=; b=yus4oUi+lbkU/lwNVE6TDX8ieDC9TVA8FpmVnBLt1P+
- OsTic7vy/dVgroLf0b7OAAw/3lYFI0JZLxyXKu7pe7jy9a53tbxeLHS7ofYXZjSj
- bqC6ACh/4OIDfevHP8hALpBVaOXeOodHQlJ7TtAl4R1XR+ctVYlOHUyqMQybD3km
- 2qTds6K4j9nSiE76euziI+tFHfyoTd8wnxd/g51L7zaW6GkKwDB1AHwpuUcd/AGJ
- fbHVmvHR1YqhILxII+4SAXQx8DGJ4YWAtWZETJ6Aqfvq2nhqp4wESGt1DRyKbJpC
- FT1FCadtbI0+s/wv69D78uhBxlYwwNMQnMdtNXNoUcw==
+ :content-type:in-reply-to; s=fm2; bh=w7QtfAdJdr3KTau3Bb/pu7t8pVV
+ wKSSTDZcCOh+zDEk=; b=AslVb9g0Ie2irex/ew16YVstLQFhTpBwY8TvBetJ0G4
+ 0KakXTO63pZDsiCOclUvVXCIVSCURThusPpn5MlPSryh9Z4WDfKfLyeQetpHmviL
+ nYGLeN+9/snCpv3N0eLhgx+LZJdHGhI/xf5PtpEnSXBMiKpjbbG7lEGkhI/tvf6o
+ Y7uOJXQG2quym/59x2ybLLrEVMUZXPrHiMB2TPkfZOfGxH2LaBMzIQc3NqpHsqqs
+ 93ljrgE9/vknU+hkPHIMRbUcnjxcPjiuo928szk/UvXWLjGJaWpdzfWHb+lfb24n
+ Oi9l4mn3q4RqxD3eND6io0iYVx4ZgUV/YahpsEaTSfQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ZbZ/0v
- hYA4XlNPugmzBODvVTf7dFFmG6XFvRhLGolH0=; b=DX+HCmNKsFq4u4w+m8e8a2
- pWcir14pq4oC4O5Ka5wRR++NEUXNyD3FecpR2Sk78ACaYzQWA4prgCw1rZcfPatq
- F+y/Ys1XbTvny6eD1G8ekbIiIMjgHc9TrywQp0IR6xmYbPnkCnF/7BeXy6rJ7vpN
- kWnkTTqFmnetTcuPDp1jMC4gvLcGDC6N5mgRKgAGHdIU0p22r5NhgZrfQ3Z0DMSq
- SP+WF8rW1mSXjISjNgbDOQPU0PczS78zlX5+XbAZwyYM8v+UrekV0/fJcr7pMtg/
- kZEelN1/g+jwW9KBCXHO8vzxHspT2TnFZ4UVeRyjnFUtzy4AQriw/ECN8pz/NKmg
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=w7QtfA
+ dJdr3KTau3Bb/pu7t8pVVwKSSTDZcCOh+zDEk=; b=hjkFUGLOnET4YzBudYf1yt
+ iOW0D2bAgRXwxEkmTUDx5XUQ4ttFlBYCRQ9HbwshIZmsvdmfom6klg62GMhkq6ac
+ OWmLvRbrtJlPdbRXob6euLEkqoIWPmJgvWwkWAxFQNgD/uMabYK1M7ZRLXg/kRTx
+ 0oXZEP6EqjY2TUsKzsef7M7PI/4cbbfAVhF6XsZXp99Q0LpT1ZBjkypBCgdBpKLC
+ oOeRyEMtfJaZ76DO9I2wrxAA+T1G9MnSWUSTENXknY7Dvb/2XStIcoTMlXyTiG7U
+ 8XGKJpprk6gBx2rKn97dGQIfGQwCDf8rhMvfjIGOcoPuTnOy1xyJcixHHLtw/pig
  ==
-X-ME-Sender: <xms:XrhWXuygDzA1L9tYgfTFHqWYh75TPmxGRloq7x-cbEAWZ7S0uOeoKA>
+X-ME-Sender: <xms:o7hWXi3f76kl8Z5bRKiK9vtN4o7dgLXWXqkXuyUDzX-OTVD4l5D5aQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrleeggdduudegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuffhomhgrih
  hnpeguvghvihgtvghtrhgvvgdrohhrghenucfkphepledtrdekledrieekrdejieenucev
- lhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvg
+ lhhushhtvghrufhiiigvpedvnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvg
  estggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:XrhWXg9eBwWqeIXp8Y3uxxVTcs-afyrSok5ktvFnYGwfFVzhpLS4RQ>
- <xmx:XrhWXkzbJlwj-TnoOTsGG_9OEsxcbb1ul6fLXUFBP_6Yrb-VYyrE_w>
- <xmx:XrhWXiv24Wo3K9LfBsgCj6CvBrni9YkKZ3BHJDEyK_1Oo4faKGmzRw>
- <xmx:X7hWXpY3l0pvbtwJdS0Aa8_zxgH_ji3YUaMVf-HyXXUiCrPj7Qiaww>
+X-ME-Proxy: <xmx:o7hWXqS7oNFHEHdvy65-r3crZ60q2UMLt56TCLYZUlUS0uK6Jv6ofA>
+ <xmx:o7hWXuTEn_zjEQRtUNSDAtjJ5e5-ANCrjjXPDHeausxNmOPAChwOHg>
+ <xmx:o7hWXjXsOfNFMnPB9WNVwFnlUwPRZLSjeRvkg3sTRmHMqDxqc2coAA>
+ <xmx:o7hWXud2Qcqb-MKhNKKGL1G5RZKEjzXuzDdqIJBdLpONuTrDRRGM5Q>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7A24E3280065;
- Wed, 26 Feb 2020 13:26:38 -0500 (EST)
-Date: Wed, 26 Feb 2020 19:26:37 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id C13203280059;
+ Wed, 26 Feb 2020 13:27:46 -0500 (EST)
+Date: Wed, 26 Feb 2020 19:27:45 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH 08/13] dt-bindings: phy: Convert Calxeda ComboPHY binding
- to json-schema
-Message-ID: <20200226182637.npnurwcexvpgwmvo@gilmour.lan>
+Subject: Re: [PATCH 10/13] dt-bindings: memory-controllers: convert Calxeda
+ DDR to json-schema
+Message-ID: <20200226182745.gevcx3zb6hgewdnx@gilmour.lan>
 References: <20200226180901.89940-1-andre.przywara@arm.com>
- <20200226180901.89940-9-andre.przywara@arm.com>
+ <20200226180901.89940-11-andre.przywara@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200226180901.89940-9-andre.przywara@arm.com>
+In-Reply-To: <20200226180901.89940-11-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_102643_173556_8D4A86C5 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20200226_102748_670357_785010F3 
+X-CRM114-Status: GOOD (  17.49  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -111,118 +111,121 @@ Cc: Rob Herring <robh@kernel.org>, Jon Loeliger <jdl@jdl.com>,
  linux-kernel@vger.kernel.org, Eric Auger <eric.auger@redhat.com>,
  soc@kernel.org, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6635532291008136541=="
+Content-Type: multipart/mixed; boundary="===============5689945496258060678=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6635532291008136541==
+--===============5689945496258060678==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="le2zpoj6qhgy5u3q"
+	protocol="application/pgp-signature"; boundary="vy5cdj22bi4li54x"
 Content-Disposition: inline
 
 
---le2zpoj6qhgy5u3q
+--vy5cdj22bi4li54x
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Wed, Feb 26, 2020 at 06:08:56PM +0000, Andre Przywara wrote:
-> Convert the Calxeda ComboPHY binding to DT schema format using
-> json-schema.
-> There is no driver in the Linux kernel matching the compatible
-> string, but the nodes are parsed by the SATA driver, which links to them
-> using its port-phys property.
+On Wed, Feb 26, 2020 at 06:08:58PM +0000, Andre Przywara wrote:
+> Convert the Calxeda DDR memory controller binding to DT schema format
+> using json-schema.
+> Although this technically covers the whole DRAM controller, the
+> intention to use it only for error reporting and mapping fault addresses
+> to DRAM chips.
 >
 > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 > ---
->  .../bindings/phy/calxeda-combophy.txt         | 17 -------
->  .../bindings/phy/calxeda-combophy.yaml        | 47 +++++++++++++++++++
->  2 files changed, 47 insertions(+), 17 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.txt
->  create mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+>  .../memory-controllers/calxeda-ddr-ctrlr.txt  | 16 --------
+>  .../memory-controllers/calxeda-ddr-ctrlr.yaml | 41 +++++++++++++++++++
+>  2 files changed, 41 insertions(+), 16 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.txt
+>  create mode 100644 Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.yaml
 >
-> diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.txt b/Documentation/devicetree/bindings/phy/calxeda-combophy.txt
+> diff --git a/Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.txt b/Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.txt
 > deleted file mode 100644
-> index 6622bdb2e8bc..000000000000
-> --- a/Documentation/devicetree/bindings/phy/calxeda-combophy.txt
+> index 049675944b78..000000000000
+> --- a/Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.txt
 > +++ /dev/null
-> @@ -1,17 +0,0 @@
-> -Calxeda Highbank Combination Phys for SATA
+> @@ -1,16 +0,0 @@
+> -Calxeda DDR memory controller
 > -
 > -Properties:
-> -- compatible : Should be "calxeda,hb-combophy"
-> -- #phy-cells: Should be 1.
-> -- reg : Address and size for Combination Phy registers.
-> -- phydev: device ID for programming the combophy.
+> -- compatible : Should be:
+> -  - "calxeda,hb-ddr-ctrl" for ECX-1000
+> -  - "calxeda,ecx-2000-ddr-ctrl" for ECX-2000
+> -- reg : Address and size for DDR controller registers.
+> -- interrupts : Interrupt for DDR controller.
 > -
 > -Example:
 > -
-> -	combophy5: combo-phy@fff5d000 {
-> -		compatible = "calxeda,hb-combophy";
-> -		#phy-cells = <1>;
-> -		reg = <0xfff5d000 0x1000>;
-> -		phydev = <31>;
+> -	memory-controller@fff00000 {
+> -		compatible = "calxeda,hb-ddr-ctrl";
+> -		reg = <0xfff00000 0x1000>;
+> -		interrupts = <0 91 4>;
 > -	};
-> -
-> diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+> diff --git a/Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.yaml b/Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.yaml
 > new file mode 100644
-> index 000000000000..2ef68b95fae1
+> index 000000000000..c5153127e722
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
-> @@ -0,0 +1,47 @@
+> +++ b/Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.yaml
+> @@ -0,0 +1,41 @@
 > +# SPDX-License-Identifier: GPL-2.0
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/phy/calxeda-combophy.yaml#
+> +$id: http://devicetree.org/schemas/memory-controllers/calxeda-ddr-ctrlr.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Calxeda Highbank Combination PHYs binding for SATA
+> +title: Calxeda DDR memory controller binding
 > +
 > +description: |
-> +  The Calxeda Combination PHYs connect the SoC to the internal fabric
-> +  and to SATA connectors. The PHYs support multiple protocols (SATA,
-> +  SGMII, PCIe) and can be assigned to different devices (SATA or XGMAC
-> +  controller).
-> +  Programming the PHYs is typically handled by those device drivers,
-> +  not by a dedicated PHY driver.
+> +  The Calxeda DDR memory controller is initialised and programmed by the
+> +  firmware, but an OS might want to read its registers for error reporting
+> +  purposes and to learn about the DRAM topology.
 > +
 > +maintainers:
 > +  - Andre Przywara <andre.przywara@arm.com>
 > +
 > +properties:
 > +  compatible:
-> +    const: calxeda,hb-combophy
-> +
-> +  '#phy-cells':
-> +    const: 1
-> +
+> +    items:
+> +    - enum:
+> +        - calxeda,hb-ddr-ctrl
+> +        - calxeda,ecx-2000-ddr-ctrl
+
+You don't need the items here, you can just have the enum directly
+(like you did in your other schemas).
+
 > +  reg:
 > +    maxItems: 1
 > +
-> +  phydev:
-> +    description: device ID for programming the combophy.
-> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
 
-I guess you can limit the range here, or does it cover the whole u32
-range?
+And you're probably missing additionalProperties too (and in other
+schemas).
 
 Maxime
 
---le2zpoj6qhgy5u3q
+--vy5cdj22bi4li54x
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXla4XQAKCRDj7w1vZxhR
-xcr0AP9Go6W67LY8iVw9+n5AaBx1stq75hwfJ7JhT21EiH7KngD+MDzNzsxx0KyP
-E4dL+rbvbuh34GSh5uWm0X/T3hSjoQk=
-=eJJp
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXla4oQAKCRDj7w1vZxhR
+xRBXAP9ZQmrAOPSaIYVCepMGalL4VRu2WiDmkJ11EtPV92bOxAD/aNate5SpGBab
+3eDUe7Y2I/AUh3aU1kJNSh0pBw7wYwg=
+=BFTG
 -----END PGP SIGNATURE-----
 
---le2zpoj6qhgy5u3q--
+--vy5cdj22bi4li54x--
 
 
---===============6635532291008136541==
+--===============5689945496258060678==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -233,5 +236,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6635532291008136541==--
+--===============5689945496258060678==--
 
