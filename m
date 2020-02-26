@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4537416FBFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 11:24:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB07C16FC2C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 11:27:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x2O9hwktXU5O6pIGC9ANosUgHOONPZLwxV4UDLBtcPg=; b=UUfxJfQp5xJGXn
-	8/iYAc25El3t3Lk44O9TM1coNu9LtIXvJAp4aYlTi1sQDR9/EIiLaPtZfZfnncPLcSG3WjT4B8gzx
-	BpCi3pmlt/h1bZgzY/DHrDEw7C9/yXm5bn5CN2/Ahc8D8TAFzmjLEpc7/mTUUIjXhT01zOgAeTsFa
-	xSKbmS+ObpPEg3qeMTdZ4vcNGvhXT2n8tFt5OvW22rPMP7D8+VgSO3sPdyL3NLmo7GWVk0S9w7Izm
-	ZKlSK8PqihhIFervWznQNUMFQO7ErM+ghUd/YSnIv2Rvkt84IS8GIhiiv/fDnSwxwEoDeB20ICrvj
-	Jajwh1wa0SH7fiMIiQ3w==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xlf6NgO8fVugdTHcZmVPxrbstOoTzB4DYG1G7g7QsL8=; b=LcYfEOnkWou1IG
+	HAd2U7YX4zQ3bOejs6wcCMBcgBxwvGMHNHM659CLR3bvyoyeAKdXZr+S+Nsf9Kihf9qdDBjk+Zs3p
+	HsP61HFeuRaLTZo+fHIxag4XjILK2p5HlJxAOYV8F6dx1n1ReHYrCBJ48K2CqIJcdQIWE3MgkX3k/
+	Ef+luoLFI2nz9GlxWxZf28GhK8wjByGKFmfdjUmVizroduvYl85vPjzHwa1TejHZKvu97oWrmkfIG
+	nmdQCHrbUkmRg3LjR02RbUIsG8ZNtmCJv8bPJv0oCAfKQhFphqDzYwDhisOGX/Ko5zUe7gysTXFyP
+	a2cgJlvhYU1dHLmL1ltQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6trF-00050D-By; Wed, 26 Feb 2020 10:24:01 +0000
+	id 1j6tug-0007r1-O4; Wed, 26 Feb 2020 10:27:35 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6tr0-0004w9-72; Wed, 26 Feb 2020 10:23:48 +0000
+ id 1j6tti-0005TX-C8; Wed, 26 Feb 2020 10:26:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=cFVpx4YRUVFzc+9DHqfdkORwO59OSsrN3NUBEs25DtI=; b=pBc940/xSMyVKmzc+jKnvBnrl
- U0PrcS7rlhplkv3ua7fp+bCV0vStLayt37T/PKMxJPPoZ9CC2FtbD1nf25Ahb6ijldlL1CD0vDT8+
- TaHPlirnfkOxk2echaMoL9laxtU9PiSQrlMYJa6LiZ3HT7AkLFTviTFBU3ICkLO3jvBnvkoWv+x7a
- ZM6SAiQs/qso4XpcxhUwbduE4BPXzf2w37J4xqZ5nqE5ip0mEEQvEsfH/gJamCAse4G6wuKz5S8Bu
- 4uVHTZiKhnnSUjWRWV2MizhLooSt7wq/Fy46vqpBNI1EnfjEEGb3EoPs4T/QHtT8T4Y9v9Y5Hq8Sh
- Savpz9BDw==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:45464)
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
+ In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=D1Gs90YZV3aPIBiChrKCy6nx2DvUxwcgpQbXytzot5Q=; b=ODeiMjDvpXVurbL73I9uEKZcSR
+ R7GzL1F0sXLtrRRu6PiN3YEwPf32N5sDPf92EzBWSP5377x6q2GDHCuR62yMs0Lp/NNi0HgTVe0St
+ d59o4yfwJ6CRXTwMHJYgEW/cQywd1KqnZ7KOZEH24LYDErjUtRd2q3er5EpSC+loQJYmdliDgVeff
+ k5oJ/IFEOQZQf6zb2S34YM1hIP+1JVVh48v2IenreW7lWU8FApG4BW+gULT1PxBf1tTn0kNQ5DKyN
+ +GZTOKPcBWCqFV77dK2dcjQhFjEiocAWUICwNhSE16cibCmZU71lAdL7pn+DxU6aPcfzd2tRj1Q8S
+ m1ZkvFog==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:33264 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j6tqY-0006rK-CP; Wed, 26 Feb 2020 10:23:18 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j6tqS-0008KS-I1; Wed, 26 Feb 2020 10:23:12 +0000
-Date: Wed, 26 Feb 2020 10:23:12 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j6tqw-0006rd-3f; Wed, 26 Feb 2020 10:23:42 +0000
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j6tqv-0003G6-BO; Wed, 26 Feb 2020 10:23:41 +0000
+In-Reply-To: <20200226102312.GX25745@shell.armlinux.org.uk>
+References: <20200226102312.GX25745@shell.armlinux.org.uk>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
  Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH net-next v2 0/8] rework phylink interface for split MAC/PCS
- support
-Message-ID: <20200226102312.GX25745@shell.armlinux.org.uk>
+Subject: [PATCH net-next v2 1/8] net: phylink: propagate resolved link config
+ via mac_link_up()
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Message-Id: <E1j6tqv-0003G6-BO@rmk-PC.armlinux.org.uk>
+Date: Wed, 26 Feb 2020 10:23:41 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_022346_279963_929DF1DB 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20200226_022635_241134_176B81D8 
+X-CRM114-Status: GOOD (  15.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -87,16 +88,18 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-doc@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Ioana Ciornei <ioana.ciornei@nxp.com>,
- linux-stm32@st-md-mailman.stormreply.com, Jonathan Corbet <corbet@lwn.net>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Ioana Radulescu <ruxandra.radulescu@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
  Michal Simek <michal.simek@xilinx.com>, Jose Abreu <joabreu@synopsys.com>,
- Jakub Kicinski <kuba@kernel.org>, Vivien Didelot <vivien.didelot@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Hauke Mehrtens <hauke@hauke-m.de>,
- Sean Wang <sean.wang@mediatek.com>, linux-mediatek@lists.infradead.org,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  Giuseppe Cavallaro <peppe.cavallaro@st.com>,
  linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Vivien Didelot <vivien.didelot@gmail.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Vladimir Oltean <olteanv@gmail.com>, "David S. Miller" <davem@davemloft.net>,
  Felix Fietkau <nbd@nbd.name>
@@ -105,66 +108,360 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Propagate the resolved link parameters via the mac_link_up() call for
+MACs that do not automatically track their PCS state. We propagate the
+link parameters via function arguments so that inappropriate members
+of struct phylink_link_state can't be accessed, and creating a new
+structure just for this adds needless complexity to the API.
 
-The following series changes the phylink interface to allow us to
-better support split MAC / MAC PCS setups.  The fundamental change
-required for this turns out to be quite simple.
+Tested-by: Andre Przywara <andre.przywara@arm.com>
+Tested-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Tested-by: Vladimir Oltean <vladimir.oltean@nxp.com>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ Documentation/networking/sfp-phylink.rst      | 17 +++++-
+ drivers/net/ethernet/cadence/macb_main.c      |  7 ++-
+ .../net/ethernet/freescale/dpaa2/dpaa2-mac.c  |  7 ++-
+ drivers/net/ethernet/marvell/mvneta.c         |  8 ++-
+ .../net/ethernet/marvell/mvpp2/mvpp2_main.c   | 19 +++++--
+ drivers/net/ethernet/mediatek/mtk_eth_soc.c   |  7 ++-
+ .../net/ethernet/stmicro/stmmac/stmmac_main.c |  4 +-
+ .../net/ethernet/xilinx/xilinx_axienet_main.c |  7 ++-
+ drivers/net/phy/phylink.c                     |  9 ++-
+ include/linux/phylink.h                       | 57 ++++++++++++++-----
+ net/dsa/port.c                                |  4 +-
+ 11 files changed, 105 insertions(+), 41 deletions(-)
 
-Today, mac_config() is used for everything to do with setting the
-parameters for the MAC, and mac_link_up() is used to inform the
-MAC driver that the link is now up (and so to allow packet flow.)
-mac_config() also has had a few implementation issues, with folk
-who believe that members such as "speed" and "duplex" are always
-valid, where "link" gets used inappropriately, etc.
-
-With the proposed patches, all this changes subtly - but in a
-backwards compatible way at this stage.
-
-We pass the the full resolved link state (speed, duplex, pause) to
-mac_link_up(), and it is now guaranteed that these parameters to
-this function will always be valid (no more SPEED_UNKNOWN or
-DUPLEX_UNKNOWN here - unless phylink is fed with such things.)
-
-Drivers should convert over to using the state in mac_link_up()
-rather than configuring the speed, duplex and pause in the
-mac_config() method. The patch series includes a number of MAC
-drivers which I've thought have been easy targets - I've left the
-remainder as I think they need maintainer input. However, *all*
-drivers will need conversion for future phylink development.
-
-v2: add ocelot/felix and qca/ar9331 DSA drivers to patch 2, add
-  received tested-by so far.
-
- Documentation/networking/sfp-phylink.rst          |  17 +++-
- drivers/net/dsa/b53/b53_common.c                  |   4 +-
- drivers/net/dsa/b53/b53_priv.h                    |   4 +-
- drivers/net/dsa/bcm_sf2.c                         |   4 +-
- drivers/net/dsa/lantiq_gswip.c                    |   4 +-
- drivers/net/dsa/mt7530.c                          |   4 +-
- drivers/net/dsa/mv88e6xxx/chip.c                  |  79 +++++++++++++----
- drivers/net/dsa/ocelot/felix.c                    |   4 +-
- drivers/net/dsa/qca/ar9331.c                      |   4 +-
- drivers/net/dsa/sja1105/sja1105_main.c            |   4 +-
- drivers/net/ethernet/cadence/macb.h               |   1 -
- drivers/net/ethernet/cadence/macb_main.c          |  57 +++++++-----
- drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c  |  61 ++++++++-----
- drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.h  |   1 +
- drivers/net/ethernet/marvell/mvneta.c             |  63 ++++++++-----
- drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c   | 102 +++++++++++++---------
- drivers/net/ethernet/mediatek/mtk_eth_soc.c       |   7 +-
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c |   4 +-
- drivers/net/ethernet/xilinx/xilinx_axienet_main.c |  37 ++++----
- drivers/net/phy/phylink.c                         |   9 +-
- include/linux/phylink.h                           |  57 ++++++++----
- include/net/dsa.h                                 |   4 +-
- net/dsa/port.c                                    |   7 +-
- 23 files changed, 358 insertions(+), 180 deletions(-)
-
+diff --git a/Documentation/networking/sfp-phylink.rst b/Documentation/networking/sfp-phylink.rst
+index d753a309f9d1..8d7af28cd835 100644
+--- a/Documentation/networking/sfp-phylink.rst
++++ b/Documentation/networking/sfp-phylink.rst
+@@ -74,10 +74,13 @@ phylib to the sfp/phylink support.  Please send patches to improve
+ this documentation.
+ 
+ 1. Optionally split the network driver's phylib update function into
+-   three parts dealing with link-down, link-up and reconfiguring the
+-   MAC settings. This can be done as a separate preparation commit.
++   two parts dealing with link-down and link-up. This can be done as
++   a separate preparation commit.
+ 
+-   An example of this preparation can be found in git commit fc548b991fb0.
++   An older example of this preparation can be found in git commit
++   fc548b991fb0, although this was splitting into three parts; the
++   link-up part now includes configuring the MAC for the link settings.
++   Please see :c:func:`mac_link_up` for more information on this.
+ 
+ 2. Replace::
+ 
+@@ -207,6 +210,14 @@ this documentation.
+    using. This is particularly important for in-band negotiation
+    methods such as 1000base-X and SGMII.
+ 
++   The :c:func:`mac_link_up` method is used to inform the MAC that the
++   link has come up. The call includes the negotiation mode and interface
++   for reference only. The finalised link parameters are also supplied
++   (speed, duplex and flow control/pause enablement settings) which
++   should be used to configure the MAC when the MAC and PCS are not
++   tightly integrated, or when the settings are not coming from in-band
++   negotiation.
++
+    The :c:func:`mac_config` method is used to update the MAC with the
+    requested state, and must avoid unnecessarily taking the link down
+    when making changes to the MAC configuration.  This means the
+diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+index 2c28da1737fe..7ab0bef5e1bd 100644
+--- a/drivers/net/ethernet/cadence/macb_main.c
++++ b/drivers/net/ethernet/cadence/macb_main.c
+@@ -626,8 +626,11 @@ static void macb_mac_link_down(struct phylink_config *config, unsigned int mode,
+ 	netif_tx_stop_all_queues(ndev);
+ }
+ 
+-static void macb_mac_link_up(struct phylink_config *config, unsigned int mode,
+-			     phy_interface_t interface, struct phy_device *phy)
++static void macb_mac_link_up(struct phylink_config *config,
++			     struct phy_device *phy,
++			     unsigned int mode, phy_interface_t interface,
++			     int speed, int duplex,
++			     bool tx_pause, bool rx_pause)
+ {
+ 	struct net_device *ndev = to_net_dev(config->dev);
+ 	struct macb *bp = netdev_priv(ndev);
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
+index 84233e467ed1..3a75c5b58f95 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-mac.c
+@@ -154,8 +154,11 @@ static void dpaa2_mac_config(struct phylink_config *config, unsigned int mode,
+ 		netdev_err(mac->net_dev, "dpmac_set_link_state() = %d\n", err);
+ }
+ 
+-static void dpaa2_mac_link_up(struct phylink_config *config, unsigned int mode,
+-			      phy_interface_t interface, struct phy_device *phy)
++static void dpaa2_mac_link_up(struct phylink_config *config,
++			      struct phy_device *phy,
++			      unsigned int mode, phy_interface_t interface,
++			      int speed, int duplex,
++			      bool tx_pause, bool rx_pause)
+ {
+ 	struct dpaa2_mac *mac = phylink_to_dpaa2_mac(config);
+ 	struct dpmac_link_state *dpmac_state = &mac->state;
+diff --git a/drivers/net/ethernet/marvell/mvneta.c b/drivers/net/ethernet/marvell/mvneta.c
+index 1c391f63a26f..9af3f8d5b289 100644
+--- a/drivers/net/ethernet/marvell/mvneta.c
++++ b/drivers/net/ethernet/marvell/mvneta.c
+@@ -3965,9 +3965,11 @@ static void mvneta_mac_link_down(struct phylink_config *config,
+ 	mvneta_set_eee(pp, false);
+ }
+ 
+-static void mvneta_mac_link_up(struct phylink_config *config, unsigned int mode,
+-			       phy_interface_t interface,
+-			       struct phy_device *phy)
++static void mvneta_mac_link_up(struct phylink_config *config,
++			       struct phy_device *phy,
++			       unsigned int mode, phy_interface_t interface,
++			       int speed, int duplex,
++			       bool tx_pause, bool rx_pause)
+ {
+ 	struct net_device *ndev = to_net_dev(config->dev);
+ 	struct mvneta_port *pp = netdev_priv(ndev);
+diff --git a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
+index 72133cbe55d4..ed8042d97e29 100644
+--- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
++++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
+@@ -58,8 +58,11 @@ static struct {
+  */
+ static void mvpp2_mac_config(struct phylink_config *config, unsigned int mode,
+ 			     const struct phylink_link_state *state);
+-static void mvpp2_mac_link_up(struct phylink_config *config, unsigned int mode,
+-			      phy_interface_t interface, struct phy_device *phy);
++static void mvpp2_mac_link_up(struct phylink_config *config,
++			      struct phy_device *phy,
++			      unsigned int mode, phy_interface_t interface,
++			      int speed, int duplex,
++			      bool tx_pause, bool rx_pause);
+ 
+ /* Queue modes */
+ #define MVPP2_QDIST_SINGLE_MODE	0
+@@ -3473,8 +3476,9 @@ static void mvpp2_start_dev(struct mvpp2_port *port)
+ 			.interface = port->phy_interface,
+ 		};
+ 		mvpp2_mac_config(&port->phylink_config, MLO_AN_INBAND, &state);
+-		mvpp2_mac_link_up(&port->phylink_config, MLO_AN_INBAND,
+-				  port->phy_interface, NULL);
++		mvpp2_mac_link_up(&port->phylink_config, NULL,
++				  MLO_AN_INBAND, port->phy_interface,
++				  SPEED_UNKNOWN, DUPLEX_UNKNOWN, false, false);
+ 	}
+ 
+ 	netif_tx_start_all_queues(port->dev);
+@@ -5141,8 +5145,11 @@ static void mvpp2_mac_config(struct phylink_config *config, unsigned int mode,
+ 	mvpp2_port_enable(port);
+ }
+ 
+-static void mvpp2_mac_link_up(struct phylink_config *config, unsigned int mode,
+-			      phy_interface_t interface, struct phy_device *phy)
++static void mvpp2_mac_link_up(struct phylink_config *config,
++			      struct phy_device *phy,
++			      unsigned int mode, phy_interface_t interface,
++			      int speed, int duplex,
++			      bool tx_pause, bool rx_pause)
+ {
+ 	struct net_device *dev = to_net_dev(config->dev);
+ 	struct mvpp2_port *port = netdev_priv(dev);
+diff --git a/drivers/net/ethernet/mediatek/mtk_eth_soc.c b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+index 8c6cfd15481c..8d28f90acfe7 100644
+--- a/drivers/net/ethernet/mediatek/mtk_eth_soc.c
++++ b/drivers/net/ethernet/mediatek/mtk_eth_soc.c
+@@ -412,9 +412,10 @@ static void mtk_mac_link_down(struct phylink_config *config, unsigned int mode,
+ 	mtk_w32(mac->hw, mcr, MTK_MAC_MCR(mac->id));
+ }
+ 
+-static void mtk_mac_link_up(struct phylink_config *config, unsigned int mode,
+-			    phy_interface_t interface,
+-			    struct phy_device *phy)
++static void mtk_mac_link_up(struct phylink_config *config,
++			    struct phy_device *phy,
++			    unsigned int mode, phy_interface_t interface,
++			    int speed, int duplex, bool tx_pause, bool rx_pause)
+ {
+ 	struct mtk_mac *mac = container_of(config, struct mtk_mac,
+ 					   phylink_config);
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index 37920b4da091..e039e715dcee 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -950,8 +950,10 @@ static void stmmac_mac_link_down(struct phylink_config *config,
+ }
+ 
+ static void stmmac_mac_link_up(struct phylink_config *config,
++			       struct phy_device *phy,
+ 			       unsigned int mode, phy_interface_t interface,
+-			       struct phy_device *phy)
++			       int speed, int duplex,
++			       bool tx_pause, bool rx_pause)
+ {
+ 	struct stmmac_priv *priv = netdev_priv(to_net_dev(config->dev));
+ 
+diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+index 20746b801959..197740781157 100644
+--- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
++++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+@@ -1486,9 +1486,10 @@ static void axienet_mac_link_down(struct phylink_config *config,
+ }
+ 
+ static void axienet_mac_link_up(struct phylink_config *config,
+-				unsigned int mode,
+-				phy_interface_t interface,
+-				struct phy_device *phy)
++				struct phy_device *phy,
++				unsigned int mode, phy_interface_t interface,
++				int speed, int duplex,
++				bool tx_pause, bool rx_pause)
+ {
+ 	/* nothing meaningful to do */
+ }
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index 2899fbe699ab..b4367fab7899 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -480,8 +480,11 @@ static void phylink_mac_link_up(struct phylink *pl,
+ 	struct net_device *ndev = pl->netdev;
+ 
+ 	pl->cur_interface = link_state.interface;
+-	pl->ops->mac_link_up(pl->config, pl->cur_link_an_mode,
+-			     pl->cur_interface, pl->phydev);
++	pl->ops->mac_link_up(pl->config, pl->phydev,
++			     pl->cur_link_an_mode, pl->cur_interface,
++			     link_state.speed, link_state.duplex,
++			     !!(link_state.pause & MLO_PAUSE_TX),
++			     !!(link_state.pause & MLO_PAUSE_RX));
+ 
+ 	if (ndev)
+ 		netif_carrier_on(ndev);
+@@ -547,6 +550,8 @@ static void phylink_resolve(struct work_struct *w)
+ 				link_state.pause = pl->phy_state.pause;
+ 				phylink_apply_manual_flow(pl, &link_state);
+ 				phylink_mac_config(pl, &link_state);
++			} else {
++				phylink_apply_manual_flow(pl, &link_state);
+ 			}
+ 			break;
+ 		}
+diff --git a/include/linux/phylink.h b/include/linux/phylink.h
+index 812357c03df4..2180eb1aa254 100644
+--- a/include/linux/phylink.h
++++ b/include/linux/phylink.h
+@@ -91,9 +91,10 @@ struct phylink_mac_ops {
+ 	void (*mac_an_restart)(struct phylink_config *config);
+ 	void (*mac_link_down)(struct phylink_config *config, unsigned int mode,
+ 			      phy_interface_t interface);
+-	void (*mac_link_up)(struct phylink_config *config, unsigned int mode,
+-			    phy_interface_t interface,
+-			    struct phy_device *phy);
++	void (*mac_link_up)(struct phylink_config *config,
++			    struct phy_device *phy, unsigned int mode,
++			    phy_interface_t interface, int speed, int duplex,
++			    bool tx_pause, bool rx_pause);
+ };
+ 
+ #if 0 /* For kernel-doc purposes only. */
+@@ -152,6 +153,9 @@ void mac_pcs_get_state(struct phylink_config *config,
+  * guaranteed to be correct, and so any mac_config() implementation must
+  * never reference these fields.
+  *
++ * (this requires a rewrite - please refer to mac_link_up() for situations
++ *  where the PCS and MAC are not tightly integrated.)
++ *
+  * In all negotiation modes, as defined by @mode, @state->pause indicates the
+  * pause settings which should be applied as follows. If %MLO_PAUSE_AN is not
+  * set, %MLO_PAUSE_TX and %MLO_PAUSE_RX indicate whether the MAC should send
+@@ -162,12 +166,20 @@ void mac_pcs_get_state(struct phylink_config *config,
+  * The action performed depends on the currently selected mode:
+  *
+  * %MLO_AN_FIXED, %MLO_AN_PHY:
+- *   Configure the specified @state->speed and @state->duplex over a link
+- *   specified by @state->interface. @state->advertising may be used, but
+- *   is not required. Pause modes as above. Other members of @state must
+- *   be ignored.
++ *   Configure for non-inband negotiation mode, where the link settings
++ *   are completely communicated via mac_link_up().  The physical link
++ *   protocol from the MAC is specified by @state->interface.
++ *
++ *   @state->advertising may be used, but is not required.
++ *
++ *   Older drivers (prior to the mac_link_up() change) may use @state->speed,
++ *   @state->duplex and @state->pause to configure the MAC, but this is
++ *   deprecated; such drivers should be converted to use mac_link_up().
+  *
+- *   Valid state members: interface, speed, duplex, pause, advertising.
++ *   Other members of @state must be ignored.
++ *
++ *   Valid state members: interface, advertising.
++ *   Deprecated state members: speed, duplex, pause.
+  *
+  * %MLO_AN_INBAND:
+  *   place the link in an inband negotiation mode (such as 802.3z
+@@ -228,19 +240,34 @@ void mac_link_down(struct phylink_config *config, unsigned int mode,
+ /**
+  * mac_link_up() - allow the link to come up
+  * @config: a pointer to a &struct phylink_config.
++ * @phy: any attached phy
+  * @mode: link autonegotiation mode
+  * @interface: link &typedef phy_interface_t mode
+- * @phy: any attached phy
++ * @speed: link speed
++ * @duplex: link duplex
++ * @tx_pause: link transmit pause enablement status
++ * @rx_pause: link receive pause enablement status
+  *
+- * If @mode is not an in-band negotiation mode (as defined by
+- * phylink_autoneg_inband()), allow the link to come up. If @phy
+- * is non-%NULL, configure Energy Efficient Ethernet by calling
++ * Configure the MAC for an established link.
++ *
++ * @speed, @duplex, @tx_pause and @rx_pause indicate the finalised link
++ * settings, and should be used to configure the MAC block appropriately
++ * where these settings are not automatically conveyed from the PCS block,
++ * or if in-band negotiation (as defined by phylink_autoneg_inband(@mode))
++ * is disabled.
++ *
++ * Note that when 802.3z in-band negotiation is in use, it is possible
++ * that the user wishes to override the pause settings, and this should
++ * be allowed when considering the implementation of this method.
++ *
++ * If in-band negotiation mode is disabled, allow the link to come up. If
++ * @phy is non-%NULL, configure Energy Efficient Ethernet by calling
+  * phy_init_eee() and perform appropriate MAC configuration for EEE.
+  * Interface type selection must be done in mac_config().
+  */
+-void mac_link_up(struct phylink_config *config, unsigned int mode,
+-		 phy_interface_t interface,
+-		 struct phy_device *phy);
++void mac_link_up(struct phylink_config *config, struct phy_device *phy,
++		 unsigned int mode, phy_interface_t interface,
++		 int speed, int duplex, bool tx_pause, bool rx_pause);
+ #endif
+ 
+ struct phylink *phylink_create(struct phylink_config *, struct fwnode_handle *,
+diff --git a/net/dsa/port.c b/net/dsa/port.c
+index 774facb8d547..b2f5262b35cf 100644
+--- a/net/dsa/port.c
++++ b/net/dsa/port.c
+@@ -489,9 +489,11 @@ static void dsa_port_phylink_mac_link_down(struct phylink_config *config,
+ }
+ 
+ static void dsa_port_phylink_mac_link_up(struct phylink_config *config,
++					 struct phy_device *phydev,
+ 					 unsigned int mode,
+ 					 phy_interface_t interface,
+-					 struct phy_device *phydev)
++					 int speed, int duplex,
++					 bool tx_pause, bool rx_pause)
+ {
+ 	struct dsa_port *dp = container_of(config, struct dsa_port, pl_config);
+ 	struct dsa_switch *ds = dp->ds;
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
