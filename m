@@ -2,86 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4756016F423
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:16:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5720716F431
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:21:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PdHhUhkzwjN0Lw+OjgtgHetKB0DrOrfpEHC26Nt7opg=; b=g0F8Q50WHZa3AE
-	2+Kvr49lNBPmoCUwi1cKOQ23kv127Mk3nS3KYWDakyuHttCg7xDiidju5LsI1BhYiCO0Y77HzEJPy
-	OGub5m1D6K61//NeKdc+NPnrkIe1kdGgHL4wdxdU8y5jB2QjNPlxmhXNPHdfw/5W4oPl+ZCl/LcR7
-	HlcSyCmrOwMWeUbK8NX8enWvRNZCKPfwCiMcpZHr2XPcONtuuhG4qPFr0D6RKmCdJaURZlc4FXEzi
-	iaDBDMwHPGnCuG/sZk8DwKwuZzh/LSVBNuETU8n/ff2PPqGk275bMms6elhvKvL7fWfQH0bpR8YOO
-	ZLLMlhQGND0W1tSF4XyA==;
+	List-Owner; bh=57bA5tLrWmFjYca9DX3HU8HXlR+mFd41qmeZT+qUf74=; b=ZwjABxJPz4ph9M
+	yzAgeeufO2TD1TrRlnjxz4QZmAGilF3J/xiszQWiOM4pxp8z/5nM8i4dcZjf1XvjgMy9meaNJa7cC
+	KD0zGKMWI6jnh+eDbdH38JY7NgBqzablmywqP1xaVvYuSioB8kKbuxSyvBmGFw3bwL2D4IqF0xeAt
+	iQ7DD5zoDn65HbmKyfh2sYkgdW/kns0SUXOj+SHcr3U4pKyvNBaIP1dtraBThLUpJqLcGQ+c1Ky9L
+	q3AkDq18Qba6cmndcM7RLV0W247KfxLAGfecoowby1emk1HUm5VcLo0NgvWTYhPBFnZqlpy4dbXRH
+	IDT2nzbwCWshwSKVv2Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6kMt-0006z5-TU; Wed, 26 Feb 2020 00:16:03 +0000
-Received: from mail-vs1-xe2d.google.com ([2607:f8b0:4864:20::e2d])
+	id 1j6kRw-0000jt-6e; Wed, 26 Feb 2020 00:21:16 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6kMk-0006xa-VP
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:15:56 +0000
-Received: by mail-vs1-xe2d.google.com with SMTP id x123so698111vsc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 16:15:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oTRomC2W+BSThGwAQZ4mFHuy58uAWVt5delRT81IvjU=;
- b=MyRXyQ29K/5rD2ii3vJTRTLOQGj7HhOiybWmpSn7wQARePsB21oMCNPqUfbw9IaLkk
- fEjTnM0c2DDcQCOnKybAVQGg6IvEpPJl+yg2p7SHDkweG+05yI8+cKr/gCSIP1gB7R1F
- 2uI0P2Q2CK/LKaq2R3M3UpOFhAR122qdsb7KQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oTRomC2W+BSThGwAQZ4mFHuy58uAWVt5delRT81IvjU=;
- b=LAg3qHYtKxiGwT0EYny3yIw8E3wIj61zeh5O6aOcoEtLF0jb/aZJBerGgyEnuN50Y1
- tPxbQWRBPTHWqcdS22DrL9anOgqt9Vkyfd+7xeNnLQpq1lnC5WfljoOpQ5LVkFB/Ejcf
- UMofdNOTzcbdQXSIiezbl2vAYFn87ATWlF7BOjg+IVhoLgFDEpbraPF8VzEYKzmSOvCc
- n2MNzISAbaEKekly7NnKLn1k5Z+Zr5/CbNwp6UMIHmQ16HaDhxZ9m8Y8MoOWZKiizxcy
- OJO2A9oBPZCOsDy8iFjpQjqVbgq2FDuQ9Ut1ILVrM1bQT5SAkAJP7UotELR1Gj5XkPtX
- yt8g==
-X-Gm-Message-State: APjAAAUG+yla89OiTzG82XS6KCiJZG5mJB5g0BenosMDLv+25tHadyIQ
- E/HHRs6CsZUeUM5fWzw4XN04cs0nCy8=
-X-Google-Smtp-Source: APXvYqzOPtWiv/ehC7hH+hgLDagEQIfptiB0KamnD/T76Fxn8SQlCGJiy1frHKwqaWHFsHeeAtTUsw==
-X-Received: by 2002:a67:ec12:: with SMTP id d18mr1856232vso.129.1582676153246; 
- Tue, 25 Feb 2020 16:15:53 -0800 (PST)
-Received: from mail-vs1-f49.google.com (mail-vs1-f49.google.com.
- [209.85.217.49])
- by smtp.gmail.com with ESMTPSA id o132sm162597vkd.17.2020.02.25.16.15.50
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 25 Feb 2020 16:15:51 -0800 (PST)
-Received: by mail-vs1-f49.google.com with SMTP id x123so698059vsc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 16:15:50 -0800 (PST)
-X-Received: by 2002:a67:f541:: with SMTP id z1mr1739800vsn.70.1582676150352;
- Tue, 25 Feb 2020 16:15:50 -0800 (PST)
+ id 1j6kRl-0000hr-Cj
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:21:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582676461;
+ h=from:from:reply-to:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=pSsIHb+FQ5bR2RwqTYedz8LKeVIKU3YlSxw2AS2/Rzw=;
+ b=SmowENn+cUEwPeCoDn7sA04wEDiYaIieHrUmQW+yGDs7i//ohCweepadvJ31hYVvqsuH/q
+ aAU52Racy71h/F+Nhfk6qWDxtiEhPVzrxsBYx61DZnL+8FLl8HymCrTTkkyDTsxDqCUqbY
+ PySbfW2zZmtDv0IN9iENjN9ySjbJRtQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-335-Y418QsCCOCqWKczCOrW4HQ-1; Tue, 25 Feb 2020 19:20:59 -0500
+X-MC-Unique: Y418QsCCOCqWKczCOrW4HQ-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A294F1857365;
+ Wed, 26 Feb 2020 00:20:57 +0000 (UTC)
+Received: from localhost.localdomain (vpn2-54-83.bne.redhat.com [10.64.54.83])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 122158AC42;
+ Wed, 26 Feb 2020 00:20:54 +0000 (UTC)
+Subject: Re: [PATCH v3 4/5] arm64: Remove CPU operations dereferencing array
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <20200212004351.66576-1-gshan@redhat.com>
+ <20200212004351.66576-5-gshan@redhat.com>
+ <20200225141307.GA8970@e121166-lin.cambridge.arm.com>
+From: Gavin Shan <gshan@redhat.com>
+Message-ID: <a1aafd8e-533e-e542-d4fe-5d33e5a30cba@redhat.com>
+Date: Wed, 26 Feb 2020 11:20:51 +1100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-References: <20200221053802.70716-1-evanbenn@chromium.org>
- <20200221163717.v2.1.I02ebc5b8743b1a71e0e15f68ea77e506d4e6f840@changeid>
- <CAL_JsqL94vtBEmV2gNWx-D==sLiRXjxBBFZS8fw1cR6=KjS7XQ@mail.gmail.com>
-In-Reply-To: <CAL_JsqL94vtBEmV2gNWx-D==sLiRXjxBBFZS8fw1cR6=KjS7XQ@mail.gmail.com>
-From: Evan Benn <evanbenn@chromium.org>
-Date: Wed, 26 Feb 2020 11:15:24 +1100
-X-Gmail-Original-Message-ID: <CAKz_xw2ETZ5eyNfdWU5cF6Qy23E1NqhpFHoLT_CzUDHWTCbw4Q@mail.gmail.com>
-Message-ID: <CAKz_xw2ETZ5eyNfdWU5cF6Qy23E1NqhpFHoLT_CzUDHWTCbw4Q@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: watchdog: Add mt8173, smc-wdt watchdog
-To: Rob Herring <robh+dt@kernel.org>
+In-Reply-To: <20200225141307.GA8970@e121166-lin.cambridge.arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_161555_029603_ED8D2ED0 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200225_162105_654937_86ECD6ED 
+X-CRM114-Status: GOOD (  24.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e2d listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,44 +95,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Julius Werner <jwerner@chromium.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- "David S. Miller" <davem@davemloft.net>, Guenter Roeck <linux@roeck-us.net>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Gavin Shan <gshan@redhat.com>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, robin.murphy@arm.com,
+ sudeep.holla@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks Rob
+On 2/26/20 1:13 AM, Lorenzo Pieralisi wrote:
+> On Wed, Feb 12, 2020 at 11:43:50AM +1100, Gavin Shan wrote:
+>> One CPU operations is maintained through array @cpu_ops[NR_CPUS]. 2KB
+>> memory is consumed when CONFIG_NR_CPUS is set to 256. It seems too
+>> much memory has been used for this. Also, all CPUs must use same CPU
+>> operations and we shouldn't bring up the broken CPU, as Lorenzo Pieralisi
+>> pointed out.
+> 
+> That's not appropriate for a commit log. If you want to refer
+> to a mailing list discussion add a Link: tag with a lore archive
+> pointer.
+> 
 
-> This should be a child of some Mediatek firmware node. I assume
-> watchdog is not the *only* function.
+Yep, a link tag is absolutely needed here. I will have one in next
+respin.
 
-I am not quite sure what you mean, do you intend this:
+>> This introduces variable (@cpu_ops_index) to store the unified CPU
+>> operations index. The CPU, which has different index, won't be brought
+>> up. With this, the CPU operations dereferencing array is removed and
+>> 2KB memory is saved.
+> 
+> I think it is enough fiddling with indexes, if you need to save
+> memory reduce the cpu_ops array to a pointer and be done with that.
+> 
 
- firmware {
-   watchdog {
-     ...
-   }
-}
+Yes, the code will be simplified with a pointer, index works either. I
+will have a pointer in v4.
 
-I do not have a deep understanding of devicetree yet, can you point me
-to anything that will help me understand
-the consequences of that change?
+>> Signed-off-by: Gavin Shan <gshan@redhat.com>
+>> ---
+>>   arch/arm64/kernel/cpu_ops.c | 62 ++++++++++++++++++++-----------------
+>>   1 file changed, 34 insertions(+), 28 deletions(-)
+>>
+>> diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
+>> index e133011f64b5..f59c087d6284 100644
+>> --- a/arch/arm64/kernel/cpu_ops.c
+>> +++ b/arch/arm64/kernel/cpu_ops.c
+>> @@ -4,7 +4,6 @@
+>>    *
+>>    * Copyright (C) 2013 ARM Ltd.
+>>    */
+>> -
 
-Thanks
+The unnecessary change will be dropped in v4.
 
-Evan
+>>   #include <linux/acpi.h>
+>>   #include <linux/cache.h>
+>>   #include <linux/errno.h>
+>> @@ -20,39 +19,32 @@ extern const struct cpu_operations acpi_parking_protocol_ops;
+>>   #endif
+>>   extern const struct cpu_operations cpu_psci_ops;
+>>   
+>> -static const struct cpu_operations *cpu_ops[NR_CPUS] __ro_after_init;
+> 
+> +static const struct cpu_operations *cpu_ops __ro_after_init;
+> 
+
+Ok.
+
+>> -
+>> -static const struct cpu_operations *const dt_supported_cpu_ops[] __initconst = {
+>> +/*
+>> + * Each element of the index array is shared by 4 CPUs. It means each
+>> + * CPU index uses 2 bits.
+>> + */
+>> +static const struct cpu_operations *const cpu_ops[] = {
+>>   	&smp_spin_table_ops,
+>> -	&cpu_psci_ops,
+>> -	NULL,
+>> -};
+>> -
+>> -static const struct cpu_operations *const acpi_supported_cpu_ops[] __initconst = {
+>>   #ifdef CONFIG_ARM64_ACPI_PARKING_PROTOCOL
+>>   	&acpi_parking_protocol_ops,
+>>   #endif
+>>   	&cpu_psci_ops,
+>> -	NULL,
+>>   };
+>> +static int cpu_ops_index __ro_after_init = INT_MAX;
+>>   
+>> -static const struct cpu_operations * __init cpu_get_ops(const char *name)
+>> +static int __init get_cpu_ops_index(const char *name)
+>>   {
+>> -	const struct cpu_operations *const *ops;
+>> -
+>> -	ops = acpi_disabled ? dt_supported_cpu_ops : acpi_supported_cpu_ops;
+>> -
+>> -	while (*ops) {
+>> -		if (!strcmp(name, (*ops)->name))
+>> -			return *ops;
+>> +	int index;
+>>   
+>> -		ops++;
+>> +	for (index = 0; index < ARRAY_SIZE(cpu_ops); index++) {
+>> +		if (!strcmp(cpu_ops[index]->name, name))
+>> +			return index;
+>>   	}
+>>   
+>> -	return NULL;
+>> +	return -ERANGE;
+>>   }
+
+cpu_get_ops()'s logic will be merged into get_cpu_method() since we're here.
+It's too simple to have a separate function. And it's only called by get_cpu_method().
+
+>>   
+>> -static const char *__init cpu_read_enable_method(int cpu)
+>> +static const char *__init get_cpu_method(int cpu)
+>>   {
+>>   	const char *enable_method;
+>>   
+>> @@ -93,26 +85,40 @@ static const char *__init cpu_read_enable_method(int cpu)
+>>   
+>>   	return enable_method;
+>>   }
+>> -/*
+>> - * Read a cpu's enable method and record it in cpu_ops.
+>> - */
+>> +
+>>   int __init init_cpu_ops(int cpu)
+>>   {
+>> -	const char *enable_method = cpu_read_enable_method(cpu);
+>> +	const char *enable_method = get_cpu_method(cpu);
+>> +	int index;
+>>   
+>>   	if (!enable_method)
+>>   		return -ENODEV;
+>>   
+>> -	cpu_ops[cpu] = cpu_get_ops(enable_method);
+>> -	if (!cpu_ops[cpu]) {
+>> +	index = get_cpu_ops_index(enable_method);
+>> +	if (index < 0) {
+>>   		pr_warn("Unsupported enable-method: %s\n", enable_method);
+>>   		return -EOPNOTSUPP;
+>>   	}
+>>   
+>> +	/* Update the index directly if it's invalid */
+>> +	if (cpu_ops_index == INT_MAX) {
+>> +		cpu_ops_index = index;
+>> +		return 0;
+>> +	}
+>> +
+>> +	if (index != cpu_ops_index) {
+>> +		pr_warn("Invalid CPU operations index %d (%d) on CPU %d\n",
+>> +			index, cpu_ops_index, cpu);
+>> +		return -EINVAL;
+>> +	}
+> 
+> There isn't really a need for this index song and dance, a pointer
+> will do to achieve what you are doing above.
+> 
+
+Sure, the index stuff will be replaced by a pointer in v4 :)
+
+Thanks,
+Gavin
+
 
 _______________________________________________
 linux-arm-kernel mailing list
