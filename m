@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E557F16F874
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 08:19:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9056416F875
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 08:19:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o0hJUn9GMFhfhAQMQxu6cj9V90KodNXk+1410r+9++g=; b=prKWvjDPk9JVD/
-	8eQdZ9y1NCvqGNgG7RFWawPCsfIOpQ2e0V++D7TRwLvHFF8otVtLMANCdGqidegNC336S7AlcSmj9
-	Rz1k1Zm91+4/jSGXMWyeCzgKuZYohRivJK9RP7AiO3nO5qP4yU2F8dobrZogSPjjF1CVfe02oWQq/
-	zHyv9JHxvYNHwvUhMtUIuG5C9SPjI+UvxiRo8MnWBdq67RuZJoxSUHPLSxoxiqnJTGEFFMnxDaGtq
-	NzHBfdnVEVjSFT4U7pQFhKH190//2bpxt+LnLB4rGJsDLT977IpRHuZTM74qKHWx1vrjOl86I3+ER
-	G1OmIF4lXs4hDP5IiCyQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yKWH0lB/MbhYcQP+dngWGhwlLEmag4fIqLAc0qn+xLk=; b=ZR18l6Ruv0T4N2
+	aND/R91MsjhWGZ7QXU+zVuiM0ogXufNh4tRO8NaU1DVB5ctfi891xz8nILF/l5dTNn4UQiMv6cIMV
+	MvIbcJKJp+idFSLWAt/79VEvMEjeX9VseKMi4QMIksK1Qhd3/t4mozVDZrTvCRxBoRUrLVVWVFRzf
+	AKW5jSmT/FE7ytA96xESEnn198CAKO/A1rSBdrCdqywWBNY80ZRon+iuQEfcVZO6TljB8bJSeVyTv
+	fdDlAptpmnul32CM7RPxtAWun8f7ReK5m1Hy4UhkIrZJvydLySZcVUWMwv+Sbw39tNFaRpeKNdOmP
+	5bka+dgz8KRQP6CIQXZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6qyS-0006Dh-PC; Wed, 26 Feb 2020 07:19:16 +0000
-Received: from mail-db8eur05on2070.outbound.protection.outlook.com
- ([40.107.20.70] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1j6qyi-0006v1-PA; Wed, 26 Feb 2020 07:19:32 +0000
+Received: from mail-eopbgr40044.outbound.protection.outlook.com ([40.107.4.44]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6qy8-0006D3-Qb
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 07:18:58 +0000
+ id 1j6qyC-0006DZ-Eo
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 07:19:02 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mLda447KvSPNgeWzGXFTMDVzHjv67J+ntjLCEHyZ/1lmv6ajWTvzS0jzXXAxiwBnKdKmsrkHm9Z3xYCrGnJd4alsfF+PWeS8mLTPBoo5jujnfxXoy4hpwVMXwErqMlha1ADSauHDwXOlSys6mR7oy/jyWGCFhxauLnZiKUixxoSWmS8/9x35cd20LjSkp+naenh0uhacCdt26VXz49YJSOnUVvWhaa96GP4d8xf/hpKfMwfl1otF8fAuHIhlin8p9nZvgKveza9IWTWcZqqfQ+/EL/yQfTCiimpfl81oVXU16YYNdr0igfph97p6IX9eoxKKLZ/CpDWnkvOkDhjgxw==
+ b=d+GemtTCpV48les9dpIzt8l2rbgs2Z7MrJB1PaqwHSfiJJEyowk7QDAEla/SD6WvlLcKOwKIf83nAysI2At617sHmlcAto6GU0QXf6PMRi1N7j/Xcaw3yZrja5igNdpdKX1OZbCtitncxoPKOcU1wFoCv9goXIfvDSk/edQ4bQ5LlXKb654E8HtapglYevtrZpbtANOK4759XWgLMV0SzSywb8+z2XwXh/tk7FyZwbxs+ShjLkmJ8AV8qLAahsrnbYdvM8H7fLpPWipJb5bndi2co6cvO8Hd4IKb3Qqjrz7bPaXbPqMQ0S6bw9k93GVTv5B64tdjEYZDJc4TC309Aw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Nk8GoFSDbRtszFiYYHcBQ6IlTKuNv5lqKoyhWO6HQGk=;
- b=hPnGmCDjeJQiBTz8CpM/7B3Kt6sIusuYUJ3VAnfErtJwKL7BoTRqtknTBZBPyKumJy3ZEvWLOpWisEdkqkSuA6w9GbIkvE21y/kFSv4MCwF/OgiAB4VJl0stmOerAX+wCe5nJeZDm1qJTvDZvYgVe7zEZAzm0jpK6+OA3UA0hmhr5Eioayp6wk/tdozWucm/vgfpvlWokZ933y32TXyvO8GPVoM7Tmt/V+KnLN29P0cfjJc3y08pSyu44RzcyiW8CnFmUOrfn84lqepZHBsZbYCYazjkKhCsGuYd5KV2ja2Y7ag05kAM5yQWyXtCPytRJ6xM9cndONPJ1hY2GqRilQ==
+ bh=lTEPRvmDpn0B7HYc7rlzofD9RpOTbggaLCyUpfkZ72g=;
+ b=eORRrrHXaPSHmkx506hODvEIBT542Q8SiEeDSli5/LjS9/8QJnP2k1P0aMofEeEBl08nXwPSzOBDgaQxGFoOPo1HL4yWrQf7Mte7bFFnk4pdZz8RDwPI4PfhkTAupMcwoq1bTDXgdzQh2p0X1bZW5tyqg2jbulC1MRcgSSQ7UzfphmLwKKgEnklmPMixpu4Yv02McO+YKtHuoqAhQnLNwyf5KWFNL9pk2FyL+0DePCyOlobRlSOW68FaSwSMS5mVklYdMPWjesqujuXW2W35kZOmYGDqzBBuRQ1i7ISj7Oa7oaf4uheKIpMW8Sim9kqx6FCnIt9uVbkhg5e4VsTaKw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Nk8GoFSDbRtszFiYYHcBQ6IlTKuNv5lqKoyhWO6HQGk=;
- b=K3snKtXa78m2PxQ0npp5k7UyZTQSaaIZ5utOglItV6zEc6hb31zbU3Y8zuAYBNC3oqsEEpvJmzHruaj+l5+kRO4whD8WPYmTKZVn+L8vGHyYzdy1PR0vgsCm+0mgp2AdcktYTTvwVhBVj5XWNU+PPMYcu+vU+Wl1CXu10CLqZ+Q=
+ bh=lTEPRvmDpn0B7HYc7rlzofD9RpOTbggaLCyUpfkZ72g=;
+ b=rdoOvCsqXNqxbCqUcpxX/t+nNCWsZqczKC32NlEBeIDNbb6GEEkd0NIkix1ufI9hX/SgPpEECFBU5M4c4w8SD3MWxg7urvtxJ1oNRSHBblgSNXULQZD/T7n0o5CDLj1sWpJELpmlsaepW49LlVw3h1HKNxbGkXGGGm1ZO9SZ/N0=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6819.eurprd04.prod.outlook.com (52.132.212.143) with Microsoft SMTP
+ AM0PR04MB5506.eurprd04.prod.outlook.com (20.178.115.221) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.21; Wed, 26 Feb 2020 07:18:54 +0000
+ 15.20.2750.22; Wed, 26 Feb 2020 07:18:57 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2750.021; Wed, 26 Feb 2020
- 07:18:54 +0000
+ 07:18:57 +0000
 From: peng.fan@nxp.com
 To: sudeep.holla@arm.com, robh+dt@kernel.org, mark.rutland@arm.com,
  robh@kernel.org
-Subject: [PATCH V3 0/2] firmware: arm_scmi: add smc/hvc transports support
-Date: Wed, 26 Feb 2020 15:12:49 +0800
-Message-Id: <1582701171-26842-1-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V3 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transport
+Date: Wed, 26 Feb 2020 15:12:50 +0800
+Message-Id: <1582701171-26842-2-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1582701171-26842-1-git-send-email-peng.fan@nxp.com>
+References: <1582701171-26842-1-git-send-email-peng.fan@nxp.com>
 X-ClientProxiedBy: SG2PR01CA0131.apcprd01.prod.exchangelabs.com
  (2603:1096:4:40::35) To AM0PR04MB4481.eurprd04.prod.outlook.com
  (2603:10a6:208:70::15)
@@ -64,47 +66,46 @@ Received: from localhost.localdomain (119.31.174.66) by
  SG2PR01CA0131.apcprd01.prod.exchangelabs.com (2603:1096:4:40::35) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2750.18 via Frontend
- Transport; Wed, 26 Feb 2020 07:18:50 +0000
+ Transport; Wed, 26 Feb 2020 07:18:54 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: b15bc919-5b95-4401-9900-08d7ba8c22a0
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6819:|AM0PR04MB6819:
+X-MS-Office365-Filtering-Correlation-Id: 5f6e0a74-4130-41f1-7abc-08d7ba8c24fe
+X-MS-TrafficTypeDiagnostic: AM0PR04MB5506:|AM0PR04MB5506:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB681997D767C5D208FA6E3C2588EA0@AM0PR04MB6819.eurprd04.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <AM0PR04MB5506608F6452DC54A6272AD888EA0@AM0PR04MB5506.eurprd04.prod.outlook.com>
 X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
 X-Forefront-PRVS: 0325F6C77B
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(39860400002)(376002)(136003)(366004)(199004)(189003)(186003)(2906002)(6512007)(36756003)(966005)(52116002)(6486002)(69590400006)(5660300002)(478600001)(316002)(16526019)(4326008)(9686003)(86362001)(81156014)(81166006)(66556008)(7416002)(8936002)(26005)(956004)(2616005)(6506007)(66946007)(8676002)(66476007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6819;
+ SFS:(10009020)(4636009)(39860400002)(136003)(346002)(376002)(366004)(396003)(199004)(189003)(2906002)(6512007)(26005)(2616005)(16526019)(478600001)(8676002)(186003)(956004)(9686003)(8936002)(81156014)(6506007)(66946007)(66556008)(81166006)(6486002)(4326008)(7416002)(52116002)(36756003)(316002)(5660300002)(86362001)(66476007)(69590400006)(6666004)(142933001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5506;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 2GFMILwS39nRDDurBqyxC1z5DAE6bTHZWG9gtBkGZwgtDG9MOHiGnmcYrDhpEHVBXysyGpoKx8z0RhzG/dC6bw/NoG+8hqAuMy4OzsRcfDy7mffqczWthfd70OTVczy/23GsJCCPvmLz9zpHd9I+HDGju69QG5fs8KEFbGuxrRh88EDHO2TyGnB/15WADQ4LV+X1AmbzuSt2ddY/ZKyF7F081zaQomsQqzFN10OKJQ58bKobbXAJM5utlkaN/wRnFHFi90O/dCVL/9DPdS0EzXZ6bPtDcJzbuBTauOtD3Nra/9EgjO2gR5OAP+tLOpEFZbCi71XYguENhHxBhG5xH6JnHm7uvEjlShYrFdsmj9Yqw6ZAsgp9/WPXT3Xl6iRH5Jo9SDp8TPSQ4cJPQEUbr6lO5Q+8HtuPjFMSx5s9uOP642qusmd0PT4FxgnY7MW/S5HaGyL9D+/fgxU5wwiW/4WHNt+nIAmUUfsWK5BP2gVsdfWp5IyegrJDOn2Zaxa5coiMeeBCpHcQFG4MinsCT4dJS4FN3qV8V8sDRdThyVtweqvUMJjATut7qa+/qASsdv4poIYwft8+dNu4MxbACLXrgiQ/g1geBD/mjE0SaofztuVn7tdJNHB8keojQcov
-X-MS-Exchange-AntiSpam-MessageData: h2iyqcuYSyTSINsJCE5YWrbcPfexuSvWVR2uYbe3ycf2LjxfijWQ+9w+eLWTn1L3Z4yaWgv5vUV/9w00r4dWfalfH4DdvsDIzsoeuBf980WxJ8sVLxNORaTedhjnw/mg3bOP34uWb5jJHYIwk1aj9A==
+X-Microsoft-Antispam-Message-Info: +mw8TOy+u2Ylkxzo5Yfk3piuCr0gPYSrJ66xRc1dAL0LcR5YWXzBR2oLonABjuYlXPDupZBMglGSW/IKnACWREPkPIl+mu99n1mTwFM/g6b/pKIoka9XVKdkyNaVBU7+HS18X5c0uul4v+B2LKl6+MbzMfPQauC+c07w6c7kWXZK+v/vN0CsESyP87qt+iSbS3+P4D5zBAWCJiBHpSbjD/EKSy9dMIuqKM386E2lpimxjBazzc8Hx/nU2dJDE9ypG1SDVHz72E7gvoCPQSxt8p4U9phrQ6bRvKLdqDsHbFh9itvfKx/XQA21Vp5WFMBaPDHL1r8xeRsi1UOJ8dBzE0RP1H9qStukKQKMBTHTsjx25LmVMNggcvghL+txscjIEEkQ5iUgl87c1rClYQVB7bulWeGwrasJhJrNeCIEyZVw1cZTDHpymjIRV0rvzpRVzLgNvD/bDwzEwvs5h/2PMrkyMIw5E6Jf5Wu2lZWpAcK6VvutgicadpomqvIdMVR9H7wnzPhzOpQdswek0mJ1HlrpeHxwlN6d42tuncZ2czw+KZ5Z7J/Zyq7aGFcHb9dg
+X-MS-Exchange-AntiSpam-MessageData: X//2Hsq3PPDfofQS+wG8aOvWmBrPh0W4Zmrhh0/oUo1xJATZxJg8Z2BZXc4sE0tINjqUIUUFAu9tz7B5Ap7saiJ4FmfUlt8RRmPQSj0T2C9cSMIa6I+OTZWhCNoE+T8KlqaJwr5XCX7mpfCQ4ntMkw==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b15bc919-5b95-4401-9900-08d7ba8c22a0
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2020 07:18:53.7701 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5f6e0a74-4130-41f1-7abc-08d7ba8c24fe
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2020 07:18:57.6948 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: OPe6m7Nr/SJ6LQ1GVHJVNnABGEz6Svg/0ua14XZDtwfJ5FJHql25wpD8uNb4TPmrFGmEiUX/+qOJJA4xa6/1qg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6819
+X-MS-Exchange-CrossTenant-UserPrincipalName: 783LDQMnRApziGLwiaM1VvCEe6V08GA3XtRkwNeJgExFEkICXwTNbRGXpkDj96IjONk1S8ay8QVKkCkIQ6sJfg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5506
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_231856_968869_385D5694 
-X-CRM114-Status: UNSURE (   8.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200225_231900_511437_423E14F8 
+X-CRM114-Status: GOOD (  11.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.20.70 listed in list.dnswl.org]
+ no trust [40.107.4.44 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -137,45 +138,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-V3:
- Add back arm,scmi-smc compatible string
- Change smc-id to arm,smc-id
- Directly use arm_smccc_1_1_invoke
- Add prot_id in scmi_chan_info for per protocol shmem usage.
+SCMI could use SMC/HVC as tranports. Since there is no
+standardized id, we need to use vendor specific id. So
+add into devicetree binding doc.
 
-V2:
- patch 1/2: only add smc-id property
- patch 2/2: Parse smc/hvc from psci node
-	    Use prot_id as 2nd arg when issue smc/hvc
-	    Differentiate tranports using mboxes or smc-id property
-https://lore.kernel.org/patchwork/cover/1193435/
+Also add arm,scmi-smc compatible string for smc/hvc transport
 
-This is to add smc/hvc transports support, based on Viresh's v6.
-SCMI firmware could be implemented in EL3, S-EL1, NS-EL2 or other
-A core exception level. Then smc/hvc could be used. And for vendor
-specific firmware, a wrapper layer could added in EL3, S-EL1,
-NS-EL2 and etc to translate SCMI calls to vendor specific firmware calls.
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ Documentation/devicetree/bindings/arm/arm,scmi.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-A new compatible string arm,scmi-smc is added. arm,scmi is still for
-mailbox transports.
-
-All protocol share same smc/hvc id, the protocol id will be take as
-2nd arg when issue smc/hvc.
-Each protocol could use its own shmem or share the same shmem
-Per smc/hvc, only Tx supported.
-
-Peng Fan (2):
-  dt-bindings: arm: arm,scmi: add smc/hvc transport
-  firmware: arm_scmi: add smc/hvc transport
-
- Documentation/devicetree/bindings/arm/arm,scmi.txt |   3 +-
- drivers/firmware/arm_scmi/Makefile                 |   2 +-
- drivers/firmware/arm_scmi/common.h                 |   3 +
- drivers/firmware/arm_scmi/driver.c                 |   2 +
- drivers/firmware/arm_scmi/smc.c                    | 146 +++++++++++++++++++++
- 5 files changed, 154 insertions(+), 2 deletions(-)
- create mode 100644 drivers/firmware/arm_scmi/smc.c
-
+diff --git a/Documentation/devicetree/bindings/arm/arm,scmi.txt b/Documentation/devicetree/bindings/arm/arm,scmi.txt
+index f493d69e6194..4ce57b88f84d 100644
+--- a/Documentation/devicetree/bindings/arm/arm,scmi.txt
++++ b/Documentation/devicetree/bindings/arm/arm,scmi.txt
+@@ -14,7 +14,7 @@ Required properties:
+ 
+ The scmi node with the following properties shall be under the /firmware/ node.
+ 
+-- compatible : shall be "arm,scmi"
++- compatible : shall be "arm,scmi" or "arm,scmi-smc" for smc/hvc transports
+ - mboxes: List of phandle and mailbox channel specifiers. It should contain
+ 	  exactly one or two mailboxes, one for transmitting messages("tx")
+ 	  and another optional for receiving the notifications("rx") if
+@@ -25,6 +25,7 @@ The scmi node with the following properties shall be under the /firmware/ node.
+ 	  protocol identifier for a given sub-node.
+ - #size-cells : should be '0' as 'reg' property doesn't have any size
+ 	  associated with it.
++- arm,smc-id : SMC id required when using smc or hvc transports
+ 
+ Optional properties:
+ 
 -- 
 2.16.4
 
