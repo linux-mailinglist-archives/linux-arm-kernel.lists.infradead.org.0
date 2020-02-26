@@ -2,73 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1FDC170342
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:55:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 995D517032A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:52:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SJ1M81+n6rFmCMI+hO+pZ+zfBYJyF8qz7fublMG/I4g=; b=m5Eq86Wh4NnpRZ
-	pVfz/lKFg9NkcYRFCeGfzlJkgazmmbNDmvwkSvjTMYQfP1l6xeRnlEbn5KkOU2ZeWTAS0hXgjKhfS
-	M1+hJLrwr5+j8mOcNLhZh+FctvsVj61sp/Tp+smACavKJyL8U6is8KigRI6pTO2xAB7C+ghP7Jaac
-	86JJaMrhslAzqpK3tXvAF837adU69TkdRLzoClyeo0VWZKodSDMPsnennE2QO9IHru83YIfZ3iBpn
-	UgvoGHHSNCofv1vqinGQTI5J4IDtEnrK35F3yeg3S/t8X+PVTODy8kuDSfRiEhiGm8CW/XhLzUjYt
-	mrneU4ycZYN9YDw6GXLQ==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IPX5jShGTiYh5Z4OH7fNRiT2J1WSzKXNnm3TxqpUwbk=; b=BNSvmfYmvEIcwR
+	FjoQmH9jJCZwAu6HVJb8P61jY1D2ZTdYKLZrXzy4FBQ3EPX83Q6Td4oqalxyknvUxOB1prfhsHk5x
+	KmSDpw88N/LowRXL11IRQ6eJJ5hdfPPhImO3yEXuI7ktIi47aUvv8k61Z9adGWrm+7cmyFsa3k2xE
+	YhEhjfh7phIl2cb/o9HSf8thX1FiR2O4xEopc+3D7qEqFvRd2DqTgmiz/EVOVylZMtCCHukdUV0kc
+	LdWAQL33zYSbMAxnCjX3XreO9kjnNNks3AHsugfWrcZoKn7Ztxsy7Ld190B+GBE3lKsXcx/Qga/j9
+	pyn/A5RAwT9uHMXis84Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6z2A-0007rE-8c; Wed, 26 Feb 2020 15:55:38 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1j6yys-0005zT-UH; Wed, 26 Feb 2020 15:52:14 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6z1j-0007c9-CK
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:55:13 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 0862520581;
- Wed, 26 Feb 2020 16:55:05 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id EBC5E202EC;
- Wed, 26 Feb 2020 16:55:04 +0100 (CET)
-Subject: [RFC PATCH v4 2/2] clk: Use devm_add in managed functions
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-To: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Russell King <linux@armlinux.org.uk>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rafael Wysocki <rjw@rjwysocki.net>, Suzuki Poulose <suzuki.poulose@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-References: <68219a85-295d-7b7c-9658-c3045bbcbaeb@free.fr>
-Message-ID: <e88ca46a-799d-9c86-f2d2-6284eb3c3419@free.fr>
-Date: Wed, 26 Feb 2020 16:51:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <68219a85-295d-7b7c-9658-c3045bbcbaeb@free.fr>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Wed Feb 26 16:55:05 2020 +0100 (CET)
+ id 1j6yyh-0005yZ-CI
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:52:05 +0000
+Received: by mail-qk1-x743.google.com with SMTP id b5so3048903qkh.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Feb 2020 07:52:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=4GYwlf0Xa2QHt1cHVU8f4uTPVQEe66S6tW8iKIjB1EY=;
+ b=PEkBC2gGo9Wp0CTNFzcX/uGLGqh45la2h+234pEbgb0JKCTWiVwR5CK2qWd8o7GV9+
+ vZ0V3mJmWDxwpkokIiWuE2AK5D0JvSuKri12uT1Y5ZmnM2+2x1lk6TfjQrITZNEH8kqT
+ OpLenMqGsrmR+s2Jh+PZTctbpw7UkSpOJj3m46DAs7sTe9V+A8PrxIZxTU0Jx2ozkU+h
+ l2FfR5Vf/ZZGO7KqofRi3aS6TzSV2SHQoTpS42nUl+B16nz+oN/qYJaqXNzKW0WQZswg
+ b+O0gHwTc4Y9Ju+CjJy1uD3JRDYV9kySWYvBERLoM4RJvQwJnkBJANxBmrBhZlFtAjqz
+ NmYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=4GYwlf0Xa2QHt1cHVU8f4uTPVQEe66S6tW8iKIjB1EY=;
+ b=QBqtsUTC1IWqg0A3lelO3IQh21iPgMOQ9S9rUYYxjv+RyotiMVoGXgasHEUIoIn9WM
+ byae1pLLdYtVFkXnkfWSTFJCIOpeAMHFjxVFwwxVCWEabHFh1fAgRdAWMhvEbJXjwiMl
+ 3h2Qgu7hHuHKm7isYtMRNMiHYOWP0w6J/iJUOkwr/6sMDBo1WpnF8f9s+dwADSVCxoSt
+ UhOv5LMd0wHqT+AKSLbnymSCmWHDlb8tBOYMljvLotI2Zuf0Bm2QfrLsmpZYXFFKTc59
+ 4PK8gInl337c/H20R0rHbYI9qd/LgLAZ0b3658OZInF/CvDTJWbdSUVrc+Z5AREbUVXD
+ g/kQ==
+X-Gm-Message-State: APjAAAV6w+PacKOMqzVXB9SUtHuCskarZg1ZEmG+cOI71RSKPsRe2DkX
+ tzJbtwifB3irq5PKpafJcD+nNg==
+X-Google-Smtp-Source: APXvYqxycYwltSMF6mRZHm7TjXsCzQqI/GC2y1t3waZQf56agLdqkPAjaYu5yvSrjxUQYf0tQtgA0w==
+X-Received: by 2002:a37:64cb:: with SMTP id y194mr5808427qkb.364.1582732321799; 
+ Wed, 26 Feb 2020 07:52:01 -0800 (PST)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id 3sm1332599qte.59.2020.02.26.07.51.59
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 26 Feb 2020 07:52:01 -0800 (PST)
+Message-ID: <1582732318.7365.129.camel@lca.pw>
+Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
+ table helpers
+From: Qian Cai <cai@lca.pw>
+To: Christophe Leroy <christophe.leroy@c-s.fr>, Anshuman Khandual
+ <anshuman.khandual@arm.com>, linux-mm@kvack.org
+Date: Wed, 26 Feb 2020 10:51:58 -0500
+In-Reply-To: <7c707b7f-ce3d-993b-8042-44fdc1ed28bf@c-s.fr>
+References: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
+ <1582726182.7365.123.camel@lca.pw>
+ <7c707b7f-ce3d-993b-8042-44fdc1ed28bf@c-s.fr>
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_075511_577770_AA4D801D 
-X-CRM114-Status: GOOD (  15.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200226_075203_447814_B83BA738 
+X-CRM114-Status: GOOD (  19.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [marc.w.gonzalez[at]free.fr]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,195 +101,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
+ Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Using the helper produces simpler code, and smaller object size.
-E.g. with gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu:
-
-    text           data     bss     dec     hex filename
--   1708             80       0    1788     6fc drivers/clk/clk-devres.o
-+   1524             80       0    1604     644 drivers/clk/clk-devres.o
-
-Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
----
- drivers/clk/clk-devres.c | 101 ++++++++++++++-------------------------
- 1 file changed, 37 insertions(+), 64 deletions(-)
-
-diff --git a/drivers/clk/clk-devres.c b/drivers/clk/clk-devres.c
-index be160764911b..3f4b200b5328 100644
---- a/drivers/clk/clk-devres.c
-+++ b/drivers/clk/clk-devres.c
-@@ -4,26 +4,22 @@
- #include <linux/export.h>
- #include <linux/gfp.h>
- 
--static void devm_clk_release(struct device *dev, void *res)
-+static void my_clk_put(struct device *dev, void *res)
- {
- 	clk_put(*(struct clk **)res);
- }
- 
- struct clk *devm_clk_get(struct device *dev, const char *id)
- {
--	struct clk **ptr, *clk;
--
--	ptr = devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
--	if (!ptr)
--		return ERR_PTR(-ENOMEM);
--
--	clk = clk_get(dev, id);
--	if (!IS_ERR(clk)) {
--		*ptr = clk;
--		devres_add(dev, ptr);
--	} else {
--		devres_free(ptr);
--	}
-+	int ret;
-+	struct clk *clk = clk_get(dev, id);
-+
-+	if (IS_ERR(clk))
-+		return clk;
-+
-+	ret = devm_add(dev, my_clk_put, &clk, sizeof(clk));
-+	if (ret)
-+		return ERR_PTR(ret);
- 
- 	return clk;
- }
-@@ -40,14 +36,14 @@ struct clk *devm_clk_get_optional(struct device *dev, const char *id)
- }
- EXPORT_SYMBOL(devm_clk_get_optional);
- 
--struct clk_bulk_devres {
--	struct clk_bulk_data *clks;
-+struct clk_bulk_args {
- 	int num_clks;
-+	struct clk_bulk_data *clks;
- };
- 
--static void devm_clk_bulk_release(struct device *dev, void *res)
-+static void my_clk_bulk_put(struct device *dev, void *res)
- {
--	struct clk_bulk_devres *devres = res;
-+	struct clk_bulk_args *devres = res;
- 
- 	clk_bulk_put(devres->num_clks, devres->clks);
- }
-@@ -55,25 +51,17 @@ static void devm_clk_bulk_release(struct device *dev, void *res)
- static int __devm_clk_bulk_get(struct device *dev, int num_clks,
- 			       struct clk_bulk_data *clks, bool optional)
- {
--	struct clk_bulk_devres *devres;
- 	int ret;
- 
--	devres = devres_alloc(devm_clk_bulk_release,
--			      sizeof(*devres), GFP_KERNEL);
--	if (!devres)
--		return -ENOMEM;
--
- 	if (optional)
- 		ret = clk_bulk_get_optional(dev, num_clks, clks);
- 	else
- 		ret = clk_bulk_get(dev, num_clks, clks);
--	if (!ret) {
--		devres->clks = clks;
--		devres->num_clks = num_clks;
--		devres_add(dev, devres);
--	} else {
--		devres_free(devres);
--	}
-+
-+	if (ret)
-+		return ret;
-+
-+	ret = devm_vadd(dev, my_clk_bulk_put, clk_bulk_args, num_clks, clks);
- 
- 	return ret;
- }
-@@ -95,24 +83,17 @@ EXPORT_SYMBOL_GPL(devm_clk_bulk_get_optional);
- int __must_check devm_clk_bulk_get_all(struct device *dev,
- 				       struct clk_bulk_data **clks)
- {
--	struct clk_bulk_devres *devres;
- 	int ret;
-+	int num_clks = clk_bulk_get_all(dev, clks);
- 
--	devres = devres_alloc(devm_clk_bulk_release,
--			      sizeof(*devres), GFP_KERNEL);
--	if (!devres)
--		return -ENOMEM;
--
--	ret = clk_bulk_get_all(dev, &devres->clks);
--	if (ret > 0) {
--		*clks = devres->clks;
--		devres->num_clks = ret;
--		devres_add(dev, devres);
--	} else {
--		devres_free(devres);
--	}
-+	if (num_clks <= 0)
-+		return num_clks;
- 
--	return ret;
-+	ret = devm_vadd(dev, my_clk_bulk_put, clk_bulk_args, num_clks, *clks);
-+	if (ret)
-+		return ret;
-+
-+	return num_clks;
- }
- EXPORT_SYMBOL_GPL(devm_clk_bulk_get_all);
- 
-@@ -128,30 +109,22 @@ static int devm_clk_match(struct device *dev, void *res, void *data)
- 
- void devm_clk_put(struct device *dev, struct clk *clk)
- {
--	int ret;
--
--	ret = devres_release(dev, devm_clk_release, devm_clk_match, clk);
--
--	WARN_ON(ret);
-+	WARN_ON(devres_release(dev, my_clk_put, devm_clk_match, clk));
- }
- EXPORT_SYMBOL(devm_clk_put);
- 
- struct clk *devm_get_clk_from_child(struct device *dev,
- 				    struct device_node *np, const char *con_id)
- {
--	struct clk **ptr, *clk;
--
--	ptr = devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
--	if (!ptr)
--		return ERR_PTR(-ENOMEM);
--
--	clk = of_clk_get_by_name(np, con_id);
--	if (!IS_ERR(clk)) {
--		*ptr = clk;
--		devres_add(dev, ptr);
--	} else {
--		devres_free(ptr);
--	}
-+	int ret;
-+	struct clk *clk = of_clk_get_by_name(np, con_id);
-+
-+	if (IS_ERR(clk))
-+		return clk;
-+
-+	ret = devm_add(dev, my_clk_put, &clk, sizeof(clk));
-+	if (ret)
-+		return ERR_PTR(ret);
- 
- 	return clk;
- }
--- 
-2.17.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAyMDIwLTAyLTI2IGF0IDE1OjQ1ICswMTAwLCBDaHJpc3RvcGhlIExlcm95IHdyb3Rl
+Ogo+IAo+IExlIDI2LzAyLzIwMjAgw6AgMTU6MDksIFFpYW4gQ2FpIGEgw6ljcml0wqA6Cj4gPiBP
+biBNb24sIDIwMjAtMDItMTcgYXQgMDg6NDcgKzA1MzAsIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3Rl
+Ogo+ID4gPiBUaGlzIGFkZHMgdGVzdHMgd2hpY2ggd2lsbCB2YWxpZGF0ZSBhcmNoaXRlY3R1cmUg
+cGFnZSB0YWJsZSBoZWxwZXJzIGFuZAo+ID4gPiBvdGhlciBhY2Nlc3NvcnMgaW4gdGhlaXIgY29t
+cGxpYW5jZSB3aXRoIGV4cGVjdGVkIGdlbmVyaWMgTU0gc2VtYW50aWNzLgo+ID4gPiBUaGlzIHdp
+bGwgaGVscCB2YXJpb3VzIGFyY2hpdGVjdHVyZXMgaW4gdmFsaWRhdGluZyBjaGFuZ2VzIHRvIGV4
+aXN0aW5nCj4gPiA+IHBhZ2UgdGFibGUgaGVscGVycyBvciBhZGRpdGlvbiBvZiBuZXcgb25lcy4K
+PiA+ID4gCj4gPiA+IFRoaXMgdGVzdCBjb3ZlcnMgYmFzaWMgcGFnZSB0YWJsZSBlbnRyeSB0cmFu
+c2Zvcm1hdGlvbnMgaW5jbHVkaW5nIGJ1dCBub3QKPiA+ID4gbGltaXRlZCB0byBvbGQsIHlvdW5n
+LCBkaXJ0eSwgY2xlYW4sIHdyaXRlLCB3cml0ZSBwcm90ZWN0IGV0YyBhdCB2YXJpb3VzCj4gPiA+
+IGxldmVsIGFsb25nIHdpdGggcG9wdWxhdGluZyBpbnRlcm1lZGlhdGUgZW50cmllcyB3aXRoIG5l
+eHQgcGFnZSB0YWJsZSBwYWdlCj4gPiA+IGFuZCB2YWxpZGF0aW5nIHRoZW0uCj4gPiA+IAo+ID4g
+PiBUZXN0IHBhZ2UgdGFibGUgcGFnZXMgYXJlIGFsbG9jYXRlZCBmcm9tIHN5c3RlbSBtZW1vcnkg
+d2l0aCByZXF1aXJlZCBzaXplCj4gPiA+IGFuZCBhbGlnbm1lbnRzLiBUaGUgbWFwcGVkIHBmbnMg
+YXQgcGFnZSB0YWJsZSBsZXZlbHMgYXJlIGRlcml2ZWQgZnJvbSBhCj4gPiA+IHJlYWwgcGZuIHJl
+cHJlc2VudGluZyBhIHZhbGlkIGtlcm5lbCB0ZXh0IHN5bWJvbC4gVGhpcyB0ZXN0IGdldHMgY2Fs
+bGVkCj4gPiA+IGluc2lkZSBrZXJuZWxfaW5pdCgpIHJpZ2h0IGFmdGVyIGFzeW5jX3N5bmNocm9u
+aXplX2Z1bGwoKS4KPiA+ID4gCj4gPiA+IFRoaXMgdGVzdCBnZXRzIGJ1aWx0IGFuZCBydW4gd2hl
+biBDT05GSUdfREVCVUdfVk1fUEdUQUJMRSBpcyBzZWxlY3RlZC4gQW55Cj4gPiA+IGFyY2hpdGVj
+dHVyZSwgd2hpY2ggaXMgd2lsbGluZyB0byBzdWJzY3JpYmUgdGhpcyB0ZXN0IHdpbGwgbmVlZCB0
+byBzZWxlY3QKPiA+ID4gQVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRS4gRm9yIG5vdyB0aGlzIGlz
+IGxpbWl0ZWQgdG8gYXJjLCBhcm02NCwgeDg2LCBzMzkwCj4gPiA+IGFuZCBwcGMzMiBwbGF0Zm9y
+bXMgd2hlcmUgdGhlIHRlc3QgaXMga25vd24gdG8gYnVpbGQgYW5kIHJ1biBzdWNjZXNzZnVsbHku
+Cj4gPiA+IEdvaW5nIGZvcndhcmQsIG90aGVyIGFyY2hpdGVjdHVyZXMgdG9vIGNhbiBzdWJzY3Jp
+YmUgdGhlIHRlc3QgYWZ0ZXIgZml4aW5nCj4gPiA+IGFueSBidWlsZCBvciBydW50aW1lIHByb2Js
+ZW1zIHdpdGggdGhlaXIgcGFnZSB0YWJsZSBoZWxwZXJzLiBNZWFud2hpbGUgZm9yCj4gPiA+IGJl
+dHRlciBwbGF0Zm9ybSBjb3ZlcmFnZSwgdGhlIHRlc3QgY2FuIGFsc28gYmUgZW5hYmxlZCB3aXRo
+IENPTkZJR19FWFBFUlQKPiA+ID4gZXZlbiB3aXRob3V0IEFSQ0hfSEFTX0RFQlVHX1ZNX1BHVEFC
+TEUuCj4gPiA+IAo+ID4gPiBGb2xrcyBpbnRlcmVzdGVkIGluIG1ha2luZyBzdXJlIHRoYXQgYSBn
+aXZlbiBwbGF0Zm9ybSdzIHBhZ2UgdGFibGUgaGVscGVycwo+ID4gPiBjb25mb3JtIHRvIGV4cGVj
+dGVkIGdlbmVyaWMgTU0gc2VtYW50aWNzIHNob3VsZCBlbmFibGUgdGhlIGFib3ZlIGNvbmZpZwo+
+ID4gPiB3aGljaCB3aWxsIGp1c3QgdHJpZ2dlciB0aGlzIHRlc3QgZHVyaW5nIGJvb3QuIEFueSBu
+b24gY29uZm9ybWl0eSBoZXJlIHdpbGwKPiA+ID4gYmUgcmVwb3J0ZWQgYXMgYW4gd2FybmluZyB3
+aGljaCB3b3VsZCBuZWVkIHRvIGJlIGZpeGVkLiBUaGlzIHRlc3Qgd2lsbCBoZWxwCj4gPiA+IGNh
+dGNoIGFueSBjaGFuZ2VzIHRvIHRoZSBhZ3JlZWQgdXBvbiBzZW1hbnRpY3MgZXhwZWN0ZWQgZnJv
+bSBnZW5lcmljIE1NIGFuZAo+ID4gPiBlbmFibGUgcGxhdGZvcm1zIHRvIGFjY29tbW9kYXRlIGl0
+IHRoZXJlYWZ0ZXIuCj4gPiAKPiA+IEhvdyB1c2VmdWwgaXMgdGhpcyB0aGF0IHN0cmFpZ2h0bHkg
+Y3Jhc2ggdGhlIHBvd2VycGM/Cj4gPiAKPiA+IFvCoMKgwqAyMy4yNjM0MjVdW8KgwqDCoMKgVDFd
+IGRlYnVnX3ZtX3BndGFibGU6IGRlYnVnX3ZtX3BndGFibGU6IFZhbGlkYXRpbmcKPiA+IGFyY2hp
+dGVjdHVyZSBwYWdlIHRhYmxlIGhlbHBlcnMKPiA+IFvCoMKgwqAyMy4yNjM2MjVdW8KgwqDCoMKg
+VDFdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQo+ID4gW8KgwqDCoDIzLjI2
+MzY0OV1bwqDCoMKgwqBUMV0ga2VybmVsIEJVRyBhdCBhcmNoL3Bvd2VycGMvbW0vcGd0YWJsZS5j
+OjI3NCEKPiAKPiBUaGUgcHJvYmxlbSBvbiBQUEM2NCBpcyBrbm93biBhbmQgaGFzIHRvIGJlIGlu
+dmVzdGlnYXRlZCBhbmQgZml4ZWQuCgpJdCBtaWdodCBiZSBpbnRlcmVzdGluZyB0byBoZWFyIHdo
+YXQgcG93ZXJwYzY0IG1haW50YWluZXJzIHdvdWxkIHNheSBhYm91dCBpdAphbmQgaWYgaXQgaXMg
+YWN0dWFsbHkgd29ydGggImZpeGluZyIgaW4gdGhlIGFyY2ggY29kZSwgYnV0IHRoYXQgQlVHX09O
+KCkgd2FzCnRoZXJlIHNpbmNlIDIwMDkgYW5kIGhhZCBub3QgYmVlbiBleHBvc2VkIHVudGlsIHRo
+aXMgcGF0Y2ggY29tZXMgYWxvbmU/CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
