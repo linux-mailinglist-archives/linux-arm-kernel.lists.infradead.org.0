@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0DDF16F438
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:25:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0907F16F439
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:25:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DHQ4zLutzZ3oIyTAuh6AVmyO47CeB9R6DdiX3/fC9nM=; b=cjMplEMyoeQ6eT
-	U3AoWvIOzbMuftQTfTXY4v586X/cV+pubZv3KB5UghNjIBI6SXVl7+/4mmSUn8Dc+rf7FaMsMaaKe
-	9frteED1dzPv7YgL3ggh5L1SoPjr/fthFGVXJRHt9NGGjAV/azoCFAdND+HFO1dR6Ddo9vsYv7fV4
-	pOeeki/eNcXSIKhNSyDoL0itA/1o3VL/o8/z80OAENf5qJ7lElZvqTF+4zB+xTObdZv0+JgVGkQma
-	eTDJiUpp1QuaLUCdh7mi365bVp/UpP3qD22WlZUWrzuJeglx0rK5QTb34Fe93X7IKVu9JyuROVRls
-	wcUs6zw0WN0/83SHkCqw==;
+	List-Owner; bh=zyvt5uD/T8U+2ajElpGl6LKHZihJYLPF2PK599UelLA=; b=syUhWDt/Rd5WWC
+	cJZTRTbq4QSSwDIYgUe2jkOYrykHbO2hCwYjK5rLABzes031qMRCkWN/c7rpOC9fLsN3o3xqNZnEv
+	EBo8/V1ZCC9ps0F3W5aYG7zbyokWSAcdBz4ynIeUVszyl2zYlKTfLWbloET6mYKgKkwY4tEd2RG9N
+	mLqXO/ofb4N9xbRnd+c1qLnssVC0fwGws4kXjW6PwEApyQGW4Zpyc7eXUhG8Xcqvjpcivqjw8cll5
+	Po2EphIh9GSaIVyg5NM6a1YzpuXYIErBJHW1KZKJJagJ6WxFvpU3a4DGUl+aY8pDn8Ekonx//vX8D
+	c2/7/ALOGbWNd23cUCCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6kVr-0001mC-Bc; Wed, 26 Feb 2020 00:25:19 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j6kWD-0003IL-4Q; Wed, 26 Feb 2020 00:25:41 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6kUw-0001Fj-82
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:24:24 +0000
+ id 1j6kV5-0001Nx-7M
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:24:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582676660;
+ s=mimecast20190719; t=1582676669;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=N1TQ8ZELNKvVUfyizFZ7f9BlXlskAtMqcb6AYCMUOOQ=;
- b=YT8i05T+T6ZDZsJ6TGcWHpve1+cqDCGkAVVIiAoPqCgRixvuKoLV2LRC5pyHEy7Z/cVoOY
- R8X8WHjY8oeDmswIyxevqEtfXLTgMKZ8NoPxY/Y5iw0+adA+rANx0pb9sSj6Eq0VAn2Noy
- 88eYn8eFW9TfRqBV2WgHzbf1NEeSCUg=
+ bh=kUrh4H0qfDiS7k7USqpjyXfkLIks971aM+v9JDzGpKQ=;
+ b=YaxHGBxvgAhpB4e4or9tHZ+sXtBAKlxIJJ1MJdIvDWwgo1lvKA85DoHxJlpi7pWiDZeE51
+ EVnIpLouNEPoRut9s4NU8bBoEanfXoKfx9oqUNGngLt3M+gPdpG1FzkyY4e88II1Gxmkm2
+ lZ07jhBWOi5MWTHXKQ7li81tWAgwNJw=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-439-UgLiJ-6hN9yIPkpOwDiiGA-1; Tue, 25 Feb 2020 19:24:19 -0500
-X-MC-Unique: UgLiJ-6hN9yIPkpOwDiiGA-1
+ us-mta-465-cKqyq0bWOzusDTd4VuKwuA-1; Tue, 25 Feb 2020 19:24:23 -0500
+X-MC-Unique: cKqyq0bWOzusDTd4VuKwuA-1
 Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
  [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9FE651005512;
- Wed, 26 Feb 2020 00:24:17 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E93328017CC;
+ Wed, 26 Feb 2020 00:24:21 +0000 (UTC)
 Received: from localhost.localdomain.com (vpn2-54-83.bne.redhat.com
  [10.64.54.83])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 9F3345C28D;
- Wed, 26 Feb 2020 00:24:14 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0D31B5C21B;
+ Wed, 26 Feb 2020 00:24:18 +0000 (UTC)
 From: Gavin Shan <gshan@redhat.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 3/5] arm64: Introduce get_cpu_ops() helper function
-Date: Wed, 26 Feb 2020 11:23:54 +1100
-Message-Id: <20200226002356.86986-4-gshan@redhat.com>
+Subject: [PATCH v4 4/5] arm64: Remove CPU operations dereferencing array
+Date: Wed, 26 Feb 2020 11:23:55 +1100
+Message-Id: <20200226002356.86986-5-gshan@redhat.com>
 In-Reply-To: <20200226002356.86986-1-gshan@redhat.com>
 References: <20200226002356.86986-1-gshan@redhat.com>
 MIME-Version: 1.0
@@ -60,15 +60,15 @@ X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_162422_408549_BE4CC11F 
-X-CRM114-Status: GOOD (  15.32  )
+X-CRM114-CacheID: sfid-20200225_162431_387610_FBDFFC74 
+X-CRM114-Status: GOOD (  12.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,291 +98,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This introduces get_cpu_ops() to return the CPU operations according to
-the given CPU index. For now, it simply returns the @cpu_ops[cpu] as
-before. So it shouldn't introduce any functional changes.
+One CPU operations is maintained through array @cpu_ops[NR_CPUS]. 2KB
+memory is consumed when CONFIG_NR_CPUS is set to 256. It seems too
+much memory has been used for this. Also, all CPUs must use same CPU
+operations and we shouldn't bring up the broken CPU, as Lorenzo Pieralisi
+pointed out.
 
+This introduces variable (@cpu_ops) to store the unfied CPU operations.
+Those CPUs using different operations, which is figured out from device
+tree or ACPI table, won't be brought up. With this, the CPU operations
+dereferencing array is removed and 2KB memory is saved. Note the logic
+of cpu_get_ops() is merged to get_cpu_method() since the logic is simple
+enough and no need to have a function for that.
+
+Link: https://lore.kernel.org/linux-arm-kernel/20200211114553.GA21093@e121166-lin.cambridge.arm.com
 Signed-off-by: Gavin Shan <gshan@redhat.com>
 ---
- arch/arm64/include/asm/cpu_ops.h |  2 +-
- arch/arm64/kernel/cpu_ops.c      |  7 +++-
- arch/arm64/kernel/cpuidle.c      |  9 ++---
- arch/arm64/kernel/setup.c        |  6 ++--
- arch/arm64/kernel/smp.c          | 57 ++++++++++++++++++++++----------
- 5 files changed, 55 insertions(+), 26 deletions(-)
+ arch/arm64/kernel/cpu_ops.c | 70 +++++++++++++++++--------------------
+ 1 file changed, 32 insertions(+), 38 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cpu_ops.h b/arch/arm64/include/asm/cpu_ops.h
-index baa13b5db2ca..d28e8f37d3b4 100644
---- a/arch/arm64/include/asm/cpu_ops.h
-+++ b/arch/arm64/include/asm/cpu_ops.h
-@@ -55,8 +55,8 @@ struct cpu_operations {
- #endif
- };
- 
--extern const struct cpu_operations *cpu_ops[NR_CPUS];
- int __init init_cpu_ops(int cpu);
-+extern const struct cpu_operations *get_cpu_ops(int cpu);
- 
- static inline void __init init_bootcpu_ops(void)
- {
 diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
-index a6c3c816b618..e133011f64b5 100644
+index e133011f64b5..af73ca502b95 100644
 --- a/arch/arm64/kernel/cpu_ops.c
 +++ b/arch/arm64/kernel/cpu_ops.c
-@@ -20,7 +20,7 @@ extern const struct cpu_operations acpi_parking_protocol_ops;
+@@ -20,41 +20,19 @@ extern const struct cpu_operations acpi_parking_protocol_ops;
  #endif
  extern const struct cpu_operations cpu_psci_ops;
  
--const struct cpu_operations *cpu_ops[NR_CPUS] __ro_after_init;
-+static const struct cpu_operations *cpu_ops[NR_CPUS] __ro_after_init;
- 
- static const struct cpu_operations *const dt_supported_cpu_ops[] __initconst = {
+-static const struct cpu_operations *cpu_ops[NR_CPUS] __ro_after_init;
+-
+-static const struct cpu_operations *const dt_supported_cpu_ops[] __initconst = {
++static const struct cpu_operations *const available_cpu_ops[] __initconst = {
  	&smp_spin_table_ops,
-@@ -111,3 +111,8 @@ int __init init_cpu_ops(int cpu)
- 
- 	return 0;
- }
-+
-+const struct cpu_operations *get_cpu_ops(int cpu)
-+{
-+	return cpu_ops[cpu];
-+}
-diff --git a/arch/arm64/kernel/cpuidle.c b/arch/arm64/kernel/cpuidle.c
-index e4d6af2fdec7..b512b5503f6e 100644
---- a/arch/arm64/kernel/cpuidle.c
-+++ b/arch/arm64/kernel/cpuidle.c
-@@ -18,11 +18,11 @@
- 
- int arm_cpuidle_init(unsigned int cpu)
- {
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
- 	int ret = -EOPNOTSUPP;
- 
--	if (cpu_ops[cpu] && cpu_ops[cpu]->cpu_suspend &&
--			cpu_ops[cpu]->cpu_init_idle)
--		ret = cpu_ops[cpu]->cpu_init_idle(cpu);
-+	if (ops && ops->cpu_suspend && ops->cpu_init_idle)
-+		ret = ops->cpu_init_idle(cpu);
- 
- 	return ret;
- }
-@@ -37,8 +37,9 @@ int arm_cpuidle_init(unsigned int cpu)
- int arm_cpuidle_suspend(int index)
- {
- 	int cpu = smp_processor_id();
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
- 
--	return cpu_ops[cpu]->cpu_suspend(index);
-+	return ops->cpu_suspend(index);
- }
- 
- #ifdef CONFIG_ACPI
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index f66bd260cce8..3fd2c11c09fc 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -371,8 +371,10 @@ void __init setup_arch(char **cmdline_p)
- static inline bool cpu_can_disable(unsigned int cpu)
- {
- #ifdef CONFIG_HOTPLUG_CPU
--	if (cpu_ops[cpu] && cpu_ops[cpu]->cpu_can_disable)
--		return cpu_ops[cpu]->cpu_can_disable(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+
-+	if (ops && ops->cpu_can_disable)
-+		return ops->cpu_can_disable(cpu);
+-	&cpu_psci_ops,
+-	NULL,
+-};
+-
+-static const struct cpu_operations *const acpi_supported_cpu_ops[] __initconst = {
+ #ifdef CONFIG_ARM64_ACPI_PARKING_PROTOCOL
+ 	&acpi_parking_protocol_ops,
  #endif
- 	return false;
- }
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index 6f8477d7f3be..5e1af1a3c521 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -93,8 +93,10 @@ static inline int op_cpu_kill(unsigned int cpu)
-  */
- static int boot_secondary(unsigned int cpu, struct task_struct *idle)
+ 	&cpu_psci_ops,
+-	NULL,
+ };
++static const struct cpu_operations *cpu_ops __ro_after_init;
+ 
+-static const struct cpu_operations * __init cpu_get_ops(const char *name)
+-{
+-	const struct cpu_operations *const *ops;
+-
+-	ops = acpi_disabled ? dt_supported_cpu_ops : acpi_supported_cpu_ops;
+-
+-	while (*ops) {
+-		if (!strcmp(name, (*ops)->name))
+-			return *ops;
+-
+-		ops++;
+-	}
+-
+-	return NULL;
+-}
+-
+-static const char *__init cpu_read_enable_method(int cpu)
++static const struct cpu_operations * __init get_cpu_method(int cpu)
  {
--	if (cpu_ops[cpu]->cpu_boot)
--		return cpu_ops[cpu]->cpu_boot(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
+ 	const char *enable_method;
++	int i;
+ 
+ 	if (acpi_disabled) {
+ 		struct device_node *dn = of_get_cpu_node(cpu, NULL);
+@@ -91,22 +69,38 @@ static const char *__init cpu_read_enable_method(int cpu)
+ 		}
+ 	}
+ 
+-	return enable_method;
++	if (!enable_method) {
++		pr_warn("No enable-method found on CPU %d\n", cpu);
++		return NULL;
++	}
 +
-+	if (ops->cpu_boot)
-+		return ops->cpu_boot(cpu);
- 
- 	return -EOPNOTSUPP;
- }
-@@ -196,6 +198,7 @@ asmlinkage notrace void secondary_start_kernel(void)
- {
- 	u64 mpidr = read_cpuid_mpidr() & MPIDR_HWID_BITMASK;
- 	struct mm_struct *mm = &init_mm;
-+	const struct cpu_operations *ops;
- 	unsigned int cpu;
- 
- 	cpu = task_cpu(current);
-@@ -227,8 +230,9 @@ asmlinkage notrace void secondary_start_kernel(void)
- 	 */
- 	check_local_cpu_capabilities();
- 
--	if (cpu_ops[cpu]->cpu_postboot)
--		cpu_ops[cpu]->cpu_postboot();
-+	ops = get_cpu_ops(cpu);
-+	if (ops->cpu_postboot)
-+		ops->cpu_postboot();
- 
- 	/*
- 	 * Log the CPU info before it is marked online and might get read.
-@@ -266,19 +270,21 @@ asmlinkage notrace void secondary_start_kernel(void)
- #ifdef CONFIG_HOTPLUG_CPU
- static int op_cpu_disable(unsigned int cpu)
- {
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
++	/* Search in the array with method */
++	for (i = 0; i < ARRAY_SIZE(available_cpu_ops); i++) {
++		if (!strcmp(available_cpu_ops[i]->name, enable_method))
++			return available_cpu_ops[i];
++	}
 +
- 	/*
- 	 * If we don't have a cpu_die method, abort before we reach the point
- 	 * of no return. CPU0 may not have an cpu_ops, so test for it.
- 	 */
--	if (!cpu_ops[cpu] || !cpu_ops[cpu]->cpu_die)
-+	if (!ops || !ops->cpu_die)
++	return NULL;
+ }
+-/*
+- * Read a cpu's enable method and record it in cpu_ops.
+- */
++
+ int __init init_cpu_ops(int cpu)
+ {
+-	const char *enable_method = cpu_read_enable_method(cpu);
+-
+-	if (!enable_method)
+-		return -ENODEV;
++	const struct cpu_operations *ops = get_cpu_method(cpu);
+ 
+-	cpu_ops[cpu] = cpu_get_ops(enable_method);
+-	if (!cpu_ops[cpu]) {
+-		pr_warn("Unsupported enable-method: %s\n", enable_method);
++	if (!ops)
  		return -EOPNOTSUPP;
- 
- 	/*
- 	 * We may need to abort a hot unplug for some other mechanism-specific
- 	 * reason.
- 	 */
--	if (cpu_ops[cpu]->cpu_disable)
--		return cpu_ops[cpu]->cpu_disable(cpu);
-+	if (ops->cpu_disable)
-+		return ops->cpu_disable(cpu);
++
++	/* Update global CPU operations if it's not initialized yet */
++	if (!cpu_ops) {
++		cpu_ops = ops;
++		return 0;
++	}
++
++	/* We should have unified CPU operations */
++	if (ops != cpu_ops) {
++		pr_warn("Invalid CPU operations %s (%s) on CPU %d\n",
++			ops->name, cpu_ops->name, cpu);
++		return -EINVAL;
+ 	}
  
  	return 0;
+@@ -114,5 +108,5 @@ int __init init_cpu_ops(int cpu)
+ 
+ const struct cpu_operations *get_cpu_ops(int cpu)
+ {
+-	return cpu_ops[cpu];
++	return cpu_ops;
  }
-@@ -314,15 +320,17 @@ int __cpu_disable(void)
- 
- static int op_cpu_kill(unsigned int cpu)
- {
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+
- 	/*
- 	 * If we have no means of synchronising with the dying CPU, then assume
- 	 * that it is really dead. We can only wait for an arbitrary length of
- 	 * time and hope that it's dead, so let's skip the wait and just hope.
- 	 */
--	if (!cpu_ops[cpu]->cpu_kill)
-+	if (!ops->cpu_kill)
- 		return 0;
- 
--	return cpu_ops[cpu]->cpu_kill(cpu);
-+	return ops->cpu_kill(cpu);
- }
- 
- /*
-@@ -357,6 +365,7 @@ void __cpu_die(unsigned int cpu)
- void cpu_die(void)
- {
- 	unsigned int cpu = smp_processor_id();
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
- 
- 	idle_task_exit();
- 
-@@ -370,7 +379,7 @@ void cpu_die(void)
- 	 * mechanism must perform all required cache maintenance to ensure that
- 	 * no dirty lines are lost in the process of shutting down the CPU.
- 	 */
--	cpu_ops[cpu]->cpu_die(cpu);
-+	ops->cpu_die(cpu);
- 
- 	BUG();
- }
-@@ -383,6 +392,7 @@ void cpu_die(void)
- void cpu_die_early(void)
- {
- 	int cpu = smp_processor_id();
-+	const struct cpu_operations *ops = get_cpu_ops(cpu);
- 
- 	pr_crit("CPU%d: will not boot\n", cpu);
- 
-@@ -392,8 +402,8 @@ void cpu_die_early(void)
- #ifdef CONFIG_HOTPLUG_CPU
- 	update_cpu_boot_status(CPU_KILL_ME);
- 	/* Check if we can park ourselves */
--	if (cpu_ops[cpu] && cpu_ops[cpu]->cpu_die)
--		cpu_ops[cpu]->cpu_die(cpu);
-+	if (ops && ops->cpu_die)
-+		ops->cpu_die(cpu);
- #endif
- 	update_cpu_boot_status(CPU_STUCK_IN_KERNEL);
- 
-@@ -488,10 +498,13 @@ static bool __init is_mpidr_duplicate(unsigned int cpu, u64 hwid)
-  */
- static int __init smp_cpu_setup(int cpu)
- {
-+	const struct cpu_operations *ops;
-+
- 	if (init_cpu_ops(cpu))
- 		return -ENODEV;
- 
--	if (cpu_ops[cpu]->cpu_init(cpu))
-+	ops = get_cpu_ops(cpu);
-+	if (ops->cpu_init(cpu))
- 		return -ENODEV;
- 
- 	set_cpu_possible(cpu, true);
-@@ -714,6 +727,7 @@ void __init smp_init_cpus(void)
- 
- void __init smp_prepare_cpus(unsigned int max_cpus)
- {
-+	const struct cpu_operations *ops;
- 	int err;
- 	unsigned int cpu;
- 	unsigned int this_cpu;
-@@ -744,10 +758,11 @@ void __init smp_prepare_cpus(unsigned int max_cpus)
- 		if (cpu == smp_processor_id())
- 			continue;
- 
--		if (!cpu_ops[cpu])
-+		ops = get_cpu_ops(cpu);
-+		if (!ops)
- 			continue;
- 
--		err = cpu_ops[cpu]->cpu_prepare(cpu);
-+		err = ops->cpu_prepare(cpu);
- 		if (err)
- 			continue;
- 
-@@ -855,6 +870,10 @@ static atomic_t waiting_for_crash_ipi = ATOMIC_INIT(0);
- 
- static void ipi_cpu_crash_stop(unsigned int cpu, struct pt_regs *regs)
- {
-+#ifdef CONFIG_HOTPLUG_CPU
-+	const struct cpu_operations *ops;
-+#endif
-+
- #ifdef CONFIG_KEXEC_CORE
- 	crash_save_cpu(regs, cpu);
- 
-@@ -864,8 +883,9 @@ static void ipi_cpu_crash_stop(unsigned int cpu, struct pt_regs *regs)
- 	sdei_mask_local_cpu();
- 
- #ifdef CONFIG_HOTPLUG_CPU
--	if (cpu_ops[cpu]->cpu_die)
--		cpu_ops[cpu]->cpu_die(cpu);
-+	ops = get_cpu_ops(cpu);
-+	if (ops->cpu_die)
-+		ops->cpu_die(cpu);
- #endif
- 
- 	/* just in case */
-@@ -1044,8 +1064,9 @@ static bool have_cpu_die(void)
- {
- #ifdef CONFIG_HOTPLUG_CPU
- 	int any_cpu = raw_smp_processor_id();
-+	const struct cpu_operations *ops = get_cpu_ops(any_cpu);
- 
--	if (cpu_ops[any_cpu] && cpu_ops[any_cpu]->cpu_die)
-+	if (ops && ops->cpu_die)
- 		return true;
- #endif
- 	return false;
 -- 
 2.23.0
 
