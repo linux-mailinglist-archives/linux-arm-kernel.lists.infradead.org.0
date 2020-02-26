@@ -2,87 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5BA116F521
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 02:38:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AD4416F52A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 02:40:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FtsD7zpU26zyRHaToAef9vS6AKH7rff1o8s6PyiIWR8=; b=UnQ8U08fbk0BtC
-	O6B6R6+ofc4zKm8A+ySqTON+NGcbOmfRfLOmsJqLYdBxB8xj7E3RfycA0z7FBv0JVvsqeGaAvJXus
-	kS6tJMuPdwrOPTecDHFQyHk1/IGgxxMbxJEfjzMv+YqFV91kEeG2gHKTQTV/7xLUD3THZ9XjqZLRW
-	0LrEiamY4eUxiksyEA1FqUziGbpaNufLV83Yux+Ii0olc5yix1euVaYja/qOLT4cz6ycaXPCiBbtv
-	BM9K16+x+aqiR6HzOo0hEAHQUHJGyi48gdEEcLovAarefDRRFPeKdz5nuEtvnmFPiowc5SXaKxtJY
-	/+B0Ey4wxwN/nukxFMGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iXxBNqHUZR+ZhKEg+Ha6UPSXw98RioEoxFNM9oWtOTM=; b=Y3bp/iYvt98a0E
+	ZrLHwZjbWlARlECcs/Fdkz+oSfXJN3LUaE6Lh8fvTis5OCvjNpfw4Mw605I0gdbUP7baTz8rhX8xG
+	Q8wBdlnQYftjS0EiN2lly6DC6kBSJkxBQEXF1oWHC3XTXJzGo+3dshfBxZDShkfouLFc86Wlvin5Z
+	VFIDqJFiHyGnsJVb8MMmKLgGwMh8LSNXiLXhIzqn0fB3L64r4muIUg62VCt1UmR8Eaqeq7F0UlGOV
+	ra+LVEKD0mZ+aXfjP4NIowoZC7zSUvlPG1iiJhCLyEyzDVlLgSPjSmzwR0sOJvEncTx8Wn/NUvNdz
+	97zD+w+ICQ7iZa2J+iVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6leO-0008G3-UB; Wed, 26 Feb 2020 01:38:12 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1j6lgZ-0001Oa-P3; Wed, 26 Feb 2020 01:40:27 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6leD-0008FX-9i
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 01:38:03 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1582681081; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: References: Cc: To:
- Subject: From: Sender; bh=BBWKcq7dFUCB/c3IP8dQkRGrntjmGuegJTnAZqmvUMU=;
- b=ZxASjVAgPAlbuKh0uHhvgU2PNwHugkAVG/THdQ15DZKW9pEtyYs1m4T0PA8xIelVpGCfBSO9
- 9yWkC2ipWA2QkCNU2+9YGFb9/i4auBXsd8WGvIu8XBkxB+z3nrz6HurYE8F4GPVBOeveY00W
- R810q0EXaV6VMoXajJqzY1qwugQ=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e55cbf3.7fd9590a2810-smtp-out-n02;
- Wed, 26 Feb 2020 01:37:55 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 55896C447A0; Wed, 26 Feb 2020 01:37:55 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.134.65.5] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: eberman)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 5A64DC4479D;
- Wed, 26 Feb 2020 01:37:54 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 5A64DC4479D
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=eberman@codeaurora.org
-From: Elliot Berman <eberman@codeaurora.org>
-Subject: Re: [PATCH v2 2/3] firmware: psci: Add support for dt-supplied
- SYSTEM_RESET2 type
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <1582577858-12410-1-git-send-email-eberman@codeaurora.org>
- <1582577858-12410-3-git-send-email-eberman@codeaurora.org>
- <20200225110346.GF32784@bogus>
-Message-ID: <1d7fecf8-3a7f-57e5-5c13-73de89d52aa2@codeaurora.org>
-Date: Tue, 25 Feb 2020 17:37:53 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j6lgP-0001NH-Fe; Wed, 26 Feb 2020 01:40:19 +0000
+X-UUID: a5d5fdb540344155b66ca7f32d22b0ea-20200225
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=QnRmFmzK3QiGsyx/wln05rmuo5QWWRZM/E9WOlCyH1w=; 
+ b=tnz5CLGQO8+9JnX2NcIXJCQ3ueoUvYbl5ftp63xkrs5Bcf8kPoGWhq348JVrZaQhs7izOTbhOZTFYNSQWzesWQCAVyxoRbVkxLBH2eH4UmmZqjkCr8OXVzqMF1mSCYylSOMncO8edY9b/Ss1cFMxi3VvP0p2r3Ie3koSCQ4IA+k=;
+X-UUID: a5d5fdb540344155b66ca7f32d22b0ea-20200225
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 792229200; Tue, 25 Feb 2020 17:40:15 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Feb 2020 17:40:51 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 09:39:10 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 26 Feb 2020 09:37:55 +0800
+Message-ID: <1582681211.16944.2.camel@mtksdaap41>
+Subject: Re: [PATCH v8 2/7] dt-bindings: display: mediatek: update dpi
+ supported chips
+From: CK Hu <ck.hu@mediatek.com>
+To: Rob Herring <robh@kernel.org>, Jitao Shi <jitao.shi@mediatek.com>
+Date: Wed, 26 Feb 2020 09:40:11 +0800
+In-Reply-To: <20200225171052.GA6002@bogus>
+References: <20200225094057.120144-1-jitao.shi@mediatek.com>
+ <20200225094057.120144-3-jitao.shi@mediatek.com>
+ <20200225171052.GA6002@bogus>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200225110346.GF32784@bogus>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_173802_206763_022ED90B 
-X-CRM114-Status: GOOD (  21.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200225_174017_686924_4BCF8D5A 
+X-CRM114-Status: GOOD (  13.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,70 +87,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Trilok Soni <tsoni@codeaurora.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- David Collins <collinsd@codeaurora.org>, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Prasad Sodagudi <psodagud@codeaurora.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cawa.cheng@mediatek.com, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/25/2020 3:03 AM, Sudeep Holla wrote:
-> On Mon, Feb 24, 2020 at 12:57:37PM -0800, Elliot Berman wrote:
->> @@ -493,6 +494,7 @@ typedef int (*psci_initcall_t)(const struct device_node *);
->>  static int __init psci_0_2_init(struct device_node *np)
->>  {
->>  	int err;
->> +	u32 param;
->>
->>  	err = get_set_conduit_method(np);
->>  	if (err)
->> @@ -505,7 +507,19 @@ static int __init psci_0_2_init(struct device_node *np)
->>  	 * can be carried out according to the specific version reported
->>  	 * by firmware
->>  	 */
->> -	return psci_probe();
->> +	err = psci_probe();
->> +	if (err)
->> +		return err;
->> +
->> +	if (psci_system_reset2_supported &&
->> +	    !of_property_read_u32(np, "arm,psci-sys-reset2-param", &param)) {
->> +		if ((s32)param > 0)
+On Tue, 2020-02-25 at 11:10 -0600, Rob Herring wrote:
+> On Tue, 25 Feb 2020 17:40:52 +0800, Jitao Shi wrote:
+> > Add descriptions about supported chips, including MT2701 & MT8173 &
+> > mt8183
+> > 
+> > Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> > ---
+> >  .../devicetree/bindings/display/mediatek/mediatek,dpi.txt        | 1 +
+> >  1 file changed, 1 insertion(+)
+> > 
 > 
-> What is the point on signed comparison here ? You are assuming all vendor
-> reset also as architecture by doing so which is wrong.
+> Please add Acked-by/Reviewed-by tags when posting new versions. However,
+> there's no need to repost patches *only* to add the tags. The upstream
+> maintainer will do that for acks received on the version they apply.
 > 
->> +			pr_warn("%08x is an invalid architectural reset type.\n",
->> +				param);
-> 
-> I thought the point was to have vendor reset here. Based on the 3/3 you
-> see to have vendor reset bit set, you ignore that by doing signed comparison
-> which is wrong and even the message is wrong. Specification defines only
-> one architectural reset(WARM RESET) and all others need to be vendor specific.
-> 
-> --
-> Regards,
-> Sudeep
-> 
-I might've gone crazy, but all vendor-specific reset types would be
-negative when cast as s32. Thus the check returns true only for an invalid
-architectural reset type. I can switch to checking bits instead of using 
-cast in v3 to avoid the confusion.
+> If a tag was not added on purpose, please state why and what changed.
 
-Alternatively, I could rename the DT property to
-"arm,psci-sys-reset2-vendor-param" and then always set the 31st bit so that
-it is impossible to provide an invalid architectural reset type in DT.
+I think this version is the same as v3 [1] which has been reviewed by
+Rob, so I applied this patch i mediatek-drm-next-5.7 [2], thanks.
 
-Let me know what is preferred.
+[1] https://patchwork.kernel.org/patch/10901971/
+[2]
+https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.7
 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
-
+Regards,
+CK
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
