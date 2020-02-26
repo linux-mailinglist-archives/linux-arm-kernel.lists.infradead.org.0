@@ -2,64 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A16181700A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 14:59:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E5FB1700BE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 15:09:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8HpdijS7osHWZIsSNlaK4rK1sRbbeIfKDs8jSsDfG3M=; b=AtbYVlQ0VqZWVM
-	HQhdlzImM/p80ZST/cAYcaclhKy6zlFYuuspF5ylZh4TKOmp7uVkpI5xCm24S299aLn9vLRNiSOlU
-	iyPL4AUFmjPo1lGoESKthRbj2FyzZxo+jZtlFIiy/l16XOwGuBKctgPwdUAY/E93b4kN1HgCpevJ6
-	KyJhw9Qtb/rzZGvV9iM/J57tqhan1iJqQPo7aOt5PfjnF2bSi5pZ9AuF2no86HbE8B+pvSxasPBK+
-	drTJXQ/aNMeHKiYHaW8F/Ou/Q/PczZ0z2xjZVKmQBnnyJFLdO7hU5meleeLIsyIfL1fM29QqV3Swe
-	uMKrW9XTUeb0wAMfNnZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=O1KzMHKJ33o3jfmG2P8SQQ0ieo6yvboL8OY/GQRe0KQ=; b=lzPojBuGSD84iLnr0i5DoYROr
+	rFjMslkXbH/lXkeU/r0bMFfU/5tHveBXA2XyKUQ+s+IBB81MPHKdLlET3GI5iXBuopJV2Lx1wlWNt
+	jdV/JyyluGWR01e5Qf2NLZLNQLf3k2mD3TZEzmzsnTn03iaAm8Edy7RRiKNZeCaI/0Hya77+FbdAS
+	tDFFB324LlPDBouJPZZBUMbTNPRLU7PLMuTISC8xvWlF5NArkbyat0LDinxe5yWlBlyVbseV75dKR
+	aMYkuidX8b0T9iakOtPrcE8/Y1iyqoUejhdC5RDF8JZ51oiKifsgBPyQkpVmSQVS/YDrOJ9aVkrjw
+	kXjNZS7rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6xEB-0007No-89; Wed, 26 Feb 2020 13:59:55 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1j6xNB-0002fX-PT; Wed, 26 Feb 2020 14:09:13 +0000
+Received: from jabberwock.ucw.cz ([46.255.230.98])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6xDz-0007Mq-SA
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 13:59:47 +0000
-Received: from LHREML714-CAH.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 1928DC26E5F49E203FF9;
- Wed, 26 Feb 2020 13:59:36 +0000 (GMT)
-Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
- LHREML714-CAH.china.huawei.com (10.201.108.37) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 26 Feb 2020 13:59:35 +0000
-Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
- (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 26 Feb
- 2020 13:59:35 +0000
-Date: Wed, 26 Feb 2020 13:59:33 +0000
-From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 03/26] iommu: Add a page fault handler
-Message-ID: <20200226135933.000061a0@Huawei.com>
-In-Reply-To: <20200224182401.353359-4-jean-philippe@linaro.org>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-4-jean-philippe@linaro.org>
-Organization: Huawei Technologies Research and Development (UK) Ltd.
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1j6xN1-0002et-Bp
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 14:09:08 +0000
+Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
+ id A0F481C0411; Wed, 26 Feb 2020 15:08:54 +0100 (CET)
+Date: Wed, 26 Feb 2020 15:08:54 +0100
+From: Pavel Machek <pavel@ucw.cz>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH 2/4] leds: axp20x: Support charger LED on AXP20x like PMICs
+Message-ID: <20200226140854.GJ4080@duo.ucw.cz>
+References: <20200223131435.681620-1-megous@megous.com>
+ <20200223131435.681620-3-megous@megous.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.57]
-X-ClientProxiedBy: lhreml722-chm.china.huawei.com (10.201.108.73) To
- lhreml710-chm.china.huawei.com (10.201.108.61)
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200223131435.681620-3-megous@megous.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_055944_213518_1DDD40FE 
-X-CRM114-Status: GOOD (  38.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200226_060903_559681_8881DE5F 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.255.230.98 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,684 +58,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-sunxi@googlegroups.com,
+ Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>,
+ Lee Jones <lee.jones@linaro.org>, linux-leds@vger.kernel.org,
+ Dan Murphy <dmurphy@ti.com>
+Content-Type: multipart/mixed; boundary="===============6254446319613955925=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 24 Feb 2020 19:23:38 +0100
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
 
-> From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> 
-> Some systems allow devices to handle I/O Page Faults in the core mm. For
-> example systems implementing the PCI PRI extension or Arm SMMU stall
-> model. Infrastructure for reporting these recoverable page faults was
-> recently added to the IOMMU core. Add a page fault handler for host SVA.
-> 
-> IOMMU driver can now instantiate several fault workqueues and link them to
-> IOPF-capable devices. Drivers can choose between a single global
-> workqueue, one per IOMMU device, one per low-level fault queue, one per
-> domain, etc.
-> 
-> When it receives a fault event, supposedly in an IRQ handler, the IOMMU
-> driver reports the fault using iommu_report_device_fault(), which calls
-> the registered handler. The page fault handler then calls the mm fault
-> handler, and reports either success or failure with iommu_page_response().
-> When the handler succeeded, the IOMMU retries the access.
-> 
-> The iopf_param pointer could be embedded into iommu_fault_param. But
-> putting iopf_param into the iommu_param structure allows us not to care
-> about ordering between calls to iopf_queue_add_device() and
-> iommu_register_device_fault_handler().
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-A few more minor comments...
+--===============6254446319613955925==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="pMCBjikF2xGw87uL"
+Content-Disposition: inline
 
-> ---
->  drivers/iommu/Kconfig      |   4 +
->  drivers/iommu/Makefile     |   1 +
->  drivers/iommu/io-pgfault.c | 451 +++++++++++++++++++++++++++++++++++++
->  include/linux/iommu.h      |  59 +++++
->  4 files changed, 515 insertions(+)
->  create mode 100644 drivers/iommu/io-pgfault.c
-> 
-> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-> index acca20e2da2f..e4a42e1708b4 100644
-> --- a/drivers/iommu/Kconfig
-> +++ b/drivers/iommu/Kconfig
-> @@ -109,6 +109,10 @@ config IOMMU_SVA
->  	select IOMMU_API
->  	select MMU_NOTIFIER
->  
-> +config IOMMU_PAGE_FAULT
-> +	bool
-> +	select IOMMU_API
-> +
->  config FSL_PAMU
->  	bool "Freescale IOMMU support"
->  	depends on PCI
-> diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-> index 40c800dd4e3e..bf5cb4ee8409 100644
-> --- a/drivers/iommu/Makefile
-> +++ b/drivers/iommu/Makefile
-> @@ -4,6 +4,7 @@ obj-$(CONFIG_IOMMU_API) += iommu-traces.o
->  obj-$(CONFIG_IOMMU_API) += iommu-sysfs.o
->  obj-$(CONFIG_IOMMU_DEBUGFS) += iommu-debugfs.o
->  obj-$(CONFIG_IOMMU_DMA) += dma-iommu.o
-> +obj-$(CONFIG_IOMMU_PAGE_FAULT) += io-pgfault.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE) += io-pgtable.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE_ARMV7S) += io-pgtable-arm-v7s.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE_LPAE) += io-pgtable-arm.o
-> diff --git a/drivers/iommu/io-pgfault.c b/drivers/iommu/io-pgfault.c
-> new file mode 100644
-> index 000000000000..76e153c59fe3
-> --- /dev/null
-> +++ b/drivers/iommu/io-pgfault.c
-> @@ -0,0 +1,451 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Handle device page faults
-> + *
-> + * Copyright (C) 2018 ARM Ltd.
 
-As before. Date update perhaps?
+--pMCBjikF2xGw87uL
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> + */
-> +
-> +#include <linux/iommu.h>
-> +#include <linux/list.h>
-> +#include <linux/slab.h>
-> +#include <linux/workqueue.h>
-> +
-> +/**
-> + * struct iopf_queue - IO Page Fault queue
-> + * @wq: the fault workqueue
-> + * @flush: low-level flush callback
-> + * @flush_arg: flush() argument
-> + * @devices: devices attached to this queue
-> + * @lock: protects the device list
-> + */
-> +struct iopf_queue {
-> +	struct workqueue_struct		*wq;
-> +	iopf_queue_flush_t		flush;
-> +	void				*flush_arg;
-> +	struct list_head		devices;
-> +	struct mutex			lock;
-> +};
-> +
-> +/**
-> + * struct iopf_device_param - IO Page Fault data attached to a device
-> + * @dev: the device that owns this param
-> + * @queue: IOPF queue
-> + * @queue_list: index into queue->devices
-> + * @partial: faults that are part of a Page Request Group for which the last
-> + *           request hasn't been submitted yet.
-> + * @busy: the param is being used
-> + * @wq_head: signal a change to @busy
-> + */
-> +struct iopf_device_param {
-> +	struct device			*dev;
-> +	struct iopf_queue		*queue;
-> +	struct list_head		queue_list;
-> +	struct list_head		partial;
-> +	bool				busy;
-> +	wait_queue_head_t		wq_head;
-> +};
-> +
-> +struct iopf_fault {
-> +	struct iommu_fault		fault;
-> +	struct list_head		head;
-> +};
-> +
-> +struct iopf_group {
-> +	struct iopf_fault		last_fault;
-> +	struct list_head		faults;
-> +	struct work_struct		work;
-> +	struct device			*dev;
-> +};
-> +
-> +static int iopf_complete(struct device *dev, struct iopf_fault *iopf,
-> +			 enum iommu_page_response_code status)
+Hi!
 
-This is called once per group.  Should name reflect that?
+> There is single LED that can be turned on and off by the user, or set to
+> be controlled by the charger in 2 different modes.
+>=20
+> The driver initializes the LED to be controlled by the charger, but
+> allows to switch it to user control, and change the mode of charging
+> indication via a sysfs.
 
+You'd need to document new "control" file.
+
+But hold on, it is not an only driver with this "user-or-hardware"
+feature, and we want to have a common solution. And that solution is
+probably to have "hw-charger" trigger _just for this_ LED.
+
+I can easily take a driver that always handles it as a "user" LED, if
+you can get ACKs from device tree people on the documentation patches.=20
+
+> +	led->regmap =3D axp20x->regmap;
+> +
+> +	led->cdev.name =3D "axp20x-chgarger-led";
+
+typo.
+
+> +static void axp20x_led_shutdown(struct platform_device *pdev)
 > +{
-> +	struct iommu_page_response resp = {
-> +		.version		= IOMMU_PAGE_RESP_VERSION_1,
-> +		.pasid			= iopf->fault.prm.pasid,
-> +		.grpid			= iopf->fault.prm.grpid,
-> +		.code			= status,
-> +	};
+> +	struct axp20x_led *led =3D platform_get_drvdata(pdev);
 > +
-> +	if (iopf->fault.prm.flags & IOMMU_FAULT_PAGE_REQUEST_PASID_VALID)
-> +		resp.flags = IOMMU_PAGE_RESP_PASID_VALID;
-> +
-> +	return iommu_page_response(dev, &resp);
-> +}
-> +
-> +static enum iommu_page_response_code
-> +iopf_handle_single(struct iopf_fault *iopf)
-> +{
-> +	/* TODO */
-> +	return -ENODEV;
-> +}
-> +
-> +static void iopf_handle_group(struct work_struct *work)
-> +{
-> +	struct iopf_group *group;
-> +	struct iopf_fault *iopf, *next;
-> +	enum iommu_page_response_code status = IOMMU_PAGE_RESP_SUCCESS;
-> +
-> +	group = container_of(work, struct iopf_group, work);
-> +
-> +	list_for_each_entry_safe(iopf, next, &group->faults, head) {
-> +		/*
-> +		 * For the moment, errors are sticky: don't handle subsequent
-> +		 * faults in the group if there is an error.
-> +		 */
-> +		if (status == IOMMU_PAGE_RESP_SUCCESS)
-> +			status = iopf_handle_single(iopf);
-> +
-> +		if (!(iopf->fault.prm.flags & IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE))
-> +			kfree(iopf);
-> +	}
-> +
-> +	iopf_complete(group->dev, &group->last_fault, status);
-> +	kfree(group);
-> +}
-> +
-> +/**
-> + * iommu_queue_iopf - IO Page Fault handler
-> + * @evt: fault event
-> + * @cookie: struct device, passed to iommu_register_device_fault_handler.
-> + *
-> + * Add a fault to the device workqueue, to be handled by mm.
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
-> +{
-> +	int ret;
-> +	struct iopf_group *group;
-> +	struct iopf_fault *iopf, *next;
-> +	struct iopf_device_param *iopf_param;
-> +
-> +	struct device *dev = cookie;
-> +	struct iommu_param *param = dev->iommu_param;
-> +
-> +	if (WARN_ON(!mutex_is_locked(&param->lock)))
-> +		return -EINVAL;
-
-Just curious...
-
-Why do we always need a runtime check on this rather than say,
-using lockdep_assert_held or similar?
-
-> +
-> +	if (fault->type != IOMMU_FAULT_PAGE_REQ)
-> +		/* Not a recoverable page fault */
-> +		return -EOPNOTSUPP;
-> +
-> +	/*
-> +	 * As long as we're holding param->lock, the queue can't be unlinked
-> +	 * from the device and therefore cannot disappear.
+> +	/* On shutdown, we want to give LED control back to the PMIC,
+> +	 * so that it doesn't stay on, while the system is off.
 > +	 */
-> +	iopf_param = param->iopf_param;
-> +	if (!iopf_param)
-> +		return -ENODEV;
-> +
-> +	if (!(fault->prm.flags & IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE)) {
-> +		iopf = kzalloc(sizeof(*iopf), GFP_KERNEL);
-> +		if (!iopf)
-> +			return -ENOMEM;
-> +
-> +		iopf->fault = *fault;
-> +
-> +		/* Non-last request of a group. Postpone until the last one */
-> +		list_add(&iopf->head, &iopf_param->partial);
-> +
-> +		return 0;
-> +	}
-> +
-> +	group = kzalloc(sizeof(*group), GFP_KERNEL);
-> +	if (!group) {
-> +		/*
-> +		 * The caller will send a response to the hardware. But we do
-> +		 * need to clean up before leaving, otherwise partial faults
-> +		 * will be stuck.
-> +		 */
-> +		ret = -ENOMEM;
-> +		goto cleanup_partial;
-> +	}
-> +
-> +	group->dev = dev;
-> +	group->last_fault.fault = *fault;
-> +	INIT_LIST_HEAD(&group->faults);
-> +	list_add(&group->last_fault.head, &group->faults);
-> +	INIT_WORK(&group->work, iopf_handle_group);
-> +
-> +	/* See if we have partial faults for this group */
-> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, head) {
-> +		if (iopf->fault.prm.grpid == fault->prm.grpid)
-> +			/* Insert *before* the last fault */
-> +			list_move(&iopf->head, &group->faults);
-> +	}
-> +
-> +	queue_work(iopf_param->queue->wq, &group->work);
-> +	return 0;
-> +
-> +cleanup_partial:
-> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, head) {
-> +		if (iopf->fault.prm.grpid == fault->prm.grpid) {
-> +			list_del(&iopf->head);
-> +			kfree(iopf);
-> +		}
-> +	}
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(iommu_queue_iopf);
-> +
-> +/**
-> + * iopf_queue_flush_dev - Ensure that all queued faults have been processed
-> + * @dev: the endpoint whose faults need to be flushed.
-> + * @pasid: the PASID affected by this flush
-> + *
-> + * Users must call this function when releasing a PASID, to ensure that all
-> + * pending faults for this PASID have been handled, and won't hit the address
-> + * space of the next process that uses this PASID.
-> + *
-> + * This function can also be called before shutting down the device, in which
-> + * case @pasid should be IOMMU_PASID_INVALID.
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iopf_queue_flush_dev(struct device *dev, int pasid)
-> +{
-> +	int ret = 0;
-> +	struct iopf_queue *queue;
-> +	struct iopf_device_param *iopf_param;
-> +	struct iommu_param *param = dev->iommu_param;
-> +
-> +	if (!param)
-> +		return -ENODEV;
-> +
-> +	/*
-> +	 * It is incredibly easy to find ourselves in a deadlock situation if
-> +	 * we're not careful, because we're taking the opposite path as
-> +	 * iommu_queue_iopf:
-> +	 *
-> +	 *   iopf_queue_flush_dev()   |  PRI queue handler
-> +	 *    lock(&param->lock)      |   iommu_queue_iopf()
-> +	 *     queue->flush()         |    lock(&param->lock)
-> +	 *      wait PRI queue empty  |
-> +	 *
-> +	 * So we can't hold the device param lock while flushing. Take a
-> +	 * reference to the device param instead, to prevent the queue from
-> +	 * going away.
-> +	 */
-> +	mutex_lock(&param->lock);
-> +	iopf_param = param->iopf_param;
-> +	if (iopf_param) {
-> +		queue = param->iopf_param->queue;
-> +		iopf_param->busy = true;
 
-Describing this as taking a reference is not great...
-I'd change the comment to set a flag or something like that.
+Comment style.
 
-Is there any potential of multiple copies of this running against
-each other?  I've not totally gotten my head around when this
-might be called yet.
+Best regards,
+									Pavel
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
 
-> +	} else {
-> +		ret = -ENODEV;
-> +	}
-> +	mutex_unlock(&param->lock);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/*
-> +	 * When removing a PASID, the device driver tells the device to stop
-> +	 * using it, and flush any pending fault to the IOMMU. In this flush
-> +	 * callback, the IOMMU driver makes sure that there are no such faults
-> +	 * left in the low-level queue.
-> +	 */
-> +	queue->flush(queue->flush_arg, dev, pasid);
-> +
-> +	flush_workqueue(queue->wq);
-> +
-> +	mutex_lock(&param->lock);
-> +	iopf_param->busy = false;
-> +	wake_up(&iopf_param->wq_head);
-> +	mutex_unlock(&param->lock);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_flush_dev);
-> +
-> +/**
-> + * iopf_queue_discard_partial - Remove all pending partial fault
-> + * @queue: the queue whose partial faults need to be discarded
-> + *
-> + * When the hardware queue overflows, last page faults in a group may have been
-> + * lost and the IOMMU driver calls this to discard all partial faults. The
-> + * driver shouldn't be adding new faults to this queue concurrently.
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iopf_queue_discard_partial(struct iopf_queue *queue)
-> +{
-> +	struct iopf_fault *iopf, *next;
-> +	struct iopf_device_param *iopf_param;
-> +
-> +	if (!queue)
-> +		return -EINVAL;
-> +
-> +	mutex_lock(&queue->lock);
-> +	list_for_each_entry(iopf_param, &queue->devices, queue_list) {
-> +		list_for_each_entry_safe(iopf, next, &iopf_param->partial, head)
-> +			kfree(iopf);
-> +	}
-> +	mutex_unlock(&queue->lock);
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_discard_partial);
-> +
-> +/**
-> + * iopf_queue_add_device - Add producer to the fault queue
-> + * @queue: IOPF queue
-> + * @dev: device to add
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iopf_queue_add_device(struct iopf_queue *queue, struct device *dev)
-> +{
-> +	int ret = -EINVAL;
-> +	struct iopf_device_param *iopf_param;
-> +	struct iommu_param *param = dev->iommu_param;
-> +
-> +	if (!param)
-> +		return -ENODEV;
-> +
-> +	iopf_param = kzalloc(sizeof(*iopf_param), GFP_KERNEL);
-> +	if (!iopf_param)
-> +		return -ENOMEM;
-> +
-> +	INIT_LIST_HEAD(&iopf_param->partial);
-> +	iopf_param->queue = queue;
-> +	iopf_param->dev = dev;
-> +	init_waitqueue_head(&iopf_param->wq_head);
-> +
-> +	mutex_lock(&queue->lock);
-> +	mutex_lock(&param->lock);
-> +	if (!param->iopf_param) {
-> +		list_add(&iopf_param->queue_list, &queue->devices);
-> +		param->iopf_param = iopf_param;
-> +		ret = 0;
-> +	}
-> +	mutex_unlock(&param->lock);
-> +	mutex_unlock(&queue->lock);
-> +
-> +	if (ret)
-> +		kfree(iopf_param);
-> +
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_add_device);
-> +
-> +/**
-> + * iopf_queue_remove_device - Remove producer from fault queue
-> + * @queue: IOPF queue
-> + * @dev: device to remove
-> + *
-> + * Caller makes sure that no more faults are reported for this device.
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iopf_queue_remove_device(struct iopf_queue *queue, struct device *dev)
-> +{
-> +	int ret = -EINVAL;
-> +	struct iopf_fault *iopf, *next;
-> +	struct iopf_device_param *iopf_param;
-> +	struct iommu_param *param = dev->iommu_param;
-> +
-> +	if (!param || !queue)
-> +		return -EINVAL;
-> +
-> +	do {
-> +		mutex_lock(&queue->lock);
-> +		mutex_lock(&param->lock);
-> +		iopf_param = param->iopf_param;
-> +		if (iopf_param && iopf_param->queue == queue) {
-> +			if (iopf_param->busy) {
-> +				ret = -EBUSY;
-> +			} else {
-> +				list_del(&iopf_param->queue_list);
-> +				param->iopf_param = NULL;
-> +				ret = 0;
-> +			}
-> +		}
-> +		mutex_unlock(&param->lock);
-> +		mutex_unlock(&queue->lock);
-> +
-> +		/*
-> +		 * If there is an ongoing flush, wait for it to complete and
-> +		 * then retry. iopf_param isn't going away since we're the only
-> +		 * thread that can free it.
-> +		 */
-> +		if (ret == -EBUSY)
-> +			wait_event(iopf_param->wq_head, !iopf_param->busy);
-> +		else if (ret)
-> +			return ret;
-> +	} while (ret == -EBUSY);
+--pMCBjikF2xGw87uL
+Content-Type: application/pgp-signature; name="signature.asc"
 
-I'm in two minds about the next comment (so up to you)...
+-----BEGIN PGP SIGNATURE-----
 
-Currently this looks a bit odd.  Would you be better off just having a separate
-parameter for busy and explicit separate handling for the error path?
+iF0EABECAB0WIQRPfPO7r0eAhk010v0w5/Bqldv68gUCXlZ79gAKCRAw5/Bqldv6
+8nOWAJ9NQxUKukUGwa5fNg6SxG8/V3ZUsACgmEnR1/qSwGL7JhaQyk2Eu8m93Ok=
+=jl8u
+-----END PGP SIGNATURE-----
 
-	bool busy;
-	int ret = 0;
-
-	do {
-		mutex_lock(&queue->lock);
-		mutex_lock(&param->lock);
-		iopf_param = param->iopf_param;
-		if (iopf_param && iopf_param->queue == queue) {
-			busy = iopf_param->busy;
-			if (!busy) {
-				list_del(&iopf_param->queue_list);
-				param->iopf_param = NULL;
-			}
-		} else {
-			ret = -EINVAL;
-		}
-		mutex_unlock(&param->lock);
-		mutex_unlock(&queue->lock);
-		if (ret)
-			return ret;
-		if (busy)
-			wait_event(iopf_param->wq_head, !iopf_param->busy);
-		
-	} while (busy);
-
-	..
-
-> +
-> +	/* Just in case some faults are still stuck */
-> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, head)
-> +		kfree(iopf);
-> +
-> +	kfree(iopf_param);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_remove_device);
-> +
-> +/**
-> + * iopf_queue_alloc - Allocate and initialize a fault queue
-> + * @name: a unique string identifying the queue (for workqueue)
-> + * @flush: a callback that flushes the low-level queue
-> + * @cookie: driver-private data passed to the flush callback
-> + *
-> + * The callback is called before the workqueue is flushed. The IOMMU driver must
-> + * commit all faults that are pending in its low-level queues at the time of the
-> + * call, into the IOPF queue (with iommu_report_device_fault). The callback
-> + * takes a device pointer as argument, hinting what endpoint is causing the
-> + * flush. When the device is NULL, all faults should be committed.
-> + *
-> + * Return: the queue on success and NULL on error.
-> + */
-> +struct iopf_queue *
-> +iopf_queue_alloc(const char *name, iopf_queue_flush_t flush, void *cookie)
-> +{
-> +	struct iopf_queue *queue;
-> +
-> +	queue = kzalloc(sizeof(*queue), GFP_KERNEL);
-> +	if (!queue)
-> +		return NULL;
-> +
-> +	/*
-> +	 * The WQ is unordered because the low-level handler enqueues faults by
-> +	 * group. PRI requests within a group have to be ordered, but once
-> +	 * that's dealt with, the high-level function can handle groups out of
-> +	 * order.
-> +	 */
-> +	queue->wq = alloc_workqueue("iopf_queue/%s", WQ_UNBOUND, 0, name);
-> +	if (!queue->wq) {
-> +		kfree(queue);
-> +		return NULL;
-> +	}
-> +
-> +	queue->flush = flush;
-> +	queue->flush_arg = cookie;
-> +	INIT_LIST_HEAD(&queue->devices);
-> +	mutex_init(&queue->lock);
-> +
-> +	return queue;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_alloc);
-> +
-> +/**
-> + * iopf_queue_free - Free IOPF queue
-> + * @queue: queue to free
-> + *
-> + * Counterpart to iopf_queue_alloc(). The driver must not be queuing faults or
-> + * adding/removing devices on this queue anymore.
-> + */
-> +void iopf_queue_free(struct iopf_queue *queue)
-> +{
-> +	struct iopf_device_param *iopf_param, *next;
-> +
-> +	if (!queue)
-> +		return;
-> +
-> +	list_for_each_entry_safe(iopf_param, next, &queue->devices, queue_list)
-> +		iopf_queue_remove_device(queue, iopf_param->dev);
-> +
-> +	destroy_workqueue(queue->wq);
-> +	kfree(queue);
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_free);
-> diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-> index 83397ae88d2d..e7bc47ba24f8 100644
-> --- a/include/linux/iommu.h
-> +++ b/include/linux/iommu.h
-> @@ -364,11 +364,20 @@ struct iommu_fault_param {
->  	struct mutex lock;
->  };
->  
-> +/**
-> + * iopf_queue_flush_t - Flush low-level page fault queue
-> + *
-> + * Report all faults currently pending in the low-level page fault queue
-> + */
-> +struct iopf_queue;
-> +typedef int (*iopf_queue_flush_t)(void *cookie, struct device *dev, int pasid);
-> +
->  /**
->   * struct iommu_param - collection of per-device IOMMU data
->   *
->   * @fault_param: IOMMU detected device fault reporting data
->   * @sva_param: IOMMU parameter for SVA
-> + * @iopf_param: I/O Page Fault queue and data
->   *
->   * TODO: migrate other per device data pointers under iommu_dev_data, e.g.
->   *	struct iommu_group	*iommu_group;
-> @@ -377,6 +386,7 @@ struct iommu_fault_param {
->  struct iommu_param {
->  	struct mutex lock;
->  	struct iommu_fault_param *fault_param;
-> +	struct iopf_device_param *iopf_param;
->  	struct mutex sva_lock;
->  	struct iommu_sva_param *sva_param;
->  };
-> @@ -1081,4 +1091,53 @@ void iommu_debugfs_setup(void);
->  static inline void iommu_debugfs_setup(void) {}
->  #endif
->  
-> +#ifdef CONFIG_IOMMU_PAGE_FAULT
-> +extern int iommu_queue_iopf(struct iommu_fault *fault, void *cookie);
-> +
-> +extern int iopf_queue_add_device(struct iopf_queue *queue, struct device *dev);
-> +extern int iopf_queue_remove_device(struct iopf_queue *queue, struct device *dev);
-> +extern int iopf_queue_flush_dev(struct device *dev, int pasid);
-> +extern struct iopf_queue *
-> +iopf_queue_alloc(const char *name, iopf_queue_flush_t flush, void *cookie);
-> +extern void iopf_queue_free(struct iopf_queue *queue);
-> +extern int iopf_queue_discard_partial(struct iopf_queue *queue);
-> +#else /* CONFIG_IOMMU_PAGE_FAULT */
-> +static inline int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +static inline int iopf_queue_add_device(struct iopf_queue *queue,
-> +					struct device *dev)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +static inline int iopf_queue_remove_device(struct iopf_queue *queue,
-> +					   struct device *dev)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +static inline int iopf_queue_flush_dev(struct device *dev, int pasid)
-> +{
-> +	return -ENODEV;
-> +}
-> +
-> +static inline struct iopf_queue *
-> +iopf_queue_alloc(const char *name, iopf_queue_flush_t flush, void *cookie)
-> +{
-> +	return NULL;
-> +}
-> +
-> +static inline void iopf_queue_free(struct iopf_queue *queue)
-> +{
-> +}
-> +
-> +static inline int iopf_queue_discard_partial(struct iopf_queue *queue)
-> +{
-> +	return -ENODEV;
-> +}
-> +#endif /* CONFIG_IOMMU_PAGE_FAULT */
-> +
->  #endif /* __LINUX_IOMMU_H */
+--pMCBjikF2xGw87uL--
 
 
+--===============6254446319613955925==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6254446319613955925==--
+
