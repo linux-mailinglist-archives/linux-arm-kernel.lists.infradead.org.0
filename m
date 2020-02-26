@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1939A16F43A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:25:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CF6E16F48F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:56:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QB6OGSeVHzUffDtFkqCA6s37Mwkkh4za3rhti3deFqY=; b=LEvrbMRCsnDEok
-	jjGuXiHegx6DUkLMRKHp6MGAv5iO5xig0L3AZDIhCYyrveyUmPXPy3vY1G91ZXbl/xWD34i7sPK+C
-	s6ky9l6KTXUNAdXRjyf4fMNdbD6vmpX0TG3Nnvn0NQWvwP1M0U4dNLMPjfSsiyb7uNKYPkEu5vIPm
-	0g8gD6VPHZWVaR6+LFCfOIpeOjZNmdK5EDSV8d6jxh1nNdfvu7OjimUa8rETITjSuZS7AGkaB5VaO
-	iDS2ggB7B5zpRYpshMCTQMeBnY1ylwTP+s9vQcdI69mBrTKK115bipSWOHUDqBZ34ZWfaIIJIk47+
-	q6Ils56Eqe6v9zKMmmjg==;
+	List-Owner; bh=3gCw7rbYLzXoEK+b3pw8XdZHA8mMn3XqtoXQ9KpATuk=; b=EgkqUNY9xRVFmH
+	bopt3xxeCP/KqLMO2pXVAhxvz8hCN6G4/9LLWnyq5D3JbICemax7KDr/FmScssZcZ4jsWfn2YBarJ
+	x/uvVdH+r6ma4Q4F+/8KZ5Dmvoo2m6X/l9hJhGH5c9Ut5uxfvclhn8KiIBbZjOJjGdlG+JCaQ+Yj0
+	lGzlur4dmkJeoj/AP8zTdXw+lLA51/Hx3NCNcogQMdGDoeyM7IFh499hE7HUZlSqDJW2730DPvnGZ
+	5rZnw8EkPiJGcHPigJ32bb9HDO53DQzJvPJ/QFt+xyBIohkTp/LBfPwR/gVtQ4VBABm5WhNOS7Zyh
+	rEJIiznB0jwNULvggBrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6kWR-0003YJ-1H; Wed, 26 Feb 2020 00:25:55 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1j6kzj-0005mx-Df; Wed, 26 Feb 2020 00:56:11 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6kV5-0001OG-Cf
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:24:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582676669;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=e7LACCPtQ03qHcRT0uU2IDihmnW0G2do+jgbgZNye9E=;
- b=UuYh+5wEQIaMKX3v9XY8E5u74jP76zp2sXZaqItbMmn7+sMn3bIMwFfZr+E6Td56QP6o6A
- 7Hmw3F61YIz6K1XR4t9vDNSUgzuV8xAbEzGSX4/Kw91rDx+pjce0nC6VNAvfFwVy91TPmf
- 6hW6+3OVsi7KxuUxHCBFN6iq2zMGCIc=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-250-xJk-phLaN2-LqoYkaJFTRw-1; Tue, 25 Feb 2020 19:24:27 -0500
-X-MC-Unique: xJk-phLaN2-LqoYkaJFTRw-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E85E5107ACC9;
- Wed, 26 Feb 2020 00:24:25 +0000 (UTC)
-Received: from localhost.localdomain.com (vpn2-54-83.bne.redhat.com
- [10.64.54.83])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 541765C21B;
- Wed, 26 Feb 2020 00:24:23 +0000 (UTC)
-From: Gavin Shan <gshan@redhat.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 5/5] arm64: Remove argument @cpu of get_cpu_ops()
-Date: Wed, 26 Feb 2020 11:23:56 +1100
-Message-Id: <20200226002356.86986-6-gshan@redhat.com>
-In-Reply-To: <20200226002356.86986-1-gshan@redhat.com>
-References: <20200226002356.86986-1-gshan@redhat.com>
+ id 1j6kza-0005l3-IB
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:56:03 +0000
+Received: by mail-qt1-x843.google.com with SMTP id l16so1100239qtq.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 25 Feb 2020 16:56:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KTr07x+ZuW+Wkx10CmLSTlKU+6ax9EaUyaBXKAF3OqM=;
+ b=Y7BmXd6Mfp+6AZ5v7tzuyEct+NldmkDhFbkaCIoOl6/SfR059Z2NK44rQkbVc+4j7t
+ n0RrGob1lJqy4jSvVTBHC3x7e53bCvZCs0af4K9zwmRDwcKU3x3vY+Goiu220sgiSxhg
+ LkPCOLYG0N6aE3fNLH+xw2IiIErd9z+gBVRxo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KTr07x+ZuW+Wkx10CmLSTlKU+6ax9EaUyaBXKAF3OqM=;
+ b=gEFg/KQgrvEqHHTXYXO8BLAZwI8dDbbtY234ssHVGS1/yPBsxr/8bSvvHyas6Kl/oU
+ W1W2EkmxREtQ4FWGFVmeMV2E2x4qb/ch4QaFMv0z1F/EBaz2blbmoKkaZE1Mwb7F99Wi
+ cpoWdUTFbcXEgzHQl53KmyxL3g64aRVPfBZBsILSEDdNV1rfsQe4Zh0CvGFxXvxhyDDD
+ BiYWZgoK+vA2ikzpLEYD8pzhRDJOWVrHV8nLUE8dVXv8H7/AcLZRqNIeFmDZxSC4HFqO
+ Vfwh9fHx6noFIsYJEEDJs1zJia3A3Qho0SMSqiy0XrD+fYQWYYBFEmUlerw+yU22txa6
+ +N1A==
+X-Gm-Message-State: APjAAAXUcbfb9O3L+RHxRzRm3jboQ1qgWPSQBpjgjd8l2svlL0C0ofW/
+ JUfSJ6OvR5tBlk7IJuaQZw0idx5ZE2erFbBfM1JXMw==
+X-Google-Smtp-Source: APXvYqwn/doZ3Sl5MivNf7aeBY0i9IjKThPIXnCkYsjm6+vHV5atNhFSLqXf91LmG+mgvcdhqR+658LdmJfFTgy7fYc=
+X-Received: by 2002:ac8:72d6:: with SMTP id o22mr1774873qtp.174.1582678561028; 
+ Tue, 25 Feb 2020 16:56:01 -0800 (PST)
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <20200207052627.130118-2-drinkcat@chromium.org> <20200225171613.GA7063@bogus>
+In-Reply-To: <20200225171613.GA7063@bogus>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 26 Feb 2020 08:55:50 +0800
+Message-ID: <CANMq1KAVX4o5yC7c_88Wq_O=F+MaSN_V4uNcs1nzS3wBS6A5AA@mail.gmail.com>
+Subject: Re: [PATCH v4 1/7] dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
+To: Rob Herring <robh@kernel.org>, Nick Fan <nick.fan@mediatek.com>, 
+ Sj Huang <sj.huang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_162431_517785_E82FE57B 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20200225_165602_603425_F9236DEB 
+X-CRM114-Status: GOOD (  15.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -90,185 +90,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, catalin.marinas@arm.com,
- robin.murphy@arm.com, shan.gavin@gmail.com, sudeep.holla@arm.com,
- will@kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Mark Brown <broonie@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This removes the argument (@cpu) of get_cpu_ops() as it's not used.
++Nick Fan +Sj Huang @ MTK
 
-Signed-off-by: Gavin Shan <gshan@redhat.com>
----
- arch/arm64/include/asm/cpu_ops.h |  2 +-
- arch/arm64/kernel/cpu_ops.c      |  2 +-
- arch/arm64/kernel/cpuidle.c      |  5 ++---
- arch/arm64/kernel/setup.c        |  2 +-
- arch/arm64/kernel/smp.c          | 21 ++++++++++-----------
- 5 files changed, 15 insertions(+), 17 deletions(-)
+On Wed, Feb 26, 2020 at 1:16 AM Rob Herring <robh@kernel.org> wrote:
+>
+> On Fri, Feb 07, 2020 at 01:26:21PM +0800, Nicolas Boichat wrote:
+> > Define a compatible string for the Mali Bifrost GPU found in
+> > Mediatek's MT8183 SoCs.
+> >
+> > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+> > Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
+> > ---
+> >
+> > v4:
+> >  - Add power-domain-names description
+> >    (kept Alyssa's reviewed-by as the change is minor)
+> > v3:
+> >  - No change
+> >
+> >  .../bindings/gpu/arm,mali-bifrost.yaml        | 25 +++++++++++++++++++
+> >  1 file changed, 25 insertions(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> > index 4ea6a8789699709..0d93b3981445977 100644
+> > --- a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> > +++ b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> > @@ -17,6 +17,7 @@ properties:
+> >      items:
+> >        - enum:
+> >            - amlogic,meson-g12a-mali
+> > +          - mediatek,mt8183-mali
+> >            - realtek,rtd1619-mali
+> >            - rockchip,px30-mali
+> >        - const: arm,mali-bifrost # Mali Bifrost GPU model/revision is fully discoverable
+> > @@ -62,6 +63,30 @@ allOf:
+> >            minItems: 2
+> >        required:
+> >          - resets
+> > +  - if:
+> > +      properties:
+> > +        compatible:
+> > +          contains:
+> > +            const: mediatek,mt8183-mali
+> > +    then:
+> > +      properties:
+> > +        sram-supply: true
+> > +        power-domains:
+> > +          description:
+> > +            List of phandle and PM domain specifier as documented in
+> > +            Documentation/devicetree/bindings/power/power_domain.txt
+> > +          minItems: 3
+> > +          maxItems: 3
+> > +        power-domain-names:
+> > +          items:
+> > +            - const: core0
+> > +            - const: core1
+> > +            - const: 2d
+>
+> AFAIK, there's no '2d' block in bifrost GPUs. A power domain for each
+> core group is correct though.
 
-diff --git a/arch/arm64/include/asm/cpu_ops.h b/arch/arm64/include/asm/cpu_ops.h
-index d28e8f37d3b4..1d5c514ca053 100644
---- a/arch/arm64/include/asm/cpu_ops.h
-+++ b/arch/arm64/include/asm/cpu_ops.h
-@@ -56,7 +56,7 @@ struct cpu_operations {
- };
- 
- int __init init_cpu_ops(int cpu);
--extern const struct cpu_operations *get_cpu_ops(int cpu);
-+extern const struct cpu_operations *get_cpu_ops(void);
- 
- static inline void __init init_bootcpu_ops(void)
- {
-diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
-index af73ca502b95..a32a2e07e7e6 100644
---- a/arch/arm64/kernel/cpu_ops.c
-+++ b/arch/arm64/kernel/cpu_ops.c
-@@ -106,7 +106,7 @@ int __init init_cpu_ops(int cpu)
- 	return 0;
- }
- 
--const struct cpu_operations *get_cpu_ops(int cpu)
-+const struct cpu_operations *get_cpu_ops(void)
- {
- 	return cpu_ops;
- }
-diff --git a/arch/arm64/kernel/cpuidle.c b/arch/arm64/kernel/cpuidle.c
-index b512b5503f6e..da2db14d2d45 100644
---- a/arch/arm64/kernel/cpuidle.c
-+++ b/arch/arm64/kernel/cpuidle.c
-@@ -18,7 +18,7 @@
- 
- int arm_cpuidle_init(unsigned int cpu)
- {
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 	int ret = -EOPNOTSUPP;
- 
- 	if (ops && ops->cpu_suspend && ops->cpu_init_idle)
-@@ -36,8 +36,7 @@ int arm_cpuidle_init(unsigned int cpu)
-  */
- int arm_cpuidle_suspend(int index)
- {
--	int cpu = smp_processor_id();
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	return ops->cpu_suspend(index);
- }
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 3fd2c11c09fc..5c68fa2d9d1b 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -371,7 +371,7 @@ void __init setup_arch(char **cmdline_p)
- static inline bool cpu_can_disable(unsigned int cpu)
- {
- #ifdef CONFIG_HOTPLUG_CPU
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	if (ops && ops->cpu_can_disable)
- 		return ops->cpu_can_disable(cpu);
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index 5e1af1a3c521..0180d4163e17 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -93,7 +93,7 @@ static inline int op_cpu_kill(unsigned int cpu)
-  */
- static int boot_secondary(unsigned int cpu, struct task_struct *idle)
- {
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	if (ops->cpu_boot)
- 		return ops->cpu_boot(cpu);
-@@ -230,7 +230,7 @@ asmlinkage notrace void secondary_start_kernel(void)
- 	 */
- 	check_local_cpu_capabilities();
- 
--	ops = get_cpu_ops(cpu);
-+	ops = get_cpu_ops();
- 	if (ops->cpu_postboot)
- 		ops->cpu_postboot();
- 
-@@ -270,7 +270,7 @@ asmlinkage notrace void secondary_start_kernel(void)
- #ifdef CONFIG_HOTPLUG_CPU
- static int op_cpu_disable(unsigned int cpu)
- {
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	/*
- 	 * If we don't have a cpu_die method, abort before we reach the point
-@@ -320,7 +320,7 @@ int __cpu_disable(void)
- 
- static int op_cpu_kill(unsigned int cpu)
- {
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	/*
- 	 * If we have no means of synchronising with the dying CPU, then assume
-@@ -365,7 +365,7 @@ void __cpu_die(unsigned int cpu)
- void cpu_die(void)
- {
- 	unsigned int cpu = smp_processor_id();
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	idle_task_exit();
- 
-@@ -392,7 +392,7 @@ void cpu_die(void)
- void cpu_die_early(void)
- {
- 	int cpu = smp_processor_id();
--	const struct cpu_operations *ops = get_cpu_ops(cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	pr_crit("CPU%d: will not boot\n", cpu);
- 
-@@ -503,7 +503,7 @@ static int __init smp_cpu_setup(int cpu)
- 	if (init_cpu_ops(cpu))
- 		return -ENODEV;
- 
--	ops = get_cpu_ops(cpu);
-+	ops = get_cpu_ops();
- 	if (ops->cpu_init(cpu))
- 		return -ENODEV;
- 
-@@ -758,7 +758,7 @@ void __init smp_prepare_cpus(unsigned int max_cpus)
- 		if (cpu == smp_processor_id())
- 			continue;
- 
--		ops = get_cpu_ops(cpu);
-+		ops = get_cpu_ops();
- 		if (!ops)
- 			continue;
- 
-@@ -883,7 +883,7 @@ static void ipi_cpu_crash_stop(unsigned int cpu, struct pt_regs *regs)
- 	sdei_mask_local_cpu();
- 
- #ifdef CONFIG_HOTPLUG_CPU
--	ops = get_cpu_ops(cpu);
-+	ops = get_cpu_ops();
- 	if (ops->cpu_die)
- 		ops->cpu_die(cpu);
- #endif
-@@ -1063,8 +1063,7 @@ int setup_profiling_timer(unsigned int multiplier)
- static bool have_cpu_die(void)
- {
- #ifdef CONFIG_HOTPLUG_CPU
--	int any_cpu = raw_smp_processor_id();
--	const struct cpu_operations *ops = get_cpu_ops(any_cpu);
-+	const struct cpu_operations *ops = get_cpu_ops();
- 
- 	if (ops && ops->cpu_die)
- 		return true;
--- 
-2.23.0
+Good question... Hopefully Nick/SJ@MTK can comment, the non-upstream DTS has:
+gpu: mali@13040000 {
+compatible = "mediatek,mt8183-mali", "arm,mali-bifrost";
+power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>;
+...
+}
 
+gpu_core1: mali_gpu_core1 {
+compatible = "mediatek,gpu_core1";
+power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>;
+};
+
+gpu_core2: mali_gpu_core2 {
+compatible = "mediatek,gpu_core2";
+power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
+};
+
+So I picked core0/core1/2d as names, but looking at this, it's likely
+core2 is more appropriate (and MT8183_POWER_DOMAIN_MFG_2D might just
+be a internal/legacy name, if there is no real 2d domain).
+
+Thanks.
+
+> Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
