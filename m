@@ -2,100 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53DD0170C42
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:06:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CC94170C5E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:11:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CJuXKOJ95PsbW37GxIIWsog8OGbr/CGduOeJIuypO7Y=; b=G5Il6NCkWI6V4TGWIvG/cIliJy
-	U9wgl9SidikFUKr+O5ns6A4g6cxwTEAj778VTxSym4JZFGNZBJBtzLGZ4ZixVL8XJhwmG6afuU5xY
-	eJaiGZof2rqSsmokVCw1N1gmyxU6r5UMyzYFQ4rwcECBipeaQ+QKDq9xf7dHZJiljt2IK5SJNnNp7
-	wgCcy5Bm9EqxtB379ity111QcG6etwqwZ2ocYjX0QtTmoPAwtsf6dhUu4VtOm5TfUOjvwUqCjvsMl
-	xEzmbdRfR89U/+Rhqz66mXafGNqH+2iframenW9tfwmDHtuVMvhLlKoCpFj+/7rJPCu7clZH7+54y
-	NDildnxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PZX1X84xVm2sIt0Sgo4A3cjGCmtIpBHnGq3rm91xnFU=; b=MKbrvWP/HBovTwxEk9Z8Q8oUY
+	PKt3RrxuT3e11iwSONVl8cvqzznOEm6RMXYlPciubNQ2S68ethWRvqgIcdMqDd9VW59BVBPiKgeNS
+	Y5b6wxDuVCijZ7ADoRmmMPtCKOZs9611MnecBLabU15g64sgsrDvQTOwPYGEhLGcJZXf3ERCCvVHK
+	KSGPUKVx2XaYpR0xXS5Gj36ezgYyrpP1o/qp6RtX+F86d+B+/3GQvPcYnPiwjbQ3Zqu2HTbvKiQ63
+	W3Vfsvwj1/1aGPQeo2Oux/pOCb7aryj9v2/0WiKmlWsgKadvuEjnILa0HfBAj6YF3XYSI16ThQoMN
+	cgqG28YDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j75ks-0005h3-Om; Wed, 26 Feb 2020 23:06:14 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1j75pa-0008Ox-FE; Wed, 26 Feb 2020 23:11:06 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j75ix-0002yQ-Ig
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:04:17 +0000
-Received: by mail-pg1-x541.google.com with SMTP id u12so382694pgb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 15:04:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tCAa6W32aZ6QEKpToe4fyzvDQPNVxEnlp17UdPCzM6s=;
- b=CNQku0uc3KAdlVn5+f/fITVzFDBSHYXMdo+LQ+8BVaz5Ht/O9aBWdkHEyNAVEACBKV
- uICQYcmmIle6na4NfMwdwB+RIKkkOVmrN7OkS11Bji2m331jj6F3aYPwDOvGGNUHye3I
- mGRlKp62czjkuztPiHmWW+KkfYVJlg1iQdnTVUk+C37gPgHC7ghJ58Xpj4KGjGKMqVYv
- gDLWHwfkFWFqP7TYdRDYPDqxSTkiqnFKRFSuIwghiWJyyWL1t4ZQ7lVfpEkYKXj91wIE
- fBqi7TVT7I9r0FamqmLRcL1Ff4vCvLqYAQGY1ns0Ka9X9xeIi/tO/w0jnj6l1bjC62wc
- 9RKA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=tCAa6W32aZ6QEKpToe4fyzvDQPNVxEnlp17UdPCzM6s=;
- b=eoEoo/wqkf2cjS1l4dg3Do5IKk7QEodSlavb/AKoneGoOWOdK4n+/3H5ITZivI2P6B
- lwrf87Ky3gzmo1w2NygdwULE28kF2KASVJHxjRudlufxKu+GxC7vKk+qwJ7cYlBF5YCQ
- Q1M9eFWAcLVYR6XCzagQTy87bei63zTk/B+Rkz9if7Ke5+1eVojTndniMihNFf4h+F5A
- HSSHpOXXTRjZIVVqC15sx9F79VzLpVz6rXv4lah19K7mF1nDfdkXJmGB4n+Bugzy/j9f
- KgkOmAXImaaacpD02SZJqalvGoUuZB2aPQe5QEx11b5z9NkVXZQ5FEuWcg8LAQIGxjWH
- yySw==
-X-Gm-Message-State: APjAAAWdySYIOFesrZmCwOuTViKzRslN6ZVFUoeCpmIisWbpceahVc47
- 9Lp+KE3pRFeL3RSpmmr9sqM=
-X-Google-Smtp-Source: APXvYqxhOPuxfNONXmDQxDXVEgm8yFWi7DxNNyLfDQf3TB7RUJQjT+qTeMMjNtBejIG2YsmlSgqcvA==
-X-Received: by 2002:aa7:9f90:: with SMTP id z16mr1025096pfr.161.1582758254295; 
- Wed, 26 Feb 2020 15:04:14 -0800 (PST)
-Received: from taoren-ubuntu-R90MNF91.thefacebook.com
- ([2620:10d:c090:500::7:5ebf])
- by smtp.gmail.com with ESMTPSA id 3sm3912621pjg.27.2020.02.26.15.04.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 15:04:12 -0800 (PST)
-From: rentao.bupt@gmail.com
-To: Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- openbmc@lists.ozlabs.org, taoren@fb.com
-Subject: [PATCH v4 7/7] dt-bindings: usb: add documentation for aspeed usb-vhub
-Date: Wed, 26 Feb 2020 15:03:46 -0800
-Message-Id: <20200226230346.672-8-rentao.bupt@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200226230346.672-1-rentao.bupt@gmail.com>
-References: <20200226230346.672-1-rentao.bupt@gmail.com>
+ id 1j75pO-0008O8-Li
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:10:56 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1582758653; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=LwIg2ej0qktnR5lwlPkQCTHuArHrJYoONAMEHJ0gpmM=;
+ b=Oepbpcw1EWrR+ueIjYNvFMc/ZNRbMm+b3fjlmiK6qzBvyLBvuOLinx+P+5aaTnsVr0aYL2A5
+ rH/kgr5Q7nUp74sbtJGMd/QzTwKx6ervTfYhL57XJFYFF9qx+cLGaHyshwc/honuwxD10lCp
+ zDRKsxs7IvstT/hng2woM6Zurxs=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e56faea.7fe30e556ca8-smtp-out-n01;
+ Wed, 26 Feb 2020 23:10:34 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 31646C4479D; Wed, 26 Feb 2020 23:10:33 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [10.134.64.128] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: sidgup)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 12203C43383;
+ Wed, 26 Feb 2020 23:10:32 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 12203C43383
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=sidgup@codeaurora.org
+Subject: Re: [PATCH 1/2] remoteproc: core: Add an API for booting with
+ firmware name
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
+ <1582164713-6413-2-git-send-email-sidgup@codeaurora.org>
+ <20200224183043.GA9477@xps15>
+From: Siddharth Gupta <sidgup@codeaurora.org>
+Message-ID: <bbccf58a-2c3a-38f3-bd63-e7aeb8213b34@codeaurora.org>
+Date: Wed, 26 Feb 2020 15:10:31 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+MIME-Version: 1.0
+In-Reply-To: <20200224183043.GA9477@xps15>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_150415_630114_9E0FF989 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_151054_776552_A66B2106 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rentao.bupt[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -108,106 +94,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tao Ren <rentao.bupt@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bjorn.andersson@linaro.org, rishabhb@codeaurora.org, psodagud@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tao Ren <rentao.bupt@gmail.com>
+Hey Mathieu,
 
-Add device tree binding documentation for aspeed usb-vhub driver.
+On 2/24/2020 10:30 AM, Mathieu Poirier wrote:
 
-Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
----
- No change in v2/v3/v4:
-   - the patch is added to the patch series since v4.
+> Hi Siddharth,
+>
+> On Wed, Feb 19, 2020 at 06:11:52PM -0800, Siddharth Gupta wrote:
+>> Add an API which allows to change the name of the firmware to be booted on
+>> the specified rproc. This change gives us the flixibility to change the
+>> firmware at run-time depending on the usecase. Some remoteprocs might use
+>> a different firmware for testing, production and development purposes,
+>> which may be selected based on the fuse settings during bootup.
+>>
+>> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+>> ---
+>>   drivers/remoteproc/remoteproc_core.c | 34 ++++++++++++++++++++++++++++++++++
+>>   include/linux/remoteproc.h           |  1 +
+>>   2 files changed, 35 insertions(+)
+>>
+>> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+>> index 097f33e..5ab65a4 100644
+>> --- a/drivers/remoteproc/remoteproc_core.c
+>> +++ b/drivers/remoteproc/remoteproc_core.c
+>> @@ -1779,6 +1779,40 @@ int rproc_boot(struct rproc *rproc)
+>>   EXPORT_SYMBOL(rproc_boot);
+>>   
+>>   /**
+>> + * rproc_boot_with_fw() - boot a remote processor with the specified firmware
+>> + * @rproc: handle of a remote processor
+>> + * @firmware: name of the firmware to boot with
+>> + *
+>> + * Change the name of the firmware to be loaded to @firmware in the rproc
+>> + * structure, and call rproc_boot().
+>> + *
+>> + * Returns 0 on success, and an appropriate error value otherwise.
+>> + */
+>> +int rproc_boot_with_fw(struct rproc *rproc, const char *firmware)
+>> +{
+>> +	char *p;
+>> +
+>> +	if (!rproc) {
+>> +		pr_err("invalid rproc handle\n");
+>> +		return -EINVAL;
+>> +	}
+>          if (!rproc || !firmware)
+>                  return -EINVAL;
+>
+> There is no user involved here so no point in printing anything.  If @rproc or
+> @firmware is NULL than callers should be smart enough to figure it out from the
+> error code.
 
- .../bindings/usb/aspeed,usb-vhub.yaml         | 71 +++++++++++++++++++
- 1 file changed, 71 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+I was trying to mimic the behaviour of rproc_boot here actually, since 
+we were trying to make this
+an API for users to directly boot with firmware name.
 
-diff --git a/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml b/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
-new file mode 100644
-index 000000000000..6ebae46641e5
---- /dev/null
-+++ b/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
-@@ -0,0 +1,71 @@
-+# SPDX-License-Identifier: GPL-2.0-or-later
-+# Copyright (c) 2020 Facebook Inc.
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/usb/aspeed,usb-vhub.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: ASPEED USB 2.0 Virtual Hub Controller
-+
-+maintainers:
-+  - Felipe Balbi <balbi@kernel.org>
-+
-+description: |+
-+  The ASPEED USB 2.0 Virtual Hub Controller implements 1 set of USB Hub
-+  register and several sets of Device and Endpoint registers to support
-+  the Virtual Hub's downstream USB devices.
-+
-+  Supported number of devices and endpoints vary depending on hardware
-+  revisions. AST2400 and AST2500 Virtual Hub supports 5 downstream devices
-+  and 15 generic endpoints, while AST2600 Virtual Hub supports 7 downstream
-+  devices and 21 generic endpoints.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - aspeed,ast2400-usb-vhub
-+      - aspeed,ast2500-usb-vhub
-+      - aspeed,ast2600-usb-vhub
-+
-+  reg:
-+    maxItems: 1
-+    description: Common configuration registers
-+
-+  clocks:
-+    maxItems: 1
-+    description: The Virtual Hub Controller clock gate
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  aspeed,vhub-downstream-ports:
-+    description: Number of downstream ports supported by the Virtual Hub
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32
-+
-+  aspeed,vhub-generic-endpoints:
-+    description: Number of generic endpoints supported by the Virtual Hub
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - interrupts
-+  - aspeed,vhub-downstream-ports
-+  - aspeed,vhub-generic-endpoints
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/aspeed-clock.h>
-+    vhub: usb-vhub@1e6a0000 {
-+            compatible = "aspeed,ast2500-usb-vhub";
-+            reg = <0x1e6a0000 0x300>;
-+            interrupts = <5>;
-+            clocks = <&syscon ASPEED_CLK_GATE_USBPORT1CLK>;
-+            pinctrl-names = "default";
-+            pinctrl-0 = <&pinctrl_usb2ad_default>;
-+    };
--- 
-2.17.1
+>
+>> +
+>> +	if (firmware) {
+>> +		p = kstrdup(firmware, GFP_KERNEL);
+>> +		if (!p)
+>> +			return -ENOMEM;
+> As in firmware_store() I think it is a good idea to mandate the MCU be offline
+> before changing the firmware name.  That way we avoid situations where what is
+> running on the MCU is not what gets reported in sysfs.
 
+Sure, that makes sense.
+
+>> +
+>> +		mutex_lock(&rproc->lock);
+>> +		kfree(rproc->firmware);
+>> +		rproc->firmware = p;
+>> +		mutex_unlock(&rproc->lock);
+>> +	}
+>> +
+>> +	return rproc_boot(rproc);
+> Function rproc_boot() is also an exported symbol and belongs in the caller -
+> please move it out of here.  When that is done rproc_boot_with_fw() can become
+> rproc_set_firmware_name() and concentrate on doing just that.
+
+Okay sounds good.
+
+>
+>> +}
+>> +EXPORT_SYMBOL(rproc_boot_with_fw);
+> Although choosing the firmware image to boot without user involvement seems like
+> a valid scenario to me, this can't be added until there is an actual user of
+> this API.
+That's true. We have a few cases downstream where we need this 
+functionality. We were wondering
+if anyone else might have use of such functionality, and create an 
+upstream API in that case. Your
+suggestion of creating rproc_set_firmware_name() is a better approach 
+for sure though. We're looking
+at creating a new remoteproc (platform) driver which will need this 
+functionality.
+>> +
+>> +/**
+>>    * rproc_shutdown() - power off the remote processor
+>>    * @rproc: the remote processor
+>>    *
+>> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+>> index 16ad666..e2eaba9 100644
+>> --- a/include/linux/remoteproc.h
+>> +++ b/include/linux/remoteproc.h
+>> @@ -609,6 +609,7 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
+>>   			     u32 da, const char *name, ...);
+>>   
+>>   int rproc_boot(struct rproc *rproc);
+>> +int rproc_boot_with_fw(struct rproc *rproc, const char *firmware);
+>>   void rproc_shutdown(struct rproc *rproc);
+>>   void rproc_report_crash(struct rproc *rproc, enum rproc_crash_type type);
+>>   int rproc_coredump_add_segment(struct rproc *rproc, dma_addr_t da, size_t size);
+>> -- 
+>> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+>> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
