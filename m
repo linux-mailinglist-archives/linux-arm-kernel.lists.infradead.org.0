@@ -2,96 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82433170871
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 20:06:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7BD1170893
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 20:12:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hqfwipVujDaxptTCQ3YBvkrilyH1XmiTDmOoL15mY4w=; b=Ok9zJ0LxCdC34sd/IgAY5xD0GI
-	cpqjz257Q68qdEjRQPRHb233DA1Psphf6Dfjw8tz/FE2f51A4SoaDytpsuv0P6omymxnGQ3MK7xfw
-	0455GEkcv6bUhGrlHaNyB4Mx/zCFa101rUig1X22PRylfKueg5mQvfCDE+HbEUB1ySKfLd+ixPMJg
-	ZLSSCgnU5iLlsx7pxtplj68SFxLrsG8rNLMgwLwvvdhg6YUsbpYHLKr4L+gu/5or9oqaXHXSX4qmr
-	Zge23oGs1S7oMckUKjL1Ww7espA6ELP7nzRnqU8E/nXET2ZvKSyDXUa08IH4xPyOOw9dzHlKLu6c+
-	3nLsRjew==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=llRoo0JItnRXLynFqSM/X1FGoyYCIY41Z16FL7jpHt0=; b=O7hV4EhDxKrh0X
+	2h5VMoY8RnSUQn4Q2p9aG2bK0g0GUmjjFaa3H999+lnfybO59fObLcZv+wxR5mqWsVoKozbmmGuSd
+	ICVQFpbGpwxYyr6pxeJd4kSCh0jQORek6ycIPiEEFuzajDnA8U1WkmtyOdpXcArbFeS4Y09UzAYW1
+	e0jhz8YFojVXRf0txAA1/dC8LnGBJeKOg1l5OSyCGXCjN3WAbQn98e7mMSVwFsenysxURoD0qedtv
+	txBLDP2+oOauj56UaX4eyUI+wU2eLyM3em+07jewj7l5k1vP62yclCkFvElmReHw2SfvjV35T67CK
+	0EuIxLia6sC0bRsZBLUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j721E-0005Ch-Sa; Wed, 26 Feb 2020 19:06:52 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1j726q-0007T2-OL; Wed, 26 Feb 2020 19:12:40 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7217-0005Bs-9w
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 19:06:46 +0000
-Received: by mail-qk1-x744.google.com with SMTP id m9so578107qke.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 11:06:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=M9niB/YnWE/mLPULIH87VulO14ku7TY288Cxvxcfeys=;
- b=m1sFXJWAMrJMsYaGgcCtAGpf8EaIm5PCgIxV1iKtHvR5+dpc9QTf8u/9ABYitkG6pd
- TwsZyKmjIRrTUsColw9pGQXQCoQNDIZd7WwGlTUjMliBWyK8lL2om+9ZK07C/wnLwmWN
- lC71l0SyiMyslAqAQKKdiKOsCt31Xu2kIU0rS5fyLp9vR/4+zsVwGo+NwzMHdAIwg/xT
- xeHZCSAseH+k80jLpc4q5H2bp3nD3XG9uZ1PjOxgzpdlAt2XFiyyZB0MAVn69B6+ryZN
- SDAK2u3KTjT4U7Z6s+hqWOs8q7xdQggpcqJ92L85lVRcT4qJVy1pqf7BWZ5Bi6Q+nWr9
- ly4A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=M9niB/YnWE/mLPULIH87VulO14ku7TY288Cxvxcfeys=;
- b=BdUcJGD2ZIqzRKoA9FmPzbWAEnU3AD6osooctp4yM5O2iWI1XX0Z8Oguvf3rLQgnxn
- 7INKff3WYJu57ID1/DAmrTfzdfygudSn/VnI3sYklpJ6gzkMEnzyo46/d4vp8EARBGbK
- BEtiHSzpPtEjOtYRDxRrFvEkeGCr5GB6Hfo0w+0vA8E0FRvgDqCPGTbm7fVvfqxeL1lR
- mLT2QLV0wy63UcZA9LFv0YoTBFgcQNIw7i+WbFKrnn3J6QreAM2XwU7/Of3KEWGRzYAU
- CufELvK/8NG60RV4BHx4fJ+jxXaJmyXtwVlvKm5InNlcVUqVrVUL21AFRZZzU69Sj/Fx
- /NSg==
-X-Gm-Message-State: APjAAAXdW2ViOWqFP7NFRH3nE5np0liN4Sk1/WyYPbvFziDByD3abU/z
- xRV8RbZnT7R8qSCPCaVxYOMoqwmU9Pu3l2r2xN0swVGMb+vrdQ==
-X-Google-Smtp-Source: APXvYqyjurfsyKDoTMJ4WSbU70QdA9TtasCgybTEtfeAuvAhr0Qw4NI8q5lbdJVqkzh7xKqVEaAqdPQ+oRW7x7VyHlI=
-X-Received: by 2002:ae9:f012:: with SMTP id l18mr712442qkg.22.1582744002146;
- Wed, 26 Feb 2020 11:06:42 -0800 (PST)
+ id 1j726e-0007Rc-Oz; Wed, 26 Feb 2020 19:12:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=KcpXKrnA+tSfLVsLB+Y3FGpvlq2JJa1WqGuNDRsLFVI=; b=wN0aYjMTZnoSDpDhzYIt38EqZ
+ RJf1TJ5E/4mJ7s2PkotL8Y9CcARYlFdLFBhJjHRgQbIO/5Ji4MKvPuToTgdMQSVZaBpewmgISApvn
+ hoitaH94VzMNRiKYpmU5JELCdxM/6krlabZlxq8GsuMnMbEC+YGGf03ukVz5HXolo+reNStySqmDb
+ fBDYKr+Hr7kd+lbHivf4/VbIUkNapTWXz50IuZqT7s59Bzwnylte2jS600ebdyS68R5ngkl1ST3GE
+ QEsruSikfBoyALG0il3MrgKBvRV/HfC296Dar4JHNwzc4R1VVd4Ln7DzNJofB0XNL8X+PD9bkXvqD
+ rWi72JvXw==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:53150)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1j726A-00011K-VO; Wed, 26 Feb 2020 19:11:59 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1j7263-0000EC-U4; Wed, 26 Feb 2020 19:11:51 +0000
+Date: Wed, 26 Feb 2020 19:11:51 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Ioana Ciornei <ioana.ciornei@nxp.com>
+Subject: Re: [PATCH net-next v2 1/8] net: phylink: propagate resolved link
+ config via mac_link_up()
+Message-ID: <20200226191151.GH25745@shell.armlinux.org.uk>
+References: <20200226102312.GX25745@shell.armlinux.org.uk>
+ <E1j6tqv-0003G6-BO@rmk-PC.armlinux.org.uk>
+ <CA+h21hrR1Xkx9gwAT2FHqcH38L=xjWiPxmF2Er7-4fHFTrA8pQ@mail.gmail.com>
+ <20200226115549.GZ25745@shell.armlinux.org.uk>
+ <CA+h21hqjMBjgQDee8t=Csy5DXVUk9f=PP0hHSDfkuA746ZKzSQ@mail.gmail.com>
+ <20200226133614.GA25745@shell.armlinux.org.uk>
+ <CA+h21hqHfC0joRDhCQP6MntFdVaApFiC51xk=tUf3+y-C7sX_Q@mail.gmail.com>
+ <CA+h21hpzCY=+0U4JgFbqGLS=Sh6SjkSt=4J9e0AGVHKJPOHq1A@mail.gmail.com>
+ <DB8PR04MB682837B8182CFC3359B71112E0EA0@DB8PR04MB6828.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20200226081011.1347245-1-anarsoul@gmail.com>
- <20200226081011.1347245-2-anarsoul@gmail.com>
-In-Reply-To: <20200226081011.1347245-2-anarsoul@gmail.com>
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Wed, 26 Feb 2020 11:06:34 -0800
-Message-ID: <CA+E=qVdUV5wBcyFpwPZvi4=8bPgVBZiRB0XrEE=SPJT+cTgZ9g@mail.gmail.com>
-Subject: Re: [PATCH v2 1/6] drm/bridge: anx6345: Fix getting anx6345 regulators
-To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, 
- Mark Rutland <mark.rutland@arm.com>, Maxime Ripard <maxime@cerno.tech>,
- Chen-Yu Tsai <wens@csie.org>, 
- Andrzej Hajda <a.hajda@samsung.com>, Neil Armstrong <narmstrong@baylibre.com>, 
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, 
- Jernej Skrabec <jernej.skrabec@siol.net>, Torsten Duwe <duwe@suse.de>,
- Icenowy Zheng <icenowy@aosc.io>, 
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, 
- Stephan Gerhold <stephan@gerhold.net>, Mark Brown <broonie@kernel.org>, 
- Stephen Rothwell <sfr@canb.auug.org.au>, Samuel Holland <samuel@sholland.org>, 
- dri-devel <dri-devel@lists.freedesktop.org>,
- devicetree <devicetree@vger.kernel.org>, 
- linux-kernel <linux-kernel@vger.kernel.org>, 
- arm-linux <linux-arm-kernel@lists.infradead.org>
+Content-Disposition: inline
+In-Reply-To: <DB8PR04MB682837B8182CFC3359B71112E0EA0@DB8PR04MB6828.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_110645_370966_240A0BFA 
-X-CRM114-Status: GOOD (  15.20  )
+X-CRM114-CacheID: sfid-20200226_111228_816204_10A2BC86 
+X-CRM114-Status: GOOD (  19.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [anarsoul[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -110,53 +94,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Ioana Ciocoi Radulescu <ruxandra.radulescu@nxp.com>,
+ Jonathan Corbet <corbet@lwn.net>, Michal Simek <michal.simek@xilinx.com>,
+ Jose Abreu <joabreu@synopsys.com>, Jakub Kicinski <kuba@kernel.org>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Hauke Mehrtens <hauke@hauke-m.de>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, netdev <netdev@vger.kernel.org>,
+ Vivien Didelot <vivien.didelot@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Felix Fietkau <nbd@nbd.name>,
+ Vladimir Oltean <olteanv@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 12:10 AM Vasily Khoruzhick <anarsoul@gmail.com> wrote:
->
-> From: Samuel Holland <samuel@sholland.org>
+On Wed, Feb 26, 2020 at 06:32:55PM +0000, Ioana Ciornei wrote:
+> > Subject: Re: [PATCH net-next v2 1/8] net: phylink: propagate resolved link config
+> > via mac_link_up()
+> > 
+> > On Wed, 26 Feb 2020 at 20:21, Vladimir Oltean <olteanv@gmail.com> wrote:
+> > >
+> > > On Wed, 26 Feb 2020 at 15:36, Russell King - ARM Linux admin
+> > > <linux@armlinux.org.uk> wrote:
+> > > >
+> > > >
+> > > > dpaa2 is complicated by the firmware, and that we can't switch the
+> > > > interface mode between (SGMII,1000base-X) and 10G.
+> > > >
+> > > > If the firmware is in "DPMAC_LINK_TYPE_PHY" mode, it expects to be
+> > > > told the current link parameters via the dpmac_set_link_state() call
+> > > > - it isn't clear whether that needs to be called for other modes
+> > > > with the up/down state (firmware API documentation is poor.)
+> > > >
+> > >
+> > > With PCS control in Linux, I am pretty sure that you don't want
+> > > anything other than DPMAC_LINK_TYPE_PHY anyway.
+> > > Basically in DPMAC_LINK_TYPE_FIXED, the MC firmware is in control of
+> > > the PCS and polls its link state to emit link notifications to objects
+> > > connected to the DPMAC. So Linux control of PCS would class with
+> > 
+> > s/class/clash/
+> > 
+> > > firmware control of the PCS, leading to undesirable side-effects to
+> > > say the least.
+> 
+> 
+> If the DPMAC object is in DPMAC_LINK_TYPE_FIXED, the dpaa2-eth in fact
+> does not even connect to a phy so all the phylink interaction is not happening.
+> As Vladimir said, in this case it's the MC firmware's job to poll the PCS and
+> notify any connected objects of a link change.
 
-This patch can be dropped since equivalent was merged:
+Please see the patches I've referred Vladimir to, specifically this:
 
-https://cgit.freedesktop.org/drm/drm-misc/commit/?id=6726ca1a2d531f5a6efc1f785b15606ce837c4dc
+        if (attr.link_type == DPMAC_LINK_TYPE_PHY) {
+                /* FIXME: how do we know whether this DPMAC has a PCS? */
+                err = dpaa2_pcs_create(mac, attr.id);
+                if (err)
+                        goto err_phylink_destroy;
 
-> We don't need to pass '-supply' suffix to devm_regulator_get()
->
-> Fixes: 6aa192698089 ("drm/bridge: Add Analogix anx6345 support")
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> ---
->  drivers/gpu/drm/bridge/analogix/analogix-anx6345.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
-> index 56f55c53abfd..0d8d083b0207 100644
-> --- a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
-> +++ b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
-> @@ -712,14 +712,14 @@ static int anx6345_i2c_probe(struct i2c_client *client,
->                 DRM_DEBUG("No panel found\n");
->
->         /* 1.2V digital core power regulator  */
-> -       anx6345->dvdd12 = devm_regulator_get(dev, "dvdd12-supply");
-> +       anx6345->dvdd12 = devm_regulator_get(dev, "dvdd12");
->         if (IS_ERR(anx6345->dvdd12)) {
->                 DRM_ERROR("dvdd12-supply not found\n");
->                 return PTR_ERR(anx6345->dvdd12);
->         }
->
->         /* 2.5V digital core power regulator  */
-> -       anx6345->dvdd25 = devm_regulator_get(dev, "dvdd25-supply");
-> +       anx6345->dvdd25 = devm_regulator_get(dev, "dvdd25");
->         if (IS_ERR(anx6345->dvdd25)) {
->                 DRM_ERROR("dvdd25-supply not found\n");
->                 return PTR_ERR(anx6345->dvdd25);
-> --
-> 2.25.0
->
+                phylink_add_pcs(mac->phylink, &dpaa2_pcs_phylink_ops);
+        }
+
+Hence, if we are not in DPMAC_LINK_TYPE_PHY, then we never talk to
+the PCS, thereby satisfying the requirements of the firmware not to
+touch the PCS if it's in FIXED mode.
+
+It seems this is becoming a storm in a tea cup.  Please stop.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
