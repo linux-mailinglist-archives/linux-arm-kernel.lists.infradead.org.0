@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B705816F6E8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 06:13:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 937E516F6FF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 06:24:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=esoL6RGQErcXQCbEBwxY+GSVzVe47UTUVz/8pEjI5sk=; b=nieAGJTCX2IqFX
-	Spnppjp8yByzLhZ0S/G0mudUR51GONujYteZKxYflMG2gtq2cxv5wvMZwHNplNd8W3rdAyCIigqJD
-	WA1DRGfOOcAb3eqq70zB+RXuUVc/7EqtUxnN23IWTXm6se1YxbGnnqazrfVgF3DUEYLMRS8JVlWU0
-	Qm6MaAYEo3oZl7Rz6kL5iDLmhfbbbHZ6i9Uor6rxIPmSo9XQdIUg+47bUh5LYBckK5dsezojRArcq
-	NGUP8plwXq1HGoiDaqcHuocQjbQAXe7lQ8yNMy9JEIiRljbwHNcPU79J6EtEXDj7eZlPeuaiSu4wJ
-	uru9LmGAiw9xGIx4apow==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zKRM978Fc/qInlpOEk0pbnh9elPTWLfXjU0vpWIX60g=; b=QTMshFzuUW/oXZ
+	PWR7czBVIpRID0Gjz10UKzlgQvrYFJuWbxS7SbQ9Jevwo8DvipT8x6mCTPUmCFhyLW4wwW45+1MpF
+	+ON90bjsWiT6xQ2xLhO77oUDWSXlNkVE1Gc2sApjQ2wtAZLH0R6NP1pQQC0je9/FlRyxIIBXGxUNa
+	OQl+qYcCimiLv/+3DrV5f4BJKCTnaBEdUkwwW1R7ohHSAtj3Jg19eb3RCWQnzdjPpiVRp482WYAJA
+	kjIOz4w7luZdqDqb+IF7iS4bEISRvlxJ9ehuK4yny7Sg+GodGRLi+Tsp2T88qtogl09i2ZUU1RxSh
+	pTH8y3qF0iFvZ1vhdnvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6p0n-0002n5-8E; Wed, 26 Feb 2020 05:13:33 +0000
+	id 1j6pAs-0006rp-Cd; Wed, 26 Feb 2020 05:23:58 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6p0d-0002mb-FC; Wed, 26 Feb 2020 05:13:25 +0000
-X-UUID: 6c6e5381aa6a4fc58d4bb9d0c8965af0-20200225
+ id 1j6pAN-0006bb-Vy; Wed, 26 Feb 2020 05:23:29 +0000
+X-UUID: edf67dfc7e81467ba561c059b742d17f-20200225
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=nEHARF1NYyw5mdbN6rF7aICK/jenBfECNzSSvcS+Ztw=; 
- b=fnbKOOvYDgoYsdoejCFhalmhwXKR1To87CyFBMRetCkDT/MXvXrggnPbExmbueF5Q6BgTeH+kPLHiLH+SJ2e6y183r/xF0fWMpy2J1sN/KpYcKPrEZ8bNMTiUsRwlk/FVz6V/CGKUkzvqZJKi27fczYao820JsSVBfbapWNQ8IY=;
-X-UUID: 6c6e5381aa6a4fc58d4bb9d0c8965af0-20200225
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=zQlE2usdlA26fIgGZ8VA3Rg8HgO4JQf85Qybm0aGcvc=; 
+ b=e7tZR/QjDjTtgojiuVJXKpeGL0kAaGs4evsflV7JvFbloMEbQGYDw7nwA6RUoGzvOHZPX12fiWby26+VWva++jEb6k87ucT4OvVTeIp/IrN/iGmo+O8oPOndwQdz3qrjqk/NJQNNIu+5FuykR9Pqaki9Oe8YNyKeOCPVM1P9cyI=;
+X-UUID: edf67dfc7e81467ba561c059b742d17f-20200225
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <ran.bi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1374859130; Tue, 25 Feb 2020 21:13:18 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ with ESMTP id 1329655461; Tue, 25 Feb 2020 21:23:26 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 25 Feb 2020 21:13:15 -0800
+ 15.0.1395.4; Tue, 25 Feb 2020 21:13:23 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 26 Feb 2020 13:11:59 +0800
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 13:11:24 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 26 Feb 2020 13:13:23 +0800
+ Transport; Wed, 26 Feb 2020 13:13:24 +0800
 From: Ran Bi <ran.bi@mediatek.com>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Rob Herring
  <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v3 0/4] Add Support for MediaTek MT2712 RTC
-Date: Wed, 26 Feb 2020 13:12:59 +0800
-Message-ID: <20200226051303.22560-1-ran.bi@mediatek.com>
+Subject: [PATCH v3 1/4] bindings: rtc: add bindings for MT2712 RTC
+Date: Wed, 26 Feb 2020 13:13:00 +0800
+Message-ID: <20200226051303.22560-2-ran.bi@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200226051303.22560-1-ran.bi@mediatek.com>
+References: <20200226051303.22560-1-ran.bi@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_211323_523059_87867910 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20200225_212328_033888_444C1AB7 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,46 +106,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset add support to MT2712 RTC. MT2712 RTC is a SoC based RTC
-with different architecture compared to MT7622 RTC.
+Document the binding for MT2712 RTC implemented by rtc-mt2712.
 
-Changes in V3:
-1. change struct mt2712_rtc
-2. use 100 as year offset
-3. change irq handle thread
-4. remove useless rtc time check
-5. not modify struct rtc_time in set_time/set_alarm functions
-6. modify rtc init function
-7. add power lost flag for get_time/set_time functions
-8. add .alarm_irq_enable callback
-9. set rtc->range_min and rtc->range_max to do range checking
-10. use fixed driver name
-
-Changes in V2:
-1. change minimum year from 1968 to 2000
-2. fix lock usage
-3. stop to calculate useless day of week
-4. stop to set default date after init
-5. change the prefix of functions
-6. use devm_request_threaded_irq() to replace request_threaded_irq()
-7. add mt2712 rtc related files into MAINTAINERS
-
-Ran Bi (4):
-  bindings: rtc: add bindings for MT2712 RTC
-  rtc: add support for the MediaTek MT2712 RTC
-  arm64: dts: add RTC nodes for MT2712
-  MAINTAINERS: add MT2712 RTC files
-
- .../devicetree/bindings/rtc/rtc-mt2712.txt    |  14 +
- MAINTAINERS                                   |   2 +
- arch/arm64/boot/dts/mediatek/mt2712e.dtsi     |   6 +
- drivers/rtc/Kconfig                           |  10 +
- drivers/rtc/Makefile                          |   1 +
- drivers/rtc/rtc-mt2712.c                      | 422 ++++++++++++++++++
- 6 files changed, 455 insertions(+)
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+---
+ .../devicetree/bindings/rtc/rtc-mt2712.txt         | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/rtc/rtc-mt2712.txt
- create mode 100644 drivers/rtc/rtc-mt2712.c
 
+diff --git a/Documentation/devicetree/bindings/rtc/rtc-mt2712.txt b/Documentation/devicetree/bindings/rtc/rtc-mt2712.txt
+new file mode 100644
+index 000000000000..c33d87e5e753
+--- /dev/null
++++ b/Documentation/devicetree/bindings/rtc/rtc-mt2712.txt
+@@ -0,0 +1,14 @@
++Device-Tree bindings for MediaTek SoC based RTC
++
++Required properties:
++- compatible	    : Should be "mediatek,mt2712-rtc" : for MT2712 SoC
++- reg 		    : Specifies base physical address and size of the registers;
++- interrupts	    : Should contain the interrupt for RTC alarm;
++
++Example:
++
++rtc: rtc@10011000 {
++	compatible = "mediatek,mt2712-rtc";
++	reg = <0 0x10011000 0 0x1000>;
++	interrupts = <GIC_SPI 239 IRQ_TYPE_LEVEL_LOW>;
++};
 -- 
 2.25.0
 _______________________________________________
