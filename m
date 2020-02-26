@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4379816FF28
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:38:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C99116FF36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:43:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Q/WYLsqjzrXTrqRKtb8rxGhJsSR+fBU9AFvqQ1CA8Rg=; b=CZ65aMpespmVpv
-	PgL+WqGbGo2R7uLgpz7TxU2O8FVqklJQrLNDvD7TutGVlP8cStLDVDJwEWX1yPKjau+l6jAk6SkgJ
-	d/9ZbEIrkJeEvEJplWEq+MTorom5eaqVDJuFKEZBMAN6GEUMV6YJ/9Ab3qTbceEwCFT5XEhzg07Qq
-	fZamt6252slo9WBHgVKc6eM0KvKKYe4O5GB9Rn81gOLfC3DrbBiPSmt9uMmkdc3l5Q6LmAmSjUeiq
-	7x97jQqPeXB3VXlL0wVR8G3JM7BsfwKbH/i6gtPy968QweFa6pf6U923cKroVmxuFHKHTtXqQhdWF
-	IumPRUgLGPiOfbSB9xaw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x0N0Kk30sAb9rbsVfVpdmByx2QvPhiUvXmevf54OM30=; b=I5aNM1YfF4L5yh
+	x40u2lje3XwryTmHc1w09sdJaCJzbt898zlC9L60fBHTGXFLa3KWw7paAbnOZEt8zR7D/MLWT06YQ
+	AUkuv1/2/1Al1FvZHrAIcevZbleAc96v2TYA1Y+dVrzpnJYYt4gGb6vzHvkZYBmpsy1aHKtGL7hcb
+	+KIkRCNgJkxjbjGy7oAgQ4UnRhXM3+7BNLPCCzRb2ruFVdVdoyv0qvn+ixyX6Voj5zHr+v01/d9m8
+	TqOEBoByPI5yXZF2/4k5KjVr9b+SbnOeG60Yn9nKsDotSgKNLXaQzdOh3az+fxDPqx2x9PxssFuHg
+	boGeV8NRiGmENWn4WBlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6vwz-00087Q-BW; Wed, 26 Feb 2020 12:38:05 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j6w1w-00020c-Oa; Wed, 26 Feb 2020 12:43:12 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6vwr-000875-7R
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:37:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id c13so2042378wrq.10
+ id 1j6w1m-00020H-QP
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:43:04 +0000
+Received: by mail-lj1-x241.google.com with SMTP id q8so2943004ljb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 04:37:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=sl4g8ajpYIserr/BQNDB0ANlrWQPEujK3XWceCDD3wo=;
- b=CKyFnKt8NRqrqLsG2GKUG8spMykbSX80d8lFefHYx/YxDDov4oagC8bD1aeFvtJc+2
- wwG0r+gewGwOiySsrZUq9I87Qe00TXm5MAeyQqpk+1yv1nxjg7uUtDwJL755KPcAZU+h
- Ep7LacYEQ4v/GF2DeINbJb37TNvVw5F2DQBsA48x+HpLKqtGkxOO9VssuVU75Q8rC3Jt
- HZihKw+iQpDDzollv/eLIgf7mVmqC0b9NPdhpXIUziKshpeR9s5dPme4tonP9pz33EkW
- 4gtoQ1a+rBbamgBwc+7JcU9A4NwmYocVDhiO8Aa2OCLky2/Yc5swKvtvll24NPrO0y4g
- ooXQ==
+ Wed, 26 Feb 2020 04:43:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=naHmwMkEZlsq2F2BdV78t7a2n6KXkH4cArO0DzqKw9s=;
+ b=oQ1YXDo6+jB9aH9a05GU0xwO2NeTx0pZ2jpQW5sC7FObezAamb9GLR1j9y80Vd7PW4
+ 5XEffKqjS2T8VLrsMUL0B2r14bi6hf7ak0FjH/qafJEHkGVUiPpOwEC2K/SotBZqNBdT
+ I+xDbdHSXNJZgX2OTKDz5Vc3iMPuXVCPpvMLeAy3NPWzFm1nmue6F3HMibuTpfGnayE+
+ SyzzsNrJ6YpQLC0V2Bkc85eHEJ8Yu/7h9Bj3XtOnkGKqumkYA9Zv2fUGZW4rRP7XZJG1
+ HxEaYpF9FFJMrft2C6sK5HsayCuwHzrqHHWgJ8KAOXTKT0rjr9T+KJL5lwtaAOtbpBc5
+ 7TkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=sl4g8ajpYIserr/BQNDB0ANlrWQPEujK3XWceCDD3wo=;
- b=gSEd37hsCP7aGvnr7yaXooixzVUwd4ycg8Qfz+LzGVHCTZdpS85enN4jlC4fApzQUF
- 1eBonu9LdxSnJ+ehyoL5SVi6gp+sNaukxOM5Ur6uDCaT9H6+0QpNKEMl22L1IaZ7qL2l
- pSqOhl6WaMMYmwRB9Tp/jlRkm34RaDpGy45+u7KKLKPNF/F2uly4X//JR1kwueXRSnY2
- 1rwbqupemD5h2+AmOsMhaes+fdTB8+8OLzpZBNE7tGMkcoF6JQnH7A5iDi8WyJzOIBoW
- 0b256yfKi/Xq+6kzooN6vVmqxuvHQUKYvgyp8oPPjswXmpxRXCyX/4jG4KXgergPu0ha
- z4NA==
-X-Gm-Message-State: APjAAAXJvusQ0S+qyiWgXVETbA3+DXPmmy7I2qbnVMZ+6PnpQsDt/vPw
- nrlZT5kVhbVTm/A++tJ/cd9eJg+hM5M=
-X-Google-Smtp-Source: APXvYqyS5pKZ++2YO+at6kjlY0Jri1wlYgGavHcMriREnRs6DsBgA19UTSe8ZMJarqrxlXQEjfMKAw==
-X-Received: by 2002:a5d:488c:: with SMTP id g12mr5538501wrq.67.1582720675306; 
- Wed, 26 Feb 2020 04:37:55 -0800 (PST)
-Received: from localhost.localdomain
- ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id f1sm3093345wro.85.2020.02.26.04.37.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 04:37:54 -0800 (PST)
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: catalin.marinas@arm.com,
-	will@kernel.org
-Subject: [PATCH v2] arm64: context: Fix ASID limit in boot warning
-Date: Wed, 26 Feb 2020 13:37:38 +0100
-Message-Id: <20200226123738.582547-1-jean-philippe@linaro.org>
-X-Mailer: git-send-email 2.25.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=naHmwMkEZlsq2F2BdV78t7a2n6KXkH4cArO0DzqKw9s=;
+ b=BKvDTlDF9POqIY8MVkNakOUTZEiKJkRcDAKtjXLBc0G2pXGNNDQQsqTp6Emsc+wtpf
+ myFALS9iPVukd07v35q7rJFanKFSGb6jxX7rtRXFc2EvyeX73IpuZHSwX3qUGIvvP1Ws
+ 5KVJVXihA+BldYgVeoZYy1zHNpb2eCJU1q3PpNAqMkepMFuutSfLlvkwICg/Sf/ng3hU
+ 4+DcDTxLPJFVPeeIJWJtvmYIscx9VmD7SPU4T82COlIDY3SwCcmMWFxFOdhq0+xMoCxn
+ xbm1LiXTV8XF4DY/d4bMRvk2dTKgpMmEqQpHLeggOVX9HlY1Wm7RxKxOUOtFcobc/ii6
+ /bwQ==
+X-Gm-Message-State: APjAAAXPONoLwNpzPmvH/ST6jSi/PdQgsF1Py2aclbtbwLj4Y8FCbjGO
+ 9LeYW3DCiLGsGgeLB+kwNfJWKh7cSG3TG9IV87g=
+X-Google-Smtp-Source: ADFU+vtwr9qHZQRp7nOQn9p0PoE3msDjcGJRvRyC8H+RwcRzDCO3GQIm5dNAC1Bue/fML340D2kMrue/X63xSXz+WfQ=
+X-Received: by 2002:a05:651c:d4:: with SMTP id
+ 20mr2838816ljr.269.1582720979846; 
+ Wed, 26 Feb 2020 04:42:59 -0800 (PST)
 MIME-Version: 1.0
+References: <20200224062917.4895-1-martin.kepplinger@puri.sm>
+ <20200224062917.4895-2-martin.kepplinger@puri.sm>
+In-Reply-To: <20200224062917.4895-2-martin.kepplinger@puri.sm>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 26 Feb 2020 09:42:49 -0300
+Message-ID: <CAOMZO5BxS-+1=NVgZ4nJcneVGMr7B8sLL+gYidXfgrvPSRB0JQ@mail.gmail.com>
+Subject: Re: [PATCH v3 1/8] arm64: dts: librem5-devkit: enable sai2 and sai6
+ audio interface
+To: Martin Kepplinger <martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_043757_269647_4D19F93B 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20200226_044302_859342_38CC9FAC 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -96,66 +96,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, vladimir.murzin@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ kernel@puri.sm, Yongcai Huang <Anson.Huang@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since commit f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI
-is not in use"), the NUM_USER_ASIDS macro doesn't correspond to the
-effective number of ASIDs when KPTI is enabled. Get an accurate number
-of available ASIDs in an arch_initcall, once we've discovered all CPUs'
-capabilities and know if we still need to halve the ASID space for KPTI.
+Hi Martin,
 
-Fixes: f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI is not in use")
-Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
----
-v1->v2: move warning to arch_initcall(), post capabilities (e.g. E0PD)
-        discovery
+On Mon, Feb 24, 2020 at 3:31 AM Martin Kepplinger
+<martin.kepplinger@puri.sm> wrote:
+>
+> From: "Angus Ainslie (Purism)" <angus@akkea.ca>
+>
+> Add missing sai2 and sai6 audio interface and pinctrl definitions for the
+> Librem 5 devkit.
+>
+> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
+> Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
 
-This change may be a little invasive for just a validation warning, but
-it will likely be needed later, in the asid-pinning patch I'd like to
-introduce for IOMMU SVA.
----
- arch/arm64/mm/context.c | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+Maybe you could rearrange patches 1 and 2 like this:
 
-diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
-index 8ef73e89d514..efe98f0dcc89 100644
---- a/arch/arm64/mm/context.c
-+++ b/arch/arm64/mm/context.c
-@@ -260,14 +260,23 @@ asmlinkage void post_ttbr_update_workaround(void)
- 			CONFIG_CAVIUM_ERRATUM_27456));
- }
- 
--static int asids_init(void)
-+static int asids_update_limit(void)
- {
--	asid_bits = get_cpu_asid_bits();
- 	/*
- 	 * Expect allocation after rollover to fail if we don't have at least
- 	 * one more ASID than CPUs. ASID #0 is reserved for init_mm.
- 	 */
--	WARN_ON(NUM_USER_ASIDS - 1 <= num_possible_cpus());
-+	bool kpti = arm64_kernel_unmapped_at_el0();
-+	unsigned long num_available_asids = (1UL << (asid_bits - kpti)) - 1;
-+
-+	WARN_ON(num_available_asids <= num_possible_cpus());
-+	return 0;
-+}
-+arch_initcall(asids_update_limit);
-+
-+static int asids_init(void)
-+{
-+	asid_bits = get_cpu_asid_bits();
- 	atomic64_set(&asid_generation, ASID_FIRST_VERSION);
- 	asid_map = kcalloc(BITS_TO_LONGS(NUM_USER_ASIDS), sizeof(*asid_map),
- 			   GFP_KERNEL);
--- 
-2.25.0
+Add simcom 7100 modem support
+Add sgtl5000 support
 
+This way it is clearer where SAI2 and SAI6 ports are actually used.
 
 _______________________________________________
 linux-arm-kernel mailing list
