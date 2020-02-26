@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC94170C5E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:11:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05B43170CC3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:48:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PZX1X84xVm2sIt0Sgo4A3cjGCmtIpBHnGq3rm91xnFU=; b=MKbrvWP/HBovTwxEk9Z8Q8oUY
-	PKt3RrxuT3e11iwSONVl8cvqzznOEm6RMXYlPciubNQ2S68ethWRvqgIcdMqDd9VW59BVBPiKgeNS
-	Y5b6wxDuVCijZ7ADoRmmMPtCKOZs9611MnecBLabU15g64sgsrDvQTOwPYGEhLGcJZXf3ERCCvVHK
-	KSGPUKVx2XaYpR0xXS5Gj36ezgYyrpP1o/qp6RtX+F86d+B+/3GQvPcYnPiwjbQ3Zqu2HTbvKiQ63
-	W3Vfsvwj1/1aGPQeo2Oux/pOCb7aryj9v2/0WiKmlWsgKadvuEjnILa0HfBAj6YF3XYSI16ThQoMN
-	cgqG28YDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vRXS4Jd5UvptRGshStcF+Za/DT/hRrE4Mqy94kKRPzQ=; b=rFNDthFr1FYGz0
+	1igAVToETu5DzZg8QcFln8MyYI+q5erFZdyT84bJQSouHFOAB8R5GHK1YylDXnA9Dj/IOp4YvP2Cd
+	QJ49Y3myiSaSXaiZ9yi7d1ZSjRPP+ySmjHGh7w1apTJrkz9xzjd4tqrrhKtrpx+7Feu6IyCLdeUy4
+	rGE7yQRhNl4HlUzU2brPJQuLq70PA1ULN38ZkBqqUbiO6UVoYQZNG7qZOAazhXUPPmUn/GMHOm+FX
+	Xth9gykXzBtuqnMU5fpF6z0YWhXj/1aHlE76qxLaS28eWhhEkDzzmkKzSTcw2w0ilTLVKqW7B/GkC
+	zV2gQBI/s36H3CjtTpkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j75pa-0008Ox-FE; Wed, 26 Feb 2020 23:11:06 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1j76Px-0000AC-Ok; Wed, 26 Feb 2020 23:48:41 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j75pO-0008O8-Li
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:10:56 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1582758653; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=LwIg2ej0qktnR5lwlPkQCTHuArHrJYoONAMEHJ0gpmM=;
- b=Oepbpcw1EWrR+ueIjYNvFMc/ZNRbMm+b3fjlmiK6qzBvyLBvuOLinx+P+5aaTnsVr0aYL2A5
- rH/kgr5Q7nUp74sbtJGMd/QzTwKx6ervTfYhL57XJFYFF9qx+cLGaHyshwc/honuwxD10lCp
- zDRKsxs7IvstT/hng2woM6Zurxs=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e56faea.7fe30e556ca8-smtp-out-n01;
- Wed, 26 Feb 2020 23:10:34 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 31646C4479D; Wed, 26 Feb 2020 23:10:33 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.134.64.128] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: sidgup)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 12203C43383;
- Wed, 26 Feb 2020 23:10:32 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 12203C43383
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=sidgup@codeaurora.org
-Subject: Re: [PATCH 1/2] remoteproc: core: Add an API for booting with
- firmware name
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-References: <1582164713-6413-1-git-send-email-sidgup@codeaurora.org>
- <1582164713-6413-2-git-send-email-sidgup@codeaurora.org>
- <20200224183043.GA9477@xps15>
-From: Siddharth Gupta <sidgup@codeaurora.org>
-Message-ID: <bbccf58a-2c3a-38f3-bd63-e7aeb8213b34@codeaurora.org>
-Date: Wed, 26 Feb 2020 15:10:31 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j76Pp-00009d-4T
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:48:34 +0000
+Received: by mail-pl1-x641.google.com with SMTP id u3so334954plr.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Feb 2020 15:48:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axtens.net; s=google;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=UW09MiMy2GaFwFAJ/K3zl0bfOBctGn1N/5oBnyfXBBo=;
+ b=p/9RYB8kgMB0e8z5IDwOgAal1bA5SLd2SFKLv25Ung8/p0BhAB86euEgkobREoxfmp
+ yKqg6pDpBKuUpdrEwTr9vEVyrfSL+cXkHm3hBTYBDohCfSV3uahMaoXMOOdshJ4aR+Fu
+ V1toxermAqGtoIKM5MGgcSal+/esLdjYKwiLE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=UW09MiMy2GaFwFAJ/K3zl0bfOBctGn1N/5oBnyfXBBo=;
+ b=mxcFOUHgcalMf7Ykno868Rv+fxYAvhlDEVz+d4vgkDoV0njunTSNwZBk+mgrU3qzJ4
+ 7Eqy9mtHyhCaQLlzowMO3NoGmFSoLZvTgJUBVx/DCUpXF85V8jLQqyLCZpA156IHubuN
+ 5ac/xe6rKG9jRRKuvhPCB2P9Gxfu0G0WLEoccx/m16eiyLXihjbMkG/+KiZpGcOb6niX
+ 5JjLeyQgXoQZwrNObPI7PjdUK/JgY6ZFxrmkAAG6vd+bGco1M+rG7MdBnYxTrNvnfi+p
+ nBBt6MfEpL7Ndyr3hQsXSJpeJK13gdSI3Q2Oy1ZjOkFxzq+RngS2RgtXOaiPxw2F9j+p
+ Pm8Q==
+X-Gm-Message-State: APjAAAVCXgOHF8iJ3+ExDu9vGGqp5lGFEz+/CrbFfX7t3EXH9eSpi3x/
+ V3IF/PrOBmNwta3LDic5HJSdqA==
+X-Google-Smtp-Source: APXvYqwO0geOgUQ2VFTz4udUkoL6gA+i5YLlDwNbhBkmZKUuVfAD8LuxK/3KK4B4kuG2YBBwmhPS2w==
+X-Received: by 2002:a17:902:ba93:: with SMTP id
+ k19mr1782695pls.197.1582760911494; 
+ Wed, 26 Feb 2020 15:48:31 -0800 (PST)
+Received: from localhost
+ (2001-44b8-1113-6700-5952-947b-051c-ea5f.static.ipv6.internode.on.net.
+ [2001:44b8:1113:6700:5952:947b:51c:ea5f])
+ by smtp.gmail.com with ESMTPSA id f127sm4475804pfa.112.2020.02.26.15.48.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 26 Feb 2020 15:48:30 -0800 (PST)
+From: Daniel Axtens <dja@axtens.net>
+To: linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ kasan-dev@googlegroups.com
+Subject: Re: [PATCH v2 0/3] Fix some incompatibilites between KASAN and
+ FORTIFY_SOURCE
+In-Reply-To: <20200116062625.32692-1-dja@axtens.net>
+References: <20200116062625.32692-1-dja@axtens.net>
+Date: Thu, 27 Feb 2020 10:48:26 +1100
+Message-ID: <87o8tkrjud.fsf@dja-thinkpad.axtens.net>
 MIME-Version: 1.0
-In-Reply-To: <20200224183043.GA9477@xps15>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_151054_776552_A66B2106 
-X-CRM114-Status: GOOD (  25.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200226_154833_201445_31BEEA94 
+X-CRM114-Status: GOOD (  14.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,130 +96,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, rishabhb@codeaurora.org, psodagud@codeaurora.org,
- linux-arm-kernel@lists.infradead.org
+Cc: christophe.leroy@c-s.fr, linux-s390@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, x86@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
+ dvyukov@google.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey Mathieu,
+Daniel Axtens <dja@axtens.net> writes:
 
-On 2/24/2020 10:30 AM, Mathieu Poirier wrote:
-
-> Hi Siddharth,
+> 3 KASAN self-tests fail on a kernel with both KASAN and FORTIFY_SOURCE:
+> memchr, memcmp and strlen. I have observed this on x86 and powerpc.
 >
-> On Wed, Feb 19, 2020 at 06:11:52PM -0800, Siddharth Gupta wrote:
->> Add an API which allows to change the name of the firmware to be booted on
->> the specified rproc. This change gives us the flixibility to change the
->> firmware at run-time depending on the usecase. Some remoteprocs might use
->> a different firmware for testing, production and development purposes,
->> which may be selected based on the fuse settings during bootup.
->>
->> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
->> ---
->>   drivers/remoteproc/remoteproc_core.c | 34 ++++++++++++++++++++++++++++++++++
->>   include/linux/remoteproc.h           |  1 +
->>   2 files changed, 35 insertions(+)
->>
->> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
->> index 097f33e..5ab65a4 100644
->> --- a/drivers/remoteproc/remoteproc_core.c
->> +++ b/drivers/remoteproc/remoteproc_core.c
->> @@ -1779,6 +1779,40 @@ int rproc_boot(struct rproc *rproc)
->>   EXPORT_SYMBOL(rproc_boot);
->>   
->>   /**
->> + * rproc_boot_with_fw() - boot a remote processor with the specified firmware
->> + * @rproc: handle of a remote processor
->> + * @firmware: name of the firmware to boot with
->> + *
->> + * Change the name of the firmware to be loaded to @firmware in the rproc
->> + * structure, and call rproc_boot().
->> + *
->> + * Returns 0 on success, and an appropriate error value otherwise.
->> + */
->> +int rproc_boot_with_fw(struct rproc *rproc, const char *firmware)
->> +{
->> +	char *p;
->> +
->> +	if (!rproc) {
->> +		pr_err("invalid rproc handle\n");
->> +		return -EINVAL;
->> +	}
->          if (!rproc || !firmware)
->                  return -EINVAL;
+> When FORTIFY_SOURCE is on, a number of functions are replaced with
+> fortified versions, which attempt to check the sizes of the
+> operands. However, these functions often directly invoke __builtin_foo()
+> once they have performed the fortify check.
 >
-> There is no user involved here so no point in printing anything.  If @rproc or
-> @firmware is NULL than callers should be smart enough to figure it out from the
-> error code.
+> This breaks things in 2 ways:
+>
+>  - the three function calls are technically dead code, and can be
+>    eliminated. When __builtin_ versions are used, the compiler can detect
+>    this.
+>
+>  - Using __builtins may bypass KASAN checks if the compiler decides to
+>    inline it's own implementation as sequence of instructions, rather than
+>    emit a function call that goes out to a KASAN-instrumented
+>    implementation.
+>
+> The patches address each reason in turn. Finally, test_memcmp used a
+> stack array without explicit initialisation, which can sometimes break
+> too, so fix that up.
 
-I was trying to mimic the behaviour of rproc_boot here actually, since 
-we were trying to make this
-an API for users to directly boot with firmware name.
+Hi all,
+
+It doesn't look like this has been picked up yet. Is there anything I
+can do to help things along?
+
+Regards,
+Daniel
 
 >
->> +
->> +	if (firmware) {
->> +		p = kstrdup(firmware, GFP_KERNEL);
->> +		if (!p)
->> +			return -ENOMEM;
-> As in firmware_store() I think it is a good idea to mandate the MCU be offline
-> before changing the firmware name.  That way we avoid situations where what is
-> running on the MCU is not what gets reported in sysfs.
-
-Sure, that makes sense.
-
->> +
->> +		mutex_lock(&rproc->lock);
->> +		kfree(rproc->firmware);
->> +		rproc->firmware = p;
->> +		mutex_unlock(&rproc->lock);
->> +	}
->> +
->> +	return rproc_boot(rproc);
-> Function rproc_boot() is also an exported symbol and belongs in the caller -
-> please move it out of here.  When that is done rproc_boot_with_fw() can become
-> rproc_set_firmware_name() and concentrate on doing just that.
-
-Okay sounds good.
-
+> v2: - some cleanups, don't mess with arch code as I missed some wrinkles.
+>     - add stack array init (patch 3)
 >
->> +}
->> +EXPORT_SYMBOL(rproc_boot_with_fw);
-> Although choosing the firmware image to boot without user involvement seems like
-> a valid scenario to me, this can't be added until there is an actual user of
-> this API.
-That's true. We have a few cases downstream where we need this 
-functionality. We were wondering
-if anyone else might have use of such functionality, and create an 
-upstream API in that case. Your
-suggestion of creating rproc_set_firmware_name() is a better approach 
-for sure though. We're looking
-at creating a new remoteproc (platform) driver which will need this 
-functionality.
->> +
->> +/**
->>    * rproc_shutdown() - power off the remote processor
->>    * @rproc: the remote processor
->>    *
->> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
->> index 16ad666..e2eaba9 100644
->> --- a/include/linux/remoteproc.h
->> +++ b/include/linux/remoteproc.h
->> @@ -609,6 +609,7 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
->>   			     u32 da, const char *name, ...);
->>   
->>   int rproc_boot(struct rproc *rproc);
->> +int rproc_boot_with_fw(struct rproc *rproc, const char *firmware);
->>   void rproc_shutdown(struct rproc *rproc);
->>   void rproc_report_crash(struct rproc *rproc, enum rproc_crash_type type);
->>   int rproc_coredump_add_segment(struct rproc *rproc, dma_addr_t da, size_t size);
->> -- 
->> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
->> a Linux Foundation Collaborative Project
+> Daniel Axtens (3):
+>   kasan: stop tests being eliminated as dead code with FORTIFY_SOURCE
+>   string.h: fix incompatibility between FORTIFY_SOURCE and KASAN
+>   kasan: initialise array in kasan_memcmp test
+>
+>  include/linux/string.h | 60 +++++++++++++++++++++++++++++++++---------
+>  lib/test_kasan.c       | 32 +++++++++++++---------
+>  2 files changed, 68 insertions(+), 24 deletions(-)
+>
+> -- 
+> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
