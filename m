@@ -2,89 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5914316F690
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 05:46:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B705816F6E8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 06:13:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HmBWOPgDGXMjx0At+t9EHkXcnt78nrQiLRRYeABfV14=; b=dw5fgtVJt7WaJC
-	cv/x57c5/OeR1/nuCv9uKk3YhzsWQ3ZO40K7epI0iwi2Us4UAqFostQCRlou/eMiq9G+tSj6+vBaz
-	K05Hef2G9zIaNkaH1VZ9otWosnchdQB6c32Fmekz0SUruugppKH5fFz0Xu6CCqp3NRbg6LDKJFbHn
-	RJuhkLUnG5wpUcyaWQxVoLYDPQ5MJEfJ60diEPoKrnu2eY8xXk7flLHnP3ZdkmI3PYKfktmv+tlXg
-	y4EwvWqkFCDk5FmHrVGgZ0tos4rzMRvyc7/gDpY1JLiIleVVuIONJ3e9LIQSv/QNum1xEpLbbP24E
-	2MDbzcODZ5FFfUsYwEEA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=esoL6RGQErcXQCbEBwxY+GSVzVe47UTUVz/8pEjI5sk=; b=nieAGJTCX2IqFX
+	Spnppjp8yByzLhZ0S/G0mudUR51GONujYteZKxYflMG2gtq2cxv5wvMZwHNplNd8W3rdAyCIigqJD
+	WA1DRGfOOcAb3eqq70zB+RXuUVc/7EqtUxnN23IWTXm6se1YxbGnnqazrfVgF3DUEYLMRS8JVlWU0
+	Qm6MaAYEo3oZl7Rz6kL5iDLmhfbbbHZ6i9Uor6rxIPmSo9XQdIUg+47bUh5LYBckK5dsezojRArcq
+	NGUP8plwXq1HGoiDaqcHuocQjbQAXe7lQ8yNMy9JEIiRljbwHNcPU79J6EtEXDj7eZlPeuaiSu4wJ
+	uru9LmGAiw9xGIx4apow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6oaK-0002bZ-AM; Wed, 26 Feb 2020 04:46:12 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1j6p0n-0002n5-8E; Wed, 26 Feb 2020 05:13:33 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6oa9-0002Yt-GS
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 04:46:03 +0000
-Received: by mail-oi1-x241.google.com with SMTP id b18so1774413oie.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 20:46:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EKUyDP4lZW18OTJVqKNfcbTr/pNluBP+Ac8mA7k4evM=;
- b=ofvWS/inAusVCo3l1y8QovhX4A7p7BrHR3o/38cH5h/oY+oPPGklAZwzipfIf14QU6
- potN5ZirnfbpuqlD3FbwCDt68S2VNziAe29j031oaTGqS5jme9cfqbcq9aS2Ev3tHZ+Y
- 4l+XyIFM0jvqUyCko5LHBk01vlk6v3SmOhxMU=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EKUyDP4lZW18OTJVqKNfcbTr/pNluBP+Ac8mA7k4evM=;
- b=ItW2ZW0aNxyS32l9WkfD04TIiNwNPqCnpXcro0FE4OFUhEk/bSgzRV3qsfSfVEKOL0
- vGtan4t5Yga1nuMDc+Mqw3xuzbUSRd08VrdjImiTj+bkrn1CCg8zYVNlgNg+HvgacDtU
- JWtzR8jDMIIWkJy8ROtOYO6wW7I8BOd9OpNYCPODbMtRaG+W8teWVe7vPRbmuoVRpkxQ
- tp+NmmPpyLu966561z7E2SFRgQZ7RMcmpUqtQmpjAl98B4s9zHQxAA8oWLCrD9xBUM4V
- 3H8S0NYjvpUyUwHfIFBJmyRnx0p+kkfREESALAzfEUL8xH7g1nqW7Olp2EyzbubRVoGh
- V7Cg==
-X-Gm-Message-State: APjAAAWqe9D3nn3UU/ndzsrk2UJqh03ww5q9GRQcQniuCLaBn82xENXt
- GP7hihijYLAmHjfFpPi4vCelt2FWUMG1Ww==
-X-Google-Smtp-Source: APXvYqzh+CsSKsJTd6J1J7Cc9MbeXZ/EvA2sRsmYC1brKS35H26H98DlniZhFxk14192Du3bZlf7BQ==
-X-Received: by 2002:aca:d985:: with SMTP id q127mr1616037oig.132.1582692359743; 
- Tue, 25 Feb 2020 20:45:59 -0800 (PST)
-Received: from mail-ot1-f46.google.com (mail-ot1-f46.google.com.
- [209.85.210.46])
- by smtp.gmail.com with ESMTPSA id k201sm359160oih.43.2020.02.25.20.45.58
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 25 Feb 2020 20:45:59 -0800 (PST)
-Received: by mail-ot1-f46.google.com with SMTP id j16so1815442otl.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 20:45:58 -0800 (PST)
-X-Received: by 2002:a05:6830:13da:: with SMTP id
- e26mr1449424otq.97.1582692357955; 
- Tue, 25 Feb 2020 20:45:57 -0800 (PST)
+ id 1j6p0d-0002mb-FC; Wed, 26 Feb 2020 05:13:25 +0000
+X-UUID: 6c6e5381aa6a4fc58d4bb9d0c8965af0-20200225
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=nEHARF1NYyw5mdbN6rF7aICK/jenBfECNzSSvcS+Ztw=; 
+ b=fnbKOOvYDgoYsdoejCFhalmhwXKR1To87CyFBMRetCkDT/MXvXrggnPbExmbueF5Q6BgTeH+kPLHiLH+SJ2e6y183r/xF0fWMpy2J1sN/KpYcKPrEZ8bNMTiUsRwlk/FVz6V/CGKUkzvqZJKi27fczYao820JsSVBfbapWNQ8IY=;
+X-UUID: 6c6e5381aa6a4fc58d4bb9d0c8965af0-20200225
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ran.bi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1374859130; Tue, 25 Feb 2020 21:13:18 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Feb 2020 21:13:15 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 13:11:59 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 26 Feb 2020 13:13:23 +0800
+From: Ran Bi <ran.bi@mediatek.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v3 0/4] Add Support for MediaTek MT2712 RTC
+Date: Wed, 26 Feb 2020 13:12:59 +0800
+Message-ID: <20200226051303.22560-1-ran.bi@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-References: <20200226033646.20949-1-gtk_ruiwang@mediatek.com>
- <20200226033646.20949-2-gtk_ruiwang@mediatek.com>
- <CAPBb6MWN6bXfYvpBJ6XyPCuvJSpdxNOf4Z9RbY0jbnB5=JX_sQ@mail.gmail.com>
- <1582690790.6276.19.camel@mhfsdcap03>
-In-Reply-To: <1582690790.6276.19.camel@mhfsdcap03>
-From: Alexandre Courbot <acourbot@chromium.org>
-Date: Wed, 26 Feb 2020 13:45:46 +0900
-X-Gmail-Original-Message-ID: <CAPBb6MWcoSjvxj5tHvWTiQWqY5CdgTemCmyhmio0yZMEq-4VWQ@mail.gmail.com>
-Message-ID: <CAPBb6MWcoSjvxj5tHvWTiQWqY5CdgTemCmyhmio0yZMEq-4VWQ@mail.gmail.com>
-Subject: Re: [PATCH] mediatek: move MT8173 VPU FW to subfolder
-To: gtk_ruiwang <gtk_ruiwang@mediatek.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_204601_783448_6190CFB3 
-X-CRM114-Status: GOOD (  16.94  )
+X-CRM114-CacheID: sfid-20200225_211323_523059_87867910 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,7 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,67 +85,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maoguang Meng <maoguang.meng@mediatek.com>, srv_heupstream@mediatek.com,
- Yunfei Dong <yunfei.dong@mediatek.com>,
- Longfei Wang <longfei.wang@mediatek.com>, LKML <linux-kernel@vger.kernel.org>,
- linux-firmware@kernel.org, Tomasz Figa <tfiga@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- PoChun.Lin@mediatek.com, "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, Flora
+ Fu <flora.fu@mediatek.com>, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, Ran Bi <ran.bi@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@mediatek.com>,
+ linux-kernel@vger.kernel.org, YT Shen <yt.shen@mediatek.com>,
+ linux-mediatek@lists.infradead.org,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Eddie Huang <eddie.huang@mediatek.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 1:20 PM gtk_ruiwang <gtk_ruiwang@mediatek.com> wrote:
->
-> Dear Alex,
->
-> Do you mean to create two symbolic link?
->
-> lrwxrwxrwx  1 gtk_ruiwang gtk_ruiwang      25 Feb 26 11:52 vpu_d.bin ->
-> mediatek/mt8173/vpu_d.bin
-> lrwxrwxrwx  1 gtk_ruiwang gtk_ruiwang      25 Feb 26 11:52 vpu_p.bin ->
-> mediatek/mt8173/vpu_p.bin
+This patchset add support to MT2712 RTC. MT2712 RTC is a SoC based RTC
+with different architecture compared to MT7622 RTC.
 
-Yes, otherwise older kernels will become unable to use the firmware. I
-don't know whether these are supposed to stay forever or whether we
-can remove them after a while... presumably the former.
+Changes in V3:
+1. change struct mt2712_rtc
+2. use 100 as year offset
+3. change irq handle thread
+4. remove useless rtc time check
+5. not modify struct rtc_time in set_time/set_alarm functions
+6. modify rtc init function
+7. add power lost flag for get_time/set_time functions
+8. add .alarm_irq_enable callback
+9. set rtc->range_min and rtc->range_max to do range checking
+10. use fixed driver name
 
-Also the WHENCE file should probably be updated to list the new files.
+Changes in V2:
+1. change minimum year from 1968 to 2000
+2. fix lock usage
+3. stop to calculate useless day of week
+4. stop to set default date after init
+5. change the prefix of functions
+6. use devm_request_threaded_irq() to replace request_threaded_irq()
+7. add mt2712 rtc related files into MAINTAINERS
 
->
-> we create them at the linux-firmware root folder.
->
-> Thanks
-> Best Regards
->
-> On Wed, 2020-02-26 at 12:41 +0900, Alexandre Courbot wrote:
-> > On Wed, Feb 26, 2020 at 12:38 PM <gtk_ruiwang@mediatek.com> wrote:
-> > >
-> > > From: gtk_ruiwang <gtk_ruiwang@mediatek.com>
-> > >
-> > > Currently vpu_d.bin and vpu_p.bin are at the root of
-> > > linux-firmware git tree, it's not appropriate so we move
-> > > them to subfolder mediatek/mt8173
-> > >
-> > > Release Version: 1.1.4
-> > >
-> > > Signed-off-by: Rui Wang <gtk_ruiwang@mediatek.com>
-> > > ---
-> > >  vpu_d.bin => mediatek/mt8173/vpu_d.bin | Bin
-> > >  vpu_p.bin => mediatek/mt8173/vpu_p.bin | Bin
-> > >  2 files changed, 0 insertions(+), 0 deletions(-)
-> > >  rename vpu_d.bin => mediatek/mt8173/vpu_d.bin (100%)
-> > >  rename vpu_p.bin => mediatek/mt8173/vpu_p.bin (100%)
-> >
-> > This is nice as it removes some stuff from the root, but for
-> > compatibility with older kernels that don't know about the new path
-> > shouldn't we at least temporarily create a symbolic link between the
-> > old location and the new one?
->
+Ran Bi (4):
+  bindings: rtc: add bindings for MT2712 RTC
+  rtc: add support for the MediaTek MT2712 RTC
+  arm64: dts: add RTC nodes for MT2712
+  MAINTAINERS: add MT2712 RTC files
 
+ .../devicetree/bindings/rtc/rtc-mt2712.txt    |  14 +
+ MAINTAINERS                                   |   2 +
+ arch/arm64/boot/dts/mediatek/mt2712e.dtsi     |   6 +
+ drivers/rtc/Kconfig                           |  10 +
+ drivers/rtc/Makefile                          |   1 +
+ drivers/rtc/rtc-mt2712.c                      | 422 ++++++++++++++++++
+ 6 files changed, 455 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/rtc/rtc-mt2712.txt
+ create mode 100644 drivers/rtc/rtc-mt2712.c
+
+-- 
+2.25.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
