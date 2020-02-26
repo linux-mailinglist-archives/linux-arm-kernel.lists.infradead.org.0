@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5485B1708F2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 20:31:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10221708FB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 20:34:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ieJaOjtAzlH2W1g2Fu/ZXWSpwgZDEgq85xS8zREpqF4=; b=UVBYt3LRNbFuWO
-	w0N8fww7oRGLKE9OjDdwJOuldY2ReDUDJllmTX1IpuHkPPtCrkobqeFyUrQB1bEt4cWWeISzubpyy
-	ViZJgIMnOeXaeGzXThea0EzKKAK/gGQ2lAwXUYI8WFIOXp25hTzGPh2VcpYB5r/fRG8LTizEqhdAW
-	dl7VhCIr7cya0ypj+EwcMaJ+GnRrI2yGnK2ToZorviwpQC/eqKFGYS2FAQ3pNnbfHMRp4ztv9011m
-	ZXZkM0YFZTOwFrrfXvqIL027gpbTihFfRARMhY3yTVM0tRf2A+cYZ/dytb+dGgj8XJPNFoijEVPrv
-	T5cZ749DJkXT+ExUqUGg==;
+	List-Owner; bh=2b/vz9UwxJgxCEMUrmgecArhWNpft9/2s/6BlmKHFC4=; b=cLdLI3MsdQVDRG
+	/KiqkRWBeySZja8y9J6NzG68YlUhyLNoHFk7bjUdrVgvwkTcMVwfHNktcKbgR6deW0nng/B778k2D
+	YJr/aedvLiDHAKbxK87DyGt/zf/9sTYaQFn0OAdzdkaDoDPn00XnnMHDiozLQbMMcPVNA4iK+aww5
+	FdD28jITK6516XLw6Lo6NXYV98DgRnh2R3IcyLLDe2Fcl7RBUWLEClzOE9V8HOFtk9juFT4q6Xf9f
+	u+7dgTfz4AYvZp8y75a8FPIn+dijeI/K8G0rQqIXOHEImblmd1qjDhWIBxDABgsvYiu85yczC6xyu
+	J+nRkyPvn8NpC1sR1upQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j72Ou-0006Ja-Fs; Wed, 26 Feb 2020 19:31:20 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1j72S9-0006ye-9T; Wed, 26 Feb 2020 19:34:41 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j72Oj-0006H3-SB
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 19:31:11 +0000
-Received: by mail-io1-xd42.google.com with SMTP id n21so385622ioo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 11:31:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5MFxJeomCczgXDzeNV9Xn+RHt64mPvJ12qZr3RbPrbU=;
- b=dWcCF8s4J9A+iP2iXoWcm3srPwjEatU3HdSYDIVsbNOiHHd7MtnwyuiE9mCNcHaGU0
- qwCoH2p/6/qrCzG/i3ueu4EZqypRCXV4NQTLYaswGjHLOJWyjjeUM9SXiYcQxeTrcELD
- ACUWcICt+Ximqv6VZnywYGgK6FeUCdHP4Ttig=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5MFxJeomCczgXDzeNV9Xn+RHt64mPvJ12qZr3RbPrbU=;
- b=XFT1SmpdKtyF5qrYZVBLgiN/Q8X8ZgwV8E1xTXHHHc2jcwx4S+ZQGLQukM8TSrQucJ
- oSZ70mUMjsFkdHcxuUOacyYGI/Y3du08dvISnJRtmN+OENpeA7ULMX62toGXc/NmDViQ
- FmNdSu3JBTCkr3p0hRIXsXjolWv18m27fgUjDWuSWjY7mt53efFBBs/+JgdnFmEQC1gE
- CQoTwHyJV7hMJIaQjGYM+rq/grNjzjH2xb91JRMjhXH7t7m0Vp9gov3LP3FvkzrpCpl0
- VLPJvt0Xv1kcqHVO3Uvxq0DtgUpr37E+ErzoxsZyjJtqqdN3f6pINAQO6LMq5FjDhe/L
- mCFA==
-X-Gm-Message-State: APjAAAUgtRZEvNQr35Sr+drYtr0xp1Pi+L8KjsnWW4YhBb3tVfMysSB4
- XVzPs/8zfP3hDzvGrd49HQIos98CxwNeuA/klM7oZg==
-X-Google-Smtp-Source: APXvYqwm7wEEXPS3MuEPhTwwGRUEbcd/4WOJm2XgfK0kRKisj4w+h5pA1wDFpztH3aEcTh+AhwR4v0v1+qCPqLGRK8w=
-X-Received: by 2002:a5d:8955:: with SMTP id b21mr146927iot.41.1582745462529;
- Wed, 26 Feb 2020 11:31:02 -0800 (PST)
+ id 1j72Ry-0006yH-VM
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 19:34:32 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga008.jf.intel.com ([10.7.209.65])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 26 Feb 2020 11:34:30 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,489,1574150400"; d="scan'208";a="231514911"
+Received: from jacob-builder.jf.intel.com (HELO jacob-builder) ([10.7.199.155])
+ by orsmga008.jf.intel.com with ESMTP; 26 Feb 2020 11:34:29 -0800
+Date: Wed, 26 Feb 2020 11:39:59 -0800
+From: Jacob Pan <jacob.jun.pan@linux.intel.com>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v4 06/26] iommu/sva: Register page fault handler
+Message-ID: <20200226113959.62621098@jacob-builder>
+In-Reply-To: <20200224182401.353359-7-jean-philippe@linaro.org>
+References: <20200224182401.353359-1-jean-philippe@linaro.org>
+ <20200224182401.353359-7-jean-philippe@linaro.org>
+Organization: OTC
+X-Mailer: Claws Mail 3.13.2 (GTK+ 2.24.30; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <20200221053802.70716-1-evanbenn@chromium.org>
- <20200221163717.v2.1.I02ebc5b8743b1a71e0e15f68ea77e506d4e6f840@changeid>
- <CAL_JsqL94vtBEmV2gNWx-D==sLiRXjxBBFZS8fw1cR6=KjS7XQ@mail.gmail.com>
- <CAKz_xw2ETZ5eyNfdWU5cF6Qy23E1NqhpFHoLT_CzUDHWTCbw4Q@mail.gmail.com>
- <CAL_JsqLYpSK6HRT4s=hq153xvU_aiPCq3Hk_oZC-7X7e7daA7Q@mail.gmail.com>
-In-Reply-To: <CAL_JsqLYpSK6HRT4s=hq153xvU_aiPCq3Hk_oZC-7X7e7daA7Q@mail.gmail.com>
-From: Julius Werner <jwerner@chromium.org>
-Date: Wed, 26 Feb 2020 11:30:51 -0800
-Message-ID: <CAODwPW_FR0gHO_=yfCPwETXvKG9CvgvPddX-EOT=OXDPEkp_Kg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: watchdog: Add mt8173, smc-wdt watchdog
-To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_113109_909649_E18BBF08 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20200226_113431_022882_A07B52AB 
+X-CRM114-Status: GOOD (  19.88  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,32 +66,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Evan Benn <evanbenn@chromium.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Julius Werner <jwerner@chromium.org>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- "David S. Miller" <davem@davemloft.net>, Guenter Roeck <linux@roeck-us.net>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
+ yi.l.liu@intel.com, jacob.jun.pan@linux.intel.com,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ linux-pci@vger.kernel.org, joro@8bytes.org, Jonathan.Cameron@huawei.com,
+ robin.murphy@arm.com, linux-mm@kvack.org, iommu@lists.linux-foundation.org,
+ robh+dt@kernel.org, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Not quite. /firmware is generic container. I'd expect another layer in
-> the middle for the overall set of Mediatek firmware behind smc calls.
-> Look at 'xlnx,zynqmp-firmware' for an example.
+On Mon, 24 Feb 2020 19:23:41 +0100
+Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
 
-There are no other MediaTek firmware interfaces described in the
-device tree on those platforms. Is it okay if we just call it
-/firmware/watchdog in that case?
+> From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+> 
+> When enabling SVA, register the fault handler. Device driver will
+> register an I/O page fault queue before or after calling
+> iommu_sva_enable. The fault queue must be flushed before any io_mm is
+> freed, to make sure that its PASID isn't used in any fault queue, and
+> can be reallocated. Add iopf_queue_flush() calls in a few strategic
+> locations.
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>  drivers/iommu/Kconfig     |  1 +
+>  drivers/iommu/iommu-sva.c | 16 ++++++++++++++++
+>  2 files changed, 17 insertions(+)
+> 
+> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
+> index e4a42e1708b4..211684e785ea 100644
+> --- a/drivers/iommu/Kconfig
+> +++ b/drivers/iommu/Kconfig
+> @@ -106,6 +106,7 @@ config IOMMU_DMA
+>  config IOMMU_SVA
+>  	bool
+>  	select IOASID
+> +	select IOMMU_PAGE_FAULT
+>  	select IOMMU_API
+>  	select MMU_NOTIFIER
+>  
+> diff --git a/drivers/iommu/iommu-sva.c b/drivers/iommu/iommu-sva.c
+> index bfd0c477f290..494ca0824e4b 100644
+> --- a/drivers/iommu/iommu-sva.c
+> +++ b/drivers/iommu/iommu-sva.c
+> @@ -366,6 +366,8 @@ static void io_mm_release(struct mmu_notifier
+> *mn, struct mm_struct *mm) dev_WARN(dev, "possible leak of PASID %u",
+>  				 io_mm->pasid);
+>  
+> +		iopf_queue_flush_dev(dev, io_mm->pasid);
+> +
+>  		/* unbind() frees the bond, we just detach it */
+>  		io_mm_detach_locked(bond);
+>  	}
+> @@ -442,11 +444,20 @@ static void iommu_sva_unbind_locked(struct
+> iommu_bond *bond) 
+>  void iommu_sva_unbind_generic(struct iommu_sva *handle)
+>  {
+> +	int pasid;
+>  	struct iommu_param *param = handle->dev->iommu_param;
+>  
+>  	if (WARN_ON(!param))
+>  		return;
+>  
+> +	/*
+> +	 * Caller stopped the device from issuing PASIDs, now make
+> sure they are
+> +	 * out of the fault queue.
+> +	 */
+> +	pasid = iommu_sva_get_pasid_generic(handle);
+> +	if (pasid != IOMMU_PASID_INVALID)
+> +		iopf_queue_flush_dev(handle->dev, pasid);
+> +
+I have an ordering concern.
+The caller can only stop the device issuing page request but there will
+be in-flight request inside the IOMMU. If we flush here before clearing
+the PASID context, there might be new request coming in before the
+detach.
+How about detach first then flush? Then anything come after the detach
+would be faults. Flush will be clean.
+
+>  	mutex_lock(&param->sva_lock);
+>  	mutex_lock(&iommu_sva_lock);
+>  	iommu_sva_unbind_locked(to_iommu_bond(handle));
+> @@ -484,6 +495,10 @@ int iommu_sva_enable(struct device *dev, struct
+> iommu_sva_param *sva_param) goto err_unlock;
+>  	}
+>  
+> +	ret = iommu_register_device_fault_handler(dev,
+> iommu_queue_iopf, dev);
+> +	if (ret)
+> +		goto err_unlock;
+> +
+>  	dev->iommu_param->sva_param = new_param;
+>  	mutex_unlock(&param->sva_lock);
+>  	return 0;
+> @@ -521,6 +536,7 @@ int iommu_sva_disable(struct device *dev)
+>  		goto out_unlock;
+>  	}
+>  
+> +	iommu_unregister_device_fault_handler(dev);
+>  	kfree(param->sva_param);
+>  	param->sva_param = NULL;
+>  out_unlock:
+
+[Jacob Pan]
 
 _______________________________________________
 linux-arm-kernel mailing list
