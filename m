@@ -2,48 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1793116FDA4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 12:27:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4054016FDBB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 12:31:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XpOrPR/JBs8a6v1ONe0B3SNVSaXSUrz9/Umk+sfov3s=; b=h1hoPVJeMXQZLu
-	w5lJEDX2UngSmZmxZXn/bGvr2yc5HLATlhrTxExsAW+h9v/m276Tw1K8GqPja6MDUZPUa31mZ4Xfx
-	EjmnOGMrk9L66hgdWeDBve/yb8YzKu9BdL4fMJ0oLesbc/ogCeosx4t7v4hyQBTt3w7WhSj+COokZ
-	qZO3WPgS8eLVkbKBOMqTYhV7+I9Wp/HuGR/mgY5WO6DcgUlg+QlHtUlbfN8uA2E1e8W3RVey0jgus
-	ircdR73sJhsPIwK0/VNJBk2MFNJ0RgHfI67YoO14EOzsR2KefZXcwTX5P6b8CecrsZleMYYhzz3Mi
-	GaegRc5Svy8EWsacm/Tg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xZd8zMj3TpkCDJW0WQ/DCwKBE93fZVZGhKceEH9SfdA=; b=r9GVlrtDSFc5JX
+	in2g2fixWWhNlNmnvO+YfuvfQ6V8Fh801yT2/Ge/JYqZYYZAyUlWRcUj7AnAWWLusn3OR1At1TGl4
+	3dKT6BDgab0oRPM3tooj4HSrWAvMyK2d8kO90jBmsrihPdgvP/K/hDaXsXDOE8ShnXMVEwysZRTHo
+	yVwzXzyzvn0aIRyrxZzOCgmAXzgUptIFDmM1FGFSiZFI/j9aggspMJs1z1B2GHSy/xlLIpkMmF46L
+	5iZtZR5XVwfIqpYh2vyeV8XxzwgLaafMa/O/p7hh4Avm73Xe/Xmqrkuv4tEkS4VO39eCbpXrVoYXX
+	r/s9JQehHOv2i1JqxF6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6uqu-0008Mc-Dk; Wed, 26 Feb 2020 11:27:44 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6uqj-0008ME-Fn; Wed, 26 Feb 2020 11:27:34 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id C1302293937
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] drm/mediatek: Remove debug messages for function calls
-Date: Wed, 26 Feb 2020 12:27:23 +0100
-Message-Id: <20200226112723.649954-1-enric.balletbo@collabora.com>
-X-Mailer: git-send-email 2.25.0
+	id 1j6uuU-0001iB-Nu; Wed, 26 Feb 2020 11:31:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6uuM-0001hP-1k
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 11:31:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E99611FB;
+ Wed, 26 Feb 2020 03:31:16 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28D233FA00;
+ Wed, 26 Feb 2020 03:31:16 -0800 (PST)
+Date: Wed, 26 Feb 2020 11:31:05 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Shawn Guo <shawn.guo@linaro.org>
+Subject: Re: [PATCH v2 2/2] PCI: histb: Correct PCIe reset operation
+Message-ID: <20200226113105.GA16925@e121166-lin.cambridge.arm.com>
+References: <20200109032851.13377-1-shawn.guo@linaro.org>
+ <20200109032851.13377-3-shawn.guo@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200109032851.13377-3-shawn.guo@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_032733_659226_32E17AC2 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200226_033118_130578_2FE65257 
+X-CRM114-Status: GOOD (  20.04  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,92 +64,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- CK Hu <ck.hu@mediatek.com>, Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
+ Jun Nie <jun.nie@linaro.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Equivalent information can be nowadays obtained using function tracer.
+On Thu, Jan 09, 2020 at 11:28:51AM +0800, Shawn Guo wrote:
+> The PCIe reset via GPIO in the driver never worked as expected.  Per
+> "Power Sequencing and Reset Signal Timings" table in
+> PCI EXPRESS CARD ELECTROMECHANICAL SPECIFICATION, the PERST# should be
+> deasserted after minimum of 100us once REFCLK is stable.
+> 
+> The assertion has been done when the GPIO is being requested, and
+> deassertion should be done in host enabling rather than disabling. Also
+> a bit wait is added to ensure device get ready after reset.
+> 
+> Signed-off-by: Shawn Guo <shawn.guo@linaro.org>
+> ---
+>  drivers/pci/controller/dwc/pcie-histb.c | 20 ++++++++++++++------
+>  1 file changed, 14 insertions(+), 6 deletions(-)
 
-Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
----
+Shawn,
 
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 5 -----
- drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 2 --
- 2 files changed, 7 deletions(-)
+this looks like a fix, please tag it as such and let me know if
+it has to be backported, in which case also the previous patch
+should I assume.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index a236499123aa..882c690d3f13 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -192,7 +192,6 @@ static int mtk_crtc_ddp_clk_enable(struct mtk_drm_crtc *mtk_crtc)
- 	int ret;
- 	int i;
- 
--	DRM_DEBUG_DRIVER("%s\n", __func__);
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
- 		ret = clk_prepare_enable(mtk_crtc->ddp_comp[i]->clk);
- 		if (ret) {
-@@ -212,7 +211,6 @@ static void mtk_crtc_ddp_clk_disable(struct mtk_drm_crtc *mtk_crtc)
- {
- 	int i;
- 
--	DRM_DEBUG_DRIVER("%s\n", __func__);
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
- 		clk_disable_unprepare(mtk_crtc->ddp_comp[i]->clk);
- }
-@@ -257,7 +255,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
- 	int ret;
- 	int i;
- 
--	DRM_DEBUG_DRIVER("%s\n", __func__);
- 	if (WARN_ON(!crtc->state))
- 		return -EINVAL;
- 
-@@ -298,7 +295,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
- 		goto err_mutex_unprepare;
- 	}
- 
--	DRM_DEBUG_DRIVER("mediatek_ddp_ddp_path_setup\n");
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
- 		mtk_ddp_add_comp_to_path(mtk_crtc->config_regs,
- 					 mtk_crtc->ddp_comp[i]->id,
-@@ -348,7 +344,6 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
- 	struct drm_crtc *crtc = &mtk_crtc->base;
- 	int i;
- 
--	DRM_DEBUG_DRIVER("%s\n", __func__);
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
- 		mtk_ddp_comp_stop(mtk_crtc->ddp_comp[i]);
- 		if (i == 1)
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 17f118ee0e57..4934834977b3 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -570,7 +570,6 @@ static int mtk_drm_sys_suspend(struct device *dev)
- 	int ret;
- 
- 	ret = drm_mode_config_helper_suspend(drm);
--	DRM_DEBUG_DRIVER("mtk_drm_sys_suspend\n");
- 
- 	return ret;
- }
-@@ -582,7 +581,6 @@ static int mtk_drm_sys_resume(struct device *dev)
- 	int ret;
- 
- 	ret = drm_mode_config_helper_resume(drm);
--	DRM_DEBUG_DRIVER("mtk_drm_sys_resume\n");
- 
- 	return ret;
- }
--- 
-2.25.0
+Thanks,
+Lorenzo
 
+> diff --git a/drivers/pci/controller/dwc/pcie-histb.c b/drivers/pci/controller/dwc/pcie-histb.c
+> index 112254619ed0..67c27a8036c7 100644
+> --- a/drivers/pci/controller/dwc/pcie-histb.c
+> +++ b/drivers/pci/controller/dwc/pcie-histb.c
+> @@ -219,9 +219,6 @@ static void histb_pcie_host_disable(struct histb_pcie *hipcie)
+>  	clk_disable_unprepare(hipcie->sys_clk);
+>  	clk_disable_unprepare(hipcie->bus_clk);
+>  
+> -	if (hipcie->reset_gpio)
+> -		gpiod_set_value_cansleep(hipcie->reset_gpio, 0);
+> -
+>  	if (hipcie->vpcie)
+>  		regulator_disable(hipcie->vpcie);
+>  }
+> @@ -242,9 +239,6 @@ static int histb_pcie_host_enable(struct pcie_port *pp)
+>  		}
+>  	}
+>  
+> -	if (hipcie->reset_gpio)
+> -		gpiod_set_value_cansleep(hipcie->reset_gpio, 1);
+> -
+>  	ret = clk_prepare_enable(hipcie->bus_clk);
+>  	if (ret) {
+>  		dev_err(dev, "cannot prepare/enable bus clk\n");
+> @@ -278,6 +272,20 @@ static int histb_pcie_host_enable(struct pcie_port *pp)
+>  	reset_control_assert(hipcie->bus_reset);
+>  	reset_control_deassert(hipcie->bus_reset);
+>  
+> +	if (hipcie->reset_gpio) {
+> +		/*
+> +		 * "Power Sequencing and Reset Signal Timings" table in
+> +		 * PCI EXPRESS CARD ELECTROMECHANICAL SPECIFICATION, indicates
+> +		 * PERST# should be deasserted after minimum of 100us
+> +		 * once REFCLK is stable.
+> +		 */
+> +		usleep_range(100, 200);
+> +		gpiod_set_value_cansleep(hipcie->reset_gpio, 0);
+> +
+> +		/* wait 1ms for device to be ready */
+> +		usleep_range(1000, 2000);
+> +	}
+> +
+>  	return 0;
+>  
+>  err_aux_clk:
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
