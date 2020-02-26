@@ -2,89 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 157201701A3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 15:56:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4EAE1701B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 15:58:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aXNW3djKsO1snf47Xu+rbRuzqzASdPAbOXqVOMClwko=; b=V8uZRya3rJcqgZ
-	J3S1mYljpBfT2NBav/1f0UjqMxYwbLegXY7iDyJIJbSc9HFDkgJ8u91ruJsAdBjYryYHOv6wPHI0C
-	so+sTCDdt62v+eO+2wYuHIGgbCqlOFbr/ScyTyDbB6gDbk7JfANzSe86nNmgu0zE5jV0NO4ItNPxZ
-	pjMTCTkSarTqPEetuSw/nE2wUHTdTCSptOX880zWk/uPMcjnnHL16Zz5XQVNzt5xDaBCiCMavS8iI
-	t4GeWjArZaRroVDZto91oqoZzcPi49KhRyZ13zwX2lTbZvWGv/pOUGbENijIzZJ5KTFMKmvH+UCwD
-	MdUHAIM/FPjdP9/NYw3A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wE4O+D+8rJPIMVEcUOrOFnzZkX+SSSuG2wtWGUvnvpI=; b=YER3VcwGPcRilSfk1qzuY3Ykn
+	xCiXrS6iUBNGngH6Y0plSpqBloctHWSssh1HvCnfFY963BFvFToDB+LHLR+x7l1W5x7ga3vfxCOor
+	tr3JLMDiDtcxdKtUchp8eX05PsLz4Fs2nY2BnB/KAQLMNzxlP2VD3iCwD03iasQZEHH8ninasG2ul
+	YXWt9qOwp43XliO/ml31zhIbK9BWWusZrFxKQBFehFhjDTrGf6Fhzx21km4m4PX+dlDFNsXSHAYR2
+	6GAgFVZpT2q9cI2zmrDL37fEAgELrdtOYuTVFBEcmaitUYfluiacRsg6c9M0iH6ZMt2vS8Jz6CfpG
+	fzidRavnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6y72-0006LA-Gl; Wed, 26 Feb 2020 14:56:36 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1j6y8Y-0006s5-FR; Wed, 26 Feb 2020 14:58:10 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6y6s-0006KB-6n
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 14:56:27 +0000
-Received: by mail-ot1-f66.google.com with SMTP id j16so3220549otl.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 06:56:25 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=4+aLnsPdP1/QbRnyIoXI03Tshsf4suv6arri2MUC+qo=;
- b=iiPULg6eNYvzj0Ub3DtBxcpXLOXYE/ey1ZvKKimm6dihwN/BxW3wgNwpLnqBmlescV
- w4Eo4AYUCqgsEFy4AwKOLb9E1QQ4NNIxvFvx+agEukqc1R/ps3jjx0qPNu7hbjz68BV6
- wdjRaPVtWidyF/v8xgMm+DccudwnNcD9d9d8szMJDE9a1YtLGlGV7Dk6VxmdDXpf/lOJ
- dglWXTmfmfXQGsihTU3CmRfPq0g+cF7ocXnoOapLoVRK70eJ1LPHDj9bqJWCPXTQOTbV
- 6TMtxc9QqhphFgRbox9qFWSotVkNOVpPbNTrl0s2XnuISG0B9iUL14S9r5ypwaq0Mctb
- h3lQ==
-X-Gm-Message-State: APjAAAXJi7n85zleZHBVJetbCRFXYMvj4VtmNObuH8bikdGu9inNTVI8
- gDEF6SJ9AXPYhkBoXuDfZg==
-X-Google-Smtp-Source: APXvYqzrUda0vSZtD9CpveeEfxdVZW6Zdsm+zPooigQG/TE92zsXfEODvCU6ebACAkEHgk7TJbw6sA==
-X-Received: by 2002:a05:6830:1047:: with SMTP id
- b7mr3582500otp.77.1582728985048; 
- Wed, 26 Feb 2020 06:56:25 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w197sm884841oia.12.2020.02.26.06.56.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 06:56:24 -0800 (PST)
-Received: (nullmailer pid 23432 invoked by uid 1000);
- Wed, 26 Feb 2020 14:56:23 -0000
-Date: Wed, 26 Feb 2020 08:56:23 -0600
-From: Rob Herring <robh@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v2 3/6] dt-bindings: Add Guangdong Neweast
- Optoelectronics CO. LTD vendor prefix
-Message-ID: <20200226145623.GA22420@bogus>
-References: <20200226081011.1347245-1-anarsoul@gmail.com>
- <20200226081011.1347245-4-anarsoul@gmail.com>
+ id 1j6y8M-0006ra-Us; Wed, 26 Feb 2020 14:58:00 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id E490AAC5C;
+ Wed, 26 Feb 2020 14:57:56 +0000 (UTC)
+Message-ID: <f34f037ebb9219c34480814433a277054c345690.camel@suse.de>
+Subject: Re: [PATCH 10/89] clk: bcm: rpi: Remove global pllb_arm clock pointer
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Maxime Ripard <maxime@cerno.tech>
+Date: Wed, 26 Feb 2020 15:57:53 +0100
+In-Reply-To: <20200226142617.mvis6olfzakiwqcc@gilmour.lan>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <3876f732b3fec2059270678d464d27b7d3a0414b.1582533919.git-series.maxime@cerno.tech>
+ <52aebb76952df530f93e9de539124ddf1b825876.camel@suse.de>
+ <20200226142617.mvis6olfzakiwqcc@gilmour.lan>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200226081011.1347245-4-anarsoul@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_065626_241448_2D50EA41 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200226_065759_140409_E141452F 
+X-CRM114-Status: GOOD (  13.39  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,36 +64,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Sam Ravnborg <sam@ravnborg.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Samuel Holland <samuel@sholland.org>,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- Chen-Yu Tsai <wens@csie.org>, Icenowy Zheng <icenowy@aosc.io>,
- devicetree@vger.kernel.org, Stephan Gerhold <stephan@gerhold.net>,
- Jonas Karlman <jonas@kwiboo.se>, Torsten Duwe <duwe@suse.de>,
- Mark Brown <broonie@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Phil Elwell <phil@raspberrypi.com>, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8059592872282246179=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 12:10:08AM -0800, Vasily Khoruzhick wrote:
-> Add vendor prefix for Guangdong Neweast Optoelectronics CO. LTD
-> 
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-> ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
 
-Acked-by: Rob Herring <robh@kernel.org>
+--===============8059592872282246179==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-H7D2q/McolpIoggtEKhp"
+
+
+--=-H7D2q/McolpIoggtEKhp
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, 2020-02-26 at 15:26 +0100, Maxime Ripard wrote:
+> Hi Nicolas,
+>=20
+> On Tue, Feb 25, 2020 at 05:13:33PM +0100, Nicolas Saenz Julienne wrote:
+> > On Mon, 2020-02-24 at 10:06 +0100, Maxime Ripard wrote:
+> > > The pllb_arm clk_hw pointer in the raspberry_clk structure isn't used
+> > > anywhere but in the raspberrypi_register_pllb_arm.
+> > >=20
+> > > Let's remove it, this will make our lives easier in future patches.
+> > >=20
+> > > Cc: Michael Turquette <mturquette@baylibre.com>
+> > > Cc: Stephen Boyd <sboyd@kernel.org>
+> > > Cc: linux-clk@vger.kernel.org
+> > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> >=20
+> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+>=20
+> I guess you meant Acked or Reviewed-by?
+
+Yes sorry, I ran the wrong macro in vim.
+
+Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+
+Thanks!
+Nicolas
+
+
+--=-H7D2q/McolpIoggtEKhp
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5Wh3EACgkQlfZmHno8
+x/5dXwf/bKHxAxeQ4QoZjBlowsDSKby25i/UiGoQRjMihV8lAF5kvgszeIQN06d3
+QFyxNv6+5IGxrr59IVdsYrnNV2dEVmKjg+6LZuVRPNCVRvEFdfRiTpukk3uxgFlX
+sLaq8Lka4a64P4aoKJmqlge6JgXxhURwb/sUC9BBv+InbDws6+XxkDCXG0UmH8rG
+sTsmoW8/gUiUJ+koBCxtipKbgzjzLim2LdWX2kUrdMZCBAP/Rxxp1bHCiHaGYRh8
+pUvVxJ/IpJ0KC0Ef7QYlyk3/hnnPHPtcwo1z5NfXOsgTBLFXSv9rq6Jrqk0OJkga
+LB3ZGFODiroFr+Q15H+sdaU4BV+KLw==
+=93WR
+-----END PGP SIGNATURE-----
+
+--=-H7D2q/McolpIoggtEKhp--
+
+
+
+--===============8059592872282246179==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8059592872282246179==--
+
+
