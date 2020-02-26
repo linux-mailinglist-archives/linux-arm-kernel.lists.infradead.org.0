@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B57F16F79A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 06:47:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 900B316F7A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 06:50:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rogX9/HH1CocDKiDrW22FKTl0/4d/xhf0zD75MjNTzM=; b=j7FHyhVg/PzM4w
-	XAwl1lyz39rOHZ+bAD7pmg1tsb6rZ6FIlmQezLsp65pBWqhnpS6U6OZbd4lktmx7IFlK6mvO3zsBI
-	SUFXqTPT7mJ1laAJHeykpvW6ePl0vAJLfsQwNXbkfKYIdf4aogdOt0SpiJuF/3xKILYoU6yGpMDs1
-	K8NEqSUyGXaD5Nm7bNAWUExKaTzBNFHN/P56n81bCo/apBuTad2gfy6fXmZ6k/dssepn3PUJ84zQC
-	jvLor07zFdyi3uwoqQBdCa/f2E+NMcXwyU453lhNO9e6R+2XF8aKrT4dh6V/suPg6Fzl45j2tgMmV
-	V5NpY9fWg/xfAE3g5ERQ==;
+	List-Owner; bh=LJUJmdZcfaNbnFtibK6Qbqjolm7wUS5BXfWniSV41zk=; b=FZIbeCPjgMYELf
+	KX7nsWJoAC6CNFnS9w6LHk8alX39eGFMPgRTxJ6KEiIOerFNXftdIPPpoVVZXU0mflFPf3zDGoXrR
+	wOLmpL8TZoUclo6bhkds8jeUZ7cqgl3VmZO+wnFW3ogefCpgHkjgUzFVkJwJxdGfw6KWEoj+35Q3N
+	DVqKZkqY5fFHWUJU9+R4Rm/oUS8b4Uk1IdRhz++HVtizoK8dvja1RFOHLDYGWue/hk43iz+eS0SNh
+	6QN4c3V6WaBf3CHcIqrCqHOndqBe6SGvhDhqr9KhBHrgW/FtO+0mZI2X4Q5dIZUTj/lg3mmakkMiI
+	UMOqXJUFoDn+4Kvn+Gcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6pXt-0001Qt-UM; Wed, 26 Feb 2020 05:47:45 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j6pZu-0001z3-4Y; Wed, 26 Feb 2020 05:49:50 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6pXj-0001QR-Mw
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 05:47:37 +0000
-Received: by mail-pf1-x444.google.com with SMTP id p14so875842pfn.4
+ id 1j6pZk-0001yF-Cs
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 05:49:41 +0000
+Received: by mail-pl1-x642.google.com with SMTP id p11so828360plq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 25 Feb 2020 21:47:35 -0800 (PST)
+ Tue, 25 Feb 2020 21:49:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=mptYcm23xnKvc9dgW9yrQXDjYvemyNk9HOkOd35jyu0=;
- b=GG34xp+sWUcxvfNAwlpF2R/g3l9vUFYZh5jCdgnO1j5GJFdkhJ8n8xO7GULcjNoKEp
- QxNEXfAL5rOSEhshwXbzHaFc2qzrx7b9Gwp0mbHXHVCjBSiWC1UNiT8q6G9dTjhshfOG
- ocqn8ZnQkBG8WTcYA/SDlaoUa0SHMRrTDEjZ4=
+ bh=+o0Cxx8HmQdXWrejhdC3RH6moiQGlThNZB33TEB2/R0=;
+ b=QVngWJphiEqTsggSbaGZG6KKVe/5xdUUs9fF1c8wpFIBC85uu6w0X4OjARiK7hiHsy
+ YirmKlA8+5ufTIQVNnhu+cRiDjjkVNg+kDVeOmLSZcaJcnc/+CklCyb23K9XK4TexOyP
+ w+JOHDZPBRFCgI7qgLAo6vpCvdZb8ga/AW3GI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=mptYcm23xnKvc9dgW9yrQXDjYvemyNk9HOkOd35jyu0=;
- b=nRPtbwCYC9Iq+JhkTU6yIusHHIsRAa5eaqmax43LEmYv26PAoeH9KwtB8a93lCaoCf
- 6mprcG1+0umv4D/N3cIMNkZvbVuNIIheKPTvV/kLxJCPIeu4vbCW8604YNp/N6ysBq9b
- wOARyCODonpnHb0cHAa16bD9WzIXcBpHXqOmUEl0BGwEwZ4VQFEVa8jcTRM9oClqDAw/
- +jRI4EJhe+v6cZcTmsLHIcf8JXbJQFFr1VrGW11nwKJKd+XEUF/Ps8CsOxVa/X70JnDM
- yjJczyQ7LVVbzGSHTW9Xz3sicSjxJ4BO/x9/CXDdFLPFrg+9SalYa0zh/yvFtkyXC2kS
- O+PQ==
-X-Gm-Message-State: APjAAAUuCtZy9rWsVNDpAu/0/vzB+cMebaf+K9x4+g6ZH5a/Vi4jhecH
- 2fE2QkdzQylCs5gNQvifLBE1aw==
-X-Google-Smtp-Source: APXvYqw9Hah4jb9PwhTerdiDuprKFah9gRyTjuGaX0a1kpnDdbyuJ+/fWg81/jtilUouDk0Nrkg0Fg==
-X-Received: by 2002:aa7:85d8:: with SMTP id z24mr2682501pfn.202.1582696054765; 
- Tue, 25 Feb 2020 21:47:34 -0800 (PST)
+ bh=+o0Cxx8HmQdXWrejhdC3RH6moiQGlThNZB33TEB2/R0=;
+ b=AWo0NJr7cnS8P9GN5b0UDxeujlBRp3N0t+qSzXjyewVa49HaCX4YWpJbwmMqnPF7kU
+ v6mjgwIZ/VXT1R3wRTtndheY/YWrtlqan3Y3bKZ3ERowHimWbcc6NfmAJrBzWLjGGqJo
+ KgvIm4mLGiO6M5TV/0tgnhFdiFp/l3n667E5wBKwB0j1HEetND6ydbD2WsRoWKhmGY54
+ iUbJU0BchJNcQfg1vrce0sMTgGwd52R+/OT3dfquVoxUunWp3k8NsMJG2yWKxQihAIqE
+ rY896BdMV1dtwO92cpkkDFVl4MP+7f3SiSu0FBe0vixxo9u4ar9FT1EK2ShKtDqFoIiJ
+ skvA==
+X-Gm-Message-State: APjAAAWWuM53td1fqXABAh47vn9HjagdKMZ5AxFd03z0elBq8ZC3tLze
+ kERfLz6NRqEFn0V7DjUOw55U3w==
+X-Google-Smtp-Source: APXvYqx8Hr/Cj5VybYqFNkztZ4OEH69rhUqXd7K5EOJh00EissLfKhJ2zFA3IUzdAa6QW4zPXy4nZg==
+X-Received: by 2002:a17:902:6ac7:: with SMTP id
+ i7mr2245702plt.314.1582696177733; 
+ Tue, 25 Feb 2020 21:49:37 -0800 (PST)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id o22sm898504pgj.58.2020.02.25.21.47.33
+ by smtp.gmail.com with ESMTPSA id q6sm1057628pfh.127.2020.02.25.21.49.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 25 Feb 2020 21:47:33 -0800 (PST)
-Date: Tue, 25 Feb 2020 21:47:32 -0800
+ Tue, 25 Feb 2020 21:49:36 -0800 (PST)
+Date: Tue, 25 Feb 2020 21:49:35 -0800
 From: Kees Cook <keescook@chromium.org>
 To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v6 05/11] arm64: elf: Enable BTI at exec based on ELF
- program properties
-Message-ID: <202002252146.7230873E@keescook>
+Subject: Re: [PATCH v6 01/11] ELF: UAPI and Kconfig additions for ELF program
+ properties
+Message-ID: <202002252147.7BFF9EE@keescook>
 References: <20200212192906.53366-1-broonie@kernel.org>
- <20200212192906.53366-6-broonie@kernel.org>
+ <20200212192906.53366-2-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200212192906.53366-6-broonie@kernel.org>
+In-Reply-To: <20200212192906.53366-2-broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_214735_772256_96388CD3 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20200225_214940_435596_5FC2B3F4 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,26 +117,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 07:29:00PM +0000, Mark Brown wrote:
-> diff --git a/include/linux/elf.h b/include/linux/elf.h
-> index 1b6e8955c597..5d5b0321da0b 100644
-> --- a/include/linux/elf.h
-> +++ b/include/linux/elf.h
-> @@ -63,7 +63,11 @@ extern int elf_coredump_extra_notes_size(void);
->  extern int elf_coredump_extra_notes_write(struct coredump_params *cprm);
->  #endif
->  
-> -/* NT_GNU_PROPERTY_TYPE_0 header */
-> +/*
-> + * NT_GNU_PROPERTY_TYPE_0 header:
-> + * Keep this internal until/unless there is an agreed UAPI definition.
-> + * pr_type values (GNU_PROPERTY_*) are public and defined in the UAPI header.
-> + */
->  struct gnu_property {
->  	u32 pr_type;
->  	u32 pr_datasz;
+On Wed, Feb 12, 2020 at 07:28:56PM +0000, Mark Brown wrote:
+> From: Dave Martin <Dave.Martin@arm.com>
+> 
+> Pull the basic ELF definitions relating to the
+> NT_GNU_PROPERTY_TYPE_0 note from Yu-Cheng Yu's earlier x86 shstk
+> series.
 
-I think this hunk should be in patch 1.
+Both BTI and SHSTK depend on this. If BTI doesn't land soon, can this
+and patch 2 land separately? I don't like seeing the older version in
+the SHSTK series -- I worry there will be confusion and the BTI version
+(which is more up to date) will get missed.
+
+What's left to land BTI support?
 
 -- 
 Kees Cook
