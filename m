@@ -2,81 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05B43170CC3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:48:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 280D9170CCD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:52:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vRXS4Jd5UvptRGshStcF+Za/DT/hRrE4Mqy94kKRPzQ=; b=rFNDthFr1FYGz0
-	1igAVToETu5DzZg8QcFln8MyYI+q5erFZdyT84bJQSouHFOAB8R5GHK1YylDXnA9Dj/IOp4YvP2Cd
-	QJ49Y3myiSaSXaiZ9yi7d1ZSjRPP+ySmjHGh7w1apTJrkz9xzjd4tqrrhKtrpx+7Feu6IyCLdeUy4
-	rGE7yQRhNl4HlUzU2brPJQuLq70PA1ULN38ZkBqqUbiO6UVoYQZNG7qZOAazhXUPPmUn/GMHOm+FX
-	Xth9gykXzBtuqnMU5fpF6z0YWhXj/1aHlE76qxLaS28eWhhEkDzzmkKzSTcw2w0ilTLVKqW7B/GkC
-	zV2gQBI/s36H3CjtTpkg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oal4Z5+lV9wyzVpIEFBaTcPMV7akJOw1Ro3Q6wbY2To=; b=urPaeoCJgyz6QXC2j/wGc2wRT
+	lvNRsL2amz9xGilLuplWDHuWWzXle0PBNi408C/5qEVzITPiaIbmfl6qxCgysAvqZlexrTsqCSGL+
+	kTyK+Skt7acenvrqfm17Q3jA54Yhe35m/B7ErCR4x6Pg0MFwfyngMn3lIechP23Z9uC/1M7zQDhTx
+	1fqwdXX0cwsqmTYZx7T5xtWXpBpaIvS86EE3KCueIw8YkGaqeGNAmPRfMhdwS7ci0J2KcJhaNcdIk
+	ZAtcpIa8gQVBRw23tpBWD2a+8D5JUF5Mj/YBQHHlnfESOMvSLuS4qQj02OkhUO+3z+1n3fVvXIOYf
+	BFYsSI92Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j76Px-0000AC-Ok; Wed, 26 Feb 2020 23:48:41 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1j76Th-0001mW-Ot; Wed, 26 Feb 2020 23:52:33 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j76Pp-00009d-4T
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:48:34 +0000
-Received: by mail-pl1-x641.google.com with SMTP id u3so334954plr.9
+ id 1j76TU-0001mD-PX
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:52:22 +0000
+Received: by mail-pf1-x441.google.com with SMTP id i19so610943pfa.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 15:48:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axtens.net; s=google;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=UW09MiMy2GaFwFAJ/K3zl0bfOBctGn1N/5oBnyfXBBo=;
- b=p/9RYB8kgMB0e8z5IDwOgAal1bA5SLd2SFKLv25Ung8/p0BhAB86euEgkobREoxfmp
- yKqg6pDpBKuUpdrEwTr9vEVyrfSL+cXkHm3hBTYBDohCfSV3uahMaoXMOOdshJ4aR+Fu
- V1toxermAqGtoIKM5MGgcSal+/esLdjYKwiLE=
+ Wed, 26 Feb 2020 15:52:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=XlzTesc/osvmK67dq3mpi/UOZrAvhagv1EzzaH9Ps1E=;
+ b=mFoUw0MqmxHI0oPPMELQOYtzcg9+E08usopU8RyqjLJWRg0LfOnJOWt+AjXWMkSQ/+
+ ik+r+itUBGD5T380/0MmUPBH+89PWyBdB8+F/1DaSYlSp7CIk8Fn/3teXYUW1zo9xLUH
+ v4z8aa9IgEG3jL96PPv5LScPNWljvvNvKlMzL7Be/vTorndLrIXxvpq+plAwXKHkbUom
+ m2el//LdaDsyddJT8U73S8hkrTiL/xXFJolh/qFYcxRZrEI1OuYanj9TXwArqs45lePW
+ vxV7QH+fF42WDZRjYeU3k4tsni1QLk30hSxJFZFEmXkFxeEViN2UHWaJeeMyd3OJu1qD
+ D9Lw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=UW09MiMy2GaFwFAJ/K3zl0bfOBctGn1N/5oBnyfXBBo=;
- b=mxcFOUHgcalMf7Ykno868Rv+fxYAvhlDEVz+d4vgkDoV0njunTSNwZBk+mgrU3qzJ4
- 7Eqy9mtHyhCaQLlzowMO3NoGmFSoLZvTgJUBVx/DCUpXF85V8jLQqyLCZpA156IHubuN
- 5ac/xe6rKG9jRRKuvhPCB2P9Gxfu0G0WLEoccx/m16eiyLXihjbMkG/+KiZpGcOb6niX
- 5JjLeyQgXoQZwrNObPI7PjdUK/JgY6ZFxrmkAAG6vd+bGco1M+rG7MdBnYxTrNvnfi+p
- nBBt6MfEpL7Ndyr3hQsXSJpeJK13gdSI3Q2Oy1ZjOkFxzq+RngS2RgtXOaiPxw2F9j+p
- Pm8Q==
-X-Gm-Message-State: APjAAAVCXgOHF8iJ3+ExDu9vGGqp5lGFEz+/CrbFfX7t3EXH9eSpi3x/
- V3IF/PrOBmNwta3LDic5HJSdqA==
-X-Google-Smtp-Source: APXvYqwO0geOgUQ2VFTz4udUkoL6gA+i5YLlDwNbhBkmZKUuVfAD8LuxK/3KK4B4kuG2YBBwmhPS2w==
-X-Received: by 2002:a17:902:ba93:: with SMTP id
- k19mr1782695pls.197.1582760911494; 
- Wed, 26 Feb 2020 15:48:31 -0800 (PST)
-Received: from localhost
- (2001-44b8-1113-6700-5952-947b-051c-ea5f.static.ipv6.internode.on.net.
- [2001:44b8:1113:6700:5952:947b:51c:ea5f])
- by smtp.gmail.com with ESMTPSA id f127sm4475804pfa.112.2020.02.26.15.48.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 15:48:30 -0800 (PST)
-From: Daniel Axtens <dja@axtens.net>
-To: linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- kasan-dev@googlegroups.com
-Subject: Re: [PATCH v2 0/3] Fix some incompatibilites between KASAN and
- FORTIFY_SOURCE
-In-Reply-To: <20200116062625.32692-1-dja@axtens.net>
-References: <20200116062625.32692-1-dja@axtens.net>
-Date: Thu, 27 Feb 2020 10:48:26 +1100
-Message-ID: <87o8tkrjud.fsf@dja-thinkpad.axtens.net>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=XlzTesc/osvmK67dq3mpi/UOZrAvhagv1EzzaH9Ps1E=;
+ b=e5fn3G0FVLECph+66FKRAMHi0vWI6YM8Fy7nUBQXb//2Z1YtXc6A48kPBLESzAp4YL
+ WmRB/iGajmm13XeSs0+r6e1ebFQmS4voNFuspJKHdly3JUYmzQkd+PSU4+IZ2b8lf2Kc
+ qy/UPhulD40pMwolkNCpJgenw4xJQhZUzzPd8Mzy0POXSNaN6jRN58e89Rkgp8R95Cfh
+ OKTKpnusFx0tKG9on0VeggyLFBX8YtQlEfQABeL/zrlSr9wdGZVNuuvTVoko8bq14sJA
+ dqekNuX+KkEg2zv5yAroiSzd3IKKfiwp4LCIYa/oUj1BMG1q9tJHlKRiuGeU5rR1jAIg
+ VsIg==
+X-Gm-Message-State: APjAAAWEah3Z63alZScQpH6rH57zWCTD/Z77sMe0QFYbvt4poXEKUOPP
+ SnMOSXIvjwwfOyVIc1ASJ18IuN39fwQ=
+X-Google-Smtp-Source: APXvYqxvMlCakj/OIN3Ab7wp9/W+3XGgGXTH9cJ24Kd1VC3/qZU0qrVdvmi+QWNetqsm4pIH3dMQwg==
+X-Received: by 2002:a62:fb07:: with SMTP id x7mr1198766pfm.125.1582761139317; 
+ Wed, 26 Feb 2020 15:52:19 -0800 (PST)
+Received: from [172.30.88.123] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
+ by smtp.gmail.com with ESMTPSA id 64sm4159507pfd.48.2020.02.26.15.52.17
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 26 Feb 2020 15:52:18 -0800 (PST)
+Subject: Re: [RESEND PATCH v3 02/17] media: v4l2-fwnode: Pass notifier to
+ v4l2_async_register_fwnode_subdev()
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+References: <20200215194136.10131-1-slongerbeam@gmail.com>
+ <20200215194136.10131-3-slongerbeam@gmail.com>
+ <20200225150721.GO5379@paasikivi.fi.intel.com>
+From: Steve Longerbeam <slongerbeam@gmail.com>
+Message-ID: <33258045-b708-1390-06e0-fde224296dfb@gmail.com>
+Date: Wed, 26 Feb 2020 15:50:04 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200225150721.GO5379@paasikivi.fi.intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_154833_201445_31BEEA94 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20200226_155220_856185_DDEF7077 
+X-CRM114-Status: GOOD (  19.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [slongerbeam[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -96,63 +104,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: christophe.leroy@c-s.fr, linux-s390@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, x86@kernel.org,
- linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- dvyukov@google.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, Rui Miguel Silva <rmfrfs@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Daniel Axtens <dja@axtens.net> writes:
+Hi Sakari,
 
-> 3 KASAN self-tests fail on a kernel with both KASAN and FORTIFY_SOURCE:
-> memchr, memcmp and strlen. I have observed this on x86 and powerpc.
->
-> When FORTIFY_SOURCE is on, a number of functions are replaced with
-> fortified versions, which attempt to check the sizes of the
-> operands. However, these functions often directly invoke __builtin_foo()
-> once they have performed the fortify check.
->
-> This breaks things in 2 ways:
->
->  - the three function calls are technically dead code, and can be
->    eliminated. When __builtin_ versions are used, the compiler can detect
->    this.
->
->  - Using __builtins may bypass KASAN checks if the compiler decides to
->    inline it's own implementation as sequence of instructions, rather than
->    emit a function call that goes out to a KASAN-instrumented
->    implementation.
->
-> The patches address each reason in turn. Finally, test_memcmp used a
-> stack array without explicit initialisation, which can sometimes break
-> too, so fix that up.
+Thanks for the feedback.
 
-Hi all,
 
-It doesn't look like this has been picked up yet. Is there anything I
-can do to help things along?
+On 2/25/20 7:07 AM, Sakari Ailus wrote:
+> Hi Steve,
+>
+> On Sat, Feb 15, 2020 at 11:41:21AM -0800, Steve Longerbeam wrote:
+>> Instead of allocating a notifier in v4l2_async_register_fwnode_subdev(),
+>> have the caller provide one. This allows the caller to implement
+>> notifier ops (bind, unbind).
+>>
+>> The caller is now responsible for first initializing its notifier with a
+>> call to v4l2_async_notifier_init().
+>>
+>> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+> Instead of improving v4l2_async_register_fwnode_subdev(), could you convert
+> the users (IMX driver in this case) to call the preferred APIs instead?
 
-Regards,
-Daniel
+I presume you mean using v4l2_async_notifier_add_fwnode_remote_subdev(). 
+Ok, I'll convert to use that API.
 
+Steve
+
+>   As
+> the lines below show, v4l2_async_register_fwnode_subdev() has only two
+> users left --- the other one of which is the IMX driver. After converting
+> these two, we could just remove this API.
 >
-> v2: - some cleanups, don't mess with arch code as I missed some wrinkles.
->     - add stack array init (patch 3)
+> See e.g. drivers/media/pci/intel/ipu3/ipu3-cio2.c and
+> drivers/media/platform/omap3isp/isp.c for examples.
 >
-> Daniel Axtens (3):
->   kasan: stop tests being eliminated as dead code with FORTIFY_SOURCE
->   string.h: fix incompatibility between FORTIFY_SOURCE and KASAN
->   kasan: initialise array in kasan_memcmp test
->
->  include/linux/string.h | 60 +++++++++++++++++++++++++++++++++---------
->  lib/test_kasan.c       | 32 +++++++++++++---------
->  2 files changed, 68 insertions(+), 24 deletions(-)
->
-> -- 
-> 2.20.1
+>> ---
+>> Changes in v3:
+>> - added the missing calls to unregister/cleanup the new subdev notifiers.
+>>    Reported by Rui Silva.
+>> ---
+>>   drivers/media/platform/video-mux.c         |  8 +++++++-
+>>   drivers/media/v4l2-core/v4l2-fwnode.c      | 11 +----------
+>>   drivers/staging/media/imx/imx6-mipi-csi2.c |  7 ++++++-
+>>   drivers/staging/media/imx/imx7-media-csi.c |  7 ++++++-
+>>   drivers/staging/media/imx/imx7-mipi-csis.c |  9 ++++++++-
+>>   include/media/v4l2-fwnode.h                | 12 ++++++++----
+>>   6 files changed, 36 insertions(+), 18 deletions(-)
+
 
 _______________________________________________
 linux-arm-kernel mailing list
