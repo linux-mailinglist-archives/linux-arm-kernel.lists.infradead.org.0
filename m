@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0D4816F9ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:45:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1E9F16FA2B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:04:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=j5BC7KllhQGu5wt0RvM41HNhytXmstVbnQkKlGTgrT8=; b=ENoq3vxzoENUEzgG4MHSEKtGa
-	rfQiu7QqGOg76h8Z9ZuYbhAYZT+clW1b1RIUICa1uF0Cl22qtPrhlIU+8PA/SpRcVc+DTtm5GsnM3
-	GLeD2Zq/zNBprSSz0dNKp1DGTgwo7eQGfi/jZnqvr/4h/Dr1f2zSuReKEbzIGYbZbCNkmXFVJvc8B
-	ZFL1VW7xuTVKkIlLwRtvPuNs9jofCjkSXZ+cXSfTUeNiNFVIf6OeqeX5vLnBr6f6ouM2/Qc5hOIad
-	siAOX/+GKw3d4MSst7GWMNGUMpd7tZwKwT++xUhzchWt7qpPDhzzfhu097k0nzfNmDuveR5YWx5St
-	DBZOscNfA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OjcdKYwHN42Mx87HFF5rLO3PqZ2rzE6lOgNpgbTOSIU=; b=ITfO8HKtTyY5g/
+	ZAC3X1ukpvyGw/jDYJGiTOmGLyjQ+YKdSHhKsHfpWbKZESARDb12ONVLWdxBwDvGTvXEHXR4nsfg4
+	w/2AIFdD9DeZNDnTQPeFM9ZcHdffEiykhOHuSa87sACAGg+TiytkcOnHbYiDV95Tm+FO5d8Ugy/sK
+	w1MlwlYV643SQB990pfn5yWpPnL9Adh0FpmBUy6Rjaa4RwKh3MCtonNs56Cf8PmEbu+f5zv7lXVqn
+	V73Xn7AMNOK86bN0XKMANCFRm3jfNVHR6f3QBVd0X6UYk0rE5hzgINw2cJWsmQfV2WG6+EWoGgFYi
+	3a5zPfcdOtO4Z3hYaEoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6sJi-0005eR-BM; Wed, 26 Feb 2020 08:45:18 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1j6sc4-0003sk-DU; Wed, 26 Feb 2020 09:04:16 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6sJT-0005Dx-0r
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:45:04 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 730B97C1AE6C45ED5204;
- Wed, 26 Feb 2020 16:44:54 +0800 (CST)
-Received: from [127.0.0.1] (10.67.101.242) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Wed, 26 Feb 2020
- 16:44:53 +0800
-Subject: Re: [PATCH v4 23/26] iommu/arm-smmu-v3: Add stall support for
- platform devices
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- <iommu@lists.linux-foundation.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-pci@vger.kernel.org>,
- <linux-mm@kvack.org>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-24-jean-philippe@linaro.org>
-From: Xu Zaibo <xuzaibo@huawei.com>
-Message-ID: <db6fc8c2-2ff3-631f-2294-c1b49acd27aa@huawei.com>
-Date: Wed, 26 Feb 2020 16:44:53 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1j6sbv-0003rv-Hi; Wed, 26 Feb 2020 09:04:08 +0000
+X-UUID: 47541d3b44cd4009ba6cb06be6b6e450-20200226
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=6C9TgGDdkO5F5jXOiRjOlhQAyTOnDDs9QSKwWISWmG8=; 
+ b=uZe/obD/ak+SSznrx3y7i189/TgK7hOprqInSigNldr5+R4OJU5D9M6F9sA0pYAoewzKvBq6pc2tDHhrifHp3sv0YstNLZPciiRsYClmQrSUnN4Sphsl+XXdcSZ+eXgXadovsDrVz/dMTF+yzIcogQ/sCBgxm9oKA4UNflAYu30=;
+X-UUID: 47541d3b44cd4009ba6cb06be6b6e450-20200226
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <changqi.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1426321112; Wed, 26 Feb 2020 01:04:01 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 00:53:57 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 16:53:08 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 26 Feb 2020 16:53:45 +0800
+From: Changqi Hu <changqi.hu@mediatek.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
+ <jslaby@suse.com>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v4] serial: 8250-mtk: modify mtk uart power and clock
+ management
+Date: Wed, 26 Feb 2020 16:53:45 +0800
+Message-ID: <1582707225-26815-1-git-send-email-changqi.hu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-In-Reply-To: <20200224182401.353359-24-jean-philippe@linaro.org>
-X-Originating-IP: [10.67.101.242]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_004503_251145_F8D30B54 
-X-CRM114-Status: GOOD (  18.83  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200226_010407_595940_8E173522 
+X-CRM114-Status: GOOD (  13.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,95 +86,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, kevin.tian@intel.com, will@kernel.org,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, catalin.marinas@arm.com,
- robh+dt@kernel.org, zhangfei.gao@linaro.org, robin.murphy@arm.com,
- christian.koenig@amd.com
+Cc: Nicolas Boichat <drinkcat@chromium.org>, Changqi
+ Hu <changqi.hu@mediatek.com>, srv_heupstream@mediatek.com,
+ Frank Wunderlich <frank-w@public-files.de>, linux-kernel@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-serial@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Claire Chang <tientzu@chromium.org>, Eddie Huang <eddie.huang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+MTK uart design no need to control uart clock,
+so we just control bus clock in runtime function.
+Add uart clock used count to avoid repeatedly switching the clock.
 
+Signed-off-by: Changqi Hu <changqi.hu@mediatek.com>
+---
 
-On 2020/2/25 2:23, Jean-Philippe Brucker wrote:
-> From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
->
-> The SMMU provides a Stall model for handling page faults in platform
-> devices. It is similar to PCI PRI, but doesn't require devices to have
-> their own translation cache. Instead, faulting transactions are parked and
-> the OS is given a chance to fix the page tables and retry the transaction.
->
-> Enable stall for devices that support it (opt-in by firmware). When an
-> event corresponds to a translation error, call the IOMMU fault handler. If
-> the fault is recoverable, it will call us back to terminate or continue
-> the stall.
->
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> ---
->   drivers/iommu/arm-smmu-v3.c | 271 ++++++++++++++++++++++++++++++++++--
->   drivers/iommu/of_iommu.c    |   5 +-
->   include/linux/iommu.h       |   2 +
->   3 files changed, 269 insertions(+), 9 deletions(-)
->
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 6a5987cce03f..da5dda5ba26a 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -374,6 +374,13 @@
->   #define CMDQ_PRI_1_GRPID		GENMASK_ULL(8, 0)
->   #define CMDQ_PRI_1_RESP			GENMASK_ULL(13, 12)
->   
-[...]
-> +static int arm_smmu_page_response(struct device *dev,
-> +				  struct iommu_fault_event *unused,
-> +				  struct iommu_page_response *resp)
-> +{
-> +	struct arm_smmu_cmdq_ent cmd = {0};
-> +	struct arm_smmu_master *master = dev_iommu_fwspec_get(dev)->iommu_priv;
-Here can use 'dev_to_master' ?
+Changes in v4:
+ Modify commit-message
 
-Cheers,
-Zaibo
+Changes in v3:
+ Merge patch v1 and v2 together.
+ 
+Changes in v2:
+ Enable uart bus clock when probe and resume base on v1 patch,
+ but miss v1 patch itself.
 
-.
-> +	int sid = master->streams[0].id;
-> +
-> +	if (master->stall_enabled) {
-> +		cmd.opcode		= CMDQ_OP_RESUME;
-> +		cmd.resume.sid		= sid;
-> +		cmd.resume.stag		= resp->grpid;
-> +		switch (resp->code) {
-> +		case IOMMU_PAGE_RESP_INVALID:
-> +		case IOMMU_PAGE_RESP_FAILURE:
-> +			cmd.resume.resp = CMDQ_RESUME_0_RESP_ABORT;
-> +			break;
-> +		case IOMMU_PAGE_RESP_SUCCESS:
-> +			cmd.resume.resp = CMDQ_RESUME_0_RESP_RETRY;
-> +			break;
-> +		default:
-> +			return -EINVAL;
-> +		}
-> +	} else {
-> +		/* TODO: insert PRI response here */
-> +		return -ENODEV;
-> +	}
-> +
-> +	arm_smmu_cmdq_issue_cmd(master->smmu, &cmd);
-> +	/*
-> +	 * Don't send a SYNC, it doesn't do anything for RESUME or PRI_RESP.
-> +	 * RESUME consumption guarantees that the stalled transaction will be
-> +	 * terminated... at some point in the future. PRI_RESP is fire and
-> +	 * forget.
-> +	 */
-> +
-> +	return 0;
-> +}
-> +
-[...]
+ drivers/tty/serial/8250/8250_mtk.c | 50 ++++++++++++++++++++++++--------------
+ 1 file changed, 32 insertions(+), 18 deletions(-)
 
-
+diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
+index 4d067f5..f839380 100644
+--- a/drivers/tty/serial/8250/8250_mtk.c
++++ b/drivers/tty/serial/8250/8250_mtk.c
+@@ -32,6 +32,7 @@
+ #define MTK_UART_RXTRI_AD	0x14	/* RX Trigger address */
+ #define MTK_UART_FRACDIV_L	0x15	/* Fractional divider LSB address */
+ #define MTK_UART_FRACDIV_M	0x16	/* Fractional divider MSB address */
++#define MTK_UART_DEBUG0	0x18
+ #define MTK_UART_IER_XOFFI	0x20	/* Enable XOFF character interrupt */
+ #define MTK_UART_IER_RTSI	0x40	/* Enable RTS Modem status interrupt */
+ #define MTK_UART_IER_CTSI	0x80	/* Enable CTS Modem status interrupt */
+@@ -388,9 +389,18 @@ mtk8250_set_termios(struct uart_port *port, struct ktermios *termios,
+ static int __maybe_unused mtk8250_runtime_suspend(struct device *dev)
+ {
+ 	struct mtk8250_data *data = dev_get_drvdata(dev);
++	struct uart_8250_port *up = serial8250_get_port(data->line);
+ 
+-	clk_disable_unprepare(data->uart_clk);
+-	clk_disable_unprepare(data->bus_clk);
++	/* wait until UART in idle status */
++	while
++		(serial_in(up, MTK_UART_DEBUG0));
++
++	if (data->clk_count == 0U) {
++		dev_dbg(dev, "%s clock count is 0\n", __func__);
++	} else {
++		clk_disable_unprepare(data->bus_clk);
++		data->clk_count--;
++	}
+ 
+ 	return 0;
+ }
+@@ -400,16 +410,16 @@ static int __maybe_unused mtk8250_runtime_resume(struct device *dev)
+ 	struct mtk8250_data *data = dev_get_drvdata(dev);
+ 	int err;
+ 
+-	err = clk_prepare_enable(data->uart_clk);
+-	if (err) {
+-		dev_warn(dev, "Can't enable clock\n");
+-		return err;
+-	}
+-
+-	err = clk_prepare_enable(data->bus_clk);
+-	if (err) {
+-		dev_warn(dev, "Can't enable bus clock\n");
+-		return err;
++	if (data->clk_count > 0U) {
++		dev_dbg(dev, "%s clock count is %d\n", __func__,
++			data->clk_count);
++	} else {
++		err = clk_prepare_enable(data->bus_clk);
++		if (err) {
++			dev_warn(dev, "Can't enable bus clock\n");
++			return err;
++		}
++		data->clk_count++;
+ 	}
+ 
+ 	return 0;
+@@ -419,12 +429,14 @@ static void
+ mtk8250_do_pm(struct uart_port *port, unsigned int state, unsigned int old)
+ {
+ 	if (!state)
+-		pm_runtime_get_sync(port->dev);
++		if (!mtk8250_runtime_resume(port->dev))
++			pm_runtime_get_sync(port->dev);
+ 
+ 	serial8250_do_pm(port, state, old);
+ 
+ 	if (state)
+-		pm_runtime_put_sync_suspend(port->dev);
++		if (!pm_runtime_put_sync_suspend(port->dev))
++			mtk8250_runtime_suspend(port->dev);
+ }
+ 
+ #ifdef CONFIG_SERIAL_8250_DMA
+@@ -501,6 +513,8 @@ static int mtk8250_probe(struct platform_device *pdev)
+ 	if (!data)
+ 		return -ENOMEM;
+ 
++	data->clk_count = 0;
++
+ 	if (pdev->dev.of_node) {
+ 		err = mtk8250_probe_of(pdev, &uart.port, data);
+ 		if (err)
+@@ -533,6 +547,7 @@ static int mtk8250_probe(struct platform_device *pdev)
+ 
+ 	platform_set_drvdata(pdev, data);
+ 
++	pm_runtime_enable(&pdev->dev);
+ 	err = mtk8250_runtime_resume(&pdev->dev);
+ 	if (err)
+ 		return err;
+@@ -541,9 +556,6 @@ static int mtk8250_probe(struct platform_device *pdev)
+ 	if (data->line < 0)
+ 		return data->line;
+ 
+-	pm_runtime_set_active(&pdev->dev);
+-	pm_runtime_enable(&pdev->dev);
+-
+ 	data->rx_wakeup_irq = platform_get_irq_optional(pdev, 1);
+ 
+ 	return 0;
+@@ -556,11 +568,13 @@ static int mtk8250_remove(struct platform_device *pdev)
+ 	pm_runtime_get_sync(&pdev->dev);
+ 
+ 	serial8250_unregister_port(data->line);
+-	mtk8250_runtime_suspend(&pdev->dev);
+ 
+ 	pm_runtime_disable(&pdev->dev);
+ 	pm_runtime_put_noidle(&pdev->dev);
+ 
++	if (!pm_runtime_status_suspended(&pdev->dev))
++		mtk8250_runtime_suspend(&pdev->dev);
++
+ 	return 0;
+ }
+ 
+-- 
+2.6.4
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
