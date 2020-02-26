@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00259170C35
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:05:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7DF4170C37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 00:05:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4fEZQecDU4Ng/ZUmkB835DFpFfMyHs4MkMVxjqf2azQ=; b=g7MXGyKoH9+ubt3QXuo4pyKYoz
-	YbYNlbq1UXGP9i0kix11VGfWDQkHDn8QHeKCDYEnSrtg71PX27VMZNcDELC5FbbUQBXos36CgsUXn
-	HNjv3IqXu8dXCtak9Z974uwJNmxukR9wp/oeB/2+bjZLDFbQd+dzAAoWo5cNP6EppoBi9HbPUpd7w
-	dV69P4UJM36i7zOiz4Jt6TNgU7je7PfERAEa6j/2OOOLIFzGuxtbYh1Lo9l5VUwylibScoRRbDqYO
-	ED7O6Tytlxd8gtJFD4cnnOw9+p1zsgOyzpRBJheKDu54yRDo8fG+XnWVdKAdEm7dRYwCfV+lgunVE
-	ljGhiaGw==;
+	bh=d/ulDHu1j18A/OGvrjWFogh0UXmcbUFTERJjIzaQfxw=; b=n5aI3Gbmulq34S9i9emqGtYUK0
+	nTjWpHeUB/mAPEWEeO9sQIehu2FEP9Wt0CDNJPaR6yQQZmZjd36rUrfgZWcikFCRs8h83hJxM+wq7
+	JL35bwpngAbWrpbcD2WQoqqCCkSEviGkhr3mi5De7xpOli89R7AC7qwRor23wIaqvZQDxm6zxTfnH
+	+OGVZtkojBUNo2BnvIjVCuYWyi8WSOCxglrV5D2KwLBvrmwpRxwMIbLym1rCehZC09sMA0aX+IBV0
+	2IjK8s1PiipaoshUK0kwopNX5JWnruhczHEoVtBIK9BHZ7ir8IrkqTArtccuEDiJYiKhHeaVnte/B
+	e4mgGGBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j75jx-0003XJ-Nb; Wed, 26 Feb 2020 23:05:17 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j75kE-0004xK-2L; Wed, 26 Feb 2020 23:05:34 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j75io-0002pO-9U
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:04:07 +0000
-Received: by mail-pl1-x644.google.com with SMTP id y1so298635plp.7
+ id 1j75iq-0002rP-2Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 23:04:09 +0000
+Received: by mail-pg1-x544.google.com with SMTP id a14so380355pgb.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 15:04:05 -0800 (PST)
+ Wed, 26 Feb 2020 15:04:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=zsjurGtPTTibpkqzKjZm8jUnRch17NXPwWPKWmJ+Vuc=;
- b=A3pWRVK82v74q7UE2Rowuqoj20xjR8Mvj89W3wT9EDgeuXzRfmvWvl9JYkLV2f3oxj
- ThtPjoNzAwWH3yFTnubIDFn8iefjWOJU9ztIyqxi213kz9HE763WZkEfuXgbXhNN5/tc
- /L5AGr/IeOB2hwwMRc/BKh5OLLrmlIYOQDBYzDXyVasQJjpvdy3OzSBckd0fdBDpHIQD
- rmkAdtXMyS/kEpQJI9xb6eaM93sQHySDaef4E/az0oJFwuYahBsd2hhz9jWMfwf9F1nR
- VQWYB/BBXqkbj3f2CqqxX+0oYKLknlfkUv8mxvOT8YeVcDqgrE9RkkWYogJZYMj14RCA
- 52rg==
+ bh=j14U6e4SZ5/bLzKusf4O48IBiLZ4+5mU3b6iUsqR1xQ=;
+ b=tdROPMg7AEKdtwwE9QymwJ0g9qsWLn7bn2gtI6QlqMCrStrbzvnhTcqPFlkpLc6Can
+ 8RTLdPjfGZAeoJHpu5b0cvuSfO/BrYa/6Xx6qJ/XR5W75q1+c9HjV9ymwkjG/qOhKPeq
+ FcK/BeIYhOzShUtMi/FJWY+OWIZwvvwsKWlrRiS7AmjDD4EUQDxIU0cOCMxKciXZtLkj
+ Omj3DRzVKWnOQ5v+M+sEXfQadRKvpQx/loMQdv3PrEegVlAO2t2HEieqUBid4OiTO3dy
+ fpq6u6b9n2PfHN84+KRJd2jrw0UHJ5Qr8+PNSGcy7Jm0gOuCR84v+q77f+vaXeVPCgH4
+ 7zSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=zsjurGtPTTibpkqzKjZm8jUnRch17NXPwWPKWmJ+Vuc=;
- b=CB79j5+y9r5HQ5deajj80GMM72qpWwGVDtTUoHOXNvw12NvUemVFj4k7UM2p1b8Im4
- CicBxwi+YNQCAN/w3YvPNinAi8h4RS7WzfiWIRyQ51aUhX6bKc1L4EuUyhXyA2XkE9xO
- j6r4mg+E4SQOfAiwFWwIL4NgyPgn6FxHcCN3AsCcY6mPfK2yuamtohEEmqeNgSiwACMP
- nYHY3BdVOz9KcZbAHA+Ghi+xlBpjguuM0ClUY/nm7oAVvhqOsO8JKun93GLti7qu9GxN
- oqiqZF+Vq5JtQOZ1OFsImqTErwnMpDVz77L0Vea4oD/PZsV1RjDARKzI9y4N5x4rTDLW
- 4Y8Q==
-X-Gm-Message-State: APjAAAW1qkoolAal2juxduHLuLAS5ELxdhuBfQteJeIr1pwN/sy99yTz
- vzpOoF74ubg1W8JPlDC+STo=
-X-Google-Smtp-Source: APXvYqyRYW0slf7hnoyWPRWJzidVwkAK8H8EWbA/08e8qmnHPg65wYda6/tRhFcbKEdUJFZQpqF4hQ==
-X-Received: by 2002:a17:90a:fd85:: with SMTP id
- cx5mr1533764pjb.80.1582758245243; 
- Wed, 26 Feb 2020 15:04:05 -0800 (PST)
+ bh=j14U6e4SZ5/bLzKusf4O48IBiLZ4+5mU3b6iUsqR1xQ=;
+ b=PiriYJ34h8DeAi4bEp+zcajAnFkxzRa1pYQ5qRDfsgEdoztk8wHWDrvnajfIKaqbRA
+ llCxvpwoRRJVkjvsJpWqKZXC4mYoLZaZwpn2Z7mlCrdrLjx+nONbuk6xtAqhlRIaFbc7
+ MdYaEDRFs5gROPwMEHsf7EFoJ/6wDRfhJXolRLV0iS1Z5ZCHXD3iFnnXlHxZL5Yx/cRk
+ PeGZXWGfuBxYEo6SWGlAJpVt6jO19E391lKfLyUc1q9ZZY9Q0u0afB9xhmPLF0x9y5bI
+ Bi7yp2YQMXTeOZ0/UoO509YyPNZP6yt4t625enp5H/bFuAA8/jzPA1Ksqbe1MI/z4nrz
+ pU0g==
+X-Gm-Message-State: APjAAAUxWsPMzGkwdLsMej6vMGw8kdg9scLYocS5ZENRuIQOkkrxWJiU
+ 5DcGoR3LMjDSNBpqLr2TGZs=
+X-Google-Smtp-Source: APXvYqyTnN0VihWoI5MbSjHLs+rZ/lsqHA3p8qM8oJK2nZlc6LKx6yIcl0r2TnpiWehPi3daZvIE1Q==
+X-Received: by 2002:a63:5b1e:: with SMTP id p30mr935911pgb.71.1582758247007;
+ Wed, 26 Feb 2020 15:04:07 -0800 (PST)
 Received: from taoren-ubuntu-R90MNF91.thefacebook.com
  ([2620:10d:c090:500::7:5ebf])
- by smtp.gmail.com with ESMTPSA id 3sm3912621pjg.27.2020.02.26.15.04.03
+ by smtp.gmail.com with ESMTPSA id 3sm3912621pjg.27.2020.02.26.15.04.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 15:04:04 -0800 (PST)
+ Wed, 26 Feb 2020 15:04:06 -0800 (PST)
 From: rentao.bupt@gmail.com
 To: Felipe Balbi <balbi@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -70,22 +69,22 @@ To: Felipe Balbi <balbi@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  openbmc@lists.ozlabs.org, taoren@fb.com
-Subject: [PATCH v4 3/7] usb: gadget: aspeed: add ast2600 vhub support
-Date: Wed, 26 Feb 2020 15:03:42 -0800
-Message-Id: <20200226230346.672-4-rentao.bupt@gmail.com>
+Subject: [PATCH v4 4/7] ARM: dts: aspeed-g6: add usb functions
+Date: Wed, 26 Feb 2020 15:03:43 -0800
+Message-Id: <20200226230346.672-5-rentao.bupt@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200226230346.672-1-rentao.bupt@gmail.com>
 References: <20200226230346.672-1-rentao.bupt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_150406_351566_00742A3B 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20200226_150408_128249_6EB03A16 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -118,50 +117,111 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Tao Ren <rentao.bupt@gmail.com>
 
-Add AST2600 support in aspeed-vhub driver. There are 3 major differences
-between AST2500 and AST2600 vhub:
-  - AST2600 supports 7 downstream ports while AST2500 supports 5.
-  - AST2600 supports 21 generic endpoints while AST2500 supports 15.
-  - EP0 data buffer's 8-byte DMA alignment restriction is removed from
-    AST2600.
+Add USB components and according pin groups in aspeed-g6 dtsi.
 
 Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
 Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- No Change in v3/v4.
+ No change in v3/v4.
  Changes in v2:
-   - removed "ast_vhub_config" related logic.
+   - added port/endpoint properties for vhub dt node.
 
- drivers/usb/gadget/udc/aspeed-vhub/Kconfig | 4 ++--
- drivers/usb/gadget/udc/aspeed-vhub/core.c  | 3 +++
- 2 files changed, 5 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/aspeed-g6-pinctrl.dtsi | 25 +++++++++++++
+ arch/arm/boot/dts/aspeed-g6.dtsi         | 45 ++++++++++++++++++++++++
+ 2 files changed, 70 insertions(+)
 
-diff --git a/drivers/usb/gadget/udc/aspeed-vhub/Kconfig b/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
-index 83ba8a2eb6af..605500b19cf3 100644
---- a/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
-+++ b/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
-@@ -4,5 +4,5 @@ config USB_ASPEED_VHUB
- 	depends on ARCH_ASPEED || COMPILE_TEST
- 	depends on USB_LIBCOMPOSITE
- 	help
--	  USB peripheral controller for the Aspeed AST2500 family
--	  SoCs supporting the "vHub" functionality and USB2.0
-+	  USB peripheral controller for the Aspeed AST2400, AST2500 and
-+	  AST2600 family SoCs supporting the "vHub" functionality and USB2.0
-diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-index f8ab8e012f34..f8d35dd60c34 100644
---- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-+++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-@@ -423,6 +423,9 @@ static const struct of_device_id ast_vhub_dt_ids[] = {
- 	{
- 		.compatible = "aspeed,ast2500-usb-vhub",
- 	},
-+	{
-+		.compatible = "aspeed,ast2600-usb-vhub",
-+	},
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, ast_vhub_dt_ids);
+diff --git a/arch/arm/boot/dts/aspeed-g6-pinctrl.dtsi b/arch/arm/boot/dts/aspeed-g6-pinctrl.dtsi
+index 045ce66ca876..7028e21bdd98 100644
+--- a/arch/arm/boot/dts/aspeed-g6-pinctrl.dtsi
++++ b/arch/arm/boot/dts/aspeed-g6-pinctrl.dtsi
+@@ -1112,6 +1112,31 @@
+ 		groups = "UART9";
+ 	};
+ 
++	pinctrl_usb2ah_default: usb2ah_default {
++		function = "USB2AH";
++		groups = "USBA";
++	};
++
++	pinctrl_usb2ad_default: usb2ad_default {
++		function = "USB2AD";
++		groups = "USBA";
++	};
++
++	pinctrl_usb2bh_default: usb2bh_default {
++		function = "USB2BH";
++		groups = "USBB";
++	};
++
++	pinctrl_usb2bd_default: usb2bd_default {
++		function = "USB2BD";
++		groups = "USBB";
++	};
++
++	pinctrl_usb11bhid_default: usb11bhid_default {
++		function = "USB11BHID";
++		groups = "USBB";
++	};
++
+ 	pinctrl_vb_default: vb_default {
+ 		function = "VB";
+ 		groups = "VB";
+diff --git a/arch/arm/boot/dts/aspeed-g6.dtsi b/arch/arm/boot/dts/aspeed-g6.dtsi
+index 796976d275e1..0a29b3b57a9d 100644
+--- a/arch/arm/boot/dts/aspeed-g6.dtsi
++++ b/arch/arm/boot/dts/aspeed-g6.dtsi
+@@ -245,6 +245,51 @@
+ 			status = "disabled";
+ 		};
+ 
++		ehci0: usb@1e6a1000 {
++			compatible = "aspeed,ast2600-ehci", "generic-ehci";
++			reg = <0x1e6a1000 0x100>;
++			interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&syscon ASPEED_CLK_GATE_USBPORT1CLK>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&pinctrl_usb2ah_default>;
++			status = "disabled";
++		};
++
++		ehci1: usb@1e6a3000 {
++			compatible = "aspeed,ast2600-ehci", "generic-ehci";
++			reg = <0x1e6a3000 0x100>;
++			interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&syscon ASPEED_CLK_GATE_USBPORT2CLK>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&pinctrl_usb2bh_default>;
++			status = "disabled";
++		};
++
++		uhci: usb@1e6b0000 {
++			compatible = "aspeed,ast2600-uhci", "generic-uhci";
++			reg = <0x1e6b0000 0x100>;
++			interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
++			#ports = <2>;
++			clocks = <&syscon ASPEED_CLK_GATE_USBUHCICLK>;
++			status = "disabled";
++			/*
++			 * No default pinmux, it will follow EHCI, use an
++			 * explicit pinmux override if EHCI is not enabled.
++			 */
++		};
++
++		vhub: usb-vhub@1e6a0000 {
++			compatible = "aspeed,ast2600-usb-vhub";
++			reg = <0x1e6a0000 0x350>;
++			interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&syscon ASPEED_CLK_GATE_USBPORT1CLK>;
++			aspeed,vhub-downstream-ports = <7>;
++			aspeed,vhub-generic-endpoints = <21>;
++			pinctrl-names = "default";
++			pinctrl-0 = <&pinctrl_usb2ad_default>;
++			status = "disabled";
++		};
++
+ 		apb {
+ 			compatible = "simple-bus";
+ 			#address-cells = <1>;
 -- 
 2.17.1
 
