@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82F74170AAC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 22:41:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A0C8170AB1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 22:42:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EYK9eNFr8PTEOppAs+GGGPzG9Sh0/ymEiGQ3uZQ9D+U=; b=RoMw475d6EkNXL
-	GmlHHyxWaja8KqxRupPOuefem+nLJCui0w54mA0s2/i1d1OCwUMkefO3rnMDGvqUSTVszQPdtzKK7
-	5kOabTN3/zVoTaKipufR2ANqJYsnbdZwP9g9MG9AOyGU0lmVeUCnbOhmw5ltO/dZ5lGSJfooUChdC
-	S2fPKJrwD9azlYbkb++55RgniLDrwhswLudZgoL2rPTq93GlL/gu6Io8n9QJRj3SFY72sSXa5xqgW
-	svnLlJGIgqTTq3VYn96a3wp/ixkGVjrWimPYIRY8ipYLwd1qxXppMHwB0YQLJeu8FTbQuJ5gbmdAG
-	NFm3enbUO4kA2YgycSrw==;
+	List-Owner; bh=0WsweVur+piosMdRC7VH32c1Kw9TXj18NPyaTmUkEL0=; b=Lkv1B3EkEyS4he
+	f79NHtbEh+8g1NaKdLx4HzFXDLx8vacWPwZ4T8XGgqpMEz2HL7sXDmXzGtYCJBWPLsljXkWCOf8/3
+	JLJt+IM28vHHG3PxVaqVkkPbeYKcsjyyH0rGnJrK7sVtLfPKsyPshcUdpq542aDtMkBzv0824zbEZ
+	kNEk0QVcqKLP/6yNXMNj7XA2IDDDoQSFbKKe8hUCjmzRkGKfDTKz2d0KgxVb7l1WzrH+oQ5spRjIO
+	+gbRXhBhe+GfPITO+kFdrZXzXtErY/37OyNan3YR5J3m+f+pxlMw44BTX5pvSPmjUNMVqrmBaz/Il
+	KOPLAaTBPMTUUPi2iI4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j74Qu-0003ql-DG; Wed, 26 Feb 2020 21:41:32 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1j74RN-00045w-Lj; Wed, 26 Feb 2020 21:42:01 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j74Qi-0003qI-Jm
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 21:41:22 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id j17so211205pjz.3
+ id 1j74RB-00045Y-F2
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 21:41:50 +0000
+Received: by mail-oi1-f196.google.com with SMTP id c16so1130693oic.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 13:41:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=wf+hQg66hhCzpMAXWHM+HuBnD6U1j60tq45EYdsucCI=;
- b=mKb208fdH4VjrwAPiQEKqixvPOAB9C95cgTfKiEVpaRU9pMoAh2U424X2d1KOS351h
- v3QCIIUBYYnbICJoZx66ooI34HW+uVxKVR5ZWT6qVHHx9+aGuRZ8VDIMeA/2CqbHpdlI
- OGf1aiGEA7cFYbwiUUymDfbs0m5xFpVfrYVAc=
+ Wed, 26 Feb 2020 13:41:49 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=wf+hQg66hhCzpMAXWHM+HuBnD6U1j60tq45EYdsucCI=;
- b=aOYRoKJ2sLg1Af9qJCvchgc8uP5Quok0nR/Bt5eapdlJadVgHkhN1fEzNAQashlsOt
- S2WYVX5/a+qH1XlA6D3dlsa061luVgFlwOlaES8RaR6ftN18Qh4RgyEaI9VJQCLeSNlC
- vdDHsBW76W6t4Uo38E9y0gfD68Tyvjq714MLkCTqEYG4sRx5UFrGQf09Q6GHaRhv8VjJ
- e+rHNE5LrmnbmuU+EN+7gULRlyPnhrCT/sx7thSkfBJWOGkxprif1K5Rb0vWle/vK0/y
- Dyen71nD97TXAAn8Kmr62uLWlm7hUkrZllHoc04U9pj4Jhdin/fKh1KOfOlRrsKQoRcl
- 4STA==
-X-Gm-Message-State: APjAAAU9+csdukTinnWiLiYVoEhwV0B6mdLfcoJoNCOC+KC9Lk0zojCw
- e4tQesOn0WifiGZgJXwcj9nFDw==
-X-Google-Smtp-Source: APXvYqxpYrxZJdpgyDEYgt85Ahen+tbff9vS44VZV/k6JWS5lmBiIhwZErrVfzYTUAItJHsrFUDOuA==
-X-Received: by 2002:a17:90a:fa8d:: with SMTP id
- cu13mr1177001pjb.68.1582753280049; 
- Wed, 26 Feb 2020 13:41:20 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id g7sm4283587pfq.33.2020.02.26.13.41.18
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=byAUrcii8a0AWXrs5vwsBsgaE4yUvZlmDVkZ5AzS35g=;
+ b=OJnBAwHpnpdn142CuRvAb2ZHcV81Fo3CVtA2FUeZEzSxwjAU3AgsiUwbtSQfk5+0Qw
+ SqXq92ZdXgAVOgRyYc6eBLl2N6i3A6lFpw8Z4wsZVo74cgkIJj4zzglHgMejjYXjW3un
+ SYruj/ReOUV72A5AQdEZcAOA6h7qKD62l9bP+HxnKgvI+CGjdiVkbPE5cdaqq8LHlm6n
+ rTKbRLhag8zvxXr4YBTdXPLaPgk0nCT3I0xXU8B10xw3ktmHMq+inKQuyFp9mazFhJ9C
+ /jjUdOVS5GjP92V9l82aDwvp4pJ0f9gFNn8BO2JO0isuZq9MnJtgkcPmQkQBc4y954mY
+ qRfg==
+X-Gm-Message-State: APjAAAUuauCHZ4LHNcWPc6fmdWYSvOemAuEQq4VqbC/RfFSavOM2u3Lc
+ A0IK7ACFwZftsnhLP4i5PvehiCtjGg==
+X-Google-Smtp-Source: APXvYqxncRleU9XUmrQhPNUgmsgZz/wkWA+ajBRa/ZE/p/Nu2nfYhoCyBE4+zxhuQIdH65UenErb0A==
+X-Received: by 2002:a54:408f:: with SMTP id i15mr862375oii.64.1582753308418;
+ Wed, 26 Feb 2020 13:41:48 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id g25sm1213381otr.8.2020.02.26.13.41.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 13:41:19 -0800 (PST)
-Date: Wed, 26 Feb 2020 13:41:18 -0800
-From: Kees Cook <keescook@chromium.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v7 07/11] arm64: unify native/compat instruction skipping
-Message-ID: <202002261341.17C9BC2222@keescook>
-References: <20200226155714.43937-1-broonie@kernel.org>
- <20200226155714.43937-8-broonie@kernel.org>
+ Wed, 26 Feb 2020 13:41:47 -0800 (PST)
+Received: (nullmailer pid 9586 invoked by uid 1000);
+ Wed, 26 Feb 2020 21:41:46 -0000
+Date: Wed, 26 Feb 2020 15:41:46 -0600
+From: Rob Herring <robh@kernel.org>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: arm: Convert UniPhier board/SoC
+ bindings to json-schema
+Message-ID: <20200226214146.GA9521@bogus>
+References: <20200222060435.971-1-yamada.masahiro@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200226155714.43937-8-broonie@kernel.org>
+In-Reply-To: <20200222060435.971-1-yamada.masahiro@socionext.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_134120_647742_00D48261 
-X-CRM114-Status: GOOD (  20.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_134149_499404_D52E4A43 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,123 +93,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Paul Elliott <paul.elliott@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Andrew Jones <drjones@redhat.com>,
- Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
- linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- Sudakshina Das <sudi.das@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 03:57:10PM +0000, Mark Brown wrote:
-> From: Dave Martin <Dave.Martin@arm.com>
+On Sat, 22 Feb 2020 15:04:33 +0900, Masahiro Yamada wrote:
+> Convert the Socionext UniPhier board/SoC binding to DT schema format.
 > 
-> Skipping of an instruction on AArch32 works a bit differently from
-> AArch64, mainly due to the different CPSR/PSTATE semantics.
-> 
-> Currently arm64_skip_faulting_instruction() is only suitable for
-> AArch64, and arm64_compat_skip_faulting_instruction() handles the IT
-> state machine but is local to traps.c.
-> 
-> Since manual instruction skipping implies a trap, it's a relatively
-> slow path.
-> 
-> So, make arm64_skip_faulting_instruction() handle both compat and
-> native, and get rid of the arm64_compat_skip_faulting_instruction()
-> special case.
-> 
-> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-
-Reviewed-by: Kees Cook <keescook@chromium.org>
-
--Kees
-
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> Signed-off-by: Mark Brown <broonie@kernel.org>
+> Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 > ---
->  arch/arm64/kernel/traps.c | 18 ++++++++----------
->  1 file changed, 8 insertions(+), 10 deletions(-)
 > 
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index b8c714dda851..bc9f4292bfc3 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -272,6 +272,8 @@ void arm64_notify_die(const char *str, struct pt_regs *regs,
->  	}
->  }
->  
-> +static void advance_itstate(struct pt_regs *regs);
-> +
->  void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
->  {
->  	regs->pc += size;
-> @@ -282,6 +284,9 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
->  	 */
->  	if (user_mode(regs))
->  		user_fastforward_single_step(current);
-> +
-> +	if (regs->pstate & PSR_MODE32_BIT)
-> +		advance_itstate(regs);
->  }
->  
->  static LIST_HEAD(undef_hook);
-> @@ -644,19 +649,12 @@ static void advance_itstate(struct pt_regs *regs)
->  	compat_set_it_state(regs, it);
->  }
->  
-> -static void arm64_compat_skip_faulting_instruction(struct pt_regs *regs,
-> -						   unsigned int sz)
-> -{
-> -	advance_itstate(regs);
-> -	arm64_skip_faulting_instruction(regs, sz);
-> -}
-> -
->  static void compat_cntfrq_read_handler(unsigned int esr, struct pt_regs *regs)
->  {
->  	int reg = (esr & ESR_ELx_CP15_32_ISS_RT_MASK) >> ESR_ELx_CP15_32_ISS_RT_SHIFT;
->  
->  	pt_regs_write_reg(regs, reg, arch_timer_get_rate());
-> -	arm64_compat_skip_faulting_instruction(regs, 4);
-> +	arm64_skip_faulting_instruction(regs, 4);
->  }
->  
->  static const struct sys64_hook cp15_32_hooks[] = {
-> @@ -676,7 +674,7 @@ static void compat_cntvct_read_handler(unsigned int esr, struct pt_regs *regs)
->  
->  	pt_regs_write_reg(regs, rt, lower_32_bits(val));
->  	pt_regs_write_reg(regs, rt2, upper_32_bits(val));
-> -	arm64_compat_skip_faulting_instruction(regs, 4);
-> +	arm64_skip_faulting_instruction(regs, 4);
->  }
->  
->  static const struct sys64_hook cp15_64_hooks[] = {
-> @@ -697,7 +695,7 @@ void do_cp15instr(unsigned int esr, struct pt_regs *regs)
->  		 * There is no T16 variant of a CP access, so we
->  		 * always advance PC by 4 bytes.
->  		 */
-> -		arm64_compat_skip_faulting_instruction(regs, 4);
-> +		arm64_skip_faulting_instruction(regs, 4);
->  		return;
->  	}
->  
-> -- 
-> 2.20.1
+> Changes in v2:
+>   - Remove 'examples' because examples are fold into /example-0 node
+>     and there is no way to meet
+>       $nodename:
+>          const: '/'
+> 
+>  .../bindings/arm/socionext/uniphier.txt       | 47 --------------
+>  .../bindings/arm/socionext/uniphier.yaml      | 61 +++++++++++++++++++
+>  MAINTAINERS                                   |  2 +-
+>  3 files changed, 62 insertions(+), 48 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/arm/socionext/uniphier.txt
+>  create mode 100644 Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
 > 
 
--- 
-Kees Cook
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
