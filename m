@@ -2,84 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 649B716FA30
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:04:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F14716FA43
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:09:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=H7+ou6Zpg2XYUnlWxLuBe0A/i5ruqgDMiTbgePWPvrY=; b=dnM7CYjUKT+81k
-	FtZ3e4bIi3I/qszEfGa2VN2T7mORVhdWAOAAEkB9OK3eDYOBGqIyn53CJYFiXPOAWHmEGnjv+91KU
-	tFgm3zRlzdla55kDAKXDFdTaUtiU/znYGgb8CoqoGqI42ETqlDViO3dYmZm/LVernBoI9TBcZeJGG
-	4vcTgsSTfWaophWoNMYdEK+tgLi5dOFO9XuTgdaKEhX/oao8lU/NCA5VQ98zP/GBFlabYYXuh+wa2
-	nvZZQhPIOwATU1FMuYccDjUU4Eo/TWZrAZpoqq5pS8O/Cg797PdZXLgZ7ASgWGn7JvDcsInBfLJ1g
-	3rJVTM1BW4jG52NNcEow==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AomA4HHYwZwglMwWDyf6pv5Hjvn/m1Q7kNOuPsnym70=; b=DIF6Xf1SmsiBVK
+	6GHhuP5YUHqFz/J52Kc8HT4MGUJxorx5WVpfMU4w8+8u7P/l/hJ+GOW7tRu3jr8TAHOvcGmKwfPeN
+	+Ts7XghbpCo/nWlNAXH7YW/R4umpsPTkVShACIfcdWoiZI85cFWMW3gC+9JUG/fIhg7ejWRunWCx/
+	STEArc9RlD5FVqAcnab+s32Fl1utBA0Gv+i3qtSMw410uoLRxJA1TlUvRZnO45FujbNC8b5s4lDiH
+	or1voPjIEjdTkmz6nSGxzOzelIo0DBpK8w88qv11ef7ZkY28oafwwyb0/8sMQsHA3kKLeY+vpfNW5
+	EzJ6fjY+4CM9f8IpMKuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6scL-00042S-7M; Wed, 26 Feb 2020 09:04:33 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1j6sgr-0006Bu-9i; Wed, 26 Feb 2020 09:09:13 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6sbw-0003s2-Kl
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 09:04:10 +0000
-Received: by mail-lf1-x144.google.com with SMTP id z9so1396976lfa.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 01:04:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9eHZsWhf/jI0CQUdI3eAEsrWZ3jvP1O0Z9niC9Xk7qU=;
- b=Bt6GKp40/528dIego2DNE20IvNRKTqPzT65q2zEeWe8bApszPZNzCNzQHavKUIlb18
- s+1muF3PFfBeFE+MaReQimvdA9Fv2waQG910ug5Ho5cAGCDy6s1muuOhbXZIEsqopIxo
- ROAfEOa8ZKwhQtZuT4CQ4w+SaaefQl0ksiptXkiuVhdBcl1WSiZ1xoZCMn0cdLsJwXuU
- SvNlaweTXadrtLfbr8GB0l4xqRRjhEhZ8u3KpWUPzj+Zv6ye1Un1ys9FbsGUgVVAs0UZ
- aLf+tSIZfeTqGSun8S+4tCeQ+vZ9RZJfVXWOutLfH1ZgMsg6gIvldFORNJfo00O05Ibv
- vFCA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9eHZsWhf/jI0CQUdI3eAEsrWZ3jvP1O0Z9niC9Xk7qU=;
- b=MXD7fIPl9Zk2ikH+jIXYpFGTjhaAIP4DlDRdEreitiJMN02n237grgUSryPDRPzy1i
- uzAbjMAx4p2XMo96clrOfZhTWcAY2JtUm2Ejwq+ONdzBqL+PY6hEUrUJyt55dCw5WGUt
- EL20BFSPDDQWVPnCCJNX9J+ll4X7X5RlLxENs1oZVdsBSTTo6fUvA3ETujHLD/l/1ICA
- QwDnCijP//VotXDxtRaqvt8TfZ2Y7Kk4m6qr9rRQJSHWJOMubOcieZaj9+/K2gmazU5w
- q9THi7/giZLdHkR3mqpsxd66ApolQEULsMJVRWLavGU8BilY16IXwIyjD5IH4sCK0wUa
- jWfg==
-X-Gm-Message-State: APjAAAWGWEBG5Mfehy26SNf4Q0peS6agKaIPGw07+GVdUMXHnmaJigMG
- mk5r5dX7uG+e18QoTNoKwtY=
-X-Google-Smtp-Source: APXvYqwrbSOXZUu09UI9/5ecj+GU4pY2j83Euw++/lMlFFAzDz7ZkhK3fSH2SPIK4olLQspKKPsbDQ==
-X-Received: by 2002:a05:6512:3e5:: with SMTP id
- n5mr1887701lfq.55.1582707845096; 
- Wed, 26 Feb 2020 01:04:05 -0800 (PST)
-Received: from localhost.localdomain (dsl-trebng21-b048b1-221.dhcp.inet.fi.
- [176.72.177.221])
- by smtp.googlemail.com with ESMTPSA id k1sm777927lji.43.2020.02.26.01.04.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 01:04:04 -0800 (PST)
-From: =?UTF-8?q?Joni=20Lepist=C3=B6?= <joni.m.lepisto@gmail.com>
-To: robh+dt@kernel.org,
-	mark.rutland@arm.com
-Subject: [PATCH] ARM: dts: zynq: Add support for Z-turn Lite board
-Date: Wed, 26 Feb 2020 11:03:36 +0200
-Message-Id: <20200226090337.16065-1-joni.m.lepisto@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ id 1j6sgf-0006B0-K4
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 09:09:04 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01Q98kPl100212;
+ Wed, 26 Feb 2020 03:08:46 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1582708126;
+ bh=715M2fEsQcQ9pGCNA+WdZUDo8i9Ym6s9zxFMk/XbQHM=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=CEG0EYD07SZfu0ZemKPihOoI30dStRLAC+bcraQqR//LNHsqF4Akstjvlb/UI5lY4
+ 54RSGgkjvojx/j0Cf2rAAZ2SD0nnTwpy+54VZG5VizfndJzvMQ2MKGcdIWrbBqX6Ll
+ KlzqFMqsNnWT1ohsOhwZI4DsDIr00JJUYoGGAPHU=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01Q98kCs075706
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 26 Feb 2020 03:08:46 -0600
+Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 26
+ Feb 2020 03:08:46 -0600
+Received: from localhost.localdomain (10.64.41.19) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 26 Feb 2020 03:08:45 -0600
+Received: from [172.24.190.4] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by localhost.localdomain (8.15.2/8.15.2) with ESMTP id 01Q98fuI103976;
+ Wed, 26 Feb 2020 03:08:41 -0600
+Subject: Re: [PATCH v2 1/3] dt-bindings: m_can: Add Documentation for
+ transceiver regulator
+To: Marc Kleine-Budde <mkl@pengutronix.de>, Rob Herring <robh@kernel.org>
+References: <20200217142836.23702-1-faiz_abbas@ti.com>
+ <20200217142836.23702-2-faiz_abbas@ti.com> <20200219203529.GA21085@bogus>
+ <a987bcd7-ca1c-dfda-72f3-cd2004a87ea5@ti.com>
+ <20b86553-9b98-1a9d-3757-54174aa67c62@pengutronix.de>
+From: Faiz Abbas <faiz_abbas@ti.com>
+Message-ID: <72e4b1f4-e7f1-cccd-6327-0c8ab6f9f9a7@ti.com>
+Date: Wed, 26 Feb 2020 14:40:18 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20b86553-9b98-1a9d-3757-54174aa67c62@pengutronix.de>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_010408_701529_8FAB4E13 
-X-CRM114-Status: GOOD (  14.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_010901_782792_59A3E8B8 
+X-CRM114-Status: GOOD (  14.73  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [joni.m.lepisto[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -88,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,66 +95,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Joni=20Lepist=C3=B6?= <joni.m.lepisto@gmail.com>,
- devicetree@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lgirdwood@gmail.com,
+ netdev@vger.kernel.org, sriram.dash@samsung.com, linux-kernel@vger.kernel.org,
+ linux-can@vger.kernel.org, broonie@kernel.org, wg@grandegger.com,
+ catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org, dmurphy@ti.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIGEgZHRzIGZvciBNWUlSIFotdHVybiBMaXRlIGFuZCByZXNwZWN0aXZlIHRhcmdldCBpbiBN
-YWtlZmlsZQpiYXNlZCBvbiB0aGUgZXhpc3RpbmcgWi10dXJuIGR0cyB3aGljaCBpcyBjb21wYXRp
-YmxlIGV4Y2VwdCBmb3IKbWVtb3J5IHNpemUuCgpTaWduZWQtb2ZmLWJ5OiBKb25pIExlcGlzdMO2
-IDxqb25pLm0ubGVwaXN0b0BnbWFpbC5jb20+Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZp
-bGUgICAgICAgICAgICB8ICAgMSArCiBhcmNoL2FybS9ib290L2R0cy96eW5xLXp0dXJuLWxpdGUu
-ZHRzIHwgMTE1ICsrKysrKysrKysrKysrKysrKysrKysrKysrCiAyIGZpbGVzIGNoYW5nZWQsIDEx
-NiBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vYm9vdC9kdHMvenlu
-cS16dHVybi1saXRlLmR0cwoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxl
-IGIvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUKaW5kZXggZDY1NDZkMjY3NmI5Li41NmIxYmNl
-OTI3NDQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCisrKyBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL01ha2VmaWxlCkBAIC0xMjQxLDYgKzEyNDEsNyBAQCBkdGItJChDT05GSUdf
-QVJDSF9aWU5RKSArPSBcCiAJenlucS16Yzc3MC14bTAxMy5kdGIgXAogCXp5bnEtemVkLmR0YiBc
-CiAJenlucS16dHVybi5kdGIgXAorCXp5bnEtenR1cm4tbGl0ZS5kdGIgXAogCXp5bnEtenliby5k
-dGIgXAogCXp5bnEtenliby16Ny5kdGIKIGR0Yi0kKENPTkZJR19NQUNIX0FSTUFEQV8zNzApICs9
-IFwKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3p5bnEtenR1cm4tbGl0ZS5kdHMgYi9h
-cmNoL2FybS9ib290L2R0cy96eW5xLXp0dXJuLWxpdGUuZHRzCm5ldyBmaWxlIG1vZGUgMTAwNjQ0
-CmluZGV4IDAwMDAwMDAwMDAwMC4uOTZjMGJhYmU4MjY3Ci0tLSAvZGV2L251bGwKKysrIGIvYXJj
-aC9hcm0vYm9vdC9kdHMvenlucS16dHVybi1saXRlLmR0cwpAQCAtMCwwICsxLDExNSBAQAorLy8g
-U1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKKy8qCisgKiAgQ29weXJpZ2h0IChDKSAy
-MDE1IEFuZHJlYSBNZXJlbGxvIDxhZG5yZWEubWVyZWxsb0BnbWFpbC5jb20+CisgKiAgQ29weXJp
-Z2h0IChDKSAyMDE3IEFsZXhhbmRlciBHcmFmIDxhZ3JhZkBzdXNlLmRlPgorICogIENvcHlyaWdo
-dCAoQykgMjAyMCBKb25pIExlcGlzdMO2IDxqb25pLm0ubGVwaXN0b0BnbWFpbC5jb20+CisgKgor
-ICogIEJhc2VkIG9uIHp5bnEtemVkLmR0cyB3aGljaCBpczoKKyAqICBDb3B5cmlnaHQgKEMpIDIw
-MTEgLSAyMDE0IFhpbGlueAorICogIENvcHlyaWdodCAoQykgMjAxMiBOYXRpb25hbCBJbnN0cnVt
-ZW50cyBDb3JwLgorICoKKyAqLworCisvZHRzLXYxLzsKKy9pbmNsdWRlLyAienlucS03MDAwLmR0
-c2kiCisKKy8geworCW1vZGVsID0gIlp5bnEgWi1UdXJuIExpdGUgTVlJUiBCb2FyZCI7CisJY29t
-cGF0aWJsZSA9ICJteWlyLHp5bnEtenR1cm4tbGl0ZSIsICJ4bG54LHp5bnEtNzAwMCI7CisKKwlh
-bGlhc2VzIHsKKwkJZXRoZXJuZXQwID0gJmdlbTA7CisJCXNlcmlhbDAgPSAmdWFydDE7CisJCXNl
-cmlhbDEgPSAmdWFydDA7CisJCW1tYzAgPSAmc2RoY2kwOworCX07CisKKwltZW1vcnlAMCB7CisJ
-CWRldmljZV90eXBlID0gIm1lbW9yeSI7CisJCXJlZyA9IDwweDAgMHgyMDAwMDAwMD47CisJfTsK
-KworCWNob3NlbiB7CisJCXN0ZG91dC1wYXRoID0gInNlcmlhbDA6MTE1MjAwbjgiOworCX07CisK
-KwlncGlvLWxlZHMgeworCQljb21wYXRpYmxlID0gImdwaW8tbGVkcyI7CisJCXVzci1sZWQxIHsK
-KwkJCWxhYmVsID0gInVzci1sZWQxIjsKKwkJCWdwaW9zID0gPCZncGlvMCAweDAgMHgxPjsKKwkJ
-CWRlZmF1bHQtc3RhdGUgPSAib2ZmIjsKKwkJfTsKKworCQl1c3ItbGVkMiB7CisJCQlsYWJlbCA9
-ICJ1c3ItbGVkMiI7CisJCQlncGlvcyA9IDwmZ3BpbzAgMHg5IDB4MT47CisJCQlkZWZhdWx0LXN0
-YXRlID0gIm9mZiI7CisJCX07CisJfTsKKworCWdwaW8ta2V5cyB7CisJCWNvbXBhdGlibGUgPSAi
-Z3Bpby1rZXlzIjsKKwkJYXV0b3JlcGVhdDsKKwkJSzEgeworCQkJbGFiZWwgPSAiSzEiOworCQkJ
-Z3Bpb3MgPSA8JmdwaW8wIDB4MzIgMHgxPjsKKwkJCWxpbnV4LGNvZGUgPSA8MHg2Nj47CisJCQl3
-YWtldXAtc291cmNlOworCQkJYXV0b3JlcGVhdDsKKwkJfTsKKwl9OworfTsKKworJmNsa2Mgewor
-CXBzLWNsay1mcmVxdWVuY3kgPSA8MzMzMzMzMzM+OworfTsKKworJmdlbTAgeworCXN0YXR1cyA9
-ICJva2F5IjsKKwlwaHktbW9kZSA9ICJyZ21paS1pZCI7CisJcGh5LWhhbmRsZSA9IDwmZXRoZXJu
-ZXRfcGh5PjsKKworCWV0aGVybmV0X3BoeTogZXRoZXJuZXQtcGh5QDAgeworCQlyZWcgPSA8MHgw
-PjsKKwl9OworfTsKKworJnNkaGNpMCB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJnVhcnQw
-IHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismdWFydDEgeworCXN0YXR1cyA9ICJva2F5IjsK
-K307CisKKyZ1c2IwIHsKKwlzdGF0dXMgPSAib2theSI7CisJZHJfbW9kZSA9ICJob3N0IjsKK307
-CisKKyZjYW4wIHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismaTJjMCB7CisJc3RhdHVzID0g
-Im9rYXkiOworCWNsb2NrLWZyZXF1ZW5jeSA9IDw0MDAwMDA+OworCisJc3RsbTc1QDQ5IHsKKwkJ
-c3RhdHVzID0gIm9rYXkiOworCQljb21wYXRpYmxlID0gImxtNzUiOworCQlyZWcgPSA8MHg0OT47
-CisJfTsKKworCWFjY2VsZXJvbWV0ZXJANTMgeworCQljb21wYXRpYmxlID0gImFkaSxhZHhsMzQ1
-IiwgImFkeGwzNDUiLCAiYWRpLGFkeGwzNHgiLCAiYWR4bDM0eCI7CisJCXJlZyA9IDwweDUzPjsK
-KwkJaW50ZXJydXB0LXBhcmVudCA9IDwmaW50Yz47CisJCWludGVycnVwdHMgPSA8MHgwIDB4MWUg
-MHg0PjsKKwl9OworfTsKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Marc,
+
+On 21/02/20 2:01 pm, Marc Kleine-Budde wrote:
+> On 2/21/20 9:31 AM, Faiz Abbas wrote:
+>> Hi Rob,
+>>
+>> On 20/02/20 2:05 am, Rob Herring wrote:
+>>> On Mon, Feb 17, 2020 at 07:58:34PM +0530, Faiz Abbas wrote:
+>>>> Some CAN transceivers have a standby line that needs to be asserted
+>>>> before they can be used. Model this GPIO lines as an optional
+>>>> fixed-regulator node. Document bindings for the same.
+>>>>
+>>>> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+>>>> ---
+>>>>  Documentation/devicetree/bindings/net/can/m_can.txt | 3 +++
+>>>>  1 file changed, 3 insertions(+)
+>>>
+>>> This has moved to DT schema in my tree, so please adjust it and resend.
+>>
+>> Ok.
+>>>
+>>>> diff --git a/Documentation/devicetree/bindings/net/can/m_can.txt b/Documentation/devicetree/bindings/net/can/m_can.txt
+>>>> index ed614383af9c..f17e2a5207dc 100644
+>>>> --- a/Documentation/devicetree/bindings/net/can/m_can.txt
+>>>> +++ b/Documentation/devicetree/bindings/net/can/m_can.txt
+>>>> @@ -48,6 +48,9 @@ Optional Subnode:
+>>>>  			  that can be used for CAN/CAN-FD modes. See
+>>>>  			  Documentation/devicetree/bindings/net/can/can-transceiver.txt
+>>>>  			  for details.
+>>>> +
+>>>> +- xceiver-supply: Regulator that powers the CAN transceiver.
+>>>
+>>> The supply for a transceiver should go in the transceiver node.
+>>>
+>>
+>> Marc, while I have you here, do you agree with this?
+> 
+> I'll look into the details later today.
+> 
+
+Sure. Be sure to take another look at my attempt to use the transceiver
+with a phy driver some time ago.
+
+https://lore.kernel.org/patchwork/patch/1006238/
+
+Thanks,
+Faiz
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
