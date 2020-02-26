@@ -2,91 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 757D016FD63
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 12:21:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1793116FDA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 12:27:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zl5hGcD3UWXexAxK2nOdpYwNpWWsCKrQ8+tqW7SrNDE=; b=dEDQdIErP13BsuS3EdA3kQQIG
-	uOmPbfIRsGJFsEs5DXpY6SOoFEuCRffFN0YpylKlTCgPTj9r7RF7UkaakttSNSbbbo3acY+1q6jT2
-	VU5HgQrSeEg79HB4Y+2gdTALsG/QUTvJB0jd+Wzc2vbttSYMHKWhqi0EjAVgZJBRFXhC0FUVLExX2
-	OXpOXTmtz+2KFMLEhUIQhgmI8grdfYNozkmXTUNZuE6mSDXp7ayJ/7FwOLIUTHAZJeNDQDNnfXNBs
-	RZ8URl5o6r4YHw/Dy4dMQclnIg/PyxMFGvBXdPPhDVP3LPW1G1AF3JncJDuKuK3fyQ7MbHesp94Vl
-	K9nQ94C7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XpOrPR/JBs8a6v1ONe0B3SNVSaXSUrz9/Umk+sfov3s=; b=h1hoPVJeMXQZLu
+	w5lJEDX2UngSmZmxZXn/bGvr2yc5HLATlhrTxExsAW+h9v/m276Tw1K8GqPja6MDUZPUa31mZ4Xfx
+	EjmnOGMrk9L66hgdWeDBve/yb8YzKu9BdL4fMJ0oLesbc/ogCeosx4t7v4hyQBTt3w7WhSj+COokZ
+	qZO3WPgS8eLVkbKBOMqTYhV7+I9Wp/HuGR/mgY5WO6DcgUlg+QlHtUlbfN8uA2E1e8W3RVey0jgus
+	ircdR73sJhsPIwK0/VNJBk2MFNJ0RgHfI67YoO14EOzsR2KefZXcwTX5P6b8CecrsZleMYYhzz3Mi
+	GaegRc5Svy8EWsacm/Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ukq-0006ep-FM; Wed, 26 Feb 2020 11:21:28 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1j6uqu-0008Mc-Dk; Wed, 26 Feb 2020 11:27:44 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6uka-0006dv-9T
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 11:21:16 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 48SCzM1tTVz9tyML;
- Wed, 26 Feb 2020 12:21:03 +0100 (CET)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=dcbZx4t5; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id J7zfGGKBixz2; Wed, 26 Feb 2020 12:21:03 +0100 (CET)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 48SCzL6n6pz9tyLT;
- Wed, 26 Feb 2020 12:21:02 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1582716063; bh=u+44lvk1l0rvN0rVt0XeRLZF9pAnZ+SeTYsCRW90jUs=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=dcbZx4t5T2TqZBsmJqeETgOslZL/sjGjY3jtgZjyAkWRnWp+cZWdaA9+1CVcQnyrg
- EAK/r3fzS6yjM9r4KrQXdxQ3U95U+v+IizkroXw9QSoxVs+Y7bA5gjhV+iBVeI3LhD
- 1eV+B927JsHKM6Lu+qpoDnmZLHfscXCGj3HKorDY=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 166CF8B844;
- Wed, 26 Feb 2020 12:21:04 +0100 (CET)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id HTbfYZhVV_tY; Wed, 26 Feb 2020 12:21:03 +0100 (CET)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id B0DBC8B776;
- Wed, 26 Feb 2020 12:21:01 +0100 (CET)
-Subject: Re: [PATCH v2 07/13] powerpc: add support for folded p4d page tables
-To: Mike Rapoport <rppt@kernel.org>
-References: <20200216081843.28670-1-rppt@kernel.org>
- <20200216081843.28670-8-rppt@kernel.org>
- <c79b363c-a111-389a-5752-51cf85fa8c44@c-s.fr> <20200218105440.GA1698@hump>
- <20200226091315.GA11803@hump> <f881f732-729b-a098-f520-b30e44dc10c8@c-s.fr>
- <20200226105615.GB11803@hump>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <7a008227-433c-73d7-b01a-1c6c7c66f04e@c-s.fr>
-Date: Wed, 26 Feb 2020 12:20:49 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j6uqj-0008ME-Fn; Wed, 26 Feb 2020 11:27:34 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id C1302293937
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] drm/mediatek: Remove debug messages for function calls
+Date: Wed, 26 Feb 2020 12:27:23 +0100
+Message-Id: <20200226112723.649954-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <20200226105615.GB11803@hump>
-Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_032112_631017_D4C333DC 
-X-CRM114-Status: GOOD (  16.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_032733_659226_32E17AC2 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,63 +55,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
- Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Michael Ellerman <mpe@ellerman.id.au>, nios2-dev@lists.rocketboards.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ CK Hu <ck.hu@mediatek.com>, Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAyNi8wMi8yMDIwIMOgIDExOjU2LCBNaWtlIFJhcG9wb3J0IGEgw6ljcml0wqA6Cj4gT24g
-V2VkLCBGZWIgMjYsIDIwMjAgYXQgMTA6NDY6MTNBTSArMDEwMCwgQ2hyaXN0b3BoZSBMZXJveSB3
-cm90ZToKPj4KPj4KPj4gTGUgMjYvMDIvMjAyMCDDoCAxMDoxMywgTWlrZSBSYXBvcG9ydCBhIMOp
-Y3JpdMKgOgo+Pj4gT24gVHVlLCBGZWIgMTgsIDIwMjAgYXQgMTI6NTQ6NDBQTSArMDIwMCwgTWlr
-ZSBSYXBvcG9ydCB3cm90ZToKPj4+PiBPbiBTdW4sIEZlYiAxNiwgMjAyMCBhdCAxMTo0MTowN0FN
-ICswMTAwLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+Pj4+Pgo+Pj4+Pgo+Pj4+PiBMZSAxNi8w
-Mi8yMDIwIMOgIDA5OjE4LCBNaWtlIFJhcG9wb3J0IGEgw6ljcml0wqA6Cj4+Pj4+PiBGcm9tOiBN
-aWtlIFJhcG9wb3J0IDxycHB0QGxpbnV4LmlibS5jb20+Cj4+Pj4+Pgo+Pj4+Pj4gSW1wbGVtZW50
-IHByaW1pdGl2ZXMgbmVjZXNzYXJ5IGZvciB0aGUgNHRoIGxldmVsIGZvbGRpbmcsIGFkZCB3YWxr
-cyBvZiBwNGQKPj4+Pj4+IGxldmVsIHdoZXJlIGFwcHJvcHJpYXRlIGFuZCByZXBsYWNlIDVsZXZl
-bC1maXh1cC5oIHdpdGggcGd0YWJsZS1ub3A0ZC5oLgo+Pj4+Pgo+Pj4+PiBJIGRvbid0IHRoaW5r
-IGl0IGlzIHdvcnRoIGFkZGluZyBhbGwgdGhpcyBhZGRpdGlvbm5hbHMgd2Fsa3Mgb2YgcDRkLCB0
-aGlzCj4+Pj4+IHBhdGNoIGNvdWxkIGJlIGxpbWl0ZWQgdG8gY2hhbmdlcyBsaWtlOgo+Pj4+Pgo+
-Pj4+PiAtCQlwdWQgPSBwdWRfb2Zmc2V0KHBnZCwgZ3BhKTsKPj4+Pj4gKwkJcHVkID0gcHVkX29m
-ZnNldChwNGRfb2Zmc2V0KHBnZCwgZ3BhKSwgZ3BhKTsKPj4+Pj4KPj4+Pj4gVGhlIGFkZGl0aW9u
-bmFsIHdhbGtzIHNob3VsZCBiZSBhZGRlZCB0aHJvdWdoIGFub3RoZXIgcGF0Y2ggdGhlIGRheSBw
-b3dlcnBjCj4+Pj4+IG5lZWQgdGhlbS4KPj4+Pgo+Pj4+IE9rLCBJJ2xsIHVwZGF0ZSB0aGUgcGF0
-Y2ggdG8gcmVkdWNlIHdhbGtpbmcgdGhlIHA0ZC4KPj4+Cj4+PiBIZXJlJ3Mgd2hhdCBJIGhhdmUg
-d2l0aCBtb3JlIGRpcmVjdCBhY2Nlc2VzIGZyb20gcGdkIHRvIHB1ZC4KPj4KPj4gSSB3ZW50IHF1
-aWNrbHkgdGhyb3VnaC4gVGhpcyBsb29rcyBwcm9taXNpbmcuCj4+Cj4+IERvIHdlIG5lZWQgdGhl
-IHdhbGtfcDRkKCkgaW4gYXJjaC9wb3dlcnBjL21tL3B0ZHVtcC9oYXNocGFnZXRhYmxlLmMgPwo+
-PiBDYW4ndCB3ZSBqdXN0IGRvCj4+Cj4+IEBAIC00NDUsNyArNDU5LDcgQEAgc3RhdGljIHZvaWQg
-d2Fsa19wYWdldGFibGVzKHN0cnVjdCBwZ19zdGF0ZSAqc3QpCj4+ICAgCQlhZGRyID0gS0VSTl9W
-SVJUX1NUQVJUICsgaSAqIFBHRElSX1NJWkU7Cj4+ICAgCQlpZiAoIXBnZF9ub25lKCpwZ2QpKQo+
-PiAgIAkJCS8qIHBnZCBleGlzdHMgKi8KPj4gLQkJCXdhbGtfcHVkKHN0LCBwZ2QsIGFkZHIpOwo+
-PiArCQkJd2Fsa19wdWQoc3QsIHA0ZF9vZmZzZXQocGdkLCBhZGRyKSwgYWRkcik7Cj4gCj4gV2Ug
-Y2FuIGRvCj4gCj4gCWFkZHIgPSBLRVJOX1ZJUlRfU1RBUlQgKyBpICogUEdESVJfU0laRTsKPiAJ
-cDRkID0gcDRkX29mZnNldChwZ2QsIGFkZHIpOwo+IAlpZiAoIXA0ZF9ub25lKCpwZ2QpKQo+IAkJ
-d2Fsa19wdWQoKQo+IAo+IEJ1dCBJIGRvbid0IHRoaW5rIHRoaXMgaXMgcmVhbGx5IGVzc2VudGlh
-bC4gQWdhaW4sIHdlIGFyZSB0cmFkaW5nIG9mZiBjb2RlCj4gY29uc2lzdGVuY3kgdnMgbGluZSBj
-b3VudC4gSSBkb24ndCB0aGluayBsaW5lIGNvdW50IGlzIHRoYXQgaW1wb3J0YW50LgoKT2suCgpD
-aHJpc3RvcGhlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+Equivalent information can be nowadays obtained using function tracer.
+
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+---
+
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 5 -----
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 2 --
+ 2 files changed, 7 deletions(-)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index a236499123aa..882c690d3f13 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -192,7 +192,6 @@ static int mtk_crtc_ddp_clk_enable(struct mtk_drm_crtc *mtk_crtc)
+ 	int ret;
+ 	int i;
+ 
+-	DRM_DEBUG_DRIVER("%s\n", __func__);
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+ 		ret = clk_prepare_enable(mtk_crtc->ddp_comp[i]->clk);
+ 		if (ret) {
+@@ -212,7 +211,6 @@ static void mtk_crtc_ddp_clk_disable(struct mtk_drm_crtc *mtk_crtc)
+ {
+ 	int i;
+ 
+-	DRM_DEBUG_DRIVER("%s\n", __func__);
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+ 		clk_disable_unprepare(mtk_crtc->ddp_comp[i]->clk);
+ }
+@@ -257,7 +255,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 	int ret;
+ 	int i;
+ 
+-	DRM_DEBUG_DRIVER("%s\n", __func__);
+ 	if (WARN_ON(!crtc->state))
+ 		return -EINVAL;
+ 
+@@ -298,7 +295,6 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 		goto err_mutex_unprepare;
+ 	}
+ 
+-	DRM_DEBUG_DRIVER("mediatek_ddp_ddp_path_setup\n");
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
+ 		mtk_ddp_add_comp_to_path(mtk_crtc->config_regs,
+ 					 mtk_crtc->ddp_comp[i]->id,
+@@ -348,7 +344,6 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+ 	struct drm_crtc *crtc = &mtk_crtc->base;
+ 	int i;
+ 
+-	DRM_DEBUG_DRIVER("%s\n", __func__);
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
+ 		mtk_ddp_comp_stop(mtk_crtc->ddp_comp[i]);
+ 		if (i == 1)
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+index 17f118ee0e57..4934834977b3 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+@@ -570,7 +570,6 @@ static int mtk_drm_sys_suspend(struct device *dev)
+ 	int ret;
+ 
+ 	ret = drm_mode_config_helper_suspend(drm);
+-	DRM_DEBUG_DRIVER("mtk_drm_sys_suspend\n");
+ 
+ 	return ret;
+ }
+@@ -582,7 +581,6 @@ static int mtk_drm_sys_resume(struct device *dev)
+ 	int ret;
+ 
+ 	ret = drm_mode_config_helper_resume(drm);
+-	DRM_DEBUG_DRIVER("mtk_drm_sys_resume\n");
+ 
+ 	return ret;
+ }
+-- 
+2.25.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
