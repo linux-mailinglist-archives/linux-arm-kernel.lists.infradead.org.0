@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A0CC16FEAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:09:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5398116FEAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:10:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UaE13FiogtBfAM2KHAFUYdvW27SuNyMEiq+GJ7j7RjE=; b=FhhFRAhZCKLp/Z
-	R2ZNash6NKhM0zhBWRJRELTWiw0VI2sh38ZwjF+8XR/CFZSyB99wOxKe1/C09/ldQHJJjSJL6OHxD
-	LUwv55XTv/3KuMJrc7z96qgWCWYeSwOrA3nvBEF6yGdeV6GhWndNZKg81QVFTL8MuHsB7dsQOPwkH
-	9zwogsno9/tUGaK/Y8o6Oawoa6RvIIDHXmPU7kQv5WU9a9IuRLLTufuThf07mfmVasqP/mffzWRIq
-	muB1pQ63p2QKhssEr73cYZ+UaqmmLwxMVQMs6FSctEyiOZ3EI4GGenewRgrp5aGFvd/UhoZNTe2Sf
-	JaiDH3QTrh1m20GNv0Kg==;
+	List-Owner; bh=7DkXDvx85OoLmWUB7IolCPEPx0ojdeNpO9qtPiQxkVM=; b=LMI/9028h6g7+w
+	YoiLkELTY14ZoshJSBK8ki0HjJiO3tyIaamkk2plKgYoDypH6wOBf1kkdTAee/c5mdbEXudAckjuq
+	B8k81E5+oZfSRYcM7pxMt79zrHuDBFa+eZWqx3FGK7mG3VfSmYBd0GGCpxkiy82hLVa/4bRCabmBp
+	l4RsNtZRMVt20dYc6Y7zIFuIywyTG1LaLysh2F2aZFN3yu7UqV32Tz0nirWenvzrv0wVOZIHpxDbW
+	GvD39hseS0eC5H/Knnn4gm0mgEwjwpmM2wWQuKCm8n9+QBv40Bh3fD7BYNbbyIG+ChV/XVlSAbqZu
+	/X8ENtrlRSbsdBruCRag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6vVQ-0006d4-23; Wed, 26 Feb 2020 12:09:36 +0000
+	id 1j6vWB-0008Ag-6x; Wed, 26 Feb 2020 12:10:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6vVF-0006ce-TW
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:09:27 +0000
+ id 1j6vVz-0007pm-4k
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:10:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 352171FB;
- Wed, 26 Feb 2020 04:09:25 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 935D71FB;
+ Wed, 26 Feb 2020 04:10:10 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D98253FA00;
- Wed, 26 Feb 2020 04:09:23 -0800 (PST)
-Date: Wed, 26 Feb 2020 12:09:19 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4486B3FA00;
+ Wed, 26 Feb 2020 04:10:09 -0800 (PST)
+Date: Wed, 26 Feb 2020 12:10:07 +0000
 From: Mark Rutland <mark.rutland@arm.com>
 To: Elliot Berman <eberman@codeaurora.org>
-Subject: Re: [PATCH v2 1/3] dt: psci: Add arm,psci-sys-reset2-type property
-Message-ID: <20200226120918.GA21897@lakrids.cambridge.arm.com>
+Subject: Re: [PATCH v2 2/3] firmware: psci: Add support for dt-supplied
+ SYSTEM_RESET2 type
+Message-ID: <20200226121006.GB21897@lakrids.cambridge.arm.com>
 References: <1582577858-12410-1-git-send-email-eberman@codeaurora.org>
- <1582577858-12410-2-git-send-email-eberman@codeaurora.org>
+ <1582577858-12410-3-git-send-email-eberman@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582577858-12410-2-git-send-email-eberman@codeaurora.org>
+In-Reply-To: <1582577858-12410-3-git-send-email-eberman@codeaurora.org>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_040925_996316_BE0D3274 
-X-CRM114-Status: GOOD (  17.18  )
+X-CRM114-CacheID: sfid-20200226_041011_290238_63B2DD5B 
+X-CRM114-Status: GOOD (  20.31  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,56 +76,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 12:57:36PM -0800, Elliot Berman wrote:
+On Mon, Feb 24, 2020 at 12:57:37PM -0800, Elliot Berman wrote:
 > Some implementors of PSCI may relax the requirements of the PSCI
 > architectural warm reset. In order to comply with PSCI specification, a
-> different reset_type value must be used.
+> different reset_type value must be used. The alternate PSCI
+> SYSTEM_RESET2 may be used in all warm/soft reboot scenarios, replacing
+> the architectural warm reset.
 
-This reads as-if you're saying the firmware isn't spec compliant, and
-this is a workaround in order to get the expected behaviour.
-
-Can you please elaborate on what you mean by "relax the requirements"
-here? What's your firmware doing or not doing that you want to avoid?
-
-> The alternate PSCI SYSTEM_RESET2 may be used in all warm/soft reboot
-> scenarios, replacing the architectural warm reset.
-
-I assume you mean SYSTEM_REET2's SYSTEM_WARM_RESET reset? Please call
-that out explicitly by name -- it makes this easier to look up, and
-if/when more architectural resets are added the commit message won't
-become ambiguous.
-
-> 
-> Signed-off-by: Elliot Berman <eberman@codeaurora.org>
-> ---
->  Documentation/devicetree/bindings/arm/psci.yaml | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-> index 8ef8542..469256a2 100644
-> --- a/Documentation/devicetree/bindings/arm/psci.yaml
-> +++ b/Documentation/devicetree/bindings/arm/psci.yaml
-> @@ -102,6 +102,11 @@ properties:
->        [1] Kernel documentation - ARM idle states bindings
->          Documentation/devicetree/bindings/arm/idle-states.txt
->  
-> +  arm,psci-sys-reset2-param:
-> +    $ref: /schemas/types.yaml#/definitions/uint32
-> +    description: |
-> +        reset_param value to use during a warm or soft reboot.
-
-A "soft" reboot isn't a PSCI concept, so I'm worried this is just
-hooking up magic values for Linux internals.
-
-I'd like to better understand what you're trying to achieve here.
+As with the binding patch, this sounds like a workaround for a firmware
+bug. Can you please elaborate on what exactly your firmware does in this
+case?
 
 Thanks,
 Mark.
 
+> 
+> Signed-off-by: Elliot Berman <eberman@codeaurora.org>
+> ---
+>  drivers/firmware/psci/psci.c | 22 ++++++++++++++++++----
+>  include/uapi/linux/psci.h    |  2 ++
+>  2 files changed, 20 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> index 2937d44..8f4609c 100644
+> --- a/drivers/firmware/psci/psci.c
+> +++ b/drivers/firmware/psci/psci.c
+> @@ -90,6 +90,8 @@ static u32 psci_function_id[PSCI_FN_MAX];
+>  
+>  static u32 psci_cpu_suspend_feature;
+>  static bool psci_system_reset2_supported;
+> +static u32 psci_sys_reset2_reset_param =
+> +	PSCI_1_1_SYSTEM_RESET2_SYSTEM_WARM_RESET;
+>  
+>  static inline bool psci_has_ext_power_state(void)
+>  {
+> @@ -272,11 +274,10 @@ static void psci_sys_reset(enum reboot_mode reboot_mode, const char *cmd)
+>  	if ((reboot_mode == REBOOT_WARM || reboot_mode == REBOOT_SOFT) &&
+>  	    psci_system_reset2_supported) {
+>  		/*
+> -		 * reset_type[31] = 0 (architectural)
+> -		 * reset_type[30:0] = 0 (SYSTEM_WARM_RESET)
+>  		 * cookie = 0 (ignored by the implementation)
+>  		 */
+> -		invoke_psci_fn(PSCI_FN_NATIVE(1_1, SYSTEM_RESET2), 0, 0, 0);
+> +		invoke_psci_fn(PSCI_FN_NATIVE(1_1, SYSTEM_RESET2),
+> +			       psci_sys_reset2_reset_param, 0, 0);
+>  	} else {
+>  		invoke_psci_fn(PSCI_0_2_FN_SYSTEM_RESET, 0, 0, 0);
+>  	}
+> @@ -493,6 +494,7 @@ typedef int (*psci_initcall_t)(const struct device_node *);
+>  static int __init psci_0_2_init(struct device_node *np)
+>  {
+>  	int err;
+> +	u32 param;
+>  
+>  	err = get_set_conduit_method(np);
+>  	if (err)
+> @@ -505,7 +507,19 @@ static int __init psci_0_2_init(struct device_node *np)
+>  	 * can be carried out according to the specific version reported
+>  	 * by firmware
+>  	 */
+> -	return psci_probe();
+> +	err = psci_probe();
+> +	if (err)
+> +		return err;
 > +
->    "#power-domain-cells":
->      description:
->        The number of cells in a PM domain specifier as per binding in [3].
+> +	if (psci_system_reset2_supported &&
+> +	    !of_property_read_u32(np, "arm,psci-sys-reset2-param", &param)) {
+> +		if ((s32)param > 0)
+> +			pr_warn("%08x is an invalid architectural reset type.\n",
+> +				param);
+> +		psci_sys_reset2_reset_param = param;
+> +	}
+> +
+> +	return 0;
+>  }
+>  
+>  /*
+> diff --git a/include/uapi/linux/psci.h b/include/uapi/linux/psci.h
+> index 2fcad1d..d786ec8 100644
+> --- a/include/uapi/linux/psci.h
+> +++ b/include/uapi/linux/psci.h
+> @@ -55,6 +55,8 @@
+>  #define PSCI_1_0_FN64_SYSTEM_SUSPEND		PSCI_0_2_FN64(14)
+>  #define PSCI_1_1_FN64_SYSTEM_RESET2		PSCI_0_2_FN64(18)
+>  
+> +#define PSCI_1_1_SYSTEM_RESET2_SYSTEM_WARM_RESET	0
+> +
+>  /* PSCI v0.2 power state encoding for CPU_SUSPEND function */
+>  #define PSCI_0_2_POWER_STATE_ID_MASK		0xffff
+>  #define PSCI_0_2_POWER_STATE_ID_SHIFT		0
 > -- 
 > The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 > a Linux Foundation Collaborative Project
