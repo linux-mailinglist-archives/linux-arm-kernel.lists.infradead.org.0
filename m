@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EE8A16F9DE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:42:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0D4816F9ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:45:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dBVOMWCbbS/bZZC6dq4BMxw695l8UDylw83802x8CII=; b=YMmYJ6aFbfFvVG
-	7Gz7oI/UBREVcmXuWYcC90Nr7svm7pCJmTyhfUG0Gv1ge5gCpXZXSOueJH4DESxxOd4YkG3ZoyxrF
-	ZRmWJKFIU6aQxTHO7Mzd9y7/3DMGsbsAupKf5AhhzBuom3laUyDuh/LxkYoreYH8zqTzLUNSEotFo
-	220RP0ntYhJIRopfrig2SGcf0nMJtZNQsGecbuBP5ItHPhV7bJ5YkBK2mwCKC3wTSWWmyWyQrm8No
-	RWTHmiCrLOdh20viuy47BtEw4MYxvhPY8dG1XAmk3W0bm9pqwxRLfkiOjW9cXOemig9QuQ+OcFo4w
-	SHdAGGc1lbYZnsKgJBAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=j5BC7KllhQGu5wt0RvM41HNhytXmstVbnQkKlGTgrT8=; b=ENoq3vxzoENUEzgG4MHSEKtGa
+	rfQiu7QqGOg76h8Z9ZuYbhAYZT+clW1b1RIUICa1uF0Cl22qtPrhlIU+8PA/SpRcVc+DTtm5GsnM3
+	GLeD2Zq/zNBprSSz0dNKp1DGTgwo7eQGfi/jZnqvr/4h/Dr1f2zSuReKEbzIGYbZbCNkmXFVJvc8B
+	ZFL1VW7xuTVKkIlLwRtvPuNs9jofCjkSXZ+cXSfTUeNiNFVIf6OeqeX5vLnBr6f6ouM2/Qc5hOIad
+	siAOX/+GKw3d4MSst7GWMNGUMpd7tZwKwT++xUhzchWt7qpPDhzzfhu097k0nzfNmDuveR5YWx5St
+	DBZOscNfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6sGR-0004XA-Sb; Wed, 26 Feb 2020 08:41:55 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1j6sJi-0005eR-BM; Wed, 26 Feb 2020 08:45:18 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6sF7-0003aT-OI
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:40:41 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01Q8crEh027973; Wed, 26 Feb 2020 09:40:25 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=VEAFtOcNCvy1cdPVdvmkbIGYrS+dcDQPVJdYDZN9sAE=;
- b=FyH2pgdDDcpAAXkYwgY31MYgs0vVva2fmMSJCNmTUyw44sN6seW887qiZQdiXKQhik8h
- zt+6KcPvCc04VhY5c193CewEcnHOxQB/bYhe4JuHVGQS+HymJ+6jZxlIAQe0fL4t37Fc
- qTHEl9iERwPBbBDPdWx6FCJkCtycYnNa8My2aCKCDyYNnEQ41trAk4ozCD0+vxB2E/PA
- Jho8l1Vn2t5IEtlenhE0jKyBcw6/xf6sBmsWeptf82t8ShG3dpD/R03+JrzQzGaxXYOJ
- 0JzN7wDGqghHPbjZ5KtnReY4k+1yWbsDiARDGV5Evs4IWxkEuw+kAmN79f3eiYRi4MhW tw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2ydcpgagt6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 26 Feb 2020 09:40:25 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 889ED10002A;
- Wed, 26 Feb 2020 09:40:21 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7BCDC2AC906;
- Wed, 26 Feb 2020 09:40:21 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 26 Feb 2020 09:40:21 +0100
-From: Ludovic Barre <ludovic.barre@st.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH 4/4] mmc: mmci: initialize pwr|clk|datactrl_reg with their
- hardware values
-Date: Wed, 26 Feb 2020 09:40:14 +0100
-Message-ID: <20200226084014.5242-5-ludovic.barre@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200226084014.5242-1-ludovic.barre@st.com>
-References: <20200226084014.5242-1-ludovic.barre@st.com>
+ id 1j6sJT-0005Dx-0r
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:45:04 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 730B97C1AE6C45ED5204;
+ Wed, 26 Feb 2020 16:44:54 +0800 (CST)
+Received: from [127.0.0.1] (10.67.101.242) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Wed, 26 Feb 2020
+ 16:44:53 +0800
+Subject: Re: [PATCH v4 23/26] iommu/arm-smmu-v3: Add stall support for
+ platform devices
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ <iommu@lists.linux-foundation.org>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-pci@vger.kernel.org>,
+ <linux-mm@kvack.org>
+References: <20200224182401.353359-1-jean-philippe@linaro.org>
+ <20200224182401.353359-24-jean-philippe@linaro.org>
+From: Xu Zaibo <xuzaibo@huawei.com>
+Message-ID: <db6fc8c2-2ff3-631f-2294-c1b49acd27aa@huawei.com>
+Date: Wed, 26 Feb 2020 16:44:53 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-26_02:2020-02-25,
- 2020-02-26 signatures=0
+In-Reply-To: <20200224182401.353359-24-jean-philippe@linaro.org>
+X-Originating-IP: [10.67.101.242]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_004034_087019_435F554E 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200226_004503_251145_F8D30B54 
+X-CRM114-Status: GOOD (  18.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,50 +69,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, kevin.tian@intel.com, will@kernel.org,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, catalin.marinas@arm.com,
+ robh+dt@kernel.org, zhangfei.gao@linaro.org, robin.murphy@arm.com,
+ christian.koenig@amd.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In mmci_write_pwr|clk|datactrlreg functions, if the desired value
-is equal to corresponding variable (pwr_reg|clk_reg|datactrl_reg),
-the value is not written in the register.
+Hi,
 
-At probe pwr|clk|datactrl_reg of mmci_host structure are initialized
-to 0 (kzalloc of mmc_alloc_host). But they does not necessarily reflect
-hardware value of these registers, if they are used while boot level.
-This is problematic, if we want to write 0 in these registers.
 
-This patch initializes pwr|clk|datactrl_reg variables with their
-hardware values while probing.
+On 2020/2/25 2:23, Jean-Philippe Brucker wrote:
+> From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+>
+> The SMMU provides a Stall model for handling page faults in platform
+> devices. It is similar to PCI PRI, but doesn't require devices to have
+> their own translation cache. Instead, faulting transactions are parked and
+> the OS is given a chance to fix the page tables and retry the transaction.
+>
+> Enable stall for devices that support it (opt-in by firmware). When an
+> event corresponds to a translation error, call the IOMMU fault handler. If
+> the fault is recoverable, it will call us back to terminate or continue
+> the stall.
+>
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>   drivers/iommu/arm-smmu-v3.c | 271 ++++++++++++++++++++++++++++++++++--
+>   drivers/iommu/of_iommu.c    |   5 +-
+>   include/linux/iommu.h       |   2 +
+>   3 files changed, 269 insertions(+), 9 deletions(-)
+>
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 6a5987cce03f..da5dda5ba26a 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -374,6 +374,13 @@
+>   #define CMDQ_PRI_1_GRPID		GENMASK_ULL(8, 0)
+>   #define CMDQ_PRI_1_RESP			GENMASK_ULL(13, 12)
+>   
+[...]
+> +static int arm_smmu_page_response(struct device *dev,
+> +				  struct iommu_fault_event *unused,
+> +				  struct iommu_page_response *resp)
+> +{
+> +	struct arm_smmu_cmdq_ent cmd = {0};
+> +	struct arm_smmu_master *master = dev_iommu_fwspec_get(dev)->iommu_priv;
+Here can use 'dev_to_master' ?
 
-Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
----
- drivers/mmc/host/mmci.c | 4 ++++
- 1 file changed, 4 insertions(+)
+Cheers,
+Zaibo
 
-diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-index 647567def612..f378ae18d5dc 100644
---- a/drivers/mmc/host/mmci.c
-+++ b/drivers/mmc/host/mmci.c
-@@ -2085,6 +2085,10 @@ static int mmci_probe(struct amba_device *dev,
- 	else if (plat->ocr_mask)
- 		dev_warn(mmc_dev(mmc), "Platform OCR mask is ignored\n");
- 
-+	host->pwr_reg = readl_relaxed(host->base + MMCIPOWER);
-+	host->clk_reg = readl_relaxed(host->base + MMCICLOCK);
-+	host->datactrl_reg = readl_relaxed(host->base + MMCIDATACTRL);
-+
- 	/* We support these capabilities. */
- 	mmc->caps |= MMC_CAP_CMD23;
- 
--- 
-2.17.1
+.
+> +	int sid = master->streams[0].id;
+> +
+> +	if (master->stall_enabled) {
+> +		cmd.opcode		= CMDQ_OP_RESUME;
+> +		cmd.resume.sid		= sid;
+> +		cmd.resume.stag		= resp->grpid;
+> +		switch (resp->code) {
+> +		case IOMMU_PAGE_RESP_INVALID:
+> +		case IOMMU_PAGE_RESP_FAILURE:
+> +			cmd.resume.resp = CMDQ_RESUME_0_RESP_ABORT;
+> +			break;
+> +		case IOMMU_PAGE_RESP_SUCCESS:
+> +			cmd.resume.resp = CMDQ_RESUME_0_RESP_RETRY;
+> +			break;
+> +		default:
+> +			return -EINVAL;
+> +		}
+> +	} else {
+> +		/* TODO: insert PRI response here */
+> +		return -ENODEV;
+> +	}
+> +
+> +	arm_smmu_cmdq_issue_cmd(master->smmu, &cmd);
+> +	/*
+> +	 * Don't send a SYNC, it doesn't do anything for RESUME or PRI_RESP.
+> +	 * RESUME consumption guarantees that the stalled transaction will be
+> +	 * terminated... at some point in the future. PRI_RESP is fire and
+> +	 * forget.
+> +	 */
+> +
+> +	return 0;
+> +}
+> +
+[...]
 
 
 _______________________________________________
