@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD50317074B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:10:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED56917074D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:11:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sKWcHYE0vuNIE5fBUWkScr55vOHq2DVLgrY5DhS9tUQ=; b=YyxekKTejlYh18
-	M0Ji83czWKaEGLG9RV25Su5KeYYXjTi2If+Ja2K+/p54EwvpV62cm8dBJ9CRjnmafOd3JwjcwX1c3
-	WTKIUw76d1Q2i6XqPa4sGtCwf9mT1gVRU6IEYSMTmQ0e1LBeJ27MgMmJkNvY0aFYCzRY8M0gvYImm
-	Ab3tDp4KWehiPfN1WpIGJPOPMeQCeMgeH57XUi74j8y1ftczD8kQ5UJcts2XKkCr6qepyFuYUkYLp
-	5tRdj22QAXHkkFnLeWpc2um6SCs8kIptdXdDKgBqrYOnxvZSAwXf98I7Q3lU09E0pgZcYio9iAyEx
-	0/umLURTWZ5t2Mm4Wpfw==;
+	List-Owner; bh=apJc3V+xfPWKGfSTSBHEkOtuu55v61clcJi54PtD6pM=; b=TK7B0P8n2nZWpw
+	1s25DoUgOMio8gpK92vqd7dTzxkB1NJRcS749G54fmNCRPQUaFmOXD8L67XaBwU5EZtoSuOcjdCgl
+	Wl6bx040qtOFNrix8vqCSgJHdCundeQZEUZL/WRNo3D/mivqxgTYr4q9LZplNa+CNECxO/2PRErrw
+	2ydhfrQfwc+kBzlawEs5IkLROK90sby3lzfZrgsOxSq+DXeGD1jZX60DzB5MfW7qWq+r7efhWp983
+	IFVSvYPnA33k30jVguk61QsW3COqi0NJlgJFuNYopfo+dOOuXRMyLD0trZ1YWYXJd6YHjR6hQ5qRB
+	2jxYIve7GhKeXKhzQjtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j718w-00045G-9p; Wed, 26 Feb 2020 18:10:46 +0000
+	id 1j7198-0004LO-QD; Wed, 26 Feb 2020 18:10:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j714N-0007eb-IX
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:06:05 +0000
+ id 1j714O-0007Yl-SH
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:06:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B10531B;
- Wed, 26 Feb 2020 10:06:03 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9A5E4B2;
+ Wed, 26 Feb 2020 10:06:04 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A58093F881;
- Wed, 26 Feb 2020 10:06:01 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 510B13F881;
+ Wed, 26 Feb 2020 10:06:03 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 16/19] arm64: mte: Allow user control of the tag check mode
- via prctl()
-Date: Wed, 26 Feb 2020 18:05:23 +0000
-Message-Id: <20200226180526.3272848-17-catalin.marinas@arm.com>
+Subject: [PATCH v2 17/19] arm64: mte: Allow user control of the generated
+ random tags via prctl()
+Date: Wed, 26 Feb 2020 18:05:24 +0000
+Message-Id: <20200226180526.3272848-18-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200226180526.3272848-1-catalin.marinas@arm.com>
 References: <20200226180526.3272848-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_100603_712562_2026B660 
-X-CRM114-Status: GOOD (  17.90  )
+X-CRM114-CacheID: sfid-20200226_100605_030458_43ECA187 
+X-CRM114-Status: GOOD (  16.05  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,245 +74,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-By default, even if PROT_MTE is set on a memory range, there is no tag
-check fault reporting (SIGSEGV). Introduce a set of option to the
-exiting prctl(PR_SET_TAGGED_ADDR_CTRL) to allow user control of the tag
-check fault mode:
-
-  PR_MTE_TCF_NONE  - no reporting (default)
-  PR_MTE_TCF_SYNC  - synchronous tag check fault reporting
-  PR_MTE_TCF_ASYNC - asynchronous tag check fault reporting
-
-These options translate into the corresponding SCTLR_EL1.TCF0 bitfield,
-context-switched by the kernel. Note that uaccess done by the kernel is
-not checked and cannot be configured by the user.
+The IRG, ADDG and SUBG instructions insert a random tag in the resulting
+address. Certain tags can be excluded via the GCR_EL1.Exclude bitmap
+when, for example, the user wants a certain colour for freed buffers.
+Since the GCR_EL1 register is not accessible at EL0, extend the
+prctl(PR_SET_TAGGED_ADDR_CTRL) interface to include a 16-bit field in
+the first argument for controlling which tags can be generated by the
+above instruction (an include rather than exclude mask). Note that by
+default all non-zero tags are excluded. This setting is per-thread.
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
 
 Notes:
     v2:
-    - Handle SCTLR_EL1_TCF0_NONE explicitly for consistency with PR_MTE_TCF_NONE.
-    - Fix SCTLR_EL1 register setting in flush_mte_state() (thanks to Peter
-      Collingbourne).
-    - Added ISB to update_sctlr_el1_tcf0() since, with the latest
-      architecture update/fix, the TCF0 field is used by the uaccess
-      routines.
+    - Switch from an exclude mask to an include one for the prctl()
+      interface.
+    - Reset the allowed tags mask during flush_thread().
 
- arch/arm64/include/asm/mte.h       | 10 +++++
- arch/arm64/include/asm/processor.h |  3 ++
- arch/arm64/kernel/mte.c            | 71 ++++++++++++++++++++++++++++++
- arch/arm64/kernel/process.c        | 19 ++++++--
- include/uapi/linux/prctl.h         |  6 +++
- 5 files changed, 106 insertions(+), 3 deletions(-)
+ arch/arm64/include/asm/processor.h |  1 +
+ arch/arm64/include/asm/sysreg.h    |  7 ++++++
+ arch/arm64/kernel/mte.c            | 35 +++++++++++++++++++++++++++---
+ arch/arm64/kernel/process.c        |  2 +-
+ include/uapi/linux/prctl.h         |  3 +++
+ 5 files changed, 44 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/include/asm/mte.h b/arch/arm64/include/asm/mte.h
-index 0d7f7ca07ee6..3dc0a7977124 100644
---- a/arch/arm64/include/asm/mte.h
-+++ b/arch/arm64/include/asm/mte.h
-@@ -12,6 +12,8 @@ int mte_memcmp_pages(const void *page1_addr, const void *page2_addr);
- #ifdef CONFIG_ARM64_MTE
- void flush_mte_state(void);
- void mte_thread_switch(struct task_struct *next);
-+long set_mte_ctrl(unsigned long arg);
-+long get_mte_ctrl(void);
- #else
- static inline void flush_mte_state(void)
- {
-@@ -19,6 +21,14 @@ static inline void flush_mte_state(void)
- static inline void mte_thread_switch(struct task_struct *next)
- {
- }
-+static inline long set_mte_ctrl(unsigned long arg)
-+{
-+	return 0;
-+}
-+static inline long get_mte_ctrl(void)
-+{
-+	return 0;
-+}
- #endif
- 
- #endif /* __ASSEMBLY__ */
 diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-index 5ba63204d078..91aa270afc7d 100644
+index 91aa270afc7d..bd215d74275d 100644
 --- a/arch/arm64/include/asm/processor.h
 +++ b/arch/arm64/include/asm/processor.h
-@@ -148,6 +148,9 @@ struct thread_struct {
- #ifdef CONFIG_ARM64_PTR_AUTH
- 	struct ptrauth_keys	keys_user;
+@@ -150,6 +150,7 @@ struct thread_struct {
  #endif
-+#ifdef CONFIG_ARM64_MTE
-+	u64			sctlr_tcf0;
-+#endif
+ #ifdef CONFIG_ARM64_MTE
+ 	u64			sctlr_tcf0;
++	u64			gcr_incl;
+ #endif
  };
  
- static inline void arch_thread_struct_whitelist(unsigned long *offset,
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 13f0841b6ed3..dd8d747997be 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -931,6 +931,13 @@
+ 		write_sysreg(__scs_new, sysreg);			\
+ } while (0)
+ 
++#define sysreg_clear_set_s(sysreg, clear, set) do {			\
++	u64 __scs_val = read_sysreg_s(sysreg);				\
++	u64 __scs_new = (__scs_val & ~(u64)(clear)) | (set);		\
++	if (__scs_new != __scs_val)					\
++		write_sysreg_s(__scs_new, sysreg);			\
++} while (0)
++
+ #endif
+ 
+ #endif	/* __ASM_SYSREG_H */
 diff --git a/arch/arm64/kernel/mte.c b/arch/arm64/kernel/mte.c
-index 0c2c900fa01c..4b926d779940 100644
+index 4b926d779940..0cd1482b18a0 100644
 --- a/arch/arm64/kernel/mte.c
 +++ b/arch/arm64/kernel/mte.c
-@@ -3,12 +3,34 @@
-  * Copyright (C) 2020 ARM Ltd.
-  */
+@@ -31,6 +31,25 @@ static void set_sctlr_el1_tcf0(u64 tcf0)
+ 	preempt_enable();
+ }
  
-+#include <linux/prctl.h>
-+#include <linux/sched.h>
- #include <linux/thread_info.h>
- 
- #include <asm/cpufeature.h>
- #include <asm/mte.h>
- #include <asm/sysreg.h>
- 
-+static void update_sctlr_el1_tcf0(u64 tcf0)
++static void update_gcr_el1_excl(u64 incl)
 +{
-+	/* ISB required for the kernel uaccess routines */
-+	sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
-+	isb();
++	u64 excl = ~incl & SYS_GCR_EL1_EXCL_MASK;
++
++	/*
++	 * Note that 'incl' is an include mask (controlled by the user via
++	 * prctl()) while GCR_EL1 accepts an exclude mask.
++	 * No need for ISB since this only affects EL0 currently, implicit
++	 * with ERET.
++	 */
++	sysreg_clear_set_s(SYS_GCR_EL1, SYS_GCR_EL1_EXCL_MASK, excl);
 +}
 +
-+static void set_sctlr_el1_tcf0(u64 tcf0)
++static void set_gcr_el1_excl(u64 incl)
 +{
-+	/*
-+	 * mte_thread_switch() checks current->thread.sctlr_tcf0 as an
-+	 * optimisation. Disable preemption so that it does not see
-+	 * the variable update before the SCTLR_EL1.TCF0 one.
-+	 */
-+	preempt_disable();
-+	current->thread.sctlr_tcf0 = tcf0;
-+	update_sctlr_el1_tcf0(tcf0);
-+	preempt_enable();
++	current->thread.gcr_incl = incl;
++	update_gcr_el1_excl(incl);
 +}
 +
  void flush_mte_state(void)
  {
  	if (!system_supports_mte())
-@@ -16,6 +38,8 @@ void flush_mte_state(void)
- 
- 	/* clear any pending asynchronous tag fault */
+@@ -40,6 +59,8 @@ void flush_mte_state(void)
  	clear_thread_flag(TIF_MTE_ASYNC_FAULT);
-+	/* disable tag checking */
-+	set_sctlr_el1_tcf0(0);
+ 	/* disable tag checking */
+ 	set_sctlr_el1_tcf0(0);
++	/* reset tag generation mask */
++	set_gcr_el1_excl(0);
  }
  
  void mte_thread_switch(struct task_struct *next)
-@@ -34,4 +58,51 @@ void mte_thread_switch(struct task_struct *next)
- 		set_thread_flag(TIF_MTE_ASYNC_FAULT);
- 		write_sysreg_s(0, SYS_TFSRE0_EL1);
- 	}
-+
-+	/* avoid expensive SCTLR_EL1 accesses if no change */
-+	if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
-+		update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
-+}
-+
-+long set_mte_ctrl(unsigned long arg)
-+{
-+	u64 tcf0;
-+
-+	if (!system_supports_mte())
-+		return 0;
-+
-+	switch (arg & PR_MTE_TCF_MASK) {
-+	case PR_MTE_TCF_NONE:
-+		tcf0 = SCTLR_EL1_TCF0_NONE;
-+		break;
-+	case PR_MTE_TCF_SYNC:
-+		tcf0 = SCTLR_EL1_TCF0_SYNC;
-+		break;
-+	case PR_MTE_TCF_ASYNC:
-+		tcf0 = SCTLR_EL1_TCF0_ASYNC;
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	set_sctlr_el1_tcf0(tcf0);
-+
-+	return 0;
-+}
-+
-+long get_mte_ctrl(void)
-+{
-+	if (!system_supports_mte())
-+		return 0;
-+
-+	switch (current->thread.sctlr_tcf0) {
-+	case SCTLR_EL1_TCF0_NONE:
-+		return PR_MTE_TCF_NONE;
-+	case SCTLR_EL1_TCF0_SYNC:
-+		return PR_MTE_TCF_SYNC;
-+	case SCTLR_EL1_TCF0_ASYNC:
-+		return PR_MTE_TCF_ASYNC;
-+	}
-+
-+	return 0;
+@@ -62,6 +83,7 @@ void mte_thread_switch(struct task_struct *next)
+ 	/* avoid expensive SCTLR_EL1 accesses if no change */
+ 	if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
+ 		update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
++	update_gcr_el1_excl(next->thread.gcr_incl);
  }
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 1b732150f51a..b3c8cd64b88a 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -578,9 +578,15 @@ static unsigned int tagged_addr_disabled;
  
- long set_tagged_addr_ctrl(unsigned long arg)
- {
-+	unsigned long valid_mask = PR_TAGGED_ADDR_ENABLE;
-+
- 	if (is_compat_task())
- 		return -EINVAL;
--	if (arg & ~PR_TAGGED_ADDR_ENABLE)
-+
-+	if (system_supports_mte())
-+		valid_mask |= PR_MTE_TCF_MASK;
-+
-+	if (arg & ~valid_mask)
- 		return -EINVAL;
+ long set_mte_ctrl(unsigned long arg)
+@@ -86,23 +108,30 @@ long set_mte_ctrl(unsigned long arg)
+ 	}
  
- 	/*
-@@ -590,6 +596,9 @@ long set_tagged_addr_ctrl(unsigned long arg)
- 	if (arg & PR_TAGGED_ADDR_ENABLE && tagged_addr_disabled)
- 		return -EINVAL;
- 
-+	if (set_mte_ctrl(arg) != 0)
-+		return -EINVAL;
-+
- 	update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
+ 	set_sctlr_el1_tcf0(tcf0);
++	set_gcr_el1_excl((arg & PR_MTE_TAG_MASK) >> PR_MTE_TAG_SHIFT);
  
  	return 0;
-@@ -597,13 +606,17 @@ long set_tagged_addr_ctrl(unsigned long arg)
- 
- long get_tagged_addr_ctrl(void)
- {
-+	long ret = 0;
-+
- 	if (is_compat_task())
- 		return -EINVAL;
- 
- 	if (test_thread_flag(TIF_TAGGED_ADDR))
--		return PR_TAGGED_ADDR_ENABLE;
-+		ret = PR_TAGGED_ADDR_ENABLE;
- 
--	return 0;
-+	ret |= get_mte_ctrl();
-+
-+	return ret;
  }
  
- /*
+ long get_mte_ctrl(void)
+ {
++	unsigned long ret;
++
+ 	if (!system_supports_mte())
+ 		return 0;
+ 
++	ret = current->thread.gcr_incl << PR_MTE_TAG_SHIFT;
++
+ 	switch (current->thread.sctlr_tcf0) {
+ 	case SCTLR_EL1_TCF0_NONE:
+ 		return PR_MTE_TCF_NONE;
+ 	case SCTLR_EL1_TCF0_SYNC:
+-		return PR_MTE_TCF_SYNC;
++		ret |= PR_MTE_TCF_SYNC;
++		break;
+ 	case SCTLR_EL1_TCF0_ASYNC:
+-		return PR_MTE_TCF_ASYNC;
++		ret |= PR_MTE_TCF_ASYNC;
++		break;
+ 	}
+ 
+-	return 0;
++	return ret;
+ }
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index b3c8cd64b88a..4ac0e90617fc 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -584,7 +584,7 @@ long set_tagged_addr_ctrl(unsigned long arg)
+ 		return -EINVAL;
+ 
+ 	if (system_supports_mte())
+-		valid_mask |= PR_MTE_TCF_MASK;
++		valid_mask |= PR_MTE_TCF_MASK | PR_MTE_TAG_MASK;
+ 
+ 	if (arg & ~valid_mask)
+ 		return -EINVAL;
 diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-index 07b4f8131e36..2390ab324afa 100644
+index 2390ab324afa..7f0827705c9a 100644
 --- a/include/uapi/linux/prctl.h
 +++ b/include/uapi/linux/prctl.h
-@@ -233,6 +233,12 @@ struct prctl_mm_map {
- #define PR_SET_TAGGED_ADDR_CTRL		55
- #define PR_GET_TAGGED_ADDR_CTRL		56
- # define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
-+/* MTE tag check fault modes */
-+# define PR_MTE_TCF_SHIFT		1
-+# define PR_MTE_TCF_NONE		(0UL << PR_MTE_TCF_SHIFT)
-+# define PR_MTE_TCF_SYNC		(1UL << PR_MTE_TCF_SHIFT)
-+# define PR_MTE_TCF_ASYNC		(2UL << PR_MTE_TCF_SHIFT)
-+# define PR_MTE_TCF_MASK		(3UL << PR_MTE_TCF_SHIFT)
+@@ -239,6 +239,9 @@ struct prctl_mm_map {
+ # define PR_MTE_TCF_SYNC		(1UL << PR_MTE_TCF_SHIFT)
+ # define PR_MTE_TCF_ASYNC		(2UL << PR_MTE_TCF_SHIFT)
+ # define PR_MTE_TCF_MASK		(3UL << PR_MTE_TCF_SHIFT)
++/* MTE tag inclusion mask */
++# define PR_MTE_TAG_SHIFT		3
++# define PR_MTE_TAG_MASK		(0xffffUL << PR_MTE_TAG_SHIFT)
  
  /* Control reclaim behavior when allocating memory */
  #define PR_SET_IO_FLUSHER		57
