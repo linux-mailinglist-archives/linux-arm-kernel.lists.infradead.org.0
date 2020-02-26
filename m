@@ -2,83 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A96416F3F2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 00:54:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5002116F40D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 01:05:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XqcxWHOCTzfCOIiQ2FnsQ9d4rxYbsAGdEZ4apjHD5pk=; b=bMId96gdrhJdW+
-	8s/T9nBtpy+M0ORnsWfCFSWfeNOFMM9pagsWhgBYglMu8FHL+BzNlfUHOGoUz4QE8NXXYavBjGnHi
-	zs3Oe+UcM1l9O3yliwN0tqoQnjljzHoZrPhiR1MRp/i70TeAq4qZ7nD36bRCSdmW9PxPZObuorHj+
-	Fd8o8x6mlAe3pRPng73MHleJvnVt12BWBe9ix+uLflZiJoOFf/X2Y15SEt/7FcGFxXa0t5x2ODJ+N
-	EkdBUweMFUOzbNGRxpahyeuHQwOfUQveuuuzgZMFD9JRibyoC2UVJbsOFJhLOUB8DAJBYvrJhRJ45
-	YVdhJykBssqa6YWVYUqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Eha5cEjYh3yRW81YdO0KpKnniUC0qDSbs8OXaQGzJRQ=; b=cChg9syNGx+ONz
+	AdHRG3P76QHrzdg1ykifwSoiLLU+sZOWRWVHx1ioi/RE5LAK7/Uee2dM/3YesbEZRy9F5S1XRGDjX
+	6vRz7DgeON+7ck/iGd8ZCf1N/uRAjV5Ri0seYhjd3Xxl4qYs/jY6dLzEXvwCL6TuOuKwhmju+88v2
+	bDPGQ+AL8jMaB69zU8SY8nWtcZOd7EARrS0MrUNZLuq9sCaDaNO/LuIvZ3NAYB5xs6YLL2b2OnjzK
+	3nWkZmiZYZrRsmwCJVgZPhAoJmN9GJNsGSlMZeMkPsj5CgJWTc0/pug8MZLsp6DYnmLMVF3wc7ApK
+	MSJmBrxk8m4MC3FN1FyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6k1k-0005VD-SV; Tue, 25 Feb 2020 23:54:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j6kC9-00019u-E2; Wed, 26 Feb 2020 00:04:57 +0000
+Received: from mail-bn8nam11on2089.outbound.protection.outlook.com
+ ([40.107.236.89] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6k0L-0004NL-VJ
- for linux-arm-kernel@lists.infradead.org; Tue, 25 Feb 2020 23:52:47 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7F9CB24676;
- Tue, 25 Feb 2020 23:52:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582674765;
- bh=nW9Ojf+Onj3hkHhtHqQ6GbPRjL6Rw7C9mYC7UfzdDh8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KPyJ4K8sbQwj/MYcNjC9AG0YM5UEWqHjJF/jzzPKfx6UIiPGDTYGrUuASs7wtSRst
- FGRycaBdPbNbKLF+4MOxi7iSEH8ftwy9xBrHqf4zAubIXR5XJ/XwmGzohkI7844e8I
- nXkvkY7MAEj2NEiyTFw+qYv01g1eUdSja+SlURdM=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j6k0J-007xuY-Qf; Tue, 25 Feb 2020 23:52:43 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 5/5] arm64: Ask the compiler to __always_inline functions used
- by KVM at HYP
-Date: Tue, 25 Feb 2020 23:52:23 +0000
-Message-Id: <20200225235223.12839-6-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200225235223.12839-1-maz@kernel.org>
-References: <20200225235223.12839-1-maz@kernel.org>
+ id 1j6kBz-00019X-FZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 00:04:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=VCg9sipByLtvSLlseke4mFy/fQOxwwjuzR73elGoxuXnstC3sg2S1i4qO6FZNfIuVI5jbqUYMfBYsG6zAZkv+wbslFN57PbChCBE/dA5Qv8eJkJQdcmKlDZ+a746oN2k2ywDqKT0d7rvuTG8FqfJI6TdGSIxPobNleXExT9Z6xXQDOKUbQWmoJPL+GX2CK1oUv8n9OX2p9BNqG3hUXjzvspAae9VMqHEVsod/Re5zrkU/VEFhjsMZBekiCZ8SOYhqz8EijO/TQYQDBB9tT9IDShFzwjGyVkAcx11F6frxZ4qS1iIjm/sduSnnqA9F1iSgK82nBlJIXplFqKVa7cVyw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=t/LLQdr1poyhFFLAgKasMXpIUyfTn496MmtbVJsq1Hk=;
+ b=DVQsyzFaJiwy10iPy46Sa+P8Hgs5Dmuq+UxGOTUeqK4KemEfLK/tAU8hnXQZQ5EgeQW9uoK/pbI8Pziww80jfoS4Qu029urDGXs3kCp7+K6NY277baB/hLs63uxYGwTa4hGYK4msFWXWppzZTWalcFz4LOkO6KgJJtstrgXl9UyuWBMDKQZKVkbPgN1x+523VZeNSbfgRAoF+mcCe+/1vLKPWiCqxsu9J0H0EVhGgA1iKLlO1YEDNwqSIR/OeKe+anDjT8GqHpfCBzHfSgDbU3FXxALr0F5Q8JxjSwydcmn4AoZC0NFH7NdPkL95vhgCw9fmXdkJLMuK3NFUZJBwzw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=t/LLQdr1poyhFFLAgKasMXpIUyfTn496MmtbVJsq1Hk=;
+ b=P0gmdkmA6ZViBbm2kUDpsz/J2zOGRCZ6fbZi1I8m1+802a1qHjHE4gy2ukOltRMVd/xUO2vIIGbBGgniZ10ujrkrlyzuWiuaFaDRh9zsoKW2tBon9uxPw1jopQnvaOIlLFSR1vDuiNaCUMCtaZdFjoomXFgOqdrE5vLChSHtOlQ=
+Received: from CY4PR22CA0026.namprd22.prod.outlook.com (2603:10b6:903:ed::12)
+ by SN6PR02MB4415.namprd02.prod.outlook.com (2603:10b6:805:a7::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.21; Wed, 26 Feb
+ 2020 00:04:43 +0000
+Received: from CY1NAM02FT040.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:903:ed:cafe::9e) by CY4PR22CA0026.outlook.office365.com
+ (2603:10b6:903:ed::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2750.18 via Frontend
+ Transport; Wed, 26 Feb 2020 00:04:43 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; linaro.org; dkim=none (message not signed)
+ header.d=none;linaro.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT040.mail.protection.outlook.com (10.152.75.135) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2750.18
+ via Frontend Transport; Wed, 26 Feb 2020 00:04:42 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1j6kBu-0006Ht-GR; Tue, 25 Feb 2020 16:04:42 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1j6kBp-00049U-DR; Tue, 25 Feb 2020 16:04:37 -0800
+Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1j6kBg-00048g-Dn; Tue, 25 Feb 2020 16:04:28 -0800
+From: Jolly Shah <jolly.shah@xilinx.com>
+To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
+ matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
+ keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
+Subject: [PATCH] arch: arm64: xilinx: Make zynqmp_firmware driver optional
+Date: Tue, 25 Feb 2020 16:04:20 -0800
+Message-Id: <1582675460-26914-1-git-send-email-jolly.shah@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(396003)(346002)(136003)(199004)(189003)(7696005)(186003)(478600001)(36756003)(5660300002)(7416002)(6666004)(70206006)(356004)(2906002)(70586007)(2616005)(26005)(4326008)(336012)(316002)(6636002)(81156014)(54906003)(107886003)(9786002)(81166006)(426003)(8936002)(8676002)(44832011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR02MB4415; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: pbonzini@redhat.com, james.morse@arm.com, jcline@redhat.com,
- mark.rutland@arm.com, will@kernel.org, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 5c85e4bd-4b17-4c8b-b4df-08d7ba4f7b5e
+X-MS-TrafficTypeDiagnostic: SN6PR02MB4415:
+X-Microsoft-Antispam-PRVS: <SN6PR02MB4415582C933A2747359CDF8CB8EA0@SN6PR02MB4415.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
+X-Forefront-PRVS: 0325F6C77B
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: 1OMs0QFQsLLU3Afn2CKGB0P0PrrxTWolQEKu773Z1RLgcmBU22wrSRKWY4oDXKueSThd52BOlnVgYqmipskcHQsehifFvmFPjZMR7mehHYXYbvWPSmtTqbGI9rV8kY2Nc4oknK6k81R3fh0/1wfMkVec5ogawNIfZu6gRiWlgEe0fGOuTjpGQGnpPDru1bH+LKN885xNVY1tmVWyXIFLCes0KQOjGwDRvw4V0QEzFze2AgtR9U55MKlnf+37pYaVJsDIRlcNP80JBdNrWHJWshL3eQEJ4l6/mLQWeDWnibCpi6xzYb4BLS9cdDw80cLGkSyvIpO3jaypKk+AB34HjXStKFTOCVW745MHTE3+wvJ2w5J7E2nffMyn+hQmeBq86gKIjwgecuNCQoNDeX8McCPAjA+b3KydP59i9TB1Lbny6oOgGNCtSDfU0KEV5p6j
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2020 00:04:42.9910 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5c85e4bd-4b17-4c8b-b4df-08d7ba4f7b5e
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB4415
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_155246_060051_783D35DC 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200225_160447_521412_38E39364 
+X-CRM114-Status: GOOD (  10.05  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.236.89 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,125 +135,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Jeremy Cline <jcline@redhat.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Tejas Patel <tejas.patel@xilinx.com>, Jolly Shah <jolly.shah@xilinx.com>,
+ rajanv@xilinx.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+From: Tejas Patel <tejas.patel@xilinx.com>
 
-KVM uses some of the static-inline helpers like icache_is_vipt() from
-its HYP code. This assumes the function is inlined so that the code is
-mapped to EL2. The compiler may decide not to inline these, and the
-out-of-line version may not be in the __hyp_text section.
+Make zynqmp_firmware driver as optional to disable it, if user don't
+want to use default zynqmp firmware interface.
 
-Add the additional __always_ hint to these static-inlines that are used
-by KVM.
-
-Signed-off-by: James Morse <james.morse@arm.com>
-Signed-off-by: Marc Zyngier <maz@kernel.org>
-Acked-by: Will Deacon <will@kernel.org>
-Link: https://lore.kernel.org/r/20200220165839.256881-4-james.morse@arm.com
+Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
+Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 ---
- arch/arm64/include/asm/cache.h      | 2 +-
- arch/arm64/include/asm/cacheflush.h | 2 +-
- arch/arm64/include/asm/cpufeature.h | 8 ++++----
- arch/arm64/include/asm/io.h         | 4 ++--
- 4 files changed, 8 insertions(+), 8 deletions(-)
+ arch/arm64/Kconfig.platforms    | 1 -
+ drivers/firmware/xilinx/Kconfig | 2 ++
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/cache.h b/arch/arm64/include/asm/cache.h
-index 806e9dc2a852..a4d1b5f771f6 100644
---- a/arch/arm64/include/asm/cache.h
-+++ b/arch/arm64/include/asm/cache.h
-@@ -69,7 +69,7 @@ static inline int icache_is_aliasing(void)
- 	return test_bit(ICACHEF_ALIASING, &__icache_flags);
- }
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index b2b504e..563c93d 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -301,7 +301,6 @@ config ARCH_ZX
  
--static inline int icache_is_vpipt(void)
-+static __always_inline int icache_is_vpipt(void)
- {
- 	return test_bit(ICACHEF_VPIPT, &__icache_flags);
- }
-diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
-index 665c78e0665a..e6cca3d4acf7 100644
---- a/arch/arm64/include/asm/cacheflush.h
-+++ b/arch/arm64/include/asm/cacheflush.h
-@@ -145,7 +145,7 @@ extern void copy_to_user_page(struct vm_area_struct *, struct page *,
- #define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 1
- extern void flush_dcache_page(struct page *);
+ config ARCH_ZYNQMP
+ 	bool "Xilinx ZynqMP Family"
+-	select ZYNQMP_FIRMWARE
+ 	help
+ 	  This enables support for Xilinx ZynqMP Family
  
--static inline void __flush_icache_all(void)
-+static __always_inline void __flush_icache_all(void)
- {
- 	if (cpus_have_const_cap(ARM64_HAS_CACHE_DIC))
- 		return;
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index 0e6d03c7e368..be078699ac4b 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -435,13 +435,13 @@ cpuid_feature_extract_signed_field(u64 features, int field)
- 	return cpuid_feature_extract_signed_field_width(features, field, 4);
- }
+diff --git a/drivers/firmware/xilinx/Kconfig b/drivers/firmware/xilinx/Kconfig
+index bd33bbf..9a9bd19 100644
+--- a/drivers/firmware/xilinx/Kconfig
++++ b/drivers/firmware/xilinx/Kconfig
+@@ -6,6 +6,8 @@ menu "Zynq MPSoC Firmware Drivers"
  
--static inline unsigned int __attribute_const__
-+static __always_inline unsigned int __attribute_const__
- cpuid_feature_extract_unsigned_field_width(u64 features, int field, int width)
- {
- 	return (u64)(features << (64 - width - field)) >> (64 - width);
- }
- 
--static inline unsigned int __attribute_const__
-+static __always_inline unsigned int __attribute_const__
- cpuid_feature_extract_unsigned_field(u64 features, int field)
- {
- 	return cpuid_feature_extract_unsigned_field_width(features, field, 4);
-@@ -564,7 +564,7 @@ static inline bool system_supports_mixed_endian(void)
- 	return val == 0x1;
- }
- 
--static inline bool system_supports_fpsimd(void)
-+static __always_inline bool system_supports_fpsimd(void)
- {
- 	return !cpus_have_const_cap(ARM64_HAS_NO_FPSIMD);
- }
-@@ -575,7 +575,7 @@ static inline bool system_uses_ttbr0_pan(void)
- 		!cpus_have_const_cap(ARM64_HAS_PAN);
- }
- 
--static inline bool system_supports_sve(void)
-+static __always_inline bool system_supports_sve(void)
- {
- 	return IS_ENABLED(CONFIG_ARM64_SVE) &&
- 		cpus_have_const_cap(ARM64_SVE);
-diff --git a/arch/arm64/include/asm/io.h b/arch/arm64/include/asm/io.h
-index 4e531f57147d..6facd1308e7c 100644
---- a/arch/arm64/include/asm/io.h
-+++ b/arch/arm64/include/asm/io.h
-@@ -34,7 +34,7 @@ static inline void __raw_writew(u16 val, volatile void __iomem *addr)
- }
- 
- #define __raw_writel __raw_writel
--static inline void __raw_writel(u32 val, volatile void __iomem *addr)
-+static __always_inline void __raw_writel(u32 val, volatile void __iomem *addr)
- {
- 	asm volatile("str %w0, [%1]" : : "rZ" (val), "r" (addr));
- }
-@@ -69,7 +69,7 @@ static inline u16 __raw_readw(const volatile void __iomem *addr)
- }
- 
- #define __raw_readl __raw_readl
--static inline u32 __raw_readl(const volatile void __iomem *addr)
-+static __always_inline u32 __raw_readl(const volatile void __iomem *addr)
- {
- 	u32 val;
- 	asm volatile(ALTERNATIVE("ldr %w0, [%1]",
+ config ZYNQMP_FIRMWARE
+ 	bool "Enable Xilinx Zynq MPSoC firmware interface"
++	depends on ARCH_ZYNQMP
++	default y if ARCH_ZYNQMP
+ 	select MFD_CORE
+ 	help
+ 	  Firmware interface driver is used by different
 -- 
-2.20.1
+2.7.4
 
 
 _______________________________________________
