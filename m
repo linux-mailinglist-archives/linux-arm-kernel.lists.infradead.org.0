@@ -2,90 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8F57170A12
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 21:59:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BED5170A1B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 22:02:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W2pcWY6ExYKlIvcbNMYAO5dk2lrFVOYmgj1rjwgll9c=; b=SqKRQj9NWGIAi+
-	1f2LNZ3k7crsfh2+kh+Y6qwMBbWmQSC1nCJhJ/ozpeLaOllSq3bgtuHunGyblamo3cRftBf/pyGe2
-	mGm54bbLw9uR5IXTJUO7QxosxV5CVeZb8b1s6Ou4stHHXt4o/oGj3LRxCdMH4BD0LhQPQkOo3g7Yu
-	p/XyoEfxkSWJAu+o8/bquNSTcfibP1gfM94WvCGOTuBLJ1T9dsV5i0JH/On3XZMNqQkTezFNvByd/
-	5YEfYOMnOu6Zk6t1zhRFsQI05k8gc/PYiO0S8DtCeeaUUyYjLhKlxgTiQqJNTr0x9FVxqQs8D/J1x
-	xMO7Laok7jg/OxUYIwHA==;
+	List-Owner; bh=0TOSm2y0f/etPnFQ84P8foCDrU3Cooh1hLkNBvqHUoo=; b=K9Krat3p+go1Xp
+	OPWMuSFSw8+Fm3zLuJCG4TGw7eIxxexq8r9PWPNXLeFxYUtjEtdFvLuU7e/5XEPIhpkIVKRcz9juE
+	hf/1/k6Qgok8a8dtkIyxz/C8vHkl5u3WROD1/BrXe15sIvx7z5s1PpRfLKTOuxIyG7hvOm5dNAxuO
+	rQmJXq2+UgvjPXUY8J8JWvBoJjOPTzuJbrOriIjHYi246NhW3Z/cvqTVO061szaaYhNiTQrLm5ZIW
+	qFCddyERvKTHP07TfqOpcKtk0/6qoSEaTDhqcOqIgKwetcEi8y0vECyeSdnNBOPoy4xO0KyG7aSpu
+	VxhuNinXxczZ0KMByRGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j73lp-0004NO-9R; Wed, 26 Feb 2020 20:59:05 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1j73p2-0006Bf-T2; Wed, 26 Feb 2020 21:02:24 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j73lf-0004Mk-Ip
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 20:58:57 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 6so267503pgk.0
+ id 1j73ot-0006A9-8z
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 21:02:16 +0000
+Received: from mail-qv1-f51.google.com ([209.85.219.51]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MtfRv-1jPGf80sGN-00v5BG for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 26 Feb 2020 22:02:09 +0100
+Received: by mail-qv1-f51.google.com with SMTP id g16so493917qvz.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 12:58:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=5i4kIErvQGw44vXaerAikXm4yrNAjy2U007Z9HcTHsk=;
- b=xV1PffHpd8aoWxT9tCiJoOHV/o1IukGw0zUuVqpv7XALZeER9YCv0vzCn1YZ47eY2R
- fOfYoK3gHDaA9ioH6flf7RtJXJbYfVGWKWEjVgC9Qm/iUxRGJx/5hL+TofnEUBP4y5Yi
- tJfPS8CEGTxAnZFcrPMyBEWiwdEH6zXXJQX1BpuD6DrtqKCxqvufNYXfJIftAU0Tvv+R
- 8h1iNWL/j6dZyL8bAGrqJ5Ec3mr1SUVO8mG9A8W+AxFpf6eqo+jzkdYBoxFze7FKtBaz
- unFsgzB2FyhStLd1JOz+6ZK9SALqmiJvL61w/9GHW5QUo+UZoujd/et+Ob6UJvQ5ES5s
- 1G7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5i4kIErvQGw44vXaerAikXm4yrNAjy2U007Z9HcTHsk=;
- b=BdXjopEsx/EaYXKjUbKr/PTTx7HadG7t18dQ4456udYUGRMRhqx6ppzvQlcEf535Q6
- z0QWHR0SUxNMdcnVuj7L/gMgIj2zeZzQxeAdxjZ7BXHjEhXlFqCb9P9hhGBGiZSMmqzd
- Yga5c7F+0qnMHJFT1+JoZq2KMS2jORSHIdPxyJyIwQg70pd9mZT1tNFmsI9LfbClWru/
- 2hZdbjVONcWBIUzcJKlpcSosKUpvUOcFnv15a1jX/5APC0abFWtETkWGEltSYb9CaK2k
- nKXN5qKd1ohpo7a4uBlSSCmk4JCSV6tgX9BX6hHUTC8dkVlyoX4PJpV4rdyGRQXzA/zc
- 3Jjw==
-X-Gm-Message-State: APjAAAUGp6+/ALflGud8zl+h0z1fC7VXZxurMzmJviTAYfeBZ4TBhD48
- h4050b2TFq+vEzm2EvGqt3D8Zw577Lg=
-X-Google-Smtp-Source: APXvYqxxfLDrLKEpazTetrahW8GWUVcCfC+U2Ect9o5IlSTMhO3ug8VVxzoXdqY9qvj1D3MGbvV61A==
-X-Received: by 2002:a65:478a:: with SMTP id e10mr639577pgs.197.1582750733873; 
- Wed, 26 Feb 2020 12:58:53 -0800 (PST)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id 10sm3992727pfu.132.2020.02.26.12.58.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 12:58:53 -0800 (PST)
-Date: Wed, 26 Feb 2020 13:58:51 -0700
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v10 00/15] CoreSight CTI Driver
-Message-ID: <20200226205851.GA30754@xps15>
-References: <20200225234611.11067-1-mike.leach@linaro.org>
+ Wed, 26 Feb 2020 13:02:08 -0800 (PST)
+X-Gm-Message-State: APjAAAVDZCUwSYl6w2Ao1O2KIiL5NFJeGxku+FDKb+BcuLVkF8nJJSdl
+ Fp8/6sCuVDbK/JlJuG6SarGyX0FTBDs13BMfauQ=
+X-Google-Smtp-Source: APXvYqxhHS9U3+N/7qg1V3h6/lWCEHWUtHJQtbK71iP6fx7l2VUQMHsb2aYbd6SCMc7GfTj4m50SkWIR7eOfBWBERJg=
+X-Received: by 2002:a05:6214:524:: with SMTP id x4mr1146649qvw.4.1582750927983; 
+ Wed, 26 Feb 2020 13:02:07 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200225234611.11067-1-mike.leach@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200211175507.178100-1-hannes@cmpxchg.org>
+ <29b6e848ff4ad69b55201751c9880921266ec7f4.camel@surriel.com>
+ <20200211193101.GA178975@cmpxchg.org>
+ <20200211154438.14ef129db412574c5576facf@linux-foundation.org>
+ <CAHk-=wiGbz3oRvAVFtN-whW-d2F-STKsP1MZT4m_VeycAr1_VQ@mail.gmail.com>
+ <20200211164701.4ac88d9222e23d1e8cc57c51@linux-foundation.org>
+ <CAHk-=wg1ZDADD3Vuw_sXhmBOrQ2xsp8YWxmtWiA6vG0RT-ZQ+A@mail.gmail.com>
+ <20200212085004.GL25745@shell.armlinux.org.uk>
+ <CAK8P3a3pzgVvwyDhHPoiSOqyv+h_ixbsdWMqG3sELenRJqFuew@mail.gmail.com>
+ <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
+In-Reply-To: <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 26 Feb 2020 22:01:48 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
+Message-ID: <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
+Subject: Re: [PATCH] vfs: keep inodes with page cache off the inode shrinker
+ LRU
+To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+X-Provags-ID: V03:K1:2Lig7L6onp01s+wxRanWjHQNmnp4m/teflFbevNCW8Ug0YQVyOX
+ 6lV8qCfe54zG7+S+Uh6rqVCZyH2UJsdWr7WTSuFNlNpG/ueIOEV4U4SkIsmHNcgKqE6UV8s
+ XdhDb+GPCVAxAv2VpGHPRr0FGA7lX5VMRNwGLB8mxwoOLDxziWTCTzeq6/yvfdUdtQfVPXX
+ mXXaJU8PooYJJVzoXPtQg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:/7bi7l9cIYo=:TY2kYnzub4IvPMtSMoHbpO
+ Goz3Bgs155u2/1lSuGI5WaJQ/q+C/vl0SkA5WXmSHUGCi76yGmW35QeVXUso0bmTkX/7/H5w3
+ /TRgli5RQNUlxpG7Sl7kAyIgKIzHT5JI1T56H1w4mlaSfiYxExSFzILzSnDgv5920iNWfNNca
+ NOf+Pyt9VeRe014xSZvDSsQaQJjpM0We71BsyDdD6QmW6TH3+NRAJtfhb4rGcuV0CzbmborXh
+ y8f7hr4MXqAHURmFjqLDSpTQQF+iMfacXcAA9dRk4c2Xtu5iW0PgqYpH8Xp+m5lqfdPLo+ftT
+ 6AyULAI94zPimNlADWDW5fNbAaIZThkrLSu4+l1KOJDIvQBW2Hoin5/gtPsKmX1XVs7LUsr/5
+ 5F4v0Ru/x2+Y5UgwmGcksl0dGTOxf7MBrdNFYHRu1csxvyQ4Z1hbraOf/JlIlrHO6o3zskhHF
+ yGlBDCP5L/IPZPu0tLs79iZe4gZtGoUu9o1BR1dH43BRJTKOOSjS2DXVc6P5r37lJW8u/Ml0z
+ ZksMjup1DYOhqjDrDjWiQRAB2nA/a5O1FIamkdpn6LwUx5aWXxx+n0OWR5u5xKgzGGN+6uAU5
+ 60WeR17byHGoXPwzr8lKxnJY8BXIVaGDN+tEiM6D3GmxGf9F3khE2BQDIviBr/yt/hRn18bbi
+ UMCKVOcw9JG1AeMDx1FWTfEiFQKPS+sNA1Morn+K/e/RjwEpAeAqlZHNDwS3l+cBAUyuXP/T8
+ TCp8bRz+nsschmFvpdrwmaSqCLTQtcx82tsx6J1ul0qe0SnzcmXlB5xDn92q+nDVLEz8DTW87
+ Xsg18/uPjz2KELm4rMhJGSELCavddtXuk/R298U9yCTkE+UQNk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_125855_655899_616E5830 
-X-CRM114-Status: GOOD (  30.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_130215_606585_D2E62880 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.130 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,192 +97,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- suzuki.poulose@arm.com, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-doc@vger.kernel.org, liviu.dudau@arm.com,
- agross@kernel.org, robh+dt@kernel.org, maxime@cerno.tech, sudeep.holla@arm.com,
- corbet@lwn.net, linux-arm-kernel@lists.infradead.org
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Hocko <mhocko@suse.com>, Rik van Riel <riel@surriel.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Dave Chinner <david@fromorbit.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, Yafang Shao <laoar.shao@gmail.com>,
+ Al Viro <viro@zeniv.linux.org.uk>, Johannes Weiner <hannes@cmpxchg.org>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>, kernel-team@fb.com,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Roman Gushchin <guro@fb.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
+On Wed, Feb 26, 2020 at 7:04 PM <santosh.shilimkar@oracle.com> wrote:
+>
+> On 2/13/20 8:52 AM, Arnd Bergmann wrote:
+> > On Wed, Feb 12, 2020 at 9:50 AM Russell King - ARM Linux admin
+> > <linux@armlinux.org.uk> wrote:
+>
+> The Keystone generations of SOCs have been used in different areas and
+> they will be used for long unless says otherwise.
+>
+> Apart from just split of lowmem and highmem, one of the peculiar thing
+> with Keystome family of SOCs is the DDR is addressable from two
+> addressing ranges. The lowmem address range is actually non-cached
+> range and the higher range is the cacheable.
 
-On Tue, Feb 25, 2020 at 11:45:56PM +0000, Mike Leach wrote:
-> CTIs are defined in the device tree and associated with other CoreSight
-> devices. The core CoreSight code has been modified to enable the registration
-> of the CTI devices on the same bus as the other CoreSight components,
-> but as these are not actually trace generation / capture devices, they
-> are not part of the Coresight path when generating trace.
-> 
-> However, the definition of the standard CoreSight device has been extended
-> to include a reference to an associated CTI device, and the enable / disable
-> trace path operations will auto enable/disable any associated CTI devices at
-> the same time.
-> 
-> Programming is at present via sysfs - a full API is provided to utilise the
-> hardware capabilities. As CTI devices are unprogrammed by default, the auto
-> enable describe above will have no effect until explicit programming takes
-> place.
-> 
-> A set of device tree bindings specific to the CTI topology has been defined.
-> The driver accesses these in a platform agnostic manner, so ACPI bindings
-> can be added later, once they have been agreed and defined for the CTI device.
-> 
-> Documentation has been updated to describe both the CTI hardware, its use and
-> programming in sysfs, and the new dts bindings required.
+I'm aware of Keystone's special physical memory layout, but for the
+discussion here, this is actually irrelevant for the discussion about
+highmem here, which is only about the way we map all or part of the
+available physical memory into the 4GB of virtual address space.
 
-I have applied this set to my next branch.
+The far more important question is how much memory any users
+(in particular the subset that are going to update their kernels
+several years from now) actually have installed. Keystone-II is
+one of the rare 32-bit chips with fairly wide memory interfaces,
+having two 72-bit (with ECC) channels rather than the usual one
+ or two channels of 32-bit DDR3. This means a relatively cheap
+4GB configuration using eight 256Mx16 chips is possible, or
+even a 8GB using sixteen or eighteen 512Mx8.
 
-Thanks,
-Mathieu
+Do you have an estimate on how common these 4GB and 8GB
+configurations are in practice outside of the TI evaluation
+board?
 
-> 
-> Tested on DB410 board and Juno board, against the Linux 5.6-rc3 tree.
-> 
-> Changes since v9:
-> 1) Removed 2 unneeded devm_kstrdup calls, fixed error check on another.
-> 2) Fixed variable array declaration from [0] to [].
-> 
-> Changes since v8:
-> 1) Use devm_ allocation in cti_match_fixup_csdev() to match other allocations.
-> 2) Minor comment update per request.
-> 
-> Changes since v7:
-> NB: No functional driver changes in this set. Full set released for
-> consistency, completeness and ease of use.
-> 1) Updates to device tree bindings .yaml following comments from Rob Herring.
->    Adds #size-cells and #address-cells to properties and constrained as
->    required. Validated using dt_binding_check.
-> 2) Minor typo fixes to cti documentation file.
-> 
-> Changes since v6:
-> NB: No functional driver changes in this set. Full set released for
-> consistency, completeness and ease of use.
-> 1) Updates to .yaml following comments from Maxime Ripard. Correct child node
->    descriptions, fix validation, and ensure reg entries required in child
->    nodes as per DeviceTree specification.
-> 2) Update to Juno bindings to implement reg entry specification requirements.
-> 
-> Changes since v5:
-> 1) Fixed up device tree .yaml file. Using extra compatible string for
-> v8 architecture CTI connections.
-> 2) Ensure association code respects coresight mutex when setting cross
-> referenced pointers. Add in shutdown code.
-> 3) Multiple minor code fixes & rationalisation. 
-> 
-> Changes since v4:
-> Multiple changes following feedback from Mathieu, Leo and Suzuki.
-> 1) Dropped RFC tag - wider distribution
-> 2) CTI bindings definition now presented as a .yaml file - tested with
-> with 'dt-doc-validate' from devicetree.org/dt-schema project and in kernel
-> build tree with 'make dtbs_check' per kernel docs.
-> 3) Sysfs links to other CoreSight devices moved out of this set into
-> a following set that deals with all CoreSight devices & sysfs links.
-> 4) Documentation in .rst format and new directory following patchset in [1].
-> Extended example provided in docs.
-> 5) Rationalised devicetree of_ specifics to use generic fwnode functions
-> where possible to enable easier addition of ACPI support later.
-> 6) Other minor changes as requested in feedback from last patchset.
-> 
-> Changes since v3:
-> 1) After discussion on CS mailing list, each CTI connection has a triggers<N>
->    sysfs directory with name and trigger signals listed for the connection.
-> 2) Initial code for creating sysfs links between CoreSight components is
->   introduced and implementation for CTI provided. This allows exploration
->   of the CoreSight topology within the sysfs infrastructure. Patches for
->   links between other CoreSight components to follow.
-> 3) Power management - CPU hotplug and idle omitted from this set as ongoing
->    developments may define required direction. Additional patch set to follow.
-> 4) Multiple fixes applied as requested by reviewers esp. Matthieu, Suzuki
->    and Leo. 
-> 
-> Changes since v2:
-> Updates to allow for new features on coresight/next and feedback from
-> Mathieu and Leo.
-> 
-> 1) Rebase and restructuring to apply on top of ACPI support patch set,
-> currently on coresight/next. of_coresight_cti has been renamed to
-> coresight-cti-platform and device tree bindings added to this but accessed
-> in a platform agnostic manner using fwnode for later ACPI support
-> to be added.
-> 2) Split the sysfs patch info a series of functional patches.
-> 3) Revised the refcount and enabling support.
-> 4) Adopted the generic naming protocol - CTIs are either cti_cpuN or
-> cti_sysM
-> 5) Various minor presentation /checkpatch issues highlighted in feedback.
-> 6) revised CPU hotplug to cover missing cases needed by ETM.
-> 
-> Changes since v1:
-> 1) Significant restructuring of the source code. Adds cti-sysfs file and
-> cti device tree file. Patches add per feature rather than per source
-> file.
-> 2) CPU type power event handling for hotplug moved to CoreSight core,
-> with generic registration interface provided for all CPU bound CS devices
-> to use.
-> 3) CTI signal interconnection details in sysfs now generated dynamically
-> from connection lists in driver. This to fix issue with multi-line sysfs
-> output in previous version.
-> 4) Full device tree bindings for DB410 and Juno provided (to the extent
-> that CTI information is available).
-> 5) AMBA driver update for UCI IDs are now upstream so no longer included
-> in this set
-> 
-> Mike Leach (15):
->   coresight: cti: Initial CoreSight CTI Driver
->   coresight: cti: Add sysfs coresight mgmt reg access
->   coresight: cti: Add sysfs access to program function regs
->   coresight: cti: Add sysfs trigger / channel programming API
->   dt-bindings: arm: Adds CoreSight CTI hardware definitions
->   coresight: cti: Add device tree support for v8 arch CTI
->   coresight: cti: Add device tree support for custom CTI
->   coresight: cti: Enable CTI associated with devices
->   coresight: cti: Add connection information to sysfs
->   dt-bindings: qcom: Add CTI options for qcom msm8916
->   dt-bindings: arm: Juno platform - add CTI entries to device tree
->   dt-bindings: hisilicon: Add CTI bindings for hi-6220
->   docs: coresight: Update documentation for CoreSight to cover CTI
->   docs: sysfs: coresight: Add sysfs ABI documentation for CTI
->   Update MAINTAINERS to add reviewer for CoreSight
-> 
->  .../testing/sysfs-bus-coresight-devices-cti   |  221 ++++
->  .../bindings/arm/coresight-cti.yaml           |  336 +++++
->  .../devicetree/bindings/arm/coresight.txt     |    7 +
->  .../trace/coresight/coresight-ect.rst         |  211 +++
->  Documentation/trace/coresight/coresight.rst   |   13 +
->  MAINTAINERS                                   |    3 +
->  arch/arm64/boot/dts/arm/juno-base.dtsi        |  162 ++-
->  arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi     |   37 +-
->  arch/arm64/boot/dts/arm/juno-r1.dts           |   25 +
->  arch/arm64/boot/dts/arm/juno-r2.dts           |   25 +
->  arch/arm64/boot/dts/arm/juno.dts              |   25 +
->  .../boot/dts/hisilicon/hi6220-coresight.dtsi  |  130 +-
->  arch/arm64/boot/dts/qcom/msm8916.dtsi         |   85 +-
->  drivers/hwtracing/coresight/Kconfig           |   21 +
->  drivers/hwtracing/coresight/Makefile          |    3 +
->  .../coresight/coresight-cti-platform.c        |  485 +++++++
->  .../hwtracing/coresight/coresight-cti-sysfs.c | 1175 +++++++++++++++++
->  drivers/hwtracing/coresight/coresight-cti.c   |  745 +++++++++++
->  drivers/hwtracing/coresight/coresight-cti.h   |  235 ++++
->  .../hwtracing/coresight/coresight-platform.c  |   20 +
->  drivers/hwtracing/coresight/coresight-priv.h  |   15 +
->  drivers/hwtracing/coresight/coresight.c       |   86 +-
->  include/dt-bindings/arm/coresight-cti-dt.h    |   37 +
->  include/linux/coresight.h                     |   27 +
->  24 files changed, 4098 insertions(+), 31 deletions(-)
->  create mode 100644 Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
->  create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
->  create mode 100644 Documentation/trace/coresight/coresight-ect.rst
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti-platform.c
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti-sysfs.c
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti.c
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti.h
->  create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
-> 
-> -- 
-> 2.17.1
-> 
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
