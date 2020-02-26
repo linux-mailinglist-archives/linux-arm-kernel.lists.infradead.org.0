@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58C7816F930
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:10:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B3E916F944
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:11:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Peo+SfFmr062rl3tgDW98UrixycGQzBn/gdB0fqrEec=; b=cdeyR8r0WrrQXL
-	fhHLecv9WUzj5mN4Jb7+S8U3VVCIJu7TkDD13MiIv2xqHbC9HXLBkGdb2Vrq2Rcfkl/jwWjXcgwST
-	vrUCWMU4jaNlxmeTiAXDyI1I6SEZ/9haXD8IUv7hU1BNoVyeH2GeaVHvTAwIA7TKEWzJHb3/naGAz
-	Yir51L7gXJoATQ86WVBgdnZ/6rUUmZe1Gs9aHwEjMZ5Rz/9WNydTH/VLWBCVDA9zdZiq8+jhja7y6
-	Dh8VhWGpCuvJ/6W0c7viQtFIuJAYI2cYQmI+ebHLMeiv0g7cZnaTxi/PPSICIl3iA9MSUbfVcYSoC
-	Ro1yQC9H+yqHToXqdWTg==;
+	List-Owner; bh=8ADp0ZCf/RXeiG8WcqeiUa/p9bRVFg9MWHrmkEvydR4=; b=LGhb4fkQPVOahi
+	BJtXEN4XzL/JpAolHzThXXSCz6Ga6a4XRsdusD5lW+G9d20OKblS1Li2yUXQBF3gD69zww/f2uZ89
+	SCjOIeF8YUi4eRd//H2ki/ugHNFjjr7D5+6X8lBg3oTpatQ2D+Snv83BF6PgDCBec7lxy6SgUaP77
+	ouDw0lLlP00NBYXZp31b5lBknpI4oolPTNfq/3hCcsnQGKORXv4xPzuVGOj8m4Aj9K9Uc1D9o+S9t
+	kYan/5JdjUcE2XmXgKkvQ4mK60O74eH9QZ1nqDxgtvQHnX7+JWnWoTTiYsV+8A/TxWEOTIeLpKZQJ
+	f5BizujU0K80o5bM8ckg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6rmQ-0000to-PS; Wed, 26 Feb 2020 08:10:54 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j6rnD-0001aC-97; Wed, 26 Feb 2020 08:11:43 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6rmH-0000rv-7o
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:10:46 +0000
-Received: by mail-pl1-x644.google.com with SMTP id a6so990257plm.3
+ id 1j6rmI-0000se-31
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:10:47 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id fa20so941191pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 00:10:44 -0800 (PST)
+ Wed, 26 Feb 2020 00:10:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=bV3ZvEYwFOIunmpWLGzAgCdGTlK6S+EV6uVEHB+FGxY=;
- b=Q0cii6N45xFi8jvZk47bAoc1Nxu6hFKn2R/6gr1ZfjKbVoDJZ64PKB8Z3UWgfpC96z
- m858biDFlV7/4mo1LjVTUmbbBHm1yKrJnJ3uLVZBlEdyOFSDznZRxrzu6B/mSXoBfdGU
- mlGpBVLSLPU/z8ykPcedU1XFyCgTRivYgIcpSqG+QITc7/eIRdzyugFFz9Yzl27ql70w
- 8AlOefrAt/HgAlO+4L6JoXtZp+YN7BobPP6qXr0OfqH/1PLZecbnI0vC7uItRmmZkPfN
- j7AsPd8mIOV8s5KgCaaK+xwtreytUn7QQZvq+Frfrl0pLWndKlgav8D5uWnV85pooXdR
- SCgg==
+ bh=vEnVySXBYfW3b1su9MemqgqPSinDbCdHAw5n+ZVHXKA=;
+ b=ZqFr2XdedoNMMzSdc2eWipJbPoWCSoIWOaxz1zsBu+w5FRw0nlJVp7B9aMcVR/ECrM
+ fWpYYrpUhtSvO1rGsvHH3i7x8JxpD2QgM4DK0weubmj2twGyNSOa9Gvtg6KWDj0oARIV
+ ossJG+QlPSs1QhoRE2faVAv1lrRd7/LwUBqX6m+LwRkGl9SmUJ5qeccTbXxGKO/jke+J
+ hejsi+GJu4wBCG1LLI2Rb9i3hLwtSZ88dY/P2BygJXrOuCX1Xh6+4AO3P044cgvoby3X
+ oVgYppEgNor2/7HskWoAIOtOe2teNJqCPhYgfnRcBTVY+U0Ce7WQEZmjOKtWi3whIYeH
+ uQBQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=bV3ZvEYwFOIunmpWLGzAgCdGTlK6S+EV6uVEHB+FGxY=;
- b=ECNexu4zW9OhYucRWaQRPAtEEWE7WmtUxDePEa2BlUp2b5Kd9R3BagblFLB6VAHhjR
- wSrCiVTMvlAgNAiXJuKq/J5YnOKBFR7YdGYc9odgo3waiK/XQw5lNOjmNA3hJepAn0wb
- MXB9jYsbW2B5kyNLwCFFG6d6jTJEY6Q87mzTx3wqL6nBq6sjdHN5JvBkaERdHCCqKUVH
- /jOwV7W2QFG0Kb+DYvfelZbfBCUOMf68VHiwQICiY52q5geL/Oa8/ZO56kEfCx3geUXF
- qCuCL4PKAO3hL6jqm5peuzVj69VP64wtkL/eTdM7KKlJDTczayTs3A6DMsI9lRzmA7Ro
- w63A==
-X-Gm-Message-State: APjAAAWTEdsoaCfLa1vBLhPyuzgRQw35FJ8aGRWduCgpvWjMqcy6TWNi
- T7YrobqhUcuRzq8O/y3mjZo=
-X-Google-Smtp-Source: APXvYqwzmN2dNDKDPwprqjYoy3wHRxeIo1QTGdy8Nrs8WKG2CT6K8e2fuBfcpdmu4anfHjvkmdpjJQ==
-X-Received: by 2002:a17:902:6184:: with SMTP id
- u4mr2301682plj.216.1582704644297; 
- Wed, 26 Feb 2020 00:10:44 -0800 (PST)
+ bh=vEnVySXBYfW3b1su9MemqgqPSinDbCdHAw5n+ZVHXKA=;
+ b=j3wqnMuutM7fm6+CgtpzUtqOybHnpB5v7GqNm5NrPLnZppqmIhQfo+XB29LZIR96Qs
+ Jy7BnRxwn82nTsr0gsi1J1SPyTVkFBfD/FPq2K+ScOhP7bMVMYU+T7gh7VCDvj1OqGCr
+ lwQ1+LNbccyZRW86D//6ySKwTfecrJ56FsWmrvWHvXykcnH8BIPijoOUTk7JgDMifSKZ
+ KGWkKaKZsVGgzycQMDy2UnKCcgvfJ8NNCHS0aJEy7YIhVHyHct2MLeU2jOQsBNJAoB8p
+ khuqKa1HHg9kFHvXcBokIyToppXiELRtmWg5Aixj6554KNk33a1wSglXIpxPHxncZ8sX
+ wMUw==
+X-Gm-Message-State: APjAAAVIaRZ6h9Ll6HvsBP2/ITar71fuZ8QWSrR6RUAlo4+/JyCCMCmC
+ nfYQIUTeyMaWhjT3gpH48Ag=
+X-Google-Smtp-Source: APXvYqySsTMpSDO1lKEob5Z3qPaMibUnculbDtGi+2b/LHKNJPcUDEb49L+OdYHplPurgC0YCZJGNA==
+X-Received: by 2002:a17:90a:32e4:: with SMTP id
+ l91mr3675046pjb.23.1582704645464; 
+ Wed, 26 Feb 2020 00:10:45 -0800 (PST)
 Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
  [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id v7sm1679230pfn.61.2020.02.26.00.10.43
+ by smtp.gmail.com with ESMTPSA id v7sm1679230pfn.61.2020.02.26.00.10.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 00:10:43 -0800 (PST)
+ Wed, 26 Feb 2020 00:10:44 -0800 (PST)
 From: Vasily Khoruzhick <anarsoul@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
@@ -74,25 +74,22 @@ To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
  Samuel Holland <samuel@sholland.org>, dri-devel@lists.freedesktop.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/6] drm/bridge: anx6345: don't print error message if
- regulator is not ready
-Date: Wed, 26 Feb 2020 00:10:07 -0800
-Message-Id: <20200226081011.1347245-3-anarsoul@gmail.com>
+Subject: [PATCH v2 3/6] dt-bindings: Add Guangdong Neweast Optoelectronics CO.
+ LTD vendor prefix
+Date: Wed, 26 Feb 2020 00:10:08 -0800
+Message-Id: <20200226081011.1347245-4-anarsoul@gmail.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200226081011.1347245-1-anarsoul@gmail.com>
 References: <20200226081011.1347245-1-anarsoul@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_001045_305939_7F59723B 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20200226_001046_126436_F508C228 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [anarsoul[at]gmail.com]
@@ -115,46 +112,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We don't want to print scary message if devm_regulator_get() returns
--EPROBE_DEFER
+Add vendor prefix for Guangdong Neweast Optoelectronics CO. LTD
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
- drivers/gpu/drm/bridge/analogix/analogix-anx6345.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
-index 0d8d083b0207..0bf81b9b5faa 100644
---- a/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
-+++ b/drivers/gpu/drm/bridge/analogix/analogix-anx6345.c
-@@ -714,14 +714,18 @@ static int anx6345_i2c_probe(struct i2c_client *client,
- 	/* 1.2V digital core power regulator  */
- 	anx6345->dvdd12 = devm_regulator_get(dev, "dvdd12");
- 	if (IS_ERR(anx6345->dvdd12)) {
--		DRM_ERROR("dvdd12-supply not found\n");
-+		if (PTR_ERR(anx6345->dvdd12) != -EPROBE_DEFER)
-+			DRM_ERROR("Failed to get dvdd12 supply (%ld)\n",
-+				  PTR_ERR(anx6345->dvdd12));
- 		return PTR_ERR(anx6345->dvdd12);
- 	}
- 
- 	/* 2.5V digital core power regulator  */
- 	anx6345->dvdd25 = devm_regulator_get(dev, "dvdd25");
- 	if (IS_ERR(anx6345->dvdd25)) {
--		DRM_ERROR("dvdd25-supply not found\n");
-+		if (PTR_ERR(anx6345->dvdd25) != -EPROBE_DEFER)
-+			DRM_ERROR("Failed to get dvdd25 supply (%ld)\n",
-+				  PTR_ERR(anx6345->dvdd25));
- 		return PTR_ERR(anx6345->dvdd25);
- 	}
- 
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 6456a6dfd83d..5dfbad67aa81 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -661,6 +661,8 @@ patternProperties:
+     description: Netron DY
+   "^netxeon,.*":
+     description: Shenzhen Netxeon Technology CO., LTD
++  "^neweast,.*":
++    description: Guangdong Neweast Optoelectronics CO., LTD
+   "^nexbox,.*":
+     description: Nexbox
+   "^nextthing,.*":
 -- 
 2.25.0
 
