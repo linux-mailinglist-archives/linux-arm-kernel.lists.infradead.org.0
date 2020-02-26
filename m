@@ -2,99 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C26516F953
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:12:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E37A16F955
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:12:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LnkqG8iA0ymdTA2w7CdGVHSCIBdn7y28YqcNDvsJWNU=; b=Ttb9cpIiR16OSX
-	C+0UQyaaAqkD801MCZ65bwRsQy+0yRPSFzRfv8Tc2s5Gm5L6TR05fd2w3uM9MocpU2FRV80A2XmKG
-	rVRDRn0q7jNpoxIYIc+2RWUuL1Jr7YvueQgU57O5c69nl3SgTzbc1r1xUS/q3mQkrGHbpmY2PlayQ
-	RPA4BQ3hNGi6naA71o8hf+uG9U8PousU2XUFhROHgAx7hePPf25ESKTbZVfKke7QuDJBw4JFxYJym
-	MH/qF08Y4EMH0jZYh/oeBwEf8X3Kb0CWHSTjMi9ppWH/SimAViI2NWVuusqvOdmXWorBM0vPTx8dG
-	0xJZ511Bv5LYDdz46Zgw==;
+	List-Owner; bh=CHKCeqM+d+8/UsxnksriBCa7jMUmSu6jTMIE0jmyZMY=; b=CbSDL/bjVTPrsX
+	K9jGXLSCCfrMei+SPS7THt3udsJ269ryOZIi6M1Qf8yTc94WlVE7YMh7kCNpp3doa6wHub+nhbDz6
+	TPXdrX1b/j9n2Glko/cnWLwojBo2axeNAy+ZXHS0IxLgzuYbxY4aOxtJMAUhSeFlIg1XJ5x8HX+Bi
+	sxz3JpPb5rEBNGgq53TLp99sgkkMx7zopbS+vEofR1eoDiRmuf8G51NAP2dyGA+SAM7NcEZiKNRQb
+	B13PRujdMq/j1GeR0kc/NNyz2WSRnmmWq2i3vSKZ1IrdQSjIyB0YL+jiaHvfhXNk/zmbv8He88U0s
+	6uIiSBmN9xCL40yi5mTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6rnu-0002Fx-G4; Wed, 26 Feb 2020 08:12:26 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1j6roC-0002ZK-Gi; Wed, 26 Feb 2020 08:12:44 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6rmL-0000vN-TN
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:10:51 +0000
-Received: by mail-pf1-x441.google.com with SMTP id s1so1047374pfh.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 00:10:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=1/9ulr35We1VvK4OKOtO+SeDdjZAIuN626KlRGL51e8=;
- b=Uj9USULV1YhIjRQTGet+GBQYuuhLAkRgQq5aOXkZU55ZeXZOwYCvjYC0XTbkwI02vn
- nMqNb637FbLBsLL+0OixEVNpFP/WYWrCLF5zLIEBTSZkXEK2J8hPyn24masq/KXBnUXK
- 1WpXqTxgjbgl1eq/uxSXJMuc6aResWHy1sQuEaEYBEWdEyvPqtQts5z5Su639wYEgo9n
- wE96FuZQY46tDJyTJqt+ZJrzDYNCNenLNiqWFwxe/zxWzBuM58iQ9ur+6Ym5ldZxRpj8
- JJ2JlN+8/BPq8Wk9S0SAMAUumaOifHahGje65ULSbNA6Krngc4WuiBgliS4rekKjbPPq
- Xcow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=1/9ulr35We1VvK4OKOtO+SeDdjZAIuN626KlRGL51e8=;
- b=NlA7PKzSo4EOEYlOtdfcH6TkSjbixH6f2CBb9+YjK0Qva2JOIWHVkd/xLF8DiM7+a5
- WsI9c+6xtz/2NumAXPb3HJFRydr5L7HJjDvivJsN7nfSEG7DEhH69XXTIvEZenriDrMi
- Y/e4D3KpvoqbzqXxLHj8aeWp4qLjT8qZkPhI2+wLfkiFn3RhC0Z7dPFHKp5axa/eBHDl
- /P2wVZuhjA35KPAjAYlfuV8D1o3WnCOLw0ZUU3WlqU13p/3JBnZcqIzYgbspdp0VpGuF
- FgeJtSaGyjIGdX5dS4zCvctLEovV3BWeFzMmx5oz2ugpokl4iACnNbBecKLEvWf5onEA
- Iiow==
-X-Gm-Message-State: APjAAAW9K1sMiX2Ac7+xWeNX1IDTamXxZ1XKYfBb0FZh75fpIBHjo5qr
- ZkS5JBqo+VG0fyrC0fmOg4c=
-X-Google-Smtp-Source: APXvYqwdqfkaKNsVj/z20Fl00qUooa5Fc8g4w6gy6KhAC3QgiEMz+qOhI4aMxTYoHDNd7Lx/skz8fQ==
-X-Received: by 2002:a62:1883:: with SMTP id 125mr3012096pfy.166.1582704649041; 
- Wed, 26 Feb 2020 00:10:49 -0800 (PST)
-Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
- [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id v7sm1679230pfn.61.2020.02.26.00.10.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 00:10:48 -0800 (PST)
-From: Vasily Khoruzhick <anarsoul@gmail.com>
-To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Maxime Ripard <maxime@cerno.tech>, Chen-Yu Tsai <wens@csie.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Torsten Duwe <duwe@suse.de>, Icenowy Zheng <icenowy@aosc.io>,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- Stephan Gerhold <stephan@gerhold.net>, Mark Brown <broonie@kernel.org>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- Samuel Holland <samuel@sholland.org>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 6/6] arm64: allwinner: a64: enable LCD-related hardware for
- Pinebook
-Date: Wed, 26 Feb 2020 00:10:11 -0800
-Message-Id: <20200226081011.1347245-7-anarsoul@gmail.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200226081011.1347245-1-anarsoul@gmail.com>
-References: <20200226081011.1347245-1-anarsoul@gmail.com>
+ id 1j6rnN-0001sG-AE; Wed, 26 Feb 2020 08:11:57 +0000
+X-UUID: 23d1f11552a84ea4b6b6322b5fa2647b-20200226
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=nmvexf8wPTTC/sBsarWrbzfbzx8vw18pW+m/9vRVm3Y=; 
+ b=P0FLNMHf4yn6FR6P5s1ZeaR744SGgTubTHcQzl0GEYbpR6PO/qJTh9OTj24ZK/ruVMHWfnP5IvBrEzgmWdj2kSLdiaywyt2mnoYZtFce2toxlE5mhgaJpheM6QkyZ/jAmBi+jDc149WS7Odv/ebWMapqcdtgLhjz505Kbis4Cys=;
+X-UUID: 23d1f11552a84ea4b6b6322b5fa2647b-20200226
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1027373761; Wed, 26 Feb 2020 00:11:42 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 00:11:39 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 16:09:46 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 26 Feb 2020 16:11:47 +0800
+Message-ID: <1582704699.11957.0.camel@mtksdaap41>
+Subject: Re: [PATCH v9 3/5] dt-bindings: display: mediatek: dpi sample data
+ in dual edge support
+From: CK Hu <ck.hu@mediatek.com>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Date: Wed, 26 Feb 2020 16:11:39 +0800
+In-Reply-To: <20200226053238.31646-4-jitao.shi@mediatek.com>
+References: <20200226053238.31646-1-jitao.shi@mediatek.com>
+ <20200226053238.31646-4-jitao.shi@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_001050_010315_52B91C3C 
-X-CRM114-Status: GOOD (  14.29  )
+X-CRM114-CacheID: sfid-20200226_001153_414099_CB57AD55 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [anarsoul[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -103,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,135 +86,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ cawa.cheng@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Icenowy Zheng <icenowy@aosc.io>
+Hi, Jitao:
 
-Pinebook has an ANX6345 bridge connected to the RGB666 LCD output and
-eDP panel input. The bridge is controlled via I2C that's connected to
-R_I2C bus.
+On Wed, 2020-02-26 at 13:32 +0800, Jitao Shi wrote:
+> Add property "pclk-sample" to config the dpi sample on falling (0),
+> rising (1), both falling and rising (2).
+> 
 
-Enable all this hardware in device tree.
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
----
- .../dts/allwinner/sun50i-a64-pinebook.dts     | 61 ++++++++++++++++++-
- 1 file changed, 60 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-index c06c540e6c08..0033f6a43d98 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
-@@ -48,6 +48,18 @@ lid_switch {
- 		};
- 	};
- 
-+	panel_edp: panel-edp {
-+		compatible = "neweast,wjfh116008a";
-+		backlight = <&backlight>;
-+		power-supply = <&reg_dc1sw>;
-+
-+		port {
-+			panel_edp_in: endpoint {
-+				remote-endpoint = <&anx6345_out_edp>;
-+			};
-+		};
-+	};
-+
- 	reg_vbklt: vbklt {
- 		compatible = "regulator-fixed";
- 		regulator-name = "vbklt";
-@@ -109,6 +121,10 @@ &dai {
- 	status = "okay";
- };
- 
-+&de {
-+	status = "okay";
-+};
-+
- &ehci0 {
- 	phys = <&usbphy 0>;
- 	phy-names = "usb";
-@@ -119,6 +135,10 @@ &ehci1 {
- 	status = "okay";
- };
- 
-+&mixer0 {
-+	status = "okay";
-+};
-+
- &mmc0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&mmc0_pins>;
-@@ -177,12 +197,38 @@ &pwm {
- 	status = "okay";
- };
- 
--/* The ANX6345 eDP-bridge is on r_i2c */
- &r_i2c {
- 	clock-frequency = <100000>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&r_i2c_pl89_pins>;
- 	status = "okay";
-+
-+	anx6345: anx6345@38 {
-+		compatible = "analogix,anx6345";
-+		reg = <0x38>;
-+		reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
-+		dvdd25-supply = <&reg_dldo2>;
-+		dvdd12-supply = <&reg_fldo1>;
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			anx6345_in: port@0 {
-+				reg = <0>;
-+				anx6345_in_tcon0: endpoint {
-+					remote-endpoint = <&tcon0_out_anx6345>;
-+				};
-+			};
-+
-+			anx6345_out: port@1 {
-+				reg = <1>;
-+				anx6345_out_edp: endpoint {
-+					remote-endpoint = <&panel_edp_in>;
-+				};
-+			};
-+		};
-+	};
- };
- 
- &r_pio {
-@@ -357,6 +403,19 @@ &sound {
- 			"MIC2", "Internal Microphone Right";
- };
- 
-+&tcon0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&lcd_rgb666_pins>;
-+
-+	status = "okay";
-+};
-+
-+&tcon0_out {
-+	tcon0_out_anx6345: endpoint {
-+		remote-endpoint = <&anx6345_in_tcon0>;
-+	};
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_pb_pins>;
--- 
-2.25.0
-
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  .../devicetree/bindings/display/mediatek/mediatek,dpi.txt       | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> index a7b1b8bfb65e..4299aa1adf45 100644
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> @@ -20,6 +20,7 @@ Required properties:
+>  Optional properties:
+>  - pinctrl-names: Contain "gpiomode" and "dpimode".
+>    pinctrl-names see Documentation/devicetree/bindings/pinctrlpinctrl-bindings.txt
+> +- pclk-sample: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
+>  
+>  Example:
+>  
+> @@ -37,6 +38,7 @@ dpi0: dpi@1401d000 {
+>  
+>  	port {
+>  		dpi0_out: endpoint {
+> +			pclk-sample = 0;
+>  			remote-endpoint = <&hdmi0_in>;
+>  		};
+>  	};
 
 _______________________________________________
 linux-arm-kernel mailing list
