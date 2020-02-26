@@ -2,120 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 614DE16F8E4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:02:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 061E516F940
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 09:11:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ILlKDD0DET2KXudTaED5LvR5Gns/a1nyaogmeO1fdvY=; b=j8XfDZgv0W/5zC
-	zn2rQ4yBSEqQ/m5ENpRBU8lCmCE6/02hwa1wya5cD1Dkbp+bdpE2ziB0n5LfofEtlm6TCkq937lvQ
-	wjoEcAWVrbR1+G5qPWA8hqFAfAhekLDqHvZPilE/f66RoQ3lR29n6JEircT65DUpsAf4lb+wUjdho
-	+NgVMAYYJDarAGQqV6qqOl0QcBH6b7fWD9yVp6Pzq+oBhLS73NYPTR6gvtiGVcDp64vEKXTHNmG5v
-	W5lNxrFwqGZgYrz88F2R7+2ROtkfXuQnovdsMlsfaQF9ioZB2/iELa0LwY1LapRej+74WH7iwbeIA
-	q2h0SkYdjwWDsnTNhY4A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qx+u5TC2JTR521PE0yBeHrwHGY0WB1pug3rMlW2PRgs=; b=UML5zosyvNGqAB
+	rwOsihNxb5lVFhss9BZLVsWY5Kks9woVxPQZ5zenUl0ZmDT4GoKi3chtYHk3qP8b359DefAWDt77f
+	8cxjRmdrXpyMKQnSd6m2m+ISgxv/d37Tz+IUJb6tzyjfSjKmOUHIF18SxAreprE1ujwMToa1Mh/ON
+	7x1gCHakPfMqEpBtINLxOQQrq/eYZaKhpb1t6z/KKi3Zl/r8zr+VLZRCj8bYiM0BYQlkBQJH28fvY
+	fyfRuOwp7CN0OA8RHGc24jz3AAF93TXcTk1gDENlLHDQhqL3ylCv6Ty8TVvxSts5LhTfs7vHLVlrq
+	EpNUHu4wx2hg0QMyHc5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6reX-0005zi-Ov; Wed, 26 Feb 2020 08:02:45 +0000
-Received: from mail-am6eur05on2065.outbound.protection.outlook.com
- ([40.107.22.65] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1j6rmk-00012w-6r; Wed, 26 Feb 2020 08:11:14 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6reN-0005yt-J8
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:02:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mDRXPdF9ivvZIykRU1NrqGGaIzxu133lDuIbRdaJLJU/qICnlnqK7GlExWcuoiuRO8pii4Ue/kHFKlyOQX5pk+ugUXZimey6GBGWqISqRH4vAmCiXEWI3K1cqwEPIkRf7SxnUo/TJ/+zSfC1slVDlziUBIVwHXFVrHs//sY0xA/7E61PqurtOlMJ/JJx09rlC67GsarftVmx4pILNZ0xWWH/Gp3ZXmHHIsU4cEo08SEr8eWQZu5Z8YREoy+hBluE+agmO7AEHvPd0+qltjLkTIr79D5S+AyaQZ8Ke3NGLKHmZPDeB7klEmYOkIa5nq+0+6HMYRtGYWxlAod9OWxmcg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ubw8Gbl6XvHXPC/De3ehZs4cLA7iprv6PcCy5XOA4qM=;
- b=EuTUUf8MSw6OR1gDU88R0frdWlypGwOAXYg9QgH14eqA+14tatPrgdLkLGP0sLVAODF9TqVCddYomu/LgSGnBK+Fs4cEyCAsp2vBc7Ow1rSQwpDNnWNjIHgHUzRTE+T5U/m5CHeKdrNMMZhPrdeWb28sfgiaN9Z+g2qakc46MfCwSSHiSDDVtpHsnqJfet0sN0cGFL5/T4lUiiPsmuPbr/wcw8veJjuvtZE/T0iCEzymwuMAH8FcGUrWtZbZWyDspqVze2eu7Tn1fVIsDtBCMjxZ+0Yf4PjqZ6LGS2PAItSxNBR1c+LnhBkBLwbD/LCNE+12aAYT5QMQZxaYm3+fZg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ubw8Gbl6XvHXPC/De3ehZs4cLA7iprv6PcCy5XOA4qM=;
- b=Jp2sNT/fB8fwl17Zzm834zl277h8BK46X28oq78liM2k1Gs+KwRSB7E0zqIojo/um2XtSaIAP8BSPcmJeJVPEkFMmI/T8O02uPAbncL47UhddHg4FQNAskBvCnYU+9gCX/6ievqkMvppKqGyVLAjKV0wf0e1d7FC9sx7NMWyMXc=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=laurentiu.palcu@nxp.com; 
-Received: from AM6PR04MB5766.eurprd04.prod.outlook.com (20.179.2.143) by
- AM6PR04MB5510.eurprd04.prod.outlook.com (20.178.86.202) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.17; Wed, 26 Feb 2020 08:02:29 +0000
-Received: from AM6PR04MB5766.eurprd04.prod.outlook.com
- ([fe80::4c26:a809:e360:5864]) by AM6PR04MB5766.eurprd04.prod.outlook.com
- ([fe80::4c26:a809:e360:5864%3]) with mapi id 15.20.2750.021; Wed, 26 Feb 2020
- 08:02:29 +0000
-Date: Wed, 26 Feb 2020 10:02:26 +0200
-From: Laurentiu Palcu <laurentiu.palcu@nxp.com>
-To: Lucas Stach <l.stach@pengutronix.de>
-Subject: Re: Re: [PATCH v3 4/4] arm64: dts: imx8mq: add DCSS node
-Message-ID: <20200226080226.xppukafx7453xm2d@fsr-ub1864-141>
-References: <1575625964-27102-1-git-send-email-laurentiu.palcu@nxp.com>
- <1575625964-27102-5-git-send-email-laurentiu.palcu@nxp.com>
- <5d0f20b76e31360372a410983b013551062e9a91.camel@pengutronix.de>
-Content-Disposition: inline
-In-Reply-To: <5d0f20b76e31360372a410983b013551062e9a91.camel@pengutronix.de>
-User-Agent: NeoMutt/20171215
-X-ClientProxiedBy: LO2P265CA0310.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:600:a5::34) To AM6PR04MB5766.eurprd04.prod.outlook.com
- (2603:10a6:20b:ab::15)
+ id 1j6rmH-0000ro-Hh
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 08:10:47 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t24so919805pgj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Feb 2020 00:10:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WxwmrpsEvSIHCqKyrbgIWagGPaBeap74xZ38jQnYjMI=;
+ b=G1GsoxC1VQuC2LzKxNIiH8WzlN8FWR5TNjYvsUrS4EpNTF67B0l7m+ux8gBd/URe9K
+ Ni169aQfWICKEdDaOovkUoQ6TY8mp7LlZHJZ6Pyh12jXifWrBo6wNpwH+hDAl0UCJeuO
+ diXFcso+LmH8SDxwSQYp2Us4VaL3d/8PrHxIwh2BO6zrCkCl4rlWXND2PaGmhmv5LO4g
+ 866z8wbTQDg9ADpDehmo7RnXIdslb/fXtfj9fH8aEqt6k6VmU5ypu3ND+wnwX7yes9a/
+ ikkRFE+xAnlAyVqjNEsi4c/y7zzELDSiseyApg0HTDvw+Sq7rIIHJHhwIduufFULCSHo
+ khfg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=WxwmrpsEvSIHCqKyrbgIWagGPaBeap74xZ38jQnYjMI=;
+ b=jlgBfUWQbWE1C9vhF7t0arTqYP7jttG3sjClxJ570wmVF3LjTQ266O8oj+jKnCfr/x
+ yk2MmqbKV5ZM7WwxRg0pTlMbDuOXf9pbnSb66WIjlxRpcX7eH0bZd76IQuvpNHfP3pBq
+ atWA4OpbwR7sz8QNYXpfN+/YbLJ3Qc8Xda5vlz3R7BOxo7kQCcYFK6jYjTmzD5JChZrT
+ z0ZEReqjdT0FYaQO+yj0UCJr4jX+NLqhy8P7x708vRR7RkVGZ0HBoozf2bhvNmwTX+YE
+ 2bfni3912LElH5/IIAN6jxK9dSL2gwXOCGKqKyiI20bKD5FShpC8NlhjDYsI7PrYobLZ
+ C9qQ==
+X-Gm-Message-State: APjAAAW4aZpY4PodmxReHHwu8dAPyy4QkIHS5Xth9ogdp1KKfm7a5nNb
+ VsuJrUPTK1Hv/+NnZi5YKos=
+X-Google-Smtp-Source: APXvYqxua5ZCZ8hYefxJVw0Z7sASanab3iVfMHAfLgUosQmXYzmdnZdSqWeV1lPWXafRXfEHEpPlMw==
+X-Received: by 2002:aa7:9a96:: with SMTP id w22mr3010770pfi.210.1582704641739; 
+ Wed, 26 Feb 2020 00:10:41 -0800 (PST)
+Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
+ [216.71.213.236])
+ by smtp.gmail.com with ESMTPSA id v7sm1679230pfn.61.2020.02.26.00.10.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 26 Feb 2020 00:10:40 -0800 (PST)
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <maxime@cerno.tech>, Chen-Yu Tsai <wens@csie.org>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Torsten Duwe <duwe@suse.de>, Icenowy Zheng <icenowy@aosc.io>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Stephan Gerhold <stephan@gerhold.net>, Mark Brown <broonie@kernel.org>,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ Samuel Holland <samuel@sholland.org>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/6] Add LCD support for Pine64 Pinebook 1080p
+Date: Wed, 26 Feb 2020 00:10:05 -0800
+Message-Id: <20200226081011.1347245-1-anarsoul@gmail.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from fsr-ub1864-141 (89.37.124.34) by
- LO2P265CA0310.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:a5::34) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.18 via Frontend Transport; Wed, 26 Feb 2020 08:02:28 +0000
-X-Originating-IP: [89.37.124.34]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: f663fe35-a783-48f3-a5ff-08d7ba9239e9
-X-MS-TrafficTypeDiagnostic: AM6PR04MB5510:|AM6PR04MB5510:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB5510FB5ECB81ACA5DC86653EFFEA0@AM6PR04MB5510.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:7219;
-X-Forefront-PRVS: 0325F6C77B
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(39860400002)(376002)(366004)(396003)(346002)(189003)(199004)(7416002)(1076003)(33716001)(8936002)(5660300002)(81156014)(316002)(81166006)(2906002)(478600001)(4326008)(54906003)(8676002)(44832011)(66946007)(66556008)(956004)(55016002)(86362001)(186003)(26005)(9686003)(6916009)(6496006)(52116002)(66476007)(16526019)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB5510;
- H:AM6PR04MB5766.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: M+SwYr+swCDsHI3G6FgqooKf4A+dtz4TFZ8C8mIp0ZYGcS7tsHt6BqiX4/gZOMjFW82Kk9kPvvDzUL+Lt1xxP8r0aIJ5hcqrH9fr2FjB6UlkZ+tryGrx60vhOyvK4vkLXjXguTSrHuZqIgS3i1x0/Tn98qyQY0u9mj2Dt6T/yMLMD8ZjSqY6kjLIExv70B3XKU8VvnNNzHvLc76arSMYTiVs4O78s93+5Hx31uDZwz8+gPNMe+kiE1GwFWF9SfVBaNzWG7VAniCl1SbFRyFuoxUCyronPe3eJ0MpLUxs16EYuJuKIBqGj8FUZj+7RsiPaOPETYTcCgJlciQf6SQ5AUCjsAUGQc8rsC7qbMoDUUjxjJzOAhggQtmqsAzlHqCwwRXp45JmTiH+H5MvwjnVsiHj2wNNWVcB4zJB0GlH2eXUxRxd8f3XKXmOwyYcc+00p6HwajstRR9/Z+pEAyZmef0rx45LNfujI1G+LZL0eOE=
-X-MS-Exchange-AntiSpam-MessageData: eSTfkwJ7bTImUH3LlamRv+EsHsG1S0bPMqFP4Y0MvQ2GcBEDCrvxZHHjFd6O4ei+N2SFiRouAxxeG+pSsJN7dDFXtp4loiOtZut31CTuL/vfu1t1gnI2yPN1H2eBldYQ/PmfIGUG8JwbF0SUjVEx0w==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f663fe35-a783-48f3-a5ff-08d7ba9239e9
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2020 08:02:29.8068 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 0PG4r0mktqvD+9xQ9MQ7w2iuJeKllXFBJ0pdYXwvsxhmFFPDyrXHp6Sl5iN3CFcuP+MIT+0yqzNEOpZzejJhew==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5510
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_000235_633904_CC61BD0D 
-X-CRM114-Status: GOOD (  17.15  )
+X-CRM114-CacheID: sfid-20200226_001045_584909_DAE6E969 
+X-CRM114-Status: GOOD (  14.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.22.65 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [anarsoul[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,86 +111,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, lukas@mntmn.com,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, agx@sigxcpu.org,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lucas,
+Since ANX6345 driver has been merged we can add support for Pinebook LCD
 
-On Mon, Feb 24, 2020 at 06:23:51PM +0100, Lucas Stach wrote:
-> On Fr, 2019-12-06 at 11:52 +0200, Laurentiu Palcu wrote:
-> > This patch adds the node for iMX8MQ Display Controller Subsystem.
-> >
-> > Signed-off-by: Laurentiu Palcu <laurentiu.palcu@nxp.com>
-> > ---
-> >  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 25 +++++++++++++++++++++++++
-> >  1 file changed, 25 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> > index f6e840c..da7e485 100644
-> > --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> > @@ -981,6 +981,31 @@
-> >                               interrupt-controller;
-> >                               #interrupt-cells = <1>;
-> >                       };
-> > +
-> > +                     dcss: display-controller@32e00000 {
-> 
-> Node address is lower than the irqsteer node, so the dcss node should
-> be added before, not after the irqsteer node in the DT.
+This is a follow up on [1] which attempted to add support for all the
+A64-based Pinebooks.
 
-That's correct, I'll move it.
+Since patches for 768p were dropped we don't need edp-connector binding
+discussed in [1] and its earlier versions and we can use panel-simple
+binding as everyone else does.
 
+If we ever going to add support for 768p we can do it through dt-overlay
+with appropriate panel node or by teaching bootloader to patch dtb with
+correct panel compatible.
 
-> 
-> > +                             #address-cells = <1>;
-> > +                             #size-cells = <0>;
-> > +                             compatible = "nxp,imx8mq-dcss";
-> > +                             reg = <0x32e00000 0x2d000>, <0x32e2f000 0x1000>;
-> > +                             interrupts = <6>, <8>, <9>;
-> > +                             interrupt-names = "ctx_ld", "ctxld_kick", "vblank";
-> > +                             interrupt-parent = <&irqsteer>;
-> > +                             clocks = <&clk IMX8MQ_CLK_DISP_APB_ROOT>,
-> > +                                      <&clk IMX8MQ_CLK_DISP_AXI_ROOT>,
-> > +                                      <&clk IMX8MQ_CLK_DISP_RTRM_ROOT>,
-> > +                                      <&clk IMX8MQ_VIDEO2_PLL_OUT>,
-> > +                                      <&clk IMX8MQ_CLK_DISP_DTRC>;
-> > +                             clock-names = "apb", "axi", "rtrm", "pix", "dtrc";
-> > +                             assigned-clocks = <&clk IMX8MQ_CLK_DISP_AXI>,
-> > +                                               <&clk IMX8MQ_CLK_DISP_RTRM>,
-> > +                                               <&clk IMX8MQ_VIDEO2_PLL1_REF_SEL>;
-> > +                             assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_800M>,
-> > +                                                      <&clk IMX8MQ_SYS1_PLL_800M>,
-> > +                                                      <&clk IMX8MQ_CLK_27M>;
-> > +                             assigned-clock-rates = <800000000>,
-> > +                                                        <400000000>;
-> 
-> Second line is not aligned to the first one.
+Similar approach was chosen in [2]
 
-ack
+[1] https://patchwork.kernel.org/cover/10814169/
+[2] https://patchwork.kernel.org/patch/11277765/
 
-Thanks,
-laurentiu
+v2:
+  - Collect r-b tags
+  - Don't print devm_regulator_get() error only if it is -EPROBE_DEFER
+  - Keep compatibles alphabetically sorted in panel-simple.yaml
+  - Properly indent new panel modes
+  - Drop #address-cells, #size-cells properties and @0 suffix
+    of endpoints in sun50i-a64-pinebook.dts
 
-> 
-> > +                             status = "disabled";
-> > +                     };
-> >               };
-> >
-> >               gpu: gpu@38000000 {
-> 
+Icenowy Zheng (1):
+  arm64: allwinner: a64: enable LCD-related hardware for Pinebook
+
+Samuel Holland (1):
+  drm/bridge: anx6345: Fix getting anx6345 regulators
+
+Vasily Khoruzhick (4):
+  drm/bridge: anx6345: don't print error message if regulator is not
+    ready
+  dt-bindings: Add Guangdong Neweast Optoelectronics CO. LTD vendor
+    prefix
+  dt-bindings: display: simple: Add NewEast Optoelectronics WJFH116008A
+    compatible
+  drm/panel: simple: Add NewEast Optoelectronics CO., LTD WJFH116008A
+    panel support
+
+ .../bindings/display/panel/panel-simple.yaml  |  2 +
+ .../devicetree/bindings/vendor-prefixes.yaml  |  2 +
+ .../dts/allwinner/sun50i-a64-pinebook.dts     | 61 ++++++++++++++++++-
+ .../drm/bridge/analogix/analogix-anx6345.c    | 12 ++--
+ drivers/gpu/drm/panel/panel-simple.c          | 48 +++++++++++++++
+ 5 files changed, 120 insertions(+), 5 deletions(-)
 
 -- 
-Laurentiu
-NXP
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
