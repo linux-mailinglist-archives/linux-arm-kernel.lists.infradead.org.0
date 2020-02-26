@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3D7C170705
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:06:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58B0517070E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:06:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4flzX9fF6V+l88sf8OAQGxUajXvvfNa9e0dzEQrZnT8=; b=OsKxGjJcPYEVaP
-	5pQ1iUFZHzBuWdSu2gxB06XNqyfvIoit+XcSdJCcvuKhQ41Jrp2Q7IcIqXSOKg7s2e+JNvrNrnk46
-	+yXHOVFxXsBI9KOOs2+Srte5c2EYkGAXdp1TLS8yGOdOeI8sljguR9oOCuMybiN3MFpm5N8ubwusb
-	nS4EYQ1z6qZdxx68im9b1aW2EQ+tDGzs1OdVTvSfsiI4UgBFJMSVb5uURQAAXiPlM700PCrMYDagr
-	Q7Xnpd8AfbXRL8iiXiEJud/vuytL/vNS/4TMPTNXPy+bnFm9GA3JG1QsC1diXcJEwYaAR01fcYHhE
-	Uhw8YML/Vj7A4f/0LUHA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OaW6KPRjjwm+tpjNkEfArRKnhaCT8UQd4wDqv823XWo=; b=e9rR6S2II63wXA
+	UaAdy8TP2ZdBqa+Jgu7sNj4cJekqXZnYrlRPI8hQ25OHsFXm96m9Zr6iH+jau4eGGMJ3CCQ34RvnA
+	a768XcM1GHsKGH+bhMMEl8hTQxpquEqlpJxvSElIaKxh+3cvofVy7v5M0G4/ocQaEaaDK667WvAci
+	M9zz8WFDweo/JetEh6WmFhq6EQLq8hjqhTOInHKzW8/AjQc+15PzH6h7IXWuYqyIuc/QiXXMp32tz
+	SiEj7CkoB9qt6PTM+8QHSAnA3RaiHgy6w3LZXOqKoLwdx/wlrZgNZtc122zHPilsBcmkQEYir1s5Y
+	0zVlTT4sKxRzpLt6lG9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j714A-0007GJ-4Y; Wed, 26 Feb 2020 18:05:50 +0000
+	id 1j714a-0007Qd-T6; Wed, 26 Feb 2020 18:06:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j713z-0007En-1D
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:05:40 +0000
+ id 1j713z-0007Es-Ks
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:05:42 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2476130E;
- Wed, 26 Feb 2020 10:05:36 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C290031B;
+ Wed, 26 Feb 2020 10:05:37 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id AE0433F881;
- Wed, 26 Feb 2020 10:05:34 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 596F53F881;
+ Wed, 26 Feb 2020 10:05:36 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 00/19] arm64: Memory Tagging Extension user-space support
-Date: Wed, 26 Feb 2020 18:05:07 +0000
-Message-Id: <20200226180526.3272848-1-catalin.marinas@arm.com>
+Subject: [PATCH v2 01/19] arm64: alternative: Allow alternative_insn to always
+ issue the first instruction
+Date: Wed, 26 Feb 2020 18:05:08 +0000
+Message-Id: <20200226180526.3272848-2-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200226180526.3272848-1-catalin.marinas@arm.com>
+References: <20200226180526.3272848-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_100539_158741_987DFBAA 
-X-CRM114-Status: GOOD (  17.35  )
+X-CRM114-CacheID: sfid-20200226_100539_735244_AEA9EA38 
+X-CRM114-Status: GOOD (  10.29  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,161 +74,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+There are situations where we do not want to disable the whole block
+based on a config option, only the alternative part while keeping the
+first instruction. Improve the alternative_insn assembler macro to take
+a 'first_insn' argument, default 0 to preserve the current behaviour.
 
-This is the second version (first version here [1]) of the series
-proposing the user-space support for the ARMv8.5 Memory Tagging
-Extension ([2], [3]). The patches are also available on this branch:
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+---
+ arch/arm64/include/asm/alternative.h | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux devel/mte-v2
-
-Changes in this version:
-
-- HWCAP2_MTE moved to bit 18.
-
-- Changed the polarity of the tag exclusion mask passed to prctl() for
-  setting the GCR_EL1.Excl field. It is now an include mask, defaulting
-  to 0 (no tag generated by IRG by default).
-
-- Dropped #ifdef __aarch64__ in the generic siginfo.h, renumbered
-  SEGV_MTE* after the SEGV_ADI* macros.
-
-- Following an architecture update/fix, accesses to user memory done by
-  the kernel now use the user-selected tag checking mode
-  (SCTLR_EL1.TCF0). This required clearing the PSTATE.TCO on the kernel
-  exception entry and setting the TIF_MTE_ASYNC_FAULT on context switch
-  if any uaccess routine generated an asynchronous tag check fault.
-
-- For asynchronous faults in user space, a SIGSEGV is now delivered
-  before processing the syscall (using -ERESTARTNOINTR).
-
-- Moved the MTE-related code from arch/arm64/kernel/process.c to mte.c.
-
-- Documentation updated following the above ABI changes.
-
-- Some of the preparatory or clean-up patches have been merged (as-instr
-  support in Kconfig files, prot flags 0x10 and 0x20 reserved in the
-  generic file, MAIR_EL1 setting cleanup).
-
-- Some small fixes and clean-ups following review.
-
-While there are still missing bits, I'm posting a v2 to continue the
-discussion with the libc folk on the main ABI aspects. Additional
-features will be posted in due course:
-
-- ptrace() support to be able to access the tags in memory of a
-  different process, something like PTRACE_{PEEK,POKE}MTETAGS. Under
-  development.
-
-- Swap support, currently under development.
-
-- Related to the above is suspend to disk.
-
-- DT and ACPI description on whether the SoC support MTE (CPUID checking
-  is insufficient).
-
-- coredump (user) currently does not contain the tags.
-
-- kselftests, under development.
-
-- Clarify whether mmap(tagged_addr, PROT_MTE) pre-tags the memory with
-  the tag given in the tagged_addr hint. Following commit ce18d171cb73
-  ("mm: untag user pointers in mmap/munmap/mremap/brk"), mmap() no
-  longer accepts tagged hint addresses. This could be relaxed only when
-  PROT_MTE is passed, however a deeper investigation is needed on
-  whether we can still keep the zero page on arm64 for mappings that do
-  not require pre-tagging.
-
-[1] https://lore.kernel.org/linux-arm-kernel/20191211184027.20130-1-catalin.marinas@arm.com/
-[2] https://community.arm.com/developer/ip-products/processors/b/processors-ip-blog/posts/enhancing-memory-safety
-[3] https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/Arm_Memory_Tagging_Extension_Whitepaper.pdf
-
-Catalin Marinas (10):
-  arm64: alternative: Allow alternative_insn to always issue the first
-    instruction
-  arm64: mte: Use Normal Tagged attributes for the linear map
-  arm64: mte: Assembler macros and default architecture for .S files
-  arm64: Tags-aware memcmp_pages() implementation
-  arm64: mte: Add PROT_MTE support to mmap() and mprotect()
-  mm: Introduce arch_validate_flags()
-  arm64: mte: Validate the PROT_MTE request via arch_validate_flags()
-  mm: Allow arm64 mmap(PROT_MTE) on RAM-based files
-  arm64: mte: Allow user control of the tag check mode via prctl()
-  arm64: mte: Allow user control of the generated random tags via
-    prctl()
-
-Kevin Brodsky (1):
-  mm: Introduce arch_calc_vm_flag_bits()
-
-Vincenzo Frascino (8):
-  arm64: mte: system register definitions
-  arm64: mte: CPU feature detection and initial sysreg configuration
-  arm64: mte: Tags-aware clear_page() implementation
-  arm64: mte: Tags-aware copy_page() implementation
-  arm64: mte: Add specific SIGSEGV codes
-  arm64: mte: Handle synchronous and asynchronous tag check faults
-  arm64: mte: Kconfig entry
-  arm64: mte: Add Memory Tagging Extension documentation
-
- Documentation/arm64/cpu-feature-registers.rst |   2 +
- Documentation/arm64/elf_hwcaps.rst            |   5 +
- Documentation/arm64/index.rst                 |   1 +
- .../arm64/memory-tagging-extension.rst        | 228 ++++++++++++++++++
- arch/arm64/Kconfig                            |  32 +++
- arch/arm64/include/asm/alternative.h          |   8 +-
- arch/arm64/include/asm/assembler.h            |  17 ++
- arch/arm64/include/asm/cpucaps.h              |   4 +-
- arch/arm64/include/asm/cpufeature.h           |   6 +
- arch/arm64/include/asm/hwcap.h                |   1 +
- arch/arm64/include/asm/kvm_arm.h              |   3 +-
- arch/arm64/include/asm/memory.h               |  17 +-
- arch/arm64/include/asm/mman.h                 |  78 ++++++
- arch/arm64/include/asm/mte.h                  |  35 +++
- arch/arm64/include/asm/page.h                 |   4 +-
- arch/arm64/include/asm/pgtable-prot.h         |   2 +
- arch/arm64/include/asm/pgtable.h              |   7 +-
- arch/arm64/include/asm/processor.h            |   4 +
- arch/arm64/include/asm/sysreg.h               |  62 +++++
- arch/arm64/include/asm/thread_info.h          |   4 +-
- arch/arm64/include/uapi/asm/hwcap.h           |   2 +
- arch/arm64/include/uapi/asm/mman.h            |  14 ++
- arch/arm64/include/uapi/asm/ptrace.h          |   1 +
- arch/arm64/kernel/Makefile                    |   1 +
- arch/arm64/kernel/cpufeature.c                |  60 +++++
- arch/arm64/kernel/cpuinfo.c                   |   2 +
- arch/arm64/kernel/entry.S                     |  27 +++
- arch/arm64/kernel/mte.c                       | 137 +++++++++++
- arch/arm64/kernel/process.c                   |  22 +-
- arch/arm64/kernel/ptrace.c                    |   2 +-
- arch/arm64/kernel/signal.c                    |   8 +
- arch/arm64/kernel/syscall.c                   |  10 +
- arch/arm64/lib/Makefile                       |   2 +
- arch/arm64/lib/clear_page.S                   |   7 +-
- arch/arm64/lib/copy_page.S                    |  23 ++
- arch/arm64/lib/mte.S                          |  46 ++++
- arch/arm64/mm/Makefile                        |   1 +
- arch/arm64/mm/cmppages.c                      |  26 ++
- arch/arm64/mm/dump.c                          |   4 +
- arch/arm64/mm/fault.c                         |   9 +-
- arch/arm64/mm/mmu.c                           |  22 +-
- arch/arm64/mm/proc.S                          |   8 +-
- fs/proc/task_mmu.c                            |   4 +
- include/linux/mm.h                            |   8 +
- include/linux/mman.h                          |  22 +-
- include/uapi/asm-generic/siginfo.h            |   4 +-
- include/uapi/linux/prctl.h                    |   9 +
- mm/mmap.c                                     |   9 +
- mm/mprotect.c                                 |   6 +
- mm/shmem.c                                    |   3 +
- mm/util.c                                     |   2 +-
- 51 files changed, 994 insertions(+), 27 deletions(-)
- create mode 100644 Documentation/arm64/memory-tagging-extension.rst
- create mode 100644 arch/arm64/include/asm/mman.h
- create mode 100644 arch/arm64/include/asm/mte.h
- create mode 100644 arch/arm64/include/uapi/asm/mman.h
- create mode 100644 arch/arm64/kernel/mte.c
- create mode 100644 arch/arm64/lib/mte.S
- create mode 100644 arch/arm64/mm/cmppages.c
+diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
+index 324e7d5ab37e..44083424d7aa 100644
+--- a/arch/arm64/include/asm/alternative.h
++++ b/arch/arm64/include/asm/alternative.h
+@@ -111,7 +111,11 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
+ 	.byte \alt_len
+ .endm
+ 
+-.macro alternative_insn insn1, insn2, cap, enable = 1
++/*
++ * Disable the whole block if enable == 0, unless first_insn == 1 in which
++ * case insn1 will always be issued but without an alternative insn2.
++ */
++.macro alternative_insn insn1, insn2, cap, enable = 1, first_insn = 0
+ 	.if \enable
+ 661:	\insn1
+ 662:	.pushsection .altinstructions, "a"
+@@ -122,6 +126,8 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
+ 664:	.popsection
+ 	.org	. - (664b-663b) + (662b-661b)
+ 	.org	. - (662b-661b) + (664b-663b)
++	.elseif \first_insn
++	\insn1
+ 	.endif
+ .endm
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
