@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EE9B17076F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:15:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99120170771
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:15:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9IwY6Qe2qp6mMaEluCiufxPPOcITh3yqozY8uq00wMA=; b=pOc7IAI1Nb7KK+m6dtRByhtEAM
-	1xUiK2Lgn3VzBLlTTlQkjJIcnIa78MFjznC/BNydAH1wzbXfEvtS3oRjes7H9njpJAuWxaXwLsa4v
-	eGcqHiPngiHqhDSZxbwfdGiT+AYF1rcIbvDhUTKpocImt9WuukVo/L6QD5TvhiZW9aQrP41fbKVri
-	OBDcDicY3Pn6veMLEeeFecujiOcxDC0UGvUP7uomzEaZpjpKVClh+jNbqRoXSBQTPztHUDJzL94Am
-	sZoCioY+g/38abSnrMFyRy0yC9gujCWUHFte9upv7+PK2MTHjqUEPfqqbWxfqi68im1TmV7xwauEc
-	SzTII29A==;
+	bh=pONY7XtYWMuSahsUYDRPRgGdOIkkW30ogWMl5/+kL6E=; b=e2KvZhA/10uh1pU/OoRB0JuDJ9
+	T5ruVwMm3gHs0tQXrVqh9u0XWkcZRE3OcqJIsoxCB9aZI7tDKQzbP9rVqzj9SX2fpA7Y7k48z3Qn+
+	0B0GHsJEzODMzqnFNqF/ce4hv3qTBFo3I1PbTcZDrAWg8ImJ8/GePUfvJQvrSIaBfGUXQEanwS4e1
+	ctq7uxHzFn2bjmzxaFJSmkFe+1IYrYjhjkx4CVsKn43ZLzEzfNhTnh80MMzwpGOUe1zi1nZ8pgnDe
+	3nV64bmO48T1QdYhha4Lnc2sDTnXulXg3BG3BvyTFaNI/Qg2ktTj0Y1RjGTCoWsxDRUuHBAt27jPm
+	uLA7xfeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j71DF-00008S-KQ; Wed, 26 Feb 2020 18:15:13 +0000
+	id 1j71DV-0001b9-D2; Wed, 26 Feb 2020 18:15:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j717m-0002FF-L2
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:09:36 +0000
+ id 1j717p-0002K9-0p
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:09:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 832534B2;
- Wed, 26 Feb 2020 10:09:34 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E7F3106F;
+ Wed, 26 Feb 2020 10:09:36 -0800 (PST)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E615B3F881;
- Wed, 26 Feb 2020 10:09:32 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD74F3F881;
+ Wed, 26 Feb 2020 10:09:34 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: [PATCH 12/13] dt-bindings: arm: Add Calxeda system registers
- json-schema binding
-Date: Wed, 26 Feb 2020 18:09:00 +0000
-Message-Id: <20200226180901.89940-13-andre.przywara@arm.com>
+Subject: [PATCH 13/13] MAINTAINERS: Update Calxeda Highbank maintainership
+Date: Wed, 26 Feb 2020 18:09:01 +0000
+Message-Id: <20200226180901.89940-14-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200226180901.89940-1-andre.przywara@arm.com>
 References: <20200226180901.89940-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_100934_762508_35BFF6B9 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20200226_100937_141448_A56A10BD 
+X-CRM114-Status: GOOD (  10.57  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,72 +72,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Calxeda system registers are a collection of MMIO register
-controlling several more general aspects of the SoC.
-Beside for some power management tasks this node is also somewhat
-abused as the container for the clock nodes.
-
-Add a binding in DT schema format using json-schema.
+Rob sees little point in maintaining the Calxeda architecture (early ARM
+32-bit server) anymore.
+Since I have a machine sitting under my desk, change the maintainership
+to not lose support for that platform.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../bindings/arm/calxeda/hb-sregs.yaml        | 47 +++++++++++++++++++
- 1 file changed, 47 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml b/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
-new file mode 100644
-index 000000000000..541c47955a3d
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
-@@ -0,0 +1,47 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/calxeda/hb-sregs.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Calxeda Highbank system registers
-+
-+description: |
-+  The Calxeda Highbank system has a block of MMIO registers controlling
-+  several generic system aspects. Those can be used to control some power
-+  management, they also contain some gate and PLL clocks.
-+
-+maintainers:
-+  - Andre Przywara <andre.przywara@arm.com>
-+
-+properties:
-+  compatible:
-+    const: calxeda,hb-sregs
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    type: object
-+
-+required:
-+  - compatible
-+  - reg
-+
-+examples:
-+  - |
-+    sregs@fff3c000 {
-+        compatible = "calxeda,hb-sregs";
-+        reg = <0xfff3c000 0x1000>;
-+
-+        clocks {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            osc: oscillator {
-+                #clock-cells = <0>;
-+                compatible = "fixed-clock";
-+                clock-frequency = <33333000>;
-+            };
-+        };
-+    };
+diff --git a/MAINTAINERS b/MAINTAINERS
+index fcd79fc38928..5354ba7460b8 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1605,7 +1605,7 @@ F:	Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
+ F:	Documentation/devicetree/bindings/pinctrl/bitmain,bm1880-pinctrl.txt
+ 
+ ARM/CALXEDA HIGHBANK ARCHITECTURE
+-M:	Rob Herring <robh@kernel.org>
++M:	Andre Przywara <andre.przywara@arm.com>
+ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	arch/arm/mach-highbank/
 -- 
 2.17.1
 
