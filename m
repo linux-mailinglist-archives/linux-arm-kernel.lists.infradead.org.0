@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BC6117050C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 17:58:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F0FA170510
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 17:59:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=thRVvfY11H7asEIqngj0HnaDK71fGK/mghxB7mkq2Ao=; b=Wln7XhK6486tvZuSa74OqCJ2kT
-	uqpPUs86Z81NInt46UU4OghJKhvR1i88kyE3J3bt+q1rvxHGb4E2Mo65Mx223noWy4nmLEiVMXIm0
-	7qwVYSBayuYFi/HXZWFy0j4KjUQQ5RlDwxf6cMDhSyAApSxtJR6NPrfSDEWYcI5WtRnCx3e6gZIP3
-	S6dw8LRtYHSLcYc1sX0nay+Du3wIMS8AwmQrVdRDFzOVqvwu4ICPFNruqArMFHxFonx0IB0JKDrjK
-	jUW9Z4/OyWZG3yjVaEaRWjzkA8droIn6N+1CWSdTyDzsRX2RKFAh83lOL7geAZ8SJ3EpAOwvvYAu1
-	SE9ImQqg==;
+	bh=4+AovQMWM7KqEfCb4KT/U2xDNTMSYWrHD+kIeasQy4g=; b=i/C4luWaP2xTxGgn6PH48oFuN0
+	VL/i8WYHR1yvvczOMyHJlNEZLVJurRiXrEDOTUgD1WCffURiS4fIJ2YHNPTxn0hVgHGmNYKJki5aY
+	Pu1dWAEuZAWyzLlLCWQTlN0pi//4AFYjaZZP1vUQw6KkhN4GHPYsWfPRnPPW2JJ1Oo483X8EDAZYy
+	uzS1ofMApVNGsl4k81SnE0vQXcbKb4aOO8LEN7s89hk+4V+a8eJA5GTpxRqhxrPoPOi/nnngTdPE8
+	2LedsQngXU10j4dOckwEM7Hqg2J1DlmDrHADQ3F+YzkTYuAQ655S6hkKePO3aceHlkr72sot44h5Z
+	DOpRpbwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7017-0003HN-Kc; Wed, 26 Feb 2020 16:58:37 +0000
+	id 1j701a-0003ic-9P; Wed, 26 Feb 2020 16:59:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j700N-0002qV-Mh
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 16:57:52 +0000
+ id 1j700Q-0002t0-Dy
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 16:57:55 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9ABAC24685;
- Wed, 26 Feb 2020 16:57:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C0FE624680;
+ Wed, 26 Feb 2020 16:57:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582736271;
- bh=4sZ0PYKHHFjGjhnZonEyKKQjDJ4zZiNH+ld8nAMN3p8=;
+ s=default; t=1582736273;
+ bh=uW8+rKC/o5RdVSFlc9y5MEt2hTA2U14dz/iwEPyniSM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DphzF4w0Z/g9FSxYW5EdUOqsxTMzE2r8wM54G6dRwsw6KYWEM3IZwKHj4qzJ7b7gj
- Zoxsq2/R7kQmdxL2zccS5QnMx0FhVrctUJ6jOedvRzfUewBJ7vD1Jj1Smiic6GEt0X
- p038Izktdh2UBBQPKiZ41O/FPAfsN25Bq9YIju/Y=
+ b=hD6JzefLOlMTlLYF5M4lirlIHwIXiuom99F8S+nNaf3MIgKBbf6fWUScZHobZ3OYv
+ ltno6Y0Bv+vIp5Eb40vF2ibF1OKVnx31ZeJPYapN3gwQmK0p0LxG+lXrRkrccXjIie
+ 8oAwtwyxE1CozpsNYY6soVw3mDlSRQ9hCdDsKXUY=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 2/5] efi/arm: Pass start and end addresses to
- cache_clean_flush()
-Date: Wed, 26 Feb 2020 17:57:35 +0100
-Message-Id: <20200226165738.11201-3-ardb@kernel.org>
+Subject: [PATCH v4 3/5] ARM: decompressor: factor out routine to obtain the
+ inflated image size
+Date: Wed, 26 Feb 2020 17:57:36 +0100
+Message-Id: <20200226165738.11201-4-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200226165738.11201-1-ardb@kernel.org>
 References: <20200226165738.11201-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_085751_765459_FA437732 
-X-CRM114-Status: UNSURE (   9.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200226_085754_590455_67E1447E 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,37 +87,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for turning the decompressor's cache clean/flush
-operations into proper by-VA maintenance for v7 cores, pass the
-start and end addresses of the regions that need cache maintenance
-into cache_clean_flush in registers r0 and r1.
-
-Currently, all implementations of cache_clean_flush ignore these
-values, so no functional change is expected as a result of this
-patch.
+Before adding another reference to the inflated image size, factor
+out the slightly complicated way of loading the unaligned little-endian
+constant from the end of the compressed data.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/boot/compressed/head.S | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm/boot/compressed/head.S | 43 ++++++++++++--------
+ 1 file changed, 26 insertions(+), 17 deletions(-)
 
 diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 39f7071d47c7..8487221bedb0 100644
+index 8487221bedb0..d45952aae2b5 100644
 --- a/arch/arm/boot/compressed/head.S
 +++ b/arch/arm/boot/compressed/head.S
-@@ -1460,6 +1460,12 @@ ENTRY(efi_stub_entry)
+@@ -151,6 +151,25 @@
+ .L_\@:
+ 		.endm
  
- 		@ Preserve return value of efi_entry() in r4
- 		mov	r4, r0
-+		add	r1, r4, #SZ_2M			@ DT end
-+		bl	cache_clean_flush
++		/*
++		 * The kernel build system appends the size of the
++		 * decompressed kernel at the end of the compressed data
++		 * in little-endian form.
++		 */
++		.macro	get_inflated_image_size, res:req, tmp1:req, tmp2:req
++		adr	\res, .Linflated_image_size_offset
++		ldr	\tmp1, [\res]
++		add	\tmp1, \tmp1, \res	@ address of inflated image size
 +
-+		ldr	r0, [sp]			@ relocated zImage
-+		ldr	r1, =_edata			@ size of zImage
-+		add	r1, r1, r0			@ end of zImage
- 		bl	cache_clean_flush
++		ldrb	\res, [\tmp1]		@ get_unaligned_le32
++		ldrb	\tmp2, [\tmp1, #1]
++		orr	\res, \res, \tmp2, lsl #8
++		ldrb	\tmp2, [\tmp1, #2]
++		ldrb	\tmp1, [\tmp1, #3]
++		orr	\res, \res, \tmp2, lsl #16
++		orr	\res, \res, \tmp1, lsl #24
++		.endm
++
+ 		.section ".start", "ax"
+ /*
+  * sort out different calling conventions
+@@ -268,15 +287,15 @@ not_angel:
+ 		 */
+ 		mov	r0, pc
+ 		cmp	r0, r4
+-		ldrcc	r0, LC0+32
++		ldrcc	r0, LC0+28
+ 		addcc	r0, r0, pc
+ 		cmpcc	r4, r0
+ 		orrcc	r4, r4, #1		@ remember we skipped cache_on
+ 		blcs	cache_on
  
- 		@ The PE/COFF loader might not have cleaned the code we are
+ restart:	adr	r0, LC0
+-		ldmia	r0, {r1, r2, r3, r6, r10, r11, r12}
+-		ldr	sp, [r0, #28]
++		ldmia	r0, {r1, r2, r3, r6, r11, r12}
++		ldr	sp, [r0, #24]
+ 
+ 		/*
+ 		 * We might be running at a different address.  We need
+@@ -284,20 +303,8 @@ restart:	adr	r0, LC0
+ 		 */
+ 		sub	r0, r0, r1		@ calculate the delta offset
+ 		add	r6, r6, r0		@ _edata
+-		add	r10, r10, r0		@ inflated kernel size location
+ 
+-		/*
+-		 * The kernel build system appends the size of the
+-		 * decompressed kernel at the end of the compressed data
+-		 * in little-endian form.
+-		 */
+-		ldrb	r9, [r10, #0]
+-		ldrb	lr, [r10, #1]
+-		orr	r9, r9, lr, lsl #8
+-		ldrb	lr, [r10, #2]
+-		ldrb	r10, [r10, #3]
+-		orr	r9, r9, lr, lsl #16
+-		orr	r9, r9, r10, lsl #24
++		get_inflated_image_size	r9, r10, lr
+ 
+ #ifndef CONFIG_ZBOOT_ROM
+ 		/* malloc space is above the relocated stack (64k max) */
+@@ -652,13 +659,15 @@ LC0:		.word	LC0			@ r1
+ 		.word	__bss_start		@ r2
+ 		.word	_end			@ r3
+ 		.word	_edata			@ r6
+-		.word	input_data_end - 4	@ r10 (inflated size location)
+ 		.word	_got_start		@ r11
+ 		.word	_got_end		@ ip
+ 		.word	.L_user_stack_end	@ sp
+ 		.word	_end - restart + 16384 + 1024*1024
+ 		.size	LC0, . - LC0
+ 
++.Linflated_image_size_offset:
++		.long	(input_data_end - 4) - .
++
+ #ifdef CONFIG_ARCH_RPC
+ 		.globl	params
+ params:		ldr	r0, =0x10000100		@ params_phys for RPC
 -- 
 2.17.1
 
