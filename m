@@ -2,70 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1E9F16FA2B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:04:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 649B716FA30
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:04:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OjcdKYwHN42Mx87HFF5rLO3PqZ2rzE6lOgNpgbTOSIU=; b=ITfO8HKtTyY5g/
-	ZAC3X1ukpvyGw/jDYJGiTOmGLyjQ+YKdSHhKsHfpWbKZESARDb12ONVLWdxBwDvGTvXEHXR4nsfg4
-	w/2AIFdD9DeZNDnTQPeFM9ZcHdffEiykhOHuSa87sACAGg+TiytkcOnHbYiDV95Tm+FO5d8Ugy/sK
-	w1MlwlYV643SQB990pfn5yWpPnL9Adh0FpmBUy6Rjaa4RwKh3MCtonNs56Cf8PmEbu+f5zv7lXVqn
-	V73Xn7AMNOK86bN0XKMANCFRm3jfNVHR6f3QBVd0X6UYk0rE5hzgINw2cJWsmQfV2WG6+EWoGgFYi
-	3a5zPfcdOtO4Z3hYaEoQ==;
+	List-Owner; bh=H7+ou6Zpg2XYUnlWxLuBe0A/i5ruqgDMiTbgePWPvrY=; b=dnM7CYjUKT+81k
+	FtZ3e4bIi3I/qszEfGa2VN2T7mORVhdWAOAAEkB9OK3eDYOBGqIyn53CJYFiXPOAWHmEGnjv+91KU
+	tFgm3zRlzdla55kDAKXDFdTaUtiU/znYGgb8CoqoGqI42ETqlDViO3dYmZm/LVernBoI9TBcZeJGG
+	4vcTgsSTfWaophWoNMYdEK+tgLi5dOFO9XuTgdaKEhX/oao8lU/NCA5VQ98zP/GBFlabYYXuh+wa2
+	nvZZQhPIOwATU1FMuYccDjUU4Eo/TWZrAZpoqq5pS8O/Cg797PdZXLgZ7ASgWGn7JvDcsInBfLJ1g
+	3rJVTM1BW4jG52NNcEow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6sc4-0003sk-DU; Wed, 26 Feb 2020 09:04:16 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j6scL-00042S-7M; Wed, 26 Feb 2020 09:04:33 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6sbv-0003rv-Hi; Wed, 26 Feb 2020 09:04:08 +0000
-X-UUID: 47541d3b44cd4009ba6cb06be6b6e450-20200226
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=6C9TgGDdkO5F5jXOiRjOlhQAyTOnDDs9QSKwWISWmG8=; 
- b=uZe/obD/ak+SSznrx3y7i189/TgK7hOprqInSigNldr5+R4OJU5D9M6F9sA0pYAoewzKvBq6pc2tDHhrifHp3sv0YstNLZPciiRsYClmQrSUnN4Sphsl+XXdcSZ+eXgXadovsDrVz/dMTF+yzIcogQ/sCBgxm9oKA4UNflAYu30=;
-X-UUID: 47541d3b44cd4009ba6cb06be6b6e450-20200226
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <changqi.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1426321112; Wed, 26 Feb 2020 01:04:01 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 26 Feb 2020 00:53:57 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 26 Feb 2020 16:53:08 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 26 Feb 2020 16:53:45 +0800
-From: Changqi Hu <changqi.hu@mediatek.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Jiri Slaby
- <jslaby@suse.com>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v4] serial: 8250-mtk: modify mtk uart power and clock
- management
-Date: Wed, 26 Feb 2020 16:53:45 +0800
-Message-ID: <1582707225-26815-1-git-send-email-changqi.hu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1j6sbw-0003s2-Kl
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 09:04:10 +0000
+Received: by mail-lf1-x144.google.com with SMTP id z9so1396976lfa.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Feb 2020 01:04:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9eHZsWhf/jI0CQUdI3eAEsrWZ3jvP1O0Z9niC9Xk7qU=;
+ b=Bt6GKp40/528dIego2DNE20IvNRKTqPzT65q2zEeWe8bApszPZNzCNzQHavKUIlb18
+ s+1muF3PFfBeFE+MaReQimvdA9Fv2waQG910ug5Ho5cAGCDy6s1muuOhbXZIEsqopIxo
+ ROAfEOa8ZKwhQtZuT4CQ4w+SaaefQl0ksiptXkiuVhdBcl1WSiZ1xoZCMn0cdLsJwXuU
+ SvNlaweTXadrtLfbr8GB0l4xqRRjhEhZ8u3KpWUPzj+Zv6ye1Un1ys9FbsGUgVVAs0UZ
+ aLf+tSIZfeTqGSun8S+4tCeQ+vZ9RZJfVXWOutLfH1ZgMsg6gIvldFORNJfo00O05Ibv
+ vFCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9eHZsWhf/jI0CQUdI3eAEsrWZ3jvP1O0Z9niC9Xk7qU=;
+ b=MXD7fIPl9Zk2ikH+jIXYpFGTjhaAIP4DlDRdEreitiJMN02n237grgUSryPDRPzy1i
+ uzAbjMAx4p2XMo96clrOfZhTWcAY2JtUm2Ejwq+ONdzBqL+PY6hEUrUJyt55dCw5WGUt
+ EL20BFSPDDQWVPnCCJNX9J+ll4X7X5RlLxENs1oZVdsBSTTo6fUvA3ETujHLD/l/1ICA
+ QwDnCijP//VotXDxtRaqvt8TfZ2Y7Kk4m6qr9rRQJSHWJOMubOcieZaj9+/K2gmazU5w
+ q9THi7/giZLdHkR3mqpsxd66ApolQEULsMJVRWLavGU8BilY16IXwIyjD5IH4sCK0wUa
+ jWfg==
+X-Gm-Message-State: APjAAAWGWEBG5Mfehy26SNf4Q0peS6agKaIPGw07+GVdUMXHnmaJigMG
+ mk5r5dX7uG+e18QoTNoKwtY=
+X-Google-Smtp-Source: APXvYqwrbSOXZUu09UI9/5ecj+GU4pY2j83Euw++/lMlFFAzDz7ZkhK3fSH2SPIK4olLQspKKPsbDQ==
+X-Received: by 2002:a05:6512:3e5:: with SMTP id
+ n5mr1887701lfq.55.1582707845096; 
+ Wed, 26 Feb 2020 01:04:05 -0800 (PST)
+Received: from localhost.localdomain (dsl-trebng21-b048b1-221.dhcp.inet.fi.
+ [176.72.177.221])
+ by smtp.googlemail.com with ESMTPSA id k1sm777927lji.43.2020.02.26.01.04.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 26 Feb 2020 01:04:04 -0800 (PST)
+From: =?UTF-8?q?Joni=20Lepist=C3=B6?= <joni.m.lepisto@gmail.com>
+To: robh+dt@kernel.org,
+	mark.rutland@arm.com
+Subject: [PATCH] ARM: dts: zynq: Add support for Z-turn Lite board
+Date: Wed, 26 Feb 2020 11:03:36 +0200
+Message-Id: <20200226090337.16065-1-joni.m.lepisto@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_010407_595940_8E173522 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20200226_010408_701529_8FAB4E13 
+X-CRM114-Status: GOOD (  14.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [joni.m.lepisto[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -73,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,160 +99,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Boichat <drinkcat@chromium.org>, Changqi
- Hu <changqi.hu@mediatek.com>, srv_heupstream@mediatek.com,
- Frank Wunderlich <frank-w@public-files.de>, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, linux-mediatek@lists.infradead.org,
- linux-serial@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- Claire Chang <tientzu@chromium.org>, Eddie Huang <eddie.huang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?Joni=20Lepist=C3=B6?= <joni.m.lepisto@gmail.com>,
+ devicetree@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MTK uart design no need to control uart clock,
-so we just control bus clock in runtime function.
-Add uart clock used count to avoid repeatedly switching the clock.
-
-Signed-off-by: Changqi Hu <changqi.hu@mediatek.com>
----
-
-Changes in v4:
- Modify commit-message
-
-Changes in v3:
- Merge patch v1 and v2 together.
- 
-Changes in v2:
- Enable uart bus clock when probe and resume base on v1 patch,
- but miss v1 patch itself.
-
- drivers/tty/serial/8250/8250_mtk.c | 50 ++++++++++++++++++++++++--------------
- 1 file changed, 32 insertions(+), 18 deletions(-)
-
-diff --git a/drivers/tty/serial/8250/8250_mtk.c b/drivers/tty/serial/8250/8250_mtk.c
-index 4d067f5..f839380 100644
---- a/drivers/tty/serial/8250/8250_mtk.c
-+++ b/drivers/tty/serial/8250/8250_mtk.c
-@@ -32,6 +32,7 @@
- #define MTK_UART_RXTRI_AD	0x14	/* RX Trigger address */
- #define MTK_UART_FRACDIV_L	0x15	/* Fractional divider LSB address */
- #define MTK_UART_FRACDIV_M	0x16	/* Fractional divider MSB address */
-+#define MTK_UART_DEBUG0	0x18
- #define MTK_UART_IER_XOFFI	0x20	/* Enable XOFF character interrupt */
- #define MTK_UART_IER_RTSI	0x40	/* Enable RTS Modem status interrupt */
- #define MTK_UART_IER_CTSI	0x80	/* Enable CTS Modem status interrupt */
-@@ -388,9 +389,18 @@ mtk8250_set_termios(struct uart_port *port, struct ktermios *termios,
- static int __maybe_unused mtk8250_runtime_suspend(struct device *dev)
- {
- 	struct mtk8250_data *data = dev_get_drvdata(dev);
-+	struct uart_8250_port *up = serial8250_get_port(data->line);
- 
--	clk_disable_unprepare(data->uart_clk);
--	clk_disable_unprepare(data->bus_clk);
-+	/* wait until UART in idle status */
-+	while
-+		(serial_in(up, MTK_UART_DEBUG0));
-+
-+	if (data->clk_count == 0U) {
-+		dev_dbg(dev, "%s clock count is 0\n", __func__);
-+	} else {
-+		clk_disable_unprepare(data->bus_clk);
-+		data->clk_count--;
-+	}
- 
- 	return 0;
- }
-@@ -400,16 +410,16 @@ static int __maybe_unused mtk8250_runtime_resume(struct device *dev)
- 	struct mtk8250_data *data = dev_get_drvdata(dev);
- 	int err;
- 
--	err = clk_prepare_enable(data->uart_clk);
--	if (err) {
--		dev_warn(dev, "Can't enable clock\n");
--		return err;
--	}
--
--	err = clk_prepare_enable(data->bus_clk);
--	if (err) {
--		dev_warn(dev, "Can't enable bus clock\n");
--		return err;
-+	if (data->clk_count > 0U) {
-+		dev_dbg(dev, "%s clock count is %d\n", __func__,
-+			data->clk_count);
-+	} else {
-+		err = clk_prepare_enable(data->bus_clk);
-+		if (err) {
-+			dev_warn(dev, "Can't enable bus clock\n");
-+			return err;
-+		}
-+		data->clk_count++;
- 	}
- 
- 	return 0;
-@@ -419,12 +429,14 @@ static void
- mtk8250_do_pm(struct uart_port *port, unsigned int state, unsigned int old)
- {
- 	if (!state)
--		pm_runtime_get_sync(port->dev);
-+		if (!mtk8250_runtime_resume(port->dev))
-+			pm_runtime_get_sync(port->dev);
- 
- 	serial8250_do_pm(port, state, old);
- 
- 	if (state)
--		pm_runtime_put_sync_suspend(port->dev);
-+		if (!pm_runtime_put_sync_suspend(port->dev))
-+			mtk8250_runtime_suspend(port->dev);
- }
- 
- #ifdef CONFIG_SERIAL_8250_DMA
-@@ -501,6 +513,8 @@ static int mtk8250_probe(struct platform_device *pdev)
- 	if (!data)
- 		return -ENOMEM;
- 
-+	data->clk_count = 0;
-+
- 	if (pdev->dev.of_node) {
- 		err = mtk8250_probe_of(pdev, &uart.port, data);
- 		if (err)
-@@ -533,6 +547,7 @@ static int mtk8250_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, data);
- 
-+	pm_runtime_enable(&pdev->dev);
- 	err = mtk8250_runtime_resume(&pdev->dev);
- 	if (err)
- 		return err;
-@@ -541,9 +556,6 @@ static int mtk8250_probe(struct platform_device *pdev)
- 	if (data->line < 0)
- 		return data->line;
- 
--	pm_runtime_set_active(&pdev->dev);
--	pm_runtime_enable(&pdev->dev);
--
- 	data->rx_wakeup_irq = platform_get_irq_optional(pdev, 1);
- 
- 	return 0;
-@@ -556,11 +568,13 @@ static int mtk8250_remove(struct platform_device *pdev)
- 	pm_runtime_get_sync(&pdev->dev);
- 
- 	serial8250_unregister_port(data->line);
--	mtk8250_runtime_suspend(&pdev->dev);
- 
- 	pm_runtime_disable(&pdev->dev);
- 	pm_runtime_put_noidle(&pdev->dev);
- 
-+	if (!pm_runtime_status_suspended(&pdev->dev))
-+		mtk8250_runtime_suspend(&pdev->dev);
-+
- 	return 0;
- }
- 
--- 
-2.6.4
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIGEgZHRzIGZvciBNWUlSIFotdHVybiBMaXRlIGFuZCByZXNwZWN0aXZlIHRhcmdldCBpbiBN
+YWtlZmlsZQpiYXNlZCBvbiB0aGUgZXhpc3RpbmcgWi10dXJuIGR0cyB3aGljaCBpcyBjb21wYXRp
+YmxlIGV4Y2VwdCBmb3IKbWVtb3J5IHNpemUuCgpTaWduZWQtb2ZmLWJ5OiBKb25pIExlcGlzdMO2
+IDxqb25pLm0ubGVwaXN0b0BnbWFpbC5jb20+Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZp
+bGUgICAgICAgICAgICB8ICAgMSArCiBhcmNoL2FybS9ib290L2R0cy96eW5xLXp0dXJuLWxpdGUu
+ZHRzIHwgMTE1ICsrKysrKysrKysrKysrKysrKysrKysrKysrCiAyIGZpbGVzIGNoYW5nZWQsIDEx
+NiBpbnNlcnRpb25zKCspCiBjcmVhdGUgbW9kZSAxMDA2NDQgYXJjaC9hcm0vYm9vdC9kdHMvenlu
+cS16dHVybi1saXRlLmR0cwoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxl
+IGIvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUKaW5kZXggZDY1NDZkMjY3NmI5Li41NmIxYmNl
+OTI3NDQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCisrKyBiL2FyY2gv
+YXJtL2Jvb3QvZHRzL01ha2VmaWxlCkBAIC0xMjQxLDYgKzEyNDEsNyBAQCBkdGItJChDT05GSUdf
+QVJDSF9aWU5RKSArPSBcCiAJenlucS16Yzc3MC14bTAxMy5kdGIgXAogCXp5bnEtemVkLmR0YiBc
+CiAJenlucS16dHVybi5kdGIgXAorCXp5bnEtenR1cm4tbGl0ZS5kdGIgXAogCXp5bnEtenliby5k
+dGIgXAogCXp5bnEtenliby16Ny5kdGIKIGR0Yi0kKENPTkZJR19NQUNIX0FSTUFEQV8zNzApICs9
+IFwKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3p5bnEtenR1cm4tbGl0ZS5kdHMgYi9h
+cmNoL2FybS9ib290L2R0cy96eW5xLXp0dXJuLWxpdGUuZHRzCm5ldyBmaWxlIG1vZGUgMTAwNjQ0
+CmluZGV4IDAwMDAwMDAwMDAwMC4uOTZjMGJhYmU4MjY3Ci0tLSAvZGV2L251bGwKKysrIGIvYXJj
+aC9hcm0vYm9vdC9kdHMvenlucS16dHVybi1saXRlLmR0cwpAQCAtMCwwICsxLDExNSBAQAorLy8g
+U1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAKKy8qCisgKiAgQ29weXJpZ2h0IChDKSAy
+MDE1IEFuZHJlYSBNZXJlbGxvIDxhZG5yZWEubWVyZWxsb0BnbWFpbC5jb20+CisgKiAgQ29weXJp
+Z2h0IChDKSAyMDE3IEFsZXhhbmRlciBHcmFmIDxhZ3JhZkBzdXNlLmRlPgorICogIENvcHlyaWdo
+dCAoQykgMjAyMCBKb25pIExlcGlzdMO2IDxqb25pLm0ubGVwaXN0b0BnbWFpbC5jb20+CisgKgor
+ICogIEJhc2VkIG9uIHp5bnEtemVkLmR0cyB3aGljaCBpczoKKyAqICBDb3B5cmlnaHQgKEMpIDIw
+MTEgLSAyMDE0IFhpbGlueAorICogIENvcHlyaWdodCAoQykgMjAxMiBOYXRpb25hbCBJbnN0cnVt
+ZW50cyBDb3JwLgorICoKKyAqLworCisvZHRzLXYxLzsKKy9pbmNsdWRlLyAienlucS03MDAwLmR0
+c2kiCisKKy8geworCW1vZGVsID0gIlp5bnEgWi1UdXJuIExpdGUgTVlJUiBCb2FyZCI7CisJY29t
+cGF0aWJsZSA9ICJteWlyLHp5bnEtenR1cm4tbGl0ZSIsICJ4bG54LHp5bnEtNzAwMCI7CisKKwlh
+bGlhc2VzIHsKKwkJZXRoZXJuZXQwID0gJmdlbTA7CisJCXNlcmlhbDAgPSAmdWFydDE7CisJCXNl
+cmlhbDEgPSAmdWFydDA7CisJCW1tYzAgPSAmc2RoY2kwOworCX07CisKKwltZW1vcnlAMCB7CisJ
+CWRldmljZV90eXBlID0gIm1lbW9yeSI7CisJCXJlZyA9IDwweDAgMHgyMDAwMDAwMD47CisJfTsK
+KworCWNob3NlbiB7CisJCXN0ZG91dC1wYXRoID0gInNlcmlhbDA6MTE1MjAwbjgiOworCX07CisK
+KwlncGlvLWxlZHMgeworCQljb21wYXRpYmxlID0gImdwaW8tbGVkcyI7CisJCXVzci1sZWQxIHsK
+KwkJCWxhYmVsID0gInVzci1sZWQxIjsKKwkJCWdwaW9zID0gPCZncGlvMCAweDAgMHgxPjsKKwkJ
+CWRlZmF1bHQtc3RhdGUgPSAib2ZmIjsKKwkJfTsKKworCQl1c3ItbGVkMiB7CisJCQlsYWJlbCA9
+ICJ1c3ItbGVkMiI7CisJCQlncGlvcyA9IDwmZ3BpbzAgMHg5IDB4MT47CisJCQlkZWZhdWx0LXN0
+YXRlID0gIm9mZiI7CisJCX07CisJfTsKKworCWdwaW8ta2V5cyB7CisJCWNvbXBhdGlibGUgPSAi
+Z3Bpby1rZXlzIjsKKwkJYXV0b3JlcGVhdDsKKwkJSzEgeworCQkJbGFiZWwgPSAiSzEiOworCQkJ
+Z3Bpb3MgPSA8JmdwaW8wIDB4MzIgMHgxPjsKKwkJCWxpbnV4LGNvZGUgPSA8MHg2Nj47CisJCQl3
+YWtldXAtc291cmNlOworCQkJYXV0b3JlcGVhdDsKKwkJfTsKKwl9OworfTsKKworJmNsa2Mgewor
+CXBzLWNsay1mcmVxdWVuY3kgPSA8MzMzMzMzMzM+OworfTsKKworJmdlbTAgeworCXN0YXR1cyA9
+ICJva2F5IjsKKwlwaHktbW9kZSA9ICJyZ21paS1pZCI7CisJcGh5LWhhbmRsZSA9IDwmZXRoZXJu
+ZXRfcGh5PjsKKworCWV0aGVybmV0X3BoeTogZXRoZXJuZXQtcGh5QDAgeworCQlyZWcgPSA8MHgw
+PjsKKwl9OworfTsKKworJnNkaGNpMCB7CisJc3RhdHVzID0gIm9rYXkiOworfTsKKworJnVhcnQw
+IHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismdWFydDEgeworCXN0YXR1cyA9ICJva2F5IjsK
+K307CisKKyZ1c2IwIHsKKwlzdGF0dXMgPSAib2theSI7CisJZHJfbW9kZSA9ICJob3N0IjsKK307
+CisKKyZjYW4wIHsKKwlzdGF0dXMgPSAib2theSI7Cit9OworCismaTJjMCB7CisJc3RhdHVzID0g
+Im9rYXkiOworCWNsb2NrLWZyZXF1ZW5jeSA9IDw0MDAwMDA+OworCisJc3RsbTc1QDQ5IHsKKwkJ
+c3RhdHVzID0gIm9rYXkiOworCQljb21wYXRpYmxlID0gImxtNzUiOworCQlyZWcgPSA8MHg0OT47
+CisJfTsKKworCWFjY2VsZXJvbWV0ZXJANTMgeworCQljb21wYXRpYmxlID0gImFkaSxhZHhsMzQ1
+IiwgImFkeGwzNDUiLCAiYWRpLGFkeGwzNHgiLCAiYWR4bDM0eCI7CisJCXJlZyA9IDwweDUzPjsK
+KwkJaW50ZXJydXB0LXBhcmVudCA9IDwmaW50Yz47CisJCWludGVycnVwdHMgPSA8MHgwIDB4MWUg
+MHg0PjsKKwl9OworfTsKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
