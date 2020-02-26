@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B190F170228
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:19:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD65817022F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:20:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wuqgIMvsjMw7E5wySLfuMS1F7LI6uHxjoExun4CMw1k=; b=g7o9F1am3ohmr1
-	B+tq3aeFqTxtplBVpkZ4ThI50emYIXI9qSCB3zObcgKtyo6i8QvW7AKC3dK/sp/Q7FTnouh1WGYin
-	biUPXGt6MPsGlsDjakgHjpp7x2cqipG01COVAe9lLXjNtxJQGcOKx72/hibijJyBz/cgVII+dFp5N
-	RuKK+WCJoLGL2Uypy9fg3ud5Z6l8edQVHWlSeEpjYMF4aT+BOEWEdVeYyE5QdkRb0f5Vl91KlzWJ+
-	J41QQXFLqljw6yg/2q43I+Al1yDUiG0sZzzOT0iG3X/jpwe1pMey5Cu8S2ush7Nrrr/z30iR6c1Mn
-	YCLR6lwWHzM2LhVfVQqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ASw5YtAAJtMehBQLyC88g7FSzbcPjhSqWN8jYSPfHlA=; b=Im1mgQfAcmSWfF7IHmtRmpvZO
+	/c9MUntJz+h8T7wuurJSy93HRXBFtIy7QYdy6fUfEM66+3PffuPmstE/cMqIfxQA/2l7mkBpAxAGj
+	+dUz1Z5YfmNeBn9yhEGLF40G/ejXGRqipn/ULLqolzqCLs2bOLwkNQv+0fi6CJ2DlzGdsjg1HI4OY
+	8hr5OdauKaWahZ/WgZTgsrtYq3lTEqtZVVAdf1HGhJtt9IWNu1FIMm1ApLyBPQJmyzlVXNY3Mf4jy
+	XPG17SAmiPc3MlU35i+a3/pMT0dneK9Nyi1Tcv+FP2flZkMCZIaEHuyO6rL0ZoOv4jVsP+j3a3iba
+	+6IVSEwWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ySi-0006gr-QU; Wed, 26 Feb 2020 15:19:00 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6ySX-0006gW-EV; Wed, 26 Feb 2020 15:18:50 +0000
-Received: by mail-ot1-f68.google.com with SMTP id i6so3254888otr.7;
- Wed, 26 Feb 2020 07:18:49 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/6qDOCrFaT70GMrXC62oODapAv06LXpjcPH50sFJvcw=;
- b=a3DP7H1mykUEdpdvJxry4lRhpfmwT0jrFKLJ6HfbG+QL3BN9LTvz4wdYOj3i94wZTm
- ad/95cDYX1YYRjAoYExsmgmPJTsNXhqQITyxZmetv02foDJtYOHusc3VZtG54Lj4KsMV
- +lOQGMmbtE0PHzpL2mFU8j780Vv61BbDcuDxgqnizkb87i7aFZxJ1gVSChdWNQ4+rXHn
- 8qPO+5H5OvRGCcLRwUcPWb8So+0eIQz2YcUDcl5wFECM7nn10arTLR55163ioNVKlRV/
- CULvmy9bYxFQYvfbDvRYNcnWtba2OA6BN6IROJSUzPQjaYdjGiSnRJ/VMUBUVa0u0UUs
- V0Ng==
-X-Gm-Message-State: APjAAAW8OKKqxV+JB3zDjLg0G+9mQmmjvYeDWMI0xykGYSAXlv6ZxvyI
- QTXp3WEQim8k77AQRmqxgQ==
-X-Google-Smtp-Source: APXvYqxBufLVc2f4vqiKPF5cMNUCr0xqWnYB6+zcMOrJYU0lwVw8DbBaOxQKyHF5SXgHCNdsMk2NOg==
-X-Received: by 2002:a9d:638a:: with SMTP id w10mr3650110otk.130.1582730328475; 
- Wed, 26 Feb 2020 07:18:48 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m68sm886194oig.50.2020.02.26.07.18.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 07:18:47 -0800 (PST)
-Received: (nullmailer pid 22097 invoked by uid 1000);
- Wed, 26 Feb 2020 15:18:47 -0000
-Date: Wed, 26 Feb 2020 09:18:47 -0600
-From: Rob Herring <robh@kernel.org>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Subject: Re: [PATCH v1 1/3] dt-binding: gce: remove atomic_exec in mboxes
- property
-Message-ID: <20200226151847.GA22046@bogus>
-References: <20200217090532.16019-1-bibby.hsieh@mediatek.com>
- <20200217090532.16019-2-bibby.hsieh@mediatek.com>
+	id 1j6yTf-0006zt-Mp; Wed, 26 Feb 2020 15:19:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j6yTV-0006za-D4
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:19:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E72E30E;
+ Wed, 26 Feb 2020 07:19:48 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 75EF53F819;
+ Wed, 26 Feb 2020 07:19:47 -0800 (PST)
+Subject: Re: [PATCH v2] arm64: context: Fix ASID limit in boot warning
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ catalin.marinas@arm.com, will@kernel.org
+References: <20200226123738.582547-1-jean-philippe@linaro.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <da198092-2fe8-275c-94ff-b2b2d75f0b3a@arm.com>
+Date: Wed, 26 Feb 2020 15:19:46 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200217090532.16019-2-bibby.hsieh@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200226123738.582547-1-jean-philippe@linaro.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_071849_482585_C17E0CF2 
-X-CRM114-Status: UNSURE (   9.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200226_071949_484541_DA72180D 
+X-CRM114-Status: GOOD (  19.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,31 +64,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream@mediatek.com, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, CK HU <ck.hu@mediatek.com>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: vladimir.murzin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 17 Feb 2020 17:05:30 +0800, Bibby Hsieh wrote:
-> There is not any client driver using this feature now,
-> so remove it from binding.
+On 26/02/2020 12:37 pm, Jean-Philippe Brucker wrote:
+> Since commit f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI
+> is not in use"), the NUM_USER_ASIDS macro doesn't correspond to the
+> effective number of ASIDs when KPTI is enabled. Get an accurate number
+> of available ASIDs in an arch_initcall, once we've discovered all CPUs'
+> capabilities and know if we still need to halve the ASID space for KPTI.
 > 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+> Fixes: f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI is not in use")
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
->  Documentation/devicetree/bindings/mailbox/mtk-gce.txt | 10 ++++------
->  1 file changed, 4 insertions(+), 6 deletions(-)
+> v1->v2: move warning to arch_initcall(), post capabilities (e.g. E0PD)
+>          discovery
 > 
+> This change may be a little invasive for just a validation warning, but
+> it will likely be needed later, in the asid-pinning patch I'd like to
+> introduce for IOMMU SVA.
+> ---
+>   arch/arm64/mm/context.c | 15 ++++++++++++---
+>   1 file changed, 12 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+> index 8ef73e89d514..efe98f0dcc89 100644
+> --- a/arch/arm64/mm/context.c
+> +++ b/arch/arm64/mm/context.c
+> @@ -260,14 +260,23 @@ asmlinkage void post_ttbr_update_workaround(void)
+>   			CONFIG_CAVIUM_ERRATUM_27456));
+>   }
+>   
+> -static int asids_init(void)
+> +static int asids_update_limit(void)
+>   {
+> -	asid_bits = get_cpu_asid_bits();
+>   	/*
+>   	 * Expect allocation after rollover to fail if we don't have at least
+>   	 * one more ASID than CPUs. ASID #0 is reserved for init_mm.
+>   	 */
+> -	WARN_ON(NUM_USER_ASIDS - 1 <= num_possible_cpus());
+> +	bool kpti = arm64_kernel_unmapped_at_el0();
+> +	unsigned long num_available_asids = (1UL << (asid_bits - kpti)) - 1;
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Yikes! Could the adjustment be a little more obvious please? e.g.:
+
+	if (arm64_kernel_unmapped_at_el0())
+		num_available_asids /= 2;
+
+I assume this isn't a path where we need to shave off every last cycle 
+possible.
+
+Robin.
+
+> +
+> +	WARN_ON(num_available_asids <= num_possible_cpus());
+> +	return 0;
+> +}
+> +arch_initcall(asids_update_limit);
+> +
+> +static int asids_init(void)
+> +{
+> +	asid_bits = get_cpu_asid_bits();
+>   	atomic64_set(&asid_generation, ASID_FIRST_VERSION);
+>   	asid_map = kcalloc(BITS_TO_LONGS(NUM_USER_ASIDS), sizeof(*asid_map),
+>   			   GFP_KERNEL);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
