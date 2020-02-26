@@ -2,64 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB11A16FA8F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:20:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36B8916FAA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 10:23:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=H+FqcAn7uBtnmFGmCz7dmWXn4nN7ztlkJCNhbz/kZgA=; b=pG01js/8Mqd/I3NQgdmAb9vXwB
-	aitl6nZYyBrc8uVZQEj60ZRKD0pP1vBo4gLhtNHQ3p8Vdkbfav40j74dj58uHjbuEAhWEXg+cLXlt
-	vD5uwbGd79PApbz57j7f49XONPtgfMwtZrAqE7xMfA5kKG9wCs1kwSBihzq2vcKi7XMj9OCCP+AL/
-	n9TqsbIv9yhUWjmdSczOCgkH57FvIwqMxMtOvWOtthW8zIZGiKI3SG1+FIBk3Me/It+PTYnRMWqkx
-	wYdz4GpBTOK2Q43/cosJj1af4adQCI4z7Nel0OptV/6e5EYceWZHIukoo1iVTJGupplkY6JTjuXT+
-	y0gQwnpw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0HwkQb3CCPBTQ5nemKuTh5AzQnHsGbh3yo+Lrp5IvvA=; b=YDtR9TYy/0cYcl
+	qsP+GOFBJgazOpl3VbEAH3cXZc9iy2ZHdLWU8ZHUm+pXJ8p3AcC+VhCo+ZORHv8PSZJNEHsE9aTUr
+	Qwrgqowy4cjTsWBUzL/a+bs2+3rnwU5LPmdwp9osTqtdw48Mn7iTD3q1dciv1FHDK2yO4itigBfJV
+	VjbvPu8rAJYrD1x4hXPjwt+wTb/isvCsV1tYVv0mw7ALnFr0yjY+laaOaE5w3KOeFMF0Vc0E8nKIC
+	4STcowomkW4gMXdGmNSXv+/Sn2wgmJTlQbkVGzu3jo3IdJufNaKwfHTbuu6CHiy62pZvtkzDore0T
+	x7x3OwTjAiui6LxdmQEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6srv-0002tJ-3Y; Wed, 26 Feb 2020 09:20:39 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1j6sui-0003sY-NE; Wed, 26 Feb 2020 09:23:32 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6sr8-0001H8-Dh
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 09:19:53 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7523D1A7072;
- Wed, 26 Feb 2020 10:19:47 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7B7101A711F;
- Wed, 26 Feb 2020 10:19:41 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5EBC1402D8;
- Wed, 26 Feb 2020 17:19:34 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: p.zabel@pengutronix.de, robh+dt@kernel.org, mark.rutland@arm.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 4/4] reset: imx7: Add support for i.MX8MP SoC
-Date: Wed, 26 Feb 2020 17:13:51 +0800
-Message-Id: <1582708431-14161-4-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1582708431-14161-1-git-send-email-Anson.Huang@nxp.com>
-References: <1582708431-14161-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1j6suY-0003s7-99
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 09:23:24 +0000
+Received: by mail-qt1-x842.google.com with SMTP id d9so1720294qte.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Feb 2020 01:23:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=xvSMUsPhTcB/svxxUkpMnsGM5gGtr8fYFvHsu2vHz2I=;
+ b=jk/HoY2bZ46+OOdRqPxFgQG9NjXqlK7LvyGXeFZouN3KzpZVLWHI9EQfq76tgUnB4A
+ PTiGE1gcOK5v8W+/5qglUYVzSErF6CD0xm792IDnKdc9R0Dk1bcR3Nr85aNx+r8nfMrZ
+ i1+CPlhgNLw8eag00VNddeC0wooOG2xNplbI25I1s2m1+rQvV0e13doDqhFUWPTtZJNs
+ Ci2vFnpHvdh1NV4UHxqx+wKKdkhd+awt8OPnAlhNLdcR6jdRlB98isJG8Zj59PuMBNna
+ 2uY4iMOSq3ftlpGOtQD7qzR6RLezVCIReuEvvo5ODjmecFjoeoymqgANQKBSTj9sh4jT
+ I2ng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=xvSMUsPhTcB/svxxUkpMnsGM5gGtr8fYFvHsu2vHz2I=;
+ b=i1Hr9mZ/0YeTD96lV5Xn+drfcsMepeuhSr8o2gweSb1jAjx4HmIF3kXZuZ5nUB9+cx
+ BH8BDvMRe5vEgi0tXdbsAnGfM6nX9DK+j3mQusMsorbx10J471T53IUQudiwDVMBaOPG
+ D2RaRqUkmalpzowPRJuH23MOtMxM+qZRfSLcXsz2W+ciwe41dWyL4ST2TDDU+80Xr7z8
+ 4XF/igfi9Y7s6CiHG7wvlkPx91QH+l6oD4tYbWL9gtYMn6lrka+78o2pS5pwS85yq2U6
+ vOLP2HA63EKiC/BAeIrYSARe8s1LSGvVyrYPg3WNTnR4C7MQCvqHggAYh2pOEwkG/spK
+ UsYg==
+X-Gm-Message-State: APjAAAXOlbzPj3xRLHF79qTEPZwQI0/uTvI7gPPGFBJbZh6+bwerE13r
+ grhaG8RGo65ewbq9iJmjpwM4EzJ0THY27RQKR8s=
+X-Google-Smtp-Source: APXvYqwHl3PS3dkHdDTcW5QxpXt0czifvhde2K22/gkinCf3aaZzncwO+ZOskeS/F/m216bP16uN9NqoTzPzpr4+rgk=
+X-Received: by 2002:ac8:6999:: with SMTP id o25mr3491473qtq.342.1582708999770; 
+ Wed, 26 Feb 2020 01:23:19 -0800 (PST)
+MIME-Version: 1.0
+References: <1582565548-20627-1-git-send-email-igor.opaniuk@gmail.com>
+ <1582565548-20627-3-git-send-email-igor.opaniuk@gmail.com>
+In-Reply-To: <1582565548-20627-3-git-send-email-igor.opaniuk@gmail.com>
+From: Oleksandr Suvorov <cryosay@gmail.com>
+Date: Wed, 26 Feb 2020 11:23:08 +0200
+Message-ID: <CAGgjyvGvLgwCzKKi7o-wZn=ejsf0yfMWHG-iNnFPazUWE3412Q@mail.gmail.com>
+Subject: Re: [PATCH v1 3/5] arm: dts: vf: toradex: use SPDX-License-Identifier
+To: Igor Opaniuk <igor.opaniuk@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_011950_743085_93B2D561 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200226_012322_330223_E3593DF6 
+X-CRM114-Status: GOOD (  22.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cryosay[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,157 +93,409 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Stefan Agner <stefan.agner@toradex.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8MP is a new SoC of i.MX8M family, it has same src IP
-inside but with different module layout, add support for it.
+On Mon, Feb 24, 2020 at 7:33 PM Igor Opaniuk <igor.opaniuk@gmail.com> wrote:
+>
+> From: Igor Opaniuk <igor.opaniuk@toradex.com>
+>
+> 1. Replace boiler plate licenses texts with the SPDX license
+> identifiers in Toradex Vybrid-based SoM device trees.
+> 2. As X11 is identical to the MIT License, but with an extra sentence
+> that prohibits using the copyright holders' names for advertising or
+> promotional purposes without written permission, use MIT license instead
+> of X11 ('s/X11/MIT/g').
+>
+> Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
+> ---
+>
+>  arch/arm/boot/dts/vf-colibri-eval-v3.dtsi   | 40 ++---------------------------
+>  arch/arm/boot/dts/vf-colibri.dtsi           | 39 ++--------------------------
+>  arch/arm/boot/dts/vf500-colibri-eval-v3.dts | 40 ++---------------------------
+>  arch/arm/boot/dts/vf500-colibri.dtsi        | 40 ++---------------------------
+>  arch/arm/boot/dts/vf610-colibri-eval-v3.dts | 40 ++---------------------------
+>  arch/arm/boot/dts/vf610-colibri.dtsi        | 40 ++---------------------------
+>  arch/arm/boot/dts/vf610m4-colibri.dts       | 39 +---------------------------
+>  7 files changed, 13 insertions(+), 265 deletions(-)
+>
+> diff --git a/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi b/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
+> index e2da122..bd75211 100644
+> --- a/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
+> +++ b/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
+> @@ -1,42 +1,6 @@
+> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+>  /*
+> - * Copyright 2014 Toradex AG
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+> + * Copyright 2014-2020 Toradex AG
+>   */
+>
+>  / {
+> diff --git a/arch/arm/boot/dts/vf-colibri.dtsi b/arch/arm/boot/dts/vf-colibri.dtsi
+> index fba37b8..a321ab9 100644
+> --- a/arch/arm/boot/dts/vf-colibri.dtsi
+> +++ b/arch/arm/boot/dts/vf-colibri.dtsi
+> @@ -1,42 +1,7 @@
+> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+>  /*
+> - * Copyright 2014 Toradex AG
+> + * Copyright 2014-2020 Toradex AG
+>   *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  / {
+> diff --git a/arch/arm/boot/dts/vf500-colibri-eval-v3.dts b/arch/arm/boot/dts/vf500-colibri-eval-v3.dts
+> index 0769989..916a949 100644
+> --- a/arch/arm/boot/dts/vf500-colibri-eval-v3.dts
+> +++ b/arch/arm/boot/dts/vf500-colibri-eval-v3.dts
+> @@ -1,42 +1,6 @@
+> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+>  /*
+> - * Copyright 2014 Toradex AG
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+> + * Copyright 2014-2020 Toradex AG
+>   */
+>
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/vf500-colibri.dtsi b/arch/arm/boot/dts/vf500-colibri.dtsi
+> index 92255f8..0f3d5db 100644
+> --- a/arch/arm/boot/dts/vf500-colibri.dtsi
+> +++ b/arch/arm/boot/dts/vf500-colibri.dtsi
+> @@ -1,42 +1,6 @@
+> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+>  /*
+> - * Copyright 2014 Toradex AG
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+> + * Copyright 2014-2020 Toradex AG
+>   */
+>
+>  #include "vf500.dtsi"
+> diff --git a/arch/arm/boot/dts/vf610-colibri-eval-v3.dts b/arch/arm/boot/dts/vf610-colibri-eval-v3.dts
+> index ef9b4d6..4dd5735 100644
+> --- a/arch/arm/boot/dts/vf610-colibri-eval-v3.dts
+> +++ b/arch/arm/boot/dts/vf610-colibri-eval-v3.dts
+> @@ -1,42 +1,6 @@
+> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+>  /*
+> - * Copyright 2014 Toradex AG
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+> + * Copyright 2014-2020 Toradex AG
+>   */
+>
+>  /dts-v1/;
+> diff --git a/arch/arm/boot/dts/vf610-colibri.dtsi b/arch/arm/boot/dts/vf610-colibri.dtsi
+> index 05c9a39..e9157ac 100644
+> --- a/arch/arm/boot/dts/vf610-colibri.dtsi
+> +++ b/arch/arm/boot/dts/vf610-colibri.dtsi
+> @@ -1,42 +1,6 @@
+> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+>  /*
+> - * Copyright 2014 Toradex AG
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License
+> - *     version 2 as published by the Free Software Foundation.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+> + * Copyright 2014-2020 Toradex AG
+>   */
+>
+>  #include "vf610.dtsi"
+> diff --git a/arch/arm/boot/dts/vf610m4-colibri.dts b/arch/arm/boot/dts/vf610m4-colibri.dts
+> index d4bc0e3..2c2db47 100644
+> --- a/arch/arm/boot/dts/vf610m4-colibri.dts
+> +++ b/arch/arm/boot/dts/vf610m4-colibri.dts
+> @@ -1,45 +1,8 @@
+> +// SPDX-License-Identifier: GPL-2.0+ OR MIT
+>  /*
+>   * Device tree for Colibri VF61 Cortex-M4 support
+>   *
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/reset/reset-imx7.c | 101 +++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 101 insertions(+)
+>   * Copyright (C) 2015 Stefan Agner
 
-diff --git a/drivers/reset/reset-imx7.c b/drivers/reset/reset-imx7.c
-index 1443a55..d170fe6 100644
---- a/drivers/reset/reset-imx7.c
-+++ b/drivers/reset/reset-imx7.c
-@@ -15,6 +15,7 @@
- #include <linux/regmap.h>
- #include <dt-bindings/reset/imx7-reset.h>
- #include <dt-bindings/reset/imx8mq-reset.h>
-+#include <dt-bindings/reset/imx8mp-reset.h>
- 
- struct imx7_src_signal {
- 	unsigned int offset, bit;
-@@ -145,6 +146,18 @@ enum imx8mq_src_registers {
- 	SRC_DDRC2_RCR		= 0x1004,
- };
- 
-+enum imx8mp_src_registers {
-+	SRC_SUPERMIX_RCR	= 0x0018,
-+	SRC_AUDIOMIX_RCR	= 0x001c,
-+	SRC_MLMIX_RCR		= 0x0028,
-+	SRC_GPU2D_RCR		= 0x0038,
-+	SRC_GPU3D_RCR		= 0x003c,
-+	SRC_VPU_G1_RCR		= 0x0048,
-+	SRC_VPU_G2_RCR		= 0x004c,
-+	SRC_VPUVC8KE_RCR	= 0x0050,
-+	SRC_NOC_RCR		= 0x0054,
-+};
-+
- static const struct imx7_src_signal imx8mq_src_signals[IMX8MQ_RESET_NUM] = {
- 	[IMX8MQ_RESET_A53_CORE_POR_RESET0]	= { SRC_A53RCR0, BIT(0) },
- 	[IMX8MQ_RESET_A53_CORE_POR_RESET1]	= { SRC_A53RCR0, BIT(1) },
-@@ -253,6 +266,93 @@ static const struct imx7_src_variant variant_imx8mq = {
- 	},
- };
- 
-+static const struct imx7_src_signal imx8mp_src_signals[IMX8MP_RESET_NUM] = {
-+	[IMX8MP_RESET_A53_CORE_POR_RESET0]	= { SRC_A53RCR0, BIT(0) },
-+	[IMX8MP_RESET_A53_CORE_POR_RESET1]	= { SRC_A53RCR0, BIT(1) },
-+	[IMX8MP_RESET_A53_CORE_POR_RESET2]	= { SRC_A53RCR0, BIT(2) },
-+	[IMX8MP_RESET_A53_CORE_POR_RESET3]	= { SRC_A53RCR0, BIT(3) },
-+	[IMX8MP_RESET_A53_CORE_RESET0]		= { SRC_A53RCR0, BIT(4) },
-+	[IMX8MP_RESET_A53_CORE_RESET1]		= { SRC_A53RCR0, BIT(5) },
-+	[IMX8MP_RESET_A53_CORE_RESET2]		= { SRC_A53RCR0, BIT(6) },
-+	[IMX8MP_RESET_A53_CORE_RESET3]		= { SRC_A53RCR0, BIT(7) },
-+	[IMX8MP_RESET_A53_DBG_RESET0]		= { SRC_A53RCR0, BIT(8) },
-+	[IMX8MP_RESET_A53_DBG_RESET1]		= { SRC_A53RCR0, BIT(9) },
-+	[IMX8MP_RESET_A53_DBG_RESET2]		= { SRC_A53RCR0, BIT(10) },
-+	[IMX8MP_RESET_A53_DBG_RESET3]		= { SRC_A53RCR0, BIT(11) },
-+	[IMX8MP_RESET_A53_ETM_RESET0]		= { SRC_A53RCR0, BIT(12) },
-+	[IMX8MP_RESET_A53_ETM_RESET1]		= { SRC_A53RCR0, BIT(13) },
-+	[IMX8MP_RESET_A53_ETM_RESET2]		= { SRC_A53RCR0, BIT(14) },
-+	[IMX8MP_RESET_A53_ETM_RESET3]		= { SRC_A53RCR0, BIT(15) },
-+	[IMX8MP_RESET_A53_SOC_DBG_RESET]	= { SRC_A53RCR0, BIT(20) },
-+	[IMX8MP_RESET_A53_L2RESET]		= { SRC_A53RCR0, BIT(21) },
-+	[IMX8MP_RESET_SW_NON_SCLR_M7C_RST]	= { SRC_M4RCR, BIT(0) },
-+	[IMX8MP_RESET_OTG1_PHY_RESET]		= { SRC_USBOPHY1_RCR, BIT(0) },
-+	[IMX8MP_RESET_OTG2_PHY_RESET]		= { SRC_USBOPHY2_RCR, BIT(0) },
-+	[IMX8MP_RESET_SUPERMIX_RESET]		= { SRC_SUPERMIX_RCR, BIT(0) },
-+	[IMX8MP_RESET_AUDIOMIX_RESET]		= { SRC_AUDIOMIX_RCR, BIT(0) },
-+	[IMX8MP_RESET_MLMIX_RESET]		= { SRC_MLMIX_RCR, BIT(0) },
-+	[IMX8MP_RESET_PCIEPHY]			= { SRC_PCIEPHY_RCR, BIT(2) },
-+	[IMX8MP_RESET_PCIEPHY_PERST]		= { SRC_PCIEPHY_RCR, BIT(3) },
-+	[IMX8MP_RESET_PCIE_CTRL_APPS_EN]	= { SRC_PCIEPHY_RCR, BIT(6) },
-+	[IMX8MP_RESET_PCIE_CTRL_APPS_TURNOFF]	= { SRC_PCIEPHY_RCR, BIT(11) },
-+	[IMX8MP_RESET_HDMI_PHY_APB_RESET]	= { SRC_HDMI_RCR, BIT(0) },
-+	[IMX8MP_RESET_MEDIA_RESET]		= { SRC_DISP_RCR, BIT(0) },
-+	[IMX8MP_RESET_GPU2D_RESET]		= { SRC_GPU2D_RCR, BIT(0) },
-+	[IMX8MP_RESET_GPU3D_RESET]		= { SRC_GPU3D_RCR, BIT(0) },
-+	[IMX8MP_RESET_GPU_RESET]		= { SRC_GPU_RCR, BIT(0) },
-+	[IMX8MP_RESET_VPU_RESET]		= { SRC_VPU_RCR, BIT(0) },
-+	[IMX8MP_RESET_VPU_G1_RESET]		= { SRC_VPU_G1_RCR, BIT(0) },
-+	[IMX8MP_RESET_VPU_G2_RESET]		= { SRC_VPU_G2_RCR, BIT(0) },
-+	[IMX8MP_RESET_VPUVC8KE_RESET]		= { SRC_VPUVC8KE_RCR, BIT(0) },
-+	[IMX8MP_RESET_NOC_RESET]		= { SRC_NOC_RCR, BIT(0) },
-+};
-+
-+static int imx8mp_reset_set(struct reset_controller_dev *rcdev,
-+			    unsigned long id, bool assert)
-+{
-+	struct imx7_src *imx7src = to_imx7_src(rcdev);
-+	const unsigned int bit = imx7src->signals[id].bit;
-+	unsigned int value = assert ? bit : 0;
-+
-+	switch (id) {
-+	case IMX8MP_RESET_PCIEPHY:
-+		/*
-+		 * wait for more than 10us to release phy g_rst and
-+		 * btnrst
-+		 */
-+		if (!assert)
-+			udelay(10);
-+		break;
-+
-+	case IMX8MP_RESET_PCIE_CTRL_APPS_EN:
-+		value = assert ? 0 : bit;
-+		break;
-+	}
-+
-+	return imx7_reset_update(imx7src, id, value);
-+}
-+
-+static int imx8mp_reset_assert(struct reset_controller_dev *rcdev,
-+			       unsigned long id)
-+{
-+	return imx8mp_reset_set(rcdev, id, true);
-+}
-+
-+static int imx8mp_reset_deassert(struct reset_controller_dev *rcdev,
-+				 unsigned long id)
-+{
-+	return imx8mp_reset_set(rcdev, id, false);
-+}
-+
-+static const struct imx7_src_variant variant_imx8mp = {
-+	.signals = imx8mp_src_signals,
-+	.signals_num = ARRAY_SIZE(imx8mp_src_signals),
-+	.ops = {
-+		.assert   = imx8mp_reset_assert,
-+		.deassert = imx8mp_reset_deassert,
-+	},
-+};
-+
- static int imx7_reset_probe(struct platform_device *pdev)
- {
- 	struct imx7_src *imx7src;
-@@ -283,6 +383,7 @@ static int imx7_reset_probe(struct platform_device *pdev)
- static const struct of_device_id imx7_reset_dt_ids[] = {
- 	{ .compatible = "fsl,imx7d-src", .data = &variant_imx7 },
- 	{ .compatible = "fsl,imx8mq-src", .data = &variant_imx8mq },
-+	{ .compatible = "fsl,imx8mp-src", .data = &variant_imx8mp },
- 	{ /* sentinel */ },
- };
- 
--- 
-2.7.4
+As you change this file, I think, the copyright of Toradex should be added.
 
+With this:
+
+Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License as
+> - *     published by the Free Software Foundation; either version 2 of the
+> - *     License, or (at your option) any later version.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+>
+>  /dts-v1/;
+> --
+> 2.7.4
+>
+
+
+--
+Best regards
+
+
+Oleksandr Suvorov
+cryosay@gmail.com
 
 _______________________________________________
 linux-arm-kernel mailing list
