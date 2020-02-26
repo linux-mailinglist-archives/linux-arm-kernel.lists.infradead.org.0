@@ -2,126 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67E5F16F804
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 07:35:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 535E516F835
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 07:47:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N5zQrNIG/2KVSrdoCGuFYuX+e60zphRWiIG1BQ8D4nI=; b=OYdGxzTBZICfRB
-	kYyrzC4YZbA6bosFVkhPOs7OLdUa9Z79XncmMZICyvJXlE6RQd07mmp7T/FIVFt6EaKaptVqaGLRh
-	zCOJDqYwRKtd0+8fzPpOZuwUrr5n+s/+1q4GE/48aZUkhqy6p7Qkw5cUdbglK8zBLMLPcj3+4XTmc
-	3arFt+hM3aikWMRHcaaEVoAYcJiU1UHFq6RzOi/9kV0YI8q5DCmNESP/BvBUj5gbsW6Ek+Myt0ZAw
-	/C8yjnvxrkVZYwobi2/tPRRgakMLZcKmZwUQtJL6LL1hZT8ytJP7JSLhfzimXjhilUN2wRhuOjpY4
-	oWnDTYUToUciimQAgzzQ==;
+	List-Owner; bh=7GQOJ1rgS4vamc6qH93bNweveTR1SxQuCJX8cc473wU=; b=XTvHDJz/mAzuHj
+	54zBUYcRf8qoRyE/e8fLI3BfvkFrqlJjFCG5q5l5WKVy401SGrbnkaRfuzGaTJw2yKJ1VkfVksrnQ
+	XpSzI7REISiiWZQ1LkXR5/qBMTNu13TkqMtjvZhr9JElZl01jI6fYNlkWBm8mineng9k2MJvCAdq7
+	ThcyM8dCiFFPYh171pBaiDQFlu6DvPudGj6aWCfgYxGbKN9QmdmPdYvB7iZHxF0zeD7K6gI6colF0
+	2ZlTm/6eFj6VeT+rWFB4TfGWou0X7n2Gieg4vtWUYL0mZ091SAYH3q/S5T/2Ihn74q/KigOQUZcG+
+	nVEeZfD4wyrE44vvCPtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6qI4-0008Ea-FS; Wed, 26 Feb 2020 06:35:28 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1j6qU1-00031F-J2; Wed, 26 Feb 2020 06:47:49 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6qHw-0008E7-7O
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 06:35:22 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200226063517euoutp020477cbf22086e9380537beeddcf8a5d3~24Eebg0_X0249402494euoutp02W
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 06:35:17 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200226063517euoutp020477cbf22086e9380537beeddcf8a5d3~24Eebg0_X0249402494euoutp02W
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1582698917;
- bh=OtcoVD8Zx4NFDq70a/JfASKrkR5KULhGg8xM0tzNrRw=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=eMEM1JlmHWrOCqfctdRoIWe7j54re5ueuU0SpqPHCvI3KAkKZVGcXK7Ao9LFP3h2F
- k5XcF95jZYnQ/YHV3riXY7ouuQM9Zg9+BdEpClGY31tDZRv81Sb5OgUVU0nEbVyBDz
- ciXmBcsbOv2nwusOgvGS6fRFMqXyE7DGgLMkmWhk=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200226063517eucas1p2b4fa69c81a9d86f7f0e7197c1925d4e7~24EeUQ6Un2628026280eucas1p2z;
- Wed, 26 Feb 2020 06:35:17 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 83.A5.61286.4A1165E5; Wed, 26
- Feb 2020 06:35:17 +0000 (GMT)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200226063516eucas1p2509cdd4111e31ce7aefab9ad4ff83efa~24EdnSCeU2629926299eucas1p2s;
- Wed, 26 Feb 2020 06:35:16 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200226063516eusmtrp1fb446a1b0ceb98bb432fb739359aadb2~24EdmlUra0137101371eusmtrp1j;
- Wed, 26 Feb 2020 06:35:16 +0000 (GMT)
-X-AuditID: cbfec7f2-f0bff7000001ef66-6e-5e5611a4ef41
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 29.4D.07950.4A1165E5; Wed, 26
- Feb 2020 06:35:16 +0000 (GMT)
-Received: from [106.120.51.15] (unknown [106.120.51.15]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200226063515eusmtip2435c57303ef0a3f6e80cdb1103bef75f~24EdC8des1504415044eusmtip2H;
- Wed, 26 Feb 2020 06:35:15 +0000 (GMT)
-Subject: Re: [PATCH] ARM: boot: Fix ATAGs with appended DTB
-To: Geert Uytterhoeven <geert+renesas@glider.be>, Russell King
- <linux@armlinux.org.uk>, Nicolas Pitre <nico@fluxnic.net>, Arnd Bergmann
- <arnd@arndb.de>, Eric Miao <eric.miao@nvidia.com>,
- =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <e249c123-8d00-4aa3-34b8-f82d52428966@samsung.com>
-Date: Wed, 26 Feb 2020 07:35:14 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j6qTo-00030o-TJ; Wed, 26 Feb 2020 06:47:38 +0000
+X-UUID: 5f3b22708ee74800967b7cd00c3f5c8a-20200225
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=sNVknrlIb9UubW2Xtv3IENlncX0Wt6DkRbVInod5eos=; 
+ b=OGCs3kP2+/1CiLo9t89UXcoCLu3c5XZZ/2rMM09u8vdDOxWV6kLTKMmcrjtPDj2rlMS+vclVJjmCKZeiUdraShkOcoGkAQDXVUs6Q23RFyk/Ol+CuEunlI+nDaPXxvPSfqS2wsbuB8+KsSjtRFZyAf8/WoKB3LV7MWigEc2EC3A=;
+X-UUID: 5f3b22708ee74800967b7cd00c3f5c8a-20200225
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <chao.hao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1285811432; Tue, 25 Feb 2020 22:47:29 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 25 Feb 2020 22:37:26 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 14:36:33 +0800
+Received: from [10.15.20.246] (10.15.20.246) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 26 Feb 2020 14:37:33 +0800
+Message-ID: <1582698979.27773.17.camel@mbjsdccf07>
+Subject: Re: [RESEND,PATCH 03/13] iommu/mediatek: Add mtk_iommu_pgtable
+ structure
+From: chao hao <Chao.Hao@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
+ Yong Wu <yong.wu@mediatek.com>
+Date: Wed, 26 Feb 2020 14:36:19 +0800
+In-Reply-To: <1581769046.32039.27.camel@mhfsdcap03>
+References: <20191104115238.2394-1-chao.hao@mediatek.com>
+ <20191104115238.2394-4-chao.hao@mediatek.com>
+ <1576498396.28043.78.camel@mhfsdcap03>
+ <1577785148.30177.5.camel@mbjsdccf07>
+ <1581769046.32039.27.camel@mhfsdcap03>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200225144749.19815-1-geert+renesas@glider.be>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SfyyUcRj39b53997l7HXYPXOm7UYt5seV6W3KsjRvf7T1T1qKOrxDfu4O
- pX+6pR92kQ4NR7mJlFS6K4poSXeZEEqNykiN1ukHmuTI3avy3+d5ns/n+3k+z74EJuriuBGJ
- qRmMIlWeLOUK8Ebjr17fGqeI6ADNO0RZCo08qrIkH6fqmlox6lJ5IaL0HwY51EBzBZe6Nzll
- T7VfbEXU5YkJLjWsKULbBfTAYB9G/54vRPSnZ2e5tKbblzZUn6Dzc6a4dIElgP75XIPT03qP
- PfxIwdY4Jjkxi1H4hxwWJHSNOaaXOh6rMRTgKjQrUCOCADIQrhilasQnROQ1BLqiADUSLOMZ
- BMV5N3C2mEbQ8aCNa2VZBS87dYgd1CKofT3EYwszgu5eE2ZlOZPBYBptsbcOXMgce2iZ67NJ
- MFKPYFq1ZGNxSRmozWrbu0IyBMpK+jhWjJNe8G3abOO4klFQfv0JznKcoLNs3Ib55DawfD+F
- rBgj10KTuQJjsRiGxittzkCO8cAwUo3YxcPg0cjgSghn+Gy6y2OxO3QV5eGsIAfBaM9NHlvk
- IRg4WbqiDoa3PfNc680wcgPcbvZn26HQ+KUJsad0hDdmJ3YJRyhsLMHYthByz4hY9jrQmm79
- s338oh+7gKTaVdG0q+JoV8XR/vfVIbwOiZlMZUo8o5SlMkf9lPIUZWZqvF9sWooeLX+xrkXT
- j/totj+mHZEEkjoIJ/h7o0UceZYyO6UdAYFJXYR3Zpdbwjh59nFGkXZIkZnMKNuRhMClYuGm
- qskoERkvz2CSGCadUfyd2hN8NxU6z5/p8a7St0WEOPDAuMU8ardLG3ogkvB4f8Q51jMrcX2D
- pF62Y+m0U0RYxWZJg0YjPqhaCF7QDO93D6RyfeYmimUfxXYF7p7qjZLyCoNaJnAQG9xfDc2E
- 7+vYafHh4F9jjArXxXO7HeKfStYQurYghf5hkS7oamdgUv2AV7gUVybIZd6YQin/A/TKjf1e
- AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrPIsWRmVeSWpSXmKPExsVy+t/xe7pLBMPiDD61C1v8nXSM3WL+9F4W
- i1Xb9zJbzJ09idFi0+NrrBaXd81hs9j68h2TxaGpexkt5r14wWZxe+JkRgcuj8vXLjJ7/P41
- idHj2Yl2No+JZ3U9Ni+p9+htfsfm0f/XwOPbmYksHp83yQVwRunZFOWXlqQqZOQXl9gqRRta
- GOkZWlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehlnH7EVzCDr2Lp5n6WBsavXF2MnBwS
- AiYSV04uYOxi5OIQEljKKLH1xyE2iISMxMlpDawQtrDEn2tdbBBFrxkl9h7axQySEBawljj+
- cDcTSEJEoJlJ4n/LOTCHWWALo0TXscfsEC0TGCW2HG9mAWlhEzCU6HrbBbaDV8BOYub0i2A7
- WARUJT58fgs2VlQgVuLGzA4miBpBiZMzn4D1cgrYSvz92MIIYjMLmEnM2/yQGcKWl9j+dg6U
- LS5x68l8pgmMQrOQtM9C0jILScssJC0LGFlWMYqklhbnpucWG+kVJ+YWl+al6yXn525iBEbu
- tmM/t+xg7HoXfIhRgINRiYf3BWdonBBrYllxZe4hRgkOZiUR3o1fgUK8KYmVValF+fFFpTmp
- xYcYTYGem8gsJZqcD0wqeSXxhqaG5haWhubG5sZmFkrivB0CB2OEBNITS1KzU1MLUotg+pg4
- OKUaGD22eDzY8+i6vUjp1c+/TYqqFytcsDlfeaGHM3LZ9Z3S/NO2XmB8y7Tcvs/5I0+kiuUj
- F6am9PTvdzxStXlfyipeUQn+rLB+TvlOBoOnHwrUHVMvClcoPxGeHfgu9bbCSu8/j48utf+U
- yaTyYb3uoYyygz8//7RpjqzY73vjVsfMhT6vbd2u1yqxFGckGmoxFxUnAgDH7d5u8gIAAA==
-X-CMS-MailID: 20200226063516eucas1p2509cdd4111e31ce7aefab9ad4ff83efa
-X-Msg-Generator: CA
-X-RootMTR: 20200225144815eucas1p1229ceb0d017b46cbbe2409639a7c1f83
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200225144815eucas1p1229ceb0d017b46cbbe2409639a7c1f83
-References: <CGME20200225144815eucas1p1229ceb0d017b46cbbe2409639a7c1f83@eucas1p1.samsung.com>
- <20200225144749.19815-1-geert+renesas@glider.be>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_223520_473397_33403A79 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200225_224736_957880_34261D4D 
+X-CRM114-Status: GOOD (  40.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -130,8 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,72 +88,363 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>, linux-kernel@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Anan Sun =?UTF-8?Q?=28=E5=AD=99=E5=AE=89=E5=AE=89=29?=
+ <Anan.Sun@mediatek.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Cui Zhang =?UTF-8?Q?=28=E5=BC=A0=E7=BF=A0=29?= <Cui.Zhang@mediatek.com>,
+ Jun Yan =?UTF-8?Q?=28=E9=A2=9C=E5=86=9B=29?= <Jun.Yan@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, Joerg Roedel <joro@8bytes.org>,
+ youlin.pei@mediatek.com,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ chao.hao@mediatek.com,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Miles Chen =?UTF-8?Q?=28=E9=99=B3=E6=B0=91=E6=A8=BA=29?=
+ <Miles.Chen@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ fy.yang@mediatek.com,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Guangming Cao =?UTF-8?Q?=28=E6=9B=B9=E5=85=89=E6=98=8E=29?=
+ <Guangming.Cao@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+On Sat, 2020-02-15 at 20:17 +0800, Yong Wu wrote:
+> On Tue, 2019-12-31 at 17:39 +0800, chao hao wrote:
+> > On Mon, 2019-12-16 at 20:13 +0800, Yong Wu wrote:
+> > > On Mon, 2019-11-04 at 19:52 +0800, Chao Hao wrote:
+> > > > Start with this patch, we will change the SW architecture
+> > > > to support multiple domains. SW architecture will has a big change,
+> > > > so we need to modify a little bit by more than one patch.
+> > > > The new SW overall architecture is as below:
+> > > > 
+> > > > 				iommu0   iommu1
+> > > > 				  |	    |
+> > > > 				  -----------
+> > > > 					|
+> > > > 				mtk_iommu_pgtable
+> > > > 					|
+> > > > 			------------------------------------------
+> > > > 			|		     |			 |
+> > > > 		mtk_iommu_domain1   mtk_iommu_domain2  mtk_iommu_domain3
+> > > > 			|                    |                   |
+> > > > 		iommu_group1         iommu_group2           iommu_group3
+> > > > 			|                    |                   |
+> > > > 		iommu_domain1       iommu_domain2	    iommu_domain3
+> > > > 			|                    |                   |
+> > > > 		iova region1(normal)  iova region2(CCU)    iova region3(VPU)
+> > > > 
+> > > > For current structure, no matter how many iommus there are,
+> > > > they use the same page table to simplify the usage of module.
+> > > > In order to make the software architecture more explicit, this
+> > > > patch will create a global mtk_iommu_pgtable structure to describe
+> > > > page table and all the iommus use it.
+> > > 
+> > > Thanks for the hard work of this file. Actually this patch and the later
+> > > ones confuse me. Why do you make this flow change? 
+> > > for making the code "more explicit" or for adding multi-domain support
+> > > in 13/13.
+> > > 
+> > > IMHO, the change is unnecessary.
+> > > a) For me, this change has no improvement. currently we use a global
+> > > mtk_iommu_get_m4u_data to get the M4U data. I will be very glad if you
+> > > could get rid of it. But in this patchset, You use a another global
+> > > mtk_iommu_pgtable to instead. For me. It has no improvement.
+> > 
+> > Thanks for you advice!
+> > 
+> > For current SW arch, all the IOMMU HW use the same page table, we can
+> > use a global mtk_iommu_pgtable to discribe the information of page table
+> 
+> What's your plan if the 4GB iova range is not enough for us in future?
+> Do you plan to add a new global mtk_iommu_pgtable again?
+> 
+> > and all the IOMMU attach it, I think that it is more clear and
+> > unambiguous. For beginners, it maybe more easily explicable? 
+> 
+> I still don't get the necessity of this change. it is only for making
+> code clear from your point for view, right?
+> 
+> This code has been reviewed for many years, I don't know why you think
+> it is ambiguous. it is clear for me at lease. and I will complain that
+> you add a new global variable in this change.
+> 
+> > > 
+> > > b) This patchset break the original flow. device_group give you a
+> > > software chance for initializing, then you move pagetable allocating
+> > > code into it. But it isn't device_group job.
+> > > 
+> > 
+> > As is shown above diagram, mtk_iommu_pgtable includes iommu_group and
+> > iommu_domain,so we need to allocate mtk_iommu_pgtable and initialize it
+> > in device_group firstly,and then execute the original flow, it only
+> > changes place for creating mtk_iommu_pgtable and don't break original
+> > device_group flow.
+> 
+> I understand you have to do this change after you adjust the structure.
+> I mean that it may be not proper since allocating pagetable should not
+> be done in device_group logically. From here, Could we get this change
+> looks not good?.
+> 
+gentle ping ...
 
-On 25.02.2020 15:47, Geert Uytterhoeven wrote:
-> At early boot, register r8 may contain an ATAGs or DTB pointer.
-> When an appended DTB is found, its address is stored in r8, for
-> extraction of the RAM base address later.
->
-> However, if r8 contained an ATAGs pointer before, that pointer will be
-> lost, and the provided ATAGs is no longer folded into the provided DTB.
->
-> Fix this by leaving r8 untouched.
->
-> Fixes: 137e522593918be2 ("ARM: 8960/1: boot: Obtain start of physical memory from DTB")
-> Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> Not tested with ATAGs, only with [uz]Image + DTB, and zImage with
-> appended DTB.
+Dear Matthias and Joerg,
+From mt6779 platform, mtk_iommu.c needs to support multiple domains for
+different iova regions.About the change, there are some disagreements
+among our internal. We hope to get your helps and advices:
 
-Works fine with zImage + appended DTB + cmdline/memory info passed via ATAGs
+Based on current SW architecture to support multiple domain, diagram is
+as below:
+                           iommu0   iommu1
+                              |        |
+                              ----------
+                                   |
+              ------------------------------------------
+              |                    |                   |
+         iommu_group1         iommu_group2        iommu_group3
+              |                    |                   |
+       mtk_iommu_domain1     mtk_iommu_domain2   mtk_iommu_domain3
+              |                    |                   |
+       iova region1(normal)  iova region2(CCU)   iova region3(VPU)
+ 
+  PS: the information of page table is included struct mtk_iommu_domain
 
-Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
+In my opinion, if all the iommus share the same page table(include all
+iova regions) and different iova regions are created based on the page
+table, we can put the information of page table to a global
+structure(mtk_iommu_pgtable) and all the iommus attach it. It maybe make
+the SW architecture look clearly.
+New SW architecture diagram is as below(This patchset is based on it):
 
-> ---
->   arch/arm/boot/compressed/head.S | 6 ++++--
->   1 file changed, 4 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-> index 339d4b4cfbbeed15..a351ed2bc195ed8d 100644
-> --- a/arch/arm/boot/compressed/head.S
-> +++ b/arch/arm/boot/compressed/head.S
-> @@ -267,16 +267,18 @@ not_angel:
->   		cmp	r0, r1		@ do we have a DTB there?
->   		bne	1f
->   
-> -		mov	r8, r6		@ use it if so
->   		/* preserve 64-bit alignment */
->   		add	r5, r5, #7
->   		bic	r5, r5, #7
-> -		add	sp, sp, r5	@ and move stack above it
-> +		add	sp, sp, r5	@ if so, move stack above DTB
-> +		mov	r0, r6		@ and extract memory start from DTB
-> +		b	2f
->   
->   1:
->   #endif /* CONFIG_ARM_APPENDED_DTB */
->   
->   		mov	r0, r8
-> +2:
->   		bl	fdt_get_mem_start
->   		mov	r4, r0
->   		cmp	r0, #-1
+                           iommu0   iommu1
+                              |        |
+                              ----------
+                                   |
+                          mtk_iommu_pgtable
+                                   |
+              ------------------------------------------
+              |                    |                   |
+        mtk_iommu_domain1   mtk_iommu_domain2   mtk_iommu_domain3
+              |                    |                   |
+         iommu_group1         iommu_group2        iommu_group3
+              |                    |                   |
+         iommu_domain1       iommu_domain2        iommu_domain3
+              |                    |                   |
+       iova region1(normal)  iova region2(CCU)   iova region3(VPU)
 
-Best regards
--- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
+From above new SW architecture, we will create a global page table
+firstly(mtk_iommu_pgtable), and all the iommus can use it. The page
+table can include 4GB iova space, different iova regions are created
+based on it, so the information of pgtable needs to be created in
+device_group.
 
+I have two problems to consult you, can you provide some advices? Thanks
+for Matthias and Joerg so much!
+(1) I don't understand if the pgtable can be created in device_group ?
+(2) In addition, can you help to review which SW architecture are more
+reasonable or whether it is necessary to change current SW architecture
+to support multiple domain ?
+
+
+Dear Yong,
+If I described ambiguously, please help to add extra explanation.
+Thanks a lot.
+
+
+> > > I can not decide if your flow is right. But if you only want to add
+> > > support multi-domain, I guess you could extend the current "m4u_group"
+> > > to a array "m4u_group[N]". It may be more simple. To make mt6779
+> > > progress easily, I suggest you can use this way to support multi-domain
+> > > firstly. Then you could send this new mtk_iommu_pgtable patchset for the
+> > > code "more explicit" if you insist.
+> 
+> Could you help try this way if it could meet your requirement? Then
+> let's compare which one is better.
+> 
+> 
+> BTW, your patches(including v2) cause hangup as below since
+> "data->m4u_dom" was uninitialized.
+> 
+> 
+> Unable to handle kernel NULL pointer dereference at virtual address
+> 0000000000000010
+> ...
+> pc : mtk_iommu_tlb_flush_page_nosync+0x38/0xb8
+> lr : __arm_v7s_unmap+0x174/0x598
+> ...
+> Call trace:
+>  mtk_iommu_tlb_flush_page_nosync+0x38/0xb8
+>  __arm_v7s_unmap+0x174/0x598
+>  arm_v7s_unmap+0x30/0x48
+>  mtk_iommu_unmap+0x20/0x28
+>  __iommu_unmap+0xa4/0xf8
+>  iommu_unmap+0x44/0x90
+> 
+> > > 
+> > > > The diagram is as below:
+> > > > 
+> > > > 	mtk_iommu_data1(MM)       mtk_iommu_data2(APU)
+> > > > 		|			   |
+> > > > 		|			   |
+> > > > 		------mtk_iommu_pgtable-----
+> > > > 
+> > > > We need to create global mtk_iommu_pgtable to include all the iova
+> > > > regions firstly and special iova regions by divided based on it,
+> > > > so the information of pgtable needs to be created in device_group.
+> > > > 
+> > > > Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> > > > ---
+> > > >  drivers/iommu/mtk_iommu.c | 84 +++++++++++++++++++++++++++++++++++++++
+> > > >  drivers/iommu/mtk_iommu.h |  1 +
+> > > >  2 files changed, 85 insertions(+)
+> > > > 
+> > > > diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> > > > index f2847e661137..fcbde6b0f58d 100644
+> > > > --- a/drivers/iommu/mtk_iommu.c
+> > > > +++ b/drivers/iommu/mtk_iommu.c
+> > > > @@ -123,6 +123,12 @@ struct mtk_iommu_domain {
+> > > >  	struct iommu_domain		domain;
+> > > >  };
+> > > >  
+> > > > +struct mtk_iommu_pgtable {
+> > > > +	struct io_pgtable_cfg	cfg;
+> > > > +	struct io_pgtable_ops	*iop;
+> > > > +};
+> > > > +
+> > > > +static struct mtk_iommu_pgtable *share_pgtable;
+> > > >  static const struct iommu_ops mtk_iommu_ops;
+> > > >  
+> > > >  /*
+> > > > @@ -170,6 +176,11 @@ static struct mtk_iommu_data *mtk_iommu_get_m4u_data(void)
+> > > >  	return NULL;
+> > > >  }
+> > > >  
+> > > > +static struct mtk_iommu_pgtable *mtk_iommu_get_pgtable(void)
+> > > > +{
+> > > > +	return share_pgtable;
+> > > > +}
+> > > > +
+> > > >  static struct mtk_iommu_domain *to_mtk_domain(struct iommu_domain *dom)
+> > > >  {
+> > > >  	return container_of(dom, struct mtk_iommu_domain, domain);
+> > > > @@ -322,6 +333,13 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+> > > >  {
+> > > >  	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+> > > >  
+> > > > +	if (data->pgtable) {
+> > > > +		dom->cfg = data->pgtable->cfg;
+> > > > +		dom->iop = data->pgtable->iop;
+> > > > +		dom->domain.pgsize_bitmap = data->pgtable->cfg.pgsize_bitmap;
+> > > > +		return 0;
+> > > > +	}
+> > > > +
+> > > >  	dom->cfg = (struct io_pgtable_cfg) {
+> > > >  		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+> > > >  			IO_PGTABLE_QUIRK_NO_PERMS |
+> > > > @@ -345,6 +363,61 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+> > > >  	return 0;
+> > > >  }
+> > > >  
+> > > > +static struct mtk_iommu_pgtable *create_pgtable(struct mtk_iommu_data *data)
+> > > > +{
+> > > > +	struct mtk_iommu_pgtable *pgtable;
+> > > > +
+> > > > +	pgtable = kzalloc(sizeof(*pgtable), GFP_KERNEL);
+> > > > +	if (!pgtable)
+> > > > +		return ERR_PTR(-ENOMEM);
+> > > > +
+> > > > +	pgtable->cfg = (struct io_pgtable_cfg) {
+> > > > +		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+> > > > +			IO_PGTABLE_QUIRK_NO_PERMS |
+> > > > +			IO_PGTABLE_QUIRK_TLBI_ON_MAP |
+> > > > +			IO_PGTABLE_QUIRK_ARM_MTK_EXT,
+> > > > +		.pgsize_bitmap = mtk_iommu_ops.pgsize_bitmap,
+> > > > +		.ias = 32,
+> > > > +		.oas = 34,
+> > > > +		.tlb = &mtk_iommu_flush_ops,
+> > > > +		.iommu_dev = data->dev,
+> > > > +	};
+> > > > +
+> > > > +	pgtable->iop = alloc_io_pgtable_ops(ARM_V7S, &pgtable->cfg, data);
+> > > > +	if (!pgtable->iop) {
+> > > > +		dev_err(data->dev, "Failed to alloc io pgtable\n");
+> > > > +		return ERR_PTR(-EINVAL);
+> > > > +	}
+> > > > +
+> > > > +	dev_info(data->dev, "%s create pgtable done\n", __func__);
+> > > > +
+> > > > +	return pgtable;
+> > > > +}
+> > > > +
+> > > > +static int mtk_iommu_attach_pgtable(struct mtk_iommu_data *data,
+> > > > +				    struct device *dev)
+> > > > +{
+> > > > +	struct mtk_iommu_pgtable *pgtable = mtk_iommu_get_pgtable();
+> > > > +
+> > > > +	/* create share pgtable */
+> > > > +	if (!pgtable) {
+> > > > +		pgtable = create_pgtable(data);
+> > > > +		if (IS_ERR(pgtable)) {
+> > > > +			dev_err(data->dev, "Failed to create pgtable\n");
+> > > > +			return -ENOMEM;
+> > > > +		}
+> > > > +
+> > > > +		share_pgtable = pgtable;
+> > > > +	}
+> > > > +
+> > > > +	/* binding to pgtable */
+> > > > +	data->pgtable = pgtable;
+> > > > +
+> > > > +	dev_info(data->dev, "m4u%d attach_pgtable done!\n", data->m4u_id);
+> > > > +
+> > > > +	return 0;
+> > > > +}
+> > > > +
+> > > >  static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
+> > > >  {
+> > > >  	struct mtk_iommu_domain *dom;
+> > > > @@ -508,10 +581,21 @@ static void mtk_iommu_remove_device(struct device *dev)
+> > > >  static struct iommu_group *mtk_iommu_device_group(struct device *dev)
+> > > >  {
+> > > >  	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+> > > > +	struct mtk_iommu_pgtable *pgtable;
+> > > > +	int ret = 0;
+> > > >  
+> > > >  	if (!data)
+> > > >  		return ERR_PTR(-ENODEV);
+> > > >  
+> > > > +	pgtable = data->pgtable;
+> > > > +	if (!pgtable) {
+> > > > +		ret = mtk_iommu_attach_pgtable(data, dev);
+> > > > +		if (ret) {
+> > > > +			dev_err(data->dev, "Failed to device_group\n");
+> > > > +			return NULL;
+> > > > +		}
+> > > > +	}
+> > > > +
+> > > >  	/* All the client devices are in the same m4u iommu-group */
+> > > >  	if (!data->m4u_group) {
+> > > >  		data->m4u_group = iommu_group_alloc();
+> > > > diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> > > > index 132dc765a40b..dd5f19f78b62 100644
+> > > > --- a/drivers/iommu/mtk_iommu.h
+> > > > +++ b/drivers/iommu/mtk_iommu.h
+> > > > @@ -61,6 +61,7 @@ struct mtk_iommu_data {
+> > > >  	struct clk			*bclk;
+> > > >  	phys_addr_t			protect_base; /* protect memory base */
+> > > >  	struct mtk_iommu_suspend_reg	reg;
+> > > > +	struct mtk_iommu_pgtable	*pgtable;
+> > > >  	struct mtk_iommu_domain		*m4u_dom;
+> > > >  	struct iommu_group		*m4u_group;
+> > > >  	bool                            enable_4GB;
+> > > 
+> > > 
+> > 
+> > 
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
