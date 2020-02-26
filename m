@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79ED2170182
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 15:46:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 157201701A3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 15:56:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eVR67AGgdaJ95pX7FTv9KgFEgdtwTq/qUF6zl+KvV7E=; b=eQJkEKgfWN9ZCdOfXPETQBfmb
-	X0k2XjeiT+js+D7Pq9nfOO1MtACq0y0EbdDYUZA0+QFKKjw65r+OGlcbj8ZRM8Ij74KAuEc9HWyDp
-	d/BtyUawSEnAzPNsjfaNl+Hfx6/Sjf7PzUNK8zDinURGKhxdmr2y6gtpoveKHTnl+UGvMFfoZKjZP
-	s2BsrLTCEZobE1srFPuBbeo36dcN6IP8ZqoxQGKFQif+ncDc8AZmp7eLIQ+u/FtZTR/BpasTQblnm
-	CQwqQ+1P4irphtmsLhKearDTLRWqNHcJlbVrTia43oQV368x0fiYZs6ow+Z8aSoUFqrAnSGCI+nly
-	fszUBMG2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aXNW3djKsO1snf47Xu+rbRuzqzASdPAbOXqVOMClwko=; b=V8uZRya3rJcqgZ
+	J3S1mYljpBfT2NBav/1f0UjqMxYwbLegXY7iDyJIJbSc9HFDkgJ8u91ruJsAdBjYryYHOv6wPHI0C
+	so+sTCDdt62v+eO+2wYuHIGgbCqlOFbr/ScyTyDbB6gDbk7JfANzSe86nNmgu0zE5jV0NO4ItNPxZ
+	pjMTCTkSarTqPEetuSw/nE2wUHTdTCSptOX880zWk/uPMcjnnHL16Zz5XQVNzt5xDaBCiCMavS8iI
+	t4GeWjArZaRroVDZto91oqoZzcPi49KhRyZ13zwX2lTbZvWGv/pOUGbENijIzZJ5KTFMKmvH+UCwD
+	MdUHAIM/FPjdP9/NYw3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6xx0-00038O-RH; Wed, 26 Feb 2020 14:46:14 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1j6y72-0006LA-Gl; Wed, 26 Feb 2020 14:56:36 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6xwq-00037z-Il; Wed, 26 Feb 2020 14:46:06 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 48SJWh2b55z9tyg4;
- Wed, 26 Feb 2020 15:45:52 +0100 (CET)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=kZ5bMkLJ; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id piYm9Kq-bip3; Wed, 26 Feb 2020 15:45:52 +0100 (CET)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 48SJWh1L1mz9tyg0;
- Wed, 26 Feb 2020 15:45:52 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1582728352; bh=BEQC+OIkud+eji3D9C1xajaOV2PnlEzJtZsCBcvukA0=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=kZ5bMkLJJRmtE/zBn7tAG22RVlZ+eB59QhJ/5515+FA1qAhZsJh2OjTNrixj9vTDj
- g9hhT1i5/9dal9tTCQtAXzKPCb1/TtYD/lHCsid2jxvbbY8kYL0AVDIy3f2yCgUqIz
- SvUkhU4c68nXEu7I9g1qKkvWUZk1WgTaY/zVbTdo=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 93C978B858;
- Wed, 26 Feb 2020 15:45:53 +0100 (CET)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id AccKIxhc_qaM; Wed, 26 Feb 2020 15:45:53 +0100 (CET)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 75D1B8B776;
- Wed, 26 Feb 2020 15:45:51 +0100 (CET)
-Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
- table helpers
-To: Qian Cai <cai@lca.pw>, Anshuman Khandual <anshuman.khandual@arm.com>,
- linux-mm@kvack.org
-References: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
- <1582726182.7365.123.camel@lca.pw>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <7c707b7f-ce3d-993b-8042-44fdc1ed28bf@c-s.fr>
-Date: Wed, 26 Feb 2020 15:45:44 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j6y6s-0006KB-6n
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 14:56:27 +0000
+Received: by mail-ot1-f66.google.com with SMTP id j16so3220549otl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 26 Feb 2020 06:56:25 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4+aLnsPdP1/QbRnyIoXI03Tshsf4suv6arri2MUC+qo=;
+ b=iiPULg6eNYvzj0Ub3DtBxcpXLOXYE/ey1ZvKKimm6dihwN/BxW3wgNwpLnqBmlescV
+ w4Eo4AYUCqgsEFy4AwKOLb9E1QQ4NNIxvFvx+agEukqc1R/ps3jjx0qPNu7hbjz68BV6
+ wdjRaPVtWidyF/v8xgMm+DccudwnNcD9d9d8szMJDE9a1YtLGlGV7Dk6VxmdDXpf/lOJ
+ dglWXTmfmfXQGsihTU3CmRfPq0g+cF7ocXnoOapLoVRK70eJ1LPHDj9bqJWCPXTQOTbV
+ 6TMtxc9QqhphFgRbox9qFWSotVkNOVpPbNTrl0s2XnuISG0B9iUL14S9r5ypwaq0Mctb
+ h3lQ==
+X-Gm-Message-State: APjAAAXJi7n85zleZHBVJetbCRFXYMvj4VtmNObuH8bikdGu9inNTVI8
+ gDEF6SJ9AXPYhkBoXuDfZg==
+X-Google-Smtp-Source: APXvYqzrUda0vSZtD9CpveeEfxdVZW6Zdsm+zPooigQG/TE92zsXfEODvCU6ebACAkEHgk7TJbw6sA==
+X-Received: by 2002:a05:6830:1047:: with SMTP id
+ b7mr3582500otp.77.1582728985048; 
+ Wed, 26 Feb 2020 06:56:25 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id w197sm884841oia.12.2020.02.26.06.56.23
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 26 Feb 2020 06:56:24 -0800 (PST)
+Received: (nullmailer pid 23432 invoked by uid 1000);
+ Wed, 26 Feb 2020 14:56:23 -0000
+Date: Wed, 26 Feb 2020 08:56:23 -0600
+From: Rob Herring <robh@kernel.org>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH v2 3/6] dt-bindings: Add Guangdong Neweast
+ Optoelectronics CO. LTD vendor prefix
+Message-ID: <20200226145623.GA22420@bogus>
+References: <20200226081011.1347245-1-anarsoul@gmail.com>
+ <20200226081011.1347245-4-anarsoul@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1582726182.7365.123.camel@lca.pw>
-Content-Language: fr
+Content-Disposition: inline
+In-Reply-To: <20200226081011.1347245-4-anarsoul@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_064604_915532_013B47AE 
-X-CRM114-Status: GOOD (  12.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_065626_241448_2D50EA41 
+X-CRM114-Status: GOOD (  10.97  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,68 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Samuel Holland <samuel@sholland.org>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Chen-Yu Tsai <wens@csie.org>, Icenowy Zheng <icenowy@aosc.io>,
+ devicetree@vger.kernel.org, Stephan Gerhold <stephan@gerhold.net>,
+ Jonas Karlman <jonas@kwiboo.se>, Torsten Duwe <duwe@suse.de>,
+ Mark Brown <broonie@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
+ linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAyNi8wMi8yMDIwIMOgIDE1OjA5LCBRaWFuIENhaSBhIMOpY3JpdMKgOgo+IE9uIE1vbiwg
-MjAyMC0wMi0xNyBhdCAwODo0NyArMDUzMCwgQW5zaHVtYW4gS2hhbmR1YWwgd3JvdGU6Cj4+IFRo
-aXMgYWRkcyB0ZXN0cyB3aGljaCB3aWxsIHZhbGlkYXRlIGFyY2hpdGVjdHVyZSBwYWdlIHRhYmxl
-IGhlbHBlcnMgYW5kCj4+IG90aGVyIGFjY2Vzc29ycyBpbiB0aGVpciBjb21wbGlhbmNlIHdpdGgg
-ZXhwZWN0ZWQgZ2VuZXJpYyBNTSBzZW1hbnRpY3MuCj4+IFRoaXMgd2lsbCBoZWxwIHZhcmlvdXMg
-YXJjaGl0ZWN0dXJlcyBpbiB2YWxpZGF0aW5nIGNoYW5nZXMgdG8gZXhpc3RpbmcKPj4gcGFnZSB0
-YWJsZSBoZWxwZXJzIG9yIGFkZGl0aW9uIG9mIG5ldyBvbmVzLgo+Pgo+PiBUaGlzIHRlc3QgY292
-ZXJzIGJhc2ljIHBhZ2UgdGFibGUgZW50cnkgdHJhbnNmb3JtYXRpb25zIGluY2x1ZGluZyBidXQg
-bm90Cj4+IGxpbWl0ZWQgdG8gb2xkLCB5b3VuZywgZGlydHksIGNsZWFuLCB3cml0ZSwgd3JpdGUg
-cHJvdGVjdCBldGMgYXQgdmFyaW91cwo+PiBsZXZlbCBhbG9uZyB3aXRoIHBvcHVsYXRpbmcgaW50
-ZXJtZWRpYXRlIGVudHJpZXMgd2l0aCBuZXh0IHBhZ2UgdGFibGUgcGFnZQo+PiBhbmQgdmFsaWRh
-dGluZyB0aGVtLgo+Pgo+PiBUZXN0IHBhZ2UgdGFibGUgcGFnZXMgYXJlIGFsbG9jYXRlZCBmcm9t
-IHN5c3RlbSBtZW1vcnkgd2l0aCByZXF1aXJlZCBzaXplCj4+IGFuZCBhbGlnbm1lbnRzLiBUaGUg
-bWFwcGVkIHBmbnMgYXQgcGFnZSB0YWJsZSBsZXZlbHMgYXJlIGRlcml2ZWQgZnJvbSBhCj4+IHJl
-YWwgcGZuIHJlcHJlc2VudGluZyBhIHZhbGlkIGtlcm5lbCB0ZXh0IHN5bWJvbC4gVGhpcyB0ZXN0
-IGdldHMgY2FsbGVkCj4+IGluc2lkZSBrZXJuZWxfaW5pdCgpIHJpZ2h0IGFmdGVyIGFzeW5jX3N5
-bmNocm9uaXplX2Z1bGwoKS4KPj4KPj4gVGhpcyB0ZXN0IGdldHMgYnVpbHQgYW5kIHJ1biB3aGVu
-IENPTkZJR19ERUJVR19WTV9QR1RBQkxFIGlzIHNlbGVjdGVkLiBBbnkKPj4gYXJjaGl0ZWN0dXJl
-LCB3aGljaCBpcyB3aWxsaW5nIHRvIHN1YnNjcmliZSB0aGlzIHRlc3Qgd2lsbCBuZWVkIHRvIHNl
-bGVjdAo+PiBBUkNIX0hBU19ERUJVR19WTV9QR1RBQkxFLiBGb3Igbm93IHRoaXMgaXMgbGltaXRl
-ZCB0byBhcmMsIGFybTY0LCB4ODYsIHMzOTAKPj4gYW5kIHBwYzMyIHBsYXRmb3JtcyB3aGVyZSB0
-aGUgdGVzdCBpcyBrbm93biB0byBidWlsZCBhbmQgcnVuIHN1Y2Nlc3NmdWxseS4KPj4gR29pbmcg
-Zm9yd2FyZCwgb3RoZXIgYXJjaGl0ZWN0dXJlcyB0b28gY2FuIHN1YnNjcmliZSB0aGUgdGVzdCBh
-ZnRlciBmaXhpbmcKPj4gYW55IGJ1aWxkIG9yIHJ1bnRpbWUgcHJvYmxlbXMgd2l0aCB0aGVpciBw
-YWdlIHRhYmxlIGhlbHBlcnMuIE1lYW53aGlsZSBmb3IKPj4gYmV0dGVyIHBsYXRmb3JtIGNvdmVy
-YWdlLCB0aGUgdGVzdCBjYW4gYWxzbyBiZSBlbmFibGVkIHdpdGggQ09ORklHX0VYUEVSVAo+PiBl
-dmVuIHdpdGhvdXQgQVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRS4KPj4KPj4gRm9sa3MgaW50ZXJl
-c3RlZCBpbiBtYWtpbmcgc3VyZSB0aGF0IGEgZ2l2ZW4gcGxhdGZvcm0ncyBwYWdlIHRhYmxlIGhl
-bHBlcnMKPj4gY29uZm9ybSB0byBleHBlY3RlZCBnZW5lcmljIE1NIHNlbWFudGljcyBzaG91bGQg
-ZW5hYmxlIHRoZSBhYm92ZSBjb25maWcKPj4gd2hpY2ggd2lsbCBqdXN0IHRyaWdnZXIgdGhpcyB0
-ZXN0IGR1cmluZyBib290LiBBbnkgbm9uIGNvbmZvcm1pdHkgaGVyZSB3aWxsCj4+IGJlIHJlcG9y
-dGVkIGFzIGFuIHdhcm5pbmcgd2hpY2ggd291bGQgbmVlZCB0byBiZSBmaXhlZC4gVGhpcyB0ZXN0
-IHdpbGwgaGVscAo+PiBjYXRjaCBhbnkgY2hhbmdlcyB0byB0aGUgYWdyZWVkIHVwb24gc2VtYW50
-aWNzIGV4cGVjdGVkIGZyb20gZ2VuZXJpYyBNTSBhbmQKPj4gZW5hYmxlIHBsYXRmb3JtcyB0byBh
-Y2NvbW1vZGF0ZSBpdCB0aGVyZWFmdGVyLgo+IAo+IEhvdyB1c2VmdWwgaXMgdGhpcyB0aGF0IHN0
-cmFpZ2h0bHkgY3Jhc2ggdGhlIHBvd2VycGM/Cj4gCj4gW8KgwqDCoDIzLjI2MzQyNV1bwqDCoMKg
-wqBUMV0gZGVidWdfdm1fcGd0YWJsZTogZGVidWdfdm1fcGd0YWJsZTogVmFsaWRhdGluZwo+IGFy
-Y2hpdGVjdHVyZSBwYWdlIHRhYmxlIGhlbHBlcnMKPiBbwqDCoMKgMjMuMjYzNjI1XVvCoMKgwqDC
-oFQxXSAtLS0tLS0tLS0tLS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0tLS0KPiBbwqDCoMKgMjMuMjYz
-NjQ5XVvCoMKgwqDCoFQxXSBrZXJuZWwgQlVHIGF0IGFyY2gvcG93ZXJwYy9tbS9wZ3RhYmxlLmM6
-Mjc0IQoKVGhlIHByb2JsZW0gb24gUFBDNjQgaXMga25vd24gYW5kIGhhcyB0byBiZSBpbnZlc3Rp
-Z2F0ZWQgYW5kIGZpeGVkLgoKQ2hyaXN0b3BoZQoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Feb 26, 2020 at 12:10:08AM -0800, Vasily Khoruzhick wrote:
+> Add vendor prefix for Guangdong Neweast Optoelectronics CO. LTD
+> 
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
+
+Acked-by: Rob Herring <robh@kernel.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
