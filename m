@@ -2,57 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3558F17039A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 17:00:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 923FB170396
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:59:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7izrDOfrWBZFzu3pZupNkZB9pdu0vKgqiOHXtC8i2Lo=; b=CfsYqhZJmh4pax
-	0Gp+CvmuUjJt0v31caD2NxSAwWEhnhmmSas7bmCuis9Z8dPeT2oQ0Wn5boeHtZBKAeXdwvYVQvffE
-	8ZcIErntbO7dLVqUBvpV2tWtRV5eHzwn64EeymHQH4mRbdutJTDMIGPv69JK4jrWj2JzZHHvDUkVv
-	rM/fK8kW9yvpVnF/eFVzZ2h8Ue596pjdbL7maTMLApUcZTojCtVRr6vC02Izs7hInqgBpxB5B50VV
-	YQXpkXTualsyv0v0oL/5l7kDeS6bjoHdaQrF/Cacy1x+Or2Aq8yc2Y5XKgp+poxJRfERidNvl0G61
-	HUbQmGGwhvK8TIq93xqA==;
+	List-Owner; bh=yiIcDdKOFzf9MK/lldSRIr6OMDP0IyJlISBaNXZ9HGo=; b=gSfYqB2HM5kD8e
+	95gU6idp0gG8lj0Yb66Rnp2m56cJs0bvb6n4ERQYd06HElR13107NUN8uekkC7UCz5uSMjQwSi95D
+	d4Fpe/8RaLpE0ilMcQvYVS+2/8a8wXLgcTIl9UgJCF5nNeX60T/uFU/vz0z00cEkBs+3iRg4uou+6
+	9SQUvhkqV9bTvrm6jTD0lQ1Yq6HuwC2cMi1uvJE7FLFgBwZm3GKus/oiYfUGHfx4uLumLKMkw0XlM
+	dhRk3gfPLU1U0myT6MTLaf/OHaLUtAdXWsIUJy4qzg+k2qF9SoRAO8rFzO1tKrIf8HfUDmB7djbhs
+	VR0gyF8WjmH3XfO4wIDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6z6h-0002PH-F6; Wed, 26 Feb 2020 16:00:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1j6z5i-0001TQ-DH; Wed, 26 Feb 2020 15:59:18 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6z47-0000HY-8n
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:57:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B80C330E;
- Wed, 26 Feb 2020 07:57:38 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 01F6C3F819;
- Wed, 26 Feb 2020 07:57:38 -0800 (PST)
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH v7 07/11] arm64: unify native/compat instruction skipping
-Date: Wed, 26 Feb 2020 15:57:10 +0000
-Message-Id: <20200226155714.43937-8-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200226155714.43937-1-broonie@kernel.org>
-References: <20200226155714.43937-1-broonie@kernel.org>
+ id 1j6z42-000080-CA
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:57:36 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 7789A819C;
+ Wed, 26 Feb 2020 15:58:12 +0000 (UTC)
+Date: Wed, 26 Feb 2020 07:57:24 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] ARM: OMAP2+: Fix compile if CONFIG_HAVE_ARM_SMCCC is not
+ set
+Message-ID: <20200226155724.GN37466@atomide.com>
+References: <20200221180901.15812-1-tony@atomide.com>
+ <CAK8P3a2C6EV0En1hGuFxCRGzgf2t3-5DAPDUDQc5BmGHm1-t9w@mail.gmail.com>
+ <20200221201542.GB37466@atomide.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200221201542.GB37466@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_075739_445861_81D38301 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200226_075734_541611_9B62F6F2 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,113 +61,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Paul Elliott <paul.elliott@arm.com>,
- Peter Zijlstra <peterz@infradead.org>, Andrew Jones <drjones@redhat.com>,
- Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
- =?UTF-8?q?Kristina=20Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Cc: Rob Herring <robh@kernel.org>, kbuild test robot <lkp@intel.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Catalin Marinas <catalin.marinas@arm.com>, "Andrew F . Davis" <afd@ti.com>,
+ Marc Zyngier <maz@kernel.org>, Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-omap <linux-omap@vger.kernel.org>, Will Deacon <will@kernel.org>,
+ Steven Price <steven.price@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dave Martin <Dave.Martin@arm.com>
+* Tony Lindgren <tony@atomide.com> [200221 20:16]:
+> * Arnd Bergmann <arnd@arndb.de> [200221 20:06]:
+> > On Fri, Feb 21, 2020 at 7:09 PM Tony Lindgren <tony@atomide.com> wrote:
+> > >
+> > > Recent omap changes added runtime checks to use omap_smccc_smc()
+> > > when optee is configured in dts. As the omap-secure code can be
+> > > built for ARMv6 only without ARMv7 and use custom smc calls, we
+> > > now get a build error:
+> > >
+> > > omap-secure.c:(.text+0x94): undefined reference to `__arm_smccc_smc'
+> > >
+> > > Let's just ifdef out omap_smccc_smc() unless the CPU has selected
+> > > CONFIG_HAVE_ARM_SMCCC. The other option discussed was to add an
+> > > inline function to arm-smccc.h, but we'd still also have to add
+> > > ifdef around omap_smccc_smc() to avoid a warning for uninitialized
+> > > value for struct arm_smccc_res in omap_smccc_smc(). And we probably
+> > > should not start initializing values in arm-smccc.h if disabled.
+> > >
+> > > Let's also warn on trying to use omap_smccc_smc() if disabled as
+> > > suggested by Andrew F. Davis <afd@ti.com>.
+> > >
+> > > +#ifdef CONFIG_HAVE_ARM_SMCCC
+> > >  void omap_smccc_smc(u32 fn, u32 arg)
+> > >  {
+> > >         struct arm_smccc_res res;
+> > > @@ -85,6 +86,12 @@ void omap_smccc_smc(u32 fn, u32 arg)
+> > >                       0, 0, 0, 0, 0, 0, &res);
+> > >         WARN(res.a0, "Secure function call 0x%08x failed\n", fn);
+> > >  }
+> > > +#else
+> > 
+> > Looking through the callers again, this can and is only called
+> > for ARMv7 CPUs, so can't you just avoid the #else path and
+> > turn it into a link error if we ever get callers on ARMv6-only builds?
+> 
+> Hmm yeah maybe. If ARMv6 machines (basically n8x0) is not using
+> omap-smc.S at all, it's unlike it would need omap-secure.c either.
 
-Skipping of an instruction on AArch32 works a bit differently from
-AArch64, mainly due to the different CPSR/PSTATE semantics.
+Yeah we never built secure-common for omap2 earlier, this got
+recently added. My guess is that n8x0 only has a signed bootloader
+and no smc calls at all, or at least we don't use any smc calls
+for n8x0 in the kernel.
 
-Currently arm64_skip_faulting_instruction() is only suitable for
-AArch64, and arm64_compat_skip_faulting_instruction() handles the IT
-state machine but is local to traps.c.
+I'll send out v2 of the patch.
 
-Since manual instruction skipping implies a trap, it's a relatively
-slow path.
+Regards,
 
-So, make arm64_skip_faulting_instruction() handle both compat and
-native, and get rid of the arm64_compat_skip_faulting_instruction()
-special case.
-
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/kernel/traps.c | 18 ++++++++----------
- 1 file changed, 8 insertions(+), 10 deletions(-)
-
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index b8c714dda851..bc9f4292bfc3 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -272,6 +272,8 @@ void arm64_notify_die(const char *str, struct pt_regs *regs,
- 	}
- }
- 
-+static void advance_itstate(struct pt_regs *regs);
-+
- void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
- {
- 	regs->pc += size;
-@@ -282,6 +284,9 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
- 	 */
- 	if (user_mode(regs))
- 		user_fastforward_single_step(current);
-+
-+	if (regs->pstate & PSR_MODE32_BIT)
-+		advance_itstate(regs);
- }
- 
- static LIST_HEAD(undef_hook);
-@@ -644,19 +649,12 @@ static void advance_itstate(struct pt_regs *regs)
- 	compat_set_it_state(regs, it);
- }
- 
--static void arm64_compat_skip_faulting_instruction(struct pt_regs *regs,
--						   unsigned int sz)
--{
--	advance_itstate(regs);
--	arm64_skip_faulting_instruction(regs, sz);
--}
--
- static void compat_cntfrq_read_handler(unsigned int esr, struct pt_regs *regs)
- {
- 	int reg = (esr & ESR_ELx_CP15_32_ISS_RT_MASK) >> ESR_ELx_CP15_32_ISS_RT_SHIFT;
- 
- 	pt_regs_write_reg(regs, reg, arch_timer_get_rate());
--	arm64_compat_skip_faulting_instruction(regs, 4);
-+	arm64_skip_faulting_instruction(regs, 4);
- }
- 
- static const struct sys64_hook cp15_32_hooks[] = {
-@@ -676,7 +674,7 @@ static void compat_cntvct_read_handler(unsigned int esr, struct pt_regs *regs)
- 
- 	pt_regs_write_reg(regs, rt, lower_32_bits(val));
- 	pt_regs_write_reg(regs, rt2, upper_32_bits(val));
--	arm64_compat_skip_faulting_instruction(regs, 4);
-+	arm64_skip_faulting_instruction(regs, 4);
- }
- 
- static const struct sys64_hook cp15_64_hooks[] = {
-@@ -697,7 +695,7 @@ void do_cp15instr(unsigned int esr, struct pt_regs *regs)
- 		 * There is no T16 variant of a CP access, so we
- 		 * always advance PC by 4 bytes.
- 		 */
--		arm64_compat_skip_faulting_instruction(regs, 4);
-+		arm64_skip_faulting_instruction(regs, 4);
- 		return;
- 	}
- 
--- 
-2.20.1
-
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
