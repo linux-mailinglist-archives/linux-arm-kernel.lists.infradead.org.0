@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C008516F89D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 08:38:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22C0716F89E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 08:38:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SEx6jazzETuKFdeGdlp2os0b9m3p94MMtmlYlEF3n28=; b=WqxTFedvLLp4G/
-	G0UGQOI19/bx1h7AW76uuWwV0YFZjtRtJWTbS/wOQXHtDDRgilihcbRFhWOBT+OTEsOkxAO1CUIju
-	HSE0VhtdazvzMR7TBg1JPtw3L6oHMzNRmlrfR6Zkzn0x5KZkK+9N6IHYTRP1gwa8csYHBq9jVxe9F
-	anE34U3+PEkR/CaQViwhkqgXGMdKJeQ05Hel3KW7k3jGEI10u0qttjb0XFNXKl9P7yV/V2l5oGT9P
-	hzCKDv8Sz0V9Fcc5mCulBBAYf02huqy4vh4Ez7DbL+Rj77m8P5gwZNVCHHvhBH5a+aup6DJB8hgXt
-	S+xbuH1p/qBLJ0qGj+EQ==;
+	List-Owner; bh=En7Qs1HmaCx+pyBuu7DoiXo9OJ/9R7pzMgAV/knsAbw=; b=pXSTMrmy+T+Gcq
+	SplXRiY08CHg3d3AkRQ1cKUsUhux4f7CGDU77hn6Wcjh9EJB6txvgKLbrbNlfrk0j3LJ9Bb/VMwmh
+	o1dJYsbcfQRMk5tQgVAFOSzkNIgcBBSDPQ9FxZKnBASM2gM18ZQcCR9orhxNdf1emQlmWFPzyDQxr
+	x5QovJBrPnNN4aElxQPRmNg3U9VGaVCqk2eFeXpOCorVUwXbkQLpa9KIRiz8+v2maQmzIogus5swb
+	G0ogoTonyRdci52ljfyhoZKcoGmW2g4hWwrnSKcRkkLqyy04Ksn0KKZry6u1WTEP+ozAH5b7VvBDt
+	pr19p4JmnLgHoHBbBqMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6rGc-0005iZ-D5; Wed, 26 Feb 2020 07:38:02 +0000
+	id 1j6rGo-0005vV-Iw; Wed, 26 Feb 2020 07:38:14 +0000
 Received: from mail-eopbgr130052.outbound.protection.outlook.com
  ([40.107.13.52] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6rG9-0005Y1-Dn
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 07:37:34 +0000
+ id 1j6rGB-0005Y1-5f
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 07:37:36 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VIHJjfEaxWd1tom4AfKZnpRD/hYcIdD2kawBqHjitSQLmNMDj/thWXkW55zj4E4/EjA5MZ7sU7SGBQVbpvEkkw6ZUVha+i8eG6y3vCyEwYiz8pFhVwyNEJfeYwRALd9jkqkNxz5tCgZszvHE1AJy9MntAKmKoO+sgsSVJ6gBAJ1DsKILs8na7MtdnX63lBqefB/LRTeDqmU6ftX+yGFu1wvadf6M5Vd2S1SJxAu9Q5PO3pHWrQfVGm4PjNVGebLtdStsR91Wh3lgmOdCb5N8xRgxVoLl5SKl0WyxA7WZfMa9tH82uuivgAEahAD9uOiDgrXt/Y+8M2mS9Gl8tDQU7g==
+ b=DfqGels2QEWnBAbPowZ0mArq75ZGtSfR4rypJT+DX0S+I4qDStIWuRK07bGF7y/7wdcuRCmE7yq7tt8IfPAUcSRAsu98aMQesmx0W2Um/OMJjqzLRKyJj1FA2Jpepef+J7ThiK4bDXom5g/MdTFWFQ8glcksD2Gk5ofe9uG7YtLYwOgI+q6MqObTN7t3uYex5U4LfU5anXdQNGMjy4ybYb0zWukCqrn+7PinW8GC2tnN87hGo0HuyPb5CSGO6cvIeAo+xXhmKKVF4b/y+6HY+Mx4fXrVAkcY15hh18QTtImwzXpdGBWgl3O402WHn2xP4lkQTdvQ3brCkT8pTBxU0w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vCqygfnts3sgK1yFFo/egzjFycWxa+hOkNcZaf/i1oo=;
- b=WGf8uEs3RhxsMl51pXJvOzjYPCTecg0d81Zw53xlPo+LBvSQKDjctjhILGb0wEYleZkuWiAr/9O/aj5B4L+yGfZdjv6UlYPylh2RtF5rixBynOjbcatZH788WSsaR9ERHYW0/ymbnaUCzMH0SdO4ih06culJ7Ife99/DNZ6MyHhOP0aL6XABIOzv7xG1jzcZ+cV//GysHRqb+kCF4jkEIq8WpEhC3QQF72bFQS+dyxj1dnmCRY89bm2MFfgSLRKssa9fAuLtyS1VHeuZui9FidXQwZ+PnjCTg+JKQibM2usZnFeu/yZRHjvwcbgUK9LXwBLlorKXdteOHMLOYbgn2A==
+ bh=qXpk3f7GEj/8kB6yyCCTcK2F26QP3Dy1CslqVe3tmys=;
+ b=YXsISaOYI5QXALJ17ehMFNccJGeEsJwdyrLw4wKisNBRd/5UNVftYb1tkNndr0YaMt0tQupJmsCfRvjgKCACZ7QDVuusi7qZ4iM2gPIdUY1Y7reBn8fhQzoBWmBkOkjT43Wdtw5bRgSH9Pfxk+7c4zgHya4/iql0PAS00Eg4ELhzyJKshF1nm7eG6FQQXBLzjf2vYgNMFxZ9EGwCSv3TFtlBpgQRF1CJbG4+8VhLLvaIZH9up1cXxIk+hncxRlYQa/GNy7oUBdrv+Ms38jd4UyhCHjNLGg2VIKMm17uLFKOKXyBz6x0AIAIQ5BgR0Yy1p0ESTr42FYes8zRqFqegqA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vCqygfnts3sgK1yFFo/egzjFycWxa+hOkNcZaf/i1oo=;
- b=qRKSziUuokVWUI145x0mo92jZpyCjjLRjnXGq7fmfe+hRIZnD5vutiqZdA2dBXSvqRIP1oz7hAnvDeJK3UnaX6Ba8aAWmRcmD9yLFKA2heIM45uMmMJT347m1ro5zizWV3eE+nCDlxd6AryK+vdu1AAZJeOR4BJkHJgoWGcmtvg=
+ bh=qXpk3f7GEj/8kB6yyCCTcK2F26QP3Dy1CslqVe3tmys=;
+ b=JAGkt08CZV1etjEllS+s0EfwmpWnevIuvU2t4x/JRr/fUrRlx263H8xdpTFXNBqe+Yoy1TmXaErXteOfJQaQqUBzizoaXxvy8IUigLGwBmN/hus2vaJWSNar7if7/IXwTCYwn0oUKYsT/ubs6361SGLMAS0Qm6gda5WzwB9htF0=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=qiangqing.zhang@nxp.com; 
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
  DB7PR04MB4281.eurprd04.prod.outlook.com (52.135.128.139) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.21; Wed, 26 Feb 2020 07:37:29 +0000
+ 15.20.2750.21; Wed, 26 Feb 2020 07:37:31 +0000
 Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::5cb4:81c8:1618:5ca]) by DB7PR04MB4618.eurprd04.prod.outlook.com
  ([fe80::5cb4:81c8:1618:5ca%7]) with mapi id 15.20.2750.021; Wed, 26 Feb 2020
- 07:37:29 +0000
+ 07:37:31 +0000
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: john.garry@huawei.com,
 	will@kernel.org,
 	mark.rutland@arm.com
-Subject: [PATCH RFC 1/3] perf/imx_ddr: Add system PMU identifier for userspace
-Date: Wed, 26 Feb 2020 15:34:31 +0800
-Message-Id: <20200226073433.5834-2-qiangqing.zhang@nxp.com>
+Subject: [PATCH RFC 2/3] bindings/perf/imx-ddr: update compatible string
+Date: Wed, 26 Feb 2020 15:34:32 +0800
+Message-Id: <20200226073433.5834-3-qiangqing.zhang@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200226073433.5834-1-qiangqing.zhang@nxp.com>
 References: <20200226073433.5834-1-qiangqing.zhang@nxp.com>
@@ -66,19 +66,19 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost.localdomain (119.31.174.71) by
  SG2PR06CA0133.apcprd06.prod.outlook.com (2603:1096:1:1f::11) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2772.14 via Frontend Transport; Wed, 26 Feb 2020 07:37:27 +0000
+ 15.20.2772.14 via Frontend Transport; Wed, 26 Feb 2020 07:37:29 +0000
 X-Mailer: git-send-email 2.17.1
 X-Originating-IP: [119.31.174.71]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 68682f5d-8dc9-41c4-c30f-08d7ba8ebb71
+X-MS-Office365-Filtering-Correlation-Id: 93481fda-a505-45cc-1787-08d7ba8ebcc3
 X-MS-TrafficTypeDiagnostic: DB7PR04MB4281:|DB7PR04MB4281:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB7PR04MB4281BAEA11C5AFEB79D8EA3EE6EA0@DB7PR04MB4281.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:2512;
+X-Microsoft-Antispam-PRVS: <DB7PR04MB42810705CEA41C1FC6CAF6CFE6EA0@DB7PR04MB4281.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:473;
 X-Forefront-PRVS: 0325F6C77B
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(136003)(376002)(366004)(346002)(189003)(199004)(186003)(66476007)(16526019)(956004)(86362001)(1076003)(6666004)(6512007)(8936002)(66946007)(4326008)(5660300002)(36756003)(66556008)(81166006)(6486002)(26005)(8676002)(316002)(52116002)(2906002)(81156014)(2616005)(6506007)(478600001)(69590400006);
+ SFS:(10009020)(4636009)(39860400002)(396003)(136003)(376002)(366004)(346002)(189003)(199004)(186003)(66476007)(16526019)(956004)(86362001)(1076003)(6666004)(6512007)(8936002)(66946007)(4326008)(5660300002)(36756003)(66556008)(81166006)(6486002)(26005)(8676002)(15650500001)(316002)(52116002)(2906002)(81156014)(2616005)(6506007)(478600001)(4744005)(69590400006);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4281;
  H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -86,19 +86,20 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: HG5VzL43gkz4iT1onN4rJEj93FtKn8QT/RrDOv1uNHOB98BGxmqEfdbtfqs705sNpFKKde/trydbgWaqS920hL49ytJvSsPX5RiLaVhu1a2SRrOF0gQ/klQad3vhH0w/81Out07Vfq9u9YNPC5xBSdV0vAzxR3np+aI70qigHxiYYJeDWioH9n2n92BtqYBMho72wwgxIfjrzyk53RJ1ULKChQTTgKaQYSwJiMfczApes1TlOHlJX+yEQrW4wxHqm2Cc46OEjcWbipORmILUQ4LhDY+xNut+2ViyRpvUfC6UyZZvNIVCEvBXcwhz4zFXhNpXWiW/uBXAggbGjTDV8YVjX2Ivg/kxOCN6eoHQWEvuVCn3n235PhRoaTWWECpC+VhUgZGA1tlpiQwoLmFps3LhVuShQ6IZxgMFhWV+bl4xejTopxLDOX0FhIuwaLfvFsvLuKUgkLbwITsoUiC7dbqnJLk++uy2VKDMDp5yPGx05Fnvlv1WqV41QXMtPG8rcYhS/q/cYoQT99C6Kbj4c0pttEl1Dh1A7tUnRJdGgSY=
-X-MS-Exchange-AntiSpam-MessageData: KT91vDFigVZlTfttwv3V8ZFzn/0ll3hil8G2Ssn2/SHVS9/EXAnIvFPldx773e9GRFuls1zWTKiW8qCDarchi4dY2/ZJMkrDnMv/cqSeVJtUYDBx0zhkJh2rokE152b+P2minEHVUlj7MdZE1xyOng==
+X-Microsoft-Antispam-Message-Info: 440YnMt0FZ0cRpw0U7InJYY7d6xgw8LFg5nT9idWA9BnYBOfN2e1W2vdVQR7KO1o2g2U0/F04jupNKfEpspn4Pk8BulBoGlcT2d57cFr0JF7nw824zY7KiW4lglSskkSexLS6OvjiO+9X+H2MUjEuyMjA6PLyohfe05otWdof/hUHM8yn3d5DHDXIMCC6iyQePqExtkJFeHa9yebA4sSXbNwuKT26KG/rDWiKujqJrfDMb22O83EBOXxqjItMH3I2VowY1JtzdxgCTcsarO901dxG1IT9c6ADOusPNFKPQ2ugGFsuIT5Il+vKqFSwrl+SUjQhdm9S4rUEvP4SmFdudm95tRhbP+LfZIwOX+xWFDDFALuQlviZm9oWf4P9xL4IvE/VfSCgfEc+g1wH5SN8yD5ZEbFoJ2WZljAKcZAiNEdy6hVSmHSrf8MxhOzqkxwcX+OiH9WxhWeNICvM1Nctaz6JxVxXh6eEuttSCJG3qlBqwDxDtcFLAXLkfk5xQ0j5l8iVAXyVhLJygdpnQimEAdREh6xTw9WarZF2xlcL7s=
+X-MS-Exchange-AntiSpam-MessageData: xsncdxte1KPbjO5pRRj69ESbcM5Gd7QviN+p2sNX6H3aqEtq9+vGHxbuteozilLlvIdTfdREYvRwILiioph9f1O1yZvca0aSF3vD8SdUNevKSlOF9GQBuSA/GEd4gfo4ICq9W7/lKOTKTf+JL0mJmw==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 68682f5d-8dc9-41c4-c30f-08d7ba8ebb71
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2020 07:37:29.1050 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 93481fda-a505-45cc-1787-08d7ba8ebcc3
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 Feb 2020 07:37:31.4507 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: UgSgPP46wOajZ4j06UMJLh9Cl7W+r9YXLYZ7316IDQJKJfjfy2KRCGgd4Cg4cS1GFNAwWqDaWs61D+uBy9Y6Mg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: nlz3kPDGkX1R1cFzKY0+8j1dCXRJyO1xbAllz4tmO2n2PJ+9KaJFFfLKS9Q6hAQaEu2yto7H5EuErs5hqtb5bQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4281
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200225_233733_463417_939DDBB2 
-X-CRM114-Status: GOOD (  12.59  )
+X-CRM114-CacheID: sfid-20200225_233735_240802_A34E0828 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -133,97 +134,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DDR Perf for i.MX8 is a system PMU whose axi id would different from
-SoC to SoC. Need expose system PMU identifier for userspace which refer
-to /sys/bus/event_source/devices/<PMU DEVICE>/identifier.
+Update compatible string according to driver change.`
 
 Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
- drivers/perf/fsl_imx8_ddr_perf.c | 45 +++++++++++++++++++++++++++++---
- 1 file changed, 42 insertions(+), 3 deletions(-)
+ Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-index 95dca2cb5265..88addbffbbd0 100644
---- a/drivers/perf/fsl_imx8_ddr_perf.c
-+++ b/drivers/perf/fsl_imx8_ddr_perf.c
-@@ -50,21 +50,38 @@ static DEFINE_IDA(ddr_ida);
+diff --git a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
+index 7822a806ea0a..b27a1d4fec78 100644
+--- a/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
++++ b/Documentation/devicetree/bindings/perf/fsl-imx-ddr.txt
+@@ -4,7 +4,9 @@ Required properties:
  
- struct fsl_ddr_devtype_data {
- 	unsigned int quirks;    /* quirks needed for different DDR Perf core */
-+	const char *identifier;	/* system PMU identifier for userspace */
- };
+ - compatible: should be one of:
+ 	"fsl,imx8-ddr-pmu"
+-	"fsl,imx8m-ddr-pmu"
++	"fsl,imx8mq-ddr-pmu"
++	"fsl,imx8mm-ddr-pmu"
++	"fsl,imx8mn-ddr-pmu"
+ 	"fsl,imx8mp-ddr-pmu"
  
--static const struct fsl_ddr_devtype_data imx8_devtype_data;
-+static const struct fsl_ddr_devtype_data imx8_devtype_data = {
-+	.identifier = "i.MX8",
-+};
-+
-+static const struct fsl_ddr_devtype_data imx8mq_devtype_data = {
-+	.quirks = DDR_CAP_AXI_ID_FILTER,
-+	.identifier = "i.MX8MQ",
-+};
-+
-+static const struct fsl_ddr_devtype_data imx8mm_devtype_data = {
-+	.quirks = DDR_CAP_AXI_ID_FILTER,
-+	.identifier = "i.MX8MM",
-+};
- 
--static const struct fsl_ddr_devtype_data imx8m_devtype_data = {
-+static const struct fsl_ddr_devtype_data imx8mn_devtype_data = {
- 	.quirks = DDR_CAP_AXI_ID_FILTER,
-+	.identifier = "i.MX8MN",
- };
- 
- static const struct fsl_ddr_devtype_data imx8mp_devtype_data = {
- 	.quirks = DDR_CAP_AXI_ID_FILTER_ENHANCED,
-+	.identifier = "i.MX8MP",
- };
- 
- static const struct of_device_id imx_ddr_pmu_dt_ids[] = {
- 	{ .compatible = "fsl,imx8-ddr-pmu", .data = &imx8_devtype_data},
--	{ .compatible = "fsl,imx8m-ddr-pmu", .data = &imx8m_devtype_data},
-+	{ .compatible = "fsl,imx8mq-ddr-pmu", .data = &imx8mq_devtype_data},
-+	{ .compatible = "fsl,imx8mm-ddr-pmu", .data = &imx8mm_devtype_data},
-+	{ .compatible = "fsl,imx8mn-ddr-pmu", .data = &imx8mn_devtype_data},
- 	{ .compatible = "fsl,imx8mp-ddr-pmu", .data = &imx8mp_devtype_data},
- 	{ /* sentinel */ }
- };
-@@ -84,6 +101,27 @@ struct ddr_pmu {
- 	int id;
- };
- 
-+static ssize_t ddr_perf_identifier_show(struct device *dev,
-+					struct device_attribute *attr,
-+					char *page)
-+{
-+	struct ddr_pmu *pmu = dev_get_drvdata(dev);
-+
-+	return sprintf(page, "%s\n", pmu->devtype_data->identifier);
-+}
-+
-+static struct device_attribute ddr_perf_identifier_attr =
-+	__ATTR(identifier, 0444, ddr_perf_identifier_show, NULL);
-+
-+static struct attribute *ddr_perf_identifier_attrs[] = {
-+	&ddr_perf_identifier_attr.attr,
-+	NULL,
-+};
-+
-+static struct attribute_group ddr_perf_identifier_attr_group = {
-+	.attrs = ddr_perf_identifier_attrs,
-+};
-+
- enum ddr_perf_filter_capabilities {
- 	PERF_CAP_AXI_ID_FILTER = 0,
- 	PERF_CAP_AXI_ID_FILTER_ENHANCED,
-@@ -237,6 +275,7 @@ static const struct attribute_group *attr_groups[] = {
- 	&ddr_perf_format_attr_group,
- 	&ddr_perf_cpumask_attr_group,
- 	&ddr_perf_filter_cap_attr_group,
-+	&ddr_perf_identifier_attr_group,
- 	NULL,
- };
- 
+ - reg: physical address and size
 -- 
 2.17.1
 
