@@ -2,82 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15599170692
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 18:50:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5905617068F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 18:49:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y3oiTjfxeoGrWLS6ARLdfFxKklYg4kUNEE2+KEuwaww=; b=dsW4Lf/wQIuN8Y
-	BlI9YujtEgme9s88ywPK+GiwPXJTK7W/OpBZHaawqbI3qi2VoiXUHCYhUDJ3RRapCDZQ6sRFJuwo2
-	1OF4l9pxZbUqiNfxsgkEWjPO8BPkvKYV8oMpEH/L8XWVPSxo0UdLzl4JdZF8j9NnOhT666/MA87S1
-	pdsSbcFLL41K3av3ifDpHxSvyIhMJYC2SEkcqA4iB2JHW6YauciJDLuwYkcnpT4MVhm/xQE97QCiw
-	XG8M9leAlJg2VqUOuRl+2ZAoSOx3nV/QCEarBIiPGCJdFfkhXUVATI6bVjNIY84yFlc/gK/RPtGkw
-	Uk5RHYyW06M8OJwTeN2A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YO1HbVaKOc3BNA8QkiI2Rg9uXOUaaMSDiN+xBLoq+fo=; b=iXnDyqWHqQd/Kq
+	H7eddEFVS6YVXu/V9XehheL/mlrqtpj00jOCblUKcIrLxWY8foMJT9Rl2WScgXpAeC1v0+gfp3jrZ
+	4waAKy2DjtYxX+sYtvSY+NJKcEeda6Vu/I6GIYc0o4xqA3Nm1MBnHK3tcXtFopO9msZ5qRDgevQhT
+	/4GaxBx0nyx1EcLaif6zYEjhbgE4xjh1Kodp/emFypqvwbD8P/0wrEMLXNJNwwvklU0gXLfbmF8fd
+	MVWjKrVKo1T8EldVuOzg/QOpcKbXkkrIhHUURMPfp6r/q9EtLa65G7N31ijryi9zDuRk7Ov5XxgO8
+	JAznKcDAv5adOymh4xvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j70oo-0008Uv-Pb; Wed, 26 Feb 2020 17:49:58 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j70oV-0008M6-DR
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 17:49:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=x4Vj5piDPv46jmto0S7kmzvMB3oeWgg0MLt8q+7J4pg=; b=X6G/6ilIcCd1TgGGgK+EjpM9H
- YeSpKBMXuBd0P6L1c1In2MmwfFSlk+y3/LR9g4MWSKAtjqupNwvexTcrfOa2i7G4KOZFg+LqFa7mL
- Uyb7HqBUxvXggFxapouOssHYL+sac+84WVWKFEZNBCB3E7GTDP2FP5rZzkvrE2TvSQPHahtsZCOyz
- /93Wf6cSUY/ScvGy4ad5pg5ZnqX12cPJy858sASWPVsPqWqVZDWWtVozIxc33kYefFs9QsSR896Hz
- p/FGW7P/75xIZM5YMNFNDGNVxgich89QGMaLlXdZxt9PWMwhh9M3VIM2o2jvNnJC8DRj7uIz1Ts/m
- 4dfpdcGJA==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:53116)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j70o4-0000ZM-Bz; Wed, 26 Feb 2020 17:49:12 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j70nx-0000A1-E1; Wed, 26 Feb 2020 17:49:05 +0000
-Date: Wed, 26 Feb 2020 17:49:05 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH] ARM: boot: Fix ATAGs with appended DTB
-Message-ID: <20200226174905.GE25745@shell.armlinux.org.uk>
-References: <CGME20200225144815eucas1p1229ceb0d017b46cbbe2409639a7c1f83@eucas1p1.samsung.com>
- <20200225144749.19815-1-geert+renesas@glider.be>
- <e249c123-8d00-4aa3-34b8-f82d52428966@samsung.com>
+	id 1j70oZ-0008MV-Sy; Wed, 26 Feb 2020 17:49:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j70oO-0008Li-Ah
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 17:49:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 475F130E;
+ Wed, 26 Feb 2020 09:49:31 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BFC373F881;
+ Wed, 26 Feb 2020 09:49:29 -0800 (PST)
+Subject: Re: [PATCH 2/3] EDAC: synopsys: Reorganizing the output message for
+ CE/UE
+To: Sherry Sun <sherry.sun@nxp.com>
+References: <1582537357-10339-1-git-send-email-sherry.sun@nxp.com>
+ <1582537357-10339-3-git-send-email-sherry.sun@nxp.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <39c63f4c-2e39-4478-1de1-b0b564a7f4e1@arm.com>
+Date: Wed, 26 Feb 2020 17:49:28 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e249c123-8d00-4aa3-34b8-f82d52428966@samsung.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1582537357-10339-3-git-send-email-sherry.sun@nxp.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_094939_476399_5877F37A 
-X-CRM114-Status: GOOD (  12.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200226_094932_457579_6BC76563 
+X-CRM114-Status: GOOD (  15.09  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,42 +65,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- linux-kernel@vger.kernel.org,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: tony.luck@intel.com, frank.li@nxp.com, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, rrichter@marvell.com, bp@alien8.de,
+ linux-imx@nxp.com, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-edac@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 07:35:14AM +0100, Marek Szyprowski wrote:
-> Hi Geert,
+Hi Sherry,
+
+On 24/02/2020 09:42, Sherry Sun wrote:
+> The origin way which call sprintf() function two or three times to
+
+(original? 'The current way' may be better)
+
+
+> output message for CE/UE is incorrect, because it won't output all the
+> message needed, instead it will only output the last message in
+> sprintf().
+
+Nice!
+
+
+> So the simplest and most effective way to fix this problem
+> is reorganizing all the output message needed for CE/UE into one
+> sprintf() function.
+
+This is a bug, but its in the middle of a series doing some cleanup, meaning the
+maintainer can't easily pick it up in isolation. Could you post it separately?
+
+'Reorganize' in the subject makes this sound like cleanup. Would "EDAC: synopsys: Fix back
+to back snprintf() messages for CE/UE" be better?
+
+
+Please add:
+Fixes: b500b4a029d57 ("EDAC, synopsys: Add ECC support for ZynqMP DDR controller")
+
+in the signed-off-by area so that stable trees pick this up.
+
+and for what its worth:
+Reviewed-by: James Morse <james.morse@arm.com>
+
+
+Thanks!
+
+James
+
+
+
+> diff --git a/drivers/edac/synopsys_edac.c b/drivers/edac/synopsys_edac.c
+> index 7046b8929522..ef7e907c7956 100644
+> --- a/drivers/edac/synopsys_edac.c
+> +++ b/drivers/edac/synopsys_edac.c
+> @@ -485,20 +485,14 @@ static void handle_error(struct mem_ctl_info *mci, struct synps_ecc_status *p)
+>  		pinf = &p->ceinfo;
+>  		if (!priv->p_data->quirks) {
+>  			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "DDR ECC error type:%s Row %d Bank %d Col %d ",
+> -				  "CE", pinf->row, pinf->bank, pinf->col);
+> -			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "Bit Position: %d Data: 0x%08x\n",
+> +				 "DDR ECC error type:%s Row %d Bank %d Col %d Bit Position: %d Data: 0x%08x",
+> +				 "CE", pinf->row, pinf->bank, pinf->col,
+>  				 pinf->bitpos, pinf->data);
+>  		} else {
+>  			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "DDR ECC error type:%s Row %d Bank %d ",
+> -				  "CE", pinf->row, pinf->bank);
+> -			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "BankGroup Number %d Block Number %d ",
+> -				 pinf->bankgrpnr, pinf->blknr);
+> -			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "Bit Position: %d Data: 0x%08x\n",
+> +				 "DDR ECC error type:%s Row %d Bank %d BankGroup Number %d Block Number %d Bit Position: %d Data: 0x%08x",
+> +				 "CE", pinf->row, pinf->bank,
+> +				 pinf->bankgrpnr, pinf->blknr,
+>  				 pinf->bitpos, pinf->data);
+>  		}
+>  
+> @@ -515,10 +509,8 @@ static void handle_error(struct mem_ctl_info *mci, struct synps_ecc_status *p)
+>  				"UE", pinf->row, pinf->bank, pinf->col);
+>  		} else {
+>  			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "DDR ECC error type :%s Row %d Bank %d ",
+> -				 "UE", pinf->row, pinf->bank);
+> -			snprintf(priv->message, SYNPS_EDAC_MSG_SIZE,
+> -				 "BankGroup Number %d Block Number %d",
+> +				 "DDR ECC error type :%s Row %d Bank %d BankGroup Number %d Block Number %d",
+> +				 "UE", pinf->row, pinf->bank,
+>  				 pinf->bankgrpnr, pinf->blknr);
+>  		}
+>  
 > 
-> On 25.02.2020 15:47, Geert Uytterhoeven wrote:
-> > At early boot, register r8 may contain an ATAGs or DTB pointer.
-> > When an appended DTB is found, its address is stored in r8, for
-> > extraction of the RAM base address later.
-> >
-> > However, if r8 contained an ATAGs pointer before, that pointer will be
-> > lost, and the provided ATAGs is no longer folded into the provided DTB.
-> >
-> > Fix this by leaving r8 untouched.
-> >
-> > Fixes: 137e522593918be2 ("ARM: 8960/1: boot: Obtain start of physical memory from DTB")
-> > Reported-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
-The original commit hasn't been submitted, so it can be fixed before it
-hits mainline if you want.  Let me know what you want to do.  Thanks.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
