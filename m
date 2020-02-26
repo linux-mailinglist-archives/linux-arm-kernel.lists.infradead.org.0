@@ -2,76 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 486DF17025E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:28:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86CAF170263
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 16:29:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K6FFCbwqkdiyWENQ/SRI30u3aZ/f0pCKH0up6yf1YT0=; b=J72x4TOsIhipgH
-	RCrten05FOc9PdmDdDlMv7NBxrz9qJo5wHEEx9YonWbEJ0vR/iOIZg+xg1MJVCqkxcgIcYOGUyZFB
-	xE6cC9lflZOmqYSElN2QTagjH2bDL4R65BhLWG2P1d0u3NZEY4dOSvZZbjZTI0JI0j7XJfyljlisy
-	KZnm8rgzz4Rr1F/wol3lGPYY3s4C4GbmsTnYVWADILao6rOThaCCEcp3aawPhqXnTvwhBinad+7Ou
-	obYso2lYXHeXxY8Ijaihl8u0B+7YKJkZBiKWp7snXvSFVQ6vt+zgTfsnhFsrJboAUCbtRcF9LAtcc
-	ynVjYA0chCExVA3iAbjA==;
+	List-Owner; bh=Nw+80K2gzgwg02cEIVRMc8oZFHJYsyzLgA10eIZ0eIQ=; b=OcBxkUEjNMsFKg
+	nGJc+Xie3bfa+rqNO1nTwIL36OjCrDr5o+XaCgr/Euc77DtqKeWivJAo1tdUYvPjcVzWZPlPvEBh1
+	u5jVgMqr+SQeEnICkryqoGHnDTFsrInU7LEC2bTAsjgU1a/DAtvVr11NXbN2bx37lfIU6DRg3HVAo
+	Uga9xa9GgCz3CZw6yN7klHD96JosxCeOJ/vswI8wxA8Mt8lWInRmBCJCx9avpGXK+PWgHmB5MCH3g
+	QQASuOhi040vSqoOTRilNHdC++TxcXQZm+XCrOJEdaqelOlOmI32r2+VbfOMj8yl1oE9WqZ2ILaeQ
+	jRVZBbUNBalA2AjqAT1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6ybs-0003TV-TS; Wed, 26 Feb 2020 15:28:28 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1j6ycK-0003yT-MO; Wed, 26 Feb 2020 15:28:56 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6ybg-0003T4-LM
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:28:17 +0000
-Received: by mail-ot1-f65.google.com with SMTP id h9so3256673otj.11
+ id 1j6yc7-0003wH-34
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 15:28:44 +0000
+Received: by mail-oi1-f194.google.com with SMTP id q81so3443580oig.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 07:28:16 -0800 (PST)
+ Wed, 26 Feb 2020 07:28:40 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=a9rZZe0L1NxPawlPYOzTIFGXo7NCP4X/kbRAjcuDymA=;
- b=TBP0OH8TLWy8+HBJrn+2Ci6mQVjKfg4LGMHsiJFoQx80cya9NDf6QKoeb6vkfZFEpK
- UtZVL/8J+yUZJ6UUf5+u2LcAuBhxNC0w8TzmqRp/cowGLaubQPwmN8jR6+a89Muf0f5T
- 1+rJ9TYDSty9FCT/KDGm4KDeZdZTQPAu4ArpwufS863ZqWZbB47QbkwyiZKSrG3XvHMY
- CvecgDQYaPz4CCJFYDI12ibZafJ2NGh77rVv+3/F227MwOBAu0Ht0Rfmut4ROUqwNDfR
- nOvFhjdtUk8ND6ihZ0A47YFZZL+W/aQAB2FON77c7bFuR77OsqZmFpJGw3D1WH98bNg3
- ss0Q==
-X-Gm-Message-State: APjAAAXUmdCymjdrDMnNuVz3kcoQWNl+lMfjSuyv+a846UFpeJtMdc0W
- vB36KGpfctEdmXhoNhBtwg==
-X-Google-Smtp-Source: APXvYqwZ3XlmubdKEg9c/y0IXymM4dIMk5vVK9Zt1kLDjlGgX7KXKA9TIZ8VZho3mGt96KPTVpHDLg==
-X-Received: by 2002:a05:6830:1317:: with SMTP id
- p23mr3519055otq.3.1582730895795; 
- Wed, 26 Feb 2020 07:28:15 -0800 (PST)
+ bh=tlkjZTSr9fdFqEh+9gk6N9q+6soYx8xTnJAJEU7FsTI=;
+ b=inlVntBZFsebppUT450SEflVs55ABqdCI2k2zCgEly/nvEkDFhiBFN67DGZbwkVjOU
+ altUwxHpJ7GDvXM//T+idPRNqmLMIZFk1HnbuTUZ6k01LqXmo9ZWyMuFdMdZN3ShwFAj
+ cI+4EMqFufKCEN6d9laZm3u1oSlPayta3LGjDE95DhAePHzaSqox/9/xFmFl05FvtNuP
+ 7LZHXXCdbrbZ1SdURSGJU67daC0gcuOjOY0FSvV497x9ldONGd+ytI2TB+oQBX4CKjif
+ zI4qwGR97s8URdlSlXMfHCU511SBkgTPqlADdEDO5KcK3v5GDA+GyBKstkcO8GHWMmx2
+ f3fg==
+X-Gm-Message-State: APjAAAV27HkaZmi1sG0GkwbJL/f4Wuem8as/BFIRv1QJHTEYo/WWHM7/
+ Xg2pgg+un1mbdkKkSTXzNg==
+X-Google-Smtp-Source: APXvYqyeVeFdUuQsfcVGuraxTUJZVUbXtdycuNGtDLE13wPX0iiriPR0yM5gO+qQysu9jWjAdh5Y7Q==
+X-Received: by 2002:aca:cf12:: with SMTP id f18mr3661259oig.81.1582730919986; 
+ Wed, 26 Feb 2020 07:28:39 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id i7sm907560oib.42.2020.02.26.07.28.14
+ by smtp.gmail.com with ESMTPSA id j13sm907194oii.14.2020.02.26.07.28.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 26 Feb 2020 07:28:15 -0800 (PST)
-Received: (nullmailer pid 3059 invoked by uid 1000);
- Wed, 26 Feb 2020 15:28:14 -0000
-Date: Wed, 26 Feb 2020 09:28:14 -0600
+ Wed, 26 Feb 2020 07:28:39 -0800 (PST)
+Received: (nullmailer pid 3981 invoked by uid 1000);
+ Wed, 26 Feb 2020 15:28:38 -0000
+Date: Wed, 26 Feb 2020 09:28:38 -0600
 From: Rob Herring <robh@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Subject: Re: [PATCH 03/10] dt-bindings: clock: Convert marvell,mmp2-clock to
- json-schema
-Message-ID: <20200226152814.GA2965@bogus>
+Subject: Re: [PATCH 06/10] dt-bindings: clock: Add MMP3 compatible string
+Message-ID: <20200226152838.GA3910@bogus>
 References: <20200219073353.184336-1-lkundrak@v3.sk>
- <20200219073353.184336-4-lkundrak@v3.sk>
+ <20200219073353.184336-7-lkundrak@v3.sk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200219073353.184336-4-lkundrak@v3.sk>
+In-Reply-To: <20200219073353.184336-7-lkundrak@v3.sk>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_072816_698763_0A0EEA6B 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200226_072843_130303_800C315D 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
@@ -80,9 +78,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  mail domains are different
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -105,22 +102,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 19 Feb 2020 08:33:46 +0100, Lubomir Rintel wrote:
+On Wed, 19 Feb 2020 08:33:49 +0100, Lubomir Rintel wrote:
 > 
-> Convert the fixed-factor-clock binding to DT schema format using
-> json-schema.
-> 
-> While at that, fix a couple of small errors: make the file base name
-> match the compatible string, add an example and document the reg-names
-> property.
+> This binding describes the PMUs that are found on MMP3 as well. Add the
+> compatible strings and adjust the description.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
->  .../bindings/clock/marvell,mmp2-clock.yaml    | 62 +++++++++++++++++++
->  .../bindings/clock/marvell,mmp2.txt           | 21 -------
->  2 files changed, 62 insertions(+), 21 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
->  delete mode 100644 Documentation/devicetree/bindings/clock/marvell,mmp2.txt
+>  .../devicetree/bindings/clock/marvell,mmp2-clock.yaml  | 10 ++++++----
+>  1 file changed, 6 insertions(+), 4 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
