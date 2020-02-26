@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A21CB17071D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:08:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1576117071E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 19:08:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LsBaleCQ1uL/6Iy7Q84GbizHGRSDnWDHbDZxowlPYJQ=; b=TwnP0KCOYxbNag
-	wi4BVD6gbeR/N2tY7q97vVf91FRNVdKW+NaQoYqjGjTzoYmPGgca2eC5Jx92hGJEtvRh3RQwYiR5/
-	dIV8l2ibXZUA5lajILofna0fFJdao3pGRzDwphOqG/pqNDkR646jjd5dj/IKlLjMvkQZ+CZmoOFA8
-	gdwzFriVXuZ244EabyrGZsrESBPXLLT7fZ477NJPfhGG9AV9Ii/JEiouz4HQ+EEpzS00x4ijob0LW
-	59X5ABtX6NZfa8VaniU3bOkPrsFjW3fIayNPUGljag/4EKHQgDcOrgrZMexyKE6muWpZ9ZFpadD76
-	9xcP+DKbe21lwtYb4Ljg==;
+	List-Owner; bh=ltTj08FUxkIyhBM2JZhGvSnfdBA3kpKoBO+LrXrQBl8=; b=g8MKAe/idnc+5I
+	qVEtW0dBZcnZqmd5ErfQGLxBa63g5pU2u6cxTID30IaNEu7lneYZguOYwa8iu8ucKqADSFoilEunK
+	V3z3zTKdGud0nxo78T+SvivjY+C2hdonXrtoCHNrfn25SNslQazjPMJlRUOw6Z2s+Tzv70zehaKPV
+	GMfJFQ+vPF6+j+9+JCYg3g64E5tSrUNhWs96oC6wClupPg3un7PoAGZoDWzdSaSe/ds1QgogS+UnX
+	s76OASDFBU3VucdKMqKIuX92yhDuzRDl1DUIDkIMzWh0IZNPCnjZNtJj/njY93UZRtvZJIfz7jKYf
+	4OZ2ebFkMWIt6AO/s4Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j716Y-0000sD-5v; Wed, 26 Feb 2020 18:08:18 +0000
+	id 1j716l-00016a-CX; Wed, 26 Feb 2020 18:08:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j714D-0007TS-Jm
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:05:55 +0000
+ id 1j714C-0007SL-KU
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 18:05:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7B84331B;
- Wed, 26 Feb 2020 10:05:49 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C56C30E;
+ Wed, 26 Feb 2020 10:05:51 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0DE473F881;
- Wed, 26 Feb 2020 10:05:47 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B27883F881;
+ Wed, 26 Feb 2020 10:05:49 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 08/19] arm64: Tags-aware memcmp_pages() implementation
-Date: Wed, 26 Feb 2020 18:05:15 +0000
-Message-Id: <20200226180526.3272848-9-catalin.marinas@arm.com>
+Subject: [PATCH v2 09/19] arm64: mte: Add specific SIGSEGV codes
+Date: Wed, 26 Feb 2020 18:05:16 +0000
+Message-Id: <20200226180526.3272848-10-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200226180526.3272848-1-catalin.marinas@arm.com>
 References: <20200226180526.3272848-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_100553_757705_16F86D1A 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20200226_100553_067453_DEF9F600 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,173 +64,55 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
  Andrey Konovalov <andreyknvl@google.com>,
  Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>
+ linux-mm@kvack.org, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the Memory Tagging Extension is enabled, two pages are identical
-only if both their data and tags are identical.
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
-Make the generic memcmp_pages() a __weak function and add an
-arm64-specific implementation which takes care of the tags comparison.
+Add MTE-specific SIGSEGV codes to siginfo.h.
 
-Co-developed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Note that the for MTE we are reusing the same SPARC ADI codes because
+the two functionalities are similar and they cannot coexist on the same
+system.
+
+Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Eric W. Biederman <ebiederm@xmission.com>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+[catalin.marinas@arm.com: renamed precise/imprecise to sync/async]
+[catalin.marinas@arm.com: dropped #ifdef __aarch64__, renumbered]
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/mte.h | 11 +++++++++
- arch/arm64/lib/Makefile      |  2 ++
- arch/arm64/lib/mte.S         | 46 ++++++++++++++++++++++++++++++++++++
- arch/arm64/mm/Makefile       |  1 +
- arch/arm64/mm/cmppages.c     | 26 ++++++++++++++++++++
- mm/util.c                    |  2 +-
- 6 files changed, 87 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/include/asm/mte.h
- create mode 100644 arch/arm64/lib/mte.S
- create mode 100644 arch/arm64/mm/cmppages.c
 
-diff --git a/arch/arm64/include/asm/mte.h b/arch/arm64/include/asm/mte.h
-new file mode 100644
-index 000000000000..64e814273659
---- /dev/null
-+++ b/arch/arm64/include/asm/mte.h
-@@ -0,0 +1,11 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ASM_MTE_H
-+#define __ASM_MTE_H
-+
-+#ifndef __ASSEMBLY__
-+
-+/* Memory Tagging API */
-+int mte_memcmp_pages(const void *page1_addr, const void *page2_addr);
-+
-+#endif /* __ASSEMBLY__ */
-+#endif /* __ASM_MTE_H  */
-diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
-index 2fc253466dbf..d31e1169d9b8 100644
---- a/arch/arm64/lib/Makefile
-+++ b/arch/arm64/lib/Makefile
-@@ -16,3 +16,5 @@ lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
- obj-$(CONFIG_CRC32) += crc32.o
+Notes:
+    v2:
+    - Dropped the #ifdef __aarch64__.
+    - Renumbered the SEGV_MTE* values to avoid clash with ADI.
+
+ include/uapi/asm-generic/siginfo.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/include/uapi/asm-generic/siginfo.h b/include/uapi/asm-generic/siginfo.h
+index cb3d6c267181..7aacf9389010 100644
+--- a/include/uapi/asm-generic/siginfo.h
++++ b/include/uapi/asm-generic/siginfo.h
+@@ -229,7 +229,9 @@ typedef struct siginfo {
+ #define SEGV_ACCADI	5	/* ADI not enabled for mapped object */
+ #define SEGV_ADIDERR	6	/* Disrupting MCD error */
+ #define SEGV_ADIPERR	7	/* Precise MCD exception */
+-#define NSIGSEGV	7
++#define SEGV_MTEAERR	8	/* Asynchronous ARM MTE error */
++#define SEGV_MTESERR	9	/* Synchronous ARM MTE exception */
++#define NSIGSEGV	9
  
- obj-$(CONFIG_FUNCTION_ERROR_INJECTION) += error-inject.o
-+
-+obj-$(CONFIG_ARM64_MTE) += mte.o
-diff --git a/arch/arm64/lib/mte.S b/arch/arm64/lib/mte.S
-new file mode 100644
-index 000000000000..d41955ab4134
---- /dev/null
-+++ b/arch/arm64/lib/mte.S
-@@ -0,0 +1,46 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (C) 2019 ARM Ltd.
-+ */
-+#include <linux/linkage.h>
-+
-+#include <asm/assembler.h>
-+
-+/*
-+ * Compare tags of two pages
-+ *   x0 - page1 address
-+ *   x1 - page2 address
-+ * Returns:
-+ *   w0 - negative, zero or positive value if the tag in the first page is
-+ *	  less than, equal to or greater than the tag in the second page
-+ */
-+ENTRY(mte_memcmp_pages)
-+	multitag_transfer_size x7, x5
-+1:
-+	ldgm	x2, [x0]
-+	ldgm	x3, [x1]
-+
-+	eor	x4, x2, x3
-+	cbnz	x4, 2f
-+
-+	add	x0, x0, x7
-+	add	x1, x1, x7
-+
-+	tst	x0, #(PAGE_SIZE - 1)
-+	b.ne	1b
-+
-+	mov	w0, #0
-+	ret
-+2:
-+	rbit	x4, x4
-+	clz	x4, x4			// count the least significant equal bits
-+	and	x4, x4, #~3		// round down to a multiple of 4 (bits per tag)
-+
-+	lsr	x2, x2, x4		// remove equal tags
-+	lsr	x3, x3, x4
-+
-+	lsl	w2, w2, #28		// compare the differing tags
-+	sub	w0, w2, w3, lsl #28
-+
-+	ret
-+ENDPROC(mte_memcmp_pages)
-diff --git a/arch/arm64/mm/Makefile b/arch/arm64/mm/Makefile
-index d91030f0ffee..e93d696295d0 100644
---- a/arch/arm64/mm/Makefile
-+++ b/arch/arm64/mm/Makefile
-@@ -8,6 +8,7 @@ obj-$(CONFIG_PTDUMP_CORE)	+= dump.o
- obj-$(CONFIG_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
- obj-$(CONFIG_NUMA)		+= numa.o
- obj-$(CONFIG_DEBUG_VIRTUAL)	+= physaddr.o
-+obj-$(CONFIG_ARM64_MTE)		+= cmppages.o
- KASAN_SANITIZE_physaddr.o	+= n
- 
- obj-$(CONFIG_KASAN)		+= kasan_init.o
-diff --git a/arch/arm64/mm/cmppages.c b/arch/arm64/mm/cmppages.c
-new file mode 100644
-index 000000000000..943c1877e014
---- /dev/null
-+++ b/arch/arm64/mm/cmppages.c
-@@ -0,0 +1,26 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Copyright (C) 2019 ARM Ltd.
-+ */
-+
-+#include <linux/mm.h>
-+#include <linux/string.h>
-+
-+#include <asm/cpufeature.h>
-+#include <asm/mte.h>
-+
-+int memcmp_pages(struct page *page1, struct page *page2)
-+{
-+	char *addr1, *addr2;
-+	int ret;
-+
-+	addr1 = page_address(page1);
-+	addr2 = page_address(page2);
-+
-+	ret = memcmp(addr1, addr2, PAGE_SIZE);
-+	/* if page content identical, check the tags */
-+	if (ret == 0 && system_supports_mte())
-+		ret = mte_memcmp_pages(addr1, addr2);
-+
-+	return ret;
-+}
-diff --git a/mm/util.c b/mm/util.c
-index 988d11e6c17c..662fb3da6d01 100644
---- a/mm/util.c
-+++ b/mm/util.c
-@@ -899,7 +899,7 @@ int get_cmdline(struct task_struct *task, char *buffer, int buflen)
- 	return res;
- }
- 
--int memcmp_pages(struct page *page1, struct page *page2)
-+int __weak memcmp_pages(struct page *page1, struct page *page2)
- {
- 	char *addr1, *addr2;
- 	int ret;
+ /*
+  * SIGBUS si_codes
 
 _______________________________________________
 linux-arm-kernel mailing list
