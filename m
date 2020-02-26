@@ -2,52 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A7EF16FE9A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:03:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A0CC16FEAA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:09:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NeX/fIJy9k2LgElqc0DW6FJMTzH1CUffLRvZwWAbhOc=; b=IJXHS03y643wV1
-	kCQ3nxrohLMQgZIq0Ois0O9NpX0hcoU7ftbM5cgRXTHRVc0n6hb9dNdhuN3Bat0ryofZejjnaYGIf
-	DPBViin7K2iMlruVOD9JbzZvHGsSBp2kSVmU5pLOWbIGvwaR9TV9ILUhTaWjUAw8wnf5Q8xNmCXhG
-	o31DZXj+QbgempRsqOHxPuGUso4eeXlet2xmVqTa1UKVcYkqfqEVCCPkX52PwmFXBITU9/QFDyCPV
-	jVsW/uK1ITs4HZRyOx8m8FsrttNInDL+p0EszsZxjZxGwGBXxS7RBY3XRhb+Io7Lz6ryO1BXopScO
-	eXr6wdvxCYEfFoKRibow==;
+	List-Owner; bh=UaE13FiogtBfAM2KHAFUYdvW27SuNyMEiq+GJ7j7RjE=; b=FhhFRAhZCKLp/Z
+	R2ZNash6NKhM0zhBWRJRELTWiw0VI2sh38ZwjF+8XR/CFZSyB99wOxKe1/C09/ldQHJJjSJL6OHxD
+	LUwv55XTv/3KuMJrc7z96qgWCWYeSwOrA3nvBEF6yGdeV6GhWndNZKg81QVFTL8MuHsB7dsQOPwkH
+	9zwogsno9/tUGaK/Y8o6Oawoa6RvIIDHXmPU7kQv5WU9a9IuRLLTufuThf07mfmVasqP/mffzWRIq
+	muB1pQ63p2QKhssEr73cYZ+UaqmmLwxMVQMs6FSctEyiOZ3EI4GGenewRgrp5aGFvd/UhoZNTe2Sf
+	JaiDH3QTrh1m20GNv0Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6vOw-0004fz-Fq; Wed, 26 Feb 2020 12:02:54 +0000
+	id 1j6vVQ-0006d4-23; Wed, 26 Feb 2020 12:09:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6vOT-0004Pv-IM
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:02:26 +0000
+ id 1j6vVF-0006ce-TW
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:09:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B36D1FB;
- Wed, 26 Feb 2020 04:02:24 -0800 (PST)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B53393FA00;
- Wed, 26 Feb 2020 04:02:22 -0800 (PST)
-Date: Wed, 26 Feb 2020 12:02:20 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 352171FB;
+ Wed, 26 Feb 2020 04:09:25 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D98253FA00;
+ Wed, 26 Feb 2020 04:09:23 -0800 (PST)
+Date: Wed, 26 Feb 2020 12:09:19 +0000
+From: Mark Rutland <mark.rutland@arm.com>
 To: Elliot Berman <eberman@codeaurora.org>
-Subject: Re: [PATCH v2 2/3] firmware: psci: Add support for dt-supplied
- SYSTEM_RESET2 type
-Message-ID: <20200226120220.GD8613@bogus>
+Subject: Re: [PATCH v2 1/3] dt: psci: Add arm,psci-sys-reset2-type property
+Message-ID: <20200226120918.GA21897@lakrids.cambridge.arm.com>
 References: <1582577858-12410-1-git-send-email-eberman@codeaurora.org>
- <1582577858-12410-3-git-send-email-eberman@codeaurora.org>
- <20200225110346.GF32784@bogus>
- <1d7fecf8-3a7f-57e5-5c13-73de89d52aa2@codeaurora.org>
- <20200226115912.GC8613@bogus>
+ <1582577858-12410-2-git-send-email-eberman@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200226115912.GC8613@bogus>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1582577858-12410-2-git-send-email-eberman@codeaurora.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_040225_646207_1708703D 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200226_040925_996316_BE0D3274 
+X-CRM114-Status: GOOD (  17.18  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,7 +64,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Trilok Soni <tsoni@codeaurora.org>,
+Cc: Trilok Soni <tsoni@codeaurora.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  David Collins <collinsd@codeaurora.org>, linux-arm-msm@vger.kernel.org,
  linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
@@ -79,24 +75,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 11:59:12AM +0000, Sudeep Holla wrote:
-> On Tue, Feb 25, 2020 at 05:37:53PM -0800, Elliot Berman wrote:
->
-> [...]
->
-> > Alternatively, I could rename the DT property to
-> > "arm,psci-sys-reset2-vendor-param"
->
-> Yes much better.
->
+On Mon, Feb 24, 2020 at 12:57:36PM -0800, Elliot Berman wrote:
+> Some implementors of PSCI may relax the requirements of the PSCI
+> architectural warm reset. In order to comply with PSCI specification, a
+> different reset_type value must be used.
 
-Just seconds after sending this I got a doubt as how is this being solved
-with ACPI. How is vendor specific reset achieved on ACPI system especially
-with other OSes ?
+This reads as-if you're saying the firmware isn't spec compliant, and
+this is a workaround in order to get the expected behaviour.
 
---
-Regards,
-Sudeep
+Can you please elaborate on what you mean by "relax the requirements"
+here? What's your firmware doing or not doing that you want to avoid?
+
+> The alternate PSCI SYSTEM_RESET2 may be used in all warm/soft reboot
+> scenarios, replacing the architectural warm reset.
+
+I assume you mean SYSTEM_REET2's SYSTEM_WARM_RESET reset? Please call
+that out explicitly by name -- it makes this easier to look up, and
+if/when more architectural resets are added the commit message won't
+become ambiguous.
+
+> 
+> Signed-off-by: Elliot Berman <eberman@codeaurora.org>
+> ---
+>  Documentation/devicetree/bindings/arm/psci.yaml | 5 +++++
+>  1 file changed, 5 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+> index 8ef8542..469256a2 100644
+> --- a/Documentation/devicetree/bindings/arm/psci.yaml
+> +++ b/Documentation/devicetree/bindings/arm/psci.yaml
+> @@ -102,6 +102,11 @@ properties:
+>        [1] Kernel documentation - ARM idle states bindings
+>          Documentation/devicetree/bindings/arm/idle-states.txt
+>  
+> +  arm,psci-sys-reset2-param:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: |
+> +        reset_param value to use during a warm or soft reboot.
+
+A "soft" reboot isn't a PSCI concept, so I'm worried this is just
+hooking up magic values for Linux internals.
+
+I'd like to better understand what you're trying to achieve here.
+
+Thanks,
+Mark.
+
+> +
+>    "#power-domain-cells":
+>      description:
+>        The number of cells in a PM domain specifier as per binding in [3].
+> -- 
+> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
