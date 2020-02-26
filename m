@@ -2,70 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C99116FF36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:43:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD99116FF3F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 26 Feb 2020 13:46:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x0N0Kk30sAb9rbsVfVpdmByx2QvPhiUvXmevf54OM30=; b=I5aNM1YfF4L5yh
-	x40u2lje3XwryTmHc1w09sdJaCJzbt898zlC9L60fBHTGXFLa3KWw7paAbnOZEt8zR7D/MLWT06YQ
-	AUkuv1/2/1Al1FvZHrAIcevZbleAc96v2TYA1Y+dVrzpnJYYt4gGb6vzHvkZYBmpsy1aHKtGL7hcb
-	+KIkRCNgJkxjbjGy7oAgQ4UnRhXM3+7BNLPCCzRb2ruFVdVdoyv0qvn+ixyX6Voj5zHr+v01/d9m8
-	TqOEBoByPI5yXZF2/4k5KjVr9b+SbnOeG60Yn9nKsDotSgKNLXaQzdOh3az+fxDPqx2x9PxssFuHg
-	boGeV8NRiGmENWn4WBlw==;
+	List-Owner; bh=0eMpUioEJ/jo6mYndyJ8pcEELBVTcOvemdlkywLQyWI=; b=RIB2rxRJuKXrNr
+	gnGH/03t8vTEqNNyqofPfVdkMMaya1XN1RLsJv5Vo46BMqikGkAfVOnEw0vuq74W6i6LYm/vcPEdk
+	615RqcP5HA0ocMSDlugy6pc41irUKe/kfGHt5zIrJFdTB/KMm4Pvy5EuUxeMrZ8fnLutX9EZixUPN
+	B7scLUcwxr3QwGwEZy5mmDDQUouvFB6/jWyJ4/6iUFDLTZ6IGeN9iiaR9kzvd5L6frT3I1xf5mmLB
+	oj+jHeapTX0+45tAIsnKu6CXlq6B78dOUlU6jB7u47fUFGNEZ2HguV/M1r8DRRERQr+gqsMBdi9o6
+	zL0Zy/85/OilIFfCYYaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6w1w-00020c-Oa; Wed, 26 Feb 2020 12:43:12 +0000
+	id 1j6w50-0003cb-1Q; Wed, 26 Feb 2020 12:46:22 +0000
 Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6w1m-00020H-QP
- for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:43:04 +0000
-Received: by mail-lj1-x241.google.com with SMTP id q8so2943004ljb.2
+ id 1j6w4r-0003c3-SK
+ for linux-arm-kernel@lists.infradead.org; Wed, 26 Feb 2020 12:46:15 +0000
+Received: by mail-lj1-x241.google.com with SMTP id h23so2934584ljc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 04:43:01 -0800 (PST)
+ Wed, 26 Feb 2020 04:46:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=naHmwMkEZlsq2F2BdV78t7a2n6KXkH4cArO0DzqKw9s=;
- b=oQ1YXDo6+jB9aH9a05GU0xwO2NeTx0pZ2jpQW5sC7FObezAamb9GLR1j9y80Vd7PW4
- 5XEffKqjS2T8VLrsMUL0B2r14bi6hf7ak0FjH/qafJEHkGVUiPpOwEC2K/SotBZqNBdT
- I+xDbdHSXNJZgX2OTKDz5Vc3iMPuXVCPpvMLeAy3NPWzFm1nmue6F3HMibuTpfGnayE+
- SyzzsNrJ6YpQLC0V2Bkc85eHEJ8Yu/7h9Bj3XtOnkGKqumkYA9Zv2fUGZW4rRP7XZJG1
- HxEaYpF9FFJMrft2C6sK5HsayCuwHzrqHHWgJ8KAOXTKT0rjr9T+KJL5lwtaAOtbpBc5
- 7TkA==
+ :cc; bh=qgJPSpfwkB4wpHwVPaSt8tJmm/cC07E5aTtE/ZGtNew=;
+ b=hJAIwt3XqcA6vdQYlW5DN1YmEqE1lXwSUL3D9lMIL4oTQ7g/Q+sMxozuu5BCwAIyXC
+ fhi9rbfJsXmquyo1vwBRXfm2gwf/M0mMzhFe9uO/CFpITOf4artAjfPx4sbGj4W8hleM
+ MJ48U6K3xxgtdkGcRBgifFExebZTmpC4sEy+2rWNtahDhyvJWx2JR8ckHSASBcef/fdi
+ yvlAoM6IgumqA7T1upMmzuC5zMxU/5VCAfVYp0MCElHeH5VHFbBh1ogjysPJtu8WqhRK
+ OOfuAwOnM7TWmV2/O6u/dLAw6LWaGj487oyJyQ/JJM8kRHSeqPQCVVO/qo8qgUtmr8Ga
+ 2jNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=naHmwMkEZlsq2F2BdV78t7a2n6KXkH4cArO0DzqKw9s=;
- b=BKvDTlDF9POqIY8MVkNakOUTZEiKJkRcDAKtjXLBc0G2pXGNNDQQsqTp6Emsc+wtpf
- myFALS9iPVukd07v35q7rJFanKFSGb6jxX7rtRXFc2EvyeX73IpuZHSwX3qUGIvvP1Ws
- 5KVJVXihA+BldYgVeoZYy1zHNpb2eCJU1q3PpNAqMkepMFuutSfLlvkwICg/Sf/ng3hU
- 4+DcDTxLPJFVPeeIJWJtvmYIscx9VmD7SPU4T82COlIDY3SwCcmMWFxFOdhq0+xMoCxn
- xbm1LiXTV8XF4DY/d4bMRvk2dTKgpMmEqQpHLeggOVX9HlY1Wm7RxKxOUOtFcobc/ii6
- /bwQ==
-X-Gm-Message-State: APjAAAXPONoLwNpzPmvH/ST6jSi/PdQgsF1Py2aclbtbwLj4Y8FCbjGO
- 9LeYW3DCiLGsGgeLB+kwNfJWKh7cSG3TG9IV87g=
-X-Google-Smtp-Source: ADFU+vtwr9qHZQRp7nOQn9p0PoE3msDjcGJRvRyC8H+RwcRzDCO3GQIm5dNAC1Bue/fML340D2kMrue/X63xSXz+WfQ=
-X-Received: by 2002:a05:651c:d4:: with SMTP id
- 20mr2838816ljr.269.1582720979846; 
- Wed, 26 Feb 2020 04:42:59 -0800 (PST)
+ bh=qgJPSpfwkB4wpHwVPaSt8tJmm/cC07E5aTtE/ZGtNew=;
+ b=unEFNuZsSxKPiEHAB3P6ggX/ZkfqHpERWDXL8nAcPePxl1oa/ePvYXO6iZo4i1bVRx
+ n1Za/Y4kWdOj08admdiuIJP/RYpeVmV/J6njZypBWN0CCNlbtuFzLxEAjecpaetpRzg5
+ +nYsk+FhLVBcY/+htPi8BYgGGZs5DPHR5Kdyi6u7GW7CgcccRnRk31AXR6fQsbhtKHnC
+ XF/aqT+TkCGyP5C8xJY/yKBYK+ixbpWIdxW8AUTmVnITZb9rjPgDLeIcHNmfOq2m7Kql
+ 1il9ehOdLQyV4AmVNM8e6mpma2eFsIjkT96rB15sW4BCNd8GQDQKMb4GVcZiyGJGuxPH
+ i9Og==
+X-Gm-Message-State: APjAAAU48EGaqdYYNEXTMtaOkxXn7xvqDtgBcB6t43rf64ti1Xef7qg6
+ 939LdbUqZYbROCWXfXuz+q8Qw193tC4rgyCUbWE=
+X-Google-Smtp-Source: APXvYqzaHbc9A2c9xE2edfnUWxJTjRVKLCIJGvlkTyklIyTN06zsZhz4ISWpDA1VVtf7NNjiq/hDCBcwaUp3aSzRtyE=
+X-Received: by 2002:a2e:2e11:: with SMTP id u17mr2865444lju.117.1582721172264; 
+ Wed, 26 Feb 2020 04:46:12 -0800 (PST)
 MIME-Version: 1.0
 References: <20200224062917.4895-1-martin.kepplinger@puri.sm>
- <20200224062917.4895-2-martin.kepplinger@puri.sm>
-In-Reply-To: <20200224062917.4895-2-martin.kepplinger@puri.sm>
+ <20200224062917.4895-5-martin.kepplinger@puri.sm>
+In-Reply-To: <20200224062917.4895-5-martin.kepplinger@puri.sm>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 26 Feb 2020 09:42:49 -0300
-Message-ID: <CAOMZO5BxS-+1=NVgZ4nJcneVGMr7B8sLL+gYidXfgrvPSRB0JQ@mail.gmail.com>
-Subject: Re: [PATCH v3 1/8] arm64: dts: librem5-devkit: enable sai2 and sai6
- audio interface
+Date: Wed, 26 Feb 2020 09:46:01 -0300
+Message-ID: <CAOMZO5DV9JY=7Vg3RL_T4W_8yb1DnLThmS_LWM45uWAAgeXwQA@mail.gmail.com>
+Subject: Re: [PATCH v3 4/8] arm64: dts: librem5-devkit: add a vbus supply to
+ usb0
 To: Martin Kepplinger <martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_044302_859342_38CC9FAC 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200226_044613_944118_B8A957CC 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -118,18 +116,16 @@ On Mon, Feb 24, 2020 at 3:31 AM Martin Kepplinger
 >
 > From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 >
-> Add missing sai2 and sai6 audio interface and pinctrl definitions for the
-> Librem 5 devkit.
->
-> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
+> Without a VBUS supply the dwc3 driver won't go into otg mode.
 
-Maybe you could rearrange patches 1 and 2 like this:
+Since this is a bug fix, it would be better to put it as the first
+patch of the series, with a Fixes tag and Cc stable, so that it could
+be backported to stable trees.
 
-Add simcom 7100 modem support
-Add sgtl5000 support
+Please rearrange the series and put all bug fixes first with Fixes tag
+and Cc stable.
 
-This way it is clearer where SAI2 and SAI6 ports are actually used.
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
