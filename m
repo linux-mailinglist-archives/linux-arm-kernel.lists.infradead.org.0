@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4342C171888
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 14:19:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F25917188A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 14:19:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=y26o2mw4HtxyEBsECfpla8/XQPUrVwAC/IOCToNk+h4=; b=iIUO+1xMd/Ga3J/XC02HMmutY4
-	dySBJ1Zm5MOtPfQmjsXqwuhs9NvvYBw78URoJsdgulK96H6hIZMNxovS5pLBhY4YPF+xWe62AnUTt
-	cnHkfYa/b3NNVUuFN30tBUN/88IT3ZwmTAv7poGAFdx1tZHRWXZFocT7lL7ofYw43B6paSt9CNy1e
-	WYK3c+7gCDdveax4h9T69lXXzAyXZU+2zwJRU/Ra28kjMzFBA5dYVidK5tG+oDqADy3g4k61OXYtS
-	E5TCTgGhouecI+nGNFNaJhIBjtOg5rFz6LvvC74dma8IG7Hq5uJP6pormqibz+sAJDLHovld5h6vv
-	w8KqexTQ==;
+	bh=+u+m251Jt58LghgtTKGWyuxZoRYPe5L/8JIxx9qaGsY=; b=qbSPytK6NpTtteDJ5EdGCVazIT
+	fHu8xt7wILOfwVgKWyEnNQFQKSyFkfHaw+4ctaB1OxUD8vaIeND8F3Nj6nDTUO0VHnMdaXmuLcYqQ
+	4GRZTQzvj7qfDDGQajzc15LLGV+vLkwhSgVX6d2no767vfp2eAc0qm+wfz0yBP3jBen+tgniG3NWM
+	M3y+fmUkdvkbaD4T6fIvDIP1SEJYXw3hCp7AGrU9kM7tc8CQmdNUEJh4aEPHkG6pIcHyquxgPHvdy
+	R8+MMc0SFzpni6H1tPpOvUZ7+EqvXuQmmDZfxuEyDLC5wpjNRwozvlQl5gseazgbOYaeJ16DHjy7z
+	D5122IYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7J4g-0007tD-Sp; Thu, 27 Feb 2020 13:19:34 +0000
+	id 1j7J4s-00085l-Ke; Thu, 27 Feb 2020 13:19:46 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7J3d-0006zU-ME
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 13:18:31 +0000
+ id 1j7J3h-00072A-2P
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 13:18:34 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 23444DFD30;
- Thu, 27 Feb 2020 05:17:59 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id 25807E01AC;
+ Thu, 27 Feb 2020 05:18:02 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id B4fOomCxCS8C; Thu, 27 Feb 2020 05:17:58 -0800 (PST)
+ with ESMTP id 8UCZwxB_dTiX; Thu, 27 Feb 2020 05:18:01 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com
-Subject: [PATCH v4 4/8] arm64: dts: librem5-devkit: allow modem to wake the
- system from suspend
-Date: Thu, 27 Feb 2020 14:17:29 +0100
-Message-Id: <20200227131733.4228-5-martin.kepplinger@puri.sm>
+Subject: [PATCH v4 5/8] arm64: dts: librem5-devkit: add the regulators for DVFS
+Date: Thu, 27 Feb 2020 14:17:30 +0100
+Message-Id: <20200227131733.4228-6-martin.kepplinger@puri.sm>
 In-Reply-To: <20200227131733.4228-1-martin.kepplinger@puri.sm>
 References: <20200227131733.4228-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_051829_743246_E7275104 
-X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-CacheID: sfid-20200227_051833_154828_0E55F562 
+X-CRM114-Status: UNSURE (   6.42  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,42 +74,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-Connect the WoWWAN signal to a gpio key to wake up the system from suspend.
+Specify which regulator is used for cpufreq DVFS.
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
 ---
- .../arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ .../boot/dts/freescale/imx8mq-librem5-devkit.dts | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 84443e4857d5..823d5c60a8fa 100644
+index 823d5c60a8fa..6ba65a807b25 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -55,6 +55,15 @@
- 			wakeup-source;
- 			linux,code = <KEY_HP>;
- 		};
+@@ -227,6 +227,22 @@
+ 	};
+ };
+ 
++&A53_0 {
++	cpu-supply = <&buck2_reg>;
++};
 +
-+		wwan-wake {
-+			label = "WWAN_WAKE";
-+			gpios = <&gpio3 8 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio3>;
-+			interrupts = <8 GPIO_ACTIVE_LOW>;
-+			wakeup-source;
-+			linux,code = <KEY_PHONE>;
-+		};
- 	};
- 
- 	leds {
-@@ -576,6 +585,7 @@
- 			MX8MQ_IOMUXC_SAI2_RXFS_GPIO4_IO21	0x16
- 			MX8MQ_IOMUXC_SAI2_RXC_GPIO4_IO22	0x16
- 			MX8MQ_IOMUXC_SAI5_RXC_GPIO3_IO20	0x180  /* HP_DET */
-+			MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8	0x80   /* nWoWWAN */
- 		>;
- 	};
- 
++&A53_1 {
++	cpu-supply = <&buck2_reg>;
++};
++
++&A53_2 {
++	cpu-supply = <&buck2_reg>;
++};
++
++&A53_3 {
++	cpu-supply = <&buck2_reg>;
++};
++
+ &clk {
+ 	assigned-clocks = <&clk IMX8MQ_AUDIO_PLL1>, <&clk IMX8MQ_AUDIO_PLL2>;
+ 	assigned-clock-rates = <786432000>, <722534400>;
 -- 
 2.20.1
 
