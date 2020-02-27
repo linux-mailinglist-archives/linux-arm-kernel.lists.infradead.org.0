@@ -2,68 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC120171C36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 15:10:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A26C7171E25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 15:25:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ArXI0NYo8Hf6diNZuw+JPizWz95nFInAWpP8D4PIY7w=; b=HVtqDQAPN9mQu6
-	SnrBn/6CU5g6PTYn3mEFb45aOWEMsGvOVAwJ7LtvzKB9pLp4zJTafLP9qdIg8M9rE5b2QwBxP8bPl
-	lFq31gVWe9eThghmGhC6U1cYGE//5TEda4sHxZkasLK4l/uFje2hggpTX4V11TyPsYeCyZiw1Xzni
-	w5oURtrI92BTQbi3vJkcMg4+JOSSPyyYOWpDG6YV+D79dwhr+OT7bIyoUp9RFMthvjRYEnWVKyBsk
-	maxPkVbQxlDkdIhdMGJ52OhE///UxdtxnJ+sYK5aQqhj3qZnbeUMBfvLfcHtM2h2ECEbuwICIoUB7
-	oVB0A5Zu+giARUzyhZ1A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+IW1AfJs8dkl/8FxLBh7ZVPnWGYoJVNo2nM5njYjn6o=; b=bb5bOlf6tiAbFBM3/+QNVWwzm
+	YXQ+BKWeakygb+C5n/lFViJ1frVmUmUeuYNPv6mFDvU/DuA/XiaeE86Jnlh+lQ9HnsM2/xciqu/de
+	c5seVI82GuqZLCmhezFm7FiMnnd/pQDC9mYIsr1c3juYvfiDlLwtFG66OUPZVqlf8oGQEH8l+Tr5H
+	/CtprN0Jm4IarqhoYQhgt1/jl1NezpLWMmYFseGOyFfeRdSIYDwccg1eRr1v9JnNo6sitXPSx9coh
+	qllhiokoyP6cD9YPvG9T1hLMDROt22nJn1bigdYk8hV2m02nfH50QAB0fp3Hj/kPXa271YLk7QY/E
+	MQRRmhjAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7JrV-0007Uc-3R; Thu, 27 Feb 2020 14:10:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j7K6c-0006vr-PI; Thu, 27 Feb 2020 14:25:38 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7JrK-0007Ta-VK; Thu, 27 Feb 2020 14:09:52 +0000
-Received: from localhost (173-25-83-245.client.mchsi.com [173.25.83.245])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E06EB20578;
- Thu, 27 Feb 2020 14:09:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582812590;
- bh=X9rl3ZGCnjqX0Ce24td4V97fsDt8ivYeM1csu23KtbA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=LFdE44vcMhziqC8vsqlprJou46T1FdXaTAU/cTGFMoy+JuvwXVnfxZvhShBpXVo9/
- Ejhv5CEdeoWe0x4rO3WB6EcngNXFybpnYhP+JD2koCrpknOOJ7hjlr6e3SwMwZqf6O
- tGDeNshu3lujRonV6asb77lm++OB/Rz3dhevOyAw=
-Date: Thu, 27 Feb 2020 08:09:48 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [PATCH] pci: brcmstb: Fix build on 32bit ARM platforms with
- older compilers
-Message-ID: <20200227140948.GA78063@google.com>
+ id 1j7K6T-0006ub-IH
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 14:25:31 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 82F7477BB;
+ Thu, 27 Feb 2020 09:25:25 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute5.internal (MEProxy); Thu, 27 Feb 2020 09:25:25 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=8k8ifdUwFDmcr1ArdIrV0k+L0po
+ RQVFUQt0Z3XT5bwI=; b=QofFa8xonDt6zn0DF9+ivYYHTiwYYcNzFwfQv9IYx1H
+ lQVTqGC6T9MYDQ5wgkVkBxpD+CfQESTGyKq+V8UjmweYx4jSXfEEpzLw+siiUijR
+ GFRQpqTYRU+9m0qTFUMjZDhgKaFHGZxOcauggtDnu15HdauSPn+VPerHAuJsNX4o
+ KfMykFLM2N+gBE2C6RvMPdLXQKPgqnSb/UHIWw+/S738HNMLlGCsjNTeV8CPk1KD
+ cszgujYUd5+ZKA1ogTfhafm7b+IXsrYo/jEPOvr0tNlXMBiT4NnJ4x1NR8AnTNOh
+ P9iUipa8bUgP9hKSBpO9MX0GVcXn9f2UKIQUJ+g2obA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=8k8ifd
+ UwFDmcr1ArdIrV0k+L0poRQVFUQt0Z3XT5bwI=; b=P77kFJG49ME2EtAi4y+kF/
+ znLlZmgqZEwYmB2IMRBbSfIHUUdmqbyOvR/EbbLSXwBjDin9Rog+/X/Rt04qH4LV
+ /VtU1ujfW40A10O7h9vF4/f55KRO3ZXVdZxwsHCrj3pzNpHk4xJXDI/Y52qw5fsp
+ pwg/ACaFJuO4dc+GU0Skj2rMCzyi61mZvtkG/ttEkcyaBIIO/Zraz5XBDYzGX84+
+ gmdF98c0g6MW4qJvZfj35HQ65Xy78qiFKLU5Sqxmg7w4O2wFdUPoQL0mo0ztE099
+ Jszd9z4WO51ocbXwLw8Y4p2Z+OpgpR+OmK/SgLX2Iel7Itck+IzdRmdt5ysLlrdg
+ ==
+X-ME-Sender: <xms:U9FXXqc_jC4dXhKJjYPY0SwqkKXkwg4bFqI9w6OA63FuIsfkqJDcdQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrleeigdeihecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
+ epsghoohhtlhhinhdrtghomhenucfkphepledtrdekledrieekrdejieenucevlhhushht
+ vghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrh
+ hnohdrthgvtghh
+X-ME-Proxy: <xmx:U9FXXocZAPRdGoI3AMrdQIC_SExy12PCYkDXuEvfgdE8OkX3U75uCQ>
+ <xmx:U9FXXmgVGVeMNDJbNivPAomv_gMVHz70RTnLzv_VqngHyaJxHlnAmA>
+ <xmx:U9FXXsSWyJkG--YI-yWI5SIBGxb0Lhb200UYZocpUsk0DnhJ5ci3_A>
+ <xmx:VdFXXgO_BqyPBRPSX6zOnzDJR0pVYDwjNmKtOyHQsGZjZWT5NPMgkw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 5CBCD3280066;
+ Thu, 27 Feb 2020 09:25:23 -0500 (EST)
+Date: Thu, 27 Feb 2020 15:25:21 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH 1/2] dt-bindings: display: sun4i-tcon: Add LVDS Dual Link
+ property
+Message-ID: <20200227142521.vtmcwbwxjddphjf2@gilmour.lan>
+References: <20200214123244.109300-1-maxime@cerno.tech>
+ <20200214131025.GI4831@pendragon.ideasonboard.com>
+ <20200214154405.f5zuicm6uhhiczfs@gilmour.lan>
+ <20200214154953.GJ4831@pendragon.ideasonboard.com>
+ <20200217174253.mj53us4bb7h2lyca@gilmour.lan>
+ <20200217181006.GE4830@pendragon.ideasonboard.com>
+ <20200220175307.qool442lm7qjqb5h@gilmour.lan>
+ <20200220191339.GJ4998@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200227115146.24515-1-m.szyprowski@samsung.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20200220191339.GJ4998@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_060951_028663_2C99D201 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200227_062529_945994_52866CB4 
+X-CRM114-Status: GOOD (  28.65  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.229 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 FAKE_REPLY_C           No description available.
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,54 +111,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Florian Fainelli <f.fainelli@gmail.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
+ Daniel Vetter <daniel.vetter@intel.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1237976068702920153=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 12:51:46PM +0100, Marek Szyprowski wrote:
-> Some older compilers have no implementation for the helper for 64-bit
-> unsigned division/modulo, so linking pcie-brcmstb driver causes the
-> "undefined reference to `__aeabi_uldivmod'" error.
-> 
-> *rc_bar2_size is always a power of two, because it is calculated as:
-> "1ULL << fls64(entry->res->end - entry->res->start)", so the modulo
-> operation in the subsequent check can be replaced by a simple logical
-> AND with a proper mask.
-> 
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 
-Applied to for-linus for v5.6, thanks!  I added acks from Nicolas and
-Lorenzo and also the Fixes: tag from Lorenzo.
+--===============1237976068702920153==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ubhaez32phxyobwo"
+Content-Disposition: inline
 
-> ---
->  drivers/pci/controller/pcie-brcmstb.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> index d20aabc26273..3a10e678c7f4 100644
-> --- a/drivers/pci/controller/pcie-brcmstb.c
-> +++ b/drivers/pci/controller/pcie-brcmstb.c
-> @@ -670,7 +670,7 @@ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
->  	 *   outbound memory @ 3GB). So instead it will  start at the 1x
->  	 *   multiple of its size
->  	 */
-> -	if (!*rc_bar2_size || *rc_bar2_offset % *rc_bar2_size ||
-> +	if (!*rc_bar2_size || (*rc_bar2_offset & (*rc_bar2_size - 1)) ||
->  	    (*rc_bar2_offset < SZ_4G && *rc_bar2_offset > SZ_2G)) {
->  		dev_err(dev, "Invalid rc_bar2_offset/size: size 0x%llx, off 0x%llx\n",
->  			*rc_bar2_size, *rc_bar2_offset);
-> -- 
-> 2.17.1
-> 
+
+--ubhaez32phxyobwo
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Feb 20, 2020 at 09:13:39PM +0200, Laurent Pinchart wrote:
+> Hi Maxime,
+>
+> On Thu, Feb 20, 2020 at 06:53:07PM +0100, Maxime Ripard wrote:
+> > On Mon, Feb 17, 2020 at 08:10:06PM +0200, Laurent Pinchart wrote:
+> > > On Mon, Feb 17, 2020 at 06:42:53PM +0100, Maxime Ripard wrote:
+> > >> On Fri, Feb 14, 2020 at 05:49:53PM +0200, Laurent Pinchart wrote:
+> > >>> On Fri, Feb 14, 2020 at 04:44:05PM +0100, Maxime Ripard wrote:
+> > >>>> On Fri, Feb 14, 2020 at 03:10:25PM +0200, Laurent Pinchart wrote:
+> > >>>>> On Fri, Feb 14, 2020 at 01:32:43PM +0100, Maxime Ripard wrote:
+> > >>>>>> SoCs that have multiple TCONs can use the two set of pins on the first TCON
+> > >>>>>> to drive a dual-link display. Add a property to enable the dual link.
+> > >>>>>>
+> > >>>>>> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > >>>>>> ---
+> > >>>>>>  .../bindings/display/allwinner,sun4i-a10-tcon.yaml         | 7 +++++++
+> > >>>>>>  1 file changed, 7 insertions(+)
+> > >>>>>>
+> > >>>>>> diff --git a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > >>>>>> index 86ad617d2327..aa6dd8409dbc 100644
+> > >>>>>> --- a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > >>>>>> +++ b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > >>>>>> @@ -105,6 +105,13 @@ properties:
+> > >>>>>>          - const: edp
+> > >>>>>>          - const: lvds
+> > >>>>>>
+> > >>>>>> +  allwinner,lvds-dual-link:
+> > >>>>>> +    type: boolean
+> > >>>>>> +    description: |
+> > >>>>>> +      On a SoC with two TCON with LVDS support, the first TCON can
+> > >>>>>> +      operate over both pins sets to output in a dual-link setup. This
+> > >>>>>> +      will be triggered by setting this property.
+> > >>>>>
+> > >>>>> Could you maybe provide an example of how this property is supposed to
+> > >>>>> be used ? I'm especially wondering what ports are used in that case and
+> > >>>>> how they're connected.
+> > >>>>
+> > >>>> It's pretty trivial to support, it's only a property to set on the
+> > >>>> encoder node itself.
+> > >>>>
+> > >>>> I'm not really sure what you meant by your question with the ports
+> > >>>> though :/
+> > >>>
+> > >>> I assume that, in the single-link case, you have two TCON instances that
+> > >>> operate independently, each of them with one port that models an LVDS
+> > >>> connection to a panel.
+> > >>
+> > >> Indeed,
+> > >>
+> > >>> In the dual-link mode, how does that look like ? Does the TCON
+> > >>> instance that operate in dual-link mode have two ports in DT ? There
+> > >>> are two physical ports, so I think it makes sense to always have two
+> > >>> ports in DT. That's what we're doing for the LVDS encoders on R-Car
+> > >>> Gen3, in order to specify in DT which LVDS input of the dual-link
+> > >>> panel is connected to which LVDS output of the SoC. That allows
+> > >>> configuring the LVDS encoder to send the even and odd pixels on the
+> > >>> right port.
+> > >>
+> > >> As far as I can tell, you can't control that in our TCON. It just on
+> > >> more lanes, that's it. Also, we currently have multiple ports, to map
+> > >> another feature of the TCON, which is that it can drive directly a
+> > >> panel, or will send its output to the HDMI / TV encoders. Adding
+> > >> another port in that will break the current binding we have.
+> > >
+> > > This will create one issue though, in that the dual-link sinks are
+> > > supposed to have two input ports, in order to expose the odd and even
+> > > pixels ordering. If you have a single ouput port in your TCON, how will
+> > > you interface with such sinks ?
+> >
+> > I guess we could create multiple endpoints in the same port? That's
+> > not going to be trivial either though given the current binding we
+> > have :/
+>
+> That's however not really how endpoints are supposed to be used.
+>
+> Let's try to find a solution. Could you show me a DT example that
+> explains why having two ports would create backward-compatibility issues
+> ?
+
+Sure, here is what the DT looks like for the SoC this patch was
+relevant for (but we have the issue on multiple SoCs, all sharing
+pretty much the same binding as far as ports go):
+https://elixir.bootlin.com/linux/v5.6-rc3/source/arch/arm/boot/dts/sun7i-a20.dtsi#L406
+
+And here is the binding part:
+https://elixir.bootlin.com/linux/v5.6-rc3/source/arch/arm/boot/dts/sun7i-a20.dtsi#L406
+
+As you can see, in that binding, ports were used to differentiate
+between output and input, each of the output being an endpoint (since
+we can't have the TCON driving multiple output at once).
+
+Adding multiple ports would kind of break that, and would break the
+general idea behind that binding (and the rest of the display
+pipeline).
+
+Maxime
+
+--ubhaez32phxyobwo
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXlfRUQAKCRDj7w1vZxhR
+xc0PAP9zjDzXT9CNGe6TSoSpsnFcO7r6DJ3ynEyYRcoX7uy9zQD/ZURcSADOTd+8
+9E6zrb7rrCuTN42+4NccjG1sXpHlego=
+=Vvge
+-----END PGP SIGNATURE-----
+
+--ubhaez32phxyobwo--
+
+
+--===============1237976068702920153==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1237976068702920153==--
+
