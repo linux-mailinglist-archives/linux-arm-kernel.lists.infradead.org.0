@@ -2,67 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6F52171ADA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 14:57:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A56E1718D8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 14:37:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SNqNwSW2DuHhTCGAC/t5bKJ1UfXYDDTVcgndHksbV98=; b=oKXnuBsQgiXrir
-	QCUmbHnJiNin5TRLJKdlOm1Sq108k2B0rehaIiUdJTU5Ko+SD2yzQ7BAFYGYTy6X2uroD9im40c8A
-	q7L1A1GwnwHLViIfvcFgGpZ8kT4rcYrn1zH+8csv/26gbJsqz0tfyFL4vxHfhW8aJa569SoTEMDHN
-	yhRYEGCDJwooG/T6t6f9M0e2gCD3CV6jdngY+YFmhPh11IswJx+hDvdr6yLA8FMCvI3mRyDjuLxKX
-	BgAEi/GCorYC5EdXTrf6YR7WW6HJseOtpRIyEEhzuG0j+gxrTQWv0/YE3DcFp968R3IUnZV403EwD
-	N+f6FJq1WBzPihCUfQHQ==;
+	List-Owner; bh=2aCp0uS7qmCqo4vjDETXBmRaSWKOEeZZFOLJumKsipI=; b=tNR2KePhd7D6GI
+	4ng6Xhqv01DUpzslSnX5QReECzUIqQFZfe66WX6DOzq6OfjUkgbdakN3JqhjFMNbOGYTYYj4T5PTy
+	Qya3R0slfcCDZCCEi9TKkwTAqm6x4wlDN28GDeR8o7qbc/n+b/HZmZ0f+n8itxNs2xRVQtJWAKmti
+	rTHbnmYpg7t+ZfaikWD4G1yz/6zMqtKV0AJXAYfN8y00ILfnmUWm8EzyeFylAyxIZO/A1aH9iNgZz
+	MXlxv5CN86Jx0pzKSeNE8I1m5/rFe18EFDoEbHeIUaKM35k1UmPiSkWhii/S2XL3+xLXs0sKiNwAP
+	KcWleLrQ19PdaNFKEuew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7JfG-0001lV-L2; Thu, 27 Feb 2020 13:57:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j7JLR-0007ca-Mq; Thu, 27 Feb 2020 13:36:53 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Jf0-0001eD-Dt
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 13:57:07 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6197020578;
- Thu, 27 Feb 2020 13:57:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582811824;
- bh=MAyEDk49P2Uh6U18iHPC9skH7iaZ47xAh4eHPg1oWV0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yOY4DWdjbIskVQM1rI9of4ZXi1rozQREdgGmuvWCi5KJxeOt5s67s7J0QoFNuuVlb
- PAMB62UNgjjLJDEcLEPxXwacsOjdqXO8hjBusloFYoJ0LkV+EB2V2YxlXmd8OPY79A
- eShVhMEMOsRUymA12GVsCBTY4poiuFFwONg1NI5o=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.14 077/237] ARM: dts: imx6: rdu2: Disable WP for USDHC2 and
- USDHC3
-Date: Thu, 27 Feb 2020 14:34:51 +0100
-Message-Id: <20200227132302.789337600@linuxfoundation.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200227132255.285644406@linuxfoundation.org>
-References: <20200227132255.285644406@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1j7JLF-0007bo-Kg
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 13:36:43 +0000
+Received: by mail-oi1-f196.google.com with SMTP id p125so3252750oif.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 05:36:40 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MgPO7ELVuWGwpya2a5yhCTpGcfN6PfsNmhRsLtt669A=;
+ b=hs8v6tDnbmrFsnMqQWW8vd8tbM6sxhSRA7yk+tLKP95yuLLoVIXF/sSpVTkCj+jYFk
+ la6beJzajzvth9dCGF16laDHIK0Vanh2GOBxD214Ea64yV3rgCZae+TGD84a15mmRXOq
+ uI9S9kSSPNcCgQ2u1e803Rv9ML7H7D2fUd9tF/2XCXR1ONoUKKzxfuQkKbc4WS8f2LIG
+ u4541g6vCFdu53og6Rsy12fcQvDjg9W6DydcQrGE5t39oWYn7Z5UDonh251FDG+mQIWn
+ N66DFR+9INlt5fpQ/N/WmC2gz5JkAm+odf1Bx+d0/rq8c0g9nP2FgFK1CDgCyRRjEH9L
+ bgPQ==
+X-Gm-Message-State: APjAAAXRalw5bDpP7jJ32ovlNz933MPx/DLYTxbSD7/pdrjD4Fze1MH4
+ 2iFwtUJEqUcjBXhzgJm6/5/UjxKAKCDaT3DNzkQ=
+X-Google-Smtp-Source: APXvYqzIYnQiYyviv4vxEN0xt3PJIW3ungOh7jqD4M4TFya2yAyor+8r40KHsX2LrN6OlxEwrnEvFwy6FGg4JA5Qe48=
+X-Received: by 2002:aca:1a06:: with SMTP id a6mr3143012oia.148.1582810600115; 
+ Thu, 27 Feb 2020 05:36:40 -0800 (PST)
 MIME-Version: 1.0
+References: <68219a85-295d-7b7c-9658-c3045bbcbaeb@free.fr>
+ <e88ca46a-799d-9c86-f2d2-6284eb3c3419@free.fr>
+In-Reply-To: <e88ca46a-799d-9c86-f2d2-6284eb3c3419@free.fr>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Thu, 27 Feb 2020 14:36:29 +0100
+Message-ID: <CAMuHMdUZfR6pYG-hourZCKT-jhh1t+x-ySF4JnEPJjscGAQT+A@mail.gmail.com>
+Subject: Re: [RFC PATCH v4 2/2] clk: Use devm_add in managed functions
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_055706_532495_26AB0940 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200227_053641_680112_05A9723A 
+X-CRM114-Status: GOOD (  16.72  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,82 +82,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, stable@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Fabio Estevam <festevam@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, Chris Healy <cphealy@gmail.com>,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-clk <linux-clk@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Rafael Wysocki <rjw@rjwysocki.net>, Russell King <linux@armlinux.org.uk>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Suzuki Poulose <suzuki.poulose@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
+Hi Marc,
 
-[ Upstream commit cd58a174e58649426fb43d7456e5f7d7eab58af1 ]
+Thanks for your patch!
 
-RDU2 production units come with resistor connecting WP pin to
-correpsonding GPIO DNPed for both SD card slots. Drop any WP related
-configuration and mark both slots with "disable-wp".
+On Wed, Feb 26, 2020 at 4:55 PM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
+> Using the helper produces simpler code, and smaller object size.
+> E.g. with gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu:
+>
+>     text           data     bss     dec     hex filename
+> -   1708             80       0    1788     6fc drivers/clk/clk-devres.o
+> +   1524             80       0    1604     644 drivers/clk/clk-devres.o
 
-Reported-by: Chris Healy <cphealy@gmail.com>
-Reviewed-by: Chris Healy <cphealy@gmail.com>
-Reviewed-by: Lucas Stach <l.stach@pengutronix.de>
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: Lucas Stach <l.stach@pengutronix.de>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+And the size reduction could have been even more ;-)
 
-diff --git a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-index 849eb3443cde2..719e63092c2ea 100644
---- a/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-zii-rdu2.dtsi
-@@ -587,7 +587,7 @@
- 	pinctrl-0 = <&pinctrl_usdhc2>;
- 	bus-width = <4>;
- 	cd-gpios = <&gpio2 2 GPIO_ACTIVE_LOW>;
--	wp-gpios = <&gpio2 3 GPIO_ACTIVE_HIGH>;
-+	disable-wp;
- 	vmmc-supply = <&reg_3p3v_sd>;
- 	vqmmc-supply = <&reg_3p3v>;
- 	status = "okay";
-@@ -598,7 +598,7 @@
- 	pinctrl-0 = <&pinctrl_usdhc3>;
- 	bus-width = <4>;
- 	cd-gpios = <&gpio2 0 GPIO_ACTIVE_LOW>;
--	wp-gpios = <&gpio2 1 GPIO_ACTIVE_HIGH>;
-+	disable-wp;
- 	vmmc-supply = <&reg_3p3v_sd>;
- 	vqmmc-supply = <&reg_3p3v>;
- 	status = "okay";
-@@ -1001,7 +1001,6 @@
- 			MX6QDL_PAD_SD2_DAT1__SD2_DATA1		0x17059
- 			MX6QDL_PAD_SD2_DAT2__SD2_DATA2		0x17059
- 			MX6QDL_PAD_SD2_DAT3__SD2_DATA3		0x17059
--			MX6QDL_PAD_NANDF_D3__GPIO2_IO03		0x40010040
- 			MX6QDL_PAD_NANDF_D2__GPIO2_IO02		0x40010040
- 		>;
- 	};
-@@ -1014,7 +1013,6 @@
- 			MX6QDL_PAD_SD3_DAT1__SD3_DATA1		0x17059
- 			MX6QDL_PAD_SD3_DAT2__SD3_DATA2		0x17059
- 			MX6QDL_PAD_SD3_DAT3__SD3_DATA3		0x17059
--			MX6QDL_PAD_NANDF_D1__GPIO2_IO01		0x40010040
- 			MX6QDL_PAD_NANDF_D0__GPIO2_IO00		0x40010040
- 
- 		>;
+> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+
+> --- a/drivers/clk/clk-devres.c
+> +++ b/drivers/clk/clk-devres.c
+
+> @@ -55,25 +51,17 @@ static void devm_clk_bulk_release(struct device *dev, void *res)
+>  static int __devm_clk_bulk_get(struct device *dev, int num_clks,
+>                                struct clk_bulk_data *clks, bool optional)
+>  {
+> -       struct clk_bulk_devres *devres;
+>         int ret;
+>
+> -       devres = devres_alloc(devm_clk_bulk_release,
+> -                             sizeof(*devres), GFP_KERNEL);
+> -       if (!devres)
+> -               return -ENOMEM;
+> -
+>         if (optional)
+>                 ret = clk_bulk_get_optional(dev, num_clks, clks);
+>         else
+>                 ret = clk_bulk_get(dev, num_clks, clks);
+> -       if (!ret) {
+> -               devres->clks = clks;
+> -               devres->num_clks = num_clks;
+> -               devres_add(dev, devres);
+> -       } else {
+> -               devres_free(devres);
+> -       }
+> +
+> +       if (ret)
+> +               return ret;
+> +
+> +       ret = devm_vadd(dev, my_clk_bulk_put, clk_bulk_args, num_clks, clks);
+>
+>         return ret;
+
+return devm_vadd(...);
+
+>  }
+
+> @@ -128,30 +109,22 @@ static int devm_clk_match(struct device *dev, void *res, void *data)
+>
+>  void devm_clk_put(struct device *dev, struct clk *clk)
+>  {
+> -       int ret;
+> -
+> -       ret = devres_release(dev, devm_clk_release, devm_clk_match, clk);
+> -
+> -       WARN_ON(ret);
+> +       WARN_ON(devres_release(dev, my_clk_put, devm_clk_match, clk));
+
+Getting rid of "ret" is an unrelated change, which actually increases
+kernel size, as the WARN_ON() parameter is stringified for the warning
+message.
+
+The rest looks good, so with the above fixed:
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.20.1
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-
-
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
