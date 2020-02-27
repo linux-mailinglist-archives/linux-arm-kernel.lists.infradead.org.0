@@ -2,74 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5A7B172A60
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 22:45:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E707172A67
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 22:45:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O28o/tjvmBQFDGpuwwFMCtHi1JXhw8h5WNjfFEuLyno=; b=YryD4CCBY022Xu
-	4KJj7V5OOAURoo2lNrVkzuItU/oFn7HYkTcrLNlD+SttVcEngEl70p5wev84OA3MKQ/RZ8eexH7gY
-	dgWvvXlUxBSVBDOgvjBVowWEXsmEX2N9uiR10WUGA0w7a8IXrw2wYj5TCpfa239P/mS0YvExvF/i4
-	9gxbAGn1vNhV7a4gLnZFxrDzLYZqKT782igKnhZuRux3Yuh2fM29TXgJOV80ONJk33+5dYyqMPUGb
-	jEyallcmk7Fwmy0crx/VWE4A2Ek52UAh9vrq1l5g6j0J0eZMZWSbJVRbeiFPhf6usuIrmBis0kR5d
-	BFY63bz2tHS92zfZaZPg==;
+	List-Owner; bh=Z1LrLl/hdqMBtaW1avDr0p2VC2npEI7QGEMyOTPsipg=; b=Hkljmcan1y6CGN
+	firTk3koSi8ODoyUEVSQvsNUohMJr0ifjgMRjSI/sryG2BL2vc4T9XdRRZn4jXdj4vQ6WThOIl11I
+	Vni4qRfa+ymEyDo2rB46RXA+jZnOHSWBloh0PPQIHgoF+SjLWLGhpF7tBe0cC+NSoMheVW8U1xTLD
+	eDYwkl23Bz5SoVDGX/SD9YCbhEGpAEnz9GsDiNlZ7mkfkYRPr70cgC6o6hP3tgr92s+ChkG6MS0uT
+	xhaGnpXum4OprO/7gixzEZzHiKRYVr6iE+o7T3BK+1Vu8q5AUBepI1H72TJbvwsK6XIFw71aJnCaY
+	tUvdOZ15hzWv7l/iK/5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Qy4-0001xM-92; Thu, 27 Feb 2020 21:45:16 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1j7QyP-0002xw-L5; Thu, 27 Feb 2020 21:45:37 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Qxq-0001UF-FF
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 21:45:03 +0000
-Received: by mail-oi1-f193.google.com with SMTP id c16so806966oic.3
+ id 1j7QyA-0002vJ-BB
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 21:45:23 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z9so672152oth.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 13:45:02 -0800 (PST)
+ Thu, 27 Feb 2020 13:45:22 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8K8GxDjHWN8nw5B/MJxXE6qGFFNBAsQvBhfvCisLcQw=;
- b=jERJRArC+VGTCZQWlu1Ftde6wtAu+jOB/m3+NFhnImo9x7oeE3U+A1oXIOdpNOIdXC
- qV8LukvJXmcSaLLYGMvogAC7N7uZVNwQLtyikiJrj50DBZVrOFrSwPRiT2qxpk+0NEFV
- qe0gyQSVIg2nsYOAEaKzFYXOaTNnEd3TwSQGR58kMdVwG5lmraA8eiYj8eHqaOgwIBwC
- NkpWIzxZsmvY3U6PpuCyOmpcncoTkTdGIuPSERI0Ad8qvgMk9t1/SReGukdbMDDqZa1B
- XCQCczBRCpEAwgJLtH7sE8bETbrqySGqHghy0xOOyfnuMY+n160jvA2kIOEV0jtvkbnv
- wFjQ==
-X-Gm-Message-State: APjAAAU3IbFpgcPodAQHtIHYQ8OQA4G71uSlVjOQlvsNrNV8QUjUDBhw
- xuipNGLRqyGOcEcNVfmB0Q==
-X-Google-Smtp-Source: APXvYqwL/253WG+MaGdQ7iZMlqBjJ/aGplVqi0qJagYe77yQrHrUQ+OOCjtWvPmeGK+9wH55yDWvWg==
-X-Received: by 2002:aca:d03:: with SMTP id 3mr846106oin.69.1582839901619;
- Thu, 27 Feb 2020 13:45:01 -0800 (PST)
+ bh=PrfKdt2Kd+9fAhpGESasTmBPrNBa2PAXaPKA8tfFiPA=;
+ b=Pn9XY5dXHAfWfXsoxNOFdciDxUl4pcPzaG+pkHdbkkaOCYgVpw5JaTZM6wms0l87Mv
+ e8PWNwHdpHqmKOY+GdXBDWahRAt9MSsBf/s/S7/j2OZhU0ryityV2jZ1Z5d91K6CLi26
+ uSOwusGwFq+OzOL/qnbAwE2N+y8JItDi0zUKopO354xQTAj9xeBEnP9PF8hk916j5QCv
+ QSWXnGaXfRkwJ7GgXZEIVQ3ivG7nKdQxmp3YuTIsJ/pYvOsX3qkwqyWBT/b1LLGhbVgq
+ 7uidSZGi4IJFDMAM0WLz5ALMUU7MNXbhGfBsqSi4TY2DvnpnXkGfVPuF0RGtQthHkB6z
+ QoAQ==
+X-Gm-Message-State: APjAAAVij9mGAHEIuPQ3mc5O2EN21SmnZFX0ud1qNt7TkjdJivBP2b0B
+ /GoavKHA9WExbT2E4Dz1HA==
+X-Google-Smtp-Source: APXvYqzDQOqstBQFtdFEAIEMTp1D4ag+GGoIFdtl3iXXISlKVIFUQ2rhO1wbfndZkvnyEkqYFeQIHw==
+X-Received: by 2002:a05:6830:22ee:: with SMTP id
+ t14mr782756otc.236.1582839921438; 
+ Thu, 27 Feb 2020 13:45:21 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id h1sm2353634otm.34.2020.02.27.13.45.00
+ by smtp.gmail.com with ESMTPSA id g8sm2372764otq.19.2020.02.27.13.45.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 27 Feb 2020 13:45:01 -0800 (PST)
-Received: (nullmailer pid 6216 invoked by uid 1000);
- Thu, 27 Feb 2020 21:45:00 -0000
-Date: Thu, 27 Feb 2020 15:45:00 -0600
+ Thu, 27 Feb 2020 13:45:21 -0800 (PST)
+Received: (nullmailer pid 6707 invoked by uid 1000);
+ Thu, 27 Feb 2020 21:45:20 -0000
+Date: Thu, 27 Feb 2020 15:45:20 -0600
 From: Rob Herring <robh@kernel.org>
 To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH v2 03/13] arm: dts: calxeda: Fix interrupt grouping
-Message-ID: <20200227214500.GC26010@bogus>
+Subject: Re: [PATCH v2 04/13] arm: dts: calxeda: Group port-phys and
+ sgpio-gpio items
+Message-ID: <20200227214520.GD26010@bogus>
 References: <20200227182210.89512-1-andre.przywara@arm.com>
- <20200227182210.89512-4-andre.przywara@arm.com>
+ <20200227182210.89512-5-andre.przywara@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200227182210.89512-4-andre.przywara@arm.com>
+In-Reply-To: <20200227182210.89512-5-andre.przywara@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_134502_537830_F078ECCB 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20200227_134522_418670_40A354BA 
+X-CRM114-Status: GOOD (  10.13  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
@@ -78,10 +82,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,26 +107,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 06:22:00PM +0000, Andre Przywara wrote:
-> Currently multiple interrupts for some devices are written as one array
-> instead of using the DT grouping notation (<0 42 4>, <0 23 4>).
-> This ends up in the same binary representation in the .dtb, but is
-> semantically not equivalent. The yaml schema checks will stumble over
-> this, so lets fix that first.
-> 
-> I refrained from using the symbolic names for GIC_SPI/GIC_PPI and
-> IRQ_TYPE_LEVEL_HIGH, mostly because it increases the delta between the
-> original DTS files and the mainline versions, so it's just additional
-> churn.
+On Thu, Feb 27, 2020 at 06:22:01PM +0000, Andre Przywara wrote:
+> For proper bindings checks we need to properly group the port-phys and
+> sgpio-gpio items, so that they match the expected number of items.
 > 
 > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 > ---
->  arch/arm/boot/dts/ecx-2000.dts    | 2 +-
->  arch/arm/boot/dts/ecx-common.dtsi | 4 ++--
->  arch/arm/boot/dts/highbank.dts    | 4 ++--
->  3 files changed, 5 insertions(+), 5 deletions(-)
+>  arch/arm/boot/dts/ecx-common.dtsi | 9 +++++----
+>  1 file changed, 5 insertions(+), 4 deletions(-)
 
 Acked-by: Rob Herring <robh@kernel.org>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
