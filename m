@@ -2,79 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F09B11714C3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 11:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AC741714B1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 11:06:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DuUc6aW/16SegmQvg2RUaBNiW5A3O/TdEY/IggX2atw=; b=MASb0qvPGbu6dQ
-	aIZZjJ4vKbe9HRhM37zYfS1UJxcW7q5bJw2uOrZV51DfPlr/yZDv4rqR5TRz7KKTlKdVoWFx9nPt0
-	5EFLUxh/aUTMXNHUZcU5Dc2NFF05mYoRKR1/a/GMXAuEI3K6kFmA8Rle4AaUKwEcv6Odulfo97Xck
-	/4jOd9wmO2N0qPnC4xNI6QMHG4rmDDaPAt0fn/BggRnQN13LMj5tYEDoBbjQf6u/qVGo0mbpnX+T/
-	xW5x6OrP/R4NyA4uCB4fQz4J4f89xfEuk2AqFGS59NtIstqLf4mdfPDzrFDpQ7Wc9vfQGEpbf7D7H
-	VTMnoOisYwmWRY7+PXKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ClM7UciTtVQbPxWxsCFZDJrVKRHfeS8tcQPtgbEn5mY=; b=D7ocQ7oR0JcPzk
+	6cYinBpqVh5/MT9jMGhhYmCg94iYwI2mRaOZG8NUW0gIY2ivmKxxhy++1/pJxICS0sceK6lhfbrYg
+	MgfB3Hit6HuKq/dR7rHa9gH3oH7RwIx6zVb2tzOTQ2uI+Ex0FiTOaINGMQVcLBcSf2v6AFf68WQU6
+	inMF2Gkgm7tY6+U96s9GJjwmk2P2qr/PlG39MD4KgCy8ezZy/qn8rxfWwT1+Fj7gWy1Tv8TWy0SNw
+	YH+sb6qnZKXo6B8AEXqmLM4vH4oOCZuaKGp11h23BSKI8SaedA1z0fz9ltY1+o+3BZeUbBL3H8Hc1
+	dthQwS3D/tahG+ByWvOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7G7X-0006qo-1o; Thu, 27 Feb 2020 10:10:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j7G3T-0005L4-Cj; Thu, 27 Feb 2020 10:06:07 +0000
+Received: from mail-eopbgr80073.outbound.protection.outlook.com ([40.107.8.73]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7G7E-0006Wh-Pr; Thu, 27 Feb 2020 10:10:02 +0000
-X-UUID: 1b03fa6e8a38465ca83dfa9628bcfdfb-20200227
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=eLO7gTFF1vCEAIYROkM8MZuVGCM3sjjAWL8M+r6/05Y=; 
- b=BakoIO05e70F2zY4x9CluisQoeR2XSAUbzcWYoBfojDKRB1rabr2ND/3Fc3BDv/lMD4vRzT0evUdvNnSw44hiIW09QV1L/mWtF9KgXsXt6kEnc3NHimSorPXgazAkfYlCxf4yMFJ+Pp2FT2IrCe9OAS7dVxONIKUsyBrzLxNMj0=;
-X-UUID: 1b03fa6e8a38465ca83dfa9628bcfdfb-20200227
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <sam.shih@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 94554355; Thu, 27 Feb 2020 02:09:54 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 27 Feb 2020 02:00:58 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 27 Feb 2020 17:59:00 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 27 Feb 2020 17:59:53 +0800
-Message-ID: <1582797590.25607.10.camel@mtksdccf07>
-Subject: Re: [PATCH 1/1] pwm: mediatek: add longer period support
-From: Sam Shih <sam.shih@mediatek.com>
-To: Uwe =?ISO-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Date: Thu, 27 Feb 2020 17:59:50 +0800
-In-Reply-To: <20200227080450.rkvwfjx6vikn5ls3@pengutronix.de>
-References: <1582789610-23133-1-git-send-email-sam.shih@mediatek.com>
- <1582789610-23133-2-git-send-email-sam.shih@mediatek.com>
- <20200227080450.rkvwfjx6vikn5ls3@pengutronix.de>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1j7G3J-0005JK-Rz
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 10:05:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dyMcx0wpMI0LXTSsQHgn1lnQcY3wpH91vvWr9JFLkLfQklc6zLyp6b7ko9wknh7GTPaVbQIILANqVUiAMR+/yU1Ph5jPCT0P1txDoDZR8naw6V2eGtSJpJZxQjSreneA5lCmb1Zy8e+jNw92xFSOiYL9rCynNf/EXNm6yPDRtvyxn7dAFNnDXLB6iehbu5jL3RLkPMbqBKbsy59C2kzxN3+Ip7hmZISnAWtz81z4pOKOEDyeXq50n8iIjqum+Jp26RhmP+F0xkqHadUJp85qqtBDU26xGw9lHgdu9JvxTlxJ+t5FeOLCP1gnWKtkn58218BNawYwgVug3PEH1jPrIg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vp/LTPAvf0JpbewNnY3iEKWLkz04nuBGdl0Sv924GmI=;
+ b=jYtVXecQsXzxR5T8WC8NkONalt6AKe4jPfQ7gu/8YAkTLSqNxy3KboaXducA4tlLF2Q4n3ouooklP1+Iot2vn2Cijn3rDvX+4fPqyE0uqRN6fzMoFMOShUbaRMtlzYdiPUz3YBIWeuZSBPRoISiBNOhfhQnlKaIGlSOsyC966ozTUEpnHwaAZXXqmhtuQ8IRdKk9CKnsTxB/Mu7CSfYzAqaRxoEB6/HlAASDgeQov835A8mtukfv3TLQvm9uTrE9EwtHLKKhRt3PD6zo5Nkrd6Fyb1Vwb3PEYoKLnDWwGHcJJ43pisTs2c2ASLcs6InEiSWZNPYNDSfZKqfi3VbiFQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vp/LTPAvf0JpbewNnY3iEKWLkz04nuBGdl0Sv924GmI=;
+ b=AiRnlgiyOIRGHjbeR4yLnOUIoZZuK5L3RFuWOh6xlrCkEhsUcYdNfz424Rvgby9xlSpTSUDlai2DHXg3k5OVIIPXHkElT13LpB+EMxtGMxpJZM+VJMpGCFFkD3/OPjWCmD8LzjwrqISAczpp8fTjZLspuCYoynYLiyOEuERm5rY=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=laurentiu.tudor@nxp.com; 
+Received: from AM6PR04MB5878.eurprd04.prod.outlook.com (20.179.0.89) by
+ AM6PR04MB4312.eurprd04.prod.outlook.com (52.135.165.146) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.21; Thu, 27 Feb 2020 10:05:53 +0000
+Received: from AM6PR04MB5878.eurprd04.prod.outlook.com
+ ([fe80::bcef:1c59:7d27:d0e]) by AM6PR04MB5878.eurprd04.prod.outlook.com
+ ([fe80::bcef:1c59:7d27:d0e%6]) with mapi id 15.20.2750.021; Thu, 27 Feb 2020
+ 10:05:53 +0000
+From: laurentiu.tudor@nxp.com
+To: linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, linux-acpi@vger.kernel.org
+Subject: [RFC PATCH 1/4] bus: fsl-mc: add custom .dma_configure implementation
+Date: Thu, 27 Feb 2020 12:05:39 +0200
+Message-Id: <20200227100542.13819-1-laurentiu.tudor@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: AM6P192CA0056.EURP192.PROD.OUTLOOK.COM
+ (2603:10a6:209:82::33) To AM6PR04MB5878.eurprd04.prod.outlook.com
+ (2603:10a6:20b:a2::25)
 MIME-Version: 1.0
-X-MTK: N
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from fsr-ub1864-101.ea.freescale.net (89.37.124.34) by
+ AM6P192CA0056.EURP192.PROD.OUTLOOK.COM (2603:10a6:209:82::33) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2750.18 via Frontend Transport; Thu, 27 Feb 2020 10:05:51 +0000
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [89.37.124.34]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 7a84ab2c-a46d-4f98-a345-08d7bb6ca0fd
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4312:|AM6PR04MB4312:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR04MB43129C1D33F2ED76B03C4D35ECEB0@AM6PR04MB4312.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Forefront-PRVS: 03264AEA72
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(396003)(346002)(136003)(366004)(376002)(199004)(189003)(66476007)(1076003)(66946007)(478600001)(52116002)(6486002)(5660300002)(66556008)(4326008)(7416002)(6666004)(2906002)(8936002)(6506007)(16526019)(86362001)(26005)(9686003)(36756003)(8676002)(186003)(6512007)(316002)(2616005)(81156014)(81166006)(956004)(142923001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4312;
+ H:AM6PR04MB5878.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: UsWi/zKS+FmNEMPuo7Io1USJz0q6K3qP+Y3v8mK3rLnaYzMISrq0dFn1D4svCi3QpDPIKVho8olOMSwQo2KWot8KMmx8IMTz4kAIDzitgyvR1mEj8a0lKYCK4Wt4nAFVbHx8J3ddEKkoG+QNbl18d4fJe/vh63ygiJUMZDNh82sqnFqZBKgWs9xUvFhicq0Z2Q4mypv0CoNThaqf2eHMg+i30DZDR/R6huMYRJZ+D+FV2FyEKTfNdGNJIcP2RRqSJd1gbw72GIPQ+bGn3PWW9UmEsDnyU4FDA154a/xpxbr3jNvqP6wJXJwYFm6sSJtjC3XL8yaYrqh1IMyKBnHkSjdlfQW7/Bpci66A52Tk72scT+tHwQ3N1BGHAhyeNVRPjeBJt0wI9o+cajXO4fzckqWDMVVZPIL0Q963ziMAJvAGuzvPdNLuTD6SgVuIIlbK/Y8qgDE400KUMidW6am3q6EZ4AtGUyl0RbhUbKUkQ+WjRl0b1IWl/du4xCoVhpjo
+X-MS-Exchange-AntiSpam-MessageData: PuJHmMkcQMRYDsFrr2TEsmbhMVieRqg4tbJwAogPxTIz6XX/TfRY3xK/AQtaA2FxmxOrnTkkBtbDn+Oy3LxT1Qki0GhUfsx33W4qTCX6wWNlTqYn6WKMzmG9KIlIyIFLrXz0VbP4Bwdt3jWrgbmJVg==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7a84ab2c-a46d-4f98-a345-08d7bb6ca0fd
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Feb 2020 10:05:53.0132 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: pWpb5+TxiL+gjXLio7s/z96Pk59A9p7TCGNoeFsQ6V/oXOKl/LI9fTDGJaRdzfZeWRjgHTeD5HMyDwILvA4tQw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4312
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_021000_846692_483944C2 
-X-CRM114-Status: GOOD (  26.28  )
+X-CRM114-CacheID: sfid-20200227_020557_949020_FAEE0E70 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.8.73 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,163 +123,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-15"
-Content-Transfer-Encoding: quoted-printable
+Cc: lorenzo.pieralisi@arm.com, calvin.johnson@nxp.com,
+ ard.biesheuvel@linaro.org, maz@kernel.org, pankaj.bansal@nxp.com,
+ diana.craciun@oss.nxp.com, jon@solid-run.com, jeremy.linton@arm.com,
+ makarand.pawagi@nxp.com, cristian.sovaiala@nxp.com, V.Sethi@nxp.com,
+ ioana.ciornei@nxp.com, tglx@linutronix.de,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, robin.murphy@arm.com,
+ joro@8bytes.org, jason@lakedaemon.net, Stuart.Yoder@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-02-27 at 09:04 +0100, Uwe Kleine-K=F6nig wrote:
-On Thu, Feb 27, 2020 at 03:46:50PM +0800, Sam Shih wrote:
-> > The pwm clock source could be divided by 1625 with PWM_CON
-> > BIT(3) setting in mediatek hardware.
-> > =
+From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 
-> > This patch add support for longer pwm period configuration,
-> > which allowing blinking LEDs via pwm interface.
-> > =
+The devices on this bus are not discovered by way of device tree
+but by queries to the firmware. It makes little sense to trick the
+generic of layer into thinking that these devices are of related so
+that we can get our dma configuration. Instead of doing that, add
+our custom dma configuration implementation.
 
-> > Signed-off-by: Sam Shih <sam.shih@mediatek.com>
-> > ---
-> >  drivers/pwm/pwm-mediatek.c | 21 +++++++++++++++++----
-> >  1 file changed, 17 insertions(+), 4 deletions(-)
-> > =
+Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+---
+ drivers/bus/fsl-mc/fsl-mc-bus.c | 31 ++++++++++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
 
-> > diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
-> > index b94e0d09c300..9af309bea01a 100644
-> > --- a/drivers/pwm/pwm-mediatek.c
-> > +++ b/drivers/pwm/pwm-mediatek.c
-> > @@ -121,8 +121,8 @@ static int pwm_mediatek_config(struct pwm_chip
-*chip, struct pwm_device *pwm,
-> >  			       int duty_ns, int period_ns)
-> >  {
-> >  	struct pwm_mediatek_chip *pc =3D to_pwm_mediatek_chip(chip);
-> > -	u32 clkdiv =3D 0, cnt_period, cnt_duty, reg_width =3D PWMDWIDTH,
-> > -	    reg_thres =3D PWMTHRES;
-> > +	u32 clkdiv =3D 0, clksel =3D 0, cnt_period, cnt_duty,
-> > +	    reg_width =3D PWMDWIDTH, reg_thres =3D PWMTHRES;
-> >  	u64 resolution;
-> >  	int ret;
-> >  =
-
-> Adding some more context:
-> =
-
-
-+ /* The pwm source clock can be divided by 2^clkdiv. When the clksel  +
-* bit is set to 1, The final clock output needs to be divided by an +  *
-extra 1625.
-+  */
-
-Is this ok ?
-
-
-> > @@ -139,11 +139,20 @@ static int pwm_mediatek_config(struct pwm_chip
-*chip, struct pwm_device *pwm,
-> > 	while (cnt_period > 8191) {
-> >  		resolution *=3D 2;
-> >  		clkdiv++;
-> >  		cnt_period =3D DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000,
-> >  						   resolution);
-> > +		if (clkdiv > PWM_CLK_DIV_MAX && !clksel) {
-> > +			clksel =3D 1;
-> > +			clkdiv =3D 0;
-> > +			resolution =3D (u64)NSEC_PER_SEC * 1000 * 1625;
-> > +			do_div(resolution,
-> > +				clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
-> > +			cnt_period =3D DIV_ROUND_CLOSEST_ULL(
-> > +					(u64)period_ns * 1000, resolution);
-> =
-
-> The assignment is a repetition from just above the if. Maybe just put
-it
-> once after this if block?
-
-The cnt_period represents the effective range of the PWM period counter,
-when we need changing the pwm output period to a longer value at the
-same clock frequency, we can setting a larger cnt_period, but the width
-of the cnt_peroid register is 12 bits,
-When the request period is too long, we need to divide the clock source
-and then recalculate cnt_period outputs the correct waveform.
-As mentioned above, when changing clkdiv, we need to recalculate
-cnt_period immediately.
-
-If the request period is very long (for example, LED blinking), clkdiv
-may be insufficient. =
-
-In this case, we will use clksel to divide the pwm source clock by an
-additional 1625, and recalculate clkdiv and cnt_period.
-
-I don't think we can just place assignments after the if block.
-
-> =
-
-> > +		}
-> >  	}
-> >  =
-
-> > -	if (clkdiv > PWM_CLK_DIV_MAX) {
-> > +	if (clkdiv > PWM_CLK_DIV_MAX && clksel) {
-> =
-
-> Is this change actually relevant? If the while loop that starts at
-line
-> 139 is never run (because cnt_period is <=3D 8191) clkdiv is zero and so
-> the condition is false with and without "&& clksel". If however the
-> while loop is entered and clkdiv becomes bigger than PWM_CLK_DIV_MAX
-> clksel is 1 and the "&& clksel" doesn't make a difference, too.
-> =
+diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
+index 36eb25f82c8e..eafaa0e0b906 100644
+--- a/drivers/bus/fsl-mc/fsl-mc-bus.c
++++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
+@@ -132,11 +132,40 @@ static int fsl_mc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
+ static int fsl_mc_dma_configure(struct device *dev)
+ {
+ 	struct device *dma_dev = dev;
++	struct iommu_fwspec *fwspec;
++	const struct iommu_ops *iommu_ops;
++	struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
++	int ret;
++	u32 icid;
+ 
+ 	while (dev_is_fsl_mc(dma_dev))
+ 		dma_dev = dma_dev->parent;
+ 
+-	return of_dma_configure(dev, dma_dev->of_node, 0);
++	fwspec = dev_iommu_fwspec_get(dma_dev);
++	if (!fwspec)
++		return -ENODEV;
++	iommu_ops = iommu_ops_from_fwnode(fwspec->iommu_fwnode);
++	if (!iommu_ops)
++		return -ENODEV;
++
++	ret = iommu_fwspec_init(dev, fwspec->iommu_fwnode, iommu_ops);
++	if (ret)
++		return ret;
++
++	icid = mc_dev->icid;
++	ret = iommu_fwspec_add_ids(dev, &icid, 1);
++	if (ret)
++		return ret;
++
++	if (!device_iommu_mapped(dev)) {
++		ret = iommu_probe_device(dev);
++		if (ret)
++			return ret;
++	}
++
++	arch_setup_dma_ops(dev, 0, *dma_dev->dma_mask + 1, iommu_ops, true);
++
++	return 0;
+ }
+ 
+ static ssize_t modalias_show(struct device *dev, struct device_attribute *attr,
+-- 
+2.17.1
 
 
-You are right, I will remove this.
-
-> The code is hard to follow, I wonder if this could be cleaned up with
-> some comments added that explain the hardware details enough to be
-able
-> to actually understand the code without having the hardware reference
-> manual handy.
-> =
-
-
-Is it sufficient to add some context into comment like the response of
-the second question?
-
-
-> >  		pwm_mediatek_clk_disable(chip, pwm);
-> >  		dev_err(chip->dev, "period %d not supported\n", period_ns);
-> >  		return -EINVAL;
-> > @@ -159,7 +168,11 @@ static int pwm_mediatek_config(struct pwm_chip
-*chip, struct pwm_device *pwm,
-> >  	}
-> >  =
-
-> >  	cnt_duty =3D DIV_ROUND_CLOSEST_ULL((u64)duty_ns * 1000, resolution);
-> > -	pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
-> > +	if (clksel)
-> > +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | BIT(3) |
-> > +				    clkdiv);
-> > +	else
-> > +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
-> >  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_width, cnt_period);
-> >  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_thres, cnt_duty);
-> >  =
-
-> > -- =
-
-> > 2.17.1
-> =
-
-> Best regards
-> Uwe
-> =
-
->
-
-Best Regards,
-Sam
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
