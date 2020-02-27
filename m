@@ -2,58 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80CC21723E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 17:48:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A01891723FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 17:52:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CdsbhexxWXQGdt01v0vP8rLzxb2LfLOC7oGEUPHGmtA=; b=V2vgLZarBxl2Jk
-	D2MfHgPpdDwC2ot4IFRtkZ9HOKaU7WGaTpubV7BJDkdwj84IrN1zhoD/eY0An5XxlM43HKe1fROSq
-	NZQYfUYkbg4DxXqAS4sD2mrPVZ+F2PPU9Blb5CQHFCno1hRSCPPYEW0rGionnTnRzS+loKgJbztYH
-	HLihY71bZEltri8TannvUHM4Oa3AXFtX0H5Ups8M18aAr3nbTAo+vQMgR/TIMI6iW2RKWeAdbJ2Ug
-	ghILWdHGMmWDhoCO2vKupCNMkWZgctcN/QPO7imD8jZbgJD2VgGBIpj7fotcwMoMj0HF5Zh1uo6md
-	WSg+2tI9NUO/YVdRkF1A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0GWG3oGeb7BpO6WxZPc3F9GHebtZQBpGdSTw6toHmxk=; b=G2FiMZCL3ejNNO
+	ZHqL8y0+viqrKqkUzl06FSZGSDAACWI6VHjFEBSyPOqFVBmjc+Nt95b1DtCgY7VOKenR0wftBWQOS
+	8RwSIu5bisVxua/AHol9N44ETBkwMo2peMsRI5c3U41gbloIXJN8IqXpvRSFBXshkLW9VwCF/LBRH
+	RwCham829IEtChGlvOPOwWcxYtLMI+LOAl3I3UeMGicVstHBk/wYJ2CoQlYRyBbiTqV3vciqM5BZy
+	sKY58g2PBxmCgpRj7VXcLSRFC21f7vLg+4YkZtX0soR/3N53VJiRo9JETl/fERjPW0cEnwpmoaRLC
+	zD32LfURE2UPWhUd9kZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7MKy-0008EV-Gb; Thu, 27 Feb 2020 16:48:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7MKo-0008E1-CI
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 16:48:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A612D1FB;
- Thu, 27 Feb 2020 08:48:23 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 390443F703;
- Thu, 27 Feb 2020 08:48:22 -0800 (PST)
-Date: Thu, 27 Feb 2020 16:48:17 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH 2/2] arm64: kprobe: disable probe of fault prone ptrauth
- instruction
-Message-ID: <20200227164817.GA31259@lakrids.cambridge.arm.com>
-References: <1582117240-15330-1-git-send-email-amit.kachhap@arm.com>
- <1582117240-15330-3-git-send-email-amit.kachhap@arm.com>
+	id 1j7MOe-0001sA-5W; Thu, 27 Feb 2020 16:52:24 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7MOT-0001rU-7n
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 16:52:15 +0000
+Received: by mail-lf1-x142.google.com with SMTP id n25so2628848lfl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 08:52:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=4kXB7FgTmsEGGbvV7uWwCTMrQxdsKT8tnVYNGq8AnCA=;
+ b=F6FcKlKKFxpwyeXYMTixXUSJtDtGrVwip31cUGRv9wwTcq0ataMnomX0ntj7BD3cS5
+ peBIyQSJxbzuqyk8q7OE4XLGFwlTxOBAIOtl0hmEbYnYnW/879Djtt0UnsRLg2lLiey/
+ WMRaYAq6xRshNGqqQZUfqXEMez+ojtVtRKDBCghhusYpq32C5KZ2KH38xzhaYx/ahFpz
+ i1S9ppCLWvJ+hOj5mPjAfqNYFc3s8tWPuenSVyOcoRMbXT5bd+i8+Zf0aT0V9wAh8Jsn
+ lFOvfqWmT4kk/2ifrHOGlvJ7XLgxeXxFNxOgJW377B7fH0a8ABO1f9gnB4iQgFqBjGtO
+ 7mWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=4kXB7FgTmsEGGbvV7uWwCTMrQxdsKT8tnVYNGq8AnCA=;
+ b=aYrF9cVJfHww+Hy8hn5ppHmfbsGQAHDycRiuI3uLbC45BplziDXv5/WiL+qpytngHi
+ 01yI6gqCPuGrNQHg4vAHhX2GmFJYwZpdzik0wFtDdVFDTnyVW6mcVp/CNtWG1XBipB2J
+ Re11Re9U2rr8TDgeuCoQoGcZsJtm7By/Ri/WcT9Y/Z4Mjk5EZ44IQ+JuCLAhgA/Kuk13
+ /01ypEPBqN3VI2Ly40YAZfi45In7mHDPEo0bwdWgYP5rlm4TrwOkU88WhGnt2iSMwEZu
+ LoWU6jF9V0ZSUirtyygUqpeFi0JxVpq9iMQMHw5gitM1ywnryd/2D+iLnHdZNYXnYJUV
+ +g/A==
+X-Gm-Message-State: ANhLgQ0PeYADit5iZ/mRqBGMZjKsAKsfP9VUFkjh7+4WFtZEU4FrQCvr
+ P3VdsZa6q90Us1tCWCLP1LlEUg==
+X-Google-Smtp-Source: ADFU+vsgBkVQD0dLBecTfEbF03CrLYtLtKVzW7GOc6eWIzGL7RcvC5sthhgOlU9YtJ3O57BeRs1mGw==
+X-Received: by 2002:a05:6512:692:: with SMTP id
+ t18mr170820lfe.212.1582822328230; 
+ Thu, 27 Feb 2020 08:52:08 -0800 (PST)
+Received: from jade (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
+ by smtp.gmail.com with ESMTPSA id m14sm3129755lfk.7.2020.02.27.08.52.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 08:52:07 -0800 (PST)
+Date: Thu, 27 Feb 2020 17:52:05 +0100
+From: Jens Wiklander <jens.wiklander@linaro.org>
+To: arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] amdtee driver fix for v5.6
+Message-ID: <20200227165205.GA7926@jade>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582117240-15330-3-git-send-email-amit.kachhap@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_084826_508727_3318F233 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200227_085213_347681_533E7346 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,97 +96,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: tee-dev@lists.linaro.org, Rijo Thomas <Rijo-john.Thomas@amd.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Amit,
+Hello arm-soc maintainers,
 
-On Wed, Feb 19, 2020 at 06:30:40PM +0530, Amit Daniel Kachhap wrote:
-> This patch disables the probing of authenticate ptrauth instruction
-> (AUTIASP) which falls under the hint instructions region. This is done
-> to disallow probe of authenticate instruction in the kernel which may
-> lead to ptrauth faults with the addition of Armv8.6 enhanced ptrauth
-> features.
-> 
-> The corresponding append pac ptrauth instruction (PACIASP) is not disabled
-> and they can still be probed.
-> 
-> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-> ---
->  arch/arm64/include/asm/insn.h          | 13 +++++++------
->  arch/arm64/kernel/insn.c               |  1 +
->  arch/arm64/kernel/probes/decode-insn.c |  2 +-
->  3 files changed, 9 insertions(+), 7 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
-> index bb313dd..2e01db0 100644
-> --- a/arch/arm64/include/asm/insn.h
-> +++ b/arch/arm64/include/asm/insn.h
-> @@ -40,12 +40,13 @@ enum aarch64_insn_encoding_class {
->  };
->  
->  enum aarch64_insn_hint_op {
-> -	AARCH64_INSN_HINT_NOP	= 0x0 << 5,
-> -	AARCH64_INSN_HINT_YIELD	= 0x1 << 5,
-> -	AARCH64_INSN_HINT_WFE	= 0x2 << 5,
-> -	AARCH64_INSN_HINT_WFI	= 0x3 << 5,
-> -	AARCH64_INSN_HINT_SEV	= 0x4 << 5,
-> -	AARCH64_INSN_HINT_SEVL	= 0x5 << 5,
-> +	AARCH64_INSN_HINT_NOP		= 0x0 << 5,
-> +	AARCH64_INSN_HINT_YIELD		= 0x1 << 5,
-> +	AARCH64_INSN_HINT_WFE		= 0x2 << 5,
-> +	AARCH64_INSN_HINT_WFI		= 0x3 << 5,
-> +	AARCH64_INSN_HINT_SEV		= 0x4 << 5,
-> +	AARCH64_INSN_HINT_SEVL		= 0x5 << 5,
-> +	AARCH64_INSN_HINT_AUTIASP	= (0x3 << 8) | (0x5 << 5),
->  };
->  
->  enum aarch64_insn_imm_type {
-> diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
-> index 4a9e773..87f7c8a 100644
-> --- a/arch/arm64/kernel/insn.c
-> +++ b/arch/arm64/kernel/insn.c
-> @@ -63,6 +63,7 @@ bool __kprobes aarch64_insn_is_nop(u32 insn)
->  	case AARCH64_INSN_HINT_WFI:
->  	case AARCH64_INSN_HINT_SEV:
->  	case AARCH64_INSN_HINT_SEVL:
-> +	case AARCH64_INSN_HINT_AUTIASP:
->  		return false;
->  	default:
->  		return true;
-
-I'm afraid that the existing code here is simply wrong, and this is
-adding to the mess.
-
-We have no idea what HINT space instructions will be in the future, so
-the only sensible implementations of aarch64_insn_is_nop() are something
-like:
-
-bool __kprobes aarch64_insn_is_nop(u32 insn)
-{
-	return insn == aarch64_insn_gen_hint(AARCH64_INSN_HINT_NOP);
-}
-
-... and if we want to check for other HINT instructions, they should be
-checked explicitly.
-
-Can you please change aarch64_insn_is_nop() as above?
-
-Generally the logic in aarch64_insn_is_steppable() needs to be reworked
-to a whitelist, but at least chagning aarch64_insn_is_nop() this way is
-closer to where we want to be.
+Please pull this AMDTEE driver fix for a memory leak in one of the error
+paths of amdtee_open_session()
 
 Thanks,
-Mark.
+Jens
+
+
+The following changes since commit 11a48a5a18c63fd7621bb050228cebf13566e4d8:
+
+  Linux 5.6-rc2 (2020-02-16 13:16:59 -0800)
+
+are available in the Git repository at:
+
+  https://git.linaro.org/people/jens.wiklander/linux-tee.git tags/tee-amdtee-fix-for-5.6
+
+for you to fetch changes up to b83685bceedbeed33a6adc2d0579a011708d2b18:
+
+  tee: amdtee: fix memory leak in amdtee_open_session() (2020-02-27 16:22:05 +0100)
+
+----------------------------------------------------------------
+Fix AMDTEE memory leak in amdtee_open_session()
+
+----------------------------------------------------------------
+Dan Carpenter (1):
+      tee: amdtee: fix memory leak in amdtee_open_session()
+
+ drivers/tee/amdtee/core.c | 48 +++++++++++++++++++++++------------------------
+ 1 file changed, 24 insertions(+), 24 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
