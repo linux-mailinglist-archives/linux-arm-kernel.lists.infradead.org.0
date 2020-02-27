@@ -2,81 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A428A17146E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 10:53:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C21A171473
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 10:55:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Np6L1hs4CymjW3BMsUm7esyq1PjIqMIDy1UlPas2oM=; b=g5Xoe3II9PNZlX
-	ptJRaxE8EBzo7/v1/dtYCgRE2itJyVBYZ/ifaSv12FYnZ/SFRUKsYgN95x9Ceua0r1IbMuux8+dxG
-	2VWcTey89O/tRLLBH56qlq5P0NAWC+tZdf+qBvt93rAqrnCK93H5B806Gbnu5sp+w/betOzgtKxOB
-	WFadSSLoP4M4y70bbfuNGfndTO0ymHoP+Ut1gJ6xZEG02FR688LU7TQtfCsYUAN98NNk4uUNZ6wwH
-	Jsc8zfk2yazx9uKr88h/ORTlu9rTK5yThP7c4zlwHAyrR6I/wiQCgpl/GYhhyqQHrB0EErfDHNpNU
-	6l1ZDt5m5OedXqQ1K92A==;
+	List-Owner; bh=UQrqV2cN86zLNoi7DgQrGGAKiFE4Y8feBu512n+htvY=; b=MwtBqEBCmZuf7K
+	I1804N7YH7s4ox56ShqK9ai7o68/mPdeb8MLfvy9O+vgkG3lchcmaNE3Tx+3aS6YFixJAiVJq2JOC
+	OeXnGWuw+r2xA2uBKicppyVEdNQ9YkeiIiy1wSYx86DV5yX7Vn5z6b3wBNCP1J6cG/nXXb1tSNWQq
+	XpyOlAUPu5mzflvwlhKGtyBeBIY8BMGPEygw8l+FnUaz36HD+4kLaEmHq2nd9Jn2QFyet9g/6Z5j+
+	i+/fpxZmMDeBcxcBA33rEBmjAGqh1uV7NQeUAvS/abEHkjBEn5SZZGPU2271131wWq6dH0I9Pypdp
+	7dTYcQ2FpcUr2i/m7LRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7FrK-00071K-Ra; Thu, 27 Feb 2020 09:53:34 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Fr0-0006pz-Fx
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 09:53:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
- In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4Dp7mkcUtdW2tERi+jH4BIpeVDMyk4miuASJrf/8YYI=; b=ZwsjtKIX0ZT+IcOxljKyal2CwR
- C2FUBo2NgHHukysc80HVUWJ7AAd4iq/azt/ArgcRFaSGvYASo5/n12o5x1NYWFcOxv0USnb9auRbZ
- 3aIJEi01oPcGdIu6G4pym/r2+fDYHVwTY2FBHtsJRaJVVPzh1L4LnOmTnuOK2HGuUcyImrcUFVhhg
- pvIll5zpXLaozd6Ap9ya1LnQZtdDwd49NVlgkDJCzJff5E1+b9YG0dLCeCrlwW9GRgv3xdNVe9K0q
- v7iipUkxTBrA4gbc9RY8fzcFpvwo+Xko5N1vsfqlMK3f8XXlSvAnBo/sWM35zmPe2W0Ks8L4COSbx
- f96g2NiA==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:57842 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1j7Fqc-0004kL-5v; Thu, 27 Feb 2020 09:52:50 +0000
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1j7FqZ-0003tI-2A; Thu, 27 Feb 2020 09:52:47 +0000
-In-Reply-To: <20200227095159.GJ25745@shell.armlinux.org.uk>
-References: <20200227095159.GJ25745@shell.armlinux.org.uk>
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH net-next 3/3] arm64: dts: configure Macchiatobin 10G PHY LED
- modes
+	id 1j7FtI-0000yx-0w; Thu, 27 Feb 2020 09:55:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7Ft8-0000yI-9V; Thu, 27 Feb 2020 09:55:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B70461FB;
+ Thu, 27 Feb 2020 01:55:25 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 4E7FB3F881; Thu, 27 Feb 2020 01:55:23 -0800 (PST)
+Date: Thu, 27 Feb 2020 09:55:21 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Macpaul Lin <macpaul.lin@mediatek.com>
+Subject: Re: [PATCH v4] usb: gadget: f_fs: try to fix AIO issue under ARM 64
+ bit TAGGED mode
+Message-ID: <20200227095521.GA3281767@arrakis.emea.arm.com>
+References: <1582627315-21123-1-git-send-email-macpaul.lin@mediatek.com>
+ <1582718512-28923-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1j7FqZ-0003tI-2A@rmk-PC.armlinux.org.uk>
-Date: Thu, 27 Feb 2020 09:52:47 +0000
+In-Reply-To: <1582718512-28923-1-git-send-email-macpaul.lin@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_015314_582196_A3F240F3 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_015526_421408_D9B6A74F 
+X-CRM114-Status: GOOD (  21.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,57 +62,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, netdev@vger.kernel.org,
- Gregory Clement <gregory.clement@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Sasha Levin <sashal@kernel.org>, Shen Jing <jingx.shen@intel.com>,
+ CC Hwang <cc.hwang@mediatek.com>, Peter Chen <peter.chen@nxp.com>,
+ Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ Jerry Zhang <zhangjerry@google.com>, andreyknvl@google.com,
+ linux-usb@vger.kernel.org, Loda Chou <loda.chou@mediatek.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Miles Chen <miles.chen@mediatek.com>, John Stultz <john.stultz@linaro.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, Vincent Pelletier <plr.vincent@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Configure the Macchiatobin 10G PHY LED modes to correct their polarity.
-We keep the existing LED behaviours, but switch their polarity to
-reflect how they are connected. Tweak the LED modes as well to be:
+On Wed, Feb 26, 2020 at 08:01:52PM +0800, Macpaul Lin wrote:
+> This issue was found when adbd trying to open functionfs with AIO mode.
+> Usually, we need to set "setprop sys.usb.ffs.aio_compat 0" to enable
+> adbd with AIO mode on Android.
+> 
+> When adbd is opening functionfs, it will try to read 24 bytes at the
+> first read I/O control. If this reading has been failed, adbd will
+> try to send FUNCTIONFS_CLEAR_HALT to functionfs. When adbd is in AIO
+> mode, functionfs will be acted with asyncronized I/O path. After the
+> successful read transfer has been completed by gadget hardware, the
+> following series of functions will be called.
+>   ffs_epfile_async_io_complete() -> ffs_user_copy_worker() ->
+>     copy_to_iter() -> _copy_to_iter() -> copyout() ->
+>     iterate_and_advance() -> iterate_iovec()
+> 
+> Adding debug trace to these functions, it has been found that in
+> copyout(), access_ok() will check if the user space address is valid
+> to write. However if CONFIG_ARM64_TAGGED_ADDR_ABI is enabled, adbd
+> always passes user space address start with "0x3C" to gadget's AIO
+> blocks. This tagged address will cause access_ok() check always fail.
+> Which causes later calculation in iterate_iovec() turn zero.
+> Copyout() won't copy data to user space since the length to be copied
+> "v.iov_len" will be zero. Finally leads ffs_copy_to_iter() always return
+> -EFAULT, causes adbd cannot open functionfs and send
+> FUNCTIONFS_CLEAR_HALT.
+> 
+> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+> Cc: Peter Chen <peter.chen@nxp.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Miles Chen <miles.chen@mediatek.com>
+> ---
+> Changes for v4:
+>   - Abandon solution v3 by adding "TIF_TAGGED_ADDR" flag to gadget driver.
+>     According to Catalin's suggestion, change the solution by untagging 
+>     user space address passed by AIO in gadget driver.
 
-left:  off          = no link
-       solid green  = RJ45 link up (not SFP+ cage)
-       flash green  = traffic
-right: off          = no link
-       solid green  = 10G
-       solid yellow = 1G
-       flash green  = 100M
-       flash yellow = 10M
+Well, this was suggested in case you have a strong reason not to do the
+untagging in adbd. As I said, tagged pointers in user space were
+supported long before we introduced CONFIG_ARM64_TAGGED_ADDR_ABI. How
+did adb cope with such tagged pointers before? It was not supposed to
+pass them to the kernel.
 
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
----
- arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts | 2 ++
- 1 file changed, 2 insertions(+)
+> diff --git a/drivers/usb/gadget/function/f_fs.c b/drivers/usb/gadget/function/f_fs.c
+> index ce1d023..192935f 100644
+> --- a/drivers/usb/gadget/function/f_fs.c
+> +++ b/drivers/usb/gadget/function/f_fs.c
+> @@ -715,7 +715,20 @@ static void ffs_epfile_io_complete(struct usb_ep *_ep, struct usb_request *req)
+>  
+>  static ssize_t ffs_copy_to_iter(void *data, int data_len, struct iov_iter *iter)
+>  {
+> -	ssize_t ret = copy_to_iter(data, data_len, iter);
+> +	ssize_t ret;
+> +
+> +#if defined(CONFIG_ARM64)
+> +	/*
+> +	 * Replace tagged address passed by user space application before
+> +	 * copying.
+> +	 */
+> +	if (IS_ENABLED(CONFIG_ARM64_TAGGED_ADDR_ABI) &&
+> +		(iter->type == ITER_IOVEC)) {
+> +		*(unsigned long *)&iter->iov->iov_base =
+> +			(unsigned long)untagged_addr(iter->iov->iov_base);
+> +	}
+> +#endif
+> +	ret = copy_to_iter(data, data_len, iter);
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-index d06f5ab7ddab..87a3149a4261 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts
-@@ -21,12 +21,14 @@
- 		compatible = "ethernet-phy-ieee802.3-c45";
- 		reg = <0>;
- 		sfp = <&sfp_eth0>;
-+		marvell,led-mode = /bits/ 16 <0x0129 0x095d 0x0855>;
- 	};
- 
- 	phy8: ethernet-phy@8 {
- 		compatible = "ethernet-phy-ieee802.3-c45";
- 		reg = <8>;
- 		sfp = <&sfp_eth1>;
-+		marvell,led-mode = /bits/ 16 <0x0129 0x095d 0x0855>;
- 	};
- };
- 
+Here you should probably drop all the #ifdefs and IS_ENABLED checks
+since untagged_addr() is defined globally as a no-op (and overridden by
+arm64 and sparc).
+
+Please don't send another patch until we understand (a) whether this is
+a user-space problem to fix or (b) if we fix it in the kernel, is this
+the only/right place? If we settle for the in-kernel untagging, do we
+explicitly untag the addresses in such kernel threads or we default to
+TIF_TAGGED_ADDR for all kernel threads, in case they ever call use_mm()
+(or we could even hook something in use_mm() to set this TIF flag
+temporarily).
+
+Looking for feedback from the Android folk and a better analysis of the
+possible solution.
+
 -- 
-2.20.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
