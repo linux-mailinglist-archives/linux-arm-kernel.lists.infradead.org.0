@@ -2,88 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E701A1717DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:54:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D0231717E6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:56:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LXbIP2CaTmrfYn0TjjY57wmT34jejH0jG1Weumvq2g4=; b=L94z95aiYXcMKz4XEKxjZbz1N
-	MJx9iBj85yGCmCURhJccC6H0JbHnitcHob7jjgwMwVmX3iNEO8oLulHy935LmCwOGCpo+6Tt0mlYB
-	i56qIQbP+FWizXUWUr8EPrT0B5zclgQ1ZWizS7eqsGBInEI7ocq4SCfaeGPR77I5X9+90xWbbNVDV
-	eefKTqHQU0KcJGXoDsWP0T2a6SQgBPE1uI1/Xo+ZPDf7tlEo03YqKeeDi31NzrVWrsLFCXF45tzbn
-	0nMTBGxad9SH4NAn4ZALpRDYHGRSycHxIG5BbuhYOHOvQ0dhfeqklO0m7i0eUgz+uZ9GKqfv4QSrz
-	cV3UTJJ4w==;
+	 bh=LV2BFQtKZaODSyi/A5MVIhXR9wkytaz5QsqlXKdVxDg=; b=n41y6wJYGJ629i4bYReYX+1U3
+	L9hee0tonPeC77jFMd2uymSiil/kIXOO5pbdYF9HETvaDiVvyeC23mkp30M4/hvCn688D5q6VpmH2
+	7nvt5CGIwzDxNlT5B9OoMb3S0CkFJAumg53AIUDgeE8qC+SBQk/qye/e4cIg2qRVxFyNjlqOV8c/u
+	3b22aprZ48v9t30vz60RKgRriGPudbU6zkfDXHOYGQAlXLkXs2gNQyg044yGilPEIMTytry7e97DF
+	DSJL1d5FpZIPjEpDlWNj2pFn6tikI95PkvLaUh7RKPLP0f0DYUXbgfD0e/MeVAl0b9ANRzC68vlks
+	lfpZC5QVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7IfR-0003I8-8J; Thu, 27 Feb 2020 12:53:29 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1j7Ihs-0006CH-C2; Thu, 27 Feb 2020 12:56:00 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7IfL-0003Ho-BS
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:53:25 +0000
+ id 1j7Ihh-0006BR-HM
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:55:50 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id C87BA7B64;
- Thu, 27 Feb 2020 07:53:20 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Thu, 27 Feb 2020 07:53:20 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id 60636220C7;
+ Thu, 27 Feb 2020 07:55:48 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Thu, 27 Feb 2020 07:55:48 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=dg1VFIcvLaP5nEziGd8HsDrRTUd
- L8mTlPmPl1XUFXJE=; b=uG/klM/BtKxPTmdRNYbM/h0HAUCJyd6uIETqfqLgc0h
- TjAvIbSzalBF5heUpNpFRY7LAOV9HNkBg3OF1nQtSBJ7Vely0EfRvxhrdMtR4bH8
- 5LU6GPiyVr5hEywDLSYcy9Vfj4Fn30239rXRhcI0ICFiN3/le+GNe1sQVgSz4V1q
- RI6uFABUdqDV2K+ZzFK7T90M2JOrZFBhDY90qckU6HsgAYTVZTLdsk011FgJRE4z
- YTQu3O/cnjcZC9pxTAWhrqvTCKZq1za6LATLV2GMngczFkXKmsi2BgxarR/KY0uV
- dB77vZ/e3ieYcfOUTc3EgjqG1llXe51VQaEVpQ71LfQ==
+ :content-type:in-reply-to; s=fm2; bh=EsLh1ElVWcPMN6QEUKEjRZC4EEK
+ YwHmgnVppcHj4F4c=; b=nLEb1dECBO6hZMBDokjWOh2E3TgBmY1oxWqwFTdNXq+
+ d/NWy/0BXqO/W/rfadUWUBVpmdAr4K4Z0PN0z31KtrMAvs1HVa9sacge1dh11o4y
+ dLLIDNCDGNXaNzsGl1Cxnkykk1aXsEfuXQY+2p2gnA0BNbalrQTxfviLREQddWRF
+ +oBJCmKYVIhGp1/rPvd6uxdZ6NdfFvHwTnbXYz6/cnh73Xs4WD17u2UHU4EsxVAj
+ N5kSymrK0qDd8yDPOPBHnDuJDxXA1rBzX/gFLAjRYKDcvD1GaTnosqPQ2OWDhYbo
+ n1B/r5RiZQXJtpaDqnjWf9EHl94NMKk28kLPiorOsjQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=dg1VFI
- cvLaP5nEziGd8HsDrRTUdL8mTlPmPl1XUFXJE=; b=rgxzXkga6Vz/q8ibvePdKE
- Q1LaW0dAHbPN75tiF5KgNerBw+BQ7k2Nfituc90tSyPhT41a0MT7dqCgST/I2xFG
- yRJk3dgI4UngaI+fz6lmrQ9AtmM6N6pKydzrQ9gwmwKJAtI5iNB++FoYlh3k6AOC
- SoJ70Wm28m57V8nnonWCsBMP5YNL2tJIWgKYqQ2Qzx6cz7xNNQIwyCnOXGOh0gHR
- qTEB++5skRk8GVWg+qFArs49ztDOPr7C1kNEo+Ky/dGyxiUcOfiPDaeXYbi56eSE
- Lr/6ULMfdoZP2lbLl8AgwvVhbMLRNOZaUfqMfby2S4DwU3VbY2JnjqOLMnZ5bsOQ
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=EsLh1E
+ lVWcPMN6QEUKEjRZC4EEKYwHmgnVppcHj4F4c=; b=VLX6OF3r+dVjSenAdqsozN
+ efj26IFFopT/I/Uv+dPH1+trEebkWT44ed32Lz35dh8P1DEr5P8YOpp5c/Q4u27X
+ 08jZ+FVtXBCvPcyeukNO6CHA4DHoGEjZ+gxGtuvdmYHEBkL3ZEqWimnUZmJMyeRT
+ 7kXC0uawYbYEzGiWItsMLaok2/H+UA1xM6B3xuuNKrSbloFsjyXdotwuCxwDopUx
+ zXYMr9unYTdFx2cEZHU1VMyuEXPMeQhyT8VVh3Kcm+5d7tEA2DhQtkJ9C0CPsCab
+ HNtnA6QWFq/JPhtc53DynzW3MRXOLxXtLpqyeg4ny3H461dYHNUc4rwo/FWoRIyg
  ==
-X-ME-Sender: <xms:u7tXXhPmXN-3uOFEGLxT6i8bviXJjba7XPp3Mqomr2-86hzBb-AUtg>
+X-ME-Sender: <xms:UrxXXvS-QYkKD4c-XkJKc8O-fBZ5wbBV2-2kiV2HV-XD87sQ97dWQA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrleeigdegiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:u7tXXtR3tAhbApasVu6ORLm8rRDds7FKoh144uLnSOYnDxc5SOvyng>
- <xmx:u7tXXnhMZY6frqiLbiRBaCfP18PdiQcpyTen05GZux-_yHq6iPBEeA>
- <xmx:u7tXXu99pcF2nr3Ck4I57eEN8zxtgjvOYl-JVYm9mq7QJhHU59iPGQ>
- <xmx:wLtXXutVnkivB2V07VUGn2mpjvFovmqwJdRDEr8gpuWWZVSbI_UXMg>
+X-ME-Proxy: <xmx:UrxXXqV9S4DI_kFbZFkDKHzoZU9sTkM1-rjWpSmJPWznUSypm1p1AQ>
+ <xmx:UrxXXgSgrzqsbgRMjYjjhJqIPLy0PaL9BRaTahhDiIriBMNOlfR6Kw>
+ <xmx:UrxXXtv6m8GJrPrBqxFBQMz5kJ-eAkLqjORwfFCXl44kriaspXHbLQ>
+ <xmx:VLxXXvmzBMa2NVri2yVvR2_19kBX13niJkMQCzPeS5JFUmoY4mC3JQ>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 880793280059;
- Thu, 27 Feb 2020 07:53:15 -0500 (EST)
-Date: Thu, 27 Feb 2020 13:53:13 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id AB4EF3060FD3;
+ Thu, 27 Feb 2020 07:55:46 -0500 (EST)
+Date: Thu, 27 Feb 2020 13:55:45 +0100
 From: Maxime Ripard <maxime@cerno.tech>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v2 6/6] arm64: allwinner: a64: enable LCD-related
- hardware for Pinebook
-Message-ID: <20200227125313.lvgflcik4ra26m2r@gilmour.lan>
-References: <20200226081011.1347245-1-anarsoul@gmail.com>
- <20200226081011.1347245-7-anarsoul@gmail.com>
+To: Mans Rullgard <mans@mansr.com>
+Subject: Re: [PATCH v2] ARM: dts: sunxi: h3/h5: add r_pwm node
+Message-ID: <20200227125545.ynzmwcbs6gqqm4ys@gilmour.lan>
+References: <20200227115526.28075-1-mans@mansr.com>
 MIME-Version: 1.0
-In-Reply-To: <20200226081011.1347245-7-anarsoul@gmail.com>
+In-Reply-To: <20200227115526.28075-1-mans@mansr.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_045323_783071_1DED1883 
-X-CRM114-Status: GOOD (  10.29  )
+X-CRM114-CacheID: sfid-20200227_045549_646979_2C0EA8B9 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ low trust [66.111.4.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,66 +103,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Andrzej Hajda <a.hajda@samsung.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Sam Ravnborg <sam@ravnborg.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Samuel Holland <samuel@sholland.org>,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- Chen-Yu Tsai <wens@csie.org>, Icenowy Zheng <icenowy@aosc.io>,
- devicetree@vger.kernel.org, Stephan Gerhold <stephan@gerhold.net>,
- Jonas Karlman <jonas@kwiboo.se>, Torsten Duwe <duwe@suse.de>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Daniel Vetter <daniel@ffwll.ch>
-Content-Type: multipart/mixed; boundary="===============8821299886152210426=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4329341063047502854=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8821299886152210426==
+--===============4329341063047502854==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="3bq54ytukgsvs3eu"
+	protocol="application/pgp-signature"; boundary="7rb5t2q5bd2tfoz6"
 Content-Disposition: inline
 
 
---3bq54ytukgsvs3eu
+--7rb5t2q5bd2tfoz6
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Wed, Feb 26, 2020 at 12:10:11AM -0800, Vasily Khoruzhick wrote:
-> From: Icenowy Zheng <icenowy@aosc.io>
+On Thu, Feb 27, 2020 at 11:55:26AM +0000, Mans Rullgard wrote:
+> There is a second PWM unit available in the PL I/O block.
+> Add a node and pinmux definition for it.
 >
-> Pinebook has an ANX6345 bridge connected to the RGB666 LCD output and
-> eDP panel input. The bridge is controlled via I2C that's connected to
-> R_I2C bus.
->
-> Enable all this hardware in device tree.
->
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Signed-off-by: Mans Rullgard <mans@mansr.com>
 
-Applied the 6 patches, thanks!
+Applied, thanks!
 Maxime
 
---3bq54ytukgsvs3eu
+--7rb5t2q5bd2tfoz6
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXle7uQAKCRDj7w1vZxhR
-xaczAPoC3ALs6FJiOTdBAkkgLMLeU5xSuyL54sh1Q4tkALRViwEA+VH+kLki+xAR
-3WxVIhBlXQvrAtrSbtL5C0Md5xmCsQo=
-=WsJg
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXle8UAAKCRDj7w1vZxhR
+xcTXAQDy5uVx/AsVCJdyv0LVkS82AGvP61hYpI7z6iB/82Ar4gD+PmcwHsBHmKWW
+INLYhHsvJkK7fO13YhEWs9ZcqYlRdg8=
+=01S8
 -----END PGP SIGNATURE-----
 
---3bq54ytukgsvs3eu--
+--7rb5t2q5bd2tfoz6--
 
 
---===============8821299886152210426==
+--===============4329341063047502854==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -174,5 +155,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8821299886152210426==--
+--===============4329341063047502854==--
 
