@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4B31171357
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:51:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8A8D171358
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:51:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o0YKezhMQc7MiiXon0ezMa8MLDJQQg7j8bVNVcSA7hU=; b=ScolDSS7ijynHh
-	6qn76nEVwSOZLnkmkcb3sQdx7kmCJTeo4izbImVB4CYVcOUPgKLv0OtO3fkFCZq0VUdSQe2yQyGwF
-	/PpeMiko5w5m5z+irn9TLsRowiOjpEMy4HJ12dA2W89hp1kDvAFIyTjx6dsh+vkbe2bzfSh+lDLoV
-	pciF67VhaGk3Lxx9EqiggTT++rvqwbUy5Ir2lbAhzc9vL/UM8+OdHjEaZO8WzCpp+7AAwVESqZ4+W
-	0Uqsz5ldFUDcseqZfz9XMBrg5khL362e2kuo2UbDO4Eivg60wEM6m16AaDGqzpVpLLvPQZMpIR4nk
-	eEDa05zmtxinEV+zy53g==;
+	List-Owner; bh=5CRW6hTpjUtNj/qkOHDQ7nfloOYtxl4kgBXP+/guU3g=; b=YRUlkm3NKNT3lV
+	R3m/rLwWNUCs08rdLJsfOWrkjZvAx3FMcfancvbUjEZ51m0hvk3mqsU2mcQuyeCIiprUyM+ohCF6b
+	9g0yVzT8ZSuGnvGV3Gs/W8814cuUINhnHecnD0lAyw7t+gCugm3dGNV+MBRQGU+mYeLvBpe5/Qwaq
+	+/xl3fGfS2n+mkDA6BM1aQa1I1ssVR8s0nHEQXY22uL+6Pm+9tORrbEDu8wURqK3Go7r14qQyw+jz
+	XNpQgG1b/ZzUpF0ibqKvd2DtOgbWtQg3dWfyJPrQIMjTZIqjZAX3PTRzStz6fg8jHwcEchBduMcbT
+	atk9+Ct8V22tyENWTsSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Esw-0007wQ-Ok; Thu, 27 Feb 2020 08:51:10 +0000
+	id 1j7EtG-0008AS-7g; Thu, 27 Feb 2020 08:51:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7ErZ-0005qA-Ch
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:49:47 +0000
+ id 1j7Erj-0005wk-O0
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:50:01 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 791282468E;
- Thu, 27 Feb 2020 08:49:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4B95F2468D;
+ Thu, 27 Feb 2020 08:49:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582793384;
- bh=GA7NOKUteHjazd0omlCrZ7LB67zWZrKKvz+PdqlHU1A=;
+ s=default; t=1582793395;
+ bh=uN42dnj0PHaFlcSMGx3s7URjqeFSXxNTu4bskNUJDSw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Dqqxuayacp6kUBvoz6Ep0WwbORX+x52ZATH9VbgId12KNRaV+YCpOWSUJX/p2ye8L
- XgBNf6QAAH1JPV4NZsT2o7+iAe9f+vpuLHkuXWnuAcXicPWeqdHJrc39pBQX2CLodv
- XIt+PNhD1CezRM6zy/o5J3hHby0EBCFMyoIokpFQ=
+ b=T99dN4Db7h26waAhzi27xAWh0D5yMwQ7Ifqcj9rTL40P5awEyEhfEzurOzbIjZ/O7
+ uNEtazpBvKqDLYjMCD+IjVdegaoptppn1ml4FT9L1oJ0jD6MN/W2/FLx4s03d4c+i2
+ 137jJNH5D57bu+z46bK1dSMlsbPdthvAp0Zy+pwY=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 09/14] sh: fault: Modernize printing of kernel messages
-Date: Thu, 27 Feb 2020 10:46:03 +0200
-Message-Id: <20200227084608.18223-10-rppt@kernel.org>
+Subject: [PATCH v3 10/14] sh: drop __pXd_offset() macros that duplicate
+ pXd_index() ones
+Date: Thu, 27 Feb 2020 10:46:04 +0200
+Message-Id: <20200227084608.18223-11-rppt@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200227084608.18223-1-rppt@kernel.org>
 References: <20200227084608.18223-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_004945_491410_F1583134 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20200227_004955_876540_DF95B270 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -101,113 +102,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Geert Uytterhoeven <geert+renesas@glider.be>
+From: Mike Rapoport <rppt@linux.ibm.com>
 
-  - Convert from printk() to pr_*(),
-  - Add missing continuations,
-  - Use "%llx" to format u64,
-  - Join multiple prints in show_fault_oops() into a single print.
+The __pXd_offset() macros are identical to the pXd_index() macros and there
+is no point to keep both of them. All architectures define and use
+pXd_index() so let's keep only those to make mips consistent with the rest
+of the kernel.
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/sh/mm/fault.c | 39 ++++++++++++++++++---------------------
- 1 file changed, 18 insertions(+), 21 deletions(-)
+ arch/sh/include/asm/pgtable_32.h | 5 ++---
+ arch/sh/include/asm/pgtable_64.h | 5 ++---
+ arch/sh/mm/init.c                | 6 +++---
+ 3 files changed, 7 insertions(+), 9 deletions(-)
 
-diff --git a/arch/sh/mm/fault.c b/arch/sh/mm/fault.c
-index 5f51456f4fc7..a2b0275413e8 100644
---- a/arch/sh/mm/fault.c
-+++ b/arch/sh/mm/fault.c
-@@ -47,10 +47,10 @@ static void show_pte(struct mm_struct *mm, unsigned long addr)
- 			pgd = swapper_pg_dir;
- 	}
+diff --git a/arch/sh/include/asm/pgtable_32.h b/arch/sh/include/asm/pgtable_32.h
+index 29274f0e428e..4acce5f2cbf9 100644
+--- a/arch/sh/include/asm/pgtable_32.h
++++ b/arch/sh/include/asm/pgtable_32.h
+@@ -407,13 +407,12 @@ static inline pte_t pte_modify(pte_t pte, pgprot_t newprot)
+ /* to find an entry in a page-table-directory. */
+ #define pgd_index(address)	(((address) >> PGDIR_SHIFT) & (PTRS_PER_PGD-1))
+ #define pgd_offset(mm, address)	((mm)->pgd + pgd_index(address))
+-#define __pgd_offset(address)	pgd_index(address)
  
--	printk(KERN_ALERT "pgd = %p\n", pgd);
-+	pr_alert("pgd = %p\n", pgd);
- 	pgd += pgd_index(addr);
--	printk(KERN_ALERT "[%08lx] *pgd=%0*Lx", addr,
--	       (u32)(sizeof(*pgd) * 2), (u64)pgd_val(*pgd));
-+	pr_alert("[%08lx] *pgd=%0*llx", addr, (u32)(sizeof(*pgd) * 2),
-+		 (u64)pgd_val(*pgd));
+ /* to find an entry in a kernel page-table-directory */
+ #define pgd_offset_k(address)	pgd_offset(&init_mm, address)
  
- 	do {
- 		pud_t *pud;
-@@ -61,33 +61,33 @@ static void show_pte(struct mm_struct *mm, unsigned long addr)
- 			break;
+-#define __pud_offset(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
+-#define __pmd_offset(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
++#define pud_index(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
++#define pmd_index(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
  
- 		if (pgd_bad(*pgd)) {
--			printk("(bad)");
-+			pr_cont("(bad)");
- 			break;
- 		}
+ /* Find an entry in the third-level page table.. */
+ #define pte_index(address)	((address >> PAGE_SHIFT) & (PTRS_PER_PTE - 1))
+diff --git a/arch/sh/include/asm/pgtable_64.h b/arch/sh/include/asm/pgtable_64.h
+index 1778bc5971e7..27cc282ec6c0 100644
+--- a/arch/sh/include/asm/pgtable_64.h
++++ b/arch/sh/include/asm/pgtable_64.h
+@@ -46,14 +46,13 @@ static __inline__ void set_pte(pte_t *pteptr, pte_t pteval)
  
- 		pud = pud_offset(pgd, addr);
- 		if (PTRS_PER_PUD != 1)
--			printk(", *pud=%0*Lx", (u32)(sizeof(*pud) * 2),
--			       (u64)pud_val(*pud));
-+			pr_cont(", *pud=%0*llx", (u32)(sizeof(*pud) * 2),
-+				(u64)pud_val(*pud));
+ /* To find an entry in a generic PGD. */
+ #define pgd_index(address) (((address) >> PGDIR_SHIFT) & (PTRS_PER_PGD-1))
+-#define __pgd_offset(address) pgd_index(address)
+ #define pgd_offset(mm, address) ((mm)->pgd+pgd_index(address))
  
- 		if (pud_none(*pud))
- 			break;
+ /* To find an entry in a kernel PGD. */
+ #define pgd_offset_k(address) pgd_offset(&init_mm, address)
  
- 		if (pud_bad(*pud)) {
--			printk("(bad)");
-+			pr_cont("(bad)");
- 			break;
- 		}
+-#define __pud_offset(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
+-#define __pmd_offset(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
++#define pud_index(address)	(((address) >> PUD_SHIFT) & (PTRS_PER_PUD-1))
++/* #define pmd_index(address)	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1)) */
  
- 		pmd = pmd_offset(pud, addr);
- 		if (PTRS_PER_PMD != 1)
--			printk(", *pmd=%0*Lx", (u32)(sizeof(*pmd) * 2),
--			       (u64)pmd_val(*pmd));
-+			pr_cont(", *pmd=%0*llx", (u32)(sizeof(*pmd) * 2),
-+				(u64)pmd_val(*pmd));
+ /*
+  * PMD level access routines. Same notes as above.
+diff --git a/arch/sh/mm/init.c b/arch/sh/mm/init.c
+index d1b1ff2be17a..4bab79baee75 100644
+--- a/arch/sh/mm/init.c
++++ b/arch/sh/mm/init.c
+@@ -172,9 +172,9 @@ void __init page_table_range_init(unsigned long start, unsigned long end,
+ 	unsigned long vaddr;
  
- 		if (pmd_none(*pmd))
- 			break;
+ 	vaddr = start;
+-	i = __pgd_offset(vaddr);
+-	j = __pud_offset(vaddr);
+-	k = __pmd_offset(vaddr);
++	i = pgd_index(vaddr);
++	j = pud_index(vaddr);
++	k = pmd_index(vaddr);
+ 	pgd = pgd_base + i;
  
- 		if (pmd_bad(*pmd)) {
--			printk("(bad)");
-+			pr_cont("(bad)");
- 			break;
- 		}
- 
-@@ -96,11 +96,11 @@ static void show_pte(struct mm_struct *mm, unsigned long addr)
- 			break;
- 
- 		pte = pte_offset_kernel(pmd, addr);
--		printk(", *pte=%0*Lx", (u32)(sizeof(*pte) * 2),
--		       (u64)pte_val(*pte));
-+		pr_cont(", *pte=%0*llx", (u32)(sizeof(*pte) * 2),
-+			(u64)pte_val(*pte));
- 	} while (0);
- 
--	printk("\n");
-+	pr_cont("\n");
- }
- 
- static inline pmd_t *vmalloc_sync_one(pgd_t *pgd, unsigned long address)
-@@ -188,14 +188,11 @@ show_fault_oops(struct pt_regs *regs, unsigned long address)
- 	if (!oops_may_print())
- 		return;
- 
--	printk(KERN_ALERT "BUG: unable to handle kernel ");
--	if (address < PAGE_SIZE)
--		printk(KERN_CONT "NULL pointer dereference");
--	else
--		printk(KERN_CONT "paging request");
--
--	printk(KERN_CONT " at %08lx\n", address);
--	printk(KERN_ALERT "PC:");
-+	pr_alert("BUG: unable to handle kernel %s at %08lx\n",
-+		 address < PAGE_SIZE ? "NULL pointer dereference"
-+				     : "paging request",
-+		 address);
-+	pr_alert("PC:");
- 	printk_address(regs->pc, 1);
- 
- 	show_pte(NULL, address);
+ 	for ( ; (i < PTRS_PER_PGD) && (vaddr != end); pgd++, i++) {
 -- 
 2.24.0
 
