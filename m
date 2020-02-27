@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA4AE17238D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 17:37:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 131301723BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 17:43:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=GaBCj6C34ovYpgGqrpxwo8H53wbT5d+isvBMmYVKQMk=; b=tveuCqBrw50P6ZHZgN3GoDqDW9
-	XrSCPjkTJBwbpWEOmUsAmSFLvX9ap71CBYr2AJsL7wo5YyJwyxBEsAr+GfDztia3Zs/k1efkYbVSE
-	KXUYoJuoUca5sZAKke9KPrjO5YC2F/3q9L6jg4oiWQ2+EP5BfGIEUr0mnhB1my0FyvP77aNf4z+OC
-	dSPUNVSIMLxGLER/NHjin65sbbLke2FISkdnU9+Q9Fib51PZQ7wkaX/o4OLfDMM5q/45gWe3hAprQ
-	Vat7Q//UkPspXpLInUmmctlRdHu9Ha0zPXdkrma5jyreBQ818QC5+APqo9B2TAt+cIYXU2Vst3nat
-	n/yezMtQ==;
+	bh=9iNaJERNO8TzeSniOJ4SbiQXwc7QTUDINBIql5VNa6A=; b=HVLQcVbD2UFoxUvK7/PRQTiCL6
+	KHQ2b2K1+NT09UKBRy2ScyyORuyNA68huiEXgtaFU6PY+ABMAskcBS3AwJGKa9xFmAUxeBzraaFH9
+	t5ZgxCFE+x3F6Hcpdi4I//rUTyf7c9w4S6AH5c+dK8bvB6SZ0F2a57ifDgLGbWzgnxs9lxdfzMvhE
+	NdSGtRN7sxBQ1j97UE5FWb5Y3yDH8nfly4ThiLUZy5R4y23+I0t+jKYCulB7dnW+rFv8lGmKZbxYs
+	guiaRNQa00REvH1flmkUDrwMe85EGw00/U4hkYQjvOSVyACF39+ESTDJCXjVMs7PjTPwRh0d6+sGP
+	GsP3qPpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7MAD-0003EX-G7; Thu, 27 Feb 2020 16:37:29 +0000
+	id 1j7MFj-0005Ly-1m; Thu, 27 Feb 2020 16:43:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7MA5-0003EF-Cb
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 16:37:22 +0000
+ id 1j7MFa-0005Kn-3V
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 16:43:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 859DD1FB;
- Thu, 27 Feb 2020 08:37:20 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D4391FB;
+ Thu, 27 Feb 2020 08:42:59 -0800 (PST)
 Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 350CD3F7B4;
- Thu, 27 Feb 2020 08:37:19 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 079423F7B4;
+ Thu, 27 Feb 2020 08:42:57 -0800 (PST)
 References: <20200226164118.6405-1-valentin.schneider@arm.com>
- <20200226164118.6405-3-valentin.schneider@arm.com>
- <7f647316-00a7-69cb-5d40-733ab8c6796d@arm.com>
+ <20200226164118.6405-2-valentin.schneider@arm.com>
+ <20200227130001.GA107011@google.com>
+ <7ce12aa2-1925-f991-a85f-5bd81ba668fb@arm.com>
 User-agent: mu4e 0.9.17; emacs 26.3
 From: Valentin Schneider <valentin.schneider@arm.com>
 To: Dietmar Eggemann <dietmar.eggemann@arm.com>
-Subject: Re: [PATCH 2/2] arm64: defconfig: enable CONFIG_SCHED_SMT
-In-reply-to: <7f647316-00a7-69cb-5d40-733ab8c6796d@arm.com>
-Date: Thu, 27 Feb 2020 16:37:16 +0000
-Message-ID: <jhjh7zcvver.mognet@arm.com>
+Subject: Re: [PATCH 1/2] sched/topology: Don't enable EAS on SMT systems
+In-reply-to: <7ce12aa2-1925-f991-a85f-5bd81ba668fb@arm.com>
+Date: Thu, 27 Feb 2020 16:42:55 +0000
+Message-ID: <jhjftewvv5c.mognet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_083721_468506_AC9C1A82 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200227_084302_192595_D53AD233 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,40 +65,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, qperret@google.com,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, morten.rasmussen@arm.com,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kernel-team@android.com,
+ Quentin Perret <qperret@google.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ morten.rasmussen@arm.com, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
 On Thu, Feb 27 2020, Dietmar Eggemann wrote:
->> before:
->>   $ cat /proc/sys/kernel/sched_domain/cpu*/domain*/name | sort | uniq
->>   DIE
->>   MC
->>
->> after:
->>   $ cat /proc/sys/kernel/sched_domain/cpu*/domain*/name | sort | uniq
->>   DIE
->>   MC
+>>> +	/* EAS definitely does *not* handle SMT */
+>>> +	if (sched_smt_active())
 >
-> Have you tested that EAS still comes up ?
+> Can you add a pr_warn() and use the current comment as the warning
+> message? Since we have one for !Asym CPU capacity and !schedutil.
+>
+>>> +		goto free;
+>>> +
+>
+> [...]
+>
+> There is this 'EAS can be used ...' list of currently 4 items in the
+> build_perf_domains() function header. You could include 'X. No SMT
+> support' there.
+>  ;-)
 
-Yep:
-
-  root@valsch-h960:~# zcat /proc/config.gz | grep SMT
-  CONFIG_SCHED_SMT=y
-  root@valsch-h960:~# ./set_governor.sh schedutil
-  [  127.834363] root_domain 0-7: pd4:{ cpus=4-7 nr_cstate=5 } pd0:{ cpus=0-3 nr_cstate=5 }
-  [  127.842344] sched_energy_set: starting EAS
-
-No reason for it not to come up unless something's broken (but it's
-always good to check!).
+Right, the rst doc says "EAS on SMT is not supported" but I think that can
+be interpreted as "EAS on !asym SMT". I'll add the warning and update the
+comment.
 
 _______________________________________________
 linux-arm-kernel mailing list
