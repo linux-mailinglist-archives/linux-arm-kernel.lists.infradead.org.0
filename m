@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5B58171317
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:49:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B266C17131C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:49:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xf7ifNF+6V/NtV0YuHgpUElDQPeUREZRlw/3JZg7tkQ=; b=plgbNncFYsB51i
-	tzFPKt7aOOw6Za/nAohtF7T+I77Gw4Q2/FcRbc/I2zu0tikVfop2vhgkt8O0d3vtlAVhv1C7/WfCa
-	aBD4qLDrQZYpkTAdroNYcEKfkNiAGjLbM/DSQf6hXABoJNcVvn82kAgMhd0MgIuOacnjhHUG92ZY5
-	fWxMZOjmM8OhUPZTojKbCRlRD5BKKGFJetp1geJPstPOZT/TTbFFz4/TJKOHY5izOwJhPYM6SWR84
-	9z8s7TmFDEYnX1NXfJOcVLfsw6FwhlTD+8PiZ+zpZaddDeHcSxfHlKjoAGIZPm8V4V7AQBMbQ4Hjb
-	ifGLNFN7TSRtD0yIoxZQ==;
+	List-Owner; bh=TyDk5v8DfsyVwljYhokAId5Frm/4A7bAwUi3ImA5r5E=; b=pkZ5OvyxWwD7nA
+	dtYBOsIz9VD6H2jnMRUVjX0mWWjrIy/YupLXTyZovQKer4bx7tymTYPEOOQwfUr11A0XjbuR2ibhY
+	F5C26HpozW1lfhuErMBd7LEGCeZiktctLJ3uKxiUaaCRnN3T8M7rzpGA5chrZnEoN/2NDQ0PEGOp3
+	YJo9CElnjsuPKPPEdogM2O8KytJOM+ikzcyfkoamK3+AyM4X7WClew9H2AnlLQjfou2INL86rDLq9
+	qA59OLoKSU6uq/mtx8Hri92JwBKjXTHfo17ZQMiK+60ppXYRHtJK1D9kmKwOUn8FivtnnqIxnmeYU
+	LNymEcIPDV6uhe/i4ODQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Er8-0005Dd-JG; Thu, 27 Feb 2020 08:49:18 +0000
+	id 1j7ErS-0005To-0j; Thu, 27 Feb 2020 08:49:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Eqk-00055b-SJ
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:48:56 +0000
+ id 1j7Eqw-0005FA-A7
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:49:08 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F01D724688;
- Thu, 27 Feb 2020 08:48:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0C7772468D;
+ Thu, 27 Feb 2020 08:48:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582793334;
- bh=F0cCXmb/o7liiZO71D4JlF7q0Z7SA6J4fHvegp69+aU=;
+ s=default; t=1582793345;
+ bh=71MnpEc+yFN5lenidv0+rt0LqtwQ5nS0iIQpg548uOQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YoARMfdjCVgck0l0c6vCbjx7cd13+y+acPDDlGZFlAUTWAMUYLTEv2M6ggkYAaa0j
- i88rDerFv2k34eFxEQbnqfReJw6r6l87uuRNOdX5j+WG794PXnDWd+FNxEP3fkm8ML
- B8WwXGNzu6/Wmfn48PpZc06EkCqi/FhbMHqcaAM0=
+ b=dq7SIHKA08G/mHYW+R+Hf5myjEeBF/+ZZwlWiezYaYu0nVmt/e+UU4TN4Z3B6ySQ4
+ EE9lcwNT0vOQPXGXTOqJ7+cPzaAljcurNcOGmtNG5CagITFm2uvC61OFhdt/1hLOUM
+ lgKpxjlIRb05KaHqhxX0qt60VQ8Hk8tg9pl07c0Y=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 04/14] ia64: add support for folded p4d page tables
-Date: Thu, 27 Feb 2020 10:45:58 +0200
-Message-Id: <20200227084608.18223-5-rppt@kernel.org>
+Subject: [PATCH v3 05/14] nios2: add support for folded p4d page tables
+Date: Thu, 27 Feb 2020 10:45:59 +0200
+Message-Id: <20200227084608.18223-6-rppt@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200227084608.18223-1-rppt@kernel.org>
 References: <20200227084608.18223-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_004854_982632_37A9DD26 
-X-CRM114-Status: GOOD (  15.75  )
+X-CRM114-CacheID: sfid-20200227_004906_465291_D71209B5 
+X-CRM114-Status: GOOD (  14.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,228 +104,84 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 From: Mike Rapoport <rppt@linux.ibm.com>
 
 Implement primitives necessary for the 4th level folding, add walks of p4d
-level where appropriate, remove usage of __ARCH_USE_5LEVEL_HACK and replace
-5level-fixup.h with pgtable-nop4d.h
+level where appropriate and remove usage of __ARCH_USE_5LEVEL_HACK.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/ia64/include/asm/pgalloc.h |  4 ++--
- arch/ia64/include/asm/pgtable.h | 17 ++++++++---------
- arch/ia64/mm/fault.c            |  7 ++++++-
- arch/ia64/mm/hugetlbpage.c      | 18 ++++++++++++------
- arch/ia64/mm/init.c             | 28 ++++++++++++++++++++++++----
- 5 files changed, 52 insertions(+), 22 deletions(-)
+ arch/nios2/include/asm/pgtable.h | 3 +--
+ arch/nios2/mm/fault.c            | 9 +++++++--
+ arch/nios2/mm/ioremap.c          | 6 +++++-
+ 3 files changed, 13 insertions(+), 5 deletions(-)
 
-diff --git a/arch/ia64/include/asm/pgalloc.h b/arch/ia64/include/asm/pgalloc.h
-index f4c491044882..2a3050345099 100644
---- a/arch/ia64/include/asm/pgalloc.h
-+++ b/arch/ia64/include/asm/pgalloc.h
-@@ -36,9 +36,9 @@ static inline void pgd_free(struct mm_struct *mm, pgd_t *pgd)
+diff --git a/arch/nios2/include/asm/pgtable.h b/arch/nios2/include/asm/pgtable.h
+index 99985d8b7166..54305aa09b74 100644
+--- a/arch/nios2/include/asm/pgtable.h
++++ b/arch/nios2/include/asm/pgtable.h
+@@ -22,7 +22,6 @@
+ #include <asm/tlbflush.h>
  
- #if CONFIG_PGTABLE_LEVELS == 4
- static inline void
--pgd_populate(struct mm_struct *mm, pgd_t * pgd_entry, pud_t * pud)
-+p4d_populate(struct mm_struct *mm, p4d_t * p4d_entry, pud_t * pud)
+ #include <asm/pgtable-bits.h>
+-#define __ARCH_USE_5LEVEL_HACK
+ #include <asm-generic/pgtable-nopmd.h>
+ 
+ #define FIRST_USER_ADDRESS	0UL
+@@ -100,7 +99,7 @@ extern pte_t invalid_pte_table[PAGE_SIZE/sizeof(pte_t)];
+  */
+ static inline void set_pmd(pmd_t *pmdptr, pmd_t pmdval)
  {
--	pgd_val(*pgd_entry) = __pa(pud);
-+	p4d_val(*p4d_entry) = __pa(pud);
+-	pmdptr->pud.pgd.pgd = pmdval.pud.pgd.pgd;
++	*pmdptr = pmdval;
  }
  
- static inline pud_t *pud_alloc_one(struct mm_struct *mm, unsigned long addr)
-diff --git a/arch/ia64/include/asm/pgtable.h b/arch/ia64/include/asm/pgtable.h
-index d602e7c622db..c87f789bc914 100644
---- a/arch/ia64/include/asm/pgtable.h
-+++ b/arch/ia64/include/asm/pgtable.h
-@@ -283,12 +283,12 @@ extern unsigned long VMALLOC_END;
- #define pud_page(pud)			virt_to_page((pud_val(pud) + PAGE_OFFSET))
+ /* to find an entry in a page-table-directory */
+diff --git a/arch/nios2/mm/fault.c b/arch/nios2/mm/fault.c
+index 6a2e716b959f..d3da995665c3 100644
+--- a/arch/nios2/mm/fault.c
++++ b/arch/nios2/mm/fault.c
+@@ -245,6 +245,7 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long cause,
+ 		 */
+ 		int offset = pgd_index(address);
+ 		pgd_t *pgd, *pgd_k;
++		p4d_t *p4d, *p4d_k;
+ 		pud_t *pud, *pud_k;
+ 		pmd_t *pmd, *pmd_k;
+ 		pte_t *pte_k;
+@@ -256,8 +257,12 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long cause,
+ 			goto no_context;
+ 		set_pgd(pgd, *pgd_k);
  
- #if CONFIG_PGTABLE_LEVELS == 4
--#define pgd_none(pgd)			(!pgd_val(pgd))
--#define pgd_bad(pgd)			(!ia64_phys_addr_valid(pgd_val(pgd)))
--#define pgd_present(pgd)		(pgd_val(pgd) != 0UL)
--#define pgd_clear(pgdp)			(pgd_val(*(pgdp)) = 0UL)
--#define pgd_page_vaddr(pgd)		((unsigned long) __va(pgd_val(pgd) & _PFN_MASK))
--#define pgd_page(pgd)			virt_to_page((pgd_val(pgd) + PAGE_OFFSET))
-+#define p4d_none(p4d)			(!p4d_val(p4d))
-+#define p4d_bad(p4d)			(!ia64_phys_addr_valid(p4d_val(p4d)))
-+#define p4d_present(p4d)		(p4d_val(p4d) != 0UL)
-+#define p4d_clear(p4dp)			(p4d_val(*(p4dp)) = 0UL)
-+#define p4d_page_vaddr(p4d)		((unsigned long) __va(p4d_val(p4d) & _PFN_MASK))
-+#define p4d_page(p4d)			virt_to_page((p4d_val(p4d) + PAGE_OFFSET))
- #endif
- 
- /*
-@@ -388,7 +388,7 @@ pgd_offset (const struct mm_struct *mm, unsigned long address)
- #if CONFIG_PGTABLE_LEVELS == 4
- /* Find an entry in the second-level page table.. */
- #define pud_offset(dir,addr) \
--	((pud_t *) pgd_page_vaddr(*(dir)) + (((addr) >> PUD_SHIFT) & (PTRS_PER_PUD - 1)))
-+	((pud_t *) p4d_page_vaddr(*(dir)) + (((addr) >> PUD_SHIFT) & (PTRS_PER_PUD - 1)))
- #endif
- 
- /* Find an entry in the third-level page table.. */
-@@ -582,10 +582,9 @@ extern struct page *zero_page_memmap_ptr;
- 
- 
- #if CONFIG_PGTABLE_LEVELS == 3
--#define __ARCH_USE_5LEVEL_HACK
- #include <asm-generic/pgtable-nopud.h>
- #endif
--#include <asm-generic/5level-fixup.h>
-+#include <asm-generic/pgtable-nop4d.h>
- #include <asm-generic/pgtable.h>
- 
- #endif /* _ASM_IA64_PGTABLE_H */
-diff --git a/arch/ia64/mm/fault.c b/arch/ia64/mm/fault.c
-index c2f299fe9e04..ec994135cb74 100644
---- a/arch/ia64/mm/fault.c
-+++ b/arch/ia64/mm/fault.c
-@@ -29,6 +29,7 @@ static int
- mapped_kernel_page_is_present (unsigned long address)
- {
- 	pgd_t *pgd;
-+	p4d_t *p4d;
- 	pud_t *pud;
- 	pmd_t *pmd;
- 	pte_t *ptep, pte;
-@@ -37,7 +38,11 @@ mapped_kernel_page_is_present (unsigned long address)
- 	if (pgd_none(*pgd) || pgd_bad(*pgd))
- 		return 0;
- 
--	pud = pud_offset(pgd, address);
-+	p4d = p4d_offset(pgd, address);
-+	if (p4d_none(*p4d) || p4d_bad(*p4d))
-+		return 0;
-+
-+	pud = pud_offset(p4d, address);
- 	if (pud_none(*pud) || pud_bad(*pud))
- 		return 0;
- 
-diff --git a/arch/ia64/mm/hugetlbpage.c b/arch/ia64/mm/hugetlbpage.c
-index d16e419fd712..32352a73df0c 100644
---- a/arch/ia64/mm/hugetlbpage.c
-+++ b/arch/ia64/mm/hugetlbpage.c
-@@ -30,12 +30,14 @@ huge_pte_alloc(struct mm_struct *mm, unsigned long addr, unsigned long sz)
- {
- 	unsigned long taddr = htlbpage_to_page(addr);
- 	pgd_t *pgd;
-+	p4d_t *p4d;
- 	pud_t *pud;
- 	pmd_t *pmd;
- 	pte_t *pte = NULL;
- 
- 	pgd = pgd_offset(mm, taddr);
--	pud = pud_alloc(mm, pgd, taddr);
-+	p4d = p4d_offset(pgd, taddr);
-+	pud = pud_alloc(mm, p4d, taddr);
- 	if (pud) {
- 		pmd = pmd_alloc(mm, pud, taddr);
- 		if (pmd)
-@@ -49,17 +51,21 @@ huge_pte_offset (struct mm_struct *mm, unsigned long addr, unsigned long sz)
- {
- 	unsigned long taddr = htlbpage_to_page(addr);
- 	pgd_t *pgd;
-+	p4d_t *p4d;
- 	pud_t *pud;
- 	pmd_t *pmd;
- 	pte_t *pte = NULL;
- 
- 	pgd = pgd_offset(mm, taddr);
- 	if (pgd_present(*pgd)) {
--		pud = pud_offset(pgd, taddr);
--		if (pud_present(*pud)) {
--			pmd = pmd_offset(pud, taddr);
--			if (pmd_present(*pmd))
--				pte = pte_offset_map(pmd, taddr);
-+		p4d = p4d_offset(pgd, addr);
-+		if (p4d_present(*p4d)) {
-+			pud = pud_offset(p4d, taddr);
-+			if (pud_present(*pud)) {
-+				pmd = pmd_offset(pud, taddr);
-+				if (pmd_present(*pmd))
-+					pte = pte_offset_map(pmd, taddr);
-+			}
- 		}
- 	}
- 
-diff --git a/arch/ia64/mm/init.c b/arch/ia64/mm/init.c
-index b01d68a2d5d9..4808f58220ac 100644
---- a/arch/ia64/mm/init.c
-+++ b/arch/ia64/mm/init.c
-@@ -208,6 +208,7 @@ static struct page * __init
- put_kernel_page (struct page *page, unsigned long address, pgprot_t pgprot)
- {
- 	pgd_t *pgd;
-+	p4d_t *p4d;
- 	pud_t *pud;
- 	pmd_t *pmd;
- 	pte_t *pte;
-@@ -215,7 +216,10 @@ put_kernel_page (struct page *page, unsigned long address, pgprot_t pgprot)
- 	pgd = pgd_offset_k(address);		/* note: this is NOT pgd_offset()! */
- 
- 	{
--		pud = pud_alloc(&init_mm, pgd, address);
-+		p4d = p4d_alloc(&init_mm, pgd, address);
-+		if (!p4d)
-+			goto out;
-+		pud = pud_alloc(&init_mm, p4d, address);
- 		if (!pud)
- 			goto out;
- 		pmd = pmd_alloc(&init_mm, pud, address);
-@@ -382,6 +386,7 @@ int vmemmap_find_next_valid_pfn(int node, int i)
- 
+-		pud = pud_offset(pgd, address);
+-		pud_k = pud_offset(pgd_k, address);
++		p4d = p4d_offset(pgd, address);
++		p4d_k = p4d_offset(pgd_k, address);
++		if (!p4d_present(*p4d_k))
++			goto no_context;
++		pud = pud_offset(p4d, address);
++		pud_k = pud_offset(p4d_k, address);
+ 		if (!pud_present(*pud_k))
+ 			goto no_context;
+ 		pmd = pmd_offset(pud, address);
+diff --git a/arch/nios2/mm/ioremap.c b/arch/nios2/mm/ioremap.c
+index 819bdfcc2e71..fe821efb9a99 100644
+--- a/arch/nios2/mm/ioremap.c
++++ b/arch/nios2/mm/ioremap.c
+@@ -86,11 +86,15 @@ static int remap_area_pages(unsigned long address, unsigned long phys_addr,
+ 	if (address >= end)
+ 		BUG();
  	do {
- 		pgd_t *pgd;
 +		p4d_t *p4d;
  		pud_t *pud;
  		pmd_t *pmd;
- 		pte_t *pte;
-@@ -392,7 +397,13 @@ int vmemmap_find_next_valid_pfn(int node, int i)
- 			continue;
- 		}
  
--		pud = pud_offset(pgd, end_address);
-+		p4d = p4d_offset(pgd, end_address);
-+		if (p4d_none(*p4d)) {
-+			end_address += P4D_SIZE;
-+			continue;
-+		}
-+
-+		pud = pud_offset(p4d, end_address);
- 		if (pud_none(*pud)) {
- 			end_address += PUD_SIZE;
- 			continue;
-@@ -430,6 +441,7 @@ int __init create_mem_map_page_table(u64 start, u64 end, void *arg)
- 	struct page *map_start, *map_end;
- 	int node;
- 	pgd_t *pgd;
-+	p4d_t *p4d;
- 	pud_t *pud;
- 	pmd_t *pmd;
- 	pte_t *pte;
-@@ -444,12 +456,20 @@ int __init create_mem_map_page_table(u64 start, u64 end, void *arg)
- 	for (address = start_page; address < end_page; address += PAGE_SIZE) {
- 		pgd = pgd_offset_k(address);
- 		if (pgd_none(*pgd)) {
-+			p4d = memblock_alloc_node(PAGE_SIZE, PAGE_SIZE, node);
-+			if (!p4d)
-+				goto err_alloc;
-+			pgd_populate(&init_mm, pgd, p4d);
-+		}
-+		p4d = p4d_offset(pgd, address);
-+
-+		if (p4d_none(*p4d)) {
- 			pud = memblock_alloc_node(PAGE_SIZE, PAGE_SIZE, node);
- 			if (!pud)
- 				goto err_alloc;
--			pgd_populate(&init_mm, pgd, pud);
-+			p4d_populate(&init_mm, p4d, pud);
- 		}
--		pud = pud_offset(pgd, address);
-+		pud = pud_offset(p4d, address);
- 
- 		if (pud_none(*pud)) {
- 			pmd = memblock_alloc_node(PAGE_SIZE, PAGE_SIZE, node);
+ 		error = -ENOMEM;
+-		pud = pud_alloc(&init_mm, dir, address);
++		p4d = p4d_alloc(&init_mm, dir, address);
++		if (!p4d)
++			break;
++		pud = pud_alloc(&init_mm, p4d, address);
+ 		if (!pud)
+ 			break;
+ 		pmd = pmd_alloc(&init_mm, pud, address);
 -- 
 2.24.0
 
