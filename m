@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92B59172640
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:14:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F5B2172689
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:16:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9MqMWqHyl0sNd6bjH9auFqypvtLyTSzfdxWzNiW7kJw=; b=txt+nYH9MmQjWc
-	oPTn25hzCTXv4SDt7DutqXQMRpDyp1FtqAXsi08DaHbFCxGL8OVXMz+YMvVFZ1RTuQ+u6PSWPwihc
-	O+BgTd8s8oMo2jgnuRpRudDdwUkq4lwc/HIUpD8p3OjkYQGchxVIjtdPVEW6UbFrIBfSRwmn4AaQb
-	pIaWCHRsrHyYXuB5aFLaDubu93p8dChn0ibmGSF2Jj66y5uwv/e25tCl2Ml5BhPiqzI+QCxdX9RvD
-	wTLazaaXJsxyTdYYAkTRnVWb1q9DNxmUAYMuofqB4UWa/JRpXZ7UqNN9FJntQzftbMmWMvaQGcMG8
-	BKUJACVLLJenamaoVDhQ==;
+	List-Owner; bh=sC9KRRKISd820bwT0ZRPhvRH08j4+G3/OlFYLoe9CKI=; b=kS0cSAAthCiw8e
+	Jsr11mcVJqvDk6Vn7YdrW6WUTXFDZPdNcEZ6ekmpGLgFVrIOKc1YkzYxlODvVm0LPWbn1pNLQD1aR
+	eavpsNDnJnoAnmrOOUdOG/NrhnzqJMQdLSjRflPF3x6i9SqTYhTOH819prSuLWpmVex4tWImkLQd0
+	M+66S8IWYKtIxbQ30N4zK9QSsFSxG73ZhzUYX1lKcJ6Miv0FcuRLsTiRIl7ZbGIMGKppOJiL6v0jb
+	Lol4EOGgu+si7OEi3B0yUgu68/AuTJ26ZZC5Ak4oM9xUlSWHkgWeTidSMoNvoCUdxuKB3F/nF6jZp
+	T2YrVbOFOSuhF96rIGQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NgN-0001DB-Jq; Thu, 27 Feb 2020 18:14:47 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1j7Nhw-0003Fo-LN; Thu, 27 Feb 2020 18:16:24 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7NgC-0001BS-Gn
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:14:38 +0000
-Received: by mail-oi1-x242.google.com with SMTP id b18so164400oie.2
+ id 1j7Nhm-0003Ek-2B
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:16:15 +0000
+Received: by mail-wr1-x442.google.com with SMTP id z15so4673869wrl.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 10:14:35 -0800 (PST)
+ Thu, 27 Feb 2020 10:16:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Mc6Wh5fv+E6ABgMYyQj5/mio9b0EhuHvTPEEPDH8Sco=;
- b=CqWRIuLdnpY7YAdAReRKo0A2m5wvkPBdoSdj+SVDpAr+BkjfOzh041a4V750wKi12g
- vTImQi6b6TFkLNyDe4Tk1fN6kSPKDQc1ghZ/J7SHkZ6WSk67ewd0dAqlwKlDhsH9vaXT
- AHyKcx2Xo42y/klRyIs+6Nfe8k5csZ6BvuPYU=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=jT8UWtmCEe7v58pjwlPCLN4e+N26kni/TNK34oplFDI=;
+ b=j1urywz28vACwh8HeXCI0pWn82lWe/B/YSJs06vF1xxUNVwLwrWhvEcZUCt+X61S5B
+ B4EFdH6XlxywuP9aOi6Byn4Bmz1vczC+Gp9d7e5XmInWuFB2es3F+OYp1ZA68V5cLlLG
+ 1rgm/RSRSw/Vw7nRvs2pGGUg/ufCKGhRrtrz4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Mc6Wh5fv+E6ABgMYyQj5/mio9b0EhuHvTPEEPDH8Sco=;
- b=JFwJaRMnu22rROHFTteT+lCMdYHDd9Q94yxcyYhYdru6Zj6+XzzX8paKOnGl3cQ3DF
- AMQBCQAf2bN/4bFQ+gI5Y602TX3WbX1MUhYZK4PlY+Gvib7ifvnOrMDMY99Lraxa4WjQ
- Y7YIxjoaGgTO9uPXdlmx8s3HL4b2lN5JqKT/T2ygC9QVLypq3H2+i4QCetBIH2S1VI5m
- 1jLi/qfNSuwg+Hb0045nnMEduEG8qhUscJUHSwn1kkzlc24BqpyMZLpcJIIGeDY02z18
- EjTGBWfUmKlYaH45eJt3+HrKWD/TUrzXgSwas34Spas3qNDGTiErSdHuw10P0U0HFJMd
- 4POg==
-X-Gm-Message-State: APjAAAWaldcO9GeXZdXl4Xx7h1lDPq+8syOTNXLkJE+D5gzSL2zkgBVt
- 2SsCZJMrn8MRvLRhhj8AF0A3doDj0+BvnuedjJyZ1Q==
-X-Google-Smtp-Source: APXvYqzDg1t4PyBJpQHnqUE2Fv79xcu2BV5QI5PX3M0IjQtCjHKO/Okx/Ul7s5Yg+SPXPis4rwk+j8JOn3LjK8zJl4E=
-X-Received: by 2002:aca:d985:: with SMTP id q127mr238362oig.132.1582827274974; 
- Thu, 27 Feb 2020 10:14:34 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=jT8UWtmCEe7v58pjwlPCLN4e+N26kni/TNK34oplFDI=;
+ b=Xm8ZY4fDlnbLelNRzo8rwq5WYio60PHuenSlxceeVFWLZh1t+ERDZMRM6ChLHKqWho
+ eFywkSNNH/jvjQF8XE+KPEUi5IaKGHE9whfLkUGotSVWGrG3kD7TEjBzqyWlLOvNa2G6
+ IkYDWnJSLuri0G021teCtkdLT+GNub/17VwTDHciwckzkhtu+NRYPYKY/UP0XYSuIqf8
+ +hH60iLxvqD03EUvk5BrYInhXBtZUWBWCLptM3QmNLYn1iF41MIC6r+lVtc/tGgyRr35
+ fPl+y8iyoeSHvcUYx27wf+BCStdRmnqI+MoyniByjawhX2PGYIFUj6ciicOLlD+d5es0
+ ELjA==
+X-Gm-Message-State: APjAAAVX+qCHEj/dikVWP/cO6EzKeJVQRRmsarOJ40OB7UgQDMlW2A7K
+ nPreUEH4KKS/P30sCcv8GTes2w==
+X-Google-Smtp-Source: APXvYqwp8W10k7C5K+ykKuRFLORaJou4Cd5K/QJEEhZlzQs0FVvABfEDei7QmchEa6j8YPIsywTXaQ==
+X-Received: by 2002:adf:fc08:: with SMTP id i8mr153646wrr.104.1582827372723;
+ Thu, 27 Feb 2020 10:16:12 -0800 (PST)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id q1sm8551152wrw.5.2020.02.27.10.16.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 10:16:12 -0800 (PST)
+From: Daniel Vetter <daniel.vetter@ffwll.ch>
+To: DRI Development <dri-devel@lists.freedesktop.org>
+Subject: [PATCH 34/51] drm/meson: Drop explicit drm_mode_config_cleanup call
+Date: Thu, 27 Feb 2020 19:15:05 +0100
+Message-Id: <20200227181522.2711142-35-daniel.vetter@ffwll.ch>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200227181522.2711142-1-daniel.vetter@ffwll.ch>
+References: <20200227181522.2711142-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
-References: <20200227162125.10450-1-m.felsch@pengutronix.de>
- <20200227162125.10450-18-m.felsch@pengutronix.de>
- <20200227172923.GY2363188@phenom.ffwll.local>
- <c620634bf4faf57230810a16cb1f5a81f2d23945.camel@pengutronix.de>
-In-Reply-To: <c620634bf4faf57230810a16cb1f5a81f2d23945.camel@pengutronix.de>
-From: Daniel Vetter <daniel@ffwll.ch>
-Date: Thu, 27 Feb 2020 19:14:23 +0100
-Message-ID: <CAKMK7uG5e90dEiXYXN9xo+iFY7_9BW6Pp=1CifSQ6c3eWyP=9w@mail.gmail.com>
-Subject: Re: [PATCH 17/17] drm/imx: fix drm_mode_config_cleanup race condition
-To: Lucas Stach <l.stach@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_101436_567685_2BF95738 
-X-CRM114-Status: GOOD (  33.28  )
+X-CRM114-CacheID: sfid-20200227_101614_105699_36538D5A 
+X-CRM114-Status: GOOD (  14.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -90,490 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <kernel@pengutronix.de>, Dave Airlie <airlied@linux.ie>,
- Marco Felsch <m.felsch@pengutronix.de>, Stefan Agner <stefan@agner.ch>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ m.felsch@pengutronix.de, Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Kevin Hilman <khilman@baylibre.com>, Daniel Vetter <daniel.vetter@intel.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 6:44 PM Lucas Stach <l.stach@pengutronix.de> wrote:
->
-> Hi Daniel,
->
-> On Do, 2020-02-27 at 18:29 +0100, Daniel Vetter wrote:
-> > On Thu, Feb 27, 2020 at 05:21:25PM +0100, Marco Felsch wrote:
-> > > Currently there is a race conditions if the panel can't be probed e.g.
-> > > it is not connected [1]. There where several attempts to fix this [2,3]
-> > > but non of them made it into mainline.
-> > >
-> > > The problem is the combination of the component framework and the drm
-> > > framework, as Philipp already explained [1]. To fix this we need to
-> > > drop the devres-kmalloc and move the plain kmalloc to let the drm
-> > > framework free the resources upon a drm_mode_config_cleanup(). So we need
-> > > to implement a .destroy() callback for each component. We also need to
-> > > reorder the master.unbind() callback to ensure that the driver states
-> > > are accessible during a component.unbind() call. This reordering also
-> > > aligns the master.unbind() with the error-cleanup path during
-> > > master.bind().
-> > >
-> > > [1] https://www.spinics.net/lists/dri-devel/msg189388.html
-> > > [2] https://lkml.org/lkml/2018/10/16/1148
-> > > [3] https://lkml.org/lkml/2019/4/2/612
-> > >
-> > > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> >
-> > I think this collides quite badly with my managed drm device resources
-> > patch series I'm working on. Plus once we have that, you could use
-> > drmm_kzalloc and wouldn't need to sprinkle kfree() over everything.
-> >
-> > I think at least, I haven't rolled much further than just getting the
-> > baseline stuff figured out. So if it's not super-pressing to get this
-> > patch here landed I think it'd be better to base this on top of the drmm
-> > series. I'm working on sending out v3, I'll cc you on the imx parts so
-> > you'll get pinged.
->
-> IMO this part of imx-drm has been broken for far too long already, so
-> we shouldn't delay this fixes series on a complete resource management
-> rework.
+It's right above the drm_dev_put().
 
-Given it's patch 17/17 in a spring cleanup, and not patch 1/17 I'm not
-entirely sure it's really that high priority. Anyway would be great if
-you at least check out what the new drm managed resource stuff would
-mean for imx here, since you're blowing on devm_kzalloc exactly in the
-way that I'm trying to get sorted now (without tons of explicit
-kfree() everywhere).
--Daniel
+This is made possible by a preceeding patch which added a drmm_
+cleanup action to drm_mode_config_init(), hence all we need to do to
+ensure that drm_mode_config_cleanup() is run on final drm_device
+cleanup is check the new error code for _init().
 
->
-> Regards,
-> Lucas
->
-> > Cheers, Daniel
-> >
-> > > ---
-> > >  drivers/gpu/drm/imx/dw_hdmi-imx.c      | 28 ++++++++++++---------
-> > >  drivers/gpu/drm/imx/imx-drm-core.c     |  3 ++-
-> > >  drivers/gpu/drm/imx/imx-ldb.c          | 34 +++++++++++++++++---------
-> > >  drivers/gpu/drm/imx/imx-tve.c          | 15 +++++++++---
-> > >  drivers/gpu/drm/imx/ipuv3-crtc.c       | 28 ++++++++++++++++++---
-> > >  drivers/gpu/drm/imx/parallel-display.c | 30 ++++++++++++++++-------
-> > >  6 files changed, 96 insertions(+), 42 deletions(-)
-> > >
-> > > diff --git a/drivers/gpu/drm/imx/dw_hdmi-imx.c b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-> > > index f22cfbf9353e..86a62796c151 100644
-> > > --- a/drivers/gpu/drm/imx/dw_hdmi-imx.c
-> > > +++ b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-> > > @@ -137,6 +137,12 @@ static int dw_hdmi_imx_atomic_check(struct drm_encoder *encoder,
-> > >     return 0;
-> > >  }
-> > >
-> > > +static void dw_hdmi_imx_encoder_destroy(struct drm_encoder *encoder)
-> > > +{
-> > > +   drm_encoder_cleanup(encoder);
-> > > +   kfree(enc_to_imx_hdmi(encoder));
-> > > +}
-> > > +
-> > >  static const struct drm_encoder_helper_funcs dw_hdmi_imx_encoder_helper_funcs = {
-> > >     .enable     = dw_hdmi_imx_encoder_enable,
-> > >     .disable    = dw_hdmi_imx_encoder_disable,
-> > > @@ -144,7 +150,7 @@ static const struct drm_encoder_helper_funcs dw_hdmi_imx_encoder_helper_funcs =
-> > >  };
-> > >
-> > >  static const struct drm_encoder_funcs dw_hdmi_imx_encoder_funcs = {
-> > > -   .destroy = drm_encoder_cleanup,
-> > > +   .destroy = dw_hdmi_imx_encoder_destroy,
-> > >  };
-> > >
-> > >  static enum drm_mode_status
-> > > @@ -212,7 +218,7 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
-> > >     if (!pdev->dev.of_node)
-> > >             return -ENODEV;
-> > >
-> > > -   hdmi = devm_kzalloc(&pdev->dev, sizeof(*hdmi), GFP_KERNEL);
-> > > +   hdmi = kzalloc(sizeof(*hdmi), GFP_KERNEL);
-> > >     if (!hdmi)
-> > >             return -ENOMEM;
-> > >
-> > > @@ -228,12 +234,16 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
-> > >      * not been registered yet.  Defer probing, and hope that
-> > >      * the required CRTC is added later.
-> > >      */
-> > > -   if (encoder->possible_crtcs == 0)
-> > > +   if (encoder->possible_crtcs == 0) {
-> > > +           kfree(hdmi);
-> > >             return -EPROBE_DEFER;
-> > > +   }
-> > >
-> > >     ret = dw_hdmi_imx_parse_dt(hdmi);
-> > > -   if (ret < 0)
-> > > +   if (ret < 0) {
-> > > +           kfree(hdmi);
-> > >             return ret;
-> > > +   }
-> > >
-> > >     drm_encoder_helper_add(encoder, &dw_hdmi_imx_encoder_helper_funcs);
-> > >     drm_encoder_init(drm, encoder, &dw_hdmi_imx_encoder_funcs,
-> > > @@ -242,15 +252,9 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
-> > >     platform_set_drvdata(pdev, hdmi);
-> > >
-> > >     hdmi->hdmi = dw_hdmi_bind(pdev, encoder, plat_data);
-> > > -
-> > > -   /*
-> > > -    * If dw_hdmi_bind() fails we'll never call dw_hdmi_unbind(),
-> > > -    * which would have called the encoder cleanup.  Do it manually.
-> > > -    */
-> > > -   if (IS_ERR(hdmi->hdmi)) {
-> > > +   /* Don't call kfree() here, this is done by the .destroy() handler. */
-> > > +   if (IS_ERR(hdmi->hdmi))
-> > >             ret = PTR_ERR(hdmi->hdmi);
-> > > -           drm_encoder_cleanup(encoder);
-> > > -   }
-> > >
-> > >     return ret;
-> > >  }
-> > > diff --git a/drivers/gpu/drm/imx/imx-drm-core.c b/drivers/gpu/drm/imx/imx-drm-core.c
-> > > index 9979547ca883..feab6eb9e7e5 100644
-> > > --- a/drivers/gpu/drm/imx/imx-drm-core.c
-> > > +++ b/drivers/gpu/drm/imx/imx-drm-core.c
-> > > @@ -275,9 +275,10 @@ static void imx_drm_unbind(struct device *dev)
-> > >
-> > >     drm_kms_helper_poll_fini(drm);
-> > >
-> > > +   component_unbind_all(drm->dev, drm);
-> > > +
-> > >     drm_mode_config_cleanup(drm);
-> > >
-> > > -   component_unbind_all(drm->dev, drm);
-> > >     dev_set_drvdata(dev, NULL);
-> > >
-> > >     drm_dev_put(drm);
-> > > diff --git a/drivers/gpu/drm/imx/imx-ldb.c b/drivers/gpu/drm/imx/imx-ldb.c
-> > > index 5e6c1b09dbfa..4a5d31da592a 100644
-> > > --- a/drivers/gpu/drm/imx/imx-ldb.c
-> > > +++ b/drivers/gpu/drm/imx/imx-ldb.c
-> > > @@ -140,6 +140,8 @@ static void imx_ldb_connector_destroy(struct drm_connector *connector)
-> > >     i2c_put_adapter(imx_ldb_con->ddc);
-> > >     /* avoid dangling pointers */
-> > >     imx_ldb_con->ldb_channel = NULL;
-> > > +   kfree(imx_ldb_con->edid);
-> > > +   kfree(imx_ldb_con);
-> > >  }
-> > >
-> > >  static int imx_ldb_connector_get_modes(struct drm_connector *connector)
-> > > @@ -184,6 +186,7 @@ static void imx_ldb_encoder_destroy(struct drm_encoder *encoder)
-> > >     drm_encoder_cleanup(encoder);
-> > >     /* avoid dangling pointers */
-> > >     channel->ldb = NULL;
-> > > +   kfree(channel);
-> > >  }
-> > >
-> > >  static void imx_ldb_set_clock(struct imx_ldb *ldb, int mux, int chno,
-> > > @@ -502,9 +505,8 @@ static int imx_ldb_panel_ddc(struct device *dev,
-> > >             edidp = of_get_property(child, "edid",
-> > >                                     &connector->edid_len);
-> > >             if (edidp) {
-> > > -                   connector->edid = devm_kmemdup(dev, edidp,
-> > > -                                                  connector->edid_len,
-> > > -                                                  GFP_KERNEL);
-> > > +                   connector->edid = kmemdup(edidp, connector->edid_len,
-> > > +                                             GFP_KERNEL);
-> > >             } else if (!channel->panel) {
-> > >                     /* fallback to display-timings node */
-> > >                     ret = of_get_drm_display_mode(child,
-> > > @@ -525,7 +527,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> > >                              int channel_number)
-> > >  {
-> > >     struct imx_ldb_channel *channel;
-> > > -   struct imx_ldb_connector *imx_ldb_con;
-> > > +   struct imx_ldb_connector *imx_ldb_con = NULL;
-> > >     struct drm_encoder *encoder;
-> > >     struct drm_connector *connector = NULL;
-> > >     int bus_format;
-> > > @@ -537,7 +539,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> > >      * 3) Register it with the DRM framework
-> > >      * 4) Attach bridge or connector to encoder
-> > >      */
-> > > -   channel = devm_kzalloc(dev, sizeof(*channel), GFP_KERNEL);
-> > > +   channel = kzalloc(sizeof(*channel), GFP_KERNEL);
-> > >     if (!channel)
-> > >             return -ENOMEM;
-> > >
-> > > @@ -554,17 +556,19 @@ static int imx_ldb_setup_channel(struct device *dev,
-> > >                                       ldb->lvds_mux ? 4 : 2, 0,
-> > >                                       &channel->panel, &channel->bridge);
-> > >     if (ret && ret != -ENODEV)
-> > > -           return ret;
-> > > +           goto err_free;
-> > >
-> > >     /* panel ddc only if there is no bridge */
-> > >     if (!channel->bridge) {
-> > > -           imx_ldb_con = devm_kzalloc(dev, sizeof(*connector), GFP_KERNEL);
-> > > -           if (!imx_ldb_con)
-> > > -                   return -ENOMEM;
-> > > +           imx_ldb_con = kzalloc(sizeof(*connector), GFP_KERNEL);
-> > > +           if (!imx_ldb_con) {
-> > > +                   ret = -ENOMEM;
-> > > +                   goto err_free;
-> > > +           }
-> > >
-> > >             ret = imx_ldb_panel_ddc(dev, channel, imx_ldb_con, child);
-> > >             if (ret)
-> > > -                   return ret;
-> > > +                   goto err_free;
-> > >
-> > >             imx_ldb_con->ldb_channel = channel;
-> > >             connector = &imx_ldb_con->connector;
-> > > @@ -628,7 +632,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> > >             ret = drm_bridge_attach(encoder, channel->bridge, NULL);
-> > >             if (ret) {
-> > >                     DRM_ERROR("Failed to initialize bridge with drm\n");
-> > > -                   goto err_put_ddc;
-> > > +                   goto err_out;
-> > >             }
-> > >     } else {
-> > >             drm_connector_attach_encoder(connector, encoder);
-> > > @@ -637,7 +641,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> > >     if (channel->panel) {
-> > >             ret = drm_panel_attach(channel->panel, connector);
-> > >             if (ret)
-> > > -                   goto err_put_ddc;
-> > > +                   goto err_out;
-> > >     }
-> > >
-> > >     return 0;
-> > > @@ -645,6 +649,12 @@ static int imx_ldb_setup_channel(struct device *dev,
-> > >  err_put_ddc:
-> > >     if (imx_ldb_con)
-> > >             i2c_put_adapter(imx_ldb_con->ddc);
-> > > +err_free:
-> > > +   if (imx_ldb_con)
-> > > +           kfree(imx_ldb_con->edid);
-> > > +   kfree(imx_ldb_con);
-> > > +   kfree(channel);
-> > > +err_out:
-> > >     return ret;
-> > >  }
-> > >
-> > > diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
-> > > index a7a05c47f68b..15ff5f35ff0e 100644
-> > > --- a/drivers/gpu/drm/imx/imx-tve.c
-> > > +++ b/drivers/gpu/drm/imx/imx-tve.c
-> > > @@ -241,6 +241,7 @@ static void imx_tve_connector_destroy(struct drm_connector *connector)
-> > >     i2c_put_adapter(tvec->ddc);
-> > >     /* avoid dangling pointers */
-> > >     tvec->tve = NULL;
-> > > +   kfree(tvec);
-> > >  }
-> > >
-> > >  static int imx_tve_connector_get_modes(struct drm_connector *connector)
-> > > @@ -292,6 +293,7 @@ static void imx_tve_encoder_destroy(struct drm_encoder *encoder)
-> > >     drm_encoder_cleanup(encoder);
-> > >     /* avoid dangling pointers */
-> > >     tvee->tve = NULL;
-> > > +   kfree(tvee);
-> > >  }
-> > >
-> > >  static void imx_tve_encoder_mode_set(struct drm_encoder *encoder,
-> > > @@ -577,13 +579,15 @@ static int imx_tve_bind(struct device *dev, struct device *master, void *data)
-> > >     struct imx_tve_connector *tvec;
-> > >     int ret;
-> > >
-> > > -   tvee = devm_kzalloc(dev, sizeof(*tvee), GFP_KERNEL);
-> > > +   tvee = kzalloc(sizeof(*tvee), GFP_KERNEL);
-> > >     if (!tvee)
-> > >             return -ENOMEM;
-> > >
-> > > -   tvec = devm_kzalloc(dev, sizeof(*tvec), GFP_KERNEL);
-> > > -   if (!tvec)
-> > > -           return -ENOMEM;
-> > > +   tvec = kzalloc(sizeof(*tvec), GFP_KERNEL);
-> > > +   if (!tvec) {
-> > > +           ret = -ENOMEM;
-> > > +           goto err_free;
-> > > +   }
-> > >
-> > >     tvee->tve = imx_tve;
-> > >     tvec->tve = imx_tve;
-> > > @@ -602,6 +606,9 @@ static int imx_tve_bind(struct device *dev, struct device *master, void *data)
-> > >
-> > >  err_put_ddc:
-> > >     i2c_put_adapter(tvec->ddc);
-> > > +err_free:
-> > > +   kfree(tvec);
-> > > +   kfree(tvee);
-> > >     return ret;
-> > >  }
-> > >
-> > > diff --git a/drivers/gpu/drm/imx/ipuv3-crtc.c b/drivers/gpu/drm/imx/ipuv3-crtc.c
-> > > index 63c0284f8b3c..2d24677f7fef 100644
-> > > --- a/drivers/gpu/drm/imx/ipuv3-crtc.c
-> > > +++ b/drivers/gpu/drm/imx/ipuv3-crtc.c
-> > > @@ -105,6 +105,12 @@ static void ipu_crtc_atomic_disable(struct drm_crtc *crtc,
-> > >     spin_unlock_irq(&crtc->dev->event_lock);
-> > >  }
-> > >
-> > > +static void imx_drm_crtc_destroy(struct drm_crtc *crtc)
-> > > +{
-> > > +   drm_crtc_cleanup(crtc);
-> > > +   kfree(to_ipu_crtc(crtc));
-> > > +}
-> > > +
-> > >  static void imx_drm_crtc_reset(struct drm_crtc *crtc)
-> > >  {
-> > >     struct imx_crtc_state *state;
-> > > @@ -166,7 +172,7 @@ static void ipu_disable_vblank(struct drm_crtc *crtc)
-> > >
-> > >  static const struct drm_crtc_funcs ipu_crtc_funcs = {
-> > >     .set_config = drm_atomic_helper_set_config,
-> > > -   .destroy = drm_crtc_cleanup,
-> > > +   .destroy = imx_drm_crtc_destroy,
-> > >     .page_flip = drm_atomic_helper_page_flip,
-> > >     .reset = imx_drm_crtc_reset,
-> > >     .atomic_duplicate_state = imx_drm_crtc_duplicate_state,
-> > > @@ -357,7 +363,8 @@ static int ipu_get_resources(struct ipu_crtc *ipu_crtc,
-> > >  }
-> > >
-> > >  static int ipu_crtc_init(struct ipu_crtc *ipu_crtc,
-> > > -   struct ipu_client_platformdata *pdata, struct drm_device *drm)
-> > > +                    struct ipu_client_platformdata *pdata,
-> > > +                    struct drm_device *drm)
-> > >  {
-> > >     struct ipu_soc *ipu = dev_get_drvdata(ipu_crtc->dev->parent);
-> > >     struct drm_crtc *crtc = &ipu_crtc->base;
-> > > @@ -437,10 +444,11 @@ static int ipu_drm_bind(struct device *dev, struct device *master, void *data)
-> > >  {
-> > >     struct ipu_client_platformdata *pdata = dev->platform_data;
-> > >     struct drm_device *drm = data;
-> > > +   struct drm_crtc *registered_crtc = NULL;
-> > >     struct ipu_crtc *ipu_crtc;
-> > >     int ret;
-> > >
-> > > -   ipu_crtc = devm_kzalloc(dev, sizeof(*ipu_crtc), GFP_KERNEL);
-> > > +   ipu_crtc = kzalloc(sizeof(*ipu_crtc), GFP_KERNEL);
-> > >     if (!ipu_crtc)
-> > >             return -ENOMEM;
-> > >
-> > > @@ -448,11 +456,23 @@ static int ipu_drm_bind(struct device *dev, struct device *master, void *data)
-> > >
-> > >     ret = ipu_crtc_init(ipu_crtc, pdata, drm);
-> > >     if (ret)
-> > > -           return ret;
-> > > +           goto err;
-> > >
-> > >     dev_set_drvdata(dev, ipu_crtc);
-> > >
-> > >     return 0;
-> > > +
-> > > +err:
-> > > +   drm_for_each_crtc(registered_crtc, drm) {
-> > > +           /*
-> > > +            * The crtc was registered with the drm core framework if we
-> > > +            * enter here. So let the core .destroy() helper cleanup the
-> > > +            * code.
-> > > +            */
-> > > +           return ret;
-> > > +   }
-> > > +   kfree(ipu_crtc);
-> > > +   return ret;
-> > >  }
-> > >
-> > >  static void ipu_drm_unbind(struct device *dev, struct device *master,
-> > > diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
-> > > index 78703b15c7cf..3e247383a498 100644
-> > > --- a/drivers/gpu/drm/imx/parallel-display.c
-> > > +++ b/drivers/gpu/drm/imx/parallel-display.c
-> > > @@ -55,6 +55,8 @@ static void imx_pd_connector_destroy(struct drm_connector *connector)
-> > >     imx_drm_connector_destroy(connector);
-> > >     /* avoid dangling pointer */
-> > >     imxpc->imxpd = NULL;
-> > > +   kfree(imxpc->edid);
-> > > +   kfree(imxpc);
-> > >  }
-> > >
-> > >  static int imx_pd_connector_get_modes(struct drm_connector *connector)
-> > > @@ -102,6 +104,7 @@ static void imx_pd_encoder_destroy(struct drm_encoder *encoder)
-> > >     if (imxpd->panel)
-> > >             drm_panel_detach(imxpd->panel);
-> > >     drm_encoder_cleanup(encoder);
-> > > +   kfree(imxpd);
-> > >  }
-> > >
-> > >  static void imx_pd_encoder_enable(struct drm_encoder *encoder)
-> > > @@ -225,31 +228,32 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
-> > >     struct device_node *np = dev->of_node;
-> > >     const u8 *edidp;
-> > >     struct imx_parallel_display *imxpd;
-> > > -   struct imx_parallel_connector *imxpc;
-> > > +   struct imx_parallel_connector *imxpc = NULL;
-> > >     int ret;
-> > >     u32 bus_format = 0;
-> > >     const char *fmt;
-> > >
-> > > -   imxpd = devm_kzalloc(dev, sizeof(*imxpd), GFP_KERNEL);
-> > > +   imxpd = kzalloc(sizeof(*imxpd), GFP_KERNEL);
-> > >     if (!imxpd)
-> > >             return -ENOMEM;
-> > >
-> > >     /* port@1 is the output port */
-> > >     ret = drm_of_find_panel_or_bridge(np, 1, 0, &imxpd->panel, &imxpd->bridge);
-> > >     if (ret && ret != -ENODEV)
-> > > -           return ret;
-> > > +           goto err_free;
-> > >
-> > >     if (!imxpd->bridge) {
-> > > -           imxpc = devm_kzalloc(dev, sizeof(*imxpc), GFP_KERNEL);
-> > > -           if (!imxpc)
-> > > -                   return -ENOMEM;
-> > > +           imxpc = kzalloc(sizeof(*imxpc), GFP_KERNEL);
-> > > +           if (!imxpc) {
-> > > +                   ret = -ENOMEM;
-> > > +                   goto err_free;
-> > > +           }
-> > >
-> > >             imxpc->imxpd = imxpd;
-> > >
-> > >             edidp = of_get_property(np, "edid", &imxpc->edid_len);
-> > >             if (edidp)
-> > > -                   imxpc->edid = devm_kmemdup(dev, edidp, imxpc->edid_len,
-> > > -                                              GFP_KERNEL);
-> > > +                   imxpc->edid = kmemdup(edidp, imxpc->edid_len, GFP_KERNEL);
-> > >     }
-> > >
-> > >     ret = of_property_read_string(np, "interface-pix-fmt", &fmt);
-> > > @@ -269,9 +273,17 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
-> > >
-> > >     ret = imx_pd_register(drm, imxpd, imxpc);
-> > >     if (ret)
-> > > -           return ret;
-> > > +           goto err_free;
-> > >
-> > >     return imx_pd_attach(drm, imxpd, imxpc);
-> > > +
-> > > +err_free:
-> > > +   if (imxpc)
-> > > +           kfree(imxpc->edid);
-> > > +   kfree(imxpc);
-> > > +   kfree(imxpd);
-> > > +
-> > > +   return ret;
-> > >  }
-> > >
-> > >  static const struct component_ops imx_pd_ops = {
-> > > --
-> > > 2.20.1
-> > >
->
+Aside: This driver gets its devm_ stuff all wrong wrt drm_device and
+anything hanging off that. Not the only one unfortunately.
 
+v2: Explain why this cleanup is possible (Laurent).
 
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Kevin Hilman <khilman@baylibre.com>
+Cc: linux-amlogic@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ drivers/gpu/drm/meson/meson_drv.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index b5f5eb7b4bb9..ae94d14ab7bc 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -284,7 +284,9 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 	/* Remove early framebuffers (ie. simplefb) */
+ 	meson_remove_framebuffers();
+ 
+-	drm_mode_config_init(drm);
++	ret = drm_mode_config_init(drm);
++	if (ret)
++		goto free_drm;
+ 	drm->mode_config.max_width = 3840;
+ 	drm->mode_config.max_height = 2160;
+ 	drm->mode_config.funcs = &meson_mode_config_funcs;
+@@ -379,7 +381,6 @@ static void meson_drv_unbind(struct device *dev)
+ 	drm_dev_unregister(drm);
+ 	drm_irq_uninstall(drm);
+ 	drm_kms_helper_poll_fini(drm);
+-	drm_mode_config_cleanup(drm);
+ 	drm_dev_put(drm);
+ }
+ 
 -- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-+41 (0) 79 365 57 48 - http://blog.ffwll.ch
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
