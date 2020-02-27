@@ -2,87 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81A3717240B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 17:53:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10628172412
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 17:55:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=knviH8C3vOqrGlxsWi5OZViRO4PX0A74kHQ63I3Llb4=; b=QsD4makOuIR3WqmZ9Sut+NFaI
-	hpb3cB6OmigTR0FD25iowguhLZqgQ9H7ZSWUtJG+4R5IiIZm/dEbJCyZ6X2BcYY+uKqKNs+HtaMaT
-	yq8SjSqu1j4SKCz/+I2brzeY5tduGrJekvGnR9Oahs6tnMFC5UCwPryT6RNWva/fEwUjmpAjt2Aym
-	at1cYxliZdXAooodj+787OdIkz4eyIItRk6LyOH4GDMxNAYMh8Di210Z6/yzs7KVKxyC/oMrTYrNA
-	u4aJAYa50pDYv3hyhtPics9UFLr9++z2qB0DSmuvmf3XRV7axrdrY3WbzeSQs4aotJ7F5jgupmOKm
-	tuK4+p84g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hr9mf/wNEWw80WK6IOzqkJQsbjUxxlBT4fR19qEm9eg=; b=M6E8P3HeeXaygl
+	ynMtOmrlMkCp41ZkjncXJxySJBrEnJQSvzoxhJfrFMiGBqdXV6XP7KyrTWctGPJDY6jGUZIqxUduf
+	W2JTkwTH4KS2wVuNSVGQhfSlwYXDAi9vYpdjUIArdS4xU6zE8Yq55j6TmHoZ1lzV7W1WfPMMSkzeO
+	BHoZCAoloeHhBlojT5aFVanBUqM1DfKL+8oGU9JVTiJ4lEkBJ6f+pMxlOMao+4E5GyYS2uFkIJbWW
+	4H2ULxN//PXlJ14nPiJnfgXi3tg4x+Fuxki1Set0c6j295lN6poVkaQHDCFquMG4Lg1RV8+eQnmi3
+	HlvxZ2qTcvoQSsSNzdcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7MPx-0002SH-TD; Thu, 27 Feb 2020 16:53:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j7MRT-0003xC-5P; Thu, 27 Feb 2020 16:55:19 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7MPn-0002Rp-HV
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 16:53:36 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F9BE2469F;
- Thu, 27 Feb 2020 16:53:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582822415;
- bh=FCpEczpISHL8j03AAQqFyL4qGLGWBbexvzcAmi6nUKw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=wW7QVVDuMTfXdNeCfIsChW07MzXyoK8XLlBGOtXMiWqPA7GvXvbVyJF2pfGTDUiXV
- qrP5uc7DkE4+yIAgI5O6cDDbwWeovrEAqIG5Zn8fBYP/dOK1eQb/y4U1mM4+li6Iey
- WBsVateRyNYB1kT4FU/kWhYy40szzoMrTUqQjMfU=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j7MPl-008VgO-9G; Thu, 27 Feb 2020 16:53:33 +0000
+ id 1j7MRH-0003Uw-Un
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 16:55:09 +0000
+Received: by mail-ot1-f66.google.com with SMTP id j20so3592029otq.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 08:55:06 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/jM1fH5xptzMBpP8MrWjvM0f+YCk8pWFrR+DV7+cjhQ=;
+ b=eA5jX+8vJ5lV//cRQDrIfdEwS2+h7CvOl47nG3Kwwo8ys3mRtQyqvbFpV+Z6WGaVFA
+ CxlU8e0buIaG4IO4c/NLAuhYiuealu4ttvvtT1PIoB4SXdbM/9z3hB3Nhaq8WMxb/IQM
+ ogzL6OLsTrqQn+5N7/pS8HMu7+U1kxy6yXO0wBVNWX5f5jaP/Oo7tlI3hrc0UVV7dJrk
+ UVxF1if1oilkpBb8V4dyi7jZx0epopW3rZQd9HOlO4km+ZY8f62gGYsx1Q9XQXGZTGBs
+ QOx74gIJyOBQv3wRkWwGTC4mVrQTqpZXCnfQw2k8Eyrj0TspBOnFjlhNTkbMBV0WSGhm
+ 8i7A==
+X-Gm-Message-State: APjAAAUr1aK6/Qi3ojvhUAy/UeaDbli8QlOzUWtuHeWslEgLIEt+Rq2G
+ c7eOHevAU3Ee2z7fCo1Wiw==
+X-Google-Smtp-Source: APXvYqxUUYsXBRlfK0ElzZkJeLYyKOPBFssLLcfLZAR3mlJo/cftCdxWtn252vKiBhlDns37QVqKcg==
+X-Received: by 2002:a05:6830:20c2:: with SMTP id
+ z2mr527059otq.228.1582822506104; 
+ Thu, 27 Feb 2020 08:55:06 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id k17sm2154899oic.45.2020.02.27.08.55.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 08:55:05 -0800 (PST)
+Received: (nullmailer pid 19462 invoked by uid 1000);
+ Thu, 27 Feb 2020 16:55:04 -0000
+Date: Thu, 27 Feb 2020 10:55:04 -0600
+From: Rob Herring <robh@kernel.org>
+To: rentao.bupt@gmail.com
+Subject: Re: [PATCH v4 7/7] dt-bindings: usb: add documentation for aspeed
+ usb-vhub
+Message-ID: <20200227165504.GA26955@bogus>
+References: <20200226230346.672-1-rentao.bupt@gmail.com>
+ <20200226230346.672-8-rentao.bupt@gmail.com>
 MIME-Version: 1.0
-Date: Thu, 27 Feb 2020 16:53:33 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH v4 0/5] ARM: decompressor: use by-VA cache maintenance for
- v7 cores
-In-Reply-To: <CAKv+Gu_smwr3RDW=B8BQ8AG1+aOibFHwvoTSR=F2TxDguV2ELQ@mail.gmail.com>
-References: <20200226165738.11201-1-ardb@kernel.org>
- <CACRpkdZ9WR7wEjgscAF=Pwy0=YwbNPjtH6BQWa5wfXW74Md4xQ@mail.gmail.com>
- <91023d8f118440439cf55847a6bc43c2@kernel.org>
- <CAKv+Gu_smwr3RDW=B8BQ8AG1+aOibFHwvoTSR=F2TxDguV2ELQ@mail.gmail.com>
-Message-ID: <bb66152dddd84d34d2cf8c7a98c486a1@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: ardb@kernel.org, linus.walleij@linaro.org,
- linux-arm-kernel@lists.infradead.org, linux-efi@vger.kernel.org,
- linux@armlinux.org.uk, nico@fluxnic.net, catalin.marinas@arm.com,
- tony@atomide.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200226230346.672-8-rentao.bupt@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_085335_631226_C96B724C 
-X-CRM114-Status: GOOD (  14.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200227_085508_023987_E55742ED 
+X-CRM114-Status: GOOD (  11.71  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,63 +96,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Nicolas Pitre <nico@fluxnic.net>,
- Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, openbmc@lists.ozlabs.org,
+ linux-usb@vger.kernel.org, taoren@fb.com, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Tao Ren <rentao.bupt@gmail.com>,
+ Joel Stanley <joel@jms.id.au>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-27 16:47, Ard Biesheuvel wrote:
-> On Thu, 27 Feb 2020 at 17:01, Marc Zyngier <maz@kernel.org> wrote:
->> 
->> On 2020-02-27 10:11, Linus Walleij wrote:
->> > On Wed, Feb 26, 2020 at 5:57 PM Ard Biesheuvel <ardb@kernel.org> wrote:
->> >
->> >> So instead, switch to the by-VA cache maintenance that the
->> >> architecture
->> >> requires for v7 and later (and ARM1176, as a side effect).
->> >>
->> >> Changes since v3:
->> >> - ensure that the region that is cleaned after self-relocation of the
->> >> zImage
->> >>   covers the appended DTB, if present
->> >>
->> >> Apologies to Linus, but due to this change, I decided not to take your
->> >> Tested-by into account, and I would appreciate it if you could retest
->> >> this version of the series? Thanks.
->> >
->> > No problem, I have tested it on the following:
->> >
->> > - ARMv7 Cortex A9 x 2 Qualcomm APQ8060 DragonBoard
->> > - ARM PB11MPCore (4 x 1176)
->> 
->> <pedant>
->> 
->> The ARM11MPCore isn't a bunch of 1176s glued together. It is actually 
->> a
->> very
->> different CPU, designed by a different team.
->> 
->> </pedant>
->> 
+On Wed, 26 Feb 2020 15:03:46 -0800, rentao.bupt@gmail.com wrote:
+> From: Tao Ren <rentao.bupt@gmail.com>
 > 
-> It still takes the same code path in the cache routines, afaict:
-> - the architecture field in the main id register == 0xf, so it uses
-> __armv7_mmu_cache_flush
-> - ID_MMFR1[19:16] == 0x2, so it does not take the 'hierarchical' code
-> path which is modified by these patches
+> Add device tree binding documentation for aspeed usb-vhub driver.
+> 
+> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+> ---
+>  No change in v2/v3/v4:
+>    - the patch is added to the patch series since v4.
+> 
+>  .../bindings/usb/aspeed,usb-vhub.yaml         | 71 +++++++++++++++++++
+>  1 file changed, 71 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> 
 
-Absolutely. From a SW perspective, this is treated in a similar way as
-ARM1176. The underlying HW is very different though...
+My bot found errors running 'make dt_binding_check' on your patch:
 
-Thanks,
+Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.example.dt.yaml: usb-vhub@1e6a0000: 'aspeed,vhub-downstream-ports' is a required property
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.example.dt.yaml: usb-vhub@1e6a0000: 'aspeed,vhub-generic-endpoints' is a required property
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+See https://patchwork.ozlabs.org/patch/1245388
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
