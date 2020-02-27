@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3936170DE5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 02:33:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D471170DEC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 02:33:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vim9q8eZr7SCFJK6iSB1rzNt56PQTT3Dd0xAEmO2gj0=; b=cet+Z+pWoMj7no
-	WlqpqbFQRipCwLCiet6cShxYcmMoxUVou3Cgf+RUyhhTy99HPOJ7TaOxJgoGRgGXduRvKl2t2yUV4
-	n9tLyCxHF+oSCwUc22mbEM03UhXYLmGuSgBYdst1SeU8BGT2g6XVs1o4V2WppfS+OxOIKpj9XKB79
-	3elHiO3gK63+MhI2F+w/l1EBRlHkdWtndn8jun6qhI/DsW/jXTqnpS87iaIcmegJ/D0CD3Iyd8mFv
-	Nk9a7fKBJZkMmJF7eBgftWRco9J12fNB6ES+zJ88CO9SgkOcMMOriRNCc3QxORal3M4X5XREcEWP9
-	8ICvK7EEcEMRxnSeGrjg==;
+	List-Owner; bh=UqiKy+fBprb+GTyZhBgs6slgv/bGotgmye86m1jtF0A=; b=rMqMyvZPLH5c8n
+	ulX1u+DKUoErRp0YTYT36jYzWoyQv3j+x2ylmUZ/0VJrCS9n9Sp/dzT7CwDX6vZLbaXii33nneozu
+	c//vgyWobdmetOItj2Ev4Jzlr51uGFXI3jSFtFjYspPJqWANRWktXOglDEDMMQ7v6wZ6rcCy/xtSx
+	x/CV8KhZMeXr6YkR9LeZ08jtQhSPRghRvNJmzQE5dLxvbFwljJErtPo4a/+zYsP4kAiBIBuqpOqma
+	W/s9vAjGU+m8on8zWecyRsZEoW3eASFVw39hZgSYi0Ws4glINLheulHU8LXzizE63jpNj3RHOI8+o
+	sr1//MfTMHfxSU0dV2zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j782u-0001Z7-SX; Thu, 27 Feb 2020 01:33:00 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1j783H-0001o5-29; Thu, 27 Feb 2020 01:33:23 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j782j-0001YF-JM
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 01:32:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582767167; bh=WVRy76LC7XiiMA2ZecSI+IWUDn0bUblprAlu9loucFU=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=JezkskDUQCEiG532IBF9XyFgGd66FEgc8MoMom3aeNEk8/V9m9HW0TMzvoP26dDKG
- ulkoJoiXBMHuMqtnsyI0gCfL2z36xJlfJHG13IFgonRq3Ig452NyKrkLeke6pgIhSo
- +3OJtd6LcG+GwkynYDcuVwJ0IDXRtCDk6PIHjivk=
-Date: Thu, 27 Feb 2020 02:32:47 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH v2 2/3] dt-bindings: arm: sunxi: Add PinePhone 1.0 and
- 1.1 bindings
-Message-ID: <20200227013247.mufbxd4gsc5c6g6p@core.my.home>
-Mail-Followup-To: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Corentin Labbe <clabbe@baylibre.com>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- Samuel Holland <samuel@sholland.org>,
- Martijn Braam <martijn@brixit.nl>, Luca Weiss <luca@z3ntu.xyz>,
- Bhushan Shah <bshah@kde.org>, Icenowy Zheng <icenowy@aosc.io>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20200227012650.1179151-1-megous@megous.com>
- <20200227012650.1179151-3-megous@megous.com>
+ id 1j7832-0001lz-EX; Thu, 27 Feb 2020 01:33:09 +0000
+X-UUID: 4fc7d9ee036b4ee89b53846e7a431099-20200226
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=CIR9EL5zBnoh8nvfq5nySdNJ6R1FKWqVgskka9d0zdg=; 
+ b=hVlI8Q9IQDCf1XeDabUC2Krh4oj6ec4N7a4HdlUrwEzDs2t+N0yPl+z0BSsjXftSiF/kLRJlRqMAm1SPlAoaQhDhTT4tchWiG+9tBYIkKYQ+3SqcHqaJgWdUutMn0CcbTeggntXOv0q1Nxh/lzQHcXO8pTrpGaQ3muFFeW7l4JQ=;
+X-UUID: 4fc7d9ee036b4ee89b53846e7a431099-20200226
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1420142595; Wed, 26 Feb 2020 17:33:07 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 26 Feb 2020 17:33:05 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 27 Feb 2020 09:32:15 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 27 Feb 2020 09:30:45 +0800
+Message-ID: <1582767184.20746.6.camel@mtksdaap41>
+Subject: Re: [PATCH v9 4/4] drm/mediatek: Fix mediatek-drm device probing
+From: CK Hu <ck.hu@mediatek.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Thu, 27 Feb 2020 09:33:04 +0800
+In-Reply-To: <20200226105419.632771-5-enric.balletbo@collabora.com>
+References: <20200226105419.632771-1-enric.balletbo@collabora.com>
+ <20200226105419.632771-5-enric.balletbo@collabora.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200227012650.1179151-3-megous@megous.com>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_173249_948012_8C09ACF4 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20200226_173308_505448_6D6CEE7A 
+X-CRM114-Status: GOOD (  22.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -71,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,64 +83,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Martijn Braam <martijn@brixit.nl>,
- Samuel Holland <samuel@sholland.org>, Bhushan Shah <bshah@kde.org>,
- linux-kernel@vger.kernel.org, Luca Weiss <luca@z3ntu.xyz>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- devicetree@vger.kernel.org, Corentin Labbe <clabbe@baylibre.com>,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora
+ Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
+ Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, frank-w@public-files.de, Seiya
+ Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Mauro
+ Carvalho Chehab <mchehab@kernel.org>, Allison Randal <allison@lohutok.net>,
+ Matthias Brugger <mbrugger@suse.com>, sboyd@kernel.org, Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, p.zabel@pengutronix.de, matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Hi, Enric:
 
-On Thu, Feb 27, 2020 at 02:26:49AM +0100, megous hlavni wrote:
-> Document board compatible names for Pine64 PinePhone:
+On Wed, 2020-02-26 at 11:54 +0100, Enric Balletbo i Serra wrote:
+> In the actual implementation the same compatible string
+> "mediatek,<chip>-mmsys" is used to bind the clock drivers
+> (drivers/soc/mediatek) as well as to the gpu driver
+> (drivers/gpu/drm/mediatek/mtk_drm_drv.c). This ends with the problem
+> that the only probed driver is the clock driver and there is no display
+> at all.
 > 
-> - 1.0 - Developer variant
-> - 1.1 - Braveheart variant
+> In any case having the same compatible string for two drivers is not
+> correct and should be fixed. To fix this, and maintain backward
+> compatibility, we can consider that the mmsys driver is the top-level
+> entry point for the multimedia subsystem, so is not a pure clock
+> controller but a system controller, and the drm driver is instantiated
+> by that MMSYS driver.
 > 
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
 
-This also got:
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-Reviewed-by: Rob Herring <robh@kernel.org>
-
-short time ago on v1. I didn't catch that before sending v2 out.
-
-regards,
-	o.
-
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 > ---
->  Documentation/devicetree/bindings/arm/sunxi.yaml | 10 ++++++++++
->  1 file changed, 10 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
-> index 5b22b77e4bb73..abf2d97fb7ae3 100644
-> --- a/Documentation/devicetree/bindings/arm/sunxi.yaml
-> +++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
-> @@ -642,6 +642,16 @@ properties:
->            - const: pine64,pinebook
->            - const: allwinner,sun50i-a64
+> Changes in v9:
+> - Do not move the display routing from the drm driver (CK)
+> 
+> Changes in v8:
+> - New patch introduced in this series.
+> 
+> Changes in v7: None
+> 
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c | 34 ++++++++++++++------------
+>  drivers/soc/mediatek/mt8173-mmsys.c    |  6 +++++
+>  2 files changed, 25 insertions(+), 15 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index b68837ea02b3..17f118ee0e57 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -422,9 +422,21 @@ static const struct of_device_id mtk_ddp_comp_dt_ids[] = {
+>  	{ }
+>  };
 >  
-> +      - description: Pine64 PinePhone Developer Batch (1.0)
-> +        items:
-> +          - const: pine64,pinephone-1.0
-> +          - const: allwinner,sun50i-a64
+> +static const struct of_device_id mtk_drm_of_ids[] = {
+> +	{ .compatible = "mediatek,mt2701-mmsys",
+> +	  .data = &mt2701_mmsys_driver_data},
+> +	{ .compatible = "mediatek,mt2712-mmsys",
+> +	  .data = &mt2712_mmsys_driver_data},
+> +	{ .compatible = "mediatek,mt8173-mmsys",
+> +	  .data = &mt8173_mmsys_driver_data},
+> +	{ }
+> +};
 > +
-> +      - description: Pine64 PinePhone Braveheart (1.1)
-> +        items:
-> +          - const: pine64,pinephone-1.1
-> +          - const: allwinner,sun50i-a64
+>  static int mtk_drm_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+> +	struct device_node *phandle = dev->parent->of_node;
+> +	const struct of_device_id *of_id;
+>  	struct mtk_drm_private *private;
+>  	struct device_node *node;
+>  	struct component_match *match = NULL;
+> @@ -435,15 +447,18 @@ static int mtk_drm_probe(struct platform_device *pdev)
+>  	if (!private)
+>  		return -ENOMEM;
+>  
+> -	private->data = of_device_get_match_data(dev);
+> +	of_id = of_match_node(mtk_drm_of_ids, phandle);
+> +	if (!of_id)
+> +		return -ENODEV;
 > +
->        - description: Pine64 PineTab
->          items:
->            - const: pine64,pinetab
-> -- 
-> 2.25.1
-> 
+> +	private->data = of_id->data;
+>  
+> -	private->config_regs = syscon_node_to_regmap(dev->of_node);
+> +	private->config_regs = syscon_node_to_regmap(phandle);
+>  	if (IS_ERR(private->config_regs))
+>  		return PTR_ERR(private->config_regs);
+>  
+>  	/* Iterate over sibling DISP function blocks */
+> -	for_each_child_of_node(dev->of_node->parent, node) {
+> -		const struct of_device_id *of_id;
+> +	for_each_child_of_node(phandle->parent, node) {
+>  		enum mtk_ddp_comp_type comp_type;
+>  		int comp_id;
+>  
+> @@ -576,22 +591,11 @@ static int mtk_drm_sys_resume(struct device *dev)
+>  static SIMPLE_DEV_PM_OPS(mtk_drm_pm_ops, mtk_drm_sys_suspend,
+>  			 mtk_drm_sys_resume);
+>  
+> -static const struct of_device_id mtk_drm_of_ids[] = {
+> -	{ .compatible = "mediatek,mt2701-mmsys",
+> -	  .data = &mt2701_mmsys_driver_data},
+> -	{ .compatible = "mediatek,mt2712-mmsys",
+> -	  .data = &mt2712_mmsys_driver_data},
+> -	{ .compatible = "mediatek,mt8173-mmsys",
+> -	  .data = &mt8173_mmsys_driver_data},
+> -	{ }
+> -};
+> -
+>  static struct platform_driver mtk_drm_platform_driver = {
+>  	.probe	= mtk_drm_probe,
+>  	.remove	= mtk_drm_remove,
+>  	.driver	= {
+>  		.name	= "mediatek-drm",
+> -		.of_match_table = mtk_drm_of_ids,
+>  		.pm     = &mtk_drm_pm_ops,
+>  	},
+>  };
+> diff --git a/drivers/soc/mediatek/mt8173-mmsys.c b/drivers/soc/mediatek/mt8173-mmsys.c
+> index 48e6c157d28e..c894db5b6ca9 100644
+> --- a/drivers/soc/mediatek/mt8173-mmsys.c
+> +++ b/drivers/soc/mediatek/mt8173-mmsys.c
+> @@ -103,6 +103,7 @@ static int mt8173_mmsys_probe(struct platform_device *pdev)
+>  {
+>  	struct device_node *node = pdev->dev.of_node;
+>  	struct clk_onecell_data *clk_data;
+> +	struct platform_device *drm;
+>  	int ret;
+>  
+>  	clk_data = mtk_alloc_clk_data(CLK_MM_NR_CLK);
+> @@ -118,6 +119,11 @@ static int mt8173_mmsys_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> +	drm = platform_device_register_data(&pdev->dev, "mediatek-drm",
+> +					    PLATFORM_DEVID_NONE, NULL, 0);
+> +	if (IS_ERR(drm))
+> +		return PTR_ERR(drm);
+> +
+>  	return 0;
+>  }
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
