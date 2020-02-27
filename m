@@ -2,61 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BE871711EA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:05:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37FEC1712A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:37:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8FUhu+4Ii4MlMGtUiH3/K+rB+hmLcPKrfSDqXgoD2RE=; b=Fib1OeAGIXVaPL
-	iZXMD4Zv+vq2yMZH9pKXt6oxU1orz2WM8HCfDzNpp1ZsToQOwuz84ZZ+mGwsNPdHlSj/GNI+P1hqr
-	CIbx1jjhygedwES7AzSEtrWps7brxL1QtmrtkyjnhyPWK4DAChrAFyS8RQx6rVxB27Wz8tL+oyFnj
-	GOGBB/DV2JEm8Z4PQnBiDU+s0acSADrX7qsF768CtT07+giTHcg9C5uvC5OZK6bRAcFKcL5hW5kGR
-	z1jzJhmraooWZnqXVCBMCO26estb1j8/ZA1b6avKE40SyQuMbeQ7i9tD2TNfiUxNjBoNPc3mA2IZu
-	rSNSTJ2J9lKke8poOHdQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=b9sunEJVuP3hcmFHnas4AuhCi0gDpAzF2yfhSYT2lgw=; b=BKNKOPiRgoLePt
+	J7ruCmafm0IFA6o54UPHLIWPdHeBJyl+gqkALn1fEgOYi6lFadXtc/06/Du07bvZpxefRS5Zb9/8m
+	H3nKLyaHFXwr6hRNNWWF2vGLXoHvxLGtST41u3dDrgu55UCR6XhTwbNy9z8MxAMoIN+hddDsZ+F9G
+	GUOH0Hs4b6j6h4+j1Xgx63LoutmRLh9/UbeSmNI+bkBNC7+NdWwdAtFv3C1Q2iuOEaNQ+kD/0zoaA
+	GznrWwVo7X8qqa2AzGPsGLiQ5itNqe4YMruzLwTA1+EAFbvrdWes1Q77M1LowXFDGJqYQEfEUEHzV
+	Wj0/tH3/ga1Q9VmPUCvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7EAU-0005Yw-QY; Thu, 27 Feb 2020 08:05:14 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j7Efv-0008I0-Pc; Thu, 27 Feb 2020 08:37:43 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7EAF-0005XW-9R
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:05:00 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1j7EA7-0003ca-9X; Thu, 27 Feb 2020 09:04:51 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1j7EA6-0004yp-Ki; Thu, 27 Feb 2020 09:04:50 +0100
-Date: Thu, 27 Feb 2020 09:04:50 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Sam Shih <sam.shih@mediatek.com>
-Subject: Re: [PATCH 1/1] pwm: mediatek: add longer period support
-Message-ID: <20200227080450.rkvwfjx6vikn5ls3@pengutronix.de>
-References: <1582789610-23133-1-git-send-email-sam.shih@mediatek.com>
- <1582789610-23133-2-git-send-email-sam.shih@mediatek.com>
+ id 1j7EfZ-0008Hb-NL
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:37:23 +0000
+Received: by mail-wr1-x441.google.com with SMTP id p18so2181299wre.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 00:37:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lbx0J/OaxZHQq1qELfXJfNJttlj0Ix9A5iZ2OsJQ7zo=;
+ b=D3KvMlRRgff7Yh7LZvSkL+Qpx3+m6M/IfERIdVFe2WJrnkcbTNY+dgoIF/ZDWzC8M+
+ ECM3pwNVIkxDcGPq4rwdQ6Vgw9bDcT6iyT1rbLIPH5Ldw9nmJXWRRoJ7BNIYRWcUik5j
+ 7fBCoiMEdyvpetY2mOhGbTnFfhKbQksL73hv7CqGYWc2VgV0+g/9gUsBmjNLhKkGUceu
+ XPYdz9IBctqn1epd8ZH+czONJ3y1wRX+06qIml9OKftip1ktvVt3/oXR3JO4ydc2NfT7
+ xy0x7yIg2HmwNCqqsolPxRq0Y9p8aBvQrhJ+TDgUuyiOLuBxzLkbZer/tJ9MCxacAiMu
+ gh4A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lbx0J/OaxZHQq1qELfXJfNJttlj0Ix9A5iZ2OsJQ7zo=;
+ b=Tp80eLMjKSxu3FBljPSmdM4kpbs1r/ADE0vwYyElg/arEej+9XHopIIGaf+5i8p2HN
+ 62j0oJ+HyirPA9EESj1pV1JsEHZ+IYWzgBo1zQWuCi+K7NBEtiY9n2uKex6j2oi/dUUR
+ gBjUmPDsHD3duU5uqEWbW0t93pVG+jfgCtoSPNySK9srqBdPbb/AroYAMEsVeVYXI2BQ
+ WhIjVWKKZcZO/EMYMa5TPBz7v2dzhV4PRBcS38pxCq16TL0JZJ/92VmSGzZR2iR/XAZ/
+ bDr1Fdfot54vInXmkdMb/OMYFbP/amKinAsF1PWGnGc6L6vB1GEoBrpkn4VbRmNXhV6P
+ RJTQ==
+X-Gm-Message-State: APjAAAU8K05oJqUTp3RXOa2msT4F5fJbX6qvHVrA3Pst2mZmwERCh3IQ
+ jryDDQKZ0DUm6pPnY92JWU6ZkG9Tqc0=
+X-Google-Smtp-Source: APXvYqzPw2Fmm3TOyoeebL6/RZ+v2o8R02SpV7tJGfRT8TwX50yiZ4ydINaYYy/iDgyc2/AJOb0SxQ==
+X-Received: by 2002:adf:e884:: with SMTP id d4mr3696827wrm.12.1582792640180;
+ Thu, 27 Feb 2020 00:37:20 -0800 (PST)
+Received: from localhost.localdomain
+ ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
+ by smtp.gmail.com with ESMTPSA id f11sm6773918wml.3.2020.02.27.00.37.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 00:37:19 -0800 (PST)
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: catalin.marinas@arm.com,
+	will@kernel.org
+Subject: [PATCH v3] arm64: context: Fix ASID limit in boot messages
+Date: Thu, 27 Feb 2020 09:34:47 +0100
+Message-Id: <20200227083446.677377-1-jean-philippe@linaro.org>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1582789610-23133-2-git-send-email-sam.shih@mediatek.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_000459_328511_8F9A0039 
-X-CRM114-Status: GOOD (  19.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_003721_788347_0B15462E 
+X-CRM114-Status: GOOD (  13.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,116 +96,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, vladimir.murzin@arm.com,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 03:46:50PM +0800, Sam Shih wrote:
-> The pwm clock source could be divided by 1625 with PWM_CON
-> BIT(3) setting in mediatek hardware.
-> =
+Since commit f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI
+is not in use"), the NUM_USER_ASIDS macro doesn't correspond to the
+effective number of ASIDs when KPTI is enabled. Get an accurate number
+of available ASIDs in an arch_initcall, once we've discovered all CPUs'
+capabilities and know if we still need to halve the ASID space for KPTI.
 
-> This patch add support for longer pwm period configuration,
-> which allowing blinking LEDs via pwm interface.
-> =
+Fixes: f88f42f853a8 ("arm64: context: Free up kernel ASIDs if KPTI is not in use")
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+v2->v3: move pr_info() as well, make it more readable.
+v1->v2: move warning to arch_initcall(), post capabilities (e.g. E0PD)
+        discovery.
 
-> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
-> ---
->  drivers/pwm/pwm-mediatek.c | 21 +++++++++++++++++----
->  1 file changed, 17 insertions(+), 4 deletions(-)
-> =
+This change may be a little invasive for just a validation warning, but
+it will likely be needed later, in the asid-pinning patch I'd like to
+introduce for IOMMU SVA.
+---
+ arch/arm64/mm/context.c | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
 
-> diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
-> index b94e0d09c300..9af309bea01a 100644
-> --- a/drivers/pwm/pwm-mediatek.c
-> +++ b/drivers/pwm/pwm-mediatek.c
-> @@ -121,8 +121,8 @@ static int pwm_mediatek_config(struct pwm_chip *chip,=
- struct pwm_device *pwm,
->  			       int duty_ns, int period_ns)
->  {
->  	struct pwm_mediatek_chip *pc =3D to_pwm_mediatek_chip(chip);
-> -	u32 clkdiv =3D 0, cnt_period, cnt_duty, reg_width =3D PWMDWIDTH,
-> -	    reg_thres =3D PWMTHRES;
-> +	u32 clkdiv =3D 0, clksel =3D 0, cnt_period, cnt_duty,
-> +	    reg_width =3D PWMDWIDTH, reg_thres =3D PWMTHRES;
->  	u64 resolution;
->  	int ret;
->  =
+diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+index 8ef73e89d514..d89bb22589f6 100644
+--- a/arch/arm64/mm/context.c
++++ b/arch/arm64/mm/context.c
+@@ -260,14 +260,26 @@ asmlinkage void post_ttbr_update_workaround(void)
+ 			CONFIG_CAVIUM_ERRATUM_27456));
+ }
+ 
+-static int asids_init(void)
++static int asids_update_limit(void)
+ {
+-	asid_bits = get_cpu_asid_bits();
++	unsigned long num_available_asids = NUM_USER_ASIDS;
++
++	if (arm64_kernel_unmapped_at_el0())
++		num_available_asids /= 2;
+ 	/*
+ 	 * Expect allocation after rollover to fail if we don't have at least
+ 	 * one more ASID than CPUs. ASID #0 is reserved for init_mm.
+ 	 */
+-	WARN_ON(NUM_USER_ASIDS - 1 <= num_possible_cpus());
++	WARN_ON(num_available_asids - 1 <= num_possible_cpus());
++	pr_info("ASID allocator initialised with %lu entries\n",
++		num_available_asids);
++	return 0;
++}
++arch_initcall(asids_update_limit);
++
++static int asids_init(void)
++{
++	asid_bits = get_cpu_asid_bits();
+ 	atomic64_set(&asid_generation, ASID_FIRST_VERSION);
+ 	asid_map = kcalloc(BITS_TO_LONGS(NUM_USER_ASIDS), sizeof(*asid_map),
+ 			   GFP_KERNEL);
+@@ -282,8 +294,6 @@ static int asids_init(void)
+ 	 */
+ 	if (IS_ENABLED(CONFIG_UNMAP_KERNEL_AT_EL0))
+ 		set_kpti_asid_bits();
+-
+-	pr_info("ASID allocator initialised with %lu entries\n", NUM_USER_ASIDS);
+ 	return 0;
+ }
+ early_initcall(asids_init);
+-- 
+2.25.0
 
-Adding some more context:
-
-> @@ -139,11 +139,20 @@ static int pwm_mediatek_config(struct pwm_chip *chi=
-p, struct pwm_device *pwm,
-> 	while (cnt_period > 8191) {
->  		resolution *=3D 2;
->  		clkdiv++;
->  		cnt_period =3D DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000,
->  						   resolution);
-> +		if (clkdiv > PWM_CLK_DIV_MAX && !clksel) {
-> +			clksel =3D 1;
-> +			clkdiv =3D 0;
-> +			resolution =3D (u64)NSEC_PER_SEC * 1000 * 1625;
-> +			do_div(resolution,
-> +				clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
-> +			cnt_period =3D DIV_ROUND_CLOSEST_ULL(
-> +					(u64)period_ns * 1000, resolution);
-
-The assignment is a repetition from just above the if. Maybe just put it
-once after this if block?
-
-> +		}
->  	}
->  =
-
-> -	if (clkdiv > PWM_CLK_DIV_MAX) {
-> +	if (clkdiv > PWM_CLK_DIV_MAX && clksel) {
-
-Is this change actually relevant? If the while loop that starts at line
-139 is never run (because cnt_period is <=3D 8191) clkdiv is zero and so
-the condition is false with and without "&& clksel". If however the
-while loop is entered and clkdiv becomes bigger than PWM_CLK_DIV_MAX
-clksel is 1 and the "&& clksel" doesn't make a difference, too.
-
-The code is hard to follow, I wonder if this could be cleaned up with
-some comments added that explain the hardware details enough to be able
-to actually understand the code without having the hardware reference
-manual handy.
-
->  		pwm_mediatek_clk_disable(chip, pwm);
->  		dev_err(chip->dev, "period %d not supported\n", period_ns);
->  		return -EINVAL;
-> @@ -159,7 +168,11 @@ static int pwm_mediatek_config(struct pwm_chip *chip=
-, struct pwm_device *pwm,
->  	}
->  =
-
->  	cnt_duty =3D DIV_ROUND_CLOSEST_ULL((u64)duty_ns * 1000, resolution);
-> -	pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
-> +	if (clksel)
-> +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | BIT(3) |
-> +				    clkdiv);
-> +	else
-> +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
->  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_width, cnt_period);
->  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_thres, cnt_duty);
->  =
-
-> -- =
-
-> 2.17.1
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
