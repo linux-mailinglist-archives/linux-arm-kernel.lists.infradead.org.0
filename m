@@ -2,86 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73AB41725F8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:08:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC02B1725FB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:09:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q7dV7Zs0EQuVThwWo2Jdp+/qliaMibBqS28090j/plc=; b=F1F2IVmA9ifEfK
-	BS8aA6+kzD/2nURIrQZlilAXIlAELey5h4P7RK0oAiE06uNuJgIgx4YTP6MMEQng6iHt0+OXQgakW
-	Pp5oD2la4p71haGbtvUHlp0n4q1kX8xivFvvasR3nBFVLQG1erqJ6ZzhFGgBjZo9sZoBiSIG6ZD1K
-	0D52sIzAr5tHicChW4CvmGVKkCIv8oZpvR+CwXbcx3B9zb8nq1ecPAb4mmhidWB9QSGJb5gfUcjjX
-	fpixOvdB9Y+CxaXGq3HO0s/jDC6nhN2DE1gBJSVJ/aCRQVnn3or9Ua2oFoFcqMuMgVj86H2qtzsWs
-	f8C9LOLQdi3xL7PAxFhw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2XeMZqsRwEzkMekRyD4nMGsyrx/f7fCflDHpFN8bxgs=; b=dhq0BEHvp1kkxF
+	8S/qUXpOc0YB0B1+Z8KCx62sSkp8Nn9pNRAIMmA1+ADQpqGktEF16/VkydS1G8ZymDn3cIrafaQ6O
+	EjBdYA66e4xyZvdO2le9tIUb31CTpG/R5PFkvpZP2x4va35nsxGbBT8dXaFEDxy7DYNc8G/FZneqR
+	Q8DU9kFRbGzBehJlVSuTTdHkCRaX6THmqlA6QaXh2jSqjh9SDvyZMUFI3U0tnxBlEkxGINFCbINtY
+	N/jc1eFdQX0LhE/blITn2BJ+tFgRrnH+y/wkq5zb/ZhPG3aBE5s9E1NPfhEa1OrAN7yowPfxhyz2q
+	N0cvKYopJtgha9v6zwSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NaM-0005YX-03; Thu, 27 Feb 2020 18:08:34 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1j7NbE-0005u4-I5; Thu, 27 Feb 2020 18:09:28 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Na9-0005Y1-Kb
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:08:23 +0000
-Received: by mail-ot1-x344.google.com with SMTP id p8so16575oth.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 10:08:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=intel-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4F3CkEYboenOdYfvgxaEFjzaB88Ias8AvgF6y2bsYJo=;
- b=btVB1/kCSyh3miQnMYs3e17lMek8QSVYBuP0FlHl1SN8jj8AK7ZcsZTrZLYZcDr8L0
- NSJ9MeY7RriOXGf8mxUIHycStwVTMNeNi3yrQla6dMYLj551Rp9KWZnTu9g5AKGKvvYT
- 9WlFsCXT0V4ckXbqldT9RpXG/xwR6Da9kdRkEzPi8tdoEUk2abNALGro5ZLdP/rXl0tG
- /sptmzlpcqEIizzSfsWPT6ZSjga8U2PolwmP3cK/7EJmAplRWGpIpx3oVOIujglDOBPB
- U/jmRkYeKgZuoKDQ/uKn2xiCIfawYUF6S/k5E1dLzCZ3Me3N7Bit13cPq5fiueJNzJqi
- dLRw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4F3CkEYboenOdYfvgxaEFjzaB88Ias8AvgF6y2bsYJo=;
- b=NO+vRGUa6YpXxh9OBKfnuXd0h0Bxn97eQ1jJmiXUG481Uc1VOQYgBrkD7m+hwhudi4
- A5Lj4Z5DYJWUWByak5wS2zte5hx/O4vX1rER2fzSfvwVSt3qy74I8Qr2f2XDlpZoLP/j
- JucFlWTWf2UQJrH2GAFKWpvaKsn+OjJ76KKwtB2Sdn5FUjoQ0vaJB3v7ed17uGVGDdwM
- B5ohRZXgbJNSzjHaK0tDA+2kEPvenfCOhNpk3Ko+7vKIOd5TLGL/28/vUx3aj50h5QV7
- nCFdkVP0MTbxkFBaD3KA+E1B7Bn/51cfSCYVmiuaBagGprKB1/49YhhZuciPI/Y0ZfPU
- 0Lsw==
-X-Gm-Message-State: APjAAAWQ7vOyOph3d0FhiO6QZJ8ktsTJKdZ/EZRVucb37XgxvFXzrn9o
- DR7DzIztimqpJ4VSOviLaSthldCqDxKrPlI5gUe72xK2
-X-Google-Smtp-Source: APXvYqzWZDXbIbzo1esKuuymk2opANK/r16XeVx9wwrPYC7dcJfvghbSyviygno+FjUiHqeLzBQ9brN5G7f+Od4lm4g=
-X-Received: by 2002:a9d:6c9:: with SMTP id 67mr93279otx.363.1582826900650;
- Thu, 27 Feb 2020 10:08:20 -0800 (PST)
+ id 1j7Naw-0005s8-MA; Thu, 27 Feb 2020 18:09:12 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 255672963D9
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
+ p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
+ sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
+ laurent.pinchart@ideasonboard.com
+Subject: [PATCH v10 0/5] arm/arm64: mediatek: Fix mt8173 mmsys device probing
+Date: Thu, 27 Feb 2020 19:08:53 +0100
+Message-Id: <20200227180858.1514157-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-References: <20200221182503.28317-1-logang@deltatee.com>
- <20200227171704.GK31668@ziepe.ca>
- <e8781f85-3fc7-b9ce-c751-606803cbdc77@deltatee.com>
- <20200227174311.GL31668@ziepe.ca>
- <CAPcyv4iek=EmNk9JgXq=-HcZjd9Kz4m2+qXMhnDWMshFKFZPXQ@mail.gmail.com>
- <20200227180346.GM31668@ziepe.ca>
-In-Reply-To: <20200227180346.GM31668@ziepe.ca>
-From: Dan Williams <dan.j.williams@intel.com>
-Date: Thu, 27 Feb 2020 10:08:09 -0800
-Message-ID: <CAPcyv4g6OYvD57LdWcqGuWVanckQv4a1uzJrE1OZyMH+z=5KZw@mail.gmail.com>
-Subject: Re: [PATCH v3 0/7] Allow setting caching mode in arch_add_memory()
- for P2PDMA
-To: Jason Gunthorpe <jgg@ziepe.ca>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_100821_724692_4B395DBC 
-X-CRM114-Status: GOOD (  24.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_100910_988151_D299BA2F 
+X-CRM114-Status: GOOD (  16.97  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,94 +57,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, platform-driver-x86@vger.kernel.org,
- Linux MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, linux-s390 <linux-s390@vger.kernel.org>,
- David Hildenbrand <david@redhat.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Michal Hocko <mhocko@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Eric Badger <ebadger@gigaio.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Logan Gunthorpe <logang@deltatee.com>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>,
+ Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
+ Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
+ sean.wang@mediatek.com, Houlong Wei <houlong.wei@mediatek.com>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 10:03 AM Jason Gunthorpe <jgg@ziepe.ca> wrote:
->
-> On Thu, Feb 27, 2020 at 09:55:04AM -0800, Dan Williams wrote:
-> > On Thu, Feb 27, 2020 at 9:43 AM Jason Gunthorpe <jgg@ziepe.ca> wrote:
-> > >
-> > > On Thu, Feb 27, 2020 at 10:21:50AM -0700, Logan Gunthorpe wrote:
-> > > >
-> > > >
-> > > > On 2020-02-27 10:17 a.m., Jason Gunthorpe wrote:
-> > > > >> Instead of this, this series proposes a change to arch_add_memory()
-> > > > >> to take the pgprot required by the mapping which allows us to
-> > > > >> explicitly set pagetable entries for P2PDMA memory to WC.
-> > > > >
-> > > > > Is there a particular reason why WC was selected here? I thought for
-> > > > > the p2pdma cases there was no kernel user that touched the memory?
-> > > >
-> > > > Yes, that's correct. I choose WC here because the existing users are
-> > > > registering memory blocks without side effects which fit the WC
-> > > > semantics well.
-> > >
-> > > Hm, AFAIK WC memory is not compatible with the spinlocks/mutexs/etc in
-> > > Linux, so while it is true the memory has no side effects, there would
-> > > be surprising concurrency risks if anything in the kernel tried to
-> > > write to it.
-> > >
-> > > Not compatible means the locks don't contain stores to WC memory the
-> > > way you would expect. AFAIK on many CPUs extra barriers are required
-> > > to keep WC stores ordered, the same way ARM already has extra barriers
-> > > to keep UC stores ordered with locking..
-> > >
-> > > The spinlocks are defined to contain UC stores though.
-> >
-> > How are spinlocks and mutexes getting into p2pdma ranges in the first
-> > instance? Even with UC, the system has bigger problems if it's trying
-> > to send bus locks targeting PCI, see the flurry of activity of trying
-> > to trigger faults on split locks [1].
->
-> This is not what I was trying to explain.
->
-> Consider
->
->  static spinlock lock; // CPU DRAM
->  static idx = 0;
->  u64 *wc_memory = [..];
->
->  spin_lock(&lock);
->  wc_memory[0] = idx++;
->  spin_unlock(&lock);
->
-> You'd expect that the PCI device will observe stores where idx is
-> strictly increasing, but this is not guarenteed. idx may decrease, idx
-> may skip. It just won't duplicate.
->
-> Or perhaps
->
->  wc_memory[0] = foo;
->  writel(doorbell)
->
-> foo is not guarenteed observable by the device before doorbell reaches
-> the device.
->
-> All of these are things that do not happen with UC or NC memory, and
-> are surprising violations of our programming model.
->
-> Generic kernel code should never touch WC memory unless the code is
-> specifically designed to handle it.
+Dear all,
 
-Ah, yes, agree.
+Those patches are intended to solve an old standing issue on some
+Mediatek devices (mt8173, mt2701 and mt2712 are affected by this issue).
+
+Up to now both drivers, clock and drm are probed with the same device tree
+compatible. But only the first driver gets probed, which in effect breaks
+graphics on those devices.
+
+The MMSYS (Multimedia subsystem) in Mediatek SoCs has some registers to
+control clock gates (which is used in the clk driver) and some registers
+to set the routing and enable the differnet blocks of the display
+and MDP (Media Data Path) subsystem. On this series the clk driver is
+not a pure clock controller but a system controller that can provide
+access to the shared registers between the different drivers that need
+it (mediatek-drm and mediatek-mdp). Hence the MMSYS clk driver was moved
+to drivers/soc/mediatek and is the entry point (parent) which will trigger
+the probe of the corresponding mediatek-drm driver.
+
+**IMPORTANT** This series only fixes the issue on mt8173 to make it
+simple and as is the only platform I can test. Similar changes should be
+applied for mt2701 and mt2712 to have display working.
+
+For reference, here are the links to the old discussions:
+* v9: https://patchwork.kernel.org/project/linux-clk/list/?series=247591
+* v8: https://patchwork.kernel.org/project/linux-mediatek/list/?series=244891
+* v7: https://patchwork.kernel.org/project/linux-mediatek/list/?series=241217
+* v6: https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
+* v5: https://patchwork.kernel.org/project/linux-mediatek/list/?series=44063
+* v4:
+  * https://patchwork.kernel.org/patch/10530871/
+  * https://patchwork.kernel.org/patch/10530883/
+  * https://patchwork.kernel.org/patch/10530885/
+  * https://patchwork.kernel.org/patch/10530911/
+  * https://patchwork.kernel.org/patch/10530913/
+* v3:
+  * https://patchwork.kernel.org/patch/10367857/
+  * https://patchwork.kernel.org/patch/10367861/
+  * https://patchwork.kernel.org/patch/10367877/
+  * https://patchwork.kernel.org/patch/10367875/
+  * https://patchwork.kernel.org/patch/10367885/
+  * https://patchwork.kernel.org/patch/10367883/
+  * https://patchwork.kernel.org/patch/10367889/
+  * https://patchwork.kernel.org/patch/10367907/
+  * https://patchwork.kernel.org/patch/10367909/
+  * https://patchwork.kernel.org/patch/10367905/
+* v2: No relevant discussion, see v3
+* v1:
+  * https://patchwork.kernel.org/patch/10016497/
+  * https://patchwork.kernel.org/patch/10016499/
+  * https://patchwork.kernel.org/patch/10016505/
+  * https://patchwork.kernel.org/patch/10016507/
+
+Best regards,
+ Enric
+
+Changes in v10:
+- Update the binding documentation for the mmsys system controller.
+- Renamed to be generic mtk-mmsys
+- Add driver data support to be able to support diferent SoCs
+- Introduced a new patch to move routing control into mmsys driver.
+- Removed the patch to use regmap as is not needed anymore.
+- Match driver data to get display routing.
+
+Changes in v9:
+- Move mmsys to drivers/soc/mediatek (CK)
+- Do not move the display routing from the drm driver (CK)
+
+Changes in v8:
+- Be a builtin_platform_driver like other mediatek mmsys drivers.
+- New patch introduced in this series.
+
+Changes in v7:
+- Free clk_data->clks as well
+- Get rid of private data structure
+
+Enric Balletbo i Serra (3):
+  dt-bindings: mediatek: Update mmsys binding to reflect it is a system
+    controller
+  soc / drm: mediatek: Move routing control to mmsys device
+  soc / drm: mediatek: Fix mediatek-drm device probing
+
+Matthias Brugger (2):
+  drm/mediatek: Omit warning on probe defers
+  soc: mediatek: Move mt8173 MMSYS to platform driver
+
+ .../bindings/arm/mediatek/mediatek,mmsys.txt  |   7 +-
+ drivers/clk/mediatek/clk-mt8173.c             | 104 -----
+ drivers/gpu/drm/mediatek/mtk_disp_color.c     |   5 +-
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |   5 +-
+ drivers/gpu/drm/mediatek/mtk_disp_rdma.c      |   5 +-
+ drivers/gpu/drm/mediatek/mtk_dpi.c            |  12 +-
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |  13 +-
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c        | 259 +----------
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.h        |   7 -
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c        |  44 +-
+ drivers/gpu/drm/mediatek/mtk_dsi.c            |   8 +-
+ drivers/gpu/drm/mediatek/mtk_hdmi.c           |   4 +-
+ drivers/soc/mediatek/Kconfig                  |   7 +
+ drivers/soc/mediatek/Makefile                 |   1 +
+ drivers/soc/mediatek/mtk-mmsys.c              | 435 ++++++++++++++++++
+ include/linux/soc/mediatek/mtk-mmsys.h        |  19 +
+ 16 files changed, 529 insertions(+), 406 deletions(-)
+ create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
+ create mode 100644 include/linux/soc/mediatek/mtk-mmsys.h
+
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
