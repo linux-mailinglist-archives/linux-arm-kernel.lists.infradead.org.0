@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FDDF17270A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:25:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE1E717270C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:25:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Vq5jmmASnFvj7ENQrTjz4jWTkby2E+sJJe2x1VyKRcw=; b=l+bbCdBP7zH4CEggDYizSaJLDY
-	nDVQLo1dsGcIbKiyx/ngWjTR1gXfiXCorZ0ZfB2TZ/VPs4nmh3+7apd/QbYAmXSqcatSmOpXTCic2
-	6k50NC4V+fl17fnUKpVw+g3uzgm5M5HLkvIlpKf20BHY072DzPA8ihN+/Pz3V37nCp2nTJsU0tspJ
-	VwAGmpsiqJ1aP2LxotgXNnXQjZT72EI/NmFxvdsPdNKQuCio4goL4888nQa2M2sZnqY16ILzd0QLi
-	94OR/4cSOp0jvPU/isWECleXLnxEpJMVVmR/ms9DuLotgVNwuMnm/yU86T5nDzFbzOasD2yzIJheu
-	ygMnZhZw==;
+	bh=jbFCa2x60yCjAZhyCFu4+JHOPwHLAjJjjQhfI02knBA=; b=hszxobxuB/4B5rSpreCahjzzQ9
+	q7G5NTDL9hN+FzQkwVsmiESOCj798N4d+AHPZ+uKP7ej7dHfKVIfjgfGo8zY6RaHrcc/nbqXmtuL+
+	4PsFDgNyHMhshc+xOe/QssBqXHmSYMftRqI6GA6wgwcVn0ZeetkbWmW0f+ogZrYdKhHLrAh64/rzS
+	wDoSQjz7ku/PaI9o244d2AM114Wz0krJXxvFjRA/aj+5mA8WTaEqk52xEHXJTzOAo/bdYEyTOezXl
+	R8Xyzo1aIaUvXZ6QReG2VmYSiZTxA1UJycTJJ4qLNxiERjLAdm4YuraS3LmMakTyIy/+4YOfI1qsf
+	iv4vT0+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NqH-0000vd-O9; Thu, 27 Feb 2020 18:25:01 +0000
+	id 1j7Nqn-0002Lk-2G; Thu, 27 Feb 2020 18:25:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Nnq-00078O-0M
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:22:32 +0000
+ id 1j7Nnr-0007AJ-Se
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:22:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BDE251FB;
- Thu, 27 Feb 2020 10:22:29 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B79DB30E;
+ Thu, 27 Feb 2020 10:22:31 -0800 (PST)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C4B553F73B;
- Thu, 27 Feb 2020 10:22:27 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F24703F73B;
+ Thu, 27 Feb 2020 10:22:29 -0800 (PST)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: [PATCH v2 05/13] dt-bindings: clock: Convert Calxeda clock bindings
+Subject: [PATCH v2 06/13] dt-bindings: sata: Convert Calxeda SATA controller
  to json-schema
-Date: Thu, 27 Feb 2020 18:22:02 +0000
-Message-Id: <20200227182210.89512-6-andre.przywara@arm.com>
+Date: Thu, 27 Feb 2020 18:22:03 +0000
+Message-Id: <20200227182210.89512-7-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200227182210.89512-1-andre.przywara@arm.com>
 References: <20200227182210.89512-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_102230_155510_21C86F18 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20200227_102232_064881_B6DF4C07 
+X-CRM114-Status: GOOD (  14.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,148 +63,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jon Loeliger <jdl@jdl.com>, Mark Langsdorf <mlangsdo@redhat.com>,
- Robert Richter <rric@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Eric Auger <eric.auger@redhat.com>,
- soc@kernel.org, Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org
+Cc: Jens Axboe <axboe@kernel.dk>, Jon Loeliger <jdl@jdl.com>,
+ Mark Langsdorf <mlangsdo@redhat.com>, Robert Richter <rric@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Maxime Ripard <mripard@kernel.org>,
+ Eric Auger <eric.auger@redhat.com>, soc@kernel.org,
+ Will Deacon <will@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the Calxeda clock bindings to DT schema format using json-schema.
-
-This just covers the actual PLL and divider clock nodes. In the actual
-DTs they are somewhat unconnected (no ranges or bus compatible) children
-of the sregs node, but for the actual clock bindings this is not
-relevant.
-
-One oddity is that the addresses are relative to the parent node,
-without that being pronounced using a ranges property.
-But this is too late to fix now.
+Convert the Calxeda Highbank SATA controller binding to DT schema format
+using json-schema.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: Stephen Boyd <sboyd@kernel.org>
-Cc: linux-clk@vger.kernel.org
+Cc: Jens Axboe <axboe@kernel.dk>
 ---
- .../devicetree/bindings/clock/calxeda.txt     | 17 ----
- .../devicetree/bindings/clock/calxeda.yaml    | 82 +++++++++++++++++++
- 2 files changed, 82 insertions(+), 17 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/clock/calxeda.txt
- create mode 100644 Documentation/devicetree/bindings/clock/calxeda.yaml
+ .../devicetree/bindings/ata/sata_highbank.txt | 44 ---------
+ .../bindings/ata/sata_highbank.yaml           | 95 +++++++++++++++++++
+ 2 files changed, 95 insertions(+), 44 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.txt
+ create mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.yaml
 
-diff --git a/Documentation/devicetree/bindings/clock/calxeda.txt b/Documentation/devicetree/bindings/clock/calxeda.txt
+diff --git a/Documentation/devicetree/bindings/ata/sata_highbank.txt b/Documentation/devicetree/bindings/ata/sata_highbank.txt
 deleted file mode 100644
-index 0a6ac1bdcda1..000000000000
---- a/Documentation/devicetree/bindings/clock/calxeda.txt
+index aa83407cb7a4..000000000000
+--- a/Documentation/devicetree/bindings/ata/sata_highbank.txt
 +++ /dev/null
-@@ -1,17 +0,0 @@
--Device Tree Clock bindings for Calxeda highbank platform
+@@ -1,44 +0,0 @@
+-* Calxeda AHCI SATA Controller
 -
--This binding uses the common clock binding[1].
--
--[1] Documentation/devicetree/bindings/clock/clock-bindings.txt
+-SATA nodes are defined to describe on-chip Serial ATA controllers.
+-The Calxeda SATA controller mostly conforms to the AHCI interface
+-with some special extensions to add functionality.
+-Each SATA controller should have its own node.
 -
 -Required properties:
--- compatible : shall be one of the following:
--	"calxeda,hb-pll-clock" - for a PLL clock
--	"calxeda,hb-a9periph-clock" - The A9 peripheral clock divided from the
--		A9 clock.
--	"calxeda,hb-a9bus-clock" - The A9 bus clock divided from the A9 clock.
--	"calxeda,hb-emmc-clock" - Divided clock for MMC/SD controller.
--- reg : shall be the control register offset from SYSREGs base for the clock.
--- clocks : shall be the input parent clock phandle for the clock. This is
--	either an oscillator or a pll output.
--- #clock-cells : from common clock binding; shall be set to 0.
-diff --git a/Documentation/devicetree/bindings/clock/calxeda.yaml b/Documentation/devicetree/bindings/clock/calxeda.yaml
+-- compatible        : compatible list, contains "calxeda,hb-ahci"
+-- interrupts        : <interrupt mapping for SATA IRQ>
+-- reg               : <registers mapping>
+-
+-Optional properties:
+-- dma-coherent      : Present if dma operations are coherent
+-- calxeda,port-phys : phandle-combophy and lane assignment, which maps each
+-			SATA port to a combophy and a lane within that
+-			combophy
+-- calxeda,sgpio-gpio: phandle-gpio bank, bit offset, and default on or off,
+-			which indicates that the driver supports SGPIO
+-			indicator lights using the indicated GPIOs
+-- calxeda,led-order : a u32 array that map port numbers to offsets within the
+-			SGPIO bitstream.
+-- calxeda,tx-atten  : a u32 array that contains TX attenuation override
+-			codes, one per port. The upper 3 bytes are always
+-			0 and thus ignored.
+-- calxeda,pre-clocks : a u32 that indicates the number of additional clock
+-			cycles to transmit before sending an SGPIO pattern
+-- calxeda,post-clocks: a u32 that indicates the number of additional clock
+-			cycles to transmit after sending an SGPIO pattern
+-
+-Example:
+-        sata@ffe08000 {
+-		compatible = "calxeda,hb-ahci";
+-		reg = <0xffe08000 0x1000>;
+-		interrupts = <115>;
+-		dma-coherent;
+-		calxeda,port-phys = <&combophy5 0 &combophy0 0 &combophy0 1
+-					&combophy0 2 &combophy0 3>;
+-		calxeda,sgpio-gpio =<&gpioh 5 1 &gpioh 6 1 &gpioh 7 1>;
+-		calxeda,led-order = <4 0 1 2 3>;
+-		calxeda,tx-atten = <0xff 22 0xff 0xff 23>;
+-		calxeda,pre-clocks = <10>;
+-		calxeda,post-clocks = <0>;
+-        };
+diff --git a/Documentation/devicetree/bindings/ata/sata_highbank.yaml b/Documentation/devicetree/bindings/ata/sata_highbank.yaml
 new file mode 100644
-index 000000000000..39c8bf646205
+index 000000000000..6dcf91e1bac0
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/calxeda.yaml
-@@ -0,0 +1,82 @@
++++ b/Documentation/devicetree/bindings/ata/sata_highbank.yaml
+@@ -0,0 +1,95 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/clock/calxeda.yaml#
++$id: http://devicetree.org/schemas/ata/sata_highbank.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Device Tree Clock bindings for Calxeda highbank platform
++title: Calxeda AHCI SATA Controller
 +
 +description: |
-+  This binding covers the Calxeda SoC internal peripheral and bus clocks
-+  as used by peripherals. The clocks live inside the "system register"
-+  region of the SoC, so are typically presented as children of an
-+  "hb-sregs" node.
++  The Calxeda SATA controller mostly conforms to the AHCI interface
++  with some special extensions to add functionality, to map GPIOs for
++  activity LEDs and for mapping the ComboPHYs.
 +
 +maintainers:
 +  - Andre Przywara <andre.przywara@arm.com>
 +
 +properties:
-+  "#clock-cells":
-+    const: 0
-+
 +  compatible:
-+    enum:
-+      - calxeda,hb-pll-clock
-+      - calxeda,hb-a9periph-clock
-+      - calxeda,hb-a9bus-clock
-+      - calxeda,hb-emmc-clock
++    const: calxeda,hb-ahci
 +
 +  reg:
 +    maxItems: 1
 +
-+  clocks:
++  interrupts:
 +    maxItems: 1
 +
++  dma-coherent: true
++
++  calxeda,pre-clocks:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description: |
++      Indicates the number of additional clock cycles to transmit before
++      sending an SGPIO pattern.
++
++  calxeda,post-clocks:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description: |
++      Indicates the number of additional clock cycles to transmit after
++      sending an SGPIO pattern.
++
++  calxeda,led-order:
++    description: Maps port numbers to offsets within the SGPIO bitstream.
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32-array
++      - minItems: 1
++        maxItems: 8
++
++  calxeda,port-phys:
++    description: |
++      phandle-combophy and lane assignment, which maps each SATA port to a
++      combophy and a lane within that combophy
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/phandle-array
++      - minItems: 1
++        maxItems: 8
++
++  calxeda,tx-atten:
++    description: |
++      Contains TX attenuation override codes, one per port.
++      The upper 24 bits of each entry are always 0 and thus ignored.
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32-array
++      - minItems: 1
++        maxItems: 8
++
++  calxeda,sgpio-gpio:
++    description: |
++      phandle-gpio bank, bit offset, and default on or off, which indicates
++      that the driver supports SGPIO indicator lights using the indicated
++      GPIOs.
++
 +required:
-+  - "#clock-cells"
 +  - compatible
-+  - clocks
 +  - reg
++  - interrupts
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    sregs@3fffc000 {
-+        compatible = "calxeda,hb-sregs";
-+        reg = <0x3fffc000 0x1000>;
-+
-+        clocks {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            osc: oscillator {
-+                #clock-cells = <0>;
-+                compatible = "fixed-clock";
-+                clock-frequency = <33333000>;
-+            };
-+
-+            ddrpll: ddrpll {
-+                #clock-cells = <0>;
-+                compatible = "calxeda,hb-pll-clock";
-+                clocks = <&osc>;
-+                reg = <0x108>;
-+            };
-+
-+            a9pll: a9pll {
-+                #clock-cells = <0>;
-+                compatible = "calxeda,hb-pll-clock";
-+                clocks = <&osc>;
-+                reg = <0x100>;
-+            };
-+
-+            a9periphclk: a9periphclk {
-+                #clock-cells = <0>;
-+                compatible = "calxeda,hb-a9periph-clock";
-+                clocks = <&a9pll>;
-+                reg = <0x104>;
-+            };
-+        };
++    sata@ffe08000 {
++        compatible = "calxeda,hb-ahci";
++        reg = <0xffe08000 0x1000>;
++        interrupts = <115>;
++        dma-coherent;
++        calxeda,port-phys = <&combophy5 0 &combophy0 0 &combophy0 1
++                             &combophy0 2 &combophy0 3>;
++        calxeda,sgpio-gpio =<&gpioh 5 1 &gpioh 6 1 &gpioh 7 1>;
++        calxeda,led-order = <4 0 1 2 3>;
++        calxeda,tx-atten = <0xff 22 0xff 0xff 23>;
++        calxeda,pre-clocks = <10>;
++        calxeda,post-clocks = <0>;
 +    };
 +
 +...
