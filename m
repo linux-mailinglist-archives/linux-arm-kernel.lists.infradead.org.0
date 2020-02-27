@@ -2,91 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0046A17282C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:56:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F11517283A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:59:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Coaduv0wKWvn2UQ+F/zhZVjykMKAsP0nRRvP1osLJj8=; b=YmSa81NnpaGbsR
-	79i/ZMuJM3KQrjhIoiOh+Max2RMO+C1euE6+Z/iJzl+022A8IMZCZvv53dzAVwFHRsxbGju751D1Y
-	+WA0e8RqHN68n3z4d1orrarEwfhGumpiy6miR0261GnjI0VrvxPrxTkFOzWFJSzmyVi+3wcxDfo6G
-	USFVU40eR9gfbjO4eZLxE1dYx75ybY14Pd5Ju3j/ms9ae1RQ87d3+n2W59hqgUPLpz6/EkXSJsPp9
-	xLxHLAHKVbvBwwP0rWwZsSM7fxQ0wAsA4NkRoAM0O5pEutBtJHAecNhz9lhMktVAugIQtHpJ2kVw3
-	HKPR6UUo0v2AJJ/HrbxA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BJW5UfNVa8TjYFW7qCb1CS8CeOzowLxNHwjbVjN/l4c=; b=KwIazp8l3xmc9m
+	tnOKExS+BfiWlRUgYzSIpw/4R/7upsQX89L8RWCVuwon4EZZDvHPZUyqDyaY89jMAQeWYIVhA/Ok7
+	0KFmEsV82iv+Iy+2IAD0VkgNa8PCoWCnM57HhkqTVFioIL/SIjcefRjN+WWP+feNgawkAg5URTB4m
+	aYzO7Q6eGhol+5zeA4HWg+JH67q2Sp9Q6+oW9xgOdmXOgS0klqKtGV/aKaBFKeGIpSw5xLBscpPEE
+	CQQa9HkXj9TsxL0CLyiNgodRwlVdVOO9ugmbHAZmEardeKrgOlJRIG10wS0ft+78+NVY8rJf0THR+
+	8DPhu/sj+jcpM8eOITRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7OKI-0008OZ-4k; Thu, 27 Feb 2020 18:56:02 +0000
-Received: from gateway30.websitewelcome.com ([192.185.196.18])
+	id 1j7ONk-0000Ia-Ls; Thu, 27 Feb 2020 18:59:36 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7OK7-0008Ny-QJ
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:55:53 +0000
-Received: from cm16.websitewelcome.com (cm16.websitewelcome.com [100.42.49.19])
- by gateway30.websitewelcome.com (Postfix) with ESMTP id 9420225D834
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 12:55:50 -0600 (CST)
-Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
- id 7OK5js7Xo8vkB7OK5jn2kP; Thu, 27 Feb 2020 12:55:50 -0600
-X-Authority-Reason: nr=8
+ id 1j7ONb-0000Hn-4F
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:59:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
- Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=oeJVRwr6+tzB7aIFz/Q1mFYLhzDIrqt7xOL5F5f6fNs=; b=ge/31r8dACB/Cl0FWauYBUzZ5m
- oc90GhNkdOQpJok8BkT5W0DXcA/RkRKPm0duOu833VwvCQrCrnR5FHSviGXMOGY3WNQHvAFnDGLiR
- Xvdof36uPbBsLQZIc3wfirz+avUAVe8QrPtK+KsV7qN5YQQA4ztkgzET3w8LSsoEJh/6J5aabJ+1Q
- pHMweR1dj7k/Oc9nfuX0MYvZhD9fw/htSuburtz/0m/6XlAQ3nRvPQJz2j+5j5dUnmbMbTpB6zsLX
- RaYNVsycnWn3sIHOtnboPzRPz/gg8kmw3XddeBa+pCK/feeKrIdUD9hJSWbMgQTE9KKnpqWsGOiCr
- dooFu8QQ==;
-Received: from [201.162.168.186] (port=4092 helo=embeddedor)
- by gator4166.hostgator.com with esmtpa (Exim 4.92)
- (envelope-from <gustavo@embeddedor.com>)
- id 1j7OK1-0046LF-GX; Thu, 27 Feb 2020 12:55:46 -0600
-Date: Thu, 27 Feb 2020 12:58:37 -0600
-From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-To: Linus Walleij <linus.walleij@linaro.org>,
-	Barry Song <baohua@kernel.org>
-Subject: [PATCH] pinctrl: sirf/atlas7: Replace zero-length array with
- flexible-array member
-Message-ID: <20200227185837.GA4469@embeddedor>
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ipj4drtt9yzUNbt5mpWG89wO/mNsc6SsP6BNeTVfgy0=; b=fMUfXa742omMNQws8oySsIIDI
+ TjQapdNKe/wrMtclzDd8CINdU8envubSiWuwUVaxKFuOpgutYuHbp1G8sk3GCjTsmuzu0ncPNdjda
+ Pn3/869OO+QVgf8n2RFi8wntpl58LiAOVirHAOaHfctxfF9FVR6joa3CSERy49L7egSYODsLuk/Im
+ ka3EmaB0hWddqvGSfESDfOMNjLdyyidtiNU8HN3lDD9OrVYFxni8OzDP+bxj4wYjwoYWTf5CNCkRI
+ MqqHwnW0qRx2Ynp7G0CL09nXb/ophZZkoGvGYIiED7Xbz5JJUB/xFinqHMEHGcOZKKquCkiD/Ls2s
+ verluUx3g==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:57726)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1j7ONI-0007U7-FA; Thu, 27 Feb 2020 18:59:08 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1j7ONE-0001CS-MC; Thu, 27 Feb 2020 18:59:04 +0000
+Date: Thu, 27 Feb 2020 18:59:04 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH net-next 1/3] dt-bindings: net: add dt bindings for
+ marvell10g driver
+Message-ID: <20200227185904.GQ25745@shell.armlinux.org.uk>
+References: <20200227095159.GJ25745@shell.armlinux.org.uk>
+ <E1j7FqO-0003sv-Ho@rmk-PC.armlinux.org.uk>
+ <1bcb9a92-d739-6406-6414-783b19bfb66e@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - embeddedor.com
-X-BWhitelist: no
-X-Source-IP: 201.162.168.186
-X-Source-L: No
-X-Exim-ID: 1j7OK1-0046LF-GX
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: (embeddedor) [201.162.168.186]:4092
-X-Source-Auth: gustavo@embeddedor.com
-X-Email-Count: 10
-X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
-X-Local-Domain: yes
+In-Reply-To: <1bcb9a92-d739-6406-6414-783b19bfb66e@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_105551_944478_C1D92594 
-X-CRM114-Status: UNSURE (   9.06  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200227_105927_172293_B54B13AC 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.196.18 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -105,63 +89,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Jason Cooper <jason@lakedaemon.net>, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current codebase makes use of the zero-length array language
-extension to the C90 standard, but the preferred mechanism to declare
-variable-length types such as these ones is a flexible array member[1][2],
-introduced in C99:
+On Thu, Feb 27, 2020 at 09:44:35AM -0800, Florian Fainelli wrote:
+> On 2/27/20 1:52 AM, Russell King wrote:
+> > Add a DT bindings document for the Marvell 10G driver, which will
+> > augment the generic ethernet PHY binding by having LED mode
+> > configuration.
+> > 
+> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> 
+> We have been kicking the ball for way too long but there really ought to
+> be a standardized binding to configure LED modes for a PHY. Something
+> that we previously discussed here without making much progress because
+> the LED maintainer was not involved:
+> 
+> http://patchwork.ozlabs.org/patch/1146609/
+> http://patchwork.ozlabs.org/patch/1146610/
+> http://patchwork.ozlabs.org/patch/1146611/
+> http://patchwork.ozlabs.org/patch/1146612/
+> 
+> What you are proposing here is just a plain configuration interface via
+> Device Tree, which is really borderline. It gets the job done, and it is
+> extremely easy to maintain and use because people just stick in their
+> register value in there, but boy, what a poor abstraction that is.
+> 
+> Maybe you can resume where Matthias left and improve upon his patch
+> series, if nothing else for the binding and PHY layer integration?
 
-struct foo {
-        int stuff;
-        struct boo array[];
-};
+That series is way too simplistic, and would not allow for a
+usable configuration for a four-speed PHY such as this one.
 
-By making use of the mechanism above, we will get a compiler warning
-in case the flexible array does not occur last in the structure, which
-will help us prevent some kind of undefined behavior bugs from being
-inadvertently introduced[3] to the codebase from now on.
+The proposed binding in those patches makes the assumption that
+the only time that a LED shall blink is when there is traffic.
 
-Also, notice that, dynamic memory allocations won't be affected by
-this change:
+LED configuration is highly PHY specific.
 
-"Flexible array members have incomplete type, and so the sizeof operator
-may not be applied. As a quirk of the original implementation of
-zero-length arrays, sizeof evaluates to zero."[1]
+For the 88x3310, we have around 31 different conditions that the LED
+can blink for, or be solid for, the blink rate, and the polarity -
+each LED is controlled by 13 bits in total, and then there's the "dual"
+modes for bi-color LEDs which cause other of the LED configuration
+registers to be ignored.  In other words, it's rather complex.
 
-This issue was found with the help of Coccinelle.
+We could choose to limit the complexity, but then that risks making
+it useless for certain boards - such as the Macchiatobin board, where
+the dual modes can't be used due to the way the LEDs are wired - see
+the last patch, where I describe how the LEDs are configured to
+behave, which is the sanest organisation I could come up with which
+doesn't result in mixing up various modes.
 
-[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
-[2] https://github.com/KSPP/linux/issues/21
-[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
 
-Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
----
- drivers/pinctrl/sirf/pinctrl-atlas7.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+In any case, I do not wish to add to my patch backlog right now.  Maybe
+when the backlog is smaller, I'll consider it, but not before.
 
-diff --git a/drivers/pinctrl/sirf/pinctrl-atlas7.c b/drivers/pinctrl/sirf/pinctrl-atlas7.c
-index b1a9611f46b3..50df9e084414 100644
---- a/drivers/pinctrl/sirf/pinctrl-atlas7.c
-+++ b/drivers/pinctrl/sirf/pinctrl-atlas7.c
-@@ -352,7 +352,7 @@ struct atlas7_gpio_chip {
- 	int nbank;
- 	raw_spinlock_t lock;
- 	struct gpio_chip chip;
--	struct atlas7_gpio_bank banks[0];
-+	struct atlas7_gpio_bank banks[];
- };
- 
- /**
 -- 
-2.25.0
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
