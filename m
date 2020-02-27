@@ -2,62 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC2CD171542
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 11:43:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 032A1171549
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 11:44:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f8MlOA35pT9KiGUtTcBVHEd7Eq95HUaEGUCoeyZ6FXA=; b=Xu9Ik7rtjV6+J5
-	fMAu6R1iDyoVaaynItPDbjEv1KTl9093PxSP5DNjXS0zG5bKKWWHQGEOh9Z+n/mGdAXe7kS/WHZKs
-	jIpt+dXReAlX2N98XcX5uq4qJzZ1CqVjczrwvvdCfJAymQV38XGY1+qnfeYwxDKi2rLrNVZPdE0t8
-	EYEZVU1NqBzl3DWBKOzS7TpXW6IpZ8otODD6PRHqDGSSxT48IFCEIbJL441T77ushlGWtMNsejFua
-	OHJtjgpisORnIpuCxvEGktbmnKKdZA1/9Ry/WPvL2Y1Rsscodjm4/BaBoWa2rycyxPuGiNGBAK8oD
-	ms/NCwuQYXGqK1lUY0xw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZeKTPvJh0Jp3fosuOEv0gxBe2CMYZQYPaTaGY8mfIlQ=; b=uYBlqRlFx/1M+qdIuDhNDWt5V
+	W2U0dJc8WQbZLjSyQkSae6y8yi/DXrbN3MMxt5FyUsjjTtXgKky1d8/S0AExhEjh6Ag9M/kVxLQs2
+	Q9gJEONVY6BGJPIC8JLchE3SRLxcRxBTDB3o6iDJebzXOo5RauxoeBx8rtt6kksWhO+T48bQGFazw
+	MTvufVTVwfEws4Tn8V2+xJ/ALUmExoXSkhWr9KuB+oCyVrIR5YhWPTwBONaO3VmRQGWV4BGR7rAhI
+	x0LN3KlYT+NqoqWp7GYmRJl9o3d+O2jd1Fwm9FimPZmb2bfqmwb2ZkbmczH5/VOgYB/Mf/T5fEV1l
+	T3oVxapSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7GdW-0002MW-2a; Thu, 27 Feb 2020 10:43:22 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j7Ge0-0002rV-Lo; Thu, 27 Feb 2020 10:43:52 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7GcZ-0001gG-73
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 10:42:25 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.lab.pengutronix.de)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1j7GcR-0003f8-Ay; Thu, 27 Feb 2020 11:42:15 +0100
-Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1j7GcP-0004o4-6a; Thu, 27 Feb 2020 11:42:13 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Peter.Chen@nxp.com, gregkh@linuxfoundation.org, shawnguo@kernel.org,
- linux-imx@nxp.com, stern@rowland.harvard.edu, jun.li@freescale.com
-Subject: [PATCH 3/3] Revert "usb: chipidea: add a flag for turn on vbus early
- for host"
-Date: Thu, 27 Feb 2020 11:42:12 +0100
-Message-Id: <20200227104212.12562-4-m.felsch@pengutronix.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200227104212.12562-1-m.felsch@pengutronix.de>
-References: <20200227104212.12562-1-m.felsch@pengutronix.de>
+ id 1j7GdD-0002Cr-IR; Thu, 27 Feb 2020 10:43:05 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 48Sq4p6C5jz9tyhj;
+ Thu, 27 Feb 2020 11:42:50 +0100 (CET)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=S2lr/JhY; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id RBUcz2GDDss6; Thu, 27 Feb 2020 11:42:50 +0100 (CET)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 48Sq4p546Vz9tyhl;
+ Thu, 27 Feb 2020 11:42:50 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1582800170; bh=5jVgSlMtkWu6tY2vWvxiJHRV/VXhxhn9Ff1N2fIt2UU=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=S2lr/JhYZ+BGylLoddvoIQ9iQhySwoByCGIjiV2jJ0PeIWGuHFGwJKoDCDBlMX134
+ i5DDDsfMVW33gpJWXfhaNVZkRAjliFDf2imHM3gIFbd6vhCt20XFgykuEBdbkrcViD
+ lQGvXfjqGVwxK9iazQgdwBp51saPHe4oEmbNBr5A=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id BCB398B875;
+ Thu, 27 Feb 2020 11:42:51 +0100 (CET)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id FEU3XPlFNEyZ; Thu, 27 Feb 2020 11:42:51 +0100 (CET)
+Received: from [192.168.4.90] (unknown [192.168.4.90])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 20C4A8B879;
+ Thu, 27 Feb 2020 11:42:48 +0100 (CET)
+Subject: Re: [PATCH] mm/debug: Add tests validating arch page table helpers
+ for core features
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
+References: <1582799637-11786-1-git-send-email-anshuman.khandual@arm.com>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Message-ID: <51421bb3-9075-d7e9-1750-0553a1ebe64a@c-s.fr>
+Date: Thu, 27 Feb 2020 11:42:33 +0100
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <1582799637-11786-1-git-send-email-anshuman.khandual@arm.com>
+Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_024223_252892_BFF6D4D8 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_024303_767572_027D9425 
+X-CRM114-Status: UNSURE (   7.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,102 +95,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
+ Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
+ Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The flag is no longer needed and can be removed since the quirk is now
-handled within the port_power() callback.
-
-Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
----
- drivers/usb/chipidea/ci_hdrc_imx.c | 10 ++--------
- include/linux/usb/chipidea.h       | 17 ++++++++---------
- 2 files changed, 10 insertions(+), 17 deletions(-)
-
-diff --git a/drivers/usb/chipidea/ci_hdrc_imx.c b/drivers/usb/chipidea/ci_hdrc_imx.c
-index d8e7eb2f97b9..5c66921bbb9b 100644
---- a/drivers/usb/chipidea/ci_hdrc_imx.c
-+++ b/drivers/usb/chipidea/ci_hdrc_imx.c
-@@ -23,8 +23,7 @@ struct ci_hdrc_imx_platform_flag {
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx23_usb_data = {
--	.flags = CI_HDRC_TURN_VBUS_EARLY_ON |
--		CI_HDRC_DISABLE_STREAMING,
-+	.flags = CI_HDRC_DISABLE_STREAMING,
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx27_usb_data = {
-@@ -33,31 +32,26 @@ static const struct ci_hdrc_imx_platform_flag imx27_usb_data = {
- 
- static const struct ci_hdrc_imx_platform_flag imx28_usb_data = {
- 	.flags = CI_HDRC_IMX28_WRITE_FIX |
--		CI_HDRC_TURN_VBUS_EARLY_ON |
- 		CI_HDRC_DISABLE_STREAMING,
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx6q_usb_data = {
- 	.flags = CI_HDRC_SUPPORTS_RUNTIME_PM |
--		CI_HDRC_TURN_VBUS_EARLY_ON |
- 		CI_HDRC_DISABLE_STREAMING,
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx6sl_usb_data = {
- 	.flags = CI_HDRC_SUPPORTS_RUNTIME_PM |
--		CI_HDRC_TURN_VBUS_EARLY_ON |
- 		CI_HDRC_DISABLE_HOST_STREAMING,
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx6sx_usb_data = {
- 	.flags = CI_HDRC_SUPPORTS_RUNTIME_PM |
--		CI_HDRC_TURN_VBUS_EARLY_ON |
- 		CI_HDRC_DISABLE_HOST_STREAMING,
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx6ul_usb_data = {
--	.flags = CI_HDRC_SUPPORTS_RUNTIME_PM |
--		CI_HDRC_TURN_VBUS_EARLY_ON,
-+	.flags = CI_HDRC_SUPPORTS_RUNTIME_PM,
- };
- 
- static const struct ci_hdrc_imx_platform_flag imx7d_usb_data = {
-diff --git a/include/linux/usb/chipidea.h b/include/linux/usb/chipidea.h
-index edd89b7c8f18..fa373aafa80e 100644
---- a/include/linux/usb/chipidea.h
-+++ b/include/linux/usb/chipidea.h
-@@ -53,15 +53,14 @@ struct ci_hdrc_platform_data {
- #define CI_HDRC_DUAL_ROLE_NOT_OTG	BIT(4)
- #define CI_HDRC_IMX28_WRITE_FIX		BIT(5)
- #define CI_HDRC_FORCE_FULLSPEED		BIT(6)
--#define CI_HDRC_TURN_VBUS_EARLY_ON	BIT(7)
--#define CI_HDRC_SET_NON_ZERO_TTHA	BIT(8)
--#define CI_HDRC_OVERRIDE_AHB_BURST	BIT(9)
--#define CI_HDRC_OVERRIDE_TX_BURST	BIT(10)
--#define CI_HDRC_OVERRIDE_RX_BURST	BIT(11)
--#define CI_HDRC_OVERRIDE_PHY_CONTROL	BIT(12) /* Glue layer manages phy */
--#define CI_HDRC_REQUIRES_ALIGNED_DMA	BIT(13)
--#define CI_HDRC_IMX_IS_HSIC		BIT(14)
--#define CI_HDRC_PMQOS			BIT(15)
-+#define CI_HDRC_SET_NON_ZERO_TTHA	BIT(7)
-+#define CI_HDRC_OVERRIDE_AHB_BURST	BIT(8)
-+#define CI_HDRC_OVERRIDE_TX_BURST	BIT(9)
-+#define CI_HDRC_OVERRIDE_RX_BURST	BIT(10)
-+#define CI_HDRC_OVERRIDE_PHY_CONTROL	BIT(11) /* Glue layer manages phy */
-+#define CI_HDRC_REQUIRES_ALIGNED_DMA	BIT(12)
-+#define CI_HDRC_IMX_IS_HSIC		BIT(13)
-+#define CI_HDRC_PMQOS			BIT(14)
- 	enum usb_dr_mode	dr_mode;
- #define CI_HDRC_CONTROLLER_RESET_EVENT		0
- #define CI_HDRC_CONTROLLER_STOPPED_EVENT	1
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpMZSAyNy8wMi8yMDIwIMOgIDExOjMzLCBBbnNodW1hbiBLaGFuZHVhbCBhIMOpY3JpdMKgOgo+
+IFRoaXMgYWRkcyBuZXcgdGVzdHMgdmFsaWRhdGluZyBhcmNoIHBhZ2UgdGFibGUgaGVscGVycyBm
+b3IgdGhlc2UgZm9sbG93aW5nCj4gY29yZSBtZW1vcnkgZmVhdHVyZXMuIFRoZXNlIHRlc3RzIGNy
+ZWF0ZSBhbmQgdGVzdCBzcGVjaWZpYyBtYXBwaW5nIHR5cGVzIGF0Cj4gdmFyaW91cyBwYWdlIHRh
+YmxlIGxldmVscy4KPiAKPiAqIFNQRUNJQUwgbWFwcGluZwo+ICogUFJPVE5PTkUgbWFwcGluZwo+
+ICogREVWTUFQIG1hcHBpbmcKPiAqIFNPRlRESVJUWSBtYXBwaW5nCj4gKiBTV0FQIG1hcHBpbmcK
+PiAqIE1JR1JBVElPTiBtYXBwaW5nCj4gKiBIVUdFVExCIG1hcHBpbmcKCkZvciB0ZXN0aW5nIEhV
+R0VUTEIgbWFwcGluZ3MsIHlvdSBhbHNvIGhhdmUgdG8gaW5jbHVkZSB0ZXN0cyBvZiBodWdlcGQg
+CmZ1bmN0aW9ucy9oZWxwZXJzLiBOb3QgYWxsIGFyY2hpY3R1cmVzIGhhdmUgaHVnZXBhZ2Ugc2l6
+ZSB3aGljaCBtYXRjaGVzIAp3aXRoIHBhZ2UgdGFibGVzIGxldmVscyAoZS5nLiBwb3dlcnBjKS4g
+VGhvc2UgYXJjaGl0ZWN0dXJlcyB1c2UgaHVnZXBkX3QuCgpDaHJpc3RvcGhlCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
