@@ -2,55 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6ED217169E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:02:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D1DD1716CD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:08:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qTfWPx3lHP+cMk+q7veFg9zEjGfc/wzV4J7UjWKySOU=; b=m2cBhYumCYWphh
-	9hs/Ut2aTUSiGQFwv2PJOfeaeWTqIm6oEQFhRilJTi9j4gytubdmYY5AItKvdRSws4mZM2KKNysmC
-	3AI8QWjvAVFlVEUBKii2ZfCQNQIOBYqY3hlbJz4bS8H42A4AfsJYY/+kgoJDrHLZgdkB35YPPp9Cr
-	GYO4BtjEsiLSaBLQv7rLuWWJXcY0jPc0PBNv+smzQNeh/7jVSYlNw9yg93IEF6uxRQ74KhBq7B4Og
-	kgS4umAgt+6qhZm9BBHwAZhwbE95sLg3vgCQ5b6h6c5W02pXlR2swYfdCe0HnIavFEjhroM1roMRe
-	uoFOHN83kA1XxZ5vL6JA==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zlLGSe+c3NUyTnBioeXbXyARGNmtTYVEt0xpuMn/gyI=; b=QPO3ezQy4lxk54
+	Px8RVE+Cs3E0KnKGwxv4JpghxiJM+vrF/f4uOnmIU5lzQh4J3HlRDQkoeEI7T80ps72Uw4TfFOBVW
+	cAyrYUKst71Sj8zxkYAVzzj2XYMuzJ3ASQVPJob6jYU/dEb7AesBAuKap5rftyL4f1v6xpE/ZIWbk
+	Fs2t0woyEcWXKSWFcwYeeBRwEOL7NszMQsyJSFrnd5fuXHxonZWkzTe6Lv5WjVtqyDrRVsfdCNcev
+	1qOl35zFSbXbJEjA20NiIN5slkLfHeTLbvyQDOZTLa0iQTKlY/Tx3+DM9Nu0FbgouHxu8vlblrvDi
+	ryzSmGFDUlYCzTOob3qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Hrw-0001P3-8p; Thu, 27 Feb 2020 12:02:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Hrn-0001OB-Oy
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:02:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 458B51FB;
- Thu, 27 Feb 2020 04:02:10 -0800 (PST)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 9FD413F73B; Thu, 27 Feb 2020 04:02:07 -0800 (PST)
-Date: Thu, 27 Feb 2020 12:02:05 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V13 0/2] arm64/mm: Enable memory hot remove
-Message-ID: <20200227120205.GD3281767@arrakis.emea.arm.com>
-References: <1581565532-27916-1-git-send-email-anshuman.khandual@arm.com>
+	id 1j7HyB-0003b6-P1; Thu, 27 Feb 2020 12:08:47 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7Hy0-0003I9-Uu
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:08:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:Reply-To:Content-ID
+ :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
+ Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=A6Y0hamrvdB8Gl43C4Ib9/2XL6AKOLLuJGlKQlOcKPI=; b=UF0XdIpRDXvFodPSMg5hy/HRFu
+ DXpVUQJKhrhX9oFWyf4kdg4wLqeBNWTpkmh7PncHbCjmC5+h4wfWN0LQv/pl0Hw7f+H/UXEHyfxKD
+ gOhY6Fc3JhkRbG+G/yxH6TZLvz3rirFiBNzDUmdP283QDJrhYESV/eR+FTRNPGlEt+ldaA1lAOvU+
+ KujyMVghPiiIoTe8TUPt8Ol06EmMii+FqL7XIne4NXjSXzxKLufJEU3chLClhwSb1//mtiWs5nXQX
+ WgnZhRvl/zK1Tq6HpGZ5tn/+h6ttDXmtElbK6xtgOYcsD/ti8pwT202Gex+xXAlwjeRxhL9WOsOD+
+ pwDruUlg==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([2001:4d48:ad52:3201:222:68ff:fe15:37dd]:58334 helo=rmk-PC.armlinux.org.uk)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j7Hvq-0005OO-O2; Thu, 27 Feb 2020 12:06:22 +0000
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j7Hvq-0004Vn-5w; Thu, 27 Feb 2020 12:06:22 +0000
+From: Russell King <rmk+kernel@armlinux.org.uk>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] arm64: dts: lx2160a-cex7: add support for ltc3882 regulator
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1581565532-27916-1-git-send-email-anshuman.khandual@arm.com>
+Message-Id: <E1j7Hvq-0004Vn-5w@rmk-PC.armlinux.org.uk>
+Date: Thu, 27 Feb 2020 12:06:22 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_040211_853408_AEAC10E5 
-X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-CacheID: sfid-20200227_040836_996016_226928BF 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,28 +84,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, valentin.schneider@arm.com,
- mgorman@techsingularity.net, david@redhat.com, ira.weiny@intel.com,
- steve.capper@arm.com, suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
- steven.price@arm.com, linux-mm@kvack.org, logang@deltatee.com,
- broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com, arunks@codeaurora.org,
- akpm@linux-foundation.org, osalvador@suse.de, will@kernel.org,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
- Robin.Murphy@arm.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Li Yang <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 09:15:30AM +0530, Anshuman Khandual wrote:
-> Anshuman Khandual (2):
->   arm64/mm: Hold memory hotplug lock while walking for kernel page table dump
->   arm64/mm: Enable memory hot remove
+Add support for the LTC3882 regulator so that the hardware monitoring
+can be used with this device.  This regulator provides the 0.78V
+supply for the LX2160A.
 
-Queued for 5.7. Thanks.
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
+diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi
+index 071e21678f77..01c5420f334e 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi
+@@ -73,6 +73,17 @@
+ 			};
+ 		};
+ 
++		i2c@2 {
++			#address-cells = <1>;
++			#size-cells = <0>;
++			reg = <2>;
++
++			regulator@5c {
++				compatible = "lltc,ltc3882";
++				reg = <0x5c>;
++			};
++		};
++
+ 		i2c@3 {
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
 -- 
-Catalin
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
