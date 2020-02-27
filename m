@@ -2,69 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA06417135D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:52:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E63641713AA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 10:05:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9kvrGAnwwoi6vSLdSasHEpSRmXbLoT9jejHiTa+94W0=; b=T4K7fGM1+FIV+j
-	lDAUFbxd91vhY9HkUObvPhHfIRME2Um6IUE287m7FrsX77Ej723SwhpObBPfzjhfhlMJMW9M9sL/O
-	QVg6Gx/5LAnNMSEP7tukzxLU5mDcH5g4393+cHL/1qSd3iabopzX4U60YH1XXRNiMFE6M6rVovFCq
-	ZeTSmfA8x0U/zoM3dURXnC4E8lFMqZrJ1yn83EgjxfGNamKVU9fLqV5Okc9mkZrJeaHwpp//pmMYr
-	tEGxPhsh8XtRqsZpTD9cY7YFI81yqJZKK2WB/IQbih1cj52RgL4mPJjK9Tw50hhL/Ju5PF2l4O5A0
-	0MGfZyKzoGLyAeGIojqQ==;
+	List-Owner; bh=goQY4x1Cad3eHZtNohkEDYEZ6y22CbZFjHQjAJSooDU=; b=DGNS96qMALo6EX
+	tgrcyui946f3mflURLKTS1+MkK/+qV41b4VwNpX3d0Yv3L0ECSTA5pJ44eXfygoKks4urgyfybtke
+	zetS56IYaAEFEVK/ZLCtInBAaT9L+Y6COQFhrw/G/RslWkk/Eq3ucSFOy/LToS/4KtUcPAC6As0qo
+	StupZE7lua6AWIITdTQFLkJe5JMjoqg4LTtl49H/R91w+mFpDy+WhaI5Qgzh21IiYFSFKEijwaxGV
+	ObkU7j2pBtVkfRNzBWtRwZG+UzPRgtSZ11eQRUeirMekEz+vhswSzEDCrdgzahiJ1HxHtzkh/FlaU
+	JKES60XP9A3aOsZYHwKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7EuH-0000kt-8b; Thu, 27 Feb 2020 08:52:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j7F6b-0004iy-VH; Thu, 27 Feb 2020 09:05:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7EsN-0007cb-43
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:50:37 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3085324683;
- Thu, 27 Feb 2020 08:50:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582793434;
- bh=AS1N2p4BpR1Wp3lQ9tOhwMdbr5iUMexF6sWGldk1z/8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=F/Juy6nq1o1s0vcMI/6nYOOr/JvTLwfyiFI3jnaZtRCxGqfSUdoHGQWnetp7qDthX
- er4V16xokvXBNocSwDYsQCE2j9PSEjZc3g/uN+d8cX6BV9muH7MTvQXgGfaX3oorhq
- LLNNs6UCczjXtYc8jIGlV+ep6XppugZPn0kCytN4=
-From: Mike Rapoport <rppt@kernel.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 14/14] mm: remove __ARCH_HAS_5LEVEL_HACK and
- include/asm-generic/5level-fixup.h
-Date: Thu, 27 Feb 2020 10:46:08 +0200
-Message-Id: <20200227084608.18223-15-rppt@kernel.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20200227084608.18223-1-rppt@kernel.org>
-References: <20200227084608.18223-1-rppt@kernel.org>
+ id 1j7F6F-0004hW-Ox; Thu, 27 Feb 2020 09:04:57 +0000
+X-UUID: 2d873fecf51347ca9996a016e08e8dfe-20200227
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=s49kQ/4eBBv+UD7Hr3V2alwWMpIr4yXzqun9qCCm8kQ=; 
+ b=uOObFOEZ2OLqrPWfV6UHRh2NuRS3r9Wx+TD98rDpTzTM6XsEnERsdQzhxwHUH8VZ7a3KZh3McPkkI9Lv8PfjaBl3SfdjDk9Gae03OpEMFlTR09+IoIUHC2MxLbOeNeReSh3JzW5R+lZoOHhxU2T9z/8/fmQW/BxxHc5WAQ9pfAQ=;
+X-UUID: 2d873fecf51347ca9996a016e08e8dfe-20200227
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1576935954; Thu, 27 Feb 2020 01:04:48 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 27 Feb 2020 01:04:46 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 27 Feb 2020 17:03:36 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 27 Feb 2020 17:04:20 +0800
+Message-ID: <1582794271.1889.10.camel@mtksdaap41>
+Subject: Re: [PATCH v9 1/4] drm/mediatek: Use regmap for register access
+From: CK Hu <ck.hu@mediatek.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Thu, 27 Feb 2020 17:04:31 +0800
+In-Reply-To: <07976851-8ac4-9c0d-3257-74fd4df74ef0@collabora.com>
+References: <20200226105419.632771-1-enric.balletbo@collabora.com>
+ <20200226105419.632771-2-enric.balletbo@collabora.com>
+ <1582765858.20746.2.camel@mtksdaap41>
+ <07976851-8ac4-9c0d-3257-74fd4df74ef0@collabora.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 1593FEEEB5C71E2C9B1951E4352218ED93D394FC9E26DABA78D1534804CF88642000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_005035_800015_4E4BFB74 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200227_010455_823713_17A88AD0 
+X-CRM114-Status: GOOD (  24.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,187 +86,285 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
- Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, James Morse <james.morse@arm.com>,
- Michael Ellerman <mpe@ellerman.id.au>, nios2-dev@lists.rocketboards.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Mike Rapoport <rppt@kernel.org>
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ Allison Randal <allison@lohutok.net>, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, frank-w@public-files.de,
+ Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Mauro
+ Carvalho Chehab <mchehab@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <mbrugger@suse.com>, sboyd@kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, p.zabel@pengutronix.de, matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
+Hi, Enric:
 
-There are no architectures that use include/asm-generic/5level-fixup.h
-therefore it can be removed along with __ARCH_HAS_5LEVEL_HACK define and
-the code it surrounds
+On Thu, 2020-02-27 at 09:45 +0100, Enric Balletbo i Serra wrote:
+> Hi CK,
+> 
+> On 27/2/20 2:10, CK Hu wrote:
+> > Hi, Enric:
+> > 
+> > On Wed, 2020-02-26 at 11:54 +0100, Enric Balletbo i Serra wrote:
+> >> From: Matthias Brugger <mbrugger@suse.com>
+> >>
+> >> The mmsys memory space is shared between the drm and the
+> >> clk driver. Use regmap to access it.
+> > 
+> > Once there is a mmsys driver and clock control is moved into mmsys
+> > driver, I think we should also move routing control into mmsys driver
+> > and we could drop this patch.
+> > 
+> 
+> Do you want me do this in this series or later?
 
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- include/asm-generic/5level-fixup.h | 58 ------------------------------
- include/linux/mm.h                 |  6 ----
- mm/kasan/init.c                    | 11 ------
- mm/memory.c                        |  8 -----
- 4 files changed, 83 deletions(-)
- delete mode 100644 include/asm-generic/5level-fixup.h
+I would like you to do it in this series. If you move routing control to
+mmsys driver, you need not to use regmap any more. What you need to move
+is what you modify in this patch. mmsys may provide mtk_mmsys_connect()
+and mtk_mmsys_disconnect() function to replace
+mtk_ddp_add_comp_to_path() and mtk_ddp_remove_comp_from_path(). DRM
+driver need not to map mmsys's register and just keep mmsys device
+pointer. You could move routing control after clock control has been
+moved.
 
-diff --git a/include/asm-generic/5level-fixup.h b/include/asm-generic/5level-fixup.h
-deleted file mode 100644
-index 4c74b1c1d13b..000000000000
---- a/include/asm-generic/5level-fixup.h
-+++ /dev/null
-@@ -1,58 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _5LEVEL_FIXUP_H
--#define _5LEVEL_FIXUP_H
--
--#define __ARCH_HAS_5LEVEL_HACK
--#define __PAGETABLE_P4D_FOLDED 1
--
--#define P4D_SHIFT			PGDIR_SHIFT
--#define P4D_SIZE			PGDIR_SIZE
--#define P4D_MASK			PGDIR_MASK
--#define MAX_PTRS_PER_P4D		1
--#define PTRS_PER_P4D			1
--
--#define p4d_t				pgd_t
--
--#define pud_alloc(mm, p4d, address) \
--	((unlikely(pgd_none(*(p4d))) && __pud_alloc(mm, p4d, address)) ? \
--		NULL : pud_offset(p4d, address))
--
--#define p4d_alloc(mm, pgd, address)	(pgd)
--#define p4d_offset(pgd, start)		(pgd)
--
--#ifndef __ASSEMBLY__
--static inline int p4d_none(p4d_t p4d)
--{
--	return 0;
--}
--
--static inline int p4d_bad(p4d_t p4d)
--{
--	return 0;
--}
--
--static inline int p4d_present(p4d_t p4d)
--{
--	return 1;
--}
--#endif
--
--#define p4d_ERROR(p4d)			do { } while (0)
--#define p4d_clear(p4d)			pgd_clear(p4d)
--#define p4d_val(p4d)			pgd_val(p4d)
--#define p4d_populate(mm, p4d, pud)	pgd_populate(mm, p4d, pud)
--#define p4d_populate_safe(mm, p4d, pud)	pgd_populate(mm, p4d, pud)
--#define p4d_page(p4d)			pgd_page(p4d)
--#define p4d_page_vaddr(p4d)		pgd_page_vaddr(p4d)
--
--#define __p4d(x)			__pgd(x)
--#define set_p4d(p4dp, p4d)		set_pgd(p4dp, p4d)
--
--#undef p4d_free_tlb
--#define p4d_free_tlb(tlb, x, addr)	do { } while (0)
--#define p4d_free(mm, x)			do { } while (0)
--
--#undef  p4d_addr_end
--#define p4d_addr_end(addr, end)		(end)
--
--#endif
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 52269e56c514..69fb46e1d91b 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -1841,11 +1841,6 @@ int __pte_alloc_kernel(pmd_t *pmd);
- 
- #if defined(CONFIG_MMU)
- 
--/*
-- * The following ifdef needed to get the 5level-fixup.h header to work.
-- * Remove it when 5level-fixup.h has been removed.
-- */
--#ifndef __ARCH_HAS_5LEVEL_HACK
- static inline p4d_t *p4d_alloc(struct mm_struct *mm, pgd_t *pgd,
- 		unsigned long address)
- {
-@@ -1859,7 +1854,6 @@ static inline pud_t *pud_alloc(struct mm_struct *mm, p4d_t *p4d,
- 	return (unlikely(p4d_none(*p4d)) && __pud_alloc(mm, p4d, address)) ?
- 		NULL : pud_offset(p4d, address);
- }
--#endif /* !__ARCH_HAS_5LEVEL_HACK */
- 
- static inline pmd_t *pmd_alloc(struct mm_struct *mm, pud_t *pud, unsigned long address)
- {
-diff --git a/mm/kasan/init.c b/mm/kasan/init.c
-index ce45c491ebcd..fe6be0be1f76 100644
---- a/mm/kasan/init.c
-+++ b/mm/kasan/init.c
-@@ -250,20 +250,9 @@ int __ref kasan_populate_early_shadow(const void *shadow_start,
- 			 * 3,2 - level page tables where we don't have
- 			 * puds,pmds, so pgd_populate(), pud_populate()
- 			 * is noops.
--			 *
--			 * The ifndef is required to avoid build breakage.
--			 *
--			 * With 5level-fixup.h, pgd_populate() is not nop and
--			 * we reference kasan_early_shadow_p4d. It's not defined
--			 * unless 5-level paging enabled.
--			 *
--			 * The ifndef can be dropped once all KASAN-enabled
--			 * architectures will switch to pgtable-nop4d.h.
- 			 */
--#ifndef __ARCH_HAS_5LEVEL_HACK
- 			pgd_populate(&init_mm, pgd,
- 					lm_alias(kasan_early_shadow_p4d));
--#endif
- 			p4d = p4d_offset(pgd, addr);
- 			p4d_populate(&init_mm, p4d,
- 					lm_alias(kasan_early_shadow_pud));
-diff --git a/mm/memory.c b/mm/memory.c
-index 0bccc622e482..10cc147db1b8 100644
---- a/mm/memory.c
-+++ b/mm/memory.c
-@@ -4252,19 +4252,11 @@ int __pud_alloc(struct mm_struct *mm, p4d_t *p4d, unsigned long address)
- 	smp_wmb(); /* See comment in __pte_alloc */
- 
- 	spin_lock(&mm->page_table_lock);
--#ifndef __ARCH_HAS_5LEVEL_HACK
- 	if (!p4d_present(*p4d)) {
- 		mm_inc_nr_puds(mm);
- 		p4d_populate(mm, p4d, new);
- 	} else	/* Another has populated it */
- 		pud_free(mm, new);
--#else
--	if (!pgd_present(*p4d)) {
--		mm_inc_nr_puds(mm);
--		pgd_populate(mm, p4d, new);
--	} else	/* Another has populated it */
--		pud_free(mm, new);
--#endif /* __ARCH_HAS_5LEVEL_HACK */
- 	spin_unlock(&mm->page_table_lock);
- 	return 0;
- }
--- 
-2.24.0
+Regards,
+CK
 
+> 
+> Thanks,
+>  Enric
+> 
+> > Regards,
+> > CK
+> > 
+> >>
+> >> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+> >> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+> >> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> >> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> >> ---
+> >>
+> >> Changes in v9: None
+> >> Changes in v8:
+> >> - Select REGMAP and MFD_SYSCON (Randy Dunlap)
+> >>
+> >> Changes in v7:
+> >> - Add R-by from CK
+> >>
+> >>  drivers/gpu/drm/mediatek/Kconfig        |  2 +
+> >>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  4 +-
+> >>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c  | 50 +++++++++++--------------
+> >>  drivers/gpu/drm/mediatek/mtk_drm_ddp.h  |  4 +-
+> >>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 13 ++-----
+> >>  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  2 +-
+> >>  6 files changed, 32 insertions(+), 43 deletions(-)
+> >>
+> >> diff --git a/drivers/gpu/drm/mediatek/Kconfig b/drivers/gpu/drm/mediatek/Kconfig
+> >> index fa5ffc4fe823..89e18a473cb5 100644
+> >> --- a/drivers/gpu/drm/mediatek/Kconfig
+> >> +++ b/drivers/gpu/drm/mediatek/Kconfig
+> >> @@ -10,8 +10,10 @@ config DRM_MEDIATEK
+> >>  	select DRM_KMS_HELPER
+> >>  	select DRM_MIPI_DSI
+> >>  	select DRM_PANEL
+> >> +	select MFD_SYSCON
+> >>  	select MEMORY
+> >>  	select MTK_SMI
+> >> +	select REGMAP
+> >>  	select VIDEOMODE_HELPERS
+> >>  	help
+> >>  	  Choose this option if you have a Mediatek SoCs.
+> >> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> >> index 5ee74d7ce35c..a236499123aa 100644
+> >> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> >> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> >> @@ -28,7 +28,7 @@
+> >>   * @enabled: records whether crtc_enable succeeded
+> >>   * @planes: array of 4 drm_plane structures, one for each overlay plane
+> >>   * @pending_planes: whether any plane has pending changes to be applied
+> >> - * @config_regs: memory mapped mmsys configuration register space
+> >> + * @config_regs: regmap mapped mmsys configuration register space
+> >>   * @mutex: handle to one of the ten disp_mutex streams
+> >>   * @ddp_comp_nr: number of components in ddp_comp
+> >>   * @ddp_comp: array of pointers the mtk_ddp_comp structures used by this crtc
+> >> @@ -50,7 +50,7 @@ struct mtk_drm_crtc {
+> >>  	u32				cmdq_event;
+> >>  #endif
+> >>  
+> >> -	void __iomem			*config_regs;
+> >> +	struct regmap			*config_regs;
+> >>  	struct mtk_disp_mutex		*mutex;
+> >>  	unsigned int			ddp_comp_nr;
+> >>  	struct mtk_ddp_comp		**ddp_comp;
+> >> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+> >> index 13035c906035..302753744cc6 100644
+> >> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+> >> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+> >> @@ -383,61 +383,53 @@ static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
+> >>  	return value;
+> >>  }
+> >>  
+> >> -static void mtk_ddp_sout_sel(void __iomem *config_regs,
+> >> +static void mtk_ddp_sout_sel(struct regmap *config_regs,
+> >>  			     enum mtk_ddp_comp_id cur,
+> >>  			     enum mtk_ddp_comp_id next)
+> >>  {
+> >>  	if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DSI0) {
+> >> -		writel_relaxed(BLS_TO_DSI_RDMA1_TO_DPI1,
+> >> -			       config_regs + DISP_REG_CONFIG_OUT_SEL);
+> >> +		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
+> >> +				BLS_TO_DSI_RDMA1_TO_DPI1);
+> >>  	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
+> >> -		writel_relaxed(BLS_TO_DPI_RDMA1_TO_DSI,
+> >> -			       config_regs + DISP_REG_CONFIG_OUT_SEL);
+> >> -		writel_relaxed(DSI_SEL_IN_RDMA,
+> >> -			       config_regs + DISP_REG_CONFIG_DSI_SEL);
+> >> -		writel_relaxed(DPI_SEL_IN_BLS,
+> >> -			       config_regs + DISP_REG_CONFIG_DPI_SEL);
+> >> +		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
+> >> +				BLS_TO_DPI_RDMA1_TO_DSI);
+> >> +		regmap_write(config_regs, DISP_REG_CONFIG_DSI_SEL,
+> >> +				DSI_SEL_IN_RDMA);
+> >> +		regmap_write(config_regs, DISP_REG_CONFIG_DPI_SEL,
+> >> +				DPI_SEL_IN_BLS);
+> >>  	}
+> >>  }
+> >>  
+> >> -void mtk_ddp_add_comp_to_path(void __iomem *config_regs,
+> >> +void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
+> >>  			      enum mtk_ddp_comp_id cur,
+> >>  			      enum mtk_ddp_comp_id next)
+> >>  {
+> >> -	unsigned int addr, value, reg;
+> >> +	unsigned int addr, value;
+> >>  
+> >>  	value = mtk_ddp_mout_en(cur, next, &addr);
+> >> -	if (value) {
+> >> -		reg = readl_relaxed(config_regs + addr) | value;
+> >> -		writel_relaxed(reg, config_regs + addr);
+> >> -	}
+> >> +	if (value)
+> >> +		regmap_update_bits(config_regs, addr, value, value);
+> >>  
+> >>  	mtk_ddp_sout_sel(config_regs, cur, next);
+> >>  
+> >>  	value = mtk_ddp_sel_in(cur, next, &addr);
+> >> -	if (value) {
+> >> -		reg = readl_relaxed(config_regs + addr) | value;
+> >> -		writel_relaxed(reg, config_regs + addr);
+> >> -	}
+> >> +	if (value)
+> >> +		regmap_update_bits(config_regs, addr, value, value);
+> >>  }
+> >>  
+> >> -void mtk_ddp_remove_comp_from_path(void __iomem *config_regs,
+> >> +void mtk_ddp_remove_comp_from_path(struct regmap *config_regs,
+> >>  				   enum mtk_ddp_comp_id cur,
+> >>  				   enum mtk_ddp_comp_id next)
+> >>  {
+> >> -	unsigned int addr, value, reg;
+> >> +	unsigned int addr, value;
+> >>  
+> >>  	value = mtk_ddp_mout_en(cur, next, &addr);
+> >> -	if (value) {
+> >> -		reg = readl_relaxed(config_regs + addr) & ~value;
+> >> -		writel_relaxed(reg, config_regs + addr);
+> >> -	}
+> >> +	if (value)
+> >> +		regmap_update_bits(config_regs, addr, value, 0);
+> >>  
+> >>  	value = mtk_ddp_sel_in(cur, next, &addr);
+> >> -	if (value) {
+> >> -		reg = readl_relaxed(config_regs + addr) & ~value;
+> >> -		writel_relaxed(reg, config_regs + addr);
+> >> -	}
+> >> +	if (value)
+> >> +		regmap_update_bits(config_regs, addr, value, 0);
+> >>  }
+> >>  
+> >>  struct mtk_disp_mutex *mtk_disp_mutex_get(struct device *dev, unsigned int id)
+> >> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+> >> index 827be424a148..01ff8b68881f 100644
+> >> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+> >> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
+> >> @@ -12,10 +12,10 @@ struct regmap;
+> >>  struct device;
+> >>  struct mtk_disp_mutex;
+> >>  
+> >> -void mtk_ddp_add_comp_to_path(void __iomem *config_regs,
+> >> +void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
+> >>  			      enum mtk_ddp_comp_id cur,
+> >>  			      enum mtk_ddp_comp_id next);
+> >> -void mtk_ddp_remove_comp_from_path(void __iomem *config_regs,
+> >> +void mtk_ddp_remove_comp_from_path(struct regmap *config_regs,
+> >>  				   enum mtk_ddp_comp_id cur,
+> >>  				   enum mtk_ddp_comp_id next);
+> >>  
+> >> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> >> index 0563c6813333..b68837ea02b3 100644
+> >> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> >> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> >> @@ -6,6 +6,7 @@
+> >>  
+> >>  #include <linux/component.h>
+> >>  #include <linux/iommu.h>
+> >> +#include <linux/mfd/syscon.h>
+> >>  #include <linux/module.h>
+> >>  #include <linux/of_address.h>
+> >>  #include <linux/of_platform.h>
+> >> @@ -425,7 +426,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
+> >>  {
+> >>  	struct device *dev = &pdev->dev;
+> >>  	struct mtk_drm_private *private;
+> >> -	struct resource *mem;
+> >>  	struct device_node *node;
+> >>  	struct component_match *match = NULL;
+> >>  	int ret;
+> >> @@ -437,14 +437,9 @@ static int mtk_drm_probe(struct platform_device *pdev)
+> >>  
+> >>  	private->data = of_device_get_match_data(dev);
+> >>  
+> >> -	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> >> -	private->config_regs = devm_ioremap_resource(dev, mem);
+> >> -	if (IS_ERR(private->config_regs)) {
+> >> -		ret = PTR_ERR(private->config_regs);
+> >> -		dev_err(dev, "Failed to ioremap mmsys-config resource: %d\n",
+> >> -			ret);
+> >> -		return ret;
+> >> -	}
+> >> +	private->config_regs = syscon_node_to_regmap(dev->of_node);
+> >> +	if (IS_ERR(private->config_regs))
+> >> +		return PTR_ERR(private->config_regs);
+> >>  
+> >>  	/* Iterate over sibling DISP function blocks */
+> >>  	for_each_child_of_node(dev->of_node->parent, node) {
+> >> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> >> index 17bc99b9f5d4..03201080688d 100644
+> >> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> >> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> >> @@ -39,7 +39,7 @@ struct mtk_drm_private {
+> >>  
+> >>  	struct device_node *mutex_node;
+> >>  	struct device *mutex_dev;
+> >> -	void __iomem *config_regs;
+> >> +	struct regmap *config_regs;
+> >>  	struct device_node *comp_node[DDP_COMPONENT_ID_MAX];
+> >>  	struct mtk_ddp_comp *ddp_comp[DDP_COMPONENT_ID_MAX];
+> >>  	const struct mtk_mmsys_driver_data *data;
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
