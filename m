@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF69317178A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:37:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7648517178F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:38:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=aQmiPQJyryQJPiVS4IU509GfwSeJ0VRoXYakNfJH7nA=; b=TdB
-	sEqMBI3SSkP1X2XmlCbIYbl1vHi+38myIHR6wVF5yQ48iaRtRUfy6ty+YlgR09dlZaVhuDKPvFdlL
-	9W8bDHGFY5oS1AvLu8zTCf6LgYby73VgJPiFR3eabdnrOC/ARCr5nl7raYpf2p5mEHrr5OPzKxRFy
-	yo6XZlMO9IhAX2lGHzhdFiENihS5MQ7MnR9bDdXb8S/CkXpl4qrPSzlXDqz9bWB0aB0b04iCaMpoq
-	K0k5u0khBrMtt/6+PwiYt3oG0niwwJheuqm6gDE+/Ow9i+OMhac9hfz/a8Q6oK65L6LR0z1NQ9+1M
-	loj02G8Jv9EejT9DNcAxk7qtW1jE39A==;
+	References:List-Owner; bh=DjtR3SVBNkXHvG3B02x1DPDkJ/zWdMzpTaQ4byS+HCU=; b=cjQ
+	R8nnDdlh0Si5vEUHFyrplQNVFuTJyfsZZszR7VmS/oOhbAVUBx5OrPm78UrXOEKLRcwKY1axOPrTk
+	pGuWbFD+jl3rfx/SJ0gyyVp2ccJFUlVLew7r552MQT6X9NDs1wBFao6DDJ7woYX1EqdtOY5oeN/p0
+	RId0AgTKoxaRUZdqXUOD0KyKvGZZrR2k6ofTjEG735RJfdFI3R/OXUMacSrGcocBggEPcFMZpd9JW
+	nJs8BGMJkYPHLxV2EY0h3D8iyFBrk45Qqww7fD2v+tdEHJ8nR5Gm13Co5so9v5/9yicasNE3lzk3v
+	LyrBA/ufE1tJElbFVjt/0ty+hnnodWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7IQA-0001FT-Vf; Thu, 27 Feb 2020 12:37:43 +0000
+	id 1j7IQX-0001Yv-Jp; Thu, 27 Feb 2020 12:38:05 +0000
 Received: from conuserg-12.nifty.com ([210.131.2.79])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7IPu-00017R-Mx
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:37:28 +0000
+ id 1j7IQL-0001Xt-SA
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:37:55 +0000
 Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
  [153.142.97.92]) (authenticated)
- by conuserg-12.nifty.com with ESMTP id 01RCap9O018520;
- Thu, 27 Feb 2020 21:36:51 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com 01RCap9O018520
+ by conuserg-12.nifty.com with ESMTP id 01RCbb6U019114;
+ Thu, 27 Feb 2020 21:37:37 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com 01RCbb6U019114
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1582807011;
- bh=ZOAQrMnQEXEPvN8bCNp3UgX+oQzExQ8Hfi1fHbs68aA=;
+ s=dec2015msa; t=1582807057;
+ bh=OfBqph3sclJ76L08S3946c2Ab+KCXHqtiVA7HkK9BFE=;
  h=From:To:Cc:Subject:Date:From;
- b=cjd7ijl8paDPTuhFKEtAp96O+UViOd4ayI08E3mSM6skmLRqDvmQ+3Tvx5wfts25U
- TwPNkiSoHRe+zIzGGzts9iZ3ToZOPPmySjNm6as/eGWOVTd4SCbk4F0hTPANXQkkd+
- D95+eH5ZXS3iuYTIoQKBiab2Uq3BWEgDcL/7Aztmc88t6IGdTqEOMFasmW6IwwKEd7
- GfLkRihcTFAgzqilDS5P3bZ9O5m8rAMSiLLrfIyuS/C/HPRKncOIigAz3YF8ocUsYW
- CaIiUEfR0LbgPhz0tFd+5WKwap6NARH0rWQCNsgNCfCUBYvajFS0ybW0oJQJ7ZDRtw
- xgQYkZvN/0cBQ==
+ b=JeS4J17PgWBPIUM4+qnMqoRLn0+3vj7iqACMn6BnXwYD+uQESrarxrHetq2mEFtCP
+ P1qMcqqS0uu+9zvZh1DzGTZNmuM3OI559uymLfWxN9C7ut7yIJdpQCLhfjW015GY+Q
+ ZYh80f+cPASB1amYBWVOVnIGzh/7d/Xwh0LqB6dN0B/wRbc0UliN2fHTFP0PkoguGX
+ PUSVREG2rpYhZmtcUEhv7ek9f5V22oYrusGvlx4QeeRhohwmw8+/f0/WEbyA+Wgi23
+ U/XR1uCeP41JbkBWxgirkfSuWoSnaNa26lMe1Ti1HV+KPDInysyX3x5QkTzq0cwhmI
+ G2Vvhc1+8503g==
 X-Nifty-SrcIP: [153.142.97.92]
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH] dt-bindings: arm: Convert UniPhier System Cache to json-schema
-Date: Thu, 27 Feb 2020 21:36:48 +0900
-Message-Id: <20200227123648.12785-1-yamada.masahiro@socionext.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: dts: uniphier: rename cache controller nodes to follow
+ json-schema
+Date: Thu, 27 Feb 2020 21:37:26 +0900
+Message-Id: <20200227123726.12910-1-yamada.masahiro@socionext.com>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_043727_118355_4A13C56F 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20200227_043754_141272_11E8CC76 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -71,206 +73,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the UniPhier System Cache binding to DT schema format.
-This is a full-custom outer cache (L2 and L3) used on UniPhier
-ARM 32-bit SoCs.
+Follow the standard nodename pattern
+"^(cache-controller|cpu)(@[0-9a-f,]+)*$" defined in
+schemas/cache-controller.yaml of dt-schema.
 
-While I was here, I added the interrupts property. This is not
-used in Linux, but the hardware has interrupt lines at least.
+Otherwise, after the dt-binding is converted to json-schema,
+'make ARCH=arm dtbs_check' will show a warning like this:
+
+  l2-cache@500c0000: $nodename:0: 'l2-cache@500c0000' does not match '^(cache-controller|cpu)(@[0-9a-f,]+)*$'
 
 Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 ---
 
- .../bindings/arm/socionext/cache-uniphier.txt |  60 -----------
- .../socionext,uniphier-system-cache.yaml      | 102 ++++++++++++++++++
- 2 files changed, 102 insertions(+), 60 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/socionext/cache-uniphier.txt
- create mode 100644 Documentation/devicetree/bindings/arm/socionext/socionext,uniphier-system-cache.yaml
+ arch/arm/boot/dts/uniphier-ld4.dtsi  | 2 +-
+ arch/arm/boot/dts/uniphier-pro4.dtsi | 2 +-
+ arch/arm/boot/dts/uniphier-pro5.dtsi | 4 ++--
+ arch/arm/boot/dts/uniphier-pxs2.dtsi | 2 +-
+ arch/arm/boot/dts/uniphier-sld8.dtsi | 2 +-
+ 5 files changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/socionext/cache-uniphier.txt b/Documentation/devicetree/bindings/arm/socionext/cache-uniphier.txt
-deleted file mode 100644
-index d27a646f48a9..000000000000
---- a/Documentation/devicetree/bindings/arm/socionext/cache-uniphier.txt
-+++ /dev/null
-@@ -1,60 +0,0 @@
--UniPhier outer cache controller
--
--UniPhier SoCs are integrated with a full-custom outer cache controller system.
--All of them have a level 2 cache controller, and some have a level 3 cache
--controller as well.
--
--Required properties:
--- compatible: should be "socionext,uniphier-system-cache"
--- reg: offsets and lengths of the register sets for the device.  It should
--  contain 3 regions: control register, revision register, operation register,
--  in this order.
--- cache-unified: specifies the cache is a unified cache.
--- cache-size: specifies the size in bytes of the cache
--- cache-sets: specifies the number of associativity sets of the cache
--- cache-line-size: specifies the line size in bytes
--- cache-level: specifies the level in the cache hierarchy.  The value should
--  be 2 for L2 cache, 3 for L3 cache, etc.
--
--Optional properties:
--- next-level-cache: phandle to the next level cache if present.  The next level
--  cache should be also compatible with "socionext,uniphier-system-cache".
--
--The L2 cache must exist to use the L3 cache; the cache hierarchy must be
--indicated correctly with "next-level-cache" properties.
--
--Example 1 (system with L2):
--	l2: l2-cache@500c0000 {
--		compatible = "socionext,uniphier-system-cache";
--		reg = <0x500c0000 0x2000>, <0x503c0100 0x4>,
--		      <0x506c0000 0x400>;
--		cache-unified;
--		cache-size = <0x80000>;
--		cache-sets = <256>;
--		cache-line-size = <128>;
--		cache-level = <2>;
--	};
--
--Example 2 (system with L2 and L3):
--	l2: l2-cache@500c0000 {
--		compatible = "socionext,uniphier-system-cache";
--		reg = <0x500c0000 0x2000>, <0x503c0100 0x8>,
--		      <0x506c0000 0x400>;
--		cache-unified;
--		cache-size = <0x200000>;
--		cache-sets = <512>;
--		cache-line-size = <128>;
--		cache-level = <2>;
--		next-level-cache = <&l3>;
--	};
--
--	l3: l3-cache@500c8000 {
--		compatible = "socionext,uniphier-system-cache";
--		reg = <0x500c8000 0x2000>, <0x503c8100 0x8>,
--		      <0x506c8000 0x400>;
--		cache-unified;
--		cache-size = <0x400000>;
--		cache-sets = <512>;
--		cache-line-size = <256>;
--		cache-level = <3>;
--	};
-diff --git a/Documentation/devicetree/bindings/arm/socionext/socionext,uniphier-system-cache.yaml b/Documentation/devicetree/bindings/arm/socionext/socionext,uniphier-system-cache.yaml
-new file mode 100644
-index 000000000000..2e765bb3e6f6
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/socionext/socionext,uniphier-system-cache.yaml
-@@ -0,0 +1,102 @@
-+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/socionext/socionext,uniphier-system-cache.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: UniPhier outer cache controller
-+
-+description: |
-+  UniPhier ARM 32-bit SoCs are integrated with a full-custom outer cache
-+  controller system. All of them have a level 2 cache controller, and some
-+  have a level 3 cache controller as well.
-+
-+maintainers:
-+  - Masahiro Yamada <yamada.masahiro@socionext.com>
-+
-+properties:
-+  compatible:
-+    const: socionext,uniphier-system-cache
-+
-+  reg:
-+    description: |
-+      should contain 3 regions: control register, revision register,
-+      operation register, in this order.
-+    minItems: 3
-+    maxItems: 3
-+
-+  interrupts:
-+    description: |
-+      Interrupts can be used to notify the completion of cache operations.
-+      The number of interrupts should match to the number of CPU cores.
-+      The specified interrupts correspond to CPU0, CPU1, ... in this order.
-+      minItems: 1
-+      maxItems: 4
-+
-+  cache-unified: true
-+
-+  cache-size: true
-+
-+  cache-sets: true
-+
-+  cache-line-size: true
-+
-+  cache-level:
-+    minimum: 2
-+    maximum: 3
-+
-+  next-level-cache: true
-+
-+allOf:
-+  - $ref: /schemas/cache-controller.yaml#
-+
-+additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - cache-unified
-+  - cache-size
-+  - cache-sets
-+  - cache-line-size
-+  - cache-level
-+
-+examples:
-+  - |
-+    // System with L2.
-+    cache-controller@500c0000 {
-+        compatible = "socionext,uniphier-system-cache";
-+        reg = <0x500c0000 0x2000>, <0x503c0100 0x4>, <0x506c0000 0x400>;
-+        interrupts = <0 174 4>, <0 175 4>, <0 190 4>, <0 191 4>;
-+        cache-unified;
-+        cache-size = <0x140000>;
-+        cache-sets = <512>;
-+        cache-line-size = <128>;
-+        cache-level = <2>;
-+    };
-+  - |
-+    // System with L2 and L3.
-+    //   L2 should specify the next level cache by 'next-level-cache'.
-+    l2: cache-controller@500c0000 {
-+        compatible = "socionext,uniphier-system-cache";
-+        reg = <0x500c0000 0x2000>, <0x503c0100 0x8>, <0x506c0000 0x400>;
-+        interrupts = <0 190 4>, <0 191 4>;
-+        cache-unified;
-+        cache-size = <0x200000>;
-+        cache-sets = <512>;
-+        cache-line-size = <128>;
-+        cache-level = <2>;
-+        next-level-cache = <&l3>;
-+    };
-+
-+    l3: cache-controller@500c8000 {
-+        compatible = "socionext,uniphier-system-cache";
-+        reg = <0x500c8000 0x2000>, <0x503c8100 0x8>, <0x506c8000 0x400>;
-+        interrupts = <0 174 4>, <0 175 4>;
-+        cache-unified;
-+        cache-size = <0x200000>;
-+        cache-sets = <512>;
-+        cache-line-size = <256>;
-+        cache-level = <3>;
-+    };
+diff --git a/arch/arm/boot/dts/uniphier-ld4.dtsi b/arch/arm/boot/dts/uniphier-ld4.dtsi
+index 197bee7d8b7f..06e7400d2940 100644
+--- a/arch/arm/boot/dts/uniphier-ld4.dtsi
++++ b/arch/arm/boot/dts/uniphier-ld4.dtsi
+@@ -51,7 +51,7 @@
+ 		ranges;
+ 		interrupt-parent = <&intc>;
+ 
+-		l2: l2-cache@500c0000 {
++		l2: cache-controller@500c0000 {
+ 			compatible = "socionext,uniphier-system-cache";
+ 			reg = <0x500c0000 0x2000>, <0x503c0100 0x4>,
+ 			      <0x506c0000 0x400>;
+diff --git a/arch/arm/boot/dts/uniphier-pro4.dtsi b/arch/arm/boot/dts/uniphier-pro4.dtsi
+index b02bc8a6346b..1c866f0306fc 100644
+--- a/arch/arm/boot/dts/uniphier-pro4.dtsi
++++ b/arch/arm/boot/dts/uniphier-pro4.dtsi
+@@ -59,7 +59,7 @@
+ 		ranges;
+ 		interrupt-parent = <&intc>;
+ 
+-		l2: l2-cache@500c0000 {
++		l2: cache-controller@500c0000 {
+ 			compatible = "socionext,uniphier-system-cache";
+ 			reg = <0x500c0000 0x2000>, <0x503c0100 0x4>,
+ 			      <0x506c0000 0x400>;
+diff --git a/arch/arm/boot/dts/uniphier-pro5.dtsi b/arch/arm/boot/dts/uniphier-pro5.dtsi
+index f84a43a10f38..da772429b55a 100644
+--- a/arch/arm/boot/dts/uniphier-pro5.dtsi
++++ b/arch/arm/boot/dts/uniphier-pro5.dtsi
+@@ -131,7 +131,7 @@
+ 		ranges;
+ 		interrupt-parent = <&intc>;
+ 
+-		l2: l2-cache@500c0000 {
++		l2: cache-controller@500c0000 {
+ 			compatible = "socionext,uniphier-system-cache";
+ 			reg = <0x500c0000 0x2000>, <0x503c0100 0x8>,
+ 			      <0x506c0000 0x400>;
+@@ -144,7 +144,7 @@
+ 			next-level-cache = <&l3>;
+ 		};
+ 
+-		l3: l3-cache@500c8000 {
++		l3: cache-controller@500c8000 {
+ 			compatible = "socionext,uniphier-system-cache";
+ 			reg = <0x500c8000 0x2000>, <0x503c8100 0x8>,
+ 			      <0x506c8000 0x400>;
+diff --git a/arch/arm/boot/dts/uniphier-pxs2.dtsi b/arch/arm/boot/dts/uniphier-pxs2.dtsi
+index 989b2a241822..7044f8700cb2 100644
+--- a/arch/arm/boot/dts/uniphier-pxs2.dtsi
++++ b/arch/arm/boot/dts/uniphier-pxs2.dtsi
+@@ -157,7 +157,7 @@
+ 		ranges;
+ 		interrupt-parent = <&intc>;
+ 
+-		l2: l2-cache@500c0000 {
++		l2: cache-controller@500c0000 {
+ 			compatible = "socionext,uniphier-system-cache";
+ 			reg = <0x500c0000 0x2000>, <0x503c0100 0x8>,
+ 			      <0x506c0000 0x400>;
+diff --git a/arch/arm/boot/dts/uniphier-sld8.dtsi b/arch/arm/boot/dts/uniphier-sld8.dtsi
+index fbfd25050a04..09992163e1f4 100644
+--- a/arch/arm/boot/dts/uniphier-sld8.dtsi
++++ b/arch/arm/boot/dts/uniphier-sld8.dtsi
+@@ -51,7 +51,7 @@
+ 		ranges;
+ 		interrupt-parent = <&intc>;
+ 
+-		l2: l2-cache@500c0000 {
++		l2: cache-controller@500c0000 {
+ 			compatible = "socionext,uniphier-system-cache";
+ 			reg = <0x500c0000 0x2000>, <0x503c0100 0x4>,
+ 			      <0x506c0000 0x400>;
 -- 
 2.17.1
 
