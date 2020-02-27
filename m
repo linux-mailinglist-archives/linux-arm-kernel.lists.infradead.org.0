@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD0EE171835
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 14:06:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79EC917181F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 14:00:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4xisn99Ci+u+P8x8esUQh+kPBy2XCMm2su2kHYn7NB4=; b=LJfaTKMqRXi63v
-	QLzYVmOKrXgdARBGK02gjEyvdQamMS5y3pNwW3lBoiAAxEmKOtU2kKXXXfViWMwz/T8l/dqMSBCG+
-	TofdQrYgt44WGQKX43AT52zmYQYkHUf2lxj+4Fl/SvYp5B/B6oA73xFS7rSvTCxBrbS2OfHIlh6Pm
-	0hJn33oZC692HWaAd8l7QtgMaHDYgRLDbG03yT+wG8nkDGvhen6hzvx8pUp7Wc/tOWgjYCdNDurQ9
-	wrJBBJPRhH8CyaCSYK13fHYsDjKzt5NBCjZK9bXVXb2UsqeP5EaOVff+YRDsovQRoIQFZiSM6I14F
-	n7LQHK8+fZ1XTjmox5eQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V9YhaXUSQbjp/AvPvTnNzNek5jr9QxpyNBxRc/9CdWs=; b=elvlMwB2664Bwh
+	KbhbzLR3Z8FZn/CvpiAkryQvADHzfonpIPoyOCzHp1epP9XHrVNHt7EYy3WpHPBaFeRATJltleUmK
+	84XYUXoHkvES8T6i6Smg7mTtxuul6f/t8kTvPTHN0vaq2EQzpmSlEirMJk50PSRIbcpt8C7IaMOnz
+	4kyERt6r8DmLW5KwZl/XOCipLqX+POU0How7o1j5oWpUUfQPyVyNQbcCpdidkozNFNnyVXaDjIfv2
+	7PP2/6hihFjVrWk5TvA7REwOtoN/fFjz0fO9i8IU5bm7zIlfdRpTsDmYbrJm96BU9HmaHHNMdTlQW
+	veqAZmJ24uSNNmul/4pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7IsG-00026v-2Y; Thu, 27 Feb 2020 13:06:44 +0000
-Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
+	id 1j7Im2-0008Ak-Pz; Thu, 27 Feb 2020 13:00:18 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Is3-00026P-No
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 13:06:33 +0000
-Received: by mail-wr1-x430.google.com with SMTP id l5so3271155wrx.4
+ id 1j7Ilt-0007Ul-PL
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 13:00:11 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c84so3305082wme.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 05:06:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=r9UDArMRXs4Mmuh86mluCWMWz6S3F8bHKkTAV4tquwc=;
- b=dQtnK7x6rc9gwoWqwwCtjeX8IKsQYwxhnvCkjo7OaAfutwqX0KNKbfwdp90f9Xt2JE
- 6jkxdR4yQYViWKAnnbjnOCs4ErCCNZBCX58u7Vdwj5KzuFhtoBhPVA/JnVW8FvZSVTlL
- 5xZHiiUroijt74+FaCpVBJbmW0IdHZJ9yGhrwAwakr/dQhf2Y381D4kSf7R4mxqDWBsI
- xE8GwMEoj5UJgWPit/Os7rqW1NLdKv9SOpMZNScmbQy7B0INsrEs0UWouJ1nadIQc8Nb
- fFIeGrX6SvSfWwjkDO9/kl43hxybXGEUOeJfdQMEgQ0/Np0GyRFfwgVboVmaPb9VpqU7
- 1k2Q==
+ Thu, 27 Feb 2020 05:00:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=lF1WpNMmDIC+u5WUFqN6XI3/wXMvIRCjntbaMdrFGfg=;
+ b=IARaMUZPJiCDFrzzJwyWb6YRob1J06IUMUj73rqLrl3Ppn2wS5eJPgwlML7IHofhy/
+ 2vf5hO+Nxf4m1l3oC4JUcc7Hycie16A5bdmxyzvR8ybGG19Vv74J/0OdSSzOtXAIAtFm
+ hMdlDcz5qhKEWvM924Bb6wqORS+DdqDMMh0H5v7DlndWs3/uUJKmmlF5c7Pnu8OdtuG1
+ VApamd3WADlVVWGzYbr2a6BxRq5U34ILOaDQhh/SURP7x9fisOuMZn2MG+h5CFPxnUuh
+ Za4SaJk52aI2JKEpRn4Fpd6QCc2qeQcY9u1+vXWi/UPTVb7jpQ1tclDVVaEd2hmdcgV6
+ 5/9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=r9UDArMRXs4Mmuh86mluCWMWz6S3F8bHKkTAV4tquwc=;
- b=BrM0nd5/ier/+4zUYl5s+k2t46R8HbjYuCCo7FI8szsE/OjiKP/bc+q2rMcCHlzLQI
- wMd1Q/9aP5IXTXSdCmnrSYJ824ftPOpjrqbyXOMIWBGi2ZAitPrmVQaEGbAKD6Piku/u
- ZhBhVJi/oc87ZCrxQAwLakAu8xaQsNBaOvLfS8nPzf8j25MxxVtRX73ZVpJFRrC0yszH
- 9CyM69Dy5huNut4tp3hayQGK6nfxY/LxXCDTOR39+E2pIbulLA2WS90zzyjDaNaHrEtK
- Upwu1wOLnim9dyddmQ53IVLzCo8P+IvmvcAH9cLSQK7clBdQJD/7+8IveJsV6J7UX74G
- y60w==
-X-Gm-Message-State: APjAAAW+doM+fkluPEso0CPnWI/uuJbC+PT9pRRPPqr0iyOupnyTQF6t
- id8U6pIHzoRXOcUG09B4jJo=
-X-Google-Smtp-Source: APXvYqwyWG0bYHyhxsK+EnYYgz3YtoQiRKQcnmffBH+PsYQCzSZ2hjB04mCUtyT7ifXoL+j5W1XJ1g==
-X-Received: by 2002:a05:6000:14d:: with SMTP id
- r13mr4793931wrx.63.1582808789241; 
- Thu, 27 Feb 2020 05:06:29 -0800 (PST)
-Received: from localhost (dslb-002-207-138-002.002.207.pools.vodafone-ip.de.
- [2.207.138.2])
- by smtp.gmail.com with ESMTPSA id p16sm7151635wrw.15.2020.02.27.05.06.28
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 27 Feb 2020 05:06:28 -0800 (PST)
-Date: Thu, 27 Feb 2020 13:57:43 +0100
-From: Oliver Graute <oliver.graute@gmail.com>
-To: aisheng.dong@nxp.com, anson.huang@nxp.com
-Subject: RFC: imx8qm: imx-scu-clk: probe of clk failed
-Message-ID: <20200227125743.GC16310@optiplex>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=lF1WpNMmDIC+u5WUFqN6XI3/wXMvIRCjntbaMdrFGfg=;
+ b=ME4OAy0eRm9T3RSG8YdN/lPyNCm1aKfhNI6CCqDRf/dTrf2B5Y9atLxrtyEe1/KxMD
+ 0RmXIHBzFgO9NQUC8+JlGYeh14sK8Gih/MvAU+kOwOKG115HW/vMXMJ5IBJMV/0cxmMm
+ 3UHmfcsOJvfmI3IAt4FMC9p+IeOg34p2WFwtWY/NuWnpzi5n0/Y2YgxMm8THvlQJBg+b
+ SaXQI5f7rYmz6HlCuXCcmMj6EGyU/56osgjIesZOq+uUcpkCXQenyutjt+e6+wRQsPdk
+ 5VslBXU2ALlTqBXexlGcFbWyIT4Pn+gTVWEX4AqzPSTvOSuYyCwBaoaB74+e1xZ8VKeR
+ nPUQ==
+X-Gm-Message-State: APjAAAWAKlU593jncigDflMZ50vJsqE+3XTL7+fsskGopJhotQbHTu98
+ q2fMcNn33Ocg5k/W3iaajpG15w==
+X-Google-Smtp-Source: APXvYqyJc8z85FxR6Y8xbHanOXMr3EKjgHVQ0zhtwSRKjHALBfFlCDS/ccmFZBafwRz3YaXDguz5LA==
+X-Received: by 2002:a7b:c119:: with SMTP id w25mr5324707wmi.116.1582808405179; 
+ Thu, 27 Feb 2020 05:00:05 -0800 (PST)
+Received: from google.com ([2a00:79e0:d:110:d6cc:2030:37c1:9964])
+ by smtp.gmail.com with ESMTPSA id e18sm8033429wrw.70.2020.02.27.05.00.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 05:00:04 -0800 (PST)
+Date: Thu, 27 Feb 2020 13:00:01 +0000
+From: Quentin Perret <qperret@google.com>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [PATCH 1/2] sched/topology: Don't enable EAS on SMT systems
+Message-ID: <20200227130001.GA107011@google.com>
+References: <20200226164118.6405-1-valentin.schneider@arm.com>
+ <20200226164118.6405-2-valentin.schneider@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200226164118.6405-2-valentin.schneider@arm.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_050631_800023_74ADF9F6 
-X-CRM114-Status: UNSURE (   8.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_050009_852983_383CEE10 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:430 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
+ 3.0 FSL_HELO_FAKE          No description available.
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [oliver.graute[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,6 +92,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,53 +105,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mturquette@baylibre.com, linux-clk@vger.kernel.org, linux-imx@nxp.com,
- leonard.crestez@nxp.com, festevam@gmail.com, s.hauer@pengutronix.de,
+Cc: morten.rasmussen@arm.com, Mark Rutland <mark.rutland@arm.com>,
+ kernel-team@android.com, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@kernel.org>, Will Deacon <will@kernel.org>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Aisheng,
-Hello Anson,
+On Wednesday 26 Feb 2020 at 16:41:17 (+0000), Valentin Schneider wrote:
+> EAS already requires asymmetric CPU capacities to be enabled, and mixing
+> this with SMT is an aberration, but better be safe than sorry.
+> 
+> Signed-off-by: Valentin Schneider <valentin.schneider@arm.com>
 
-I get the following imx-scu errors when using Linux version
-5.6.0-rc1-next-20200214 with scfw Build 3353, Commit 494c97f3
+Acked-by: Quentin Perret <qperret@google.com>
 
-It seems that important clocks are off somehow and that lpspi isn't
-working because of that. What is the best way to debug such issues?
+Thanks,
+Quentin
 
-[    1.103799] imx-scu scu: NXP i.MX SCU Initialized
-[    1.111383] a35_clk: failed to get clock rate -22
-[    1.122843]  lcd0-pwm0: failed to power up resource 188 ret -22
-[    1.128438] imx-scu-clk: probe of pwm_clk failed with error -22
-[    1.134746]  lcd0: failed to power up resource 187 ret -22
-[    1.139898] imx-scu-clk: probe of lcd_clk failed with error -22
-[    1.151177] mipi_csi0_core_clk: failed to attached the power domain -2
-[    1.157581] mipi_csi0_esc_clk: failed to attached the power domain -2
-[    1.163985] mipi_csi0_i2c0_clk: failed to attached the power domain -2
-[    1.170524] mipi_csi0_pwm0_clk: failed to attached the power domain -2
-[    1.181817] imx8qm-pinctrl scu:pinctrl: initialized IMX pinctrl driver
-[    1.211140] random: fast init done
-[    1.216039] 5a060000.serial: ttyLP0 at MMIO 0x5a060000 (irq = 8, base_baud = 5000000) is a FSL_LPUAR[    1.225100] printk: console [ttyLP0] enabled
-[    1.225100] printk: console [ttyLP0] enabled
-[    1.233543] printk: bootconsole [lpuart32] disabled
-[    1.233543] printk: bootconsole [lpuart32] disabled
-[    1.243549] fsl-lpuart 5a060000.serial: DMA tx channel request failed, operating without tx DMA
-[    1.252275] fsl-lpuart 5a060000.serial: DMA rx channel request failed, operating without rx DMA
-[    1.261868] 5a070000.serial: ttyLP1 at MMIO 0x5a070000 (irq = 9, base_baud = 0) is a FSL_LPUART
-[    1.270767] fsl-lpuart 5a070000.serial: DMA tx channel request failed, operating without tx DMA
-[    1.279481] fsl-lpuart 5a070000.serial: DMA rx channel request failed, operating without rx DMA
-[    1.289310] fb_st7789v spi0.0: fbtft_property_value: buswidth = 9
-[    1.296105] fsl_lpspi 5a010000.lpspi: failed to enable clock
-[    1.301771] spi_master spi0: failed to prepare transfer hardware: -13
-[    1.308231] fb_st7789v spi0.0: write() failed and returned -13
-
-
-Best regards,
-
-Oliver
+> ---
+>  kernel/sched/topology.c | 4 ++++
+>  1 file changed, 4 insertions(+)
+> 
+> diff --git a/kernel/sched/topology.c b/kernel/sched/topology.c
+> index 00911884b7e7..76cd0a370b9a 100644
+> --- a/kernel/sched/topology.c
+> +++ b/kernel/sched/topology.c
+> @@ -360,6 +360,10 @@ static bool build_perf_domains(const struct cpumask *cpu_map)
+>  		goto free;
+>  	}
+>  
+> +	/* EAS definitely does *not* handle SMT */
+> +	if (sched_smt_active())
+> +		goto free;
+> +
+>  	for_each_cpu(i, cpu_map) {
+>  		/* Skip already covered CPUs. */
+>  		if (find_pd(pd, i))
+> -- 
+> 2.24.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
