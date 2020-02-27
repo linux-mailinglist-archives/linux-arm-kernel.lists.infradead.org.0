@@ -2,88 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CE92172B60
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 23:34:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08AB4172B69
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 23:35:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PoFYBFnD/cEeGE73dclgRabQbcYKgU1z+r7pZtmV65Y=; b=WQz2rjQLMuB5+O
-	aO7LIJ4Va49EaRgSSaThVy9jo+TPG8/uP9eozkCazKRLhKKYAq7YRYPDMcKybutbPUuqpbafCHJ0K
-	45qB+ySP7pMxnUEwd456nUK8tir78smilfnnWwOVfAwUqXPRXuCXnqpQzqt2acxDktafCsCBTDEoB
-	UdiEXGnUaiIghMaJzj8jzKYEMt0rILMESiLpBQDETVNv8eOgi0Uz1b2/aShKiaqilSuMjp5V34hrX
-	Tqh8dZcNKCSRkBI+V9NKtGvqzh9Y+/nozZargEOkQKTMx2l/vXrlS9HfuJ66iDKIYlf7DOhwKohNu
-	n9ruXxxtzCyV3VVDleng==;
+	List-Owner; bh=VGtUByY3KcqqBOss3Q9ihcdbyjEbYcNfDpSccYxc0D8=; b=BiKtA4T3iprnBB
+	EIfUAt6htkNGmw/wpo2jhY6RjeyRlYIhTvwp7UPAqHG7lMRqFINhz9dYjMjPxjgRdF66Kw3gMKO0G
+	jhDAJG+6ALR114aMNQMdpHjfgrZkVj3uhXZOta+nWVTwjjr36OMeG6JNn5H9CJQWl83Sl60GiYyBX
+	EYPo3vSGsRk2/7WZlD5B59FEoU230yynTXUbAQsZRQCOCYa1nVxNXsPOUUpwKhJrpPCsM9ngu17eq
+	paFqCOr5GzKA99nNQ5y35wMjt0RO8Tp30neqbwCWm3ACPlnT4ZgCDyIjrPKpnw7OgJzmV0qYxKIvF
+	0w4OBxxTZ/ARBgzpzGow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Rjy-0003tr-4u; Thu, 27 Feb 2020 22:34:46 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j7RkK-00047z-4o; Thu, 27 Feb 2020 22:35:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Rjk-0003sl-Bs
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 22:34:33 +0000
-Received: by mail-pf1-x444.google.com with SMTP id i13so597243pfe.3
+ id 1j7Rk0-00043p-D6
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 22:34:51 +0000
+Received: from mail-qk1-f178.google.com (mail-qk1-f178.google.com
+ [209.85.222.178])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9ABD2246AA
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 14:34:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=uEgm7G3Oorn2p+U3SUvjAXjrUbk1a/Mg7TANrk2b//4=;
- b=qBGk3y53fGrIoD9YVbCtRjk94Q6RcxNk2DSm3mh434SY+OeNEv+jBkV8dglcusUA+R
- L9mwI4MHxQNulbX/2XretJJFtukcDGzr2zLCBNAkiws90+uuoSKtuF1EROggBJffSdKA
- qgggk49UicheeH2QMRaXodHbyDiRh7P6/kHwp03Qgo9PQ24UR4jbyoqss3gfllwvQvVL
- xwPDxSBopjmtHJX5f74rVo97JgjI8Yitea1jHRJYWPIvIVzfbC6PC9a5X0IHms8IgMCK
- 4WlJkdiWKYejSZSyCp9T8rIybyOSefTm2XK4DXMzvuRuMra5mVvzOdAJGX853Tdp2LWM
- Rx2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uEgm7G3Oorn2p+U3SUvjAXjrUbk1a/Mg7TANrk2b//4=;
- b=qSP3S4+82HblS3n0dmJbxkCWyawVa3hZ+ByPtoNWGq1edqlmMvvWVJ5ZUfJteObMwj
- 6yCxFF7O2WY94vOIi9pjN6th6ayms9FbMPRZM45CnnO/cW5CyLwdZ3F+i+vR52ulYHwO
- jTMzI/cPdS+RqWfYPk6EgCMGiMmEzQS1nRqWUKtMxIvfEd3yVkqCjlM+/o7VM6udWLC8
- nXeqscLdlX1PaTJ+utSQzQL/sSDbEjR9GX1e+R9l6oEvwpHeOsXMwGJW1Tvwdp1sc9bJ
- 9FFGmoRMaB9fmWxiKJklkH3q2euDVE880d05HisVGCDOwXTkBM52ClwPUJPHWIDgj0UA
- /kZw==
-X-Gm-Message-State: APjAAAX7nEid1JBdLAjXCfbz65QLsCxH5wGipcx/IpykRiydH8ejgPtA
- KFPniP1BeqJO64fFMiq2aQA=
-X-Google-Smtp-Source: APXvYqw5t5F5Y64xPWlPBKQeB1b3ZAolobkAyq2a30keMZ7QjMV3RtaaKUEDeVezZZN7BeyPxNi9EQ==
-X-Received: by 2002:a62:6d01:: with SMTP id i1mr1237798pfc.94.1582842869095;
- Thu, 27 Feb 2020 14:34:29 -0800 (PST)
-Received: from taoren-ubuntu-R90MNF91 ([2620:10d:c090:500::4:d8f5])
- by smtp.gmail.com with ESMTPSA id y193sm5500583pgd.87.2020.02.27.14.34.28
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 27 Feb 2020 14:34:28 -0800 (PST)
-Date: Thu, 27 Feb 2020 14:34:25 -0800
-From: Tao Ren <rentao.bupt@gmail.com>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH v4 6/7] ARM: dts: aspeed-g4: add vhub port and endpoint
- properties
-Message-ID: <20200227223425.GB29420@taoren-ubuntu-R90MNF91>
-References: <20200226230346.672-1-rentao.bupt@gmail.com>
- <20200226230346.672-7-rentao.bupt@gmail.com>
- <83d7b817234f99c92272f7950129c56a58f4de54.camel@kernel.crashing.org>
- <CACPK8XdkPLZVJTpAc2u3Q0W0KoRrC4hfHjy27VKpGDRF45JByg@mail.gmail.com>
+ Thu, 27 Feb 2020 22:34:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582842885;
+ bh=YaGh6D1HzZ7fNKCmGcqwfIeREmWsHw1fRwfnKYtFmzE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Vtupj6DZECBmVkSIhKs//W0XwsQmOxTt4UepDYJwQEuOg4vEvKHMYW6U5MI3XG6rF
+ ECX0OqVBvXgDCczjDg9okCAU/kyqNMdfNI7pwFpFCaT7/sxNNRbX5mhW9rSHId5kS8
+ HrdfBSFLZoIotsMniP2g4di6KEv10U2Gl95hVKVo=
+Received: by mail-qk1-f178.google.com with SMTP id e16so1165588qkl.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 14:34:45 -0800 (PST)
+X-Gm-Message-State: APjAAAXqQXluzLj4VqP2fsnZY5HtS0ZgrktePYazGMfYMrQCNHcnXpZa
+ /HtNukNp/WAHnyIflha2lIsM/Au83bNRusAiXA==
+X-Google-Smtp-Source: APXvYqyeC5qhzNELpJaQTWJ0dR3EvH/Ikp7mcj1v76BER8UPpw9OHDgX/94cm+5BGXHVmQc+0agiMxuvdmrlGH8RZmI=
+X-Received: by 2002:ae9:f205:: with SMTP id m5mr1905154qkg.152.1582842884742; 
+ Thu, 27 Feb 2020 14:34:44 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACPK8XdkPLZVJTpAc2u3Q0W0KoRrC4hfHjy27VKpGDRF45JByg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200221174754.5295-1-michael@walle.cc>
+ <20200221174754.5295-4-michael@walle.cc>
+In-Reply-To: <20200221174754.5295-4-michael@walle.cc>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 27 Feb 2020 16:34:33 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqL8QGKARtRAfjCMyk4Pp7EWhFMV8JQpveHoJ2OyH5kBPA@mail.gmail.com>
+Message-ID: <CAL_JsqL8QGKARtRAfjCMyk4Pp7EWhFMV8JQpveHoJ2OyH5kBPA@mail.gmail.com>
+Subject: Re: [PATCH v2 3/9] tty: serial: fsl_lpuart: handle EPROBE_DEFER for
+ DMA
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_143432_429308_4FB2F4EB 
-X-CRM114-Status: GOOD (  15.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_143448_476014_572F5522 
+X-CRM114-Status: GOOD (  12.86  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rentao.bupt[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -92,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,51 +87,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- devicetree <devicetree@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>, linux-usb@vger.kernel.org,
- Tao Ren <taoren@fb.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Peng Fan <peng.fan@nxp.com>, Vabhav Sharma <vabhav.sharma@nxp.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 05:54:34AM +0000, Joel Stanley wrote:
-> On Thu, 27 Feb 2020 at 04:11, Benjamin Herrenschmidt
-> <benh@kernel.crashing.org> wrote:
-> >
-> > On Wed, 2020-02-26 at 15:03 -0800, rentao.bupt@gmail.com wrote:
-> > > From: Tao Ren <rentao.bupt@gmail.com>
-> > >
-> > > Add "aspeed,vhub-downstream-ports" and "aspeed,vhub-generic-
-> > > endpoints"
-> > > properties to describe supported number of vhub ports and endpoints.
-> > >
-> > > Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
-> >
-> > Acked-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> 
-> Reviewed-by: Joel Stanley <joel@jms.id.au>
-> 
-> I will take this patch through the aspeed tree for 5.7.
-> 
-> Cheers,
-> 
-> Joel
+On Fri, Feb 21, 2020 at 11:48 AM Michael Walle <michael@walle.cc> wrote:
+>
+> The DMA channel might not be available at the first probe time. This is
+> esp. the case if the DMA controller has an IOMMU mapping.
+>
+> Use the new dma_request_chan() API and handle EPROBE_DEFER errors. Also
+> reorder the code a bit, so that we don't prepare the whole UART just to
+> determine that the DMA channel is not ready yet and we have to undo all
+> the stuff. Try to map the DMA channels earlier.
 
-Thanks Joel for the continued support!
+Changing this means you never probe successfully if you boot a kernel
+with the DMA driver disabled (or it's IOMMU disabled). Some other
+drivers request DMA in open() and can work either way.
 
-Cheers,
-
-Tao
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
