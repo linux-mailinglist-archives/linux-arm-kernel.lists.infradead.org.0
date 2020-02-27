@@ -2,80 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 856BB172AF0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 23:14:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12868172AFF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 23:22:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tu+b23UZXTYIHb+JMfwqpZeoTNuCO6eSWgn5rOpiX7Y=; b=Dz1eKWZk+vNBU3
-	+yfaXcDTmxptoLr+v21z2m6uFWHILgqAq3alEUoywry709EWPE/gR6/+FBrDocP7N0yEqp/nJqcGt
-	ZUwmjWtvZKgq4seZbfCc/h3UcDxW6STlJbuErhj520H/GvEagSKK+oHachVeOlWVTv/N6Qgvw5m49
-	uExDhhb6IAjxGJWvBgFHUhs1zPmA2vTP3V90+GbQaqZOaFxiEFAS2nxZnRVtpADvci3imDnvdlf0H
-	KkHmd25S+wxrQ/6yBsguXdoE79LWshYrO20FH+dVV754mudBKqPdDhrDrDHQkznRX6E9foOv6unz1
-	2SjuEXdL8Umpr1M/pNcQ==;
+	List-Owner; bh=X0vieQQTJA/hp44cHRC8Hi7SgUrxznBG818R+OHTTN0=; b=kow9/fwgZ+q19G
+	IokHyaHw8tZZeiUsic0sX+CBrwDGw/7Y2V41pGqhEGdPN8pStMdsD/7GgOkFpj+fwcz3/crF6GI+W
+	qtx0yMLvGOM5pjPxan2No5yHDLGbn5NyqCASFNdsKhKNH9gLbRUNRKbMSbvFUQLUGlV68b1yr2pfi
+	D6xznPg0N97XfuleZcBCjuSP5P/A4WtPDpsfXMNGt+vucDCL9TtkZ89c2WOfCaAgNSofur7WpCCPj
+	7bEMJ4C8oJvuO3kDN+qzfYbrLIRrGQdXa54ToqMm8z1wAXGc+lgccUAGR8BLB1flHqtJy3Hs3ZG7L
+	dwm+AiieTmWxdjUfRLDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7RQA-0003oJ-O2; Thu, 27 Feb 2020 22:14:18 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1j7RXa-00072T-Ov; Thu, 27 Feb 2020 22:21:58 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7RPw-0003nG-Q9; Thu, 27 Feb 2020 22:14:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TLyRnJ1kCDzmRuRPTz7K92VaFFh1/vMyyOGH0HaTtQU=; b=hCxh6qfDzl2vp7DfzH7YiKHP4
- DhRLp6tdz6Pf8sxKQD3D3uLhUeE+80ZYoKZT3UyLGQSdNw2BZ2vr/HFjStzNnKnsTYpuy/9jOOGfk
- 6he1mGrm1X7/9X5DeNZUs1Z0YBlJbGOhyg/Mxqn/zwJREwIsRGrpgC623yJdZzyZ7xB5x/DQCzdNa
- fm5KA+xAB23YrLCSiNZBi0hBMiSRKZamKETgxTXepn1R/l59dEmUXwWzllDpEEhgRZJDxCjgOc3kp
- mQO+YUx+2XZASMjQcq5zZM75k/L8YzXGdqB7mqjRvkBPzH4TlE6bzD5IbwetU/vIwC7WwXYqo+UDW
- J0cfEvkEA==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:53650)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j7RPK-0008OF-2y; Thu, 27 Feb 2020 22:13:26 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j7RP9-0001Kj-JH; Thu, 27 Feb 2020 22:13:15 +0000
-Date: Thu, 27 Feb 2020 22:13:15 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: David Miller <davem@davemloft.net>
-Subject: Re: [PATCH net-next v2 0/8] rework phylink interface for split
- MAC/PCS support
-Message-ID: <20200227221315.GS25745@shell.armlinux.org.uk>
-References: <20200226102312.GX25745@shell.armlinux.org.uk>
- <20200227.120254.241641132362203475.davem@davemloft.net>
+ id 1j7RXP-00071o-N5
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 22:21:49 +0000
+Received: by mail-oi1-f194.google.com with SMTP id v19so848475oic.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 14:21:47 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=du04IHx+HutirdW4IRyHgf7LAWxcnOztVFIEX1SqbB8=;
+ b=mPqujroejGZYp8fXjqTZcLnjffYZd+QCOKlCD9Qb6vHtfrt9Ubwk79eMqkW14gcor8
+ yds0CMtHUGzuAju84IznbsVHfzYc1xV3UgRpn3NA1MZrEM7TB2FNra/G+acvDixAn2kk
+ 1t1byFbnDFatnKx1TawqyGv4gSXBgNCw00FIDNhhsxbyvQ10C5C59O2tMjIGMIhYhuo4
+ jPRjNF+hDa2/z/y8xIpEHa48DipicoGbCA8qB3veYLjMMaQts+oi16OhLHBeXVhol1bK
+ pyPpxPu+dAYM1JgBqMtmcsOkbgdUoH1Pa4Wk63/s8eM7CHJdKxQx50mNcQnoLaIZuoVd
+ AGGw==
+X-Gm-Message-State: APjAAAUo+hCI+wAdNqouAU14vyep9vvF2PfQWplFHQWjIUOhCcL9kvSb
+ cLwSIHtPk3Me9B0YaiUKUg==
+X-Google-Smtp-Source: APXvYqyEkDcaG0j8dAL0P9PQF1fWf4H41MVvV6Cb5ceuV0GzrQuoqmkuHkhHkuOq7dxd45/LCQIhtw==
+X-Received: by 2002:a54:4106:: with SMTP id l6mr956240oic.76.1582842106769;
+ Thu, 27 Feb 2020 14:21:46 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id j5sm2383610otl.71.2020.02.27.14.21.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 14:21:46 -0800 (PST)
+Received: (nullmailer pid 24260 invoked by uid 1000);
+ Thu, 27 Feb 2020 22:21:45 -0000
+Date: Thu, 27 Feb 2020 16:21:45 -0600
+From: Rob Herring <robh@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v2 11/13] dt-bindings: ipmi: Convert IPMI-SMIC bindings
+ to json-schema
+Message-ID: <20200227222145.GF26010@bogus>
+References: <20200227182210.89512-1-andre.przywara@arm.com>
+ <20200227182210.89512-12-andre.przywara@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200227.120254.241641132362203475.davem@davemloft.net>
+In-Reply-To: <20200227182210.89512-12-andre.przywara@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_141404_848654_66B5A103 
-X-CRM114-Status: GOOD (  19.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_142147_754637_7D10F329 
+X-CRM114-Status: GOOD (  23.27  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,66 +94,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, linux-doc@vger.kernel.org, thomas.petazzoni@bootlin.com,
- ioana.ciornei@nxp.com, linux-stm32@st-md-mailman.stormreply.com,
- f.fainelli@gmail.com, corbet@lwn.net, michal.simek@xilinx.com,
- hkallweit1@gmail.com, joabreu@synopsys.com, kuba@kernel.org,
- vivien.didelot@gmail.com, sean.wang@mediatek.com, alexandre.torgue@st.com,
- hauke@hauke-m.de, radhey.shyam.pandey@xilinx.com,
- linux-mediatek@lists.infradead.org, john@phrozen.org, matthias.bgg@gmail.com,
- peppe.cavallaro@st.com, linux-arm-kernel@lists.infradead.org,
- netdev@vger.kernel.org, Mark-MC.Lee@mediatek.com, mcoquelin.stm32@gmail.com,
- olteanv@gmail.com, nbd@nbd.name
+Cc: devicetree@vger.kernel.org, Jon Loeliger <jdl@jdl.com>,
+ Mark Langsdorf <mlangsdo@redhat.com>, Robert Richter <rric@kernel.org>,
+ Corey Minyard <minyard@acm.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Eric Auger <eric.auger@redhat.com>, soc@kernel.org,
+ openipmi-developer@lists.sourceforge.net, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 12:02:54PM -0800, David Miller wrote:
-> From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-> Date: Wed, 26 Feb 2020 10:23:12 +0000
+On Thu, Feb 27, 2020 at 06:22:08PM +0000, Andre Przywara wrote:
+> Convert the generic IPMI controller bindings to DT schema format
+> using json-schema.
 > 
-> > The following series changes the phylink interface to allow us to
-> > better support split MAC / MAC PCS setups.  The fundamental change
-> > required for this turns out to be quite simple.
-> > 
-> > Today, mac_config() is used for everything to do with setting the
-> > parameters for the MAC, and mac_link_up() is used to inform the
-> > MAC driver that the link is now up (and so to allow packet flow.)
-> > mac_config() also has had a few implementation issues, with folk
-> > who believe that members such as "speed" and "duplex" are always
-> > valid, where "link" gets used inappropriately, etc.
-> > 
-> > With the proposed patches, all this changes subtly - but in a
-> > backwards compatible way at this stage.
-> > 
-> > We pass the the full resolved link state (speed, duplex, pause) to
-> > mac_link_up(), and it is now guaranteed that these parameters to
-> > this function will always be valid (no more SPEED_UNKNOWN or
-> > DUPLEX_UNKNOWN here - unless phylink is fed with such things.)
-> > 
-> > Drivers should convert over to using the state in mac_link_up()
-> > rather than configuring the speed, duplex and pause in the
-> > mac_config() method. The patch series includes a number of MAC
-> > drivers which I've thought have been easy targets - I've left the
-> > remainder as I think they need maintainer input. However, *all*
-> > drivers will need conversion for future phylink development.
-> > 
-> > v2: add ocelot/felix and qca/ar9331 DSA drivers to patch 2, add
-> >   received tested-by so far.
-> 
-> In order to end the storm in a teacup, I've applied this series.
-> 
-> :-)
-> 
-> Thanks Russell.
+> I removed the formerly mandatory device-type property, since this
+> is deprecated in the DT spec, except for the legacy CPU and memory
+> nodes.
 
-Thanks David, I was getting concerned that the teacup might break! :p
+Yes, but it is still used by the ipmi driver to match on, so we should 
+keep it.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> Cc: Corey Minyard <minyard@acm.org>
+> Cc: openipmi-developer@lists.sourceforge.net
+> ---
+>  .../devicetree/bindings/ipmi/ipmi-smic.txt    | 25 ---------
+>  .../devicetree/bindings/ipmi/ipmi-smic.yaml   | 56 +++++++++++++++++++
+>  2 files changed, 56 insertions(+), 25 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/ipmi/ipmi-smic.txt
+>  create mode 100644 Documentation/devicetree/bindings/ipmi/ipmi-smic.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/ipmi/ipmi-smic.txt b/Documentation/devicetree/bindings/ipmi/ipmi-smic.txt
+> deleted file mode 100644
+> index d5f1a877ed3e..000000000000
+> --- a/Documentation/devicetree/bindings/ipmi/ipmi-smic.txt
+> +++ /dev/null
+> @@ -1,25 +0,0 @@
+> -IPMI device
+> -
+> -Required properties:
+> -- compatible: should be one of ipmi-kcs, ipmi-smic, or ipmi-bt
+> -- device_type: should be ipmi
+> -- reg: Address and length of the register set for the device
+> -
+> -Optional properties:
+> -- interrupts: The interrupt for the device.  Without this the interface
+> -	is polled.
+> -- reg-size - The size of the register.  Defaults to 1
+> -- reg-spacing - The number of bytes between register starts.  Defaults to 1
+> -- reg-shift - The amount to shift the registers to the right to get the data
+> -	into bit zero.
+> -
+> -Example:
+> -
+> -smic@fff3a000 {
+> -	compatible = "ipmi-smic";
+> -	device_type = "ipmi";
+> -	reg = <0xfff3a000 0x1000>;
+> -	interrupts = <0 24 4>;
+> -	reg-size = <4>;
+> -	reg-spacing = <4>;
+> -};
+> diff --git a/Documentation/devicetree/bindings/ipmi/ipmi-smic.yaml b/Documentation/devicetree/bindings/ipmi/ipmi-smic.yaml
+> new file mode 100644
+> index 000000000000..c859e0e959b9
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/ipmi/ipmi-smic.yaml
+> @@ -0,0 +1,56 @@
+> +# SPDX-License-Identifier: GPL-2.0
+
+Anything I wrote which should be most of the series, you can relicense 
+to:
+
+(GPL-2.0-only OR BSD-2-Clause)
+
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/ipmi/ipmi-smic.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: IPMI device bindings
+> +
+> +description: IPMI device bindings
+> +
+> +maintainers:
+> +  - Corey Minyard <cminyard@mvista.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - ipmi-kcs
+> +      - ipmi-smic
+> +      - ipmi-bt
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    description: Interface is polled if this property is omitted.
+> +    maxItems: 1
+> +
+> +  reg-size:
+> +    description: The access width of the register in bytes. Defaults to 1.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - enum: [1, 2, 4, 8]
+
+Does 8 really work?
+
+> +
+> +  reg-spacing:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: The number of bytes between register starts. Defaults to 1.
+> +
+> +  reg-shift:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: |
+> +      The amount of bits to shift the register content to the right to get
+> +      the data into bit zero.
+
+either 24 or 56 would be the max, right?
+
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +
+> +examples:
+> +  - |
+> +    smic@fff3a000 {
+> +        compatible = "ipmi-smic";
+> +        reg = <0xfff3a000 0x1000>;
+> +        interrupts = <0 24 4>;
+> +        reg-size = <4>;
+> +        reg-spacing = <4>;
+> +    };
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
