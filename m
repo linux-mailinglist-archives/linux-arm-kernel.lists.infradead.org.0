@@ -2,89 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AE5D172AA1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 23:00:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF22172AC2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 23:05:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6wjiibfwfYdDQPq/HZKsebEVfySvyrvW4SvZ4/JXShw=; b=uK2IX+OQ6x9zQH
-	0p5CSBlVlqZM5WXVKk+rQkm4ZGOLq+2weK1eEyFsPUzmGroYa8LM5zFKjuMTOAuL4hU1DFhfJjsyw
-	qzVL7IwjMr8X2NTZSGWXJ60IJuD1F3sluaPwtEMBI6wmko8aoPXshNBdV0QgsrZj0mmfVzbfBt1n2
-	Y6O9IylNOB0MzUFjaAp36vwBLnEDw0YikYVi7tO3OMC1m3TZBMoF2zX/Qs2VhObUdniTY9/4Pstqq
-	+jea+HsgaTJ4XMVJsdosefskaH4O1YI7hros8IULm/nAWMHOHevuZE3hgxFhgwM+zI0ueAbDVOosq
-	jJvtGvqqtG9D6dKkB9/Q==;
+	List-Owner; bh=G82iLECgVhDlU4zhOZJZ6spsk+gKybbWvUP9kHgmn5E=; b=BR0F6cslOEvnCu
+	o6nO+QAj8e7T5tQOR3rcydZs5XoyzNCle1MQzICpyGrRY7kgyyKlWkdsxNnLzQVB0Q6fICFDUF+ha
+	RFqvluBp4WzMxc8RJNb9oXU7bm1NwYZSI0TJWnjK7qNQiwDPEVmCJCbUiu/jr7XZ8+DRPRMJPUaA/
+	NmlGgxQIOp7H6t5dNjVcqGtD+4MyKdIoMF/vH4W/BNZrXi+Shwh+8tcitNb7rkc+hr1840uLH7sdx
+	C9dWM0S/pi1a3U4X1yyxNt/PkW/q/tya8SBHqGy9Ma2pmF95xcxxolL/hj2JxPNNTLXD4CB0ToItM
+	fk+PqtElOQPY7eMVKxFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7RCG-0007Tu-7J; Thu, 27 Feb 2020 21:59:56 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1j7RHV-00020m-19; Thu, 27 Feb 2020 22:05:21 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7RC7-0007T8-8Z
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 21:59:50 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id ep11so367377pjb.2
+ id 1j7RHL-00020R-0e
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 22:05:12 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 66so695475otd.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 13:59:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=fTXwSB4VEwuhKImP00VDYWj8Af4ja5hCUGthoXkzd7w=;
- b=da4qGju1+eZ2u8i58+SFACyeBx7k8na1SwRT59gr6pARxKA7OBl7JlfyCR7xI1I3Kf
- /V/VJ1QOH11rKWuOKFg6KOIQSn+Jf7ZnhVidCNFdPdLe5622MrW8OtaZUl+w8nDRJzjC
- iU0mCfwyleneSgcMGPjzjbS919tBWgh52msMkbxy2L20TrjcgDaEEE4U+t6Xx4ARA6EY
- Pd7KbZc4mLkKkKvANfjruzXD6s8EcFm28mA+EXMt6QkUik1OE0lYSQ+hOAKbF+NE85Tg
- D0yvxM69y5mK8RJgJVo1EUow5kIadB0W6kCJP3apUHPOEgrj7i7YFk3BPvb13ic6uso0
- TA/w==
+ Thu, 27 Feb 2020 14:05:10 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=fTXwSB4VEwuhKImP00VDYWj8Af4ja5hCUGthoXkzd7w=;
- b=uURMlT1Pdqgab5zBWHM74WENZmExLfJTVvsFJf8f/e9hNpSNW67poNftEDrhFQBaR2
- RCqRtYQf7gaRy3HI//Qp6mUEi0N5O9hhxA1bTX+mkwAQcYR4hpArUUAKN+jURmJY1ugy
- ewDIc5Mnp2TrjFM4F0ejKyD5Ipt3oqcHxur3gtykDYV3mFwHJ0SMFBxVoupIl/ZTWutR
- EaCgX29rTg6vMI0BNxboAVHqw9L1yvYL6Z6sdxqNBT82S4DLSE24VxW3b2ueRFZ4N9YS
- 30QA9XZP1kgdezLMcS8VSO6pzL0sMs6ZthXdsL/VjTEgzfYbspGjUdQcWiqF3hnF77hD
- RJFQ==
-X-Gm-Message-State: APjAAAWFO5iPnTguPfm6y0e9e74nXEhTBEerZ/7SzxESUfSdgfllN7VB
- rgwQBAkI5mCD9Dwai1VRM7ylxZbQEt4=
-X-Google-Smtp-Source: APXvYqyJbAO6h6eSnb87jvQLhMjQwDPCpkhG8rjKyddMg705cLOaRbLZ4Ipmh0A78bB2EbWpjwj77A==
-X-Received: by 2002:a17:902:c113:: with SMTP id
- 19mr899784pli.138.1582840783021; 
- Thu, 27 Feb 2020 13:59:43 -0800 (PST)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id p21sm8081275pfn.103.2020.02.27.13.59.41
+ bh=5LDNhNs7r6soPU3FC796GU50umB+K7uQ7Dt/MTOuohM=;
+ b=I1vX+tKYw85Hi+6bJJujkv7qUG1FnpL/YXytJHqZdnnIE4Emgf7TdPC8wi0e0WjA+D
+ mrcKO9oOpjFhLyxco1NegSmxKCsBPBZvc4Q2o/JAefEe5+zpG1JDEavp4qqWw6wj1bSt
+ 9v2Jhpm2Gj9jkNK7B0OQ4EL2fWMxPsHo16rtdi5LgQsAwKElOXss0kRGHKBFmFRITGwb
+ zy7AK71oiRNrBgLgWrR/XaF5stbGYft8VcpMk1bnIHd66XXqTmHI++O6mfpyry6fRdbE
+ TN98H20eMRedBXbabaqItKuviDXElxSVhGT3KV5Kd4wk8YB0ksPAuCFnEpLh5l4GdxBm
+ yIxA==
+X-Gm-Message-State: APjAAAWuNwsna7JJss1JwDq5q9VZh/E1lXdFowL7kbmcuztz2wGAcOyU
+ aZXVqtjXnPVrwXsjIrgAaA==
+X-Google-Smtp-Source: APXvYqz483UTkmhXETzVPut22diHPjpIUjyvi6kkf0SgJXjG53JFOHWMPBWFSUslFGRMSY5ZATtrVQ==
+X-Received: by 2002:a9d:6e02:: with SMTP id e2mr876041otr.194.1582841109953;
+ Thu, 27 Feb 2020 14:05:09 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id x17sm1291122oia.0.2020.02.27.14.05.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 27 Feb 2020 13:59:42 -0800 (PST)
-Date: Thu, 27 Feb 2020 14:59:40 -0700
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Siddharth Gupta <sidgup@codeaurora.org>
-Subject: Re: [PATCH 6/6] remoteproc: qcom: Add notification types to SSR
-Message-ID: <20200227215940.GC20116@xps15>
-References: <1582167465-2549-1-git-send-email-sidgup@codeaurora.org>
- <1582167465-2549-7-git-send-email-sidgup@codeaurora.org>
+ Thu, 27 Feb 2020 14:05:09 -0800 (PST)
+Received: (nullmailer pid 1161 invoked by uid 1000);
+ Thu, 27 Feb 2020 22:05:08 -0000
+Date: Thu, 27 Feb 2020 16:05:08 -0600
+From: Rob Herring <robh@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v2 06/13] dt-bindings: sata: Convert Calxeda SATA
+ controller to json-schema
+Message-ID: <20200227220508.GE26010@bogus>
+References: <20200227182210.89512-1-andre.przywara@arm.com>
+ <20200227182210.89512-7-andre.przywara@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582167465-2549-7-git-send-email-sidgup@codeaurora.org>
+In-Reply-To: <20200227182210.89512-7-andre.przywara@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_135947_337662_7000C304 
-X-CRM114-Status: GOOD (  23.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_140511_064023_1E882EAA 
+X-CRM114-Status: GOOD (  21.43  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,145 +95,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, agross@kernel.org, rishabhb@codeaurora.org,
- psodagud@codeaurora.org, linux-arm-kernel@lists.infradead.org
+Cc: Jens Axboe <axboe@kernel.dk>, devicetree@vger.kernel.org,
+ Jon Loeliger <jdl@jdl.com>, Mark Langsdorf <mlangsdo@redhat.com>,
+ Robert Richter <rric@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Eric Auger <eric.auger@redhat.com>, soc@kernel.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 06:57:45PM -0800, Siddharth Gupta wrote:
-> The SSR subdevice only adds callback for the unprepare event. Add callbacks
-> for unprepare, start and prepare events. The client driver for a particular
-> remoteproc might be interested in knowing the status of the remoteproc
-> while undergoing SSR, not just when the remoteproc has finished shutting
-> down.
+On Thu, Feb 27, 2020 at 06:22:03PM +0000, Andre Przywara wrote:
+> Convert the Calxeda Highbank SATA controller binding to DT schema format
+> using json-schema.
 > 
-> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> Cc: Jens Axboe <axboe@kernel.dk>
 > ---
->  drivers/remoteproc/qcom_common.c | 39 +++++++++++++++++++++++++++++++++++----
->  include/linux/remoteproc.h       | 15 +++++++++++++++
->  2 files changed, 50 insertions(+), 4 deletions(-)
+>  .../devicetree/bindings/ata/sata_highbank.txt | 44 ---------
+>  .../bindings/ata/sata_highbank.yaml           | 95 +++++++++++++++++++
+>  2 files changed, 95 insertions(+), 44 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.txt
+>  create mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.yaml
 > 
-> diff --git a/drivers/remoteproc/qcom_common.c b/drivers/remoteproc/qcom_common.c
-> index 6714f27..6f04a5b 100644
-> --- a/drivers/remoteproc/qcom_common.c
-> +++ b/drivers/remoteproc/qcom_common.c
-> @@ -183,9 +183,9 @@ EXPORT_SYMBOL_GPL(qcom_remove_smd_subdev);
->   *
->   * Returns pointer to srcu notifier head on success, ERR_PTR on failure.
->   *
-> - * This registers the @notify function as handler for restart notifications. As
-> - * remote processors are stopped this function will be called, with the rproc
-> - * pointer passed as a parameter.
-> + * This registers the @notify function as handler for powerup/shutdown
-> + * notifications. This function will be invoked inside the callbacks registered
-> + * for the ssr subdevice, with the rproc pointer passed as a parameter.
->   */
->  void *qcom_register_ssr_notifier(struct rproc *rproc, struct notifier_block *nb)
->  {
-> @@ -227,11 +227,39 @@ int qcom_unregister_ssr_notifier(void *notify, struct notifier_block *nb)
->  }
->  EXPORT_SYMBOL_GPL(qcom_unregister_ssr_notifier);
->  
-> +static int ssr_notify_prepare(struct rproc_subdev *subdev)
-> +{
-> +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
+> diff --git a/Documentation/devicetree/bindings/ata/sata_highbank.txt b/Documentation/devicetree/bindings/ata/sata_highbank.txt
+> deleted file mode 100644
+> index aa83407cb7a4..000000000000
+> --- a/Documentation/devicetree/bindings/ata/sata_highbank.txt
+> +++ /dev/null
+> @@ -1,44 +0,0 @@
+> -* Calxeda AHCI SATA Controller
+> -
+> -SATA nodes are defined to describe on-chip Serial ATA controllers.
+> -The Calxeda SATA controller mostly conforms to the AHCI interface
+> -with some special extensions to add functionality.
+> -Each SATA controller should have its own node.
+> -
+> -Required properties:
+> -- compatible        : compatible list, contains "calxeda,hb-ahci"
+> -- interrupts        : <interrupt mapping for SATA IRQ>
+> -- reg               : <registers mapping>
+> -
+> -Optional properties:
+> -- dma-coherent      : Present if dma operations are coherent
+> -- calxeda,port-phys : phandle-combophy and lane assignment, which maps each
+> -			SATA port to a combophy and a lane within that
+> -			combophy
+> -- calxeda,sgpio-gpio: phandle-gpio bank, bit offset, and default on or off,
+> -			which indicates that the driver supports SGPIO
+> -			indicator lights using the indicated GPIOs
+> -- calxeda,led-order : a u32 array that map port numbers to offsets within the
+> -			SGPIO bitstream.
+> -- calxeda,tx-atten  : a u32 array that contains TX attenuation override
+> -			codes, one per port. The upper 3 bytes are always
+> -			0 and thus ignored.
+> -- calxeda,pre-clocks : a u32 that indicates the number of additional clock
+> -			cycles to transmit before sending an SGPIO pattern
+> -- calxeda,post-clocks: a u32 that indicates the number of additional clock
+> -			cycles to transmit after sending an SGPIO pattern
+> -
+> -Example:
+> -        sata@ffe08000 {
+> -		compatible = "calxeda,hb-ahci";
+> -		reg = <0xffe08000 0x1000>;
+> -		interrupts = <115>;
+> -		dma-coherent;
+> -		calxeda,port-phys = <&combophy5 0 &combophy0 0 &combophy0 1
+> -					&combophy0 2 &combophy0 3>;
+> -		calxeda,sgpio-gpio =<&gpioh 5 1 &gpioh 6 1 &gpioh 7 1>;
+> -		calxeda,led-order = <4 0 1 2 3>;
+> -		calxeda,tx-atten = <0xff 22 0xff 0xff 23>;
+> -		calxeda,pre-clocks = <10>;
+> -		calxeda,post-clocks = <0>;
+> -        };
+> diff --git a/Documentation/devicetree/bindings/ata/sata_highbank.yaml b/Documentation/devicetree/bindings/ata/sata_highbank.yaml
+> new file mode 100644
+> index 000000000000..6dcf91e1bac0
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/ata/sata_highbank.yaml
+> @@ -0,0 +1,95 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/ata/sata_highbank.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
-> +				 RPROC_BEFORE_POWERUP, (void *)ssr->name);
-> +	return 0;
-> +}
+> +title: Calxeda AHCI SATA Controller
 > +
-> +static int ssr_notify_start(struct rproc_subdev *subdev)
-> +{
-> +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
+> +description: |
+> +  The Calxeda SATA controller mostly conforms to the AHCI interface
+> +  with some special extensions to add functionality, to map GPIOs for
+> +  activity LEDs and for mapping the ComboPHYs.
 > +
-> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
-> +				 RPROC_AFTER_POWERUP, (void *)ssr->name);
-> +	return 0;
-> +}
+> +maintainers:
+> +  - Andre Przywara <andre.przywara@arm.com>
 > +
-> +static void ssr_notify_stop(struct rproc_subdev *subdev, bool crashed)
-> +{
-> +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
+> +properties:
+> +  compatible:
+> +    const: calxeda,hb-ahci
 > +
-> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
-> +				 RPROC_BEFORE_SHUTDOWN, (void *)ssr->name);
-> +}
+> +  reg:
+> +    maxItems: 1
 > +
+> +  interrupts:
+> +    maxItems: 1
 > +
->  static void ssr_notify_unprepare(struct rproc_subdev *subdev)
->  {
->  	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->  
-> -	srcu_notifier_call_chain(ssr->rproc_notif_list, 0, (void *)ssr->name);
-> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
-> +				 RPROC_AFTER_SHUTDOWN, (void *)ssr->name);
->  }
->  
->  /**
-> @@ -248,6 +276,9 @@ void qcom_add_ssr_subdev(struct rproc *rproc, struct qcom_rproc_ssr *ssr,
->  {
->  	ssr->name = ssr_name;
->  	ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
-> +	ssr->subdev.prepare = ssr_notify_prepare;
-> +	ssr->subdev.start = ssr_notify_start;
-> +	ssr->subdev.stop = ssr_notify_stop;
+> +  dma-coherent: true
+> +
+> +  calxeda,pre-clocks:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: |
+> +      Indicates the number of additional clock cycles to transmit before
+> +      sending an SGPIO pattern.
+> +
+> +  calxeda,post-clocks:
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    description: |
+> +      Indicates the number of additional clock cycles to transmit after
+> +      sending an SGPIO pattern.
+> +
+> +  calxeda,led-order:
+> +    description: Maps port numbers to offsets within the SGPIO bitstream.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +      - minItems: 1
+> +        maxItems: 8
+> +
+> +  calxeda,port-phys:
+> +    description: |
+> +      phandle-combophy and lane assignment, which maps each SATA port to a
+> +      combophy and a lane within that combophy
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/phandle-array
+> +      - minItems: 1
+> +        maxItems: 8
+> +
+> +  calxeda,tx-atten:
+> +    description: |
+> +      Contains TX attenuation override codes, one per port.
+> +      The upper 24 bits of each entry are always 0 and thus ignored.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +      - minItems: 1
+> +        maxItems: 8
+> +
+> +  calxeda,sgpio-gpio:
+> +    description: |
+> +      phandle-gpio bank, bit offset, and default on or off, which indicates
+> +      that the driver supports SGPIO indicator lights using the indicated
+> +      GPIOs.
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    sata@ffe08000 {
+> +        compatible = "calxeda,hb-ahci";
+> +        reg = <0xffe08000 0x1000>;
+> +        interrupts = <115>;
+> +        dma-coherent;
+> +        calxeda,port-phys = <&combophy5 0 &combophy0 0 &combophy0 1
+> +                             &combophy0 2 &combophy0 3>;
+> +        calxeda,sgpio-gpio =<&gpioh 5 1 &gpioh 6 1 &gpioh 7 1>;
 
-Now that I have a better understanding of what this patchset is doing, I realise
-my comments in patch 04 won't work.  To differentiate the subdevs of an rproc I
-suggest to wrap them in a generic structure with a type and an enum.  That way
-you can differenciate between subdevices without having to add to the core.
+Need to fix the bracketing here too.
 
-That being said, I don't understand what patches 5 and 6 are doing...
-Registering with the global ssr_notifiers allowed to gracefully shutdown all the
-MCUs in the system when one of them would go down.  But now that we are using
-the notifier on a per MCU, I really don't see why each subdev couldn't implement
-the right prepare/start/stop functions.
+BTW, no system ever shipped with SGPIO support, so all this could just 
+be removed.
 
-Am I missing something here?
- 
-
->  	ssr->subdev.unprepare = ssr_notify_unprepare;
->  	ssr->rproc_notif_list = kzalloc(sizeof(struct srcu_notifier_head),
->  								GFP_KERNEL);
-> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index e2f60cc..4be4478 100644
-> --- a/include/linux/remoteproc.h
-> +++ b/include/linux/remoteproc.h
-> @@ -449,6 +449,21 @@ struct rproc_dump_segment {
->  };
->  
->  /**
-> + * enum rproc_notif_type - Different stages of remoteproc notifications
-> + * @RPROC_BEFORE_SHUTDOWN:	unprepare stage of  remoteproc
-> + * @RPROC_AFTER_SHUTDOWN:	stop stage of  remoteproc
-> + * @RPROC_BEFORE_POWERUP:	prepare stage of  remoteproc
-> + * @RPROC_AFTER_POWERUP:	start stage of  remoteproc
-> + */
-> +enum rproc_notif_type {
-> +	RPROC_BEFORE_SHUTDOWN,
-> +	RPROC_AFTER_SHUTDOWN,
-> +	RPROC_BEFORE_POWERUP,
-> +	RPROC_AFTER_POWERUP,
-> +	RPROC_MAX
-> +};
-> +
-> +/**
->   * struct rproc - represents a physical remote processor device
->   * @node: list node of this rproc object
->   * @domain: iommu domain
-> -- 
-> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-> a Linux Foundation Collaborative Project
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
