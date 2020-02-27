@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E3F1172568
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:48:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FEF117255A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:46:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ohhWbHqzhLAAtgXBHWVM/MAS0YuN9V9Mdl172oYZxMM=; b=aLWhInMLn9az0I
-	1qZZnuDOOWKPVMzjH4xY6OhvVpkQPh7OTihs9L2G7YPei2S2PKzVzkynS7pskyz+FHpt2Zc0R+qKf
-	OJiu6Q7YV8y31E1lWms4eAOhu+ReHULP+d5Zr1WXtP7cAboEIGEYFw14EOoZeVdVwJuI4eIbB/CIh
-	JmuCLWqqq1bgPB31ds69xpYgDKGgsHqPzNvHlrqHO/WtQVLVIPoubsD96nYYZKRQVZP1xyw06STRt
-	Sp9gyHAreRFj3WnD7zPdYhm+ydlydPQNfpnl4x4eTV9vp2JUxuA+cq8a0hYtqLiDUYNR87GqjJOsE
-	Tz7uCnKgKOVPKIVESBOg==;
+	List-Owner; bh=Fj+B0NtssT1tnlK984lPOqoPtTcwjzsNlBU4uxzAWf8=; b=bF8/kB2jpLLkpB
+	pko+nqZ74j9iFV9m27MpkLChCaRdJtMnVP4dY17pqLhIRVgbYcwPsrWazOy9WqPAEkZhT1MTCpQbm
+	I3f4P7T6BceU2wyaHfNHZgi2TgkmMlL6ngUgP79kwXZiFojfznIYcGvnXhwtCo8SJGMLCywPc4qxI
+	wFrmnx6hCSeatZSCaq7NJnoWAftBnR6OoKrdNQDJxOb1AZw138EKmCJadCQgNrEIGSoAvDtIb+XQw
+	6CCAmkXyHjpLubDVgYQbm2nrdUYfFr2yVZE71mA8Jdo90r6AgzBgPknnN0CiIOFDe94pXAGEeDVWJ
+	29OQpNr1iiysBCOzCaqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NH2-0005cW-Sn; Thu, 27 Feb 2020 17:48:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1j7NEb-0002zN-JF; Thu, 27 Feb 2020 17:46:05 +0000
+Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7NDM-00015F-94
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:44:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D837F4B2;
- Thu, 27 Feb 2020 09:44:47 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2682B3F73B;
- Thu, 27 Feb 2020 09:44:47 -0800 (PST)
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH v8 11/11] arm64: mm: Display guarded pages in ptdump
-Date: Thu, 27 Feb 2020 17:44:17 +0000
-Message-Id: <20200227174417.23722-12-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200227174417.23722-1-broonie@kernel.org>
-References: <20200227174417.23722-1-broonie@kernel.org>
+ id 1j7ND3-0000n3-QR
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:44:32 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 3677B80C0;
+ Thu, 27 Feb 2020 17:45:12 +0000 (UTC)
+Date: Thu, 27 Feb 2020 09:44:24 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Tomi Valkeinen <tomi.valkeinen@ti.com>
+Subject: Re: [PATCH 1/3] drm/omap: Prepare DSS for probing without legacy
+ platform data
+Message-ID: <20200227174424.GI37466@atomide.com>
+References: <20200224191230.30972-1-tony@atomide.com>
+ <20200224191230.30972-2-tony@atomide.com>
+ <20200224233111.gkctx27usfxj2wgz@earth.universe>
+ <20200224234333.GD37466@atomide.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200224234333.GD37466@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_094448_384314_0EFB95E1 
-X-CRM114-Status: GOOD (  11.13  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200227_094430_010090_55C3A06C 
+X-CRM114-Status: GOOD (  17.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,54 +62,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- =?UTF-8?q?Kristina=20Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Suman Anna <s-anna@ti.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
+ Sebastian Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, "Andrew F . Davis" <afd@ti.com>,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ Jyri Sarha <jsarha@ti.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-v8.5-BTI introduces the GP field in stage 1 translation tables which
-indicates that blocks and pages with it set are guarded pages for which
-branch target identification checks should be performed. Decode this
-when dumping the page tables to aid debugging.
+Tomi,
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
-Reviewed-by: Kees Cook <keescook@chromium.org>
----
- arch/arm64/mm/dump.c | 5 +++++
- 1 file changed, 5 insertions(+)
+* Tony Lindgren <tony@atomide.com> [200224 23:44]:
+> * Sebastian Reichel <sre@kernel.org> [200224 23:32]:
+> > Hi,
+> > 
+> > On Mon, Feb 24, 2020 at 11:12:28AM -0800, Tony Lindgren wrote:
+> > > In order to probe display subsystem (DSS) components with ti-sysc
+> > > interconnect target module without legacy platform data and using
+> > > devicetree, we need to update dss probing a bit.
+> > > 
+> > > In the device tree, we will be defining the data also for the interconnect
+> > > target modules as DSS really is a private interconnect. There is some
+> > > information about that in 4460 TRM in "Figure 10-3. DSS Integration" for
+> > > example where it mentions "32-bit interconnect (SLX)".
+> > > 
+> > > The changes we need to make are:
+> > > 
+> > > 1. Parse also device tree subnodes for the compatible property fixup
+> > > 
+> > > 2. Update the component code to consider device tree subnodes
+> > > 
+> > > Cc: dri-devel@lists.freedesktop.org
+> > > Cc: Jyri Sarha <jsarha@ti.com>
+> > > Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> > > Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> > > Signed-off-by: Tony Lindgren <tony@atomide.com>
+> > > ---
+> > > 
+> > > This is needed for dropping DSS platform data that I'll be posting
+> > > seprately. If this looks OK, can you guys please test and ack?
+> > > 
+> > > ---
+> > 
+> > Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+> > 
+> > FWIW, I dropped omapdss-boot-init.c in my patch series updating DSI
+> > code to use common panel infrastructure, so this will conflict.
+> 
+> Hey that's great :) Sounds like we can set up an immutable branch
+> for just this $subject patch against v5.6-rc1 to resolve the
+> conflict. I can set it up for Tomi or Tomi can set it up for me,
+> whichever Tomi prefers.
 
-diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-index 860c00ec8bd3..78163b7a7dde 100644
---- a/arch/arm64/mm/dump.c
-+++ b/arch/arm64/mm/dump.c
-@@ -145,6 +145,11 @@ static const struct prot_bits pte_bits[] = {
- 		.val	= PTE_UXN,
- 		.set	= "UXN",
- 		.clear	= "   ",
-+	}, {
-+		.mask	= PTE_GP,
-+		.val	= PTE_GP,
-+		.set	= "GP",
-+		.clear	= "  ",
- 	}, {
- 		.mask	= PTE_ATTRINDX_MASK,
- 		.val	= PTE_ATTRINDX(MT_DEVICE_nGnRnE),
--- 
-2.20.1
+Do you want me to send you a pull request for just this one patch
+against v5.6-rc1?
 
+Regards,
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
