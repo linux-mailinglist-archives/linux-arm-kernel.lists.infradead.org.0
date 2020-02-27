@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D96DC1729CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 21:56:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DBBF1729CE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 21:56:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=zDAcrocLr4+35co1rLIuyqEXf/tnkiejvv2iTjfbhb0=; b=qhV2q6f+eIKhIJ
-	T4eXLB9xhEaxJ11mLS0h0Q0NyZSz/huNU4QhvZfoYsoADXqMFZPg/0SNsTcYIL3jDOFfWg/Tb5w+P
-	5/c07R3AeVgcwUmHnRnSPWVwumbxAPSzIdi4TutegJRidUFjxIC8LZo7qAuuc11SBQA8CrOBbP85T
-	41AFDW/EoYDnazplBYNnbvhVGbglS9JtmeP60cXkfaLrIyFOlZDvrogQxbx/tsIhyfXkhZRCkjhAt
-	T6YY579X3oSELmkyQKgDkViLoM1RHNYX0qulXQW8tT5VIC8oPVle3jdlhoAYwScl4qfRxUqJmZKfY
-	qwDykLgUpKteEXcQ5tUg==;
+	List-Owner; bh=7tg72wpNWB0whF7pBAxghoKyYTZklJQHpnneDyjXdIk=; b=hqAO8+u8JBwqWO
+	7HtQOgUYemk6IHYJ43gTPn8qwOC3eqhbUoxtuo2L0j+lBTqu27VB9+EwZn5xxMIa7aeSg3qohn8dq
+	nd+ThwXGVeK2Fe3cz5RtZO8Tgdt7EDvWSh+fzC99D42iVcdfKDLq8lBkCr1+gioESWVn4HKcS6fTI
+	WEJdMBduHG5knL3pN7NxQ4wlxPfHaYd49mOJnwRb9thUz8/XifIJSXA3SIJ+O+yIYndrUBUG6+3dv
+	0gyuSZ9sVjvul2wiZDya7rpoHeOPfhh7B0kdGMit2zigSueQiVGQGHzbOYyfoon7OGIBfcjsrKSIQ
+	vbwlk9IXXjqiQu8jFZwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7QCI-0000ty-BV; Thu, 27 Feb 2020 20:55:54 +0000
+	id 1j7QCZ-000152-Ch; Thu, 27 Feb 2020 20:56:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7QC7-0000tL-7w
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 20:55:44 +0000
+ id 1j7QCK-00013B-CU
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 20:55:57 +0000
 Received: from localhost (mobile-166-175-186-165.mycingular.net
  [166.175.186.165])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2A6272468E;
- Thu, 27 Feb 2020 20:55:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C83ED2468E;
+ Thu, 27 Feb 2020 20:55:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582836942;
- bh=uo4pZ8pLnVJHt+X+KMHCkfw/S+qxfnVMzkyq2/sf/Q8=;
+ s=default; t=1582836956;
+ bh=mGZf4nreP1kLtOs7P+f9h+8BDVGo9bsN87tYjSdZFZk=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=1eIeXpS8HUAIuUBh9/tzJuBcJ+ccfhZwy41bHiqBUgYJacHs6Foi3Fg+K1o0I5KxN
- l5ZbqG+I0Te3bfwhBiAh3/eAUDZf/RsiG2jjBDNWyh3sOrAlZIAHTZEx57qWphCB27
- kuhWQ9DqHskFidgv7Jb6SxLtKoRz7JESO1q4DHg8=
-Date: Thu, 27 Feb 2020 14:55:40 -0600
+ b=N8ERNRm8Ml+eL2KAwMkCrdz7z8d89W/UaFjFnl/ihldRxJobDPgykvzz30oaRDx/x
+ p07rXmQLCmbkc/uCwN2pZGMFwcB0WV5HHEOlnsDTUMKOP0cYK+2FpvDTrvH4UiCEgr
+ b5EDbMuOMKzTjanCN7qZpeSpTsKDWpkixrxmGUV4=
+Date: Thu, 27 Feb 2020 14:55:54 -0600
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 25/26] PCI/ATS: Export symbols of PRI functions
-Message-ID: <20200227205540.GA131096@google.com>
+Subject: Re: [PATCH v4 24/26] PCI/ATS: Add PRI stubs
+Message-ID: <20200227205554.GA131305@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200224182401.353359-26-jean-philippe@linaro.org>
+In-Reply-To: <20200224182401.353359-25-jean-philippe@linaro.org>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_125543_310789_4FC67E08 
-X-CRM114-Status: GOOD (  13.83  )
+X-CRM114-CacheID: sfid-20200227_125556_447908_9325E0C4 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,12 +88,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Subject could be simply "PCI/ATS: Export PRI functions"
-
-On Mon, Feb 24, 2020 at 07:24:00PM +0100, Jean-Philippe Brucker wrote:
-> The SMMUv3 driver uses pci_{enable,disable}_pri() and related
-> functions. Export those functions to allow the driver to be built as a
-> module.
+On Mon, Feb 24, 2020 at 07:23:59PM +0100, Jean-Philippe Brucker wrote:
+> The SMMUv3 driver, which can be built without CONFIG_PCI, will soon gain
+> support for PRI.  Partially revert commit c6e9aefbf9db ("PCI/ATS: Remove
+> unused PRI and PASID stubs") to re-introduce the PRI stubs, and avoid
+> adding more #ifdefs to the SMMU driver.
 > 
 > Cc: Bjorn Helgaas <bhelgaas@google.com>
 > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
@@ -101,42 +100,25 @@ On Mon, Feb 24, 2020 at 07:24:00PM +0100, Jean-Philippe Brucker wrote:
 Acked-by: Bjorn Helgaas <bhelgaas@google.com>
 
 > ---
->  drivers/pci/ats.c | 4 ++++
->  1 file changed, 4 insertions(+)
+>  include/linux/pci-ats.h | 8 ++++++++
+>  1 file changed, 8 insertions(+)
 > 
-> diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
-> index bbfd0d42b8b9..fc8fc6fc8bd5 100644
-> --- a/drivers/pci/ats.c
-> +++ b/drivers/pci/ats.c
-> @@ -197,6 +197,7 @@ void pci_pri_init(struct pci_dev *pdev)
->  	if (status & PCI_PRI_STATUS_PASID)
->  		pdev->pasid_required = 1;
->  }
-> +EXPORT_SYMBOL_GPL(pci_pri_init);
->  
->  /**
->   * pci_enable_pri - Enable PRI capability
-> @@ -243,6 +244,7 @@ int pci_enable_pri(struct pci_dev *pdev, u32 reqs)
->  
->  	return 0;
->  }
-> +EXPORT_SYMBOL_GPL(pci_enable_pri);
->  
->  /**
->   * pci_disable_pri - Disable PRI capability
-> @@ -322,6 +324,7 @@ int pci_reset_pri(struct pci_dev *pdev)
->  
->  	return 0;
->  }
-> +EXPORT_SYMBOL_GPL(pci_reset_pri);
->  
->  /**
->   * pci_prg_resp_pasid_required - Return PRG Response PASID Required bit
-> @@ -337,6 +340,7 @@ int pci_prg_resp_pasid_required(struct pci_dev *pdev)
->  
->  	return pdev->pasid_required;
->  }
-> +EXPORT_SYMBOL_GPL(pci_prg_resp_pasid_required);
+> diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
+> index f75c307f346d..e9e266df9b37 100644
+> --- a/include/linux/pci-ats.h
+> +++ b/include/linux/pci-ats.h
+> @@ -28,6 +28,14 @@ int pci_enable_pri(struct pci_dev *pdev, u32 reqs);
+>  void pci_disable_pri(struct pci_dev *pdev);
+>  int pci_reset_pri(struct pci_dev *pdev);
+>  int pci_prg_resp_pasid_required(struct pci_dev *pdev);
+> +#else /* CONFIG_PCI_PRI */
+> +static inline int pci_enable_pri(struct pci_dev *pdev, u32 reqs)
+> +{ return -ENODEV; }
+> +static inline void pci_disable_pri(struct pci_dev *pdev) { }
+> +static inline int pci_reset_pri(struct pci_dev *pdev)
+> +{ return -ENODEV; }
+> +static inline int pci_prg_resp_pasid_required(struct pci_dev *pdev)
+> +{ return 0; }
 >  #endif /* CONFIG_PCI_PRI */
 >  
 >  #ifdef CONFIG_PCI_PASID
