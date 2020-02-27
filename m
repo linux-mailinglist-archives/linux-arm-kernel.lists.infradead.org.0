@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87D0E172BFB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 00:07:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14C24172BFC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 00:07:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5SadqY9e1PpYUqZhoKkWdl56HT6AQg4YD/SMOi9A+Vc=; b=o0uJbGmp+K0S/FDVStAfiNUYJQ
-	Geac7sCEw7fFrTF4AYevPwx5R1JJqW/FDj1iXrtWth7gR4g7y02My9MEhB98jmtF0BgE3gjx7niU5
-	u+vGeVOWHpFyavGcxq5+vAwSuYu6txLAlcmSgULWWpMjGhmRkEoTFlUiBRz1w4P/jXexzdFxJwv2o
-	GTt1X9gKX/Ct7TAuLFnH3tPR8XvQcbz9aik9LmdU0FPZ1oNLs+e4fAMzTzrFRATWu42LnBlqK6lGu
-	/xIVFh+rjSZUBAbeyUNOvV+eLDfMBAtd5HB9iqiUXJbJjx4YmEqFY8dcRPRzZ6Kt9BQrFlSFh3xkb
-	F8qCI0nw==;
+	bh=yJ76wXpXFIfOpQAhrIHpijvFWu0HQNG3hXGNvKNOeY4=; b=iyrp90x8AA8RcttR4bKtXGRDN2
+	RQLylICVnYLtnE0lno/KTwDZB99b565XeSc+M4cHtYca9PYd92oOXUL18j+fXwcQ1p/iXh++DsorJ
+	lVPBuG5Fp8BngoRzxj/NLuze1kuWjdn/Wo3n3oQfExoY7Bs7Gh3M+7t4Jw8RJQQd5Vd7kx5RWqNMc
+	xh8CMqVuOEhYIA1KUgulUUg5LznJugZp91D38BmIXopQpgKnSZCHd/e6ORfZbsZ4eJdhiRwwbSNEM
+	RfdRqC+R1E22btf1OeAiYQA44dXso7BaarTzmf+xds5V5h6nZcllvYpChtmPcwfimk7DuSRINFEa5
+	SdM3JIPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7SFG-0000If-BS; Thu, 27 Feb 2020 23:07:06 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1j7SFU-0000XS-El; Thu, 27 Feb 2020 23:07:20 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7SDd-0007Ta-Ie
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 23:05:26 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b22so405551pls.12
+ id 1j7SDe-0007VI-LG
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 23:05:28 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id gv17so433922pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 15:05:25 -0800 (PST)
+ Thu, 27 Feb 2020 15:05:26 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=6ZPTBc16gsRgOtb4TnzocOZ8irwL4eMbyH66vQS/GYA=;
- b=kXDz9qkp6qs92/X6p/L9WmMF6gPd5XAV+dtAGFDrOEy9BrsrFN3gdjeWoMBAfSsN5g
- rFjD+rXGU//RVwilhjvoVKaVw54OFUEJb7vPoeVeogqSnFtpo14Mv2FwW/tr3Kc4QhiS
- qSA3dkK+gn0cpIFRXeBqpQ+o7QpUbDFF8LsPg0Soyp+KeL+A88eeyOQ/Ejc1KQX/7zqA
- mxmWOTjyjEO+LbGyQjJqZ13AZ6cP0bg9vT5qU4RS+eBHIeGoaFSyJefheYkfWA+GC9o7
- k4bFt2X8UIKF8YA1FVZW5L+qk+LtfbA3dYqMKbp4XCcQuVNolALVXTSvDZYsMcqmNNrt
- 574Q==
+ bh=VMrpm+GBoFpUrGbFK1mApjxlqzffVTj/tMTENO9WLbo=;
+ b=QutkKvm5robSH6hAa5Xt7Hj7Zcy6P3FiZ8FYe/QIWDo9zihshyynnmsHT6Ca9ZjOeU
+ tfEh1iXGgwjmh4B6z5ThkuglNDNVJ0wI9KIq3xBN+7khYZeNQEYc5Jrd4PYyRkVI7cWM
+ ZhOJsUe+OPCchh4fSbR4W34FjpAjhLi2zLyDHSIj3CxkGIcVyndH5XaGZmd2zPUZ1Vwo
+ StJ2lR1GEtrJPUVx4q5L02E7Zf2s+/r2bIh+TbVi5Ca9jd+bxX/xWPxQJy2pHMaLdzxv
+ DySMOwi3yIoDNH/PexCONhd6epK6+wuuve6KfXhJ/oHdEEyM7O8Oi45laz/JXO19Nh1J
+ Jfkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=6ZPTBc16gsRgOtb4TnzocOZ8irwL4eMbyH66vQS/GYA=;
- b=B1JbGac9n6/9ghS2hnUClwqIjUvDCyjAkQ7pc5ke3m1MozmvnbQ29G2VUrNo1KEQn9
- 05g72fmqlmT2e2DyZ6wTxoBNeIQo09imUEDMFRodQ/FbPUMHn3tPS8LtCdyIyv6vhi6s
- E8+c3YW0NLckvnGqu010rlYLSWnog5UlkeGjqsOGSbGRGWDGHi+F1FRiq+YnJ8ok4+T5
- YWigsOcM1OGIng6s978K0ewlW0khaX5SnvTBa0YV7qiE/iZjU+mCgcy6lzciKQDOqAmZ
- /KSGD80r8vYcO2RDtADsV1U4CGRkC9HytldgJK8EQ20+/+XdYrnqyx6Vq42MqPvA4/hS
- PiNA==
-X-Gm-Message-State: APjAAAU3wt8/A0IyF21TUuhIxsLUN4byd3HvKA3iuHlDcUPAi0tT/xr2
- EsC+v/33VQW8oXCuDM9HAiI=
-X-Google-Smtp-Source: APXvYqwaQgE0kh+k6ox6GjNUfuX9eBxyJlL/7uMbDKwkNIQDzt5x2XGvHBsGHIJPgCu9HrHuIlE2Sw==
-X-Received: by 2002:a17:90a:8b82:: with SMTP id
- z2mr1395149pjn.59.1582844724422; 
- Thu, 27 Feb 2020 15:05:24 -0800 (PST)
+ bh=VMrpm+GBoFpUrGbFK1mApjxlqzffVTj/tMTENO9WLbo=;
+ b=C3BzC9beS92Lz5tiBOtg1qTS3pdw+R+MZf91gLbRziw2Hjs8+glx0026eCzQX4rIbu
+ tc3T05jOYboz5u9LBHB8GszWE0GVMkAX86Tp2rPvat4wmTkHSjLvPF+/lAmnCzLdjror
+ /OymlNnaC7cqLlJsho2aYVauUAyeeEeZeHq66IBdwXQQ/yQC7Bdkwscl4RAUoT8ZFeGC
+ STdlF42b2y5dwtmpOaHzMDPf8iI/3N/CFFrNcLnCZVvsfusbzdyYs49OQCiiOx8FKcD+
+ gWocPAHP/OwzOiRC0yUh7N5Rlu9QIpvU/Aa3EarJEPpoZBr0b3lBccM1FIfzZYAfLyYi
+ 1B2Q==
+X-Gm-Message-State: APjAAAVcSEBs5n3cN6U8WVJM5DSSHhwyAd/6Ivv6yivn0rXpgG+AbZn0
+ wVO2qahFZtMF0vkDTo6l62w=
+X-Google-Smtp-Source: APXvYqwgWS/gVih7kVY03mopBRkpenOgLxxgiUgs0jIPy2qu7PEK3PIFGXT2xwolufGS4P55SEUsgA==
+X-Received: by 2002:a17:90a:5d18:: with SMTP id
+ s24mr1244304pji.141.1582844725992; 
+ Thu, 27 Feb 2020 15:05:25 -0800 (PST)
 Received: from taoren-ubuntu-R90MNF91.thefacebook.com
  ([2620:10d:c090:500::4:d8f5])
- by smtp.gmail.com with ESMTPSA id w2sm8275975pfw.43.2020.02.27.15.05.22
+ by smtp.gmail.com with ESMTPSA id w2sm8275975pfw.43.2020.02.27.15.05.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 27 Feb 2020 15:05:24 -0800 (PST)
+ Thu, 27 Feb 2020 15:05:25 -0800 (PST)
 From: rentao.bupt@gmail.com
 To: Felipe Balbi <balbi@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -70,24 +70,21 @@ To: Felipe Balbi <balbi@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  openbmc@lists.ozlabs.org, taoren@fb.com
-Subject: [PATCH v5 5/7] ARM: dts: aspeed-g5: add vhub port and endpoint
+Subject: [PATCH v5 6/7] ARM: dts: aspeed-g4: add vhub port and endpoint
  properties
-Date: Thu, 27 Feb 2020 15:05:05 -0800
-Message-Id: <20200227230507.8682-6-rentao.bupt@gmail.com>
+Date: Thu, 27 Feb 2020 15:05:06 -0800
+Message-Id: <20200227230507.8682-7-rentao.bupt@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200227230507.8682-1-rentao.bupt@gmail.com>
 References: <20200227230507.8682-1-rentao.bupt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_150525_622490_2CD645AF 
+X-CRM114-CacheID: sfid-20200227_150526_727623_53E2196F 
 X-CRM114-Status: GOOD (  12.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [rentao.bupt[at]gmail.com]
@@ -129,21 +126,21 @@ Reviewed-by: Joel Stanley <joel@jms.id.au>
  No change in v2/v3/v4/v5.
    - It's given v5 to align with the version of the patch series.
 
- arch/arm/boot/dts/aspeed-g5.dtsi | 2 ++
+ arch/arm/boot/dts/aspeed-g4.dtsi | 2 ++
  1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
-index ebec0fa8baa7..f12ec04d3cbc 100644
---- a/arch/arm/boot/dts/aspeed-g5.dtsi
-+++ b/arch/arm/boot/dts/aspeed-g5.dtsi
-@@ -195,6 +195,8 @@
+diff --git a/arch/arm/boot/dts/aspeed-g4.dtsi b/arch/arm/boot/dts/aspeed-g4.dtsi
+index 807a0fc20670..8e04303e8514 100644
+--- a/arch/arm/boot/dts/aspeed-g4.dtsi
++++ b/arch/arm/boot/dts/aspeed-g4.dtsi
+@@ -164,6 +164,8 @@
  			reg = <0x1e6a0000 0x300>;
  			interrupts = <5>;
  			clocks = <&syscon ASPEED_CLK_GATE_USBPORT1CLK>;
 +			aspeed,vhub-downstream-ports = <5>;
 +			aspeed,vhub-generic-endpoints = <15>;
  			pinctrl-names = "default";
- 			pinctrl-0 = <&pinctrl_usb2ad_default>;
+ 			pinctrl-0 = <&pinctrl_usb2d_default>;
  			status = "disabled";
 -- 
 2.17.1
