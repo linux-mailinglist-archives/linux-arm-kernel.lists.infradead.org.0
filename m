@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D63DF1710B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 06:55:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 583F01710B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 06:55:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y3UpgCS5WIiCvuVSBSBEa9qs5yxKTe2HHdBS/Vy6Duk=; b=YbjCS/0q5K/tb+
-	8ET1ar+wi3BGkkPjMMQwpA65YRP3ExaoqJhc6g90XnhxrOMkiUNDEWdNNSMTYA+NlKXFddQb951JB
-	SR0qYrpxLsO4HU4JLD1m06GjsW0259PuL+yoj2mqkQnlAAGTNQkFrTpzaAyB9C4i4aIMBJkVaaaO4
-	jXfLJlGB7i3SNnMv67bcUCrDGGvneA+zcAczoG34PeQsDOHcvcXki47RKdeabJRj2vNnhY+rpddIC
-	pX1fK5I4UH0PnKXrk2V1djzwlst+6jOjXCqDq+s6gcmGvU/JDvUeWN26mGIYKSKe54uZP7vD4WX/m
-	R68L6yP8//akc3K+4WVg==;
+	List-Owner; bh=LeN+Qk2oM+Syv74aoDMBmtRhsAqLDRXH347o/md5Ag8=; b=equ79tCKZrQCkI
+	FIDYxP/CRkZ4DJdzgJJHV44HIq0yQai6jnaPA9IEDdztY/mrZ01U4418A5miiKvlQnxd5r3RINzFe
+	eNeZyinxBZlnJw8o765qmuqJ0Uj/vLTq3eOeVQ18ssCkk7o6jRISLWku1uMbSBRX5lmNrd2iJESHC
+	wvAu1mqs35UYEFt+NTujVvQsOhKX9O9nWGc7cwZCkZTQKyvmcHHMfxCkqE84EojEWEYGhn6UJbgG9
+	VfujBqtD/9eChsFO2lanngAfi9kZ3CkSkgdrxPB4HygNfxkNsckD2FDU9/xxiuM4aJLYIHPTFUaYs
+	/55HILP30phOkIEvd0zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7C8Q-00035b-UD; Thu, 27 Feb 2020 05:54:58 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1j7C8m-0003g1-Le; Thu, 27 Feb 2020 05:55:20 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7C8F-00033o-CH
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 05:54:48 +0000
-Received: by mail-qt1-x844.google.com with SMTP id d9so1415904qte.12
+ id 1j7C8V-0003GW-5C
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 05:55:04 +0000
+Received: by mail-qk1-x741.google.com with SMTP id h4so2100244qkm.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 26 Feb 2020 21:54:47 -0800 (PST)
+ Wed, 26 Feb 2020 21:55:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=E2Lzw+6DwIXD5wFIdGhdMkBNEqUvLgerW4Hymt2eRxg=;
- b=AFGunOiDTG9tUPYAnoVO+elFcJSM3Whfz90g8CbpJOtUYOijJJZriLWq9n8qE6lJT1
- i4dHPMZdW8OhQtDMX5HxuWkwbDdB0jJnc+s+eMT6QS5whv9ZInYZY9K8S1pOGjMU+Dtf
- tyFC4J9uj5HsUQ0/+A44qRNAPPWY2CCtzm0Yk=
+ :cc; bh=BT+Y4zDOpTN8aRnsqq1qa2mSs9wu0N9tys2uzX7EM7Q=;
+ b=I2KS5PW/7Kw7fTHC3Wxq8Osxk8ug/lmvcU2moEvkCzfofFm2FVnq73DDl0YTEDLd3u
+ Q3v+LTl0KnhEidEoGD8Az1KBh2NbkQHyMlUWo/6cNu49XIQ3CYxqXnQVbFsadGjrS6pN
+ Z9IgLoO5G01BEyRaeY6NY+Ey62eqAglnXlFMk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=E2Lzw+6DwIXD5wFIdGhdMkBNEqUvLgerW4Hymt2eRxg=;
- b=uGY+FY5/UYHdhNwYXrumN93CZDKWI9v1oKoAH101/d950j0VXHkVxyws8enZqv0i0/
- olFVR07xuFsK3bNxVVxLnZV1MBXFCsAJcv+11FCVhyrPdIGbMVO8KHBP5CGg4JwwiUrZ
- pIXOLr0bC0MxQGie3Ig7zUnqUFp1FyCvx1lZyaoKDySBCgvVsicodHse3UyDiOu/ncnz
- W+vskNa6zsB4fhTsfEr6srddkxLMVRqoUlpAIZBINFAiLhP1Jn+b/mybP4f89pg7wlKF
- oJQ/Je3oS4xwvcHJrXq+9fBAxRetwsVfwu6mfurv1QjPWhYnm1nNrrWr2qAqHaDTt+Cj
- m00w==
-X-Gm-Message-State: APjAAAXFAFxAhu/YXVhMT06vkqTJbqf7SruU7QL8vOH2RrG1Y7u05vE+
- 0p2wnOe0iS3P2VPkyCmSjuz0voqr4bsC7ufcEXA=
-X-Google-Smtp-Source: APXvYqzkUWO9RFM7Di6p87wS+Vk/jUfjgdcxe/+ZDF1v3BDViIFdLlrzgrk/5NcaTxAv+I2EX+x/Rkh3OZXw908Xzio=
-X-Received: by 2002:aed:3841:: with SMTP id j59mr3043607qte.220.1582782886154; 
- Wed, 26 Feb 2020 21:54:46 -0800 (PST)
+ bh=BT+Y4zDOpTN8aRnsqq1qa2mSs9wu0N9tys2uzX7EM7Q=;
+ b=tOqtTJPQKMAV2HsjQIZeB87QHCcsMF0zYZ0BS7i3jXglpbo7//Up84xK4z5+byxNfH
+ riluNSzXOUHxn7a9kRrmdmafQX65FvTqrGrwE2JHcO01XRCF9XbwoOHZkrMl/P/NODAq
+ 1u8HzV9NMkYTrI+vsvy3NCtjiARJypSaYymF90bnvdZ6sgWgQV2yNKISDdsySGIFt8YN
+ cJuov6/knC3jBtqGPgwGIBWlhGFq8HPv9DHDgOIMHB+CFtPmGvKSZeTxts2IQ/KLz+Rr
+ vuL4x237e8SvmCiThdVW9zeYWvYJ0f2xmK8g1kFir/ZySyoVuXNtbry110RruYDVNjaq
+ DHXQ==
+X-Gm-Message-State: APjAAAW6ht5XfpJjczn7orkpkNmLrIgKS8oh0Rh6YC7DSdg5WlsgPze1
+ rhaUkrbdS4lbIEch2JTejN7z5kWjJObwfXdbbYs=
+X-Google-Smtp-Source: APXvYqzT52XJX1ayxGeNKzjAkfyJjllIsA3MS1ZOUJZUZBT6z2y1pnNAw6jRX/tZyQhZlu/wqAmNLrhydyjZY7ZzuqU=
+X-Received: by 2002:a37:a493:: with SMTP id n141mr1860258qke.330.1582782900930; 
+ Wed, 26 Feb 2020 21:55:00 -0800 (PST)
 MIME-Version: 1.0
 References: <20200226230346.672-1-rentao.bupt@gmail.com>
- <20200226230346.672-7-rentao.bupt@gmail.com>
- <83d7b817234f99c92272f7950129c56a58f4de54.camel@kernel.crashing.org>
-In-Reply-To: <83d7b817234f99c92272f7950129c56a58f4de54.camel@kernel.crashing.org>
+ <20200226230346.672-6-rentao.bupt@gmail.com>
+ <c1f990ad2fd35deeba9e4e937cb19ee5080ea2a8.camel@kernel.crashing.org>
+In-Reply-To: <c1f990ad2fd35deeba9e4e937cb19ee5080ea2a8.camel@kernel.crashing.org>
 From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 27 Feb 2020 05:54:34 +0000
-Message-ID: <CACPK8XdkPLZVJTpAc2u3Q0W0KoRrC4hfHjy27VKpGDRF45JByg@mail.gmail.com>
-Subject: Re: [PATCH v4 6/7] ARM: dts: aspeed-g4: add vhub port and endpoint
+Date: Thu, 27 Feb 2020 05:54:49 +0000
+Message-ID: <CACPK8XfALBpAUmvAmBLDGa-oEMaZSqaKsHjs0EEPYP=_riGJVA@mail.gmail.com>
+Subject: Re: [PATCH v4 5/7] ARM: dts: aspeed-g5: add vhub port and endpoint
  properties
 To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_215447_433284_4E41A4D7 
-X-CRM114-Status: GOOD (  16.92  )
+X-CRM114-CacheID: sfid-20200226_215503_214563_F885C8A3 
+X-CRM114-Status: GOOD (  16.90  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -131,28 +131,28 @@ Cheers,
 
 Joel
 
->
+
 >
 > > ---
 > >  No change in v2/v3/v4.
 > >    - It's given v4 to align with the version of the patch series.
 > >
-> >  arch/arm/boot/dts/aspeed-g4.dtsi | 2 ++
+> >  arch/arm/boot/dts/aspeed-g5.dtsi | 2 ++
 > >  1 file changed, 2 insertions(+)
 > >
-> > diff --git a/arch/arm/boot/dts/aspeed-g4.dtsi
-> > b/arch/arm/boot/dts/aspeed-g4.dtsi
-> > index 807a0fc20670..8e04303e8514 100644
-> > --- a/arch/arm/boot/dts/aspeed-g4.dtsi
-> > +++ b/arch/arm/boot/dts/aspeed-g4.dtsi
-> > @@ -164,6 +164,8 @@
+> > diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi
+> > b/arch/arm/boot/dts/aspeed-g5.dtsi
+> > index ebec0fa8baa7..f12ec04d3cbc 100644
+> > --- a/arch/arm/boot/dts/aspeed-g5.dtsi
+> > +++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+> > @@ -195,6 +195,8 @@
 > >                       reg = <0x1e6a0000 0x300>;
 > >                       interrupts = <5>;
 > >                       clocks = <&syscon ASPEED_CLK_GATE_USBPORT1CLK>;
 > > +                     aspeed,vhub-downstream-ports = <5>;
 > > +                     aspeed,vhub-generic-endpoints = <15>;
 > >                       pinctrl-names = "default";
-> >                       pinctrl-0 = <&pinctrl_usb2d_default>;
+> >                       pinctrl-0 = <&pinctrl_usb2ad_default>;
 > >                       status = "disabled";
 >
 
