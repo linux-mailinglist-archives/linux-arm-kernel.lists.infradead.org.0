@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E9EB171598
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 12:03:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1991817159E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 12:06:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rjdD7fS8JAJbZfXn2RU7rAl6N0F1SxlN04q4X70954k=; b=u07Xd5fgptrbLF
-	dnimKx0+I2/UwnRPY5srAHqBKw3PNg0r/BTMBSdVaBjGqL4DqhSA7t4yGod/niLzKz5DIJz5Vow7q
-	yslSYHtRu6HJtTVAcot8y/8QDslWBcFFjyJYNYMjpj3S5QrbIMiB1zAGWkaiZehayJR5dh0q6iwxi
-	2qu2bS0CuMXF7Bxh9v9rBgG5rj96baU5OfpWwMTekA8Pdg3XrTd5q4T5pRzmVWr8RoqkI109Tdhm7
-	Vss6O9Pi1OEM9nxlILUnD9Doy6ZFCPqnypJ2icEv4I6pve25t9wa+4plDWh95Zmz5BkFbmKX+FqxF
-	3dphbL6SK/VsHbaW6AxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ceOiUauDDP7FO/fTU7qX5iPC+gXTQuCZwA87i1DnSgs=; b=qyclZ9tbhfBwT0
+	Mw6M7pFX9rGG8g0LgtOahBMvgxLiw7qmuXT7vCbsDT6t9CMmQWErGZIZfBWMY84eT4S+1ZldAg19P
+	v92c3lBjJ/KH3CftOy5sYP4DlpuGXmIlfLaTNf8JGRFaX9p8ZCnPuvx6GLJIpKQ5jD0jAzwMhNMHC
+	fbwfn7wrDgGs8kMVQinghYaxp4SJaQz8v9h2btk2BhEkUaSWQeQHmqn2IcEV1MASvqeMeCf/ewvGu
+	XWIpGPPZR8THLqD+uH2SO3TYD3nwPk/WJFzfVV3WtAyZq39KkNf3sp45jl+ngmpDCL6747Pkuukrm
+	erFII2Y8OSyy/IlkrAUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Gwa-00026b-Jh; Thu, 27 Feb 2020 11:03:04 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7GwR-00025t-LH
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 11:02:56 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.lab.pengutronix.de)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1j7GwL-00068a-Ag; Thu, 27 Feb 2020 12:02:49 +0100
-Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1j7GwK-0002GY-Id; Thu, 27 Feb 2020 12:02:48 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: robh+dt@kernel.org, shawnguo@kernel.org, chf.fritz@googlemail.com,
- s.riedmueller@phytec.de, s.christ@phytec.de, c.hemp@phytec.de,
- contact@stefanchrist.eu
-Subject: [PATCH v4] ARM: dts: imx6: phycore-som: fix arm and soc minimum
- voltage
-Date: Thu, 27 Feb 2020 12:02:46 +0100
-Message-Id: <20200227110246.8624-1-m.felsch@pengutronix.de>
-X-Mailer: git-send-email 2.20.1
+	id 1j7Gzb-0003f9-Om; Thu, 27 Feb 2020 11:06:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7GzT-0003el-5J
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 11:06:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C6ED1FB;
+ Thu, 27 Feb 2020 03:06:02 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 3F11E3F73B; Thu, 27 Feb 2020 03:06:00 -0800 (PST)
+Date: Thu, 27 Feb 2020 11:05:58 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: kbuild test robot <lkp@intel.com>
+Subject: Re: [PATCH v2 09/19] arm64: mte: Add specific SIGSEGV codes
+Message-ID: <20200227110558.GB3281767@arrakis.emea.arm.com>
+References: <20200226180526.3272848-10-catalin.marinas@arm.com>
+ <202002270627.YYGOStB9%lkp@intel.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <202002270627.YYGOStB9%lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_030255_697378_7F183F40 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_030603_245447_770E631F 
+X-CRM114-Status: GOOD (  14.43  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,38 +62,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ kbuild-all@lists.01.org, Arnd Bergmann <arnd@arndb.de>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIGN1cnJlbnQgc2V0IG1pbmltdW0gdm9sdGFnZSBvZiA3MzAwMDDCtVYgc2VlbXMgdG8gYmUg
-d3JvbmcuIEkgZG9uJ3QKa25vdyB0aGUgZG9jdW1lbnQgd2hpY2ggc3BlY2lmaWVzIHRoYXQgYnV0
-IHRoZSBpbXg2cWRsIGRhdGFzaGVldHMgc2F5cwp0aGF0IHRoZSBtaW5pbXVtIHZvbHRhZ2Ugc2hv
-dWxkIGJlIDAuOTI1ViBmb3IgVkREX0FSTSAoTERPIGJ5cGFzc2VkLApsb3dlc3Qgb3BwKSBhbmQg
-MS4xNVYgZm9yIFZERF9TT0MgKExETyBieXBhc3NlZCwgbG93ZXN0IG9wcCkuCgpGaXhlczogZGRl
-YzVkMWMwMDQ3ICgiQVJNOiBkdHM6IGlteDY6IEFkZCBpbml0aWFsIHN1cHBvcnQgZm9yIHBoeUNP
-UkUtaS5NWCA2IFNPTSIpClNpZ25lZC1vZmYtYnk6IE1hcmNvIEZlbHNjaCA8bS5mZWxzY2hAcGVu
-Z3V0cm9uaXguZGU+Ci0tLQp2NDoKLSByZWJhc2VkIG9udG9wIG9mIHY1LjYtcmMxCnYzOgotIGZp
-eCBjb21taXQgbWVzc2FnZQp2MjoKLSB1c2UgbGRvIGJ5cGFzc2VkIHZhbHVlcwoKIGFyY2gvYXJt
-L2Jvb3QvZHRzL2lteDZxZGwtcGh5dGVjLXBoeWNvcmUtc29tLmR0c2kgfCA0ICsrLS0KIDEgZmls
-ZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEv
-YXJjaC9hcm0vYm9vdC9kdHMvaW14NnFkbC1waHl0ZWMtcGh5Y29yZS1zb20uZHRzaSBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL2lteDZxZGwtcGh5dGVjLXBoeWNvcmUtc29tLmR0c2kKaW5kZXggNGQxODk1
-MjY1OGY4Li43N2Q4NzEzNDBlYjcgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL2lteDZx
-ZGwtcGh5dGVjLXBoeWNvcmUtc29tLmR0c2kKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvaW14NnFk
-bC1waHl0ZWMtcGh5Y29yZS1zb20uZHRzaQpAQCAtMTEyLDcgKzExMiw3IEBACiAJCXJlZ3VsYXRv
-cnMgewogCQkJdmRkX2FybTogYnVjazEgewogCQkJCXJlZ3VsYXRvci1uYW1lID0gInZkZF9hcm0i
-OwotCQkJCXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDczMDAwMD47CisJCQkJcmVndWxhdG9y
-LW1pbi1taWNyb3ZvbHQgPSA8OTI1MDAwPjsKIAkJCQlyZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9
-IDwxMzgwMDAwPjsKIAkJCQlyZWd1bGF0b3ItaW5pdGlhbC1tb2RlID0gPERBOTA2M19CVUNLX01P
-REVfU1lOQz47CiAJCQkJcmVndWxhdG9yLWFsd2F5cy1vbjsKQEAgLTEyMCw3ICsxMjAsNyBAQAog
-CiAJCQl2ZGRfc29jOiBidWNrMiB7CiAJCQkJcmVndWxhdG9yLW5hbWUgPSAidmRkX3NvYyI7Ci0J
-CQkJcmVndWxhdG9yLW1pbi1taWNyb3ZvbHQgPSA8NzMwMDAwPjsKKwkJCQlyZWd1bGF0b3ItbWlu
-LW1pY3Jvdm9sdCA9IDwxMTUwMDAwPjsKIAkJCQlyZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwx
-MzgwMDAwPjsKIAkJCQlyZWd1bGF0b3ItaW5pdGlhbC1tb2RlID0gPERBOTA2M19CVUNLX01PREVf
-U1lOQz47CiAJCQkJcmVndWxhdG9yLWFsd2F5cy1vbjsKLS0gCjIuMjAuMQoKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Thu, Feb 27, 2020 at 06:33:14AM +0800, kbuild test robot wrote:
+> url:    https://github.com/0day-ci/linux/commits/Catalin-Marinas/arm64-Memory-Tagging-Extension-user-space-support/20200227-041230
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git for-next
+> config: x86_64-defconfig (attached as .config)
+> compiler: gcc-7 (Debian 7.5.0-5) 7.5.0
+> reproduce:
+>         # save the attached .config to linux build tree
+>         make ARCH=x86_64 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All error/warnings (new ones prefixed by >>):
+> 
+>    In file included from include/linux/export.h:43:0,
+>                     from include/linux/linkage.h:7,
+>                     from arch/x86/include/asm/cache.h:5,
+>                     from include/linux/cache.h:6,
+>                     from include/linux/time.h:5,
+>                     from include/linux/compat.h:10,
+>                     from arch/x86/kernel/signal_compat.c:2:
+>    In function 'signal_compat_build_tests',
+>        inlined from 'sigaction_compat_abi' at arch/x86/kernel/signal_compat.c:166:2:
+> >> include/linux/compiler.h:350:38: error: call to '__compiletime_assert_30' declared with attribute error: BUILD_BUG_ON failed: NSIGSEGV != 7
+
+I haven't realised that x86 has a build check for NSIGSEGV. I'll fold in
+the diff below (there are no new fields added to siginfo, so no other
+changes necessary):
+
+diff --git a/arch/x86/kernel/signal_compat.c b/arch/x86/kernel/signal_compat.c
+index 9ccbf0576cd0..a7f3e12cfbdb 100644
+--- a/arch/x86/kernel/signal_compat.c
++++ b/arch/x86/kernel/signal_compat.c
+@@ -27,7 +27,7 @@ static inline void signal_compat_build_tests(void)
+ 	 */
+ 	BUILD_BUG_ON(NSIGILL  != 11);
+ 	BUILD_BUG_ON(NSIGFPE  != 15);
+-	BUILD_BUG_ON(NSIGSEGV != 7);
++	BUILD_BUG_ON(NSIGSEGV != 9);
+ 	BUILD_BUG_ON(NSIGBUS  != 5);
+ 	BUILD_BUG_ON(NSIGTRAP != 5);
+ 	BUILD_BUG_ON(NSIGCHLD != 6);
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
