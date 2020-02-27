@@ -2,103 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F012170D10
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 01:13:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 719B1170D67
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 01:44:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LeEn4amC6zMjOB3xKDQmumSSKLu+TWlLrUumyVOxWE0=; b=hGnxkU0pd2Y7QG
-	G6CWA0ig8g6CMzrO99pweX/EjPyUQBbKhYTrMQioearIYzVFAxOOWS3yPGg1bqgjtDaAV4cWlRjdH
-	pxEVkl2HE5hy0aMlIPKKBlN5uVwsm9SUbVgd43MQEfQ+cWeGzLUm8AAZBZ6uCgAI57pJrM4gNR6GF
-	BDAtCdHHbjRb9rZQpvVavhnJ2M0gtMRCkVPoLEzlJYmXOQ0LETzVBOm4Znz2lJ8ZGDJPfYkktliVa
-	UOMZHQS+oSm1yF4CzxysyNdsXfe7NTugFj0RrvC1rQoQTMCfNRatfki8K92o1+RRwk+73ZCi451eW
-	QQEfRrsVXkQhc7fD8hGg==;
+	List-Owner; bh=DmkwyxGjhJCUASmBxWCCyWhm9s0N24wDAsj2/g4KB6c=; b=MGuCTn9zYphBy9
+	D6YJEXw33uHLZLnBMKoEwWm9g2qaBx/AMH96rwMpwJFit4gGQO1kKuo/GQXioNG0tAcNzTWoe2RIq
+	eJiN2ErQLqy1x3bdXAs3Ky3ZaO0LykYU55IBPG9zLK7mGvolAp1OWnNO0ZpxUvX7StCCLgtCarwaw
+	98Fe27AUHQ399mUKT237WpvPi94uapHJB9KDqoaExvGAEmGtPg7/XkduKqa9YlalD3XPt/JXULTW+
+	iZOg8tI51/z4/re7m8OH1lbO9qWYkDbNLU7+AL3SzwuTrUgzFG3TjVsd6t29swVzcR9nvBf+tD+h+
+	1tMqcPTg42JxknfSfR4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j76nP-0008A8-E4; Thu, 27 Feb 2020 00:12:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j76nF-00088J-Fp
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 00:12:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 55F4A1FB;
- Wed, 26 Feb 2020 16:12:43 -0800 (PST)
-Received: from [192.168.3.111] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C35503F73B;
- Wed, 26 Feb 2020 16:12:41 -0800 (PST)
-Subject: Re: [PATCH 12/13] dt-bindings: arm: Add Calxeda system registers
- json-schema binding
-To: Rob Herring <robh@kernel.org>
-References: <20200226180901.89940-1-andre.przywara@arm.com>
- <20200226180901.89940-13-andre.przywara@arm.com>
- <20200226215732.GA32486@bogus>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- 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
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <557906ef-28e8-bdf0-5ec9-ab859935f752@arm.com>
-Date: Thu, 27 Feb 2020 00:12:24 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1j77Hr-0000vL-H1; Thu, 27 Feb 2020 00:44:23 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j77Hf-0000um-MC
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 00:44:16 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1582764254; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=JcRs9mZiMthRLxtoA2Yryvm9oBuTfwKq6aDUtbfP5vU=;
+ b=Wekr7/JLIEQYR6DoUoc3wN98SDS/emeOi2sDQWSmRt0ytbMQHKD+dubESGxwdJoOiJeD7FMp
+ M9hb5v/Zv6Wh5H2TlOopHYx9f/VZk52BtMM8OZSzSaWf0ERaFgGdaK3S1hPr2ir03jOWar2v
+ wOnBs5ko6RfLFr6066cCXc4J924=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e5710d2.7f63ed40bc00-smtp-out-n01;
+ Thu, 27 Feb 2020 00:44:02 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id A0C5DC4479F; Thu, 27 Feb 2020 00:44:02 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [10.134.65.5] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: eberman)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 5982CC43383;
+ Thu, 27 Feb 2020 00:44:01 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 5982CC43383
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=eberman@codeaurora.org
+Subject: Re: [PATCH v2 1/3] dt: psci: Add arm,psci-sys-reset2-type property
+To: Mark Rutland <mark.rutland@arm.com>
+References: <1582577858-12410-1-git-send-email-eberman@codeaurora.org>
+ <1582577858-12410-2-git-send-email-eberman@codeaurora.org>
+ <20200226120918.GA21897@lakrids.cambridge.arm.com>
+From: Elliot Berman <eberman@codeaurora.org>
+Message-ID: <edcf310c-8808-f210-1044-cfd2191e9e3d@codeaurora.org>
+Date: Wed, 26 Feb 2020 16:44:00 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200226215732.GA32486@bogus>
+In-Reply-To: <20200226120918.GA21897@lakrids.cambridge.arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_161245_616236_8701D7BC 
-X-CRM114-Status: GOOD (  19.48  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200226_164414_715215_2A6D1C8C 
+X-CRM114-Status: GOOD (  23.82  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,72 +93,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jon Loeliger <jdl@jdl.com>,
- Mark Langsdorf <mlangsdo@redhat.com>, Robert Richter <rric@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Eric Auger <eric.auger@redhat.com>, soc@kernel.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Trilok Soni <tsoni@codeaurora.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ David Collins <collinsd@codeaurora.org>, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Prasad Sodagudi <psodagud@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/02/2020 21:57, Rob Herring wrote:
+On 2/26/2020 4:09 AM, Mark Rutland wrote:
+> On Mon, Feb 24, 2020 at 12:57:36PM -0800, Elliot Berman wrote:
+>> Some implementors of PSCI may relax the requirements of the PSCI
+>> architectural warm reset. In order to comply with PSCI specification, a
+>> different reset_type value must be used.
+> 
+> This reads as-if you're saying the firmware isn't spec compliant, and
+> this is a workaround in order to get the expected behaviour.
+> 
+> Can you please elaborate on what you mean by "relax the requirements"
+> here? What's your firmware doing or not doing that you want to avoid?
+> 
+>> The alternate PSCI SYSTEM_RESET2 may be used in all warm/soft reboot
+>> scenarios, replacing the architectural warm reset.
+> 
+> I assume you mean SYSTEM_REET2's SYSTEM_WARM_RESET reset? Please call
+> that out explicitly by name -- it makes this easier to look up, and
+> if/when more architectural resets are added the commit message won't
+> become ambiguous.
 
-Hi Rob,
+I can reword to:
 
-thanks for giving it a try!
+Some implementors of PSCI may wish to generally use a different reset type
+than SYSTEM_WARM_RESET. For instance, Qualcomm SoCs support an alternate
+reset_type which may be used in more warm reboot scenarios than
+SYSTEM_WARM_RESET permits (e.g. to reboot into recovery mode).
 
-> On Wed, 26 Feb 2020 18:09:00 +0000, Andre Przywara wrote:
->> The Calxeda system registers are a collection of MMIO register
->> controlling several more general aspects of the SoC.
->> Beside for some power management tasks this node is also somewhat
->> abused as the container for the clock nodes.
+> 
 >>
->> Add a binding in DT schema format using json-schema.
->>
->> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+>> Signed-off-by: Elliot Berman <eberman@codeaurora.org>
 >> ---
->>  .../bindings/arm/calxeda/hb-sregs.yaml        | 47 +++++++++++++++++++
->>  1 file changed, 47 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
+>>  Documentation/devicetree/bindings/arm/psci.yaml | 5 +++++
+>>  1 file changed, 5 insertions(+)
 >>
+>> diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+>> index 8ef8542..469256a2 100644
+>> --- a/Documentation/devicetree/bindings/arm/psci.yaml
+>> +++ b/Documentation/devicetree/bindings/arm/psci.yaml
+>> @@ -102,6 +102,11 @@ properties:
+>>        [1] Kernel documentation - ARM idle states bindings
+>>          Documentation/devicetree/bindings/arm/idle-states.txt
+>>  
+>> +  arm,psci-sys-reset2-param:
+>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>> +    description: |
+>> +        reset_param value to use during a warm or soft reboot.
 > 
-> My bot found errors running 'make dt_binding_check' on your patch:
-> 
-> warning: no schema found in file: Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
-> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml: ignoring, error in schema: properties: clocks
-> Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
-> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml: properties:clocks: {'type': 'object'} is not valid under any of the given schemas (Possible causes of the failure):
-> 	/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml: properties:clocks: 'maxItems' is a required property
-> 
-> Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/arm/calxeda/hb-sregs.example.dts' failed
-> make[1]: *** [Documentation/devicetree/bindings/arm/calxeda/hb-sregs.example.dts] Error 1
-> Makefile:1263: recipe for target 'dt_binding_check' failed
-> make: *** [dt_binding_check] Error 2
-> 
-> See https://patchwork.ozlabs.org/patch/1245261
-> Please check and re-submit.
+> A "soft" reboot isn't a PSCI concept, so I'm worried this is just
+> hooking up magic values for Linux internals.> 
+> I'd like to better understand what you're trying to achieve here.
 
-Ah, right, I forgot that I actually fixed dt-schema:
+In Qualcomm use cases, we do not always want to preserve memory to caller's
+(i.e. Linux) exception level. For instance, crash recovery mode runs in
+higher exception level and would not continue booting into Linux except
+through a hard reset. Also, this early firmware doesn't have the ability to
+understand device tree or ACPI tables to know what memory to preserve.
 
-It seems like we can cope with "clocks" being just a node name in
-schema/clock/clock.yaml [1], but not in meta-schemas/clocks.yaml [2].
+Per discussion with Sudeep and Charles, this use case violates PSCI
+specification for SYSTEM_WARM_RESET reset type, but would be appropriate
+for a vendor-specific reset type. Thus, Qualcomm firmware supports a
+vendor-specific reset type which does not have the requirement to preserve
+memory to caller's EL or to describe what memory is to be preserved in DT
+or ACPI. If this vendor-specific reset type is used, then firmware checks
+various registers (e.g. download mode [1]) to alter the restart flow (e.g.
+to enter recovery mode). If no alternate flow is requested, then firmware
+would boot back into Linux, preserving memory.
 
-I added a similar anyOf ... to the meta-schemas entry, which seems to
-fix it for me.
+[1]: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/firmware/qcom_scm.c?h=v5.6-rc3#n1120
 
-Can you confirm that this is a bug in dt-schema and this is the proper
-fix or am I doing something wrong (I have only a smattering in
-dt-schema/json)?
+Thanks,
+Elliot
 
-Cheers,
-Andre
-
-[1]
-https://github.com/robherring/dt-schema/blob/master/schemas/clock/clock.yaml#L63-L67
-[2]
-https://github.com/robherring/dt-schema/blob/master/meta-schemas/clocks.yaml#L10-L11
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
