@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABA5E171463
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 10:52:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FA3B171468
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 10:53:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rcIVHTPGvxhs3Dq4bVqaAVgt4lZdLnU+DPB6JCDB1L0=; b=upT5iSDAlJPHaW
-	gPyKw3tYA+XmAVMRhtTrI/3FdpAidK2NaP1E6w1OZuhTLdCz5frvKya70+IOQf7ZKnpHvEyUNaYwM
-	3xY9knX6kL0/kQr8zTjpeUlIWvXIU6HF6eiYjHJ8WqvICgwxf/iad4lbPUaK8CrjHD+yTPx47bJyG
-	xWknpZk4yLrxka8bowaeakCl0AaP7Pgpn/rXSuZUzr6icSDGrvTaioouR/WZ/L2bOXujfH4yraXp+
-	8fDFEmnWQGx0vuBhDajqOd8QwtMb9cm8zZG4VvrZzcQ2DQwuUZIVPEBwHP+zI9QTbxLG7aemhX/SA
-	p/UOPX75WdGthwDs7r3Q==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rw2GZrpVTdkHnitUQ0ok/Ec8DlVuwhTmRm/tPU22zaU=; b=qLcGKRl3ubW0xs
+	68VKUdJ4Hq+S1Mzs0b0CBkOO4fFFph0AfAyRt5oEqkEy+nbEVy6vTmkHANSmC/gnNRhwH48qK4zMp
+	OvSpr6pzlxD93/SQrhuJ2jBpDC1v30dbi0styuyqn8lJWvmGlh+Xc9rCqUFcDwJPU1Bi44e2h7S/M
+	eKZpJYNrd+ZlLBpuFfAdc45Kf8vmYRthru6n3E6spKzHvm2zL5qyntGV01bsv+a9bVGmFSj50rURQ
+	nsLfKb4HyX5qQSN0ksNOnwSV4FagmMqFzN8Moq6uJOIroso73nvdjFSNVilsSoXy02y27tVgstI/c
+	NlTbX1u4mtbVzfXQy+lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7FqI-0006Mo-8h; Thu, 27 Feb 2020 09:52:30 +0000
+	id 1j7Fqn-0006cP-TY; Thu, 27 Feb 2020 09:53:01 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Fq8-0006Lw-0Q
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 09:52:23 +0000
+ id 1j7Fqe-0006bc-Qy
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 09:52:54 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=z5m6tXTkAlYXzgJ0FVS+LQjBt3YsmaLrgFprtN/HLGU=; b=co9MkkZO2CvSkAY7CttBdobQ+
- MjldDFkFeKU5971bjJoiCEi5snDcuHNNWr+IZVNJfTXZx2Ne522Ob7Bhe2mGv7IyuXf95HFJBR1X/
- 8zHJAU/adyXtncWo/J/rTRrvOjhRxrojgbXNvmaw/FA4vmpRl4UnP991Vs91Y47NNoISczUTAcWy4
- iORstvGRZgfErvbT+VbS3QMjTl6JCEDTaG/jIwU/bSZKTRl1Y//FWdmZ9T/v/ZD854N5xXsbj1s3U
- 9GBu0tdVZQNOT1BiHd6AYNyIHMfIwPH/Pk6pGbMN9tGjuGNIGxMY6CgxE/D33vruDRRHQ641djYMH
- wqGa4xQEA==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:45908)
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
+ In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=dfDOS8M/h/5R66JW8YhaCe/EtnNvHeTQ5r1lVZWQiwQ=; b=yBlaHRGsDFtSmTVYu8yFJsIllT
+ ahvp4g81kEkx5qvwHCvfjV02/sm9DljMGyrxhgFlLekTrMuAN9L9dFcP/bBG5zKifRqGui6P8pHrV
+ AFdDbtAMLzBwcuCObiUrGUNSfmu81fweAubNtdwMjzksu/apuz+Vs2/GfksgeK4Pbts6O4eLdJB24
+ zE/m2073WPfSq9YhG5DNLzWhemLdATIxY4iVwjFw+gQevEQrF0Dq8PCrfoVO8YYDxhaT93ATK/yBa
+ kaxyD/Z7awREl6rpSWvolkSCYAjBypugbInwnZjTezq6UjqmoyCny0olwEwpC0qu+0QUeBHiwObFB
+ 4DY4dzRQ==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:45374 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j7Fpr-0004jk-Bx; Thu, 27 Feb 2020 09:52:03 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j7Fpn-0000st-EX; Thu, 27 Feb 2020 09:51:59 +0000
-Date: Thu, 27 Feb 2020 09:51:59 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j7FqP-0004k4-H8; Thu, 27 Feb 2020 09:52:37 +0000
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j7FqO-0003sv-Ho; Thu, 27 Feb 2020 09:52:36 +0000
+In-Reply-To: <20200227095159.GJ25745@shell.armlinux.org.uk>
+References: <20200227095159.GJ25745@shell.armlinux.org.uk>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
  Heiner Kallweit <hkallweit1@gmail.com>
-Subject: [PATCH net-next 0/3] Add support for configuring Marvell 10G PHY LEDs
-Message-ID: <20200227095159.GJ25745@shell.armlinux.org.uk>
+Subject: [PATCH net-next 1/3] dt-bindings: net: add dt bindings for marvell10g
+ driver
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Message-Id: <E1j7FqO-0003sv-Ho@rmk-PC.armlinux.org.uk>
+Date: Thu, 27 Feb 2020 09:52:36 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_015220_050268_925D793F 
-X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-CacheID: sfid-20200227_015252_950731_33319C33 
+X-CRM114-Status: UNSURE (   8.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -96,25 +98,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Add a DT bindings document for the Marvell 10G driver, which will
+augment the generic ethernet PHY binding by having LED mode
+configuration.
 
-This series makes it possible to configure the PHY LEDs on the Marvell
-88x3310 and similar PHYs.
-
-We introduce a new DT property called "marvell,led-mode" which allows
-the register values (up to four) for the LEDs to be given and programmed
-into the PHY by the driver.
-
- .../devicetree/bindings/net/marvell,10g.yaml       | 31 +++++++++++
- arch/arm64/boot/dts/marvell/armada-8040-mcbin.dts  |  2 +
- drivers/net/phy/marvell10g.c                       | 62 +++++++++++++++++++---
- 3 files changed, 88 insertions(+), 7 deletions(-)
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ .../devicetree/bindings/net/marvell,10g.yaml  | 31 +++++++++++++++++++
+ 1 file changed, 31 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/net/marvell,10g.yaml
 
+diff --git a/Documentation/devicetree/bindings/net/marvell,10g.yaml b/Documentation/devicetree/bindings/net/marvell,10g.yaml
+new file mode 100644
+index 000000000000..da597fc5314d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/net/marvell,10g.yaml
+@@ -0,0 +1,31 @@
++# SPDX-License-Identifier: GPL-2.0+
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/net/marvell,10g.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Marvell Alaska X family Ethernet PHYs
++
++maintainers:
++  - Russell King <rmk+kernel@armlinux.org.uk>
++
++allOf:
++  - $ref: ethernet-phy.yaml#
++
++properties:
++  marvell,led-mode:
++    description: |
++      An array of one to four 16-bit integers to write to the PHY LED
++      configuration registers.
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint16-array
++      - minItems: 1
++        maxItems: 4
++
++examples:
++  - |
++    ethernet-phy@0 {
++        reg = <0>;
++        compatible = "ethernet-phy-ieee802.3-c45";
++        marvell,led-mode = /bits/ 16 <0x0129 0x095d 0x0855>;
++    };
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
