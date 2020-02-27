@@ -2,52 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4410B172535
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:36:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2105B172538
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:37:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yk1cO2P9Ue8pVy7/vdksat/4iTiTWmz4HysoD14uYxU=; b=ckyzjIZU373smX
-	Ws2YDlteeS9UikkSfQwfqqZGfw8VeAzo0KDLiZ/X1cgqKOhv3Gqg4AcvKL8GkWIgeHaT3nBM2GC7H
-	mB6RXFP/R7Vx41KhP5YFbUk1aprQtnTK8bACNy6lO/S5D8gpM2kDPA6kCUhhvAtJMl2/zw4Xuqgrq
-	UPMHHrjYSMTn22Bv3cRSgyq55ULvY3/weWgyMULtPg0M+Usz0Hr5eZiG5eijJ2oc/8Obgv6X400LD
-	7PQ/e3rbcmjpxNDaaLcN2G/Psji6OX7AjmCyf6JGGv6pmCmrbIHdAT1akF1s/c9y46nKoRGRUTerT
-	aWdyeosy/J2fWG44O1cw==;
+	List-Owner; bh=jH/CFN7z/ZBGzZCS13GkV5n36m7dobkLDDhUubUEl4w=; b=X+S39rwEjDzdoj
+	e4t13Dbon5EWAAKTW092KoH9q4/VhHC30d2ZX4p/Bc4maDi2PiRrnC4Q7t7UvwT76Xs99cv6xVW1s
+	3UvKA3JHC5MBwC+Vkr9mo0epr2LU3RN1t3KzqrJF/vaN2XE6++rrA94uc/BcrtlRgYftE+xVtGSb8
+	LL1sg2rBy3wlqqwpP70kQAfX5QQbYNq0gwp3Ao1hOMejz2eflYzhaDNbL93iTD5uwuUPFmeYaeioR
+	4stjGKJ0PuOOmI8TnUV2vwN2Ih6J/pZD4su0koe+HD0zPNsxANmAQS0/P50Iij1VnZPuJnHgaCDVX
+	NVgNmMyOeuxHEWOIygmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7N52-00062B-N2; Thu, 27 Feb 2020 17:36:12 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7N4s-00061o-Qm
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:36:04 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id CB30180C0;
- Thu, 27 Feb 2020 17:36:47 +0000 (UTC)
-Date: Thu, 27 Feb 2020 09:35:59 -0800
-From: Tony Lindgren <tony@atomide.com>
-To: Dave Gerlach <d-gerlach@ti.com>
-Subject: Re: [PATCH 0/2] ARM: dts: am33xx/am4372: Add cpuidle dt states
-Message-ID: <20200227173559.GH37466@atomide.com>
-References: <20191213041725.16831-1-d-gerlach@ti.com>
+	id 1j7N5k-0006I4-G6; Thu, 27 Feb 2020 17:36:56 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7N5Z-0006He-MX
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:36:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=0F0tK5/ubcWROjWTPQxm6Y15x5cP/M3Yx4UdnWKYU5s=; b=vJqihBENKh82ptrEG8k2m+03Hs
+ tf6ULdHn5bXGkWoqJFRY17MR3qEapLlh2RJZ/WBl4zKLI1YzCWGlF/Vjc6MVgFZuwE3OHYVQhdV2b
+ C4EUwx9KiAfS6viubwFhiykxps8m0Jjt30ANmwcdE6FFwga6FOrVfXKrz4UvYwYXaA90=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1j7N5Q-0006eR-NP; Thu, 27 Feb 2020 18:36:36 +0100
+Date: Thu, 27 Feb 2020 18:36:36 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH net-next 1/3] dt-bindings: net: add dt bindings for
+ marvell10g driver
+Message-ID: <20200227173636.GE5245@lunn.ch>
+References: <20200227095159.GJ25745@shell.armlinux.org.uk>
+ <E1j7FqO-0003sv-Ho@rmk-PC.armlinux.org.uk>
+ <CAL_JsqK9SLJKZfGjWu3RCk9Wiof+YdUaMziwOrCw5ZxjMZAq_Q@mail.gmail.com>
+ <20200227172608.GO25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191213041725.16831-1-d-gerlach@ti.com>
+In-Reply-To: <20200227172608.GO25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_093602_909211_10EFDF37 
-X-CRM114-Status: UNSURE (   7.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_093645_741708_1E0135F5 
+X-CRM114-Status: GOOD (  10.16  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,30 +78,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Santosh Shilimkar <ssantosh@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ netdev <netdev@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Dave Gerlach <d-gerlach@ti.com> [191212 20:16]:
-> Hi,
-> This series adds DT idle states for TI am33xx and am4372 platforms.
-> The mpu_gate is added for both platforms which gates the MPU clock
-> to save power during idle. It depends on the driver series sent
-> here [1].
+> > > +    allOf:
+> > > +      - $ref: /schemas/types.yaml#/definitions/uint16-array
+> > > +      - minItems: 1
+> > > +        maxItems: 4
+> > > +
+> > > +examples:
+> > > +  - |
+> > > +    ethernet-phy@0 {
+> > > +        reg = <0>;
+> > 
+> > This needs to be under an 'mdio' node with #address-cells and
+> > #size-cells set correctly.
 > 
-> Regards,
-> Dave
-> 
-> [1] https://marc.info/?l=linux-kernel&m=157620644400324&w=2
+> I wish these things were documented somewhere... I'm pretty sure this
+> passed validation when I wrote it.
 
-Thanks applying into omap-for-v5.7/dt.
+Documentation/devicetree/bindings/net/mdio.yaml
 
-Regards,
+Rob, is there a way to express the hierarchy between yaml files and
+properties? Can we say that a phy, as defined by ethernet-phy.yaml
+should always be inside an MDIO bus as defined in mdio.yaml?
 
-Tony
+Thanks
+	Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
