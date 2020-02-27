@@ -2,80 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DCEC1727B4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:33:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FC231727DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 19:46:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q5PJ8m+vP0ut7epUrjcnwHrr/++gQU4jR2QHWL825io=; b=qE/0oPt/evyljb
-	JYqW+TH3jwRK8LO+TCGTx6HZxMd3JEjY2iYWTweyylL+PFf4WChgIlftvO28a/PigCQKH/vtg2wOD
-	83JulDMyR/ecHPIYWWF7vqpY2/eGCfT4CTTvnxAJDDaTJQoZsIZquq4RtK1uWkGHNHfLdpvkSJH08
-	fwlTgSot7W73Eh1NOn2tL4ZuQMODn1O2W1alHyRYFE1dgB0p6yoAyvOD7w3rs/orwYW8NJM9OzNID
-	bP482+rqunhemx22Ilve3q+aaPeS7hvX5Ru/y0dQaWzaEPkU9mFVMtS/4IsHFsvFl4oU9eOG/yNgK
-	oSSGOq9P5ffk5fAnJo2w==;
+	List-Owner; bh=xhFFbmQCmj2Sbbd9usjdEkumOTdFOtLeYF379EOq4ck=; b=GD2GiyaSBOl/Pc
+	87zwQl1HWpSAOFcT6CVZSUcnpOIx2BPSms3HdhStbt5wdhkmSJ/xM1WoijxrvOwavNr029bHf9vlT
+	ps9cgLfJRLYnYhEdAzTXXuwVr/kKUBI2pE3FO4XLpb9BreTtVg2EYfl83LQC653xdF+M2z41xCDKk
+	/bmMZ4w70iGAutg3A6H1yC84sUgScD+s89nXiVu3buDa6UYWAsXxYoUpBU3rXd/wuYV1IMaZEtuyC
+	x5979NjI1OJvOC13064fawVQS6Dnc/vEvnNvAIkM//nBlkgVSHSi0nRe5Xs67mDlQfoJYU9FAoAfU
+	3AeYisqvkZ8DlMLm+YLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NyV-0008CI-VA; Thu, 27 Feb 2020 18:33:32 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1j7OAS-0004UN-Q3; Thu, 27 Feb 2020 18:45:52 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7NyM-0008Bk-Su
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:33:24 +0000
-Received: by mail-io1-xd43.google.com with SMTP id c17so560678ioc.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 10:33:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=E7WO/NUxGv82Kf1dVrT+16+HfZ68MhNea8HytDwhqyw=;
- b=dDlTY+HgwgsvQ5xJ8+Hk1X+IRSOVAMCit/kiKPiZmFv2sjbZZqgHkNQR/RafnMCRZY
- hwdlikXVytW/mOAzi/NlUvfQpKaIriHabsmG/zfSsACtuxMuAPVHZYFo2wN/HW+SYNsQ
- 9OslPFaPXicUrUv+kQQGObGg7bXRXoMuaKmD5jiuAzXD7xqnp+XjAE5I1yXeUMaF+WAf
- QXF0zuZMsdxBDgteXJHgLBFj6MD5AaKn+QIEHppS9A9BkWkrOeQsILX1HzZ9AYXkYHJX
- YRJ0RWxZdIW/QslG3vFML8SuUSTcYpAS8+YgE+6/wrlyjqYp9myE9D/RFX4hhzdK619u
- pKbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=E7WO/NUxGv82Kf1dVrT+16+HfZ68MhNea8HytDwhqyw=;
- b=Avq5snrLbDAxBxdMjiHWWxjXwuJHpa2nGQyGBsXx8QEnNnsycXEHf9afOFD/sw1eh6
- L9Av34ZGjglkMGaXWYq8Qv02SEv2zeVP+A2BeP3PDUskF09G+PVqel3x+ODTToTME5Pe
- 6FJ4y1tai/XsjJgnkNhEY5TAztba2HEDhvybwh4Kb4Y9t+f2LIEdJYtZ3vCNyqdSi2hN
- btiUKvBEFVojNaffKbD2Y1jv+IubewL0LtZxzHe/SqjLWA2LDKMTVErpyzap8r0RqY14
- AN6BFl1E7K5lrQSHodeb5qFxbMiSHAX58UcVXT02U/3QYEjDLsvWOEK6BVOSiIGNuJlw
- 2LYQ==
-X-Gm-Message-State: APjAAAXQRBtJOTp9k5msbpFv0zuF2Gke5POLCXP7CIsniT2FIQHR/Osy
- 2B9IXNC5wxxFUNhVSt14vkqWNQ2A5z4Uj7+i0d47UQ==
-X-Google-Smtp-Source: APXvYqz0JZSMiGAn9FLjoYzJKMf64V4rXpI5AxwNpHCGrUsfgeFrJ/5Bi1clENFNl5NoGK6MW/yqNoXQYEb7zczBpL8=
-X-Received: by 2002:a5e:d614:: with SMTP id w20mr496610iom.278.1582828401861; 
- Thu, 27 Feb 2020 10:33:21 -0800 (PST)
+ id 1j7OAJ-0004Tp-KD
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 18:45:45 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1582829142; h=In-Reply-To: Content-Type: MIME-Version:
+ References: Message-ID: Subject: Cc: To: From: Date: Sender;
+ bh=U/EDQ0pr75hfPnWX/OCbb8FxwwnZ09FdliYUIRis9EI=;
+ b=CUnRpFuQyn28SJzfxhZG3EwXBVMBgj6S0jDgW3IkymFktuNG89bSK/lyqk14djRRAQIk4JPe
+ 5NdMpph6ra3EEQtEdvgNn1lJ86VQyvsTeVgoZD+UoSrC+NAqRTHy+XdjxfkFcZ4FAfNzU/us
+ pIwIW8/HM0XbcNzQyZTz6vEUQvc=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e580e55.7f8e9287e3b0-smtp-out-n03;
+ Thu, 27 Feb 2020 18:45:41 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 6CF1AC447A4; Thu, 27 Feb 2020 18:45:41 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: jcrouse)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 83C15C433A2;
+ Thu, 27 Feb 2020 18:45:36 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 83C15C433A2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+Date: Thu, 27 Feb 2020 11:45:34 -0700
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: iommu@lists.linux-foundation.org
+Subject: Re: [Freedreno] [PATCH v5 0/5] iommu/arm-smmu: Split pagetable
+ support for arm-smmu-v2
+Message-ID: <20200227184534.GA25772@jcrouse1-lnx.qualcomm.com>
+Mail-Followup-To: iommu@lists.linux-foundation.org,
+ Jeffrey Hugo <jeffrey.l.hugo@gmail.com>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Wen Yang <wen.yang99@zte.com.cn>,
+ will@kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Ben Dooks <ben.dooks@codethink.co.uk>,
+ linux-arm-kernel@lists.infradead.org,
+ Wambui Karuga <wambui.karugax@gmail.com>,
+ freedreno@lists.freedesktop.org, Fritz Koenig <frkoenig@google.com>,
+ linux-arm-msm@vger.kernel.org,
+ Sharat Masetty <smasetty@codeaurora.org>,
+ Jeykumar Sankaran <jsanka@codeaurora.org>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>,
+ Enrico Weigelt <info@metux.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, zhengbin <zhengbin13@huawei.com>,
+ Rob Clark <robdclark@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Drew Davenport <ddavenport@chromium.org>,
+ Brian Masney <masneyb@onstation.org>, robin.murphy@arm.com,
+ Georgi Djakov <georgi.djakov@linaro.org>
+References: <1580248819-12644-1-git-send-email-jcrouse@codeaurora.org>
 MIME-Version: 1.0
-References: <20200226110221.19288-1-geert+renesas@glider.be>
- <20200227181018.5nixs7o7lght3mug@localhost>
- <CAMuHMdXa1Kjmp+9_dWGGF1Dz-6op+-6iSdF56PHSZFgWOAXEgQ@mail.gmail.com>
-In-Reply-To: <CAMuHMdXa1Kjmp+9_dWGGF1Dz-6op+-6iSdF56PHSZFgWOAXEgQ@mail.gmail.com>
-From: Olof Johansson <olof@lixom.net>
-Date: Thu, 27 Feb 2020 10:33:10 -0800
-Message-ID: <CAOesGMjVm1TMjhBtFG9-acw=c7COhkcoErdmkJjz0ZG0QraH3Q@mail.gmail.com>
-Subject: Re: [GIT PULL 0/5] Renesas SoC updates for v5.7
-To: Geert Uytterhoeven <geert@linux-m68k.org>,
- Konstantin Ryabitsev <mricon@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <1580248819-12644-1-git-send-email-jcrouse@codeaurora.org>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_103322_933317_51471578 
-X-CRM114-Status: GOOD (  15.93  )
+X-CRM114-CacheID: sfid-20200227_104543_730931_56E69976 
+X-CRM114-Status: GOOD (  23.36  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -90,79 +117,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, users@linux.kernel.org,
- arm-soc <soc@kernel.org>, arm-soc <arm@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>, will@kernel.org,
+ Jeykumar Sankaran <jsanka@codeaurora.org>, Sam Ravnborg <sam@ravnborg.org>,
+ Joerg Roedel <joro@8bytes.org>, Wen Yang <wen.yang99@zte.com.cn>,
+ Ben Dooks <ben.dooks@codethink.co.uk>, linux-arm-kernel@lists.infradead.org,
+ Wambui Karuga <wambui.karugax@gmail.com>, Fritz Koenig <frkoenig@google.com>,
+ linux-arm-msm@vger.kernel.org, Sharat Masetty <smasetty@codeaurora.org>,
+ robin.murphy@arm.com, Alexios Zavras <alexios.zavras@intel.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>, Enrico Weigelt <info@metux.net>,
+ Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
+ zhengbin <zhengbin13@huawei.com>, Rob Clark <robdclark@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Drew Davenport <ddavenport@chromium.org>, Brian Masney <masneyb@onstation.org>,
+ freedreno@lists.freedesktop.org, Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 10:19 AM Geert Uytterhoeven
-<geert@linux-m68k.org> wrote:
->
-> Hi Olof,
->
-> On Thu, Feb 27, 2020 at 7:10 PM Olof Johansson <olof@lixom.net> wrote:
-> > On Wed, Feb 26, 2020 at 12:02:16PM +0100, Geert Uytterhoeven wrote:
-> > > This is my first pull request for the inclusion of Renesas SoC updates
-> > > for v5.7.
-> > >
-> > > It consists of 5 parts:
-> >
-> > Only 2 of these were sent to arm@kernel.org / soc@kernel.org: 2/5 and 5/5.
-> > Mind checking your scripts to make sure you send them to us so they end
-> > up in our patchwork? (And please resend the ones who weren't).
->
-> Strange, I used a single git send-email command for the whole series.
->
-> I do see them all of them at
-> https://patchwork.kernel.org/project/linux-soc/list/,
-> https://patchwork.kernel.org/project/linux-soc/list/?series=247609 ?
-> Lore also has them:
-> https://lore.kernel.org/linux-renesas-soc/20200227181018.5nixs7o7lght3mug@localhost/T/#m2ec32842569b4b4dc25d4ecda668e509edaba98b
->
-> Perhaps they got lost on the path to your inbox? Recently I had a similar
-> problem with some patches, which appeared at the list and patchwork, but
-> never in my (Gmail) inbox.
+On Tue, Jan 28, 2020 at 03:00:14PM -0700, Jordan Crouse wrote:
+> This is another iteration for the split pagetable support based on the
+> suggestions from Robin and Will [1].
+> 
+> Background: In order to support per-context pagetables the GPU needs to enable
+> split tables so that we can store global buffers in the TTBR1 space leaving the
+> GPU free to program the TTBR0 register with the address of a context specific
+> pagetable.
+> 
+> If the DOMAIN_ATTR_SPLIT_TABLES attribute is set on the domain before attaching,
+> the context bank assigned to the domain will be programmed to allow translations
+> in the TTBR1 space. Translations in the TTBR0 region will be disallowed because,
+> as Robin pointe out, having a un-programmed TTBR0 register is dangerous.
+> 
+> The driver can determine if TTBR1 was successfully programmed by querying
+> DOMAIN_ATTR_SPLIT_TABLES after attaching. The domain geometry will also be
+> updated to reflect the virtual address space for the TTBR1 range.
+> 
+> Upcoming changes will allow auxiliary domains to be attached to the device which
+> will enable and program TTBR0.
+> 
+> This patchset is based on top of linux-next-20200127.
 
-This is how the email I got looked like:
+Quick ping for feedback so I can respin for (maybe?) 5.6.
 
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: "Linuxkernel+Patchwork-Soc via Email Integration"
-<patchwork-soc@linux.kernel.org>
-Cc: Magnus Damm <magnus.damm@gmail.com>,
-linux-arm-kernel@lists.infradead.org,
-linux-renesas-soc@vger.kernel.org, Geert Uytterhoeven
-<geert+renesas@glider.be>
-Subject: [GIT PULL 1/5] Renesas ARM DT updates for v5.7
-Date: Wed, 26 Feb 2020 12:02:17 +0100
-Message-Id: <20200226110221.19288-2-geert+renesas@glider.be>
-In-Reply-To: <20200226110221.19288-1-geert+renesas@glider.be>
-References: <20200226110221.19288-1-geert+renesas@glider.be>
-Precedence: Bulk
-List-Unsubscribe: <https://linux.kernel.org/g/patchwork-soc/unsub>
-Sender: patchwork-soc@linux.kernel.org
-List-Id: <patchwork-soc.linux.kernel.org>
-Mailing-List: list patchwork-soc@linux.kernel.org; contact
-patchwork-soc+owner@linux.kernel.org
-Delivered-To: mailing list <patchwork-soc@linux.kernel.org>
-Reply-To: patchwork-soc+owner@linux.kernel.org
+Thanks,
+Jordan
 
+> Change log:
+> 
+> v4: Only program TTBR1 when split pagetables are requested. TTBR0 will be
+> enabled later when an auxiliary domain is attached
+> v3: Remove the implementation specific and make split pagetable support
+> part of the generic configuration
+> 
+> [1] https://lists.linuxfoundation.org/pipermail/iommu/2020-January/041373.html
+> 
+> Jordan Crouse (5):
+>   iommu: Add DOMAIN_ATTR_SPLIT_TABLES
+>   iommu/arm-smmu: Add support for TTBR1
+>   drm/msm: Attach the IOMMU device during initialization
+>   drm/msm: Refactor address space initialization
+>   drm/msm/a6xx: Support split pagetables
+> 
+>  drivers/gpu/drm/msm/adreno/a2xx_gpu.c    | 16 ++++++++++
+>  drivers/gpu/drm/msm/adreno/a3xx_gpu.c    |  1 +
+>  drivers/gpu/drm/msm/adreno/a4xx_gpu.c    |  1 +
+>  drivers/gpu/drm/msm/adreno/a5xx_gpu.c    |  1 +
+>  drivers/gpu/drm/msm/adreno/a6xx_gpu.c    | 51 ++++++++++++++++++++++++++++++++
+>  drivers/gpu/drm/msm/adreno/adreno_gpu.c  | 23 ++++++++++----
+>  drivers/gpu/drm/msm/adreno/adreno_gpu.h  |  8 +++++
+>  drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c  | 18 ++++-------
+>  drivers/gpu/drm/msm/disp/mdp4/mdp4_kms.c | 18 +++++------
+>  drivers/gpu/drm/msm/disp/mdp5/mdp5_cfg.c |  4 ---
+>  drivers/gpu/drm/msm/disp/mdp5/mdp5_kms.c | 18 +++++------
+>  drivers/gpu/drm/msm/msm_drv.h            |  8 ++---
+>  drivers/gpu/drm/msm/msm_gem_vma.c        | 36 ++++------------------
+>  drivers/gpu/drm/msm/msm_gpu.c            | 49 ++----------------------------
+>  drivers/gpu/drm/msm/msm_gpu.h            |  4 +--
+>  drivers/gpu/drm/msm/msm_gpummu.c         |  6 ----
+>  drivers/gpu/drm/msm/msm_iommu.c          | 18 ++++++-----
+>  drivers/gpu/drm/msm/msm_mmu.h            |  1 -
+>  drivers/iommu/arm-smmu.c                 | 48 +++++++++++++++++++++++++-----
+>  drivers/iommu/arm-smmu.h                 | 22 ++++++++++----
+>  include/linux/iommu.h                    |  2 ++
+>  21 files changed, 198 insertions(+), 155 deletions(-)
+> 
+> -- 
+> 2.7.4
+> _______________________________________________
+> Freedreno mailing list
+> Freedreno@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/freedreno
 
-It no longer had the {arm,soc}@kernel.org recipients on it, instead
-the internal-only mailing list that connects soc@kernel.org with
-patchwork. Very odd. Reply-to rewrites are undesirable too.
-
-Konstantin, anything on your side that can shed light on this? My mail
-filters locally expects to see soc@kernel.org and arm@kernel.org
-recipients still intact in the to-line, and it's really odd that 2 of
-the 5 emails looked as expected.
-
-
--Olof
+-- 
+The Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
