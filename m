@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0930917295A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 21:17:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65ED317295E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 21:17:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wx1FjnFF05IAE07UTcHfH994bUEp3ER4rwkqo03EKhY=; b=h11lx1FdDQMd4E
-	sbDInIYc6cszUMQFIjlR5ZNtIE4hgm+YlUG71dTwvjPSEMscShCbP6GkN5bO367lcArEu84+1jo5z
-	ihSBEk5dZaFM1NzC5WHxHPnjcTvhUijAjqCh+ek3FC2P+x81l1X23VpThBG/lUv5xUd0ULvmDv3kF
-	V/GXyQqb+G+nDFZVzemZQbciKnf1PR6mdLh0y0bb9QhL4UzRdYDcEo9IUfufvA5t6GIRd0GYArfd0
-	5Eg81nl4Dj7okb2Lox6wanspLKT2z5A1NWDjPJUcG0OiZtVTI513rBIQ2DjV95cH/pM9V1bDHJG0p
-	vE/WPAYA3lh4I6sDyGkA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q3LKrpDMSUD3p26qm7aRDE4W/7XUTI4UQV1gTcct6cY=; b=JpVc7hNCyc1vkF
+	aUgzL3dOfVzhh0oqifFvImg4M9YnJymhT+HzZhEkh3SpEbWeh8QIzQctS6osddYbRK2AI1I+iivJb
+	yPhKYMvq0o0PaRXV4l5GpsAPVf0ocK1KXlmFKg4GTi7xsDeUuUPk+uSpUze1vVzSyKdKbWEOOTtGz
+	jjqA2x8wzcvHo7gf4K9DKLvGRqrmYEXvl01cjsA0Z9IccTZR3+tixTM5nX7/UZET86B86MfAldOoh
+	Uij5Ii73rVLXYbzJMyDciW6FcVVtO54lTHlLGe6xxMf0xHyPJ3Z3gN66d9sYT17VzI8XKjtHrCNh0
+	2QLa98e5o4mdzFvCR2ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7PaM-0003OC-Ev; Thu, 27 Feb 2020 20:16:42 +0000
-Received: from gateway36.websitewelcome.com ([192.185.193.119])
+	id 1j7Pae-0003Vz-Ea; Thu, 27 Feb 2020 20:17:00 +0000
+Received: from gateway20.websitewelcome.com ([192.185.68.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7PaC-0003MS-59
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 20:16:33 +0000
-Received: from cm17.websitewelcome.com (cm17.websitewelcome.com [100.42.49.20])
- by gateway36.websitewelcome.com (Postfix) with ESMTP id EC741400F3A1A
+ id 1j7PaH-0003Mk-Cs
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 20:16:39 +0000
+Received: from cm10.websitewelcome.com (cm10.websitewelcome.com [100.42.49.4])
+ by gateway20.websitewelcome.com (Postfix) with ESMTP id 538BF400D20EA
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 13:31:12 -0600 (CST)
+ Thu, 27 Feb 2020 13:02:02 -0600 (CST)
 Received: from br164.hostgator.com.br ([192.185.176.180]) by cmsmtp with SMTP
- id 7PZzj5WyJAGTX7PZzjEcK1; Thu, 27 Feb 2020 14:16:19 -0600
+ id 7Pa5jWScaEfyq7Pa5jbybP; Thu, 27 Feb 2020 14:16:25 -0600
 X-Authority-Reason: nr=8
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=castello.eng.br; s=default; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=O9Ta8jqoR7xvtXnW35tk+UGBKOY48qRRa7KgNc+IA7U=; b=lRMc9TaOZ2BZQfzftZUL7wYbgf
- bQJNrdeBEpvAO1rb9obaKegi8YN/JE6ibWNYlZVFkMAwEVlz60Hyrlpf4QI1neiB7DdfP6nywori7
- KeFc/a3b9kF3q9LFLQZivNdh5arO13LnoIil4AdUh5NLwR+E/8r8cVCpYatPqAkEj2XzIt4NCYami
- 1drpAQGejnROIkhnuxTozzTorSka/VEWWjRVcUL7qJVW2FAJ5DzpO5tYyVUVvjxxh/87KeBfmvbrN
- 5KeyOTgqiUWsQqoAy7LOQCv6lLxypH3OnVgWBksHBfhFm6hwG5AVTAqHpRusEQTatVbcNASTDg3TD
- AaAn+mjw==;
+ d=castello.eng.br; s=default; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=qoO2qsaKDDkITqEnriWbR9MEmzTrNQCsMHlNkFBYJ7c=; b=tcjbM6nsjXMnB1U50YJqJ0Xpq+
+ qnb6sizE41zDg6WWUl6+PgNcBLucBF18ilJ0ekjStyF0ZK+qs9laPZeAs4HULnEnQJAPcUYmJhJh3
+ iNANGLYl0YuK6SGCRzH2kwFqTtzFPqn065TDn2wj+R8SSpz9sqOrctyNxJ7dlKjIGHuo/lxgZJ7gW
+ 4QE368So677rBzP33fUqD1UHd+Z5E1rOKM1ck0LnzvKzZWMkTYPLf2n/ieBR1K0zTtFiUfv6wle1v
+ dp+OsSgF9hYl1BG91kGTsc5PPX0iJg/vbfN2VOy0Txc/DcxMMZxqGE8gjOwKZQLcNBPMf5yjUSZCA
+ mj2+zzYA==;
 Received: from [191.31.195.84] (port=40030 helo=castello.castello)
  by br164.hostgator.com.br with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
  (envelope-from <matheus@castello.eng.br>)
- id 1j7PZy-002xJo-Fk; Thu, 27 Feb 2020 17:16:18 -0300
+ id 1j7Pa4-002xJo-Nh; Thu, 27 Feb 2020 17:16:25 -0300
 From: Matheus Castello <matheus@castello.eng.br>
 To: afaerber@suse.de, manivannan.sadhasivam@linaro.org, mark.rutland@arm.com,
  robh+dt@kernel.org
-Subject: [PATCH v1 0/2] Add Caninos Loucos Labrador SoM and Base Board Device
- Tree
-Date: Thu, 27 Feb 2020 17:15:55 -0300
-Message-Id: <20200227201557.368533-1-matheus@castello.eng.br>
+Subject: [PATCH v1 1/2] dt-bindings: arm: actions: Document Caninos Loucos
+ Labrador
+Date: Thu, 27 Feb 2020 17:15:56 -0300
+Message-Id: <20200227201557.368533-2-matheus@castello.eng.br>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200227201557.368533-1-matheus@castello.eng.br>
+References: <20200227201557.368533-1-matheus@castello.eng.br>
 MIME-Version: 1.0
 X-AntiAbuse: This header was added to track abuse,
  please include it with any abuse report
@@ -65,18 +67,18 @@ X-AntiAbuse: Sender Address Domain - castello.eng.br
 X-BWhitelist: no
 X-Source-IP: 191.31.195.84
 X-Source-L: No
-X-Exim-ID: 1j7PZy-002xJo-Fk
+X-Exim-ID: 1j7Pa4-002xJo-Nh
 X-Source: 
 X-Source-Args: 
 X-Source-Dir: 
 X-Source-Sender: (castello.castello) [191.31.195.84]:40030
 X-Source-Auth: matheus@castello.eng.br
-X-Email-Count: 4
+X-Email-Count: 12
 X-Source-Cap: Y2FzdGUyNDg7Y2FzdGUyNDg7YnIxNjQuaG9zdGdhdG9yLmNvbS5icg==
 X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_121632_339727_2C3DAEF2 
-X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-CacheID: sfid-20200227_121637_571427_1F337EB8 
+X-CRM114-Status: UNSURE (   6.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -84,7 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.193.119 listed in list.dnswl.org]
+ no trust [192.185.68.24 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,36 +110,54 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Matheus Castello <matheus@castello.eng.br>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q2FuaW5vcyBMb3Vjb3MgTGFicmFkb3IgaXMgYSBCcmF6aWxpYW4gcHJvamVjdCBvZiBvcGVuIFN5
-c3RlbSBvbiBNb2R1bGVzIGFuZApCYXNlIEJvYXJkcyBiYXNlZCBvbiBMZW1ha2VyIEd1aXRhci4g
-SXMgYW4gaW5pdGlhdGl2ZSBvZiBMU0ktVEVDIGEgbm9uLXByb2ZpdApvcmdhbml6YXRpb24uCgpU
-aGUgTGFicmFkb3IgU29NIHYyIGlzIGJhc2VkIG9uIEFjdGlvbnMgU2VtaSBTNTAwIHByb2Nlc3Nv
-ciB3aXRoIDE2R0IgZU1NQyBhbmQKMkdCIFJBTS4KClRoaXMgc2VyaWVzIGFkZHMgdGhlIGluaXRp
-YWwgd29yayBmb3IgZGV2aWNlIHRyZWUgZmlsZXMgYW5kIGFsc28gYWRkcyB0aGUKdmVuZG9yLXBy
-ZWZpeCBmb3IgdGhlIENhbmlub3MgcHJvZ3JhbS4gVGhlIHdvcmsgd2FzIGJhc2VkIG9uIHRoZSBB
-bmRyZWFzIEbDpHJiZXIKZGV2aWNlIHRyZWVzIGZvciBMZW1ha2VyIEd1aXRhciwgdGhhbmtzIEFu
-ZHJlYXMuCgpUZXN0ZWQgb24gbXkgQ2FuaW5vcyBMYWJyYWRvciB2Miwgb25seSBlYXJseWNvbiBz
-ZXJpYWwgb3V0cHV0IGlzIGF2YWlsYWJsZSBmb3IKbm93LCB1c2luZyB0aGUgZmFrZSBjbG9jay4g
-SSBoYXZlIGFscmVhZHkgd29ya2VkIG9uIHNvbWV0aGluZyBoZXJlIHRvIGFkZCB0aGUKY2xvY2tz
-IGFuZCBwaW5jdHJsIG5vZGVzIHRvIG93bC1zNTAwLmR0c2ksIGJ1dCBJIHdvdWxkIGxpa2UgdG8g
-Zmlyc3QgYWRkIHRoZQppbml0aWFsIGRldmljZSB0cmVlIGZpbGVzIGFuZCB0aGVuIHdvcmsgb24g
-dGhlIG90aGVyIHBhdGNoZXMgY2FsbWx5LgoKQlIsCk1hdGhldXMgQ2FzdGVsbG8KCk1hdGhldXMg
-Q2FzdGVsbG8gKDIpOgogIGR0LWJpbmRpbmdzOiBhcm06IGFjdGlvbnM6IERvY3VtZW50IENhbmlu
-b3MgTG91Y29zIExhYnJhZG9yCiAgQVJNOiBkdHM6IEFkZCBDYW5pbm9zIExvdWNvcyBMYWJyYWRv
-cgoKIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9hY3Rpb25zLnlhbWwgICAgICB8ICA1ICsr
-KwogLi4uL2RldmljZXRyZWUvYmluZGluZ3MvdmVuZG9yLXByZWZpeGVzLnlhbWwgIHwgIDIgKysK
-IGFyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlICAgICAgICAgICAgICAgICAgICB8ICAzICstCiBh
-cmNoL2FybS9ib290L2R0cy9vd2wtczUwMC1sYWJyYWRvci1iYi5kdHMgICAgfCAzMyArKysrKysr
-KysrKysrKysrKysrCiBhcmNoL2FybS9ib290L2R0cy9vd2wtczUwMC1sYWJyYWRvci12Mi5kdHNp
-ICAgfCAyMSArKysrKysrKysrKysKIDUgZmlsZXMgY2hhbmdlZCwgNjMgaW5zZXJ0aW9ucygrKSwg
-MSBkZWxldGlvbigtKQogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2Jvb3QvZHRzL293bC1z
-NTAwLWxhYnJhZG9yLWJiLmR0cwogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2Jvb3QvZHRz
-L293bC1zNTAwLWxhYnJhZG9yLXYyLmR0c2kKCi0tCjIuMjUuMAoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Update the documentation to add the Caninos Loucos Labrador
+vendor-prefix and items that were included in the device tree files.
+
+Signed-off-by: Matheus Castello <matheus@castello.eng.br>
+---
+ Documentation/devicetree/bindings/arm/actions.yaml     | 5 +++++
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 2 files changed, 7 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/actions.yaml b/Documentation/devicetree/bindings/arm/actions.yaml
+index ace3fdaa8396..1b131ceb884a 100644
+--- a/Documentation/devicetree/bindings/arm/actions.yaml
++++ b/Documentation/devicetree/bindings/arm/actions.yaml
+@@ -24,6 +24,11 @@ properties:
+               - lemaker,guitar-bb-rev-b # LeMaker Guitar Base Board rev. B
+           - const: lemaker,guitar
+           - const: actions,s500
++      - items:
++          - enum:
++              - caninos,labrador-bb # Caninos Loucos Labrador Base Board
++          - const: caninos,labrador
++          - const: actions,s500
+
+       # The Actions Semi S700 is a quad-core ARM Cortex-A53 SoC.
+       - items:
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 9e67944bec9c..3e974dd563cf 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -167,6 +167,8 @@ patternProperties:
+     description: Calxeda
+   "^capella,.*":
+     description: Capella Microsystems, Inc
++  "^caninos,.*":
++    description: Caninos Loucos LSI-TEC NPO
+   "^cascoda,.*":
+     description: Cascoda, Ltd.
+   "^catalyst,.*":
+--
+2.25.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
