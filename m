@@ -2,70 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6326E1717BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:44:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12C031717C5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:46:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wONXT5NlJQiakLYPNsrUP13IffAvoXE2jFSbgK+GM7U=; b=BJIXhMmxmoh5on
-	XF3uWi/aLSeBRlW1gRKsHBm8Vio8BFGn7syXa/t8P5fv8kppu7YDMa/OK9mSXYvIEpYy+F2awVQ9+
-	Bb/sFn8fQR2jeUSgekOgVjFUmwZz05PYkkuYcKqaxzv1HTjFtBNRUqUOP2bdHV3nTJpPoWPttDLsh
-	H9ThsBxO6TaRoRUnpolVcgo+aMZsgo3ConeLib3vkPsn14YUZyO0TqK/XzdI9nj/4nTFR9G+f4AC/
-	8fVKuZvw+mv/A5+p47grQn0TsZLD+N3IIR9nLGK20XaIc9eP2uRHo+fTnpYwtT+4xhnO91A/+uBEz
-	JV2LJpch9UR/rXvZ0vGQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vjX66H9o9tVdqpWw+utU7CuSf9xLcT6t3yjaHrwMoVQ=; b=lbFTPqo5UtsTck
+	IieagoSAsqmlYKA6JLH/E0oHJmirf4WyNXHnP/pkuNd62Zet6KAWXR+jAbHnvmuKINsDxB0UjN7/h
+	kMi18DsM2djlkf+PG6Z4uy+gjf6FXckW0ePCGKGzMteaguqkq9T48t6Hzpu3sO8LlNOsjUfsR/s3a
+	qyQQZRu/eBoM9WeKEWrQlfQJcAzAii8UxaJrUyI2xpsKb9uJck+JFlHjvCkYf1IJU7JoHbvaO+df7
+	gJCI4+deve5nUkXTSkxgfXUU+kiJRYoibJqbH7szm/zb+iokon8GPOUyb/PrEDg26E0ZkqHalEI9Y
+	PhJzEag4DpKUdU++/ekw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7IWf-000785-C8; Thu, 27 Feb 2020 12:44:25 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j7IYZ-0000Jf-4M; Thu, 27 Feb 2020 12:46:23 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7IWU-00077Y-PF
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:44:16 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1j7IWO-00013u-U9; Thu, 27 Feb 2020 13:44:08 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1j7IWN-000615-15; Thu, 27 Feb 2020 13:44:07 +0100
-Date: Thu, 27 Feb 2020 13:44:07 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Peter Chen <peter.chen@nxp.com>
-Subject: Re: [PATCH 0/3] USB IMX Chipidea fix gpio vbus control
-Message-ID: <20200227124406.6kbgu3dbru4qmews@pengutronix.de>
-References: <20200227104212.12562-1-m.felsch@pengutronix.de>
- <20200227111838.GA24071@b29397-desktop>
- <20200227113539.gcx3nfwm2fbm3ukv@pengutronix.de>
- <20200227122045.GB24071@b29397-desktop>
+ id 1j7IYQ-0000JB-Cf
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:46:15 +0000
+Received: by mail-lj1-x243.google.com with SMTP id d10so3227153ljl.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 04:46:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hEHNqtZr84prvnGzPTSQM0fiaw+Go9OgL/MTasulZ2Y=;
+ b=WDhilDJ/typ2BlzCcai6/yKM8rKBFjmzv/89fuWAqwLgzVG9CyfSB5jCS4iKBnhXPA
+ UYx2q22HanCoBiu6uQWZHkTgy8H0eCi4Y+eHb0oR5CjhltvlIKiTUNt9fcq6WeIFEsv/
+ iF9pOXg/hoSWdO8gse0z5/Gw24hawWMMFbz54QpiD7ZtG22k9swkMQEsZePf2vF8lGir
+ 1TQ0mMpzXOvu6mQPTwmx9TF6vzegax6N57+2HSsLEcSetlxuje5rpcRFS6szZ6OWQl7m
+ vu2OqprK3KMDJZwfJv0jjt9HoGVpLk0FfWG+hY46k3woVXg2u6cUEcN6zDU8JDLZKXhK
+ n8lA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hEHNqtZr84prvnGzPTSQM0fiaw+Go9OgL/MTasulZ2Y=;
+ b=Nb9ovVaQYVFO8xDbtrLQPq1aQIXV8KyxJx768MyV4vT3QXT8+jE5742YB70oUkROOB
+ tEZwcs/Lkz01TDP64WvRAY6O2CTmK81+OjxzhKQ+nmlGU0mBVrtvpgA/QulUMe4VFqp+
+ 9x6ORf7A0AJMv6bwMhzvMCOUQsvBkcJxe5EhwIoQ1xmnielfi4wRki/ypttdQ2qFTH5+
+ pRbTRUQB31EgjWPeqQFl1bqi08Usuicg1i10XWBT5dh073rNkQhprfyTrvwY+HRJztWh
+ TGc6NGQblBzEkH6lq99T9aGeqm+QPBBeJTZorV03Qhs6HMl/Nop+zKetAFlV5IzIZRGA
+ BwRQ==
+X-Gm-Message-State: ANhLgQ28ds5FQl+7xL1nMs0k73G6TvLNqnfmOxz0A4mvrhXLjNthkzWP
+ 2CrkC2Bi1bu6O0KoDwZm7pOx4A==
+X-Google-Smtp-Source: ADFU+vu7Ql4hYXMx5DHndFRCmO9xHiwjSi9zx0MKy0UsYpX2RBb22uIL9lTDVCtDCFwFTFuBxw4Eqg==
+X-Received: by 2002:a2e:6815:: with SMTP id c21mr2538037lja.10.1582807571400; 
+ Thu, 27 Feb 2020 04:46:11 -0800 (PST)
+Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
+ [158.174.22.210])
+ by smtp.gmail.com with ESMTPSA id l16sm2669334lfh.74.2020.02.27.04.46.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 04:46:08 -0800 (PST)
+From: Ulf Hansson <ulf.hansson@linaro.org>
+To: Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org
+Subject: [PATCH 0/4] cpuidle: psci: Some fixes when using the hierarchical
+ layout
+Date: Thu, 27 Feb 2020 13:45:47 +0100
+Message-Id: <20200227124551.31860-1-ulf.hansson@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200227122045.GB24071@b29397-desktop>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 13:34:01 up 104 days,  3:52, 122 users,  load average: 0.03, 0.05,
- 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_044414_822537_9E0A0A72 
-X-CRM114-Status: GOOD (  18.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_044614_460476_66749467 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,115 +98,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "jun.li@freescale.com" <jun.li@freescale.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
- "stern@rowland.harvard.edu" <stern@rowland.harvard.edu>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20-02-27 12:20, Peter Chen wrote:
-> On 20-02-27 12:35:39, Marco Felsch wrote:
-> > Hi Peter,
-> > 
-> > thanks for your fast reply :)
-> > 
-> > On 20-02-27 11:18, Peter Chen wrote:
-> > > On 20-02-27 11:42:09, Marco Felsch wrote:
-> > > > Hi,
-> > > > 
-> > > > the gpio-based port power is broken since commit [1,2]. I changed the
-> > > > core behaviour to to cleanup the code and avoid local workaround fixes.
-> > > 
-> > > Many i.mx series evk boards work well for gpio-based port power control,
-> > > what problem you have found, would you please list it detail?
-> > 
-> > Hm.. who could that work? I picked the important parts:
-> > 
-> > static int ehci_ci_portpower(struct usb_hcd *hcd, int portnum, bool enable)
-> > {
-> > 	...
-> > 
-> > 	if (priv->reg_vbus && enable != priv->enabled) {
-> > 
-> > 		...
-> > 
-> > 		if (enable)
-> > 			ret = regulator_enable(priv->reg_vbus);
-> > 		else
-> > 			ret = regulator_disable(priv->reg_vbus);
-> > 
-> > 		...
-> > 	}
-> > 
-> > 	...
-> > }
-> > 
-> > static int host_start(struct ci_hdrc *ci)
-> > {
-> > 	...
-> > 
-> > 	priv->reg_vbus = NULL;
-> > 
-> > 	if (ci->platdata->reg_vbus && !ci_otg_is_fsm_mode(ci)) {
-> > 		if (ci->platdata->flags & CI_HDRC_TURN_VBUS_EARLY_ON) {
-> > 			ret = regulator_enable(ci->platdata->reg_vbus);
-> > 			if (ret) {
-> > 				dev_err(ci->dev,
-> > 				"Failed to enable vbus regulator, ret=%d\n",
-> > 									ret);
-> > 				goto put_hcd;
-> > 			}
-> > 		} else {
-> > 			priv->reg_vbus = ci->platdata->reg_vbus;
-> > 		}
-> > 	}
-> > 
-> > 	...
-> > }
-> > 
-> > Note, I'm using a imx6q which has the CI_HDRC_TURN_VBUS_EARLY_ON set.
-> > 
-> 
-> Do you have a VBUS regulator at your dts, and add it at controller's
-> node? See: arch/arm/boot/dts/imx6qdl-sabresd.dtsi as an example please?
+While collaborating with Benjamin Gaignard to deploy the hierarchical layout
+for an ST SoC, it has turned that I have clearly missed to test a couple of
+corner cases in recently added support to the cpuidle-psci driver.
 
-Yes, that's my use case too.
+This series are fixing the issues we have found.
 
-> If you have set CI_HDRC_TURN_VBUS_EARLY_ON, the VBUS is controlled by
-> chipidea driver, not by USB core through PORTSC.PP (ehci_ci_portpower).
+Ulf Hansson (4):
+  PM / Domains: Allow no domain-idle-states DT property in genpd when
+    parsing
+  cpuidle: psci: Fixup support for domain idle states being zero
+  cpuidle: psci: Split psci_dt_cpu_init_idle()
+  cpuidle: psci: Allow WFI to be the only state for the hierarchical
+    topology
 
-I know, pls have a look my the patches.
-
-I had the problem that the vbus regulator wasn't turned off during a
-suspend/resume logic. The first issue within the usb-core should be
-fixed by [1] (v2 RFC is on the way). You never run in that case if you
-don't fix this. After I fixed it the port-power is called during suspend
-but obviously the regulator didn't get turned off because we don't add
-it to the priv->reg_vbus.
-
-This patchset should fix this and get rid of the
-CI_HDRC_TURN_VBUS_EARLY_ON flag.
-
-Regards,
-  Marco
-
-> -- 
-> 
-> Thanks,
-> Peter Chen
+ drivers/base/power/domain.c           |  2 +-
+ drivers/cpuidle/cpuidle-psci-domain.c |  6 ++
+ drivers/cpuidle/cpuidle-psci.c        | 96 +++++++++++++++++----------
+ 3 files changed, 67 insertions(+), 37 deletions(-)
 
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
