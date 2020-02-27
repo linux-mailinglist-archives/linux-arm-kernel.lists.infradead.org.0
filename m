@@ -2,57 +2,151 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DEC9172562
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:47:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7773A172565
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:48:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a192EZ01/obKMDA0F+RcBRytf4VPOj1KSLafzo5zPeM=; b=RpsVb1FNcan5X4
-	RnB3TKBw4Il628wMGKnqYvGBIIg8Ch/kOqEqd7kNJZhTcZYRQ92Ldt9pHEWhvv6IHtK92slwsQDTa
-	PPnStuy+3+Sfh0d9hw1txiLvp1HyrqKJ2dBgHeKGXBHa9FbR/gTh4IN06zLxRjBImytk3Q3WyMYGq
-	YaTDm4se2k5hp0RrTmNw1FnlrdTCZMZpcUyeOqUGe2Rp91Gj1YbuKO/uXMUzyrJiYREYhKgxPPoxj
-	PSvatAT+HZVkdRHAFxhi8f6247+fXel07fE2piZQHyhqKSaih1gpoWgglnaM0Y2UR5Gq5WdFLaoq+
-	1gZh2mnMZGyuhtZ4guMQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gtOj2Dnqo7eFNuUbLN/Y7lZURdOqfEdYPrCqI92hL8k=; b=VranmrQ0tYEr8U
+	WdLiaJ8xez0CQw/kUjuaY0h1n2qXlvztQZ8PcVQ3vdl4QtQTtT/1xWZnen2hflQF6gyvWCeR9Mm+K
+	QBGGokR5Dp+togTCJtkqi0JzPzT9jGju/qR5MWf/nVcvH/v0OPKhdo2rZ2Tlk+tjrAR3tPyIS1+UY
+	f1PV5/WV+qc5/RkVRQDYIXC/wEM49Fa9U6fwkWK5Fv5LFJI01l+yfNm9BeHjPx9Y1Bc+trS+58U0E
+	N2mjrEtPBjP81SR40hL9JkvUPJ116mwWSDH+Z0oQiCNg/xGsGs7ZuKNswHc2bxzKeOPPWraL7X3BU
+	dI5tVogvd0XnUulCZFbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NFm-0004OC-JY; Thu, 27 Feb 2020 17:47:18 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j7NGM-0004xJ-4s; Thu, 27 Feb 2020 17:47:54 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7NDE-0000wr-Je
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:44:44 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1j7ND5-0003w2-8D; Thu, 27 Feb 2020 18:44:31 +0100
-Message-ID: <c620634bf4faf57230810a16cb1f5a81f2d23945.camel@pengutronix.de>
-Subject: Re: [PATCH 17/17] drm/imx: fix drm_mode_config_cleanup race condition
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Daniel Vetter <daniel@ffwll.ch>, Marco Felsch <m.felsch@pengutronix.de>
-Date: Thu, 27 Feb 2020 18:44:29 +0100
-In-Reply-To: <20200227172923.GY2363188@phenom.ffwll.local>
-References: <20200227162125.10450-1-m.felsch@pengutronix.de>
- <20200227162125.10450-18-m.felsch@pengutronix.de>
- <20200227172923.GY2363188@phenom.ffwll.local>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1j7NDG-0000y6-7Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:44:47 +0000
+Received: by mail-ed1-x541.google.com with SMTP id dm3so86561edb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 09:44:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=vN4LAevYUXgR/zeHryxyZWF34rkf9QisD87DT7VXpik=;
+ b=MzmN2H5vmBTYdKDibAeWGqpCQCe6Z2o3Y3bf5tydUfVm4A3D/k4DZVdfmrtXW8RouG
+ dpUM+SYkUFgmrGWzeKCwsVF9moheAC338dfB0OH9CbsatEE6rNolXPLdf0qMtBAJJW11
+ M1OSp0A7hpVRPA6sOWPTWaP3P6zpncj426Rfo0O4Po25giw0SsFyLSsfjozZXQXDEyDJ
+ ijb0gzfwUOc8OQCliNsi4mkFKmI/phbSB5lUdRF21chW5F2DGMBu7R2J4fJCokB27O7M
+ GBo8VYhvHbOMJ3+/e5wFi0hy+Sq7eHe8H62Q8/v/bh42ZhYdxL8ADn12qv+POaJkf1FE
+ q5bg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=vN4LAevYUXgR/zeHryxyZWF34rkf9QisD87DT7VXpik=;
+ b=G0KxkN2mYGHf1ikIiqSmNkKPNCF90RWtHSu76in/Sc8ytJmU9NHM4+rvNl0NGXrQe7
+ q7xVhyvtb7wqOjwoH7G1aOv5DbCpHhNWsNc3P1eYUTBSvg8BQFSij5MZX8tEDQMQvJbR
+ SnvUN17QbdmvOsitIhRG87PNTPH0C0jyPIWrdik/HAWGB4wa7haKssVZ5yK4JcG5O41a
+ Wx7VMSgB5nHuyWv0ZJvKfwk3BOCjm4tbsWB+ApJJvMh2SX6JILOTajtOu1vbKQc8zcjN
+ X6gIEYE1Di/n/OETlAek3bjcc++i8EYzXIMAh7sSpukl96wb1OWHpkiIyuyR/d2B1KSs
+ wM0A==
+X-Gm-Message-State: APjAAAVMiXDek0NHUrOsw8Dm0nb0Ll5wEh4KYY2L+bStW3R0CrR+VULz
+ 5VlqKL8Vm8nPMPm9anEGaS0=
+X-Google-Smtp-Source: APXvYqyrJ3zhGETgW4hEQ9ZRCb/P4RcERojU1JvvH4X6zB57je/Pwvx/fze30TGbjXuooRpLllAQNg==
+X-Received: by 2002:a17:906:7c9:: with SMTP id m9mr190311ejc.243.1582825480096; 
+ Thu, 27 Feb 2020 09:44:40 -0800 (PST)
+Received: from [10.67.50.18] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id l11sm394908edi.28.2020.02.27.09.44.37
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 27 Feb 2020 09:44:39 -0800 (PST)
+Subject: Re: [PATCH net-next 1/3] dt-bindings: net: add dt bindings for
+ marvell10g driver
+To: Russell King <rmk+kernel@armlinux.org.uk>, Andrew Lunn <andrew@lunn.ch>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+References: <20200227095159.GJ25745@shell.armlinux.org.uk>
+ <E1j7FqO-0003sv-Ho@rmk-PC.armlinux.org.uk>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <1bcb9a92-d739-6406-6414-783b19bfb66e@gmail.com>
+Date: Thu, 27 Feb 2020 09:44:35 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <E1j7FqO-0003sv-Ho@rmk-PC.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_094441_010276_E5110A53 
-X-CRM114-Status: GOOD (  29.44  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_094442_305632_BBF98261 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,470 +158,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de, airlied@linux.ie, dri-devel@lists.freedesktop.org,
- rmk+kernel@armlinux.org.uk, stefan@agner.ch, p.zabel@pengutronix.de,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, netdev@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
-
-On Do, 2020-02-27 at 18:29 +0100, Daniel Vetter wrote:
-> On Thu, Feb 27, 2020 at 05:21:25PM +0100, Marco Felsch wrote:
-> > Currently there is a race conditions if the panel can't be probed e.g.
-> > it is not connected [1]. There where several attempts to fix this [2,3]
-> > but non of them made it into mainline.
-> > 
-> > The problem is the combination of the component framework and the drm
-> > framework, as Philipp already explained [1]. To fix this we need to
-> > drop the devres-kmalloc and move the plain kmalloc to let the drm
-> > framework free the resources upon a drm_mode_config_cleanup(). So we need
-> > to implement a .destroy() callback for each component. We also need to
-> > reorder the master.unbind() callback to ensure that the driver states
-> > are accessible during a component.unbind() call. This reordering also
-> > aligns the master.unbind() with the error-cleanup path during
-> > master.bind().
-> > 
-> > [1] https://www.spinics.net/lists/dri-devel/msg189388.html
-> > [2] https://lkml.org/lkml/2018/10/16/1148
-> > [3] https://lkml.org/lkml/2019/4/2/612
-> > 
-> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+On 2/27/20 1:52 AM, Russell King wrote:
+> Add a DT bindings document for the Marvell 10G driver, which will
+> augment the generic ethernet PHY binding by having LED mode
+> configuration.
 > 
-> I think this collides quite badly with my managed drm device resources
-> patch series I'm working on. Plus once we have that, you could use
-> drmm_kzalloc and wouldn't need to sprinkle kfree() over everything.
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+
+We have been kicking the ball for way too long but there really ought to
+be a standardized binding to configure LED modes for a PHY. Something
+that we previously discussed here without making much progress because
+the LED maintainer was not involved:
+
+http://patchwork.ozlabs.org/patch/1146609/
+http://patchwork.ozlabs.org/patch/1146610/
+http://patchwork.ozlabs.org/patch/1146611/
+http://patchwork.ozlabs.org/patch/1146612/
+
+What you are proposing here is just a plain configuration interface via
+Device Tree, which is really borderline. It gets the job done, and it is
+extremely easy to maintain and use because people just stick in their
+register value in there, but boy, what a poor abstraction that is.
+
+Maybe you can resume where Matthias left and improve upon his patch
+series, if nothing else for the binding and PHY layer integration?
+
+> ---
+>  .../devicetree/bindings/net/marvell,10g.yaml  | 31 +++++++++++++++++++
+>  1 file changed, 31 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/net/marvell,10g.yaml
 > 
-> I think at least, I haven't rolled much further than just getting the
-> baseline stuff figured out. So if it's not super-pressing to get this
-> patch here landed I think it'd be better to base this on top of the drmm
-> series. I'm working on sending out v3, I'll cc you on the imx parts so
-> you'll get pinged.
-
-IMO this part of imx-drm has been broken for far too long already, so
-we shouldn't delay this fixes series on a complete resource management
-rework.
-
-Regards,
-Lucas
-
-> Cheers, Daniel
+> diff --git a/Documentation/devicetree/bindings/net/marvell,10g.yaml b/Documentation/devicetree/bindings/net/marvell,10g.yaml
+> new file mode 100644
+> index 000000000000..da597fc5314d
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/net/marvell,10g.yaml
+> @@ -0,0 +1,31 @@
+> +# SPDX-License-Identifier: GPL-2.0+
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/net/marvell,10g.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Marvell Alaska X family Ethernet PHYs
+> +
+> +maintainers:
+> +  - Russell King <rmk+kernel@armlinux.org.uk>
+> +
+> +allOf:
+> +  - $ref: ethernet-phy.yaml#
+> +
+> +properties:
+> +  marvell,led-mode:
+> +    description: |
+> +      An array of one to four 16-bit integers to write to the PHY LED
+> +      configuration registers.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint16-array
+> +      - minItems: 1
+> +        maxItems: 4
+> +
+> +examples:
+> +  - |
+> +    ethernet-phy@0 {
+> +        reg = <0>;
+> +        compatible = "ethernet-phy-ieee802.3-c45";
+> +        marvell,led-mode = /bits/ 16 <0x0129 0x095d 0x0855>;
+> +    };
 > 
-> > ---
-> >  drivers/gpu/drm/imx/dw_hdmi-imx.c      | 28 ++++++++++++---------
-> >  drivers/gpu/drm/imx/imx-drm-core.c     |  3 ++-
-> >  drivers/gpu/drm/imx/imx-ldb.c          | 34 +++++++++++++++++---------
-> >  drivers/gpu/drm/imx/imx-tve.c          | 15 +++++++++---
-> >  drivers/gpu/drm/imx/ipuv3-crtc.c       | 28 ++++++++++++++++++---
-> >  drivers/gpu/drm/imx/parallel-display.c | 30 ++++++++++++++++-------
-> >  6 files changed, 96 insertions(+), 42 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/imx/dw_hdmi-imx.c b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-> > index f22cfbf9353e..86a62796c151 100644
-> > --- a/drivers/gpu/drm/imx/dw_hdmi-imx.c
-> > +++ b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-> > @@ -137,6 +137,12 @@ static int dw_hdmi_imx_atomic_check(struct drm_encoder *encoder,
-> >  	return 0;
-> >  }
-> >  
-> > +static void dw_hdmi_imx_encoder_destroy(struct drm_encoder *encoder)
-> > +{
-> > +	drm_encoder_cleanup(encoder);
-> > +	kfree(enc_to_imx_hdmi(encoder));
-> > +}
-> > +
-> >  static const struct drm_encoder_helper_funcs dw_hdmi_imx_encoder_helper_funcs = {
-> >  	.enable     = dw_hdmi_imx_encoder_enable,
-> >  	.disable    = dw_hdmi_imx_encoder_disable,
-> > @@ -144,7 +150,7 @@ static const struct drm_encoder_helper_funcs dw_hdmi_imx_encoder_helper_funcs =
-> >  };
-> >  
-> >  static const struct drm_encoder_funcs dw_hdmi_imx_encoder_funcs = {
-> > -	.destroy = drm_encoder_cleanup,
-> > +	.destroy = dw_hdmi_imx_encoder_destroy,
-> >  };
-> >  
-> >  static enum drm_mode_status
-> > @@ -212,7 +218,7 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
-> >  	if (!pdev->dev.of_node)
-> >  		return -ENODEV;
-> >  
-> > -	hdmi = devm_kzalloc(&pdev->dev, sizeof(*hdmi), GFP_KERNEL);
-> > +	hdmi = kzalloc(sizeof(*hdmi), GFP_KERNEL);
-> >  	if (!hdmi)
-> >  		return -ENOMEM;
-> >  
-> > @@ -228,12 +234,16 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
-> >  	 * not been registered yet.  Defer probing, and hope that
-> >  	 * the required CRTC is added later.
-> >  	 */
-> > -	if (encoder->possible_crtcs == 0)
-> > +	if (encoder->possible_crtcs == 0) {
-> > +		kfree(hdmi);
-> >  		return -EPROBE_DEFER;
-> > +	}
-> >  
-> >  	ret = dw_hdmi_imx_parse_dt(hdmi);
-> > -	if (ret < 0)
-> > +	if (ret < 0) {
-> > +		kfree(hdmi);
-> >  		return ret;
-> > +	}
-> >  
-> >  	drm_encoder_helper_add(encoder, &dw_hdmi_imx_encoder_helper_funcs);
-> >  	drm_encoder_init(drm, encoder, &dw_hdmi_imx_encoder_funcs,
-> > @@ -242,15 +252,9 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
-> >  	platform_set_drvdata(pdev, hdmi);
-> >  
-> >  	hdmi->hdmi = dw_hdmi_bind(pdev, encoder, plat_data);
-> > -
-> > -	/*
-> > -	 * If dw_hdmi_bind() fails we'll never call dw_hdmi_unbind(),
-> > -	 * which would have called the encoder cleanup.  Do it manually.
-> > -	 */
-> > -	if (IS_ERR(hdmi->hdmi)) {
-> > +	/* Don't call kfree() here, this is done by the .destroy() handler. */
-> > +	if (IS_ERR(hdmi->hdmi))
-> >  		ret = PTR_ERR(hdmi->hdmi);
-> > -		drm_encoder_cleanup(encoder);
-> > -	}
-> >  
-> >  	return ret;
-> >  }
-> > diff --git a/drivers/gpu/drm/imx/imx-drm-core.c b/drivers/gpu/drm/imx/imx-drm-core.c
-> > index 9979547ca883..feab6eb9e7e5 100644
-> > --- a/drivers/gpu/drm/imx/imx-drm-core.c
-> > +++ b/drivers/gpu/drm/imx/imx-drm-core.c
-> > @@ -275,9 +275,10 @@ static void imx_drm_unbind(struct device *dev)
-> >  
-> >  	drm_kms_helper_poll_fini(drm);
-> >  
-> > +	component_unbind_all(drm->dev, drm);
-> > +
-> >  	drm_mode_config_cleanup(drm);
-> >  
-> > -	component_unbind_all(drm->dev, drm);
-> >  	dev_set_drvdata(dev, NULL);
-> >  
-> >  	drm_dev_put(drm);
-> > diff --git a/drivers/gpu/drm/imx/imx-ldb.c b/drivers/gpu/drm/imx/imx-ldb.c
-> > index 5e6c1b09dbfa..4a5d31da592a 100644
-> > --- a/drivers/gpu/drm/imx/imx-ldb.c
-> > +++ b/drivers/gpu/drm/imx/imx-ldb.c
-> > @@ -140,6 +140,8 @@ static void imx_ldb_connector_destroy(struct drm_connector *connector)
-> >  	i2c_put_adapter(imx_ldb_con->ddc);
-> >  	/* avoid dangling pointers */
-> >  	imx_ldb_con->ldb_channel = NULL;
-> > +	kfree(imx_ldb_con->edid);
-> > +	kfree(imx_ldb_con);
-> >  }
-> >  
-> >  static int imx_ldb_connector_get_modes(struct drm_connector *connector)
-> > @@ -184,6 +186,7 @@ static void imx_ldb_encoder_destroy(struct drm_encoder *encoder)
-> >  	drm_encoder_cleanup(encoder);
-> >  	/* avoid dangling pointers */
-> >  	channel->ldb = NULL;
-> > +	kfree(channel);
-> >  }
-> >  
-> >  static void imx_ldb_set_clock(struct imx_ldb *ldb, int mux, int chno,
-> > @@ -502,9 +505,8 @@ static int imx_ldb_panel_ddc(struct device *dev,
-> >  		edidp = of_get_property(child, "edid",
-> >  					&connector->edid_len);
-> >  		if (edidp) {
-> > -			connector->edid = devm_kmemdup(dev, edidp,
-> > -						       connector->edid_len,
-> > -						       GFP_KERNEL);
-> > +			connector->edid = kmemdup(edidp, connector->edid_len,
-> > +						  GFP_KERNEL);
-> >  		} else if (!channel->panel) {
-> >  			/* fallback to display-timings node */
-> >  			ret = of_get_drm_display_mode(child,
-> > @@ -525,7 +527,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> >  				 int channel_number)
-> >  {
-> >  	struct imx_ldb_channel *channel;
-> > -	struct imx_ldb_connector *imx_ldb_con;
-> > +	struct imx_ldb_connector *imx_ldb_con = NULL;
-> >  	struct drm_encoder *encoder;
-> >  	struct drm_connector *connector = NULL;
-> >  	int bus_format;
-> > @@ -537,7 +539,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> >  	 * 3) Register it with the DRM framework
-> >  	 * 4) Attach bridge or connector to encoder
-> >  	 */
-> > -	channel = devm_kzalloc(dev, sizeof(*channel), GFP_KERNEL);
-> > +	channel = kzalloc(sizeof(*channel), GFP_KERNEL);
-> >  	if (!channel)
-> >  		return -ENOMEM;
-> >  
-> > @@ -554,17 +556,19 @@ static int imx_ldb_setup_channel(struct device *dev,
-> >  					  ldb->lvds_mux ? 4 : 2, 0,
-> >  					  &channel->panel, &channel->bridge);
-> >  	if (ret && ret != -ENODEV)
-> > -		return ret;
-> > +		goto err_free;
-> >  
-> >  	/* panel ddc only if there is no bridge */
-> >  	if (!channel->bridge) {
-> > -		imx_ldb_con = devm_kzalloc(dev, sizeof(*connector), GFP_KERNEL);
-> > -		if (!imx_ldb_con)
-> > -			return -ENOMEM;
-> > +		imx_ldb_con = kzalloc(sizeof(*connector), GFP_KERNEL);
-> > +		if (!imx_ldb_con) {
-> > +			ret = -ENOMEM;
-> > +			goto err_free;
-> > +		}
-> >  
-> >  		ret = imx_ldb_panel_ddc(dev, channel, imx_ldb_con, child);
-> >  		if (ret)
-> > -			return ret;
-> > +			goto err_free;
-> >  
-> >  		imx_ldb_con->ldb_channel = channel;
-> >  		connector = &imx_ldb_con->connector;
-> > @@ -628,7 +632,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> >  		ret = drm_bridge_attach(encoder, channel->bridge, NULL);
-> >  		if (ret) {
-> >  			DRM_ERROR("Failed to initialize bridge with drm\n");
-> > -			goto err_put_ddc;
-> > +			goto err_out;
-> >  		}
-> >  	} else {
-> >  		drm_connector_attach_encoder(connector, encoder);
-> > @@ -637,7 +641,7 @@ static int imx_ldb_setup_channel(struct device *dev,
-> >  	if (channel->panel) {
-> >  		ret = drm_panel_attach(channel->panel, connector);
-> >  		if (ret)
-> > -			goto err_put_ddc;
-> > +			goto err_out;
-> >  	}
-> >  
-> >  	return 0;
-> > @@ -645,6 +649,12 @@ static int imx_ldb_setup_channel(struct device *dev,
-> >  err_put_ddc:
-> >  	if (imx_ldb_con)
-> >  		i2c_put_adapter(imx_ldb_con->ddc);
-> > +err_free:
-> > +	if (imx_ldb_con)
-> > +		kfree(imx_ldb_con->edid);
-> > +	kfree(imx_ldb_con);
-> > +	kfree(channel);
-> > +err_out:
-> >  	return ret;
-> >  }
-> >  
-> > diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
-> > index a7a05c47f68b..15ff5f35ff0e 100644
-> > --- a/drivers/gpu/drm/imx/imx-tve.c
-> > +++ b/drivers/gpu/drm/imx/imx-tve.c
-> > @@ -241,6 +241,7 @@ static void imx_tve_connector_destroy(struct drm_connector *connector)
-> >  	i2c_put_adapter(tvec->ddc);
-> >  	/* avoid dangling pointers */
-> >  	tvec->tve = NULL;
-> > +	kfree(tvec);
-> >  }
-> >  
-> >  static int imx_tve_connector_get_modes(struct drm_connector *connector)
-> > @@ -292,6 +293,7 @@ static void imx_tve_encoder_destroy(struct drm_encoder *encoder)
-> >  	drm_encoder_cleanup(encoder);
-> >  	/* avoid dangling pointers */
-> >  	tvee->tve = NULL;
-> > +	kfree(tvee);
-> >  }
-> >  
-> >  static void imx_tve_encoder_mode_set(struct drm_encoder *encoder,
-> > @@ -577,13 +579,15 @@ static int imx_tve_bind(struct device *dev, struct device *master, void *data)
-> >  	struct imx_tve_connector *tvec;
-> >  	int ret;
-> >  
-> > -	tvee = devm_kzalloc(dev, sizeof(*tvee), GFP_KERNEL);
-> > +	tvee = kzalloc(sizeof(*tvee), GFP_KERNEL);
-> >  	if (!tvee)
-> >  		return -ENOMEM;
-> >  
-> > -	tvec = devm_kzalloc(dev, sizeof(*tvec), GFP_KERNEL);
-> > -	if (!tvec)
-> > -		return -ENOMEM;
-> > +	tvec = kzalloc(sizeof(*tvec), GFP_KERNEL);
-> > +	if (!tvec) {
-> > +		ret = -ENOMEM;
-> > +		goto err_free;
-> > +	}
-> >  
-> >  	tvee->tve = imx_tve;
-> >  	tvec->tve = imx_tve;
-> > @@ -602,6 +606,9 @@ static int imx_tve_bind(struct device *dev, struct device *master, void *data)
-> >  
-> >  err_put_ddc:
-> >  	i2c_put_adapter(tvec->ddc);
-> > +err_free:
-> > +	kfree(tvec);
-> > +	kfree(tvee);
-> >  	return ret;
-> >  }
-> >  
-> > diff --git a/drivers/gpu/drm/imx/ipuv3-crtc.c b/drivers/gpu/drm/imx/ipuv3-crtc.c
-> > index 63c0284f8b3c..2d24677f7fef 100644
-> > --- a/drivers/gpu/drm/imx/ipuv3-crtc.c
-> > +++ b/drivers/gpu/drm/imx/ipuv3-crtc.c
-> > @@ -105,6 +105,12 @@ static void ipu_crtc_atomic_disable(struct drm_crtc *crtc,
-> >  	spin_unlock_irq(&crtc->dev->event_lock);
-> >  }
-> >  
-> > +static void imx_drm_crtc_destroy(struct drm_crtc *crtc)
-> > +{
-> > +	drm_crtc_cleanup(crtc);
-> > +	kfree(to_ipu_crtc(crtc));
-> > +}
-> > +
-> >  static void imx_drm_crtc_reset(struct drm_crtc *crtc)
-> >  {
-> >  	struct imx_crtc_state *state;
-> > @@ -166,7 +172,7 @@ static void ipu_disable_vblank(struct drm_crtc *crtc)
-> >  
-> >  static const struct drm_crtc_funcs ipu_crtc_funcs = {
-> >  	.set_config = drm_atomic_helper_set_config,
-> > -	.destroy = drm_crtc_cleanup,
-> > +	.destroy = imx_drm_crtc_destroy,
-> >  	.page_flip = drm_atomic_helper_page_flip,
-> >  	.reset = imx_drm_crtc_reset,
-> >  	.atomic_duplicate_state = imx_drm_crtc_duplicate_state,
-> > @@ -357,7 +363,8 @@ static int ipu_get_resources(struct ipu_crtc *ipu_crtc,
-> >  }
-> >  
-> >  static int ipu_crtc_init(struct ipu_crtc *ipu_crtc,
-> > -	struct ipu_client_platformdata *pdata, struct drm_device *drm)
-> > +			 struct ipu_client_platformdata *pdata,
-> > +			 struct drm_device *drm)
-> >  {
-> >  	struct ipu_soc *ipu = dev_get_drvdata(ipu_crtc->dev->parent);
-> >  	struct drm_crtc *crtc = &ipu_crtc->base;
-> > @@ -437,10 +444,11 @@ static int ipu_drm_bind(struct device *dev, struct device *master, void *data)
-> >  {
-> >  	struct ipu_client_platformdata *pdata = dev->platform_data;
-> >  	struct drm_device *drm = data;
-> > +	struct drm_crtc *registered_crtc = NULL;
-> >  	struct ipu_crtc *ipu_crtc;
-> >  	int ret;
-> >  
-> > -	ipu_crtc = devm_kzalloc(dev, sizeof(*ipu_crtc), GFP_KERNEL);
-> > +	ipu_crtc = kzalloc(sizeof(*ipu_crtc), GFP_KERNEL);
-> >  	if (!ipu_crtc)
-> >  		return -ENOMEM;
-> >  
-> > @@ -448,11 +456,23 @@ static int ipu_drm_bind(struct device *dev, struct device *master, void *data)
-> >  
-> >  	ret = ipu_crtc_init(ipu_crtc, pdata, drm);
-> >  	if (ret)
-> > -		return ret;
-> > +		goto err;
-> >  
-> >  	dev_set_drvdata(dev, ipu_crtc);
-> >  
-> >  	return 0;
-> > +
-> > +err:
-> > +	drm_for_each_crtc(registered_crtc, drm) {
-> > +		/*
-> > +		 * The crtc was registered with the drm core framework if we
-> > +		 * enter here. So let the core .destroy() helper cleanup the
-> > +		 * code.
-> > +		 */
-> > +		return ret;
-> > +	}
-> > +	kfree(ipu_crtc);
-> > +	return ret;
-> >  }
-> >  
-> >  static void ipu_drm_unbind(struct device *dev, struct device *master,
-> > diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
-> > index 78703b15c7cf..3e247383a498 100644
-> > --- a/drivers/gpu/drm/imx/parallel-display.c
-> > +++ b/drivers/gpu/drm/imx/parallel-display.c
-> > @@ -55,6 +55,8 @@ static void imx_pd_connector_destroy(struct drm_connector *connector)
-> >  	imx_drm_connector_destroy(connector);
-> >  	/* avoid dangling pointer */
-> >  	imxpc->imxpd = NULL;
-> > +	kfree(imxpc->edid);
-> > +	kfree(imxpc);
-> >  }
-> >  
-> >  static int imx_pd_connector_get_modes(struct drm_connector *connector)
-> > @@ -102,6 +104,7 @@ static void imx_pd_encoder_destroy(struct drm_encoder *encoder)
-> >  	if (imxpd->panel)
-> >  		drm_panel_detach(imxpd->panel);
-> >  	drm_encoder_cleanup(encoder);
-> > +	kfree(imxpd);
-> >  }
-> >  
-> >  static void imx_pd_encoder_enable(struct drm_encoder *encoder)
-> > @@ -225,31 +228,32 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
-> >  	struct device_node *np = dev->of_node;
-> >  	const u8 *edidp;
-> >  	struct imx_parallel_display *imxpd;
-> > -	struct imx_parallel_connector *imxpc;
-> > +	struct imx_parallel_connector *imxpc = NULL;
-> >  	int ret;
-> >  	u32 bus_format = 0;
-> >  	const char *fmt;
-> >  
-> > -	imxpd = devm_kzalloc(dev, sizeof(*imxpd), GFP_KERNEL);
-> > +	imxpd = kzalloc(sizeof(*imxpd), GFP_KERNEL);
-> >  	if (!imxpd)
-> >  		return -ENOMEM;
-> >  
-> >  	/* port@1 is the output port */
-> >  	ret = drm_of_find_panel_or_bridge(np, 1, 0, &imxpd->panel, &imxpd->bridge);
-> >  	if (ret && ret != -ENODEV)
-> > -		return ret;
-> > +		goto err_free;
-> >  
-> >  	if (!imxpd->bridge) {
-> > -		imxpc = devm_kzalloc(dev, sizeof(*imxpc), GFP_KERNEL);
-> > -		if (!imxpc)
-> > -			return -ENOMEM;
-> > +		imxpc = kzalloc(sizeof(*imxpc), GFP_KERNEL);
-> > +		if (!imxpc) {
-> > +			ret = -ENOMEM;
-> > +			goto err_free;
-> > +		}
-> >  
-> >  		imxpc->imxpd = imxpd;
-> >  
-> >  		edidp = of_get_property(np, "edid", &imxpc->edid_len);
-> >  		if (edidp)
-> > -			imxpc->edid = devm_kmemdup(dev, edidp, imxpc->edid_len,
-> > -						   GFP_KERNEL);
-> > +			imxpc->edid = kmemdup(edidp, imxpc->edid_len, GFP_KERNEL);
-> >  	}
-> >  
-> >  	ret = of_property_read_string(np, "interface-pix-fmt", &fmt);
-> > @@ -269,9 +273,17 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
-> >  
-> >  	ret = imx_pd_register(drm, imxpd, imxpc);
-> >  	if (ret)
-> > -		return ret;
-> > +		goto err_free;
-> >  
-> >  	return imx_pd_attach(drm, imxpd, imxpc);
-> > +
-> > +err_free:
-> > +	if (imxpc)
-> > +		kfree(imxpc->edid);
-> > +	kfree(imxpc);
-> > +	kfree(imxpd);
-> > +
-> > +	return ret;
-> >  }
-> >  
-> >  static const struct component_ops imx_pd_ops = {
-> > -- 
-> > 2.20.1
-> > 
 
+
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
