@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 824E3172567
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:48:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E3F1172568
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 18:48:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hem1iDOOhQ+9lOEv4pMoTerfKM8BwuQOAG72pEAbklc=; b=HrgSRw4giQWZ/m
-	kFir7jH71DEz5AHCZ0AKDcLUzUE4uioSVgvnC2lNI37QVQk5qXCuf8E2vNzIciev+2wTmEj/Tf/m0
-	RhdnQqwhm2Y395Rchssv5myYZSSoXDcex4tw7pnQ2wZwXwdisHT4ImpsdnvT7HAww+8iWhLqgACBJ
-	5SbXFgN3+YZrzAj6Eiob2IaG9HY3RTqHw5FEnHFIEQ87MCgZnLipagasDLSZqKdf01dsbyu1v7lOs
-	LanrcVxMbxXvHYKvO4Cy+BabQq1U40zSoFzY5B3yPC8KFIvClrC1YYXZ+9SGl44vnaH9ToYoRK9Pt
-	/zO0Rf4M8NhwQqKA5W5Q==;
+	List-Owner; bh=ohhWbHqzhLAAtgXBHWVM/MAS0YuN9V9Mdl172oYZxMM=; b=aLWhInMLn9az0I
+	1qZZnuDOOWKPVMzjH4xY6OhvVpkQPh7OTihs9L2G7YPei2S2PKzVzkynS7pskyz+FHpt2Zc0R+qKf
+	OJiu6Q7YV8y31E1lWms4eAOhu+ReHULP+d5Zr1WXtP7cAboEIGEYFw14EOoZeVdVwJuI4eIbB/CIh
+	JmuCLWqqq1bgPB31ds69xpYgDKGgsHqPzNvHlrqHO/WtQVLVIPoubsD96nYYZKRQVZP1xyw06STRt
+	Sp9gyHAreRFj3WnD7zPdYhm+ydlydPQNfpnl4x4eTV9vp2JUxuA+cq8a0hYtqLiDUYNR87GqjJOsE
+	Tz7uCnKgKOVPKIVESBOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7NGp-0005OI-66; Thu, 27 Feb 2020 17:48:23 +0000
+	id 1j7NH2-0005cW-Sn; Thu, 27 Feb 2020 17:48:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7NDK-00012j-1U
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:44:47 +0000
+ id 1j7NDM-00015F-94
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 17:44:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6358230E;
- Thu, 27 Feb 2020 09:44:45 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D837F4B2;
+ Thu, 27 Feb 2020 09:44:47 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A67603F73B;
- Thu, 27 Feb 2020 09:44:44 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2682B3F73B;
+ Thu, 27 Feb 2020 09:44:47 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v8 10/11] KVM: arm64: BTI: Reset BTYPE when skipping emulated
- instructions
-Date: Thu, 27 Feb 2020 17:44:16 +0000
-Message-Id: <20200227174417.23722-11-broonie@kernel.org>
+Subject: [PATCH v8 11/11] arm64: mm: Display guarded pages in ptdump
+Date: Thu, 27 Feb 2020 17:44:17 +0000
+Message-Id: <20200227174417.23722-12-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200227174417.23722-1-broonie@kernel.org>
 References: <20200227174417.23722-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_094446_309524_FDB5480F 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20200227_094448_384314_0EFB95E1 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -69,10 +68,10 @@ Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
  Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
  Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
  =?UTF-8?q?Kristina=20Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
  Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
  Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
@@ -83,41 +82,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dave Martin <Dave.Martin@arm.com>
+v8.5-BTI introduces the GP field in stage 1 translation tables which
+indicates that blocks and pages with it set are guarded pages for which
+branch target identification checks should be performed. Decode this
+when dumping the page tables to aid debugging.
 
-Since normal execution of any non-branch instruction resets the
-PSTATE BTYPE field to 0, so do the same thing when emulating a
-trapped instruction.
-
-Branches don't trap directly, so we should never need to assign a
-non-zero value to BTYPE here.
-
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-Acked-by: Marc Zyngier <maz@kernel.org>
 Signed-off-by: Mark Brown <broonie@kernel.org>
+Reviewed-by: Kees Cook <keescook@chromium.org>
 ---
- arch/arm64/include/asm/kvm_emulate.h | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ arch/arm64/mm/dump.c | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-index 688c63412cc2..dee51c1dcb93 100644
---- a/arch/arm64/include/asm/kvm_emulate.h
-+++ b/arch/arm64/include/asm/kvm_emulate.h
-@@ -506,10 +506,12 @@ static inline unsigned long vcpu_data_host_to_guest(struct kvm_vcpu *vcpu,
- 
- static inline void kvm_skip_instr(struct kvm_vcpu *vcpu, bool is_wide_instr)
- {
--	if (vcpu_mode_is_32bit(vcpu))
-+	if (vcpu_mode_is_32bit(vcpu)) {
- 		kvm_skip_instr32(vcpu, is_wide_instr);
--	else
-+	} else {
- 		*vcpu_pc(vcpu) += 4;
-+		*vcpu_cpsr(vcpu) &= ~PSR_BTYPE_MASK;
-+	}
- 
- 	/* advance the singlestep state machine */
- 	*vcpu_cpsr(vcpu) &= ~DBG_SPSR_SS;
+diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+index 860c00ec8bd3..78163b7a7dde 100644
+--- a/arch/arm64/mm/dump.c
++++ b/arch/arm64/mm/dump.c
+@@ -145,6 +145,11 @@ static const struct prot_bits pte_bits[] = {
+ 		.val	= PTE_UXN,
+ 		.set	= "UXN",
+ 		.clear	= "   ",
++	}, {
++		.mask	= PTE_GP,
++		.val	= PTE_GP,
++		.set	= "GP",
++		.clear	= "  ",
+ 	}, {
+ 		.mask	= PTE_ATTRINDX_MASK,
+ 		.val	= PTE_ATTRINDX(MT_DEVICE_nGnRnE),
 -- 
 2.20.1
 
