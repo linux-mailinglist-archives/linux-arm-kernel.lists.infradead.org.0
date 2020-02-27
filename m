@@ -2,69 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEAD0170F52
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 05:04:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9424F170F57
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 05:05:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WvvXpAWv50YUWR2/l+aw8ZALwSa87P6FXnJ3lu37LnU=; b=pmQQZJh0Ck0826
-	ES4mLzdjANI9AiMxfc/QH3jjYfO1ByfxGYu0nPHKLSKh7S0m6B52TGyaCMHAIkcs+CqrMs7/c22PL
-	9PZgD/AXR2oaNt100N1EXMjJGfLCJHAZoI7JUulHSSgPmcR1DiKfN1kSf4BH1TALfW/YWlwpuryY0
-	Q2mK+5VsWOy1ZVKV4cmjlOJ2HCk8pplcX3fKLUZFp2+V5Mq225Ms7iZMWWyzcnqNnc9Crg80RdZCl
-	bgYZe5WQFuZMutBFpjLJo3YrJj0Fachv+l7XjeAJjEFRbK1JTV96l7xhl6DI6lgOqWrVzVIqOpsKE
-	WgtcnS1u7dKp5Pa/9ycw==;
+	List-Owner; bh=VELb49qLkBKD1Amte3BScDBkX1fhhYm1rauIRPSpqT4=; b=u58Yt+elIK5s1L
+	z/eMoJtmgnsSqzoEG0+rF23bg1r5eiOiUUXVrq7xup27yfA666gKGiGwOF9v/MqsFzQDKP6LN+bc5
+	DVApz8msP0TzxEpR2fKaRhqLLmYPond58cmYMPcjykuI3Ul+9E7GrssGKSzhQQtntVbS07b4jKwWG
+	l03UBKChK5NaXVltinaJmlVJNlfDQwx3OMqmlNkOxTxzkxy4mxWYh7x5xPD//Wtjk/zDzMSMWHUZf
+	RaXsOzH00UgZeijcHKi8P9qIO2BVPmwVXivSnHbglG46qmemlG3477jqCj2ZdXYsEocOp/24qA7LG
+	oEo1O6ZIg4VcDhhHSthw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7AP7-0001OY-89; Thu, 27 Feb 2020 04:04:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j7AQE-0001ih-Dc; Thu, 27 Feb 2020 04:05:14 +0000
+Received: from kernel.crashing.org ([76.164.61.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7AOx-0001NZ-MG; Thu, 27 Feb 2020 04:03:57 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D80E124685;
- Thu, 27 Feb 2020 04:03:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582776234;
- bh=dlJV6X0I7IrGWbU/KtcbtANr08nwFCVTfE1alETj44U=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=hEshnkY+tvGit0cKDfeluAySLkQ4Xled8zmc5jvOITOHKbmYgwRCgZhr11yYlZCaI
- QkeZdgAbSbrNzA3JROFuXOzJ0V7vmn3oqMn/+vctVVCl4wtBE8lv4P5PYNPqJ5zhBr
- 6sL43sJMfYsduFtDrJ6WJ+ZOQLAYvoMayLwJqBKk=
-Date: Wed, 26 Feb 2020 20:03:53 -0800
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
- table helpers
-Message-Id: <20200226200353.ea5c8ec2efacfb1192f3f3f4@linux-foundation.org>
-In-Reply-To: <52db1e9b-83b3-c41f-ef03-0f43e2159a83@arm.com>
-References: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
- <1582726182.7365.123.camel@lca.pw>
- <1582726340.7365.124.camel@lca.pw>
- <eb154054-68ab-a659-065b-f4f7dcbb8671@c-s.fr>
- <52db1e9b-83b3-c41f-ef03-0f43e2159a83@arm.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+ id 1j7APu-0001i7-Mt
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 04:04:56 +0000
+Received: from localhost (gate.crashing.org [63.228.1.57])
+ (authenticated bits=0)
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 01R44L0D022388
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Wed, 26 Feb 2020 22:04:24 -0600
+Message-ID: <26dccd7310f07c6dfe322ba0ea5dd1a980007563.camel@kernel.crashing.org>
+Subject: Re: [PATCH v4 7/7] dt-bindings: usb: add documentation for aspeed
+ usb-vhub
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: rentao.bupt@gmail.com, Felipe Balbi <balbi@kernel.org>, Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>, Stephen Boyd
+ <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ openbmc@lists.ozlabs.org, taoren@fb.com
+Date: Thu, 27 Feb 2020 15:04:20 +1100
+In-Reply-To: <20200226230346.672-8-rentao.bupt@gmail.com>
+References: <20200226230346.672-1-rentao.bupt@gmail.com>
+ <20200226230346.672-8-rentao.bupt@gmail.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200226_200355_774378_1AED5004 
-X-CRM114-Status: GOOD (  18.14  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200226_200454_937333_F4D497DB 
+X-CRM114-Status: GOOD (  17.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,115 +69,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
- Qian Cai <cai@lca.pw>, Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Borislav Petkov <bp@alien8.de>, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 27 Feb 2020 08:04:05 +0530 Anshuman Khandual <anshuman.khandual@arm=
-.com> wrote:
+On Wed, 2020-02-26 at 15:03 -0800, rentao.bupt@gmail.com wrote:
+> From: Tao Ren <rentao.bupt@gmail.com>
+> 
+> Add device tree binding documentation for aspeed usb-vhub driver.
+> 
+> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+> ---
+>  No change in v2/v3/v4:
+>    - the patch is added to the patch series since v4.
+> 
+>  .../bindings/usb/aspeed,usb-vhub.yaml         | 71 +++++++++++++++++++
+>  1 file changed, 71 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml b/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> new file mode 100644
+> index 000000000000..6ebae46641e5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/usb/aspeed,usb-vhub.yaml
+> @@ -0,0 +1,71 @@
+> +# SPDX-License-Identifier: GPL-2.0-or-later
+> +# Copyright (c) 2020 Facebook Inc.
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/usb/aspeed,usb-vhub.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ASPEED USB 2.0 Virtual Hub Controller
+> +
+> +maintainers:
+> +  - Felipe Balbi <balbi@kernel.org>
 
-> > Must be something wrong with the following in debug_vm_pgtable()
-> > =
+Actually I mantain that one, so make this Benjamin Herrenschmidt <
+benh@kernel.crashing.org>. Felipe is the overall maintainer of the USB
+gadget subsystem afaik.
 
-> > =A0=A0=A0=A0paddr =3D __pa(&start_kernel);
-> > =
-
-> > Is there any explaination why start_kernel() is not in linear memory on=
- ARM64 ?
-> =
-
-> =
-
-> Cc: + James Morse <james.morse@arm.com>
-> =
-
-> This warning gets exposed with DEBUG_VIRTUAL due to __pa() on a kernel sy=
-mbol
-> i.e 'start_kernel' which might be outside the linear map. This happens du=
-e to
-> kernel mapping position randomization with KASLR. Adding James here in ca=
-se he
-> might like to add more.
-> =
-
-> __pa_symbol() should have been used instead, for accessing the physical a=
-ddress
-> here. On arm64 __pa() does check for linear address with __is_lm_address(=
-) and
-> switch accordingly if it is a kernel text symbol. Nevertheless, its much =
-better
-> to use __pa_symbol() here rather than __pa().
-> =
-
-> Rather than respining the patch once more, will just send a fix replacing=
- this
-> helper __pa() with __pa_symbol() for Andrew to pick up as this patch is a=
-lready
-> part of linux-next (next-20200226). But can definitely respin if that wil=
-l be
-> preferred.
-
-I didn't see this fix?  I assume it's this?  If so, are we sure it's OK to =
-be
-added to -next without testing??
-
-
-
-From: Andrew Morton <akpm@linux-foundation.org>
-Subject: mm-debug-add-tests-validating-architecture-page-table-helpers-fix
-
-A warning gets exposed with DEBUG_VIRTUAL due to __pa() on a kernel symbol
-i.e 'start_kernel' which might be outside the linear map.  This happens
-due to kernel mapping position randomization with KASLR.
-
-__pa_symbol() should have been used instead, for accessing the physical
-address here.  On arm64 __pa() does check for linear address with
-__is_lm_address() and switch accordingly if it is a kernel text symbol. =
-
-Nevertheless, its much better to use __pa_symbol() here rather than
-__pa().
-
-Reported-by: Qian Cai <cai@lca.pw>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>
-Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
----
-
- mm/debug_vm_pgtable.c |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
---- a/mm/debug_vm_pgtable.c~mm-debug-add-tests-validating-architecture-page=
--table-helpers-fix
-+++ a/mm/debug_vm_pgtable.c
-@@ -331,7 +331,7 @@ void __init debug_vm_pgtable(void)
- 	 * helps avoid large memory block allocations to be used for mapping
- 	 * at higher page table levels.
- 	 */
--	paddr =3D __pa(&start_kernel);
-+	paddr =3D __pa_symbol(&start_kernel);
- =
-
- 	pte_aligned =3D (paddr & PAGE_MASK) >> PAGE_SHIFT;
- 	pmd_aligned =3D (paddr & PMD_MASK) >> PAGE_SHIFT;
-_
+> +description: |+
+> +  The ASPEED USB 2.0 Virtual Hub Controller implements 1 set of USB Hub
+> +  register and several sets of Device and Endpoint registers to support
+> +  the Virtual Hub's downstream USB devices.
+> +
+> +  Supported number of devices and endpoints vary depending on hardware
+> +  revisions. AST2400 and AST2500 Virtual Hub supports 5 downstream devices
+> +  and 15 generic endpoints, while AST2600 Virtual Hub supports 7 downstream
+> +  devices and 21 generic endpoints.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - aspeed,ast2400-usb-vhub
+> +      - aspeed,ast2500-usb-vhub
+> +      - aspeed,ast2600-usb-vhub
+> +
+> +  reg:
+> +    maxItems: 1
+> +    description: Common configuration registers
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: The Virtual Hub Controller clock gate
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  aspeed,vhub-downstream-ports:
+> +    description: Number of downstream ports supported by the Virtual Hub
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +  aspeed,vhub-generic-endpoints:
+> +    description: Number of generic endpoints supported by the Virtual Hub
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - interrupts
+> +  - aspeed,vhub-downstream-ports
+> +  - aspeed,vhub-generic-endpoints
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/aspeed-clock.h>
+> +    vhub: usb-vhub@1e6a0000 {
+> +            compatible = "aspeed,ast2500-usb-vhub";
+> +            reg = <0x1e6a0000 0x300>;
+> +            interrupts = <5>;
+> +            clocks = <&syscon ASPEED_CLK_GATE_USBPORT1CLK>;
+> +            pinctrl-names = "default";
+> +            pinctrl-0 = <&pinctrl_usb2ad_default>;
+> +    };
 
 
 _______________________________________________
