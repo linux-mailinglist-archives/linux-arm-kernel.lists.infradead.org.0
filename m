@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5112F17135A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:52:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21A5C17135C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:52:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kxxkNxZx8DHPb+mVCLGGZLi6gfsoHSoyNz/u6ygtn7w=; b=Bk7+ky23tG+oAw
-	CzRjClx/gnQy5CuKcC3IO3kcg3bHkFHlXLjSuro6a/umcFuSDf6BlzOix1xGq792xGhQpg0APiKag
-	LFr8M5FycXQvmBeq2fBiFPsfoCYvxFkzFpVCI+sk7lJc0TDKz1UbtgdQm3bbM7unip0bOyJE9gofO
-	OCDIVM3D0vaoUDjxMPPTf4bE8RqrRMDgvtZdqVS3vp4q+GTbx47WoOi1xl1fZHGm3Zu+um1sWB4aU
-	BqdO1BA5zbbe2iCPQGP0GI0XN99S/WiS5RcKpniYATDtbihLsFKF+4+UrSRetB9ayKaOSoUO4spK0
-	24qF4Qjx9yffr/KaMm7Q==;
+	List-Owner; bh=29hJg3622PF96wMyzCL6Eq86A77DDZ3oitlH0Sab8VQ=; b=ZhGPu5IYKAdTFq
+	hLcK9AqPD3iXgfpbEbPuKUWLpD548GvU6cKJV1eCHPHAEkDkuAoD6GkhzctPEjqyeWtFKDgwClrut
+	3hUNLePcNuPEC7LdzKoYNsNKpizgpvaoiGUmXgN4cwmX/st4HT3M3NVFdN6mVup4REy4K3mUjqV1U
+	9NIqbYyAd5LKZYjY9qagVZ5HbXq8PIx3Vt66Q5rGeYdKFNyYDw6a4yw2F7k8e8FkIEvP4hxfK2zW+
+	hh+vHu7lr0UUc5jhofP1ljjzYFhXg5Wj3SLFtXQA2e/W8yAVcAFwkQPmg74LahlDJFbDQTyQ/MAqQ
+	fB4Ac2xMswfkm3G+LxNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Etj-0000Bb-OC; Thu, 27 Feb 2020 08:51:59 +0000
+	id 1j7Eu2-0000Vg-Pi; Thu, 27 Feb 2020 08:52:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Es3-0007Hf-Ds
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:50:17 +0000
+ id 1j7EsD-0007Tg-2I
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:50:27 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 891982468D;
- Thu, 27 Feb 2020 08:50:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 66C3C2467B;
+ Thu, 27 Feb 2020 08:50:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582793414;
- bh=fX2jVUBPzvxIFycYqkqAbM2SK2Ye1AXe+sp7QV+wvtQ=;
+ s=default; t=1582793424;
+ bh=3TUHpXUbQiWINEYvkWLHV5i4L4XeTvzA8f61zC86hUs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=d4IiDjgFH6t1vgwpRDOo5FroCcA4eMYRDg3X2POJN550EnoMdHqdbF2Ty83giIzXl
- x+RVLtGIm7/J3pX7WX2CTvqHpv70/qlUL3PSjghxWcIYEP4gOmM928b+6UCymk812a
- Za+6SMUld0dvUk/ErSdfxHppk4YiJ3ZxjjhBceKk=
+ b=LqZ40BV3UtfEghlnUPWXWBsJFDSAO7LkQqjE4MyBCGfIko4QuZCxn23PStuQNx1cq
+ tvT2jv5qJjkdWlq9d7ue7n4+FqXK4iHQUHRv2LG0NwyjK0dGeVNasttpjd5fI9PHcT
+ er1rbsLlplzYI9Bv+wbujgi0e7G4RYfo2Y2xJgaE=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 12/14] unicore32: remove __ARCH_USE_5LEVEL_HACK
-Date: Thu, 27 Feb 2020 10:46:06 +0200
-Message-Id: <20200227084608.18223-13-rppt@kernel.org>
+Subject: [PATCH v3 13/14] asm-generic: remove pgtable-nop4d-hack.h
+Date: Thu, 27 Feb 2020 10:46:07 +0200
+Message-Id: <20200227084608.18223-14-rppt@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200227084608.18223-1-rppt@kernel.org>
 References: <20200227084608.18223-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_005015_515417_76D43612 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20200227_005025_701053_3F9ED20F 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,48 +103,108 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mike Rapoport <rppt@linux.ibm.com>
 
-The unicore32 architecture has 2 level page tables and
-asm-generic/pgtable-nopmd.h and explicit casts from pud_t to pgd_t for page
-table folding.
+No architecture defines __ARCH_USE_5LEVEL_HACK and therefore
+pgtable-nop4d-hack.h will be never actually included.
 
-Add p4d walk in the only place that actually unfolds the pud level and
-remove __ARCH_USE_5LEVEL_HACK.
+Remove it.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/unicore32/include/asm/pgtable.h | 1 -
- arch/unicore32/kernel/hibernate.c    | 4 +++-
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ include/asm-generic/pgtable-nop4d-hack.h | 64 ------------------------
+ include/asm-generic/pgtable-nopud.h      |  4 --
+ 2 files changed, 68 deletions(-)
+ delete mode 100644 include/asm-generic/pgtable-nop4d-hack.h
 
-diff --git a/arch/unicore32/include/asm/pgtable.h b/arch/unicore32/include/asm/pgtable.h
-index c8f7ba12f309..82030c32fc05 100644
---- a/arch/unicore32/include/asm/pgtable.h
-+++ b/arch/unicore32/include/asm/pgtable.h
-@@ -9,7 +9,6 @@
- #ifndef __UNICORE_PGTABLE_H__
- #define __UNICORE_PGTABLE_H__
+diff --git a/include/asm-generic/pgtable-nop4d-hack.h b/include/asm-generic/pgtable-nop4d-hack.h
+deleted file mode 100644
+index 829bdb0d6327..000000000000
+--- a/include/asm-generic/pgtable-nop4d-hack.h
++++ /dev/null
+@@ -1,64 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef _PGTABLE_NOP4D_HACK_H
+-#define _PGTABLE_NOP4D_HACK_H
+-
+-#ifndef __ASSEMBLY__
+-#include <asm-generic/5level-fixup.h>
+-
+-#define __PAGETABLE_PUD_FOLDED 1
+-
+-/*
+- * Having the pud type consist of a pgd gets the size right, and allows
+- * us to conceptually access the pgd entry that this pud is folded into
+- * without casting.
+- */
+-typedef struct { pgd_t pgd; } pud_t;
+-
+-#define PUD_SHIFT	PGDIR_SHIFT
+-#define PTRS_PER_PUD	1
+-#define PUD_SIZE	(1UL << PUD_SHIFT)
+-#define PUD_MASK	(~(PUD_SIZE-1))
+-
+-/*
+- * The "pgd_xxx()" functions here are trivial for a folded two-level
+- * setup: the pud is never bad, and a pud always exists (as it's folded
+- * into the pgd entry)
+- */
+-static inline int pgd_none(pgd_t pgd)		{ return 0; }
+-static inline int pgd_bad(pgd_t pgd)		{ return 0; }
+-static inline int pgd_present(pgd_t pgd)	{ return 1; }
+-static inline void pgd_clear(pgd_t *pgd)	{ }
+-#define pud_ERROR(pud)				(pgd_ERROR((pud).pgd))
+-
+-#define pgd_populate(mm, pgd, pud)		do { } while (0)
+-#define pgd_populate_safe(mm, pgd, pud)		do { } while (0)
+-/*
+- * (puds are folded into pgds so this doesn't get actually called,
+- * but the define is needed for a generic inline function.)
+- */
+-#define set_pgd(pgdptr, pgdval)	set_pud((pud_t *)(pgdptr), (pud_t) { pgdval })
+-
+-static inline pud_t *pud_offset(pgd_t *pgd, unsigned long address)
+-{
+-	return (pud_t *)pgd;
+-}
+-
+-#define pud_val(x)				(pgd_val((x).pgd))
+-#define __pud(x)				((pud_t) { __pgd(x) })
+-
+-#define pgd_page(pgd)				(pud_page((pud_t){ pgd }))
+-#define pgd_page_vaddr(pgd)			(pud_page_vaddr((pud_t){ pgd }))
+-
+-/*
+- * allocating and freeing a pud is trivial: the 1-entry pud is
+- * inside the pgd, so has no extra memory associated with it.
+- */
+-#define pud_alloc_one(mm, address)		NULL
+-#define pud_free(mm, x)				do { } while (0)
+-#define __pud_free_tlb(tlb, x, a)		do { } while (0)
+-
+-#undef  pud_addr_end
+-#define pud_addr_end(addr, end)			(end)
+-
+-#endif /* __ASSEMBLY__ */
+-#endif /* _PGTABLE_NOP4D_HACK_H */
+diff --git a/include/asm-generic/pgtable-nopud.h b/include/asm-generic/pgtable-nopud.h
+index d3776cb494c0..ad05c1684bfc 100644
+--- a/include/asm-generic/pgtable-nopud.h
++++ b/include/asm-generic/pgtable-nopud.h
+@@ -4,9 +4,6 @@
  
--#define __ARCH_USE_5LEVEL_HACK
- #include <asm-generic/pgtable-nopmd.h>
- #include <asm/cpu-single.h>
+ #ifndef __ASSEMBLY__
  
-diff --git a/arch/unicore32/kernel/hibernate.c b/arch/unicore32/kernel/hibernate.c
-index f3812245cc00..ccad051a79b6 100644
---- a/arch/unicore32/kernel/hibernate.c
-+++ b/arch/unicore32/kernel/hibernate.c
-@@ -33,9 +33,11 @@ struct swsusp_arch_regs swsusp_arch_regs_cpu0;
- static pmd_t *resume_one_md_table_init(pgd_t *pgd)
- {
- 	pud_t *pud;
-+	p4d_t *p4d;
- 	pmd_t *pmd_table;
+-#ifdef __ARCH_USE_5LEVEL_HACK
+-#include <asm-generic/pgtable-nop4d-hack.h>
+-#else
+ #include <asm-generic/pgtable-nop4d.h>
  
--	pud = pud_offset(pgd, 0);
-+	p4d = p4d_offset(pgd, 0);
-+	pud = pud_offset(p4d, 0);
- 	pmd_table = pmd_offset(pud, 0);
+ #define __PAGETABLE_PUD_FOLDED 1
+@@ -65,5 +62,4 @@ static inline pud_t *pud_offset(p4d_t *p4d, unsigned long address)
+ #define pud_addr_end(addr, end)			(end)
  
- 	return pmd_table;
+ #endif /* __ASSEMBLY__ */
+-#endif /* !__ARCH_USE_5LEVEL_HACK */
+ #endif /* _PGTABLE_NOPUD_H */
 -- 
 2.24.0
 
