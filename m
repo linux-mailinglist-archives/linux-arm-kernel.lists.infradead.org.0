@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B266C17131C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:49:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D45D3171329
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:50:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TyDk5v8DfsyVwljYhokAId5Frm/4A7bAwUi3ImA5r5E=; b=pkZ5OvyxWwD7nA
-	dtYBOsIz9VD6H2jnMRUVjX0mWWjrIy/YupLXTyZovQKer4bx7tymTYPEOOQwfUr11A0XjbuR2ibhY
-	F5C26HpozW1lfhuErMBd7LEGCeZiktctLJ3uKxiUaaCRnN3T8M7rzpGA5chrZnEoN/2NDQ0PEGOp3
-	YJo9CElnjsuPKPPEdogM2O8KytJOM+ikzcyfkoamK3+AyM4X7WClew9H2AnlLQjfou2INL86rDLq9
-	qA59OLoKSU6uq/mtx8Hri92JwBKjXTHfo17ZQMiK+60ppXYRHtJK1D9kmKwOUn8FivtnnqIxnmeYU
-	LNymEcIPDV6uhe/i4ODQ==;
+	List-Owner; bh=l0NE1aBxlYAy3B66IDDa/8uA83uzlXnDIobYetqGp1U=; b=MlR6SRc7ArHtuT
+	qEVIz9CTMWNOmvjII79C01vQEtExB+JZkCfdX7UyJG2jXB1/4MwpgPURHPNdtpmezKqmfcO58VXTw
+	fvGfP5U/9VVDmGXizPd5Esu5cFHPn/SERIGSiA30ua3aCP/LHDRs6JhNlyGMubRWpG42JPWZWWoHu
+	Vs/CYXw2yb82FX4hXOiDJq4hh2CWpLkiT1WMotAxZUgTCqp3zRtOTdOIi/vzyjfMzqCB0QesmT7qH
+	8A5C/I21NAZnPcRyP2HaxnXV+XCw22f4uq8sTiUWvyiZVrgFR++iAw7o4TjzpcEuH514h0sMfexSw
+	bggjyduEYK4BsPW/D+rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7ErS-0005To-0j; Thu, 27 Feb 2020 08:49:38 +0000
+	id 1j7Err-0005kO-SI; Thu, 27 Feb 2020 08:50:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Eqw-0005FA-A7
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:49:08 +0000
+ id 1j7Er5-0005Oa-FU
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:49:16 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0C7772468D;
- Thu, 27 Feb 2020 08:48:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C1FE62467B;
+ Thu, 27 Feb 2020 08:49:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582793345;
- bh=71MnpEc+yFN5lenidv0+rt0LqtwQ5nS0iIQpg548uOQ=;
+ s=default; t=1582793355;
+ bh=W4eq3oKBNtn5njtCQFUl0E8W7deUmxpRXFBznDlnmPc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dq7SIHKA08G/mHYW+R+Hf5myjEeBF/+ZZwlWiezYaYu0nVmt/e+UU4TN4Z3B6ySQ4
- EE9lcwNT0vOQPXGXTOqJ7+cPzaAljcurNcOGmtNG5CagITFm2uvC61OFhdt/1hLOUM
- lgKpxjlIRb05KaHqhxX0qt60VQ8Hk8tg9pl07c0Y=
+ b=GWg6a4X86jnLVYeXklLgcO156TnY++Xe71DSE6B1Y2Dk/Puxcd0a8LMs3S0xl5CFX
+ 5YlbgPgfYKgyFMe1wYpSYNS9erfRpNc1gh2Fq6vTszeT2r9rd+OFjzSzuA3OpDO4u2
+ Mmx5ZuMnIcG1AOK95gK1Usu2hj4aFWzw+k/5D5Ss=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 05/14] nios2: add support for folded p4d page tables
-Date: Thu, 27 Feb 2020 10:45:59 +0200
-Message-Id: <20200227084608.18223-6-rppt@kernel.org>
+Subject: [PATCH v3 06/14] openrisc: add support for folded p4d page tables
+Date: Thu, 27 Feb 2020 10:46:00 +0200
+Message-Id: <20200227084608.18223-7-rppt@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200227084608.18223-1-rppt@kernel.org>
 References: <20200227084608.18223-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_004906_465291_D71209B5 
-X-CRM114-Status: GOOD (  14.03  )
+X-CRM114-CacheID: sfid-20200227_004915_577301_CC88377C 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -108,47 +108,38 @@ level where appropriate and remove usage of __ARCH_USE_5LEVEL_HACK.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/nios2/include/asm/pgtable.h | 3 +--
- arch/nios2/mm/fault.c            | 9 +++++++--
- arch/nios2/mm/ioremap.c          | 6 +++++-
- 3 files changed, 13 insertions(+), 5 deletions(-)
+ arch/openrisc/include/asm/pgtable.h |  1 -
+ arch/openrisc/mm/fault.c            | 10 ++++++++--
+ arch/openrisc/mm/init.c             |  4 +++-
+ 3 files changed, 11 insertions(+), 4 deletions(-)
 
-diff --git a/arch/nios2/include/asm/pgtable.h b/arch/nios2/include/asm/pgtable.h
-index 99985d8b7166..54305aa09b74 100644
---- a/arch/nios2/include/asm/pgtable.h
-+++ b/arch/nios2/include/asm/pgtable.h
-@@ -22,7 +22,6 @@
- #include <asm/tlbflush.h>
+diff --git a/arch/openrisc/include/asm/pgtable.h b/arch/openrisc/include/asm/pgtable.h
+index 248d22d8faa7..c072943fc721 100644
+--- a/arch/openrisc/include/asm/pgtable.h
++++ b/arch/openrisc/include/asm/pgtable.h
+@@ -21,7 +21,6 @@
+ #ifndef __ASM_OPENRISC_PGTABLE_H
+ #define __ASM_OPENRISC_PGTABLE_H
  
- #include <asm/pgtable-bits.h>
 -#define __ARCH_USE_5LEVEL_HACK
  #include <asm-generic/pgtable-nopmd.h>
  
- #define FIRST_USER_ADDRESS	0UL
-@@ -100,7 +99,7 @@ extern pte_t invalid_pte_table[PAGE_SIZE/sizeof(pte_t)];
-  */
- static inline void set_pmd(pmd_t *pmdptr, pmd_t pmdval)
- {
--	pmdptr->pud.pgd.pgd = pmdval.pud.pgd.pgd;
-+	*pmdptr = pmdval;
- }
+ #ifndef __ASSEMBLY__
+diff --git a/arch/openrisc/mm/fault.c b/arch/openrisc/mm/fault.c
+index 5d4d3a9691d0..44aa04545de3 100644
+--- a/arch/openrisc/mm/fault.c
++++ b/arch/openrisc/mm/fault.c
+@@ -296,6 +296,7 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long address,
  
- /* to find an entry in a page-table-directory */
-diff --git a/arch/nios2/mm/fault.c b/arch/nios2/mm/fault.c
-index 6a2e716b959f..d3da995665c3 100644
---- a/arch/nios2/mm/fault.c
-+++ b/arch/nios2/mm/fault.c
-@@ -245,6 +245,7 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long cause,
- 		 */
  		int offset = pgd_index(address);
  		pgd_t *pgd, *pgd_k;
 +		p4d_t *p4d, *p4d_k;
  		pud_t *pud, *pud_k;
  		pmd_t *pmd, *pmd_k;
  		pte_t *pte_k;
-@@ -256,8 +257,12 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long cause,
- 			goto no_context;
- 		set_pgd(pgd, *pgd_k);
+@@ -322,8 +323,13 @@ asmlinkage void do_page_fault(struct pt_regs *regs, unsigned long address,
+ 		 * it exists.
+ 		 */
  
 -		pud = pud_offset(pgd, address);
 -		pud_k = pud_offset(pgd_k, address);
@@ -156,32 +147,34 @@ index 6a2e716b959f..d3da995665c3 100644
 +		p4d_k = p4d_offset(pgd_k, address);
 +		if (!p4d_present(*p4d_k))
 +			goto no_context;
++
 +		pud = pud_offset(p4d, address);
 +		pud_k = pud_offset(p4d_k, address);
  		if (!pud_present(*pud_k))
  			goto no_context;
- 		pmd = pmd_offset(pud, address);
-diff --git a/arch/nios2/mm/ioremap.c b/arch/nios2/mm/ioremap.c
-index 819bdfcc2e71..fe821efb9a99 100644
---- a/arch/nios2/mm/ioremap.c
-+++ b/arch/nios2/mm/ioremap.c
-@@ -86,11 +86,15 @@ static int remap_area_pages(unsigned long address, unsigned long phys_addr,
- 	if (address >= end)
- 		BUG();
- 	do {
-+		p4d_t *p4d;
- 		pud_t *pud;
- 		pmd_t *pmd;
  
- 		error = -ENOMEM;
--		pud = pud_alloc(&init_mm, dir, address);
-+		p4d = p4d_alloc(&init_mm, dir, address);
-+		if (!p4d)
-+			break;
-+		pud = pud_alloc(&init_mm, p4d, address);
- 		if (!pud)
- 			break;
- 		pmd = pmd_alloc(&init_mm, pud, address);
+diff --git a/arch/openrisc/mm/init.c b/arch/openrisc/mm/init.c
+index 1f87b524db78..2536aeae0975 100644
+--- a/arch/openrisc/mm/init.c
++++ b/arch/openrisc/mm/init.c
+@@ -71,6 +71,7 @@ static void __init map_ram(void)
+ 	unsigned long v, p, e;
+ 	pgprot_t prot;
+ 	pgd_t *pge;
++	p4d_t *p4e;
+ 	pud_t *pue;
+ 	pmd_t *pme;
+ 	pte_t *pte;
+@@ -90,7 +91,8 @@ static void __init map_ram(void)
+ 
+ 		while (p < e) {
+ 			int j;
+-			pue = pud_offset(pge, v);
++			p4e = p4d_offset(pge, v);
++			pue = pud_offset(p4e, v);
+ 			pme = pmd_offset(pue, v);
+ 
+ 			if ((u32) pue != (u32) pge || (u32) pme != (u32) pge) {
 -- 
 2.24.0
 
