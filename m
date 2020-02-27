@@ -2,52 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0336317163E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 12:46:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11A17171647
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 12:48:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=poZoN+Nmy3F7h2Q7q4VhJ1jKyQYCm5AH6SaynLZVx+U=; b=uwgPReFbsqQNrA
-	5uEN0upMoVjCPoXc8ossaitiKKqjk1I113PtYg1z5OLcduwGBtkniq9dC7Ok6Z4HwLtfXCDp7vhzP
-	iln9sVBI7USAwZYMVU8yNTOurjbYFUFPVfgxkrI8m3nE03c7Xfu4KCKaRouvjWCyQkUUTx2t+JhVz
-	AtcDuh/3oNkB9se86dlPEY3gc/qi6uZdQlJxAq95oQT3tjmUaB+dHgfc5PomGnrP2D17RO0ynxZOI
-	UH1SH60ixOiZXM9C89jYpIlHx1zYTN+f5bvosJjtPZ/b6virkF4JR5Hu4Wdb3H7cAhfzTWHt0OcPH
-	HEzGqgsQqK8jfdq9TQBg==;
+	List-Owner; bh=le8GDgS1DZoT+WLSNYAo75u5SfN5ewRsrMG/vtEAxHo=; b=gKizO6F2Blnp5F
+	2g7m0s5ISkfwmCdNLCO2nBkbHw9dhkuGhEI7uUXnScnfrwJU9VK0hM61xS1dH3MEyNiu6wvDcL0Rs
+	gKL/Hr53eTGgDe0pvIfcdABOjQYffJBXqW7OgtxMsoBUodV6V6n03lGCcKyObeiD45aTRnljFYnk5
+	vJf6tsGvxolkxBQdRfNS1UqPynemHpmnj1DvcleXK2lcciyh8f39v2RpcEEmg9/nQw3CiUcc3LBnx
+	d8WSNIrzQCwayHE8qo8sEYr9ierDlOoAMKQOSxwJYTdKrYTaZqwET5XfXKQJ47AUR/5NpMM4Av57M
+	T//2/IHRnuyg5TEWZ81A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7HcZ-00039l-Ht; Thu, 27 Feb 2020 11:46:27 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7HcQ-00038T-SY
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 11:46:21 +0000
-X-Originating-IP: 86.202.111.97
-Received: from localhost (lfbn-lyo-1-16-97.w86-202.abo.wanadoo.fr
- [86.202.111.97])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 821602000A;
- Thu, 27 Feb 2020 11:45:54 +0000 (UTC)
-Date: Thu, 27 Feb 2020 12:45:54 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>
-Subject: Re: [PATCH] rtc: zynqmp: Add calibration set and get support
-Message-ID: <20200227114554.GA3436@piout.net>
-References: <1582191106-30431-1-git-send-email-srinivas.neeli@xilinx.com>
+	id 1j7Hef-0003YC-9K; Thu, 27 Feb 2020 11:48:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7HeU-0003XS-Vz
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 11:48:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05CAB1FB;
+ Thu, 27 Feb 2020 03:48:24 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 025253F73B;
+ Thu, 27 Feb 2020 03:48:21 -0800 (PST)
+Date: Thu, 27 Feb 2020 11:48:16 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V3 5/5] PCI: tegra: Add support for PCIe endpoint mode in
+ Tegra194
+Message-ID: <20200227114816.GA11443@e121166-lin.cambridge.arm.com>
+References: <20200113181411.32743-1-vidyas@nvidia.com>
+ <20200113181411.32743-6-vidyas@nvidia.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582191106-30431-1-git-send-email-srinivas.neeli@xilinx.com>
+In-Reply-To: <20200113181411.32743-6-vidyas@nvidia.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_034619_193820_87027D8E 
-X-CRM114-Status: GOOD (  18.17  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200227_034827_118782_1DFBD746 
+X-CRM114-Status: GOOD (  12.78  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,140 +65,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, a.zummo@towertech.it,
- Srinivas Goud <srinivas.goud@xilinx.com>, sgoud@xilinx.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org, git@xilinx.com,
- shubhraj@xilinx.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
+ linux-tegra@vger.kernel.org, robh+dt@kernel.org, thierry.reding@gmail.com,
+ linux-pci@vger.kernel.org, bhelgaas@google.com, andrew.murray@arm.com,
+ jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Mon, Jan 13, 2020 at 11:44:11PM +0530, Vidya Sagar wrote:
+> Add support for the endpoint mode of Synopsys DesignWare core based
+> dual mode PCIe controllers present in Tegra194 SoC.
+> 
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> ---
+> V3:
+> * Addressed Thierry's review comments
 
-On 20/02/2020 15:01:46+0530, Srinivas Neeli wrote:
-> diff --git a/drivers/rtc/rtc-zynqmp.c b/drivers/rtc/rtc-zynqmp.c
-> index 4b1077e2f826..b4118e9e4fcc 100644
-> --- a/drivers/rtc/rtc-zynqmp.c
-> +++ b/drivers/rtc/rtc-zynqmp.c
-> @@ -40,6 +40,12 @@
->  #define RTC_CALIB_MASK		0x1FFFFF
->  #define RTC_ALRM_MASK          BIT(1)
->  #define RTC_MSEC               1000
-> +#define RTC_FR_MASK             0xF0000
-> +#define RTC_SEC_MAX_VAL         0xFFFFFFFF
+I need his ACK to merge this series.
 
-This value is not used
+[...]
 
-> +#define RTC_FR_MAX_TICKS        16
-> +#define RTC_OFFSET_MAX          150000
-> +#define RTC_OFFSET_MIN          -150000
-> +#define RTC_PPB                 1000000000LL
->  
->  struct xlnx_rtc_dev {
->  	struct rtc_device	*rtc;
-> @@ -184,12 +190,84 @@ static void xlnx_init_rtc(struct xlnx_rtc_dev *xrtcdev)
->  	writel(xrtcdev->calibval, (xrtcdev->reg_base + RTC_CALIB_WR));
->  }
->  
-> +static int xlnx_rtc_read_offset(struct device *dev, long *offset)
+> +static int tegra_pcie_ep_work_thread(void *p)
 > +{
-> +	struct xlnx_rtc_dev *xrtcdev = dev_get_drvdata(dev);
-> +	long offset_val;
-> +	unsigned int reg;
-> +	unsigned int tick_mult = RTC_PPB / xrtcdev->calibval;
+> +	struct tegra_pcie_dw *pcie = (struct tegra_pcie_dw *)p;
+> +	u32 event;
 > +
-
-I don't get why you are not simply reusing xrtcdev->calibval. Using
-.set_offset has to take precedence on any value that would have been set
-using DT. Ideally, the DT binding should be removed too.
-
-Currently, the calibration value is overwritten using the DT value
-every time .set_time is called because xrtcdev->calibval is never
-updated.
-
-> +	reg = readl(xrtcdev->reg_base + RTC_CALIB_RD);
+> +	while (true) {
+> +		wait_event_interruptible(pcie->wq,
+> +					 !kfifo_is_empty(&pcie->event_fifo));
 > +
-> +	/* Offset with seconds ticks */
-> +	offset_val = reg & RTC_TICK_MASK;
-> +	offset_val = offset_val - xrtcdev->calibval;
-> +	offset_val = offset_val * tick_mult;
+> +		if (kthread_should_stop())
+> +			break;
 > +
-> +	/* Offset with fractional ticks */
-> +	if (reg & RTC_FR_EN)
-> +		offset_val += ((reg & RTC_FR_MASK) >> RTC_FR_DATSHIFT)
-> +			* (tick_mult / RTC_FR_MAX_TICKS);
-> +	*offset = offset_val;
-> +
-> +	return 0;
-> +}
-> +
-> +static int xlnx_rtc_set_offset(struct device *dev, long offset)
-> +{
-> +	struct xlnx_rtc_dev *xrtcdev = dev_get_drvdata(dev);
-> +	short int  max_tick;
-> +	unsigned char fract_tick = 0;
-> +	unsigned int  calibval;
-> +	int fract_offset;
-> +	unsigned int tick_mult = RTC_PPB / xrtcdev->calibval;
-> +
-> +	/* Make sure offset value is within supported range */
-> +	if (offset < RTC_OFFSET_MIN || offset > RTC_OFFSET_MAX)
-> +		return -ERANGE;
-> +
-> +	/* Number ticks for given offset */
-> +	max_tick = div_s64_rem(offset, tick_mult, &fract_offset);
-> +
-> +	/* Number fractional ticks for given offset */
-> +	if (fract_offset) {
-> +		if (fract_offset < 0) {
-> +			fract_offset = fract_offset + tick_mult;
-> +			max_tick--;
+> +		if (!kfifo_get(&pcie->event_fifo, &event)) {
+> +			dev_warn(pcie->dev, "EVENT FIFO is empty\n");
+> +			continue;
 > +		}
-> +		if (fract_offset > (tick_mult / RTC_FR_MAX_TICKS)) {
-> +			for (fract_tick = 1; fract_tick < 16; fract_tick++) {
-> +				if (fract_offset <=
-> +				    (fract_tick *
-> +				     (tick_mult / RTC_FR_MAX_TICKS)))
-> +					break;
-> +			}
+> +
+> +		switch (event) {
+> +		case EP_PEX_RST_DEASSERT:
+> +			dev_info(pcie->dev, "EVENT: EP_PEX_RST_DEASSERT\n");
+> +			pex_ep_event_pex_rst_deassert(pcie);
+> +			break;
+> +
+> +		case EP_PEX_RST_ASSERT:
+> +			dev_info(pcie->dev, "EVENT: EP_PEX_RST_ASSERT\n");
+> +			pex_ep_event_pex_rst_assert(pcie);
+> +			break;
+> +
+> +		case EP_HOT_RST_DONE:
+> +			dev_info(pcie->dev, "EVENT: EP_HOT_RST_DONE\n");
+> +			pex_ep_event_hot_rst_done(pcie);
+> +			break;
+> +
+> +		case EP_BME_CHANGE:
+> +			dev_info(pcie->dev, "EVENT: EP_BME_CHANGE\n");
+> +			pex_ep_event_bme_change(pcie);
+> +			break;
+> +
+> +		case EP_EVENT_EXIT:
+> +			dev_info(pcie->dev, "EVENT: EP_EVENT_EXIT\n");
+> +			return 0;
+> +
+> +		default:
+> +			dev_warn(pcie->dev, "Invalid PCIe EP event: %u\n",
+> +				 event);
+> +			break;
 > +		}
 > +	}
 > +
-> +	/* Zynqmp RTC uses second and fractional tick
-> +	 * counters for compensation
-> +	 */
-> +	calibval = max_tick + xrtcdev->calibval;
-> +
-> +	if (fract_tick)
-> +		calibval |= RTC_FR_EN;
-> +
-> +	calibval |= (fract_tick <<  RTC_FR_DATSHIFT);
-> +
-> +	writel(calibval, (xrtcdev->reg_base + RTC_CALIB_WR));
-> +
 > +	return 0;
 > +}
 > +
->  static const struct rtc_class_ops xlnx_rtc_ops = {
->  	.set_time	  = xlnx_rtc_set_time,
->  	.read_time	  = xlnx_rtc_read_time,
->  	.read_alarm	  = xlnx_rtc_read_alarm,
->  	.set_alarm	  = xlnx_rtc_set_alarm,
->  	.alarm_irq_enable = xlnx_rtc_alarm_irq_enable,
-> +	.read_offset    = xlnx_rtc_read_offset,
-> +	.set_offset     = xlnx_rtc_set_offset,
->  };
->  
->  static irqreturn_t xlnx_rtc_interrupt(int irq, void *id)
-> -- 
-> 2.7.4
-> 
+> +static irqreturn_t tegra_pcie_ep_pex_rst_irq(int irq, void *arg)
+> +{
+> +	struct tegra_pcie_dw *pcie = arg;
+> +
+> +	if (gpiod_get_value(pcie->pex_rst_gpiod)) {
+> +		if (!kfifo_put(&pcie->event_fifo, EP_PEX_RST_ASSERT)) {
+> +			dev_err(pcie->dev, "EVENT FIFO is full\n");
+> +			return IRQ_HANDLED;
+> +		}
+> +	} else {
+> +		if (!kfifo_put(&pcie->event_fifo, EP_PEX_RST_DEASSERT)) {
+> +			dev_err(pcie->dev, "EVENT FIFO is full\n");
+> +			return IRQ_HANDLED;
+> +		}
+> +	}
+> +
+> +	wake_up(&pcie->wq);
+> +
+> +	return IRQ_HANDLED;
+> +}
+> +
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+[...]
+
+> +static int tegra_pcie_config_ep(struct tegra_pcie_dw *pcie,
+> +				struct platform_device *pdev)
+> +{
+> +	struct dw_pcie *pci = &pcie->pci;
+> +	struct device *dev = pcie->dev;
+> +	struct dw_pcie_ep *ep;
+> +	struct resource *res;
+> +	char *name;
+> +	int ret;
+> +
+> +	ep = &pci->ep;
+> +	ep->ops = &pcie_ep_ops;
+> +
+> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
+> +	if (!res)
+> +		return -EINVAL;
+> +
+> +	ep->phys_base = res->start;
+> +	ep->addr_size = resource_size(res);
+> +	ep->page_size = SZ_64K;
+> +
+> +	ret = gpiod_set_debounce(pcie->pex_rst_gpiod, PERST_DEBOUNCE_TIME);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to set PERST GPIO debounce time: %d\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = gpiod_to_irq(pcie->pex_rst_gpiod);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to get IRQ for PERST GPIO: %d\n", ret);
+> +		return ret;
+> +	}
+> +	pcie->pex_rst_irq = (unsigned int)ret;
+> +
+> +	name = devm_kasprintf(dev, GFP_KERNEL, "tegra_pcie_%u_pex_rst_irq",
+> +			      pcie->cid);
+> +	if (!name) {
+> +		dev_err(dev, "Failed to create PERST IRQ string\n");
+> +		return -ENOMEM;
+> +	}
+> +
+> +	irq_set_status_flags(pcie->pex_rst_irq, IRQ_NOAUTOEN);
+> +
+> +	ret = devm_request_irq(dev, pcie->pex_rst_irq,
+> +			       tegra_pcie_ep_pex_rst_irq,
+> +			       IRQF_TRIGGER_RISING | IRQF_TRIGGER_FALLING,
+> +			       name, (void *)pcie);
+
+I have the impression that a threaded IRQ is what you need, which
+will also remove some boilerplate in the process. Any reason why
+you can't use a threaded IRQ instead of a standalone kthread ?
+
+Thanks,
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
