@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FAC217167C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 12:56:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6ED217169E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 13:02:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MqziEjCdfi4WCaK9zV9VX+evZo1/SJ5HBgu/7zg1l4Y=; b=CrX/4mNFyGsstMFBVvotIYlCJ
-	N7mHefH1NS6iZtJaoa6ZE38KozIljRInyabFW1sSRlz422udyZQBefbxgv2kMyO1dPi28oMK0Xtih
-	xMUyJCtk6G6Gu6w+M5qwV/WZ9nflVxDOT4lfyWlgCdQf4nLI4I/MXIx926QeIE++Pfkaq3oEEM3g7
-	HVbZ6QWJrImd1fjjozvQa/Z6rqCmkXjdIEF4pDg5inSvZMfb0lhXANTLkvR5CngmHD9l/6K2hQt4v
-	O1Yez+Z8frldkqc0aptmPISBCE+NPR5rJpaagRttA+zFQ5gAX/ccb2qRz4U3iUKsAhRkhZhIN3Zma
-	usPnz/9TA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qTfWPx3lHP+cMk+q7veFg9zEjGfc/wzV4J7UjWKySOU=; b=m2cBhYumCYWphh
+	9hs/Ut2aTUSiGQFwv2PJOfeaeWTqIm6oEQFhRilJTi9j4gytubdmYY5AItKvdRSws4mZM2KKNysmC
+	3AI8QWjvAVFlVEUBKii2ZfCQNQIOBYqY3hlbJz4bS8H42A4AfsJYY/+kgoJDrHLZgdkB35YPPp9Cr
+	GYO4BtjEsiLSaBLQv7rLuWWJXcY0jPc0PBNv+smzQNeh/7jVSYlNw9yg93IEF6uxRQ74KhBq7B4Og
+	kgS4umAgt+6qhZm9BBHwAZhwbE95sLg3vgCQ5b6h6c5W02pXlR2swYfdCe0HnIavFEjhroM1roMRe
+	uoFOHN83kA1XxZ5vL6JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7HmU-0007rL-RU; Thu, 27 Feb 2020 11:56:42 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7HmL-0007qs-IR; Thu, 27 Feb 2020 11:56:34 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 20EDFAD81;
- Thu, 27 Feb 2020 11:56:32 +0000 (UTC)
-Message-ID: <7b18ea13c4c5b4a291bf9d5ea6603d3a934ea105.camel@suse.de>
-Subject: Re: [PATCH] pci: brcmstb: Fix build on 32bit ARM platforms with
- older compilers
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Marek Szyprowski <m.szyprowski@samsung.com>, 
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org
-Date: Thu, 27 Feb 2020 12:56:30 +0100
-In-Reply-To: <20200227115146.24515-1-m.szyprowski@samsung.com>
-References: <CGME20200227115151eucas1p22ff7409009d917addcc7e20f523c9051@eucas1p2.samsung.com>
- <20200227115146.24515-1-m.szyprowski@samsung.com>
-User-Agent: Evolution 3.34.4 
+	id 1j7Hrw-0001P3-8p; Thu, 27 Feb 2020 12:02:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7Hrn-0001OB-Oy
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 12:02:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 458B51FB;
+ Thu, 27 Feb 2020 04:02:10 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 9FD413F73B; Thu, 27 Feb 2020 04:02:07 -0800 (PST)
+Date: Thu, 27 Feb 2020 12:02:05 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V13 0/2] arm64/mm: Enable memory hot remove
+Message-ID: <20200227120205.GD3281767@arrakis.emea.arm.com>
+References: <1581565532-27916-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1581565532-27916-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_035633_755989_54122550 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20200227_040211_853408_AEAC10E5 
+X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,75 +62,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: multipart/mixed; boundary="===============7116105673768697627=="
+Cc: mark.rutland@arm.com, valentin.schneider@arm.com,
+ mgorman@techsingularity.net, david@redhat.com, ira.weiny@intel.com,
+ steve.capper@arm.com, suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
+ steven.price@arm.com, linux-mm@kvack.org, logang@deltatee.com,
+ broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com, arunks@codeaurora.org,
+ akpm@linux-foundation.org, osalvador@suse.de, will@kernel.org,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ Robin.Murphy@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Feb 13, 2020 at 09:15:30AM +0530, Anshuman Khandual wrote:
+> Anshuman Khandual (2):
+>   arm64/mm: Hold memory hotplug lock while walking for kernel page table dump
+>   arm64/mm: Enable memory hot remove
 
---===============7116105673768697627==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-7amc1oclgjqFS8I7Y744"
+Queued for 5.7. Thanks.
 
-
---=-7amc1oclgjqFS8I7Y744
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, 2020-02-27 at 12:51 +0100, Marek Szyprowski wrote:
-> Some older compilers have no implementation for the helper for 64-bit
-> unsigned division/modulo, so linking pcie-brcmstb driver causes the
-> "undefined reference to `__aeabi_uldivmod'" error.
->=20
-> *rc_bar2_size is always a power of two, because it is calculated as:
-> "1ULL << fls64(entry->res->end - entry->res->start)", so the modulo
-> operation in the subsequent check can be replaced by a simple logical
-> AND with a proper mask.
->=20
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-
-Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-
-Thanks!
-Nicolas
-
-
---=-7amc1oclgjqFS8I7Y744
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5Xrm4ACgkQlfZmHno8
-x/7tZQf/dMFAYcOBhzFTZmFEMIfMkuXU9giUcGSfumSa0v3JAaCqEQwo7r2xoj3/
-kfcJKW9ly/JVmht9Xu/uVZQ0k1RWxfcMS4pKSZHn+AGL2sGDWyRoLEAtybNtzjBr
-6szjLBdHWiIIll4GdM5oHnGQHn+Sh2tcGDY+EtDtJFtazTL5pU30JuPob/i1fTWE
-bBvRdqusbNg4deJ/l1aE5pK5O2HjTOyV/8k7lnfwMRq+U90Bt3W1mKO77tyCWWlx
-jXF50TwlWBW1aepYUtQTomqN9FIjYaF9rdmAwtMIL/Xlyq122SyU3XN2zZ9+FbWc
-gJMzVpo12RQ8aou54F/ZqPJnMjQF1A==
-=whFO
------END PGP SIGNATURE-----
-
---=-7amc1oclgjqFS8I7Y744--
-
-
-
---===============7116105673768697627==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7116105673768697627==--
-
-
