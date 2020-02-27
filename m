@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5D581712F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:48:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E4641712FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 09:49:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9SPJTcqKXvWD5DxWR83uFCe3DEIpi5/nGVwQPwNERmY=; b=dGqpssEyBizr53
-	tPkaTe3+vBlSYSVTY2+EvreJxXjugms1QbJFnsV9eRmKCTIUlEYVAn+ZtGOYDopGMmuZjzpYQloFQ
-	E15nxp7jzeb/4aDG2HGQdupWThvMmgyy658afdDPmcvMkYYM/rH6DytFmkz5msveCqoNoQd9Va4TF
-	utUrbdsQ/VdfPza77HItzz+3ZlUb7YJuXCYgn8JXPWye5rStLwOHvtBXRTYn8ZFoF3oy+dWi87+Wi
-	voeOW8gdMcBGOZFJC2C58PHLPZ02wOqFP54Jpwm1pwwNAYBeZy8ch5ltKYFNnoC+yRpfPMucml2r6
-	VKlPj8u9+rvugr3ioHag==;
+	List-Owner; bh=lAzNFCBU5Eg6rPH6LB+T/hJM1sGWz4pGlEi8CrtXZmw=; b=XvpcDokUP6g0r9
+	neD3Jewzfafp3+YIS13ojMlJU5u6K8cnDE0zmBAtVzxjKjUUSdqC+CWgkOnUJe1RKYj+JOBxz5dk+
+	njizm91jhSNqCaFj6P6aPnpLjab/AullVgfoE0W7Cy4VlXpiXePTwzbqyE4RE/wLmTma/m83F9lQz
+	23k8yZ0rl+JS+AeJ3FUtcWC0nJjsyt/J2veh6TVhW1E02pzEfwd6NkaiJRYTjczWF6yBl5utQO0EJ
+	zENMfnEf7G0anLn3Qrx3oxP8osGJ3WxXIDtPo3UmZuLEohYRKzoR4Z5le0Oplnl9P8nTT1uMy9Bl2
+	frBbXM+LD/OcFkpZuOZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7EqZ-0004mK-Qp; Thu, 27 Feb 2020 08:48:43 +0000
+	id 1j7Eqn-0004xc-Or; Thu, 27 Feb 2020 08:48:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7EqQ-0004ln-TO
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:48:36 +0000
+ id 1j7Eqa-0004vI-OH
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 08:48:46 +0000
 Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 43F672468F;
- Thu, 27 Feb 2020 08:46:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 253792467B;
+ Thu, 27 Feb 2020 08:48:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582793314;
- bh=4sQuAppJ9V8uQLBiWjuxN6eOuFTm+NWRpi38gIPMGaA=;
+ s=default; t=1582793324;
+ bh=RG9Zl/BpZrqRN3HuSpCwlDUS57jnnyLncIWtzvxDXVc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=01by59pqAON8FeO9D/psn6j37NS33qcomrUCI6gyTr0QWIa5kllZkezTs00rESSHU
- UV00GgurPHbJcPkn8QwKLG/5yTPlukucMIpLas29VEgyoZwjkB0BfAMfLOR/85P2yj
- QAtb0atIS1P9oSw1iMB3282A5MdLa+u93wUXZW5A=
+ b=yeV9cIO5+yHqg0pRHuIksXXhCSdwuStrk3RmcmdgzfvxN7ktm2lsx5aUpOD/+xi4k
+ 5kJqDFyM82pDukikSREXjjoXIupCa3+enh5i/8SeenNhYer/SHwai6M+agFAnw7ZMr
+ I+fLSNws91PPGux1ughj/IKPUyozIUfsO72XZna0=
 From: Mike Rapoport <rppt@kernel.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 02/14] h8300: remove usage of __ARCH_USE_5LEVEL_HACK
-Date: Thu, 27 Feb 2020 10:45:56 +0200
-Message-Id: <20200227084608.18223-3-rppt@kernel.org>
+Subject: [PATCH v3 03/14] hexagon: remove __ARCH_USE_5LEVEL_HACK
+Date: Thu, 27 Feb 2020 10:45:57 +0200
+Message-Id: <20200227084608.18223-4-rppt@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200227084608.18223-1-rppt@kernel.org>
 References: <20200227084608.18223-1-rppt@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_004834_966110_F2F34B94 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200227_004844_809256_1146AD36 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,30 +103,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Mike Rapoport <rppt@linux.ibm.com>
 
-h8300 is a nommu architecture and does not require fixup for upper layers
-of the page tables because it is already handled by the generic nommu
-implementation.
+The hexagon architecture has 2 level page tables and as such most of the
+page table folding is already implemented in asm-generic/pgtable-nopmd.h.
 
-Remove definition of __ARCH_USE_5LEVEL_HACK in
-arch/h8300/include/asm/pgtable.h
+Fixup the only place in arch/hexagon to unfold the p4d level and remove
+__ARCH_USE_5LEVEL_HACK.
 
 Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
- arch/h8300/include/asm/pgtable.h | 1 -
- 1 file changed, 1 deletion(-)
+ arch/hexagon/include/asm/fixmap.h  | 4 ++--
+ arch/hexagon/include/asm/pgtable.h | 1 -
+ 2 files changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/arch/h8300/include/asm/pgtable.h b/arch/h8300/include/asm/pgtable.h
-index 4d00152fab58..f00828720dc4 100644
---- a/arch/h8300/include/asm/pgtable.h
-+++ b/arch/h8300/include/asm/pgtable.h
-@@ -1,7 +1,6 @@
- /* SPDX-License-Identifier: GPL-2.0 */
- #ifndef _H8300_PGTABLE_H
- #define _H8300_PGTABLE_H
+diff --git a/arch/hexagon/include/asm/fixmap.h b/arch/hexagon/include/asm/fixmap.h
+index 933dac167504..97b1b062e750 100644
+--- a/arch/hexagon/include/asm/fixmap.h
++++ b/arch/hexagon/include/asm/fixmap.h
+@@ -16,7 +16,7 @@
+ #include <asm-generic/fixmap.h>
+ 
+ #define kmap_get_fixmap_pte(vaddr) \
+-	pte_offset_kernel(pmd_offset(pud_offset(pgd_offset_k(vaddr), \
+-				(vaddr)), (vaddr)), (vaddr))
++	pte_offset_kernel(pmd_offset(pud_offset(p4d_offset(pgd_offset_k(vaddr), \
++				(vaddr)), (vaddr)), (vaddr)), (vaddr))
+ 
+ #endif
+diff --git a/arch/hexagon/include/asm/pgtable.h b/arch/hexagon/include/asm/pgtable.h
+index 2fec20ad939e..83b544936eed 100644
+--- a/arch/hexagon/include/asm/pgtable.h
++++ b/arch/hexagon/include/asm/pgtable.h
+@@ -12,7 +12,6 @@
+  * Page table definitions for Qualcomm Hexagon processor.
+  */
+ #include <asm/page.h>
 -#define __ARCH_USE_5LEVEL_HACK
- #include <asm-generic/pgtable-nopud.h>
- #include <asm-generic/pgtable.h>
- extern void paging_init(void);
+ #include <asm-generic/pgtable-nopmd.h>
+ 
+ /* A handy thing to have if one has the RAM. Declared in head.S */
 -- 
 2.24.0
 
