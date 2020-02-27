@@ -2,73 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52AF217294A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 21:11:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEC75172952
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 21:14:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VZOG1Xg9AOygjcCe8DfwhlV+Bi3Xd/FxAh9CBqYcXoI=; b=k87by4qHY0XMFg
-	34dMcEWsq26N3I+k/jpvmsMUoH46XlgXYlxMt0lizBrd4h44kq1mWeZrh4y/EZTqpyXqC3eDwl+dV
-	/0jH/YSRs3KoKU6r1aoWTgixxI+V+0qwUCT4Z1LRfWdtVHSFoqwRr/IgjdD7Vqpi92D0VtkjJTFv+
-	Vni6I6xGJPj+MpJRM3tSTqCGLcqO3qbiZvTfoEGx9gxtXNqNowcw8Xb6uOS6Uew+0gD03ZLoQc9x4
-	cSfXt0f+GwVMWHZrOXR0yuA9Acv3SmmZkRU1WciulqOoY6XNovQ49l22yANTfPupr9mhKnfjhdPGs
-	72Vr+pOomyuhGsCPpvWw==;
+	List-Owner; bh=toQhdRgFoFHLM7QhMatUFrttthP7q0X0nb+jh1m4FU8=; b=XUbWxXih7SQkA0
+	kU0fGQs1h0Qz2EyTSjGij7cgWpJ4FIkRnaV7dHD4owZ40aoAUh3yMlyPWsImKT+T1ZEQtCtUtF/6k
+	KUf95AaAk2g/0kty7KWoU8PW+GcxmJeETKGAB1z9z/MLKgDWOxxfEgLR0nZ26WUmCSzosTsJHipdi
+	JYfpUT5u5HqWWWO8D/on5ga6ku53+iqV1TX6+5iExLToa1ZDLZi3Yr0zENTmqCoZdeaFWCldjhAp2
+	UAH2CS+Nlle9NHjxeoF1WXcugG3G+Pk5WgUNZqsERdvsR9hnytX7cIKSZBv0/ykfV93Dyb0uiGffE
+	vL+lcRaO5zCW486ivnHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7PVE-0001KN-TY; Thu, 27 Feb 2020 20:11:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j7PY7-0001hw-2G; Thu, 27 Feb 2020 20:14:23 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7PV5-0001JR-L8
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 20:11:16 +0000
-Received: from mail-qv1-f46.google.com (mail-qv1-f46.google.com
- [209.85.219.46])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E00CC24699
+ id 1j7PXv-0001hP-MY
+ for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 20:14:13 +0000
+Received: by mail-pl1-x641.google.com with SMTP id b22so232240pls.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 20:11:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582834275;
- bh=/V4ZNPA2xQ5WZrglexcKZ3ryVlngSvod+ozNFnSABns=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Ry73YYDUU6a+qu0m24PnHNQMMyTm/Oqisoy1gIbMyQ4S/gXRFk/lX32mG+o0GoGLy
- U/LUPngfIivXkoI3MJgTXxPYwCExt03l0fj7L4mmrLrsGDNIc/p2hWpP0ciio6yRxs
- grtF67saFYGzJ8sJg8k7EsMktmwhX9nWAFAdzIwI=
-Received: by mail-qv1-f46.google.com with SMTP id ea1so218089qvb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 12:11:14 -0800 (PST)
-X-Gm-Message-State: APjAAAXbh491IO4/OJcnyOVi0YfBIWszbAvOyz4llEB+dvFdKo+IgTx0
- me+4hXKZBrndR2DVzCXifdcHNitIOwktx1JoRw==
-X-Google-Smtp-Source: APXvYqw10L9aPY3JHOtOEWA+l413/PApGVC/bA/DbQT+3DNmSeNQPxk/mNpXUrWF2+Y6tEQzIey+4KphOmczloyeAYU=
-X-Received: by 2002:a05:6214:11ac:: with SMTP id
- u12mr659969qvv.85.1582834274034; 
- Thu, 27 Feb 2020 12:11:14 -0800 (PST)
+ Thu, 27 Feb 2020 12:14:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=HueSZx0ts8rrl9axXw3uhQrr5WR5FCAoM3cWMzSUgig=;
+ b=hNTfbru9GbcIsnZTVTdW0TakeEdKmidNn9IGs9Q4vyQM5obrsrI6gbCWhrTP1ZjqiG
+ fNOQO9OikDz6eyrMN7moq6+WGCOBwPrQXpa4mnSSzA1zjBxWb2RPE+/8/vLCTnCaBr6+
+ J/9PTCyTntgmKIZdiizaCQpVBAkIyzUGztMR71yEdQgpX3u3ovwgmtmnr04S4yvqhWy/
+ o/4yKE3uf+lGEqeLvsHPav3OumWq/dUSWNoOD1zYxCtB8GSe/M7PmgK0T9e4u3e1oT3M
+ NI181DWGmEzEoSrD1WNQ30g8z0NTEHw6ZFeB9C8lZAlzm7nGhujoJQ+Am/nLoY1gT+Vo
+ bjsg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=HueSZx0ts8rrl9axXw3uhQrr5WR5FCAoM3cWMzSUgig=;
+ b=TbW7Lm4oqjfYX/YrVJ56UTm7ONflZ0Om7l+dgsjJV5kJ+gR2bgGwl9yrP5SrnH6zv8
+ NtV8QraZACd4TimO8oUBUDfIwj5XTFOQWhmJ6YrdXG5LCNnqgP6EiXxFWeU74zMXZwGL
+ bPgwvnX301s3aNt/RuLwpy39KkPPXmMdgxKGIh2V2Aqvo0Cg9B7w+8Eg9vO/sodkt9YL
+ px974MYM64NWZcJe8+46O1ZczqIz7KjArdfYhPzsmBtncaQu8+cKN20HpgvYc9U0zs8S
+ zQ+q4pBjDiGqeNhW6lxVRo5BFplm5rByjU1x+9FoaSvoyYtEg+ymlhC78sMzXgKHAmGK
+ 8wlw==
+X-Gm-Message-State: APjAAAXaDK7EKTR2a2pisJXrYfLa7MYnpcwNO8GteEowHSYtqmVniG0X
+ mctALaLzvvf3+ioefo2j0o1big==
+X-Google-Smtp-Source: APXvYqyjkedN5nnEyPuP2TOGanlZFuaAlwWxVqtpqMCjioYvsaHmpHmOGZsqvmBEwtv9veLZecW9Cw==
+X-Received: by 2002:a17:90a:191a:: with SMTP id
+ 26mr656861pjg.111.1582834450608; 
+ Thu, 27 Feb 2020 12:14:10 -0800 (PST)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id v29sm7349350pgc.72.2020.02.27.12.14.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 12:14:10 -0800 (PST)
+Date: Thu, 27 Feb 2020 13:14:08 -0700
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Siddharth Gupta <sidgup@codeaurora.org>
+Subject: Re: [PATCH 4/6] drivers: remoteproc: Add name field for every
+ subdevice
+Message-ID: <20200227201408.GB20116@xps15>
+References: <1582167465-2549-1-git-send-email-sidgup@codeaurora.org>
+ <1582167465-2549-5-git-send-email-sidgup@codeaurora.org>
 MIME-Version: 1.0
-References: <20200227095159.GJ25745@shell.armlinux.org.uk>
- <E1j7FqO-0003sv-Ho@rmk-PC.armlinux.org.uk>
- <CAL_JsqK9SLJKZfGjWu3RCk9Wiof+YdUaMziwOrCw5ZxjMZAq_Q@mail.gmail.com>
- <20200227172608.GO25745@shell.armlinux.org.uk> <20200227173636.GE5245@lunn.ch>
-In-Reply-To: <20200227173636.GE5245@lunn.ch>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 27 Feb 2020 14:11:02 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKPR7XpTZ=Sc=0OdD=b64xssE3F=QvpZs_NvQdBkuJLBQ@mail.gmail.com>
-Message-ID: <CAL_JsqKPR7XpTZ=Sc=0OdD=b64xssE3F=QvpZs_NvQdBkuJLBQ@mail.gmail.com>
-Subject: Re: [PATCH net-next 1/3] dt-bindings: net: add dt bindings for
- marvell10g driver
-To: Andrew Lunn <andrew@lunn.ch>
+Content-Disposition: inline
+In-Reply-To: <1582167465-2549-5-git-send-email-sidgup@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_121115_738916_7196AB1A 
-X-CRM114-Status: GOOD (  21.53  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200227_121411_742772_892BE611 
+X-CRM114-Status: GOOD (  19.88  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,78 +100,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
- netdev <netdev@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- "David S. Miller" <davem@davemloft.net>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Heiner Kallweit <hkallweit1@gmail.com>
+Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bjorn.andersson@linaro.org, agross@kernel.org,
+ Rishabh Bhatnagar <rishabhb@codeaurora.org>, psodagud@codeaurora.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 11:36 AM Andrew Lunn <andrew@lunn.ch> wrote:
->
-> > > > +    allOf:
-> > > > +      - $ref: /schemas/types.yaml#/definitions/uint16-array
-> > > > +      - minItems: 1
-> > > > +        maxItems: 4
-> > > > +
-> > > > +examples:
-> > > > +  - |
-> > > > +    ethernet-phy@0 {
-> > > > +        reg = <0>;
-> > >
-> > > This needs to be under an 'mdio' node with #address-cells and
-> > > #size-cells set correctly.
-> >
-> > I wish these things were documented somewhere... I'm pretty sure this
-> > passed validation when I wrote it.
->
-> Documentation/devicetree/bindings/net/mdio.yaml
->
-> Rob, is there a way to express the hierarchy between yaml files and
-> properties? Can we say that a phy, as defined by ethernet-phy.yaml
-> should always be inside an MDIO bus as defined in mdio.yaml?
+On Wed, Feb 19, 2020 at 06:57:43PM -0800, Siddharth Gupta wrote:
+> From: Rishabh Bhatnagar <rishabhb@codeaurora.org>
+> 
+> When a client driver wishes to utilize functionality from a particular
+> subdevice of a remoteproc, it cannot differentiate between the subdevices
+> that have been added. This patch allows the client driver to distinguish
+> between subdevices and thus utilize their functionality.
+> 
+> Signed-off-by: Rishabh Bhatnagar <rishabhb@codeaurora.org>
+> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
+> ---
+>  drivers/remoteproc/qcom_common.c | 6 ++++++
+>  include/linux/remoteproc.h       | 2 ++
+>  2 files changed, 8 insertions(+)
+> 
+> diff --git a/drivers/remoteproc/qcom_common.c b/drivers/remoteproc/qcom_common.c
+> index 60650bc..5d59538 100644
+> --- a/drivers/remoteproc/qcom_common.c
+> +++ b/drivers/remoteproc/qcom_common.c
+> @@ -58,6 +58,7 @@ void qcom_add_glink_subdev(struct rproc *rproc, struct qcom_rproc_glink *glink)
+>  	glink->dev = dev;
+>  	glink->subdev.start = glink_subdev_start;
+>  	glink->subdev.stop = glink_subdev_stop;
+> +	glink->subdev.name = kstrdup("glink", GFP_KERNEL);
 
-We can link a child schema into a parent schema, but not the other way
-around. So you can do something like this in mdio.yaml:
+Because @subdev is a member of qcom_rproc_glink (rather than a pointer), it is
+possible to get to glink with container_of().  From there edge->name is
+available - would that work?
 
-  "^ethernet-phy@[0-9a-f]+$":
-    type: object
-    allOf:
-      - $ref: ethernet-phy.yaml#
+>  
+>  	rproc_add_subdev(rproc, &glink->subdev);
+>  }
+> @@ -73,6 +74,7 @@ void qcom_remove_glink_subdev(struct rproc *rproc, struct qcom_rproc_glink *glin
+>  	if (!glink->node)
+>  		return;
+>  
+> +	kfree(glink->subdev.name);
+>  	rproc_remove_subdev(rproc, &glink->subdev);
+>  	of_node_put(glink->node);
+>  }
+> @@ -154,6 +156,7 @@ void qcom_add_smd_subdev(struct rproc *rproc, struct qcom_rproc_subdev *smd)
+>  	smd->dev = dev;
+>  	smd->subdev.start = smd_subdev_start;
+>  	smd->subdev.stop = smd_subdev_stop;
+> +	smd->subdev.name = kstrdup("smd", GFP_KERNEL);
 
-That happens to work in this case since there's a common compatible
-string for ethernet phys, but doesn't scale in the general case. Note
-that ethernet-phy.yaml would need a couple of changes too. Also, this
-should also be expanded to other possible node names like 'switch'.
+Same as above - qcom_smd_edge has a name.
 
-I've had some thoughts of defining a pseudo property '$parent' or
-something to be able to express constraints such as to what bus a
-device has to be on. Currently, we rely on the overlap of the bus
-schemas checking the bus specific aspects of the bus child nodes. I'm
-also not really convinced that putting say an I2C device under a SPI
-bus node is a problem we need to check for.
+Worse case scenario, both qcom_rproc_glink and qcom_smd_edge have a device_node
+that can be used as well.
 
-
-I'm not sure how any of this would help on examples compiling and
-validating correctly. In example-schema.yaml, it mentions all the
-problems I see: dtc fails, validation fails, bus node requirements,
-and include file requirements:
-
-  # Examples are now compiled with dtc and validated against the schemas
-  #
-  # Examples have a default #address-cells and #size-cells value of 1. This can
-  # be overridden or an appropriate parent bus node should be shown (such as on
-  # i2c buses).
-  #
-  # Any includes used have to be explicitly included.
-
-Rob
+>  
+>  	rproc_add_subdev(rproc, &smd->subdev);
+>  }
+> @@ -169,6 +172,7 @@ void qcom_remove_smd_subdev(struct rproc *rproc, struct qcom_rproc_subdev *smd)
+>  	if (!smd->node)
+>  		return;
+>  
+> +	kfree(smd->subdev.name);
+>  	rproc_remove_subdev(rproc, &smd->subdev);
+>  	of_node_put(smd->node);
+>  }
+> @@ -220,6 +224,7 @@ void qcom_add_ssr_subdev(struct rproc *rproc, struct qcom_rproc_ssr *ssr,
+>  			 const char *ssr_name)
+>  {
+>  	ssr->name = ssr_name;
+> +	ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
+>  	ssr->subdev.unprepare = ssr_notify_unprepare;
+>  
+>  	rproc_add_subdev(rproc, &ssr->subdev);
+> @@ -233,6 +238,7 @@ EXPORT_SYMBOL_GPL(qcom_add_ssr_subdev);
+>   */
+>  void qcom_remove_ssr_subdev(struct rproc *rproc, struct qcom_rproc_ssr *ssr)
+>  {
+> +	kfree(ssr->subdev.name);
+>  	rproc_remove_subdev(rproc, &ssr->subdev);
+>  }
+>  EXPORT_SYMBOL_GPL(qcom_remove_ssr_subdev);
+> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+> index e2eaba9..e2f60cc 100644
+> --- a/include/linux/remoteproc.h
+> +++ b/include/linux/remoteproc.h
+> @@ -519,6 +519,7 @@ struct rproc {
+>  /**
+>   * struct rproc_subdev - subdevice tied to a remoteproc
+>   * @node: list node related to the rproc subdevs list
+> + * @name: name of the subdevice
+>   * @prepare: prepare function, called before the rproc is started
+>   * @start: start function, called after the rproc has been started
+>   * @stop: stop function, called before the rproc is stopped; the @crashed
+> @@ -527,6 +528,7 @@ struct rproc {
+>   */
+>  struct rproc_subdev {
+>  	struct list_head node;
+> +	char *name;
+>  
+>  	int (*prepare)(struct rproc_subdev *subdev);
+>  	int (*start)(struct rproc_subdev *subdev);
+> -- 
+> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
