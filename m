@@ -2,62 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C639171487
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 10:56:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F09B11714C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 27 Feb 2020 11:10:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=VQbehnkLwkrNniXUJWyWKyQZI0MNrFzUNR4hBbbUD5k=; b=KoVwJLcFZ8o6ig1OhknnvBjZa9
-	1uHW0jNLyuywJH4mJ93Qw8UTxzQ8foLD4cyY6UYjpzqxRUm0cqJ8zQdB2AeMSkRCVy4SphTvtRUVv
-	3NBZoqB1WORVoPGyM0gXWX+7KDimMIOgJCBNhZb0zsZF/5yl/EQEI6bFbBGXlwbAB5hFSNJr8tlrh
-	L/6wony0lQOip4ZTVSCFbLmLtwYBV7jDsgAyalRI+JJ+MqSw1HTh7N+RV3SDKjjPxG7skrvqDlLjE
-	Gt/HiDfJkCbMX6HFCPeMcBJ/zbVneU4FGitRzqTyy4ijX2GEgeV0ZfmS3JWgtCMVu9yoh39WdG97x
-	muU5e+NQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DuUc6aW/16SegmQvg2RUaBNiW5A3O/TdEY/IggX2atw=; b=MASb0qvPGbu6dQ
+	aIZZjJ4vKbe9HRhM37zYfS1UJxcW7q5bJw2uOrZV51DfPlr/yZDv4rqR5TRz7KKTlKdVoWFx9nPt0
+	5EFLUxh/aUTMXNHUZcU5Dc2NFF05mYoRKR1/a/GMXAuEI3K6kFmA8Rle4AaUKwEcv6Odulfo97Xck
+	/4jOd9wmO2N0qPnC4xNI6QMHG4rmDDaPAt0fn/BggRnQN13LMj5tYEDoBbjQf6u/qVGo0mbpnX+T/
+	xW5x6OrP/R4NyA4uCB4fQz4J4f89xfEuk2AqFGS59NtIstqLf4mdfPDzrFDpQ7Wc9vfQGEpbf7D7H
+	VTMnoOisYwmWRY7+PXKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7FuB-0001RN-2h; Thu, 27 Feb 2020 09:56:31 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j7G7X-0006qo-1o; Thu, 27 Feb 2020 10:10:19 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Fu1-0001Q5-Ru
- for linux-arm-kernel@lists.infradead.org; Thu, 27 Feb 2020 09:56:23 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C91FCAE46;
- Thu, 27 Feb 2020 09:56:13 +0000 (UTC)
-Subject: Re: cma can't activate area on arm64
-To: Jonathan Richardson <jonathan.richardson@broadcom.com>,
- linux-mm@kvack.org, akpm@linux-foundation.org,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-References: <CAHrpVsXay=8q6a9Vee3wnLVAKHdd_c5+miHbvz+1uqJAEoRZ0A@mail.gmail.com>
-From: Vlastimil Babka <vbabka@suse.cz>
-Message-ID: <8f82edf2-7313-eb4c-f68e-ff18f7a5e919@suse.cz>
-Date: Thu, 27 Feb 2020 10:56:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j7G7E-0006Wh-Pr; Thu, 27 Feb 2020 10:10:02 +0000
+X-UUID: 1b03fa6e8a38465ca83dfa9628bcfdfb-20200227
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=eLO7gTFF1vCEAIYROkM8MZuVGCM3sjjAWL8M+r6/05Y=; 
+ b=BakoIO05e70F2zY4x9CluisQoeR2XSAUbzcWYoBfojDKRB1rabr2ND/3Fc3BDv/lMD4vRzT0evUdvNnSw44hiIW09QV1L/mWtF9KgXsXt6kEnc3NHimSorPXgazAkfYlCxf4yMFJ+Pp2FT2IrCe9OAS7dVxONIKUsyBrzLxNMj0=;
+X-UUID: 1b03fa6e8a38465ca83dfa9628bcfdfb-20200227
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <sam.shih@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 94554355; Thu, 27 Feb 2020 02:09:54 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 27 Feb 2020 02:00:58 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 27 Feb 2020 17:59:00 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 27 Feb 2020 17:59:53 +0800
+Message-ID: <1582797590.25607.10.camel@mtksdccf07>
+Subject: Re: [PATCH 1/1] pwm: mediatek: add longer period support
+From: Sam Shih <sam.shih@mediatek.com>
+To: Uwe =?ISO-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+Date: Thu, 27 Feb 2020 17:59:50 +0800
+In-Reply-To: <20200227080450.rkvwfjx6vikn5ls3@pengutronix.de>
+References: <1582789610-23133-1-git-send-email-sam.shih@mediatek.com>
+ <1582789610-23133-2-git-send-email-sam.shih@mediatek.com>
+ <20200227080450.rkvwfjx6vikn5ls3@pengutronix.de>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <CAHrpVsXay=8q6a9Vee3wnLVAKHdd_c5+miHbvz+1uqJAEoRZ0A@mail.gmail.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_015622_050829_C7BE6275 
-X-CRM114-Status: GOOD (  19.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200227_021000_846692_483944C2 
+X-CRM114-Status: GOOD (  26.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,62 +86,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-15"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/22/20 12:42 AM, Jonathan Richardson wrote:
-> Hi,
-> As of the 5.5 kernel I see boot errors in cma. It reserves 1G and then can't
-> activate an area. I added some prints. It's trying to activate the DMA
-> zone. This causes a driver to fail allocating a dma pool later on. The
-> coherent pool is the default 256MB. If I reduce cma from 1G to 512M
-> then it only tries activates DMA32 zone. I assume there was not enough cma
-> memory for DMA zone? Are there any configuration changes required due
-> to the DMA_ZONE and DMA_ZONE32 changes? I've attached my boot log.
+On Thu, 2020-02-27 at 09:04 +0100, Uwe Kleine-K=F6nig wrote:
+On Thu, Feb 27, 2020 at 03:46:50PM +0800, Sam Shih wrote:
+> > The pwm clock source could be divided by 1625 with PWM_CON
+> > BIT(3) setting in mediatek hardware.
+> > =
 
-I think this question is better for the ARM guys. CC'd
+> > This patch add support for longer pwm period configuration,
+> > which allowing blinking LEDs via pwm interface.
+> > =
 
-> [    0.000000] cma: Reserved 1024 MiB at 0x00000000a0000000
-> ...
-> [    0.390448] Activating cma name: reserved, zone name: DMA
-> [    0.396564] pfn = 0xa0000
-> [    0.399522] cma->count = 262144
-> [    0.406244] pfn failed on = c0000
-> [    0.410002] cma: CMA area reserved could not be activated
-> 
-> static int __init cma_activate_area(struct cma *cma)
-> {
->    ...
->     printk("Activating cma name: %s, zone name: %s\n", cma->name, zone->name);
->     printk("pfn = 0x%lx\n", pfn);
->     printk("cma->count = %lu\n", cma->count);
-> 
->     do {
->         unsigned j;
-> 
->         base_pfn = pfn;
->         for (j = pageblock_nr_pages; j; --j, pfn++) {
->             WARN_ON_ONCE(!pfn_valid(pfn));
->             /*
->              * alloc_contig_range requires the pfn range
->              * specified to be in the same zone. Make this
->              * simple by forcing the entire CMA resv range
->              * to be in the same zone.
->              */
->             if (page_zone(pfn_to_page(pfn)) != zone) {
->                 printk("pfn failed on = 0x%lx\n", pfn);
->                 goto not_in_zone;
->             }
->         }
->         init_cma_reserved_pageblock(pfn_to_page(base_pfn));
->     } while (--i);
-> 
-> Thanks.
-> 
+> > Signed-off-by: Sam Shih <sam.shih@mediatek.com>
+> > ---
+> >  drivers/pwm/pwm-mediatek.c | 21 +++++++++++++++++----
+> >  1 file changed, 17 insertions(+), 4 deletions(-)
+> > =
+
+> > diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
+> > index b94e0d09c300..9af309bea01a 100644
+> > --- a/drivers/pwm/pwm-mediatek.c
+> > +++ b/drivers/pwm/pwm-mediatek.c
+> > @@ -121,8 +121,8 @@ static int pwm_mediatek_config(struct pwm_chip
+*chip, struct pwm_device *pwm,
+> >  			       int duty_ns, int period_ns)
+> >  {
+> >  	struct pwm_mediatek_chip *pc =3D to_pwm_mediatek_chip(chip);
+> > -	u32 clkdiv =3D 0, cnt_period, cnt_duty, reg_width =3D PWMDWIDTH,
+> > -	    reg_thres =3D PWMTHRES;
+> > +	u32 clkdiv =3D 0, clksel =3D 0, cnt_period, cnt_duty,
+> > +	    reg_width =3D PWMDWIDTH, reg_thres =3D PWMTHRES;
+> >  	u64 resolution;
+> >  	int ret;
+> >  =
+
+> Adding some more context:
+> =
 
 
++ /* The pwm source clock can be divided by 2^clkdiv. When the clksel  +
+* bit is set to 1, The final clock output needs to be divided by an +  *
+extra 1625.
++  */
+
+Is this ok ?
+
+
+> > @@ -139,11 +139,20 @@ static int pwm_mediatek_config(struct pwm_chip
+*chip, struct pwm_device *pwm,
+> > 	while (cnt_period > 8191) {
+> >  		resolution *=3D 2;
+> >  		clkdiv++;
+> >  		cnt_period =3D DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000,
+> >  						   resolution);
+> > +		if (clkdiv > PWM_CLK_DIV_MAX && !clksel) {
+> > +			clksel =3D 1;
+> > +			clkdiv =3D 0;
+> > +			resolution =3D (u64)NSEC_PER_SEC * 1000 * 1625;
+> > +			do_div(resolution,
+> > +				clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
+> > +			cnt_period =3D DIV_ROUND_CLOSEST_ULL(
+> > +					(u64)period_ns * 1000, resolution);
+> =
+
+> The assignment is a repetition from just above the if. Maybe just put
+it
+> once after this if block?
+
+The cnt_period represents the effective range of the PWM period counter,
+when we need changing the pwm output period to a longer value at the
+same clock frequency, we can setting a larger cnt_period, but the width
+of the cnt_peroid register is 12 bits,
+When the request period is too long, we need to divide the clock source
+and then recalculate cnt_period outputs the correct waveform.
+As mentioned above, when changing clkdiv, we need to recalculate
+cnt_period immediately.
+
+If the request period is very long (for example, LED blinking), clkdiv
+may be insufficient. =
+
+In this case, we will use clksel to divide the pwm source clock by an
+additional 1625, and recalculate clkdiv and cnt_period.
+
+I don't think we can just place assignments after the if block.
+
+> =
+
+> > +		}
+> >  	}
+> >  =
+
+> > -	if (clkdiv > PWM_CLK_DIV_MAX) {
+> > +	if (clkdiv > PWM_CLK_DIV_MAX && clksel) {
+> =
+
+> Is this change actually relevant? If the while loop that starts at
+line
+> 139 is never run (because cnt_period is <=3D 8191) clkdiv is zero and so
+> the condition is false with and without "&& clksel". If however the
+> while loop is entered and clkdiv becomes bigger than PWM_CLK_DIV_MAX
+> clksel is 1 and the "&& clksel" doesn't make a difference, too.
+> =
+
+
+You are right, I will remove this.
+
+> The code is hard to follow, I wonder if this could be cleaned up with
+> some comments added that explain the hardware details enough to be
+able
+> to actually understand the code without having the hardware reference
+> manual handy.
+> =
+
+
+Is it sufficient to add some context into comment like the response of
+the second question?
+
+
+> >  		pwm_mediatek_clk_disable(chip, pwm);
+> >  		dev_err(chip->dev, "period %d not supported\n", period_ns);
+> >  		return -EINVAL;
+> > @@ -159,7 +168,11 @@ static int pwm_mediatek_config(struct pwm_chip
+*chip, struct pwm_device *pwm,
+> >  	}
+> >  =
+
+> >  	cnt_duty =3D DIV_ROUND_CLOSEST_ULL((u64)duty_ns * 1000, resolution);
+> > -	pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
+> > +	if (clksel)
+> > +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | BIT(3) |
+> > +				    clkdiv);
+> > +	else
+> > +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
+> >  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_width, cnt_period);
+> >  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_thres, cnt_duty);
+> >  =
+
+> > -- =
+
+> > 2.17.1
+> =
+
+> Best regards
+> Uwe
+> =
+
+>
+
+Best Regards,
+Sam
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
