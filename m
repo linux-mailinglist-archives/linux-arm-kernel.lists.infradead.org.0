@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C10E173D98
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:52:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36FF8173DA4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:54:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NAGnw7yqga3EBrDCmrG8u0O3EBfSo5Schwqa4W0Ni0Q=; b=HHByTtOSj2RoJv
-	lqnc9zOkp9gpASg7c+dJM80cBrmfQaNMGsq0TOISNAL6HXZiPMCVCIIVrtM7o7SZzDRrmSC6LEVy1
-	4IKt1C1o4awEwgM5G2uB6MzTPGyqoAofE5xQ7usUIQthSVhpH0lm4nM/paL4Kb0kVfJJU0CTmcZ0i
-	75Ylf/5EZbtEsqimZh5/o7S7eL6pFpbXVN43q0c+7j0G+MYbKb0Xn3FRF4kyHPGwerN7G48lZsWtu
-	C52zr3opGeODes31umDFkLyNJzhr54mYs6DNuEphZkJjUSdYOgJVnTVMc7wuDbdKP2Jqb/i5ajSme
-	mPPWijCyzkH41rKk9mzg==;
+	List-Owner; bh=xPDjUYcFe2oXVKaOnxyRVwLFETSS/Nw3pg5OZb+g+XY=; b=r+morLgm8n8Ljs
+	qXtDYZWYbygrtHcvPPgJ7qhQlibWyHzAaNK4p0uXWfc2aodf0+difTF9vp+1dlIm43fvAXsNFg8Mz
+	SnFtf3pGz8qVP6G7ow5ujlaODiFtcfobTkhxW9f5lB7WgwfxGd8O1Eg0c3Uqe8UCf0KKL6SgK9Pqc
+	ifK2wfyBGzHewULN9CHqJe8e40geZ0Eq+mgSSHctaSyBPRKzxJ3ozZR66Vfi7ZksCeSS9KCt2RIhJ
+	/E5cuXbu/i7Y+EpElqDnawRfNwenAD61Y0QVNJL31Y2AKfNECRjkLSkROplw/DzYPTaCoKMSXSjjn
+	wJ1f9q5uG2rUM6CgX72w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7isD-0002gX-Ed; Fri, 28 Feb 2020 16:52:25 +0000
-Received: from mail-vi1eur05on2126.outbound.protection.outlook.com
- ([40.107.21.126] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1j7iu9-00034A-6x; Fri, 28 Feb 2020 16:54:25 +0000
+Received: from mail-db8eur05on2109.outbound.protection.outlook.com
+ ([40.107.20.109] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7is6-0002g5-Eb
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:52:19 +0000
+ id 1j7itr-00033j-7e
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:54:08 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MStW2V07vuHSt3obiB3lwBi96g+hz/BG/xygsmMNUj9jV0DMA4obH03Amp2rHzgvpzjKN3MERHYMnbwXyCHcr1alLgKnBRR9WiDoqY/Hokf45FJUT3H6cg8bdCnPkBce25u26nzNoT8yT8x+EYtjQBinPk+AIeRfBmXm+5wTEJpY6PJcVgs/Xo9YTFXaeG8IOMDwJLYOs3mE6Rsim2gogt+X/EmGelf3STWwrHPFyq0rTX2yZWvEHy275ZCxByauFtyP1n+a5r5//hnO7ahe4ye3s04rbIckusiHQqgrzWJvBMgXeLphSzTJV6HN44xmTuvloi0e0jIyCgEOJpszmw==
+ b=Q3YjzOR5Q4INYx6cPpUt2hYc653bHzWJy6SERWNov/5M4HAa34zMZs2+u8MDk2Gdt+oIqV2Ne8WNVCIowg8OQLtb4nxkV8Q/7kLbvRiuVmK04yuKy4PTVv6porkV4Ot3m9/mrKmidKShPneqpXSEZFKuTA72WECpoTzrt3F6LsfJ1/Uq7wolc3qr7stlWjiz6kENepaw3cuP0RPKvP/NWaG/RFwaJ5oXGiOgXsrrXbii2CnbjYpAr8BQYO62FbXIaSbDsgtj3CKmD6S3/UGbwdE61bvIP+wh9Ooy7kgn4Bo+5Vo/Yn/QUC4Pvlhqd25RXULsflPiADMjOU9RpGvXPQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DWLYQ/8UGxRfFX2kz6IiJmXHrxcVCgTMolg1A+Gliwg=;
- b=EU9h8Al/FEv2pBvny2JyWZ5AZOBWrU9XU5pr6PEuBDFs2/S8loLc4zOuRQ2Aa3LFgOSI1/WrQ1o6owaXf7dG+lXQB9aqAE73e618YYyLVph5lmvHgUje0Yhy8xXiUcDsZyRcasJmbn5V0XdgfpCmKN3NeFXisws58cofz/NDM1/w5Rts2CckV0GLpEItHNabEcSwkYYW6e9io/wt/8R56C/1ynrZTsNfo0Rxjj0zWNNG+6Ht3321tt6VKhd7PAhqcb3PW45fy2YSo+RyMOxymi16mjaxtGv53C4Rcl3i7hdxZg2Cr1v32+KUWf0nErnkfl7jno1UPKt8+NmCrJUgtg==
+ bh=zm2Bt4HY0tGEGNq2Zl4Eg8vnRPkwX8HI7/6pzyn070I=;
+ b=IfvMBNFkiTVOpi0TAuXQo6peXO24F7TDtV8mPudk04M4ycoWr86dS8v7uDPCjpNftMMjbx+70z9dbMD9MZW+2OL6HZWMVjjVr/NhnLCrpVvbnWm8Y9SGfWn/vglTk2rX8p5TM3WhXttK6L6jmkB8PJFciZnp4YDESf+t8PTVObzEyrWFJxAlwAZ6k8zlGBAhBqj4hNLHCdicj2IQ4bmUJCc/aUO+QJ9NclwEW4X0IBP1QFkDXY2Itw5dy39gX2jZZ2ZZkgunq3XdxNjwG9lmIh27wf1+npDZ5aIa903MHKtRDMsR/9fPh0RzUvc6Bua3GqlN8HgGFnNhMTdg4wB8xg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
  dkim=pass header.d=toradex.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DWLYQ/8UGxRfFX2kz6IiJmXHrxcVCgTMolg1A+Gliwg=;
- b=VzLqhcP1SqARvQcGKBKwb6C8COqtw5UdFw7OWhNmW4XK66vGVcC0OLDJjM209iftQAyOFtnhpAk1pCcjU1pujYnyXXqZtMZ/z2t4x66ISW/g9/x0Mq3v10cYN+HmVvyhcEn2sHBj2/5qJLixfH5yqVhmr7BQlr64gVFOiqz7DgQ=
+ bh=zm2Bt4HY0tGEGNq2Zl4Eg8vnRPkwX8HI7/6pzyn070I=;
+ b=foDq4EQ6kRCp0+aKVKw+T16O4u8U/3uJyK9QSd47ODMekZWgHAmduiS11VJYsPz21bbXKodcpzOQF1vF6QahjgAnTY2qHfsE9ORs+k77zTh/fJC8Xz8PM2Q9tjDSzQp4poIviY1NI5jXLf+qxxom8BlRKlIg0GnQmZuJvzHFKqU=
 Received: from VI1PR05MB6845.eurprd05.prod.outlook.com (10.186.163.80) by
- VI1PR05MB5566.eurprd05.prod.outlook.com (20.177.203.19) with Microsoft SMTP
+ VI1PR05MB6654.eurprd05.prod.outlook.com (10.141.128.20) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.22; Fri, 28 Feb 2020 16:52:16 +0000
+ 15.20.2772.15; Fri, 28 Feb 2020 16:54:04 +0000
 Received: from VI1PR05MB6845.eurprd05.prod.outlook.com
  ([fe80::c13:1d07:fa02:6eeb]) by VI1PR05MB6845.eurprd05.prod.outlook.com
  ([fe80::c13:1d07:fa02:6eeb%7]) with mapi id 15.20.2772.018; Fri, 28 Feb 2020
- 16:52:16 +0000
+ 16:54:04 +0000
 From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 To: "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>, "igor.opaniuk@gmail.com"
  <igor.opaniuk@gmail.com>
-Subject: Re: [PATCH v1 3/5] arm: dts: vf: toradex: use SPDX-License-Identifier
-Thread-Topic: [PATCH v1 3/5] arm: dts: vf: toradex: use SPDX-License-Identifier
-Thread-Index: AQHV6zhtATEDMdsmbUWxVIV3P3KFSagw2GqA
-Date: Fri, 28 Feb 2020 16:52:15 +0000
-Message-ID: <c9eecab5fa2c0ae3228bfcb8350a9f08d431497a.camel@toradex.com>
+Subject: Re: [PATCH v1 4/5] arm: dts: vf: toradex: re-license GPL-2.0+ to
+ GPL-2.0
+Thread-Topic: [PATCH v1 4/5] arm: dts: vf: toradex: re-license GPL-2.0+ to
+ GPL-2.0
+Thread-Index: AQHV6zhuycY8bEapckKLdhHNGMkfl6gw2OwA
+Date: Fri, 28 Feb 2020 16:54:04 +0000
+Message-ID: <5f38ae95378debf708924392c88a7723c1e702c4.camel@toradex.com>
 References: <1582565548-20627-1-git-send-email-igor.opaniuk@gmail.com>
- <1582565548-20627-3-git-send-email-igor.opaniuk@gmail.com>
-In-Reply-To: <1582565548-20627-3-git-send-email-igor.opaniuk@gmail.com>
+ <1582565548-20627-4-git-send-email-igor.opaniuk@gmail.com>
+In-Reply-To: <1582565548-20627-4-git-send-email-igor.opaniuk@gmail.com>
 Accept-Language: en-GB, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -67,43 +69,44 @@ authentication-results: spf=none (sender IP is )
  smtp.mailfrom=marcel.ziswiler@toradex.com; 
 x-originating-ip: [81.221.74.212]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a69a40ac-de89-4dc4-6689-08d7bc6e90f4
-x-ms-traffictypediagnostic: VI1PR05MB5566:
+x-ms-office365-filtering-correlation-id: c4098016-0e53-4704-afb2-08d7bc6ed1b9
+x-ms-traffictypediagnostic: VI1PR05MB6654:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR05MB55666265D500424C8D99AD3BFBE80@VI1PR05MB5566.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-microsoft-antispam-prvs: <VI1PR05MB6654D8C4ECE039A2C0533A42FBE80@VI1PR05MB6654.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
 x-forefront-prvs: 0327618309
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(396003)(346002)(39850400004)(366004)(136003)(376002)(189003)(199004)(5660300002)(2906002)(8936002)(44832011)(110136005)(6512007)(71200400001)(316002)(6486002)(81156014)(81166006)(2616005)(7416002)(36756003)(8676002)(54906003)(86362001)(66556008)(6506007)(4326008)(66476007)(66446008)(66946007)(26005)(91956017)(64756008)(76116006)(478600001)(186003)(2004002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB5566;
+ SFS:(10019020)(4636009)(366004)(39850400004)(396003)(346002)(376002)(136003)(199004)(189003)(91956017)(6512007)(26005)(8936002)(81156014)(186003)(4326008)(81166006)(6486002)(4744005)(86362001)(8676002)(66556008)(64756008)(44832011)(66946007)(54906003)(36756003)(6506007)(71200400001)(76116006)(316002)(66446008)(7416002)(2906002)(478600001)(5660300002)(110136005)(2616005)(66476007);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB6654;
  H:VI1PR05MB6845.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: toradex.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1GvH5GSZdVD8bNcxsNvFBftBuBZrp+sfbFYbZHXx4dtcGn44rzhLjSdrhjXUY+mG+GmiJjBrviHSDoAQcpRjoOsdGW6gmfDnwS41wwcTW0txv+NqsMen5GAclNExwlX3KiDeCEazEHnxPIad3aZ1m48M8aphe/QpFM0CiQ4YSwxzZ58d8Xr4voSGK9eBu7Qv8Yi+y9+QHOWS2KKNOTWitZpkKcHQxB2ZcuTXFvsxeYgq+l4N7pQNUEDnlvZrTWpug+m0PLN3sUkWJDLanUaDx1zczCZt1bBn6ozgXp+KnsDrfRbL6IYW/mDT7XJ5+lGwrWwa/kuclCDwmsuhrg8Cmxx9x/t9bCp53nXOLvMaHz6JLIrAjOifNXRyIJlOfleZPru9twi8JjLK1dJeYsxVviEvnou6i5744XoyhWyPmJXhwSNvNt3ND1vod0ZeP7QaKPsf2as2lPWeUN9bIg703uKlT0VtJReVuxK/n5XZbQE=
-x-ms-exchange-antispam-messagedata: HaXSwYSdR9E12qYYvtQGDjsMiCa6cGwLRQotljm1h5ATmG1FZ86u2e25szJ+pLOjz2l7ORZLFRFqS0ygDM/oLSif6u24iYNcv5syyMP9ZPc/QMsahKh1tDoFAGUeuHYDmJ+/OzLo6KonRmVsF9ObqA==
-Content-ID: <4CE4B1D5C44BE5408AB8C21CD37D82A0@eurprd05.prod.outlook.com>
+x-microsoft-antispam-message-info: e3cOF+XQ4wv7tnNlotAWX+Iug8xQQc/B4vvqALdgtmouaDC5kTwhXUyD037vG7M/oi8n3cZ6KfdMhinRrs2f/825aDroNawkZAgUWMoZj8KsXl2wC6tNaAoQ/1hW5b8M0PecQqcFTM9fqQ/qhx6enc/q6EsLDiNrXTAgAgc5/Q/QpDnrzRwmsLm8RMHIGA0CwcRHjpUaraPr+lh0D8S+krrD8E9e36eghn6M1y+QGEAXJqYYiaB3Z249e5GKYGb4Le2U8MbMHq5Z+/jE+d4uF2Jx0VlspnqICYDm2C6pjSvdGctXJzp76FzmOsO0jH7cFeDULFxWUC35G08FLAf+/iApJkxHh/jY4OG44x+OmcNkqatC88zz5zoEvnLD9t/wU77oAmNO295oelEu38ces9wQYmySqbzAqdUrOEH6t+ULp3r3lwKnsKAilbhpZJk4
+x-ms-exchange-antispam-messagedata: DIL6gTBQPwsuym67LPqjSCmmaeRiH0QEFTvS9zgrAG94gDeyPQyggyErgyu4rupcDXkflwTnD3G4lXJl4yV6XEjb00EYPs25IUyADIaTRZj1W57ttxAdvNZzd+9z1k2uQddP1490zsVkjqBIcMR5vg==
+Content-ID: <D0B09B358ECF314782B19FAEAF1037AD@eurprd05.prod.outlook.com>
 MIME-Version: 1.0
 X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a69a40ac-de89-4dc4-6689-08d7bc6e90f4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Feb 2020 16:52:15.8733 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c4098016-0e53-4704-afb2-08d7bc6ed1b9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Feb 2020 16:54:04.5981 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +X0zmq7XJOAZhZ+WpC4r05I5eB6I/JAXJd//yEHkrRUH9/iX+mzFUtPUktfYJdkXgm+5Gu1YEUkpIMQpXQtqfn4sJIMO5m9T2F+aQQXdADo=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5566
+X-MS-Exchange-CrossTenant-userprincipalname: Vs+v5shEPHo4K3FqyA0o1OcNYpGQg/RtkZRTu5JEMoqEeE3DH6EgS/mdYp/WWEclNDUPrrXWusKT1cMtibzdadGCTm9DcTDxCplb/4K6da8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6654
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_085218_491425_E0FB62BB 
-X-CRM114-Status: GOOD (  22.20  )
+X-CRM114-CacheID: sfid-20200228_085407_280183_661B0437 
+X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.126 listed in list.dnswl.org]
+ no trust [40.107.20.109 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -128,14 +131,15 @@ Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  Max Krummenacher <max.krummenacher@toradex.com>,
  Stefan Agner <stefan.agner@toradex.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "stefan@agner.ch" <stefan@agner.ch>,
  Philippe Schenker <philippe.schenker@toradex.com>,
  Igor Opanyuk <igor.opanyuk@toradex.com>,
  "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>
+ "festevam@gmail.com" <festevam@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -146,95 +150,12 @@ Hi Igor
 On Mon, 2020-02-24 at 19:32 +0200, Igor Opaniuk wrote:
 > From: Igor Opaniuk <igor.opaniuk@toradex.com>
 > 
-> 1. Replace boiler plate licenses texts with the SPDX license
-> identifiers in Toradex Vybrid-based SoM device trees.
-> 2. As X11 is identical to the MIT License, but with an extra sentence
-> that prohibits using the copyright holders' names for advertising or
-> promotional purposes without written permission, use MIT license
-> instead
-> of X11 ('s/X11/MIT/g').
-> 
-> Signed-off-by: Igor Opaniuk <igor.opaniuk@toradex.com>
-> ---
-> 
->  arch/arm/boot/dts/vf-colibri-eval-v3.dtsi   | 40 ++-----------------
-> ----------
->  arch/arm/boot/dts/vf-colibri.dtsi           | 39 ++-----------------
-> ---------
->  arch/arm/boot/dts/vf500-colibri-eval-v3.dts | 40 ++-----------------
-> ----------
->  arch/arm/boot/dts/vf500-colibri.dtsi        | 40 ++-----------------
-> ----------
->  arch/arm/boot/dts/vf610-colibri-eval-v3.dts | 40 ++-----------------
-> ----------
->  arch/arm/boot/dts/vf610-colibri.dtsi        | 40 ++-----------------
-> ----------
->  arch/arm/boot/dts/vf610m4-colibri.dts       | 39 +----------------
-> -----------
->  7 files changed, 13 insertions(+), 265 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
-> b/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
-> index e2da122..bd75211 100644
-> --- a/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
-> +++ b/arch/arm/boot/dts/vf-colibri-eval-v3.dtsi
-> @@ -1,42 +1,6 @@
-> +// SPDX-License-Identifier: GPL-2.0 OR MIT
+> Specify explicitly that GPL-2.0 license can be used and not
+> GPL-2.0+ (which also includes next less permissive versions of GPL)
+> in Toradex i.MX7-based SoM device trees.
 
-Use GPL-2.0+ OR MIT.
-
->  /*
-> - * Copyright 2014 Toradex AG
-> - *
-> - * This file is dual-licensed: you can use it either under the terms
-> - * of the GPL or the X11 license, at your option. Note that this
-> dual
-> - * licensing only applies to this file, and not this project as a
-> - * whole.
-> - *
-> - *  a) This file is free software; you can redistribute it and/or
-> - *     modify it under the terms of the GNU General Public License
-> - *     version 2 as published by the Free Software Foundation.
-> - *
-> - *     This file is distributed in the hope that it will be useful,
-> - *     but WITHOUT ANY WARRANTY; without even the implied warranty
-> of
-> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-> - *     GNU General Public License for more details.
-> - *
-> - * Or, alternatively,
-> - *
-> - *  b) Permission is hereby granted, free of charge, to any person
-> - *     obtaining a copy of this software and associated
-> documentation
-> - *     files (the "Software"), to deal in the Software without
-> - *     restriction, including without limitation the rights to use,
-> - *     copy, modify, merge, publish, distribute, sublicense, and/or
-> - *     sell copies of the Software, and to permit persons to whom
-> the
-> - *     Software is furnished to do so, subject to the following
-> - *     conditions:
-> - *
-> - *     The above copyright notice and this permission notice shall
-> be
-> - *     included in all copies or substantial portions of the
-> Software.
-> - *
-> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
-> KIND,
-> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
-> WARRANTIES
-> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-> - *     OTHER DEALINGS IN THE SOFTWARE.
-> + * Copyright 2014-2020 Toradex AG
-
-And drop the AG.
-
-Dito for other files.
+NAK, please drop this one. Due to dual licensing permissiveness of GPL
+really should not matter.
 
 Thanks!
 
