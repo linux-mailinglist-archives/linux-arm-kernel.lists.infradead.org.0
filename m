@@ -2,70 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38B29174200
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 23:29:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 984D1174221
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 23:42:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K7ktxkgpM4iPPtktXZ6bXEv8q3T5ScfGS0P68M0Mw8A=; b=ah04VYDAVep1Ey
-	ZmfBiyn5xMDI0OEHqNz/dApWaHqStwa/i5K+0o2yduq2MaqmyrM80YWXC/6yOO4HjBebHHntaLLmJ
-	ujzHhAwTIsKqbKf3+NEerF1InXvyuYRnvy65oP1CAv1kLsE+iZTPqgBsW9kHQcJ8759WNheCicBqD
-	fYhilmcLCT6lX8dH+8Rdm2xtp8HAgJwVDIiRCLqTxT7bvu9ggGiTrbEsh4++kTompmz9uN6y/nPjY
-	/fdCjlC1fTuS1mfHpxe1WeukboTu3zZB0KE+BWzSeKVAOceOr6FI8B2LJ2a6IJw/DVoCSohac8NuS
-	jdHn95o7xwB2w8+yAuag==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CEJfdDeHym9Q9hP7Br8K2cO69I0VU+H6EwvN2ZkAGEY=; b=eyuBJoH2SjtzOo
+	Oz/re9SwrRLNANjS20vPw9gfci3Hb2+CxiayUPqOK6sO8YlrVPbbyLBM3c5K4whazl2u6u6J2UAWW
+	M7Bow/jN5MWzvBbKvuvU0WXSemmlC4YZqceAc6LcWESHSIE5ZsW3MWTaSaTR+/7wuhohzl2QYq3ER
+	12GxmX+2w2k4qPlSQuvSwdM+W0fgYqFY3VLZziO4W3lVrYvc6dR5IFQcWdrfeD/fK0POAULtpyeua
+	MzVmI9/S4ZnCVoLI9FnHwSDQFjOhlPg1JyfRmGGgarPt05xQodvNkwy8FZT1U0mG+wLxJsW+Q4iP1
+	EDFIXUOEbiGDCXASGevw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7o8Z-0007Lj-SG; Fri, 28 Feb 2020 22:29:39 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1j7oL5-0003g3-SJ; Fri, 28 Feb 2020 22:42:35 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7o8K-0007HN-DH
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 22:29:25 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 Feb 2020 14:27:20 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,497,1574150400"; d="scan'208";a="227683345"
-Received: from jkalwas-mobl.ger.corp.intel.com (HELO mara.localdomain)
- ([10.249.154.47])
- by orsmga007.jf.intel.com with ESMTP; 28 Feb 2020 14:27:16 -0800
-Received: from sailus by mara.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@linux.intel.com>)
- id 1j7o6B-0000Ha-Ij; Sat, 29 Feb 2020 00:27:13 +0200
-Date: Sat, 29 Feb 2020 00:27:10 +0200
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Steve Longerbeam <slongerbeam@gmail.com>
-Subject: Re: [RESEND PATCH v3 02/17] media: v4l2-fwnode: Pass notifier to
- v4l2_async_register_fwnode_subdev()
-Message-ID: <20200228222710.GA1068@mara.localdomain>
-References: <20200215194136.10131-1-slongerbeam@gmail.com>
- <20200215194136.10131-3-slongerbeam@gmail.com>
- <20200225150721.GO5379@paasikivi.fi.intel.com>
- <c9b232d6-07c9-d13d-18aa-3e1e640aadc2@gmail.com>
+ id 1j7oKh-0003fE-LI
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 22:42:13 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id n127so4915318ywd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 28 Feb 2020 14:42:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=oMZxZrJ7Bl6W7lIllps1//BZzQUZEEMLhplq5QKAqeg=;
+ b=oDzkbR7R4NzPzmaT//fTmrzHcCOKEMQHBe9r7VqhE/ldZx8JdDmCONOjnyK/uYRDKj
+ mabkq79qRqJFZc3w4CK7VhFMvdD5YMSC8mnkI5sn/Z9fREwE2S8WGpbjppe0XUp9N9p4
+ Q/98pdlJq28+U8ixvVWL4fZ7tL+9/Uk5F9CDtLpIaMlNeY1ncYQ26MUqRR0wSXJk5MJv
+ buWtsnriVQeWjjWc5v3fj1hgaF8OToIEcqHOf38c3AEkiic8+HDTQLOvtqr8HP1WyRSS
+ qACdW2pHSHnSbcR7+CS5mHA6ICpZTuA5ajDJG0+bjZE0Ru3AM2qyQ5ageuDrWXPyHhcX
+ fiQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=oMZxZrJ7Bl6W7lIllps1//BZzQUZEEMLhplq5QKAqeg=;
+ b=oW95StWHjzq9+daXCos9WdsdREx3lx0d3hGQhNFNqo84D9HGZwHUcSOkgoiOSFsS7Y
+ vgbvAUs2IT+6IQeG03tquC8GROuvLC72ry/kQ+YXLhbtXY5KEo+b4cBu7aWiTgB/OYic
+ OZ/0YdHf9iPtViD40JwUQ7mBMRp5Tb3nOzgOFbMmW/kM1yKkq/mOQ6eokiVaArF+RSxG
+ qZshEz++Hg+Eksegf+k8gfHPzrv5Md1geb6pjVnlsF87rvkpfiXAfqX/IPS0BiUT9ST6
+ 2HsSVRk+wpp2M7zURF0tk1b6TjZaHO02tUO8yh9JJfBGF46Fth1mcRIqsq0C9b/trynf
+ XCHA==
+X-Gm-Message-State: APjAAAWIInEZBCaNNNTurMZqseHDik2Z9CMOnxjQcutLFz+4a479oiPJ
+ w+Ru/6vf+w5aQ30PWRwih+wZ4A==
+X-Google-Smtp-Source: APXvYqwbqaT0saJvvn1kO9AMPxhCtCU02r6P8JPFybRCZw7gJ1GttFT36f9OLbROm/kzLbUGxjOrBg==
+X-Received: by 2002:a81:82c5:: with SMTP id s188mr6858670ywf.59.1582929729704; 
+ Fri, 28 Feb 2020 14:42:09 -0800 (PST)
+Received: from localhost.localdomain (c-73-185-129-58.hsd1.mn.comcast.net.
+ [73.185.129.58])
+ by smtp.gmail.com with ESMTPSA id d188sm4637830ywe.50.2020.02.28.14.42.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 28 Feb 2020 14:42:08 -0800 (PST)
+From: Alex Elder <elder@linaro.org>
+To: Arnd Bergmann <arnd@arndb.de>,
+	David Miller <davem@davemloft.net>
+Subject: [PATCH 00/17] net: introduce Qualcomm IPA driver (UPDATED)
+Date: Fri, 28 Feb 2020 16:41:47 -0600
+Message-Id: <20200228224204.17746-1-elder@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c9b232d6-07c9-d13d-18aa-3e1e640aadc2@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_142924_462127_C2C477D5 
-X-CRM114-Status: GOOD (  23.52  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200228_144211_704759_5D762919 
+X-CRM114-Status: GOOD (  27.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,102 +96,269 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- open list <linux-kernel@vger.kernel.org>, Rui Miguel Silva <rmfrfs@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, Thomas Gleixner <tglx@linutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, devicetree@vger.kernel.org,
+ Dan Williams <dcbw@redhat.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
+ Evan Green <evgreen@google.com>, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ Siddharth Gupta <sidgup@codeaurora.org>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Steve,
+This series presents the driver for the Qualcomm IP Accelerator (IPA).
 
-Btw. I think probably a smaller list of recipients would be just fine on the
-next version.
+I have posted earlier versions of this code previously, but it has
+undergone quite a bit of development since the last time, so rather
+than calling it "version 3" I'm just treating it as a new series
+(indicating it's been updated in this message).  The fast/data path
+is the same as before.  But the driver now (nearly) supports a
+second platform, its transaction handling has been generalized
+and improved, and modem activities are now handled in a more
+unified way.
 
-On Fri, Feb 28, 2020 at 10:16:06AM -0800, Steve Longerbeam wrote:
-> Hi Sakari,
-> =
+This series is available (based on v5.6-rc3) in branch "ipa_updated-v1"
+in this git repository:
+  https://git.linaro.org/people/alex.elder/linux.git
 
-> On 2/25/20 7:07 AM, Sakari Ailus wrote:
-> > Hi Steve,
-> > =
+The branch depends on other code that I sent out for review earlier
+today.  The first is a very simple patch (which I already know will
+be updated, but generally seems acceptable), and the second is a small
+series of bugfixes for remoteproc:
+  https://lore.kernel.org/lkml/20200228165343.8272-1-elder@linaro.org/
+  https://lore.kernel.org/lkml/20200228183359.16229-1-elder@linaro.org/
 
-> > On Sat, Feb 15, 2020 at 11:41:21AM -0800, Steve Longerbeam wrote:
-> > > Instead of allocating a notifier in v4l2_async_register_fwnode_subdev=
-(),
-> > > have the caller provide one. This allows the caller to implement
-> > > notifier ops (bind, unbind).
-> > > =
 
-> > > The caller is now responsible for first initializing its notifier wit=
-h a
-> > > call to v4l2_async_notifier_init().
-> > > =
+I want to address some of the discussion that arose last time.
 
-> > > Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
-> > Instead of improving v4l2_async_register_fwnode_subdev(), could you con=
-vert
-> > the users (IMX driver in this case) to call the preferred APIs instead?=
- As
-> > the lines below show, v4l2_async_register_fwnode_subdev() has only two
-> > users left --- the other one of which is the IMX driver. After converti=
-ng
-> > these two, we could just remove this API.
-> > =
+First, there was the WWAN discussion.  Here's the history:
+  - This was last posted nine months ago.
+  - Reviewers at that time favored developing a new WWAN subsystem that
+    would be used for managing devices like this.  And the suggestion
+    was to not accept this driver until that could be developed.
+  - Along the way, Apple acquired much of Intel's modem business.
+    And as a result, the generic framework became less pressing.
+  - I did participate in the WWAN subsystem design however, and
+    although it went dormant for a while it's been resurrected:
+      https://lore.kernel.org/netdev/20200225100053.16385-1-johannes@sipsolutions.net/
+  - Unfortunately the proposed WWAN design was not an easy fit
+    with Qualcomm's integrated modem interfaces.  Given that
+    rmnet is a supported link type for in the upstream "iproute2"
+    package (more on this below), I have opted not to integrate
+    with any WWAN subsystem.
 
-> > See e.g. drivers/media/pci/intel/ipu3/ipu3-cio2.c and
-> > drivers/media/platform/omap3isp/isp.c for examples.
-> =
+So in summary, this driver does not integrate with a generic WWAN
+framework.  And I'd like it to be accepted upstream despite that.
 
-> Shouldn't v4l2_async_notifier_add_fwnode_remote_subdev() check for the
-> availability of the remote before adding it to the notifier's asd list, as
-> in:
-> =
 
-> diff --git a/drivers/media/v4l2-core/v4l2-async.c
-> b/drivers/media/v4l2-core/v4l2-async.c
-> index 8bde33c21ce4..b48ed68c6c6c 100644
-> --- a/drivers/media/v4l2-core/v4l2-async.c
-> +++ b/drivers/media/v4l2-core/v4l2-async.c
-> @@ -615,7 +615,7 @@ v4l2_async_notifier_add_fwnode_remote_subdev(struct
-> v4l2_async_notifier *notif,
-> =A0=A0=A0=A0=A0=A0=A0 int ret;
-> =
+Next, Arnd Bergmann had some concerns about flow control.  (Note:
+some of my discussions with Arnd about this were offline.) The
+overall architecture here also involves the "rmnet" driver:
+  drivers/net/ethernet/qualcomm/rmnet
 
-> =A0=A0=A0=A0=A0=A0=A0 remote =3D fwnode_graph_get_remote_port_parent(endp=
-oint);
-> -=A0=A0=A0=A0=A0=A0 if (!remote)
-> +=A0=A0=A0=A0=A0=A0 if (!remote || !fwnode_device_is_available(remote))
-> =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return -ENOTCONN;
-> =
+The rmnet driver presents a network device for use.  It connects
+with another network device presented, by the IPA driver.  The
+rmnet driver wraps (and unwraps) packets transferred to (and from)
+the IPA driver with QMAP headers.
 
-> =A0=A0=A0=A0=A0=A0=A0 asd->match_type =3D V4L2_ASYNC_MATCH_FWNODE;
-> =
+   ---------------
+   | rmnet_data0 |    <-- "real" netdev
+   ---------------
+          ||       }- QMAP spoken here
+   --------------
+   | rmnet_ipa0 |     <-- also netdev, transporting QMAP packets
+   --------------
+          ||
+   --------------
+  ( IPA hardware )
+   --------------
 
-> =
+Arnd's concern was that the rmnet_data0 network device does not
+have the benefit of information about the state of the underlying
+IPA hardware in order to be effective in controlling TX flow.
+The feared result is over-buffering of TX packets (bufferbloat).
+I began working on some simple experiments to see whether (or how
+much) his concern was warranted.  But it turned out that completing
+these experiments was much more work than had been hoped.
 
-> Otherwise we are back to the problem that the notifier will never complete
-> because the remote's driver is not probed.
+The rmnet driver is present in the upstream kernel.  There is also
+support for the rmnet link type in the upstream "ip" user space
+command in the "iproute2" package.  Changing the layering of rmnet
+over IPA likely involves deprecating the rmnet driver and its
+support in "iproute2".  I would really rather not go down that
+path.
 
-fwnode_graph_get_endpoint_by_id() only gives you endpoints that belong to an
-enabled device (unless requested otherwise). So the there's need to check
-the same in v4l2-fwnode.c.
+There is precedent for this sort of layering of network devices
+(L2TP, VLAN).  And any architecture like this would suffer the
+issues Arnd mentioned; the problem is not limited to rmnet and IPA.
+I do think this is a problem worth solving, but the prudent thing
+to do might be to try to solve it more generally.
 
--- =
+So to summarize on this issue, this driver does not attempt to
+change the way the rmnet and IPA drivers work together.  And even
+though I think Arnd's concerns warrant more investigation, I'd like
+this driver to to be accepted upstream without any change to this
+architecture.
 
-Regards,
 
-Sakari Ailus
-sakari.ailus@linux.intel.com
+Finally, a more technical description for the series, and some
+acknowledgements to some people who contributed to it.
+
+The IPA is a component present in some Qualcomm SoCs that allows
+network functions such as aggregation, filtering, routing, and NAT
+to be performed without active involvement of the main application
+processor (AP).
+
+In this initial patch series these advanced features are not
+implemented.  The IPA driver simply provides a network interface
+that makes the modem's LTE network available in Linux.  This initial
+series supports only the Qualcomm SDM845 SoC.  The Qualcomm SC7180
+SoC is partially supported, and support for other platforms will
+follow.
+
+This code is derived from a driver developed by Qualcomm.  A version
+of the original source can be seen here:
+  https://source.codeaurora.org/quic/la/kernel/msm-4.9/tree
+in the "drivers/platform/msm/ipa" directory.  Many were involved in
+developing this, but the following individuals deserve explicit
+acknowledgement for their substantial contributions:
+
+    Abhishek Choubey
+    Ady Abraham
+    Chaitanya Pratapa
+    David Arinzon
+    Ghanim Fodi
+    Gidon Studinski
+    Ravi Gummadidala
+    Shihuan Liu
+    Skylar Chang
+
+					-Alex
+
+Alex Elder (17):
+  remoteproc: add IPA notification to q6v5 driver
+  dt-bindings: soc: qcom: add IPA bindings
+  soc: qcom: ipa: main code
+  soc: qcom: ipa: configuration data
+  soc: qcom: ipa: clocking, interrupts, and memory
+  soc: qcom: ipa: GSI headers
+  soc: qcom: ipa: the generic software interface
+  soc: qcom: ipa: IPA interface to GSI
+  soc: qcom: ipa: GSI transactions
+  soc: qcom: ipa: IPA endpoints
+  soc: qcom: ipa: filter and routing tables
+  soc: qcom: ipa: immediate commands
+  soc: qcom: ipa: modem and microcontroller
+  soc: qcom: ipa: AP/modem communications
+  soc: qcom: ipa: support build of IPA code
+  MAINTAINERS: add entry for the Qualcomm IPA driver
+  arm64: dts: sdm845: add IPA information
+
+ .../devicetree/bindings/net/qcom,ipa.yaml     |  192 ++
+ MAINTAINERS                                   |    6 +
+ arch/arm64/boot/dts/qcom/sdm845.dtsi          |   51 +
+ drivers/net/Kconfig                           |    2 +
+ drivers/net/Makefile                          |    1 +
+ drivers/net/ipa/Kconfig                       |   19 +
+ drivers/net/ipa/Makefile                      |   12 +
+ drivers/net/ipa/gsi.c                         | 2097 +++++++++++++++++
+ drivers/net/ipa/gsi.h                         |  257 ++
+ drivers/net/ipa/gsi_private.h                 |  118 +
+ drivers/net/ipa/gsi_reg.h                     |  417 ++++
+ drivers/net/ipa/gsi_trans.c                   |  786 ++++++
+ drivers/net/ipa/gsi_trans.h                   |  226 ++
+ drivers/net/ipa/ipa.h                         |  148 ++
+ drivers/net/ipa/ipa_clock.c                   |  313 +++
+ drivers/net/ipa/ipa_clock.h                   |   53 +
+ drivers/net/ipa/ipa_cmd.c                     |  680 ++++++
+ drivers/net/ipa/ipa_cmd.h                     |  195 ++
+ drivers/net/ipa/ipa_data-sc7180.c             |  307 +++
+ drivers/net/ipa/ipa_data-sdm845.c             |  329 +++
+ drivers/net/ipa/ipa_data.h                    |  280 +++
+ drivers/net/ipa/ipa_endpoint.c                | 1706 ++++++++++++++
+ drivers/net/ipa/ipa_endpoint.h                |  110 +
+ drivers/net/ipa/ipa_gsi.c                     |   54 +
+ drivers/net/ipa/ipa_gsi.h                     |   60 +
+ drivers/net/ipa/ipa_interrupt.c               |  253 ++
+ drivers/net/ipa/ipa_interrupt.h               |  117 +
+ drivers/net/ipa/ipa_main.c                    |  954 ++++++++
+ drivers/net/ipa/ipa_mem.c                     |  314 +++
+ drivers/net/ipa/ipa_mem.h                     |   90 +
+ drivers/net/ipa/ipa_modem.c                   |  383 +++
+ drivers/net/ipa/ipa_modem.h                   |   31 +
+ drivers/net/ipa/ipa_qmi.c                     |  538 +++++
+ drivers/net/ipa/ipa_qmi.h                     |   41 +
+ drivers/net/ipa/ipa_qmi_msg.c                 |  663 ++++++
+ drivers/net/ipa/ipa_qmi_msg.h                 |  252 ++
+ drivers/net/ipa/ipa_reg.c                     |   38 +
+ drivers/net/ipa/ipa_reg.h                     |  476 ++++
+ drivers/net/ipa/ipa_smp2p.c                   |  335 +++
+ drivers/net/ipa/ipa_smp2p.h                   |   48 +
+ drivers/net/ipa/ipa_table.c                   |  700 ++++++
+ drivers/net/ipa/ipa_table.h                   |  103 +
+ drivers/net/ipa/ipa_uc.c                      |  211 ++
+ drivers/net/ipa/ipa_uc.h                      |   32 +
+ drivers/net/ipa/ipa_version.h                 |   23 +
+ drivers/remoteproc/Kconfig                    |    6 +
+ drivers/remoteproc/Makefile                   |    1 +
+ drivers/remoteproc/qcom_q6v5_ipa_notify.c     |   85 +
+ drivers/remoteproc/qcom_q6v5_mss.c            |   42 +-
+ .../linux/remoteproc/qcom_q6v5_ipa_notify.h   |   82 +
+ 50 files changed, 14235 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/net/qcom,ipa.yaml
+ create mode 100644 drivers/net/ipa/Kconfig
+ create mode 100644 drivers/net/ipa/Makefile
+ create mode 100644 drivers/net/ipa/gsi.c
+ create mode 100644 drivers/net/ipa/gsi.h
+ create mode 100644 drivers/net/ipa/gsi_private.h
+ create mode 100644 drivers/net/ipa/gsi_reg.h
+ create mode 100644 drivers/net/ipa/gsi_trans.c
+ create mode 100644 drivers/net/ipa/gsi_trans.h
+ create mode 100644 drivers/net/ipa/ipa.h
+ create mode 100644 drivers/net/ipa/ipa_clock.c
+ create mode 100644 drivers/net/ipa/ipa_clock.h
+ create mode 100644 drivers/net/ipa/ipa_cmd.c
+ create mode 100644 drivers/net/ipa/ipa_cmd.h
+ create mode 100644 drivers/net/ipa/ipa_data-sc7180.c
+ create mode 100644 drivers/net/ipa/ipa_data-sdm845.c
+ create mode 100644 drivers/net/ipa/ipa_data.h
+ create mode 100644 drivers/net/ipa/ipa_endpoint.c
+ create mode 100644 drivers/net/ipa/ipa_endpoint.h
+ create mode 100644 drivers/net/ipa/ipa_gsi.c
+ create mode 100644 drivers/net/ipa/ipa_gsi.h
+ create mode 100644 drivers/net/ipa/ipa_interrupt.c
+ create mode 100644 drivers/net/ipa/ipa_interrupt.h
+ create mode 100644 drivers/net/ipa/ipa_main.c
+ create mode 100644 drivers/net/ipa/ipa_mem.c
+ create mode 100644 drivers/net/ipa/ipa_mem.h
+ create mode 100644 drivers/net/ipa/ipa_modem.c
+ create mode 100644 drivers/net/ipa/ipa_modem.h
+ create mode 100644 drivers/net/ipa/ipa_qmi.c
+ create mode 100644 drivers/net/ipa/ipa_qmi.h
+ create mode 100644 drivers/net/ipa/ipa_qmi_msg.c
+ create mode 100644 drivers/net/ipa/ipa_qmi_msg.h
+ create mode 100644 drivers/net/ipa/ipa_reg.c
+ create mode 100644 drivers/net/ipa/ipa_reg.h
+ create mode 100644 drivers/net/ipa/ipa_smp2p.c
+ create mode 100644 drivers/net/ipa/ipa_smp2p.h
+ create mode 100644 drivers/net/ipa/ipa_table.c
+ create mode 100644 drivers/net/ipa/ipa_table.h
+ create mode 100644 drivers/net/ipa/ipa_uc.c
+ create mode 100644 drivers/net/ipa/ipa_uc.h
+ create mode 100644 drivers/net/ipa/ipa_version.h
+ create mode 100644 drivers/remoteproc/qcom_q6v5_ipa_notify.c
+ create mode 100644 include/linux/remoteproc/qcom_q6v5_ipa_notify.h
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
