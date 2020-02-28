@@ -2,56 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D269173762
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:43:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AFF917376D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:45:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4hzVhyH0sn28r9trPAyE4AG7D1K3EVgetZEumz0iuYQ=; b=RERUwwgL0ORKMDN/OKg2NKPdP
-	Qy95DCT2fCLpP3Els60fPhPnV9rDBQtdQGr0bd84RQc4sEwwPheNZXOODE4e10akRBee70ZzLqN1d
-	AU6ivJWvsFvNib0QJQ1+QTq0UoKmqV7066Q90x3Jja1jrrausesOdA261qSV5TfsWcXUPXwKrNgZ8
-	mNN8BB/agUPpU4TGjy5CQGJm0QovQoRBH6c6xNCnDKkaYEtBfBPofTPJuMgUwPfdvOijVdyGSa++v
-	refTiiOKBUWV+C77aBRg3Dq5dRlt2xIIGysBineKiLhyX7itsGgE/e2nKHWVjH7Tx6DQokpPsGkxm
-	lJ0aqhYFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZjCKgU0XgeSUUrZghY5fXdF9wTOxviJq6wntY5yCf4g=; b=f4z+3mtMpF4HbZ
+	I1xMC/nEepcMFOZCg9J6P8UxLm9YTItytpY7A39taZOcwb87yUzeNeXg9LfwRvfbFTadJzYKZ1D0A
+	aS47WYiFgj/D5aGohOOf0qfwcywneSSQJA/UB1GNDsk9DNsWuofXX8ULgwZYCocvnwqkR1CJ+7KJy
+	NKCMN4ihpdyMXBNzfCz2Lqf76bK7dDgIgDxHu9sXaUOpLg757tanCzaNgTSLProgdI/uSbnjYRhj5
+	wQiP+7SS1FDWmVm+ZinYRkcIKdPu3qG6tPlYU2I2hMi9492VAMPTsaZlrY/wi4eVuUNdMRvicHHsl
+	IYXYzxMCJZ8v3C0i9M+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7ez1-0007JM-NW; Fri, 28 Feb 2020 12:43:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7eyp-0007Iy-8f; Fri, 28 Feb 2020 12:43:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66E794B2;
- Fri, 28 Feb 2020 04:42:58 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 229663F7B4;
- Fri, 28 Feb 2020 04:42:57 -0800 (PST)
-Subject: Re: [PATCH 3/4] dt-bindings: arm: fix Rockchip rk3399-evb bindings
-To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
-References: <20200228061436.13506-1-jbx6244@gmail.com>
- <20200228061436.13506-3-jbx6244@gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
-Date: Fri, 28 Feb 2020 12:42:55 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j7f11-0007ja-8y; Fri, 28 Feb 2020 12:45:15 +0000
+Received: from mail1.skidata.com ([91.230.2.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7f0j-0007jB-00
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:44:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=skidata.com; i=@skidata.com; q=dns/txt; s=selector1;
+ t=1582893896; x=1614429896;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=g/fumDPqX7LPA3wXxiP1dS805jxlDQnX8YtVKUMeu98=;
+ b=htLsb3kAQ++7H6Bp48r0NeYBc26Zv+rfSybVdJiuTvPoN7NvfBLhDXpN
+ t1hm3Oq3YJATTq+1PPK404jtqwsZddip8g2bFjszb0/U/zHTLkWIACudr
+ 6evoWaJdbOVJNc8B2JJhBwtFAHfnC4TpLBM89KEe3nrtPJLKcFhQVppfb
+ WFwcpSnVe8kuFDho0F6evYy0KokYO8Ynbo100J4DUSLhAhKJwXkEyaW4t
+ 2az9HKMGLxiAC33tWDUxH+LNeuL/ufkCPzZhYs2AlTD4vSgcNfTKYRjhs
+ FvXWzySu559yQ2EvlAlC67q/n7CaCdmms8PPmc0btRMb66ZQeUH/QXqhz g==;
+IronPort-SDR: 08BFDbudq1MaMeOSQQ+Gr+tpOdBaghZBiTJoclI9zpC7I1cY4eavjFCRIGYIm6UxiXKZiGbpCh
+ 5nEss8HtL7INBEMdm9q0dm9ZdiGzxuQDeYYNUGresM574MXNUjSs40GfPn4EeZDM61hp230D75
+ kp96qCOjdjvkfVtBPmqGyuBgtjq0aNsJOeLu5Dr+3VPNJYAVB4gZHbebABmkrTYdW2swMKek1c
+ nrh19pKH2WaOn+Wxg3inHxnCqCBpPIPzAUyWogmBvnV0OAWuSWAmjfATc078ZFTvTr/SskG9i6
+ Q80=
+X-IronPort-AV: E=Sophos;i="5.70,496,1574118000"; d="scan'208";a="22939519"
+Date: Fri, 28 Feb 2020 13:44:48 +0100
+From: Richard Leitner <richard.leitner@skidata.com>
+To: Martin Fuzzey <martin.fuzzey@flowbird.group>
+Subject: Re: [PATCH] dmaengine: imx-sdma: fix context cache
+Message-ID: <20200228124448.GA1689606@pcleri>
+References: <1580305274-27274-1-git-send-email-martin.fuzzey@flowbird.group>
 MIME-Version: 1.0
-In-Reply-To: <20200228061436.13506-3-jbx6244@gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1580305274-27274-1-git-send-email-martin.fuzzey@flowbird.group>
+X-Originating-IP: [192.168.111.252]
+X-ClientProxiedBy: sdex3srv.skidata.net (192.168.111.81) To
+ sdex5srv.skidata.net (192.168.111.83)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_044259_350218_50C548BD 
-X-CRM114-Status: GOOD (  18.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200228_044457_525388_4E3197D5 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.230.2.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,53 +83,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, dmaengine@vger.kernel.org,
+ Robin Gong <yibin.gong@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/02/2020 6:14 am, Johan Jonker wrote:
-> A test with the command below gives this error:
-> 
-> arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: /: compatible:
-> ['rockchip,rk3399-evb', 'rockchip,rk3399', 'google,rk3399evb-rev2']
-> is not valid under any of the given schemas
-> 
-> Fix this error by adding 'google,rk3399evb-rev2' to the compatible
-> property in rockchip.yaml
-> 
-> make ARCH=arm64 dtbs_check
-> DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
-> 
-> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-> ---
->   Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
->   1 file changed, 1 insertion(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> index d303790f5..6c6e8273e 100644
-> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
-> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
-> @@ -509,6 +509,7 @@ properties:
->           items:
->             - const: rockchip,rk3399-evb
->             - const: rockchip,rk3399
-> +          - const: google,rk3399evb-rev2
+Hi,
 
-This looks wrong - the board can't reasonably be a *more* general match 
-than the SoC. If this is supposed to represent a specific variant of the 
-basic EVB design then it should come before "rockchip,rk3399-evb" (and 
-possibly be optional if other variants also exist).
-
-Robin.
-
->   
->         - description: Rockchip RK3399 Sapphire standalone
->           items:
+On Wed, Jan 29, 2020 at 02:40:06PM +0100, Martin Fuzzey wrote:
+> There is a DMA problem with the serial ports on i.MX6.
 > 
+> When the following sequence is performed:
+> 
+> 1) Open a port
+> 2) Write some data
+> 3) Close the port
+> 4) Open a *different* port
+> 5) Write some data
+> 6) Close the port
+> 
+> The second write sends nothing and the second close hangs.
+> If the first close() is omitted it works.
+> 
+> Adding logs to the the UART driver shows that the DMA is being setup but
+> the callback is never invoked for the second write.
+> 
+> This used to work in 4.19.
+> 
+> Git bisect leads to:
+> 	ad0d92d: "dmaengine: imx-sdma: refine to load context only once"
+> 
+> This commit adds a "context_loaded" flag used to avoid unnecessary context
+> setups.
+> However the flag is only reset in sdma_channel_terminate_work(),
+> which is only invoked in a worker triggered by sdma_terminate_all() IF
+> there is an active descriptor.
+> 
+> So, if no active descriptor remains when the channel is terminated, the
+> flag is not reset and, when the channel is later reused the old context
+> is used.
+> 
+> Fix the problem by always resetting the flag in sdma_free_chan_resources().
+> 
+> Fixes: ad0d92d: "dmaengine: imx-sdma: refine to load context only once"
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Martin Fuzzey <martin.fuzzey@flowbird.group>
+> 
+
+Thanks for the patch!
+We were chasing this issue for days and just found your patch as we were
+preparing our (quite similar) solution for submission ;-)
+
+I've successfully tested your patch on a custom i.MX6Solo board.
+Therefore feel free to add
+
+Tested-by: Richard Leitner <richard.leitner@skidata.com>
+
+regards;rl
 
 _______________________________________________
 linux-arm-kernel mailing list
