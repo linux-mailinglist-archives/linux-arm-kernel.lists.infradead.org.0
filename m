@@ -2,57 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F137173B6E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:32:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F7A5173B74
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:33:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=67jXdIIS7QlwJLGq2lwAF8Vi7/qSd7lbuKRtHiroEmE=; b=WChGXmugrn3TUE
-	yys3f3waRJED8YaJNstEfZ3nF8MufsiBblYfqjQOKhH4NxYb5NJz+7cE2eEP32t0U266ppAOtvV+g
-	hWVjGxaw1Ivr4D3tn0PX1qopRh6ocMZUeN8/O8IO8h4YmCdpD9mQYNDtnvhWdU2CHPoLGU3aik26l
-	0ILLNNXA73Pd6Y/Z3/B5pLq8Gqvn2Age0tA1WeJSDIAhVc/ejXd+3nIo0eGAJ8bVnX4sBicANd6SS
-	XICy5V6bDcczcNp9HjJeD7+mBjEwVQDA4AIdQlRsZL3Q5kjO84vwQCwL8zK+mX8RWttnSE+MIKn50
-	hbB3WUBwt9qMOp9t+Mhg==;
+	List-Owner; bh=iFklPWOSDFFpe4+GnJmpeRakuFbbaY1zKgO8lzJsL7c=; b=kUx/N+Yp3+ymqu
+	7q/pnAGuUFoo5OS0z4tUHb9nU/HNwAikjh8mBfKi6Lmc7tseFXowmSldzTqTTHgV7oQJ3DllBcYxg
+	/nqlmiO2aQOD3vCrdlk1JUd0U1GVMOhPUNoXZ1lsB6BE+O0IOuhrWpDcSGv9tSvYIgeU1LW+HnK4V
+	30tftFskeVME1oE54G0fm5j+LR90t7KQ3jALvntm2F1RW8aNLO10kds4R8Y4kClai271B5kh8Sc0H
+	45Giu41pNPrXGM4x61SGBnrmgsBiLZxJRwAdbKM/WEZU1OEusLYMuRA5RaoISJaJNJcohCRa8KIfe
+	KM10pQnEsXZswwtCq+FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7hcb-00010X-U4; Fri, 28 Feb 2020 15:32:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7hcR-000107-R3
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:32:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B788E31B;
- Fri, 28 Feb 2020 07:32:02 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15DAD3F73B;
- Fri, 28 Feb 2020 07:32:00 -0800 (PST)
-Date: Fri, 28 Feb 2020 15:31:59 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Subject: Re: [PATCH v7 3/3] arm64: implement KPROBES_ON_FTRACE
-Message-ID: <20200228153158.GH36089@lakrids.cambridge.arm.com>
-References: <20191225172625.69811b3e@xhacker.debian>
- <20191225173001.6c0e3fb2@xhacker.debian>
+	id 1j7hdv-0001ab-Ha; Fri, 28 Feb 2020 15:33:35 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7hdm-0001a9-7k
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:33:27 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01SFNbpO014854;
+ Fri, 28 Feb 2020 15:33:18 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=UECnQ/oTwdSNKe5Xwj90yZ1hGNYLYSWaAjIgZTEoUHg=;
+ b=EZcxPLjYQUuIr1PPWvoGLq8u79eUUlRU43u5TEmqxPhBi58LneZRsmGtX7jN2h7oOgTE
+ J6PFnqBvcjuZWqJqgzFrWd7iPEhDmnuvRtQzWBym7/lSpBz64UPxkLreMt+krvxlk6FR
+ FoxP+HtsaLrv9ibUQjJpQ8UgA+Cxz6+aNL15PRw1k/QmRrB+dGeCRUK7RMREF8f6AXBA
+ z0BjLYFzNtvQW+i/D0/PJ7IHsDq0Wu8JhhdhwMLeuXhOh+rjacsQK+a+gadD6ffQnpK3
+ 2kl9efrg2X6O5AE/2STjo1Rrp0AhHytXh1aMF3+XDjmgae2gZ1XvC4RPQMbAx3pIFFBR Ng== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 2ydcsnun8q-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Feb 2020 15:33:18 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01SFWNsH144227;
+ Fri, 28 Feb 2020 15:33:17 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by aserp3020.oracle.com with ESMTP id 2ydcsepxuh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Feb 2020 15:33:17 +0000
+Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 01SFXE50018142;
+ Fri, 28 Feb 2020 15:33:15 GMT
+Received: from ca-dmjordan1.us.oracle.com (/10.211.9.48)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 28 Feb 2020 07:33:14 -0800
+Date: Fri, 28 Feb 2020 10:33:31 -0500
+From: Daniel Jordan <daniel.m.jordan@oracle.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
+Message-ID: <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
+References: <20200217204803.GA13479@Red>
+ <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ <20200220090350.GA19858@Red>
+ <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
+ <20200228123311.GE3275@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191225173001.6c0e3fb2@xhacker.debian>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20200228123311.GE3275@willie-the-truck>
+User-Agent: NeoMutt/20180716
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9545
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ bulkscore=0 phishscore=0
+ mlxlogscore=727 spamscore=0 suspectscore=0 mlxscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2002280123
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9545
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
+ malwarescore=0 bulkscore=0
+ lowpriorityscore=0 mlxlogscore=793 phishscore=0 spamscore=0 adultscore=0
+ suspectscore=0 impostorscore=0 clxscore=1015 priorityscore=1501
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2002280122
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_073203_962011_AC994F3B 
-X-CRM114-Status: GOOD (  27.59  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200228_073326_318012_7ABE2AE5 
+X-CRM114-Status: GOOD (  17.18  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,229 +115,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
- Ingo Molnar <mingo@redhat.com>, Steven Rostedt <rostedt@goodmis.org>,
- "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>, Will Deacon <will@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Masami Hiramatsu <mhiramat@kernel.org>
+Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
+ Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
+ tj@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-This has been on my list to review for a while. Given Masami's comments,
-I was waiting for a new version -- is there any plan to respin this?
-
-Otherwise, I have some comments below.
-
-On Wed, Dec 25, 2019 at 09:44:21AM +0000, Jisheng Zhang wrote:
-> KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
-> eliminates the need for a trap, as well as the need to emulate or
-> single-step instructions.
-
-Where does this overhead matter?
-
-> Tested on berlin arm64 platform.
+On Fri, Feb 28, 2020 at 12:33:12PM +0000, Will Deacon wrote:
+> On Fri, Feb 21, 2020 at 12:42:23PM -0500, Daniel Jordan wrote:
+> > On Thu, Feb 20, 2020 at 10:03:50AM +0100, Corentin Labbe wrote:
+> > > But I got the same with plain next (like yesterday 5.6.0-rc2-next-20200219 and tomorow 5.6.0-rc2-next-20200220) and master got the same issue.
+> > 
+> > Thanks.  I've been trying to reproduce this on an arm board but it's taking a
+> > while to get it setup since I've never used it for kernel work.
+> > 
+> > Hoping to get it up soon, though someone with a working setup may be in a
+> > better position to help with this.
 > 
-> ~ # mount -t debugfs debugfs /sys/kernel/debug/
-> ~ # cd /sys/kernel/debug/
-> /sys/kernel/debug # echo 'p _do_fork' > tracing/kprobe_events
-> 
-> before the patch:
-> 
-> /sys/kernel/debug # cat kprobes/list
-> ffffff801009fe28  k  _do_fork+0x0    [DISABLED]
-> 
-> after the patch:
-> 
-> /sys/kernel/debug # cat kprobes/list
-> ffffff801009ff54  k  _do_fork+0x0    [DISABLED][FTRACE]
+> Any joy with this? It sounded to me like the issue also happens on a
+> mainline kernel. If this is the case, have you managed to bisect it?
 
-Just to check, how is the kprobe addresss expected to relate to the
-function address? For any of {mcount, mfentry, patchable-function-entry}
-there are some number of instructions prior to the call instruction.
-Does the user have to provide that address? 
+I managed to get recent mainline (rawhide) booting days ago but wasn't able to
+reproduce on a rpi 3b+.
 
-How does this work on other architectures?
+My plan had been to try debug-by-email next, but then something exploded
+internally and I haven't had time for it yet.  Still intending to help once the
+explosion is contained, provided someone can't get to it sooner.
 
-> 
-> Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-> ---
->  .../debug/kprobes-on-ftrace/arch-support.txt  |  2 +-
->  arch/arm64/Kconfig                            |  1 +
->  arch/arm64/include/asm/ftrace.h               |  1 +
->  arch/arm64/kernel/probes/Makefile             |  1 +
->  arch/arm64/kernel/probes/ftrace.c             | 78 +++++++++++++++++++
->  5 files changed, 82 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm64/kernel/probes/ftrace.c
-> 
-> diff --git a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-> index 4fae0464ddff..f9dd9dd91e0c 100644
-> --- a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-> +++ b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
-> @@ -9,7 +9,7 @@
->      |       alpha: | TODO |
->      |         arc: | TODO |
->      |         arm: | TODO |
-> -    |       arm64: | TODO |
-> +    |       arm64: |  ok  |
->      |         c6x: | TODO |
->      |        csky: | TODO |
->      |       h8300: | TODO |
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index b1b4476ddb83..92b9882889ac 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -166,6 +166,7 @@ config ARM64
->  	select HAVE_STACKPROTECTOR
->  	select HAVE_SYSCALL_TRACEPOINTS
->  	select HAVE_KPROBES
-> +	select HAVE_KPROBES_ON_FTRACE
-
-The rest of the code seems to presume FTRACE_WITH_REGS, but you haven't
-made that dependency explicit here.
-
->  	select HAVE_KRETPROBES
->  	select HAVE_GENERIC_VDSO
->  	select IOMMU_DMA if IOMMU_SUPPORT
-> diff --git a/arch/arm64/include/asm/ftrace.h b/arch/arm64/include/asm/ftrace.h
-> index 91fa4baa1a93..875aeb839654 100644
-> --- a/arch/arm64/include/asm/ftrace.h
-> +++ b/arch/arm64/include/asm/ftrace.h
-> @@ -20,6 +20,7 @@
->  
->  /* The BL at the callsite's adjusted rec->ip */
->  #define MCOUNT_INSN_SIZE	AARCH64_INSN_SIZE
-> +#define FTRACE_IP_EXTENSION	MCOUNT_INSN_SIZE
-
-I'm confused by what exactly this is meant to represent. At runtime our
-rec->ip is always the BL, so what exactly is this attempting to account
-for?
-
-How does this work when using mcount rather than
-patchable-function-entry?
-
->  
->  #define FTRACE_PLT_IDX		0
->  #define FTRACE_REGS_PLT_IDX	1
-> diff --git a/arch/arm64/kernel/probes/Makefile b/arch/arm64/kernel/probes/Makefile
-> index 8e4be92e25b1..4020cfc66564 100644
-> --- a/arch/arm64/kernel/probes/Makefile
-> +++ b/arch/arm64/kernel/probes/Makefile
-> @@ -4,3 +4,4 @@ obj-$(CONFIG_KPROBES)		+= kprobes.o decode-insn.o	\
->  				   simulate-insn.o
->  obj-$(CONFIG_UPROBES)		+= uprobes.o decode-insn.o	\
->  				   simulate-insn.o
-> +obj-$(CONFIG_KPROBES_ON_FTRACE)	+= ftrace.o
-> diff --git a/arch/arm64/kernel/probes/ftrace.c b/arch/arm64/kernel/probes/ftrace.c
-> new file mode 100644
-> index 000000000000..0643aa2dacdb
-> --- /dev/null
-> +++ b/arch/arm64/kernel/probes/ftrace.c
-> @@ -0,0 +1,78 @@
-> +// SPDX-License-Identifier: GPL-2.0-or-later
-> +/*
-> + * Dynamic Ftrace based Kprobes Optimization
-> + *
-> + * Copyright (C) Hitachi Ltd., 2012
-> + * Copyright (C) 2019 Jisheng Zhang <jszhang@kernel.org>
-> + *		      Synaptics Incorporated
-> + */
-> +
-> +#include <linux/kprobes.h>
-> +
-> +/*
-> + * In arm64 FTRACE_WITH_REGS implementation, we patch two nop instructions:
-> + * the lr saver and bl ftrace-entry. Both these instructions are claimed
-> + * by ftrace and we should allow probing on either instruction.
-> + */
-> +int arch_check_ftrace_location(struct kprobe *p)
-> +{
-> +	if (ftrace_location((unsigned long)p->addr))
-> +		p->flags |= KPROBE_FLAG_FTRACE;
-> +	return 0;
-> +}
-
-What about when not using patchable-function-entry?
-
-Why do we need to allow probing both?
-
-> +
-> +/* Ftrace callback handler for kprobes -- called under preepmt disabed */
-> +void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
-> +			   struct ftrace_ops *ops, struct pt_regs *regs)
-> +{
-> +	bool lr_saver = false;
-> +	struct kprobe *p;
-> +	struct kprobe_ctlblk *kcb;
-> +
-> +	/* Preempt is disabled by ftrace */
-> +	p = get_kprobe((kprobe_opcode_t *)ip);
-> +	if (!p) {
-> +		p = get_kprobe((kprobe_opcode_t *)(ip - MCOUNT_INSN_SIZE));
-> +		if (unlikely(!p) || kprobe_disabled(p))
-> +			return;
-> +		lr_saver = true;
-> +	}
-
-This complexity worries me. Is it really necessary to allow kprobing on
-either instruction?
-
-> +
-> +	kcb = get_kprobe_ctlblk();
-> +	if (kprobe_running()) {
-> +		kprobes_inc_nmissed_count(p);
-> +	} else {
-> +		unsigned long orig_ip = instruction_pointer(regs);
-> +
-> +		if (lr_saver)
-> +			ip -= MCOUNT_INSN_SIZE;
-> +		instruction_pointer_set(regs, ip);
-> +		__this_cpu_write(current_kprobe, p);
-> +		kcb->kprobe_status = KPROBE_HIT_ACTIVE;
-> +		if (!p->pre_handler || !p->pre_handler(p, regs)) {
-> +			/*
-> +			 * Emulate singlestep (and also recover regs->pc)
-> +			 * as if there is a nop
-> +			 */
-> +			instruction_pointer_set(regs,
-> +				(unsigned long)p->addr + MCOUNT_INSN_SIZE);
-> +			if (unlikely(p->post_handler)) {
-> +				kcb->kprobe_status = KPROBE_HIT_SSDONE;
-> +				p->post_handler(p, regs, 0);
-> +			}
-> +			instruction_pointer_set(regs, orig_ip);
-
-If you're going to mess with the PC then you also need to adjust the
-hardware single-step state machine.
-
-Thanks,
-Mark.
-
-> +		}
-> +		/*
-> +		 * If pre_handler returns !0, it changes regs->pc. We have to
-> +		 * skip emulating post_handler.
-> +		 */
-> +		__this_cpu_write(current_kprobe, NULL);
-> +	}
-> +}
-> +NOKPROBE_SYMBOL(kprobe_ftrace_handler);
-> +
-> +int arch_prepare_kprobe_ftrace(struct kprobe *p)
-> +{
-> +	p->ainsn.api.insn = NULL;
-> +	return 0;
-> +}
-> -- 
-> 2.24.1
-> 
+thanks,
+Daniel
 
 _______________________________________________
 linux-arm-kernel mailing list
