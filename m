@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1508B172F08
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 04:01:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C389172F18
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 04:03:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=+UMJ7+Q/Rs2kUu18rgAaiTMS1y6spjoevcP7vOJWtos=; b=Z13TvcAwxbnBloKrJ16BaGAzGf
-	uIypjiA70Da8Yk5curRLjr1Bwl0bIXRf2vA5K9CtZW9Ygx1f7jqXiQfRUQLUq9BLI8ZWHreEPxiCm
-	GJzHASqimjpkUJ1c5uFu+9HQ14dexYunzW0oISOA+L2J7rfeaVXl/+SWxv1lsYvbkpdMm2dRut0S+
-	/qW5KudwSGFkHp0qeHB8sOHXw/4LGBhh1IYI5KzSJjJZZSlE+5S9thpYU+FQecC/NmzYWjm4cYsqr
-	QnA7Ayw/v/QYHuklpUykQ+awAaJs0w5jvq+/LITpvWscb4gYHc8YGxsfS7uOT/CL3tS1UT0aESr6f
-	cODcJLTA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YaI4LpanWygqOpfHf+XAjohxXBJyggFZ7AB2CrE73Sk=; b=c0vGulDREBqq5y
+	78F+8+/6sffVoccPTj68iepo/Lx5kIVP13pVaTCyogswhWz/xs2guEyQ5VIV8P7cYAtqVkmNue3o6
+	/+6Ju4uLZavXVdDTGDC1ObjrRie0oCarkWPRIkDAS5foT1YmdS7hV61FLGxe86VpuQjbcIKL7C7Jb
+	89ByRY0bfwWYbN7TJKHB4iKZILYyiVI4Eu8/rO6vIr//5ZXOiXdrGP/7Q5bHRmuHuknb/fLZUh3j4
+	L69taSQv20z5l91hhJ5bYOe72oIh39EPtg7wIQXYGdQZAtjnBFC8VPtTiJzS8Y7AbYxvAQam7hHY8
+	DT0H1nJBZ9qjU4l5yhlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7VtS-00007d-Hi; Fri, 28 Feb 2020 03:00:50 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j7Vvu-00018n-Re; Fri, 28 Feb 2020 03:03:22 +0000
+Received: from kernel.crashing.org ([76.164.61.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7VsY-0006fT-Uq
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 02:59:56 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DF139201000;
- Fri, 28 Feb 2020 03:59:52 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4E1A720AA5F;
- Fri, 28 Feb 2020 03:59:37 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 840F1402AD;
- Fri, 28 Feb 2020 10:59:24 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, robh+dt@kernel.org, mark.rutland@arm.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, catalin.marinas@arm.com, will@kernel.org,
- leonard.crestez@nxp.com, daniel.baluta@nxp.com, aford173@gmail.com,
- shengjiu.wang@nxp.com, ping.bai@nxp.com, jun.li@nxp.com, peng.fan@nxp.com,
- bjorn.andersson@linaro.org, olof@lixom.net, dinguyen@kernel.org,
- marcin.juszkiewicz@linaro.org, linux-pm@vger.kernel.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH V2 4/4] arm64: dts: imx8mm: Add thermal zone support
-Date: Fri, 28 Feb 2020 10:53:33 +0800
-Message-Id: <1582858413-11906-4-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1582858413-11906-1-git-send-email-Anson.Huang@nxp.com>
-References: <1582858413-11906-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1j7Vvk-000188-U8
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 03:03:14 +0000
+Received: from localhost (gate.crashing.org [63.228.1.57])
+ (authenticated bits=0)
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 01S32TN4031937
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 27 Feb 2020 21:02:32 -0600
+Message-ID: <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
+Subject: Re: [PATCH v5 7/7] dt-bindings: usb: add documentation for aspeed
+ usb-vhub
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Tao Ren <rentao.bupt@gmail.com>
+Date: Fri, 28 Feb 2020 14:02:28 +1100
+In-Reply-To: <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
+References: <20200227230507.8682-1-rentao.bupt@gmail.com>
+ <20200227230507.8682-8-rentao.bupt@gmail.com>
+ <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
+ <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_185955_267885_90B9F3D6 
-X-CRM114-Status: UNSURE (   8.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200227_190313_492355_BA9371CC 
+X-CRM114-Status: GOOD (  12.69  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,115 +62,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, taoren@fb.com,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add thermal zone and tmu node to support i.MX8MM thermal
-driver, ONLY cpu thermal zone is supported, and cpu cooling
-is also added.
+On Thu, 2020-02-27 at 17:05 -0800, Tao Ren wrote:
+> > Also long run I think best is going to have a child node per downstream
+> > port, so we create a matching linux struct device. This will make it
+> > easier to deal with the other device-controller in the ast2600 which is
+> > basically one of these without a vhub above it.
+> 
+> Maybe a dumb question: what would be the proper place to parse the child
+> node/properties when they are added? For example, in some usb_gadget_ops
+> callback?
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-No change.
----
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 43 +++++++++++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+No. What the vhub would do is when it probes, it creates a platform
+device for each "port" child node that's linked to the DT node.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index b3d0b29..e438095 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -68,6 +68,7 @@
- 			nvmem-cells = <&cpu_speed_grade>;
- 			nvmem-cell-names = "speed_grade";
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_1: cpu@1 {
-@@ -80,6 +81,7 @@
- 			next-level-cache = <&A53_L2>;
- 			operating-points-v2 = <&a53_opp_table>;
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_2: cpu@2 {
-@@ -92,6 +94,7 @@
- 			next-level-cache = <&A53_L2>;
- 			operating-points-v2 = <&a53_opp_table>;
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_3: cpu@3 {
-@@ -104,6 +107,7 @@
- 			next-level-cache = <&A53_L2>;
- 			operating-points-v2 = <&a53_opp_table>;
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_L2: l2-cache0 {
-@@ -204,6 +208,38 @@
- 		arm,no-tick-in-suspend;
- 	};
- 
-+	thermal-zones {
-+		cpu-thermal {
-+			polling-delay-passive = <250>;
-+			polling-delay = <2000>;
-+			thermal-sensors = <&tmu>;
-+			trips {
-+				cpu_alert0: trip0 {
-+					temperature = <85000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
-+
-+				cpu_crit0: trip1 {
-+					temperature = <95000>;
-+					hysteresis = <2000>;
-+					type = "critical";
-+				};
-+			};
-+
-+			cooling-maps {
-+				map0 {
-+					trip = <&cpu_alert0>;
-+					cooling-device =
-+						<&A53_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A53_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A53_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A53_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
-+		};
-+	};
-+
- 	usbphynop1: usbphynop1 {
- 		compatible = "usb-nop-xceiv";
- 		clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
-@@ -363,6 +399,13 @@
- 				gpio-ranges = <&iomuxc 0 119 30>;
- 			};
- 
-+			tmu: tmu@30260000 {
-+				compatible = "fsl,imx8mm-tmu";
-+				reg = <0x30260000 0x10000>;
-+				clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
-+				#thermal-sensor-cells = <0>;
-+			};
-+
- 			wdog1: watchdog@30280000 {
- 				compatible = "fsl,imx8mm-wdt", "fsl,imx21-wdt";
- 				reg = <0x30280000 0x10000>;
--- 
-2.7.4
+The driver for the device then attaches to it via standard DT matching
+and checks if it has a vhub parent or not, and based on that, operates
+as a vhub child device or a standalone one.
+
+(For example, it might have different functions for EP selection since
+standalone devices have private EPs rather than a shared pool)
+
+They can both be in the same module or they can be separate modules
+with cross dependencies.
+
+Cheers,
+Ben.
+
 
 
 _______________________________________________
