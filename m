@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D316E173C92
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:08:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24D24173CB6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:18:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wTmldPmZHN9QpUsgksQK8BoJCcf87PtyNV6+fFF9WuA=; b=RbLItp3UyDpfxl
-	VkqlflOnuP4W1JLvA8dJ9CCPRRecrl5jeRCo1QL0orunOJq/pzPvMuUj7WjmHfe2oFv4VRQOt0fYg
-	at3uJDCwEhBxTHQf5etvjh67x/yn5ExhzCsp8Z75fRw3CyVbxHGjbhHLJ0RlYvQ3QP98xnFuXT45F
-	k3EkCzXNSW8iLOsxo0Ii1hVj8wwEFeqkqEziBdcEc9Wtnd5MrLSzZz9+EPsCjJCJvpUtQp0atQUVo
-	a0fry7YOxGbdEktbcboVBH4wGplpqdf6mmSvJRMM8gbGSOgha237YNW2uZ5JDtDaX6MCAM24rt2bo
-	ZRL6i3iG+ON7/iQaaY1A==;
+	List-Owner; bh=Wg/IVHhKR5jw2yBEdPaPxE3osixgYcMstABdVpInquE=; b=gMo9NFCKJWmFYv
+	LdG0lYPPEzJ5UWYqGu3cpWHP3X9c/9gjq4GxoptH508FoBlY66QUyVwd2Sq+Tm2yRceJkQgsYb1io
+	g+6n4oWC2N21JnnVz5jkNVMojrdxSvxyfO2+1+BWaG/REwWPwMgkY7krYJfl7lPGPUD3mdJEiUWpT
+	b1i3sPP6/vES0Ajj1Dywr63vpvxx9Da6GXEOqe2byX+61lwS4x2/ONohvl2vDrRKCUcWDtHglAepj
+	xE3L0qrTqds5GnEeYwJU01YkhBwyzG9cB98NkIJHlr5oU9ZqI6HnM7SR3MFUi+w/FVO5NvMCme2Ub
+	HKp3+ap2wXxoSanXVRhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7iBa-0002lU-Uh; Fri, 28 Feb 2020 16:08:22 +0000
+	id 1j7iLb-0005yy-Bf; Fri, 28 Feb 2020 16:18:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7iBR-0002l2-7O
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:08:14 +0000
+ id 1j7iLR-0005xx-64
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:18:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 732BF31B;
- Fri, 28 Feb 2020 08:08:12 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C20803F73B;
- Fri, 28 Feb 2020 08:08:11 -0800 (PST)
-Date: Fri, 28 Feb 2020 16:08:09 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH] arm64: entry: unmask IRQ in el0_sp()
-Message-ID: <20200228160809.GK36089@lakrids.cambridge.arm.com>
-References: <20200228145942.10675-1-mark.rutland@arm.com>
- <2680f3b0-a457-ba9f-322c-2c6e9f079e87@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8F4BA31B;
+ Fri, 28 Feb 2020 08:18:30 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B08E3F73B;
+ Fri, 28 Feb 2020 08:18:28 -0800 (PST)
+Date: Fri, 28 Feb 2020 16:18:20 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH V3 2/2] firmware: arm_scmi: add smc/hvc transport
+Message-ID: <20200228161820.GA17229@bogus>
+References: <1582701171-26842-1-git-send-email-peng.fan@nxp.com>
+ <1582701171-26842-3-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2680f3b0-a457-ba9f-322c-2c6e9f079e87@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <1582701171-26842-3-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_080813_310362_8FE85977 
-X-CRM114-Status: GOOD (  16.08  )
+X-CRM114-CacheID: sfid-20200228_081833_274176_EA0931FC 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,68 +64,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+Cc: mark.rutland@arm.com, robh@kernel.org, f.fainelli@gmail.com,
+ devicetree@vger.kernel.org, viresh.kumar@linaro.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, linux-imx@nxp.com, andre.przywara@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 03:37:46PM +0000, James Morse wrote:
-> Hi Mark,
+On Wed, Feb 26, 2020 at 03:12:51PM +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> On 28/02/2020 14:59, Mark Rutland wrote:
-> > Currently, the EL0 SP alignment handler masks IRQs unnecessarily. It
-> > does so due to historic code sharing of the EL0 SP and PC alignment
-> > handlers, and branch predictor hardening applicable to the EL0 SP
-> > handler.
-> > 
-> > We began masking IRQs in the EL0 SP alignment handler in commit:
-> > 
-> >   5dfc6ed27710c42c ("arm64: entry: Apply BP hardening for high-priority synchronous exception")
-> > 
-> > ... as this shared code with the EL0 PC alignment handler, and branch
-> > predictor hardening made it necessary to disable IRQs for early parts of
-> > the EL0 PC alignment handler. It was not necessary to mask IRQs during
-> > EL0 SP alignment exceptions, but it was not considered harmful to do so.
-> > 
-> > This masking was carried forward into C code in commit:
-> > 
-> >   582f95835a8fc812 ("arm64: entry: convert el0_sync to C")
-> > 
-> > ... where the SP/PC cases were split into separate handlers, and the
-> > masking duplicated.
-> > 
-> > Subsequently the EL0 PC alignment handler was refactored to perform
-> > branch predictor hardening before unmasking IRQs, in commit:
-> > 
-> >   bfe298745afc9548 ("arm64: entry-common: don't touch daif before bp-hardening")
-> > 
-> > ... but the redundant masking of IRQs was not removed from the EL0 SP
-> > alignment handler.
-> 
-> Bother.
-> 
-> 
-> > Let's do so now, and make it interruptible as with most other
-> > synchronous exception handlers.
-> 
-> I think you want:
-> Fixes: bfe298745afc9548 ("arm64: entry-common: don't touch daif before bp-hardening")
-> 
-> on this as, bfe298745afc9548 changed the behaviour: local_daif_restore(DAIF_PROCCTX) was
-> called before arm64_notify_die(), now its not.
-> 
-> With that,
-> Reviewed-by: James Morse <james.morse@arm.com>
+> Take arm,smc-id as the 1st arg, and protocol id as the 2nd arg when
+> issuing SMC/HVC. Since we need protocol id, so add this parameter
 
-Ah; I missed that subtlety.
+And why do we need protocol id here ? I couldn't find it out myself.
+I would like to know why/what/how is it used in the firmware(smc/hvc
+handler). I hope you are not mixing the need for multiple channel with
+protocol id ? One can find out id from the command itself, no need to
+pass it and hence asking here for more details.
 
-I assume that Catalin can fold those in when applying. Otherwise I'll
-add them for a v2.
-
-Thanks,
-Mark.
+-- 
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
