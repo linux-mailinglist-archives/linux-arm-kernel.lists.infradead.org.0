@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4DF317303A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 06:22:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1D7B17303E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 06:23:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8+ZpgTddpEh9lcCbZzPTKymDInNX4ukc7xtOT4h/3yI=; b=qyqc9+JTcgZ11a
-	4oYlGMEBznxjVM2mDu09rV7cYGosKILEeBaj6X4xoKyWhsQbrihDhaHGB77qvSfiERrApF3pF0Vtl
-	ynTGN+ZKe4EDJLg3LCIA7oZaGf8gNdk/mMGoXFViOtwCLuRr6cBKKowjNMPltkyjcL01ahDckScZZ
-	tYfICYyLRo+7EWxsyKvgB6icVw1mIcLU7VRB6jo48JmySGJ9WhKCyoC6h7webnGhkUGp8W6noWjZE
-	Jq7ShTtvZdyO+S+9QhfbR7joH/mML7ny2U23OGBWmvLrGSgtQxALn0ih2xNPc0UteUwy8HaNNieJT
-	KLHvIhTie+a/IcGhGxEg==;
+	List-Owner; bh=qkRYy9oiezKSWizlVEcnsneTok5SdoB6UxbN+/nevSU=; b=OSXWm5B8Ug0EEY
+	PSIuSzVFzA2WiBRyV4AjktLjBVSrRbgyGXyYkhGrk0xvVlr44bZKKOusUleKnTANzBnNFXDdzZCnW
+	wLkQ26px4U97i+Ycxg0KEYJ7mxhRkPgrYDwVgdInCWnZUx9EOQncB5aXf2R2tBl/ykC0uiVxCjT6Y
+	IyLvk5KA/xNZ6oeG/gRAWEphlDTsk0hMaSAYMSPvJvruv2Zg4LE9x9rtqz5watmc0XY4o/vj7i3z4
+	dtvrRGwF9WtTsqAmk+6WHQ4zOO96C2SBrP/0Gcp2YMu8iHW4M/WlGvGuZzG6VF7OkOd7mfVsMOsQM
+	zGhw2PkrT4zrwSUabC3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Y6c-00088c-SX; Fri, 28 Feb 2020 05:22:35 +0000
+	id 1j7Y6y-00005B-K9; Fri, 28 Feb 2020 05:22:56 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Y5u-0007rd-Ke; Fri, 28 Feb 2020 05:21:53 +0000
-X-UUID: 592476f17b4e437699987726e8775682-20200227
+ id 1j7Y5x-0007rc-9L; Fri, 28 Feb 2020 05:21:54 +0000
+X-UUID: 91fc9f6c3d6b49e89a97718a3b3a6f77-20200227
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=iiTeyRrWpFxbRbm/zUqFMsVdCyJg1pm41Q+smhNO+Zw=; 
- b=NH/H6Mbz7CLvMC+EHLbH9LSsJnHhz2Z3LaFZV/BYHIb6tsKhkpnCg8Xr/URpAXzcySi7xGRhBIINcUWDb4mB2+P9v3SpRiQZac9JAC4nvieKdaV3o8ZWL+yXGs46GfcJ8bSKce+0iSAXzvWtVYjnMc4wXq5Y7BmT1TQmIzy6qC8=;
-X-UUID: 592476f17b4e437699987726e8775682-20200227
+ bh=5KIAJmoTEhesMxKkwMtB3WhawX6q5b9wBfPte+p7ggk=; 
+ b=HZd1Q1JfNttJHcoiMumBh4M3tSM+OOdiPOoGOvCXbXvO9iJDtXlL3tYmTGSrKELu8X8B2y2Y+2LoNjQ8galAFGXq7ANmjLvJyKNh+3tImWRh15NMpvDZ4m4SIp3y834E1YvDH7HyJ6djvllt1SMWdedY4M+u/4vYlK9RLN2k/Pc=;
+X-UUID: 91fc9f6c3d6b49e89a97718a3b3a6f77-20200227
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1442473511; Thu, 27 Feb 2020 21:21:43 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ with ESMTP id 1291030499; Thu, 27 Feb 2020 21:21:43 -0800
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 27 Feb 2020 21:22:50 -0800
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 28 Feb 2020 13:22:15 +0800
+ 15.0.1395.4; Thu, 27 Feb 2020 21:22:51 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N1.mediatek.inc
+ (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 28 Feb 2020 13:20:19 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
  MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Fri, 28 Feb 2020 13:22:03 +0800
+ 15.0.1395.4 via Frontend Transport; Fri, 28 Feb 2020 13:22:05 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH v10 2/5] dt-bindings: display: mediatek: control dpi pins mode
- to avoid leakage
-Date: Fri, 28 Feb 2020 13:21:25 +0800
-Message-ID: <20200228052128.82136-3-jitao.shi@mediatek.com>
+Subject: [PATCH v10 3/5] dt-bindings: display: mediatek: dpi sample data in
+ dual edge support
+Date: Fri, 28 Feb 2020 13:21:26 +0800
+Message-ID: <20200228052128.82136-4-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20200228052128.82136-1-jitao.shi@mediatek.com>
 References: <20200228052128.82136-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 9285102EC74516C055F4677AAD43C6BCF157A693778617175A2331D1BD6CCB922000:8
+X-TM-SNTS-SMTP: E6A35A8FBBBA0DB47C5247E006E296AEBC0EB808C45CC54F3D701B12F8FF21282000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_212150_683978_F1C5AEA1 
-X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-CacheID: sfid-20200227_212153_328801_73117E98 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -100,40 +100,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add property "pinctrl-names" to swap pin mode between gpio and dpi mode. Set
-the dpi pins to gpio mode and output-low to avoid leakage current when dpi
-disabled.
+Add property "pclk-sample" to config the dpi sample on falling (0),
+rising (1), both falling and rising (2).
 
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 ---
- .../devicetree/bindings/display/mediatek/mediatek,dpi.txt  | 7 +++++++
- 1 file changed, 7 insertions(+)
+ .../devicetree/bindings/display/mediatek/mediatek,dpi.txt     | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-index 58914cf681b8..77ca32a32399 100644
+index 77ca32a32399..4eeead1d39db 100644
 --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
 +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-@@ -17,6 +17,10 @@ Required properties:
-   Documentation/devicetree/bindings/graph.txt. This port should be connected
-   to the input port of an attached HDMI or LVDS encoder chip.
+@@ -19,7 +19,8 @@ Required properties:
  
-+Optional properties:
-+- pinctrl-names: Contain "gpiomode" and "dpimode".
-+  pinctrl-names see Documentation/devicetree/bindings/pinctrlpinctrl-bindings.txt
-+
+ Optional properties:
+ - pinctrl-names: Contain "gpiomode" and "dpimode".
+-  pinctrl-names see Documentation/devicetree/bindings/pinctrlpinctrl-bindings.txt
++  pinctrl-names see Documentation/devicetree/bindings/pinctrl/pinctrl-bindings.txt
++- pclk-sample: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
+ 
  Example:
  
- dpi0: dpi@1401d000 {
-@@ -27,6 +31,9 @@ dpi0: dpi@1401d000 {
- 		 <&mmsys CLK_MM_DPI_ENGINE>,
- 		 <&apmixedsys CLK_APMIXED_TVDPLL>;
- 	clock-names = "pixel", "engine", "pll";
-+	pinctrl-names = "active", "idle";
-+	pinctrl-0 = <&dpi_pin_func>;
-+	pinctrl-1 = <&dpi_pin_idle>;
+@@ -37,6 +38,7 @@ dpi0: dpi@1401d000 {
  
  	port {
  		dpi0_out: endpoint {
++			pclk-sample = <0>;
+ 			remote-endpoint = <&hdmi0_in>;
+ 		};
+ 	};
 -- 
 2.21.0
 _______________________________________________
