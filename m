@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421EC174009
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 20:00:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20821174028
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 20:17:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sHpdrXPwVV8By8p2dgnwdMl8x5vdtwyEpJzjz21w8lY=; b=YHuy2J3NDcPnCFB8zTQGBzdFM
-	BZr+wAVSobZbvKEgt+SnRWCp/yL4LDFDcIeZfQGRraQPJ2k2T0fvzMWJ/tarYuWBZsk9qQOWwfk2e
-	Vmb/YGAw6a8qiBuC/NrQWjZXjsOZ628Seb8Uiu0aeyZDrFpEIFmQaLfOn/seysxsb7wjfN8DYoWZV
-	lb9Wh/UCUuj1Y4JPCaZCX60d9pU+MPoJ4YFQ9F4uDtliZQztzuRL4Hh0xu/jcOAwwbRgbjivHkFd+
-	rY5sDVAuz2nu5V/6dVxuBlqdEbh5vlBebPTe45vx97g1kWMvS8Mi8x80Ha38cvf3aJEZ6R0kIWQfL
-	cLI9NoUJg==;
+	 bh=0XbUzSYAxE59b9zT05coRbY0eygYaqLq77C3FwkoVjQ=; b=pTypqe1O/BI5kiqpNOBTcULRp
+	kmtVHUCyh6u5Yed9HMBSiBwoWLzq3UPu99o+CaW0F0ns2rDih2/zOscj7gcQP/iPuNvlgDHnKVUrn
+	iSLL+GQwhuckBA9QSGojMC2lX9fdfvfU5M+eIAy01zeIvSvv0nfzqUoJRsaIeG+/aQuQDTbLNrL5k
+	0kb3V7diVRqPRGu5U0ocwhp5d8Gj6PpCRrher/9u7cxkzEneZHzpgTy3kOQFoywewpCpw9nP9efe3
+	EOEsKCHS0KMcmBn4WhjcpTcj34DfqwtVdJNo/VydtB6rH6oHhEh+JHMZ6Ye5NkvcdVLsNNVweKd80
+	2EXP/6gjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7krw-0000PB-Py; Fri, 28 Feb 2020 19:00:16 +0000
+	id 1j7l81-0005W2-A6; Fri, 28 Feb 2020 19:16:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7krp-0000O1-D6
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 19:00:10 +0000
+ id 1j7l7s-0005Vh-TQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 19:16:46 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E1142246A0;
- Fri, 28 Feb 2020 19:00:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5C70A222C2;
+ Fri, 28 Feb 2020 19:16:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582916409;
- bh=OTQM0R8+AqmsjTA1+kFoNN/miGIvet4k8Q05SzlET8A=;
+ s=default; t=1582917404;
+ bh=BXqh6cgD9aYcDmgFUDG8alw4aMlNGdIq216e0sMu2gM=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=iueYwt/hK/Lmh3fyKvxYlMPRoQLn7yUR7zrtRaDyRPCrdvN2e92LDS7pgV7JEillD
- dGUl0j/uLZ+pDUF6cJDmz0mrd6sUsemwKbebeVGOIYmouAemIiCIxwPN658aici6Mh
- ZboVjhnl13qexpaDHxU8aXHwF6i36NBSfDz/m7Oo=
+ b=azovb8xMoPOm9v0m36JKUAew5EbZKIOZskp+O30F2ob5dQBTXCBqaC5WreLropVNE
+ GoAajw3AT0SgCfMFadO6XqzXVgsMYURzBXNc+O3uc1HgMkdK1zBUWAkFZh4lONfI8g
+ /wHZmAzy0v2oOUnxfCBGczDdZQULv5EcILGuyIZk=
 Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
  by disco-boy.misterjones.org with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j7krn-008pfQ-7f; Fri, 28 Feb 2020 19:00:07 +0000
+ id 1j7l7q-008pqH-Kw; Fri, 28 Feb 2020 19:16:42 +0000
 MIME-Version: 1.0
-Date: Fri, 28 Feb 2020 19:00:07 +0000
+Date: Fri, 28 Feb 2020 19:16:42 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH v4 09/20] irqchip/gic-v4.1: Plumb set_vcpu_affinity SGI
- callbacks
-In-Reply-To: <38b42ac1-5a5d-2f10-2cba-b50f37c7a965@huawei.com>
+Subject: Re: [PATCH v4 16/20] KVM: arm64: GICv4.1: Allow SGIs to switch
+ between HW and SW interrupts
+In-Reply-To: <6798eb13-a7e9-2a92-91b2-9b657962ea79@huawei.com>
 References: <20200214145736.18550-1-maz@kernel.org>
- <20200214145736.18550-10-maz@kernel.org>
- <38b42ac1-5a5d-2f10-2cba-b50f37c7a965@huawei.com>
-Message-ID: <df752712387f706077ecfc9f8605183c@kernel.org>
+ <20200214145736.18550-17-maz@kernel.org>
+ <6798eb13-a7e9-2a92-91b2-9b657962ea79@huawei.com>
+Message-ID: <7aa668a5920b8deb8c2ee2fec3ef69b3@kernel.org>
 X-Sender: maz@kernel.org
 User-Agent: Roundcube Webmail/1.3.10
 X-SA-Exim-Connect-IP: 51.254.78.96
@@ -64,8 +64,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_110009_485090_4E39FE3D 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20200228_111644_991824_99AC8076 
+X-CRM114-Status: GOOD (  15.15  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -109,89 +109,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Zenghui,
 
-On 2020-02-20 03:37, Zenghui Yu wrote:
+On 2020-02-20 03:55, Zenghui Yu wrote:
 > Hi Marc,
 > 
 > On 2020/2/14 22:57, Marc Zyngier wrote:
->> As for VLPIs, there is a number of configuration bits that cannot
-> 
-> As for vSGIs,
-
-No, I think this is correct, if a bit ambiguous. What I'm trying to say
-here is that vSGIs have the same requirements as vLPIs, in the sense
-that some of the configuration aspects cannot be expressed in terms of
-the irqchip API.
-
-> 
->> be directly communicated through the normal irqchip API, and we
->> have to use our good old friend set_vcpu_affinity.
+>> In order to let a guest buy in the new, active-less SGIs, we
+>> need to be able to switch between the two modes.
 >> 
->> This is used to configure group and priority for a given vSGI.
+>> Handle this by stopping all guest activity, transfer the state
+>> from one mode to the other, and resume the guest.
 >> 
 >> Signed-off-by: Marc Zyngier <maz@kernel.org>
 > 
-> Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+> [...]
 > 
->> ---
->>   drivers/irqchip/irq-gic-v3-its.c   | 18 ++++++++++++++++++
->>   include/linux/irqchip/arm-gic-v4.h |  5 +++++
->>   2 files changed, 23 insertions(+)
->> 
->> diff --git a/drivers/irqchip/irq-gic-v3-its.c 
->> b/drivers/irqchip/irq-gic-v3-its.c
->> index a9753435c4ff..a2e824eae43f 100644
->> --- a/drivers/irqchip/irq-gic-v3-its.c
->> +++ b/drivers/irqchip/irq-gic-v3-its.c
->> @@ -3969,6 +3969,23 @@ static int its_sgi_get_irqchip_state(struct 
->> irq_data *d,
->>   	return 0;
->>   }
->>   +static int its_sgi_set_vcpu_affinity(struct irq_data *d, void 
->> *vcpu_info)
->> +{
->> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
->> +	struct its_cmd_info *info = vcpu_info;
->> +
->> +	switch (info->cmd_type) {
->> +	case PROP_UPDATE_SGI:
->> +		vpe->sgi_config[d->hwirq].priority = info->priority;
->> +		vpe->sgi_config[d->hwirq].group = info->group;
->> +		its_configure_sgi(d, false);
->> +		return 0;
->> +
->> +	default:
->> +		return -EINVAL;
->> +	}
->> +}
->> +
->>   static struct irq_chip its_sgi_irq_chip = {
->>   	.name			= "GICv4.1-sgi",
->>   	.irq_mask		= its_sgi_mask_irq,
->> @@ -3976,6 +3993,7 @@ static struct irq_chip its_sgi_irq_chip = {
->>   	.irq_set_affinity	= its_sgi_set_affinity,
->>   	.irq_set_irqchip_state	= its_sgi_set_irqchip_state,
->>   	.irq_get_irqchip_state	= its_sgi_get_irqchip_state,
->> +	.irq_set_vcpu_affinity	= its_sgi_set_vcpu_affinity,
->>   };
->>     static int its_sgi_irq_domain_alloc(struct irq_domain *domain,
->> diff --git a/include/linux/irqchip/arm-gic-v4.h 
->> b/include/linux/irqchip/arm-gic-v4.h
->> index 30b4855bf766..a1a9d40266f5 100644
->> --- a/include/linux/irqchip/arm-gic-v4.h
->> +++ b/include/linux/irqchip/arm-gic-v4.h
->> @@ -98,6 +98,7 @@ enum its_vcpu_info_cmd_type {
->>   	SCHEDULE_VPE,
->>   	DESCHEDULE_VPE,
->>   	INVALL_VPE,
->> +	PROP_UPDATE_SGI,
+>> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+>> index 1bc09b523486..2c9fc13e2c59 100644
+>> --- a/virt/kvm/arm/vgic/vgic-v3.c
+>> +++ b/virt/kvm/arm/vgic/vgic-v3.c
+>> @@ -540,6 +540,8 @@ int vgic_v3_map_resources(struct kvm *kvm)
+>>   		goto out;
+>>   	}
+>>   +	if (kvm_vgic_global_state.has_gicv4_1)
+>> +		vgic_v4_configure_vsgis(kvm);
+>>   	dist->ready = true;
+>>     out:
 > 
-> Maybe better to use 'PROP_UPDATE_VSGI'?
+> Is there any reason to invoke vgic_v4_configure_vsgis() here?
+> This is called on the first VCPU run, through kvm_vgic_map_resources().
+> Shouldn't the vSGI configuration only driven by a GICD_CTLR.nASSGIreq
+> writing (from guest, or from userspace maybe)?
 
-That's indeed better.
+What I'm trying to catch here is the guest that has been restored with
+nASSGIreq set. At the moment, we don't do anything on the userspace
+side, because the vmm could decide to write that particular bit
+multiple times, and switching between the two modes is expensive (not
+to mention that all the vcpus may not have been created yet).
+
+Moving it to the first run makes all these pitfalls go away (we have the
+final nASSSGIreq value, and all the vcpus are accounted for).
+
+Does this make sense to you?
 
 Thanks,
 
-          M.
+         M.
 -- 
 Jazz is not dead. It just smells funny...
 
