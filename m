@@ -2,58 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAB981735E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 12:15:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5C851735F5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 12:20:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=US5gnqUKRd/24bJNwE9JP7No4xZyJXcSxfdnHWN87Xk=; b=lPMRWD3TU14QX/
-	ZnjxZOX/AbYRkoxXNIC+yfg6jcdvN8VV7OrnpKDQhSHe24nh8XyDbsfet/ZW8g7OZ+bDYFH7vOSwl
-	l3ZvQwAJMRMclK1xyGbl1re87ZgAis8jIQ5GVl8hf4T3eYWP8Brw+UlMPkxfijAjEDkv/GN/RQ+is
-	GbryZblihqY271o4ZaxHk6UN0rQIIHpiwnaTN1TPBiXU+zHC8RmeKg9OxQWqXr1ktq5PZw/TZKLBk
-	gcVPKXESpqtHRhFxKvayt7b/fzblbFW0xIvOllUILE3eVSmrg8ljAosmWfeZmrR7/9rKUczTx8GOe
-	Q3KkVTvI2Td7EvPc7dqw==;
+	List-Owner; bh=qAOeuHtW+hzRsw86vvq0P77/Se9Tb70pI7U+PhHrpvQ=; b=jX9ZD1XfN5mkP5
+	Uf5Ju8ck7+7uuRnjPhLiqe6K9RxfJ16VB8LYbzE6zqjRlCHUHxxxBjyXIHAdAfRNpSxPv1cv6i9Vg
+	chDEeMn7aT7+yd1iIQbeezYAHXqHogdEp6T0dBrl1Lnqm7BVfa/RIChVfcZI15mW5RPuahqKbKvgz
+	5Oh0jluPZghYHoPcy0S5YvQBMRM6EwyrnsRIMZg+YrEgKvSTtHVajFiS2VwuMZIPlkpXSNQXL9Bqc
+	9WfullNPazmkKQnur0iIMh6T3ulGxHbPnpDzCeeHLKw/e4ZiNByLUqyc9e2MT3VXZ1e/uYoaE4ZMY
+	MPru7LmSCCcge9QAxPLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7dbo-0005B5-Jx; Fri, 28 Feb 2020 11:15:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7dbc-0005Aj-J7
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 11:14:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05B854B2;
- Fri, 28 Feb 2020 03:14:56 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F9853F73B;
- Fri, 28 Feb 2020 03:14:55 -0800 (PST)
-Date: Fri, 28 Feb 2020 11:14:50 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH efi-next 2/3] efi/arm64: clean EFI stub exit code from
- cache instead of avoiding it
-Message-ID: <20200228111450.GA36089@lakrids.cambridge.arm.com>
-References: <20200228100244.10979-1-ardb@kernel.org>
- <20200228100244.10979-3-ardb@kernel.org>
+	id 1j7dgb-00074u-4p; Fri, 28 Feb 2020 11:20:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7dfd-0006rl-9W
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 11:19:06 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1BA2520658;
+ Fri, 28 Feb 2020 11:19:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582888745;
+ bh=KlLQmzQ1rX7undj5q2CK/x5xk5tCgGURF6uH+KlPwvA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Im4vNfyrVduqjg0yd9PaJBAWiavAA4Q6Qh2wahn62Y+wAxbyDtR6QfSEoQTnzkcxi
+ CmsWda8dOnV1288WZlyx50eEt1seABAnWfAAM/EbbLdicnpmvzMdOY/6yy/6EhDlw7
+ KuhS4QtKW7kdjGoWpmSKGOD3AYFxTRsUf2MJZSFc=
+Date: Fri, 28 Feb 2020 11:18:59 +0000
+From: Will Deacon <will@kernel.org>
+To: Amit Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH 2/2] arm64: kprobe: disable probe of fault prone ptrauth
+ instruction
+Message-ID: <20200228111856.GB2941@willie-the-truck>
+References: <1582117240-15330-1-git-send-email-amit.kachhap@arm.com>
+ <1582117240-15330-3-git-send-email-amit.kachhap@arm.com>
+ <20200227164817.GA31259@lakrids.cambridge.arm.com>
+ <52db2533-488a-1e27-947c-ec92048f26ae@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200228100244.10979-3-ardb@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <52db2533-488a-1e27-947c-ec92048f26ae@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_031456_712068_25388028 
-X-CRM114-Status: GOOD (  20.89  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200228_031905_361549_5BB28279 
+X-CRM114-Status: GOOD (  18.06  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,110 +80,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 11:02:43AM +0100, Ard Biesheuvel wrote:
-> Commit 9f9223778 ("efi/libstub/arm: Make efi_entry() an ordinary PE/COFF
-> entrypoint") modified the handover code written in assembler, and for
-> maintainability, aligned the logic with the logic used in the 32-bit ARM
-> version, which is to avoid cache maintenance on the remaining instructions
-> in the subroutine that will be executed with the MMU and caches off, and
-> instead, branch into the relocated copy of the kernel image.
+On Fri, Feb 28, 2020 at 04:42:10PM +0530, Amit Kachhap wrote:
+> On 2/27/20 10:18 PM, Mark Rutland wrote:
+> > On Wed, Feb 19, 2020 at 06:30:40PM +0530, Amit Daniel Kachhap wrote:
+> > > diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+> > > index 4a9e773..87f7c8a 100644
+> > > --- a/arch/arm64/kernel/insn.c
+> > > +++ b/arch/arm64/kernel/insn.c
+> > > @@ -63,6 +63,7 @@ bool __kprobes aarch64_insn_is_nop(u32 insn)
+> > >   	case AARCH64_INSN_HINT_WFI:
+> > >   	case AARCH64_INSN_HINT_SEV:
+> > >   	case AARCH64_INSN_HINT_SEVL:
+> > > +	case AARCH64_INSN_HINT_AUTIASP:
+> > >   		return false;
+> > >   	default:
+> > >   		return true;
+> > 
+> > I'm afraid that the existing code here is simply wrong, and this is
+> > adding to the mess.
+> > 
+> > We have no idea what HINT space instructions will be in the future, so
+> > the only sensible implementations of aarch64_insn_is_nop() are something
+> > like:
+> > 
+> > bool __kprobes aarch64_insn_is_nop(u32 insn)
+> > {
+> > 	return insn == aarch64_insn_gen_hint(AARCH64_INSN_HINT_NOP);
+> > }
+> > 
+> > ... and if we want to check for other HINT instructions, they should be
+> > checked explicitly.
+> > 
+> > Can you please change aarch64_insn_is_nop() as above?
 > 
-> However, this assumes that this copy is executable, and this means we
-> expect EFI_LOADER_DATA regions to be executable as well, which is not
-> a reasonable assumption to make, even if this is true for most UEFI
-> implementations today.
-> 
-> So change this back, and add a __flush_dcache_area() call to cover the
-> remaining code in the subroutine.
-> 
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> ---
->  arch/arm64/kernel/efi-entry.S  | 18 +++++++++---------
->  arch/arm64/kernel/image-vars.h |  2 +-
->  2 files changed, 10 insertions(+), 10 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/efi-entry.S b/arch/arm64/kernel/efi-entry.S
-> index 4cfd03c35c49..d5dee064975f 100644
-> --- a/arch/arm64/kernel/efi-entry.S
-> +++ b/arch/arm64/kernel/efi-entry.S
-> @@ -19,7 +19,8 @@ ENTRY(efi_enter_kernel)
->  	 * point stored in x0. Save those values in registers which are
->  	 * callee preserved.
->  	 */
-> -	mov	x19, x0			// relocated Image address
-> +	ldr	w2, =stext_offset
-> +	add	x19, x0, x2		// relocated Image entrypoint
->  	mov	x20, x1			// DTB address
->  
->  	/*
-> @@ -29,15 +30,14 @@ ENTRY(efi_enter_kernel)
->  	ldr	w1, =kernel_size
->  	bl	__flush_dcache_area
->  	ic	ialluis
-> -	dsb	sy
->  
->  	/*
-> -	 * Jump across, into the copy of the image that we just cleaned
-> -	 * to the PoC, so that we can safely disable the MMU and caches.
-> +	 * Flush the remainder of this routine to the PoC
+> Agree that current implementation is unclear.
+> I will implement as you suggested.
 
-Minor nit, but could we please say 'Clean' rather than 'Flush' here?
+Well, please don't throw the baby out with the bath water. The existing
+code might be badly structured, but I think it's going a bit far to say
+it's "simply wrong". We need a whitelist /somewhere/ and I'd prefer not
+to regress the existing behaviour just because the whitelist is embedded
+in a function with "is_nop" in the name.
 
-Even better, we now have __clean_dcache_area_poc(), and can use that
-too.
-
-Thanks,
-Mark.
-
-> +	 * so that we can safely disable the MMU and caches.
->  	 */
-> -	ldr	w0, .Ljmp
-> -	sub	x0, x19, w0, sxtw
-> -	br	x0
-> +	adr	x0, 0f
-> +	ldr	w1, 3f
-> +	bl	__flush_dcache_area
->  0:
->  	/* Turn off Dcache and MMU */
->  	mrs	x0, CurrentEL
-> @@ -63,6 +63,6 @@ ENTRY(efi_enter_kernel)
->  	mov	x1, xzr
->  	mov	x2, xzr
->  	mov	x3, xzr
-> -	b	stext
-> +	br	x19
->  ENDPROC(efi_enter_kernel)
-> -.Ljmp:	.long	_text - 0b
-> +3:	.long	. - 0b
-> diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
-> index 9a7aef0d6f70..28bf98f84adf 100644
-> --- a/arch/arm64/kernel/image-vars.h
-> +++ b/arch/arm64/kernel/image-vars.h
-> @@ -13,6 +13,7 @@
->  #ifdef CONFIG_EFI
->  
->  __efistub_kernel_size		= _edata - _text;
-> +__efistub_stext_offset		= stext - _text;
->  
->  
->  /*
-> @@ -43,7 +44,6 @@ __efistub___memset		= __pi_memset;
->  #endif
->  
->  __efistub__text			= _text;
-> -__efistub_stext			= stext;
->  __efistub__end			= _end;
->  __efistub__edata		= _edata;
->  __efistub_screen_info		= screen_info;
-> -- 
-> 2.17.1
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
