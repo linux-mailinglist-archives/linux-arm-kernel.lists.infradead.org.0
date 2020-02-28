@@ -2,73 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 412FE1732DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:26:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D563173346
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:49:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mNcCfeTUFSvaBR1GZZ6HusmvyB+/5SFicdwFHe9huSI=; b=Hpou55CX3bSYpb
-	TdVYplirw0GA8s6rQPZJXhlTggjJn9bjsbQ18WXO36VvhMbV5UC0wVHFEUaZsp+MZ4AvRMfhVYmyR
-	UNgt7YYcggjDUJ/ZW2QJBAMUwjE9zyc7MkDc43SVVwsZ0nnrNlXKVlGqseabCMZf98enLZHsmLN1L
-	ZgiMdbkeIyBbhohm7WlHltmkD0XUKEu9QJUTuWlSJ1exbbpVGfz1wt2jdcs5PrhG6Q2fMC1GZxiuP
-	ebim0q+Fu+5u6PnrHTcS8T/6Su6F5Xjkv3NmBJpsiiodFji1c39ED0nvkQCDJqoBRfo52LEChTSNj
-	aJt8gq7Gw+pXXmbYwifg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=EBUacXuMJRDOTOm8phQuUem8a+VojgPpBe2rsMHyEfw=; b=Lp/
+	Kejjnd8BW1V4XtlNoaZ5Hgr4/snZwr6/Czb0sCSXd5GECwn8YSSFyRH7HIRQSRzJXJNNYVzfMS8cm
+	3GcEqVqydcVd9PUqPOaPMLrEMPric9djIpkN9vxaE8omMVl38f34thj4E3/R6oQ60SzKHC7VwgHRE
+	+gGhLDH8794F0L5JK0mtTRJbpQIn2Iecd/fmSEnACf66S/UIPPQFaQMv5bLH6gR/Xedwip5+nGpu4
+	bnu+YRNkUpgS82Jz/IJBEKvI7g/qr2MS/TQ+Kj3pbuRCWqHz0pvCG2H2CHIyhmvvnsZJ4XNze77nL
+	ORWhPhxJw/PzMK5cJamffeQTgAojh+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7ayN-0000cx-PH; Fri, 28 Feb 2020 08:26:15 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j7bKA-0007n4-82; Fri, 28 Feb 2020 08:48:46 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7ay5-0000UT-Id; Fri, 28 Feb 2020 08:25:59 +0000
-X-UUID: e335bcfa98fc44cfa30d7e8ccabeb837-20200228
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=ZURVBJvcNy7+s3YjJr/hwpBv6N9yfElSzaYb2eZ+VsU=; 
- b=Tj8fjfxqK6xefdVl38PW4a0nNb12+pEhxrLQO0X/GDCrYF62RjBMz7h/cOHtQObObPAl4tjl70tMNlIXp3PFoAS+ONbBvDlSBEzkOJRBxUxmrBANJ98uBBJmSaoR8cG9Epa9jODcs9/YJ03Yi/mY90hRcOxn623j62JCsYAbKZA=;
-X-UUID: e335bcfa98fc44cfa30d7e8ccabeb837-20200228
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <jitao.shi@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1195940207; Fri, 28 Feb 2020 00:25:54 -0800
-Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Feb 2020 00:17:01 -0800
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N1.mediatek.inc
- (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 28 Feb 2020 16:14:28 +0800
-Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
- MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Fri, 28 Feb 2020 16:16:06 +0800
-From: Jitao Shi <jitao.shi@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH v11 6/6] drm/mediatek: set dpi pin mode to gpio low to avoid
- leakage current
-Date: Fri, 28 Feb 2020 16:14:41 +0800
-Message-ID: <20200228081441.88179-7-jitao.shi@mediatek.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20200228081441.88179-1-jitao.shi@mediatek.com>
-References: <20200228081441.88179-1-jitao.shi@mediatek.com>
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 4B695817580141192BDE9DB1EA1283C630CF297A489B08CFEF63122DE1C7CFB32000:8
-X-MTK: N
+ id 1j7bK0-0007mZ-H3; Fri, 28 Feb 2020 08:48:37 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m3so2319924wmi.0;
+ Fri, 28 Feb 2020 00:48:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=kSTO66soFbvc/5Jm/tEDfZFDRH8dNbe8ver6F7pISSU=;
+ b=t8nLVzUAuYfbtG81ZKfM6k4Iiq22yAcFELg8c8fyrEXnuq3RHaTsEVHWCRrcekNowk
+ zwoaEr5b5s6BsOhLnMu9vvrFjpmZL3ydmLdEqkP/Mdju3GROnN3RgJgS3FWS67RRebmn
+ QV/qBZ2xvvuxMB/Lg4vxXzkAvlXBl2Msegis4TD2qOVuYQv3SDnw9aNU3uggXdZejCVg
+ ebQzb4QZD20BbpcsqzSRifFqAl68kzyTIGdK/rfoY0fYJ3wQkHgt/NUH0L0ytTXmlT3O
+ dFVJGkGWudoMVg0UHBWRKFBIbHKJbwiGzvUsDs/7L3u3w5r+hKqUbutT8u3geyTges5B
+ 7Iig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=kSTO66soFbvc/5Jm/tEDfZFDRH8dNbe8ver6F7pISSU=;
+ b=bDqI3dKahz8mm+gxaa28fSKgJRutD6vEaKzD6CltOiNdNwKoZ4VIrVoNiQBFB9RO62
+ 40SlYftL6TygZDYqbV6Ij8OLhpDM1HS8L3Kmdxh9+UxHe5eGgcozQdP2xfuTa3hqW66l
+ KgfRexVv9K1kfFookTbMFJIqvL+FDyBYlInZ5ek1HOsoeXK0DJIx1DcVbqN7hn5bjgR3
+ BuUaR405m9VFCsit4Y7WCpFw5hX2UOXrpp6hwqaWfEAlXHaSHdko8iGiZdRRtCxw2SvA
+ BdkvSF1T89UcTlzh/KIe+4PwWWDJ+iAptyatr/86UJmLGE60mjLi2fsgTxCpm1uk3L6b
+ 78iw==
+X-Gm-Message-State: APjAAAWpa2cXC6iCyFoPM+Z4IcgNTPVlnXzatQRmw/rHF12YmM5P3ate
+ KouJtt82VV+16hepYOmKA+4=
+X-Google-Smtp-Source: APXvYqyqHsz+mxqVS4aLRQAeppLeop3ADBWwBXJvRWEgLA6x8ZR5U0eUOgB2g79t4bbxWiNTpy4Ayw==
+X-Received: by 2002:a1c:2b44:: with SMTP id r65mr3659938wmr.72.1582879714750; 
+ Fri, 28 Feb 2020 00:48:34 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id y3sm1209337wmi.14.2020.02.28.00.48.33
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 28 Feb 2020 00:48:34 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: fix cpu compatible property for rk3308
+Date: Fri, 28 Feb 2020 09:48:27 +0100
+Message-Id: <20200228084827.16198-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_002557_715777_21A123A9 
-X-CRM114-Status: GOOD (  12.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200228_004836_593394_5DC429B8 
+X-CRM114-Status: GOOD (  10.32  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -76,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,118 +93,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
- srv_heupstream@mediatek.com, huijuan.xie@mediatek.com, stonea168@163.com,
- cawa.cheng@mediatek.com, linux-mediatek@lists.infradead.org,
- bibby.hsieh@mediatek.com, ck.hu@mediatek.com, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Config dpi pins mode to output and pull low when dpi is disabled.
-Aovid leakage current from some dpi pins (Hsync Vsync DE ... ).
+A test with the command below gives for example these errors:
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+Additional items are not allowed ('arm,armv8' was unexpected)
+arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+['arm,cortex-a35', 'arm,armv8']
+is too long
+
+Fix these errors by removing the last argument of
+the cpu compatible property in rk3308.dtsi.
+
+make ARCH=arm64
+dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/cpus.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- drivers/gpu/drm/mediatek/mtk_dpi.c | 44 ++++++++++++++++++++++++++++--
- 1 file changed, 42 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-index db3272f7a4c4..fece8661d8b6 100644
---- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-@@ -10,7 +10,9 @@
- #include <linux/kernel.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
-+#include <linux/of_gpio.h>
- #include <linux/of_graph.h>
-+#include <linux/pinctrl/consumer.h>
- #include <linux/platform_device.h>
- #include <linux/types.h>
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index 116f1900e..3bd5bc860 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -40,7 +40,7 @@
  
-@@ -74,6 +76,9 @@ struct mtk_dpi {
- 	enum mtk_dpi_out_yc_map yc_map;
- 	enum mtk_dpi_out_bit_num bit_num;
- 	enum mtk_dpi_out_channel_swap channel_swap;
-+	struct pinctrl *pinctrl;
-+	struct pinctrl_state *pins_gpio;
-+	struct pinctrl_state *pins_dpi;
- 	int refcount;
- 	u32 pclk_sample;
- };
-@@ -387,6 +392,9 @@ static void mtk_dpi_power_off(struct mtk_dpi *dpi)
- 	if (--dpi->refcount != 0)
- 		return;
+ 		cpu0: cpu@0 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x0>;
+ 			enable-method = "psci";
+ 			clocks = <&cru ARMCLK>;
+@@ -53,7 +53,7 @@
  
-+	if (dpi->pinctrl && dpi->pins_gpio)
-+		pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
-+
- 	mtk_dpi_disable(dpi);
- 	clk_disable_unprepare(dpi->pixel_clk);
- 	clk_disable_unprepare(dpi->engine_clk);
-@@ -411,6 +419,9 @@ static int mtk_dpi_power_on(struct mtk_dpi *dpi)
- 		goto err_pixel;
- 	}
+ 		cpu1: cpu@1 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x1>;
+ 			enable-method = "psci";
+ 			operating-points-v2 = <&cpu0_opp_table>;
+@@ -63,7 +63,7 @@
  
-+	if (dpi->pinctrl && dpi->pins_dpi)
-+		pinctrl_select_state(dpi->pinctrl, dpi->pins_dpi);
-+
- 	mtk_dpi_enable(dpi);
- 	return 0;
+ 		cpu2: cpu@2 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x2>;
+ 			enable-method = "psci";
+ 			operating-points-v2 = <&cpu0_opp_table>;
+@@ -73,7 +73,7 @@
  
-@@ -705,6 +716,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
- static int mtk_dpi_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-+	struct device_node *ep;
- 	struct mtk_dpi *dpi;
- 	struct resource *mem;
- 	int comp_id;
-@@ -716,9 +728,37 @@ static int mtk_dpi_probe(struct platform_device *pdev)
- 
- 	dpi->dev = dev;
- 	dpi->conf = (struct mtk_dpi_conf *)of_device_get_match_data(dev);
--	of_property_read_u32_index(dev->of_node, "pclk-sample", 1,
--				   &dpi->pclk_sample);
- 
-+	ep = of_graph_get_endpoint_by_regs(dev->of_node, 0, 0);
-+	if (!ep) {
-+		dev_err(dev, "Failed get the endpoint port\n");
-+		return -EINVAL;
-+	}
-+
-+	/* Get the sampling edge from the endpoint. */
-+	of_property_read_u32(ep, "pclk-sample", &dpi->pclk_sample);
-+	of_node_put(ep);
-+
-+	dpi->pinctrl = devm_pinctrl_get(&pdev->dev);
-+	if (IS_ERR(dpi->pinctrl)) {
-+		dpi->pinctrl = NULL;
-+		dev_dbg(&pdev->dev, "Cannot find pinctrl!\n");
-+	}
-+	if (dpi->pinctrl) {
-+		dpi->pins_gpio = pinctrl_lookup_state(dpi->pinctrl, "idle");
-+		if (IS_ERR(dpi->pins_gpio)) {
-+			dpi->pins_gpio = NULL;
-+			dev_dbg(&pdev->dev, "Cannot find pinctrl idle!\n");
-+		}
-+		if (dpi->pins_gpio)
-+			pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
-+
-+		dpi->pins_dpi = pinctrl_lookup_state(dpi->pinctrl, "active");
-+		if (IS_ERR(dpi->pins_dpi)) {
-+			dpi->pins_dpi = NULL;
-+			dev_dbg(&pdev->dev, "Cannot find pinctrl active!\n");
-+		}
-+	}
- 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	dpi->regs = devm_ioremap_resource(dev, mem);
- 	if (IS_ERR(dpi->regs)) {
+ 		cpu3: cpu@3 {
+ 			device_type = "cpu";
+-			compatible = "arm,cortex-a35", "arm,armv8";
++			compatible = "arm,cortex-a35";
+ 			reg = <0x0 0x3>;
+ 			enable-method = "psci";
+ 			operating-points-v2 = <&cpu0_opp_table>;
 -- 
-2.21.0
+2.11.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
