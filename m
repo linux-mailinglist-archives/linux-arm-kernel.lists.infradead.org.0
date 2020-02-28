@@ -2,69 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AFF917376D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:45:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88C5217377E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:47:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZjCKgU0XgeSUUrZghY5fXdF9wTOxviJq6wntY5yCf4g=; b=f4z+3mtMpF4HbZ
-	I1xMC/nEepcMFOZCg9J6P8UxLm9YTItytpY7A39taZOcwb87yUzeNeXg9LfwRvfbFTadJzYKZ1D0A
-	aS47WYiFgj/D5aGohOOf0qfwcywneSSQJA/UB1GNDsk9DNsWuofXX8ULgwZYCocvnwqkR1CJ+7KJy
-	NKCMN4ihpdyMXBNzfCz2Lqf76bK7dDgIgDxHu9sXaUOpLg757tanCzaNgTSLProgdI/uSbnjYRhj5
-	wQiP+7SS1FDWmVm+ZinYRkcIKdPu3qG6tPlYU2I2hMi9492VAMPTsaZlrY/wi4eVuUNdMRvicHHsl
-	IYXYzxMCJZ8v3C0i9M+Q==;
+	List-Owner; bh=pBDmza7Fq0SbHZofQh1yxGY56Ge4yfe6HuzNiFk6pjM=; b=C4K9RjUgta0Zrp
+	XoD5mA67Ot3piXD9ecPkNXzKt6YVtOMKghEvX/40y51TgDzZZwSgAnqK5Gtm/syAnS21jmJKVNg8T
+	iVqoNlTNqu7qB2HJrYALYMRL1AApFfw2+FClmIpXAFPYvCGmyNHBQ/qdFk4KawX+Os+djLCNWlI+W
+	I/b2YCRwTxmirbz2fvjfX0b12P3tMuCjZZDIU3/bKvLHB8vdWrl55pbu4D+Gwvdh1bq/rXpzYgPkm
+	3IvIWJ7B6rPdUQCtx8tssZaYcf980RqJFut8VWOsLFrkW9xkFPofjn5mZpgQB/QB+wyp41z0wlpcw
+	85UWHlQmt9jucJvXQvOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7f11-0007ja-8y; Fri, 28 Feb 2020 12:45:15 +0000
-Received: from mail1.skidata.com ([91.230.2.99])
+	id 1j7f2g-0000v5-4i; Fri, 28 Feb 2020 12:46:58 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7f0j-0007jB-00
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:44:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=skidata.com; i=@skidata.com; q=dns/txt; s=selector1;
- t=1582893896; x=1614429896;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=g/fumDPqX7LPA3wXxiP1dS805jxlDQnX8YtVKUMeu98=;
- b=htLsb3kAQ++7H6Bp48r0NeYBc26Zv+rfSybVdJiuTvPoN7NvfBLhDXpN
- t1hm3Oq3YJATTq+1PPK404jtqwsZddip8g2bFjszb0/U/zHTLkWIACudr
- 6evoWaJdbOVJNc8B2JJhBwtFAHfnC4TpLBM89KEe3nrtPJLKcFhQVppfb
- WFwcpSnVe8kuFDho0F6evYy0KokYO8Ynbo100J4DUSLhAhKJwXkEyaW4t
- 2az9HKMGLxiAC33tWDUxH+LNeuL/ufkCPzZhYs2AlTD4vSgcNfTKYRjhs
- FvXWzySu559yQ2EvlAlC67q/n7CaCdmms8PPmc0btRMb66ZQeUH/QXqhz g==;
-IronPort-SDR: 08BFDbudq1MaMeOSQQ+Gr+tpOdBaghZBiTJoclI9zpC7I1cY4eavjFCRIGYIm6UxiXKZiGbpCh
- 5nEss8HtL7INBEMdm9q0dm9ZdiGzxuQDeYYNUGresM574MXNUjSs40GfPn4EeZDM61hp230D75
- kp96qCOjdjvkfVtBPmqGyuBgtjq0aNsJOeLu5Dr+3VPNJYAVB4gZHbebABmkrTYdW2swMKek1c
- nrh19pKH2WaOn+Wxg3inHxnCqCBpPIPzAUyWogmBvnV0OAWuSWAmjfATc078ZFTvTr/SskG9i6
- Q80=
-X-IronPort-AV: E=Sophos;i="5.70,496,1574118000"; d="scan'208";a="22939519"
-Date: Fri, 28 Feb 2020 13:44:48 +0100
-From: Richard Leitner <richard.leitner@skidata.com>
-To: Martin Fuzzey <martin.fuzzey@flowbird.group>
-Subject: Re: [PATCH] dmaengine: imx-sdma: fix context cache
-Message-ID: <20200228124448.GA1689606@pcleri>
-References: <1580305274-27274-1-git-send-email-martin.fuzzey@flowbird.group>
+ id 1j7f2V-0000uP-HH
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:46:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=JVrtMDeWVXXWxL67rdqwPaefYVGg/iICAKCv5Rj9fDw=; b=Ga7ZMpkkL1zYiD9JaCcIhXo48
+ oMnqwhtyFZx7q8Inua3KNFmUjczkigJCXfLOYJEGqsmR71b0zOYOC4f5QX5XtMEeEgKDZpB1CUHPU
+ kX8FkwWWZLaIhUpyxIPC1P4/DsNe+1zIcr4l0KNTM8X+1HhipPktgD0v/ZNicb6CLkYm7yc63fM78
+ LTJUsSC43IE6ICizfFnsSczt3v6i40cHBna7+ntxgv02JZWIIZzpmrfzhFMLfZnlFc6nKV9NOeHAl
+ 9vb3aVjyaFDef0+oXYp6vPS2FtKxIQbZZW6uUE03YRHZN9fxVozgZYDRPJtrSKJE0vvGXHCFT5/mf
+ hJ7lw6Nsw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:46410)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1j7f2H-0003qi-9w; Fri, 28 Feb 2020 12:46:33 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1j7f2F-0001zo-3L; Fri, 28 Feb 2020 12:46:31 +0000
+Date: Fri, 28 Feb 2020 12:46:31 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Ludovic Desroches <ludovic.desroches@microchip.com>
+Subject: Re: GPIOs not correctly exported via sysfs on ATSAMA5D2
+Message-ID: <20200228124630.GU25745@shell.armlinux.org.uk>
+References: <CAMiSF3BULWkyWTytTBcFfch9YaV_QzuBiawk-ZqEcQnsuGdUiQ@mail.gmail.com>
+ <20200228123910.hbf2bnk3w2dbishr@M43218.corp.atmel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1580305274-27274-1-git-send-email-martin.fuzzey@flowbird.group>
-X-Originating-IP: [192.168.111.252]
-X-ClientProxiedBy: sdex3srv.skidata.net (192.168.111.81) To
- sdex5srv.skidata.net (192.168.111.83)
+In-Reply-To: <20200228123910.hbf2bnk3w2dbishr@M43218.corp.atmel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_044457_525388_4E3197D5 
-X-CRM114-Status: GOOD (  16.55  )
+X-CRM114-CacheID: sfid-20200228_044647_577775_C22D397D 
+X-CRM114-Status: GOOD (  28.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.230.2.99 listed in list.dnswl.org]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -83,68 +87,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>, dmaengine@vger.kernel.org,
- Robin Gong <yibin.gong@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Linux GPIO List <linux-gpio@vger.kernel.org>,
+ Romain Izard <romain.izard.pro@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Fri, Feb 28, 2020 at 01:39:10PM +0100, Ludovic Desroches wrote:
+> Hello Romain,
+> 
+> On Fri, Feb 28, 2020 at 11:58:21AM +0100, Romain Izard wrote:
+> > 
+> > Hello,
+> > 
+> > While experimenting with a new chip, I connected it on the SDIO
+> > interface on my board based on a SAMA5D2 SoC. For a first step, I need
+> > to drive the pins on the SDIO bus at a given level to program this new
+> > chip. To do so, I tried to control the GPIO lines manually by unbinding
+> > the SDHCI controller, and using /sys/class/gpio/export to control the
+> > pins, with the following code:
+> > 
+> > echo a0000000.sdio-host > /sys/bus/platform/drivers/sdhci-at91/unbind
+> > echo 4 > /sys/class/gpio/export
+> > echo low > /sys/class/gpio/PA4/direction
+> > 
+> > Unfortunately, the state of the pin does not change and it remains
+> > driven to 1. I checked the configuration register with devmem2, and it
+> > appeared that the selected function remains the SDIO function even after
+> > calling export.
+> > 
+> > The issue does not appear when I use a GPIO in a driver with an explicit
+> > pinctrl configuration in the device tree, which explains why I did not
+> > see it until now.
+> > 
+> > The kernel version used is Linux 5.4.22
+> > 
+> > Is this a user error from my part, or is there something missing in the
+> > AT91 PIO4 pinctrl driver ?
+> 
+> This is a known issue.
+> 
+> The AT91 PIO4 pinctrl driver doesn't implement gpio_request_enable()
+> contrary to the AT91 PIO pinctrl driver. If we implement it, then you
+> would be able to change the pin muxing and configuration from the sysfs.
+> The issue is nothing prevent you do this and so to possibly break a
+> device.
+> 
+> There is the strict pinmux_ops property which prevents from this
+> situation. The side effect is that we must not declare a pinmux/conf for
+> a GPIO so all the DT files have to been updated. That's not a big deal,
+> the problem is, at that time, the GPIO subsystem didn't allow to set the
+> bias for instance. It may have changed but not sure it covers all the
+> possible configurations we have from the pinmuxing subsystem.
 
-On Wed, Jan 29, 2020 at 02:40:06PM +0100, Martin Fuzzey wrote:
-> There is a DMA problem with the serial ports on i.MX6.
-> 
-> When the following sequence is performed:
-> 
-> 1) Open a port
-> 2) Write some data
-> 3) Close the port
-> 4) Open a *different* port
-> 5) Write some data
-> 6) Close the port
-> 
-> The second write sends nothing and the second close hangs.
-> If the first close() is omitted it works.
-> 
-> Adding logs to the the UART driver shows that the DMA is being setup but
-> the callback is never invoked for the second write.
-> 
-> This used to work in 4.19.
-> 
-> Git bisect leads to:
-> 	ad0d92d: "dmaengine: imx-sdma: refine to load context only once"
-> 
-> This commit adds a "context_loaded" flag used to avoid unnecessary context
-> setups.
-> However the flag is only reset in sdma_channel_terminate_work(),
-> which is only invoked in a worker triggered by sdma_terminate_all() IF
-> there is an active descriptor.
-> 
-> So, if no active descriptor remains when the channel is terminated, the
-> flag is not reset and, when the channel is later reused the old context
-> is used.
-> 
-> Fix the problem by always resetting the flag in sdma_free_chan_resources().
-> 
-> Fixes: ad0d92d: "dmaengine: imx-sdma: refine to load context only once"
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Martin Fuzzey <martin.fuzzey@flowbird.group>
-> 
+There is also the problem of I2C bus recovery, where an I2C driver
+may wish to claim the GPIOs for the I2C bus, but keep the I2C bus
+connected to the I2C controller except when performing recovery.
 
-Thanks for the patch!
-We were chasing this issue for days and just found your patch as we were
-preparing our (quite similar) solution for submission ;-)
+I tripped over problems with that on a Marvell SoC, someone else has
+recently reported exactly the same problem as a regression compared
+to previous kernels for another SoC in the last day.
 
-I've successfully tested your patch on a custom i.MX6Solo board.
-Therefore feel free to add
+The assumption that if a GPIO is claimed, we want the pin to be in
+GPIO mode is not universally true, a point that has been missed and
+is now coming back to bite.  From what Linus said when we discussed
+it, it's very difficult to fix in the GPIO/pinctrl layers.
 
-Tested-by: Richard Leitner <richard.leitner@skidata.com>
-
-regards;rl
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
