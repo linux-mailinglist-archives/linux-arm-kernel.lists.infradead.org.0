@@ -2,62 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD693173918
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 14:55:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F3BE1738AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 14:46:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uF0xSDIjYbtNaJ36nY5vTkzXC4p3KVcBjPAt/JYLnh0=; b=J6VPujcRNzSGmb
-	sFespBFwe+Bel6cdlmXGmOpPhIJpF33hTL2pfUvC9ji385FLIwnb43oYfqpfEq9ZE+8/ptAqBGiy4
-	jMvJNG6GLxSK8KuKc3xiS2bNRRaO/HtPWyYuoNfEB9ckIIxdcC0x2KJLJ/zc75EfaeUNwNWy3eVFH
-	FxfrcOpvMcYRJO86amQ4H2pzVcqZVNFDFdo0z3OXMmtI1yyMFExSHO+CgpEez9TGRP+/CjXzKqm9H
-	HW5Zb/OwWzra4lmjVmTituK1UPFhPxLdEVSAQt792pmzHiSPx7PTIlUB70KQxIEtMV+oIhPyI485c
-	bEsoV7cYrftl4AAQh4Sw==;
+	List-Owner; bh=6S9xCWJQeo6vy5PQUEGpUY9oVorjpKoE7N5cXFXsJGU=; b=gALzSXwsWGa6YZ
+	LZOl9oWB/NOnRK1ghWHK02/fDpN2WJYCQNxbAyO0pvX7Ce72CPNj5f3tmTV7+E1aMzawKSZliOocK
+	BFQpN3OOhdUtDX7mFNwPfucWFw9jxQHZmHmVlRETCEjxTGZ1JrKvxMePWRgek4Qc2/iouNtp1xKD8
+	/H7egOi8hL4aDEwnmE1JwUTwbyTHecBqso/D82lF9WMPkOXYcNTaLrqelfUeyi2QNrv5Wn3857lLy
+	ZxspbgIvWajcRjdwmx0kELIvtFmeYHGs0/8GXSQElZ9xB2yZr3LUl46PXJC3ton34zCb45FKbfUYq
+	hPenUmAuJYmaw06qrCTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7g7J-0007K6-Au; Fri, 28 Feb 2020 13:55:49 +0000
+	id 1j7fyQ-0000oH-E8; Fri, 28 Feb 2020 13:46:38 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7g6h-00072p-V9; Fri, 28 Feb 2020 13:55:13 +0000
-X-UUID: c55ef81875f041f8b9f41caf960d4a28-20200228
+ id 1j7fx4-0006yr-Um; Fri, 28 Feb 2020 13:45:16 +0000
+X-UUID: 3d78c79d30144243ad7c4b3839a550e1-20200228
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=Ppb4UkHf8lLsaqd2zlsjL9zcISu4nncSfFXbQqr/dQc=; 
- b=mZ8IDEeJnJvtkOSrt76i5FQ0y1TCwkPxIYEtfUdDN1IOGVFLziiC5CC1242o87YER4UGk/kocSZON3rfVGKnJwYxwImjNqP5siSyJ0oQGyPwFYz1JTvQXbBTntkkqWg3eeOeEd3kk5dbQYCJAws0UucgthXwoOvTGsErV/wNRPk=;
-X-UUID: c55ef81875f041f8b9f41caf960d4a28-20200228
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=J3RECQ0d49qohwUAI6HrEdpeiz9kkXmR7Kg62M4vxiA=; 
+ b=WIKrN8Q5YrtZkjMaotXjbdYt2BR25mFI1vbgi60EqB9IQv/poEt2hggUOfgQ/OcfnO3HsrAdtkMp031hL9td9rLAiRiLaeZsUf5XHx2KmRWp8p2YiKxGgDq7nkx5QWP195MoTO+mXN2wnVB/uLrQUIroBJF9Ag1es95uukr7Knk=;
+X-UUID: 3d78c79d30144243ad7c4b3839a550e1-20200228
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <dennis-yc.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1638084284; Fri, 28 Feb 2020 05:55:09 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Feb 2020 05:45:13 -0800
+ with ESMTP id 1810674084; Fri, 28 Feb 2020 05:45:08 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Feb 2020 05:45:49 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Feb 2020 21:44:07 +0800
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Feb 2020 21:44:01 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 28 Feb 2020 21:45:03 +0800
+ Frontend Transport; Fri, 28 Feb 2020 21:45:04 +0800
 From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger
  <matthias.bgg@gmail.com>, Jassi Brar <jassisinghbrar@gmail.com>
-Subject: [PATCH v3 04/13] mailbox: mediatek: cmdq: clear task in channel
- before shutdown
-Date: Fri, 28 Feb 2020 21:44:12 +0800
-Message-ID: <1582897461-15105-6-git-send-email-dennis-yc.hsieh@mediatek.com>
+Subject: [PATCH v3 05/13] soc: mediatek: cmdq: return send msg error code
+Date: Fri, 28 Feb 2020 21:44:13 +0800
+Message-ID: <1582897461-15105-7-git-send-email-dennis-yc.hsieh@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1582897461-15105-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 References: <1582897461-15105-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: AFF8A4E223F36FC7D7DCDD681114757C180A6EEC14B10EAEB2300591246FEA7C2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_055512_007610_12F3374B 
-X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-CacheID: sfid-20200228_054515_093778_C3E151F0 
+X-CRM114-Status: UNSURE (   8.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -100,70 +98,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Do success callback in channel when shutdown. For those task not finish,
-callback with error code thus client has chance to cleanup or reset.
+Return error code to client if send message fail,
+so that client has chance to error handling.
 
+Fixes: 576f1b4bc802 ("soc: mediatek: Add Mediatek CMDQ helper")
 Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
 ---
- drivers/mailbox/mtk-cmdq-mailbox.c | 38 ++++++++++++++++++++++++++++++
- 1 file changed, 38 insertions(+)
+ drivers/soc/mediatek/mtk-cmdq-helper.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
-index 7246b7e21a2e..50dec015593f 100644
---- a/drivers/mailbox/mtk-cmdq-mailbox.c
-+++ b/drivers/mailbox/mtk-cmdq-mailbox.c
-@@ -387,6 +387,12 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+index 2e1bc513569b..0698612de5ad 100644
+--- a/drivers/soc/mediatek/mtk-cmdq-helper.c
++++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+@@ -351,11 +351,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
+ 		spin_unlock_irqrestore(&client->lock, flags);
+ 	}
  
- 	if (list_empty(&thread->task_busy_list)) {
- 		WARN_ON(clk_enable(cmdq->clock) < 0);
-+		/*
-+		 * The thread reset will clear thread related register to 0,
-+		 * including pc, end, priority, irq, suspend and enable. Thus
-+		 * set CMDQ_THR_ENABLED to CMDQ_THR_ENABLE_TASK will enable
-+		 * thread and make it running.
-+		 */
- 		WARN_ON(cmdq_thread_reset(cmdq, thread) < 0);
+-	mbox_send_message(client->chan, pkt);
++	err = mbox_send_message(client->chan, pkt);
+ 	/* We can send next packet immediately, so just call txdone. */
+ 	mbox_client_txdone(client->chan, 0);
  
- 		writel(task->pa_base >> cmdq->shift_pa,
-@@ -450,6 +456,38 @@ static int cmdq_mbox_startup(struct mbox_chan *chan)
- 
- static void cmdq_mbox_shutdown(struct mbox_chan *chan)
- {
-+	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
-+	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
-+	struct cmdq_task *task, *tmp;
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&thread->chan->lock, flags);
-+	if (list_empty(&thread->task_busy_list))
-+		goto done;
-+
-+	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
-+
-+	/* make sure executed tasks have success callback */
-+	cmdq_thread_irq_handler(cmdq, thread);
-+	if (list_empty(&thread->task_busy_list))
-+		goto done;
-+
-+	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
-+				 list_entry) {
-+		cmdq_task_exec_done(task, -ECONNABORTED);
-+		kfree(task);
-+	}
-+
-+	cmdq_thread_disable(cmdq, thread);
-+	clk_disable(cmdq->clock);
-+done:
-+	/*
-+	 * The thread->task_busy_list empty means thread already disable. The
-+	 * cmdq_mbox_send_data() always reset thread which clear disable and
-+	 * suspend statue when first pkt send to channel, so there is no need
-+	 * to do any operation here, only unlock and leave.
-+	 */
-+	spin_unlock_irqrestore(&thread->chan->lock, flags);
+-	return 0;
++	return err;
  }
+ EXPORT_SYMBOL(cmdq_pkt_flush_async);
  
- static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
 -- 
 2.18.0
 _______________________________________________
