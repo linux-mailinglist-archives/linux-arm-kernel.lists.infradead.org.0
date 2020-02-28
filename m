@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A86AF173ED4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 18:48:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2EE6173ED5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 18:49:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pJncIfBz26McMk8TzWKY11qi/yoURMAGodkasgbK4ew=; b=sm+wleE1TwFlwB
-	KeZ5il6cV9zFWnTQWw95BzAYUnefuzYq8m3JtCMOwdnhAXGZ67btHLeUZOXVPaC7NUY2Jdl46hVDP
-	B59Ol1vBpeE4HJs6svMW8ZayvESCa8yiDvGjJknZAG6GZvneu9/ND5w5lmLRwNkj9laNtjP27DCxD
-	AGf5MvN+sHki8eCyHkhyJTvmA0O+GmATKjI5d4DGxq0ndNNJFI9s/NQFuWs6nAcSTVzXJ7rHy1C4p
-	iG+Dnzqef6NkYl1GGFnq3H70m1/AFZwHiW16FIC6104z/LZJusM8MXwQa9jhki7i9KwCwQHrqVHgx
-	B1fuoESbzBfeBT73PgOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wtWOZv6WidShV1Skoc8K/MOrKqfI9segj84EM8+QiTg=; b=gL+spLCvv92ADj
+	2RfJSEywn4eCp7reLTVN9K+4TKotbj7qskWPUg2CPJFxLywrh/z1fo+HtLfjolxVYAOcvgpv0solZ
+	Jn/GpQAHtm6wQYqP6owfH5IU/iCXoShL2XXkdsAvrGSy31/ouJAgBUEYgHyLYuXydBjFtdIzXJ5y3
+	vilUtHop/oiPAfoIUaVDVv1omBZSSXmaAqbV+kRSAPCA6a9IGJ0UA6shHWFBqKYrfZAXSIDbehqxZ
+	m5UpT9w1jtlDTFJEYC5BKiyP16v6PQ6uBm2DB31qnGxtdlODBXQe6vVupDtGhfvezTg222w0im43Y
+	bb/btuum+4L0h2rZbeCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7jka-0007Rh-UV; Fri, 28 Feb 2020 17:48:36 +0000
+	id 1j7jky-0007bM-Bn; Fri, 28 Feb 2020 17:49:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7jkR-0007Qy-JZ
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 17:48:29 +0000
+ id 1j7jkT-0007RO-F4
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 17:48:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15C0031B;
- Fri, 28 Feb 2020 09:48:25 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E3DA8FEC;
+ Fri, 28 Feb 2020 09:48:28 -0800 (PST)
 Received: from eglon.cambridge.arm.com (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3543E3F7B4;
- Fri, 28 Feb 2020 09:48:23 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 10AD13F7B4;
+ Fri, 28 Feb 2020 09:48:26 -0800 (PST)
 From: James Morse <james.morse@arm.com>
 To: linux-mm@kvack.org, linux-acpi@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/3] ACPI / APEI: Kick the memory_failure() queue for
- synchronous errors
-Date: Fri, 28 Feb 2020 17:48:14 +0000
-Message-Id: <20200228174817.74278-1-james.morse@arm.com>
+Subject: [PATCH 1/3] mm/memory-failure: Add memory_failure_queue_kick()
+Date: Fri, 28 Feb 2020 17:48:15 +0000
+Message-Id: <20200228174817.74278-2-james.morse@arm.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200228174817.74278-1-james.morse@arm.com>
+References: <20200228174817.74278-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_094827_730830_ECCF5BFC 
-X-CRM114-Status: GOOD (  15.47  )
+X-CRM114-CacheID: sfid-20200228_094829_543291_02AB659A 
+X-CRM114-Status: GOOD (  13.63  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,88 +73,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello!
+The GHES code calls memory_failure_queue() from IRQ context to schedule
+work on the current CPU so that memory_failure() can sleep.
 
-These are the remaining patches from the SDEI series[0] that fix
-a race between memory_failure() and user-space re-triggering the error
-in ghes.c.
+For synchronous memory errors the arch code needs to know any signals
+that memory_failure() will trigger are pending before it returns to
+user-space, possibly when exiting from the IRQ.
 
+Add a helper to kick the memory failure queue, to ensure the scheduled
+work has happened. This has to be called from process context, so may
+have been migrated from the original cpu. Pass the cpu the work was
+queued on.
 
-ghes_handle_memory_failure() calls memory_failure_queue() from
-IRQ context to schedule memory_failure()s work as it needs to sleep.
-Once the GHES machinery returns from the IRQ, it may return to user-space
-before memory_failure() runs.
+Change memory_failure_work_func() to permit being called on the 'wrong'
+cpu.
 
-If the error that kicked all this off is specific to user-space, e.g. a
-load from corrupted memory, we may find ourselves taking the error
-again. If the user-space task is scheduled out, and memory_failure() runs,
-the same user-space task may be scheduled in on another CPU, which could
-also take the same error.
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+ include/linux/mm.h  |  1 +
+ mm/memory-failure.c | 15 ++++++++++++++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
 
-These lead to exaggerated error counters, which may cause some threshold
-to be reached early.
-
-This can happen with any error that causes a Synchronous External Abort
-on arm64. I can't see why the same wouldn't happen with a machine-check
-handled firmware first on x86.
-
-
-This series adds a memory_failure_queue_kick() helper to
-memory-failure.c, and calls it as task-work before returning to
-user-space.
-
-
-Currently arm64 papers over this problem by ignoring ghes_notify_sea()'s
-return code as it knows there is still work to do. arm64 generates its
-own signal to user-space, which means the first task to discover an
-error will always be killed, even if the error was later handled.
-(which is no improvement on the no-RAS behaviour)
-
-As a final piece, arm64 can try to process the irq work queued by
-ghes_notify_sea() while its still in the external abort handler. A succesfull
-return value here now means the memory_failure() work will be done before we
-return to user-space, we no longer need to generate our own signal.
-This lets the original task survive the error if memory_failure() can
-recover the corrupted memory.
-
-Based on v5.6-rc2. I'm afraid it touches three different trees.
-$subject says ACPI as that is where the bulk of the diffstat is.
-
-This series may conflict in arm64 with a series from Mark Rutland to
-cleanup the daif/PMR toggling.
-
-
-This would be v9 of these patches, but after a year I figure I should
-start the numbering again. I've dropped any collected tags.
-
-Known issues:
- * arm64's apei_claim_sea() may unwittingly re-enable debug if it takes
-   an external-abort from debug context. Patch 3 makes this worse
-   instead of fixing it. The fix would make use of helpers from Mark R's
-   series.
-
-
-Thanks,
-
-James
-
-
-[0] https://lore.kernel.org/linux-arm-kernel/20190129184902.102850-1-james.morse@arm.com/
-[1] https://lore.kernel.org/linux-acpi/1506516620-20033-3-git-send-email-xiexiuqi@huawei.com/
-
-James Morse (3):
-  mm/memory-failure: Add memory_failure_queue_kick()
-  ACPI / APEI: Kick the memory_failure() queue for synchronous errors
-  arm64: acpi: Make apei_claim_sea() synchronise with APEI's irq work
-
- arch/arm64/kernel/acpi.c | 25 +++++++++++++++
- arch/arm64/mm/fault.c    | 12 ++++---
- drivers/acpi/apei/ghes.c | 68 +++++++++++++++++++++++++++++++++-------
- include/acpi/ghes.h      |  3 ++
- include/linux/mm.h       |  1 +
- mm/memory-failure.c      | 15 ++++++++-
- 6 files changed, 107 insertions(+), 17 deletions(-)
-
+diff --git a/include/linux/mm.h b/include/linux/mm.h
+index 52269e56c514..389460de3ee6 100644
+--- a/include/linux/mm.h
++++ b/include/linux/mm.h
+@@ -2806,6 +2806,7 @@ enum mf_flags {
+ };
+ extern int memory_failure(unsigned long pfn, int flags);
+ extern void memory_failure_queue(unsigned long pfn, int flags);
++extern void memory_failure_queue_kick(int cpu);
+ extern int unpoison_memory(unsigned long pfn);
+ extern int get_hwpoison_page(struct page *page);
+ #define put_hwpoison_page(page)	put_page(page)
+diff --git a/mm/memory-failure.c b/mm/memory-failure.c
+index 41c634f45d45..afdf1fd5ef9c 100644
+--- a/mm/memory-failure.c
++++ b/mm/memory-failure.c
+@@ -1468,7 +1468,7 @@ static void memory_failure_work_func(struct work_struct *work)
+ 	unsigned long proc_flags;
+ 	int gotten;
+ 
+-	mf_cpu = this_cpu_ptr(&memory_failure_cpu);
++	mf_cpu = container_of(work, struct memory_failure_cpu, work);
+ 	for (;;) {
+ 		spin_lock_irqsave(&mf_cpu->lock, proc_flags);
+ 		gotten = kfifo_get(&mf_cpu->fifo, &entry);
+@@ -1482,6 +1482,19 @@ static void memory_failure_work_func(struct work_struct *work)
+ 	}
+ }
+ 
++/*
++ * Process memory_failure work queued on the specified CPU.
++ * Used to avoid return-to-userspace racing with the memory_failure workqueue.
++ */
++void memory_failure_queue_kick(int cpu)
++{
++	struct memory_failure_cpu *mf_cpu;
++
++	mf_cpu = &per_cpu(memory_failure_cpu, cpu);
++	cancel_work_sync(&mf_cpu->work);
++	memory_failure_work_func(&mf_cpu->work);
++}
++
+ static int __init memory_failure_init(void)
+ {
+ 	struct memory_failure_cpu *mf_cpu;
 -- 
 2.24.1
 
