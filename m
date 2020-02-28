@@ -2,57 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E578E173716
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:17:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDA1317371D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:21:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BcYBDqzTjZOfAYiJt3qL5VeOoq5zyAS2kyaNt296ouU=; b=VHPCz/8cAjR2VF
-	OoN+yBFHuH2ulmhkV8DarEZeBVp1ljJ9cz7KpFKqK2bGsSHREd1xsPzo8S5ToIv0IDMH5Kui8JLa5
-	TGcyXX+J6VZqhIqZWCnCvfo2SM28sfHG4wLLnapKu2PVVs0/qsDAMgEX2d6Ycp+m0axqOeKzkVivO
-	NzsrfWkhburilGBqUxptkEclKoeMR0u+1ZIzCAtm5JTW2yTv67r8zjqpI1Xze6w7N/B25tKvV6uVH
-	fTbvkl8nhiaC9JUBpFGAioRaoV+MnKifPBJ4W/wbAmsCd43ZKUd+ZrSCG3qH63/YPXMIKQ8uomB9v
-	L4Mo2gwFAQSFxtJTITWg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zVV+shcYsQQTvufPx6UZ35vaagcEEVVeIsaNBpngNpA=; b=Gm2
+	ODMinWrUM7et8MH3H6AuOELDFdwEfeyqI/Ezbadd8eViXzHY7IGubpPTWp/4KFowhCYzP8Towy4Ha
+	nz/62gWLtegPbxDskUNumV1p300PR1Mmb2ooDQG0pxGcvBLZ5ZhX3xl0z2Bymcjld1xN8O+O/G7lK
+	Um1UWI2vGVAvIChDAN+Tqe5OgrdXeE/s6xGsAUzkfmo3EfJoVJS5BpOnV7lVtlf7RP1HJti27RK1S
+	zkd6lbdjt2yIWjlo1YoBsiTATlgNockRdjH44YWiXz36UBh3DmMecPra9YM5cPWU+mvIW8Ib1Aktj
+	Qnjw2IMmoLUZYG/MFvJBevJIy646HkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7eaC-0004jf-5S; Fri, 28 Feb 2020 12:17:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7eZx-0004jK-8f
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:17:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EF4334B2;
- Fri, 28 Feb 2020 04:17:15 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 31D733F7B4;
- Fri, 28 Feb 2020 04:17:15 -0800 (PST)
-Date: Fri, 28 Feb 2020 12:17:13 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Robin Murphy <robin.murphy@arm.com>, will@kernel.org
-Subject: Re: [PATCH v2 5/5] arm64: perf: Support new DT compatibles
-Message-ID: <20200228121712.GF36089@lakrids.cambridge.arm.com>
-References: <cover.1582312530.git.robin.murphy@arm.com>
- <6e5087621bd8112a35733054689d7c785b4bdde5.1582312530.git.robin.murphy@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6e5087621bd8112a35733054689d7c785b4bdde5.1582312530.git.robin.murphy@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1j7eeH-0006Ud-Lk; Fri, 28 Feb 2020 12:21:45 +0000
+Received: from conuserg-11.nifty.com ([210.131.2.78])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7ee9-0006Tr-1O
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:21:38 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-11.nifty.com with ESMTP id 01SCL1XW004922;
+ Fri, 28 Feb 2020 21:21:01 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com 01SCL1XW004922
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1582892461;
+ bh=5ghtF6rUXJoiM/O0pSdOPbN8zT8QLZE6M+wi9C8WvuQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=fziPaJiTtPI95odVNEvQiZwh8s7oczRhLsT5hqopZ3uiv6cDdWMsA3X6vrfPcRN1q
+ /CBKto9+TVaymE8VKI1Zo6/XBRjZ4WwsI5B4wX9+c7idW7xZ/riZmSuJUhCfLgzQvt
+ ATGgfvyGt9x8jHWUKuT6IbJh6S/bk70XCi8YNjCO+vGV3cq6NSSktF6DfQSxfPko91
+ SSIx0FoGG9VZscnKpRR0GngO7bN8IInMH3AzfDDo0ko+Q2GVtC7UkHm5FvcHmz0iwg
+ Y9Njh2cyoov0cjD3J6O2L9qz3jEZxuffJl09jY7qCnH+3n4qAhaKow1R3fZqHIi6la
+ KoLdFwIDfHckA==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: dts: uniphier: Add one more generic compatible string
+ for I2C EEPROM
+Date: Fri, 28 Feb 2020 21:20:55 +0900
+Message-Id: <20200228122055.17008-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_041717_390651_D1D00C89 
-X-CRM114-Status: GOOD (  16.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200228_042137_408980_3E073F62 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.78 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,142 +74,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 21, 2020 at 07:35:32PM +0000, Robin Murphy wrote:
-> Add support for matching the new PMUs. For now, this just wires them up
-> as generic PMUv3 such that people writing DTs for new SoCs can do the
-> right thing, and at least have architectural and raw events be usable.
-> We can come back and fill in event maps for sysfs and/or perf tools at
-> a later date.
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Commit 73f9de0c7f5d ("ARM: dts: uniphier: Add generic compatible string
+for I2C EEPROM") did not touch this node.
 
-Thanks for putting this together!
+Add the compatible string prefixed "atmel," so that this matches to the
+OF table.
 
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
 
-Will, are you happy to queue this and the previous patch?
+ arch/arm/boot/dts/uniphier-ref-daughter.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Thanks,
-Mark.
+diff --git a/arch/arm/boot/dts/uniphier-ref-daughter.dtsi b/arch/arm/boot/dts/uniphier-ref-daughter.dtsi
+index 04e60c295319..a11897669c26 100644
+--- a/arch/arm/boot/dts/uniphier-ref-daughter.dtsi
++++ b/arch/arm/boot/dts/uniphier-ref-daughter.dtsi
+@@ -7,7 +7,7 @@
+ 
+ &i2c0 {
+ 	eeprom@50 {
+-		compatible = "microchip,24lc128";
++		compatible = "microchip,24lc128", "atmel,24c128";
+ 		reg = <0x50>;
+ 		pagesize = <64>;
+ 	};
+-- 
+2.17.1
 
-> ---
-> 
-> v2: define separate init functions to preserve the user ABI for naming
->     (and perhaps more crucially, to simply avoid sysfs collisions on
->      the inevitable A7[567] + A55 big.LITTLE systems)
-> 
->  arch/arm64/kernel/perf_event.c | 56 ++++++++++++++++++++++++++++++++++
->  1 file changed, 56 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> index 1e0b04da2f3a..726cd8bda025 100644
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -991,6 +991,12 @@ static int armv8_pmuv3_init(struct arm_pmu *cpu_pmu)
->  			      armv8_pmuv3_map_event, NULL, NULL);
->  }
->  
-> +static int armv8_a34_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a34",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
->  static int armv8_a35_pmu_init(struct arm_pmu *cpu_pmu)
->  {
->  	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a35",
-> @@ -1003,12 +1009,24 @@ static int armv8_a53_pmu_init(struct arm_pmu *cpu_pmu)
->  			      armv8_a53_map_event, NULL, NULL);
->  }
->  
-> +static int armv8_a55_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a55",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
->  static int armv8_a57_pmu_init(struct arm_pmu *cpu_pmu)
->  {
->  	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a57",
->  			      armv8_a57_map_event, NULL, NULL);
->  }
->  
-> +static int armv8_a65_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a65",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
->  static int armv8_a72_pmu_init(struct arm_pmu *cpu_pmu)
->  {
->  	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a72",
-> @@ -1021,6 +1039,36 @@ static int armv8_a73_pmu_init(struct arm_pmu *cpu_pmu)
->  			      armv8_a73_map_event, NULL, NULL);
->  }
->  
-> +static int armv8_a75_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a75",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
-> +static int armv8_a76_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a76",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
-> +static int armv8_a77_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a77",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
-> +static int armv8_e1_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_neoverse_e1",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
-> +static int armv8_n1_pmu_init(struct arm_pmu *cpu_pmu)
-> +{
-> +	return armv8_pmu_init(cpu_pmu, "armv8_neoverse_n1",
-> +			      armv8_pmuv3_map_event, NULL, NULL);
-> +}
-> +
->  static int armv8_thunder_pmu_init(struct arm_pmu *cpu_pmu)
->  {
->  	return armv8_pmu_init(cpu_pmu, "armv8_cavium_thunder",
-> @@ -1035,11 +1083,19 @@ static int armv8_vulcan_pmu_init(struct arm_pmu *cpu_pmu)
->  
->  static const struct of_device_id armv8_pmu_of_device_ids[] = {
->  	{.compatible = "arm,armv8-pmuv3",	.data = armv8_pmuv3_init},
-> +	{.compatible = "arm,cortex-a34-pmu",	.data = armv8_a34_pmu_init},
->  	{.compatible = "arm,cortex-a35-pmu",	.data = armv8_a35_pmu_init},
->  	{.compatible = "arm,cortex-a53-pmu",	.data = armv8_a53_pmu_init},
-> +	{.compatible = "arm,cortex-a55-pmu",	.data = armv8_a55_pmu_init},
->  	{.compatible = "arm,cortex-a57-pmu",	.data = armv8_a57_pmu_init},
-> +	{.compatible = "arm,cortex-a65-pmu",	.data = armv8_a65_pmu_init},
->  	{.compatible = "arm,cortex-a72-pmu",	.data = armv8_a72_pmu_init},
->  	{.compatible = "arm,cortex-a73-pmu",	.data = armv8_a73_pmu_init},
-> +	{.compatible = "arm,cortex-a75-pmu",	.data = armv8_a75_pmu_init},
-> +	{.compatible = "arm,cortex-a76-pmu",	.data = armv8_a76_pmu_init},
-> +	{.compatible = "arm,cortex-a77-pmu",	.data = armv8_a77_pmu_init},
-> +	{.compatible = "arm,neoverse-e1-pmu",	.data = armv8_e1_pmu_init},
-> +	{.compatible = "arm,neoverse-n1-pmu",	.data = armv8_n1_pmu_init},
->  	{.compatible = "cavium,thunder-pmu",	.data = armv8_thunder_pmu_init},
->  	{.compatible = "brcm,vulcan-pmu",	.data = armv8_vulcan_pmu_init},
->  	{},
-> -- 
-> 2.23.0.dirty
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
