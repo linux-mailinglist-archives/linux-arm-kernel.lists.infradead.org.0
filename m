@@ -2,53 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA0921736C2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:00:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C85A1736C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:03:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7ub2TPffjKgyQryaknZGsXqPNIpqIsSHODmZqcg6b0g=; b=QqQc9Gvd4cZvGA5U0BTMjjxlD
-	BqA8kolZHptRSpFK2mxaXpK9vyifAquMDlCVBL6tvVY6HkiswqhdKOkRJaedDjtAaC34ehopILlKe
-	uP69lPxk31UQOkXAlqE6BvtfB4rMMpd5XpQ/5Ck6UttQTvtQpIL8GRvCOImWxjtZcxyzj3O3XrJsa
-	trFgcRq1f+w872V7MaQM6vKY1V30cGMwyOSTNz0qLdZQozlzgOm8Ox1zsy7Ybz5Hofgy9jfHfX5rR
-	+vjsNvxVg1jsD4rVwE8foA5Lr35QL5MctwM7kBP837YWe2CybkDN63nxxIqdJu3FOjUPFjSCEQoFU
-	jltDNwI6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T3fOyoAUkL0jRect5xvwmDgNnJYt1BMG1St5RgG66/Q=; b=Nf/QY59+JjPimq
+	SE0dn6TPiXZziIbOLFil9zUxTopmVNpAGbCEikpsoOgD7l9H+CCRgevcHd+vrw4IV/5wfsXdCU44L
+	4YTm48MFkeZvRZgEoxdb0bCm1dcmzqg76b8JSBL93WkOaEuJ9B43iu+df+DSUd2kc7hJk71aGTr35
+	eXj1txxtQc5ihOAiHe3mtrn8clmqjolRjtgqVjBhVr/zbiuhtg7ofh4nhry+2OFquH6rE4jpfKH1q
+	YBlOQPjoSD32jSHi9ZiEXIEpz5uJQoE1gLI9ZiSBpFYBuzGxfxLwDuClGuXKlCwRmdr5eNs3B2hC+
+	XQBoQlkL1y5QTSeuiUww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7eJg-00071t-2s; Fri, 28 Feb 2020 12:00:28 +0000
+	id 1j7eMd-0007eU-5p; Fri, 28 Feb 2020 12:03:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7eJW-00070r-Dj
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:00:20 +0000
+ id 1j7eMQ-0007dn-UI
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:03:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1CCC04B2;
- Fri, 28 Feb 2020 04:00:15 -0800 (PST)
-Received: from [10.37.12.207] (unknown [10.37.12.207])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE33C3F7B4;
- Fri, 28 Feb 2020 04:00:11 -0800 (PST)
-Subject: Re: [RESEND PATCH v2 0/2] Enable Odroid-XU3/4 to use Energy Model and
- Energy Aware Scheduler
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>
-References: <20200220095636.29469-1-lukasz.luba@arm.com>
- <20200220180040.GA8338@kozik-lap>
- <CGME20200221103307eucas1p2bc51b3b5d6d0a9739ab97cdd39078505@eucas1p2.samsung.com>
- <597f1475-754c-d77a-b599-0fa07d8ee948@arm.com>
- <fb6961ce-846e-3c26-5227-6327c6d511f6@samsung.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <b2823ea1-a782-1024-bcc0-c1aba9a84fc3@arm.com>
-Date: Fri, 28 Feb 2020 12:00:09 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4FC714B2;
+ Fri, 28 Feb 2020 04:03:18 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D7B6A3F7B4;
+ Fri, 28 Feb 2020 04:03:16 -0800 (PST)
+Date: Fri, 28 Feb 2020 12:03:14 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 1/2] arm64: ptrauth: add pointer authentication Armv8.6
+ enhanced feature
+Message-ID: <20200228120314.GD36089@lakrids.cambridge.arm.com>
+References: <1582117240-15330-1-git-send-email-amit.kachhap@arm.com>
+ <1582117240-15330-2-git-send-email-amit.kachhap@arm.com>
+ <20200228115736.GA3275@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <fb6961ce-846e-3c26-5227-6327c6d511f6@samsung.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200228115736.GA3275@willie-the-truck>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_040018_556204_9C9038EA 
-X-CRM114-Status: GOOD (  21.33  )
+X-CRM114-CacheID: sfid-20200228_040319_079237_FDB21886 
+X-CRM114-Status: GOOD (  27.44  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,139 +66,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-pm@vger.kernel.org,
- b.zolnierkie@samsung.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- cw00.choi@samsung.com, kyungmin.park@samsung.com, kgene@kernel.org,
- myungjoo.ham@samsung.com, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyZWssCgpPbiAyLzI4LzIwIDEwOjU5IEFNLCBNYXJlayBTenlwcm93c2tpIHdyb3RlOgo+
-IEhpIEx1a2Fzego+IAo+IE9uIDIxLjAyLjIwMjAgMTE6MzIsIEx1a2FzeiBMdWJhIHdyb3RlOgo+
-PiBPbiAyLzIwLzIwIDY6MDAgUE0sIEtyenlzenRvZiBLb3psb3dza2kgd3JvdGU6Cj4+PiBPbiBU
-aHUsIEZlYiAyMCwgMjAyMCBhdCAwOTo1NjozNEFNICswMDAwLCBMdWthc3ogTHViYSB3cm90ZToK
-Pj4+PiBUaGlzIGlzIGp1c3QgYSByZXNlbmQsIG5vdyB3aXRoIHByb3BlciB2MiBpbiB0aGUgcGF0
-Y2hlcyBzdWJqZWN0Lgo+Pj4+Cj4+Pj4gVGhlIE9kcm9pZC1YVTQvMyBpcyBhIGRlY2VudCBhbmQg
-ZWFzeSBhY2Nlc3NpYmxlIEFSTSBiaWcuTElUVExFCj4+Pj4gcGxhdGZvcm0sCj4+Pj4gd2hpY2gg
-bWlnaHQgYmUgdXNlZCBmb3IgcmVzZWFyY2ggYW5kIGRldmVsb3BtZW50Lgo+Pj4+Cj4+Pj4gVGhp
-cyBzbWFsbCBwYXRjaCBzZXQgcHJvdmlkZXMgcG9zc2liaWxpdHkgdG8gcnVuIEVuZXJneSBBd2Fy
-ZQo+Pj4+IFNjaGVkdWxlciAoRUFTKQo+Pj4+IG9uIE9kcm9pZC1YVTQvMyBhbmQgZXhwZXJpbWVu
-dCB3aXRoIGl0Lgo+Pj4+Cj4+Pj4gVGhlIHBhdGNoIDEvMiBwcm92aWRlcyAnZHluYW1pYy1wb3dl
-ci1jb2VmZmljaWVudCcgaW4gQ1BVIERUIG5vZGVzLAo+Pj4+IHdoaWNoIGlzCj4+Pj4gdGhlbiB1
-c2VkIGJ5IHRoZSBFbmVyZ3kgTW9kZWwgKEVNKS4KPj4+PiBUaGUgcGF0Y2ggMi8yIGVuYWJsZXMg
-U0NIRURfTUMgKHdoaWNoIGFkZHMgYW5vdGhlciBsZXZlbCBpbgo+Pj4+IHNjaGVkdWxpbmcgZG9t
-YWlucykKPj4+PiBhbmQgZW5hYmxlcyBFTSBtYWtpbmcgRUFTIHBvc3NpYmxlIHRvIHJ1biAod2hl
-biBzY2hlZHV0aWwgaXMgc2V0IGFzCj4+Pj4gYSBDUFVGcmVxCj4+Pj4gZ292ZXJub3IpLgo+Pj4+
-Cj4+Pj4gMS4gVGVzdCByZXN1bHRzCj4+Pj4KPj4+PiBUd28gdHlwZXMgb2YgZGlmZmVyZW50IHRl
-c3RzIGhhdmUgYmVlbiBleGVjdXRlZC4gVGhlIGZpcnN0IGlzIGVuZXJneQo+Pj4+IHRlc3QKPj4+
-PiBjYXNlIHNob3dpbmcgaW1wYWN0IG9uIGVuZXJneSBjb25zdW1wdGlvbiBvZiB0aGlzIHBhdGNo
-IHNldC4gSXQgaXMKPj4+PiB1c2luZyBhCj4+Pj4gc3ludGhldGljIHNldCBvZiB0YXNrcyAocnQt
-YXBwIGJhc2VkKS4gVGhlIHNlY29uZCBpcyB0aGUgcGVyZm9ybWFuY2UKPj4+PiB0ZXN0Cj4+Pj4g
-Y2FzZSB3aGljaCBpcyB1c2luZyBoYWNrYmVuY2ggKGxlc3MgdGltZSB0byBjb21wbGV0ZSBpcyBi
-ZXR0ZXIpLgo+Pj4+IEluIGJvdGggdGVzdHMgc2NoZWR1dGlsIGhhcyBiZWVuIHVzZWQgYXMgY3B1
-ZnJlcSBnb3Zlcm5vci4gSW4gYWxsIHRlc3RzCj4+Pj4gUFJPVkVfTE9DS0lORyBoYXMgbm90IGJl
-ZW4gY29tcGlsZWQgaW50byB0aGUga2VybmVscy4KPj4+Pgo+Pj4+IDEuMSBFbmVyZ3kgdGVzdCBj
-YXNlCj4+Pj4KPj4+PiAxMCBpdGVyYXRpb25zIG9mIDI0IHBlcmlvZGljIHJ0LWFwcCB0YXNrcyAo
-MTZtcyBwZXJpb2QsIDEwJSBkdXR5LWN5Y2xlKQo+Pj4+IHdpdGggZW5lcmd5IG1lYXN1cmVtZW50
-LiBUaGUgY3B1ZnJlcSBnb3Zlcm5vciAtIHNjaGVkdXRpbC4gVW5pdCBpcwo+Pj4+IEpvdWxlcy4K
-Pj4+PiBUaGUgZW5lcmd5IGlzIGNhbGN1bGF0ZWQgYmFzZWQgb24gaHdtb24wIGFuZCBod21vbjMg
-cG93ZXIxX2lucHV0Lgo+Pj4+IFRoZSBnb2FsIGlzIHRvIHNhdmUgZW5lcmd5LCBsb3dlciBpcyBi
-ZXR0ZXIuCj4+Pj4KPj4+PiArLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tKwo+Pj4+IHzCoMKgwqDCoMKgwqDCoMKgwqDCoCB8IFdpdGhvdXQgcGF0
-Y2hlcyB8IFdpdGggcGF0Y2hlc8KgwqDCoMKgwqDCoMKgwqDCoMKgIHwKPj4+PiArLS0tLS0tLS0t
-LS0rLS0tLS0tLS0rLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tKwo+Pj4+IHwgYmVu
-Y2htYXJrIHzCoCBNZWFuwqAgfCBSU0QqwqDCoCB8IE1lYW7CoMKgwqDCoMKgwqDCoMKgwqDCoCB8
-IFJTRCrCoCB8Cj4+Pj4gKy0tLS0tLS0tLS0tKy0tLS0tLS0tKy0tLS0tLS0tKy0tLS0tLS0tLS0t
-LS0tLS0rLS0tLS0tLSsKPj4+PiB8IDI0IHJ0LWFwcCB8wqAgMjEuNTYgfMKgIDEuMzclIHzCoCAx
-OS44NSAoLTkuMiUpIHwgMC45MiUgfAo+Pj4+IHzCoMKgwqAgdGFza3PCoCB8wqDCoMKgwqDCoMKg
-wqAgfMKgwqDCoMKgwqDCoMKgIHzCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgwqDC
-oMKgwqDCoCB8Cj4+Pj4gKy0tLS0tLS0tLS0tKy0tLS0tLS0tKy0tLS0tLS0tKy0tLS0tLS0tLS0t
-LS0tLS0rLS0tLS0tLSsKPj4+Pgo+Pj4+IDEuMiBQZXJmb3JtYW5jZSB0ZXN0IGNhc2UKPj4+Pgo+
-Pj4+IDEwIGNvbnNlY3V0aXZlIGl0ZXJhdGlvbnMgb2YgaGFja2JlbmNoIChoYWNrYmVuY2ggLWwg
-NTAwIC1zIDQwOTYpLAo+Pj4+IG5vIGRlbGF5IGJldHdlZW4gdHdvIHN1Y2Nlc3NpdmUgZXhlY3V0
-aW9ucy4KPj4+PiBUaGUgY3B1ZnJlcSBnb3Zlcm5vciAtIHNjaGVkdXRpbC4gVW5pdHMgaW4gc2Vj
-b25kcy4KPj4+PiBUaGUgZ29hbCBpcyB0byBzZWUgbm90IHJlZ3Jlc3Npb24sIGxvd2VyIGNvbXBs
-ZXRpb24gdGltZSBpcyBiZXR0ZXIuCj4+Pj4KPj4+PiArLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0t
-LS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwo+Pj4+IHzCoMKgwqDCoMKgwqDCoMKgwqDC
-oCB8IFdpdGhvdXQgcGF0Y2hlcyB8IFdpdGggcGF0Y2hlc8KgwqDCoMKgwqDCoMKgwqDCoMKgIHwK
-Pj4+PiArLS0tLS0tLS0tLS0rLS0tLS0tLS0rLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLSstLS0t
-LS0tKwo+Pj4+IHwgYmVuY2htYXJrIHwgTWVhbsKgwqAgfCBSU0QqwqDCoCB8IE1lYW7CoMKgwqDC
-oMKgwqDCoMKgwqDCoCB8IFJTRCrCoCB8Cj4+Pj4gKy0tLS0tLS0tLS0tKy0tLS0tLS0tKy0tLS0t
-LS0tKy0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLSsKPj4+PiB8IGhhY2tiZW5jaCB8wqAgOC4xNcKg
-IHwgMi44NiXCoCB8wqAgNy45NSAoLTIuNSUpwqAgfCAwLjYwJSB8Cj4+Pj4gKy0tLS0tLS0tLS0t
-Ky0tLS0tLS0tKy0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLSsKPj4+Pgo+Pj4+ICpS
-U0Q6IFJlbGF0aXZlIFN0YW5kYXJkIERldmlhdGlvbiAoc3RkIGRldiAvIG1lYW4pCj4+Pgo+Pj4g
-TmljZSBtZWFzdXJlbWVudHMhCj4+Cj4+IEdsYWQgdG8gaGVhciB0aGF0Lgo+Pgo+Pj4KPj4+IEFw
-cGxpZWQgYm90aCwgdGhhbmsgeW91Lgo+Pj4KPj4KPj4gVGhhbmsgeW91IGZvciBhcHBseWluZyB0
-aGlzLgo+IAo+IAo+IEFmdGVyIGFwcGx5aW5nIHRoZSBwYXRjaGVzIEkgc2VlIHRoZSBmb2xsb3dp
-bmcgd2FybmluZ3MgZHVyaW5nIGJvb3QgKFhVNCk6Cj4gCj4gZW5lcmd5X21vZGVsOiBwZDA6IGhl
-cnR6L3dhdHRzIHJhdGlvIG5vbi1tb25vdG9uaWNhbGx5IGRlY3JlYXNpbmc6Cj4gZW1fY2FwX3N0
-YXRlIDEgPj0gZW1fY2FwX3N0YXRlMAo+IGVuZXJneV9tb2RlbDogcGQwOiBoZXJ0ei93YXR0cyBy
-YXRpbyBub24tbW9ub3RvbmljYWxseSBkZWNyZWFzaW5nOgo+IGVtX2NhcF9zdGF0ZSAzID49IGVt
-X2NhcF9zdGF0ZTIKPiBlbmVyZ3lfbW9kZWw6IHBkMDogaGVydHovd2F0dHMgcmF0aW8gbm9uLW1v
-bm90b25pY2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBfc3RhdGUgNCA+PSBlbV9jYXBfc3RhdGUz
-Cj4gZW5lcmd5X21vZGVsOiBwZDA6IGhlcnR6L3dhdHRzIHJhdGlvIG5vbi1tb25vdG9uaWNhbGx5
-IGRlY3JlYXNpbmc6Cj4gZW1fY2FwX3N0YXRlIDUgPj0gZW1fY2FwX3N0YXRlNAo+IGVuZXJneV9t
-b2RlbDogcGQwOiBoZXJ0ei93YXR0cyByYXRpbyBub24tbW9ub3RvbmljYWxseSBkZWNyZWFzaW5n
-Ogo+IGVtX2NhcF9zdGF0ZSA4ID49IGVtX2NhcF9zdGF0ZTcKPiBlbmVyZ3lfbW9kZWw6IHBkMDog
-aGVydHovd2F0dHMgcmF0aW8gbm9uLW1vbm90b25pY2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBf
-c3RhdGUgMTAgPj0gZW1fY2FwX3N0YXRlOQo+IGVuZXJneV9tb2RlbDogcGQwOiBoZXJ0ei93YXR0
-cyByYXRpbyBub24tbW9ub3RvbmljYWxseSBkZWNyZWFzaW5nOgo+IGVtX2NhcF9zdGF0ZSAxMSA+
-PSBlbV9jYXBfc3RhdGUxMAo+IGVuZXJneV9tb2RlbDogcGQ0OiBoZXJ0ei93YXR0cyByYXRpbyBu
-b24tbW9ub3RvbmljYWxseSBkZWNyZWFzaW5nOgo+IGVtX2NhcF9zdGF0ZSAxID49IGVtX2NhcF9z
-dGF0ZTAKPiBlbmVyZ3lfbW9kZWw6IHBkNDogaGVydHovd2F0dHMgcmF0aW8gbm9uLW1vbm90b25p
-Y2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBfc3RhdGUgMiA+PSBlbV9jYXBfc3RhdGUxCj4gZW5l
-cmd5X21vZGVsOiBwZDQ6IGhlcnR6L3dhdHRzIHJhdGlvIG5vbi1tb25vdG9uaWNhbGx5IGRlY3Jl
-YXNpbmc6Cj4gZW1fY2FwX3N0YXRlIDMgPj0gZW1fY2FwX3N0YXRlMgo+IGVuZXJneV9tb2RlbDog
-cGQ0OiBoZXJ0ei93YXR0cyByYXRpbyBub24tbW9ub3RvbmljYWxseSBkZWNyZWFzaW5nOgo+IGVt
-X2NhcF9zdGF0ZSA0ID49IGVtX2NhcF9zdGF0ZTMKPiBlbmVyZ3lfbW9kZWw6IHBkNDogaGVydHov
-d2F0dHMgcmF0aW8gbm9uLW1vbm90b25pY2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBfc3RhdGUg
-NSA+PSBlbV9jYXBfc3RhdGU0Cj4gZW5lcmd5X21vZGVsOiBwZDQ6IGhlcnR6L3dhdHRzIHJhdGlv
-IG5vbi1tb25vdG9uaWNhbGx5IGRlY3JlYXNpbmc6Cj4gZW1fY2FwX3N0YXRlIDYgPj0gZW1fY2Fw
-X3N0YXRlNQo+IGVuZXJneV9tb2RlbDogcGQ0OiBoZXJ0ei93YXR0cyByYXRpbyBub24tbW9ub3Rv
-bmljYWxseSBkZWNyZWFzaW5nOgo+IGVtX2NhcF9zdGF0ZSA4ID49IGVtX2NhcF9zdGF0ZTcKPiBl
-bmVyZ3lfbW9kZWw6IHBkNDogaGVydHovd2F0dHMgcmF0aW8gbm9uLW1vbm90b25pY2FsbHkgZGVj
-cmVhc2luZzoKPiBlbV9jYXBfc3RhdGUgOSA+PSBlbV9jYXBfc3RhdGU4Cj4gZW5lcmd5X21vZGVs
-OiBwZDQ6IGhlcnR6L3dhdHRzIHJhdGlvIG5vbi1tb25vdG9uaWNhbGx5IGRlY3JlYXNpbmc6Cj4g
-ZW1fY2FwX3N0YXRlIDEwID49IGVtX2NhcF9zdGF0ZTkKPiBlbmVyZ3lfbW9kZWw6IHBkNDogaGVy
-dHovd2F0dHMgcmF0aW8gbm9uLW1vbm90b25pY2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBfc3Rh
-dGUgMTMgPj0gZW1fY2FwX3N0YXRlMTIKPiBlbmVyZ3lfbW9kZWw6IHBkNDogaGVydHovd2F0dHMg
-cmF0aW8gbm9uLW1vbm90b25pY2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBfc3RhdGUgMTUgPj0g
-ZW1fY2FwX3N0YXRlMTQKPiBlbmVyZ3lfbW9kZWw6IHBkNDogaGVydHovd2F0dHMgcmF0aW8gbm9u
-LW1vbm90b25pY2FsbHkgZGVjcmVhc2luZzoKPiBlbV9jYXBfc3RhdGUgMTYgPj0gZW1fY2FwX3N0
-YXRlMTUKPiAKPiBJcyBpdCBva2F5PwoKSXQgc2hvdWxkbid0IGhhcm0gdGhlIEVBUyBidXQgaXQg
-bWlnaHQgYmUgdXNlZCBieSB0aGVybWFsLCBlc3BlY2lhbGx5CnRob3NlIE9QUHMgZnJvbSB0aGUg
-dG9wLiBMaWtlIGluIHlvdXIgY2FzZSBpbiBzdGVwX3dpc2UgKElJUkMgdGhlIERUCnNldHRpbmdz
-KS4KQnV0IHJlbW92aW5nIHNvbWUgb2YgdGhlc2UgZnJvbSB0aGUgYm90dG9tLCB3b3VsZCBiZSBn
-b29kLgpJdCB3b3VsZCBsb3dlciB0aGUgRW5lcmd5IE1vZGVsIGNvbXBsZXhpdHksIHdoaWNoIGlz
-Ogpucl9wZXJmX2RvbWFpbiAqIChucl9jcHVzICsgbnJfT1BQcykgWzFdIChpbiBPZHJvaWQgWFU0
-IGlzIH44MCBJSVJDKQoKc21hbGxlciBPUFAgbnVtYmVyIGlzIGJldHRlci4KCkRvdWdsYXMgaXMg
-d29ya2luZyBvbiBhIHBhdGNoIHNldCB3aGljaCBjb3VsZCBza2lwIG5vbi1lZmZpY2llbnQgT1BQ
-cwoodGhlIE9QUHMgd2hpY2ggaGF2ZSB0aGUgc2FtZSB2b2x0YWdlIGJ1dCBkaWZmZXJlbnQgZnJl
-cXVlbmN5KS4KQWx0aG91Z2gsIHdlIGRvbid0IGtub3cgdGhlIG51bWJlcnMgaG93IG11Y2ggaXQg
-Y291bGQgc2F2ZSBlbmVyZ3kgLSB3aGVuCndlIHVzZSB0aGUgZmFzdGVzdCBmcmVxdWVuY3kgZm9y
-IHRoZSBzZXQgb2YgT1BQcyB3aXRoIHRoZSBzYW1lIHZvbHRhZ2UsCmNvbXBhcmluZyB0byB0aGUg
-c2xvd2VzdCAodGhlb3JldGljYWxseSBlbnRlcmluZyBpZGxlIGVhcmxpZXIpIC4KVGhlIGRpc2N1
-c3Npb24gaXMgb25nb2luZyBoZXJlIFsyXS4KClJlZ2FyZGluZyB0aGUgcHJpbnQgbWVzc2FnZS4g
-SXQncyBub3QgYSBidWcgaW4gdGhlIHBsYXRmb3JtIHNvIGluCm15IG9waW5pb24gd2Ugc2hvdWxk
-bid0IHVzZSAncHJfd2FybicgaW4gdGhpcyBjYXNlLgpJdCdzIGdvaW5nIHRvIGJlIGNoYW5nZWQg
-dG8ganVzdCBkZWJ1ZyBsZXZlbCBwcmludC4gSSBoYXZlIHRoaXMKY2hhbmdlIGluIHRoZSBuZXcg
-RW5lcmd5IE1vZGVsLiBJdCBpcyBpbiBsYXN0IHBvaW50IGluIGNoYW5nZWxvZyB2MyBbM10KYW5k
-IHRoZSBjaGFuZ2Ugd2hpY2ggZG9lcyB0aGlzIGlzIGluIHBhdGNoIDEvNDoKLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tPjgtLS0tLS0tLS0tLS0tLS0tLS0KLQkJ
-CXByX3dhcm4oInBkJWQ6IGhlcnR6L3dhdHRzIHJhdGlvIG5vbi1tb25vdG9uaWNhbGx5IGRlY3Jl
-YXNpbmc6IAplbV9jYXBfc3RhdGUgJWQgPj0gZW1fY2FwX3N0YXRlJWRcbiIsCi0JCQkJCWNwdSwg
-aSwgaSAtIDEpOworCQkJZGV2X2RiZyhkZXYsICJFTTogaGVydHovd2F0dHMgcmF0aW8gbm9uLW1v
-bm90b25pY2FsbHkgZGVjcmVhc2luZzogCmVtX3BlcmZfc3RhdGUgJWQgPj0gZW1fcGVyZl9zdGF0
-ZSVkXG4iLAorCQkJCQlpLCBpIC0gMSk7CgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLTg8LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgoKUmVnYXJkcywKTHVrYXN6CgpbMV0g
-Cmh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L2xhdGVzdC9zb3VyY2Uva2VybmVsL3Nj
-aGVkL3RvcG9sb2d5LmMjTDM5NwpbMl0gaHR0cHM6Ly9sa21sLm9yZy9sa21sLzIwMjAvMS8yMi8x
-MTY5ClszXSBodHRwczovL2xrbWwub3JnL2xrbWwvMjAyMC8yLzIxLzE5MTAKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Feb 28, 2020 at 11:57:37AM +0000, Will Deacon wrote:
+> On Wed, Feb 19, 2020 at 06:30:39PM +0530, Amit Daniel Kachhap wrote:
+> > This patch add changes for Pointer Authentication enhanced features
+> > mandatory for Armv8.6. These features are,
+> > 
+> > * Uses an enhanced PAC generation logic which hardens finding the
+> >   correct PAC value of the authenticated pointer. However, no code
+> >   change is required for this.
+> > 
+> > * Fault is generated now when the ptrauth authentication instruction
+> >   fails in authenticating the PAC present in the address. This is
+> >   different from earlier case when such failures just adds an error
+> >   code in the top byte and waits for subsequent load/store to abort.
+> >   The ptrauth instructions which may cause this fault are autiasp,
+> >   retaa etc.
+> > 
+> > The above features are now represented by additional configurations
+> > for the Address Authentication cpufeature. These different
+> > configurations are now updated to FTR_EXACT instead of FTR_LOWER_SAFE
+> > as they all have different behaviour.
+> > 
+> > The fault received in the kernel due to FPAC is treated as Illegal
+> > instruction and hence signal SIGILL is injected with ILL_ILLOPN as the
+> > signal code. Note that this is different from earlier ARMv8.3 ptrauth
+> > where signal SIGSEGV is issued due to Pointer authentication failures.
+> > 
+> > Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> > ---
+> >  arch/arm64/include/asm/esr.h       |  4 +++-
+> >  arch/arm64/include/asm/exception.h |  1 +
+> >  arch/arm64/include/asm/sysreg.h    | 24 ++++++++++++++++--------
+> >  arch/arm64/kernel/cpufeature.c     |  4 ++--
+> >  arch/arm64/kernel/entry-common.c   | 25 +++++++++++++++++++++++++
+> >  arch/arm64/kernel/traps.c          | 18 ++++++++++++++++++
+> >  6 files changed, 65 insertions(+), 11 deletions(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
+> > index cb29253..5a1406f 100644
+> > --- a/arch/arm64/include/asm/esr.h
+> > +++ b/arch/arm64/include/asm/esr.h
+> > @@ -35,7 +35,9 @@
+> >  #define ESR_ELx_EC_SYS64	(0x18)
+> >  #define ESR_ELx_EC_SVE		(0x19)
+> >  #define ESR_ELx_EC_ERET		(0x1a)	/* EL2 only */
+> > -/* Unallocated EC: 0x1b - 0x1E */
+> > +/* Unallocated EC: 0x1B */
+> > +#define ESR_ELx_EC_FPAC		(0x1C)	/* EL1 and above */
+> > +/* Unallocated EC: 0x1D - 0x1E */
+> >  #define ESR_ELx_EC_IMP_DEF	(0x1f)	/* EL3 only */
+> >  #define ESR_ELx_EC_IABT_LOW	(0x20)
+> >  #define ESR_ELx_EC_IABT_CUR	(0x21)
+> > diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+> > index 7a6e81ca..de76772 100644
+> > --- a/arch/arm64/include/asm/exception.h
+> > +++ b/arch/arm64/include/asm/exception.h
+> > @@ -46,4 +46,5 @@ void bad_el0_sync(struct pt_regs *regs, int reason, unsigned int esr);
+> >  void do_cp15instr(unsigned int esr, struct pt_regs *regs);
+> >  void do_el0_svc(struct pt_regs *regs);
+> >  void do_el0_svc_compat(struct pt_regs *regs);
+> > +void do_ptrauth_fault(struct pt_regs *regs, unsigned long esr);
+> >  #endif	/* __ASM_EXCEPTION_H */
+> > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> > index b91570f..77728f5 100644
+> > --- a/arch/arm64/include/asm/sysreg.h
+> > +++ b/arch/arm64/include/asm/sysreg.h
+> > @@ -585,14 +585,22 @@
+> >  #define ID_AA64ISAR1_APA_SHIFT		4
+> >  #define ID_AA64ISAR1_DPB_SHIFT		0
+> >  
+> > -#define ID_AA64ISAR1_APA_NI		0x0
+> > -#define ID_AA64ISAR1_APA_ARCHITECTED	0x1
+> > -#define ID_AA64ISAR1_API_NI		0x0
+> > -#define ID_AA64ISAR1_API_IMP_DEF	0x1
+> > -#define ID_AA64ISAR1_GPA_NI		0x0
+> > -#define ID_AA64ISAR1_GPA_ARCHITECTED	0x1
+> > -#define ID_AA64ISAR1_GPI_NI		0x0
+> > -#define ID_AA64ISAR1_GPI_IMP_DEF	0x1
+> > +#define ID_AA64ISAR1_APA_NI			0x0
+> > +#define ID_AA64ISAR1_APA_ARCHITECTED		0x1
+> > +#define ID_AA64ISAR1_APA_ARCH_EPAC		0x2
+> > +#define ID_AA64ISAR1_APA_ARCH_EPAC2		0x3
+> > +#define ID_AA64ISAR1_APA_ARCH_EPAC2_FPAC	0x4
+> > +#define ID_AA64ISAR1_APA_ARCH_EPAC2_FPAC_CMB	0x5
+> > +#define ID_AA64ISAR1_API_NI			0x0
+> > +#define ID_AA64ISAR1_API_IMP_DEF		0x1
+> > +#define ID_AA64ISAR1_API_IMP_DEF_EPAC		0x2
+> > +#define ID_AA64ISAR1_API_IMP_DEF_EPAC2		0x3
+> > +#define ID_AA64ISAR1_API_IMP_DEF_EPAC2_FPAC	0x4
+> > +#define ID_AA64ISAR1_API_IMP_DEF_EPAC2_FPAC_CMB	0x5
+> > +#define ID_AA64ISAR1_GPA_NI			0x0
+> > +#define ID_AA64ISAR1_GPA_ARCHITECTED		0x1
+> > +#define ID_AA64ISAR1_GPI_NI			0x0
+> > +#define ID_AA64ISAR1_GPI_IMP_DEF		0x1
+> >  
+> >  /* id_aa64pfr0 */
+> >  #define ID_AA64PFR0_CSV3_SHIFT		60
+> > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> > index 8d1c979..a4f8adb 100644
+> > --- a/arch/arm64/kernel/cpufeature.c
+> > +++ b/arch/arm64/kernel/cpufeature.c
+> > @@ -154,9 +154,9 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
+> >  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FCMA_SHIFT, 4, 0),
+> >  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_JSCVT_SHIFT, 4, 0),
+> >  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+> > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_API_SHIFT, 4, 0),
+> > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_API_SHIFT, 4, 0),
+> >  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+> > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_APA_SHIFT, 4, 0),
+> > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_APA_SHIFT, 4, 0),
+> >  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DPB_SHIFT, 4, 0),
+> >  	ARM64_FTR_END,
+> 
+> Hmm. This is a user-visible change and should probably be in its own patch.
+> It also means we will no longer advertise PAC on systems where not all of
+> the cores have "Enhanced PAC"; is that really necessary?
+
+It matters for KVM, since a guest won't expect the enhanced PAC trap if
+the ID registers say it does not have it.
+
+For userspace, the difference is it'll get a SIGILL on the AUT*
+instruction rather than a SIGSEGV when using the result of the AUT*
+instruction.
+
+> Generally we rely on incremental updates to unsigned ID register fields
+> being a superset (i.e. compatible with) the old behaviour. If that's not
+> the case here, then older kernels are broken and we may need new HWCAPs.
+
+In this case, the behaviour isn't a strict superset. Enhanced PAC
+unconditionally changed the behaviour of AUT* (i.e. there's no opt-in
+with a control bit), but it's not clear to me how much this matters for
+userspace.
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
