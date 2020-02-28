@@ -2,84 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DCA91730E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 07:16:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6F7E17311C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 07:34:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=oFS0z/5DxzyCX31Fz4IO80RRlbJv/XX5bLuMwAodJIQ=; b=b/jF9hN+0eQJA3iD681KDUTS23
-	wGa01QkIKATZfraJneJ0+E9t5YeCyGPGxfWhYqv5CVMKp8ZT4TID9lm9vaW0OfB3Zy4Jq5ydDvRox
-	B8sy3U2T0Csc/3sgrHTSdcs/Mgwx8XGTkJN5tg/rXg75gqogBsd4v2Hn2JIeugwQDKn8jlEt+uU2r
-	8ZMw8gNuI1WbFS/1E3+2RL+WSc8JFa8BrExPbAsPQ2/hJDYJ9E+OVOQStY8gLzTzJWJwxV20ESYTP
-	zMor0Fnbp+7L+4+r6/Y8yhvH0e44V9Xe7w/cN++/Jlb6/Mp1WW8tR1qSVJKN9hsHUeysjiWcuPjz2
-	S70WmRIw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=GefegWJ0FTmRrIkKWkafBLDRsCSk3FMRqNf8pbFx/Sg=; b=ja8
+	ZvZ70BVMwv24XAXIs9uuMqvgDuEuDE6zKLCx6dymED34BNSFzM8+z4fMsf4Hjtj+C5dZDQWUgkwzD
+	2rYV+2faYkHnICaVUFvrpuRTkH0UkbOPRiCnyOEqSVJIjDZS7hetbxr12kCbcFvdfUMPA3tx+H+ko
+	CU8LVRdDvA0tCuNYMjrSCKZUsYL69ePf56z6l7zteL7wwUGI8ncD0nS5RcN5qfSpCvU1iG1MzClUE
+	gWTR1VqWB+cQKg0dkeB5tH99rItD9X6n4p9pwF/POiamvm/Ebc1UYyCAAfQDD4BaVZfi6VuH9Ofmz
+	666jpkz1I8OTlHTFrgB50APoqAjE+RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7YwK-0002N7-20; Fri, 28 Feb 2020 06:16:00 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j7ZDe-00081D-Oj; Fri, 28 Feb 2020 06:33:54 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Yv9-0000L4-AW; Fri, 28 Feb 2020 06:14:48 +0000
-Received: by mail-wm1-x344.google.com with SMTP id q9so1916813wmj.5;
- Thu, 27 Feb 2020 22:14:46 -0800 (PST)
+ id 1j7ZDZ-00080t-5Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 06:33:50 +0000
+Received: by mail-wm1-x342.google.com with SMTP id d138so368886wmd.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 22:33:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=K8JeMMhWRctus7267Io0iVJS6S3sXLRQ7sAyYhtTk6U=;
- b=PkDQqn4IfrkR95joYJSIQr1vwu7N4tEy3FTCOgp1MASfZ5B4eX42l22pSHvNDg4VbU
- Aol3iyfGZvpV8jVhb8BUxnoeo5XhB69R9gyJq+1yjs+ss8C7tx7C+vkU5ZNwCODxsF5y
- s4k3V5ilGwWxveBymFNnuY2EgK62sJwV9UCqmW53G3QjtHcw6ltNNQyHdrFl/xmSBmRY
- XbSL6R1tzE+YRAu8WzJJaLi5npTnknfmEnCy/zpf6XbZwskojtSS9rcbtF/AZlz3bCTu
- mi91W/HKUn2PJhK7IWj75/V9Zi7CXnnCCr8Wkk8MHy0Osh7sSbNW0ahbB7uC5PFjhO8Z
- NfLQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=SeId1K9kCYlRnsLVKxSoPARgCfEt06rQxOjVRJ3Mr5E=;
+ b=NoLjISZEbZJcbs87Rx7G7WWPaw+MT4fi1WtnBCwYP2DmP08z5Xcn/nchoK1nq0cV1H
+ vVjqWeg4vfUNfciN9WsasYR2NERcF6PtR1pZNZ07eG8mzQapQxqgOPSosNEfDtVxbN+D
+ jxAV3rZ++0mSFo9NeBoPOXzhS6huJ8XKt3Q3l7BgkRmz1i7rpnGeNOupS5UD9FZXkz8+
+ HeOa+3iRrIPZHH0ecuDHbBK+isWR4o8s36JHgZr++ZC8YBztSJDybfsluVuFmwKJjEJa
+ qF2vx91z5ecGveKSHgKuicFA7/nucp5yfVzBrQVc3E0O4aFUrsV8xFbPCeGA/FU/pF+h
+ L0BA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=K8JeMMhWRctus7267Io0iVJS6S3sXLRQ7sAyYhtTk6U=;
- b=j0gk84PkXHcZBWW5ExiMOmgOP9c4pPWK4WYothWJHjhfADZYdWsk/PMKT2A0eH6K7K
- 1yWxihEs8an6PgFjcK8LjUZb4xaw5ORniBNqyPRTThjFXvvJeAIa4k4CXuIeuxnbr3MY
- c2t5I6/4XUjjXvcluqxkt71RU1ak1635BAIOh1gZhPasiCPX4EwQELtCDh5nRDgWLWdA
- BI3XEbIcD6SaqEjZ02nywOZHVgY63f8IwsZCznS1Q8HG6G+QCII3OHsdjJfT1YTv3O2g
- E799fVr0cYxxWq63xrUFRbs7swnlfDejdqS8OQT3Pq1e2+NQB8bbTcxOaQgtMQsyiVxU
- ewNA==
-X-Gm-Message-State: APjAAAVJoAjIeda4I37KLlNrs+FWpu+9QhYyZ11/eJIee7XBWiFfDpLq
- GHEp33trcvFWBQyRre3RFuc=
-X-Google-Smtp-Source: APXvYqws2FKIOQBYK5QacYbEvACBYX92jzAaAdc8ChQ3XWXBMBbvIC/43wn818U5yWZfpS4kmKMSKg==
-X-Received: by 2002:a1c:7d92:: with SMTP id y140mr2876961wmc.145.1582870485825; 
- Thu, 27 Feb 2020 22:14:45 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id w7sm682554wmi.9.2020.02.27.22.14.44
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 27 Feb 2020 22:14:45 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 4/4] arm64: dts: rockchip: fix compatible property for Radxa
- ROCK Pi N10
-Date: Fri, 28 Feb 2020 07:14:36 +0100
-Message-Id: <20200228061436.13506-4-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200228061436.13506-1-jbx6244@gmail.com>
-References: <20200228061436.13506-1-jbx6244@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=SeId1K9kCYlRnsLVKxSoPARgCfEt06rQxOjVRJ3Mr5E=;
+ b=lnZ+VP2XxJHp28UvF4ffo9ZHWxhlLemZ1F/qsnyV6V8QRLpgAToaeY/dsjubTdZyQ+
+ l6askIcRLktJ9kfnpfKh1EYSVLx3FYBFWK2PgMuOroLWJUrWZ7w3jZVQW9P1EiD8Ubwu
+ oX6h8VylOw9G5PcGa/WFquAXx209K/6prg/RiP/+YYB+TrXacWGPC7oMjvc1OfCPxsuf
+ 79/q4LBcHTi/zrLHc7Bw1WepBGJmJlxvvVRSIPyoQMPcOdYM+p9CNtu5WgxcJSMAmE1r
+ Ua2BHA1Y69okM3P0y3wxR9VdQ7Da0eNtq5gqOI2bsW/lNd8YNLUV73oXRx+52DFNKxBn
+ yR4A==
+X-Gm-Message-State: APjAAAX1TahXgSfce63X0bUTBh9wgsF3boWy3UpHN7f3MswLUSPY2/aC
+ ghwW96owGLShgYTSxNMnS4BkdXkRs1Y=
+X-Google-Smtp-Source: APXvYqy4EfkRJE8J7hWmqNsyE1ryRXoSs7t/mE56wW5Nj7E15Il90UYsdETWqvqSudu/dQMXMilkXA==
+X-Received: by 2002:a1c:7d93:: with SMTP id y141mr3050186wmc.111.1582871626798; 
+ Thu, 27 Feb 2020 22:33:46 -0800 (PST)
+Received: from felia.fritz.box ([2001:16b8:2de2:1300:d9cc:d15b:e13:b06d])
+ by smtp.gmail.com with ESMTPSA id z21sm790118wml.5.2020.02.27.22.33.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 27 Feb 2020 22:33:46 -0800 (PST)
+From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+To: Boris Brezillon <boris.brezillon@bootlin.com>,
+ Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH] MAINTAINERS: adjust to renaming physmap_of_versatile.c
+Date: Fri, 28 Feb 2020 07:33:38 +0100
+Message-Id: <20200228063338.4099-1-lukas.bulwahn@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_221447_358921_7FC21E9F 
-X-CRM114-Status: GOOD (  12.70  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200227_223349_211268_2DF35889 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ provider [lukas.bulwahn[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,48 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Lukas Bulwahn <lukas.bulwahn@gmail.com>, Joe Perches <joe@perches.com>,
+ Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>,
+ Sebastian Duda <sebastian.duda@fau.de>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives this error:
+Commit 6ca15cfa0788 ("mtd: maps: Rename physmap_of_{versatile, gemini}
+into physmap-{versatile, gemini}") renamed physmap_of_versatile.c to
+physmap-versatile.c, but did not adjust the MAINTAINERS entry.
 
-arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dt.yaml: /: compatible:
-['radxa,rockpi-n10', 'rockchip,rk3399pro']
-is not valid under any of the given schemas
+Since then, ./scripts/get_maintainer.pl --self-test complains:
 
-During the review process the binding was changed,
-but the dts file was somehow not updated.
-Fix this error by adding 'vamrs,rk3399pro-vmarc-som' to
-the compatible property.
+  warning: no file matches F: drivers/mtd/maps/physmap_of_versatile.c
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
+Rectify the ARM INTEGRATOR, VERSATILE AND REALVIEW SUPPORT entry and now
+also cover drivers/mtd/maps/physmap-versatile.h while at it.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Co-developed-by: Sebastian Duda <sebastian.duda@fau.de>
+Signed-off-by: Sebastian Duda <sebastian.duda@fau.de>
+Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Boris, please pick or ack this patch.
+applies cleanly on current master and next-20200228
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-index b42f94179..a1783e7f7 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-@@ -13,5 +13,6 @@
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index fcd79fc38928..bbf2108fb9fd 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1294,7 +1294,7 @@ F:	arch/arm/boot/dts/versatile*
+ F:	drivers/clk/versatile/
+ F:	drivers/i2c/busses/i2c-versatile.c
+ F:	drivers/irqchip/irq-versatile-fpga.c
+-F:	drivers/mtd/maps/physmap_of_versatile.c
++F:	drivers/mtd/maps/physmap-versatile.*
+ F:	drivers/power/reset/arm-versatile-reboot.c
+ F:	drivers/soc/versatile/
  
- / {
- 	model = "Radxa ROCK Pi N10";
--	compatible = "radxa,rockpi-n10", "rockchip,rk3399pro";
-+	compatible = "radxa,rockpi-n10", "vamrs,rk3399pro-vmarc-som",
-+		     "rockchip,rk3399pro";
- };
 -- 
-2.11.0
+2.17.1
 
 
 _______________________________________________
