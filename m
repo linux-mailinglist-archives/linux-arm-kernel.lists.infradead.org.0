@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 132E3173756
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:41:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D269173762
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:43:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LaFyzcdxcFQevDfUlqc43VYz5qAF8rSrPOJ/k5m7bWU=; b=q1El2+eqdka/ri
-	gtipyoVSUAdzDA6I4xrKJXvdM8C9nAG7L9VntA4YdqLZzPsMLt8TZVyHRP5+9PJlFJzMZDd3TKrF3
-	0bDd8hS0gkH3zWI9Hfx0vrUWU+zIPpK9WaRbCWB1ugeAg0ssgHzgjNADlWV8qJpg9Wen3BDxrt4lj
-	bPArqWRnfDsb5lILgTh39n9H0uFL4XqlCiGZbcmCWOwHUi7q5ybIZ6TDXYHpbmBBpwS4QOLC1qc72
-	Dxl3kzLOtSAR+5YQbQXY1e7ln53ZvpL9tXKzpk4scjn2Mc1UGKbW1EwW1IxNGjmEXlxHUWeGfBe5I
-	BCl948/wuP0kjGI7zcuA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4hzVhyH0sn28r9trPAyE4AG7D1K3EVgetZEumz0iuYQ=; b=RERUwwgL0ORKMDN/OKg2NKPdP
+	Qy95DCT2fCLpP3Els60fPhPnV9rDBQtdQGr0bd84RQc4sEwwPheNZXOODE4e10akRBee70ZzLqN1d
+	AU6ivJWvsFvNib0QJQ1+QTq0UoKmqV7066Q90x3Jja1jrrausesOdA261qSV5TfsWcXUPXwKrNgZ8
+	mNN8BB/agUPpU4TGjy5CQGJm0QovQoRBH6c6xNCnDKkaYEtBfBPofTPJuMgUwPfdvOijVdyGSa++v
+	refTiiOKBUWV+C77aBRg3Dq5dRlt2xIIGysBineKiLhyX7itsGgE/e2nKHWVjH7Tx6DQokpPsGkxm
+	lJ0aqhYFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7exe-0006zQ-FA; Fri, 28 Feb 2020 12:41:46 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7exS-0006z1-0I
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:41:36 +0000
-Received: by mail-wr1-x441.google.com with SMTP id y17so2791563wrn.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Feb 2020 04:41:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XBS4xJeronFByco7hvqXXCJEpIN3x2l+h2xMS+Qu5VY=;
- b=H32BlYxSp7yeOYKrV+18Kq0+YS+hSAOrzWo3T6WyqnHTkd0LkP8qZjWhS1n5//SwFO
- 7yqusqGjdG8VA3A/7qaHEYn0+6hAzJjGiZP0lNj1456ePdSkYU7BMpxhz6GoBcLHXIwK
- gOzyaCW0Xns5tOdyob4OhuPjbYcfHcOq8e2QURnGhwq0UeBw+sOpJ/73uaprMNuuTXF2
- iLn1W4nYHLZRS1rRnPYzYVj4gQhwMs+x+nlNaP6uYErNFT5JWSv4K6IuZx8CbGFP59Z9
- 7CKW+egRaz8fyaTmNtvzCa3R7Hm0PSt6mS5JhRgXArF0qCOJnOgLCizqVEszVt+wk5Y1
- gojA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=XBS4xJeronFByco7hvqXXCJEpIN3x2l+h2xMS+Qu5VY=;
- b=C6LaLFbaBQvvqdQdCHmuq+9ZexJtI8CfBINHhdvsatFroJx/896chV51F1K6OBstYt
- FnFGa0GMLGNx3YeKIrPHiCEcc5ezy0oruk661Y0fzl3ViSVDTUgJylQ8W6B/5iJCVbbf
- 0TE/1gCzsAs+nkGCISLHbVnMQUEAEO8EQo6KzECOheSqjkff5ZJAvRMeK7Gz2nF8W45c
- XNIJfRyor8d4c+HWc1oq5jSdLJHAlEhR2lC55L2p3C7YK5DKT9qUnS8QMrMU6kvwOmVd
- XMOCdv42Lk590kQoPRCKa3u0dR5nOYBIzFaN12oWFGbKEMQKNZKIJwMPNFci4RTYPJgB
- hbXA==
-X-Gm-Message-State: APjAAAX3y0rcw51OMOQ1qnmjE+JpyECPrSfBTZfRFtwbgrSI+4f0bVoA
- AbaMKvtKDCNhzLFT71LYrYNTNzQRg7tD9K1QBbaumQ==
-X-Google-Smtp-Source: APXvYqycHr5BpR7YsHapDHRDF5PvvknfNJGfaHFydphDQrJgW+V3mYRdB8mumbWLaqIy7fTmjqZ4VZ0ui5GjrBMPKsg=
-X-Received: by 2002:adf:f84a:: with SMTP id d10mr4811332wrq.208.1582893691834; 
- Fri, 28 Feb 2020 04:41:31 -0800 (PST)
+	id 1j7ez1-0007JM-NW; Fri, 28 Feb 2020 12:43:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7eyp-0007Iy-8f; Fri, 28 Feb 2020 12:43:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66E794B2;
+ Fri, 28 Feb 2020 04:42:58 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 229663F7B4;
+ Fri, 28 Feb 2020 04:42:57 -0800 (PST)
+Subject: Re: [PATCH 3/4] dt-bindings: arm: fix Rockchip rk3399-evb bindings
+To: Johan Jonker <jbx6244@gmail.com>, heiko@sntech.de
+References: <20200228061436.13506-1-jbx6244@gmail.com>
+ <20200228061436.13506-3-jbx6244@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
+Date: Fri, 28 Feb 2020 12:42:55 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20200218195842.34156-1-broonie@kernel.org>
- <20200218195842.34156-13-broonie@kernel.org>
-In-Reply-To: <20200218195842.34156-13-broonie@kernel.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 28 Feb 2020 13:41:21 +0100
-Message-ID: <CAKv+Gu9Bt93hCaOUrgtfYWp+BU4gheVf2Y==PXVyMZcCssRLQg@mail.gmail.com>
-Subject: Re: [PATCH 12/18] arm64: kernel: Convert to modern annotations for
- assembly functions
-To: Mark Brown <broonie@kernel.org>
+In-Reply-To: <20200228061436.13506-3-jbx6244@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_044134_108120_AC41F6E3 
-X-CRM114-Status: GOOD (  16.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200228_044259_350218_50C548BD 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,70 +63,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Herbert Xu <herbert@gondor.apana.org.au>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- kvmarm <kvmarm@lists.cs.columbia.edu>, James Morse <james.morse@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
-
-On Tue, 18 Feb 2020 at 21:02, Mark Brown <broonie@kernel.org> wrote:
->
-> In an effort to clarify and simplify the annotation of assembly functions
-> in the kernel new macros have been introduced. These replace ENTRY and
-> ENDPROC and also add a new annotation for static functions which previously
-> had no ENTRY equivalent. Update the annotations in the core kernel code to
-> the new macros.
->
-> Signed-off-by: Mark Brown <broonie@kernel.org>
+On 28/02/2020 6:14 am, Johan Jonker wrote:
+> A test with the command below gives this error:
+> 
+> arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: /: compatible:
+> ['rockchip,rk3399-evb', 'rockchip,rk3399', 'google,rk3399evb-rev2']
+> is not valid under any of the given schemas
+> 
+> Fix this error by adding 'google,rk3399evb-rev2' to the compatible
+> property in rockchip.yaml
+> 
+> make ARCH=arm64 dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/rockchip.yaml
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 > ---
->  arch/arm64/kernel/cpu-reset.S                 |  4 +-
->  arch/arm64/kernel/efi-entry.S                 |  4 +-
->  arch/arm64/kernel/efi-rt-wrapper.S            |  4 +-
->  arch/arm64/kernel/entry-fpsimd.S              | 20 ++++-----
->  arch/arm64/kernel/hibernate-asm.S             | 16 +++----
->  arch/arm64/kernel/hyp-stub.S                  | 20 ++++-----
->  arch/arm64/kernel/probes/kprobes_trampoline.S |  4 +-
->  arch/arm64/kernel/reloc_test_syms.S           | 44 +++++++++----------
->  arch/arm64/kernel/relocate_kernel.S           |  4 +-
->  arch/arm64/kernel/sleep.S                     | 12 ++---
->  arch/arm64/kernel/smccc-call.S                |  8 ++--
->  11 files changed, 70 insertions(+), 70 deletions(-)
->
-...
-> diff --git a/arch/arm64/kernel/efi-entry.S b/arch/arm64/kernel/efi-entry.S
-> index 304d5b02ca67..de6ced92950e 100644
-> --- a/arch/arm64/kernel/efi-entry.S
-> +++ b/arch/arm64/kernel/efi-entry.S
-> @@ -25,7 +25,7 @@
->          * we want to be. The kernel image wants to be placed at TEXT_OFFSET
->          * from start of RAM.
->          */
-> -ENTRY(entry)
-> +SYM_CODE_START(entry)
->         /*
->          * Create a stack frame to save FP/LR with extra space
->          * for image_addr variable passed to efi_entry().
-> @@ -117,4 +117,4 @@ efi_load_fail:
->         ret
->
->  entry_end:
-> -ENDPROC(entry)
-> +SYM_CODE_END(entry)
+>   Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
+>   1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> index d303790f5..6c6e8273e 100644
+> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> @@ -509,6 +509,7 @@ properties:
+>           items:
+>             - const: rockchip,rk3399-evb
+>             - const: rockchip,rk3399
+> +          - const: google,rk3399evb-rev2
 
-This hunk is going to conflict badly with the EFI tree. I will
-incorporate this change for v5.7, so could you please just drop it
-from this patch?
+This looks wrong - the board can't reasonably be a *more* general match 
+than the SoC. If this is supposed to represent a specific variant of the 
+basic EVB design then it should come before "rockchip,rk3399-evb" (and 
+possibly be optional if other variants also exist).
+
+Robin.
+
+>   
+>         - description: Rockchip RK3399 Sapphire standalone
+>           items:
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
