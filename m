@@ -2,89 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD218173798
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:50:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E56771737AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:53:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=udFL0rFuB682Z0T80TkTvy95G0g0GHq0E5EbZeXRsWs=; b=gmBqampCTTr0Kn
-	UvcqDyhsxmWNTnCfee3up1qomjNwsZqkNiJIzx1aOiWghAe9E02Pz4dNUI2kECI+RFViySBQD+Fku
-	VVqhEX98OERwYSDQ/uUZA3ep8uPTozVScTufcIoUhy4sfyAtfSZt09OhPEXHh47rRZU8oR+SYIz/o
-	lak1mcBLkoXw73e+WNAFX6ukUpWjlxImasWUvAsm+jVSTdZLXoFxdsy/pwYmk1/DVn4X5IgW2wIvW
-	elzHH4V8wLsXJ31APMqj9ucre7zo4lzgHMkr5BIpG052K6I2kamh1muhMhNbsMo/ACKqSnAYKN3U3
-	n/OrUKYvSZdFXgIYDnUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=juEFp0FVnaoLh8jSuyQqHHZIUPz4J1jKD+EM7iVoiss=; b=nsCpqCRVnvXPq4
+	b1uFYHnJV6tfXHfv4wnpbUct0W+CKGthEzdbEvMzhcEBaXZGPAiNwQYdm/Hi0VYveT2UddMv9c4pW
+	eko9S3mDj5e0WvEQWNYjVaz15a8i89xO1Vfz4pYytsNouxT6IvrcxdvzQw3xpcDV4uw7ZWGAjxXVO
+	mHJddjnr0kWphjDpWD3sf21hgQm9luXlu07k6CvmJRp8/R2qyuHyrEV37fIIjozhkvHWnuk0EUT6h
+	HV1jWNz8LunG0mWtLY73Zj5iikm5xhgAUmqOOxtPFTAXNA9znNhrFZvwj7SiJckErsXk8NtozhcxT
+	6aqZqj9bTSgxfaNOsYkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7f65-00032N-7i; Fri, 28 Feb 2020 12:50:29 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1j7f8S-0003fg-NE; Fri, 28 Feb 2020 12:52:56 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7f5s-00030v-Kw; Fri, 28 Feb 2020 12:50:18 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m3so3086483wmi.0;
- Fri, 28 Feb 2020 04:50:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7SOOFR5A8cRXpbsPD4NmdfCkYNnaGr0VzqHcY4iP4Ns=;
- b=hRPTW2ULNhZjOA7emZQEEesi0PP78D2LjuQEDDCKuOSmhH2h3dXr/i2KP0Eh5ZDEQY
- Sl8/xquqjPHT2muExLEDXse/D/C+AgxqOUQjBLddCYYebubu6P0yxK2KUCoxir6gVHlt
- a9chrqRrjWXfXXbAKNMM0JZleYqutB3bgwhdSx/4msoeVSXCjvdn8j7lgq8tlFcJBGNj
- zt8hAewJ71Rprux8EA3g0UshuptOIRaucJsW6wAX/ypcH8Q99Jb8vdhwZj/HLpCH6IbN
- j+BXJQeoMzI17eqjjAG64da++fJXdaXh3MWCVKsQM2khOkO/Oym4aoYRNDtwh3syYwAG
- WxLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=7SOOFR5A8cRXpbsPD4NmdfCkYNnaGr0VzqHcY4iP4Ns=;
- b=Xuue1aDbFKoxYiu2JoD2iJ7Kyfki3p7x5T+0tAPQ5iXngmEdBuWp3b0XhgqR7RrXxe
- oBIhyOtq6M7AMfEotghGsoWvlJBXRkrPUlri2AwMvtPNRfcHppV8KbaPdRxHIQpMrHCV
- 3K4BoLNDNHXcGT6ppBaV/sPVikae0/8+9u8++lb3aTeoHpKAQRzwSBsX5e75KpcZeXzo
- HE2zpHviSUl+rX1Qd0k4kb7hMKou9ai4pbPA+e+LWMuf80tE+BT5SGM08+MPhWywcis5
- uN2HcrWhRc4yFDByGaWryGbAtJ9JbQWKrogFD2NMYAxDK7Jz3Zc0KAcNK0E/T1rF9L+8
- eRdw==
-X-Gm-Message-State: APjAAAWujDqNYBXFwzVrZvtpLkqN/uWm/yVZv2WZSzrtA66qOeyplJ2b
- ixqKhyEdQ0FkQrxZLg8NzJ5pq7Wd
-X-Google-Smtp-Source: APXvYqyh7/fg3k/2U7H+2hUIEb3j1cDGCqO8ryTnH0ZUxrE0DmK4Gl1qwlanUJWAfh9jNCS7V8A/dA==
-X-Received: by 2002:a05:600c:251:: with SMTP id
- 17mr4687252wmj.59.1582894214215; 
- Fri, 28 Feb 2020 04:50:14 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id c9sm12549852wrq.44.2020.02.28.04.50.13
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 28 Feb 2020 04:50:13 -0800 (PST)
-Subject: Re: [PATCH 1/4] dt-bindings: arm: fix Rockchip Kylin board bindings
-To: Robin Murphy <robin.murphy@arm.com>, heiko@sntech.de
-References: <20200228061436.13506-1-jbx6244@gmail.com>
- <73b41bd1-01e9-6af8-afc8-b1a96614d026@arm.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <5d47cf5f-9ac4-cff4-340b-a2518a508738@gmail.com>
-Date: Fri, 28 Feb 2020 13:50:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j7f7z-0003OR-AD
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:52:28 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01SChAOl021775; Fri, 28 Feb 2020 13:52:14 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=pdyoSinecCTRleqbm1e/zsaS5ECX7SBiHqeQex88KWk=;
+ b=u2+4KFVmc6kw/xisTp9I63CnA7GOzSz9USqQiwaD8nrbuf2mLz2Sc7X09MYRIcwFKxy6
+ rhQy5mH329Y4FS/O1+zXmS5MIsg7C8g8YZWf0yddqU6IxbvHrdq/uZGGwqVMo8ah44NU
+ ZWwVH9bNyFuPbJCXtS1pqDhlANfGCIy0x9ZgxiTra4NM4/yIYj3O/jJg4DCFyfzlZDTB
+ ZOQJXx/w+xjSIOnJfS6GfoDsXmO0ZyHHzoHL46vgqIrJUKEdIY7/fT+KXxyKN2yqtPW+
+ c73gN2ceofJmVrGDF7F5r5tdiD6oze5ZtVDHfzF1JTIwS95T2IkLJdQjSVyuF5UHT6mV 7g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yepvtbyg6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 28 Feb 2020 13:52:14 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 46C02100039;
+ Fri, 28 Feb 2020 13:52:10 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 386D42BAEDD;
+ Fri, 28 Feb 2020 13:52:10 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 28 Feb 2020 13:52:09
+ +0100
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
+ <robh+dt@kernel.org>
+Subject: [PATCH] ARM: dts: stm32: Do clean up in stmpic nodes
+Date: Fri, 28 Feb 2020 13:52:04 +0100
+Message-ID: <20200228125205.8126-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-In-Reply-To: <73b41bd1-01e9-6af8-afc8-b1a96614d026@arm.com>
-Content-Language: en-US
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-28_04:2020-02-26,
+ 2020-02-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_045016_692969_0A0CEE8F 
-X-CRM114-Status: GOOD (  15.50  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200228_045227_638884_B38956E1 
+X-CRM114-Status: GOOD (  11.89  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,45 +93,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMi8yOC8yMCAxOjM1IFBNLCBSb2JpbiBNdXJwaHkgd3JvdGU6Cj4gT24gMjgvMDIvMjAyMCA2
-OjE0IGFtLCBKb2hhbiBKb25rZXIgd3JvdGU6Cj4+IEEgdGVzdCB3aXRoIHRoZSBjb21tYW5kIGJl
-bG93IGdpdmVzIHRoaXMgZXJyb3I6Cj4+Cj4+IGFyY2gvYXJtL2Jvb3QvZHRzL3JrMzAzNi1reWxp
-bi5kdC55YW1sOiAvOiBjb21wYXRpYmxlOgo+PiBbJ3JvY2tjaGlwLHJrMzAzNi1reWxpbicsICdy
-b2NrY2hpcCxyazMwMzYnXQo+PiBpcyBub3QgdmFsaWQgdW5kZXIgYW55IG9mIHRoZSBnaXZlbiBz
-Y2hlbWFzCj4+Cj4+IEZpeCB0aGlzIGVycm9yIGJ5IGNoYW5naW5nICdyb2NrY2hpcCxreWxpbi1y
-azMwMzYnIHRvCj4+ICdyb2NrY2hpcCxyazMwMzYta3lsaW4nIGluIHJvY2tjaGlwLnlhbWwuCj4g
-CgoKPiBBbHRob3VnaCBJIGNhbiBndWVzcywgaXQgbWlnaHQgYmUgd29ydGggYSBub3RlIHRvIGV4
-cGxhaW4gd2h5IGl0J3MgdGhlCj4gYmluZGluZyByYXRoZXIgdGhhbiB0aGUgRFRTIHRoYXQgZ2V0
-cyBjaGFuZ2VkIGhlcmUuCgpIaSBSb2JpbiwKCk15IGd1ZXNzIGlzIHRoYXQgZ2l2ZW4gYSBsb29r
-IGF0IHRoZSBvdGhlciBib2FyZHMgdGhlIHByb2Nlc3NvciBuYW1lCmNvbWVzIGZpcnN0IGFuZCB0
-aGVuIHRoZSBib2FyZCBuYW1lLCBzbyBJIGNoYW5nZWQgaXQgaW4gcm9ja2NoaXAueWFtbC4KQnV0
-IG1heWJlIEhlaWtvIGNhbiBiZXR0ZXIgZXhwbGFpbiB3aGF0IHRoZSBuYW1pbmcgY29uc2Vuc3Vz
-IGluIHRoZSBwYXN0Cndhcy4KCktpbmQgcmVnYXJkcywKCkpvaGFuCgo+IAo+IFJvYmluLgo+IAo+
-PiBtYWtlIEFSQ0g9YXJtIGR0YnNfY2hlY2sKPj4gRFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50YXRp
-b24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcm9ja2NoaXAueWFtbAo+Pgo+PiBTaWduZWQtb2Zm
-LWJ5OiBKb2hhbiBKb25rZXIgPGpieDYyNDRAZ21haWwuY29tPgo+PiAtLS0KPj4gwqAgRG9jdW1l
-bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9yb2NrY2hpcC55YW1sIHwgMiArLQo+PiDC
-oCAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKPj4KPj4gZGlm
-ZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcm9ja2NoaXAu
-eWFtbAo+PiBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcm9ja2NoaXAu
-eWFtbAo+PiBpbmRleCA4NzRiMGVhYTIuLjIwMzE1ODAzOCAxMDA2NDQKPj4gLS0tIGEvRG9jdW1l
-bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9yb2NrY2hpcC55YW1sCj4+ICsrKyBiL0Rv
-Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcm9ja2NoaXAueWFtbAo+PiBAQCAt
-NDQzLDcgKzQ0Myw3IEBAIHByb3BlcnRpZXM6Cj4+IMKgIMKgwqDCoMKgwqDCoMKgIC0gZGVzY3Jp
-cHRpb246IFJvY2tjaGlwIEt5bGluCj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBpdGVtczoKPj4gLcKg
-wqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiByb2NrY2hpcCxreWxpbi1yazMwMzYKPj4gK8KgwqDC
-oMKgwqDCoMKgwqDCoCAtIGNvbnN0OiByb2NrY2hpcCxyazMwMzYta3lsaW4KPj4gwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCAtIGNvbnN0OiByb2NrY2hpcCxyazMwMzYKPj4gwqAgwqDCoMKgwqDCoMKg
-wqAgLSBkZXNjcmlwdGlvbjogUm9ja2NoaXAgUFgzIEV2YWx1YXRpb24gYm9hcmQKPj4KCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+Remove unused properties from stpmic node.
+The issues have been detected by running dtbs_check.
+
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
+ arch/arm/boot/dts/stm32mp157a-avenger96.dts | 8 --------
+ arch/arm/boot/dts/stm32mp157c-ed1.dts       | 3 ---
+ arch/arm/boot/dts/stm32mp15xx-dkx.dtsi      | 3 ---
+ 3 files changed, 14 deletions(-)
+
+diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+index cbfa4075907e..1583be1966eb 100644
+--- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
++++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+@@ -135,10 +135,6 @@
+ 		#interrupt-cells = <2>;
+ 		status = "okay";
+ 
+-		st,main-control-register = <0x04>;
+-		st,vin-control-register = <0xc0>;
+-		st,usb-control-register = <0x30>;
+-
+ 		regulators {
+ 			compatible = "st,stpmic1-regulators";
+ 
+@@ -173,7 +169,6 @@
+ 				regulator-min-microvolt = <3300000>;
+ 				regulator-max-microvolt = <3300000>;
+ 				regulator-always-on;
+-				st,mask_reset;
+ 				regulator-initial-mode = <0>;
+ 				regulator-over-current-protection;
+ 			};
+@@ -213,8 +208,6 @@
+ 
+ 			vdd_usb: ldo4 {
+ 				regulator-name = "vdd_usb";
+-				regulator-min-microvolt = <3300000>;
+-				regulator-max-microvolt = <3300000>;
+ 				interrupts = <IT_CURLIM_LDO4 0>;
+ 				interrupt-parent = <&pmic>;
+ 			};
+@@ -240,7 +233,6 @@
+ 			vref_ddr: vref_ddr {
+ 				regulator-name = "vref_ddr";
+ 				regulator-always-on;
+-				regulator-over-current-protection;
+ 			};
+ 
+ 			bst_out: boost {
+diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+index 1fc43251d697..0c304a024e51 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+@@ -218,8 +218,6 @@
+ 
+ 			vdd_usb: ldo4 {
+ 				regulator-name = "vdd_usb";
+-				regulator-min-microvolt = <3300000>;
+-				regulator-max-microvolt = <3300000>;
+ 				interrupts = <IT_CURLIM_LDO4 0>;
+ 			};
+ 
+@@ -241,7 +239,6 @@
+ 			vref_ddr: vref_ddr {
+ 				regulator-name = "vref_ddr";
+ 				regulator-always-on;
+-				regulator-over-current-protection;
+ 			};
+ 
+ 			bst_out: boost {
+diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+index f6672e87aef3..e50ae7faa0ec 100644
+--- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+@@ -304,8 +304,6 @@
+ 
+ 			vdd_usb: ldo4 {
+ 				regulator-name = "vdd_usb";
+-				regulator-min-microvolt = <3300000>;
+-				regulator-max-microvolt = <3300000>;
+ 				interrupts = <IT_CURLIM_LDO4 0>;
+ 			};
+ 
+@@ -328,7 +326,6 @@
+ 			vref_ddr: vref_ddr {
+ 				regulator-name = "vref_ddr";
+ 				regulator-always-on;
+-				regulator-over-current-protection;
+ 			};
+ 
+ 			 bst_out: boost {
+-- 
+2.15.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
