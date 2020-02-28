@@ -2,90 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AD6617327D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:13:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2F73173289
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:15:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZb9IJhQ40fskAb9CaBHXWFe8ZVKFvd74k947uEjFmI=; b=XtAjVDBe/6I9Ay
-	R6JBG0svU2tieYIqH6BwNBYNIWR/O/4fOIWit8fFHz9XGYX75+2M9vEkq3jdGCKho9YnJcv3rgFbN
-	Uqbfpd/QZgoy3P8QljznF6ramccSJVQKncREW2qPKZPrVLYYcFyFEIXqm/Yxq3Qgm7/VhjYlEdR/F
-	6+fEYT//60vJz4kNFfzxURRFbar+B5CyxTBjLivxCyl9Y1X1QZ+OrWNAHvWXMm2mt52gUiQY9XzPS
-	Z6MVK8lvLyPLFwUS6Jt5E9XhnqARpHZbBamajgDwijcecQVkFK8fw4ruGDWDQRnx60UjCO+yisJGH
-	gZsQvS7f0osVaVcz6eAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fv+DwsvzBiXsAsAyXFSSuk6ELyN1v1Ms+hZDvLDlgU0=; b=dwlNADeA7KfXYQ
+	Qp3sXNF3XKhoC0ylhcNOpuPP6QmsNk242pxVACiIRMU0ns7AYO8oW2qIC65JcPKs5qUDfpCke1v63
+	8dULoceY1bFBQF3CboDO6cPHoGI4w0tcVlEnZ1w8zS5VDBwZZL08ggcH33V1CkNmUDOhxnTiDxXxg
+	YZsPUqqRSNerE7XFLsm9zll3FQ2OyFQNbd6SnTBnyFqwh8W6h2ifURnOIcG8QFjRcW5l5nJjUrEgJ
+	eUFUcVyx5QX/MWxa6gnkgMK6IezgsavAEauJ4OMCUvbsk6jfVMoIiA4AyO4gh8yrrXt9PZxV1WqHv
+	wSn3muA08/ge+wZ1JA4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7am7-0002Kj-LO; Fri, 28 Feb 2020 08:13:35 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1j7anu-00044y-Pl; Fri, 28 Feb 2020 08:15:26 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7alt-0002Js-Ju
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 08:13:22 +0000
-Received: by mail-pf1-x441.google.com with SMTP id p14so1332513pfn.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Feb 2020 00:13:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1XeAZdDEEMWPSRFSSrigFDHZjIaWywrJrDOcCv/SctI=;
- b=BclSCGD/+Gp7pLCK+Yfq+IH0orWklytTcUNiFna90KwERemW3y0lq2SFGwBTScn/ZR
- SOnMFpFra//MK4i1yP2XSWxhSB0AmtyVADIvnaixDjHOEilFGfAtxn96llpXGSu9w6x9
- cnYc7x7sgEcbB4wEdoWPyc1hRhVj/x1T1b7yJp/3L1qebJXpWiZZcerMA4aKUSTSJzOu
- +EJL716Ez9KnsOA3AUIXTOEjEYftKhDFAE4pxRa3OfvNhxlaMqYrOmYwyXYyNJdP0BwU
- JH+Jb4ugNll/M3AjCQdCwSJWKoNoHs8e/biyVduULpYiHq+u7xkE0FG316miHyBgMLPu
- 3vmg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=1XeAZdDEEMWPSRFSSrigFDHZjIaWywrJrDOcCv/SctI=;
- b=eScpiLvpcKEhXiSSs9LCh3RE9z7yj/34+LiwkZcALsdnAZjbQh2l0ug5TWJQwkR4Fh
- fFNm70r0NiwAi/tYI6BeaMResveU1PITsI6sgkyrWAYthEc5AyFT0CgtzIVN56ar/crG
- BTnmbuh2cvT37aDjvvs57oha5cauewXCOpn0STrvTEP/Hw7IJWf4xtAxmGyJKrJcgoym
- yweEhHPl01JmVx1F7bPmx+0ut9R/dBQdW76Tz6iK1u6L4uRaG23E7uRbVtxpQhXTPnLg
- cehJ6Veun0+1Vig7LCaDPQXwjLYVeXg8n+/hVj8UrjsQZ4QQsTMgh+kktaikGeBfuEME
- vYWQ==
-X-Gm-Message-State: APjAAAVJc0QVktd7F3l0GZ5aTjmK+eyvxOi0JTPVHqzZHNHhdDSTZlQY
- t/uQNIkrM9jjK14uSpPqJew=
-X-Google-Smtp-Source: APXvYqwaScFWt2pSZw8deGePN2rW5lckHptMxbrEKDdWitX5+l+202jKgzn654xFzxvUIwznQHDJHQ==
-X-Received: by 2002:aa7:93a6:: with SMTP id x6mr3341479pff.72.1582877599463;
- Fri, 28 Feb 2020 00:13:19 -0800 (PST)
-Received: from taoren-ubuntuvm (c-24-4-25-55.hsd1.ca.comcast.net. [24.4.25.55])
- by smtp.gmail.com with ESMTPSA id c18sm8717917pgw.17.2020.02.28.00.13.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 28 Feb 2020 00:13:19 -0800 (PST)
-Date: Fri, 28 Feb 2020 00:13:11 -0800
-From: Tao Ren <rentao.bupt@gmail.com>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [PATCH v5 7/7] dt-bindings: usb: add documentation for aspeed
- usb-vhub
-Message-ID: <20200228081309.GA4531@taoren-ubuntuvm>
-References: <20200227230507.8682-1-rentao.bupt@gmail.com>
- <20200227230507.8682-8-rentao.bupt@gmail.com>
- <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
- <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
- <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
+ id 1j7ani-00043d-6r; Fri, 28 Feb 2020 08:15:15 +0000
+X-UUID: ebddc7550f1b41b1ae5fb2889b4da2b2-20200228
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=HJb7/ljUwWmTqEm0PtuCt0NNxaTQhjqapiKPaumq4IQ=; 
+ b=b+FFx+LQHRXmEocD7j6j4I5o3OiViKZWmbVsJY9el57SfPWLuadhS+LqiRoCMUdFXRPDskHllwJhEt1nU6mfeEp0Ut9S7TQ7rMmzMzqAbiC63k3Q0CYPosn2cBpFgFEjzIE9FmIfoo34F7Iff3yEmuIQuEPxZxkvViiH4EROlSg=;
+X-UUID: ebddc7550f1b41b1ae5fb2889b4da2b2-20200228
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <jitao.shi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2115350977; Fri, 28 Feb 2020 00:15:09 -0800
+Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Feb 2020 00:15:50 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N1.mediatek.inc
+ (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 28 Feb 2020 16:13:43 +0800
+Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
+ MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
+ 15.0.1395.4 via Frontend Transport; Fri, 28 Feb 2020 16:15:15 +0800
+From: Jitao Shi <jitao.shi@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH v11 0/6] mt8183 dpi supports dual edge and pin mode swap
+Date: Fri, 28 Feb 2020 16:14:35 +0800
+Message-ID: <20200228081441.88179-1-jitao.shi@mediatek.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-SNTS-SMTP: 61F0E04492248071CB26136A797564F618AC50112BA468E9070C92A6B70DEFD72000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_001321_682007_8E634992 
-X-CRM114-Status: GOOD (  19.82  )
+X-CRM114-CacheID: sfid-20200228_001514_265185_3DE7EED7 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rentao.bupt[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,58 +89,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
- linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
- Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- Joel Stanley <joel@jms.id.au>, taoren@fb.com,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
+ srv_heupstream@mediatek.com, huijuan.xie@mediatek.com, stonea168@163.com,
+ cawa.cheng@mediatek.com, linux-mediatek@lists.infradead.org,
+ bibby.hsieh@mediatek.com, ck.hu@mediatek.com, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 02:02:28PM +1100, Benjamin Herrenschmidt wrote:
-> On Thu, 2020-02-27 at 17:05 -0800, Tao Ren wrote:
-> > > Also long run I think best is going to have a child node per downstream
-> > > port, so we create a matching linux struct device. This will make it
-> > > easier to deal with the other device-controller in the ast2600 which is
-> > > basically one of these without a vhub above it.
-> > 
-> > Maybe a dumb question: what would be the proper place to parse the child
-> > node/properties when they are added? For example, in some usb_gadget_ops
-> > callback?
-> 
-> No. What the vhub would do is when it probes, it creates a platform
-> device for each "port" child node that's linked to the DT node.
-> 
-> The driver for the device then attaches to it via standard DT matching
-> and checks if it has a vhub parent or not, and based on that, operates
-> as a vhub child device or a standalone one.
-> 
-> (For example, it might have different functions for EP selection since
-> standalone devices have private EPs rather than a shared pool)
-> 
-> They can both be in the same module or they can be separate modules
-> with cross dependencies.
-> 
-> Cheers,
-> Ben.
+Change since v10:
+ - convert the Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+   to yaml format.
+ - read the pclk-sample in endpoint.
 
-I see. It's to describe these downstream devices (such as configurations
-and according functions) in device tree, which is similar to defining a
-composite device and linking functions/interfaces via configfs. Thanks for
-the clarify.
+Changes since v9:
+ - rename pinctrl-names = "gpiomode", "dpimode" to "active", "idle".
+ - fix some typo.
 
+Changes since v8:
+ - drop pclk-sample redefine in mediatek,dpi.txt
+ - only get the gpiomode and dpimode when dpi->pinctrl is successful.
 
-Cheers,
+Changes since v7:
+ - separate dt-bindings to independent patches.
+ - move dpi dual edge to one patch.
 
-Tao
+Changes since v6:
+ - change dual_edge to pclk-sample
+ - remove dpi_pin_mode_swap and
 
+Changes since v5:
+ - fine tune the dt-bindings commit message.
+
+Changes since v4:
+ - move pin mode control and dual edge control to deveice tree.
+ - update dt-bindings document for pin mode swap and dual edge control.
+
+Changes since v3:
+ - add dpi pin mode control when dpi on or off.
+ - update dpi dual edge comment.
+
+Changes since v2:
+ - update dt-bindings document for mt8183 dpi.
+ - separate dual edge modfication as independent patch.
+
+Jitao Shi (6):
+  dt-bindings: media: add pclk-sample dual edge property
+  dt-bindings: display: mediatek: control dpi pins mode to avoid leakage
+  dt-bindings: display: mediatek: dpi sample data in dual edge support
+  dt-bindings: display: mediatek: convert the document format from txt
+    to yaml
+  drm/mediatek: dpi sample mode support
+  drm/mediatek: set dpi pin mode to gpio low to avoid leakage current
+
+ .../display/mediatek/mediatek,dpi.txt         |  36 -------
+ .../display/mediatek/mediatek,dpi.yaml        | 100 ++++++++++++++++++
+ .../bindings/media/video-interfaces.txt       |   4 +-
+ drivers/gpu/drm/mediatek/mtk_dpi.c            |  58 +++++++++-
+ 4 files changed, 158 insertions(+), 40 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+ create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+
+-- 
+2.21.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
