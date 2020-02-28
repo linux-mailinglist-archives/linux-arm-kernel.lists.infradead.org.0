@@ -2,89 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EBCE1737AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:52:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C6341737FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 14:10:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gkbqttRiTpxIaVzCDnrsNjscLZnGp0mTQaQFvPDjOKU=; b=eN3FMB4FZX4Qr9
-	0B0i8caL5j4muzWicga9bMWSXVSgoS6/95K19pAD8U8cVqVNiM4mpXR8AQ9R7mOempDOIO3IdFb0C
-	nK4N3mY5Zfb4loVr79V1qoI7qKmdbGq45u9spnNBHeB9+SMb/i6RcFInrBEwKmT0tWhYThD68q4Pj
-	QVhkQ+IPAX5qieWXjxH3vTCYhcJxMOhR01iPe1OJM9IuaS+3CmlXiOsTBnzRbHZ687pBSmc97Dc7B
-	KFdTnki8u+hbtoXTuXYEFM1eBkQ1O8rILvgh/a5V24oy35u2n/0ReT6qK3qCuSygU8drAZz4IXRKq
-	QXYU2fY6/0RYCGPw6adw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=I5u6N86h7407cPZbQA+dYXkYuqLcBNve5xHltqbTQj8=; b=YsdeuB2EiGAwfzFqC2El9EC4J
+	WNuQyMYygA/6FZfzzI0gLNR8OLrZGOFvbrVy+6NtHc4HLAkxrLc5+yDl6b8pIvZ8srT8S6HU3lz3L
+	/KuZynEXAWu8DXbx3cdQHPi3p4GrXAGfjZDLM9h3jCYZaHJjF+7No8dNNgSFMpe7R92q/SyBd7mv0
+	NlW8T1DFTVN7qWpHpIScaAptj5/K6UFlkaQDTwClHxY9bO1UT22yGXujk4iQcrlTWzVpcuE7+cDhg
+	0C38O2NHhorOpG+sh16KWLUCU+ymfKNnr9ZHF3rhKD+gzMQYbddLA1GOVi4FB6w4UfCGkm2VWo7/u
+	Mv2cAA8bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7f8C-0003Pp-BF; Fri, 28 Feb 2020 12:52:40 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1j7fPI-0001qT-4Y; Fri, 28 Feb 2020 13:10:20 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7f7x-0003OS-Dh
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:52:27 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01SChAOm021775; Fri, 28 Feb 2020 13:52:15 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=yrQgPlGNcsd3SNy+rWiVt1Cll54CgcO3EV2Kn8KU8q0=;
- b=JWlbeBkvOvlSWTdVqbrG+BguMFrQ8qPYDcbU0P4dRMxrE6PjBTOK2eAv2+qZv1fQvlBC
- akmq8WkiOAVHzmoOnwe3Gbz9DmDCaCVPiXho1SrbTGSeV6KpVZqgcWwVISPEqr27zDtc
- dKMSDvKUNiOFeguSgFwD9qQkfLi1U/c2L7PShRwVVNH8D7KO69PXbhi2ZNROQO+KPByd
- xtvmf5XHD8PIoZZU5BYt6Y0DkAwwXD5xOukX4eGClDAL83qBLBU18KR1vjhoWHv6rYp5
- aveyWH0Z7tVKHGFZTAzIMHVr0EiLJe66nyTcCpNOjMY65rqZLQa617hB0Mv/XnaKv9Yg JA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yepvtbyg7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 28 Feb 2020 13:52:15 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CB88C10003A;
- Fri, 28 Feb 2020 13:52:10 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BDDD72BAEDD;
- Fri, 28 Feb 2020 13:52:10 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 28 Feb 2020 13:52:10
- +0100
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
- <robh+dt@kernel.org>
-Subject: [PATCH] ARM: dts: stm32: Rename stmfx node names
-Date: Fri, 28 Feb 2020 13:52:05 +0100
-Message-ID: <20200228125205.8126-2-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
-In-Reply-To: <20200228125205.8126-1-benjamin.gaignard@st.com>
-References: <20200228125205.8126-1-benjamin.gaignard@st.com>
+ id 1j7fP5-00015T-4Z; Fri, 28 Feb 2020 13:10:09 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 9B753AD14;
+ Fri, 28 Feb 2020 13:10:02 +0000 (UTC)
+Message-ID: <b71f1af17d68ee66a2781a694e8a77dcafedd76b.camel@suse.de>
+Subject: Re: vc4 on rpi3 A+
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Sergey Suloev <ssuloev@orpaltech.com>, 
+ linux-rpi-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+Date: Fri, 28 Feb 2020 14:09:59 +0100
+In-Reply-To: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
+References: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-28_04:2020-02-26,
- 2020-02-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_045225_906409_FE3BF8DB 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200228_051007_495272_7C1640AB 
+X-CRM114-Status: GOOD (  17.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,62 +62,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Noralf =?ISO-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============2615522801503814539=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rename stmfx node names according to yaml description.
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- arch/arm/boot/dts/stm32746g-eval.dts  | 2 +-
- arch/arm/boot/dts/stm32mp157c-ev1.dts | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
+--===============2615522801503814539==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-iHP+2GMv7hO7VSi+MOY4"
 
-diff --git a/arch/arm/boot/dts/stm32746g-eval.dts b/arch/arm/boot/dts/stm32746g-eval.dts
-index fcc804e3c158..4ea3f98dd275 100644
---- a/arch/arm/boot/dts/stm32746g-eval.dts
-+++ b/arch/arm/boot/dts/stm32746g-eval.dts
-@@ -165,7 +165,7 @@
- 		interrupts = <8 IRQ_TYPE_EDGE_RISING>;
- 		interrupt-parent = <&gpioi>;
- 
--		stmfx_pinctrl: stmfx-pin-controller {
-+		stmfx_pinctrl: pinctrl {
- 			compatible = "st,stmfx-0300-pinctrl";
- 			gpio-controller;
- 			#gpio-cells = <2>;
-diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-index 228e35e16884..3f4668a43afe 100644
---- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
-+++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
-@@ -210,7 +210,7 @@
- 		interrupt-parent = <&gpioi>;
- 		vdd-supply = <&v3v3>;
- 
--		stmfx_pinctrl: stmfx-pin-controller {
-+		stmfx_pinctrl: pinctrl {
- 			compatible = "st,stmfx-0300-pinctrl";
- 			gpio-controller;
- 			#gpio-cells = <2>;
-@@ -218,7 +218,7 @@
- 			#interrupt-cells = <2>;
- 			gpio-ranges = <&stmfx_pinctrl 0 0 24>;
- 
--			joystick_pins: joystick {
-+			joystick_pins: joystick-pins {
- 				pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
- 				bias-pull-down;
- 			};
--- 
-2.15.0
 
+--=-iHP+2GMv7hO7VSi+MOY4
+Content-Type: multipart/mixed; boundary="=-xARFLKywRE19QhV/jOVz"
+
+
+--=-xARFLKywRE19QhV/jOVz
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Sergey,
+
+On Thu, 2020-02-20 at 11:21 +0300, Sergey Suloev wrote:
+> Hello, guys,
+>=20
+> could anyone clarify the status of vc4 drm support on RPI 3A+ ?
+>=20
+> I tried to build kernel 5.5 and 5.6-rc2 in 32bit and aarch64=20
+> configurations with VC4 turned ON but both unsuccessful - vc4 drm driver=
+=20
+> is listed in memory but not working and not producing any typical DRM=20
+> log output.
+
+I managed to get my hands on a rpi3a+ and reproduce the issue. 'dmesg -lerr=
+'
+outputs this:
+
+	bcm2835-power: Timeout waiting for grafx power OK
+
+This is a known issue, see https://github.com/raspberrypi/linux/issues/3046=
+.
+I attached a device-tree patch in case you want to verify it fixes the issu=
+e on
+your board.
+
+@Stefan I guess I'm going to have to revert the pm patch, any comments befo=
+re I
+do?
+
+Regards,
+Nicolas
+
+
+--=-xARFLKywRE19QhV/jOVz
+Content-Disposition: attachment;
+	filename*0=0001-HACK-ARM-dts-Use-v3d-s-firmware-based-power-domain-o.pat;
+	filename*1=ch
+Content-Transfer-Encoding: base64
+Content-Type: text/x-patch;
+	name="0001-HACK-ARM-dts-Use-v3d-s-firmware-based-power-domain-o.patch";
+	charset="UTF-8"
+
+RnJvbSBlNmQxYWFhYjg5YWY2NTZmYmI2OTg0NWNlOGVhODc1MzA1OTg5NGEzIE1vbiBTZXAgMTcg
+MDA6MDA6MDAgMjAwMQpGcm9tOiBOaWNvbGFzIFNhZW56IEp1bGllbm5lIDxuc2FlbnpqdWxpZW5u
+ZUBzdXNlLmRlPgpEYXRlOiBGcmksIDI4IEZlYiAyMDIwIDE0OjAzOjIyICswMTAwClN1YmplY3Q6
+IFtQQVRDSF0gSEFDSzogQVJNOiBkdHM6IFVzZSB2M2QncyBmaXJtd2FyZSBiYXNlZCBwb3dlciBk
+b21haW4gb24KIHJwaTNhKwoKdGVtcCBmaXguLi4KClNpZ25lZC1vZmYtYnk6IE5pY29sYXMgU2Fl
+bnogSnVsaWVubmUgPG5zYWVuemp1bGllbm5lQHN1c2UuZGU+Ci0tLQogYXJjaC9hcm0vYm9vdC9k
+dHMvYmNtMjgzNS1jb21tb24uZHRzaSAgICAgIHwgMSAtCiBhcmNoL2FybS9ib290L2R0cy9iY20y
+ODM3LXJwaS0zLWEtcGx1cy5kdHMgfCA0ICsrKysKIDIgZmlsZXMgY2hhbmdlZCwgNCBpbnNlcnRp
+b25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvYmNt
+MjgzNS1jb21tb24uZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL2JjbTI4MzUtY29tbW9uLmR0c2kK
+aW5kZXggMmIxZDlkNGMwY2RlLi40MTE5MjcxYzk3OWQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jv
+b3QvZHRzL2JjbTI4MzUtY29tbW9uLmR0c2kKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvYmNtMjgz
+NS1jb21tb24uZHRzaQpAQCAtMTMwLDcgKzEzMCw2IEBAIHYzZDogdjNkQDdlYzAwMDAwIHsKIAkJ
+CWNvbXBhdGlibGUgPSAiYnJjbSxiY20yODM1LXYzZCI7CiAJCQlyZWcgPSA8MHg3ZWMwMDAwMCAw
+eDEwMDA+OwogCQkJaW50ZXJydXB0cyA9IDwxIDEwPjsKLQkJCXBvd2VyLWRvbWFpbnMgPSA8JnBt
+IEJDTTI4MzVfUE9XRVJfRE9NQUlOX0dSQUZYX1YzRD47CiAJCX07CiAKIAkJdmM0OiBncHUgewpk
+aWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvYmNtMjgzNy1ycGktMy1hLXBsdXMuZHRzIGIv
+YXJjaC9hcm0vYm9vdC9kdHMvYmNtMjgzNy1ycGktMy1hLXBsdXMuZHRzCmluZGV4IDY2YWIzNWVj
+Y2JhNy4uN2ZkZGVkZTkyYjY4IDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9iY20yODM3
+LXJwaS0zLWEtcGx1cy5kdHMKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvYmNtMjgzNy1ycGktMy1h
+LXBsdXMuZHRzCkBAIC0xNzYsMyArMTc2LDcgQEAgJnVhcnQxIHsKIAlwaW5jdHJsLTAgPSA8JnVh
+cnQxX2dwaW8xND47CiAJc3RhdHVzID0gIm9rYXkiOwogfTsKKworJnYzZCB7CisJcG93ZXItZG9t
+YWlucyA9IDwmcG93ZXIgUlBJX1BPV0VSX0RPTUFJTl9WM0Q+OworfTsKLS0gCjIuMjUuMQoK
+
+
+--=-xARFLKywRE19QhV/jOVz--
+
+--=-iHP+2GMv7hO7VSi+MOY4
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5ZEScACgkQlfZmHno8
+x/7yHwgAo6775SGFwYdJXvh4asV7+UrWZCy0CzWFRRID5lmu32GqAVNQjRvTmgJG
+P+p5XYZXMogbF8FyMoaOeU3jiuc1Pbe0fyhjhJOSbHGBfaBV/ziWHOXAmkCQsu75
+Vt7djT0lbhY2e47vNCXnqz+PDyrNl3gz2TQKDL5RelmbtsREuNxk9rDETcXTeCHm
+gZbQfAT1wmztxXdyuGRnWA9vt7zVg5EHntpLB1OCFZAapqyiCwJA76/8SWc3+rEj
+YF9ujiUOE25dp5unOIKiixgId87zRdks5R5ecEmZqiEBUNOHNj9FOFgrBfvOJ3Bu
+fIvCBQbfsPC8wwTL0wzxflP+Nla9Nw==
+=31ff
+-----END PGP SIGNATURE-----
+
+--=-iHP+2GMv7hO7VSi+MOY4--
+
+
+
+--===============2615522801503814539==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2615522801503814539==--
+
+
