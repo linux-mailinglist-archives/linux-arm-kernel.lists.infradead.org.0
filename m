@@ -2,56 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F386517398C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 15:11:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D6B6173999
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 15:16:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c42YLJsrBSn09EbGULGPioEJYTSbjISj6cvb61H1leQ=; b=trsNbhAbhFJcjI
-	XKeJ3p++YSQdLwsMZKfAwOWsARICNUF0cq/UAawXFQBhpzKR6aV3VzD+nv7KWUSQLlbDs6oENiHek
-	F7q/KeM1LlMWh0YoVvfNwcnaCV02yYKJpXzPZIy/DrrM/jeVRm0c031tCTND0vFm67+xf5aEKkbcy
-	FnE9zB2IdgvHxfxEAmhrHaiyh9BXkrl1sSMDKuq/Q8V1Y+m3i5wPo1pzJVK+CXKrw0z/Mykuu6lPz
-	wNhn53ILDxOCF6u94skxT5klY12UZQafL6gNYcfh72Ae2eoBdc5Isi/TY/CTE+CyQGlGFUqQbQc79
-	v3TVVAYbfrx+dizjbrRw==;
+	List-Owner; bh=vSHU5UNVx9/xTIcz2fPkV4V7My502POUO3eRyTvhwW4=; b=pr4g43dOA2kYfp
+	X3u5a3Uj9M7Noh/WPiywntLFi/dEUvtz2AA/QH1qIr2cLOvyFuOUtXjNPTwNNh5XFPfz0Oq2BVTDN
+	ognkvaL5BZZ4cto65u5JNLLVVNJqFY8mrQWkEEBiFvqfvIr0lzJyW2Lk/A8+SOQTYD+3YEW9Ww6u9
+	3MiODj0ID2YTG8wqemOHit8X4Kbk/FRgGqHfvEZg9zU8Bnya1wzQoZl6sRBbSPOcyGae+zf34Sm1N
+	WwhFlpyF9+yZrjvmCSoDObCXmjHDDmhRVevwouvROAhh+RWwa9a9+8hJ8AhFP088o4NRlxl9k5Ost
+	2R3cNf+E8QW88IKwc1tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7gMn-0006FM-8m; Fri, 28 Feb 2020 14:11:49 +0000
+	id 1j7gRJ-0007wA-FO; Fri, 28 Feb 2020 14:16:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7gMc-0006EV-2m
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 14:11:40 +0000
+ id 1j7gRB-0007vi-8K
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 14:16:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4A6DC31B;
- Fri, 28 Feb 2020 06:11:37 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7AC9B31B;
+ Fri, 28 Feb 2020 06:16:20 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B99B3F7B4;
- Fri, 28 Feb 2020 06:11:33 -0800 (PST)
-Date: Fri, 28 Feb 2020 14:11:30 +0000
-From: Andre Przywara <andre.przywara@arm.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E542C3F7B4;
+ Fri, 28 Feb 2020 06:16:19 -0800 (PST)
+Date: Fri, 28 Feb 2020 14:16:17 +0000
+From: Mark Rutland <mark.rutland@arm.com>
 To: Will Deacon <will@kernel.org>
-Subject: Re: [RFC PATCH 06/11] iommu: arm-smmu: Remove Calxeda secure mode
- quirk
-Message-ID: <20200228141130.18be5bb8@donnerap.cambridge.arm.com>
-In-Reply-To: <20200228135645.GA4745@willie-the-truck>
-References: <20200218171321.30990-1-robh@kernel.org>
- <20200218171321.30990-7-robh@kernel.org>
- <20200218172000.GF1133@willie-the-truck>
- <CAL_JsqJn1kG6gah+4318NQfJ4PaS3x3woWEUh08+OTfOcD+1MQ@mail.gmail.com>
- <20200228100446.GA2395@willie-the-truck>
- <20200228102556.1dde016e@donnerap.cambridge.arm.com>
- <20200228105024.GC2395@willie-the-truck>
- <20200228134254.03fc5e1b@donnerap.cambridge.arm.com>
- <20200228135645.GA4745@willie-the-truck>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+Subject: Re: [PATCH] arm64: mm: convert cpu_do_switch_mm() to C
+Message-ID: <20200228141617.GG36089@lakrids.cambridge.arm.com>
+References: <20200213121452.23205-1-mark.rutland@arm.com>
+ <20200227142946.GG3281767@arrakis.emea.arm.com>
+ <20200228111350.GA2941@willie-the-truck>
+ <20200228124731.GA4179@willie-the-truck>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200228124731.GA4179@willie-the-truck>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_061138_587671_12F07BDB 
-X-CRM114-Status: GOOD (  31.41  )
+X-CRM114-CacheID: sfid-20200228_061621_385148_C3B48664 
+X-CRM114-Status: GOOD (  29.75  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,99 +66,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Langsdorf <mlangsdo@redhat.com>, kvm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>, "open
- list:LIBATA SUBSYSTEM \(Serial and Parallel ATA drivers\)"
- <linux-ide@vger.kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
- Rob Herring <robh@kernel.org>, soc@kernel.org, Joerg Roedel <joro@8bytes.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, devicetree@vger.kernel.org,
- Jon Loeliger <jdl@jdl.com>, "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Eric Auger <eric.auger@redhat.com>,
- Alex Williamson <alex.williamson@redhat.com>, Tony Luck <tony.luck@intel.com>,
- Alexander Graf <graf@amazon.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC
- ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- linux-edac <linux-edac@vger.kernel.org>, Jens Axboe <axboe@kernel.dk>,
- Matthias Brugger <mbrugger@suse.com>, Stephen Boyd <sboyd@kernel.org>,
- netdev <netdev@vger.kernel.org>, Cornelia Huck <cohuck@redhat.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Borislav Petkov <bp@alien8.de>, Robin Murphy <robin.murphy@arm.com>, "David S.
- Miller" <davem@davemloft.net>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 28 Feb 2020 13:56:46 +0000
-Will Deacon <will@kernel.org> wrote:
-
-> On Fri, Feb 28, 2020 at 01:42:54PM +0000, Andre Przywara wrote:
-> > On Fri, 28 Feb 2020 10:50:25 +0000
-> > Will Deacon <will@kernel.org> wrote:  
-> > > On Fri, Feb 28, 2020 at 10:25:56AM +0000, Andre Przywara wrote:  
-> > > > > On Tue, Feb 25, 2020 at 04:01:54PM -0600, Rob Herring wrote:    
-> > > > > > Seems we're leaving the platform support for now, but I think we never
-> > > > > > actually enabled SMMU support. It's not in the dts either in mainline
-> > > > > > nor the version I have which should be close to what shipped in
-> > > > > > firmware. So as long as Andre agrees, this one is good to apply.      
-> > > > > 
-> > > > > Andre? Can I queue this one for 5.7, please?    
+On Fri, Feb 28, 2020 at 12:47:32PM +0000, Will Deacon wrote:
+> On Fri, Feb 28, 2020 at 11:13:50AM +0000, Will Deacon wrote:
+> > On Thu, Feb 27, 2020 at 02:29:46PM +0000, Catalin Marinas wrote:
+> > > On Thu, Feb 13, 2020 at 12:14:52PM +0000, Mark Rutland wrote:
+> > > > There's no reason that cpu_do_switch_mm() needs to be written as an
+> > > > assembly function, and having it as a C function would make it easier to
+> > > > maintain.
 > > > > 
-> > > > I was wondering how much of a pain it is to keep it in? AFAICS there are
-> > > > other users of the "impl" indirection. If those goes away, I would be
-> > > > happy to let Calxeda go.    
+> > > > This patch converts cpu_do_switch_mm() to C, removing code that this
+> > > > change makes redundant (e.g. the mmid macro). Since the header comment
+> > > > was stale and the prototype now implies all the necessary information,
+> > > > this comment is removed. The 'pgd_phys' argument is made a phys_addr_t
+> > > > to match the return type of virt_to_phys().
+> > > > 
+> > > > At the same time, post_ttbr_update_workaround() is updated to use
+> > > > IS_ENABLED(), which allows the compiler to figure out it can elide calls
+> > > > for !CONFIG_CAVIUM_ERRATUM_27456 builds.
+> > > > 
+> > > > There should be no functional change as a result of this patch.
+> > > > 
+> > > > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> > > > Cc: Will Deacon <will@kernel.org>
+> > > > Cc: Catalin Marinas <catalin.marinas@arm.com>
 > > > 
-> > > The impl stuff is new, so we'll keep it around. The concern is more about
-> > > testing (see below).
-> > >   
-> > > > But Eric had the magic DT nodes to get the SMMU working, and I used that
-> > > > before, with updating the DT either on flash or dynamically via U-Boot.    
-> > > 
-> > > What did you actually use the SMMU for, though? The
-> > > 'arm_iommu_create_mapping()' interface isn't widely used and, given that
-> > > highbank doesn't support KVM, the use-cases for VFIO are pretty limited
-> > > too.  
+> > > I'll queue this for 5.7. Does not seem to have any functional change (I
+> > > changed the comments to C-style ones /* */).
 > > 
-> > AFAIK Highbank doesn't have the SMMU, probably mostly for that reason.
-> > I have a DT snippet for Midway, and that puts the MMIO base at ~36GB, which is not possible on Highbank.
-> > So I think that the quirk is really meant and needed for Midway.  
+> > Can you also update the comment in asm/mmu.h for the ASID() macro please?
 > 
-> Sorry, but I don't follow your reasoning here. The MMIO base has nothing
-> to do with the quirk,
-
-It hasn't, but Highbank has no LPAE, so couldn't possible have a device at such an address. And this is the only MMIO address I know of.
-
-> although doing some digging it looks like your
-> conclusion about this applying to Midway (ecx-2000?) is correct:
-> 
-> http://lists.infradead.org/pipermail/linux-arm-kernel/2014-January/226095.html
-
-Right, thanks for that find. Yes, Midway is the codename for the ECX-2000 SoC product.
-
-Cheers,
-Andre
- 
-> > > > So I don't know exactly *how* desperate you are with removing this, or if
-> > > > there are other reasons than "negative diffstat", but if possible I would
-> > > > like to keep it in.    
-> > > 
-> > > It's more that we *do* make quite a lot of changes to the arm-smmu driver
-> > > and it's never tested with this quirk. If you're stepping up to run smmu
-> > > tests on my queue for each release on highbank, then great, but otherwise
-> > > I'd rather not carry the code for fun. The change in diffstat is minimal
-> > > (we're going to need to hooks for nvidia, who broke things in a different
-> > > way).  
-> > 
-> > I am about to set up some more sophisticated testing, and will include
-> > some SMMU bits in it.  
-> 
-> Yes, please.
+> Ah, I see this is already queued (I'm catching up with email after a trip
+> to the US) so here's a patch.
 > 
 > Will
 
+Thanks for the fixup; sorry for missing that in the first place!
+
+Mark.
+
+> 
+> --->8
+> 
+> From 2528094854c3b56ad3fe49d2164c9a920a251f05 Mon Sep 17 00:00:00 2001
+> From: Will Deacon <will@kernel.org>
+> Date: Fri, 28 Feb 2020 12:43:55 +0000
+> Subject: [PATCH] arm64: Update comment for ASID() macro
+> 
+> Commit 25b92693a1b6 ("arm64: mm: convert cpu_do_switch_mm() to C") added
+> a new use of the ASID() macro, so update the comment in asm/mmu.h which
+> reasons about why an atomic reload of 'mm->context.id.counter' is not
+> required.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Signed-off-by: Will Deacon <will@kernel.org>
+> ---
+>  arch/arm64/include/asm/mmu.h | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
+> index e4d862420bb4..21a4bcfdb378 100644
+> --- a/arch/arm64/include/asm/mmu.h
+> +++ b/arch/arm64/include/asm/mmu.h
+> @@ -23,9 +23,9 @@ typedef struct {
+>  } mm_context_t;
+>  
+>  /*
+> - * This macro is only used by the TLBI code, which cannot race with an
+> - * ASID change and therefore doesn't need to reload the counter using
+> - * atomic64_read.
+> + * This macro is only used by the TLBI and low-level switch_mm() code,
+> + * neither of which can race with an ASID change. We therefore don't
+> + * need to reload the counter using atomic64_read().
+>   */
+>  #define ASID(mm)	((mm)->context.id.counter & 0xffff)
+>  
+> -- 
+> 2.25.1.481.gfbce0eb801-goog
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
