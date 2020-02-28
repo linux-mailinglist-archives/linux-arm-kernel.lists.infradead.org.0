@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BCA3174326
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 00:31:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B32C9174331
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 00:34:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ntftDe3sy4Z9iKGhdOZE1x24QxWClUVJPXD9k/6HG5M=; b=BbfCLIe4f6Ox/z
-	3eXaGnbDxUSnYmt1OT8gwM5OlPHHaTikMGAaeA+Ae1qmKoe4mF1QtvmhhqFaR4psOg6DynH7bjWwB
-	Sdp4sZPsJynuwlaZ+E9acKDtcFLazZCviCiOdq4jJkZlEUfEYzmAJL7+cI9tFzVkpKA9bH5QZNX8E
-	43T4gx+9A5laeufU1m+ihjDhaiDO6fag9JFgD3wMS74p13u/wqgzS2M8AnirFG/YnrAzkURXo5bHl
-	gnLJ5NoPLaUrvizffjfbSxeNkhzSv11WkIS5UsCsUtZruH+qOYsXqnQDcea5wiYK6lWrgSKByOWTm
-	8ul1WSUXgMAupxlKOcqw==;
+	List-Owner; bh=EzUsyZvh+7FoOERlIrD6hDsZpS5k9O24VulmbDDaaCA=; b=hrCL8Gas6ltqZw
+	+2J+qZ5sI/BtHGwc/5gqz3eBmEB0feios5bhiIapVRSI5ShbsQWkoFRZLIlkWEeR9a42Z+9lPxh7H
+	z8MuEv+syg0+JejjtG4BndUZtU+mqjtyF0rRYqefpnY+VknKjANqUYh0GQRwcrvZ0GkFlKuI4xU16
+	9pfV+d/2ml4Wm1Tn1VSUgHXWPtOsXi4WK8fUhbE6Ex/TZlpiAQtK7TDOcmKKBt9mlQHKH++vBO9jd
+	aNzodeQEhShkGomalo9/EN3yuhsNW4YnkZEU5cqbn8dp1urjaQxbnOtdGK6HOUQTCP/XAideMx/nd
+	HVeQKhPt65so1X8YCwaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7p69-0001Yh-8K; Fri, 28 Feb 2020 23:31:13 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1j7p9O-00028p-8Z; Fri, 28 Feb 2020 23:34:34 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7p5y-0001HJ-W8
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 23:31:04 +0000
-Received: by mail-lj1-x241.google.com with SMTP id u26so5023616ljd.8
+ id 1j7p99-00027X-DV
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 23:34:21 +0000
+Received: by mail-oi1-x241.google.com with SMTP id l12so4537129oil.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Feb 2020 15:31:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 28 Feb 2020 15:34:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FJMOjeid6sdwgXv4TTvMxMhevRyWK73UfsN1mnUN154=;
- b=sMe5Q6usg9+F4riRxov5cjG3cyELLD3oY3eqeIrCM0aMmY7BGEfLMLJT1SZ1gK0IwN
- UFNBkrP7J25JufhFor+00VbaiY0V3wNFi5Y0V6yp/yTwjh7YTnRrLqyZ7eaDMrvF/TzZ
- Dd+uXEyp9pONbPMH+vFvJHPbmE3J7xZx3HwKpXwcCLupuc+vQZA6GenODw9SfH6Az6nZ
- hzzXjyLjydDHeMjOWfWF8PjkvIagnRsfW3bwZi7A4bzOB19Lx7TbyhEccYzR/YHRJNAZ
- eoJubijvMqEQ04/8kdlkwXDI6wo5CzuUN5RPHEtk0Zeu1q+sM3u3109tFuStjvE6jYPa
- NuOg==
+ :cc; bh=h0556FVWacGEFgxMtqStXRWzsjC46nrrGUt+kCc19ho=;
+ b=AEzMwrRuTzvHuiMvlPXsYlLf84Up58bH6QyyBOgE2Z/L2WNzaANNLYMOBxNOutWjpY
+ Qw6y4bIfIDlaeHgc1H8nOEHrCIHn6QBMjaKFdnt7puLoS5dS7fi0M7KviL5Nc4IZPYI9
+ Lor5d+gn62sMxHIxBpVfJTkziHTEtL2858w8A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=FJMOjeid6sdwgXv4TTvMxMhevRyWK73UfsN1mnUN154=;
- b=la9KRqXMBOg9DtvYOqJqLDLDkpmMAZVtjI7Q7lEuOLlY7eNxPQqrEKZZSVhhzClub7
- 6JDuW5sczFdjx6H+ozskO67oxFvdLk5Oxy24nOctP25lJqkSV9AA4W0LFB1UzPKJwYoG
- +rJ8Boaa+mgjmOeLJcpfjiFK567Xqc1wzE9ioraOMC7dAbLsrGxteZynER8gKiX8Kwyq
- H4Nth57nKrVDqxlWe4KJ73qlcZ8RpJ6CK84Hj/0T7CVRvz0Nfz86O3V1ztvoYcsw8xfA
- G1YOwhAiR1qYdXOmv1Y+JEgDhw/PyBBIS/XdhyZID3FIVA1hSEypm/hF57pJNw9zFSas
- 7AkQ==
-X-Gm-Message-State: ANhLgQ1TJeVCCLnWE3qesgThZfej18X7ZFYrrh/J009jcx3mAFXxOk8/
- 88hLcOpQLb80XV5caEtYXFdb/pK7CHE/1JzcWEwIWiwe
-X-Google-Smtp-Source: ADFU+vsxoOHRMUZvXuoHzVp2SunBEAeVGYJ5QRP7my8lror2nKWFrPn2yB/CjkXexreMLjBZgrvV44n23yoajzkayqA=
-X-Received: by 2002:a05:651c:2049:: with SMTP id
- t9mr4108228ljo.39.1582932660936; 
- Fri, 28 Feb 2020 15:31:00 -0800 (PST)
+ bh=h0556FVWacGEFgxMtqStXRWzsjC46nrrGUt+kCc19ho=;
+ b=GW2j8Nh904L1+VEsy3QfqAvVwPUgb6glEdiH3/bxpk+v7z+xNOoO1LVjP7AKtjK6AA
+ jA2nVKgBeRkwg+NsEZizEupylOPAx/YjV7OeFEhJJN9MhHMKNebj7mk0ioUSw4cqFbzZ
+ eMHIdGFLjAFimXTMrV1uxuoyezrqr9KlQNjy5DBrUblU1odYnRhw0JNqzjMIh3ELUp5f
+ KUgr8dBmUT89gty2KJrSQq1/x4DfbbF1QQnT0ufl09JxT4YrA94np76I28vR+dpwuWze
+ AHrABrvNJhjjCQEMUscjQ/ur0WBumGSvSsX8/WSSMWYLSm3CU9Z3Eha0NpmCrT/+lTth
+ gA3g==
+X-Gm-Message-State: APjAAAWChBk2aMs6oR+hImQDrKUoN3eE8itNGETLp4I7H9Lzrk2UCdlT
+ 3xqizM6a59P2NxE7bf3F6t8eYgwpWzNRRwx/3CuUgQ==
+X-Google-Smtp-Source: APXvYqxM05oavT4RyNxOiRiEE9dbfhSaHWO5A5cKif2OmmAQT3imXICDXoF0SzCvUrn7aIws1ZQ2b0VIXLneP3LS0Jk=
+X-Received: by 2002:a05:6808:319:: with SMTP id
+ i25mr4916759oie.128.1582932857653; 
+ Fri, 28 Feb 2020 15:34:17 -0800 (PST)
 MIME-Version: 1.0
-References: <20200227185837.GA4469@embeddedor>
-In-Reply-To: <20200227185837.GA4469@embeddedor>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Sat, 29 Feb 2020 00:30:50 +0100
-Message-ID: <CACRpkda4wEck_JYpMYuQ+pAkaVo1JUE9nUpNseCBRCFADpZ9Ug@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: sirf/atlas7: Replace zero-length array with
- flexible-array member
-To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+References: <20200227181522.2711142-38-daniel.vetter@ffwll.ch>
+ <202002290524.w5E4ezpR%lkp@intel.com>
+In-Reply-To: <202002290524.w5E4ezpR%lkp@intel.com>
+From: Daniel Vetter <daniel.vetter@ffwll.ch>
+Date: Sat, 29 Feb 2020 00:34:06 +0100
+Message-ID: <CAKMK7uF1aRxLs-wxdSP5BoENFib96AhiuqCasDE19YdnmrG35g@mail.gmail.com>
+Subject: Re: [PATCH 37/51] drm/rockchip: Drop explicit drm_mode_config_cleanup
+ call
+To: kbuild test robot <lkp@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_153103_038386_326F098D 
-X-CRM114-Status: GOOD (  12.33  )
+X-CRM114-CacheID: sfid-20200228_153419_519500_99591CA2 
+X-CRM114-Status: GOOD (  17.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,52 +90,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Barry Song <baohua@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+Cc: kbuild-all@lists.01.org, Francesco Lavra <francescolavra.fl@gmail.com>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Marco Felsch <m.felsch@pengutronix.de>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ Sandy Huang <hjc@rock-chips.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel.vetter@intel.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 7:55 PM Gustavo A. R. Silva
-<gustavo@embeddedor.com> wrote:
+Drat I butchered this. Will fix for next round and actually
+compile-test arm again :-/
+-Daniel
 
-> The current codebase makes use of the zero-length array language
-> extension to the C90 standard, but the preferred mechanism to declare
-> variable-length types such as these ones is a flexible array member[1][2],
-> introduced in C99:
+On Fri, Feb 28, 2020 at 10:19 PM kbuild test robot <lkp@intel.com> wrote:
 >
-> struct foo {
->         int stuff;
->         struct boo array[];
-> };
+> Hi Daniel,
 >
-> By making use of the mechanism above, we will get a compiler warning
-> in case the flexible array does not occur last in the structure, which
-> will help us prevent some kind of undefined behavior bugs from being
-> inadvertently introduced[3] to the codebase from now on.
+> I love your patch! Yet something to improve:
 >
-> Also, notice that, dynamic memory allocations won't be affected by
-> this change:
+> [auto build test ERROR on drm-tip/drm-tip]
+> [also build test ERROR on next-20200228]
+> [cannot apply to drm-intel/for-linux-next linus/master pinchartl-media/drm/du/next v5.6-rc3]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
 >
-> "Flexible array members have incomplete type, and so the sizeof operator
-> may not be applied. As a quirk of the original implementation of
-> zero-length arrays, sizeof evaluates to zero."[1]
+> url:    https://github.com/0day-ci/linux/commits/Daniel-Vetter/drm-managed-resources-v3/20200229-005817
+> base:   git://anongit.freedesktop.org/drm/drm-tip drm-tip
+> config: arm64-defconfig (attached as .config)
+> compiler: aarch64-linux-gcc (GCC) 7.5.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.5.0 make.cross ARCH=arm64
 >
-> This issue was found with the help of Coccinelle.
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
 >
-> [1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
-> [2] https://github.com/KSPP/linux/issues/21
-> [3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
+> All errors (new ones prefixed by >>):
 >
-> Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+>    drivers/gpu/drm/rockchip/rockchip_drm_drv.c: In function 'rockchip_drm_bind':
+> >> drivers/gpu/drm/rockchip/rockchip_drm_drv.c:147:3: error: label 'err_mode_config_cleanup' used but not defined
+>       goto err_mode_config_cleanup;
+>       ^~~~
+>
+> vim +/err_mode_config_cleanup +147 drivers/gpu/drm/rockchip/rockchip_drm_drv.c
+>
+> 2048e3286f347db Mark Yao          2014-08-22  110
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  111  static int rockchip_drm_bind(struct device *dev)
+> 2048e3286f347db Mark Yao          2014-08-22  112  {
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  113       struct drm_device *drm_dev;
+> 2048e3286f347db Mark Yao          2014-08-22  114       struct rockchip_drm_private *private;
+> 2048e3286f347db Mark Yao          2014-08-22  115       int ret;
+> 2048e3286f347db Mark Yao          2014-08-22  116
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  117       drm_dev = drm_dev_alloc(&rockchip_drm_driver, dev);
+> 0f2886057be322d Tom Gundersen     2016-09-21  118       if (IS_ERR(drm_dev))
+> 0f2886057be322d Tom Gundersen     2016-09-21  119               return PTR_ERR(drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  120
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  121       dev_set_drvdata(dev, drm_dev);
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  122
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  123       private = devm_kzalloc(drm_dev->dev, sizeof(*private), GFP_KERNEL);
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  124       if (!private) {
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  125               ret = -ENOMEM;
+> 9127f99c4801f32 Tomasz Figa       2016-06-21  126               goto err_free;
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  127       }
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  128
+> 2048e3286f347db Mark Yao          2014-08-22  129       drm_dev->dev_private = private;
+> 2048e3286f347db Mark Yao          2014-08-22  130
+> 5182c1a556d7ff7 Yakir Yang        2016-07-24  131       INIT_LIST_HEAD(&private->psr_list);
+> 60beeccc72cabef Sean Paul         2018-03-05  132       mutex_init(&private->psr_list_lock);
+> 5182c1a556d7ff7 Yakir Yang        2016-07-24  133
+> ccea91998c8f140 Jeffy Chen        2017-04-06  134       ret = rockchip_drm_init_iommu(drm_dev);
+> ccea91998c8f140 Jeffy Chen        2017-04-06  135       if (ret)
+> ccea91998c8f140 Jeffy Chen        2017-04-06  136               goto err_free;
+> ccea91998c8f140 Jeffy Chen        2017-04-06  137
+> 7db42e97bb41bd5 Daniel Vetter     2020-02-27  138       ret = drm_mode_config_init(drm_dev);
+> 7db42e97bb41bd5 Daniel Vetter     2020-02-27  139       if (ret)
+> 7db42e97bb41bd5 Daniel Vetter     2020-02-27  140               goto err_iommu_cleanup;
+> 2048e3286f347db Mark Yao          2014-08-22  141
+> 2048e3286f347db Mark Yao          2014-08-22  142       rockchip_drm_mode_config_init(drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  143
+> 2048e3286f347db Mark Yao          2014-08-22  144       /* Try to bind all sub drivers. */
+> 2048e3286f347db Mark Yao          2014-08-22  145       ret = component_bind_all(dev, drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  146       if (ret)
+> ccea91998c8f140 Jeffy Chen        2017-04-06 @147               goto err_mode_config_cleanup;
+> 2048e3286f347db Mark Yao          2014-08-22  148
+> ccea91998c8f140 Jeffy Chen        2017-04-06  149       ret = drm_vblank_init(drm_dev, drm_dev->mode_config.num_crtc);
+> ccea91998c8f140 Jeffy Chen        2017-04-06  150       if (ret)
+> ccea91998c8f140 Jeffy Chen        2017-04-06  151               goto err_unbind_all;
+> ccea91998c8f140 Jeffy Chen        2017-04-06  152
+> ccea91998c8f140 Jeffy Chen        2017-04-06  153       drm_mode_config_reset(drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  154
+> 2048e3286f347db Mark Yao          2014-08-22  155       /*
+> 2048e3286f347db Mark Yao          2014-08-22  156        * enable drm irq mode.
+> 2048e3286f347db Mark Yao          2014-08-22  157        * - with irq_enabled = true, we can use the vblank feature.
+> 2048e3286f347db Mark Yao          2014-08-22  158        */
+> 2048e3286f347db Mark Yao          2014-08-22  159       drm_dev->irq_enabled = true;
+> 2048e3286f347db Mark Yao          2014-08-22  160
+> 2048e3286f347db Mark Yao          2014-08-22  161       ret = rockchip_drm_fbdev_init(drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  162       if (ret)
+> 8415ab565da966b Mark Yao          2017-08-01  163               goto err_unbind_all;
+> 8415ab565da966b Mark Yao          2017-08-01  164
+> 8415ab565da966b Mark Yao          2017-08-01  165       /* init kms poll for handling hpd */
+> 8415ab565da966b Mark Yao          2017-08-01  166       drm_kms_helper_poll_init(drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  167
+> 9127f99c4801f32 Tomasz Figa       2016-06-21  168       ret = drm_dev_register(drm_dev, 0);
+> 9127f99c4801f32 Tomasz Figa       2016-06-21  169       if (ret)
+> 8415ab565da966b Mark Yao          2017-08-01  170               goto err_kms_helper_poll_fini;
+> 9127f99c4801f32 Tomasz Figa       2016-06-21  171
+> 2048e3286f347db Mark Yao          2014-08-22  172       return 0;
+> 2048e3286f347db Mark Yao          2014-08-22  173  err_kms_helper_poll_fini:
+> 2048e3286f347db Mark Yao          2014-08-22  174       drm_kms_helper_poll_fini(drm_dev);
+> 8415ab565da966b Mark Yao          2017-08-01  175       rockchip_drm_fbdev_fini(drm_dev);
+> ccea91998c8f140 Jeffy Chen        2017-04-06  176  err_unbind_all:
+> 2048e3286f347db Mark Yao          2014-08-22  177       component_unbind_all(dev, drm_dev);
+> 7db42e97bb41bd5 Daniel Vetter     2020-02-27  178  err_iommu_cleanup:
+> ccea91998c8f140 Jeffy Chen        2017-04-06  179       rockchip_iommu_cleanup(drm_dev);
+> f706974a69b6e2b Tomeu Vizoso      2016-06-10  180  err_free:
+> 574e0fbfc95e7fc Thomas Zimmermann 2018-07-17  181       drm_dev_put(drm_dev);
+> 2048e3286f347db Mark Yao          2014-08-22  182       return ret;
+> 2048e3286f347db Mark Yao          2014-08-22  183  }
+> 2048e3286f347db Mark Yao          2014-08-22  184
+>
+> :::::: The code at line 147 was first introduced by commit
+> :::::: ccea91998c8f140bc3e324bbb3c3fb7148e72d31 drm/rockchip: Reorder drm bind/unbind sequence
+>
+> :::::: TO: Jeffy Chen <jeffy.chen@rock-chips.com>
+> :::::: CC: Sean Paul <seanpaul@chromium.org>
+>
+> ---
+> 0-DAY CI Kernel Test Service, Intel Corporation
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
-Patch applied!
 
-Yours,
-Linus Walleij
+
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
++41 (0) 79 365 57 48 - http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
