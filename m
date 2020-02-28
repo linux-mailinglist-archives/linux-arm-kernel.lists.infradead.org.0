@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCC0417360C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 12:31:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA258173633
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 12:39:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rcS9rm8R4GFFb6AvuRxbVcNiYwXsdEtsg8MJk9aS8LU=; b=iJgdzq2ZZ7yyt5
-	yaTxfUjhozze9S/qz8vpGzwVQR5qUJfKKLpUuc8NrlL0GrylsNB+CHiec3aGbQpudQl3BH/hi2LK9
-	MJSBrSnpwPgQt2Wzv6PRIYlid/q7MHg+iL23boz+xOWZMPGtrfLnHTcKd+ctrmeBKlpLA9//0RS0I
-	hYgh9s4NWtUnwhzvURCVge7wEALIXubFe56RgWlzPG8Z/AWslLunKIAgAhZSA9gEo1LhrpKZop1Tc
-	eMjOC6phnL1mCZiZdYT69I+vtY4Y6Cr5z0OQKunLSp7CWRdTBEVGVLBEZ09uznqDv8hD9nOy68Lbh
-	N916j3IPtRb4tad4U2jQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=KGZh9FI89bLDE5fG9LXdUynnqiYtIvH+WrXAUBDdxVM=; b=cQn
+	Ch6l0erQtPL20aevemzCy8xMLVgy27Wb3Aozs7TAlomtRj74wR0dBcCaNpS5IQFj1NzP9fbeBtoLs
+	C7ptVVyONB+2/2mhzz1hBvwwSOeRHGPl9xFSovY8wx5NX/AoTq84XC9NxLvSA61iZfTIVYyYtOTHi
+	2+hadh+e1nCs3Nans7Xy8g11bo74DJygUbVCwTrYXMt7G6bekyMPKyps2ptKeHrJMzqlBreMMreg0
+	1CWhV2Sj30EoGyzlUZDVqtxzhohOyOf3dt5aV/d+nGAtnqpy9jzaFbDSH+hZXp3umUK7NQ7b6w8rj
+	8ajERA4efbOT+9dwsmgVU75vh6Ny5KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7drX-0003fH-MM; Fri, 28 Feb 2020 11:31:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7drF-0003eu-Kf
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 11:31:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C3C994B2;
- Fri, 28 Feb 2020 03:31:04 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3AB753F73B;
- Fri, 28 Feb 2020 03:31:03 -0800 (PST)
-Date: Fri, 28 Feb 2020 11:31:01 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 2/2] arm64: kprobe: disable probe of fault prone ptrauth
- instruction
-Message-ID: <20200228113100.GC36089@lakrids.cambridge.arm.com>
-References: <1582117240-15330-1-git-send-email-amit.kachhap@arm.com>
- <1582117240-15330-3-git-send-email-amit.kachhap@arm.com>
- <20200227164817.GA31259@lakrids.cambridge.arm.com>
- <52db2533-488a-1e27-947c-ec92048f26ae@arm.com>
- <20200228111856.GB2941@willie-the-truck>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228111856.GB2941@willie-the-truck>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+	id 1j7dza-00062l-Ty; Fri, 28 Feb 2020 11:39:42 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7dzR-00061w-Hq; Fri, 28 Feb 2020 11:39:34 +0000
+Received: by mail-wm1-x344.google.com with SMTP id n64so1517030wme.3;
+ Fri, 28 Feb 2020 03:39:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=1nT2rygpRjcW5Hc5nEx4+QR4Y0c2ZJTbeTcqfJuIxf8=;
+ b=Kqc24jvgOU22EK6INyCirOks2OzBu06s3R229MgyxZlaO9KwA00EYavqHNtqMuhU37
+ ZiGekBb6KP2Ovyu+ihydi+f0LrC/EjezkTbIzbAClYGMe+0/enh0qgPePsV6ybOBXbww
+ 0ILwtqR0otTE4mjqS0m7vd8Yjtr6PvVWIrMmavPdV8KJLRSu88YK3Q3wzK71tZffUftz
+ w0vVxuoPAbgR1dYb7fmHNohJXdeRq2vAWCowCI3h7CjjwJ+xS8FxjvAjxTeg5iWzcole
+ zB3TTxUX4tQcz6qFEE0QYfc2VtTYYmwLrqxeaFnX1I+L9l4UKP5npgDqKCaLSdvSrscf
+ YZMQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=1nT2rygpRjcW5Hc5nEx4+QR4Y0c2ZJTbeTcqfJuIxf8=;
+ b=bGHrpaTjeOGop+gsRni7Q7dsciOwuk9NlukZJBjRp6AIg0qyQo3ue51BaKL1ocRGZC
+ wi6RsEbarOkLwsIp+xCRnLJGPXw/h2qJ/qkIaQcEqGnIrI8uUk4gnYkuRgdJJHBSsNQX
+ /XnrSGGpRbFPCjTOt+9BbnI9b8tEnoKnKTCT6Tw64c0EVXgBi4bsFSmbbCSuzL7wBoZ2
+ ZbWfzoTM/eQkWZYv+DWKfqZj+VAo+QzlaJN8lwSOiI+AYHaxAOVDrwH9nc6It3Spd0VX
+ YCDI9de71yp+hprkl+pDBqCQTA651i2jbf58iDe4PDtGiUu8luUoO3tW9RtRNLGq09mZ
+ PiZw==
+X-Gm-Message-State: APjAAAVKqf81ym0IKZssvy/rxo1YBRuEgX+jk8qEMmQCRsdMhF572da3
+ unexn+SazLJ65ObfxQk3WDM=
+X-Google-Smtp-Source: APXvYqzl/ZY5TQUvn+/CB3/RaLjU8StBmIRt1iV97hCR5IEM+O1KSpKMioYZFHvB/LGdaLFAWtBYbg==
+X-Received: by 2002:a1c:3204:: with SMTP id y4mr4362124wmy.166.1582889970418; 
+ Fri, 28 Feb 2020 03:39:30 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id q1sm11554294wrw.5.2020.02.28.03.39.29
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 28 Feb 2020 03:39:29 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] ARM: dts: remove g-use-dma from rockchip usb nodes
+Date: Fri, 28 Feb 2020 12:39:21 +0100
+Message-Id: <20200228113922.20266-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_033107_612310_1FF394B5 
-X-CRM114-Status: GOOD (  19.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200228_033933_590557_2EED7351 
+X-CRM114-Status: GOOD (  11.01  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,67 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
- Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 11:18:59AM +0000, Will Deacon wrote:
-> On Fri, Feb 28, 2020 at 04:42:10PM +0530, Amit Kachhap wrote:
-> > On 2/27/20 10:18 PM, Mark Rutland wrote:
-> > > On Wed, Feb 19, 2020 at 06:30:40PM +0530, Amit Daniel Kachhap wrote:
-> > > > diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
-> > > > index 4a9e773..87f7c8a 100644
-> > > > --- a/arch/arm64/kernel/insn.c
-> > > > +++ b/arch/arm64/kernel/insn.c
-> > > > @@ -63,6 +63,7 @@ bool __kprobes aarch64_insn_is_nop(u32 insn)
-> > > >   	case AARCH64_INSN_HINT_WFI:
-> > > >   	case AARCH64_INSN_HINT_SEV:
-> > > >   	case AARCH64_INSN_HINT_SEVL:
-> > > > +	case AARCH64_INSN_HINT_AUTIASP:
-> > > >   		return false;
-> > > >   	default:
-> > > >   		return true;
-> > > 
-> > > I'm afraid that the existing code here is simply wrong, and this is
-> > > adding to the mess.
-> > > 
-> > > We have no idea what HINT space instructions will be in the future, so
-> > > the only sensible implementations of aarch64_insn_is_nop() are something
-> > > like:
-> > > 
-> > > bool __kprobes aarch64_insn_is_nop(u32 insn)
-> > > {
-> > > 	return insn == aarch64_insn_gen_hint(AARCH64_INSN_HINT_NOP);
-> > > }
-> > > 
-> > > ... and if we want to check for other HINT instructions, they should be
-> > > checked explicitly.
-> > > 
-> > > Can you please change aarch64_insn_is_nop() as above?
-> > 
-> > Agree that current implementation is unclear.
-> > I will implement as you suggested.
-> 
-> Well, please don't throw the baby out with the bath water. The existing
-> code might be badly structured, but I think it's going a bit far to say
-> it's "simply wrong". We need a whitelist /somewhere/ and I'd prefer not
-> to regress the existing behaviour just because the whitelist is embedded
-> in a function with "is_nop" in the name.
+A test with the command below gives these errors:
 
-Ok; we can follow up with a more complete cleanup after these patches
-have been merged.
+arch/arm/boot/dts/rv1108-elgin-r1.dt.yaml: usb@30180000:
+'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm/boot/dts/rv1108-evb.dt.yaml: usb@30180000:
+'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm/boot/dts/rk3228-evb.dt.yaml: usb@30040000:
+'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm/boot/dts/rk3229-evb.dt.yaml: usb@30040000:
+'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm/boot/dts/rk3229-xms6.dt.yaml: usb@30040000:
+'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
 
-Thanks,
-Mark.
+'g-use-dma' is not a valid option in dwc2.yaml, so remove it
+from all Rockchip dtsi files.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rk322x.dtsi | 1 -
+ arch/arm/boot/dts/rv1108.dtsi | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index 4e90efdc9..dac930be3 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -718,7 +718,6 @@
+ 		g-np-tx-fifo-size = <16>;
+ 		g-rx-fifo-size = <280>;
+ 		g-tx-fifo-size = <256 128 128 64 32 16>;
+-		g-use-dma;
+ 		phys = <&u2phy0_otg>;
+ 		phy-names = "usb2-phy";
+ 		status = "disabled";
+diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
+index 1fd06e7cb..9bb109d66 100644
+--- a/arch/arm/boot/dts/rv1108.dtsi
++++ b/arch/arm/boot/dts/rv1108.dtsi
+@@ -527,7 +527,6 @@
+ 		g-np-tx-fifo-size = <16>;
+ 		g-rx-fifo-size = <280>;
+ 		g-tx-fifo-size = <256 128 128 64 32 16>;
+-		g-use-dma;
+ 		phys = <&u2phy_otg>;
+ 		phy-names = "usb2-phy";
+ 		status = "disabled";
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
