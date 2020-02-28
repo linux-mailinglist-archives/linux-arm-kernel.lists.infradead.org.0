@@ -2,89 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6436173C44
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:55:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 010B6173C49
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:56:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kGGrPRsjru1UI0HczW3lPp5y/o8RXBPAuDP7po8rw3w=; b=FZSG5dUtROZDqmQ8BWlzCQv3Js
-	HkeOXjuvTDcKjBN/02CNw4ey4pSyTDWALUCN3M7rc4b3LTdRukqxB3TH5ILMb+O06B2JOAJZpejMu
-	zePnn0mxXpkTDE8ouqJpuYqGQyixRkiYZtXL1FgM3XJ4tUUe2HAHaZ9XNwvClhPSIng2oHYLz+tyh
-	AXN2CK7RVJyj8L0F4REtUiEUSjV45azH/CzPyC5vlTRWdxamOfNEbq9k0lMy6vF38JpoQDKwpIVxv
-	OunzUfKPaTzecti4KXK37VKHtO585+KEz4oTgQheVSRPZKXxwfJMEcIuTpJsNXRVDNzCExv1HN/sV
-	IO+esM/A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=o95cBE7taRNXNOscwIzQSeUCsfznp+8f698KwalgJTU=; b=ff8S4xo796D+R5
+	9J5pIvHs6Hy67Pq/54NB2GdUpGy8ws5128CGv/hjNhdOLkI6bB7s/a/9HBemjc2s/lGMudYVijHaO
+	M+fYU+GLSTgeNbccq1lzfkntaKUD0luo0GEWFQZicz3mp1DGFhXqGiizyflIRlgfj/zEsD+nscXQ7
+	6BP36B8NmyPUMGiUgm31pt2gQVE/u/TWMmbYi3qfSMGv187KpIdXW++cYSY1ep9eWLDvfyFKWpr6E
+	8oq6HcTDdHo4mm23O6BmXj7eABtfZx+t8MKOPAQTugY4gxQH7o7XGIc8AL2Xb57AK80WhldaFEwlr
+	sx8tcOtyhtr5UKoQ5lMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7hyf-0003Vy-Ga; Fri, 28 Feb 2020 15:55:01 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j7hzc-000588-34; Fri, 28 Feb 2020 15:56:00 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7hxn-0002lj-6u; Fri, 28 Feb 2020 15:54:08 +0000
-Received: by mail-wr1-x444.google.com with SMTP id p18so3467571wre.9;
- Fri, 28 Feb 2020 07:54:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=M9Kwu3SWVjUR0QlpKz+Qj4yHox2icU+uJW/FEvY6z9g=;
- b=iR/lE70WvXZfxCZGgNi3yNG8JV9JYIq9yGC/908jVx3v8HEpHbnf+VMxhIhHMQb2/w
- ANhVztbKYczLQwp7w0hh/ErfVlIgL/ZKFICmcz2E0rlrlglBDoQQfCk+EtOPtzLDlqCi
- +fRKmw4rAG5oBolmGB5kueTin2gVS5CSzpFyZ3lpeayC4P7vANVcq4oNnTiUxI92agC6
- XLisfb3so6N4ZA63WtInJZ0ZuxU9oK/H3BVWrJrzGVQbInwzSpBsntDajHpyQ3mw2XJi
- HlMcqXSoNbuPs9CuVJ7XhR4AjQKQPsl+sEJCv9wnQkqrUwvUs0ekXTtwl+wXopJq5Ug3
- nJKA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=M9Kwu3SWVjUR0QlpKz+Qj4yHox2icU+uJW/FEvY6z9g=;
- b=dnHi8zQCy3riy5VV1SDnqYmhv3KTLgW4y5x3RTtZEav8YcZG8WUsGYH8XchQPcRu5a
- wmbGivM1UEgxTUazJ3ftzq9oDdgvvO6TuPHZBpnEI51BUKByUb4uzDqF9z9z5+0iPetR
- QNzz8wVejDoadmz9F36qdkBrxb4WvLK6usL/3gmRsHJNxK/5p+MwuHrX/I/Oi2afQnUb
- fUdiA6QyX5L+dCgdn/a9z1as9JIIUPn3HtD7ZYU+nKQpLWgy8H5Obkgg54mwx9GF9nSJ
- OAvuvxDOQUG+xDlkId3bKgiEg+yaL4+o32GMoIgDyejRI5HPQ9LDwWZaUA/0OGe2n2zv
- mBxA==
-X-Gm-Message-State: APjAAAWS6CcjxBwz83FqAJxN9KY+G717a7TjWXD2PSHien/Y+U4YAtgk
- JwzLbrAcCa+1UrLWsgMa1LI=
-X-Google-Smtp-Source: APXvYqwYXkK4g5VxFmULSk2KUCbUp0Rg3cowIjv95fjxucVHABt/NLUJdkgCdL+IWzIu/YSUAfbKuw==
-X-Received: by 2002:adf:f846:: with SMTP id d6mr5288458wrq.125.1582905244576; 
- Fri, 28 Feb 2020 07:54:04 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id m125sm2706605wmf.8.2020.02.28.07.54.03
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 28 Feb 2020 07:54:04 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 3/3] ARM: dts: rockchip: add sram to bus_intmem nodename for
- rk3288
-Date: Fri, 28 Feb 2020 16:53:54 +0100
-Message-Id: <20200228155354.27206-3-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200228155354.27206-1-jbx6244@gmail.com>
-References: <20200228155354.27206-1-jbx6244@gmail.com>
+ id 1j7hzQ-00057f-Gc
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:55:52 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Tudor.Ambarus@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="Tudor.Ambarus@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: RMaS0FOf501JGnpmIWhULk3aJD4tHpBboPN4ePSrUUu8CpvOgwQEY3oh/4WQ4gX6x7GFblghwK
+ 1hkMslQmPa5DQGQoyVWbKZZkBkSB7PHuaSnOodIrseYNm6h6ef56OMvPyZNh3FTVexWQT092p2
+ iZxK00dgy7Py6cO5S6Vz2i/7uJwlZ8z1cGX0PxEXqoEV3FQWvVQf+esFG0gKSbCHz343u7uLyw
+ /KzqpQqiQ2nCX2Psq+vxNG1Y5nEzc8TTIfNGxiim0d9hvF745WvboXmysNsERnOk46X1AkQhOv
+ tos=
+X-IronPort-AV: E=Sophos;i="5.70,496,1574146800"; d="scan'208";a="70195308"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 28 Feb 2020 08:55:43 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 28 Feb 2020 08:55:36 -0700
+Received: from NAM11-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Fri, 28 Feb 2020 08:55:35 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BuexjJOrjojsaIYpBL4P14ZVNxtuLa3+xQnD5DKLr5c58MzdgkMxWryMy7nKf59aHrBkVA/w63+tpU2LKWxLWYW6iB+fukW+nUqnMWbt2hBeA3+D4s6EvXibjBAUO8ktDHrJtCJT9ZVWQK6D/vEmAvuosr7of2HQQbQ+jvHaq6aCHvbpafTikdM2cNElXBGTOJdh7oLSo00PJk7KKiNOGeXYJw+fd+AlQ16DGrWhSDwLJO1eEF/wUVK+tGf6Pvg9xvDFwrDR69nHYXslcUaZ+S1nVVogiJrMWZjuCiitd+V+hpDwisA7090XLqEHlLRlsTtLB9ipC7uGKNSd/75afQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fes4+aju9YtsQ1XRGSIDz3alUxJelE6iCOFWzIVnkbM=;
+ b=k9mx/KCe845jQdyAJdp94N8pXBjih/6VXrGqtzaXrmPVKGawfIhZqFefesgYEHUGHhcsDM9zgZYbYd9aNGJy8Mr3Lm8+ktufzXtNP22Soiqn3VhoZJkLebj0OJJD4bh+eiQpE4AR6kUnRNWjicxAvISssm0/zttz4TtegNH0EHpfIGgrhZEPkek7kA10M00//9Rz8a3lXGGKQT0lL7OX2i15bmHJc9iSddUBtFUhH2USOFcbWEldO3tSV5He0KV/F5zRtC4u2zC2P7fGfmp9rfI+9nQtq077wP2Ad8IMdbh0toTQkuyrFu1BH4eRjN9ZnNl7xzUBj9yCAoNN4qwy/Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fes4+aju9YtsQ1XRGSIDz3alUxJelE6iCOFWzIVnkbM=;
+ b=THsR034YViplRUbJ4LVlKZg7f4rSLGSFIWBDz2dyBv12xYV78BzgRrD95qFC6rI0+mShAiKrY8g27d1ei9xrah4cQXqmil9VgbhQqCxM9Qd7+QOSnxBw73Ltz9ypivU8dxla3vwvEG5o4Vwtt++36l6iSqYqdLier6VRcgnnl5E=
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
+ by MN2PR11MB4029.namprd11.prod.outlook.com (2603:10b6:208:155::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.16; Fri, 28 Feb
+ 2020 15:55:32 +0000
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2772.012; Fri, 28 Feb 2020
+ 15:55:32 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <broonie@kernel.org>, <Nicolas.Ferre@microchip.com>,
+ <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
+ <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] spi: atmel-quadspi: fix possible MMIO window size overrun
+Thread-Topic: [PATCH] spi: atmel-quadspi: fix possible MMIO window size overrun
+Thread-Index: AQHV7k+BBwfvgtg7FEm+k3CHmHqO2w==
+Date: Fri, 28 Feb 2020 15:55:32 +0000
+Message-ID: <20200228155437.1558219-1-tudor.ambarus@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ef5a3abc-72e3-4cda-4429-08d7bc66a422
+x-ms-traffictypediagnostic: MN2PR11MB4029:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR11MB4029980FA7E5D3EBCA084E79F0E80@MN2PR11MB4029.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1148;
+x-forefront-prvs: 0327618309
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(39860400002)(136003)(366004)(376002)(346002)(189003)(199004)(316002)(478600001)(26005)(5660300002)(64756008)(6506007)(2616005)(66476007)(66556008)(186003)(66446008)(110136005)(86362001)(91956017)(66946007)(76116006)(8936002)(6512007)(4326008)(2906002)(8676002)(1076003)(6486002)(36756003)(107886003)(71200400001)(81166006)(81156014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4029;
+ H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: NVg5Ekn4i0T4/zt7Nr9jw+bb3w+FHOGNfrKTnFG5+CNQGZv39TAOca7MD5XQdHia4nLAUkPYQHrULcKXS9jKFUAOTZBSBF7rOv891rUjcMijc7vZVX5D1ORO4V4w3/gG+dKuiTf3VWUg1N1dJ36dkWOVpRa+z6AJR6x9fiaUiyTTrj9S+IX27q0irRRWY6zYEGhL7HMr3bKNmcVkwgFrfsASOZrCgv+IFTjU75RqURuLDpxSWc/rejsX3rF6E371Ojmss+MoSjAS7Ozxr05uE6TkZSjfSbcLPTQj4qnQdDFVl44NfhJc73hH6kuvkYVa6tm3WE2E+/wx7X9IIu5DAQshZ7dyythHbJIW3yuETnzquKxiCRRxmYs2jtdzEjhfdhL06yVlZl9P7EoBgOfN3IJi1/qMJ+g/AwmAVP0lgvDfoImI5E1/pg+s17fml3RA
+x-ms-exchange-antispam-messagedata: 88y2kOB0sDQakjOe0mINRrUXsmuPovQuT2nOIjTHZNFbaty3wWK/13eKt1sVFABrufT/hgoYMZwK1ugNuGAkWr84urGvhdf4YgXc7z9gqwJ/eLwLVSRTM+6tCwu7kMRvgthLfc1n666V33TLf1DsLg==
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: ef5a3abc-72e3-4cda-4429-08d7bc66a422
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Feb 2020 15:55:32.1970 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3rAjEpBaR+Drb4MmZD/nlKMuWp2lEVt+1JCeg90V9nL1AKKuqoKgjy7uaFeHkrBjJj4QFEbSN+vmb4j+4ocayNzBQjTCiAb44C83PzRUZrg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_075407_257321_BDEBB5AD 
-X-CRM114-Status: GOOD (  12.87  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200228_075548_640204_DCAA6F13 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -98,62 +154,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: Tudor.Ambarus@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example these errors:
+From: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-arch/arm/boot/dts/rk3288-evb-act8846.dt.yaml:
-bus_intmem@ff700000: $nodename:0: 'bus_intmem@ff700000'
-does not match '^sram(@.*)?'
-arch/arm/boot/dts/rk3288-evb-rk808.dt.yaml:
-bus_intmem@ff700000: $nodename:0: 'bus_intmem@ff700000'
-does not match '^sram(@.*)?'
+The QSPI controller memory space is limited to 128MB:
+0x9000_00000-0x9800_00000/0XD000_0000--0XD800_0000.
 
-'rockchip-pmu-sram.txt' inherit properties from 'sram.yaml'.
-Fix this error by adding 'sram' to the bus_intmem nodename
-in 'rk3288.dtsi'. But 'sram' is also a node name already in use.
-To prevent confusion rename it to 'pmu_sram'.
+There are nor flashes that are bigger in size than the memory size
+supported by the controller: Micron MT25QL02G (256 MB).
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/sram/sram.yaml
+Check if the address exceeds the MMIO window size. An improvement
+would be to add support for regular SPI mode and fall back to it
+when the flash memories overrun the controller's memory space.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Fixes: 0e6aae08e9ae ("spi: Add QuadSPI driver for Atmel SAMA5D2")
+Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 ---
- arch/arm/boot/dts/rk3288.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/spi/atmel-quadspi.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index 9beb66216..039e8aa70 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -718,7 +718,7 @@
- 		status = "disabled";
- 	};
+diff --git a/drivers/spi/atmel-quadspi.c b/drivers/spi/atmel-quadspi.c
+index fd8007ebb145..13def7f78b9e 100644
+--- a/drivers/spi/atmel-quadspi.c
++++ b/drivers/spi/atmel-quadspi.c
+@@ -149,6 +149,7 @@ struct atmel_qspi {
+ 	struct clk		*qspick;
+ 	struct platform_device	*pdev;
+ 	const struct atmel_qspi_caps *caps;
++	resource_size_t		mmap_size;
+ 	u32			pending;
+ 	u32			mr;
+ 	u32			scr;
+@@ -329,6 +330,14 @@ static int atmel_qspi_exec_op(struct spi_mem *mem, const struct spi_mem_op *op)
+ 	u32 sr, offset;
+ 	int err;
  
--	bus_intmem@ff700000 {
-+	bus_intmem: sram@ff700000 {
- 		compatible = "mmio-sram";
- 		reg = <0x0 0xff700000 0x0 0x18000>;
- 		#address-cells = <1>;
-@@ -730,7 +730,7 @@
- 		};
- 	};
++	/*
++	 * Check if the address exceeds the MMIO window size. An improvement
++	 * would be to add support for regular SPI mode and fall back to it
++	 * when the flash memories overrun the controller's memory space.
++	 */
++	if (op->addr.val + op->data.nbytes > aq->mmap_size)
++		return -ENOTSUPP;
++
+ 	err = atmel_qspi_set_cfg(aq, op, &offset);
+ 	if (err)
+ 		return err;
+@@ -480,6 +489,8 @@ static int atmel_qspi_probe(struct platform_device *pdev)
+ 		goto exit;
+ 	}
  
--	sram@ff720000 {
-+	pmu_sram: sram@ff720000 {
- 		compatible = "rockchip,rk3288-pmu-sram", "mmio-sram";
- 		reg = <0x0 0xff720000 0x0 0x1000>;
- 	};
++	aq->mmap_size = resource_size(res);
++
+ 	/* Get the peripheral clock */
+ 	aq->pclk = devm_clk_get(&pdev->dev, "pclk");
+ 	if (IS_ERR(aq->pclk))
 -- 
-2.11.0
-
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
