@@ -2,56 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BED03173A72
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 15:56:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B61173A7A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 15:57:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bq8JYD96z9zNSVXrpd9Cog6sc6vSNRcFteQh/5YQkWI=; b=rZGHx7he7NutJE
-	WRnNSvBq2Tgv0IHTCVlrcMwG60702IV3FS/+9RcV8B/RmL4hW1RkiTRxbGdMwD6Vz3CaqW730IWLG
-	lqc32XPxZhL6k3l4E7QldNyk9nMLpyF4COY9Fa6a/q5XV6YWyDIeNafblZiubfr53KEigfAPqjM9y
-	B5wf22lcONay92j0cnYvZ6/JPExIJf5A+Etrm8zLHjgyvy89ZSw5vT2cBnj4fJFL80Lus02kVrjGs
-	S5kmns8kvuMsZ+YQ5SQK7b5hY20YUrUlS0mW11JWnybquchRXhXxPrp5+sa9OFyOokk/34/Ft3ahn
-	/AP7dsHemrT90ke/9Qrw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=egzzsdIfspN6i3pt/dGg/JBp2JAcVz+DvoVcPZ3aD2U=; b=Za++6Ay8THZngr
+	ISrTM3IlPJgYbZxhnThY4OxQywptbLU9ZSYeQElky3qb1u/BlPczh3pNgo/OAa5Lsp1u8o9KTbiOe
+	uja03jSYj8bMGu8Lxu+orCrf5zqXoifcBwRR5B+MaSbsRliFwSWYSeH3+7Hrk4k+2dzHYB9YbW90O
+	Dj0xM7NOkwsXB8PQH7esENAJyMI68IUbZa7WFBpbgmPhrS7QLNPgdhxkMxy6dZItagkj3GvZOxLVv
+	e5EdWMSEdpu2DJTQMQJK6wxEldbSvaJHe66rYJtsiCTa6jUBTF9N90qgWlDFmvlFTySnLpdpxUEVl
+	+59YLEEDpSyjtkrTfGpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7h4G-00087E-BQ; Fri, 28 Feb 2020 14:56:44 +0000
-Received: from mail.manjaro.org ([176.9.38.148])
+	id 1j7h56-0000EQ-8W; Fri, 28 Feb 2020 14:57:36 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7h46-000868-6O; Fri, 28 Feb 2020 14:56:36 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.manjaro.org (Postfix) with ESMTP id D085F3941E12;
- Fri, 28 Feb 2020 15:56:31 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at manjaro.org
-Received: from mail.manjaro.org ([127.0.0.1])
- by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 1dWdwfYRA7sh; Fri, 28 Feb 2020 15:56:29 +0100 (CET)
-Subject: Re: [PATCH 2/2] arm64: dts: rockchip: Add initial support for
- Pinebook Pro
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
-References: <20200227180630.166982-1-t.schramm@manjaro.org>
- <20200227180630.166982-3-t.schramm@manjaro.org> <12370413.gKdrHkWbHd@diego>
-From: Tobias Schramm <t.schramm@manjaro.org>
-Message-ID: <37190f26-48aa-dcad-d4b1-8a534ba1360e@manjaro.org>
-Date: Fri, 28 Feb 2020 15:57:10 +0100
+ id 1j7h4r-0000E2-Nk
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 14:57:23 +0000
+Received: by mail-qt1-x843.google.com with SMTP id t13so2210521qto.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 28 Feb 2020 06:57:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=aXNQ0NABVZ/Zc8fXXYZpSz3dqh4Ns6QlhvK6/kwYM2k=;
+ b=fx3F0RVJpvuGR0vU2fusOG/NqXxNQdLCppTq9XL99VJF79clWgcp5+agQ8Bkdn764W
+ /6H4SP43zfEgHKiNsbn3EkZXEI5eftR/AZNv5GJYTZnxTXZRyq9aw7ICgIKMn8l0jnUx
+ 9LorGB67BgZ2aphSqsGjJO2u/nt3IEPqyy6blQp30BdEWnEUxTjjCoo7zwPmwtZJlkI3
+ e+qGqpZDRkSLznZ8x2vUdH6CsaxJ2HRW27+fCzEtPp5EqdbjknklIN9PHhf1PYIBAg+F
+ PuUEX6g64YI1DZfAu0ym87ZYgi2PkqOOc/+5zxlIRaH10PX0tdO8PBQJ2rqvbzBeuTgk
+ IVvQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=aXNQ0NABVZ/Zc8fXXYZpSz3dqh4Ns6QlhvK6/kwYM2k=;
+ b=HSsP5W7IDDHBtL88B+Z2fQHJ4HIdKAskS63vp5LkgwA3SNU0aKZYXoXAe4TAvsxKJX
+ eHblZrLmEwN6AGl+kAPmhiiwJi1/1lG3wUPldklTdKA1oVGM4NW2l3W/rUN6hZQ+M3xz
+ +ux8NQQSIB8aGDKdAKeXl6cdf2NVjoZd7ikdQzteG83hy8G1BEzdAUUZlEO/2fsJs6ow
+ c6Sw76qAJ9LjmhVG7uupz2DiHN0knDywvH3Bgj37Hpp+I7lc7EbMiuRwYcXehT37vCCE
+ 0r4fyUyP3Z3LNSLEhZHz/mTbn4aDATvI3vmdWC1LflX4qJm72/0s4WdH9EK7Gbpy0Phv
+ U7eg==
+X-Gm-Message-State: APjAAAWYWb330L9g4CtX4il81UTDUz3e4C120FnwgyvfPVeY9nVP5feJ
+ 5qt6RFwR0+K6/1QU2xEwjJJ30w==
+X-Google-Smtp-Source: APXvYqxZGwk4KQ+YAY4GsyBgYKpbiHklk+KncMw+8qgpUr+ys9QfMTdjm4TizVQ6yPrtfGJb79x/jw==
+X-Received: by 2002:ac8:2939:: with SMTP id y54mr4410279qty.109.1582901840269; 
+ Fri, 28 Feb 2020 06:57:20 -0800 (PST)
+Received: from ziepe.ca
+ (hlfxns017vw-142-68-57-212.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [142.68.57.212])
+ by smtp.gmail.com with ESMTPSA id f7sm5133445qtj.92.2020.02.28.06.57.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 28 Feb 2020 06:57:19 -0800 (PST)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1j7h4p-00034R-0q; Fri, 28 Feb 2020 10:57:19 -0400
+Date: Fri, 28 Feb 2020 10:57:19 -0400
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v4 02/26] iommu/sva: Manage process address spaces
+Message-ID: <20200228145718.GR31668@ziepe.ca>
+References: <20200224182401.353359-1-jean-philippe@linaro.org>
+ <20200224182401.353359-3-jean-philippe@linaro.org>
+ <20200226111320.3b6e6d3d@jacob-builder>
+ <20200228144007.GB2156@myrica>
 MIME-Version: 1.0
-In-Reply-To: <12370413.gKdrHkWbHd@diego>
-Content-Language: en-US-large
+Content-Disposition: inline
+In-Reply-To: <20200228144007.GB2156@myrica>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_065634_382834_4A9EC16E 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200228_065721_770131_E7ECE2E5 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.38.148 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,62 +105,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexis Ballier <aballier@gentoo.org>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
- enric.balletbo@collabora.com, Andy Yan <andy.yan@rock-chips.com>,
- Matthias Kaehlcke <mka@chromium.org>, Vivek Unune <npcomplete13@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
+ Jacob Pan <jacob.jun.pan@linux.intel.com>,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ linux-pci@vger.kernel.org, joro@8bytes.org, Jonathan.Cameron@huawei.com,
+ robin.murphy@arm.com, linux-mm@kvack.org, iommu@lists.linux-foundation.org,
+ robh+dt@kernel.org, yi.l.liu@intel.com, catalin.marinas@arm.com,
+ zhangfei.gao@linaro.org, will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgp0aGFua3MgZm9yIHRoZSByZXZpZXcuIEknbGwgaW1wbGVtZW50IHRoZSBjaGFu
-Z2VzIGFuZCBzZW5kIGEgdjIuCgo+PiArCQljb21wYXRpYmxlID0gImdwaW8tbGVkcyI7Cj4+ICsJ
-CXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4+ICsJCXBpbmN0cmwtMCA9IDwmcHdybGVkX2dw
-aW8gJnNscGxlZF9ncGlvPjsKPj4gKwo+PiArCQlncmVlbi1sZWQgewo+PiArCQkJY29sb3IgPSA8
-TEVEX0NPTE9SX0lEX0dSRUVOPjsKPj4gKwkJCWRlZmF1bHQtc3RhdGUgPSAib2ZmIjsKPj4gKwkJ
-CWZ1bmN0aW9uID0gTEVEX0ZVTkNUSU9OX1BPV0VSOwo+PiArCQkJZ3Bpb3MgPSA8JmdwaW8wIFJL
-X1BCMyBHUElPX0FDVElWRV9ISUdIPjsKPj4gKwkJCWxhYmVsID0gImdyZWVuOmRpc2stYWN0aXZp
-dHkiOwo+PiArCQkJbGludXgsZGVmYXVsdC10cmlnZ2VyID0gIm1tYzIiOwo+IGhtbSwgTEVEX0ZV
-TkNUSU9OX1BPV0VSIGJ1dCB0cmlnZ2VyIGZvciBtbWMyID8KPiBTbyBpZiB0aGVyZSBpcyBubyBh
-Y3Rpdml0eSBvbiB0aGUgTEVEIGl0IGxvb2tzIHRvIGJlIG9mZj8KCkkgc2VlIHdoeSB0aGlzIGlz
-IGxvb2tpbmcgd2VpcmQuIEl0IGRvZXMgbm90IG1ha2UgYSB3aG9sZSBsb3Qgb2Ygc2Vuc2UKYXQg
-dGhlIG1vbWVudCBhbmQgSSdsbCBjaGFuZ2UgdGhhdCBmb3IgdjIuwqAKCkhvd2V2ZXIgSSBoYXZl
-IGEgcGF0Y2ggaW4gdGhlIG1ha2luZyB0aGF0IGFkZHMgIi1pbnZlcnRlZCIgdmFyaWFudHMgZm9y
-CmFsbCB0cmlnZ2VycyBzbyB0aGUgcG93ZXIgTEVEIGNhbiBiZSB0dXJuZWQgb2YgYnJpZWZseSB0
-byBpbmRpY2F0ZSBtbWMKYWN0aXZpdHkuCgpOb3Qgc3VyZSB3ZXRoZXIgcGVvcGxlIHdpbGwgbGlr
-ZSBpdCBvciBub3QgYnV0IEknbGwgdHJ5IGl0IGFzIGEgUkZDLgoKPj4gKwkgKiBvZiB3YWtldXAg
-c291cmNlcyB3aXRob3V0IGRpc2FibGluZyB0aGUgd2hvbGUga2V5Cj4gQWxzbyBjYW4geW91IGV4
-cGxhaW4gdGhlIHByb2JsZW0gYSBiaXQ/IElmIHRoZXJlIGlzIGEgZGVmaWNpdCBpbiB0aGUgaW5w
-dXQKPiBzdWJzeXN0ZW0gcmVnYXJkaW5nIHdha2V1cCBldmVudHMsIGR0IGlzIG5vcm1hbGx5IG5v
-dCB0aGUgcGxhY2UgdG8gd29yawo+IGFyb3VuZCB0aGluZ3MgW3dlJ3JlIHN1cHBvc2VkIHRvIGJl
-IE9TIGluZGVwZW5kZW50XQoKVGhlIGlzc3VlIGlzIHRoYXQgc29tZSB1c2VycyB3YW50ZWQgdG8g
-YmUgYWJsZSB0byBjb250cm9sIHRoZSB3YWtldXAKZnVuY3Rpb25hbGl0eSBvZiB0aGUga2V5cyBz
-ZXBhcmF0ZWx5IHZpYSBzeXNmcy4gVGhhdCBkb2VzIG5vdCBzZWVtIHRvIGJlCnBvc3NpYmxlIHdo
-ZW4gY29tYmluaW5nIGJvdGgga2V5cyBpbnRvIG9uZSBncGlvLWtleXMgbm9kZS4gQSBtb3JlCmRl
-dGFpbGVkIGV4cGxhbmF0aW9uIG9mIHRoZSBpc3N1ZSBjYW4gYmUgZm91bmQgYXQgWzFdLgoKPj4g
-KyZpMmMwIHsKPj4gKwljbG9jay1mcmVxdWVuY3kgPSA8NDAwMDAwPjsKPj4gKwlpMmMtc2NsLXJp
-c2luZy10aW1lLW5zID0gPDE2OD47Cj4+ICsJaTJjLXNjbC1mYWxsaW5nLXRpbWUtbnMgPSA8ND47
-Cj4+ICsJc3RhdHVzID0gIm9rYXkiOwo+PiArCj4+ICsJcms4MDg6IHBtaWNAMWIgewo+PiArCQlj
-b21wYXRpYmxlID0gInJvY2tjaGlwLHJrODA4IjsKPj4gKwkJcmVnID0gPDB4MWI+Owo+PiArCQkj
-Y2xvY2stY2VsbHMgPSA8MT47Cj4+ICsJCWNsb2NrLW91dHB1dC1uYW1lcyA9ICJ4aW4zMmsiLCAi
-cms4MDgtY2xrb3V0MiI7Cj4+ICsJCWludGVycnVwdC1wYXJlbnQgPSA8JmdwaW8zPjsKPj4gKwkJ
-aW50ZXJydXB0cyA9IDwxMCBJUlFfVFlQRV9MRVZFTF9MT1c+Owo+PiArCQlwaW5jdHJsLW5hbWVz
-ID0gImRlZmF1bHQiOwo+PiArCQlwaW5jdHJsLTAgPSA8JnBtaWNfaW50X2xfZ3Bpbz47Cj4+ICsJ
-CXJvY2tjaGlwLHN5c3RlbS1wb3dlci1jb250cm9sbGVyOwo+PiArCQl3YWtldXAtc291cmNlOwo+
-PiArCj4+ICsJCXZkZGlvLXN1cHBseSA9IDwmdmNjXzN2MD47Cj4gd2hlcmUgZG9lcyB0aGlzIGNv
-bWUgZnJvbT8gQWthIGl0J3Mgbm90IHNwZWNpZmllZCBpbiB0aGUgZHQtYmluZGluZwo+ICh0aG91
-Z2ggdGhlIGV4YW1wbGUgZmFsc2VseSB1c2VzIGl0KSBhbmQgYWxzbyBub3QgcmVmZXJlbmNlZCBp
-biB0aGUgZHJpdmVyLgoKVGhpcyBkb2VzIGxpa2VseSBjb21lIGZyb20gdGhlIEJTUCBkdHMuIFNl
-ZW1zIEkgbWlzc2VkIGl0IHdoaWxlIGNoZWNraW5nCmJpbmRpbmdzLgoKClRoYW5rcyBhZ2FpbiBm
-b3IgdGhlIHJldmlldywKClRvYmlhcwoKClsxXSBodHRwczovL2dpdGxhYi5tYW5qYXJvLm9yZy90
-c3lzL2xpbnV4LXBpbmVib29rLXByby9pc3N1ZXMvNQoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Feb 28, 2020 at 03:40:07PM +0100, Jean-Philippe Brucker wrote:
+> > > Device
+> > > + * 00:00.0 accesses address spaces X and Y, each corresponding to an
+> > > mm_struct.
+> > > + * Devices 00:01.* only access address space Y. In addition each
+> > > + * IOMMU_DOMAIN_DMA domain has a private address space, io_pgtable,
+> > > that is
+> > > + * managed with iommu_map()/iommu_unmap(), and isn't shared with the
+> > > CPU MMU.
+> > So this would allow IOVA and SVA co-exist in the same address space?
+> 
+> Hmm, not in the same address space, but they can co-exist in a device. In
+> fact the endpoint I'm testing (hisi zip accelerator) already needs normal
+> DMA alongside SVA for queue management. This one is integrated on an
+> Arm-based platform so shouldn't be a concern for VT-d at the moment, but
+> I suspect we might see more of this kind of device with mixed DMA.
+
+Probably the most interesting usecases for PASID definately require
+this, so this is more than a "suspect we might see"
+
+We want to see the privileged kernel control the general behavior of
+the PCI function and delegate only some DMAs to PASIDs associated with
+the user mm_struct. The device is always trusted the label its DMA
+properly.
+
+These programming models are already being used for years now with the
+opencapi implementation.
+
+Jason
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
