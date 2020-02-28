@@ -2,65 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2418C173CDA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:27:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6552B173CEF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:32:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qHAxvleJRycbTk00ajiqkjrlyu9DtZv3AvAXJT+33sQ=; b=rNAh+R6+B/GpI/
-	menM88CPovT8+AcpVtxvD4v8EC4NRq5WFP7+aFWA0hSR5yNL/rxHXrfd+xUqvQrXdcacdDjyk1FaA
-	Q3zKWp036UlBWiPkqJ3ck+NAbvp+xYG9x9xYO8343xLKd9pQMODv8XZQE10K5ebNz0Lm8HUlx5ouz
-	fSOVc9MEuWxYpwXL/i5CI5VkB336xZaexa3CzuEOtWeTEXnF1RLTx3fmQtlslm+b5/P/ERdfylaCN
-	WsXPTxVBzDytDDdDwj3H7VHMVxbSmotuWyw68ND1aDaAGC4qxrjOQ5Cfv/HfkvyxQmCt98pko2gLo
-	aX2X0l69kZF+SFVSqg2A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sT9grIzlbmZidxWWnOpCg3eRpIlr6KoSjYC5bhyLLyQ=; b=DaABHawGKTRUg6
+	YYdp6C4kLGRtx4BqkbhSqRnt/BK3e7d3pDHP3sK2ZyBjohoMIkt7C/uC9UGOCOK30KWt8Kjsvj2K+
+	ktKimLOW3Oa7lxdnTzp5dyUt0kqXMpcFxXaWAfbTKtBxcF+lvmJjH7PKLa13ZqwLMN2iQV7mEX7/T
+	PjQI5ezsZM8adJPUzSqIl4+hn8qdAFo9smcw6AVSvB9LZTUHJhCMBJ7ZmQHfenJOEJRUUYgkqvell
+	+84SjgE7EYb1W2f8KjXWi7lJ048tW6n9le6Zk+fxC7nEcLtrcTcI4RblBRd03Boebz4BpW9XaL4L1
+	4+YsIMy5vboCmaJbUzNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7iTZ-0001FB-HW; Fri, 28 Feb 2020 16:26:57 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7iTP-0001D6-IM
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:26:49 +0000
-Received: from lhreml704-cah.china.huawei.com (unknown [172.18.7.106])
- by Forcepoint Email with ESMTP id 0714367CCA21321329BA;
- Fri, 28 Feb 2020 16:26:41 +0000 (GMT)
-Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
- lhreml704-cah.china.huawei.com (10.201.108.45) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 28 Feb 2020 16:26:40 +0000
-Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
- (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 28 Feb
- 2020 16:26:40 +0000
-Date: Fri, 28 Feb 2020 16:26:37 +0000
-From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 02/26] iommu/sva: Manage process address spaces
-Message-ID: <20200228162637.00007f4c@Huawei.com>
-In-Reply-To: <20200228144304.GC2156@myrica>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-3-jean-philippe@linaro.org>
- <20200226123506.000076fb@Huawei.com> <20200228144304.GC2156@myrica>
-Organization: Huawei Technologies Research and Development (UK) Ltd.
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+	id 1j7iYb-0002wp-VO; Fri, 28 Feb 2020 16:32:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7iYQ-0002wQ-2w
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:31:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DC96C31B;
+ Fri, 28 Feb 2020 08:31:56 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E1F673F73B;
+ Fri, 28 Feb 2020 08:31:53 -0800 (PST)
+Subject: Re: [PATCH v9 10/12] arm64: implement Shadow Call Stack
+To: Sami Tolvanen <samitolvanen@google.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200225173933.74818-1-samitolvanen@google.com>
+ <20200225173933.74818-11-samitolvanen@google.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <56b82a54-044a-75ec-64e5-6ba25b19571f@arm.com>
+Date: Fri, 28 Feb 2020 16:31:51 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.57]
-X-ClientProxiedBy: lhreml727-chm.china.huawei.com (10.201.108.78) To
- lhreml710-chm.china.huawei.com (10.201.108.61)
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200225173933.74818-11-samitolvanen@google.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_082647_911218_DE6FDE5E 
-X-CRM114-Status: GOOD (  28.72  )
+X-CRM114-CacheID: sfid-20200228_083158_216868_B0EF4CE0 
+X-CRM114-Status: GOOD (  18.79  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,204 +65,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 28 Feb 2020 15:43:04 +0100
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+Hi Sami,
 
-> On Wed, Feb 26, 2020 at 12:35:06PM +0000, Jonathan Cameron wrote:
-> > > + * A single Process Address Space ID (PASID) is allocated for each mm. In the
-> > > + * example, devices use PASID 1 to read/write into address space X and PASID 2
-> > > + * to read/write into address space Y. Calling iommu_sva_get_pasid() on bond 1
-> > > + * returns 1, and calling it on bonds 2-4 returns 2.
-> > > + *
-> > > + * Hardware tables describing this configuration in the IOMMU would typically
-> > > + * look like this:
-> > > + *
-> > > + *                                PASID tables
-> > > + *                                 of domain A
-> > > + *                              .->+--------+
-> > > + *                             / 0 |        |-------> io_pgtable
-> > > + *                            /    +--------+
-> > > + *            Device tables  /   1 |        |-------> pgd X
-> > > + *              +--------+  /      +--------+
-> > > + *      00:00.0 |      A |-'     2 |        |--.
-> > > + *              +--------+         +--------+   \
-> > > + *              :        :       3 |        |    \
-> > > + *              +--------+         +--------+     --> pgd Y
-> > > + *      00:01.0 |      B |--.                    /
-> > > + *              +--------+   \                  |
-> > > + *      00:01.1 |      B |----+   PASID tables  |
-> > > + *              +--------+     \   of domain B  |
-> > > + *                              '->+--------+   |
-> > > + *                               0 |        |-- | --> io_pgtable
-> > > + *                                 +--------+   |
-> > > + *                               1 |        |   |
-> > > + *                                 +--------+   |
-> > > + *                               2 |        |---'
-> > > + *                                 +--------+
-> > > + *                               3 |        |
-> > > + *                                 +--------+
-> > > + *
-> > > + * With this model, a single call binds all devices in a given domain to an
-> > > + * address space. Other devices in the domain will get the same bond implicitly.
-> > > + * However, users must issue one bind() for each device, because IOMMUs may
-> > > + * implement SVA differently. Furthermore, mandating one bind() per device
-> > > + * allows the driver to perform sanity-checks on device capabilities.  
-> >   
-> > > + *
-> > > + * In some IOMMUs, one entry of the PASID table (typically the first one) can
-> > > + * hold non-PASID translations. In this case PASID 0 is reserved and the first
-> > > + * entry points to the io_pgtable pointer. In other IOMMUs the io_pgtable
-> > > + * pointer is held in the device table and PASID 0 is available to the
-> > > + * allocator.  
-> > 
-> > Is it worth hammering home in here that we can only do this because the PASID space
-> > is global (with exception of PASID 0)?  It's a convenient simplification but not
-> > necessarily a hardware restriction so perhaps we should remind people somewhere in here?  
-> 
-> I could add this four paragraphs up:
-> 
-> "A single Process Address Space ID (PASID) is allocated for each mm. It is
-> a choice made for the Linux SVA implementation, not a hardware
-> restriction."
+On 25/02/2020 17:39, Sami Tolvanen wrote:
+> This change implements shadow stack switching, initial SCS set-up,
+> and interrupt shadow stacks for arm64.
 
-Perfect.
+> diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
+> new file mode 100644
+> index 000000000000..c50d2b0c6c5f
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/scs.h
+> @@ -0,0 +1,37 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef _ASM_SCS_H
+> +#define _ASM_SCS_H
+> +
+> +#ifndef __ASSEMBLY__
 
-> 
-> > > + */
-> > > +
-> > > +struct io_mm {
-> > > +	struct list_head		devices;
-> > > +	struct mm_struct		*mm;
-> > > +	struct mmu_notifier		notifier;
-> > > +
-> > > +	/* Late initialization */
-> > > +	const struct io_mm_ops		*ops;
-> > > +	void				*ctx;
-> > > +	int				pasid;
-> > > +};
-> > > +
-> > > +#define to_io_mm(mmu_notifier)	container_of(mmu_notifier, struct io_mm, notifier)
-> > > +#define to_iommu_bond(handle)	container_of(handle, struct iommu_bond, sva)  
-> > 
-> > Code ordering wise, do we want this after the definition of iommu_bond?
-> > 
-> > For both of these it's a bit non obvious what they come 'from'.
-> > I wouldn't naturally assume to_io_mm gets me from notifier to the io_mm
-> > for example.  Not sure it matters though if these are only used in a few
-> > places.  
-> 
-> Right, I can rename the first one to mn_to_io_mm(). The second one I think
-> might be good enough.
+As the whole file is guarded by this, why do you need to include it in assembly files at all?
 
-Agreed. The second one does feel more natural.
 
-> 
-> 
-> > > +static struct iommu_sva *
-> > > +io_mm_attach(struct device *dev, struct io_mm *io_mm, void *drvdata)
-> > > +{
-> > > +	int ret = 0;  
-> > 
-> > I'm fairly sure this is set in all paths below.  Now, of course the
-> > compiler might not think that in which case fair enough :)
-> >   
-> > > +	bool attach_domain = true;
-> > > +	struct iommu_bond *bond, *tmp;
-> > > +	struct iommu_domain *domain, *other;
-> > > +	struct iommu_sva_param *param = dev->iommu_param->sva_param;
-> > > +
-> > > +	domain = iommu_get_domain_for_dev(dev);
-> > > +
-> > > +	bond = kzalloc(sizeof(*bond), GFP_KERNEL);
-> > > +	if (!bond)
-> > > +		return ERR_PTR(-ENOMEM);
-> > > +
-> > > +	bond->sva.dev	= dev;
-> > > +	bond->drvdata	= drvdata;
-> > > +	refcount_set(&bond->refs, 1);
-> > > +	RCU_INIT_POINTER(bond->io_mm, io_mm);
-> > > +
-> > > +	mutex_lock(&iommu_sva_lock);
-> > > +	/* Is it already bound to the device or domain? */
-> > > +	list_for_each_entry(tmp, &io_mm->devices, mm_head) {
-> > > +		if (tmp->sva.dev != dev) {
-> > > +			other = iommu_get_domain_for_dev(tmp->sva.dev);
-> > > +			if (domain == other)
-> > > +				attach_domain = false;
-> > > +
-> > > +			continue;
-> > > +		}
-> > > +
-> > > +		if (WARN_ON(tmp->drvdata != drvdata)) {
-> > > +			ret = -EINVAL;
-> > > +			goto err_free;
-> > > +		}
-> > > +
-> > > +		/*
-> > > +		 * Hold a single io_mm reference per bond. Note that we can't
-> > > +		 * return an error after this, otherwise the caller would drop
-> > > +		 * an additional reference to the io_mm.
-> > > +		 */
-> > > +		refcount_inc(&tmp->refs);
-> > > +		io_mm_put(io_mm);
-> > > +		kfree(bond);  
-> > 
-> > Free outside the lock would be ever so slightly more logical given we allocated
-> > before taking the lock.
-> >   
-> > > +		mutex_unlock(&iommu_sva_lock);
-> > > +		return &tmp->sva;
-> > > +	}
-> > > +
-> > > +	list_add_rcu(&bond->mm_head, &io_mm->devices);
-> > > +	param->nr_bonds++;
-> > > +	mutex_unlock(&iommu_sva_lock);
-> > > +
-> > > +	ret = io_mm->ops->attach(bond->sva.dev, io_mm->pasid, io_mm->ctx,
-> > > +				 attach_domain);
-> > > +	if (ret)
-> > > +		goto err_remove;
-> > > +
-> > > +	return &bond->sva;
-> > > +
-> > > +err_remove:
-> > > +	/*
-> > > +	 * At this point concurrent threads may have started to access the
-> > > +	 * io_mm->devices list in order to invalidate address ranges, which
-> > > +	 * requires to free the bond via kfree_rcu()
-> > > +	 */
-> > > +	mutex_lock(&iommu_sva_lock);
-> > > +	param->nr_bonds--;
-> > > +	list_del_rcu(&bond->mm_head);
-> > > +
-> > > +err_free:
-> > > +	mutex_unlock(&iommu_sva_lock);
-> > > +	kfree_rcu(bond, rcu_head);  
-> > 
-> > I don't suppose it matters really but we don't need the rcu free if
-> > we follow the err_free goto.  Perhaps we are cleaner in this case
-> > to not use a unified exit path but do that case inline?  
-> 
-> Agreed, though I moved the kzalloc() later as suggested by Jacob, I think
-> it looks a little better and simplifies the error paths
-> 
-> Thanks,
-> Jean
-Jonathan
+> +
+> +#include <linux/scs.h>
+> +
+> +#ifdef CONFIG_SHADOW_CALL_STACK
+> +
+> +extern void scs_init_irq(void);
+> +
+> +static __always_inline void scs_save(struct task_struct *tsk)
+> +{
+> +	void *s;
+> +
+> +	asm volatile("mov %0, x18" : "=r" (s));
+> +	task_set_scs(tsk, s);
+> +}
+> +
+> +static inline void scs_overflow_check(struct task_struct *tsk)
+> +{
+> +	if (unlikely(scs_corrupted(tsk)))
+> +		panic("corrupted shadow stack detected inside scheduler\n");
 
+Could this ever catch anything with CONFIG_SHADOW_CALL_STACK_VMAP?
+Wouldn't we have hit the vmalloc guard page at the point of overflow?
+
+
+> +}
+> +
+> +#else /* CONFIG_SHADOW_CALL_STACK */
+> +
+> +static inline void scs_init_irq(void) {}
+> +static inline void scs_save(struct task_struct *tsk) {}
+> +static inline void scs_overflow_check(struct task_struct *tsk) {}
+> +
+> +#endif /* CONFIG_SHADOW_CALL_STACK */
+> +
+> +#endif /* __ASSEMBLY __ */
+> +
+> +#endif /* _ASM_SCS_H */
+
+
+
+> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> index 9461d812ae27..4b18c3bbdea5 100644
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+
+If I corrupt x18 so that we take an exception (mov x18, xzr), we take that exception
+whenever we run C code. The CPU 'vanishes' and I get a very upset scheduler shortly after.
+
+Stack misalignment has the same problem, but the overflow test (eventually) catches that,
+then calls panic() using the overflow stack. (See the kernel_ventry macro and __bad_stack
+in entry.S)
+
+It would be nice to have a per-cpu stack that we switch to when on the overflow stack.
+(this would catch the scs overflow hitting the guard page too, as we should eat through
+the regular stack until we overflowed it!)
+
+
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index d4ed9a19d8fe..f2cb344f998c 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -358,6 +359,9 @@ void cpu_die(void)
+>  {
+>  	unsigned int cpu = smp_processor_id();
+>
+> +	/* Save the shadow stack pointer before exiting the idle task */
+
+I can't work out why this needs to be before before idle_task_exit()...
+It needs to run before init_idle(), which calls scs_task_reset(), but all that is on the
+cpu_up() path. (if it is to pair those up, any reason core code can't do both?)
+
+
+> +	scs_save(current);
+> +
+>  	idle_task_exit();
+>
+>  	local_daif_mask();
+>
+
+
+Reviewed-by: James Morse <james.morse@arm.com>
+
+
+Thanks!
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
