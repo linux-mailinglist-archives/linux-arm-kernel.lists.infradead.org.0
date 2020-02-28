@@ -2,78 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 200EE172CA1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 01:01:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2423172CF0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 01:20:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1ycxsHNp+r6n+uNn4rrnsPPaJlGZfSwL5+72WAT24CA=; b=kDjttBx1H6ejKiWQo6aGZI1fH
-	X1JpM/PW+11q9/j80JKp2Z2ChXFkfdXA6PLWjvu2E6WSFtgyh9iiydJWnnQ363Lbgm8YOm7aOLB9U
-	wL/i2CL5TEC2orV7EILirVc+gpxepM0QJrwF1zb+AA5q7f+Vl4qWyDhJhNT/bXhKOzKabwDO88AXa
-	bBM5x6PVQe3nGryxEwwWXe2K+ueDJEHsxm4FQwpMqGP4NiTfaFAzrUeF0ekgsjGctwfimVsQQ0Ypk
-	y5ot0Yld7Pzrn5qyGUHr1tAcxB6ysMap+ooWfxgLSmSKnW3jvhTEn0Pz6NmNfahHbJsHRq5A/qxQA
-	TQxL+EHxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Q9uG1RfLcmwvGX+zHyITuRP0Vx6uY5+eR/qYLRq/llE=; b=L06qgsOML7Kms4
+	rNmp5lOdT1m1WNonDSle4Y/fHNIvSdmD8JOJIABE9Ghm8q94YOz8vXxxmA8SrtS+b/QEjpM4t3o1D
+	dFWi1Bz7ZiP2vPPMkBe74/cVw+YSCEw+GmPS23IfMpW+lJEI9N1ZcC51m3TBmJZs157Q/wZte2lPa
+	RACsmBUbkXjI58zse5i4rL4TWfzLRe3mXBG27LI8iriHHCoyvhYaOm4jKWHGcWeSMqS8MMQk7uN+7
+	So3ZQB/QjcXC8pDgX2cF3jkqH1O4jIBH64MsPFpLxNY345JRsUdtvZGeOmFr0JX+4mg7EccoETnNc
+	j50S1GaP2MOTc4MwC4fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7T5S-000230-2x; Fri, 28 Feb 2020 00:01:02 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1j7TNf-0007QS-Ty; Fri, 28 Feb 2020 00:19:51 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7T5I-00022F-MX
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 00:00:55 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1582848053; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=sxdjaXAFvzStZVWpkXqd8Oa4CInabS6KmEzidWgB4u4=;
- b=XY2hxmk/nVvnOMGaYWLzl5Xd75dBjoRhsPw75KULXHnSplfrrsqX46u0paTsfyEv+wvTBX9u
- d0BkfZhKCBKkY6UbB5saL2VP26CkivieqrvqHQZe/q9iQQYhR9yWxzCo58957hgS7f7EiWUq
- JbQ1eF6sp/LgJZ+5O5L7gpgnNfU=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e585816.7fb06ce4f420-smtp-out-n01;
- Fri, 28 Feb 2020 00:00:22 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 73EECC4479C; Fri, 28 Feb 2020 00:00:22 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: rishabhb)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 6B74AC43383;
- Fri, 28 Feb 2020 00:00:21 +0000 (UTC)
+ id 1j7TNU-0007PO-Bk
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 00:19:42 +0000
+Received: from zyt.lan (unknown [IPv6:2a02:169:3df5::564])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id DA5AB5C0103;
+ Fri, 28 Feb 2020 01:19:30 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1582849170;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=TIjae1yYHkhLUHlgAhQROPT7jyNpin+f5lZbY7zzkps=;
+ b=aTYpnGkw3RWTSB31SifTZL0yjsMbDJz69Z0gy8uGkXyuSWk6m/KKz7XX5WmjZXgckfOZ3M
+ qIfbPbE+1/RTZLIaVEfUpJjmSnl73LlsKSG/up6bKoNJ6bIsy76oDV/pLXp/hZbQhPn/QZ
+ OPQzYoE5HuJItobQd5M3WVtI/aC/aIA=
+From: Stefan Agner <stefan@agner.ch>
+To: linux@armlinux.org.uk
+Subject: [PATCH] ARM: warn if pre-UAL assembler syntax is used
+Date: Fri, 28 Feb 2020 01:19:22 +0100
+Message-Id: <cd74f11eaee5d8fe3599280eb1e3812ce577c835.1582849064.git.stefan@agner.ch>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Date: Thu, 27 Feb 2020 16:00:21 -0800
-From: rishabhb@codeaurora.org
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 6/6] remoteproc: qcom: Add notification types to SSR
-In-Reply-To: <20200227215940.GC20116@xps15>
-References: <1582167465-2549-1-git-send-email-sidgup@codeaurora.org>
- <1582167465-2549-7-git-send-email-sidgup@codeaurora.org>
- <20200227215940.GC20116@xps15>
-Message-ID: <1a615fcd5a5c435d1d8babe8d5c3f8c3@codeaurora.org>
-X-Sender: rishabhb@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_160053_781566_7A2F613F 
-X-CRM114-Status: GOOD (  23.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_161940_552091_028AF839 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,185 +70,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, agross@kernel.org,
- Siddharth Gupta <sidgup@codeaurora.org>, psodagud@codeaurora.org,
+Cc: arnd@arndb.de, clang-built-linux@googlegroups.com,
+ linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
+ jiancai@google.com, yamada.masahiro@socionext.com, manojgupta@google.com,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-27 13:59, Mathieu Poirier wrote:
-> On Wed, Feb 19, 2020 at 06:57:45PM -0800, Siddharth Gupta wrote:
->> The SSR subdevice only adds callback for the unprepare event. Add 
->> callbacks
->> for unprepare, start and prepare events. The client driver for a 
->> particular
->> remoteproc might be interested in knowing the status of the remoteproc
->> while undergoing SSR, not just when the remoteproc has finished 
->> shutting
->> down.
->> 
->> Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
->> ---
->>  drivers/remoteproc/qcom_common.c | 39 
->> +++++++++++++++++++++++++++++++++++----
->>  include/linux/remoteproc.h       | 15 +++++++++++++++
->>  2 files changed, 50 insertions(+), 4 deletions(-)
->> 
->> diff --git a/drivers/remoteproc/qcom_common.c 
->> b/drivers/remoteproc/qcom_common.c
->> index 6714f27..6f04a5b 100644
->> --- a/drivers/remoteproc/qcom_common.c
->> +++ b/drivers/remoteproc/qcom_common.c
->> @@ -183,9 +183,9 @@ EXPORT_SYMBOL_GPL(qcom_remove_smd_subdev);
->>   *
->>   * Returns pointer to srcu notifier head on success, ERR_PTR on 
->> failure.
->>   *
->> - * This registers the @notify function as handler for restart 
->> notifications. As
->> - * remote processors are stopped this function will be called, with 
->> the rproc
->> - * pointer passed as a parameter.
->> + * This registers the @notify function as handler for 
->> powerup/shutdown
->> + * notifications. This function will be invoked inside the callbacks 
->> registered
->> + * for the ssr subdevice, with the rproc pointer passed as a 
->> parameter.
->>   */
->>  void *qcom_register_ssr_notifier(struct rproc *rproc, struct 
->> notifier_block *nb)
->>  {
->> @@ -227,11 +227,39 @@ int qcom_unregister_ssr_notifier(void *notify, 
->> struct notifier_block *nb)
->>  }
->>  EXPORT_SYMBOL_GPL(qcom_unregister_ssr_notifier);
->> 
->> +static int ssr_notify_prepare(struct rproc_subdev *subdev)
->> +{
->> +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> +
->> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> +				 RPROC_BEFORE_POWERUP, (void *)ssr->name);
->> +	return 0;
->> +}
->> +
->> +static int ssr_notify_start(struct rproc_subdev *subdev)
->> +{
->> +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> +
->> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> +				 RPROC_AFTER_POWERUP, (void *)ssr->name);
->> +	return 0;
->> +}
->> +
->> +static void ssr_notify_stop(struct rproc_subdev *subdev, bool 
->> crashed)
->> +{
->> +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> +
->> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> +				 RPROC_BEFORE_SHUTDOWN, (void *)ssr->name);
->> +}
->> +
->> +
->>  static void ssr_notify_unprepare(struct rproc_subdev *subdev)
->>  {
->>  	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> 
->> -	srcu_notifier_call_chain(ssr->rproc_notif_list, 0, (void 
->> *)ssr->name);
->> +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> +				 RPROC_AFTER_SHUTDOWN, (void *)ssr->name);
->>  }
->> 
->>  /**
->> @@ -248,6 +276,9 @@ void qcom_add_ssr_subdev(struct rproc *rproc, 
->> struct qcom_rproc_ssr *ssr,
->>  {
->>  	ssr->name = ssr_name;
->>  	ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
->> +	ssr->subdev.prepare = ssr_notify_prepare;
->> +	ssr->subdev.start = ssr_notify_start;
->> +	ssr->subdev.stop = ssr_notify_stop;
-> 
-> Now that I have a better understanding of what this patchset is doing, 
-> I realise
-> my comments in patch 04 won't work.  To differentiate the subdevs of an 
-> rproc I
-> suggest to wrap them in a generic structure with a type and an enum.  
-> That way
-> you can differenciate between subdevices without having to add to the 
-> core.
-Ok. I can try that.
-> 
-> That being said, I don't understand what patches 5 and 6 are doing...
-> Registering with the global ssr_notifiers allowed to gracefully 
-> shutdown all the
-> MCUs in the system when one of them would go down.  But now that we are 
-> using
-> the notifier on a per MCU, I really don't see why each subdev couldn't 
-> implement
-> the right prepare/start/stop functions.
-> 
-> Am I missing something here?
-We only want kernel clients to be notified when the Remoteproc they are 
-interested
-in changes state. For e.g. audio kernel driver should be notified when 
-audio
-processor goes down but it does not care about any other remoteproc.
-If you are suggesting that these kernel clients be added as subdevices 
-then
-we will end up having many subdevices registered to each remoteproc. So 
-we
-implemented a notifier chain per Remoteproc. This keeps the SSR 
-notifications as
-the subdevice per remoteproc, and all interested clients can register to 
-it.
-> 
-> 
->>  	ssr->subdev.unprepare = ssr_notify_unprepare;
->>  	ssr->rproc_notif_list = kzalloc(sizeof(struct srcu_notifier_head),
->>  								GFP_KERNEL);
->> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
->> index e2f60cc..4be4478 100644
->> --- a/include/linux/remoteproc.h
->> +++ b/include/linux/remoteproc.h
->> @@ -449,6 +449,21 @@ struct rproc_dump_segment {
->>  };
->> 
->>  /**
->> + * enum rproc_notif_type - Different stages of remoteproc 
->> notifications
->> + * @RPROC_BEFORE_SHUTDOWN:	unprepare stage of  remoteproc
->> + * @RPROC_AFTER_SHUTDOWN:	stop stage of  remoteproc
->> + * @RPROC_BEFORE_POWERUP:	prepare stage of  remoteproc
->> + * @RPROC_AFTER_POWERUP:	start stage of  remoteproc
->> + */
->> +enum rproc_notif_type {
->> +	RPROC_BEFORE_SHUTDOWN,
->> +	RPROC_AFTER_SHUTDOWN,
->> +	RPROC_BEFORE_POWERUP,
->> +	RPROC_AFTER_POWERUP,
->> +	RPROC_MAX
->> +};
->> +
->> +/**
->>   * struct rproc - represents a physical remote processor device
->>   * @node: list node of this rproc object
->>   * @domain: iommu domain
->> --
->> Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
->> a Linux Foundation Collaborative Project
->> 
->> _______________________________________________
->> linux-arm-kernel mailing list
->> linux-arm-kernel@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Remove the -mno-warn-deprecated assembler flag for GCC versions newer
+than 5.1 to make sure the GNU assembler warns in case non-unified
+syntax is used.
+
+This also prevents a warning when building with Clang and enabling
+its integrated assembler:
+clang-10: error: unsupported argument '-mno-warn-deprecated' to option 'Wa,'
+
+This is a second attempt of commit e8c24bbda7d5 ("ARM: 8846/1: warn if
+divided syntax assembler is used").
+
+Signed-off-by: Stefan Agner <stefan@agner.ch>
+---
+ arch/arm/Makefile | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index db857d07114f..a6c8c9f39185 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -119,21 +119,25 @@ ifeq ($(CONFIG_CC_IS_CLANG),y)
+ CFLAGS_ABI	+= -meabi gnu
+ endif
+ 
+-# Accept old syntax despite ".syntax unified"
+-AFLAGS_NOWARN	:=$(call as-option,-Wa$(comma)-mno-warn-deprecated,-Wa$(comma)-W)
+-
+ ifeq ($(CONFIG_THUMB2_KERNEL),y)
+-CFLAGS_ISA	:=-mthumb -Wa,-mimplicit-it=always $(AFLAGS_NOWARN)
++CFLAGS_ISA	:=-mthumb -Wa,-mimplicit-it=always
+ AFLAGS_ISA	:=$(CFLAGS_ISA) -Wa$(comma)-mthumb
+ # Work around buggy relocation from gas if requested:
+ ifeq ($(CONFIG_THUMB2_AVOID_R_ARM_THM_JUMP11),y)
+ KBUILD_CFLAGS_MODULE	+=-fno-optimize-sibling-calls
+ endif
+ else
+-CFLAGS_ISA	:=$(call cc-option,-marm,) $(AFLAGS_NOWARN)
++CFLAGS_ISA	:=$(call cc-option,-marm,)
+ AFLAGS_ISA	:=$(CFLAGS_ISA)
+ endif
+ 
++ifeq ($(CONFIG_CC_IS_GCC),y)
++ifeq ($(call cc-ifversion, -lt, 0501, y), y)
++# GCC <5.1 emits pre-UAL code and causes assembler warnings, suppress them
++CFLAGS_ISA	+=$(call as-option,-Wa$(comma)-mno-warn-deprecated,-Wa$(comma)-W)
++endif
++endif
++
+ # Need -Uarm for gcc < 3.x
+ KBUILD_CFLAGS	+=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -msoft-float -Uarm
+ KBUILD_AFLAGS	+=$(CFLAGS_ABI) $(AFLAGS_ISA) $(arch-y) $(tune-y) -include asm/unified.h -msoft-float
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
