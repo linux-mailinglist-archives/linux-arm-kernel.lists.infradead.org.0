@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24DA2173275
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:08:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AD6617327D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:13:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YrN6JsVPyNtZP4u9OVsYhT0SwmMHYekCRcvZFe11FPo=; b=igLNKqjtZpU9fF
-	sfMK2CjgQzEJO0N/VE2FkHaPWX9J6oAZgv3Wq/BIo6wlcyFpN1IIDfh0S8M+0j1xSPdKmoeKUGxg0
-	w/G50TTPJZ6J8dcfUv6lNQrm3/84C8BvVuxbPpnUcZmotdWlRAqx31gRWNkvZm+71NcMWiC6ut1L5
-	lyRY5ASTnJB6n25UjdFJpEgafwHrsqKXV2Xlp4FWiBk2R5Dj2SwQWbIE61j7S49f4scXfnA+dYCFK
-	VcD/2IwEQPMaOCFDmHfDteHILkEazausn9f2l48f3AucmGl5+m6gVgAQeEZfdOmkrxg1onHjQ2Bck
-	lb0lwPBiMAgRc8Q67N8w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pZb9IJhQ40fskAb9CaBHXWFe8ZVKFvd74k947uEjFmI=; b=XtAjVDBe/6I9Ay
+	R6JBG0svU2tieYIqH6BwNBYNIWR/O/4fOIWit8fFHz9XGYX75+2M9vEkq3jdGCKho9YnJcv3rgFbN
+	Uqbfpd/QZgoy3P8QljznF6ramccSJVQKncREW2qPKZPrVLYYcFyFEIXqm/Yxq3Qgm7/VhjYlEdR/F
+	6+fEYT//60vJz4kNFfzxURRFbar+B5CyxTBjLivxCyl9Y1X1QZ+OrWNAHvWXMm2mt52gUiQY9XzPS
+	Z6MVK8lvLyPLFwUS6Jt5E9XhnqARpHZbBamajgDwijcecQVkFK8fw4ruGDWDQRnx60UjCO+yisJGH
+	gZsQvS7f0osVaVcz6eAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7agu-00004u-3W; Fri, 28 Feb 2020 08:08:12 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1j7am7-0002Kj-LO; Fri, 28 Feb 2020 08:13:35 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7agj-0008Vh-FI
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 08:08:03 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01S84TLH010774; Fri, 28 Feb 2020 09:07:50 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : subject :
- date : message-id : mime-version : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=MFKa27m3+mIoApWSAUCG9GPF8e+NvtbwdWYlYTRGNRs=;
- b=dssF3bihvIH/mI+pbPnu8DkqSxvkNSqdk6h+gJSX95NbXimAVxG4j8X7bXqdETcNGYjJ
- RHGbP8yaOrYMHSPJjg2Hf7bFv1cg3yRE6xQuroQdclqNQqu/X7p4xiC30pYUQUeqwSAb
- 3+EbvMWWEQkc4Z2amyss6Dyse8zudNRiYbjGXTddnpGbEiKLAY2AGSYm9t0+2ELxtLKT
- TnnUoONFIroqZF2vsnVBPWVIVd/bFmjxbTll8kAxcEIKKYTLKORGn00wHl4Is2dI2T6o
- UnZJx6ZulTUWKOa/kjb/guA4+YKYzi007nVc/0eQA0VYru3zTKc/ljhyDtxn9vCAdD48 5Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yepwptdgv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 28 Feb 2020 09:07:50 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A4C0010002A;
- Fri, 28 Feb 2020 09:07:46 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5EEBF2A6489;
- Fri, 28 Feb 2020 09:07:46 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Fri, 28 Feb 2020 09:07:45 +0100
-From: Yannick Fertre <yannick.fertre@st.com>
-To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
- <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- <dri-devel@lists.freedesktop.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] drm/stm: ltdc: check number of endpoints
-Date: Fri, 28 Feb 2020 09:07:38 +0100
-Message-ID: <1582877258-1112-1-git-send-email-yannick.fertre@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1j7alt-0002Js-Ju
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 08:13:22 +0000
+Received: by mail-pf1-x441.google.com with SMTP id p14so1332513pfn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 28 Feb 2020 00:13:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=1XeAZdDEEMWPSRFSSrigFDHZjIaWywrJrDOcCv/SctI=;
+ b=BclSCGD/+Gp7pLCK+Yfq+IH0orWklytTcUNiFna90KwERemW3y0lq2SFGwBTScn/ZR
+ SOnMFpFra//MK4i1yP2XSWxhSB0AmtyVADIvnaixDjHOEilFGfAtxn96llpXGSu9w6x9
+ cnYc7x7sgEcbB4wEdoWPyc1hRhVj/x1T1b7yJp/3L1qebJXpWiZZcerMA4aKUSTSJzOu
+ +EJL716Ez9KnsOA3AUIXTOEjEYftKhDFAE4pxRa3OfvNhxlaMqYrOmYwyXYyNJdP0BwU
+ JH+Jb4ugNll/M3AjCQdCwSJWKoNoHs8e/biyVduULpYiHq+u7xkE0FG316miHyBgMLPu
+ 3vmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1XeAZdDEEMWPSRFSSrigFDHZjIaWywrJrDOcCv/SctI=;
+ b=eScpiLvpcKEhXiSSs9LCh3RE9z7yj/34+LiwkZcALsdnAZjbQh2l0ug5TWJQwkR4Fh
+ fFNm70r0NiwAi/tYI6BeaMResveU1PITsI6sgkyrWAYthEc5AyFT0CgtzIVN56ar/crG
+ BTnmbuh2cvT37aDjvvs57oha5cauewXCOpn0STrvTEP/Hw7IJWf4xtAxmGyJKrJcgoym
+ yweEhHPl01JmVx1F7bPmx+0ut9R/dBQdW76Tz6iK1u6L4uRaG23E7uRbVtxpQhXTPnLg
+ cehJ6Veun0+1Vig7LCaDPQXwjLYVeXg8n+/hVj8UrjsQZ4QQsTMgh+kktaikGeBfuEME
+ vYWQ==
+X-Gm-Message-State: APjAAAVJc0QVktd7F3l0GZ5aTjmK+eyvxOi0JTPVHqzZHNHhdDSTZlQY
+ t/uQNIkrM9jjK14uSpPqJew=
+X-Google-Smtp-Source: APXvYqwaScFWt2pSZw8deGePN2rW5lckHptMxbrEKDdWitX5+l+202jKgzn654xFzxvUIwznQHDJHQ==
+X-Received: by 2002:aa7:93a6:: with SMTP id x6mr3341479pff.72.1582877599463;
+ Fri, 28 Feb 2020 00:13:19 -0800 (PST)
+Received: from taoren-ubuntuvm (c-24-4-25-55.hsd1.ca.comcast.net. [24.4.25.55])
+ by smtp.gmail.com with ESMTPSA id c18sm8717917pgw.17.2020.02.28.00.13.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 28 Feb 2020 00:13:19 -0800 (PST)
+Date: Fri, 28 Feb 2020 00:13:11 -0800
+From: Tao Ren <rentao.bupt@gmail.com>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH v5 7/7] dt-bindings: usb: add documentation for aspeed
+ usb-vhub
+Message-ID: <20200228081309.GA4531@taoren-ubuntuvm>
+References: <20200227230507.8682-1-rentao.bupt@gmail.com>
+ <20200227230507.8682-8-rentao.bupt@gmail.com>
+ <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
+ <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
+ <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-28_02:2020-02-26,
- 2020-02-28 signatures=0
+Content-Disposition: inline
+In-Reply-To: <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_000801_868809_571FE04C 
-X-CRM114-Status: GOOD (  17.12  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200228_001321_682007_8E634992 
+X-CRM114-Status: GOOD (  19.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rentao.bupt[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -100,183 +104,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, taoren@fb.com,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Number of endpoints could exceed the fix value MAX_ENDPOINTS(2).
-Instead of increase simply this value, the number of endpoint
-could be read from device tree. Load sequence has been a little
-rework to take care of several panel or bridge which can be
-connected/disconnected or enable/disable.
+On Fri, Feb 28, 2020 at 02:02:28PM +1100, Benjamin Herrenschmidt wrote:
+> On Thu, 2020-02-27 at 17:05 -0800, Tao Ren wrote:
+> > > Also long run I think best is going to have a child node per downstream
+> > > port, so we create a matching linux struct device. This will make it
+> > > easier to deal with the other device-controller in the ast2600 which is
+> > > basically one of these without a vhub above it.
+> > 
+> > Maybe a dumb question: what would be the proper place to parse the child
+> > node/properties when they are added? For example, in some usb_gadget_ops
+> > callback?
+> 
+> No. What the vhub would do is when it probes, it creates a platform
+> device for each "port" child node that's linked to the DT node.
+> 
+> The driver for the device then attaches to it via standard DT matching
+> and checks if it has a vhub parent or not, and based on that, operates
+> as a vhub child device or a standalone one.
+> 
+> (For example, it might have different functions for EP selection since
+> standalone devices have private EPs rather than a shared pool)
+> 
+> They can both be in the same module or they can be separate modules
+> with cross dependencies.
+> 
+> Cheers,
+> Ben.
 
-Signed-off-by: Yannick Fertre <yannick.fertre@st.com>
----
- drivers/gpu/drm/stm/ltdc.c | 102 +++++++++++++++++++++++----------------------
- 1 file changed, 52 insertions(+), 50 deletions(-)
+I see. It's to describe these downstream devices (such as configurations
+and according functions) in device tree, which is similar to defining a
+composite device and linking functions/interfaces via configfs. Thanks for
+the clarify.
 
-diff --git a/drivers/gpu/drm/stm/ltdc.c b/drivers/gpu/drm/stm/ltdc.c
-index df585fe..f894968 100644
---- a/drivers/gpu/drm/stm/ltdc.c
-+++ b/drivers/gpu/drm/stm/ltdc.c
-@@ -42,8 +42,6 @@
 
- #define MAX_IRQ 4
+Cheers,
 
--#define MAX_ENDPOINTS 2
--
- #define HWVER_10200 0x010200
- #define HWVER_10300 0x010300
- #define HWVER_20101 0x020101
-@@ -1201,36 +1199,20 @@ int ltdc_load(struct drm_device *ddev)
- 	struct ltdc_device *ldev = ddev->dev_private;
- 	struct device *dev = ddev->dev;
- 	struct device_node *np = dev->of_node;
--	struct drm_bridge *bridge[MAX_ENDPOINTS] = {NULL};
--	struct drm_panel *panel[MAX_ENDPOINTS] = {NULL};
-+	struct drm_bridge *bridge;
-+	struct drm_panel *panel;
- 	struct drm_crtc *crtc;
- 	struct reset_control *rstc;
- 	struct resource *res;
--	int irq, ret, i, endpoint_not_ready = -ENODEV;
-+	int irq, i, nb_endpoints;
-+	int ret = -ENODEV;
-
- 	DRM_DEBUG_DRIVER("\n");
-
--	/* Get endpoints if any */
--	for (i = 0; i < MAX_ENDPOINTS; i++) {
--		ret = drm_of_find_panel_or_bridge(np, 0, i, &panel[i],
--						  &bridge[i]);
--
--		/*
--		 * If at least one endpoint is -EPROBE_DEFER, defer probing,
--		 * else if at least one endpoint is ready, continue probing.
--		 */
--		if (ret == -EPROBE_DEFER)
--			return ret;
--		else if (!ret)
--			endpoint_not_ready = 0;
--	}
--
--	if (endpoint_not_ready)
--		return endpoint_not_ready;
--
--	rstc = devm_reset_control_get_exclusive(dev, NULL);
--
--	mutex_init(&ldev->err_lock);
-+	/* Get number of endpoints */
-+	nb_endpoints = of_graph_get_endpoint_count(np);
-+	if (!nb_endpoints)
-+		return -ENODEV;
-
- 	ldev->pixel_clk = devm_clk_get(dev, "lcd");
- 	if (IS_ERR(ldev->pixel_clk)) {
-@@ -1244,6 +1226,43 @@ int ltdc_load(struct drm_device *ddev)
- 		return -ENODEV;
- 	}
-
-+	/* Get endpoints if any */
-+	for (i = 0; i < nb_endpoints; i++) {
-+		ret = drm_of_find_panel_or_bridge(np, 0, i, &panel, &bridge);
-+
-+		/*
-+		 * If at least one endpoint is -ENODEV, continue probing,
-+		 * else if at least one endpoint returned an error
-+		 * (ie -EPROBE_DEFER) then stop probing.
-+		 */
-+		if (ret == -ENODEV)
-+			continue;
-+		else if (ret)
-+			goto err;
-+
-+		if (panel) {
-+			bridge = drm_panel_bridge_add_typed(panel,
-+							    DRM_MODE_CONNECTOR_DPI);
-+			if (IS_ERR(bridge)) {
-+				DRM_ERROR("panel-bridge endpoint %d\n", i);
-+				ret = PTR_ERR(bridge);
-+				goto err;
-+			}
-+		}
-+
-+		if (bridge) {
-+			ret = ltdc_encoder_init(ddev, bridge);
-+			if (ret) {
-+				DRM_ERROR("init encoder endpoint %d\n", i);
-+				goto err;
-+			}
-+		}
-+	}
-+
-+	rstc = devm_reset_control_get_exclusive(dev, NULL);
-+
-+	mutex_init(&ldev->err_lock);
-+
- 	if (!IS_ERR(rstc)) {
- 		reset_control_assert(rstc);
- 		usleep_range(10, 20);
-@@ -1285,27 +1304,7 @@ int ltdc_load(struct drm_device *ddev)
- 			DRM_ERROR("Failed to register LTDC interrupt\n");
- 			goto err;
- 		}
--	}
-
--	/* Add endpoints panels or bridges if any */
--	for (i = 0; i < MAX_ENDPOINTS; i++) {
--		if (panel[i]) {
--			bridge[i] = drm_panel_bridge_add_typed(panel[i],
--							       DRM_MODE_CONNECTOR_DPI);
--			if (IS_ERR(bridge[i])) {
--				DRM_ERROR("panel-bridge endpoint %d\n", i);
--				ret = PTR_ERR(bridge[i]);
--				goto err;
--			}
--		}
--
--		if (bridge[i]) {
--			ret = ltdc_encoder_init(ddev, bridge[i]);
--			if (ret) {
--				DRM_ERROR("init encoder endpoint %d\n", i);
--				goto err;
--			}
--		}
- 	}
-
- 	crtc = devm_kzalloc(dev, sizeof(*crtc), GFP_KERNEL);
-@@ -1340,8 +1339,8 @@ int ltdc_load(struct drm_device *ddev)
-
- 	return 0;
- err:
--	for (i = 0; i < MAX_ENDPOINTS; i++)
--		drm_panel_bridge_remove(bridge[i]);
-+	for (i = 0; i < nb_endpoints; i++)
-+		drm_of_panel_bridge_remove(ddev->dev->of_node, 0, i);
-
- 	clk_disable_unprepare(ldev->pixel_clk);
-
-@@ -1350,11 +1349,14 @@ int ltdc_load(struct drm_device *ddev)
-
- void ltdc_unload(struct drm_device *ddev)
- {
--	int i;
-+	struct device *dev = ddev->dev;
-+	int nb_endpoints, i;
-
- 	DRM_DEBUG_DRIVER("\n");
-
--	for (i = 0; i < MAX_ENDPOINTS; i++)
-+	nb_endpoints = of_graph_get_endpoint_count(dev->of_node);
-+
-+	for (i = 0; i < nb_endpoints; i++)
- 		drm_of_panel_bridge_remove(ddev->dev->of_node, 0, i);
-
- 	pm_runtime_disable(ddev->dev);
---
-2.7.4
-
+Tao
 
 _______________________________________________
 linux-arm-kernel mailing list
