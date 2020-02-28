@@ -2,86 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D26217315F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 07:51:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5269C17320E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 08:49:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
-	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pm+FxmGmX0Q8aVccx5tpq6xZjIoBpPX0MGPjjmNA5Jk=; b=UzsnlGx1Za6G3J
-	DrPiQ2dtP6B4A1p8GTuCY62qjCVVHWiiYSl8eIlPpYTsmSoLbNoeZg+cA332RpH7G6pYNswMKHXZ9
-	eTQ4w81wklY4mPylI5tyY4F0rrytR7u3e8HMQX8fieqheDPux3NvCDxf8xOzw6NXYWS2XbOc1hTnH
-	n+xkRqv+VRWnEU9o1Wp53mxG98TdP9cZjRyXYdANo+wmDElIkULBTWCmGCfHTM2hZe1Rfe5dhR4Ss
-	P/xj0oRfjbw6e7N6lAysH18XJDYyoH/sEGch4VE2ZqnoVrtWXjeeAUHFbQ5HRVQvUkqWU37QCb4Xo
-	vSXTHoyPRVSRQgVas8hQ==;
+	List-Owner; bh=Hlf/ofY1mveiZeTIwbckrsnTSMhEsJuB0N3P5/Sxkqg=; b=AE2unNlJWjP8Xr
+	/AfbEvWvymhOWwOWSYNFQYlv1kURBVqq7foZrsktHojn8y9YumcTaTfMKAnOVc3xjoomCpmNgdJi8
+	9CmM0ZpF/IjxRjdLGHGsPB2RT5YVmK+aR6khcR2C9g+1y92vObW3A5plKMN5MrQXPLOQVW1YqC0f8
+	mV0zArD/HyVP8RAbUzGlxTOoUR4GUno2wwGD8MQEFTFjWs/SSLfxslFVvELuOgxpeaRE+B2Xg43qO
+	nxWrRii/IAFbtP1rgIqHkGSTW+abEEDlCePbjrIT3LoEX9yCp/3BtGFdMXtvVmeM8PruCndSUdJJA
+	u8xdM5PTyZXiN5a/9Bdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7ZUx-0006q7-2G; Fri, 28 Feb 2020 06:51:47 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j7aOb-0000AG-Bk; Fri, 28 Feb 2020 07:49:17 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7ZUl-0006pP-3C
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 06:51:37 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j16so1706292wrt.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 22:51:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:reply-to:from:date:message-id
- :subject:to:cc;
- bh=avF1EF6lpJLVVsTfVWBjTe/8KtvDZSIsmNvBiNuGKMg=;
- b=THDt18G/FXoJ1iM+KNQB/v0hI6yvWK8bMDHDcfQSKeziHQIqYblvqJmEftpLKrhco2
- SFveE9Xs3bCIREUxBls+XpZ5opNASmRCLv3D66hN1WEbzNxO90PCG4cSn+mVp+I8scI7
- 76mmSNwWiM+r92MlP+IZooSJ68GqKRUU2EDFk3sGPFzTdUcFLgdjFTp/wJQycrbHQfbs
- U7iwR6po+Ej26juHt0u7x5m8iNe+0c+7Vrq61sMfAtTT3Ig+HMKFng3edsIIBv6W5Bm7
- eRP0damzsRhWhiMonIWppR7VoRP6tfA6gyqPyfWwtTUofME3qfkNfJnrFUpozKjdx9Mn
- 7nig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
- :from:date:message-id:subject:to:cc;
- bh=avF1EF6lpJLVVsTfVWBjTe/8KtvDZSIsmNvBiNuGKMg=;
- b=YSHwph4D4ZCzmrEz/napCu4dH2snbDR+A+c+hFiakuhaPLH4LX9r0D6Ud0iKbpXYmB
- 0fbknHSWfIZ05dikqNThkzSwo+VX6EiOYaOkanWp6+oY/capIniHWLJOt7oewCZGjqvR
- /aXiQMBOAZ5U7063/hpa8mP1x+uNEqMP7yUti6USupjazAk8Rnl6lHv/3EQIcd7kuRjl
- 5VRPhmTlmLTDUDzClgiHvjyFrdpyz0qjlZIUhyH9uXMjbmmdL4Tw96fN9GMJqE82FLTK
- mArr5kkyfA5vtmrikDeRW9ZeFaoe3jitlv85xCdjLi/B8rhMR9pA/p4jY7jLfD0ioUyE
- rWeg==
-X-Gm-Message-State: APjAAAXk6sDCPKVeg2hl+S6UsO8Qd+1FjAv8ga5wjciPgavR4nh5ebIA
- My9u4ncCjsa+HSiX4mhnaVBnDocM3CRP6xXcaCE=
-X-Google-Smtp-Source: APXvYqwvp4piUvF/SYce0tbofShEvKkPpBAb2O8nmlEOvn8MBRHMN7izLp5juCXAuFJGAECrBbht8pmjEp8qcymSoVM=
-X-Received: by 2002:a5d:62d0:: with SMTP id o16mr3205209wrv.197.1582872693018; 
- Thu, 27 Feb 2020 22:51:33 -0800 (PST)
+ id 1j7aOP-00009X-CF
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 07:49:07 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1j7aOI-0002VD-9t; Fri, 28 Feb 2020 08:48:58 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1j7aOG-0001nf-9z; Fri, 28 Feb 2020 08:48:56 +0100
+Date: Fri, 28 Feb 2020 08:48:56 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Peter Chen <peter.chen@nxp.com>
+Subject: Re: [PATCH 0/3] USB IMX Chipidea fix gpio vbus control
+Message-ID: <20200228074856.gomzgtoxwzj4eele@pengutronix.de>
+References: <20200227104212.12562-1-m.felsch@pengutronix.de>
+ <20200227111838.GA24071@b29397-desktop>
+ <20200227113539.gcx3nfwm2fbm3ukv@pengutronix.de>
+ <20200227122045.GB24071@b29397-desktop>
+ <20200227124406.6kbgu3dbru4qmews@pengutronix.de>
+ <VI1PR04MB53270541BB66CAB1EB8F00008BEB0@VI1PR04MB5327.eurprd04.prod.outlook.com>
+ <20200227143914.mi3vsltrtyo5sqed@pengutronix.de>
+ <20200228025129.GA31815@b29397-desktop>
 MIME-Version: 1.0
-References: <20200228002244.15240-1-keescook@chromium.org>
-In-Reply-To: <20200228002244.15240-1-keescook@chromium.org>
-From: Sedat Dilek <sedat.dilek@gmail.com>
-Date: Fri, 28 Feb 2020 07:51:21 +0100
-Message-ID: <CA+icZUVRnjOWKZynAGDniXD_H9KRccONmeKHs25DPPU1c8ZcGg@mail.gmail.com>
-Subject: Re: [PATCH 0/9] Enable orphan section warning
-To: Kees Cook <keescook@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <20200228025129.GA31815@b29397-desktop>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:18:19 up 104 days, 22:36, 122 users,  load average: 0.23, 0.56,
+ 0.38
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_225135_166626_43265712 
-X-CRM114-Status: GOOD (  23.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_234905_418065_81AC2876 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [sedat.dilek[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,123 +81,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: sedat.dilek@gmail.com
-Cc: Mark Rutland <mark.rutland@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
- Peter Collingbourne <pcc@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- Clang-Built-Linux ML <clang-built-linux@googlegroups.com>,
- James Morse <james.morse@arm.com>, linux-arch@vger.kernel.org,
- Borislav Petkov <bp@suse.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "jun.li@freescale.com" <jun.li@freescale.com>,
+ "stern@rowland.harvard.edu" <stern@rowland.harvard.edu>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 1:22 AM Kees Cook <keescook@chromium.org> wrote:
->
-> Hi!
->
-> A recent bug was solved for builds linked with ld.lld, and tracking
-> it down took way longer than it needed to (a year). Ultimately, it
-> boiled down to differences between ld.bfd and ld.lld's handling of
-> orphan sections. Similarly, the recent FGKASLR series brough up orphan
-> section handling too[2]. In both cases, it would have been nice if the
-> linker was running with --orphan-handling=warn so that surprise sections
-> wouldn't silently get mapped into the kernel image at locations up to
-> the whim of the linker's orphan handling logic. Instead, all desired
-> sections should be explicitly identified in the linker script (to be
-> either kept or discarded) with any orphans throwing a warning. The
-> powerpc architecture actually already does this, so this series seeks
-> to extend this coverage to x86, arm64, and arm.
->
-> This series depends on tip/x86/boot (where recent .eh_frame fixes[3]
-> landed), and has a minor conflict[4] with the ARM tree (related to
-> the earlier mentioned bug). As it uses refactorings in the asm-generic
-> linker script, and makes changes to kbuild, I think the cleanest place
-> for this series to land would also be through -tip. Once again (like
-> my READ_IMPLIES_EXEC series), I'm looking to get maintainer Acks so
-> this can go all together with the least disruption. Splitting it up by
-> architecture seems needlessly difficult.
->
-> Thanks!
->
-> -Kees
->
-> [1] https://github.com/ClangBuiltLinux/linux/issues/282
-> [2] https://lore.kernel.org/lkml/202002242122.AA4D1B8@keescook/
-> [3] https://lore.kernel.org/lkml/158264960194.28353.10560165361470246192.tip-bot2@tip-bot2/
-> [4] https://www.arm.linux.org.uk/developer/patches/viewpatch.php?id=8959/1
->
+Hi Peter,
 
-Hi Kees,
+On 20-02-28 02:51, Peter Chen wrote:
 
-is this an updated version of what you have in your
-kees/linux.git#linker/orphans/x86-arm Git branch?
+...
 
-Especially, I saw a difference in [2] and "[PATCH 4/9] x86/boot: Warn
-on orphan section placement"
+> > > CI_HDRC_TURN_VBUS_EARLY_ON is introduced by fixing a bug that some i.mx USB
+> > > controllers PHY's power is sourced from VBUS, the PHY's power need to be on before
+> > > touch some ehci registers, otherwise, the USB signal will be wrong at some low speed
+> > > devices use case. So, this flag can't be deleted, it may cause regression.
+> > 
+> > Pls check my archeological findings and again pls check my patches. I
+> > deleted the flag because isn't required anymore afterwards.
+> 
+> I have already checked your patch, your patch deletes CI_HDRC_TURN_VBUS_EARLY_ON
+> quirk, and it may cause regression.
 
-[ arch/x86/boot/compressed/Makefile ]
+Arg, sorry now I see what you mean. Thanks for your explanation :)
+Since the 'struct ehci_ci_priv' contains now an enabled state we can
+git rid of the flag. To get it right, the writing the ehci PORT_POWER
+must be done before or after we enabled the VBUS? I'm asking because
+we can drop the 1st patch of this series.
 
-+KBUILD_LDFLAGS += --no-ld-generated-unwind-info
+> > > The solution I see is your may need to implement chipidea VBUS control flow by considering
+> > > pm_qos_no_power_off at suspend situation. You may add .suspend API for ci_role_driver,
+> > > and called by ci_controller_suspend/ci_controller_resume, of cos, better solution is welcome.
+> > 
+> > I fixed it within the core [1] and here at the chipidea side.
+> > 
+> > [1] https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flkml.org%2Flkml%2F2020%2F2%2F27%2F669&amp;data=02%7C01%7Cpeter.chen%40nxp.com%7Cad9b3833ae2f433d93ef08d7bb92d4a0%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637184111614326500&amp;sdata=SPwwBEGBco6IdP8ufmAnJeeRxuAXGLa0xzYlzFA%2FAvg%3D&amp;reserved=0
+> > 
+> > You will never enter the ehci_ci_portpower() during suspend without [1]
+> > if you are using a vanilla kernel. So IMHO this case can't be tested,
+> > sorry.
+> > 
+> 
+> Through set pm_qos_no_power_off as 0, the VBUS will be off. You
+> never need to call .ehci_ci_portpower again. You may try my second
+> suggestion for fix chipidea issue. I will reply your RFC patch for
+> USB core.
 
-Can you comment on why this KBUILD_LDFLAGS was added/needed?
-
-I like when people offer their work in a Git branch.
-Do you plan to do that?
-
-Thanks.
+Many thanks for testing =)
 
 Regards,
-- Sedat -
+  Marco
 
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git/log/?h=linker/orphans/x86-arm
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git/commit/?h=linker/orphans/x86-arm&id=e43aa77956c40b9b6db0b37b3780423aa2e661ad
-
-
-
-> H.J. Lu (1):
->   Add RUNTIME_DISCARD_EXIT to generic DISCARDS
->
-> Kees Cook (8):
->   scripts/link-vmlinux.sh: Delay orphan handling warnings until final
->     link
->   vmlinux.lds.h: Add .gnu.version* to DISCARDS
->   x86/build: Warn on orphan section placement
->   x86/boot: Warn on orphan section placement
->   arm64/build: Use common DISCARDS in linker script
->   arm64/build: Warn on orphan section placement
->   arm/build: Warn on orphan section placement
->   arm/boot: Warn on orphan section placement
->
->  arch/arm/Makefile                             |  4 ++++
->  arch/arm/boot/compressed/Makefile             |  2 ++
->  arch/arm/boot/compressed/vmlinux.lds.S        | 17 ++++++--------
->  .../arm/{kernel => include/asm}/vmlinux.lds.h | 22 ++++++++++++++-----
->  arch/arm/kernel/vmlinux-xip.lds.S             |  5 ++---
->  arch/arm/kernel/vmlinux.lds.S                 |  5 ++---
->  arch/arm64/Makefile                           |  4 ++++
->  arch/arm64/kernel/vmlinux.lds.S               | 13 +++++------
->  arch/x86/Makefile                             |  4 ++++
->  arch/x86/boot/compressed/Makefile             |  3 ++-
->  arch/x86/boot/compressed/vmlinux.lds.S        | 13 +++++++++++
->  arch/x86/kernel/vmlinux.lds.S                 |  7 ++++++
->  include/asm-generic/vmlinux.lds.h             | 11 ++++++++--
->  scripts/link-vmlinux.sh                       |  6 +++++
->  14 files changed, 85 insertions(+), 31 deletions(-)
->  rename arch/arm/{kernel => include/asm}/vmlinux.lds.h (92%)
->
-> --
-> 2.20.1
->
-> --
-> You received this message because you are subscribed to the Google Groups "Clang Built Linux" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to clang-built-linux+unsubscribe@googlegroups.com.
-> To view this discussion on the web visit https://groups.google.com/d/msgid/clang-built-linux/20200228002244.15240-1-keescook%40chromium.org.
+> -- 
+> 
+> Thanks,
+> Peter Chen
 
 _______________________________________________
 linux-arm-kernel mailing list
