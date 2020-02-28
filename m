@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E755172D1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 01:23:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFBF4172D32
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 01:25:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VFCjU7xZ7/k2JJ+ojaxAHUWcpqTleEiX/z0ERqYv7x8=; b=Krxs5whQRRttG3
-	3jxAHxHPKcEoowwAEdhiMYH3IZhoXSsE5KwMWY0gj7YBIR3uvvlTjqwIEPTU84RrHDDAELAbAeyoF
-	Vsgz003JzhtfigVOzrYvhKIqaoG+pr62oAGMdtLojlsXzPvcrZRhIuKL0PMAMg330df6P5oONEChB
-	hk8emol47JCI3mLbeLxLH3aBOPtefEKiY9MKm+fP9ApXdcji3vHgAtopLWYt6K3kEHVL930dankML
-	d1iwZcoKCMkdE3yYyphnHLKmjLSo64pGqE4sBhfvqfbkXz0HW5uslDDkADioVZtFz+mCt7v64pqgD
-	KQR9YG70kVBO2LtsGM8g==;
+	List-Owner; bh=8VK0Kt2CF1UbuFOAcVLMEOaV3Hdk1RUqHFxFCquCwco=; b=GKKBvg+OpcSh4i
+	Lrz2oPT7YGVvjVNhWOYP34bJidmKGbmkYhfkI/60i/bMp15o02gb4QzQDydTy04lHfy8ByfIw+2Gy
+	roJa6dQUPhlpfrgnNjerY3TR1C8S1DWdl3T6Gw3gjy3OXa1fziB6rgQeZM39CkT5VD5ScbyNNxZcS
+	lAYurIxkTWcx9b9IXKBOuHqB9Vuix05zgbXgDrWgYIxpilneF8nM6cKxpkJ/mJTvrRIug5GzI4n2d
+	dKPrMtkL+fjkFYyqlij7k0zQoJGjtgOFoZgD0d23j/38spH8V/rDdVw7eEVofc2wk4njr2V5C7VRa
+	APfDjEb30875oZqR+sgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7TQm-000119-L8; Fri, 28 Feb 2020 00:23:04 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1j7TTP-0004cw-Fo; Fri, 28 Feb 2020 00:25:47 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7TQY-0000zf-GV
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 00:22:51 +0000
-Received: by mail-pf1-x442.google.com with SMTP id i19so737113pfa.2
+ id 1j7TQe-00014V-Gk
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 00:22:58 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t3so556650pgn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 27 Feb 2020 16:22:50 -0800 (PST)
+ Thu, 27 Feb 2020 16:22:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oFQSSd8joQB26Yle3LRphyYOwCqM8lXqrwgR7KUB2ZM=;
- b=nHZ4Y7YbhF6uEk5/uFndEuekX2vKGSTC1OQpgCF1rYdVz1hL9KwhWsI6HLQwltLv2c
- olhA+OX8/TcWhf7cu831s2b1jUqHSYSvZqA7RHqWjI7TZURQ1M6+nuep8zkL0yqIzO/G
- rYLC+NOCo0eRuvYBoJQwHOB1tY/rFRwdZY/+s=
+ bh=A992AjdJWLXJEjwtDWIJFXaA8r8Mu1S3gNtRzAo3spo=;
+ b=Kf+gX5xddQKiKpPCh8bEqjWUqToYjUe3/Z9DWP7hzU0kpjC0HzX02FDHpmOXXOwPyC
+ RQr5vgHl1MrkXOGQjyy45mc7XGMezFVZ2pKsfS+w2wtn0sI0CA8B9URb5ueTsQrTkFPO
+ zN9DFPXLMUeWvltrwG3QFCbnPtEHU7Jjtr6Jo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oFQSSd8joQB26Yle3LRphyYOwCqM8lXqrwgR7KUB2ZM=;
- b=EVBzvvtPeJMqKH0LxgXVqnr8BiGqxweND0r+MVIUrM1vLpBLgFzrNLV7SB25IiMB6p
- NOB8SFMsgZonfwE1EFBPwP+loJK/zk3H4oXws6+3ucXbYLLYK7y9Dgx1xv9qNHqQAHJr
- t21uHt7k80v0fV17ZguezyGcYxp1osOA1c1X1eAESR6yrkxvzSW30Ns5jHKpPhw6dNrp
- UJpAMIsOlGHw/VOJmxIZQGKZyG28ypYWnsMcraFWqct6lwG/QGGGmRRfSnbeSTpf/YJn
- rE6rQf6u5FwBCZGERTQ9R6tFtLsA6FLmc6fe2TjIPGoBYywE4mnGQOC0/7HL8SfyId2p
- aoIg==
-X-Gm-Message-State: APjAAAWP275BI8/MeBxMvjPU0HU1jX5F/DgkWBf1ovytgwb7PCZ/Mydu
- 8sNYibl5Q03QXqN8qnMmmlZbMw==
-X-Google-Smtp-Source: APXvYqw6fCWM2xfT4DJ+VFMmyrDy6sPXs7ZYweUNi5l07x3V/XFaixY8I4K8wHA9HcWwEBIBYQBH6A==
-X-Received: by 2002:a63:5713:: with SMTP id l19mr1913060pgb.216.1582849369348; 
- Thu, 27 Feb 2020 16:22:49 -0800 (PST)
+ bh=A992AjdJWLXJEjwtDWIJFXaA8r8Mu1S3gNtRzAo3spo=;
+ b=kUr6DZiCpVd75MkBb4fMvWSAosyITEibOoNu30TaT7ZTnDcFNDnhI8zVOKdRakoftq
+ lG4YMdeHHnxSBiOOPkOtkfhPKv767WyymCVxtKpcYV2hdn7X5xQXz+v5+PoNLN5pLzwc
+ WlHSRBRu2VEFD0WmAoTHT8IVwsOSemCL12e8EqAHfkjgJHOPNpJLe1lmJBYcfSQWsj98
+ WrTu+TBNcOZFqHljmve3xAopFHRDtZfmUZ9VVuqveCc1r6JtlYV+DjtlgWsPF8+bWW7m
+ +7V8c0EvbRZQLXvRftAbAgloh2ThIQQ4oR1W5FLxgSMFblaMySh4y+UBg5YgcBqXuLRP
+ gXig==
+X-Gm-Message-State: APjAAAVJ7aBkAQqdXX37loYks3Mz+x2ywACWyE99vqLGY0VfKCXh78YR
+ c/P83R8OL7/kmQiJA+iqG84NYg==
+X-Google-Smtp-Source: APXvYqxORpz2NBO4YgeiTAddpXfXe3J/AmESIDy/gZRMg/FCrltSGt039dZiZFkPpl/Q4pPd1+W1MA==
+X-Received: by 2002:a63:7207:: with SMTP id n7mr1872186pgc.253.1582849375359; 
+ Thu, 27 Feb 2020 16:22:55 -0800 (PST)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id h5sm7577879pgi.28.2020.02.27.16.22.47
+ by smtp.gmail.com with ESMTPSA id b3sm8714061pft.73.2020.02.27.16.22.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 27 Feb 2020 16:22:48 -0800 (PST)
+ Thu, 27 Feb 2020 16:22:52 -0800 (PST)
 From: Kees Cook <keescook@chromium.org>
 To: Borislav Petkov <bp@suse.de>
-Subject: [PATCH 4/9] x86/boot: Warn on orphan section placement
-Date: Thu, 27 Feb 2020 16:22:39 -0800
-Message-Id: <20200228002244.15240-5-keescook@chromium.org>
+Subject: [PATCH 5/9] Add RUNTIME_DISCARD_EXIT to generic DISCARDS
+Date: Thu, 27 Feb 2020 16:22:40 -0800
+Message-Id: <20200228002244.15240-6-keescook@chromium.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200228002244.15240-1-keescook@chromium.org>
 References: <20200228002244.15240-1-keescook@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_162250_571699_418E822D 
-X-CRM114-Status: GOOD (  13.04  )
+X-CRM114-CacheID: sfid-20200227_162256_682804_5CC60C29 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,65 +108,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We don't want to depend on the linker's orphan section placement
-heuristics as these can vary between linkers, and may change between
-versions. All sections need to be explicitly named in the linker
-script.
+From: "H.J. Lu" <hjl.tools@gmail.com>
 
-Add the common debugging sections. Discard the unused note, rel, plt,
-dyn, and hash sections that are not needed in the compressed vmlinux.
-Disable .eh_frame generation in the linker and enable orphan section
-warnings.
+In x86 kernel, .exit.text and .exit.data sections are discarded at
+runtime, not by linker.  Add RUNTIME_DISCARD_EXIT to generic DISCARDS
+and define it in x86 kernel linker script to keep them.
 
+Signed-off-by: H.J. Lu <hjl.tools@gmail.com>
+Link: https://lore.kernel.org/r/20200130224337.4150-1-hjl.tools@gmail.com
 Signed-off-by: Kees Cook <keescook@chromium.org>
 ---
- arch/x86/boot/compressed/Makefile      |  3 ++-
- arch/x86/boot/compressed/vmlinux.lds.S | 13 +++++++++++++
- 2 files changed, 15 insertions(+), 1 deletion(-)
+ arch/x86/kernel/vmlinux.lds.S     |  1 +
+ include/asm-generic/vmlinux.lds.h | 10 ++++++++--
+ 2 files changed, 9 insertions(+), 2 deletions(-)
 
-diff --git a/arch/x86/boot/compressed/Makefile b/arch/x86/boot/compressed/Makefile
-index c33111341325..e0ea6b0924e8 100644
---- a/arch/x86/boot/compressed/Makefile
-+++ b/arch/x86/boot/compressed/Makefile
-@@ -46,6 +46,7 @@ GCOV_PROFILE := n
- UBSAN_SANITIZE :=n
- 
- KBUILD_LDFLAGS := -m elf_$(UTS_MACHINE)
-+KBUILD_LDFLAGS += --no-ld-generated-unwind-info
- # Compressed kernel should be built as PIE since it may be loaded at any
- # address by the bootloader.
- ifeq ($(CONFIG_X86_32),y)
-@@ -57,7 +58,7 @@ else
- KBUILD_LDFLAGS += $(shell $(LD) --help 2>&1 | grep -q "\-z noreloc-overflow" \
- 	&& echo "-z noreloc-overflow -pie --no-dynamic-linker")
- endif
--LDFLAGS_vmlinux := -T
-+LDFLAGS_vmlinux := --orphan-handling=warn -T
- 
- hostprogs	:= mkpiggy
- HOST_EXTRACFLAGS += -I$(srctree)/tools/include
-diff --git a/arch/x86/boot/compressed/vmlinux.lds.S b/arch/x86/boot/compressed/vmlinux.lds.S
-index 508cfa6828c5..b5406a8cebe0 100644
---- a/arch/x86/boot/compressed/vmlinux.lds.S
-+++ b/arch/x86/boot/compressed/vmlinux.lds.S
-@@ -73,4 +73,17 @@ SECTIONS
+diff --git a/arch/x86/kernel/vmlinux.lds.S b/arch/x86/kernel/vmlinux.lds.S
+index 1e345f302a46..1e12c097d09b 100644
+--- a/arch/x86/kernel/vmlinux.lds.S
++++ b/arch/x86/kernel/vmlinux.lds.S
+@@ -21,6 +21,7 @@
+ #define LOAD_OFFSET __START_KERNEL_map
  #endif
- 	. = ALIGN(PAGE_SIZE);	/* keep ZO size page aligned */
- 	_end = .;
-+
-+	STABS_DEBUG
-+	DWARF_DEBUG
-+
-+	DISCARDS
-+	/DISCARD/ : {
-+		*(.note.*)
-+		*(.rela.*) *(.rela_*)
-+		*(.rel.*) *(.rel_*)
-+		*(.plt) *(.plt.*)
-+		*(.dyn*)
-+		*(.hash) *(.gnu.hash)
-+	}
- }
+ 
++#define RUNTIME_DISCARD_EXIT
+ #define EMITS_PT_NOTE
+ #define RO_EXCEPTION_TABLE_ALIGN	16
+ 
+diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
+index 303597e51396..1797f2c9bb41 100644
+--- a/include/asm-generic/vmlinux.lds.h
++++ b/include/asm-generic/vmlinux.lds.h
+@@ -894,10 +894,16 @@
+  * section definitions so that such archs put those in earlier section
+  * definitions.
+  */
++#ifdef RUNTIME_DISCARD_EXIT
++#define EXIT_DISCARDS
++#else
++#define EXIT_DISCARDS							\
++	EXIT_TEXT							\
++	EXIT_DATA
++#endif
+ #define DISCARDS							\
+ 	/DISCARD/ : {							\
+-	EXIT_TEXT							\
+-	EXIT_DATA							\
++	EXIT_DISCARDS							\
+ 	EXIT_CALL							\
+ 	*(.discard)							\
+ 	*(.discard.*)							\
 -- 
 2.20.1
 
