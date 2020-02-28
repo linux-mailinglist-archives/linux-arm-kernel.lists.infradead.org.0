@@ -2,98 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07E46173B1C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:14:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35120173B2B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:16:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bkdj0vsswpTpuD8cauuihjDmRGTS48hgX8pFVyZxoQM=; b=HijvN6f74yJGs8
-	WVVmeIWzddR/MNNBsHftvagqCFs5FGYzKKPfrZR1lnFv0qm8ai01G9dtsQFFbN+8gWfpy6IJhg8Rr
-	K6wEaDVKHalNvUDoxd2yihCe79LaifJn4SbGYn87ZcJiP44pCYyADwYutWCq7pc01Wz5sqPknRDoo
-	hgWfmqh2NWJWBYhjyRzXjQdgSGU3Gy/UcSmfAOulGfebfiG4lVCk733WSgVq3N7EQvdfiKTUqEgAK
-	WVqM4JZZhKQtju7MCDALeq4VU0DDDfsfuqMBZs0Ab6NdyyVZcwF9Kc7SuZR1RB6krxVIqDcc04QnT
-	7qltGJc1yATWGe62/SGw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ELSTg9lLwzi1jiyxMnHSh0H6T0lgg+7+vfgNgDchD0k=; b=S3Y9PNIkKR9r+97Ad+t86rfCN
+	h2ZMqmy2knca8uCrp83TNd9CptRlF3PmTboYBw7HEv+vnKwR719pSXlg+vJsN/aya8ysK6x8y6QiG
+	6rpIbJ3NywS497NtMgAfM+iJiDCLLUnwY6e72Npk5sjONmeRFusJhcAsWxcfwOvo9jrjRHJv1+FKE
+	cFr5AQ8LEuQkN1SorfsrJvb1fc1a2euukiXskZwDkyiWS50MsYwnszQ3Fy/udt7mVzYfAHwATKiQ5
+	pIEHTZBeKkq3SP+rlCqak35H4WTqGymYwPezt1PMC3ZhkCJrawgO0gFY/tKHIdM9w2o9pampP9frj
+	6J6z9WQXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7hKr-0000QY-Eu; Fri, 28 Feb 2020 15:13:53 +0000
-Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+	id 1j7hN9-0002Lg-DL; Fri, 28 Feb 2020 15:16:15 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7hKg-0000Pk-06
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:13:43 +0000
-Received: by mail-qv1-xf43.google.com with SMTP id ci20so1484083qvb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Feb 2020 07:13:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Wq8nlNbsnwZz9fji3Cl/zgmv4zDoBKk4NoZF3W2wkDQ=;
- b=Ljgpp5xGPFtER1NGPwiitpNKYovODnCioFFOFLTyn2Ck/JR8HVTOx6j2p+g2nfn+c7
- ZZ4POl/CTaYoux0tyCmDMX6rtKyDdXnlMSGlJzLw9GbBTTzDfneWvjGmL5R0O0CGmHup
- 2kp9E5S8Nxk8bHWYOZucZY6zoQaHVHi1zuuqGFV82FSHWkJZ4RoRvoylWAS0Wx4bc8K9
- VTIK4BTuE9ZYLVtjSIRYLN6ZaAkL0DcdWHFg4QbbWrjltc2/+KxfoeQyempXAsF7sI0A
- w3wliYOLVxCpNm799lBmqygk+nsWvEVxFVFJ7Lj2RQ/PkFIeGuOpHh4CgFZttaO2QJlZ
- F0/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Wq8nlNbsnwZz9fji3Cl/zgmv4zDoBKk4NoZF3W2wkDQ=;
- b=IRGbSKAnetWZBYSjklfFjvyHqut/zQnU40OXsH+z73E0SLN4OLtdqod+vy3e0Mhp12
- z5ixadYFv9AjRLhB66048NFemKJ/foAGZQ1esbwEstR3tE2pMh4RWhJWbOLqinvt5BWK
- xysIh0TRxI9RE22K5QJgAW52XcMM0kFFtHZH+Q7RfkBw/DVpev1CPFV/JMn+qeVlWLQ8
- BZEmQB77+6qq4AOPv/AewV0rhkARnyPk7FHnJZye4kYd0keEtWOFgUL/mHsrLjWR2FLa
- 0k3Un05lqR7bP6N6EHDF0gWhpVWGiJz2k84KyGih65XkBEAGZbNpUu3vBfKF8iDf7vSc
- AZ9w==
-X-Gm-Message-State: APjAAAV2Q9NKmWPTcFKVd2oFdxelAkJZKW39JjFWSlfgzBc9XmulKMZ8
- USP9YmzYWfOw11RzNZL3dZJmVQ==
-X-Google-Smtp-Source: APXvYqzNk6wZcWW+lmBBUW/lZq2ZIkoXwN/aWaAwf7XC2b5DqYukekLVZ6CR2bhdZGkTfI1iTFM0Cw==
-X-Received: by 2002:a05:6214:a62:: with SMTP id
- ef2mr3484481qvb.109.1582902820845; 
- Fri, 28 Feb 2020 07:13:40 -0800 (PST)
-Received: from ziepe.ca
- (hlfxns017vw-142-68-57-212.dhcp-dynamic.fibreop.ns.bellaliant.net.
- [142.68.57.212])
- by smtp.gmail.com with ESMTPSA id a128sm5296832qkc.44.2020.02.28.07.13.40
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 28 Feb 2020 07:13:40 -0800 (PST)
-Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
- (envelope-from <jgg@ziepe.ca>)
- id 1j7hKe-0005qo-0Q; Fri, 28 Feb 2020 11:13:40 -0400
-Date: Fri, 28 Feb 2020 11:13:40 -0400
-From: Jason Gunthorpe <jgg@ziepe.ca>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 01/26] mm/mmu_notifiers: pass private data down to
- alloc_notifier()
-Message-ID: <20200228151339.GS31668@ziepe.ca>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-2-jean-philippe@linaro.org>
- <20200224190056.GT31668@ziepe.ca> <20200225092439.GB375953@myrica>
- <20200225140814.GW31668@ziepe.ca> <20200228143935.GA2156@myrica>
- <20200228144844.GQ31668@ziepe.ca> <20200228150427.GF2156@myrica>
+ id 1j7hMz-0002Iq-H2
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:16:07 +0000
+Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01SFFcKc105420; Fri, 28 Feb 2020 10:16:00 -0500
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2yepxphvrr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 28 Feb 2020 10:15:59 -0500
+Received: from m0098413.ppops.net (m0098413.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 01SFFxa3107442;
+ Fri, 28 Feb 2020 10:15:59 -0500
+Received: from ppma03dal.us.ibm.com (b.bd.3ea9.ip4.static.sl-reverse.com
+ [169.62.189.11])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2yepxphuy1-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 28 Feb 2020 10:15:56 -0500
+Received: from pps.filterd (ppma03dal.us.ibm.com [127.0.0.1])
+ by ppma03dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 01SFC17N007473;
+ Fri, 28 Feb 2020 15:14:55 GMT
+Received: from b01cxnp22036.gho.pok.ibm.com (b01cxnp22036.gho.pok.ibm.com
+ [9.57.198.26]) by ppma03dal.us.ibm.com with ESMTP id 2yepv2pkys-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 28 Feb 2020 15:14:55 +0000
+Received: from b01ledav001.gho.pok.ibm.com (b01ledav001.gho.pok.ibm.com
+ [9.57.199.106])
+ by b01cxnp22036.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 01SFEshx16253840
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 28 Feb 2020 15:14:54 GMT
+Received: from b01ledav001.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 333582805C;
+ Fri, 28 Feb 2020 15:14:54 +0000 (GMT)
+Received: from b01ledav001.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 3C33028068;
+ Fri, 28 Feb 2020 15:14:53 +0000 (GMT)
+Received: from [9.211.148.203] (unknown [9.211.148.203])
+ by b01ledav001.gho.pok.ibm.com (Postfix) with ESMTP;
+ Fri, 28 Feb 2020 15:14:53 +0000 (GMT)
+Subject: Re: [PATCH v2] ARM: dts: rainier: Set PCA9552 pin types
+To: Matthew Barth <msbarth@linux.ibm.com>, Joel Stanley <joel@jms.id.au>,
+ Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Brandon Wyman <bjwyman@gmail.com>
+References: <20200225201415.431668-1-msbarth@linux.ibm.com>
+From: Eddie James <eajames@linux.ibm.com>
+Message-ID: <59ceccbd-b776-51fc-e80b-39427c70ec70@linux.ibm.com>
+Date: Fri, 28 Feb 2020 09:14:52 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228150427.GF2156@myrica>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200225201415.431668-1-msbarth@linux.ibm.com>
+Content-Language: en-US
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-28_04:2020-02-28,
+ 2020-02-28 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0
+ impostorscore=0 phishscore=0 spamscore=0 suspectscore=0 clxscore=1015
+ bulkscore=0 mlxlogscore=999 priorityscore=1501 mlxscore=0 adultscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2002280121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_071342_037944_AB0C0240 
-X-CRM114-Status: GOOD (  17.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200228_071605_683290_097FA0D0 
+X-CRM114-Status: GOOD (  17.74  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,57 +109,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- Dimitri Sivanich <sivanich@sgi.com>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pci@vger.kernel.org,
- robin.murphy@arm.com, linux-mm@kvack.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- Andrew Morton <akpm@linux-foundation.org>, will@kernel.org,
- christian.koenig@amd.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 04:04:27PM +0100, Jean-Philippe Brucker wrote:
-> On Fri, Feb 28, 2020 at 10:48:44AM -0400, Jason Gunthorpe wrote:
-> > On Fri, Feb 28, 2020 at 03:39:35PM +0100, Jean-Philippe Brucker wrote:
-> > > > > +	list_for_each_entry_rcu(bond, &io_mm->devices, mm_head) {
-> > > > > +		/*
-> > > > > +		 * To ensure that we observe the initialization of io_mm fields
-> > > > > +		 * by io_mm_finalize() before the registration of this bond to
-> > > > > +		 * the list by io_mm_attach(), introduce an address dependency
-> > > > > +		 * between bond and io_mm. It pairs with the smp_store_release()
-> > > > > +		 * from list_add_rcu().
-> > > > > +		 */
-> > > > > +		io_mm = rcu_dereference(bond->io_mm);
-> > > > 
-> > > > A rcu_dereference isn't need here, just a normal derference is fine.
-> > > 
-> > > bond->io_mm is annotated with __rcu (for iommu_sva_get_pasid_generic(),
-> > > which does bond->io_mm under rcu_read_lock())
-> > 
-> > I'm surprised the bond->io_mm can change over the lifetime of the
-> > bond memory..
-> 
-> The normal lifetime of the bond is between device driver calls to bind()
-> and unbind(). If the mm exits early, though, we clear bond->io_mm. The
-> bond is then stale but can only be freed when the device driver releases
-> it with unbind().
 
-I usually advocate for simple use of these APIs. The mm_notifier_get()
-should happen in bind() and the matching put should happen in the
-call_rcu callbcak that does the kfree. Then you can never get a stale
-pointer. Don't worry about exit_mmap().
+On 2/25/20 2:14 PM, Matthew Barth wrote:
+> All 16 pins of the PCA9552 at 7-bit address 0x61 should be set as type
+> GPIO.
+>
+> Signed-off-by: Matthew Barth <msbarth@linux.ibm.com>
 
-release() is an unusual callback and I see alot of places using it
-wrong. The purpose of release is to invalidate_all, that is it.
 
-Also, confusingly release may be called multiple times in some
-situations, so it shouldn't disturb anything that might impact a 2nd
-call.
+Reviewed-by: Eddie James <eajames@linux.ibm.com>
 
-Jason
+
+> ---
+> v2: Added leds-pca955x.h include
+>      Added upstream to patch
+> ---
+> ---
+>   arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts | 17 +++++++++++++++++
+>   1 file changed, 17 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+> index c63cefce636d..d9fa9fd48058 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+> @@ -4,6 +4,7 @@
+>   
+>   #include "aspeed-g6.dtsi"
+>   #include <dt-bindings/gpio/aspeed-gpio.h>
+> +#include <dt-bindings/leds/leds-pca955x.h>
+>   
+>   / {
+>   	model = "Rainier";
+> @@ -351,66 +352,82 @@
+>   
+>   		gpio@0 {
+>   			reg = <0>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@1 {
+>   			reg = <1>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@2 {
+>   			reg = <2>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@3 {
+>   			reg = <3>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@4 {
+>   			reg = <4>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@5 {
+>   			reg = <5>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@6 {
+>   			reg = <6>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@7 {
+>   			reg = <7>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@8 {
+>   			reg = <8>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@9 {
+>   			reg = <9>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@10 {
+>   			reg = <10>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@11 {
+>   			reg = <11>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@12 {
+>   			reg = <12>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@13 {
+>   			reg = <13>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@14 {
+>   			reg = <14>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@15 {
+>   			reg = <15>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   	};
+>   
 
 _______________________________________________
 linux-arm-kernel mailing list
