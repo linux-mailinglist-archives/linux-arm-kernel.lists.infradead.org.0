@@ -2,72 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA258173633
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 12:39:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5407173637
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 12:40:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KGZh9FI89bLDE5fG9LXdUynnqiYtIvH+WrXAUBDdxVM=; b=cQn
-	Ch6l0erQtPL20aevemzCy8xMLVgy27Wb3Aozs7TAlomtRj74wR0dBcCaNpS5IQFj1NzP9fbeBtoLs
-	C7ptVVyONB+2/2mhzz1hBvwwSOeRHGPl9xFSovY8wx5NX/AoTq84XC9NxLvSA61iZfTIVYyYtOTHi
-	2+hadh+e1nCs3Nans7Xy8g11bo74DJygUbVCwTrYXMt7G6bekyMPKyps2ptKeHrJMzqlBreMMreg0
-	1CWhV2Sj30EoGyzlUZDVqtxzhohOyOf3dt5aV/d+nGAtnqpy9jzaFbDSH+hZXp3umUK7NQ7b6w8rj
-	8ajERA4efbOT+9dwsmgVU75vh6Ny5KQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zIWhpjrFQGO4Ss6CmfrCSa11Z5zUF07F5nLnmsMPGMY=; b=vBo1MvQv0/USxQzdy8A+YGG9u8
+	7UmsWR8cGIvIv0Z94jZ28N5aD3mCmwAmUzVo5PxIDWVut9PWyUVWIVxWzPJRMDy0ui3i5UXLT1DX9
+	4u3hLdvjhc5BX4GT3EY0g7pg8VoRRsqMbSdA2MaEpPMKWqJBdbMa1U/gKef9dCsunTggVqRa0DAAT
+	LgCF931tCLiOmHq+QRF5QjwSR9cWlOrlq2NI3r2gw6BXGO0DycCorb321vjjVC6C+nCcnbRIRICG0
+	7tOgqmgKXL2XhACa2YJz8P/OjKGRa4GAck6mjNo3kA2GPjj4f8w4Kskgs3Lx3kdzTzmQpfrhYPEMZ
+	tSYJ4zrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7dza-00062l-Ty; Fri, 28 Feb 2020 11:39:42 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j7e00-0006K0-3j; Fri, 28 Feb 2020 11:40:08 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7dzR-00061w-Hq; Fri, 28 Feb 2020 11:39:34 +0000
-Received: by mail-wm1-x344.google.com with SMTP id n64so1517030wme.3;
- Fri, 28 Feb 2020 03:39:31 -0800 (PST)
+ id 1j7dzS-000625-Of; Fri, 28 Feb 2020 11:39:36 +0000
+Received: by mail-wm1-x342.google.com with SMTP id z12so2842805wmi.4;
+ Fri, 28 Feb 2020 03:39:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=1nT2rygpRjcW5Hc5nEx4+QR4Y0c2ZJTbeTcqfJuIxf8=;
- b=Kqc24jvgOU22EK6INyCirOks2OzBu06s3R229MgyxZlaO9KwA00EYavqHNtqMuhU37
- ZiGekBb6KP2Ovyu+ihydi+f0LrC/EjezkTbIzbAClYGMe+0/enh0qgPePsV6ybOBXbww
- 0ILwtqR0otTE4mjqS0m7vd8Yjtr6PvVWIrMmavPdV8KJLRSu88YK3Q3wzK71tZffUftz
- w0vVxuoPAbgR1dYb7fmHNohJXdeRq2vAWCowCI3h7CjjwJ+xS8FxjvAjxTeg5iWzcole
- zB3TTxUX4tQcz6qFEE0QYfc2VtTYYmwLrqxeaFnX1I+L9l4UKP5npgDqKCaLSdvSrscf
- YZMQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=HmPLXJpOCywpZeq5lAD4FjaTX4sOpZWVoDemtjk5yXw=;
+ b=sWmxNJ2/LfZPrwNbIlrcBLLDjCgorHwi+uDe9ivm0XmvKzs3C7A+9/OX45MvkFI1NY
+ bMh+KV5Zjy1uXcPIFddnKJ4wWmJrWMnI70QLnh1N7NumFw098Vi9w3qgONutUWmgrqbc
+ Dk5M5RO6rBey+OqWzVdOIOG/Ew4s2SPI+ksKGgFjPyqV/3gvtCrYi85af+lVDQzpKU9J
+ i42QqVVi9cYS39pTZZLPz1PGUe+ZXJG7qBbq4HFyLE7+8BYlfyeDUxHkzGAGfo3LMC40
+ 0K1jQhu5R7QGRDM20zW4pPaM5tBLkwPSx3VdopFhDvFuz5px2CNVk6hFBVopHMBV/O/c
+ EkoQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=1nT2rygpRjcW5Hc5nEx4+QR4Y0c2ZJTbeTcqfJuIxf8=;
- b=bGHrpaTjeOGop+gsRni7Q7dsciOwuk9NlukZJBjRp6AIg0qyQo3ue51BaKL1ocRGZC
- wi6RsEbarOkLwsIp+xCRnLJGPXw/h2qJ/qkIaQcEqGnIrI8uUk4gnYkuRgdJJHBSsNQX
- /XnrSGGpRbFPCjTOt+9BbnI9b8tEnoKnKTCT6Tw64c0EVXgBi4bsFSmbbCSuzL7wBoZ2
- ZbWfzoTM/eQkWZYv+DWKfqZj+VAo+QzlaJN8lwSOiI+AYHaxAOVDrwH9nc6It3Spd0VX
- YCDI9de71yp+hprkl+pDBqCQTA651i2jbf58iDe4PDtGiUu8luUoO3tW9RtRNLGq09mZ
- PiZw==
-X-Gm-Message-State: APjAAAVKqf81ym0IKZssvy/rxo1YBRuEgX+jk8qEMmQCRsdMhF572da3
- unexn+SazLJ65ObfxQk3WDM=
-X-Google-Smtp-Source: APXvYqzl/ZY5TQUvn+/CB3/RaLjU8StBmIRt1iV97hCR5IEM+O1KSpKMioYZFHvB/LGdaLFAWtBYbg==
-X-Received: by 2002:a1c:3204:: with SMTP id y4mr4362124wmy.166.1582889970418; 
- Fri, 28 Feb 2020 03:39:30 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=HmPLXJpOCywpZeq5lAD4FjaTX4sOpZWVoDemtjk5yXw=;
+ b=GymNoswLE8kzNbnXCJ3mZU2HL0NeNZ6KSZr6Z3qYNzj7mcX/WuBr4Bb7vs3xDjbZ/9
+ sAILMkjRPtP4q/M7DPjw1amyYDn+QKn8AoH5Ncifhgjo7Jit5SdaLAeEsTnqOq5lSp1K
+ 7AXnvivA02RsDtV+H/qM1jzcqRkN0W6GYe5jgF9mlUHLMya9o1HoF1ycK7eUk5eotHq0
+ 5Z5L3R6hzjKOmB82EN926kNeRrSJ28xxeJPMhTukSswy2yyzPzj1YGq9RxKL9iF5ehDS
+ Vudi454QjvSfMF+lDn580KrJpAULalodafWQP37nIiF+Q+oAPRuuCHKtUxaLdmOJKp7x
+ jz6Q==
+X-Gm-Message-State: APjAAAWhNYGAY3T/I7a5Dh/uZJaHCh9/PAsYZAwK4JkGCvCCxc/UPeqN
+ pqoUlJ/NhR4rSHm4NHj/uyM=
+X-Google-Smtp-Source: APXvYqybX1CYwMeuUYbdLHcAbibwv6Xf3qhi54cLwS/IJwbBOzV5j6W4y3iXzUnZoGBvUYIPlYnYxQ==
+X-Received: by 2002:a05:600c:20c6:: with SMTP id
+ y6mr4515359wmm.95.1582889971316; 
+ Fri, 28 Feb 2020 03:39:31 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q1sm11554294wrw.5.2020.02.28.03.39.29
+ by smtp.gmail.com with ESMTPSA id q1sm11554294wrw.5.2020.02.28.03.39.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 28 Feb 2020 03:39:29 -0800 (PST)
+ Fri, 28 Feb 2020 03:39:30 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/2] ARM: dts: remove g-use-dma from rockchip usb nodes
-Date: Fri, 28 Feb 2020 12:39:21 +0100
-Message-Id: <20200228113922.20266-1-jbx6244@gmail.com>
+Subject: [PATCH 2/2] arm64: dts: remove g-use-dma from rockchip usb nodes
+Date: Fri, 28 Feb 2020 12:39:22 +0100
+Message-Id: <20200228113922.20266-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200228113922.20266-1-jbx6244@gmail.com>
+References: <20200228113922.20266-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_033933_590557_2EED7351 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20200228_033934_798741_BEC35472 
+X-CRM114-Status: GOOD (  13.54  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -104,46 +109,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 A test with the command below gives these errors:
 
-arch/arm/boot/dts/rv1108-elgin-r1.dt.yaml: usb@30180000:
+arch/arm64/boot/dts/rockchip/px30-evb.dt.yaml: usb@ff300000:
+'g-use-dma', 'power-domains' do not match any of the regexes:
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3328-a1.dt.yaml: usb@ff580000:
 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm/boot/dts/rv1108-evb.dt.yaml: usb@30180000:
+arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff580000:
 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm/boot/dts/rk3228-evb.dt.yaml: usb@30040000:
+arch/arm64/boot/dts/rockchip/rk3328-rock64.dt.yaml: usb@ff580000:
 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm/boot/dts/rk3229-evb.dt.yaml: usb@30040000:
-'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: usb@30040000:
+arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dt.yaml: usb@ff580000:
 'g-use-dma' does not match any of the regexes: 'pinctrl-[0-9]+'
 
 'g-use-dma' is not a valid option in dwc2.yaml, so remove it
 from all Rockchip dtsi files.
 
-make ARCH=arm dtbs_check
+make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm/boot/dts/rk322x.dtsi | 1 -
- arch/arm/boot/dts/rv1108.dtsi | 1 -
+ arch/arm64/boot/dts/rockchip/px30.dtsi   | 1 -
+ arch/arm64/boot/dts/rockchip/rk3328.dtsi | 1 -
  2 files changed, 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index 4e90efdc9..dac930be3 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -718,7 +718,6 @@
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index 75908c587..4f484119f 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -870,7 +870,6 @@
  		g-np-tx-fifo-size = <16>;
  		g-rx-fifo-size = <280>;
  		g-tx-fifo-size = <256 128 128 64 32 16>;
 -		g-use-dma;
- 		phys = <&u2phy0_otg>;
+ 		phys = <&u2phy_otg>;
  		phy-names = "usb2-phy";
- 		status = "disabled";
-diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
-index 1fd06e7cb..9bb109d66 100644
---- a/arch/arm/boot/dts/rv1108.dtsi
-+++ b/arch/arm/boot/dts/rv1108.dtsi
-@@ -527,7 +527,6 @@
+ 		power-domains = <&power PX30_PD_USB>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+index 1f53ead52..bad41bc6f 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
+@@ -957,7 +957,6 @@
  		g-np-tx-fifo-size = <16>;
  		g-rx-fifo-size = <280>;
  		g-tx-fifo-size = <256 128 128 64 32 16>;
