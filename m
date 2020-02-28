@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 621E7173BC6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:41:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F170A173BC7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:42:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oiXpfAgteaepDm0vJjk1u29J8xDTvK7javdwuE1Yad0=; b=t/+NE5/DSv+IQO
-	FTqqpLdv9hAh3BSFQVPQNw5gp79VXU0p+Em00JDbJ31YMeAYypg0PVyv1quWjgsnMuJBPcfvvTmC2
-	LEIJBSIRlbQ6VS90kaOoDBmo7kKz8DMM2qmuHltucQ/vlRL9GUhh5cvu9rnjRJsIP4CUOVuKXzVh9
-	PXenF5ZvZuYCeXxSewadCZwUhFefg3/V9q0+tcHb0ASSnpEOTgmmBV7Wcb0kbsWc9YSIHwOznVXtQ
-	+07KvpfLxUlfvS5LHUqrrOcljMk3J7BtIyhYN5qM2jsgSxI8TQcPsQiYGamzmlWxU3kJCMSi2WMhh
-	jOecNsL/Td4KyF/hy0vA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s+hwq8WlvDLyMQdyIcloFQwUryT/H8aYN/0O6q4HHDA=; b=qv9iOliKoURsgt
+	szf49nIL4tMPwOvsliAFAO98lDkaNr5R6W6EV8qpOSr13y0ROMDHk8533PtNGqomOqxv3iCXpMqoD
+	xdqT0tShi4Dh6VIe+kLp/Lw1cB1+JbvKbF3/JZFAkKRZlTBvthj0PhKnIqzZRbjcUNNBtXjAjdKlC
+	x5Jfzg6j4zQAmngmRWBADbWBOEgvxS0bI8IakfJGP8oCvdHTxjqQpi6shAogZeongX4qvAaqojU14
+	i4/2t0R4f7ZB3HWNwrUzQNMha+kTkVwsiMEDMDEbygmjniWmh5EdJy4YvZr9sx4+Quk5eWPIHg8PE
+	45NV3Tbn7LfknIaRR4NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7hli-0005Np-Vt; Fri, 28 Feb 2020 15:41:38 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1j7hm4-0005e9-KI; Fri, 28 Feb 2020 15:42:00 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7hlZ-0005NK-SL; Fri, 28 Feb 2020 15:41:31 +0000
-Received: by mail-wm1-x341.google.com with SMTP id g83so1484034wme.1;
- Fri, 28 Feb 2020 07:41:29 -0800 (PST)
+ id 1j7hlq-0005be-Mn; Fri, 28 Feb 2020 15:41:48 +0000
+Received: by mail-wm1-x344.google.com with SMTP id q9so3621535wmj.5;
+ Fri, 28 Feb 2020 07:41:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=XNr9LS4NdBHHOaGNbY4Rvbef+Vzw8n41HfwyhtLS84U=;
- b=V+4T56gijWkocDCf9UuoVhIlpqQou5tVyjGVTxcqIhks9Ikt5iJs6SyM+ArNyb3AaJ
- yXm2/PfBheCmPfkkn1K6kgvJEoMAoaZ2SPw4G0BZmG8lpER5EEBuQ9KQET1ESWQO7nas
- /IErfsz4Cf7rsxnTfdkNspNCHZsac6f7X1wNWhuB9kmzFq4sKC6Bbuo5SWEJ6XdoNlsb
- o/0dh8BcJQlEQbIk3V3c+FmVxXyS91iHErWDX/ssZZAgW55B720dQtLlsl66IN3ixKEu
- PB2r3pZunzJMhrXyfDjwGlmv06I8TlRt/6U7jeExuuLhrJVMk+T288qgq3AQLUvsgWEp
- zukg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=qV1Dck8tf+GcyTrLNUFv75tqg7dyBtWtpnslHitmGrc=;
+ b=B/LKxeBkYdD8AlPBawzSn+XJuEJ/6FPxXgF3H+qlt4997pZuGrjwWleEgpqG0mxVPV
+ lJUtH2yNsZ+TJ9R072OTTLlW2/c3MZqJT2DEBvJwgfKnxRKOFVLWHDKmUO00YjaKoYJq
+ nY36FAdNcY8hUC52VjdK43b9ERek8BnTghCV6H0c6wvkW4UPzxoN1YdOqCMcEmEe/Ibz
+ an8EM9eYCrFyXIuRul8vvJy7QvMXQKvdwJVL6iVlP6wh7nhJgypoDgmAMQcOMYgQ3OcS
+ 5oh8ENTlr0Xxk+BtD/GrLaMWtrkSvGcyOfvXS0XJZZMhjnA8za2hfj9dyQ4K2lgkVuc4
+ bzvw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=XNr9LS4NdBHHOaGNbY4Rvbef+Vzw8n41HfwyhtLS84U=;
- b=HWsWlqalE9/SMrr2gWIxaAy8xghPMNYlvdt6qL21ZLc+eoFSZPvPe1h1FcpzAAhlGX
- 4JOx1wjEGO/3yyTx+HDdJi30Ii78wuOpLBxmfYDMJGKdThNC+LUXd6mQHnZGHsSAUSju
- my+wy754etIAUVLLtvb5UMmdI0W+eiZn0GqT6K18xzJpD2A0Wif8UlvFJq8/Fv5oMs+M
- xZJu0Vi3tOPwmeWBElwku+OJAXi2t31p7uJQNMYl/2M4+chERfAh1DtA77K2+721xum7
- EiwFDs1K4Bd1WACwNe2RNEflTcUtfgp2WaBPxgj9nw+M26VqS0qx2PCp9wh0Zjk4kyEY
- MFqQ==
-X-Gm-Message-State: APjAAAUPmwL8+92srGEJLtNwMCGFVzHTWgc4yy8V/xNEg+it5qLEmCqO
- p4rG5ZV1RwtN0Md9VluVXX4=
-X-Google-Smtp-Source: APXvYqx07nbNnJcNa+gIPlfmOe/rE95wPUQ9FmQByVrfLSt460UDzFev6s0hSOVfySBvJ0w5DozNQA==
-X-Received: by 2002:a1c:4908:: with SMTP id w8mr5178421wma.57.1582904488030;
- Fri, 28 Feb 2020 07:41:28 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=qV1Dck8tf+GcyTrLNUFv75tqg7dyBtWtpnslHitmGrc=;
+ b=aTmbBUKHuE6h62QAjnfQJ8nCIAEUTSMHLQALyZbKDzHTkpMxvbxQvkAbuHTyDhUIit
+ XpmA6JA6srWejuQVyp/PP0WPPgWlmOih6BISjkQvn4EnqEZcgQSB7Kb+PXolnIwlymD5
+ rO/gbr7+QCO6JxLQ/pyl0CYz52fJxIJekJVJtRYfn5xDW5gUsyDDLcSoUNpapBoXcCST
+ eSJPVxMsbVa7qZq/UM76WFRiJcNbsNJ6A4r2BQJ9v59y0YgWXvv6CUeC66sutKNS1tL3
+ zWkcQG5sLEVbb5LA+cimIrQnUb0AdIkuYDYHVtwNDBV6jAOf6Tw8BFeu8XMSZfBwjdEC
+ iSUQ==
+X-Gm-Message-State: APjAAAVs0DIfxYFNAH7D3jYD/OABSTXuhXyd/OH5Y5WDnMUfw0DzlOcE
+ C/D6mcPAZn6PvM4ieTkaVkM=
+X-Google-Smtp-Source: APXvYqz3F/pP/wL0WjwZGAnvHP2QFXDDU7ivUZcycl72fUq26geJ9QKLeqLousrNZp999DpUHB/UnQ==
+X-Received: by 2002:a7b:ce8b:: with SMTP id q11mr5567459wmj.100.1582904505349; 
+ Fri, 28 Feb 2020 07:41:45 -0800 (PST)
 Received: from prasmi.home ([2a00:23c8:2510:d000:3855:fd13:6b76:a11b])
- by smtp.gmail.com with ESMTPSA id k16sm13355349wrd.17.2020.02.28.07.41.26
+ by smtp.gmail.com with ESMTPSA id k16sm13355349wrd.17.2020.02.28.07.41.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 28 Feb 2020 07:41:27 -0800 (PST)
+ Fri, 28 Feb 2020 07:41:44 -0800 (PST)
 From: Lad Prabhakar <prabhakar.csengg@gmail.com>
 X-Google-Original-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
@@ -68,22 +68,23 @@ To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Marek Vasut <marek.vasut+renesas@gmail.com>,
  Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
  Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v5 0/7] Add support for PCIe controller to work in endpoint
- mode on R-Car SoCs
-Date: Fri, 28 Feb 2020 15:41:15 +0000
-Message-Id: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH v5 1/7] PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+Date: Fri, 28 Feb 2020 15:41:16 +0000
+Message-Id: <20200228154122.14164-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <20200228154122.14164-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_074129_940999_86128DA6 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20200228_074146_750990_09C049DA 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -117,73 +118,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds support for PCIe controller on rcar to work in
-endpoint mode, this also extends the epf framework to handle base region
-for mapping PCI address locally.
+This commit renames pcie-rcar.c to pcie-rcar-host.c in preparation for
+adding support for endpoint mode. CONFIG_PCIE_RCAR is also renamed to
+CONFIG_PCIE_RCAR_HOST to match the driver name accordingly.
 
-Note:
-The cadence/rockchip/designware endpoint drivers are build tested only.
+In addition to this defconfig file has also been updated to match the new
+config option.
 
-Changes for v5:
-1] Rebased the patches on next branch of https://git.kernel.org/pub/scm/
-   linux/kernel/git/helgaas/pci.git
-2] Fixed review comments reported by Kishon while fetching the matching
-   window in function pci_epc_get_matching_window()
-3] Fixed review comments reported by Bjorn
-   a] Split patch up first patch so that its easier to review and incremental
-   b] Fixed typos
-4] Included Reviewed tag from Rob for the dt-binding patch
-5] Fixed issue reported by Nathan for assigning variable to itself
+Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+---
+ arch/arm64/configs/defconfig                             | 2 +-
+ drivers/pci/controller/Kconfig                           | 7 ++++---
+ drivers/pci/controller/Makefile                          | 2 +-
+ drivers/pci/controller/{pcie-rcar.c => pcie-rcar-host.c} | 0
+ 4 files changed, 6 insertions(+), 5 deletions(-)
+ rename drivers/pci/controller/{pcie-rcar.c => pcie-rcar-host.c} (100%)
 
-Changes for v4:
-1] Fixed dtb_check error reported by Rob
-2] Fixed review comments reported by Kishon
-   a] Dropped pci_epc_find_best_fit_window()
-   b] Fixed initializing mem ptr in __pci_epc_mem_init()
-   c] Dropped map_size from pci_epc_mem_window structure
-
-Changes for v3:
-1] Fixed review comments from Bjorn and Kishon.
-3] Converted to DT schema
-
-Changes for v2:
-1] Fixed review comments from Biju for dt-bindings to include an example
-   for a tested platform.
-2] Fixed review comments from Kishon to extend the features of outbound
-   regions in epf framework.
-3] Added support to parse outbound-ranges in OF.
-
-Lad Prabhakar (7):
-  PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
-  PCI: rcar: Move shareable code to a common file
-  PCI: rcar: Fix calculating mask for PCIEPAMR register
-  PCI: endpoint: Add support to handle multiple base for mapping
-    outbound memory
-  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
-    controller
-  PCI: rcar: Add support for rcar PCIe controller in endpoint mode
-  misc: pci_endpoint_test: Add Device ID for RZ/G2E PCIe controller
-
- .../devicetree/bindings/pci/rcar-pci-ep.yaml       |   76 ++
- arch/arm64/configs/defconfig                       |    2 +-
- drivers/misc/pci_endpoint_test.c                   |    3 +
- drivers/pci/controller/Kconfig                     |   15 +-
- drivers/pci/controller/Makefile                    |    3 +-
- drivers/pci/controller/cadence/pcie-cadence-ep.c   |    7 +-
- drivers/pci/controller/dwc/pcie-designware-ep.c    |   29 +-
- drivers/pci/controller/pcie-rcar-ep.c              |  490 ++++++++
- drivers/pci/controller/pcie-rcar-host.c            | 1053 +++++++++++++++++
- drivers/pci/controller/pcie-rcar.c                 | 1229 +-------------------
- drivers/pci/controller/pcie-rcar.h                 |  129 ++
- drivers/pci/controller/pcie-rockchip-ep.c          |    7 +-
- drivers/pci/endpoint/pci-epc-mem.c                 |  167 ++-
- include/linux/pci-epc.h                            |   39 +-
- 14 files changed, 1985 insertions(+), 1264 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
- create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
- create mode 100644 drivers/pci/controller/pcie-rcar-host.c
- create mode 100644 drivers/pci/controller/pcie-rcar.h
-
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 0f21288..7a34fce 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -185,7 +185,7 @@ CONFIG_HOTPLUG_PCI=y
+ CONFIG_HOTPLUG_PCI_ACPI=y
+ CONFIG_PCI_AARDVARK=y
+ CONFIG_PCI_TEGRA=y
+-CONFIG_PCIE_RCAR=y
++CONFIG_PCIE_RCAR_HOST=y
+ CONFIG_PCI_HOST_GENERIC=y
+ CONFIG_PCI_XGENE=y
+ CONFIG_PCIE_ALTERA=y
+diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+index f84e5ff..37e0ea7 100644
+--- a/drivers/pci/controller/Kconfig
++++ b/drivers/pci/controller/Kconfig
+@@ -54,12 +54,13 @@ config PCI_RCAR_GEN2
+ 	  There are 3 internal PCI controllers available with a single
+ 	  built-in EHCI/OHCI host controller present on each one.
+ 
+-config PCIE_RCAR
+-	bool "Renesas R-Car PCIe controller"
++config PCIE_RCAR_HOST
++	bool "Renesas R-Car PCIe host controller"
+ 	depends on ARCH_RENESAS || COMPILE_TEST
+ 	depends on PCI_MSI_IRQ_DOMAIN
+ 	help
+-	  Say Y here if you want PCIe controller support on R-Car SoCs.
++	  Say Y here if you want PCIe controller support on R-Car SoCs in host
++	  mode.
+ 
+ config PCI_HOST_COMMON
+ 	bool
+diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+index 01b2502..4ca2da6 100644
+--- a/drivers/pci/controller/Makefile
++++ b/drivers/pci/controller/Makefile
+@@ -7,7 +7,7 @@ obj-$(CONFIG_PCI_MVEBU) += pci-mvebu.o
+ obj-$(CONFIG_PCI_AARDVARK) += pci-aardvark.o
+ obj-$(CONFIG_PCI_TEGRA) += pci-tegra.o
+ obj-$(CONFIG_PCI_RCAR_GEN2) += pci-rcar-gen2.o
+-obj-$(CONFIG_PCIE_RCAR) += pcie-rcar.o
++obj-$(CONFIG_PCIE_RCAR_HOST) += pcie-rcar-host.o
+ obj-$(CONFIG_PCI_HOST_COMMON) += pci-host-common.o
+ obj-$(CONFIG_PCI_HOST_GENERIC) += pci-host-generic.o
+ obj-$(CONFIG_PCIE_XILINX) += pcie-xilinx.o
+diff --git a/drivers/pci/controller/pcie-rcar.c b/drivers/pci/controller/pcie-rcar-host.c
+similarity index 100%
+rename from drivers/pci/controller/pcie-rcar.c
+rename to drivers/pci/controller/pcie-rcar-host.c
 -- 
 2.7.4
 
