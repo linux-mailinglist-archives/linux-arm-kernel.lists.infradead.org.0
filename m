@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAF0B173726
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:25:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30A3517373F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:33:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VTu5d+mLVNVn4mKj05jZrHpeds9iRrsjfUjIQhw86uk=; b=GjFGL8mB2MpYU4
-	AA4Mynx7iT1Af8FEZs+jyKlzx/YKhy+lwto26xXnKRkz4uEWposCASNvLhkkvgBne/F6/Nz9MV1ZC
-	p9sScgwjfR8+9v+MvadN5y5mb6aqBbJ800OPP9f85M2PZhZIYEmsfKz9BItYfsJMOJIJ/w63TVjvo
-	I21vF5bJFU0+X7B+SIjqMjrGmK3ORpZ7hhtSJSyjKGnAFb92IW4cgV7l5V0telSCF1xLFc9qQXcq6
-	454KrpPH8lN2kQFyU+P2bKNm+vzpLgjwRMdrK0tVHAPR4kuDnex6sQPCFdt/XDoGLXxnYAvKx0FfZ
-	LJHD+j9uTeG8sY0GVoMA==;
+	List-Owner; bh=f9y1Wm7R17AOLiRLgnnZ4kZ29iA3eajw4RqqiR9ixEo=; b=kNFkwnMMvjfAqJ
+	WvGN4nc3QvNmakMyuX0iSbLakeqV98xf9gBkhWWs27TTMwPbXVDkiRNPymO3IyNjZjYmt11elHtJ1
+	Zc6IfIwPUfj6Uwe5H6IosFMvEF6Hw1qY5dAbRFUkF3reNV4esHNa21mPRNNGInyplaZYETynEnV8U
+	q/BYy+JCtvdY4anCi9RBvzmLufLsZtPpa0jPrC7lDbXoprMbASG0zChoAqTc82dTPOkqtNJr25qLD
+	Se6jI/0bx6e+4gALBgqGBCVFq/rtGZJWJ5zsp1dq/tSL0C2JqOP1ysR5Dq0PaAeL0gDNVWntEelnq
+	O3w6dXc8DnvrfCRU42Tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7ehg-0007SF-Cq; Fri, 28 Feb 2020 12:25:16 +0000
+	id 1j7epa-0002mq-O6; Fri, 28 Feb 2020 12:33:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7ehO-0007Rq-1S
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:24:59 +0000
+ id 1j7epR-0002mT-8v
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:33:18 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C5160246A8;
- Fri, 28 Feb 2020 12:24:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8CD00246A8;
+ Fri, 28 Feb 2020 12:33:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582892697;
- bh=lHeiZkUFT50I1aHZURTGG+8Xh19E+2k3Jot1vyW6wa8=;
+ s=default; t=1582893197;
+ bh=iI9Izp1/xx+N6k2MZVXAFgzynuOg+3ILMN2IFASspNo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ei0SgnMDLBplCZABy8+Eu8+L6pRhwOuzjn3z0sE+LPCTuokU/xMc1N5MaVu57PN7d
- fVj2SvtWnaD6o3KgwWsT7gt5+dC60l/V9zCc3leMZc/SsKbL+TVoZwph7nzPrqMWFr
- 73sRboapNwIAZ+owBO7gn2yCM+cXH+b16g+vseIs=
-Date: Fri, 28 Feb 2020 12:24:53 +0000
+ b=olfkeknYTpfaX/G5LJGKxEF7bCQJHQDBcFV0o4Y32z0y3RCRqnI9oG1BX+JRrVIDM
+ jVnYWDRgGEVWdB5aQsvMkI+iM0U2ehwm8z6utSeJMQEYPYQ30Yt2oo2dGT96FB5Kf0
+ JeU4N0FzFT0mpC2zqdVHP/N1OEZsd2Ohi8L+71pg=
+Date: Fri, 28 Feb 2020 12:33:12 +0000
 From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 5/5] arm64: perf: Support new DT compatibles
-Message-ID: <20200228122453.GD3275@willie-the-truck>
-References: <cover.1582312530.git.robin.murphy@arm.com>
- <6e5087621bd8112a35733054689d7c785b4bdde5.1582312530.git.robin.murphy@arm.com>
- <20200228121712.GF36089@lakrids.cambridge.arm.com>
+To: Daniel Jordan <daniel.m.jordan@oracle.com>
+Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
+Message-ID: <20200228123311.GE3275@willie-the-truck>
+References: <20200217204803.GA13479@Red>
+ <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ <20200220090350.GA19858@Red>
+ <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200228121712.GF36089@lakrids.cambridge.arm.com>
+In-Reply-To: <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_042458_102994_5A34687A 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20200228_043317_335740_4762AEB7 
+X-CRM114-Status: GOOD (  11.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,31 +79,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
+ tj@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 12:17:13PM +0000, Mark Rutland wrote:
-> On Fri, Feb 21, 2020 at 07:35:32PM +0000, Robin Murphy wrote:
-> > Add support for matching the new PMUs. For now, this just wires them up
-> > as generic PMUv3 such that people writing DTs for new SoCs can do the
-> > right thing, and at least have architectural and raw events be usable.
-> > We can come back and fill in event maps for sysfs and/or perf tools at
-> > a later date.
-> > 
-> > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+On Fri, Feb 21, 2020 at 12:42:23PM -0500, Daniel Jordan wrote:
+> On Thu, Feb 20, 2020 at 10:03:50AM +0100, Corentin Labbe wrote:
+> > But I got the same with plain next (like yesterday 5.6.0-rc2-next-20200219 and tomorow 5.6.0-rc2-next-20200220) and master got the same issue.
 > 
-> Thanks for putting this together!
+> Thanks.  I've been trying to reproduce this on an arm board but it's taking a
+> while to get it setup since I've never used it for kernel work.
 > 
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
-> 
-> Will, are you happy to queue this and the previous patch?
+> Hoping to get it up soon, though someone with a working setup may be in a
+> better position to help with this.
 
-Sure thing. I haven't queued anything for 5.7 yet, but I'll flag these
-two so I don't forget.
+Any joy with this? It sounded to me like the issue also happens on a
+mainline kernel. If this is the case, have you managed to bisect it?
+
+Cheers,
 
 Will
 
