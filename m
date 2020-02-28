@@ -2,108 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F7A5173B74
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:33:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2621D173B91
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:38:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iFklPWOSDFFpe4+GnJmpeRakuFbbaY1zKgO8lzJsL7c=; b=kUx/N+Yp3+ymqu
-	7q/pnAGuUFoo5OS0z4tUHb9nU/HNwAikjh8mBfKi6Lmc7tseFXowmSldzTqTTHgV7oQJ3DllBcYxg
-	/nqlmiO2aQOD3vCrdlk1JUd0U1GVMOhPUNoXZ1lsB6BE+O0IOuhrWpDcSGv9tSvYIgeU1LW+HnK4V
-	30tftFskeVME1oE54G0fm5j+LR90t7KQ3jALvntm2F1RW8aNLO10kds4R8Y4kClai271B5kh8Sc0H
-	45Giu41pNPrXGM4x61SGBnrmgsBiLZxJRwAdbKM/WEZU1OEusLYMuRA5RaoISJaJNJcohCRa8KIfe
-	KM10pQnEsXZswwtCq+FQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yu2tS8P6VUtPCV6kgseHCBK+NtDmc83NRfuh8kQn4Kg=; b=V7F2K5AMlvFkFB
+	JBx/2Bjy2qeFORzbMceb7+nB7UJJ/QeoIsbyglKnr8v7u2F9jjdWU9HiCaRr0dG5KM4bEwZkxFr39
+	o/Hw5PDPe2RBGaPB/2ZVm7jlJbaN8H2oYI1fXm2Yart83oBTAvds+I+0XqJ1uivqlGvXhhMmObp7e
+	b04hLrOg4GWdnJIUi335wG1ye8wWIQJcff19LT0jkBzVNSTiOExvRaYqM9n5MXGoKwm2zC9Fd5zeR
+	fo1UoT4C/iT03jh90WLwDj+Vp7Zvv86bTUSKUkxSl6l06ILfYDs++d26VIjbPsWgSQ5lBzxec0lUW
+	WoiFH83MqFvynkCNvy6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7hdv-0001ab-Ha; Fri, 28 Feb 2020 15:33:35 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7hdm-0001a9-7k
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:33:27 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01SFNbpO014854;
- Fri, 28 Feb 2020 15:33:18 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=UECnQ/oTwdSNKe5Xwj90yZ1hGNYLYSWaAjIgZTEoUHg=;
- b=EZcxPLjYQUuIr1PPWvoGLq8u79eUUlRU43u5TEmqxPhBi58LneZRsmGtX7jN2h7oOgTE
- J6PFnqBvcjuZWqJqgzFrWd7iPEhDmnuvRtQzWBym7/lSpBz64UPxkLreMt+krvxlk6FR
- FoxP+HtsaLrv9ibUQjJpQ8UgA+Cxz6+aNL15PRw1k/QmRrB+dGeCRUK7RMREF8f6AXBA
- z0BjLYFzNtvQW+i/D0/PJ7IHsDq0Wu8JhhdhwMLeuXhOh+rjacsQK+a+gadD6ffQnpK3
- 2kl9efrg2X6O5AE/2STjo1Rrp0AhHytXh1aMF3+XDjmgae2gZ1XvC4RPQMbAx3pIFFBR Ng== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2130.oracle.com with ESMTP id 2ydcsnun8q-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 28 Feb 2020 15:33:18 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01SFWNsH144227;
- Fri, 28 Feb 2020 15:33:17 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3020.oracle.com with ESMTP id 2ydcsepxuh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 28 Feb 2020 15:33:17 +0000
-Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 01SFXE50018142;
- Fri, 28 Feb 2020 15:33:15 GMT
-Received: from ca-dmjordan1.us.oracle.com (/10.211.9.48)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 28 Feb 2020 07:33:14 -0800
-Date: Fri, 28 Feb 2020 10:33:31 -0500
-From: Daniel Jordan <daniel.m.jordan@oracle.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
-Message-ID: <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
-References: <20200217204803.GA13479@Red>
- <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
- <20200220090350.GA19858@Red>
- <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
- <20200228123311.GE3275@willie-the-truck>
+	id 1j7hiC-0003M8-1D; Fri, 28 Feb 2020 15:38:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7hi3-0003LU-6y
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 15:37:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A1C7131B;
+ Fri, 28 Feb 2020 07:37:48 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0426D3F73B;
+ Fri, 28 Feb 2020 07:37:47 -0800 (PST)
+Subject: Re: [PATCH] arm64: entry: unmask IRQ in el0_sp()
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20200228145942.10675-1-mark.rutland@arm.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <2680f3b0-a457-ba9f-322c-2c6e9f079e87@arm.com>
+Date: Fri, 28 Feb 2020 15:37:46 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228123311.GE3275@willie-the-truck>
-User-Agent: NeoMutt/20180716
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9545
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- bulkscore=0 phishscore=0
- mlxlogscore=727 spamscore=0 suspectscore=0 mlxscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
- definitions=main-2002280123
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9545
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
- malwarescore=0 bulkscore=0
- lowpriorityscore=0 mlxlogscore=793 phishscore=0 spamscore=0 adultscore=0
- suspectscore=0 impostorscore=0 clxscore=1015 priorityscore=1501
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
- definitions=main-2002280122
+In-Reply-To: <20200228145942.10675-1-mark.rutland@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_073326_318012_7ABE2AE5 
-X-CRM114-Status: GOOD (  17.18  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200228_073751_302836_483C8581 
+X-CRM114-Status: GOOD (  13.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,38 +63,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
- tj@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 12:33:12PM +0000, Will Deacon wrote:
-> On Fri, Feb 21, 2020 at 12:42:23PM -0500, Daniel Jordan wrote:
-> > On Thu, Feb 20, 2020 at 10:03:50AM +0100, Corentin Labbe wrote:
-> > > But I got the same with plain next (like yesterday 5.6.0-rc2-next-20200219 and tomorow 5.6.0-rc2-next-20200220) and master got the same issue.
-> > 
-> > Thanks.  I've been trying to reproduce this on an arm board but it's taking a
-> > while to get it setup since I've never used it for kernel work.
-> > 
-> > Hoping to get it up soon, though someone with a working setup may be in a
-> > better position to help with this.
+Hi Mark,
+
+On 28/02/2020 14:59, Mark Rutland wrote:
+> Currently, the EL0 SP alignment handler masks IRQs unnecessarily. It
+> does so due to historic code sharing of the EL0 SP and PC alignment
+> handlers, and branch predictor hardening applicable to the EL0 SP
+> handler.
 > 
-> Any joy with this? It sounded to me like the issue also happens on a
-> mainline kernel. If this is the case, have you managed to bisect it?
+> We began masking IRQs in the EL0 SP alignment handler in commit:
+> 
+>   5dfc6ed27710c42c ("arm64: entry: Apply BP hardening for high-priority synchronous exception")
+> 
+> ... as this shared code with the EL0 PC alignment handler, and branch
+> predictor hardening made it necessary to disable IRQs for early parts of
+> the EL0 PC alignment handler. It was not necessary to mask IRQs during
+> EL0 SP alignment exceptions, but it was not considered harmful to do so.
+> 
+> This masking was carried forward into C code in commit:
+> 
+>   582f95835a8fc812 ("arm64: entry: convert el0_sync to C")
+> 
+> ... where the SP/PC cases were split into separate handlers, and the
+> masking duplicated.
+> 
+> Subsequently the EL0 PC alignment handler was refactored to perform
+> branch predictor hardening before unmasking IRQs, in commit:
+> 
+>   bfe298745afc9548 ("arm64: entry-common: don't touch daif before bp-hardening")
+> 
+> ... but the redundant masking of IRQs was not removed from the EL0 SP
+> alignment handler.
 
-I managed to get recent mainline (rawhide) booting days ago but wasn't able to
-reproduce on a rpi 3b+.
+Bother.
 
-My plan had been to try debug-by-email next, but then something exploded
-internally and I haven't had time for it yet.  Still intending to help once the
-explosion is contained, provided someone can't get to it sooner.
 
-thanks,
-Daniel
+> Let's do so now, and make it interruptible as with most other
+> synchronous exception handlers.
+
+I think you want:
+Fixes: bfe298745afc9548 ("arm64: entry-common: don't touch daif before bp-hardening")
+
+on this as, bfe298745afc9548 changed the behaviour: local_daif_restore(DAIF_PROCCTX) was
+called before arm64_notify_die(), now its not.
+
+With that,
+Reviewed-by: James Morse <james.morse@arm.com>
+
+
+Thanks!
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
