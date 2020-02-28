@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C389172F18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 04:03:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1D88172FC1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 05:22:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YaI4LpanWygqOpfHf+XAjohxXBJyggFZ7AB2CrE73Sk=; b=c0vGulDREBqq5y
-	78F+8+/6sffVoccPTj68iepo/Lx5kIVP13pVaTCyogswhWz/xs2guEyQ5VIV8P7cYAtqVkmNue3o6
-	/+6Ju4uLZavXVdDTGDC1ObjrRie0oCarkWPRIkDAS5foT1YmdS7hV61FLGxe86VpuQjbcIKL7C7Jb
-	89ByRY0bfwWYbN7TJKHB4iKZILYyiVI4Eu8/rO6vIr//5ZXOiXdrGP/7Q5bHRmuHuknb/fLZUh3j4
-	L69taSQv20z5l91hhJ5bYOe72oIh39EPtg7wIQXYGdQZAtjnBFC8VPtTiJzS8Y7AbYxvAQam7hHY8
-	DT0H1nJBZ9qjU4l5yhlg==;
+	List-Owner; bh=AnRrYXBFkQiHFVJS9rzGwTIkJuRtTDjRnUokhjrwA4E=; b=Lt0+UpNejan5E+
+	JQbkWcZa0ba/VqdScTpmkKf4jvxNOk6O6xsG6mzkf8PWBX6In0wxVi/CgQ1zPowkrcm05DAt2iNke
+	CGAOpjldzhaz15P7/Fwb83pSFF68jGm+9ZmFwqADT6HkT853yQvDbEBlbcPv4BM9iGOI0RTYclo0C
+	tA386K964rAf58d6sVXxJqA3Y4PFnU639e4hChFlTKoG1Wc7CiEH82VzWCspIKgIOZ3wyvz+/CeQa
+	jCH3WYE2xb0k9u4BIUhNEz3YCuoWoO+1JHcU5sD3F0x160gTmB/TFlsmsA/azmEpBLtU7COM+Jg62
+	aY8LM6NY7S/cC/ZNFRxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Vvu-00018n-Re; Fri, 28 Feb 2020 03:03:22 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
+	id 1j7XAn-0002rY-OB; Fri, 28 Feb 2020 04:22:49 +0000
+Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Vvk-000188-U8
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 03:03:14 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 01S32TN4031937
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Thu, 27 Feb 2020 21:02:32 -0600
-Message-ID: <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
-Subject: Re: [PATCH v5 7/7] dt-bindings: usb: add documentation for aspeed
- usb-vhub
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Tao Ren <rentao.bupt@gmail.com>
-Date: Fri, 28 Feb 2020 14:02:28 +1100
-In-Reply-To: <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
-References: <20200227230507.8682-1-rentao.bupt@gmail.com>
- <20200227230507.8682-8-rentao.bupt@gmail.com>
- <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
- <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1j7XAd-0002r7-8R
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 04:22:40 +0000
+Received: from callcc.thunk.org (guestnat-104-133-8-109.corp.google.com
+ [104.133.8.109] (may be forged)) (authenticated bits=0)
+ (User authenticated as tytso@ATHENA.MIT.EDU)
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 01S4MOBC030696
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 27 Feb 2020 23:22:25 -0500
+Received: by callcc.thunk.org (Postfix, from userid 15806)
+ id ACC8C421A71; Thu, 27 Feb 2020 23:22:23 -0500 (EST)
+Date: Thu, 27 Feb 2020 23:22:23 -0500
+From: "Theodore Y. Ts'o" <tytso@mit.edu>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 0/4] random/arm64: enable RANDOM_TRUST_CPU for arm64
+Message-ID: <20200228042223.GD101220@mit.edu>
+References: <20200210130015.17664-1-mark.rutland@arm.com>
+ <20200226102422.GA21484@lakrids.cambridge.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200226102422.GA21484@lakrids.cambridge.arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_190313_492355_BA9371CC 
-X-CRM114-Status: GOOD (  12.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200227_202239_468252_147B1976 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [18.9.28.11 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,48 +65,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
- linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
- Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- Joel Stanley <joel@jms.id.au>, taoren@fb.com,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
+Cc: catalin.marinas@arm.com, richard.henderson@linaro.org,
+ linux-kernel@vger.kernel.org, broonie@kernel.org, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-02-27 at 17:05 -0800, Tao Ren wrote:
-> > Also long run I think best is going to have a child node per downstream
-> > port, so we create a matching linux struct device. This will make it
-> > easier to deal with the other device-controller in the ast2600 which is
-> > basically one of these without a vhub above it.
+On Wed, Feb 26, 2020 at 10:24:22AM +0000, Mark Rutland wrote:
+> Ted, sorry to ping, but do you have any thoughts on this series?
 > 
-> Maybe a dumb question: what would be the proper place to parse the child
-> node/properties when they are added? For example, in some usb_gadget_ops
-> callback?
+> I'm happy to rework this, or drop it if you think it's completely wrong,
+> but if you're not too concerned it would be nice to be able to queue
+> this soon.
 
-No. What the vhub would do is when it probes, it creates a platform
-device for each "port" child node that's linked to the DT node.
+Thanks, I've applied it to the random git tree.
 
-The driver for the device then attaches to it via standard DT matching
-and checks if it has a vhub parent or not, and based on that, operates
-as a vhub child device or a standalone one.
-
-(For example, it might have different functions for EP selection since
-standalone devices have private EPs rather than a shared pool)
-
-They can both be in the same module or they can be separate modules
-with cross dependencies.
-
-Cheers,
-Ben.
-
-
+						- Ted
 
 _______________________________________________
 linux-arm-kernel mailing list
