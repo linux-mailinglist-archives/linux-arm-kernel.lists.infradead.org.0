@@ -2,88 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E10717309A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 06:48:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 804FB1730A2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 06:52:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6i4wRpaIlu1HD+3Fbcaa6RCJXYopbYiZcA2+7V4aVdc=; b=oDY
-	ABc2NYC7nilFIfkCaYBeVLIERPLEMTKqZuC/Nwh4mQOwRPnCT6pLKOtG+ZV4N8EO4ANmRO7fDy/Gz
-	jRTb5Xo6NZNHiiR+czvlW8KUnxtdHayddtb9m6E+WLJfEtP4dC+hv30fX0hOTcyC/DiCuMV4n+EV0
-	L5PJulLz7U2UJq1ckW4rTeURUaoMYn5gVwJRpHx6J2C87zU9zqORIxUepltFOiSfBhhJe0ADLom39
-	Q3IAqwmxyyBdt7jsyeoKcCg5UX3nKgTirgtWiv5agPvWkqRFUE2NPtxug0rxUPLdCGEbQHdwpjRUC
-	p/N+0FijoBwfCKqPywXFOcRJGlW0vNg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pirfjGswoaZeNRbwE6rSL2yBwMCb3HfyAxbE6ytjheU=; b=tszlo6DVj/SRGJ
+	bp7StsC692qBUV4YljJYgp4bl6J/Jris4/Z41xeFxpoTnCkZmSKoTPv2+jYtAaHAPu9TsT/nr8ZJx
+	65ehbiMp3LorjCnRDJD5nHkT8pyOu2xRJ59/d8JFlRowzqXWkGEc7MeJ2M0iJYCwfTqtPI0b6XNfD
+	cUCUnxnlly1VVOQ5+bmrim3ACogEEK8pFRrmzOutwmAsrr4s16zyx58+XUuQiBd7/JSe8yfRac4cv
+	OvLN7XsKW1S9AyjPseyQnMKFOEWITAsVqzAiVyHiG69GdcFN6xbBCJxYsdEaP78aQ/MA9al6vGd3w
+	4+brKEAOL8Rafc/iEiXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7YVO-0000P1-R1; Fri, 28 Feb 2020 05:48:10 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j7YZb-000200-UO; Fri, 28 Feb 2020 05:52:31 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7YVE-0000OX-0c; Fri, 28 Feb 2020 05:48:01 +0000
-Received: by mail-lj1-x243.google.com with SMTP id o15so1957372ljg.6;
- Thu, 27 Feb 2020 21:47:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=e3rRbEToSCqTcYjLDTcdw4LcAsL1QAmXUv8JS5cebgQ=;
- b=XoIne1Nb5kFUDj41LjD7kbLI5h5o3wzu5VM5IngJI7deJOu6WjFlxaYnNQ1UQ6NFhu
- BG7RLL6hzImb4cHu34XCXFPKdZ70ow+w4lJC9jkdte2AU2B1q4IBd1HD/d3z9UzOPr7f
- sXRsrJhUZ1bJNHLIHDXh3SzOmormK+EbIoPDZdQ9+wnFUKgASpsyXkz0GJz7++pF4wx/
- GWFbdZbGiHiZkeNw3dmghR5KxMmcat6H+IOtpj+N46ndfmHQubOI28sQ5lG7jofBLJpO
- NXf7cCfBJbmHvF8CHzVsijz1SMReF2LsksShAumP69hR/eqMsYo/UKrU9g1SimzgE8yR
- gP2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=e3rRbEToSCqTcYjLDTcdw4LcAsL1QAmXUv8JS5cebgQ=;
- b=PEeju/5IPcf+y8raXMlzWqlGTlQibkH66R1coT+Bgea1/UJHhFcI0/pVwFfq+apsV5
- Vhs8zqpIN4WFww4jUQY5egbqxrc+/mjuXp7TlvezfoHnv9qY2msQgK+V4Dn2v0Sq/tk5
- vD3dIc/Z9B7V4ZqMx16c4aKv3oFkz+MvvlE2IcjS3hOg0fsDWZEmFLsqZUqGwsF2kBBv
- 97HPunT3yafEViTEkOo+rUs6SIyuEkhFYowevJiej/W3zy1Cjrvtw357/Kwq7UaL0NDY
- I+sjNsRPZAmuAPKUkyf9bzVf422oF6vkJqkojfR1g+B+pqvZPqyv9WFoRhLMSa8joucy
- Lxmw==
-X-Gm-Message-State: ANhLgQ0YfeE7aPonfjqCTBi62uUIEdAfxSQj9AertkHP1Z4pgHT3ccGv
- Wl66RmJlxi5GDzieHN8CxNM=
-X-Google-Smtp-Source: ADFU+vsMBvBqWogz63CGu3gbsY1yy+UiOZUyqdEFXylOvp7Y3ANY7Klm69JBRpTiocOvvbgNU4uikA==
-X-Received: by 2002:a2e:8797:: with SMTP id n23mr1659910lji.176.1582868875231; 
- Thu, 27 Feb 2020 21:47:55 -0800 (PST)
-Received: from localhost.localdomain ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id d24sm4760642lja.82.2020.02.27.21.47.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 27 Feb 2020 21:47:54 -0800 (PST)
-From: Christian Hewitt <christianshewitt@gmail.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: dts: meson: khadas-vim3: move model to
- g12b-khadas-vim3 dtsi
-Date: Fri, 28 Feb 2020 09:47:04 +0400
-Message-Id: <1582868824-73870-1-git-send-email-christianshewitt@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ id 1j7YZQ-0001zI-SZ; Fri, 28 Feb 2020 05:52:22 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 250B120208;
+ Fri, 28 Feb 2020 06:52:08 +0100 (CET)
+Date: Fri, 28 Feb 2020 06:52:07 +0100
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [PATCH v10 2/5] dt-bindings: display: mediatek: control dpi pins
+ mode to avoid leakage
+Message-ID: <20200228055207.GA6324@ravnborg.org>
+References: <20200228052128.82136-1-jitao.shi@mediatek.com>
+ <20200228052128.82136-3-jitao.shi@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200228052128.82136-3-jitao.shi@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=mpaa-ttXAAAA:8
+ a=e5mUnYsNAAAA:8 a=HWwQx7EG-uLDjA1hwS8A:9 a=CjuIK1q_8ugA:10
+ a=6heAxKwa5pAsJatQ0mat:22 a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_214800_084845_A0B51113 
-X-CRM114-Status: GOOD (  11.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200227_215221_104054_91015B0D 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [109.247.116.14 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [christianshewitt[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,53 +68,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christian Hewitt <christianshewitt@gmail.com>
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
+ huijuan.xie@mediatek.com, stonea168@163.com, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, cawa.cheng@mediatek.com,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ yingjoe.chen@mediatek.com, eddie.huang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The common meson-khadas-vim3.dtsi is now shared with VIM3L so move the
-VIM3 model namne to meson-g12b-khadas-vim3.dtsi.
+Hi Jitao.
 
-meson-sm1-khadas-vim3l.dts contains the VIM3L model name.
+On Fri, Feb 28, 2020 at 01:21:25PM +0800, Jitao Shi wrote:
+> Add property "pinctrl-names" to swap pin mode between gpio and dpi mode. Set
+> the dpi pins to gpio mode and output-low to avoid leakage current when dpi
+> disabled.
+> 
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> ---
+>  .../devicetree/bindings/display/mediatek/mediatek,dpi.txt  | 7 +++++++
 
-Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
----
- arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi | 2 ++
- arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi      | 2 --
- 2 files changed, 2 insertions(+), 2 deletions(-)
+When this has landed it would be great if you could follow-up with a
+conversion to DT Schema of this file (.yaml).
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-index 5548634..2b2d72c 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-khadas-vim3.dtsi
-@@ -8,6 +8,8 @@
- #include <dt-bindings/sound/meson-g12a-tohdmitx.h>
- 
- / {
-+	model = "Khadas VIM3";
-+
- 	vddcpu_a: regulator-vddcpu-a {
- 		/*
- 		 * MP8756GD Regulator.
-diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-index 90815fa..0ef60c7 100644
---- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-@@ -9,8 +9,6 @@
- #include <dt-bindings/gpio/meson-g12a-gpio.h>
- 
- / {
--	model = "Khadas VIM3";
--
- 	aliases {
- 		serial0 = &uart_AO;
- 		ethernet0 = &ethmac;
--- 
-2.7.4
+	Sam
 
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> index 58914cf681b8..77ca32a32399 100644
+> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+> @@ -17,6 +17,10 @@ Required properties:
+>    Documentation/devicetree/bindings/graph.txt. This port should be connected
+>    to the input port of an attached HDMI or LVDS encoder chip.
+>  
+> +Optional properties:
+> +- pinctrl-names: Contain "gpiomode" and "dpimode".
+> +  pinctrl-names see Documentation/devicetree/bindings/pinctrlpinctrl-bindings.txt
+> +
+>  Example:
+>  
+>  dpi0: dpi@1401d000 {
+> @@ -27,6 +31,9 @@ dpi0: dpi@1401d000 {
+>  		 <&mmsys CLK_MM_DPI_ENGINE>,
+>  		 <&apmixedsys CLK_APMIXED_TVDPLL>;
+>  	clock-names = "pixel", "engine", "pll";
+> +	pinctrl-names = "active", "idle";
+> +	pinctrl-0 = <&dpi_pin_func>;
+> +	pinctrl-1 = <&dpi_pin_idle>;
+>  
+>  	port {
+>  		dpi0_out: endpoint {
+> -- 
+> 2.21.0
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
