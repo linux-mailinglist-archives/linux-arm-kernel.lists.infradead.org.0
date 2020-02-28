@@ -2,62 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C027173241
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 08:58:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24DA2173275
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 09:08:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=STRouDJzSbV4ifUsRi+i3GQqp9WOZ95tyI3J8DeFKmE=; b=MCzLzckYBvPP6p
-	viScXm2jEmj4VuweJ/P4rc67VW0o3F+mJNouKfW9Uc7PwXCC+c7x53XCXKSvar3sCTtDxh96MvW5H
-	H2usU/eQX5/pejmLsUDTkR3nH77x1IIZKSYT2M9ZocPHkkMoAJ+sxPzZSbR/a5ZB4kZwz5mdCxmmD
-	vOc/uCzNRQfGoU4VES1+sbzVK1NiT3NUYUomyN10iv9AJKxJtO2ik+JNDZhNdnsC+yfrI+HpHrHKc
-	GLQ8lfE/28E6Iaoas0SzfX0g44Bb7KTDORk1M70GpaN5uSJIHs3eYcUaYlMTsFZszUR07omNbx2Fm
-	6Ijto/noW1M53AwSf+Dg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YrN6JsVPyNtZP4u9OVsYhT0SwmMHYekCRcvZFe11FPo=; b=igLNKqjtZpU9fF
+	sfMK2CjgQzEJO0N/VE2FkHaPWX9J6oAZgv3Wq/BIo6wlcyFpN1IIDfh0S8M+0j1xSPdKmoeKUGxg0
+	w/G50TTPJZ6J8dcfUv6lNQrm3/84C8BvVuxbPpnUcZmotdWlRAqx31gRWNkvZm+71NcMWiC6ut1L5
+	lyRY5ASTnJB6n25UjdFJpEgafwHrsqKXV2Xlp4FWiBk2R5Dj2SwQWbIE61j7S49f4scXfnA+dYCFK
+	VcD/2IwEQPMaOCFDmHfDteHILkEazausn9f2l48f3AucmGl5+m6gVgAQeEZfdOmkrxg1onHjQ2Bck
+	lb0lwPBiMAgRc8Q67N8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7aXF-0004vr-3c; Fri, 28 Feb 2020 07:58:13 +0000
-Received: from first.geanix.com ([116.203.34.67])
+	id 1j7agu-00004u-3W; Fri, 28 Feb 2020 08:08:12 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7aWp-0004j5-Dl
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 07:57:51 +0000
-Received: from localhost (87-49-45-242-mobile.dk.customer.tdc.net
- [87.49.45.242])
- by first.geanix.com (Postfix) with ESMTPSA id 0B510C109A;
- Fri, 28 Feb 2020 07:57:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=geanix.com; s=first;
- t=1582876665; bh=zBgtqCrGUsET1svdVFhciBVSpIAwTr7L1NWazRTC+fE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=bZM52pRdtbL11k8JPjIyM/hWy3BMFsu1tEyH9vjA3os/ZbTtFpLZM6LyH+YZEwVym
- gLU4Ik/KD4BroZcsFMnGUwWOaaKrtlyBfi6oGyjHKy0KiJHKrl4YLxvTHDFnxSj9Qv
- sGZfPBO6I9uNhDwz5uyGDuQbr0mg1KyrV44u5fvYL9TWNfIk+BxndZ1Rlz4wIDkamt
- x5qoSg1UmWNoBSQtyhjP5leabp2A4I7rT7mZNi1ud9EpRxRS2c8Y8yeLY8plkSzcth
- D010b6It8twFXdLAwAXlafTMsSL7vELm4dwiDBUrNSqmifxrlZzNgcEye3OdmFIjkw
- 2UHku16fLZ+9w==
-From: Esben Haabendal <esben@geanix.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next 4/4] net: ll_temac: Add ethtool support for coalesce
- parameters
-Date: Fri, 28 Feb 2020 08:57:41 +0100
-Message-Id: <6cead06223920dc5751125c33ce1421e98973593.1582875715.git.esben@geanix.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <cover.1582875715.git.esben@geanix.com>
-References: <cover.1582875715.git.esben@geanix.com>
+ id 1j7agj-0008Vh-FI
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 08:08:03 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01S84TLH010774; Fri, 28 Feb 2020 09:07:50 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : subject :
+ date : message-id : mime-version : content-type :
+ content-transfer-encoding; s=STMicroelectronics;
+ bh=MFKa27m3+mIoApWSAUCG9GPF8e+NvtbwdWYlYTRGNRs=;
+ b=dssF3bihvIH/mI+pbPnu8DkqSxvkNSqdk6h+gJSX95NbXimAVxG4j8X7bXqdETcNGYjJ
+ RHGbP8yaOrYMHSPJjg2Hf7bFv1cg3yRE6xQuroQdclqNQqu/X7p4xiC30pYUQUeqwSAb
+ 3+EbvMWWEQkc4Z2amyss6Dyse8zudNRiYbjGXTddnpGbEiKLAY2AGSYm9t0+2ELxtLKT
+ TnnUoONFIroqZF2vsnVBPWVIVd/bFmjxbTll8kAxcEIKKYTLKORGn00wHl4Is2dI2T6o
+ UnZJx6ZulTUWKOa/kjb/guA4+YKYzi007nVc/0eQA0VYru3zTKc/ljhyDtxn9vCAdD48 5Q== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yepwptdgv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 28 Feb 2020 09:07:50 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id A4C0010002A;
+ Fri, 28 Feb 2020 09:07:46 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5EEBF2A6489;
+ Fri, 28 Feb 2020 09:07:46 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Fri, 28 Feb 2020 09:07:45 +0100
+From: Yannick Fertre <yannick.fertre@st.com>
+To: Yannick Fertre <yannick.fertre@st.com>, Philippe Cornu
+ <philippe.cornu@st.com>, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ <dri-devel@lists.freedesktop.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] drm/stm: ltdc: check number of endpoints
+Date: Fri, 28 Feb 2020 09:07:38 +0100
+Message-ID: <1582877258-1112-1-git-send-email-yannick.fertre@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-Spam-Status: No, score=-2.1 required=4.0 tests=BAYES_00,DKIM_SIGNED,
- DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,UNPARSEABLE_RELAY,URIBL_BLOCKED
- autolearn=disabled version=3.4.4
-X-Spam-Checker-Version: SpamAssassin 3.4.4 (2020-01-24) on 05ff821c8cf1
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-28_02:2020-02-26,
+ 2020-02-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_235747_801841_22FEA402 
-X-CRM114-Status: GOOD (  14.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200228_000801_868809_571FE04C 
+X-CRM114-Status: GOOD (  17.12  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,193 +100,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Michal Simek <michal.simek@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please note that the delays are calculated based on typical
-parameters.  But as TEMAC is an HDL IP, designs may vary, and future
-work might be needed to make this calculation configurable.
+Number of endpoints could exceed the fix value MAX_ENDPOINTS(2).
+Instead of increase simply this value, the number of endpoint
+could be read from device tree. Load sequence has been a little
+rework to take care of several panel or bridge which can be
+connected/disconnected or enable/disable.
 
-Signed-off-by: Esben Haabendal <esben@geanix.com>
+Signed-off-by: Yannick Fertre <yannick.fertre@st.com>
 ---
- drivers/net/ethernet/xilinx/ll_temac.h      |  5 +-
- drivers/net/ethernet/xilinx/ll_temac_main.c | 98 ++++++++++++++++-----
- 2 files changed, 81 insertions(+), 22 deletions(-)
+ drivers/gpu/drm/stm/ltdc.c | 102 +++++++++++++++++++++++----------------------
+ 1 file changed, 52 insertions(+), 50 deletions(-)
 
-diff --git a/drivers/net/ethernet/xilinx/ll_temac.h b/drivers/net/ethernet/xilinx/ll_temac.h
-index 8777ec6e21c8..4a73127e10a6 100644
---- a/drivers/net/ethernet/xilinx/ll_temac.h
-+++ b/drivers/net/ethernet/xilinx/ll_temac.h
-@@ -379,9 +379,10 @@ struct temac_local {
- 	int rx_bd_tail;
- 
- 	/* DMA channel control setup */
--	u32 tx_chnl_ctrl;
--	u32 rx_chnl_ctrl;
-+	u8 coalesce_count_tx;
-+	u8 coalesce_delay_tx;
- 	u8 coalesce_count_rx;
-+	u8 coalesce_delay_rx;
- 
- 	struct delayed_work restart_work;
- };
-diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
-index 5735acb44b57..dc022cd5bc42 100644
---- a/drivers/net/ethernet/xilinx/ll_temac_main.c
-+++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
-@@ -379,11 +379,13 @@ static int temac_dma_bd_init(struct net_device *ndev)
+diff --git a/drivers/gpu/drm/stm/ltdc.c b/drivers/gpu/drm/stm/ltdc.c
+index df585fe..f894968 100644
+--- a/drivers/gpu/drm/stm/ltdc.c
++++ b/drivers/gpu/drm/stm/ltdc.c
+@@ -42,8 +42,6 @@
+
+ #define MAX_IRQ 4
+
+-#define MAX_ENDPOINTS 2
+-
+ #define HWVER_10200 0x010200
+ #define HWVER_10300 0x010300
+ #define HWVER_20101 0x020101
+@@ -1201,36 +1199,20 @@ int ltdc_load(struct drm_device *ddev)
+ 	struct ltdc_device *ldev = ddev->dev_private;
+ 	struct device *dev = ddev->dev;
+ 	struct device_node *np = dev->of_node;
+-	struct drm_bridge *bridge[MAX_ENDPOINTS] = {NULL};
+-	struct drm_panel *panel[MAX_ENDPOINTS] = {NULL};
++	struct drm_bridge *bridge;
++	struct drm_panel *panel;
+ 	struct drm_crtc *crtc;
+ 	struct reset_control *rstc;
+ 	struct resource *res;
+-	int irq, ret, i, endpoint_not_ready = -ENODEV;
++	int irq, i, nb_endpoints;
++	int ret = -ENODEV;
+
+ 	DRM_DEBUG_DRIVER("\n");
+
+-	/* Get endpoints if any */
+-	for (i = 0; i < MAX_ENDPOINTS; i++) {
+-		ret = drm_of_find_panel_or_bridge(np, 0, i, &panel[i],
+-						  &bridge[i]);
+-
+-		/*
+-		 * If at least one endpoint is -EPROBE_DEFER, defer probing,
+-		 * else if at least one endpoint is ready, continue probing.
+-		 */
+-		if (ret == -EPROBE_DEFER)
+-			return ret;
+-		else if (!ret)
+-			endpoint_not_ready = 0;
+-	}
+-
+-	if (endpoint_not_ready)
+-		return endpoint_not_ready;
+-
+-	rstc = devm_reset_control_get_exclusive(dev, NULL);
+-
+-	mutex_init(&ldev->err_lock);
++	/* Get number of endpoints */
++	nb_endpoints = of_graph_get_endpoint_count(np);
++	if (!nb_endpoints)
++		return -ENODEV;
+
+ 	ldev->pixel_clk = devm_clk_get(dev, "lcd");
+ 	if (IS_ERR(ldev->pixel_clk)) {
+@@ -1244,6 +1226,43 @@ int ltdc_load(struct drm_device *ddev)
+ 		return -ENODEV;
  	}
- 
- 	/* Configure DMA channel (irq setup) */
--	lp->dma_out(lp, TX_CHNL_CTRL, lp->tx_chnl_ctrl |
-+	lp->dma_out(lp, TX_CHNL_CTRL,
-+		    lp->coalesce_delay_tx << 24 | lp->coalesce_count_tx << 16 |
- 		    0x00000400 | // Use 1 Bit Wide Counters. Currently Not Used!
- 		    CHNL_CTRL_IRQ_EN | CHNL_CTRL_IRQ_ERR_EN |
- 		    CHNL_CTRL_IRQ_DLY_EN | CHNL_CTRL_IRQ_COAL_EN);
--	lp->dma_out(lp, RX_CHNL_CTRL, lp->rx_chnl_ctrl |
-+	lp->dma_out(lp, RX_CHNL_CTRL,
-+		    lp->coalesce_delay_rx << 24 | lp->coalesce_count_rx << 16 |
- 		    CHNL_CTRL_IRQ_IOE |
- 		    CHNL_CTRL_IRQ_EN | CHNL_CTRL_IRQ_ERR_EN |
- 		    CHNL_CTRL_IRQ_DLY_EN | CHNL_CTRL_IRQ_COAL_EN);
-@@ -1289,6 +1291,65 @@ static int ll_temac_ethtools_set_ringparam(struct net_device *ndev,
- 	return 0;
- }
- 
-+static int ll_temac_ethtools_get_coalesce(struct net_device *ndev,
-+					  struct ethtool_coalesce *ec)
-+{
-+	struct temac_local *lp = netdev_priv(ndev);
+
++	/* Get endpoints if any */
++	for (i = 0; i < nb_endpoints; i++) {
++		ret = drm_of_find_panel_or_bridge(np, 0, i, &panel, &bridge);
 +
-+	ec->rx_max_coalesced_frames = lp->coalesce_count_rx;
-+	ec->tx_max_coalesced_frames = lp->coalesce_count_tx;
-+	ec->rx_coalesce_usecs = (lp->coalesce_delay_rx * 512) / 100;
-+	ec->tx_coalesce_usecs = (lp->coalesce_delay_tx * 512) / 100;
-+	return 0;
-+}
++		/*
++		 * If at least one endpoint is -ENODEV, continue probing,
++		 * else if at least one endpoint returned an error
++		 * (ie -EPROBE_DEFER) then stop probing.
++		 */
++		if (ret == -ENODEV)
++			continue;
++		else if (ret)
++			goto err;
 +
-+static int ll_temac_ethtools_set_coalesce(struct net_device *ndev,
-+					  struct ethtool_coalesce *ec)
-+{
-+	struct temac_local *lp = netdev_priv(ndev);
++		if (panel) {
++			bridge = drm_panel_bridge_add_typed(panel,
++							    DRM_MODE_CONNECTOR_DPI);
++			if (IS_ERR(bridge)) {
++				DRM_ERROR("panel-bridge endpoint %d\n", i);
++				ret = PTR_ERR(bridge);
++				goto err;
++			}
++		}
 +
-+	if (netif_running(ndev)) {
-+		netdev_err(ndev,
-+			   "Please stop netif before applying configuration\n");
-+		return -EFAULT;
++		if (bridge) {
++			ret = ltdc_encoder_init(ddev, bridge);
++			if (ret) {
++				DRM_ERROR("init encoder endpoint %d\n", i);
++				goto err;
++			}
++		}
 +	}
 +
-+	if (ec->rx_coalesce_usecs_irq ||
-+	    ec->rx_max_coalesced_frames_irq ||
-+	    ec->tx_coalesce_usecs_irq ||
-+	    ec->tx_max_coalesced_frames_irq ||
-+	    ec->stats_block_coalesce_usecs ||
-+	    ec->use_adaptive_rx_coalesce ||
-+	    ec->use_adaptive_tx_coalesce ||
-+	    ec->pkt_rate_low ||
-+	    ec->rx_coalesce_usecs_low ||
-+	    ec->rx_max_coalesced_frames_low ||
-+	    ec->tx_coalesce_usecs_low ||
-+	    ec->tx_max_coalesced_frames_low ||
-+	    ec->pkt_rate_high ||
-+	    ec->rx_coalesce_usecs_high ||
-+	    ec->rx_max_coalesced_frames_high ||
-+	    ec->tx_coalesce_usecs_high ||
-+	    ec->tx_max_coalesced_frames_high ||
-+	    ec->rate_sample_interval)
-+		return -EOPNOTSUPP;
-+	if (ec->rx_max_coalesced_frames)
-+		lp->coalesce_count_rx = ec->rx_max_coalesced_frames;
-+	if (ec->tx_max_coalesced_frames)
-+		lp->coalesce_count_tx = ec->tx_max_coalesced_frames;
-+	/* With typical LocalLink clock speed of 200 MHz and
-+	 * C_PRESCALAR=1023, each delay count corresponds to 5.12 us.
-+	 */
-+	if (ec->rx_coalesce_usecs)
-+		lp->coalesce_delay_rx =
-+			min(255U, (ec->rx_coalesce_usecs * 100) / 512);
-+	if (ec->tx_coalesce_usecs)
-+		lp->coalesce_delay_tx =
-+			min(255U, (ec->tx_coalesce_usecs * 100) / 512);
++	rstc = devm_reset_control_get_exclusive(dev, NULL);
 +
-+	return 0;
-+}
++	mutex_init(&ldev->err_lock);
 +
- static const struct ethtool_ops temac_ethtool_ops = {
- 	.nway_reset = phy_ethtool_nway_reset,
- 	.get_link = ethtool_op_get_link,
-@@ -1297,6 +1358,8 @@ static const struct ethtool_ops temac_ethtool_ops = {
- 	.set_link_ksettings = phy_ethtool_set_link_ksettings,
- 	.get_ringparam	= ll_temac_ethtools_get_ringparam,
- 	.set_ringparam	= ll_temac_ethtools_set_ringparam,
-+	.get_coalesce	= ll_temac_ethtools_get_coalesce,
-+	.set_coalesce	= ll_temac_ethtools_set_coalesce,
- };
- 
- static int temac_probe(struct platform_device *pdev)
-@@ -1406,6 +1469,14 @@ static int temac_probe(struct platform_device *pdev)
- 		/* Can checksum TCP/UDP over IPv4. */
- 		ndev->features |= NETIF_F_IP_CSUM;
- 
-+	/* Defaults for IRQ delay/coalescing setup.  These are
-+	 * configuration values, so does not belong in device-tree.
-+	 */
-+	lp->coalesce_delay_tx = 0x10;
-+	lp->coalesce_count_tx = 0x22;
-+	lp->coalesce_delay_rx = 0xff;
-+	lp->coalesce_count_rx = 0x07;
-+
- 	/* Setup LocalLink DMA */
- 	if (temac_np) {
- 		/* Find the DMA node, map the DMA registers, and
-@@ -1444,14 +1515,6 @@ static int temac_probe(struct platform_device *pdev)
- 		lp->rx_irq = irq_of_parse_and_map(dma_np, 0);
- 		lp->tx_irq = irq_of_parse_and_map(dma_np, 1);
- 
--		/* Use defaults for IRQ delay/coalescing setup.  These
--		 * are configuration values, so does not belong in
--		 * device-tree.
--		 */
--		lp->tx_chnl_ctrl = 0x10220000;
--		lp->rx_chnl_ctrl = 0xff070000;
--		lp->coalesce_count_rx = 0x07;
--
- 		/* Finished with the DMA node; drop the reference */
- 		of_node_put(dma_np);
- 	} else if (pdata) {
-@@ -1477,18 +1540,13 @@ static int temac_probe(struct platform_device *pdev)
- 		lp->tx_irq = platform_get_irq(pdev, 1);
- 
- 		/* IRQ delay/coalescing setup */
--		if (pdata->tx_irq_timeout || pdata->tx_irq_count)
--			lp->tx_chnl_ctrl = (pdata->tx_irq_timeout << 24) |
--				(pdata->tx_irq_count << 16);
--		else
--			lp->tx_chnl_ctrl = 0x10220000;
-+		if (pdata->tx_irq_timeout || pdata->tx_irq_count) {
-+			lp->coalesce_delay_tx = pdata->tx_irq_timeout;
-+			lp->coalesce_count_tx = pdata->tx_irq_count;
-+		}
- 		if (pdata->rx_irq_timeout || pdata->rx_irq_count) {
--			lp->rx_chnl_ctrl = (pdata->rx_irq_timeout << 24) |
--				(pdata->rx_irq_count << 16);
-+			lp->coalesce_delay_rx = pdata->rx_irq_timeout;
- 			lp->coalesce_count_rx = pdata->rx_irq_count;
--		} else {
--			lp->rx_chnl_ctrl = 0xff070000;
--			lp->coalesce_count_rx = 0x07;
+ 	if (!IS_ERR(rstc)) {
+ 		reset_control_assert(rstc);
+ 		usleep_range(10, 20);
+@@ -1285,27 +1304,7 @@ int ltdc_load(struct drm_device *ddev)
+ 			DRM_ERROR("Failed to register LTDC interrupt\n");
+ 			goto err;
  		}
+-	}
+
+-	/* Add endpoints panels or bridges if any */
+-	for (i = 0; i < MAX_ENDPOINTS; i++) {
+-		if (panel[i]) {
+-			bridge[i] = drm_panel_bridge_add_typed(panel[i],
+-							       DRM_MODE_CONNECTOR_DPI);
+-			if (IS_ERR(bridge[i])) {
+-				DRM_ERROR("panel-bridge endpoint %d\n", i);
+-				ret = PTR_ERR(bridge[i]);
+-				goto err;
+-			}
+-		}
+-
+-		if (bridge[i]) {
+-			ret = ltdc_encoder_init(ddev, bridge[i]);
+-			if (ret) {
+-				DRM_ERROR("init encoder endpoint %d\n", i);
+-				goto err;
+-			}
+-		}
  	}
- 
--- 
-2.25.1
+
+ 	crtc = devm_kzalloc(dev, sizeof(*crtc), GFP_KERNEL);
+@@ -1340,8 +1339,8 @@ int ltdc_load(struct drm_device *ddev)
+
+ 	return 0;
+ err:
+-	for (i = 0; i < MAX_ENDPOINTS; i++)
+-		drm_panel_bridge_remove(bridge[i]);
++	for (i = 0; i < nb_endpoints; i++)
++		drm_of_panel_bridge_remove(ddev->dev->of_node, 0, i);
+
+ 	clk_disable_unprepare(ldev->pixel_clk);
+
+@@ -1350,11 +1349,14 @@ int ltdc_load(struct drm_device *ddev)
+
+ void ltdc_unload(struct drm_device *ddev)
+ {
+-	int i;
++	struct device *dev = ddev->dev;
++	int nb_endpoints, i;
+
+ 	DRM_DEBUG_DRIVER("\n");
+
+-	for (i = 0; i < MAX_ENDPOINTS; i++)
++	nb_endpoints = of_graph_get_endpoint_count(dev->of_node);
++
++	for (i = 0; i < nb_endpoints; i++)
+ 		drm_of_panel_bridge_remove(ddev->dev->of_node, 0, i);
+
+ 	pm_runtime_disable(ddev->dev);
+--
+2.7.4
 
 
 _______________________________________________
