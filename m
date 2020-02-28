@@ -2,82 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00267173A27
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 15:44:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6603F173A64
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 15:54:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wS+9ktkEdJHPJjyFqmpVpFAQpav6KsTMeVsMb85d6BI=; b=t4PxkgD0gKtgn6
-	3jRDyyeeENaS0zn4EykMKDZY9uC7Y3aDmhIDQfckG2IK6zA6CWuQTiX7xswUGxEGNlvN6pSoZPWmT
-	lwz0QYDy4pPTlHxOKzspjunYIicQ2n2YUc7/hkmUk7gdF5a2zrqgLgOBEOu+pxo1fM/vHeNengH/S
-	w2ixTXhUnu0OX+b6EP9M/aDAzY7h8wY6bZeM6iYcGHGcHoyaTEHfKlES74cw7oFsX3y9Yuni/wNfd
-	lTDcB1rdVpFDXZ9eSFBEFE3vxCUmVlIAoovaYZaHoiBYPs1oqs/ofOiptT3oLI4Q+ByrptLOY7xLG
-	s5bFDuUbT1MwEc2sjKGw==;
+	List-Owner; bh=NxaClPYJrM61APknXurZdNAfaHOYWctL+yhiIjHU/dI=; b=TIwvFJEPzgG5h7
+	cr/gKYgTO8OMj+pRNu8Zwvun8flXbXMuwPn/d7XLkcI+QF48qewzy9NJxKjSBYulYqgsUPJNF0E/n
+	2bl6HHBtKARRVoVD8qwJOGoG4O9xehyt0UyJE68IXOixTdTGC9EFJBgMutlZ/9dVNrzpGdAHpEW1n
+	07gc93vwfaItb5Uuskv0d80YTn34zKT31FI4sNwoRABSwyIYcVcWIjvwj0uvzUltHsFxkqSzpjZMP
+	aJc39mU0Lz7qu+mL/hudKeOrXClt7BTsuCyCT/Q+yfhiJx3SuRjvrVIoiJKcw9Ga4FsoVAPzYjQ1h
+	36aF34T/NRIRUObwzdxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7gsL-0001LB-Kk; Fri, 28 Feb 2020 14:44:25 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j7h2J-0006F1-8h; Fri, 28 Feb 2020 14:54:43 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7gs8-0001K9-Hr
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 14:44:16 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e10so1783829wrr.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Feb 2020 06:44:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=QMl+VBaGMao7gyBNUaUbW1tLbhMPTZJMdvofJak/bmM=;
- b=Eyk6vY0Af0pgRHDvnoOLJKEE9DaGoa+4z0NJ0t/WaE+0vf6ERLTI5+gCSTL4JKeEc7
- arJUIl26vcb7lA32WK3mE1Z9pObCrTyBu370u//nTiHn54Qsk9vtBAlncLuZo9K0V9Bo
- few19oXa3fshNwMeLE1X36r0Kl70yyi9UUOxcD7HXOQk57UJt7R/uONrD0jw5QwBKUEP
- XNLUCyENocPiBEBMYBsa65NNpXfx1bwVRSoKhuPD+Y1BFMRjqLFWjj7Bjg+11i79QgS1
- AuuGvqPiln8Z0uHDmfdS0ONpDj/sxIKSFG/mkvrKTjD2nZHB7B4UWE1XulydcVQDQVxM
- 5WkA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=QMl+VBaGMao7gyBNUaUbW1tLbhMPTZJMdvofJak/bmM=;
- b=njGWUdAdyj2NQBXiS0ynXTspMT/ubLFbceRRSAr0Jk1ln8Q0GwYHdPIYd+oYxR0I5x
- 6igYVCs0AJabZwLlwg8/ktOm8kA0/KcY4l+cpN37U1HcZtRhJxmZuTKHGiu9XQTs/PYm
- UNz7j0GbXi2bzX/iefIS4UtuLapotaI/ahKT2lHA18Fvf1byGfGaXmgwX6YYMRRrHUrQ
- yOR+8DRJtWwPNI5adgAiSIOW6e0BdJDenrgmQOKpDw2kR9E8vGmvGM5JjTLeB7Mk6VR3
- nFVYXLY2HhYyoG6N6sqQLGNVKXdVBeEuqz3UsX8sQWndAES0AxLfLlKduusY8jy98q5l
- y1ug==
-X-Gm-Message-State: APjAAAVc4pMam0VCJDkk/MH/8lqxNalH4xVwgSgIAoySlhCA0L/Y/FlK
- vHE203x8344INOFvsJKNqhIDVw==
-X-Google-Smtp-Source: APXvYqw6DykiBE32SqEJ+HnRwk8TuEFmQqrz2Fb4Wvuo7oVY88B0FHH4nfUvdWL5pnDIWaqbqIxz+g==
-X-Received: by 2002:adf:f648:: with SMTP id x8mr5477186wrp.198.1582901051368; 
- Fri, 28 Feb 2020 06:44:11 -0800 (PST)
-Received: from myrica ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id o27sm13045012wro.27.2020.02.28.06.44.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 28 Feb 2020 06:44:10 -0800 (PST)
-Date: Fri, 28 Feb 2020 15:44:04 +0100
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
-Subject: Re: [PATCH v4 03/26] iommu: Add a page fault handler
-Message-ID: <20200228144404.GD2156@myrica>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-4-jean-philippe@linaro.org>
- <20200226135933.000061a0@Huawei.com>
+ id 1j7h28-0006Dh-BT; Fri, 28 Feb 2020 14:54:33 +0000
+X-UUID: 99999a077f9d46ad859b7197ac23fec3-20200228
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Oo9OqLwNu+IUBMtwmf3xp6IAkUZJKqSI+TGBkTXf0MU=; 
+ b=aAX4P0WG+h0kTpklJlFpwG3QklzI4cZrnWC6ozlAq5cRoLnVD9olTH29US0gMR0/Ms8XFuBaLKdUUILegiP1vnERB3a6mB59Bh6AMQbGuevNMOqCwmKbvF34KoPnnENhnRejevaRN1Zo7KyXEIZsd8hcJrehvozcs+itZmgnbE4=;
+X-UUID: 99999a077f9d46ad859b7197ac23fec3-20200228
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 680705216; Fri, 28 Feb 2020 06:54:23 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Feb 2020 06:45:04 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 28 Feb 2020 22:45:52 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 28 Feb 2020 22:44:05 +0800
+Message-ID: <1582901053.14824.3.camel@mtksdaap41>
+Subject: Re: [PATCH v3 06/13] soc: mediatek: cmdq: add assign function
+From: CK Hu <ck.hu@mediatek.com>
+To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+Date: Fri, 28 Feb 2020 22:44:13 +0800
+In-Reply-To: <1582897461-15105-8-git-send-email-dennis-yc.hsieh@mediatek.com>
+References: <1582897461-15105-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1582897461-15105-8-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200226135933.000061a0@Huawei.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_064415_119310_E9515577 
-X-CRM114-Status: GOOD (  23.78  )
+X-CRM114-CacheID: sfid-20200228_065432_402090_05B3D900 
+X-CRM114-Status: GOOD (  16.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,160 +83,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ wsd_upstream@mediatek.com, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Ming-Fan Chen <ming-fan.chen@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 26, 2020 at 01:59:33PM +0000, Jonathan Cameron wrote:
-> > +static int iopf_complete(struct device *dev, struct iopf_fault *iopf,
-> > +			 enum iommu_page_response_code status)
-> 
-> This is called once per group.  Should name reflect that?
+Hi, Dennis:
 
-Ok
+On Fri, 2020-02-28 at 21:44 +0800, Dennis YC Hsieh wrote:
+> Add assign function in cmdq helper which assign constant value into
+> internal register by index.
+> 
 
-[...]
-> > +/**
-> > + * iommu_queue_iopf - IO Page Fault handler
-> > + * @evt: fault event
-> > + * @cookie: struct device, passed to iommu_register_device_fault_handler.
-> > + *
-> > + * Add a fault to the device workqueue, to be handled by mm.
-> > + *
-> > + * Return: 0 on success and <0 on error.
-> > + */
-> > +int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
-> > +{
-> > +	int ret;
-> > +	struct iopf_group *group;
-> > +	struct iopf_fault *iopf, *next;
-> > +	struct iopf_device_param *iopf_param;
-> > +
-> > +	struct device *dev = cookie;
-> > +	struct iommu_param *param = dev->iommu_param;
-> > +
-> > +	if (WARN_ON(!mutex_is_locked(&param->lock)))
-> > +		return -EINVAL;
-> 
-> Just curious...
-> 
-> Why do we always need a runtime check on this rather than say,
-> using lockdep_assert_held or similar?
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-I probably didn't know about lockdep_assert at the time :)
-
-> > +	/*
-> > +	 * It is incredibly easy to find ourselves in a deadlock situation if
-> > +	 * we're not careful, because we're taking the opposite path as
-> > +	 * iommu_queue_iopf:
-> > +	 *
-> > +	 *   iopf_queue_flush_dev()   |  PRI queue handler
-> > +	 *    lock(&param->lock)      |   iommu_queue_iopf()
-> > +	 *     queue->flush()         |    lock(&param->lock)
-> > +	 *      wait PRI queue empty  |
-> > +	 *
-> > +	 * So we can't hold the device param lock while flushing. Take a
-> > +	 * reference to the device param instead, to prevent the queue from
-> > +	 * going away.
-> > +	 */
-> > +	mutex_lock(&param->lock);
-> > +	iopf_param = param->iopf_param;
-> > +	if (iopf_param) {
-> > +		queue = param->iopf_param->queue;
-> > +		iopf_param->busy = true;
+> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c   | 24 +++++++++++++++++++++++-
+>  include/linux/mailbox/mtk-cmdq-mailbox.h |  1 +
+>  include/linux/soc/mediatek/mtk-cmdq.h    | 14 ++++++++++++++
+>  3 files changed, 38 insertions(+), 1 deletion(-)
 > 
-> Describing this as taking a reference is not great...
-> I'd change the comment to set a flag or something like that.
-> 
-> Is there any potential of multiple copies of this running against
-> each other?  I've not totally gotten my head around when this
-> might be called yet.
-
-Yes it's allowed, this should be a refcount
-
-[...]
-> > +int iopf_queue_remove_device(struct iopf_queue *queue, struct device *dev)
-> > +{
-> > +	int ret = -EINVAL;
-> > +	struct iopf_fault *iopf, *next;
-> > +	struct iopf_device_param *iopf_param;
-> > +	struct iommu_param *param = dev->iommu_param;
-> > +
-> > +	if (!param || !queue)
-> > +		return -EINVAL;
-> > +
-> > +	do {
-> > +		mutex_lock(&queue->lock);
-> > +		mutex_lock(&param->lock);
-> > +		iopf_param = param->iopf_param;
-> > +		if (iopf_param && iopf_param->queue == queue) {
-> > +			if (iopf_param->busy) {
-> > +				ret = -EBUSY;
-> > +			} else {
-> > +				list_del(&iopf_param->queue_list);
-> > +				param->iopf_param = NULL;
-> > +				ret = 0;
-> > +			}
-> > +		}
-> > +		mutex_unlock(&param->lock);
-> > +		mutex_unlock(&queue->lock);
-> > +
-> > +		/*
-> > +		 * If there is an ongoing flush, wait for it to complete and
-> > +		 * then retry. iopf_param isn't going away since we're the only
-> > +		 * thread that can free it.
-> > +		 */
-> > +		if (ret == -EBUSY)
-> > +			wait_event(iopf_param->wq_head, !iopf_param->busy);
-> > +		else if (ret)
-> > +			return ret;
-> > +	} while (ret == -EBUSY);
-> 
-> I'm in two minds about the next comment (so up to you)...
-> 
-> Currently this looks a bit odd.  Would you be better off just having a separate
-> parameter for busy and explicit separate handling for the error path?
-> 
-> 	bool busy;
-> 	int ret = 0;
-> 
-> 	do {
-> 		mutex_lock(&queue->lock);
-> 		mutex_lock(&param->lock);
-> 		iopf_param = param->iopf_param;
-> 		if (iopf_param && iopf_param->queue == queue) {
-> 			busy = iopf_param->busy;
-> 			if (!busy) {
-> 				list_del(&iopf_param->queue_list);
-> 				param->iopf_param = NULL;
-> 			}
-> 		} else {
-> 			ret = -EINVAL;
-> 		}
-> 		mutex_unlock(&param->lock);
-> 		mutex_unlock(&queue->lock);
-> 		if (ret)
-> 			return ret;
-> 		if (busy)
-> 			wait_event(iopf_param->wq_head, !iopf_param->busy);
-> 		
-> 	} while (busy);
-> 
-> 	..
-
-Sure, I think it looks better
-
-Thanks,
-Jean
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 0698612de5ad..8342a5c94bc7 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -12,6 +12,7 @@
+>  #define CMDQ_WRITE_ENABLE_MASK	BIT(0)
+>  #define CMDQ_POLL_ENABLE_MASK	BIT(0)
+>  #define CMDQ_EOC_IRQ_EN		BIT(0)
+> +#define CMDQ_REG_TYPE		1
+>  
+>  struct cmdq_instruction {
+>  	union {
+> @@ -21,8 +22,17 @@ struct cmdq_instruction {
+>  	union {
+>  		u16 offset;
+>  		u16 event;
+> +		u16 reg_dst;
+> +	};
+> +	union {
+> +		u8 subsys;
+> +		struct {
+> +			u8 sop:5;
+> +			u8 arg_c_t:1;
+> +			u8 arg_b_t:1;
+> +			u8 dst_t:1;
+> +		};
+>  	};
+> -	u8 subsys;
+>  	u8 op;
+>  };
+>  
+> @@ -277,6 +287,18 @@ int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_poll_mask);
+>  
+> +int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value)
+> +{
+> +	struct cmdq_instruction inst = { {0} };
+> +
+> +	inst.op = CMDQ_CODE_LOGIC;
+> +	inst.dst_t = CMDQ_REG_TYPE;
+> +	inst.reg_dst = reg_idx;
+> +	inst.value = value;
+> +	return cmdq_pkt_append_command(pkt, inst);
+> +}
+> +EXPORT_SYMBOL(cmdq_pkt_assign);
+> +
+>  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+>  {
+>  	struct cmdq_instruction inst = { {0} };
+> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> index dfe5b2eb85cc..121c3bb6d3de 100644
+> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
+> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> @@ -59,6 +59,7 @@ enum cmdq_code {
+>  	CMDQ_CODE_JUMP = 0x10,
+>  	CMDQ_CODE_WFE = 0x20,
+>  	CMDQ_CODE_EOC = 0x40,
+> +	CMDQ_CODE_LOGIC = 0xa0,
+>  };
+>  
+>  enum cmdq_cb_status {
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index a74c1d5acdf3..83340211e1d3 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -152,6 +152,20 @@ int cmdq_pkt_poll(struct cmdq_pkt *pkt, u8 subsys,
+>   */
+>  int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
+>  		       u16 offset, u32 value, u32 mask);
+> +
+> +/**
+> + * cmdq_pkt_assign() - Append logic assign command to the CMDQ packet, ask GCE
+> + *		       to execute an instruction that set a constant value into
+> + *		       internal register and use as value, mask or address in
+> + *		       read/write instruction.
+> + * @pkt:	the CMDQ packet
+> + * @reg_idx:	the CMDQ internal register ID
+> + * @value:	the specified value
+> + *
+> + * Return: 0 for success; else the error code is returned
+> + */
+> +int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value);
+> +
+>  /**
+>   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
+>   *                          packet and call back at the end of done packet
 
 _______________________________________________
 linux-arm-kernel mailing list
