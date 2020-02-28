@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6552B173CEF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:32:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4C88173D0F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:35:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sT9grIzlbmZidxWWnOpCg3eRpIlr6KoSjYC5bhyLLyQ=; b=DaABHawGKTRUg6
-	YYdp6C4kLGRtx4BqkbhSqRnt/BK3e7d3pDHP3sK2ZyBjohoMIkt7C/uC9UGOCOK30KWt8Kjsvj2K+
-	ktKimLOW3Oa7lxdnTzp5dyUt0kqXMpcFxXaWAfbTKtBxcF+lvmJjH7PKLa13ZqwLMN2iQV7mEX7/T
-	PjQI5ezsZM8adJPUzSqIl4+hn8qdAFo9smcw6AVSvB9LZTUHJhCMBJ7ZmQHfenJOEJRUUYgkqvell
-	+84SjgE7EYb1W2f8KjXWi7lJ048tW6n9le6Zk+fxC7nEcLtrcTcI4RblBRd03Boebz4BpW9XaL4L1
-	4+YsIMy5vboCmaJbUzNw==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
+	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Af2I7QbX7Gl5ALSb9uKBc2MrWvH6awSTtVgeiB3xDj0=; b=mcjrxGU14G4gO8
+	SAWnRJ/4lD9hASnNf8fzmrjhdcMa4zpq3fWBbEQjxBBg+tAeZO+koDxSNxRJfYfzzPBaIWR0QYXZ0
+	cWC7c/joNJoNYEZqcc4BxdS0KwRxoug9Hbn92UTbElFRAtimadbLGQSSVdFnHRWYcTIRXsdl4/Fp/
+	Y03SxPkWBpY8cSOLAZ4iEfhjwEiab9xbHvuzfx8r1KUl6NOhtzB63D+TFPHh9aC5oFdrTBO4dNxCa
+	O01Tlbx2gFQ0EFqL0bYCRyke2QXBLtmpYEVQqXdNKf/E6RPWd+t9tbeHu6LgKF0y9gTqoE2ZXXFZM
+	rajzUNFzfNCpyp6vIYcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7iYb-0002wp-VO; Fri, 28 Feb 2020 16:32:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7iYQ-0002wQ-2w
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:31:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DC96C31B;
- Fri, 28 Feb 2020 08:31:56 -0800 (PST)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E1F673F73B;
- Fri, 28 Feb 2020 08:31:53 -0800 (PST)
-Subject: Re: [PATCH v9 10/12] arm64: implement Shadow Call Stack
-To: Sami Tolvanen <samitolvanen@google.com>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200225173933.74818-1-samitolvanen@google.com>
- <20200225173933.74818-11-samitolvanen@google.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <56b82a54-044a-75ec-64e5-6ba25b19571f@arm.com>
-Date: Fri, 28 Feb 2020 16:31:51 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j7ibf-0004be-Sm; Fri, 28 Feb 2020 16:35:19 +0000
+Received: from mout.gmx.net ([212.227.17.22])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7ibS-0003Og-QB; Fri, 28 Feb 2020 16:35:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1582907688;
+ bh=YcG6r7F3VVt7DQsFNhV4JbQ/Bh6aKNh0DkfRxFndYAA=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=M893la1WZgDW7/xWaBckbU4Odje3StaE2YcrGjt7TLxyK3pbX/Ea23pa9tN/cHEH7
+ joHd8VOqO6RSYD0a0SS6Ty3j2XCMW2ucMF+AzxWLxQmzVPStkZStnqrxLMH4lEZRAD
+ CzydVU3Wqs7ndlgvC4LH1dlsW2OpHQHQinHzZuGU=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [185.53.40.15] ([185.53.40.15]) by web-mail.gmx.net
+ (3c-app-gmx-bap21.server.lan [172.19.172.91]) (via HTTP); Fri, 28 Feb 2020
+ 17:34:47 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200225173933.74818-11-samitolvanen@google.com>
-Content-Language: en-GB
+Message-ID: <trinity-1aeda07b-567b-4a31-a709-36199975894b-1582907687950@3c-app-gmx-bap21>
+From: "Frank Wunderlich" <frank-w@public-files.de>
+To: "Bibby Hsieh" <bibby.hsieh@mediatek.com>
+Subject: [BUG] [PATCH v5 3/7] drm/mediatek: update cursors by using async
+ atomic update
+Date: Fri, 28 Feb 2020 17:34:47 +0100
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <20191210050526.4437-4-bibby.hsieh@mediatek.com>
+References: <20191210050526.4437-1-bibby.hsieh@mediatek.com>
+ <20191210050526.4437-4-bibby.hsieh@mediatek.com>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:2wHSXETBujv7ubTGIwZ5VrMFtJmoX/njL13MkH8s5eovSX+Y+sTe0+BByPkiM5mY2rzQm
+ gKpnl5HTR1TX8ZwimXy747VbCYUysGQw+GdtehRIGT5il+WUm2aG81V2Bu0Dpft2U3SY51brmqYE
+ H0JgZOtLaL0+tXa8kZMGxWwyoVLkjFO5i3HFnIccGF/d2ihL7iTlHuSy3H9axD1B76whc67PrgRz
+ VBlEsXrblvHd0UmCQ6WWGJeRXN83aG2f7ScyhV9hAm1fz/xBSUnehkXcTmbnfvD6ndAjICp0ek9M
+ Rc=
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:K7AD3qghSCg=:KDuvUtyqh0IxQhZ8dH9kvu
+ UkMiaACx+8TarnVTvKLAKYfLysNr+9tfMvPZLRxVtUh1T0O1DBm4Rko4sdLxfCcUGMflBCrDF
+ ciX4YIyA6kuUTwucfzx22ITRFECEbD2yoh1WgJbxUXd9NJYwXopioXyMMrwaM6xnYz/nLIr7o
+ mUGZMog7Dou+NeR5Em4TB8BEgRtUTLT6+nfdjLNz4ShGizgdYRFKt+/vHZk/V1IW+aFci1vsg
+ LHvupXQWPTqlYNA3JS0Km5lF3zWjBdUJIGrdIGympZEuHb5mAtd4vGX9XsCeZH3p1WjQ/MpQY
+ 4acYwTHnCUAyGf7pGu2tzR8WsBvTvBOIW4Q8I03JkR+4har3qSWjIcdqgk2ff+6RSbEXVjquZ
+ C7mZBt3pEMeZjKM+Z1HkvLnv2XrRM8CB/s3gUG3quARYuumwpA7BH7F7fOTjduxgqWlhv3YVO
+ mhEDvNNyn9mge3Vz9N5MalwRkGJ5FJFlPEG9tEBlGoHxehlLMAMYcXVl4oE5ffpiFOpSG15y4
+ rm2LvOfG+tHze6Pl5a18bTr459tAbHXJYVUGnvmhov147zK1eBq3bFk9JHKV0fMl5up+E2is1
+ +YOSmDnrCG2i9TqD76kwDIFdZnprjEY1f1rR8oEq2QgrAsYW0byi74bJRq34xclYgmkooSZsk
+ eGfDPVeomp5G0jsWbOdU4oBMCEo7ol8LkDiWjXMdSbjZUOrU62FolI9j7z62bk/OQrp0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_083158_216868_B0EF4CE0 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200228_083507_204701_EB4D8656 
+X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.22 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,129 +91,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
- Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: drinkcat@chromium.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, tfiga@chromium.org,
+ CK Hu <ck.hu@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sami,
+Hi,
 
-On 25/02/2020 17:39, Sami Tolvanen wrote:
-> This change implements shadow stack switching, initial SCS set-up,
-> and interrupt shadow stacks for arm64.
+as talked to Bibby directly, this Patch seems to create a bug with touchscreens. Cursor is displayed on old position if changing its position. e.g. Cursor was on X1,Y1 and i touch to new position X2,Y2 the "click" is recognized on right position (i try to ), but cursor is displayed on X1,Y1
 
-> diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
-> new file mode 100644
-> index 000000000000..c50d2b0c6c5f
-> --- /dev/null
-> +++ b/arch/arm64/include/asm/scs.h
-> @@ -0,0 +1,37 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +#ifndef _ASM_SCS_H
-> +#define _ASM_SCS_H
-> +
-> +#ifndef __ASSEMBLY__
+have made a small video and uploaded to my gdrive [1]...
 
-As the whole file is guarded by this, why do you need to include it in assembly files at all?
+here i use lightdm login manager and selecting the username/password-fields alternately. Focus follows, but cursor is always displayed on prior position
 
+tried to revert this commit [2], but there are many depencies failing the revert, have not yet got all depending commits reverted
 
-> +
-> +#include <linux/scs.h>
-> +
-> +#ifdef CONFIG_SHADOW_CALL_STACK
-> +
-> +extern void scs_init_irq(void);
-> +
-> +static __always_inline void scs_save(struct task_struct *tsk)
-> +{
-> +	void *s;
-> +
-> +	asm volatile("mov %0, x18" : "=r" (s));
-> +	task_set_scs(tsk, s);
-> +}
-> +
-> +static inline void scs_overflow_check(struct task_struct *tsk)
-> +{
-> +	if (unlikely(scs_corrupted(tsk)))
-> +		panic("corrupted shadow stack detected inside scheduler\n");
+regards Frank
 
-Could this ever catch anything with CONFIG_SHADOW_CALL_STACK_VMAP?
-Wouldn't we have hit the vmalloc guard page at the point of overflow?
-
-
-> +}
-> +
-> +#else /* CONFIG_SHADOW_CALL_STACK */
-> +
-> +static inline void scs_init_irq(void) {}
-> +static inline void scs_save(struct task_struct *tsk) {}
-> +static inline void scs_overflow_check(struct task_struct *tsk) {}
-> +
-> +#endif /* CONFIG_SHADOW_CALL_STACK */
-> +
-> +#endif /* __ASSEMBLY __ */
-> +
-> +#endif /* _ASM_SCS_H */
-
-
-
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index 9461d812ae27..4b18c3bbdea5 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-
-If I corrupt x18 so that we take an exception (mov x18, xzr), we take that exception
-whenever we run C code. The CPU 'vanishes' and I get a very upset scheduler shortly after.
-
-Stack misalignment has the same problem, but the overflow test (eventually) catches that,
-then calls panic() using the overflow stack. (See the kernel_ventry macro and __bad_stack
-in entry.S)
-
-It would be nice to have a per-cpu stack that we switch to when on the overflow stack.
-(this would catch the scs overflow hitting the guard page too, as we should eat through
-the regular stack until we overflowed it!)
-
-
-> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-> index d4ed9a19d8fe..f2cb344f998c 100644
-> --- a/arch/arm64/kernel/smp.c
-> +++ b/arch/arm64/kernel/smp.c
-> @@ -358,6 +359,9 @@ void cpu_die(void)
->  {
->  	unsigned int cpu = smp_processor_id();
->
-> +	/* Save the shadow stack pointer before exiting the idle task */
-
-I can't work out why this needs to be before before idle_task_exit()...
-It needs to run before init_idle(), which calls scs_task_reset(), but all that is on the
-cpu_up() path. (if it is to pair those up, any reason core code can't do both?)
-
-
-> +	scs_save(current);
-> +
->  	idle_task_exit();
->
->  	local_daif_mask();
->
-
-
-Reviewed-by: James Morse <james.morse@arm.com>
-
-
-Thanks!
-
-James
+[1] https://drive.google.com/open?id=1Qy0tYnbO9zNGdjCWY18O-dMYbFuPrq_i
+[2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=920fffcc891276a855cb3ce1e7361d2e9cb72581
 
 _______________________________________________
 linux-arm-kernel mailing list
