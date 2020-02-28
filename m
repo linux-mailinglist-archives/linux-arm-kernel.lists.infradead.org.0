@@ -2,76 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8893173DEA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 18:05:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 435AE173E5B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 18:24:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TuaSTiEX55pr/MuxqKK3m6ttmKPj4vQfmCerUq6aOt0=; b=BBt7S7j8YJmdRy
-	tEy4bKTXupMcMcp/aguHaHouyKvsQYk2J6R+BRyVLTwHMaF3r5nvsFSGnYPMJBscLbB/qosmLY8Vf
-	EU9WuRDZh1LjNiOyl/Olhe2dSQACcOtdVfNwDFZ2h/dHDrkwkBde6LfrN9yGeO7bdMzl+muSLj2H1
-	JwzUkZ6cDLqJfzkHSm1B7W2PErBjCCHPOrwxrBnHJuAVc/+6BaIkLTEpuYACX6QflWmFSdBc6K/kL
-	+nF43dtvp/dnXpWJqx63qlF3UfuWU0DNWDfme6DXKVbFpBA75EfyMirkodvmfJZhcjozmnZ1ZMvSv
-	6gH96byEuWPMXN5gArjQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aEzaA62g0saqrdn6JYWaG3Qz9ZBzalnWtWheyH1a51Q=; b=Pco/4Dq3D5cDNEzU1ABKnM3a+
+	W87Z1YMZJ2AQTilw7WB59RFvBuGPpAfGtvwctCLrB+a0VEETxoaCRTK1gVuZYMgJcuB3o2iasMquh
+	ETV14YMOcSNilB3Q7jOQvNimt4N0KcFe4HMwgF8eSwvuayIKUnhUOMgrA3aC+EgzPpoFdEohLL5Yp
+	2UVnnxOyagqZ+QwC6U+s7Vb+EIwM/v2XILP/atXgczyPDVoDySgLnYGQRBQBhsUDx2BeGvDIpHMdT
+	qDXplm18yfnaV1/vhcs30ZL0wXF9XMEkgLhf1zQBEQ638Zym5Vgxbuk8dFtlDf9SLLft9p3Sivn+0
+	SOHO4E2oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7j5D-0000b3-7v; Fri, 28 Feb 2020 17:05:51 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1j7jN1-0007Nr-Bh; Fri, 28 Feb 2020 17:24:15 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7j51-0000ah-80
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 17:05:40 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 143so4103862ljj.7
+ id 1j7jMq-0007M9-KR
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 17:24:05 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id h6so4000611ywc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 28 Feb 2020 09:05:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UBP7QsMdsRzii497sQdvXMivqxHUi8KnMTi6DqPb4vI=;
- b=ac7tlk8Cze2jl3gZVHvkWEQ+IDeanfETwQry/6b+4HJyNtzQI4p6CcR3GQlgXi4t6x
- Rg9mhL4QPsYU2oVXZNwbLx51ZQjNza8AK3S/wS3bOTdoOjoXhdA+ou5H5ld+BAaa/g5h
- pK39NtvbrvXOQ9faTLoFO6V73vTxG7t4cRK1LuBmRNeOvROWzeg3piJtXOyRLqpsIjP5
- CSXHYLC82a3qe81vsAFGjbPYLLtXr18QliXwVCVW8dqOtXn7sRfek8UXC3zt/1vHN8dw
- XslVappftofRLHztKIhpGGLIUU6spBf00Hcv/oyZMBykifmTfd3rkCd9izBGI5TpwJFX
- 0qlg==
+ Fri, 28 Feb 2020 09:24:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-transfer-encoding:content-language;
+ bh=8DBagXdO92SGZD18edolNudaDY7BySfxVES4onPKc48=;
+ b=BiCNBCpDhvom4uoBEgi6wWUf78Kj5hpmt5TQuapy9qcR64nz4OnJs4O7vU8LcLUu1Q
+ Nfy/foDa3tGn4/w4Qq2UVG6M4CVuzCmn9cGtWCFzLZD/gC/cBKSKqjOgg1Y3L5Yy0mGv
+ PDHzM2BiUkH/rSgYYhZ/pZYHhX40OjyNXBiHVxpBfnnDjWLEmX58heB6u2EeaeQzIDcy
+ 6/UrxwaLyrcFcHFVPAHwz4hCE5WmYIR+hl7l9Q9Zqhhks6gu/viQxHQ2VyXC/iKyyhnS
+ TRQifnXdpH2I43DBTHtwz6C4YTGxMhpodWZtaFd/rok5ZYFKXb0osBRKqJwU0XgXJ6eg
+ 8KBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UBP7QsMdsRzii497sQdvXMivqxHUi8KnMTi6DqPb4vI=;
- b=en05xZdPuyJGeY64BHjPJY6cnGavPU/woqQC635Q2WRtKyLnZkLzb21ai16LUji1S1
- 8Od4FnSAaQvYC55Ub/keCEXFSacwfcdS/kq4ADMILuvAtRNMsz8TRd/VyFr4J5anpeUZ
- 9vhBa85f1qItLJX0/aUej4N4fS1UfZas6w+EjFT46bfqdmV0jXQ7DU9kpddPmyjmDGld
- W2iIOiwF17R/BfYfCqyyP45iXoS46XBY7QwqViz2RQqEaoLCHJ+Q8jWwPo1y+x4dOAsQ
- FgWW7uWde74Y1LHOOLqIoTE6qxB/zTEjjwWkr5ZVpqkl1C1zofM4npyLfPHCytMjPRYD
- SoMA==
-X-Gm-Message-State: ANhLgQ0vlQCJoskk/MCRmK7OV1PIt2wkxXItxHWsLqdrCl39s5lSjIZw
- SYNon9wA/33c8Q6vOWSpD9dx711qr5zI2fB+qxPnWg==
-X-Google-Smtp-Source: ADFU+vtSr6VQwF7m2+8Lo3WnbSGTzU2AUlIfQZYijuxBt0BqYCrk6rzyB34udEirfvaR+UlGIovaqzwfjvJEyyD0Mtg=
-X-Received: by 2002:a2e:8754:: with SMTP id q20mr3417402ljj.258.1582909537024; 
- Fri, 28 Feb 2020 09:05:37 -0800 (PST)
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=8DBagXdO92SGZD18edolNudaDY7BySfxVES4onPKc48=;
+ b=bSD7KZc2t8yvNFkvhhH0DZmT1lj3z1cZyPpXg9ya2KVCau+dCp9h7ZtFIv2yz5tD6K
+ E/ObawaKGFKCr1HUr6sX3QA5stWUjneRx3kMyBmVu56atYoNZ41sW6zU+N+d1A2+BvQ6
+ EkoJWUQDIk4C5RhwslyF/NF0gzrAKEH1x4biSOSf7npyUbq4fnTNgE1doQDNAPwAgZGO
+ yXPjIQiD/3xu7aD5BZt5YGHaGI2v9TxjQrVoSGxILxguKw2543ZYdnKhXXRqXfQibhaX
+ koElKJaKM62wfK64CxkP39jc9ZaAa78s6pus97ueZ4NZt9ItwCgy9jGSIHCRkNZo9y4p
+ YdLA==
+X-Gm-Message-State: APjAAAV/eJ9KLN42v1KCryelgW+FosxqP1fhT6k6kq+DNT7aPAaLsyG7
+ 0niDaXRSC3o7zbR0JLrnYA8=
+X-Google-Smtp-Source: APXvYqzjFFyA3EgEXXPFZc4AK1Co1/BHuEDPNq3NoVt9mMTOgu4Ojh5FyaxarOeEjgtDprXLfIV49w==
+X-Received: by 2002:a25:b16:: with SMTP id 22mr4521149ybl.380.1582910643178;
+ Fri, 28 Feb 2020 09:24:03 -0800 (PST)
+Received: from [192.168.1.111] (96-42-251-64.dhcp.roch.mn.charter.com.
+ [96.42.251.64])
+ by smtp.gmail.com with ESMTPSA id a202sm4221235ywe.8.2020.02.28.09.24.01
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 28 Feb 2020 09:24:02 -0800 (PST)
+Subject: Re: [PATCH v2] ARM: dts: rainier: Set PCA9552 pin types
+To: Matthew Barth <msbarth@linux.ibm.com>, Joel Stanley <joel@jms.id.au>,
+ Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Eddie James <eajames@linux.ibm.com>
+References: <20200225201415.431668-1-msbarth@linux.ibm.com>
+From: Brandon Wyman <bjwyman@gmail.com>
+Message-ID: <ec4c675a-b1db-c2d5-97d0-dcff44123db0@gmail.com>
+Date: Fri, 28 Feb 2020 11:24:01 -0600
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200228063338.4099-1-lukas.bulwahn@gmail.com>
-In-Reply-To: <20200228063338.4099-1-lukas.bulwahn@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 28 Feb 2020 18:05:25 +0100
-Message-ID: <CACRpkdabUZYhr7S8fcOX-dOgUEfDTnhUZjqsadyghpuTDCoqpw@mail.gmail.com>
-Subject: Re: [PATCH] MAINTAINERS: adjust to renaming physmap_of_versatile.c
-To: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+In-Reply-To: <20200225201415.431668-1-msbarth@linux.ibm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_090539_290387_9862BB68 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200228_092404_676367_2FA965F6 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [bjwyman[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -91,38 +106,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Boris Brezillon <boris.brezillon@bootlin.com>, Joe Perches <joe@perches.com>,
- Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>,
- Sebastian Duda <sebastian.duda@fau.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 7:33 AM Lukas Bulwahn <lukas.bulwahn@gmail.com> wrote:
 
-> Commit 6ca15cfa0788 ("mtd: maps: Rename physmap_of_{versatile, gemini}
-> into physmap-{versatile, gemini}") renamed physmap_of_versatile.c to
-> physmap-versatile.c, but did not adjust the MAINTAINERS entry.
+On 2020-02-25 14:14, Matthew Barth wrote:
+> All 16 pins of the PCA9552 at 7-bit address 0x61 should be set as type
+> GPIO.
 >
-> Since then, ./scripts/get_maintainer.pl --self-test complains:
+> Signed-off-by: Matthew Barth <msbarth@linux.ibm.com>
+> ---
+> v2: Added leds-pca955x.h include
+>      Added upstream to patch
+> ---
+Reviewed-by: Brandon Wyman <bjwyman@gmail.com>
+> ---
+>   arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts | 17 +++++++++++++++++
+>   1 file changed, 17 insertions(+)
 >
->   warning: no file matches F: drivers/mtd/maps/physmap_of_versatile.c
->
-> Rectify the ARM INTEGRATOR, VERSATILE AND REALVIEW SUPPORT entry and now
-> also cover drivers/mtd/maps/physmap-versatile.h while at it.
->
-> Co-developed-by: Sebastian Duda <sebastian.duda@fau.de>
-> Signed-off-by: Sebastian Duda <sebastian.duda@fau.de>
-> Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
-
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-
-Yours,
-Linus Walleij
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+> index c63cefce636d..d9fa9fd48058 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
+> @@ -4,6 +4,7 @@
+>   
+>   #include "aspeed-g6.dtsi"
+>   #include <dt-bindings/gpio/aspeed-gpio.h>
+> +#include <dt-bindings/leds/leds-pca955x.h>
+>   
+>   / {
+>   	model = "Rainier";
+> @@ -351,66 +352,82 @@
+>   
+>   		gpio@0 {
+>   			reg = <0>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@1 {
+>   			reg = <1>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@2 {
+>   			reg = <2>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@3 {
+>   			reg = <3>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@4 {
+>   			reg = <4>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@5 {
+>   			reg = <5>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@6 {
+>   			reg = <6>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@7 {
+>   			reg = <7>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@8 {
+>   			reg = <8>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@9 {
+>   			reg = <9>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@10 {
+>   			reg = <10>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@11 {
+>   			reg = <11>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@12 {
+>   			reg = <12>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@13 {
+>   			reg = <13>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@14 {
+>   			reg = <14>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   
+>   		gpio@15 {
+>   			reg = <15>;
+> +			type = <PCA955X_TYPE_GPIO>;
+>   		};
+>   	};
+>   
 
 _______________________________________________
 linux-arm-kernel mailing list
