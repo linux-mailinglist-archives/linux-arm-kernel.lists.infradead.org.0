@@ -2,126 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75AD4172DAB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 01:46:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E8FB172DF1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 02:05:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qDNfImLKl7au+aK80kZQyGoKRVs5gfGvCfCsg7uw/xw=; b=tRz9nX5gswmzL1
-	xDvrBleDYGbBu15rw17KmOq5Tq6DU9cNr3HtdKhLwKezG/4h+qaVmO4EZi42M97HvJEHp9wtImOs5
-	ND/+AO4X40sIhf0yCgjHiqwk2xdOf4oPOsJbbenE6tADjrqTssvopKE5EilvJKwegoLhPibUkW5g/
-	FeduVV9L09GoZXjm31nqfH8hOM/SbYrr+JlGnjfp9BYYOJSvoYeZ0Nuyg4UChf5elKuVwalMJRWRz
-	6oQzrjMHk9oz0vrYhKppfG/io8T2IDb91xeSLPnbdoxtr1xcyu+JFYcn23CzKhH0fLpdjh7c3K8+9
-	uqyf8ghe/LMJpJRcR0qQ==;
+	List-Owner; bh=vPjlxkYmCkQYSFhYurXYZOP6hLE0w2zH12GK1n4MNVQ=; b=qUICMj9oMO2kok
+	dpFGgC97fb11I81MVA7CfcRuSkzAnE7t9lqCfA/qN1k4W+QZTclIqEoq32egI6TvTZxsSdR2GIO+K
+	JfN11+V6PoeW+DulmFlb+Ag/bwbfDqMqdvw9zUKjwT24XMaL3dl1qy4o9MLKjHD9XixaSvALU71XT
+	i8ecIeWHpzAkjcKcK0MF//QkqzqEK26zlP3exN/74QSgiDeX89bBzzZM59IBvLhfKE1HOVn8qEHMw
+	TuQ01c1oAUqOmJntq6sPfUzeI+OM3spqb22eiL/20krKHD2AujNKmeVi2pFFDPqZRFIXtk2/PUoeb
+	HS8oaZf955o3X5YScwNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7Tn0-0003FM-RB; Fri, 28 Feb 2020 00:46:02 +0000
-Received: from mail-vi1eur05on2081.outbound.protection.outlook.com
- ([40.107.21.81] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1j7U5y-0001n9-Mo; Fri, 28 Feb 2020 01:05:38 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7Tmq-0003EP-43
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 00:45:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iBf+aMld5Cc2wB1zNz4oSsTtJLs8KYR2qA2Wdr0g4NFB41/Go2dkKzc10AKU5K586sQkRqSOW2wzn1wrYqioUO50d/t8/+vOU/bbU/9M83sjlO6Na1N5F+FwBAKM6DIdtChRAw2ovEtqTHsXMxeRQ13f0pCk2gfWf1JpDP9ZciJEtnBp3zBH6WF9GR7dbK2Z5Jcjhw/xnjhbSr6FWOjPynZe91/waMYsb4+9MAWFKJBGPku5OBua6jJuHy9hd9hGSRQj1bBNTqeP0HReySMNggAubNHu5p9tl5La/YY96Gj1UuWi7TmvypEuNrVOwmx4oywgB4Yy9gdAAhCx6bZJUw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BwDSx44lFmM+UYltTS60Q4HIVpB2drlseL5x1zmAakI=;
- b=l8tLLIPm6MR03kNd+RccKqa3Xkf03WqRVXaW8roaBV+XEU2QHyC3PSyuG5YFLwRpKJUqA26QVQJW2bps7RgQOH21XvTOv+Kz30hhDvZmqRJo3Z9CU3IpeVNFapMYgI7roB3VKXm2siMvZ9OAfoSHyLPIZ6RfREe5Y1w/KrmNNDSVOzQg5Ql9eJKzcxuUozQiFuDuMVuPuytxpwXDHeoAAyXA52HcDJGWEAsOaoXLOl2b+qNT3xsj3LWyJSscpSB1apMCtoBA0Ot1afi/8NUhWvqw1JrRrIwZ929s6j9Xi1dqSSBDoyUOyRx423GPetWl2cIrEb4hau/2AE7N2dPePA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BwDSx44lFmM+UYltTS60Q4HIVpB2drlseL5x1zmAakI=;
- b=im9El94pTE5IWGaUtAJAdb3PT1YalNo9r/uhnh0cPrjjiEZIjgu3tHUOLCStoHEftohfKFFgQY3JpqH/Plj745M+uOZ3ZKqT79OQ7a8FoPHMZgBZWGU+VRFj/N/N6HM4HRBqJ92BRC2L1GuMIB8YxcOf+Z1bCm0kdthg79KF+gU=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3738.eurprd04.prod.outlook.com (52.134.70.145) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.21; Fri, 28 Feb 2020 00:45:49 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2772.012; Fri, 28 Feb 2020
- 00:45:49 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "catalin.marinas@arm.com"
- <catalin.marinas@arm.com>, "will@kernel.org" <will@kernel.org>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>, "amit.kucheria@verdurent.com"
- <amit.kucheria@verdurent.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- "linux@roeck-us.net" <linux@roeck-us.net>, "srinivas.kandagatla@linaro.org"
- <srinivas.kandagatla@linaro.org>, "krzk@kernel.org" <krzk@kernel.org>, Andy
- Duan <fugang.duan@nxp.com>, Peng Fan <peng.fan@nxp.com>, Daniel Baluta
- <daniel.baluta@nxp.com>, "bjorn.andersson@linaro.org"
- <bjorn.andersson@linaro.org>, "olof@lixom.net" <olof@lixom.net>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>, Leonard Crestez
- <leonard.crestez@nxp.com>, "marcin.juszkiewicz@linaro.org"
- <marcin.juszkiewicz@linaro.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>
-Subject: RE: [PATCH V16 1/5] dt-bindings: fsl: scu: add thermal binding
-Thread-Topic: [PATCH V16 1/5] dt-bindings: fsl: scu: add thermal binding
-Thread-Index: AQHV6RUly757KwSthUGsSdMMqHZymqguyRCAgAEFViA=
-Date: Fri, 28 Feb 2020 00:45:48 +0000
-Message-ID: <DB3PR0402MB391617AA88AE4D4A81262A68F5E80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1582330132-13461-1-git-send-email-Anson.Huang@nxp.com>
- <41da5dc1-9d46-da71-4893-5c23e6e3d96a@linaro.org>
-In-Reply-To: <41da5dc1-9d46-da71-4893-5c23e6e3d96a@linaro.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: df39afc0-5ebb-4de1-12d4-08d7bbe78e02
-x-ms-traffictypediagnostic: DB3PR0402MB3738:|DB3PR0402MB3738:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3738437826CF5FB8F0F8F942F5E80@DB3PR0402MB3738.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 0327618309
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10001)(10009020)(4636009)(346002)(396003)(39860400002)(376002)(366004)(136003)(189003)(199004)(7416002)(478600001)(44832011)(66946007)(76116006)(66446008)(66476007)(66556008)(52536014)(9686003)(2906002)(55016002)(5660300002)(4326008)(64756008)(8676002)(26005)(186003)(71200400001)(81156014)(81166006)(6506007)(53546011)(8936002)(86362001)(316002)(110136005)(7696005)(33656002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3738;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: r0wTNWCnYlX9XS/UrcTgnwxeRK9wVfdP4teTCDgSMijQTCvkPmnWhsPu+jPUAiI3CN/a+QBCJUcvPEVqWZV2+Nd/41bwOIe1pziybUvDOAyk9u6m6qfwl3808bWufrlktZwcLmBZ9sREsu6D1Q4W+UOMTVFhHzRE+CnYdYzqwbas6qcvj/9pEpST4mE29e7aP9iODLj8CQA6H5X6xzOyZ8e+Ti3xGwJABhC8FRBw3kyJZzwCdAoYVxODdXsMQCfB5lCf4G/pOaHMc21sQVj5wK9RZS9tDU3/Vs7Zb7M1xx9a8i16IuMGDEbABcC70u+cXBFel9dks5a+uMMnReZ0HKXgO8A206MmvnxKHK4DWLRufANTTvEGLTIxhiaP7qH9rLj4EPPao6xAEp9JY8PWNMKSDnE+lRwuEkHfwto1jDifpaMt7alc6Mjy0ntno7UNM+/imkMcKI/OqVCya7O9Ing0Z1WuDvO+tRXJbNz3yCkiIf7vOQofeZxjuNUxh7grz4KRdkXObtVwhLgo7InJGBbn6CbQgm/W/c9u+C3Lcm3oHOr19XjsPQnBYKf+NkvEYGoFJseM0/NyLqh57Dun3WCxFxXC2f9VokTgPw1P/iVnAMwysgCmTTQ8WdW0cnqEYDoYOUI/cVNsrcz4VJlb+3GvKhQubG4CtXvKItIogfZ9srZvkQDTYXVz48mcC1ZX
-x-ms-exchange-antispam-messagedata: sP8qXgpKSsYXWpmlb8yqCBqsbmUTmRorPpL+Ju+VHhnkdIC1d2YaqjLDxoJk4qUfV+tWPQvAntMRxSfer7F+m0BTLjQeksiBHDCxdbhSIFAnG1CszDxRTFDQKpN3GZpJBO0Uajm8aSTkJho7BRSYdg==
+ id 1j7U5p-0001mo-KL
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 01:05:30 +0000
+Received: by mail-pg1-x544.google.com with SMTP id d9so597930pgu.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 27 Feb 2020 17:05:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=vYKIHHhVn7nSPH52/lrlIOtB7hqwWnXUydbXUcnZWnI=;
+ b=QFlUCv7nCT2v8zoOhV2qa4uo6mlR9+Nsq7/xVvJLjsHIYBg9P4ixu6A7b7qhQfX8Qe
+ vM2r2IJLVY9WzSAiDaGRlFnxtMv0848tL6yTTWdVjghb2Xv7E37AEUDJvaVREmp1BNIY
+ 940Ae6Ut8CrQrOp26oJlS2RyZXS+vfTFD/yZ9tb3CLTw9R9hPaFCY9Tmvvtv3wtrpMv2
+ wsbFKm7PATc4wfRkkFxv4OB6EejtTBAuwkvi2tchL/GS8lh0brgPhwBQKAmHXetqk/pd
+ Fczf/Ob3g8Rk03buXNFyaS8jPj0aEMjWjAAnatVfiDQsw3OFVl9MCsiJrbJCHh/etzdq
+ Iy8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vYKIHHhVn7nSPH52/lrlIOtB7hqwWnXUydbXUcnZWnI=;
+ b=K6P3or2QyvusaZJprGTa+gpaiIEmaykMZe5lklPYYY3kuaC2nh3PlfAOM5i7mfOGku
+ hbE8k6tlBnBRMQYRdXVjxxkHgR3kbj2P7XKucgcZ/MRRgOEXkCkI2Ma574n9B7uy3e0S
+ HXPVb0vRwQiG7dRrEjcUMzg40B8EL1pU1z+UfCFf6U0iU0vorwymB2dM1aiD8AZSnPJn
+ cLffmFrB3RyggR0cW3MTrGnBPkr6uCi/rxMXT6KZmg1Nqd5HnJAcpLNBsXIDzX0hMG4K
+ Kh8+uIid1ZgPrNgulPEtrRfWjSIa2NSuq0a2ZKKJ5VsL+9CWB6VJoJkfiNoOfVHUqgKp
+ 5e4Q==
+X-Gm-Message-State: APjAAAVq3AcpPC1JjvLgW11ibTLlQQaagHmIryt+jJGRHkm3AgKlhzAy
+ VQS9cmZHMiqZe9J6NrdPbAs=
+X-Google-Smtp-Source: APXvYqyTntILByeXSll2nrJCqdigFZSVhDQGQyd6dWT/1lZozrCoBY86BHFMbLTiHaa612sjWifBGQ==
+X-Received: by 2002:a62:3343:: with SMTP id z64mr1754059pfz.150.1582851928639; 
+ Thu, 27 Feb 2020 17:05:28 -0800 (PST)
+Received: from taoren-ubuntu-R90MNF91 ([2620:10d:c090:500::4:d8f5])
+ by smtp.gmail.com with ESMTPSA id 136sm7975604pgh.26.2020.02.27.17.05.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 27 Feb 2020 17:05:28 -0800 (PST)
+Date: Thu, 27 Feb 2020 17:05:20 -0800
+From: Tao Ren <rentao.bupt@gmail.com>
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Subject: Re: [PATCH v5 7/7] dt-bindings: usb: add documentation for aspeed
+ usb-vhub
+Message-ID: <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
+References: <20200227230507.8682-1-rentao.bupt@gmail.com>
+ <20200227230507.8682-8-rentao.bupt@gmail.com>
+ <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: df39afc0-5ebb-4de1-12d4-08d7bbe78e02
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Feb 2020 00:45:48.8625 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: nvFUIQOyVgBivKCa0wyys5Th+nnnynCEbrNkfU8s7tASC1XVhAte4awYajX261+4h+LeGECF4T+MLma+xUxw5g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3738
+Content-Disposition: inline
+In-Reply-To: <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200227_164552_168335_9C3C0D9B 
-X-CRM114-Status: GOOD (  19.11  )
+X-CRM114-CacheID: sfid-20200227_170529_694808_82FDD3A5 
+X-CRM114-Status: GOOD (  15.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.81 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rentao.bupt[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -140,78 +102,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, taoren@fb.com,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIFNoYXduDQoJV2lsbCB5b3UgdGFrZSBwYXRjaCAjNCBhbmQgIzU/IFRoYW5rcy4NCg0KQW5z
-b24NCg0KPiBTdWJqZWN0OiBSZTogW1BBVENIIFYxNiAxLzVdIGR0LWJpbmRpbmdzOiBmc2w6IHNj
-dTogYWRkIHRoZXJtYWwgYmluZGluZw0KPiANCj4gT24gMjIvMDIvMjAyMCAwMTowOCwgQW5zb24g
-SHVhbmcgd3JvdGU6DQo+ID4gTlhQIGkuTVg4UVhQIGlzIGFuIEFSTXY4IFNvQyB3aXRoIGEgQ29y
-dGV4LU00IGNvcmUgaW5zaWRlIGFzIHN5c3RlbQ0KPiA+IGNvbnRyb2xsZXIsIHRoZSBzeXN0ZW0g
-Y29udHJvbGxlciBpcyBpbiBjaGFyZ2Ugb2Ygc3lzdGVtIHBvd2VyLCBjbG9jaw0KPiA+IGFuZCB0
-aGVybWFsIHNlbnNvcnMgZXRjLiBtYW5hZ2VtZW50LCBMaW51eCBrZXJuZWwgaGFzIHRvIGNvbW11
-bmljYXRlDQo+ID4gd2l0aCBzeXN0ZW0gY29udHJvbGxlciB2aWEgTVUgKG1lc3NhZ2UgdW5pdCkg
-SVBDIHRvIGdldCB0ZW1wZXJhdHVyZQ0KPiA+IGZyb20gdGhlcm1hbCBzZW5zb3JzLCB0aGlzIHBh
-dGNoIGFkZHMgYmluZGluZyBkb2MgZm9yIGkuTVggc3lzdGVtDQo+ID4gY29udHJvbGxlciB0aGVy
-bWFsIGRyaXZlci4NCj4gPg0KPiA+IFNpZ25lZC1vZmYtYnk6IEFuc29uIEh1YW5nIDxBbnNvbi5I
-dWFuZ0BueHAuY29tPg0KPiA+IFJldmlld2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwu
-b3JnPg0KPiA+IFJldmlld2VkLWJ5OiBEb25nIEFpc2hlbmcgPGFpc2hlbmcuZG9uZ0BueHAuY29t
-Pg0KPiANCj4gSSdsbCB3aWxsIHRha2UgcGF0Y2hlcyAxLCAyIGFuZCAzDQo+IA0KPiBUaGFua3Mh
-DQo+IA0KPiAgIC0tIERhbmllbA0KPiANCj4gPiAtLS0NCj4gPiBObyBjaGFuZ2UuDQo+ID4gLS0t
-DQo+ID4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9mcmVlc2NhbGUvZnNsLHNjdS50eHQg
-ICAgICAgIHwgMTYNCj4gKysrKysrKysrKysrKysrKw0KPiA+ICAxIGZpbGUgY2hhbmdlZCwgMTYg
-aW5zZXJ0aW9ucygrKQ0KPiA+DQo+ID4gZGlmZiAtLWdpdA0KPiA+IGEvRG9jdW1lbnRhdGlvbi9k
-ZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9mcmVlc2NhbGUvZnNsLHNjdS50eHQNCj4gPiBiL0RvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vZnJlZXNjYWxlL2ZzbCxzY3UudHh0DQo+
-ID4gaW5kZXggZTA3NzM1YTguLjdmNDJjYzMgMTAwNjQ0DQo+ID4gLS0tIGEvRG9jdW1lbnRhdGlv
-bi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9mcmVlc2NhbGUvZnNsLHNjdS50eHQNCj4gPiArKysg
-Yi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL2ZyZWVzY2FsZS9mc2wsc2N1
-LnR4dA0KPiA+IEBAIC0xNjYsNiArMTY2LDE3IEBAIFJlcXVpcmVkIHByb3BlcnRpZXM6DQo+ID4g
-ICAgICAgICAgICAgICAgZm9sbG93ZWQgYnkgImZzbCxpbXgtc2Mta2V5IjsNCj4gPiAgLSBsaW51
-eCxrZXljb2RlczogU2VlDQo+ID4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2lu
-cHV0L2tleXMudHh0DQo+ID4NCj4gPiArVGhlcm1hbCBiaW5kaW5ncyBiYXNlZCBvbiBTQ1UgTWVz
-c2FnZSBQcm90b2NvbA0KPiA+ICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0NCj4gPiArDQo+ID4gK1JlcXVpcmVkIHByb3BlcnRpZXM6
-DQo+ID4gKy0gY29tcGF0aWJsZToJCQlTaG91bGQgYmUgOg0KPiA+ICsJCQkJICAiZnNsLGlteDhx
-eHAtc2MtdGhlcm1hbCINCj4gPiArCQkJCWZvbGxvd2VkIGJ5ICJmc2wsaW14LXNjLXRoZXJtYWwi
-Ow0KPiA+ICsNCj4gPiArLSAjdGhlcm1hbC1zZW5zb3ItY2VsbHM6CVNlZQ0KPiBEb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdGhlcm1hbC90aGVybWFsLnR4dA0KPiA+ICsJCQkJZm9y
-IGEgZGVzY3JpcHRpb24uDQo+ID4gKw0KPiA+ICBFeGFtcGxlIChpbXg4cXhwKToNCj4gPiAgLS0t
-LS0tLS0tLS0tLQ0KPiA+ICBhbGlhc2VzIHsNCj4gPiBAQCAtMjM4LDYgKzI0OSwxMSBAQCBmaXJt
-d2FyZSB7DQo+ID4gIAkJCWNvbXBhdGlibGUgPSAiZnNsLGlteDhxeHAtc2Mtd2R0IiwgImZzbCxp
-bXgtc2Mtd2R0IjsNCj4gPiAgCQkJdGltZW91dC1zZWMgPSA8NjA+Ow0KPiA+ICAJCX07DQo+ID4g
-Kw0KPiA+ICsJCXRzZW5zOiB0aGVybWFsLXNlbnNvciB7DQo+ID4gKwkJCWNvbXBhdGlibGUgPSAi
-ZnNsLGlteDhxeHAtc2MtdGhlcm1hbCIsICJmc2wsaW14LXNjLQ0KPiB0aGVybWFsIjsNCj4gPiAr
-CQkJI3RoZXJtYWwtc2Vuc29yLWNlbGxzID0gPDE+Ow0KPiA+ICsJCX07DQo+ID4gIAl9Ow0KPiA+
-ICB9Ow0KPiA+DQo+ID4NCj4gDQo+IA0KPiAtLQ0KPiANCj4gPGh0dHBzOi8vZXVyMDEuc2FmZWxp
-bmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRwJTNBJTJGJTJGd3d3Lg0KPiBsaW5h
-cm8ub3JnJTJGJmFtcDtkYXRhPTAyJTdDMDElN0NBbnNvbi5IdWFuZyU0MG54cC5jb20lN0NhNWZi
-NzgNCj4gYzgyOGJkNDBmMjBjNmEwOGQ3YmI2NGMxZjMlN0M2ODZlYTFkM2JjMmI0YzZmYTkyY2Q5
-OWM1YzMwMTYzNSU3Qw0KPiAwJTdDMCU3QzYzNzE4MzkxMzczMDA2OTcyMyZhbXA7c2RhdGE9cUt0
-JTJCbVQ3eVR3QW10elVrYXVqQiUyDQo+IEJ1UVgwcVN6YWozMnIzY3dMMGNvUEF3JTNEJmFtcDty
-ZXNlcnZlZD0wPiBMaW5hcm8ub3JnIOKUgiBPcGVuDQo+IHNvdXJjZSBzb2Z0d2FyZSBmb3IgQVJN
-IFNvQ3MNCj4gDQo+IEZvbGxvdyBMaW5hcm86DQo+IDxodHRwczovL2V1cjAxLnNhZmVsaW5rcy5w
-cm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cCUzQSUyRiUyRnd3dy4NCj4gZmFjZWJvb2su
-Y29tJTJGcGFnZXMlMkZMaW5hcm8mYW1wO2RhdGE9MDIlN0MwMSU3Q0Fuc29uLkh1YW5nJTQNCj4g
-MG54cC5jb20lN0NhNWZiNzhjODI4YmQ0MGYyMGM2YTA4ZDdiYjY0YzFmMyU3QzY4NmVhMWQzYmMy
-YjRjNmZhOQ0KPiAyY2Q5OWM1YzMwMTYzNSU3QzAlN0MwJTdDNjM3MTgzOTEzNzMwMDY5NzIzJmFt
-cDtzZGF0YT1TMVFOanFIcQ0KPiBYMW5qVzQzNkQ1amNuWktTbWRtJTJCWnR5NXNNQ08wM0N2TnRz
-JTNEJmFtcDtyZXNlcnZlZD0wPg0KPiBGYWNlYm9vayB8DQo+IDxodHRwczovL2V1cjAxLnNhZmVs
-aW5rcy5wcm90ZWN0aW9uLm91dGxvb2suY29tLz91cmw9aHR0cCUzQSUyRiUyRnR3aXR0ZQ0KPiBy
-LmNvbSUyRiUyMyElMkZsaW5hcm9vcmcmYW1wO2RhdGE9MDIlN0MwMSU3Q0Fuc29uLkh1YW5nJTQw
-bnhwLmMNCj4gb20lN0NhNWZiNzhjODI4YmQ0MGYyMGM2YTA4ZDdiYjY0YzFmMyU3QzY4NmVhMWQz
-YmMyYjRjNmZhOTJjZDk5Yw0KPiA1YzMwMTYzNSU3QzAlN0MwJTdDNjM3MTgzOTEzNzMwMDY5NzIz
-JmFtcDtzZGF0YT00aiUyRkRYTlFpZVRncw0KPiBYaHZXV1lOU1RnbnBiajhVMGI4U0tkNjJYZUJ4
-ejhZJTNEJmFtcDtyZXNlcnZlZD0wPiBUd2l0dGVyIHwNCj4gPGh0dHBzOi8vZXVyMDEuc2FmZWxp
-bmtzLnByb3RlY3Rpb24ub3V0bG9vay5jb20vP3VybD1odHRwJTNBJTJGJTJGd3d3Lg0KPiBsaW5h
-cm8ub3JnJTJGbGluYXJvLQ0KPiBibG9nJTJGJmFtcDtkYXRhPTAyJTdDMDElN0NBbnNvbi5IdWFu
-ZyU0MG54cC5jb20lN0NhNWZiNzhjODI4DQo+IGJkNDBmMjBjNmEwOGQ3YmI2NGMxZjMlN0M2ODZl
-YTFkM2JjMmI0YzZmYTkyY2Q5OWM1YzMwMTYzNSU3QzAlN0MNCj4gMCU3QzYzNzE4MzkxMzczMDA2
-OTcyMyZhbXA7c2RhdGE9b25iTmJYQWJueHdZd1VUTXBHNWpHdHNmbU4lDQo+IDJCTUpGOEpWWlYy
-WVMwYmJKdyUzRCZhbXA7cmVzZXJ2ZWQ9MD4gQmxvZw0KDQpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, Feb 28, 2020 at 10:30:02AM +1100, Benjamin Herrenschmidt wrote:
+> On Thu, 2020-02-27 at 15:05 -0800, rentao.bupt@gmail.com wrote:
+> 
+>  .../...
+> 
+> You haven't fixed the problem spotted by Rob which is that the example
+> is now out of sync, it's missing the required properties.
+
+Ahhh, now I know where my problem is..
+Let me see why I cannot reproduce the error on my side; otherwise I may
+create more noise in my next patch set (customize device IDs/strings)..
+
+> Also long run I think best is going to have a child node per downstream
+> port, so we create a matching linux struct device. This will make it
+> easier to deal with the other device-controller in the ast2600 which is
+> basically one of these without a vhub above it.
+
+Maybe a dumb question: what would be the proper place to parse the child
+node/properties when they are added? For example, in some usb_gadget_ops
+callback?
+
+
+Cheers,
+
+Tao
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
