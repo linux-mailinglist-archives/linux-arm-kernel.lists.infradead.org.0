@@ -2,78 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84003173A85
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:00:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80435173A87
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 16:00:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K2HAufjk1sTm/nKgi+hCOTTL3apKIQONVQVLKdyz4qo=; b=GVbgpbDU/TnprI
-	4iAgUf33wu1oA0zq8mAFShQd6YoK0eS2bUQQTalyjzIXike2LUm+323qE/plw2kFPZisTSQOFitbg
-	wLILr8/FtLLJkKC8FdUd8JNBM/W1u71U+j5PAEKSFRC+Z8fNTfRPW5lrc117IU0yGX0pwoPOGtC5X
-	lPsL8QodL3iNO0givdft+JB3eBjcVe0JnjTO2KA+cPjQcCpLlvDDysvYYvR0joqb//ZmmF/HCpjh7
-	zPM3cfL2B3u6Q+3fk3KNglkM4bDDvn115e7k7GpQsp/raWpqQL/PTDIbFJp//6lgtuOe6S6vp1rKP
-	Y/lWfiZPMmHZuv5kDzRQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=KkVzUyITuYOuL9Fib3TDkk0AFIb5dMEppG3VWQlwHRY=; b=oYE
+	iL5Ixp3CscbMvsDw2h9YIvIt6l+YkGEu4Bw6g5+vRr8j9rIxwEjJaHfXRT5qVdOVAAdNp+ej91vzC
+	HL5tshWWkohlNt7/HNliZIeLSfMTT8n03Am5db/vGNffCKwG1pyuzN5LNJDbvk5ZI70bDJkE3+RLV
+	B5A07Q6FEAiWTZmrG9R9mFRuscpmzIC9fjDpsCX4arMRxPRm9YkxHxh+nCa1j2Bz2BZQm83fLLF3z
+	d3/jjgz39NKmrtIOooxZ5jsQgddCTJfxPxgoHgsOzgoDNLm4A/2JwrfokY6x6EbRGK7RBoX51sKMZ
+	yZ9BdHvMirPAvYgKPLGM9Xra+huJPJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7h7O-0000cO-2q; Fri, 28 Feb 2020 14:59:58 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7h7C-0000aO-S1; Fri, 28 Feb 2020 14:59:48 +0000
-X-UUID: d1757a6a068a4d89b11238bac8893962-20200228
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=NL2GKs6cWZDfq31vqetafIYcn/LVSVpleZHl8l/E0rk=; 
- b=O7wfci0LBzMs+CBDiVNz+g2C6d0p1eYFDc29HRsUl3sjtufIbFNwKiU8mVRFO3tloAXCPQsHIX4N47d7Hr7BRH6xj1iHm6dLhmDzGpEsQUZXwKl8nkQQt7WyfaggBoaaDFeJKelNttA5WjjBow8GLvu9T5AjZWsPPHeT38lSN30=;
-X-UUID: d1757a6a068a4d89b11238bac8893962-20200228
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1730676086; Fri, 28 Feb 2020 06:59:44 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Feb 2020 07:00:51 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 28 Feb 2020 22:58:36 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 28 Feb 2020 22:59:23 +0800
-Message-ID: <1582901981.14824.9.camel@mtksdaap41>
-Subject: Re: [PATCH v3 11/13] soc: mediatek: cmdq: add jump function
-From: CK Hu <ck.hu@mediatek.com>
-To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-Date: Fri, 28 Feb 2020 22:59:41 +0800
-In-Reply-To: <1582897461-15105-13-git-send-email-dennis-yc.hsieh@mediatek.com>
-References: <1582897461-15105-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1582897461-15105-13-git-send-email-dennis-yc.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-MTK: N
+	id 1j7h7l-0000ns-Kt; Fri, 28 Feb 2020 15:00:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7h7E-0000af-Db
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 14:59:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E37431B;
+ Fri, 28 Feb 2020 06:59:47 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 536EE3F73B;
+ Fri, 28 Feb 2020 06:59:46 -0800 (PST)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH] arm64: entry: unmask IRQ in el0_sp()
+Date: Fri, 28 Feb 2020 14:59:42 +0000
+Message-Id: <20200228145942.10675-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_065946_910227_DA1CAA5C 
-X-CRM114-Status: GOOD (  14.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200228_065948_502307_053FFE95 
+X-CRM114-Status: GOOD (  12.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,86 +60,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- wsd_upstream@mediatek.com, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Ming-Fan Chen <ming-fan.chen@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, James Morse <james.morse@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Dennis:
+Currently, the EL0 SP alignment handler masks IRQs unnecessarily. It
+does so due to historic code sharing of the EL0 SP and PC alignment
+handlers, and branch predictor hardening applicable to the EL0 SP
+handler.
 
-On Fri, 2020-02-28 at 21:44 +0800, Dennis YC Hsieh wrote:
-> Add jump function so that client can jump to any address which
-> contains instruction.
-> 
-> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c | 12 ++++++++++++
->  include/linux/soc/mediatek/mtk-cmdq.h  | 11 +++++++++++
->  2 files changed, 23 insertions(+)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 58fec634dcf1..bbc68a7c81e9 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -372,6 +372,18 @@ int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value)
->  }
->  EXPORT_SYMBOL(cmdq_pkt_assign);
->  
-> +int cmdq_pkt_jump(struct cmdq_pkt *pkt, dma_addr_t addr)
-> +{
-> +	struct cmdq_client *cl = pkt->cl;
-> +	struct cmdq_instruction inst = { {0} };
-> +
-> +	inst.op = CMDQ_CODE_JUMP;
-> +	inst.offset = 1;
+We began masking IRQs in the EL0 SP alignment handler in commit:
 
-Symbolize the value '1'.
+  5dfc6ed27710c42c ("arm64: entry: Apply BP hardening for high-priority synchronous exception")
 
-> +	inst.value = addr >> cmdq_mbox_shift(cl->chan);
+... as this shared code with the EL0 PC alignment handler, and branch
+predictor hardening made it necessary to disable IRQs for early parts of
+the EL0 PC alignment handler. It was not necessary to mask IRQs during
+EL0 SP alignment exceptions, but it was not considered harmful to do so.
 
-If you write as 'cmdq_mbox_shift(pkt->cl->chan)', you could drop local
-variable 'cl'.
+This masking was carried forward into C code in commit:
 
-Regards,
-CK
+  582f95835a8fc812 ("arm64: entry: convert el0_sync to C")
 
-> +	return cmdq_pkt_append_command(pkt, inst);
-> +}
-> +EXPORT_SYMBOL(cmdq_pkt_jump);
-> +
->  int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
->  {
->  	struct cmdq_instruction inst = { {0} };
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index 99e77155f967..1a6c56f3bec1 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -213,6 +213,17 @@ int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
->   */
->  int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value);
->  
-> +/**
-> + * cmdq_pkt_jump() - Append jump command to the CMDQ packet, ask GCE
-> + *		     to execute an instruction that change current thread PC to
-> + *		     a physical address which should contains more instruction.
-> + * @pkt:        the CMDQ packet
-> + * @addr:       physical address of target instruction buffer
-> + *
-> + * Return: 0 for success; else the error code is returned
-> + */
-> +int cmdq_pkt_jump(struct cmdq_pkt *pkt, dma_addr_t addr);
-> +
->  /**
->   * cmdq_pkt_finalize() - Append EOC and jump command to pkt.
->   * @pkt:	the CMDQ packet
+... where the SP/PC cases were split into separate handlers, and the
+masking duplicated.
+
+Subsequently the EL0 PC alignment handler was refactored to perform
+branch predictor hardening before unmasking IRQs, in commit:
+
+  bfe298745afc9548 ("arm64: entry-common: don't touch daif before bp-hardening")
+
+... but the redundant masking of IRQs was not removed from the EL0 SP
+alignment handler.
+
+Let's do so now, and make it interruptible as with most other
+synchronous exception handlers.
+
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: James Morse <james.morse@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/entry-common.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/kernel/entry-common.c b/arch/arm64/kernel/entry-common.c
+index fde59981445c..c839b5bf1904 100644
+--- a/arch/arm64/kernel/entry-common.c
++++ b/arch/arm64/kernel/entry-common.c
+@@ -175,7 +175,7 @@ NOKPROBE_SYMBOL(el0_pc);
+ static void notrace el0_sp(struct pt_regs *regs, unsigned long esr)
+ {
+ 	user_exit_irqoff();
+-	local_daif_restore(DAIF_PROCCTX_NOIRQ);
++	local_daif_restore(DAIF_PROCCTX);
+ 	do_sp_pc_abort(regs->sp, esr, regs);
+ }
+ NOKPROBE_SYMBOL(el0_sp);
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
