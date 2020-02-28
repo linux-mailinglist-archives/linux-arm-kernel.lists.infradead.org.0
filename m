@@ -2,89 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77E2917384E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 14:29:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38AFA173876
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 14:36:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M8lQEm/ejtz3zBTdecTaFX8aQzMGA2O4AbSZ+BUQogk=; b=eOskB0idfd94pP
-	oIORniizzXh4LoqUV9rK7Eqe4qlij797Ztof8+O8gZdm/C294qPVwo34L0HOPURcKYiIO2SzFktf6
-	xTkaEXZhm5TmCTxyfemNIoVFaKn03cAUu0PjELCWwbkgd5XIDrc1hfSWomWa0OARSnTO2VCsAY3Ls
-	u0EZGk8z49jjQB88cBO09IyDxyVO4gQRSvYT8UWnrHP/em42LfeDLIsnf7uJdgJZCFTN7pZc1uSxa
-	nDr1PPwA0Ux9wXsQAZypoRIS+hxeN3zF4nK4UBoyhgtZ9xkasu9RkMzzBdU+q9ChotEXsc6V5DGo/
-	67E+liex8e597LLxDCUg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=CIrpA5WJATGFupePruXHslUB4RNQ0fN4gRljeYo04q8=; b=NzxUtsNU1YMukB1H3d54NzDzhA
+	L3iiZdT2XJoMBUnzjDYqSMDaVw0mkFfmmzjbKYbvkKd0xGW9q2PbgqutKDw8mnPo8ZqxuqxcG3PW0
+	fPwpej9G7L6IEmGAQQ/hfvUNkN77ygrOhB8d5vapxImiEWip19SfJqFD4PUEBFz8Pp0TgWM33lWWY
+	xIMLNmoiyFP45bhQCURejQViCes1RIbUp01Mz03tfODTF4BOpBEukzysB4o2/n0okRk4kyRnowvwB
+	ursQmEZPO50xBjfyIpQmeSJg3AX/3GwjyLmIKKi0dvXWEr/jlkDX+HNLCg1FKETqfF5LXDWYYBOp8
+	8OPEoQYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7fhL-00074T-VM; Fri, 28 Feb 2020 13:28:59 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j7foi-0002Vd-SA; Fri, 28 Feb 2020 13:36:36 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7fh2-00072I-PF; Fri, 28 Feb 2020 13:28:42 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j16so2969838wrt.3;
- Fri, 28 Feb 2020 05:28:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=NrHT7T88RoyQjD1urqyZZ0aRh9a3eutzKOCuX5K1yeY=;
- b=j6znWTYLAzRRvkNdjZ9zjIGXFuDM7tFBO5sd5AZONq1ZAuvPhGMFHHQOAoP61wNFNI
- mNHtRD/kP22UvMXlJ5U3VoD1aUGzx6sA9covL0XoeczLGAAjioSJiDDNcQC4NskJXa6q
- 0EFE3AyjZ/CkTqKnG23nCGcNxYr4hN0h+3Z6ZnqPkULjB6NGlS0UIKjC1FZm8taT0yTZ
- qEhmjFrXYy3BYHOU3YFz9EzKp63awNX/eiyDNLZcfi3ZZVdeM5B6PwIZzbFriEQPT8zv
- ZIgCDKgj2COpOcdpjZ8iZDxOlFRZNROL9pmbfA8xT5yHobnGvQ0uIRxTTMHafZufC2m5
- +tow==
+ id 1j7foX-0002V2-Ig
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 13:36:27 +0000
+Received: by mail-lj1-x243.google.com with SMTP id e18so3318611ljn.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 28 Feb 2020 05:36:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=PjM/hgtHoBl4bAsCN0fGLfc9vPVEJId2LvZd0bmIOgA=;
+ b=E42FALkmg1oBEFwoYmeIruDHjHIKf/NO6bpK/7HrnSvryt/yPnlecSSXqn5DbjUdVD
+ YbR0Aokkm6IPrDD5kZUpSLi0itMwFw2H7P6Wk8faWhMDpAK+i8NDFSee0ieykpgt2oJh
+ f+kJbqwuGJbkYVZP7WcRt1/w6c06DzJdxeIpGdqIChOBEpVeHcYverU/76U8cVUMz4WH
+ GUgEkfSQviucZK4fNg7QwhalRWhNwnfO3LNGbXRgpPomsPs59GGIifjPVUjMezlpUj+s
+ L3jEML8ZKr+OR1xA/rt4qL3yxwCpephnA8evJUuvobIpytMTz4GEHqei0e4kyX9lEJjk
+ gnAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=NrHT7T88RoyQjD1urqyZZ0aRh9a3eutzKOCuX5K1yeY=;
- b=pG9/d/2ThSFrpXnQZhAN4tIfSNZ4G1QYRJBJ6FCkZJhWw9qedoi7tLPRSDsWCX3h2R
- IFG0o3YE1xtoDtv77BtWGAuks0pRaeE4Q5CpBNXOKLROP4XOXX/Ar4gE23rRkfLl6LUv
- GMgme4/D4GVozKxzA5DCNbe1gqen+hoEMq8g2NUJ9nDOmgcH+Nan0lRTedUcrNbkpYzk
- TSDb3ghTABB4AsUTL/hfT0xr80I9LQcPqbgokn5wLCgZqZtve98ttiKudbLJiUJLw+RM
- /C3SvgQhfh6SxQXIkEvH2Av/v7vuK4jaREOXySz5C8YbW28OZqNOvADT05IlRUrz3z/+
- +yVg==
-X-Gm-Message-State: APjAAAUqayeTV6/crJkLJh4h8n74FCtWd1aChx7UhILha8OhA7ThOCE9
- 2ftGS9VGPvkC7+Gg1G5RRVXmnjO0
-X-Google-Smtp-Source: APXvYqzcazyu+zLUhQgdULQfW0b/6JUEwzdAx/yhhMPyZiEnDR8uFexywppZaicqNefTUid2wvto4g==
-X-Received: by 2002:a5d:5609:: with SMTP id l9mr4697197wrv.48.1582896518952;
- Fri, 28 Feb 2020 05:28:38 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id q9sm12906735wrx.18.2020.02.28.05.28.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 28 Feb 2020 05:28:38 -0800 (PST)
-Subject: Re: [PATCH 3/4] dt-bindings: arm: fix Rockchip rk3399-evb bindings
-To: Robin Murphy <robin.murphy@arm.com>, heiko@sntech.de
-References: <20200228061436.13506-1-jbx6244@gmail.com>
- <20200228061436.13506-3-jbx6244@gmail.com>
- <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <229c3511-d99d-8bac-6241-0088c5fc13ef@gmail.com>
-Date: Fri, 28 Feb 2020 14:28:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=PjM/hgtHoBl4bAsCN0fGLfc9vPVEJId2LvZd0bmIOgA=;
+ b=WIc3JQehiRQgA9guiIY5KodLq49qM09QQpIj2ZwKp+VDag4I1MJimbPTJc/N8g4TGT
+ nB2z5415azGyNLo2qZfx1vQU4Cck4IBcCIQomeo6hUBNrnoDLViZB7OWxdYETPvrtVsA
+ CkiGs2MWhvwTi+Ms5bpJJwZO0FZk3EYPyOiID6Os3kSEusHcIpdHfub43Lnt5OlB9iLZ
+ /8Hab761EOCfDVqaYRBSjc6CrQ4IMBY4Aoy6u0CBcM3+iyviMJl2rPFYoyytPVwhAwi/
+ 8cMrYElSxokJ979JLUsUIMiOTznkpnChWqDDJSmumJyH0kATPkVakDjoPzj0EeRMCtOo
+ S9LQ==
+X-Gm-Message-State: ANhLgQ12csfAX9paqNUpEEpVeQyGks63paMS7kNozWD9vSTwRp9zA80m
+ LgGt9BwkMfg0BxMhJHbGo7kGVcNiIqEw/wFSn+BWrw==
+X-Google-Smtp-Source: ADFU+vvyMbtXQ3rc+nEgLFFbcAtBPxVC3Z9S8tNB5OL+ChmPdvbPhfhkAdeT2OSGW2pLgWvfYmxjrzmchhIn1KUdCiw=
+X-Received: by 2002:a05:651c:2049:: with SMTP id
+ t9mr2739165ljo.39.1582896982829; 
+ Fri, 28 Feb 2020 05:36:22 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <78b8b53f-2e2a-3804-41fb-bb2610947ca2@arm.com>
-Content-Language: en-US
+References: <CAMiSF3BULWkyWTytTBcFfch9YaV_QzuBiawk-ZqEcQnsuGdUiQ@mail.gmail.com>
+ <20200228123910.hbf2bnk3w2dbishr@M43218.corp.atmel.com>
+In-Reply-To: <20200228123910.hbf2bnk3w2dbishr@M43218.corp.atmel.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 28 Feb 2020 14:36:11 +0100
+Message-ID: <CACRpkdYKemE6+OkWOWqOAqzaVEDNE9id+P_XRFaNzWs8N6c7mw@mail.gmail.com>
+Subject: Re: GPIOs not correctly exported via sysfs on ATSAMA5D2
+To: Romain Izard <romain.izard.pro@gmail.com>, 
+ Linux GPIO List <linux-gpio@vger.kernel.org>, 
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, 
+ Linus Walleij <linus.walleij@linaro.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>, 
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Russell King <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_052840_825143_5379F070 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200228_053625_653124_193E0F76 
+X-CRM114-Status: GOOD (  16.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -103,59 +99,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUm9iaW4sCgpXaGVuIEkgbG9vayBhdCB0aGUgcmV2aWV3IHByb2Nlc3Mgb2YgcmszMzk5LWV2
-Yi5kdHMKaXQgaXMgbWVudGlvbmVkIGhlcmU6CgpodHRwczovL2xvcmUua2VybmVsLm9yZy9wYXRj
-aHdvcmsvcGF0Y2gvNjcyMzI3LwoKPj4gKwltb2RlbCA9ICJSb2NrY2hpcCBSSzMzOTkgRXZhbHVh
-dGlvbiBCb2FyZCI7Cj4+ICsJY29tcGF0aWJsZSA9ICJyb2NrY2hpcCxyazMzOTktZXZiIiwgInJv
-Y2tjaGlwLHJrMzM5OSIsCj4+ICsJCSAgICAgImdvb2dsZSxyazMzOTlldmItcmV2MiIsIGdvb2ds
-ZSxyazMzOTlldmItcmV2MSIsCj4+ICsJCSAgICAgImdvb2dsZSxyazMzOTlldmItcmV2MCIgOwo+
-IAo+IGNhbiB5b3UgY2hlY2sgYWdhaW5zdCB3aGljaCBjb21wYXRpYmxlcyB0aGF0IGNvcmVib290
-IHJlYWxseSBtYXRjaGVzPwo+IAo+IEFzIHdlIHNhaWQgdGhhdCB0aGUgZXZiIGNoYW5nZWQgYmV0
-d2VlbiByZXYxIGFuZCByZXYyLCBJIHdvdWxkIGV4cGVjdCB0aGUgCj4gY29tcGF0aWJsZSB0byBi
-ZSBzb21ldGhpbmcgbGlrZQo+IAo+IAljb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzM5OS1ldmIi
-LCAgImdvb2dsZSxyazMzOTlldmItcmV2MiIsIAo+IAkJCSJyb2NrY2hpcCxyazMzOTkiOwo+IAo+
-IGxlYXZpbmcgb3V0IHRoZSByZXYxIGFuZCByZXYwCgpUaGUgY29uc2Vuc3VzIGluIHZlcnNpb24g
-NCBlbmRzIGluIHdoYXQgaXMgc2hvd24gaW4gdGhlIGR0cyBmaWxlLCBzbyBJCmNoYW5nZWQgaXQg
-aW4gcm9ja2NoaXAueWFtbC4gVGhpbmdzIGZyb20gdGhlIHBhc3QgbWF5YmUgY2FuIGJldHRlciBi
-ZQpleHBsYWluZWQgYnkgSGVpa28uIFBsZWFzZSBhZHZpc2UgaWYgdGhpcyBwYXRjaCBuZWVkcyB0
-byBjaGFuZ2UgYW5kIGluCndoYXQgZmlsZS4KCktpbmQgcmVnYXJkcywKCkpvaGFuCgoKT24gMi8y
-OC8yMCAxOjQyIFBNLCBSb2JpbiBNdXJwaHkgd3JvdGU6Cj4gT24gMjgvMDIvMjAyMCA2OjE0IGFt
-LCBKb2hhbiBKb25rZXIgd3JvdGU6Cj4+IEEgdGVzdCB3aXRoIHRoZSBjb21tYW5kIGJlbG93IGdp
-dmVzIHRoaXMgZXJyb3I6Cj4+Cj4+IGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzk5
-LWV2Yi5kdC55YW1sOiAvOiBjb21wYXRpYmxlOgo+PiBbJ3JvY2tjaGlwLHJrMzM5OS1ldmInLCAn
-cm9ja2NoaXAscmszMzk5JywgJ2dvb2dsZSxyazMzOTlldmItcmV2MiddCj4+IGlzIG5vdCB2YWxp
-ZCB1bmRlciBhbnkgb2YgdGhlIGdpdmVuIHNjaGVtYXMKPj4KPj4gRml4IHRoaXMgZXJyb3IgYnkg
-YWRkaW5nICdnb29nbGUscmszMzk5ZXZiLXJldjInIHRvIHRoZSBjb21wYXRpYmxlCj4+IHByb3Bl
-cnR5IGluIHJvY2tjaGlwLnlhbWwKPj4KPj4gbWFrZSBBUkNIPWFybTY0IGR0YnNfY2hlY2sKPj4g
-RFRfU0NIRU1BX0ZJTEVTPURvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9hcm0vcm9j
-a2NoaXAueWFtbAo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBKb2hhbiBKb25rZXIgPGpieDYyNDRAZ21h
-aWwuY29tPgo+PiAtLS0KPj4gwqAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yb2NrY2hpcC55YW1sIHwgMSArCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigr
-KQo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yb2NrY2hpcC55YW1sCj4+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9yb2NrY2hpcC55YW1sCj4+IGluZGV4IGQzMDM3OTBmNS4uNmM2ZTgyNzNlIDEwMDY0NAo+PiAt
-LS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJtL3JvY2tjaGlwLnlhbWwK
-Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9yb2NrY2hpcC55
-YW1sCj4+IEBAIC01MDksNiArNTA5LDcgQEAgcHJvcGVydGllczoKPj4gwqDCoMKgwqDCoMKgwqDC
-oMKgIGl0ZW1zOgo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6IHJvY2tjaGlwLHJr
-MzM5OS1ldmIKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiByb2NrY2hpcCxyazMz
-OTkKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiBnb29nbGUscmszMzk5ZXZiLXJldjIK
-PiAKPiBUaGlzIGxvb2tzIHdyb25nIC0gdGhlIGJvYXJkIGNhbid0IHJlYXNvbmFibHkgYmUgYSAq
-bW9yZSogZ2VuZXJhbCBtYXRjaAo+IHRoYW4gdGhlIFNvQy4gSWYgdGhpcyBpcyBzdXBwb3NlZCB0
-byByZXByZXNlbnQgYSBzcGVjaWZpYyB2YXJpYW50IG9mIHRoZQo+IGJhc2ljIEVWQiBkZXNpZ24g
-dGhlbiBpdCBzaG91bGQgY29tZSBiZWZvcmUgInJvY2tjaGlwLHJrMzM5OS1ldmIiIChhbmQKPiBw
-b3NzaWJseSBiZSBvcHRpb25hbCBpZiBvdGhlciB2YXJpYW50cyBhbHNvIGV4aXN0KS4KPiAKPiBS
-b2Jpbi4KPiAKPj4gwqAgwqDCoMKgwqDCoMKgwqAgLSBkZXNjcmlwdGlvbjogUm9ja2NoaXAgUksz
-Mzk5IFNhcHBoaXJlIHN0YW5kYWxvbmUKPj4gwqDCoMKgwqDCoMKgwqDCoMKgIGl0ZW1zOgo+PgoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+On Fri, Feb 28, 2020 at 1:39 PM Ludovic Desroches
+<ludovic.desroches@microchip.com> wrote:
+
+> The AT91 PIO4 pinctrl driver doesn't implement gpio_request_enable()
+> contrary to the AT91 PIO pinctrl driver. If we implement it, then you
+> would be able to change the pin muxing and configuration from the sysfs.
+> The issue is nothing prevent you do this and so to possibly break a
+> device.
+>
+> There is the strict pinmux_ops property which prevents from this
+> situation. The side effect is that we must not declare a pinmux/conf for
+> a GPIO so all the DT files have to been updated. That's not a big deal,
+> the problem is, at that time, the GPIO subsystem didn't allow to set the
+> bias for instance. It may have changed but not sure it covers all the
+> possible configurations we have from the pinmuxing subsystem.
+
+Yes and Russell also points very clearly to the root of the problem:
+
+- Some pin multiplexers are non-strict meaning a line can be used
+  for say GPIO and something else (such as SDIO) at the same time.
+  Usually this is an observation from electronics, such that the GPIO
+  input register will always report the logical state on the line whether
+  it is in "gpio mode" or something else, making it possible to snoop
+  the line, or, as in the I2C case, it is perfectly fine to, without glitches,
+  pull the line out of other use cases and into the GPIO realm and do
+  GPIO things such as bus recovery actively driving the line despite
+  it being connected in the mux to SDIO or I2C at the same time.
+
+- At the same time some system designers and driver authors are
+  driven by the ambition to create a system that is simple, has no
+  exceptions and has a clear separation of concerns, making it
+  impossible for the user - even a kernel developer or real savvy
+  hacker playing around with the deprecated sysfs ABI - to shoot
+  themselves in the foot. These are ambitious and admirable people
+  that want to protect their users and make it easy to do the right
+  thing. So they sort everything out and flag their pin multiplexers
+  as "strict", allowing only one use case at the time: this device is
+  either I2C or SDIO.
+
+Personally I am not flagging any of my drivers strict because I'm
+just a pragmatist and don't use the system architect type of reasoning
+much in what I do. But it is admittedly a matter of taste. The flag
+"strict" tells you something about the driver author's values and
+ambition.
+
+If we get to cases where the user is getting hurt by the strictness
+rather than enjoying the protection it provides, such as being unable
+to do I2C recovery, it may be reasonable to drop the strict setting
+and just fail the ambition to separate the concerns, as clearly the
+system architecture wasn't perfect in the first place, and trying to
+be strict in the mux is going to be a bit like polishing dirt.
+
+This case however looks a bit like tinkering, bring-up and hacking,
+and as such it might be expected that the user hack around a bit
+and recompile the kernel and device tree etc?
+
+Yours,
+Linus Walleij
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
