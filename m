@@ -2,116 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1235F173CC4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:23:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2418C173CDA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 17:27:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cpYEZplDHmEiiBcNyS6/Fmp3jZGMT59qEk2FDPxYbY4=; b=qiAmRT+PdKFRx6
-	L1BZcezRm1m7UMuHwpPbJdFlwSI7ZCge6QEDLqKC/0arShLkuDhLBPPgEFkM79zeX/DmK84peTs+5
-	AKgxnUsmm29RZ3r2X4dv/lW4Ra1MHZovvuaL6OxNMCVCcenP8TuZ0pU85RlTvF2VLYFHLk/yNEAIr
-	8/e+uyMtXtzz03GrFpCQ/6UInc4fa3FenvJH+9Wuka7eZMMcaoZjR+QZnzVL449CTBuGOUSpvyB13
-	2GA4drpszrXraBqyj3j7CiME5J8tYtOAt9YbiBKnbOIoBxTmGT6uCur/E3g0FGNxJ78qfwt2GkYHD
-	N+l/OKrZwVe8s1QtSGuw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qHAxvleJRycbTk00ajiqkjrlyu9DtZv3AvAXJT+33sQ=; b=rNAh+R6+B/GpI/
+	menM88CPovT8+AcpVtxvD4v8EC4NRq5WFP7+aFWA0hSR5yNL/rxHXrfd+xUqvQrXdcacdDjyk1FaA
+	Q3zKWp036UlBWiPkqJ3ck+NAbvp+xYG9x9xYO8343xLKd9pQMODv8XZQE10K5ebNz0Lm8HUlx5ouz
+	fSOVc9MEuWxYpwXL/i5CI5VkB336xZaexa3CzuEOtWeTEXnF1RLTx3fmQtlslm+b5/P/ERdfylaCN
+	WsXPTxVBzDytDDdDwj3H7VHMVxbSmotuWyw68ND1aDaAGC4qxrjOQ5Cfv/HfkvyxQmCt98pko2gLo
+	aX2X0l69kZF+SFVSqg2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7iQ2-0007uQ-Az; Fri, 28 Feb 2020 16:23:18 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1j7iTZ-0001FB-HW; Fri, 28 Feb 2020 16:26:57 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7iPj-0007tQ-91; Fri, 28 Feb 2020 16:23:01 +0000
-Received: from [192.168.1.183] ([37.4.249.171]) by mrelayeu.kundenserver.de
- (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1MeTD8-1ji99y2Og8-00aVCV; Fri, 28 Feb 2020 17:22:50 +0100
-Subject: Re: vc4 on rpi3 A+
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Sergey Suloev <ssuloev@orpaltech.com>, linux-rpi-kernel@lists.infradead.org,
- Stefan Wahren <wahrenst@gmx.net>
-References: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
- <b71f1af17d68ee66a2781a694e8a77dcafedd76b.camel@suse.de>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- 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 AQ==
-Message-ID: <1f7e4f5d-d217-9455-9823-00f76dc661fb@i2se.com>
-Date: Fri, 28 Feb 2020 17:22:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j7iTP-0001D6-IM
+ for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 16:26:49 +0000
+Received: from lhreml704-cah.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 0714367CCA21321329BA;
+ Fri, 28 Feb 2020 16:26:41 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml704-cah.china.huawei.com (10.201.108.45) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 28 Feb 2020 16:26:40 +0000
+Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 28 Feb
+ 2020 16:26:40 +0000
+Date: Fri, 28 Feb 2020 16:26:37 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v4 02/26] iommu/sva: Manage process address spaces
+Message-ID: <20200228162637.00007f4c@Huawei.com>
+In-Reply-To: <20200228144304.GC2156@myrica>
+References: <20200224182401.353359-1-jean-philippe@linaro.org>
+ <20200224182401.353359-3-jean-philippe@linaro.org>
+ <20200226123506.000076fb@Huawei.com> <20200228144304.GC2156@myrica>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-In-Reply-To: <b71f1af17d68ee66a2781a694e8a77dcafedd76b.camel@suse.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:fOIc7xPoTGEw3yuFqyT/1YM5F5tP81VygguRyubmvFtnC9dH6xf
- TFweHp5RFsoG5HXttJH5MlA461qfUVSFM9xASlMBAXRkLq+Ppp/EGx818UVClNz6tzcSfoR
- zyz4r8E0kif0iTY0HyBRkv4PxjiCtO3xVLxXo0/7YcfgdwDp79DAag0VowI0qJ0HfG6OGlF
- pt9cq5nMiz8hFhjE+wu1g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:geo2tEESk1I=:wL+QVDkLiOsY0qgtdgKHYo
- igPs8gIuqbAdmpnovefi5LFQZXolyA97WLodzmcT2X3COIXhjCcyondy/5lQWfj70qmKBL90y
- 66KG8BL1FwzWe5JldstlZRHmq5FUpCaph0HSN6X5JWisHrobYoN8TEsFNrFH6bc26FVLyE/yw
- hYOwUHKHIauMFr3mqOpqPqVnjGi7NxPTKzwv8E4Ly8sS9SlKaoGw0xNzOn7rxJdqdUVY2Cwqr
- EsHsr8kGlnIGc8S+pH6+RvMzKn3YzZgPKUSQnOjf7CIA/agWmC0TxmmIAqT13od124655M26b
- waBkSbuUhf/6l5v3OrsSFEKXkpfw+XiETc/9aJmx5SkNjVjYbEcxjYJc+JSLM27OvNkLmtz8R
- OSUmdoD/cLPnUXe/h5lMEk9+Xtj00I+EMowmyC4YkZuVvYLDU+yD6BBSW5ZX+nAn0fO9rOiVs
- 9oS4xS4UdDOVqO+/GLs9RfTYFmqoaOYM4eXhr6jjBDpbBmlzI33kfpRTxDb8jNPXJi9bxMwbI
- TwNOPNnaFwiYigPkJtLny7R/ly80g6Qdf5UWZ4PDWMsFt3YRqneV7e0gKWRXFtAiRJwl7BpVu
- NJTLc0gL8cvsGZhfaOoYlsN8cCLz/I4EO/jIMy6Sf7bF1x9TQ806wbMi61mYVWRAEHYJ1375u
- yQgUtgGRgh3zRI0cZMEZf49jZmlFgpzbkyXtW2e1QNYaMP/OUMM1e1J75OaUqRauESGxgQ6dg
- sNQ3TqW+oJvCL8wU36a9CT9bc8oSP6WOCPjYSB0FVHxpAlT6G0bW3hRFuQXJWxMY7G7JyeMM2
- OdjBruF60NY40L/cBEaUHp/Ob33KF4Efbj0E0wBfkmXAm97u0vlSMZVls85oKMqjxJQhIlL
+X-Originating-IP: [10.202.226.57]
+X-ClientProxiedBy: lhreml727-chm.china.huawei.com (10.201.108.78) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_082259_611810_AF3D0149 
-X-CRM114-Status: GOOD (  15.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200228_082647_911218_DE6FDE5E 
+X-CRM114-Status: GOOD (  28.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,56 +72,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>,
- bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
+ jacob.jun.pan@linux.intel.com,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
+ linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
+ yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas,
+On Fri, 28 Feb 2020 15:43:04 +0100
+Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
 
-Am 28.02.20 um 14:09 schrieb Nicolas Saenz Julienne:
-> Hi Sergey,
->
-> On Thu, 2020-02-20 at 11:21 +0300, Sergey Suloev wrote:
->> Hello, guys,
->>
->> could anyone clarify the status of vc4 drm support on RPI 3A+ ?
->>
->> I tried to build kernel 5.5 and 5.6-rc2 in 32bit and aarch64 
->> configurations with VC4 turned ON but both unsuccessful - vc4 drm driver 
->> is listed in memory but not working and not producing any typical DRM 
->> log output.
-> I managed to get my hands on a rpi3a+ and reproduce the issue. 'dmesg -lerr'
-> outputs this:
->
-> 	bcm2835-power: Timeout waiting for grafx power OK
->
-> This is a known issue, see https://github.com/raspberrypi/linux/issues/3046.
-> I attached a device-tree patch in case you want to verify it fixes the issue on
-> your board.
->
-> @Stefan I guess I'm going to have to revert the pm patch, any comments before I
-> do?
+> On Wed, Feb 26, 2020 at 12:35:06PM +0000, Jonathan Cameron wrote:
+> > > + * A single Process Address Space ID (PASID) is allocated for each mm. In the
+> > > + * example, devices use PASID 1 to read/write into address space X and PASID 2
+> > > + * to read/write into address space Y. Calling iommu_sva_get_pasid() on bond 1
+> > > + * returns 1, and calling it on bonds 2-4 returns 2.
+> > > + *
+> > > + * Hardware tables describing this configuration in the IOMMU would typically
+> > > + * look like this:
+> > > + *
+> > > + *                                PASID tables
+> > > + *                                 of domain A
+> > > + *                              .->+--------+
+> > > + *                             / 0 |        |-------> io_pgtable
+> > > + *                            /    +--------+
+> > > + *            Device tables  /   1 |        |-------> pgd X
+> > > + *              +--------+  /      +--------+
+> > > + *      00:00.0 |      A |-'     2 |        |--.
+> > > + *              +--------+         +--------+   \
+> > > + *              :        :       3 |        |    \
+> > > + *              +--------+         +--------+     --> pgd Y
+> > > + *      00:01.0 |      B |--.                    /
+> > > + *              +--------+   \                  |
+> > > + *      00:01.1 |      B |----+   PASID tables  |
+> > > + *              +--------+     \   of domain B  |
+> > > + *                              '->+--------+   |
+> > > + *                               0 |        |-- | --> io_pgtable
+> > > + *                                 +--------+   |
+> > > + *                               1 |        |   |
+> > > + *                                 +--------+   |
+> > > + *                               2 |        |---'
+> > > + *                                 +--------+
+> > > + *                               3 |        |
+> > > + *                                 +--------+
+> > > + *
+> > > + * With this model, a single call binds all devices in a given domain to an
+> > > + * address space. Other devices in the domain will get the same bond implicitly.
+> > > + * However, users must issue one bind() for each device, because IOMMUs may
+> > > + * implement SVA differently. Furthermore, mandating one bind() per device
+> > > + * allows the driver to perform sanity-checks on device capabilities.  
+> >   
+> > > + *
+> > > + * In some IOMMUs, one entry of the PASID table (typically the first one) can
+> > > + * hold non-PASID translations. In this case PASID 0 is reserved and the first
+> > > + * entry points to the io_pgtable pointer. In other IOMMUs the io_pgtable
+> > > + * pointer is held in the device table and PASID 0 is available to the
+> > > + * allocator.  
+> > 
+> > Is it worth hammering home in here that we can only do this because the PASID space
+> > is global (with exception of PASID 0)?  It's a convenient simplification but not
+> > necessarily a hardware restriction so perhaps we should remind people somewhere in here?  
+> 
+> I could add this four paragraphs up:
+> 
+> "A single Process Address Space ID (PASID) is allocated for each mm. It is
+> a choice made for the Linux SVA implementation, not a hardware
+> restriction."
 
-last time i try to revert the pm patch causes reliable hang of Raspbian.
+Perfect.
 
-I will try to test it again.
+> 
+> > > + */
+> > > +
+> > > +struct io_mm {
+> > > +	struct list_head		devices;
+> > > +	struct mm_struct		*mm;
+> > > +	struct mmu_notifier		notifier;
+> > > +
+> > > +	/* Late initialization */
+> > > +	const struct io_mm_ops		*ops;
+> > > +	void				*ctx;
+> > > +	int				pasid;
+> > > +};
+> > > +
+> > > +#define to_io_mm(mmu_notifier)	container_of(mmu_notifier, struct io_mm, notifier)
+> > > +#define to_iommu_bond(handle)	container_of(handle, struct iommu_bond, sva)  
+> > 
+> > Code ordering wise, do we want this after the definition of iommu_bond?
+> > 
+> > For both of these it's a bit non obvious what they come 'from'.
+> > I wouldn't naturally assume to_io_mm gets me from notifier to the io_mm
+> > for example.  Not sure it matters though if these are only used in a few
+> > places.  
+> 
+> Right, I can rename the first one to mn_to_io_mm(). The second one I think
+> might be good enough.
 
-Regards
-Stefan
+Agreed. The second one does feel more natural.
 
->
-> Regards,
-> Nicolas
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+> 
+> > > +static struct iommu_sva *
+> > > +io_mm_attach(struct device *dev, struct io_mm *io_mm, void *drvdata)
+> > > +{
+> > > +	int ret = 0;  
+> > 
+> > I'm fairly sure this is set in all paths below.  Now, of course the
+> > compiler might not think that in which case fair enough :)
+> >   
+> > > +	bool attach_domain = true;
+> > > +	struct iommu_bond *bond, *tmp;
+> > > +	struct iommu_domain *domain, *other;
+> > > +	struct iommu_sva_param *param = dev->iommu_param->sva_param;
+> > > +
+> > > +	domain = iommu_get_domain_for_dev(dev);
+> > > +
+> > > +	bond = kzalloc(sizeof(*bond), GFP_KERNEL);
+> > > +	if (!bond)
+> > > +		return ERR_PTR(-ENOMEM);
+> > > +
+> > > +	bond->sva.dev	= dev;
+> > > +	bond->drvdata	= drvdata;
+> > > +	refcount_set(&bond->refs, 1);
+> > > +	RCU_INIT_POINTER(bond->io_mm, io_mm);
+> > > +
+> > > +	mutex_lock(&iommu_sva_lock);
+> > > +	/* Is it already bound to the device or domain? */
+> > > +	list_for_each_entry(tmp, &io_mm->devices, mm_head) {
+> > > +		if (tmp->sva.dev != dev) {
+> > > +			other = iommu_get_domain_for_dev(tmp->sva.dev);
+> > > +			if (domain == other)
+> > > +				attach_domain = false;
+> > > +
+> > > +			continue;
+> > > +		}
+> > > +
+> > > +		if (WARN_ON(tmp->drvdata != drvdata)) {
+> > > +			ret = -EINVAL;
+> > > +			goto err_free;
+> > > +		}
+> > > +
+> > > +		/*
+> > > +		 * Hold a single io_mm reference per bond. Note that we can't
+> > > +		 * return an error after this, otherwise the caller would drop
+> > > +		 * an additional reference to the io_mm.
+> > > +		 */
+> > > +		refcount_inc(&tmp->refs);
+> > > +		io_mm_put(io_mm);
+> > > +		kfree(bond);  
+> > 
+> > Free outside the lock would be ever so slightly more logical given we allocated
+> > before taking the lock.
+> >   
+> > > +		mutex_unlock(&iommu_sva_lock);
+> > > +		return &tmp->sva;
+> > > +	}
+> > > +
+> > > +	list_add_rcu(&bond->mm_head, &io_mm->devices);
+> > > +	param->nr_bonds++;
+> > > +	mutex_unlock(&iommu_sva_lock);
+> > > +
+> > > +	ret = io_mm->ops->attach(bond->sva.dev, io_mm->pasid, io_mm->ctx,
+> > > +				 attach_domain);
+> > > +	if (ret)
+> > > +		goto err_remove;
+> > > +
+> > > +	return &bond->sva;
+> > > +
+> > > +err_remove:
+> > > +	/*
+> > > +	 * At this point concurrent threads may have started to access the
+> > > +	 * io_mm->devices list in order to invalidate address ranges, which
+> > > +	 * requires to free the bond via kfree_rcu()
+> > > +	 */
+> > > +	mutex_lock(&iommu_sva_lock);
+> > > +	param->nr_bonds--;
+> > > +	list_del_rcu(&bond->mm_head);
+> > > +
+> > > +err_free:
+> > > +	mutex_unlock(&iommu_sva_lock);
+> > > +	kfree_rcu(bond, rcu_head);  
+> > 
+> > I don't suppose it matters really but we don't need the rcu free if
+> > we follow the err_free goto.  Perhaps we are cleaner in this case
+> > to not use a unified exit path but do that case inline?  
+> 
+> Agreed, though I moved the kzalloc() later as suggested by Jacob, I think
+> it looks a little better and simplifies the error paths
+> 
+> Thanks,
+> Jean
+Jonathan
 
 
 _______________________________________________
