@@ -2,71 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C15A173784
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:47:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 217E117378B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 28 Feb 2020 13:49:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3i2HRz/qcIckd3Bblr+k7RcZoFkSgwOjBAKxjG0kPho=; b=A20IUP21fgT979
-	De2YqgAPrukIGWKCnkmAHT9pvYbloXNxhITADqcSp4sbEre/fHhpicwl9PIRo6hco2yrmf7g6nzaT
-	9sfzWw7lYDQbPnUrU4VNc+i14pTmnRJ05+H884i3afuRyXG2f4FQvx+9tobzOe6BzNNncVnbUMXg4
-	eW2ifXqDxQh97h91BmENajSa3l7VNSAd5rM5UTNTMAxF58G651Bft60kLyU0CPUuLoU3mN6mnEVQP
-	WDbnsbEIFbXMj39JxfQOazz3ez4++Uppjsg/ZjErnfuueW9mhzc7xrPIrzgS6E2aQZ/m4g/VeLijq
-	2fMqZM7QZpI8RwqTu8Yw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GfXIOOGAFpoXkGJE8uSOoAG6HKLWuklDPyUskBlq6Ok=; b=WpT8Q7PlOMaNMdF4OyLDvvA9l
+	kRLsVZ81/7PQCxvlzxqrwIJyHuTSw5Nh8HQdJlb9D77c422kumGxPzDvHqWDe0gN2QPOCQhD7cKXU
+	uqzxtMhtcuamBPlzgNBQRAn/O9EiQ8WREc72aLbS5SmQT/b4Vpe/+wN+63UA8uidfiMlbxfrQk6v3
+	FNjc1eojamjj4FXsIranNVDf+zGghrWwtPr8tVlRDyIw2vxJ2LW0hYpvt3UEArTeLhIh1SlShWQFu
+	CKmB9b7OlhkB5n8XEyRFtut4qFu2L2kbHKF+DwC4cvyqR0SXCVlx7EEowLvsexqG0oXN2cASGvcjt
+	FYyfse10A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7f3X-0001Bd-Ok; Fri, 28 Feb 2020 12:47:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7f3I-0001B8-7t
- for linux-arm-kernel@lists.infradead.org; Fri, 28 Feb 2020 12:47:37 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D7B4246AF;
- Fri, 28 Feb 2020 12:47:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582894055;
- bh=fdR6c1sPQyMICl3deohUdwGgLZOJa5k06Gv2GgRRLkw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Kz9+hr52KZ3IEf6cT5ZcryYGelFoi7eqtGEvkMii+pdQrtBOIXfXMF5YWjd8Bn1Rg
- YtrnMN6veyj+YKG2XoM0hEcdzGVv4j2g1GDa/KqwOoZzpuEWPJ4zTkAJ7Z8GiO6Sx3
- YRdD+//KNa4AMHp0kvPGv1t60hfF42bmTwqnE3iQ=
-Date: Fri, 28 Feb 2020 12:47:32 +0000
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH] arm64: mm: convert cpu_do_switch_mm() to C
-Message-ID: <20200228124731.GA4179@willie-the-truck>
-References: <20200213121452.23205-1-mark.rutland@arm.com>
- <20200227142946.GG3281767@arrakis.emea.arm.com>
- <20200228111350.GA2941@willie-the-truck>
+	id 1j7f4i-0001Un-0l; Fri, 28 Feb 2020 12:49:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j7f4Y-0001UG-04; Fri, 28 Feb 2020 12:48:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12BE34B2;
+ Fri, 28 Feb 2020 04:48:53 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D82A33F7B4;
+ Fri, 28 Feb 2020 04:48:51 -0800 (PST)
+Subject: Re: [PATCH v2 3/3] arm64: dts: rockchip: Describe RK3328 GPIO_MUTE
+ users
+From: Robin Murphy <robin.murphy@arm.com>
+To: heiko@sntech.de
+References: <cover.1581376744.git.robin.murphy@arm.com>
+ <53637c0359ad9473dc1391a8428ba21017ec467e.1581376744.git.robin.murphy@arm.com>
+Message-ID: <59fe8a7d-22ab-6098-5266-4fdf4bf41adb@arm.com>
+Date: Fri, 28 Feb 2020 12:48:50 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228111350.GA2941@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <53637c0359ad9473dc1391a8428ba21017ec467e.1581376744.git.robin.murphy@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_044736_328042_937B0FAE 
-X-CRM114-Status: GOOD (  26.87  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200228_044854_093493_51D3F336 
+X-CRM114-Status: GOOD (  17.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,84 +64,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ lgirdwood@gmail.com, linux-rockchip@lists.infradead.org, broonie@kernel.org,
+ pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 11:13:50AM +0000, Will Deacon wrote:
-> On Thu, Feb 27, 2020 at 02:29:46PM +0000, Catalin Marinas wrote:
-> > On Thu, Feb 13, 2020 at 12:14:52PM +0000, Mark Rutland wrote:
-> > > There's no reason that cpu_do_switch_mm() needs to be written as an
-> > > assembly function, and having it as a C function would make it easier to
-> > > maintain.
-> > > 
-> > > This patch converts cpu_do_switch_mm() to C, removing code that this
-> > > change makes redundant (e.g. the mmid macro). Since the header comment
-> > > was stale and the prototype now implies all the necessary information,
-> > > this comment is removed. The 'pgd_phys' argument is made a phys_addr_t
-> > > to match the return type of virt_to_phys().
-> > > 
-> > > At the same time, post_ttbr_update_workaround() is updated to use
-> > > IS_ENABLED(), which allows the compiler to figure out it can elide calls
-> > > for !CONFIG_CAVIUM_ERRATUM_27456 builds.
-> > > 
-> > > There should be no functional change as a result of this patch.
-> > > 
-> > > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > 
-> > I'll queue this for 5.7. Does not seem to have any functional change (I
-> > changed the comments to C-style ones /* */).
+Hi Heiko,
+
+On 18/02/2020 9:32 pm, Robin Murphy wrote:
+> Add explicit properties to describe existing boards' GPIO_MUTE usage
+> for the analog codec.
+
+Are you happy to pick this up now that the driver patches are queued?
+
+Thanks,
+Robin.
+
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
 > 
-> Can you also update the comment in asm/mmu.h for the ASID() macro please?
-
-Ah, I see this is already queued (I'm catching up with email after a trip
-to the US) so here's a patch.
-
-Will
-
---->8
-
-From 2528094854c3b56ad3fe49d2164c9a920a251f05 Mon Sep 17 00:00:00 2001
-From: Will Deacon <will@kernel.org>
-Date: Fri, 28 Feb 2020 12:43:55 +0000
-Subject: [PATCH] arm64: Update comment for ASID() macro
-
-Commit 25b92693a1b6 ("arm64: mm: convert cpu_do_switch_mm() to C") added
-a new use of the ASID() macro, so update the comment in asm/mmu.h which
-reasons about why an atomic reload of 'mm->context.id.counter' is not
-required.
-
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Will Deacon <will@kernel.org>
----
- arch/arm64/include/asm/mmu.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
-index e4d862420bb4..21a4bcfdb378 100644
---- a/arch/arm64/include/asm/mmu.h
-+++ b/arch/arm64/include/asm/mmu.h
-@@ -23,9 +23,9 @@ typedef struct {
- } mm_context_t;
- 
- /*
-- * This macro is only used by the TLBI code, which cannot race with an
-- * ASID change and therefore doesn't need to reload the counter using
-- * atomic64_read.
-+ * This macro is only used by the TLBI and low-level switch_mm() code,
-+ * neither of which can race with an ASID change. We therefore don't
-+ * need to reload the counter using atomic64_read().
-  */
- #define ASID(mm)	((mm)->context.id.counter & 0xffff)
- 
--- 
-2.25.1.481.gfbce0eb801-goog
-
+> v2: no change
+> 
+>   arch/arm64/boot/dts/rockchip/rk3328-a1.dts     | 1 +
+>   arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 1 +
+>   2 files changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> index 16f1656d5203..797e90a3ac92 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
+> @@ -60,6 +60,7 @@
+>   };
+>   
+>   &codec {
+> +	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
+>   	status = "okay";
+>   };
+>   
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+> index 62936b432f9a..bf3e546f5266 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
+> @@ -104,6 +104,7 @@
+>   };
+>   
+>   &codec {
+> +	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
+>   	status = "okay";
+>   
+>   	port@0 {
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
