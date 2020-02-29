@@ -2,67 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 106A317488F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 19:04:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75B01174908
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 20:49:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I4YDrrrw+Pwx9XqDwZRg5GqYOyKhdhVQsjkSWvFcJCY=; b=eCAgTB4g87ZfwC
-	bXSBV00P65LnCDR5rPtgFALh5q6EKb0hYLB6SFnIl2+fE5bNOgQREO9m4aPkzVzIWaxgBjb1mOHT4
-	D3BHQfKrEUZOx3G3gJ/zjEj8XkHydG5l2ZncSJhKF32E9SjUtl49e3N3EEJPhc2/IvKoOBMiAMi78
-	HI01Xv6rOFFmMlSEN7j3fieKG8HZZedaeMaclQeZdjtwJKPZY8TncBccj+IEoMVI783v7prYWbqvy
-	AK0B/apCpH1OZOY1W6imDogkTa1u2S8I5wm1LNPW6UdXSNNxI57c+Q9H9U1kgyoS/wiFnzL4I+OcG
-	n1Be1BELE9dbxCSHdS2Q==;
+	List-Owner; bh=FJAiNleBWXpPUQQdxuuFxHYy3olyL1EHAb/SHmCJhls=; b=Q8WSuzATC4rj89
+	vj9P0UE2u5r5RxXLxSFPtfnNX7906Z7DMUE5wdxgVFd4eDNla7HXrJaFBYipdevcP5mMDwvHjnElG
+	KJbQF/5lDpBEgzddTVtffJ0ycwwvx9wQ1DKYhLu+3G167pHaU3KeiZh3tnk1f+3t1gH7ozXT5g+ch
+	m5QhoQRY0q8d88aFeKUeC5pU9D/sEY0jiklv4Zq4pD3PnlVdzibONkgUirT3QI1HYcvu41otnAQQG
+	9lnxUXHn7ARI1Ifmkx4wFc0FcnLDKeVs4GzJAfmcp6X+122T64csfFmrF4kBmVBcaJWBGy8Zqlr60
+	tEKfKT3J340jpTKiYbNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j86T2-0001xV-KS; Sat, 29 Feb 2020 18:04:00 +0000
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
+	id 1j887M-0008RE-Td; Sat, 29 Feb 2020 19:49:44 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j86Ss-0001we-3s
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 18:03:51 +0000
-Received: from callcc.thunk.org (75-104-88-164.mobility.exede.net
- [75.104.88.164] (may be forged)) (authenticated bits=0)
- (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 01TI3N6m018652
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Sat, 29 Feb 2020 13:03:30 -0500
-Received: by callcc.thunk.org (Postfix, from userid 15806)
- id 2E9B042045B; Sat, 29 Feb 2020 13:03:23 -0500 (EST)
-Date: Sat, 29 Feb 2020 13:03:23 -0500
-From: "Theodore Y. Ts'o" <tytso@mit.edu>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
- driver for NXP Layerscape SoCs
-Message-ID: <20200229180323.GC7378@mit.edu>
-References: <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
- <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
- <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
- <20200210152257.GD25745@shell.armlinux.org.uk>
- <20200229095550.GX25745@shell.armlinux.org.uk>
- <20200229110456.GY25745@shell.armlinux.org.uk>
- <20200229151907.GA7378@mit.edu>
- <20200229170328.GD25745@shell.armlinux.org.uk>
+ id 1j887G-0008Qq-Qt
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 19:49:40 +0000
+Received: by mail-lj1-x243.google.com with SMTP id e18so7145314ljn.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 29 Feb 2020 11:49:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=o3JxuikDu+8uRzzDlcl8zOj9Z4SnxlDgkHqB9Vqhqbw=;
+ b=P59vsc7uAayBzDAbeTThb+L2Agp/GSN+QRQBb4bgsfhcCBxzki9WUSO84mSb/v0Qsu
+ ba3ceVetAG25CXXseGH8T0/JkXHvYXiiDLyBswqvY+8WzZSaBr63bsDy8bChEn/3M2v+
+ 7p248U0DrvZB8M4YaAZujQuPH9gFeJ+bUZ5q+w9ONzwZEAWM4buwWhpEOlwmgKdyPN8Y
+ w5cMq5cVqKE9/U24pds72vpaayJSClRS1ypw7d+nn2wUq8BEmv5BZAtR3cr8PgrvHIlf
+ iXjDJGmoxbS7NN8jA8lcWE0Dl/Pfh0bhQnb4qIy2vR2o1QbkKpu7uDgjvb8ec3kCR5Ou
+ /lhw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=o3JxuikDu+8uRzzDlcl8zOj9Z4SnxlDgkHqB9Vqhqbw=;
+ b=BM/EKJ6UF4wlIYwbAaN7zFF0kqBIw/w/zPFtcYU0shm/r2frtWSjZgtksbDAomy6Nl
+ cYk61ec8wGGnN1gWqzV1zuBBKGwuAQwydTm81JxroCnPdTjo0u/tXHckv/mvGq7nx2dh
+ N/OX8fCgRRxR0/8xmVnRQuBa+uhQ7L7Gn7SLBzHHyNSoNhjvQNVtMRhZ5/skWQrAxbdC
+ 2FZ1E1tGq8BaiuF1iJu8buX1U0c7C3knt8rqos5ehRQcn+hK5w/XREElNlXMFgcio5jZ
+ vTyHJtHRTYW+3804fHyHHAcTVJnlT0jgxhT3hkcttJgbb0h/rURxtEajhvlNqskft0SA
+ dqKA==
+X-Gm-Message-State: ANhLgQ1WcexyIVJ30idgoYR/BhJp34G3Koh3D+Ux1/i1SCI+a3JXGols
+ e6CpbU8flmTeITHymzVYCPpGtA==
+X-Google-Smtp-Source: ADFU+vsHaT+IT91ufMHzxEdJasefTlHMLyccMHUxwCntlAqlqQS6Tb+SX6hz/gDGExCDbxt1JdGYmw==
+X-Received: by 2002:a2e:8651:: with SMTP id i17mr6886503ljj.121.1583005773714; 
+ Sat, 29 Feb 2020 11:49:33 -0800 (PST)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id o142sm9075652lff.54.2020.02.29.11.49.32
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 29 Feb 2020 11:49:32 -0800 (PST)
+Date: Sat, 29 Feb 2020 11:49:25 -0800
+From: Olof Johansson <olof@lixom.net>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [GIT PULL 1/2] Broadcom defconfig fixes for 5.6
+Message-ID: <20200229194925.ef4f2mz6eakgy5lj@localhost>
+References: <20200228181144.15148-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200229170328.GD25745@shell.armlinux.org.uk>
+In-Reply-To: <20200228181144.15148-1-f.fainelli@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_100350_328014_4241401D 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200229_114939_012468_D5A3C289 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [18.9.28.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,46 +94,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "Z.q. Hou" <zhiqiang.hou@nxp.com>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- Jon Nettleton <jon@solid-run.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>, Leo Li <leoyang.li@nxp.com>,
- "M.h. Lian" <minghuan.lian@nxp.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Olof Johansson <olof@lixom.net>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Stefan Wahren <stefan.wahren@i2se.com>, arnd@arndb.de, khilman@kernel.org,
+ soc@kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 29, 2020 at 05:03:28PM +0000, Russell King - ARM Linux admin wrote:
-> > There's a test-appliance designed to be run on ARM64 here[1].
-> > 
-> > [1] https://kernel.org/pub/linux/kernel/people/tytso/kvm-xfstests/xfstests-amd64.tar.xz
+On Fri, Feb 28, 2020 at 10:11:43AM -0800, Florian Fainelli wrote:
+> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
 > 
-> The filename seems to say "amd64" not "arm64" ?
+>   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+> 
+> are available in the Git repository at:
+> 
+>   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.6/defconfig-fixes
+> 
+> for you to fetch changes up to 653c00f289371fc5162f1daf4c3742113812aa94:
+> 
+>   ARM: bcm2835_defconfig: Explicitly restore CONFIG_DEBUG_FS (2020-02-27 12:47:45 -0800)
+> 
+> ----------------------------------------------------------------
+> This pull request contains Broadcom ARM-based SoCs defconfig file(s)
+> fixes for v5.6, please pull the following:
+> 
+> - Stefan restores CONFIG_DEBUG_FS from the bcm2835_defconfig which was
+>   accidentally removed
 
-Sorry, I cut and pasted the wrong link: s/amd64/arm64/
+Hi,
 
-If there are arm64-specific locking issues, we can probably flush them
-out if we could figure out some way of running some of the stress
-tests in xfstests.  I don't know a whole lot about arm-64
-architectures; would running xfstests on, say, an Amazon AWS arm-based
-VM be representative of your new architecture?  Or are there a lot of
-sub-architecture differences in the arm-64 world?
+It looks like you missed signing off on the commit when you applied it. Care to
+respin?
 
-						- Ted
+
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
