@@ -2,88 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC66F17487F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 18:49:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 106A317488F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 19:04:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RLmhtN5ZVpX+4KlFmCG7RLqvSHiplwsQNzRQJSPrajQ=; b=TPuheoK2fTjEz5
-	0pxBEiWY/ZfRx7RYo5zvaFwhDkvFGR/TBQsjFT7HxK5LljMU4KpuuiAJClPyPIYYdl5YIr4G3B6TF
-	do3ek9cWzqDviJSBIS5THgdkZmAEUzADBiSll/e1Bw8pfkxEkeEIpWuVFSDfV0qnAGHH7ocgtt156
-	XdgLJWMy8RlqQjpjuDc+gg2y6xJirxZ/23wE4xxsm+L0Tw1hZQ3qp5EN+bfOEhuJp05Dm9K3RLiXs
-	yFzsmnWSU2S9JKjGuK6ZPHRcoY7rJOIDkOr95w9loz0JbOu9UqBVOvlDlrM1QRfRCHRkfhTcqjy/9
-	kjExdVMuOJHVp/2mWFWQ==;
+	List-Owner; bh=I4YDrrrw+Pwx9XqDwZRg5GqYOyKhdhVQsjkSWvFcJCY=; b=eCAgTB4g87ZfwC
+	bXSBV00P65LnCDR5rPtgFALh5q6EKb0hYLB6SFnIl2+fE5bNOgQREO9m4aPkzVzIWaxgBjb1mOHT4
+	D3BHQfKrEUZOx3G3gJ/zjEj8XkHydG5l2ZncSJhKF32E9SjUtl49e3N3EEJPhc2/IvKoOBMiAMi78
+	HI01Xv6rOFFmMlSEN7j3fieKG8HZZedaeMaclQeZdjtwJKPZY8TncBccj+IEoMVI783v7prYWbqvy
+	AK0B/apCpH1OZOY1W6imDogkTa1u2S8I5wm1LNPW6UdXSNNxI57c+Q9H9U1kgyoS/wiFnzL4I+OcG
+	n1Be1BELE9dbxCSHdS2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j86Ei-0005mE-Hg; Sat, 29 Feb 2020 17:49:12 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j86T2-0001xV-KS; Sat, 29 Feb 2020 18:04:00 +0000
+Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j86ET-0005kr-O3
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 17:48:59 +0000
-Received: by mail-wr1-x442.google.com with SMTP id v4so7260563wrs.8
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Feb 2020 09:48:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=ZayidFagez4Iqa0WdVqRCWWZUtND8cC6eqziUqJZJmc=;
- b=OjKh2HhHMq2rTYWzUbngs+vFkLG8b+mFteGPKRXj2T8+FCtDHOA9t7CIjqNkjDZdeZ
- J07gdZyMgyYsznuhl2xtq/NVdZ+MyiJYAhmSRgna9zX3H3BvHPGBWZ8wXfYycucO0Rfj
- jcpZWPfDNgA90xVKnKhXSZYmyQE/3K3WUFYEEXgxYxnIZ0HlOvnPryPXYGDgCZxNP0Nh
- tczhsu1tS3+nqYUYdVsFO3Oxnrcol4gZHAD2WnVQeqd9KPCkNehArtGUPigj3vF2lP42
- S3w5Ljjrs8HQARR/kpkYS4DwmnV5/9GTV12D9PpvthiFxPp0Z0gPfzfStH5gbS7iSOe7
- 5GMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=ZayidFagez4Iqa0WdVqRCWWZUtND8cC6eqziUqJZJmc=;
- b=mxogo29oYphJR8alhPUFT91sfiD5ca7CIbvuykbfSjx8AjbdvbnBnEdWz2W94zMjeE
- iq0AOQyd1Fk6XGbfRsoD++M2ph6I9kmI3PjQky56QJ4DCmf/3K/onyRnGGucusdw9k63
- pcaQNlFjB/6Mkua1BYkWMkJfap/d6yfV0+HEMybuno4ShGgNmoKUPj1OSgODr3ev8rxT
- vKsscNmlOgDdYpz34pqkqQX0uZqMwZYl0/j5c8aWdXMYLSsNrEH8SULcGVP9UEtoaArz
- mJ5lwp/X7Dqq0II6nA3azXZnt0B1hIBSB+sbniKobYh+D1ldRjkErgEL4Z7+AD6Pi+Ij
- GuHQ==
-X-Gm-Message-State: APjAAAV/z/si+Fc7nOX5tsVaifYr+bT25t+gElc5vEowz91X4L3qJG/m
- tgN9OSe7BVt0al4If4sR0FJKlQ==
-X-Google-Smtp-Source: APXvYqzwdRDHCo+JK9WoMEpBpcMTaJ8faVAZvaZz5Q4T5r9MrCA1hC6MCXi/+N36SnaRFlbwkEMtXw==
-X-Received: by 2002:adf:ed84:: with SMTP id c4mr11380334wro.24.1582998536137; 
- Sat, 29 Feb 2020 09:48:56 -0800 (PST)
-Received: from localhost (229.3.136.88.rev.sfr.net. [88.136.3.229])
- by smtp.gmail.com with ESMTPSA id r19sm2154532wmh.26.2020.02.29.09.48.55
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 29 Feb 2020 09:48:55 -0800 (PST)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Christian Hewitt <christianshewitt@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] arm64: dts: meson: fix gxm-khadas-vim2 wifi
-In-Reply-To: <1582212790-11402-1-git-send-email-christianshewitt@gmail.com>
-References: <1582212790-11402-1-git-send-email-christianshewitt@gmail.com>
-Date: Sat, 29 Feb 2020 18:48:54 +0100
-Message-ID: <7htv399tdl.fsf@baylibre.com>
+ id 1j86Ss-0001we-3s
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 18:03:51 +0000
+Received: from callcc.thunk.org (75-104-88-164.mobility.exede.net
+ [75.104.88.164] (may be forged)) (authenticated bits=0)
+ (User authenticated as tytso@ATHENA.MIT.EDU)
+ by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id 01TI3N6m018652
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sat, 29 Feb 2020 13:03:30 -0500
+Received: by callcc.thunk.org (Postfix, from userid 15806)
+ id 2E9B042045B; Sat, 29 Feb 2020 13:03:23 -0500 (EST)
+Date: Sat, 29 Feb 2020 13:03:23 -0500
+From: "Theodore Y. Ts'o" <tytso@mit.edu>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
+ driver for NXP Layerscape SoCs
+Message-ID: <20200229180323.GC7378@mit.edu>
+References: <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
+ <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
+ <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
+ <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
+ <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
+ <20200210152257.GD25745@shell.armlinux.org.uk>
+ <20200229095550.GX25745@shell.armlinux.org.uk>
+ <20200229110456.GY25745@shell.armlinux.org.uk>
+ <20200229151907.GA7378@mit.edu>
+ <20200229170328.GD25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200229170328.GD25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_094857_786161_F47F6E8E 
-X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-CacheID: sfid-20200229_100350_328014_4241401D 
+X-CRM114-Status: UNSURE (   8.39  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [18.9.28.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,46 +74,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Art Nikpal <email2tema@gmail.com>,
- Christian Hewitt <christianshewitt@gmail.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ Jon Nettleton <jon@solid-run.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, Leo Li <leoyang.li@nxp.com>,
+ "M.h. Lian" <minghuan.lian@nxp.com>, Andreas Dilger <adilger.kernel@dilger.ca>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ Olof Johansson <olof@lixom.net>,
+ "andrew.murray@arm.com" <andrew.murray@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Christian Hewitt <christianshewitt@gmail.com> writes:
+On Sat, Feb 29, 2020 at 05:03:28PM +0000, Russell King - ARM Linux admin wrote:
+> > There's a test-appliance designed to be run on ARM64 here[1].
+> > 
+> > [1] https://kernel.org/pub/linux/kernel/people/tytso/kvm-xfstests/xfstests-amd64.tar.xz
+> 
+> The filename seems to say "amd64" not "arm64" ?
 
-> Fixes: adc52bf7ef16 ("arm64: dts: meson: fix mmc v2 chips max frequencies")
+Sorry, I cut and pasted the wrong link: s/amd64/arm64/
 
-nit: Fixes tag should go at the end with the other trailers (see "git
-interpret-trailers ")
+If there are arm64-specific locking issues, we can probably flush them
+out if we could figure out some way of running some of the stress
+tests in xfstests.  I don't know a whole lot about arm-64
+architectures; would running xfstests on, say, an Amazon AWS arm-based
+VM be representative of your new architecture?  Or are there a lot of
+sub-architecture differences in the arm-64 world?
 
-I'll fix thet up when applying.
-
-> before
->
-> [6.418252] brcmfmac: F1 signature read @0x18000000=0x17224356
-> [6.435663] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac4356-sdio for chip BCM4356/2
-> [6.551259] brcmfmac: brcmf_sdiod_ramrw: membytes transfer failed
-> [6.551275] brcmfmac: brcmf_sdio_verifymemory: error -84 on reading 2048 membytes at 0x00184000
-> [6.551352] brcmfmac: brcmf_sdio_download_firmware: dongle image file download failed
->
-> after
->
-> [6.657165] brcmfmac: F1 signature read @0x18000000=0x17224356
-> [6.660807] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac4356-sdio for chip BCM4356/2
-> [6.918643] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac4356-sdio for chip BCM4356/2
-> [6.918734] brcmfmac: brcmf_c_process_clm_blob: no clm_blob available (err=-2), device may have limited channels available
-> [6.922724] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4356/2 wl0: Jun 16 2015 14:25:06 version 7.35.184.r1 (TOB) (r559293) FWID 01-b22ae69c
->
-> Suggested-by: Art Nikpal <email2tema@gmail.com>
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-
-Queued as a fix for v5.6,
-
-Thanks,
-
-Kevin
+						- Ted
 
 _______________________________________________
 linux-arm-kernel mailing list
