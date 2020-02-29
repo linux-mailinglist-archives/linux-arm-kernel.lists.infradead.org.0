@@ -2,90 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D02BB17465A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 12:06:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A2051746A5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 13:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wykFM8XDR5F8tYgvKKS1UR8ngGl65d8kjsyOz4HRwwo=; b=B2M5PgeXGN5ktk
-	38ADlGuf95krJgjToWON3sSlsfYktkjC9SqIWnqEVTVNiE8V90TOY15LEe+4h1IAULz7DV9Pd3CjS
-	M4oRSD/6cuFDMlqD5qMC/XgLXc0NajZHresbC0z4sdwaP3I6/UrtzjQzUpZXr6Fr8tou+DU514gpQ
-	SFMhmSVsth3VOWggxGpr409eMZt0XfsTEW6IWgjMFTbLjaX8aPpndxEK5NrIAscOF1fn0OEnffU6I
-	cOm/drrzePLZAM7c+f0GK6a9cE5XDpXYwqkzw7xDwTkLhThC56+zDDHCkU62Kg5EWNScv4TyjjMlF
-	GA33G0E/+Q3JPJbRhnNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nSvGlCmeKVw5bvU85QzB2bog77kubKXTPP2yqOdm9ek=; b=lxtyGlj4ar94oJ
+	uQBAtVAJatB7/AVUl8rE4lG+f7MRPeSIVICogvn7MqHU2kC068Fik20go6Kv9PKv2a22VYvMgYBef
+	aiGEQpwUdw9U1XCLhJnY9fbEuv+nfAgGSu5mvRgDagjHUE2Z44jdfqwEPKn4ysOAbGRYYr9R9kpZP
+	VhwVAThdhbAfZAQcqAcmBWBoNBi7enAH0J2PE9c3/f6yaREW4A6u5//TM4oknqi4nvw0I9WgcRE0f
+	0TKrrmht006/HV01F0jPCzfiewKFIHoZE5Bg+DlKavdRQ4WSdY2B6QmcanROuXq6zvhIF9b3Es3cK
+	1A5pdIjkumhoMQ7IHhhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7zwQ-00071Z-2d; Sat, 29 Feb 2020 11:05:54 +0000
-Received: from [2001:4d48:ad52:3201:214:fdff:fe10:1be6]
- (helo=pandora.armlinux.org.uk)
+	id 1j80uO-00011i-U1; Sat, 29 Feb 2020 12:07:52 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7zwG-00070r-RZ
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 11:05:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=wuUpV5SHCRJYUop9hRbOcq6qSohuXXb7u+JkS37PiYg=; b=q9p5W+6pavIOD//8IHWCpzjOr
- Y1ZEJ6TqSVwIynLiC+KJHBAHMaeqDY/LgdnHCNHWMrgtdgESsKNSQ3EpwHAXRVP7rcde5/+qjZ9W8
- Wx2O1L2n9Db9cVyUP2wNsKltIux+pwQt87Ik7WK8+Aij8lC2Lui5Ps2lt6gA3NWMVunL3G0T2VdcH
- xYagoaVexzJ73H91KgiMTXRVFTVcmY6xNd7j5vp02lxnhOz/85PNJ8/7AYa0Nye+1ZVMK9YIfUyqW
- PtmfW8M4N/5xaCKCttbAWsYLQdwwyTW3Sg/tUcGPpq1qidsjw4IrrU6QizNZssXLYmE08eHQDHEdo
- +PKLeQkdA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:58468)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j7zvh-00015K-76; Sat, 29 Feb 2020 11:05:09 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j7zvU-0002uI-JD; Sat, 29 Feb 2020 11:04:56 +0000
-Date: Sat, 29 Feb 2020 11:04:56 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Olof Johansson <olof@lixom.net>, Jon Nettleton <jon@solid-run.com>,
- Theodore Ts'o <tytso@mit.edu>, Andreas Dilger <adilger.kernel@dilger.ca>
-Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
- driver for NXP Layerscape SoCs
-Message-ID: <20200229110456.GY25745@shell.armlinux.org.uk>
-References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
- <CAOesGMjAQSfx1WZr6b1kNX=Exipj_f4X_f39Db7AxXr4xG4Tkg@mail.gmail.com>
- <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
- <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
- <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
- <20200210152257.GD25745@shell.armlinux.org.uk>
- <20200229095550.GX25745@shell.armlinux.org.uk>
+ id 1j80u8-00010g-IE; Sat, 29 Feb 2020 12:07:38 +0000
+Received: from [192.168.1.183] ([37.4.249.171]) by mrelayeu.kundenserver.de
+ (mreue106 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MFL8J-1jAVrG184f-00Fg8F; Sat, 29 Feb 2020 13:07:23 +0100
+Subject: Re: vc4 on rpi3 A+
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Sergey Suloev <ssuloev@orpaltech.com>, linux-rpi-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
+References: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
+ <b71f1af17d68ee66a2781a694e8a77dcafedd76b.camel@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <d64d8f9b-d5bb-6e0c-04f9-86ef957f24c9@i2se.com>
+Date: Sat, 29 Feb 2020 13:07:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200229095550.GX25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <b71f1af17d68ee66a2781a694e8a77dcafedd76b.camel@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:zXMMUqM6HIM3RqHNTlTnaEKYsggOrGB3nNs0enAEnW3CKo5LWvY
+ HeRjdZlYIc1uO50OysB0A2TVMr6DY/J2tukoMViGYCn61TZSMM5ymCpoGYZ1nW2zsoNOCtv
+ +XuP9lB/kh7PTytq6jgzpzwCj/DUe8UscrnzJ6Jioq015PBqFtZETgzFljHWST5lpXQDB4N
+ lNfzGtSM0u+Mum6DvAEUQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BkwjAw4Spww=:CEIOVYRVRVBJKAjsnLd7Mq
+ FuRVELYjstjtKJ93n2jFuSgSaHONVim3LFtjQVS1GtAmL/Csw9TAYeZQReFjgCFCm8VyWH5Ah
+ WS9LVqEb4RlwLFGesvtxWiZFzTVNzF+fUd2vAaacmKLqVxCt1sq8bDyUgKH6XIfZ//Li4j90Z
+ LbcvGgtrCnh6fU8ArIBrFe2ep0t/KwTHNyMymfBnsiOyG8/NIWcrwCqPeSur11ObUPI+Kpl72
+ +acr4yEedqWxjSTpVRnYffgp993z8LiFF+sAwBTeMz/bURDjQ61LduhMt6gDE++kcQUSALw6m
+ cigzwGBzetnq87N37I/i6OtesuoaEWokaDyTJhWPdrHcJdG2JZCLfzzZQXdPfEI2TJcNWDuYP
+ s5Y74c+68cv/WuDP5sqv59zqut5hzZXFYGgNFe4uRMmOfL/MKbqjlmb8Pf/D4eII5r2FRyj6d
+ G821Kb2g1Z3ft3U2bf5DKqiwGx9szacvzTC/dW6xAeT1WJWjIcXTG2vQASRrGNNVDp3Hj0tdl
+ p6YUsEJEXHpJC8uyCblTY2mzcR1zRyB3i3QHfD9Ojla6XaLhmbjkHHA+9V5CNrc1UGSIn5ccO
+ uHcOJ7FmlDqAxVMplz/XgEAIHIlbTk02a0pr46k8Ki3jiIyF7U3yptpalRaFcN6Hrky7zF25l
+ j904Q0SnRwoc9uaYpGGF/Hsxm0YeWjXWBizGX4Vn4W++f+Ue5u43ihTgdEjh8BRIl0FYo+z1n
+ oTQOzNmEnEAmlqpaqnmoehfirUB/yY7cE9iXih2pQDtjg4Nq84ABQbJ/zSXCfnZtCb077z8Yj
+ fEMDv2R9C1/1t5IwIWP9BZyyoEb6oEhwTOtmRQenhD1XKMaoB3nvN+Iz1qrRnxdD+opmEq9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_030545_207000_25A14E8A 
-X-CRM114-Status: GOOD (  35.13  )
-X-Spam-Score: 1.1 (+)
+X-CRM114-CacheID: sfid-20200229_040736_895030_182E35A3 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,222 +123,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "Z.q. Hou" <zhiqiang.hou@nxp.com>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>,
+ bcm-kernel-feedback-list@broadcom.com, Maxime Ripard <maxime@cerno.tech>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 29, 2020 at 09:55:50AM +0000, Russell King - ARM Linux admin wrote:
-> On Mon, Feb 10, 2020 at 03:22:57PM +0000, Russell King - ARM Linux admin wrote:
-> > On Mon, Feb 10, 2020 at 04:12:30PM +0100, Olof Johansson wrote:
-> > > On Thu, Feb 6, 2020 at 11:57 AM Z.q. Hou <zhiqiang.hou@nxp.com> wrote:
-> > > >
-> > > > Hi Olof,
-> > > >
-> > > > Thanks a lot for your comments!
-> > > > And sorry for my delay respond!
-> > > 
-> > > Actually, they apply with only minor conflicts on top of current -next.
-> > > 
-> > > Bjorn, any chance we can get you to pick these up pretty soon? They
-> > > enable full use of a promising ARM developer system, the SolidRun
-> > > HoneyComb, and would be quite valuable for me and others to be able to
-> > > use with mainline or -next without any additional patches applied --
-> > > which this patchset achieves.
-> > > 
-> > > I know there are pending revisions based on feedback. I'll leave it up
-> > > to you and others to determine if that can be done with incremental
-> > > patches on top, or if it should be fixed before the initial patchset
-> > > is applied. But all in all, it's holding up adaption by me and surely
-> > > others of a very interesting platform -- I'm looking to replace my
-> > > aging MacchiatoBin with one of these and would need PCIe/NVMe to work
-> > > before I do.
-> > 
-> > If you're going to be using NVMe, make sure you use a power-fail safe
-> > version; I've already had one instance where ext4 failed to mount
-> > because of a corrupted journal using an XPG SX8200 after the Honeycomb
-> > Serror'd, and then I powered it down after a few hours before later
-> > booting it back up.
-> > 
-> > EXT4-fs (nvme0n1p2): INFO: recovery required on readonly filesystem
-> > EXT4-fs (nvme0n1p2): write access will be enabled during recovery
-> > JBD2: journal transaction 80849 on nvme0n1p2-8 is corrupt.
-> > EXT4-fs (nvme0n1p2): error loading journal
-> 
-> ... and last night, I just got more ext4fs errors on the NVMe, without
-> any unclean power cycles:
-> 
-> [73729.556544] EXT4-fs error (device nvme0n1p2): ext4_lookup:1700: inode #917524: comm rm: iget: checksum invalid
-> [73729.565354] Aborting journal on device nvme0n1p2-8.
-> [73729.568995] EXT4-fs (nvme0n1p2): Remounting filesystem read-only
-> [73729.569077] EXT4-fs error (device nvme0n1p2): ext4_journal_check_start:61: Detected aborted journal
-> [73729.573741] EXT4-fs error (device nvme0n1p2): ext4_lookup:1700: inode #917524: comm rm: iget: checksum invalid
-> [73729.593330] EXT4-fs error (device nvme0n1p2): ext4_lookup:1700: inode #917524: comm mv: iget: checksum invalid
-> 
-> The affected file is /var/backups/dpkg.status.6.gz
-> 
-> It was cleanly shut down and powered off on the 22nd February, booted
-> yesterday morning followed by another reboot a few minutes later.
-> 
-> What worries me is the fact that corruption has happened - and if that
-> happens to a file rather than an inode, it will likely go unnoticed
-> for a considerably longer time.
-> 
-> I think I'm getting to the point of deciding NVMe or the LX2160A to be
-> just too unreliable for serious use.  I hadn't noticed any issues when
-> using the rootfs on the eMMC, so it suggests either the NVMe is
-> unreliable, or there's a problem with PCIe on this platform (which we
-> kind of know about with Jon's GPU rendering issues.)
+Hi Nicolas,
 
-Adding Ted and Andreas...
+Am 28.02.20 um 14:09 schrieb Nicolas Saenz Julienne:
+> Hi Sergey,
+>
+> On Thu, 2020-02-20 at 11:21 +0300, Sergey Suloev wrote:
+>> Hello, guys,
+>>
+>> could anyone clarify the status of vc4 drm support on RPI 3A+ ?
+>>
+>> I tried to build kernel 5.5 and 5.6-rc2 in 32bit and aarch64 
+>> configurations with VC4 turned ON but both unsuccessful - vc4 drm driver 
+>> is listed in memory but not working and not producing any typical DRM 
+>> log output.
+> I managed to get my hands on a rpi3a+ and reproduce the issue. 'dmesg -lerr'
+> outputs this:
+>
+> 	bcm2835-power: Timeout waiting for grafx power OK
+>
+> This is a known issue, see https://github.com/raspberrypi/linux/issues/3046.
+> I attached a device-tree patch in case you want to verify it fixes the issue on
+> your board.
 
-Here's the debugfs -n "id" output for dpkg.status.5.gz (which is fine,
-and probably a similar size):
+i tested recent linux-next (multi_v7_defconfig) on my Raspberry Pi 3A+
+with current Raspbian.
 
-debugfs:  id <917527>
-0000  a481 0000 30ff 0300 bd8e 475e bd77 4f5e  ....0.....G^.wO^
-0020  29ca 345e 0000 0000 0000 0100 0002 0000  ).4^............
-0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
-0060  0000 0000 0000 0000 4000 0000 8087 3800  ........@.....8.
-0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
-*
-0140  0000 0000 c40b 4c0a 0000 0000 0000 0000  ......L.........
-0160  0000 0000 0000 0000 0000 0000 3884 0000  ............8...
-0200  2000 95f2 44b8 bdc9 a4d2 9883 c861 dc92   ...D........a..
-0220  bd31 4a5e ecc5 260c 0000 0000 0000 0000  .1J^..&.........
-0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
-*
+Without your patch the LXDE does come up, but i also see those timeouts
+and the v3d part hangs in a deferrred probe.
 
-and for the affected inode:
-debugfs:  id <917524>
-0000  a481 0000 30ff 0300 3d3d 465e bd77 4f5e  ....0...==F^.wO^
-0020  29ca 345e 0000 0000 0000 0100 0002 0000  ).4^............
-0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
-0060  0000 0000 0000 0000 4000 0000 c088 3800  ........@.....8.
-0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
-*
-0140  0000 0000 5fc4 cfb4 0000 0000 0000 0000  ...._...........
-0160  0000 0000 0000 0000 0000 0000 af23 0000  .............#..
-0200  2000 1cc3 ac95 c9c8 a4d2 9883 583e addf   ...........X>..
-0220  3de0 485e b04d 7151 0000 0000 0000 0000  =.H^.MqQ........
-0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
-*
+With your patch the LXDE doesn't come up.
 
-and "stat" output:
-debugfs:  stat <917527>
-Inode: 917527   Type: regular    Mode:  0644   Flags: 0x80000
-Generation: 172755908    Version: 0x00000000:00000001
-User:     0   Group:     0   Project:     0   Size: 261936
-File ACL: 0
-Links: 1   Blockcount: 512
-Fragment:  Address: 0    Number: 0    Size: 0
- ctime: 0x5e4f77bd:c9bdb844 -- Fri Feb 21 06:25:01 2020
- atime: 0x5e478ebd:92dc61c8 -- Sat Feb 15 06:25:01 2020
- mtime: 0x5e34ca29:8398d2a4 -- Sat Feb  1 00:45:29 2020
-crtime: 0x5e4a31bd:0c26c5ec -- Mon Feb 17 06:25:01 2020
-Size of extra inode fields: 32
-Inode checksum: 0xf2958438
-EXTENTS:
-(0-63):3704704-3704767
-debugfs:  stat <917524>
-Inode: 917524   Type: regular    Mode:  0644   Flags: 0x80000
-Generation: 3033515103    Version: 0x00000000:00000001
-User:     0   Group:     0   Project:     0   Size: 261936
-File ACL: 0
-Links: 1   Blockcount: 512
-Fragment:  Address: 0    Number: 0    Size: 0
- ctime: 0x5e4f77bd:c8c995ac -- Fri Feb 21 06:25:01 2020
- atime: 0x5e463d3d:dfad3e58 -- Fri Feb 14 06:25:01 2020
- mtime: 0x5e34ca29:8398d2a4 -- Sat Feb  1 00:45:29 2020
-crtime: 0x5e48e03d:51714db0 -- Sun Feb 16 06:25:01 2020
-Size of extra inode fields: 32
-Inode checksum: 0xc31c23af
-EXTENTS:
-(0-63):3705024-3705087
+Unfortunately i don't have any newer suggestions other the mentioned in
+the github issue.
 
-When using sif (set_inode_info) to re-set the UID to 0 on this (so
-provoke the checksum to be updated):
+Best regards
+Stefan
 
-debugfs:  id <917524>
-0000  a481 0000 30ff 0300 3d3d 465e bd77 4f5e  ....0...==F^.wO^
-0020  29ca 345e 0000 0000 0000 0100 0002 0000  ).4^............
-0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
-0060  0000 0000 0000 0000 4000 0000 c088 3800  ........@.....8.
-0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
-*
-0140  0000 0000 5fc4 cfb4 0000 0000 0000 0000  ...._...........
-0160  0000 0000 0000 0000 0000 0000 b61f 0000  ................
-                                    ^^^^
-0200  2000 aa15 ac95 c9c8 a4d2 9883 583e addf   ...........X>..
-           ^^^^
-0220  3de0 485e b04d 7151 0000 0000 0000 0000  =.H^.MqQ........
-0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
-*
+>
+> @Stefan I guess I'm going to have to revert the pm patch, any comments before I
+> do?
+>
+> Regards,
+> Nicolas
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
-The values with "^^^^" are the checksum, which are the only values
-that have changed here - the checksum is now 0x15aa1fb6 rather than
-0xc31c23af.
-
-With that changed, running e2fsck -n on the filesystem results in a
-pass:
-
-root@cex7:~# e2fsck -n /dev/nvme0n1p2
-e2fsck 1.44.5 (15-Dec-2018)
-Warning: skipping journal recovery because doing a read-only filesystem check.
-/dev/nvme0n1p2 contains a file system with errors, check forced.
-Pass 1: Checking inodes, blocks, and sizes
-Pass 2: Checking directory structure
-Pass 3: Checking directory connectivity
-Pass 4: Checking reference counts
-Pass 5: Checking group summary information
-/dev/nvme0n1p2: 121163/2097152 files (0.1% non-contiguous), 1349227/8388608 blocks
-
-and the file now appears to be intact (being a gzip file, gzip verifies
-that the contents are now as it expects.)
-
-So, it looks like the _only_ issue is that the checksum on the inode
-became invalid, which seems to suggest that it *isn't* a NVMe nor PCIe
-issue.
-
-I wonder whether the journal would contain anything useful, but I don't
-know how to use debugfs to find that out - while I can dump the journal,
-I'd need to know which block contains the inode, and then work out where
-in the journal that block was going to be written.  If that would help,
-let me know ASAP as I'll hold off rebooting the platform for a while
-(which means the filesystem will remain as-is - and yes, I have the
-debugfs file for e2undo to put stuff back.)  Maybe it's possible to pull
-the block number out of the e2undo file?
-
-tune2fs says:
-
-Checksum type:            crc32c
-Checksum:                 0x682f91b9
-
-I guess this is what is used to checksum the inodes?  If so, it's using
-the kernel's crc32c-generic driver (according to /proc/crypto).
-
-Could it be a race condition, or some problem that's specific to the
-ARM64 kernel that's provoking this corruption?
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
