@@ -2,49 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 969AC1747DE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 17:06:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CED831747DD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 17:06:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GN06UOikcYLr5w/fdKeeFaS/U395RnxGyDeo7+klDSs=; b=nmv
-	nwt1Zhf3nnFROxrwB2RNfk9O1nL1AR4hSg8OA/uHQDL2pAqAQuv98v+upBcAEGxldDVAnA5J4Kf1c
-	TPiJVr4OqnVKQ0Bict4x/mzGDUBz/nCD3M7DS1gzkyzUi4qvhofokPMjOeDraip6FcK/cKIa0SV+K
-	LAVzsxS3aYd3SlbrQbcf31+lXVcTBRzLwEpjLV9iumn6xg3UtlukSsp6aAYRx49Uyz4HQT9tUYlcW
-	I5HRA1qZI0WxV2fiGPeJrYIZgnH4MRhKQFOtXhUcpeOQo5xeSZUH3eyChbPAINPOcxY9QF11Teqft
-	GyPG33W44tdisIPDHs9HKWb+k7EM09g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YKyK01HtAIt+y451JkWNBTt/qrLcDb9BskosGMe7TN0=; b=tAMxTmZsWC5vdB1GV6NNZy9EB+
+	KXGgJCHyO5oAlSggf+6ORmtdBRqCRjTwbtf4nDCaLazpgueEOvZYkj+HqK0fs1cCyG0bwnuv1aYqR
+	wU81a/YAWANR8c88NU6KCh3K5z8d49NGI88yq0baZb+iYzP4qCDw7Z/sEaZuvK9lu2m6Hjoj5cGj/
+	eomuaRiBXbYsOgPH8gFCEcBrBI52SnMdpCAcNmwSk6TCNJEKt/7S/yWEQOouTggBSDK8w7kyQZ2Ci
+	aQAjSXRAuaaxXICE1xsTg/Vkc/f5VRmPYVEt2sJxkdIhxaVQDtyeYwvov9DuNsNhNwJi95lR1jOrv
+	tKwFNxtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j84dE-0006wh-Ck; Sat, 29 Feb 2020 16:06:24 +0000
+	id 1j84ct-0006en-To; Sat, 29 Feb 2020 16:06:03 +0000
 Received: from ms9.eaxlabs.cz ([147.135.177.209])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j84ci-0006cV-6S
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 16:05:54 +0000
+ id 1j84ci-0006cm-B6
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 16:05:53 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=eaxlabs.cz;
- s=mail; h=Message-Id:Date:Subject:Cc:To:From;
- bh=Ckgfb+tZ4UayimR7ATmjnhS6EOieCUCK3o2mRGl5D0k=; 
- b=NkxIiuTkB7rHeUHTFzQ7/Guyj4/QwnLwBusq91zKwUl1NgwFnwEKxYW/yZ7r7f17urT6PP6bkyrUgqGcFcEssp0wR0gN49vFfEDPV+SP1orpR+bsrCORGoOchWPOT/CQ/8LM59e90KbPeBXjhNzNJoLzRgZ0HZ36scpn5WpNERw=;
+ s=mail; 
+ h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From;
+ bh=0sL7frbHX+9iov4VRw0n07dyNagmVgH6U/A+xu41NOk=; 
+ b=U7FACzCGC/KpiyvYGzuV/ssi7fk91JfFx3sPnZIDuDGZDcVFCc5/dLoE37026ZTSmjgiwKDe1kC7W1Mw7wn1lkqRmS4lynTk0j80KGn67sWnqOgYfSiHTbnBbxunDOAwu4LipcXyTZf1a1qmFClCUKIDkVj2Tjrnilv4aiwc+zg=;
 Received: from [82.99.129.6] (helo=localhost.localdomain)
  by ms9.eaxlabs.cz with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.84_2) (envelope-from <devik@eaxlabs.cz>)
- id 1j84cV-000150-TL; Sat, 29 Feb 2020 17:05:42 +0100
+ id 1j84ca-000150-MZ; Sat, 29 Feb 2020 17:05:46 +0100
 From: Martin Devera <devik@eaxlabs.cz>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jiri Slaby <jslaby@suse.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Alexandre Torgue <alexandre.torgue@st.com>,
  linux-serial@vger.kernel.org (open list:SERIAL DRIVERS),
+ devicetree@vger.kernel.org (open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS), 
  linux-arm-kernel@lists.infradead.org (moderated list:ARM/STM32 ARCHITECTURE), 
  linux-kernel@vger.kernel.org (open list)
-Subject: [PATCH 1/2] tty/serial: Add st,swap OF option to stm32-usart
-Date: Sat, 29 Feb 2020 17:05:06 +0100
-Message-Id: <20200229160507.31309-1-devik@eaxlabs.cz>
+Subject: [PATCH 2/2] dt-bindings: serial: Add st,swap to stm32-usart
+Date: Sat, 29 Feb 2020 17:05:07 +0100
+Message-Id: <20200229160507.31309-2-devik@eaxlabs.cz>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200229160507.31309-1-devik@eaxlabs.cz>
+References: <20200229160507.31309-1-devik@eaxlabs.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_080552_546936_7A2EDF5E 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20200229_080552_548760_C7F45774 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -77,49 +84,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-STM32 F7/H7 usarts supports RX & TX pin swapping.
-Add option to turn it on.
-Tested on STM32MP157.
+Add new st,swap property to allow for RX & TX pin swapping.
 
 Signed-off-by: Martin Devera <devik@eaxlabs.cz>
 ---
- drivers/tty/serial/stm32-usart.c | 3 ++-
- drivers/tty/serial/stm32-usart.h | 1 +
- 2 files changed, 3 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/serial/st,stm32-usart.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index fdcc2142aa79..8d25869a02eb 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -780,7 +780,7 @@ static void stm32_set_termios(struct uart_port *port, struct ktermios *termios,
- 	cr1 = USART_CR1_TE | USART_CR1_RE;
- 	if (stm32_port->fifoen)
- 		cr1 |= USART_CR1_FIFOEN;
--	cr2 = 0;
-+	cr2 = stm32_port->swap ? USART_CR2_SWAP : 0;
- 
- 	/* Tx and RX FIFO configuration */
- 	cr3 = readl_relaxed(port->membase + ofs->cr3);
-@@ -1097,6 +1097,7 @@ static struct stm32_port *stm32_of_get_stm32_port(struct platform_device *pdev)
- 
- 	stm32_ports[id].hw_flow_control = of_property_read_bool(np,
- 							"st,hw-flow-ctrl");
-+	stm32_ports[id].swap = of_property_read_bool(np, "st,swap");
- 	stm32_ports[id].port.line = id;
- 	stm32_ports[id].cr1_irq = USART_CR1_RXNEIE;
- 	stm32_ports[id].cr3_irq = 0;
-diff --git a/drivers/tty/serial/stm32-usart.h b/drivers/tty/serial/stm32-usart.h
-index 2a68bc48652e..2503a91b890c 100644
---- a/drivers/tty/serial/stm32-usart.h
-+++ b/drivers/tty/serial/stm32-usart.h
-@@ -275,6 +275,7 @@ struct stm32_port {
- 	enum dma_cb rx_dma_cb;	 /* dma rx callback status    */
- 	bool tx_dma_busy;	 /* dma tx busy               */
- 	bool hw_flow_control;
-+	bool swap;		 /* swap RX & TX pins */
- 	bool fifoen;
- 	int wakeirq;
- 	struct pinctrl_state *console_pins;
+diff --git a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt b/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
+index 08b499045a38..cbfa1f9f4b17 100644
+--- a/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
++++ b/Documentation/devicetree/bindings/serial/st,stm32-usart.txt
+@@ -24,6 +24,7 @@ Optional properties:
+ - pinctrl-n: Phandle(s) pointing to pin configuration nodes.
+   For Pinctrl properties see ../pinctrl/pinctrl-bindings.txt
+ - st,hw-flow-ctrl: bool flag to enable hardware flow control.
++- st,swap: bool flag to swap RX and TX pins.
+ - rs485-rts-delay, rs485-rx-during-tx, rs485-rts-active-low,
+   linux,rs485-enabled-at-boot-time: see rs485.txt.
+ - dmas: phandle(s) to DMA controller node(s). Refer to stm32-dma.txt
 -- 
 2.11.0
 
