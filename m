@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 225DC174751
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 15:22:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8653174752
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 15:23:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=O54xNOn9vo8YwwVzz4DNY+rt52zQm9f47bw59W1Pi8Y=; b=Q+P
-	/SyEjTYns8kiRKwh4ZnjD4lpTbqMWdULtfwCQtN6AtuYFdjbk/q5DGx3f9sqQfHSBUxvVRsE3pnG5
-	xnWGN9ojvo5vhY31WfBZs1XyRRXM8Ka9gi4opUwTNaw7dXDUH+egaIwE+lNycE1ETofcUO3W7CKUQ
-	QhcIcL+koFKR5GEz4N5QGiAXCduugWeSt3C3bEfN3lMO8rw4LCzPrzuWFP6KFfKouAYB6MHcFtu85
-	Boh8kF0GxVupUaDA3RZztXrGmKoitJOdRZrO8ntVEfpxsa6rGV3wx1TO1sWazSfdwmAPflCE2olAt
-	d2+RWX2aCaAjhyGXJwWighZa7OZh6cw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=9aSr1yt51770RuyR8c/k9NcYiQpTFjgZH17P8IrMmjM=; b=G029zjb7lVHNU3AkJNjH7uXIW2
+	d9Z0bSCzJruxdRfUpRqEoCHD9FkM3IVez8/cG0GfPyxWmt0CApXA9PCNc6u8QIkg97Ilxy3es0/bG
+	jVMPmjZQDzRDN5ctU3qtL5NF1gVMmpupwJFJICw1J1YcvxF+HizM/PIYxZeYaYT9dY2w7JYV7wufM
+	VKe6dg5MfFSmF8xnWhzgvL7i3h+XIbmLteAYzbZFC55vnPLF7bZGAwY87lp9RlUBaxovbaxOqxGtT
+	TvBNoasVwwGidH/H5VDIXvc1otxYT9Zm9k2VRNOXFvp6Ddhm+XPWeo4iEzwGhV/OTCT45s8E5mQR/
+	vMzCdjdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j830n-0005pN-Uh; Sat, 29 Feb 2020 14:22:37 +0000
+	id 1j8312-0005xf-Sb; Sat, 29 Feb 2020 14:22:52 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j830e-0005om-RY
+ id 1j830f-0005op-G0
  for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 14:22:30 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5E3041A0713;
- Sat, 29 Feb 2020 15:22:27 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4EED91A0716;
+ Sat, 29 Feb 2020 15:22:28 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 15C451A0716;
- Sat, 29 Feb 2020 15:22:22 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0790A1A071C;
+ Sat, 29 Feb 2020 15:22:23 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6F2A3402AD;
- Sat, 29 Feb 2020 22:22:15 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 617EA402CB;
+ Sat, 29 Feb 2020 22:22:16 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] arm64: dts: imx8mp-evk: Add i2c3 support
-Date: Sat, 29 Feb 2020 22:16:25 +0800
-Message-Id: <1582985786-2198-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/2] arm64: dts: imx8mp-evk: Enable pca6416 on i2c3 bus
+Date: Sat, 29 Feb 2020 22:16:26 +0800
+Message-Id: <1582985786-2198-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1582985786-2198-1-git-send-email-Anson.Huang@nxp.com>
+References: <1582985786-2198-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_062229_030111_63A747EC 
-X-CRM114-Status: UNSURE (   7.63  )
+X-CRM114-CacheID: sfid-20200229_062229_666600_7F64FC00 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,45 +78,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable i2c3 for i.MX8MP EVK board.
+Enable pca6416 on i.MX8MP EVK board's i2c3 bus.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mp-evk.dts | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8mp-evk.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
-index a97a03c..b70c42a 100644
+index b70c42a..3da1fff 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mp-evk.dts
-@@ -66,6 +66,13 @@
- 	};
- };
- 
-+&i2c3 {
-+	clock-frequency = <400000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c3>;
-+	status = "okay";
-+};
-+
- &snvs_pwrkey {
+@@ -71,6 +71,13 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_i2c3>;
  	status = "okay";
- };
-@@ -138,6 +145,13 @@
- 		>;
- 	};
- 
-+	pinctrl_i2c3: i2c3grp {
-+		fsl,pins = <
-+			MX8MP_IOMUXC_I2C3_SCL__I2C3_SCL		0x400001c3
-+			MX8MP_IOMUXC_I2C3_SDA__I2C3_SDA		0x400001c3
-+		>;
-+	};
 +
- 	pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
- 		fsl,pins = <
- 			MX8MP_IOMUXC_SD2_RESET_B__GPIO2_IO19	0x41
++	pca6416: gpio@20 {
++		compatible = "ti,tca6416";
++		reg = <0x20>;
++		gpio-controller;
++		#gpio-cells = <2>;
++	};
+ };
+ 
+ &snvs_pwrkey {
 -- 
 2.7.4
 
