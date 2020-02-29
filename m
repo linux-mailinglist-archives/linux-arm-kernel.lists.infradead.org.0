@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7500B1749BF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 23:33:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 592AC1749C8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 23:38:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RyASmU4jRvywrUIQ9qlC98uf/tHMJO4EsJX7WQARBew=; b=h0DkfOkpWOrS/y
-	O81tXCZFscjnbtT2pQtGv3ZpysGMoS941c4jC9nmX0yB4A7JKlVNFIEqVDpOrM/EXnZNw7XBPEMbT
-	W0MfyimIgOG4XrvKk6Ch5wZFT+sXlt8EztvFYujEdmOi4GNNLkwfQDk/EsRMPTDXj6lIsXY+eg3G9
-	uF8s0d42K5y0uuEyio8hhG2Ndp/Y0TMaVwozHoBYvjN2n/51QW02eWovXXAmUQNLX8xDkxQX7C1/1
-	AormlEQg0KopniIh2j7vp4+wrrQh3QU2nbswjMhn8nIaKecF/BqO3GJBRysaPoQ8R1zuhPYT+PzyX
-	pRNDr7d3pmAqGq+kImsg==;
+	List-Owner; bh=LU2R9ieVzVJqM/lgD7IFIZ0HGvyER0YbxpJrxlbzdjg=; b=TH/DDdtTSfsOOa
+	2RoZSCLl9n9ibeL3ScAc6ezvAu0jnZlUuKZb3GcKG61rxYPqHLZucBoZ3TVHZGAZL3cpPT2q9vciP
+	pcrl3T/dLSade08h2W92hZm0RoseXByRM6Pfc8k1OgVqhEXOKd3/w7CM6l1DesU+mvMDnQj/xzUQ7
+	NtaPdxbcHyaPMvMECqfnpfufB9p14TRlX31xhrJRO+pIMeoSoGtx6Tto/7UfpFlt9fa/1347dklJ9
+	eySkJuV3EjU1tdqhHkGj0CH9aLdiDXS/FMPJfMEHoLuCk/yb+LBGGhjuPBNE7DgQP/XeMiWbFBlT1
+	lcsJp8lLLBG+xuCjWE/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8Afs-0005Kr-3u; Sat, 29 Feb 2020 22:33:32 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1j8Ak4-0007ER-88; Sat, 29 Feb 2020 22:37:52 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Afg-0005Jp-U7
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 22:33:22 +0000
-Received: by mail-oi1-x243.google.com with SMTP id g6so4928356oiy.1
+ id 1j8Ajv-0007E5-Ef
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 22:37:44 +0000
+Received: by mail-oi1-x242.google.com with SMTP id b18so6681283oie.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Feb 2020 14:33:20 -0800 (PST)
+ Sat, 29 Feb 2020 14:37:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=intel-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0+qFmqhcgb7jhEPbeVLEVdCHOr+If3XHxdqQ1tb+5pc=;
- b=MJlh0jh6fKGmlMf8QKHfSMGKxkzGHEeUxIKuMK576jnOzp5ajBbWFd723+Nwz5sX5o
- kd5kFB1Qa4nMK4C2Quz1EtosMFhbFGty2TrTrSeM0926YL1M9TjPuncmtlZef3BqKcKO
- 0QMDkTU7/GfTsJIR/w5n5LoqIVS0h8Ha+vMH2bvx31vmcGio+VmcVwwkaawh8iuK3FDK
- B8oJ2LCRKfwY4UJPa+Ufg0yoRxTMpdzcD2JzNOx//OiTA4E21r9KhphDTjUvXXJpa4mN
- qph+2qengVBm0C0Rc0eQp7M69RV9q8SQixDZKId1V2L1G6rpoNj9Qc0++zW1EeGd/ZTO
- X0Mw==
+ :cc; bh=vMgdrB1ihQCYAIbfFMzkiv3JHJetoGVM7PTi0q5ALmo=;
+ b=OsiUhUD4bT1O7upbHwDuinmveawahmkCK+8PabYGyG4OgCvzVO2Y9gPARZOt8Q/czD
+ +gKk4PjNad9Cr3uGC/89VvuVJcnJzMxJ6ySwmoXkUgS4Qbmfer8kAdJCtymsZ4N4Kisj
+ xhsW4Trq+pLWIg+nu+GHlVmCRXyn51E/QSA0Axc54CrRDbWXQQuvdO5+eE5LbwM4gEdp
+ uF4zuIbpl+wi5BquzuZ+DBrW3+oz59DM54WqcTU+Q4EjA/hE6ZkxGgQBfjmJzKNErQrc
+ d4M1+ejrtFxlmMb9QI6A2Bvzid6CQiM91vKcAXrSOKEwClT+jdHfQPTQ7XCWj2cSd8Cg
+ EVvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0+qFmqhcgb7jhEPbeVLEVdCHOr+If3XHxdqQ1tb+5pc=;
- b=kLf6+oV3GWW54OfLmBaElZ8ooz631UXHQr01IqONcmfSfi0uF6BkzWnPteFm+Kkuzp
- GLIN79zGxsOGkpGdX3J1TMP39pSc2bW99o/ozjcEwAuzZSs2RefCie94OA2021gXdiLo
- tK78KHXOLe3QW+HnZpn/kZZtEBriXKC1wHMRnpfZhlMQZ3T+iTgzQntd1ri/ussgptip
- QilvgoPe6/wbUVmmCZVzDZSpY3H7T1kko/TbjhItA93hcj5arid7uiFoCf9xp2G+COzv
- UzulKlLiv7mb3YDQiBFoiny1xNuB0pDkD4+yQ4CrMaAHmTG4tUgfuEcer+i2QDTbriNq
- JeTQ==
-X-Gm-Message-State: APjAAAWX0udW3AW421dpovfv1/GiMK94FyxRaH9fjPm+1NHNTB3+Ekru
- Vpvb/H3cwG/mHkPixSbhW5jBz8YSyC5s8SXIXHzy/g==
-X-Google-Smtp-Source: APXvYqyGoDfozeCQcvGtfIbG5zusEz6FXIH1C19GvJgWOw0G4+LzaZgF0KV8DfFmkR6MhUJ7WBGfGAzVDBqWpHKu+yI=
-X-Received: by 2002:a54:4791:: with SMTP id o17mr6946593oic.70.1583015599612; 
- Sat, 29 Feb 2020 14:33:19 -0800 (PST)
+ bh=vMgdrB1ihQCYAIbfFMzkiv3JHJetoGVM7PTi0q5ALmo=;
+ b=IuvsUVfkBCaCKyhp8bTEtFq5jglSoHRH6KySN8xOqqSHPbCfzsvvkJd7QSBQRN0u0H
+ dvhBRtPtzEdvGbKGOlDtObWMvH0Ngl6x4r8WbCD7w6UsNqSk3pKg0GVcHJotWYXEZ5FM
+ z+R7OUCDI6T8ZZzfEWkJupOxR/jWiV3+meYG0fGDpehp1aTRsMu1mUk33l41AAuwLUTv
+ aJIIWOsnaLxb1pTJVONebTpAUNCsDK3nuZIu6yuvuW0QFgUOjBCGVewtQt78UtZFrrhF
+ ztu/Kt6E1s9EQsGEiGkLClZGLsxOZ4Y9HT1fMTxVKnUJK3qAY11jx3G/oskoV16q1Bs2
+ Xt1A==
+X-Gm-Message-State: APjAAAXODJejm/+44RXcjvJ94PjdFPrGRaFTGSqdqdnxFXzI7ZJX76sz
+ ZfywuF47wg3iCDtvcJKJjqsZWhDRdN/Yaive4zAzJg==
+X-Google-Smtp-Source: APXvYqzG75KD/D3fDhylY7WK/HGO2n1t1MkOMUt0WzVJixm4DCk6JJ0g5eYvnxnmvSeOxw028BqGSEKkK+YHNuO1FGI=
+X-Received: by 2002:a54:4098:: with SMTP id i24mr5511480oii.149.1583015862617; 
+ Sat, 29 Feb 2020 14:37:42 -0800 (PST)
 MIME-Version: 1.0
 References: <20200221182503.28317-1-logang@deltatee.com>
- <20200221182503.28317-5-logang@deltatee.com>
-In-Reply-To: <20200221182503.28317-5-logang@deltatee.com>
+ <20200221182503.28317-4-logang@deltatee.com>
+In-Reply-To: <20200221182503.28317-4-logang@deltatee.com>
 From: Dan Williams <dan.j.williams@intel.com>
-Date: Sat, 29 Feb 2020 14:33:08 -0800
-Message-ID: <CAPcyv4j=bZ5KBPp6PbViERdDe+HZpV_W6qbSJupTNAzyfiK6xg@mail.gmail.com>
-Subject: Re: [PATCH v3 4/7] x86/mm: Introduce _set_memory_prot()
+Date: Sat, 29 Feb 2020 14:37:31 -0800
+Message-ID: <CAPcyv4ici3h_C_c+9eapcehq+Lg3cabkq3n3XXvbSg=qUrJLgQ@mail.gmail.com>
+Subject: Re: [PATCH v3 3/7] x86/mm: Thread pgprot_t through
+ init_memory_mapping()
 To: Logan Gunthorpe <logang@deltatee.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_143321_114027_10017F7D 
-X-CRM114-Status: GOOD (  15.85  )
+X-CRM114-CacheID: sfid-20200229_143743_494486_17AEE6E2 
+X-CRM114-Status: GOOD (  10.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -111,8 +112,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Feb 21, 2020 at 10:25 AM Logan Gunthorpe <logang@deltatee.com> wrote:
 >
-> For use in the 32bit arch_add_memory() to set the pgprot type of the
-> memory to add.
+> In prepartion to support a pgprot_t argument for arch_add_memory().
+>
+> It's required to move the prototype of init_memory_mapping() seeing
+> the original location came before the definition of pgprot_t.
 >
 > Cc: Thomas Gleixner <tglx@linutronix.de>
 > Cc: Ingo Molnar <mingo@redhat.com>
@@ -123,38 +126,8 @@ On Fri, Feb 21, 2020 at 10:25 AM Logan Gunthorpe <logang@deltatee.com> wrote:
 > Cc: Andy Lutomirski <luto@kernel.org>
 > Cc: Peter Zijlstra <peterz@infradead.org>
 > Signed-off-by: Logan Gunthorpe <logang@deltatee.com>
-> ---
->  arch/x86/include/asm/set_memory.h | 1 +
->  arch/x86/mm/pat/set_memory.c      | 7 +++++++
->  2 files changed, 8 insertions(+)
->
-> diff --git a/arch/x86/include/asm/set_memory.h b/arch/x86/include/asm/set_memory.h
-> index 64c3dce374e5..0aca959cf9a4 100644
-> --- a/arch/x86/include/asm/set_memory.h
-> +++ b/arch/x86/include/asm/set_memory.h
-> @@ -34,6 +34,7 @@
->   * The caller is required to take care of these.
->   */
->
-> +int _set_memory_prot(unsigned long addr, int numpages, pgprot_t prot);
 
-I wonder if this should be separated from the naming convention of the
-other routines because this is only an internal helper for code paths
-where the prot was established by an upper layer. For example, I
-expect that the kernel does not want new usages to make the mistake of
-calling:
-
-   _set_memory_prot(..., pgprot_writecombine(pgprot))
-
-...instead of
-
-    _set_memory_wc()
-
-I'm thinking just a double underscore rename (__set_memory_prot) and a
-kerneldoc comment for that  pointing people to use the direct
-_set_memory_<cachemode> helpers.
-
-With that you can add:
+Looks good, checked for argument confusion, passes the nvdimm unit tests.
 
 Reviewed-by: Dan Williams <dan.j.williams@intel.com>
 
