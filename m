@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B01174908
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 20:49:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF7A417491E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 21:15:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FJAiNleBWXpPUQQdxuuFxHYy3olyL1EHAb/SHmCJhls=; b=Q8WSuzATC4rj89
-	vj9P0UE2u5r5RxXLxSFPtfnNX7906Z7DMUE5wdxgVFd4eDNla7HXrJaFBYipdevcP5mMDwvHjnElG
-	KJbQF/5lDpBEgzddTVtffJ0ycwwvx9wQ1DKYhLu+3G167pHaU3KeiZh3tnk1f+3t1gH7ozXT5g+ch
-	m5QhoQRY0q8d88aFeKUeC5pU9D/sEY0jiklv4Zq4pD3PnlVdzibONkgUirT3QI1HYcvu41otnAQQG
-	9lnxUXHn7ARI1Ifmkx4wFc0FcnLDKeVs4GzJAfmcp6X+122T64csfFmrF4kBmVBcaJWBGy8Zqlr60
-	tEKfKT3J340jpTKiYbNg==;
+	List-Owner; bh=NenqvAyaq78TJE+0wlR+vxv9j1Res1Ur4o/oKLCeypU=; b=q9N6NWiMWw4OZf
+	nORvQLdyZvXgjrl7JuvfTlIUR8kPwNXUomTvF+eNxv8txQLOFfKhS0bjkrQcATuezwrxqdDuMW6wd
+	2rzhPz7+V7tnC+AVwkDmd568ifEnBqhE5VGCWQAHaNisDlekNkBoLYVrVkxUKqfQHUlrOc8a+WWG5
+	O7IanyCFXQ/HLC8KATG83MyConLaBSXlPYVQNm6q/xwIq7twYQN8yLM4Z95tX+iU33vI20UrBttOy
+	Zg7V7IeSIcI3a/dRVM2az50pxDHC6PVQytF1Jyey1LMNRSqIA++mI+muEGSoh1nkevzqcZqM77tnF
+	mh07ZG1JTZnPozjXdirw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j887M-0008RE-Td; Sat, 29 Feb 2020 19:49:44 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j88W1-00081B-7y; Sat, 29 Feb 2020 20:15:13 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j887G-0008Qq-Qt
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 19:49:40 +0000
-Received: by mail-lj1-x243.google.com with SMTP id e18so7145314ljn.12
+ id 1j88Vi-00080i-WA
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 20:14:56 +0000
+Received: by mail-qk1-x741.google.com with SMTP id m9so6455819qke.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Feb 2020 11:49:35 -0800 (PST)
+ Sat, 29 Feb 2020 12:14:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=o3JxuikDu+8uRzzDlcl8zOj9Z4SnxlDgkHqB9Vqhqbw=;
- b=P59vsc7uAayBzDAbeTThb+L2Agp/GSN+QRQBb4bgsfhcCBxzki9WUSO84mSb/v0Qsu
- ba3ceVetAG25CXXseGH8T0/JkXHvYXiiDLyBswqvY+8WzZSaBr63bsDy8bChEn/3M2v+
- 7p248U0DrvZB8M4YaAZujQuPH9gFeJ+bUZ5q+w9ONzwZEAWM4buwWhpEOlwmgKdyPN8Y
- w5cMq5cVqKE9/U24pds72vpaayJSClRS1ypw7d+nn2wUq8BEmv5BZAtR3cr8PgrvHIlf
- iXjDJGmoxbS7NN8jA8lcWE0Dl/Pfh0bhQnb4qIy2vR2o1QbkKpu7uDgjvb8ec3kCR5Ou
- /lhw==
+ d=massaru-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :user-agent:mime-version:content-transfer-encoding;
+ bh=uIPKlVGsJhNNHi8p9/fEX9N67i5rB91sCnJJI1pWp9c=;
+ b=GhwOcOiulOFV4Cr8+jF40BU+cXp+164hlsmhfCo6UcBEUaOcWd7hvcd52rceMl1ZuS
+ 0OL2qyC/SgcRHjVyht9Yu0nHIPy51jaAIEKNMbBXn5mDbn/V0LrSZJLBMxJVAPVN1w8R
+ 6jq7YJgzhd1ZibHXhFd613HQabG/9JABs+bmZmrxvkfaxVfxbCZH6HoRJDkFivVZebTW
+ nnxDV9WaKQB/xAOF9uJqUO79FVtb/nAMqKTifRLaVk5gJmFXa1WAxfizABU/59RWwUKe
+ O8f6RWgwA1rvF9allhwJhhRiqDqSwYiCRZ3SC+3i0UCMS36tKtuZLeqpsobqE702wzQc
+ 3PLg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=o3JxuikDu+8uRzzDlcl8zOj9Z4SnxlDgkHqB9Vqhqbw=;
- b=BM/EKJ6UF4wlIYwbAaN7zFF0kqBIw/w/zPFtcYU0shm/r2frtWSjZgtksbDAomy6Nl
- cYk61ec8wGGnN1gWqzV1zuBBKGwuAQwydTm81JxroCnPdTjo0u/tXHckv/mvGq7nx2dh
- N/OX8fCgRRxR0/8xmVnRQuBa+uhQ7L7Gn7SLBzHHyNSoNhjvQNVtMRhZ5/skWQrAxbdC
- 2FZ1E1tGq8BaiuF1iJu8buX1U0c7C3knt8rqos5ehRQcn+hK5w/XREElNlXMFgcio5jZ
- vTyHJtHRTYW+3804fHyHHAcTVJnlT0jgxhT3hkcttJgbb0h/rURxtEajhvlNqskft0SA
- dqKA==
-X-Gm-Message-State: ANhLgQ1WcexyIVJ30idgoYR/BhJp34G3Koh3D+Ux1/i1SCI+a3JXGols
- e6CpbU8flmTeITHymzVYCPpGtA==
-X-Google-Smtp-Source: ADFU+vsHaT+IT91ufMHzxEdJasefTlHMLyccMHUxwCntlAqlqQS6Tb+SX6hz/gDGExCDbxt1JdGYmw==
-X-Received: by 2002:a2e:8651:: with SMTP id i17mr6886503ljj.121.1583005773714; 
- Sat, 29 Feb 2020 11:49:33 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id o142sm9075652lff.54.2020.02.29.11.49.32
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 29 Feb 2020 11:49:32 -0800 (PST)
-Date: Sat, 29 Feb 2020 11:49:25 -0800
-From: Olof Johansson <olof@lixom.net>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [GIT PULL 1/2] Broadcom defconfig fixes for 5.6
-Message-ID: <20200229194925.ef4f2mz6eakgy5lj@localhost>
-References: <20200228181144.15148-1-f.fainelli@gmail.com>
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:user-agent:mime-version:content-transfer-encoding;
+ bh=uIPKlVGsJhNNHi8p9/fEX9N67i5rB91sCnJJI1pWp9c=;
+ b=uYydOuDcvv1+Ysc34IdTtYwwIqzshMWuWQN2aEbEBqec4H+KBxC4IxSv1sW5pg+Lnq
+ yWOw7wgQGzIQ7kleMPWs+7MfLNgtY6PE4U33EzTCFTenRqChhD2ePL12qwVWR+LWiMWN
+ zsf9tblVaYd2TgDa6wlPkrJXgrcfVAp//T8wv6r6BbRuXlWtyq9eFoPhbHRB1ImyQddn
+ /WWT5eGRtlLtbdfLJ/c5778uTKajej22D7AM/jDxM7M3OZGpYdGgy3kHzVvwyoCdTaYu
+ DEfcQHWJsuEK8bBw4Ls2paMfmQci6dMZunS/wLmjvFPb9+AcmJlUCHO8A92tiIM2VQMP
+ Qg5w==
+X-Gm-Message-State: ANhLgQ13WcMbAzBwF4BouEU4Ewx96w6uecI6eNEiiId6Ar2MW3vj1ZAg
+ 8t2CvEtQkwl+k0Xy8cTgzOxRcg==
+X-Google-Smtp-Source: ADFU+vuGtuRAhAbHNNImS6M/w8fACa5jQQX+t1JVIfR+V0j+FrQjiOha6TUU5l0BnBVJE4/5DLiARw==
+X-Received: by 2002:a05:620a:a0d:: with SMTP id
+ i13mr2639940qka.333.1583007293819; 
+ Sat, 29 Feb 2020 12:14:53 -0800 (PST)
+Received: from bbking.lan ([2804:14c:4a5:36c::cd2])
+ by smtp.gmail.com with ESMTPSA id i4sm7516740qkf.111.2020.02.29.12.14.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 29 Feb 2020 12:14:52 -0800 (PST)
+Message-ID: <1988d5fa72d50485d953948f6148602824ee9548.camel@massaru.org>
+Subject: Re: [PATCH] arm64: dts: freescale: add gpio-fan/thermal support for
+ Google i.MX 8MQ Phanbell
+From: Vitor Massaru Iha <vitor@massaru.org>
+To: Fabio Estevam <festevam@gmail.com>
+Date: Sat, 29 Feb 2020 17:14:49 -0300
+In-Reply-To: <CAOMZO5Ddg2VhXkrWTn6xAX0N8fDLCNFmccE+xrcvKeRmmRmotQ@mail.gmail.com>
+References: <20200229104347.11126-1-vitor@massaru.org>
+ <CAOMZO5Ddg2VhXkrWTn6xAX0N8fDLCNFmccE+xrcvKeRmmRmotQ@mail.gmail.com>
+User-Agent: Evolution 3.32.5 (3.32.5-1.fc30) 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228181144.15148-1-f.fainelli@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_114939_012468_D5A3C289 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20200229_121455_088624_9EEC984C 
+X-CRM114-Status: GOOD (  14.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -94,42 +96,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>, arnd@arndb.de, khilman@kernel.org,
- soc@kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, lkcamp@lists.libreplanetbr.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Marco Franchi <marco.franchi@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, "moderated list:ARM/FREESCALE IMX / MXC ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 10:11:43AM -0800, Florian Fainelli wrote:
-> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-> 
->   Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-> 
-> are available in the Git repository at:
-> 
->   https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.6/defconfig-fixes
-> 
-> for you to fetch changes up to 653c00f289371fc5162f1daf4c3742113812aa94:
-> 
->   ARM: bcm2835_defconfig: Explicitly restore CONFIG_DEBUG_FS (2020-02-27 12:47:45 -0800)
-> 
-> ----------------------------------------------------------------
-> This pull request contains Broadcom ARM-based SoCs defconfig file(s)
-> fixes for v5.6, please pull the following:
-> 
-> - Stefan restores CONFIG_DEBUG_FS from the bcm2835_defconfig which was
->   accidentally removed
+Hi Fabio,
 
-Hi,
+On Sat, 2020-02-29 at 10:07 -0300, Fabio Estevam wrote:
+> > +       fan: gpio_fan {
+> 
+> Underscores are not recommended in property names. Please use
+> "gpio-fan" instead.
 
-It looks like you missed signing off on the commit when you applied it. Care to
-respin?
+Sure. I'll fix it.
 
+> > +               compatible = "gpio-fan";
+> > +               gpio-fan,speed-map = <0 0 8600 1>;
+> > +               gpios = <&gpio3 5 GPIO_ACTIVE_HIGH>;
+> 
+> Please add an entry for the pinctrl description of this GPIO.
+> It worked because GPIO is the default functionality of the pin after
+> POR, but we should better not rely on it (bootloaders may change it)
+> and explicitly it in the device tree.
 
--Olof
+Thanks. I'll do that.
+
+> > +
+> > +&tmu {
+> 
+> Please keep the nodes in alphabetical order.
+> 
+> 
+> > +       throttle-cfgs {
+> > +               throttle_devfreq: devfreq {
+> > +                       throttle,max_state = <2>;
+> 
+> I don't see this property documented anywhere. Should it be removed?
+
+Yes, I'll remove it.
+
+BR,
+Vitor
+
 
 _______________________________________________
 linux-arm-kernel mailing list
