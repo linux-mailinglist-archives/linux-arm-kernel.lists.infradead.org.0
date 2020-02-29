@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4E641746BF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 13:18:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCAEF1746C1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 13:18:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tfMfGDHV9kq7C/3fvpC6i1cmHJAn3Me7EAEP04TT1wI=; b=JZejgAAjwY8iUFNI9AaQPsQSMh
-	Uz22/dmLhGgby+E50M1hKappN5wqBH02ahCOrTxgjWUOzo2rgqfzfuWDn+sjx6bUyciQ5tT7/YIE+
-	n7cNQ5Icz8vf1mFmLs7yiKNm+IXBp5cOkL5KhdJiLnshA/6XfLMRWfUzma5Cc6dFqVyvD8Fn6D8tH
-	3lwDGmQnlg6xt/Z7tUIG9dnikaFurrY1qKhc3ayJ9CMvPAqvxrtLDlNTiT7ARTVPuXoGH2WTLq/xT
-	2pU077R6wDz2MX+mit3Wl4e1zd0GUAP+sDnZH4yxh8cvQvAQjWJZHPD+QzvXNrkLvTEkYYJRZpO48
-	E3JH6cWg==;
+	bh=x4oHEJfWos0zGMvpFDkY82dI/2/B30mi2OsRO8ggI8Q=; b=kCMKo239DmrHrQYuJFrpMOCe6F
+	RKwAOncVjaDw4hbV1J+AmLEYN1OTstiSkPv7LBnZdpYe7Uc+CKkrP25Hmytaj6c0SU00/cH0pvIll
+	d59R7VRIv+v6Xwg4IFafA0/aGLszh4Dn8d5VsshcW1nokamZ0NfQCkAKnO0AxSq9XgAJDTC378mIQ
+	hh9qWJYOrALJStFohZEqiH1+RChIdQPKjcsRGQWGNPas5v5Es87nj3349lDFjz2v9x3X+VA7+hJum
+	chLsTSI/4dPg0dxZY7GXJq/QanZh4Kihj6hwf8qCRyObAyMWzYW6SCd/MJk3EuQYAAbNhtIK9r5P5
+	A+tnfNoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8142-0005Yv-AC; Sat, 29 Feb 2020 12:17:50 +0000
+	id 1j814S-0005yk-CY; Sat, 29 Feb 2020 12:18:16 +0000
 Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j813H-00056u-Ge; Sat, 29 Feb 2020 12:17:04 +0000
-Received: by mail-lj1-x243.google.com with SMTP id u26so6208830ljd.8;
- Sat, 29 Feb 2020 04:17:02 -0800 (PST)
+ id 1j813K-0005A4-T6; Sat, 29 Feb 2020 12:17:08 +0000
+Received: by mail-lj1-x243.google.com with SMTP id q23so6398773ljm.4;
+ Sat, 29 Feb 2020 04:17:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=PUiZOEdutWx8wS79TjIHPc76XzhI43CZLLGIcRxipWk=;
- b=MqSkBkPBjk04hDgppfgMJuLujoJVKcBQ5q/pGfqNOON1r+G8cFy9Fwl71ZDKrOBB7G
- 38bN0QnqC/p/UmggV6vnGEHyM88wktMmAmsm4p/cIRMKlnyuImkUwUmjozUas1zUvhYN
- NMvvE0uRO4QkHVcn5tTFNJYjQ8kjXGkd1WX44GJeFbmCLflh3yn4ZAWYZ4BbI18xreuG
- ycix+XYCpq/TOF7t7W7115rZKH4qxmSgLX3pWCxpz3QKoLsDgC9r/wYIQa+MUxxBOmGP
- t80vPcDRTeiAOWpGc6E+D43k9Xlvu7hODHjqnF8mEV5n3trfUK9w1ppUo8Iiqo2SoeQU
- u0Zg==
+ bh=nh1cYeo5kqu2beDaVvmrvEaSztko81+wDaHuvBL/5XI=;
+ b=VHh/96VuHCzYtlU5F1X9kLntYdXBnNHrJ10lhNhcRIyw8gPSHtP7lwcDu/LJHdHuXK
+ Jc8eXEpMXd59FBFGbGvWEhqac+s3aFRp3tRUBy04cdMULA13fCp2OqMjzkPmaHSRzvzs
+ s/K6VXhza2AjHmBkquqj1tt7H7WBcFuf6Lj7ajUOtzWA7w2uqVfyGSRX9vHdml+IRWLV
+ UYe4tP3TVCGNGYvQEkfETwnic+46UCzcEndh1CIEV0H1ZxeG/9pUgPSL6KkLckz887+9
+ C11kqhssnXb4GbOu55VSpPj2ut3BGwx3TrOESwA0+E0rGk76lzllJPqNJUZD/XZDtTZd
+ SOiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=PUiZOEdutWx8wS79TjIHPc76XzhI43CZLLGIcRxipWk=;
- b=F6XJnCGH30+F+KRHMkmTemDzJHOLVHPFl1/JGXnaDWBKI4CCgeNNn+EqlYwgE7/rRE
- G/ZIX6VWNtVioOHhqSh0GCfuOcUuQ+Y7NAEdZkFwFTpWLMYFLR+9jpUPP64W3DQ+MrZy
- ce+FXKqKGI3y1tj1KZiky6U7r093Rgobf1ye9Xi5/x+CVaoFtPH+rWzI7AwOam9NOt+Y
- I5NMIO8Ie65e6NhvOeZcI3Ub/qu7JYU78ZzhHiSh0f0YpO+3Tvh0jPihtY6hPiF+ZMoJ
- twUTDxlJqQpEsHLdWdt7d4RFDRYluiaNgdLOtgIefQVzq1do8PcBtc0vtqUA5eiw/2j8
- 0sRA==
-X-Gm-Message-State: ANhLgQ3daDZMyPe/eFvbWuNTEu52D5DQvcx1pM68hT8w7iV1QVz4Yin9
- Y6t/KT4eERtZ2XHYQc1BhIw=
-X-Google-Smtp-Source: ADFU+vtfyu/zEdv25VmM2ipzV3WThAztgg3/ulDhJPTfCVRbLqJ1yuJVjWhhAABZXUtB1ZxQ3NGdfQ==
-X-Received: by 2002:a2e:9592:: with SMTP id w18mr5817470ljh.98.1582978621446; 
- Sat, 29 Feb 2020 04:17:01 -0800 (PST)
+ bh=nh1cYeo5kqu2beDaVvmrvEaSztko81+wDaHuvBL/5XI=;
+ b=ISsIFItGu63pyz23QcJHq/R8YfwkBh81g1IitntXKkNMmhc4YS6ddr9yrMfDVZ7sZI
+ zz+HEZR9kZXLtz7wLTyd1oDQSwsbfJvDeYaCAkW4Sra0eNVsr1HTLS4SHCNZ39ruE+rk
+ ItQ9XMfgDItCujC6Eu1tiX//9W3+jYQDwugPxVVsnm2KyxYVE2OSWTn1/PM0Tk7Rn1mj
+ v8xLUDLk4PJXGzGldF7V4oIlbcCdJbnB0W1V1veAoNHjUwcA0sQz6omo8qIvR79oQuvf
+ ZtV1Wmoopk/Mf+5SlwpkaJX7zhMX3gEDjSmAvRKq2pptwBJquOdZFQjPAYyTrEzzeRGc
+ 4GVw==
+X-Gm-Message-State: ANhLgQ0oaxL08BApXTCj27mLuW1pTGagopxZSbZOlzsK2v/E+0AB9IzP
+ e/msoPS4XHY7BP2EznQCNLc=
+X-Google-Smtp-Source: ADFU+vtpdp2I9mOX5lCkgrbRvP2tXRdIJDb4yCZ1jR26O7bByuWn3SnWeIGU4sJeD7Kmex0ZqWkesA==
+X-Received: by 2002:a2e:9744:: with SMTP id f4mr6250763ljj.267.1582978624757; 
+ Sat, 29 Feb 2020 04:17:04 -0800 (PST)
 Received: from localhost.localdomain ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id x1sm6270232lfq.46.2020.02.29.04.16.58
+ by smtp.gmail.com with ESMTPSA id x1sm6270232lfq.46.2020.02.29.04.17.01
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Sat, 29 Feb 2020 04:17:01 -0800 (PST)
+ Sat, 29 Feb 2020 04:17:04 -0800 (PST)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v4 2/3] dt-bindings: arm: amlogic: add support for the
- SmartLabs SML-5442TW
-Date: Sat, 29 Feb 2020 16:16:03 +0400
-Message-Id: <1582978564-81491-3-git-send-email-christianshewitt@gmail.com>
+Subject: [PATCH v4 3/3] arm64: dts: meson: add support for the SmartLabs
+ SML-5442TW
+Date: Sat, 29 Feb 2020 16:16:04 +0400
+Message-Id: <1582978564-81491-4-git-send-email-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582978564-81491-1-git-send-email-christianshewitt@gmail.com>
 References: <1582978564-81491-1-git-send-email-christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_041703_587420_440E5BA0 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20200229_041706_989377_C13CA192 
+X-CRM114-Status: GOOD (  18.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,40 +108,425 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SML-5442TW is an STB for O2 Czech IPTV/VOD and DVB-T/T2 based on the
-Amlogic P231 reference design using the S905D chipset. Specs:
+The SmartLabs SML-5442TW is broadly similar to the P231 reference design
+but with the following differences:
 
-2GB DDR3 RAM
-8GB eMMC storage
-10/100 Base-T Ethernet
-802.11 a/b/g/n/ac + BT 4.1 HS sdio wireless module (QCA9377)
-2x single colour and 1x dual colour LEDs on the front panel
-1x reset button on the front panel
-HDMI 2.0 (4k@60p) video
-Composite video + 2-channel audio output on 3.5mm jack
-S/PDIF audio output
-Single DVB-T/T2 tuner (AVL6762/MxL608)
-2x USB 2.0 ports
-1x micro SD card slot
-UART pins (internal)
+- The Yellow and Blue LEDs are available but disabled
+- The Red and Green LEDs are used to signal off/on status
+- uart_AO can be accessed after opening the case; soldered pins exist
+- GPIOX_17 is forced high to enable the QCA9377 module
 
 Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/amlogic/Makefile               |   1 +
+ .../boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts | 386 +++++++++++++++++++++
+ 2 files changed, 387 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
 
-diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-index f74aba4..c0c0f66 100644
---- a/Documentation/devicetree/bindings/arm/amlogic.yaml
-+++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-@@ -107,6 +107,7 @@ properties:
-               - amlogic,p231
-               - libretech,aml-s905d-pc
-               - phicomm,n1
-+              - smartlabs,sml5442tw
-           - const: amlogic,s905d
-           - const: amlogic,meson-gxl
- 
+diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
+index eef0045..6cf8c4a 100644
+--- a/arch/arm64/boot/dts/amlogic/Makefile
++++ b/arch/arm64/boot/dts/amlogic/Makefile
+@@ -27,6 +27,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-p212.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p230.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p231.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-phicomm-n1.dtb
++dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-sml5442tw.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s805x-p241.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-p281.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-tx3-mini.dtb
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+new file mode 100644
+index 0000000..78ccfc3
+--- /dev/null
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+@@ -0,0 +1,386 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2016 Endless Computers, Inc.
++ * Author: Carlo Caione <carlo@endlessm.com>
++ * Copyright (c) 2018 BayLibre, SAS
++ * Author: Neil Armstrong <narmstrong@baylibre.com>
++ */
++
++/dts-v1/;
++
++#include "meson-gxl-s905d.dtsi"
++#include <dt-bindings/sound/meson-aiu.h>
++
++/ {
++	compatible = "smartlabs,sml5442tw", "amlogic,s905d",
++		"amlogic,meson-gxl";
++	model = "SmartLabs SML-5442TW";
++
++	aliases {
++		serial0 = &uart_AO;
++		serial1 = &uart_A;
++		ethernet0 = &ethmac;
++	};
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	memory@0 {
++		device_type = "memory";
++		reg = <0x0 0x0 0x0 0x80000000>;
++	};
++
++	dio2133: analog-amplifier {
++		compatible = "simple-audio-amplifier";
++		sound-name-prefix = "AU2";
++		VCC-supply = <&hdmi_5v>;
++		enable-gpios = <&gpio GPIOH_5 GPIO_ACTIVE_HIGH>;
++	};
++
++	spdif_dit: audio-codec-0 {
++		#sound-dai-cells = <0>;
++		compatible = "linux,spdif-dit";
++		status = "okay";
++		sound-name-prefix = "DIT";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		yellow {
++			label = "sml5442tw:yellow";
++			gpios = <&gpio_ao GPIOAO_6 GPIO_ACTIVE_HIGH>;
++			default-state = "off";
++		};
++
++		blue {
++			label = "sml5442tw:blue";
++			gpios = <&gpio GPIODV_28 GPIO_ACTIVE_HIGH>;
++			default-state = "off";
++		};
++
++		green {
++			label = "sml5442tw:green";
++			gpios = <&gpio_ao GPIOAO_9 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++		};
++
++		red {
++			label = "sml5442tw:red";
++			gpios = <&gpio GPIODV_27 GPIO_ACTIVE_HIGH>;
++			default-state = "off";
++		};
++	};
++
++	hdmi_5v: regulator-hdmi-5v {
++		compatible = "regulator-fixed";
++
++		regulator-name = "HDMI_5V";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++
++		gpio = <&gpio GPIOH_3 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++		regulator-always-on;
++	};
++
++	vddio_ao18: regulator-vddio_ao18 {
++		compatible = "regulator-fixed";
++		regulator-name = "VDDIO_AO18";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++	};
++
++	vddio_boot: regulator-vddio_boot {
++		compatible = "regulator-fixed";
++		regulator-name = "VDDIO_BOOT";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++	};
++
++	vddao_3v3: regulator-vddao_3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "VDDAO_3V3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++
++	vcc_3v3: regulator-vcc_3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "VCC_3V3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++
++	emmc_pwrseq: emmc-pwrseq {
++		compatible = "mmc-pwrseq-emmc";
++		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
++	};
++
++	wifi32k: wifi32k {
++		compatible = "pwm-clock";
++		#clock-cells = <0>;
++		clock-frequency = <32768>;
++		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
++	};
++
++	sdio_pwrseq: sdio-pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
++		clocks = <&wifi32k>;
++		clock-names = "ext_clock";
++	};
++
++	cvbs-connector {
++		compatible = "composite-video-connector";
++
++		port {
++			cvbs_connector_in: endpoint {
++				remote-endpoint = <&cvbs_vdac_out>;
++			};
++		};
++	};
++
++	hdmi-connector {
++		compatible = "hdmi-connector";
++		type = "a";
++
++		port {
++			hdmi_connector_in: endpoint {
++				remote-endpoint = <&hdmi_tx_tmds_out>;
++			};
++		};
++	};
++
++	sound {
++		compatible = "amlogic,gx-sound-card";
++		model = "GXl-S905D-SML5442TW";
++		audio-aux-devs = <&dio2133>;
++		audio-widgets = "Line", "Lineout";
++		audio-routing = "AU2 INL", "ACODEC LOLP",
++				"AU2 INR", "ACODEC LORP",
++				"AU2 INL", "ACODEC LOLN",
++				"AU2 INR", "ACODEC LORN",
++				"Lineout", "AU2 OUTL",
++				"Lineout", "AU2 OUTR";
++		assigned-clocks = <&clkc CLKID_MPLL2>,
++				  <&clkc CLKID_MPLL0>,
++				  <&clkc CLKID_MPLL1>;
++		assigned-clock-parents = <0>, <0>, <0>;
++		assigned-clock-rates = <294912000>,
++				       <270950400>,
++				       <393216000>;
++		status = "okay";
++
++		dai-link-0 {
++			sound-dai = <&aiu AIU_CPU CPU_I2S_FIFO>;
++		};
++
++		dai-link-1 {
++			sound-dai = <&aiu AIU_CPU CPU_SPDIF_FIFO>;
++		};
++
++		dai-link-2 {
++			sound-dai = <&aiu AIU_CPU CPU_I2S_ENCODER>;
++			dai-format = "i2s";
++			mclk-fs = <256>;
++
++			codec-0 {
++				sound-dai = <&aiu AIU_HDMI CTRL_I2S>;
++			};
++
++			codec-1 {
++				sound-dai = <&aiu AIU_ACODEC CTRL_I2S>;
++			};
++		};
++
++		dai-link-3 {
++			sound-dai = <&aiu AIU_CPU CPU_SPDIF_ENCODER>;
++
++			codec-0 {
++				sound-dai = <&spdif_dit>;
++			};
++		};
++
++		dai-link-4 {
++			sound-dai = <&aiu AIU_HDMI CTRL_OUT>;
++
++			codec-0 {
++				sound-dai = <&hdmi_tx>;
++			};
++		};
++
++		dai-link-5 {
++			sound-dai = <&aiu AIU_ACODEC CTRL_OUT>;
++
++			codec-0 {
++				sound-dai = <&acodec>;
++			};
++		};
++	};
++};
++
++&acodec {
++	AVDD-supply = <&vddio_ao18>;
++	status = "okay";
++};
++
++&aiu {
++	status = "okay";
++	pinctrl-0 = <&spdif_out_h_pins>;
++	pinctrl-names = "default";
++
++};
++
++&cec_AO {
++	status = "okay";
++	pinctrl-0 = <&ao_cec_pins>;
++	pinctrl-names = "default";
++	hdmi-phandle = <&hdmi_tx>;
++};
++
++&cvbs_vdac_port {
++	cvbs_vdac_out: endpoint {
++		remote-endpoint = <&cvbs_connector_in>;
++	};
++};
++
++&ethmac {
++	status = "okay";
++	phy-mode = "rmii";
++	phy-handle = <&internal_phy>;
++};
++
++/* This will enable the bluetooth module */
++&gpio {
++	bt-en {
++		gpio-hog;
++		gpios = <GPIOX_17 GPIO_ACTIVE_HIGH>;
++		output-high;
++		line-name = "bt-en";
++	};
++};
++
++&hdmi_tx {
++	status = "okay";
++	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
++	pinctrl-names = "default";
++	hdmi-supply = <&hdmi_5v>;
++};
++
++&hdmi_tx_tmds_port {
++	hdmi_tx_tmds_out: endpoint {
++		remote-endpoint = <&hdmi_connector_in>;
++	};
++};
++
++&i2c_A {
++	status = "okay";
++	pinctrl-0 = <&i2c_a_pins>;
++	pinctrl-names = "default";
++};
++
++&internal_phy {
++	pinctrl-0 = <&eth_link_led_pins>, <&eth_act_led_pins>;
++	pinctrl-names = "default";
++};
++
++&ir {
++	status = "okay";
++	pinctrl-0 = <&remote_input_ao_pins>;
++	pinctrl-names = "default";
++};
++
++&pwm_ef {
++	status = "okay";
++	pinctrl-0 = <&pwm_e_pins>;
++	pinctrl-names = "default";
++	clocks = <&clkc CLKID_FCLK_DIV4>;
++	clock-names = "clkin0";
++};
++
++&saradc {
++	status = "okay";
++	vref-supply = <&vddio_ao18>;
++};
++
++/* Wireless SDIO Module */
++&sd_emmc_a {
++	status = "okay";
++	pinctrl-0 = <&sdio_pins>;
++	pinctrl-1 = <&sdio_clk_gate_pins>;
++	pinctrl-names = "default", "clk-gate";
++	#address-cells = <1>;
++	#size-cells = <0>;
++
++	bus-width = <4>;
++	cap-sd-highspeed;
++	max-frequency = <100000000>;
++
++	non-removable;
++	disable-wp;
++
++	mmc-pwrseq = <&sdio_pwrseq>;
++
++	vmmc-supply = <&vddao_3v3>;
++	vqmmc-supply = <&vddio_boot>;
++};
++
++/* SD card */
++&sd_emmc_b {
++	status = "okay";
++	pinctrl-0 = <&sdcard_pins>;
++	pinctrl-1 = <&sdcard_clk_gate_pins>;
++	pinctrl-names = "default", "clk-gate";
++
++	bus-width = <4>;
++	cap-sd-highspeed;
++	max-frequency = <100000000>;
++	disable-wp;
++
++	cd-gpios = <&gpio CARD_6 GPIO_ACTIVE_HIGH>;
++	cd-inverted;
++
++	vmmc-supply = <&vddao_3v3>;
++	vqmmc-supply = <&vddio_boot>;
++};
++
++/* eMMC */
++&sd_emmc_c {
++	status = "okay";
++	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
++	pinctrl-1 = <&emmc_clk_gate_pins>;
++	pinctrl-names = "default", "clk-gate";
++
++	bus-width = <8>;
++	cap-mmc-highspeed;
++	max-frequency = <100000000>;
++	non-removable;
++	disable-wp;
++	mmc-ddr-1_8v;
++	mmc-hs200-1_8v;
++
++	mmc-pwrseq = <&emmc_pwrseq>;
++	vmmc-supply = <&vcc_3v3>;
++	vqmmc-supply = <&vddio_boot>;
++};
++
++/* This is connected to the Bluetooth module: */
++&uart_A {
++	status = "okay";
++	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
++	pinctrl-names = "default";
++	uart-has-rtscts;
++};
++
++/* This UART is brought out to the debug header */
++&uart_AO {
++	status = "okay";
++	pinctrl-0 = <&uart_ao_a_pins>;
++	pinctrl-names = "default";
++};
++
++&usb0 {
++	status = "okay";
++};
 -- 
 2.7.4
 
