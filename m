@@ -2,92 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B486174814
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 17:33:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7DAC17481A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 17:37:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PQxq0liBj3uCnYcHVk5ANz5zvzvB4voq+3TODBXsa8g=; b=bQRYX1TqpEzTrJkjA0ua+LseAb
-	UwGXugzGGRzFiHpjKzZBQul21dQovglMgQ2aZ6Vps17xbUkDmoTP4JtULqKHj3FFLy1ISZQxbB2E0
-	6FOm978MHRhDVwGKWnGsvnFV3vZLzk4VR5+SBIFX97L6Q0eA81YDbrpl+8VkL3NfRgZTECr4B3KzK
-	3HfZ4zPv6SPeluZVfk47NQLTlboh/+wqi4HdEoz6KYF4nc0wsxHCO358x7hhk6Gj+Q1wa/Bak5EdT
-	5axww7AipsVu2wo0fiyvbXrOFhWShNOPyHAxjcJZFlNyKxO3u7fDn5UwQERgziw7bLfKMPgEYqI1I
-	WBNCUQyQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rAF8vpDOLDID8WDV14mlXHrChsWNFOi/ga1G0+pXTFU=; b=iZdgep3EvWVib0
+	fPKDoAKWQ9AXHK3YlB835eaz9W6R7R5k6CsomkJiGSHC9utALqHT+biVRVFkv64NYf3TmrLuqJUOm
+	4jKxNJ8ZuLjCslnryAyipy3CFTtJ5oIB/zmHcWlUPr52we8qgudpfLeGNlS8gvgzJfJ87wbPmavHZ
+	YSnseUTj3PC/qX4X3rTO4Lkn2tOFdrtpNFLSw3NvWUhSsAO0NlzPnINqNAQcE+FOzJFauKpuC5xzr
+	ccCOlHV6pAGlQX7V/SJnDBCBac/wfhVI1gNMwRY9TeeSnClrcJek1w2CZ0DrFhXu3r57bxXsGz4p0
+	qno8Ot/wpHqd5MQzhvBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8537-0006bt-3F; Sat, 29 Feb 2020 16:33:09 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j856s-0008Pt-P0; Sat, 29 Feb 2020 16:37:02 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j852v-0006bF-OL
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 16:32:59 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a5so6780697wmb.0
+ id 1j856i-0008PP-Tf
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 16:36:54 +0000
+Received: by mail-lj1-x241.google.com with SMTP id e3so6817370lja.10
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Feb 2020 08:32:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=MmoQZpZlPWrh8tlpzt99cxvERHkrSi8XuDSfS2rijvM=;
- b=nzxY5UU1fHi8dnx4F+cDmxeGdY+lHs2MIoFwJEHbTo1VepgHSSUgQXJQYy74e813Ih
- N1v0hAytC0y3lMguHm5Eoh5bhMJHxy5e+8D5buaIRyrKsyAYrFbygyQ7VoMl7AvvHvMS
- RrqGYKgOGPI7J/Wvbf6+fIZ6NUkoUmY0uUKjEAsTf1xYcVaNKwjtBMOgwTki/PVveLKl
- ALedzhs//KEhgXGwtvyBgCgc4844Ak8kzZDqynE40Y4WUAbIQhu0psEVa3suGSQlHRmH
- tAe7N0e9KrpeU07x8+lb+jeAaLYCDVIOJCPUK1EyjFW2qUAeyguOsfSpmxDK4VxkR6WZ
- iptA==
+ Sat, 29 Feb 2020 08:36:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IKV7NPKD+Ch81IqjSrRGCVDwaUcEo7AiWRKMOW2+aLg=;
+ b=Zu478Hc0EOhIdAbSdtWW7u3gn+wtXrP6fc8m6G4rsMrvyA24DH3J/bwHCcL9TaXt72
+ u3j/ZMiWV5YEtxec3FDIm2g4rLEyo00kvIAfAJz0A7sXEsnaJGMQ+p3Mo5Gy5FdHYBUX
+ 4HVvzEkfyH/Y6Ob13QTz3qfnteh05LvoqwNPBiLwCzayMZRThx0rxry193JRXLO5DobE
+ O6y17LVBSWdj5Fckx3qnwsTg5z1GnEfACjGzqq0cUX6+bQXE9Rlxan0kWWnN4iQ3AdKV
+ IpxtW5dE0qHVjYmEfPZMLW7kmat4+lvEcg/XF8TdPuI/oG311LRRCQo0gd0Mg9UlpGcj
+ 3wEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=MmoQZpZlPWrh8tlpzt99cxvERHkrSi8XuDSfS2rijvM=;
- b=TV9GxJpJxiZLffWNtKLZt+coMO2AwdxUWGsdD/JDeZOpCVy1WAqdDD7gwWgwTBAnvA
- Rq1XWgQvl3yUL2lbAWaBzCKf1MBZJUYE+jTachQ+plmYiM3acpw8vkn7KQoqtNyXze+I
- NUrzhzzWBSOdAU1vcGwaq7i3BB+caN5T7AH8KV5mTzuiITU64oxAIjpLs0rNPu27+93M
- XewuJ8RpVMRx5iyV4ek+bNjijyd5Xc7Nh9fifF77Dn0WuS48maNSDhdA1EzOST/C0/E2
- 27CyA2G4POHi6mMT0kjmzGymcnSRc+VJtwW9mFagEptwfOKwXoHi93dtsanCnRebd//n
- EHtg==
-X-Gm-Message-State: APjAAAWGPRMhybwAFSHOW5EwuITJsPfLcp2vM28ozjwS/UYnOSehvKqu
- 66hlhlR/uY6BLwV5JYSoBBpQSA==
-X-Google-Smtp-Source: APXvYqzYhKt24uGVo5jYYZUpUV7dNFzOLZTIBANJuiakCE9ZryycLHzgIvos63pwfINlsA/jlg6Glw==
-X-Received: by 2002:a7b:c939:: with SMTP id h25mr10510856wml.106.1582993975257; 
- Sat, 29 Feb 2020 08:32:55 -0800 (PST)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id a70sm6761381wme.28.2020.02.29.08.32.54
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IKV7NPKD+Ch81IqjSrRGCVDwaUcEo7AiWRKMOW2+aLg=;
+ b=TqkHDOwH5cjM3z9tzciZcwzAUjuALJNvSWIpVTR0r8j4gquaboZwyQ8lCqilQJadJX
+ niwpbYOrvg709d7cCF9qQaXMiZENlCA+XLjEP97biyphOmeoKxJPtwhj05VQuUjETln+
+ 7YTeKEImmpyOBh1QpDtXOJZ68LLSBvhezIa0OzXfFWj34yecNlQg0ruXpBi+CzLC64LO
+ Ca/V3ZYeSta/fKfqiquGMYT5LYk8gOcu19sViKDhanSYLVWog4Hk+8yjn0JkCQAwUB6q
+ N5Looz82bOAFiiWuIzMvUMR7om13lZ+I4CYolSfY/rhPScISYQ220AsAFMCRWfpuMZX+
+ Mamg==
+X-Gm-Message-State: ANhLgQ2236jSkHpONUv1eGOKAwtTFORGO2yoxrSgrTkQc9OWconRZEIn
+ PZADcAHbiNz0gG209O6v6tPvOG42ZTo=
+X-Google-Smtp-Source: ADFU+vvXTk+eW2FtLSEaPQBg+MOVgGCCN5OEMInpSCH37K5WvoDeQPvR5vuiM7oQDHpTISIRGElydw==
+X-Received: by 2002:a2e:9592:: with SMTP id w18mr6319453ljh.98.1582994209597; 
+ Sat, 29 Feb 2020 08:36:49 -0800 (PST)
+Received: from localhost.localdomain
+ (c-5ac9225c.014-348-6c756e10.bbcust.telenor.se. [92.34.201.90])
+ by smtp.gmail.com with ESMTPSA id o7sm8551938ljp.95.2020.02.29.08.36.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 29 Feb 2020 08:32:54 -0800 (PST)
-References: <1582979124-82363-1-git-send-email-christianshewitt@gmail.com>
- <1582979124-82363-4-git-send-email-christianshewitt@gmail.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Christian Hewitt <christianshewitt@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v5 3/3] arm64: dts: meson: add support for the SmartLabs
- SML-5442TW
-In-reply-to: <1582979124-82363-4-git-send-email-christianshewitt@gmail.com>
-Date: Sat, 29 Feb 2020 17:32:53 +0100
-Message-ID: <1jpndxgxqi.fsf@starbuckisacylon.baylibre.com>
+ Sat, 29 Feb 2020 08:36:48 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Russell King <linux@armlinux.org.uk>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ linux-fbdev@vger.kernel.org
+Subject: [PATCH] ARM/fbdev: sa11x0: Switch to use GPIO descriptors
+Date: Sat, 29 Feb 2020 17:34:41 +0100
+Message-Id: <20200229163441.90639-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_083257_797723_5FA350D4 
-X-CRM114-Status: GOOD (  21.77  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200229_083652_989225_EE40E95B 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: 2.3 (++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -101,304 +98,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andreas =?utf-8?Q?F=C3=A4rber?= <afaerber@suse.de>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This converts the SA11x0 frame buffer driver to use
+GPIO descriptors. Get the GPIO optional and register
+a look-up table specifically for the Shannon machine.
 
-On Sat 29 Feb 2020 at 13:25, Christian Hewitt <christianshewitt@gmail.com> wrote:
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/mach-sa1100/shannon.c |  9 +++++++++
+ drivers/video/fbdev/sa1100fb.c | 20 +++++++++-----------
+ drivers/video/fbdev/sa1100fb.h |  3 +++
+ 3 files changed, 21 insertions(+), 11 deletions(-)
 
-> The SmartLabs SML-5442TW is broadly similar to the P231 reference design
-> but with the following differences:
->
-> - The Yellow and Blue LEDs are available but disabled
-> - The Red and Green LEDs are used to signal off/on status
-> - uart_AO can be accessed after opening the case; soldered pins exist
-> - GPIOX_17 is forced high to enable the QCA9377 module
->
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-> ---
->  arch/arm64/boot/dts/amlogic/Makefile               |   1 +
->  .../boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts | 386 +++++++++++++++++++++
->  2 files changed, 387 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
->
-> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-> index eef0045..6cf8c4a 100644
-> --- a/arch/arm64/boot/dts/amlogic/Makefile
-> +++ b/arch/arm64/boot/dts/amlogic/Makefile
-> @@ -27,6 +27,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-p212.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p230.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p231.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-phicomm-n1.dtb
-> +dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-sml5442tw.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s805x-p241.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-p281.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-tx3-mini.dtb
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-> new file mode 100644
-> index 0000000..3ad53f7
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-> @@ -0,0 +1,386 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (c) 2016 Endless Computers, Inc.
-> + * Author: Carlo Caione <carlo@endlessm.com>
-> + * Copyright (c) 2018 BayLibre, SAS
-> + * Author: Neil Armstrong <narmstrong@baylibre.com>
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "meson-gxl-s905d.dtsi"
-> +#include <dt-bindings/sound/meson-aiu.h>
-> +
-
-[...]
-
-> +
-> +	sound {
-> +		compatible = "amlogic,gx-sound-card";
-> +		model = "GXL-S905D-SML5442TW";
-> +		audio-aux-devs = <&dio2133>;
-> +		audio-widgets = "Line", "Lineout";
-> +		audio-routing = "AU2 INL", "ACODEC LOLP",
-> +				"AU2 INR", "ACODEC LORP",
-> +				"AU2 INL", "ACODEC LOLN",
-> +				"AU2 INR", "ACODEC LORN",
-> +				"Lineout", "AU2 OUTL",
-> +				"Lineout", "AU2 OUTR";
-> +		assigned-clocks = <&clkc CLKID_MPLL2>,
-> +				  <&clkc CLKID_MPLL0>,
-> +				  <&clkc CLKID_MPLL1>;
-> +		assigned-clock-parents = <0>, <0>, <0>;
-> +		assigned-clock-rates = <294912000>,
-> +				       <270950400>,
-> +				       <393216000>;
-> +		status = "okay";
-> +
-> +		dai-link-0 {
-> +			sound-dai = <&aiu AIU_CPU CPU_I2S_FIFO>;
-> +		};
-> +
-> +		dai-link-1 {
-> +			sound-dai = <&aiu AIU_CPU CPU_SPDIF_FIFO>;
-> +		};
-> +
-> +		dai-link-2 {
-> +			sound-dai = <&aiu AIU_CPU CPU_I2S_ENCODER>;
-> +			dai-format = "i2s";
-> +			mclk-fs = <256>;
-> +
-> +			codec-0 {
-> +				sound-dai = <&aiu AIU_HDMI CTRL_I2S>;
-> +			};
-> +
-> +			codec-1 {
-> +				sound-dai = <&aiu AIU_ACODEC CTRL_I2S>;
-> +			};
-> +		};
-> +
-> +		dai-link-3 {
-> +			sound-dai = <&aiu AIU_CPU CPU_SPDIF_ENCODER>;
-> +
-> +			codec-0 {
-> +				sound-dai = <&spdif_dit>;
-> +			};
-> +		};
-> +
-> +		dai-link-4 {
-> +			sound-dai = <&aiu AIU_HDMI CTRL_OUT>;
-> +
-> +			codec-0 {
-> +				sound-dai = <&hdmi_tx>;
-> +			};
-> +		};
-> +
-> +		dai-link-5 {
-> +			sound-dai = <&aiu AIU_ACODEC CTRL_OUT>;
-> +
-> +			codec-0 {
-> +				sound-dai = <&acodec>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&acodec {
-> +	AVDD-supply = <&vddio_ao18>;
-> +	status = "okay";
-> +};
-> +
-> +&aiu {
-> +	status = "okay";
-> +	pinctrl-0 = <&spdif_out_h_pins>;
-> +	pinctrl-names = "default";
-> +
-> +};
-
-The above does not compile against kevin's tree:
-1# the audio dt device have not been added yet
-2# the bindings deps of 3 different subsystem will be available in this
-tree with the next rc1
-
-I warned about this on IRC.
-
-> +
-> +&cec_AO {
-> +	status = "okay";
-> +	pinctrl-0 = <&ao_cec_pins>;
-> +	pinctrl-names = "default";
-> +	hdmi-phandle = <&hdmi_tx>;
-> +};
-> +
-> +&cvbs_vdac_port {
-> +	cvbs_vdac_out: endpoint {
-> +		remote-endpoint = <&cvbs_connector_in>;
-> +	};
-> +};
-> +
-> +&ethmac {
-> +	status = "okay";
-> +	phy-mode = "rmii";
-> +	phy-handle = <&internal_phy>;
-> +};
-> +
-> +/* This will enable the bluetooth module */
-> +&gpio {
-> +	bt-en {
-> +		gpio-hog;
-> +		gpios = <GPIOX_17 GPIO_ACTIVE_HIGH>;
-> +		output-high;
-> +		line-name = "bt-en";
-> +	};
-> +};
-> +
-> +&hdmi_tx {
-> +	status = "okay";
-> +	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
-> +	pinctrl-names = "default";
-> +	hdmi-supply = <&hdmi_5v>;
-> +};
-> +
-> +&hdmi_tx_tmds_port {
-> +	hdmi_tx_tmds_out: endpoint {
-> +		remote-endpoint = <&hdmi_connector_in>;
-> +	};
-> +};
-> +
-> +&i2c_A {
-> +	status = "okay";
-> +	pinctrl-0 = <&i2c_a_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&internal_phy {
-> +	pinctrl-0 = <&eth_link_led_pins>, <&eth_act_led_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&ir {
-> +	status = "okay";
-> +	pinctrl-0 = <&remote_input_ao_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&pwm_ef {
-> +	status = "okay";
-> +	pinctrl-0 = <&pwm_e_pins>;
-> +	pinctrl-names = "default";
-> +	clocks = <&clkc CLKID_FCLK_DIV4>;
-> +	clock-names = "clkin0";
-> +};
-> +
-> +&saradc {
-> +	status = "okay";
-> +	vref-supply = <&vddio_ao18>;
-> +};
-> +
-> +/* Wireless SDIO Module */
-> +&sd_emmc_a {
-> +	status = "okay";
-> +	pinctrl-0 = <&sdio_pins>;
-> +	pinctrl-1 = <&sdio_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-> +
-> +	bus-width = <4>;
-> +	cap-sd-highspeed;
-> +	max-frequency = <100000000>;
-> +
-> +	non-removable;
-> +	disable-wp;
-> +
-> +	mmc-pwrseq = <&sdio_pwrseq>;
-> +
-> +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
-> +};
-> +
-> +/* SD card */
-> +&sd_emmc_b {
-> +	status = "okay";
-> +	pinctrl-0 = <&sdcard_pins>;
-> +	pinctrl-1 = <&sdcard_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
-> +
-> +	bus-width = <4>;
-> +	cap-sd-highspeed;
-> +	max-frequency = <100000000>;
-> +	disable-wp;
-> +
-> +	cd-gpios = <&gpio CARD_6 GPIO_ACTIVE_HIGH>;
-> +	cd-inverted;
-> +
-> +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
-> +};
-> +
-> +/* eMMC */
-> +&sd_emmc_c {
-> +	status = "okay";
-> +	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-> +	pinctrl-1 = <&emmc_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
-> +
-> +	bus-width = <8>;
-> +	cap-mmc-highspeed;
-> +	max-frequency = <100000000>;
-> +	non-removable;
-> +	disable-wp;
-> +	mmc-ddr-1_8v;
-> +	mmc-hs200-1_8v;
-> +
-> +	mmc-pwrseq = <&emmc_pwrseq>;
-> +	vmmc-supply = <&vcc_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
-> +};
-> +
-> +/* This is connected to the Bluetooth module: */
-> +&uart_A {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
-> +	pinctrl-names = "default";
-> +	uart-has-rtscts;
-> +};
-> +
-> +/* This UART is brought out to the debug header */
-> +&uart_AO {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_ao_a_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&usb0 {
-> +	status = "okay";
-> +};
+diff --git a/arch/arm/mach-sa1100/shannon.c b/arch/arm/mach-sa1100/shannon.c
+index 5bc82e2671c6..f1f825ed0b3a 100644
+--- a/arch/arm/mach-sa1100/shannon.c
++++ b/arch/arm/mach-sa1100/shannon.c
+@@ -104,6 +104,14 @@ static struct fixed_voltage_config shannon_cf_vcc_pdata __initdata = {
+ 	.enabled_at_boot = 1,
+ };
+ 
++static struct gpiod_lookup_table shannon_display_gpio_table = {
++	.dev_id = "sa11x0-fb",
++	.table = {
++		GPIO_LOOKUP("gpio", 22, "enable", GPIO_ACTIVE_HIGH),
++		{ },
++	},
++};
++
+ static void __init shannon_init(void)
+ {
+ 	sa11x0_register_fixed_regulator(0, &shannon_cf_vcc_pdata,
+@@ -113,6 +121,7 @@ static void __init shannon_init(void)
+ 	sa11x0_register_pcmcia(0, &shannon_pcmcia0_gpio_table);
+ 	sa11x0_register_pcmcia(1, &shannon_pcmcia1_gpio_table);
+ 	sa11x0_ppc_configure_mcp();
++	gpiod_add_lookup_table(&shannon_display_gpio_table);
+ 	sa11x0_register_lcd(&shannon_lcd_info);
+ 	sa11x0_register_mtd(&shannon_flash_data, &shannon_flash_resource, 1);
+ 	sa11x0_register_mcp(&shannon_mcp_data);
+diff --git a/drivers/video/fbdev/sa1100fb.c b/drivers/video/fbdev/sa1100fb.c
+index 5bb653db0cec..cdea3b31a54f 100644
+--- a/drivers/video/fbdev/sa1100fb.c
++++ b/drivers/video/fbdev/sa1100fb.c
+@@ -173,7 +173,7 @@
+ #include <linux/init.h>
+ #include <linux/ioport.h>
+ #include <linux/cpufreq.h>
+-#include <linux/gpio.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/platform_device.h>
+ #include <linux/dma-mapping.h>
+ #include <linux/mutex.h>
+@@ -799,8 +799,8 @@ static void sa1100fb_enable_controller(struct sa1100fb_info *fbi)
+ 	writel_relaxed(fbi->dbar2, fbi->base + DBAR2);
+ 	writel_relaxed(fbi->reg_lccr0 | LCCR0_LEN, fbi->base + LCCR0);
+ 
+-	if (machine_is_shannon())
+-		gpio_set_value(SHANNON_GPIO_DISP_EN, 1);
++	if (fbi->enable)
++		gpiod_set_value(fbi->enable, 1);
+ 
+ 	dev_dbg(fbi->dev, "DBAR1: 0x%08x\n", readl_relaxed(fbi->base + DBAR1));
+ 	dev_dbg(fbi->dev, "DBAR2: 0x%08x\n", readl_relaxed(fbi->base + DBAR2));
+@@ -817,8 +817,8 @@ static void sa1100fb_disable_controller(struct sa1100fb_info *fbi)
+ 
+ 	dev_dbg(fbi->dev, "Disabling LCD controller\n");
+ 
+-	if (machine_is_shannon())
+-		gpio_set_value(SHANNON_GPIO_DISP_EN, 0);
++	if (fbi->enable)
++		gpiod_set_value(fbi->enable, 0);
+ 
+ 	set_current_state(TASK_UNINTERRUPTIBLE);
+ 	add_wait_queue(&fbi->ctrlr_wait, &wait);
+@@ -1173,12 +1173,10 @@ static int sa1100fb_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
+-	if (machine_is_shannon()) {
+-		ret = devm_gpio_request_one(&pdev->dev, SHANNON_GPIO_DISP_EN,
+-			GPIOF_OUT_INIT_LOW, "display enable");
+-		if (ret)
+-			return ret;
+-	}
++	fbi->enable = gpiod_get_optional(&pdev->dev, "enable",
++					 GPIOD_OUT_LOW);
++	if (IS_ERR(fbi->enable))
++		return PTR_ERR(fbi->enable);
+ 
+ 	/* Initialize video memory */
+ 	ret = sa1100fb_map_video_memory(fbi);
+diff --git a/drivers/video/fbdev/sa1100fb.h b/drivers/video/fbdev/sa1100fb.h
+index d0aa33b0b88a..9711bbcd6e99 100644
+--- a/drivers/video/fbdev/sa1100fb.h
++++ b/drivers/video/fbdev/sa1100fb.h
+@@ -10,6 +10,8 @@
+  * for more details.
+  */
+ 
++struct gpio_desc;
++
+ #define LCCR0           0x0000          /* LCD Control Reg. 0 */
+ #define LCSR            0x0004          /* LCD Status Reg. */
+ #define DBAR1           0x0010          /* LCD DMA Base Address Reg. channel 1 */
+@@ -33,6 +35,7 @@ struct sa1100fb_info {
+ 	struct device		*dev;
+ 	const struct sa1100fb_rgb *rgb[NR_RGB];
+ 	void __iomem		*base;
++	struct gpio_desc	*enable;
+ 
+ 	/*
+ 	 * These are the addresses we mapped
+-- 
+2.24.1
 
 
 _______________________________________________
