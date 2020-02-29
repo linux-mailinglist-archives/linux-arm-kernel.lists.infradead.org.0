@@ -2,90 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8836174642
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 11:42:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A85E0174646
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 29 Feb 2020 11:44:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W7d2kliu39MdLvNkeiblWKhrYeEp5JTdH7FXgV0cZWg=; b=oKgT5iOG+u/lrv
-	5/scFnhLuiOZvruGKv9aYxklTWpcSa458q9Dt91c42uZgAzaYpdL6zXtQppGj/hRTkkTNBmmcn1e6
-	2mi6YG7hfi24GBcV8kolVTZx7pXpRxAZm4bGHJEj16uZa/+2feyPoRE1u3vQDkm2bTSvyOH8nUIN6
-	i9LnjDaNpQ1+nC7lGJO+gmDX+PgQ4PxWS4JUUdqcz4CR8K67HnSED/lR6kIj1mZxiKdcDAd8uOF/Q
-	TEXijCVUI5gTIq0pOQrxIDu2whWl3+KYy9HJj1AEiNzU1Mkx5cFS2hyv+gGjEPBdpB9VwAE7+f7Ac
-	qC0Yz+d4ZyMbiQ9GU/Cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mQdWA2IL19lsvl4gjeRa8Wy0RTggjNv6zOpzxrAZWJ0=; b=BWoug0DvotW2lK
+	Xw5N62JZD0O2LKYe7nkunELs27DtiAsY+3Ns1o0eZ59QkpQ+jI6W6dkc8hkZLzGnDmZ5mMQMWmcjM
+	wNwQaZumg+naNpwyWkBss3fbCgDA1siMqXmBGAMUQ6qF2Epa41i06FRTdkkAJvBTTPasVyzr9i+5s
+	xyUcqQdISr5Gifi3YNuBqJmIixZNfWgBU0LLnuwq5yEOafzp4LY8yJdH8naduiva2Il8p52Jb68QP
+	fTB8zwpaD4VA8FTmVqs3wpsC4/7/GpVEVLg3438Wi7ofthmhSertm7XHwVNrrNvIXqb0BRzVIJJF7
+	S7LuvaMeeRHKV2dDnfgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7zZd-0007Mn-Lu; Sat, 29 Feb 2020 10:42:21 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j7zbJ-0007is-0U; Sat, 29 Feb 2020 10:44:05 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7zZU-0007MS-0V
- for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 10:42:13 +0000
-Received: by mail-pf1-x444.google.com with SMTP id i6so3092835pfc.1
+ id 1j7zb7-0007iW-Ot
+ for linux-arm-kernel@lists.infradead.org; Sat, 29 Feb 2020 10:43:55 +0000
+Received: by mail-qk1-x743.google.com with SMTP id 11so5594468qkd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 29 Feb 2020 02:42:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=ZzIyS9yhP5PRMubXOxIFShxNXKSbCIxvvlyoIGTDdSQ=;
- b=rv9T+7k3rSDBBf7tiievZuA7eWs2xiVZldc+zDpZK+kepfOQAd6F+wfTMPAMqW89mm
- V4dwiTF+KENZa4T5IQDYXS2FmaWNZF2j1LcFuAqfjrdI8fBG6Y9uL/4J80BzYUv0mXj3
- xpsL9PGb2xOUeR0nkHqLaEm6e+xPTl7EXiViWZlYjJ35Ri6WG2P7+N8LPLqv+Do6YNGg
- 0xoFjdrnjqQkfsp4PpEAxcRoB0e3QRdBmqJupTbfZifYRx4HWzU8QGzz+QmZfmk4sviR
- nBmNWFvq2e7fvM2ilTIYdeRDp5ifWnSVCV6SAPCOS1QmQ7JWraBBABzARzGLK77WuNBw
- xMgQ==
+ Sat, 29 Feb 2020 02:43:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=massaru-org.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cWLh3cGNIdtmam3OU5Dca7rYeIjQy825G41ll9rpNfc=;
+ b=1EMgyUrZE/3eoHr19mlRudElQgXg3GyTeFmnUg2jKH/9lOE8A2LdAQFKDLQSULVbp8
+ i32HSDCeXR27luc1aSM27riRvQvW9J7cFC3/LBQeONwnuyo/1iZtgA1rkF/oINU/L/SN
+ ZBYth62kfJUwYsyOYMEMb84l36Ya8H2sw830g8Y58qM2U427A/8XhzdcPIAP1sYx4dWK
+ QlvWDCfmRjYIXkCX9FU62uH7EF4Z/QCQSn+HtT324B42EpzQn1DwGuuq6WS8UpZeixE3
+ Sz/CSMeJG7IS5Ys7v801rrhea6xGiQutfawP3um4149+cAG/BfBlR7lQ5eFXhxiP+2Po
+ xNuA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=ZzIyS9yhP5PRMubXOxIFShxNXKSbCIxvvlyoIGTDdSQ=;
- b=YAd5wzNZsJORq0evJsdL70MHNCOSQGx/1hEKDCGkLFirD8T18GkkFWBIc4rD+SSLgo
- XRd5MhEhiPgaojXJIUBRU7OgHGd0f+awVGw8QSG1J1r4nDDsbCsPGAJPjnp9O1PxHlpI
- bhzO/uvZKpq0zLFKtmCrrWmN+s5zE3Q6190ak6VkBfzsROmTRoobZL5qDQmUtct2e4zW
- 7/Jl5Ol37RYkQQpKImVaBTM/7r9dNZPeD+p5QUGkoNtiTb8EStf+ycgL+s7bw5Yt3ViH
- zVPnFGLfxeao7gEEGkic6arIYyG4p62pT1bFs2HCfZJ74GsqXWohULH1yjOdOFDd4QbW
- Rm9A==
-X-Gm-Message-State: APjAAAVnRyyhVSiqcxbLkxKwjZQQh6rMIWFMWg6txJyZLpJv9ORFhA8x
- tkVicyC3OGUFn+IsPjgIdbl7RCcIba4w
-X-Google-Smtp-Source: APXvYqxFuIpAAUSXOCIb8wR8iP1M+6alf1Wcq8lFOXfAz0qwvzIiIYz/WHDdik1cpwtmkMbwWaBi7A==
-X-Received: by 2002:a63:5124:: with SMTP id f36mr8819866pgb.288.1582972929850; 
- Sat, 29 Feb 2020 02:42:09 -0800 (PST)
-Received: from mani ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id 7sm2513995pfg.12.2020.02.29.02.42.07
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 29 Feb 2020 02:42:09 -0800 (PST)
-Date: Sat, 29 Feb 2020 16:12:02 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Matheus Castello <matheus@castello.eng.br>
-Subject: Re: [PATCH v1 2/2] ARM: dts: Add Caninos Loucos Labrador
-Message-ID: <20200229104202.GA19610@mani>
-References: <20200227201557.368533-1-matheus@castello.eng.br>
- <20200227201557.368533-3-matheus@castello.eng.br>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=cWLh3cGNIdtmam3OU5Dca7rYeIjQy825G41ll9rpNfc=;
+ b=KRyxK0VWBvYieXrvvoaT0jDinIcmfYA7RhelN1qc0nk594jSmZxgnQ+7TWfFztSH0c
+ O0cRxQlgXkld67Ij83kh23ZsYRRPPZ1OkXvGH7NxuIr8mxW9Rj9qEVBVxAWD5GH4S34i
+ 1Ciy+/VnxYmILaApG50sVVeUjvoTtJiDg/uepDj3pyJLEWnCP9Pz66laUBcdAJUFDBKO
+ h7/gApSfs0yWh8zRPdEREgiqBQcRTnZTeBV/PU7hSk3WXzK74mOaUDr3cP9ADTuE5b1D
+ PtGkvCdJ2pM8Vamwrq3ZAWp7BdZ4ZRb/4f5F/TZjsjOsBQDaE3Ou4vh1SkBvyBGTK7Sn
+ PfaA==
+X-Gm-Message-State: APjAAAXMSNbRTWxP7Te0C+EPu/btwAc970iUltcFeCqbVpUeKOyrpME4
+ j8Ro6s6LgKxfQMOWGt/WbvO7Xg==
+X-Google-Smtp-Source: APXvYqzKSpOtCuGl13wtVyIl+A2uueLeUiyltEAJsnTd8/rg0gyfETvajHr+CRxRePNxGXOCXGTTHQ==
+X-Received: by 2002:a37:9181:: with SMTP id t123mr8094431qkd.230.1582973031766; 
+ Sat, 29 Feb 2020 02:43:51 -0800 (PST)
+Received: from bbking.lan ([2804:14c:4a5:36c::cd2])
+ by smtp.gmail.com with ESMTPSA id t6sm6737843qke.57.2020.02.29.02.43.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 29 Feb 2020 02:43:51 -0800 (PST)
+From: Vitor Massaru Iha <vitor@massaru.org>
+To: devicetree@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: dts: freescale: add gpio-fan/thermal support for
+ Google i.MX 8MQ Phanbell
+Date: Sat, 29 Feb 2020 07:43:47 -0300
+Message-Id: <20200229104347.11126-1-vitor@massaru.org>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200227201557.368533-3-matheus@castello.eng.br>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_024212_115338_16A34520 
-X-CRM114-Status: GOOD (  18.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200229_024353_836795_B1536976 
+X-CRM114-Status: GOOD (  11.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -99,131 +93,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, afaerber@suse.de,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, lkcamp@lists.libreplanetbr.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, robh+dt@kernel.org, linux-imx@nxp.com,
+ marco.franchi@nxp.com, festevam@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+It was based on Google Source Code for Coral Edge TPU Mendel release:
+https://coral.googlesource.com/linux-imx/
 
-Thanks for the patch! Please find comments inline.
+It was tested on Coral Dev Board using this command:
+  sudo stress --cpu 4 --timeout 3600
 
-On Thu, Feb 27, 2020 at 05:15:57PM -0300, Matheus Castello wrote:
-> Add Device Trees for Caninos Loucos Labrador SoM and base board.
-> Based on the work of Andreas F=E4rber on Lemaker Guitar device tree.
-> =
+Signed-off-by: Vitor Massaru Iha <vitor@massaru.org>
+---
+ .../boot/dts/freescale/imx8mq-phanbell.dts    | 78 +++++++++++++++++++
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi     |  2 +-
+ 2 files changed, 79 insertions(+), 1 deletion(-)
 
-> Signed-off-by: Matheus Castello <matheus@castello.eng.br>
-> ---
->  arch/arm/boot/dts/Makefile                  |  3 +-
->  arch/arm/boot/dts/owl-s500-labrador-bb.dts  | 33 +++++++++++++++++++++
->  arch/arm/boot/dts/owl-s500-labrador-v2.dtsi | 21 +++++++++++++
->  3 files changed, 56 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm/boot/dts/owl-s500-labrador-bb.dts
->  create mode 100644 arch/arm/boot/dts/owl-s500-labrador-v2.dtsi
-> =
-
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index d6546d2676b9..acdf65ef3236 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -842,7 +842,8 @@ dtb-$(CONFIG_ARCH_ORION5X) +=3D \
->  dtb-$(CONFIG_ARCH_ACTIONS) +=3D \
->  	owl-s500-cubieboard6.dtb \
->  	owl-s500-guitar-bb-rev-b.dtb \
-> -	owl-s500-sparky.dtb
-> +	owl-s500-sparky.dtb \
-> +	owl-s500-labrador-bb.dtb
-
-Please sort the entries alphabetically.
-
->  dtb-$(CONFIG_ARCH_PRIMA2) +=3D \
->  	prima2-evb.dtb
->  dtb-$(CONFIG_ARCH_PXA) +=3D \
-> diff --git a/arch/arm/boot/dts/owl-s500-labrador-bb.dts b/arch/arm/boot/d=
-ts/owl-s500-labrador-bb.dts
-> new file mode 100644
-> index 000000000000..1e821804da30
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/owl-s500-labrador-bb.dts
-> @@ -0,0 +1,33 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-
-A title here would be helpful like how you added for the SoM below.
-
-> + * Copyright (c) 2019-2020 Matheus Castello
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "owl-s500-labrador-v2.dtsi"
-> +#include <dt-bindings/leds/common.h>
-
-Do we need this now?
-
-Thanks,
-Mani
-
-> +
-> +/ {
-> +	compatible =3D "caninos,labrador-bb", "caninos,labrador", "actions,s500=
-";
-> +	model =3D "Caninos Labrador Base Board M v1.0";
-> +
-> +	aliases {
-> +		serial3 =3D &uart3;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path =3D "serial3:115200n8";
-> +	};
-> +
-> +	uart3_clk: uart3-clk {
-> +		compatible =3D "fixed-clock";
-> +		clock-frequency =3D <921600>;
-> +		#clock-cells =3D <0>;
-> +	};
-> +};
-> +
-> +&uart3 {
-> +	status =3D "okay";
-> +	clocks =3D <&uart3_clk>;
-> +};
-> diff --git a/arch/arm/boot/dts/owl-s500-labrador-v2.dtsi b/arch/arm/boot/=
-dts/owl-s500-labrador-v2.dtsi
-> new file mode 100644
-> index 000000000000..ee079f02b5dd
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/owl-s500-labrador-v2.dtsi
-> @@ -0,0 +1,21 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Caninos Labrador SoM V2
-> + *
-> + * Copyright (c) 2019-2020 Matheus Castello
-> + */
-> +
-> +#include "owl-s500.dtsi"
-> +
-> +/ {
-> +	compatible =3D "caninos,labrador", "actions,s500";
-> +
-> +	memory@0 {
-> +		device_type =3D "memory";
-> +		reg =3D <0x0 0x80000000>;
-> +	};
-> +};
-> +
-> +&timer {
-> +	clocks =3D <&hosc>;
-> +};
-> --
-> 2.25.0
-> =
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts b/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts
+index 3f2a489a4ad8..fb9f208d1e41 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts
+@@ -35,6 +35,14 @@
+ 		gpio = <&gpio2 19 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
+ 	};
++
++	fan: gpio_fan {
++		compatible = "gpio-fan";
++		gpio-fan,speed-map = <0 0 8600 1>;
++		gpios = <&gpio3 5 GPIO_ACTIVE_HIGH>;
++		#cooling-cells = <2>;
++		status = "okay";
++	};
+ };
+ 
+ &A53_0 {
+@@ -374,3 +382,73 @@
+ 		>;
+ 	};
+ };
++
++&tmu {
++	throttle-cfgs {
++		throttle_devfreq: devfreq {
++			throttle,max_state = <2>;
++			#cooling-cells = <2>;
++		};
++	};
++};
++
++&cpu_thermal {
++	trips {
++		cpu_alert0: trip0 {
++			temperature = <75000>;
++			hysteresis = <2000>;
++			type = "passive";
++		};
++
++		cpu_alert1: trip1 {
++			temperature = <80000>;
++			hysteresis = <2000>;
++			type = "passive";
++		};
++
++		cpu_alert2: trip2 {
++			temperature = <85000>;
++			hysteresis = <2000>;
++			type = "passive";
++		};
++
++		cpu_crit0: trip3 {
++			temperature = <90000>;
++			hysteresis = <2000>;
++			type = "critical";
++		};
++
++		fan_toggle0: trip4 {
++			temperature = <65000>;
++			hysteresis = <10000>;
++			type = "active";
++		};
++	};
++
++	cooling-maps {
++		map0 {
++			trip = <&cpu_alert0>;
++			cooling-device =
++			<&throttle_devfreq 0 1>, /* 1/2 GPU Clock */
++			<&A53_0 0 1>; /* Exclude highest OPP */
++		};
++
++		map1 {
++			trip = <&cpu_alert1>;
++			cooling-device =
++			<&A53_0 0 2>; /* Exclude two highest OPPs */
++		};
++
++		map2 {
++			trip = <&cpu_alert2>;
++			cooling-device =
++			<&throttle_devfreq 0 2>; /* Min GPU Clock, disable CPU2/3 */
++		};
++
++		map4 {
++			trip = <&fan_toggle0>;
++			cooling-device = <&fan 0 1>;
++		};
++	};
++};
++
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index 6a1e83922c71..a3bb17a6b9df 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -198,7 +198,7 @@
+ 	};
+ 
+ 	thermal-zones {
+-		cpu-thermal {
++		cpu_thermal: cpu-thermal {
+ 			polling-delay-passive = <250>;
+ 			polling-delay = <2000>;
+ 			thermal-sensors = <&tmu 0>;
+-- 
+2.21.1
 
 
 _______________________________________________
