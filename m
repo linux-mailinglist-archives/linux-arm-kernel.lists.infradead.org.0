@@ -2,45 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08483174A32
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 00:42:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1403174A38
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 00:44:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GpNqEb/qR5DeGAbT1aRrOeYARuJb+sUDwP2Lxb5YmvU=; b=iWfvkTN7EC7Aji
-	rxhi/niTI469UlsyURi/uWiM6vRloMnL5Zx1t4GWsm2l9zGPMBcFarLv9W/uTGOSvwi0xZkNEd4q3
-	8OX58gA397PpTCAmiOdapnv9/MJZfgIdxnyGLd9lJiLuoGkMNUmoXc93OpeOEgpoMKNqvtwfDixMi
-	AkHzSOOChkytde1N9ttuaWOO3MzWrZzmz+PKkfu6DmE7/AtgoLe04xpuDYc513CRJHbwo5n1kP5rU
-	/PzdoNKfGuLiARTpgzlGPoohNb6yl2etBsqm08m9/uJJ89GW+iMaapRKS++4wjRmIGUL+BIzVdY/W
-	nQyfAcgnCR4CW0olRPgA==;
+	List-Owner; bh=0ZITPbRvlILviC5bfkgwk6h4i7iHpmdb20Yk034Co8E=; b=VUYsF2WoPR9g77
+	fyKc9dyr83At1b07nAmBch/u1HSbgF+IY5s3v9hEWCns4Cy1yS6Mddn0QCT2RBGkryCuu35ngq3TL
+	PGFrSD/pDn/3OaLQrYQgsVMB6YG3zth8xUn1gm/Ov2PcNG+xK1Dx5NRVcpzbLblNLAevBT9RLv1cH
+	LAnANtFYl58e5NDx8ydD0ziMKUdsNXaoWdbzGdZBpIq7Wv8fNq1Z5LRPbC3MIgYoGwifyZvS9gs3q
+	PU/VLOFBFqM5RLk+32mS6Hvk2QWemQ315ggyrqq06qTRwF3rkLVCc4moMMHQjfS+kUI03Py/h/h8i
+	aMeVyWx5DZCeZBIJ5g6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8BkY-0005DX-Gi; Sat, 29 Feb 2020 23:42:26 +0000
+	id 1j8Bm4-0005cx-5r; Sat, 29 Feb 2020 23:44:00 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8BkL-0005Cc-Bj; Sat, 29 Feb 2020 23:42:14 +0000
+ id 1j8Blt-0005cP-AE; Sat, 29 Feb 2020 23:43:50 +0000
 Received: from p508fcd9d.dip0.t-ipconnect.de ([80.143.205.157]
  helo=phil.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j8BkC-0004p9-60; Sun, 01 Mar 2020 00:42:04 +0100
+ id 1j8Blr-0004pd-AW; Sun, 01 Mar 2020 00:43:47 +0100
 From: Heiko Stuebner <heiko@sntech.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 3/3] arm64: dts: rockchip: Describe RK3328 GPIO_MUTE
- users
-Date: Sun, 01 Mar 2020 00:42:03 +0100
-Message-ID: <2986513.xosFKxlJ7S@phil>
-In-Reply-To: <59fe8a7d-22ab-6098-5266-4fdf4bf41adb@arm.com>
-References: <cover.1581376744.git.robin.murphy@arm.com>
- <53637c0359ad9473dc1391a8428ba21017ec467e.1581376744.git.robin.murphy@arm.com>
- <59fe8a7d-22ab-6098-5266-4fdf4bf41adb@arm.com>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH] arm64: dts: rockchip: fix cpu compatible property for
+ rk3308
+Date: Sun, 01 Mar 2020 00:43:46 +0100
+Message-ID: <2296994.saQPy0AWz7@phil>
+In-Reply-To: <20200228084827.16198-1-jbx6244@gmail.com>
+References: <20200228084827.16198-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_154213_551827_2F4D0ED4 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200229_154349_510552_EF38C571 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,25 +57,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- lgirdwood@gmail.com, linux-rockchip@lists.infradead.org, broonie@kernel.org,
- pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Freitag, 28. Februar 2020, 13:48:50 CET schrieb Robin Murphy:
-> Hi Heiko,
+Am Freitag, 28. Februar 2020, 09:48:27 CET schrieb Johan Jonker:
+> A test with the command below gives for example these errors:
 > 
-> On 18/02/2020 9:32 pm, Robin Murphy wrote:
-> > Add explicit properties to describe existing boards' GPIO_MUTE usage
-> > for the analog codec.
+> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+> Additional items are not allowed ('arm,armv8' was unexpected)
+> arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: cpu@0: compatible:
+> ['arm,cortex-a35', 'arm,armv8']
+> is too long
 > 
-> Are you happy to pick this up now that the driver patches are queued?
+> Fix these errors by removing the last argument of
+> the cpu compatible property in rk3308.dtsi.
+> 
+> make ARCH=arm64
+> dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/cpus.yaml
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-very happy :-)
-And applied for 5.7
+applied for 5.7 with Robins Rb
 
 Thanks
 Heiko
