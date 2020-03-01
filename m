@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4AD8174B77
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 06:31:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 938AF174B7C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 06:32:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fF98qcJNn7WQ0JbWs2Q/X91WjT4//xCzAfRDF7EVF48=; b=NfRi9EBe51KwIiRlPsTP8cHfJU
-	CDTMJAPsjxTNfOpsh3KKOZ+OiaXkBLG/xjGi72bxz1f0asgxQJgFPP4IuX1P2uvaaWOtvGiK/A4ox
-	n047V58+bLWFkReDjBD4rXeNBoA3aBpGKMwOjpzsURdaE/iilfilTr2J+AB+WSllp39yMRuaNTyLP
-	Ij2hDv655ou3gpCNiu8UXt0AVD6FrlPr7Y/WUeVTfI1BduyOxKNeoHQxz+E/21zX1LR/+SmLgysO7
-	nEPG7W3q22msCPox3D5wNYExwW+uXqaS0f5nZTMVuKn96yT2QiTAN55GWqXk6RQXgXZJH3coc2AGJ
-	yyyoX/vA==;
+	bh=3PBI+8NPrid0BR62tcwoqC4d+KZDHgupoftBFVq3goI=; b=Z1rdT3LKKPQaACg5kex4OZ/vMj
+	bijdigyWF0AvDyx4NS0hUPPcJL6YpmoGO6qVxrvPh6yJabPMQI80GPfDqXt0HVtgxrtxYorwzeQ9g
+	NTyMB9Iom2wxyXPSlyC2yNfBdDVN7vZqVecmojsqgajj0UbcmikAEjdFov+AfUSgQ8iCpUL4zcyaz
+	D4vodtX1khCF3iZbo6jAJG3X5eM8lKrZ49iaHsGd/yY6OJStADiLj9fobi+c6BCPPI6idzu3JcTeE
+	OoWK66bmGvTG9TSpExmzVqRyROH/NswkMmrO+DvDWjkt0pBbjVX2YASTeArKDbSF5LdNZDXyQFQbM
+	1vLY7XpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8HCD-000070-EE; Sun, 01 Mar 2020 05:31:21 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j8HD6-0001Ic-2k; Sun, 01 Mar 2020 05:32:16 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8HBZ-0008L3-Rv
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 05:30:43 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 88E0C200A3A;
- Sun,  1 Mar 2020 06:30:38 +0100 (CET)
+ id 1j8HBb-0008LP-6D
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 05:30:45 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2B4F21A09C6;
+ Sun,  1 Mar 2020 06:30:40 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4453320062C;
- Sun,  1 Mar 2020 06:30:29 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B19B41A09CD;
+ Sun,  1 Mar 2020 06:30:30 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 11D71402D5;
- Sun,  1 Mar 2020 13:30:18 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9095F402ED;
+ Sun,  1 Mar 2020 13:30:19 +0800 (SGT)
 From: Shengjiu Wang <shengjiu.wang@nxp.com>
 To: timur@kernel.org, nicoleotsuka@gmail.com, Xiubo.Lee@gmail.com,
  festevam@gmail.com, broonie@kernel.org, alsa-devel@alsa-project.org,
@@ -42,9 +42,9 @@ To: timur@kernel.org, nicoleotsuka@gmail.com, Xiubo.Lee@gmail.com,
  mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, linux-imx@nxp.com,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 3/8] ASoC: fsl-asoc-card: Change asrc-width to asrc-format
-Date: Sun,  1 Mar 2020 13:24:14 +0800
-Message-Id: <b220ba87a89cd4d0d876800efac9bb761f98bd70.1583039752.git.shengjiu.wang@nxp.com>
+Subject: [PATCH v4 4/8] ASoC: fsl_asrc: Change asrc_width to asrc_format
+Date: Sun,  1 Mar 2020 13:24:15 +0800
+Message-Id: <c5f0e275a1f2da9bd72e29b85e973baa1cb1d6a4.1583039752.git.shengjiu.wang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1583039752.git.shengjiu.wang@nxp.com>
 References: <cover.1583039752.git.shengjiu.wang@nxp.com>
@@ -52,16 +52,15 @@ In-Reply-To: <cover.1583039752.git.shengjiu.wang@nxp.com>
 References: <cover.1583039752.git.shengjiu.wang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_213042_053484_396E6752 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200229_213043_510351_0C7E173B 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -88,33 +87,127 @@ format in driver, and it can distinguish S24_LE & S24_3LE.
 
 Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
 ---
- sound/soc/fsl/fsl-asoc-card.c | 9 ++-------
- 1 file changed, 2 insertions(+), 7 deletions(-)
+ sound/soc/fsl/fsl_asrc.c     | 19 ++++++-------------
+ sound/soc/fsl/fsl_asrc.h     |  4 ++--
+ sound/soc/fsl/fsl_asrc_dma.c | 15 ++++++++++++---
+ 3 files changed, 20 insertions(+), 18 deletions(-)
 
-diff --git a/sound/soc/fsl/fsl-asoc-card.c b/sound/soc/fsl/fsl-asoc-card.c
-index 9ce55feaac22..ab21fa1cabf7 100644
---- a/sound/soc/fsl/fsl-asoc-card.c
-+++ b/sound/soc/fsl/fsl-asoc-card.c
-@@ -680,17 +680,12 @@ static int fsl_asoc_card_probe(struct platform_device *pdev)
- 			goto asrc_fail;
- 		}
+diff --git a/sound/soc/fsl/fsl_asrc.c b/sound/soc/fsl/fsl_asrc.c
+index 0dcebc24c312..3460ff7f92e2 100644
+--- a/sound/soc/fsl/fsl_asrc.c
++++ b/sound/soc/fsl/fsl_asrc.c
+@@ -589,7 +589,6 @@ static int fsl_asrc_dai_hw_params(struct snd_pcm_substream *substream,
+ 	unsigned int channels = params_channels(params);
+ 	unsigned int rate = params_rate(params);
+ 	struct asrc_config config;
+-	snd_pcm_format_t format;
+ 	int ret;
  
--		ret = of_property_read_u32(asrc_np, "fsl,asrc-width", &width);
-+		ret = of_property_read_u32(asrc_np, "fsl,asrc-format", &priv->asrc_format);
- 		if (ret) {
--			dev_err(&pdev->dev, "failed to get output rate\n");
-+			dev_err(&pdev->dev, "failed to get output format\n");
- 			ret = -EINVAL;
- 			goto asrc_fail;
- 		}
+ 	ret = fsl_asrc_request_pair(channels, pair);
+@@ -600,11 +599,6 @@ static int fsl_asrc_dai_hw_params(struct snd_pcm_substream *substream,
+ 
+ 	pair->config = &config;
+ 
+-	if (asrc_priv->asrc_width == 16)
+-		format = SNDRV_PCM_FORMAT_S16_LE;
+-	else
+-		format = SNDRV_PCM_FORMAT_S24_LE;
 -
--		if (width == 24)
--			priv->asrc_format = SNDRV_PCM_FORMAT_S24_LE;
--		else
--			priv->asrc_format = SNDRV_PCM_FORMAT_S16_LE;
+ 	config.pair = pair->index;
+ 	config.channel_num = channels;
+ 	config.inclk = INCLK_NONE;
+@@ -612,11 +606,11 @@ static int fsl_asrc_dai_hw_params(struct snd_pcm_substream *substream,
+ 
+ 	if (substream->stream == SNDRV_PCM_STREAM_PLAYBACK) {
+ 		config.input_format   = params_format(params);
+-		config.output_format  = format;
++		config.output_format  = asrc_priv->asrc_format;
+ 		config.input_sample_rate  = rate;
+ 		config.output_sample_rate = asrc_priv->asrc_rate;
+ 	} else {
+-		config.input_format   = format;
++		config.input_format   = asrc_priv->asrc_format;
+ 		config.output_format  = params_format(params);
+ 		config.input_sample_rate  = asrc_priv->asrc_rate;
+ 		config.output_sample_rate = rate;
+@@ -1052,16 +1046,15 @@ static int fsl_asrc_probe(struct platform_device *pdev)
+ 		return ret;
  	}
  
- 	/* Finish card registering */
+-	ret = of_property_read_u32(np, "fsl,asrc-width",
+-				   &asrc_priv->asrc_width);
++	ret = of_property_read_u32(np, "fsl,asrc-format", &asrc_priv->asrc_format);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "failed to get output width\n");
+ 		return ret;
+ 	}
+ 
+-	if (asrc_priv->asrc_width != 16 && asrc_priv->asrc_width != 24) {
+-		dev_warn(&pdev->dev, "unsupported width, switching to 24bit\n");
+-		asrc_priv->asrc_width = 24;
++	if (!(FSL_ASRC_FORMATS & (1ULL << asrc_priv->asrc_format))) {
++		dev_warn(&pdev->dev, "unsupported format, switching to S24_LE\n");
++		asrc_priv->asrc_format = SNDRV_PCM_FORMAT_S24_LE;
+ 	}
+ 
+ 	platform_set_drvdata(pdev, asrc_priv);
+diff --git a/sound/soc/fsl/fsl_asrc.h b/sound/soc/fsl/fsl_asrc.h
+index 8a821132d9d0..4940fa0a7542 100644
+--- a/sound/soc/fsl/fsl_asrc.h
++++ b/sound/soc/fsl/fsl_asrc.h
+@@ -493,7 +493,7 @@ struct fsl_asrc_pair {
+  * @channel_avail: non-occupied channel numbers
+  * @clk_map: clock map for input/output clock
+  * @asrc_rate: default sample rate for ASoC Back-Ends
+- * @asrc_width: default sample width for ASoC Back-Ends
++ * @asrc_format: default sample format for ASoC Back-Ends
+  * @regcache_cfg: store register value of REG_ASRCFG
+  */
+ struct fsl_asrc {
+@@ -514,7 +514,7 @@ struct fsl_asrc {
+ 	unsigned char *clk_map[2];
+ 
+ 	int asrc_rate;
+-	int asrc_width;
++	snd_pcm_format_t asrc_format;
+ 
+ 	u32 regcache_cfg;
+ };
+diff --git a/sound/soc/fsl/fsl_asrc_dma.c b/sound/soc/fsl/fsl_asrc_dma.c
+index 44e5924be870..af6b583aa71e 100644
+--- a/sound/soc/fsl/fsl_asrc_dma.c
++++ b/sound/soc/fsl/fsl_asrc_dma.c
+@@ -146,7 +146,7 @@ static int fsl_asrc_dma_hw_params(struct snd_soc_component *component,
+ 	struct device *dev_be;
+ 	u8 dir = tx ? OUT : IN;
+ 	dma_cap_mask_t mask;
+-	int ret;
++	int ret, bits;
+ 
+ 	/* Fetch the Back-End dma_data from DPCM */
+ 	for_each_dpcm_be(rtd, stream, dpcm) {
+@@ -230,10 +230,19 @@ static int fsl_asrc_dma_hw_params(struct snd_soc_component *component,
+ 		return -EINVAL;
+ 	}
+ 
+-	if (asrc_priv->asrc_width == 16)
++	bits = snd_pcm_format_physical_width(asrc_priv->asrc_format);
++	if (bits < 8 || bits > 64)
++		return -EINVAL;
++	else if (bits == 8)
++		buswidth = DMA_SLAVE_BUSWIDTH_1_BYTE;
++	else if (bits == 16)
+ 		buswidth = DMA_SLAVE_BUSWIDTH_2_BYTES;
+-	else
++	else if (bits == 24)
++		buswidth = DMA_SLAVE_BUSWIDTH_3_BYTES;
++	else if (bits <= 32)
+ 		buswidth = DMA_SLAVE_BUSWIDTH_4_BYTES;
++	else
++		buswidth = DMA_SLAVE_BUSWIDTH_8_BYTES;
+ 
+ 	config_be.direction = DMA_DEV_TO_DEV;
+ 	config_be.src_addr_width = buswidth;
 -- 
 2.21.0
 
