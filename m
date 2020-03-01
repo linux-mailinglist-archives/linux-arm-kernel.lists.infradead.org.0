@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C398174B78
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 06:31:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A304174B79
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 06:32:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ACxQMH+mCET2Cm8PEShdI5DTzxxHEYTcfOxAKsYhLHw=; b=QWi
-	S9OUEJ4ZjjFJHFn1TcYKz+ZTxm8/00M8nWam2oIHvjHzZg4/im3zllV84gLegrC/1FZAS21zC/jzU
-	6RI2lZg5pizADcN89UDjVHoq+5lD6O6AyLiShbxXLUgDQdwYUUl08w1ye1D8M/52FaVh79uWKsPuD
-	IB0mn88fzttxa8QrGzMEWpFBU8tSG9nwGqxucAi1kobG81brFnZpD1QIQXZ1uG8wbmlDyxN3bs9hj
-	mjA/LcLDahvSe1NwI0+CyoecIQ2fLZ9ZzaoKhPbZsnDqkd8FFT0Jhtt528fa4ypY7l+ILzQGirZNv
-	WzBCgbLklqyRmRzOFRD7BhaIpfbhMUg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Z92PFF0s1Jo62thho18j1A+XLJFUggfWY8NB+/fULRs=; b=iY3GEqfSg2KeHNPnrqMKclinMp
+	Nd2RJOP4DCfmnpqAKl4eY7LKD+eumv8e99eDZ7q5lHi9CAsS0XmpXILBfHN66P3WXv33jPNLcNd9+
+	3HajfjA4KA1IbmtxKfGSTOhgc06rb9Uuqrvxtubdh1pSlKEI+iZ3LMLpBGG6gGStM7odK2c32fO48
+	bdi9DogSNv4Hdmjq7lQcZLOj+EMOChXQKZ2iJpNJ4fU6O2ulY9MN2uBi48Vxq1fDzfB6Bjf8pT0fY
+	ppzQZLzK2Vr6GqhB/ZRU8MkiK7i8Yr/SDt5DZzmJaucPSxmM0JRB45SDkxSsf3P/w8C6DGZBb3Jap
+	ZH3XDp1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8HCY-0000cp-5l; Sun, 01 Mar 2020 05:31:42 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j8HCw-0000sN-6W; Sun, 01 Mar 2020 05:32:06 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8HBa-0008KM-6K
+ id 1j8HBa-0008KX-BP
  for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 05:30:45 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E2F8C200A2E;
- Sun,  1 Mar 2020 06:30:33 +0100 (CET)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 738A11A09C0;
+ Sun,  1 Mar 2020 06:30:35 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A1F7C200A2D;
- Sun,  1 Mar 2020 06:30:24 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 30C241A09C6;
+ Sun,  1 Mar 2020 06:30:26 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 813FD40294;
- Sun,  1 Mar 2020 13:30:13 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 03A8D40299;
+ Sun,  1 Mar 2020 13:30:14 +0800 (SGT)
 From: Shengjiu Wang <shengjiu.wang@nxp.com>
 To: timur@kernel.org, nicoleotsuka@gmail.com, Xiubo.Lee@gmail.com,
  festevam@gmail.com, broonie@kernel.org, alsa-devel@alsa-project.org,
@@ -41,14 +42,19 @@ To: timur@kernel.org, nicoleotsuka@gmail.com, Xiubo.Lee@gmail.com,
  mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, linux-imx@nxp.com,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 0/8] ASoC: Add new module driver for new ASRC
-Date: Sun,  1 Mar 2020 13:24:11 +0800
-Message-Id: <cover.1583039752.git.shengjiu.wang@nxp.com>
+Subject: [PATCH v4 1/8] ASoC: dt-bindings: fsl_asrc: Change asrc-width to
+ asrc-format
+Date: Sun,  1 Mar 2020 13:24:12 +0800
+Message-Id: <872c2e1082de6348318e14ccd31884d62355c282.1583039752.git.shengjiu.wang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1583039752.git.shengjiu.wang@nxp.com>
+References: <cover.1583039752.git.shengjiu.wang@nxp.com>
+In-Reply-To: <cover.1583039752.git.shengjiu.wang@nxp.com>
+References: <cover.1583039752.git.shengjiu.wang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_213042_373478_954845E5 
-X-CRM114-Status: UNSURE (   7.82  )
+X-CRM114-CacheID: sfid-20200229_213042_550038_BA8CA8CC 
+X-CRM114-Status: UNSURE (   7.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -56,7 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,50 +83,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add new module driver for new ASRC in i.MX8MN, several commits
-are added for change DT binding asrc-width to asrc-format
+asrc_format is more inteligent, which is align with the alsa
+definition snd_pcm_format_t, we don't need to convert it to
+format in driver, and it can distinguish S24_LE & S24_3LE.
 
-Shengjiu Wang (8):
-  ASoC: dt-bindings: fsl_asrc: Change asrc-width to asrc-format
-  ARM: dts: imx6qdl: Change asrc-width to asrc-format
-  ASoC: fsl-asoc-card: Change asrc-width to asrc-format
-  ASoC: fsl_asrc: Change asrc_width to asrc_format
-  ASoC: fsl_asrc: rename asrc_priv to asrc
-  ASoC: fsl_asrc: Move common definition to fsl_asrc_common
-  ASoC: dt-bindings: fsl_easrc: Add document for EASRC
-  ASoC: fsl_easrc: Add EASRC ASoC CPU DAI and platform drivers
+Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
+---
+ Documentation/devicetree/bindings/sound/fsl,asrc.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-changes in v4
-- Add several commit for changing DT binding asrc-width to asrc-format
-- rename asrc_priv to asrc
-
-changes in v3
-- add new commit "ASoC: fsl_asrc: Change asrc_width to asrc_format"
-- modify binding doc to yaml format
-- remove fsl_easrc_dma.c, make fsl_asrc_dma.c useable for easrc.
-
-changes in v2
-- change i.MX815 to i.MX8MN
-- Add changes in Kconfig and Makefile
-
- .../devicetree/bindings/sound/fsl,asrc.txt    |    4 +-
- .../devicetree/bindings/sound/fsl,easrc.yaml  |   96 +
- arch/arm/boot/dts/imx6qdl.dtsi                |    2 +-
- sound/soc/fsl/Kconfig                         |   11 +
- sound/soc/fsl/Makefile                        |    2 +
- sound/soc/fsl/fsl-asoc-card.c                 |    9 +-
- sound/soc/fsl/fsl_asrc.c                      |  282 +--
- sound/soc/fsl/fsl_asrc.h                      |   74 +-
- sound/soc/fsl/fsl_asrc_common.h               |  105 +
- sound/soc/fsl/fsl_asrc_dma.c                  |   54 +-
- sound/soc/fsl/fsl_easrc.c                     | 2111 +++++++++++++++++
- sound/soc/fsl/fsl_easrc.h                     |  651 +++++
- 12 files changed, 3169 insertions(+), 232 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/fsl,easrc.yaml
- create mode 100644 sound/soc/fsl/fsl_asrc_common.h
- create mode 100644 sound/soc/fsl/fsl_easrc.c
- create mode 100644 sound/soc/fsl/fsl_easrc.h
-
+diff --git a/Documentation/devicetree/bindings/sound/fsl,asrc.txt b/Documentation/devicetree/bindings/sound/fsl,asrc.txt
+index cb9a25165503..0cbb86c026d5 100644
+--- a/Documentation/devicetree/bindings/sound/fsl,asrc.txt
++++ b/Documentation/devicetree/bindings/sound/fsl,asrc.txt
+@@ -38,7 +38,9 @@ Required properties:
+ 
+    - fsl,asrc-rate	: Defines a mutual sample rate used by DPCM Back Ends.
+ 
+-   - fsl,asrc-width	: Defines a mutual sample width used by DPCM Back Ends.
++   - fsl,asrc-format	: Defines a mutual sample format used by DPCM Back
++			  Ends. The value is one of SNDRV_PCM_FORMAT_XX in
++			  "include/uapi/sound/asound.h"
+ 
+    - fsl,asrc-clk-map   : Defines clock map used in driver. which is required
+ 			  by imx8qm/imx8qxp platform
 -- 
 2.21.0
 
