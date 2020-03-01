@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04C1A174FDF
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 22:21:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 116F8174FE0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 22:21:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DczS04QolTXlY33fPN3Rkl6nhThAVVTSW0ZIpY4fmUU=; b=MMNvQGOHJ7vc68
-	9rllE9Dd3xKH+S1TfrHAT1jI322q+CyJyPyqzpVaAQlSx8eGO3J2s8x6LmZuzvHuXMcBBhitMs8pp
-	eyCPv/6Fatu1k/ergNUwn2DCTGCJkYcEw7fZtRUPWsPtW/gf0FcxowHEe8ovtUbcjUoPXQCIhso02
-	lG9q4nz1QE1NADvh7CqNSPsaDZWJkYwoc62xF76KSyOHCItllvyVQTx67zp/jY1mlZmyABzYv8yrI
-	h9lSEi7pYeEaTncgk1nQ4hnfQe6GuewKmsgcH+UqDmvWoTLBtfIGwmtbty5bxHAsCzpSap0KLZYaq
-	PeMsP/aMAr9tkcr8uq8g==;
+	List-Owner; bh=Hlyc+BtiAIH882SLCD1ufPQF9iw9eddDg8D8vbXK16E=; b=jpaMW120ESHVZ0
+	KhoFswU9fp87KllHiHAvRuhNZWWM2rY2BvNjHRQpBuNHpSKR6DEDqra/fmaEZ0plK2bf20K0Ey1YF
+	GcpG5hu0fsDiv7tkciMLPxGvhS38maT4QsXVJwz3ZPHyrZwWXvClwpnivHQXAqjgYVRRCeGuAB+PM
+	skCmf7o+/FrkaU7V79hPzRA7PYcjo2lnCBTzrbIrXrJGhmyH4kq5PPjHjHHSnbleJEuTlqtd9RReV
+	V5WscY1QQj/b5YuB0edNX3GCnFuKy07bOmmBud8aSef61knd2qrtzNCjPQADnklT6dMGVbTpUa4qE
+	eKPVgwHRAkexs7RrCOzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8W1F-0007XX-KA; Sun, 01 Mar 2020 21:21:01 +0000
-Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
+	id 1j8W1S-0007qU-2y; Sun, 01 Mar 2020 21:21:14 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8W0s-0007Pb-7d
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 21:20:39 +0000
-Received: by mail-pj1-x102e.google.com with SMTP id lt1so802591pjb.2
+ id 1j8W0w-0007VO-8g
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 21:20:43 +0000
+Received: by mail-pf1-x432.google.com with SMTP id y21so1028189pfp.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 01 Mar 2020 13:20:37 -0800 (PST)
+ Sun, 01 Mar 2020 13:20:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=mFTyi8DW0IuKC/6+mmSXVV/ifKvMR4lpHSQc45481xg=;
- b=tKpA5ANuIyP8IbtLlptofIZyr5COO4tZDOepft9b/F6Qq0qRXGTA1dzMY+3DTwm8OY
- SIU8qSqVw34+brjuSBKHlNwp5zNP7UMn1QozSMQegBj5Wrb5NfCZ2Uy+5g8XmL8eRLNv
- geuf+ISnAlJDqIXl8ym2HnAi+e5nOL35WDadRWd+JtfqQpJvcN1/fv7kGf75pqxr4kob
- 9j1CZIac1mYIRCgL2LxEpc+dOxd7rV1FZQ7TOBwNGGkBMuDj+aRn/cQaFHlksyaFWTMH
- wzDv45QlZK0PjWM/yCHAxJKhqeYReS3DqBWpvZKdkF1+pGpH/PomdWeYTdHA1SnNz/sj
- 4sSQ==
+ bh=rc9J+Cmf71xfajfNUuMMuICeYb/kHr4TudELbJoBD3U=;
+ b=AQMUrVN/O+R6rAjAo1vv4GsivdtxeED67OT3d0xxSkrDvt3fYq+Yel4+P7Y3Q/peOq
+ k5uX0o66W1+HYmLyIYOB/oxZxnXQ2e16d9RDQwIK/V3SyUWwnz3vWstf/fZMZqZj26Uo
+ hf5TPTXaorYnBzBwVXurSfLjYLcuwNZPSgO8HLjmZWYIc8S+HfSwvJm2zkj6sdRgpgvu
+ kkITrVOyk1GplF4ZAXZDEfgnjzlkSQ2qUT0Dz4JjNfY20neR/+vRgGnZmJuq8xnhN72g
+ G+Za/Wgfw+yvRIIrbYh4ZGb/9Ir9+Sf6iP6dQxDpf+m7ZzsipE4gBj6n4NTQ5t1NB6RK
+ NKrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=mFTyi8DW0IuKC/6+mmSXVV/ifKvMR4lpHSQc45481xg=;
- b=McwU/niAaC4xWTwAbCVhl/1DjoH2GVi1a2mLrqxERw35b08iQIslvmaXUndgwUlb1X
- xfzE8qphlSHhn1Y10lXwjWqDgxfLBZGiCpwycGN+qmriVz/BMwOJkNvz/25hWPXsSE4X
- eR9HoGdafsiXFhiyMMkSeMq7KyurdLAHWo3eaFgqaF1kK4cJ1BW8xvazpPdwjOWCMOpA
- 5iCPWrP/I5nWB7IpANmuLoN3foZNBHMRb2WQ4TgYep9s7pSBOlhqYzj9hv2rqYvvv7kj
- W0QNeqlorKDtg+s2iV4W4TI4SU+2jIJJ0iunUMwBAqW2FQCOx8VCnFjmL0710CApDsbh
- Dy8A==
-X-Gm-Message-State: APjAAAVvsr+bWmRF0tQh5hJO0bRqgQV9nUx3uk9DUvqmODWM0MlTZjk6
- 1NXMFo27L/84p8BNBZGFHlbIe6V6
-X-Google-Smtp-Source: APXvYqxxO086EU0oDGLWKKeU0ppH/s01jURiRGoGxAUJ4jJA7gzPeMlYl8zy2POclwE7Yf9VtuasGQ==
-X-Received: by 2002:a17:902:8d94:: with SMTP id
- v20mr15411460plo.259.1583097637445; 
- Sun, 01 Mar 2020 13:20:37 -0800 (PST)
+ bh=rc9J+Cmf71xfajfNUuMMuICeYb/kHr4TudELbJoBD3U=;
+ b=bTSeoILBL9czNro2TfCF0BCOuuVf1e9WQZjVS77E0jK/LvRFsr7wDekKJsftkdKcrS
+ U41DE6sYdyFwK7Ek5fWJO6cmdCl9Atwl88oNeJZq17f4C82rbBG2bpjgwhoBrOuOUt2Y
+ Ct9jgHLJ30diLHEhBMXMv2vKVq9Oihbg77T/1j/4jVxslcH1za8qgwZwEAnHuKd3/R5+
+ te8RJ1Iuhoy7/Ys98l/RojHHetN6Z+1wyMP03gxVf09kjb6WMV3AYGr7ISiz+5LPZJAk
+ uW+W37VBCfAcp4CvzdcrjMKkARsER+WPcEY7V25UCbaZX/kZq38Y7FhhlboKNziI8ye3
+ oS7g==
+X-Gm-Message-State: APjAAAU2giaLeU10PExVP1wutdiZ8pFKdK5u8tGEypbVaXGPW1Hn3UYM
+ tb+HPEILB/tWuhGkYaGjHMA=
+X-Google-Smtp-Source: APXvYqx6mpbuec4O7HMvIyBfEoEAnpVGqr1liKpxzSafteugww+5sx6T9X6KQolbli+jWf31t10u8w==
+X-Received: by 2002:aa7:971c:: with SMTP id a28mr15117532pfg.152.1583097641365; 
+ Sun, 01 Mar 2020 13:20:41 -0800 (PST)
 Received: from localhost.localdomain ([103.51.74.208])
- by smtp.gmail.com with ESMTPSA id u19sm4547686pgf.11.2020.03.01.13.20.33
+ by smtp.gmail.com with ESMTPSA id u19sm4547686pgf.11.2020.03.01.13.20.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 01 Mar 2020 13:20:37 -0800 (PST)
+ Sun, 01 Mar 2020 13:20:40 -0800 (PST)
 From: Anand Moon <linux.amoon@gmail.com>
 To: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCHv2 1/3] devicetree: bindings: exynos: Add new compatible for
- Exynos5420 dwc3 clocks support
-Date: Sun,  1 Mar 2020 21:20:16 +0000
-Message-Id: <20200301212019.2248-2-linux.amoon@gmail.com>
+Subject: [PATCHv2 2/3] ARM: dts: exynos: Add missing usbdrd3 suspend clk
+Date: Sun,  1 Mar 2020 21:20:17 +0000
+Message-Id: <20200301212019.2248-3-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200301212019.2248-1-linux.amoon@gmail.com>
 References: <20200301212019.2248-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_132038_293214_273A13DB 
-X-CRM114-Status: GOOD (  13.00  )
+X-CRM114-CacheID: sfid-20200301_132042_320463_71262317 
+X-CRM114-Status: GOOD (  13.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:432 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [linux.amoon[at]gmail.com]
@@ -109,41 +110,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds the new compatible string for Exynos5422 DWC3
-to support enable/disable of core and suspend clk by DWC3 driver.
-Also updated the clock names for compatible samsung,exynos5420-dwusb3.
+This patch adds new combatible strings for USBDRD3
+for adding missing suspend clk, exynos5422 usbdrd3
+support two clk USBD300 and SCLK_USBD300, so add missing
+suspemd_clk for Exynos542x DWC3 nodes.
 
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
 Previous changes:
-	Added the missing clock name for Exynos5420 complatible
+	Added missing suspend clk name Exynos5410 SoC.
 ---
- Documentation/devicetree/bindings/usb/exynos-usb.txt | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/exynos5410.dtsi | 8 ++++----
+ arch/arm/boot/dts/exynos5420.dtsi | 8 ++++----
+ arch/arm/boot/dts/exynos54xx.dtsi | 4 ++--
+ 3 files changed, 10 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/usb/exynos-usb.txt b/Documentation/devicetree/bindings/usb/exynos-usb.txt
-index 6aae1544f240..220f729ac8eb 100644
---- a/Documentation/devicetree/bindings/usb/exynos-usb.txt
-+++ b/Documentation/devicetree/bindings/usb/exynos-usb.txt
-@@ -69,7 +69,9 @@ DWC3
- Required properties:
-  - compatible: should be one of the following -
- 	       "samsung,exynos5250-dwusb3": for USB 3.0 DWC3 controller on
--					    Exynos5250/5420.
-+					    Exynos5250.
-+	       "samsung,exynos5420-dwusb3": for USB 3.0 DWC3 controller on
-+					    Exynos5420.
- 	       "samsung,exynos5433-dwusb3": for USB 3.0 DWC3 controller on
- 					    Exynos5433.
- 	       "samsung,exynos7-dwusb3": for USB 3.0 DWC3 controller on Exynos7.
-@@ -82,6 +84,7 @@ Required properties:
-                 Following clock names shall be provided for different
-                 compatibles:
-                  - samsung,exynos5250-dwusb3: "usbdrd30",
-+                 - samsung,exynos5420-dwusb3: "usbdrd30", "usbdrd30_susp_clk",
-                  - samsung,exynos5433-dwusb3: "aclk", "susp_clk", "pipe_pclk",
-                                               "phyclk",
-                  - samsung,exynos7-dwusb3: "usbdrd30", "usbdrd30_susp_clk",
+diff --git a/arch/arm/boot/dts/exynos5410.dtsi b/arch/arm/boot/dts/exynos5410.dtsi
+index 2eab80bf5f3a..19845dcd528f 100644
+--- a/arch/arm/boot/dts/exynos5410.dtsi
++++ b/arch/arm/boot/dts/exynos5410.dtsi
+@@ -396,8 +396,8 @@ &trng {
+ };
+ 
+ &usbdrd3_0 {
+-	clocks = <&clock CLK_USBD300>;
+-	clock-names = "usbdrd30";
++	clocks = <&clock CLK_USBD300>, <&clock CLK_SCLK_USBD300>;
++	clock-names = "usbdrd30", "usbdrd30_susp_clk";
+ };
+ 
+ &usbdrd_phy0 {
+@@ -407,8 +407,8 @@ &usbdrd_phy0 {
+ };
+ 
+ &usbdrd3_1 {
+-	clocks = <&clock CLK_USBD301>;
+-	clock-names = "usbdrd30";
++	clocks = <&clock CLK_USBD301>, <&clock CLK_SCLK_USBD301>;
++	clock-names = "usbdrd30", "usbdrd30_susp_clk";
+ };
+ 
+ &usbdrd_dwc3_1 {
+diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
+index b672080e7469..bd505256a223 100644
+--- a/arch/arm/boot/dts/exynos5420.dtsi
++++ b/arch/arm/boot/dts/exynos5420.dtsi
+@@ -1372,8 +1372,8 @@ &trng {
+ };
+ 
+ &usbdrd3_0 {
+-	clocks = <&clock CLK_USBD300>;
+-	clock-names = "usbdrd30";
++	clocks = <&clock CLK_USBD300>, <&clock CLK_SCLK_USBD300>;
++	clock-names = "usbdrd30", "usbdrd30_susp_clk";
+ };
+ 
+ &usbdrd_phy0 {
+@@ -1383,8 +1383,8 @@ &usbdrd_phy0 {
+ };
+ 
+ &usbdrd3_1 {
+-	clocks = <&clock CLK_USBD301>;
+-	clock-names = "usbdrd30";
++	clocks = <&clock CLK_USBD301>, <&clock CLK_SCLK_USBD301>;
++	clock-names = "usbdrd30", "usbdrd30_susp_clk";
+ };
+ 
+ &usbdrd_dwc3_1 {
+diff --git a/arch/arm/boot/dts/exynos54xx.dtsi b/arch/arm/boot/dts/exynos54xx.dtsi
+index 8aa5117e58ce..0aac6255de5d 100644
+--- a/arch/arm/boot/dts/exynos54xx.dtsi
++++ b/arch/arm/boot/dts/exynos54xx.dtsi
+@@ -143,7 +143,7 @@ hsi2c_7: i2c@12cd0000 {
+ 		};
+ 
+ 		usbdrd3_0: usb3-0 {
+-			compatible = "samsung,exynos5250-dwusb3";
++			compatible = "samsung,exynos5420-dwusb3";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges;
+@@ -165,7 +165,7 @@ usbdrd_phy0: phy@12100000 {
+ 		};
+ 
+ 		usbdrd3_1: usb3-1 {
+-			compatible = "samsung,exynos5250-dwusb3";
++			compatible = "samsung,exynos5420-dwusb3";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges;
 -- 
 2.25.1
 
