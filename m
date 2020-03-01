@@ -2,71 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D289B174AE4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 04:21:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92790174B01
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 05:16:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qaz+Wx9mbXkIBGklCfOz8uKpRHvLMRsHjxWZ/QfViNQ=; b=ozyUt79LLDlN7f
-	88yxWrTVhsA8il8zQEFmUJYMlT3fpLOkzxfjxwyHaE4BiHK4FJcZ/4s0Cq4kEqfs1Gf6Pcvb9TUog
-	UyyJViv19+T5lwJdZPayrTwaIjfo6tvGINXSmGcqzPuk8bwDT/1NRcoC0HQrfpJUHI1xRlNJB/oF/
-	7c3rR5GE2GFJguFt+3idSzcHW+RNWI28wvcJWh8/B67rm51pSTZyWHg0eoFH/RbWV2JJfdgyM2NFF
-	m9VbX/bXtD3ipObyxLYmomfKzjm+EQJFxJ6sd2MjmV9nqKK1Djm1qbu0nrCafKseG3VdGjNOVS/ol
-	A06ggPJgzsTI4IbHpoqA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hJUA8NVHh42G0nLIsJM7BEFcFbEhr8bfsj6P7P+N7r8=; b=rw9lhFahu+NLW7
+	aDbzXaavBeu2DtYXjmKdniWqq5kN1b697RhWXzOwek7Fyu04RK+ns+TWxmb1PUeeN0Z1vXEzje/OS
+	hrVb96wFp0omNpKaZ37N+6Lk06QHNsZjDmh2gDUJGrjZZfh4OSpJkkjNPq5foAAN0QQGI7GvO6Hzs
+	TqgP5YjBah9WBocmEMCDDWmyp6k0+gCdi/tdMJFNhkJdb3J3K3IdUTa4jM9/VaBosPanrq7RFwTR5
+	skPeMkn+4ZJxrFhyd1kEr1VQ9Z099vCKBJnEpRnvgFAqG/raBvkFISeEl7Ov3diLm3Obr9hkZ7HLG
+	SgLP0g0Gr9hkBMEfthPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8FA8-00009U-CA; Sun, 01 Mar 2020 03:21:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j8G1t-0000AV-Cw; Sun, 01 Mar 2020 04:16:37 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8F9z-00008s-TO; Sun, 01 Mar 2020 03:20:57 +0000
-X-UUID: 967e38062d0746219db2a340770e7c90-20200229
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=gEuqpc3FvuW2EqLSsfehY0NEfaRH3CHq60ZO1Tz8Ll0=; 
- b=DBbEYTNVuWKolwpjxOOvsL41xfWXB2vWKUedwE1eblZ217SXPMXhDo3Brx5D26nyB4KWZyA4ZLXCuAFixNPCjJije47I28I1oGimaVegueC3TtzJ/hj/wCvo2qwgw821Lz2cY/qNZAi2mDLJnN+pn1p5OdnZ6r1SLc+OgJQ760c=;
-X-UUID: 967e38062d0746219db2a340770e7c90-20200229
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 57743514; Sat, 29 Feb 2020 19:20:47 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 29 Feb 2020 19:21:57 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 1 Mar 2020 11:22:18 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Sun, 1 Mar 2020 11:20:18 +0800
-Message-ID: <1583032843.12083.24.camel@mtkswgap22>
-Subject: Re: [PATCH v4] usb: gadget: f_fs: try to fix AIO issue under ARM 64
- bit TAGGED mode
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Date: Sun, 1 Mar 2020 11:20:43 +0800
-In-Reply-To: <20200228164848.GH4019108@arrakis.emea.arm.com>
-References: <1582627315-21123-1-git-send-email-macpaul.lin@mediatek.com>
- <1582718512-28923-1-git-send-email-macpaul.lin@mediatek.com>
- <20200228164848.GH4019108@arrakis.emea.arm.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-MTK: N
+ id 1j8G1j-00009T-KG; Sun, 01 Mar 2020 04:16:29 +0000
+Received: by mail-lj1-x241.google.com with SMTP id o15so7970642ljg.6;
+ Sat, 29 Feb 2020 20:16:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:subject:from:in-reply-to:date:cc
+ :content-transfer-encoding:message-id:references:to;
+ bh=aUNhSk4XiLO4JVswFHsb4th4Idff4PdkPgnCTD0hgkI=;
+ b=I1JTMEkxzMBH3C/Ciby3PlqiyiMfD/nJ/o2wOAOjQvw2YH9yrAJ58t0Sapyndq6MYx
+ Qi0CD5xSzKT4bfeJZOLQqUkdWCJFDpLm6ZXdRGbwdSdJkWWsTIymgvYul03/pqr6GWYh
+ chzhBcioJY7OX1mg6jQd49fDNYa4VElpccDAV//P0NsoeF0jdioT6K8nHPMb0bq//jtb
+ wyUUU2txXE3y8W+Y9jI1HuGTgaWpjnNsuSl1KFHa1PRqzeqocnWSYa+gKIMkKh16m4ua
+ KQJxWxT2D1FsaccJV/gBTDLu+Rhi4+vkaSnc4u3vkPYB5Grz/tqwmoAZAEr4wF86eYeh
+ hg1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
+ :content-transfer-encoding:message-id:references:to;
+ bh=aUNhSk4XiLO4JVswFHsb4th4Idff4PdkPgnCTD0hgkI=;
+ b=IimzL0GuEZkOQiQ4ygKfYPTL5Z0Zw6nHxHOpi6UzuYVEAfgYSNyXPUd8SSC4igmVeX
+ 21QzjAOFa3J2TPgXgV1nM9J+bX3cH7LbUQnWkE4CttzOcFq77vdwREy+EBif7diqnm0g
+ vtxXFcILxJsaf+xe5oid9ccqCviI2FHpfOlI8UFgFMYjY+BcqF9sH5xQe65PvJIYdGmJ
+ EIClNXReVyo1abjf2gFeIZyljqeaptkU/BuasR7PlO6Z2aMk7mLGnMAGAQ8/GAUQYyqN
+ g6ow7PnqccuHI3uP1YypvGVeQ9OAJvx0h9zkGhXlTTC/eSNCaNbwhoRWZhCcQGRBCAOd
+ q4Pw==
+X-Gm-Message-State: ANhLgQ0jng/UMs6BjiZirSvoW+M+S37fZmhg5McZBFzm8+pltgxnjJtp
+ hANfXrdtcFjc3tJZt3K2sGw=
+X-Google-Smtp-Source: ADFU+vuuiIbd/U+4zor59WByPUmKyTFfOsyde0g80YyZBbZZu0GA7x4k09I06Z7MX6R1gKrjKP0Pag==
+X-Received: by 2002:a2e:b895:: with SMTP id r21mr7293919ljp.126.1583036185172; 
+ Sat, 29 Feb 2020 20:16:25 -0800 (PST)
+Received: from [172.16.20.20] ([87.200.95.144])
+ by smtp.gmail.com with ESMTPSA id a17sm1118378ljk.42.2020.02.29.20.16.22
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 29 Feb 2020 20:16:24 -0800 (PST)
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: [PATCH v5 3/3] arm64: dts: meson: add support for the SmartLabs
+ SML-5442TW
+From: Christian Hewitt <christianshewitt@gmail.com>
+In-Reply-To: <1jpndxgxqi.fsf@starbuckisacylon.baylibre.com>
+Date: Sun, 1 Mar 2020 08:16:20 +0400
+Message-Id: <7E2FA81A-9A24-433D-A674-C0C224FCB2DE@gmail.com>
+References: <1582979124-82363-1-git-send-email-christianshewitt@gmail.com>
+ <1582979124-82363-4-git-send-email-christianshewitt@gmail.com>
+ <1jpndxgxqi.fsf@starbuckisacylon.baylibre.com>
+To: Jerome Brunet <jbrunet@baylibre.com>
+X-Mailer: Apple Mail (2.3445.104.11)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200229_192055_975139_CB16F37E 
-X-CRM114-Status: GOOD (  15.68  )
+X-CRM114-CacheID: sfid-20200229_201627_694584_AA1049B2 
+X-CRM114-Status: GOOD (  11.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [christianshewitt[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -74,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,88 +99,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Shen Jing <jingx.shen@intel.com>, CC
- Hwang <cc.hwang@mediatek.com>, Mediatek
- WSD Upstream <wsd_upstream@mediatek.com>, Jerry Zhang <zhangjerry@google.com>,
- andreyknvl@google.com, linux-usb@vger.kernel.org,
- Loda Chou <loda.chou@mediatek.com>, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Andrzej
- Pietrasiewicz <andrzej.p@collabora.com>, Miles Chen <miles.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, Peter Chen <peter.chen@nxp.com>,
- Al Viro <viro@zeniv.linux.org.uk>, Vincent
- Pelletier <plr.vincent@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- John Stultz <john.stultz@linaro.org>, eugenis@google.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
+ =?utf-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-02-28 at 16:48 +0000, Catalin Marinas wrote:
-> On Wed, Feb 26, 2020 at 08:01:52PM +0800, Macpaul Lin wrote:
-> > diff --git a/drivers/usb/gadget/function/f_fs.c b/drivers/usb/gadget/function/f_fs.c
-> > index ce1d023..192935f 100644
-> > --- a/drivers/usb/gadget/function/f_fs.c
-> > +++ b/drivers/usb/gadget/function/f_fs.c
-> > @@ -715,7 +715,20 @@ static void ffs_epfile_io_complete(struct usb_ep *_ep, struct usb_request *req)
-> >  
-> >  static ssize_t ffs_copy_to_iter(void *data, int data_len, struct iov_iter *iter)
-> >  {
-> > -	ssize_t ret = copy_to_iter(data, data_len, iter);
-> > +	ssize_t ret;
-> > +
-> > +#if defined(CONFIG_ARM64)
-> > +	/*
-> > +	 * Replace tagged address passed by user space application before
-> > +	 * copying.
-> > +	 */
-> > +	if (IS_ENABLED(CONFIG_ARM64_TAGGED_ADDR_ABI) &&
-> > +		(iter->type == ITER_IOVEC)) {
-> > +		*(unsigned long *)&iter->iov->iov_base =
-> > +			(unsigned long)untagged_addr(iter->iov->iov_base);
-> > +	}
-> > +#endif
-> > +	ret = copy_to_iter(data, data_len, iter);
-> >  	if (likely(ret == data_len))
-> >  		return ret;
-> 
-> I had forgotten that we discussed a similar case already a few months
-> ago (thanks to Evgenii for pointing out). Do you have this commit
-> applied to your tree: df325e05a682 ("arm64: Validate tagged addresses in
-> access_ok() called from kernel threads")?
-> 
-
-Yes! We have that patch. I've also got Google's reply about referencing
-this patch in android kernel tree.
-https://android-review.googlesource.com/c/kernel/common/+/1186615
-
-However, during my debugging process, I've dumped specific length (e.g.,
-24 bytes for the first request) AIO request buffer address both in adbd
-and in __range_ok(). Then I've found __range_ok() still always return
-false on address begin with "0x3c". Since untagged_addr() already called
-in __range_ok(), to set "TIF_TAGGED_ADDR" with adbd's user space buffer
-should be the possible solution. Hence I've send the v3 patch.
-
-Anyway, I've found that to disable TAGGED address in adbd is possible by
-this way and will report to Google and see how they think.
-
-diff --git a/adb/daemon/main.cpp b/adb/daemon/main.cpp
-index 9e02e89ab..b2f6f8e3f 100644
---- a/adb/daemon/main.cpp
-+++ b/adb/daemon/main.cpp
-@@ -317,6 +317,8 @@ int main(int argc, char** argv) {
-     mallopt(M_DECAY_TIME, 1);
- #endif
-
-+    prctl(PR_SET_TAGGED_ADDR_CTRL, ~PR_TAGGED_ADDR_ENABLE, 0, 0, 0);
-+
-     while (true) {
-         static struct option opts[] = {
-                 {"root_seclabel", required_argument, nullptr, 's'},
-
-Many thanks!
-Macpaul Lin
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cj4gT24gMjkgRmViIDIwMjAsIGF0IDg6MzIgcG0sIEplcm9tZSBCcnVuZXQgPGpicnVuZXRAYmF5
+bGlicmUuY29tPiB3cm90ZToKCltzbmlwXQoKPiBUaGUgYWJvdmUgZG9lcyBub3QgY29tcGlsZSBh
+Z2FpbnN0IGtldmluJ3MgdHJlZToKPiAxIyB0aGUgYXVkaW8gZHQgZGV2aWNlIGhhdmUgbm90IGJl
+ZW4gYWRkZWQgeWV0Cj4gMiMgdGhlIGJpbmRpbmdzIGRlcHMgb2YgMyBkaWZmZXJlbnQgc3Vic3lz
+dGVtIHdpbGwgYmUgYXZhaWxhYmxlIGluIHRoaXMKPiB0cmVlIHdpdGggdGhlIG5leHQgcmMxCj4g
+Cj4gSSB3YXJuZWQgYWJvdXQgdGhpcyBvbiBJUkMuCgpTb3JyeS4uIEkgc2F3IG5vdGljZXMgb24g
+dGhlIG1haWxpbmcgbGlzdCB0aGF0IE1hcmsgQnJvd24gaGFkIGFwcGxpZWQgCmNoYW5nZXMgYW5k
+IGFzc3VtZWQgdGhpcyBtZWFudCB0aGF0IGF1ZGlvIHRoaW5ncyB3b3VsZCBiZSBhdmFpbGFibGUK
+Zm9yIHVzZS4gSeKAmWxsIHJlc3VibWl0IGEgdjYgc2VyaWVzIHdpdGhvdXQgdGhlIGF1ZGlvIG5v
+ZGVzIGFuZCB3YWl0IGZvcgp0aGUgYXVkaW8gY2hhbmdlcyB0byBwZXJjb2xhdGUgdGhyb3VnaC4K
+CkNocmlzdGlhbgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
