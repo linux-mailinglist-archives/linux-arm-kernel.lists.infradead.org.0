@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20AEC174D41
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 13:22:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62A1E174D46
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 13:22:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=nSdi5Z0IiDtKC/xndga/rWHSHLdXh3iUTojd+LTXdkw=; b=D9Z
-	SdBa+it+74KYRejabjXa9+yZVub829lrqqCdSU2H0/tt91TqAvrAcZwNj28TJsMr31h82Zlgw3+Nd
-	VmtBLEb6zLd7aC8pHOHjF96cfoX9qo1udlz3WL2kefT9UWR/85f7UH+jphql5Jp7OSxMtpVh4zmad
-	7DVvb7np2EB73jJek1+/PjjJMu5ONJlbCTXk4b59rO3ETmVtMbFHO4h68OBsBpSZIBXBrQtLZtwLe
-	d4oAJeV9La1YD61ECUk0zgr0wQ3Wthp2VHmZTvGY1yuVZoD99eSZjY2ODUsoR2CK7Sn76vrTW+wGx
-	QoS07hU4+y+PS2RV7zeFTZ7VRN4bX7A==;
+	References:List-Owner; bh=OUxoDrMzZpUeYP8l/j5LIw3R3QWnOzJQhy3UmEDvHY8=; b=N/q
+	lG3fsFloxORCbjPLf/5FQ95bCDBgBO4ryWMp8H8fpWRucvO1JM3Jv/VSNWUIeD/NBrbwwT5UZ7enY
+	iUyEveGIuBL15NJfEI7s9iqzk27oubKeWojbX74PvP6k/DiOFPfsTzrs/zXcvdUYxPtErKC2jFuFt
+	WDZT6hSKPOryImOzzBhsDCbBTnedncms5PJX0jPJjPSUHzmaJaOGJeee3iQHuJjZx/FJ4SmlGVHKN
+	ioGwHS9I7lrLPm2tlbf0hTOfirAs3DL1KNFDaEApS8WDxgIbawmsNwdXfrqiwUQKHwqk/IBJC3DTH
+	jW7XJMsyyc1Yrnxzbhd3OqjeW+yoBQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8Nbx-0005ub-S2; Sun, 01 Mar 2020 12:22:21 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j8NcD-00068P-2y; Sun, 01 Mar 2020 12:22:37 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Nbc-0005pD-SV
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 12:22:03 +0000
-Received: by mail-pl1-x644.google.com with SMTP id g12so1053531plo.3
+ id 1j8Nbr-00061B-Rg
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 12:22:17 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id lt1so486717pjb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 01 Mar 2020 04:22:00 -0800 (PST)
+ Sun, 01 Mar 2020 04:22:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=9cIS9wI0z/ly272acO4wuXYRhTq0u593vlOIO8zfEwQ=;
- b=J1xoBje+Kv+ieI2iI8o2Qh4gAtjEIRvTDeYBaJ/Dh2ZXyPrcDZoYJqcqd4hJRmKP2h
- qDro6FnOJFAxIGt1A9SziQoamobw/g1oRljc4Ypt9BlAp1MJIc3HFPq8eMbA7fOmwy+B
- DqiTiiHtfMMaUpQVsUFdPm8EPB0XMhuN2ZycFtvP96nAjoBdfsNAnUiTIgGCy6Oo/Hsk
- rBCEgV7qTEwEo2TO1Tidn4l1bvd4B+RBkbNKMaZ9AhsJ3g/3s3L4jmR+1TBh0rVzsdhl
- SnbJl8s+b1wGrjtBSKp7WXrxcLnZszLT7wDV8GY4ECjxq4OpDpM014urhhdGuw83CKe1
- 0fTQ==
+ bh=6RuW8LcV5g6WypRcQIvGZ/SRPet4fNoET5RxUt4w0FQ=;
+ b=hNpiy/uVydyqMqWo83KwxexQEzJHid6YWnsfsiep0CUh6gNn2RqgFVOHvY6gTJMyiD
+ Eaf+TcdWuvFMS9DJRFcH8XWQIPeCCtXML4Tfwek2bBmaDjtfksppHrMIi956IGrBqndC
+ PfLL+9/TpG6+hrDk75dDl8tT3Q5nRU5IxaR8VBwW8cRm8PCEtRhEV8gZacp3OzWY76Sj
+ 28ihxoPU2aHwvBHH47CDcophZnBA8/6n2cc65GE3Ml8tigk18JQXpqOUuvrx9hnS19xE
+ +8GMnkBaopOecBmMKgif+qRehxN4EtqVMmQyydbabPUWMgomywtsCBaIumrlucE4PeKy
+ syAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=9cIS9wI0z/ly272acO4wuXYRhTq0u593vlOIO8zfEwQ=;
- b=f3+NZjzWW3CofkA8YlhNFaTLL0+ERpfUIz0E28LkDDt8OKzuCVRl5tCtqV4k7Uvk1S
- 1VdJM3lHaHGzsvZNTY8hUN/G9ivbgdDrbjr66Cf2pcr2OFkzGTFRuuE2bEYyOZZpifWc
- t6TCJn1u0FSU1s64pmCrdzHE/xi340vsOFuj1+PW+FeewB748TrUMPA9ToDEgsjhFCFh
- TmFORBG2laHunDPBBW3vyPy97eXrkjHGSy16ob9QnwuM8b8thNMN3KcBmtw1vfpOO9bm
- jxGVsY/uWEbFdj8y3CrqE9WXn2EItGH2gh7Dlug8uUy4Br8K1cOrHScmEOBT2tk35+L0
- SjZA==
-X-Gm-Message-State: APjAAAWbVS/01K75HnfRnpWglkF0qpfif+65+YWMOkfurpk/JwZIr9pp
- pqxPGOWxEz8ne+CaqH3Bva4=
-X-Google-Smtp-Source: APXvYqzQ7LSePL09cmdsNNGSRe3otnppD5HDry8uOivFlQnPHuYZM3uBcbGiBjIjHFC1YfNG4s0fEw==
-X-Received: by 2002:a17:902:8a83:: with SMTP id
- p3mr13595862plo.56.1583065320065; 
- Sun, 01 Mar 2020 04:22:00 -0800 (PST)
+ bh=6RuW8LcV5g6WypRcQIvGZ/SRPet4fNoET5RxUt4w0FQ=;
+ b=iQKBbc6q1WgBfMglTmzYZZ3ypCjYkCTDqARHqfSd+XHn/zqOlyti9mTAMtGGDDzlxT
+ z+pa9Iw2aFrY7QZaGdAjyABM+s6WCgRuGzSC7EduXX1G/Eu0hLYZY1fArZnSt9v2YRV+
+ yTtAuozVCB/nFgJXJs7Z/uFKzZ9YjYA+GkI6u/jBSHjoRp5zS0uFfDxxg40R57xDe2qa
+ cIgPBQtFHfjd1iSzKOIIGA6NWZLMeC1qSkamBIXWomGckdvIRyV3aZ00zRX+eCjpTVFo
+ MUYkFSvY1RtXzhbOUDHbsVOGM620i09HRLrRzcui/YbsKTlsrRtcCZp+1PixSwuFSWvy
+ G1pw==
+X-Gm-Message-State: APjAAAWpcy+3IIbdnSPp0fjKb2Nbgc3LLS/tig6OinhnN0X7Won3UgqP
+ jKkM05vcn1m42u4UzJcqYmc=
+X-Google-Smtp-Source: APXvYqxFvG3KgjDCtFOpqiwrVA/h5V0iFoU894xpJ/5CjNJFPDjijl8I9D/82NNQ22uympXnuRaCXA==
+X-Received: by 2002:a17:902:4a:: with SMTP id
+ 68mr13359156pla.245.1583065334897; 
+ Sun, 01 Mar 2020 04:22:14 -0800 (PST)
 Received: from localhost.localdomain ([106.51.232.35])
- by smtp.gmail.com with ESMTPSA id d77sm4081997pfd.109.2020.03.01.04.21.57
+ by smtp.gmail.com with ESMTPSA id e1sm17520364pff.188.2020.03.01.04.22.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 01 Mar 2020 04:21:59 -0800 (PST)
+ Sun, 01 Mar 2020 04:22:14 -0800 (PST)
 From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>, Krzysztof Halasa <khalasa@piap.pl>,
+To: Viresh Kumar <viresh.kumar@linaro.org>,
  Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v3] ARM: cns3xxx: replace setup_irq() by request_irq()
-Date: Sun,  1 Mar 2020 17:51:55 +0530
-Message-Id: <20200301122155.3957-1-afzal.mohd.ma@gmail.com>
+Subject: [PATCH v3] ARM: ebsa110: replace setup_irq() by request_irq()
+Date: Sun,  1 Mar 2020 17:52:09 +0530
+Message-Id: <20200301122210.4013-1-afzal.mohd.ma@gmail.com>
 X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_042200_944820_F7EC6DCA 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20200301_042215_914610_AB00F7AF 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -134,37 +134,44 @@ v2:
            pr_err("%s: request_irq() failed"
  * Commit message massage
 
- arch/arm/mach-cns3xxx/core.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ arch/arm/mach-ebsa110/core.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm/mach-cns3xxx/core.c b/arch/arm/mach-cns3xxx/core.c
-index 1d61a7701c11..e4f4b20b83a2 100644
---- a/arch/arm/mach-cns3xxx/core.c
-+++ b/arch/arm/mach-cns3xxx/core.c
-@@ -189,12 +189,6 @@ static irqreturn_t cns3xxx_timer_interrupt(int irq, void *dev_id)
+diff --git a/arch/arm/mach-ebsa110/core.c b/arch/arm/mach-ebsa110/core.c
+index da2ff4f61d6b..575b2e2b6759 100644
+--- a/arch/arm/mach-ebsa110/core.c
++++ b/arch/arm/mach-ebsa110/core.c
+@@ -201,17 +201,13 @@ ebsa110_timer_interrupt(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction cns3xxx_timer_irq = {
--	.name		= "timer",
+-static struct irqaction ebsa110_timer_irq = {
+-	.name		= "EBSA110 Timer Tick",
 -	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
--	.handler	= cns3xxx_timer_interrupt,
+-	.handler	= ebsa110_timer_interrupt,
 -};
 -
  /*
-  * Set up the clock source and clock events devices
+  * Set up timer interrupt.
   */
-@@ -245,7 +239,9 @@ static void __init __cns3xxx_timer_init(unsigned int timer_irq)
- 	writel(val, cns3xxx_tmr1 + TIMER1_2_CONTROL_OFFSET);
+ void __init ebsa110_timer_init(void)
+ {
++	int irq = IRQ_EBSA110_TIMER0;
++
+ 	arch_gettimeoffset = ebsa110_gettimeoffset;
  
- 	/* Make irqs happen for the system timer */
--	setup_irq(timer_irq, &cns3xxx_timer_irq);
-+	if (request_irq(timer_irq, cns3xxx_timer_interrupt,
-+			IRQF_TIMER | IRQF_IRQPOLL, "timer", NULL))
-+		pr_err("Failed to request irq %d (timer)\n", timer_irq);
+ 	/*
+@@ -221,7 +217,9 @@ void __init ebsa110_timer_init(void)
+ 	__raw_writeb(COUNT & 0xff, PIT_T1);
+ 	__raw_writeb(COUNT >> 8, PIT_T1);
  
- 	cns3xxx_clockevents_init(timer_irq);
+-	setup_irq(IRQ_EBSA110_TIMER0, &ebsa110_timer_irq);
++	if (request_irq(irq, ebsa110_timer_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			"EBSA110 Timer Tick", NULL))
++		pr_err("Failed to request irq %d (EBSA110 Timer Tick)\n", irq);
  }
+ 
+ static struct plat_serial8250_port serial_platform_data[] = {
 -- 
 2.25.1
 
