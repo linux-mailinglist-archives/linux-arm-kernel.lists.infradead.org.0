@@ -2,118 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF651174D35
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 13:17:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44EDA174D39
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Mar 2020 13:20:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=azK/rw2EUHcPtvPcFOsf+7Q9bT6VsTC26McSF0ukY0c=; b=Cq9IyBQqDtDVCQ
-	gXBn9evNpws+9HIFda9XNLs61RIczeerd/FQWVKyMHD60zrjQGeQgxMRN6qoEm4pMCIw0iO9rRA35
-	dSZK2j0VS7tQTgNFu4jSTwS2otI4ZH62Lkqq9n9uzSaQi0bA/zvoHoZEO+yl7JdmIe0a7EyH3L4uF
-	tKI6LxtSrOW+IwyEbmhlTs6aw9ybV3FfwTzUKdP4ngI7LOqYsIvPf93o0NAF0BkOtct7jbzXyIwKh
-	yH8Zuk409ZzbVevNbrXXYzUl9A0/XqArmjikRafUBwUND/Q9Mf2ruEFi5dOh9mpxoEJBpID2FWr+U
-	LMAkTYGbP1wCrLn1+5ow==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Fwk3F+sI8e84iCj3/3V3Y7GNGm7sUo9solRVbiq5bXY=; b=jTa
+	rZORAq6yjMd+1XzVUABR5p6wVkPsImrPihI8cHuaIbs16V/VerKIdaLTIqnmtIlzJqD/Fda7xM5cv
+	aRLFvmM4QSMFj7QRkChq8hfBgxFIcHxAgH+LnEYTPmJtYtaQocIF8KWcVpYlacbrAqpj3iMeoeDJv
+	qsglPGSB8XJ+waBRrAxppjgZyqhmtmseXzMUHIFrpkfwCYWMDYPj0bw3w+l7uMChCrFB8SendNmSm
+	R10zJYP6qybL7iQc6drWMY7of7UdedKbuMpQk1aISIOumSsueKNfT7UnfO+F8m8OYsxV+J9b6uNOq
+	BRw/Peu/QGd4MOZXylqeV8GFovOtRhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8NWk-00036f-QI; Sun, 01 Mar 2020 12:16:58 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1j8NZj-0003tR-Mz; Sun, 01 Mar 2020 12:20:03 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8NWW-0002vD-73; Sun, 01 Mar 2020 12:16:46 +0000
-Received: from [192.168.1.183] ([37.4.249.171]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis) id
- 1M890H-1j3AS51sDT-005L5i; Sun, 01 Mar 2020 13:16:30 +0100
-Subject: Re: [PATCH 07/89] clk: bcm: rpi: Allow the driver to be probed by DT
-To: Maxime Ripard <maxime@cerno.tech>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Eric Anholt <eric@anholt.net>
-References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <c358081207dcf4f320a6b7e2932f0d5365bf3242.1582533919.git-series.maxime@cerno.tech>
-From: Stefan Wahren <stefan.wahren@i2se.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=stefan.wahren@i2se.com; keydata=
- xsFNBFt6gBMBEACub/pBevHxbvJefyZG32JINmn2bsEPX25V6fejmyYwmCGKjFtL/DoUMEVH
- DxCJ47BMXo344fHV1C3AnudgN1BehLoBtLHxmneCzgH3KcPtWW7ptj4GtJv9CQDZy27SKoEP
- xyaI8CF0ygRxJc72M9I9wmsPZ5bUHsLuYWMqQ7JcRmPs6D8gBkk+8/yngEyNExwxJpR1ylj5
- bjxWDHyYQvuJ5LzZKuO9LB3lXVsc4bqXEjc6VFuZFCCk/syio/Yhse8N+Qsx7MQagz4wKUkQ
- QbfXg1VqkTnAivXs42VnIkmu5gzIw/0tRJv50FRhHhxpyKAI8B8nhN8Qvx7MVkPc5vDfd3uG
- YW47JPhVQBcUwJwNk/49F9eAvg2mtMPFnFORkWURvP+G6FJfm6+CvOv7YfP1uewAi4ln+JO1
- g+gjVIWl/WJpy0nTipdfeH9dHkgSifQunYcucisMyoRbF955tCgkEY9EMEdY1t8iGDiCgX6s
- 50LHbi3k453uacpxfQXSaAwPksl8MkCOsv2eEr4INCHYQDyZiclBuuCg8ENbR6AGVtZSPcQb
- enzSzKRZoO9CaqID+favLiB/dhzmHA+9bgIhmXfvXRLDZze8po1dyt3E1shXiddZPA8NuJVz
- EIt2lmI6V8pZDpn221rfKjivRQiaos54TgZjjMYI7nnJ7e6xzwARAQABzSlTdGVmYW4gV2Fo
- cmVuIDxzdGVmYW4ud2FocmVuQGluLXRlY2guY29tPsLBdwQTAQgAIQUCXIdehwIbAwULCQgH
- AgYVCAkKCwIEFgIDAQIeAQIXgAAKCRCUgewPEZDy2yHTD/9UF7QlDkGxzQ7AaCI6N95iQf8/
- 1oSUaDNu2Y6IK+DzQpb1TbTOr3VJwwY8a3OWz5NLSOLMWeVxt+osMmlQIGubD3ODZJ8izPlG
- /JrNt5zSdmN5IA5f3esWWQVKvghZAgTDqdpv+ZHW2EmxnAJ1uLFXXeQd3UZcC5r3/g/vSaMo
- 9xek3J5mNuDm71lEWsAs/BAcFc+ynLhxwBWBWwsvwR8bHtJ5DOMWvaKuDskpIGFUe/Kb2B+j
- ravQ3Tn6s/HqJM0cexSHz5pe+0sGvP+t9J7234BFQweFExriey8UIxOr4XAbaabSryYnU/zV
- H9U1i2AIQZMWJAevCvVgQ/U+NeRhXude9YUmDMDo2sB2VAFEAqiF2QUHPA2m8a7EO3yfL4rM
- k0iHzLIKvh6/rH8QCY8i3XxTNL9iCLzBWu/NOnCAbS+zlvLZaiSMh5EfuxTtv4PlVdEjf62P
- +ZHID16gUDwEmazLAMrx666jH5kuUCTVymbL0TvB+6L6ARl8ANyM4ADmkWkpyM22kCuISYAE
- fQR3uWXZ9YgxaPMqbV+wBrhJg4HaN6C6xTqGv3r4B2aqb77/CVoRJ1Z9cpHCwiOzIaAmvyzP
- U6MxCDXZ8FgYlT4v23G5imJP2zgX5s+F6ACUJ9UQPD0uTf+J9Da2r+skh/sWOnZ+ycoHNBQv
- ocZENAHQf87BTQRbeoATARAA2Hd0fsDVK72RLSDHby0OhgDcDlVBM2M+hYYpO3fX1r++shiq
- PKCHVAsQ5bxe7HmJimHa4KKYs2kv/mlt/CauCJ//pmcycBM7GvwnKzmuXzuAGmVTZC6WR5Lk
- akFrtHOzVmsEGpNv5Rc9l6HYFpLkbSkVi5SPQZJy+EMgMCFgjrZfVF6yotwE1af7HNtMhNPa
- LDN1oUKF5j+RyRg5iwJuCDknHjwBQV4pgw2/5vS8A7ZQv2MbW/TLEypKXif78IhgAzXtE2Xr
- M1n/o6ZH71oRFFKOz42lFdzdrSX0YsqXgHCX5gItLfqzj1psMa9o1eiNTEm1dVQrTqnys0l1
- 8oalRNswYlQmnYBwpwCkaTHLMHwKfGBbo5dLPEshtVowI6nsgqLTyQHmqHYqUZYIpigmmC3S
- wBWY1V6ffUEmkqpAACEnL4/gUgn7yQ/5d0seqnAq2pSBHMUUoCcTzEQUWVkiDv3Rk7hTFmhT
- sMq78xv2XRsXMR6yQhSTPFZCYDUExElEsSo9FWHWr6zHyYcc8qDLFvG9FPhmQuT2s9Blx6gI
- 323GnEq1lwWPJVzP4jQkJKIAXwFpv+W8CWLqzDWOvdlrDaTaVMscFTeH5W6Uprl65jqFQGMp
- cRGCs8GCUW13H0IyOtQtwWXA4ny+SL81pviAmaSXU8laKaRu91VOVaF9f4sAEQEAAcLBXwQY
- AQIACQUCW3qAEwIbDAAKCRCUgewPEZDy2+oXD/9cHHRkBZOfkmSq14Svx062PtU0KV470TSn
- p/jWoYJnKIw3G0mXIRgrtH2dPwpIgVjsYyRSVMKmSpt5ZrDf9NtTbNWgk8VoLeZzYEo+J3oP
- qFrTMs3aYYv7e4+JK695YnmQ+mOD9nia915tr5AZj95UfSTlyUmyic1d8ovsf1fP7XCUVRFc
- RjfNfDF1oL/pDgMP5GZ2OwaTejmyCuHjM8IR1CiavBpYDmBnTYk7Pthy6atWvYl0fy/CqajT
- Ksx7+p9xziu8ZfVX+iKBCc+He+EDEdGIDhvNZ/IQHfOB2PUXWGS+s9FNTxr/A6nLGXnA9Y6w
- 93iPdYIwxS7KXLoKJee10DjlzsYsRflFOW0ZOiSihICXiQV1uqM6tzFG9gtRcius5UAthWaO
- 1OwUSCQmfCOm4fvMIJIA9rxtoS6OqRQciF3crmo0rJCtN2awZfgi8XEif7d6hjv0EKM9XZoi
- AZYZD+/iLm5TaKWN6oGIti0VjJv8ZZOZOfCb6vqFIkJW+aOu4orTLFMz28aoU3QyWpNC8FFm
- dYsVua8s6gN1NIa6y3qa/ZB8bA/iky59AEz4iDIRrgUzMEg8Ak7Tfm1KiYeiTtBDCo25BvXj
- bqsyxkQD1nkRm6FAVzEuOPIe8JuqW2xD9ixGYvjU5hkRgJp3gP5b+cnG3LPqquQ2E6goKUML AQ==
-Message-ID: <d793e358-32db-5fea-aac9-d06062918718@i2se.com>
-Date: Sun, 1 Mar 2020 13:16:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <c358081207dcf4f320a6b7e2932f0d5365bf3242.1582533919.git-series.maxime@cerno.tech>
-Content-Language: en-US
-X-Provags-ID: V03:K1:zyw9tGSyL8cdeQBz13wPTVaGjy0pjbIhlN6+NMypZBquz0QLgSo
- o22u5bw2XCub2BKDmuu9XtfxpuuNdqsU6GdPNzyr/FbfD/wsnVuOAM4c2sCKinB1Hqja5ZW
- 7mgSquNlO/X1gK6de5u7phveu5lt01VoMKVcGXHVF8dklAN33i3E0MQU49cxwMjY320L50V
- R33fzGdAK8vTQkGdJQGow==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:VNj77z+HmrA=:B6cwnkMZaBMzXpAuLfkwWl
- goMCDGOi0ZMH2xLPBNwmWhClI1roUsuor77zUiRujR1F7wjDVglD4H07dJeOkboozDhZanoHd
- GeT/58IJU1BOQ5o8Wq424x9hGND8NJCyy90QP48lGjyvACQqcPe+FBuc8Kjolm4U0AhlGU9MS
- D+0X3KWo/x1/g22v73OFPcYwZ2L1zl/QqlmZFyMujG5hKvZrP4iCExruLrmvG76oRMHFPv+6W
- VlRpqFopMvsuDF0BUy3BT496sRZxipwgKIWNdchGCrEK49dRAHkV5nEfgmm4osYU2wRg04Oxu
- ed3cnMD1oRTq11tF93lGWUi59tzgigkinS9yyZP4jlwZjF6JHD7iQwzeumd99aUcS3aCguGHl
- rzmPUfkuTdzO511MqHQl+LAZUlG3V4JNdcgxy6Veiu7rho+IRbC6NWs1PKKjedDixbHCKrsr7
- XWZLzXXTthEFdjle6RUv/G18czrriewKT9Myre9JO7hysMsoXGPFbnNmX9K2BWn0WIR20gfps
- cdEdgw7nLo3QiZveiImRXzBpjBhGDZmBaF4jhqapgmOAl4hxAHNpfRBcLsCrWy190UHch0om4
- LVI8dH/jZKPt49eqveEp9Qzkm9n1NXUc6JlFQSsmW05Jfj50ebLw39b8+0Wwmiz9J42oTqLyi
- MqmzYabZLF477atPKSRJHJA5ahe/cTp6Gh8U8av1dSplXN8eMLFD1M/3ZuYaOYnaysrfMczu+
- +MAUQouaxymlYova4rjl5Qi9OEKCEBIs6ndz17LxhghpJ3X++YxXa9QxFQyiKQjhspGkabzoU
- o5Fymq+XDgYyauaUP7xC0NWWjbu4BaWghUb7k/5YlTjZ1CovToD8ETqTPtTePI962nKRrud
+ id 1j8NZa-0003s9-Bk
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Mar 2020 12:19:56 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id cx7so34806pjb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 01 Mar 2020 04:19:51 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=tZdH7MfE9a/k+w/TEEMFe9I/lJoqMfajnky1lKZSTb0=;
+ b=DggX/rPB3iRf92C0LCjl8pWjZ2lkGhxuHTfT8s7fKB3UN0TvjuV6GjN0DTyRZ/43tO
+ Ht9nZAtLml6F3Frefljkc+xJ4TwtFk6BP+wBGNuoXm4KeQxiQrIb/elJZUikpUpaE/xy
+ AXf7Fipb9Hh42a37Qa/Lj4KQSTPcIqhlFQ5UnGpLx0lAcwP73CzU2mZR+1Hgh9g+rGZN
+ 7YNH+YqpyT9aTDM+ZkW+Na3XfLM/TTo+sa3Qi88Swl35a1MPcTQwWiX4zyQpYNNoOV4T
+ 59tC3P4jr2qXcEEEPIghg5rJllWHwiugkLjo9gI1tVt0+Z3oxlJTTX2XnwyZyJKaq/sC
+ 6bVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tZdH7MfE9a/k+w/TEEMFe9I/lJoqMfajnky1lKZSTb0=;
+ b=DDa6J5/pd6xUd14/ZA5dXYe/AmVGMEdqbjBlSn+FnU5SxFmbRYS6tGWTw9tCduFbaL
+ n+4tB7f3r8r8fh6prfjZ76cgPOmL4WfbPHkWEg/4q2SB6HlKpuL1zIrSBgs5Mi6FlgTU
+ aATPbHla5oRRrVAFNZuU+xUbr4OHm7bkUl4KDu6/VT0EjAvOA228GvCPXY60rDuDPz6X
+ h02OlhOtsHxgSRNv2b9kdQlZhdsaA4uN6PiwylCH2aYxViJ9xIavafbyKf2bwRnKgAvS
+ r5SC/GkBr/joPGDmr4tXWxFrRolazrBPyxGOHtNmV5MksC7qIGX2FDUdGegXekkrpXUW
+ F3JQ==
+X-Gm-Message-State: APjAAAVUTGDeew7AolpfOJCv3L+1a72rq1T4++KwIDqtPSZMACyVC/yC
+ jUBTMnVtWUixLS74r/ErUuI=
+X-Google-Smtp-Source: APXvYqxgTeeH5joC/tE8y4pGhIvBgCPH5KJByfNVC8B4RWcLt+hPsmO1yrbwMAVmOtT966LWV2t3qQ==
+X-Received: by 2002:a17:90b:46c4:: with SMTP id
+ jx4mr15335366pjb.32.1583065191086; 
+ Sun, 01 Mar 2020 04:19:51 -0800 (PST)
+Received: from localhost.localdomain ([106.51.232.35])
+ by smtp.gmail.com with ESMTPSA id u1sm17359636pfn.133.2020.03.01.04.19.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 01 Mar 2020 04:19:50 -0800 (PST)
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>, Kevin Hilman <khilman@kernel.org>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
+ Russell King <linux@armlinux.org.uk>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v3] ARM: OMAP: replace setup_irq() by request_irq()
+Date: Sun,  1 Mar 2020 17:49:44 +0530
+Message-Id: <20200301121945.3604-1-afzal.mohd.ma@gmail.com>
+X-Mailer: git-send-email 2.18.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_041644_618674_5E49E479 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -1.5 (-)
+X-CRM114-CacheID: sfid-20200301_041954_427832_FC9BAA54 
+X-CRM114-Status: GOOD (  13.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [afzal.mohd.ma[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,43 +97,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Phil Elwell <phil@raspberrypi.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: afzal mohammed <afzal.mohd.ma@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+request_irq() is preferred over setup_irq(). Invocations of setup_irq()
+occur after memory allocators are ready.
 
-Am 24.02.20 um 10:06 schrieb Maxime Ripard:
-> The current firmware clock driver for the RaspberryPi can only be probed by
-> manually registering an associated platform_device.
->
-> While this works fine for cpufreq where the device gets attached a clkdev
-> lookup, it would be tedious to maintain a table of all the devices using
-> one of the clocks exposed by the firmware.
->
-> Since the DT on the other hand is the perfect place to store those
-> associations, make the firmware clocks driver probe-able through the device
-> tree so that we can represent it as a node.
->
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Per tglx[1], setup_irq() existed in olden days when allocators were not
+ready by the time early interrupts were initialized.
 
-FWIW i want to mention that starting with this commit, X doesn't start
-on my Raspberry Pi 3A (applied on top of linux-next using
-multi_v7_defconfig).
+Hence replace setup_irq() by request_irq().
+
+[1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+
+Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+---
+Hi sub-arch maintainers,
+
+If the patch is okay, please take it thr' your tree.
 
 Regards
-Stefan
+afzal
+
+v3:
+ * Split out from series, also create subarch level patch as Thomas
+	suggested to take it thr' respective maintainers
+ * Modify string displayed in case of error as suggested by Thomas
+ * Re-arrange code as required to improve readability
+ * Remove irrelevant parts from commit message & improve
+ 
+v2:
+ * Replace pr_err("request_irq() on %s failed" by
+           pr_err("%s: request_irq() failed"
+ * Commit message massage
+
+ arch/arm/mach-omap1/pm.c       | 13 ++++++-------
+ arch/arm/mach-omap1/time.c     | 10 +++-------
+ arch/arm/mach-omap1/timer32k.c | 10 +++-------
+ arch/arm/mach-omap2/timer.c    | 11 +++--------
+ 4 files changed, 15 insertions(+), 29 deletions(-)
+
+diff --git a/arch/arm/mach-omap1/pm.c b/arch/arm/mach-omap1/pm.c
+index d068958d6f8a..2c1e2b32b9b3 100644
+--- a/arch/arm/mach-omap1/pm.c
++++ b/arch/arm/mach-omap1/pm.c
+@@ -596,11 +596,6 @@ static irqreturn_t omap_wakeup_interrupt(int irq, void *dev)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap_wakeup_irq = {
+-	.name		= "peripheral wakeup",
+-	.handler	= omap_wakeup_interrupt
+-};
+-
+ 
+ 
+ static const struct platform_suspend_ops omap_pm_ops = {
+@@ -613,6 +608,7 @@ static const struct platform_suspend_ops omap_pm_ops = {
+ static int __init omap_pm_init(void)
+ {
+ 	int error = 0;
++	int irq;
+ 
+ 	if (!cpu_class_is_omap1())
+ 		return -ENODEV;
+@@ -656,9 +652,12 @@ static int __init omap_pm_init(void)
+ 	arm_pm_idle = omap1_pm_idle;
+ 
+ 	if (cpu_is_omap7xx())
+-		setup_irq(INT_7XX_WAKE_UP_REQ, &omap_wakeup_irq);
++		irq = INT_7XX_WAKE_UP_REQ;
+ 	else if (cpu_is_omap16xx())
+-		setup_irq(INT_1610_WAKE_UP_REQ, &omap_wakeup_irq);
++		irq = INT_1610_WAKE_UP_REQ;
++	if (request_irq(irq, omap_wakeup_interrupt, 0, "peripheral wakeup",
++			NULL))
++		pr_err("Failed to request irq %d (peripheral wakeup)\n", irq);
+ 
+ 	/* Program new power ramp-up time
+ 	 * (0 for most boards since we don't lower voltage when in deep sleep)
+diff --git a/arch/arm/mach-omap1/time.c b/arch/arm/mach-omap1/time.c
+index 524977a31a49..de590a85a42b 100644
+--- a/arch/arm/mach-omap1/time.c
++++ b/arch/arm/mach-omap1/time.c
+@@ -155,15 +155,11 @@ static irqreturn_t omap_mpu_timer1_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap_mpu_timer1_irq = {
+-	.name		= "mpu_timer1",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= omap_mpu_timer1_interrupt,
+-};
+-
+ static __init void omap_init_mpu_timer(unsigned long rate)
+ {
+-	setup_irq(INT_TIMER1, &omap_mpu_timer1_irq);
++	if (request_irq(INT_TIMER1, omap_mpu_timer1_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "mpu_timer1", NULL))
++		pr_err("Failed to request irq %d (mpu_timer1)\n", INT_TIMER1);
+ 	omap_mpu_timer_start(0, (rate / HZ) - 1, 1);
+ 
+ 	clockevent_mpu_timer1.cpumask = cpumask_of(0);
+diff --git a/arch/arm/mach-omap1/timer32k.c b/arch/arm/mach-omap1/timer32k.c
+index 0ae6c52a7d70..780fdf03c3ce 100644
+--- a/arch/arm/mach-omap1/timer32k.c
++++ b/arch/arm/mach-omap1/timer32k.c
+@@ -148,15 +148,11 @@ static irqreturn_t omap_32k_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap_32k_timer_irq = {
+-	.name		= "32KHz timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= omap_32k_timer_interrupt,
+-};
+-
+ static __init void omap_init_32k_timer(void)
+ {
+-	setup_irq(INT_OS_TIMER, &omap_32k_timer_irq);
++	if (request_irq(INT_OS_TIMER, omap_32k_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "32KHz timer", NULL))
++		pr_err("Failed to request irq %d(32KHz timer)\n", INT_OS_TIMER);
+ 
+ 	clockevent_32k_timer.cpumask = cpumask_of(0);
+ 	clockevents_config_and_register(&clockevent_32k_timer,
+diff --git a/arch/arm/mach-omap2/timer.c b/arch/arm/mach-omap2/timer.c
+index 0d0a731cb476..8b09cdacc30d 100644
+--- a/arch/arm/mach-omap2/timer.c
++++ b/arch/arm/mach-omap2/timer.c
+@@ -91,12 +91,6 @@ static irqreturn_t omap2_gp_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap2_gp_timer_irq = {
+-	.name		= "gp_timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= omap2_gp_timer_interrupt,
+-};
+-
+ static int omap2_gp_timer_set_next_event(unsigned long cycles,
+ 					 struct clock_event_device *evt)
+ {
+@@ -382,8 +376,9 @@ static void __init omap2_gp_clockevent_init(int gptimer_id,
+ 				     &clockevent_gpt.name, OMAP_TIMER_POSTED);
+ 	BUG_ON(res);
+ 
+-	omap2_gp_timer_irq.dev_id = &clkev;
+-	setup_irq(clkev.irq, &omap2_gp_timer_irq);
++	if (request_irq(clkev.irq, omap2_gp_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "gp_timer", &clkev))
++		pr_err("Failed to request irq %d (gp_timer)\n", clkev.irq);
+ 
+ 	__omap_dm_timer_int_enable(&clkev, OMAP_TIMER_INT_OVERFLOW);
+ 
+-- 
+2.25.1
 
 
 _______________________________________________
