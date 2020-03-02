@@ -2,75 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7A0417631A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:47:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB356176352
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:55:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dq1SFU3F+4UxVVVdvA+PANZxt1BHFrSqEHd++vnFx9A=; b=QCQQVdCu1FEPJ6
-	5chiSlkRS5RSRTs+SXZiItfx47b+66DZ/dC2yBU6bnzBgI+AWSGUJ5A1EDcqtc7sgdzumOIqG2+sG
-	oAhNR7Ctb+9c73zcmAtcbl8DjtG8VGGmHfxB/zT6a+crEbXk7gOssnH9n6N/9URzl/JLb42vpLM3I
-	lSWTCennSHlaV5H8AWFVhkUmFughjaNZrewBdFDwiSIVYC4M7/akTMZHtA1CW6H4HczzsxLfNMSm7
-	DQI5RWOu6QXIIEaX7T9wGpe8HmhWeQV0cONNJ0cbYvKzLOyeZh7vWfiaa+q+BOkHLRvH/7ZjmZ0+g
-	5V7EzFczvRfxnw2Wr7FQ==;
+	List-Owner; bh=YKDlwqRfQDwfZTQZM3jKbWcoc/xeP29PNem5FNklgns=; b=AhW/HjXPsuULPA
+	MPi+Kesp2CZDdAeB5h1xgMu1tWLBaWCE9yh9M9GioxA4Rb8SdhCtK6SRvW99rVLVIWNHFWcvLEc74
+	IMLjEKFFY8cjbSwX0g4+viNm6BJDpSWwbuAq7im5ouFLcrpskmh4rMP9PI0++XlIlbnu7F8X1RX1G
+	WJnnS8NPkRBSPSti/4pynXJwwNxjuS/+4otzJhAiN+xlnGPYpx5ct4dqzhQKpkfim5H3qEfNGmLG9
+	4Vi+ooDA7wewtXvIcztWTMBqdPh9c9Bcx8bzkGDf3+nVnXTwrIqWOkUzkoQP+5NAcBaQhGliBPUZz
+	P5hOvILJjLqCmJlWzJCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8q6H-0003pk-06; Mon, 02 Mar 2020 18:47:33 +0000
-Received: from ale.deltatee.com ([207.54.116.67])
+	id 1j8qDb-00076T-W9; Mon, 02 Mar 2020 18:55:07 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8q67-0003p2-0V
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 18:47:24 +0000
-Received: from guinness.priv.deltatee.com ([172.16.1.162])
- by ale.deltatee.com with esmtp (Exim 4.92)
- (envelope-from <logang@deltatee.com>)
- id 1j8q54-0005pv-89; Mon, 02 Mar 2020 11:46:19 -0700
-To: Dan Williams <dan.j.williams@intel.com>
-References: <20200221182503.28317-1-logang@deltatee.com>
- <20200221182503.28317-5-logang@deltatee.com>
- <CAPcyv4j=bZ5KBPp6PbViERdDe+HZpV_W6qbSJupTNAzyfiK6xg@mail.gmail.com>
-From: Logan Gunthorpe <logang@deltatee.com>
-Message-ID: <1be997b0-e17a-5d48-efad-a01d84d5e496@deltatee.com>
-Date: Mon, 2 Mar 2020 11:46:13 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j8qCu-0006n8-UH; Mon, 02 Mar 2020 18:54:36 +0000
+Received: by mail-oi1-f193.google.com with SMTP id r16so295207oie.6;
+ Mon, 02 Mar 2020 10:54:24 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=azLo3QGLGJyP5HRfRWmkTZHyFOBCcHiq0HFCES3HCjQ=;
+ b=lA5L1UeFYu3vHuOJVUjCPNQZuGW8XWsGu9Dqrt7ieX9jfC9g71utO8wy2eBDY3DJD/
+ PR2q8qgPthCB7y1KeeAAA5l+Oi7AJmCYxo17zxafJdBi+2sXQIs1RZ9CSAauXvCcSKbU
+ FZAyPgEJ796g2CBvKKuh3MQ0zm7IvjyjGc2h6CnA4U1x2z6NnBbfEA9h18xZEaPgN0mW
+ FR4U6Eg0bQJz+0YTBEx6gco/Z5cdRWE6aHU6eslWTTfbNPpSzJgy3Z52SuItUL66zpXO
+ PuSUVLhRObDZq0++Nch4aMWrZUY28ScvF1tleELpUlsrgHWnSrjwhVv78dsTY/I47WFf
+ tkkw==
+X-Gm-Message-State: ANhLgQ3Eps9f7SlFm1iyoyoF+LRolAoVKG8sm5TDCq/iEKFJiBtSWK1s
+ YupIlNKfKUgvQ9smAMuxxg==
+X-Google-Smtp-Source: ADFU+vvfubqUlzmH5eWYI1D5Jft/lIpMtECPbLNGVBuawGuLFLFxvD3bdyL1NoKnop7MocC44hue/Q==
+X-Received: by 2002:a54:4011:: with SMTP id x17mr1020oie.35.1583175263204;
+ Mon, 02 Mar 2020 10:54:23 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u3sm6838355ote.50.2020.03.02.10.54.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Mar 2020 10:54:22 -0800 (PST)
+Received: (nullmailer pid 32444 invoked by uid 1000);
+ Mon, 02 Mar 2020 18:54:21 -0000
+Date: Mon, 2 Mar 2020 12:54:21 -0600
+From: Rob Herring <robh@kernel.org>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V3, 1/2] media: i2c: dw9768: Add DT support and MAINTAINERS entry
+Message-ID: <20200302185421.GA31928@bogus>
+References: <20200228155958.20657-1-dongchun.zhu@mediatek.com>
+ <20200228155958.20657-2-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <CAPcyv4j=bZ5KBPp6PbViERdDe+HZpV_W6qbSJupTNAzyfiK6xg@mail.gmail.com>
-Content-Language: en-CA
-X-SA-Exim-Connect-IP: 172.16.1.162
-X-SA-Exim-Rcpt-To: x86@kernel.org, hpa@zytor.com, ebadger@gigaio.com,
- peterz@infradead.org, luto@kernel.org, dave.hansen@linux.intel.com,
- bp@alien8.de, mingo@redhat.com, tglx@linutronix.de, benh@kernel.crashing.org,
- will@kernel.org, catalin.marinas@arm.com, hch@lst.de,
- akpm@linux-foundation.org, david@redhat.com, mhocko@kernel.org,
- linux-mm@kvack.org, platform-driver-x86@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-s390@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-ia64@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- dan.j.williams@intel.com
-X-SA-Exim-Mail-From: logang@deltatee.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-6.9 required=5.0 tests=ALL_TRUSTED,BAYES_00,
- SURBL_BLOCKED,URIBL_BLOCKED autolearn=ham autolearn_force=no
- version=3.4.2
-Subject: Re: [PATCH v3 4/7] x86/mm: Introduce _set_memory_prot()
-X-SA-Exim-Version: 4.2.1 (built Wed, 08 May 2019 21:11:16 +0000)
-X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
+Content-Disposition: inline
+In-Reply-To: <20200228155958.20657-2-dongchun.zhu@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_104723_057178_D98DADA3 
-X-CRM114-Status: GOOD (  18.47  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200302_105425_366813_081E8F31 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.54.116.67 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,83 +92,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: X86 ML <x86@kernel.org>, linux-ia64@vger.kernel.org,
- Linux-sh <linux-sh@vger.kernel.org>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, platform-driver-x86@vger.kernel.org,
- Linux MM <linux-mm@kvack.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
- linux-s390 <linux-s390@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
- Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Michal Hocko <mhocko@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Eric Badger <ebadger@gigaio.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, shengnan.wang@mediatek.com, tfiga@chromium.org,
+ louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
+ sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 28 Feb 2020 23:59:57 +0800, Dongchun Zhu wrote:
+> This patch is to add the Devicetree binding documentation and
+> MAINTAINERS entry for dw9768 actuator.
+> 
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  .../bindings/media/i2c/dongwoon,dw9768.yaml        | 55 ++++++++++++++++++++++
+>  MAINTAINERS                                        |  7 +++
+>  2 files changed, 62 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+> 
 
+My bot found errors running 'make dt_binding_check' on your patch:
 
-On 2020-02-29 3:33 p.m., Dan Williams wrote:
-> On Fri, Feb 21, 2020 at 10:25 AM Logan Gunthorpe <logang@deltatee.com> wrote:
->>
->> For use in the 32bit arch_add_memory() to set the pgprot type of the
->> memory to add.
->>
->> Cc: Thomas Gleixner <tglx@linutronix.de>
->> Cc: Ingo Molnar <mingo@redhat.com>
->> Cc: Borislav Petkov <bp@alien8.de>
->> Cc: "H. Peter Anvin" <hpa@zytor.com>
->> Cc: x86@kernel.org
->> Cc: Dave Hansen <dave.hansen@linux.intel.com>
->> Cc: Andy Lutomirski <luto@kernel.org>
->> Cc: Peter Zijlstra <peterz@infradead.org>
->> Signed-off-by: Logan Gunthorpe <logang@deltatee.com>
->> ---
->>  arch/x86/include/asm/set_memory.h | 1 +
->>  arch/x86/mm/pat/set_memory.c      | 7 +++++++
->>  2 files changed, 8 insertions(+)
->>
->> diff --git a/arch/x86/include/asm/set_memory.h b/arch/x86/include/asm/set_memory.h
->> index 64c3dce374e5..0aca959cf9a4 100644
->> --- a/arch/x86/include/asm/set_memory.h
->> +++ b/arch/x86/include/asm/set_memory.h
->> @@ -34,6 +34,7 @@
->>   * The caller is required to take care of these.
->>   */
->>
->> +int _set_memory_prot(unsigned long addr, int numpages, pgprot_t prot);
-> 
-> I wonder if this should be separated from the naming convention of the
-> other routines because this is only an internal helper for code paths
-> where the prot was established by an upper layer. For example, I
-> expect that the kernel does not want new usages to make the mistake of
-> calling:
-> 
->    _set_memory_prot(..., pgprot_writecombine(pgprot))
-> 
-> ...instead of
-> 
->     _set_memory_wc()
-> 
-> I'm thinking just a double underscore rename (__set_memory_prot) and a
-> kerneldoc comment for that  pointing people to use the direct
-> _set_memory_<cachemode> helpers.
+Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dts:19.13-26: Warning (reg_format): /example-0/camera-lens@0c:reg: property has invalid length (4 bytes) (#address-cells == 1, #size-cells == 1)
+Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dt.yaml: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dt.yaml: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dt.yaml: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
 
-Thanks! Will do. Note, though, that even _set_memory_wc() is an internal
-x86-specific function. But the extra comment and underscore still make
-sense.
-
-> With that you can add:
-> 
-> Reviewed-by: Dan Williams <dan.j.williams@intel.com>
-> 
+See https://patchwork.ozlabs.org/patch/1246607
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
