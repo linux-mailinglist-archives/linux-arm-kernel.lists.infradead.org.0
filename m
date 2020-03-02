@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 061391760AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 18:04:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB4ED1760E6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 18:18:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ImLDab7OZ3mOH3ZJUY5E4HiOjMUIcCIuL5BJ5ub/Ydk=; b=XSyt20/uRnQ880
-	rsYe5zjL/UeLq4jGV9UdHCbm/YeobpNNkocUJIkp64DI4oUrR3n5/ag/kgQRvlBnpcX3+P8RG57fW
-	u37svklvgpWr1xAT017pcME0bb73czjIjC8NrBMJ1coVV0I69V6XBfaD240mLcspuGG+ouLseCEyA
-	+1A+apEUNeUTyLyioGrRno4FdAMWhzDM5g4O/iDokgyKFiTprPUu4ysX64qAg6TDZNH5/mrgK9zQf
-	0/zlTWJDLZL88A67IXfKbwzcRXvT0Wygzat/BsIRuuClHuorn1E/1lQAhB58nq7gKubYeEPjy82BS
-	oHzOjF0ElPU/q2ZvER8w==;
+	List-Owner; bh=tcAPZJ9uIMWxO4Q6hElSwP6CBbe1c/0+EWKsBxkypUU=; b=h7j9Xgbz06N6rj
+	VjFLKYlcRHd5ovJkRNmO9uLDD+Y4su16c8/s8o/zsI0IMfAJurQiuAtLTQKpDJnrvVzp0sXNOfVVW
+	N+iJDbwukAORxv6SAOoYbsY84t3bsFuqdvgrWT5InapnCDxhl0Ez7WwhXZD/80xQonvaSVsXzVqsk
+	lwl1L3pCKvgYkklrM+3GiaJTb/+ySPwS9Hro4m+/HjcW89hgh188Wix9IWbaShPKepRJllIScSi/5
+	8uSl/kc77Q3MrUbnZQ+golz+mMwSDjymeycZ6OGZ7ETfQiXulnlK8UoFW/YPHckypcDOAl8Yp3z0I
+	wo7LZjnuS7p9wvbr7HJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8oU8-0002bV-Tt; Mon, 02 Mar 2020 17:04:04 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j8oi4-0007Po-OQ; Mon, 02 Mar 2020 17:18:28 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8oTz-0002aB-Hf
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 17:03:56 +0000
-Received: by mail-lj1-x243.google.com with SMTP id w1so283879ljh.5
+ id 1j8oht-0007PP-LB
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 17:18:18 +0000
+Received: by mail-lf1-x144.google.com with SMTP id c20so216586lfb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 09:03:53 -0800 (PST)
+ Mon, 02 Mar 2020 09:18:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=XPcMs7JIMlUv20DOzI5SHy+/OcC5LtbzMpMfGg1G0ug=;
- b=cJ0hC0VCK3d1FiWp4feDyo+RDpMW/ZDeST2Q91xPHabKlMNnRe8D201mgwNNbE7lQL
- 0cw9MLzh4vP2ZsxpFjeALnYVPvRwRmtRkBdnxXsFswxCa1sRoR3qelbxqhSCYw1A4+fr
- Z3cUAFjpM+GQgVLk0KS02nfLnEIZQpVLncpRHhjGofnh/tR1OKKb3aZ/IBsMytcwcQAF
- m5f1rvnO+kJkTSVInjD3G/Ldkrzg8E0arhecej1RDFEfAjeh8p2AMPvX8jc7to1Q5k9X
- sFCzitDsQeI8HE7yZtEA7xsG8E4po1cSZdMnQESXZTe52IA/89HsBJ7krAp6nZ8R3lX1
- IXpQ==
+ :cc; bh=npGRpScsdzHp8hgTy3Ps74UkwY+poievW07XcCbJvc0=;
+ b=ebJ61xS+vL/anKTgYhyj3v89k9aMBeSSoLH+wKzBO/S86yKF89gKCKg7d/T5ghZQO6
+ +a7PZAXrmEoeGO248GhMWE3cgvwTIUcVWQzR/jVNcI0VwOEuuZKQ0URpuwFE7IVWGJ40
+ D57EqEp5VTqez4S9ZsbQOiPRsz1PaSYy4x1yJoPimD/MykwsyJXM/xJF5JA3WOcejp1a
+ ExnK7LOikVBhE67OBKW7+0sXOxmO3wM9eoPofdWEt6t/ienlxNiNHGDzgaI22x0jJn7n
+ /PmBXSTpvmPWtJZ/yDGf4en7SPaNazMzuTWmD3SEOlD2mWe1oCpDvl/9SzkA0Kx8nWnQ
+ xI0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=XPcMs7JIMlUv20DOzI5SHy+/OcC5LtbzMpMfGg1G0ug=;
- b=KWMtDFkVWn6nSJtuCdRQHlsGqUINwrkI+rctiLKJQhlkA+jEEsE9OCOtmis50PSYZ7
- sXZ3cTbO0xAhjXvK5B49dQNQe2gZtHRFsHp7FFv4vlLjeWEfRdEDK0QibBk4xyCy8xUj
- lnmSCJobus6LE/YKaSE77L7yOlQuFg/2S21a4R45shE2sy8Y+40BwPxgvtaGhW3uhl7P
- ilsXkpgpJnXlD7sIoqx9amDxbNCChZF1z5L2XLSjWVaxPVi1Fp9IM2Ep1tIBNqpB8q6c
- Vb0aomKgwvdwCSKijzlzveCSrvorD/x+vahl1KjSJk/ytihdQGunKOOMNiI4t845+cbM
- vqIg==
-X-Gm-Message-State: ANhLgQ0xWWNrx+ytsCe6ENOVklxcqrEIBoz8wu1sCcdCIV5m1ynHgM4w
- ASuOQtGTgaX85Y+8hZ1yh837icjByJJPmzlTDJw=
-X-Google-Smtp-Source: ADFU+vuIGQKHZ0dTpeXvkF9hW60IlQJGMZOKf3tnAwmi+oSO9sl5g4yJgj5bBEEtpk0sSh9goqDfwGpv8iWBQKrJUHg=
-X-Received: by 2002:a05:651c:cf:: with SMTP id 15mr368406ljr.288.1583168632297; 
- Mon, 02 Mar 2020 09:03:52 -0800 (PST)
+ bh=npGRpScsdzHp8hgTy3Ps74UkwY+poievW07XcCbJvc0=;
+ b=BNczY9GqlCcU3in/PJaQ7fnG2hVKuNN5I1zlGmjPEWkcxcPg4KEHYaCgoOrlKUhIbm
+ zQ/dHdI11j3/bF9nFQY8+RBAsC62f8EFhJ8Wzqlk/Pis8y7X/8Fe4BiawGHCzKqNsCEz
+ EzmvAxOsoYvcezQ+4UKK6Yqj/aTuUmEwTjKTwcXI2y50nPJbc/A34R8UltE3X/P5HHwb
+ 5lAw8qhuns38IqyoAX/+PMNawgyEItRTeMayI9pnEfg8m6MZYoiQLWMIUeMMP6DI0fHw
+ B2FVEXUpX4YIJ6/E0z2SNLjGsRI1QA5WE20xdw+BZOx128A/oq54l3G9VekmbuPHhlej
+ LcPw==
+X-Gm-Message-State: ANhLgQ3iBCPCbFxQL/rYQQ5hfAaxD5+CkSC6DNbdGPexL7aqGnvOiWp8
+ w/VG534YhWm+FoXVWlhSa3tRwKqSl4usJzb+zoE=
+X-Google-Smtp-Source: ADFU+vszH2JfjSmjLotcDHOUoYo/EKH07bWd7PS9PsgNKeQL71BQ17mRqsIl5rJ9QOMXX2EJ4Kf/MKCl/CggfQ55q0w=
+X-Received: by 2002:a05:6512:1054:: with SMTP id
+ c20mr77851lfb.69.1583169495560; 
+ Mon, 02 Mar 2020 09:18:15 -0800 (PST)
 MIME-Version: 1.0
 References: <20200302001150.27952-1-vitor@massaru.org>
 In-Reply-To: <20200302001150.27952-1-vitor@massaru.org>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 2 Mar 2020 14:03:41 -0300
-Message-ID: <CAOMZO5DQ=sg9Qf7N4N9S-5DpS4EQFG1w6ZqK0nS9P3M0ghSzDg@mail.gmail.com>
+Date: Mon, 2 Mar 2020 14:18:04 -0300
+Message-ID: <CAOMZO5CETSigeAkCpewdrmeogBhvVs3XP+A4fg823bSkeGxqCw@mail.gmail.com>
 Subject: Re: [PATCH v2] arm64: dts: freescale: add gpio-fan/thermal support
  for Google i.MX 8MQ Phanbell
 To: Vitor Massaru Iha <vitor@massaru.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_090355_588109_F11463F2 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20200302_091817_722285_CB13D424 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [festevam[at]gmail.com]
@@ -108,36 +110,17 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Vitor,
 
-Forgot to say in the previous revision, but the typical Subject pattern is:
-
-arm64: dts: imx8mq-phanbell: Add gpio-fan/thermal support
+One more comment:
 
 On Sun, Mar 1, 2020 at 9:11 PM Vitor Massaru Iha <vitor@massaru.org> wrote:
 
->  &A53_0 {
-> @@ -373,4 +383,58 @@
->                         MX8MQ_IOMUXC_GPIO1_IO02_WDOG1_WDOG_B 0xc6
->                 >;
->         };
 > +
 > +       pinctrl_gpio_fan: gpiofanp {
 
-Please keep the pinctrl entries in alphabetical order.
+This should be:
+pinctrl_gpio_fan: gpiofangrp {
 
-> +               fsl,pins = <
-> +                       MX8MQ_IOMUXC_NAND_CLE_GPIO3_IO5 0x01
-
-This pad comes as 0x16 after POR, so please add it as:
-
-MX8MQ_IOMUXC_NAND_CLE_GPIO3_IO5 0x16
-
-> +&cpu_thermal {
-
-Please put it prior to the &i2c1 node in order to keep the alphabetical order.
-
-With these changes you can add:
-
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
