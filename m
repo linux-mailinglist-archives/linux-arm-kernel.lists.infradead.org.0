@@ -2,64 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F9E31758AB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:51:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C73E81758EA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:02:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yNdH7PjohstnGm8SBgIMBhAPiNKIrtuw+bzXQsSWvzI=; b=oSvusQ23PgwnXF
-	V38nGwFxLRozJYJ13ZCA/DSn4TdVtJ9QDkZ81jBCuQXQ6cwZg/b0pvucDyMCCcILgfW35VnwjNH+g
-	qoj/LLqajWE5tRirsIidWe0gqikLoNk8Do1v/XlxsYAeJCapji9NFJgbMS8E/tDfyCo+N3Aq9gd/A
-	EB2U1Lr1ehgDLTV922q/Cko0s7ubLovTW1P0UYLJReNwD4isRYEQKdnMepeudxJOjj+KuDOZN2X0H
-	3NdE7G8vawcW/WlUFka7MKlD2/QZUcGElXC/askBWeBp2tdEzj01i/IoPrcr7GMCrMxmaB0iKip3u
-	KZEIcknaweDwc+aqabMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X8EaCEJip2G1vaOgltgnQmqyU6hIZUmKxXjNcAk84MM=; b=TMiBXeyvH+ULAx
+	bJWaiBIbRlvCW3RU+TmlxDMIPhRg9HJXP0IwOBinZxsWS0vaZUJ0DeKGVn9uQRR2ul2PwFb79THs0
+	JCdj4MGSbqUixRyL2VuG+Au8mTAd/IoxVm7Kx1sH1P4sZD62zd6JuS/L8T+vEp1S8v/nlxRc/tTWm
+	8D51Xndmtx9W4NDkTBS8TNUWU9B3kgVgda7g9H4z8YTAOQWLX0AN65pH13pofvcSM+bwUh5Z72dTT
+	055yDqP2Q1W260SDqtN4wvPLgr2vUJd9lz1R/PwLpYeRHzCFQ55mEV3qzLmRKyV/nktIIjAf07efs
+	6UzZd2GtbdoLnkkIUFOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8ifE-00036W-52; Mon, 02 Mar 2020 10:51:08 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1j8ipZ-0006yN-K5; Mon, 02 Mar 2020 11:01:49 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8if7-00035g-6b
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:51:02 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 02 Mar 2020 02:50:55 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,506,1574150400"; d="scan'208";a="262733829"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga004.fm.intel.com with ESMTP; 02 Mar 2020 02:50:51 -0800
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1j8iez-0066vK-MN; Mon, 02 Mar 2020 12:50:53 +0200
-Date: Mon, 2 Mar 2020 12:50:53 +0200
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Tali Perry <tali.perry1@gmail.com>
-Subject: Re: [PATCH v8 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
- driver
-Message-ID: <20200302105053.GO1224808@smile.fi.intel.com>
-References: <20200301223201.185450-1-tali.perry1@gmail.com>
- <20200301223201.185450-3-tali.perry1@gmail.com>
+ id 1j8ipQ-0006wk-Qh; Mon, 02 Mar 2020 11:01:42 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 2EE212949CC
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
+ p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
+ sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
+ laurent.pinchart@ideasonboard.com
+Subject: [PATCH v11 0/5] arm/arm64: mediatek: Fix mt8173 mmsys device probing
+Date: Mon,  2 Mar 2020 12:01:23 +0100
+Message-Id: <20200302110128.2664251-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200301223201.185450-3-tali.perry1@gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_025101_256802_528C2C67 
-X-CRM114-Status: GOOD (  23.87  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200302_030141_131542_79170A03 
+X-CRM114-Status: GOOD (  17.35  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,494 +57,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, yuenn@google.com,
- avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
- wsa@the-dreams.de, brendanhiggins@google.com, linux-kernel@vger.kernel.org,
- kfting@nuvoton.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>,
+ Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
+ Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
+ sean.wang@mediatek.com, Houlong Wei <houlong.wei@mediatek.com>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 12:32:00AM +0200, Tali Perry wrote:
-> Add Nuvoton NPCM BMC I2C controller driver.
-
-> +#include <linux/bitfield.h>
-> +#include <linux/clk.h>
-> +#include <linux/errno.h>
-> +#include <linux/i2c.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/irq.h>
-> +#include <linux/kernel.h>
-> +#include <linux/mfd/syscon.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/regmap.h>
-> +#include <linux/jiffies.h>
-
-...
-
-> +enum i2c_mode {
-> +	I2C_MASTER,
-
-> +	I2C_SLAVE
-
-If it's not a terminator line (like MAX or something like that) it's better to
-have comma at the end. This applies to all enum:s in your code.
-
-> +};
-
-...
-
-> +// I2Cus Operation type values
-
-It's funny style of comments when you have different for multi-line ones. I
-don't know Wolfram's opinion on that, but at least for me looks like a bit of
-consistency should be applied.
-
-Also in some of them you missed English grammar / punctuation.
-
-> +enum i2c_oper {
-> +	I2C_NO_OPER = 0,
-> +	I2C_WRITE_OPER = 1,
-> +	I2C_READ_OPER = 2
-
-If it's not hardware related values, why we need to define them explicitly?
-
-> +};
-
-...
-
-> +#define NPCM_I2CCTL1_RWS_FIELDS	  (NPCM_I2CCTL1_START | NPCM_I2CCTL1_STOP | \
-> +				   NPCM_I2CCTL1_ACK)
-
-Better do like
-
-#define FOO			\
-	(BAR | BAZ)
-
-...
-
-> +const unsigned int RETRIES_NUM =	10000;
-
-> +const unsigned int I2C_FREQ_MIN = 10;
-> +const unsigned int I2C_FREQ_MAX = 1000;
-> +const unsigned int I2C_FREQ_100KHZ = 100;
-> +const unsigned int I2C_FREQ_400KHZ = 400;
-> +const unsigned int I2C_FREQ_1MHZ = 1000;
-
-> +const unsigned int SCLFRQ_MIN = 10;
-> +const unsigned int SCLFRQ_MAX = 511;
-
-> +const unsigned int I2C_NUM_OF_ADDR = 10;
-
-Hmm... Why they are not defines?
-
-...
-
-> +// Status of one I2C module
-> +struct npcm_i2c {
-> +	struct i2c_adapter	adap;
-> +	struct device		*dev;
-> +	unsigned char __iomem	*reg;
-
-> +	spinlock_t		lock;   /* IRQ synchronization */
-
-Perhaps you describe all of the fields in kernel-doc format?
-
-> +	struct completion	cmd_complete;
-> +	int			irq;
-> +	int			cmd_err;
-> +	struct i2c_msg		*msgs;
-> +	int			msgs_num;
-> +	int			num;
-> +	u32			apb_clk;
-> +	struct i2c_bus_recovery_info rinfo;
-> +	enum i2c_state		state;
-> +	enum i2c_oper		operation;
-> +	enum i2c_mode		master_or_slave;
-> +	enum i2c_state_ind	stop_ind;
-> +	u8			dest_addr;
-> +	u8			*rd_buf;
-> +	u16			rd_size;
-> +	u16			rd_ind;
-> +	u8			*wr_buf;
-> +	u16			wr_size;
-> +	u16			wr_ind;
-> +	bool			fifo_use;
-> +
-> +	// PEC bit mask per slave address.
-> +	//		1: use PEC for this address,
-> +	//		0: do not use PEC for this address
-
-Ditto.
-
-> +	u16			PEC_mask;
-> +	bool			PEC_use;
-> +	bool			read_block_use;
-> +	u8			int_cnt;
-> +	u32			event_log;
-> +	u32			event_log_prev;
-> +	u32			clk_period_us;
-> +	unsigned long		int_time_stamp;
-> +	unsigned long		bus_freq; // in kHz
-> +	u32			xmits;
-> +
-> +};
-
-...
-
-> +static inline void npcm_i2c_select_bank(struct npcm_i2c *bus,
-> +					enum i2c_bank bank)
-> +{
-> +	if (bank == I2C_BANK_0)
-> +		iowrite8(ioread8(bus->reg + NPCM_I2CCTL3) & ~I2CCTL3_BNK_SEL,
-> +			 bus->reg + NPCM_I2CCTL3);
-> +	else
-> +		iowrite8(ioread8(bus->reg + NPCM_I2CCTL3) | I2CCTL3_BNK_SEL,
-> +			 bus->reg + NPCM_I2CCTL3);
-
-Usual patter (better to read) is
-
-	u8 value;
-
-	value = ioread8(...);
-	if (a)
-		val ...;
-	else
-		val ...;
-	iowrite8(val, ...);
-
-> +}
-
-...
-
-> +static inline void npcm_i2c_rd_byte(struct npcm_i2c *bus, u8 *data)
-> +{
-> +	*data = ioread8(bus->reg + NPCM_I2CSDA);
-> +}
-
-Hmm... why not u8 as return type?
-
-...
-
-> +static inline u16 npcm_i2c_get_index(struct npcm_i2c *bus)
-> +{
-> +	u16 index = 0;
-> +
-> +	if (bus->operation == I2C_READ_OPER)
-> +		index = bus->rd_ind;
-> +	else if (bus->operation == I2C_WRITE_OPER)
-> +		index = bus->wr_ind;
-> +
-> +	return index;
-
-Why do you need temporary variable?
-
-	if (a)
-		return X;
-	if (b)
-		return Y;
-	return 0;
-
-> +}
-
-...
-
-> +static inline bool npcm_i2c_is_quick(struct npcm_i2c *bus)
-> +{
-> +	if (bus->wr_size == 0 && bus->rd_size == 0)
-> +		return true;
-> +	return false;
-
-	return bus->wr_size == 0 && bus->rd_size == 0;
-
-> +}
-
-...
-
-> +static void npcm_i2c_disable(struct npcm_i2c *bus)
-> +{
-> +	int i;
-> +
-> +	// select bank 0 for I2C addresses
-> +	npcm_i2c_select_bank(bus, I2C_BANK_0);
-> +
-> +	// Slave addresses removal
-> +	for (i = I2C_SLAVE_ADDR1; i < I2C_NUM_OF_ADDR; i++)
-> +		iowrite8(0, bus->reg + npcm_i2caddr[i]);
-> +
-> +	npcm_i2c_select_bank(bus, I2C_BANK_1);
-> +
-
-> +	// Disable module.
-> +	iowrite8(ioread8(bus->reg + NPCM_I2CCTL2) & ~I2CCTL2_ENABLE,
-> +		 bus->reg + NPCM_I2CCTL2);
-
-
-Usual pattern
-
-	value = ioread8(...);
-	value ...;
-	iowrite(value, ...);
-
-> +
-> +	bus->state = I2C_DISABLE;
-> +}
-
-...
-
-> +
-> +static void npcm_i2c_enable(struct npcm_i2c *bus)
-> +{
-> +	iowrite8((ioread8(bus->reg + NPCM_I2CCTL2) | I2CCTL2_ENABLE),
-> +		 bus->reg + NPCM_I2CCTL2);
-
-Ditto. Applies to all your code.
-
-> +
-> +	bus->state = I2C_IDLE;
-> +}
-
-...
-
-> +static bool npcm_i2c_wait_for_bus_free(struct npcm_i2c *bus, bool may_sleep)
-> +{
-> +	int cnt = 0;
-> +	int max_count = 2; /* wait for 2 ms */
-> +
-> +	if (may_sleep)
-> +		might_sleep();
-> +	else
-> +		max_count = max_count * 100; /* since each delay is 10 us */
-
-> +	while  (ioread8(bus->reg + NPCM_I2CCST) & NPCM_I2CCST_BUSY) {
-> +		if (cnt < max_count) {
-> +			if (may_sleep)
-> +				msleep_interruptible(1);
-> +			else
-> +				udelay(10);
-> +			cnt++;
-> +
-> +		} else {
-> +			bus->cmd_err = -EAGAIN;
-> +			return false;
-> +		}
-> +	}
-
-NIH of readx_poll_timeout{_atomic}().
-
-> +	return true;
-> +}
-
-...
-
-> +static inline void npcm_i2c_eob_int(struct npcm_i2c *bus, bool enable)
-> +{
-> +	// Clear EO_BUSY pending bit:
-> +	iowrite8(ioread8(bus->reg + NPCM_I2CCST3) | NPCM_I2CCST3_EO_BUSY,
-> +		 bus->reg + NPCM_I2CCST3);
-> +
-> +	if (enable) {
-> +		iowrite8((ioread8(bus->reg + NPCM_I2CCTL1) |
-> +			 NPCM_I2CCTL1_EOBINTE)  & ~NPCM_I2CCTL1_RWS_FIELDS,
-> +			 bus->reg + NPCM_I2CCTL1);
-> +	} else {
-> +		iowrite8(ioread8(bus->reg + NPCM_I2CCTL1) &
-> +			 ~NPCM_I2CCTL1_EOBINTE & ~NPCM_I2CCTL1_RWS_FIELDS,
-> +			 bus->reg + NPCM_I2CCTL1);
-> +	}
-
-Hard to follow. See above comments.
-
-> +}
-
-...
-
-> +	return (bool)FIELD_GET(NPCM_I2CTXF_STS_TX_THST, tx_fifo_sts);
-
-!! will do better than explicit casting.
-Ditto for the rest.
-
-...
-
-> +static int  npcm_i2c_slave_enable_l(struct npcm_i2c *bus,
-> +				    enum i2c_addr addr_type, u8 addr,
-> +				    bool enable);
-
-Why is it here? Do you have recursion / circular dependency?
-
-...
-
-> +	if (!msgs)
-> +		return;
-
-Is it possible?
-
-> +	if (completion_done(&bus->cmd_complete) == true)
-
-' == true' is redundant. Same for ' == false' (use ! instead).
-
-> +		return;
-
-...
-
-> +static void npcm_i2c_write_to_fifo_master(struct npcm_i2c *bus,
-> +					  u16 max_bytes_to_send)
-> +{
-> +	// Fill the FIFO, while the FIFO is not full and there are more bytes to
-> +	// write
-
-> +	if (max_bytes_to_send == 0)
-> +		return;
-
-Duplicate check, thus redundant.
-
-> +	while ((max_bytes_to_send--) && (I2C_HW_FIFO_SIZE -
-> +					 npcm_i2c_get_fifo_fullness(bus))) {
-
-Badly formatted line. Moreover, too many parentheses.
-
-> +		if (bus->wr_ind < bus->wr_size)
-> +			npcm_i2c_wr_byte(bus, bus->wr_buf[bus->wr_ind++]);
-> +		else
-> +			npcm_i2c_wr_byte(bus, 0xFF);
-> +	}
-> +}
-
-...
-
-> +		rxf_ctl = min_t(u16, (u16)nread, (u16)I2C_HW_FIFO_SIZE);
-
-Explicit casting when use min_t()? It's strange. Have you chance to read what
-min_t() does?
-
-...
-
-> +
-> +static int npcm_i2c_master_abort(struct npcm_i2c *bus)
-> +{
-
-> +	int ret = 0;
-
-I don't see why this variable is needed.
-
-> +
-> +	NPCM_I2C_EVENT_LOG(NPCM_I2C_EVENT_ABORT);
-> +
-> +	// Only current master is allowed to issue Stop Condition
-> +	if (npcm_i2c_is_master(bus)) {
-> +		npcm_i2c_eob_int(bus, true);
-> +		npcm_i2c_master_stop(bus);
-> +
-> +		// Clear NEGACK, STASTR and BER bits
-> +		iowrite8(NPCM_I2CST_BER | NPCM_I2CST_NEGACK | NPCM_I2CST_STASTR,
-> +			 bus->reg + NPCM_I2CST);
-> +	}
-> +
-> +	return ret;
-> +}
-
-...
-
-> +	pr_debug("i2c%d get SCL 0x%08X\n", bus->num, ret);
-
-Do you need this in production code?
-
-> +	return (ret >> (offset)) & 0x01;
-
-Too many parentheses, but why not simple
-	return !!(ret & BIT(offset));
-?
-
-Same for the rest similar code.
-
-...
-
-> +static int npcm_i2c_get_SDA(struct i2c_adapter *_adap)
-> +{
-> +	unsigned int ret = 0;
-> +	struct npcm_i2c *bus = container_of(_adap, struct npcm_i2c, adap);
-
-> +	u32 offset = 0;
-> +
-> +	offset = 0;
-
-What the point?
-
-> +	ret = FIELD_GET(I2CCTL3_SDA_LVL, ioread32(bus->reg + NPCM_I2CCTL3));
-> +
-> +	pr_debug("i2c%d get SDA 0x%08X\n", bus->num, ret);
-> +
-> +	return (ret >> (offset)) & 0x01;
-> +}
-
-I (almost) stopped here, I thing this driver needs more work (style,
-refactoring, etc) before real review.
-
-...
-
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	dev_dbg(bus->dev, "resource: %pR\n", res);
-> +	bus->reg = devm_ioremap_resource(&pdev->dev, res);
-
-devm_platform_ioremap_resource();
-
-> +	if (IS_ERR((bus)->reg))
-> +		return PTR_ERR((bus)->reg);
-
-...
-
-> +	bus->irq = platform_get_irq(pdev, 0);
-> +	if (bus->irq < 0) {
-
-> +		dev_err(bus->dev, "I2C platform_get_irq error\n");
-
-Redundant.
-
-> +		return -ENODEV;
-> +	}
-
-...
-
-> +	dev_dbg(bus->dev, "irq = %d\n", bus->irq);
-
-Why?! There are other means to get this information.
-
-> +	ret = devm_request_irq(&pdev->dev, bus->irq, npcm_i2c_bus_irq, 0,
-> +			       dev_name(&pdev->dev), (void *)bus);
-
-Explicit casting?!
-
-...
-
-> +	pr_info("npcm7xx I2C bus %d is registered\n", bus->adap.nr);
-
-Noise.
-
-...
-
-> +static const struct of_device_id npcm_i2c_bus_of_table[] = {
-> +	{ .compatible = "nuvoton,npcm750-i2c", },
-
-> +	{},
-
-For terminator line comma is redundant.
-
-> +};
-
-...
-
-> +MODULE_VERSION("0.1.1");
-
-What the point?
+Dear all,
+
+Those patches are intended to solve an old standing issue on some
+Mediatek devices (mt8173, mt2701 and mt2712 are affected by this issue).
+
+Up to now both drivers, clock and drm are probed with the same device tree
+compatible. But only the first driver gets probed, which in effect breaks
+graphics on those devices.
+
+The MMSYS (Multimedia subsystem) in Mediatek SoCs has some registers to
+control clock gates (which is used in the clk driver) and some registers
+to set the routing and enable the differnet blocks of the display
+and MDP (Media Data Path) subsystem. On this series the clk driver is
+not a pure clock controller but a system controller that can provide
+access to the shared registers between the different drivers that need
+it (mediatek-drm and mediatek-mdp). Hence the MMSYS clk driver was moved
+to drivers/soc/mediatek and is the entry point (parent) which will trigger
+the probe of the corresponding mediatek-drm driver.
+
+**IMPORTANT** This series only fixes the issue on mt8173 to make it
+simple and as is the only platform I can test. Similar changes should be
+applied for mt2701 and mt2712 to have display working.
+
+For reference, here are the links to the old discussions:
+* v10: https://patchwork.kernel.org/project/linux-mediatek/list/?series=248505
+* v9: https://patchwork.kernel.org/project/linux-clk/list/?series=247591
+* v8: https://patchwork.kernel.org/project/linux-mediatek/list/?series=244891
+* v7: https://patchwork.kernel.org/project/linux-mediatek/list/?series=241217
+* v6: https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
+* v5: https://patchwork.kernel.org/project/linux-mediatek/list/?series=44063
+* v4:
+  * https://patchwork.kernel.org/patch/10530871/
+  * https://patchwork.kernel.org/patch/10530883/
+  * https://patchwork.kernel.org/patch/10530885/
+  * https://patchwork.kernel.org/patch/10530911/
+  * https://patchwork.kernel.org/patch/10530913/
+* v3:
+  * https://patchwork.kernel.org/patch/10367857/
+  * https://patchwork.kernel.org/patch/10367861/
+  * https://patchwork.kernel.org/patch/10367877/
+  * https://patchwork.kernel.org/patch/10367875/
+  * https://patchwork.kernel.org/patch/10367885/
+  * https://patchwork.kernel.org/patch/10367883/
+  * https://patchwork.kernel.org/patch/10367889/
+  * https://patchwork.kernel.org/patch/10367907/
+  * https://patchwork.kernel.org/patch/10367909/
+  * https://patchwork.kernel.org/patch/10367905/
+* v2: No relevant discussion, see v3
+* v1:
+  * https://patchwork.kernel.org/patch/10016497/
+  * https://patchwork.kernel.org/patch/10016499/
+  * https://patchwork.kernel.org/patch/10016505/
+  * https://patchwork.kernel.org/patch/10016507/
+
+Best regards,
+ Enric
+
+Changes in v11:
+- Select CONFIG_MTK_MMSYS (CK)
+- Pass device pointer of mmsys device instead of config regs (CK)
+
+Changes in v10:
+- Update the binding documentation for the mmsys system controller.
+- Renamed to be generic mtk-mmsys
+- Add driver data support to be able to support diferent SoCs
+- Introduced a new patch to move routing control into mmsys driver.
+- Removed the patch to use regmap as is not needed anymore.
+- Match driver data to get display routing.
+
+Changes in v9:
+- Move mmsys to drivers/soc/mediatek (CK)
+- Do not move the display routing from the drm driver (CK)
+
+Changes in v8:
+- Be a builtin_platform_driver like other mediatek mmsys drivers.
+- New patch introduced in this series.
+
+Changes in v7:
+- Free clk_data->clks as well
+- Get rid of private data structure
+
+Enric Balletbo i Serra (3):
+  dt-bindings: mediatek: Update mmsys binding to reflect it is a system
+    controller
+  soc / drm: mediatek: Move routing control to mmsys device
+  soc / drm: mediatek: Fix mediatek-drm device probing
+
+Matthias Brugger (2):
+  drm/mediatek: Omit warning on probe defers
+  soc: mediatek: Move mt8173 MMSYS to platform driver
+
+ .../bindings/arm/mediatek/mediatek,mmsys.txt  |   7 +-
+ drivers/clk/mediatek/clk-mt8173.c             | 104 -----
+ drivers/gpu/drm/mediatek/Kconfig              |   1 +
+ drivers/gpu/drm/mediatek/mtk_disp_color.c     |   5 +-
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |   5 +-
+ drivers/gpu/drm/mediatek/mtk_disp_rdma.c      |   5 +-
+ drivers/gpu/drm/mediatek/mtk_dpi.c            |  12 +-
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |  19 +-
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.c        | 259 +----------
+ drivers/gpu/drm/mediatek/mtk_drm_ddp.h        |   7 -
+ drivers/gpu/drm/mediatek/mtk_drm_drv.c        |  45 +-
+ drivers/gpu/drm/mediatek/mtk_drm_drv.h        |   2 +-
+ drivers/gpu/drm/mediatek/mtk_dsi.c            |   8 +-
+ drivers/gpu/drm/mediatek/mtk_hdmi.c           |   4 +-
+ drivers/soc/mediatek/Kconfig                  |   7 +
+ drivers/soc/mediatek/Makefile                 |   1 +
+ drivers/soc/mediatek/mtk-mmsys.c              | 437 ++++++++++++++++++
+ include/linux/soc/mediatek/mtk-mmsys.h        |  20 +
+ 18 files changed, 537 insertions(+), 411 deletions(-)
+ create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
+ create mode 100644 include/linux/soc/mediatek/mtk-mmsys.h
 
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.25.1
 
 
 _______________________________________________
