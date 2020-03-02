@@ -2,90 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4253175E3A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:31:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4818C175E4E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:36:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=InZdCSEK/AwLtypJYewYW5xZk/19jNEuiasOOA63Ttk=; b=HE1uN633+XYemcXHf5309Gj9LY
-	+p2TvPQ4h2sC4PIdvbidrHZQDvXJUuNNZ5psXrs0oY5vAvAUm1GtaXahtcJYjdFzML00s/Bjn7J9/
-	JnsCZmqgqymtJhsD3/x2o4WDIFabxHhbWrbvUPa01FS9QSYToWKQrxkXgIwSZ5Ipruwwc9Bpfzawa
-	aJ1M7B79u+NEwct1IAYZ7Fdar+yS2iMA7jp/UH/PD+CDGfWkRaxm+AaylCFS4cORI4V9jod/kGGjP
-	QNAIvmBqtleXflEQgE4epofJxrC+d/otWOFLJsWe4waPjZ1bYOsdgObCAxT7jNewScelTtPzy+ol4
-	iBeTTztg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s75KorBGNlxqaYxNi5Nnul60OJPMz87Qp1oaD+Yrvt0=; b=BHv6l77XVu5gke
+	tf+e8lyk05hMC0Chs9NsnirmXGN0liTmJfLwKkQZTCuYHEDEMbAgBCv70vyaOokG1sX8+juHEZulK
+	ii5UEUuU7liMNkafBMf+ic/eEqbsxFYj5yg57hkYCwNrJP2JmS2msNPso8j5vRFoi+GorUOujA8ti
+	XIJXcZVIMAnVFtrvE4hYoN8v6RG9y3EYLU1pu7Wy+cisYkCruQSPvMh7ooRv+LU1c5x/7aU6mBo60
+	qOnwTsL+rqTUnxqWgyqp4Byl9eWVpJnvJ+Gr/FfZ8zk/jAeQsuBP8ljk6yOUt+jNv/Y5JA9Uwx+QR
+	Sbd/pTv6iFOBIGU/o9jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8n2a-0002UQ-MN; Mon, 02 Mar 2020 15:31:32 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j8n7U-0004Ka-7n; Mon, 02 Mar 2020 15:36:36 +0000
+Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
+ helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8n29-0002F6-Fd; Mon, 02 Mar 2020 15:31:06 +0000
-Received: by mail-wr1-x442.google.com with SMTP id j7so116594wrp.13;
- Mon, 02 Mar 2020 07:31:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=eFDMzvNJhb9C/gjmO5CDDLNllKw2BwatUidg0r9OWqc=;
- b=NSQIFwJD1hXMDRKHfbPuIpu/mXLa55KLrT5j9PkX2LU2p6fhyD5ya9mMjqqi9hYXns
- ojy+Xua5CGm/m0RBQPSaq2h6039qAft3JpLhUHEFvmilxIJM7zps6og557U91v93+M/S
- lYz1C1YMUA8gKmbKd5PDDp3nHPW1kJbvQ/Rvsj2NwajiE5d/5dgwslqDIJ+QV+ubL921
- e+kmE0tuiwM4jTR2vUUVzi3J9iWRp4xpFRhiGTgKquBIqWqb2PGCj5L+xNvLw+K32d/C
- xvSrsD/d3RvqeiYWxUDCMW8XtKGORklwjwOIbe3l6XJ3F1dDSyoeUEP3x7jAPBEL0DPy
- V4YA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=eFDMzvNJhb9C/gjmO5CDDLNllKw2BwatUidg0r9OWqc=;
- b=C8wr2Ud2EREFU6Wp2ZXJ6YXlS956J9ig/HQyrGXkOm8Y9c3u/Sardt3FdTOpMQ5MGm
- RzHzyDJQ6qBNrMdIHt99aNOcAQoUxlLdnmMxn3dHMtPWQdFru6s0xVkERi8Fc81oVqqg
- yhNglYcvG+JeI7KPJnG6hyTT1mgdBuReeW13F3OpJKwsas5fRPfhm6r4xfsXv8QjdMxW
- i0uE8bBqBxKpCavnZHY0Tw8rLSZkoxzF1/hTTcecW43wDF6KHqei3uy9vCJ4OJsO80x9
- Ev2cQiSbCAYbd0Kjfl0huNOqLxqxBH3Wz6oWJnYk2nO1KZG6t29Ti+0gXUhR7I5F9wAd
- /pVA==
-X-Gm-Message-State: ANhLgQ30sSHOX+193A6ss+T/UFpjqgLuRAu0cPSPJhpLSUB9ePUBlvFk
- FzHbUxGazI8f+YpGh52SIeY=
-X-Google-Smtp-Source: ADFU+vvbIMHFtMOd/nNEBuz9Sck5/PZWnPzOs6+fSxM1d70yAvo48rCFI0OCKH6irEXdAFZNLy9kgw==
-X-Received: by 2002:adf:dfcc:: with SMTP id q12mr140710wrn.171.1583163063985; 
- Mon, 02 Mar 2020 07:31:03 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g7sm23967540wrm.72.2020.03.02.07.31.02
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Mar 2020 07:31:03 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] arm64: dts: add bus to rockchip amba nodenames
-Date: Mon,  2 Mar 2020 16:30:47 +0100
-Message-Id: <20200302153047.17101-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200302153047.17101-1-jbx6244@gmail.com>
-References: <20200302153047.17101-1-jbx6244@gmail.com>
+ id 1j8n7K-0004Jo-RI
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 15:36:28 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id 9B23D5BC; Mon,  2 Mar 2020 16:36:09 +0100 (CET)
+Date: Mon, 2 Mar 2020 16:36:06 +0100
+From: Joerg Roedel <joro@8bytes.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH v2 2/4] iommu: Add Allwinner H6 IOMMU driver
+Message-ID: <20200302153606.GB6540@8bytes.org>
+References: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
+ <6864f0f28825bb7a2ec1c0d811a4aacdecf5f945.1582222496.git-series.maxime@cerno.tech>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <6864f0f28825bb7a2ec1c0d811a4aacdecf5f945.1582222496.git-series.maxime@cerno.tech>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_073105_522317_A89A6C38 
-X-CRM114-Status: GOOD (  15.07  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200302_073627_183447_1827BC0B 
+X-CRM114-Status: GOOD (  15.21  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,107 +58,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+Hi Maxime,
 
-arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: amba: $nodename:0:
-'amba' does not match
-'^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
+On Thu, Feb 20, 2020 at 07:15:14PM +0100, Maxime Ripard wrote:
+> +struct sun50i_iommu_domain {
+> +	struct iommu_domain domain;
+> +
+> +	/* Number of devices attached to the domain */
+> +	refcount_t refcnt;
+> +
+> +	/* Lock to modify the Directory Table */
+> +	spinlock_t dt_lock;
 
-AMBA is a open standard for the connection and
-management of functional blocks in a SoC.
-It's compatible with 'simple-bus', so fix this error
-by adding 'bus' to all Rockchip 'amba' nodes.
+I suggest you make page-table updates lock-less. Otherwise this lock
+will become a bottle-neck when using the IOMMU through DMA-API.
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/
-schemas/simple-bus.yaml
+> +
+> +static int sun50i_iommu_map(struct iommu_domain *domain, unsigned long iova,
+> +			    phys_addr_t paddr, size_t size, int prot, gfp_t gfp)
+> +{
+> +	struct sun50i_iommu_domain *sun50i_domain = to_sun50i_domain(domain);
+> +	struct sun50i_iommu *iommu = sun50i_domain->iommu;
+> +	u32 pte_index;
+> +	u32 *page_table, *pte_addr;
+> +	unsigned long flags;
+> +	int ret = 0;
+> +
+> +	spin_lock_irqsave(&sun50i_domain->dt_lock, flags);
+> +	page_table = sun50i_dte_get_page_table(sun50i_domain, iova, gfp);
+> +	if (IS_ERR(page_table)) {
+> +		ret = PTR_ERR(page_table);
+> +		goto out;
+> +	}
+> +
+> +	pte_index = sun50i_iova_get_pte_index(iova);
+> +	pte_addr = &page_table[pte_index];
+> +	if (sun50i_pte_is_page_valid(*pte_addr)) {
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/px30.dtsi   | 2 +-
- arch/arm64/boot/dts/rockchip/rk3308.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3328.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3368.dtsi | 2 +-
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 2 +-
- 5 files changed, 5 insertions(+), 5 deletions(-)
+You can use unlikely() here.
 
-diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
-index 4f484119f..215515ccb 100644
---- a/arch/arm64/boot/dts/rockchip/px30.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
-@@ -700,7 +700,7 @@
- 		clock-names = "pclk", "timer";
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-index 3bd5bc860..ac43bc3f7 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
-@@ -513,7 +513,7 @@
- 		status = "disabled";
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328.dtsi b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-index bad41bc6f..d9490f417 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3328.dtsi
-@@ -142,7 +142,7 @@
- 		};
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368.dtsi b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-index a0df61c61..2079e877a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3368.dtsi
-@@ -136,7 +136,7 @@
- 		};
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 33cc21fcf..63355ba7c 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -197,7 +197,7 @@
- 		#clock-cells = <0>;
- 	};
- 
--	amba {
-+	amba: bus {
- 		compatible = "simple-bus";
- 		#address-cells = <2>;
- 		#size-cells = <2>;
--- 
-2.11.0
+> +		phys_addr_t page_phys = sun50i_pte_get_page_address(*pte_addr);
+> +		dev_err(iommu->dev,
+> +			"iova %pad already mapped to %pa cannot remap to %pa prot: %#x\n",
+> +			&iova, &page_phys, &paddr, prot);
+> +		ret = -EBUSY;
+> +		goto out;
+> +	}
+> +
+> +	*pte_addr = sun50i_mk_pte(paddr, prot);
+> +	sun50i_table_flush(sun50i_domain, pte_addr, 1);
 
+This maps only one page, right? But the function needs to map up to
+'size' as given in the parameter list.
+
+> +
+> +	spin_lock_irqsave(&iommu->iommu_lock, flags);
+> +	sun50i_iommu_tlb_invalidate(iommu, iova);
+> +	spin_unlock_irqrestore(&iommu->iommu_lock, flags);
+
+Why is there a need to flush the TLB here? The IOMMU-API provides
+call-backs so that the user of the API can decide when it wants
+to flush the IO/TLB. Such flushes are usually expensive and doing them
+on every map and unmap will cost significant performance.
+
+> +static size_t sun50i_iommu_unmap(struct iommu_domain *domain, unsigned long iova,
+> +				 size_t size, struct iommu_iotlb_gather *gather)
+> +{
+> +	struct sun50i_iommu_domain *sun50i_domain = to_sun50i_domain(domain);
+> +	struct sun50i_iommu *iommu = sun50i_domain->iommu;
+> +	unsigned long flags;
+> +	phys_addr_t pt_phys;
+> +	dma_addr_t pte_dma;
+> +	u32 *pte_addr;
+> +	u32 dte;
+> +
+> +	spin_lock_irqsave(&sun50i_domain->dt_lock, flags);
+> +
+> +	dte = sun50i_domain->dt[sun50i_iova_get_dte_index(iova)];
+> +	if (!sun50i_dte_is_pt_valid(dte)) {
+> +		spin_unlock_irqrestore(&sun50i_domain->dt_lock, flags);
+> +		return 0;
+> +	}
+> +
+> +	pt_phys = sun50i_dte_get_pt_address(dte);
+> +	pte_addr = (u32 *)phys_to_virt(pt_phys) + sun50i_iova_get_pte_index(iova);
+> +	pte_dma = pt_phys + sun50i_iova_get_pte_index(iova) * PT_ENTRY_SIZE;
+> +
+> +	if (!sun50i_pte_is_page_valid(*pte_addr)) {
+> +		spin_unlock_irqrestore(&sun50i_domain->dt_lock, flags);
+> +		return 0;
+> +	}
+> +
+> +	memset(pte_addr, 0, sizeof(*pte_addr));
+> +	sun50i_table_flush(sun50i_domain, pte_addr, 1);
+> +
+> +	spin_lock(&iommu->iommu_lock);
+> +	sun50i_iommu_tlb_invalidate(iommu, iova);
+> +	sun50i_iommu_ptw_invalidate(iommu, iova);
+> +	spin_unlock(&iommu->iommu_lock);
+
+Same objections as in the map function. This only unmaps one page, and
+is the IO/TLB flush really needed here?
+
+> +static struct iommu_domain *sun50i_iommu_domain_alloc(unsigned type)
+> +{
+> +	struct sun50i_iommu_domain *sun50i_domain;
+> +
+> +	if (type != IOMMU_DOMAIN_DMA && type != IOMMU_DOMAIN_UNMANAGED)
+> +		return NULL;
+
+I think you should at least also support identity domains here. The
+iommu-core code might allocate those for default domains.
+
+
+Regards,
+
+	Joerg
 
 _______________________________________________
 linux-arm-kernel mailing list
