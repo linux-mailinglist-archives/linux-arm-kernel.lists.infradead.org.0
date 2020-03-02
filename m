@@ -2,88 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AE21175857
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:29:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD8F4175864
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:32:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1UYAaV1hLiYmzBdhH5a4zdxenpNft2USGr5OR0vHqI0=; b=AoDfwWJ2mXnUhrPk2L4T7GZpH
-	2oukz9YDc3IaHC6s/TLgsFxrCYxuSUL9oa43ZCENjUShUBIFm2rqM/q373LP29Dq410TvzMNUBz6D
-	TuGMrHYjUBGctLIDemjWdFLWzxBsxKACaRvgxoo6lrl+k6xzp/kWTnQyN3LZz+EjKkJqDTAdMsiZO
-	VLhOA3dXUPm+x+YBBAPbT6UmOkQWqVUtrGJKLAwvXc7/ytw+Oow28TonshAxy6ksmxfCLAlkPb5QE
-	n7o6Fq4dV19/UGf7Hut+yWbo0/rkdYCu3cvhzCTmncruRT3sBxKT6kEyEPyCP/mmxuGUQa124hWlH
-	CjDMvjaRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=okyCPE5eal1NTfFjpiWVNQ6eybCHcwoMNjNvrVgW3WI=; b=jOkLcpbaJ9gt/q/RqKGf1thhRN
+	3SSleTEiI1cMpvUnulHV1tmkxOIrP0Pqkd6mJyYtcaKMpUD3GNWsLbVHtEiCMBvBLesn7DefPw/z/
+	y7RBcfXDu9wJPNgJCekEwxh/du0qFoZ133yGu3YtLHfTMQwgKLYicBflMVf0itOWRJfFHZh3v21Ps
+	eTNpgz/AEajfgdB6/bEfYas7WEy0IHlyXCojGFrAyB2VDsVRftLGCa9sU8I+yik2MEFxN/B49Z5SY
+	jDngRaJeXHvZuYumvhZj8Q6UEcjJBubONH5I6J4wTAGS1ih7zv2fbuzS2LPNGRB/sWA9OqwJHXoqH
+	bOFzWm1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8iKY-0000qT-JW; Mon, 02 Mar 2020 10:29:46 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1j8iNJ-0002cG-N9; Mon, 02 Mar 2020 10:32:37 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8iKO-0000q0-6k
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:29:37 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 022ANQDP005577; Mon, 2 Mar 2020 11:29:31 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=zkytL5nVEwPnsSSru/KymaDUr/ha+HwULMX9F6zIoyc=;
- b=exSa+YIJRpOznMWRg+X11gkj5wmZyPmRg08IYzfFup7xEtPRjr6hWuETdT4oWSeRj3gy
- wg3QhBQp7WTFiMxpDmBLYzfUI0Z4kea/DHRf82bFxgz48iJsg368pvRH6M0FBQQJNvm2
- 0YtY1DCoULu5mT1lJ0lgrxwVHyC9zPpFuF/GYQlx5zjVBJ/TepQqiOoRZEw0lYD/5ZxJ
- /1s50RY+qf7NVfQdXBcYlsg6gkidy+IpOg0GatzRrm3hdSfJPdQ+5+F/QNciTNbLBRYc
- d/EGAvKYG+5A3T82naPax11ZVINz1N2f98HRIsLxjAIZH2hM78fSz8U2ZnViQc3sIiEi XQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yffqpjscd-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 02 Mar 2020 11:29:31 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7C81410002A;
- Mon,  2 Mar 2020 11:29:30 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 610342B881B;
- Mon,  2 Mar 2020 11:29:30 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 2 Mar
- 2020 11:29:29 +0100
-Subject: Re: [PATCH 2/3] ARM: dts: stm32: add STM32MP1-based Linux Automation
- MC-1 board
-To: Lucas Stach <l.stach@pengutronix.de>, Ahmad Fatoum
- <a.fatoum@pengutronix.de>, <linux-stm32@st-md-mailman.stormreply.com>,
- <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>
-References: <20200226143826.1146-1-a.fatoum@pengutronix.de>
- <20200226143826.1146-2-a.fatoum@pengutronix.de>
- <244a4502-03e0-836c-2ce2-7fa6cef3c188@st.com>
- <fbba971d7501c774ce0081f22dcff4ef74002a4d.camel@pengutronix.de>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <e227de9a-7440-7e1f-2928-5648cbbe44c1@st.com>
-Date: Mon, 2 Mar 2020 11:29:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <fbba971d7501c774ce0081f22dcff4ef74002a4d.camel@pengutronix.de>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-03-02_03:2020-02-28,
- 2020-03-02 signatures=0
+ id 1j8iNB-0002ab-S1
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:32:31 +0000
+Received: by mail-lf1-x142.google.com with SMTP id p5so1210450lfc.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Mar 2020 02:32:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=QnYXcIKWVcVSniTvImIOUV2GKYnwwg6k3OeoObFRdpM=;
+ b=Ri8EY8zjK8JQBlTwBx2lPNX4EJyj2l0TFRRuH965V0Dj13z0lqud6RgyZnmchIT3mL
+ i4kB/cPt3Qs+Pzey02cSv5WkFTPpkId23mXl9MEIu1B9ODeukat2DB7Yu9lxNaddFEFi
+ jVOuf5L3ZPXefhjqnIRG2EuOmKGw3QWf3vm21KVXQVnh9zbMTBiG9nti2Z4eVtfMW/pk
+ s/mUUQY3Aku49cOy/dx8baIcHtONli0joOFAowL3ySG9fe+VcmXaUCRDdH0sFNf2ecBp
+ flyGcYDnGwRG1mKJV0Nj6Wmzbk6VrIAnx0Ke2rBlhUGVg2QKtsQmsMQlKLAs0rV5UZMW
+ b2Uw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=QnYXcIKWVcVSniTvImIOUV2GKYnwwg6k3OeoObFRdpM=;
+ b=cgTvQVZSzsMe48A59DFOy65cmBoak/SOni6xsSndBvimrPoHLpHOmm7MEc11tv03sl
+ s+4GrBOI/Pw8NVDH4MrOi1jh66QKeeLvsHzq/KkwTdlORHD4yynUg4iSDjQNIiQE1tJ4
+ 4yWzDXUbQJG/9cuxvx2a7GX/Ul15Ua1ql09dhgX4Marpy1h2cvSRUp9JBJWaUovW2TQ7
+ coFWoyjObeH36fIf7dVzmPRP8vxCv69AG8DQhsjuUE0RVAoPwB/RNAmWpsOS7mH5+scb
+ 0BSeO4pYFVDIhxO5VIn1rca/zjNuEo/7nxsUaSIyQVGvf/dQf6PuGRQedQSOEmkqhTKL
+ Pksw==
+X-Gm-Message-State: ANhLgQ2wJvQAWcwfFMsAk+PQVxryxD9qqJx9sELy1aRFABOV3SZ499mq
+ is0RKe0r2aqPTpJ1/zRpv+rR2KpD
+X-Google-Smtp-Source: ADFU+vum+gRzgYNjn0fs2L8U2Ud019xJc9t09+jbn5reMOsLMhPUU7XhcnXXsDSa0U8EPiu3o1eJHA==
+X-Received: by 2002:a19:48cf:: with SMTP id v198mr10081652lfa.68.1583145147101; 
+ Mon, 02 Mar 2020 02:32:27 -0800 (PST)
+Received: from localhost.localdomain ([149.255.131.2])
+ by smtp.gmail.com with ESMTPSA id n21sm3895328lfh.2.2020.03.02.02.32.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Mar 2020 02:32:26 -0800 (PST)
+From: Roman Stratiienko <r.stratiienko@gmail.com>
+To: jernej.skrabec@siol.net,
+	mripard@kernel.org,
+	wens@csie.org
+Subject: .[PATCH v4 0/4] drm/sun4i: Improve alpha processing
+Date: Mon,  2 Mar 2020 12:31:34 +0200
+Message-Id: <20200302103138.17916-1-r.stratiienko@gmail.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <.>
+References: <.>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_022936_608666_3CBD4CF8 
-X-CRM114-Status: GOOD (  18.04  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200302_023229_935746_A93980B8 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [r.stratiienko[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -104,56 +100,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lucas
+Patches 1-2 already reviewed and ready to be applied.
 
-On 3/2/20 11:18 AM, Lucas Stach wrote:
-> On Mo, 2020-03-02 at 11:06 +0100, Alexandre Torgue wrote:
->> Hi Ahmad
->>
->> Thanks for adding a new STM32 board. Some minor comments.
->>
->> On 2/26/20 3:38 PM, Ahmad Fatoum wrote:
->>> The Linux Automation MC-1 is a SBC built around the Octavo Systems
->>> OSD32MP15x SiP. The SiP features up to 1 GB DDR3 RAM, EEPROM and
->>> a PMIC. The board has eMMC and a SD slot for storage and GbE
->>> for both connectivity and power.
->>>
->>> Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de
->>> ---
-> [...]
->>> +
->>> +&gpu {
->>> +	status = "okay";
->>> +};
-> 
-> This question is more to the ST guys than this specific DT: Why is the
-> GPU marked as disabled in the SoC dtsi file? This device is always
-> present on the SoC and AFAICS there are no board level dependencies, so
-> there is no reason to have it disabled by default, right? Removing the
-> status property from the dtsi would remove the need for this override
-> on the board DT.
+Patch 4 is RFC and require more testing on real hardware.
 
-You are right. With new stm32 device tree diversity, it makes no longer 
-sens to disable GPU node in stm32mp157 dtsi file. Indeed, we use now 
-dedicated files for each SoC (stm32mp151 / stm32mp153 /stm32mp157).
+[PATCH v4 1/4] drm/sun4i: Add alpha property for sun8i UI layer
+[PATCH v4 2/4] drm/sun4i: Add alpha property for sun8i and sun50i VI
+[PATCH v4 3/4] drm/sun4i: Add support for premulti/coverage blending
+[PATCH v4 4/4] RFC: drm/sun4i: Process alpha channel of most bottom layer
 
-Ahmad, can you add this modification in your series please ?
+ drivers/gpu/drm/sun4i/sun8i_mixer.h    |  2 +
+ drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 50 ++++++++++++++++
+ drivers/gpu/drm/sun4i/sun8i_ui_layer.h | 10 ++++
+ drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 72 +++++++++++++++++++++---
+ drivers/gpu/drm/sun4i/sun8i_vi_layer.h | 16 ++++++
+ 5 files changed, 142 insertions(+), 8 deletions(-)
 
-regards
-Alex
-
-
-> 
-> Regards,
-> Lucas
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
