@@ -2,57 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A8631752DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 05:50:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC0E017540E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 07:48:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hNoR/PQxH7UEr8noF0eB3AsTa4J5xH/l5aI5r6OfsY0=; b=I/KOsvqUb49XZs
-	i+vL2rojYmYz11EqKf9TiVAQQIXVWe8E9zNzRxAorUnLcuEMzEPQtiw0EdcnB3yooxvNAJ05fRZnB
-	HRmnpMZ8ZY09eRMlTHXQxst6WS38Xn4Us3pXG6GnMeY2LRPjDY6bFzCIPa/dMlC3eP7FVTM1YfZqi
-	c1qpYWzra1xCKG3zH+P7ARjbDfJmv8FqoAm7CPpV5vgKd4uwCpwcfcge4gp+xyPEHTdtqIiPfItjP
-	5Owub/ivGKtEVwU79wT5e8DULlTDd5xur2PWi+YScMrXGbKFiROiq75N+HqEjZs54cvw3zeoWDUoF
-	87vfX90BcHZKjsaeEpcw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0CKRlxXEBNiEfFGikWqFYDNHTe3MC3dbA0+qtADwNIM=; b=GUj
+	dKPJeV3Y6upPHxXTbot+JlyejGt3b+QPjYDXHYe+VwBF4XKbLCobOu/Q6XJV1Cm/7GYOvijPip0y0
+	xi8UiN9EaaO4GSa/bDL7JxSxYXbGYBCT2ql5qiUKNS69dRv0iz0iLafiPB72AiP6FV5wvA+kTtTD6
+	b2fmcWRqoBUeYHkenuCOzhOMXaOgmeMdJYDNVgo4Kg5EzbAvEiW4B6e+xrJYP4TFY2j+Yriqvrd+6
+	hhuMXybQNPbdqM4QEg0kxYcUNNfIzuEgP4L6hCVd+2f1/TQk1ALrfZtAKYlyPijhZ8UajmJO1BonP
+	nzxOlZd0sY2VRhsLJVVNcVeXCv6vZSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8d1l-0004Jt-7Y; Mon, 02 Mar 2020 04:50:01 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8d1a-0004J2-88
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 04:49:52 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 0224n7ms031936
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Sun, 1 Mar 2020 22:49:11 -0600
-Message-ID: <42daa66bedc1b06936bc9cbc6e9b31f6dd8ed3a1.camel@kernel.crashing.org>
-Subject: Re: [PATCH v5 7/7] dt-bindings: usb: add documentation for aspeed
- usb-vhub
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Tao Ren <rentao.bupt@gmail.com>
-Date: Mon, 02 Mar 2020 15:49:07 +1100
-In-Reply-To: <20200228081309.GA4531@taoren-ubuntuvm>
-References: <20200227230507.8682-1-rentao.bupt@gmail.com>
- <20200227230507.8682-8-rentao.bupt@gmail.com>
- <3150424b9e9f5856c747a0fbf44647919f49209d.camel@kernel.crashing.org>
- <20200228010444.GA19910@taoren-ubuntu-R90MNF91>
- <2676013663fc8c53e02a5fdaafb1b27e18249b80.camel@kernel.crashing.org>
- <20200228081309.GA4531@taoren-ubuntuvm>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+	id 1j8es5-0008Jd-QD; Mon, 02 Mar 2020 06:48:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8erx-0008In-M8; Mon, 02 Mar 2020 06:48:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D730AFEC;
+ Sun,  1 Mar 2020 22:47:58 -0800 (PST)
+Received: from p8cg001049571a15.arm.com (unknown [10.163.1.119])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7EB443F6CF;
+ Sun,  1 Mar 2020 22:51:45 -0800 (PST)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-mm@kvack.org
+Subject: [RFC 0/3] mm/vma: some new flags and helpers
+Date: Mon,  2 Mar 2020 12:17:43 +0530
+Message-Id: <1583131666-15531-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_204950_867897_217C0C4B 
-X-CRM114-Status: GOOD (  19.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200301_224801_813902_209A9F9D 
+X-CRM114-Status: GOOD (  10.81  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,60 +58,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
- linux-aspeed@lists.ozlabs.org, devicetree@vger.kernel.org,
- Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- Joel Stanley <joel@jms.id.au>, taoren@fb.com,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
+Cc: uclinux-h8-devel@lists.sourceforge.jp, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ linux-parisc@vger.kernel.org, Anshuman Khandual <anshuman.khandual@arm.com>,
+ linux-hexagon@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ linux-sh@vger.kernel.org, linux-um@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-02-28 at 00:13 -0800, Tao Ren wrote:
-> On Fri, Feb 28, 2020 at 02:02:28PM +1100, Benjamin Herrenschmidt wrote:
-> > On Thu, 2020-02-27 at 17:05 -0800, Tao Ren wrote:
-> > > > Also long run I think best is going to have a child node per downstream
-> > > > port, so we create a matching linux struct device. This will make it
-> > > > easier to deal with the other device-controller in the ast2600 which is
-> > > > basically one of these without a vhub above it.
-> > > 
-> > > Maybe a dumb question: what would be the proper place to parse the child
-> > > node/properties when they are added? For example, in some usb_gadget_ops
-> > > callback?
-> > 
-> > No. What the vhub would do is when it probes, it creates a platform
-> > device for each "port" child node that's linked to the DT node.
-> > 
-> > The driver for the device then attaches to it via standard DT matching
-> > and checks if it has a vhub parent or not, and based on that, operates
-> > as a vhub child device or a standalone one.
-> > 
-> > (For example, it might have different functions for EP selection since
-> > standalone devices have private EPs rather than a shared pool)
-> > 
-> > They can both be in the same module or they can be separate modules
-> > with cross dependencies.
-> > 
-> > Cheers,
-> > Ben.
-> 
-> I see. It's to describe these downstream devices (such as configurations
-> and according functions) in device tree, which is similar to defining a
-> composite device and linking functions/interfaces via configfs. Thanks for
-> the clarify.
+The motivation here is to consolidate VMA flag combinations commonly used
+across platforms and reduce code duplication while making it uncluttered
+in general.
 
-It's also to make it easier long run to support both the standalone
-variant and the vhub variant from the same code base.
+This first introduces a default VM_DATA_DEFAULT_FLAGS which platforms can
+easily fall back on without requiring to define any similar data flag
+combinations as they currently do. This also adds some more common data
+flag combinations which are generally used when the platforms decide to
+override the default.
 
-Cheers,
-Ben.
+The second patch consolidates VM_READ, VM_WRITE, VM_EXEC as VM_ACCESS_FLAGS
+extending the existing VMA accessibility concept via vma_is_accessibility().
+VM_ACCESS_FLAGS replaces many other instances which used check all three
+VMA access flags simultaneously.
 
+While here, this also adds some more special VMA flag based helpers which
+wraps around similar checks at various places thus improving readability.
+This series intentionally limits these new helpers which are applicable 
+only for special purpose VM flags than the more common ones like VM_READ,
+VM_WRITE, VM_EXEC, VM_SHARED etc just to limit code churn. But if there is
+common agreement that every flag should have it's own wrapper here, we can
+do that as well. Otherwise if this patch seems really unnecessary with much
+code churn, will be happy to drop it.
+
+Reviews, comments, suggestions and concerns welcome. Thank you.
+
+This series is based on v5.6-r4 after applying these patches.
+
+1. https://patchwork.kernel.org/cover/11399319/
+2. https://patchwork.kernel.org/patch/11399379/
+
+This series is build tested across multiple architectures but boot tested
+only on arm64 and x86 platforms.
+
+Cc: linux-alpha@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-snps-arc@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-c6x-dev@linux-c6x.org
+Cc: uclinux-h8-devel@lists.sourceforge.jp
+Cc: linux-hexagon@vger.kernel.org
+Cc: linux-ia64@vger.kernel.org
+Cc: linux-m68k@lists.linux-m68k.org
+Cc: linux-mips@vger.kernel.org
+Cc: nios2-dev@lists.rocketboards.org
+Cc: openrisc@lists.librecores.org
+Cc: linux-parisc@vger.kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-riscv@lists.infradead.org
+Cc: linux-s390@vger.kernel.org
+Cc: linux-sh@vger.kernel.org
+Cc: sparclinux@vger.kernel.org
+Cc: linux-um@lists.infradead.org
+Cc: linux-xtensa@linux-xtensa.org
+Cc: linux-mm@kvack.org
+
+Anshuman Khandual (3):
+  mm/vma: Define a default value for VM_DATA_DEFAULT_FLAGS
+  mm/vma: Introduce VM_ACCESS_FLAGS
+  mm/vma: Introduce some more VMA flag wrappers
+
+ arch/alpha/include/asm/page.h        |  3 --
+ arch/arc/include/asm/page.h          |  2 +-
+ arch/arm/include/asm/page.h          |  4 +-
+ arch/arm/mm/fault.c                  |  2 +-
+ arch/arm64/include/asm/page.h        |  4 +-
+ arch/arm64/mm/fault.c                |  2 +-
+ arch/c6x/include/asm/page.h          |  5 +--
+ arch/c6x/include/asm/processor.h     |  2 +-
+ arch/csky/include/asm/page.h         |  3 --
+ arch/h8300/include/asm/page.h        |  2 -
+ arch/hexagon/include/asm/page.h      |  3 +-
+ arch/ia64/include/asm/page.h         |  5 +--
+ arch/m68k/include/asm/page.h         |  3 --
+ arch/microblaze/include/asm/page.h   |  2 -
+ arch/mips/include/asm/page.h         |  5 +--
+ arch/nds32/include/asm/page.h        |  3 --
+ arch/nds32/mm/fault.c                |  2 +-
+ arch/nios2/include/asm/page.h        |  3 +-
+ arch/nios2/include/asm/processor.h   |  2 +-
+ arch/openrisc/include/asm/page.h     |  5 ---
+ arch/parisc/include/asm/page.h       |  3 --
+ arch/powerpc/include/asm/page.h      |  9 +----
+ arch/powerpc/include/asm/page_64.h   |  7 +---
+ arch/powerpc/mm/book3s64/pkeys.c     |  2 +-
+ arch/riscv/include/asm/page.h        |  3 +-
+ arch/s390/include/asm/page.h         |  3 +-
+ arch/s390/mm/fault.c                 |  2 +-
+ arch/sh/include/asm/page.h           |  3 --
+ arch/sh/include/asm/processor_64.h   |  2 +-
+ arch/sparc/include/asm/mman.h        |  2 +-
+ arch/sparc/include/asm/page_32.h     |  3 --
+ arch/sparc/include/asm/page_64.h     |  3 --
+ arch/unicore32/include/asm/page.h    |  3 --
+ arch/unicore32/mm/fault.c            |  2 +-
+ arch/x86/include/asm/page_types.h    |  4 +-
+ arch/x86/mm/pkeys.c                  |  2 +-
+ arch/x86/um/asm/vm-flags.h           | 10 +----
+ arch/xtensa/include/asm/page.h       |  3 --
+ drivers/staging/gasket/gasket_core.c |  2 +-
+ fs/binfmt_elf.c                      |  2 +-
+ fs/proc/task_mmu.c                   | 14 +++----
+ include/linux/huge_mm.h              |  4 +-
+ include/linux/mm.h                   | 58 +++++++++++++++++++++++++++-
+ kernel/events/core.c                 |  2 +-
+ kernel/events/uprobes.c              |  2 +-
+ mm/gup.c                             |  2 +-
+ mm/huge_memory.c                     |  6 +--
+ mm/hugetlb.c                         |  4 +-
+ mm/ksm.c                             |  8 ++--
+ mm/madvise.c                         |  4 +-
+ mm/memory.c                          |  4 +-
+ mm/migrate.c                         |  4 +-
+ mm/mlock.c                           |  4 +-
+ mm/mmap.c                            | 20 +++++-----
+ mm/mprotect.c                        |  9 ++---
+ mm/mremap.c                          |  4 +-
+ mm/msync.c                           |  3 +-
+ mm/rmap.c                            |  6 +--
+ mm/shmem.c                           |  8 ++--
+ 59 files changed, 140 insertions(+), 158 deletions(-)
+
+-- 
+2.20.1
 
 
 _______________________________________________
