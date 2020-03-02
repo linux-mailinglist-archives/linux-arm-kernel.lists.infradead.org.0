@@ -2,87 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07FC417618C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 18:49:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E1E91761BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:00:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WsThwqgxNJm1qlGUeSMZkSTlgOaXZ+mAe57vx8b652Q=; b=PTx0O4Y9CAdFG7
-	v77yzze6iukUK2HxxWw/IyvBg0LxxaxluyrCTtlfClmXSyz0f/hJDBrD++WoXTyeduYELXugyirLT
-	S8+AI0WEi8zMMRBI9IKPIz3H9H49T5Ric4vQGdNAAy46Uhc+D9kR/YApV4YTWHPuLq1cPQauAjc0P
-	ehJfWyITLiCoo2zuqzwGJcMS0p4k1IlAl8lazMENb/RX33ZonIjeg1XOC+f7DOb1/EAPqD1bAZlty
-	EWzkY4Ozu8oogSDRkoj504+2FpV0Wj3jbGwRWJnAtXGe0yRdoa3Cr1gtgMECmPCXWXDizRdDqy5r5
-	rXI1gcpmyNN3b2CfwBng==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sTssYocp0XpDme3+t2lN2EE9IBdoRnQbYOF4aq8Stnc=; b=EtiKBQfeBOb9j32QnmhhUm8JX
+	7xE1RPl3V7JLm6hhJeFwlRqHSo626AeCWUnQ0NfR7GD9Al3eyhvTrP5MWgXXtIYu3dOZdMUzd9OWW
+	RF6zoGQ0QjYA3UJxMDdDVc0hsEJ7Um8vxOHwNjl0uIBejc8i8OoMvqz48DTZTsNm7HkF5KeWFkzv+
+	U6JUtKv2udCeWN21prDYR9qi5hMcCsA+BnAYb5nEYxRQh8UsuOtBPs0cgtTQBPCKfwdKojeGGuR+O
+	NjsyhzmuLMUJCaN+WA+vmb6noby66DNJPov+sQHvo1A2td9lpiu4+Sxt9FWULNnhxKj0TloqmjLcK
+	aiSihdW9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8pBv-0002g1-NE; Mon, 02 Mar 2020 17:49:19 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8pBp-0002fX-OQ
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 17:49:14 +0000
-Received: by mail-lf1-x142.google.com with SMTP id d27so229507lfq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 09:49:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gUu1wzaanq2EdQmQjBWfzQcQ7Y84OgJMEq7zr5n2p/0=;
- b=ZgcbDHojtwEVgyZCHT3X+9NU9qMzTPpRnpZXGQGqhJ+zQ+Kk45gGv2mn2YMjUYmC1V
- 96MJnffx07TFgzfrnXg/dkVESlb9KSKuKJ7tiODuE+Rmk3plG5tR0alzQt3A9rFSVcYs
- xhMKIJN0e5cZlIqHlrvWL4hyMSyiVO0Z1YeQGPwAmf75L4vHRLQzSJqpnB9IQUfA2M5w
- 83A2CcAa8zZnY1QIv5XO3avPA7ImG9h/aO2cOOjTUlHiNncnITq4pbkpQYQHWLTFdWVs
- rhkk1xQo6BtR7qJTgQch7BBuoHK7EZOQUmmM1tCdlUPCqBcQexSGulp9bd7SAIRbG+bl
- Iakw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gUu1wzaanq2EdQmQjBWfzQcQ7Y84OgJMEq7zr5n2p/0=;
- b=Ax3mXM9VxjkiAAFYx2LrWo2iEQFLVritdYLUWtLDik7no701xBOxZduSyHKEtXLyt9
- FSba5+xCbaNDi+I/J1j7JSQTEY+s8njG/mgnjH0ip+J58NlsuQU/p2JHr+7ToH/TnJvO
- Fi3YJm/XVskv0iPeGDHoF+Nm1KKcvJqA5k62G1baFrNZO6yVt4nhGIzXXrVMqdu9Sbrt
- Ztx9eB0qTs3ZK+a1f9CfC9e5wfV27eqM0gC1KMRSgfmUYQB8sO8FTZYCRu88UOiS5Stm
- GU5ha/w2IdLgLWm/EEWm3y9quf+0qgcEjgnMng5W0llJ1DQcdc6GrrWgiGC1wF5ke1dF
- BzYg==
-X-Gm-Message-State: ANhLgQ2WBTRkWKfixuh39ueuN3wYPg029vVd+U55vT2dRlJejIIJIFlJ
- brZogNRN567eOB/EvG3LuFs9ORjxv+eg0jfhpU4=
-X-Google-Smtp-Source: ADFU+vsDhZEdarbEFoLsP6WxRJRd/vyQxpntoFm7v88XUxtZTItvbvqaFKCQM5EIaEaYlN6Dvu+rqPUpEhML5PGW+U8=
-X-Received: by 2002:a19:4344:: with SMTP id m4mr163017lfj.140.1583171351354;
- Mon, 02 Mar 2020 09:49:11 -0800 (PST)
+	id 1j8pMg-00085j-Oz; Mon, 02 Mar 2020 18:00:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8pMY-00084z-Eq
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 18:00:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4343D2F;
+ Mon,  2 Mar 2020 10:00:16 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 768873F6C4;
+ Mon,  2 Mar 2020 10:00:12 -0800 (PST)
+Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
+To: Daniel Jordan <daniel.m.jordan@oracle.com>,
+ Corentin Labbe <clabbe.montjoie@gmail.com>
+References: <20200217204803.GA13479@Red>
+ <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ <20200220090350.GA19858@Red>
+ <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
+ <20200228123311.GE3275@willie-the-truck>
+ <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
+ <20200301175351.GA11684@Red>
+ <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <e7c92da2-42c0-a97d-7427-6fdc769b41b9@arm.com>
+Date: Mon, 2 Mar 2020 18:00:10 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1582099197-20327-1-git-send-email-peng.fan@nxp.com>
- <AM0PR04MB4481FF78BB300729E59D6D8C88E70@AM0PR04MB4481.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR04MB4481FF78BB300729E59D6D8C88E70@AM0PR04MB4481.eurprd04.prod.outlook.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 2 Mar 2020 14:48:59 -0300
-Message-ID: <CAOMZO5CBSL4yn4m6n56qES0jDVUQZJSGZyCxng1Kg7fvD5k1JA@mail.gmail.com>
-Subject: Re: [PATCH v2 00/14] ARM: imx7ulp: add cpufreq using cpufreq-dt
-To: Peng Fan <peng.fan@nxp.com>
+In-Reply-To: <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_094913_819562_A16D0D69 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200302_100019_558845_709B83EB 
+X-CRM114-Status: GOOD (  20.76  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,38 +71,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org, tj@kernel.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peng,
+On 02/03/2020 5:25 pm, Daniel Jordan wrote:
+> On Sun, Mar 01, 2020 at 06:53:51PM +0100, Corentin Labbe wrote:
+>> I tried to bisect this problem, but the result is:
+> ...
+>> # first bad commit: [81ff5d2cba4f86cd850b9ee4a530cd221ee45aa3] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
+>>
+>> The only interesting thing I see in this MR is: "Add fuzz testing to testmgr"
+>>
+>> But this wont help.
+> 
+> Hm, that merge commit has only a couple lines of powerpc build change, so maybe
+> there's something nondeterministic going on.
 
-On Sun, Mar 1, 2020 at 10:40 PM Peng Fan <peng.fan@nxp.com> wrote:
->
-> Hi Shawn,
->
-> > Subject: [PATCH v2 00/14] ARM: imx7ulp: add cpufreq using cpufreq-dt
->
-> Is it possible for you to pick up patch 1~8, 12? Or any comments?
+Something smelled familiar about this discussion, and sure enough that 
+merge contains c4741b230597 ("crypto: run initcalls for generic 
+implementations earlier"), which has raised its head before[1].
 
-I haven't tested this series, but just wanted to be sure that 720MHz
-operational point will not be populated on a system in LDO-enabled
-mode.
+> Does this fix it?  I can't verify but figure it's worth trying the simplest
+> explanation first, which is that the work isn't initialized by the time it's
+> queued.
 
-Please confirm.
+The relative initcall levels would appear to explain the symptom - I 
+guess the question is whether this represents a bug in a particular 
+test/algorithm (as with the unaligned accesses) or a fundamental problem 
+in the infrastructure now being able to poke the module loader too early.
 
-Thanks
+Robin.
+
+[1] 
+https://lore.kernel.org/linux-arm-kernel/20190530170737.GB70051@gmail.com/
+
+> thanks,
+> daniel
+> 
+> ---8<---
+> 
+> Subject: [PATCH] module: statically initialize init section freeing data
+> 
+> Signed-off-by: Daniel Jordan <daniel.m.jordan@oracle.com>
+> ---
+>   kernel/module.c | 13 +++----------
+>   1 file changed, 3 insertions(+), 10 deletions(-)
+> 
+> diff --git a/kernel/module.c b/kernel/module.c
+> index 33569a01d6e1..db0cda206167 100644
+> --- a/kernel/module.c
+> +++ b/kernel/module.c
+> @@ -88,8 +88,9 @@ EXPORT_SYMBOL_GPL(module_mutex);
+>   static LIST_HEAD(modules);
+>   
+>   /* Work queue for freeing init sections in success case */
+> -static struct work_struct init_free_wq;
+> -static struct llist_head init_free_list;
+> +static void do_free_init(struct work_struct *w);
+> +static DECLARE_WORK(init_free_wq, do_free_init);
+> +static LLIST_HEAD(init_free_list);
+>   
+>   #ifdef CONFIG_MODULES_TREE_LOOKUP
+>   
+> @@ -3501,14 +3502,6 @@ static void do_free_init(struct work_struct *w)
+>   	}
+>   }
+>   
+> -static int __init modules_wq_init(void)
+> -{
+> -	INIT_WORK(&init_free_wq, do_free_init);
+> -	init_llist_head(&init_free_list);
+> -	return 0;
+> -}
+> -module_init(modules_wq_init);
+> -
+>   /*
+>    * This is where the real work happens.
+>    *
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
