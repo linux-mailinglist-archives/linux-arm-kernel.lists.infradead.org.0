@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4D671754F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 08:56:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F0E0175533
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 09:07:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=X9WaaZ6PhKVRmBJ7W3PY3O5W6gfvEpmxIdfp/Re960A=; b=ncNoqr6mJhYsj8
-	8Q/SyYmkuzxt0kUeTOQuUOQkGzFdiKaakNakyin+QKCOu9CpMKJwaI2zSCjcwz1x8p9BHnZeK5LJW
-	fD9va/cxeMy0rP0sDd2KdlM/yqTOmrM1Jhd1GMQ1HbY/zCA15TwopI+gE7GtJjbcOVJqafFZwXZaE
-	xKUqLyrGjipK1WtRzmBAlzGMxcjQSdoKWRdW61zkly/U5l81FWZLAitAS9rJubDfb2k0r8CeNJnoc
-	lX4ptthcOrOHiA51caS/9wFT6OQXm8ZqZ62r/bqEaeiInrigqYTCjtwvxbjF4AiuHm8W9T/n/iFbt
-	JY5CoicrMboRSnmU5ayg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V/k/m2c/osq1BtIMjK2G68PDSmt/nz4r8jUXEH3D380=; b=RdWpUBQcL5T4WU
+	HWdMcYmBodYTmy1s/YqKpvPuu8W5inB9UAoRA3AzKoho/WVG0YLkXWJW765DfbKnHTvW3aROkwZid
+	jM+cMX+u2n1cSEFkXaHoHrjqiwENh9uJ0sitmlQU3ealTqgrRWgcUGqChHZFT1+EbR0y/qDy8wVHE
+	RxyMK/zQ2EOvhexdhbi80hKEZKipbx1MVlmXEgTDqbwGgl0AkGcyD8gUoApPnfJu/hxxmMNPuc98C
+	k5v44vBDteMupjx/v9NxlxerWTvUfBPo6IK0d6Y5drtCPozbmvvXW5QvgNdW02Y6G2D6pzA069GoJ
+	aQ2R+R0tJU1SQVBzx8aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8fwD-0006k1-L4; Mon, 02 Mar 2020 07:56:29 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j8g6b-0002nX-B8; Mon, 02 Mar 2020 08:07:13 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8fw7-0006j5-2N
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 07:56:24 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id BDACF200F0E;
- Mon,  2 Mar 2020 08:56:17 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 18EFF200F14;
- Mon,  2 Mar 2020 08:56:12 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7DEBB40299;
- Mon,  2 Mar 2020 15:56:05 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-pm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2] thermal: imx_thermal: Use __maybe_unused instead of
+ id 1j8g6V-0002n5-1k
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 08:07:08 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j8g6R-0004gc-4W; Mon, 02 Mar 2020 09:07:03 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j8g6O-0001Lz-9A; Mon, 02 Mar 2020 09:07:00 +0100
+Date: Mon, 2 Mar 2020 09:07:00 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V2] thermal: imx_thermal: Use __maybe_unused instead of
  CONFIG_PM_SLEEP
-Date: Mon,  2 Mar 2020 15:50:10 +0800
-Message-Id: <1583135410-7496-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
+Message-ID: <20200302080700.ubnboqklhbva7bas@pengutronix.de>
+References: <1583135410-7496-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-X-Virus-Scanned: ClamAV using ClamSMTP
+Content-Disposition: inline
+In-Reply-To: <1583135410-7496-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_235623_246469_4D9A73CA 
-X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-CacheID: sfid-20200302_000707_092065_CAA0F3F0 
+X-CRM114-Status: UNSURE (   7.40  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,37 +69,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: amit.kucheria@verdurent.com, linux-pm@vger.kernel.org, festevam@gmail.com,
+ s.hauer@pengutronix.de, daniel.lezcano@linaro.org,
+ linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
+ rui.zhang@intel.com, shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VXNlIF9fbWF5YmVfdW51c2VkIGZvciBwb3dlciBtYW5hZ2VtZW50IHJlbGF0ZWQgZnVuY3Rpb25z
-IGluc3RlYWQKb2YgI2lmIENPTkZJR19QTV9TTEVFUCB0byBzaW1wbGlmeSB0aGUgY29kZS4KClNp
-Z25lZC1vZmYtYnk6IEFuc29uIEh1YW5nIDxBbnNvbi5IdWFuZ0BueHAuY29tPgpSZXZpZXdlZC1i
-eTogVXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4KLS0t
-CkNoYW5nZXMgc2luY2UgVjE6CgktIGZpeCB0eXBvIG9mIGNvbW1pdCBtZXNzYWdlLCBzaW1wbHkt
-PnNpbXBsaWZ5LgotLS0KIGRyaXZlcnMvdGhlcm1hbC9pbXhfdGhlcm1hbC5jIHwgNiArKy0tLS0K
-IDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyksIDQgZGVsZXRpb25zKC0pCgpkaWZmIC0t
-Z2l0IGEvZHJpdmVycy90aGVybWFsL2lteF90aGVybWFsLmMgYi9kcml2ZXJzL3RoZXJtYWwvaW14
-X3RoZXJtYWwuYwppbmRleCBiYjY3NTRhLi5lNzVkZGE1IDEwMDY0NAotLS0gYS9kcml2ZXJzL3Ro
-ZXJtYWwvaW14X3RoZXJtYWwuYworKysgYi9kcml2ZXJzL3RoZXJtYWwvaW14X3RoZXJtYWwuYwpA
-QCAtODc4LDggKzg3OCw3IEBAIHN0YXRpYyBpbnQgaW14X3RoZXJtYWxfcmVtb3ZlKHN0cnVjdCBw
-bGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJcmV0dXJuIDA7CiB9CiAKLSNpZmRlZiBDT05GSUdfUE1f
-U0xFRVAKLXN0YXRpYyBpbnQgaW14X3RoZXJtYWxfc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYp
-CitzdGF0aWMgaW50IF9fbWF5YmVfdW51c2VkIGlteF90aGVybWFsX3N1c3BlbmQoc3RydWN0IGRl
-dmljZSAqZGV2KQogewogCXN0cnVjdCBpbXhfdGhlcm1hbF9kYXRhICpkYXRhID0gZGV2X2dldF9k
-cnZkYXRhKGRldik7CiAJc3RydWN0IHJlZ21hcCAqbWFwID0gZGF0YS0+dGVtcG1vbjsKQEAgLTkw
-MCw3ICs4OTksNyBAQCBzdGF0aWMgaW50IGlteF90aGVybWFsX3N1c3BlbmQoc3RydWN0IGRldmlj
-ZSAqZGV2KQogCXJldHVybiAwOwogfQogCi1zdGF0aWMgaW50IGlteF90aGVybWFsX3Jlc3VtZShz
-dHJ1Y3QgZGV2aWNlICpkZXYpCitzdGF0aWMgaW50IF9fbWF5YmVfdW51c2VkIGlteF90aGVybWFs
-X3Jlc3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCiB7CiAJc3RydWN0IGlteF90aGVybWFsX2RhdGEg
-KmRhdGEgPSBkZXZfZ2V0X2RydmRhdGEoZGV2KTsKIAlzdHJ1Y3QgcmVnbWFwICptYXAgPSBkYXRh
-LT50ZW1wbW9uOwpAQCAtOTE4LDcgKzkxNyw2IEBAIHN0YXRpYyBpbnQgaW14X3RoZXJtYWxfcmVz
-dW1lKHN0cnVjdCBkZXZpY2UgKmRldikKIAogCXJldHVybiAwOwogfQotI2VuZGlmCiAKIHN0YXRp
-YyBTSU1QTEVfREVWX1BNX09QUyhpbXhfdGhlcm1hbF9wbV9vcHMsCiAJCQkgaW14X3RoZXJtYWxf
-c3VzcGVuZCwgaW14X3RoZXJtYWxfcmVzdW1lKTsKLS0gCjIuNy40CgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, Mar 02, 2020 at 03:50:10PM +0800, Anson Huang wrote:
+> Use __maybe_unused for power management related functions instead
+> of #if CONFIG_PM_SLEEP to simplify the code.
+> =
+
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+
+IMHO translating my "otherwise looks fine" in a "Reviewed-by" is a bit
+bold. Please don't assume this.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
