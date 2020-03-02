@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 150BC17673A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 23:28:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D97D1767A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 23:46:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CtlTUNT4iNkyhuUaJ+2IKccPw7ALwgZeLfXGMs6vSsI=; b=lDhzWoA6HXKv8l
-	mzVm+P/s8OS7G0ms6Br73ucRhXB6W+2dNUqnUTVUGyXdMUQ84uqm5tuFFtqL9IaiXZv9BAbOo+MlV
-	i6li+zqCO8YCGm+H+BFCdWoSDLGJ2qMVa0jsjjdA+7IbNg3ylN8j5Q/YLYEGSy5AGzSmjhsmYriCV
-	KXe4y34tRoG3HUaG7fbSHt4Cvdu7YhWnQPjehpKi9L2gS13GvaPseZelHdXJj99Z4IS/Pr32rDI22
-	iwLhNdrgtY9espg7GNVZdZCc8uzOajc7Ss7oZUM08C5xC9iqImULQw3bu1ZVJxLfFbWkRpzQus7je
-	He/HcKfCLswuxenRUoKQ==;
+	List-Owner; bh=OM5itDDLbU4J+66GK771jVeRQ4+dNh5kMHnMwd77GU8=; b=YHltYWONbIjB7d
+	i5Ylr7q8y8GtxLTAaLrQgAny2esyz3oMAXFjoOhWzhwImHmorf1gYyYtP5wgpUjByVc/uXeq2DkCu
+	XT7/TkVf4BWR8RDaiUInxCLWWr0Gzg9Ie7Nv7mmGsuK7SIL4Vbq2Zu6Cw+iZloe8Ib1G4Vb/genmZ
+	k0qisA04BeILpL0i7/fz9kX8xp2BzksnzUmFuSFYPGrllQ7WcxQZW1nfIHFfPIt2Wwx8ON8UYScWr
+	xbgL6qTQ5tm4TBraTBhdl8rujn2aaEOJPcjWfqB5M+zLupfPkmxf09nYmJhB8DdKJup1iAZtlCv99
+	03dniB1UqanRkFfbr65A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8tXi-0003ud-9W; Mon, 02 Mar 2020 22:28:06 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j8tpV-0002FV-Gh; Mon, 02 Mar 2020 22:46:29 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8tX7-0003R7-Ga
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 22:27:31 +0000
-Received: by mail-wm1-x343.google.com with SMTP id f15so839562wml.3
+ id 1j8tpP-0002F5-8W
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 22:46:24 +0000
+Received: by mail-lf1-x144.google.com with SMTP id w22so969170lfk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 14:27:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Yl3p3hBPFlOPkoSdkeZjXHmocqTG4wlFcxWCuis8faE=;
- b=BJjKTa1upJb+zW+g2KemiCGn2oj71gZr7WRaPkD8vJRBh6tVGNq8sk2paLvQUYSgq0
- XrvFC21US3WDHdXKJzUUru8SJGuMi5xJsyLE9Lvm+nHAgMwdClaU83nDCp94YBHmpSTS
- uX5xmOcnuhmuYur3VOpAdoedKgbc+pAeMQ6FE=
+ Mon, 02 Mar 2020 14:46:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yLlRHbktFbOxtzNl8Vihg7v3kIKc6TMAjjHUPUH1szE=;
+ b=M8mL4WkqqPiqVdS4845vC4Zpdwppdn9R8gd4H0FXSSRr52BVwtl8Mra38019iqK2cs
+ +91u+CUb1uRSjJxp0d04WJBwO2/piAaXNeX32RQCf8mVP/G92k5qj4hqrERMd142LMie
+ NL3JUr2NPXvOjObXSaW1GG53HlzikBruZB8pW0SjA4tGQAOBD1YB/UoKgDPa5Pg9N3qX
+ gSB1bFR8KIaWCwB7u1XkmHLdMXNc1hZn07FDAUHZxjv1sY7owLJu92TVWG60Q5KqpwCw
+ 0ApzdsuhSTmRrgb42SLu9FQjQQPBFc6QO05ePhcNg53P5Og6bFJBEU7UebSu0VspWVCl
+ PLWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Yl3p3hBPFlOPkoSdkeZjXHmocqTG4wlFcxWCuis8faE=;
- b=IEtK869PB739+Yj0SBfMhK2taA6wEtDiHGmqeJkQZ9q2ijRau3n1Q1tXeUNinGIAaS
- xuyCwgmIkbGLmogRYIiiUJJFb/XDvmK3O8FsHypw6SgCya4KReSzcC156gLmhovtRkii
- CVSufkmvjqMgvaVnUS8ago2u4A4oHgCkz/zn3/Nbeo8VEw5dSALy3f4Lhn0MPLd+loIP
- VZMCij52Ye208RyZQ4LuYWVnBl7uTjbPcQT1vOnHQHfjdpXAPQhDEN2l0/MJsZ9PGCyq
- Bo3DflayvfZyi6w+3ADQvAxRpprK3hQ03Pb9LupjWJ22OcWDhxcbGKIbXRf35mPVKj1H
- BRMQ==
-X-Gm-Message-State: ANhLgQ1T/YEUtfxgaHKJuq8jOpRCSCHjrIRa7Iv1pSv7tri55AlqKppz
- EgLnPJ2Qvvxt88kqnjQPtLczNQ==
-X-Google-Smtp-Source: ADFU+vsV6snY+ze8Mw13KvoxQVCCldm+RRMJ8DbeXSTs1U1dY0PkObe2dTJFMO/9e6eMtrIGTWAiAQ==
-X-Received: by 2002:a1c:25c6:: with SMTP id l189mr530634wml.104.1583188047595; 
- Mon, 02 Mar 2020 14:27:27 -0800 (PST)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id o18sm26114589wrv.60.2020.03.02.14.27.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 14:27:27 -0800 (PST)
-From: Daniel Vetter <daniel.vetter@ffwll.ch>
-To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 38/51] drm/stm: Drop explicit drm_mode_config_cleanup call
-Date: Mon,  2 Mar 2020 23:26:18 +0100
-Message-Id: <20200302222631.3861340-39-daniel.vetter@ffwll.ch>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200302222631.3861340-1-daniel.vetter@ffwll.ch>
-References: <20200302222631.3861340-1-daniel.vetter@ffwll.ch>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yLlRHbktFbOxtzNl8Vihg7v3kIKc6TMAjjHUPUH1szE=;
+ b=t5oes7O1i99jTooiUYzHeoUPyMlR0ibK1kuLTma4hC/9nXONrZD+OMjfDRUZP5W0gA
+ uesXiJ4sBe8tA/Bq4ZoMUkviXdc5cIzKarkZJ+O3DGtuoZQ3UsUTu5FxbHHiLvvUwJPJ
+ JtrCyW6yWl7arYcmZXa+571zcgRCc0j3jIAVk3fHB4m8wu/MSJlGgwjiOiRQyjb1MPV/
+ HU2CffvOdQjJLTiaEP1n2Vi2DY3FEYK32N0Q8q3m00QD4+YV3ZUrl8QgtMsbaYeu1/ak
+ 4F1F69tydkR6/Aa2/YAPJJG8daoE+qxlBqQh4FLOcw8degWMm+cC08A7Fpz/evYIYDOZ
+ dpTA==
+X-Gm-Message-State: ANhLgQ2GKeO1yjmrFU4ARKJHQCQ6Ht0HQaQJdcU+hbRraFG85ju2GB1f
+ 590bT/q0JTOvFwN81uMtzS9021a3wW++pUX+/U4=
+X-Google-Smtp-Source: ADFU+vukK/ZdZyY9pLzllMfUz93sWGqAKVB4wD5ScH7PQHTGtStfvT6fbGnEJPtU+8VaCDyESKT0/8pJMiZdPi/+V6Q=
+X-Received: by 2002:a19:ed08:: with SMTP id y8mr803334lfy.56.1583189179625;
+ Mon, 02 Mar 2020 14:46:19 -0800 (PST)
 MIME-Version: 1.0
+References: <20200302213557.11128-1-vitor@massaru.org>
+In-Reply-To: <20200302213557.11128-1-vitor@massaru.org>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Mon, 2 Mar 2020 19:46:08 -0300
+Message-ID: <CAOMZO5BqvmRpTbq-gGgnKC2gFTRxS0mK0=W3tBSfZKQ-MUXMzA@mail.gmail.com>
+Subject: Re: [PATCH v3] arm64: dts: imx8mq-phanbell: Add gpio-fan/thermal
+ support
+To: Vitor Massaru Iha <vitor@massaru.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_142729_604863_E622BEED 
-X-CRM114-Status: GOOD (  14.39  )
+X-CRM114-CacheID: sfid-20200302_144623_302008_442541FE 
+X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,98 +94,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Philippe Cornu <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Zimmermann <tzimmermann@suse.de>,
- Daniel Vetter <daniel.vetter@intel.com>, Sam Ravnborg <sam@ravnborg.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, lkcamp@lists.libreplanetbr.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Marco Franchi <marco.franchi@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's right above the drm_dev_put().
+Hi Vitor,
 
-This is made possible by a preceeding patch which added a drmm_
-cleanup action to drm_mode_config_init(), hence all we need to do to
-ensure that drm_mode_config_cleanup() is run on final drm_device
-cleanup is check the new error code for _init().
+On Mon, Mar 2, 2020 at 6:36 PM Vitor Massaru Iha <vitor@massaru.org> wrote:
 
-Aside: Another driver with a bit much devm_kzalloc, which should
-probably use drmm_kzalloc instead ...
+> +&cpu_thermal {
 
-v2: Explain why this cleanup is possible (Laurent).
-
-v3: Use drmm_mode_config_init() for more clarity (Sam, Thomas)
-
-Cc: Sam Ravnborg <sam@ravnborg.org>
-Cc: Thomas Zimmermann <tzimmermann@suse.de>
-Acked-by: Philippe Cornu <philippe.cornu@st.com>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-Cc: Yannick Fertre <yannick.fertre@st.com>
-Cc: Philippe Cornu <philippe.cornu@st.com>
-Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Cc: Vincent Abriou <vincent.abriou@st.com>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
----
- drivers/gpu/drm/stm/drv.c | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
-index ea9fcbdc68b3..0f85dd86cafa 100644
---- a/drivers/gpu/drm/stm/drv.c
-+++ b/drivers/gpu/drm/stm/drv.c
-@@ -88,7 +88,9 @@ static int drv_load(struct drm_device *ddev)
- 
- 	ddev->dev_private = (void *)ldev;
- 
--	drm_mode_config_init(ddev);
-+	ret = drmm_mode_config_init(ddev);
-+	if (ret)
-+		return ret;
- 
- 	/*
- 	 * set max width and height as default value.
-@@ -103,7 +105,7 @@ static int drv_load(struct drm_device *ddev)
- 
- 	ret = ltdc_load(ddev);
- 	if (ret)
--		goto err;
-+		return ret;
- 
- 	drm_mode_config_reset(ddev);
- 	drm_kms_helper_poll_init(ddev);
-@@ -111,9 +113,6 @@ static int drv_load(struct drm_device *ddev)
- 	platform_set_drvdata(pdev, ddev);
- 
- 	return 0;
--err:
--	drm_mode_config_cleanup(ddev);
--	return ret;
- }
- 
- static void drv_unload(struct drm_device *ddev)
-@@ -122,7 +121,6 @@ static void drv_unload(struct drm_device *ddev)
- 
- 	drm_kms_helper_poll_fini(ddev);
- 	ltdc_unload(ddev);
--	drm_mode_config_cleanup(ddev);
- }
- 
- static __maybe_unused int drv_suspend(struct device *dev)
--- 
-2.24.1
-
+You missed to place cpu_thermal prior to i2c1 to keep the nodes sorted.
 
 _______________________________________________
 linux-arm-kernel mailing list
