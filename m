@@ -2,83 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1D3317644B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 20:51:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62CEB17646D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 20:57:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BCOhSZkNkMPPjAZkQaTf/GqPG9+V3Ktcz7usdiPVvnw=; b=LlVetvU5PvSva1U2Od+NAsKM48
-	aMXL/YkE2vvptTdP+vEKL9NoQd01SHt23YBDTu4aRJhcBIY0Ptv+o6KA/0mIolQVgndhwmo+uVJSX
-	z7Wlccr0F0l0tLNxKbzvq7B6nasCqpXmXfEMbBvxyY+qnfuZ6XvDT1NUKFYSA2KrsYjEU+zcM23pN
-	SO3zgpYqB65hpUwzBf5K4wz2azi1IYRPxU+bV8lhWoEq9C+VG6vUXXzU/EBZ8hHj2t4Rl9UmDVx/y
-	PfkBQkVBg0z2AYxiwIXfWgJxJQjDCJne79iW0AGjqarjUgo3yWdJbRpVxRbIvzd3hnAWE6W5q2wrX
-	+WKudoxA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cw7KNZmb4HmkpV2ZiTI0I0WsNEJftHJaTrw7vnr53xo=; b=b9mGQD0Nx7kzYB
+	cAeOO5YhWPya8uvPL3kvJKmMb4McaaLfSL4Esa6b5GRIWbN2C3eIG0P8LkGgm0g4naY4bga4tj9um
+	0WMjRm8XM+W7Gz1mUoy2/8LhMkIXvsHa+RJSxAwvCongRjwZsMdZrnmreY+1Vkj+n8hTxIIJBSUMN
+	7yL3iC1R6IlT1c/3aL0/bnrG5BrHyspGMgWiXvkxu38tLP8gO/I0FlSqJ6Xt0XgaTFlJkiuPm3k7+
+	1F1CU1tPz2BDSN43hEMC5+JhO34bA8VxjGjEZipL/ByqryZzmh1XzwHd8H5817pQUbRS+9zYUeRmT
+	yY87wRsKlwHt+Ikep8dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8r5w-0003Dr-G3; Mon, 02 Mar 2020 19:51:16 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j8rC8-0005VV-RM; Mon, 02 Mar 2020 19:57:40 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8r5Z-000363-Ru
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 19:50:55 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y17so1356869wrn.6
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 11:50:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=86+073KfeItXhtS3CYFMVIMMT1uWpwdCaXzQZ94IilE=;
- b=kczZ1XbU7Lw/kwkwzQpLchQouxRQyhUhZntZ0VRL12iLBLMpMj/3Q3snzHUKZLDH3B
- qNHJFk/pYRA+3P+1owaYSaB0XAugtQOUriUwWZZqxvxB9YLvDeqSAyFmRSUBT6cgi9zH
- Izhd0yQJlrMfA2413kLP+lgzP7Syyk5e2hIwP84N/Pkx/l4GyHB50pc5i33AajmknUFi
- 6+nTJQ9qPDqRBK/JA4sWKPWlJnh86Cs4UBniQHAtl0W1kzrgohmlplEsOXMcMsmHeTO8
- oexVtHxDYJSaYMEZj72oUVLgOhYmXC8B3iKwrrPc6P6PDsOhF+kg8LOcWRWuX9KXfdcs
- 5Ovw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=86+073KfeItXhtS3CYFMVIMMT1uWpwdCaXzQZ94IilE=;
- b=iiwfzxB5+O98x2/g7qOm3t1Wpj6ix1QpgPntGRFBK/PayI3UNH2mt0CjoCiPQ+Te2l
- WYfYA7j5NU8NlXkml2GiOwjYuvpgj79LRyY8+b+DPvzfH9PurPUyxouRXZFfQ11SzgoT
- uJXGVzL9mHLwY8XM1VGgG+J8m9fGmUos4+JBG0Oo8Z5pquPbyMCkh1W4wqm8ua/vOM39
- bNxg4G7O/PAQNfsoSjC4KrgtvjK7YjkwtB1jtFEjjg5Nt0d/0aPN7jN0b6DwbxQqQsnJ
- Nzt2GOX5iXMnFITRpI+aGeOP6KlEqCJwGo1srRsG0srgtV8Btw7isaT/DzWtgHsPlaj3
- QCGg==
-X-Gm-Message-State: ANhLgQ0pPID1VjPSMtsRRmkInYn+KloN9t7IfsiY0/VYG/ojhAh6q4LI
- Eaw/Cby8+Hik251LxFfiW52h28vJ
-X-Google-Smtp-Source: ADFU+vt/ujWTX5ER7b5ujOzVGd9exYRB0LZHaw2vN7VIkuxUyorSgsq1dRyCtowpiJnEQxq+9FPSzA==
-X-Received: by 2002:a5d:4f0e:: with SMTP id c14mr1148840wru.100.1583178652202; 
- Mon, 02 Mar 2020 11:50:52 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id l3sm28967940wrq.62.2020.03.02.11.50.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 11:50:51 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: soc@kernel.org
-Subject: [GIT PULL 2/2 v2] Broadcom devicetree fixes for 5.6
-Date: Mon,  2 Mar 2020 11:50:43 -0800
-Message-Id: <20200302195043.14513-2-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200302195043.14513-1-f.fainelli@gmail.com>
-References: <20200302195043.14513-1-f.fainelli@gmail.com>
+ id 1j8rC2-0005UO-Fa
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 19:57:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1583179050;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=jW1b+aV7X/tdSJT5uvSfVzTq5rxfiSvkhTy2solsqU8=;
+ b=bWd//boRQVowVG1m13hmSDWcXMyesgzoo80bMt3sCeTEKUNVm4Xg32hH0WBILwF54V
+ b0lC21SgtEFR1qbLDJTTUDC1UQcQQjvn7DFeRtuYPX35H3PlCKyywop8kL8zGbJLErRy
+ RSLCjQxpIbdJqR1CylxaO035UkOgLS5cTQXluPrj/ldd5n3YmKPEPOcfGzVFIuXURCph
+ AWIvYqVPc8idbC5YD0zAZRN1k9+Xt/Ulj4g2Kz553ehLSmK4Nq4kjiOLBATwf2mJBB/I
+ X8NU5bYa0xpCPEjUHZkawGmaI7mhSMok285ccbTBzB4n1c0apQcmGPYyhgrmSlfYkBxE
+ mHCQ==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u26zEodhPgRDZ8f+IcrABg=="
+X-RZG-CLASS-ID: mo00
+Received: from gerhold.net by smtp.strato.de (RZmta 46.2.0 DYNA|AUTH)
+ with ESMTPSA id c04535w22JvSEbI
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Mon, 2 Mar 2020 20:57:28 +0100 (CET)
+Date: Mon, 2 Mar 2020 20:57:23 +0100
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu/io-pgtable-arm: Fix IOVA validation for 32-bit
+Message-ID: <20200302195723.GA73742@gerhold.net>
+References: <dd330453ed31099b5b3b76db02fe79d55aa9bce3.1582899080.git.robin.murphy@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <dd330453ed31099b5b3b76db02fe79d55aa9bce3.1582899080.git.robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_115053_899079_808773E2 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20200302_115735_114437_9E7BB6C7 
+X-CRM114-Status: GOOD (  18.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a01:238:20a:202:5300:0:0:12 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,51 +81,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, olof@lixom.net,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- Peter Robinson <pbrobinson@gmail.com>
-MIME-Version: 1.0
+Cc: joro@8bytes.org, will@kernel.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+Hi Robin,
 
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+On Fri, Feb 28, 2020 at 02:18:55PM +0000, Robin Murphy wrote:
+> Since we ony support the TTB1 quirk for AArch64 contexts, and
+> consequently only for 64-bit builds, the sign-extension aspect of the
+> "are all bits above IAS consistent?" check should implicitly only apply
+> to 64-bit IOVAs. Change the type of the cast to ensure that 32-bit longs
+> don't inadvertently get sign-extended, and thus considered invalid, if
+> they happen to be above 2GB in the TTB0 region.
+> 
+> Reported-by: Stephan Gerhold <stephan@gerhold.net>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> 
 
-are available in the Git repository at:
+Thanks for the patch!
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.6/devicetree-fixes
+Just wanted to report that this patch does indeed fix the problem
+I had with qcom-venus on ARM32.
 
-for you to fetch changes up to 94f18b9b24ee4d812ebd30ff848298a9f413f07a:
+It's probably too late now, but FWIW:
+Tested-by: Stephan Gerhold <stephan@gerhold.net>
 
-  ARM: dts: bcm2711: Add pcie0 alias (2020-02-27 11:29:45 -0800)
-
-----------------------------------------------------------------
-This pull request contains Broadcom ARM-based SoCs Device Tree fixes for
-5.6, please pull the following:
-
-- Stefan adds missing Device Tree properties for the Raspberry Pi 3B and
-  4 LEDs to have proper default configuration
-
-- Nicolas adds an alias for the PCIe root complex node that is looked up
-  by the Raspberry Pi firmware for patching in specific properties
-
-----------------------------------------------------------------
-Nicolas Saenz Julienne (1):
-      ARM: dts: bcm2711: Add pcie0 alias
-
-Stefan Wahren (1):
-      ARM: dts: bcm283x: Add missing properties to the PWR LED
-
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts      | 3 +++
- arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dts | 2 ++
- arch/arm/boot/dts/bcm2837-rpi-3-b-plus.dts | 2 ++
- 3 files changed, 7 insertions(+)
+> ---
+> 
+> Logically there may also have been a UBSAN "shift greater than size of
+> type" warning too, but arch/arm doesn't support UBSAN_SANITIZE_ALL,
+> and that's now my only easy "spin up a 32-bit VM" option to hand :)
+> 
+>  drivers/iommu/io-pgtable-arm.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> index 983b08477e64..04fbd4bf0ff9 100644
+> --- a/drivers/iommu/io-pgtable-arm.c
+> +++ b/drivers/iommu/io-pgtable-arm.c
+> @@ -468,7 +468,7 @@ static int arm_lpae_map(struct io_pgtable_ops *ops, unsigned long iova,
+>  	arm_lpae_iopte *ptep = data->pgd;
+>  	int ret, lvl = data->start_level;
+>  	arm_lpae_iopte prot;
+> -	long iaext = (long)iova >> cfg->ias;
+> +	long iaext = (s64)iova >> cfg->ias;
+>  
+>  	/* If no access, then nothing to do */
+>  	if (!(iommu_prot & (IOMMU_READ | IOMMU_WRITE)))
+> @@ -645,7 +645,7 @@ static size_t arm_lpae_unmap(struct io_pgtable_ops *ops, unsigned long iova,
+>  	struct arm_lpae_io_pgtable *data = io_pgtable_ops_to_data(ops);
+>  	struct io_pgtable_cfg *cfg = &data->iop.cfg;
+>  	arm_lpae_iopte *ptep = data->pgd;
+> -	long iaext = (long)iova >> cfg->ias;
+> +	long iaext = (s64)iova >> cfg->ias;
+>  
+>  	if (WARN_ON(!size || (size & cfg->pgsize_bitmap) != size))
+>  		return 0;
+> -- 
+> 2.23.0.dirty
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
