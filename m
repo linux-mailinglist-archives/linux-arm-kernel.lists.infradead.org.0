@@ -2,91 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4916F1760E7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 18:18:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07D351760FE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 18:26:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=joNEB9A0kyzluinwV8omBpXYyjCkCSjCTXQCjBp6+Do=; b=eM6GLkcSR6ox8c
-	r18B54QPGIsldKWlPZQ9Ol9uI5Prla1rvDiCj7YCsZo+OntoTh/x8ArNT0i4BftR8EZegdPu/GIP+
-	Kr8Ds+Jd0BkWp94PmrtVk+ZBmIOGjm6PfobPaPCHKz7PgbXoDVxwflr1DNwxc97CfdxF7mu4uMX9A
-	iUqBm2zvSg3z0i41Cy9Zh20OsKu0jf0SSBSjSa+QMVGFdHq/gw6mI6APkm4tP2BRtBS5BKr4eThoj
-	FudDaw/0CEhSVyOYoGqo8OQbFGYNltq9s7OyYz4M83Nl+UmGgqCjlKqMZaROulQhkfxD1kDs5wCXx
-	p6xrPbf3tqx0NupLtJKA==;
+	List-Owner; bh=yeFxd7dUwDaCPD1XTdD61zE/SgZVCPDDniM6D5jd9bw=; b=c+3NOAXmLZBRZe
+	rIXRL3QTjPb1En/VTVCXHLQeUh3ehd8HU/Lj7X//a7iPPXramZBt8pYwWg608hAnpxbiC6wzb05u3
+	YIexvqWhT0sdS9xs1HVa1QEkcuvIjfO4dAbIg6NqfcRY3ShFCbNnI6Bgv2gqeVZeWgPJu2k5t1ofn
+	MkX7hnI5hK4F4Y6d1v5e6BxtuJ/eMUwpfKBMvwjMukc3MAih5Pjhp/p1nzrFKMU9WCkFMo37tkyrp
+	+ESqEh/WpT7HP4g4A979ouFpoXJcwrBgTnjqZMwVjlVlTcPZfm9uT2JtOeJPqAeCuyAphfzlzq8tR
+	mGObuWdBeG6a8UjDehBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8oiN-0007dq-Mq; Mon, 02 Mar 2020 17:18:47 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j8opV-0002R5-VJ; Mon, 02 Mar 2020 17:26:09 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8ohx-0007Pn-VG
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 17:18:24 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v4so699893wrs.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 09:18:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=SXg4ANPPHujnOtlOtYMneAF3xY1y0Qzs6lLnP3dZ2Eo=;
- b=mSdaRQNlY7mufhxefFHO9E0HmiRuJqcR5IkePx8zpUI992xFIFgiMiz4Gi5sNj3NEI
- hd9N2W+4Dsx6v7z2hXGn5kxId0G3btlLTgkiwpAyx9BHnkcH7DNgJkFwd9JeQ/SLXftl
- +9HmX3flc+V509SOfMf1CeDGcImsWgpc1FtEXVRF59szYLbOFJ8Ac3vjMAclYY3eVBO0
- VkaksqS/ZaI/Hkm6f1oXy+NUAJUmm7teNAIJtZaVhrPE/dpzQP5pX6HxaqApu+UnpgrR
- m30yCONditdo/eeyfb0vTsI+hldY5qSWaLg8a86atbEOC1iqlmuPytX8k26Sb8Z2TLdZ
- ZtTg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=SXg4ANPPHujnOtlOtYMneAF3xY1y0Qzs6lLnP3dZ2Eo=;
- b=CJB9bxsfnuO7XU0fiGsrk0BIq3/44lFqPWyNgA3zcjLYthza/VaP2A0UDggsfd+OgC
- 7yrix5puFmJPRELYwg9cu70zBVPoSNnXdULQ9tDs2wltFDEsqiM7m5i+rQuQEt1iBPFt
- Peqkv5Tncj31vTHX3Tu7L4mU6imoZKLF7Z4tlIpM1/rCB3QqZTRIqIWKMPhpwR3TGpkJ
- cKH9P1/zRNnIKhgSX7UAWuvi1jlkss9SpXajohkdAdl4KTvC3xRZQrOxmGF9UBMMX+fA
- 70zpqID+RTZN8D5bD44DoAq9Vv8PUl7SKJbAIvnBJk6Lyj2FGC06fcGYj02H/mmv67O0
- ObGA==
-X-Gm-Message-State: ANhLgQ3iUVfGUADVenwbbir72CbYjxKkg0lAm1MJiRULZ15BsKrTjNZV
- jzYU0RkXiAGYihhzm1+ka4+5qQ==
-X-Google-Smtp-Source: ADFU+vsX7sylmYulhpint5DODaeUoRGQLESGv6af+LdEy2T3qLGW2WZccdCEKj2zO/+pPKdQyCoHhQ==
-X-Received: by 2002:adf:fdc2:: with SMTP id i2mr652127wrs.166.1583169499293;
- Mon, 02 Mar 2020 09:18:19 -0800 (PST)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c2sm45867wma.39.2020.03.02.09.18.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 02 Mar 2020 09:18:18 -0800 (PST)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Anand Moon <linux.amoon@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCHv2 1/2] arm64: dts: meson: Add missing regulator linked to
- VDDAO_3V3 regulator to FLASH_VDD
-In-Reply-To: <20200302125310.742-2-linux.amoon@gmail.com>
-References: <20200302125310.742-1-linux.amoon@gmail.com>
- <20200302125310.742-2-linux.amoon@gmail.com>
-Date: Mon, 02 Mar 2020 18:18:17 +0100
-Message-ID: <7hfteqr7za.fsf@baylibre.com>
+ id 1j8opO-0002Qf-6M
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 17:26:03 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 022HNPGX098653;
+ Mon, 2 Mar 2020 17:25:51 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=ljzd0Xe5Fg4CocMgwn0S+I3dakdjPxi3oE8VRnoUYlA=;
+ b=QD8LDPW4X4pP3Con9UBGU9spo1eN7BgyyLl2aaHLXXLnwzk0Qx4vdqZdf8ZMWkjjTeo4
+ CMAQVzOkEBd0Y6TmMKsWVwsDp/sIBjRKPv/bGoEfSx16UpOs9oB8ciCwcVYfbrb4fuBu
+ Nup7nbhTzspfk2D0qhMeC6RQ9NKfLsqajXyzsd8Kw31dERKjDye+JJCOepCaM5wwd9B0
+ jwPGl0IHxIRzk4b4lTHcejqlVB+6RvmGiNeFiuMLmEuRL8nBvZoFfxpYT6XFwrBotfL3
+ ZVrQ0Ah/pRiH61VjRTtuDnHv95rTjENPCWER6Qq/kWauhSD4Qkz4etN7scSEcfiQCoii Fg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 2yghn2w29v-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 02 Mar 2020 17:25:51 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 022HNEF1072297;
+ Mon, 2 Mar 2020 17:25:50 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3020.oracle.com with ESMTP id 2yg1rfy3qk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 02 Mar 2020 17:25:50 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 022HPnkq015255;
+ Mon, 2 Mar 2020 17:25:49 GMT
+Received: from ca-dmjordan1.us.oracle.com (/10.211.9.48)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 02 Mar 2020 09:25:46 -0800
+Date: Mon, 2 Mar 2020 12:25:10 -0500
+From: Daniel Jordan <daniel.m.jordan@oracle.com>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
+Message-ID: <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
+References: <20200217204803.GA13479@Red>
+ <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ <20200220090350.GA19858@Red>
+ <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
+ <20200228123311.GE3275@willie-the-truck>
+ <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
+ <20200301175351.GA11684@Red>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200301175351.GA11684@Red>
+User-Agent: NeoMutt/20180716
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9547
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
+ mlxlogscore=999
+ suspectscore=2 malwarescore=0 adultscore=0 spamscore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2003020116
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9547
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ phishscore=0 spamscore=0
+ impostorscore=0 mlxscore=0 adultscore=0 mlxlogscore=999 lowpriorityscore=0
+ priorityscore=1501 bulkscore=0 clxscore=1015 suspectscore=2
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003020116
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_091822_028123_68C09880 
-X-CRM114-Status: GOOD (  10.94  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_092602_319781_C9596594 
+X-CRM114-Status: GOOD (  18.43  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,33 +117,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
+Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ Daniel Jordan <daniel.m.jordan@oracle.com>, linux-crypto@vger.kernel.org,
+ tj@kernel.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Anand Moon <linux.amoon@gmail.com> writes:
+On Sun, Mar 01, 2020 at 06:53:51PM +0100, Corentin Labbe wrote:
+> I tried to bisect this problem, but the result is:
+...
+> # first bad commit: [81ff5d2cba4f86cd850b9ee4a530cd221ee45aa3] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
+> 
+> The only interesting thing I see in this MR is: "Add fuzz testing to testmgr"
+> 
+> But this wont help.
 
-> As per schematics add missing VDDAO_3V3 power supply to FLASH_VDD
-> regulator.
+Hm, that merge commit has only a couple lines of powerpc build change, so maybe
+there's something nondeterministic going on.
 
-Could you please add a link to the specific schematics you used to find
-this usseu?
+Does this fix it?  I can't verify but figure it's worth trying the simplest
+explanation first, which is that the work isn't initialized by the time it's
+queued.
 
-> Also add TFLASH_VDD_EN signal name to gpio pin.
+thanks,
+daniel
 
-Your patch does not do this part.
+---8<---
 
-Similarily to the other patch, can you explain in more detail (including
-kernel boot logs) how the SD card is not working?
+Subject: [PATCH] module: statically initialize init section freeing data
 
-I just tested with latest mainline, and the MMC driver is detecting both
-the eMMC and the SD card.
+Signed-off-by: Daniel Jordan <daniel.m.jordan@oracle.com>
+---
+ kernel/module.c | 13 +++----------
+ 1 file changed, 3 insertions(+), 10 deletions(-)
 
-Kevin
+diff --git a/kernel/module.c b/kernel/module.c
+index 33569a01d6e1..db0cda206167 100644
+--- a/kernel/module.c
++++ b/kernel/module.c
+@@ -88,8 +88,9 @@ EXPORT_SYMBOL_GPL(module_mutex);
+ static LIST_HEAD(modules);
+ 
+ /* Work queue for freeing init sections in success case */
+-static struct work_struct init_free_wq;
+-static struct llist_head init_free_list;
++static void do_free_init(struct work_struct *w);
++static DECLARE_WORK(init_free_wq, do_free_init);
++static LLIST_HEAD(init_free_list);
+ 
+ #ifdef CONFIG_MODULES_TREE_LOOKUP
+ 
+@@ -3501,14 +3502,6 @@ static void do_free_init(struct work_struct *w)
+ 	}
+ }
+ 
+-static int __init modules_wq_init(void)
+-{
+-	INIT_WORK(&init_free_wq, do_free_init);
+-	init_llist_head(&init_free_list);
+-	return 0;
+-}
+-module_init(modules_wq_init);
+-
+ /*
+  * This is where the real work happens.
+  *
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
