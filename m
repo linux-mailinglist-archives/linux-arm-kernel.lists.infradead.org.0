@@ -2,64 +2,147 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B41181761E4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:07:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B81B1176219
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:12:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LZOI3gPvIlmPoJd+zFYv4YsfrwFfa1RIMDAl+7JisVc=; b=SVUW1IkcpsBug4
-	KEaCjqJ8WMvkMzlvdZFGwBoDpCNNzhzu3vl/fGKzU+H13iHtqczMqKh9T4RtQk7TRGKkIAmH8EVUw
-	5ECE+2zag4JRsWnlWF7AHtYLqV+CS+WNPj5HYBpwqIzDpO+DqqSjvIaCCc19VWg/oYTemJlZGAHQf
-	CsoHHNXRqhLCTRCBWPMOk+qmIq36TcWR2xMoOa3HVNc2psK+Jj1mTV8mqg0PsZ+GEKLGjM4Hx+rc7
-	I7PtIahvG/ASQT4uQovV1pUvO4enAiHcu6JFIxMg8NZdugyTVTneAJSWrFyrk5/u+6zfUyCFF/K1V
-	HR5SfjyVcD6KmMCd05Pw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EOPP7BV+5ZB7uLkqdxxU/4No6GO0NTUWVUUV2+U4V6U=; b=CzE+sYEX4CDWpx
+	qVEUQD3rTc9rLh0NcKBDsMAj+4Az8Bv6Fq+ESOnuOxcPHLabNsD0sInohrW1gzyHw5Aqtas4I9y07
+	Xx7HP0JKsQoPSKegJHijdglfmoTM+UlC60bA03sLmAZ32QmUt8Trx6alA9dWq0AkNmhs0N13t7sji
+	o32cpSO5bv5Au56tZPI1M4+P1lU6jjSEOa0OHM48aAg+SpA27W2L+L5+8vWp50oVZc68v1XojcyiT
+	d5eaBkHEKIrHRYTiW2m8ERcfvTk0LbMxK16oYGdX5TG+tWi6vMhTQs/IMJQmHL5fR4OwBftNutVp+
+	5MltggRmhsboTT0abQtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8pTr-0002fL-7C; Mon, 02 Mar 2020 18:07:51 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j8pXy-00078E-Te; Mon, 02 Mar 2020 18:12:06 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8pTi-0002et-W3
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 18:07:45 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1j8pTZ-0004o9-KY; Mon, 02 Mar 2020 19:07:33 +0100
-Received: from pza by lupine with local (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1j8pTX-0007Wa-Bi; Mon, 02 Mar 2020 19:07:31 +0100
-Message-ID: <0806d9bbe4f8a30275cb251f5074e6a49380a92e.camel@pengutronix.de>
-Subject: Re: [PATCH 17/17] drm/imx: fix drm_mode_config_cleanup race condition
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Daniel Vetter <daniel@ffwll.ch>, Lucas Stach <l.stach@pengutronix.de>
-Date: Mon, 02 Mar 2020 19:07:31 +0100
-In-Reply-To: <CAKMK7uG5e90dEiXYXN9xo+iFY7_9BW6Pp=1CifSQ6c3eWyP=9w@mail.gmail.com>
-References: <20200227162125.10450-1-m.felsch@pengutronix.de>
- <20200227162125.10450-18-m.felsch@pengutronix.de>
- <20200227172923.GY2363188@phenom.ffwll.local>
- <c620634bf4faf57230810a16cb1f5a81f2d23945.camel@pengutronix.de>
- <CAKMK7uG5e90dEiXYXN9xo+iFY7_9BW6Pp=1CifSQ6c3eWyP=9w@mail.gmail.com>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1j8pTv-0002iE-VM; Mon, 02 Mar 2020 18:07:58 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Tudor.Ambarus@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="Tudor.Ambarus@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Tudor.Ambarus@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: VEedeoKzQDs5akiyyPYZgDQ0d/06P4UBtk1gVg+zFUcHdAHQdKCAWUdf44mfqYkaj87EG+nC+R
+ PZIgC4cXNqHMkL2d2/H+JN9lUgM7OEBoN0P9dkzQ9fvj7DNE9t6HebQ+lRbGx1KwdSCZ8TREtk
+ f62QVBfbsOkZL0sL61OgnT0yW6pY/Wmir6u2aPJgGsk8PoPXfgTTm3D0fDYa5zDveCZceVEG9M
+ oBxIg3OcHyOAlMADqJ1TLa1swTL5wOWe83cdFWSmxNVPEp0OBERdLwoQDohDkYn1GKjGCk1KYp
+ 9fA=
+X-IronPort-AV: E=Sophos;i="5.70,507,1574146800"; d="scan'208";a="70457040"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 02 Mar 2020 11:07:47 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 2 Mar 2020 11:08:00 -0700
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Mon, 2 Mar 2020 11:08:00 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=XZfEvfngjr6Jytl94aCD8eqDFM+RjQ4cDf9TF6x7CQA6l5Ugl2QXrM5OH0FSE8wLTsmt0wjhuMYJXjYbZgurXgGXGgGkqMhWttUkI1X+ba2101PEwfBJQgVFJoGLmrRowpCd4cG8XV1NXoE+LsN/yyr0ZgYdQ0Oq2THW/3wJ2ciTxIqkFRVL6rApu3oLsis9oN1LMji2PsameCJ58PQ3MNZ5Tnc4N1xhkfVzlQGelyQ5n/sv+AMnvZKIv7Y3FJZleWAOpDxP9Ub/nFNOhU7IZpB/lcrwdX+ZidBDK/UfCe2aczwnZ9n3vf+JWEe6HPQWugAU639EFVU++pz2zXZw2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=l0poWXIWUj865ea3V41XIXQeb+XxEgWLA3jDuYlmD8U=;
+ b=ib/2i+cy6D+jYaK3S6FzBWT6yUEnYjXns7BNQTRv9QLWLhEH2xsjTcsW7dTjvyoRaTsTAZ/hC9MDT0BpMTzT0rJeftmKLSSn+TxjVtzbpsx2FAn7xywja0duvP/4nqGoqcd6nWjIMYVaUi3t1U0NuekXbepTO3UMMOOJElMqCDnEssLQ/uu71cDR7QDm0mTRZnfNFwPraC39y8RwtLJAPiUjntfCW5aAd8NR6KFG86PHYBIxXTBbREQpV1qSKgOwHOBVMjspLINgczBvNlL1zWej2mAiE6EI2lEKH7SfuHBd9Kx4PD9zdNxzU4Tjf4TnicsEeel57YFXK6W/YwpcsA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=l0poWXIWUj865ea3V41XIXQeb+XxEgWLA3jDuYlmD8U=;
+ b=NEY2Or0SeZWfCwEGW4iu2RPTKtrGnZwn18hE9z5WpExnTK58fsVKJEZ2iMFDYu5Qt0jIFctSDMLYSC/pW3KBFL9nfcfxxhYdLqMs7MY33o/i06sihZcvBl8NDu83dbxWyZ9OJL5b4gaYeXQtje0sKV3kiu8AgjAgmw9XCdkkT1o=
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
+ by MN2PR11MB4142.namprd11.prod.outlook.com (2603:10b6:208:135::29)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.14; Mon, 2 Mar
+ 2020 18:07:45 +0000
+Received: from MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
+ ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2772.019; Mon, 2 Mar 2020
+ 18:07:44 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <bbrezillon@kernel.org>, <vigneshr@ti.com>, <linux-mtd@lists.infradead.org>
+Subject: [PATCH 00/23] mtd: spi-nor: Move manufacturer/SFDP code out of the
+ core
+Thread-Topic: [PATCH 00/23] mtd: spi-nor: Move manufacturer/SFDP code out of
+ the core
+Thread-Index: AQHV8L14v5uqqtrWhkmLNySK/DekJQ==
+Date: Mon, 2 Mar 2020 18:07:44 +0000
+Message-ID: <20200302180730.1886678-1-tudor.ambarus@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 444af767-c611-43ba-1ff9-08d7bed49b9c
+x-ms-traffictypediagnostic: MN2PR11MB4142:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR11MB4142DC62E61DACBD7A853FDDF0E70@MN2PR11MB4142.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4303;
+x-forefront-prvs: 033054F29A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(366004)(39860400002)(136003)(396003)(376002)(189003)(199004)(36756003)(26005)(66446008)(107886003)(6486002)(186003)(2616005)(4326008)(478600001)(6512007)(966005)(91956017)(64756008)(66946007)(2906002)(71200400001)(76116006)(8936002)(316002)(86362001)(54906003)(6506007)(66556008)(5660300002)(66476007)(7406005)(1076003)(7416002)(81156014)(81166006)(110136005)(8676002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4142;
+ H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 7ZLZ016wthleOCdLLXnodkIoGotUHh0pSw5SvYGKLZ6ieU5olsJf9PH6EOygE0zwHc2jbawSYf7RjhUtFnMkEVY4q5tAE85gsWL2oZfyfIuWSZgYrtM15W2a/Uw8fnmOnb7E9gukkqC8zGh2JyElTxmtCK1QtaW4pTP2m2xWXr5xdgoS54spIKFw1cbIFt0SM9w3zDV1TyKRT9vty70tGN4bMoVMyQY0SM3MnGbnnD08w0Kjw3OMX3JTbDhP4hxEP6qHUKbFSAHS9DMkXoHPo8zKUvM3k2UHZrESFXUATo/a+FvrSWory/z0yp0RtqfLnX4/l3iHjUQ1x1qiYV/Z983OQPeyhLrZdEHAIG0IpEmGZd7aGBwcuDutpcSrE/FOGpzQjRTgkTfyGI9u++Fm9nnDuW4xTWgXxfrwiRGW4sIrclypU05FVF0cWY1T6YdL8i1YeRQuQms0ryJMvtRT4M5Ldlf6yI/VMzuVsjPJhrBq+LzbPG5nFbxhG4oaTO9x/H/soESzAqqN4Uz0T9Xe/Q==
+x-ms-exchange-antispam-messagedata: FYI25Qo23vceagk6v1CBXzs1C5ipXevLsya6bkDNVBxqm0tFarQIi/XNCTtVi8NKaEKkhbIXT6TmYVn2XI4gHKGzBCl4TEMdCMrXSxQHAdAWlLE5hUMRl5kKtOXfKXCTg53AR1SBqaw4++HFlB2YHg==
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-MS-Exchange-CrossTenant-Network-Message-Id: 444af767-c611-43ba-1ff9-08d7bed49b9c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Mar 2020 18:07:44.2842 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: ck4XWsk8HIzpx5ewUXAtPnzlq13/RAAN7cFnlC/OBwfRylH6IT247NLpW4cOnW0kELFKbDdqcciIQLwYje1JWB9KCV+kkS6jzMJZ+2SpE9c=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_100743_193794_D0EB0B9E 
-X-CRM114-Status: GOOD (  36.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_100756_224390_649873B3 
+X-CRM114-Status: UNSURE (   6.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,323 +154,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dave Airlie <airlied@linux.ie>, Marco Felsch <m.felsch@pengutronix.de>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
- Sascha Hauer <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kstewart@linuxfoundation.org, alexandre.belloni@bootlin.com,
+ linux-aspeed@lists.ozlabs.org, thor.thayer@linux.intel.com,
+ jethro@fortanix.com, rfontana@redhat.com, miquel.raynal@bootlin.com,
+ opensource@jilayne.com, richard@nod.at, michal.simek@xilinx.com,
+ Ludovic.Desroches@microchip.com, joel@jms.id.au, nishkadg.linux@gmail.com,
+ Tudor.Ambarus@microchip.com, john.garry@huawei.com, vz@mleia.com,
+ alexander.sverdlin@nokia.com, matthias.bgg@gmail.com, tglx@linutronix.de,
+ swboyd@chromium.org, mika.westerberg@linux.intel.com, allison@lohutok.net,
+ linux-arm-kernel@lists.infradead.org, andrew@aj.id.au,
+ linux-kernel@vger.kernel.org, dinguyen@kernel.org, michael@walle.cc,
+ ludovic.barre@st.com, linux-mediatek@lists.infradead.org, info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+From: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-On Thu, 2020-02-27 at 19:14 +0100, Daniel Vetter wrote:
-> On Thu, Feb 27, 2020 at 6:44 PM Lucas Stach <l.stach@pengutronix.de> wrote:
-> > Hi Daniel,
-> > 
-> > On Do, 2020-02-27 at 18:29 +0100, Daniel Vetter wrote:
-> > > On Thu, Feb 27, 2020 at 05:21:25PM +0100, Marco Felsch wrote:
-> > > > Currently there is a race conditions if the panel can't be probed e.g.
-> > > > it is not connected [1]. There where several attempts to fix this [2,3]
-> > > > but non of them made it into mainline.
-> > > > 
-> > > > The problem is the combination of the component framework and the drm
-> > > > framework, as Philipp already explained [1]. To fix this we need to
-> > > > drop the devres-kmalloc and move the plain kmalloc to let the drm
-> > > > framework free the resources upon a drm_mode_config_cleanup(). So we need
-> > > > to implement a .destroy() callback for each component. We also need to
-> > > > reorder the master.unbind() callback to ensure that the driver states
-> > > > are accessible during a component.unbind() call. This reordering also
-> > > > aligns the master.unbind() with the error-cleanup path during
-> > > > master.bind().
-> > > > 
-> > > > [1] https://www.spinics.net/lists/dri-devel/msg189388.html
-> > > > [2] https://lkml.org/lkml/2018/10/16/1148
-> > > > [3] https://lkml.org/lkml/2019/4/2/612
-> > > > 
-> > > > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> > > 
-> > > I think this collides quite badly with my managed drm device resources
-> > > patch series I'm working on. Plus once we have that, you could use
-> > > drmm_kzalloc and wouldn't need to sprinkle kfree() over everything.
+Hello,
 
-How does it collide, none of the patches touch imx-drm?
+This patch series is an attempt at getting all manufacturer specific
+quirks/code out of the core to make the core logic more readable and
+thus ease maintainance.
 
-> > > I think at least, I haven't rolled much further than just getting the
-> > > baseline stuff figured out. So if it's not super-pressing to get this
-> > > patch here landed I think it'd be better to base this on top of the drmm
-> > > series. I'm working on sending out v3, I'll cc you on the imx parts so
-> > > you'll get pinged.
-> > 
-> > IMO this part of imx-drm has been broken for far too long already, so
-> > we shouldn't delay this fixes series on a complete resource management
-> > rework.
+This is a respin of the last chunk of Boris's work from
+https://patchwork.ozlabs.org/cover/1009290/.
 
-Right, the use-after-free fixes should not have to be rebased onto
-WIP drmm code. But could we move the fixes to the front, with just
-minimal necessary changes?
-That way they could be backported to stable without the cleanup and code
-shuffling patches in-between.
-We could then migrate the rework to drm managed resources without hurry.
+Tested an erase-write-read-compare with a 1MB file on the following
+flashes: mx25l25635e, w25q128, n25q256a, is25lp256, s25fl256s0,
+gd25q256.
 
-> Given it's patch 17/17 in a spring cleanup, and not patch 1/17 I'm not
-> entirely sure it's really that high priority.
+Boris Brezillon (21):
+  mtd: spi-nor: Stop prefixing generic functions with a manufacturer
+    name
+  mtd: spi-nor: Prepare core / manufacturer code split
+  mtd: spi-nor: Expose stuctures and functions to manufacturer drivers
+  mtd: spi-nor: Add the concept of SPI NOR manufacturer driver
+  mtd: spi-nor: Move Atmel bits out of core.c
+  mtd: spi-nor: Move Eon bits out of core.c
+  mtd: spi-nor: Move ESMT bits out of core.c
+  mtd: spi-nor: Move Everspin bits out of core.c
+  mtd: spi-nor: Move Fujitsu bits out of core.c
+  mtd: spi-nor: Move GigaDevice bits out of core.c
+  mtd: spi-nor: Move Intel bits out of core.c
+  mtd: spi-nor: Move ISSI bits out of core.c
+  mtd: spi-nor: Move Macronix bits out of core.c
+  mtd: spi-nor: Move Micron/ST bits out of core.c
+  mtd: spi-nor: Move Spansion bits out of core.c
+  mtd: spi-nor: Move SST bits out of core.c
+  mtd: spi-nor: Move Winbond bits out of core.c
+  mtd: spi-nor: Move Catalyst bits out of core.c
+  mtd: spi-nor: Move Xilinx bits out of core.c
+  mtd: spi-nor: Move XMC bits out of core.c
+  mtd: spi-nor: Get rid of the now empty spi_nor_ids[] table
 
-This series fixes crashes on probe in case of defective device trees or
-missing component drivers. I wouldn't get too hung up on the "spring
-cleanup" name, but the actual fix being the last of a series of 17
-patches is a valid point.
+Tudor Ambarus (2):
+  mtd: spi-nor: Move SFDP logic out of the core
+  mtd: spi-nor: Trim what is exposed in spi-nor.h
 
-> Anyway would be great if you at least check out what the new drm
-> managed resource stuff would mean for imx here, since you're blowing
-> on devm_kzalloc exactly in the way that I'm trying to get sorted now
-> (without tons of explicit kfree() everywhere).
+ drivers/mtd/spi-nor/Kconfig                   |   83 +-
+ drivers/mtd/spi-nor/Makefile                  |   26 +-
+ drivers/mtd/spi-nor/atmel.c                   |   46 +
+ drivers/mtd/spi-nor/catalyst.c                |   29 +
+ drivers/mtd/spi-nor/controllers/Kconfig       |   83 +
+ drivers/mtd/spi-nor/controllers/Makefile      |    9 +
+ .../spi-nor/{ => controllers}/aspeed-smc.c    |    0
+ .../{ => controllers}/cadence-quadspi.c       |    0
+ .../mtd/spi-nor/{ => controllers}/hisi-sfc.c  |    0
+ .../spi-nor/{ => controllers}/intel-spi-pci.c |    0
+ .../{ => controllers}/intel-spi-platform.c    |    0
+ .../mtd/spi-nor/{ => controllers}/intel-spi.c |    0
+ .../mtd/spi-nor/{ => controllers}/intel-spi.h |    0
+ .../spi-nor/{ => controllers}/mtk-quadspi.c   |    0
+ .../mtd/spi-nor/{ => controllers}/nxp-spifi.c |    0
+ drivers/mtd/spi-nor/{spi-nor.c => core.c}     | 2503 ++---------------
+ drivers/mtd/spi-nor/core.h                    |  432 +++
+ drivers/mtd/spi-nor/eon.c                     |   34 +
+ drivers/mtd/spi-nor/esmt.c                    |   25 +
+ drivers/mtd/spi-nor/everspin.c                |   27 +
+ drivers/mtd/spi-nor/fujitsu.c                 |   20 +
+ drivers/mtd/spi-nor/gigadevice.c              |   59 +
+ drivers/mtd/spi-nor/intel.c                   |   32 +
+ drivers/mtd/spi-nor/issi.c                    |   83 +
+ drivers/mtd/spi-nor/macronix.c                |   98 +
+ drivers/mtd/spi-nor/micron-st.c               |  129 +
+ drivers/mtd/spi-nor/sfdp.c                    | 1206 ++++++++
+ drivers/mtd/spi-nor/sfdp.h                    |   98 +
+ drivers/mtd/spi-nor/spansion.c                |   95 +
+ drivers/mtd/spi-nor/sst.c                     |  151 +
+ drivers/mtd/spi-nor/winbond.c                 |  113 +
+ drivers/mtd/spi-nor/xilinx.c                  |   94 +
+ drivers/mtd/spi-nor/xmc.c                     |   23 +
+ include/linux/mtd/spi-nor.h                   |  257 +-
+ 34 files changed, 3121 insertions(+), 2634 deletions(-)
+ create mode 100644 drivers/mtd/spi-nor/atmel.c
+ create mode 100644 drivers/mtd/spi-nor/catalyst.c
+ create mode 100644 drivers/mtd/spi-nor/controllers/Kconfig
+ create mode 100644 drivers/mtd/spi-nor/controllers/Makefile
+ rename drivers/mtd/spi-nor/{ => controllers}/aspeed-smc.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/cadence-quadspi.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/hisi-sfc.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi-pci.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi-platform.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/intel-spi.h (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/mtk-quadspi.c (100%)
+ rename drivers/mtd/spi-nor/{ => controllers}/nxp-spifi.c (100%)
+ rename drivers/mtd/spi-nor/{spi-nor.c => core.c} (52%)
+ create mode 100644 drivers/mtd/spi-nor/core.h
+ create mode 100644 drivers/mtd/spi-nor/eon.c
+ create mode 100644 drivers/mtd/spi-nor/esmt.c
+ create mode 100644 drivers/mtd/spi-nor/everspin.c
+ create mode 100644 drivers/mtd/spi-nor/fujitsu.c
+ create mode 100644 drivers/mtd/spi-nor/gigadevice.c
+ create mode 100644 drivers/mtd/spi-nor/intel.c
+ create mode 100644 drivers/mtd/spi-nor/issi.c
+ create mode 100644 drivers/mtd/spi-nor/macronix.c
+ create mode 100644 drivers/mtd/spi-nor/micron-st.c
+ create mode 100644 drivers/mtd/spi-nor/sfdp.c
+ create mode 100644 drivers/mtd/spi-nor/sfdp.h
+ create mode 100644 drivers/mtd/spi-nor/spansion.c
+ create mode 100644 drivers/mtd/spi-nor/sst.c
+ create mode 100644 drivers/mtd/spi-nor/winbond.c
+ create mode 100644 drivers/mtd/spi-nor/xilinx.c
+ create mode 100644 drivers/mtd/spi-nor/xmc.c
 
-I concur. Marco, would the following workaround be enough to fix the
-issue until we can switch to drm managed allocations?
-
-----------8<----------
-From b1c98a9d7b29fc052491d7fe0f7a1af91e48d866 Mon Sep 17 00:00:00 2001
-From: Philipp Zabel <p.zabel@pengutronix.de>
-Date: Mon, 2 Mar 2020 17:12:44 +0100
-Subject: [PATCH] drm/imx: fix use after free
-
-Component driver structures allocated with devm_kmalloc() in bind() are
-freed automatically after unbind(). Since the contained drm structures
-are accessed afterwards in drm_mode_config_cleanup(), move the
-allocation into probe() to extend the driver structure's lifetime to the
-lifetime of the device. This should eventually be changed to use drm
-resource managed allocations with lifetime of the drm device.
-
-Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
----
- drivers/gpu/drm/imx/dw_hdmi-imx.c      | 15 ++++++++++-----
- drivers/gpu/drm/imx/imx-ldb.c          | 15 ++++++++++-----
- drivers/gpu/drm/imx/imx-tve.c          | 15 ++++++++++-----
- drivers/gpu/drm/imx/ipuv3-crtc.c       | 21 ++++++++++-----------
- drivers/gpu/drm/imx/parallel-display.c | 15 ++++++++++-----
- 5 files changed, 50 insertions(+), 31 deletions(-)
-
-diff --git a/drivers/gpu/drm/imx/dw_hdmi-imx.c b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-index f22cfbf9353e..2e12a4a3bfa1 100644
---- a/drivers/gpu/drm/imx/dw_hdmi-imx.c
-+++ b/drivers/gpu/drm/imx/dw_hdmi-imx.c
-@@ -212,9 +212,8 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
- 	if (!pdev->dev.of_node)
- 		return -ENODEV;
- 
--	hdmi = devm_kzalloc(&pdev->dev, sizeof(*hdmi), GFP_KERNEL);
--	if (!hdmi)
--		return -ENOMEM;
-+	hdmi = dev_get_drvdata(dev);
-+	memset(hdmi, 0, sizeof(*hdmi));
- 
- 	match = of_match_node(dw_hdmi_imx_dt_ids, pdev->dev.of_node);
- 	plat_data = match->data;
-@@ -239,8 +238,6 @@ static int dw_hdmi_imx_bind(struct device *dev, struct device *master,
- 	drm_encoder_init(drm, encoder, &dw_hdmi_imx_encoder_funcs,
- 			 DRM_MODE_ENCODER_TMDS, NULL);
- 
--	platform_set_drvdata(pdev, hdmi);
--
- 	hdmi->hdmi = dw_hdmi_bind(pdev, encoder, plat_data);
- 
- 	/*
-@@ -270,6 +267,14 @@ static const struct component_ops dw_hdmi_imx_ops = {
- 
- static int dw_hdmi_imx_probe(struct platform_device *pdev)
- {
-+	struct imx_hdmi *hdmi;
-+
-+	hdmi = devm_kzalloc(&pdev->dev, sizeof(*hdmi), GFP_KERNEL);
-+	if (!hdmi)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, hdmi);
-+
- 	return component_add(&pdev->dev, &dw_hdmi_imx_ops);
- }
- 
-diff --git a/drivers/gpu/drm/imx/imx-ldb.c b/drivers/gpu/drm/imx/imx-ldb.c
-index 8cb2665b2c74..c42217fc9f47 100644
---- a/drivers/gpu/drm/imx/imx-ldb.c
-+++ b/drivers/gpu/drm/imx/imx-ldb.c
-@@ -594,9 +594,8 @@ static int imx_ldb_bind(struct device *dev, struct device *master, void *data)
- 	int ret;
- 	int i;
- 
--	imx_ldb = devm_kzalloc(dev, sizeof(*imx_ldb), GFP_KERNEL);
--	if (!imx_ldb)
--		return -ENOMEM;
-+	imx_ldb = dev_get_drvdata(dev);
-+	memset(imx_ldb, 0, sizeof(*imx_ldb));
- 
- 	imx_ldb->regmap = syscon_regmap_lookup_by_phandle(np, "gpr");
- 	if (IS_ERR(imx_ldb->regmap)) {
-@@ -704,8 +703,6 @@ static int imx_ldb_bind(struct device *dev, struct device *master, void *data)
- 		}
- 	}
- 
--	dev_set_drvdata(dev, imx_ldb);
--
- 	return 0;
- 
- free_child:
-@@ -737,6 +734,14 @@ static const struct component_ops imx_ldb_ops = {
- 
- static int imx_ldb_probe(struct platform_device *pdev)
- {
-+	struct imx_ldb *imx_ldb;
-+
-+	imx_ldb = devm_kzalloc(&pdev->dev, sizeof(*imx_ldb), GFP_KERNEL);
-+	if (!imx_ldb)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, imx_ldb);
-+
- 	return component_add(&pdev->dev, &imx_ldb_ops);
- }
- 
-diff --git a/drivers/gpu/drm/imx/imx-tve.c b/drivers/gpu/drm/imx/imx-tve.c
-index 5bbfaa2cd0f4..6593e75fc16e 100644
---- a/drivers/gpu/drm/imx/imx-tve.c
-+++ b/drivers/gpu/drm/imx/imx-tve.c
-@@ -546,9 +546,8 @@ static int imx_tve_bind(struct device *dev, struct device *master, void *data)
- 	int irq;
- 	int ret;
- 
--	tve = devm_kzalloc(dev, sizeof(*tve), GFP_KERNEL);
--	if (!tve)
--		return -ENOMEM;
-+	tve = dev_get_drvdata(dev);
-+	memset(tve, 0, sizeof(*tve));
- 
- 	tve->dev = dev;
- 	spin_lock_init(&tve->lock);
-@@ -659,8 +658,6 @@ static int imx_tve_bind(struct device *dev, struct device *master, void *data)
- 	if (ret)
- 		return ret;
- 
--	dev_set_drvdata(dev, tve);
--
- 	return 0;
- }
- 
-@@ -680,6 +677,14 @@ static const struct component_ops imx_tve_ops = {
- 
- static int imx_tve_probe(struct platform_device *pdev)
- {
-+	struct imx_tve *tve;
-+
-+	tve = devm_kzalloc(dev, sizeof(*tve), GFP_KERNEL);
-+	if (!tve)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, tve);
-+
- 	return component_add(&pdev->dev, &imx_tve_ops);
- }
- 
-diff --git a/drivers/gpu/drm/imx/ipuv3-crtc.c b/drivers/gpu/drm/imx/ipuv3-crtc.c
-index 63c0284f8b3c..2256c9789fc2 100644
---- a/drivers/gpu/drm/imx/ipuv3-crtc.c
-+++ b/drivers/gpu/drm/imx/ipuv3-crtc.c
-@@ -438,21 +438,13 @@ static int ipu_drm_bind(struct device *dev, struct device *master, void *data)
- 	struct ipu_client_platformdata *pdata = dev->platform_data;
- 	struct drm_device *drm = data;
- 	struct ipu_crtc *ipu_crtc;
--	int ret;
- 
--	ipu_crtc = devm_kzalloc(dev, sizeof(*ipu_crtc), GFP_KERNEL);
--	if (!ipu_crtc)
--		return -ENOMEM;
-+	ipu_crtc = dev_get_drvdata(dev);
-+	memset(ipu_crtc, 0, sizeof(*ipu_crtc));
- 
- 	ipu_crtc->dev = dev;
- 
--	ret = ipu_crtc_init(ipu_crtc, pdata, drm);
--	if (ret)
--		return ret;
--
--	dev_set_drvdata(dev, ipu_crtc);
--
--	return 0;
-+	return ipu_crtc_init(ipu_crtc, pdata, drm);
- }
- 
- static void ipu_drm_unbind(struct device *dev, struct device *master,
-@@ -474,6 +466,7 @@ static const struct component_ops ipu_crtc_ops = {
- static int ipu_drm_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-+	struct ipu_crtc *ipu_crtc;
- 	int ret;
- 
- 	if (!dev->platform_data)
-@@ -483,6 +476,12 @@ static int ipu_drm_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
-+	ipu_crtc = devm_kzalloc(dev, sizeof(*ipu_crtc), GFP_KERNEL);
-+	if (!ipu_crtc)
-+		return -ENOMEM;
-+
-+	dev_set_drvdata(dev, ipu_crtc);
-+
- 	return component_add(dev, &ipu_crtc_ops);
- }
- 
-diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
-index 3dca424059f7..e6e629bd4b2a 100644
---- a/drivers/gpu/drm/imx/parallel-display.c
-+++ b/drivers/gpu/drm/imx/parallel-display.c
-@@ -205,9 +205,8 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
- 	u32 bus_format = 0;
- 	const char *fmt;
- 
--	imxpd = devm_kzalloc(dev, sizeof(*imxpd), GFP_KERNEL);
--	if (!imxpd)
--		return -ENOMEM;
-+	imxpd = dev_get_drvdata(dev);
-+	memset(imxpd, 0, sizeof(*imxpd));
- 
- 	edidp = of_get_property(np, "edid", &imxpd->edid_len);
- 	if (edidp)
-@@ -237,8 +236,6 @@ static int imx_pd_bind(struct device *dev, struct device *master, void *data)
- 	if (ret)
- 		return ret;
- 
--	dev_set_drvdata(dev, imxpd);
--
- 	return 0;
- }
- 
-@@ -260,6 +257,14 @@ static const struct component_ops imx_pd_ops = {
- 
- static int imx_pd_probe(struct platform_device *pdev)
- {
-+	struct imx_parallel_display *imxpd;
-+
-+	imxpd = devm_kzalloc(&pdev->dev, sizeof(*imxpd), GFP_KERNEL);
-+	if (!imxpd)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, imxpd);
-+
- 	return component_add(&pdev->dev, &imx_pd_ops);
- }
- 
-
-base-commit: 98d54f81e36ba3bf92172791eba5ca5bd813989b
 -- 
-2.20.1
----------->8----------
-
-regards
-Philipp
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
