@@ -2,75 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CBC9175FA4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 17:30:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02E73175FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 17:31:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TbFkOiLeXM/JO3aLOG5b6OR6GuvLLVPdsB9tFihKRsA=; b=J95ozOynmihA2r
-	M9CfGZmGU3FhDJeuka0dcGN9x6J/Ib2M9iBcLP1DVD1TYjV4A5xalOyOk3SxvGrWF2NJcK3hqOdbN
-	kPuTB5tG2lmOd/Fy1bWmQFV2K1fERv4yT8aXa//eqClpO+lt9SiSIRKWj/TCn273FEy3isgwaL/Dr
-	F+2FrvC6QrlXFuy/15YSVj/L8uRhsMtBYweoZ9+u/2poSCrHiXxduVje0TrCQvLpZfdhSWUYeohqW
-	K48/mxqiQ7+RrPjFnP+8psGV/qyW/8P9dkg1l9zQEf9dMAd99ISiO55PYtzKERIbGlg/ozi0Uzxqa
-	Myjkwv6rTnFMtQ2Y/Egw==;
+	List-Owner; bh=INf+2lE0iHNtUAyvPO0uYBTdLz2Fn/0zjC6AhMjiQyI=; b=Kf4yP8RwGU/hRZ
+	iJngDYUkEz6IBE6jJezxkb/mk90C/u/gKQJQH3AxXyX28H9GCJuQCvcOH8N3pWQ589iGdqKPKJK6J
+	65iRO+Ov8dL6FOwxT5HVBccAeLnEAIRAkUXWItvDhCg8fsGSZowg/Opf4bEmfy/CscE3M7A/8MxGR
+	LB6SgONsw68tBuAmCS+MAZAt6RAOOqJT2lB0WynSkqlYqBI/P7/dG8eKi8/8amLtg4AbaWwFlSjzC
+	rdzP0eMtjzNvxu1Y2pJekUealIAvEWh5gmhEXteV11G277tAM7nbr+yffHiu0qcNS7HZnKjPxzX+i
+	Nnnubdow7yBL33zlugqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nxB-0004hk-1V; Mon, 02 Mar 2020 16:30:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j8nyQ-0006Ho-C0; Mon, 02 Mar 2020 16:31:18 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nx3-0004h9-Sx
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 16:29:55 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A44DF21556;
- Mon,  2 Mar 2020 16:29:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583166593;
- bh=aQwFBIEFymMg+SbLZYm+H1s25h6H8TWj3yOMojUhAEw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=eWjY+SPSqFT5gpqRIRoMalYK4S0yFwviM85JQsvOPfqaYaa0Raigd/dyM3ya8mmq3
- otJHhBJkdMfLjFKKQepx7rYVx48FCyBjgUMD2HqhxNrIVTJuLmUFH4RB9tIsiqn1QD
- MOjm39XiKIUchBH/9HYqjgi6b/WOp1YDfkX/7JFI=
-Date: Mon, 2 Mar 2020 16:29:48 +0000
-From: Will Deacon <will@kernel.org>
-To: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH 1/2] arm64: ptrauth: add pointer authentication Armv8.6
- enhanced feature
-Message-ID: <20200302162948.GB11427@willie-the-truck>
-References: <1582117240-15330-1-git-send-email-amit.kachhap@arm.com>
- <1582117240-15330-2-git-send-email-amit.kachhap@arm.com>
- <20200228115736.GA3275@willie-the-truck>
- <20200228120314.GD36089@lakrids.cambridge.arm.com>
- <20200228122345.GC3275@willie-the-truck>
- <194f0008-4071-b143-f326-2f067e3b82fe@arm.com>
+ id 1j8nyH-0006Fz-Lx
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 16:31:10 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 6so3491541wmi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Mar 2020 08:31:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=9ekD/wZU2juB89x3ikSs3OkvRfctZBZxxFo0UhHx8JY=;
+ b=eoSemUK7ZEaNlKrg4HP6Fdxa2bm/AR3bYZEjvkL17es58SixQJTcPwvyZwNOpDQ8A/
+ MQG1tGVsfuxNYI4m+NO7zBAFHQJmYENCdyK126T8b/+5n0RtMHVIIRFI3KCqz1cZ47cu
+ ymX4QQ8l8KrH+NmiJS8zfmW0n9b6efekoW9GjqwPf1dHmurPNtTQ/bwcogGAuRZ5Kslc
+ 67wzNcuxqJnr8n4Ibt5O7nzmF+gMa81KoaNWC7OJdB3nWYNkVVKZZ+TVtLC6ORZ6eDA/
+ ep5tQy1soUtgwjVcNFtV34CG7UMIljnWx4rgW1tykurhCb0F+8LSFTJ3Mj9v+xvo+Lss
+ gJJg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=9ekD/wZU2juB89x3ikSs3OkvRfctZBZxxFo0UhHx8JY=;
+ b=JmomJ/HtCFPilAXtbG0AM4hZbL5SAnrfrMgtUQk0U3j5qfe7AA8WHwqZn9Em5965f9
+ 9OHsGgr6SQaD0oe7k/4O2WkvgVmQ9FshwuPT58XwrFYunwbBJN4ANyn2bqLBOCR8mG51
+ KiM8856/MRxeZd181/ep4v6vVHBvxHQF1P7DHupafKGVywZNQhnOeZetklpxm/7MzADE
+ KGOsohbHDBfT9a0d47BfttLOgE3cQ91zRfAwWdYlVkrQwNx4OYqLplqM9dEXub8fR94N
+ 6j/rxwtkwnCGiKY+jaGNa7EN3Om5Lj0xrNKF8Z5tcnWiL6Pru8A/xux41Ap3TsTvZj2b
+ RtMw==
+X-Gm-Message-State: ANhLgQ1dyt80x7J2/7iRy3foszWPFXXkIXauTIRzxiyQEIlZidDQoxaj
+ qA90jQ4/LQf7fzrU21ah5kSZQA==
+X-Google-Smtp-Source: ADFU+vsO4oMThfxe4T+3k8CrA3b+cufx1zE37BxkfjQy0S1+vSAU7EwEHK50HsH3LU0tLqS86uSXvw==
+X-Received: by 2002:a7b:c183:: with SMTP id y3mr250047wmi.0.1583166667736;
+ Mon, 02 Mar 2020 08:31:07 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id v131sm17357885wme.23.2020.03.02.08.31.06
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 02 Mar 2020 08:31:07 -0800 (PST)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Jianxin Pan <jianxin.pan@amlogic.com>, linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH v2] dt-bindings: power: Fix dt_binding_check error
+In-Reply-To: <1583164448-83438-1-git-send-email-jianxin.pan@amlogic.com>
+References: <1583164448-83438-1-git-send-email-jianxin.pan@amlogic.com>
+Date: Mon, 02 Mar 2020 17:31:06 +0100
+Message-ID: <7hsgiqra5x.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <194f0008-4071-b143-f326-2f067e3b82fe@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_082953_973457_AEAE7DA1 
-X-CRM114-Status: GOOD (  25.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200302_083109_719647_F384225F 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,76 +92,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Stephen
+ Rothwell <sfr@canb.auug.org.au>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 06:18:17PM +0530, Amit Kachhap wrote:
-> On 2/28/20 5:53 PM, Will Deacon wrote:
-> > On Fri, Feb 28, 2020 at 12:03:14PM +0000, Mark Rutland wrote:
-> > > On Fri, Feb 28, 2020 at 11:57:37AM +0000, Will Deacon wrote:
-> > > > On Wed, Feb 19, 2020 at 06:30:39PM +0530, Amit Daniel Kachhap wrote:
-> > > > > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> > > > > index 8d1c979..a4f8adb 100644
-> > > > > --- a/arch/arm64/kernel/cpufeature.c
-> > > > > +++ b/arch/arm64/kernel/cpufeature.c
-> > > > > @@ -154,9 +154,9 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
-> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FCMA_SHIFT, 4, 0),
-> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_JSCVT_SHIFT, 4, 0),
-> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
-> > > > > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_API_SHIFT, 4, 0),
-> > > > > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_API_SHIFT, 4, 0),
-> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
-> > > > > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_APA_SHIFT, 4, 0),
-> > > > > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_APA_SHIFT, 4, 0),
-> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DPB_SHIFT, 4, 0),
-> > > > >   	ARM64_FTR_END,
-> > > > 
-> > > > Hmm. This is a user-visible change and should probably be in its own patch.
-> > > > It also means we will no longer advertise PAC on systems where not all of
-> > > > the cores have "Enhanced PAC"; is that really necessary?
-> > > 
-> > > It matters for KVM, since a guest won't expect the enhanced PAC trap if
-> > > the ID registers say it does not have it.
-> > > 
-> > > For userspace, the difference is it'll get a SIGILL on the AUT*
-> > > instruction rather than a SIGSEGV when using the result of the AUT*
-> > > instruction.
-> > 
-> > Yes, if PAC is enabled.
-> > 
-> > > > Generally we rely on incremental updates to unsigned ID register fields
-> > > > being a superset (i.e. compatible with) the old behaviour. If that's not
-> > > > the case here, then older kernels are broken and we may need new HWCAPs.
-> > > 
-> > > In this case, the behaviour isn't a strict superset. Enhanced PAC
-> > > unconditionally changed the behaviour of AUT* (i.e. there's no opt-in
-> > > with a control bit), but it's not clear to me how much this matters for
-> > > userspace.
-> > 
-> > Doesn't that violate D13.1.3 "Principles of the ID scheme for fields in
-> > ID registers"?
-> > 
-> > The part I dislike is that older kernels will happily advertise PAC to
-> > userspace on a system with mismatched legacy/enhanced PAC, and so the
-> > change above doesn't make sense for userspace because the HWCAPs are
-> > already unreliable.
-> 
-> How to got about it? Shall I send this part as a separate fix patch
-> mentioning the requirement for doing it?
+Hi Jianxin,
 
-I didn't see a reply from Mark, but yes, I think this should be a separate
-patch. Further, I think it should only affect KVM and not userspace.
+Jianxin Pan <jianxin.pan@amlogic.com> writes:
 
-Will
+> Missing ';' in the end of secure-monitor example node.
+>
+> Fixes: 165b5fb294e8 ("dt-bindings: power: add Amlogic secure power domains bindings")
+> Reported-by: Rob Herring <robh+dt@kernel.org>
+> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> ---
+>  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> index af32209..bc4e037 100644
+> --- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> @@ -36,5 +36,5 @@ examples:
+>              compatible = "amlogic,meson-a1-pwrc";
+>              #power-domain-cells = <1>;
+>          };
+> -    }
+> +    };
+
+Thanks for the fix.  Queued for v5.7.
+
+@Arnd, @Olof: you can ignore this one.  I requested Jianxin to send to
+you thinking this was a fix for something you already queued, but it's
+not.  I'll handle it.
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
