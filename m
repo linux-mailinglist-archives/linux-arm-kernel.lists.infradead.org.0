@@ -2,51 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06D6B175F9F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 17:29:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CBC9175FA4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 17:30:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zSp/16th3Dbo7jlxxzJJosLZBhFdnFlKS4SgAGSVc+c=; b=OlAN09/9KQUE9B
-	TwSNwK/BvnoXWGbNNafO4LRHzIqtgsQsFk6hpmasVzgZrn0vCqwvwxw1gFm/kb+67d5FPptgxxH62
-	kZLg/yxWwPGZwIE0GCcE6efzZfywbPAwpjuP771rHUuQRcBtLIG8uQjHpnf6qfFIACZGDuj0k1qjp
-	a9K4DZ5g7e54WwqOPvj7T3xkhiPYYwvRHAcql2cU+7wKIUFqzVJzeVUlpZwnB6UoljQenv6OPuwJ4
-	TXJUZk6ZbSgcxz9xTtXBwdPaxzZKJk7Ydx7ndkkXxQyoMXHBg6epJhoALgJRy75mYLNVKwTbsgOos
-	Ur+dg+cJ7GUCScw9v4GA==;
+	List-Owner; bh=TbFkOiLeXM/JO3aLOG5b6OR6GuvLLVPdsB9tFihKRsA=; b=J95ozOynmihA2r
+	M9CfGZmGU3FhDJeuka0dcGN9x6J/Ib2M9iBcLP1DVD1TYjV4A5xalOyOk3SxvGrWF2NJcK3hqOdbN
+	kPuTB5tG2lmOd/Fy1bWmQFV2K1fERv4yT8aXa//eqClpO+lt9SiSIRKWj/TCn273FEy3isgwaL/Dr
+	F+2FrvC6QrlXFuy/15YSVj/L8uRhsMtBYweoZ9+u/2poSCrHiXxduVje0TrCQvLpZfdhSWUYeohqW
+	K48/mxqiQ7+RrPjFnP+8psGV/qyW/8P9dkg1l9zQEf9dMAd99ISiO55PYtzKERIbGlg/ozi0Uzxqa
+	Myjkwv6rTnFMtQ2Y/Egw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nwV-0004PX-4Y; Mon, 02 Mar 2020 16:29:19 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1j8nxB-0004hk-1V; Mon, 02 Mar 2020 16:30:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nwJ-0004ML-9m; Mon, 02 Mar 2020 16:29:08 +0000
-Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1j8nwF-0003w2-0L; Mon, 02 Mar 2020 17:29:03 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 1/2] dt-bindings: gpu: mali-bifrost: Add Rockchip PX30
- compatible
-Date: Mon, 02 Mar 2020 17:29:02 +0100
-Message-ID: <2766954.FXckbfHlGz@diego>
-In-Reply-To: <20200302155808.11273-1-miquel.raynal@bootlin.com>
-References: <20200302155808.11273-1-miquel.raynal@bootlin.com>
+ id 1j8nx3-0004h9-Sx
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 16:29:55 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A44DF21556;
+ Mon,  2 Mar 2020 16:29:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583166593;
+ bh=aQwFBIEFymMg+SbLZYm+H1s25h6H8TWj3yOMojUhAEw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eWjY+SPSqFT5gpqRIRoMalYK4S0yFwviM85JQsvOPfqaYaa0Raigd/dyM3ya8mmq3
+ otJHhBJkdMfLjFKKQepx7rYVx48FCyBjgUMD2HqhxNrIVTJuLmUFH4RB9tIsiqn1QD
+ MOjm39XiKIUchBH/9HYqjgi6b/WOp1YDfkX/7JFI=
+Date: Mon, 2 Mar 2020 16:29:48 +0000
+From: Will Deacon <will@kernel.org>
+To: Amit Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH 1/2] arm64: ptrauth: add pointer authentication Armv8.6
+ enhanced feature
+Message-ID: <20200302162948.GB11427@willie-the-truck>
+References: <1582117240-15330-1-git-send-email-amit.kachhap@arm.com>
+ <1582117240-15330-2-git-send-email-amit.kachhap@arm.com>
+ <20200228115736.GA3275@willie-the-truck>
+ <20200228120314.GD36089@lakrids.cambridge.arm.com>
+ <20200228122345.GC3275@willie-the-truck>
+ <194f0008-4071-b143-f326-2f067e3b82fe@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <194f0008-4071-b143-f326-2f067e3b82fe@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_082907_487135_FBB9C115 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_082953_973457_AEAE7DA1 
+X-CRM114-Status: GOOD (  25.12  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,33 +82,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Montag, 2. M=E4rz 2020, 16:58:07 CET schrieb Miquel Raynal:
-> Rockchip PX30 SoCs feature a Bifrost Mali GPU.
-> =
+On Mon, Mar 02, 2020 at 06:18:17PM +0530, Amit Kachhap wrote:
+> On 2/28/20 5:53 PM, Will Deacon wrote:
+> > On Fri, Feb 28, 2020 at 12:03:14PM +0000, Mark Rutland wrote:
+> > > On Fri, Feb 28, 2020 at 11:57:37AM +0000, Will Deacon wrote:
+> > > > On Wed, Feb 19, 2020 at 06:30:39PM +0530, Amit Daniel Kachhap wrote:
+> > > > > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> > > > > index 8d1c979..a4f8adb 100644
+> > > > > --- a/arch/arm64/kernel/cpufeature.c
+> > > > > +++ b/arch/arm64/kernel/cpufeature.c
+> > > > > @@ -154,9 +154,9 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
+> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FCMA_SHIFT, 4, 0),
+> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_JSCVT_SHIFT, 4, 0),
+> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+> > > > > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_API_SHIFT, 4, 0),
+> > > > > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_API_SHIFT, 4, 0),
+> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+> > > > > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_APA_SHIFT, 4, 0),
+> > > > > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_APA_SHIFT, 4, 0),
+> > > > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DPB_SHIFT, 4, 0),
+> > > > >   	ARM64_FTR_END,
+> > > > 
+> > > > Hmm. This is a user-visible change and should probably be in its own patch.
+> > > > It also means we will no longer advertise PAC on systems where not all of
+> > > > the cores have "Enhanced PAC"; is that really necessary?
+> > > 
+> > > It matters for KVM, since a guest won't expect the enhanced PAC trap if
+> > > the ID registers say it does not have it.
+> > > 
+> > > For userspace, the difference is it'll get a SIGILL on the AUT*
+> > > instruction rather than a SIGSEGV when using the result of the AUT*
+> > > instruction.
+> > 
+> > Yes, if PAC is enabled.
+> > 
+> > > > Generally we rely on incremental updates to unsigned ID register fields
+> > > > being a superset (i.e. compatible with) the old behaviour. If that's not
+> > > > the case here, then older kernels are broken and we may need new HWCAPs.
+> > > 
+> > > In this case, the behaviour isn't a strict superset. Enhanced PAC
+> > > unconditionally changed the behaviour of AUT* (i.e. there's no opt-in
+> > > with a control bit), but it's not clear to me how much this matters for
+> > > userspace.
+> > 
+> > Doesn't that violate D13.1.3 "Principles of the ID scheme for fields in
+> > ID registers"?
+> > 
+> > The part I dislike is that older kernels will happily advertise PAC to
+> > userspace on a system with mismatched legacy/enhanced PAC, and so the
+> > change above doesn't make sense for userspace because the HWCAPs are
+> > already unreliable.
+> 
+> How to got about it? Shall I send this part as a separate fix patch
+> mentioning the requirement for doing it?
 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
->  Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml | 1 +
+I didn't see a reply from Mark, but yes, I think this should be a separate
+patch. Further, I think it should only affect KVM and not userspace.
 
-already in mainline ;-)
-
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?=
-id=3Dad848dd53385b61f3c2b94d3466bf799f31035a7
-
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
