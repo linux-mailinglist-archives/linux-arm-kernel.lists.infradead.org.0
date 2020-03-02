@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1773175A20
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 13:13:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 415ED175A5B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 13:21:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wpIm1wHMXbTLuLWMjqSo30FzU+n+Lur2iT8rdzEOYnM=; b=nCUIC2/opmX5JwZPw/eG9EHAV
-	Ovse/PzvYS2gzHIIqYwbfKB3NDcotzxA+TLK7wXZtjJOzA9AdKIGnIQzngtYZzoJvxi6iXrUFov9R
-	WixYZdglA0euMz/qFfAlVTeVjQNrt2tFGskdaeQXBCPvmEGPw1JMr4vXjIR3/mSW5QFNL1ApUS3/X
-	Jc45NMx5D1THZ8Ys7yVCdRWb8zZ+wmQbSVN9gn5V0/CyT3BHtwSh841v/EDPWAbqNxztlZe+fPra2
-	oMnqGUurIE8y8SpZFOAvfRTGCsO1DcRLndzZ4CX7J38UVtbeMrphBQH2jijiI4LmketRbjI8P6tz7
-	psno5mxJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uEDKhOBIUmfuLbJUai6MEelGOUC9fr1b7oMBhj3CTho=; b=oi1SRS7dRBzRvA
+	BSxKWEZgea/7HpHGYCQdC3JZ0XJsPolcEfi/OyK7qQ24M/6i1eE8pHD+4YprtMMvecqPGUxEt/jhI
+	jaeEndy9WltBy/JRVGBmPqeIE0v9MsNK34+z6lZ1Pn0sC0pttmZ2oztPucTdBu+G8AU6MLm0LLKpY
+	DkMMqzrKsCHvf/Cl+5eVE8z6dW0/M+Qc+vwttF9BKzfayzw/nAsJ+sX6+0dJ+mHiEubqwxr9G0smX
+	wKyaIZxp/ePUv/p4lEIH1LkJ3AHYUynmeCT+6I+Y0899uPM3ui3AWg4J/KJHkdUhlme9qgtor/6Nt
+	vLZ8lZ0kgE1RWrseXsfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8jwM-0002n6-VB; Mon, 02 Mar 2020 12:12:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8jwH-0002mZ-1y
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 12:12:50 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9AD112173E;
- Mon,  2 Mar 2020 12:12:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583151168;
- bh=Lymq4yucP910jG3yAZt3+nbi5KerTQ3U6G6bpUjy4to=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=dzgfqg0/uVS23vSco9JoTIf3WbWIp+BhFrKQRBlscAYzmJYe1JdXz3LW0em6JDra0
- tHlUlPG/PDhJIX9GqwoQxKCaqE0RTbt1LDJzflgr3/znEysTywuYph/kfJ5dwTwg0Y
- onrCNZAOCAvxq/Pfy0xNMTkNhDf65AnnCIt5R2bQ=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j8jwE-009N9H-TY; Mon, 02 Mar 2020 12:12:47 +0000
+	id 1j8k4z-0006Yo-61; Mon, 02 Mar 2020 12:21:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8k4s-0006Xr-0k
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 12:21:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C29C82F;
+ Mon,  2 Mar 2020 04:21:38 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C34393F534;
+ Mon,  2 Mar 2020 04:21:37 -0800 (PST)
+Date: Mon, 2 Mar 2020 12:21:35 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH] arm64/kernel: Simplify __cpu_up() by bailing out early
+Message-ID: <20200302122135.GB56497@lakrids.cambridge.arm.com>
+References: <20200302020340.119588-1-gshan@redhat.com>
 MIME-Version: 1.0
-Date: Mon, 02 Mar 2020 12:12:46 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH] irqchip/gic-v4.1: Wait for completion of redistributor's
- INVALL operation
-In-Reply-To: <20200302092145.899-1-yuzenghui@huawei.com>
-References: <20200302092145.899-1-yuzenghui@huawei.com>
-Message-ID: <c46464a4c570e4aa12231bbd5ddefc07@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, linux-kernel@vger.kernel.org,
- kvmarm@lists.cs.columbia.edu, tglx@linutronix.de, jason@lakedaemon.net,
- wanghaibin.wang@huawei.com, linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200302020340.119588-1-gshan@redhat.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_041249_123097_F1FDC14B 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200302_042142_154284_B4E9AFBE 
+X-CRM114-Status: GOOD (  23.10  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,50 +63,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org,
- wanghaibin.wang@huawei.com, tglx@linutronix.de, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org, shan.gavin@gmail.com,
+ maz@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-03-02 09:21, Zenghui Yu wrote:
-> In GICv4.1, we emulate a guest-issued INVALL command by a direct write
-> to GICR_INVALLR.  Before we finish the emulation and go back to guest,
-> let's make sure the physical invalidate operation is actually completed
-> and no stale data will be left in redistributor. Per the specification,
-> this can be achieved by polling the GICR_SYNCR.Busy bit (to zero).
+On Mon, Mar 02, 2020 at 01:03:40PM +1100, Gavin Shan wrote:
+> The function __cpu_up() is invoked to bring up the target CPU through
+> the backend, PSCI for example. The nested if statements won't be needed
+> if we bail out early on the following two conditions where the status
+> won't be checked. The code looks simplified in that case.
 > 
-> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
-> ---
->  drivers/irqchip/irq-gic-v3-its.c | 2 ++
->  1 file changed, 2 insertions(+)
+>    * Error returned from the backend (e.g. PSCI)
+>    * The target CPU has been marked as onlined
 > 
-> diff --git a/drivers/irqchip/irq-gic-v3-its.c 
-> b/drivers/irqchip/irq-gic-v3-its.c
-> index 83b1186ffcad..fc8c2970cee4 100644
-> --- a/drivers/irqchip/irq-gic-v3-its.c
-> +++ b/drivers/irqchip/irq-gic-v3-its.c
-> @@ -3784,6 +3784,8 @@ static void its_vpe_4_1_invall(struct its_vpe 
-> *vpe)
->  	/* Target the redistributor this vPE is currently known on */
->  	rdbase = per_cpu_ptr(gic_rdists->rdist, vpe->col_idx)->rd_base;
->  	gic_write_lpir(val, rdbase + GICR_INVALLR);
-> +
-> +	wait_for_syncr(rdbase);
->  }
-> 
->  static int its_vpe_4_1_set_vcpu_affinity(struct irq_data *d, void 
-> *vcpu_info)
+> Signed-off-by: Gavin Shan <gshan@redhat.com>
 
-Yup, well spotted. I'll add that to the series.
+FWIW, this looks like a nice cleanup to me:
+
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+
+While this patch leaves secondary_data.{task,stack} stale on a
+successful onlining, that was already the case for a timeout, and should
+be fine (since the next attempt at onlining will configure those before
+poking the CPU).
 
 Thanks,
+Mark.
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+> ---
+>  arch/arm64/kernel/smp.c | 79 +++++++++++++++++++----------------------
+>  1 file changed, 37 insertions(+), 42 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index d4ed9a19d8fe..2a9d8f39dc58 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -115,60 +115,55 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
+>  	update_cpu_boot_status(CPU_MMU_OFF);
+>  	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
+>  
+> -	/*
+> -	 * Now bring the CPU into our world.
+> -	 */
+> +	/* Now bring the CPU into our world */
+>  	ret = boot_secondary(cpu, idle);
+> -	if (ret == 0) {
+> -		/*
+> -		 * CPU was successfully started, wait for it to come online or
+> -		 * time out.
+> -		 */
+> -		wait_for_completion_timeout(&cpu_running,
+> -					    msecs_to_jiffies(5000));
+> -
+> -		if (!cpu_online(cpu)) {
+> -			pr_crit("CPU%u: failed to come online\n", cpu);
+> -			ret = -EIO;
+> -		}
+> -	} else {
+> +	if (ret) {
+>  		pr_err("CPU%u: failed to boot: %d\n", cpu, ret);
+>  		return ret;
+>  	}
+>  
+> +	/*
+> +	 * CPU was successfully started, wait for it to come online or
+> +	 * time out.
+> +	 */
+> +	wait_for_completion_timeout(&cpu_running,
+> +				    msecs_to_jiffies(5000));
+> +	if (cpu_online(cpu))
+> +		return 0;
+> +
+> +	pr_crit("CPU%u: failed to come online\n", cpu);
+>  	secondary_data.task = NULL;
+>  	secondary_data.stack = NULL;
+>  	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
+>  	status = READ_ONCE(secondary_data.status);
+> -	if (ret && status) {
+> -
+> -		if (status == CPU_MMU_OFF)
+> -			status = READ_ONCE(__early_cpu_boot_status);
+> +	if (status == CPU_MMU_OFF)
+> +		status = READ_ONCE(__early_cpu_boot_status);
+>  
+> -		switch (status & CPU_BOOT_STATUS_MASK) {
+> -		default:
+> -			pr_err("CPU%u: failed in unknown state : 0x%lx\n",
+> -					cpu, status);
+> -			cpus_stuck_in_kernel++;
+> -			break;
+> -		case CPU_KILL_ME:
+> -			if (!op_cpu_kill(cpu)) {
+> -				pr_crit("CPU%u: died during early boot\n", cpu);
+> -				break;
+> -			}
+> -			pr_crit("CPU%u: may not have shut down cleanly\n", cpu);
+> -			/* Fall through */
+> -		case CPU_STUCK_IN_KERNEL:
+> -			pr_crit("CPU%u: is stuck in kernel\n", cpu);
+> -			if (status & CPU_STUCK_REASON_52_BIT_VA)
+> -				pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
+> -			if (status & CPU_STUCK_REASON_NO_GRAN)
+> -				pr_crit("CPU%u: does not support %luK granule \n", cpu, PAGE_SIZE / SZ_1K);
+> -			cpus_stuck_in_kernel++;
+> +	switch (status & CPU_BOOT_STATUS_MASK) {
+> +	default:
+> +		pr_err("CPU%u: failed in unknown state : 0x%lx\n",
+> +		       cpu, status);
+> +		cpus_stuck_in_kernel++;
+> +		break;
+> +	case CPU_KILL_ME:
+> +		if (!op_cpu_kill(cpu)) {
+> +			pr_crit("CPU%u: died during early boot\n", cpu);
+>  			break;
+> -		case CPU_PANIC_KERNEL:
+> -			panic("CPU%u detected unsupported configuration\n", cpu);
+>  		}
+> +		pr_crit("CPU%u: may not have shut down cleanly\n", cpu);
+> +		/* Fall through */
+> +	case CPU_STUCK_IN_KERNEL:
+> +		pr_crit("CPU%u: is stuck in kernel\n", cpu);
+> +		if (status & CPU_STUCK_REASON_52_BIT_VA)
+> +			pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
+> +		if (status & CPU_STUCK_REASON_NO_GRAN) {
+> +			pr_crit("CPU%u: does not support %luK granule\n",
+> +				cpu, PAGE_SIZE / SZ_1K);
+> +		}
+> +		cpus_stuck_in_kernel++;
+> +		break;
+> +	case CPU_PANIC_KERNEL:
+> +		panic("CPU%u detected unsupported configuration\n", cpu);
+>  	}
+>  
+>  	return ret;
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
