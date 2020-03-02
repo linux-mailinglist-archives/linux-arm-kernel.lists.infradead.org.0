@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F31DE175836
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:19:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F176175837
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:19:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zUcCGpqPAHA3+vZjzhftd8VLatFMe8HY1Cvurm51WEQ=; b=R/1v0XG+z9NJ6H
-	6WT0Q6IuPqKeVUVqkCl+LpyTcFMnPfW4bhczf23l6hVQmXMDoJGqY+/p41LBljZ6kWVF5UV13V/vb
-	nEf5at2G1vF5Z/sO89Vg2JsWiRMZngg/bUzbanQ68I/QT3XxP+As6AOAbQ7dqgxIgA0lrdVf/Iu35
-	gSNxHRu4wlwLglw2smJ7X6fwZ8Doea5fbF3FObp1YwVyKU45LdQM6NxG4A3/21YGsqYfwcu6WfdfZ
-	ihv0EcJPFKz8z8OY+jmoY6YWhEdiUVIskelnXcgEGxtph++ojs9Q7gmijVh1cLjuTmcQP0YrJ0FZa
-	l7iSySgcEGI1z680Sh4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=L5cZfPaNe50UOom2mSgtRHfPpFY1jOBNheMVkI6x0CE=; b=GguJ1XeSpVfnZwML8nx0H16PB
+	MrAWMLcm1Cl6JJpS60wwbarZ/srJUf8wdQaVX1E8u8JCuLLE7WyWP2w4JRWVUA22DG04hpB2nQ8Ov
+	SQbJEYAaJQJzH+/EAGDwgNOPlw89N8pVrk5bOdKQ2VjHYhJohtZCqcBZ//wSc1/dFELLX2JkRfpzq
+	1aBmmnAfKRRLz2Ptfwah2nGRUGeBDxkmr+s3You2FRfST7zNByFFEXOO1jQbkVd5HAgUQUycM54yM
+	vvNdpIPBEG/1smD2CDyqcDwVPC5rfFyV6LiuVKxoCYc/8jmtPOHj0OwbRZ7oE7uOhpHnKLZtwubce
+	Mvz0noLeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8iA9-0004hL-Ny; Mon, 02 Mar 2020 10:19:01 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8iA2-0004fC-TL
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:18:56 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1j8i9o-000400-Pk; Mon, 02 Mar 2020 11:18:40 +0100
-Message-ID: <fbba971d7501c774ce0081f22dcff4ef74002a4d.camel@pengutronix.de>
-Subject: Re: [PATCH 2/3] ARM: dts: stm32: add STM32MP1-based Linux
- Automation MC-1 board
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Alexandre Torgue <alexandre.torgue@st.com>, Ahmad Fatoum
- <a.fatoum@pengutronix.de>, linux-stm32@st-md-mailman.stormreply.com, 
- mcoquelin.stm32@gmail.com, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>
-Date: Mon, 02 Mar 2020 11:18:39 +0100
-In-Reply-To: <244a4502-03e0-836c-2ce2-7fa6cef3c188@st.com>
-References: <20200226143826.1146-1-a.fatoum@pengutronix.de>
- <20200226143826.1146-2-a.fatoum@pengutronix.de>
- <244a4502-03e0-836c-2ce2-7fa6cef3c188@st.com>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1j8iAa-0004zb-4i; Mon, 02 Mar 2020 10:19:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8iAO-0004z9-Sa
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:19:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3A8C031B;
+ Mon,  2 Mar 2020 02:19:16 -0800 (PST)
+Received: from [10.163.1.6] (unknown [10.163.1.6])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28B793F6CF;
+ Mon,  2 Mar 2020 02:19:10 -0800 (PST)
+Subject: Re: [PATCH v5 16/17] arm64: compile the kernel with ptrauth return
+ address signing
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
+ <1581931668-11559-17-git-send-email-amit.kachhap@arm.com>
+ <20200228182337.GK4019108@arrakis.emea.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <8e33f683-b998-2be0-83d9-3034d63d72ad@arm.com>
+Date: Mon, 2 Mar 2020 15:49:12 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20200228182337.GK4019108@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_021854_944470_CED8306E 
-X-CRM114-Status: GOOD (  14.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_021916_972344_F0137500 
+X-CRM114-Status: GOOD (  15.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,42 +66,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mo, 2020-03-02 at 11:06 +0100, Alexandre Torgue wrote:
-> Hi Ahmad
+
+
+On 2/28/20 11:53 PM, Catalin Marinas wrote:
+> On Mon, Feb 17, 2020 at 02:57:47PM +0530, Amit Daniel Kachhap wrote:
+>> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+>> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+>> +# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
+>> +# to generate them and consequently to break the single image contract we pass it
+>> +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
+>> +# this option is not used.
+>> +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+>> +KBUILD_CFLAGS += $(branch-prot-flags-y)
+>> +endif
 > 
-> Thanks for adding a new STM32 board. Some minor comments.
+> Does this work with the clang integrated assembler? AFAIK it ignores the
+> -Wa, though it may be fine with the instructions generated by the
+> compiler. (while we don't officially support it, we merged patches to
+> facilitate it).
 > 
-> On 2/26/20 3:38 PM, Ahmad Fatoum wrote:
-> > The Linux Automation MC-1 is a SBC built around the Octavo Systems
-> > OSD32MP15x SiP. The SiP features up to 1 GB DDR3 RAM, EEPROM and
-> > a PMIC. The board has eMMC and a SD slot for storage and GbE
-> > for both connectivity and power.
-> > 
-> > Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de
-> > ---
-[...]
-> > +
-> > +&gpu {
-> > +	status = "okay";
-> > +};
+> Also, the above comment says that the -Wa option is used only when
+> building with clang. I don't see this being the case in the patch above.
 
-This question is more to the ST guys than this specific DT: Why is the
-GPU marked as disabled in the SoC dtsi file? This device is always
-present on the SoC and AFAICS there are no board level dependencies, so
-there is no reason to have it disabled by default, right? Removing the
-status property from the dtsi would remove the need for this override
-on the board DT.
+I will check on this and get back.
 
-Regards,
-Lucas
-
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
