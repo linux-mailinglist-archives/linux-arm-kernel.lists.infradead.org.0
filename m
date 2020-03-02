@@ -2,54 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66EA917541B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 07:49:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E5F51754E6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 08:52:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=dSXS+afBCqE8jVRSaMyttKuScthCc4WcG6E1faaIA84=; b=YaRDoPrukOOIIOO0dAYWmA/1KS
-	n9Rf3okDtMQH8aW9CCM92OF0w1J1L1eSQm9EO65LxlPwk6rmYK3K651QodQxmviLabNYv5liz4myz
-	nX7tPSz8o8YTpsy/wbhDvwukFU+pJWOWBGjMZqloDAXcmLkxzQuvvPqFVJ3W50Hz2OkahMmyhC0pF
-	W1U2eRUKFZpaQXgLYwFXyn9LlH2L0EsKwmy+KwNifrX3OtAAcJFabYJ+1at9/H0+3EJrfaheTUPoW
-	8YBUHt7aILXDg2Y2zBCNFxRMak4UJiSe0rEP0ta1VWNA2fHlaSkkB2rKblfbftYK+CjqBYJJsweqJ
-	rDZffVzg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dvUOasSWAI3LeUFZbfA9gH5xh8k6LmAKS4NfQMtiFy4=; b=baFhmpxPUgknC8
+	/TUvOIeOla8IAh4WtAD/Rrh38ipRTGjJANLHUeDE8ku3JiFft4qZhsfYGYZibIjgOtVDLB1vKWp1J
+	sV6uy79BKlRqnJxiaBtnJDpzuZEAM9stzHbKvGD3COa6/iPENYoz8GfK/GW7rA53BKPQ/ZI8WMupW
+	COTyj6R2R7jcDZs5N5HWDxNnZrkEg2MGKMmaaGkNYSEH8fTCCqjk7eFy2+1Z1WLT1XoirPdnKrGD5
+	PWUWNQkgmpHQws1b43Ns7qcpPAMxPt7Z0sXciF4N0b9gOvS4WfP5bSw6IzJRxt2gDvpPV5wEYQu/z
+	H8vVxU5zAHWUfJwgh67Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8esw-0000b7-V2; Mon, 02 Mar 2020 06:49:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8esJ-0000BP-P3
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 06:48:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA3EC1045;
- Sun,  1 Mar 2020 22:48:22 -0800 (PST)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.119])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 439B13F6CF;
- Sun,  1 Mar 2020 22:52:09 -0800 (PST)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [RFC 2/3] mm/vma: Introduce VM_ACCESS_FLAGS
-Date: Mon,  2 Mar 2020 12:17:45 +0530
-Message-Id: <1583131666-15531-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1583131666-15531-1-git-send-email-anshuman.khandual@arm.com>
-References: <1583131666-15531-1-git-send-email-anshuman.khandual@arm.com>
+	id 1j8frx-0004qb-Ra; Mon, 02 Mar 2020 07:52:05 +0000
+Received: from mail-am6eur05on20605.outbound.protection.outlook.com
+ ([2a01:111:f400:7e1b::605]
+ helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8frr-0004px-3h
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 07:52:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Yx/xED3x3NSwXaHLyPfXAqgOiyGJw5B9bDXygPZS7i3vbKb/XhSAIxrbg82na5U/jpSp05VaMwA11lKbPLIw5eekWFX+12PSdPh3nAMlNBMSZMJx8AAQ1C7YKKrqDeGz+KUrp4iw/V8dJCbWZLFGtGE8A1zIgGGSFrvWkho5bIUNA7C7tYFVBeVgOPcOwILH81/0UioQ/m9GadQjxyJI7bxXSCoz2JshdTRDrwhLGGnB6So9ZXA7azpJG/OeNjNamu3ZpLXcd0Rvo2V/nT5k5gPbu4nPBfCUdooP7XAjOX1kU95pQGUYJJnB9ZFvGv96DaFnvA0bv6bom2ZgLwJ8HQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0CW8kX+OBHDocvqUzhceSUBQpJ+2wT3OAYRuLZ0tqIY=;
+ b=IaI64oiYHRTFDt7zQigYbvHlBnzJy4HeAkOoLaQ11Tdvzvtn+hUq6YqwaIYBQxNR4OTW2UqWnuxVPcidjx5B65Q/g0o94ZIXJDyhkIEi/MpTyj/7wkarNXN3XtPKrpxo1ou7Xy1mWHXQwHvY2dCL4PE0/S5u4Ps3H2lrpORhtGfJtobZbQymqi48XXkXo+Bd3M0oD3Emp2+dqJu40sEGbNzWKQ6Irs8LTrNrbEQ9jJ5Ta2Nh9J365ToPTXZl9TH68jcPm5KoLQ5YjHrH213svLKaijDrKC8M47FMV7j2QFkmVvldy98cq5qInT4vlFOeH0GQfJNOaEn/7ou5t/EymA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0CW8kX+OBHDocvqUzhceSUBQpJ+2wT3OAYRuLZ0tqIY=;
+ b=Hg5Pf70imGtHtGk8vKmDMDHHDlLCrWxVBER9rpDL28/iN/kkmmRM4DwCxy4VB5UPAXQ7CY7YmnQ19r7nfsGEoeDlfU3LVzMaVmqOHC/iMEkPjtBREsIGNc2nFTTjsSryWDDh5i/Jp8UHS5IuE7XmUHexwCgToI9UcoQ8t7f/FlM=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
+ VE1PR04MB6445.eurprd04.prod.outlook.com (20.179.232.214) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.15; Mon, 2 Mar 2020 07:36:54 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::490:6caa:24b:4a31]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::490:6caa:24b:4a31%6]) with mapi id 15.20.2772.019; Mon, 2 Mar 2020
+ 07:36:54 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Martin Fuzzey <martin.fuzzey@flowbird.group>, "dmaengine@vger.kernel.org"
+ <dmaengine@vger.kernel.org>
+Subject: RE: [PATCH] dmaengine: imx-sdma: fix context cache
+Thread-Topic: [PATCH] dmaengine: imx-sdma: fix context cache
+Thread-Index: AQHV1qnIaNGAJ9R9HEaS0rzYiAQ7rag1GlnQ
+Date: Mon, 2 Mar 2020 07:36:54 +0000
+Message-ID: <VE1PR04MB66383055663F08FBFDF2E47489E70@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1580305274-27274-1-git-send-email-martin.fuzzey@flowbird.group>
+In-Reply-To: <1580305274-27274-1-git-send-email-martin.fuzzey@flowbird.group>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [183.192.236.243]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 574c4a10-eb01-459e-cb2d-08d7be7c7aeb
+x-ms-traffictypediagnostic: VE1PR04MB6445:|VE1PR04MB6445:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB644543B84FA553006E6EAA3489E70@VE1PR04MB6445.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
+x-forefront-prvs: 033054F29A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(366004)(396003)(39860400002)(346002)(376002)(189003)(199004)(4326008)(2906002)(52536014)(186003)(86362001)(478600001)(8936002)(71200400001)(33656002)(8676002)(81156014)(81166006)(316002)(66946007)(76116006)(55016002)(66446008)(66556008)(66476007)(9686003)(64756008)(5660300002)(966005)(110136005)(54906003)(6506007)(7696005)(26005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6445;
+ H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: CU51/NeB4Q7nPZKexdqQNU22py3pdtD80JGpdp8i1VnfetPXM+OvfNi5wXsMidqzuUuFjf7zMJTg5tq+u/1Fjbv3TIR2Xlmk8E7cjLRfaAADtjBX3/XXhP1EnGP9k7pfrjG6p8uHk+ueHojkACOhs40n4RSptR8nCMPlhYHWKFkvvGdEIPK5qX+G2xJMabfOzUEapAJcFq1rsDkF19Dd8mcmodTT1I50OxZ8CgQyo4Y/H+rpoBGN7f7HnCAyraNy2tdyUgVfBA9wMqD4ltRFpNuJgPWh+mHNfiu3hWo6smOorEmpKRrR7llrNL011plJHBqNo1cXe5t//IV72PdIAwOGqswri8wuuPB7FXJsxxaH+pEW9WQHko+NjIKR0bGEn7nsPq1vCicnMSkfoFWsFibllvntCIUVX+3ciJpkIaJ5vim8inxtF8obLvTISIpSHkd7pqqRQqZWYbRfvDuTQLOIDZTAdE/Z4KHzG2iGtplqzLWbgBjwbEo6SPg4k0AmQKMFKAAkeaDDx2c7t9dgtw==
+x-ms-exchange-antispam-messagedata: mwH/hvwRRAbc0k7KQ7Wh1pXwAdABjQ7VaQKZWRbMz83gIVq84mTDvW1JrUq4++ZaLz/fxFuBu/vxY8s/c0CPp6sbOPK+FUn7tXOJAU0XeIi5a0GloAtQ8/xRCZ5ON93ugrFQzLS6EcdTiZQqkhx4AQ==
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 574c4a10-eb01-459e-cb2d-08d7be7c7aeb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Mar 2020 07:36:54.1990 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: aRHXWh+CsUO01BTgF1us9wvY+sqTuQgECo8Lj6yoe80qVb8vekEf/VV80Hkf/z2pEQIL4aoxa6rPiGxXoZy1ew==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6445
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_224823_949273_B8C20D0D 
-X-CRM114-Status: GOOD (  18.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200301_235159_153961_1A1F6E96 
+X-CRM114-Status: GOOD (  22.79  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,294 +121,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, devel@driverdev.osuosl.org,
- linux-s390@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
- Ley Foon Tan <ley.foon.tan@intel.com>, Mark Salter <msalter@redhat.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Rob Springer <rspringer@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Nick Hu <nickhu@andestech.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
+Cc: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "stable@vger.kernel.org" <stable@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are many places where all basic VMA access flags (read, write, exec)
-are initialized or checked against as a group. One such example is during
-page fault. Existing vma_is_accessible() wrapper already creates the notion
-of VMA accessibility as a group access permissions. Hence lets just create
-VM_ACCESS_FLAGS (VM_READ|VM_WRITE|VM_EXEC) which will not only reduce code
-duplication but also extend the VMA accessibility concept in general.
-
-Cc: Russell King <linux@armlinux.org.uk>
-CC: Catalin Marinas <catalin.marinas@arm.com>
-CC: Mark Salter <msalter@redhat.com>
-Cc: Nick Hu <nickhu@andestech.com>
-CC: Ley Foon Tan <ley.foon.tan@intel.com>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-Cc: Guan Xuetao <gxt@pku.edu.cn>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Rob Springer <rspringer@google.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-c6x-dev@linux-c6x.org
-Cc: nios2-dev@lists.rocketboards.org
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: linux-s390@vger.kernel.org
-Cc: linux-sh@vger.kernel.org
-Cc: devel@driverdev.osuosl.org
-Cc: linux-mm@kvack.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm/mm/fault.c                  | 2 +-
- arch/arm64/mm/fault.c                | 2 +-
- arch/c6x/include/asm/processor.h     | 2 +-
- arch/nds32/mm/fault.c                | 2 +-
- arch/nios2/include/asm/processor.h   | 2 +-
- arch/powerpc/mm/book3s64/pkeys.c     | 2 +-
- arch/s390/mm/fault.c                 | 2 +-
- arch/sh/include/asm/processor_64.h   | 2 +-
- arch/unicore32/mm/fault.c            | 2 +-
- arch/x86/mm/pkeys.c                  | 2 +-
- drivers/staging/gasket/gasket_core.c | 2 +-
- include/linux/mm.h                   | 4 +++-
- mm/mmap.c                            | 4 ++--
- mm/mprotect.c                        | 7 +++----
- 14 files changed, 19 insertions(+), 18 deletions(-)
-
-diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
-index bd0f4821f7e1..2c71028d9d6b 100644
---- a/arch/arm/mm/fault.c
-+++ b/arch/arm/mm/fault.c
-@@ -189,7 +189,7 @@ void do_bad_area(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
-  */
- static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
- {
--	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned int mask = VM_ACCESS_FLAGS;
- 
- 	if ((fsr & FSR_WRITE) && !(fsr & FSR_CM))
- 		mask = VM_WRITE;
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 85566d32958f..63f31206a12e 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -445,7 +445,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 	const struct fault_info *inf;
- 	struct mm_struct *mm = current->mm;
- 	vm_fault_t fault, major = 0;
--	unsigned long vm_flags = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned long vm_flags = VM_ACCESS_FLAGS;
- 	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
- 
- 	if (kprobe_page_fault(regs, esr))
-diff --git a/arch/c6x/include/asm/processor.h b/arch/c6x/include/asm/processor.h
-index 1456f5e11de3..77372b8c28d7 100644
---- a/arch/c6x/include/asm/processor.h
-+++ b/arch/c6x/include/asm/processor.h
-@@ -57,7 +57,7 @@ struct thread_struct {
- }
- 
- #define INIT_MMAP { \
--	&init_mm, 0, 0, NULL, PAGE_SHARED, VM_READ | VM_WRITE | VM_EXEC, 1, \
-+	&init_mm, 0, 0, NULL, PAGE_SHARED, VM_ACCESS_FLAGS, 1, \
- 	NULL, NULL }
- 
- #define task_pt_regs(task) \
-diff --git a/arch/nds32/mm/fault.c b/arch/nds32/mm/fault.c
-index 906dfb25353c..55387a31bf42 100644
---- a/arch/nds32/mm/fault.c
-+++ b/arch/nds32/mm/fault.c
-@@ -79,7 +79,7 @@ void do_page_fault(unsigned long entry, unsigned long addr,
- 	struct vm_area_struct *vma;
- 	int si_code;
- 	vm_fault_t fault;
--	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned int mask = VM_ACCESS_FLAGS;
- 	unsigned int flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
- 
- 	error_code = error_code & (ITYPE_mskINST | ITYPE_mskETYPE);
-diff --git a/arch/nios2/include/asm/processor.h b/arch/nios2/include/asm/processor.h
-index 94bcb86f679f..fbfb3ab14cfc 100644
---- a/arch/nios2/include/asm/processor.h
-+++ b/arch/nios2/include/asm/processor.h
-@@ -51,7 +51,7 @@ struct thread_struct {
- };
- 
- #define INIT_MMAP \
--	{ &init_mm, (0), (0), __pgprot(0x0), VM_READ | VM_WRITE | VM_EXEC }
-+	{ &init_mm, (0), (0), __pgprot(0x0), VM_ACCESS_FLAGS }
- 
- # define INIT_THREAD {			\
- 	.kregs	= NULL,			\
-diff --git a/arch/powerpc/mm/book3s64/pkeys.c b/arch/powerpc/mm/book3s64/pkeys.c
-index 59e0ebbd8036..11fd52b24f68 100644
---- a/arch/powerpc/mm/book3s64/pkeys.c
-+++ b/arch/powerpc/mm/book3s64/pkeys.c
-@@ -315,7 +315,7 @@ int __execute_only_pkey(struct mm_struct *mm)
- static inline bool vma_is_pkey_exec_only(struct vm_area_struct *vma)
- {
- 	/* Do this check first since the vm_flags should be hot */
--	if ((vma->vm_flags & (VM_READ | VM_WRITE | VM_EXEC)) != VM_EXEC)
-+	if ((vma->vm_flags & VM_ACCESS_FLAGS) != VM_EXEC)
- 		return false;
- 
- 	return (vma_pkey(vma) == vma->vm_mm->context.execute_only_pkey);
-diff --git a/arch/s390/mm/fault.c b/arch/s390/mm/fault.c
-index 7b0bb475c166..b2cb3c0d0e1a 100644
---- a/arch/s390/mm/fault.c
-+++ b/arch/s390/mm/fault.c
-@@ -584,7 +584,7 @@ void do_dat_exception(struct pt_regs *regs)
- 	int access;
- 	vm_fault_t fault;
- 
--	access = VM_READ | VM_EXEC | VM_WRITE;
-+	access = VM_ACCESS_FLAGS;
- 	fault = do_exception(regs, access);
- 	if (unlikely(fault))
- 		do_fault_error(regs, access, fault);
-diff --git a/arch/sh/include/asm/processor_64.h b/arch/sh/include/asm/processor_64.h
-index 53efc9f51ef1..3b8187284e3f 100644
---- a/arch/sh/include/asm/processor_64.h
-+++ b/arch/sh/include/asm/processor_64.h
-@@ -121,7 +121,7 @@ struct thread_struct {
- };
- 
- #define INIT_MMAP \
--{ &init_mm, 0, 0, NULL, PAGE_SHARED, VM_READ | VM_WRITE | VM_EXEC, 1, NULL, NULL }
-+{ &init_mm, 0, 0, NULL, PAGE_SHARED, VM_ACCESS_FLAGS, 1, NULL, NULL }
- 
- #define INIT_THREAD  {				\
- 	.sp		= sizeof(init_stack) +	\
-diff --git a/arch/unicore32/mm/fault.c b/arch/unicore32/mm/fault.c
-index 76342de9cf8c..fc27c274d358 100644
---- a/arch/unicore32/mm/fault.c
-+++ b/arch/unicore32/mm/fault.c
-@@ -149,7 +149,7 @@ void do_bad_area(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
-  */
- static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
- {
--	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned int mask = VM_ACCESS_FLAGS;
- 
- 	if (!(fsr ^ 0x12))	/* write? */
- 		mask = VM_WRITE;
-diff --git a/arch/x86/mm/pkeys.c b/arch/x86/mm/pkeys.c
-index c6f84c0b5d7a..8873ed1438a9 100644
---- a/arch/x86/mm/pkeys.c
-+++ b/arch/x86/mm/pkeys.c
-@@ -63,7 +63,7 @@ int __execute_only_pkey(struct mm_struct *mm)
- static inline bool vma_is_pkey_exec_only(struct vm_area_struct *vma)
- {
- 	/* Do this check first since the vm_flags should be hot */
--	if ((vma->vm_flags & (VM_READ | VM_WRITE | VM_EXEC)) != VM_EXEC)
-+	if ((vma->vm_flags & VM_ACCESS_FLAGS) != VM_EXEC)
- 		return false;
- 	if (vma_pkey(vma) != vma->vm_mm->context.execute_only_pkey)
- 		return false;
-diff --git a/drivers/staging/gasket/gasket_core.c b/drivers/staging/gasket/gasket_core.c
-index be6b50f454b4..81bb7d58dc49 100644
---- a/drivers/staging/gasket/gasket_core.c
-+++ b/drivers/staging/gasket/gasket_core.c
-@@ -689,7 +689,7 @@ static bool gasket_mmap_has_permissions(struct gasket_dev *gasket_dev,
- 
- 	/* Make sure that no wrong flags are set. */
- 	requested_permissions =
--		(vma->vm_flags & (VM_WRITE | VM_READ | VM_EXEC));
-+		(vma->vm_flags & VM_ACCESS_FLAGS);
- 	if (requested_permissions & ~(bar_permissions)) {
- 		dev_dbg(gasket_dev->dev,
- 			"Attempting to map a region with requested permissions "
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 7a764ae6ab68..525026df1e58 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -368,6 +368,8 @@ extern unsigned int kobjsize(const void *objp);
- #endif
- 
- #define VM_STACK_FLAGS	(VM_STACK | VM_STACK_DEFAULT_FLAGS | VM_ACCOUNT)
-+#define VM_ACCESS_FLAGS (VM_READ | VM_WRITE | VM_EXEC)
-+
- 
- /*
-  * Special vmas that are non-mergable, non-mlock()able.
-@@ -558,7 +560,7 @@ static inline bool vma_is_anonymous(struct vm_area_struct *vma)
- 
- static inline bool vma_is_accessible(struct vm_area_struct *vma)
- {
--	return vma->vm_flags & (VM_READ | VM_WRITE | VM_EXEC);
-+	return vma->vm_flags & VM_ACCESS_FLAGS;
- }
- 
- #ifdef CONFIG_SHMEM
-diff --git a/mm/mmap.c b/mm/mmap.c
-index 0d295f49b24d..f9a01763857b 100644
---- a/mm/mmap.c
-+++ b/mm/mmap.c
-@@ -106,7 +106,7 @@ static inline pgprot_t arch_filter_pgprot(pgprot_t prot)
- pgprot_t vm_get_page_prot(unsigned long vm_flags)
- {
- 	pgprot_t ret = __pgprot(pgprot_val(protection_map[vm_flags &
--				(VM_READ|VM_WRITE|VM_EXEC|VM_SHARED)]) |
-+				(VM_ACCESS_FLAGS | VM_SHARED)]) |
- 			pgprot_val(arch_vm_get_page_prot(vm_flags)));
- 
- 	return arch_filter_pgprot(ret);
-@@ -1221,7 +1221,7 @@ static int anon_vma_compatible(struct vm_area_struct *a, struct vm_area_struct *
- 	return a->vm_end == b->vm_start &&
- 		mpol_equal(vma_policy(a), vma_policy(b)) &&
- 		a->vm_file == b->vm_file &&
--		!((a->vm_flags ^ b->vm_flags) & ~(VM_READ|VM_WRITE|VM_EXEC|VM_SOFTDIRTY)) &&
-+		!((a->vm_flags ^ b->vm_flags) & ~(VM_ACCESS_FLAGS | VM_SOFTDIRTY)) &&
- 		b->vm_pgoff == a->vm_pgoff + ((b->vm_start - a->vm_start) >> PAGE_SHIFT);
- }
- 
-diff --git a/mm/mprotect.c b/mm/mprotect.c
-index 7a8e84f86831..4921a4211c6b 100644
---- a/mm/mprotect.c
-+++ b/mm/mprotect.c
-@@ -359,7 +359,7 @@ mprotect_fixup(struct vm_area_struct *vma, struct vm_area_struct **pprev,
- 	 */
- 	if (arch_has_pfn_modify_check() &&
- 	    (vma->vm_flags & (VM_PFNMAP|VM_MIXEDMAP)) &&
--	    (newflags & (VM_READ|VM_WRITE|VM_EXEC)) == 0) {
-+	    (newflags & VM_ACCESS_FLAGS) == 0) {
- 		pgprot_t new_pgprot = vm_get_page_prot(newflags);
- 
- 		error = walk_page_range(current->mm, start, end,
-@@ -530,15 +530,14 @@ static int do_mprotect_pkey(unsigned long start, size_t len,
- 		 * If a permission is not passed to mprotect(), it must be
- 		 * cleared from the VMA.
- 		 */
--		mask_off_old_flags = VM_READ | VM_WRITE | VM_EXEC |
--					VM_FLAGS_CLEAR;
-+		mask_off_old_flags = VM_ACCESS_FLAGS | VM_FLAGS_CLEAR;
- 
- 		new_vma_pkey = arch_override_mprotect_pkey(vma, prot, pkey);
- 		newflags = calc_vm_prot_bits(prot, new_vma_pkey);
- 		newflags |= (vma->vm_flags & ~mask_off_old_flags);
- 
- 		/* newflags >> 4 shift VM_MAY% in place of VM_% */
--		if ((newflags & ~(newflags >> 4)) & (VM_READ | VM_WRITE | VM_EXEC)) {
-+		if ((newflags & ~(newflags >> 4)) & VM_ACCESS_FLAGS) {
- 			error = -EACCES;
- 			goto out;
- 		}
--- 
-2.20.1
+On 2020/01/29 Martin Fuzzey <martin.fuzzey@flowbird.group> wrote:
+> 
+> There is a DMA problem with the serial ports on i.MX6.
+> 
+> When the following sequence is performed:
+> 
+> 1) Open a port
+> 2) Write some data
+> 3) Close the port
+> 4) Open a *different* port
+> 5) Write some data
+> 6) Close the port
+> 
+> The second write sends nothing and the second close hangs.
+> If the first close() is omitted it works.
+> 
+> Adding logs to the the UART driver shows that the DMA is being setup but the
+> callback is never invoked for the second write.
+> 
+> This used to work in 4.19.
+> 
+> Git bisect leads to:
+> 	ad0d92d: "dmaengine: imx-sdma: refine to load context only once"
+> 
+> This commit adds a "context_loaded" flag used to avoid unnecessary context
+> setups.
+> However the flag is only reset in sdma_channel_terminate_work(), which is
+> only invoked in a worker triggered by sdma_terminate_all() IF there is an active
+> descriptor.
+> 
+> So, if no active descriptor remains when the channel is terminated, the flag is
+> not reset and, when the channel is later reused the old context is used.
+> 
+> Fix the problem by always resetting the flag in sdma_free_chan_resources().
+> 
+> Fixes: ad0d92d: "dmaengine: imx-sdma: refine to load context only once"
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Martin Fuzzey <martin.fuzzey@flowbird.group>
+> 
+> ---
+> 
+> The following python script may be used to reproduce the problem:
+> 
+> import re, serial, sys
+> 
+> ports=(0, 4) # Can be any ports not used (no need to connect anything) NOT
+> console...
+> 
+> def get_tx_counts():
+>         pattern = re.compile("(\d+):.*tx:(\d+).*")
+>         tx_counts = {}
+>         with open("/proc/tty/driver/IMX-uart", "r") as f:
+>                 for line in f:
+>                         match = pattern.match(line)
+>                         if match:
+>                                 tx_counts[int(match.group(1))] =
+> int(match.group(2))
+>         return tx_counts
+> 
+> before = get_tx_counts()
+> 
+> a = serial.Serial("/dev/ttymxc%d" % ports[0])
+> a.write("polop")
+> a.close()
+> b = serial.Serial("/dev/ttymxc%d" % ports[1])
+> b.write("test")
+> 
+> after = get_tx_counts()
+> 
+> if (after[ports[0]] - before[ports[0]]  > 0) and (after[ports[1]] - before[ports[1]] >
+> 0):
+>         print "PASS"
+>         sys.exit(0)
+> else:
+>         print "FAIL"
+>         print "Before: %s" % before
+>         print "After: %s" % after
+>         sys.exit(1)
+> ---
+>  drivers/dma/imx-sdma.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c index
+> 066b21a..332ca50 100644
+> --- a/drivers/dma/imx-sdma.c
+> +++ b/drivers/dma/imx-sdma.c
+> @@ -1338,6 +1338,7 @@ static void sdma_free_chan_resources(struct
+> dma_chan *chan)
+> 
+>  	sdmac->event_id0 = 0;
+>  	sdmac->event_id1 = 0;
+> +	sdmac->context_loaded = false;
+Martin, thanks for you patch, sorry for the issue left in kernel for so long, because my below patch set has been pending from last year. I would like revert commit ad0d92d: "dmaengine: imx-sdma: refine to load context only once" since some drivers may change.
+context during two transfer like spi did. I would pick up this patch set this week anyway. 
+https://lore.kernel.org/patchwork/patch/1086454/ 
+> 
+>  	sdma_set_channel_priority(sdmac, 0);
+> 
+> --
+> 1.9.1
 
 
 _______________________________________________
