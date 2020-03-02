@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47665175975
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:22:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33AFD175977
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:22:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbGNFcyhifs1ZBaZ0fF8vKreOnrVvT0suRh5/8kt+dY=; b=mO20I7vFytFAVi
-	xNQELH1gZkSatez8dnOz0028IDTNP2W2AuDgLGxwl/J8KJflLy8PEniErseLtimVPPkoy7nqJz8uy
-	cV+Jbk48pER1teEOArdO4DKI16Q9YrB7plgUr5pcKz/NrM12wOco5MByifNYlzmgbeNXcR4dUOVQg
-	mF+gz95/7Y5ve8l8TiU1htHSNvqyJjBznAJSvEnxTEbQuO9FPBNppdt+4E/YmUXRuurLERG10zMUf
-	0OU13Vy/b3goffrQmFOr45VSVbR11MsZBeEJ4uNhv9uQgkhNeCG5zdKzXjnF9C36T1c7gAbWsChNe
-	csdR8Kw5t8lr9AlKNfBA==;
+	List-Owner; bh=rjtusYrs/LWSweVcg8Jc80eENympNrgHCUyYFIqU28Q=; b=oqAfFKSjsHmqh+
+	bLnIl1C3IXMhl2ymzlo5mgv2bDeHvb6HdkzItbu8ABMuUoG8TCkt9/Ls7RBUNMJ/D/Ck5WPF6EWUb
+	eqqrVe4tD+AwpVQfXZYopn+PorBfHJ0qQugifCRTe8hSRcBYgi88RMp6W6RTtEa5i67lcy0X2HeOt
+	XrUQo8KCLI0YmTPXrASpid4iMpFlwusnUxmajllvyO6VWMQ1dUYPFx62zALxo/UC7HDQxE8E22iZ2
+	k02KN7ARiEJP7fk5omgB1EAN8r1e+yFF/Uheawmau+9qDN/faWoPViTy9nF1kY3aJ1NCSsOjN992+
+	zkUvYDKmUb3kAXzhRemA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8j9e-0008IZ-JX; Mon, 02 Mar 2020 11:22:34 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j8j9t-00006W-NF; Mon, 02 Mar 2020 11:22:49 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8j9R-0008FH-O8
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 11:22:26 +0000
-Received: by mail-wr1-x443.google.com with SMTP id r7so12095795wro.2
+ id 1j8j9Y-0008IY-1O
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 11:22:29 +0000
+Received: by mail-wm1-x344.google.com with SMTP id f15so10697801wml.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 03:22:21 -0800 (PST)
+ Mon, 02 Mar 2020 03:22:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=4twAZzpqE7OZHthVARi42fhoM9wMIzUTa1b3XIbc4u0=;
- b=HrqcWs/tM1UMeqgqQDpvy3jpqRSAaC9KOUedVpPAAvQXG3RKGJEGAKffHVNPColesQ
- XmJC8gVr91n0yVRfBh5hJIgxN9YGBInf8dxyQV9MOR+vauyVfx/rs1trGy5WKr+ppnSY
- xPNcptl/HEFg1e2S8eAWVFv4Q5y9PVMn9NqIV3MYzpRlBTcz8yFMsOTa1HGbIGY1K7Gt
- GsFLln6giCDJ1dDj49uhcLCoEnMDB4qd9U0rI0iX9KSIwHGJNAc03zON9tAvUnNuiZdQ
- xeZEus/ihesqcBQ/4+ERXw6UkZGG0pE7kquuOyrm+1jE6cQq8pWiEkXWYx+nD0T4SWzN
- oCew==
+ bh=pXFVNDmvd1Q57O9A14StFD9o/pCLl1WZ1LXT9jyY7wg=;
+ b=aXkSI2bBqKF1Vn9HUmliqysTYyVduIDV+GQticrpQgMBTuEwdyXOU/yJMasY+tU5Bh
+ hp9mdNGiZWQRZY43djxJU5Te2hjCeYOJpZE7Kf3yMhWMtbjr/YfeBWsTUYMli0o6aneL
+ hjQxlCGaHxw5B4mqGQuBdfFY64NBTbqKcFbD9Q9B+reFNDjYSirVv+uhEuEH2mPjEYye
+ DHGWR6uPEVThhBh32hv4RMSCHXtXBfMxNBgCzr3MAjMAcXu9Vuz4o2qszUfTlZaWAC/q
+ a5CF7XzPxLXyWRXiFRJ0m1biCtXgBj/ia3i8conaAv6hKKaW6UZZ1bQ38AcQvB9ihgIL
+ o5hQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=4twAZzpqE7OZHthVARi42fhoM9wMIzUTa1b3XIbc4u0=;
- b=nQoZQrgvumuPqO2gta1GllGshJ+3Hg+O0o/kr6P374ygfr4iJXqSA63UuX7xXmstXu
- wWKFN9v6eDcowDX4Ut2JqvA4MpgiTPjsoJEkDcC4joOcTBIANeqzB4xMbfdepsDG7eu1
- K3ZtkOiylBOiSGihGrBTOr3oc16ax51TFvL2TJExIFkIkjcNopqlQhT2WCs9A/7p3a2C
- OV4dDr04JdY02i33NIP5cjJ09DmBV+j2ZCYYZhuzETeWnt9jXn6RpN7C3p5mzCMU1Wuc
- jvB3fmV1EgN2BfJUer4kcZKmcKaVtKCzK/mYXmZUM9ioTLLSRrVHcUUPZfnP/MMUskZR
- eAFA==
-X-Gm-Message-State: APjAAAVoGCbbPIBKgRSmpdyk+08yTHBgcf/Cz52YW7Z+GXkSx98+CfAu
- K9rMDR3E7xUZhh85c6+Irq66PQ==
-X-Google-Smtp-Source: APXvYqwoftzxlJ69VQL0xqAKsfOX0Z+thgz1rFA+uNAT/dQGnLIN+PHomnMXJLjLb67L3CQ3sbGx9g==
-X-Received: by 2002:adf:dfc2:: with SMTP id q2mr21399020wrn.209.1583148140211; 
- Mon, 02 Mar 2020 03:22:20 -0800 (PST)
+ bh=pXFVNDmvd1Q57O9A14StFD9o/pCLl1WZ1LXT9jyY7wg=;
+ b=X/z3st0g5HyunMvaMxm3clD07uk8X6yeZQFpd6GJS8x8UwYBUgUiVKax8uR71q4EGk
+ cFM6p3ZYL+dxwYylbnTvX+VgL90EzBhrE888rjpdy853yVy9kFb7xLbUO3MMIekjpIAk
+ exXXqKDTi3C1okXHMVKo8P2yFcmJ9NPwMQx3Gghan/We+kwPyfIcjLireqh76I6+XLPF
+ C6F01Rhd6UFVU/iJDdCgS2FCH/8ZO+p6S9BiCW42sqjV73ey6Y9NPMAofA7tK+rTnYuR
+ xQdZq7QyUX0kcYYjTL/Raq6VkWaN/zkKXNaQMkPrmWgcD1yG3I7BQDJkrYU8Fjq8YPpQ
+ uB1A==
+X-Gm-Message-State: APjAAAUKq58BYPm/A0FOdCKEgiojnQlt4NGguMuZXZ1Y74hS0zeU5WRq
+ QfIABM1PfZe4lmUoWl149KKVyA==
+X-Google-Smtp-Source: APXvYqz+e/Cqch5x656k3Vz2SnBMUPxNp29Vb0LYw28FU3uDN1mzrpA/IdGcwPsttcC9lnuYBg3tgQ==
+X-Received: by 2002:a05:600c:2942:: with SMTP id
+ n2mr18840374wmd.87.1583148143534; 
+ Mon, 02 Mar 2020 03:22:23 -0800 (PST)
 Received: from localhost.localdomain ([2a01:e34:ecba:5540:6f5c:582a:cc84:32f5])
- by smtp.gmail.com with ESMTPSA id j14sm28398441wrn.32.2020.03.02.03.22.17
+ by smtp.gmail.com with ESMTPSA id j14sm28398441wrn.32.2020.03.02.03.22.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 03:22:19 -0800 (PST)
+ Mon, 02 Mar 2020 03:22:23 -0800 (PST)
 From: Fabien Parent <fparent@baylibre.com>
 To: linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  iommu@lists.linux-foundation.org
-Subject: [PATCH v2 2/3] iommu/mediatek: add pdata member for legacy ivrp paddr
-Date: Mon,  2 Mar 2020 12:21:51 +0100
-Message-Id: <20200302112152.2887131-2-fparent@baylibre.com>
+Subject: [PATCH v2 3/3] iommu/mediatek: add support for MT8167
+Date: Mon,  2 Mar 2020 12:21:52 +0100
+Message-Id: <20200302112152.2887131-3-fparent@baylibre.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200302112152.2887131-1-fparent@baylibre.com>
 References: <20200302112152.2887131-1-fparent@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_032221_850377_AE765517 
-X-CRM114-Status: GOOD (  13.68  )
+X-CRM114-CacheID: sfid-20200302_032228_099871_3A2E24FC 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,52 +103,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a new platform data member in order to select which IVRP_PADDR
-format is used by an SoC.
+Add support for the IOMMU on MT8167
 
 Signed-off-by: Fabien Parent <fparent@baylibre.com>
 ---
 
-v2: new patch
+V2:
+	* removed if based on m4u_plat, and using instead the new
+	has_legacy_ivrp_paddr member that was introduced in patch 2.
 
 ---
- drivers/iommu/mtk_iommu.c | 3 ++-
+ drivers/iommu/mtk_iommu.c | 9 +++++++++
  drivers/iommu/mtk_iommu.h | 1 +
- 2 files changed, 3 insertions(+), 1 deletion(-)
+ 2 files changed, 10 insertions(+)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 95945f467c03..78cb14ab7dd0 100644
+index 78cb14ab7dd0..25b7ad1647ba 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -569,7 +569,7 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
- 		F_INT_PRETETCH_TRANSATION_FIFO_FAULT;
- 	writel_relaxed(regval, data->base + REG_MMU_INT_MAIN_CONTROL);
+@@ -782,6 +782,14 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+ 	.larbid_remap = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+ };
  
--	if (data->plat_data->m4u_plat == M4U_MT8173)
-+	if (data->plat_data->has_legacy_ivrp_paddr)
- 		regval = (data->protect_base >> 1) | (data->enable_4GB << 31);
- 	else
- 		regval = lower_32_bits(data->protect_base) |
-@@ -786,6 +786,7 @@ static const struct mtk_iommu_plat_data mt8173_data = {
++static const struct mtk_iommu_plat_data mt8167_data = {
++	.m4u_plat     = M4U_MT8167,
++	.has_4gb_mode = true,
++	.has_legacy_ivrp_paddr = true;
++	.reset_axi    = true,
++	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
++};
++
+ static const struct mtk_iommu_plat_data mt8173_data = {
  	.m4u_plat     = M4U_MT8173,
  	.has_4gb_mode = true,
- 	.has_bclk     = true,
-+	.has_legacy_ivrp_paddr = true;
- 	.reset_axi    = true,
- 	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
- };
+@@ -799,6 +807,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
+ 
+ static const struct of_device_id mtk_iommu_of_ids[] = {
+ 	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
++	{ .compatible = "mediatek,mt8167-m4u", .data = &mt8167_data},
+ 	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+ 	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
+ 	{}
 diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index ea949a324e33..4696ba027a71 100644
+index 4696ba027a71..72f874ec9e9c 100644
 --- a/drivers/iommu/mtk_iommu.h
 +++ b/drivers/iommu/mtk_iommu.h
-@@ -42,6 +42,7 @@ struct mtk_iommu_plat_data {
- 	bool                has_bclk;
- 	bool                has_vld_pa_rng;
- 	bool                reset_axi;
-+	bool                has_legacy_ivrp_paddr;
- 	unsigned char       larbid_remap[MTK_LARB_NR_MAX];
+@@ -30,6 +30,7 @@ struct mtk_iommu_suspend_reg {
+ enum mtk_iommu_plat {
+ 	M4U_MT2701,
+ 	M4U_MT2712,
++	M4U_MT8167,
+ 	M4U_MT8173,
+ 	M4U_MT8183,
  };
- 
 -- 
 2.25.0
 
