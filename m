@@ -2,78 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B717317584E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:28:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AE21175857
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:29:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2uA5bRcniwdqDvDmeOo/r27hZyXYPaM1JnGDha7iHmg=; b=G4pUhAFv4VTHMtVow7Rf/ZJfI
-	N99n3BFulC/VtIopoQ8w9O3RUCeJtzyHRA+l/mbKlpw7qAeEmUkljz2MdNsDtHwQErqk/pb376kBB
-	drgn5W/e2024oVx/KFNtjkbHwIq8rp4x//r5fwGXkE8DTsZKhLZxdvp3hAoj/9ueioSjSZK88WNZ+
-	MSyAUV1u+fg5FDOdHuLxCMvfW7ViMrsi9QlYZ3RYA31TKPp6afjHXS+8eeA5tVmeKA1zGus2cXK5L
-	bS4BjyYsta23TN7TBq5HcTJ59K1rUvJvcLm65IIu+LJVOLcDVQm9yTxzHlEyPr3SUUrgXvOjltBaG
-	6Hdqj4jug==;
+	 bh=1UYAaV1hLiYmzBdhH5a4zdxenpNft2USGr5OR0vHqI0=; b=AoDfwWJ2mXnUhrPk2L4T7GZpH
+	2oukz9YDc3IaHC6s/TLgsFxrCYxuSUL9oa43ZCENjUShUBIFm2rqM/q373LP29Dq410TvzMNUBz6D
+	TuGMrHYjUBGctLIDemjWdFLWzxBsxKACaRvgxoo6lrl+k6xzp/kWTnQyN3LZz+EjKkJqDTAdMsiZO
+	VLhOA3dXUPm+x+YBBAPbT6UmOkQWqVUtrGJKLAwvXc7/ytw+Oow28TonshAxy6ksmxfCLAlkPb5QE
+	n7o6Fq4dV19/UGf7Hut+yWbo0/rkdYCu3cvhzCTmncruRT3sBxKT6kEyEPyCP/mmxuGUQa124hWlH
+	CjDMvjaRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8iJP-0000XV-G3; Mon, 02 Mar 2020 10:28:35 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1j8iKY-0000qT-JW; Mon, 02 Mar 2020 10:29:46 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8iJI-0000Wz-DK
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:28:29 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 022ASDTE034215;
- Mon, 2 Mar 2020 04:28:13 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1583144893;
- bh=VFRes0B1ofup81Cw5XQMgE+LuL4nvbH4EAU0rV/EHjI=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Q2nUTJdGxCzYjFxb0BztPB8QKChlwHOaibAQ4VcRNI70XrxDXYN/RS22b3ZIdg/h3
- Vr364J0KRVb7onpFkoA686X6h/GD3cnByoftlkS+dSD03mpW+NrBzgkcUSdvj18x7V
- X4FXEovTJ9i5mJGWC37Q+MVlVsgijNGBZfzLGMc4=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 022ASD76091500
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 2 Mar 2020 04:28:13 -0600
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 2 Mar
- 2020 04:28:13 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 2 Mar 2020 04:28:13 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 022AS8TE113432;
- Mon, 2 Mar 2020 04:28:09 -0600
-Subject: Re: [PATCH 1/3] drm/omap: Prepare DSS for probing without legacy
- platform data
-To: Tony Lindgren <tony@atomide.com>
-References: <20200224191230.30972-1-tony@atomide.com>
- <20200224191230.30972-2-tony@atomide.com>
- <20200224233111.gkctx27usfxj2wgz@earth.universe>
- <20200224234333.GD37466@atomide.com> <20200227174424.GI37466@atomide.com>
-From: Tomi Valkeinen <tomi.valkeinen@ti.com>
-Message-ID: <8b27dba3-2e2b-84ce-0927-685f4bfe3ab2@ti.com>
-Date: Mon, 2 Mar 2020 12:28:08 +0200
+ id 1j8iKO-0000q0-6k
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:29:37 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 022ANQDP005577; Mon, 2 Mar 2020 11:29:31 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=zkytL5nVEwPnsSSru/KymaDUr/ha+HwULMX9F6zIoyc=;
+ b=exSa+YIJRpOznMWRg+X11gkj5wmZyPmRg08IYzfFup7xEtPRjr6hWuETdT4oWSeRj3gy
+ wg3QhBQp7WTFiMxpDmBLYzfUI0Z4kea/DHRf82bFxgz48iJsg368pvRH6M0FBQQJNvm2
+ 0YtY1DCoULu5mT1lJ0lgrxwVHyC9zPpFuF/GYQlx5zjVBJ/TepQqiOoRZEw0lYD/5ZxJ
+ /1s50RY+qf7NVfQdXBcYlsg6gkidy+IpOg0GatzRrm3hdSfJPdQ+5+F/QNciTNbLBRYc
+ d/EGAvKYG+5A3T82naPax11ZVINz1N2f98HRIsLxjAIZH2hM78fSz8U2ZnViQc3sIiEi XQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2yffqpjscd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 02 Mar 2020 11:29:31 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7C81410002A;
+ Mon,  2 Mar 2020 11:29:30 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 610342B881B;
+ Mon,  2 Mar 2020 11:29:30 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 2 Mar
+ 2020 11:29:29 +0100
+Subject: Re: [PATCH 2/3] ARM: dts: stm32: add STM32MP1-based Linux Automation
+ MC-1 board
+To: Lucas Stach <l.stach@pengutronix.de>, Ahmad Fatoum
+ <a.fatoum@pengutronix.de>, <linux-stm32@st-md-mailman.stormreply.com>,
+ <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+References: <20200226143826.1146-1-a.fatoum@pengutronix.de>
+ <20200226143826.1146-2-a.fatoum@pengutronix.de>
+ <244a4502-03e0-836c-2ce2-7fa6cef3c188@st.com>
+ <fbba971d7501c774ce0081f22dcff4ef74002a4d.camel@pengutronix.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <e227de9a-7440-7e1f-2928-5648cbbe44c1@st.com>
+Date: Mon, 2 Mar 2020 11:29:28 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200227174424.GI37466@atomide.com>
+In-Reply-To: <fbba971d7501c774ce0081f22dcff4ef74002a4d.camel@pengutronix.de>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-03-02_03:2020-02-28,
+ 2020-03-02 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_022828_554072_A17B669C 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200302_022936_608666_3CBD4CF8 
+X-CRM114-Status: GOOD (  18.04  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,45 +104,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Suman Anna <s-anna@ti.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
- Sebastian Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, "Andrew F . Davis" <afd@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Jyri Sarha <jsarha@ti.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: devicetree@vger.kernel.org, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/02/2020 19:44, Tony Lindgren wrote:
+Hi Lucas
 
->>> FWIW, I dropped omapdss-boot-init.c in my patch series updating DSI
->>> code to use common panel infrastructure, so this will conflict.
+On 3/2/20 11:18 AM, Lucas Stach wrote:
+> On Mo, 2020-03-02 at 11:06 +0100, Alexandre Torgue wrote:
+>> Hi Ahmad
 >>
->> Hey that's great :) Sounds like we can set up an immutable branch
->> for just this $subject patch against v5.6-rc1 to resolve the
->> conflict. I can set it up for Tomi or Tomi can set it up for me,
->> whichever Tomi prefers.
+>> Thanks for adding a new STM32 board. Some minor comments.
+>>
+>> On 2/26/20 3:38 PM, Ahmad Fatoum wrote:
+>>> The Linux Automation MC-1 is a SBC built around the Octavo Systems
+>>> OSD32MP15x SiP. The SiP features up to 1 GB DDR3 RAM, EEPROM and
+>>> a PMIC. The board has eMMC and a SD slot for storage and GbE
+>>> for both connectivity and power.
+>>>
+>>> Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de
+>>> ---
+> [...]
+>>> +
+>>> +&gpu {
+>>> +	status = "okay";
+>>> +};
 > 
-> Do you want me to send you a pull request for just this one patch
-> against v5.6-rc1?
+> This question is more to the ST guys than this specific DT: Why is the
+> GPU marked as disabled in the SoC dtsi file? This device is always
+> present on the SoC and AFAICS there are no board level dependencies, so
+> there is no reason to have it disabled by default, right? Removing the
+> status property from the dtsi would remove the need for this override
+> on the board DT.
 
-It's probably easier if Sebastian drops the removal patch, and instead creates a patch that removes 
-the panel-dsi-cm from omapdss_of_fixups_whitelist. That change should not conflict, and effectively 
-makes the omapdss-boot-init.c a no-op.
+You are right. With new stm32 device tree diversity, it makes no longer 
+sens to disable GPU node in stm32mp157 dtsi file. Indeed, we use now 
+dedicated files for each SoC (stm32mp151 / stm32mp153 /stm32mp157).
 
-We can then remove the file later.
+Ahmad, can you add this modification in your series please ?
 
-  Tomi
+regards
+Alex
 
--- 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+> 
+> Regards,
+> Lucas
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
