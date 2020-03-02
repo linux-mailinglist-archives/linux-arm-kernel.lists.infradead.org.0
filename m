@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06545175811
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:14:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 699E3175817
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:15:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HlIW3tDJPc/l6dT0bA1gBhur7NC+rqWhYhYYmLRm97A=; b=WzJdwGXtgnNr25S+rcaoqN4aA
-	9IvHAcMTv2xh2txfWYSex+chfefAAcON/MkTnTE7rMDiA5bpRmEwatZsTxc8OcWGoSu/cVmSeKdzz
-	Aundg7h11PlWuX45wwIO0AOgqoHuIWB0igoyNlGetkN+Nh36Qk62YfU83sYou+q4HgGV4WgydyN8e
-	bfOjZ+2HHlBqxONADpW3O4qZyaMyh7u3YUcsMPMq8fIoWfvaXK4Us4MPpU37mEySdNEZjfPSJfSVs
-	y6te/rgrZURP4UgoxvcBj5GiKVxOv4R0RjJK5tgOxLcmoViknPIpdBD58UJzFNK7A2VkonFRq87Xo
-	Hl+QgMdQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zEg/HJplbPoLKIt3JTANERBRyjmuWh6b2Py3LA2/13o=; b=rzlvNDls8CANyH
+	RYHQFFvEN5EN0kWeAomJA4FOzYJs8T+WT7paW6sdgU7KXbBiKHRKY8wkzkUcCo1Uz7yqRsxWWlcom
+	OGSS584atCgi1b6gfcGdDl3gxVSrd48b/XnXP+b7kPqUFEqmX5B831knFtk+Ca3h6y0yBHbNYNlqY
+	rb5UvH5I5Iz6wTGHekW+IA6VEblzEaw+Vd5TeFREMuT7S9DPzOPQmLvpcRceP678NYZesTWHbuwqS
+	nu6AC6cE4BPOwE7d0/MVfHpkwzrfkCBcDQkVfeNHrj7/O88KF2FDBO/2KQOQtFb8xp0Kf/a3E1oZq
+	/ayRQz8Q6DlTXPiZDbJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8i5R-0002Ag-DF; Mon, 02 Mar 2020 10:14:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8i5L-0002AE-BG
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:14:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CDBD631B;
- Mon,  2 Mar 2020 02:14:01 -0800 (PST)
-Received: from [10.163.1.6] (unknown [10.163.1.6])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0535A3F6CF;
- Mon,  2 Mar 2020 02:13:56 -0800 (PST)
-Subject: Re: [PATCH v5 14/17] arm64: suspend: restore the kernel ptrauth keys
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
- <1581931668-11559-15-git-send-email-amit.kachhap@arm.com>
- <20200228181843.GJ4019108@arrakis.emea.arm.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <9d69d0ef-7d5a-876a-b242-3f908f9f95cf@arm.com>
-Date: Mon, 2 Mar 2020 15:43:58 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1j8i6R-0002ml-As; Mon, 02 Mar 2020 10:15:11 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8i5z-0002eT-T9
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:14:45 +0000
+Received: by mail-ot1-f66.google.com with SMTP id x19so4319642otp.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Mar 2020 02:14:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SVlemy32h72Zpj8jVlIGq7eQAhoadA5R3segFYSq66w=;
+ b=LRIc/d3bQIKZh1cs5cRjllBHZDAjbD3Of9bKVUc+uWaQoEbCkY389XWsKvPcChTyD1
+ NAvywXuTuB69dCur31/2+jmvtkkLB+5KJs+ljzFDPsT5yin9wP3dVMylJhp8JJejM9+q
+ LLA+22/xQtu8V5R6pr39O7m31mrt/sDMzcyuR8ITDOw/DNwL3AAI67k59xUPq9Qqbl8K
+ f8IchETzJ7PP+so06eMVRhl3616ucDTptaThU0Q7ooiS57RgxpgMg2HHYghQ1pLrdBxV
+ Zym3wWUHrC4wA5ANlMh89I8dLzgQ5QyLZSwdwV0lr1T9j0pZkQgchPcibBAnwO1jfnON
+ yeHw==
+X-Gm-Message-State: ANhLgQ0dfKqhHis/mkEhc4jRMuq4E/k/FKINLuBc//iQhg36rUDjUmDR
+ ZuK2+al7IYuKZqCUQYiJLQtMcCORLKefchhh/L0=
+X-Google-Smtp-Source: ADFU+vs/0ZiJfqPA7EukyL4+DZs2EJZ2FkBQDZwJ/jcv1Cma/xnhZmbg/F6SIEf/URrc+W049AaZlV2ArAclptArrf0=
+X-Received: by 2002:a05:6830:12d1:: with SMTP id
+ a17mr3526676otq.39.1583144083038; 
+ Mon, 02 Mar 2020 02:14:43 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200228181843.GJ4019108@arrakis.emea.arm.com>
-Content-Language: en-US
+References: <68219a85-295d-7b7c-9658-c3045bbcbaeb@free.fr>
+ <e88ca46a-799d-9c86-f2d2-6284eb3c3419@free.fr>
+ <CAMuHMdUZfR6pYG-hourZCKT-jhh1t+x-ySF4JnEPJjscGAQT+A@mail.gmail.com>
+ <7622db71-b1f4-62b4-86ee-78e00d5bd52c@free.fr>
+In-Reply-To: <7622db71-b1f4-62b4-86ee-78e00d5bd52c@free.fr>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 2 Mar 2020 11:14:21 +0100
+Message-ID: <CAMuHMdVYghD_xLeXVFD+PGBKECSkQ+_KxPBwFmUDDO3W5skscQ@mail.gmail.com>
+Subject: Re: [RFC PATCH v4 2/2] clk: Use devm_add in managed functions
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_021403_428331_E3868BD5 
-X-CRM114-Status: GOOD (  14.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200302_021443_938200_A8DC4A5E 
+X-CRM114-Status: GOOD (  15.93  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,58 +86,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-clk <linux-clk@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Rafael Wysocki <rjw@rjwysocki.net>, Russell King <linux@armlinux.org.uk>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Suzuki Poulose <suzuki.poulose@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marc,
 
+On Mon, Mar 2, 2020 at 11:01 AM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
+> On 27/02/2020 14:36, Geert Uytterhoeven wrote:
+> > On Wed, Feb 26, 2020 at 4:55 PM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
+> >> Using the helper produces simpler code, and smaller object size.
 
-On 2/28/20 11:48 PM, Catalin Marinas wrote:
-> On Mon, Feb 17, 2020 at 02:57:45PM +0530, Amit Daniel Kachhap wrote:
->> This patch restores the kernel keys from current task during
->> cpu resume after the mmu is turned on and ptrauth is enabled.
->>
->> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
->> ---
->>   arch/arm64/kernel/sleep.S | 6 ++++++
->>   1 file changed, 6 insertions(+)
->>
->> diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
->> index 7b2f2e6..f9db925 100644
->> --- a/arch/arm64/kernel/sleep.S
->> +++ b/arch/arm64/kernel/sleep.S
->> @@ -2,6 +2,7 @@
->>   #include <linux/errno.h>
->>   #include <linux/linkage.h>
->>   #include <asm/asm-offsets.h>
->> +#include <asm/asm_pointer_auth.h>
->>   #include <asm/assembler.h>
->>   #include <asm/smp.h>
->>   
->> @@ -134,6 +135,11 @@ ENTRY(_cpu_resume)
->>   	 */
->>   	bl	cpu_do_resume
->>   
->> +#ifdef CONFIG_ARM64_PTR_AUTH
->> +	get_current_task x1
->> +	ptrauth_keys_install_kernel x1, x2, x3, x4
->> +#endif
-> 
-> Could we move this to cpu_do_resume? Most of the sysreg initialisation
-> during resume is done there.
+> >> --- a/drivers/clk/clk-devres.c
+> >> +++ b/drivers/clk/clk-devres.c
 
-Yes it makes sense. I will implement in my v6 series.
+> >> @@ -128,30 +109,22 @@ static int devm_clk_match(struct device *dev, void *res, void *data)
+> >>
+> >>  void devm_clk_put(struct device *dev, struct clk *clk)
+> >>  {
+> >> -       int ret;
+> >> -
+> >> -       ret = devres_release(dev, devm_clk_release, devm_clk_match, clk);
+> >> -
+> >> -       WARN_ON(ret);
+> >> +       WARN_ON(devres_release(dev, my_clk_put, devm_clk_match, clk));
+> >
+> > Getting rid of "ret" is an unrelated change, which actually increases
+> > kernel size, as the WARN_ON() parameter is stringified for the warning
+> > message.
+>
+> Weird... Are you sure about that? I built the preprocessed file,
+> and it didn't appear to be so.
+>
+> #ifndef WARN_ON
+> #define WARN_ON(condition) ({                                           \
+>         int __ret_warn_on = !!(condition);                              \
+>         if (unlikely(__ret_warn_on))                                    \
+>                 __WARN();                                               \
+>         unlikely(__ret_warn_on);                                        \
+> })
+> #endif
+>
+> Maybe you were thinking of i915's WARN_ON?
+>
+> #define WARN_ON(x) WARN((x), "%s", "WARN_ON(" __stringify(x) ")")
 
-> 
+Oops, you're right.  I got trapped again by an override of a standard macro
+(IMHO this should be removed).
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
