@@ -2,85 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB356176352
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:55:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A36F176358
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:55:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YKDlwqRfQDwfZTQZM3jKbWcoc/xeP29PNem5FNklgns=; b=AhW/HjXPsuULPA
-	MPi+Kesp2CZDdAeB5h1xgMu1tWLBaWCE9yh9M9GioxA4Rb8SdhCtK6SRvW99rVLVIWNHFWcvLEc74
-	IMLjEKFFY8cjbSwX0g4+viNm6BJDpSWwbuAq7im5ouFLcrpskmh4rMP9PI0++XlIlbnu7F8X1RX1G
-	WJnnS8NPkRBSPSti/4pynXJwwNxjuS/+4otzJhAiN+xlnGPYpx5ct4dqzhQKpkfim5H3qEfNGmLG9
-	4Vi+ooDA7wewtXvIcztWTMBqdPh9c9Bcx8bzkGDf3+nVnXTwrIqWOkUzkoQP+5NAcBaQhGliBPUZz
-	P5hOvILJjLqCmJlWzJCw==;
+	List-Owner; bh=mbR90LfvfsL3wfwOWfhXxrvP4jwYlgBiU38u0AjG/P4=; b=sWSOmh1nDWOEIZ
+	RotVHTKSpe8Auqjqpeuf+NUTu/uTLH356jAUvc5fiupreXtN1Mlhqu2ZvAvWM6V9FzGBqdG5VkxBn
+	ZRsBMj9zQpIEWH0CIFthIt/qvIp8siUE1gbiXtWYIrFWbG0Ue8QaETeocBTqF5uHtXZ2VBL1ULoI0
+	9Za6NmkMdNl+BAZdMspGhN98VkPzkG5izZhNh6GTFcsZlpIq8JZhX+mrzFjBVhnqtUc+cFm9IXKCU
+	LfwUtoxlzKXmDjC16EJIdkWW5yxv90ICunewiFsIX62XvOwIN1IQMWhplUDlpTw+BJB4ilquxuk7S
+	YBRSu/HMDkiQvUvrCBDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8qDb-00076T-W9; Mon, 02 Mar 2020 18:55:07 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1j8qEE-0000Av-8T; Mon, 02 Mar 2020 18:55:46 +0000
+Received: from ale.deltatee.com ([207.54.116.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8qCu-0006n8-UH; Mon, 02 Mar 2020 18:54:36 +0000
-Received: by mail-oi1-f193.google.com with SMTP id r16so295207oie.6;
- Mon, 02 Mar 2020 10:54:24 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=azLo3QGLGJyP5HRfRWmkTZHyFOBCcHiq0HFCES3HCjQ=;
- b=lA5L1UeFYu3vHuOJVUjCPNQZuGW8XWsGu9Dqrt7ieX9jfC9g71utO8wy2eBDY3DJD/
- PR2q8qgPthCB7y1KeeAAA5l+Oi7AJmCYxo17zxafJdBi+2sXQIs1RZ9CSAauXvCcSKbU
- FZAyPgEJ796g2CBvKKuh3MQ0zm7IvjyjGc2h6CnA4U1x2z6NnBbfEA9h18xZEaPgN0mW
- FR4U6Eg0bQJz+0YTBEx6gco/Z5cdRWE6aHU6eslWTTfbNPpSzJgy3Z52SuItUL66zpXO
- PuSUVLhRObDZq0++Nch4aMWrZUY28ScvF1tleELpUlsrgHWnSrjwhVv78dsTY/I47WFf
- tkkw==
-X-Gm-Message-State: ANhLgQ3Eps9f7SlFm1iyoyoF+LRolAoVKG8sm5TDCq/iEKFJiBtSWK1s
- YupIlNKfKUgvQ9smAMuxxg==
-X-Google-Smtp-Source: ADFU+vvfubqUlzmH5eWYI1D5Jft/lIpMtECPbLNGVBuawGuLFLFxvD3bdyL1NoKnop7MocC44hue/Q==
-X-Received: by 2002:a54:4011:: with SMTP id x17mr1020oie.35.1583175263204;
- Mon, 02 Mar 2020 10:54:23 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u3sm6838355ote.50.2020.03.02.10.54.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 10:54:22 -0800 (PST)
-Received: (nullmailer pid 32444 invoked by uid 1000);
- Mon, 02 Mar 2020 18:54:21 -0000
-Date: Mon, 2 Mar 2020 12:54:21 -0600
-From: Rob Herring <robh@kernel.org>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V3, 1/2] media: i2c: dw9768: Add DT support and MAINTAINERS entry
-Message-ID: <20200302185421.GA31928@bogus>
-References: <20200228155958.20657-1-dongchun.zhu@mediatek.com>
- <20200228155958.20657-2-dongchun.zhu@mediatek.com>
+ id 1j8qE2-00009v-4D
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 18:55:36 +0000
+Received: from guinness.priv.deltatee.com ([172.16.1.162])
+ by ale.deltatee.com with esmtp (Exim 4.92)
+ (envelope-from <logang@deltatee.com>)
+ id 1j8qDo-0005xH-8O; Mon, 02 Mar 2020 11:55:21 -0700
+To: Dan Williams <dan.j.williams@intel.com>
+References: <20200221182503.28317-1-logang@deltatee.com>
+ <20200221182503.28317-7-logang@deltatee.com>
+ <CAPcyv4gR1+NaWzteqNKip=cYk89oEVW18HNao7Xv=JipzzDagw@mail.gmail.com>
+From: Logan Gunthorpe <logang@deltatee.com>
+Message-ID: <8b13f6aa-77b7-a47d-1a49-b8e2f800ac9d@deltatee.com>
+Date: Mon, 2 Mar 2020 11:55:18 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228155958.20657-2-dongchun.zhu@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAPcyv4gR1+NaWzteqNKip=cYk89oEVW18HNao7Xv=JipzzDagw@mail.gmail.com>
+Content-Language: en-CA
+X-SA-Exim-Connect-IP: 172.16.1.162
+X-SA-Exim-Rcpt-To: mhocko@suse.com, ebadger@gigaio.com, peterz@infradead.org,
+ luto@kernel.org, dave.hansen@linux.intel.com, bp@alien8.de, mingo@redhat.com,
+ tglx@linutronix.de, benh@kernel.crashing.org, will@kernel.org,
+ catalin.marinas@arm.com, hch@lst.de, akpm@linux-foundation.org,
+ david@redhat.com, mhocko@kernel.org, linux-mm@kvack.org,
+ platform-driver-x86@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-s390@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-ia64@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dan.j.williams@intel.com
+X-SA-Exim-Mail-From: logang@deltatee.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-6.9 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+ SURBL_BLOCKED,URIBL_BLOCKED autolearn=ham autolearn_force=no
+ version=3.4.2
+Subject: Re: [PATCH v3 6/7] mm/memory_hotplug: Add pgprot_t to mhp_params
+X-SA-Exim-Version: 4.2.1 (built Wed, 08 May 2019 21:11:16 +0000)
+X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_105425_366813_081E8F31 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.0 (-)
+X-CRM114-CacheID: sfid-20200302_105534_804019_667E686F 
+X-CRM114-Status: GOOD (  22.93  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ no trust [207.54.116.67 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,41 +81,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, drinkcat@chromium.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, shengnan.wang@mediatek.com, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Michal Hocko <mhocko@suse.com>, linux-ia64@vger.kernel.org,
+ Linux-sh <linux-sh@vger.kernel.org>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, platform-driver-x86@vger.kernel.org,
+ Linux MM <linux-mm@kvack.org>, Will Deacon <will@kernel.org>,
+ Christoph Hellwig <hch@lst.de>, linux-s390 <linux-s390@vger.kernel.org>,
+ David Hildenbrand <david@redhat.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Michal Hocko <mhocko@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Eric Badger <ebadger@gigaio.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 28 Feb 2020 23:59:57 +0800, Dongchun Zhu wrote:
-> This patch is to add the Devicetree binding documentation and
-> MAINTAINERS entry for dw9768 actuator.
+
+
+On 2020-02-29 3:44 p.m., Dan Williams wrote:
+> On Fri, Feb 21, 2020 at 10:25 AM Logan Gunthorpe <logang@deltatee.com> wrote:
+>>
+>> devm_memremap_pages() is currently used by the PCI P2PDMA code to create
+>> struct page mappings for IO memory. At present, these mappings are created
+>> with PAGE_KERNEL which implies setting the PAT bits to be WB. However, on
+>> x86, an mtrr register will typically override this and force the cache
+>> type to be UC-. In the case firmware doesn't set this register it is
+>> effectively WB and will typically result in a machine check exception
+>> when it's accessed.
+>>
+>> Other arches are not currently likely to function correctly seeing they
+>> don't have any MTRR registers to fall back on.
+>>
+>> To solve this, provide a way to specify the pgprot value explicitly to
+>> arch_add_memory().
+>>
+>> Of the arches that support MEMORY_HOTPLUG: x86_64, and arm64 need a simple
+>> change to pass the pgprot_t down to their respective functions which set
+>> up the page tables. For x86_32, set the page tables explicitly using
+>> _set_memory_prot() (seeing they are already mapped). For ia64, s390 and
+>> sh, reject anything but PAGE_KERNEL settings -- this should be fine,
+>> for now, seeing these architectures don't support ZONE_DEVICE.
+>>
+>> A check in __add_pages() is also added to ensure the pgprot parameter was
+>> set for all arches.
+>>
+>> Cc: Dan Williams <dan.j.williams@intel.com>
+>> Signed-off-by: Logan Gunthorpe <logang@deltatee.com>
+>> Acked-by: David Hildenbrand <david@redhat.com>
+>> Acked-by: Michal Hocko <mhocko@suse.com>
+>> ---
+>>  arch/arm64/mm/mmu.c            | 3 ++-
+>>  arch/ia64/mm/init.c            | 3 +++
+>>  arch/powerpc/mm/mem.c          | 3 ++-
+>>  arch/s390/mm/init.c            | 3 +++
+>>  arch/sh/mm/init.c              | 3 +++
+>>  arch/x86/mm/init_32.c          | 5 +++++
+>>  arch/x86/mm/init_64.c          | 2 +-
+>>  include/linux/memory_hotplug.h | 2 ++
+>>  mm/memory_hotplug.c            | 5 ++++-
+>>  mm/memremap.c                  | 6 +++---
+>>  10 files changed, 28 insertions(+), 7 deletions(-)
+>>
+>> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+>> index ee37bca8aba8..ea3fa844a8a2 100644
+>> --- a/arch/arm64/mm/mmu.c
+>> +++ b/arch/arm64/mm/mmu.c
+>> @@ -1058,7 +1058,8 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>                 flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
+>>
+>>         __create_pgd_mapping(swapper_pg_dir, start, __phys_to_virt(start),
+>> -                            size, PAGE_KERNEL, __pgd_pgtable_alloc, flags);
+>> +                            size, params->pgprot, __pgd_pgtable_alloc,
+>> +                            flags);
+>>
+>>         memblock_clear_nomap(start, size);
+>>
+>> diff --git a/arch/ia64/mm/init.c b/arch/ia64/mm/init.c
+>> index 97bbc23ea1e3..d637b4ea3147 100644
+>> --- a/arch/ia64/mm/init.c
+>> +++ b/arch/ia64/mm/init.c
+>> @@ -676,6 +676,9 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>         unsigned long nr_pages = size >> PAGE_SHIFT;
+>>         int ret;
+>>
+>> +       if (WARN_ON_ONCE(params->pgprot.pgprot != PAGE_KERNEL.pgprot))
+>> +               return -EINVAL;
+>> +
+>>         ret = __add_pages(nid, start_pfn, nr_pages, params);
+>>         if (ret)
+>>                 printk("%s: Problem encountered in __add_pages() as ret=%d\n",
+>> diff --git a/arch/powerpc/mm/mem.c b/arch/powerpc/mm/mem.c
+>> index 19b1da5d7eca..832412bc7fad 100644
+>> --- a/arch/powerpc/mm/mem.c
+>> +++ b/arch/powerpc/mm/mem.c
+>> @@ -138,7 +138,8 @@ int __ref arch_add_memory(int nid, u64 start, u64 size,
+>>         resize_hpt_for_hotplug(memblock_phys_mem_size());
+>>
+>>         start = (unsigned long)__va(start);
+>> -       rc = create_section_mapping(start, start + size, nid, PAGE_KERNEL);
+>> +       rc = create_section_mapping(start, start + size, nid,
+>> +                                   params->pgprot);
+>>         if (rc) {
+>>                 pr_warn("Unable to create mapping for hot added memory 0x%llx..0x%llx: %d\n",
+>>                         start, start + size, rc);
+>> diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
+>> index e9e4a7abd0cc..87b2d024e75a 100644
+>> --- a/arch/s390/mm/init.c
+>> +++ b/arch/s390/mm/init.c
+>> @@ -277,6 +277,9 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>         if (WARN_ON_ONCE(params->altmap))
+>>                 return -EINVAL;
+>>
+>> +       if (WARN_ON_ONCE(params->pgprot.pgprot != PAGE_KERNEL.pgprot))
+>> +               return -EINVAL;
+>> +
+>>         rc = vmem_add_mapping(start, size);
+>>         if (rc)
+>>                 return rc;
+>> diff --git a/arch/sh/mm/init.c b/arch/sh/mm/init.c
+>> index e5114c053364..b9de2d4fa57e 100644
+>> --- a/arch/sh/mm/init.c
+>> +++ b/arch/sh/mm/init.c
+>> @@ -412,6 +412,9 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>         unsigned long nr_pages = size >> PAGE_SHIFT;
+>>         int ret;
+>>
+>> +       if (WARN_ON_ONCE(params->pgprot.pgprot != PAGE_KERNEL.pgprot)
+>> +               return -EINVAL;
+>> +
+>>         /* We only have ZONE_NORMAL, so this is easy.. */
+>>         ret = __add_pages(nid, start_pfn, nr_pages, params);
+>>         if (unlikely(ret))
+>> diff --git a/arch/x86/mm/init_32.c b/arch/x86/mm/init_32.c
+>> index e25a4218e6ff..96d8e4fb1cc8 100644
+>> --- a/arch/x86/mm/init_32.c
+>> +++ b/arch/x86/mm/init_32.c
+>> @@ -858,6 +858,11 @@ int arch_add_memory(int nid, u64 start, u64 size,
+>>  {
+>>         unsigned long start_pfn = start >> PAGE_SHIFT;
+>>         unsigned long nr_pages = size >> PAGE_SHIFT;
+>> +       int ret;
+>> +
+>> +       ret = _set_memory_prot(start, nr_pages, params->pgprot);
 > 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> ---
->  .../bindings/media/i2c/dongwoon,dw9768.yaml        | 55 ++++++++++++++++++++++
->  MAINTAINERS                                        |  7 +++
->  2 files changed, 62 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+> Perhaps a comment since it's not immediately obvious where the
+> PAGE_KERNEL prot was established, and perhaps add a conditional to
+> skip this call in the param->pgprot == PAGE_KERNEL case?
+
+Yes I can add the skip in the PAGE_KERNEL case. Though I'm not sure what
+you are asking for with regards to the comment. Just that pgprot is set
+by the caller usually to PAGE_KERNEL?
+
+> Other than that looks good to me, but only an ack since I'm only
+> testing the x86 changes.
 > 
+> Acked-by: Dan Williams <dan.j.williams@intel.com>
 
-My bot found errors running 'make dt_binding_check' on your patch:
 
-Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
-Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dts:19.13-26: Warning (reg_format): /example-0/camera-lens@0c:reg: property has invalid length (4 bytes) (#address-cells == 1, #size-cells == 1)
-Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dt.yaml: Warning (pci_device_bus_num): Failed prerequisite 'reg_format'
-Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dt.yaml: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
-Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.example.dt.yaml: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+Thanks,
 
-See https://patchwork.ozlabs.org/patch/1246607
-Please check and re-submit.
+Logan
 
 _______________________________________________
 linux-arm-kernel mailing list
