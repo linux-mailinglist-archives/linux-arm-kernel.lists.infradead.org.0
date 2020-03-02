@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A751175BDD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 14:39:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69729175BE2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 14:39:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mv5kR+uggeSpE7NH5MsrUWMZVnzwAq8iPCx3uhR5IJ0=; b=QyXG0qLdNs2d4u
-	TZsm36FmJG3B74AvrHH8SLbv8gXuc9EHTaPGZNX9pJOomClM8nfftnayzLjVN7c5YlaVRzmt1t9xi
-	esXt7Ro2HpwEDXbtzL3eWMPOm1eW3Zcbkiqex48U/f1DL0gpy6mgWkbt2BSlyxdQdzWJGzpMe/YU8
-	64xoZIm+bFD/hyseDJUBRjA085omIRKtt/YRVyYW92c2HqgtJ5mHqo1o8zqdeork0CfcDL2SWrpEW
-	WEnCRV9gM82E8XUptbJ1y7aREMWbPZ4a3o5D7CvPcglnIHZoVqMG5JrQ9UcPJi/kY3TL4DiDSUEwu
-	hNKLqTI4r7nINrcxUiwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xAkF+yl+jj6BNMZSo4jfF4CtzjZRnu0eYfWTY8AXENs=; b=J8e
+	sQGIzFVRQWeu1EXrQjydVjYRIEB619Gfwa5pkbFnoA9ru7s1QMsL9PqOqhovCxaVcHdJ6DCEg+Ax2
+	WpoXUlL2oRpjK5EqRmKGR5/RAre1zt8zzTPgnKHEM4TAaZ9P4XOjGzUVFA/nRFfLTw54sH4KglCry
+	oFQwuQeBExjg9+7ay/l7PBM4ATEiBeEPamv3dL672Gk+0FyC0DnTI+GYklUcizrQmvYo29WKYZeZW
+	1HSOXaSZ1jqapa3tnGYJfn54QAUinNPLVS9nRzlRuNHS1+pd7JS/F8xlvuBK5sOzHVS1XJKGci1Ck
+	rJWoqHfNxXvlleZnUaqmTYNDCYzEHIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8lHl-0002Ay-PQ; Mon, 02 Mar 2020 13:39:05 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j8lID-0002QM-1o; Mon, 02 Mar 2020 13:39:33 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8lHe-0002A0-Mz
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 13:39:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1583156336;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=WcFb67oME/Nc+9ZCd/PtTGStB5FdqgJ2/9cOxFkulHA=;
- b=EKnzGmTcg58P9Bx1dS9Nmw67tf+DaZLmqwFYMPWa+awgUaPquVfLJLoVGiIN+dMdVUX/G1
- osCSuHcpNjFUe/XARth20UfTn3ggDUkuASqV1GnfLzQifmtUdtKoK0P78RGCTgsFPe8ol7
- AiDZh5TyMPl0jIpaljrDlfvR5dQet6s=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-354-F6dJcXFcOz2fv8P7oQrtFA-1; Mon, 02 Mar 2020 08:38:54 -0500
-X-MC-Unique: F6dJcXFcOz2fv8P7oQrtFA-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6878C8AB9E0;
- Mon,  2 Mar 2020 13:38:53 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-46.bne.redhat.com [10.64.54.46])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 208449CA3;
- Mon,  2 Mar 2020 13:38:50 +0000 (UTC)
-Subject: Re: [PATCH] arm64/kernel: Simplify __cpu_up() by bailing out early
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20200302020340.119588-1-gshan@redhat.com>
- <20200302122135.GB56497@lakrids.cambridge.arm.com>
-From: Gavin Shan <gshan@redhat.com>
-Message-ID: <ddbb5cb2-e8b6-ab1c-d283-fb0f402d2a4f@redhat.com>
-Date: Tue, 3 Mar 2020 00:38:48 +1100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
-MIME-Version: 1.0
-In-Reply-To: <20200302122135.GB56497@lakrids.cambridge.arm.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+ id 1j8lHz-0002Om-0B; Mon, 02 Mar 2020 13:39:20 +0000
+Received: by mail-wr1-x442.google.com with SMTP id n7so4723054wrt.11;
+ Mon, 02 Mar 2020 05:39:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=y30GtIKkLuXdZ608Vv+U7ffueQj6lNYrKY5cOlCGJWA=;
+ b=CxQHiOKFe7ZzXJLcK5wp6OzvJvmZhhnV3uPVF6sEObJThCvTywHm8YZkYstRXorFtY
+ 7mU6xsDnjrR/6k3jR1AYFAQn5Uwiuja6zn8KU7YoC5n0uduGhqpcVvP2Dba76Ppwbi0R
+ 9NxBAMor0dOD2dR1HJ6BNmuB1cf3aFMAxmkufUXxY4h6g8i3JZFL4iHkMgrLS0SPMj/u
+ WKUfh9XLzYr30ODN+dvZawdfLcFiFWe6OopI7ymd+ctdnc6NbgWiY1spwu2b0HLTrb9T
+ DuBhLhtea87ZQc6j/cCB9rndfb3eZ4sJn+3jEY1kUuuWSdPlkM1oYNy/QWv/B6qhS8Lq
+ 926A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=y30GtIKkLuXdZ608Vv+U7ffueQj6lNYrKY5cOlCGJWA=;
+ b=fLV0Rjct/svgzOeLbe9+UbTs5ldmUyx6/RYV5x9Q5bouet9Y62KQ7G5tvAywQkHArZ
+ 84iHvFpQ/l3HewgU6f5D/3QeDyrObUe3wZ/iu/hy7HmRP6A5TbFSCD6OoAZTedG+6Q1S
+ 9033q2rfQVX41I/QNBdam0pU8oj059icFo85yakVhhw89f7qxiUJ94mJgwi1ZnSXZmqC
+ mr4yVymCuLM7oNsuQc0c7VZv6rLZ5bOpmxvMwfmDRBG103ZRpmCRdsdSByCorPX+FHI5
+ RYgDxu1E/RggE+Z3JG32jF4bv0syNr4stkJ9NpSF0nN/Kj8DLADj+SuKzgTllQQaSd48
+ nrTg==
+X-Gm-Message-State: APjAAAWJ+2Plw8Di1X6rs5SL2D3l8WhJnBp1xl0/MkQVBq/XAVJyIxJb
+ EWhSmhxrGrx5hY23nEuO4cs=
+X-Google-Smtp-Source: APXvYqz0713bLlc6REVU5kywq15hHrHb7olDzMQo8OCB1Bf4rscbNsPKwBFQkUjKwLNK1Tn05DNDhg==
+X-Received: by 2002:adf:de83:: with SMTP id w3mr22815692wrl.275.1583156357691; 
+ Mon, 02 Mar 2020 05:39:17 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id j12sm28710917wrt.35.2020.03.02.05.39.16
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 02 Mar 2020 05:39:17 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] dt-bindings: serial: snps-dw-apb-uart: add compatible
+ property for rk3308 uart
+Date: Mon,  2 Mar 2020 14:39:10 +0100
+Message-Id: <20200302133910.10942-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_053858_827218_97BA602D 
-X-CRM114-Status: GOOD (  27.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200302_053919_072522_CFC5C814 
+X-CRM114-Status: GOOD (  10.35  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,166 +94,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Gavin Shan <gshan@redhat.com>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org, shan.gavin@gmail.com,
- maz@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/2/20 11:21 PM, Mark Rutland wrote:
-> On Mon, Mar 02, 2020 at 01:03:40PM +1100, Gavin Shan wrote:
->> The function __cpu_up() is invoked to bring up the target CPU through
->> the backend, PSCI for example. The nested if statements won't be needed
->> if we bail out early on the following two conditions where the status
->> won't be checked. The code looks simplified in that case.
->>
->>     * Error returned from the backend (e.g. PSCI)
->>     * The target CPU has been marked as onlined
->>
->> Signed-off-by: Gavin Shan <gshan@redhat.com>
-> 
-> FWIW, this looks like a nice cleanup to me:
-> 
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> 
-> While this patch leaves secondary_data.{task,stack} stale on a
-> successful onlining, that was already the case for a timeout, and should
-> be fine (since the next attempt at onlining will configure those before
-> poking the CPU).
-> 
-> Thanks,
-> Mark.
-> 
+A test with the command below gives these errors:
 
-Thanks, Mark. Yeah, it should be fine as you said. There are something else,
-which might be not relevant. @secondary_data could be accessed by multiple CPUs
-in parallel. For example, the master CPU boots CPU#1 and timeouts to wait it
-to be online in 5 seconds. CPU#1 isn't necessarily stuck in somewhere. After
-that, CPU#2 is brought up and might be accessing @secondary_data. At this point,
-CPU#1 can come back to access it either. However, @secondary_data isn't valid
-for CPU#1 anymore.
+arch/arm64/boot/dts/rockchip/rk3308-evb.dt.yaml: serial@ff0d0000: compatible:
+['rockchip,rk3308-uart', 'snps,dw-apb-uart']
+is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dt.yaml: serial@ff0a0000: compatible:
+['rockchip,rk3308-uart', 'snps,dw-apb-uart']
+is not valid under any of the given schemas
 
-I was thinking of something to improve the situation, but not sure if it makes
-any sense to do so. There are several options: (1) Make @secondary_data per-cpu
-variable, which looks a nature way to go. (2) To shutdown the CPU on timeout.
-The shutdown request can be failed to be served in theory, but it seems still
-an improvement.
+The compatible property for the Rockchip rk3308 uart was somehow never
+added to the documention. Fix this error by adding 'rockchip,rk3308-uart'
+to snps-dw-apb-uart.yaml.
 
-Thanks,
-Gavin
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/serial/
+snps-dw-apb-uart.yaml
 
->> ---
->>   arch/arm64/kernel/smp.c | 79 +++++++++++++++++++----------------------
->>   1 file changed, 37 insertions(+), 42 deletions(-)
->>
->> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
->> index d4ed9a19d8fe..2a9d8f39dc58 100644
->> --- a/arch/arm64/kernel/smp.c
->> +++ b/arch/arm64/kernel/smp.c
->> @@ -115,60 +115,55 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
->>   	update_cpu_boot_status(CPU_MMU_OFF);
->>   	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
->>   
->> -	/*
->> -	 * Now bring the CPU into our world.
->> -	 */
->> +	/* Now bring the CPU into our world */
->>   	ret = boot_secondary(cpu, idle);
->> -	if (ret == 0) {
->> -		/*
->> -		 * CPU was successfully started, wait for it to come online or
->> -		 * time out.
->> -		 */
->> -		wait_for_completion_timeout(&cpu_running,
->> -					    msecs_to_jiffies(5000));
->> -
->> -		if (!cpu_online(cpu)) {
->> -			pr_crit("CPU%u: failed to come online\n", cpu);
->> -			ret = -EIO;
->> -		}
->> -	} else {
->> +	if (ret) {
->>   		pr_err("CPU%u: failed to boot: %d\n", cpu, ret);
->>   		return ret;
->>   	}
->>   
->> +	/*
->> +	 * CPU was successfully started, wait for it to come online or
->> +	 * time out.
->> +	 */
->> +	wait_for_completion_timeout(&cpu_running,
->> +				    msecs_to_jiffies(5000));
->> +	if (cpu_online(cpu))
->> +		return 0;
->> +
->> +	pr_crit("CPU%u: failed to come online\n", cpu);
->>   	secondary_data.task = NULL;
->>   	secondary_data.stack = NULL;
->>   	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
->>   	status = READ_ONCE(secondary_data.status);
->> -	if (ret && status) {
->> -
->> -		if (status == CPU_MMU_OFF)
->> -			status = READ_ONCE(__early_cpu_boot_status);
->> +	if (status == CPU_MMU_OFF)
->> +		status = READ_ONCE(__early_cpu_boot_status);
->>   
->> -		switch (status & CPU_BOOT_STATUS_MASK) {
->> -		default:
->> -			pr_err("CPU%u: failed in unknown state : 0x%lx\n",
->> -					cpu, status);
->> -			cpus_stuck_in_kernel++;
->> -			break;
->> -		case CPU_KILL_ME:
->> -			if (!op_cpu_kill(cpu)) {
->> -				pr_crit("CPU%u: died during early boot\n", cpu);
->> -				break;
->> -			}
->> -			pr_crit("CPU%u: may not have shut down cleanly\n", cpu);
->> -			/* Fall through */
->> -		case CPU_STUCK_IN_KERNEL:
->> -			pr_crit("CPU%u: is stuck in kernel\n", cpu);
->> -			if (status & CPU_STUCK_REASON_52_BIT_VA)
->> -				pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
->> -			if (status & CPU_STUCK_REASON_NO_GRAN)
->> -				pr_crit("CPU%u: does not support %luK granule \n", cpu, PAGE_SIZE / SZ_1K);
->> -			cpus_stuck_in_kernel++;
->> +	switch (status & CPU_BOOT_STATUS_MASK) {
->> +	default:
->> +		pr_err("CPU%u: failed in unknown state : 0x%lx\n",
->> +		       cpu, status);
->> +		cpus_stuck_in_kernel++;
->> +		break;
->> +	case CPU_KILL_ME:
->> +		if (!op_cpu_kill(cpu)) {
->> +			pr_crit("CPU%u: died during early boot\n", cpu);
->>   			break;
->> -		case CPU_PANIC_KERNEL:
->> -			panic("CPU%u detected unsupported configuration\n", cpu);
->>   		}
->> +		pr_crit("CPU%u: may not have shut down cleanly\n", cpu);
->> +		/* Fall through */
->> +	case CPU_STUCK_IN_KERNEL:
->> +		pr_crit("CPU%u: is stuck in kernel\n", cpu);
->> +		if (status & CPU_STUCK_REASON_52_BIT_VA)
->> +			pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
->> +		if (status & CPU_STUCK_REASON_NO_GRAN) {
->> +			pr_crit("CPU%u: does not support %luK granule\n",
->> +				cpu, PAGE_SIZE / SZ_1K);
->> +		}
->> +		cpus_stuck_in_kernel++;
->> +		break;
->> +	case CPU_PANIC_KERNEL:
->> +		panic("CPU%u detected unsupported configuration\n", cpu);
->>   	}
->>   
->>   	return ret;
->> -- 
->> 2.23.0
->>
-> 
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml b/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml
+index b42002542..b962f8db4 100644
+--- a/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml
++++ b/Documentation/devicetree/bindings/serial/snps-dw-apb-uart.yaml
+@@ -27,6 +27,7 @@ properties:
+               - rockchip,rk3066-uart
+               - rockchip,rk3188-uart
+               - rockchip,rk3288-uart
++              - rockchip,rk3308-uart
+               - rockchip,rk3328-uart
+               - rockchip,rk3368-uart
+               - rockchip,rk3399-uart
+-- 
+2.11.0
 
 
 _______________________________________________
