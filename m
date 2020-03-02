@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94660175EE7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:58:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6DE7175F29
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 17:05:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BUlGR3CgFp2BfCIYZhmGdpHSqKpNJVGWmxI3ZadkZLw=; b=QXJq3IeLXtLWXo
-	uX8uSroaVI0H5wL5f7gbJINKocW0F7k1au1zUdiVCbIo3WWww70Vvd1txxZSqRZyrIII7Nf+7EK9M
-	9Y/+qB36RRByVSqoYkPyRvf8Ti/7GwWQRLPywvtm8vn7Wt/nqq3m6RrH01mBd4dP32wTUIDMposPy
-	KHnIT6KXekDvfjh/N748mt2JaEsR8QiXKzweqVfHASViRN0TdsRBlUwZWg8i5HOMzojwco99X79T5
-	aq/f11zbFBO8G8KDc+j+ChzzpHlIQO1qmyug44DdCCTtc2x6OorxBoL3QuTNpHyxg1SpVjTXVWAzd
-	nkhMAykkNuCkurfTAP/A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZxtLPWIPjeCCyQOOSZefAlSa5h7NZHAoVDz7l591Fa4=; b=TpiHW3EG6loLvCR3vFDFc/vPv
+	+4UWB2r5LFWR5MgmPH4VNhS1y2U8+q0uFbPUqrdrRydtF5u5opOahMy0P39ka6xz28IGX5zUQnMbP
+	yHKSw/9i3MDrKoLB6EKPUcTvr8+wl/ygLZGvrgs7Rzt502Jl0gf7o+7tff3JAMZ0LWXng9p9HyTbP
+	Fp/FraZGS0/IWZu6MaROsiL1klHd1UK+HAyd+tyYTSmoHvGmmRlzoKophWQudmuKa/XBdT8TL4qNH
+	QazjkJbgoZjFUkgCnHputCcB1bW6ayuPJt6MTa1wvCgbr42AmS3GEgAz900EI7sNXed5V5FedPh5i
+	2huRZ5Z4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nS0-0004fo-4J; Mon, 02 Mar 2020 15:57:48 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nRt-0004fJ-JQ; Mon, 02 Mar 2020 15:57:42 +0000
-Received: from [10.18.91.152] (10.18.91.152) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 2 Mar
- 2020 23:58:09 +0800
-Subject: Re: [PATCH RESEND] dt-bindings: power: Fix dt_binding_check error
-To: Kevin Hilman <khilman@baylibre.com>, Stephen Rothwell
- <sfr@canb.auug.org.au>, <linux-amlogic@lists.infradead.org>
-References: <1582856099-105484-1-git-send-email-jianxin.pan@amlogic.com>
- <7h5zfpbbn8.fsf@baylibre.com>
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-Message-ID: <caea291f-0059-ee84-6d75-ddcb1b393952@amlogic.com>
-Date: Mon, 2 Mar 2020 23:58:08 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+	id 1j8nZO-0001Kh-6W; Mon, 02 Mar 2020 16:05:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8nZH-0001Jf-U0
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 16:05:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BC05FFEC;
+ Mon,  2 Mar 2020 08:05:17 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F8D23F534;
+ Mon,  2 Mar 2020 08:05:13 -0800 (PST)
+Subject: Re: provide in-place uncached remapping for dma-direct v2
+To: Christoph Hellwig <hch@lst.de>, Jonas Bonn <jonas@southpole.se>,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ Stafford Horne <shorne@gmail.com>
+References: <20200224194446.690816-1-hch@lst.de>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <4fe14c57-78d4-6590-a4c4-14fbe061238e@arm.com>
+Date: Mon, 2 Mar 2020 16:05:12 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <7h5zfpbbn8.fsf@baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.18.91.152]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+In-Reply-To: <20200224194446.690816-1-hch@lst.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_075741_635968_560E8120 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_080520_011790_FD6F01AF 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,71 +65,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-arch@vger.kernel.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ openrisc@lists.librecores.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-Hi Kevin,
-
-
-On 2020/3/1 0:28, Kevin Hilman wrote:
-> Hi Jianxin,
+On 24/02/2020 7:44 pm, Christoph Hellwig wrote:
+> Hi all,
 > 
-> Jianxin Pan <jianxin.pan@amlogic.com> writes:
+> this series provides support for remapping places uncached in-place in
+> the generic dma-direct code, and moves openrisc over from its own
+> in-place remapping scheme.  The arm64 folks also had interest in such
+> a scheme to avoid problems with speculating into cache aliases.
 > 
->> Missing ';' in the end of secure-monitor example node.
->>
->> Fixes: f50b4108ede1 ("dt-bindings: power: add Amlogic secure power domains bindings")
+> Also all architectures that always use small page mappings for the
+> kernel and have non-coherent DMA should look into enabling this
+> scheme, as it is much more efficient than the vmap remapping.
 > 
-> Thanks for the fix, but where did this commit ID come from?  I think
-> this is the right upstream commit:
-> 
-> Fixes: 165b5fb294e8 ("dt-bindings: power: add Amlogic secure power domains bindings")
-> 
-> Also, when you resend, can you cc soc@kernel.org.  The soc maintainers
-> are who queue my amlogic tree.  I will ack and they can submit to Linus
-> for v5.7 so Stephen doesn't have to carry his local linux-next fix
-> anymore.
-> 
-> Thanks,
-The commit id is not correct, it from my local branch.
-I corrected it and added soc maintainers to the cc list.
-Thanks for your time. 
-> 
-> Kevin
-> 
->> Reported-by: Rob Herring <robh+dt@kernel.org>
->> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
->> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
->> Acked-by: Rob Herring <robh@kernel.org>
->> ---
->>  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> index af32209..bc4e037 100644
->> --- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> @@ -36,5 +36,5 @@ examples:
->>              compatible = "amlogic,meson-a1-pwrc";
->>              #power-domain-cells = <1>;
->>          };
->> -    }
->> +    };
->>  
->> -- 
->> 2.7.4
-> 
-> .
+> Changes since v1:
+>   - share the arch hook for inline remap and uncached segment support
 > 
 
+For the whole series:
+
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+
+I think we might ultimately want to fiddle around a bit more in 
+dma_direct_alloc_pages() to give ARCH_HAS_DMA_SET_UNCACHED clear 
+precedence over DMA_DIRECT_REMAP if they have to coexist, but let's land 
+these patches first as a solid foundation.
+
+Thanks,
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
