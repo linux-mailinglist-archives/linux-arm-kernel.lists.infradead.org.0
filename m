@@ -2,67 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC8161759E0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:58:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F83E1759E1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:58:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=zjvgSGkGnnmFsmHF/3oe9d+yOdXq9E+4p045GoCIu4M=; b=WuB
-	rtvC6d5xIBIPJ2H/eGtnRyR8clXoTOKNOQjhygLnqEUEQXTJ3wCz5P8MrIZnmliehQFGDnub1/BGu
-	utFO28Qzs3l5g/d5oQtXTbP4P0vJqOcWpxMU+W/yzL0cOOwVheL4qa0aa/TyvXKFD4zrRNjp/45ub
-	c3oeq7kUY0sC4tRT/Z9DxiC5G4qINcLcWQM3KZqyGa814ctGGz5qknGjCAQKF5frSbD0D5BYVA0CN
-	idcWCafUPXM8mTRiwGrejqCNZYAkxvh2WnVeajddr+TcKNqUk8Co2Ky22Ff6jNVmdwV5SuKAoTApr
-	G1lQ1ssuvTrkQnruvlC1N+4RRx0sneQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=AZ+opMNKX+SKDssQKCdmq8RBp3PaBI+vKWG3aq7nZ8s=; b=RGac0uYyHIaKMu+3/62pK5bmvI
+	H31HpbDWenSbGc5VyesC3fr1SRvpg7gdEUJsgZorNkG63hz9+HzJjg71WK1eIjedOkF3Zkx3iwNGj
+	B9YwEdSJNW+qpF+gvNHZSu/A45xU0Ot/Yz2kgL56O2cB3A1YEytz5ESdFrxcDbqWjxeBAXIWcJeqm
+	8r2Z4JwUhbBW+ZUYC1mmAtKOc6DtBn5JuALdcz1lVUQ4VTJo1MeWyprEVK+jU3TqHVnsAPLcBDve9
+	sy5dyYj1XhYYXzBZ1vz8lM5TDal9HoSc/biioRZVpNvWVSpZa1N+tDgzIpeAgUfH6UGQLEpsmfzWS
+	nWJa5XjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8jiQ-00052W-NG; Mon, 02 Mar 2020 11:58:30 +0000
+	id 1j8jig-000595-Ue; Mon, 02 Mar 2020 11:58:46 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8jiK-00051M-0E; Mon, 02 Mar 2020 11:58:26 +0000
-Received: by mail-wm1-x344.google.com with SMTP id a132so857671wme.1;
+ id 1j8jiK-00051L-0K; Mon, 02 Mar 2020 11:58:26 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a25so2375571wmm.0;
  Mon, 02 Mar 2020 03:58:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=+bOUkmuWmtrqLnmLhYcvBOjbDQxV1smzTu5vD7lLcDs=;
- b=sIzU5chb1GcVyQMtdhpn+YMKLwGB4nwgzWG4cTyD3MtUUTWThAccAtZgHBK2bvUasL
- R8Hbv6HtwejqQMuIQi1wfxlo+0bbSQMujWY58KyK2vyrPX1EdzYoYeRqnl+DsVKoNA2C
- gSFJd6WZtAo9jY3QDaXyVqLy7c/Lv7fjjA9lvu5SW03q6BkHXwJHqyaVkNm0G2zAvLSl
- TV5XCTgdRZ+MmZ/ZSS4mpaJx0+XPiVaeefJpxE/HbeQxRcZIqBQqzkDSGr2kFHMVBrVO
- TJ7LFy6gPcbPwtgaZ0LYmKTWqjRy4xVmEQGD7+FSkHJR37xQGgBwRKT4hgFWeRd7hKoY
- P5eg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=iflJIvqjKSNmZN001KRyauVV1RXmgC8qmOhi3NV99NM=;
+ b=ezO+T8QRjR4ODnmGvsIE0lrcK6rPy0G8gECUFGVgsrkx9JZfsEO7a1N/l0qa1g3+3p
+ n9fZhznzVJPWvdHdzTKWt4uKBQTOsdfsAOso0ewM9QgdzzEMceDBMZsX826sdfKXe8ZG
+ B0aBxChJaMHAsWd1ZQ9PD6AajioSEiqiT+OPFhIXg5ikIs5Hf9K+OljC6iNLuYcyYOdU
+ rs66rtLbIgtaBWhiSmd6Bxd8LD5D/FBkgec5bocLw+MQ/kOHyMp0+yqKdGL3qZA+bNkv
+ 8b8lTMr+fkYRhnAhL7lb5Qx3cI1OsfiGnIUStELGJr7jdeLSbvQIDJaOZtftoP+b26pI
+ U24g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=+bOUkmuWmtrqLnmLhYcvBOjbDQxV1smzTu5vD7lLcDs=;
- b=Bz5L4jaDH1K7EQqCZJIe651i4/3F2qM607PvJjH4xf/SVikl/4Cafc0Qtjb9cVD/BZ
- WIfrVOQE3U+6nGKL8NPiorLVIJc4D4bT9gms1182TOQ+CyZmPXUa/Zjr3uJ2B7WV+J9m
- lJaJtyDn+0vMupdP+O7Fea3tw+fJDhNZg5erIKhyfgeIM2MPpY0BzGWYf0YDtZpQM5d6
- fLotbuiJ7JvScHdGQvPX51Elczy30aO4QH2czHN0YAeveH186M6DVR2oCvcqMTwPzXCP
- 8b8DVDdLVvAn0h9WGjKkzqMZkIvtOqm/InBBojQ3anVlvz8C/JqfymrHHfFkYmc9eDpj
- akvw==
-X-Gm-Message-State: APjAAAVArTO+wCMaxt0pn3qHR68mRjjkjWrDPREJWDUwsh/IkPnR5bUb
- 1qkyRdZ9cLOhn/A9amuLESI=
-X-Google-Smtp-Source: APXvYqwn+pGS0GpOR51cYA0edtXDgnNHd3aAxUL57dOeGCuHOdepkQXfPsdL9BGqEiQLUUFCtRYQZQ==
-X-Received: by 2002:a1c:a502:: with SMTP id o2mr12079496wme.94.1583150299586; 
- Mon, 02 Mar 2020 03:58:19 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=iflJIvqjKSNmZN001KRyauVV1RXmgC8qmOhi3NV99NM=;
+ b=snXjJhQGMjXc5t/I4hCoy3SkguGMZUldd2JB2nw3iPJBjJOMgn+gV9zde1jWKWXbBz
+ RuUeZrqjWZHYFkmuC4PAb0rA6SBaNr23XWvCloveybufxzeFpgHVvHWYcg2+d3/FU+V1
+ 6GwP5b3vbXVSFdtn6YLCs/dzIkasZGiwyntEtRf9FEx+/uFFaqtTKGE1zNyPogbQV3cy
+ 9tLY4WNiQtzQAJ8CApqBjTU0r22Hw9b6bjXpiDFl2XPy7vJYL1wZ0ltVz8v8Syzvw49d
+ BDNLdcjVuKMxJ1bN6A9rUsGSf+b6fvsjtM+lZBFX6vt2EWH6xz3NPs/WLm2ADAh/T26Y
+ Qonw==
+X-Gm-Message-State: ANhLgQ2fxfYjCmCigEZ/jdQf04zjIg2NmDbt8qF0FF4Eu7yrDeoqUl2p
+ NuSmGO8jkYBCYBguo8zspnw=
+X-Google-Smtp-Source: ADFU+vuOFSIJepvCdWl91GQTBHdvvIeCtHEsEkk20T6cmsn+Xd75wm81zY1l1J8AeghRp+J1fjLtQQ==
+X-Received: by 2002:a1c:9d0d:: with SMTP id g13mr5238660wme.111.1583150300592; 
+ Mon, 02 Mar 2020 03:58:20 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id o16sm12653303wrj.5.2020.03.02.03.58.18
+ by smtp.gmail.com with ESMTPSA id o16sm12653303wrj.5.2020.03.02.03.58.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Mar 2020 03:58:19 -0800 (PST)
+ Mon, 02 Mar 2020 03:58:20 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH 1/2] dt-bindings: usb: dwc2: add compatible property for
- rk3328 usb
-Date: Mon,  2 Mar 2020 12:58:11 +0100
-Message-Id: <20200302115812.7207-1-jbx6244@gmail.com>
+Subject: [PATCH 2/2] dt-bindings: usb: dwc2: add compatible property for
+ rk3368 usb
+Date: Mon,  2 Mar 2020 12:58:12 +0100
+Message-Id: <20200302115812.7207-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200302115812.7207-1-jbx6244@gmail.com>
+References: <20200302115812.7207-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_035824_874722_02A499F8 
-X-CRM114-Status: UNSURE (   9.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200302_035824_874687_BC5156C7 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -107,22 +110,28 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 A test with the command below gives these errors:
 
-arch/arm64/boot/dts/rockchip/rk3328-a1.dt.yaml: usb@ff580000: compatible:
-['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+arch/arm64/boot/dts/rockchip/rk3368-evb-act8846.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
 is not valid under any of the given schemas
-arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff580000: compatible:
-['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+arch/arm64/boot/dts/rockchip/rk3368-geekbox.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
 is not valid under any of the given schemas
-arch/arm64/boot/dts/rockchip/rk3328-rock64.dt.yaml: usb@ff580000: compatible:
-['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+arch/arm64/boot/dts/rockchip/rk3368-lion-haikou.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
 is not valid under any of the given schemas
-arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dt.yaml: usb@ff580000: compatible:
-['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+arch/arm64/boot/dts/rockchip/rk3368-orion-r68-meta.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3368-r88.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
 is not valid under any of the given schemas
 
-The compatible property for rk3328 dwc2 usb was somehow never added to
+The compatible property for rk3368 dwc2 usb was somehow never added to
 the documention. Fix this error by adding
-'rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2'
+'rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2'
 to dwc2.yaml.
 
 make ARCH=arm64 dtbs_check
@@ -134,15 +143,15 @@ Signed-off-by: Johan Jonker <jbx6244@gmail.com>
  1 file changed, 4 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
-index e95ba9373..e9f4cea21 100644
+index e9f4cea21..14aeb67e8 100644
 --- a/Documentation/devicetree/bindings/usb/dwc2.yaml
 +++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
-@@ -41,6 +41,10 @@ properties:
-           - const: rockchip,rk3288-usb
+@@ -45,6 +45,10 @@ properties:
+           - const: rockchip,rk3328-usb
            - const: rockchip,rk3066-usb
            - const: snps,dwc2
 +      - items:
-+          - const: rockchip,rk3328-usb
++          - const: rockchip,rk3368-usb
 +          - const: rockchip,rk3066-usb
 +          - const: snps,dwc2
        - const: lantiq,arx100-usb
