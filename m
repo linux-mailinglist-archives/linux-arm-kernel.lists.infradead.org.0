@@ -2,70 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADAB817599B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:33:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0843C1759A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:33:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dcvlq2ndveFalWGXdiHij7lctMHGdM6RcbBafBXRvIM=; b=SY5T277LiAhESQ
-	kUUEtp+ZTVZQfDivwyC6z22LgXGk764Q/kgavdQ8G7vOGsNPodLzqoRU316UOIPGcC4DYMekCiVjJ
-	+lOZyinnkPRJH1KMB65tQH0+ZxvEcDix7+DqHtQW5vSgHHvhVUj3KahWriCFNuf21ySQLp0c+HeTE
-	MjLdPvTzb1DS++QHJnW+9hg4GGaNt9fbP+36wBubfcEUipdRfqU+uh9fyCVMNjDpYEZQ0s3l2me2O
-	YxB/13oR+Ijb5j1g/MdHlgBiUYvjmL/iDLda8jKrXu1RmfwsHmTwDwJuq+9ww35rJ3sli1smVbtTP
-	dk8lgnmecW2M58C3/80g==;
+	List-Owner; bh=C2uhlmFRqCq5nuFh+YReBnBnjQ4vN94IiOa+Pta4nqo=; b=bNkg9e8F3G93OS
+	ke9NeyFkHTw2zPuOQbo1opz/kALBRmNg4862RwG14Y0/3KnfjoJf4xZS+ZIR6PTdrmignycI4nniX
+	43olISiC6eDeHEqNRVpREJNrcyl1IQMMMWUaZLkGie72RYfRhMZM92pLYFoMzoUrVO4piWRXLB0aT
+	JCUt3z6U+o/EMLnROOYx1G0w+MlxInmSbP68eT5L2x1y9f2FmVT6Z0XBkbXEtMqbf/o61/BJvEVEd
+	1PjS0m5E8PTRdJ4of67gsblyfuFVi/WA87GSqBt0bQjsYLh7bdyaEyb3IIiJPWWtIdFnykoV/iq2T
+	py4GmVhM+Sp0QLhbZZKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8jK8-0004J8-69; Mon, 02 Mar 2020 11:33:24 +0000
+	id 1j8jKP-0004WP-T6; Mon, 02 Mar 2020 11:33:41 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8jK1-0004IR-7o
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 11:33:19 +0000
+ id 1j8jKE-0004Tf-AL
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 11:33:33 +0000
 Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 022BNSR4012757; Mon, 2 Mar 2020 12:33:12 +0100
+ 022BXSbO002288; Mon, 2 Mar 2020 12:33:28 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=u/3EhNUAqwCWTExaWSBfRQATTiR3E5D/Mz6MD04Bw6g=;
- b=hroE/SB9DqDFrKs9iZAYGAth3FHpPCSF2PwHBTCDXKs6bKcFTYxxZy3HgE9vlH37iJWJ
- q3oZhfIcf0AIj/hdDLM8IVeHWwDZosAL7Y1wLaSUkuHTHWpmVBU9iNYhtfsAX1i2MIxw
- Z+obZ34ju/0lt+Eoxo/fFFRbB1dCSDIA8xpQ8e8eSDJ0Dtf2Jl8p3H4pV4XEF9kfBj4G
- 5b35NZFozO9eYthzqX+CivTHoJYcERlrdyJoWj5e8/hSl5+zLouWUR06hYK3/8BAN1YM
- xfw5lEd/S2wmKCbJi/T8esYF8mzxM+rtZcaMFJzWpeFJvWJ1IyP4f/pntGSQB92urKe0 Dw== 
+ bh=LK5Rc8fBCqHr4BrNiCRui/DbI9k5MYuzFQ9Jui1JyFw=;
+ b=sLI3Lp5o/9lux+MHY5cQrtsLRwzk8UtSEuOmUJR9jTL+3BcMaZv+FvP9jWer0XxJwBEa
+ 23mrkhjt1Pn43RrXHr29cvumJuI/c095CsOQ7LfFhVISkSnUYOf45hDgTVAM2WkpT242
+ THaOk5W66Gs5eP5dMi4X0rJbMjNjnZlbM1MKBbc6SOlOpZpjHnfiYFRQ6K4tLKqVuwlc
+ CIbDk/Zm9VlDnl7RqiVsmGUzuNENCbNLlrohj3kse3rpikFILCvfeCOsgsM+L/uDmApe
+ d0j2RDOzrE5vyvX22Op4u16PqWHMmEMSqn/MtGc+f+KXmxgUdm8+84v6HP2ktq+rwQhF oA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yffqpk3w1-1
+ by mx07-00178001.pphosted.com with ESMTP id 2yffqpk3wf-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 02 Mar 2020 12:33:12 +0100
+ Mon, 02 Mar 2020 12:33:28 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3BBDF100034;
- Mon,  2 Mar 2020 12:33:08 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 09E99100034;
+ Mon,  2 Mar 2020 12:33:17 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2C8DA2BEC69;
- Mon,  2 Mar 2020 12:33:08 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 2 Mar 2020 12:33:07
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F252F2BEC69;
+ Mon,  2 Mar 2020 12:33:16 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 2 Mar 2020 12:33:16
  +0100
 From: Alain Volmat <alain.volmat@st.com>
 To: <wsa@the-dreams.de>, <pierre-yves.mordret@st.com>
-Subject: [PATCHv2 1/5] i2c: i2c-stm32f7: disable/restore Fast Mode Plus bits
- in low power modes
-Date: Mon, 2 Mar 2020 12:33:07 +0100
-Message-ID: <1583148787-24236-1-git-send-email-alain.volmat@st.com>
+Subject: [PATCHv2 3/5] i2c: i2c-stm32f7: add a new st, stm32mp15-i2c compatible
+Date: Mon, 2 Mar 2020 12:33:16 +0100
+Message-ID: <1583148796-24285-1-git-send-email-alain.volmat@st.com>
 X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-03-02_03:2020-02-28,
  2020-03-02 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_033317_747706_EDB882EC 
-X-CRM114-Status: GOOD (  18.87  )
+X-CRM114-CacheID: sfid-20200302_033330_688482_738F88AC 
+X-CRM114-Status: GOOD (  16.73  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -101,166 +100,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Defer the initial enabling of the Fast Mode Plus bits after the
-stm32f7_i2c_setup_timing call in probe function in order to avoid
-enabling them if speed is downgraded.
-Clear & restore the Fast Mode Plus bits in the suspend/resume
-handlers of the driver.
+Add a new stm32mp15 specific compatible to handle FastMode+
+registers handling which is different on the stm32mp15 compared
+to the stm32f7 or stm32h7.
+Indeed, on the stm32mp15, the FastMode+ set and clear registers
+are separated while on the other platforms (F7 or H7) the control
+is done in a unique register.
 
 Signed-off-by: Alain Volmat <alain.volmat@st.com>
 Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
-
 ----
-v2: rename struct stm32f7_i2c_msg regmap_reg/regmap_mask into fmp_reg/fmp_mask
-    remove useless brackets
-    remove useless if (ret) ... return 0 
-    use true/false in stm32f7_i2c_write_fm_plus_bits calls
+v2: adapt struct stm32f7_i2c_dev fmp register variable naming (regmap_ -> fmp_)
 ---
- drivers/i2c/busses/i2c-stm32f7.c | 52 ++++++++++++++++++++++++++++++----------
- 1 file changed, 39 insertions(+), 13 deletions(-)
+ drivers/i2c/busses/i2c-stm32f7.c | 39 +++++++++++++++++++++++++++++++++------
+ 1 file changed, 33 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-index 378956ac6d1d..cfe6d790a8fc 100644
+index cfe6d790a8fc..8fe7f8caf91b 100644
 --- a/drivers/i2c/busses/i2c-stm32f7.c
 +++ b/drivers/i2c/busses/i2c-stm32f7.c
-@@ -303,6 +303,8 @@ struct stm32f7_i2c_msg {
+@@ -223,6 +223,7 @@ struct stm32f7_i2c_spec {
+  * @fall_time: Fall time (ns)
+  * @dnf: Digital filter coefficient (0-16)
+  * @analog_filter: Analog filter delay (On/Off)
++ * @fmp_clr_offset: Fast Mode Plus clear register offset from set register
+  */
+ struct stm32f7_i2c_setup {
+ 	enum stm32_i2c_speed speed;
+@@ -232,6 +233,7 @@ struct stm32f7_i2c_setup {
+ 	u32 fall_time;
+ 	u8 dnf;
+ 	bool analog_filter;
++	u32 fmp_clr_offset;
+ };
+ 
+ /**
+@@ -303,7 +305,8 @@ struct stm32f7_i2c_msg {
   * @dma: dma data
   * @use_dma: boolean to know if dma is used in the current transfer
   * @regmap: holds SYSCFG phandle for Fast Mode Plus bits
-+ * @fmp_reg: register address for setting Fast Mode Plus bits
-+ * @fmp_mask: mask for Fast Mode Plus bits in set register
+- * @fmp_reg: register address for setting Fast Mode Plus bits
++ * @fmp_sreg: register address for setting Fast Mode Plus bits
++ * @fmp_creg: register address for clearing Fast Mode Plus bits
+  * @fmp_mask: mask for Fast Mode Plus bits in set register
   * @wakeup_src: boolean to know if the device is a wakeup source
   */
- struct stm32f7_i2c_dev {
-@@ -326,6 +328,8 @@ struct stm32f7_i2c_dev {
+@@ -328,7 +331,8 @@ struct stm32f7_i2c_dev {
  	struct stm32_i2c_dma *dma;
  	bool use_dma;
  	struct regmap *regmap;
-+	u32 fmp_reg;
-+	u32 fmp_mask;
+-	u32 fmp_reg;
++	u32 fmp_sreg;
++	u32 fmp_creg;
+ 	u32 fmp_mask;
  	bool wakeup_src;
  };
+@@ -386,6 +390,14 @@ static const struct stm32f7_i2c_setup stm32f7_setup = {
+ 	.analog_filter = STM32F7_I2C_ANALOG_FILTER_ENABLE,
+ };
  
-@@ -1830,28 +1834,37 @@ static int stm32f7_i2c_unreg_slave(struct i2c_client *slave)
- 	return 0;
- }
- 
-+static int stm32f7_i2c_write_fm_plus_bits(struct stm32f7_i2c_dev *i2c_dev,
-+					  bool enable)
-+{
-+	if (i2c_dev->speed != STM32_I2C_SPEED_FAST_PLUS ||
-+	    IS_ERR_OR_NULL(i2c_dev->regmap))
-+		/* Optional */
-+		return 0;
++static const struct stm32f7_i2c_setup stm32mp15_setup = {
++	.rise_time = STM32F7_I2C_RISE_TIME_DEFAULT,
++	.fall_time = STM32F7_I2C_FALL_TIME_DEFAULT,
++	.dnf = STM32F7_I2C_DNF_DEFAULT,
++	.analog_filter = STM32F7_I2C_ANALOG_FILTER_ENABLE,
++	.fmp_clr_offset = 0x40,
++};
 +
-+	return regmap_update_bits(i2c_dev->regmap, i2c_dev->fmp_reg,
-+				  i2c_dev->fmp_mask,
-+				  enable ? i2c_dev->fmp_mask : 0);
-+}
-+
- static int stm32f7_i2c_setup_fm_plus_bits(struct platform_device *pdev,
- 					  struct stm32f7_i2c_dev *i2c_dev)
+ static inline void stm32f7_i2c_set_bits(void __iomem *reg, u32 mask)
  {
- 	struct device_node *np = pdev->dev.of_node;
- 	int ret;
--	u32 reg, mask;
- 
- 	i2c_dev->regmap = syscon_regmap_lookup_by_phandle(np, "st,syscfg-fmp");
--	if (IS_ERR(i2c_dev->regmap)) {
-+	if (IS_ERR(i2c_dev->regmap))
+ 	writel_relaxed(readl_relaxed(reg) | mask, reg);
+@@ -1837,14 +1849,25 @@ static int stm32f7_i2c_unreg_slave(struct i2c_client *slave)
+ static int stm32f7_i2c_write_fm_plus_bits(struct stm32f7_i2c_dev *i2c_dev,
+ 					  bool enable)
+ {
++	int ret;
++
+ 	if (i2c_dev->speed != STM32_I2C_SPEED_FAST_PLUS ||
+ 	    IS_ERR_OR_NULL(i2c_dev->regmap))
  		/* Optional */
  		return 0;
--	}
--
--	ret = of_property_read_u32_index(np, "st,syscfg-fmp", 1, &reg);
--	if (ret)
--		return ret;
  
--	ret = of_property_read_u32_index(np, "st,syscfg-fmp", 2, &mask);
-+	ret = of_property_read_u32_index(np, "st,syscfg-fmp", 1,
-+					 &i2c_dev->fmp_reg);
+-	return regmap_update_bits(i2c_dev->regmap, i2c_dev->fmp_reg,
+-				  i2c_dev->fmp_mask,
+-				  enable ? i2c_dev->fmp_mask : 0);
++	if (i2c_dev->fmp_sreg == i2c_dev->fmp_creg)
++		ret = regmap_update_bits(i2c_dev->regmap,
++					 i2c_dev->fmp_sreg,
++					 i2c_dev->fmp_mask,
++					 enable ? i2c_dev->fmp_mask : 0);
++	else
++		ret = regmap_write(i2c_dev->regmap,
++				   enable ? i2c_dev->fmp_sreg :
++					    i2c_dev->fmp_creg,
++				   i2c_dev->fmp_mask);
++
++	return ret;
+ }
+ 
+ static int stm32f7_i2c_setup_fm_plus_bits(struct platform_device *pdev,
+@@ -1859,10 +1882,13 @@ static int stm32f7_i2c_setup_fm_plus_bits(struct platform_device *pdev,
+ 		return 0;
+ 
+ 	ret = of_property_read_u32_index(np, "st,syscfg-fmp", 1,
+-					 &i2c_dev->fmp_reg);
++					 &i2c_dev->fmp_sreg);
  	if (ret)
  		return ret;
  
--	return regmap_update_bits(i2c_dev->regmap, reg, mask, mask);
-+	return of_property_read_u32_index(np, "st,syscfg-fmp", 2,
-+					  &i2c_dev->fmp_mask);
++	i2c_dev->fmp_creg = i2c_dev->fmp_sreg +
++			       i2c_dev->setup.fmp_clr_offset;
++
+ 	return of_property_read_u32_index(np, "st,syscfg-fmp", 2,
+ 					  &i2c_dev->fmp_mask);
  }
+@@ -2262,6 +2288,7 @@ static const struct dev_pm_ops stm32f7_i2c_pm_ops = {
  
- static u32 stm32f7_i2c_func(struct i2c_adapter *adap)
-@@ -1929,9 +1942,6 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 				       &clk_rate);
- 	if (!ret && clk_rate >= 1000000) {
- 		i2c_dev->speed = STM32_I2C_SPEED_FAST_PLUS;
--		ret = stm32f7_i2c_setup_fm_plus_bits(pdev, i2c_dev);
--		if (ret)
--			goto clk_free;
- 	} else if (!ret && clk_rate >= 400000) {
- 		i2c_dev->speed = STM32_I2C_SPEED_FAST;
- 	} else if (!ret && clk_rate >= 100000) {
-@@ -1991,6 +2001,15 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 	if (ret)
- 		goto clk_free;
- 
-+	if (i2c_dev->speed == STM32_I2C_SPEED_FAST_PLUS) {
-+		ret = stm32f7_i2c_setup_fm_plus_bits(pdev, i2c_dev);
-+		if (ret)
-+			goto clk_free;
-+		ret = stm32f7_i2c_write_fm_plus_bits(i2c_dev, true);
-+		if (ret)
-+			goto clk_free;
-+	}
-+
- 	adap = &i2c_dev->adap;
- 	i2c_set_adapdata(adap, i2c_dev);
- 	snprintf(adap->name, sizeof(adap->name), "STM32F7 I2C(%pa)",
-@@ -2015,7 +2034,7 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 		if (ret != -EPROBE_DEFER)
- 			dev_err(&pdev->dev,
- 				"Failed to request dma error %i\n", ret);
--		goto clk_free;
-+		goto fmp_clear;
- 	}
- 
- 	if (i2c_dev->wakeup_src) {
-@@ -2069,6 +2088,9 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
- 		i2c_dev->dma = NULL;
- 	}
- 
-+fmp_clear:
-+	stm32f7_i2c_write_fm_plus_bits(i2c_dev, false);
-+
- clk_free:
- 	clk_disable_unprepare(i2c_dev->clk);
- 
-@@ -2101,6 +2123,8 @@ static int stm32f7_i2c_remove(struct platform_device *pdev)
- 		i2c_dev->dma = NULL;
- 	}
- 
-+	stm32f7_i2c_write_fm_plus_bits(i2c_dev, false);
-+
- 	clk_disable_unprepare(i2c_dev->clk);
- 
- 	return 0;
-@@ -2148,6 +2172,7 @@ static int stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
- 	backup_regs->oar2 = readl_relaxed(i2c_dev->base + STM32F7_I2C_OAR2);
- 	backup_regs->pecr = readl_relaxed(i2c_dev->base + STM32F7_I2C_PECR);
- 	backup_regs->tmgr = readl_relaxed(i2c_dev->base + STM32F7_I2C_TIMINGR);
-+	stm32f7_i2c_write_fm_plus_bits(i2c_dev, false);
- 
- 	pm_runtime_put_sync(i2c_dev->dev);
- 
-@@ -2179,6 +2204,7 @@ static int stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
- 	writel_relaxed(backup_regs->oar1, i2c_dev->base + STM32F7_I2C_OAR1);
- 	writel_relaxed(backup_regs->oar2, i2c_dev->base + STM32F7_I2C_OAR2);
- 	writel_relaxed(backup_regs->pecr, i2c_dev->base + STM32F7_I2C_PECR);
-+	stm32f7_i2c_write_fm_plus_bits(i2c_dev, true);
- 
- 	pm_runtime_put_sync(i2c_dev->dev);
- 
+ static const struct of_device_id stm32f7_i2c_match[] = {
+ 	{ .compatible = "st,stm32f7-i2c", .data = &stm32f7_setup},
++	{ .compatible = "st,stm32mp15-i2c", .data = &stm32mp15_setup},
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, stm32f7_i2c_match);
 -- 
 2.7.4
-
+-
 
 _______________________________________________
 linux-arm-kernel mailing list
