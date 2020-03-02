@@ -2,52 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2130117514D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 01:19:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E519175184
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 02:30:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=55SKFR+6nFHM+2b/qvLIvSZ8dOJblL5Gi/3fJvCSytY=; b=p1XASyKNayLmKR
-	rLB4iJQbIP5HLZVBvfHclaR03tB45xta5Md1cegmW9dswt40MI/gE1dmbsSrZ6dAH2zL/A1lqvZeh
-	GhW/irYbGWYQ82pjAzxDYfQQgbYf0vDjQQxKjoxoTu3ID4WUeUtDhdtWbsyGWh8k2J/VjohV+O8ia
-	vScv4uOYFEdo7hbbInkFwUWeQJqP1FwyS4EotyQcEuwCM5DAZpC55qQ3MyGJEVLgBlDlQeqRCIm+Y
-	anNDyycOP/1vvKMGBrUrPwMS4CkYSXYp8cg6//Moz2bhNi6cYAMB8CDs+sshJMgRBXvuRgKM3UJKv
-	4UxWf4bWhVPAgWUJ+bVw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2cs+gH6QjxoWSHyE1U6uf/aPcipPjMH4whbynJLIRYk=; b=u3UddSp7FckH+A
+	8045gWHcIb4Y19MXkKDqyPo8EFKR/ttl4US65zBOLcfSLBUKhsjJvqC7Dk9A1TMDoHPmLSeOdJ0su
+	1AAWJhG9hPtXsi7EersPTEo3AR8V4PG62XPLBuJBowvhiVpoDTyV1tvbktEH1LEE8vA6+d4PZm5PY
+	EYJIqGAuSI2fYpcUq8xBt/s6XnBTVnzyPM/QT3ftZy9GfpOYzwpC43npqZzOV8nC1U1Y/P4OGoVXN
+	x1q7H/UAa8AZdJ9EiFSZhtNWtOO97VRKE2P2vIaLe71jvNKPyuFRsATOcwgNrPExpt7QJy0K6AKB3
+	lFJKvRKaNellWDPtK33w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8YoG-0006Cv-6A; Mon, 02 Mar 2020 00:19:48 +0000
-Received: from mail.hallyn.com ([178.63.66.53])
+	id 1j8Zu6-0002Bm-PO; Mon, 02 Mar 2020 01:29:54 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8Yo6-0006Bd-ED
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 00:19:41 +0000
-Received: from sl (122.sub-174-235-8.myvzw.com [174.235.8.122])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: serge)
- by mail.hallyn.com (Postfix) with ESMTPSA id 4C54066E;
- Sun,  1 Mar 2020 18:19:19 -0600 (CST)
-Date: Sun, 1 Mar 2020 18:19:13 -0600
-From: Serge Hallyn <serge@hallyn.com>
-To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [Intel-gfx] [PATCH v7 00/12] Introduce CAP_PERFMON to secure
- system performance monitoring and observability
-Message-ID: <20200302001913.GA21145@sl>
-References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <3ae0bed5-204e-de81-7647-5f0d8106cd67@linux.intel.com>
+ id 1j8Ztu-0002AS-P0; Mon, 02 Mar 2020 01:29:45 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 74A3D27C3ECEAB96F35B;
+ Mon,  2 Mar 2020 09:29:22 +0800 (CST)
+Received: from [127.0.0.1] (10.177.131.64) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Mon, 2 Mar 2020
+ 09:29:15 +0800
+Subject: Re: [PATCH v7 1/4] x86: kdump: move reserve_crashkernel_low() into
+ crash_core.c
+To: John Donnelly <john.p.donnelly@oracle.com>, James Morse
+ <james.morse@arm.com>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ <20191223152349.180172-2-chenzhou10@huawei.com>
+ <20191227055458.GA14893@dhcp-128-65.nay.redhat.com>
+ <09d42854-461b-e85c-ba3f-0e1173dc95b5@huawei.com>
+ <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
+ <77c971a4-608f-ee35-40cb-77186a2ddbd1@arm.com>
+ <08C19FFB-C6FC-4BB7-A1C2-67CE6B99D2AB@oracle.com>
+ <73F5F438-0B79-418D-8AA7-B1164D10AA24@oracle.com>
+From: Chen Zhou <chenzhou10@huawei.com>
+Message-ID: <f40d64d3-b433-670f-a8d7-73a66cb333b7@huawei.com>
+Date: Mon, 2 Mar 2020 09:29:13 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3ae0bed5-204e-de81-7647-5f0d8106cd67@linux.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <73F5F438-0B79-418D-8AA7-B1164D10AA24@oracle.com>
+X-Originating-IP: [10.177.131.64]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200301_161938_777288_DB45F1D3 
-X-CRM114-Status: GOOD (  31.92  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200301_172943_153428_85DD2D40 
+X-CRM114-Status: GOOD (  26.13  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,267 +72,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-man@vger.kernel.org,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Alexei Starovoitov <ast@kernel.org>, Stephane Eranian <eranian@google.com>,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, Andi Kleen <ak@linux.intel.com>,
- Jiri Olsa <jolsa@redhat.com>, Helge Deller <deller@gmx.de>,
- Igor Lubashev <ilubashe@akamai.com>, James Morris <jmorris@namei.org>,
- oprofile-list@lists.sf.net, Stephen Smalley <sds@tycho.nsa.gov>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kbuild test robot <lkp@intel.com>, xiexiuqi@huawei.com,
+ catalin.marinas@arm.com, bhsharma@redhat.com, linux-doc@vger.kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Dave Young <dyoung@redhat.com>, horms@verge.net.au, tglx@linutronix.de,
+ will@kernel.org, mingo@redhat.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks, this looks good to me, in keeping with the CAP_SYSLOG break.
-
-Acked-by: Serge E. Hallyn <serge@hallyn.com>
-
-for the set.
-
-James/Ingo/Peter, if noone has remaining objections, whose branch
-should these go in through?
-
-thanks,
--serge
-
-On Tue, Feb 25, 2020 at 12:55:54PM +0300, Alexey Budankov wrote:
-> 
-> Hi,
-> 
-> Is there anything else I could do in order to move the changes forward
-> or is something still missing from this patch set?
-> Could you please share you mind?
-> 
-> Thanks,
-> Alexey
-> 
-> On 17.02.2020 11:02, Alexey Budankov wrote:
-> > 
-> > Currently access to perf_events, i915_perf and other performance
-> > monitoring and observability subsystems of the kernel is open only for
-> > a privileged process [1] with CAP_SYS_ADMIN capability enabled in the
-> > process effective set [2].
-> > 
-> > This patch set introduces CAP_PERFMON capability designed to secure
-> > system performance monitoring and observability operations so that
-> > CAP_PERFMON would assist CAP_SYS_ADMIN capability in its governing role
-> > for performance monitoring and observability subsystems of the kernel.
-> > 
-> > CAP_PERFMON intends to harden system security and integrity during
-> > performance monitoring and observability operations by decreasing attack
-> > surface that is available to a CAP_SYS_ADMIN privileged process [2].
-> > Providing the access to performance monitoring and observability
-> > operations under CAP_PERFMON capability singly, without the rest of
-> > CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials
-> > and makes the operation more secure. Thus, CAP_PERFMON implements the
-> > principal of least privilege for performance monitoring and
-> > observability operations (POSIX IEEE 1003.1e: 2.2.2.39 principle of
-> > least privilege: A security design principle that states that a process
-> > or program be granted only those privileges (e.g., capabilities)
-> > necessary to accomplish its legitimate function, and only for the time
-> > that such privileges are actually required)
-> > 
-> > CAP_PERFMON intends to meet the demand to secure system performance
-> > monitoring and observability operations for adoption in security
-> > sensitive, restricted, multiuser production environments (e.g. HPC
-> > clusters, cloud and virtual compute environments), where root or
-> > CAP_SYS_ADMIN credentials are not available to mass users of a system,
-> > and securely unblock accessibility of system performance monitoring and
-> > observability operations beyond root and CAP_SYS_ADMIN use cases.
-> > 
-> > CAP_PERFMON intends to take over CAP_SYS_ADMIN credentials related to
-> > system performance monitoring and observability operations and balance
-> > amount of CAP_SYS_ADMIN credentials following the recommendations in
-> > the capabilities man page [2] for CAP_SYS_ADMIN: "Note: this capability
-> > is overloaded; see Notes to kernel developers, below." For backward
-> > compatibility reasons access to system performance monitoring and
-> > observability subsystems of the kernel remains open for CAP_SYS_ADMIN
-> > privileged processes but CAP_SYS_ADMIN capability usage for secure
-> > system performance monitoring and observability operations is
-> > discouraged with respect to the designed CAP_PERFMON capability.
-> > 
-> > Possible alternative solution to this system security hardening,
-> > capabilities balancing task of making performance monitoring and
-> > observability operations more secure and accessible could be to use
-> > the existing CAP_SYS_PTRACE capability to govern system performance
-> > monitoring and observability subsystems. However CAP_SYS_PTRACE
-> > capability still provides users with more credentials than are
-> > required for secure performance monitoring and observability
-> > operations and this excess is avoided by the designed CAP_PERFMON.
-> > 
-> > Although software running under CAP_PERFMON can not ensure avoidance of
-> > related hardware issues, the software can still mitigate those issues
-> > following the official hardware issues mitigation procedure [3]. The
-> > bugs in the software itself can be fixed following the standard kernel
-> > development process [4] to maintain and harden security of system
-> > performance monitoring and observability operations. Finally, the patch
-> > set is shaped in the way that simplifies backtracking procedure of
-> > possible induced issues [5] as much as possible.
-> > 
-> > The patch set is for tip perf/core repository:
-> > git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip perf/core
-> > sha1: fdb64822443ec9fb8c3a74b598a74790ae8d2e22
-> > 
-> > ---
-> > Changes in v7:
-> > - updated and extended kernel.rst and perf-security.rst documentation 
-> >   files with the information about CAP_PERFMON capability and its use cases
-> > - documented the case of double audit logging of CAP_PERFMON and CAP_SYS_ADMIN
-> >   capabilities on a SELinux enabled system
-> > Changes in v6:
-> > - avoided noaudit checks in perfmon_capable() to explicitly advertise
-> >   CAP_PERFMON usage thru audit logs to secure system performance
-> >   monitoring and observability
-> > Changes in v5:
-> > - renamed CAP_SYS_PERFMON to CAP_PERFMON
-> > - extended perfmon_capable() with noaudit checks
-> > Changes in v4:
-> > - converted perfmon_capable() into an inline function
-> > - made perf_events kprobes, uprobes, hw breakpoints and namespaces data
-> >   available to CAP_SYS_PERFMON privileged processes
-> > - applied perfmon_capable() to drivers/perf and drivers/oprofile
-> > - extended __cmd_ftrace() with support of CAP_SYS_PERFMON
-> > Changes in v3:
-> > - implemented perfmon_capable() macros aggregating required capabilities
-> >   checks
-> > Changes in v2:
-> > - made perf_events trace points available to CAP_SYS_PERFMON privileged
-> >   processes
-> > - made perf_event_paranoid_check() treat CAP_SYS_PERFMON equally to
-> >   CAP_SYS_ADMIN
-> > - applied CAP_SYS_PERFMON to i915_perf, bpf_trace, powerpc and parisc
-> >   system performance monitoring and observability related subsystems
-> > 
-> > ---
-> > Alexey Budankov (12):
-> >   capabilities: introduce CAP_PERFMON to kernel and user space
-> >   perf/core: open access to the core for CAP_PERFMON privileged process
-> >   perf/core: open access to probes for CAP_PERFMON privileged process
-> >   perf tool: extend Perf tool with CAP_PERFMON capability support
-> >   drm/i915/perf: open access for CAP_PERFMON privileged process
-> >   trace/bpf_trace: open access for CAP_PERFMON privileged process
-> >   powerpc/perf: open access for CAP_PERFMON privileged process
-> >   parisc/perf: open access for CAP_PERFMON privileged process
-> >   drivers/perf: open access for CAP_PERFMON privileged process
-> >   drivers/oprofile: open access for CAP_PERFMON privileged process
-> >   doc/admin-guide: update perf-security.rst with CAP_PERFMON information
-> >   doc/admin-guide: update kernel.rst with CAP_PERFMON information
-> > 
-> >  Documentation/admin-guide/perf-security.rst | 65 +++++++++++++--------
-> >  Documentation/admin-guide/sysctl/kernel.rst | 16 +++--
-> >  arch/parisc/kernel/perf.c                   |  2 +-
-> >  arch/powerpc/perf/imc-pmu.c                 |  4 +-
-> >  drivers/gpu/drm/i915/i915_perf.c            | 13 ++---
-> >  drivers/oprofile/event_buffer.c             |  2 +-
-> >  drivers/perf/arm_spe_pmu.c                  |  4 +-
-> >  include/linux/capability.h                  |  4 ++
-> >  include/linux/perf_event.h                  |  6 +-
-> >  include/uapi/linux/capability.h             |  8 ++-
-> >  kernel/events/core.c                        |  6 +-
-> >  kernel/trace/bpf_trace.c                    |  2 +-
-> >  security/selinux/include/classmap.h         |  4 +-
-> >  tools/perf/builtin-ftrace.c                 |  5 +-
-> >  tools/perf/design.txt                       |  3 +-
-> >  tools/perf/util/cap.h                       |  4 ++
-> >  tools/perf/util/evsel.c                     | 10 ++--
-> >  tools/perf/util/util.c                      |  1 +
-> >  18 files changed, 98 insertions(+), 61 deletions(-)
-> > 
-> > ---
-> > Validation (Intel Skylake, 8 cores, Fedora 29, 5.5.0-rc3+, x86_64):
-> > 
-> > libcap library [6], [7], [8] and Perf tool can be used to apply
-> > CAP_PERFMON capability for secure system performance monitoring and
-> > observability beyond the scope permitted by the system wide
-> > perf_event_paranoid kernel setting [9] and below are the steps for
-> > evaluation:
-> > 
-> >   - patch, build and boot the kernel
-> >   - patch, build Perf tool e.g. to /home/user/perf
-> >   ...
-> >   # git clone git://git.kernel.org/pub/scm/libs/libcap/libcap.git libcap
-> >   # pushd libcap
-> >   # patch libcap/include/uapi/linux/capabilities.h with [PATCH 1]
-> >   # make
-> >   # pushd progs
-> >   # ./setcap "cap_perfmon,cap_sys_ptrace,cap_syslog=ep" /home/user/perf
-> >   # ./setcap -v "cap_perfmon,cap_sys_ptrace,cap_syslog=ep" /home/user/perf
-> >   /home/user/perf: OK
-> >   # ./getcap /home/user/perf
-> >   /home/user/perf = cap_sys_ptrace,cap_syslog,cap_perfmon+ep
-> >   # echo 2 > /proc/sys/kernel/perf_event_paranoid
-> >   # cat /proc/sys/kernel/perf_event_paranoid 
-> >   2
-> >   ...
-> >   $ /home/user/perf top
-> >     ... works as expected ...
-> >   $ cat /proc/`pidof perf`/status
-> >   Name:	perf
-> >   Umask:	0002
-> >   State:	S (sleeping)
-> >   Tgid:	2958
-> >   Ngid:	0
-> >   Pid:	2958
-> >   PPid:	9847
-> >   TracerPid:	0
-> >   Uid:	500	500	500	500
-> >   Gid:	500	500	500	500
-> >   FDSize:	256
-> >   ...
-> >   CapInh:	0000000000000000
-> >   CapPrm:	0000004400080000
-> >   CapEff:	0000004400080000 => 01000100 00000000 00001000 00000000 00000000
-> >                                      cap_perfmon,cap_sys_ptrace,cap_syslog
-> >   CapBnd:	0000007fffffffff
-> >   CapAmb:	0000000000000000
-> >   NoNewPrivs:	0
-> >   Seccomp:	0
-> >   Speculation_Store_Bypass:	thread vulnerable
-> >   Cpus_allowed:	ff
-> >   Cpus_allowed_list:	0-7
-> >   ...
-> > 
-> > Usage of cap_perfmon effectively avoids unused credentials excess:
-> > 
-> > - with cap_sys_admin:
-> >   CapEff:	0000007fffffffff => 01111111 11111111 11111111 11111111 11111111
-> > 
-> > - with cap_perfmon:
-> >   CapEff:	0000004400080000 => 01000100 00000000 00001000 00000000 00000000
-> >                                     38   34               19
-> >                                perfmon   syslog           sys_ptrace
-> > 
-> > ---
-> > [1] https://www.kernel.org/doc/html/latest/admin-guide/perf-security.html
-> > [2] http://man7.org/linux/man-pages/man7/capabilities.7.html
-> > [3] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
-> > [4] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
-> > [5] https://www.kernel.org/doc/html/latest/process/management-style.html#decisions
-> > [6] http://man7.org/linux/man-pages/man8/setcap.8.html
-> > [7] https://git.kernel.org/pub/scm/libs/libcap/libcap.git
-> > [8] https://sites.google.com/site/fullycapable/, posix_1003.1e-990310.pdf
-> > [9] http://man7.org/linux/man-pages/man2/perf_event_open.2.html
-> > 
-> _______________________________________________
-> Intel-gfx mailing list
-> Intel-gfx@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/intel-gfx
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyMDIwLzIvMjQgMjM6MjUsIEpvaG4gRG9ubmVsbHkgd3JvdGU6Cj4gCj4gCj4+IE9uIEph
+biAxNiwgMjAyMCwgYXQgOTo0NyBBTSwgSm9obiBEb25uZWxseSA8am9obi5wLmRvbm5lbGx5QG9y
+YWNsZS5jb20+IHdyb3RlOgo+Pgo+Pgo+Pgo+Pj4gT24gSmFuIDE2LCAyMDIwLCBhdCA5OjE3IEFN
+LCBKYW1lcyBNb3JzZSA8amFtZXMubW9yc2VAYXJtLmNvbT4gd3JvdGU6Cj4+Pgo+Pj4gSGkgZ3V5
+cywKPj4+Cj4+PiBPbiAyOC8xMi8yMDE5IDA5OjMyLCBEYXZlIFlvdW5nIHdyb3RlOgo+Pj4+IE9u
+IDEyLzI3LzE5IGF0IDA3OjA0cG0sIENoZW4gWmhvdSB3cm90ZToKPj4+Pj4gT24gMjAxOS8xMi8y
+NyAxMzo1NCwgRGF2ZSBZb3VuZyB3cm90ZToKPj4+Pj4+IE9uIDEyLzIzLzE5IGF0IDExOjIzcG0s
+IENoZW4gWmhvdSB3cm90ZToKPj4+Pj4+PiBJbiBwcmVwYXJhdGlvbiBmb3Igc3VwcG9ydGluZyBy
+ZXNlcnZlX2NyYXNoa2VybmVsX2xvdyBpbiBhcm02NCBhcwo+Pj4+Pj4+IHg4Nl82NCBkb2VzLCBt
+b3ZlIHJlc2VydmVfY3Jhc2hrZXJuZWxfbG93KCkgaW50byBrZXJuZWwvY3Jhc2hfY29yZS5jLgo+
+Pj4+Pj4+Cj4+Pj4+Pj4gTm90ZSwgaW4gYXJtNjQsIHdlIHJlc2VydmUgbG93IG1lbW9yeSBpZiBh
+bmQgb25seSBpZiBjcmFzaGtlcm5lbD1YLGxvdwo+Pj4+Pj4+IGlzIHNwZWNpZmllZC4gRGlmZmVy
+ZW50IHdpdGggeDg2XzY0LCBkb24ndCBzZXQgbG93IG1lbW9yeSBhdXRvbWF0aWNhbGx5Lgo+Pj4+
+Pj4KPj4+Pj4+IERvIHlvdSBoYXZlIGFueSByZWFzb24gZm9yIHRoZSBkaWZmZXJlbmNlPyAgSSdk
+IGV4cGVjdCB3ZSBoYXZlIHNhbWUKPj4+Pj4+IGxvZ2ljIGlmIHBvc3NpYmxlIGFuZCByZW1vdmUg
+c29tZSBvZiB0aGUgaWZkZWZzLgo+Pj4+Pgo+Pj4+PiBJbiB4ODZfNjQsIGlmIHdlIHJlc2VydmUg
+Y3Jhc2hrZXJuZWwgYWJvdmUgNEcsIHRoZW4gd2UgY2FsbCByZXNlcnZlX2NyYXNoa2VybmVsX2xv
+dygpCj4+Pj4+IHRvIHJlc2VydmUgbG93IG1lbW9yeS4KPj4+Pj4KPj4+Pj4gSW4gYXJtNjQsIHRv
+IHNpbXBsaWZ5LCB3ZSBjYWxsIHJlc2VydmVfY3Jhc2hrZXJuZWxfbG93KCkgYXQgdGhlIGJlZ2lu
+bmluZyBvZiByZXNlcnZlX2NyYXNoa2VybmVsKCkKPj4+Pj4gYW5kIHRoZW4gcmVsYXggdGhlIGFy
+bTY0X2RtYTMyX3BoeXNfbGltaXQgaWYgcmVzZXJ2ZV9jcmFzaGtlcm5lbF9sb3coKSBhbGxvY2F0
+ZWQgc29tZXRoaW5nLgo+Pj4+PiBJbiB0aGlzIGNhc2UsIGlmIHJlc2VydmUgY3Jhc2hrZXJuZWwg
+YmVsb3cgNEcgdGhlcmUgd2lsbCBiZSAyNTZNIGxvdyBtZW1vcnkgc2V0IGF1dG9tYXRpY2FsbHkK
+Pj4+Pj4gYW5kIHRoaXMgbmVlZHMgZXh0cmEgY29uc2lkZXJhdGlvbnMuCj4+Pgo+Pj4+IFNvcnJ5
+IHRoYXQgSSBkaWQgbm90IHJlYWQgdGhlIG9sZCB0aHJlYWQgZGV0YWlscyBhbmQgdGhvdWdodCB0
+aGF0IGlzCj4+Pj4gYXJjaCBkZXBlbmRlbnQuICBCdXQgcmV0aGluayBhYm91dCB0aGF0LCBpdCB3
+b3VsZCBiZSBiZXR0ZXIgdGhhdCB3ZSBjYW4KPj4+PiBoYXZlIHNhbWUgc2VtYW50aWMgYWJvdXQg
+Y3Jhc2hrZXJuZWwgcGFyYW1ldGVycyBhY3Jvc3MgYXJjaGVzLiAgSWYgd2UKPj4+PiBtYWtlIHRo
+ZW0gZGlmZmVyZW50IHRoZW4gaXQgY2F1c2VzIGNvbmZ1c2lvbiwgZXNwZWNpYWxseSBmb3IKPj4+
+PiBkaXN0cmlidXRpb25zLgo+Pj4KPj4+IFN1cmVseSBkaXN0cm9zIGFsc28gd2FudCBvbmUgY3Jh
+c2hrZXJuZWwqIHN0cmluZyB0aGV5IGNhbiB1c2Ugb24gYWxsIHBsYXRmb3JtcyB3aXRob3V0Cj4+
+PiBoYXZpbmcgdG8gZGV0ZWN0IHRoZSBrZXJuZWwgdmVyc2lvbiwgcGxhdGZvcm0gb3IgY2hhbmdl
+YWJsZSBtZW1vcnkgbGF5b3V0Li4uCj4+Pgo+Pj4KPj4+PiBPVE9ILCBJIHRob3VnaHQgaWYgd2Ug
+cmVzZXJ2ZSBoaWdoIG1lbW9yeSB0aGVuIHRoZSBsb3cgbWVtb3J5IHNob3VsZCBiZQo+Pj4+IG5l
+ZWRlZC4gIFRoZXJlIG1pZ2h0IGJlIHNvbWUgZXhjZXB0aW9ucywgYnV0IEkgZG8gbm90IGtub3cg
+dGhlIGV4YWN0Cj4+Pj4gb25lLAo+Pj4KPj4+PiBjYW4gd2UgbWFrZSB0aGUgYmVoYXZpb3Igc2Ft
+ZSwgYW5kIHNwZWNpYWwgY2FzZSB0aG9zZSBzeXN0ZW1zIHdoaWNoCj4+Pj4gZG8gbm90IG5lZWQg
+bG93IG1lbW9yeSByZXNlcnZhdGlvbi4KPj4+Cj4+PiBJdHMgdHJpY2t5IHRvIHdvcmsgb3V0IHdo
+aWNoIHN5c3RlbXMgYXJlIHRoZSAnbm9ybWFsJyBvbmVzLgo+Pj4KPj4+IFdlIGRvbid0IGhhdmUg
+YSBmaXhlZCBtZW1vcnkgbGF5b3V0IGZvciBhcm02NC4gU29tZSBzeXN0ZW1zIGhhdmUgbm8gbWVt
+b3J5IGJlbG93IDRHLgo+Pj4gT3RoZXJzIGhhdmUgbm8gbWVtb3J5IGFib3ZlIDRHLgo+Pj4KPj4+
+IENoZW4gWmhvdSdzIG1hY2hpbmUgaGFzIHNvbWUgbWVtb3J5IGJlbG93IDRHLCBidXQgaXRzIHRv
+byBwcmVjaW91cyB0byByZXNlcnZlIGEgbGFyZ2UKPj4+IGNodW5rIGZvciBrZHVtcC4gV2l0aG91
+dCBhbnkgbWVtb3J5IGJlbG93IDRHIHNvbWUgb2YgdGhlIGRyaXZlcnMgd29uJ3Qgd29yay4KPj4+
+Cj4+PiBJIGRvbid0IHNlZSB3aGF0IGRpc3Ryb3MgY2FuIHNldCBhcyB0aGVpciBkZWZhdWx0IGZv
+ciBhbGwgcGxhdGZvcm1zIGlmIGhpZ2gvbG93IGFyZQo+Pj4gbXV0dWFsbHkgZXhjbHVzaXZlIHdp
+dGggdGhlICdjcmFzaGtlcm5lbD0nIGluIHVzZSB0b2RheS4gSG93IGRpZCB4ODYgbmF2aWdhdGUg
+dGhpcywgLi4uIG9yCj4+PiB3YXMgaXQgc28gbG9uZyBhZ28/Cj4+Pgo+Pj4gTm8gb25lIGVsc2Ug
+aGFzIHJlcG9ydGVkIGEgcHJvYmxlbSB3aXRoIHRoZSBleGlzdGluZyBwbGFjZW1lbnQgbG9naWMs
+IGhlbmNlIHRyZWF0aW5nIHRoaXMKPj4+ICdsb3cnIHRoaW5nIGFzIHRoZSAnaW4gYWRkaXRpb24n
+IHNwZWNpYWwgY2FzZS4KPj4KPj4KPj4gSGksCj4+Cj4+IEkgYW0gc2VlaW5nIHNpbWlsYXIgIEFy
+bSBjcmFzaCBkdW1wIGlzc3VlcyAgb24gIDUuNCBrZXJuZWxzICB3aGVyZSB3ZSBuZWVkICByYXRo
+ZXIgbGFyZ2UgYW1vdW50IG9mIGNyYXNoa2VybmVsIG1lbW9yeSByZXNlcnZlZCB0aGF0IGlzIG5v
+dCBhdmFpbGFibGUgYmVsb3cgNEdCICggVGhlIG1heGltdW0gcmVzZXJ2ZWQgc2l6ZSBhcHBlYXJz
+IHRvIGJlIGFyb3VuZCA3NjhNICkgLiBXaGVuIEkgcGljayBtZW1vcnkgcmFuZ2UgaGlnaGVyIHRo
+YW4gNEdCICwgSSBzZWUgIGFkYXB0ZXJzIHRoYXQgZmFpbCB0byBpbml0aWFsaXplIDoKPj4KPj4K
+Pj4gVGhlcmUgaXMgbm8gbG93LW1lbW9yeSAgPDRHICBtZW1vcnkgZm9yIERNQSA7ICAgICAKPj4K
+Pj4gWyAgIDExLjUwNjc5Ml0ga3dvcmtlci8wOjE0OiBwYWdlIGFsbG9jYXRpb24gZmFpbHVyZTog
+b3JkZXI6MCwgCj4+IG1vZGU6MHgxMDQoR0ZQX0RNQTMyfF9fR0ZQX1pFUk8pLCBub2RlbWFzaz0o
+bnVsbCksY3B1c2V0PS8sbWVtc19hbGxvd2VkPTAgCj4+IFsgICAxMS41MTg3OTNdIENQVTogMCBQ
+SUQ6IDE1MCBDb21tOiBrd29ya2VyLzA6MTQgTm90IHRhaW50ZWQgCj4+IDUuNC4wLTE5NDguMy5l
+bDh1ZWsuYWFyY2g2NCAjMSAKPj4gWyAgIDExLjUyNjk1NV0gSGFyZHdhcmUgbmFtZTogVG8gYmUg
+ZmlsbGVkIGJ5IE8uRS5NLiBTYWJlci9TYWJlciwgQklPUyAKPj4gMEFDS0wwMjUgMDEvMTgvMjAx
+OSAKPj4gWyAgIDExLjUzNDk0OF0gV29ya3F1ZXVlOiBldmVudHMgd29ya19mb3JfY3B1X2ZuIAo+
+PiBbICAgMTEuNTM5MjkxXSBDYWxsIHRyYWNlOiAKPj4gWyAgIDExLjU0MTcyN10gIGR1bXBfYmFj
+a3RyYWNlKzB4MC8weDE4YyAKPj4gWyAgIDExLjU0NTM3Nl0gIHNob3dfc3RhY2srMHgyNC8weDMw
+IAo+PiBbICAgMTEuNTQ4Njc5XSAgZHVtcF9zdGFjaysweGJjLzB4ZTAgCj4+IFsgICAxMS41NTE5
+ODJdICB3YXJuX2FsbG9jKzB4ZjAvMHgxNWMgCj4+IFsgICAxMS41NTUzNzBdICBfX2FsbG9jX3Bh
+Z2VzX3Nsb3dwYXRoKzB4YjRjLzB4Yjg0IAo+PiBbICAgMTEuNTU5ODg3XSAgX19hbGxvY19wYWdl
+c19ub2RlbWFzaysweDJkMC8weDMzMCAKPj4gWyAgIDExLjU2NDQwNV0gIGFsbG9jX3BhZ2VzX2N1
+cnJlbnQrMHg4Yy8weGY4IAo+PiBbICAgMTEuNTY4NDk2XSAgdHRtX2JvX2RldmljZV9pbml0KzB4
+MTg4LzB4MjIwIFt0dG1dIAo+PiBbICAgMTEuNTczMTg3XSAgZHJtX3ZyYW1fbW1faW5pdCsweDU4
+LzB4ODAgW2RybV92cmFtX2hlbHBlcl0gCj4+IFsgICAxMS41Nzg1NzJdICBkcm1fdnJhbV9oZWxw
+ZXJfYWxsb2NfbW0rMHg2NC8weGIwIFtkcm1fdnJhbV9oZWxwZXJdIAo+PiBbICAgMTEuNTg0NjU1
+XSAgYXN0X21tX2luaXQrMHgzOC8weDgwIFthc3RdIAo+PiBbICAgMTEuNTg4NTY2XSAgYXN0X2Ry
+aXZlcl9sb2FkKzB4NDc0LzB4YTcwIFthc3RdIAo+PiBbICAgMTEuNTkzMDI5XSAgZHJtX2Rldl9y
+ZWdpc3RlcisweDE0NC8weDFjOCBbZHJtXSAKPj4gWyAgIDExLjU5NzU3M10gIGRybV9nZXRfcGNp
+X2RldisweGE0LzB4MTY4IFtkcm1dIAo+PiBbICAgMTEuNjAxOTE5XSAgYXN0X3BjaV9wcm9iZSsw
+eDhjLzB4OWMgW2FzdF0gCj4+IFsgICAxMS42MDYwMDRdICBsb2NhbF9wY2lfcHJvYmUrMHg0NC8w
+eDk4IAo+PiBbICAgMTEuNjA5NzM5XSAgd29ya19mb3JfY3B1X2ZuKzB4MjAvMHgzMCAKPj4gWyAg
+IDExLjYxMzQ3NF0gIHByb2Nlc3Nfb25lX3dvcmsrMHgxYzQvMHg0MWMgCj4+IFsgICAxMS42MTc0
+NzBdICB3b3JrZXJfdGhyZWFkKzB4MTUwLzB4NGIwIAo+PiBbICAgMTEuNjIxMjA2XSAga3RocmVh
+ZCsweDExMC8weDExNCAKPj4gWyAgIDExLjYyNDQyMl0gIHJldF9mcm9tX2ZvcmsrMHgxMC8weDE4
+IAo+Pgo+PiBUaGlzIGZhaWx1cmUgaXMgcmVsYXRlZCB0byBhIGdyYXBoaWNzIGFkYXB0ZXIuIAo+
+Pgo+PiBUaGUgbW9yZSBjb21wbGV4IGtkdW1wIGNvbmZpZ3VyYXRpb25zIHRoYXQgdXNlIG5ldHdv
+cmtpbmcgc3RhY2sgdG8gTkZTIG1vdW50IGEgZmlsZXN5c3RlbSB0byBkdW1wIHRvICwgb3IgdXNl
+IHNzaCB0byBjb3B5IHRvIGFub3RoZXIgbWFjaGluZSwgIHJlcXVpcmUgbW9yZSBjcmFzaGtlcm5l
+bCBtZW1vcnkgcmVzZXJ2YXRpb25zIHRoYW4gcGVyaGFwcyB0aGUg4oCcZGVmYXVsdCrigJ0gc2V0
+dGluZ3Mgb2YgIGEgbWluaW1hbCBrZHVtcCB0aGF0IGNyZWF0ZXMgYSBtaW5pbWFsICB2bWNvcmUg
+dG8gbG9jYWwgc3RvcmFnZSBpbiAgL3Zhci9jcmFzaC4gSWYgY3Jhc2hrZXJuZWwgaXMgdG9vIHNt
+YWxsIEkgZ2V0IE91dCBvZiBNZW1vcnkgaXNzdWVzIGFuZCB0aGUgZW50aXJlIHZtY29yZSAgcHJv
+Y2VzcyBmYWlscy4gCj4+Cj4+ICggKmRlZmF1bHQga2R1bXAgc2V0dGluZyBJIGFzc3VtZSBhcmUg
+YSBtaW5pbWFsIHZtY29yZSB0byAvdmFyL2NyYXNoIHVzaW5nIHByaW1hcnkgYm9vdCBkZXZpY2Ug
+d2hlcmUgL3Jvb3QgaXMgbG9jYXRlZCAgKSAKPj4KPiBIaSBDaGVuLAo+IAo+IAo+IEkgd2FzIGFi
+bGUgdG8gdW5pdCB0ZXN0IHRoZXNlIHNlcmllcyBvZiBrZXJuZWwgIHBhdGNoZXMgIGFwcGxpZWQg
+dG8gYSA1LjQuMTcgdGVzdCBrZXJuZWwgIGFsb25nIHdpdGggdGhlIGtleGVjIENMSSAgY2hhbmdl
+IDoKPiAKPiAwMDAxLWFybTY0LWtkdW1wLWFkZC1hbm90aGVyLURULXByb3BlcnR5LXRvLWNyYXNo
+LWR1bXAta2UucGF0Y2gKPiAKPiBBcHBsaWVkIHRvIDoKPiAKPiBrZXhlYy10b29scy0yLjAuMTkt
+MTIuMC40LmVsOC5zcmMucnBtCj4gCj4gQW5kIG9idGFpbmVkIGEgdm1jb3JlIHVzaW5nIHRoaXMg
+Y21kbGluZSA6Cj4gCj4gQk9PVF9JTUFHRT0oaGQ2LGdwdDIpL3ZtbGludXotNS40LjE3LTQtdWVr
+Nm1fb2w4LWpwZG9ubmVsKyByb290PS9kZXYvbWFwcGVyL29sMDEtcm9vdCBybyBjcmFzaGtlcm5l
+bD0yMDQ4TUAzNUcgY3Jhc2hrZXJuZWw9MjUwTSxsb3cgcmQubHZtLmx2PW9sMDEvcm9vdCByZC5s
+dm0ubHY9b2wwMS9zd2FwIGNvbnNvbGU9dHR5UzQgbG9nbGV2ZWw9Nwo+IAo+IENhbiB5b3UgYWRk
+IDoKPiAKPiBUZXN0ZWQtYnk6IEpvaG4gRG9ubmVsbHkgPEpvaG4ucC5kb25uZWxseUBvcmFjbGUu
+Y29tPgo+IAo+IAo+IEhvdyBjYW4gd2UgIGdldCB0aGVzZSBjaGFuZ2VzIGluY2x1ZGVkIGludG8g
+YW4gcmMga2VybmVsIHJlbGVhc2UgID8KPiAKPiBUaGFua3MsCj4gCj4gSm9obi4KCkhpIGFsbCwK
+CkZyaWVuZGx5IHBpbmcuLi4KCj4gCj4gCj4+Cj4+Cj4+Cj4+Pgo+Pj4KPj4+Pj4gcHJldmlvdXMg
+ZGlzY3Vzc2VzOgo+Pj4+PiAJaHR0cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3Vy
+bD91PWh0dHBzLTNBX19sa21sLm9yZ19sa21sXzIwMTlfNl81XzY3MCZkPUR3SUNBZyZjPVJvUDFZ
+dW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10MmZQZzlEODdGN0Q4am0w
+XzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09ak9BdTFEVERwb2hzV3N6YWxmVENZeDQ2ZUdG
+MTlUU1dWTGNoTjV5QlBnayZzPWdTOUJMT2ttajc4bFA1TDdTUDZfVkxId3ZQMjQ5dVdLYUUyUjdO
+N3N4Z00mZT0gCj4+Pj4+IAlodHRwczovL3VybGRlZmVuc2UucHJvb2Zwb2ludC5jb20vdjIvdXJs
+P3U9aHR0cHMtM0FfX2xrbWwub3JnX2xrbWxfMjAxOV82XzEzXzIyOSZkPUR3SUNBZyZjPVJvUDFZ
+dW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10MmZQZzlEODdGN0Q4am0w
+XzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09ak9BdTFEVERwb2hzV3N6YWxmVENZeDQ2ZUdG
+MTlUU1dWTGNoTjV5QlBnayZzPVUxTmlzMjluM0E3WFNCekVENTNmaUU0TURBdjVObHhZcDFVb3J2
+dkJPT3cmZT0gCj4+Pj4KPj4+PiBBbm90aGVyIGNvbmNlcm4gZnJvbSBKYW1lczoKPj4+PiAiCj4+
+Pj4gV2l0aCBib3RoIGNyYXNoa19sb3dfcmVzIGFuZCBjcmFzaGtfcmVzLCB3ZSBlbmQgdXAgd2l0
+aCB0d28gZW50cmllcyBpbiAvcHJvYy9pb21lbSBjYWxsZWQKPj4+PiAiQ3Jhc2gga2VybmVsIi4g
+QmVjYXVzZSBpdHMgc29ydGVkIGJ5IGFkZHJlc3MsIGFuZCBrZXhlYy10b29scyBzdG9wcyBzZWFy
+Y2hpbmcgd2hlbiBpdAo+Pj4+IGZpbmQgIkNyYXNoIGtlcm5lbCIsIHlvdSBhcmUgYWx3YXlzIGdv
+aW5nIHRvIGdldCB0aGUga2VybmVsIHBsYWNlZCBpbiB0aGUgbG93ZXIgcG9ydGlvbi4KPj4+PiAi
+Cj4+Pj4KPj4+PiBUaGUga2V4ZWMtdG9vbHMgY29kZSBpcyBpdGVyYXRpbmcgYWxsICJDcmFzaCBr
+ZXJuZWwiIHJhbmdlcyBhbmQgYWRkIHRoZW0KPj4+PiBpbiBhbiBhcnJheS4gIEluIFg4NiBjb2Rl
+LCBpdCB1c2VzIHRoZSBoaWdoZXIgcmFuZ2UgdG8gbG9jYXRlIG1lbW9yeS4KPj4+Cj4+PiBUaGVu
+IG15IGh1cnJpZWQgcmVhZGluZyBvZiB3aGF0IHRoZSB1c2VyLXNwYWNlIGNvZGUgZG9lcyB3YXMg
+d3JvbmchCj4+Pgo+Pj4gSWYga2V4ZWMtdG9vbHMgcGxhY2VzIHRoZSBrZXJuZWwgaW4gdGhlIGxv
+dyByZWdpb24sIHRoZXJlIG1heSBub3QgYmUgZW5vdWdoIG1lbW9yeSBsZWZ0Cj4+PiBmb3Igd2hh
+dGV2ZXIgcHVycG9zZSBpdCB3YXMgcmVzZXJ2ZWQgZm9yLiBUaGlzIHdhcyB0aGUgbW90aXZhdGlv
+biBmb3IgZ2l2aW5nIGl0IGEKPj4+IGRpZmZlcmVudCBuYW1lLgo+Pj4KPj4+Cj4+PiBUaGFua3Ms
+Cj4+Pgo+Pj4gSmFtZXMKPj4+Cj4+PiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwo+Pj4ga2V4ZWMgbWFpbGluZyBsaXN0Cj4+PiBrZXhlY0BsaXN0cy5pbmZy
+YWRlYWQub3JnCj4+PiBodHRwczovL3VybGRlZmVuc2UucHJvb2Zwb2ludC5jb20vdjIvdXJsP3U9
+aHR0cC0zQV9fbGlzdHMuaW5mcmFkZWFkLm9yZ19tYWlsbWFuX2xpc3RpbmZvX2tleGVjJmQ9RHdJ
+Q0FnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQWmg4QnY3cUlyTVVCNjVlYXBJX0puRSZyPXQyZlBn
+OUQ4N0Y3RDhqbTBfM0NHOXlvaUlLZFJnNHFjX3RoQnc0YnpNaGMmbT1qT0F1MURURHBvaHNXc3ph
+bGZUQ1l4NDZlR0YxOVRTV1ZMY2hONXlCUGdrJnM9YnFwMDJpUURQX0V6LVh2TEl2ai1JUEhxYmJa
+d01QbERnbUVjRzh2aFhGRSZlPSAKPj4KPj4KPj4gX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KPj4ga2V4ZWMgbWFpbGluZyBsaXN0Cj4+IGtleGVjQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKPj4gaHR0cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3Vy
+bD91PWh0dHAtM0FfX2xpc3RzLmluZnJhZGVhZC5vcmdfbWFpbG1hbl9saXN0aW5mb19rZXhlYyZk
+PUR3SUdhUSZjPVJvUDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10
+MmZQZzlEODdGN0Q4am0wXzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09d2htOV9CT3JnQWpK
+dkJuMEV5X2JySGhGZzJZTVVfUDBIRjAyZGhnZGd3VSZzPXZMYXJfbTVKYmljWXd3dW82Tjg0WmlC
+REdaVVBNOGJCTFNQTFFCdFBaTlkmZT0gCj4gCj4gCj4gLgo+IAoKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
