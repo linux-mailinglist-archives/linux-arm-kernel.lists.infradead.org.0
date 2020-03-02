@@ -2,81 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEAF517603F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 17:45:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 728C81760A1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 18:01:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6nxEwwEE5DnRqVUlZku9l9s4rqu8KH+ee7n9ZA8dbG4=; b=q9K6HXzmS7QI30
-	bm/52Qsmj/rUvQZV7APRZv5KeZDbqBeofwxsiKtNFPhhX2fvfTDMHWjPceUGizP/pgnGfdtbMG/6s
-	q1EBbxvI3Om+p0QBCyQR3QxGFA6lPv7VCTSqN8oaM0kzzHykIRLavW2jtFPCkNsHctx9pshZrseot
-	beFSimqal06sXLYquizmO85bOvU0WnKkkiCJBm2uZLtkoN+CHrl2AtGj3ZefCxS+mzJeEIP6nMFhW
-	kvTivlUo0r6glj+zJaI9UCzhD7q8WqG4uvoa2sKk285Cicw08TNeWy44B2FnTqaxqQOQowtqpO0vk
-	SGIl1rMOd9cqLl3l/gRA==;
+	List-Owner; bh=c4Em5gQ1jzma7t5Tg7PkVwMXVuH6xMkGQZuxb53cupk=; b=aJ5AxCrv6U6727
+	DL4KXmYnH2WXQKOWjQhRkCjgoCeEh+CWDRRFew8HoXf/l+N64TFPVcITdrhR7qI1QRgLYYlqSOjLa
+	Lv2FwP29eRMQrDZJAjWuqhVVtcSMi08L2bXbgGlaUTcEH5OODwHbHc/1go2XPotgPysGm5vPUSrgl
+	yrybe3PqdJtjbXk+8/y7sgkg7V0AiJ2863VmHJdwM59tWQ5/1C/mPNyxfIDE3uZQS6+9I0bbJ6QsB
+	0lG915Ac6JdCeMHzcRvAigTyEJ04yl/MsPV+Q3rnBLZ79tTYXXr9dOYyCqFNptzisv1MNENAjkOJi
+	70G7/YQwP072oFT+/G6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8oBv-0004GK-CI; Mon, 02 Mar 2020 16:45:15 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1j8oRg-0001sw-7d; Mon, 02 Mar 2020 17:01:32 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8oBp-000326-PB
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 16:45:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Db4N5RoeZpBqkyfQn2cjA7DvkkRvJVrKvDaxzHmGOoQ=; b=BEMadxDuaUoFQKUjh4nNDeXTt
- fonqrpNwJvY8x3p+/lIadBjI70zp3S+eUkrYMqBSYJqZzk0REK6OBxWBjTHq1le0auuHr4maSFkLG
- sejqg/06OQthx7bHf+N93wHyEz+rhteHPt1AgTC9eRzjJAWjLQwCXTp3qVawHMfNOiwbPSvkWqwMx
- 9BVeuNKNe44SAsHJjJcVOqvI/yvj9+YrQqwr5pqsr8qKGx70P5lPPeZSWs5of82p0PnhZMv8PYjTQ
- WlYWEmxvRMT+QYtCOMM/DGTehaUXist1iRwB8mGV1oJX16E+xRNvcbAfI23qMAp7ozQBO8OPD2QdJ
- Y6+EmQJng==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:47796)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j8oBR-0002XR-Fc; Mon, 02 Mar 2020 16:44:45 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j8oBP-000544-FV; Mon, 02 Mar 2020 16:44:43 +0000
-Date: Mon, 2 Mar 2020 16:44:43 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: GPIOs not correctly exported via sysfs on ATSAMA5D2
-Message-ID: <20200302164443.GI25745@shell.armlinux.org.uk>
-References: <CAMiSF3BULWkyWTytTBcFfch9YaV_QzuBiawk-ZqEcQnsuGdUiQ@mail.gmail.com>
- <20200302083959.wju5vz3acuka2edq@pengutronix.de>
- <20200302093607.GG25745@shell.armlinux.org.uk>
- <CACRpkdbADQ5+Tp9NDgQx20Y0QTcE_go2qzi7dJL9HLu8PU1Smg@mail.gmail.com>
+ id 1j8oRX-0001rb-5y
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 17:01:25 +0000
+Received: by mail-wr1-x441.google.com with SMTP id r17so629104wrj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Mar 2020 09:01:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=JxxZMXsVW1OlUAj2yQJ6ZF+K072kLAsn2WXP+512A/M=;
+ b=G//D/RNJf7ItaCMkYYyhrVVoLHbmg+VdXhMwiw86M2PluaUELtampqk8xrbWLKMLqe
+ wDF6bck4vxs+t2ye9djT5PqWyAngPJSwNSuWytRndAweD5E9TdzAcOMNjOpOyQNtZZZg
+ r7vL6QxW0b3sBA7umhlOFOrPG88rJermRECnzifaNjrCU0zarr6CZ6TLwVTnV4KbC7Dz
+ KKCLPYE2Dbc/TUsbpqgaCjNK+2s1i2B07rTF8WBiOaoSBJ93SrGx7UA6IdL5G6Z1Qdsj
+ uktYR5gQeIpnWGXqf4kRgvEeN+l3bmxU2AD9cznl/S5X2ZM5XmTsbVcBGYTB9Wc/54/p
+ +mVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=JxxZMXsVW1OlUAj2yQJ6ZF+K072kLAsn2WXP+512A/M=;
+ b=GH2D42195MN8ec/kCGI8hslIaxDInaBBVWjfJwD9WcKXvhMfpJQvYBeXJe+2muLFBC
+ 8VAp2LYzUbc/XkhWacmuUbrizZ7fs2iSHtCP3h9w1xPQv/++HDJFyvNAgLI+umR8nyOn
+ 9Cu/frzpwtkFs2GZqphe6myVM8d5Pj5CqVhxrbGi9pWxz4msEtxPxQ96kPE/LoE+7rGC
+ 6WMk/sxstiv3pl7bCm+IvDOngZYGVFuG3fMab+0FkD2zH08bQdI91X8evl/3Sgdqal+z
+ lslC0PbAqMhLy56j0NYeeEI+PD3u0TaXDIXdNoNOrTMyF4KKdxAdEq3Z0hakENnlPOCF
+ iVVw==
+X-Gm-Message-State: ANhLgQ3tHejbg1ePdTtkD/257hsiBVrPSGpHXpysOkxcjtgzMqyD2iFM
+ pF54duW9TEWgSc+9M+E3gdaXRA==
+X-Google-Smtp-Source: ADFU+vvbCDhbjKnBTJ0P9gUMwbINUDb4htWjCWs1X4yIjcZsa/sq2I2rF81VVO4nPsuCrCG5FapnZA==
+X-Received: by 2002:adf:df8f:: with SMTP id z15mr533884wrl.184.1583168481691; 
+ Mon, 02 Mar 2020 09:01:21 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id p10sm23628037wrx.81.2020.03.02.09.01.20
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 02 Mar 2020 09:01:21 -0800 (PST)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Anand Moon <linux.amoon@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jerome Brunet <jbrunet@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCHv2 2/2] clk: meson: g12a: set cpub_clk flags to
+ CLK_IS_CRITICAL
+In-Reply-To: <20200302125310.742-3-linux.amoon@gmail.com>
+References: <20200302125310.742-1-linux.amoon@gmail.com>
+ <20200302125310.742-3-linux.amoon@gmail.com>
+Date: Mon, 02 Mar 2020 18:01:20 +0100
+Message-ID: <7hlfoir8rj.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACRpkdbADQ5+Tp9NDgQx20Y0QTcE_go2qzi7dJL9HLu8PU1Smg@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_084509_831743_EE364EB3 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200302_090123_363329_17B161E7 
+X-CRM114-Status: GOOD (  22.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -89,62 +98,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Linux GPIO List <linux-gpio@vger.kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Romain Izard <romain.izard.pro@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 05:34:19PM +0100, Linus Walleij wrote:
-> On Mon, Mar 2, 2020 at 10:36 AM Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> > On Mon, Mar 02, 2020 at 09:39:59AM +0100, Uwe Kleine-K=F6nig wrote:
-> =
+Anand Moon <linux.amoon@gmail.com> writes:
 
-> > >  - Sometimes it is useful to make use of a GPIO and a dedicated funct=
-ion
-> > >    on the same pin in a driver (e.g. an i2c driver might need to swit=
-ch
-> > >    to gpio to do a bus recovery). The automatic pinmuxing then has
-> > >    strange side effect because you have to remux the pins after
-> > >    requesting the GPIOs even if you didn't drive the pins as GPIO and
-> > >    there is a short time where the pin function isn't the dedicated
-> > >    one.
-> >
-> > It's worse than that for the i2c driver.  The pins are muxed to the i2c
-> > function when the driver binds.  When the i2c driver claims the GPIOs
-> > corresponding with those pins, they get switched to GPIO mode behind
-> > the back of pinctrl.  You then have to _explicitly_ switch pinctrl to
-> > GPIO mode and back to I2C mode to get them back to I2C mode.
-> =
+> On Odroid n2, cpub_clk is not geting enable, which lead the stalling
+> at booting of the device,
 
-> That's especially annoying. I would consider adding a specific
-> consumer flag for GPIOs used this way, in additon to
-> GPIOD_ASIS, something like GPIOD_ASIS_NOMUX
-> (thinking of better names).
+First, how is the CPU_B clk related to the SD card issue described in
+the cover letter?  I think this patch is attempting to fix something
+unrelated to the SD card.  Please separate from this series (or describe
+in detail how it's related to the SD card booting.)
 
-It's very annoying, and I believe something I did point out in my email
-about it when I discovered it towards the end of last year.
+Also, we're missing lots of details here to be able to help.  Are you
+using the u-boot from hardkernel?  your own?  something else?  What's
+the version?
 
-Having a way to avoid the muxing would be a very good idea, as there
-are cases where we really should not be taking the I2C pins away from
-the controller during driver initialisation.  In the case of i2c-pxa,
-when the pins are taken away, the controller sees the disconnected SCL
-and SDA lines go low, and it can assume that the bus is busy as a
-result, or worse see it as a START condition if SDA goes low while SCL
-is high.
+Can you share logs (including u-boot logs) showing how your kernel is
+booting and full kernel boot log (including the stalls.)
 
--- =
+> updating flags to CLK_IS_CRITICAL which help enable all the parent for
+> cpub_clk.
 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
-up
-According to speedtest.net: 11.9Mbps down 500kbps up
+With current mainline, I've tested DVFS using CPUfreq on both clusters
+on odroid-n2, and both clusters are booting, so I don't understand the
+need for this patch.  
+
+It's not related to your problem (I don't think) but for the regulators
+used by each cluster, the PWM driver is needed, and there's a bug/race
+in the probing of the PWM regulators used for CPU_B.  If you make the
+PWM regulators, built-in this problem goes away for CPUfreq.
+
+Just for kicks, can you build your kernel with CONFIG_PWM_MESON=y
+(currently defaults to =n) and see if you have any better results with
+booting.
+
+And FYI, any use of CLK_IS_CRITICAL will be very highly scrutinized.
+You will need detailed justification for adding this flag since it most
+often is just masking some other bug.
+
+Kevin
+
+> Fixes: ffae8475b90c (clk: meson: g12a: add notifiers to handle cpu clock change);
+> Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Cc: Jerome Brunet <jbrunet@baylibre.com>
+> Cc: Neil Armstrong <narmstrong@baylibre.com>
+> Suggested-by: Neil Armstrong <narmstrong@baylibre.com>
+> Signed-off-by: Anand Moon <linux.amoon@gmail.com>
+> ---
+> Previous changes
+> 	fix the commit $subject and $message as previously I was
+>         wrong on the my findings.
+>         Added the Fixed tags to the commit.
+>
+> Following Neil's suggestion, I have prepared this patch.
+> https://patchwork.kernel.org/patch/11177441/#22964889
+> ---
+>  drivers/clk/meson/g12a.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+> index d2760a021301..7237d08b4112 100644
+> --- a/drivers/clk/meson/g12a.c
+> +++ b/drivers/clk/meson/g12a.c
+> @@ -681,7 +681,7 @@ static struct clk_regmap g12b_cpub_clk = {
+>  			&g12a_sys_pll.hw
+>  		},
+>  		.num_parents = 2,
+> -		.flags = CLK_SET_RATE_PARENT,
+> +		.flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
+>  	},
+>  };
+>  
+> -- 
+> 2.25.1
 
 _______________________________________________
 linux-arm-kernel mailing list
