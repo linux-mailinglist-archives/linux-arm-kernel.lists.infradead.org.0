@@ -2,79 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 699E3175817
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:15:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F31DE175836
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:19:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zEg/HJplbPoLKIt3JTANERBRyjmuWh6b2Py3LA2/13o=; b=rzlvNDls8CANyH
-	RYHQFFvEN5EN0kWeAomJA4FOzYJs8T+WT7paW6sdgU7KXbBiKHRKY8wkzkUcCo1Uz7yqRsxWWlcom
-	OGSS584atCgi1b6gfcGdDl3gxVSrd48b/XnXP+b7kPqUFEqmX5B831knFtk+Ca3h6y0yBHbNYNlqY
-	rb5UvH5I5Iz6wTGHekW+IA6VEblzEaw+Vd5TeFREMuT7S9DPzOPQmLvpcRceP678NYZesTWHbuwqS
-	nu6AC6cE4BPOwE7d0/MVfHpkwzrfkCBcDQkVfeNHrj7/O88KF2FDBO/2KQOQtFb8xp0Kf/a3E1oZq
-	/ayRQz8Q6DlTXPiZDbJg==;
+	List-Owner; bh=zUcCGpqPAHA3+vZjzhftd8VLatFMe8HY1Cvurm51WEQ=; b=R/1v0XG+z9NJ6H
+	6WT0Q6IuPqKeVUVqkCl+LpyTcFMnPfW4bhczf23l6hVQmXMDoJGqY+/p41LBljZ6kWVF5UV13V/vb
+	nEf5at2G1vF5Z/sO89Vg2JsWiRMZngg/bUzbanQ68I/QT3XxP+As6AOAbQ7dqgxIgA0lrdVf/Iu35
+	gSNxHRu4wlwLglw2smJ7X6fwZ8Doea5fbF3FObp1YwVyKU45LdQM6NxG4A3/21YGsqYfwcu6WfdfZ
+	ihv0EcJPFKz8z8OY+jmoY6YWhEdiUVIskelnXcgEGxtph++ojs9Q7gmijVh1cLjuTmcQP0YrJ0FZa
+	l7iSySgcEGI1z680Sh4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8i6R-0002ml-As; Mon, 02 Mar 2020 10:15:11 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1j8iA9-0004hL-Ny; Mon, 02 Mar 2020 10:19:01 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8i5z-0002eT-T9
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:14:45 +0000
-Received: by mail-ot1-f66.google.com with SMTP id x19so4319642otp.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 02:14:43 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SVlemy32h72Zpj8jVlIGq7eQAhoadA5R3segFYSq66w=;
- b=LRIc/d3bQIKZh1cs5cRjllBHZDAjbD3Of9bKVUc+uWaQoEbCkY389XWsKvPcChTyD1
- NAvywXuTuB69dCur31/2+jmvtkkLB+5KJs+ljzFDPsT5yin9wP3dVMylJhp8JJejM9+q
- LLA+22/xQtu8V5R6pr39O7m31mrt/sDMzcyuR8ITDOw/DNwL3AAI67k59xUPq9Qqbl8K
- f8IchETzJ7PP+so06eMVRhl3616ucDTptaThU0Q7ooiS57RgxpgMg2HHYghQ1pLrdBxV
- Zym3wWUHrC4wA5ANlMh89I8dLzgQ5QyLZSwdwV0lr1T9j0pZkQgchPcibBAnwO1jfnON
- yeHw==
-X-Gm-Message-State: ANhLgQ0dfKqhHis/mkEhc4jRMuq4E/k/FKINLuBc//iQhg36rUDjUmDR
- ZuK2+al7IYuKZqCUQYiJLQtMcCORLKefchhh/L0=
-X-Google-Smtp-Source: ADFU+vs/0ZiJfqPA7EukyL4+DZs2EJZ2FkBQDZwJ/jcv1Cma/xnhZmbg/F6SIEf/URrc+W049AaZlV2ArAclptArrf0=
-X-Received: by 2002:a05:6830:12d1:: with SMTP id
- a17mr3526676otq.39.1583144083038; 
- Mon, 02 Mar 2020 02:14:43 -0800 (PST)
+ id 1j8iA2-0004fC-TL
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:18:56 +0000
+Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1j8i9o-000400-Pk; Mon, 02 Mar 2020 11:18:40 +0100
+Message-ID: <fbba971d7501c774ce0081f22dcff4ef74002a4d.camel@pengutronix.de>
+Subject: Re: [PATCH 2/3] ARM: dts: stm32: add STM32MP1-based Linux
+ Automation MC-1 board
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Alexandre Torgue <alexandre.torgue@st.com>, Ahmad Fatoum
+ <a.fatoum@pengutronix.de>, linux-stm32@st-md-mailman.stormreply.com, 
+ mcoquelin.stm32@gmail.com, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+Date: Mon, 02 Mar 2020 11:18:39 +0100
+In-Reply-To: <244a4502-03e0-836c-2ce2-7fa6cef3c188@st.com>
+References: <20200226143826.1146-1-a.fatoum@pengutronix.de>
+ <20200226143826.1146-2-a.fatoum@pengutronix.de>
+ <244a4502-03e0-836c-2ce2-7fa6cef3c188@st.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-References: <68219a85-295d-7b7c-9658-c3045bbcbaeb@free.fr>
- <e88ca46a-799d-9c86-f2d2-6284eb3c3419@free.fr>
- <CAMuHMdUZfR6pYG-hourZCKT-jhh1t+x-ySF4JnEPJjscGAQT+A@mail.gmail.com>
- <7622db71-b1f4-62b4-86ee-78e00d5bd52c@free.fr>
-In-Reply-To: <7622db71-b1f4-62b4-86ee-78e00d5bd52c@free.fr>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 2 Mar 2020 11:14:21 +0100
-Message-ID: <CAMuHMdVYghD_xLeXVFD+PGBKECSkQ+_KxPBwFmUDDO3W5skscQ@mail.gmail.com>
-Subject: Re: [RFC PATCH v4 2/2] clk: Use devm_add in managed functions
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_021443_938200_A8DC4A5E 
-X-CRM114-Status: GOOD (  15.93  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200302_021854_944470_CED8306E 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,79 +68,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-clk <linux-clk@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Rafael Wysocki <rjw@rjwysocki.net>, Russell King <linux@armlinux.org.uk>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Suzuki Poulose <suzuki.poulose@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: devicetree@vger.kernel.org, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+On Mo, 2020-03-02 at 11:06 +0100, Alexandre Torgue wrote:
+> Hi Ahmad
+> 
+> Thanks for adding a new STM32 board. Some minor comments.
+> 
+> On 2/26/20 3:38 PM, Ahmad Fatoum wrote:
+> > The Linux Automation MC-1 is a SBC built around the Octavo Systems
+> > OSD32MP15x SiP. The SiP features up to 1 GB DDR3 RAM, EEPROM and
+> > a PMIC. The board has eMMC and a SD slot for storage and GbE
+> > for both connectivity and power.
+> > 
+> > Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de
+> > ---
+[...]
+> > +
+> > +&gpu {
+> > +	status = "okay";
+> > +};
 
-On Mon, Mar 2, 2020 at 11:01 AM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
-> On 27/02/2020 14:36, Geert Uytterhoeven wrote:
-> > On Wed, Feb 26, 2020 at 4:55 PM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
-> >> Using the helper produces simpler code, and smaller object size.
+This question is more to the ST guys than this specific DT: Why is the
+GPU marked as disabled in the SoC dtsi file? This device is always
+present on the SoC and AFAICS there are no board level dependencies, so
+there is no reason to have it disabled by default, right? Removing the
+status property from the dtsi would remove the need for this override
+on the board DT.
 
-> >> --- a/drivers/clk/clk-devres.c
-> >> +++ b/drivers/clk/clk-devres.c
+Regards,
+Lucas
 
-> >> @@ -128,30 +109,22 @@ static int devm_clk_match(struct device *dev, void *res, void *data)
-> >>
-> >>  void devm_clk_put(struct device *dev, struct clk *clk)
-> >>  {
-> >> -       int ret;
-> >> -
-> >> -       ret = devres_release(dev, devm_clk_release, devm_clk_match, clk);
-> >> -
-> >> -       WARN_ON(ret);
-> >> +       WARN_ON(devres_release(dev, my_clk_put, devm_clk_match, clk));
-> >
-> > Getting rid of "ret" is an unrelated change, which actually increases
-> > kernel size, as the WARN_ON() parameter is stringified for the warning
-> > message.
->
-> Weird... Are you sure about that? I built the preprocessed file,
-> and it didn't appear to be so.
->
-> #ifndef WARN_ON
-> #define WARN_ON(condition) ({                                           \
->         int __ret_warn_on = !!(condition);                              \
->         if (unlikely(__ret_warn_on))                                    \
->                 __WARN();                                               \
->         unlikely(__ret_warn_on);                                        \
-> })
-> #endif
->
-> Maybe you were thinking of i915's WARN_ON?
->
-> #define WARN_ON(x) WARN((x), "%s", "WARN_ON(" __stringify(x) ")")
-
-Oops, you're right.  I got trapped again by an override of a standard macro
-(IMHO this should be removed).
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
