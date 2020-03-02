@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 882B4176674
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 22:52:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A43F917667F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 22:57:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mhtfKngFf9r0TefXCpQuZMImqF0+dCUf19lvY08Hdiw=; b=fuy9J6v47wFyNX
-	sF7MeZPYratRq+ZwJzPV5k04KQVq4pi+EygjWv6RGDURod+qajcT5/OkZ58IcENJnjpZKg6WG/asX
-	SL4M78bXcji7pgARpuiGvgsbp+v7WKvaUeLQ666baFREV19kcdlNqmD9lM46H9Ff+zKe6bPPLBjMv
-	ZH9uGGoCCj9b8a27gM8wWR/p8+7z8K7hhYtWqsx8qm1u2vLT/dA1mAH7hKkSdZLWul/w+8MjZcCDC
-	bFABLdp+mzfsNz1VLYaGOIW7tqKU2FBF73JgDsG569wPhFPHmC7/TMR5Tm7/YE6Np2ddve8wzEpVp
-	x+lBDbxj8/IL/rnPmpEg==;
+	List-Owner; bh=8i1wnLIT18Dpm7NDd2z9YC54B5ciGbeZRxfaoUqYN/8=; b=j0Vaf2aevjef11
+	wNefNjTd87Rama3ZV5f/7Oefxg2/Mhjg8n64GcZNen9YrEs+YpHAXaPKrr3oXXqJG6BlPkKevx2eq
+	bnvSrN47mmm3UiUtjO7WZCoT/NhcaIn0J5R36Hi01axTTHamraFYX/L3TR6UazMjEE3rhn/3uZZr4
+	bGJ/obbbSloXfiJHIh9BOKKS9OiKoyGaF+OQ0gWWnwWuEAQn7Na0XdMO50FGKrflSX+ifoRopDL3m
+	hRzJKI07EmCKtykmtDyVY5DFL+aDDI2sFcHiAbjemvowBKwlA1Vbjw6yiskSs1KsZLeqBhsij9kxG
+	VjMx0xoseugJf18WKa9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8szM-0008DV-6h; Mon, 02 Mar 2020 21:52:36 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1j8t40-0001nF-Dn; Mon, 02 Mar 2020 21:57:24 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8syA-0007BJ-Ap
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 21:51:24 +0000
-Received: by mail-pf1-x443.google.com with SMTP id i13so368189pfe.3
+ id 1j8t3t-0001mL-SU
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 21:57:19 +0000
+Received: by mail-pf1-x442.google.com with SMTP id i13so374938pfe.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 13:51:19 -0800 (PST)
+ Mon, 02 Mar 2020 13:57:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=A14QEnluAfy61zPlyOAgKgUKJNYdcdSbcWS256De/Mg=;
- b=Btl64gHCqFESo8nzkD/TMtxRWNCqZzrgYn6cwLdnuYB9TEEF7ir6cyZWBScRS44MWv
- TqFMv6lRCB7Mr39FnCTNoC+kxmXGcgFA5Tz6d64AOb5+4tVWJQ79oPnC9H56lGREje9f
- MaS+L9jfToyMU1snIAbPtXgt+O6zUA3X6LQltJ2L+A1BUtrNEwD7gx1mkMhfAqM2ASUB
- Phg4lSUI5S/a7fRw61fSdgk5Fiwxkxf1XZJCoL2B7c4vXZAvJ6asxaT1yif77FlTTAiv
- UK1A+dkkNbxmM+5+uRgC1TnNbaKXbq8GP90rQ1iIfmduAOdgA12H27iqUIXb3GoJ5xLw
- tUhw==
+ :cc; bh=k8cncLmIKb74ARY4u3Ul3MTwXaMgUO4z3at0fIC1AK4=;
+ b=EDLx57wYDMC42+RD8Bjb4sT2XTMNlAbUwf3l1LrxVqSpBX2E2wSJbS8L3zZuJ5KFK/
+ orwqWQgcrgo8VkfM8MT0mZqeEcdJHs51pFsTArOzKyfOhg/6dzKI1dRDjaRaNCnNl2rE
+ rlBuLruu7hC0DANgqBiWXToQDm/kW3vs86nfZnbsI/B7yVpbP9mMDcQp2mSuI0PoR4ho
+ 9KKmphGgd08rRoAQR+CeCg9uWWuD8AIqynKCRgkg45poLTjjgFqsbvhUcP/Wa1sS++mv
+ IK/FRK7C8XwR2U4xn7vTENgP47doomWSJZ0kTTcg90Vo6kRT3fMoPgTSR3xn4x8f+oNy
+ tijw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=A14QEnluAfy61zPlyOAgKgUKJNYdcdSbcWS256De/Mg=;
- b=FDqEJ9jVEqRgkB0WJtfFWL7Sv6GohEVHPdcSH2aSX4p2bjfx7CRMO2jOEYh+y81Zwe
- Bp85klD7j/Qf8IChSEDxnm9l+Iv7RRjqgTeGzLb9XqAvgy+iTKhJicfIm2FQPFtXZhfX
- L3I+1u7+u2jXpJYr8JDjXwl/t2NpH+vKbg1RaU4ngIgInfwLPPBdOrKQ/UUDED0R2bkH
- nZsTuTF2IbZHwYUl+UJIb9LmvJmUxCARNc04onBRSgFWyAZeC37ddOY7KvUJQFl523wS
- 8+0ABAVszN9XA8249i8uTknnwo9fz7PHLxD8GcCZbmmaF3mMDMR3xeinvUw48MVVdRp8
- 30CQ==
-X-Gm-Message-State: ANhLgQ08b1W+LtVk5uCtVbBpItFbILIu2sNH9PeCuD/WcJ5eFDK7PyLm
- 3svI4LAMBE1fne4NCMyn1Zufegd01VQtirzijGVVKyq3vSc=
-X-Google-Smtp-Source: ADFU+vsFiOsjnufNSWTYa5s4zkSsIXKEXTdX92uVw2XZoiuJmVru8rWfMLLCbtJLYVcGqCWGnrQZTfKtxW3jnd4ik6M=
-X-Received: by 2002:a63:4d6:: with SMTP id 205mr916704pge.10.1583185878849;
- Mon, 02 Mar 2020 13:51:18 -0800 (PST)
+ bh=k8cncLmIKb74ARY4u3Ul3MTwXaMgUO4z3at0fIC1AK4=;
+ b=I4clW3Iw+XG6l2hBCyG+qV7V+QkiTdA8ukUHPT/IyD6ExZ+fQSVjr5qwHs7H782eEY
+ g7lBObdYoD3VIWnVau07HlkEh540DNx/l/pcaCaxGfw5tl8u6jZp7cO3oAQqg9W3sa2e
+ acMR/3BTArc2xl5sY+yYz1bZOX5yuU31K2Mb8tEb1gW27dTsNFz9duMTIrn8Sjm0BkIg
+ NCSA+xFc9N4b4zlGCFRWwMVyyk2UlbHroMZZYxjNSvs3Z0iIO2Qd1DLy32j2qBBSD1mu
+ wuvO5u+8BT9bCSBptHS8frJSOXJrY+k05RqMh5wIJUi0KZGw2gA66lJlRLu2sAZ/NX4C
+ pTBA==
+X-Gm-Message-State: ANhLgQ2ZPzhxV2M8v/k+xv/642CpO2QUn09QcLwaGGCO9GR25FEdOB7i
+ 5gUrcYdFhcEwEOtmz/GrbzrU8ZPyN6eEm5ekYi0/bA==
+X-Google-Smtp-Source: ADFU+vsJDnL1SMQunAJetk8ZEmktYTmZkt3K50PfzufkgiGIqMmM9XdNzoTxDlrMABCC5BblU52ieA5yH7SC3PGVGn0=
+X-Received: by 2002:a62:37c7:: with SMTP id e190mr1002877pfa.165.1583186234526; 
+ Mon, 02 Mar 2020 13:57:14 -0800 (PST)
 MIME-Version: 1.0
 References: <20200302213402.9650-1-natechancellor@gmail.com>
-In-Reply-To: <20200302213402.9650-1-natechancellor@gmail.com>
+ <CAKwvOdn8SgY-C1YRGOcCnTn84MHHGirkDHPfg=mCONmUV_wqSQ@mail.gmail.com>
+In-Reply-To: <CAKwvOdn8SgY-C1YRGOcCnTn84MHHGirkDHPfg=mCONmUV_wqSQ@mail.gmail.com>
 From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 2 Mar 2020 13:51:07 -0800
-Message-ID: <CAKwvOdn8SgY-C1YRGOcCnTn84MHHGirkDHPfg=mCONmUV_wqSQ@mail.gmail.com>
+Date: Mon, 2 Mar 2020 13:57:03 -0800
+Message-ID: <CAKwvOdnbSOatU3DjKsKAeRmpVtzWUWu6NxxJ9sP-t5es6K9_Ag@mail.gmail.com>
 Subject: Re: [PATCH] coresight: cti: Remove unnecessary NULL check in
  cti_sig_type_name
 To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_135122_416071_F5250477 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20200302_135717_946044_91F0A68C 
+X-CRM114-Status: GOOD (  17.89  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -109,50 +110,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 2, 2020 at 1:34 PM Nathan Chancellor
-<natechancellor@gmail.com> wrote:
+On Mon, Mar 2, 2020 at 1:51 PM Nick Desaulniers <ndesaulniers@google.com> wrote:
 >
-> Clang warns:
+> On Mon, Mar 2, 2020 at 1:34 PM Nathan Chancellor
+> <natechancellor@gmail.com> wrote:
+> >
+> > Clang warns:
+> >
+> > drivers/hwtracing/coresight/coresight-cti-sysfs.c:948:11: warning:
+> > address of array 'grp->sig_types' will always evaluate to 'true'
+> > [-Wpointer-bool-conversion]
+> >         if (grp->sig_types) {
+> >         ~~  ~~~~~^~~~~~~~~
+> > 1 warning generated.
+> >
+> > sig_types is at the end of a struct so it cannot be NULL.
+> >
+> > Fixes: 85b6684eab65 ("coresight: cti: Add connection information to sysfs")
+> > Link: https://github.com/ClangBuiltLinux/linux/issues/914
+> > Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
 >
-> drivers/hwtracing/coresight/coresight-cti-sysfs.c:948:11: warning:
-> address of array 'grp->sig_types' will always evaluate to 'true'
-> [-Wpointer-bool-conversion]
->         if (grp->sig_types) {
->         ~~  ~~~~~^~~~~~~~~
-> 1 warning generated.
->
-> sig_types is at the end of a struct so it cannot be NULL.
->
-> Fixes: 85b6684eab65 ("coresight: cti: Add connection information to sysfs")
-> Link: https://github.com/ClangBuiltLinux/linux/issues/914
-> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+> Yep, GCC and Clang both eliminate the false case as impossible:
+> https://godbolt.org/z/tjbDqR
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 
-Yep, GCC and Clang both eliminate the false case as impossible:
-https://godbolt.org/z/tjbDqR
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+0day just reported this, too (3 minutes after you sent your patch)
+https://groups.google.com/forum/#!msg/clang-built-linux/_SpkRyhMIxI/IrBtEk-8AAAJ
+If you wanted to show some love for the bot:
+Reported-by: kbuild test robot <lkp@intel.com>
 
-> ---
->  drivers/hwtracing/coresight/coresight-cti-sysfs.c | 6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
 >
-> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> index abb7f492c2cb..214d6552b494 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
-> @@ -945,10 +945,8 @@ cti_sig_type_name(struct cti_trig_con *con, int used_count, bool in)
->         int idx = 0;
->         struct cti_trig_grp *grp = in ? con->con_in : con->con_out;
+> > ---
+> >  drivers/hwtracing/coresight/coresight-cti-sysfs.c | 6 ++----
+> >  1 file changed, 2 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> > index abb7f492c2cb..214d6552b494 100644
+> > --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> > +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> > @@ -945,10 +945,8 @@ cti_sig_type_name(struct cti_trig_con *con, int used_count, bool in)
+> >         int idx = 0;
+> >         struct cti_trig_grp *grp = in ? con->con_in : con->con_out;
+> >
+> > -       if (grp->sig_types) {
+> > -               if (used_count < grp->nr_sigs)
+> > -                       idx = grp->sig_types[used_count];
+> > -       }
+> > +       if (used_count < grp->nr_sigs)
+> > +               idx = grp->sig_types[used_count];
+> >         return sig_type_names[idx];
+> >  }
+> >
+> > --
 >
-> -       if (grp->sig_types) {
-> -               if (used_count < grp->nr_sigs)
-> -                       idx = grp->sig_types[used_count];
-> -       }
-> +       if (used_count < grp->nr_sigs)
-> +               idx = grp->sig_types[used_count];
->         return sig_type_names[idx];
->  }
 >
 > --
+> Thanks,
+> ~Nick Desaulniers
+
 
 
 -- 
