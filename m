@@ -2,61 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F6E11759CF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:55:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC8161759E0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:58:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zVqibTYlNcGZ4538fneNXC1my8mXY4LO6lnm4y8zrKw=; b=nimEdsaw8pJpQv
-	gxHtxUd7I9p8n9z7mI6iNgJksSTiF6sjQkdYMYwuKkpFXXkrS7Afgw6ilAKxKan5i++fxWZRRpHJ1
-	ztL8MppLEFvrWKtok0B8XlJsNhrU/7uE48FG/mKhx9gM2qB6HLuZx+dEQTbpw4iiViLc1NWfqT6nY
-	WROm6/xnWnKN0Q6aXIzWa0XBfFdq4vut4DvmhVO2IU3AJMeYOHr5pOmsgn3SWEtTbEwDQE7Kx2PSy
-	VuNOXD+qvdKYvdG8DUMS05GF+TilDA88cApsAPsnS/eRKMJQ6oIR1bQoNPcGN7Ikxtrp+ITAHKt+e
-	DTimL308w8HB0BC9N04Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zjvgSGkGnnmFsmHF/3oe9d+yOdXq9E+4p045GoCIu4M=; b=WuB
+	rtvC6d5xIBIPJ2H/eGtnRyR8clXoTOKNOQjhygLnqEUEQXTJ3wCz5P8MrIZnmliehQFGDnub1/BGu
+	utFO28Qzs3l5g/d5oQtXTbP4P0vJqOcWpxMU+W/yzL0cOOwVheL4qa0aa/TyvXKFD4zrRNjp/45ub
+	c3oeq7kUY0sC4tRT/Z9DxiC5G4qINcLcWQM3KZqyGa814ctGGz5qknGjCAQKF5frSbD0D5BYVA0CN
+	idcWCafUPXM8mTRiwGrejqCNZYAkxvh2WnVeajddr+TcKNqUk8Co2Ky22Ff6jNVmdwV5SuKAoTApr
+	G1lQ1ssuvTrkQnruvlC1N+4RRx0sneQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8jf0-0003KL-Ot; Mon, 02 Mar 2020 11:54:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j8jiQ-00052W-NG; Mon, 02 Mar 2020 11:58:30 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8jes-0003K0-FW
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 11:54:51 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 32CB92086A;
- Mon,  2 Mar 2020 11:54:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583150090;
- bh=g1ZYQNRudb7dOHHtDC/0u7w+QrmM8esVYtHWRpxBXmI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JHIpMEqSIMeQ1uGz9HkhnZBTFmkCkXwSpJMCU0w32GcqOK8PhZd5ZMU5Wk0tbAEfh
- IlVulhuXZbXPDcBp3Z6yFjPjhO9pGfenykNa8lR7gft34vUDlUTuNZmDDjW8VE9qkO
- hgNcPYD5qNAd7djLgLdKE0EGubjhBEHoaGynPn9k=
-Date: Mon, 2 Mar 2020 11:54:46 +0000
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 5/5] arm64: perf: Support new DT compatibles
-Message-ID: <20200302115445.GB9233@willie-the-truck>
-References: <cover.1582312530.git.robin.murphy@arm.com>
- <6e5087621bd8112a35733054689d7c785b4bdde5.1582312530.git.robin.murphy@arm.com>
- <20200228121712.GF36089@lakrids.cambridge.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228121712.GF36089@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1j8jiK-00051M-0E; Mon, 02 Mar 2020 11:58:26 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a132so857671wme.1;
+ Mon, 02 Mar 2020 03:58:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=+bOUkmuWmtrqLnmLhYcvBOjbDQxV1smzTu5vD7lLcDs=;
+ b=sIzU5chb1GcVyQMtdhpn+YMKLwGB4nwgzWG4cTyD3MtUUTWThAccAtZgHBK2bvUasL
+ R8Hbv6HtwejqQMuIQi1wfxlo+0bbSQMujWY58KyK2vyrPX1EdzYoYeRqnl+DsVKoNA2C
+ gSFJd6WZtAo9jY3QDaXyVqLy7c/Lv7fjjA9lvu5SW03q6BkHXwJHqyaVkNm0G2zAvLSl
+ TV5XCTgdRZ+MmZ/ZSS4mpaJx0+XPiVaeefJpxE/HbeQxRcZIqBQqzkDSGr2kFHMVBrVO
+ TJ7LFy6gPcbPwtgaZ0LYmKTWqjRy4xVmEQGD7+FSkHJR37xQGgBwRKT4hgFWeRd7hKoY
+ P5eg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=+bOUkmuWmtrqLnmLhYcvBOjbDQxV1smzTu5vD7lLcDs=;
+ b=Bz5L4jaDH1K7EQqCZJIe651i4/3F2qM607PvJjH4xf/SVikl/4Cafc0Qtjb9cVD/BZ
+ WIfrVOQE3U+6nGKL8NPiorLVIJc4D4bT9gms1182TOQ+CyZmPXUa/Zjr3uJ2B7WV+J9m
+ lJaJtyDn+0vMupdP+O7Fea3tw+fJDhNZg5erIKhyfgeIM2MPpY0BzGWYf0YDtZpQM5d6
+ fLotbuiJ7JvScHdGQvPX51Elczy30aO4QH2czHN0YAeveH186M6DVR2oCvcqMTwPzXCP
+ 8b8DVDdLVvAn0h9WGjKkzqMZkIvtOqm/InBBojQ3anVlvz8C/JqfymrHHfFkYmc9eDpj
+ akvw==
+X-Gm-Message-State: APjAAAVArTO+wCMaxt0pn3qHR68mRjjkjWrDPREJWDUwsh/IkPnR5bUb
+ 1qkyRdZ9cLOhn/A9amuLESI=
+X-Google-Smtp-Source: APXvYqwn+pGS0GpOR51cYA0edtXDgnNHd3aAxUL57dOeGCuHOdepkQXfPsdL9BGqEiQLUUFCtRYQZQ==
+X-Received: by 2002:a1c:a502:: with SMTP id o2mr12079496wme.94.1583150299586; 
+ Mon, 02 Mar 2020 03:58:19 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id o16sm12653303wrj.5.2020.03.02.03.58.18
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 02 Mar 2020 03:58:19 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] dt-bindings: usb: dwc2: add compatible property for
+ rk3328 usb
+Date: Mon,  2 Mar 2020 12:58:11 +0100
+Message-Id: <20200302115812.7207-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_035450_544166_934DF7B9 
-X-CRM114-Status: GOOD (  11.91  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200302_035824_874722_02A499F8 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -66,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,32 +95,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Cc: devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 12:17:13PM +0000, Mark Rutland wrote:
-> On Fri, Feb 21, 2020 at 07:35:32PM +0000, Robin Murphy wrote:
-> > Add support for matching the new PMUs. For now, this just wires them up
-> > as generic PMUv3 such that people writing DTs for new SoCs can do the
-> > right thing, and at least have architectural and raw events be usable.
-> > We can come back and fill in event maps for sysfs and/or perf tools at
-> > a later date.
-> > 
-> > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> 
-> Thanks for putting this together!
-> 
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
-> 
-> Will, are you happy to queue this and the previous patch?
+A test with the command below gives these errors:
 
-Yup, I'll pick these two up shortly.
+arch/arm64/boot/dts/rockchip/rk3328-a1.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3328-rock64.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
+arch/arm64/boot/dts/rockchip/rk3328-roc-cc.dt.yaml: usb@ff580000: compatible:
+['rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
+is not valid under any of the given schemas
 
-Will
+The compatible property for rk3328 dwc2 usb was somehow never added to
+the documention. Fix this error by adding
+'rockchip,rk3328-usb', 'rockchip,rk3066-usb', 'snps,dwc2'
+to dwc2.yaml.
+
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ Documentation/devicetree/bindings/usb/dwc2.yaml | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
+index e95ba9373..e9f4cea21 100644
+--- a/Documentation/devicetree/bindings/usb/dwc2.yaml
++++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
+@@ -41,6 +41,10 @@ properties:
+           - const: rockchip,rk3288-usb
+           - const: rockchip,rk3066-usb
+           - const: snps,dwc2
++      - items:
++          - const: rockchip,rk3328-usb
++          - const: rockchip,rk3066-usb
++          - const: snps,dwc2
+       - const: lantiq,arx100-usb
+       - const: lantiq,xrx200-usb
+       - items:
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
