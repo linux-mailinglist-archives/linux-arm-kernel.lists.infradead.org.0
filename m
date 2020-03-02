@@ -2,40 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FE92175ED7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:56:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 247AB175EDD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:56:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x/CSzBXqyHZHqpwh0jyEz0LXIoEdiDmRErWhsnKB5AQ=; b=axy4L/g5kdad+N
-	XTQFG4JDcPoC4wPJbLqhJqZzzSdPQf/9deMSgPZDnhIZUvAlfXnkoEQp+lz4/ImsME+uobvCT+Fba
-	PFSd6skBSSHpD++KWD67gOL+S6c1cxpvdLjlGBlHx5NT4aYgGkFoWvVwRh2HMiKF08Zanin/azQTG
-	JbcY7043du5+H+VVMeHgs1Za0V90+TEelhQ5++S24pTLm3fH7H665cIdPvMiboJf2jeRQUsaFHpv9
-	QJjcPxNqyH9sZEUAV3+4H0+6fEYpNYOciAxcIB86I5RDmMMrBhvKc+22Hv6EbLI3MePriHd41HF7Q
-	HKQUCoHh0miS4s6MUXkg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZW8pFtwlUj3q7GZJotB4Rgjtfp9gMy+l74jJQcTab0w=; b=qaYs3t12I5VTsx
+	qTC7cR0dwnGLW+IN6Nh3y8Nd+5kfC/UFWQflpW+GOij6Xvd4eVfBr4vHYPWKlmIIuMndUsHOAXMeI
+	7vbjrvd3X5FbsK5U4jyWKHFAqenTPDU2xb1bHMKWNXJj0/PpcqIFEHMWUAQBZIbKwDN2mkJTqYGmW
+	TxAFFJm0CL9ucTtPNdshCUTlNp/nPE4ELjClI/c/joXbFOpdXzUZ8fl43NCy3o5i8q62WwptACMNb
+	qKhB73LRW4BUQGPMLbe2U/P6imfeJ3MbyDVv8+d4Ur13zbJyaRaKz0DHVXC3btpF8LiJefxqHcZX4
+	NH2Jj8iz7KaH1GBp0ofQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nQX-0003Pz-9Z; Mon, 02 Mar 2020 15:56:17 +0000
+	id 1j8nQj-0003a2-7x; Mon, 02 Mar 2020 15:56:29 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nQN-0003OK-8L; Mon, 02 Mar 2020 15:56:08 +0000
+ id 1j8nQN-0003OJ-8K; Mon, 02 Mar 2020 15:56:08 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 4AC3EACD6;
- Mon,  2 Mar 2020 15:56:04 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id EE405AB6D;
+ Mon,  2 Mar 2020 15:56:03 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 0/4] Raspberry Pi 4 VL805 firmware load support
-Date: Mon,  2 Mar 2020 16:55:24 +0100
-Message-Id: <20200302155528.19505-1-nsaenzjulienne@suse.de>
+To: linux-kernel@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com
+Subject: [PATCH v3 1/4] soc: bcm2835: Sync xHCI reset firmware property with
+ downstream
+Date: Mon,  2 Mar 2020 16:55:25 +0100
+Message-Id: <20200302155528.19505-2-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200302155528.19505-1-nsaenzjulienne@suse.de>
+References: <20200302155528.19505-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_075607_443539_A052FE34 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20200302_075607_444574_5FD85152 
+X-CRM114-Status: GOOD (  14.00  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -59,59 +66,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, tim.gover@raspberrypi.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-pci@vger.kernel.org, Andrew Murray <amurray@thegoodpenguin.co.uk>,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
+Cc: tim.gover@raspberrypi.org, gregkh@linuxfoundation.org,
+ linux-usb@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
-loaded directly from an EEPROM or, if not present, by the SoC's
-VideCore. This series adds support for the later.
+The property is needed in order to trigger VL805's firmware load. Note
+that there is a gap between the property introduced and the previous
+one. This is also the case downstream.
 
-Note that there are a set of constraints we have to consider (some of
-them I missed on v1):
- - We need to make sure the VideoCore firmware interface is up and
-   running before running the VL805 firmware load call.
-
- - There is no way to discern RPi4's VL805 chip from other platforms',
-   so we need the firmware load to happen *before* running
-   quirk_usb_handoff_xhci(). Failure to do so results in an unwarranted
-   5 second wait while the fixup code polls xHC's unexisting state.
-
-As per Stefan Wahren's comments I tested the behaviour on outdated
-firmware. Boards dependent on this will not boot if firmware is not
-up-to-date. Older boards with outdated firmware will fail to execute the
-VideoCore firmware call, but xHCI will perform reliably. I added a
-warning printout in case of failure.
-
-I'm aware that Florian Fianelli noted on the previous revision that
-waiting on the VideoCore firmware interface during PCIe's probe is far
-from ideal. But this was before taking into account the second
-constraint mentioned above. Impact on non RPi4 boards is minimal.
-
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
+ include/soc/bcm2835/raspberrypi-firmware.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Changes since v1:
- - Addressed Floarians comments
-
-Nicolas Saenz Julienne (4):
-  soc: bcm2835: Sync xHCI reset firmware property with downstream
-  firmware: raspberrypi: Introduce vl805 init routine
-  PCI: brcmstb: Wait for Raspberry Pi's firmware when present
-  USB: pci-quirks: Add Raspberry Pi 4 quirk
-
- drivers/firmware/Kconfig                   |  1 +
- drivers/firmware/raspberrypi.c             | 38 ++++++++++++++++++++++
- drivers/pci/controller/pcie-brcmstb.c      | 15 +++++++++
- drivers/usb/host/pci-quirks.c              | 18 ++++++++++
- include/soc/bcm2835/raspberrypi-firmware.h |  9 ++++-
- 5 files changed, 80 insertions(+), 1 deletion(-)
-
+diff --git a/include/soc/bcm2835/raspberrypi-firmware.h b/include/soc/bcm2835/raspberrypi-firmware.h
+index 7800e12ee042..cc9cdbc66403 100644
+--- a/include/soc/bcm2835/raspberrypi-firmware.h
++++ b/include/soc/bcm2835/raspberrypi-firmware.h
+@@ -90,7 +90,7 @@ enum rpi_firmware_property_tag {
+ 	RPI_FIRMWARE_SET_PERIPH_REG =                         0x00038045,
+ 	RPI_FIRMWARE_GET_POE_HAT_VAL =                        0x00030049,
+ 	RPI_FIRMWARE_SET_POE_HAT_VAL =                        0x00030050,
+-
++	RPI_FIRMWARE_NOTIFY_XHCI_RESET =                      0x00030058,
+ 
+ 	/* Dispmanx TAGS */
+ 	RPI_FIRMWARE_FRAMEBUFFER_ALLOCATE =                   0x00040001,
 -- 
 2.25.1
 
