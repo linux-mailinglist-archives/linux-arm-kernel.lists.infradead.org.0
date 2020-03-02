@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A2FF175769
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 10:40:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4663E17577C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 10:40:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,59 +11,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CV21D2yji4IrU8eal6gEVHUnhDmi8DhV1uqciKU+TG0=; b=EHEw6g4z0JH7k+r6VaXXtLBzRG
-	ozFZOAjq3npDzUPdCHUunY1+n7tTEyQ2mQdUkCGrfbabvp4fHrC2PdxZ+uf2So+dSVCJwZGN2Nc9F
-	5ODiqb5oyYnkas+GPEN+nyK1mLv3h0ls4SjHXutHT18RGK7Opc5bpB4M5DZTlgDWlKG9U7sjHk0BH
-	9Dwh88f5D9u9Vwx2wfT0RSNV+mqe+fzQnvnWMa0mmgImo3dMu2s46EXmonX/jJ1rUoMRyJMmroc2z
-	/NNkIfD5ZZyr2HjR/i9pb4fD0U3dQVlP+bmEaqpgV2KfO8gG/0CIEzsMaFTDlPlMOiX61YBrhaV4e
-	tjxXt8+Q==;
+	bh=P+tkoM9ll2PWiYGyvDLO+YxNTyyvkEwBYA/2c9p+ehA=; b=RW1ybzH5d3i9GLjUCvzmjVf5gF
+	0LxWlYZ7ysmcXT/AmecnNekCWskQHZ7TlSRFlODZ2BgqvqOTdJbqv9XPRYyH3Byv/OJx67AA+0edZ
+	/9pIloP1BD4nUFMnnbToRTBPg+mBv7Ala/8/Hnu3leDZPhXXyPReRaylKsJDOBFptn10v/Tlp4MYH
+	BasIrUMdMqMnkTcJBZUeH4ih5eWp0wUrsMe7y+MPT7lO/Yu3f9XL5P51pidW17lWD3ChfFm/IdtRv
+	8ogPiXRwNcjWnXckBMFEfg2ueaLwlNOMynppeIHRXxxtiffhbVzg54RWV2EuQrpmZdnyonO4H9uII
+	v/nVKnPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8hYI-00038W-Fm; Mon, 02 Mar 2020 09:39:54 +0000
+	id 1j8hZ8-00053V-KM; Mon, 02 Mar 2020 09:40:46 +0000
 Received: from zimbra2.kalray.eu ([92.103.151.219])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8hXe-0002dK-Cu
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 09:39:17 +0000
+ id 1j8hXh-0002ev-3L
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 09:39:19 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 1513D27E083D;
+ by zimbra2.kalray.eu (Postfix) with ESMTP id CEFCE27E0863;
  Mon,  2 Mar 2020 10:39:13 +0100 (CET)
 Received: from zimbra2.kalray.eu ([127.0.0.1])
  by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id VjQZ6XBHqgnt; Mon,  2 Mar 2020 10:39:12 +0100 (CET)
+ with ESMTP id mgNn83UJo0py; Mon,  2 Mar 2020 10:39:13 +0100 (CET)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 981DC27E0840;
- Mon,  2 Mar 2020 10:39:12 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu 981DC27E0840
+ by zimbra2.kalray.eu (Postfix) with ESMTP id 5D99E27E0847;
+ Mon,  2 Mar 2020 10:39:13 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu 5D99E27E0847
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
- s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1583141952;
- bh=W+DBp3Kdqtq/tZ/GwGHqju2JIwVWvf3NKbxPUqbSl0U=;
+ s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1583141953;
+ bh=cmtgDRRWU3Vy6SngUz4zn1M5GWvp2p7qQJKFG2fJNxI=;
  h=From:To:Date:Message-Id;
- b=m5C12GROg4L7Huuk9KbevfVcjP5fFuW5IhoA2fYRJn7x4ICmpowKefnkN9KndB49E
- OtuITiNlvjFvBAtbbFb9o7fu4UfNI+Vm0b08E924B9D5fIdHt7YvK7OAbsiDR+ULxr
- 3vHa9U0sko72xL+ouajRgbe85Zepceq4An7S7mgQ=
+ b=oII9aqW2bvMm0GA1sEkyidymAWxpmxSfvefZ8v34uo7i1lQGZm+5cSbr0Ivrh24RC
+ JX7zzX9uu+j9Rihxmw4w4lzH4f3iyZiKPwMNOwAWxJE9BCF45sf1QvDJya/Ei05RfL
+ u6o0ANcjeMXYUmM2/phODnyA7UV/WV1a3UGaRbFY=
 X-Virus-Scanned: amavisd-new at zimbra2.kalray.eu
 Received: from zimbra2.kalray.eu ([127.0.0.1])
  by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id FJxtIRFFr0pO; Mon,  2 Mar 2020 10:39:12 +0100 (CET)
+ with ESMTP id 79beRT_5Vj40; Mon,  2 Mar 2020 10:39:13 +0100 (CET)
 Received: from triton.lin.mbt.kalray.eu (unknown [192.168.37.25])
- by zimbra2.kalray.eu (Postfix) with ESMTPSA id 76BF627E083D;
- Mon,  2 Mar 2020 10:39:12 +0100 (CET)
+ by zimbra2.kalray.eu (Postfix) with ESMTPSA id 3C44E27E0840;
+ Mon,  2 Mar 2020 10:39:13 +0100 (CET)
 From: Clement Leger <cleger@kalray.eu>
 To: Ohad Ben-Cohen <ohad@wizery.com>,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
  Jonathan Corbet <corbet@lwn.net>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>, linux-remoteproc@vger.kernel.org
-Subject: [PATCH v5 4/8] remoteproc: Add elf helpers to access elf64 and elf32
- fields
-Date: Mon,  2 Mar 2020 10:38:58 +0100
-Message-Id: <20200302093902.27849-5-cleger@kalray.eu>
+Subject: [PATCH v5 5/8] remoteproc: Rename rproc_elf_sanity_check for elf32
+Date: Mon,  2 Mar 2020 10:38:59 +0100
+Message-Id: <20200302093902.27849-6-cleger@kalray.eu>
 X-Mailer: git-send-email 2.15.0.276.g89ea799
 In-Reply-To: <20200302093902.27849-1-cleger@kalray.eu>
 References: <20200210162209.23149-1-cleger@kalray.eu>
  <20200302093902.27849-1-cleger@kalray.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_013914_760710_CC458E23 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20200302_013917_477149_54EA8A73 
+X-CRM114-Status: GOOD (  10.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,122 +104,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-elf32 and elf64 mainly differ by their types. In order to avoid
-copy/pasting the whole loader code, generate static inline functions
-which will access values according to the elf class. It allows to
-keep a common loader basis.
-In order to accommodate both elf types sizes, the maximum size for a
-elf header member is chosen using the maximum value of the field for
-both elf class.
+Since this function will be modified to support both elf32 and elf64,
+rename the existing one to elf32 (which is the only supported format
+at the moment). This will allow not to introduce possible side effect
+when adding elf64 support (ie: all backends will still support only
+elf32 if not requested explicitely using rproc_elf_sanity_check).
 
 Signed-off-by: Clement Leger <cleger@kalray.eu>
 ---
- drivers/remoteproc/remoteproc_elf_helpers.h | 96 +++++++++++++++++++++++++++++
- 1 file changed, 96 insertions(+)
- create mode 100644 drivers/remoteproc/remoteproc_elf_helpers.h
+ drivers/remoteproc/remoteproc_core.c       | 2 +-
+ drivers/remoteproc/remoteproc_elf_loader.c | 6 +++---
+ drivers/remoteproc/remoteproc_internal.h   | 2 +-
+ drivers/remoteproc/st_remoteproc.c         | 2 +-
+ drivers/remoteproc/st_slim_rproc.c         | 2 +-
+ drivers/remoteproc/stm32_rproc.c           | 2 +-
+ 6 files changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/remoteproc/remoteproc_elf_helpers.h b/drivers/remoteproc/remoteproc_elf_helpers.h
-new file mode 100644
-index 000000000000..4b6be7b6bf4d
---- /dev/null
-+++ b/drivers/remoteproc/remoteproc_elf_helpers.h
-@@ -0,0 +1,96 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Remote processor elf helpers defines
-+ *
-+ * Copyright (C) 2020 Kalray, Inc.
-+ */
-+
-+#ifndef REMOTEPROC_ELF_LOADER_H
-+#define REMOTEPROC_ELF_LOADER_H
-+
-+#include <linux/elf.h>
-+#include <linux/types.h>
-+
-+/**
-+ * fw_elf_get_class - Get elf class
-+ * @fw: the ELF firmware image
-+ *
-+ * Note that we use and elf32_hdr to access the class since the start of the
-+ * struct is the same for both elf class
-+ *
-+ * Return: elf class of the firmware
-+ */
-+static inline u8 fw_elf_get_class(const struct firmware *fw)
-+{
-+	struct elf32_hdr *ehdr = (struct elf32_hdr *)fw->data;
-+
-+	return ehdr->e_ident[EI_CLASS];
-+}
-+
-+static inline void elf_hdr_init_ident(struct elf32_hdr *hdr, u8 class)
-+{
-+	memcpy(hdr->e_ident, ELFMAG, SELFMAG);
-+	hdr->e_ident[EI_CLASS] = class;
-+	hdr->e_ident[EI_DATA] = ELFDATA2LSB;
-+	hdr->e_ident[EI_VERSION] = EV_CURRENT;
-+	hdr->e_ident[EI_OSABI] = ELFOSABI_NONE;
-+}
-+
-+/* Generate getter and setter for a specific elf struct/field */
-+#define ELF_GEN_FIELD_GET_SET(__s, __field, __type) \
-+static inline __type elf_##__s##_get_##__field(u8 class, const void *arg) \
-+{ \
-+	if (class == ELFCLASS32) \
-+		return (__type) ((const struct elf32_##__s *) arg)->__field; \
-+	else \
-+		return (__type) ((const struct elf64_##__s *) arg)->__field; \
-+} \
-+static inline void elf_##__s##_set_##__field(u8 class, void *arg, \
-+					     __type value) \
-+{ \
-+	if (class == ELFCLASS32) \
-+		((struct elf32_##__s *) arg)->__field = (__type) value; \
-+	else \
-+		((struct elf64_##__s *) arg)->__field = (__type) value; \
-+}
-+
-+ELF_GEN_FIELD_GET_SET(hdr, e_entry, u64)
-+ELF_GEN_FIELD_GET_SET(hdr, e_phnum, u16)
-+ELF_GEN_FIELD_GET_SET(hdr, e_shnum, u16)
-+ELF_GEN_FIELD_GET_SET(hdr, e_phoff, u64)
-+ELF_GEN_FIELD_GET_SET(hdr, e_shoff, u64)
-+ELF_GEN_FIELD_GET_SET(hdr, e_shstrndx, u16)
-+ELF_GEN_FIELD_GET_SET(hdr, e_machine, u16)
-+ELF_GEN_FIELD_GET_SET(hdr, e_type, u16)
-+ELF_GEN_FIELD_GET_SET(hdr, e_version, u32)
-+ELF_GEN_FIELD_GET_SET(hdr, e_ehsize, u32)
-+ELF_GEN_FIELD_GET_SET(hdr, e_phentsize, u16)
-+
-+ELF_GEN_FIELD_GET_SET(phdr, p_paddr, u64)
-+ELF_GEN_FIELD_GET_SET(phdr, p_vaddr, u64)
-+ELF_GEN_FIELD_GET_SET(phdr, p_filesz, u64)
-+ELF_GEN_FIELD_GET_SET(phdr, p_memsz, u64)
-+ELF_GEN_FIELD_GET_SET(phdr, p_type, u32)
-+ELF_GEN_FIELD_GET_SET(phdr, p_offset, u64)
-+ELF_GEN_FIELD_GET_SET(phdr, p_flags, u32)
-+ELF_GEN_FIELD_GET_SET(phdr, p_align, u64)
-+
-+ELF_GEN_FIELD_GET_SET(shdr, sh_size, u64)
-+ELF_GEN_FIELD_GET_SET(shdr, sh_offset, u64)
-+ELF_GEN_FIELD_GET_SET(shdr, sh_name, u32)
-+ELF_GEN_FIELD_GET_SET(shdr, sh_addr, u64)
-+
-+#define ELF_STRUCT_SIZE(__s) \
-+static inline unsigned long elf_size_of_##__s(u8 class) \
-+{ \
-+	if (class == ELFCLASS32)\
-+		return sizeof(struct elf32_##__s); \
-+	else \
-+		return sizeof(struct elf64_##__s); \
-+}
-+
-+ELF_STRUCT_SIZE(shdr)
-+ELF_STRUCT_SIZE(phdr)
-+ELF_STRUCT_SIZE(hdr)
-+
-+#endif /* REMOTEPROC_ELF_LOADER_H */
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index 4bfaf4a3c4a3..99f0b796fbc7 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -2055,7 +2055,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+ 		rproc->ops->load = rproc_elf_load_segments;
+ 		rproc->ops->parse_fw = rproc_elf_load_rsc_table;
+ 		rproc->ops->find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table;
+-		rproc->ops->sanity_check = rproc_elf_sanity_check;
++		rproc->ops->sanity_check = rproc_elf32_sanity_check;
+ 		rproc->ops->get_boot_addr = rproc_elf_get_boot_addr;
+ 	}
+ 
+diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+index c2a9783cfb9a..5a67745f2638 100644
+--- a/drivers/remoteproc/remoteproc_elf_loader.c
++++ b/drivers/remoteproc/remoteproc_elf_loader.c
+@@ -25,13 +25,13 @@
+ #include "remoteproc_internal.h"
+ 
+ /**
+- * rproc_elf_sanity_check() - Sanity Check ELF firmware image
++ * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
+  * @rproc: the remote processor handle
+  * @fw: the ELF firmware image
+  *
+  * Make sure this fw image is sane.
+  */
+-int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
++int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw)
+ {
+ 	const char *name = rproc->firmware;
+ 	struct device *dev = &rproc->dev;
+@@ -89,7 +89,7 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
+ 
+ 	return 0;
+ }
+-EXPORT_SYMBOL(rproc_elf_sanity_check);
++EXPORT_SYMBOL(rproc_elf32_sanity_check);
+ 
+ /**
+  * rproc_elf_get_boot_addr() - Get rproc's boot address.
+diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+index 0deae5f237b8..28639c588d58 100644
+--- a/drivers/remoteproc/remoteproc_internal.h
++++ b/drivers/remoteproc/remoteproc_internal.h
+@@ -54,7 +54,7 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
+ phys_addr_t rproc_va_to_pa(void *cpu_addr);
+ int rproc_trigger_recovery(struct rproc *rproc);
+ 
+-int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
++int rproc_elf32_sanity_check(struct rproc *rproc, const struct firmware *fw);
+ u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
+ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
+ int rproc_elf_load_rsc_table(struct rproc *rproc, const struct firmware *fw);
+diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
+index a3268d95a50e..a6cbfa452764 100644
+--- a/drivers/remoteproc/st_remoteproc.c
++++ b/drivers/remoteproc/st_remoteproc.c
+@@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops = {
+ 	.parse_fw		= st_rproc_parse_fw,
+ 	.load			= rproc_elf_load_segments,
+ 	.find_loaded_rsc_table	= rproc_elf_find_loaded_rsc_table,
+-	.sanity_check		= rproc_elf_sanity_check,
++	.sanity_check		= rproc_elf32_sanity_check,
+ 	.get_boot_addr		= rproc_elf_get_boot_addr,
+ };
+ 
+diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+index 09bcb4d8b9e0..3cca8b65a8db 100644
+--- a/drivers/remoteproc/st_slim_rproc.c
++++ b/drivers/remoteproc/st_slim_rproc.c
+@@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops = {
+ 	.da_to_va       = slim_rproc_da_to_va,
+ 	.get_boot_addr	= rproc_elf_get_boot_addr,
+ 	.load		= rproc_elf_load_segments,
+-	.sanity_check	= rproc_elf_sanity_check,
++	.sanity_check	= rproc_elf32_sanity_check,
+ };
+ 
+ /**
+diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+index a18f88044111..9a8b5f5e2572 100644
+--- a/drivers/remoteproc/stm32_rproc.c
++++ b/drivers/remoteproc/stm32_rproc.c
+@@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops = {
+ 	.load		= rproc_elf_load_segments,
+ 	.parse_fw	= stm32_rproc_parse_fw,
+ 	.find_loaded_rsc_table = rproc_elf_find_loaded_rsc_table,
+-	.sanity_check	= rproc_elf_sanity_check,
++	.sanity_check	= rproc_elf32_sanity_check,
+ 	.get_boot_addr	= rproc_elf_get_boot_addr,
+ };
+ 
 -- 
 2.15.0.276.g89ea799
 
