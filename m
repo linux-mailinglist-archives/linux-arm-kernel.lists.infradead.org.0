@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFAEF1766A1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 23:13:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFEFB176711
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 23:27:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZMiwBO1oI+Qry6DT4ZDbjjOsryvpcDaR9tH+oL0Mhkw=; b=G6TM7GRZ9u3y3D
-	E9Ymqgc8kyvs+frTgofqhRtthIrGAbq5ciZb6W0wIQFFoQVLhnpAfLuCohGENrpRNQ2+KEAIrPfEs
-	RvHxI1VYPFgukg9GygSUmulMpIU2MZycBvCPhIS3InpEM35orc7okVF2MOoTXkyxQgzdT2RNFz/4/
-	A5ICa8HNWw4M74iIL8okgPfZTdynscEVtFpqlUPGQym2MIqErONqWg/syMFICG6mP1B/xvqlpafun
-	/tHbEGvkhkQY4a5Wg9ntyXFcoNV2duCOOt6f2anZA0w1FrNcxghB5kC89FuYdImdTA83ey9tHchkE
-	hvHU1/JOgxhv1GuGL3Pw==;
+	List-Owner; bh=IMrCQIAgSK720atLmZisjz5b4UHPJtKvQYaNYPJ0Qmg=; b=JvoE+Fa7RCjIhc
+	NzpyDAbPCc9BTZlZH7KeFpbh3hXwCL4xmM1qZ86ere+PFxz0bZDj3pZw4jUPAxXhJ8juQAytbQLXy
+	cxEeWbiWIEjCgzayxQM5a8mZDNs+jVsI4dp2E25f35OvZ/8WAoiowxC3rfJscPiT66oOvYriubxu4
+	HXuTYHInDSdxF3ETVZ2lBUU2cqYybRGl6cDEJsMLa6sSegvdAxKtRKAfdrbcXUSk+zawL38OHR9WH
+	ze9jkQW1DgWlt8l4VBIrzckMBiO3wjtf8cAUFRgxj2zsFxfjIFwHHX5ATG1CNkHdqrSOcai1sUn/M
+	LeNSDxQ+wM5Ep1j8iyJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8tJi-0006kz-2M; Mon, 02 Mar 2020 22:13:38 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1j8tX9-0003Pk-EV; Mon, 02 Mar 2020 22:27:31 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8tJZ-0006ja-Db; Mon, 02 Mar 2020 22:13:30 +0000
-Received: by mail-ot1-f66.google.com with SMTP id j16so992272otl.1;
- Mon, 02 Mar 2020 14:13:28 -0800 (PST)
+ id 1j8tX2-0003P3-Ha
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 22:27:25 +0000
+Received: by mail-wr1-x444.google.com with SMTP id r7so1902756wro.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Mar 2020 14:27:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=pw5QqrfG2RgLwLYrDhVp80l9fnGnOfrvey/8drqHpHM=;
+ b=MrPcnxfbao07IGiixrPJTSeiauRZ8LZ1xF4DnuO3LKoMbZSliTkgsyK1ISWn3+ATg/
+ hqtxg9jIMaJJuUeKgr/cvqPHeEx91V9x8m5nswQCxmKrksE+uxavszHdfkZAIMDw9prJ
+ jeVXdjMlCSK/9uaPsaRICjfdND3cREQg7v/Es=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uGARtVGb5GQcRJdnLbZgGSdPsUcgBwNPE/vctX/sjkM=;
- b=iqfAFkvQzppBn7vVbybBMLycF98gemoLXqm5Jn4CzjAgx0mybGLOTRsfSRXw1r5c0p
- i9+zM8hzPxbAtTVyU+hBtl4jdk1TpZtCXdG39Rs6/IptHU0sJsYpjyWV0x1SBS1NCFH7
- 7Ly5hKZzfqS+kROb7toTkZ6Jgn34Cxh9NTpsc2upQTHCH9XLzdYqUiEwfUPrOit8EuXp
- AxxJgFA79maZNM9iienH2t+GnfgiXxsJKMo9Jrc/TArGYl2uLBV21tXXFSA1Rd1Vhmui
- SqvMwMI22fbCvfBOR5d9Hmhz70tfQAnXayn1N8J0sZTfDn5tR4WXi+XyFsL+VOAAA8RI
- 5lRg==
-X-Gm-Message-State: ANhLgQ0CVCRPlOYKNM9iUc0/DqKewFCDof8UEoBSSag6soXqdPPzzU6G
- JbUXabljH8Bq0k9bk2UxwQ==
-X-Google-Smtp-Source: ADFU+vsW/Ftc+zw0bkyoQI7ygt1in3IUwH41Y0ReqXzak1w+/RwutHp8ko7jGUtVL4RV0SiqGHVaZg==
-X-Received: by 2002:a9d:21b4:: with SMTP id s49mr998093otb.294.1583187208115; 
- Mon, 02 Mar 2020 14:13:28 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id p65sm6809911oif.47.2020.03.02.14.13.26
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=pw5QqrfG2RgLwLYrDhVp80l9fnGnOfrvey/8drqHpHM=;
+ b=MeIt6pMFIK5xqg+4SnFdK74NhnxMc9bgLDRstIJjItYfvruD/Wcxirha5UM0LTv78H
+ /rNKrq/ZI3o7p74Y7XKoesY1VfPAhstMvFFSpT4FlVnPYQBw0bENgLtxQmL2ht0Ah6QK
+ g8/UxsUbj7SA8sBvj4CKMwvq2l8uc3yQ6Y+iWJ3TUs2h0A6AmdGG7AWOaLTPjT+tf5h+
+ zmGEtJOBwwKZVw4vg9MST6R7R0hCKWFnBkJvkXW3f5yQuxsp4ZgxLGcPvZ31hXDrT3Ez
+ VxUiv9PIiTwhj4RT3VJuA8W4NG97PFHUQIiDfP8AlYw4CdnBe1OtQUxzNQ3IvpHjyPTI
+ qHSw==
+X-Gm-Message-State: ANhLgQ3ibcRN6+m489VfBnF3fAvji9TkWrtWzJIw05sfy59JsxFMQ7AO
+ yX7HxbVwkcNOy+Gz+hEMFm019w==
+X-Google-Smtp-Source: ADFU+vsTFOKD20gzbzZfkTT8QuXbSOhK0ILlysvVCCIQ/Jhu4BysiOPZ5axKJP8OA5+1qd/7gZ3zxw==
+X-Received: by 2002:adf:df8f:: with SMTP id z15mr1599343wrl.184.1583188042987; 
+ Mon, 02 Mar 2020 14:27:22 -0800 (PST)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id o18sm26114589wrv.60.2020.03.02.14.27.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 14:13:27 -0800 (PST)
-Received: (nullmailer pid 24401 invoked by uid 1000);
- Mon, 02 Mar 2020 22:13:26 -0000
-Date: Mon, 2 Mar 2020 16:13:26 -0600
-From: Rob Herring <robh@kernel.org>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Subject: Re: [PATCH v2 1/4] dt-binds: display: mediatek: add property to
- control mipi tx drive current
-Message-ID: <20200302221326.GA17941@bogus>
-References: <20200225114730.124939-1-jitao.shi@mediatek.com>
- <20200225114730.124939-2-jitao.shi@mediatek.com>
+ Mon, 02 Mar 2020 14:27:22 -0800 (PST)
+From: Daniel Vetter <daniel.vetter@ffwll.ch>
+To: DRI Development <dri-devel@lists.freedesktop.org>
+Subject: [PATCH 34/51] drm/meson: Drop explicit drm_mode_config_cleanup call
+Date: Mon,  2 Mar 2020 23:26:14 +0100
+Message-Id: <20200302222631.3861340-35-daniel.vetter@ffwll.ch>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200302222631.3861340-1-daniel.vetter@ffwll.ch>
+References: <20200302222631.3861340-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200225114730.124939-2-jitao.shi@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_141329_458656_8BE0A41E 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200302_142724_582218_D05DDC18 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,59 +93,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- bibby.hsieh@mediatek.com, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, huijuan.xie@mediatek.com, stonea168@163.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- cawa.cheng@mediatek.com, ck.hu@mediatek.com,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Thomas Zimmermann <tzimmermann@suse.de>, Kevin Hilman <khilman@baylibre.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-amlogic@lists.infradead.org,
+ Sam Ravnborg <sam@ravnborg.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 07:47:27PM +0800, Jitao Shi wrote:
-> Add a property to control mipi tx drive current:
-> "mipitx-current-drive"
+It's right above the drm_dev_put().
 
-'dt-bindings: display: ...' for the subject prefix.
+This is made possible by a preceeding patch which added a drmm_
+cleanup action to drm_mode_config_init(), hence all we need to do to
+ensure that drm_mode_config_cleanup() is run on final drm_device
+cleanup is check the new error code for _init().
 
-> 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> ---
->  .../devicetree/bindings/display/mediatek/mediatek,dsi.txt     | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-> index a19a6cc375ed..780201ddcd5c 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt
-> @@ -33,6 +33,9 @@ Required properties:
->  - #clock-cells: must be <0>;
->  - #phy-cells: must be <0>.
->  
-> +Optional properties:
-> +- mipitx-current-drive: adjust driving current, should be 1 ~ 0xF
+Aside: This driver gets its devm_ stuff all wrong wrt drm_device and
+anything hanging off that. Not the only one unfortunately.
 
-Perhaps should be a common property and use the existing 
-'drive-strength-microamp'.
+v2: Explain why this cleanup is possible (Laurent).
 
-> +
->  Example:
->  
->  mipi_tx0: mipi-dphy@10215000 {
-> @@ -42,6 +45,7 @@ mipi_tx0: mipi-dphy@10215000 {
->  	clock-output-names = "mipi_tx0_pll";
->  	#clock-cells = <0>;
->  	#phy-cells = <0>;
-> +	mipitx-current-drive = <0x8>;
->  };
->  
->  dsi0: dsi@1401b000 {
-> -- 
-> 2.21.0
+v3: Use drmm_mode_config_init() for more clarity (Sam, Thomas)
+
+Cc: Sam Ravnborg <sam@ravnborg.org>
+Cc: Thomas Zimmermann <tzimmermann@suse.de>
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com> (v2)
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Kevin Hilman <khilman@baylibre.com>
+Cc: linux-amlogic@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ drivers/gpu/drm/meson/meson_drv.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index b5f5eb7b4bb9..6f29fab79952 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -284,7 +284,9 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 	/* Remove early framebuffers (ie. simplefb) */
+ 	meson_remove_framebuffers();
+ 
+-	drm_mode_config_init(drm);
++	ret = drmm_mode_config_init(drm);
++	if (ret)
++		goto free_drm;
+ 	drm->mode_config.max_width = 3840;
+ 	drm->mode_config.max_height = 2160;
+ 	drm->mode_config.funcs = &meson_mode_config_funcs;
+@@ -379,7 +381,6 @@ static void meson_drv_unbind(struct device *dev)
+ 	drm_dev_unregister(drm);
+ 	drm_irq_uninstall(drm);
+ 	drm_kms_helper_poll_fini(drm);
+-	drm_mode_config_cleanup(drm);
+ 	drm_dev_put(drm);
+ }
+ 
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
