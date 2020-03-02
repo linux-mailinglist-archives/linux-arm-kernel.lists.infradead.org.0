@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD8F4175864
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:32:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A4D0175865
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:33:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=okyCPE5eal1NTfFjpiWVNQ6eybCHcwoMNjNvrVgW3WI=; b=jOkLcpbaJ9gt/q/RqKGf1thhRN
-	3SSleTEiI1cMpvUnulHV1tmkxOIrP0Pqkd6mJyYtcaKMpUD3GNWsLbVHtEiCMBvBLesn7DefPw/z/
-	y7RBcfXDu9wJPNgJCekEwxh/du0qFoZ133yGu3YtLHfTMQwgKLYicBflMVf0itOWRJfFHZh3v21Ps
-	eTNpgz/AEajfgdB6/bEfYas7WEy0IHlyXCojGFrAyB2VDsVRftLGCa9sU8I+yik2MEFxN/B49Z5SY
-	jDngRaJeXHvZuYumvhZj8Q6UEcjJBubONH5I6J4wTAGS1ih7zv2fbuzS2LPNGRB/sWA9OqwJHXoqH
-	bOFzWm1g==;
+	bh=8haISNfBPl8Pdi8fUMybSwGwbzPAJOK64Ptdc1S0oC8=; b=NlPg9f3aLxVGWUrs8QdqQ5pLie
+	NJ4ZGW4qxxlqonI0QKGY5M/Eut+tVCBkRL03O76TRqZiD8K9mWM3XP3U8jAX0hEdKAGhzDGzaTP6x
+	cJFs8+4wpUUb3v0pNrLj0MCM+xdV93gbeqC0ZTqRBmGREbnnHpPipsMQvoAVK89LsucF5tpvhHAZU
+	RxvBtuuQiNLYtyuR4HiDrRZonOkvYdjUtrEtfTKfwgRE6uPnbZk1FO3hxrHFztOXfGeJSBvhER7IK
+	YMbNjTMJOSeXqfF4U5OIg8qHecn/WXqe25QwBA7ALo/Gd19RpVQOQLnCtvk7K5AwPiZn2Q+LKHGW+
+	6f2bZHXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8iNJ-0002cG-N9; Mon, 02 Mar 2020 10:32:37 +0000
+	id 1j8iNa-0002jY-V0; Mon, 02 Mar 2020 10:32:54 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8iNB-0002ab-S1
+ id 1j8iNB-0002ad-U3
  for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:32:31 +0000
-Received: by mail-lf1-x142.google.com with SMTP id p5so1210450lfc.7
+Received: by mail-lf1-x142.google.com with SMTP id y17so7566729lfe.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 02:32:28 -0800 (PST)
+ Mon, 02 Mar 2020 02:32:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=QnYXcIKWVcVSniTvImIOUV2GKYnwwg6k3OeoObFRdpM=;
- b=Ri8EY8zjK8JQBlTwBx2lPNX4EJyj2l0TFRRuH965V0Dj13z0lqud6RgyZnmchIT3mL
- i4kB/cPt3Qs+Pzey02cSv5WkFTPpkId23mXl9MEIu1B9ODeukat2DB7Yu9lxNaddFEFi
- jVOuf5L3ZPXefhjqnIRG2EuOmKGw3QWf3vm21KVXQVnh9zbMTBiG9nti2Z4eVtfMW/pk
- s/mUUQY3Aku49cOy/dx8baIcHtONli0joOFAowL3ySG9fe+VcmXaUCRDdH0sFNf2ecBp
- flyGcYDnGwRG1mKJV0Nj6Wmzbk6VrIAnx0Ke2rBlhUGVg2QKtsQmsMQlKLAs0rV5UZMW
- b2Uw==
+ bh=lA6XSsmPXQf5mrnzBqE57rsPnQlVgQ6Ap8oWgg7cT00=;
+ b=MWfvCa6kEJXuqzXV+kdcxty1S6FBaGUOzTk1kthaaE069wtgI+P72vHB1qfIopivxZ
+ gJnjPIXZssIAjc8d9yWRRd02fYWQ471YRC5NI9XMVu2XgWF/BUmJaS/TbvzIVy8PXdMe
+ qx2VY3cvve2G/Te77pZjzix0EdrL9QeiNiv/lsHV/Ne8Bk63YQEv4IUd9alBuQd+oHyg
+ BnTZWPFsRWSRCgo7I3PRDhVaFxe6pY7JSxzQQrcuIah8djX6u4wIx8mhlHvq+0xaCYOx
+ WHoroY05ObJqdr+cXTp1nbklF7mBHcmNKw/W4CoEfVNIICla4LchTxlMy/FW/X2X0Ekr
+ jsYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=QnYXcIKWVcVSniTvImIOUV2GKYnwwg6k3OeoObFRdpM=;
- b=cgTvQVZSzsMe48A59DFOy65cmBoak/SOni6xsSndBvimrPoHLpHOmm7MEc11tv03sl
- s+4GrBOI/Pw8NVDH4MrOi1jh66QKeeLvsHzq/KkwTdlORHD4yynUg4iSDjQNIiQE1tJ4
- 4yWzDXUbQJG/9cuxvx2a7GX/Ul15Ua1ql09dhgX4Marpy1h2cvSRUp9JBJWaUovW2TQ7
- coFWoyjObeH36fIf7dVzmPRP8vxCv69AG8DQhsjuUE0RVAoPwB/RNAmWpsOS7mH5+scb
- 0BSeO4pYFVDIhxO5VIn1rca/zjNuEo/7nxsUaSIyQVGvf/dQf6PuGRQedQSOEmkqhTKL
- Pksw==
-X-Gm-Message-State: ANhLgQ2wJvQAWcwfFMsAk+PQVxryxD9qqJx9sELy1aRFABOV3SZ499mq
- is0RKe0r2aqPTpJ1/zRpv+rR2KpD
-X-Google-Smtp-Source: ADFU+vum+gRzgYNjn0fs2L8U2Ud019xJc9t09+jbn5reMOsLMhPUU7XhcnXXsDSa0U8EPiu3o1eJHA==
-X-Received: by 2002:a19:48cf:: with SMTP id v198mr10081652lfa.68.1583145147101; 
- Mon, 02 Mar 2020 02:32:27 -0800 (PST)
+ bh=lA6XSsmPXQf5mrnzBqE57rsPnQlVgQ6Ap8oWgg7cT00=;
+ b=k1zlcah7EOrLIQCbudiK1imY793JVXvjnjArk6jl+5a2axyDx+T0wIzcIIOf9jKAGH
+ CAeSzzwaJ5T3xefyr7JOIc2GgZJogww/znTMoira/PmBinH8cZgF0mNPFkhNb/3S574i
+ PRvy8HEH+jLSW1eg9G0L66akOyL2iTARMmTBMPIqtSYsLGCSIbw+VWvnG7bQmODenp2Z
+ H65u8aLbEtA/XfrEX3oVOeR6FgrnMivgQMHaPVuMmabrkDRtO/VvKD9pzS6x9xgQw9nb
+ W96v2UyUCW/Imt5LaU9/AWIAOgV4FTyvmNEik/OT+sXTL8ttaUn8kBLFxuHmrTR6yLKo
+ TBcA==
+X-Gm-Message-State: ANhLgQ1AHM+68jv/nNsLu4iyz2vG+IOUCacTeoqT64wXqrwloKRf60S3
+ l7MCnyXSj7OGIq5Y/bRTELA=
+X-Google-Smtp-Source: ADFU+vuNr0azHbfnA1i+aCmcAniY6aYZpgCbWZhAZTK4ySNU2/ubZ5sWytbt8JBkhYrTNwRVU8sN6A==
+X-Received: by 2002:a19:915c:: with SMTP id y28mr10417617lfj.127.1583145148364; 
+ Mon, 02 Mar 2020 02:32:28 -0800 (PST)
 Received: from localhost.localdomain ([149.255.131.2])
- by smtp.gmail.com with ESMTPSA id n21sm3895328lfh.2.2020.03.02.02.32.25
+ by smtp.gmail.com with ESMTPSA id n21sm3895328lfh.2.2020.03.02.02.32.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 02:32:26 -0800 (PST)
+ Mon, 02 Mar 2020 02:32:27 -0800 (PST)
 From: Roman Stratiienko <r.stratiienko@gmail.com>
 To: jernej.skrabec@siol.net,
 	mripard@kernel.org,
 	wens@csie.org
-Subject: .[PATCH v4 0/4] drm/sun4i: Improve alpha processing
-Date: Mon,  2 Mar 2020 12:31:34 +0200
-Message-Id: <20200302103138.17916-1-r.stratiienko@gmail.com>
+Subject: [PATCH v4 1/4] drm/sun4i: Add alpha property for sun8i UI layer
+Date: Mon,  2 Mar 2020 12:31:35 +0200
+Message-Id: <20200302103138.17916-2-r.stratiienko@gmail.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <.>
+In-Reply-To: <20200302103138.17916-1-r.stratiienko@gmail.com>
 References: <.>
+ <20200302103138.17916-1-r.stratiienko@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_023229_935746_A93980B8 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200302_023229_966604_84E95CE2 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,29 +100,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org
+Cc: airlied@linux.ie, Roman Stratiienko <r.stratiienko@gmail.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Patches 1-2 already reviewed and ready to be applied.
+DE2.0 and DE3.0 UI layers supports plane-global alpha channel.
+Add alpha property to the DRM plane and connect it to the
+corresponding registers in mixer.
 
-Patch 4 is RFC and require more testing on real hardware.
+Signed-off-by: Roman Stratiienko <r.stratiienko@gmail.com>
+Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
+---
+v2: Initial commit by mistake
+v3:
+- Picked `reviewed-by` line
+V4:
+- Changed author e-mail to avoid mail rejecting.
+---
+ drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 29 ++++++++++++++++++++++++++
+ drivers/gpu/drm/sun4i/sun8i_ui_layer.h |  5 +++++
+ 2 files changed, 34 insertions(+)
 
-[PATCH v4 1/4] drm/sun4i: Add alpha property for sun8i UI layer
-[PATCH v4 2/4] drm/sun4i: Add alpha property for sun8i and sun50i VI
-[PATCH v4 3/4] drm/sun4i: Add support for premulti/coverage blending
-[PATCH v4 4/4] RFC: drm/sun4i: Process alpha channel of most bottom layer
-
- drivers/gpu/drm/sun4i/sun8i_mixer.h    |  2 +
- drivers/gpu/drm/sun4i/sun8i_ui_layer.c | 50 ++++++++++++++++
- drivers/gpu/drm/sun4i/sun8i_ui_layer.h | 10 ++++
- drivers/gpu/drm/sun4i/sun8i_vi_layer.c | 72 +++++++++++++++++++++---
- drivers/gpu/drm/sun4i/sun8i_vi_layer.h | 16 ++++++
- 5 files changed, 142 insertions(+), 8 deletions(-)
+diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+index 19f42004cebe..5278032567a3 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
++++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.c
+@@ -72,6 +72,27 @@ static void sun8i_ui_layer_enable(struct sun8i_mixer *mixer, int channel,
+ 	}
+ }
+ 
++static void sun8i_ui_layer_update_alpha(struct sun8i_mixer *mixer, int channel,
++					int overlay, struct drm_plane *plane)
++{
++	u32 mask, val, ch_base;
++
++	ch_base = sun8i_channel_base(mixer, channel);
++
++	mask = SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MODE_MASK |
++		SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MASK;
++
++	val = SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA(plane->state->alpha >> 8);
++
++	val |= (plane->state->alpha == DRM_BLEND_ALPHA_OPAQUE) ?
++		SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MODE_PIXEL :
++		SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MODE_COMBINED;
++
++	regmap_update_bits(mixer->engine.regs,
++			   SUN8I_MIXER_CHAN_UI_LAYER_ATTR(ch_base, overlay),
++			   mask, val);
++}
++
+ static int sun8i_ui_layer_update_coord(struct sun8i_mixer *mixer, int channel,
+ 				       int overlay, struct drm_plane *plane,
+ 				       unsigned int zpos)
+@@ -258,6 +279,8 @@ static void sun8i_ui_layer_atomic_update(struct drm_plane *plane,
+ 
+ 	sun8i_ui_layer_update_coord(mixer, layer->channel,
+ 				    layer->overlay, plane, zpos);
++	sun8i_ui_layer_update_alpha(mixer, layer->channel,
++				    layer->overlay, plane);
+ 	sun8i_ui_layer_update_formats(mixer, layer->channel,
+ 				      layer->overlay, plane);
+ 	sun8i_ui_layer_update_buffer(mixer, layer->channel,
+@@ -332,6 +355,12 @@ struct sun8i_ui_layer *sun8i_ui_layer_init_one(struct drm_device *drm,
+ 
+ 	plane_cnt = mixer->cfg->ui_num + mixer->cfg->vi_num;
+ 
++	ret = drm_plane_create_alpha_property(&layer->plane);
++	if (ret) {
++		dev_err(drm->dev, "Couldn't add alpha property\n");
++		return ERR_PTR(ret);
++	}
++
+ 	ret = drm_plane_create_zpos_property(&layer->plane, channel,
+ 					     0, plane_cnt - 1);
+ 	if (ret) {
+diff --git a/drivers/gpu/drm/sun4i/sun8i_ui_layer.h b/drivers/gpu/drm/sun4i/sun8i_ui_layer.h
+index f4ab1cf6cded..e3e32ee1178d 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_ui_layer.h
++++ b/drivers/gpu/drm/sun4i/sun8i_ui_layer.h
+@@ -40,6 +40,11 @@
+ #define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_FBFMT_MASK	GENMASK(12, 8)
+ #define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_FBFMT_OFFSET	8
+ #define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MASK	GENMASK(31, 24)
++#define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA(x)		((x) << 24)
++
++#define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MODE_PIXEL		((0) << 1)
++#define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MODE_LAYER		((1) << 1)
++#define SUN8I_MIXER_CHAN_UI_LAYER_ATTR_ALPHA_MODE_COMBINED	((2) << 1)
+ 
+ struct sun8i_mixer;
+ 
+-- 
+2.17.1
 
 
 _______________________________________________
