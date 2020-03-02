@@ -2,54 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A194175925
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:03:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 441CE17592E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 12:07:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JOPUcz1Db6eJ4dxvidRkxmM06eeO3FPMcImH+rIgGA8=; b=AVXCXH2k2Tq0tf
-	UB7i4uk6IRYe3h/xBBAz6vxlWQdoVOmWLL14yQQ2wjd3XozJ57K6joUSZs7V2qxP0ri0lXisdvDPY
-	+vde6wlf3KuRk4P5NuVYzYNIMnecbZQee4d7phC/w0zl24dwS7Zv/l2qnKlSQPo4x4TFqGZLWNx5A
-	7X3ruf5Be/p5ak+etPv8kEln9zh7DGRp0GWWFhVtFYCMFUJ9UElAgh4nTT29BpMQ0aYntfDXBSp+C
-	UW2zogF1KNodRC1nXi7Eb+Bg7qVrd1AdqW5khhVGffh+RDDGSUJ/re2XOot6AP49/8azlb+I7tbG3
-	flkChpj/8DqITkvMgDUw==;
+	List-Owner; bh=JBHwFUOXkkQdJ1/f7K9yGvQwj73O+Ddnvzi3cNpFU5E=; b=DRnU7PlHKmYRQ/
+	6cbd5a5cc0s5sW2u8K9WJzZ7waaizdH6/0R+7nyvW3nkUMA1ZQAJQPooHzkXXkegzH+63SoaPMzJ/
+	B6BQiadiW+V6spRu3EwMzL+KcxeO+VA/Cs4HG7sWAMOp2y+TDRuwfqtVy4Fzmz4HBcWerAGnwmQ7s
+	eEwkdnNyRBO2CPdYL0dT8mouuOcXQSa6aRstQYVjyGaA3JpKbR+Z35+rEiXRhqJyUidTdPFYdgB2O
+	1pNUq5rHBDzbPY9PzpEjgEHhO7pATpDo15DphEJzxmL/BtZu3ylF7QvcaXai4lEs1hIZKnaUv76n+
+	dLVs43Lw2tSqdOpX68Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8irB-0000CA-6r; Mon, 02 Mar 2020 11:03:29 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1j8iv1-0002Im-5M; Mon, 02 Mar 2020 11:07:27 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8ipd-000798-8v; Mon, 02 Mar 2020 11:01:55 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 27F322949C5
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
- p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
- sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
- laurent.pinchart@ideasonboard.com
-Subject: [PATCH v11 5/5] soc / drm: mediatek: Fix mediatek-drm device probing
-Date: Mon,  2 Mar 2020 12:01:28 +0100
-Message-Id: <20200302110128.2664251-6-enric.balletbo@collabora.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200302110128.2664251-1-enric.balletbo@collabora.com>
-References: <20200302110128.2664251-1-enric.balletbo@collabora.com>
+ id 1j8iut-0002IH-SL; Mon, 02 Mar 2020 11:07:21 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 02 Mar 2020 03:07:19 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,506,1574150400"; d="scan'208";a="318972571"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga001.jf.intel.com with ESMTP; 02 Mar 2020 03:07:15 -0800
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1j8iuq-00675X-Ti; Mon, 02 Mar 2020 13:07:16 +0200
+Date: Mon, 2 Mar 2020 13:07:16 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V3, 2/2] media: i2c: Add DW9768 VCM driver
+Message-ID: <20200302110716.GR1224808@smile.fi.intel.com>
+References: <20200228155958.20657-1-dongchun.zhu@mediatek.com>
+ <20200228155958.20657-3-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200228155958.20657-3-dongchun.zhu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_030153_795918_7C42B40D 
-X-CRM114-Status: GOOD (  17.42  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200302_030719_930137_ACDDF548 
+X-CRM114-Status: GOOD (  15.76  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,154 +69,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>, dri-devel@lists.freedesktop.org,
- Richard Fontana <rfontana@redhat.com>,
- Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
- Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
- linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
- sean.wang@mediatek.com, Houlong Wei <houlong.wei@mediatek.com>,
- linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- matthias.bgg@kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
+ louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the actual implementation the same compatible string
-"mediatek,<chip>-mmsys" is used to bind the clock drivers
-(drivers/soc/mediatek) as well as to the gpu driver
-(drivers/gpu/drm/mediatek/mtk_drm_drv.c). This ends with the problem
-that the only probed driver is the clock driver and there is no display
-at all.
+On Fri, Feb 28, 2020 at 11:59:58PM +0800, Dongchun Zhu wrote:
+> This patch adds a V4L2 sub-device driver for DW9768 lens voice coil,
+> and provides control to set the desired focus via I2C serial interface.
 
-In any case having the same compatible string for two drivers is not
-correct and should be fixed. To fix this, and maintain backward
-compatibility, we can consider that the mmsys driver is the top-level
-entry point for the multimedia subsystem, so is not a pure clock
-controller but a system controller, and the drm driver is instantiated
-by that MMSYS driver.
+...
 
-Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
----
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -5139,6 +5139,7 @@ M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
+>  L:	linux-media@vger.kernel.org
+>  T:	git git://linuxtv.org/media_tree.git
+>  S:	Maintained
+> +F:	drivers/media/i2c/dw9768.c
+>  F:	Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
 
-Changes in v11: None
-Changes in v10:
-- Match driver data to get display routing.
+Had you run parse-maintainers.pl?
 
-Changes in v9:
-- Do not move the display routing from the drm driver (CK)
+I believe the order is wrong here.
 
-Changes in v8:
-- New patch introduced in this series.
+...
 
-Changes in v7: None
+> +#define DW9768_MAX_FOCUS_POS			1023
 
- drivers/gpu/drm/mediatek/mtk_drm_drv.c | 31 ++++++++++++++++----------
- drivers/soc/mediatek/mtk-mmsys.c       |  6 +++++
- 2 files changed, 25 insertions(+), 12 deletions(-)
+Is this value being dictated by amount of bits available in the hardware?
+If so, I would rather put it in a form (1024 - 1) or alike to show that it has
+10 bit resolution.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 208f9c5256ef..bb26e346750a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -422,9 +422,21 @@ static const struct of_device_id mtk_ddp_comp_dt_ids[] = {
- 	{ }
- };
- 
-+static const struct of_device_id mtk_drm_of_ids[] = {
-+	{ .compatible = "mediatek,mt2701-mmsys",
-+	  .data = &mt2701_mmsys_driver_data},
-+	{ .compatible = "mediatek,mt2712-mmsys",
-+	  .data = &mt2712_mmsys_driver_data},
-+	{ .compatible = "mediatek,mt8173-mmsys",
-+	  .data = &mt8173_mmsys_driver_data},
-+	{ }
-+};
-+
- static int mtk_drm_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-+	struct device_node *phandle = dev->parent->of_node;
-+	const struct of_device_id *of_id;
- 	struct mtk_drm_private *private;
- 	struct device_node *node;
- 	struct component_match *match = NULL;
-@@ -442,8 +454,14 @@ static int mtk_drm_probe(struct platform_device *pdev)
- 		return -ENODEV;
- 	}
- 
-+	of_id = of_match_node(mtk_drm_of_ids, phandle);
-+	if (!of_id)
-+		return -ENODEV;
-+
-+	private->data = of_id->data;
-+
- 	/* Iterate over sibling DISP function blocks */
--	for_each_child_of_node(dev->of_node->parent, node) {
-+	for_each_child_of_node(phandle->parent, node) {
- 		const struct of_device_id *of_id;
- 		enum mtk_ddp_comp_type comp_type;
- 		int comp_id;
-@@ -575,22 +593,11 @@ static int mtk_drm_sys_resume(struct device *dev)
- static SIMPLE_DEV_PM_OPS(mtk_drm_pm_ops, mtk_drm_sys_suspend,
- 			 mtk_drm_sys_resume);
- 
--static const struct of_device_id mtk_drm_of_ids[] = {
--	{ .compatible = "mediatek,mt2701-mmsys",
--	  .data = &mt2701_mmsys_driver_data},
--	{ .compatible = "mediatek,mt2712-mmsys",
--	  .data = &mt2712_mmsys_driver_data},
--	{ .compatible = "mediatek,mt8173-mmsys",
--	  .data = &mt8173_mmsys_driver_data},
--	{ }
--};
--
- static struct platform_driver mtk_drm_platform_driver = {
- 	.probe	= mtk_drm_probe,
- 	.remove	= mtk_drm_remove,
- 	.driver	= {
- 		.name	= "mediatek-drm",
--		.of_match_table = mtk_drm_of_ids,
- 		.pm     = &mtk_drm_pm_ops,
- 	},
- };
-diff --git a/drivers/soc/mediatek/mtk-mmsys.c b/drivers/soc/mediatek/mtk-mmsys.c
-index bb99a05fb278..090dbab41160 100644
---- a/drivers/soc/mediatek/mtk-mmsys.c
-+++ b/drivers/soc/mediatek/mtk-mmsys.c
-@@ -379,6 +379,7 @@ static int mtk_mmsys_probe(struct platform_device *pdev)
- 	const struct mtk_mmsys_driver_data *data;
- 	struct clk_onecell_data *clk_data;
- 	struct device *dev = &pdev->dev;
-+	struct platform_device *drm;
- 	void __iomem *config_regs;
- 	struct resource *mem;
- 	int ret;
-@@ -409,6 +410,11 @@ static int mtk_mmsys_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
-+	drm = platform_device_register_data(&pdev->dev, "mediatek-drm",
-+					    PLATFORM_DEVID_NONE, NULL, 0);
-+	if (IS_ERR(drm))
-+		return PTR_ERR(drm);
-+
- 	return 0;
- }
- 
+...
+
+> +static int dw9768_set_dac(struct dw9768 *dw9768, u16 val)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> +
+> +	/* Write VCM position to registers */
+> +	return i2c_smbus_write_word_data(client, DW9768_MSB_ADDR,
+> +					 swab16(val));
+
+i2c_smbus_write_word_swapped() ?
+
+> +}
+
+...
+
+> +static int dw9768_release(struct dw9768 *dw9768)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> +	int ret, val;
+> +
+
+> +	for (val = round_down(dw9768->focus->val, DW9768_MOVE_STEPS);
+> +	     val >= 0; val -= DW9768_MOVE_STEPS) {
+
+Perhaps
+
+	val = round_down(dw9768->focus->val, DW9768_MOVE_STEPS);
+	for ( ; val >= 0; val -= DW9768_MOVE_STEPS) {
+
+> +		ret = dw9768_set_dac(dw9768, val);
+> +		if (ret) {
+
+> +			dev_err(&client->dev, "%s I2C failure: %d",
+> +				__func__, ret);
+
+Do you need __func__? What for?
+
+> +			return ret;
+> +		}
+
+> +		usleep_range(DW9768_MOVE_DELAY_US,
+> +			     DW9768_MOVE_DELAY_US + 1000);
+
+It's exactly one line. Perhaps you have to check your editor settings.
+And check entire code for a such.
+
+> +	}
+> +
+> +	/*
+> +	 * Wait for the motor to stabilize after the last movement
+> +	 * to prevent the motor from shaking.
+> +	 */
+> +	usleep_range(DW9768_STABLE_TIME_US - DW9768_MOVE_DELAY_US,
+> +		     DW9768_STABLE_TIME_US - DW9768_MOVE_DELAY_US + 1000);
+> +
+> +	ret = i2c_smbus_write_byte_data(client, DW9768_RING_PD_CONTROL_REG,
+> +					DW9768_PD_MODE_EN);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	/*
+> +	 * DW9769 requires waiting delay time of t_OPR
+> +	 * after PD reset takes place.
+> +	 */
+> +	usleep_range(DW9768_T_OPR_US, DW9768_T_OPR_US + 100);
+> +
+> +	return 0;
+> +}
+
 -- 
-2.25.1
+With Best Regards,
+Andy Shevchenko
+
 
 
 _______________________________________________
