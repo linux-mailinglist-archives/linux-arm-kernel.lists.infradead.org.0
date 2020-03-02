@@ -2,83 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A58817577F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 10:41:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7F28175799
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 10:47:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BC8tPULPTq7Hw8ZkolnPLdxhgqzRdrWJiRT2nW5ddsk=; b=TnC7EsRsyvYflTbZPDI3Zlq+mh
-	EsiyoQvUR8KbCttsj6GSjIi7HTazX8RMvxruJ0HEBQNmayWfCNMmC+1kOwPJ+IwwAYkxF9Jz8P0dW
-	TBS+ReQb1S95Zj1bttkf1TYE/24ByZRTOiRWaLiwxgmJWf47r9WGs5IcTcWVAXnHJMDUfjeL/nxwN
-	j8oyJ19EI0Fapr/u7W04B+hUE+h45Hsr5/OzFR8e47rvQY11/2eGp48fPiLiUzsB1WQXDV+qurY9o
-	N7hqM1uVQqGAvDQRaQqFLPJtzw+mZZArTs3vAefzhDXcrqXDf35Djoa7cgfQZI1woKZtSatpqVCDB
-	2A8eb/jw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=p0rmLvyD6xXmWjS2L4XtBMErioOB1TAFbY8uHNyISmc=; b=cb/XY355pRwFG/nzuQvNbQa3I
+	y+Ryc0+13mQhwMam51fcNVktHkrxJY8Un4yzx3HQ8LiI7p3J/c6pnKqRp3FmvUsCYU5WifTg640hj
+	SUry8bvrgxRTXJj/tYjXVBGzsnNnfTE6rOI0LO7aTm40c/qDmvzVjDW5JYPsW1ln582teJ5nX/zwR
+	rpWGMPoNDEbAEfV6vjsSMeYpjApQGYpH9eYUlRQugFFdKz0mXD2KNZNyZSjg78ycEA7kGnRFiJuQv
+	fGM0Aq/0m8KHvPYK51HjEspTkSIAtntMc7bLL5E3pDiQEDJoQzUvqsJ25aKQvu3gcE9xS03H5rHOq
+	LBsLj6uyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8hZz-0005t0-3g; Mon, 02 Mar 2020 09:41:39 +0000
-Received: from zimbra2.kalray.eu ([92.103.151.219])
+	id 1j8hfl-0007uS-Cf; Mon, 02 Mar 2020 09:47:37 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8hXi-0002fE-G8
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 09:39:21 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 106AD27E0309;
- Mon,  2 Mar 2020 10:39:17 +0100 (CET)
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id nc5a8eIJ_HwZ; Mon,  2 Mar 2020 10:39:16 +0100 (CET)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 9049927E0840;
- Mon,  2 Mar 2020 10:39:16 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu 9049927E0840
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
- s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1583141956;
- bh=48mi7x4bCN7yqgjHbqTaXzKazUYBXLtlOhmsUXsci1c=;
- h=From:To:Date:Message-Id;
- b=JT6yPurMOcEqLQ2UjVWACF5oLP7slJJR/hNEOkAx1IsM4PtQ8HMr/m8Qqr1s4XAAF
- Kv8/pMOQIrE6dxpr5W3uvqHJ3YBXDJ0oMY/vwS7pFo5jeB3nhA5EX9iOwHzDp0kP6f
- IBxWUB0+n3hn/AZ6juisKNgusof6TMVfEgTFOY1k=
-X-Virus-Scanned: amavisd-new at zimbra2.kalray.eu
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id hU2U5C94PFv2; Mon,  2 Mar 2020 10:39:16 +0100 (CET)
-Received: from triton.lin.mbt.kalray.eu (unknown [192.168.37.25])
- by zimbra2.kalray.eu (Postfix) with ESMTPSA id 6DC7C27E0309;
- Mon,  2 Mar 2020 10:39:16 +0100 (CET)
-From: Clement Leger <cleger@kalray.eu>
-To: Ohad Ben-Cohen <ohad@wizery.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jonathan Corbet <corbet@lwn.net>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-remoteproc@vger.kernel.org
-Subject: [PATCH v5 8/8] remoteproc: Adapt coredump to generate correct elf type
-Date: Mon,  2 Mar 2020 10:39:02 +0100
-Message-Id: <20200302093902.27849-9-cleger@kalray.eu>
-X-Mailer: git-send-email 2.15.0.276.g89ea799
-In-Reply-To: <20200302093902.27849-1-cleger@kalray.eu>
-References: <20200210162209.23149-1-cleger@kalray.eu>
- <20200302093902.27849-1-cleger@kalray.eu>
+ id 1j8hfe-0007u1-4a
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 09:47:31 +0000
+Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <o.rempel@pengutronix.de>)
+ id 1j8hfc-0000Ng-4Q; Mon, 02 Mar 2020 10:47:28 +0100
+Subject: Re: [PATCH V3 3/4] mailbox: imx: add SCU MU support
+To: peng.fan@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ jassisinghbrar@gmail.com, robh+dt@kernel.org
+References: <1582692043-683-1-git-send-email-peng.fan@nxp.com>
+ <1582692043-683-4-git-send-email-peng.fan@nxp.com>
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+Message-ID: <df1a4174-1632-717c-0d24-8812c1cdc1d2@pengutronix.de>
+Date: Mon, 2 Mar 2020 10:47:26 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+MIME-Version: 1.0
+In-Reply-To: <1582692043-683-4-git-send-email-peng.fan@nxp.com>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
+X-SA-Exim-Mail-From: o.rempel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_013918_893834_CA4FFDE7 
-X-CRM114-Status: GOOD (  14.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200302_014730_341585_30B1F99A 
+X-CRM114-Status: GOOD (  26.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [92.103.151.219 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,182 +67,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Loic PALLARDY <loic.pallardy@st.com>, linux-doc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Patrice Chotard <patrice.chotard@st.com>, linux-kernel@vger.kernel.org,
- Clement Leger <cleger@kalray.eu>, Andy Gross <agross@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, s-anna <s-anna@ti.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: aisheng.dong@nxp.com, Anson.Huang@nxp.com, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that remoteproc can load an elf64, coredump elf class should be
-the same as the loaded elf class. In order to do that, add a
-elf_class field to rproc with default values. If an elf is loaded
-successfully, this field will be updated with the loaded elf class.
-Then, the coredump core code has been modified to use the generic elf
-macro in order to create an elf file with correct class.
-
-Signed-off-by: Clement Leger <cleger@kalray.eu>
----
- drivers/remoteproc/remoteproc_core.c       | 67 ++++++++++++++++--------------
- drivers/remoteproc/remoteproc_elf_loader.c |  3 ++
- include/linux/remoteproc.h                 |  1 +
- 3 files changed, 39 insertions(+), 32 deletions(-)
-
-diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-index b932a64a2be2..f923355aa3f9 100644
---- a/drivers/remoteproc/remoteproc_core.c
-+++ b/drivers/remoteproc/remoteproc_core.c
-@@ -38,6 +38,7 @@
- #include <linux/platform_device.h>
- 
- #include "remoteproc_internal.h"
-+#include "remoteproc_elf_helpers.h"
- 
- #define HIGH_BITS_MASK 0xFFFFFFFF00000000ULL
- 
-@@ -1566,20 +1567,21 @@ EXPORT_SYMBOL(rproc_coredump_add_custom_segment);
- static void rproc_coredump(struct rproc *rproc)
- {
- 	struct rproc_dump_segment *segment;
--	struct elf32_phdr *phdr;
--	struct elf32_hdr *ehdr;
-+	void *phdr;
-+	void *ehdr;
- 	size_t data_size;
- 	size_t offset;
- 	void *data;
- 	void *ptr;
-+	u8 class = rproc->elf_class;
- 	int phnum = 0;
- 
- 	if (list_empty(&rproc->dump_segments))
- 		return;
- 
--	data_size = sizeof(*ehdr);
-+	data_size = elf_size_of_hdr(class);
- 	list_for_each_entry(segment, &rproc->dump_segments, node) {
--		data_size += sizeof(*phdr) + segment->size;
-+		data_size += elf_size_of_phdr(class) + segment->size;
- 
- 		phnum++;
- 	}
-@@ -1590,33 +1592,33 @@ static void rproc_coredump(struct rproc *rproc)
- 
- 	ehdr = data;
- 
--	memset(ehdr, 0, sizeof(*ehdr));
--	memcpy(ehdr->e_ident, ELFMAG, SELFMAG);
--	ehdr->e_ident[EI_CLASS] = ELFCLASS32;
--	ehdr->e_ident[EI_DATA] = ELFDATA2LSB;
--	ehdr->e_ident[EI_VERSION] = EV_CURRENT;
--	ehdr->e_ident[EI_OSABI] = ELFOSABI_NONE;
--	ehdr->e_type = ET_CORE;
--	ehdr->e_machine = EM_NONE;
--	ehdr->e_version = EV_CURRENT;
--	ehdr->e_entry = rproc->bootaddr;
--	ehdr->e_phoff = sizeof(*ehdr);
--	ehdr->e_ehsize = sizeof(*ehdr);
--	ehdr->e_phentsize = sizeof(*phdr);
--	ehdr->e_phnum = phnum;
--
--	phdr = data + ehdr->e_phoff;
--	offset = ehdr->e_phoff + sizeof(*phdr) * ehdr->e_phnum;
-+	memset(ehdr, 0, elf_size_of_hdr(class));
-+	/* e_ident field is common for both elf32 and elf64 */
-+	elf_hdr_init_ident(ehdr, class);
-+
-+	elf_hdr_set_e_type(class, ehdr, ET_CORE);
-+	elf_hdr_set_e_machine(class, ehdr, EM_NONE);
-+	elf_hdr_set_e_version(class, ehdr, EV_CURRENT);
-+	elf_hdr_set_e_entry(class, ehdr, rproc->bootaddr);
-+	elf_hdr_set_e_phoff(class, ehdr, elf_size_of_hdr(class));
-+	elf_hdr_set_e_ehsize(class, ehdr, elf_size_of_hdr(class));
-+	elf_hdr_set_e_phentsize(class, ehdr, elf_size_of_phdr(class));
-+	elf_hdr_set_e_phnum(class, ehdr, phnum);
-+
-+	phdr = data + elf_hdr_get_e_phoff(class, ehdr);
-+	offset = elf_hdr_get_e_phoff(class, ehdr);
-+	offset += elf_size_of_phdr(class) * elf_hdr_get_e_phnum(class, ehdr);
-+
- 	list_for_each_entry(segment, &rproc->dump_segments, node) {
--		memset(phdr, 0, sizeof(*phdr));
--		phdr->p_type = PT_LOAD;
--		phdr->p_offset = offset;
--		phdr->p_vaddr = segment->da;
--		phdr->p_paddr = segment->da;
--		phdr->p_filesz = segment->size;
--		phdr->p_memsz = segment->size;
--		phdr->p_flags = PF_R | PF_W | PF_X;
--		phdr->p_align = 0;
-+		memset(phdr, 0, elf_size_of_phdr(class));
-+		elf_phdr_set_p_type(class, phdr, PT_LOAD);
-+		elf_phdr_set_p_offset(class, phdr, offset);
-+		elf_phdr_set_p_vaddr(class, phdr, segment->da);
-+		elf_phdr_set_p_paddr(class, phdr, segment->da);
-+		elf_phdr_set_p_filesz(class, phdr, segment->size);
-+		elf_phdr_set_p_memsz(class, phdr, segment->size);
-+		elf_phdr_set_p_flags(class, phdr, PF_R | PF_W | PF_X);
-+		elf_phdr_set_p_align(class, phdr, 0);
- 
- 		if (segment->dump) {
- 			segment->dump(rproc, segment, data + offset);
-@@ -1632,8 +1634,8 @@ static void rproc_coredump(struct rproc *rproc)
- 			}
- 		}
- 
--		offset += phdr->p_filesz;
--		phdr++;
-+		offset += elf_phdr_get_p_filesz(class, phdr);
-+		phdr += elf_size_of_phdr(class);
- 	}
- 
- 	dev_coredumpv(&rproc->dev, data, data_size, GFP_KERNEL);
-@@ -2031,6 +2033,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
- 	rproc->name = name;
- 	rproc->priv = &rproc[1];
- 	rproc->auto_boot = true;
-+	rproc->elf_class = ELFCLASS32;
- 
- 	device_initialize(&rproc->dev);
- 	rproc->dev.parent = dev;
-diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
-index 4869fb7d8fe4..16e2c496fd45 100644
---- a/drivers/remoteproc/remoteproc_elf_loader.c
-+++ b/drivers/remoteproc/remoteproc_elf_loader.c
-@@ -248,6 +248,9 @@ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw)
- 			memset(ptr + filesz, 0, memsz - filesz);
- 	}
- 
-+	if (ret == 0)
-+		rproc->elf_class = class;
-+
- 	return ret;
- }
- EXPORT_SYMBOL(rproc_elf_load_segments);
-diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-index 1683d6c386a6..ed127b2d35ca 100644
---- a/include/linux/remoteproc.h
-+++ b/include/linux/remoteproc.h
-@@ -514,6 +514,7 @@ struct rproc {
- 	bool auto_boot;
- 	struct list_head dump_segments;
- 	int nb_vdev;
-+	u8 elf_class;
- };
- 
- /**
--- 
-2.15.0.276.g89ea799
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiAyNi4wMi4yMCAwNTo0MCwgcGVuZy5mYW5AbnhwLmNvbSB3cm90ZToKPiBGcm9tOiBQ
+ZW5nIEZhbiA8cGVuZy5mYW5AbnhwLmNvbT4KPiAKPiBpLk1YOC84WCBTQ1UgTVUgaXMgZGVkaWNh
+dGVkIGZvciBjb21tdW5pY2F0aW9uIGJldHdlZW4gU0NVIGFuZCBDb3J0ZXgtQQo+IGNvcmVzIGZy
+b20gaGFyZHdhcmUgZGVzaWduLCBhbmQgY291bGQgbm90IGJlIHJldXNlZCBmb3Igb3RoZXIgcHVy
+cG9zZS4KPiAKPiBQZXIgaS5NWDgvOFggUmVmZXJlbmNlIG1hbm51YWwsIENoYXB0ZXIgIjEyLjku
+Mi4zLjIgTWVzc2FnaW5nIEV4YW1wbGVzIiwKPiAgIFBhc3Npbmcgc2hvcnQgbWVzc2FnZXM6IFRy
+YW5zbWl0IHJlZ2lzdGVyKHMpIGNhbiBiZSB1c2VkIHRvIHBhc3MKPiAgIHNob3J0IG1lc3NhZ2Vz
+IGZyb20gb25lIHRvIGZvdXIgd29yZHMgaW4gbGVuZ3RoLiBGb3IgZXhhbXBsZSwgd2hlbgo+ICAg
+YSBmb3VyLXdvcmQgbWVzc2FnZSBpcyBkZXNpcmVkLCBvbmx5IG9uZSBvZiB0aGUgcmVnaXN0ZXJz
+IG5lZWRzIHRvCj4gICBoYXZlIGl0cyBjb3JyZXNwb25kaW5nIGludGVycnVwdCBlbmFibGUgYml0
+IHNldCBhdCB0aGUgcmVjZWl2ZXIgc2lkZTsKPiAgIHRoZSBtZXNzYWdl4oCZcyBmaXJzdCB0aHJl
+ZSB3b3JkcyBhcmUgd3JpdHRlbiB0byB0aGUgcmVnaXN0ZXJzIHdob3NlCj4gICBpbnRlcnJ1cHQg
+aXMgbWFza2VkLCBhbmQgdGhlIGZvdXJ0aCB3b3JkIGlzIHdyaXR0ZW4gdG8gdGhlIG90aGVyCj4g
+ICByZWdpc3RlciAod2hpY2ggdHJpZ2dlcnMgYW4gaW50ZXJydXB0IGF0IHRoZSByZWNlaXZlciBz
+aWRlKS4KPiAKPiBpLk1YOC84WCBTQ1UgZmlybXdhcmUgSVBDIGlzIGFuIGltcGxlbWVudGF0aW9u
+IG9mIHBhc3Npbmcgc2hvcnQKPiBtZXNzYWdlcy4gQnV0IGN1cnJlbnQgaW14LW1haWxib3ggZHJp
+dmVyIG9ubHkgc3VwcG9ydCBvbmUgd29yZAo+IG1lc3NhZ2UsIGkuTVg4LzhYIGxpbnV4IHNpZGUg
+ZmlybXdhcmUgaGFzIHRvIHJlcXVlc3QgZm91ciBUWAo+IGFuZCBmb3VyIFJYIHRvIHN1cHBvcnQg
+SVBDIHRvIFNDVSBmaXJtd2FyZS4gVGhpcyBpcyBsb3cgZWZmaWNlbnQKPiBhbmQgbW9yZSBpbnRl
+cnJ1cHRzIHRyaWdnZXJlZCBjb21wYXJlZCB3aXRoIG9uZSBUWCBhbmQKPiBvbmUgUlguCj4gCj4g
+VG8gbWFrZSBTQ1UgTVUgd29yaywKPiAgICAtIHBhcnNlIHRoZSBzaXplIG9mIG1zZy4KPiAgICAt
+IE9ubHkgZW5hYmxlIFRSMC9SUjAgaW50ZXJydXB0IGZvciB0cmFuc21pdC9yZWNlaXZlIG1lc3Nh
+Z2UuCj4gICAgLSBGb3IgVFgvUlgsIG9ubHkgc3VwcG9ydCBvbmUgVFggY2hhbm5lbCBhbmQgb25l
+IFJYIGNoYW5uZWwKPiAKPiBTaWduZWQtb2ZmLWJ5OiBQZW5nIEZhbiA8cGVuZy5mYW5AbnhwLmNv
+bT4KPiAtLS0KPiAKPiBWMzoKPiAgIEFkZGVkIHNjdSB0eXBlIHR4L3J4IGFuZCBTQ1UgTVUgdHlw
+ZQo+IAo+ICAgZHJpdmVycy9tYWlsYm94L2lteC1tYWlsYm94LmMgfCA2NSArKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKystCj4gICAxIGZpbGUgY2hhbmdlZCwgNjQgaW5z
+ZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21haWxi
+b3gvaW14LW1haWxib3guYyBiL2RyaXZlcnMvbWFpbGJveC9pbXgtbWFpbGJveC5jCj4gaW5kZXgg
+OTAxYTM0MzFmZGI1Li40MTY2NGE2NGM1ZmQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9tYWlsYm94
+L2lteC1tYWlsYm94LmMKPiArKysgYi9kcml2ZXJzL21haWxib3gvaW14LW1haWxib3guYwo+IEBA
+IC00LDYgKzQsNyBAQAo+ICAgICovCj4gICAKPiAgICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KPiAr
+I2luY2x1ZGUgPGxpbnV4L2Zpcm13YXJlL2lteC9pcGMuaD4KPiAgICNpbmNsdWRlIDxsaW51eC9p
+bnRlcnJ1cHQuaD4KPiAgICNpbmNsdWRlIDxsaW51eC9pby5oPgo+ICAgI2luY2x1ZGUgPGxpbnV4
+L2tlcm5lbC5oPgo+IEBAIC0zOCwxMSArMzksMTcgQEAgZW51bSBpbXhfbXVfY2hhbl90eXBlIHsK
+PiAgIAo+ICAgZW51bSBpbXhfbXVfdHlwZSB7Cj4gICAJSU1YX01VX1RZUEVfR0VORVJJQywKPiAr
+CUlNWF9NVV9UWVBFX1NDVSwKPiAgIH07Cj4gICAKPiAgIHN0cnVjdCBpbXhfbXVfcHJpdjsKPiAg
+IHN0cnVjdCBpbXhfbXVfY29uX3ByaXY7Cj4gICAKPiArc3RydWN0IGlteF9zY19ycGNfbXNnX21h
+eCB7Cj4gKwlzdHJ1Y3QgaW14X3NjX3JwY19tc2cgaGRyOwo+ICsJdTMyIGRhdGFbN107Cj4gK30g
+X19wYWNrZWQgX19hbGlnbmVkKDQpOzsKPiArCj4gICBzdHJ1Y3QgaW14X211X2RjZmcgewo+ICAg
+CWVudW0gaW14X211X3R5cGUgdHlwZTsKPiAgIAlpbnQgKCp0eCkoc3RydWN0IGlteF9tdV9wcml2
+ICpwcml2LCBzdHJ1Y3QgaW14X211X2Nvbl9wcml2ICpjcCwgdm9pZCAqZGF0YSk7Cj4gQEAgLTE0
+MSw2ICsxNDgsNDggQEAgc3RhdGljIGludCBpbXhfbXVfZ2VuZXJpY19yeChzdHJ1Y3QgaW14X211
+X3ByaXYgKnByaXYsCj4gICAJcmV0dXJuIDA7Cj4gICB9Cj4gICAKPiArc3RhdGljIGludCBpbXhf
+bXVfc2N1X3R4KHN0cnVjdCBpbXhfbXVfcHJpdiAqcHJpdiwKPiArCQkJIHN0cnVjdCBpbXhfbXVf
+Y29uX3ByaXYgKmNwLAo+ICsJCQkgdm9pZCAqZGF0YSkKPiArewo+ICsJc3RydWN0IGlteF9zY19y
+cGNfbXNnX21heCAqbXNnID0gZGF0YTsKPiArCXUzMiAqYXJnID0gZGF0YTsKPiArCWludCBpOwo+
+ICsKPiArCXN3aXRjaCAoY3AtPnR5cGUpIHsKPiArCWNhc2UgSU1YX01VX1RZUEVfVFg6CgpwbGVh
+c2UgYWRkIHNhbml0eSBjaGVjayBpZiBtc2ctPmhkci5zaXplIGNhbiBiZSBoYW5kbGVkIGJ5IHRo
+aXMgZHJpdmVyIHZlcnNpb24uCgo+ICsJCWZvciAoaSA9IDA7IGkgPCBtc2ctPmhkci5zaXplOyBp
+KyspIHsKPiArCQkJaW14X211X3dyaXRlKHByaXYsICphcmcrKywKPiArCQkJCSAgICAgcHJpdi0+
+ZGNmZy0+eFRSW2kgJSA0XSk7Cj4gKwkJfQo+ICsJCWlteF9tdV94Y3Jfcm13KHByaXYsIElNWF9N
+VV94Q1JfVElFbihjcC0+aWR4KSwgMCk7Cj4gKwkJYnJlYWs7Cj4gKwlkZWZhdWx0Ogo+ICsJCWRl
+dl93YXJuX3JhdGVsaW1pdGVkKHByaXYtPmRldiwgIlNlbmQgZGF0YSBvbiB3cm9uZyBjaGFubmVs
+IHR5cGU6ICVkXG4iLCBjcC0+dHlwZSk7Cj4gKwkJcmV0dXJuIC1FSU5WQUw7Cj4gKwl9Cj4gKwo+
+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgaW14X211X3NjdV9yeChzdHJ1Y3Qg
+aW14X211X3ByaXYgKnByaXYsCj4gKwkJCSBzdHJ1Y3QgaW14X211X2Nvbl9wcml2ICpjcCkKPiAr
+ewo+ICsJc3RydWN0IGlteF9zY19ycGNfbXNnX21heCBtc2c7Cj4gKwl1MzIgKmRhdGEgPSAodTMy
+ICopJm1zZzsKPiArCWludCBpOwo+ICsKPiArCWlteF9tdV94Y3Jfcm13KHByaXYsIDAsIElNWF9N
+VV94Q1JfUklFbigwKSk7Cj4gKwkqZGF0YSsrID0gaW14X211X3JlYWQocHJpdiwgcHJpdi0+ZGNm
+Zy0+eFJSWzBdKTsKCnBsZWFzZSBhZGQgc2FuaXR5IGNoZWNrLiB0aGUgbWVzc2FnZSBzaXplIHNo
+b3VsZCBub3QgYmUgaGlnaGVyIHRoZW4gc2l6ZW9mKG1zZykKCj4gKwlmb3IgKGkgPSAxOyBpIDwg
+bXNnLmhkci5zaXplOyBpKyspCj4gKwkJKmRhdGErKyA9IGlteF9tdV9yZWFkKHByaXYsIHByaXYt
+PmRjZmctPnhSUltpICUgNF0pOwo+ICsKPiArCWlteF9tdV94Y3Jfcm13KHByaXYsIElNWF9NVV94
+Q1JfUklFbigwKSwgMCk7CgpQbGVhc2UgZG8gbm90IGZvcmdldCB0byBoYW5kbGUgcHJvcGVybHkg
+bmV3IG1zZyBzaXplIGluIHlvdXIgcnhfY2FsbGJhY2suIEluIHByZXZpb3VzIAppbXBsZW1lbnRh
+dGlvbiB0aGUgbWVzc2FnZSBzaXplIHdhcyA0Ynl0ZS4KCj4gKwltYm94X2NoYW5fcmVjZWl2ZWRf
+ZGF0YShjcC0+Y2hhbiwgKHZvaWQgKikmbXNnKTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsK
+PiAgIHN0YXRpYyB2b2lkIGlteF9tdV90eGRiX3Rhc2tsZXQodW5zaWduZWQgbG9uZyBkYXRhKQo+
+ICAgewo+ICAgCXN0cnVjdCBpbXhfbXVfY29uX3ByaXYgKmNwID0gKHN0cnVjdCBpbXhfbXVfY29u
+X3ByaXYgKilkYXRhOwo+IEBAIC0yNzQsNiArMzIzLDcgQEAgc3RhdGljIHN0cnVjdCBtYm94X2No
+YW4gKiBpbXhfbXVfeGxhdGUoc3RydWN0IG1ib3hfY29udHJvbGxlciAqbWJveCwKPiAgIAkJCQkg
+ICAgICAgY29uc3Qgc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqc3ApCj4gICB7Cj4gICAJdTMyIHR5
+cGUsIGlkeCwgY2hhbjsKPiArCXN0cnVjdCBpbXhfbXVfcHJpdiAqcHJpdiA9IHRvX2lteF9tdV9w
+cml2KG1ib3gpOwo+ICAgCj4gICAJaWYgKHNwLT5hcmdzX2NvdW50ICE9IDIpIHsKPiAgIAkJZGV2
+X2VycihtYm94LT5kZXYsICJJbnZhbGlkIGFyZ3VtZW50IGNvdW50ICVkXG4iLCBzcC0+YXJnc19j
+b3VudCk7Cj4gQEAgLTI4NCw3ICszMzQsOSBAQCBzdGF0aWMgc3RydWN0IG1ib3hfY2hhbiAqIGlt
+eF9tdV94bGF0ZShzdHJ1Y3QgbWJveF9jb250cm9sbGVyICptYm94LAo+ICAgCWlkeCA9IHNwLT5h
+cmdzWzFdOyAvKiBpbmRleCAqLwo+ICAgCWNoYW4gPSB0eXBlICogNCArIGlkeDsKPiAgIAo+IC0J
+aWYgKGNoYW4gPj0gbWJveC0+bnVtX2NoYW5zKSB7Cj4gKwlpZiAoY2hhbiA+PSBtYm94LT5udW1f
+Y2hhbnMgfHwKPiArCSAgICAocHJpdi0+ZGNmZy0+dHlwZSA9PSBJTVhfTVVfVFlQRV9TQ1UgJiYK
+PiArCSAgICAgdHlwZSA8IElNWF9NVV9UWVBFX1RYREIgJiYgaWR4ID4gMCkpIHsKCldlIG5lZWQg
+dGhpcyBjaGVjayBzaW5jZSBtYm94LT5udW1fY2hhbnMgZG8gbm90IHJlZmxlY3RzIG5ldyByZWFs
+aXR5LiBOb3cgd2UgaGF2ZSBvbmx5IDIgCmNoYW5uZWxzLiBPbmUgUlggYW5kIG9uZSBUWC4gTm8g
+aWRlYSBpZiB3ZSBuZWVkIGRvb3JiZWxsIGNoYW5uZWxzIGZvciBTQ1UuIElmIGRvb3JiZWxscyAK
+YXJlIG5vdCBzdXBwb3J0ZWQsIGl0IGlzIGJldHRlciB0byBhZGQgYSBzZXBhcmF0ZSBpbXhfbXVf
+eGxhdGUgZm9yIFNDVQoKYW5kIGFkZCBTQ1Ugc3BlY2lmaWMgY2hhbm5lbCBpbml0IGluIHByb2Jl
+IGluIGFkZGl0aW9uIHRvOgogICAgICAgICBmb3IgKGkgPSAwOyBpIDwgSU1YX01VX0NIQU5TOyBp
+KyspIHsgCgogICAgICAgICAgICAgICAgIHN0cnVjdCBpbXhfbXVfY29uX3ByaXYgKmNwID0gJnBy
+aXYtPmNvbl9wcml2W2ldOyAKCiAKCiAgICAgICAgICAgICAgICAgY3AtPmlkeCA9IGkgJSA0OyAK
+CiAgICAgICAgICAgICAgICAgY3AtPnR5cGUgPSBpID4+IDI7IAoKICAgICAgICAgICAgICAgICBj
+cC0+Y2hhbiA9ICZwcml2LT5tYm94X2NoYW5zW2ldOyAKCiAgICAgICAgICAgICAgICAgcHJpdi0+
+bWJveF9jaGFuc1tpXS5jb25fcHJpdiA9IGNwOyAKCiAgICAgICAgICAgICAgICAgc25wcmludGYo
+Y3AtPmlycV9kZXNjLCBzaXplb2YoY3AtPmlycV9kZXNjKSwgCgogICAgICAgICAgICAgICAgICAg
+ICAgICAgICJpbXhfbXVfY2hhblslaS0laV0iLCBjcC0+dHlwZSwgY3AtPmlkeCk7IAoKICAgICAg
+ICAgfQoKVGhlcmUgaXMgbm8gbmVlZCB0byBpbml0IHVuc3VwcG9ydGVkIGNoYW5uZWxzLiBQbGVh
+c2UgcGFjayBpdCBpbiBzZXBhcmF0ZSBmdW5jdGlvbgoKPiAgIAkJZGV2X2VycihtYm94LT5kZXYs
+ICJOb3Qgc3VwcG9ydGVkIGNoYW5uZWwgbnVtYmVyOiAlZC4gKHR5cGU6ICVkLCBpZHg6ICVkKVxu
+IiwgY2hhbiwgdHlwZSwgaWR4KTsKPiAgIAkJcmV0dXJuIEVSUl9QVFIoLUVJTlZBTCk7Cj4gICAJ
+fQo+IEBAIC00MDEsOSArNDUzLDIwIEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgaW14X211X2RjZmcg
+aW14X211X2NmZ19pbXg3dWxwID0gewo+ICAgCS54Q1IJPSAweDY0LAo+ICAgfTsKPiAgIAo+ICtz
+dGF0aWMgY29uc3Qgc3RydWN0IGlteF9tdV9kY2ZnIGlteF9tdV9jZmdfaW14OF9zY3UgPSB7Cj4g
+KwkudHlwZQk9IElNWF9NVV9UWVBFX1NDVSwKPiArCS50eAk9IGlteF9tdV9zY3VfdHgsCj4gKwku
+cngJPSBpbXhfbXVfc2N1X3J4LAo+ICsJLnhUUgk9IHsweDAsIDB4NCwgMHg4LCAweGN9LAo+ICsJ
+LnhSUgk9IHsweDEwLCAweDE0LCAweDE4LCAweDFjfSwKPiArCS54U1IJPSAweDIwLAo+ICsJLnhD
+Ugk9IDB4MjQsCj4gK307Cj4gKwo+ICAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQg
+aW14X211X2R0X2lkc1tdID0gewo+ICAgCXsgLmNvbXBhdGlibGUgPSAiZnNsLGlteDd1bHAtbXUi
+LCAuZGF0YSA9ICZpbXhfbXVfY2ZnX2lteDd1bHAgfSwKPiAgIAl7IC5jb21wYXRpYmxlID0gImZz
+bCxpbXg2c3gtbXUiLCAuZGF0YSA9ICZpbXhfbXVfY2ZnX2lteDZzeCB9LAo+ICsJeyAuY29tcGF0
+aWJsZSA9ICJmc2wsaW14OC1tdS1zY3UiLCAuZGF0YSA9ICZpbXhfbXVfY2ZnX2lteDhfc2N1IH0s
+Cj4gICAJeyB9LAo+ICAgfTsKPiAgIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGlteF9tdV9kdF9p
+ZHMpOwo+IAoKS2luZCByZWdhcmRzLApPbGVrc2lqIFJlbXBlbAoKLS0gClBlbmd1dHJvbml4IGUu
+Sy4gICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICB8CkluZHVzdHJpYWwgTGludXggU29sdXRpb25zICAgICAgICAgICAgICAgICB8IGh0dHA6Ly93
+d3cucGVuZ3V0cm9uaXguZGUvICB8ClBlaW5lciBTdHIuIDYtOCwgMzExMzcgSGlsZGVzaGVpbSwg
+R2VybWFueSB8IFBob25lOiArNDktNTEyMS0yMDY5MTctMCAgICB8CkFtdHNnZXJpY2h0IEhpbGRl
+c2hlaW0sIEhSQSAyNjg2ICAgICAgICAgICB8IEZheDogICArNDktNTEyMS0yMDY5MTctNTU1NSB8
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
