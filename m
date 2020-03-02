@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 484081767CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 00:06:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45F8E1767D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 00:08:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OiPpSXhC9j/dlD9rhb9d5kEetUHuqcB+3gDbHvtygnc=; b=pzwzlkOahLlt9E
-	vaIl87Zyi04OGPpe3dRZBb9uKJfrjncG5iiFuP+WusKlKjPndtG4DMIMO6x+hPRGJpydGXAOL7W8U
-	VITqEHfd5yfZQq7rbxw+nKMsNe1GMr3kjL8UAaYVkj42EW9nnAZjVwgPRmDpLqmMkuzlC8xkXptCd
-	+8TRA5zE0l2dYJm2Mra3MYyIQErUWaC28AHE5OUZcII2sF0BNEFPIw+p7C9IqwnsRzuimqIvkEjUF
-	xUfpoCnUUuyhQHkue/S5KAMV5m+q5PizXmRg7iRxXc96AYC87nTWQYqS+M/S0R2BDI/tUm877jVOy
-	pyphcjR0FII+nT0axccg==;
+	List-Owner; bh=/Z9bUkA1qvIr6fw3EmnCDrArBtp8eA8EOgIIZ29uAqk=; b=Exz4fkO7HiMd7v
+	806gs3zQ0KmEAbQCu3q642QtmO5v8nXDDPP2qgTdHYhUPnv6V2svr0nhCnO4RQgv8eL57xozgY119
+	D47OEzckyhSeuXWA3k24k9C94PyHAtSg3CEMq0NxVJeJKWrToEgOerCSQcfq2qYQUkeYcx3xrm8og
+	h5stdZF/9uoOtToovy3qAR8bTC4Z9VUH/7IdHMSTP1Nd2HE5lhivCvnGHJZ8hUrco+gFPUQkRopC3
+	T+S4Q0d59EMistBBix+R3AOerY6+XScZK37xRkMAxcqDdFjHI4LIoIpbtyFXlb3RWH2FVOeXG6hmn
+	bfOnR9Mhu6/FHwZiCq9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8u8y-0008No-Ui; Mon, 02 Mar 2020 23:06:36 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1j8uAR-0000Fm-EG; Mon, 02 Mar 2020 23:08:07 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8u8s-0008Mh-Cr
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 23:06:32 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id l8so458373pjy.1
+ id 1j8uAH-0000FH-KT
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 23:07:59 +0000
+Received: by mail-pg1-x543.google.com with SMTP id m5so569184pgg.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 15:06:28 -0800 (PST)
+ Mon, 02 Mar 2020 15:07:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=XO6JGw83U5CkKd8cGXLECqKNNR8rYCcvmbE8i6nEu+U=;
- b=pQd3TTVcuglvG6TY1SI80ABdKtkem3lObcwmKjby4QigaEuhh64S37ql/uiNoD/2Tr
- gDMiWeoclcLBjMVgTlZqi3UgUJF1eXfEeBmdKYb2kEDUUYf1qWVdecbmcZsT8rmgje7f
- z0zBnC4u87pEhTTJA4iH55XwaX/Ks7YRIZb+4opDaSyhISk47lQX3758Kcq0EPhdG1qj
- txg3S1d38qdt4qj5aZUIcq5MmPFzPUwK/hOrdx6ShNlWkuZwXpJ1g7aBtlU69biBUTB5
- sMyBlcVHvsZbH388D4vg8U82gIKcknZjRt5V5+627+pmF2QM8KpjgA/E5zi/b8ZKo83N
- AJhA==
+ bh=Rf9QZb3mjgzUT+Cz+8sSLrcBamktZJl01xW2Zxlkdn8=;
+ b=Fmu6em312fYYtaLMdYJAxUWlb+DWa7rSsEQp+4c0MnRJDbDpWdeKUX95VYJE93U7sR
+ YhzipcRMHwVttwBHTDT1UeiT3OSKF2InoC9nKs2oeiluumwsLbc1Z2APmWo3PwTYN6RA
+ J1o+7447aOHquwGhK8VoWVpgKb7goT47ICVZLnBn+u9Yarolb333kCEj3bP7NcwUv0u7
+ 1AllSl9Mss1gcarqqXax8p7IKwU+9rVKaTFHjXCplxtCfsvuTm0gxOByVY6CvUxSLkB9
+ v3mXfXHgHpyn1R7CWLCWaurJ9Ltf8b3b7npx2lLSQifjEt6Xpc6TMf85cDsvk4aE+EOr
+ FbEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=XO6JGw83U5CkKd8cGXLECqKNNR8rYCcvmbE8i6nEu+U=;
- b=VjYc4TCvDZYGXpluWM4RsQxvUBundUHlOJ9ssMtoaw0vTrXd9y/fwjF2Fq8XCKQT9y
- VVtF0ceaieaffH1lEvY7zbvAa2jAMv/sG912LKr5lqozTYquRWSTxlAVhJDVbwN1vOHd
- rHE16pUu3BW/V2Unrkx3sP21TX9OitlrVD3alVTQKs8fbxKVVqhQ2WceAUffP9rQmUHk
- rnh6dxT/ge6ty6U8jS+kq5pK6qZjMK499eRZEciKYIAXSuaMJLF9Nj9wIGCs3Dc7XmsM
- p4mPQy9I04ujNcDTC+vA9M5GWxmFZQorqzNsNnFA6cKUc3xiOvexqRym+zc6gAoyP5wl
- V2jw==
-X-Gm-Message-State: ANhLgQ0zz9J08a1K7WpUgBQbM2j6wMOSh+WZjva6EyH1ReLh+I1K6T8u
- Vo1smMaOoiP3oP/sMo6RW94eyA==
-X-Google-Smtp-Source: ADFU+vvTMeEEOpoL/4D2rdOc5U9tJ59Ij4qQQegmRoXugU1NEMYq/AxoVSr4pm/xhYoynzB3g/UDIQ==
-X-Received: by 2002:a17:902:ab81:: with SMTP id f1mr1395152plr.5.1583190387359; 
- Mon, 02 Mar 2020 15:06:27 -0800 (PST)
+ bh=Rf9QZb3mjgzUT+Cz+8sSLrcBamktZJl01xW2Zxlkdn8=;
+ b=nXLKNIqKPoan1aY6Y/p1/OCe55067FoO5nY/Cvmgz2xdrJoTJYCccLeeEajOXOlqOT
+ swHWghIu9ro8ivwRv9GwUzacOj26dLSC7XeLtl3b9C/JVR/8ztLZ/nQNi46BbySyoZH7
+ Lt1udAGendL6zbXXCyLbUKaRzWHd2Wik7eo0hkMSdVthoVsXpEDEkLTi3f21oRXoGp8x
+ tSR4oqa4GfMndAf3Q0uJvY0PvM71+mEnwz2NqXvn1qEI9EkzmV6P4OHzxKISQNox3007
+ f7OyklE738YHch3fMV9AhcgH6O46uQdFoyoS6YY6b6IBF72Zo0h/spZsD/XOXckrBlhz
+ tPfw==
+X-Gm-Message-State: ANhLgQ2EV9s7zadul3vE/C5MQVcgefIzqGOj7Q+CrKTfkb720mNmxssD
+ Y0Hzgm/pW/NRqx5YL/oNNPl0dQ==
+X-Google-Smtp-Source: ADFU+vutfcXaEUIULCiDyJq8DCHYBm8+8AApIk8RULq/D7ttfXLeW5DlU5hiIs2fKWalrHIPcoFKRw==
+X-Received: by 2002:a63:8e44:: with SMTP id k65mr1128200pge.452.1583190476895; 
+ Mon, 02 Mar 2020 15:07:56 -0800 (PST)
 Received: from yoga (pat_11.qualcomm.com. [192.35.156.11])
- by smtp.gmail.com with ESMTPSA id c15sm21095020pgk.66.2020.03.02.15.06.25
+ by smtp.gmail.com with ESMTPSA id p94sm251583pjp.15.2020.03.02.15.07.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 15:06:26 -0800 (PST)
-Date: Mon, 2 Mar 2020 15:06:24 -0800
+ Mon, 02 Mar 2020 15:07:56 -0800 (PST)
+Date: Mon, 2 Mar 2020 15:07:53 -0800
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Clement Leger <cleger@kalray.eu>
-Subject: Re: [PATCH v5 1/8] remoteproc: Use size_t type for len in da_to_va
-Message-ID: <20200302230624.GA262924@yoga>
+Subject: Re: [PATCH v5 2/8] remoteproc: Use size_t instead of int for
+ rproc_mem_entry len
+Message-ID: <20200302230753.GB262924@yoga>
 References: <20200210162209.23149-1-cleger@kalray.eu>
  <20200302093902.27849-1-cleger@kalray.eu>
- <20200302093902.27849-2-cleger@kalray.eu>
+ <20200302093902.27849-3-cleger@kalray.eu>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200302093902.27849-2-cleger@kalray.eu>
+In-Reply-To: <20200302093902.27849-3-cleger@kalray.eu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_150630_473654_CD49BD0B 
-X-CRM114-Status: GOOD (  20.06  )
+X-CRM114-CacheID: sfid-20200302_150757_741280_41F192C6 
+X-CRM114-Status: GOOD (  18.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,246 +117,119 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon 02 Mar 01:38 PST 2020, Clement Leger wrote:
 
-> With upcoming changes in elf loader for elf64 support, section size will
-> be a u64. When used with da_to_va, this will potentially lead to
-> overflow if using the current "int" type for len argument. Change
-> da_to_va prototype to use a size_t for len and fix all users of this
-> function.
+> Now that rproc_da_to_va uses a size_t for length, use a size_t for len field
+> of rproc_mem_entry. Function used to create such structures now takes
+> a size_t instead of int to allow full size range to be handled.
 > 
 > Signed-off-by: Clement Leger <cleger@kalray.eu>
 
 Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
 > ---
->  drivers/remoteproc/imx_rproc.c           | 11 ++++++-----
->  drivers/remoteproc/keystone_remoteproc.c |  4 ++--
->  drivers/remoteproc/qcom_q6v5_adsp.c      |  2 +-
->  drivers/remoteproc/qcom_q6v5_mss.c       |  2 +-
->  drivers/remoteproc/qcom_q6v5_pas.c       |  2 +-
->  drivers/remoteproc/qcom_q6v5_wcss.c      |  2 +-
->  drivers/remoteproc/qcom_wcnss.c          |  2 +-
->  drivers/remoteproc/remoteproc_core.c     |  2 +-
->  drivers/remoteproc/remoteproc_internal.h |  2 +-
->  drivers/remoteproc/st_slim_rproc.c       |  4 ++--
->  drivers/remoteproc/wkup_m3_rproc.c       |  4 ++--
->  include/linux/remoteproc.h               |  2 +-
->  12 files changed, 20 insertions(+), 19 deletions(-)
+>  drivers/remoteproc/remoteproc_core.c    | 14 ++++++++------
+>  drivers/remoteproc/remoteproc_debugfs.c |  2 +-
+>  include/linux/remoteproc.h              |  6 +++---
+>  3 files changed, 12 insertions(+), 10 deletions(-)
 > 
-> diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
-> index 3e72b6f38d4b..8957ed271d20 100644
-> --- a/drivers/remoteproc/imx_rproc.c
-> +++ b/drivers/remoteproc/imx_rproc.c
-> @@ -186,7 +186,7 @@ static int imx_rproc_stop(struct rproc *rproc)
->  }
->  
->  static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
-> -			       int len, u64 *sys)
-> +			       size_t len, u64 *sys)
->  {
->  	const struct imx_rproc_dcfg *dcfg = priv->dcfg;
->  	int i;
-> @@ -203,19 +203,19 @@ static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
->  		}
->  	}
->  
-> -	dev_warn(priv->dev, "Translation failed: da = 0x%llx len = 0x%x\n",
-> +	dev_warn(priv->dev, "Translation failed: da = 0x%llx len = 0x%zx\n",
->  		 da, len);
->  	return -ENOENT;
->  }
->  
-> -static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct imx_rproc *priv = rproc->priv;
->  	void *va = NULL;
->  	u64 sys;
->  	int i;
->  
-> -	if (len <= 0)
-> +	if (len == 0)
->  		return NULL;
->  
->  	/*
-> @@ -235,7 +235,8 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
->  		}
->  	}
->  
-> -	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%p\n", da, len, va);
-> +	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%zx va = 0x%p\n",
-> +		da, len, va);
->  
->  	return va;
->  }
-> diff --git a/drivers/remoteproc/keystone_remoteproc.c b/drivers/remoteproc/keystone_remoteproc.c
-> index 5c4658f00b3d..cd266163a65f 100644
-> --- a/drivers/remoteproc/keystone_remoteproc.c
-> +++ b/drivers/remoteproc/keystone_remoteproc.c
-> @@ -246,7 +246,7 @@ static void keystone_rproc_kick(struct rproc *rproc, int vqid)
->   * can be used either by the remoteproc core for loading (when using kernel
->   * remoteproc loader), or by any rpmsg bus drivers.
->   */
-> -static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct keystone_rproc *ksproc = rproc->priv;
->  	void __iomem *va = NULL;
-> @@ -255,7 +255,7 @@ static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
->  	size_t size;
->  	int i;
->  
-> -	if (len <= 0)
-> +	if (len == 0)
->  		return NULL;
->  
->  	for (i = 0; i < ksproc->num_mems; i++) {
-> diff --git a/drivers/remoteproc/qcom_q6v5_adsp.c b/drivers/remoteproc/qcom_q6v5_adsp.c
-> index e953886b2eb7..2b01f2282062 100644
-> --- a/drivers/remoteproc/qcom_q6v5_adsp.c
-> +++ b/drivers/remoteproc/qcom_q6v5_adsp.c
-> @@ -270,7 +270,7 @@ static int adsp_stop(struct rproc *rproc)
->  	return ret;
->  }
->  
-> -static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *adsp_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
-> index 471128a2e723..3401a17f8ce6 100644
-> --- a/drivers/remoteproc/qcom_q6v5_mss.c
-> +++ b/drivers/remoteproc/qcom_q6v5_mss.c
-> @@ -1148,7 +1148,7 @@ static int q6v5_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *q6v5_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *q6v5_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct q6v5 *qproc = rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
-> index db4b3c4bacd7..4e89d04673a4 100644
-> --- a/drivers/remoteproc/qcom_q6v5_pas.c
-> +++ b/drivers/remoteproc/qcom_q6v5_pas.c
-> @@ -159,7 +159,7 @@ static int adsp_stop(struct rproc *rproc)
->  	return ret;
->  }
->  
-> -static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *adsp_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_q6v5_wcss.c b/drivers/remoteproc/qcom_q6v5_wcss.c
-> index f93e1e4a1cc0..f1924b740a10 100644
-> --- a/drivers/remoteproc/qcom_q6v5_wcss.c
-> +++ b/drivers/remoteproc/qcom_q6v5_wcss.c
-> @@ -406,7 +406,7 @@ static int q6v5_wcss_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct q6v5_wcss *wcss = rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
-> index dc135754bb9c..0c7afd038f0d 100644
-> --- a/drivers/remoteproc/qcom_wcnss.c
-> +++ b/drivers/remoteproc/qcom_wcnss.c
-> @@ -287,7 +287,7 @@ static int wcnss_stop(struct rproc *rproc)
->  	return ret;
->  }
->  
-> -static void *wcnss_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *wcnss_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct qcom_wcnss *wcnss = (struct qcom_wcnss *)rproc->priv;
->  	int offset;
 > diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 307df98347ba..5ab094fc1b55 100644
+> index 5ab094fc1b55..4bfaf4a3c4a3 100644
 > --- a/drivers/remoteproc/remoteproc_core.c
 > +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -185,7 +185,7 @@ EXPORT_SYMBOL(rproc_va_to_pa);
->   * here the output of the DMA API for the carveouts, which should be more
->   * correct.
->   */
-> -void *rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct rproc_mem_entry *carveout;
->  	void *ptr = NULL;
-> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-> index 493ef9262411..58580210575c 100644
-> --- a/drivers/remoteproc/remoteproc_internal.h
-> +++ b/drivers/remoteproc/remoteproc_internal.h
-> @@ -50,7 +50,7 @@ void rproc_exit_sysfs(void);
->  void rproc_free_vring(struct rproc_vring *rvring);
->  int rproc_alloc_vring(struct rproc_vdev *rvdev, int i);
+> @@ -318,8 +318,9 @@ int rproc_alloc_vring(struct rproc_vdev *rvdev, int i)
+>  	struct device *dev = &rproc->dev;
+>  	struct rproc_vring *rvring = &rvdev->vring[i];
+>  	struct fw_rsc_vdev *rsc;
+> -	int ret, size, notifyid;
+> +	int ret, notifyid;
+>  	struct rproc_mem_entry *mem;
+> +	size_t size;
 >  
-> -void *rproc_da_to_va(struct rproc *rproc, u64 da, int len);
-> +void *rproc_da_to_va(struct rproc *rproc, u64 da, size_t len);
->  phys_addr_t rproc_va_to_pa(void *cpu_addr);
->  int rproc_trigger_recovery(struct rproc *rproc);
->  
-> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
-> index 04492fead3c8..09bcb4d8b9e0 100644
-> --- a/drivers/remoteproc/st_slim_rproc.c
-> +++ b/drivers/remoteproc/st_slim_rproc.c
-> @@ -174,7 +174,7 @@ static int slim_rproc_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
->  {
->  	struct st_slim_rproc *slim_rproc = rproc->priv;
->  	void *va = NULL;
-> @@ -191,7 +191,7 @@ static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
->  		}
+>  	/* actual size of vring (in bytes) */
+>  	size = PAGE_ALIGN(vring_size(rvring->len, rvring->align));
+> @@ -746,11 +747,12 @@ static int rproc_alloc_carveout(struct rproc *rproc,
+>  	va = dma_alloc_coherent(dev->parent, mem->len, &dma, GFP_KERNEL);
+>  	if (!va) {
+>  		dev_err(dev->parent,
+> -			"failed to allocate dma memory: len 0x%x\n", mem->len);
+> +			"failed to allocate dma memory: len 0x%zx\n",
+> +			mem->len);
+>  		return -ENOMEM;
 >  	}
 >  
-> -	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%pK\n",
-> +	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%zx va = 0x%pK\n",
->  		da, len, va);
+> -	dev_dbg(dev, "carveout va %pK, dma %pad, len 0x%x\n",
+> +	dev_dbg(dev, "carveout va %pK, dma %pad, len 0x%zx\n",
+>  		va, &dma, mem->len);
 >  
->  	return va;
-> diff --git a/drivers/remoteproc/wkup_m3_rproc.c b/drivers/remoteproc/wkup_m3_rproc.c
-> index 3984e585c847..b9349d684258 100644
-> --- a/drivers/remoteproc/wkup_m3_rproc.c
-> +++ b/drivers/remoteproc/wkup_m3_rproc.c
-> @@ -80,14 +80,14 @@ static int wkup_m3_rproc_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
+>  	if (mem->da != FW_RSC_ADDR_ANY && !rproc->domain) {
+> @@ -957,7 +959,7 @@ EXPORT_SYMBOL(rproc_add_carveout);
+>   */
+>  struct rproc_mem_entry *
+>  rproc_mem_entry_init(struct device *dev,
+> -		     void *va, dma_addr_t dma, int len, u32 da,
+> +		     void *va, dma_addr_t dma, size_t len, u32 da,
+>  		     int (*alloc)(struct rproc *, struct rproc_mem_entry *),
+>  		     int (*release)(struct rproc *, struct rproc_mem_entry *),
+>  		     const char *name, ...)
+> @@ -999,7 +1001,7 @@ EXPORT_SYMBOL(rproc_mem_entry_init);
+>   * provided by client.
+>   */
+>  struct rproc_mem_entry *
+> -rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
+> +rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
+>  			     u32 da, const char *name, ...)
 >  {
->  	struct wkup_m3_rproc *wkupm3 = rproc->priv;
->  	void *va = NULL;
->  	int i;
->  	u32 offset;
+>  	struct rproc_mem_entry *mem;
+> @@ -1270,7 +1272,7 @@ static void rproc_resource_cleanup(struct rproc *rproc)
+>  		unmapped = iommu_unmap(rproc->domain, entry->da, entry->len);
+>  		if (unmapped != entry->len) {
+>  			/* nothing much to do besides complaining */
+> -			dev_err(dev, "failed to unmap %u/%zu\n", entry->len,
+> +			dev_err(dev, "failed to unmap %zx/%zu\n", entry->len,
+>  				unmapped);
+>  		}
 >  
-> -	if (len <= 0)
-> +	if (len == 0)
->  		return NULL;
+> diff --git a/drivers/remoteproc/remoteproc_debugfs.c b/drivers/remoteproc/remoteproc_debugfs.c
+> index dd93cf04e17f..82dc34b819df 100644
+> --- a/drivers/remoteproc/remoteproc_debugfs.c
+> +++ b/drivers/remoteproc/remoteproc_debugfs.c
+> @@ -293,7 +293,7 @@ static int rproc_carveouts_show(struct seq_file *seq, void *p)
+>  		seq_printf(seq, "\tVirtual address: %pK\n", carveout->va);
+>  		seq_printf(seq, "\tDMA address: %pad\n", &carveout->dma);
+>  		seq_printf(seq, "\tDevice address: 0x%x\n", carveout->da);
+> -		seq_printf(seq, "\tLength: 0x%x Bytes\n\n", carveout->len);
+> +		seq_printf(seq, "\tLength: 0x%zx Bytes\n\n", carveout->len);
+>  	}
 >  
->  	for (i = 0; i < WKUPM3_MEM_MAX; i++) {
+>  	return 0;
 > diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index 16ad66683ad0..89215798eaea 100644
+> index 89215798eaea..bee559330204 100644
 > --- a/include/linux/remoteproc.h
 > +++ b/include/linux/remoteproc.h
-> @@ -374,7 +374,7 @@ struct rproc_ops {
->  	int (*start)(struct rproc *rproc);
->  	int (*stop)(struct rproc *rproc);
->  	void (*kick)(struct rproc *rproc, int vqid);
-> -	void * (*da_to_va)(struct rproc *rproc, u64 da, int len);
-> +	void * (*da_to_va)(struct rproc *rproc, u64 da, size_t len);
->  	int (*parse_fw)(struct rproc *rproc, const struct firmware *fw);
->  	int (*handle_rsc)(struct rproc *rproc, u32 rsc_type, void *rsc,
->  			  int offset, int avail);
+> @@ -329,7 +329,7 @@ struct rproc;
+>  struct rproc_mem_entry {
+>  	void *va;
+>  	dma_addr_t dma;
+> -	int len;
+> +	size_t len;
+>  	u32 da;
+>  	void *priv;
+>  	char name[32];
+> @@ -599,13 +599,13 @@ void rproc_add_carveout(struct rproc *rproc, struct rproc_mem_entry *mem);
+>  
+>  struct rproc_mem_entry *
+>  rproc_mem_entry_init(struct device *dev,
+> -		     void *va, dma_addr_t dma, int len, u32 da,
+> +		     void *va, dma_addr_t dma, size_t len, u32 da,
+>  		     int (*alloc)(struct rproc *, struct rproc_mem_entry *),
+>  		     int (*release)(struct rproc *, struct rproc_mem_entry *),
+>  		     const char *name, ...);
+>  
+>  struct rproc_mem_entry *
+> -rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
+> +rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
+>  			     u32 da, const char *name, ...);
+>  
+>  int rproc_boot(struct rproc *rproc);
 > -- 
 > 2.15.0.276.g89ea799
 > 
