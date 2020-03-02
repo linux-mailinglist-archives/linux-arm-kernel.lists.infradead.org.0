@@ -2,48 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03F01175EC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:54:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FE92175ED7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 16:56:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u9rRUOxVkoC4HOTs9rI51cfUaM7OrIQsg3y2gsxgZ78=; b=mZTpWxuUWylLnG
-	8ItvuOwmLx/Tmi0geJLNqNHApHkNO5/VDJ5iuV4uIfQWwY43OaOi+MvSKHtyk6AHtiSej0BY8Lrpg
-	6lk5keICFppa0hYO+YyAxSA1tJILdvRDZanQ42HWp6kVpUuWKW/hh5ZAbXDNYCSqS/ZSWpF1Otpcj
-	kh0Ydnzl3Fadzxch+c/6HqgHOATzMZGvFXlM1XXZC9j796FBuyPoaz7iviFshzjDRt3HTERJzDT3e
-	JTckYe4uIlM9DRfBg+hzOacjDM+oaj4TB2zpdyZH9Ywye0s/0aagc8D/Hro5eKVvzA2BPSSmULN2A
-	H6FzU5i+E4T5VFF8KrXQ==;
+	List-Owner; bh=x/CSzBXqyHZHqpwh0jyEz0LXIoEdiDmRErWhsnKB5AQ=; b=axy4L/g5kdad+N
+	XTQFG4JDcPoC4wPJbLqhJqZzzSdPQf/9deMSgPZDnhIZUvAlfXnkoEQp+lz4/ImsME+uobvCT+Fba
+	PFSd6skBSSHpD++KWD67gOL+S6c1cxpvdLjlGBlHx5NT4aYgGkFoWvVwRh2HMiKF08Zanin/azQTG
+	JbcY7043du5+H+VVMeHgs1Za0V90+TEelhQ5++S24pTLm3fH7H665cIdPvMiboJf2jeRQUsaFHpv9
+	QJjcPxNqyH9sZEUAV3+4H0+6fEYpNYOciAxcIB86I5RDmMMrBhvKc+22Hv6EbLI3MePriHd41HF7Q
+	HKQUCoHh0miS4s6MUXkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8nOx-0001jy-R2; Mon, 02 Mar 2020 15:54:39 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1j8nQX-0003Pz-9Z; Mon, 02 Mar 2020 15:56:17 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8nOl-0001fN-Tl; Mon, 02 Mar 2020 15:54:29 +0000
-Received: from droid13.amlogic.com (45.146.122.89) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Mon, 2 Mar 2020
- 23:54:45 +0800
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-Subject: [PATCH v2] dt-bindings: power: Fix dt_binding_check error
-Date: Mon, 2 Mar 2020 23:54:08 +0800
-Message-ID: <1583164448-83438-1-git-send-email-jianxin.pan@amlogic.com>
-X-Mailer: git-send-email 2.7.4
+ id 1j8nQN-0003OK-8L; Mon, 02 Mar 2020 15:56:08 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 4AC3EACD6;
+ Mon,  2 Mar 2020 15:56:04 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/4] Raspberry Pi 4 VL805 firmware load support
+Date: Mon,  2 Mar 2020 16:55:24 +0100
+Message-Id: <20200302155528.19505-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Originating-IP: [45.146.122.89]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_075427_959774_53B47B26 
-X-CRM114-Status: UNSURE (   8.06  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_075607_443539_A052FE34 
+X-CRM114-Status: GOOD (  13.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,41 +59,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: f.fainelli@gmail.com, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, tim.gover@raspberrypi.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-pci@vger.kernel.org, Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Missing ';' in the end of secure-monitor example node.
+On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+loaded directly from an EEPROM or, if not present, by the SoC's
+VideCore. This series adds support for the later.
 
-Fixes: 165b5fb294e8 ("dt-bindings: power: add Amlogic secure power domains bindings")
-Reported-by: Rob Herring <robh+dt@kernel.org>
-Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+Note that there are a set of constraints we have to consider (some of
+them I missed on v1):
+ - We need to make sure the VideoCore firmware interface is up and
+   running before running the VL805 firmware load call.
+
+ - There is no way to discern RPi4's VL805 chip from other platforms',
+   so we need the firmware load to happen *before* running
+   quirk_usb_handoff_xhci(). Failure to do so results in an unwarranted
+   5 second wait while the fixup code polls xHC's unexisting state.
+
+As per Stefan Wahren's comments I tested the behaviour on outdated
+firmware. Boards dependent on this will not boot if firmware is not
+up-to-date. Older boards with outdated firmware will fail to execute the
+VideoCore firmware call, but xHCI will perform reliably. I added a
+warning printout in case of failure.
+
+I'm aware that Florian Fianelli noted on the previous revision that
+waiting on the VideoCore firmware interface during PCIe's probe is far
+from ideal. But this was before taking into account the second
+constraint mentioned above. Impact on non RPi4 boards is minimal.
+
 ---
- Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-index af32209..bc4e037 100644
---- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-+++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
-@@ -36,5 +36,5 @@ examples:
-             compatible = "amlogic,meson-a1-pwrc";
-             #power-domain-cells = <1>;
-         };
--    }
-+    };
- 
+Changes since v1:
+ - Addressed Floarians comments
+
+Nicolas Saenz Julienne (4):
+  soc: bcm2835: Sync xHCI reset firmware property with downstream
+  firmware: raspberrypi: Introduce vl805 init routine
+  PCI: brcmstb: Wait for Raspberry Pi's firmware when present
+  USB: pci-quirks: Add Raspberry Pi 4 quirk
+
+ drivers/firmware/Kconfig                   |  1 +
+ drivers/firmware/raspberrypi.c             | 38 ++++++++++++++++++++++
+ drivers/pci/controller/pcie-brcmstb.c      | 15 +++++++++
+ drivers/usb/host/pci-quirks.c              | 18 ++++++++++
+ include/soc/bcm2835/raspberrypi-firmware.h |  9 ++++-
+ 5 files changed, 80 insertions(+), 1 deletion(-)
+
 -- 
-2.7.4
+2.25.1
 
 
 _______________________________________________
