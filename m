@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94A02175B66
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 14:17:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A751175BDD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 14:39:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/HeJSfYOHS7S98cGrNDd2zSGiEbyU8ryeV2jqHp0eh0=; b=Pedn1G3yGMj54hdx3EHRR2FCq
-	P/wlEfDdIDbt3oXW3n2QyWWz27Keq2kqfO4do8NGGO6kJxmN2Lx+E8QUx95hDtsfeD7f26+PhnLLA
-	ZB/G6apdWmVd3oXH7t3d/qdvNOrakj6ZWltE3S7nhEZFL1Gbk3vLcj1UH29FL+PbDLVpP6YKL5GIs
-	1ye1f/J/Y6Kk3t7y6ioo6cGDlU3FIj75+rF0rjYAazejxVPiLnS9STPrBmOcSLIAtfJKJhb+v9NU/
-	jIWyJAKN4nYAZ3nKKHr9eO09uR3D1v/gDtny5NRcS35bWsZtNcphjPwBCBixSd6YRiJzew8r58pGR
-	QnSIV8smw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mv5kR+uggeSpE7NH5MsrUWMZVnzwAq8iPCx3uhR5IJ0=; b=QyXG0qLdNs2d4u
+	TZsm36FmJG3B74AvrHH8SLbv8gXuc9EHTaPGZNX9pJOomClM8nfftnayzLjVN7c5YlaVRzmt1t9xi
+	esXt7Ro2HpwEDXbtzL3eWMPOm1eW3Zcbkiqex48U/f1DL0gpy6mgWkbt2BSlyxdQdzWJGzpMe/YU8
+	64xoZIm+bFD/hyseDJUBRjA085omIRKtt/YRVyYW92c2HqgtJ5mHqo1o8zqdeork0CfcDL2SWrpEW
+	WEnCRV9gM82E8XUptbJ1y7aREMWbPZ4a3o5D7CvPcglnIHZoVqMG5JrQ9UcPJi/kY3TL4DiDSUEwu
+	hNKLqTI4r7nINrcxUiwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8kwL-0002WD-RG; Mon, 02 Mar 2020 13:16:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8kwF-0002Vi-Dl
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 13:16:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA9F62F;
- Mon,  2 Mar 2020 05:16:50 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E1EC3F534;
- Mon,  2 Mar 2020 05:16:50 -0800 (PST)
-Date: Mon, 2 Mar 2020 13:16:48 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v5 16/17] arm64: compile the kernel with ptrauth return
- address signing
-Message-ID: <20200302131648.GE4166@sirena.org.uk>
-References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
- <1581931668-11559-17-git-send-email-amit.kachhap@arm.com>
- <20200228182337.GK4019108@arrakis.emea.arm.com>
+	id 1j8lHl-0002Ay-PQ; Mon, 02 Mar 2020 13:39:05 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j8lHe-0002A0-Mz
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 13:39:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1583156336;
+ h=from:from:reply-to:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=WcFb67oME/Nc+9ZCd/PtTGStB5FdqgJ2/9cOxFkulHA=;
+ b=EKnzGmTcg58P9Bx1dS9Nmw67tf+DaZLmqwFYMPWa+awgUaPquVfLJLoVGiIN+dMdVUX/G1
+ osCSuHcpNjFUe/XARth20UfTn3ggDUkuASqV1GnfLzQifmtUdtKoK0P78RGCTgsFPe8ol7
+ AiDZh5TyMPl0jIpaljrDlfvR5dQet6s=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-354-F6dJcXFcOz2fv8P7oQrtFA-1; Mon, 02 Mar 2020 08:38:54 -0500
+X-MC-Unique: F6dJcXFcOz2fv8P7oQrtFA-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6878C8AB9E0;
+ Mon,  2 Mar 2020 13:38:53 +0000 (UTC)
+Received: from localhost.localdomain (vpn2-54-46.bne.redhat.com [10.64.54.46])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 208449CA3;
+ Mon,  2 Mar 2020 13:38:50 +0000 (UTC)
+Subject: Re: [PATCH] arm64/kernel: Simplify __cpu_up() by bailing out early
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20200302020340.119588-1-gshan@redhat.com>
+ <20200302122135.GB56497@lakrids.cambridge.arm.com>
+From: Gavin Shan <gshan@redhat.com>
+Message-ID: <ddbb5cb2-e8b6-ab1c-d283-fb0f402d2a4f@redhat.com>
+Date: Tue, 3 Mar 2020 00:38:48 +1100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <20200228182337.GK4019108@arrakis.emea.arm.com>
-X-Cookie: Whistler's mother is off her rocker.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200302122135.GB56497@lakrids.cambridge.arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_051651_508621_845B3FBD 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200302_053858_827218_97BA602D 
+X-CRM114-Status: GOOD (  27.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,77 +92,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6442202103567026463=="
+Reply-To: Gavin Shan <gshan@redhat.com>
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org, shan.gavin@gmail.com,
+ maz@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 3/2/20 11:21 PM, Mark Rutland wrote:
+> On Mon, Mar 02, 2020 at 01:03:40PM +1100, Gavin Shan wrote:
+>> The function __cpu_up() is invoked to bring up the target CPU through
+>> the backend, PSCI for example. The nested if statements won't be needed
+>> if we bail out early on the following two conditions where the status
+>> won't be checked. The code looks simplified in that case.
+>>
+>>     * Error returned from the backend (e.g. PSCI)
+>>     * The target CPU has been marked as onlined
+>>
+>> Signed-off-by: Gavin Shan <gshan@redhat.com>
+> 
+> FWIW, this looks like a nice cleanup to me:
+> 
+> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+> 
+> While this patch leaves secondary_data.{task,stack} stale on a
+> successful onlining, that was already the case for a timeout, and should
+> be fine (since the next attempt at onlining will configure those before
+> poking the CPU).
+> 
+> Thanks,
+> Mark.
+> 
 
---===============6442202103567026463==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="o0ZfoUVt4BxPQnbU"
-Content-Disposition: inline
+Thanks, Mark. Yeah, it should be fine as you said. There are something else,
+which might be not relevant. @secondary_data could be accessed by multiple CPUs
+in parallel. For example, the master CPU boots CPU#1 and timeouts to wait it
+to be online in 5 seconds. CPU#1 isn't necessarily stuck in somewhere. After
+that, CPU#2 is brought up and might be accessing @secondary_data. At this point,
+CPU#1 can come back to access it either. However, @secondary_data isn't valid
+for CPU#1 anymore.
 
+I was thinking of something to improve the situation, but not sure if it makes
+any sense to do so. There are several options: (1) Make @secondary_data per-cpu
+variable, which looks a nature way to go. (2) To shutdown the CPU on timeout.
+The shutdown request can be failed to be served in theory, but it seems still
+an improvement.
 
---o0ZfoUVt4BxPQnbU
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Thanks,
+Gavin
 
-On Fri, Feb 28, 2020 at 06:23:37PM +0000, Catalin Marinas wrote:
-> On Mon, Feb 17, 2020 at 02:57:47PM +0530, Amit Daniel Kachhap wrote:
+>> ---
+>>   arch/arm64/kernel/smp.c | 79 +++++++++++++++++++----------------------
+>>   1 file changed, 37 insertions(+), 42 deletions(-)
+>>
+>> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+>> index d4ed9a19d8fe..2a9d8f39dc58 100644
+>> --- a/arch/arm64/kernel/smp.c
+>> +++ b/arch/arm64/kernel/smp.c
+>> @@ -115,60 +115,55 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
+>>   	update_cpu_boot_status(CPU_MMU_OFF);
+>>   	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
+>>   
+>> -	/*
+>> -	 * Now bring the CPU into our world.
+>> -	 */
+>> +	/* Now bring the CPU into our world */
+>>   	ret = boot_secondary(cpu, idle);
+>> -	if (ret == 0) {
+>> -		/*
+>> -		 * CPU was successfully started, wait for it to come online or
+>> -		 * time out.
+>> -		 */
+>> -		wait_for_completion_timeout(&cpu_running,
+>> -					    msecs_to_jiffies(5000));
+>> -
+>> -		if (!cpu_online(cpu)) {
+>> -			pr_crit("CPU%u: failed to come online\n", cpu);
+>> -			ret = -EIO;
+>> -		}
+>> -	} else {
+>> +	if (ret) {
+>>   		pr_err("CPU%u: failed to boot: %d\n", cpu, ret);
+>>   		return ret;
+>>   	}
+>>   
+>> +	/*
+>> +	 * CPU was successfully started, wait for it to come online or
+>> +	 * time out.
+>> +	 */
+>> +	wait_for_completion_timeout(&cpu_running,
+>> +				    msecs_to_jiffies(5000));
+>> +	if (cpu_online(cpu))
+>> +		return 0;
+>> +
+>> +	pr_crit("CPU%u: failed to come online\n", cpu);
+>>   	secondary_data.task = NULL;
+>>   	secondary_data.stack = NULL;
+>>   	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
+>>   	status = READ_ONCE(secondary_data.status);
+>> -	if (ret && status) {
+>> -
+>> -		if (status == CPU_MMU_OFF)
+>> -			status = READ_ONCE(__early_cpu_boot_status);
+>> +	if (status == CPU_MMU_OFF)
+>> +		status = READ_ONCE(__early_cpu_boot_status);
+>>   
+>> -		switch (status & CPU_BOOT_STATUS_MASK) {
+>> -		default:
+>> -			pr_err("CPU%u: failed in unknown state : 0x%lx\n",
+>> -					cpu, status);
+>> -			cpus_stuck_in_kernel++;
+>> -			break;
+>> -		case CPU_KILL_ME:
+>> -			if (!op_cpu_kill(cpu)) {
+>> -				pr_crit("CPU%u: died during early boot\n", cpu);
+>> -				break;
+>> -			}
+>> -			pr_crit("CPU%u: may not have shut down cleanly\n", cpu);
+>> -			/* Fall through */
+>> -		case CPU_STUCK_IN_KERNEL:
+>> -			pr_crit("CPU%u: is stuck in kernel\n", cpu);
+>> -			if (status & CPU_STUCK_REASON_52_BIT_VA)
+>> -				pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
+>> -			if (status & CPU_STUCK_REASON_NO_GRAN)
+>> -				pr_crit("CPU%u: does not support %luK granule \n", cpu, PAGE_SIZE / SZ_1K);
+>> -			cpus_stuck_in_kernel++;
+>> +	switch (status & CPU_BOOT_STATUS_MASK) {
+>> +	default:
+>> +		pr_err("CPU%u: failed in unknown state : 0x%lx\n",
+>> +		       cpu, status);
+>> +		cpus_stuck_in_kernel++;
+>> +		break;
+>> +	case CPU_KILL_ME:
+>> +		if (!op_cpu_kill(cpu)) {
+>> +			pr_crit("CPU%u: died during early boot\n", cpu);
+>>   			break;
+>> -		case CPU_PANIC_KERNEL:
+>> -			panic("CPU%u detected unsupported configuration\n", cpu);
+>>   		}
+>> +		pr_crit("CPU%u: may not have shut down cleanly\n", cpu);
+>> +		/* Fall through */
+>> +	case CPU_STUCK_IN_KERNEL:
+>> +		pr_crit("CPU%u: is stuck in kernel\n", cpu);
+>> +		if (status & CPU_STUCK_REASON_52_BIT_VA)
+>> +			pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
+>> +		if (status & CPU_STUCK_REASON_NO_GRAN) {
+>> +			pr_crit("CPU%u: does not support %luK granule\n",
+>> +				cpu, PAGE_SIZE / SZ_1K);
+>> +		}
+>> +		cpus_stuck_in_kernel++;
+>> +		break;
+>> +	case CPU_PANIC_KERNEL:
+>> +		panic("CPU%u detected unsupported configuration\n", cpu);
+>>   	}
+>>   
+>>   	return ret;
+>> -- 
+>> 2.23.0
+>>
+> 
 
-> > +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
-> > +# this option is not used.
-> > +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
-> > +KBUILD_CFLAGS += $(branch-prot-flags-y)
-> > +endif
-
-> Does this work with the clang integrated assembler? AFAIK it ignores the
-> -Wa, though it may be fine with the instructions generated by the
-> compiler. (while we don't officially support it, we merged patches to
-> facilitate it).
-
-If the assembler integrated into the compiler doesn't cope with
-instructions emitted by the compiler that seems like something we should
-push to get fixed on the compiler side.
-
---o0ZfoUVt4BxPQnbU
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5dBz8ACgkQJNaLcl1U
-h9Dxdwf+LdJqTdUT87xU39KaQgDpRPcD0PsjqA/P+Xbw5Kx9axMbvWJrF7aOD8cX
-lDYc/KIJijBUbF5g71KBx4l0drmbh8kegKbzIYGNHyefhWI2CD3I4ZwHdNDmVL6t
-F6jWCRgV614HDZJ6OIpXkpz/LLHh68MpWeFd0xktGx0Ol+oxIK0v8A4C4tbzx9Bg
-yVRP/AahKHhG4cof0WRQ9DX98Eg3oippsHmfBxSsrfcnXKLyREAbFynx5OVX4NNm
-navAkjrfbBWzZ4AgpYc9XHCOBT1NDIMY2sTM2bnmQsvGMmp3SF668L3S+RFGFsOu
-/kPaG2QdrF6SWW0aF2lrd56MUWaeBw==
-=TdO+
------END PGP SIGNATURE-----
-
---o0ZfoUVt4BxPQnbU--
-
-
---===============6442202103567026463==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6442202103567026463==--
-
