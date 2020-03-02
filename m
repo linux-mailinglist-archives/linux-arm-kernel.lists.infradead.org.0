@@ -2,60 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7F28175799
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 10:47:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82D15175816
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 11:15:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p0rmLvyD6xXmWjS2L4XtBMErioOB1TAFbY8uHNyISmc=; b=cb/XY355pRwFG/nzuQvNbQa3I
-	y+Ryc0+13mQhwMam51fcNVktHkrxJY8Un4yzx3HQ8LiI7p3J/c6pnKqRp3FmvUsCYU5WifTg640hj
-	SUry8bvrgxRTXJj/tYjXVBGzsnNnfTE6rOI0LO7aTm40c/qDmvzVjDW5JYPsW1ln582teJ5nX/zwR
-	rpWGMPoNDEbAEfV6vjsSMeYpjApQGYpH9eYUlRQugFFdKz0mXD2KNZNyZSjg78ycEA7kGnRFiJuQv
-	fGM0Aq/0m8KHvPYK51HjEspTkSIAtntMc7bLL5E3pDiQEDJoQzUvqsJ25aKQvu3gcE9xS03H5rHOq
-	LBsLj6uyw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nCINwIz9VdlveihzFImrDQTe0bZfr+OYTUwDZ8iwqgc=; b=EUZpTbaIlZ6nkJ
+	HX5EzeGI3lSbBZK80kIHOWWoknC/J8zcsyIqt8uv7Yaafpa5hV9U1wtUzYX2FFD5Z0AA6Pmqjb9OY
+	eLZn1OBQzmU2vGsJ98AUd3pxCwdRvRPv/ny2evf2mHlYRycLH86F7q10hE0uumbOAF6xR9F7UDseX
+	uv5q+UKhTSuinyOzRQwumRGcpOttFDDtKtGANBHP5drIE1rnpefvoWzO4KiZBdFBVplK3D2N9QziG
+	dwX3rXWtxX0TAp9ozU4YJDktLe+c7cAMoFcbVcEcAtc72PmOu8TYKSo5W7xteOu6SihuoaiF+N92M
+	udcbebWhlXcKtesnZK+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8hfl-0007uS-Cf; Mon, 02 Mar 2020 09:47:37 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j8i67-0002em-W4; Mon, 02 Mar 2020 10:14:52 +0000
+Received: from mail-eopbgr40079.outbound.protection.outlook.com ([40.107.4.79]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8hfe-0007u1-4a
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 09:47:31 +0000
-Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <o.rempel@pengutronix.de>)
- id 1j8hfc-0000Ng-4Q; Mon, 02 Mar 2020 10:47:28 +0100
-Subject: Re: [PATCH V3 3/4] mailbox: imx: add SCU MU support
-To: peng.fan@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- jassisinghbrar@gmail.com, robh+dt@kernel.org
+ id 1j8i5x-0002dN-CZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 10:14:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IUspKe4E1mBl6EgJHVlxvFN2Q+HlQsNudNkygkqWDE5bh91uYSsFLmV40wfsz8aVacpDo1xYe6MH1P+X/jQDfAL4rexD1uSVq0IcGMQyIATAtIz9urCgumUVGINrTAViKu7GWsPn8/6wmAPV51/TwcrKMw3dJlodalIH0+qOA80rAprjsI0WPJFA73zwm/P3WpMvyfd3/P+ISITogP44W6bw5GeMjyl6UJ7knp2PRaS+Ifmz+h/XaKtfFSLojxXvn71LNFh6aD6ucmPee5ZYRD0yyuAf3XcCaRAAr2a2eugO4L6Ml40A7pHwviYOReUCdpiexAKgRgBJ1s7btNsHHQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LlhgFPe5sB4a5YBFOi50EM1LMRozKvVN3u/+SVra8FU=;
+ b=bQTQQlqDApcwoeBlYpLjmCSiFLVnrPQRGRobOOgI7XgoDOKXlmdPOB7sbHTjgzylEKFZ5IT2CmyBeS5VMy4nG7uto/vkva/fj6PTPA9PRMOJzE2YuwA49qY3DN4QDxMRtiaEYlYFMRaOYh4pg3pjSwfJwdQaC6jwk1wWLYCI0TXHZxDuFoYr63d6iMtAGtypgPbWvrASkaCtkES49YwKM+yNMzEAIXi3oJWIxvFUxP5mbLPbs50wsXdOWzphoXvFYfgW66DcXptwx6KAJ9aWw6Q0L/BMkDLNW8GbjISdhOwj8ejcDsEAu29QlaT4T0rP2rx80QL2rddsJMBvfHTzew==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LlhgFPe5sB4a5YBFOi50EM1LMRozKvVN3u/+SVra8FU=;
+ b=SRXOXMmlv0x/LDb9Gts9e+bo18HznmjuNWZdNJH6/8JfjjM7aOQnS2CLJ9CFa65EkJtNCcZsbeygh//JEbl/WRhCIW5CADqFb7Lp3eO2j9KUah8To07PgwDNtMAqLaCzqBZ5Ip+erehBoGXoUOdTAPTs5UKxDCp9suHJssjJnJQ=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5907.eurprd04.prod.outlook.com (20.178.202.32) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.18; Mon, 2 Mar 2020 09:58:52 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2772.019; Mon, 2 Mar 2020
+ 09:58:52 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Oleksij Rempel <o.rempel@pengutronix.de>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>
+Subject: RE: [PATCH V3 2/4] mailbox: imx: restructure code to make easy for
+ new MU
+Thread-Topic: [PATCH V3 2/4] mailbox: imx: restructure code to make easy for
+ new MU
+Thread-Index: AQHV7F/D1+t3dxfBAkOPMOPdKAM1H6g1DAcAgAAM5uA=
+Date: Mon, 2 Mar 2020 09:58:52 +0000
+Message-ID: <AM0PR04MB4481E7A469C74773C387B00488E70@AM0PR04MB4481.eurprd04.prod.outlook.com>
 References: <1582692043-683-1-git-send-email-peng.fan@nxp.com>
- <1582692043-683-4-git-send-email-peng.fan@nxp.com>
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-Message-ID: <df1a4174-1632-717c-0d24-8812c1cdc1d2@pengutronix.de>
-Date: Mon, 2 Mar 2020 10:47:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <1582692043-683-4-git-send-email-peng.fan@nxp.com>
+ <1582692043-683-3-git-send-email-peng.fan@nxp.com>
+ <67ebbf3d-d6aa-17fc-5110-eead63c8232d@pengutronix.de>
+In-Reply-To: <67ebbf3d-d6aa-17fc-5110-eead63c8232d@pengutronix.de>
+Accept-Language: en-US
 Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
-X-SA-Exim-Mail-From: o.rempel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 69750752-07d9-4703-c1a8-08d7be90503c
+x-ms-traffictypediagnostic: AM0PR04MB5907:|AM0PR04MB5907:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5907F7465B97E658991C709E88E70@AM0PR04MB5907.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 033054F29A
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(396003)(376002)(136003)(39860400002)(366004)(199004)(189003)(9686003)(316002)(478600001)(76116006)(45080400002)(4326008)(7696005)(55016002)(8936002)(53546011)(54906003)(33656002)(186003)(6506007)(110136005)(81156014)(8676002)(81166006)(26005)(52536014)(86362001)(2906002)(5660300002)(15650500001)(66946007)(66556008)(64756008)(966005)(66476007)(66446008)(44832011)(71200400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5907;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: AKprHsYJq6SGI8EZGrIjhiMxa9/ARHaSoFxVAkuoZFVAxdeibnMjH1dJ+Bd/mjxYOyu9QAUWK7+BxNfEzF0pA/wqXU4C79lrq7974lzz2nIFXgZF1g2s8PsFbHavugfI/RblDeCPZnG9fv2ttrWolmK9gCZUVh0gKO8/novNQeE7QR20NHQbFpV96s+TOe+HxFSt/NitFZKiSWnaDW9PYAuYKGLn7Yf0EuQrX+vbc2xReCZe0oA26vK+VNp7jwfS8Tto6xYovg4xgPvbjMZkdWSQHPWwMRLsW8Qlx+Tw109RSezqD5lXW3QiLcSf2f1VCHPaHAFyUPKwJZMqcBv+f/KKvxjWEQ/fZsF6iclV1CMfZghusauA3xUK97mRaRRkzs2lo6td8Y6FoMboq6g3X1s6oDJq5ONDDt39B0fznjUOAWRfadCYMVkr862COAw8yc5xRXvY23QIZuX3SoUEuweC7djCCeUySVAqr8KKunJ0TNqLKL3A7i5vUIYcnXZSirVoDQyTbaTDIT2hcxTbbQ==
+x-ms-exchange-antispam-messagedata: pS3VgG0QHCRm0ySM55bsLZv4S2r6Z5xxN54i+q1Ghp20x1D+sLdqUJBj6jCa4aUkipJB7mGCmNNvthKLH34dTRUNIAF7bgiWtDH4J/b6sZGnAvYj9aMomp/Q/KOV91HpHwqntZ6NRFr6hM5vam0uUg==
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 69750752-07d9-4703-c1a8-08d7be90503c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Mar 2020 09:58:52.6162 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 01D0Vlx8rcllXkxcp/dqYYcIqUk4zSN/NaAW7cvrFKqHSw4/p3f66hqehPWEinzaxI9tglqBZ+NjHdXFUX62hA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5907
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_014730_341585_30B1F99A 
-X-CRM114-Status: GOOD (  26.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_021441_575868_90A26576 
+X-CRM114-Status: GOOD (  19.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.79 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,132 +127,241 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, Anson.Huang@nxp.com, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAyNi4wMi4yMCAwNTo0MCwgcGVuZy5mYW5AbnhwLmNvbSB3cm90ZToKPiBGcm9tOiBQ
-ZW5nIEZhbiA8cGVuZy5mYW5AbnhwLmNvbT4KPiAKPiBpLk1YOC84WCBTQ1UgTVUgaXMgZGVkaWNh
-dGVkIGZvciBjb21tdW5pY2F0aW9uIGJldHdlZW4gU0NVIGFuZCBDb3J0ZXgtQQo+IGNvcmVzIGZy
-b20gaGFyZHdhcmUgZGVzaWduLCBhbmQgY291bGQgbm90IGJlIHJldXNlZCBmb3Igb3RoZXIgcHVy
-cG9zZS4KPiAKPiBQZXIgaS5NWDgvOFggUmVmZXJlbmNlIG1hbm51YWwsIENoYXB0ZXIgIjEyLjku
-Mi4zLjIgTWVzc2FnaW5nIEV4YW1wbGVzIiwKPiAgIFBhc3Npbmcgc2hvcnQgbWVzc2FnZXM6IFRy
-YW5zbWl0IHJlZ2lzdGVyKHMpIGNhbiBiZSB1c2VkIHRvIHBhc3MKPiAgIHNob3J0IG1lc3NhZ2Vz
-IGZyb20gb25lIHRvIGZvdXIgd29yZHMgaW4gbGVuZ3RoLiBGb3IgZXhhbXBsZSwgd2hlbgo+ICAg
-YSBmb3VyLXdvcmQgbWVzc2FnZSBpcyBkZXNpcmVkLCBvbmx5IG9uZSBvZiB0aGUgcmVnaXN0ZXJz
-IG5lZWRzIHRvCj4gICBoYXZlIGl0cyBjb3JyZXNwb25kaW5nIGludGVycnVwdCBlbmFibGUgYml0
-IHNldCBhdCB0aGUgcmVjZWl2ZXIgc2lkZTsKPiAgIHRoZSBtZXNzYWdl4oCZcyBmaXJzdCB0aHJl
-ZSB3b3JkcyBhcmUgd3JpdHRlbiB0byB0aGUgcmVnaXN0ZXJzIHdob3NlCj4gICBpbnRlcnJ1cHQg
-aXMgbWFza2VkLCBhbmQgdGhlIGZvdXJ0aCB3b3JkIGlzIHdyaXR0ZW4gdG8gdGhlIG90aGVyCj4g
-ICByZWdpc3RlciAod2hpY2ggdHJpZ2dlcnMgYW4gaW50ZXJydXB0IGF0IHRoZSByZWNlaXZlciBz
-aWRlKS4KPiAKPiBpLk1YOC84WCBTQ1UgZmlybXdhcmUgSVBDIGlzIGFuIGltcGxlbWVudGF0aW9u
-IG9mIHBhc3Npbmcgc2hvcnQKPiBtZXNzYWdlcy4gQnV0IGN1cnJlbnQgaW14LW1haWxib3ggZHJp
-dmVyIG9ubHkgc3VwcG9ydCBvbmUgd29yZAo+IG1lc3NhZ2UsIGkuTVg4LzhYIGxpbnV4IHNpZGUg
-ZmlybXdhcmUgaGFzIHRvIHJlcXVlc3QgZm91ciBUWAo+IGFuZCBmb3VyIFJYIHRvIHN1cHBvcnQg
-SVBDIHRvIFNDVSBmaXJtd2FyZS4gVGhpcyBpcyBsb3cgZWZmaWNlbnQKPiBhbmQgbW9yZSBpbnRl
-cnJ1cHRzIHRyaWdnZXJlZCBjb21wYXJlZCB3aXRoIG9uZSBUWCBhbmQKPiBvbmUgUlguCj4gCj4g
-VG8gbWFrZSBTQ1UgTVUgd29yaywKPiAgICAtIHBhcnNlIHRoZSBzaXplIG9mIG1zZy4KPiAgICAt
-IE9ubHkgZW5hYmxlIFRSMC9SUjAgaW50ZXJydXB0IGZvciB0cmFuc21pdC9yZWNlaXZlIG1lc3Nh
-Z2UuCj4gICAgLSBGb3IgVFgvUlgsIG9ubHkgc3VwcG9ydCBvbmUgVFggY2hhbm5lbCBhbmQgb25l
-IFJYIGNoYW5uZWwKPiAKPiBTaWduZWQtb2ZmLWJ5OiBQZW5nIEZhbiA8cGVuZy5mYW5AbnhwLmNv
-bT4KPiAtLS0KPiAKPiBWMzoKPiAgIEFkZGVkIHNjdSB0eXBlIHR4L3J4IGFuZCBTQ1UgTVUgdHlw
-ZQo+IAo+ICAgZHJpdmVycy9tYWlsYm94L2lteC1tYWlsYm94LmMgfCA2NSArKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKystCj4gICAxIGZpbGUgY2hhbmdlZCwgNjQgaW5z
-ZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21haWxi
-b3gvaW14LW1haWxib3guYyBiL2RyaXZlcnMvbWFpbGJveC9pbXgtbWFpbGJveC5jCj4gaW5kZXgg
-OTAxYTM0MzFmZGI1Li40MTY2NGE2NGM1ZmQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9tYWlsYm94
-L2lteC1tYWlsYm94LmMKPiArKysgYi9kcml2ZXJzL21haWxib3gvaW14LW1haWxib3guYwo+IEBA
-IC00LDYgKzQsNyBAQAo+ICAgICovCj4gICAKPiAgICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KPiAr
-I2luY2x1ZGUgPGxpbnV4L2Zpcm13YXJlL2lteC9pcGMuaD4KPiAgICNpbmNsdWRlIDxsaW51eC9p
-bnRlcnJ1cHQuaD4KPiAgICNpbmNsdWRlIDxsaW51eC9pby5oPgo+ICAgI2luY2x1ZGUgPGxpbnV4
-L2tlcm5lbC5oPgo+IEBAIC0zOCwxMSArMzksMTcgQEAgZW51bSBpbXhfbXVfY2hhbl90eXBlIHsK
-PiAgIAo+ICAgZW51bSBpbXhfbXVfdHlwZSB7Cj4gICAJSU1YX01VX1RZUEVfR0VORVJJQywKPiAr
-CUlNWF9NVV9UWVBFX1NDVSwKPiAgIH07Cj4gICAKPiAgIHN0cnVjdCBpbXhfbXVfcHJpdjsKPiAg
-IHN0cnVjdCBpbXhfbXVfY29uX3ByaXY7Cj4gICAKPiArc3RydWN0IGlteF9zY19ycGNfbXNnX21h
-eCB7Cj4gKwlzdHJ1Y3QgaW14X3NjX3JwY19tc2cgaGRyOwo+ICsJdTMyIGRhdGFbN107Cj4gK30g
-X19wYWNrZWQgX19hbGlnbmVkKDQpOzsKPiArCj4gICBzdHJ1Y3QgaW14X211X2RjZmcgewo+ICAg
-CWVudW0gaW14X211X3R5cGUgdHlwZTsKPiAgIAlpbnQgKCp0eCkoc3RydWN0IGlteF9tdV9wcml2
-ICpwcml2LCBzdHJ1Y3QgaW14X211X2Nvbl9wcml2ICpjcCwgdm9pZCAqZGF0YSk7Cj4gQEAgLTE0
-MSw2ICsxNDgsNDggQEAgc3RhdGljIGludCBpbXhfbXVfZ2VuZXJpY19yeChzdHJ1Y3QgaW14X211
-X3ByaXYgKnByaXYsCj4gICAJcmV0dXJuIDA7Cj4gICB9Cj4gICAKPiArc3RhdGljIGludCBpbXhf
-bXVfc2N1X3R4KHN0cnVjdCBpbXhfbXVfcHJpdiAqcHJpdiwKPiArCQkJIHN0cnVjdCBpbXhfbXVf
-Y29uX3ByaXYgKmNwLAo+ICsJCQkgdm9pZCAqZGF0YSkKPiArewo+ICsJc3RydWN0IGlteF9zY19y
-cGNfbXNnX21heCAqbXNnID0gZGF0YTsKPiArCXUzMiAqYXJnID0gZGF0YTsKPiArCWludCBpOwo+
-ICsKPiArCXN3aXRjaCAoY3AtPnR5cGUpIHsKPiArCWNhc2UgSU1YX01VX1RZUEVfVFg6CgpwbGVh
-c2UgYWRkIHNhbml0eSBjaGVjayBpZiBtc2ctPmhkci5zaXplIGNhbiBiZSBoYW5kbGVkIGJ5IHRo
-aXMgZHJpdmVyIHZlcnNpb24uCgo+ICsJCWZvciAoaSA9IDA7IGkgPCBtc2ctPmhkci5zaXplOyBp
-KyspIHsKPiArCQkJaW14X211X3dyaXRlKHByaXYsICphcmcrKywKPiArCQkJCSAgICAgcHJpdi0+
-ZGNmZy0+eFRSW2kgJSA0XSk7Cj4gKwkJfQo+ICsJCWlteF9tdV94Y3Jfcm13KHByaXYsIElNWF9N
-VV94Q1JfVElFbihjcC0+aWR4KSwgMCk7Cj4gKwkJYnJlYWs7Cj4gKwlkZWZhdWx0Ogo+ICsJCWRl
-dl93YXJuX3JhdGVsaW1pdGVkKHByaXYtPmRldiwgIlNlbmQgZGF0YSBvbiB3cm9uZyBjaGFubmVs
-IHR5cGU6ICVkXG4iLCBjcC0+dHlwZSk7Cj4gKwkJcmV0dXJuIC1FSU5WQUw7Cj4gKwl9Cj4gKwo+
-ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgaW14X211X3NjdV9yeChzdHJ1Y3Qg
-aW14X211X3ByaXYgKnByaXYsCj4gKwkJCSBzdHJ1Y3QgaW14X211X2Nvbl9wcml2ICpjcCkKPiAr
-ewo+ICsJc3RydWN0IGlteF9zY19ycGNfbXNnX21heCBtc2c7Cj4gKwl1MzIgKmRhdGEgPSAodTMy
-ICopJm1zZzsKPiArCWludCBpOwo+ICsKPiArCWlteF9tdV94Y3Jfcm13KHByaXYsIDAsIElNWF9N
-VV94Q1JfUklFbigwKSk7Cj4gKwkqZGF0YSsrID0gaW14X211X3JlYWQocHJpdiwgcHJpdi0+ZGNm
-Zy0+eFJSWzBdKTsKCnBsZWFzZSBhZGQgc2FuaXR5IGNoZWNrLiB0aGUgbWVzc2FnZSBzaXplIHNo
-b3VsZCBub3QgYmUgaGlnaGVyIHRoZW4gc2l6ZW9mKG1zZykKCj4gKwlmb3IgKGkgPSAxOyBpIDwg
-bXNnLmhkci5zaXplOyBpKyspCj4gKwkJKmRhdGErKyA9IGlteF9tdV9yZWFkKHByaXYsIHByaXYt
-PmRjZmctPnhSUltpICUgNF0pOwo+ICsKPiArCWlteF9tdV94Y3Jfcm13KHByaXYsIElNWF9NVV94
-Q1JfUklFbigwKSwgMCk7CgpQbGVhc2UgZG8gbm90IGZvcmdldCB0byBoYW5kbGUgcHJvcGVybHkg
-bmV3IG1zZyBzaXplIGluIHlvdXIgcnhfY2FsbGJhY2suIEluIHByZXZpb3VzIAppbXBsZW1lbnRh
-dGlvbiB0aGUgbWVzc2FnZSBzaXplIHdhcyA0Ynl0ZS4KCj4gKwltYm94X2NoYW5fcmVjZWl2ZWRf
-ZGF0YShjcC0+Y2hhbiwgKHZvaWQgKikmbXNnKTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsK
-PiAgIHN0YXRpYyB2b2lkIGlteF9tdV90eGRiX3Rhc2tsZXQodW5zaWduZWQgbG9uZyBkYXRhKQo+
-ICAgewo+ICAgCXN0cnVjdCBpbXhfbXVfY29uX3ByaXYgKmNwID0gKHN0cnVjdCBpbXhfbXVfY29u
-X3ByaXYgKilkYXRhOwo+IEBAIC0yNzQsNiArMzIzLDcgQEAgc3RhdGljIHN0cnVjdCBtYm94X2No
-YW4gKiBpbXhfbXVfeGxhdGUoc3RydWN0IG1ib3hfY29udHJvbGxlciAqbWJveCwKPiAgIAkJCQkg
-ICAgICAgY29uc3Qgc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqc3ApCj4gICB7Cj4gICAJdTMyIHR5
-cGUsIGlkeCwgY2hhbjsKPiArCXN0cnVjdCBpbXhfbXVfcHJpdiAqcHJpdiA9IHRvX2lteF9tdV9w
-cml2KG1ib3gpOwo+ICAgCj4gICAJaWYgKHNwLT5hcmdzX2NvdW50ICE9IDIpIHsKPiAgIAkJZGV2
-X2VycihtYm94LT5kZXYsICJJbnZhbGlkIGFyZ3VtZW50IGNvdW50ICVkXG4iLCBzcC0+YXJnc19j
-b3VudCk7Cj4gQEAgLTI4NCw3ICszMzQsOSBAQCBzdGF0aWMgc3RydWN0IG1ib3hfY2hhbiAqIGlt
-eF9tdV94bGF0ZShzdHJ1Y3QgbWJveF9jb250cm9sbGVyICptYm94LAo+ICAgCWlkeCA9IHNwLT5h
-cmdzWzFdOyAvKiBpbmRleCAqLwo+ICAgCWNoYW4gPSB0eXBlICogNCArIGlkeDsKPiAgIAo+IC0J
-aWYgKGNoYW4gPj0gbWJveC0+bnVtX2NoYW5zKSB7Cj4gKwlpZiAoY2hhbiA+PSBtYm94LT5udW1f
-Y2hhbnMgfHwKPiArCSAgICAocHJpdi0+ZGNmZy0+dHlwZSA9PSBJTVhfTVVfVFlQRV9TQ1UgJiYK
-PiArCSAgICAgdHlwZSA8IElNWF9NVV9UWVBFX1RYREIgJiYgaWR4ID4gMCkpIHsKCldlIG5lZWQg
-dGhpcyBjaGVjayBzaW5jZSBtYm94LT5udW1fY2hhbnMgZG8gbm90IHJlZmxlY3RzIG5ldyByZWFs
-aXR5LiBOb3cgd2UgaGF2ZSBvbmx5IDIgCmNoYW5uZWxzLiBPbmUgUlggYW5kIG9uZSBUWC4gTm8g
-aWRlYSBpZiB3ZSBuZWVkIGRvb3JiZWxsIGNoYW5uZWxzIGZvciBTQ1UuIElmIGRvb3JiZWxscyAK
-YXJlIG5vdCBzdXBwb3J0ZWQsIGl0IGlzIGJldHRlciB0byBhZGQgYSBzZXBhcmF0ZSBpbXhfbXVf
-eGxhdGUgZm9yIFNDVQoKYW5kIGFkZCBTQ1Ugc3BlY2lmaWMgY2hhbm5lbCBpbml0IGluIHByb2Jl
-IGluIGFkZGl0aW9uIHRvOgogICAgICAgICBmb3IgKGkgPSAwOyBpIDwgSU1YX01VX0NIQU5TOyBp
-KyspIHsgCgogICAgICAgICAgICAgICAgIHN0cnVjdCBpbXhfbXVfY29uX3ByaXYgKmNwID0gJnBy
-aXYtPmNvbl9wcml2W2ldOyAKCiAKCiAgICAgICAgICAgICAgICAgY3AtPmlkeCA9IGkgJSA0OyAK
-CiAgICAgICAgICAgICAgICAgY3AtPnR5cGUgPSBpID4+IDI7IAoKICAgICAgICAgICAgICAgICBj
-cC0+Y2hhbiA9ICZwcml2LT5tYm94X2NoYW5zW2ldOyAKCiAgICAgICAgICAgICAgICAgcHJpdi0+
-bWJveF9jaGFuc1tpXS5jb25fcHJpdiA9IGNwOyAKCiAgICAgICAgICAgICAgICAgc25wcmludGYo
-Y3AtPmlycV9kZXNjLCBzaXplb2YoY3AtPmlycV9kZXNjKSwgCgogICAgICAgICAgICAgICAgICAg
-ICAgICAgICJpbXhfbXVfY2hhblslaS0laV0iLCBjcC0+dHlwZSwgY3AtPmlkeCk7IAoKICAgICAg
-ICAgfQoKVGhlcmUgaXMgbm8gbmVlZCB0byBpbml0IHVuc3VwcG9ydGVkIGNoYW5uZWxzLiBQbGVh
-c2UgcGFjayBpdCBpbiBzZXBhcmF0ZSBmdW5jdGlvbgoKPiAgIAkJZGV2X2VycihtYm94LT5kZXYs
-ICJOb3Qgc3VwcG9ydGVkIGNoYW5uZWwgbnVtYmVyOiAlZC4gKHR5cGU6ICVkLCBpZHg6ICVkKVxu
-IiwgY2hhbiwgdHlwZSwgaWR4KTsKPiAgIAkJcmV0dXJuIEVSUl9QVFIoLUVJTlZBTCk7Cj4gICAJ
-fQo+IEBAIC00MDEsOSArNDUzLDIwIEBAIHN0YXRpYyBjb25zdCBzdHJ1Y3QgaW14X211X2RjZmcg
-aW14X211X2NmZ19pbXg3dWxwID0gewo+ICAgCS54Q1IJPSAweDY0LAo+ICAgfTsKPiAgIAo+ICtz
-dGF0aWMgY29uc3Qgc3RydWN0IGlteF9tdV9kY2ZnIGlteF9tdV9jZmdfaW14OF9zY3UgPSB7Cj4g
-KwkudHlwZQk9IElNWF9NVV9UWVBFX1NDVSwKPiArCS50eAk9IGlteF9tdV9zY3VfdHgsCj4gKwku
-cngJPSBpbXhfbXVfc2N1X3J4LAo+ICsJLnhUUgk9IHsweDAsIDB4NCwgMHg4LCAweGN9LAo+ICsJ
-LnhSUgk9IHsweDEwLCAweDE0LCAweDE4LCAweDFjfSwKPiArCS54U1IJPSAweDIwLAo+ICsJLnhD
-Ugk9IDB4MjQsCj4gK307Cj4gKwo+ICAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQg
-aW14X211X2R0X2lkc1tdID0gewo+ICAgCXsgLmNvbXBhdGlibGUgPSAiZnNsLGlteDd1bHAtbXUi
-LCAuZGF0YSA9ICZpbXhfbXVfY2ZnX2lteDd1bHAgfSwKPiAgIAl7IC5jb21wYXRpYmxlID0gImZz
-bCxpbXg2c3gtbXUiLCAuZGF0YSA9ICZpbXhfbXVfY2ZnX2lteDZzeCB9LAo+ICsJeyAuY29tcGF0
-aWJsZSA9ICJmc2wsaW14OC1tdS1zY3UiLCAuZGF0YSA9ICZpbXhfbXVfY2ZnX2lteDhfc2N1IH0s
-Cj4gICAJeyB9LAo+ICAgfTsKPiAgIE1PRFVMRV9ERVZJQ0VfVEFCTEUob2YsIGlteF9tdV9kdF9p
-ZHMpOwo+IAoKS2luZCByZWdhcmRzLApPbGVrc2lqIFJlbXBlbAoKLS0gClBlbmd1dHJvbml4IGUu
-Sy4gICAgICAgICAgICAgICAgICAgICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICB8CkluZHVzdHJpYWwgTGludXggU29sdXRpb25zICAgICAgICAgICAgICAgICB8IGh0dHA6Ly93
-d3cucGVuZ3V0cm9uaXguZGUvICB8ClBlaW5lciBTdHIuIDYtOCwgMzExMzcgSGlsZGVzaGVpbSwg
-R2VybWFueSB8IFBob25lOiArNDktNTEyMS0yMDY5MTctMCAgICB8CkFtdHNnZXJpY2h0IEhpbGRl
-c2hlaW0sIEhSQSAyNjg2ICAgICAgICAgICB8IEZheDogICArNDktNTEyMS0yMDY5MTctNTU1NSB8
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+Hi Oleksij,
+
+> Subject: Re: [PATCH V3 2/4] mailbox: imx: restructure code to make easy for
+> new MU
+> 
+> Hi Peng,
+> 
+> On 26.02.20 05:40, peng.fan@nxp.com wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > Add imx_mu_generic_tx for data send and imx_mu_generic_rx for
+> > interrupt data receive.
+> > Add 'type' for MU type.
+> >
+> > With these, it will be a bit easy to introduce i.MX8/8X SCU type MU
+> > dedicated to communicate with SCU.
+> >
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >
+> > V3:
+> >   New patch, restructure code.
+> >
+> >   drivers/mailbox/imx-mailbox.c | 100
+> ++++++++++++++++++++++++++++--------------
+> >   1 file changed, 67 insertions(+), 33 deletions(-)
+> >
+> > diff --git a/drivers/mailbox/imx-mailbox.c
+> > b/drivers/mailbox/imx-mailbox.c index 2cdcdc5f1119..901a3431fdb5
+> > 100644
+> > --- a/drivers/mailbox/imx-mailbox.c
+> > +++ b/drivers/mailbox/imx-mailbox.c
+> > @@ -36,7 +36,17 @@ enum imx_mu_chan_type {
+> >   	IMX_MU_TYPE_RXDB,	/* Rx doorbell */
+> >   };
+> >
+> > +enum imx_mu_type {
+> > +	IMX_MU_TYPE_GENERIC,
+> > +};
+> 
+> I assume this enum is not needed, see my next email
+
+This is to just differentiate with SCU MU, ok, will check your next email.
+Then back if anything I not follow up.
+
+> > +struct imx_mu_priv;
+> > +struct imx_mu_con_priv;
+> > +
+> >   struct imx_mu_dcfg {
+> > +	enum imx_mu_type type;
+> > +	int (*tx)(struct imx_mu_priv *priv, struct imx_mu_con_priv *cp, void
+> *data);
+> > +	int (*rx)(struct imx_mu_priv *priv, struct imx_mu_con_priv *cp);
+> >   	u32	xTR[4];		/* Transmit Registers */
+> >   	u32	xRR[4];		/* Receive Registers */
+> >   	u32	xSR;		/* Status Register */
+> > @@ -67,20 +77,6 @@ struct imx_mu_priv {
+> >   	bool			side_b;
+> >   };
+> >
+> > -static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
+> > -	.xTR	= {0x0, 0x4, 0x8, 0xc},
+> > -	.xRR	= {0x10, 0x14, 0x18, 0x1c},
+> > -	.xSR	= 0x20,
+> > -	.xCR	= 0x24,
+> > -};
+> > -
+> > -static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
+> > -	.xTR	= {0x20, 0x24, 0x28, 0x2c},
+> > -	.xRR	= {0x40, 0x44, 0x48, 0x4c},
+> > -	.xSR	= 0x60,
+> > -	.xCR	= 0x64,
+> > -};
+> 
+> Please, do not move it.
+
+Ok. Then I need to add imx_mu_generic_tx prototype above the
+upper two.
+
+Thanks,
+Peng.
+
+> 
+> >   static struct imx_mu_priv *to_imx_mu_priv(struct mbox_controller
+> *mbox)
+> >   {
+> >   	return container_of(mbox, struct imx_mu_priv, mbox); @@ -111,6
+> > +107,40 @@ static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set,
+> u32 clr)
+> >   	return val;
+> >   }
+> >
+> > +static int imx_mu_generic_tx(struct imx_mu_priv *priv,
+> > +			     struct imx_mu_con_priv *cp,
+> > +			     void *data)
+> > +{
+> > +	u32 *arg = data;
+> > +
+> > +	switch (cp->type) {
+> > +	case IMX_MU_TYPE_TX:
+> > +		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
+> > +		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
+> > +		break;
+> > +	case IMX_MU_TYPE_TXDB:
+> > +		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIRn(cp->idx), 0);
+> > +		tasklet_schedule(&cp->txdb_tasklet);
+> > +		break;
+> > +	default:
+> > +		dev_warn_ratelimited(priv->dev, "Send data on wrong channel
+> type: %d\n", cp->type);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int imx_mu_generic_rx(struct imx_mu_priv *priv,
+> > +			     struct imx_mu_con_priv *cp)
+> > +{
+> > +	u32 dat;
+> > +
+> > +	dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
+> > +	mbox_chan_received_data(cp->chan, (void *)&dat);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> >   static void imx_mu_txdb_tasklet(unsigned long data)
+> >   {
+> >   	struct imx_mu_con_priv *cp = (struct imx_mu_con_priv *)data; @@
+> > -123,7 +153,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
+> >   	struct mbox_chan *chan = p;
+> >   	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
+> >   	struct imx_mu_con_priv *cp = chan->con_priv;
+> > -	u32 val, ctrl, dat;
+> > +	u32 val, ctrl;
+> >
+> >   	ctrl = imx_mu_read(priv, priv->dcfg->xCR);
+> >   	val = imx_mu_read(priv, priv->dcfg->xSR); @@ -152,8 +182,7 @@
+> > static irqreturn_t imx_mu_isr(int irq, void *p)
+> >   		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
+> >   		mbox_chan_txdone(chan, 0);
+> >   	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
+> > -		dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
+> > -		mbox_chan_received_data(chan, (void *)&dat);
+> > +		priv->dcfg->rx(priv, cp);
+> >   	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
+> >   		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx),
+> priv->dcfg->xSR);
+> >   		mbox_chan_received_data(chan, NULL); @@ -169,23 +198,8
+> @@ static
+> > int imx_mu_send_data(struct mbox_chan *chan, void *data)
+> >   {
+> >   	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
+> >   	struct imx_mu_con_priv *cp = chan->con_priv;
+> > -	u32 *arg = data;
+> > -
+> > -	switch (cp->type) {
+> > -	case IMX_MU_TYPE_TX:
+> > -		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
+> > -		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
+> > -		break;
+> > -	case IMX_MU_TYPE_TXDB:
+> > -		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIRn(cp->idx), 0);
+> > -		tasklet_schedule(&cp->txdb_tasklet);
+> > -		break;
+> > -	default:
+> > -		dev_warn_ratelimited(priv->dev, "Send data on wrong channel
+> type: %d\n", cp->type);
+> > -		return -EINVAL;
+> > -	}
+> >
+> > -	return 0;
+> > +	return priv->dcfg->tx(priv, cp, data);
+> >   }
+> >
+> >   static int imx_mu_startup(struct mbox_chan *chan) @@ -367,6 +381,26
+> > @@ static int imx_mu_remove(struct platform_device *pdev)
+> >   	return 0;
+> >   }
+> >
+> > +static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
+> > +	.type	= IMX_MU_TYPE_GENERIC,
+> > +	.tx	= imx_mu_generic_tx,
+> > +	.rx	= imx_mu_generic_rx,
+> > +	.xTR	= {0x0, 0x4, 0x8, 0xc},
+> > +	.xRR	= {0x10, 0x14, 0x18, 0x1c},
+> > +	.xSR	= 0x20,
+> > +	.xCR	= 0x24,
+> > +};
+> > +
+> > +static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
+> > +	.type	= IMX_MU_TYPE_GENERIC,
+> > +	.tx	= imx_mu_generic_tx,
+> > +	.rx	= imx_mu_generic_rx,
+> > +	.xTR	= {0x20, 0x24, 0x28, 0x2c},
+> > +	.xRR	= {0x40, 0x44, 0x48, 0x4c},
+> > +	.xSR	= 0x60,
+> > +	.xCR	= 0x64,
+> > +};
+> > +
+> >   static const struct of_device_id imx_mu_dt_ids[] = {
+> >   	{ .compatible = "fsl,imx7ulp-mu", .data = &imx_mu_cfg_imx7ulp },
+> >   	{ .compatible = "fsl,imx6sx-mu", .data = &imx_mu_cfg_imx6sx },
+> >
+> 
+> Kind regards,
+> Oleksij Rempel
+> 
+> --
+> Pengutronix e.K.                           |
+> |
+> Industrial Linux Solutions                 |
+> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.p
+> engutronix.de%2F&amp;data=02%7C01%7Cpeng.fan%40nxp.com%7Ccf660c
+> 3909e14128e65f08d7be898905%7C686ea1d3bc2b4c6fa92cd99c5c301635%
+> 7C0%7C0%7C637187370224967554&amp;sdata=ZdgIGuzpnhX1liQO4KmCtXx
+> jjg%2BnDJoPze4pfVXIAig%3D&amp;reserved=0  |
+> Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0
+> |
+> Amtsgericht Hildesheim, HRA 2686           | Fax:
+> +49-5121-206917-5555 |
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
