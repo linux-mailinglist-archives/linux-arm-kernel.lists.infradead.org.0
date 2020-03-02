@@ -2,30 +2,30 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D34A817621D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:12:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C59B176204
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 19:09:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HkZ4d59XJ0OHdYh7y6E131V33yFG6vXYk+OMNlfmxMc=; b=IkfCEWVXah5sap
-	22iz7LI/F8+S4Y0+saMLk4ZG/Vb2zGCjIJgMJ3Tu5n/YAuARM8hKFRAF934wDygavrLmXhoAyxSMn
-	q8QBEZukV+Ve7ArTb6VZhWsSQ9R5P96Zm9Kh5mmIyEe/EVQhJ2xxdlXQsgU+KghbzoJilqDewTUfY
-	3F7hJctFeYReWJxgu8V5yEz50elw1g/Wb6Dg1sYpezF4NjfAp7W/pKjxzquZqOxTCdq93Su9ZsV9b
-	woxgXUoBVChzio5dnGV46xJtlOGBb4NtXMAkJR84T5Kd7kAFb96PAP+hUjYp4Y7iAsx8S9qyTg/yD
-	x370zSL2JcKg8ypaycpA==;
+	List-Owner; bh=+wGaXN+73SOkV8b8ecEv5n45sPKvma2SgNcT+sPUfmc=; b=JBl6XbRpCvo6dV
+	hWWEe3k5uqs4LC0aRd6i5tVWCXfQprHkz2tBe3EsbiIt3uo2OiljxYKPYFK2HQ4Itmd0w0/a28LIi
+	lFW6tD40jDH1nrjl11hlcGl2IlgJPTyWeBOb8sSeoKtgKy9WSzQZQZoFIZeVgNJ1YS8kaGliKGD7i
+	c5HSUrBUR1KmiybNDWM2pUoenZxtcXrPowQSC+7sp8Q3Jw7CVWOI4sYfr9Hrk7QeJTWvUbP1scd2S
+	G6ugjkTBhnSwDjP+WgNM26BmRXrraV+6Wv4D96dvo/iOFM7IGZMhy4eCp8JBWl3n2dD4RxUVVH96G
+	bmQrKDt7GpEmP5H0R33Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8pYO-0007Tw-8y; Mon, 02 Mar 2020 18:12:32 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1j8pVG-0003oL-Dq; Mon, 02 Mar 2020 18:09:18 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8pTz-0002kf-Sw; Mon, 02 Mar 2020 18:08:05 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ id 1j8pTv-0002pE-2s; Mon, 02 Mar 2020 18:07:59 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Tudor.Ambarus@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Tudor.Ambarus@microchip.com";
  x-sender="Tudor.Ambarus@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -33,43 +33,42 @@ Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Tudor.Ambarus@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
+Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 2N+dXd6n5sbCiWGv+TWhSqqOPcVcplrhFc9ZCc/UmBHJILb/R6jjr8Ya+lbfB/61oeQFRr7ac8
- 9uXGvtQbnn4bc+9EzompxLr1ymuVPRpGlRZ/t+V0oyFgOAbqPSyG8Pzs3zuJx3BZbLVDNVA/gk
- WEc0c948H94OQ0+sesfRSSDeztkVrMY0ZjuXlPjkHQJqThkKIKZXlSb4it6UYN+kLmcKuj6qYk
- x6vqXC4P9zgQ7NnCXyXFxArJs55OVgV9UjVOwT0hTAQe206UYOi48QJT+ibRBzuSPmAIGLxAZz
- 78c=
-X-IronPort-AV: E=Sophos;i="5.70,507,1574146800"; 
-   d="scan'208";a="4204943"
+IronPort-SDR: rR/ndVAmyZXc0iNdEXkuRbr35j/HEEG2Uj2WzB2xPRCWAHBQvIq5hwQsSPM/an0lBhRnbSa95P
+ ZdhpzNrN94m5A1UdUC9OSwXcZlb+Y6KyhB0tCOCJE2TYkjb44cfK0V2yAEjfyHYSEpz1mdSB+E
+ eK2gQbguT9npM86gwIFmbWZAsgTrLCijh4t8NjUSabqcjB5I65h/6kEnPY938GxiSG86WUPj6z
+ SDdDLN/zrZwKn/35v2vVHWMXNPEmH5VZ7MuC2nBCI4ERd+WPK2Qj7p76txyEC8Jg8VF1QbEwsy
+ kf4=
+X-IronPort-AV: E=Sophos;i="5.70,507,1574146800"; d="scan'208";a="67338184"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 02 Mar 2020 11:07:54 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 02 Mar 2020 11:07:50 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 2 Mar 2020 11:08:06 -0700
+ 15.1.1713.5; Mon, 2 Mar 2020 11:07:48 -0700
 Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
  email.microchip.com (10.10.87.72) with Microsoft SMTP Server
  (version=TLS1_2, 
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Mon, 2 Mar 2020 11:08:06 -0700
+ Transport; Mon, 2 Mar 2020 11:08:01 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FKQLD1pJ3i81w50ObxYtB0vp3WpvAdHQ1Y4bFBAU6cLuT5Yr5OnPqPeBPqbfL1iB3mTjfH5Ju3ENl4A/rs1+wEhrlqwQDjXJfHtyKclzmf1+YliqdSIlUGJ55m77LS+SiBhIMx4tU8cjNCl5wbKhK7Zw0xonZ7dLVvcMoIpF9CQTeygpbsFsakn36gtszNkh+gK6V/815ua3WLYsa2BaUbBeNjkWGTeDKkcx+C/FOjFozPWyB9fIvc2zPXfqHcCiiyDY5dOx7DCOdQliyVf7ID4byYw+nl60DejxhXb7Wn+8NgtQ6Hh03GbXzwMAYULZL098QBpyXLDHtmdXwjRfBg==
+ b=WH97Oyl9lQGx0n4OhzCcSkiOfKnw1J/IyTo2v43vS3AimdEzp4zJoQ9SwUGpg5rxeo9D/VZnkT/fjy97Pe/N2Ex2aIcQV4/cvoDotKTxprVfC537gV6BHJH1zP4HWTpD7c2FV4eoNB+lGJt7WojqXJv8VvjmypfYAZThlLnwQaxM4Fzzfpmev4irulJkBdnas960JTNr8RX2VxEaj+WETNS46VAyzOR6VBRScveNKG33Ll/rWw4uhV+12LIHgIZFU6UgNPuy+WOV41z6KqC6PpENK2LnwuvDIoi+zO0acK/L1neW1jkeoS7DuLvjYECMfAPQw8+vFbgcFjWHnCuACA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4lUEBMcmd/HbwHIGyv4eWYi0VKABXF+ytWSpmFpOUy4=;
- b=INl3IwtErQaFpJuebID771dAM3vo0AZ57Rw9OLZTc//11NJ3QzTlwtoxNrO8I0qpKzEnZGv6DCikE6PiT3WdRC2/Jw9LbXKJpbvsWaKj76WdtuwyHMAq+T5ZC1SNaqDLFXLLbeboNHYA0uul8YAyOp+Aq3zYJXE6pPP3KfAYJAyXZbgzXn1aSKEEtKzKRO4aF0UxImayMB1OIxlEdOuE97QT2cuUUFYy6PHlIFiQCCYRnr2Z0wg+/lFlcJEN7dtU25HvMnaI9Is44b73UBVW1T/kVjgFyj+0nyAjbB3CPsWsgL3Kzc1kJ/BVzfBCRW7G+oRGoOYROhgtnk+5DBr/iw==
+ bh=z1lviWsdt5XT0e5Kt/LsExb9iVUsAQ/FgxpZtlfHhrk=;
+ b=GWUelZTV6cKWeb+VpViOKgrim+gZg7iSQAP5DGukXoWxwlTbLKWi1q/HzQkqZcv+4vW0oyKJYjjVbSuDB5wpNpGuIlq9wK9GdJ0g3ueDP4nKXlGn4a7SyFS08tQcgMeDJslq/OVOf3bSdIBX6om8VI1pQ6eadC9mwyIxcdtUjZfD6FdfgnVWrdTQS4ZIrQehQi9UvWZH7d/7T/ozUC9p0Q0IcYMiMp4STfUE/ILo9cpBpUFPBm4ZMzSKd4g++WY7s8tKf9Afo7y3SstSIWW3jOK57mK32BCKlW+ONNmWWzdL8ku1pbXZdzIRO39QmYmzklwQQLy3dJzrDzqLUsqhsA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -77,26 +76,26 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4lUEBMcmd/HbwHIGyv4eWYi0VKABXF+ytWSpmFpOUy4=;
- b=D3zLGa43B94fUye0nTP1K51sInFU22AjZi/qVjQhFtVmLpGSX8zvg/FmvqvFsaTOv6oRo+byHBUZ/rF+KCUIvnw17qqYNdu45a9dZe0PyT1o8HwdL1vV6pGqJsY3ihRyJDjeQP0dV7XyS4gwvwqG37QgmgATGY7g6F1OWTbZAnY=
+ bh=z1lviWsdt5XT0e5Kt/LsExb9iVUsAQ/FgxpZtlfHhrk=;
+ b=Ro7Jpn3Qll/4EV8kHeYOkEH59tcpyl/zvN4Ry0kXiOKgS2TMsW+Wefmr3dYrHB9arCqZ3PzuiGOs/Zlh5mkT2rlThueUJSJ3dS2OZ0K+gZSvfEIeMT7xTh5kpKr4Nd/Tfj1Ev2x/4ihXic56yvWjv8mB5raK6iGxuVfvlhw8d10=
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com (2603:10b6:208:193::29)
  by MN2PR11MB4142.namprd11.prod.outlook.com (2603:10b6:208:135::29)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.14; Mon, 2 Mar
- 2020 18:07:48 +0000
+ 2020 18:07:47 +0000
 Received: from MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::3c8f:7a55:cbd:adfb]) by MN2PR11MB4448.namprd11.prod.outlook.com
  ([fe80::3c8f:7a55:cbd:adfb%5]) with mapi id 15.20.2772.019; Mon, 2 Mar 2020
- 18:07:48 +0000
+ 18:07:47 +0000
 From: <Tudor.Ambarus@microchip.com>
 To: <bbrezillon@kernel.org>, <vigneshr@ti.com>, <linux-mtd@lists.infradead.org>
-Subject: [PATCH 05/23] mtd: spi-nor: Add the concept of SPI NOR manufacturer
- driver
-Thread-Topic: [PATCH 05/23] mtd: spi-nor: Add the concept of SPI NOR
- manufacturer driver
-Thread-Index: AQHV8L16wSAEEGeSkUG/roNIw5wY/w==
+Subject: [PATCH 04/23] mtd: spi-nor: Expose stuctures and functions to
+ manufacturer drivers
+Thread-Topic: [PATCH 04/23] mtd: spi-nor: Expose stuctures and functions to
+ manufacturer drivers
+Thread-Index: AQHV8L16rqbK4UNzWk2KQorqDgLkvQ==
 Date: Mon, 2 Mar 2020 18:07:47 +0000
-Message-ID: <20200302180730.1886678-6-tudor.ambarus@microchip.com>
+Message-ID: <20200302180730.1886678-5-tudor.ambarus@microchip.com>
 References: <20200302180730.1886678-1-tudor.ambarus@microchip.com>
 In-Reply-To: <20200302180730.1886678-1-tudor.ambarus@microchip.com>
 Accept-Language: en-US
@@ -105,14 +104,14 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6316ea15-86e9-4c9d-b5fc-08d7bed49d74
+x-ms-office365-filtering-correlation-id: 079e1589-93dc-4f16-93d3-08d7bed49d35
 x-ms-traffictypediagnostic: MN2PR11MB4142:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR11MB414240D4B41A983BBA7ADE92F0E70@MN2PR11MB4142.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-microsoft-antispam-prvs: <MN2PR11MB41429FC23D7372E667DC5805F0E70@MN2PR11MB4142.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 033054F29A
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(366004)(39860400002)(136003)(396003)(376002)(189003)(199004)(36756003)(26005)(66446008)(107886003)(6486002)(186003)(2616005)(4326008)(478600001)(6512007)(91956017)(64756008)(66946007)(2906002)(71200400001)(76116006)(8936002)(316002)(86362001)(54906003)(6506007)(66556008)(5660300002)(66476007)(7406005)(1076003)(7416002)(81156014)(81166006)(110136005)(8676002);
+ SFS:(10009020)(346002)(366004)(39860400002)(136003)(396003)(376002)(189003)(199004)(36756003)(26005)(66446008)(107886003)(6486002)(186003)(2616005)(4326008)(478600001)(6512007)(91956017)(64756008)(66946007)(2906002)(71200400001)(76116006)(8936002)(316002)(30864003)(86362001)(54906003)(6506007)(66556008)(5660300002)(66476007)(7406005)(1076003)(7416002)(81156014)(81166006)(110136005)(8676002);
  DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB4142;
  H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -120,26 +119,26 @@ received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: drbK37Y8tETWkbvEZavHb5DAvNm6kcE0RLcmHprmNKRHS8auCX3/yQiRhxcN1sX2w4n7CSUixxHBdF8k8eWpq4GSc+ZGXhbIUstCeLOFtzRg1KF0duVqJ93r/+3u3uYw6KPZtU7rY8/1KB1XTn7KdAAjU5bgL3mM0Yg63qRpMBFUcr56i9y1YLMjok4Ux7GGb0PY1+Z42AhpqRGciJdl1FEuE5sVqBRCU3zvvFxdK5KhAB3dWFp2YN/4h3aNlHNix0U89ckPHqX6hZUYRs8L32IFBkcEySDdGzlowCwUOo/oMALksxOpQhz/FXFfl7CmM69bMdKQWYKesTspxPZMg7UfEBd+uWSkkNZt3tO7vEIY/1HvyOjrIxAWt75JCMwwth2UeEfXtGPSsTO02xfrwm+SqB5zbBRdb9RMPLV4iuIWXpag4P+74QrTWcxti2pr
-x-ms-exchange-antispam-messagedata: OoiHIOXIA4vKE/JFNAUWJ6X/100xRWkRdWE45m1P4Ne5lt313CqAc4QB8WxX14NzcqOjZvw+JXzIIKUOsY0C2bPNEB5PMMdCuGcPri3QW7pNkzpq7AuXDdxyz7v+Y2KKcPI5hQq5WqBL3D/xk6LLww==
+x-microsoft-antispam-message-info: wkneK9pSVqNuUQBujy3ALh2VeNa62+OAUF2tH+meCssEd+RZRjnPzAnGJdICouoQYEqGKlFjSr1MoKOnnqC0XAm1tFvtoJ8OsKNwFAsSh6Ywik52Ne8j+9Nv+EU8TtDVO+20wp0A5wSeK/XKGB7o/aOu06oKMeXbISmBRGZkErLuCWgIpApAViI0qSTKLooki6e+KHJH0nt9EYsGGAwTYRbPFnlyqdoCqwbFCvhKrN/8WCu6pbKq/wckixvVZUxAuW9b33HHzXbNiAdpT5iF0wP3VLwP7QZ6t/jjTzHBH/LrOjKFTJcpy9Yje3G8GDygsPTTsCJE4Yav+foZ0nXGXa9dm5aM9YKsEvCVr3MDYKRtUeskKk7j8ALiM7oK6B0pxDaoujAn5s3BSpCGYHfWWPmYo0ySUa3nxXv1kzvQRSOkDFXLG7tqJPq3iXocKBUl
+x-ms-exchange-antispam-messagedata: fu/P8HmYeeTiZRxMY1iRVDffMp/77kcjjDJT8WtsrpIqTbvb92IOsNNfT64idHCphJQ9hn4E54gaGZa658FbzbUAvqUmzAHMoQ3IX59fCJKBorkvEfgB3QdU5JkW9DU+ofoS3HUXeL2Lt+1t3WR7Fg==
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6316ea15-86e9-4c9d-b5fc-08d7bed49d74
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Mar 2020 18:07:47.8061 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 079e1589-93dc-4f16-93d3-08d7bed49d35
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Mar 2020 18:07:47.1755 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: XgbxlqhsZdGr7ZokvONWEWiYzQZoslSgB6Iq83FQwMFKq27SN8XV0gNswYfJiEiBRZrWPPSIvBljtUB/ZHviIiw6wqiJP6KQxdkznKt2wfk=
+X-MS-Exchange-CrossTenant-userprincipalname: TLnZmvra3+kGNPBmae4eoszkN9x6vpwIsBd/JmJcXmZRe/2M8/jtMOI/oM/0w/umP+s1SlB73hLXqMtD08CHQi92YyEjm0PGReUMqS6FwjY=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB4142
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_100800_275979_456EB613 
-X-CRM114-Status: GOOD (  15.50  )
+X-CRM114-CacheID: sfid-20200302_100755_201139_85B3615E 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -174,212 +173,466 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Boris Brezillon <bbrezillon@kernel.org>
 
-Declare a spi_nor_manufacturer struct and add basic building blocks to
-move manufacturer specific code outside of the core.
+Expose the flash_info struct and the generic set_4byte() implementations.
+Some manufacturers rely on the generic set_4byte() implementations.
+Remove the static specifier and expose their prototypes in core.h.
 
 Signed-off-by: Boris Brezillon <bbrezillon@kernel.org>
 Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 ---
- drivers/mtd/spi-nor/core.c  | 78 +++++++++++++++++++++++++++++++------
- drivers/mtd/spi-nor/core.h  | 14 +++++++
- include/linux/mtd/spi-nor.h |  8 ++++
- 3 files changed, 89 insertions(+), 11 deletions(-)
+ drivers/mtd/spi-nor/core.c | 171 +++----------------------------------
+ drivers/mtd/spi-nor/core.h | 159 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 170 insertions(+), 160 deletions(-)
 
 diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
-index 16cf9d4b1a73..d41ef1795707 100644
+index 1edcb53c4df3..16cf9d4b1a73 100644
 --- a/drivers/mtd/spi-nor/core.c
 +++ b/drivers/mtd/spi-nor/core.c
-@@ -2472,8 +2472,26 @@ static const struct flash_info spi_nor_ids[] = {
- 	{ },
- };
+@@ -38,102 +38,8 @@
+  */
+ #define CHIP_ERASE_2MB_READY_WAIT_JIFFIES	(40UL * HZ)
  
-+static const struct spi_nor_manufacturer *manufacturers[0];
-+
-+static const struct flash_info *
-+spi_nor_search_part_by_id(const struct flash_info *parts, unsigned int nparts,
-+			  const u8 *id)
-+{
-+	unsigned int i;
-+
-+	for (i = 0; i < nparts; i++) {
-+		if (parts[i].id_len &&
-+		    !memcmp(parts[i].id, id, parts[i].id_len))
-+			return &parts[i];
-+	}
-+
-+	return NULL;
-+}
-+
- static const struct flash_info *spi_nor_read_id(struct spi_nor *nor)
+-#define SPI_NOR_MAX_ID_LEN	6
+ #define SPI_NOR_MAX_ADDR_WIDTH	4
+ 
+-/**
+- * struct spi_nor_fixups - SPI NOR fixup hooks
+- * @default_init: called after default flash parameters init. Used to tweak
+- *                flash parameters when information provided by the flash_info
+- *                table is incomplete or wrong.
+- * @post_bfpt: called after the BFPT table has been parsed
+- * @post_sfdp: called after SFDP has been parsed (is also called for SPI NORs
+- *             that do not support RDSFDP). Typically used to tweak various
+- *             parameters that could not be extracted by other means (i.e.
+- *             when information provided by the SFDP/flash_info tables are
+- *             incomplete or wrong).
+- *
+- * Those hooks can be used to tweak the SPI NOR configuration when the SFDP
+- * table is broken or not available.
+- */
+-struct spi_nor_fixups {
+-	void (*default_init)(struct spi_nor *nor);
+-	int (*post_bfpt)(struct spi_nor *nor,
+-			 const struct sfdp_parameter_header *bfpt_header,
+-			 const struct sfdp_bfpt *bfpt,
+-			 struct spi_nor_flash_parameter *params);
+-	void (*post_sfdp)(struct spi_nor *nor);
+-};
+-
+-struct flash_info {
+-	char		*name;
+-
+-	/*
+-	 * This array stores the ID bytes.
+-	 * The first three bytes are the JEDIC ID.
+-	 * JEDEC ID zero means "no ID" (mostly older chips).
+-	 */
+-	u8		id[SPI_NOR_MAX_ID_LEN];
+-	u8		id_len;
+-
+-	/* The size listed here is what works with SPINOR_OP_SE, which isn't
+-	 * necessarily called a "sector" by the vendor.
+-	 */
+-	unsigned	sector_size;
+-	u16		n_sectors;
+-
+-	u16		page_size;
+-	u16		addr_width;
+-
+-	u32		flags;
+-#define SECT_4K			BIT(0)	/* SPINOR_OP_BE_4K works uniformly */
+-#define SPI_NOR_NO_ERASE	BIT(1)	/* No erase command needed */
+-#define SST_WRITE		BIT(2)	/* use SST byte programming */
+-#define SPI_NOR_NO_FR		BIT(3)	/* Can't do fastread */
+-#define SECT_4K_PMC		BIT(4)	/* SPINOR_OP_BE_4K_PMC works uniformly */
+-#define SPI_NOR_DUAL_READ	BIT(5)	/* Flash supports Dual Read */
+-#define SPI_NOR_QUAD_READ	BIT(6)	/* Flash supports Quad Read */
+-#define USE_FSR			BIT(7)	/* use flag status register */
+-#define SPI_NOR_HAS_LOCK	BIT(8)	/* Flash supports lock/unlock via SR */
+-#define SPI_NOR_HAS_TB		BIT(9)	/*
+-					 * Flash SR has Top/Bottom (TB) protect
+-					 * bit. Must be used with
+-					 * SPI_NOR_HAS_LOCK.
+-					 */
+-#define SPI_NOR_XSR_RDY		BIT(10)	/*
+-					 * S3AN flashes have specific opcode to
+-					 * read the status register.
+-					 * Flags SPI_NOR_XSR_RDY and SPI_S3AN
+-					 * use the same bit as one implies the
+-					 * other, but we will get rid of
+-					 * SPI_S3AN soon.
+-					 */
+-#define	SPI_S3AN		BIT(10)	/*
+-					 * Xilinx Spartan 3AN In-System Flash
+-					 * (MFR cannot be used for probing
+-					 * because it has the same value as
+-					 * ATMEL flashes)
+-					 */
+-#define SPI_NOR_4B_OPCODES	BIT(11)	/*
+-					 * Use dedicated 4byte address op codes
+-					 * to support memory size above 128Mib.
+-					 */
+-#define NO_CHIP_ERASE		BIT(12) /* Chip does not support chip erase */
+-#define SPI_NOR_SKIP_SFDP	BIT(13)	/* Skip parsing of SFDP tables */
+-#define USE_CLSR		BIT(14)	/* use CLSR command */
+-#define SPI_NOR_OCTAL_READ	BIT(15)	/* Flash supports Octal Read */
+-#define SPI_NOR_TB_SR_BIT6	BIT(16)	/*
+-					 * Top/Bottom (TB) is bit 6 of
+-					 * status register. Must be used with
+-					 * SPI_NOR_HAS_TB.
+-					 */
+-
+-	/* Part specific fixup hooks. */
+-	const struct spi_nor_fixups *fixups;
+-};
+-
+-#define JEDEC_MFR(info)	((info)->id[0])
+-
+ /**
+  * spi_nor_spimem_bounce() - check if a bounce buffer is needed for the data
+  *                           transfer
+@@ -295,8 +201,8 @@ static ssize_t spi_nor_spimem_write_data(struct spi_nor *nor, loff_t to,
+  *
+  * Return: number of bytes written successfully, -errno otherwise
+  */
+-static ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
+-				  const u8 *buf)
++ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
++			   const u8 *buf)
  {
-+	const struct flash_info *info;
- 	u8 *id = nor->bouncebuf;
- 	unsigned int i;
+ 	if (nor->spimem)
+ 		return spi_nor_spimem_write_data(nor, to, len, buf);
+@@ -310,7 +216,7 @@ static ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_write_enable(struct spi_nor *nor)
++int spi_nor_write_enable(struct spi_nor *nor)
+ {
  	int ret;
-@@ -2495,11 +2513,21 @@ static const struct flash_info *spi_nor_read_id(struct spi_nor *nor)
- 		return ERR_PTR(ret);
- 	}
  
--	for (i = 0; i < ARRAY_SIZE(spi_nor_ids) - 1; i++) {
--		if (spi_nor_ids[i].id_len &&
--		    !memcmp(spi_nor_ids[i].id, id, spi_nor_ids[i].id_len))
--			return &spi_nor_ids[i];
-+	for (i = 0; i < ARRAY_SIZE(manufacturers); i++) {
-+		info = spi_nor_search_part_by_id(manufacturers[i]->parts,
-+						 manufacturers[i]->nparts,
-+						 id);
-+		if (info) {
-+			nor->manufacturer = manufacturers[i];
-+			return info;
-+		}
- 	}
-+
-+	info = spi_nor_search_part_by_id(spi_nor_ids,
-+					 ARRAY_SIZE(spi_nor_ids) - 1, id);
-+	if (info)
-+		return info;
-+
- 	dev_err(nor->dev, "unrecognized JEDEC id bytes: %*ph\n",
- 		SPI_NOR_MAX_ID_LEN, id);
- 	return ERR_PTR(-ENODEV);
-@@ -2985,6 +3013,16 @@ int spi_nor_post_bfpt_fixups(struct spi_nor *nor,
- 			     const struct sfdp_bfpt *bfpt,
- 			     struct spi_nor_flash_parameter *params)
+@@ -339,7 +245,7 @@ static int spi_nor_write_enable(struct spi_nor *nor)
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_write_disable(struct spi_nor *nor)
++int spi_nor_write_disable(struct spi_nor *nor)
  {
-+	int ret;
-+
-+	if (nor->manufacturer && nor->manufacturer->fixups &&
-+	    nor->manufacturer->fixups->post_bfpt) {
-+		ret = nor->manufacturer->fixups->post_bfpt(nor, bfpt_header,
-+							   bfpt, params);
-+		if (ret)
-+			return ret;
-+	}
-+
- 	if (nor->info->fixups && nor->info->fixups->post_bfpt)
- 		return nor->info->fixups->post_bfpt(nor, bfpt_header, bfpt,
- 						    params);
-@@ -3294,6 +3332,10 @@ static void spi_nor_manufacturer_init_params(struct spi_nor *nor)
- 		break;
- 	}
+ 	int ret;
  
-+	if (nor->manufacturer && nor->manufacturer->fixups &&
-+	    nor->manufacturer->fixups->default_init)
-+		nor->manufacturer->fixups->default_init(nor);
-+
- 	if (nor->info->fixups && nor->info->fixups->default_init)
- 		nor->info->fixups->default_init(nor);
- }
-@@ -3453,6 +3495,10 @@ static void spi_nor_post_sfdp_fixups(struct spi_nor *nor)
- 	if (nor->info->flags & SPI_S3AN)
- 		s3an_post_sfdp_fixups(nor);
- 
-+	if (nor->manufacturer && nor->manufacturer->fixups &&
-+	    nor->manufacturer->fixups->post_sfdp)
-+		nor->manufacturer->fixups->post_sfdp(nor);
-+
- 	if (nor->info->fixups && nor->info->fixups->post_sfdp)
- 		nor->info->fixups->post_sfdp(nor);
- }
-@@ -3615,15 +3661,25 @@ void spi_nor_restore(struct spi_nor *nor)
- }
- EXPORT_SYMBOL_GPL(spi_nor_restore);
- 
--static const struct flash_info *spi_nor_match_id(const char *name)
-+static const struct flash_info *spi_nor_match_id(struct spi_nor *nor,
-+						 const char *name)
+@@ -464,7 +370,7 @@ static int spi_nor_read_cr(struct spi_nor *nor, u8 *cr)
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable)
++int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable)
  {
--	const struct flash_info *id = spi_nor_ids;
-+	unsigned int i, j;
+ 	int ret;
  
--	while (id->name) {
--		if (!strcmp(name, id->name))
--			return id;
--		id++;
-+	for (i = 0; i < ARRAY_SIZE(spi_nor_ids) - 1; i++) {
-+		if (!strcmp(name, spi_nor_ids[i].name))
-+			return &spi_nor_ids[i];
- 	}
-+
-+	for (i = 0; i < ARRAY_SIZE(manufacturers); i++) {
-+		for (j = 0; j < manufacturers[i]->nparts; j++) {
-+			if (!strcmp(name, manufacturers[i]->parts[j].name)) {
-+				nor->manufacturer = manufacturers[i];
-+				return &manufacturers[i]->parts[j];
-+			}
-+		}
-+	}
-+
- 	return NULL;
+@@ -501,7 +407,7 @@ static int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable)
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_en4_ex4_wen_set_4byte(struct spi_nor *nor, bool enable)
++int spi_nor_en4_ex4_wen_set_4byte(struct spi_nor *nor, bool enable)
+ {
+ 	int ret;
+ 
+@@ -556,7 +462,7 @@ static int spansion_set_4byte(struct spi_nor *nor, bool enable)
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_write_ear(struct spi_nor *nor, u8 ear)
++int spi_nor_write_ear(struct spi_nor *nor, u8 ear)
+ {
+ 	int ret;
+ 
+@@ -621,7 +527,7 @@ static int winbond_set_4byte(struct spi_nor *nor, bool enable)
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_xread_sr(struct spi_nor *nor, u8 *sr)
++int spi_nor_xread_sr(struct spi_nor *nor, u8 *sr)
+ {
+ 	int ret;
+ 
+@@ -834,7 +740,7 @@ static int spi_nor_wait_till_ready_with_timeout(struct spi_nor *nor,
+  *
+  * Return: 0 on success, -errno otherwise.
+  */
+-static int spi_nor_wait_till_ready(struct spi_nor *nor)
++int spi_nor_wait_till_ready(struct spi_nor *nor)
+ {
+ 	return spi_nor_wait_till_ready_with_timeout(nor,
+ 						    DEFAULT_READY_WAIT_JIFFIES);
+@@ -1142,11 +1048,6 @@ static int spi_nor_erase_chip(struct spi_nor *nor)
+ 	return ret;
  }
  
-@@ -3670,7 +3726,7 @@ static const struct flash_info *spi_nor_get_flash_info(struct spi_nor *nor,
- 	const struct flash_info *info = NULL;
+-static struct spi_nor *mtd_to_spi_nor(struct mtd_info *mtd)
+-{
+-	return mtd->priv;
+-}
+-
+ static u8 spi_nor_convert_opcode(u8 opcode, const u8 table[][2], size_t size)
+ {
+ 	size_t i;
+@@ -1225,7 +1126,7 @@ static void spi_nor_set_4byte_opcodes(struct spi_nor *nor)
+ 	}
+ }
  
- 	if (name)
--		info = spi_nor_match_id(name);
-+		info = spi_nor_match_id(nor, name);
- 	/* Try to auto-detect if chip name wasn't specified or not found */
- 	if (!info)
- 		info = spi_nor_read_id(nor);
+-static int spi_nor_lock_and_prep(struct spi_nor *nor)
++int spi_nor_lock_and_prep(struct spi_nor *nor)
+ {
+ 	int ret = 0;
+ 
+@@ -1241,7 +1142,7 @@ static int spi_nor_lock_and_prep(struct spi_nor *nor)
+ 	return ret;
+ }
+ 
+-static void spi_nor_unlock_and_unprep(struct spi_nor *nor)
++void spi_nor_unlock_and_unprep(struct spi_nor *nor)
+ {
+ 	if (nor->controller_ops && nor->controller_ops->unprepare)
+ 		nor->controller_ops->unprepare(nor);
+@@ -2104,56 +2005,6 @@ int spi_nor_sr2_bit7_quad_enable(struct spi_nor *nor)
+ 	return 0;
+ }
+ 
+-/* Used when the "_ext_id" is two bytes at most */
+-#define INFO(_jedec_id, _ext_id, _sector_size, _n_sectors, _flags)	\
+-		.id = {							\
+-			((_jedec_id) >> 16) & 0xff,			\
+-			((_jedec_id) >> 8) & 0xff,			\
+-			(_jedec_id) & 0xff,				\
+-			((_ext_id) >> 8) & 0xff,			\
+-			(_ext_id) & 0xff,				\
+-			},						\
+-		.id_len = (!(_jedec_id) ? 0 : (3 + ((_ext_id) ? 2 : 0))),	\
+-		.sector_size = (_sector_size),				\
+-		.n_sectors = (_n_sectors),				\
+-		.page_size = 256,					\
+-		.flags = (_flags),
+-
+-#define INFO6(_jedec_id, _ext_id, _sector_size, _n_sectors, _flags)	\
+-		.id = {							\
+-			((_jedec_id) >> 16) & 0xff,			\
+-			((_jedec_id) >> 8) & 0xff,			\
+-			(_jedec_id) & 0xff,				\
+-			((_ext_id) >> 16) & 0xff,			\
+-			((_ext_id) >> 8) & 0xff,			\
+-			(_ext_id) & 0xff,				\
+-			},						\
+-		.id_len = 6,						\
+-		.sector_size = (_sector_size),				\
+-		.n_sectors = (_n_sectors),				\
+-		.page_size = 256,					\
+-		.flags = (_flags),
+-
+-#define CAT25_INFO(_sector_size, _n_sectors, _page_size, _addr_width, _flags)	\
+-		.sector_size = (_sector_size),				\
+-		.n_sectors = (_n_sectors),				\
+-		.page_size = (_page_size),				\
+-		.addr_width = (_addr_width),				\
+-		.flags = (_flags),
+-
+-#define S3AN_INFO(_jedec_id, _n_sectors, _page_size)			\
+-		.id = {							\
+-			((_jedec_id) >> 16) & 0xff,			\
+-			((_jedec_id) >> 8) & 0xff,			\
+-			(_jedec_id) & 0xff				\
+-			},						\
+-		.id_len = 3,						\
+-		.sector_size = (8*_page_size),				\
+-		.n_sectors = (_n_sectors),				\
+-		.page_size = _page_size,				\
+-		.addr_width = 3,					\
+-		.flags = SPI_NOR_NO_FR | SPI_S3AN,
+-
+ static int
+ is25lp256_post_bfpt_fixups(struct spi_nor *nor,
+ 			   const struct sfdp_parameter_header *bfpt_header,
 diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
-index 7e2d88edf1f1..89b8dd1c8213 100644
+index e1256fe50d12..7e2d88edf1f1 100644
 --- a/drivers/mtd/spi-nor/core.h
 +++ b/drivers/mtd/spi-nor/core.h
-@@ -152,6 +152,20 @@ struct flash_info {
- 		.addr_width = 3,					\
- 		.flags = SPI_NOR_NO_FR | SPI_S3AN,
+@@ -9,12 +9,166 @@
  
+ #include "sfdp.h"
+ 
++#define SPI_NOR_MAX_ID_LEN	6
++
 +/**
-+ * struct spi_nor_manufacturer - SPI NOR manufacturer object
-+ * @name: manufacturer name
-+ * @parts: array of parts supported by this manufacturer
-+ * @nparts: number of entries in the parts array
-+ * @fixups: hooks called at various points in time during spi_nor_scan()
++ * struct spi_nor_fixups - SPI NOR fixup hooks
++ * @default_init: called after default flash parameters init. Used to tweak
++ *                flash parameters when information provided by the flash_info
++ *                table is incomplete or wrong.
++ * @post_bfpt: called after the BFPT table has been parsed
++ * @post_sfdp: called after SFDP has been parsed (is also called for SPI NORs
++ *             that do not support RDSFDP). Typically used to tweak various
++ *             parameters that could not be extracted by other means (i.e.
++ *             when information provided by the SFDP/flash_info tables are
++ *             incomplete or wrong).
++ *
++ * Those hooks can be used to tweak the SPI NOR configuration when the SFDP
++ * table is broken or not available.
 + */
-+struct spi_nor_manufacturer {
-+	const char *name;
-+	const struct flash_info *parts;
-+	unsigned int nparts;
++struct spi_nor_fixups {
++	void (*default_init)(struct spi_nor *nor);
++	int (*post_bfpt)(struct spi_nor *nor,
++			 const struct sfdp_parameter_header *bfpt_header,
++			 const struct sfdp_bfpt *bfpt,
++			 struct spi_nor_flash_parameter *params);
++	void (*post_sfdp)(struct spi_nor *nor);
++};
++
++struct flash_info {
++	char		*name;
++
++	/*
++	 * This array stores the ID bytes.
++	 * The first three bytes are the JEDIC ID.
++	 * JEDEC ID zero means "no ID" (mostly older chips).
++	 */
++	u8		id[SPI_NOR_MAX_ID_LEN];
++	u8		id_len;
++
++	/* The size listed here is what works with SPINOR_OP_SE, which isn't
++	 * necessarily called a "sector" by the vendor.
++	 */
++	unsigned	sector_size;
++	u16		n_sectors;
++
++	u16		page_size;
++	u16		addr_width;
++
++	u32		flags;
++#define SECT_4K			BIT(0)	/* SPINOR_OP_BE_4K works uniformly */
++#define SPI_NOR_NO_ERASE	BIT(1)	/* No erase command needed */
++#define SST_WRITE		BIT(2)	/* use SST byte programming */
++#define SPI_NOR_NO_FR		BIT(3)	/* Can't do fastread */
++#define SECT_4K_PMC		BIT(4)	/* SPINOR_OP_BE_4K_PMC works uniformly */
++#define SPI_NOR_DUAL_READ	BIT(5)	/* Flash supports Dual Read */
++#define SPI_NOR_QUAD_READ	BIT(6)	/* Flash supports Quad Read */
++#define USE_FSR			BIT(7)	/* use flag status register */
++#define SPI_NOR_HAS_LOCK	BIT(8)	/* Flash supports lock/unlock via SR */
++#define SPI_NOR_HAS_TB		BIT(9)	/*
++					 * Flash SR has Top/Bottom (TB) protect
++					 * bit. Must be used with
++					 * SPI_NOR_HAS_LOCK.
++					 */
++#define SPI_NOR_XSR_RDY		BIT(10)	/*
++					 * S3AN flashes have specific opcode to
++					 * read the status register.
++					 * Flags SPI_NOR_XSR_RDY and SPI_S3AN
++					 * use the same bit as one implies the
++					 * other, but we will get rid of
++					 * SPI_S3AN soon.
++					 */
++#define	SPI_S3AN		BIT(10)	/*
++					 * Xilinx Spartan 3AN In-System Flash
++					 * (MFR cannot be used for probing
++					 * because it has the same value as
++					 * ATMEL flashes)
++					 */
++#define SPI_NOR_4B_OPCODES	BIT(11)	/*
++					 * Use dedicated 4byte address op codes
++					 * to support memory size above 128Mib.
++					 */
++#define NO_CHIP_ERASE		BIT(12) /* Chip does not support chip erase */
++#define SPI_NOR_SKIP_SFDP	BIT(13)	/* Skip parsing of SFDP tables */
++#define USE_CLSR		BIT(14)	/* use CLSR command */
++#define SPI_NOR_OCTAL_READ	BIT(15)	/* Flash supports Octal Read */
++#define SPI_NOR_TB_SR_BIT6	BIT(16)	/*
++					 * Top/Bottom (TB) is bit 6 of
++					 * status register. Must be used with
++					 * SPI_NOR_HAS_TB.
++					 */
++
++	/* Part specific fixup hooks. */
 +	const struct spi_nor_fixups *fixups;
 +};
 +
- int spi_nor_write_enable(struct spi_nor *nor);
- int spi_nor_write_disable(struct spi_nor *nor);
- int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable);
-diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
-index de90724f62f1..dde2988a809e 100644
---- a/include/linux/mtd/spi-nor.h
-+++ b/include/linux/mtd/spi-nor.h
-@@ -554,6 +554,12 @@ struct spi_nor_flash_parameter {
-  */
- struct flash_info;
- 
-+/**
-+ * struct spi_nor_manufacturer - Forward declaration of a structure used
-+ * internally by the core and manufacturer drivers.
-+ */
-+struct spi_nor_manufacturer;
++/* Used when the "_ext_id" is two bytes at most */
++#define INFO(_jedec_id, _ext_id, _sector_size, _n_sectors, _flags)	\
++		.id = {							\
++			((_jedec_id) >> 16) & 0xff,			\
++			((_jedec_id) >> 8) & 0xff,			\
++			(_jedec_id) & 0xff,				\
++			((_ext_id) >> 8) & 0xff,			\
++			(_ext_id) & 0xff,				\
++			},						\
++		.id_len = (!(_jedec_id) ? 0 : (3 + ((_ext_id) ? 2 : 0))),	\
++		.sector_size = (_sector_size),				\
++		.n_sectors = (_n_sectors),				\
++		.page_size = 256,					\
++		.flags = (_flags),
 +
- /**
-  * struct spi_nor - Structure for defining a the SPI NOR layer
-  * @mtd:		point to a mtd_info structure
-@@ -564,6 +570,7 @@ struct flash_info;
-  *                      layer is not DMA-able
-  * @bouncebuf_size:	size of the bounce buffer
-  * @info:		spi-nor part JDEC MFR id and other info
-+ * @manufacturer:	spi-nor manufacturer
-  * @page_size:		the page size of the SPI NOR
-  * @addr_width:		number of address bytes
-  * @erase_opcode:	the opcode for erasing a sector
-@@ -591,6 +598,7 @@ struct spi_nor {
- 	u8			*bouncebuf;
- 	size_t			bouncebuf_size;
- 	const struct flash_info	*info;
-+	const struct spi_nor_manufacturer *manufacturer;
- 	u32			page_size;
- 	u8			addr_width;
- 	u8			erase_opcode;
++#define INFO6(_jedec_id, _ext_id, _sector_size, _n_sectors, _flags)	\
++		.id = {							\
++			((_jedec_id) >> 16) & 0xff,			\
++			((_jedec_id) >> 8) & 0xff,			\
++			(_jedec_id) & 0xff,				\
++			((_ext_id) >> 16) & 0xff,			\
++			((_ext_id) >> 8) & 0xff,			\
++			(_ext_id) & 0xff,				\
++			},						\
++		.id_len = 6,						\
++		.sector_size = (_sector_size),				\
++		.n_sectors = (_n_sectors),				\
++		.page_size = 256,					\
++		.flags = (_flags),
++
++#define CAT25_INFO(_sector_size, _n_sectors, _page_size, _addr_width, _flags)	\
++		.sector_size = (_sector_size),				\
++		.n_sectors = (_n_sectors),				\
++		.page_size = (_page_size),				\
++		.addr_width = (_addr_width),				\
++		.flags = (_flags),
++
++#define S3AN_INFO(_jedec_id, _n_sectors, _page_size)			\
++		.id = {							\
++			((_jedec_id) >> 16) & 0xff,			\
++			((_jedec_id) >> 8) & 0xff,			\
++			(_jedec_id) & 0xff				\
++			},						\
++		.id_len = 3,						\
++		.sector_size = (8*_page_size),				\
++		.n_sectors = (_n_sectors),				\
++		.page_size = _page_size,				\
++		.addr_width = 3,					\
++		.flags = SPI_NOR_NO_FR | SPI_S3AN,
++
++int spi_nor_write_enable(struct spi_nor *nor);
++int spi_nor_write_disable(struct spi_nor *nor);
++int spi_nor_en4_ex4_set_4byte(struct spi_nor *nor, bool enable);
++int spi_nor_en4_ex4_wen_set_4byte(struct spi_nor *nor, bool enable);
++int spi_nor_write_ear(struct spi_nor *nor, u8 ear);
++int spi_nor_wait_till_ready(struct spi_nor *nor);
++int spi_nor_lock_and_prep(struct spi_nor *nor);
++void spi_nor_unlock_and_unprep(struct spi_nor *nor);
+ int spi_nor_sr1_bit6_quad_enable(struct spi_nor *nor);
+ int spi_nor_sr2_bit1_quad_enable(struct spi_nor *nor);
+ int spi_nor_sr2_bit7_quad_enable(struct spi_nor *nor);
+ 
++int spi_nor_xread_sr(struct spi_nor *nor, u8 *sr);
+ ssize_t spi_nor_read_data(struct spi_nor *nor, loff_t from, size_t len,
+ 			  u8 *buf);
++ssize_t spi_nor_write_data(struct spi_nor *nor, loff_t to, size_t len,
++			   const u8 *buf);
+ 
+ int spi_nor_hwcaps_read2cmd(u32 hwcaps);
+ u8 spi_nor_convert_3to4_read(u8 opcode);
+@@ -33,4 +187,9 @@ int spi_nor_post_bfpt_fixups(struct spi_nor *nor,
+ 			     const struct sfdp_bfpt *bfpt,
+ 			     struct spi_nor_flash_parameter *params);
+ 
++static struct spi_nor __maybe_unused *mtd_to_spi_nor(struct mtd_info *mtd)
++{
++	return mtd->priv;
++}
++
+ #endif /* __LINUX_MTD_SPI_NOR_INTERNAL_H */
 -- 
 2.23.0
 
