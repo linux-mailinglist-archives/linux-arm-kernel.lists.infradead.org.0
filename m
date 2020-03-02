@@ -2,82 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D205176564
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 21:54:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0AE3176576
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Mar 2020 21:57:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4bbwK6ISelaRzkEyL11XanCAOgmnSuStpQiZZjBqgCg=; b=n0/ZLptj7DWF3SCROm0fU5NGK
-	HNMKSYZa2L0FVglGr2GjUvPoEOUnQ28dM2/nNFt1SBeaYRMCZ0dr4zSRKOZ1m0tlatSBL6DLsYx9b
-	Zaxgg4aQOqPxs8gXQvIdOzghVgSCo8j77tjjFkU3QneEX5owHcgpQSlIe/oozYvgXqJjWEK3txVC6
-	O2luOk6wWJDYjfkYmoPuSJmJsX6Jb2ydQfdrgmozQf1yx94lKObKLv3nRwbzN44+b85NaUVDJw9hS
-	oaaIVzcB8XhCCvk0SVTo4AkIkIDIQLATGs8pavWQmjHXg2fThirN/eEljPFrvg9QU/frg3KXT/lYA
-	I/5pKl6Wg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Du7ozFtOfdkV8g38qmtwfAHvilxuDyohGkkg8HuA63Q=; b=J5OygncguMyIcN
+	XFU+RCzu7PLhyWQgf+QfF4IVRD+M060Puq24InTPDM/ZGYZJyIg7YX80XKcz25cz9ILF+UwI9cUHF
+	QiyeNxSja5Fuju9QtCnhopBiu9+XLZw5UM88k+5VrHL2TyyBEepKbGiKVK9qg2kzURFTxJ8ckoLBp
+	9oOTV5+bVvi+NQwXal/QzHJSuFL40l5KXZTIxafCuiZe6U078UuQDdzEnP3vLLRLs/3djcpSf+vwQ
+	wQv7fqJEPO4ncfpL7l9izct5TIpOFpimPx0+iMyiCVcvMpFXLCnNibt+rs6QC1sw/vKLXx6JLczRb
+	U/j+gFGxJnfqXEfLAO3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8s58-0007U2-HD; Mon, 02 Mar 2020 20:54:30 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1j8s8M-0000f0-E4; Mon, 02 Mar 2020 20:57:50 +0000
+Received: from mail-eopbgr70052.outbound.protection.outlook.com ([40.107.7.52]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8s51-0007Sy-7i
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 20:54:25 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1583182459; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=Knl8RVMk3wTYhT3uRza+hAi92pQCSxF06lNY8i4CvdI=;
- b=b7XlpC6wWR+KMH7iZ6umqUgg/Rll2b2T+Yl9agpCiKi18jR2lNpZDr3Knw86sHEbrD7gtahH
- XkQctUo17DPaouHHYG2CwfFbYRh2WT3anD7R1b6tDbcXpa1FKoLngyQCLR0SxRZKInmFpYWX
- Pdc1EB7GSdHMBo02pIdZGRhedjQ=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e5d7279.7f150bed0340-smtp-out-n03;
- Mon, 02 Mar 2020 20:54:17 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 2502FC433A2; Mon,  2 Mar 2020 20:54:17 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: rishabhb)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 14F58C43383;
- Mon,  2 Mar 2020 20:54:16 +0000 (UTC)
+ id 1j8s8F-0000dm-0t
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Mar 2020 20:57:44 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ekqtjVewMFrRlkHGe+CPUP5whEzhenk9iGiZeGfHgS8Gwl9eSZfqYJlQGbPBH99eCYyVwbRzdGrfNT6fDtqj7BKDiqEgVKlPXwxFbIqREVUhjlyFvVAPDOzNsZU8Eu2NdtMYx4NsX7htcwZaUvuZAIAhn3qelGdSbVmEe90YcN6UkjOHNZdtChslCwGIkLB7X/e1pCwz+yUDAoZnLPBuOxbXOV8I19nG8FAPujfM7Y0q6ioRPRLBmVeDtOrlrrQFiZYGjxzIbm3zay7gNgnYBAGi8IKlVtBIg0FIz/Hkd9ILI+zpUO7UMJ+lm2ntqLuvSCrDrhL/m0ET5jHPM+nBCg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KwW0WkLK7AMbPdbcN/MPMhAV7X0xRa9rgVZuqxdNv4c=;
+ b=JOFFLpYfynEN6DOYbytnBrsq1sUpi4SHuIuKa2n9m4Q7AZZod0GrwMndP5phi1vla8MIA8pHQJ0RGreuNe5DC38JrO097a/34MFJvlzS8v9MKCSzQA5SyZXTl/ehEWddfPZ28/W5IFgBw3fDIslwi11ZLFIS3YbuM6buHsiA7duUpINXnnQ/fcuu/YwQMaUZ+QiqeAYOwJvgwvh7dJd5zYALb9aGtRslLe8E41z9v3HJe4rnIS3XYGEPcKbSWTdflLJTsILMJbv2R1Po0JUJmqftc0V7LqRPcPfqA6RJ1XDMgPhFD59RVK0CRA4G5RUUFTA/22IczbmlpXYUU7r20g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KwW0WkLK7AMbPdbcN/MPMhAV7X0xRa9rgVZuqxdNv4c=;
+ b=kH7GkTLAiiqqX3GPytDj6tG+nEh838Q0ZA9x3fUBmzxKUHjcZ6WqDOEbgXKBqNNALTQd3KUb6WHMz1Hw8s9i9g7HIfpZtRomrhHQZcGrnV2/LoUM91LLCWER23SfKV0Dw5pas4EW0yPKVr19aWVQ/UPKs+nNlEks6GXgT13jfCU=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=daniel.baluta@oss.nxp.com; 
+Received: from VI1PR0402MB3839.eurprd04.prod.outlook.com (52.134.16.147) by
+ VI1PR0402MB3453.eurprd04.prod.outlook.com (52.134.3.33) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.18; Mon, 2 Mar 2020 20:57:36 +0000
+Received: from VI1PR0402MB3839.eurprd04.prod.outlook.com
+ ([fe80::35d0:31bc:91d9:ceb0]) by VI1PR0402MB3839.eurprd04.prod.outlook.com
+ ([fe80::35d0:31bc:91d9:ceb0%7]) with mapi id 15.20.2772.019; Mon, 2 Mar 2020
+ 20:57:36 +0000
+From: Daniel Baluta <daniel.baluta@oss.nxp.com>
+To: rjw@rjwysocki.net,
+	len.brown@intel.com,
+	pavel@ucw.cz
+Subject: [RFC PATCH 0/2] Introduce multi PM domains helpers
+Date: Mon,  2 Mar 2020 22:56:58 +0200
+Message-Id: <20200302205700.29746-1-daniel.baluta@oss.nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: AM4PR05CA0031.eurprd05.prod.outlook.com (2603:10a6:205::44)
+ To VI1PR0402MB3839.eurprd04.prod.outlook.com
+ (2603:10a6:803:21::19)
 MIME-Version: 1.0
-Date: Mon, 02 Mar 2020 12:54:16 -0800
-From: rishabhb@codeaurora.org
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 6/6] remoteproc: qcom: Add notification types to SSR
-In-Reply-To: <20200228183832.GA23026@xps15>
-References: <1582167465-2549-1-git-send-email-sidgup@codeaurora.org>
- <1582167465-2549-7-git-send-email-sidgup@codeaurora.org>
- <20200227215940.GC20116@xps15>
- <1a615fcd5a5c435d1d8babe8d5c3f8c3@codeaurora.org>
- <20200228183832.GA23026@xps15>
-Message-ID: <cac45f2726a272ccd0ce82e12e46756f@codeaurora.org>
-X-Sender: rishabhb@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from fsr-ub1864-103.ro-buh02.nxp.com (89.37.124.34) by
+ AM4PR05CA0031.eurprd05.prod.outlook.com (2603:10a6:205::44) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.15 via Frontend Transport; Mon, 2 Mar 2020 20:57:34 +0000
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [89.37.124.34]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 6ab0dde7-917b-48cd-b118-08d7beec5636
+X-MS-TrafficTypeDiagnostic: VI1PR0402MB3453:|VI1PR0402MB3453:
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB3453AED7CF12DDDE9DFCD42DB8E70@VI1PR0402MB3453.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Forefront-PRVS: 033054F29A
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(396003)(376002)(346002)(136003)(366004)(199004)(189003)(2906002)(26005)(6486002)(4326008)(6506007)(5660300002)(186003)(16526019)(478600001)(7416002)(6666004)(1076003)(2616005)(66946007)(66556008)(66476007)(44832011)(8936002)(4744005)(8676002)(86362001)(81166006)(81156014)(6512007)(52116002)(956004)(316002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3453;
+ H:VI1PR0402MB3839.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; MX:1; 
+Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: fn8ap5iZRidIEqf7abUkOuBDrwdeI/q2QYHPSy1ZVx6oCAafg2N2wBGTIZAFa5syO/5wy8Z+zYNIgRaGFBpmFVe80HsjakIXlO4hcIA7fHMj1j7Ca+QG4pfDZEzyx/ZnOytwG+nrCnv44qqvkog9qEYtD6OGyAKkRwrqMUnOiBMRpe+zoIkHOJIzg7W+QvOy71+At90H6vSuyvLUYmUPpxPo8KlsRbvqoQw2bcVg1RdV6zrIhgUW9oEesR2/2FSvZMaev1cdQ7uoVpCVZwBVYWFPH5wdiR99+TVOpIcpy0lSA7M4LNs7oBjdI8ByhbambvgzUd12fTpYhPURfEM99jpX9JzVCECOwq78FUFQildN+zwfLFZmI+P6kQrX/MELUSyqTKGfGLVzdmTFDnsKxdewHeQ76PG6BrsLQz3NHckXk+4o5rYwREIxmwLu/V5r
+X-MS-Exchange-AntiSpam-MessageData: tdrkMUdFeQq2dWfsHMaXYlh070IfB+/WHhT+wjjbdqXKUhPmZqIvwh9bYwbr8TYoiEfU1YLm2uyvoFEcREcDVN+Tr3ASSX9V4Vpw78BboyK0bTp9jYBvR26nCMvJOLps4ReIxwosy5LtXHEXjFPVww==
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6ab0dde7-917b-48cd-b118-08d7beec5636
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 Mar 2020 20:57:36.7356 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: fp3s6thvPf2NYNYaj8ew7Iuu2D0J4xgpQAwkwauBU21JHoCOL237z/II6WZzWGT496XpeCWnZGNxE8O+MB0Fvg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3453
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_125423_342898_72C9B260 
-X-CRM114-Status: GOOD (  32.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_125743_144289_50004C13 
+X-CRM114-Status: UNSURE (   6.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [40.107.7.52 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,214 +124,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, tsoni@codeaurora.org, linux-arm-msm@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, agross@kernel.org,
- Siddharth Gupta <sidgup@codeaurora.org>, psodagud@codeaurora.org,
+Cc: aisheng.dong@nxp.com, daniel.baluta@gmail.com, ulf.hansson@linaro.org,
+ festevam@gmail.com, alsa-devel@alsa-project.org, linux-pm@vger.kernel.org,
+ gregkh@linuxfoundation.org, s.hauer@pengutronix.de, khilman@kernel.org,
+ ranjani.sridharan@linux.intel.com, linux-kernel@vger.kernel.org,
+ Daniel Baluta <daniel.baluta@nxp.com>, pierre-louis.bossart@linux.intel.com,
+ paul.olaru@nxp.com, linux-imx@nxp.com, kernel@pengutronix.de,
+ shawnguo@kernel.org, shengjiu.wang@nxp.com,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-28 10:38, Mathieu Poirier wrote:
-> On Thu, Feb 27, 2020 at 04:00:21PM -0800, rishabhb@codeaurora.org 
-> wrote:
->> On 2020-02-27 13:59, Mathieu Poirier wrote:
->> > On Wed, Feb 19, 2020 at 06:57:45PM -0800, Siddharth Gupta wrote:
->> > > The SSR subdevice only adds callback for the unprepare event. Add
->> > > callbacks
->> > > for unprepare, start and prepare events. The client driver for a
->> > > particular
->> > > remoteproc might be interested in knowing the status of the remoteproc
->> > > while undergoing SSR, not just when the remoteproc has finished
->> > > shutting
->> > > down.
->> > >
->> > > Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
->> > > ---
->> > >  drivers/remoteproc/qcom_common.c | 39
->> > > +++++++++++++++++++++++++++++++++++----
->> > >  include/linux/remoteproc.h       | 15 +++++++++++++++
->> > >  2 files changed, 50 insertions(+), 4 deletions(-)
->> > >
->> > > diff --git a/drivers/remoteproc/qcom_common.c
->> > > b/drivers/remoteproc/qcom_common.c
->> > > index 6714f27..6f04a5b 100644
->> > > --- a/drivers/remoteproc/qcom_common.c
->> > > +++ b/drivers/remoteproc/qcom_common.c
->> > > @@ -183,9 +183,9 @@ EXPORT_SYMBOL_GPL(qcom_remove_smd_subdev);
->> > >   *
->> > >   * Returns pointer to srcu notifier head on success, ERR_PTR on
->> > > failure.
->> > >   *
->> > > - * This registers the @notify function as handler for restart
->> > > notifications. As
->> > > - * remote processors are stopped this function will be called, with
->> > > the rproc
->> > > - * pointer passed as a parameter.
->> > > + * This registers the @notify function as handler for
->> > > powerup/shutdown
->> > > + * notifications. This function will be invoked inside the
->> > > callbacks registered
->> > > + * for the ssr subdevice, with the rproc pointer passed as a
->> > > parameter.
->> > >   */
->> > >  void *qcom_register_ssr_notifier(struct rproc *rproc, struct
->> > > notifier_block *nb)
->> > >  {
->> > > @@ -227,11 +227,39 @@ int qcom_unregister_ssr_notifier(void *notify,
->> > > struct notifier_block *nb)
->> > >  }
->> > >  EXPORT_SYMBOL_GPL(qcom_unregister_ssr_notifier);
->> > >
->> > > +static int ssr_notify_prepare(struct rproc_subdev *subdev)
->> > > +{
->> > > +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> > > +
->> > > +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> > > +				 RPROC_BEFORE_POWERUP, (void *)ssr->name);
->> > > +	return 0;
->> > > +}
->> > > +
->> > > +static int ssr_notify_start(struct rproc_subdev *subdev)
->> > > +{
->> > > +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> > > +
->> > > +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> > > +				 RPROC_AFTER_POWERUP, (void *)ssr->name);
->> > > +	return 0;
->> > > +}
->> > > +
->> > > +static void ssr_notify_stop(struct rproc_subdev *subdev, bool
->> > > crashed)
->> > > +{
->> > > +	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> > > +
->> > > +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> > > +				 RPROC_BEFORE_SHUTDOWN, (void *)ssr->name);
->> > > +}
->> > > +
->> > > +
->> > >  static void ssr_notify_unprepare(struct rproc_subdev *subdev)
->> > >  {
->> > >  	struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> > >
->> > > -	srcu_notifier_call_chain(ssr->rproc_notif_list, 0, (void
->> > > *)ssr->name);
->> > > +	srcu_notifier_call_chain(ssr->rproc_notif_list,
->> > > +				 RPROC_AFTER_SHUTDOWN, (void *)ssr->name);
->> > >  }
->> > >
->> > >  /**
->> > > @@ -248,6 +276,9 @@ void qcom_add_ssr_subdev(struct rproc *rproc,
->> > > struct qcom_rproc_ssr *ssr,
->> > >  {
->> > >  	ssr->name = ssr_name;
->> > >  	ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
->> > > +	ssr->subdev.prepare = ssr_notify_prepare;
->> > > +	ssr->subdev.start = ssr_notify_start;
->> > > +	ssr->subdev.stop = ssr_notify_stop;
->> >
->> > Now that I have a better understanding of what this patchset is doing, I
->> > realise
->> > my comments in patch 04 won't work.  To differentiate the subdevs of an
->> > rproc I
->> > suggest to wrap them in a generic structure with a type and an enum.
->> > That way
->> > you can differenciate between subdevices without having to add to the
->> > core.
->> Ok. I can try that.
->> >
->> > That being said, I don't understand what patches 5 and 6 are doing...
->> > Registering with the global ssr_notifiers allowed to gracefully shutdown
->> > all the
->> > MCUs in the system when one of them would go down.  But now that we are
->> > using
->> > the notifier on a per MCU, I really don't see why each subdev couldn't
->> > implement
->> > the right prepare/start/stop functions.
->> >
->> > Am I missing something here?
->> We only want kernel clients to be notified when the Remoteproc they 
->> are
->> interested
->> in changes state. For e.g. audio kernel driver should be notified when 
->> audio
->> processor goes down but it does not care about any other remoteproc.
->> If you are suggesting that these kernel clients be added as subdevices 
->> then
->> we will end up having many subdevices registered to each remoteproc. 
->> So we
->> implemented a notifier chain per Remoteproc. This keeps the SSR
->> notifications as
->> the subdevice per remoteproc, and all interested clients can register 
->> to it.
-> 
-> It seems like I am missing information...  Your are referring to 
-> "kernel
-> clients" and as such I must assume some drivers that are not part of 
-> the
-> remoteproc/rpmsg subsystems are calling qcom_register_ssr_notifier().  
-> I must
-Yes these are not part of remoteproc framework and they will register 
-for notifications.
-> also assume these drivers (or that functionality) are not yet upsream 
-> because
-> all I can see calling qcom_register_ssr_notifier() is 
-> qcom_glink_ssr_probe().
-Correct.These are not upstreamed.
-> 
-> Speaking of which, what is the role of the qcom_glink_ssr_driver?  Is 
-> the glink
-> device that driver is handling the same as the glink device registed in
-> adsp_probe() and q6v5_probe()?
-glink ssr driver will send out notifications to remoteprocs that have 
-opened the
-"glink_ssr" channel that some subsystem has gone down or booted up. This 
-helps notify
-neighboring subsystems about change in state of any other subsystem.
-> 
->> >
->> >
->> > >  	ssr->subdev.unprepare = ssr_notify_unprepare;
->> > >  	ssr->rproc_notif_list = kzalloc(sizeof(struct srcu_notifier_head),
->> > >  								GFP_KERNEL);
->> > > diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
->> > > index e2f60cc..4be4478 100644
->> > > --- a/include/linux/remoteproc.h
->> > > +++ b/include/linux/remoteproc.h
->> > > @@ -449,6 +449,21 @@ struct rproc_dump_segment {
->> > >  };
->> > >
->> > >  /**
->> > > + * enum rproc_notif_type - Different stages of remoteproc
->> > > notifications
->> > > + * @RPROC_BEFORE_SHUTDOWN:	unprepare stage of  remoteproc
->> > > + * @RPROC_AFTER_SHUTDOWN:	stop stage of  remoteproc
->> > > + * @RPROC_BEFORE_POWERUP:	prepare stage of  remoteproc
->> > > + * @RPROC_AFTER_POWERUP:	start stage of  remoteproc
->> > > + */
->> > > +enum rproc_notif_type {
->> > > +	RPROC_BEFORE_SHUTDOWN,
->> > > +	RPROC_AFTER_SHUTDOWN,
->> > > +	RPROC_BEFORE_POWERUP,
->> > > +	RPROC_AFTER_POWERUP,
->> > > +	RPROC_MAX
->> > > +};
->> > > +
->> > > +/**
->> > >   * struct rproc - represents a physical remote processor device
->> > >   * @node: list node of this rproc object
->> > >   * @domain: iommu domain
->> > > --
->> > > Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
->> > > a Linux Foundation Collaborative Project
->> > >
->> > > _______________________________________________
->> > > linux-arm-kernel mailing list
->> > > linux-arm-kernel@lists.infradead.org
->> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+From: Daniel Baluta <daniel.baluta@nxp.com>
+
+i.MX8QXP/i.MX8QM has IPs that need multiple power domains to be up
+in order to work. In order to help drivers, we introduce multi PM
+domains helpers that are able to activate/deactivate multi PM domains.
+
+First patch introduces the helpers and second patch demonstrates how
+a driver can use them instead of hardcoding the PM domains handling.
+
+Daniel Baluta (2):
+  PM / domains: Introduce multi PM domains helpers
+  ASoC: SOF: Use multi PM domains helpers
+
+ drivers/base/power/common.c | 93 +++++++++++++++++++++++++++++++++++++
+ include/linux/pm_domain.h   | 19 ++++++++
+ sound/soc/sof/imx/imx8.c    | 54 +++------------------
+ 3 files changed, 118 insertions(+), 48 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
