@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF487177DAB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:44:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 332C7177DAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:44:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LQQQzL5hHeWP9ng/SSfe2nBH/7WUFBwLEV/K3AocRho=; b=ZZppUBDwVDLIwW
-	2iN/uXG5HFEStrULf1imnniRmaH2gIY//moZUnmtk9ziqki4L0jFqo+Y9HCOPP+GOdcN06LNJpHEI
-	zZSCahSBqJnklxBdDBwl1vPMhO2ZuGg38Q0DCv2fmMeUxFX/i75rJNpn+uCuP0zQyE7w3KagQSuB0
-	jqTPwmGVEfgJEeXWC3N+HhvZOUnnCgak0ozbM0RaMJUrjcibzEWNfW1F3CxkbB0TXp4tpqExGcR6d
-	2lk9V017+WY7f2dU3FQ/870gqcmy6tEevId3nNIqvkfk2oJeEMsl1NJL6pIzRpOsRP74LEzEfZl9C
-	QUVLEMNscpMd+bhKmbCg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dZkYcv2BzUggw33ibDWMULxiSqrWkzCUzat9jTk/uY0=; b=YImD5FPo4QnMHq
+	RjYVf7IrY+QoHNs3rwYdvhNfrqDoNoRfU2wiPqypaKqVZv9fB8triSM7bDJwKLc5FbLs5ufavYvUs
+	n9AIOo0y//a+L6XJAbqVzlVQ0uA5QvLp9iugzKeg3ZW7+IFxv1mTMr0OXOwONo6rFYsvzdFYZo+Zq
+	W9qhjI/0bdI/cA8gVs/bDaW13CNmS5WzdW/o1I/HbefkzAjbsKJST8kKKWcLu0eXYIP2sSo/duhc0
+	kuG9WOQg00siUBKNAvITUrmxMpXa7P6+q4t9dwICE20LghDUN46y1Srh3Vy0gKQUGzwFwEoeAJ8m1
+	PrD43U5wVF8Mm+M5in1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9BaE-0006vV-8L; Tue, 03 Mar 2020 17:43:54 +0000
+	id 1j9BaT-0007FZ-DN; Tue, 03 Mar 2020 17:44:09 +0000
 Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9BZn-0006jC-AJ
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:43:29 +0000
+ id 1j9BZn-0006j9-HC
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:43:31 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id D7C1C231D9;
- Tue,  3 Mar 2020 18:43:18 +0100 (CET)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 07A902327F;
+ Tue,  3 Mar 2020 18:43:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1583257399;
+ s=mail2016061301; t=1583257400;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=/SS0Mpitdw47OknrMdnyVNGnPtzEQcsJ+qOlq2fN2jQ=;
- b=EMPB6VLynHXmYFxKp/ONkM14baAzs5ZaCvqFD/iFs09cuXslOkpOh9Iw3zyk+Pt/xYIfXK
- 0fkrfGlazORExVvOcTQEwlC+8NmN3+DP/MFu53+G/CkM9/Zj+jA8EgeHYcN2D1fCR5681+
- /6RGigOxmRBKGX4DyhS21DvMk2DCCc4=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=s6EOAobt5saGFt58QDGrFmkjtzz3qIh/p10CWvZHnSU=;
+ b=FCX6N1U6d7uPfzP7Q6kWpXhw428mP88+dxCD0VYxh+CnjIwMKR1HBskjC+bxADMn1TTUN3
+ XviKeL1ET08nf50gvQOo00tWTEkxdY1CA0TzYIZYiFLVtxg+lLe1atkbjIg+YSTH+/YpTB
+ sVuHnjbL6iIgLXYImtu0vozQU9xHvZo=
 From: Michael Walle <michael@walle.cc>
 To: linux-serial@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 0/9] tty: serial: fsl_lpuart various fixes and LS1028A
- support
-Date: Tue,  3 Mar 2020 18:42:57 +0100
-Message-Id: <20200303174306.6015-1-michael@walle.cc>
+Subject: [PATCH v3 1/9] Revert "tty: serial: fsl_lpuart: drop EARLYCON_DECLARE"
+Date: Tue,  3 Mar 2020 18:42:58 +0100
+Message-Id: <20200303174306.6015-2-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200303174306.6015-1-michael@walle.cc>
+References: <20200303174306.6015-1-michael@walle.cc>
 MIME-Version: 1.0
 X-Spamd-Bar: ++++++
 X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: D7C1C231D9
+X-Rspamd-Queue-Id: 07A902327F
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.504]; DKIM_SIGNED(0.00)[];
+ NEURAL_SPAM(0.00)[0.494]; DKIM_SIGNED(0.00)[];
  RCPT_COUNT_TWELVE(0.00)[14]; MID_CONTAINS_FROM(1.00)[];
  RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
  MIME_TRACE(0.00)[0:+];
@@ -66,8 +68,8 @@ X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_094327_507593_C964C7D4 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20200303_094327_750549_4D38AF55 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -105,47 +107,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These are various fixes for problems I found during development of the
-LS1028A support for the LPUART.
+This reverts commit a659652f6169240a5818cb244b280c5a362ef5a4.
 
-Also, I'm not sure if this series should be split between the "tty:
-serial: fsl_lpuart" patches and the devicetree patches. So unless
-someone tell me otherwise I keep them together to avoid mention any
-dependencies.
+This broke the earlycon on LS1021A processors because the order of the
+earlycon_setup() functions were changed. Before the commit the normal
+lpuart32_early_console_setup() was called. After the commit the
+lpuart32_imx_early_console_setup() is called instead.
 
-Changes since v2:
-Changed DMA channel request handling. Spotted by Rob Herring. Thanks.
+Fixes: a659652f6169 ("tty: serial: fsl_lpuart: drop EARLYCON_DECLARE")
+Signed-off-by: Michael Walle <michael@walle.cc>
+---
+ drivers/tty/serial/fsl_lpuart.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Modified patches:
-  tty: serial: fsl_lpuart: handle EPROBE_DEFER for DMA
-
-Changes since v1:
-DMA support fixes.
-
-New patches:
-  tty: serial: fsl_lpuart: fix DMA mapping
-  arm64: dts: ls1028a: add "fsl,vf610-edma" compatible
-
-Modified patches:
-  arm64: dts: ls1028a: add missing LPUART nodes
-   - add dma phandles
-
-Michael Walle (9):
-  Revert "tty: serial: fsl_lpuart: drop EARLYCON_DECLARE"
-  tty: serial: fsl_lpuart: free IDs allocated by IDA
-  tty: serial: fsl_lpuart: handle EPROBE_DEFER for DMA
-  tty: serial: fsl_lpuart: fix DMA mapping
-  dt-bindings: serial: lpuart: add ls1028a compatibility
-  tty: serial: fsl_lpuart: add LS1028A support
-  tty: serial: fsl_lpuart: add LS1028A earlycon support
-  arm64: dts: ls1028a: add "fsl,vf610-edma" compatible
-  arm64: dts: ls1028a: add missing LPUART nodes
-
- .../devicetree/bindings/serial/fsl-lpuart.txt |  10 +-
- .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi |  75 +++++-
- drivers/tty/serial/fsl_lpuart.c               | 251 ++++++++++++------
- 3 files changed, 255 insertions(+), 81 deletions(-)
-
+diff --git a/drivers/tty/serial/fsl_lpuart.c b/drivers/tty/serial/fsl_lpuart.c
+index 91e2805e6441..27fdc131c352 100644
+--- a/drivers/tty/serial/fsl_lpuart.c
++++ b/drivers/tty/serial/fsl_lpuart.c
+@@ -2390,6 +2390,8 @@ static int __init lpuart32_imx_early_console_setup(struct earlycon_device *devic
+ OF_EARLYCON_DECLARE(lpuart, "fsl,vf610-lpuart", lpuart_early_console_setup);
+ OF_EARLYCON_DECLARE(lpuart32, "fsl,ls1021a-lpuart", lpuart32_early_console_setup);
+ OF_EARLYCON_DECLARE(lpuart32, "fsl,imx7ulp-lpuart", lpuart32_imx_early_console_setup);
++EARLYCON_DECLARE(lpuart, lpuart_early_console_setup);
++EARLYCON_DECLARE(lpuart32, lpuart32_early_console_setup);
+ 
+ #define LPUART_CONSOLE	(&lpuart_console)
+ #define LPUART32_CONSOLE	(&lpuart32_console)
 -- 
 2.20.1
 
