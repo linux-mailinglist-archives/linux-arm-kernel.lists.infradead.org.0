@@ -2,85 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0241177532
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 12:18:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4767C17755C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 12:37:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CuSRT+3CvoYURO9DFFpcVEskjI9ZAcp08+K4VwHRNjo=; b=CaJZ98IfkWU6In
-	p565ciDk36Nq6M+hDKEzsRMmolMBteFpj37R2lHiw0DHLtszZxwYkCdVkImmH/xiip6jW9e6xJ9Og
-	aTTtTnprMr9Ga+rpfG0Vk7zK2hTwsrzv4hmUVjtFGOe7HP4lrsdSC+XsAUPdb6wzG2HIfoAyZ8zUX
-	4lteV+u8uuBOQKE3NxeRfbLZvj5ESStDhxGsjRWh7tdTAIuO64S0J6vJJYbaZPzqGQqtJgRQpoG0x
-	+u4Gf4BoCrrUzDTQLOAFz7ADq1hbT8Rb10aMLrltr4QixCI9fe2Z6vCONg4AxjRr0ymDa3ab92ru7
-	zQf40x7CUfWH7JWUrVEQ==;
+	List-Owner; bh=smAtNrmtkcxrKZxf00segBSHGjCZ+sfMn98SO8nqMC8=; b=bZlvrxZh8qKxYl
+	e420jXvBExsxaVgG5mFvh1dkr0BFwoEwBxgMJFGPwAdFaHm2GZfBywH92Zznv1mgsTa1YiqZtcydw
+	zthZnWt20lIOki0bjhjqov/hMXPYRmpFwuPrm0Uganyv39IPGZGcraCxuaIIUPsIainuNOqvdK+Gs
+	KYgKo/l8Fniozc1vBjngsWzSybM3XAYbFhcdj1axyQfMZVsPm666231S/htoSpcCgWs7nPLliexOo
+	U6dH/NHoUDSn5/V/z7WAfPzFaw9SUCXaVP1JE0x/ISQUJeK9iE3C/OAPleXY7Fuy5BxuPvsAa8wPS
+	1rhsMq5/t23z9rsGmECA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j95Yt-0006xv-Bm; Tue, 03 Mar 2020 11:18:07 +0000
-Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+	id 1j95rn-0005Vx-4G; Tue, 03 Mar 2020 11:37:39 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j95Ym-0006xB-N2
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 11:18:02 +0000
-Received: by mail-pg1-x530.google.com with SMTP id u12so1384114pgb.10
+ id 1j95re-0005Ui-0A
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 11:37:31 +0000
+Received: by mail-oi1-x242.google.com with SMTP id t24so2688336oij.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 03:18:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=6LpPu+7mzHDbzzNZ3vNWrKJy3N6+UnYE5W0wfZ5TDvA=;
- b=X9DQytk52qZ6DQRmc5okitpNMgHqG6s8o4bhvGC/XRa0ECQDG91tyC0uTDPgvD5O1k
- AUuMxfLAJyrLqXfrAp5dKlhSuhJd+75XMDpEpOhrHrfJ3hNdoOJBM9SxQNB3jHDPbsD8
- DhiRPCC1dISZWIga0LihFWuRrO+DF9g8G3LAFp5NaoxJuVYG6DS7xohhSh+k7UWyF562
- YPqgCzzzuUmbeQKhJvCRRs0x4f4+fnOrjIpvEtN8uYJfnHqRy6MgFt55MQn41GYLpstR
- fMeTQE2yvj0EyS4Bx0uHfr0FdNMEMZDwY5XPTrtOrDQpG/auu4hOrJn2TkWWAD4aZ+Pr
- r/pA==
+ Tue, 03 Mar 2020 03:37:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=k+7EZFBiFif7xQeUe4GpZ6ciehpKYBuj0QPVblw8KLM=;
+ b=hxUDgjb0GijoghKV1HAvP6dWLy4nJPtvkbOPQbai7sKHabZZnmnIFZxYyxA45YMHk3
+ UXAx0X3dpePSlpGVc3vswH4SC4MKZ2oAZDwMm/K4voZqNEjG7flTbbzzc+mkzA5GJv8e
+ 4w2tnU5U7bV2GZDxXCltjqGVxrczax6CSzebA=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6LpPu+7mzHDbzzNZ3vNWrKJy3N6+UnYE5W0wfZ5TDvA=;
- b=F05wCykQs6Rr7KHaQoN1pp175MJrzeFE1u+JlA/p/w0Jc07Q9sz9Q8eaSdbRH42wkc
- 0rfOsDnxc4AFlguy1Opv3kSzSjghuB2Le6kEhs0wvpI6iH7xVVFJGwVVbLZaPYKCRCjt
- Nf2GyVTTPPRBMfteB8q9nd3otF3AQ16zry0xsuGpOOSj/UrY+f4+5ZvtO6PUTgwcVCyb
- z9xHsBb1knaPLRHQzlDxKk47qUizHjp8OpQzji0jf3PMrjqOdJK4nJNaJPq850f+lwrG
- HvARCYiNJhmmYc+zVAnA+fgUwJ/eI3GeCD52kpvk/66wMe0bLzHdFQULwlnu6SPIyBh+
- JbWg==
-X-Gm-Message-State: ANhLgQ32nvckD8hIi0QLrdDBn0xLpcKHxGuZd48pet+CwKa1vzYPW2Rz
- kaj+eJ0kefW84inLUR0sgyDKyg==
-X-Google-Smtp-Source: ADFU+vtX4ocvGPjD4lCipeCvf6Ndh/Qq0CPh8PdfYnJjc4X0n5KlKRfZpxjGrKkVvOS0v1sBH1rFJA==
-X-Received: by 2002:a63:4103:: with SMTP id o3mr3271939pga.199.1583234279527; 
- Tue, 03 Mar 2020 03:17:59 -0800 (PST)
-Received: from localhost ([122.167.24.230])
- by smtp.gmail.com with ESMTPSA id d4sm2138730pjg.19.2020.03.03.03.17.58
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 03 Mar 2020 03:17:58 -0800 (PST)
-Date: Tue, 3 Mar 2020 16:47:56 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH 0/3] Convert i.MX6Q cpufreq to use nvmem API
-Message-ID: <20200303111756.eikekt7vg2js7emw@vireshk-i7>
-References: <1583201690-16068-1-git-send-email-peng.fan@nxp.com>
- <20200303054547.4wpnzmgnuo7jd2qa@vireshk-i7>
- <AM0PR04MB4481FDAD041F6476FFFC0F6788E40@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=k+7EZFBiFif7xQeUe4GpZ6ciehpKYBuj0QPVblw8KLM=;
+ b=SE5rP2Oggmx1GnTPV/FDdSmbdzXnbNSV+02oppyt18dpTHSY2sBxuLw7N5fVT5z9At
+ IDQpgllWxfxNxEIFxFwKDWpMjWLy+CLs0A4DKzrpbgnJ6AWsZUIeX7us3nx7mjtYUTZK
+ qVAY3mIVFDlzH5U8qBxp91jwsdBQYGb40e7bncZltpx/NGXh6GMBgEo8wIu39bHQGYT/
+ NsBrOeXgv1y+D/UjuYG47/y39G82pQyKo95e7rOibXQlJA0zYyjulhLnVtGEo3UVvw6K
+ HGSmsawsS/Ln51glrxmjXUsPQckKFP7j+yWp1iHaDUvYCkZPree2vy2UR0f71NXFCDTd
+ lTSQ==
+X-Gm-Message-State: ANhLgQ25UrnXvCVivJEaWHU0PbxWsfTGGd3M4fEhamIps8GiIiK6tPON
+ 4Etm1D1sT6z2UVX7OVWs95wFk5mDVx88epq1QtV2zg==
+X-Google-Smtp-Source: ADFU+vtCxoEgf5346cm+VXhWA1IH5IP1eWOkC6Suiz3rARgPmOfaeTRZvJ3Iu9w2Wykvr1k4arwzlQmmyFWKQTd+7/k=
+X-Received: by 2002:a05:6808:319:: with SMTP id
+ i25mr2173013oie.128.1583235448053; 
+ Tue, 03 Mar 2020 03:37:28 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AM0PR04MB4481FDAD041F6476FFFC0F6788E40@AM0PR04MB4481.eurprd04.prod.outlook.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20200221090845.7397-1-narmstrong@baylibre.com>
+ <20200221090845.7397-2-narmstrong@baylibre.com>
+ <20200303121029.5532669d@eldfell.localdomain>
+ <20200303105325.bn4sob6yrdf5mwrh@DESKTOP-E1NTVVP.localdomain>
+In-Reply-To: <20200303105325.bn4sob6yrdf5mwrh@DESKTOP-E1NTVVP.localdomain>
+From: Daniel Vetter <daniel@ffwll.ch>
+Date: Tue, 3 Mar 2020 12:37:16 +0100
+Message-ID: <CAKMK7uFgQGrnEkXyac15Wz8Opg43RTa=5cX0nN5=E_omb8oY8Q@mail.gmail.com>
+Subject: Re: [PATCH 1/4] drm/fourcc: Add modifier definitions for describing
+ Amlogic Video Framebuffer Compression
+To: Brian Starkey <brian.starkey@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_031800_754629_AFFE5272 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20200303_033730_104822_8DAB4B76 
+X-CRM114-Status: GOOD (  37.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:530 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,45 +92,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Pekka Paalanen <ppaalanen@gmail.com>, linux-amlogic@lists.infradead.org,
+ nd <nd@arm.com>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03-03-20, 06:16, Peng Fan wrote:
-> Hi Viresh,
-> 
-> > Subject: Re: [PATCH 0/3] Convert i.MX6Q cpufreq to use nvmem API
-> > 
-> > On 03-03-20, 10:14, peng.fan@nxp.com wrote:
-> > > From: Peng Fan <peng.fan@nxp.com>
+On Tue, Mar 3, 2020 at 11:53 AM Brian Starkey <brian.starkey@arm.com> wrote:
+>
+> Hi,
+>
+> On Tue, Mar 03, 2020 at 12:10:29PM +0200, Pekka Paalanen wrote:
+> > On Fri, 21 Feb 2020 10:08:42 +0100
+> > Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >
+> > > Amlogic uses a proprietary lossless image compression protocol and format
+> > > for their hardware video codec accelerators, either video decoders or
+> > > video input encoders.
 > > >
-> > > Use nvmem API is better compared with direclty accessing OCOTP registers.
-> > > nvmem could handle OCOTP clk, defer probe.
+> > > It considerably reduces memory bandwidth while writing and reading
+> > > frames in memory.
 > > >
-> > > Patch 1/3 is dts changes to add nvmem related properties Patch 2/3 is
-> > > a bug fix Patch 3/3 is convert to nvmem API
-> > 
-> > Should I apply patch 2 and 3 ? And you can take 1/3 via ARM Soc tree as this
-> > shouldn't break anything.
-> 
-> Please take patch 2 and 3. Without patch 1, it just use legacy method,
-> not break things.
+> > > The underlying storage is considered to be 3 components, 8bit or 10-bit
+> > > per component, YCbCr 420, single plane :
+> > > - DRM_FORMAT_YUV420_8BIT
+> > > - DRM_FORMAT_YUV420_10BIT
+> > >
+> > > This modifier will be notably added to DMA-BUF frames imported from the V4L2
+> > > Amlogic VDEC decoder.
+> > >
+> > > At least two options are supported :
+> > > - Scatter mode: the buffer is filled with a IOMMU scatter table referring
+> > >   to the encoder current memory layout. This mode if more efficient in terms
+> > >   of memory allocation but frames are not dumpable and only valid during until
+> > >   the buffer is freed and back in control of the encoder
+> > > - Memory saving: when the pixel bpp is 8b, the size of the superblock can
+> > >   be reduced, thus saving memory.
+> > >
+> > > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> > > ---
+> > >  include/uapi/drm/drm_fourcc.h | 56 +++++++++++++++++++++++++++++++++++
+> > >  1 file changed, 56 insertions(+)
+> > >
+> > > diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_fourcc.h
+> > > index 8bc0b31597d8..8a6e87bacadb 100644
+> > > --- a/include/uapi/drm/drm_fourcc.h
+> > > +++ b/include/uapi/drm/drm_fourcc.h
+> > > @@ -309,6 +309,7 @@ extern "C" {
+> > >  #define DRM_FORMAT_MOD_VENDOR_BROADCOM 0x07
+> > >  #define DRM_FORMAT_MOD_VENDOR_ARM     0x08
+> > >  #define DRM_FORMAT_MOD_VENDOR_ALLWINNER 0x09
+> > > +#define DRM_FORMAT_MOD_VENDOR_AMLOGIC 0x0a
+> > >
+> > >  /* add more to the end as needed */
+> > >
+> > > @@ -804,6 +805,61 @@ extern "C" {
+> > >   */
+> > >  #define DRM_FORMAT_MOD_ALLWINNER_TILED fourcc_mod_code(ALLWINNER, 1)
+> > >
+> > > +/*
+> > > + * Amlogic Video Framebuffer Compression modifiers
+> > > + *
+> > > + * Amlogic uses a proprietary lossless image compression protocol and format
+> > > + * for their hardware video codec accelerators, either video decoders or
+> > > + * video input encoders.
+> > > + *
+> > > + * It considerably reduces memory bandwidth while writing and reading
+> > > + * frames in memory.
+> > > + * Implementation details may be platform and SoC specific, and shared
+> > > + * between the producer and the decoder on the same platform.
+> >
+> > Hi,
+> >
+> > after a lengthy IRC discussion on #dri-devel, this "may be platform and
+> > SoC specific" is a problem.
+> >
+> > It can be an issue in two ways:
+> >
+> > - If something in the data acts like a sub-modifier, then advertising
+> >   support for one modifier does not really tell if the data layout is
+> >   supported or not.
+> >
+> > - If you need to know the platform and/or SoC to be able to interpret
+> >   the data, it means the modifier is ill-defined and cannot be used in
+> >   inter-machine communication (e.g. Pipewire).
+> >
+>
+> Playing devil's advocate, the comment sounds similar to
+> I915_FORMAT_MOD_{X,Y}_TILED:
+>
+>  * This format is highly platforms specific and not useful for cross-driver
+>  * sharing. It exists since on a given platform it does uniquely identify the
+>  * layout in a simple way for i915-specific userspace.
 
-Applied. Thanks.
+Yeah which we regret now. We need to now roll out a new set of
+modifiers for at least some of the differences in these on the
+modern-ish chips (the old crap is pretty much lost cause anyway).
+
+This was kinda a nasty hack to smooth things over since we have epic
+amounts of userspace, but it's really not a great idea (and no one
+else really has epic amounts of existing userspace that uses tiling
+flags everywhere, this is all new code).
+-Daniel
+
+> Isn't the statement that this for sharing between producer and decoder
+> _on the same platform_ a similar clause with the same effect?
+>
+> What advantage is there to exposing the gory details? For Arm AFBC
+> it's necessary because IP on the SoC can be (likely to be) from
+> different vendors with different capabilities.
+>
+> If this is only for talking between Amlogic IP on the same SoC, and
+> those devices support all the same "flavours", I don't see what is
+> gained by making userspace care about internals.
+
+The trouble is if you mix&match IP cores, and one of them supports
+flavours A, B, C and the other C, D, E. But all you have is a single
+magic modifier for "whatever the flavour is that soc prefers". So
+someone gets to stuff this in DT.
+
+Also eventually, maybe, perhaps ARM does grow up into the
+client/server space with add-on pcie graphics, and at least for client
+you very often end up with integrated + add-in pcie gpu. At that point
+you really can't have magic per-soc modifiers anymore.
+
+If people get confused I'm happy to add a "WARNING: This was a dumb
+idea for backwards compat with legacy code, no one with new stuff ever
+repeat it" to the i915 modifers.
+-Daniel
+
+>
+> Thanks,
+> -Brian
+>
+> > Neil mentioned the data contains a "header" that further specifies
+> > things, but there is no specification about the header itself.
+> > Therefore I don't think we can even know if the header contains
+> > something that acts like a sub-modifier or not.
+> >
+> > All this sounds like the modifier definitions here are not enough to
+> > fully interpret the data. At the very least I would expect a reference
+> > to a document explaining the "header", or even better, a kernel ReST
+> > doc.
+> >
+> > I wonder if this is at all suitable as a DRM format modifier as is. I
+> > have been assuming that a modifier together with all the usual FB
+> > parameters should be enough to interpret the stored data, but in this
+> > case I have doubt it actually is.
+> >
+> > I have no problem with proprietary data layouts as long as they are
+> > fully specified.
+> >
+> > I do feel like I would not be able to write a software decoder for this
+> > set of modifiers given the details below.
+> >
+> >
+> > Thanks,
+> > pq
+> >
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+
+
 
 -- 
-viresh
+Daniel Vetter
+Software Engineer, Intel Corporation
++41 (0) 79 365 57 48 - http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
