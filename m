@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C423C1778E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:31:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A1FF1778F4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:31:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z4YYteDSjee6V4SLt2g6zyV/e8NBQC+vAuHoEWrRS6Q=; b=ClBg/2XnIWK7ai
-	Of6TJgpqWOdJfljod/stHg5xoSnMbu9RXPkwjpzFEMiZZIDeQf+9YZQl5YILl2olRP9bsEkKe735M
-	q0YvVK6IiZ67vnoFYXMkrL+un4yJr5UIX9tOVVp9uB3mswLKlCa1LiHJ0kUBfQbc/qeQ4gUYZnrES
-	HQkJ9dHF8FNLXmUwg6gD18Dz5gHavkzJ2AWr5RQUFldPvjo1pDOUZZDuhO5KD3ODftqk0Mp3LIi7h
-	KZx4tWvzzlPFZzIRQ5VW+yePDVheGNfoLqdOLteZRjaGJ1uopAjfykHRNp6qj2xiz3H4w55R7eKk+
-	M5lT+0ThGGhxm5IRMbNw==;
+	List-Owner; bh=vLzQQoApx7ZzglLP6sEL0YMDmzJxdT2oQ5tzMuUNaX4=; b=cPsoIGk6URqlVo
+	miI+Iafr+9iazfYL2AwC6Bt1OKnnrDa1M84CRsszXazTjEOACrrN5BjQmwqOInyCTF9HSVBEIetNV
+	ceKR80vV85NbCHa08IcJtZB7779tIaeJ918nNZJe5w246NJalhyDM0pdsNes5F9vqhGThw9RanbNv
+	ABAiusAzsNBbRD6CbNRl1ra4J16M4W+2HO5E0dAVnywvbWQ5qQgRpwFcrl1wbNy9l5yXuXUKnGiVw
+	mtpJ7asOyErL5P9HXFaWB+yLI+eCSn/Y4SQ4KiIUXVbEbQTrdq/lKo6hXBypWIeFx3df4vTyqK3Ej
+	FhrCTpBrD981Hwb/MeEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j98ZR-0002BJ-Rf; Tue, 03 Mar 2020 14:30:53 +0000
+	id 1j98Zo-0002RJ-Cs; Tue, 03 Mar 2020 14:31:16 +0000
 Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j98ZL-0002AQ-07
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:30:48 +0000
-Received: by mail-oi1-f193.google.com with SMTP id 2so3201138oiz.5
+ id 1j98ZY-0002Oi-Qw
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:31:02 +0000
+Received: by mail-oi1-f193.google.com with SMTP id d62so3150080oia.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 06:30:45 -0800 (PST)
+ Tue, 03 Mar 2020 06:31:00 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=3giDTcmis7xuoYSVjRPJHKbcsBkDsi3FIKg6I//oj2U=;
- b=b82+5XP8p9OH/RyN9rsbYo/PPV/jnHmMQOm4FXQfWm+vJVH1KP5FCwCJ85eaw+eiCy
- 2mBBIEtDbf2VEnOQqvBYKcDYJmny4bWawwR7KOXg8uuwwOvp8H8lC5srGqRQfO7go8LL
- tBzzROlxbCxg74V9DR3O+gtC90WSWXU/EMx5T3VS8pB01GoMRzQ5yHO7/Svx1YmZ2USO
- ypJgTpoZZ70fb9unY/P6OuSd6XWU6DeK1/VNdT7Y4YltxIrbPjf9VYisGvzPNAsy8EXu
- s0lIE3hiKPPxktSw/37J8LcGyIfqkSU67DN152Rv6jSsXFJyIwz4CIu+RJQNr58ojUSw
- B/8g==
-X-Gm-Message-State: ANhLgQ3RjIxUzJ1NGglHuhwIz3EDu3ghQAcYpKHtXvQQgdiRnjwXwdB8
- JCuaNg76TfpjOrTPrmxbN6b23g0=
-X-Google-Smtp-Source: ADFU+vvfMW/0Fosxapnoh/aFQ3fRu6XOd3zB5JsdxNtRlGdL+ltkBAIjvhbLwLVfbP36SKvU92NEtw==
-X-Received: by 2002:aca:4c91:: with SMTP id z139mr2568648oia.150.1583245845284; 
- Tue, 03 Mar 2020 06:30:45 -0800 (PST)
+ bh=gVhMT74m9AGYnPITOzgx6C9VacuCfRWPLl0fMDTgg3w=;
+ b=TeM+xC2iST7h/SAxL3wObzWXvSp16i0Av3DuBlJXP4yny3ZWiltlL/zQHUUiD2yZMk
+ OJPrmgbYrkP+z6lhJL0IAOCq7g0mK1JkOjmq/1Q53es//TN83966/Fjf6qS5d3BzMzOA
+ e+dYv1rP8CDbLPKtarXJ4DM/q8c3+FpNTKuVzBFTvqMzC5efES479UJRr2GRnaGutdK4
+ SQD45e/R/uaHnEigEB9sHyd83wGXZ/LJVWwAlJjDg3Yr28yPMjYdWBy/254c9fynaY63
+ 1es7/aGV/FQLKZmMEuDOjcKUkjHBXrvODVfXJA7m5+XEkPNp1ucIVvasGig3lm3slwuZ
+ ND4A==
+X-Gm-Message-State: ANhLgQ3oi3b2BjW1YJuTtEsJ+XsWwouFYg3qUo7wqtDt7gX08ZUGGAO9
+ /5lt+r5hEUPKaTEuBYmzUA==
+X-Google-Smtp-Source: ADFU+vsTa1mr7f4Jb2fuSW5ZCiP5PL/NVMt+eOqKxGoC62WG7mAsN6hzWEWpqexFTc2MpmI1edzopA==
+X-Received: by 2002:aca:fc11:: with SMTP id a17mr2472776oii.123.1583245860210; 
+ Tue, 03 Mar 2020 06:31:00 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id y193sm6613292oia.38.2020.03.03.06.30.44
+ by smtp.gmail.com with ESMTPSA id k110sm5979048otc.59.2020.03.03.06.30.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 06:30:44 -0800 (PST)
-Received: (nullmailer pid 24203 invoked by uid 1000);
- Tue, 03 Mar 2020 14:30:43 -0000
-Date: Tue, 3 Mar 2020 08:30:43 -0600
+ Tue, 03 Mar 2020 06:30:59 -0800 (PST)
+Received: (nullmailer pid 24642 invoked by uid 1000);
+ Tue, 03 Mar 2020 14:30:58 -0000
+Date: Tue, 3 Mar 2020 08:30:58 -0600
 From: Rob Herring <robh@kernel.org>
 To: Ahmad Fatoum <a.fatoum@pengutronix.de>
-Subject: Re: [PATCH 1/3] dt-bindings: add vendor prefix for Linux Automation
- GmbH
-Message-ID: <20200303143043.GA24147@bogus>
+Subject: Re: [PATCH 3/3] dt-bindings: arm: stm32: document
+ lxa,stm32mp157c-mc1 compatible
+Message-ID: <20200303143058.GA24606@bogus>
 References: <20200226143826.1146-1-a.fatoum@pengutronix.de>
+ <20200226143826.1146-3-a.fatoum@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200226143826.1146-1-a.fatoum@pengutronix.de>
+In-Reply-To: <20200226143826.1146-3-a.fatoum@pengutronix.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_063047_043361_5F830951 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20200303_063100_900898_16D5F2A7 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-1.0 points)
@@ -70,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.167.193 listed in list.dnswl.org]
+ -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -78,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,18 +105,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 26 Feb 2020 15:38:23 +0100, Ahmad Fatoum wrote:
-> Linux Automation GmbH[0] was founded in 2019 in order to develop
-> electronics for embedded Linux. Add its vendor prefix so it may be used
-> in future board and device compatibles.
+On Wed, 26 Feb 2020 15:38:25 +0100, Ahmad Fatoum wrote:
+> Document the STM32MP157 based Linux Automation MC-1 device tree
+> compatible.
 > 
-> [0]: https://www.linux-automation.com
-> 
-> Signed-off-by: Robert Schwebel <rsc@linux-automation.com>
 > Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
 > ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/arm/stm32/stm32.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
