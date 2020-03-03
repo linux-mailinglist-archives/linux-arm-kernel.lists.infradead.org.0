@@ -2,57 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5233177D82
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:32:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78BFD177D92
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:34:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mr/ZVowat2N9lchwpVk8x76DuTKxwuNdklog/DWz2K8=; b=TU8CHfswplRnSq
-	DKZKqmbjsD9g+ROnPeXS5q+v3LvQmde8hKoPfn/wYBSsYSMiAz9pKUg0Ssax83r1obf9hVq8uEqeX
-	GKg1gB6XQztIuRdIVCnAKfdDJw0j7RyMDZ11PYSK2TPoFKDQhs9YiLmPf4ajvssfWxcZqxV7nRMpA
-	9lcyKkCPuYSsXeO3kK5JTgeixlH2KpXAztFYSxU4zxxUm8oDlykSNi4HiEz3Vf3duAxqhen0L20UQ
-	mVL65f1VEsQL4cHP24BUrQKX7DJDdDY6WlekYaj/aUia8khaehJ92jToD63gtEsIxYD9cGejVE/g8
-	ObbOAZpIwKk6l5uVwviQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NGUECGW9J4zkldSNpN1IXTnvjT0OieBYL3JiIVHOdRI=; b=XgcpRu8wG8jdbV4EG+ALgRF/y
+	kIMv4479QswVYhCXRl2EBtN24hOA0gEt0FsJeMqCPQJSq9br7DU4zqfjXf1Xn5URb1+lUzRC/ig5m
+	pRifkxSr6Gf1zTJ9RkiOdKI50cBGuFYKIy01tH1J/WIlCTCl/KDu5ChJBbUPfBYpyKFnHRZ89UFJE
+	VMNtdpNR84PW6peEwoD+2jOF5xnWO33f0VNFV7I3zhFYUO79T5ykBMnrWlqpBMtiOxcIIZSsa1L+O
+	HES9kLds9SndJ7AKxvootAc3xpuOkjPVG77rne3ELUAw9gMh/TUx11IlMAWAuPMR/ghsyb9F90uwJ
+	mOYp722mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9BPV-00038u-IU; Tue, 03 Mar 2020 17:32:49 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j9BQn-0003XB-Et; Tue, 03 Mar 2020 17:34:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9BPN-00037x-QU; Tue, 03 Mar 2020 17:32:43 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id D0F79B028;
- Tue,  3 Mar 2020 17:32:38 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Stefan Wahren <stefan.wahren@i2se.com>, Eric Anholt <eric@anholt.net>
-Subject: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
-Date: Tue,  3 Mar 2020 18:32:16 +0100
-Message-Id: <20200303173217.3987-1-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.25.1
+ id 1j9BQe-0003Wn-JY
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:34:01 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BA97A2146E;
+ Tue,  3 Mar 2020 17:33:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583256839;
+ bh=iPOYluEY+ZO1uyD5kIymeUNRinPpcpWzEsgkKtWHXKk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=PssTJb+5WAlQiBvvTwCxPLcnNVAQWPTDSLFFFkPWblU0Tw3d2NnBnuKJhMGo2iJ4/
+ udmQSQKATNt7HuovAY5BY+JsaxblFdHhEW6mvR8mZgogCM+29GHHS7gJeFvKnHGXD+
+ WvRlzPNtr7KjGCMKufGhmxLDK4SNmIVSspxzoR48=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j9BQc-009jyt-0c; Tue, 03 Mar 2020 17:33:58 +0000
 MIME-Version: 1.0
+Date: Tue, 03 Mar 2020 17:33:57 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu/dma: Fix MSI reservation allocation
+In-Reply-To: <f0fc18a5-17a9-4c53-052b-00272bbd2691@arm.com>
+References: <20200303115154.32263-1-maz@kernel.org>
+ <f0fc18a5-17a9-4c53-052b-00272bbd2691@arm.com>
+Message-ID: <dd29d82badfa11f7c0c80563d1b38804@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, jroedel@suse.de, eric.auger@redhat.com,
+ will@kernel.org, stable@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_093242_004282_20FC2CD0 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200303_093400_684596_B3A9E8FC 
+X-CRM114-Status: GOOD (  13.94  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,100 +90,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, wahrenst@gmx.net,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Joerg Roedel <jroedel@suse.de>, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, Eric Auger <eric.auger@redhat.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The register based driver turned out to be unstable, specially on RPi3a+
-but not limited to it. While a fix is being worked on, we roll back to
-using firmware based scheme.
+On 2020-03-03 17:23, Robin Murphy wrote:
+> On 03/03/2020 11:51 am, Marc Zyngier wrote:
+>> The way cookie_init_hw_msi_region() allocates the iommu_dma_msi_page
+>> structures doesn't match the way iommu_put_dma_cookie() frees them.
+>> 
+>> The former performs a single allocation of all the required 
+>> structures,
+>> while the latter tries to free them one at a time. It doesn't quite
+>> work for the main use case (the GICv3 ITS where the range is 64kB)
+>> when the base ganule size is 4kB.
+>> 
+>> This leads to a nice slab corruption on teardown, which is easily
+>> observable by simply creating a VF on a SRIOV-capable device, and
+>> tearing it down immediately (no need to even make use of it).
+>> 
+>> Fix it by allocating iommu_dma_msi_page structures one at a time.
+> 
+> Bleh, you know you're supposed to be using 64K pages on those things, 
+> right? :P
 
-Fixes: e1dc2b2e1bef ("ARM: bcm283x: Switch V3D over to using the PM driver instead of firmware")
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
+lalalala... ;-)
 
-See https://github.com/raspberrypi/linux/issues/3046 for more reference.
-Note: I tested this on RPi3b, RPi3a+ and RPi2b.
+[...]
 
- arch/arm/boot/dts/bcm2835-common.dtsi     |  1 -
- arch/arm/boot/dts/bcm2835-rpi-common.dtsi | 12 ++++++++++++
- arch/arm/boot/dts/bcm2835.dtsi            |  1 +
- arch/arm/boot/dts/bcm2836.dtsi            |  1 +
- arch/arm/boot/dts/bcm2837.dtsi            |  1 +
- 5 files changed, 15 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/bcm2835-rpi-common.dtsi
+>> +		if (!msi_page) {
+>> +			ret = -ENOMEM;
+> 
+> I think we can just return here and skip the cleanup below - by the
+> time we get here the cookie itself has already been allocated and
+> initialised, so even if iommu_dma_init_domain() fails someone else has
+> already accepted the responsibility of calling iommu_put_dma_cookie()
+> at some point later, which will clean up properly.
 
-diff --git a/arch/arm/boot/dts/bcm2835-common.dtsi b/arch/arm/boot/dts/bcm2835-common.dtsi
-index 2b1d9d4c0cde..4119271c979d 100644
---- a/arch/arm/boot/dts/bcm2835-common.dtsi
-+++ b/arch/arm/boot/dts/bcm2835-common.dtsi
-@@ -130,7 +130,6 @@ v3d: v3d@7ec00000 {
- 			compatible = "brcm,bcm2835-v3d";
- 			reg = <0x7ec00000 0x1000>;
- 			interrupts = <1 10>;
--			power-domains = <&pm BCM2835_POWER_DOMAIN_GRAFX_V3D>;
- 		};
- 
- 		vc4: gpu {
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-common.dtsi b/arch/arm/boot/dts/bcm2835-rpi-common.dtsi
-new file mode 100644
-index 000000000000..b78a57534611
---- /dev/null
-+++ b/arch/arm/boot/dts/bcm2835-rpi-common.dtsi
-@@ -0,0 +1,12 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * This include file covers the common peripherals and configuration between
-+ * bcm2835, bcm2836 and bcm2837 implementations that interact with RPi's
-+ * firmware interface.
-+ */
-+
-+#include <dt-bindings/power/raspberrypi-power.h>
-+
-+&v3d {
-+	power-domains = <&power RPI_POWER_DOMAIN_V3D>;
-+};
-diff --git a/arch/arm/boot/dts/bcm2835.dtsi b/arch/arm/boot/dts/bcm2835.dtsi
-index 53bf4579cc22..0549686134ea 100644
---- a/arch/arm/boot/dts/bcm2835.dtsi
-+++ b/arch/arm/boot/dts/bcm2835.dtsi
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: GPL-2.0
- #include "bcm283x.dtsi"
- #include "bcm2835-common.dtsi"
-+#include "bcm2835-rpi-common.dtsi"
- 
- / {
- 	compatible = "brcm,bcm2835";
-diff --git a/arch/arm/boot/dts/bcm2836.dtsi b/arch/arm/boot/dts/bcm2836.dtsi
-index 82d6c4662ae4..b390006aef79 100644
---- a/arch/arm/boot/dts/bcm2836.dtsi
-+++ b/arch/arm/boot/dts/bcm2836.dtsi
-@@ -1,6 +1,7 @@
- // SPDX-License-Identifier: GPL-2.0
- #include "bcm283x.dtsi"
- #include "bcm2835-common.dtsi"
-+#include "bcm2835-rpi-common.dtsi"
- 
- / {
- 	compatible = "brcm,bcm2836";
-diff --git a/arch/arm/boot/dts/bcm2837.dtsi b/arch/arm/boot/dts/bcm2837.dtsi
-index 9e95fee78e19..0199ec98cd61 100644
---- a/arch/arm/boot/dts/bcm2837.dtsi
-+++ b/arch/arm/boot/dts/bcm2837.dtsi
-@@ -1,5 +1,6 @@
- #include "bcm283x.dtsi"
- #include "bcm2835-common.dtsi"
-+#include "bcm2835-rpi-common.dtsi"
- 
- / {
- 	compatible = "brcm,bcm2837";
+Ah, that's a very good point. I'll refresh the patch with a simplified
+error handling.
+
+Thanks,
+
+         M.
 -- 
-2.25.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
