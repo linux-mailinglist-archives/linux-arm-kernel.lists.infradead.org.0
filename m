@@ -2,57 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 595951777AA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:47:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C1E217780E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:59:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=POkEFbUFu1pTOq3tmj5h1eGhZgH1v0stQdfo45hUZ7Q=; b=mszSUvNW5X1C+rMq81ZupqRIN
-	f/rSt3VlfPEUEBHtuJR+nWfLgpvRMhDWhBTyApTcDDIFWwjfqjc8qZDk0d6WQqFfZAfff78fD9DB7
-	CLe2zfkFUUu56DAWUYcmsX6JmVthb7hgQl67Ep4CALtZXTLluMmiIQIBTlfPGNX5V/UYPPJSXDTUG
-	IboQEr5VvhjDNO8thH4U1pmCNiH3uzzGW/bn6xKgYTYW3q8hp9CgNS4D8NwWYeIM/xSdbNLQ+8LxF
-	HFIl9xUSy1rxj91VtAoBvfUhY28AvHiOvsUOTliXHhv/7AVt/Umv9goEsLbZwhR8mIKF6xg9es2z2
-	XHFnP0BDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rTbGwlVMydNcMIbJ/zLsJAmYPPxy/8pBkzwIsX8J5f0=; b=TVYt3RIZoXNsU1
+	GyxgVsPHdppcp72tXDnt76ESp47J5DGSCdMovQDq1l9Yi7de1h3OpoAvayPvBEkwH6lebtD2w0LpQ
+	7+mpXvPODv5UgaVRQshK3DNLq+byhx0pKrEvwSU7yvLYFboixBLxZQfHplaS3j8fAAbH0VtdGRYwP
+	e338QHjbE8kHMN23e7RyeIyWAISX4PyCUzFwPQWjJIkTufKSjho+J1LVMsPKVlIMxsmOeMFmbCbiw
+	nSiEzg9XUkzgtoTsps/XOwOSBH/xSf8FyyCbyKEkSTGtcAYEp1XLe/ltB9EwZJrwfgL2wqmN27oQ2
+	VY6OfgyQN26eBxoOj74w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j97tG-0000DN-1q; Tue, 03 Mar 2020 13:47:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j97t5-0000C1-Kd
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:47:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9DC8CFEC;
- Tue,  3 Mar 2020 05:47:04 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4043D3F6C4;
- Tue,  3 Mar 2020 05:47:03 -0800 (PST)
-Subject: Re: sunxi: a83t: does not boot anymore in BigEndian
-To: Corentin Labbe <clabbe.montjoie@gmail.com>, maz@kernel.org,
- wens@csie.org, mripard@kernel.org
-References: <20200303074326.GA9935@Red>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <65498b8e-a6c3-9edb-873f-6c011582a2eb@arm.com>
-Date: Tue, 3 Mar 2020 13:47:02 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j985G-00057o-O4; Tue, 03 Mar 2020 13:59:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9858-000572-QY
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:59:36 +0000
+Received: from mail.kernel.org (tmo-101-56.customers.d1-online.com
+ [80.187.101.56])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A7D2D2166E;
+ Tue,  3 Mar 2020 13:59:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583243973;
+ bh=Ot18DWlFBytWvI74fTpVOFcLADsv25orW6rh6cH6rsM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=g0CYCZHMxdjsi8yhkDgRJr4gZR12/iK8zGY5a6jdd52U+qHRbdH76+gm0o8X2Dxbg
+ 99dikWMH9JO9NL6NRQsS/hqhMEXDj1pjUbynIx/2UqFjVEaMjNVyMLYpCqcVddT083
+ P+FrNiJhsJPEkmp2abuKr6IZi++rw3BcqzExpZPg=
+Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@kernel.org>)
+ id 1j9850-001Ydk-Go; Tue, 03 Mar 2020 14:59:26 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: 
+Subject: [PATCH v3 13/18] docs: arm64: convert perf.txt to ReST format
+Date: Tue,  3 Mar 2020 14:59:20 +0100
+Message-Id: <464c57fc814c370d3c4002c6768c1eac83fbc9a9.1583243826.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <cover.1583243826.git.mchehab+huawei@kernel.org>
+References: <cover.1583243826.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200303074326.GA9935@Red>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_054707_767302_A1245EFE 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200303_055934_882057_C2287B2F 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,70 +79,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux@armlinux.org.uk
+Cc: linux-doc@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/03/2020 7:43 am, Corentin Labbe wrote:
-> Hello
-> 
-> My sun8i-a83t-bananapi-m3 does not boot anymore in BE.
-> Others sunxi platform I have seems not affected (a10, a20, a64, h3, h5, h6)
-> 
-> I have bisected this problem:
-> git bisect start
-> # bad: [98d54f81e36ba3bf92172791eba5ca5bd813989b] Linux 5.6-rc4
-> git bisect bad 98d54f81e36ba3bf92172791eba5ca5bd813989b
-> # bad: [d5226fa6dbae0569ee43ecfc08bdcd6770fc4755] Linux 5.5
-> git bisect bad d5226fa6dbae0569ee43ecfc08bdcd6770fc4755
-> # good: [219d54332a09e8d8741c1e1982f5eae56099de85] Linux 5.4
-> git bisect good 219d54332a09e8d8741c1e1982f5eae56099de85
-> # bad: [8c39f71ee2019e77ee14f88b1321b2348db51820] Merge git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net
-> git bisect bad 8c39f71ee2019e77ee14f88b1321b2348db51820
-> # bad: [3b397c7ccafe0624018cb09fc96729f8f6165573] Merge tag 'regmap-v5.5' of git://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap
-> git bisect bad 3b397c7ccafe0624018cb09fc96729f8f6165573
-> # good: [924ea58dadea23cc28b60d02b9c0896b7b168a6f] Merge tag 'mt76-for-kvalo-2019-11-20' of https://github.com/nbd168/wireless
-> git bisect good 924ea58dadea23cc28b60d02b9c0896b7b168a6f
-> # good: [3f3c8be973af10875cfa1e7b85a535b6ba76b44f] Merge tag 'for-linus-5.5a-rc1-tag' of git://git.kernel.org/pub/scm/linux/kernel/git/xen/tip
-> git bisect good 3f3c8be973af10875cfa1e7b85a535b6ba76b44f
-> # bad: [642356cb5f4a8c82b5ca5ebac288c327d10df236] Merge git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
-> git bisect bad 642356cb5f4a8c82b5ca5ebac288c327d10df236
-> # good: [57d8154f15e89f53dfb412f4ed32ebe3c3d755a0] crypto: atmel-aes - Change data type for "lastc" buffer
-> git bisect good 57d8154f15e89f53dfb412f4ed32ebe3c3d755a0
-> # bad: [752272f16dd18f2cac58a583a8673c8e2fb93abb] Merge tag 'for-linus' of git://git.kernel.org/pub/scm/virt/kvm/kvm
-> git bisect bad 752272f16dd18f2cac58a583a8673c8e2fb93abb
-> # good: [9477f4449b0b011ce1d058c09ec450bfcdaab784] KVM: VMX: Add helper to check reserved bits in IA32_PERF_GLOBAL_CTRL
-> git bisect good 9477f4449b0b011ce1d058c09ec450bfcdaab784
-> # bad: [cd7056ae34af0e9424da97bbc7d2b38246ba8a2c] Merge remote-tracking branch 'kvmarm/misc-5.5' into kvmarm/next
-> git bisect bad cd7056ae34af0e9424da97bbc7d2b38246ba8a2c
-> # bad: [c7892db5dd6afe921ead502aff7440a1e450d947] KVM: arm64: Select TASK_DELAY_ACCT+TASKSTATS rather than SCHEDSTATS
-> git bisect bad c7892db5dd6afe921ead502aff7440a1e450d947
-> # bad: [8564d6372a7d8a6d440441b8ed8020f97f744450] KVM: arm64: Support stolen time reporting via shared structure
-> git bisect bad 8564d6372a7d8a6d440441b8ed8020f97f744450
-> # bad: [55009c6ed2d24fc0f5521ab2482f145d269389ea] KVM: arm/arm64: Factor out hypercall handling from PSCI code
-> git bisect bad 55009c6ed2d24fc0f5521ab2482f145d269389ea
-> # bad: [6a7458485b390f48e481fcd4a0b20e6c5c843d2e] KVM: arm64: Document PV-time interface
-> git bisect bad 6a7458485b390f48e481fcd4a0b20e6c5c843d2e
-> # bad: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
-> git bisect bad dcac930e9901d765234bc15004db4f7d4416db71
-> # first bad commit: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
-> 
-> But bisect lead to a merge request.
+This file is almost in ReST. All it needs is a rename and
+adding a :field: for the two fields at the beginning
+(author and date).
 
-FWIW once you've bisected to a merge commit, you can always then try 
-bisecting down the merged branch itself (i.e. between 5.4-rc3 and 
-e6ea46511b1a in this case) to narrow things down further.
+While here, add a proper SPDX header, and use the standard
+markup for document titles, just for consistency.
 
-Given that that branch is supposed to be a functionally-inert cleanup, 
-and (judging by the DTS) this platform apparently isn't using PSCI 
-anyway, it does seem a bit odd. Can you get any earlycon/earlyprintk 
-output to suggest what the actual cause of the boot failure is?
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+---
+ Documentation/arm64/index.rst              | 1 +
+ Documentation/arm64/{perf.txt => perf.rst} | 7 +++++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+ rename Documentation/arm64/{perf.txt => perf.rst} (95%)
 
-Robin.
+diff --git a/Documentation/arm64/index.rst b/Documentation/arm64/index.rst
+index 5c0c69dc58aa..c51d0fa80318 100644
+--- a/Documentation/arm64/index.rst
++++ b/Documentation/arm64/index.rst
+@@ -13,6 +13,7 @@ ARM64 Architecture
+     hugetlbpage
+     legacy_instructions
+     memory
++    perf
+     pointer-authentication
+     silicon-errata
+     sve
+diff --git a/Documentation/arm64/perf.txt b/Documentation/arm64/perf.rst
+similarity index 95%
+rename from Documentation/arm64/perf.txt
+rename to Documentation/arm64/perf.rst
+index 0d6a7d87d49e..9c76a97baf28 100644
+--- a/Documentation/arm64/perf.txt
++++ b/Documentation/arm64/perf.rst
+@@ -1,8 +1,11 @@
++.. SPDX-License-Identifier: GPL-2.0
++
++=====================
+ Perf Event Attributes
+ =====================
+ 
+-Author: Andrew Murray <andrew.murray@arm.com>
+-Date: 2019-03-06
++:Author: Andrew Murray <andrew.murray@arm.com>
++:Date: 2019-03-06
+ 
+ exclude_user
+ ------------
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
