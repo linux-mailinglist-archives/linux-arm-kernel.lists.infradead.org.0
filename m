@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E69D01785D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 23:44:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A584B1785E3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 23:47:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zPwlgjQlszld2CP9LmarpVUDUxZ2rD3EKkvjKEPnWHc=; b=KbLhKVgTWjyDvE
-	Bk75c7JzC8cO44Yg1lVKwXy1unLGvZdFxviBrcjmrFmsRPlTSQgLsjdqb65TMTY9g4uXCEuKx4+FZ
-	LagQS0da7pmJQEgJOhu7iAf3DKAP9DJ1Ei+USOtvvhodfRZdaZfx2msGAyUlVOpAoyVBWRG2T4Y0A
-	sqSOepora0xX4lyvr2ZaiwQt2zkyVfr0DL+fq7/mioi5ERKfRHbt8NA3LPRUtd7XI88qcjVYrmZIx
-	v3DbcZPp+5YsbeDltfechE6OEKdYtk/EOQUieOvsdkIsGGoNBuUSytc5T0x+xKZpIyH1H2T8kq3QB
-	70NN/Cjfltd35x+pWNdA==;
+	List-Owner; bh=UmNpDDnKb+wwyFHZ9KGZeo+sgNdNbFoP6bi7j2h3lTQ=; b=CA8Ri2iX/IaN0J
+	OaCvVMjpySRxYd7CLdM2kbzxhNyLqf33EJb3XjXAVRdcjsgeCZwe1ONv6KMjKlf2nYFpnyKi9AChz
+	pynuUKDq36QhWQyoKqnM6ircqZ0iRFXXSu7aJI5GPlVoXiLjjbYRgrrSN/1LIxBTPcbEvFirzer77
+	LHRt0q32u0g/GHV3YrLaxp5Y2qofv1kMgYOLDoP3JZZUvHn1IB6TpWrSboj+MADnMtvsQtupd21P0
+	yrlLTjn/A8jXjMWq8R/U5LgCp+JflLQ14fegVhpA8Y+0OTfnFs1u8JH3f9F3VQ69PrEMyvr/l5Ux3
+	0VSg0Se3HGLLJuSGkcXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9GGW-0006FE-Qr; Tue, 03 Mar 2020 22:43:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j9GK5-0008PQ-3g; Tue, 03 Mar 2020 22:47:33 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9GGA-000655-53
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 22:43:31 +0000
-Received: from sol.localdomain (c-107-3-166-239.hsd1.ca.comcast.net
- [107.3.166.239])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9F5FA2072A;
- Tue,  3 Mar 2020 22:43:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583275409;
- bh=KFjLsAjNMx93cGKtEJs8LhZSNNLzN16FDXVUS6jWAAE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZhVCtl27YLCVh26NOG29luP24Nwr1QwpbSdL/Au+gj/hlBRXXRszO62kMZZurPkJe
- K1BrNOGlz20BT+GWY8ROBP0fNu/hrykd4dM4TF3Tcq6JEnIKx1efyaFDo2k3BYq+RR
- tpliTFwHGaFHXqniA2LtPiF4MSV/eFCa2PLapnaI=
-Date: Tue, 3 Mar 2020 14:43:27 -0800
-From: Eric Biggers <ebiggers@kernel.org>
-To: Daniel Jordan <daniel.m.jordan@oracle.com>
-Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
-Message-ID: <20200303224327.GA89804@sol.localdomain>
-References: <20200217204803.GA13479@Red>
- <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
- <20200220090350.GA19858@Red>
- <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
- <20200228123311.GE3275@willie-the-truck>
- <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
- <20200301175351.GA11684@Red>
- <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
- <e7c92da2-42c0-a97d-7427-6fdc769b41b9@arm.com>
- <20200303213017.tanczhqd3nhpeeak@ca-dmjordan1.us.oracle.com>
+ id 1j9GJh-0008Dn-Cn; Tue, 03 Mar 2020 22:47:10 +0000
+Received: by mail-ot1-f65.google.com with SMTP id i14so95454otp.5;
+ Tue, 03 Mar 2020 14:47:09 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Z0du2wcxyjg7iRH0s/qpIMsj7X0YCwaBDvE2vsxIrbk=;
+ b=lagoFGtSBW7BIMufWo914TZz8gdFTZT16BflTmeZmo2Cvo3+YHT8jP1H3+alOk3zqO
+ EfaLbQbGV5KKO0TFxkFkS2SgV0bYuY5zmkbZOIKybKNvqfkvAHyZwoQSrpmnifLZ+sNh
+ BWVAmoYiJedYKBiw+WpXaZxnfZC9/jcHprkwb2YpiUIX1ORwv4cLnneBI7oxgcKMAYuy
+ LqU2a3es6aUE1gcxWvpLDpSSu4YXhWjEW5hjZLUmCQIB+fhXRuuR8zYBC0Gc4M/JYPC/
+ NAiMAcHXUmT7SS6+g9ENqaA4MbeTbgYU9S9YCxqsDJs9sI5qlkZtCa/kJugR+Be0ja/D
+ 97Lg==
+X-Gm-Message-State: ANhLgQ2tvuEduWb4HPW1NNwaVTaiQX78p1ZsEPamzMxNGN5XC4EiiW87
+ vUjXJ/adXGmbTkNXX48VNw==
+X-Google-Smtp-Source: ADFU+vuU+JCOVQpYg1AlYEQdEKGSsg5SLhgtKZoaS1dScWhKEQWMAhE4l5CbjQlxM9gWy34zkZG6zg==
+X-Received: by 2002:a9d:4c92:: with SMTP id m18mr129586otf.168.1583275628368; 
+ Tue, 03 Mar 2020 14:47:08 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id b2sm5879600oii.20.2020.03.03.14.47.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Mar 2020 14:47:07 -0800 (PST)
+Received: (nullmailer pid 32174 invoked by uid 1000);
+ Tue, 03 Mar 2020 22:47:06 -0000
+Date: Tue, 3 Mar 2020 16:47:06 -0600
+From: Rob Herring <robh@kernel.org>
+To: Chuanhong Guo <gch981213@gmail.com>
+Subject: Re: [PATCH v2 3/4] dt-bindings: convert mtk-quadspi binding doc for
+ spi-mtk-nor
+Message-ID: <20200303224706.GA22867@bogus>
+References: <20200228043636.559915-1-gch981213@gmail.com>
+ <20200228043636.559915-4-gch981213@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200303213017.tanczhqd3nhpeeak@ca-dmjordan1.us.oracle.com>
+In-Reply-To: <20200228043636.559915-4-gch981213@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_144330_267261_A1BE62DC 
-X-CRM114-Status: GOOD (  27.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200303_144709_439257_1FC5268B 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,127 +93,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Will Deacon <will@kernel.org>, jiangshanlai@gmail.com,
- linux-kernel@vger.kernel.org, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, tj@kernel.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 03, 2020 at 04:30:17PM -0500, Daniel Jordan wrote:
-> On Mon, Mar 02, 2020 at 06:00:10PM +0000, Robin Murphy wrote:
-> > On 02/03/2020 5:25 pm, Daniel Jordan wrote:
-> > Something smelled familiar about this discussion, and sure enough that merge
-> > contains c4741b230597 ("crypto: run initcalls for generic implementations
-> > earlier"), which has raised its head before[1].
+On Fri, Feb 28, 2020 at 12:36:35PM +0800, Chuanhong Guo wrote:
+> spi-mtk-nor is a driver to replace mtk-quadspi and they have almost
+> the same device-tree bindings. Reuse this binding documentation and
+> convert it for new driver:
 > 
-> Yep, that looks suspicious.
+> 1. "Mediatek SoCs" -> "Mediatek ARM SoCs" because MTK MIPS SoCs
+>    use different controllers.
+> 2. document "interrupts" as a required property because it's
+>    available on all SoCs with this controller and new driver takes
+>    advantages of it. It's implemented as optional only to maintain
+>    backward compatibility.
+> 3. replace binding example with a mt7629 one because this is the
+>    only one I know the interrupt assignment.
+
+That doesn't really matter. It would be less churn without that change 
+and examples are just examples.
+
 > 
-> The bisect didn't point to that specific commit, even though my version of git
-> tries commits in the merge.  I'm probably missing something.
+> Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
+> ---
+> Change since v1:
+>  none
 > 
-> > > Does this fix it?  I can't verify but figure it's worth trying the simplest
-> > > explanation first, which is that the work isn't initialized by the time it's
-> > > queued.
-> > 
-> > The relative initcall levels would appear to explain the symptom - I guess
-> > the question is whether this represents a bug in a particular test/algorithm
-> > (as with the unaligned accesses) or a fundamental problem in the
-> > infrastructure now being able to poke the module loader too early.
+>  .../mtk-quadspi.txt => spi/spi-mtk-nor.txt}   | 34 ++++++++-----------
+>  1 file changed, 15 insertions(+), 19 deletions(-)
+>  rename Documentation/devicetree/bindings/{mtd/mtk-quadspi.txt => spi/spi-mtk-nor.txt} (62%)
 > 
-> I'm not familiar with the crypto code.  Could it be that the commit moved some
-> request_module() calls before modules_wq_init()?
-> 
-> And, is it "too early" or just "earlier"?  When is it too early for modprobe?
-> 
-> Barring other ideas, Corentin, would you be willing to boot with
-> 
->     trace_event=initcall:*,module:* trace_options=stacktrace
-> 
-> and
-> 
-> diff --git a/kernel/module.c b/kernel/module.c
-> index 33569a01d6e1..393be6979a27 100644
-> --- a/kernel/module.c
-> +++ b/kernel/module.c
-> @@ -3604,8 +3604,11 @@ static noinline int do_init_module(struct module *mod)
->  	 * be cleaned up needs to sync with the queued work - ie
->  	 * rcu_barrier()
->  	 */
-> -	if (llist_add(&freeinit->node, &init_free_list))
-> +	if (llist_add(&freeinit->node, &init_free_list)) {
-> +		pr_warn("%s: schedule_work for mod=%s\n", __func__, mod->name);
-> +		dump_stack();
->  		schedule_work(&init_free_wq);
-> +	}
+> diff --git a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt b/Documentation/devicetree/bindings/spi/spi-mtk-nor.txt
+> similarity index 62%
+> rename from Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+> rename to Documentation/devicetree/bindings/spi/spi-mtk-nor.txt
+> index a12e3b5c495d..829da480b9a9 100644
+> --- a/Documentation/devicetree/bindings/mtd/mtk-quadspi.txt
+> +++ b/Documentation/devicetree/bindings/spi/spi-mtk-nor.txt
+> @@ -1,4 +1,4 @@
+> -* Serial NOR flash controller for MediaTek SoCs
+> +* SPI NOR flash controller for MediaTek ARM SoCs
 >  
->  	mutex_unlock(&module_mutex);
->  	wake_up_all(&module_wq);
-> 
-> but not my earlier fix and share the dmesg and ftrace output to see if the
-> theory holds?
-> 
-> Also, could you attach your config?  Curious now what your crypto options look
-> like after fiddling with some of them today while trying and failing to see
-> this on x86.
-> 
+>  Required properties:
+>  - compatible: 	  For mt8173, compatible should be "mediatek,mt8173-nor",
+> @@ -13,6 +13,7 @@ Required properties:
+>  		  "mediatek,mt7629-nor", "mediatek,mt8173-nor"
+>  		  "mediatek,mt8173-nor"
+>  - reg: 		  physical base address and length of the controller's register
+> +- interrupts:	  Interrupt number used by the controller.
+>  - clocks: 	  the phandle of the clocks needed by the nor controller
+>  - clock-names: 	  the names of the clocks
+>  		  the clocks should be named "spi" and "sf". "spi" is used for spi bus,
+> @@ -22,29 +23,24 @@ Required properties:
+>  - #address-cells: should be <1>
+>  - #size-cells:	  should be <0>
+>  
+> -The SPI flash must be a child of the nor_flash node and must have a
+> -compatible property. Also see jedec,spi-nor.txt.
+> -
+> -Required properties:
+> -- compatible:	  May include a device-specific string consisting of the manufacturer
+> -		  and name of the chip. Must also include "jedec,spi-nor" for any
+> -		  SPI NOR flash that can be identified by the JEDEC READ ID opcode (0x9F).
+> -- reg :		  Chip-Select number
+> +There should be only one spi slave device following generic spi bindings.
+> +It's not recommended to use this controller for devices other than SPI NOR
+> +flash due to limited transfer capability of this controller.
+>  
+>  Example:
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +#include <dt-bindings/clock/mt7629-clk.h>
+>  
+> -nor_flash: spi@1100d000 {
+> -	compatible = "mediatek,mt8173-nor";
+> -	reg = <0 0x1100d000 0 0xe0>;
+> -	clocks = <&pericfg CLK_PERI_SPI>,
+> -		 <&topckgen CLK_TOP_SPINFI_IFR_SEL>;
+> +spi_nor: spi@11014000 {
+> +	compatible = "mediatek,mt7629-nor",
+> +		     "mediatek,mt8173-nor";
+> +	reg = <0x11014000 0xe0>;
+> +	interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_LOW>;
+> +	clocks = <&pericfg CLK_PERI_FLASH_PD>,
+> +		 <&topckgen CLK_TOP_FLASH_SEL>;
+>  	clock-names = "spi", "sf";
+>  	#address-cells = <1>;
+>  	#size-cells = <0>;
+> -
+> -	flash@0 {
+> -		compatible = "jedec,spi-nor";
+> -		reg = <0>;
+> -	};
 
-Probably the request_module() is coming from the registration-time crypto
-self-tests allocating the generic implementation of algorithm when an
-architecture-specific implementation is registered.  This occurs when
-CONFIG_CRYPTO_MANAGER_EXTRA_TESTS=y on Linux v5.2 and later.
+Better to leave this in the example IMO.
 
-If this is causing problems we could do:
-
-diff --git a/crypto/testmgr.c b/crypto/testmgr.c
-index ccb3d60729fc..d89791700b88 100644
---- a/crypto/testmgr.c
-+++ b/crypto/testmgr.c
-@@ -1667,7 +1667,7 @@ static int test_hash_vs_generic_impl(const char *driver,
- 	if (strcmp(generic_driver, driver) == 0) /* Already the generic impl? */
- 		return 0;
- 
--	generic_tfm = crypto_alloc_shash(generic_driver, 0, 0);
-+	generic_tfm = crypto_alloc_shash(generic_driver, 0, CRYPTO_NOLOAD);
- 	if (IS_ERR(generic_tfm)) {
- 		err = PTR_ERR(generic_tfm);
- 		if (err == -ENOENT) {
-@@ -2389,7 +2389,7 @@ static int test_aead_vs_generic_impl(struct aead_extra_tests_ctx *ctx)
- 	if (strcmp(generic_driver, driver) == 0) /* Already the generic impl? */
- 		return 0;
- 
--	generic_tfm = crypto_alloc_aead(generic_driver, 0, 0);
-+	generic_tfm = crypto_alloc_aead(generic_driver, 0, CRYPTO_NOLOAD);
- 	if (IS_ERR(generic_tfm)) {
- 		err = PTR_ERR(generic_tfm);
- 		if (err == -ENOENT) {
-@@ -2993,7 +2993,7 @@ static int test_skcipher_vs_generic_impl(const char *driver,
- 	if (strcmp(generic_driver, driver) == 0) /* Already the generic impl? */
- 		return 0;
- 
--	generic_tfm = crypto_alloc_skcipher(generic_driver, 0, 0);
-+	generic_tfm = crypto_alloc_skcipher(generic_driver, 0, CRYPTO_NOLOAD);
- 	if (IS_ERR(generic_tfm)) {
- 		err = PTR_ERR(generic_tfm);
- 		if (err == -ENOENT) {
-
-
-... but that's not ideal, since it would mean that if someone builds all crypto
-algorithms as modules, then the comparison tests could be unnecessarily skipped.
-
-But it is really always wrong to be calling request_module() from other
-module_init() functions?  The commit that added 'init_free_wq' was also
-introduced in v5.2; maybe that's the problem here?
-
-	commit 1a7b7d9220819afe79d1ec5d759fe4349bd2453e
-	Author: Rick Edgecombe <rick.p.edgecombe@intel.com>
-	Date:   Thu Apr 25 17:11:37 2019 -0700
-
-	    modules: Use vmalloc special flag
-
-- Eric
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
