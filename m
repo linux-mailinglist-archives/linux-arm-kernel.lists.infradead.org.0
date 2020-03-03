@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D94117708D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 08:55:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34914177094
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 08:57:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FFC+sHxGsH/Kqx9RjNeyMoNX4TJSxDtWlb5/TeX7vRo=; b=FPcSJ+aw0yExD9d6vKfTTtxS5
-	RO2Ym3fNAPfOA2EZcIBlPHQ++R1seeRojMmCO3X4GI2qzwWl6qCZoEBZoXQlfvGq5AAvTG3r6PZGJ
-	ynZZnqLJyyVpyvSDtRt3WoGFobw3tFzDBfzGkQmxTJ/eu8R0jMCbk5cn9AOGTP0AZNrZ8keZ9M+bD
-	eRxVUqKB7XgirAD1Gx5CH0VhRjn1ZmnUK3UWWLHJWZ3bJhRT0SibTC8cHgOswog9q3y9UhbsVcHz6
-	8Ho7hhTSM7F7qrugJhGiREV6p0wngeIORdaIiGVPpkr6EwstUuSHd/1+2EwRPTiM69RwQvbhb7zxp
-	XS+gFbiUg==;
+	 bh=PutFqtgiTw6SilJoxcqIyEJZgUIlEe6v0UcoHILPHdk=; b=fUgO2qjmW8JcDCmMEDH4ngfqH
+	EhgR8tT748+Xf6GEm5MNdtdGd4pz7bRTn1KvxdAzgnsK3mzupB84P5SMH1+nn9ZRBL3OZs3hlh0eM
+	bF+e1Ok6ddUnTaTB3Z0Ep3bQTpoAreAyGsKTrLolPzpqhym4NtuCCNE+GHP609qkxdQrec6YIoQvZ
+	lX2w3qdF0BAjyoYELD5j2K8w9+53fNsjvF/jcbKH8jJRxS38mACqpWnklWm0o2+2H9HcfuCCHLyRQ
+	NtN4xeL7Plq1CHrUJ+hn9dPaPKNg9GLiIWyNHJpwOTJC/NFVQPQA+XhckILszLnYRiQrfl8cD9K6W
+	0zgRxLDHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j92Ox-0007KJ-GU; Tue, 03 Mar 2020 07:55:39 +0000
+	id 1j92Qn-0007fd-2O; Tue, 03 Mar 2020 07:57:33 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j92Oo-0007JG-Lr
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 07:55:33 +0000
+ id 1j92Qd-0007ej-4T
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 07:57:25 +0000
 Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
  (envelope-from <o.rempel@pengutronix.de>)
- id 1j92Ol-00047R-Fo; Tue, 03 Mar 2020 08:55:27 +0100
-Subject: Re: [PATCH V5 2/4] mailbox: imx: restructure code to make easy for
- new MU
+ id 1j92Qb-0004Of-PV; Tue, 03 Mar 2020 08:57:21 +0100
+Subject: Re: [PATCH V5 3/4] mailbox: imx: add SCU MU support
 To: peng.fan@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
  jassisinghbrar@gmail.com
 References: <1583221359-9285-1-git-send-email-peng.fan@nxp.com>
- <1583221359-9285-3-git-send-email-peng.fan@nxp.com>
+ <1583221359-9285-4-git-send-email-peng.fan@nxp.com>
 From: Oleksij Rempel <o.rempel@pengutronix.de>
-Message-ID: <5fef0bc5-368e-f777-2d41-3fb54f9527cb@pengutronix.de>
-Date: Tue, 3 Mar 2020 08:55:26 +0100
+Message-ID: <e67a61ab-5d2d-f0d1-2fbf-ab0173287356@pengutronix.de>
+Date: Tue, 3 Mar 2020 08:57:21 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <1583221359-9285-3-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1583221359-9285-4-git-send-email-peng.fan@nxp.com>
 Content-Language: en-US
 X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
 X-SA-Exim-Mail-From: o.rempel@pengutronix.de
@@ -48,8 +47,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_235530_883182_7400602F 
-X-CRM114-Status: GOOD (  20.67  )
+X-CRM114-CacheID: sfid-20200302_235723_337222_4B5672D5 
+X-CRM114-Status: GOOD (  28.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,278 +70,147 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: aisheng.dong@nxp.com, Anson.Huang@nxp.com, linux-kernel@vger.kernel.org,
  linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
  festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 03.03.20 08:42, peng.fan@nxp.com wrote:
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> Add imx_mu_generic_tx for data send and imx_mu_generic_rx for interrupt
-> data receive.
-> 
-> Pack original mu chans related code into imx_mu_init_generic
-> 
-> Add tx/rx/init hooks into imx_mu_dcfg
-> 
-> With these, it will be a bit easy to introduce i.MX8/8X SCU type
-> MU dedicated to communicate with SCU.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-
-Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
-
-> ---
-> V5:
->   imx_mu_dcfg moved to below imx_mu_priv
->   Add init hooks
-> 
-> V4:
->   Pack MU chans init to imx_mu_init_generic
-> V3:
->   New patch, restructure code.
-> 
->   drivers/mailbox/imx-mailbox.c | 137 +++++++++++++++++++++++++-----------------
->   1 file changed, 83 insertions(+), 54 deletions(-)
-> 
-> diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-> index 2cdcdc5f1119..df6c4ecd913c 100644
-> --- a/drivers/mailbox/imx-mailbox.c
-> +++ b/drivers/mailbox/imx-mailbox.c
-> @@ -36,13 +36,6 @@ enum imx_mu_chan_type {
->   	IMX_MU_TYPE_RXDB,	/* Rx doorbell */
->   };
->   
-> -struct imx_mu_dcfg {
-> -	u32	xTR[4];		/* Transmit Registers */
-> -	u32	xRR[4];		/* Receive Registers */
-> -	u32	xSR;		/* Status Register */
-> -	u32	xCR;		/* Control Register */
-> -};
-> -
->   struct imx_mu_con_priv {
->   	unsigned int		idx;
->   	char			irq_desc[IMX_MU_CHAN_NAME_SIZE];
-> @@ -67,18 +60,14 @@ struct imx_mu_priv {
->   	bool			side_b;
->   };
->   
-> -static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
-> -	.xTR	= {0x0, 0x4, 0x8, 0xc},
-> -	.xRR	= {0x10, 0x14, 0x18, 0x1c},
-> -	.xSR	= 0x20,
-> -	.xCR	= 0x24,
-> -};
-> -
-> -static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
-> -	.xTR	= {0x20, 0x24, 0x28, 0x2c},
-> -	.xRR	= {0x40, 0x44, 0x48, 0x4c},
-> -	.xSR	= 0x60,
-> -	.xCR	= 0x64,
-> +struct imx_mu_dcfg {
-> +	int (*tx)(struct imx_mu_priv *priv, struct imx_mu_con_priv *cp, void *data);
-> +	int (*rx)(struct imx_mu_priv *priv, struct imx_mu_con_priv *cp);
-> +	void (*init)(struct imx_mu_priv *priv);
-> +	u32	xTR[4];		/* Transmit Registers */
-> +	u32	xRR[4];		/* Receive Registers */
-> +	u32	xSR;		/* Status Register */
-> +	u32	xCR;		/* Control Register */
->   };
->   
->   static struct imx_mu_priv *to_imx_mu_priv(struct mbox_controller *mbox)
-> @@ -111,6 +100,40 @@ static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
->   	return val;
->   }
->   
-> +static int imx_mu_generic_tx(struct imx_mu_priv *priv,
-> +			     struct imx_mu_con_priv *cp,
-> +			     void *data)
-> +{
-> +	u32 *arg = data;
-> +
-> +	switch (cp->type) {
-> +	case IMX_MU_TYPE_TX:
-> +		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
-> +		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
-> +		break;
-> +	case IMX_MU_TYPE_TXDB:
-> +		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIRn(cp->idx), 0);
-> +		tasklet_schedule(&cp->txdb_tasklet);
-> +		break;
-> +	default:
-> +		dev_warn_ratelimited(priv->dev, "Send data on wrong channel type: %d\n", cp->type);
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx_mu_generic_rx(struct imx_mu_priv *priv,
-> +			     struct imx_mu_con_priv *cp)
-> +{
-> +	u32 dat;
-> +
-> +	dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
-> +	mbox_chan_received_data(cp->chan, (void *)&dat);
-> +
-> +	return 0;
-> +}
-> +
->   static void imx_mu_txdb_tasklet(unsigned long data)
->   {
->   	struct imx_mu_con_priv *cp = (struct imx_mu_con_priv *)data;
-> @@ -123,7 +146,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
->   	struct mbox_chan *chan = p;
->   	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
->   	struct imx_mu_con_priv *cp = chan->con_priv;
-> -	u32 val, ctrl, dat;
-> +	u32 val, ctrl;
->   
->   	ctrl = imx_mu_read(priv, priv->dcfg->xCR);
->   	val = imx_mu_read(priv, priv->dcfg->xSR);
-> @@ -152,8 +175,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
->   		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
->   		mbox_chan_txdone(chan, 0);
->   	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
-> -		dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
-> -		mbox_chan_received_data(chan, (void *)&dat);
-> +		priv->dcfg->rx(priv, cp);
->   	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
->   		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), priv->dcfg->xSR);
->   		mbox_chan_received_data(chan, NULL);
-> @@ -169,23 +191,8 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
->   {
->   	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
->   	struct imx_mu_con_priv *cp = chan->con_priv;
-> -	u32 *arg = data;
-> -
-> -	switch (cp->type) {
-> -	case IMX_MU_TYPE_TX:
-> -		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
-> -		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
-> -		break;
-> -	case IMX_MU_TYPE_TXDB:
-> -		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIRn(cp->idx), 0);
-> -		tasklet_schedule(&cp->txdb_tasklet);
-> -		break;
-> -	default:
-> -		dev_warn_ratelimited(priv->dev, "Send data on wrong channel type: %d\n", cp->type);
-> -		return -EINVAL;
-> -	}
->   
-> -	return 0;
-> +	return priv->dcfg->tx(priv, cp, data);
->   }
->   
->   static int imx_mu_startup(struct mbox_chan *chan)
-> @@ -280,6 +287,22 @@ static struct mbox_chan * imx_mu_xlate(struct mbox_controller *mbox,
->   
->   static void imx_mu_init_generic(struct imx_mu_priv *priv)
->   {
-> +	unsigned int i;
-> +
-> +	for (i = 0; i < IMX_MU_CHANS; i++) {
-> +		struct imx_mu_con_priv *cp = &priv->con_priv[i];
-> +
-> +		cp->idx = i % 4;
-> +		cp->type = i >> 2;
-> +		cp->chan = &priv->mbox_chans[i];
-> +		priv->mbox_chans[i].con_priv = cp;
-> +		snprintf(cp->irq_desc, sizeof(cp->irq_desc),
-> +			 "imx_mu_chan[%i-%i]", cp->type, cp->idx);
-> +	}
-> +
-> +	priv->mbox.num_chans = IMX_MU_CHANS;
-> +	priv->mbox.of_xlate = imx_mu_xlate;
-> +
->   	if (priv->side_b)
->   		return;
->   
-> @@ -293,7 +316,6 @@ static int imx_mu_probe(struct platform_device *pdev)
->   	struct device_node *np = dev->of_node;
->   	struct imx_mu_priv *priv;
->   	const struct imx_mu_dcfg *dcfg;
-> -	unsigned int i;
->   	int ret;
->   
->   	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> @@ -329,32 +351,19 @@ static int imx_mu_probe(struct platform_device *pdev)
->   		return ret;
->   	}
->   
-> -	for (i = 0; i < IMX_MU_CHANS; i++) {
-> -		struct imx_mu_con_priv *cp = &priv->con_priv[i];
-> -
-> -		cp->idx = i % 4;
-> -		cp->type = i >> 2;
-> -		cp->chan = &priv->mbox_chans[i];
-> -		priv->mbox_chans[i].con_priv = cp;
-> -		snprintf(cp->irq_desc, sizeof(cp->irq_desc),
-> -			 "imx_mu_chan[%i-%i]", cp->type, cp->idx);
-> -	}
-> -
->   	priv->side_b = of_property_read_bool(np, "fsl,mu-side-b");
->   
-> +	priv->dcfg->init(priv);
-> +
->   	spin_lock_init(&priv->xcr_lock);
->   
->   	priv->mbox.dev = dev;
->   	priv->mbox.ops = &imx_mu_ops;
->   	priv->mbox.chans = priv->mbox_chans;
-> -	priv->mbox.num_chans = IMX_MU_CHANS;
-> -	priv->mbox.of_xlate = imx_mu_xlate;
->   	priv->mbox.txdone_irq = true;
->   
->   	platform_set_drvdata(pdev, priv);
->   
-> -	imx_mu_init_generic(priv);
-> -
->   	return devm_mbox_controller_register(dev, &priv->mbox);
->   }
->   
-> @@ -367,6 +376,26 @@ static int imx_mu_remove(struct platform_device *pdev)
->   	return 0;
->   }
->   
-> +static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
-> +	.tx	= imx_mu_generic_tx,
-> +	.rx	= imx_mu_generic_rx,
-> +	.init	= imx_mu_init_generic,
-> +	.xTR	= {0x0, 0x4, 0x8, 0xc},
-> +	.xRR	= {0x10, 0x14, 0x18, 0x1c},
-> +	.xSR	= 0x20,
-> +	.xCR	= 0x24,
-> +};
-> +
-> +static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
-> +	.tx	= imx_mu_generic_tx,
-> +	.rx	= imx_mu_generic_rx,
-> +	.init	= imx_mu_init_generic,
-> +	.xTR	= {0x20, 0x24, 0x28, 0x2c},
-> +	.xRR	= {0x40, 0x44, 0x48, 0x4c},
-> +	.xSR	= 0x60,
-> +	.xCR	= 0x64,
-> +};
-> +
->   static const struct of_device_id imx_mu_dt_ids[] = {
->   	{ .compatible = "fsl,imx7ulp-mu", .data = &imx_mu_cfg_imx7ulp },
->   	{ .compatible = "fsl,imx6sx-mu", .data = &imx_mu_cfg_imx6sx },
-> 
-
-Kind regards,
-Oleksij Rempel
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAwMy4wMy4yMCAwODo0MiwgcGVuZy5mYW5AbnhwLmNvbSB3cm90ZToKPiBGcm9tOiBQZW5n
+IEZhbiA8cGVuZy5mYW5AbnhwLmNvbT4KPiAKPiBpLk1YOC84WCBTQ1UgTVUgaXMgZGVkaWNhdGVk
+IGZvciBjb21tdW5pY2F0aW9uIGJldHdlZW4gU0NVIGFuZCBDb3J0ZXgtQQo+IGNvcmVzIGZyb20g
+aGFyZHdhcmUgZGVzaWduLCBhbmQgY291bGQgbm90IGJlIHJldXNlZCBmb3Igb3RoZXIgcHVycG9z
+ZS4KPiAKPiBQZXIgaS5NWDgvOFggUmVmZXJlbmNlIG1hbm51YWwsIENoYXB0ZXIgIjEyLjkuMi4z
+LjIgTWVzc2FnaW5nIEV4YW1wbGVzIiwKPiAgIFBhc3Npbmcgc2hvcnQgbWVzc2FnZXM6IFRyYW5z
+bWl0IHJlZ2lzdGVyKHMpIGNhbiBiZSB1c2VkIHRvIHBhc3MKPiAgIHNob3J0IG1lc3NhZ2VzIGZy
+b20gb25lIHRvIGZvdXIgd29yZHMgaW4gbGVuZ3RoLiBGb3IgZXhhbXBsZSwgd2hlbgo+ICAgYSBm
+b3VyLXdvcmQgbWVzc2FnZSBpcyBkZXNpcmVkLCBvbmx5IG9uZSBvZiB0aGUgcmVnaXN0ZXJzIG5l
+ZWRzIHRvCj4gICBoYXZlIGl0cyBjb3JyZXNwb25kaW5nIGludGVycnVwdCBlbmFibGUgYml0IHNl
+dCBhdCB0aGUgcmVjZWl2ZXIgc2lkZTsKPiAgIHRoZSBtZXNzYWdl4oCZcyBmaXJzdCB0aHJlZSB3
+b3JkcyBhcmUgd3JpdHRlbiB0byB0aGUgcmVnaXN0ZXJzIHdob3NlCj4gICBpbnRlcnJ1cHQgaXMg
+bWFza2VkLCBhbmQgdGhlIGZvdXJ0aCB3b3JkIGlzIHdyaXR0ZW4gdG8gdGhlIG90aGVyCj4gICBy
+ZWdpc3RlciAod2hpY2ggdHJpZ2dlcnMgYW4gaW50ZXJydXB0IGF0IHRoZSByZWNlaXZlciBzaWRl
+KS4KPiAKPiBpLk1YOC84WCBTQ1UgZmlybXdhcmUgSVBDIGlzIGFuIGltcGxlbWVudGF0aW9uIG9m
+IHBhc3Npbmcgc2hvcnQKPiBtZXNzYWdlcy4gQnV0IGN1cnJlbnQgaW14LW1haWxib3ggZHJpdmVy
+IG9ubHkgc3VwcG9ydCBvbmUgd29yZAo+IG1lc3NhZ2UsIGkuTVg4LzhYIGxpbnV4IHNpZGUgZmly
+bXdhcmUgaGFzIHRvIHJlcXVlc3QgZm91ciBUWAo+IGFuZCBmb3VyIFJYIHRvIHN1cHBvcnQgSVBD
+IHRvIFNDVSBmaXJtd2FyZS4gVGhpcyBpcyBsb3cgZWZmaWNlbnQKPiBhbmQgbW9yZSBpbnRlcnJ1
+cHRzIHRyaWdnZXJlZCBjb21wYXJlZCB3aXRoIG9uZSBUWCBhbmQKPiBvbmUgUlguCj4gCj4gVG8g
+bWFrZSBTQ1UgTVUgd29yaywKPiAgICAtIHBhcnNlIHRoZSBzaXplIG9mIG1zZy4KPiAgICAtIE9u
+bHkgZW5hYmxlIFRSMC9SUjAgaW50ZXJydXB0IGZvciB0cmFuc21pdC9yZWNlaXZlIG1lc3NhZ2Uu
+Cj4gICAgLSBGb3IgVFgvUlgsIG9ubHkgc3VwcG9ydCBvbmUgVFggY2hhbm5lbCBhbmQgb25lIFJY
+IGNoYW5uZWwKPiAgICAtIEZvciBSWCwgc3VwcG9ydCByZWNlaXZlIG1zZyBsYXJnZXIgdGhhbiA0
+IHUzMiB3b3Jkcy4KPiAgICAtIFN1cHBvcnQgNiBjaGFubmVscywgVFgwL1JYMC9SWERCWzAtM10s
+IG5vdCBzdXBwb3J0IFRYREIuCj4gCj4gU2lnbmVkLW9mZi1ieTogUGVuZyBGYW4gPHBlbmcuZmFu
+QG54cC5jb20+CgpSZXZpZXdlZC1ieTogT2xla3NpaiBSZW1wZWwgPG8ucmVtcGVsQHBlbmd1dHJv
+bml4LmRlPgoKPiAtLS0KPiBWNToKPiAgIENvZGUgc3R5bGUgY2xlYW51cAo+ICAgQWRkIG1vcmUg
+ZGVidWcgbXNnCj4gICBEcm9wIF9fcGFja2VkIGFsaWduZWQKPiAgIGlkeCBzYW50aXR5IGNoZWNr
+IGluIHNjdSB4bGF0ZQo+IAo+IFY0Ogo+ICAgQWRkZWQgc2VwYXJhdGUgY2hhbnMgaW5pdCBhbmQg
+eGxhdGUgZnVuY3Rpb24gZm9yIFNDVSBNVQo+ICAgTGltaXQgY2hhbnMgdG8gVFgwL1JYMC9SWERC
+WzAtM10sIG1heCA2IGNoYW5zLgo+ICAgU2FudGl0eSBjaGVjayB0byBtc2cgc2l6ZQo+IAo+IFYz
+Ogo+ICAgQWRkZWQgc2N1IHR5cGUgdHgvcnggYW5kIFNDVSBNVSB0eXBlCj4gCj4gICBkcml2ZXJz
+L21haWxib3gvaW14LW1haWxib3guYyB8IDEzNCArKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysKPiAgIDEgZmlsZSBjaGFuZ2VkLCAxMzQgaW5zZXJ0aW9ucygrKQo+IAo+
+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21haWxib3gvaW14LW1haWxib3guYyBiL2RyaXZlcnMvbWFp
+bGJveC9pbXgtbWFpbGJveC5jCj4gaW5kZXggZGY2YzRlY2Q5MTNjLi4zZjI4Yzc2OWExYzEgMTAw
+NjQ0Cj4gLS0tIGEvZHJpdmVycy9tYWlsYm94L2lteC1tYWlsYm94LmMKPiArKysgYi9kcml2ZXJz
+L21haWxib3gvaW14LW1haWxib3guYwo+IEBAIC00LDYgKzQsNyBAQAo+ICAgICovCj4gICAKPiAg
+ICNpbmNsdWRlIDxsaW51eC9jbGsuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2Zpcm13YXJlL2lteC9p
+cGMuaD4KPiAgICNpbmNsdWRlIDxsaW51eC9pbnRlcnJ1cHQuaD4KPiAgICNpbmNsdWRlIDxsaW51
+eC9pby5oPgo+ICAgI2luY2x1ZGUgPGxpbnV4L2tlcm5lbC5oPgo+IEBAIC0yNyw2ICsyOCw4IEBA
+Cj4gICAjZGVmaW5lIElNWF9NVV94Q1JfR0lSbih4KQlCSVQoMTYgKyAoMyAtICh4KSkpCj4gICAK
+PiAgICNkZWZpbmUgSU1YX01VX0NIQU5TCQkxNgo+ICsvKiBUWDAvUlgwL1JYREJbMC0zXSAqLwo+
+ICsjZGVmaW5lIElNWF9NVV9TQ1VfQ0hBTlMJNgo+ICAgI2RlZmluZSBJTVhfTVVfQ0hBTl9OQU1F
+X1NJWkUJMjAKPiAgIAo+ICAgZW51bSBpbXhfbXVfY2hhbl90eXBlIHsKPiBAQCAtMzYsNiArMzks
+MTEgQEAgZW51bSBpbXhfbXVfY2hhbl90eXBlIHsKPiAgIAlJTVhfTVVfVFlQRV9SWERCLAkvKiBS
+eCBkb29yYmVsbCAqLwo+ICAgfTsKPiAgIAo+ICtzdHJ1Y3QgaW14X3NjX3JwY19tc2dfbWF4IHsK
+PiArCXN0cnVjdCBpbXhfc2NfcnBjX21zZyBoZHI7Cj4gKwl1MzIgZGF0YVs3XTsKPiArfTsKPiAr
+Cj4gICBzdHJ1Y3QgaW14X211X2Nvbl9wcml2IHsKPiAgIAl1bnNpZ25lZCBpbnQJCWlkeDsKPiAg
+IAljaGFyCQkJaXJxX2Rlc2NbSU1YX01VX0NIQU5fTkFNRV9TSVpFXTsKPiBAQCAtMTM0LDYgKzE0
+Miw2MyBAQCBzdGF0aWMgaW50IGlteF9tdV9nZW5lcmljX3J4KHN0cnVjdCBpbXhfbXVfcHJpdiAq
+cHJpdiwKPiAgIAlyZXR1cm4gMDsKPiAgIH0KPiAgIAo+ICtzdGF0aWMgaW50IGlteF9tdV9zY3Vf
+dHgoc3RydWN0IGlteF9tdV9wcml2ICpwcml2LAo+ICsJCQkgc3RydWN0IGlteF9tdV9jb25fcHJp
+diAqY3AsCj4gKwkJCSB2b2lkICpkYXRhKQo+ICt7Cj4gKwlzdHJ1Y3QgaW14X3NjX3JwY19tc2df
+bWF4ICptc2cgPSBkYXRhOwo+ICsJdTMyICphcmcgPSBkYXRhOwo+ICsJaW50IGk7Cj4gKwo+ICsJ
+c3dpdGNoIChjcC0+dHlwZSkgewo+ICsJY2FzZSBJTVhfTVVfVFlQRV9UWDoKPiArCQlpZiAobXNn
+LT5oZHIuc2l6ZSA+IHNpemVvZigqbXNnKSkgewo+ICsJCQkvKgo+ICsJCQkgKiBUaGUgcmVhbCBt
+ZXNzYWdlIHNpemUgY2FuIGJlIGRpZmZlcmVudCB0bwo+ICsJCQkgKiBzdHJ1Y3QgaW14X3NjX3Jw
+Y19tc2dfbWF4IHNpemUKPiArCQkJICovCj4gKwkJCWRldl9lcnIocHJpdi0+ZGV2LCAiRXhjZWVk
+IG1heCBtc2cgc2l6ZSAoJWxpKSBvbiBUWCwgZ290OiAlaVxuIiwgc2l6ZW9mKCptc2cpLCBtc2ct
+Pmhkci5zaXplKTsKPiArCQkJcmV0dXJuIC1FSU5WQUw7Cj4gKwkJfQo+ICsKPiArCQlmb3IgKGkg
+PSAwOyBpIDwgbXNnLT5oZHIuc2l6ZTsgaSsrKQo+ICsJCQlpbXhfbXVfd3JpdGUocHJpdiwgKmFy
+ZysrLCBwcml2LT5kY2ZnLT54VFJbaSAlIDRdKTsKPiArCj4gKwkJaW14X211X3hjcl9ybXcocHJp
+diwgSU1YX01VX3hDUl9USUVuKGNwLT5pZHgpLCAwKTsKPiArCQlicmVhazsKPiArCWRlZmF1bHQ6
+Cj4gKwkJZGV2X3dhcm5fcmF0ZWxpbWl0ZWQocHJpdi0+ZGV2LCAiU2VuZCBkYXRhIG9uIHdyb25n
+IGNoYW5uZWwgdHlwZTogJWRcbiIsIGNwLT50eXBlKTsKPiArCQlyZXR1cm4gLUVJTlZBTDsKPiAr
+CX0KPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+ICsKPiArc3RhdGljIGludCBpbXhfbXVfc2N1X3J4
+KHN0cnVjdCBpbXhfbXVfcHJpdiAqcHJpdiwKPiArCQkJIHN0cnVjdCBpbXhfbXVfY29uX3ByaXYg
+KmNwKQo+ICt7Cj4gKwlzdHJ1Y3QgaW14X3NjX3JwY19tc2dfbWF4IG1zZzsKPiArCXUzMiAqZGF0
+YSA9ICh1MzIgKikmbXNnOwo+ICsJaW50IGk7Cj4gKwo+ICsJaW14X211X3hjcl9ybXcocHJpdiwg
+MCwgSU1YX01VX3hDUl9SSUVuKDApKTsKPiArCSpkYXRhKysgPSBpbXhfbXVfcmVhZChwcml2LCBw
+cml2LT5kY2ZnLT54UlJbMF0pOwo+ICsKPiArCWlmIChtc2cuaGRyLnNpemUgPiBzaXplb2YobXNn
+KSkgewo+ICsJCWRldl9lcnIocHJpdi0+ZGV2LCAiRXhjZWVkIG1heCBtc2cgc2l6ZSAoJWxpKSBv
+biBSWCwgZ290OiAlaVxuIiwKPiArCQkJc2l6ZW9mKG1zZyksIG1zZy5oZHIuc2l6ZSk7Cj4gKwkJ
+cmV0dXJuIC1FSU5WQUw7Cj4gKwl9Cj4gKwo+ICsJZm9yIChpID0gMTsgaSA8IG1zZy5oZHIuc2l6
+ZTsgaSsrKQo+ICsJCSpkYXRhKysgPSBpbXhfbXVfcmVhZChwcml2LCBwcml2LT5kY2ZnLT54UlJb
+aSAlIDRdKTsKPiArCj4gKwlpbXhfbXVfeGNyX3Jtdyhwcml2LCBJTVhfTVVfeENSX1JJRW4oMCks
+IDApOwo+ICsJbWJveF9jaGFuX3JlY2VpdmVkX2RhdGEoY3AtPmNoYW4sICh2b2lkICopJm1zZyk7
+Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gICBzdGF0aWMgdm9pZCBpbXhfbXVfdHhkYl90
+YXNrbGV0KHVuc2lnbmVkIGxvbmcgZGF0YSkKPiAgIHsKPiAgIAlzdHJ1Y3QgaW14X211X2Nvbl9w
+cml2ICpjcCA9IChzdHJ1Y3QgaW14X211X2Nvbl9wcml2ICopZGF0YTsKPiBAQCAtMjYzLDYgKzMy
+OCw0MiBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IG1ib3hfY2hhbl9vcHMgaW14X211X29wcyA9IHsK
+PiAgIAkuc2h1dGRvd24gPSBpbXhfbXVfc2h1dGRvd24sCj4gICB9Owo+ICAgCj4gK3N0YXRpYyBz
+dHJ1Y3QgbWJveF9jaGFuICppbXhfbXVfc2N1X3hsYXRlKHN0cnVjdCBtYm94X2NvbnRyb2xsZXIg
+Km1ib3gsCj4gKwkJCQkJICBjb25zdCBzdHJ1Y3Qgb2ZfcGhhbmRsZV9hcmdzICpzcCkKPiArewo+
+ICsJdTMyIHR5cGUsIGlkeCwgY2hhbjsKPiArCj4gKwlpZiAoc3AtPmFyZ3NfY291bnQgIT0gMikg
+ewo+ICsJCWRldl9lcnIobWJveC0+ZGV2LCAiSW52YWxpZCBhcmd1bWVudCBjb3VudCAlZFxuIiwg
+c3AtPmFyZ3NfY291bnQpOwo+ICsJCXJldHVybiBFUlJfUFRSKC1FSU5WQUwpOwo+ICsJfQo+ICsK
+PiArCXR5cGUgPSBzcC0+YXJnc1swXTsgLyogY2hhbm5lbCB0eXBlICovCj4gKwlpZHggPSBzcC0+
+YXJnc1sxXTsgLyogaW5kZXggKi8KPiArCj4gKwlzd2l0Y2ggKHR5cGUpIHsKPiArCWNhc2UgSU1Y
+X01VX1RZUEVfVFg6Cj4gKwljYXNlIElNWF9NVV9UWVBFX1JYOgo+ICsJCWlmIChpZHggIT0gMCkK
+PiArCQkJZGV2X2VycihtYm94LT5kZXYsICJJbnZhbGlkIGNoYW4gaWR4OiAlZFxuIiwgaWR4KTsK
+PiArCQljaGFuID0gdHlwZTsKPiArCQlicmVhazsKPiArCWNhc2UgSU1YX01VX1RZUEVfUlhEQjoK
+PiArCQljaGFuID0gMiArIGlkeDsKPiArCQlicmVhazsKPiArCWRlZmF1bHQ6Cj4gKwkJZGV2X2Vy
+cihtYm94LT5kZXYsICJJbnZhbGlkIGNoYW4gdHlwZTogJWRcbiIsIHR5cGUpOwo+ICsJCXJldHVy
+biBOVUxMOwo+ICsJfQo+ICsKPiArCWlmIChjaGFuID49IG1ib3gtPm51bV9jaGFucykgewo+ICsJ
+CWRldl9lcnIobWJveC0+ZGV2LCAiTm90IHN1cHBvcnRlZCBjaGFubmVsIG51bWJlcjogJWQuICh0
+eXBlOiAlZCwgaWR4OiAlZClcbiIsIGNoYW4sIHR5cGUsIGlkeCk7Cj4gKwkJcmV0dXJuIEVSUl9Q
+VFIoLUVJTlZBTCk7Cj4gKwl9Cj4gKwo+ICsJcmV0dXJuICZtYm94LT5jaGFuc1tjaGFuXTsKPiAr
+fQo+ICsKPiAgIHN0YXRpYyBzdHJ1Y3QgbWJveF9jaGFuICogaW14X211X3hsYXRlKHN0cnVjdCBt
+Ym94X2NvbnRyb2xsZXIgKm1ib3gsCj4gICAJCQkJICAgICAgIGNvbnN0IHN0cnVjdCBvZl9waGFu
+ZGxlX2FyZ3MgKnNwKQo+ICAgewo+IEBAIC0zMTAsNiArNDExLDI4IEBAIHN0YXRpYyB2b2lkIGlt
+eF9tdV9pbml0X2dlbmVyaWMoc3RydWN0IGlteF9tdV9wcml2ICpwcml2KQo+ICAgCWlteF9tdV93
+cml0ZShwcml2LCAwLCBwcml2LT5kY2ZnLT54Q1IpOwo+ICAgfQo+ICAgCj4gK3N0YXRpYyB2b2lk
+IGlteF9tdV9pbml0X3NjdShzdHJ1Y3QgaW14X211X3ByaXYgKnByaXYpCj4gK3sKPiArCXVuc2ln
+bmVkIGludCBpOwo+ICsKPiArCWZvciAoaSA9IDA7IGkgPCBJTVhfTVVfU0NVX0NIQU5TOyBpKysp
+IHsKPiArCQlzdHJ1Y3QgaW14X211X2Nvbl9wcml2ICpjcCA9ICZwcml2LT5jb25fcHJpdltpXTsK
+PiArCj4gKwkJY3AtPmlkeCA9IGkgPCAyID8gMCA6IGkgLSAyOwo+ICsJCWNwLT50eXBlID0gaSA8
+IDIgPyBpIDogSU1YX01VX1RZUEVfUlhEQjsKPiArCQljcC0+Y2hhbiA9ICZwcml2LT5tYm94X2No
+YW5zW2ldOwo+ICsJCXByaXYtPm1ib3hfY2hhbnNbaV0uY29uX3ByaXYgPSBjcDsKPiArCQlzbnBy
+aW50ZihjcC0+aXJxX2Rlc2MsIHNpemVvZihjcC0+aXJxX2Rlc2MpLAo+ICsJCQkgImlteF9tdV9j
+aGFuWyVpLSVpXSIsIGNwLT50eXBlLCBjcC0+aWR4KTsKPiArCX0KPiArCj4gKwlwcml2LT5tYm94
+Lm51bV9jaGFucyA9IElNWF9NVV9TQ1VfQ0hBTlM7Cj4gKwlwcml2LT5tYm94Lm9mX3hsYXRlID0g
+aW14X211X3NjdV94bGF0ZTsKPiArCj4gKwkvKiBTZXQgZGVmYXVsdCBNVSBjb25maWd1cmF0aW9u
+ICovCj4gKwlpbXhfbXVfd3JpdGUocHJpdiwgMCwgcHJpdi0+ZGNmZy0+eENSKTsKPiArfQo+ICsK
+PiAgIHN0YXRpYyBpbnQgaW14X211X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYp
+Cj4gICB7Cj4gICAJc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsKPiBAQCAtMzk2LDkg
+KzUxOSwyMCBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGlteF9tdV9kY2ZnIGlteF9tdV9jZmdfaW14
+N3VscCA9IHsKPiAgIAkueENSCT0gMHg2NCwKPiAgIH07Cj4gICAKPiArc3RhdGljIGNvbnN0IHN0
+cnVjdCBpbXhfbXVfZGNmZyBpbXhfbXVfY2ZnX2lteDhfc2N1ID0gewo+ICsJLnR4CT0gaW14X211
+X3NjdV90eCwKPiArCS5yeAk9IGlteF9tdV9zY3VfcngsCj4gKwkuaW5pdAk9IGlteF9tdV9pbml0
+X3NjdSwKPiArCS54VFIJPSB7MHgwLCAweDQsIDB4OCwgMHhjfSwKPiArCS54UlIJPSB7MHgxMCwg
+MHgxNCwgMHgxOCwgMHgxY30sCj4gKwkueFNSCT0gMHgyMCwKPiArCS54Q1IJPSAweDI0LAo+ICt9
+Owo+ICsKPiAgIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIGlteF9tdV9kdF9pZHNb
+XSA9IHsKPiAgIAl7IC5jb21wYXRpYmxlID0gImZzbCxpbXg3dWxwLW11IiwgLmRhdGEgPSAmaW14
+X211X2NmZ19pbXg3dWxwIH0sCj4gICAJeyAuY29tcGF0aWJsZSA9ICJmc2wsaW14NnN4LW11Iiwg
+LmRhdGEgPSAmaW14X211X2NmZ19pbXg2c3ggfSwKPiArCXsgLmNvbXBhdGlibGUgPSAiZnNsLGlt
+eDgtbXUtc2N1IiwgLmRhdGEgPSAmaW14X211X2NmZ19pbXg4X3NjdSB9LAo+ICAgCXsgfSwKPiAg
+IH07Cj4gICBNT0RVTEVfREVWSUNFX1RBQkxFKG9mLCBpbXhfbXVfZHRfaWRzKTsKPiAKCktpbmQg
+cmVnYXJkcywKT2xla3NpaiBSZW1wZWwKCi0tIApQZW5ndXRyb25peCBlLksuICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfApJbmR1c3RyaWFs
+IExpbnV4IFNvbHV0aW9ucyAgICAgICAgICAgICAgICAgfCBodHRwOi8vd3d3LnBlbmd1dHJvbml4
+LmRlLyAgfApQZWluZXIgU3RyLiA2LTgsIDMxMTM3IEhpbGRlc2hlaW0sIEdlcm1hbnkgfCBQaG9u
+ZTogKzQ5LTUxMjEtMjA2OTE3LTAgICAgfApBbXRzZ2VyaWNodCBIaWxkZXNoZWltLCBIUkEgMjY4
+NiAgICAgICAgICAgfCBGYXg6ICAgKzQ5LTUxMjEtMjA2OTE3LTU1NTUgfAoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
