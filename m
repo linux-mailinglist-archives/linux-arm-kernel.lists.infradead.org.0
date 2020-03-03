@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE6A9177A06
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:08:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0E0F177A08
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:09:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xgHD2cL6+gdunt7XEtXVWBuphmqDNHsvcg742FvBfAA=; b=mN4scxZ0me6P41
-	1eGU0N+0n28SzEbTBzSvMdcMYXkl5aM36QGnm9PAoR06syTOC+DLJEHzzIrG5VeFgXgoB6pH62a0S
-	oZCfkT549gcFiDuTRarvKAV8EOy+Mtz2OY2MgBT9SXdfjkjxA9wvh4xvPoTAxjSqL6ZnW/v5Z/PkW
-	1X5urIuSgsOnRKM1Xulk3MSJCnonn5y2G9vBEDcG01rJi0ucohLe2kW+h1q+n3Xj8ueu7Ne65EOKK
-	DLmSAp+WXmTqd6hzRhfePjeSHPcanTtS8qKpYvxgdXkvxWJ8AYlpMiTQb33LxpAdcx2x/9WVFLcRe
-	+m9p5oLdpxurtyclGhGw==;
+	List-Owner; bh=RMR/bB6LMtUGlRD8qbW72jz1cOeSaKo7Y/rKP9tPj7k=; b=hji401CyA9ZOf4
+	926N+UOf7AJlFgHKJ4cqKfEJvp73M91mzMkfOGWrnjeC3FsMlLztDad8TyHGtJlMZpXOGcQv4juBo
+	7fMdzDHH0jbv3/3NyBdHsgAt4J+Y7xGFXJEkXJXSiaRumcaBVQmnOcGfek1O8Gyfz4eamWeYliXof
+	D6cFEbYasutfcSZtxXJBZX1iVJcAAsjM6nMn4o4GIMDNWQdSYAdl3hI0iira9qoqbAH01P+5z+zy2
+	BasJCCXe4oN8ws3g8nQOSFiYL3BzYvLYmxVOxelctOPpOzlF/bpzUNmOikeBredHPF8I0APOcgeLE
+	WwMY/rUt6bqvW+eMJOVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j999y-00059h-OS; Tue, 03 Mar 2020 15:08:38 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1j99AE-0005QS-42; Tue, 03 Mar 2020 15:08:54 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j999M-0004l8-JX
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:02 +0000
-Received: by mail-lf1-x141.google.com with SMTP id n30so3050630lfh.6
+ id 1j999O-0004li-Kc
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:04 +0000
+Received: by mail-lj1-x244.google.com with SMTP id a10so3848279ljp.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 07:08:00 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=B30v3NBJ89pTZvCRAyGguiMnt+PH3RI+BA4eDrldRLY=;
- b=k/Z9gXXqNlqfswOQwls9gp/b1woar1i2f5V8G/kc56ZdmRjSnj8PGdrlMoAhZe/J5Y
- K3fnFzs2hsZawrNoqYblo5+8ztsKhuNfmaaKe6W30Yncrf1lUS1bi/qcTsTX+uQTxnZf
- GBWAQSh35JRJkc3KU8ZbmX420ykXl8bYoMw4i9nc0egLBhA/s25pvvJQUb0KcUGUuklf
- uw5itk1tZg8MnPhLaM153kWr6hd9P2c1H7Gbpe+/JRrvEeP3P/kX3HD6eg89gpryUjp7
- pabbouy0baZYlRoExtpecn9l0khYWrqTkAMHIGsEMDkKI9lrpD/5duiHzSScjUnRrWXc
- bUUQ==
+ bh=KjdkayiJ3LtaxLYwkOTc4CgwJfOkW9drdJX4syz3ipw=;
+ b=RLvtGSvlL2ZKg9u7qpjybj0cciaEsfBIgh3is2uiAVm4n6IckIp3MkKk6iFbZnTVM5
+ O6lLxvUF8qz2nwZmU3Q6eCIVfOwulTGgR4EHDNSECKnc5555BIEqnYF7zjeOmUl3xbD7
+ U6wYkHSrd9uchIET6VRsOPD0SevSqh1Iczx1tsjJYWxllqemSjoXyCL8kPEarsdyA6HS
+ gXF8Mu+RgmcX3QTQy6b+pLhrO208Vcev6r394VRimrDKIz3QnGUD6u7fX/OwP/AgfxO0
+ R2pBEQSqA7M4UKmbP3pvymYqa+hWokMcOJI+LMsbz5NAoI71o9THo3BQg38H9+jZNkKd
+ FgeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=B30v3NBJ89pTZvCRAyGguiMnt+PH3RI+BA4eDrldRLY=;
- b=U0AanpobPpGKFMMtnhEuEWFivGi/38DdihNMyPv2AlPIsvIrKo0/vAuijLGG248COZ
- 7zUWbowg54kiE3eFazY5nxVJMufr2JWBnfAOpKdwJtmZ0fgZ0073Ls0yty0e8FkGzTZY
- yh9FISZeZSoTBHEAXpj1gb986/cVa8/qdI1Kiz9Alqgl/+KoVL/Cc/cZY8uVIrvJW7mz
- cnE1OsIQEFadUQu+8IV/fi+KQ3FmOm97Hra/rm+MMnRWkWe9eUTw/O+VdYddouRwWYyl
- CL8gh7T5qDM8ofjiN5pX0jbhYyCku1UmMfvbY/WCn6viY3dGm9PPB80S2msqhMXdiS0j
- DWyw==
-X-Gm-Message-State: ANhLgQ1Xf5uvOXd88PTgmcydjVD4734skr23BbBQVksPTZP8xma8D9tF
- 5a505wD87TAj4Drt6Mo7KAGlMA==
-X-Google-Smtp-Source: ADFU+vsNa2Cmu28UnbH+m7iPEgdhqmX6OprzfWRZhA31z6e3MSYvdgClxx8aL3JsLOL6vHbmRtGbDg==
-X-Received: by 2002:a05:6512:304c:: with SMTP id
- b12mr2036672lfb.196.1583248079201; 
- Tue, 03 Mar 2020 07:07:59 -0800 (PST)
+ bh=KjdkayiJ3LtaxLYwkOTc4CgwJfOkW9drdJX4syz3ipw=;
+ b=p0TbBKa++cf5j0Y407JHeZGM8Jzf02nU4V5ZVtRbki3cye0KyCpzovV0Fglr9Nyhpn
+ gjNvTdpJZXdyqMmfdpKkiPiarJvwvWlbTwwJV1r7TRNPECrVJUpw1k+/MzXOl60jErNY
+ lVfqLniPS92lTJydMQSTviw85ZTjxj+IAIGufFuNpqYYY6ciuZu/qpJeDQa6ZF1WD1Yi
+ WR4GgnKlW2n1b8wWSEyUsZ26ikCvRZXYB52xP30oCHf0C8kR/4Zs27v+cQP/nnmMPykr
+ 3rN45GAftthu2BCncHlz3DoiLTYFzxUMx/kPoygKICbbUYLzlqQGxFyf5/7SKRTctF4U
+ JlbA==
+X-Gm-Message-State: ANhLgQ3xEv0XlTpLeIh3ErkQ7DFe1js5M/EMFsvuPQbk4p9hQfCyaV2v
+ VbfGN49RTHXy0QBnbCV3MjWwEw==
+X-Google-Smtp-Source: ADFU+vsy8RXa2JkubLPVYUS7N5uh4Nl43LrVHX6u5UwJJSRxFFz+CIWvNB+Watcu8JNZX00LUTOhBQ==
+X-Received: by 2002:a2e:556:: with SMTP id 83mr2723344ljf.127.1583248080801;
+ Tue, 03 Mar 2020 07:08:00 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.07.58
+ by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.07.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 07:07:58 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:00 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, devicetree@vger.kernel.org
-Subject: [PATCH 2/7] dt-bindings: arm: Fix cpu compatibles in the hierarchical
- example for PSCI
-Date: Tue,  3 Mar 2020 16:07:44 +0100
-Message-Id: <20200303150749.30566-3-ulf.hansson@linaro.org>
+Subject: [PATCH 3/7] dt-bindings: power: Convert domain-idle-states bindings
+ to json-schema
+Date: Tue,  3 Mar 2020 16:07:45 +0100
+Message-Id: <20200303150749.30566-4-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200303150749.30566-1-ulf.hansson@linaro.org>
 References: <20200303150749.30566-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_070800_642119_67CF38B5 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20200303_070802_698465_D1AB54FE 
+X-CRM114-Status: GOOD (  18.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,34 +110,192 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+While converting to the json-schema, let's also take the opportunity to
+further specify/clarify some more details about the DT binding.
+
+For example, let's define the label where to put the states nodes, set a
+pattern for nodename of the state nodes and finally add an example.
+
 Fixes: a3f048b5424e ("dt: psci: Update DT bindings to support hierarchical PSCI states")
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
- Documentation/devicetree/bindings/arm/psci.yaml | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ .../devicetree/bindings/arm/psci.yaml         |  2 +-
+ .../bindings/power/domain-idle-state.txt      | 33 ---------
+ .../bindings/power/domain-idle-state.yaml     | 67 +++++++++++++++++++
+ .../bindings/power/power-domain.yaml          | 22 +++---
+ .../bindings/power/power_domain.txt           |  2 +-
+ 5 files changed, 79 insertions(+), 47 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/power/domain-idle-state.txt
+ create mode 100644 Documentation/devicetree/bindings/power/domain-idle-state.yaml
 
 diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-index f8218e60e3e2..540211a080d4 100644
+index 540211a080d4..0bc3c43a525a 100644
 --- a/Documentation/devicetree/bindings/arm/psci.yaml
 +++ b/Documentation/devicetree/bindings/arm/psci.yaml
-@@ -199,7 +199,7 @@ examples:
+@@ -123,7 +123,7 @@ properties:
+       to mandate it.
  
-       CPU0: cpu@0 {
-         device_type = "cpu";
--        compatible = "arm,cortex-a53", "arm,armv8";
-+        compatible = "arm,cortex-a53";
-         reg = <0x0>;
-         enable-method = "psci";
-         power-domains = <&CPU_PD0>;
-@@ -208,7 +208,7 @@ examples:
+       [3] Documentation/devicetree/bindings/power/power_domain.txt
+-      [4] Documentation/devicetree/bindings/power/domain-idle-state.txt
++      [4] Documentation/devicetree/bindings/power/domain-idle-state.yaml
  
-       CPU1: cpu@1 {
-         device_type = "cpu";
--        compatible = "arm,cortex-a57", "arm,armv8";
-+        compatible = "arm,cortex-a53";
-         reg = <0x100>;
-         enable-method = "psci";
-         power-domains = <&CPU_PD1>;
+   power-domains:
+     $ref: '/schemas/types.yaml#/definitions/phandle-array'
+diff --git a/Documentation/devicetree/bindings/power/domain-idle-state.txt b/Documentation/devicetree/bindings/power/domain-idle-state.txt
+deleted file mode 100644
+index eefc7ed22ca2..000000000000
+--- a/Documentation/devicetree/bindings/power/domain-idle-state.txt
++++ /dev/null
+@@ -1,33 +0,0 @@
+-PM Domain Idle State Node:
+-
+-A domain idle state node represents the state parameters that will be used to
+-select the state when there are no active components in the domain.
+-
+-The state node has the following parameters -
+-
+-- compatible:
+-	Usage: Required
+-	Value type: <string>
+-	Definition: Must be "domain-idle-state".
+-
+-- entry-latency-us
+-	Usage: Required
+-	Value type: <prop-encoded-array>
+-	Definition: u32 value representing worst case latency in
+-		    microseconds required to enter the idle state.
+-		    The exit-latency-us duration may be guaranteed
+-		    only after entry-latency-us has passed.
+-
+-- exit-latency-us
+-	Usage: Required
+-	Value type: <prop-encoded-array>
+-	Definition: u32 value representing worst case latency
+-		    in microseconds required to exit the idle state.
+-
+-- min-residency-us
+-	Usage: Required
+-	Value type: <prop-encoded-array>
+-	Definition: u32 value representing minimum residency duration
+-		    in microseconds after which the idle state will yield
+-		    power benefits after overcoming the overhead in entering
+-i		    the idle state.
+diff --git a/Documentation/devicetree/bindings/power/domain-idle-state.yaml b/Documentation/devicetree/bindings/power/domain-idle-state.yaml
+new file mode 100644
+index 000000000000..27da43076b85
+--- /dev/null
++++ b/Documentation/devicetree/bindings/power/domain-idle-state.yaml
+@@ -0,0 +1,67 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/power/domain-idle-state.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: PM Domain Idle States binding description
++
++maintainers:
++  - Ulf Hansson <ulf.hansson@linaro.org>
++
++description:
++  A domain idle state node represents the state parameters that will be used to
++  select the state when there are no active components in the PM domain.
++
++properties:
++  $nodename:
++    const: domain-idle-states
++
++patternProperties:
++  "^(cpu|cluster|domain)-":
++    type: object
++    description:
++      Each state node represents a domain idle state description.
++
++    properties:
++      compatible:
++        const: domain-idle-state
++
++      entry-latency-us:
++        $ref: /schemas/types.yaml#/definitions/uint32
++        description:
++          The worst case latency in microseconds required to enter the idle
++          state. Note that, the exit-latency-us duration may be guaranteed only
++          after the entry-latency-us has passed.
++
++      exit-latency-us:
++        $ref: /schemas/types.yaml#/definitions/uint32
++        description:
++          The worst case latency in microseconds required to exit the idle
++          state.
++
++      min-residency-us:
++        $ref: /schemas/types.yaml#/definitions/uint32
++        description:
++          The minimum residency duration in microseconds after which the idle
++          state will yield power benefits, after overcoming the overhead while
++          entering the idle state.
++
++    required:
++      - compatible
++      - entry-latency-us
++      - exit-latency-us
++      - min-residency-us
++
++examples:
++  - |
++
++    domain-idle-states {
++      domain_retention: domain-retention {
++        compatible = "domain-idle-state";
++        entry-latency-us = <20>;
++        exit-latency-us = <40>;
++        min-residency-us = <80>;
++      };
++    };
++...
+diff --git a/Documentation/devicetree/bindings/power/power-domain.yaml b/Documentation/devicetree/bindings/power/power-domain.yaml
+index 455b573293ae..207e63ae10f9 100644
+--- a/Documentation/devicetree/bindings/power/power-domain.yaml
++++ b/Documentation/devicetree/bindings/power/power-domain.yaml
+@@ -29,18 +29,16 @@ properties:
+ 
+   domain-idle-states:
+     $ref: /schemas/types.yaml#/definitions/phandle-array
+-    description:
+-      A phandle of an idle-state that shall be soaked into a generic domain
+-      power state. The idle state definitions are compatible with
+-      domain-idle-state specified in
+-      Documentation/devicetree/bindings/power/domain-idle-state.txt
+-      phandles that are not compatible with domain-idle-state will be ignored.
+-      The domain-idle-state property reflects the idle state of this PM domain
+-      and not the idle states of the devices or sub-domains in the PM domain.
+-      Devices and sub-domains have their own idle-states independent
+-      of the parent domain's idle states. In the absence of this property,
+-      the domain would be considered as capable of being powered-on
+-      or powered-off.
++    description: |
++      Phandles of idle states that defines the available states for the
++      power-domain provider. The idle state definitions are compatible with the
++      domain-idle-state bindings, specified in ./domain-idle-state.yaml.
++
++      Note that, the domain-idle-state property reflects the idle states of this
++      PM domain and not the idle states of the devices or sub-domains in the PM
++      domain. Devices and sub-domains have their own idle states independent of
++      the parent domain's idle states. In the absence of this property, the
++      domain would be considered as capable of being powered-on or powered-off.
+ 
+   operating-points-v2:
+     $ref: /schemas/types.yaml#/definitions/phandle-array
+diff --git a/Documentation/devicetree/bindings/power/power_domain.txt b/Documentation/devicetree/bindings/power/power_domain.txt
+index 5b09b2deb483..08497ef26c7a 100644
+--- a/Documentation/devicetree/bindings/power/power_domain.txt
++++ b/Documentation/devicetree/bindings/power/power_domain.txt
+@@ -109,4 +109,4 @@ Example:
+ 		required-opps = <&domain1_opp_1>;
+ 	};
+ 
+-[1]. Documentation/devicetree/bindings/power/domain-idle-state.txt
++[1]. Documentation/devicetree/bindings/power/domain-idle-state.yaml
 -- 
 2.20.1
 
