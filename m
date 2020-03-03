@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 225BF17764D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 13:46:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F27317764E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 13:46:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NcfVs5GtmQ7lON8yiP/Xpkz6um7zG1RHMU4vqtWoCmc=; b=QLG+Wtq2e0NLR2
-	uWXKwgGl/3UKX9OYptNqfvTBDfzoq2ib/xlCU0ZAR/K/UcalJzcuLaI22VVgUByRMcBZb50vL15BB
-	RBPfh8F0cLaCK0oetmGiRbSDPi9RB00+motefAnBpNi16JgfdJamqtMOtgnCdf/xUCpgs/poeap8N
-	Q6UEE6yV4M5QcOG7YOUAc29LslR4pESuZsxxXEbVIl167uzo/iXKH64vNOxpdz1n1I5CvClRU0CUY
-	gDQds1um5rr611VygmeuKMKf2lfwFDie7W6RXBdfesC4iggoaTIFJ+S8jUTPu7dpvYif6ttnzV/xN
-	c4G5T+ntV81rHNwjlvBA==;
+	List-Owner; bh=6yxlP+in0+8WT6asC+IPAv2QY2cUgI4LdYaR2Uw555M=; b=Kc2yVUMcQ2GIxa
+	nimS3OtnmsuzMGm62KdpEc8KzmV5ps0HeIMvWnLUeOWFWm4fz4Dr5jbdGR7mzFuHq4W95e5DkuFbp
+	KjMenanTYsbccrHy0XgjEDg+i339Yi8dtyMPmj49/hFVjAkC5cEgc+a1QdVjsvrm0QkIQHdaQVfOI
+	CBuauygVtyQxiZOZxRsnnwOIGhdhvPXUjT8KPTEUXJjOmeD+uxiQH1qZGSOMg0FuvAatV1AL33xE/
+	W76LXg/gqtqIw4TOUoCgTRZf7HFY6pvy7Ulq2zJOnf1CwC8Rz8Cnq/WV9BKZTT3Ge3RHZKI2nmBv9
+	EKvCR+/vW3Xj7ALfuSnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j96vx-0000Og-Gb; Tue, 03 Mar 2020 12:46:01 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j96wB-0000fn-O4; Tue, 03 Mar 2020 12:46:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j96v5-0007LZ-8t; Tue, 03 Mar 2020 12:45:09 +0000
-X-UUID: 379704f51cba4e2ba5681759692e7937-20200303
+ id 1j96v6-0007dj-0y; Tue, 03 Mar 2020 12:45:11 +0000
+X-UUID: 6160001e7bbc44329190678e933afd3c-20200303
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=g+BhM16xtThUyup6kZYT72Zj4L9n3+STeBC0E9yCktg=; 
- b=cFs3Cnhn5Sl3CEb6YfizG2U8CJqtEPYYkQxOde51IcGdT12WSwJ3fEvShkPLqqI/eJpEy5GzmJoDXdJecujM9iRC6RhfEZMY/HSGmc4c+eL4472GpTxJa+jvfblgZA60JCKtiEFyCDMY1p2st6WHqT9NrSf4wpLd4BVpGL9fOBw=;
-X-UUID: 379704f51cba4e2ba5681759692e7937-20200303
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=Hn8cug2NTpYe7mwTSmdNnRzBtd3kfO4eYaSY9KsW2+w=; 
+ b=QVfXIlubWsOy7kSYlAhJk3AtmVtnK+4I3k1lTxIGZeyaGBoCxA6ojeXlQvkLWsPKAfjDpcaZOqT+Kk9YUPGDCZ0iASUK4le/FOEkXfOo+KAjOjp6Htp+iXTbFcygocvia6A2pblA5T5U0qC5oRxVDbNnoxF7YjqQSQUyh05zW6A=;
+X-UUID: 6160001e7bbc44329190678e933afd3c-20200303
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1039720806; Tue, 03 Mar 2020 04:45:01 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Mar 2020 04:35:06 -0800
+ with ESMTP id 114664297; Tue, 03 Mar 2020 04:45:03 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Mar 2020 04:36:23 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Mar 2020 20:34:12 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Mar 2020 20:34:10 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Mar 2020 20:35:45 +0800
+ Transport; Tue, 3 Mar 2020 20:35:46 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH v7 09/11] arm: dts: Add jpeg enc device tree node
-Date: Tue, 3 Mar 2020 20:34:44 +0800
-Message-ID: <20200303123446.20095-10-xia.jiang@mediatek.com>
+Subject: [PATCH v7 10/11] media: platform: Rename jpeg dec file name
+Date: Tue, 3 Mar 2020 20:34:45 +0800
+Message-ID: <20200303123446.20095-11-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200303123446.20095-1-xia.jiang@mediatek.com>
 References: <20200303123446.20095-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_044507_371717_B6AF54E8 
-X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-CacheID: sfid-20200303_044508_105377_7A6D3101 
+X-CRM114-Status: UNSURE (   9.28  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -99,7 +97,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add jpeg enc device tree node
+Rename the files which are for decode feature. This is preparing
+path since the jpeg enc patch will be added later.
 
 Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
 ---
@@ -111,37 +110,117 @@ v5: no changes
 
 v4: no changes
 
-v3: change compatible to SoC specific compatible
+v3: no changes
 
 v2: no changes
 ---
- arch/arm/boot/dts/mt2701.dtsi | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ drivers/media/platform/mtk-jpeg/Makefile                      | 2 +-
+ drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c               | 4 ++--
+ .../platform/mtk-jpeg/{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c}    | 2 +-
+ .../platform/mtk-jpeg/{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h}    | 2 +-
+ .../mtk-jpeg/{mtk_jpeg_parse.c => mtk_jpeg_dec_parse.c}       | 2 +-
+ .../mtk-jpeg/{mtk_jpeg_parse.h => mtk_jpeg_dec_parse.h}       | 2 +-
+ .../platform/mtk-jpeg/{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h}  | 0
+ 7 files changed, 7 insertions(+), 7 deletions(-)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c} (99%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h} (98%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_parse.c => mtk_jpeg_dec_parse.c} (98%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_parse.h => mtk_jpeg_dec_parse.h} (92%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h} (100%)
 
-diff --git a/arch/arm/boot/dts/mt2701.dtsi b/arch/arm/boot/dts/mt2701.dtsi
-index 51e1305c6471..f2f92150b3fb 100644
---- a/arch/arm/boot/dts/mt2701.dtsi
-+++ b/arch/arm/boot/dts/mt2701.dtsi
-@@ -569,6 +569,19 @@
- 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
- 	};
+diff --git a/drivers/media/platform/mtk-jpeg/Makefile b/drivers/media/platform/mtk-jpeg/Makefile
+index 92a4fc046bfe..48516dcf96e6 100644
+--- a/drivers/media/platform/mtk-jpeg/Makefile
++++ b/drivers/media/platform/mtk-jpeg/Makefile
+@@ -1,3 +1,3 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+-mtk_jpeg-objs := mtk_jpeg_core.o mtk_jpeg_hw.o mtk_jpeg_parse.o
++mtk_jpeg-objs := mtk_jpeg_core.o mtk_jpeg_dec_hw.o mtk_jpeg_dec_parse.o
+ obj-$(CONFIG_VIDEO_MEDIATEK_JPEG) += mtk_jpeg.o
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+index b76575e7d300..ccdba87ef806 100644
+--- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
++++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+@@ -23,9 +23,9 @@
+ #include <media/videobuf2-dma-contig.h>
+ #include <soc/mediatek/smi.h>
  
-+	jpegenc: jpegenc@1500a000 {
-+		compatible = "mediatek,mt2701-jpgenc",
-+			     "mediatek,mtk-jpgenc";
-+		reg = <0 0x1500a000 0 0x1000>;
-+		interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_LOW>;
-+		clocks =  <&imgsys CLK_IMG_VENC>;
-+		clock-names = "jpgenc";
-+		power-domains = <&scpsys MT2701_POWER_DOMAIN_ISP>;
-+		mediatek,larb = <&larb2>;
-+		iommus = <&iommu MT2701_M4U_PORT_JPGENC_RDMA>,
-+			 <&iommu MT2701_M4U_PORT_JPGENC_BSDMA>;
-+	};
-+
- 	vdecsys: syscon@16000000 {
- 		compatible = "mediatek,mt2701-vdecsys", "syscon";
- 		reg = <0 0x16000000 0 0x1000>;
+-#include "mtk_jpeg_hw.h"
++#include "mtk_jpeg_dec_hw.h"
+ #include "mtk_jpeg_core.h"
+-#include "mtk_jpeg_parse.h"
++#include "mtk_jpeg_dec_parse.h"
+ 
+ static struct mtk_jpeg_fmt mtk_jpeg_formats[] = {
+ 	{
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_hw.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.c
+similarity index 99%
+rename from drivers/media/platform/mtk-jpeg/mtk_jpeg_hw.c
+rename to drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.c
+index 68abcfd7494d..afbbfd5d02bc 100644
+--- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_hw.c
++++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.c
+@@ -9,7 +9,7 @@
+ #include <linux/kernel.h>
+ #include <media/videobuf2-core.h>
+ 
+-#include "mtk_jpeg_hw.h"
++#include "mtk_jpeg_dec_hw.h"
+ 
+ #define MTK_JPEG_DUNUM_MASK(val)	(((val) - 1) & 0x3)
+ 
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_hw.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
+similarity index 98%
+rename from drivers/media/platform/mtk-jpeg/mtk_jpeg_hw.h
+rename to drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
+index 7b0687f8f4b6..1cc37dbfc8e7 100644
+--- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_hw.h
++++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
+@@ -11,7 +11,7 @@
+ #include <media/videobuf2-core.h>
+ 
+ #include "mtk_jpeg_core.h"
+-#include "mtk_jpeg_reg.h"
++#include "mtk_jpeg_dec_reg.h"
+ 
+ enum {
+ 	MTK_JPEG_DEC_RESULT_EOF_DONE		= 0,
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_parse.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_parse.c
+similarity index 98%
+rename from drivers/media/platform/mtk-jpeg/mtk_jpeg_parse.c
+rename to drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_parse.c
+index f862d38f3af7..b95c45791c29 100644
+--- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_parse.c
++++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_parse.c
+@@ -8,7 +8,7 @@
+ #include <linux/kernel.h>
+ #include <linux/videodev2.h>
+ 
+-#include "mtk_jpeg_parse.h"
++#include "mtk_jpeg_dec_parse.h"
+ 
+ #define TEM	0x01
+ #define SOF0	0xc0
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_parse.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_parse.h
+similarity index 92%
+rename from drivers/media/platform/mtk-jpeg/mtk_jpeg_parse.h
+rename to drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_parse.h
+index 0a48eeabaff2..2918f15811f8 100644
+--- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_parse.h
++++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_parse.h
+@@ -8,7 +8,7 @@
+ #ifndef _MTK_JPEG_PARSE_H
+ #define _MTK_JPEG_PARSE_H
+ 
+-#include "mtk_jpeg_hw.h"
++#include "mtk_jpeg_dec_hw.h"
+ 
+ bool mtk_jpeg_parse(struct mtk_jpeg_dec_param *param, u8 *src_addr_va,
+ 		    u32 src_size);
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_reg.h
+similarity index 100%
+rename from drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h
+rename to drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_reg.h
 -- 
 2.18.0
 _______________________________________________
