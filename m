@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EB14176968
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 01:46:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDE75176993
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 01:53:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=McMs3wMbIz4Q+2IMgwuxQmGqcL2hOFgGQVq4AezKjjs=; b=OhJtpTb6RtxkpH
-	zQ1hZWuIfdsFK9AbXHKNXKvp5hxKBuHxXTSE1BovOOtemOLvrAbTZDa2QmEXshWo3oTXV6XiKghKh
-	S0e0OhfgLGi1lrK12zmq13A4UMm3/nt/KlBhqF+x7TJoobhEorrlxKk9D8QVO6hAJnuqYxerEoxyn
-	4gCcQaOnQqjcuDppdOTx7K6ko/LneY3y7OgTyxkxa8OpeTpqCUVzXR2bhDajFUFCNGrHlN2uMbo2H
-	BDMI845oJ03A+BmRdvDj+jsGGv5PpC3dIZjeeOqtBZFAYINCXv2JlRLf433osXBYhsvc57ZXF6F77
-	lVr0cktcAMiabZIeYCtw==;
+	List-Owner; bh=AxJPTRmQr68OIn46zUyQqC92zU9KxkcHhDuhDMebWSg=; b=DXEv0rOc5XYR8N
+	TGGPjPQfLJ6L7LFr7RYvS95nz/NKzHUZ7UvwHim+ucf54UlzhgW2/HLedQg7TEe87toN6KCoMnML5
+	JF6K1M1jUYzbhhZ5GSsgbawgMNtyIshvwLDJV9PVMDSYnrT9CmIJiStx7gJNPAEyJ+Bc6yrsqhvkU
+	VHGEjT50CR+B7BhH4Hj+Hri1j0ls6z7RRnjKjDmGwlrL31eQ16mZG8RI8wNDlaSeJXoGAWtyesVAM
+	0my8UYSe/Xl6GqEn46OhgzUuQHNTV5F3ua9wYOv3cNZjvGBQtjizO+klkJmqxicXvAn8MJNAtJ/Pb
+	ugNn1plGiqEjj7o4uAHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8vhv-0002Vd-Kq; Tue, 03 Mar 2020 00:46:47 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1j8vnu-0004es-79; Tue, 03 Mar 2020 00:52:58 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8vho-0002VC-I4
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 00:46:42 +0000
-Received: by mail-qk1-x744.google.com with SMTP id p62so1806898qkb.0
+ id 1j8vnn-0004eL-3Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 00:52:53 +0000
+Received: by mail-qk1-x741.google.com with SMTP id m2so1771506qka.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 16:46:36 -0800 (PST)
+ Mon, 02 Mar 2020 16:52:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=massaru-org.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=FJzJAEuKHPY6L62lnbjtAROsD95ktjZMnZsb3UGNdoo=;
- b=EAXXXRg9yWE/eu15wdXFiqqdRa8fvC7j6/kiQ+sZ5+8VcUZulKti8KEB12QryZBORD
- qPVfEjioSfSlwMQikCxVTN/PQedu3dYDAnrBbf8RdCzvLZl0erDdcS8qK8occGQEqIM9
- JOxL5KH2n1UfL9ekZ9hDNZflV3kW5hyRkH3rFhw6ALROthslfQW7vWcKmVN6sLQV70po
- +ejYu9Uk99kD7EEOr8xSkDlM1jVYKV4R3gs89mvA/WKrGk33OvPEGewFf5KW4L4bhWOI
- /dmOHA97nBl34b1RwpNzhJmyqUwICIkRL9fN/zGnhdN5dfc6am8LZbY9ce/irTlo97QZ
- 0f2w==
+ bh=75lSUcP13Pt67uPW1s5ODO496/f8/lFD2CsoSXYcCLI=;
+ b=Dln004/JTr1kxSkJRcH6E3EU0PcjAxhEcCyciMe/Bdk7OD0fsR48DcclIQqOUVZYde
+ o+J8G023NZdZN0PA4cSOBu/JX1Idx3qq2ch+MEKOITRfgRL7KUgZziUNJZ0p19+Os7MU
+ 0LjdnaqWOHzOCGh+7xEnculT8ZZasSzYRMn+5UAvwjIgmKbpF4Om9mPBM67yxi+9FYTA
+ iZC/Dh0TEPgoiDU/Hv8zBolIzZtLrJ2sab6a742EuXi8RLzq6hq031vREAHr2RkmMk9+
+ y+shsra1aybiF7Q7a4nWj+/sIzxWg5FwFFPZpoLJI1xK5Zkv1uwAoVKTxKnJmMBeQRsa
+ LCLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=FJzJAEuKHPY6L62lnbjtAROsD95ktjZMnZsb3UGNdoo=;
- b=JwC3jAUlw+lyNuFBMB8d1k/f2PrZR1N5etDbYXKq7oR2CHTWSeGcCL3DEfgI9NCDmi
- BAepk5Td9LZbQPKHzmDFpdbS3Jg1IFtGEyndibdQfVIhk9NrPusu3TEDiS7P4pkv4Rj0
- PfdIuh4DfyE2b/kHohRDlfnxBCD0juAAlAPo2vrf1GUg52tb80RPku+jpDYd8HlgMTfZ
- WMIZRiB4S2SwgU5GxnrZd8ZZmjYlJmx717Ux7uJpLGDJApFsW0cyO8FLhIQt96RwsEkL
- /tN4w+ipnLQwm42rkCCwBJrqcS57uSJwueUT1lg1gZKytZ1bskDLujATXmrINz+/mYDG
- 5w1A==
-X-Gm-Message-State: ANhLgQ0iyfM0XVyId1Hl8+Ce1eMU0zJv43aBgtkuoUDX1dlBhpGdvOAw
- UCHLxVkWcstIZzi6ofQehI9g3A==
-X-Google-Smtp-Source: ADFU+vt190SBEdDRnqimw8AigTuE5fSCYYi1HXhNY+pZ3S7DEWJhp2+r7BeEN2P7CAIlnUuqjkLXSQ==
-X-Received: by 2002:a05:620a:15cf:: with SMTP id
- o15mr1899012qkm.140.1583196395553; 
- Mon, 02 Mar 2020 16:46:35 -0800 (PST)
+ bh=75lSUcP13Pt67uPW1s5ODO496/f8/lFD2CsoSXYcCLI=;
+ b=NYHhBLrNBpupE/nLI3B6dM/HRT92WWGF2UddL4ijX6pSN39dzDvxcRojXmJrJh44wU
+ uXauRftqTYVvoV8+buy5YagX8LXjkUS9vJEKFji6xkG3VA/ZmVtNDPVuW3vNqE3nldBc
+ P1xIr4IGFmmGnNemzaQLLkN66xoH5p7c/p+DcBNf9MeimFcBHj7crnhkRdgYFihOUBTk
+ Yffji8QciwhJNbIRrHgu803GG7qnZWWRr109YoV2RxQxy1J+JHkHBroxDfcvjE3Oz+SF
+ 6+npgVSj1Oum/Wdi3qKnL3eoDnRpal8feARNjqPIFUagX15D99R5PYF+tCGX/a1hQ24n
+ +w9Q==
+X-Gm-Message-State: ANhLgQ3x01yh3Swb6TO86Yp5akvZ7ucXzfKrIIHbG8+KAJk2FEEbRlyk
+ WhN16N9r4VuWsgyp6c40WHlLQg==
+X-Google-Smtp-Source: ADFU+vscbmNSlKj45OtmQ9oSeaDjGM9mGDrea541vRtHvMJ6q6G/36H7oCgoamUprRx6IQCBQa1Ndw==
+X-Received: by 2002:a05:620a:3dc:: with SMTP id
+ r28mr1892959qkm.373.1583196768868; 
+ Mon, 02 Mar 2020 16:52:48 -0800 (PST)
 Received: from bbking.lan ([2804:14c:4a5:36c::cd2])
- by smtp.gmail.com with ESMTPSA id s139sm7167406qke.70.2020.03.02.16.46.32
+ by smtp.gmail.com with ESMTPSA id 79sm11182037qkf.129.2020.03.02.16.52.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 16:46:34 -0800 (PST)
+ Mon, 02 Mar 2020 16:52:48 -0800 (PST)
 From: Vitor Massaru Iha <vitor@massaru.org>
 To: devicetree@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4] arm64: dts: imx8mq-phanbell: Add gpio-fan/thermal support
-Date: Mon,  2 Mar 2020 21:46:30 -0300
-Message-Id: <20200303004630.13663-1-vitor@massaru.org>
+Subject: [PATCH v5] arm64: dts: imx8mq-phanbell: Add gpio-fan/thermal support
+Date: Mon,  2 Mar 2020 21:52:44 -0300
+Message-Id: <20200303005244.13893-1-vitor@massaru.org>
 X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_164640_599024_368E49EE 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20200302_165251_201247_69AF5E97 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,6 +108,7 @@ It was tested on Coral Dev Board using this command:
   sudo stress --cpu 4 --timeout 3600
 
 Signed-off-by: Vitor Massaru Iha <vitor@massaru.org>
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 ---
 v2:
  * Fix underscore in property name;
@@ -123,6 +124,9 @@ v3:
 
 v4:
  * Fix cpu_thermal order;
+
+v5:
+ * Add missing Reviewed-by;
 
 BR,
 Vitor
