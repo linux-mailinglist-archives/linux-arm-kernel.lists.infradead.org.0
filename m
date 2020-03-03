@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C3CA17749E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 11:55:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63F4F1774A9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 11:55:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XctJ2FYC9NP1E67Ktt0EQWWv3HTn4/2FA9ZH4qSkYrs=; b=LWkR2I2LzvOgsA
-	zrKlIAM66DeztL8ecz3FN3nOyvQdNegdP7maMkB2TE7YT9i6ZTdpryeSFuGTRaEQXmKw0hS50H5xd
-	i0T8FDUNM5qBTEo8UsUO8peAtdW/G0bSWBRq7UCHk0ZaF4sOXOEsnHCw4wnQXQ8Ab4PB0pQu3M9zQ
-	Gqm5b73ntiBbfa7PYLXBg0S63REcXx88tpUkt6Uzd1GnVOXTh5uEROGy2wjRHWGDBvyu7CP4DwHRC
-	sYZ2AkcuM8BdJ9hZf3N7Iy0zDRRIIY4c0cT67hPrs0j/XpmvL00vbSh58bCNv92M9/iaSkuufs/JH
-	YlgWVY8jqEowz5jPJ0Cg==;
+	List-Owner; bh=dXrOFgvip+nJEmivCpHfRKIhvae3fL4bevY7jy9ptLs=; b=DuswiDbRg7h/Uo
+	W2CTRsd7IThOijESV8SAejrhyHKRBOJehAkDowGzH6uplbgqmDH0K2bhambfZOKAwBn81fc0utM3I
+	5yItyuDbzk0IaFt763Ocuii+VP5urFWo3411oHqi4BUiXg84lbFkkJy3cpHjSVq2WODcLqkUGwwmx
+	JzcGJ1SYFmJXO4pGPo3g2rgScGfbwkkaj+Ff+7edvAAVFVXkxpraX6msjwidtvFj/w96efAYMaLys
+	H1XGFIJxqauYoAnLPj/hClRpP52Gh+YOmVwSfSb0CMumbhqKmT5A8qPmPobELzb5Sgiw0l7tLnlOj
+	Eu0aRjqxuYng+8NKsl4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j95Co-0001cZ-3L; Tue, 03 Mar 2020 10:55:18 +0000
+	id 1j95D6-00033Z-7w; Tue, 03 Mar 2020 10:55:36 +0000
 Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j95CA-0001JG-Lt
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 10:54:41 +0000
+ id 1j95CF-0001RQ-Ts
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 10:54:48 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
  hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e5e37190000>; Tue, 03 Mar 2020 02:53:13 -0800
+ id <B5e5e371f0000>; Tue, 03 Mar 2020 02:53:19 -0800
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 03 Mar 2020 02:54:37 -0800
+ Tue, 03 Mar 2020 02:54:43 -0800
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 03 Mar 2020 02:54:37 -0800
-Received: from HQMAIL107.nvidia.com (172.20.187.13) by HQMAIL105.nvidia.com
- (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Mar
- 2020 10:54:36 +0000
-Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Tue, 3 Mar 2020 10:54:37 +0000
+ by hqpgpgate101.nvidia.com on Tue, 03 Mar 2020 02:54:43 -0800
+Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL109.nvidia.com
+ (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Mar
+ 2020 10:54:42 +0000
+Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Tue, 3 Mar 2020 10:54:42 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw03.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5e5e37680000>; Tue, 03 Mar 2020 02:54:36 -0800
+ id <B5e5e376e0000>; Tue, 03 Mar 2020 02:54:42 -0800
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <thierry.reding@gmail.com>, <jonathanh@nvidia.com>, <andrew.murray@arm.com>
-Subject: [PATCH V4 2/5] dt-bindings: PCI: tegra: Add DT support for PCIe EP
- nodes in Tegra194
-Date: Tue, 3 Mar 2020 16:24:15 +0530
-Message-ID: <20200303105418.2840-3-vidyas@nvidia.com>
+Subject: [PATCH V4 3/5] arm64: tegra: Add PCIe endpoint controllers nodes for
+ Tegra194
+Date: Tue, 3 Mar 2020 16:24:16 +0530
+Message-ID: <20200303105418.2840-4-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200303105418.2840-1-vidyas@nvidia.com>
 References: <20200303105418.2840-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1583232793; bh=QGG7NJpLltGmmWOOWEYFX0eA13Z+lFN5NqnALPDoBpg=;
+ t=1583232799; bh=k+/9GSevZ5ThFAyd97tvORR6/9J/mm3ONFOA7Y2+8Nk=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=TRJgrVUk3Bm4ghAMFoOqdo2jXINkw6BLy2zd7YE7dCoRRuTLUkJXQR2X7qPSBuVfx
- s2mXLpX56fcKEHExqRR/8gHytSvnQCFgnl4wz04D1fmf8JAz9M7tfjEBuUc39JXChV
- s3VgtLVJBWErl+sUWdT89l7GJqdxE8eMP358x2I+JPjq+N3/LAW57/XGNxZEDe1uiT
- XaoQuDB4OthBvzuLLo/TiB7wNK9df7jq7XoX3v6HVMnAF8/pDM1DOdijfNBrLkl7AE
- ugGBMDWgcl6JN2BW53X9wpWRKhvKr3JQg9A8iDb6J5z05M4OX6KqPeIuhVDjgTf91K
- zwGeIs+teq+xg==
+ b=jW+oZXPx3O14INWCwVA2e3u3xUuI57UtXW34jq+8n+C3YxckRYkidt4E470FTSUtO
+ 1WDUWc1Vx2FMTpg15xCX4cy76qt7b4Ys5ZfMExiOjyaKYNe+sXnhMsV1JsBsBjwFkn
+ ywr8j6/i9g2zg86cgTJhNYrA2e4FBweJVpoz9EHeAhfjVwF2WcY446Ws/OIMmh+LCL
+ E/Rl+1l3Z1T+HFprSJH0sQBUixAk50sgPdZQUoWoDN8jK4w6cfj/trfLPXCv6F9pjw
+ ARE/cU65+liUWYtDHXq4iSqrTVaeu3HZ4Zbn4bwjQq5oAMDrhXjeZK4+XwmlhmILi3
+ vhbELW+mCCeuA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_025438_740627_4020882A 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20200303_025444_110394_20F705BE 
+X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,153 +104,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for PCIe controllers that can operate in endpoint mode
-in Tegra194.
+Add endpoint mode controllers nodes for the dual mode PCIe controllers
+present in Tegra194 SoC.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
 V4:
 * None
 
 V3:
-* Added Reviewed-by: Rob Herring <robh@kernel.org>
+* None
 
 V2:
-* Addressed Thierry's review comments
-* Merged EP specific information from tegra194-pcie-ep.txt to tegra194-pcie.txt itself
-* Started using the standard 'reset-gpios' for PERST GPIO
-* Added 'nvidia,refclk-select-gpios' to enable REFCLK signals
+* None
 
- .../bindings/pci/nvidia,tegra194-pcie.txt     | 125 ++++++++++++++----
- 1 file changed, 99 insertions(+), 26 deletions(-)
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi | 99 ++++++++++++++++++++++++
+ 1 file changed, 99 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-index 1f90eb39870b..bd43f3c3ece4 100644
---- a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-@@ -1,11 +1,11 @@
- NVIDIA Tegra PCIe controller (Synopsys DesignWare Core based)
- 
--This PCIe host controller is based on the Synopsis Designware PCIe IP
-+This PCIe controller is based on the Synopsis Designware PCIe IP
- and thus inherits all the common properties defined in designware-pcie.txt.
-+Some of the controller instances are dual mode where in they can work either
-+in root port mode or endpoint mode but one at a time.
- 
- Required properties:
--- compatible: For Tegra19x, must contain "nvidia,tegra194-pcie".
--- device_type: Must be "pci"
- - power-domains: A phandle to the node that controls power to the respective
-   PCIe controller and a specifier name for the PCIe controller. Following are
-   the specifiers for the different PCIe controllers
-@@ -32,6 +32,32 @@ Required properties:
-   entry for each entry in the interrupt-names property.
- - interrupt-names: Must include the following entries:
-   "intr": The Tegra interrupt that is asserted for controller interrupts
-+- clocks: Must contain an entry for each entry in clock-names.
-+  See ../clocks/clock-bindings.txt for details.
-+- clock-names: Must include the following entries:
-+  - core
-+- resets: Must contain an entry for each entry in reset-names.
-+  See ../reset/reset.txt for details.
-+- reset-names: Must include the following entries:
-+  - apb
-+  - core
-+- phys: Must contain a phandle to P2U PHY for each entry in phy-names.
-+- phy-names: Must include an entry for each active lane.
-+  "p2u-N": where N ranges from 0 to one less than the total number of lanes
-+- nvidia,bpmp: Must contain a pair of phandle to BPMP controller node followed
-+  by controller-id. Following are the controller ids for each controller.
-+    0: C0
-+    1: C1
-+    2: C2
-+    3: C3
-+    4: C4
-+    5: C5
-+- vddio-pex-ctl-supply: Regulator supply for PCIe side band signals
-+
-+RC mode:
-+- compatible: Tegra19x must contain  "nvidia,tegra194-pcie"
-+- device_type: Must be "pci" for RC mode
-+- interrupt-names: Must include the following entries:
-   "msi": The Tegra interrupt that is asserted when an MSI is received
- - bus-range: Range of bus numbers associated with this controller
- - #address-cells: Address representation for root ports (must be 3)
-@@ -60,27 +86,15 @@ Required properties:
- - interrupt-map-mask and interrupt-map: Standard PCI IRQ mapping properties
-   Please refer to the standard PCI bus binding document for a more detailed
-   explanation.
--- clocks: Must contain an entry for each entry in clock-names.
--  See ../clocks/clock-bindings.txt for details.
--- clock-names: Must include the following entries:
--  - core
--- resets: Must contain an entry for each entry in reset-names.
--  See ../reset/reset.txt for details.
--- reset-names: Must include the following entries:
--  - apb
--  - core
--- phys: Must contain a phandle to P2U PHY for each entry in phy-names.
--- phy-names: Must include an entry for each active lane.
--  "p2u-N": where N ranges from 0 to one less than the total number of lanes
--- nvidia,bpmp: Must contain a pair of phandle to BPMP controller node followed
--  by controller-id. Following are the controller ids for each controller.
--    0: C0
--    1: C1
--    2: C2
--    3: C3
--    4: C4
--    5: C5
--- vddio-pex-ctl-supply: Regulator supply for PCIe side band signals
-+
-+EP mode:
-+In Tegra194, Only controllers C0, C4 & C5 support EP mode.
-+- compatible: Tegra19x must contain "nvidia,tegra194-pcie-ep"
-+- reg-names: Must include the following entries:
-+  "addr_space": Used to map remote RC address space
-+- reset-gpios: Must contain a phandle to a GPIO controller followed by
-+  GPIO that is being used as PERST input signal. Please refer to pci.txt
-+  document.
- 
- Optional properties:
- - pinctrl-names: A list of pinctrl state names.
-@@ -104,6 +118,8 @@ Optional properties:
-    specified in microseconds
- - nvidia,aspm-l0s-entrance-latency-us: ASPM L0s entrance latency to be
-    specified in microseconds
-+
-+RC mode:
- - vpcie3v3-supply: A phandle to the regulator node that supplies 3.3V to the slot
-   if the platform has one such slot. (Ex:- x16 slot owned by C5 controller
-   in p2972-0000 platform).
-@@ -111,11 +127,18 @@ Optional properties:
-   if the platform has one such slot. (Ex:- x16 slot owned by C5 controller
-   in p2972-0000 platform).
- 
-+EP mode:
-+- nvidia,refclk-select-gpios: Must contain a phandle to a GPIO controller
-+  followed by GPIO that is being used to enable REFCLK to controller from host
-+
-+NOTE:- On Tegra194's P2972-0000 platform, only C5 controller can be enabled to
-+operate in the endpoint mode because of the way the platform is designed.
-+
- Examples:
- =========
- 
--Tegra194:
----------
-+Tegra194 RC mode:
-+-----------------
- 
- 	pcie@14180000 {
- 		compatible = "nvidia,tegra194-pcie";
-@@ -169,3 +192,53 @@ Tegra194:
- 		       <&p2u_hsio_5>;
- 		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3";
+diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+index 8c1440888482..f4ede86e32b4 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+@@ -1620,6 +1620,105 @@
+ 			  0x82000000 0x0  0x40000000 0x1f 0x40000000 0x0 0xc0000000>; /* non-prefetchable memory (3GB) */
  	};
+ 
++	pcie_ep@14160000 {
++		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
++		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX4A>;
++		reg = <0x00 0x14160000 0x0 0x00020000   /* appl registers (128K)      */
++		       0x00 0x36040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
++		       0x00 0x36080000 0x0 0x00040000   /* DBI reg space (256K)       */
++		       0x14 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
++		reg-names = "appl", "atu_dma", "dbi", "addr_space";
 +
-+Tegra194 EP mode:
-+-----------------
++		status = "disabled";
++
++		num-lanes = <4>;
++		num-ib-windows = <2>;
++		num-ob-windows = <8>;
++
++		clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_4>;
++		clock-names = "core";
++
++		resets = <&bpmp TEGRA194_RESET_PEX0_CORE_4_APB>,
++			 <&bpmp TEGRA194_RESET_PEX0_CORE_4>;
++		reset-names = "apb", "core";
++
++		interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
++		interrupt-names = "intr";
++
++		nvidia,bpmp = <&bpmp 4>;
++
++		nvidia,aspm-cmrt-us = <60>;
++		nvidia,aspm-pwr-on-t-us = <20>;
++		nvidia,aspm-l0s-entrance-latency-us = <3>;
++	};
++
++	pcie_ep@14180000 {
++		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
++		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8B>;
++		reg = <0x00 0x14180000 0x0 0x00020000   /* appl registers (128K)      */
++		       0x00 0x38040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
++		       0x00 0x38080000 0x0 0x00040000   /* DBI reg space (256K)       */
++		       0x18 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
++		reg-names = "appl", "atu_dma", "dbi", "addr_space";
++
++		status = "disabled";
++
++		num-lanes = <8>;
++		num-ib-windows = <2>;
++		num-ob-windows = <8>;
++
++		clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_0>;
++		clock-names = "core";
++
++		resets = <&bpmp TEGRA194_RESET_PEX0_CORE_0_APB>,
++			 <&bpmp TEGRA194_RESET_PEX0_CORE_0>;
++		reset-names = "apb", "core";
++
++		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
++		interrupt-names = "intr";
++
++		nvidia,bpmp = <&bpmp 0>;
++
++		nvidia,aspm-cmrt-us = <60>;
++		nvidia,aspm-pwr-on-t-us = <20>;
++		nvidia,aspm-l0s-entrance-latency-us = <3>;
++	};
 +
 +	pcie_ep@141a0000 {
 +		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
@@ -259,6 +201,8 @@ index 1f90eb39870b..bd43f3c3ece4 100644
 +		       0x00 0x3a080000 0x0 0x00040000   /* DBI reg space (256K)       */
 +		       0x1c 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
 +		reg-names = "appl", "atu_dma", "dbi", "addr_space";
++
++		status = "disabled";
 +
 +		num-lanes = <8>;
 +		num-ib-windows = <2>;
@@ -282,21 +226,11 @@ index 1f90eb39870b..bd43f3c3ece4 100644
 +		nvidia,aspm-cmrt-us = <60>;
 +		nvidia,aspm-pwr-on-t-us = <20>;
 +		nvidia,aspm-l0s-entrance-latency-us = <3>;
-+
-+		vddio-pex-ctl-supply = <&vdd_1v8ao>;
-+
-+		reset-gpios = <&gpio TEGRA194_MAIN_GPIO(GG, 1) GPIO_ACTIVE_LOW>;
-+
-+		nvidia,refclk-select-gpios = <&gpio_aon TEGRA194_AON_GPIO(AA, 5)
-+					      GPIO_ACTIVE_HIGH>;
-+
-+		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
-+		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
-+		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
-+
-+		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
-+			    "p2u-5", "p2u-6", "p2u-7";
 +	};
++
+ 	sysram@40000000 {
+ 		compatible = "nvidia,tegra194-sysram", "mmio-sram";
+ 		reg = <0x0 0x40000000 0x0 0x50000>;
 -- 
 2.17.1
 
