@@ -2,59 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29E9D176A91
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 03:21:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4E10176A92
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 03:22:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=40bNzEdQ1haqHsvvn2UIy5oXv2Zs3aT6VMvcZsrGwjI=; b=bTW7PimCbFdYdD
-	ku9g63tkcW2cGFhBI+mA5QGkwowV4n4qVnJjLaDt0D/8jiokxIeipNZ8OUX69qGJM6PMzKcYcziRJ
-	vpfYM4nQ5ujCtqk6SObeCbH4l3wvAn7DO+IoifJfs/im5S40y0tqLtTGFWXW19vPyWtoYVZoF/eAN
-	1sQAIIkSgMobvvSlS3nxrbjivwrHFvhuj3aod5psXdgCUOff+0K7H189EKQQrqIqk4oNMw6XHDzae
-	TmSloWVcl9u7ZUbzJEBrbqqk/1maOSdBQSLWKq88LehNxKl9haPvRxO7Qp1Uw+9UmexTiBa25vrgS
-	GfqVBUCao8baJchbwCRA==;
+	List-Owner; bh=87o24JWhFNK2x82h/BQcbM92na0tB+OA6H2/ytjItT4=; b=dHrnseshpdpRGS
+	+uV1iwJ9Q2fWTM0p4mjgUavJBVC0nExR3muCuWWFhIIrmoOD5Y6yVz1qYam+vS1GmiTp7qIefygBw
+	nePQpWGhOa21j5JD2Zro3tB6sx3KhpdX9aBoryqJ6mTJYABd8u9qGpWfAloXRAehFh5GVCvL8WmpA
+	Axri3DzH45VgC6fvj+3palqUWLnVZzTYPbcA4e/h9QnKasw8GWcMbkDuvlwjJP78BZurcZ5FZPhEm
+	CYb3Q7dSnskLKwPFj/h462NPYFx3aLHrer5gQiQDgF3DP2wtfZD3pvlAkfckKhdEvTsKJlrPd+RQo
+	sQU6Q6WIii3RouL9IvpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8xBf-0004El-0X; Tue, 03 Mar 2020 02:21:35 +0000
-Received: from mail-eopbgr10064.outbound.protection.outlook.com ([40.107.1.64]
+	id 1j8xBz-0004mA-Ht; Tue, 03 Mar 2020 02:21:55 +0000
+Received: from mail-eopbgr10049.outbound.protection.outlook.com ([40.107.1.49]
  helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8xBJ-00045w-Kt
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 02:21:15 +0000
+ id 1j8xBN-0004C3-Vj
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 02:21:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=IPzYBHPdXGSMSqx4u6cVFwf0TtvScRGhBJtSvQtEyuFlWMJgiTxPwO2pBZQIWxF3KkSk/WJINmVUgLG13wLMkI3Zn2HqhAPLW3yzBqHnuvGZHT/yWpvKnkySRT9jnnIsWr2sggbVOXNrTJ5HHMASJgimJUeZZks64BoGmYshO8zgujW4dxVKh8+dqWTXGZ2px8YiZ65guhHf96VhZoWN1QtQPUZnxW+bsnl2qD0oF4Wnfiy44kTmalJJIlNodFl2DFvEpm+2xp6j8QJbKtWBTec078ALGesErxCUjcAwfdM04glIVkRepNgQaRY5Vr9vsd0d6Yg9mjEgk6rehGfQhg==
+ b=j1AQFoueGloaMmptVBsM77jo5YGEkdxQrMcQjwpNOZTHlOL68l3xns/7UqpZBGi2GVudlAtIvdHnPdAjDfqcXZQY7cSwaRvF0Lx/Izj9Pgv9DBolI9NtIR0ptZyVuZ/dH1UJx/faoJ8kqjjlrDZ4UYfqu8+e7x3xEjrK2MVoX1f0G64wTVpSpE6YstwWz5/UIPjC+C1YiJpvE6LH2a7ku0ISWg2uBHhkSOwxNhZtKgYvva2XinLJRlk7mUgMgJttdXWrqc1zJTwCtij4TMKlkFPwQQiupt7+wnKN6rANJXlVNmKJ0y8zM+IQGNgDNEkbVbYEGI/UsIs2B2Au9tP9Bw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FCrYa6UVr535yA6gud++b1JoFowyzn2rIiirvMltnyI=;
- b=lSuOTtgMHmS+vUWfD8WECYnB+ebKsfTEMc8gsy7w79zda6sWLvgLH+lScdjD/MJUJD9dw/Z9RnoCUJquBPvVumkMFgt4OmDkKZamQBSiI7FKcsJMB435MkOZ4bdPP9sfRdPWaGBESzqsbquWc9omW7uVOXjtK9IvWibRT22IuoElbXmNaNoMM+g9rrotWBI+pzqTa8EpZaqzYzb1RbKOGrcffXMswSZ9pe8HGqiZ0Vb7fQjRZC2HvdEgJZTNXhGNKkg0EBto+i1DbxTj1Lt4eLMbRV4b/pjwEWBeFyi3Ek5ema3fDEKz2f9qalF6Dccb6ZP0Hi/iQbACxc6895Qjxg==
+ bh=yNlA0OCnPTptS4fdXh7mXivtjAf/lGmp6g0bhe4T8Bk=;
+ b=MML0i71p3f64Q46mmN0fEato2WKXgo+/BEib45zUAKXvuGtllZIRWMOIukRmmAO2S2OpQnP6zbhG0ag86tpm14yvrTSAP1hQ4he6mSNG9p0kpeqRSuYeObj62UxPrav0xHi3QrE24vw/oM+Z2Y26oUrpDyGh6SMxlGexVJdtlqCtxiW1gmuf+Zg171aDV+EVgKcKFaowr9X3V7m1n7K4QjbF31e3f3dfA++Ygt132VHlWFTKkidS+dxyKbuYencaVt73jX9rTxQwO6Nx/DYllIvdMvC0vL1TwbklEAt/zAh/miKfY6Gu+W/KvbmQYRypl709Zh4cp49FEb3/F/75zg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FCrYa6UVr535yA6gud++b1JoFowyzn2rIiirvMltnyI=;
- b=jiYhgiObGBgNqwI6Vf93qUwMmKsUIl/OnvxMQ6tpl3hYLyem1yl0F5PP3+YlW+NyeKXQ9Yw0oOFHeEN1jfXNACxKNDLd+pVtJZB9gvYDuQCT8VZmvgsuzsOW1SUJrirg33rJPH2Aa5zy8NVq/ztpQJ4fWVY9U7duqSCzSKqtCHw=
+ bh=yNlA0OCnPTptS4fdXh7mXivtjAf/lGmp6g0bhe4T8Bk=;
+ b=RUKUWUQrhzkA5DZt9arIqtvUK+tbnTbb7ioleOuDKVrDT/ftZuGRjANaKfaPXRPtPtsm//4PXDlYc5Bh99ymvK7xWyrfzbvsfEls5jxHsIG187BbZYrO9al9C7HgKe+eTpRgIqW4VCauvnAs7ZeImHQMOM252tZ7FFUyJhcY1ec=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB5283.eurprd04.prod.outlook.com (20.176.215.90) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2772.19; Tue, 3 Mar 2020 02:21:10 +0000
+ 15.20.2772.19; Tue, 3 Mar 2020 02:21:14 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2772.019; Tue, 3 Mar 2020
- 02:21:09 +0000
+ 02:21:14 +0000
 From: peng.fan@nxp.com
 To: viresh.kumar@linaro.org,
 	shawnguo@kernel.org,
 	s.hauer@pengutronix.de
-Subject: [PATCH 1/3] ARM: dts: imx: add nvmem property for cpu0
-Date: Tue,  3 Mar 2020 10:14:48 +0800
-Message-Id: <1583201690-16068-2-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH 2/3] cpufreq: imx6q: fix error handling
+Date: Tue,  3 Mar 2020 10:14:49 +0800
+Message-Id: <1583201690-16068-3-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583201690-16068-1-git-send-email-peng.fan@nxp.com>
 References: <1583201690-16068-1-git-send-email-peng.fan@nxp.com>
@@ -65,19 +65,19 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost.localdomain (119.31.174.66) by
  SG2P153CA0018.APCP153.PROD.OUTLOOK.COM (2603:1096::28) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2814.1 via Frontend Transport; Tue, 3 Mar 2020 02:21:06 +0000
+ 15.20.2814.1 via Frontend Transport; Tue, 3 Mar 2020 02:21:10 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: ba817743-a1dd-4bbe-90e4-08d7bf198973
+X-MS-Office365-Filtering-Correlation-Id: 21d5fd73-d1ff-4b71-6050-08d7bf198be2
 X-MS-TrafficTypeDiagnostic: AM0PR04MB5283:|AM0PR04MB5283:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB52836810873471B5B7636F6588E40@AM0PR04MB5283.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:415;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB52831F3F1CFE0B70937BB07A88E40@AM0PR04MB5283.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
 X-Forefront-PRVS: 03319F6FEF
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(366004)(346002)(376002)(39860400002)(136003)(199004)(189003)(69590400007)(36756003)(66476007)(66556008)(66946007)(2616005)(956004)(52116002)(6486002)(6506007)(5660300002)(6512007)(6666004)(9686003)(16526019)(26005)(8676002)(186003)(478600001)(8936002)(7416002)(4326008)(2906002)(316002)(86362001)(81156014)(81166006);
+ SFS:(10009020)(4636009)(396003)(366004)(346002)(376002)(39860400002)(136003)(199004)(189003)(69590400007)(36756003)(66476007)(66556008)(66946007)(2616005)(956004)(52116002)(6486002)(6506007)(5660300002)(6512007)(6666004)(9686003)(16526019)(26005)(8676002)(186003)(478600001)(8936002)(7416002)(4326008)(2906002)(316002)(86362001)(81156014)(81166006)(32563001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5283;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
@@ -85,26 +85,26 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: RWmENS3oQVOPlJO5XPN0NAsDnEsKzcc8cafJsVDEpPsEScE/SXkAf4O22sekAEgUzZ2HQu/VZvlWjaFnhwF/E4OxinHtDQMXktYxW+dsV2SkF0ijYPhlpZzprxMMUkmcQchlu5ZmOfkHOscyCOnX3FXHPFaBhb1KxoTi6OY/hBXxmkomVpF/vfTB8qlugXbjR7MtY6lurnkeJQKDvFXhKPe243KmDCRBN5OyONU4JFbMiBzjrUVENfYKE5Q21gRSA3zosxfariP17ID6ikb8lRhvW/RSySKFsmQG/97gRCahpURjGj86U7DEudBgsvH/N8+nrQKQxV+hiN2c+RonZ5ZBnzGM0hm43OHbJSrO1NxlVr2msUyp7yfOixAekBeXWDRbXT/SRHEOiNDwkjmY6Jm+nolyx0FAfGBx2MS+5klHHfAsTiFUxsZAPzCqvByKtkAlYFaGIsZ2mqSqq6Yjpvg4Q0v/oas+ebjAtXKQi92wS9Am4u9LLbe6hhydbgAO
-X-MS-Exchange-AntiSpam-MessageData: kTgzw8nsnLVuoKrNsVKYyKuTPChXAn/FVYAfg9kzaJYwdx882e4MgXBG+7TyR+C6lyEw/b1wyzskMS4X/0H4R5+DNoMMvpGxkDXEBhdjZbAdEEH7MJWaEbbsbXGCDDJr3A2GyCoKBEnPp08DEub8/Q==
+X-Microsoft-Antispam-Message-Info: tF9eEmdmuFXp4FsiK2RDX6TW+4CX/ygDW3hPFZ4FMgzQJcpOx4SH4eb8ed/wCTVHoOuA/hfovWTL8/PTBvc0HT0SlZp8bZArSUD+/ja8f7iy5yRfSq6PJGqT8dpLJWjTlOZB7JnQSbNbncA9P0q+CNTiB5x3p1qnf8AjX/rAFO1gDZAgAJXVyZdh9V3KBkCofno3CGyUyQD3JtZmqZgBNSh+ux3VeSESTzd4P/s/2xMUyZHO76uT+YyHE1QC6wWSY0BVtePjef+CPKUxZh2QU6HvhHYshq9mvK9aZe0J5quMQ53LypZOF82zGW6OqWNKa1oo0yTZNiHSQVcYtwmYyf5gCTqwMLRP29PDdrmpzl8Ia3egM5zIfxD/C7vbDjKfvs0zNhYwtvuparawCG5N1amIL5iviBpm8RuNWkAw0aUZxgR1Gh7azGFKM87Gv2VnkWi/8JelIVHyqNZYmV5AL5PEYDdw/Txd5rO8OvUmVzDYzoiiuZFXqTeY4QU9DXrrBwfxTtkP3j+trKnroheELA==
+X-MS-Exchange-AntiSpam-MessageData: TL8uyB9Fwa8c+3urxkcJroY++al98I4rQsqujmcjZbgT1s//luJdhdNufrnLozco9pNKFC2mEwAc99QexHXW3fCEqxeSF6iLjNmlqvKc9HEYM4b3CGnHVa1l/D2iOrF+rLH46NjLRuzwAMsfgcQiJg==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ba817743-a1dd-4bbe-90e4-08d7bf198973
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Mar 2020 02:21:09.9483 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 21d5fd73-d1ff-4b71-6050-08d7bf198be2
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Mar 2020 02:21:14.1968 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: o2b3j1lItYKk+lQ87kNKpYAUBhWQEzC8P7EOnLGMdsprTVp+DI17xEea+QsYuID9Z7Yr29oEXyRnnAt8o/5/vg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: XbLSbltwPoe93/gjqNC6q4B8z1LLGkjrkyA0VAeWgFY5B8AqXPasb0lHoXRImyotBCaIVLebAaXzDHoc0XmVPw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5283
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_182113_707099_2A9F4ADD 
-X-CRM114-Status: GOOD (  10.52  )
+X-CRM114-CacheID: sfid-20200302_182118_130831_40EA21FA 
+X-CRM114-Status: GOOD (  13.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.64 listed in list.dnswl.org]
+ no trust [40.107.1.49 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -137,139 +137,48 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Add nvmem related property for cpu0, then nvmem API could be used
-to read cpu speed grading to avoid directly read OCOTP registers
-mapped which could not handle defer probe.
+When speed checking failed, direclty jumping to put_node label
+is not correct. Need jump to out_free_opp to avoid resources leak.
 
+Fixes: 2733fb0d0699 ("cpufreq: imx6q: read OCOTP through nvmem for imx6ul/imx6ull")
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- arch/arm/boot/dts/imx6dl.dtsi  | 2 ++
- arch/arm/boot/dts/imx6q.dtsi   | 2 ++
- arch/arm/boot/dts/imx6qdl.dtsi | 7 +++++++
- arch/arm/boot/dts/imx6sl.dtsi  | 9 +++++++++
- arch/arm/boot/dts/imx6sll.dtsi | 6 ++++++
- arch/arm/boot/dts/imx6sx.dtsi  | 6 ++++++
- 6 files changed, 32 insertions(+)
+ drivers/cpufreq/imx6q-cpufreq.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx6dl.dtsi b/arch/arm/boot/dts/imx6dl.dtsi
-index 4b3a128d9260..055f1d875bac 100644
---- a/arch/arm/boot/dts/imx6dl.dtsi
-+++ b/arch/arm/boot/dts/imx6dl.dtsi
-@@ -44,6 +44,8 @@
- 			arm-supply = <&reg_arm>;
- 			pu-supply = <&reg_pu>;
- 			soc-supply = <&reg_soc>;
-+			nvmem-cells = <&cpu_speed_grade>;
-+			nvmem-cell-names = "speed_grade";
- 		};
+diff --git a/drivers/cpufreq/imx6q-cpufreq.c b/drivers/cpufreq/imx6q-cpufreq.c
+index 648a09a1778a..b634a73d1f8f 100644
+--- a/drivers/cpufreq/imx6q-cpufreq.c
++++ b/drivers/cpufreq/imx6q-cpufreq.c
+@@ -378,23 +378,24 @@ static int imx6q_cpufreq_probe(struct platform_device *pdev)
+ 		goto put_reg;
+ 	}
  
- 		cpu@1 {
-diff --git a/arch/arm/boot/dts/imx6q.dtsi b/arch/arm/boot/dts/imx6q.dtsi
-index 0fad13f9d336..d3ba9d4a1290 100644
---- a/arch/arm/boot/dts/imx6q.dtsi
-+++ b/arch/arm/boot/dts/imx6q.dtsi
-@@ -49,6 +49,8 @@
- 			arm-supply = <&reg_arm>;
- 			pu-supply = <&reg_pu>;
- 			soc-supply = <&reg_soc>;
-+			nvmem-cells = <&cpu_speed_grade>;
-+			nvmem-cell-names = "speed_grade";
- 		};
- 
- 		cpu1: cpu@1 {
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index 70fb8b56b1d7..982f546b0b89 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -1165,6 +1165,13 @@
- 				compatible = "fsl,imx6q-ocotp", "syscon";
- 				reg = <0x021bc000 0x4000>;
- 				clocks = <&clks IMX6QDL_CLK_IIM>;
++	/* Because we have added the OPPs here, we must free them */
++	free_opp = true;
 +
-+				#address-cells = <1>;
-+				#size-cells = <1>;
-+
-+				cpu_speed_grade: speed-grade@10 {
-+					reg = <0x10 4>;
-+				};
- 			};
+ 	if (of_machine_is_compatible("fsl,imx6ul") ||
+ 	    of_machine_is_compatible("fsl,imx6ull")) {
+ 		ret = imx6ul_opp_check_speed_grading(cpu_dev);
+ 		if (ret) {
+ 			if (ret == -EPROBE_DEFER)
+-				goto put_node;
++				goto out_free_opp;
  
- 			tzasc@21d0000 { /* TZASC1 */
-diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-index c8ec46fe8302..de943341e4f2 100644
---- a/arch/arm/boot/dts/imx6sl.dtsi
-+++ b/arch/arm/boot/dts/imx6sl.dtsi
-@@ -74,6 +74,8 @@
- 			arm-supply = <&reg_arm>;
- 			pu-supply = <&reg_pu>;
- 			soc-supply = <&reg_soc>;
-+			nvmem-cells = <&cpu_speed_grade>;
-+			nvmem-cell-names = "speed_grade";
- 		};
- 	};
+ 			dev_err(cpu_dev, "failed to read ocotp: %d\n",
+ 				ret);
+-			goto put_node;
++			goto out_free_opp;
+ 		}
+ 	} else {
+ 		imx6q_opp_check_speed_grading(cpu_dev);
+ 	}
  
-@@ -953,6 +955,13 @@
- 				compatible = "fsl,imx6sl-ocotp", "syscon";
- 				reg = <0x021bc000 0x4000>;
- 				clocks = <&clks IMX6SL_CLK_OCOTP>;
-+
-+				#address-cells = <1>;
-+				#size-cells = <1>;
-+
-+				cpu_speed_grade: speed-grade@10 {
-+					reg = <0x10 4>;
-+				};
- 			};
- 
- 			audmux: audmux@21d8000 {
-diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-index 797f850492fe..6b7fb3cec9f6 100644
---- a/arch/arm/boot/dts/imx6sll.dtsi
-+++ b/arch/arm/boot/dts/imx6sll.dtsi
-@@ -72,6 +72,8 @@
- 				 <&clks IMX6SLL_CLK_PLL1_SYS>;
- 			clock-names = "arm", "pll2_pfd2_396m", "step",
- 				      "pll1_sw", "pll1_sys";
-+			nvmem-cells = <&cpu_speed_grade>;
-+			nvmem-cell-names = "speed_grade";
- 		};
- 	};
- 
-@@ -791,6 +793,10 @@
- 				reg = <0x021bc000 0x4000>;
- 				clocks = <&clks IMX6SLL_CLK_OCOTP>;
- 
-+				cpu_speed_grade: speed-grade@10 {
-+					reg = <0x10 4>;
-+				};
-+
- 				tempmon_calib: calib@38 {
- 					reg = <0x38 4>;
- 				};
-diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-index e47d346a3543..63aa19d81b42 100644
---- a/arch/arm/boot/dts/imx6sx.dtsi
-+++ b/arch/arm/boot/dts/imx6sx.dtsi
-@@ -87,6 +87,8 @@
- 				      "pll1_sw", "pll1_sys";
- 			arm-supply = <&reg_arm>;
- 			soc-supply = <&reg_soc>;
-+			nvmem-cells = <&cpu_speed_grade>;
-+			nvmem-cell-names = "speed_grade";
- 		};
- 	};
- 
-@@ -1058,6 +1060,10 @@
- 				reg = <0x021bc000 0x4000>;
- 				clocks = <&clks IMX6SX_CLK_OCOTP>;
- 
-+				cpu_speed_grade: speed-grade@10 {
-+					reg = <0x10 4>;
-+				};
-+
- 				tempmon_calib: calib@38 {
- 					reg = <0x38 4>;
- 				};
+-	/* Because we have added the OPPs here, we must free them */
+-	free_opp = true;
+ 	num = dev_pm_opp_get_opp_count(cpu_dev);
+ 	if (num < 0) {
+ 		ret = num;
 -- 
 2.16.4
 
