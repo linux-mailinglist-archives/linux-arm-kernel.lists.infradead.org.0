@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63F4F1774A9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 11:55:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 003721774AA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 11:56:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dXrOFgvip+nJEmivCpHfRKIhvae3fL4bevY7jy9ptLs=; b=DuswiDbRg7h/Uo
-	W2CTRsd7IThOijESV8SAejrhyHKRBOJehAkDowGzH6uplbgqmDH0K2bhambfZOKAwBn81fc0utM3I
-	5yItyuDbzk0IaFt763Ocuii+VP5urFWo3411oHqi4BUiXg84lbFkkJy3cpHjSVq2WODcLqkUGwwmx
-	JzcGJ1SYFmJXO4pGPo3g2rgScGfbwkkaj+Ff+7edvAAVFVXkxpraX6msjwidtvFj/w96efAYMaLys
-	H1XGFIJxqauYoAnLPj/hClRpP52Gh+YOmVwSfSb0CMumbhqKmT5A8qPmPobELzb5Sgiw0l7tLnlOj
-	Eu0aRjqxuYng+8NKsl4Q==;
+	List-Owner; bh=y7vOeWdWEYwbhxbkshhSFAZHC75XJlmUA1RM4K9pgsM=; b=WfusINU6wR6cW6
+	zNd9QrW8ZOaimS4yW2D5QDV6zhuA1gOlzugxX856BfplB99mnP3eqowoX/qBN4Ov98xQ0lfI2ix6K
+	SzN046VCSecfGHyYndqwCWm26yvNsO1hgoIGWXjY0MF98yDifGbv2oWIyL/p9pqjgFZaTNxQ/laLO
+	lR2FJiN5kTASOLh5iOx7JyiEgzQLLYfsC/7rQSZp0GX7JI2nqnjZhHswzSuQa/PdPV71/GTq4MGd4
+	cnJ41MGESRtlqtrDHzyc6jZucegvpCgUZsJ13wWDeR40djEheBB/aiqjnqPxflaZs6TaohG/cJPTM
+	pPyxNz4vRXLNFawSNuZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j95D6-00033Z-7w; Tue, 03 Mar 2020 10:55:36 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1j95DN-0003Xk-3M; Tue, 03 Mar 2020 10:55:53 +0000
+Received: from hqnvemgate26.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j95CF-0001RQ-Ts
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 10:54:48 +0000
+ id 1j95CL-0001WX-9Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 10:54:51 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e5e371f0000>; Tue, 03 Mar 2020 02:53:19 -0800
+ hqnvemgate26.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5e5e376b0000>; Tue, 03 Mar 2020 02:54:35 -0800
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 03 Mar 2020 02:54:43 -0800
+ Tue, 03 Mar 2020 02:54:48 -0800
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 03 Mar 2020 02:54:43 -0800
-Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Mar
- 2020 10:54:42 +0000
-Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL111.nvidia.com
- (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Tue, 3 Mar 2020 10:54:42 +0000
+ by hqpgpgate101.nvidia.com on Tue, 03 Mar 2020 02:54:48 -0800
+Received: from HQMAIL107.nvidia.com (172.20.187.13) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Mar
+ 2020 10:54:48 +0000
+Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Tue, 3 Mar 2020 10:54:48 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw03.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5e5e376e0000>; Tue, 03 Mar 2020 02:54:42 -0800
+ id <B5e5e37740000>; Tue, 03 Mar 2020 02:54:48 -0800
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <thierry.reding@gmail.com>, <jonathanh@nvidia.com>, <andrew.murray@arm.com>
-Subject: [PATCH V4 3/5] arm64: tegra: Add PCIe endpoint controllers nodes for
- Tegra194
-Date: Tue, 3 Mar 2020 16:24:16 +0530
-Message-ID: <20200303105418.2840-4-vidyas@nvidia.com>
+Subject: [PATCH V4 4/5] arm64: tegra: Add support for PCIe endpoint mode in
+ P2972-0000 platform
+Date: Tue, 3 Mar 2020 16:24:17 +0530
+Message-ID: <20200303105418.2840-5-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200303105418.2840-1-vidyas@nvidia.com>
 References: <20200303105418.2840-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1583232799; bh=k+/9GSevZ5ThFAyd97tvORR6/9J/mm3ONFOA7Y2+8Nk=;
+ t=1583232875; bh=XDqU4/3NkhzOg4VQyRoeDPrk+BoR8HLjcQcuG2F+Bmw=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=jW+oZXPx3O14INWCwVA2e3u3xUuI57UtXW34jq+8n+C3YxckRYkidt4E470FTSUtO
- 1WDUWc1Vx2FMTpg15xCX4cy76qt7b4Ys5ZfMExiOjyaKYNe+sXnhMsV1JsBsBjwFkn
- ywr8j6/i9g2zg86cgTJhNYrA2e4FBweJVpoz9EHeAhfjVwF2WcY446Ws/OIMmh+LCL
- E/Rl+1l3Z1T+HFprSJH0sQBUixAk50sgPdZQUoWoDN8jK4w6cfj/trfLPXCv6F9pjw
- ARE/cU65+liUWYtDHXq4iSqrTVaeu3HZ4Zbn4bwjQq5oAMDrhXjeZK4+XwmlhmILi3
- vhbELW+mCCeuA==
+ b=lY5saZ+ceeSgf1Ns8Fy/inHT9AHdqSo+oMMKHg/mTZcF4OigepBHEyMCqWo8nlOHi
+ jypbAwUcIvffJgRWxAR5q7YbirP3aPb4XEiJnh+DWRdwlvJH9eEog7y4KjnU85Wv0+
+ 6OeJCl3G3brTcIKycW4UU9CJ4Kyqa7rzyfTp8oMW7U8Y+6CRtZrWUdmtDAQrtPPjzD
+ HnxPHBQ4eODcaZkEAj2bI41m7NuEQs4ZyoPJphTBe3ydU9+Kftn/sgW7ZDfThTFreQ
+ pO4NPxKddVV44kpL0vFgv5LNm6VBSBmish+Em1b0WAbPlS17/JChS5VG+5p1z5Q7Vm
+ R1oJ4k3huOlpw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_025444_110394_20F705BE 
-X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-CacheID: sfid-20200303_025449_473516_A680B2C9 
+X-CRM114-Status: UNSURE (   7.44  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -73,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ high trust [216.228.121.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,8 +104,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add endpoint mode controllers nodes for the dual mode PCIe controllers
-present in Tegra194 SoC.
+Add endpoint mode support for PCIe C5 controller in P2972-0000 platform
+with information about supplies, PHY, PERST GPIO and GPIO that controls
+PCIe reference clock coming from the host system.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 ---
@@ -116,121 +117,42 @@ V3:
 * None
 
 V2:
-* None
+* Addressed Thierry's review comments
+* Changed 'nvidia,pex-rst-gpio' to 'reset-gpios'
+* Added 'nvidia,refclk-select-gpios'
 
- arch/arm64/boot/dts/nvidia/tegra194.dtsi | 99 ++++++++++++++++++++++++
- 1 file changed, 99 insertions(+)
+ .../boot/dts/nvidia/tegra194-p2972-0000.dts    | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index 8c1440888482..f4ede86e32b4 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -1620,6 +1620,105 @@
- 			  0x82000000 0x0  0x40000000 0x1f 0x40000000 0x0 0xc0000000>; /* non-prefetchable memory (3GB) */
+diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+index f9f874d9d0ae..e15d1eac05f5 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
++++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
+@@ -199,6 +199,24 @@
+ 			    "p2u-5", "p2u-6", "p2u-7";
  	};
  
-+	pcie_ep@14160000 {
-+		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
-+		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX4A>;
-+		reg = <0x00 0x14160000 0x0 0x00020000   /* appl registers (128K)      */
-+		       0x00 0x36040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
-+		       0x00 0x36080000 0x0 0x00040000   /* DBI reg space (256K)       */
-+		       0x14 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
-+		reg-names = "appl", "atu_dma", "dbi", "addr_space";
-+
-+		status = "disabled";
-+
-+		num-lanes = <4>;
-+		num-ib-windows = <2>;
-+		num-ob-windows = <8>;
-+
-+		clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_4>;
-+		clock-names = "core";
-+
-+		resets = <&bpmp TEGRA194_RESET_PEX0_CORE_4_APB>,
-+			 <&bpmp TEGRA194_RESET_PEX0_CORE_4>;
-+		reset-names = "apb", "core";
-+
-+		interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
-+		interrupt-names = "intr";
-+
-+		nvidia,bpmp = <&bpmp 4>;
-+
-+		nvidia,aspm-cmrt-us = <60>;
-+		nvidia,aspm-pwr-on-t-us = <20>;
-+		nvidia,aspm-l0s-entrance-latency-us = <3>;
-+	};
-+
-+	pcie_ep@14180000 {
-+		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
-+		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8B>;
-+		reg = <0x00 0x14180000 0x0 0x00020000   /* appl registers (128K)      */
-+		       0x00 0x38040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
-+		       0x00 0x38080000 0x0 0x00040000   /* DBI reg space (256K)       */
-+		       0x18 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
-+		reg-names = "appl", "atu_dma", "dbi", "addr_space";
-+
-+		status = "disabled";
-+
-+		num-lanes = <8>;
-+		num-ib-windows = <2>;
-+		num-ob-windows = <8>;
-+
-+		clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_0>;
-+		clock-names = "core";
-+
-+		resets = <&bpmp TEGRA194_RESET_PEX0_CORE_0_APB>,
-+			 <&bpmp TEGRA194_RESET_PEX0_CORE_0>;
-+		reset-names = "apb", "core";
-+
-+		interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
-+		interrupt-names = "intr";
-+
-+		nvidia,bpmp = <&bpmp 0>;
-+
-+		nvidia,aspm-cmrt-us = <60>;
-+		nvidia,aspm-pwr-on-t-us = <20>;
-+		nvidia,aspm-l0s-entrance-latency-us = <3>;
-+	};
-+
 +	pcie_ep@141a0000 {
-+		compatible = "nvidia,tegra194-pcie-ep", "snps,dw-pcie-ep";
-+		power-domains = <&bpmp TEGRA194_POWER_DOMAIN_PCIEX8A>;
-+		reg = <0x00 0x141a0000 0x0 0x00020000   /* appl registers (128K)      */
-+		       0x00 0x3a040000 0x0 0x00040000   /* iATU_DMA reg space (256K)  */
-+		       0x00 0x3a080000 0x0 0x00040000   /* DBI reg space (256K)       */
-+		       0x1c 0x00000000 0x4 0x00000000>; /* Address Space (16G)        */
-+		reg-names = "appl", "atu_dma", "dbi", "addr_space";
-+
 +		status = "disabled";
 +
-+		num-lanes = <8>;
-+		num-ib-windows = <2>;
-+		num-ob-windows = <8>;
++		vddio-pex-ctl-supply = <&vdd_1v8ao>;
 +
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&clkreq_c5_bi_dir_state>;
++		reset-gpios = <&gpio TEGRA194_MAIN_GPIO(GG, 1) GPIO_ACTIVE_LOW>;
 +
-+		clocks = <&bpmp TEGRA194_CLK_PEX1_CORE_5>;
-+		clock-names = "core";
++		nvidia,refclk-select-gpios = <&gpio_aon TEGRA194_AON_GPIO(AA, 5)
++					      GPIO_ACTIVE_HIGH>;
 +
-+		resets = <&bpmp TEGRA194_RESET_PEX1_CORE_5_APB>,
-+			 <&bpmp TEGRA194_RESET_PEX1_CORE_5>;
-+		reset-names = "apb", "core";
++		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
++		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
++		       <&p2u_nvhs_6>, <&p2u_nvhs_7>;
 +
-+		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;	/* controller interrupt */
-+		interrupt-names = "intr";
-+
-+		nvidia,bpmp = <&bpmp 5>;
-+
-+		nvidia,aspm-cmrt-us = <60>;
-+		nvidia,aspm-pwr-on-t-us = <20>;
-+		nvidia,aspm-l0s-entrance-latency-us = <3>;
++		phy-names = "p2u-0", "p2u-1", "p2u-2", "p2u-3", "p2u-4",
++			    "p2u-5", "p2u-6", "p2u-7";
 +	};
 +
- 	sysram@40000000 {
- 		compatible = "nvidia,tegra194-sysram", "mmio-sram";
- 		reg = <0x0 0x40000000 0x0 0x50000>;
+ 	fan: fan {
+ 		compatible = "pwm-fan";
+ 		pwms = <&pwm4 0 45334>;
 -- 
 2.17.1
 
