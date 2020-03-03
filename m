@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68D30177A11
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:09:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 789BC177A13
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:09:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W6rsntkliTzwD/ggqXMSvH9IXUdfZyd1nRES5GQpqAY=; b=DNmbJfXwEPRGUS
-	a6fgHh+LpiVMrbpEXB8VsFROe9zgsUI8QAkWC+MMe5Pelwgi6kEhztd3aQbRfSRRHc+r2yYVWsBpX
-	NEIQAqj7rbz7oJUKFbF5sO1vMvW0+3AMvxbipylPKwCp5hW1nGr8yH57cDGdZ4pK3BFiDIlkNYqml
-	zb31X8QLZOT/gd7LHpPaERz7wBpmSkMZFcqTatLmO2dvF15O86FyYNvSn1/5JVFsUkjDhdtK416Kk
-	lHCUfsdk3gQ7KaQD8q63V6xmImYxju42oryTDfNY/pCNOQBM9HIQBfEXi378ablmTVQZCgR+1fVQM
-	nneGeV0CeAHyYmB2qnyw==;
+	List-Owner; bh=jjaewmCCUGl4wJBXsqc1u4FLWJ86/i9GDXO+VvKmJBo=; b=dzXMdYBzAMmiRS
+	UwAcADK15msVZ/6d/6z8Q+HjUYfG88H2lV2do+IGRNmb9NAz47RPSA+S0teE2se2YCRgD17kKebAO
+	XhGYyCWGvVGyhSdnDgTaMMtdVB0kE2eld5PCuq+DYs+fO9YheSDLOQD99fjubmZHCbzBItYTtK0Lr
+	PJD3cuNWpt8tp8ytCRonFAh/Zu64uwyITWlgdbe7sQ5m/op0kLzfwAxtiMiCiaCqt/2fvTfT/1FuX
+	00LbtRoVFMWIEWV6AT0gyl+ZrTKNjZA+UL8GFWQ7V+DhBmdYZhAy7ynhVdShooVAXsKuSHD3PGWH4
+	bx9cpDzxY1fvAPgjgWyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j99Ak-0005wU-2p; Tue, 03 Mar 2020 15:09:26 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1j99Aw-0006AM-PR; Tue, 03 Mar 2020 15:09:38 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j999R-0004p0-99
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:06 +0000
-Received: by mail-lf1-x141.google.com with SMTP id y17so3030125lfe.8
+ id 1j999T-0004qu-13
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:08 +0000
+Received: by mail-lf1-x142.google.com with SMTP id s23so3014984lfs.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 07:08:04 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=/NDACQevUaDc6JLaPGhMJ8UIpdipROa3WbiIGkpAEKo=;
- b=T4WeVLCjzQGfNUrES9Hy941MNj53A0yQWbbAPWTiPENyy1q1vpfzLRYqgm7ZJZQABy
- n+t9IXXQ7k6vZ+zUAh62pucstlgWBz/uF9VNQM44sUO7whZqXxMo85IQZT81qliVMizQ
- EzNMzQgacBQyzjLqjyxeGcTKGbWRyVSM7ZLqcsXGXlBSyPiUROa/VZQjo/Z8dLIHLlCq
- WeRU8WycVDsUECgE480sgW58hWtWUSyIG4TRTLVzh1WYazOzYYyichLNmT2WsEdetIuF
- j6weAufoJjq/B4ZsvsvymH2zVRnn4ENR5tsItmkzrxFQe0CmrvtMRL4IdtqwsOvwbKPP
- B+vw==
+ bh=qu4L8psLtSRHjye4pOVUdt2rrul0W+hLv//Rfvk00vc=;
+ b=HEcMEkLePpCimF/wMPTy6RBLp8JWPVNYRK/KypW9Sck6/wveKYdTxCa+/MyCnUfXBW
+ ah2N9pSfaLtd3Bw9+2lHnhxHfLARz7jZbSSTW7KSnO2utGxuxVn6402arMsh3xYDkoPD
+ XM+K30b1kvZ2odWMm4C4iajwsfHp4mEoPRUIXxh/AGWPbbpdUA+2dZ+CzxloN2dpDqo7
+ rzWp8CnMnXm1qSFt13BEPeVMl1UHOu/hbG8q5L+kPHYmtyWVdqhsxawWiYMdEOx6Dmh7
+ xwnHceszl2o7zAgiyFTJsf3qjXL3qT66sJ+6oHrOYXGRq7SRzxa/I7tpR4knhVWXafv2
+ O5Bg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=/NDACQevUaDc6JLaPGhMJ8UIpdipROa3WbiIGkpAEKo=;
- b=BZn9maC5DmA56vVPLtXNY/tP7AornLz4fgkk/hxQwvhKoPYvHyMcxudR2aCvaILdgG
- WxUrirfDEE9CkF95bEkOgq3uJmMLBNvV6XTOso7W74ZzUR7+AfPrwu8ysf3Xr7MqyWAp
- zgxWT3sjFKd0JQIpnGRApWIem2QdmzVeGCM5Lbtt+EJT9LyUM+BQYkGykWn0SwN3w4YE
- S82n8tSUgCosWno3RZUkTXcWajay1aF3C7b64XQ+cfelvCmcRJ0ITHJPRvyezZWbAZQs
- x8xwVd9418ILX2B2N2RMbRSFAVerFcdgsn2h8zrcklobAv2jKnP3/uIv7RDii0yo5cJa
- ERxQ==
-X-Gm-Message-State: ANhLgQ1lrJD88Eq8tl2FpeCKf+7jrpix8QM1qEXwahtwb+3Ga09dnD75
- 97iG0TiaHK9iOhAj2PTF9qJDpw==
-X-Google-Smtp-Source: ADFU+vuGkkQiguth40cp1bw44U/CLR3j6mkPP+xXUr5/Vlp3zdPzogFaLS0srx11FKpgV5fWvZTJhg==
-X-Received: by 2002:ac2:59c7:: with SMTP id x7mr2953144lfn.148.1583248083583; 
- Tue, 03 Mar 2020 07:08:03 -0800 (PST)
+ bh=qu4L8psLtSRHjye4pOVUdt2rrul0W+hLv//Rfvk00vc=;
+ b=BQ2P7DP7/PW4KfmPwVM6k+g69RdmTTdyj9p0NP0dN90bvMSbvbek7z8mmeW1BF/cw0
+ mWIlI2YWmq5mVl9JuHug5RfbO+bZt4ZXMMT+hRaMr3TZ1A1sTBlkX0rJjt4Cs8i1M/52
+ diqnI4KYbvkEIlLbmQqNpn8JTdqba4/n17hpMKZiJp2MX4r7TsFL/dLq1WLp7B7xmO98
+ 6ryZhlXmvh+nAmzsmfh/PAXfSuTirDTnOwUKPiwErd3ptOtux1VjfHz1VvqJJbH3ojPH
+ g/cDFfEzgQLmF+H9jy+9y5jJ/yEoKa6BoganK69ARktkZU6r17edVHPzZr1lvcknitgB
+ xgTA==
+X-Gm-Message-State: ANhLgQ2uMI6oUeR4HsZSrxJ2dO+47YuKQlRQXKkt6S+QuMfgSKdJrs+G
+ vjWfsEpCYNgAK0+gT649juq3OW+quow=
+X-Google-Smtp-Source: ADFU+vuOY7tLHeptjMrYBw0cHHhnzrTWWdK/Vlk+y170lgD8Gex04FZPWMeMr83K9o8b8EHO3e5u1w==
+X-Received: by 2002:a19:6144:: with SMTP id m4mr3018922lfk.192.1583248085004; 
+ Tue, 03 Mar 2020 07:08:05 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.08.02
+ by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.08.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 07:08:02 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:04 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, devicetree@vger.kernel.org
-Subject: [PATCH 5/7] dt-bindings: arm: Fixup the DT bindings for hierarchical
- PSCI states
-Date: Tue,  3 Mar 2020 16:07:47 +0100
-Message-Id: <20200303150749.30566-6-ulf.hansson@linaro.org>
+Subject: [PATCH 6/7] arm64: dts: msm8916: Conform to the domain-idle-state DT
+ binding
+Date: Tue,  3 Mar 2020 16:07:48 +0100
+Message-Id: <20200303150749.30566-7-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200303150749.30566-1-ulf.hansson@linaro.org>
 References: <20200303150749.30566-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_070805_409235_FDBF54E9 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20200303_070807_074071_9059E130 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,98 +110,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The hierarchical topology with power-domain should be described through
-child nodes, rather than as currently described in the PSCI root node. Fix
-this by adding a patternProperties with a corresponding reference to the
-power-domain DT binding.
-
-Additionally, update the example to conform to the new pattern, but also to
-the adjusted domain-idle-state DT binding.
-
 Fixes: a3f048b5424e ("dt: psci: Update DT bindings to support hierarchical PSCI states")
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
- .../devicetree/bindings/arm/psci.yaml         | 33 +++++++++----------
- 1 file changed, 15 insertions(+), 18 deletions(-)
+ arch/arm64/boot/dts/qcom/msm8916.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-index 0bc3c43a525a..cae668b61265 100644
---- a/Documentation/devicetree/bindings/arm/psci.yaml
-+++ b/Documentation/devicetree/bindings/arm/psci.yaml
-@@ -102,11 +102,15 @@ properties:
-       [1] Kernel documentation - ARM idle states bindings
-         Documentation/devicetree/bindings/arm/idle-states.yaml
- 
--  "#power-domain-cells":
--    description:
--      The number of cells in a PM domain specifier as per binding in [3].
--      Must be 0 as to represent a single PM domain.
-+required:
-+  - compatible
-+  - method
- 
-+patternProperties:
-+  "^(power-controller|power-domain)([@-].*)?$":
-+    $ref: "../power/power-domain.yaml#"
-+    type: object
-+    description: |
-       ARM systems can have multiple cores, sometimes in an hierarchical
-       arrangement. This often, but not always, maps directly to the processor
-       power topology of the system. Individual nodes in a topology have their
-@@ -122,19 +126,9 @@ properties:
-       helps to implement support for OSI mode and OS implementations may choose
-       to mandate it.
- 
--      [3] Documentation/devicetree/bindings/power/power_domain.txt
-+      [3] Documentation/devicetree/bindings/power/power-domain.yaml
-       [4] Documentation/devicetree/bindings/power/domain-idle-state.yaml
- 
--  power-domains:
--    $ref: '/schemas/types.yaml#/definitions/phandle-array'
--    description:
--      List of phandles and PM domain specifiers, as defined by bindings of the
--      PM domain provider.
--
--required:
--  - compatible
--  - method
--
- allOf:
-   - if:
-       properties:
-@@ -224,6 +218,9 @@ examples:
-           exit-latency-us = <10>;
-           min-residency-us = <100>;
-         };
-+      };
+diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+index 9f31064f2374..8f3f19e66cd8 100644
+--- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
++++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+@@ -165,6 +165,9 @@
+ 				min-residency-us = <2000>;
+ 				local-timer-stop;
+ 			};
++		};
 +
-+      domain-idle-states {
++		domain-idle-states {
  
-         CLUSTER_RET: cluster-retention {
-           compatible = "domain-idle-state";
-@@ -247,19 +244,19 @@ examples:
-       compatible = "arm,psci-1.0";
-       method = "smc";
- 
--      CPU_PD0: cpu-pd0 {
-+      CPU_PD0: power-domain-cpu0 {
-         #power-domain-cells = <0>;
-         domain-idle-states = <&CPU_PWRDN>;
-         power-domains = <&CLUSTER_PD>;
-       };
- 
--      CPU_PD1: cpu-pd1 {
-+      CPU_PD1: power-domain-cpu1 {
-         #power-domain-cells = <0>;
-         domain-idle-states =  <&CPU_PWRDN>;
-         power-domains = <&CLUSTER_PD>;
-       };
- 
--      CLUSTER_PD: cluster-pd {
-+      CLUSTER_PD: power-domain-cluster {
-         #power-domain-cells = <0>;
-         domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
-       };
+ 			CLUSTER_RET: cluster-retention {
+ 				compatible = "domain-idle-state";
 -- 
 2.20.1
 
