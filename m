@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F04717841E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 21:36:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CDD2178421
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 21:36:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AHLCTdPJA3LYLhl4C6Uih/XO8Pimmt9NZ0Wa2VW1w4M=; b=VeoBMqKs6xwf+q
-	OCAh+eA2EAcz71gTMq/7rpzrIpnZOLeiQ3wxBqCxBf1/6KWdjp0GsXHXFY6IowqTKZ4EUn9D88oAO
-	x0Di//FwWeFZBVsfmzYTe+F6X/OpKMbH2I3CXwTZAVpuZvNOLdKTnSj4RpDY/iS1m/mNaIkphY2BB
-	E6uQwULInlZdS0QY/hOv2MIFlHRSbsIZn4D0ioql5GqIa7zWIZunNh1xb+/AY5JlN07j7771qx60K
-	bryfOd4OQ0TGIKD8uSVJnY+CXZg6W+Vo+vcZTpHA18UFzqRyTsOv1PFZflajau5gicI8YWEa1dR3h
-	lQgMHQLm1S9ytShzxvWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fpE9AgqrlZBpBiMsbvmj1JX2z8kVPd77/eaiv9S1aOQ=; b=NKaL+1yLgr19/o
+	WAGT7DlcIcyYAVFFZ5fgm8PE+/YQnpgkDVSqWxFpcfzYzoBU3BaE/IEWQfRcs3fFIqWP6oggG13xA
+	HjjbtToOG3hZpiJyUfYNbrRsURBR+1H4DETIixCjqpy7WP/iy+z+XbJjAytyclFQppal3dEenWC5s
+	oiYVmmmIU5ZFjNAvBfwCvcaOiOIWANWFVoZKsA4nYKPZjbFjwkVvP8Vndz4RGpQwYQ1nREF2sFLVP
+	/KY32enfxrHo1nKLxeR5JywXc+XGcQFPd/6Hsb5xEfKdVLuwrye09WU0daK3JFSOsKot7hcEjgO2A
+	QUDchhpOVDGhCQaKknnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9EHH-0004mH-Dl; Tue, 03 Mar 2020 20:36:31 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1j9EHU-0004vz-5g; Tue, 03 Mar 2020 20:36:44 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9EH5-0004l9-Rc
+ id 1j9EH6-0004lA-Lb
  for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 20:36:22 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 143so5043755ljj.7
+Received: by mail-lj1-x244.google.com with SMTP id q19so4126807ljp.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 12:36:19 -0800 (PST)
+ Tue, 03 Mar 2020 12:36:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5+bbZY+UsNnL04aTIiRpPmDrPXRA/0XmSjw+FgKbksk=;
- b=MYdizgquonWpZBpfTQ0jzerK3kK9LeudcWxqxJ710OmJ3xPJXuGTJy9PMARessYarQ
- RJCnp9pKXBCsDDk5QJC+LDix5HGrmNOlG4159dEsvuoIMVofyHybb5PZoQ3VJHjEW2O4
- uZGu7eeWv/4kJ+f0W+umTqAHZ+s6Cst+KhrgYUN5srxUgzM53QS8yORqxHWzb24ebYBs
- 86ZuCfk2d6ZQ/XeDwgvM/ax4OTWoyWyNsvF9djVefusgQEmGRXAGHPo0pjzraimis4VL
- LZDq1l6640NeHHEIsHh+0dut90Z4ONsCGjBrmOxyjgarr6dGyn8YSIW/odBez8wylQSy
- QMBg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=3+0UYj3qVJZMwBRFalwhwumi1SLOyZkXHX2X4PQigTk=;
+ b=M6nT4o+PaOt0lluB6TctZ125cHNRlgBI/C3zswdbS6bE4Vor6LpM3xul+GzDk3LYMc
+ qw+N/dL5nSOCxpgekkdUlti+upKi21MCbPGU/bH9dA31iwdJrjuUmx50lvX4KtVd47p/
+ lGSRoDHKlev29S/7Vs+Z/wjbkDTdKZJ3qP6cAKGHBQ4J3m5MJ3pL5+jtoffHYIz8rb/D
+ LyJGPV8uyzka1C/i7OsLZ1YfXnjmIl1B6XuEbzK8VLlbznNOGVRIOhySviyL9ZP5yMhT
+ CFX4hcgpE/r3MtTYFG9uc6R3sKXfs0gMaoa5+35Hr17dAW1rceC8NKY5fQ9zkfbSVx2u
+ Md3w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=5+bbZY+UsNnL04aTIiRpPmDrPXRA/0XmSjw+FgKbksk=;
- b=Or7tY2eERgEq9xTSudE+w2cC9CXWNRQlnlgM8M5gL7iOR024mZ3EY8XD6f5/PdxGQY
- WAwhavpBi5PSm+7SWiMsyOXDsqjOTVTXZcP8t9V78qCYP/MUgSzcPyCFzitJhsQBrWYQ
- gmyHYllfcPIwcmKa0r/qU+LVdZ8lxSLqlhp2D40Z/woyNETNhYJZj57dWsFrkmF15vqV
- 9qeOosBmNzuLYM0mbXpO3dRX8cxK3DsB6L+q7Xhx91NSw7HekkcXLSSCKTIwn0g1tanS
- dTKEfeIuhnlLBeI7CbO+y/6UCFoi4DG5NvnNQfWTh56ptKDhyJBcuIgTiqee2YRzQm1H
- 9u5A==
-X-Gm-Message-State: ANhLgQ0rEiNItCayKQTwPeXLvwN7VcAdwNNJMNwUSqoRvs/EUinwfIlf
- V8moNVoG6ECzSiF29NtW+NnVBA==
-X-Google-Smtp-Source: ADFU+vs3C98soMOJnxS970oeUUzODjBIS+POFjrHM2XmE9VThLMxFSqHh+D6NIBRdP/2VoBr1tq/QA==
-X-Received: by 2002:a2e:80c3:: with SMTP id r3mr3439399ljg.105.1583267777636; 
- Tue, 03 Mar 2020 12:36:17 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=3+0UYj3qVJZMwBRFalwhwumi1SLOyZkXHX2X4PQigTk=;
+ b=DiGaPNBZHegd0Svn/P6vsUwbKHBSvlUdyA5crCOnQoKA4FGVhBWQdIGca0WPX1GztA
+ UcAXidDnxZ8A8TOky8qhiVw5lep5ptbzXBA8candZuptpKxHHmB7CDuNOR7LRla5B+c/
+ LA3cTlr26IeOeqanDNGK533Cyw9ITSm00/VHq7HDyJX4/C71eY6ZKXYxEM8Gy/XO6OES
+ hsmRb1kRHi0GSQNT7ZGthZB4HTtn3fUK0HRQE3rfMdyipnKNaNI0x2b/fAXFJ39WE3DZ
+ qOsXgbeOckynHNCPaJzJhBkWFd8jmHaq4J1ETsJHEjb7l+fwFPxmrro/2/IN859C3Q8i
+ w/Dg==
+X-Gm-Message-State: ANhLgQ2oJgPRyeyr8IjWfp0lcZWFkzITwzX60emDW/8LR4Ho8Iss7KTl
+ oIZBJvwQHI+S9Fk3XT0QksZ6sg==
+X-Google-Smtp-Source: ADFU+vtxH5Gk3A2TqaasCf1CsCDxKPfx3AYiuDLFIZjyb++K4u0hf79plZcWKxwzcA4xfdBGagw2Yg==
+X-Received: by 2002:a2e:b442:: with SMTP id o2mr3427232ljm.261.1583267779037; 
+ Tue, 03 Mar 2020 12:36:19 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id t195sm1339532lff.0.2020.03.03.12.36.16
+ by smtp.gmail.com with ESMTPSA id t195sm1339532lff.0.2020.03.03.12.36.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 12:36:16 -0800 (PST)
+ Tue, 03 Mar 2020 12:36:18 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org
-Subject: [PATCH v2 0/4] cpuidle: psci: Some fixes when using the hierarchical
- layout
-Date: Tue,  3 Mar 2020 21:35:55 +0100
-Message-Id: <20200303203559.23995-1-ulf.hansson@linaro.org>
+Subject: [PATCH v2 1/4] PM / Domains: Allow no domain-idle-states DT property
+ in genpd when parsing
+Date: Tue,  3 Mar 2020 21:35:56 +0100
+Message-Id: <20200303203559.23995-2-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200303203559.23995-1-ulf.hansson@linaro.org>
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_123619_957208_055E0E63 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200303_123620_702136_9150BFA8 
+X-CRM114-Status: GOOD (  14.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,39 +103,43 @@ Cc: Ulf Hansson <ulf.hansson@linaro.org>,
  Benjamin Gaignard <benjamin.gaignard@st.com>, Stephen Boyd <sboyd@kernel.org>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
  "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, stable@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changes in v2:
-	- Small changes to patch 3 and 4, see their changelogs.
+Commit 2c361684803e ("PM / Domains: Don't treat zero found compatible idle
+states as an error"), moved of_genpd_parse_idle_states() towards allowing
+none compatible idle state to be found for the device node, rather than
+returning an error code.
 
-While collaborating with Benjamin Gaignard to deploy the hierarchical layout
-for an ST SoC, it has turned that I have clearly missed to test a couple of
-corner cases in recently added support to the cpuidle-psci driver.
+However, it didn't consider that the "domain-idle-states" DT property may
+be missing as it's optional, which makes of_count_phandle_with_args() to
+return -ENOENT. Let's fix this to make the behaviour consistent.
 
-This series are fixing the issues we have found.
+Reported-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+Fixes: 2c361684803e ("PM / Domains: Don't treat zero found compatible idle states as an error")
+Cc: <stable@vger.kernel.org>
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+---
+ drivers/base/power/domain.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Kind regards
-Ulf Hansson
-
-
-Ulf Hansson (4):
-  PM / Domains: Allow no domain-idle-states DT property in genpd when
-    parsing
-  cpuidle: psci: Fixup support for domain idle states being zero
-  cpuidle: psci: Split psci_dt_cpu_init_idle()
-  cpuidle: psci: Allow WFI to be the only state for the hierarchical
-    topology
-
- drivers/base/power/domain.c           |  2 +-
- drivers/cpuidle/cpuidle-psci-domain.c |  6 ++
- drivers/cpuidle/cpuidle-psci.c        | 92 ++++++++++++++++-----------
- 3 files changed, 63 insertions(+), 37 deletions(-)
-
+diff --git a/drivers/base/power/domain.c b/drivers/base/power/domain.c
+index 959d6d5eb000..0a01df608849 100644
+--- a/drivers/base/power/domain.c
++++ b/drivers/base/power/domain.c
+@@ -2653,7 +2653,7 @@ static int genpd_iterate_idle_states(struct device_node *dn,
+ 
+ 	ret = of_count_phandle_with_args(dn, "domain-idle-states", NULL);
+ 	if (ret <= 0)
+-		return ret;
++		return ret == -ENOENT ? 0 : ret;
+ 
+ 	/* Loop over the phandles until all the requested entry is found */
+ 	of_for_each_phandle(&it, ret, dn, "domain-idle-states", NULL, 0) {
 -- 
 2.20.1
 
