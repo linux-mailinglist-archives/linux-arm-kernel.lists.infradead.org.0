@@ -2,74 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD0AD177752
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:39:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C42D5177754
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:41:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gxIUwNQiRJPD/BXzxjuoEMHota1uMgIm3Yh3qOV+S/4=; b=mVyBp3zN8I5QrX0kEWtymTM3C
-	UmOsUbcPyzlwBvkMNL3aYLMP7N4hqevIM+UfIgzUTN9xCIH+2LPDVZVdoeAshbZTk3r1XRpQlTUvN
-	edIAf+VsZFNdQ7kL2KaOBh1aa2eXpOZOA+qCCGhHKoFUm7YRBxVTjK32MX5CpDoWAuFU7d1VmczdP
-	zqzCg80t8rhIFb9yashqH6xyvCJTpEYi3i725l5gDqXEojVYyf6cF5gvLurESaTcpk2CLsssjn8CV
-	Ye58ApIGXBr4BhYXLtxqwiRKbfE6AY7Y6EWLvuAM73tYbpzWwVQhZakzLBZnLDlgf5CEIomoiX8l7
-	q4zDHmaQA==;
+	 bh=ZPpwvj79rQeagCDdhoB30zInpvhIMS2NXbtOoizFv/U=; b=cnSQ0z0hHu/P6e0vezdtYULNy
+	hFQftsASmC7UN3QMi9Ku1odotIqElAonEmwHndL58uRuTPFo0Hke8IplGgwbOxXLKaxfCxE84We0j
+	Zn5J+wEaC247o/NVDJkuYxxSVXDTszTfvXP4Znsh9r+wqJ+hAuxE/B4Sz4R/I8N3fOl+jh+IGsfx5
+	lEPVM2H15VvlfTRf0QW3yL80O7W8xuevRzVKPgCNUpGb8F+ZZR7V1enLs/tRyU4RxJ/WP5EY1TmEA
+	lFNpD313KCNaFuNYHIKcuxKZ+ZET3HGkAtfPmljP7zlwA0lJyJITd0ne+gz3jjZQrvgl98VBIiuhz
+	3DDcjqoMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j97lv-0004Uh-QM; Tue, 03 Mar 2020 13:39:43 +0000
+	id 1j97nD-00062b-Ig; Tue, 03 Mar 2020 13:41:03 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j97lm-0004T1-FV
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:39:35 +0000
-Received: by mail-wr1-x441.google.com with SMTP id j16so4407329wrt.3
+ id 1j97n6-000620-2L
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:40:57 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v2so4314090wrp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 05:39:31 -0800 (PST)
+ Tue, 03 Mar 2020 05:40:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=+2psQteAP/nChvPm4YDjqHGqV1kWBdJs4ADtRdquZxs=;
- b=A3/O6Qe3YL74ggE/tBVJn2xsBwRBx1ddjGOkVocGqwWHBKhdObohxPUmr/JEKlfmxk
- OOXFWehica28U0mEv4PDia7ATqU9HsutGekW9r5tf2X12sijBxYwIfS6U9UDT11Bl2cT
- pGhWOmGChZ2o0ES/Y6cu8GDDrYFGaVLe3NPfdl4MWu5rX42u78erSW6hxwS7UUpz5nMi
- U1bq5XTA+BYaEn87u1eTlKFZ3mcBKizbolAqyJ3EMYsTP6oHPd8U24uIHRG9p7kxYTwG
- BFozbtgJlN69ENWI/VVCgN9dwlPGkEMyzddOfulCcyVtii2gXZ7rADxSyEDMGUGhD3gM
- BUTg==
+ bh=YLrc2+FA1ilMNRmgjCWNRM7AU/9wyz5rmTyxSf5L/jk=;
+ b=tuAM88xFmr/1HHdgnU+iN9kKxRCACr7qjOAbMKA2T6ct8kOUOPCytXX5yv7PsPOpq3
+ KaI5IOFI7uye+KEltFVfEIU28ByZqcjE9dpNPgjNDv28bC9BUyhtvi8TAG10NGL1uSoE
+ S4teOUD2khVaxZC6jD2ygMa8bW/10RZfFmMHSJoEzck2ITDCYx+uBC4GpJA6Wt98JVvV
+ vNJ1/HzzD9ClQopIlsC1xOFt9E54txaUfmJ9CyDtvxk4bdtb5Ttvtop7cGrGlD1HVwOK
+ 9AbPrRsbMnIzFcNha+LJ1gMXmPaDhPrJDLpJkiBz3X+xUHNEmpt+i0omU4sLz6ifb/AG
+ g+dQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+2psQteAP/nChvPm4YDjqHGqV1kWBdJs4ADtRdquZxs=;
- b=Uai62OTJwlYpcTXnzxkNAZXOiaeXDTYnuCKCQY2OKqaymFBEcmvdp+mZAV85+rdPFF
- eOy05krJ5jw0n3WjyK9Xg3JN4BBMxvlMkquL/ydcEThIEkqfaBy4NfIOjEzN4heTI/3m
- s7/yHar4m3OTz2lVGagQthpl9gKQswbXj6hS7ftjFfmwmsdvdu5qGWRY6GcMx04GaKJ7
- KqmU3WHgROxmqqJXdt3rnJxMk01mKC/HbKvWfxo8QYaCv3NBH+M9r61lRT5+fqVwzk1w
- lSHcteYuiZOoA31UUTA30WIPrFd5VYzG/UTmwzAMQlOfQvn0fjsGFJOiFzY1Niv1PnWz
- BT5w==
-X-Gm-Message-State: ANhLgQ2VE/yEiTZKwfoDeb5H2sORnUYYcSnKDAY5YQxs7FAGvpuhE5ix
- u9Mmh/DmLb5w2AWAO4ojY5g=
-X-Google-Smtp-Source: ADFU+vutRvNdL1/dEDudvF8N+CkmzoT8gckzelnvWhW1WAzJKLNYT0qdmOl0ljzsq2Th5yGHHvM4XQ==
-X-Received: by 2002:adf:fe4f:: with SMTP id m15mr5432015wrs.223.1583242770266; 
- Tue, 03 Mar 2020 05:39:30 -0800 (PST)
+ bh=YLrc2+FA1ilMNRmgjCWNRM7AU/9wyz5rmTyxSf5L/jk=;
+ b=B/g1BWk1tMcgorKdJayBZsE91Wm08r1PwECcr2oBQM9eJk32ntmhvqUFqQxmwLOiO+
+ MN9emkoM6dvIjf73lUKcRfRtlo4g5TpXNI9NdGURuMJWsWa8VJfDFnR/nwfKJLvKw8Qd
+ TQFYqwFxSeTXPXvo7LiicQdbeVO4JsUejQp1SmCiwjxrzPzsxq7eVMiWoyPV7s08Y1VS
+ wxWepD07L9FN6qwrdc+ZlXjzyw3NMyHYtz/3jBLKM0sbMcAIhDNZ/xDKNYOgUXXzu4Xj
+ CehGrWia0KxZ0bRNvwR/XrXXq4b6dy14Y6gPsjzuMSUcQ8bN9RX7xNfWfiVw2FGMkGGH
+ lXjA==
+X-Gm-Message-State: ANhLgQ0SBvYb7QJoCNKbWufcgsYkMswJl5v2sQT9qk7u/TIMx/w9++5D
+ Nt0PwObJ4aDfALkPeUHlGG4=
+X-Google-Smtp-Source: ADFU+vsUi9N0mZqkU864Zt1scSOjkJGbRqy/7SxuooIaUW3uRiZRk5L7SxSRfaKwnjHBqYIWc2rWJQ==
+X-Received: by 2002:adf:f641:: with SMTP id x1mr5471264wrp.248.1583242854870; 
+ Tue, 03 Mar 2020 05:40:54 -0800 (PST)
 Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
- by smtp.gmail.com with ESMTPSA id z12sm7023019wrs.43.2020.03.03.05.39.28
+ by smtp.gmail.com with ESMTPSA id s5sm32044251wru.39.2020.03.03.05.40.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 05:39:28 -0800 (PST)
-Date: Tue, 3 Mar 2020 14:39:27 +0100
+ Tue, 03 Mar 2020 05:40:53 -0800 (PST)
+Date: Tue, 3 Mar 2020 14:40:53 +0100
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V4 2/5] dt-bindings: PCI: tegra: Add DT support for PCIe
- EP nodes in Tegra194
-Message-ID: <20200303133927.GB2854899@ulmo>
+Subject: Re: [PATCH V4 0/5] Add support for PCIe endpoint mode in Tegra194
+Message-ID: <20200303134053.GC2854899@ulmo>
 References: <20200303105418.2840-1-vidyas@nvidia.com>
- <20200303105418.2840-3-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20200303105418.2840-3-vidyas@nvidia.com>
+In-Reply-To: <20200303105418.2840-1-vidyas@nvidia.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_053934_515579_8D0F60C8 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20200303_054056_112077_A0FC9FBA 
+X-CRM114-Status: GOOD (  16.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,71 +104,99 @@ Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  robh+dt@kernel.org, linux-pci@vger.kernel.org, bhelgaas@google.com,
  andrew.murray@arm.com, jonathanh@nvidia.com,
  linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============7727034671314575389=="
+Content-Type: multipart/mixed; boundary="===============4983741037189740862=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7727034671314575389==
+--===============4983741037189740862==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="s2ZSL+KKDSLx8OML"
+	protocol="application/pgp-signature"; boundary="kVXhAStRUZ/+rrGn"
 Content-Disposition: inline
 
 
---s2ZSL+KKDSLx8OML
+--kVXhAStRUZ/+rrGn
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Mar 03, 2020 at 04:24:15PM +0530, Vidya Sagar wrote:
-> Add support for PCIe controllers that can operate in endpoint mode
-> in Tegra194.
+On Tue, Mar 03, 2020 at 04:24:13PM +0530, Vidya Sagar wrote:
+> Tegra194 has three (C0, C4 & C5) dual mode PCIe controllers that can oper=
+ate
+> either in root port mode or in end point mode but only in one mode at a t=
+ime.
+> Platform P2972-0000 supports enabling endpoint mode for C5 controller. Th=
+is
+> patch series adds support for PCIe endpoint mode in both the driver as we=
+ll as
+> in DT.
+> This patch series depends on the changes made for Synopsys DesignWare end=
+point
+> mode subsystem that are recently accepted.
+> @ https://patchwork.kernel.org/project/linux-pci/list/?series=3D202211
+> which in turn depends on the patch made by Kishon
+> @ https://patchwork.kernel.org/patch/10975123/
+> which is also under review.
 >=20
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> ---
 > V4:
-> * None
+> * Started using threaded irqs instead of kthreads
 >=20
 > V3:
-> * Added Reviewed-by: Rob Herring <robh@kernel.org>
+> * Re-ordered patches in the series to make the driver change as the last =
+patch
+> * Took care of Thierry's review comments
 >=20
 > V2:
-> * Addressed Thierry's review comments
-> * Merged EP specific information from tegra194-pcie-ep.txt to tegra194-pc=
-ie.txt itself
-> * Started using the standard 'reset-gpios' for PERST GPIO
-> * Added 'nvidia,refclk-select-gpios' to enable REFCLK signals
+> * Addressed Thierry & Bjorn's review comments
+> * Added EP mode specific binding documentation to already existing bindin=
+g documentation file
+> * Removed patch that enables GPIO controller nodes explicitly as they are=
+ enabled already
 >=20
->  .../bindings/pci/nvidia,tegra194-pcie.txt     | 125 ++++++++++++++----
->  1 file changed, 99 insertions(+), 26 deletions(-)
+> Vidya Sagar (5):
+>   soc/tegra: bpmp: Update ABI header
+>   dt-bindings: PCI: tegra: Add DT support for PCIe EP nodes in Tegra194
+>   arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
+>   arm64: tegra: Add support for PCIe endpoint mode in P2972-0000
+>     platform
+>   PCI: tegra: Add support for PCIe endpoint mode in Tegra194
 
-Acked-by: Thierry Reding <treding@nvidia.com>
+Hi Lorenzo,
 
---s2ZSL+KKDSLx8OML
+I've acked patches 1, 2 and 5 of the series. I think you're going to
+need to apply patch 1 in order to satisfy a build-time dependency from
+patch 5. I can apply patches 3 and 4 to the Tegra tree since they're
+only adding device tree content that may conflict with some other
+patches that I have in the Tegra tree.
+
+Does that sound reasonable?
+
+Thierry
+
+--kVXhAStRUZ/+rrGn
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5eXg8ACgkQ3SOs138+
-s6EM9A/8DAyhoERGWyWFLzxgSdVvezOO0qahisCaxcwAdXVDTshl55YSf2n8j1fq
-s03XQ1gqN27mUy1TrBNjlhQt3ghcCr+s3KJZuRjgrlxq8wgUFdBdkGtHoc42sUm5
-I4NYbmWEiDaiYeUSPbw1O8mgl4kzFixGoBACEvWV1C/CI7DHUJFZ+c8YWaEvwARu
-pOjH1IjmBbXPzrF9474jMIYzdNA38Vq2AmhPKqWEflNspTAPg9Tag33N8AUoBGSg
-x5H/tWnggOIO9uzgyffIW1jbjy+6NiibjtmC1lAaFo/UNb41bwZgRd5wSvcg78ku
-VRMtb4Vet7czoXs2u6EMXgfIX3+30Oad8l9BVz0kYmLlIN0fRrqxQYAv1NNCAAd0
-ETqPNWgH1UQsMCl8kNOoESwKNwe+GYzcYDjEawYscvz2qvDuHDrgMvgC9CcI09sM
-Uqak29cyLLhBxJ/7Tu0sOe458kybGMoDbvIM1VMC+kQEfowo76GqHeURlHJ2Uq9m
-DKO0HlgV0lavxI4byOQcZ+lNF7u/CSKXbBjbZ7/WKAqTtLpehfcV1XAhXVdR93Tf
-pKx7GXBF+UOJhF++E4ykFn116wbcYjtTf6lGnEhGnOIKz7CpxB4OmAxk/P0EQWDH
-/VTNpkD/7dz77uH+ZFPxD447zAyK20qoeeRtgBSQwC1rgL2k+yY=
-=A2Ef
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5eXmUACgkQ3SOs138+
+s6FGqQ//SZc5V8LZwgjymzl/i7cT6pra9G4FiC7lOGh3wefGsiUhHtjnSMK0T1fv
+oeOyO1/dIIAWsl/qztmbf6Cq6ARu0f4bBo/ZpRAdC3CiyHn6kRmk8dChB9/JN+HY
+RshU2ZcppcNhvhSQKWkyFBj8S05T4ceTO1GAoxwTd1OuVcORYXT3gP7Fiht6sfQu
+74cIXdMELea+aDoucY2joPWmZRUkr0Rs+P1oQSSoCcETlEmM7I+cyM5QPQk1qLJK
+q6b/peT9yJ/JBQuxo/MZ2K4ebUgyEVNQsreHbTOPLzHwidFSGSjev63CDPBEdTsD
+4T+7thNE0OlFRoTfSBuaCrxtvPKpvWF+5XXYMYM2z8xyJAKZok9nz7CQPPOTUiNn
+t5Qbf/vLBjbUD22sEUaZXBlalAeJgBOK0aW4YnxOh5xfRXKz6f5T4FLOwxKc91Zu
+m3pHTaDLvm8YSXmiTbq62IvCp9Hc2fqBw3vUzbH1tvkcJA0DwH465rQx1ADM+To+
+IQOOum66ZXNRrU4ctc5eZhEGF9rRclXXirdzIDPLmAbp1fjr23+Vxr46pwSGazcY
+9tQb4UtptzcuvaWQ0HhkatEFWGHkjKKTevtRJ1J8w32/NzbaMZpGUBJIGfK8pe8z
+OGhxDwZ77g2oQ3ULktj27BDFPzP8TT42JPvi+AHOmEiJTfFKNGo=
+=Datu
 -----END PGP SIGNATURE-----
 
---s2ZSL+KKDSLx8OML--
+--kVXhAStRUZ/+rrGn--
 
 
---===============7727034671314575389==
+--===============4983741037189740862==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -181,5 +207,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7727034671314575389==--
+--===============4983741037189740862==--
 
