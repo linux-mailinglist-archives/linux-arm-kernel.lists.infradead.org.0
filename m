@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83BD2177973
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:47:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8DC717797F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:49:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CVd2hPBjzAIhiL13vTaBlZ0k2VhmVbKedfkEWBCq/TQ=; b=Hmqa1VBt4txuHZ
-	HroDCTzzI3y7xHvXgUFbj6Z5k5iHQqI3gmjpcKRK+aF1xFZoZdBZSfegUcyI/spdB4S4TMHMcOTeV
-	UcuDK1mmsfR4bh/6WnyfwC6SpWz5/ZIeaV8HxsOT9y1HHppr/HquYnKuQOqChx6mGruRG1u2PspIf
-	j8tIxeqPtqC5gEDK9sX+U+KoFP+ZxUiSUXAVrOtDtJ2SzDKmiK4duK10NcNevjeCn5vS0bqC/e+gl
-	O7G93FIsIrS9bp7i+4eC+p1f6rGtL3COgQ/keMNuSG9+dTSuyiu7N+HYEmpIo3TXj9qNNM7IIRk83
-	075jfeddVrfwYu5/IY+w==;
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wugr1+XIgZmWdistQ+Eq28ruBOkBLKnWMoT6u20kcgw=; b=oNiWlA+SfDwcVIfWRX05meyjtC
+	qaBpyqPTdQY1yfyrIAOZ9EyxRCeNbnbR9aa2Y8TCzyxy6qbyX8scCT4wPQYje9Dx1LthRVm9n8aHZ
+	l9T5jImPCsV/g8sPrZFmT6HpxFLu1Z1mrx+IDiWpVVhrLvhbi4bInkkzQAnpGb87bOFdijEID7aUb
+	bQsfyHgPeGHMH5DBNAHvvLI7GNHOCD4N8tteuZt/4cCt32+t15wwpQd2FY5vH60IVuDv1VVesRnn/
+	Dj9Hu3iOg9U0vlblcHCB6ZkTysobLG/cu4Te7/tfCO5q3njLyHD7lrItFXMZ036yDvx6vIdsDadv1
+	g+RGfNsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j98pc-0003h2-GE; Tue, 03 Mar 2020 14:47:36 +0000
+	id 1j98r3-0004Qn-GY; Tue, 03 Mar 2020 14:49:05 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j98p4-0003RP-4i
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:47:03 +0000
-Received: by mail-wm1-x344.google.com with SMTP id j1so1678729wmi.4
+ id 1j98qs-0004Os-AK
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:48:56 +0000
+Received: by mail-wm1-x344.google.com with SMTP id 6so3529788wmi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 06:47:01 -0800 (PST)
+ Tue, 03 Mar 2020 06:48:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
+ h=subject:to:references:from:autocrypt:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=YlXpdgCgCxVLbA0DWJljFI84zXiu8Z8tgW6virKJ4Wk=;
- b=fWM3pN1Liiw7P+RsrLZV0sx3vSL8Gfxk8RYxUZTy/m3YfftRwfoFpLcTk2gJEyDkpC
- 89SxVXqEr94WDra8Ht5l7ST9dqTl33q7W4vVKxYmOYAuyq5t11EdqEa7Dbe99XzOUswG
- gmTjMyNSNiiw3NS3g/TA2zdj7yC1RdV92hzJZioEFf7H6PeAkVoHs80lMdytn0aSkWGt
- qwKb9sXid5AlCw8gbsD9Ev1/wE88JS4dDAy9SJc2+/FSnFhl4OTxd0j5f8j5Va0FHxi+
- 3aEYoLokBUwKg6AfKw2q/kzXilRr5lx/QnusTbLJnko61ajJlNSfbile55YspmSDeGdF
- 022A==
+ bh=8kLqlPogYXhrPLsTe7sbJldHHGHfrdcoK+7+4Ses2js=;
+ b=Qc5iqVaAsMkOHi3o/L7iMkzDirw37XZjK1wYyVS66xOyTEq2S0JPKAZJIHenaUJulB
+ Z1eOK37I9l+k0E9Idc5wyJZ6vC9bbS0vC2UodBsPDAL6+GdmmQpFzXCEGB36EV0IY6zK
+ r9WSE0VcISdXraZt0Fn0KJ60BvK8AjkyTgn4Q1p6iFCVUPtuRmC9gAKJ+NctlPogjAjT
+ unY+YBJtPF6KeYKohlupICp8wN7ywT5qKad10xe7CA3Qqgkw+I2oYFUH7YP3miPQ5SUV
+ aXUb/NYHpj8Qs6ud2MsdEoPhgqP05deG7HNOa/afMTsOtSbTW85ciaQpQNYXTeoJhRa9
+ hMrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ h=x-gm-message-state:subject:to:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=YlXpdgCgCxVLbA0DWJljFI84zXiu8Z8tgW6virKJ4Wk=;
- b=ZfERHXK8PMSbJdYNrFnD3lhUGM+mxAz/afPeB8uuNO5qQPXOzo2tuu53A3gnh2xFBm
- Ju0ep/U40GoXtYzmbcqqRDrHn2sutFLsjxTC1j977yfHj+du03aSd8j0dvbGWm6Z7clc
- fV1oAx9qa3S58rGR18iLbp9wK6eTM9wj3uRyonnb6Mwx6jOHZfbB/efoihgTLK+EL6yV
- VHsFZzHbjLvFzDliZZ8FYh3T1mAxf/wYgW011v4+A/qgVilXUgTb7845h/vJ9csN52tw
- VViFFR8xTMSzvvAKm3PVjGoVzQuJIyohVXvULM77XZgnG8OTK40kKeuRG/E6ckUZ2Ck0
- BLLg==
-X-Gm-Message-State: ANhLgQ1Vg/3tLsS+wvCEBXYKVPyx1zw/aGeDtf5oO55iUzmQ6dRB74Ga
- C2JWtxxIp/uTzc4edXzUxuoRkSlInpgXFA==
-X-Google-Smtp-Source: ADFU+vvh7/PaURdnuFL+i+9XISLHL0nTX0Lw+/NkudNgdA8FVNTkd31x5p5gfohBudNtQPvBZONbMA==
-X-Received: by 2002:a05:600c:2056:: with SMTP id
- p22mr4407231wmg.136.1583246820646; 
- Tue, 03 Mar 2020 06:47:00 -0800 (PST)
+ bh=8kLqlPogYXhrPLsTe7sbJldHHGHfrdcoK+7+4Ses2js=;
+ b=OB5m6wWOlkc5ESpOyVH94X028rW4uUbncH8HWbLRajF8yheBCUDYTbS/nygEAc99wg
+ Ld/CRTKxFWU+5A14eR91NqPh3Gxfu0guFtz4hWDr9sZEliA0gsX3dOzDCavjyf4qaBvX
+ e9qhRgNAsRRi32mlgALg8mArKyMDYPobTXEsSutbzh9T9phmqkXUmeGfhPQHwCMQDuN2
+ aEWsiumq9vwkXULDhLtKv1rldZTU9wvaqOS7OFDG0dI3Ds+SvoqGDBUQ0xx3IFMwiNZH
+ 65pfcDqEG5cm4KMRrA7YOtp2egSxArFoQCCwc8CpfbFdFoNTSe1A7atN2FciSlr4GczY
+ M+ng==
+X-Gm-Message-State: ANhLgQ3Xdje7XVITFcKn5MLfjmUuFk/vPsQCf2mIneuYdNb/ek1Tf7sQ
+ ZgSHjCJV1uIKSko0hiLpIo5f1A==
+X-Google-Smtp-Source: ADFU+vtcufaByXfvsA9WTqeq+z/tuAqRK9cXjBDxIk25m27md6rhnsfQcdJF+SVhmXrMp6kgo1K67A==
+X-Received: by 2002:a1c:156:: with SMTP id 83mr4760640wmb.151.1583246932779;
+ Tue, 03 Mar 2020 06:48:52 -0800 (PST)
 Received: from [10.1.3.173]
  (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id b197sm4489573wmd.10.2020.03.03.06.46.59
+ by smtp.gmail.com with ESMTPSA id l8sm4498661wmj.2.2020.03.03.06.48.51
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 03 Mar 2020 06:47:00 -0800 (PST)
-Subject: Re: [PATCH v6 3/3] arm64: dts: meson: add support for the SmartLabs
- SML-5442TW
+ Tue, 03 Mar 2020 06:48:52 -0800 (PST)
+Subject: Re: [PATCH 2/2] arm64: dts: meson-g12a-tanix-tx5max: add initial
+ device tree
 To: Christian Hewitt <christianshewitt@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-References: <1583036241-88937-1-git-send-email-christianshewitt@gmail.com>
- <1583036241-88937-4-git-send-email-christianshewitt@gmail.com>
+References: <1582991214-85209-1-git-send-email-christianshewitt@gmail.com>
+ <1582991214-85209-3-git-send-email-christianshewitt@gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -121,16 +121,16 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <71666393-43c8-6ddf-5efb-05f418d68866@baylibre.com>
-Date: Tue, 3 Mar 2020 15:46:59 +0100
+Message-ID: <db658793-da57-9b70-c95a-7a8f6241b5c3@baylibre.com>
+Date: Tue, 3 Mar 2020 15:48:51 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <1583036241-88937-4-git-send-email-christianshewitt@gmail.com>
+In-Reply-To: <1582991214-85209-3-git-send-email-christianshewitt@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_064702_216557_DC460427 
-X-CRM114-Status: GOOD (  24.70  )
+X-CRM114-CacheID: sfid-20200303_064854_382023_97B210D9 
+X-CRM114-Status: GOOD (  20.99  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -155,170 +155,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
- =?UTF-8?Q?Jer=c3=b4me_Brunet?= <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 01/03/2020 05:17, Christian Hewitt wrote:
-> The SmartLabs SML-5442TW is broadly similar to the P231 reference design
-> but with the following differences:
+On 29/02/2020 16:46, Christian Hewitt wrote:
+> The Oranth Tanix TX5 Max is based on the Amlogic U200 reference design
+> using the S905X2 chipset. Hardware specification:
 > 
-> - The Yellow and Blue LEDs are available but disabled
-> - The Red and Green LEDs are used to signal off/on status
-> - uart_AO can be accessed after opening the case; soldered pins exist
-> - GPIOX_17 is forced high to enable the QCA9377 module
+> - 4GB LPDDR4 RAM
+> - 32GB eMMC storage
+> - 10/100/1000 Base-T Ethernet using External RGMII PHY
+> - 802.11 a/b/g/b/ac + BT 4.1 sdio wireless
+> - HDMI 2.0 (4k@60p) video
+> - Composite video + 2-channel audio output on 3.5mm jack
+> - S/PDIF audio output
+> - 1x USB 3.0
+> - 1x USB 2.0
+> - 1x micro SD card slot
+> 
+> The device tree is based on the higher-spec X96 Max box device.
 > 
 > Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 > ---
 >  arch/arm64/boot/dts/amlogic/Makefile               |   1 +
->  .../boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts | 292 +++++++++++++++++++++
->  2 files changed, 293 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+>  .../boot/dts/amlogic/meson-g12a-tanix-tx5max.dts   | 481 +++++++++++++++++++++
+>  2 files changed, 482 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts
 > 
 > diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-> index eef0045..6cf8c4a 100644
+> index eef0045..a1db803 100644
 > --- a/arch/arm64/boot/dts/amlogic/Makefile
 > +++ b/arch/arm64/boot/dts/amlogic/Makefile
-> @@ -27,6 +27,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905x-p212.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p230.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-p231.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-phicomm-n1.dtb
-> +dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905d-sml5442tw.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s805x-p241.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-p281.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-gxl-s905w-tx3-mini.dtb
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
+> @@ -1,6 +1,7 @@
+>  # SPDX-License-Identifier: GPL-2.0
+>  dtb-$(CONFIG_ARCH_MESON) += meson-axg-s400.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-sei510.dtb
+> +dtb-$(CONFIG_ARCH_MESON) += meson-g12a-tanix-tx5max.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-u200.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-a311d-khadas-vim3.dtb
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts
 > new file mode 100644
-> index 0000000..5fdf1ca
+> index 0000000..c3ef0ee
 > --- /dev/null
-> +++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905d-sml5442tw.dts
-> @@ -0,0 +1,292 @@
+> +++ b/arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts
+> @@ -0,0 +1,481 @@
 > +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 > +/*
-> + * Copyright (c) 2016 Endless Computers, Inc.
-> + * Author: Carlo Caione <carlo@endlessm.com>
-> + * Copyright (c) 2018 BayLibre, SAS
-> + * Author: Neil Armstrong <narmstrong@baylibre.com>
+> + * Copyright (c) 2018 BayLibre SAS. All rights reserved.
 > + */
 > +
 > +/dts-v1/;
 > +
-> +#include "meson-gxl-s905d.dtsi"
+> +#include "meson-g12a.dtsi"
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/gpio/meson-g12a-gpio.h>
+> +#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
 > +
 > +/ {
-> +	compatible = "smartlabs,sml5442tw", "amlogic,s905d",
-> +		"amlogic,meson-gxl";
-> +	model = "SmartLabs SML-5442TW";
+> +	compatible = "oranth,tx5-max", "amlogic,g12a";
+> +	model = "Tanix TX5 Max";
 > +
 > +	aliases {
 > +		serial0 = &uart_AO;
-> +		serial1 = &uart_A;
 > +		ethernet0 = &ethmac;
+> +	};
+> +
+> +	spdif_dit: audio-codec-1 {
+> +		#sound-dai-cells = <0>;
+> +		compatible = "linux,spdif-dit";
+> +		status = "okay";
+> +		sound-name-prefix = "DIT";
 > +	};
 > +
 > +	chosen {
 > +		stdout-path = "serial0:115200n8";
 > +	};
-> +
 > +	memory@0 {
 > +		device_type = "memory";
-> +		reg = <0x0 0x0 0x0 0x80000000>;
-> +	};
-> +
-> +	leds {
-> +		compatible = "gpio-leds";
-> +
-> +		yellow {
-> +			label = "sml5442tw:yellow";
-
-
-The bindings of leds has changed, now you should use function and color ids as described in Documentation/devicetree/bindings/leds/common.yaml
-
-> +			gpios = <&gpio_ao GPIOAO_6 GPIO_ACTIVE_HIGH>;
-> +			default-state = "off";
-> +		};
-> +
-> +		blue {
-> +			label = "sml5442tw:blue";
-> +			gpios = <&gpio GPIODV_28 GPIO_ACTIVE_HIGH>;
-> +			default-state = "off";
-> +		};
-> +
-> +		green {
-> +			label = "sml5442tw:green";
-> +			gpios = <&gpio_ao GPIOAO_9 GPIO_ACTIVE_HIGH>;
-> +			default-state = "on";
-> +		};
-> +
-> +		red {
-> +			label = "sml5442tw:red";
-> +			gpios = <&gpio GPIODV_27 GPIO_ACTIVE_HIGH>;
-> +			default-state = "off";
-> +		};
-> +	};
-> +
-> +	hdmi_5v: regulator-hdmi-5v {
-> +		compatible = "regulator-fixed";
-> +
-> +		regulator-name = "HDMI_5V";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +
-> +		gpio = <&gpio GPIOH_3 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +		regulator-always-on;
-> +	};
-> +
-> +	vddio_ao18: regulator-vddio_ao18 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDIO_AO18";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +	};
-> +
-> +	vddio_boot: regulator-vddio_boot {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDIO_BOOT";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +	};
-> +
-> +	vddao_3v3: regulator-vddao_3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDAO_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +	};
-> +
-> +	vcc_3v3: regulator-vcc_3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VCC_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +	};
-> +
-> +	emmc_pwrseq: emmc-pwrseq {
-> +		compatible = "mmc-pwrseq-emmc";
-> +		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
-> +	};
-> +
-> +	wifi32k: wifi32k {
-> +		compatible = "pwm-clock";
-> +		#clock-cells = <0>;
-> +		clock-frequency = <32768>;
-> +		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
-> +	};
-> +
-> +	sdio_pwrseq: sdio-pwrseq {
-> +		compatible = "mmc-pwrseq-simple";
-> +		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
-> +		clocks = <&wifi32k>;
-> +		clock-names = "ext_clock";
+> +		reg = <0x0 0x0 0x0 0x40000000>;
 > +	};
 > +
 > +	cvbs-connector {
@@ -341,13 +258,236 @@ The bindings of leds has changed, now you should use function and color ids as d
 > +			};
 > +		};
 > +	};
+> +
+> +	emmc_pwrseq: emmc-pwrseq {
+> +		compatible = "mmc-pwrseq-emmc";
+> +		reset-gpios = <&gpio BOOT_12 GPIO_ACTIVE_LOW>;
+> +	};
+> +
+> +	sdio_pwrseq: sdio-pwrseq {
+> +		compatible = "mmc-pwrseq-simple";
+> +		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
+> +		clocks = <&wifi32k>;
+> +		clock-names = "ext_clock";
+> +	};
+> +
+> +	flash_1v8: regulator-flash_1v8 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "FLASH_1V8";
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +		vin-supply = <&vcc_3v3>;
+> +		regulator-always-on;
+> +	};
+> +
+> +	dc_in: regulator-dc_in {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "DC_IN";
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +		regulator-always-on;
+> +	};
+> +
+> +	vcc_1v8: regulator-vcc_1v8 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "VCC_1V8";
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +		vin-supply = <&vcc_3v3>;
+> +		regulator-always-on;
+> +	};
+> +
+> +	vcc_3v3: regulator-vcc_3v3 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "VCC_3V3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		vin-supply = <&vddao_3v3>;
+> +		regulator-always-on;
+> +		/* FIXME: actually controlled by VDDCPU_B_EN */
+> +	};
+> +
+> +	vcc_5v: regulator-vcc_5v {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "VCC_5V";
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +		vin-supply = <&dc_in>;
+> +
+> +		gpio = <&gpio GPIOH_8 GPIO_OPEN_DRAIN>;
+> +		enable-active-low;
+> +	};
+> +
+> +	vddao_1v8: regulator-vddao_1v8 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "VDDAO_1V8";
+> +		regulator-min-microvolt = <1800000>;
+> +		regulator-max-microvolt = <1800000>;
+> +		vin-supply = <&vddao_3v3>;
+> +		regulator-always-on;
+> +	};
+> +
+> +	vddao_3v3: regulator-vddao_3v3 {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "VDDAO_3V3";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		vin-supply = <&dc_in>;
+> +		regulator-always-on;
+> +	};
+> +
+> +	vddcpu: regulator-vddcpu {
+> +		compatible = "pwm-regulator";
+> +
+> +		regulator-name = "VDDCPU";
+> +		regulator-min-microvolt = <721000>;
+> +		regulator-max-microvolt = <1022000>;
+> +
+> +		vin-supply = <&dc_in>;
+> +
+> +		pwms = <&pwm_AO_cd 1 1250 0>;
+> +		pwm-dutycycle-range = <100 0>;
+> +
+> +		regulator-boot-on;
+> +		regulator-always-on;
+> +	};
+> +
+> +	sound {
+> +		compatible = "amlogic,axg-sound-card";
+> +		model = "G12A-TANIX-TX5MAX";
+> +		audio-aux-devs = <&tdmout_b>;
+> +		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
+> +				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
+> +				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
+> +				"TDM_B Playback", "TDMOUT_B OUT",
+> +				"SPDIFOUT IN 0", "FRDDR_A OUT 3",
+> +				"SPDIFOUT IN 1", "FRDDR_B OUT 3",
+> +				"SPDIFOUT IN 2", "FRDDR_C OUT 3";
+> +
+> +		assigned-clocks = <&clkc CLKID_MPLL2>,
+> +				  <&clkc CLKID_MPLL0>,
+> +				  <&clkc CLKID_MPLL1>;
+> +		assigned-clock-parents = <0>, <0>, <0>;
+> +		assigned-clock-rates = <294912000>,
+> +				       <270950400>,
+> +				       <393216000>;
+> +		status = "okay";
+> +
+> +		dai-link-0 {
+> +			sound-dai = <&frddr_a>;
+> +		};
+> +
+> +		dai-link-1 {
+> +			sound-dai = <&frddr_b>;
+> +		};
+> +
+> +		dai-link-2 {
+> +			sound-dai = <&frddr_c>;
+> +		};
+> +
+> +		/* 8ch hdmi interface */
+> +		dai-link-3 {
+> +			sound-dai = <&tdmif_b>;
+> +			dai-format = "i2s";
+> +			dai-tdm-slot-tx-mask-0 = <1 1>;
+> +			dai-tdm-slot-tx-mask-1 = <1 1>;
+> +			dai-tdm-slot-tx-mask-2 = <1 1>;
+> +			dai-tdm-slot-tx-mask-3 = <1 1>;
+> +			mclk-fs = <256>;
+> +
+> +			codec {
+> +				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
+> +			};
+> +		};
+> +
+> +		/* spdif hdmi or toslink interface */
+> +		dai-link-4 {
+> +			sound-dai = <&spdifout>;
+> +
+> +			codec-0 {
+> +				sound-dai = <&spdif_dit>;
+> +			};
+> +
+> +			codec-1 {
+> +				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_A>;
+> +			};
+> +		};
+> +
+> +		/* spdif hdmi interface */
+> +		dai-link-5 {
+> +			sound-dai = <&spdifout_b>;
+> +
+> +			codec {
+> +				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_B>;
+> +			};
+> +		};
+> +
+> +		/* hdmi glue */
+> +		dai-link-6 {
+> +			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
+> +
+> +			codec {
+> +				sound-dai = <&hdmi_tx>;
+> +			};
+> +		};
+> +	};
+> +
+> +	wifi32k: wifi32k {
+> +		compatible = "pwm-clock";
+> +		#clock-cells = <0>;
+> +		clock-frequency = <32768>;
+> +		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
+> +	};
+> +};
+> +
+> +&arb {
+> +	status = "okay";
 > +};
 > +
 > +&cec_AO {
-> +	status = "okay";
-> +	pinctrl-0 = <&ao_cec_pins>;
+> +	pinctrl-0 = <&cec_ao_a_h_pins>;
 > +	pinctrl-names = "default";
+> +	status = "disabled";
 > +	hdmi-phandle = <&hdmi_tx>;
+> +};
+> +
+> +&cecb_AO {
+> +	pinctrl-0 = <&cec_ao_b_h_pins>;
+> +	pinctrl-names = "default";
+> +	status = "okay";
+> +	hdmi-phandle = <&hdmi_tx>;
+> +};
+> +
+> +&clkc_audio {
+> +	status = "okay";
+> +};
+> +
+> +&cpu0 {
+> +	cpu-supply = <&vddcpu>;
+> +	operating-points-v2 = <&cpu_opp_table>;
+> +	clocks = <&clkc CLKID_CPU_CLK>;
+> +	clock-latency = <50000>;
+> +};
+> +
+> +&cpu1 {
+> +	cpu-supply = <&vddcpu>;
+> +	operating-points-v2 = <&cpu_opp_table>;
+> +	clocks = <&clkc CLKID_CPU_CLK>;
+> +	clock-latency = <50000>;
+> +};
+> +
+> +&cpu2 {
+> +	cpu-supply = <&vddcpu>;
+> +	operating-points-v2 = <&cpu_opp_table>;
+> +	clocks = <&clkc CLKID_CPU_CLK>;
+> +	clock-latency = <50000>;
+> +};
+> +
+> +&cpu3 {
+> +	cpu-supply = <&vddcpu>;
+> +	operating-points-v2 = <&cpu_opp_table>;
+> +	clocks = <&clkc CLKID_CPU_CLK>;
+> +	clock-latency = <50000>;
 > +};
 > +
 > +&cvbs_vdac_port {
@@ -356,31 +496,23 @@ The bindings of leds has changed, now you should use function and color ids as d
 > +	};
 > +};
 > +
-> +&ethmac {
+> +&frddr_a {
 > +	status = "okay";
-> +	phy-mode = "rmii";
-> +	phy-handle = <&internal_phy>;
 > +};
 > +
-> +/* This will enable the bluetooth module */
-> +&gpio {
-> +	bt-en {
-> +		gpio-hog;
-> +		gpios = <GPIOX_17 GPIO_ACTIVE_HIGH>;
-> +		output-high;
-> +		line-name = "bt-en";
-> +	};
+> +&frddr_b {
+> +	status = "okay";
 > +};
-
-Did you try using the qcom,qca6174-bt compatible similar to the broadcom BT module as
-described in Documentation/devicetree/bindings/net/qualcomm-bluetooth.txt ?
-
+> +
+> +&frddr_c {
+> +	status = "okay";
+> +};
 > +
 > +&hdmi_tx {
 > +	status = "okay";
-> +	pinctrl-0 = <&hdmi_hpd_pins>, <&hdmi_i2c_pins>;
+> +	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
 > +	pinctrl-names = "default";
-> +	hdmi-supply = <&hdmi_5v>;
+> +	hdmi-supply = <&vcc_5v>;
 > +};
 > +
 > +&hdmi_tx_tmds_port {
@@ -389,37 +521,82 @@ described in Documentation/devicetree/bindings/net/qualcomm-bluetooth.txt ?
 > +	};
 > +};
 > +
-> +&i2c_A {
-> +	status = "okay";
-> +	pinctrl-0 = <&i2c_a_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&internal_phy {
-> +	pinctrl-0 = <&eth_link_led_pins>, <&eth_act_led_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
 > +&ir {
 > +	status = "okay";
 > +	pinctrl-0 = <&remote_input_ao_pins>;
 > +	pinctrl-names = "default";
+> +	linux,rc-map-name = "rc-tx5max";
+> +};
+> +
+> +&pwm_AO_cd {
+> +	pinctrl-0 = <&pwm_ao_d_e_pins>;
+> +	pinctrl-names = "default";
+> +	clocks = <&xtal>;
+> +	clock-names = "clkin1";
+> +	status = "okay";
+> +};
+> +
+> +&ext_mdio {
+> +	external_phy: ethernet-phy@0 {
+> +		/* Realtek RTL8211F (0x001cc916) */
+> +		reg = <0>;
+> +		max-speed = <1000>;
+> +		eee-broken-1000t;
+> +
+> +		reset-assert-us = <10000>;
+> +		reset-deassert-us = <30000>;
+> +		reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
+> +
+> +		interrupt-parent = <&gpio_intc>;
+> +		/* MAC_INTR on GPIOZ_14 */
+> +		interrupts = <26 IRQ_TYPE_LEVEL_LOW>;
+> +	};
+> +};
+> +
+> +&ethmac {
+> +	pinctrl-0 = <&eth_pins>, <&eth_rgmii_pins>;
+> +	pinctrl-names = "default";
+> +	status = "okay";
+> +	phy-mode = "rgmii";
+> +	phy-handle = <&external_phy>;
+> +	amlogic,tx-delay-ns = <2>;
 > +};
 > +
 > +&pwm_ef {
 > +	status = "okay";
 > +	pinctrl-0 = <&pwm_e_pins>;
 > +	pinctrl-names = "default";
-> +	clocks = <&clkc CLKID_FCLK_DIV4>;
+> +	clocks = <&xtal>;
 > +	clock-names = "clkin0";
 > +};
 > +
-> +&saradc {
+> +&uart_A {
 > +	status = "okay";
-> +	vref-supply = <&vddio_ao18>;
+> +	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
+> +	pinctrl-names = "default";
+> +	uart-has-rtscts;
+> +
+> +	bluetooth {
+> +		compatible = "brcm,bcm43438-bt";
+> +		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
+> +		max-speed = <2000000>;
+> +		clocks = <&wifi32k>;
+> +		clock-names = "lpo";
+> +	};
 > +};
 > +
-> +/* Wireless SDIO Module */
+> +&uart_AO {
+> +	status = "okay";
+> +	pinctrl-0 = <&uart_ao_a_pins>;
+> +	pinctrl-names = "default";
+> +};
+> +
+> +&usb {
+> +	status = "okay";
+> +	dr_mode = "host";
+> +};
+> +
+> +/* SDIO */
 > +&sd_emmc_a {
 > +	status = "okay";
 > +	pinctrl-0 = <&sdio_pins>;
@@ -430,22 +607,31 @@ described in Documentation/devicetree/bindings/net/qualcomm-bluetooth.txt ?
 > +
 > +	bus-width = <4>;
 > +	cap-sd-highspeed;
+> +	sd-uhs-sdr50;
 > +	max-frequency = <100000000>;
 > +
 > +	non-removable;
 > +	disable-wp;
 > +
+> +	/* WiFi firmware requires power to be kept while in suspend */
+> +	keep-power-in-suspend;
+> +
 > +	mmc-pwrseq = <&sdio_pwrseq>;
 > +
 > +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
+> +	vqmmc-supply = <&vddao_1v8>;
+> +
+> +	brcmf: wifi@1 {
+> +		reg = <1>;
+> +		compatible = "brcm,bcm4329-fmac";
+> +	};
 > +};
 > +
 > +/* SD card */
 > +&sd_emmc_b {
 > +	status = "okay";
-> +	pinctrl-0 = <&sdcard_pins>;
-> +	pinctrl-1 = <&sdcard_clk_gate_pins>;
+> +	pinctrl-0 = <&sdcard_c_pins>;
+> +	pinctrl-1 = <&sdcard_clk_gate_c_pins>;
 > +	pinctrl-names = "default", "clk-gate";
 > +
 > +	bus-width = <4>;
@@ -453,11 +639,9 @@ described in Documentation/devicetree/bindings/net/qualcomm-bluetooth.txt ?
 > +	max-frequency = <100000000>;
 > +	disable-wp;
 > +
-> +	cd-gpios = <&gpio CARD_6 GPIO_ACTIVE_HIGH>;
-> +	cd-inverted;
-> +
+> +	cd-gpios = <&gpio GPIOC_6 GPIO_ACTIVE_LOW>;
 > +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
+> +	vqmmc-supply = <&vddao_3v3>;
 > +};
 > +
 > +/* eMMC */
@@ -472,35 +656,36 @@ described in Documentation/devicetree/bindings/net/qualcomm-bluetooth.txt ?
 > +	max-frequency = <100000000>;
 > +	non-removable;
 > +	disable-wp;
-> +	mmc-ddr-1_8v;
-> +	mmc-hs200-1_8v;
 > +
 > +	mmc-pwrseq = <&emmc_pwrseq>;
 > +	vmmc-supply = <&vcc_3v3>;
-> +	vqmmc-supply = <&vddio_boot>;
+> +	vqmmc-supply = <&flash_1v8>;
 > +};
 > +
-> +/* This is connected to the Bluetooth module: */
-> +&uart_A {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
+> +&spdifout {
+> +	pinctrl-0 = <&spdif_out_h_pins>;
 > +	pinctrl-names = "default";
-> +	uart-has-rtscts;
-> +};
-> +
-> +/* This UART is brought out to the debug header */
-> +&uart_AO {
 > +	status = "okay";
-> +	pinctrl-0 = <&uart_ao_a_pins>;
-> +	pinctrl-names = "default";
 > +};
 > +
-> +&usb0 {
+> +&spdifout_b {
+> +	status = "okay";
+> +};
+> +
+> +&tdmif_b {
+> +	status = "okay";
+> +};
+> +
+> +&tdmout_b {
+> +	status = "okay";
+> +};
+> +
+> +&tohdmitx {
 > +	status = "okay";
 > +};
 > 
 
-Neil
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
