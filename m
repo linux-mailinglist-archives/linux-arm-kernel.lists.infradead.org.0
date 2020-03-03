@@ -2,80 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3CCE1778BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:24:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C423C1778E7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:31:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EtfOFfeeykHTIPTNUwp2TxxW3vkoRRpCB6+bv5rkQaA=; b=XZ+O+nJ2AN5E2V
-	2Utknk/p/g0HV4NRYOwhFDQ51yQU1D6xdP1s7NAzy/IeZZEcxFSRO7LqE/uu0SehEu0J4i6mIUGX/
-	KeRQ/cG2Y9PzMSP2+4nqTQCS++VjUPsiAMMNMRFF6QNiTyiynoxOhQO+QW21CkB2HDPF03Z4S2dlz
-	nQj6hQ+HMU4E49VQPN45F7Q3jVunPCGEudhkGq+DiaPDpvLYWl0OHIZMOseR2z1AmeSb6qK9+31sj
-	SjlvnohJm6wGQHctlz/f2B0sZXSF0CR8A/OX6+0FYDc8uLRRJ5tjIb/wbEvXy8pdwYG0NW8yehJdz
-	kUXzlX2xVvlLFCZKlEZg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z4YYteDSjee6V4SLt2g6zyV/e8NBQC+vAuHoEWrRS6Q=; b=ClBg/2XnIWK7ai
+	Of6TJgpqWOdJfljod/stHg5xoSnMbu9RXPkwjpzFEMiZZIDeQf+9YZQl5YILl2olRP9bsEkKe735M
+	q0YvVK6IiZ67vnoFYXMkrL+un4yJr5UIX9tOVVp9uB3mswLKlCa1LiHJ0kUBfQbc/qeQ4gUYZnrES
+	HQkJ9dHF8FNLXmUwg6gD18Dz5gHavkzJ2AWr5RQUFldPvjo1pDOUZZDuhO5KD3ODftqk0Mp3LIi7h
+	KZx4tWvzzlPFZzIRQ5VW+yePDVheGNfoLqdOLteZRjaGJ1uopAjfykHRNp6qj2xiz3H4w55R7eKk+
+	M5lT+0ThGGhxm5IRMbNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j98TD-0007H3-Qe; Tue, 03 Mar 2020 14:24:27 +0000
-Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
+	id 1j98ZR-0002BJ-Rf; Tue, 03 Mar 2020 14:30:53 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j98T0-0007D8-Pf; Tue, 03 Mar 2020 14:24:17 +0000
-Received: from [IPv6:2001:983:e9a7:1:8c14:57ad:bac0:273b]
- ([IPv6:2001:983:e9a7:1:8c14:57ad:bac0:273b])
- by smtp-cloud9.xs4all.net with ESMTPA
- id 98ScjVEzW9Im298SdjzuTx; Tue, 03 Mar 2020 15:24:06 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1583245446; bh=jS4ZxNmoD4GaWSXQE5OZus/wUWGTloTdylSEFmJJoA0=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=Jyu1whJcyO4vZ62Zisw/p+qhwKGGm+8ESbBbUTvzNENtTeqXlKjSiuRP6ngiOf05d
- HkF8csghsgLmCjAuKEn1X+sDvJlBX0sr9fWqfwhNeMdCJAvMCHr+GPYee1GMe/d3RB
- LHAo2VCrC3WHwGsivDGedpkOqy46oQFJr5+UqWqluRkFE+5xbHJTXZ0UhFDdq21J+f
- q9o5NXFg/r/9UhFD9PO4/HADhvlvghsEv6pD0ITmQTW2Q31KWMy/E1RwYpImtVBLeS
- HIL8G/CctpvrQ4VzAjLDyphZzABMAu3fpYDPxA++YGBEgeFCTsjGAYssMSq5ItnMmY
- C9rGkZiPJ4FnQ==
-Subject: Re: [PATCH v4] media: mtk-vpu: avoid unaligned access to DTCM buffer.
-To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
-References: <20200302044021.97415-1-hsinyi@chromium.org>
-From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Message-ID: <46f27a3b-de4c-8d43-d6d7-d6332ee30451@xs4all.nl>
-Date: Tue, 3 Mar 2020 15:23:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j98ZL-0002AQ-07
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:30:48 +0000
+Received: by mail-oi1-f193.google.com with SMTP id 2so3201138oiz.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Mar 2020 06:30:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=3giDTcmis7xuoYSVjRPJHKbcsBkDsi3FIKg6I//oj2U=;
+ b=b82+5XP8p9OH/RyN9rsbYo/PPV/jnHmMQOm4FXQfWm+vJVH1KP5FCwCJ85eaw+eiCy
+ 2mBBIEtDbf2VEnOQqvBYKcDYJmny4bWawwR7KOXg8uuwwOvp8H8lC5srGqRQfO7go8LL
+ tBzzROlxbCxg74V9DR3O+gtC90WSWXU/EMx5T3VS8pB01GoMRzQ5yHO7/Svx1YmZ2USO
+ ypJgTpoZZ70fb9unY/P6OuSd6XWU6DeK1/VNdT7Y4YltxIrbPjf9VYisGvzPNAsy8EXu
+ s0lIE3hiKPPxktSw/37J8LcGyIfqkSU67DN152Rv6jSsXFJyIwz4CIu+RJQNr58ojUSw
+ B/8g==
+X-Gm-Message-State: ANhLgQ3RjIxUzJ1NGglHuhwIz3EDu3ghQAcYpKHtXvQQgdiRnjwXwdB8
+ JCuaNg76TfpjOrTPrmxbN6b23g0=
+X-Google-Smtp-Source: ADFU+vvfMW/0Fosxapnoh/aFQ3fRu6XOd3zB5JsdxNtRlGdL+ltkBAIjvhbLwLVfbP36SKvU92NEtw==
+X-Received: by 2002:aca:4c91:: with SMTP id z139mr2568648oia.150.1583245845284; 
+ Tue, 03 Mar 2020 06:30:45 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id y193sm6613292oia.38.2020.03.03.06.30.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Mar 2020 06:30:44 -0800 (PST)
+Received: (nullmailer pid 24203 invoked by uid 1000);
+ Tue, 03 Mar 2020 14:30:43 -0000
+Date: Tue, 3 Mar 2020 08:30:43 -0600
+From: Rob Herring <robh@kernel.org>
+To: Ahmad Fatoum <a.fatoum@pengutronix.de>
+Subject: Re: [PATCH 1/3] dt-bindings: add vendor prefix for Linux Automation
+ GmbH
+Message-ID: <20200303143043.GA24147@bogus>
+References: <20200226143826.1146-1-a.fatoum@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <20200302044021.97415-1-hsinyi@chromium.org>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfOAPE1IN/cClyfoWL2QQFp0l8HqJGt1VbIXw4OS692YQI0LpaIy9p8tkRVqKdufrFX8q+ovnpamg9y5ayLzmkC7rguOgttrMKxhxUNq2xFE8/WwbIvLt
- 7cPaRqSzRfFqog0jM/Me69vKU2L23wU8mqqZxo5Olok5RliChOW0EI2u3jIsVv0kCDiP5eLMdt8TdcYlDayUgzIwf8MKeJ+qc8pm7R3j1UxHQU4FJP+bLaEI
- VmLCeKuA3l59ukrlGg9SdYJyL7+KleJvwD1Jn0QUo/1/Px7/7Dy0orezSJvCDNiXz/s88/xsbGZpoVfVH4MUZt6R6ZFKQr5eH7HvDDJh1n9LOn//+gykRonU
- W6Isw26uPrM2YoGet961vuDDD8XuUL4sHiMUbJsnilyJpWuYTqey4cR5jxjxm6A+u7sp34MnRiCHMMi67XAUMVzkXaUJHiuc3AcbPdH0bnZCGSjBmXW80zNj
- ou1UUE9jbZre6dO3Oel38u9NI8OBlti0emSVwqc2w868ywS9UiMe7XMsvbxkCple0UuvweRGbr6sv10LcrNJVkUwPEdn8a9kWLL7m7sIwwyGykzLxJNG7D9r
- 9VS6MHerAY/J230B9d0tZUL3af6g3FfFMG4mNjyam1/o2zucpm16kM/NvTP6UwAqWhZ9LGswB4mcd0/trIFwQLilkmKlZJZdE6S1fUQHryowJ79r2WPK0eby
- gLld5fFnNpFRRa3+MHq1Ry8Am7QdRU7O
+Content-Disposition: inline
+In-Reply-To: <20200226143826.1146-1-a.fatoum@pengutronix.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_062415_000750_0D3C6E66 
-X-CRM114-Status: GOOD (  23.77  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200303_063047_043361_5F830951 
+X-CRM114-Status: GOOD (  10.99  )
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.30 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [194.109.24.30 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,278 +93,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Tiffany Lin <tiffany.lin@mediatek.com>, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ahmad Fatoum <a.fatoum@pengutronix.de>, mcoquelin.stm32@gmail.com,
+ linux-kernel@vger.kernel.org, kernel@pengutronix.de,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/03/2020 05:40, Hsin-Yi Wang wrote:
-> media: mtk-vpu: avoid unaligned access to DTCM buffer.
+On Wed, 26 Feb 2020 15:38:23 +0100, Ahmad Fatoum wrote:
+> Linux Automation GmbH[0] was founded in 2019 in order to develop
+> electronics for embedded Linux. Add its vendor prefix so it may be used
+> in future board and device compatibles.
 > 
-> Previously, vpu->recv_buf and send_buf are forced cast from
-> void __iomem *tcm. vpu->recv_buf->share_buf is passed to
-> vpu_ipi_desc.handler(). It's not able to do unaligned access. Otherwise
-> kernel would crash due to unable to handle kernel paging request.
+> [0]: https://www.linux-automation.com
 > 
-> struct vpu_run {
-> 	u32 signaled;
-> 	char fw_ver[VPU_FW_VER_LEN];
-> 	unsigned int	dec_capability;
-> 	unsigned int	enc_capability;
-> 	wait_queue_head_t wq;
-> };
-> 
-> fw_ver starts at 4 byte boundary. If system enables
-> CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS, strscpy() will do
-> read_word_at_a_time(), which tries to read 8-byte: *(unsigned long *)addr
-> 
-> vpu_init_ipi_handler() calls strscpy(), which would lead to crash.
-> 
-> vpu_init_ipi_handler() and several other handlers (eg.
-> vpu_dec_ipi_handler) only do read access to this data, so they can be
-> const, and we can use memcpy_fromio() to copy the buf to another non iomem
-> buffer then pass to handler.
-> 
-> Fixes: 85709cbf1524 ("media: replace strncpy() by strscpy()")
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> Signed-off-by: Robert Schwebel <rsc@linux-automation.com>
+> Signed-off-by: Ahmad Fatoum <a.fatoum@pengutronix.de>
 > ---
-> Change in v4:
-> - Remove forced casting recv_buf from tcm. Copy iomem data before passing
->   to handler.
-> Change in v2, v3:
-> - fix sparse warnings.
-> ---
->  drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c  |  9 ++--
->  .../media/platform/mtk-vcodec/vdec_vpu_if.c   |  6 +--
->  .../media/platform/mtk-vcodec/venc_vpu_if.c   | 12 ++---
->  drivers/media/platform/mtk-vpu/mtk_vpu.c      | 45 ++++++++++---------
->  drivers/media/platform/mtk-vpu/mtk_vpu.h      |  2 +-
->  5 files changed, 38 insertions(+), 36 deletions(-)
-> 
-> diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c b/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c
-> index 6720d11f50cf..dc95b8a44759 100644
-> --- a/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c
-> +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c
-> @@ -15,7 +15,7 @@ static inline struct mtk_mdp_ctx *vpu_to_ctx(struct mtk_mdp_vpu *vpu)
->  	return container_of(vpu, struct mtk_mdp_ctx, vpu);
->  }
->  
-> -static void mtk_mdp_vpu_handle_init_ack(struct mdp_ipi_comm_ack *msg)
-> +static void mtk_mdp_vpu_handle_init_ack(const struct mdp_ipi_comm_ack *msg)
->  {
->  	struct mtk_mdp_vpu *vpu = (struct mtk_mdp_vpu *)
->  					(unsigned long)msg->ap_inst;
-> @@ -26,10 +26,11 @@ static void mtk_mdp_vpu_handle_init_ack(struct mdp_ipi_comm_ack *msg)
->  	vpu->inst_addr = msg->vpu_inst_addr;
->  }
->  
-> -static void mtk_mdp_vpu_ipi_handler(void *data, unsigned int len, void *priv)
-> +static void mtk_mdp_vpu_ipi_handler(const void *data, unsigned int len,
-> +				    void *priv)
->  {
-> -	unsigned int msg_id = *(unsigned int *)data;
-> -	struct mdp_ipi_comm_ack *msg = (struct mdp_ipi_comm_ack *)data;
-> +	unsigned int msg_id = *(const unsigned int *)data;
-> +	const struct mdp_ipi_comm_ack *msg = data;
-
-Why not just do:
-
-	const struct mdp_ipi_comm_ack *msg = data;
-	unsigned int msg_id = msg->msg_id;
-
-Much cleaner.
-
-Other than this small issue this patch looks nice. No more sparse/smatch warnings
-and no more weird casts :-)
-
-Regards,
-
-	Hans
-
->  	struct mtk_mdp_vpu *vpu = (struct mtk_mdp_vpu *)
->  					(unsigned long)msg->ap_inst;
->  	struct mtk_mdp_ctx *ctx;
-> diff --git a/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c b/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c
-> index 70abfd4cd4b9..948a12fd9d46 100644
-> --- a/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c
-> +++ b/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c
-> @@ -9,7 +9,7 @@
->  #include "vdec_ipi_msg.h"
->  #include "vdec_vpu_if.h"
->  
-> -static void handle_init_ack_msg(struct vdec_vpu_ipi_init_ack *msg)
-> +static void handle_init_ack_msg(const struct vdec_vpu_ipi_init_ack *msg)
->  {
->  	struct vdec_vpu_inst *vpu = (struct vdec_vpu_inst *)
->  					(unsigned long)msg->ap_inst_addr;
-> @@ -34,9 +34,9 @@ static void handle_init_ack_msg(struct vdec_vpu_ipi_init_ack *msg)
->   * This function runs in interrupt context and it means there's an IPI MSG
->   * from VPU.
->   */
-> -static void vpu_dec_ipi_handler(void *data, unsigned int len, void *priv)
-> +static void vpu_dec_ipi_handler(const void *data, unsigned int len, void *priv)
->  {
-> -	struct vdec_vpu_ipi_ack *msg = data;
-> +	const struct vdec_vpu_ipi_ack *msg = data;
->  	struct vdec_vpu_inst *vpu = (struct vdec_vpu_inst *)
->  					(unsigned long)msg->ap_inst_addr;
->  
-> diff --git a/drivers/media/platform/mtk-vcodec/venc_vpu_if.c b/drivers/media/platform/mtk-vcodec/venc_vpu_if.c
-> index 3e931b0ed096..9540709c1905 100644
-> --- a/drivers/media/platform/mtk-vcodec/venc_vpu_if.c
-> +++ b/drivers/media/platform/mtk-vcodec/venc_vpu_if.c
-> @@ -8,26 +8,26 @@
->  #include "venc_ipi_msg.h"
->  #include "venc_vpu_if.h"
->  
-> -static void handle_enc_init_msg(struct venc_vpu_inst *vpu, void *data)
-> +static void handle_enc_init_msg(struct venc_vpu_inst *vpu, const void *data)
->  {
-> -	struct venc_vpu_ipi_msg_init *msg = data;
-> +	const struct venc_vpu_ipi_msg_init *msg = data;
->  
->  	vpu->inst_addr = msg->vpu_inst_addr;
->  	vpu->vsi = vpu_mapping_dm_addr(vpu->dev, msg->vpu_inst_addr);
->  }
->  
-> -static void handle_enc_encode_msg(struct venc_vpu_inst *vpu, void *data)
-> +static void handle_enc_encode_msg(struct venc_vpu_inst *vpu, const void *data)
->  {
-> -	struct venc_vpu_ipi_msg_enc *msg = data;
-> +	const struct venc_vpu_ipi_msg_enc *msg = data;
->  
->  	vpu->state = msg->state;
->  	vpu->bs_size = msg->bs_size;
->  	vpu->is_key_frm = msg->is_key_frm;
->  }
->  
-> -static void vpu_enc_ipi_handler(void *data, unsigned int len, void *priv)
-> +static void vpu_enc_ipi_handler(const void *data, unsigned int len, void *priv)
->  {
-> -	struct venc_vpu_ipi_msg_common *msg = data;
-> +	const struct venc_vpu_ipi_msg_common *msg = data;
->  	struct venc_vpu_inst *vpu =
->  		(struct venc_vpu_inst *)(unsigned long)msg->venc_inst;
->  
-> diff --git a/drivers/media/platform/mtk-vpu/mtk_vpu.c b/drivers/media/platform/mtk-vpu/mtk_vpu.c
-> index a768707abb94..2fbccc9b247b 100644
-> --- a/drivers/media/platform/mtk-vpu/mtk_vpu.c
-> +++ b/drivers/media/platform/mtk-vpu/mtk_vpu.c
-> @@ -203,8 +203,8 @@ struct mtk_vpu {
->  	struct vpu_run run;
->  	struct vpu_wdt wdt;
->  	struct vpu_ipi_desc ipi_desc[IPI_MAX];
-> -	struct share_obj *recv_buf;
-> -	struct share_obj *send_buf;
-> +	struct share_obj __iomem *recv_buf;
-> +	struct share_obj __iomem *send_buf;
->  	struct device *dev;
->  	struct clk *clk;
->  	bool fw_loaded;
-> @@ -292,7 +292,7 @@ int vpu_ipi_send(struct platform_device *pdev,
->  		 unsigned int len)
->  {
->  	struct mtk_vpu *vpu = platform_get_drvdata(pdev);
-> -	struct share_obj *send_obj = vpu->send_buf;
-> +	struct share_obj __iomem *send_obj = vpu->send_buf;
->  	unsigned long timeout;
->  	int ret = 0;
->  
-> @@ -325,9 +325,9 @@ int vpu_ipi_send(struct platform_device *pdev,
->  		}
->  	} while (vpu_cfg_readl(vpu, HOST_TO_VPU));
->  
-> -	memcpy((void *)send_obj->share_buf, buf, len);
-> -	send_obj->len = len;
-> -	send_obj->id = id;
-> +	memcpy_toio(send_obj->share_buf, buf, len);
-> +	writel(len, &send_obj->len);
-> +	writel(id, &send_obj->id);
->  
->  	vpu->ipi_id_ack[id] = false;
->  	/* send the command to VPU */
-> @@ -600,10 +600,10 @@ int vpu_load_firmware(struct platform_device *pdev)
->  }
->  EXPORT_SYMBOL_GPL(vpu_load_firmware);
->  
-> -static void vpu_init_ipi_handler(void *data, unsigned int len, void *priv)
-> +static void vpu_init_ipi_handler(const void *data, unsigned int len, void *priv)
->  {
-> -	struct mtk_vpu *vpu = (struct mtk_vpu *)priv;
-> -	struct vpu_run *run = (struct vpu_run *)data;
-> +	struct mtk_vpu *vpu = priv;
-> +	const struct vpu_run *run = data;
->  
->  	vpu->run.signaled = run->signaled;
->  	strscpy(vpu->run.fw_ver, run->fw_ver, sizeof(vpu->run.fw_ver));
-> @@ -700,19 +700,21 @@ static int vpu_alloc_ext_mem(struct mtk_vpu *vpu, u32 fw_type)
->  
->  static void vpu_ipi_handler(struct mtk_vpu *vpu)
->  {
-> -	struct share_obj *rcv_obj = vpu->recv_buf;
-> +	struct share_obj __iomem *rcv_obj = vpu->recv_buf;
->  	struct vpu_ipi_desc *ipi_desc = vpu->ipi_desc;
-> -
-> -	if (rcv_obj->id < IPI_MAX && ipi_desc[rcv_obj->id].handler) {
-> -		ipi_desc[rcv_obj->id].handler(rcv_obj->share_buf,
-> -					      rcv_obj->len,
-> -					      ipi_desc[rcv_obj->id].priv);
-> -		if (rcv_obj->id > IPI_VPU_INIT) {
-> -			vpu->ipi_id_ack[rcv_obj->id] = true;
-> +	unsigned char data[SHARE_BUF_SIZE];
-> +	s32 id = readl(&rcv_obj->id);
-> +
-> +	memcpy_fromio(data, rcv_obj->share_buf, sizeof(data));
-> +	if (id < IPI_MAX && ipi_desc[id].handler) {
-> +		ipi_desc[id].handler(data, readl(&rcv_obj->len),
-> +				     ipi_desc[id].priv);
-> +		if (id > IPI_VPU_INIT) {
-> +			vpu->ipi_id_ack[id] = true;
->  			wake_up(&vpu->ack_wq);
->  		}
->  	} else {
-> -		dev_err(vpu->dev, "No such ipi id = %d\n", rcv_obj->id);
-> +		dev_err(vpu->dev, "No such ipi id = %d\n", id);
->  	}
->  }
->  
-> @@ -722,11 +724,10 @@ static int vpu_ipi_init(struct mtk_vpu *vpu)
->  	vpu_cfg_writel(vpu, 0x0, VPU_TO_HOST);
->  
->  	/* shared buffer initialization */
-> -	vpu->recv_buf = (__force struct share_obj *)(vpu->reg.tcm +
-> -						     VPU_DTCM_OFFSET);
-> +	vpu->recv_buf = vpu->reg.tcm + VPU_DTCM_OFFSET;
->  	vpu->send_buf = vpu->recv_buf + 1;
-> -	memset(vpu->recv_buf, 0, sizeof(struct share_obj));
-> -	memset(vpu->send_buf, 0, sizeof(struct share_obj));
-> +	memset_io(vpu->recv_buf, 0, sizeof(struct share_obj));
-> +	memset_io(vpu->send_buf, 0, sizeof(struct share_obj));
->  
->  	return 0;
->  }
-> diff --git a/drivers/media/platform/mtk-vpu/mtk_vpu.h b/drivers/media/platform/mtk-vpu/mtk_vpu.h
-> index d4453b4bcee9..ee7c552ce928 100644
-> --- a/drivers/media/platform/mtk-vpu/mtk_vpu.h
-> +++ b/drivers/media/platform/mtk-vpu/mtk_vpu.h
-> @@ -15,7 +15,7 @@
->   * VPU interfaces with other blocks by share memory and interrupt.
->   **/
->  
-> -typedef void (*ipi_handler_t) (void *data,
-> +typedef void (*ipi_handler_t) (const void *data,
->  			       unsigned int len,
->  			       void *priv);
->  
+>  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
 
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
