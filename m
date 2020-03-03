@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD1BC1774C8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 11:59:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B3A21774E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 12:00:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ad8B0wEZ/WF6SJji75/g9v7yAnvodF+4LCwE6isq50=; b=NejL7OUrLhWMGO
-	PbEyJgezkO7HJuyUPpr+5MRMYd31Y8DmaFftzPPm8NZsUN8K6Ktc0VI37ULGKw6tGAUccTAbSM760
-	qVgr5quMLRhMHZqstRKcnHiEkjBpbNTVFQqHnEN75Egwc0k3y0ClxSFpj3j71Jomeu6wp903xAa2b
-	D1nzpDRnZsXmx1VeSHcMAB18c4nxDqbUCAHToNr8LBLpghhOR2PiMK4Mic99MAdSZrkB0cKJxHVHj
-	fGZuAiXA92oCpdzd79W3s2dyNBLD1hMBn5/GZJGTXPn4VGtrWBpdmCz7FY4dt3zgda9E9NkKPgKSM
-	nXt55LM5ALQ+fynP9utA==;
+	List-Owner; bh=JIYndKomExV0QrQt5x4sSh1ZtXEE9+CZV5gBMxaJpes=; b=WTBWbFbpUvd6Ir
+	mTkI38+GwBQ7SzOYRY+/siQqlaZXgQ/BfnGT9vQSc8GjlgMGrX1s8ZG6nwH0+Bh1M9Tng2pjdpRmQ
+	TU4Ze0ISn0/+PWwyROzW0QfUrMtpkcU9HAUUmBflOoY707TadR5p+LHNgRR6yLSEEovKP/Rp3wqfb
+	1xv2Uc/9ibdRFF95CiXDLkDUzdq7lAZ0ZezGWgREC6n/2HC93o8l7FNeUUh6ZSHFWxHMT1LwNIR1C
+	rftPiEqhT3BNceg/MKVphqf7kHTrogXGiWhS0CCubtb5cy/wayRUtx6EuGKnoeSSft0PffxoMRT6/
+	y519k+2kUQuqqu3DEo+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j95Gk-0004ZT-D3; Tue, 03 Mar 2020 10:59:22 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j95HL-0005HQ-60; Tue, 03 Mar 2020 10:59:59 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j95GJ-0004IQ-3T; Tue, 03 Mar 2020 10:58:56 +0000
-X-UUID: bf33daab36b0485f9d6923af1270d0fd-20200303
+ id 1j95GJ-0004IR-Dq; Tue, 03 Mar 2020 10:58:58 +0000
+X-UUID: a5f3666a74354fa9831a0fd1b401a106-20200303
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=ejj3muKchbZgb/7ccah0Y+HobyhZKtrbHXj/UzxNQYo=; 
- b=S49fXAFHhclxY+KSED0FQEtYjl57dQGoSwQLP/V1GTHHMP7BfSeBDzO4ZQ1Ez0r1ZGHWkg02RkumXZT4ppYPrMBDaez4s+1B2f0jYPSxNHezqwbiI17GtO6zzHMzn9dyapkeUGCUpyLZLe6mfJ4Wr1Y+hIMRijf+cdhMgUP2gQw=;
-X-UUID: bf33daab36b0485f9d6923af1270d0fd-20200303
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=n91f0uofl0asqlUlap0WpLknqR4syuPs3+1WSrUJsOQ=; 
+ b=cdn22QR+sStRIQVwBGt4inGa5ngUM8MVvQVDp7vc2WVoeCvtgckl0oUQgm02w8pX/ERS4HI1xmXjMSzWVXa6fwOTQw4Jis4hwMzmIo2GY6k2IfKaHPDc0ElPVUUEqkXc3dRef77EekzvlhTCmic4Rs1T0U67MG2adkcT1jmBXsE=;
+X-UUID: a5f3666a74354fa9831a0fd1b401a106-20200303
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <dennis-yc.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 193474174; Tue, 03 Mar 2020 02:58:50 -0800
+ with ESMTP id 1488205584; Tue, 03 Mar 2020 02:58:51 -0800
 Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Tue, 3 Mar 2020 03:00:06 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
  mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Mar 2020 18:57:40 +0800
+ 15.0.1395.4; Tue, 3 Mar 2020 18:57:41 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 3 Mar 2020 18:58:10 +0800
+ Frontend Transport; Tue, 3 Mar 2020 18:58:11 +0800
 From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Jassi Brar
  <jassisinghbrar@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, "David
  Airlie" <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
-Subject: [PATCH v4 02/13] mailbox: cmdq: variablize address shift in platform
-Date: Tue, 3 Mar 2020 18:58:34 +0800
-Message-ID: <1583233125-7827-3-git-send-email-dennis-yc.hsieh@mediatek.com>
+Subject: [PATCH v4 04/13] mailbox: mediatek: cmdq: clear task in channel
+ before shutdown
+Date: Tue, 3 Mar 2020 18:58:36 +0800
+Message-ID: <1583233125-7827-5-git-send-email-dennis-yc.hsieh@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1583233125-7827-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 References: <1583233125-7827-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 07C9060610B86C357E760526C4A97A7EADC80D043C4B46C4F34A51BF72FBE5802000:8
+X-TM-SNTS-SMTP: DC30B30E062A9263D4C2EDB9C3BE08E0741AE0EE0162D48019CACD8965CBF2312000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_025855_148912_33E7EAA0 
-X-CRM114-Status: GOOD (  15.79  )
+X-CRM114-CacheID: sfid-20200303_025855_482221_1307F41D 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -99,197 +102,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some gce hardware shift pc and end address in register to support
-large dram addressing.
-Implement gce address shift when write or read pc and end register.
-And add shift bit in platform definition.
+Do success callback in channel when shutdown. For those task not finish,
+callback with error code thus client has chance to cleanup or reset.
 
 Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
 ---
- drivers/mailbox/mtk-cmdq-mailbox.c       | 61 ++++++++++++++++++------
- drivers/soc/mediatek/mtk-cmdq-helper.c   |  3 +-
- include/linux/mailbox/mtk-cmdq-mailbox.h |  2 +
- 3 files changed, 50 insertions(+), 16 deletions(-)
+ drivers/mailbox/mtk-cmdq-mailbox.c | 38 ++++++++++++++++++++++++++++++
+ 1 file changed, 38 insertions(+)
 
 diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
-index 9a6ce9f5a7db..4dbee9258127 100644
+index 9994ac9426d6..b56d340c8982 100644
 --- a/drivers/mailbox/mtk-cmdq-mailbox.c
 +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
-@@ -76,8 +76,22 @@ struct cmdq {
- 	struct cmdq_thread	*thread;
- 	struct clk		*clock;
- 	bool			suspended;
-+	u8			shift_pa;
- };
+@@ -387,6 +387,12 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
  
-+struct gce_plat {
-+	u32 thread_nr;
-+	u8 shift;
-+};
-+
-+u8 cmdq_mbox_shift(struct mbox_chan *chan)
-+{
-+	struct cmdq *cmdq = container_of(chan->mbox, struct cmdq, mbox);
-+
-+	return cmdq->shift_pa;
-+}
-+EXPORT_SYMBOL(cmdq_mbox_shift);
-+
- static int cmdq_thread_suspend(struct cmdq *cmdq, struct cmdq_thread *thread)
- {
- 	u32 status;
-@@ -183,7 +197,7 @@ static void cmdq_task_remove_wfe(struct cmdq_task *task)
- 	for (i = 0; i < CMDQ_NUM_CMD(task->pkt); i++)
- 		if (cmdq_command_is_wfe(base[i]))
- 			base[i] = (u64)CMDQ_JUMP_BY_OFFSET << 32 |
--				  CMDQ_JUMP_PASS;
-+				  CMDQ_JUMP_PASS >> task->cmdq->shift_pa;
- 	dma_sync_single_for_device(dev, task->pa_base, task->pkt->cmd_buf_size,
- 				   DMA_TO_DEVICE);
- }
-@@ -221,13 +235,15 @@ static void cmdq_task_handle_error(struct cmdq_task *task)
- {
- 	struct cmdq_thread *thread = task->thread;
- 	struct cmdq_task *next_task;
-+	struct cmdq *cmdq = task->cmdq;
- 
--	dev_err(task->cmdq->mbox.dev, "task 0x%p error\n", task);
--	WARN_ON(cmdq_thread_suspend(task->cmdq, thread) < 0);
-+	dev_err(cmdq->mbox.dev, "task 0x%p error\n", task);
-+	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
- 	next_task = list_first_entry_or_null(&thread->task_busy_list,
- 			struct cmdq_task, list_entry);
- 	if (next_task)
--		writel(next_task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
-+		writel(next_task->pa_base >> cmdq->shift_pa,
-+		       thread->base + CMDQ_THR_CURR_ADDR);
- 	cmdq_thread_resume(thread);
- }
- 
-@@ -257,7 +273,7 @@ static void cmdq_thread_irq_handler(struct cmdq *cmdq,
- 	else
- 		return;
- 
--	curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR);
-+	curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR) << cmdq->shift_pa;
- 
- 	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
- 				 list_entry) {
-@@ -373,16 +389,20 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+ 	if (list_empty(&thread->task_busy_list)) {
  		WARN_ON(clk_enable(cmdq->clock) < 0);
++		/*
++		 * The thread reset will clear thread related register to 0,
++		 * including pc, end, priority, irq, suspend and enable. Thus
++		 * set CMDQ_THR_ENABLED to CMDQ_THR_ENABLE_TASK will enable
++		 * thread and make it running.
++		 */
  		WARN_ON(cmdq_thread_reset(cmdq, thread) < 0);
  
--		writel(task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
--		writel(task->pa_base + pkt->cmd_buf_size,
-+		writel(task->pa_base >> cmdq->shift_pa,
-+		       thread->base + CMDQ_THR_CURR_ADDR);
-+		writel((task->pa_base + pkt->cmd_buf_size) >> cmdq->shift_pa,
- 		       thread->base + CMDQ_THR_END_ADDR);
+ 		writel(task->pa_base >> cmdq->shift_pa,
+@@ -450,6 +456,38 @@ static int cmdq_mbox_startup(struct mbox_chan *chan)
+ 
+ static void cmdq_mbox_shutdown(struct mbox_chan *chan)
+ {
++	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
++	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
++	struct cmdq_task *task, *tmp;
++	unsigned long flags;
 +
- 		writel(thread->priority, thread->base + CMDQ_THR_PRIORITY);
- 		writel(CMDQ_THR_IRQ_EN, thread->base + CMDQ_THR_IRQ_ENABLE);
- 		writel(CMDQ_THR_ENABLED, thread->base + CMDQ_THR_ENABLE_TASK);
- 	} else {
- 		WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
--		curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR);
--		end_pa = readl(thread->base + CMDQ_THR_END_ADDR);
-+		curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR) <<
-+			cmdq->shift_pa;
-+		end_pa = readl(thread->base + CMDQ_THR_END_ADDR) <<
-+			cmdq->shift_pa;
- 
- 		/*
- 		 * Atomic execution should remove the following wfe, i.e. only
-@@ -395,7 +415,7 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
- 				cmdq_thread_wait_end(thread, end_pa);
- 				WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
- 				/* set to this task directly */
--				writel(task->pa_base,
-+				writel(task->pa_base >> cmdq->shift_pa,
- 				       thread->base + CMDQ_THR_CURR_ADDR);
- 			} else {
- 				cmdq_task_insert_into_thread(task);
-@@ -407,14 +427,14 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
- 			if (curr_pa == end_pa - CMDQ_INST_SIZE ||
- 			    curr_pa == end_pa) {
- 				/* set to this task directly */
--				writel(task->pa_base,
-+				writel(task->pa_base >> cmdq->shift_pa,
- 				       thread->base + CMDQ_THR_CURR_ADDR);
- 			} else {
- 				cmdq_task_insert_into_thread(task);
- 				smp_mb(); /* modify jump before enable thread */
- 			}
- 		}
--		writel(task->pa_base + pkt->cmd_buf_size,
-+		writel((task->pa_base + pkt->cmd_buf_size) >> cmdq->shift_pa,
- 		       thread->base + CMDQ_THR_END_ADDR);
- 		cmdq_thread_resume(thread);
- 	}
-@@ -461,6 +481,7 @@ static int cmdq_probe(struct platform_device *pdev)
- 	struct resource *res;
- 	struct cmdq *cmdq;
- 	int err, i;
-+	struct gce_plat *plat_data;
- 
- 	cmdq = devm_kzalloc(dev, sizeof(*cmdq), GFP_KERNEL);
- 	if (!cmdq)
-@@ -479,7 +500,14 @@ static int cmdq_probe(struct platform_device *pdev)
- 		return -EINVAL;
- 	}
- 
--	cmdq->thread_nr = (u32)(unsigned long)of_device_get_match_data(dev);
-+	plat_data = (struct gce_plat *)of_device_get_match_data(dev);
-+	if (!plat_data) {
-+		dev_err(dev, "failed to get match data\n");
-+		return -EINVAL;
++	spin_lock_irqsave(&thread->chan->lock, flags);
++	if (list_empty(&thread->task_busy_list))
++		goto done;
++
++	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
++
++	/* make sure executed tasks have success callback */
++	cmdq_thread_irq_handler(cmdq, thread);
++	if (list_empty(&thread->task_busy_list))
++		goto done;
++
++	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
++				 list_entry) {
++		cmdq_task_exec_done(task, CMDQ_CB_ERROR);
++		kfree(task);
 +	}
 +
-+	cmdq->thread_nr = plat_data->thread_nr;
-+	cmdq->shift_pa = plat_data->shift;
- 	cmdq->irq_mask = GENMASK(cmdq->thread_nr - 1, 0);
- 	err = devm_request_irq(dev, cmdq->irq, cmdq_irq_handler, IRQF_SHARED,
- 			       "mtk_cmdq", cmdq);
-@@ -542,9 +570,12 @@ static const struct dev_pm_ops cmdq_pm_ops = {
- 	.resume = cmdq_resume,
- };
++	cmdq_thread_disable(cmdq, thread);
++	clk_disable(cmdq->clock);
++done:
++	/*
++	 * The thread->task_busy_list empty means thread already disable. The
++	 * cmdq_mbox_send_data() always reset thread which clear disable and
++	 * suspend statue when first pkt send to channel, so there is no need
++	 * to do any operation here, only unlock and leave.
++	 */
++	spin_unlock_irqrestore(&thread->chan->lock, flags);
+ }
  
-+static const struct gce_plat gce_plat_v2 = {.thread_nr = 16};
-+static const struct gce_plat gce_plat_v3 = {.thread_nr = 24};
-+
- static const struct of_device_id cmdq_of_ids[] = {
--	{.compatible = "mediatek,mt8173-gce", .data = (void *)16},
--	{.compatible = "mediatek,mt8183-gce", .data = (void *)24},
-+	{.compatible = "mediatek,mt8173-gce", .data = (void *)&gce_plat_v2},
-+	{.compatible = "mediatek,mt8183-gce", .data = (void *)&gce_plat_v3},
- 	{}
- };
- 
-diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-index de20e6cba83b..2e1bc513569b 100644
---- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-+++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-@@ -291,7 +291,8 @@ static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
- 
- 	/* JUMP to end */
- 	inst.op = CMDQ_CODE_JUMP;
--	inst.value = CMDQ_JUMP_PASS;
-+	inst.value = CMDQ_JUMP_PASS >>
-+		cmdq_mbox_shift(((struct cmdq_client *)pkt->cl)->chan);
- 	err = cmdq_pkt_append_command(pkt, inst);
- 
- 	return err;
-diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-index a4dc45fbec0a..dfe5b2eb85cc 100644
---- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-+++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-@@ -88,4 +88,6 @@ struct cmdq_pkt {
- 	void			*cl;
- };
- 
-+u8 cmdq_mbox_shift(struct mbox_chan *chan);
-+
- #endif /* __MTK_CMDQ_MAILBOX_H__ */
+ static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
 -- 
 2.18.0
 _______________________________________________
