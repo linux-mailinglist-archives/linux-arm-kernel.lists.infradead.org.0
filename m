@@ -2,57 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A43C1779CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:02:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6C881779F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:08:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SlYzO/48AfUHitiwDluy+RRAGx/QiR+zorocb3EXwnY=; b=pwS/g+3cG3ucbQ
-	Ro8E7Q9dXNg38v8DiGxE9S+I1DGJBkbtQEGaoLRxIs1r/29MaHKolJlh60v1VtBDxccBPQBjRUTjY
-	ecOemYQAEnbhuxi2etjGi/gpIQTH7tPnw7/MgCGjHkDymLZ0oHFoqecjhkbNhAPI7tWrXCpoEQEwT
-	ho1yPYmsufiC4UDC4mTe8w6vJblNYn3cHFNFP2LPcPUErZjY73OrC8bNAg1oMthbXsEHA/ekCZypx
-	6nqWEvq4q/pY81IASWpBsX3TB5V2YYfQ6N7QhjSJGiNxh7P14BgopbgQ4klvxC2zXuRZFlCO3vEHv
-	2wOZ5V67iVeJGm21i7DQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QRWd9ZWvQji0qipOGf0Khw6ZYbI8afQxBmjPoKiFfaA=; b=bWabGeoTHb8EOz
+	MQSQFcd3zQPtJvDZYW5DnJWncHhuCivtaRIH0c8VLqlzLgfrZt/peEQ1rODQOV1CkUD/K2ppSwTGY
+	QGvOdoIfBxS2NaGFyQKqDwWIOw7w+0VDRZ2dpTwxblyt7l0pc9MJ8RhVhb3AR26cqiFSPIMugSC8r
+	ykEiW5GGpiAUzYprKGqQHRexhAp+fwbO3SKItRkdBT4LzdR/0NxhIAn/68ktcM2bPpiHmKuX0aGIn
+	BPcCYwc9Ai83gZyeI+hBH4SboJpUO4LaWgFHBMPyosGbJtIcbqIFR87dbTFU9IztPyXRl2kpKElm9
+	eXA9/PsAYD3MUn3BY1Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j993z-0002Nd-6N; Tue, 03 Mar 2020 15:02:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j993s-0002MZ-4q
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:02:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49A8AFEC;
- Tue,  3 Mar 2020 07:02:17 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4DE6E3F6C4;
- Tue,  3 Mar 2020 07:02:15 -0800 (PST)
-Date: Tue, 3 Mar 2020 15:02:09 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH V4 0/5] Add support for PCIe endpoint mode in Tegra194
-Message-ID: <20200303150209.GA6334@e121166-lin.cambridge.arm.com>
-References: <20200303105418.2840-1-vidyas@nvidia.com>
- <20200303134053.GC2854899@ulmo>
+	id 1j999T-0004lj-OO; Tue, 03 Mar 2020 15:08:07 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j999K-0004kf-44
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:00 +0000
+Received: by mail-lf1-x143.google.com with SMTP id c20so3082142lfb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Mar 2020 07:07:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hDm62swX1e309emODy6IWYyN9SUd3dpgxKcG7xrdMlk=;
+ b=in2YL3sMp9ZVb0HypyT3fkJ9WJ/6VzmQFhOYfvsHYSCWwDcmFgMBm4A+f2vGlZR0Tl
+ 8dp9f/h62FrCz+jVZmP57bNnCJKUAsN2srwZWsFmlmQiYWbt6hgkzjiIqUMcRIu90KRo
+ fLsDdbq8PPNnkJc3mk/8F+X+FuVDZqiBUnRS+TnoT9IijkwNcCetU8dZl3PAf+cRf7uk
+ z1lYnF5mSUy4vsH/jgEbKH7cgPjMhUr7bKLbMweo5dPA4EqMBmIL8MSzbwzMwxDVELeA
+ FLOmUqM6yRDS/WpYQfafp9a6QjeMFRNSa59bJqCP5/CbCLSDeKhj8toVJ65l1+Yat3St
+ xBZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hDm62swX1e309emODy6IWYyN9SUd3dpgxKcG7xrdMlk=;
+ b=k7TSWLHD7tW4/JIxdyvXL1Re0JBxMlxxKc68Fjp3rfKfdRlpuv+onvFIZji0jSrIHR
+ zEAYg7B+1acw0t8OILlw7nCd7pP6fdG65IHFxYaiN1iGpL2/FJ8uHxbgT4mH9FAofnql
+ sZasl2Xdkrt3jcD74Q4Drrh3KS8gA5yagHYsJAEzDwzVJJpyKEg/8sp7s4vELW3rChHQ
+ Pv2ktYx0NEKVvhni4HoD7IHdyWhV1TFTjn63p9s07D2GV/Wwp1natkvjITvj99lO51b3
+ xOatd4LqMtCUhLrMTKhUL6AJxv8bPkXQUxnFWVfZORMDRpQa6v/YkPIq2JFZURohAmV7
+ 20gg==
+X-Gm-Message-State: ANhLgQ3nt0UoGTKBqHyv6+oo2UK2wQFJ/0zognBCu+3DdYPt+96zJfmG
+ pJqLSQMoqp+5FE8tzkEyy8JUVA==
+X-Google-Smtp-Source: ADFU+vu+xJCKU5jcGXcrD4NY7owa0bMU7ehQwZMdVV0PPkkCq1EGue6j/E/+90n6hI6Upie+o5FZJw==
+X-Received: by 2002:ac2:454f:: with SMTP id j15mr3108670lfm.20.1583248075820; 
+ Tue, 03 Mar 2020 07:07:55 -0800 (PST)
+Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
+ [158.174.22.210])
+ by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.07.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Mar 2020 07:07:55 -0800 (PST)
+From: Ulf Hansson <ulf.hansson@linaro.org>
+To: Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, devicetree@vger.kernel.org
+Subject: [PATCH 0/7] dt-bindings: arm: Fix bindings used for hierarchical PSCI
+ states
+Date: Tue,  3 Mar 2020 16:07:42 +0100
+Message-Id: <20200303150749.30566-1-ulf.hansson@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200303134053.GC2854899@ulmo>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_070220_227722_27EF78C3 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200303_070758_170009_E5B84365 
+X-CRM114-Status: GOOD (  10.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,65 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, Vidya Sagar <vidyas@nvidia.com>,
- linux-kernel@vger.kernel.org, kishon@ti.com, linux-tegra@vger.kernel.org,
- robh+dt@kernel.org, linux-pci@vger.kernel.org, bhelgaas@google.com,
- andrew.murray@arm.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 03, 2020 at 02:40:53PM +0100, Thierry Reding wrote:
-> On Tue, Mar 03, 2020 at 04:24:13PM +0530, Vidya Sagar wrote:
-> > Tegra194 has three (C0, C4 & C5) dual mode PCIe controllers that can operate
-> > either in root port mode or in end point mode but only in one mode at a time.
-> > Platform P2972-0000 supports enabling endpoint mode for C5 controller. This
-> > patch series adds support for PCIe endpoint mode in both the driver as well as
-> > in DT.
-> > This patch series depends on the changes made for Synopsys DesignWare endpoint
-> > mode subsystem that are recently accepted.
-> > @ https://patchwork.kernel.org/project/linux-pci/list/?series=202211
-> > which in turn depends on the patch made by Kishon
-> > @ https://patchwork.kernel.org/patch/10975123/
-> > which is also under review.
-> > 
-> > V4:
-> > * Started using threaded irqs instead of kthreads
-> > 
-> > V3:
-> > * Re-ordered patches in the series to make the driver change as the last patch
-> > * Took care of Thierry's review comments
-> > 
-> > V2:
-> > * Addressed Thierry & Bjorn's review comments
-> > * Added EP mode specific binding documentation to already existing binding documentation file
-> > * Removed patch that enables GPIO controller nodes explicitly as they are enabled already
-> > 
-> > Vidya Sagar (5):
-> >   soc/tegra: bpmp: Update ABI header
-> >   dt-bindings: PCI: tegra: Add DT support for PCIe EP nodes in Tegra194
-> >   arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
-> >   arm64: tegra: Add support for PCIe endpoint mode in P2972-0000
-> >     platform
-> >   PCI: tegra: Add support for PCIe endpoint mode in Tegra194
-> 
-> Hi Lorenzo,
-> 
-> I've acked patches 1, 2 and 5 of the series. I think you're going to
-> need to apply patch 1 in order to satisfy a build-time dependency from
-> patch 5. I can apply patches 3 and 4 to the Tegra tree since they're
-> only adding device tree content that may conflict with some other
-> patches that I have in the Tegra tree.
-> 
-> Does that sound reasonable?
+The recently updated bindings to support hierarchical PSCI states, had a poor
+quality from the json-schema point of view. This series fixup the related
+bindings and silence various errors/warnings from "make dt_binding_check".
 
-Sure, that's absolutely fine by me, I will do.
+The two last patches updates some DTS files from a QCOM SoC, which is the first
+one that uses these new bindings. Perhaps those should be queued via arm-soc
+instead, but in any case there are included for reference. 
 
-Thanks,
-Lorenzo
+Kind regards
+Ulf Hansson
+
+Ulf Hansson (7):
+  dt-bindings: arm: Correct links to idle states definitions
+  dt-bindings: arm: Fix cpu compatibles in the hierarchical example for
+    PSCI
+  dt-bindings: power: Convert domain-idle-states bindings to json-schema
+  dt-bindings: power: Extend nodename pattern for power-domain providers
+  dt-bindings: arm: Fixup the DT bindings for hierarchical PSCI states
+  arm64: dts: msm8916: Conform to the domain-idle-state DT binding
+  arm64: dts: msm8916: Conform to the nodename pattern for power-domain
+
+ .../devicetree/bindings/arm/cpus.yaml         |  2 +-
+ .../bindings/arm/msm/qcom,idle-state.txt      |  2 +-
+ .../devicetree/bindings/arm/psci.yaml         | 41 ++++++------
+ .../bindings/power/domain-idle-state.txt      | 33 ---------
+ .../bindings/power/domain-idle-state.yaml     | 67 +++++++++++++++++++
+ .../bindings/power/power-domain.yaml          | 30 ++++-----
+ .../bindings/power/power_domain.txt           |  2 +-
+ arch/arm64/boot/dts/qcom/msm8916.dtsi         | 13 ++--
+ 8 files changed, 111 insertions(+), 79 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/power/domain-idle-state.txt
+ create mode 100644 Documentation/devicetree/bindings/power/domain-idle-state.yaml
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
