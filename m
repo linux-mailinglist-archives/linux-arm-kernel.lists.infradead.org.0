@@ -2,81 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A599176E17
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 05:33:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36412176EB6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 06:28:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y2mBDYPRxUAgbqgrgGN9r+ldBsXv6k8g0+uJydnUH5s=; b=tAZSJT6enKSxQm
-	0vrYNOGmQzkzeWy6ncE9YTphmjPLC+duF18KtVdqBtjX4106wnEp2lDvyh9jnb8RvsEhA2mvtnMV5
-	DWYEq3hiuNthSI2kI7l8SKcY772Kgq0B1cDVU0x8pPQA4JvgTz4HqoZvLIHg5CcVvYTAB6O+9xLEC
-	B/7cyEQpWAqxOcw5v3rKnthyYnNCoHfebe/b0qUzCEwGpX/9s6FU3F6IzNNB5dNaCAKl1TIcfY6UU
-	ThPphiYy9Gz29iziNbEjUla2aqujhBZp8KixjfMm/LnTAeH70fGu0/Emz0w8rrVgNGTsfqKbS6at7
-	/hw2hI8owLMWbDRdHLPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cwHKKESN63WDKrcTs9vddmY/BPTOD6zzVW+zHgmmFlk=; b=L3ugHHFGUFcAFG
+	j1fosDxsLdp0VvX7WB5kc1/6uRrxPoysY7mLjJKFvYn9dWesI2Lq66zADRXm6xFIcseehTYhGTRS9
+	v3Q/1vxa8kqYIahZHMvGnSpHTo5tT4m/43d9Dxy3H7Ao1Mf7wR49wk7pT32t6TBYowbtCitvACrPt
+	fzkMbFIRPTyT0kqskZnG5vwYlGVfTojRtQ4praIsJu7EYnC0FJ5gcJEctzsXP/SeiV88b7H9krz3q
+	+3gbxfEbTaTPFD3Sm/MN18M3BDBZ5r4SbBpa0HqBKYAirf/Y+j9159TjnMo+bUz1qpml5+v8W2CjY
+	ISltmCo/XB/vk1TjJFcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8zEr-0003s0-Az; Tue, 03 Mar 2020 04:33:01 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1j906K-0004yU-5p; Tue, 03 Mar 2020 05:28:16 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8zEk-0003qt-8V
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 04:32:55 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id d7so756632pjw.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 20:32:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=PAeuIw+hEri4xfaGtdCge6RjFwR9k/M6VeehKKOz2Zg=;
- b=ZO61SxyiPLNPpW1EXlXI4x/HWOeu8rffpoS2+/Bt7b2ua54SalZEEkqudi6diZIkXh
- cHuWJrfIFBFUMQECEu4k0LXTwfeayiwHTSI1Fd//oRS+ft8IegW8BxZ6m+yG/+KLbXEF
- rCmTGOMC5dQjrfF/eviJrA/wJr34l+fzh5k2I=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=PAeuIw+hEri4xfaGtdCge6RjFwR9k/M6VeehKKOz2Zg=;
- b=P3hzOWkq2Nl9KOdhLyJLzgTh9B6xFdSKvoVPp0JuSDTUpl6dt1svsFtJhbTGo807xg
- XV04PBqxtry5q3l7nhenWY7TgsuY+Q7tAR96tI+rvJtuqtTeO2lyFPNXbd1aYHv1BsJt
- GX5wjDw66LMhxX0A11kM9vtvFnl18Y27uwfN1zzcCi9QkiAQYF6OcoW6HdVfNi1hZop7
- HDlOHGwmCP9+Vv3T1IkseaFcFRZFv3D35Si+C3VIKMLe77fKLukQogTyybNx1ojUjatw
- A6ZjnC+JChg0eNbgS7KuRBfi+YizkwTIWee7DAb8PyRva86HA5A2i+jgnqQbxvz6BzMY
- GVIg==
-X-Gm-Message-State: ANhLgQ1FaeyNUNXxjoQDdstJC1ARY9SM6fT3hLu/pLnoS9laeaWubLlb
- X6diri6GEQKhbY3kmzXWGvkojQ==
-X-Google-Smtp-Source: ADFU+vuu87r1SlcNGnctFE2kHHSUxB6qWqCEisCd/TiEgwd8JkcqMCC9rIaYFVZCii+GL+ZBtK9QSw==
-X-Received: by 2002:a17:90a:be04:: with SMTP id
- a4mr2011764pjs.73.1583209973125; 
- Mon, 02 Mar 2020 20:32:53 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id f127sm23298618pfa.112.2020.03.02.20.32.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 20:32:52 -0800 (PST)
-Date: Mon, 2 Mar 2020 20:32:51 -0800
-From: Kees Cook <keescook@chromium.org>
-To: Sedat Dilek <sedat.dilek@gmail.com>
-Subject: Re: [PATCH 0/9] Enable orphan section warning
-Message-ID: <202003022029.B549AA3@keescook>
-References: <20200228002244.15240-1-keescook@chromium.org>
- <CA+icZUVRnjOWKZynAGDniXD_H9KRccONmeKHs25DPPU1c8ZcGg@mail.gmail.com>
+ id 1j9068-0004vq-3U; Tue, 03 Mar 2020 05:28:05 +0000
+X-UUID: 81af04f1663743c9abc62ff58dad333b-20200302
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=VrGM0yng3zE6ibYl4KMQlVLDnOBJXUKNw3E1HJFiQo4=; 
+ b=b5vKKQD6VM6XzABQ1pX2UIsve9W8vFurHj9cqxcyE25vmyXOGQXmk8CfCyKyQTfcw3ZyV3OrQumAds0GE44lp3jfzsQZpq/g15jtnMV3jfoYRwj8KM6IVkjujyIq8KkpKDOjdUfJ+2qM4pfavW1O9SGsmowEoj+Mb+9Q4JVUtx0=;
+X-UUID: 81af04f1663743c9abc62ff58dad333b-20200302
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <jitao.shi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 871467374; Mon, 02 Mar 2020 21:27:52 -0800
+Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Mar 2020 21:27:49 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N2.mediatek.inc
+ (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 3 Mar 2020 13:28:06 +0800
+Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
+ MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
+ 15.0.1395.4 via Frontend Transport; Tue, 3 Mar 2020 13:28:07 +0800
+From: Jitao Shi <jitao.shi@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
+ David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH v12 0/6] mt8183 dpi supports dual edge and pin mode swap
+Date: Tue, 3 Mar 2020 13:27:16 +0800
+Message-ID: <20200303052722.94795-1-jitao.shi@mediatek.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CA+icZUVRnjOWKZynAGDniXD_H9KRccONmeKHs25DPPU1c8ZcGg@mail.gmail.com>
+X-TM-SNTS-SMTP: C50C8E93721BCC28BF2C5FB574BD8F7FED538630EACC9D503EDD5790C96266982000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_203254_325706_330CAD4B 
-X-CRM114-Status: GOOD (  20.98  )
+X-CRM114-CacheID: sfid-20200302_212804_145276_47B2D319 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,7 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,110 +87,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
- Peter Collingbourne <pcc@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- Clang-Built-Linux ML <clang-built-linux@googlegroups.com>,
- James Morse <james.morse@arm.com>, linux-arch@vger.kernel.org,
- Borislav Petkov <bp@suse.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jitao Shi <jitao.shi@mediatek.com>,
+ srv_heupstream@mediatek.com, huijuan.xie@mediatek.com, stonea168@163.com,
+ cawa.cheng@mediatek.com, linux-mediatek@lists.infradead.org,
+ bibby.hsieh@mediatek.com, ck.hu@mediatek.com, yingjoe.chen@mediatek.com,
+ eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 28, 2020 at 07:51:21AM +0100, Sedat Dilek wrote:
-> On Fri, Feb 28, 2020 at 1:22 AM Kees Cook <keescook@chromium.org> wrote:
-> > This series depends on tip/x86/boot (where recent .eh_frame fixes[3]
-> > landed), and has a minor conflict[4] with the ARM tree (related to
-> > the earlier mentioned bug). As it uses refactorings in the asm-generic
-> > linker script, and makes changes to kbuild, I think the cleanest place
-> > for this series to land would also be through -tip. Once again (like
-> > my READ_IMPLIES_EXEC series), I'm looking to get maintainer Acks so
-> > this can go all together with the least disruption. Splitting it up by
-> > architecture seems needlessly difficult.
-> 
-> Hi Kees,
-> 
-> is this an updated version of what you have in your
-> kees/linux.git#linker/orphans/x86-arm Git branch?
+Change since v11:
+ - fine tune mediatek,dpi.yaml.
+ - add Acked-by: Rob Herring <robh@kernel.org>.
 
-Hi; yes indeed.
+Change since v10:
+ - convert the Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+   to yaml format.
+ - read the pclk-sample in endpoint.
 
-> Especially, I saw a difference in [2] and "[PATCH 4/9] x86/boot: Warn
-> on orphan section placement"
-> 
-> [ arch/x86/boot/compressed/Makefile ]
-> 
-> +KBUILD_LDFLAGS += --no-ld-generated-unwind-info
-> 
-> Can you comment on why this KBUILD_LDFLAGS was added/needed?
+Changes since v9:
+ - rename pinctrl-names = "gpiomode", "dpimode" to "active", "idle".
+ - fix some typo.
 
-It looks like the linker decided to add .eh_frame sections even when all
-the .o files lacked it. Adding this flag solved it (which I prefer over
-adding it to DISCARD).
+Changes since v8:
+ - drop pclk-sample redefine in mediatek,dpi.txt
+ - only get the gpiomode and dpimode when dpi->pinctrl is successful.
 
-> I like when people offer their work in a Git branch.
-> Do you plan to do that?
+Changes since v7:
+ - separate dt-bindings to independent patches.
+ - move dpi dual edge to one patch.
 
-Since it was based on a -tip sub-branch I didn't push a
-copy, but since you asked here it is:
-https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git/log/?h=orphans/tip/x86/boot
+Changes since v6:
+ - change dual_edge to pclk-sample
+ - remove dpi_pin_mode_swap and
 
-And this email can serve as a "ping" to the arch maintainers too...
-does this all look okay to you? I think it'd be a nice improvement. :)
+Changes since v5:
+ - fine tune the dt-bindings commit message.
 
-Thanks!
+Changes since v4:
+ - move pin mode control and dual edge control to deveice tree.
+ - update dt-bindings document for pin mode swap and dual edge control.
 
--Kees
+Changes since v3:
+ - add dpi pin mode control when dpi on or off.
+ - update dpi dual edge comment.
 
-> Thanks.
-> 
-> Regards,
-> - Sedat -
-> 
-> [1] https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git/log/?h=linker/orphans/x86-arm
-> [2] https://git.kernel.org/pub/scm/linux/kernel/git/kees/linux.git/commit/?h=linker/orphans/x86-arm&id=e43aa77956c40b9b6db0b37b3780423aa2e661ad
-> 
-> 
-> 
-> > H.J. Lu (1):
-> >   Add RUNTIME_DISCARD_EXIT to generic DISCARDS
-> >
-> > Kees Cook (8):
-> >   scripts/link-vmlinux.sh: Delay orphan handling warnings until final
-> >     link
-> >   vmlinux.lds.h: Add .gnu.version* to DISCARDS
-> >   x86/build: Warn on orphan section placement
-> >   x86/boot: Warn on orphan section placement
-> >   arm64/build: Use common DISCARDS in linker script
-> >   arm64/build: Warn on orphan section placement
-> >   arm/build: Warn on orphan section placement
-> >   arm/boot: Warn on orphan section placement
-> >
-> >  arch/arm/Makefile                             |  4 ++++
-> >  arch/arm/boot/compressed/Makefile             |  2 ++
-> >  arch/arm/boot/compressed/vmlinux.lds.S        | 17 ++++++--------
-> >  .../arm/{kernel => include/asm}/vmlinux.lds.h | 22 ++++++++++++++-----
-> >  arch/arm/kernel/vmlinux-xip.lds.S             |  5 ++---
-> >  arch/arm/kernel/vmlinux.lds.S                 |  5 ++---
-> >  arch/arm64/Makefile                           |  4 ++++
-> >  arch/arm64/kernel/vmlinux.lds.S               | 13 +++++------
-> >  arch/x86/Makefile                             |  4 ++++
-> >  arch/x86/boot/compressed/Makefile             |  3 ++-
-> >  arch/x86/boot/compressed/vmlinux.lds.S        | 13 +++++++++++
-> >  arch/x86/kernel/vmlinux.lds.S                 |  7 ++++++
-> >  include/asm-generic/vmlinux.lds.h             | 11 ++++++++--
-> >  scripts/link-vmlinux.sh                       |  6 +++++
-> >  14 files changed, 85 insertions(+), 31 deletions(-)
-> >  rename arch/arm/{kernel => include/asm}/vmlinux.lds.h (92%)
+Changes since v2:
+ - update dt-bindings document for mt8183 dpi.
+ - separate dual edge modfication as independent patch.
+
+Jitao Shi (6):
+  dt-bindings: media: add pclk-sample dual edge property
+  dt-bindings: display: mediatek: control dpi pins mode to avoid leakage
+  dt-bindings: display: mediatek: dpi sample data in dual edge support
+  dt-bindings: display: mediatek: convert the document format from txt
+    to yaml
+  drm/mediatek: dpi sample mode support
+  drm/mediatek: set dpi pin mode to gpio low to avoid leakage current
+
+ .../display/mediatek/mediatek,dpi.txt         | 36 --------
+ .../display/mediatek/mediatek,dpi.yaml        | 92 +++++++++++++++++++
+ .../bindings/media/video-interfaces.txt       |  4 +-
+ drivers/gpu/drm/mediatek/mtk_dpi.c            | 58 +++++++++++-
+ 4 files changed, 150 insertions(+), 40 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+ create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
 
 -- 
-Kees Cook
-
+2.21.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
