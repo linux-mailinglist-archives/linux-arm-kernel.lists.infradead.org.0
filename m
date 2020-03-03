@@ -2,85 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55798177726
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:31:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04DB9177751
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:39:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u/NHJsyf0i4zIdD+tCUTDeOjNIzVuFJSBCXm1e2Ifqg=; b=j6L2V2yshbXmMb
-	7MBvq6Pqcr0c3FdChQ6R+uMT20mQPai4dkINoN76kV6xK9AcyaJbPCFQkkG/QzCG7dx/Oij3N+566
-	X73QID5cDwZaRSUSV0WjdphxLeVrfStYynbDadGQlS+EQ9y6T/zKVtk1wsZDJ2u/FghcCXrwUbKW/
-	9ebJAhUF75vaFd5+hKkKHhk1kZRXRvsYIFbYj+2MAuyTngIOXBrXi0tQvj/BlzBmStCTzl9qgwsly
-	YPQ6yotwbCq1OkxCqnWJ6DrISMgOsUPeGPutfqOsrh2yjbx5bn1dnBIbDwgp/7pcu88qM5KuQBu0g
-	IIDzKn/8XvSuKWnT/mTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=62RXo0Z01J4YUbhbw0IEKZgaOSsAIrATTC0aS0RqHbM=; b=klUPJpDPWrIPr4rbFNMjGshv/
+	FZ6AorA1ZCNcscLGPwBwVHvLbxmgVltJ3c6y2xBa4GkGbDkZrt5Jcwm1pL7GFt1lltO9V06kFnHc7
+	tiuUBRhOlyh6IxBdLCAJ/2mDwcDDHT3Fyi5uKehDDeJEA+diFez+5yHHXBBuHY0flx8TkhfoAHRIe
+	+t12BsfUF7dkb6G3C6Juce2pOvvB0YrjQ1h/Z2JQdPcq9H7YbDluanxpsNXbzmsUQG4p4FoZ3AlWl
+	4NUMEWmeROlI6QsdpFtF7NfnkWtqcFXoO0PATatd9ziUFgHOY0/cga8QE6R60urIMuTwPPU6soyiZ
+	bcGEMbPpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j97dc-0001uZ-6e; Tue, 03 Mar 2020 13:31:08 +0000
-Received: from smtp-fw-9101.amazon.com ([207.171.184.25])
+	id 1j97lI-000497-Kq; Tue, 03 Mar 2020 13:39:04 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j97dU-0001sz-Kw
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:31:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1583242261; x=1614778261;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version:content-transfer-encoding;
- bh=m9UC6YMrCEkdQKApcmjI1lOwtfkDHyrdWMSJSbIlTXI=;
- b=BN9rds01IcO3z4Tmsa/78ycZkGRceuo+WbvhTgbBEekM8bK452/WdrlU
- HCL5L52XBAIvUHw8CM8BlZcatvOgiQolD1hpdAz3V0XyX78FxyaHUfyMj
- 5w6DbvCzw+i8Vibc+dXAC+i/s5bVYsWTTU74AM9HN3cqXul8RjsKovcbj c=;
-IronPort-SDR: VT0rCqnUvfwE/Cq6jTl9TgJjfOlKwfQKuSOQX1Fyv/VI5ahEKIBJDbjAYbD7CcZWUbyYVjBvJE
- euQGgxZlUsFQ==
-X-IronPort-AV: E=Sophos;i="5.70,511,1574121600"; d="scan'208";a="20496287"
-Received: from sea32-co-svc-lb4-vlan3.sea.corp.amazon.com (HELO
- email-inbound-relay-2a-538b0bfb.us-west-2.amazon.com) ([10.47.23.38])
- by smtp-border-fw-out-9101.sea19.amazon.com with ESMTP;
- 03 Mar 2020 13:30:47 +0000
-Received: from EX13MTAUEA002.ant.amazon.com
- (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
- by email-inbound-relay-2a-538b0bfb.us-west-2.amazon.com (Postfix) with ESMTPS
- id 63879A2F96; Tue,  3 Mar 2020 13:30:45 +0000 (UTC)
-Received: from EX13D12EUC004.ant.amazon.com (10.43.164.129) by
- EX13MTAUEA002.ant.amazon.com (10.43.61.77) with Microsoft SMTP Server (TLS)
- id 15.0.1236.3; Tue, 3 Mar 2020 13:30:16 +0000
-Received: from EX13MTAUEE002.ant.amazon.com (10.43.62.24) by
- EX13D12EUC004.ant.amazon.com (10.43.164.129) with Microsoft SMTP Server (TLS)
- id 15.0.1497.2; Tue, 3 Mar 2020 13:30:13 +0000
-Received: from u961addbe640f56.ant.amazon.com (10.28.84.111) by
- mail-relay.amazon.com (10.43.62.224) with Microsoft SMTP Server id
- 15.0.1367.3 via Frontend Transport; Tue, 3 Mar 2020 13:30:09 +0000
-From: Stanislav Spassov <stanspas@amazon.com>
-To: <linux-pci@vger.kernel.org>
-Subject: [PATCH v3 07/17] PCI: Clean up and document PM/reset delays
-Date: Tue, 3 Mar 2020 14:28:42 +0100
-Message-ID: <20200303132852.13184-8-stanspas@amazon.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200303132852.13184-1-stanspas@amazon.com>
-References: <20200303132852.13184-1-stanspas@amazon.com>
+ id 1j97lC-00048a-Aj
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:38:59 +0000
+Received: by mail-wr1-x442.google.com with SMTP id v4so4361835wrs.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Mar 2020 05:38:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=ZRymEURxG29TkCLI3sdfDoyr9GF4aobVx9HepebY0JQ=;
+ b=i2HHyha2l7WtQStsxE4ZCZMX6GRBeq34abSjXuFniTbuXvl0jzB0M2oNWKpwg3BzRv
+ +oLl4b5c9dAiNbIM5pLuMjCILVVw/PViw/3LtxoxvJbQDPyS/plpr+keGENeMWCAXbLX
+ FGpFirPQG3nECFhfxcXCwDJ9ZRq/viSU7vKsK3q87qnHS9rg0XR84iSqVGS8FQrA1gdx
+ o6mh2vfrC7JhwYM4A0Wpbr+r49kf+1FGDsWV0YSvGHf3E7K03csqQ0zp1mLMi/uAicXM
+ r3CJrSKfbBcCV0LxV5dmuH21ayEOfQR04q6rMWdwSiuX1QYILodb3zos8daFHqAuIDUB
+ uDjQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=ZRymEURxG29TkCLI3sdfDoyr9GF4aobVx9HepebY0JQ=;
+ b=kBTM1zeS7AIs1lJN4biJmnBTu+A3hnVnuvyCKa6fakTlZr/Hy06E5k4wgiT0gLNnDW
+ YSHeA6rPZUKo7wUITgOFitzK+LrRMMmyjEtkgB+4cpz0ytqhLHO5v0yXL/Q0a/e/sVWz
+ JiT6EoWCbphwvkkA2g/w9uPUHIsIOBtutXALLNGaqQsbM8Y9i/5LtzOWpZeOie+SPRX3
+ bznFyfh7sTmU/fZrG50YGl6HHjKk2nSZ8CfLJek3ykzCqSuW41BU5qVdokBBu+RJ1dNk
+ H4Bfv2JACtkWXgxQt5XAMSZ09fH25TXb9ntq3QidRLPqARADECkTUgShknP1hZwtQEzv
+ CaQw==
+X-Gm-Message-State: ANhLgQ3gfNHRMwaYsPmZNGwtJS0rJjTS6ZgMDtvrLwLlKYA4K7pbfsB+
+ Bm8BDRaemsZTgDB0aipEMRU=
+X-Google-Smtp-Source: ADFU+vvtajUmcHxy1nP7CuGiIwApLuN21TbJVtjyuHeuiUnic+JoV9sDwPIAvu65DSjAgKrIuDsb+g==
+X-Received: by 2002:adf:dd47:: with SMTP id u7mr4550046wrm.130.1583242736437; 
+ Tue, 03 Mar 2020 05:38:56 -0800 (PST)
+Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
+ by smtp.gmail.com with ESMTPSA id n11sm211775wrw.11.2020.03.03.05.38.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Mar 2020 05:38:55 -0800 (PST)
+Date: Tue, 3 Mar 2020 14:38:54 +0100
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V4 5/5] PCI: tegra: Add support for PCIe endpoint mode in
+ Tegra194
+Message-ID: <20200303133854.GA2854899@ulmo>
+References: <20200303105418.2840-1-vidyas@nvidia.com>
+ <20200303105418.2840-6-vidyas@nvidia.com>
 MIME-Version: 1.0
+In-Reply-To: <20200303105418.2840-6-vidyas@nvidia.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_053100_733955_5C0DDF38 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: -4.9 (----)
+X-CRM114-CacheID: sfid-20200303_053858_372530_4D9E5029 
+X-CRM114-Status: GOOD (  17.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-4.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [207.171.184.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,262 +100,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Ashok Raj <ashok.raj@intel.com>,
- Len Brown <lenb@kernel.org>, Jonathan
- Corbet <corbet@lwn.net>, Sinan Kaya <okaya@kernel.org>,
- =?UTF-8?q?Jan=20H=20=2E=20Sch=C3=B6nherr?= <jschoenh@amazon.de>,
- Stanislav Spassov <stanspas@amazon.de>, linux-acpi@vger.kernel.org,
- Alex Williamson <alex.williamson@redhat.com>,
- Jason Cooper <jason@lakedaemon.net>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- Rajat Jain <rajatja@google.com>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org, kbuild test robot <lkp@intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mmaddireddy@nvidia.com, kthota@nvidia.com, gustavo.pimentel@synopsys.com,
+ linux-kernel@vger.kernel.org, kishon@ti.com, linux-tegra@vger.kernel.org,
+ robh+dt@kernel.org, linux-pci@vger.kernel.org, bhelgaas@google.com,
+ andrew.murray@arm.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Type: multipart/mixed; boundary="===============0224357749792662012=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stanislav Spassov <stanspas@amazon.de>
 
-...and replace several "magic numbers" scattered throughout the code.
-
-Signed-off-by: Stanislav Spassov <stanspas@amazon.de>
----
- drivers/pci/controller/pci-aardvark.c |  2 +-
- drivers/pci/controller/pci-mvebu.c    |  2 +-
- drivers/pci/iov.c                     |  4 +-
- drivers/pci/pci-acpi.c                |  4 +-
- drivers/pci/pci.c                     | 21 ++------
- drivers/pci/pci.h                     | 72 +++++++++++++++++++++++++--
- 6 files changed, 80 insertions(+), 25 deletions(-)
-
-diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-index 2a20b649f40c..2ece24abf751 100644
---- a/drivers/pci/controller/pci-aardvark.c
-+++ b/drivers/pci/controller/pci-aardvark.c
-@@ -344,7 +344,7 @@ static void advk_pcie_setup_hw(struct advk_pcie *pcie)
- 	 * fundamental reset. As required by PCI Express spec a delay for at
- 	 * least 100ms after such a reset before link training is needed.
- 	 */
--	msleep(PCI_PM_D3COLD_WAIT);
-+	msleep(PCI_RESET_DELAY);
- 
- 	/* Start link training */
- 	reg = advk_readl(pcie, PCIE_CORE_LINK_CTRL_STAT_REG);
-diff --git a/drivers/pci/controller/pci-mvebu.c b/drivers/pci/controller/pci-mvebu.c
-index 153a64676bc9..c1cd1b7cf7ee 100644
---- a/drivers/pci/controller/pci-mvebu.c
-+++ b/drivers/pci/controller/pci-mvebu.c
-@@ -927,7 +927,7 @@ static int mvebu_pcie_powerup(struct mvebu_pcie_port *port)
- 		return ret;
- 
- 	if (port->reset_gpio) {
--		u32 reset_udelay = PCI_PM_D3COLD_WAIT * 1000;
-+		u32 reset_udelay = PCI_RESET_DELAY * 1000;
- 
- 		of_property_read_u32(port->dn, "reset-delay-us",
- 				     &reset_udelay);
-diff --git a/drivers/pci/iov.c b/drivers/pci/iov.c
-index 4d1f392b05f9..d4e4a0c0a97f 100644
---- a/drivers/pci/iov.c
-+++ b/drivers/pci/iov.c
-@@ -524,7 +524,7 @@ static int sriov_enable(struct pci_dev *dev, int nr_virtfn)
- 	iov->ctrl |= PCI_SRIOV_CTRL_VFE | PCI_SRIOV_CTRL_MSE;
- 	pci_cfg_access_lock(dev);
- 	pci_write_config_word(dev, iov->pos + PCI_SRIOV_CTRL, iov->ctrl);
--	msleep(100);
-+	msleep(PCI_VF_ENABLE_DELAY);
- 	pci_cfg_access_unlock(dev);
- 
- 	rc = sriov_add_vfs(dev, initial);
-@@ -735,7 +735,7 @@ static void sriov_restore_state(struct pci_dev *dev)
- 	pci_iov_set_numvfs(dev, iov->num_VFs);
- 	pci_write_config_word(dev, iov->pos + PCI_SRIOV_CTRL, iov->ctrl);
- 	if (iov->ctrl & PCI_SRIOV_CTRL_VFE)
--		msleep(100);
-+		msleep(PCI_VF_ENABLE_DELAY);
- }
- 
- /**
-diff --git a/drivers/pci/pci-acpi.c b/drivers/pci/pci-acpi.c
-index b147b61c6668..0ece144ac9c5 100644
---- a/drivers/pci/pci-acpi.c
-+++ b/drivers/pci/pci-acpi.c
-@@ -1242,7 +1242,7 @@ static void pci_acpi_optimize_delay(struct pci_dev *pdev,
- 			value = (int)value_us / 1000;
- 			if ((int)value_us % 1000 > 0)
- 				value++;
--			if (value < PCI_PM_D3COLD_WAIT)
-+			if (value < PCI_RESET_DELAY)
- 				pdev->d3cold_delay = value;
- 		}
- 		if (elements[3].type == ACPI_TYPE_INTEGER) {
-@@ -1250,7 +1250,7 @@ static void pci_acpi_optimize_delay(struct pci_dev *pdev,
- 			value = (int)value_us / 1000;
- 			if ((int)value_us % 1000 > 0)
- 				value++;
--			if (value < PCI_PM_D3_WAIT)
-+			if (value < PCI_PM_D3HOT_DELAY)
- 				pdev->d3_delay = value;
- 		}
- 	}
-diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
-index 4899b12b5a38..aaef00578487 100644
---- a/drivers/pci/pci.c
-+++ b/drivers/pci/pci.c
-@@ -2844,8 +2844,8 @@ void pci_pm_init(struct pci_dev *dev)
- 
- 	dev->pm_cap = pm;
- 	dev->ignore_reset_delay_on_sx_resume = 0;
--	dev->d3_delay = PCI_PM_D3_WAIT;
--	dev->d3cold_delay = PCI_PM_D3COLD_WAIT;
-+	dev->d3_delay = PCI_PM_D3HOT_DELAY;
-+	dev->d3cold_delay = PCI_RESET_DELAY;
- 	dev->bridge_d3 = pci_bridge_d3_possible(dev);
- 	dev->d3cold_allowed = true;
- 
-@@ -4500,12 +4500,7 @@ int pcie_flr(struct pci_dev *dev)
- 	if (dev->imm_ready)
- 		return 0;
- 
--	/*
--	 * Per PCIe r4.0, sec 6.6.2, a device must complete an FLR within
--	 * 100ms, but may silently discard requests while the FLR is in
--	 * progress.  Wait 100ms before trying to access the device.
--	 */
--	msleep(100);
-+	msleep(PCI_FLR_DELAY);
- 
- 	return pci_dev_wait(dev, "FLR", PCIE_RESET_READY_POLL_MS);
- }
-@@ -4544,13 +4539,7 @@ static int pci_af_flr(struct pci_dev *dev, int probe)
- 	if (dev->imm_ready)
- 		return 0;
- 
--	/*
--	 * Per Advanced Capabilities for Conventional PCI ECN, 13 April 2006,
--	 * updated 27 July 2006; a device must complete an FLR within
--	 * 100ms, but may silently discard requests while the FLR is in
--	 * progress.  Wait 100ms before trying to access the device.
--	 */
--	msleep(100);
-+	msleep(PCI_FLR_DELAY);
- 
- 	return pci_dev_wait(dev, "AF_FLR", PCIE_RESET_READY_POLL_MS);
- }
-@@ -4590,7 +4579,7 @@ static int pci_pm_reset(struct pci_dev *dev, int probe)
- 	csr &= ~PCI_PM_CTRL_STATE_MASK;
- 	csr |= PCI_D3hot;
- 	pci_write_config_word(dev, dev->pm_cap + PCI_PM_CTRL, csr);
--	msleep(PCI_PM_D3_WAIT);
-+	msleep(PCI_PM_D3HOT_DELAY);
- 
- 	csr &= ~PCI_PM_CTRL_STATE_MASK;
- 	csr |= PCI_D0;
-diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
-index c4c3ba926f45..9b5dd6ea2f52 100644
---- a/drivers/pci/pci.h
-+++ b/drivers/pci/pci.h
-@@ -43,9 +43,75 @@ int pci_probe_reset_function(struct pci_dev *dev);
- int pci_bridge_secondary_bus_reset(struct pci_dev *dev);
- int pci_bus_error_reset(struct pci_dev *dev);
- 
--#define PCI_PM_D2_DELAY         200
--#define PCI_PM_D3_WAIT          10
--#define PCI_PM_D3COLD_WAIT      100
-+/*
-+ * These constants represent the minimum amounts of time mandated by the
-+ * PCI Express Base specification that software needs to wait after
-+ * various PCI device events involving (re-)initialization. Only after
-+ * the appropriate delay has elapsed, is software permitted to issue
-+ * Configuration Requests targeting the affected device.
-+ *
-+ * Relevant sections in PCI Express Base Specification r5.0 (May 22, 2019):
-+ * - 6.6.1 "Conventional Reset" for PCI_RESET_DELAY and PCI_DL_UP_DELAY
-+ * - 6.6.2 "Function Level Reset" for PCI_FLR_DELAY
-+ * - 5.9 "State Transition Recovery Time Requirements" for PCI_PM_D3HOT_DELAY
-+ *        and PCI_PM_D2_DELAY
-+ * - 9.3.3.3.1 "VF Enable" for PCI_VF_ENABLE_DELAY
-+ *
-+ * There are mechanisms to reduce some of the delay values for specific devices:
-+ * - a device may expose the Readiness Time Reporting Extended Capability from:
-+ *   PCI Express Base Specification r4.0 (September 27, 2017), sec 7.9.17
-+ *   (This is currently not supported by the kernel.)
-+ * - system firmware may provide overrides using an ACPI _DSM Function 9:
-+ *   PCI Firmware Specification r3.2 (January 26, 2015), sec 4.6.9
-+ *   (see pci_acpi_optimize_delay)
-+ *
-+ * Unless overridden by _DSM Function 9, other mechanisms may be used to reduce
-+ * or completely avoid some of the delays:
-+ * - Readiness Notifications (DRS and FRS)
-+ * - the Immediate Readiness bit of the Status Register in the PCI header
-+ * - the Immediate_Readiness_on_Return_to_D0 in the Power Management
-+ *   Capabilities Register in the PCI Power Management Capability
-+ * (None of these are currently supported by the kernel.)
-+ *
-+ * Note: While devices are required to be responsive to Configuration
-+ * Requests after these delays, they may not respond with Successful
-+ * Completion status until they complete potentially lengthy internal
-+ * initialization sequences. Instead, devices respond with Configuration
-+ * Request Retry Status (CRS) Completions. Therefore, additional waiting
-+ * is necessary as handled by pci_dev_wait().
-+ */
-+/*
-+ * Conventional (non-FLR) reset delay, including D3cold->D0 transitions,
-+ * Secondary Bus Reset, and any platform-specific means of triggering
-+ * a Conventional Reset.
-+ *
-+ * According to PCI Firmware spec r3.2, sec 4.6.9, for devices beneath
-+ * downstream ports supporting the Data Link Layer Active Reporting
-+ * capability, this delay should not be used (see PCI_DL_UP_DELAY).
-+ */
-+#define PCI_RESET_DELAY		100
-+/*
-+ * Post-DL_Up (Data Link Layer Active) delay applicable for devices immediately
-+ * under a Downstream Port that is capable of reporting Data Link Layer Ready.
-+ * Not to be confused with how much time it takes for the link itself to become
-+ * active (see pcie_wait_for_link_delay).
-+ */
-+#define PCI_DL_UP_DELAY		100
-+/*
-+ * Post-FLR delay
-+ * Also applies to legacy devices supporting AF_FLR per Advanced Capabilities
-+ * for Conventional PCI ECN, 13 April 2006, updated 27 July 2006)
-+ */
-+#define PCI_FLR_DELAY		100
-+/*
-+ * D0/D1/D2->D3hot and D3hot->D0 delay
-+ * The specifications do *not* mention overridability of the ->D3hot direction
-+ */
-+#define PCI_PM_D3HOT_DELAY	10
-+/* Post-VF_Enable delay */
-+#define PCI_VF_ENABLE_DELAY	100
-+/* D0/D1->D2 and D2->D0 delay */
-+#define PCI_PM_D2_DELAY		200
- 
- /**
-  * struct pci_platform_pm_ops - Firmware PM callbacks
--- 
-2.25.1
+--===============0224357749792662012==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="X1bOJ3K7DJ5YkBrT"
+Content-Disposition: inline
 
 
+--X1bOJ3K7DJ5YkBrT
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, Mar 03, 2020 at 04:24:18PM +0530, Vidya Sagar wrote:
+> Add support for the endpoint mode of Synopsys DesignWare core based
+> dual mode PCIe controllers present in Tegra194 SoC.
+>=20
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> ---
+> V4:
+> * Addressed Lorenzo's review comments
+> * Started using threaded irqs instead of kthreads
+>=20
+> V3:
+> * Addressed Thierry's review comments
+>=20
+> V2:
+> * Addressed Bjorn's review comments
+> * Made changes as part of addressing review comments for other patches
+>=20
+>  drivers/pci/controller/dwc/Kconfig         |  30 +-
+>  drivers/pci/controller/dwc/pcie-tegra194.c | 681 ++++++++++++++++++++-
+>  2 files changed, 693 insertions(+), 18 deletions(-)
+>=20
+> diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/=
+dwc/Kconfig
+> index 0830dfcfa43a..169cde58dd92 100644
+> --- a/drivers/pci/controller/dwc/Kconfig
+> +++ b/drivers/pci/controller/dwc/Kconfig
+> @@ -248,14 +248,38 @@ config PCI_MESON
+>  	  implement the driver.
+> =20
+>  config PCIE_TEGRA194
+> -	tristate "NVIDIA Tegra194 (and later) PCIe controller"
+> +	tristate
+> +
+> +config PCIE_TEGRA194_HOST
+> +	tristate "NVIDIA Tegra194 (and later) PCIe controller - Host Mode"
+>  	depends on ARCH_TEGRA_194_SOC || COMPILE_TEST
+>  	depends on PCI_MSI_IRQ_DOMAIN
+>  	select PCIE_DW_HOST
+>  	select PHY_TEGRA194_P2U
+> +	select PCIE_TEGRA194
+> +	default y
+> +	help
+> +	  Enables support for the PCIe controller in the NVIDIA Tegra194 SoC to
+> +	  work in host mode. There are two instances of PCIe controllers in
+> +	  Tegra194. This controller can work either as EP or RC. In order to
+> +	  enable host-specific features PCIE_TEGRA194_HOST must be selected and
+> +	  in order to enable device-specific features PCIE_TEGRA194_EP must be
+> +	  selected. This uses the DesignWare core.
+> +
+> +config PCIE_TEGRA194_EP
+> +	tristate "NVIDIA Tegra194 (and later) PCIe controller - Endpoint Mode"
+> +	depends on ARCH_TEGRA_194_SOC || COMPILE_TEST
+> +	depends on PCI_ENDPOINT
+> +	select PCIE_DW_EP
+> +	select PHY_TEGRA194_P2U
+> +	select PCIE_TEGRA194
+>  	help
+> -	  Say Y here if you want support for DesignWare core based PCIe host
+> -	  controller found in NVIDIA Tegra194 SoC.
+> +	  Enables support for the PCIe controller in the NVIDIA Tegra194 SoC to
+> +	  work in host mode. There are two instances of PCIe controllers in
+> +	  Tegra194. This controller can work either as EP or RC. In order to
+> +	  enable host-specific features PCIE_TEGRA194_HOST must be selected and
+> +	  in order to enable device-specific features PCIE_TEGRA194_EP must be
+> +	  selected. This uses the DesignWare core.
+> =20
+>  config PCIE_UNIPHIER
+>  	bool "Socionext UniPhier PCIe controllers"
+> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/con=
+troller/dwc/pcie-tegra194.c
+> index cbe95f0ea0ca..81810e644b23 100644
+> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
+> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
+> @@ -14,6 +14,8 @@
+>  #include <linux/interrupt.h>
+>  #include <linux/iopoll.h>
+>  #include <linux/kernel.h>
+> +#include <linux/kfifo.h>
+> +#include <linux/kthread.h>
+
+After moving to threaded IRQs, do you still need these includes?
+
+Acked-by: Thierry Reding <treding@nvidia.com>
+
+--X1bOJ3K7DJ5YkBrT
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5eXd4ACgkQ3SOs138+
+s6EVjA/+MiWicLPXeikoOsrDyo2yGmbfVl1gjhiqLmFIk0cXDwDfBegX6JWoT9CB
+p7Ffs0byZ8Bi8xza+wfpO4LVjANLOxW3DMtt4tFaOu2W+OsvaNbJasvo6X07Sr7k
+I+dmrxkWuPz3mN6LFbR458HY0B7YxLDKwPzyEdYss5ETaZ3asVul3cnbDPViQY8v
+tjcKk2ccScCYqAdjD4AW3ijxHECa5dEaLp13qQF76VVdHd3wyQox+SHvV9NNJo1o
+d5RRTlj3z6hWsqE1Bp7hDqqYWSOg1brcpuzdy+y2sV6mWaRTXL4JQzI+B8fTPUhO
+JvLZbx9JqyVtmqxq+PIekzdCGGRcqpEWL6+VIL4tWKL9OhUBJzHs/BKYW46Lx7Tv
+cAdBMJkkif27Y2iUR3T00cYmKLpaCPtUXZicHglrrWDVwNVbYiiGy8WiVLsQohSj
+SkRsnd7w09t/ZJ7JyzSnDfk2dR8qMBNDf64iiYhpmpXZSleF7ifla4fZrikXXnHG
+HjNaSxR+Euwnnlf1rDhyfDSzJWjFvWM18wnxKydS5TwGt9wA0acTQrWrv1RePl1Y
+ArDnpj1xfbhJhHEFO69Fjg9kr605SSmeXLmX+r6XR/5gkfF6FfRRyN2x3nRU9Fqb
+i/AtQye/0U9iTr6Rc/NVIGD86+/Fq9gik3hhR8a5o81wRdyxpr8=
+=q+we
+-----END PGP SIGNATURE-----
+
+--X1bOJ3K7DJ5YkBrT--
 
 
-Amazon Development Center Germany GmbH
-Krausenstr. 38
-10117 Berlin
-Geschaeftsfuehrung: Christian Schlaeger, Jonathan Weiss
-Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
-Sitz: Berlin
-Ust-ID: DE 289 237 879
-
-
-
+--===============0224357749792662012==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0224357749792662012==--
+
