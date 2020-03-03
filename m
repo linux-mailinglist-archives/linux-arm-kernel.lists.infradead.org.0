@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1482F177DB3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:45:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60D59177DC2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:46:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Hm4ds7JkjVbfGFsSuRfuF/sRHP8XhdqwvOxibJMwPE=; b=aDALiH8cs0Yze8
-	pmEexFBYz16xTm3C0FPRxG0h26EZb8QKAbyWm57X/fkuE+NrYOyYdAJp4WeI+6wDCt82RqEK9M2d5
-	C0j7tI18m3sM24aY+Jkji/2t2cs06pQT7c8eqieBpCS8zAbwLo53mGecK74n+EjbGa19F+aObsgxu
-	M4xFXS7a2nooaI0W6tFqFQ3cLSFb24UU9fgu4t4GRKi0wenFEzkTcBPIHeMcAlE32TdMLthvbsUoN
-	KKhk2ExNwDxLKyDXR0flZuQ5vEw5Wk9DnOIxFjZNAzdQXNZwdhHm/mrkJxR41Pz1PbKZ6TuDg/THY
-	S0kRzKIQ6VkZ3jV2G9ng==;
+	List-Owner; bh=iciC7Um2IriNEP8zlic+54VeVXzlhVfty539dtLw8qk=; b=A+uNyleh+q/IhB
+	ML0KkEUQqhgSBtuR2zamFL7RgampojUjemK+CJ85IWjfl2yDR3C7vlp+ZgQofi+UgUWOiFzDY2hXr
+	sc/7cOWQMQxlBRrzqkWuYPWtyrU2QPID26wjQT6aXKheTunp6qJLTDfZoaxXzzdcEw2zrCPD7YC/J
+	IHxQ/CUO5UG3R43XxyxH8A9W69w6fPaAvHU5VkWj1I3HXZFcx1D9wtqd6A+tKingl+Idt2oIMbrbY
+	P0cKH03hX6bXUAI0Ea7aRRYnHuk45HmLx44CBz8ECPvdNexC/01xitFrovM+TicNb3IvlBAyDwLAc
+	KTgVQbNf1UF6e1orsdew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9BbZ-0008G8-Ut; Tue, 03 Mar 2020 17:45:17 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1j9Bc6-0001iF-0T; Tue, 03 Mar 2020 17:45:50 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9BZr-0006lU-5y
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:43:33 +0000
+ id 1j9BZs-0006mL-H4
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:43:34 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 8B78523E74;
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 02B1023EA8;
  Tue,  3 Mar 2020 18:43:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1583257403;
+ s=mail2016061301; t=1583257404;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=Vv85ws73GvYvvz/j1P1JgISR3csSYCA+S+zG+sqGIMU=;
- b=enIdOJ3y8T7RDiqC7Hft8Zm1fnuM5mLNFdRHzd8CBFoydWzawqprDvjvPdu2Kyq8QFAk7v
- ZsMvXSHkWEt6Im/0guwbXpa23Qd0oviT6mlrXUJaBrCoYHuX+ie+lyo0F1/DEUhyNhNx2b
- ydwXi58qC+nNo0o8f5sIwfCk/WRtq+c=
+ bh=bZm6ZfNU9396+MJXOBRUscy8hxQ1AdgyZ3RSnP5KrZU=;
+ b=JCQRnvQ0RfsASdqbjilVtJFwBdG52LcArELQ5fRw6X6RI35xaH5MOfCLY04NM464eEflCl
+ RJUHJO0PKErB3whrtEKIVbLDTLN6dUOXB4BlXPEU215VZOm8a2KhPK4iKi0gXH4EyGX/Lz
+ /5MFvkVDye0iyd+U/JfhtkG4ROVv5pQ=
 From: Michael Walle <michael@walle.cc>
 To: linux-serial@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 8/9] arm64: dts: ls1028a: add "fsl,vf610-edma" compatible
-Date: Tue,  3 Mar 2020 18:43:05 +0100
-Message-Id: <20200303174306.6015-9-michael@walle.cc>
+Subject: [PATCH v3 9/9] arm64: dts: ls1028a: add missing LPUART nodes
+Date: Tue,  3 Mar 2020 18:43:06 +0100
+Message-Id: <20200303174306.6015-10-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200303174306.6015-1-michael@walle.cc>
 References: <20200303174306.6015-1-michael@walle.cc>
@@ -55,12 +55,13 @@ X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 8B78523E74
+X-Rspamd-Queue-Id: 02B1023EA8
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.500]; DKIM_SIGNED(0.00)[];
+ NEURAL_SPAM(0.00)[0.479]; DKIM_SIGNED(0.00)[];
+ DBL_PROHIBIT(0.00)[0.34.163.48:email,0.34.124.32:email,0.34.241.80:email,0.34.202.64:email];
  RCPT_COUNT_TWELVE(0.00)[14]; MID_CONTAINS_FROM(1.00)[];
  RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
  MIME_TRACE(0.00)[0:+];
@@ -68,16 +69,15 @@ X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_094331_413828_C528880B 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20200303_094332_739667_7A566921 
+X-CRM114-Status: GOOD (  10.62  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,29 +108,99 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The bootloader does the IOMMU fixup and dynamically adds the "iommus"
-property to devices according to its compatible string. In case of the
-eDMA controller this property is missing. Add it. After that the IOMMU
-will work with the eDMA core.
+The LS1028A has six LPUART controllers. Add the nodes.
+
+This was tested on a custom board.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 73 +++++++++++++++++++
+ 1 file changed, 73 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 0bf375ec959b..0843cfbe7ae1 100644
+index 0843cfbe7ae1..df51e81ebe84 100644
 --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
 +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -335,7 +335,7 @@
+@@ -333,6 +333,79 @@
+ 			status = "disabled";
+ 		};
  
++
++		lpuart0: serial@2260000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2260000 0x0 0x1000>;
++			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			dma-names = "rx","tx";
++			dmas = <&edma0 1 32>,
++			       <&edma0 1 33>;
++			status = "disabled";
++		};
++
++		lpuart1: serial@2270000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2270000 0x0 0x1000>;
++			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			dma-names = "rx","tx";
++			dmas = <&edma0 1 30>,
++			       <&edma0 1 31>;
++			status = "disabled";
++		};
++
++		lpuart2: serial@2280000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2280000 0x0 0x1000>;
++			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			dma-names = "rx","tx";
++			dmas = <&edma0 1 28>,
++			       <&edma0 1 29>;
++			status = "disabled";
++		};
++
++		lpuart3: serial@2290000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2290000 0x0 0x1000>;
++			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			dma-names = "rx","tx";
++			dmas = <&edma0 1 26>,
++			       <&edma0 1 27>;
++			status = "disabled";
++		};
++
++		lpuart4: serial@22a0000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x22a0000 0x0 0x1000>;
++			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			dma-names = "rx","tx";
++			dmas = <&edma0 1 24>,
++			       <&edma0 1 25>;
++			status = "disabled";
++		};
++
++		lpuart5: serial@22b0000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x22b0000 0x0 0x1000>;
++			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			dma-names = "rx","tx";
++			dmas = <&edma0 1 22>,
++			       <&edma0 1 23>;
++			status = "disabled";
++		};
++
  		edma0: dma-controller@22c0000 {
  			#dma-cells = <2>;
--			compatible = "fsl,ls1028a-edma";
-+			compatible = "fsl,ls1028a-edma", "fsl,vf610-edma";
- 			reg = <0x0 0x22c0000 0x0 0x10000>,
- 			      <0x0 0x22d0000 0x0 0x10000>,
- 			      <0x0 0x22e0000 0x0 0x10000>;
+ 			compatible = "fsl,ls1028a-edma", "fsl,vf610-edma";
 -- 
 2.20.1
 
