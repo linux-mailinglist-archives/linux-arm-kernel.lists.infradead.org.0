@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F44B177A02
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:08:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE6A9177A06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:08:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6szQyT9+GRA8eczTXtB8WfxoQjZUAe4oG6kCNmtXD4s=; b=aTlLharQcIVi1q
-	O5CeV4lFZS430FjNkzPvS9p/JtV84e6Bsph0lCgfywFhHmuHBtW/WshibyDnyWjaXjO+MiQeGDTCv
-	gYPIiQT3vWL7RJ/yOXOnw59Lr8ilsvqHEfFq4yOsQEqONS8zmZ5Sv2GPNpZdS9Qd4kvzZPUx5Da6e
-	xB8JU9cl+OthdAndVn4FvY3CuxolbN807OIUk2B828YK8XCTg7pwqeqlWGT/4IKVn0bLW9vxGKyJL
-	2ow0gp522fT9PbPaU8tbzdfRgFKaSG7FMMoXmBbj3pbIms9c8jY48mQAG1Smw7mno1PIem++ewz9c
-	mI2SVXUy89kXJSJUxUvw==;
+	List-Owner; bh=xgHD2cL6+gdunt7XEtXVWBuphmqDNHsvcg742FvBfAA=; b=mN4scxZ0me6P41
+	1eGU0N+0n28SzEbTBzSvMdcMYXkl5aM36QGnm9PAoR06syTOC+DLJEHzzIrG5VeFgXgoB6pH62a0S
+	oZCfkT549gcFiDuTRarvKAV8EOy+Mtz2OY2MgBT9SXdfjkjxA9wvh4xvPoTAxjSqL6ZnW/v5Z/PkW
+	1X5urIuSgsOnRKM1Xulk3MSJCnonn5y2G9vBEDcG01rJi0ucohLe2kW+h1q+n3Xj8ueu7Ne65EOKK
+	DLmSAp+WXmTqd6hzRhfePjeSHPcanTtS8qKpYvxgdXkvxWJ8AYlpMiTQb33LxpAdcx2x/9WVFLcRe
+	+m9p5oLdpxurtyclGhGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j999f-0004ud-Dp; Tue, 03 Mar 2020 15:08:19 +0000
+	id 1j999y-00059h-OS; Tue, 03 Mar 2020 15:08:38 +0000
 Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j999L-0004kt-HU
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:00 +0000
-Received: by mail-lf1-x141.google.com with SMTP id t21so1998893lfe.9
+ id 1j999M-0004l8-JX
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:02 +0000
+Received: by mail-lf1-x141.google.com with SMTP id n30so3050630lfh.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 07:07:59 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=f9Z9RNVVgVoDIqftNG2lvo/XggBGLbBYVP8IgzDMszc=;
- b=BSPGSq+HX2g9M4ZlxaDoemDr8Dz6O+eSQs7Uf1rceEG2bgyvCwbjnVMj4gIZxtkyf2
- Rj0QvE2AGrJz81Nd00mPtfww6yy1l3TXEHbUNwhc5Ui65lz1pGmM3BFAnb/DWXv3fZqD
- TMq0+rA0l/NXxviYxxVo8wGV585FrX0PQWFhAUh4W/kelp4v7YFvcElzWVGq/+rz7KQc
- nHN8hIg2v8t+gRBMErWzfsp9cCrKGtxGhpCeX0d1rYPFJ3H9mQbXdzpsdAWqNK2VDdex
- QPvjOXGLbxOEa0xITt05GwPXoWWMWkWoMQX4U/cQXOLb5t6z7+RIOJpA4o43MFsp9nm0
- OBeA==
+ bh=B30v3NBJ89pTZvCRAyGguiMnt+PH3RI+BA4eDrldRLY=;
+ b=k/Z9gXXqNlqfswOQwls9gp/b1woar1i2f5V8G/kc56ZdmRjSnj8PGdrlMoAhZe/J5Y
+ K3fnFzs2hsZawrNoqYblo5+8ztsKhuNfmaaKe6W30Yncrf1lUS1bi/qcTsTX+uQTxnZf
+ GBWAQSh35JRJkc3KU8ZbmX420ykXl8bYoMw4i9nc0egLBhA/s25pvvJQUb0KcUGUuklf
+ uw5itk1tZg8MnPhLaM153kWr6hd9P2c1H7Gbpe+/JRrvEeP3P/kX3HD6eg89gpryUjp7
+ pabbouy0baZYlRoExtpecn9l0khYWrqTkAMHIGsEMDkKI9lrpD/5duiHzSScjUnRrWXc
+ bUUQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=f9Z9RNVVgVoDIqftNG2lvo/XggBGLbBYVP8IgzDMszc=;
- b=J/G8A1w/tMG+KZXlyyMU8AHUk5IDguXZteySraniiBptbK1ZYm8bZSkljbOc4/2Coi
- MASWrdZCr+8AZg40WPVFyehCYlB/C761woOgccboqnDITYxrd6D5pwcH70RpnCOH29AC
- P/dt/wr7CWb7mhiG75IbCeQvwed52yv0NukBMJGRv6XA7rxWzF2B8DsCQFV2Hf2w4O1U
- M4Kff7/K/9aEyZY8UmZ6o25xGlxlgjdxdB+JLj/Dr06rhIGCVj+UF3o84z0RWrwswrJN
- 45t2OwHsarwi2QFfygGJyyoH0TadMZ7uPt3duyzz1tB36+U5xfFSXO4Z8JwuEC8+bhcV
- Abaw==
-X-Gm-Message-State: ANhLgQ1ardhPSKATLnrlw+muTJEeepg2fHAj4+BosuqRaNtJ5Hbl6Xak
- WYowUJlpp3C8ucxiM2BODH1i7Q==
-X-Google-Smtp-Source: ADFU+vuSEKODHBkzB2d1lf+KfhiTMnwxEHTiiFLZyi65LbNLma9/oxtjmtdonRIpOtHBUTQL8dBbEg==
-X-Received: by 2002:ac2:5328:: with SMTP id f8mr3028680lfh.47.1583248077205;
- Tue, 03 Mar 2020 07:07:57 -0800 (PST)
+ bh=B30v3NBJ89pTZvCRAyGguiMnt+PH3RI+BA4eDrldRLY=;
+ b=U0AanpobPpGKFMMtnhEuEWFivGi/38DdihNMyPv2AlPIsvIrKo0/vAuijLGG248COZ
+ 7zUWbowg54kiE3eFazY5nxVJMufr2JWBnfAOpKdwJtmZ0fgZ0073Ls0yty0e8FkGzTZY
+ yh9FISZeZSoTBHEAXpj1gb986/cVa8/qdI1Kiz9Alqgl/+KoVL/Cc/cZY8uVIrvJW7mz
+ cnE1OsIQEFadUQu+8IV/fi+KQ3FmOm97Hra/rm+MMnRWkWe9eUTw/O+VdYddouRwWYyl
+ CL8gh7T5qDM8ofjiN5pX0jbhYyCku1UmMfvbY/WCn6viY3dGm9PPB80S2msqhMXdiS0j
+ DWyw==
+X-Gm-Message-State: ANhLgQ1Xf5uvOXd88PTgmcydjVD4734skr23BbBQVksPTZP8xma8D9tF
+ 5a505wD87TAj4Drt6Mo7KAGlMA==
+X-Google-Smtp-Source: ADFU+vsNa2Cmu28UnbH+m7iPEgdhqmX6OprzfWRZhA31z6e3MSYvdgClxx8aL3JsLOL6vHbmRtGbDg==
+X-Received: by 2002:a05:6512:304c:: with SMTP id
+ b12mr2036672lfb.196.1583248079201; 
+ Tue, 03 Mar 2020 07:07:59 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.07.55
+ by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.07.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 07:07:56 -0800 (PST)
+ Tue, 03 Mar 2020 07:07:58 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, devicetree@vger.kernel.org
-Subject: [PATCH 1/7] dt-bindings: arm: Correct links to idle states definitions
-Date: Tue,  3 Mar 2020 16:07:43 +0100
-Message-Id: <20200303150749.30566-2-ulf.hansson@linaro.org>
+Subject: [PATCH 2/7] dt-bindings: arm: Fix cpu compatibles in the hierarchical
+ example for PSCI
+Date: Tue,  3 Mar 2020 16:07:44 +0100
+Message-Id: <20200303150749.30566-3-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200303150749.30566-1-ulf.hansson@linaro.org>
 References: <20200303150749.30566-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_070759_573787_3690A3AE 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20200303_070800_642119_67CF38B5 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,54 +111,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arm,idle-state DT bindings recently got converted to the json-schema,
-but some links are still pointing to the old, non-existing, txt file. Let's
-update the links to fix this.
-
-Fixes: baac82fe06db ("dt-bindings: arm: Convert arm,idle-state binding to DT schema")
+Fixes: a3f048b5424e ("dt: psci: Update DT bindings to support hierarchical PSCI states")
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
- Documentation/devicetree/bindings/arm/cpus.yaml               | 2 +-
- Documentation/devicetree/bindings/arm/msm/qcom,idle-state.txt | 2 +-
- Documentation/devicetree/bindings/arm/psci.yaml               | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ Documentation/devicetree/bindings/arm/psci.yaml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
-index f61a5a13fb42..31b391a24b70 100644
---- a/Documentation/devicetree/bindings/arm/cpus.yaml
-+++ b/Documentation/devicetree/bindings/arm/cpus.yaml
-@@ -226,7 +226,7 @@ properties:
-     $ref: '/schemas/types.yaml#/definitions/phandle-array'
-     description: |
-       List of phandles to idle state nodes supported
--      by this cpu (see ./idle-states.txt).
-+      by this cpu (see ./idle-states.yaml).
- 
-   capacity-dmips-mhz:
-     $ref: '/schemas/types.yaml#/definitions/uint32'
-diff --git a/Documentation/devicetree/bindings/arm/msm/qcom,idle-state.txt b/Documentation/devicetree/bindings/arm/msm/qcom,idle-state.txt
-index 06df04cc827a..6ce0b212ec6d 100644
---- a/Documentation/devicetree/bindings/arm/msm/qcom,idle-state.txt
-+++ b/Documentation/devicetree/bindings/arm/msm/qcom,idle-state.txt
-@@ -81,4 +81,4 @@ Example:
- 		};
- 	};
- 
--[1]. Documentation/devicetree/bindings/arm/idle-states.txt
-+[1]. Documentation/devicetree/bindings/arm/idle-states.yaml
 diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-index 8ef85420b2ab..f8218e60e3e2 100644
+index f8218e60e3e2..540211a080d4 100644
 --- a/Documentation/devicetree/bindings/arm/psci.yaml
 +++ b/Documentation/devicetree/bindings/arm/psci.yaml
-@@ -100,7 +100,7 @@ properties:
-       bindings in [1]) must specify this property.
+@@ -199,7 +199,7 @@ examples:
  
-       [1] Kernel documentation - ARM idle states bindings
--        Documentation/devicetree/bindings/arm/idle-states.txt
-+        Documentation/devicetree/bindings/arm/idle-states.yaml
+       CPU0: cpu@0 {
+         device_type = "cpu";
+-        compatible = "arm,cortex-a53", "arm,armv8";
++        compatible = "arm,cortex-a53";
+         reg = <0x0>;
+         enable-method = "psci";
+         power-domains = <&CPU_PD0>;
+@@ -208,7 +208,7 @@ examples:
  
-   "#power-domain-cells":
-     description:
+       CPU1: cpu@1 {
+         device_type = "cpu";
+-        compatible = "arm,cortex-a57", "arm,armv8";
++        compatible = "arm,cortex-a53";
+         reg = <0x100>;
+         enable-method = "psci";
+         power-domains = <&CPU_PD1>;
 -- 
 2.20.1
 
