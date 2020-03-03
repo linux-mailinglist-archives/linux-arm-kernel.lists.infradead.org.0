@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33F32176F95
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 07:39:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFE56176F94
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 07:39:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=vSVYpA+SP0eN7ROwSAqofBy/fdRLhzX5E/IJC7AHxvI=; b=ppV
-	EQN+kNinA0Sm1HBNYmqW6zvrjZAL9Zq9cU0r97DFUuz0tZa9++iJ+p7ZN8EStU0S0w4ThQavcVV44
-	r9pbjoZov3hVXabj2O+zpJ4ejU+I+ZfPyWBsUuHLT+Wg+kxErgNNRmDFMD0j+6IIUJVhu+CEAn8o9
-	3PgyEAtUMVWZ0s/47zHnzQcdJ+/bVPRr4fjxluNzUUeX9IeOk/aXMDdTdvT63HPdtNH4E/zUdHQRq
-	UWK8AyJ9LzIaD0Mn/6bgKRn4fbLqolXturgUceWl2WAGvhntBMsYn7ZWyEL67iTrJ5o/bD1LbtxiU
-	wU6/U1bKQFuJP2nlxQfX9ICnlx6tJgg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Q4IcyArRBDJg9jSoaBiz3cfSubsJH/4j2fOHxY9UKsU=; b=iHi1RMvJFrjSS8CzIUh0efHcnB
+	9ZNHnog+10FW87pzSHGcQU9JaM1p16ycuwwrrSgqcXkw07R0U95fENbSX1cOHKZhMnzso0g7Pybqq
+	dsSbIJVvv/HQXONaQpTMEXNbkvxoyob6S8sCKehD95HkpRQORHPsO7VVdFn5vQtLXwGSDKRgvVXHr
+	sh1rPcJYxgNajJrb366wbKS3Yvla6tyi6yk9DV/2bWkcoD7+L+bQ/uSeQEpP77GvzoID3ZC7PSFzp
+	e88TxEhOaSwTZyOLzNr/GiGfVKfYw2chGdRJ5/oWFMqYJEbEc8n7kI70auP9ntAURND+rBexfnMiO
+	B8kmzBfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j91DM-0000DR-5V; Tue, 03 Mar 2020 06:39:36 +0000
+	id 1j91D3-00007P-AW; Tue, 03 Mar 2020 06:39:17 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j91Cw-00005p-ES
+ id 1j91Cw-00005r-Dl
  for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 06:39:11 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7FE231A13D4;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9150C1A13E1;
  Tue,  3 Mar 2020 07:39:06 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3B5F21A13EA;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 42C1F1A13EF;
  Tue,  3 Mar 2020 07:39:02 +0100 (CET)
 Received: from lsv03124.swis.in-blr01.nxp.com (lsv03124.swis.in-blr01.nxp.com
  [92.120.146.121])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id D0C6E40370;
- Tue,  3 Mar 2020 14:38:40 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 66A1A40366;
+ Tue,  3 Mar 2020 14:38:41 +0800 (SGT)
 From: Kuldeep Singh <kuldeep.singh@nxp.com>
 To: linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH 1/2] arm64: dts: lx2160ardb: Update FSPI node properties
-Date: Tue,  3 Mar 2020 12:08:31 +0530
-Message-Id: <1583217512-27994-1-git-send-email-kuldeep.singh@nxp.com>
+Subject: [PATCH 2/2] arm64: dts: lx2160aqds: Add FSPI node properties
+Date: Tue,  3 Mar 2020 12:08:32 +0530
+Message-Id: <1583217512-27994-2-git-send-email-kuldeep.singh@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1583217512-27994-1-git-send-email-kuldeep.singh@nxp.com>
+References: <1583217512-27994-1-git-send-email-kuldeep.singh@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_223910_618702_E69994BF 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20200302_223910_604961_3E9F77C1 
+X-CRM114-Status: UNSURE (   8.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,40 +77,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update fspi node compatibles of LX2160A-RDB to "jedec,spi-nor" for
-automatic detection of flash.
+lx2160a-qds has 2 micron "mt35xu512aba" flashes of size 64M each
+connected on A0 and B1 i.e on CS0 and CS3. Since flashes are connected
+on different buses, only one flash can be probed at a time.
 
-This also helps in fixing below warning:
-spi-nor spi0.0: found mt35xu512aba, expected m25p80
-spi-nor spi0.1: found mt35xu512aba, expected m25p80
+Add fspi node properties aligned with LX2160A-RDB fspi properties.
 
 Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/fsl-lx2160a-rdb.dts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/freescale/fsl-lx2160a-qds.dts | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-lx2160a-rdb.dts
-index 51615de..22d0308 100644
---- a/arch/arm64/boot/dts/freescale/fsl-lx2160a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a-rdb.dts
-@@ -84,7 +84,7 @@
- 	mt35xu512aba0: flash@0 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
--		compatible = "spansion,m25p80";
+diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-lx2160a-qds.dts
+index 1a5acf6..3b88e1e 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-lx2160a-qds.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a-qds.dts
+@@ -43,6 +43,21 @@
+ 	status = "okay";
+ };
+ 
++&fspi {
++	status = "okay";
++
++	mt35xu512aba0: flash@0 {
++		#address-cells = <1>;
++		#size-cells = <1>;
 +		compatible = "jedec,spi-nor";
- 		m25p,fast-read;
- 		spi-max-frequency = <50000000>;
- 		reg = <0>;
-@@ -95,7 +95,7 @@
- 	mt35xu512aba1: flash@1 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
--		compatible = "spansion,m25p80";
-+		compatible = "jedec,spi-nor";
- 		m25p,fast-read;
- 		spi-max-frequency = <50000000>;
- 		reg = <1>;
++		m25p,fast-read;
++		spi-max-frequency = <50000000>;
++		reg = <0>;
++		spi-rx-bus-width = <8>;
++		spi-tx-bus-width = <8>;
++	};
++};
++
+ &i2c0 {
+ 	status = "okay";
+ 
 -- 
 2.7.4
 
