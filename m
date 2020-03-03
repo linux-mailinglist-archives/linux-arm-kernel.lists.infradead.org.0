@@ -2,74 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6C651784BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 22:18:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16BBD1784EE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 22:32:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NPP7s7NiH4xxUucHEEKzbh33lytklPRGbZva/S/hNfs=; b=dgSLk9E5ZnsokQ
-	joLu0bTCwsWZOFcXRUAPZdJ2FUD63ZC31PokcZ+BB/bJstcO6j+OVRdT0Zo6rdPB0lfqtBN8tmRG1
-	i5wAM8n4aLZhO+d6CQhcIag2rLmx+Lxt64AwvNZU0uKPr5P0bCmk5zjqyEeOg9WnNiwLbYtkyx1z4
-	bmEwGHLquZbKf05gl88Uxg366r4cBYvj3LKjxLR9hdDaxLzHANDS7do8068Pa9A+WFG8NkaC0W143
-	VlL5A619MV7qTRVYjOCbHoNZXvZaJxRCsn5uRzFzVLeN3J9wFPkIj/lDfmyhFwo/r4HL3v2gPXUT1
-	IKWEHb5w5GjdBsrMvebQ==;
+	List-Owner; bh=Ngclhj6/CXMxEqOLLbCrtOZChbs8x0DV6ZzFVkAyn8Y=; b=psM2xqHq5sdAya
+	wfRFaKJKG7lF6Yd+1rVHMQ+OBwhtVIxHPDqNPr8a9MRHeEvdARa3dR0kLbAZT+uvFTkXh/QM5dR6O
+	l/dpuEBVgcxFxt/ORqnVN4Xicw+IaCqju+pU0Cv2NKKO27OUmJBN8RV0PbSkG3t7z9RVETYDChWag
+	A3UpTLwtyd7UPEnyEG3BlEgbKSjJbFKSwbnEfSKKJpi5F9obGxmjERZP5CdPYewQc8r1c41iVsNoL
+	5V2ATfVdEi8tHGzgfqsl8KAHLNTpizFy9CuaHajXxk7pYqJM657qv3m5PxoYgpH9XFYDqQU0/n8kw
+	QsE42i2ntwBf33W+mcnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9EvU-000244-BD; Tue, 03 Mar 2020 21:18:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j9F9F-00081E-CB; Tue, 03 Mar 2020 21:32:17 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9EvL-00023F-D2
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 21:17:57 +0000
-Received: from mail-qk1-f178.google.com (mail-qk1-f178.google.com
- [209.85.222.178])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7BF142146E
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Mar 2020 21:17:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583270274;
- bh=u+IJrtkDmmILKrB777JfXIiXu/1W6oLqMP+I5yJnh2M=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=n7g6PctrjHyalDBnUVzVVtTQjjls7cc/u2J+8JdC+r3e1d5flgOXBXR4FZ7tLvpMA
- 7b6gwv5T1fiWDXqgIKGMuRwTHLdGVZ3flfrT6tvxBWzb4Z7zLJ2u8aar3WcPRYv3Rh
- 3GQsCWIQ0Zl4mpqcqP4EnNO2W3gTAEZjygyMVAfo=
-Received: by mail-qk1-f178.google.com with SMTP id f198so4917708qke.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 13:17:54 -0800 (PST)
-X-Gm-Message-State: ANhLgQ3RQSi+NAVP9uksNpRKlnPg0X3k1lUabf/fGVsxpc3V+SmTdmNK
- WlVVvu3CeKqeuoO1HDcQdnz2L2TlnPWr+2sEKQ==
-X-Google-Smtp-Source: ADFU+vtMU23sEGul4xIS3cOxg5HrzR9E2uToGkQ9bXIiwRYCwLzdQ482f+A1Bjc2x/VSMmCDsUDzaUn2JS5rGNey7YY=
-X-Received: by 2002:a05:620a:12a3:: with SMTP id
- x3mr31904qki.254.1583270273440; 
- Tue, 03 Mar 2020 13:17:53 -0800 (PST)
+ id 1j9F97-00080F-No
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 21:32:11 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 023LS1go036975;
+ Tue, 3 Mar 2020 21:32:02 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=AnKlCnsZKbhYJBc8etzmr5N2OwYTT8txAPj6KkeXERo=;
+ b=j9nk4PVPkIxtzadAwWsgGAlZZsgIQ2sAqZ5uHhR0VG1IQwEC1X4uKIA9uQ+4O6fEcTIs
+ sKVg2X39iXVBjuZwfcgcLNOe+zYmZlf+IOAIo67cqSLxq8LymK0C7ydoHfKojkV5NMB2
+ EK6b2TAVx0x7OWodpUqGvuOOSQUJg7rDMW9AK4/lPxpFeePhNOGzHkyRL8JrQTlKtXH6
+ OE4FX6l591SgfU741aeBHwwXkO0Itjl8EqTP/bOezR74EMlMKGwIrSW5jt3ug/pEGyyp
+ 9YevRnnIjb17MByx1Eyea6QrXSkHWlsEMetg9bGv2+3kZOfgdX5+ObvwE9KyT4oyik05 RQ== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2130.oracle.com with ESMTP id 2yffcuj7c9-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 03 Mar 2020 21:32:02 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 023LQaoT008213;
+ Tue, 3 Mar 2020 21:30:02 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3030.oracle.com with ESMTP id 2yg1emtngg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 03 Mar 2020 21:30:01 +0000
+Received: from abhmp0017.oracle.com (abhmp0017.oracle.com [141.146.116.23])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 023LU0BL019460;
+ Tue, 3 Mar 2020 21:30:00 GMT
+Received: from ca-dmjordan1.us.oracle.com (/10.211.9.48)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 03 Mar 2020 13:30:00 -0800
+Date: Tue, 3 Mar 2020 16:30:17 -0500
+From: Daniel Jordan <daniel.m.jordan@oracle.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
+Message-ID: <20200303213017.tanczhqd3nhpeeak@ca-dmjordan1.us.oracle.com>
+References: <20200217204803.GA13479@Red>
+ <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ <20200220090350.GA19858@Red>
+ <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
+ <20200228123311.GE3275@willie-the-truck>
+ <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
+ <20200301175351.GA11684@Red>
+ <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
+ <e7c92da2-42c0-a97d-7427-6fdc769b41b9@arm.com>
 MIME-Version: 1.0
-References: <20200303150749.30566-1-ulf.hansson@linaro.org>
- <20200303150749.30566-4-ulf.hansson@linaro.org> <20200303170232.GA26191@bogus>
- <CAPDyKFrgbnDR2q2Aw7HPhosBprgR43ohXmNMLya_bRry4GqtoQ@mail.gmail.com>
-In-Reply-To: <CAPDyKFrgbnDR2q2Aw7HPhosBprgR43ohXmNMLya_bRry4GqtoQ@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 3 Mar 2020 15:17:42 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+T0VxPMRAvmEOnKi14eQiciRqOEQAo1GT8EG9jp=BNng@mail.gmail.com>
-Message-ID: <CAL_Jsq+T0VxPMRAvmEOnKi14eQiciRqOEQAo1GT8EG9jp=BNng@mail.gmail.com>
-Subject: Re: [PATCH 3/7] dt-bindings: power: Convert domain-idle-states
- bindings to json-schema
-To: Ulf Hansson <ulf.hansson@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <e7c92da2-42c0-a97d-7427-6fdc769b41b9@arm.com>
+User-Agent: NeoMutt/20180716
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9549
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ suspectscore=2 spamscore=0
+ mlxlogscore=999 malwarescore=0 bulkscore=0 mlxscore=0 phishscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003030136
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9549
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ mlxscore=0 bulkscore=0
+ adultscore=0 suspectscore=2 spamscore=0 malwarescore=0 impostorscore=0
+ priorityscore=1501 mlxlogscore=999 lowpriorityscore=0 clxscore=1015
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003030136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_131755_486794_699FAD37 
-X-CRM114-Status: GOOD (  30.39  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200303_133209_812427_185D1BB8 
+X-CRM114-Status: GOOD (  20.10  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,6 +105,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -89,194 +119,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
+ Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
+ tj@kernel.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 3, 2020 at 2:46 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> On Tue, 3 Mar 2020 at 18:02, Rob Herring <robh@kernel.org> wrote:
-> >
-> > On Tue, Mar 03, 2020 at 04:07:45PM +0100, Ulf Hansson wrote:
-> > > While converting to the json-schema, let's also take the opportunity to
-> > > further specify/clarify some more details about the DT binding.
-> > >
-> > > For example, let's define the label where to put the states nodes, set a
-> > > pattern for nodename of the state nodes and finally add an example.
-> > >
-> > > Fixes: a3f048b5424e ("dt: psci: Update DT bindings to support hierarchical PSCI states")
-> > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > > ---
-> > >  .../devicetree/bindings/arm/psci.yaml         |  2 +-
-> > >  .../bindings/power/domain-idle-state.txt      | 33 ---------
-> > >  .../bindings/power/domain-idle-state.yaml     | 67 +++++++++++++++++++
-> > >  .../bindings/power/power-domain.yaml          | 22 +++---
-> > >  .../bindings/power/power_domain.txt           |  2 +-
-> > >  5 files changed, 79 insertions(+), 47 deletions(-)
-> > >  delete mode 100644 Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > >  create mode 100644 Documentation/devicetree/bindings/power/domain-idle-state.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
-> > > index 540211a080d4..0bc3c43a525a 100644
-> > > --- a/Documentation/devicetree/bindings/arm/psci.yaml
-> > > +++ b/Documentation/devicetree/bindings/arm/psci.yaml
-> > > @@ -123,7 +123,7 @@ properties:
-> > >        to mandate it.
-> > >
-> > >        [3] Documentation/devicetree/bindings/power/power_domain.txt
-> > > -      [4] Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > +      [4] Documentation/devicetree/bindings/power/domain-idle-state.yaml
-> > >
-> > >    power-domains:
-> > >      $ref: '/schemas/types.yaml#/definitions/phandle-array'
-> > > diff --git a/Documentation/devicetree/bindings/power/domain-idle-state.txt b/Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > deleted file mode 100644
-> > > index eefc7ed22ca2..000000000000
-> > > --- a/Documentation/devicetree/bindings/power/domain-idle-state.txt
-> > > +++ /dev/null
-> > > @@ -1,33 +0,0 @@
-> > > -PM Domain Idle State Node:
-> > > -
-> > > -A domain idle state node represents the state parameters that will be used to
-> > > -select the state when there are no active components in the domain.
-> > > -
-> > > -The state node has the following parameters -
-> > > -
-> > > -- compatible:
-> > > -     Usage: Required
-> > > -     Value type: <string>
-> > > -     Definition: Must be "domain-idle-state".
-> > > -
-> > > -- entry-latency-us
-> > > -     Usage: Required
-> > > -     Value type: <prop-encoded-array>
-> > > -     Definition: u32 value representing worst case latency in
-> > > -                 microseconds required to enter the idle state.
-> > > -                 The exit-latency-us duration may be guaranteed
-> > > -                 only after entry-latency-us has passed.
-> > > -
-> > > -- exit-latency-us
-> > > -     Usage: Required
-> > > -     Value type: <prop-encoded-array>
-> > > -     Definition: u32 value representing worst case latency
-> > > -                 in microseconds required to exit the idle state.
-> > > -
-> > > -- min-residency-us
-> > > -     Usage: Required
-> > > -     Value type: <prop-encoded-array>
-> > > -     Definition: u32 value representing minimum residency duration
-> > > -                 in microseconds after which the idle state will yield
-> > > -                 power benefits after overcoming the overhead in entering
-> > > -i                the idle state.
-> > > diff --git a/Documentation/devicetree/bindings/power/domain-idle-state.yaml b/Documentation/devicetree/bindings/power/domain-idle-state.yaml
-> > > new file mode 100644
-> > > index 000000000000..27da43076b85
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/power/domain-idle-state.yaml
-> > > @@ -0,0 +1,67 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/power/domain-idle-state.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: PM Domain Idle States binding description
-> > > +
-> > > +maintainers:
-> > > +  - Ulf Hansson <ulf.hansson@linaro.org>
-> > > +
-> > > +description:
-> > > +  A domain idle state node represents the state parameters that will be used to
-> > > +  select the state when there are no active components in the PM domain.
-> > > +
-> > > +properties:
-> > > +  $nodename:
-> > > +    const: domain-idle-states
-> > > +
-> > > +patternProperties:
-> > > +  "^(cpu|cluster|domain)-":
-> > > +    type: object
-> > > +    description:
-> > > +      Each state node represents a domain idle state description.
-> > > +
-> > > +    properties:
-> > > +      compatible:
-> > > +        const: domain-idle-state
-> > > +
-> > > +      entry-latency-us:
-> > > +        $ref: /schemas/types.yaml#/definitions/uint32
-> >
-> > You don't need a type because the core schema defines it for all
-> > standard units.
->
-> Okay, I noticed some skips this, but wanted rather to clear and fuzzy.
->
-> In any case, yes, let's remove it.
->
-> >
-> > > +        description:
-> > > +          The worst case latency in microseconds required to enter the idle
-> > > +          state. Note that, the exit-latency-us duration may be guaranteed only
-> > > +          after the entry-latency-us has passed.
-> > > +
-> > > +      exit-latency-us:
-> > > +        $ref: /schemas/types.yaml#/definitions/uint32
-> > > +        description:
-> > > +          The worst case latency in microseconds required to exit the idle
-> > > +          state.
-> > > +
-> > > +      min-residency-us:
-> > > +        $ref: /schemas/types.yaml#/definitions/uint32
-> > > +        description:
-> > > +          The minimum residency duration in microseconds after which the idle
-> > > +          state will yield power benefits, after overcoming the overhead while
-> > > +          entering the idle state.
-> > > +
-> > > +    required:
-> > > +      - compatible
-> > > +      - entry-latency-us
-> > > +      - exit-latency-us
-> > > +      - min-residency-us
-> >
-> >        additionalProperties: false
-> >
-> > Do we have cases of adding additional properties?
->
-> I might, but I am not sure what's the correct way to deal with that.
+On Mon, Mar 02, 2020 at 06:00:10PM +0000, Robin Murphy wrote:
+> On 02/03/2020 5:25 pm, Daniel Jordan wrote:
+> Something smelled familiar about this discussion, and sure enough that merge
+> contains c4741b230597 ("crypto: run initcalls for generic implementations
+> earlier"), which has raised its head before[1].
 
-I was thinking more like a vendor adding properties. Is this a base
-class that can be extended or every possible property is defined here.
-Actually, with the matching on $nodename, we have to put any additions
-in here or do a custom 'select'. In any case, I think we can cross
-than when/if we get there.
+Yep, that looks suspicious.
 
-> What I am wondering about is the "arm,psci-suspend-param" property,
-> currently defined as part of the PSCI bindings (psci.yaml).
->
-> I am not sure that's correct to define it as a PSCI binding. Shouldn't
-> it rather be a part of the idle state bindings (idle-states.yaml) and
-> the domain idle states binding ($subject patch)?
+The bisect didn't point to that specific commit, even though my version of git
+tries commits in the merge.  I'm probably missing something.
 
-Indeed it should be moved here.
+> > Does this fix it?  I can't verify but figure it's worth trying the simplest
+> > explanation first, which is that the work isn't initialized by the time it's
+> > queued.
+> 
+> The relative initcall levels would appear to explain the symptom - I guess
+> the question is whether this represents a bug in a particular test/algorithm
+> (as with the unaligned accesses) or a fundamental problem in the
+> infrastructure now being able to poke the module loader too early.
 
->
-> What do you think?
->
-> In any case, we probably want to fix this on top, if we should care.
+I'm not familiar with the crypto code.  Could it be that the commit moved some
+request_module() calls before modules_wq_init()?
 
-Yes, that's fine.
+And, is it "too early" or just "earlier"?  When is it too early for modprobe?
 
-Rob
+Barring other ideas, Corentin, would you be willing to boot with
+
+    trace_event=initcall:*,module:* trace_options=stacktrace
+
+and
+
+diff --git a/kernel/module.c b/kernel/module.c
+index 33569a01d6e1..393be6979a27 100644
+--- a/kernel/module.c
++++ b/kernel/module.c
+@@ -3604,8 +3604,11 @@ static noinline int do_init_module(struct module *mod)
+ 	 * be cleaned up needs to sync with the queued work - ie
+ 	 * rcu_barrier()
+ 	 */
+-	if (llist_add(&freeinit->node, &init_free_list))
++	if (llist_add(&freeinit->node, &init_free_list)) {
++		pr_warn("%s: schedule_work for mod=%s\n", __func__, mod->name);
++		dump_stack();
+ 		schedule_work(&init_free_wq);
++	}
+ 
+ 	mutex_unlock(&module_mutex);
+ 	wake_up_all(&module_wq);
+
+but not my earlier fix and share the dmesg and ftrace output to see if the
+theory holds?
+
+Also, could you attach your config?  Curious now what your crypto options look
+like after fiddling with some of them today while trying and failing to see
+this on x86.
+
+thanks,
+Daniel
 
 _______________________________________________
 linux-arm-kernel mailing list
