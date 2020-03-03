@@ -2,57 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 784B0177E22
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:50:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC054177E2A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 18:54:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=umaXRhKtfW4273XPatf+YVDiwlB6zmjo+XeehPDpWA8=; b=uFTr8VD6LyQOP/EuA7rGOqL2W
-	+erjysM0v2QdwETg0W8IKoLhM22IgiGyoJVjuqt3MxUcyPzH1dokAcgKyqb6IUtPkNpeD7zjR2yGe
-	OkaB8GcevuvAF/uUIm3basQPfN0EHMm+AVMjFvAsyTShtuaHQjP2aahw8WVtRUQ1tNbLAx3NHq2Wh
-	ym7Ds/nIJnOJgw+k8VFfublFGrHS4dIrNkic7fgV8dgijko5twTZ4Ak2h/QuWooSMromhpRKQhhbN
-	60MYcE/+sQXMm3hWEQw9ezIy0T0ZsnFR8xSNKLbUBNKlU+7SEasge6t+TTXL2S7NXR7RvXmmDR/L/
-	08RZjbu6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ylb1QzhxzWwGr1LdrEIkxf4gEuLXSyfLI2xXMffEToI=; b=NYH/ntm2fzd7qE
+	CEr5N3m+LSRg/4GBsmYEZ3KUp/s9GSN/GWG7iUGCFz5lVW7ZMgSgbqZkjFx0hVUjIUn6ryYzu2bKU
+	hxykzv1EkD/+6Lo8Y9/NaCqRgaqOGOOFxC37MlOpR1xr+UlE6tQc7B5ZX9gEQuKZdTgLBwwtb31lq
+	sYwbD2FbvR6GOdMHMa0BEsApHfyoUd7KsjZbTAtKEK9nJcohGZ2CU1pTgfmhrKv/XK6T//x43WGDv
+	lG1BHasweFb2MCI3Ug+cNbFNfnhVdo5IUdf5eqH5dTpKrSKmowtyUkVLLT11Bxvw0i1bJnaxs+5og
+	9dmfe+RMT0MNWt3Jt9iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Bgg-0004oD-JZ; Tue, 03 Mar 2020 17:50:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9BgW-0004nS-GH
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:50:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D124A2F;
- Tue,  3 Mar 2020 09:50:23 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6C8BC3F534;
- Tue,  3 Mar 2020 09:50:22 -0800 (PST)
-Subject: Re: sunxi: a83t: does not boot anymore in BigEndian
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-References: <20200303074326.GA9935@Red>
- <65498b8e-a6c3-9edb-873f-6c011582a2eb@arm.com> <20200303142104.GA8327@Red>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <598b6e3a-5dc1-16d6-fdfe-4a02ef5889b2@arm.com>
-Date: Tue, 3 Mar 2020 17:50:20 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j9Bk8-0005UM-3Q; Tue, 03 Mar 2020 17:54:08 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9Bjy-0005T6-LY
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 17:54:00 +0000
+Received: by mail-pg1-x543.google.com with SMTP id b1so1876427pgm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Mar 2020 09:53:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=1ZbfkLQ2VdnbVC/d8KgqwQW7FClHXUZcXLZP5BKShzg=;
+ b=gZzfmS+wj0+Ggrl6wp7RZRliIYX/nCfCMZO5kkp32taPIuO/ijDVf/0rrwf+4vt5Ac
+ srIwA0IOtOzkYwYk40uecI/ED2PoyCLjbHcMmS8Lpp9WHmlX7zhBKak+s2gbgHBUE4L2
+ 1McZERxMjf+IlB6n+bYLcAXUBUrTW1UuJOG+9mJe9B7FzwyGIjQBEr5P3x5hM/+aKTzd
+ LQE/eodMEmjTehRrWAfTxgV9AJ0v2104Ki9KjK6UsqaeG8VNzmMLzowKT6JufOmhJssI
+ u2QdoxXm+NzReNh0riV5wdLKTDUtY2p2tYYR0yFC7gQPqLzuB0ur1smLL7dc75RsLsC/
+ 2PoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1ZbfkLQ2VdnbVC/d8KgqwQW7FClHXUZcXLZP5BKShzg=;
+ b=aslXgQnxVOMVwryxHhcS48IHUoIr08wMOF36AGk1I8hXNHJFnssxcmdFTMuNBodkm9
+ saXsJtVSkvhLQ10tUNPcEtaQvf245LR+XAs2IUtvsYA+lYvW/7ChGRJx4tnh/qMfCyA6
+ z3BLxzwvD6zlm1at5+NJwzEcKUHkExRwuIvsMHWseoMd5dRAVdr3QTE+sAdBYCy+GggX
+ muGBKX7NoxDK8WCbQKYobB9sZNmyhf1JiD5oCt0w78AsmtAGsy3KrAyoTtT852XgKI+k
+ w6Uohwna0DKkvUJ2Mjk2xGWq7tqiSBFLyrsPy6gyeksUIa9IcejmBXLASEm5COc7wxqV
+ iL0w==
+X-Gm-Message-State: ANhLgQ2XlHblktJBzX7+oWuHSTE86CjZMjqswi+YOCO76fQqysBSVYx5
+ eFn6ZR2bZo0W+WhB3fpwLo0=
+X-Google-Smtp-Source: ADFU+vtrUbc8rUTUahWYS5Ny+rkg3yivhD/slP23Bl/nABv8aU+SJIOcClmNKX03Yahq68r/tV8MpA==
+X-Received: by 2002:a63:aa04:: with SMTP id e4mr5012728pgf.418.1583258037838; 
+ Tue, 03 Mar 2020 09:53:57 -0800 (PST)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id z63sm25199841pgd.12.2020.03.03.09.53.56
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 03 Mar 2020 09:53:57 -0800 (PST)
+Date: Tue, 3 Mar 2020 09:53:55 -0800
+From: Guenter Roeck <linux@roeck-us.net>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH 16/18] efi: add 'runtime' pointer to struct efi
+Message-ID: <20200303175355.GA14065@roeck-us.net>
+References: <20200216182334.8121-1-ardb@kernel.org>
+ <20200216182334.8121-17-ardb@kernel.org>
+ <20200303160353.GA20372@roeck-us.net>
+ <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200303142104.GA8327@Red>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_095024_629480_AC26A497 
-X-CRM114-Status: GOOD (  19.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200303_095358_711109_B496963E 
+X-CRM114-Status: GOOD (  24.01  )
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,151 +107,414 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, maz@kernel.org,
- linux-kernel@vger.kernel.org, mripard@kernel.org, linux@armlinux.org.uk,
- wens@csie.org, linux-arm-kernel@lists.infradead.org
+Cc: Arvind Sankar <nivedita@alum.mit.edu>,
+ linux-efi <linux-efi@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/03/2020 2:21 pm, Corentin Labbe wrote:
-> On Tue, Mar 03, 2020 at 01:47:02PM +0000, Robin Murphy wrote:
->> On 03/03/2020 7:43 am, Corentin Labbe wrote:
->>> Hello
->>>
->>> My sun8i-a83t-bananapi-m3 does not boot anymore in BE.
->>> Others sunxi platform I have seems not affected (a10, a20, a64, h3, h5, h6)
->>>
->>> I have bisected this problem:
->>> git bisect start
->>> # bad: [98d54f81e36ba3bf92172791eba5ca5bd813989b] Linux 5.6-rc4
->>> git bisect bad 98d54f81e36ba3bf92172791eba5ca5bd813989b
->>> # bad: [d5226fa6dbae0569ee43ecfc08bdcd6770fc4755] Linux 5.5
->>> git bisect bad d5226fa6dbae0569ee43ecfc08bdcd6770fc4755
->>> # good: [219d54332a09e8d8741c1e1982f5eae56099de85] Linux 5.4
->>> git bisect good 219d54332a09e8d8741c1e1982f5eae56099de85
->>> # bad: [8c39f71ee2019e77ee14f88b1321b2348db51820] Merge git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net
->>> git bisect bad 8c39f71ee2019e77ee14f88b1321b2348db51820
->>> # bad: [3b397c7ccafe0624018cb09fc96729f8f6165573] Merge tag 'regmap-v5.5' of git://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap
->>> git bisect bad 3b397c7ccafe0624018cb09fc96729f8f6165573
->>> # good: [924ea58dadea23cc28b60d02b9c0896b7b168a6f] Merge tag 'mt76-for-kvalo-2019-11-20' of https://github.com/nbd168/wireless
->>> git bisect good 924ea58dadea23cc28b60d02b9c0896b7b168a6f
->>> # good: [3f3c8be973af10875cfa1e7b85a535b6ba76b44f] Merge tag 'for-linus-5.5a-rc1-tag' of git://git.kernel.org/pub/scm/linux/kernel/git/xen/tip
->>> git bisect good 3f3c8be973af10875cfa1e7b85a535b6ba76b44f
->>> # bad: [642356cb5f4a8c82b5ca5ebac288c327d10df236] Merge git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
->>> git bisect bad 642356cb5f4a8c82b5ca5ebac288c327d10df236
->>> # good: [57d8154f15e89f53dfb412f4ed32ebe3c3d755a0] crypto: atmel-aes - Change data type for "lastc" buffer
->>> git bisect good 57d8154f15e89f53dfb412f4ed32ebe3c3d755a0
->>> # bad: [752272f16dd18f2cac58a583a8673c8e2fb93abb] Merge tag 'for-linus' of git://git.kernel.org/pub/scm/virt/kvm/kvm
->>> git bisect bad 752272f16dd18f2cac58a583a8673c8e2fb93abb
->>> # good: [9477f4449b0b011ce1d058c09ec450bfcdaab784] KVM: VMX: Add helper to check reserved bits in IA32_PERF_GLOBAL_CTRL
->>> git bisect good 9477f4449b0b011ce1d058c09ec450bfcdaab784
->>> # bad: [cd7056ae34af0e9424da97bbc7d2b38246ba8a2c] Merge remote-tracking branch 'kvmarm/misc-5.5' into kvmarm/next
->>> git bisect bad cd7056ae34af0e9424da97bbc7d2b38246ba8a2c
->>> # bad: [c7892db5dd6afe921ead502aff7440a1e450d947] KVM: arm64: Select TASK_DELAY_ACCT+TASKSTATS rather than SCHEDSTATS
->>> git bisect bad c7892db5dd6afe921ead502aff7440a1e450d947
->>> # bad: [8564d6372a7d8a6d440441b8ed8020f97f744450] KVM: arm64: Support stolen time reporting via shared structure
->>> git bisect bad 8564d6372a7d8a6d440441b8ed8020f97f744450
->>> # bad: [55009c6ed2d24fc0f5521ab2482f145d269389ea] KVM: arm/arm64: Factor out hypercall handling from PSCI code
->>> git bisect bad 55009c6ed2d24fc0f5521ab2482f145d269389ea
->>> # bad: [6a7458485b390f48e481fcd4a0b20e6c5c843d2e] KVM: arm64: Document PV-time interface
->>> git bisect bad 6a7458485b390f48e481fcd4a0b20e6c5c843d2e
->>> # bad: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
->>> git bisect bad dcac930e9901d765234bc15004db4f7d4416db71
->>> # first bad commit: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
->>>
->>> But bisect lead to a merge request.
->>
->> FWIW once you've bisected to a merge commit, you can always then try
->> bisecting down the merged branch itself (i.e. between 5.4-rc3 and
->> e6ea46511b1a in this case) to narrow things down further.
->>
->> Given that that branch is supposed to be a functionally-inert cleanup,
->> and (judging by the DTS) this platform apparently isn't using PSCI
->> anyway, it does seem a bit odd. Can you get any earlycon/earlyprintk
->> output to suggest what the actual cause of the boot failure is?
->>
+On Tue, Mar 03, 2020 at 05:39:43PM +0100, Ard Biesheuvel wrote:
+> On Tue, 3 Mar 2020 at 17:03, Guenter Roeck <linux@roeck-us.net> wrote:
+> >
+> > On Sun, Feb 16, 2020 at 07:23:32PM +0100, Ard Biesheuvel wrote:
+> > > Instead of going through the EFI system table each time, just copy the
+> > > runtime services table pointer into struct efi directly. This is the
+> > > last use of the system table pointer in struct efi, allowing us to
+> > > drop it in a future patch, along with a fair amount of quirky handling
+> > > of the translated address.
+> > >
+> > > Note that usually, the runtime services pointer changes value during
+> > > the call to SetVirtualAddressMap(), so grab the updated value as soon
+> > > as that call returns. (Mixed mode uses a 1:1 mapping, and kexec boot
+> > > enters with the updated address in the system table, so in those cases,
+> > > we don't need to do anything here)
+> > >
+> > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> >
+> > This patch results in a crash with i386 efi boots if PAE (CONFIG_HIGHMEM64G=y)
+> > is enabled. Bisect and crash logs attached. There is also a warning which
+> > I don't recall seeing before, but it may not be caused by this patch
+> > (I didn' bisect the warning). The warning is seen with all i386:efi boots,
+> > not only when PAE is enabled. The warning log is also attached.
+> >
+> > Guenter
+> >
+> > ---
+> > Qemu command line:
+> >
+> > qemu-system-i386 -kernel arch/x86/boot/bzImage -M pc -cpu Westmere \
+> >         -no-reboot -m 256 -snapshot \
+> >         -bios OVMF-pure-efi-32.fd \
+> >         -usb -device usb-storage,drive=d0 \
+> >         -drive file=rootfs.ext2,if=none,id=d0,format=raw \
+> >         --append 'earlycon=uart8250,io,0x3f8,9600n8 panic=-1 slub_debug=FZPUA root=/dev/sda rootwait mem=256M console=ttyS0' \
+> >         -nographic
+> >
 > 
-> Hello
+> I am failing to reproduce this. Do you have a .config and a copy of
+> OVMF-pure-efi-32.fd anywhere?
 > 
-> With earlycon I got:
-> 
-> bootz 0x42000000 0x43300000 0x43000000
-> ## Loading init Ramdisk from Legacy Image at 43300000 ...
->     Image Name:
->     Image Type:   ARM Linux RAMDisk Image (uncompressed)
->     Data Size:    32397255 Bytes = 30.9 MiB
->     Load Address: 00000000
->     Entry Point:  00000000
->     Verifying Checksum ... OK
-> ## Flattened Device Tree blob at 43000000
->     Booting using the fdt blob at 0x43000000
->     Using Device Tree in place at 43000000, end 43008f07
-> Starting kernel ...
-> [    0.000000] Booting Linux on physical CPU 0x0
-> [    0.000000] Linux version 5.6.0-rc4 (compile@Red) (gcc version 8.3.0 (Gentoo 8.3.0-r1 p1.1)) #21 SMP Tue Mar 3 15:07:20 CET 2020
-> [    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=12c5387d
-> [    0.000000] CPU: div instructions available: patching division code
-> [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
-> [    0.000000] OF: fdt: Machine model: Banana Pi BPI-M3
-> [    0.000000] earlycon: uart0 at MMIO32 0x01c28000 (options '')
-> [    0.000000] printk: bootconsole [uart0] enabled
-> [    0.000000] Memory policy: Data cache writealloc
-> [    0.000000] cma: Reserved 16 MiB at 0xbf000000
-> [    0.000000] percpu: Embedded 15 pages/cpu s31320 r8192 d21928 u61440
-> [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 522752
-> [    0.000000] Kernel command line: console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x01c28000 ip=dhcp
-> [    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
-> [    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
-> [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
-> [    0.000000] Memory: 2019352K/2097152K available (7168K kernel code, 485K rwdata, 2832K rodata, 1024K init, 248K bss, 61416K reserved, 16384K cma-reserved, 1294336K highmem)
-> [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
-> [    0.000000] rcu: Hierarchical RCU implementation.
-> [    0.000000] rcu: 	RCU event tracing is enabled.
-> [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
-> [    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
-> [    0.000000] random: get_random_bytes called from start_kernel+0x2a4/0x440 with crng_init=0
-> [    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (virt).
-> [    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
-> [    0.000008] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
-> [    0.008636] Switching to timer-based delay loop, resolution 41ns
-> [    0.015439] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns
-> [    0.025876] Console: colour dummy device 80x30
-> [    0.030743] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
-> [    0.041927] pid_max: default: 32768 minimum: 301
-> [    0.047093] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
-> [    0.055003] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
-> [    0.064553] CPU: Testing write buffer coherency: ok
-> [    0.070534] /cpus/cpu@0 missing clock-frequency property
-> [    0.076282] /cpus/cpu@1 missing clock-frequency property
-> [    0.082071] /cpus/cpu@2 missing clock-frequency property
-> [    0.087816] /cpus/cpu@3 missing clock-frequency property
-> [    0.093560] /cpus/cpu@100 missing clock-frequency property
-> [    0.099498] /cpus/cpu@101 missing clock-frequency property
-> [    0.105441] /cpus/cpu@102 missing clock-frequency property
-> [    0.111363] /cpus/cpu@103 missing clock-frequency property
-> [    0.117292] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
-> [    0.124164] Setting up static identity map for 0x40100000 - 0x40100060
-> [    0.131496] ARM CCI driver probed
-> [    0.135832] sunxi multi cluster SMP support installed
-> [    0.141784] rcu: Hierarchical SRCU implementation.
-> [    0.147537] smp: Bringing up secondary CPUs ...
-> 
-> I will try to redo the bisect
 
-Hmm, if there was a horribly subtle endianness/uninitialised data bug 
-(or combination thereof) that led to somehow falling into the middle of 
-the PSCI or spectre code and issuing a spurious SMC/HVC to non-existent 
-firmware at secondary bringup, it might well look exactly like that...
+https://github.com/groeck/linux-build-test/blob/master/rootfs/firmware/OVMF-pure-efi-32.fd
+https://github.com/groeck/linux-build-test/blob/master/rootfs/x86/rootfs.ext2.gz
 
-If different values of CONFIG_PSCI and CONFIG_HARDEN_BRANCH_PREDICTOR 
-make any difference to a failing build then that might lend weight to 
-that theory. Assuming the initial bisection is reliable then 
-6848253ddeae and/or a5520eac4d2d would seem like the most likely 
-suspects for perturbing whatever subtlety is at play in this case.
+Config file is below, shortened by "make savedefconfig" on the actual
+configuration used on next-20200303. Qemu version is 4.2, though that
+should not really matter. Note that it isn't necessary to boot from usb,
+that was just my test case.
 
-Robin.
+Here is a pointer to a complete log, showing the various conditions
+resulting in the warning and the crash:
+
+https://kerneltests.org/builders/qemu-x86-next/builds/1310/steps/qemubuildcommand_1/logs/stdio
+
+Guenter
+
+---
+# CONFIG_LOCALVERSION_AUTO is not set
+CONFIG_SYSVIPC=y
+CONFIG_POSIX_MQUEUE=y
+CONFIG_USELIB=y
+CONFIG_AUDIT=y
+CONFIG_NO_HZ=y
+CONFIG_HIGH_RES_TIMERS=y
+CONFIG_PREEMPT_VOLUNTARY=y
+CONFIG_BSD_PROCESS_ACCT=y
+CONFIG_TASKSTATS=y
+CONFIG_TASK_DELAY_ACCT=y
+CONFIG_TASK_XACCT=y
+CONFIG_TASK_IO_ACCOUNTING=y
+CONFIG_LOG_BUF_SHIFT=18
+CONFIG_CGROUPS=y
+CONFIG_CGROUP_SCHED=y
+CONFIG_CGROUP_FREEZER=y
+CONFIG_CPUSETS=y
+CONFIG_CGROUP_CPUACCT=y
+CONFIG_NAMESPACES=y
+CONFIG_BLK_DEV_INITRD=y
+CONFIG_EXPERT=y
+# CONFIG_COMPAT_BRK is not set
+CONFIG_PROFILING=y
+CONFIG_SMP=y
+CONFIG_NR_CPUS=8
+CONFIG_X86_REROUTE_FOR_BROKEN_BOOT_IRQS=y
+CONFIG_MICROCODE_AMD=y
+CONFIG_X86_MSR=y
+CONFIG_X86_CPUID=y
+CONFIG_X86_CHECK_BIOS_CORRUPTION=y
+# CONFIG_MTRR_SANITIZER is not set
+CONFIG_EFI=y
+CONFIG_EFI_STUB=y
+CONFIG_HZ_1000=y
+CONFIG_KEXEC=y
+CONFIG_CRASH_DUMP=y
+CONFIG_HIBERNATION=y
+CONFIG_PM_DEBUG=y
+CONFIG_PM_TRACE_RTC=y
+CONFIG_ACPI_DOCK=y
+CONFIG_ACPI_BGRT=y
+CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE=y
+CONFIG_CPU_FREQ_GOV_PERFORMANCE=y
+CONFIG_CPU_FREQ_GOV_ONDEMAND=y
+CONFIG_X86_ACPI_CPUFREQ=y
+CONFIG_EFI_VARS=y
+CONFIG_EFI_CAPSULE_LOADER=y
+# CONFIG_KVM_WERROR is not set
+CONFIG_KPROBES=y
+CONFIG_JUMP_LABEL=y
+CONFIG_STATIC_KEYS_SELFTEST=y
+CONFIG_COMPAT_32BIT_TIME=y
+CONFIG_MODULES=y
+CONFIG_MODULE_UNLOAD=y
+CONFIG_MODULE_FORCE_UNLOAD=y
+# CONFIG_UNUSED_SYMBOLS is not set
+CONFIG_BINFMT_MISC=y
+CONFIG_NET=y
+CONFIG_PACKET=y
+CONFIG_UNIX=y
+CONFIG_XFRM_USER=y
+CONFIG_INET=y
+CONFIG_IP_MULTICAST=y
+CONFIG_IP_ADVANCED_ROUTER=y
+CONFIG_IP_MULTIPLE_TABLES=y
+CONFIG_IP_ROUTE_MULTIPATH=y
+CONFIG_IP_ROUTE_VERBOSE=y
+CONFIG_IP_PNP=y
+CONFIG_IP_PNP_DHCP=y
+CONFIG_IP_PNP_BOOTP=y
+CONFIG_IP_PNP_RARP=y
+CONFIG_IP_MROUTE=y
+CONFIG_IP_PIMSM_V1=y
+CONFIG_IP_PIMSM_V2=y
+CONFIG_SYN_COOKIES=y
+# CONFIG_INET_DIAG is not set
+CONFIG_TCP_CONG_ADVANCED=y
+# CONFIG_TCP_CONG_BIC is not set
+# CONFIG_TCP_CONG_WESTWOOD is not set
+# CONFIG_TCP_CONG_HTCP is not set
+CONFIG_TCP_MD5SIG=y
+CONFIG_INET6_AH=y
+CONFIG_INET6_ESP=y
+CONFIG_NETLABEL=y
+CONFIG_NETFILTER=y
+# CONFIG_NETFILTER_ADVANCED is not set
+CONFIG_NF_CONNTRACK=y
+CONFIG_NF_CONNTRACK_FTP=y
+CONFIG_NF_CONNTRACK_IRC=y
+CONFIG_NF_CONNTRACK_SIP=y
+CONFIG_NF_CT_NETLINK=y
+CONFIG_NF_NAT=y
+CONFIG_NETFILTER_XT_TARGET_CONNSECMARK=y
+CONFIG_NETFILTER_XT_TARGET_NFLOG=y
+CONFIG_NETFILTER_XT_TARGET_SECMARK=y
+CONFIG_NETFILTER_XT_TARGET_TCPMSS=y
+CONFIG_NETFILTER_XT_MATCH_CONNTRACK=y
+CONFIG_NETFILTER_XT_MATCH_POLICY=y
+CONFIG_NETFILTER_XT_MATCH_STATE=y
+CONFIG_IP_NF_IPTABLES=y
+CONFIG_IP_NF_FILTER=y
+CONFIG_IP_NF_TARGET_REJECT=y
+CONFIG_IP_NF_TARGET_MASQUERADE=m
+CONFIG_IP_NF_MANGLE=y
+CONFIG_IP6_NF_IPTABLES=y
+CONFIG_IP6_NF_MATCH_IPV6HEADER=y
+CONFIG_IP6_NF_FILTER=y
+CONFIG_IP6_NF_TARGET_REJECT=y
+CONFIG_IP6_NF_MANGLE=y
+CONFIG_NET_SCHED=y
+CONFIG_NET_EMATCH=y
+CONFIG_NET_CLS_ACT=y
+CONFIG_HAMRADIO=y
+CONFIG_CFG80211=y
+CONFIG_MAC80211=y
+CONFIG_MAC80211_LEDS=y
+CONFIG_RFKILL=y
+CONFIG_RFKILL_INPUT=y
+CONFIG_PCI=y
+CONFIG_PCIEPORTBUS=y
+CONFIG_PCI_MSI=y
+CONFIG_HOTPLUG_PCI=y
+CONFIG_PCCARD=y
+CONFIG_YENTA=y
+CONFIG_DEVTMPFS=y
+CONFIG_DEVTMPFS_MOUNT=y
+CONFIG_DEBUG_DEVRES=y
+CONFIG_PM_QOS_KUNIT_TEST=y
+CONFIG_CONNECTOR=y
+CONFIG_BLK_DEV_LOOP=y
+CONFIG_VIRTIO_BLK=y
+CONFIG_BLK_DEV_NVME=y
+CONFIG_PCI_ENDPOINT_TEST=y
+CONFIG_BLK_DEV_SD=y
+CONFIG_BLK_DEV_SR=y
+CONFIG_CHR_DEV_SG=y
+CONFIG_SCSI_CONSTANTS=y
+CONFIG_MEGARAID_SAS=y
+CONFIG_SCSI_SYM53C8XX_2=y
+CONFIG_SCSI_DC395x=y
+CONFIG_SCSI_AM53C974=y
+CONFIG_SCSI_VIRTIO=y
+CONFIG_ATA=y
+CONFIG_SATA_AHCI=y
+CONFIG_ATA_PIIX=y
+CONFIG_PATA_AMD=y
+CONFIG_PATA_OLDPIIX=y
+CONFIG_PATA_SCH=y
+CONFIG_PATA_MPIIX=y
+CONFIG_ATA_GENERIC=y
+CONFIG_MD=y
+CONFIG_BLK_DEV_MD=y
+CONFIG_BLK_DEV_DM=y
+CONFIG_DM_MIRROR=y
+CONFIG_DM_ZERO=y
+CONFIG_FUSION=y
+CONFIG_FUSION_SAS=y
+CONFIG_MACINTOSH_DRIVERS=y
+CONFIG_MAC_EMUMOUSEBTN=y
+CONFIG_NETDEVICES=y
+CONFIG_NETCONSOLE=y
+CONFIG_BNX2=y
+CONFIG_TIGON3=y
+CONFIG_NET_TULIP=y
+CONFIG_E100=y
+CONFIG_E1000=y
+CONFIG_E1000E=y
+CONFIG_SKY2=y
+CONFIG_NE2K_PCI=y
+CONFIG_FORCEDETH=y
+CONFIG_8139TOO=y
+# CONFIG_8139TOO_PIO is not set
+CONFIG_R8169=y
+CONFIG_FDDI=y
+CONFIG_INPUT_POLLDEV=y
+CONFIG_INPUT_EVDEV=y
+CONFIG_INPUT_JOYSTICK=y
+CONFIG_INPUT_TABLET=y
+CONFIG_INPUT_TOUCHSCREEN=y
+CONFIG_INPUT_MISC=y
+# CONFIG_LEGACY_PTYS is not set
+CONFIG_SERIAL_NONSTANDARD=y
+CONFIG_SERIAL_8250=y
+CONFIG_SERIAL_8250_CONSOLE=y
+CONFIG_SERIAL_8250_NR_UARTS=32
+CONFIG_SERIAL_8250_EXTENDED=y
+CONFIG_SERIAL_8250_MANY_PORTS=y
+CONFIG_SERIAL_8250_SHARE_IRQ=y
+CONFIG_SERIAL_8250_DETECT_IRQ=y
+CONFIG_SERIAL_8250_RSA=y
+CONFIG_HW_RANDOM=y
+CONFIG_NVRAM=y
+CONFIG_HPET=y
+# CONFIG_HPET_MMAP is not set
+CONFIG_I2C_I801=y
+CONFIG_WATCHDOG=y
+CONFIG_AGP=y
+CONFIG_AGP_AMD64=y
+CONFIG_AGP_INTEL=y
+CONFIG_DRM=y
+CONFIG_DRM_I915=y
+CONFIG_FB_MODE_HELPERS=y
+CONFIG_FB_TILEBLITTING=y
+CONFIG_FB_EFI=y
+CONFIG_VGACON_SOFT_SCROLLBACK=y
+CONFIG_FRAMEBUFFER_CONSOLE=y
+CONFIG_LOGO=y
+# CONFIG_LOGO_LINUX_MONO is not set
+# CONFIG_LOGO_LINUX_VGA16 is not set
+CONFIG_SOUND=y
+CONFIG_SND=y
+CONFIG_SND_HRTIMER=y
+CONFIG_SND_SEQUENCER=y
+CONFIG_SND_SEQ_DUMMY=y
+CONFIG_SND_HDA_INTEL=y
+CONFIG_SND_HDA_HWDEP=y
+CONFIG_HIDRAW=y
+CONFIG_HID_A4TECH=y
+CONFIG_HID_APPLE=y
+CONFIG_HID_BELKIN=y
+CONFIG_HID_CHERRY=y
+CONFIG_HID_CHICONY=y
+CONFIG_HID_CYPRESS=y
+CONFIG_HID_EZKEY=y
+CONFIG_HID_GYRATION=y
+CONFIG_HID_ITE=y
+CONFIG_HID_KENSINGTON=y
+CONFIG_HID_LOGITECH=y
+CONFIG_LOGITECH_FF=y
+CONFIG_HID_REDRAGON=y
+CONFIG_HID_MICROSOFT=y
+CONFIG_HID_MONTEREY=y
+CONFIG_HID_NTRIG=y
+CONFIG_HID_PANTHERLORD=y
+CONFIG_PANTHERLORD_FF=y
+CONFIG_HID_PETALYNX=y
+CONFIG_HID_SAMSUNG=y
+CONFIG_HID_SONY=y
+CONFIG_HID_SUNPLUS=y
+CONFIG_HID_TOPSEED=y
+CONFIG_HID_PID=y
+CONFIG_USB_HIDDEV=y
+CONFIG_USB=y
+CONFIG_USB_ANNOUNCE_NEW_DEVICES=y
+CONFIG_USB_MON=y
+CONFIG_USB_XHCI_HCD=y
+CONFIG_USB_EHCI_HCD=y
+CONFIG_USB_OHCI_HCD=y
+CONFIG_USB_UHCI_HCD=y
+CONFIG_USB_PRINTER=y
+CONFIG_USB_STORAGE=y
+CONFIG_USB_UAS=y
+CONFIG_USB_TEST=y
+CONFIG_USB_EHSET_TEST_FIXTURE=y
+CONFIG_USB_LINK_LAYER_TEST=y
+CONFIG_MMC=y
+CONFIG_MMC_SDHCI=y
+CONFIG_MMC_SDHCI_PCI=y
+CONFIG_EDAC=y
+CONFIG_RTC_CLASS=y
+# CONFIG_RTC_HCTOSYS is not set
+CONFIG_DMADEVICES=y
+CONFIG_DMATEST=y
+CONFIG_VIRTIO_PCI=y
+CONFIG_VIRTIO_BALLOON=y
+CONFIG_VIRTIO_MMIO=y
+CONFIG_EEEPC_LAPTOP=y
+CONFIG_EXT3_FS=y
+CONFIG_EXT4_FS_POSIX_ACL=y
+CONFIG_EXT4_FS_SECURITY=y
+CONFIG_EXT4_KUNIT_TESTS=y
+CONFIG_BTRFS_FS=y
+CONFIG_QUOTA=y
+CONFIG_QUOTA_NETLINK_INTERFACE=y
+# CONFIG_PRINT_QUOTA_WARNING is not set
+CONFIG_QFMT_V2=y
+CONFIG_AUTOFS4_FS=y
+CONFIG_ISO9660_FS=y
+CONFIG_JOLIET=y
+CONFIG_ZISOFS=y
+CONFIG_MSDOS_FS=y
+CONFIG_VFAT_FS=y
+CONFIG_PROC_KCORE=y
+CONFIG_TMPFS_POSIX_ACL=y
+CONFIG_HUGETLBFS=y
+CONFIG_SQUASHFS=y
+CONFIG_SQUASHFS_XATTR=y
+CONFIG_SQUASHFS_4K_DEVBLK_SIZE=y
+CONFIG_NFS_FS=y
+CONFIG_NFS_V3_ACL=y
+CONFIG_NFS_V4=y
+CONFIG_ROOT_NFS=y
+CONFIG_NLS_DEFAULT="utf8"
+CONFIG_NLS_CODEPAGE_437=y
+CONFIG_NLS_ASCII=y
+CONFIG_NLS_ISO8859_1=y
+CONFIG_NLS_UTF8=y
+CONFIG_SECURITY=y
+CONFIG_SECURITY_NETWORK=y
+CONFIG_SECURITY_SELINUX=y
+CONFIG_SECURITY_SELINUX_BOOTPARAM=y
+CONFIG_SECURITY_SELINUX_DISABLE=y
+# CONFIG_CRYPTO_MANAGER_DISABLE_TESTS is not set
+CONFIG_CRC32_SELFTEST=y
+CONFIG_GLOB_SELFTEST=y
+CONFIG_STRING_SELFTEST=y
+CONFIG_PRINTK_TIME=y
+CONFIG_FRAME_WARN=1024
+CONFIG_MAGIC_SYSRQ=y
+CONFIG_DEBUG_RODATA_TEST=y
+CONFIG_DEBUG_STACK_USAGE=y
+CONFIG_DEBUG_MEMORY_INIT=y
+# CONFIG_SCHED_DEBUG is not set
+CONFIG_SCHEDSTATS=y
+CONFIG_PROVE_LOCKING=y
+CONFIG_DEBUG_LOCKDEP=y
+CONFIG_DEBUG_ATOMIC_SLEEP=y
+CONFIG_DEBUG_LOCKING_API_SELFTESTS=y
+CONFIG_WW_MUTEX_SELFTEST=y
+CONFIG_DEBUG_LIST=y
+CONFIG_RCU_EQS_DEBUG=y
+CONFIG_BLK_DEV_IO_TRACE=y
+CONFIG_PROVIDE_OHCI1394_DMA_INIT=y
+CONFIG_EARLY_PRINTK_DBGP=y
+CONFIG_DEBUG_TLBFLUSH=y
+CONFIG_DEBUG_BOOT_PARAMS=y
+CONFIG_DEBUG_NMI_SELFTEST=y
+CONFIG_UNWINDER_FRAME_POINTER=y
+CONFIG_KUNIT=y
+CONFIG_KUNIT_TEST=y
+CONFIG_TEST_SORT=y
+CONFIG_RBTREE_TEST=y
+CONFIG_INTERVAL_TREE_TEST=y
+CONFIG_TEST_BITMAP=y
+CONFIG_TEST_UUID=y
+CONFIG_TEST_FIRMWARE=y
+CONFIG_TEST_SYSCTL=y
+CONFIG_SYSCTL_KUNIT_TEST=y
+CONFIG_LIST_KUNIT_TEST=y
 
 _______________________________________________
 linux-arm-kernel mailing list
