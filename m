@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F68F177C18
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 17:40:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 728ED177C89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 17:59:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=obN6i6a3+eeSQisiOyn5dnBy4SHiq6Db3SoK5VRQ50Y=; b=LmeYa3RuW7yzC7
-	9lmFYOEejrC/XxhxgWuhFOUV6IDxQ+p+bxQi9Qa7fNAQFpx4CX+AkDIuEj9ft+9NFdmi6do3Q3JEH
-	nrRiexsg5BO7GF8n7t5KbYDGxvn7Xh8iqqIoCRPcxFWhgQ7q5xAWIAhTYA+wylhPmYwV53Ay/EwPk
-	yRqK3eJO3tk1EYod+s2akL7a9Q/otMFL1aXrSa7U39SxfXiiKZKwk/7aFeDZJG8J9Qwp10M8QTs/7
-	l7YqbUb4bEyjdqvqBr5mDyAscMr7DwHnD0dkCS8Bg6fWOs1GKIgLWzbZN431PRAyEpqPunEbHWG3s
-	9aQ6/4jlqLXI9S0FvhcA==;
+	List-Owner; bh=ibSK4wzWFZ0wPF9Imj/EwI40re1zbxxIjhMO8DoexEA=; b=e8Qn6GqZiTS82J
+	O9uXESjLl0yPHPssIVUorngmPD7HJWEldZDaEM2Y9fnFQIYySVH2li2m43icY7rB0iwSv9LRewTDZ
+	hPYlro0e/uGalszSOWBw9WonA025nUNFIB8JCFXmQ2khyHSIzQiwwjmdHsRTVeXSScZmPtEjxIL+0
+	V5I9+gwnYmeOC8GqRqvLWc9sIARvC/SAKVWRUuM1ZnPGFFrEdAxhDmJM/pxQyLMY6hMLlIlCiGuOh
+	/88ikHWDBY0zXKv+PrmhRysfrNodFypQwHm8bMARizfHjy7Qfcpjghm2TQeceMoxBoipUwtZWb66u
+	5emsPEUB59B8GbDke4Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Aaz-0000b2-1j; Tue, 03 Mar 2020 16:40:37 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Aar-0000Zc-Gb
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 16:40:31 +0000
-Received: from mail-qv1-f43.google.com ([209.85.219.43]) by
- mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MS1G7-1ixzcZ1hut-00TUpH for <linux-arm-kernel@lists.infradead.org>; Tue,
- 03 Mar 2020 17:40:24 +0100
-Received: by mail-qv1-f43.google.com with SMTP id u10so1975244qvi.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 08:40:24 -0800 (PST)
-X-Gm-Message-State: ANhLgQ1SIYNmYpHAVKUXO7IiU0C1D3RZlUhTle1r2j3QN28wry2h9PdP
- 5tsz/NXYyK5YZU+31RjhQqjjS/4V8V+k0lZsJuI=
-X-Google-Smtp-Source: ADFU+vvYQ6QVCbbYeP2nxaqh43OevpTsL0y0S8ngiP8jykUds6UhfBGQ9l/IAMS619c4WMkVGB7+nyot4prtq/wbHaI=
-X-Received: by 2002:ad4:52eb:: with SMTP id p11mr4409475qvu.211.1583253623303; 
- Tue, 03 Mar 2020 08:40:23 -0800 (PST)
+	id 1j9Asl-0006bA-FA; Tue, 03 Mar 2020 16:58:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9Ase-0006a7-RW
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 16:58:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E68952F;
+ Tue,  3 Mar 2020 08:58:49 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 9C2583F534; Tue,  3 Mar 2020 08:58:47 -0800 (PST)
+Date: Tue, 3 Mar 2020 16:58:45 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Ionela Voinescu <ionela.voinescu@arm.com>
+Subject: Re: [PATCH v5 1/7] arm64: add support for the AMU extension v1
+Message-ID: <20200303165845.GF823373@arrakis.emea.arm.com>
+References: <20200226132947.29738-1-ionela.voinescu@arm.com>
+ <20200226132947.29738-2-ionela.voinescu@arm.com>
+ <20200228103234.GA3904776@arrakis.emea.arm.com>
+ <20200302142326.GA15709@arm.com>
 MIME-Version: 1.0
-References: <2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com>
- <c1489f55-369d-2cff-ff36-b10fb5d3ee79@kernel.org>
- <8207cd51-5b94-2f15-de9f-d85c9c385bca@huawei.com>
- <6115fa56-a471-1e9f-edbb-e643fa4e7e11@kernel.org>
- <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
-In-Reply-To: <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Mar 2020 17:40:07 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
-Message-ID: <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
-Subject: Re: About commit "io: change inX() to have their own IO barrier
- overrides"
-To: John Garry <john.garry@huawei.com>
-X-Provags-ID: V03:K1:IKpZTjw3oApKR6s4104SJJV4ohSoCWBSycQ3pQ2Pja4OVyTQ2R6
- PQt/4sZSbQRfRZEwTth5mp3q9RAi8M5cfqfqb/J7mZu4tBDQovjRRDi6zvoTSfnXoBI3V0/
- /X+kfaX+Cp3PrQWUG+1BElN5hLMKgMrZrBd76KVV8CmqDtHfjm61TYCsojJYap6HJFqaVfA
- wMyK00hEiILTYWl1vhsfA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:scq7n7j3ikA=:wjORVE39cnBpJHGcqnwKGs
- qGjXZKCm/l2Th3QcIeeWAnycA269CCBj+FdALb57resxHegUFn3/bcQ7Z7GcjrU7jWK3r5JyF
- UL+WRkfEKNfc1oI8iSIpEa9YTotu87dt4LMVOvfuKZnjJi6MtxhdSOz/AAEgrynmmuQHCKvDq
- I78yREnCT5WV8crVk6aymBtPTlgsuSNguZDc0+f6hcWKToJ9JfV90Nj/ZiRvI7A8TSszyoiZ3
- Pq85owcWekxhl6BWd41g8ytNpkpUpWtvkrhlGhcc9B/x0Gy21Re1H/9l4RxKUfxinm6xSvxeQ
- 1T8GmLUagNX8p14GEZHhYomY8kX/T8DIikh37s8GqcNHV9RvA+tQr+lZWZbO0VWniFE4diDRM
- S2BKYLN+uF6NzdI8tKIRfYpVywOXwZ1FM9MtVzuI6yjCni0y7XpDejqHaDKJmBmKVNqtdtApp
- uM21zS5oE49NbUOnM+mzBM+wtbEtk8W3UB49zJI85cRgyN9iX8RjJMc3D5JvA+DOGn60VWsTa
- CGEjg2Ml4h2cUp0ucELvcJROTH0Bc1U+hABBajdAwsHRdMwW1qhCknodsIzM6gUQ1TGKGAVa8
- lSEoCSadFuQP9sNF3UU58echx6wMOpLWa1ZrJ54u/TwJ80j9NzqBcCP1dSINecTXI7r7QugiP
- JWt/mJqrNtPP1XM0ma0z4LpcWRjWVaqBfDGoUApQOJ0xRpM/c3zGIhPGNGYOs8pOR1+Tz3IOz
- jwd2R8Bj5jSiIjZDPPIzFXQ7pf7qc+lKUohZRfDFBS1H7TGgFpZLIyzA5/n2bFU3OhxXdis0S
- tJK7FuD+PSuktmJObrHPYoPVfbg4STRQhTW1modII493GHqAm0=
+Content-Disposition: inline
+In-Reply-To: <20200302142326.GA15709@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_084029_840922_7849504C 
-X-CRM114-Status: GOOD (  16.30  )
-X-Spam-Score: -1.5 (-)
+X-CRM114-CacheID: sfid-20200303_085852_981749_23EE776A 
+X-CRM114-Status: GOOD (  29.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,72 +64,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Sinan Kaya <okaya@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jiaxun Yang <jiaxun.yang@flygoat.com>, "xuwei \(O\)" <xuwei5@hisilicon.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, pkondeti@codeaurora.org,
+ maz@kernel.org, linux-pm@vger.kernel.org, linux-doc@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, dietmar.eggemann@arm.com,
+ peterz@infradead.org, mingo@redhat.com, viresh.kumar@linaro.org,
+ linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
+ valentin.schneider@arm.com, lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 3, 2020 at 2:18 PM John Garry <john.garry@huawei.com> wrote:
->
-> + linux-arch
->
-> For background, see
-> https://lore.kernel.org/lkml/2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com/
->
-> >>
-> >> So today only ARM64 uses it for this relevant code, above. But maybe
-> >> others in future will want to use it - any arch without native IO port
-> >> access is a candidate.
-> >
-> > I'm looking at Arnd here for help.
-> >
-> >>
-> >>>
-> >>> As long as the expectations are set, I see no reason why it shouldn't
-> >>> but, I'll let Arnd comment on it too.
-> >>
-> >> ok, so it looks reasonable consider replicating your change for ***, above.
->
-> To be clear, I would make this change in lib/logic_pio.c since
-> __io_pbr() can be overridden per-arch:
->
->   #define BUILD_LOGIC_IO(bw, type)
->   type logic_in##bw(unsigned long addr)
->   {
->        type ret = (type)~0;
->        if (addr < MMIO_UPPER_LIMIT) {
-> -          ret = read##bw(PCI_IOBASE + addr);
-> +          __io_pbr();
-> +          ret = __raw_read##bw(PCI_IOBASE + addr);
-> +          __io_pbr();
+On Mon, Mar 02, 2020 at 02:23:26PM +0000, Ionela Voinescu wrote:
+> On Friday 28 Feb 2020 at 10:32:34 (+0000), Catalin Marinas wrote:
+> > On Wed, Feb 26, 2020 at 01:29:41PM +0000, Ionela Voinescu wrote:
+> > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> > > index dbc22d684627..49f0c436928f 100644
+> > > --- a/Documentation/admin-guide/kernel-parameters.txt
+> > > +++ b/Documentation/admin-guide/kernel-parameters.txt
+> > > @@ -318,6 +318,15 @@
+> > >  			Format: <a>,<b>
+> > >  			See also Documentation/input/joydev/joystick.rst
+> > >  
+> > > +	amu=		[ARM64]
+> > > +			Enables or disables detection, enablement and access to
+> > > +			counter registers of the Activity Monitors Unit (AMU).
+> > > +			Format: amu=[0/1/on/off/y/n]
+> > > +			amu=[0/off/n] ensures access to AMU's counter registers
+> > > +				      is not attempted.
+> > > +			amu=[1/on/y] (default) enables detection and access to
+> > > +				     AMU's counter registers.
+> > 
+> > Is the only reason for this parameter to be able to disable the feature
+> > if the firmware doesn't support it? According to the Kconfig entry, you
+> > may see weird behaviour, firmware lock-up. Is the user supposed to try
+> > again with amu=0?
+> > 
+> > I'm not particularly fond of adding kernel parameters to work around
+> > broken firmware. We have other architecture features (e.g. PtrAuth) that
+> > need enabling at EL3 but we don't have such parameters. If it's likely
+> > that we hit this issue in practice, I'd rather have the firmware
+> > describing the presence of AMU via some DT entry. But I'd rather not
+> > bother at all, just get the vendors to update their firmware.
+> 
+> The firmware is supposed to do three actions for the kernel to be able
+> to use the counters: enable access to EL2/EL1, enable the counters and
+> save/restore the counters before/after core-off.
+[...]
+> Therefore, the amu kernel parameter is not only there if the firmware
+> does not support AMU, but it's also there if the firmware support is
+> broken/improper. The kernel parameter was added at Suzuki's
+> recommendation to be able to bypass its use in single kernels that are
+> meant to run on multiple platforms.
 
-__io_par();
+Single kernel images are supposed to run on multiple platforms while
+using the same command line arguments.
 
->        } else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {
->            struct logic_pio_hwaddr *entry = find_io_range(addr);
->
-> ...
->
-> (forgetting leX_to_cpu for the moment)
+There are many other ways firmware can screw up but I'm not keen on
+working on such assumption and preemptively adding options to ignore CPU
+features.
 
-Yes, I suppose this is required to get consistent behavior on arm64,
-which overrides __io_par() but not __io_ar(), with the current code
-the barrier after read is weaker when LOGIC_PIO is enabled than it
-is otherwise.
+> I also believe this is nice to have even for platforms that properly
+> support AMU, but they might not want the use of the feature in the
+> kernel.
 
-For other architectures, I suppose we would need another indirection
-level, as those can also override the default inb() itself to do something
-other than readb(PCI_IOBASE + addr), and that is not handled
-here either. We can do that if we need LOGIC_PIO on a second
-architecture.
+Are there any downsides to this feature? If you want it for testing
+purposes, i.e. different scheduler behaviour, fine by me but I'd change
+the text in the Kconfig to not even imply that firmware is allowed to be
+broken as we have a workaround in the kernel.
 
-       Arnd
+> > If we drop this parameter, patch 1 would need to change. Otherwise the
+> > patches look fine.
+> 
+> This being said, I agree this was added as a 'just in case' and not as
+> support for a likely scenario, therefore, I don't fully disagree to drop
+> it for now.
+
+If you need it for testing different scheduler behaviours, maybe
+big.LITTLE where AMU is only supported on some CPUs, than keep it. If
+it's only on the assumption that the firmware may be broken, please
+remove it.
+
+Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
