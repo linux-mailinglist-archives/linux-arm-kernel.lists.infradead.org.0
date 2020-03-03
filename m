@@ -2,50 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 624C617725A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 10:28:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 428621772D7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 10:46:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uTx7dzCNmbObIS1jaa6d3sfHdV6yDxA0OiqMYWEQra4=; b=ibhbj+/jZly3FWRS5fvyYoZC2
-	+eIPaChK0Hf6xO83GBGnr5jbEhb91yUSJqnUtDDZ3gsYkPgS7GU1ZzwbJ8W2ibjMJ9E/Z5/QQlnJO
-	wJBSiLZ5rBGmN0ZdVDiAiVR1vnJUEzCKoMAhphlCmoGmxg/wjFggCctqGAp+AJGilRu7cIlF1fb19
-	z7uKIdThmI//Ej+c6rmah861Ngfm0XH8GHYOj6DODjBCV5fMoY31IpVRszD0zvx3auyIz47EDr4jA
-	A0iVxCXBQUrSXL/LgMRuB8WYrUaGLMRZkywwKvVxgfr5M3IWJPGGLGPMJib+eDyI71swACA4ty3Ay
-	Uy0J3s6uw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hDjvjb/VyKfD3SnEJtvClUdJqLvHQ8xeLwMX3kp2a7I=; b=qnLNwldP9/Eaky
+	7YRbFoUAnV3QPNXoDv1pXIinks9540tj82mE4PD7O1dikLJq9JQfHD0tnzVlpvO+8EhtbhrqNrtYQ
+	wnhzqNLh79rLlQn4gwsro1veh02u9r7dIaVzjLq34A0o1dqAwyNTcHN2ymCmHx1mcj3Zt6XArT7cn
+	U3lEelCN78ZWpog5Em4h6068aydi/7yyBCmHjpwG6IUMMu6LOIXikweoJpokISem6gA2sBw0Fd1mx
+	ffQMuTypS3FG1AlLRTLCM92eAqiWamp0F72UBi2yxifKHnlBHVSkP958kaTN11J34Q3WssN2fEyQt
+	FlvQeCk8otVB1oM1cDKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j93qw-0000i4-Aj; Tue, 03 Mar 2020 09:28:38 +0000
+	id 1j947k-0007w1-T5; Tue, 03 Mar 2020 09:46:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j93qn-0000h2-03
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 09:28:30 +0000
+ id 1j947e-0007vO-Ag
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 09:45:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 23A212F;
- Tue,  3 Mar 2020 01:28:27 -0800 (PST)
-Received: from [10.162.16.120] (a075563-lin.blr.arm.com [10.162.16.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9CCCD3F6C4;
- Tue,  3 Mar 2020 01:28:23 -0800 (PST)
-Subject: Re: [PATCH v5 16/17] arm64: compile the kernel with ptrauth return
- address signing
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
- <1581931668-11559-17-git-send-email-amit.kachhap@arm.com>
- <20200228182337.GK4019108@arrakis.emea.arm.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <f2107e77-dc1d-2be6-c334-4cd4bc714bb7@arm.com>
-Date: Tue, 3 Mar 2020 14:58:25 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7B40B2F;
+ Tue,  3 Mar 2020 01:45:53 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ F37D93F6C4; Tue,  3 Mar 2020 01:45:52 -0800 (PST)
+Date: Tue, 3 Mar 2020 09:45:50 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: FF <figure1802@126.com>
+Subject: Re: A quick question about ASID on KPTI
+Message-ID: <20200303094550.GA821972@arrakis.emea.arm.com>
+References: <c427a03.eed.1709def7541.Coremail.figure1802@126.com>
 MIME-Version: 1.0
-In-Reply-To: <20200228182337.GK4019108@arrakis.emea.arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <c427a03.eed.1709def7541.Coremail.figure1802@126.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_012829_084217_33E6A624 
-X-CRM114-Status: GOOD (  15.91  )
+X-CRM114-CacheID: sfid-20200303_014554_414040_90325536 
+X-CRM114-Status: GOOD (  12.55  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,52 +61,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Mar 03, 2020 at 09:08:00AM +0800, FF wrote:
+> i am look at some patches about the KPTI on ARM64, a quick question
+> about the ASDI on KPTI:
+> On KPIT, it will allocate a pairs ASID for a process, when the process
+> running on kernel space, it will set the even ASID into TTBR1 register
+> in tramp_map_kernel function, when the process running on User space,
+> it will set the odd ASID into the TTBR1 register in tramp_unmap_kernel
+> function.
 
+Correct.
 
-On 2/28/20 11:53 PM, Catalin Marinas wrote:
-> On Mon, Feb 17, 2020 at 02:57:47PM +0530, Amit Daniel Kachhap wrote:
->> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
->> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
->> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
->> +# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
->> +# to generate them and consequently to break the single image contract we pass it
->> +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
->> +# this option is not used.
->> +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
->> +KBUILD_CFLAGS += $(branch-prot-flags-y)
->> +endif
-> 
-> Does this work with the clang integrated assembler? AFAIK it ignores the
-> -Wa, though it may be fine with the instructions generated by the
-> compiler. (while we don't officially support it, we merged patches to
-> facilitate it).
+> my question is, when the process running in kernel space, if the
+> process want to access the userspace address by copy_to/from_user(),
+> the CPU will look-up the TLB with even ASID or odd ASID?
 
-Clang integrated assembler compiles some initial c files into object
-files and those contains the ptrauth instructions.
+The even ASID as that's the current one.
 
-As you said it ignores the -Wa flag.
+> if it use even ASID to look-up=A0 TLB for userspace, it will always TLB
+> miss, that will be performance impact. is it right?
 
-> 
-> Also, the above comment says that the -Wa option is used only when
-> building with clang. I don't see this being the case in the patch above.
+As with any other TLB miss, a TLB entry will be allocated and may or may
+not be removed, depending on what other activities happen on the CPU. In
+theory, there is a small performance impact but I don't think it's
+significant in practice (with real-world benchmarks).
 
-I will update the comments.
+-- =
 
-> 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
