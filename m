@@ -2,61 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DF9D176F29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 07:13:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF5FD176F33
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 07:16:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4M/vaUO17nH6IGLMra3dufmAIqVo68ijskIAXJ8yP9M=; b=l3UtwFl1nMzgkejOVHPITouU6
-	9kIK/7l9dJtPaVGP9t5EyUv07jk33b5uxfCO7t1tYY62VaykuGRSCGr8TNTQVjcKIwl5AdksA8Tak
-	dFcEVi6+PqFiAow3FZWiLPHyNe0OdP35UyBzMSLbufqOVaiE94MP+QmWah1IN5hB9U+aXxYAvPV2E
-	3sO9T7rImIyqylLhgccGkdo+wqK8IM6ml14dPO67LeO6qvz1zuETY33uNP8t03oOEQTRXGdZMETv2
-	0g5Ixxn1p37baIJr8tubIEvEXKYRp9kSydI5dEnkT8rd+Uq1fbMr1aRwoN/f6nGbQyD7oQ6gYrcdO
-	wVBdgHBSg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jyE5+w35l2wxWtmVeRamaYEPPBqMtPgR/+WN3lDZtiA=; b=WDlxQij2SgumzW
+	hGhik8aZLKmxvSO181ejQ+z/f5tJZibZ0FYMW3r3sj4KGDN+TkhfxtAVFrIorkJZMAyseR517ahRC
+	JhNVrGfZndf/HCGa0rFowTXU1qN8kcPTAkGEBlujNkb7IVjO6YDCaugKfCitFhk966jZBcTam1Gb4
+	ZnftgM239JWGakkvJs7IXQxrWnxONAqT6W5+3dgQ6mzGnXCVa9jIqvMmG2PF4aJr3zqe8uXhO9m0a
+	4LUEQJP4oJb1/fWRd0uiNzrPP27P4vSGUZKnU8M7X1oWaO078JFQjXvEbGuCfYxiCn7bqFbYbtzPW
+	onpwVa2fCLLviSttelEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j90o1-0005b2-Ck; Tue, 03 Mar 2020 06:13:25 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j90qk-0007PE-A4; Tue, 03 Mar 2020 06:16:14 +0000
+Received: from mail-eopbgr80058.outbound.protection.outlook.com ([40.107.8.58]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j90ns-0005aA-Hi
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 06:13:18 +0000
-Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <o.rempel@pengutronix.de>)
- id 1j90no-0001mg-7S; Tue, 03 Mar 2020 07:13:12 +0100
-Subject: Re: [PATCH V4 2/4] mailbox: imx: restructure code to make easy for
- new MU
-To: peng.fan@nxp.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- jassisinghbrar@gmail.com
-References: <1583200380-15623-1-git-send-email-peng.fan@nxp.com>
- <1583200380-15623-3-git-send-email-peng.fan@nxp.com>
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-Message-ID: <f4b3384d-ee24-e254-2799-69e57625995b@pengutronix.de>
-Date: Tue, 3 Mar 2020 07:13:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <1583200380-15623-3-git-send-email-peng.fan@nxp.com>
+ id 1j90qc-0007Nk-7a
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 06:16:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hwd8hbTs6+x1c0JHE2bAAcweuQd2A1jsM6O0Q+WeGspavKf7vBOxIOSqKqjT4Rodo51BBrQo41R8toWWNKzLt+Wy/YR/cOfOG0eiqiQg7VZzgLtcdQAisTbXM5Z2DuOYcM4KbNuCQnK4sYxIpkdYd+27YUER/F3WDCtG5V8QGkn7UZNADllUsVmGc1H8qsCKLi5pJ9Q0Ivs2gXzvbEuxgsyB0P7+UrXk5QsKEAXom34z5Ij4hdru2vTEp6p34iVW0Pz+HHQtI9tR3uDUOSgxXRdQJlEdvOCdYJpMzm1vz6zZTyuUhjnKGdOqWOLaWLYzUSHd5Pg7Jzk3R6gbotoTaw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AQJH8eVrJTmgv9yhZbRpk0PKjGnyD0myRVUaM1wn4og=;
+ b=BM5QnQ+S18Bhjq0ZVQZfDUBEDHkaOZc8ecIEllmxIVBQ0f3wzWQpsORtg9bPeIQPVxXwa8AYsvun1M7LWTHovFoqNrZbkec/VvMU3GduY15bP2Q4uWTiFuhhsRiZ3U4zBBmnIz9MYQ80m1gcJ9gXz481SMBdatMu6hXjXXBugETpDlxIKHb1WfMhb9aJP8datGUpg0WXoe+6D0Fqe4SGEKjuANsKTiFC9RU3YytBiDZ/2oY6/hnEnV4LVERXIM9W70hkY5FoXVhL+0oYcZbmMUgZIhaFdNKRGp3d0HjOQPPC6sKokWbDyNgdPQMVu4hageV1s9HanSsVBxNR8lOm6Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AQJH8eVrJTmgv9yhZbRpk0PKjGnyD0myRVUaM1wn4og=;
+ b=D44FedmNw0KjmFpM0DTADyfGhV2lNnZQIJaKtX7EF7E7yunxotliUa34sOyp66jntOtnpdId8LoLZUbvLBNcGrudSjBwMHPE00mQCCXUQ5sRoCiZKapX+FnMO+KbGHs4VH1sr2cYwql7AR48684wK8ARu0xh0Qf3MsYP84HrkXI=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB6881.eurprd04.prod.outlook.com (52.132.215.145) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.15; Tue, 3 Mar 2020 06:16:03 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2772.019; Tue, 3 Mar 2020
+ 06:16:03 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: RE: [PATCH 0/3] Convert i.MX6Q cpufreq to use nvmem API
+Thread-Topic: [PATCH 0/3] Convert i.MX6Q cpufreq to use nvmem API
+Thread-Index: AQHV8QJkDs1b7gEXw0mPCPayRF0Q4Kg2W/SAgAABb8A=
+Date: Tue, 3 Mar 2020 06:16:03 +0000
+Message-ID: <AM0PR04MB4481FDAD041F6476FFFC0F6788E40@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1583201690-16068-1-git-send-email-peng.fan@nxp.com>
+ <20200303054547.4wpnzmgnuo7jd2qa@vireshk-i7>
+In-Reply-To: <20200303054547.4wpnzmgnuo7jd2qa@vireshk-i7>
+Accept-Language: en-US
 Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
-X-SA-Exim-Mail-From: o.rempel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 1aa7a1c6-2be4-4963-9232-08d7bf3a59fd
+x-ms-traffictypediagnostic: AM0PR04MB6881:|AM0PR04MB6881:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB68810DBBF10F0CBD7848960B88E40@AM0PR04MB6881.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 03319F6FEF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(366004)(346002)(376002)(136003)(39860400002)(189003)(199004)(7416002)(54906003)(86362001)(4326008)(316002)(33656002)(53546011)(8676002)(6506007)(71200400001)(81156014)(7696005)(81166006)(8936002)(6916009)(66476007)(5660300002)(52536014)(66946007)(64756008)(9686003)(66446008)(66556008)(55016002)(44832011)(2906002)(4744005)(76116006)(478600001)(186003)(26005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6881;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: kq9u7fWzbqJEWzfXOWhF1/ABQhfy3l4vnwsBdZ+UfYSR8n5RscehzaisJBg7BcwK8a4SwD1SpUL1t/iboBmg8YdoQynFMHoxTge6KaG5eBQ8bybs4CHh0xuY0GcJTviJtLIMh1UMFN3nSorrw2y7tkhKTwVbq5yC1wTz3ae84ZpoI5I2MjAtf1goK96ln2TLL3K1rfgRWtd/yc7LwNG+XVQXdAEkqFlqzUc9BxRrSsQ9IG55o6YRj6paCkmwXrZ4QU1vi5xyTM9NzMgkg7j9YREr7QSEfqc0xF0J8nWxOVsP0w01suBopVxaT+KaonhtJYt029In3F0+FZNYDERM82KWcwP8JBPGs9ushncMSqqdqULqycbxD4+UwxK9B2ZPL5PDu0LQXbkgEmWgkrEyL2OxL87mdo6pg+AV1gdM4fW7x4GJiKNn1fxT55ThRQ7D
+x-ms-exchange-antispam-messagedata: NJmObuxTmiL5veKVUIGku0zG+hJ9r+hk5h3j1pdHR2u8h9OlnYHtSyFcPbM+2PQW2TTVrDWwq2iIOz/D6pYyOOPLDw9UXLcZurUrg1FPd7jZOSjGEn+uSt8iobjE4ADtjos2lknTIvygtLiRUimUdw==
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1aa7a1c6-2be4-4963-9232-08d7bf3a59fd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Mar 2020 06:16:03.3943 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: rSLbgHuPHeijrHC80RaA146NQmNPPz3gJ6Wq0nW/aFswp3fCu0ALUBHJLRldxAHWbjvt/u8CvfHGzy3OPLdRKw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6881
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_221316_747694_FC5EA0EC 
-X-CRM114-Status: GOOD (  20.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_221606_277107_888A8BFA 
+X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.58 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,269 +122,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, Anson.Huang@nxp.com, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Anson Huang <anson.huang@nxp.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Viresh,
 
-
-On 03.03.20 02:52, peng.fan@nxp.com wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+> Subject: Re: [PATCH 0/3] Convert i.MX6Q cpufreq to use nvmem API
 > 
-> Add imx_mu_generic_tx for data send and imx_mu_generic_rx for interrupt
-> data receive.
+> On 03-03-20, 10:14, peng.fan@nxp.com wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > Use nvmem API is better compared with direclty accessing OCOTP registers.
+> > nvmem could handle OCOTP clk, defer probe.
+> >
+> > Patch 1/3 is dts changes to add nvmem related properties Patch 2/3 is
+> > a bug fix Patch 3/3 is convert to nvmem API
 > 
-> Pack original mu chans related code into imx_mu_init_generic
+> Should I apply patch 2 and 3 ? And you can take 1/3 via ARM Soc tree as this
+> shouldn't break anything.
+
+Please take patch 2 and 3. Without patch 1, it just use legacy method,
+not break things.
+
+Thanks,
+Peng.
+
 > 
-> With these, it will be a bit easy to introduce i.MX8/8X SCU type
-> MU dedicated to communicate with SCU.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
-> V4:
->   Pack MU chans init to imx_mu_init_generic
-> V3:
->   New patch, restructure code.
-> 
->   drivers/mailbox/imx-mailbox.c | 127 ++++++++++++++++++++++++++----------------
->   1 file changed, 78 insertions(+), 49 deletions(-)
-> 
-> diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-> index 2cdcdc5f1119..e98f3550f995 100644
-> --- a/drivers/mailbox/imx-mailbox.c
-> +++ b/drivers/mailbox/imx-mailbox.c
-> @@ -36,7 +36,12 @@ enum imx_mu_chan_type {
->   	IMX_MU_TYPE_RXDB,	/* Rx doorbell */
->   };
->   
-> +struct imx_mu_priv;
-> +struct imx_mu_con_priv;
-
-Please move imx_mu_dcfg below struct imx_mu_priv. It was my mistaked, i missed this point.
-
->   struct imx_mu_dcfg {
-> +	int (*tx)(struct imx_mu_priv *priv, struct imx_mu_con_priv *cp, void *data);
-> +	int (*rx)(struct imx_mu_priv *priv, struct imx_mu_con_priv *cp);
-
-please add init function here as well.
-
->   	u32	xTR[4];		/* Transmit Registers */
->   	u32	xRR[4];		/* Receive Registers */
->   	u32	xSR;		/* Status Register */
-> @@ -67,20 +72,6 @@ struct imx_mu_priv {
->   	bool			side_b;
->   };
->   
-> -static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
-> -	.xTR	= {0x0, 0x4, 0x8, 0xc},
-> -	.xRR	= {0x10, 0x14, 0x18, 0x1c},
-> -	.xSR	= 0x20,
-> -	.xCR	= 0x24,
-> -};
-> -
-> -static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
-> -	.xTR	= {0x20, 0x24, 0x28, 0x2c},
-> -	.xRR	= {0x40, 0x44, 0x48, 0x4c},
-> -	.xSR	= 0x60,
-> -	.xCR	= 0x64,
-> -};
-> -
->   static struct imx_mu_priv *to_imx_mu_priv(struct mbox_controller *mbox)
->   {
->   	return container_of(mbox, struct imx_mu_priv, mbox);
-> @@ -111,6 +102,40 @@ static u32 imx_mu_xcr_rmw(struct imx_mu_priv *priv, u32 set, u32 clr)
->   	return val;
->   }
->   
-> +static int imx_mu_generic_tx(struct imx_mu_priv *priv,
-> +			     struct imx_mu_con_priv *cp,
-> +			     void *data)
-> +{
-> +	u32 *arg = data;
-> +
-> +	switch (cp->type) {
-> +	case IMX_MU_TYPE_TX:
-> +		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
-> +		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
-> +		break;
-> +	case IMX_MU_TYPE_TXDB:
-> +		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIRn(cp->idx), 0);
-> +		tasklet_schedule(&cp->txdb_tasklet);
-> +		break;
-> +	default:
-> +		dev_warn_ratelimited(priv->dev, "Send data on wrong channel type: %d\n", cp->type);
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx_mu_generic_rx(struct imx_mu_priv *priv,
-> +			     struct imx_mu_con_priv *cp)
-> +{
-> +	u32 dat;
-> +
-> +	dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
-> +	mbox_chan_received_data(cp->chan, (void *)&dat);
-> +
-> +	return 0;
-> +}
-> +
->   static void imx_mu_txdb_tasklet(unsigned long data)
->   {
->   	struct imx_mu_con_priv *cp = (struct imx_mu_con_priv *)data;
-> @@ -123,7 +148,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
->   	struct mbox_chan *chan = p;
->   	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
->   	struct imx_mu_con_priv *cp = chan->con_priv;
-> -	u32 val, ctrl, dat;
-> +	u32 val, ctrl;
->   
->   	ctrl = imx_mu_read(priv, priv->dcfg->xCR);
->   	val = imx_mu_read(priv, priv->dcfg->xSR);
-> @@ -152,8 +177,7 @@ static irqreturn_t imx_mu_isr(int irq, void *p)
->   		imx_mu_xcr_rmw(priv, 0, IMX_MU_xCR_TIEn(cp->idx));
->   		mbox_chan_txdone(chan, 0);
->   	} else if (val == IMX_MU_xSR_RFn(cp->idx)) {
-> -		dat = imx_mu_read(priv, priv->dcfg->xRR[cp->idx]);
-> -		mbox_chan_received_data(chan, (void *)&dat);
-> +		priv->dcfg->rx(priv, cp);
->   	} else if (val == IMX_MU_xSR_GIPn(cp->idx)) {
->   		imx_mu_write(priv, IMX_MU_xSR_GIPn(cp->idx), priv->dcfg->xSR);
->   		mbox_chan_received_data(chan, NULL);
-> @@ -169,23 +193,8 @@ static int imx_mu_send_data(struct mbox_chan *chan, void *data)
->   {
->   	struct imx_mu_priv *priv = to_imx_mu_priv(chan->mbox);
->   	struct imx_mu_con_priv *cp = chan->con_priv;
-> -	u32 *arg = data;
->   
-> -	switch (cp->type) {
-> -	case IMX_MU_TYPE_TX:
-> -		imx_mu_write(priv, *arg, priv->dcfg->xTR[cp->idx]);
-> -		imx_mu_xcr_rmw(priv, IMX_MU_xCR_TIEn(cp->idx), 0);
-> -		break;
-> -	case IMX_MU_TYPE_TXDB:
-> -		imx_mu_xcr_rmw(priv, IMX_MU_xCR_GIRn(cp->idx), 0);
-> -		tasklet_schedule(&cp->txdb_tasklet);
-> -		break;
-> -	default:
-> -		dev_warn_ratelimited(priv->dev, "Send data on wrong channel type: %d\n", cp->type);
-> -		return -EINVAL;
-> -	}
-> -
-> -	return 0;
-> +	return priv->dcfg->tx(priv, cp, data);
->   }
->   
->   static int imx_mu_startup(struct mbox_chan *chan)
-> @@ -280,6 +289,22 @@ static struct mbox_chan * imx_mu_xlate(struct mbox_controller *mbox,
->   
->   static void imx_mu_init_generic(struct imx_mu_priv *priv)
->   {
-> +	unsigned int i;
-> +
-> +	for (i = 0; i < IMX_MU_CHANS; i++) {
-> +		struct imx_mu_con_priv *cp = &priv->con_priv[i];
-> +
-> +		cp->idx = i % 4;
-> +		cp->type = i >> 2;
-> +		cp->chan = &priv->mbox_chans[i];
-> +		priv->mbox_chans[i].con_priv = cp;
-> +		snprintf(cp->irq_desc, sizeof(cp->irq_desc),
-> +			 "imx_mu_chan[%i-%i]", cp->type, cp->idx);
-> +	}
-> +
-> +	priv->mbox.num_chans = IMX_MU_CHANS;
-> +	priv->mbox.of_xlate = imx_mu_xlate;
-> +
->   	if (priv->side_b)
->   		return;
->   
-> @@ -293,7 +318,6 @@ static int imx_mu_probe(struct platform_device *pdev)
->   	struct device_node *np = dev->of_node;
->   	struct imx_mu_priv *priv;
->   	const struct imx_mu_dcfg *dcfg;
-> -	unsigned int i;
->   	int ret;
->   
->   	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> @@ -329,32 +353,19 @@ static int imx_mu_probe(struct platform_device *pdev)
->   		return ret;
->   	}
->   
-> -	for (i = 0; i < IMX_MU_CHANS; i++) {
-> -		struct imx_mu_con_priv *cp = &priv->con_priv[i];
-> -
-> -		cp->idx = i % 4;
-> -		cp->type = i >> 2;
-> -		cp->chan = &priv->mbox_chans[i];
-> -		priv->mbox_chans[i].con_priv = cp;
-> -		snprintf(cp->irq_desc, sizeof(cp->irq_desc),
-> -			 "imx_mu_chan[%i-%i]", cp->type, cp->idx);
-> -	}
-> -
->   	priv->side_b = of_property_read_bool(np, "fsl,mu-side-b");
->   
-> +	imx_mu_init_generic(priv);
-
-please use priv->dcfg->init(priv);
-
-> +
->   	spin_lock_init(&priv->xcr_lock);
->   
->   	priv->mbox.dev = dev;
->   	priv->mbox.ops = &imx_mu_ops;
->   	priv->mbox.chans = priv->mbox_chans;
-> -	priv->mbox.num_chans = IMX_MU_CHANS;
-> -	priv->mbox.of_xlate = imx_mu_xlate;
->   	priv->mbox.txdone_irq = true;
->   
->   	platform_set_drvdata(pdev, priv);
->   
-> -	imx_mu_init_generic(priv);
-> -
->   	return devm_mbox_controller_register(dev, &priv->mbox);
->   }
->   
-> @@ -367,6 +378,24 @@ static int imx_mu_remove(struct platform_device *pdev)
->   	return 0;
->   }
->   
-> +static const struct imx_mu_dcfg imx_mu_cfg_imx6sx = {
-> +	.tx	= imx_mu_generic_tx,
-> +	.rx	= imx_mu_generic_rx,
-> +	.xTR	= {0x0, 0x4, 0x8, 0xc},
-> +	.xRR	= {0x10, 0x14, 0x18, 0x1c},
-> +	.xSR	= 0x20,
-> +	.xCR	= 0x24,
-> +};
-> +
-> +static const struct imx_mu_dcfg imx_mu_cfg_imx7ulp = {
-> +	.tx	= imx_mu_generic_tx,
-> +	.rx	= imx_mu_generic_rx,
-> +	.xTR	= {0x20, 0x24, 0x28, 0x2c},
-> +	.xRR	= {0x40, 0x44, 0x48, 0x4c},
-> +	.xSR	= 0x60,
-> +	.xCR	= 0x64,
-> +};
-> +
->   static const struct of_device_id imx_mu_dt_ids[] = {
->   	{ .compatible = "fsl,imx7ulp-mu", .data = &imx_mu_cfg_imx7ulp },
->   	{ .compatible = "fsl,imx6sx-mu", .data = &imx_mu_cfg_imx6sx },
-> 
-
-Kind regards,
-Oleksij Rempel
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+> --
+> viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
