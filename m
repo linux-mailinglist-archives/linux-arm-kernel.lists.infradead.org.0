@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 656ED177E4F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 19:14:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E5AC177E53
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 19:15:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gANsP/5OkKbmekwZ6j+xlNvetsvvGUjNd7BlX4Twwl8=; b=JAbXhlfNq0n+7lvKl48sG614R
-	BNx+T6H5tHPU/TkmDQOPY4TP3cWI4NGJEGjxK3wZ0HymaXzdvfNrHlf4Ph/hUku8+dSNrktRw7q0E
-	YhZFDXavm56J1rLkmAUzyiO9Xl7j0JxIIH/RTszSDeOvL4Ym8QAGTvkXrjD3dzNJe/GjZLgabJki5
-	2vu3vo1arcM/Z4x6OgiahtKeDQOEyZVzpHmDmnBouaYWKUhIwbr9tfKGGsxRSTO9Lt1Oxd2iByjT0
-	pTFkzlN4vBe0IjwED7XezkqeeopeLDJwLqynMWc5az62Ixm4xGBj1fWGyPcD4PQw+Q7wq4/4IVFj2
-	VTQDJvVDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hJcj5uaLtxAq0ypgbF71aKjWq7AdxBLT23laYoubAIs=; b=Mi1z2784qn8LxT
+	dLKFm5Sw4M1h3a1RYCiWO5+fEhTmDXSzW5yx4ferdDB6PFMDn/7MuA4NS6k1c4a+4Fi6csnVX3DeD
+	IRH4HcBvlE4qmzjb5jqXwXZ1LhfI2ZPk/sDWkMxXkcMtoJSTftTm2zjDuCGVDfE0846stz2iCvPe4
+	RDW4bNBTka+lUrk+bCOx2Rs35KMWlO1Su9ipDGd0qk9g2HxvL/jsPMD0iRl9eTLzOWEJ05W63HINV
+	w1KkEJHQB9ltrSi/qJrfkkJVtFPuI/rjKU3HDfg/ASvEncjZeR/lQ3F0iEZSpIfg3GeMLuBs3HzH3
+	lAW2ntmZG56atf9l6k3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9C3d-0007BL-Va; Tue, 03 Mar 2020 18:14:17 +0000
-Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
+	id 1j9C4e-0000IE-QQ; Tue, 03 Mar 2020 18:15:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9C3S-0007Az-8k
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 18:14:07 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e5e9e450000>; Tue, 03 Mar 2020 10:13:25 -0800
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Tue, 03 Mar 2020 10:14:06 -0800
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Tue, 03 Mar 2020 10:14:06 -0800
-Received: from [10.25.75.175] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Mar
- 2020 18:14:01 +0000
-Subject: Re: [PATCH V4 0/5] Add support for PCIe endpoint mode in Tegra194
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200303105418.2840-1-vidyas@nvidia.com>
- <20200303170103.GA9641@e121166-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <d1e3a42f-c179-fd03-fac0-7cd449580e5b@nvidia.com>
-Date: Tue, 3 Mar 2020 23:43:58 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j9C4Q-0008AE-Bb
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 18:15:09 +0000
+Received: from mail-wm1-f53.google.com (mail-wm1-f53.google.com
+ [209.85.128.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 873F02072D
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  3 Mar 2020 18:15:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583259305;
+ bh=zTcepHn6wp12/bnzGpuDY/OkQElcslnuRu8c8cz/4sw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=lln1IKjC8hcO1FvK69a9xsoo5ku/pZqHjXG//ldOlK5BumBH83v4F+p4VoNHixTX8
+ rXiQRWimL6nZ2L8Z3M1EuGlmQ66tPf7O5hu/wKtaA9YhvVzShrrvruVn0HHPM15MBF
+ 7ujvWcQN4kqJWrioWpOnbY+vbi7B3St49dSo+4TY=
+Received: by mail-wm1-f53.google.com with SMTP id 6so4386263wmi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Mar 2020 10:15:05 -0800 (PST)
+X-Gm-Message-State: ANhLgQ0yKdJTBA8zat7UqnNGCHZN0gbiTpd6AfBddU+OQ5dyAlsXKf1s
+ 64S2QbqgHTuvm8N1ZtfYBgCy17QeduCmY5jOcrsrtA==
+X-Google-Smtp-Source: ADFU+vvLqu9EC+sbMzgiH11TZES2hoJP/L61Llj57hEnJjMib2K6TFfwpHUwuVTNt8D/0eUROGhQUbW180w0H4iVWV8=
+X-Received: by 2002:a1c:2d88:: with SMTP id t130mr5792119wmt.68.1583259303830; 
+ Tue, 03 Mar 2020 10:15:03 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200303170103.GA9641@e121166-lin.cambridge.arm.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1583259205; bh=3LnLpivKc9OM9v6zIN6nnfGAUgWdkTbhy7nEOq/+B0s=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=B/CFMRuv7JlCYSA0Wkq/F0VWN5UFk8YsJJ7+/5gB9YNb3BHV0EEUhjRvSDFlhPE1+
- Qzlh1b1H8U5n9iTNleElru4F59pcRXY5ojnQzn277lQ0PXavk+os4CSAZHsXssjK2Z
- XMbEXXdI+HHCdX5El0mcj9kZTqAJDyoP//b7sXv52C2ZxMJjTKQBUrgjm9ShFosZek
- mLwUKDWXtWL13U5LU5A2S8ipJtX1bd361lpvufMmPwRKFAv8zdIDJ38Rj+lmRBxjQL
- PUS9x+kLY/Kfr2FbVOONBTxn8QoYolUksOn2WytXKafC/2/3tcH4qGyz9pMFJdpZgo
- vuBkUZAx1fn4A==
+References: <20200216182334.8121-1-ardb@kernel.org>
+ <20200216182334.8121-17-ardb@kernel.org>
+ <20200303160353.GA20372@roeck-us.net>
+ <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
+ <20200303175355.GA14065@roeck-us.net>
+ <CAKv+Gu_4tbdR8zF0eerZBbiFhCh_hg20rTovxqcaByW8J4b-UA@mail.gmail.com>
+In-Reply-To: <CAKv+Gu_4tbdR8zF0eerZBbiFhCh_hg20rTovxqcaByW8J4b-UA@mail.gmail.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Tue, 3 Mar 2020 19:14:52 +0100
+X-Gmail-Original-Message-ID: <CAKv+Gu8+JV0WLqNzX_cMGRwDH4vMS_v8a_uJ8ciDtgzGUVsmhA@mail.gmail.com>
+Message-ID: <CAKv+Gu8+JV0WLqNzX_cMGRwDH4vMS_v8a_uJ8ciDtgzGUVsmhA@mail.gmail.com>
+Subject: Re: [PATCH 16/18] efi: add 'runtime' pointer to struct efi
+To: Guenter Roeck <linux@roeck-us.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_101406_320981_24A6ECEE 
-X-CRM114-Status: GOOD (  16.07  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200303_101506_544306_C5E28402 
+X-CRM114-Status: GOOD (  27.69  )
+X-Spam-Score: -4.4 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-4.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,81 +91,430 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
- linux-tegra@vger.kernel.org, robh+dt@kernel.org, thierry.reding@gmail.com,
- linux-pci@vger.kernel.org, bhelgaas@google.com, andrew.murray@arm.com,
- jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: Arvind Sankar <nivedita@alum.mit.edu>,
+ linux-efi <linux-efi@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, 3 Mar 2020 at 19:01, Ard Biesheuvel <ardb@kernel.org> wrote:
+>
+> On Tue, 3 Mar 2020 at 18:54, Guenter Roeck <linux@roeck-us.net> wrote:
+> >
+> > On Tue, Mar 03, 2020 at 05:39:43PM +0100, Ard Biesheuvel wrote:
+> > > On Tue, 3 Mar 2020 at 17:03, Guenter Roeck <linux@roeck-us.net> wrote:
+> > > >
+> > > > On Sun, Feb 16, 2020 at 07:23:32PM +0100, Ard Biesheuvel wrote:
+> > > > > Instead of going through the EFI system table each time, just copy the
+> > > > > runtime services table pointer into struct efi directly. This is the
+> > > > > last use of the system table pointer in struct efi, allowing us to
+> > > > > drop it in a future patch, along with a fair amount of quirky handling
+> > > > > of the translated address.
+> > > > >
+> > > > > Note that usually, the runtime services pointer changes value during
+> > > > > the call to SetVirtualAddressMap(), so grab the updated value as soon
+> > > > > as that call returns. (Mixed mode uses a 1:1 mapping, and kexec boot
+> > > > > enters with the updated address in the system table, so in those cases,
+> > > > > we don't need to do anything here)
+> > > > >
+> > > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > > >
+> > > > This patch results in a crash with i386 efi boots if PAE (CONFIG_HIGHMEM64G=y)
+> > > > is enabled. Bisect and crash logs attached. There is also a warning which
+> > > > I don't recall seeing before, but it may not be caused by this patch
+> > > > (I didn' bisect the warning). The warning is seen with all i386:efi boots,
+> > > > not only when PAE is enabled. The warning log is also attached.
+> > > >
+> > > > Guenter
+> > > >
+> > > > ---
+> > > > Qemu command line:
+> > > >
+> > > > qemu-system-i386 -kernel arch/x86/boot/bzImage -M pc -cpu Westmere \
+> > > >         -no-reboot -m 256 -snapshot \
+> > > >         -bios OVMF-pure-efi-32.fd \
+> > > >         -usb -device usb-storage,drive=d0 \
+> > > >         -drive file=rootfs.ext2,if=none,id=d0,format=raw \
+> > > >         --append 'earlycon=uart8250,io,0x3f8,9600n8 panic=-1 slub_debug=FZPUA root=/dev/sda rootwait mem=256M console=ttyS0' \
+> > > >         -nographic
+> > > >
+> > >
+> > > I am failing to reproduce this. Do you have a .config and a copy of
+> > > OVMF-pure-efi-32.fd anywhere?
+> > >
+> >
+> > https://github.com/groeck/linux-build-test/blob/master/rootfs/firmware/OVMF-pure-efi-32.fd
+> > https://github.com/groeck/linux-build-test/blob/master/rootfs/x86/rootfs.ext2.gz
+> >
+> > Config file is below, shortened by "make savedefconfig" on the actual
+> > configuration used on next-20200303. Qemu version is 4.2, though that
+> > should not really matter. Note that it isn't necessary to boot from usb,
+> > that was just my test case.
+> >
+> > Here is a pointer to a complete log, showing the various conditions
+> > resulting in the warning and the crash:
+> >
+> > https://kerneltests.org/builders/qemu-x86-next/builds/1310/steps/qemubuildcommand_1/logs/stdio
+> >
+>
+> Thanks.
+>
+> How do I generate your exact .config from the below? I still cannot
+> reproduce with the different firmware.
+>
+> My qemu is 3.1 btw
+>
+
+Also, I don't see CONFIG_HIGHMEM64G=y anywhere below??
 
 
-On 3/3/2020 10:31 PM, Lorenzo Pieralisi wrote:
-> External email: Use caution opening links or attachments
-> 
-> 
-> On Tue, Mar 03, 2020 at 04:24:13PM +0530, Vidya Sagar wrote:
->> Tegra194 has three (C0, C4 & C5) dual mode PCIe controllers that can operate
->> either in root port mode or in end point mode but only in one mode at a time.
->> Platform P2972-0000 supports enabling endpoint mode for C5 controller. This
->> patch series adds support for PCIe endpoint mode in both the driver as well as
->> in DT.
->> This patch series depends on the changes made for Synopsys DesignWare endpoint
->> mode subsystem that are recently accepted.
->> @ https://patchwork.kernel.org/project/linux-pci/list/?series=202211
->> which in turn depends on the patch made by Kishon
->> @ https://patchwork.kernel.org/patch/10975123/
->> which is also under review.
->>
->> V4:
->> * Started using threaded irqs instead of kthreads
-> 
-> Hi Vidya,
-> 
-> sorry for the bother, may I ask you to rebase the series (after
-> answering Thierry's query) on top of my pci/endpoint branch please ?
-> 
-> Please resend it and I will merge patches {1,2,5} then.
-Sure.
-I just sent V5 series rebasing patches on top of your pci/endpoint branch.
-
-Thanks,
-Vidya Sagar
-> 
-> Thanks,
-> Lorenzo
-> 
->> V3:
->> * Re-ordered patches in the series to make the driver change as the last patch
->> * Took care of Thierry's review comments
->>
->> V2:
->> * Addressed Thierry & Bjorn's review comments
->> * Added EP mode specific binding documentation to already existing binding documentation file
->> * Removed patch that enables GPIO controller nodes explicitly as they are enabled already
->>
->> Vidya Sagar (5):
->>    soc/tegra: bpmp: Update ABI header
->>    dt-bindings: PCI: tegra: Add DT support for PCIe EP nodes in Tegra194
->>    arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
->>    arm64: tegra: Add support for PCIe endpoint mode in P2972-0000
->>      platform
->>    PCI: tegra: Add support for PCIe endpoint mode in Tegra194
->>
->>   .../bindings/pci/nvidia,tegra194-pcie.txt     | 125 +++-
->>   .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  18 +
->>   arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  99 +++
->>   drivers/pci/controller/dwc/Kconfig            |  30 +-
->>   drivers/pci/controller/dwc/pcie-tegra194.c    | 681 +++++++++++++++++-
->>   include/soc/tegra/bpmp-abi.h                  |  10 +-
->>   6 files changed, 918 insertions(+), 45 deletions(-)
->>
->> --
->> 2.17.1
->>
+>
+> >
+> > ---
+> > # CONFIG_LOCALVERSION_AUTO is not set
+> > CONFIG_SYSVIPC=y
+> > CONFIG_POSIX_MQUEUE=y
+> > CONFIG_USELIB=y
+> > CONFIG_AUDIT=y
+> > CONFIG_NO_HZ=y
+> > CONFIG_HIGH_RES_TIMERS=y
+> > CONFIG_PREEMPT_VOLUNTARY=y
+> > CONFIG_BSD_PROCESS_ACCT=y
+> > CONFIG_TASKSTATS=y
+> > CONFIG_TASK_DELAY_ACCT=y
+> > CONFIG_TASK_XACCT=y
+> > CONFIG_TASK_IO_ACCOUNTING=y
+> > CONFIG_LOG_BUF_SHIFT=18
+> > CONFIG_CGROUPS=y
+> > CONFIG_CGROUP_SCHED=y
+> > CONFIG_CGROUP_FREEZER=y
+> > CONFIG_CPUSETS=y
+> > CONFIG_CGROUP_CPUACCT=y
+> > CONFIG_NAMESPACES=y
+> > CONFIG_BLK_DEV_INITRD=y
+> > CONFIG_EXPERT=y
+> > # CONFIG_COMPAT_BRK is not set
+> > CONFIG_PROFILING=y
+> > CONFIG_SMP=y
+> > CONFIG_NR_CPUS=8
+> > CONFIG_X86_REROUTE_FOR_BROKEN_BOOT_IRQS=y
+> > CONFIG_MICROCODE_AMD=y
+> > CONFIG_X86_MSR=y
+> > CONFIG_X86_CPUID=y
+> > CONFIG_X86_CHECK_BIOS_CORRUPTION=y
+> > # CONFIG_MTRR_SANITIZER is not set
+> > CONFIG_EFI=y
+> > CONFIG_EFI_STUB=y
+> > CONFIG_HZ_1000=y
+> > CONFIG_KEXEC=y
+> > CONFIG_CRASH_DUMP=y
+> > CONFIG_HIBERNATION=y
+> > CONFIG_PM_DEBUG=y
+> > CONFIG_PM_TRACE_RTC=y
+> > CONFIG_ACPI_DOCK=y
+> > CONFIG_ACPI_BGRT=y
+> > CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE=y
+> > CONFIG_CPU_FREQ_GOV_PERFORMANCE=y
+> > CONFIG_CPU_FREQ_GOV_ONDEMAND=y
+> > CONFIG_X86_ACPI_CPUFREQ=y
+> > CONFIG_EFI_VARS=y
+> > CONFIG_EFI_CAPSULE_LOADER=y
+> > # CONFIG_KVM_WERROR is not set
+> > CONFIG_KPROBES=y
+> > CONFIG_JUMP_LABEL=y
+> > CONFIG_STATIC_KEYS_SELFTEST=y
+> > CONFIG_COMPAT_32BIT_TIME=y
+> > CONFIG_MODULES=y
+> > CONFIG_MODULE_UNLOAD=y
+> > CONFIG_MODULE_FORCE_UNLOAD=y
+> > # CONFIG_UNUSED_SYMBOLS is not set
+> > CONFIG_BINFMT_MISC=y
+> > CONFIG_NET=y
+> > CONFIG_PACKET=y
+> > CONFIG_UNIX=y
+> > CONFIG_XFRM_USER=y
+> > CONFIG_INET=y
+> > CONFIG_IP_MULTICAST=y
+> > CONFIG_IP_ADVANCED_ROUTER=y
+> > CONFIG_IP_MULTIPLE_TABLES=y
+> > CONFIG_IP_ROUTE_MULTIPATH=y
+> > CONFIG_IP_ROUTE_VERBOSE=y
+> > CONFIG_IP_PNP=y
+> > CONFIG_IP_PNP_DHCP=y
+> > CONFIG_IP_PNP_BOOTP=y
+> > CONFIG_IP_PNP_RARP=y
+> > CONFIG_IP_MROUTE=y
+> > CONFIG_IP_PIMSM_V1=y
+> > CONFIG_IP_PIMSM_V2=y
+> > CONFIG_SYN_COOKIES=y
+> > # CONFIG_INET_DIAG is not set
+> > CONFIG_TCP_CONG_ADVANCED=y
+> > # CONFIG_TCP_CONG_BIC is not set
+> > # CONFIG_TCP_CONG_WESTWOOD is not set
+> > # CONFIG_TCP_CONG_HTCP is not set
+> > CONFIG_TCP_MD5SIG=y
+> > CONFIG_INET6_AH=y
+> > CONFIG_INET6_ESP=y
+> > CONFIG_NETLABEL=y
+> > CONFIG_NETFILTER=y
+> > # CONFIG_NETFILTER_ADVANCED is not set
+> > CONFIG_NF_CONNTRACK=y
+> > CONFIG_NF_CONNTRACK_FTP=y
+> > CONFIG_NF_CONNTRACK_IRC=y
+> > CONFIG_NF_CONNTRACK_SIP=y
+> > CONFIG_NF_CT_NETLINK=y
+> > CONFIG_NF_NAT=y
+> > CONFIG_NETFILTER_XT_TARGET_CONNSECMARK=y
+> > CONFIG_NETFILTER_XT_TARGET_NFLOG=y
+> > CONFIG_NETFILTER_XT_TARGET_SECMARK=y
+> > CONFIG_NETFILTER_XT_TARGET_TCPMSS=y
+> > CONFIG_NETFILTER_XT_MATCH_CONNTRACK=y
+> > CONFIG_NETFILTER_XT_MATCH_POLICY=y
+> > CONFIG_NETFILTER_XT_MATCH_STATE=y
+> > CONFIG_IP_NF_IPTABLES=y
+> > CONFIG_IP_NF_FILTER=y
+> > CONFIG_IP_NF_TARGET_REJECT=y
+> > CONFIG_IP_NF_TARGET_MASQUERADE=m
+> > CONFIG_IP_NF_MANGLE=y
+> > CONFIG_IP6_NF_IPTABLES=y
+> > CONFIG_IP6_NF_MATCH_IPV6HEADER=y
+> > CONFIG_IP6_NF_FILTER=y
+> > CONFIG_IP6_NF_TARGET_REJECT=y
+> > CONFIG_IP6_NF_MANGLE=y
+> > CONFIG_NET_SCHED=y
+> > CONFIG_NET_EMATCH=y
+> > CONFIG_NET_CLS_ACT=y
+> > CONFIG_HAMRADIO=y
+> > CONFIG_CFG80211=y
+> > CONFIG_MAC80211=y
+> > CONFIG_MAC80211_LEDS=y
+> > CONFIG_RFKILL=y
+> > CONFIG_RFKILL_INPUT=y
+> > CONFIG_PCI=y
+> > CONFIG_PCIEPORTBUS=y
+> > CONFIG_PCI_MSI=y
+> > CONFIG_HOTPLUG_PCI=y
+> > CONFIG_PCCARD=y
+> > CONFIG_YENTA=y
+> > CONFIG_DEVTMPFS=y
+> > CONFIG_DEVTMPFS_MOUNT=y
+> > CONFIG_DEBUG_DEVRES=y
+> > CONFIG_PM_QOS_KUNIT_TEST=y
+> > CONFIG_CONNECTOR=y
+> > CONFIG_BLK_DEV_LOOP=y
+> > CONFIG_VIRTIO_BLK=y
+> > CONFIG_BLK_DEV_NVME=y
+> > CONFIG_PCI_ENDPOINT_TEST=y
+> > CONFIG_BLK_DEV_SD=y
+> > CONFIG_BLK_DEV_SR=y
+> > CONFIG_CHR_DEV_SG=y
+> > CONFIG_SCSI_CONSTANTS=y
+> > CONFIG_MEGARAID_SAS=y
+> > CONFIG_SCSI_SYM53C8XX_2=y
+> > CONFIG_SCSI_DC395x=y
+> > CONFIG_SCSI_AM53C974=y
+> > CONFIG_SCSI_VIRTIO=y
+> > CONFIG_ATA=y
+> > CONFIG_SATA_AHCI=y
+> > CONFIG_ATA_PIIX=y
+> > CONFIG_PATA_AMD=y
+> > CONFIG_PATA_OLDPIIX=y
+> > CONFIG_PATA_SCH=y
+> > CONFIG_PATA_MPIIX=y
+> > CONFIG_ATA_GENERIC=y
+> > CONFIG_MD=y
+> > CONFIG_BLK_DEV_MD=y
+> > CONFIG_BLK_DEV_DM=y
+> > CONFIG_DM_MIRROR=y
+> > CONFIG_DM_ZERO=y
+> > CONFIG_FUSION=y
+> > CONFIG_FUSION_SAS=y
+> > CONFIG_MACINTOSH_DRIVERS=y
+> > CONFIG_MAC_EMUMOUSEBTN=y
+> > CONFIG_NETDEVICES=y
+> > CONFIG_NETCONSOLE=y
+> > CONFIG_BNX2=y
+> > CONFIG_TIGON3=y
+> > CONFIG_NET_TULIP=y
+> > CONFIG_E100=y
+> > CONFIG_E1000=y
+> > CONFIG_E1000E=y
+> > CONFIG_SKY2=y
+> > CONFIG_NE2K_PCI=y
+> > CONFIG_FORCEDETH=y
+> > CONFIG_8139TOO=y
+> > # CONFIG_8139TOO_PIO is not set
+> > CONFIG_R8169=y
+> > CONFIG_FDDI=y
+> > CONFIG_INPUT_POLLDEV=y
+> > CONFIG_INPUT_EVDEV=y
+> > CONFIG_INPUT_JOYSTICK=y
+> > CONFIG_INPUT_TABLET=y
+> > CONFIG_INPUT_TOUCHSCREEN=y
+> > CONFIG_INPUT_MISC=y
+> > # CONFIG_LEGACY_PTYS is not set
+> > CONFIG_SERIAL_NONSTANDARD=y
+> > CONFIG_SERIAL_8250=y
+> > CONFIG_SERIAL_8250_CONSOLE=y
+> > CONFIG_SERIAL_8250_NR_UARTS=32
+> > CONFIG_SERIAL_8250_EXTENDED=y
+> > CONFIG_SERIAL_8250_MANY_PORTS=y
+> > CONFIG_SERIAL_8250_SHARE_IRQ=y
+> > CONFIG_SERIAL_8250_DETECT_IRQ=y
+> > CONFIG_SERIAL_8250_RSA=y
+> > CONFIG_HW_RANDOM=y
+> > CONFIG_NVRAM=y
+> > CONFIG_HPET=y
+> > # CONFIG_HPET_MMAP is not set
+> > CONFIG_I2C_I801=y
+> > CONFIG_WATCHDOG=y
+> > CONFIG_AGP=y
+> > CONFIG_AGP_AMD64=y
+> > CONFIG_AGP_INTEL=y
+> > CONFIG_DRM=y
+> > CONFIG_DRM_I915=y
+> > CONFIG_FB_MODE_HELPERS=y
+> > CONFIG_FB_TILEBLITTING=y
+> > CONFIG_FB_EFI=y
+> > CONFIG_VGACON_SOFT_SCROLLBACK=y
+> > CONFIG_FRAMEBUFFER_CONSOLE=y
+> > CONFIG_LOGO=y
+> > # CONFIG_LOGO_LINUX_MONO is not set
+> > # CONFIG_LOGO_LINUX_VGA16 is not set
+> > CONFIG_SOUND=y
+> > CONFIG_SND=y
+> > CONFIG_SND_HRTIMER=y
+> > CONFIG_SND_SEQUENCER=y
+> > CONFIG_SND_SEQ_DUMMY=y
+> > CONFIG_SND_HDA_INTEL=y
+> > CONFIG_SND_HDA_HWDEP=y
+> > CONFIG_HIDRAW=y
+> > CONFIG_HID_A4TECH=y
+> > CONFIG_HID_APPLE=y
+> > CONFIG_HID_BELKIN=y
+> > CONFIG_HID_CHERRY=y
+> > CONFIG_HID_CHICONY=y
+> > CONFIG_HID_CYPRESS=y
+> > CONFIG_HID_EZKEY=y
+> > CONFIG_HID_GYRATION=y
+> > CONFIG_HID_ITE=y
+> > CONFIG_HID_KENSINGTON=y
+> > CONFIG_HID_LOGITECH=y
+> > CONFIG_LOGITECH_FF=y
+> > CONFIG_HID_REDRAGON=y
+> > CONFIG_HID_MICROSOFT=y
+> > CONFIG_HID_MONTEREY=y
+> > CONFIG_HID_NTRIG=y
+> > CONFIG_HID_PANTHERLORD=y
+> > CONFIG_PANTHERLORD_FF=y
+> > CONFIG_HID_PETALYNX=y
+> > CONFIG_HID_SAMSUNG=y
+> > CONFIG_HID_SONY=y
+> > CONFIG_HID_SUNPLUS=y
+> > CONFIG_HID_TOPSEED=y
+> > CONFIG_HID_PID=y
+> > CONFIG_USB_HIDDEV=y
+> > CONFIG_USB=y
+> > CONFIG_USB_ANNOUNCE_NEW_DEVICES=y
+> > CONFIG_USB_MON=y
+> > CONFIG_USB_XHCI_HCD=y
+> > CONFIG_USB_EHCI_HCD=y
+> > CONFIG_USB_OHCI_HCD=y
+> > CONFIG_USB_UHCI_HCD=y
+> > CONFIG_USB_PRINTER=y
+> > CONFIG_USB_STORAGE=y
+> > CONFIG_USB_UAS=y
+> > CONFIG_USB_TEST=y
+> > CONFIG_USB_EHSET_TEST_FIXTURE=y
+> > CONFIG_USB_LINK_LAYER_TEST=y
+> > CONFIG_MMC=y
+> > CONFIG_MMC_SDHCI=y
+> > CONFIG_MMC_SDHCI_PCI=y
+> > CONFIG_EDAC=y
+> > CONFIG_RTC_CLASS=y
+> > # CONFIG_RTC_HCTOSYS is not set
+> > CONFIG_DMADEVICES=y
+> > CONFIG_DMATEST=y
+> > CONFIG_VIRTIO_PCI=y
+> > CONFIG_VIRTIO_BALLOON=y
+> > CONFIG_VIRTIO_MMIO=y
+> > CONFIG_EEEPC_LAPTOP=y
+> > CONFIG_EXT3_FS=y
+> > CONFIG_EXT4_FS_POSIX_ACL=y
+> > CONFIG_EXT4_FS_SECURITY=y
+> > CONFIG_EXT4_KUNIT_TESTS=y
+> > CONFIG_BTRFS_FS=y
+> > CONFIG_QUOTA=y
+> > CONFIG_QUOTA_NETLINK_INTERFACE=y
+> > # CONFIG_PRINT_QUOTA_WARNING is not set
+> > CONFIG_QFMT_V2=y
+> > CONFIG_AUTOFS4_FS=y
+> > CONFIG_ISO9660_FS=y
+> > CONFIG_JOLIET=y
+> > CONFIG_ZISOFS=y
+> > CONFIG_MSDOS_FS=y
+> > CONFIG_VFAT_FS=y
+> > CONFIG_PROC_KCORE=y
+> > CONFIG_TMPFS_POSIX_ACL=y
+> > CONFIG_HUGETLBFS=y
+> > CONFIG_SQUASHFS=y
+> > CONFIG_SQUASHFS_XATTR=y
+> > CONFIG_SQUASHFS_4K_DEVBLK_SIZE=y
+> > CONFIG_NFS_FS=y
+> > CONFIG_NFS_V3_ACL=y
+> > CONFIG_NFS_V4=y
+> > CONFIG_ROOT_NFS=y
+> > CONFIG_NLS_DEFAULT="utf8"
+> > CONFIG_NLS_CODEPAGE_437=y
+> > CONFIG_NLS_ASCII=y
+> > CONFIG_NLS_ISO8859_1=y
+> > CONFIG_NLS_UTF8=y
+> > CONFIG_SECURITY=y
+> > CONFIG_SECURITY_NETWORK=y
+> > CONFIG_SECURITY_SELINUX=y
+> > CONFIG_SECURITY_SELINUX_BOOTPARAM=y
+> > CONFIG_SECURITY_SELINUX_DISABLE=y
+> > # CONFIG_CRYPTO_MANAGER_DISABLE_TESTS is not set
+> > CONFIG_CRC32_SELFTEST=y
+> > CONFIG_GLOB_SELFTEST=y
+> > CONFIG_STRING_SELFTEST=y
+> > CONFIG_PRINTK_TIME=y
+> > CONFIG_FRAME_WARN=1024
+> > CONFIG_MAGIC_SYSRQ=y
+> > CONFIG_DEBUG_RODATA_TEST=y
+> > CONFIG_DEBUG_STACK_USAGE=y
+> > CONFIG_DEBUG_MEMORY_INIT=y
+> > # CONFIG_SCHED_DEBUG is not set
+> > CONFIG_SCHEDSTATS=y
+> > CONFIG_PROVE_LOCKING=y
+> > CONFIG_DEBUG_LOCKDEP=y
+> > CONFIG_DEBUG_ATOMIC_SLEEP=y
+> > CONFIG_DEBUG_LOCKING_API_SELFTESTS=y
+> > CONFIG_WW_MUTEX_SELFTEST=y
+> > CONFIG_DEBUG_LIST=y
+> > CONFIG_RCU_EQS_DEBUG=y
+> > CONFIG_BLK_DEV_IO_TRACE=y
+> > CONFIG_PROVIDE_OHCI1394_DMA_INIT=y
+> > CONFIG_EARLY_PRINTK_DBGP=y
+> > CONFIG_DEBUG_TLBFLUSH=y
+> > CONFIG_DEBUG_BOOT_PARAMS=y
+> > CONFIG_DEBUG_NMI_SELFTEST=y
+> > CONFIG_UNWINDER_FRAME_POINTER=y
+> > CONFIG_KUNIT=y
+> > CONFIG_KUNIT_TEST=y
+> > CONFIG_TEST_SORT=y
+> > CONFIG_RBTREE_TEST=y
+> > CONFIG_INTERVAL_TREE_TEST=y
+> > CONFIG_TEST_BITMAP=y
+> > CONFIG_TEST_UUID=y
+> > CONFIG_TEST_FIRMWARE=y
+> > CONFIG_TEST_SYSCTL=y
+> > CONFIG_SYSCTL_KUNIT_TEST=y
+> > CONFIG_LIST_KUNIT_TEST=y
 
 _______________________________________________
 linux-arm-kernel mailing list
