@@ -2,86 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3202317723E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 10:19:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 624C617725A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 10:28:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6fc3zPFVrMo/A2jZqcNwAooZGEt5Wq3PM8ZB88rEJj4=; b=Ci+pVaDH+EuMiCswaLnoVHmIc
-	iZhWdotay4K40NUjfBAVoUxSRJ/ISFf0Iy+/yA88aR0aVLDxcBg6cdKVYjBnH0rh3bd3LvTWv5FZC
-	GHxquGM280+A7H6H2g/gyowCooTwHyAeycH+ngM2uTr2taO7vx9jCO4WZxemZAQKUVFYw2PfxGKD7
-	bMdSz4LF+WyTm8vaXRWnDiIdAI9udgvBhQ73Xu8jw0P6ibNbz2tNmJT7fsDuAXSl95d5ddIycXqML
-	IO6iewk8izR9R7aqz9+xlmfucSkP+d7ZSEVYUyB9TAwo3UOJ72mxUSpA/pLK5ZXCo+yQ/gDwc+akV
-	zaPzWVA9A==;
+	 bh=uTx7dzCNmbObIS1jaa6d3sfHdV6yDxA0OiqMYWEQra4=; b=ibhbj+/jZly3FWRS5fvyYoZC2
+	+eIPaChK0Hf6xO83GBGnr5jbEhb91yUSJqnUtDDZ3gsYkPgS7GU1ZzwbJ8W2ibjMJ9E/Z5/QQlnJO
+	wJBSiLZ5rBGmN0ZdVDiAiVR1vnJUEzCKoMAhphlCmoGmxg/wjFggCctqGAp+AJGilRu7cIlF1fb19
+	z7uKIdThmI//Ej+c6rmah861Ngfm0XH8GHYOj6DODjBCV5fMoY31IpVRszD0zvx3auyIz47EDr4jA
+	A0iVxCXBQUrSXL/LgMRuB8WYrUaGLMRZkywwKvVxgfr5M3IWJPGGLGPMJib+eDyI71swACA4ty3Ay
+	Uy0J3s6uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j93ht-0005eU-7x; Tue, 03 Mar 2020 09:19:17 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j93hi-0005dk-Ft
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 09:19:08 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0239Irjt116537;
- Tue, 3 Mar 2020 03:18:53 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1583227133;
- bh=QIoU5X0rCsPLgh6f6hX/m3Rq6EJWCP9dyqJ6Kiv4p2E=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=vAo/Y/csINLFU/q9QAPYTZ2JEwIeZJ4Y8IizD4GSMIueqqQDl4N0j5diJFBSGWrXK
- fOev58YKdHMS+vgGx81vAH77X+fLrdnIW+0tBpV8PdLeVf4Uc1yOgIvHrD9ROoVnRb
- PFA4ZnXCbJ6pFCABixP8qLsnZ5QlZd35ioPRr5B4=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0239IrMv043566
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 3 Mar 2020 03:18:53 -0600
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 3 Mar
- 2020 03:18:52 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 3 Mar 2020 03:18:52 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0239Ilcc029377;
- Tue, 3 Mar 2020 03:18:49 -0600
-Subject: Re: [PATCH 1/3] drm/omap: Prepare DSS for probing without legacy
- platform data
-To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20200224191230.30972-1-tony@atomide.com>
- <20200224191230.30972-2-tony@atomide.com>
-From: Tomi Valkeinen <tomi.valkeinen@ti.com>
-Message-ID: <d5ce999e-3b26-334e-fc62-adee4753a3ed@ti.com>
-Date: Tue, 3 Mar 2020 11:18:47 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1j93qw-0000i4-Aj; Tue, 03 Mar 2020 09:28:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j93qn-0000h2-03
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 09:28:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 23A212F;
+ Tue,  3 Mar 2020 01:28:27 -0800 (PST)
+Received: from [10.162.16.120] (a075563-lin.blr.arm.com [10.162.16.120])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9CCCD3F6C4;
+ Tue,  3 Mar 2020 01:28:23 -0800 (PST)
+Subject: Re: [PATCH v5 16/17] arm64: compile the kernel with ptrauth return
+ address signing
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
+ <1581931668-11559-17-git-send-email-amit.kachhap@arm.com>
+ <20200228182337.GK4019108@arrakis.emea.arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <f2107e77-dc1d-2be6-c334-4cd4bc714bb7@arm.com>
+Date: Tue, 3 Mar 2020 14:58:25 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20200224191230.30972-2-tony@atomide.com>
+In-Reply-To: <20200228182337.GK4019108@arrakis.emea.arm.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_011906_616518_8C40552C 
-X-CRM114-Status: GOOD (  19.98  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200303_012829_084217_33E6A624 
+X-CRM114-Status: GOOD (  15.91  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,63 +66,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- "Andrew F . Davis" <afd@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Faiz Abbas <faiz_abbas@ti.com>, Jyri Sarha <jsarha@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Suman Anna <s-anna@ti.com>,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 24/02/2020 21:12, Tony Lindgren wrote:
-> In order to probe display subsystem (DSS) components with ti-sysc
-> interconnect target module without legacy platform data and using
-> devicetree, we need to update dss probing a bit.
-> 
-> In the device tree, we will be defining the data also for the interconnect
-> target modules as DSS really is a private interconnect. There is some
-> information about that in 4460 TRM in "Figure 10-3. DSS Integration" for
-> example where it mentions "32-bit interconnect (SLX)".
-> 
-> The changes we need to make are:
-> 
-> 1. Parse also device tree subnodes for the compatible property fixup
-> 
-> 2. Update the component code to consider device tree subnodes
-> 
-> Cc: dri-devel@lists.freedesktop.org
-> Cc: Jyri Sarha <jsarha@ti.com>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
-> ---
-> 
-> This is needed for dropping DSS platform data that I'll be posting
-> seprately. If this looks OK, can you guys please test and ack?
-> 
-> ---
->   drivers/gpu/drm/omapdrm/dss/dss.c             | 25 ++++++++++++++++---
->   .../gpu/drm/omapdrm/dss/omapdss-boot-init.c   | 25 +++++++++++++------
->   2 files changed, 39 insertions(+), 11 deletions(-)
 
-Reviewed-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
 
-This doesn't conflict with drm-next (with Laurent's recent patches), so it should be fine for you to 
-have this in your branch.
+On 2/28/20 11:53 PM, Catalin Marinas wrote:
+> On Mon, Feb 17, 2020 at 02:57:47PM +0530, Amit Daniel Kachhap wrote:
+>> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+>> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+>> +# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
+>> +# to generate them and consequently to break the single image contract we pass it
+>> +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
+>> +# this option is not used.
+>> +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+>> +KBUILD_CFLAGS += $(branch-prot-flags-y)
+>> +endif
+> 
+> Does this work with the clang integrated assembler? AFAIK it ignores the
+> -Wa, though it may be fine with the instructions generated by the
+> compiler. (while we don't officially support it, we merged patches to
+> facilitate it).
 
-And not a biggie, but I wonder if the changes to these two files should be in separate patches, due 
-to omapdss-boot-init going away. Well, probably doesn't matter.
+Clang integrated assembler compiles some initial c files into object
+files and those contains the ptrauth instructions.
 
-  Tomi
+As you said it ignores the -Wa flag.
 
--- 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> 
+> Also, the above comment says that the -Wa option is used only when
+> building with clang. I don't see this being the case in the patch above.
+
+I will update the comments.
+
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
