@@ -2,77 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01F921785A5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 23:28:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9F881785AE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 23:30:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n+nrMd+SV8wi6kZYENrsQ/MCbEmm9n78zQ6oNS3VLio=; b=MVV1YsC7s9EGWy
-	Siao7MKgOrOy6QX6JxxpVi5UnvjsMNOsRLPsQBSXNpSjb61PonU7Zw1lcF1XXSsO1JukKmVyX5MiL
-	INmUqgj0alhUkpF4CydvLvJobbWhsDsJFRLoDuEFAqMkH1Nhi2I3WuUrmrYPKrYd0QZU+s0L+sJql
-	5uParbiuzEyI0A26QENLNoQ+MZfotXtv7ZFz43nPFq2FDMIt7K+W4zYPHXr26+Y5XXM2PSv5VIfcM
-	MWJgrIb3BWEBXYWYw3ey7TSdvsFXk/O2ATfh5HC4Ec8X3bL5t8zY2WCC1Yj1SXHGO+hK6txqQaTZJ
-	jRDWHYVy4IQPbnMJ3QnA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=m0Mt389UnBLoULNa7UUW4+wSGRMj3cKFjslfpNyWjiI=; b=INv11YErkz0si4bVdDkWIyigp
+	GgiR7e35lAujMVYhlyojSiVDfMJJuL9JjSRXIFwpMuSUKjReOWDXHc/Wg7YlkGCy+odsMizs2DfHV
+	uFotO2olo2FR8fOg3O1iRr+wHUPmS7eVThIL6U0kaBFUF6IqmaHtkrb1N1mDjgG9ee/PkdKv/xOX4
+	SKJRD3jj3vWVkZ7Bn4KYosaTSyG9fF6ZEydl52lTNjhgJN2xX3+P5x/2nJQvxfOjwWUYNt5vnn2PS
+	uK8jlRnbX+vygm6zeUNv0FHVn1gpJjahkdT5imPN/bS951t2umrHmA96I10G26QYWqk4k3X6gDRBn
+	C4mJXTJpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9G1I-0000hP-4P; Tue, 03 Mar 2020 22:28:08 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1j9G3a-0002JH-9X; Tue, 03 Mar 2020 22:30:30 +0000
+Received: from mail-eopbgr770057.outbound.protection.outlook.com
+ ([40.107.77.57] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9G1B-0000h3-IG
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 22:28:02 +0000
-Received: by mail-ot1-f67.google.com with SMTP id x97so42353ota.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 14:28:01 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4CvqyOnwi+PkF9Fgr16wftCTc9EZXvOILmAuEvAl6u4=;
- b=hJys8JmQqA9E14bNbXOwpmBkadhWD22dyF0bFHoX8mdWcKQfvf/U4ngwtTw6hUhcmF
- 85pI2FVf6okAitdpafyuMGgAnzr6vNl+DR4pCWhaSMfh3Sw+gHWSyuc9nsfBcculiN2B
- ZETwqPnnuzH0vuEvihitxyA9//xOeVdhKzmVIV6IYFl9rsbGqb94/0rIDIuRXgYOTx2t
- zwB25JpKJA03hLsQ9fg6j6GEArZHdquckhoOtQp7XvYKemh2x0ph/CMgb46N4rGfqcjM
- 6TOl+r1/pKGE8eIuUe4HxgU2xHZmLHUlhy+mT3ZMECcGJOrX7iQt6slFUHLwsGPYnJeY
- 4NrA==
-X-Gm-Message-State: ANhLgQ3bbukR/+GUUY7qUtWZOxvk+ptKOfNxVSO1UoxB9v9Go5koYqnD
- KEK1j34TzJtvAj7ARGZLlXAlSoFtacbg9/2KzlM=
-X-Google-Smtp-Source: ADFU+vsm8mIq56uAO4umHWhF6LNaWtfXccWDZb85aQiftvL3HYrQ23QOp0tfNIX9jse7T+Yb5W6IL5LTXXypLpgZBug=
-X-Received: by 2002:a05:6830:110:: with SMTP id
- i16mr62733otp.189.1583274480489; 
- Tue, 03 Mar 2020 14:28:00 -0800 (PST)
+ id 1j9G3Q-0002Ia-D3
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 22:30:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FG3usEO8TpBM61LPbNvqBvjyt8FcRKJLtCLc6JAfNIijtC6nws8F3P1ltreXLN3EjQBHvWZi13H4cKR12tyqzP4ac0FgaYuYz5/aQhkRWs3ZSxDz3+NmKsRNvxzBlCJsrhkkMelmRwfd7hMOUdbG7RH5PQLIj4cE2tsPBo2UaseLJ2mYbUeMoD8Z6C1DZVnKx7EvZMgI3f9+ALmP6d98CxPkkXXHn5EahXoqV+xOkMTLvFeYjLP7UvDsVAN5GcKDnrXLQoRa2/4PSWu1lX6CO+h2R+zRGOb7r2K0zpUnrOfMAzGr1pjt8BSnYrWk1lnyahrGLNwglco8ZtWMUtlW8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5L108zBW5eg6LCZFFxyABYk2mgxQhIC90mbNFBf6bB8=;
+ b=JuCve9Z4/584JJuUFjH9hFHNUrBqqZ0Shhp9Tr8e47HJLPz++LgIpf0eTeMkuocvUD2bON7MwEhfz4yY8WSsZ/zMbIMa90zUEQPxWnwsXrq+ZF1gjIrGM1/lf9Q28Y0ZKyn0atDtkpPEILOCERQyBjzR4l73EQHtDVHxHAK6WQwSf0lVuGSuCoZk1ybRR8n5wmsML2/FSUmoQyb/OG4d8SMjy08UopHFJRnsREsEzP3HT2dtWb1Bmg7f5E5VL2IA4XyuqOxzFnroYEw3Fcc5IiMzw31P+/7lcUisxjMhq4nGUlNjNIqaEqpGlwVcpRvyVEKIUZKXU18hjM+BJ1qd3w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=arm.com smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5L108zBW5eg6LCZFFxyABYk2mgxQhIC90mbNFBf6bB8=;
+ b=WdVoeNejtP/t2xzh33iZgzX7kP3HhX8FujTXUREPcaRkfDWrlJfYwH++7JkUAETx55f5itM71kWD5Ek8Rey2dvfUGLGT/H5oaHdBjX8pstS4Hhlvo0CHzVhQADSvehyP2UieJu0/YEmgPKwoiLxDXBA1VYcU5zL13aZIZXcIyCU=
+Received: from SN2PR01CA0072.prod.exchangelabs.com (2603:10b6:800::40) by
+ SN6PR02MB5181.namprd02.prod.outlook.com (2603:10b6:805:6d::22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.18; Tue, 3 Mar 2020 22:30:15 +0000
+Received: from SN1NAM02FT028.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:800:0:cafe::c6) by SN2PR01CA0072.outlook.office365.com
+ (2603:10b6:800::40) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.14 via Frontend
+ Transport; Tue, 3 Mar 2020 22:30:15 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ SN1NAM02FT028.mail.protection.outlook.com (10.152.72.105) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2793.11
+ via Frontend Transport; Tue, 3 Mar 2020 22:30:14 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1j9G3J-0000Xq-RN; Tue, 03 Mar 2020 14:30:13 -0800
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1j9G3E-0003lV-Lz; Tue, 03 Mar 2020 14:30:08 -0800
+Received: from xsj-pvapsmtp01 (mailhost.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 023MTwrf019326; 
+ Tue, 3 Mar 2020 14:29:58 -0800
+Received: from [172.19.160.178] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <jollys@xilinx.com>)
+ id 1j9G34-0003G9-34; Tue, 03 Mar 2020 14:29:58 -0800
+Subject: Re: [PATCH] arch: arm64: xilinx: Make zynqmp_firmware driver optional
+To: Sudeep Holla <sudeep.holla@arm.com>, Jolly Shah <jolly.shah@xilinx.com>
+References: <1582675460-26914-1-git-send-email-jolly.shah@xilinx.com>
+ <20200226114601.GB8613@bogus>
+From: Jolly Shah <jolly.shah@xilinx.com>
+Message-ID: <8aed558b-6ff8-5c7c-626e-17f982b12682@xilinx.com>
+Date: Tue, 3 Mar 2020 14:29:57 -0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
+ Gecko/20100101 Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200303203559.23995-1-ulf.hansson@linaro.org>
-In-Reply-To: <20200303203559.23995-1-ulf.hansson@linaro.org>
-From: "Rafael J. Wysocki" <rafael@kernel.org>
-Date: Tue, 3 Mar 2020 23:27:49 +0100
-Message-ID: <CAJZ5v0j86N5WgEJhCD6a7K2NG7NoK-wqG5h-vbc-Z7qH4fkySQ@mail.gmail.com>
-Subject: Re: [PATCH v2 0/4] cpuidle: psci: Some fixes when using the
- hierarchical layout
-To: Ulf Hansson <ulf.hansson@linaro.org>
+In-Reply-To: <20200226114601.GB8613@bogus>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(136003)(376002)(39860400002)(346002)(189003)(199004)(7416002)(81156014)(44832011)(31686004)(31696002)(81166006)(8676002)(336012)(4326008)(36756003)(186003)(5660300002)(26005)(356004)(316002)(107886003)(2906002)(70206006)(478600001)(53546011)(110136005)(9786002)(70586007)(426003)(2616005)(8936002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR02MB5181; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: c1db971c-dbc6-42fb-b335-08d7bfc2719e
+X-MS-TrafficTypeDiagnostic: SN6PR02MB5181:
+X-Microsoft-Antispam-PRVS: <SN6PR02MB5181A1D90FE8AA7685901CA8B8E40@SN6PR02MB5181.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
+X-Forefront-PRVS: 03319F6FEF
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: zkYRqTlypFytRXGSIbRdi5teuZVREpcejlP/ZNZHAD7x17JWXVAVu0fv/TsizYATJBoa11v//TjX4aY2pXV5TQQtkcYZXVTFDnOa7it0WzAybqhyxXTSHi+inRGhL0Prlh5NS/oa6twB2bhYvGRNyiUmUVExasjom7ubiwqieUPQUV4MmjYvzlXgw4ZvVjeLJ2mOhrInhQ+/joy+s7/UY6/rw8gTaZl5AsHLXHnZaUhItSiyHpGhJbRO8RGyDYG5yecE/WlDVF7YYr3POyYObkI6cY9vxOKxZ1TT/Jgo41xSwLoedsFGZE27Tn5I/WiVkqCfxGDVwPyNGC2nUCuKh21FvgHe1tJ8gn27PG4Xpt/XlcIDOQ+cjde+kQRLL1KjH2bSUbVQDvzI7SWX6zZG8c77+3IF4IzFiVeZThXeJYFKkznFohDO4p6nemStDR6p
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Mar 2020 22:30:14.5880 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c1db971c-dbc6-42fb-b335-08d7bfc2719e
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB5181
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_142801_602864_9E9E1B49 
-X-CRM114-Status: GOOD (  10.85  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200303_143020_448157_0C72C9F5 
+X-CRM114-Status: GOOD (  14.75  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rjwysocki[at]gmail.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.77.57 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,34 +140,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Tejas Patel <tejas.patel@xilinx.com>, keescook@chromium.org,
+ ard.biesheuvel@linaro.org, matt@codeblueprint.co.uk,
+ gregkh@linuxfoundation.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, rajanv@xilinx.com, mingo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 3, 2020 at 9:36 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> Changes in v2:
->         - Small changes to patch 3 and 4, see their changelogs.
->
-> While collaborating with Benjamin Gaignard to deploy the hierarchical layout
-> for an ST SoC, it has turned that I have clearly missed to test a couple of
-> corner cases in recently added support to the cpuidle-psci driver.
->
-> This series are fixing the issues we have found.
+Hi Sudeep,
 
-I can apply the whole series, but I'd need an ACK from the PSCI driver
-maintainers for that.
+ > ------Original Message------
+ > From: Sudeep.holla@arm.com <sudeep.holla@arm.com>
+ > Sent:  Wednesday, February 26, 2020 3:46AM
+ > To: Jolly Shah <jolly.shah@xilinx.com>
+ > Cc: Ard.biesheuvel@linaro.org <ard.biesheuvel@linaro.org>, 
+Mingo@kernel.org <mingo@kernel.org>, 'Greg Kh' 
+<gregkh@linuxfoundation.org>, Matt@codeblueprint.co.uk 
+<matt@codeblueprint.co.uk>, Hkallweit1@gmail.com <hkallweit1@gmail.com>, 
+Keescook@chromium.org <keescook@chromium.org>, Dmitry.torokhov@gmail.com 
+<dmitry.torokhov@gmail.com>, Michal Simek <michal.simek@xilinx.com>, 
+Rajan Vaja <rajanv@xilinx.com>, Linux-arm-kernel@lists.infradead.org 
+<linux-arm-kernel@lists.infradead.org>, Linux-kernel@vger.kernel.org 
+<linux-kernel@vger.kernel.org>, Tejas Patel <tejas.patel@xilinx.com>, 
+Sudeep.holla@arm.com <sudeep.holla@arm.com>
+ > Subject: Re: [PATCH] arch: arm64: xilinx: Make zynqmp_firmware driver 
+optional
+ >
+> On Tue, Feb 25, 2020 at 04:04:20PM -0800, Jolly Shah wrote:
+>> From: Tejas Patel <tejas.patel@xilinx.com>
+>>
+>> Make zynqmp_firmware driver as optional to disable it, if user don't
+>> want to use default zynqmp firmware interface.
+>>
+> 
+> This patch on it own is simple and looks fine. However I expect the
+> single binary to work with and without this option on the same platform.
+> If zynqmp_firmware is not critical, the system should continue to work
+> fine either way. The zynqmp_firmware driver should gracefully exit with
+> error(if any).
+> 
 
-Thanks!
+Sure. Will address it in next version.
+
+Thanks,
+Jolly Shah
+
+
+> --
+> Regards,
+> Sudeep
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
