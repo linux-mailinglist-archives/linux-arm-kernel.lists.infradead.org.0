@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E2461775FB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 13:35:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10FE17764C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 13:45:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W1tKCqUro3qzdkcrM02D0YthzzRx0eXwRq3ExalPloA=; b=BlpIJ+uoMausW7
-	yA1jKWKoIw1hAUyBxXAjDp7HX1905B/VQbl5f8vYOlkWpd2Zuv1BWv8ZNm6ThhHGGKUGTNYpdMTMQ
-	aDiE+NpgLxb3AXwfbe0d+tDyufBiz1h0+7yxIJX1RLkJ1cE7OUn9F5ig+gLTBWIklY2urAowPcrcT
-	VZaCqdUWJmTcTVFvwEMXM3rv4ip7LKO332AGNVQFzclysYYX3FttKBtszgAbmEcUWPGbq5gmxR36+
-	4cAUk7K1sNhT2zzbMbDOaIiYflQGD+5fvurICTVj0x3aBg/cbv+9+vXgiPlBh7yPvKJo5TuyAydKm
-	OTsGCK9L1xVMUuw/iSiQ==;
+	List-Owner; bh=Y4xORrdsWaj1x4l5CFiUBUrA8DSI3UrDCy1JVEZDlbE=; b=MsfuII720Ilpp7
+	aqO7AWaDXse33bLqMwMeXVzz/aH8CcbwR/g0Sg0dvpuNT4JSgMpxevhJ8Q/cmOdPuBvKTM4HkuAw9
+	7Mz2OcAI2m5kab2U8XTZQJMMN5iPYXzbcGGd6kNDMivCEYjD+d2fJ2WXq/WnXIrvovin1MV8+AHVy
+	wXnmsg4epzyIYGqhO7H5UcgEaeKsBH6VmgmEXdWyu33qIb05/OtMFvs4bwKvPA3ymegPGWrfwEvZC
+	PihkehC2zD4oh/zI8kSgyBgaWUsQ5wb5icOIC15MsnBIofceSxWzPMtpj/FtllZjsolgQNvEq6cLs
+	9VnPAKBF5rEnhejyuXQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j96la-0002BM-WF; Tue, 03 Mar 2020 12:35:19 +0000
+	id 1j96vl-00009Z-9X; Tue, 03 Mar 2020 12:45:49 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j96lM-0001S1-NN; Tue, 03 Mar 2020 12:35:06 +0000
-X-UUID: 6872938e8d904c29b3743d62fb299210-20200303
+ id 1j96v5-0007BX-1j; Tue, 03 Mar 2020 12:45:08 +0000
+X-UUID: e7ce8bb8d0e34e5a805366f7a15488a6-20200303
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=GaJflJ+2Rxwghotqp7Z2Yh0hJVib/vuajeUPw3js15E=; 
- b=mpBMebYpho4OkEg3yWqGSAinHDMl/Eqi1osDMMC8qHPfU8gXMARMPR/AJ/CwOd8c3XpRD8c4J42E9lFXuSOTLLVRBdkmaP7nXQhJ1sw5aGAMhdc5vM9ltkLG3voMQsP0QKafeUGArMiZXIvJ3RtN8ttjYgWRbxxfHFyeH1PcfpA=;
-X-UUID: 6872938e8d904c29b3743d62fb299210-20200303
+ bh=/8999aCb+RKIpV1G0FjTHSIgyuMbUnkxh715LDiAQiQ=; 
+ b=FKqyyGXJrBmIfD4MMwU87+QDnPfrwZb9mPpSLdc5RywVWsxP/tzpLrTCWaBWVJbd8O3CBwxItGKKXfUgDdkDccmzljMTz5TEkBzszzwDsDDB799jnPO+rWWZZQlngmifawUcEVUnv9NS/5g3DiFyG7c8HvLssshK7OVUFPOKLF8=;
+X-UUID: e7ce8bb8d0e34e5a805366f7a15488a6-20200303
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 890233465; Tue, 03 Mar 2020 04:34:58 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Mar 2020 04:35:48 -0800
+ with ESMTP id 896236609; Tue, 03 Mar 2020 04:45:01 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Mar 2020 04:34:59 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Mar 2020 20:34:05 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Mar 2020 20:34:02 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Mar 2020 20:35:37 +0800
+ Transport; Tue, 3 Mar 2020 20:35:38 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH v7 01/11] media: platform: Improve subscribe event flow for
- bug fixing
-Date: Tue, 3 Mar 2020 20:34:36 +0800
-Message-ID: <20200303123446.20095-2-xia.jiang@mediatek.com>
+Subject: [PATCH v7 02/11] media: platform: Improve queue set up flow for bug
+ fixing
+Date: Tue, 3 Mar 2020 20:34:37 +0800
+Message-ID: <20200303123446.20095-3-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200303123446.20095-1-xia.jiang@mediatek.com>
 References: <20200303123446.20095-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_043504_816794_3EE0616E 
-X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-CacheID: sfid-20200303_044507_116108_A56FDD9C 
+X-CRM114-Status: UNSURE (   9.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -100,30 +100,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let v4l2_ctrl_subscribe_event() do the job for other types except
-V4L2_EVENT_SOURCE_CHANGE.
+Add checking created buffer size follow in mtk_jpeg_queue_setup().
 
 Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
 ---
- drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-index ee802fc3bcdf..cde59275d49c 100644
+index cde59275d49c..da0dae4b0fc9 100644
 --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
 +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-@@ -446,9 +446,9 @@ static int mtk_jpeg_subscribe_event(struct v4l2_fh *fh,
- 	switch (sub->type) {
- 	case V4L2_EVENT_SOURCE_CHANGE:
- 		return v4l2_src_change_event_subscribe(fh, sub);
--	default:
--		return -EINVAL;
- 	}
-+
-+	return v4l2_ctrl_subscribe_event(fh, sub);
- }
+@@ -571,6 +571,13 @@ static int mtk_jpeg_queue_setup(struct vb2_queue *q,
+ 	if (!q_data)
+ 		return -EINVAL;
  
- static int mtk_jpeg_g_selection(struct file *file, void *priv,
++	if (*num_planes) {
++		for (i = 0; i < *num_planes; i++)
++			if (sizes[i] < q_data->sizeimage[i])
++				return -EINVAL;
++		return 0;
++	}
++
+ 	*num_planes = q_data->fmt->colplanes;
+ 	for (i = 0; i < q_data->fmt->colplanes; i++) {
+ 		sizes[i] = q_data->sizeimage[i];
 -- 
 2.18.0
 _______________________________________________
