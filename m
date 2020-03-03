@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 393801776EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:26:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B4D1177704
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:30:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RY/41ZNFwcYb2oYiAiquMYIv/Te/IeJCFxzE7sJAmus=; b=GqthMlgCxr3p7B6LnDAhLdslg
-	fgEEMIUlLBb/cYKrJVDYjC687JeRn8ka2SxE3U4z23yT1+D1VCCt03J+SrNUvzd+7gR6D4eOFivol
-	le4DN4+lNXf9EvI0voNpNi8dD7UkkfK770Asuw/Qy9oZiL8qz4ffouNszcvxf6Tnjje+ijfNaK/fI
-	0CPGGAYgw8dP56zSL0KZ/CXjcRRtVuT9VKX/lPRtXELp9/HnWallYWWmdmNXbl0CK8HTJQBh13Eig
-	KRB67BTFO4ZtIf4GNHOPehqXqdlqIZ33D2yZNvuKJJFm8c5zh+IwQgOHrdPVjLY3F/LSrOE98eD1a
-	Ben4kVPFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EoRBVrEVF6tZer8qKUynjenH4WJJTxOetRS8R9JtWMY=; b=BVlmqLQWnCkfal
+	f3ZuRM3+MB7LcJ+Um+/irD/ZqJzGwzYPVpkTQEqkkwPrNj+xDV4UTs+g4RoHejqj7QpRUWM7Xin0v
+	Jh7s52YcCh0G5bS+a4/5SbGKuVVJfepwl1UKk78QYYFAF0IdYwF2ld1mJWj/u0bCPhgHm/uahw3SJ
+	KldzCVbFzW0F3JlEXKhtvRuAa79BDQAswsf14aMo6QMcIrExq4fNXuViybU6lFUwU0PuvH5bS1gCs
+	DxkdzggpTRp959pz/obPLu7dimhzcE+iVDx+SSGJsKFNNFphCADN72IIgYtMPqktZTOfNbtIjNNma
+	nIDVYXQFQfrAwKLe723w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j97Yh-0007nj-9W; Tue, 03 Mar 2020 13:26:03 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1j97cX-0000G7-9I; Tue, 03 Mar 2020 13:30:01 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j97YX-0007mO-ID; Tue, 03 Mar 2020 13:25:55 +0000
-Received: by mail-lj1-x241.google.com with SMTP id 195so3530838ljf.3;
- Tue, 03 Mar 2020 05:25:53 -0800 (PST)
+ id 1j97cO-00007m-2O
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:29:53 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v2so4267133wrp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Mar 2020 05:29:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :mime-version; bh=LvhkOgXrb2OWkTpGBSsBoEw8KrqnEimtTkTstiOI43c=;
- b=hYJDMp6ZBiiCpZuyfa4Kz2PmSGYIgewTfo/Xg74GdOZeNH557gwFHz1Ux/J7L9VwW9
- tK2pqriZiq6Y8d0z5GrLxAqMTE93LoT6M4e4dUzy2YM5x1Yg/hc8f2UBdxBlOUMkNguF
- Lprsut29Afny2qKO6PdKwLtqt+TeOXttWQNubMom1wNcHQ7ufsr8VUc4a/7adBVh6/nt
- P62LLwNfZAXO68KuN9nEnxUnRcSYoQBH2Izt+1/PxAmi/44AATCGhflRAcWlXL4NaJv4
- qKYHN9AUT5zaoRcljLrUtX+VovwGVccxY6OU/XVzUpHQRnnOHQoPQHLGX1FMFCDmz3ae
- 3Uyg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hicGAyZ5CpHfmsbw4Kl9cPGuNpt8g32PuytU/UcEDL8=;
+ b=CV1elQMgZLhBpuFfL5DjPopxXqFjooMD4nNFS/3zO/mg/Y0/qPPlbnp33SZup+b6Xn
+ R0cE9JzQP4R+zgJnfJFQeNA7dybshykF3a2Ldu9qefqWJuiMHnZSFlgqQpSJtEsRyXab
+ qAGDJu1tgLL/6+jZDbiLPhijElTtaRK5jMYuE82RT5dC2hH+bHvuAP9EdL3BBOjQkmxT
+ IqqyonwLWKq58HGm6CL1MVGtHWy1+FBRHWDoYPPWKlVhP9gL8EQOMMNbZGEZrl7vM5RD
+ qncE4ethqNSxzsEB357sbW5pZKYYUinUGRcUtKfY65TpSbFeZUURs1wPKt6vMXtGRShc
+ wPsQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:mime-version;
- bh=LvhkOgXrb2OWkTpGBSsBoEw8KrqnEimtTkTstiOI43c=;
- b=GNUVzYFSh58kP223ILdUaqkB5tuL+dhxv5t1lNgMFdnLnFZUw1AnOeSi8XMWzK4XTw
- f6dF3rGFNs5paHFTMw7CVPrPB8m01r104LvP9hVzVpaFjTuUY6iMdvn3hqvy4/boZN9G
- VzBiwkYjOiuHZHuAKsiVJCV/A8LYQc0Nt8740PygpAl0erE1wQjQyl399CrjWwLr02XZ
- 252S8EFDYBQh9rjqGEH8tZxHhOqDi3xwFPSKixZ6DjkeeRJWOzHMPY81UtD/keRRco6/
- /+y0tIURBpSsbAt9rD+HZiWIN8rdweSjwxihVxzy06IrpXic7Ilx7oT24D1XTUq8YKSq
- eBag==
-X-Gm-Message-State: ANhLgQ0AD+qzbqQM+JQ5+cMknHrJm03WLnLBrzXToaWZ9A25brY2f2cM
- zZpuQsvCVh/FkQziX7AZCwU=
-X-Google-Smtp-Source: ADFU+vtPXg5XfV28+XzrSvE0RNfGX9/K/WgobUrhDLX7k3v3F4f7QxdZcQKIeJN8h74XuXLaZALphw==
-X-Received: by 2002:a2e:b8d0:: with SMTP id s16mr2334158ljp.32.1583241951651; 
- Tue, 03 Mar 2020 05:25:51 -0800 (PST)
-Received: from eldfell.localdomain ([194.136.85.206])
- by smtp.gmail.com with ESMTPSA id v15sm12066046lfg.51.2020.03.03.05.25.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 05:25:51 -0800 (PST)
-Date: Tue, 3 Mar 2020 15:25:41 +0200
-From: Pekka Paalanen <ppaalanen@gmail.com>
-To: Daniel Vetter <daniel@ffwll.ch>
-Subject: Re: [PATCH 1/4] drm/fourcc: Add modifier definitions for describing
- Amlogic Video Framebuffer Compression
-Message-ID: <20200303152541.68ab6f3d@eldfell.localdomain>
-In-Reply-To: <CAKMK7uFgQGrnEkXyac15Wz8Opg43RTa=5cX0nN5=E_omb8oY8Q@mail.gmail.com>
-References: <20200221090845.7397-1-narmstrong@baylibre.com>
- <20200221090845.7397-2-narmstrong@baylibre.com>
- <20200303121029.5532669d@eldfell.localdomain>
- <20200303105325.bn4sob6yrdf5mwrh@DESKTOP-E1NTVVP.localdomain>
- <CAKMK7uFgQGrnEkXyac15Wz8Opg43RTa=5cX0nN5=E_omb8oY8Q@mail.gmail.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hicGAyZ5CpHfmsbw4Kl9cPGuNpt8g32PuytU/UcEDL8=;
+ b=TqYG7Rv14iTzLgUXBETElkrV1FlveT0oSKTHOA5J9AFU9JUJ2zmt3U8rXaGhVS7zEW
+ xh37X7nUJYff+F9hFSqFknTK7gWESraMSV5ABAhUE6punYgHai6ZVB5iVDlZSqaoQ4gL
+ vVDfD1A17Tnj665Q6+YpEhfhhhcoH0N3YVS+CpNKAcgiawd3636OudgIxNyTGrhQPFxt
+ UuEXpRPPkCoiUUgfL3AC7X7S3Kr/rmuSRJ6P67vFBFZy0eQN9GWFQ72QuFa3qgn0RGiz
+ o1+4O7hv9ZIwd+G+IB048lDjC4sFVMKLmxv1B1LvVJ8INvZrzqXmzP1BlsdNUhxkjmU3
+ rDQQ==
+X-Gm-Message-State: ANhLgQ0l24EJRMOcIpySbnEU/o/iHYKeGc/1lk1MhwDE0J/diERpgPH7
+ EsvuZ3lSC46z++TTgYjYxzwEaEfbRvq795mTgLo=
+X-Google-Smtp-Source: ADFU+vuFtNgxjbewAK+JcEL9uWLOVuASSCsfonI72+FgdQg4t/bXLC/G4KfOc+tj4z3cmF6C36Db39T7GycrQg3xlxQ=
+X-Received: by 2002:adf:9dcc:: with SMTP id q12mr5802969wre.164.1583242185866; 
+ Tue, 03 Mar 2020 05:29:45 -0800 (PST)
 MIME-Version: 1.0
+References: <20200302205700.29746-1-daniel.baluta@oss.nxp.com>
+ <20200302205700.29746-2-daniel.baluta@oss.nxp.com>
+ <CAFQqKeU8YF+aZVTafj3ZiPvNUsx3nK-8cdr8eJUm=_9_2TkRQg@mail.gmail.com>
+In-Reply-To: <CAFQqKeU8YF+aZVTafj3ZiPvNUsx3nK-8cdr8eJUm=_9_2TkRQg@mail.gmail.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 3 Mar 2020 15:29:34 +0200
+Message-ID: <CAEnQRZBNMRNYOKwqweuZCeOYgMGh9DprRvz2ci3EOQPxqN3fhg@mail.gmail.com>
+Subject: Re: [RFC PATCH 1/2] PM / domains: Introduce multi PM domains helpers
+To: "Sridharan, Ranjani" <ranjani.sridharan@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_052553_631113_1E14B73E 
-X-CRM114-Status: GOOD (  41.23  )
+X-CRM114-CacheID: sfid-20200303_052952_116397_75D721CD 
+X-CRM114-Status: GOOD (  13.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [ppaalanen[at]gmail.com]
+ provider [daniel.baluta[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,248 +94,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Daniel Baluta <daniel.baluta@oss.nxp.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Pavel Machek <pavel@ucw.cz>, Fabio Estevam <festevam@gmail.com>,
+ khilman@kernel.org, Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
+ dl-linux-imx <linux-imx@nxp.com>, "Brown, Len" <len.brown@intel.com>,
+ linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Paul Olaru <paul.olaru@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Greg KH <gregkh@linuxfoundation.org>,
+ "S.j. Wang" <shengjiu.wang@nxp.com>, rjw@rjwysocki.net,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, linux-amlogic@lists.infradead.org,
- nd <nd@arm.com>, Brian Starkey <brian.starkey@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3617664534819642680=="
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============3617664534819642680==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- boundary="Sig_/CbiMmpJgoWAxyEnELUudiQH"; protocol="application/pgp-signature"
+Hello Ranjani,
 
---Sig_/CbiMmpJgoWAxyEnELUudiQH
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+On Mon, Mar 2, 2020 at 11:24 PM Sridharan, Ranjani
+<ranjani.sridharan@intel.com> wrote:
 
-On Tue, 3 Mar 2020 12:37:16 +0100
-Daniel Vetter <daniel@ffwll.ch> wrote:
+>> + */
+>> +struct dev_multi_pm_domain_data *dev_multi_pm_attach(struct device *dev)
+>> +{
+>> +       struct dev_multi_pm_domain_data *mpd, *retp;
+>> +       int num_domains;
+>> +       int i;
+>> +
+>> +       num_domains = of_count_phandle_with_args(dev->of_node, "power-domains",
+>> +                                                "#power-domain-cells");
+>> +       if (num_domains < 2)
+>
+> Hi Daniel,
+>
+> Just out of curiosity, should it be an error when num_domains is 1? Is it an error because the expectation is that the caller would use dev_pm_domain_attach() in that case?
 
-> On Tue, Mar 3, 2020 at 11:53 AM Brian Starkey <brian.starkey@arm.com> wro=
-te:
-> >
-> > Hi,
-> >
-> > On Tue, Mar 03, 2020 at 12:10:29PM +0200, Pekka Paalanen wrote: =20
-> > > On Fri, 21 Feb 2020 10:08:42 +0100
-> > > Neil Armstrong <narmstrong@baylibre.com> wrote:
-> > > =20
-> > > > Amlogic uses a proprietary lossless image compression protocol and =
-format
-> > > > for their hardware video codec accelerators, either video decoders =
-or
-> > > > video input encoders.
-> > > >
-> > > > It considerably reduces memory bandwidth while writing and reading
-> > > > frames in memory.
-> > > >
-> > > > The underlying storage is considered to be 3 components, 8bit or 10=
--bit
-> > > > per component, YCbCr 420, single plane :
-> > > > - DRM_FORMAT_YUV420_8BIT
-> > > > - DRM_FORMAT_YUV420_10BIT
-> > > >
-> > > > This modifier will be notably added to DMA-BUF frames imported from=
- the V4L2
-> > > > Amlogic VDEC decoder.
-> > > >
-> > > > At least two options are supported :
-> > > > - Scatter mode: the buffer is filled with a IOMMU scatter table ref=
-erring
-> > > >   to the encoder current memory layout. This mode if more efficient=
- in terms
-> > > >   of memory allocation but frames are not dumpable and only valid d=
-uring until
-> > > >   the buffer is freed and back in control of the encoder
-> > > > - Memory saving: when the pixel bpp is 8b, the size of the superblo=
-ck can
-> > > >   be reduced, thus saving memory.
-> > > >
-> > > > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> > > > ---
-> > > >  include/uapi/drm/drm_fourcc.h | 56 +++++++++++++++++++++++++++++++=
-++++
-> > > >  1 file changed, 56 insertions(+)
-> > > >
-> > > > diff --git a/include/uapi/drm/drm_fourcc.h b/include/uapi/drm/drm_f=
-ourcc.h
-> > > > index 8bc0b31597d8..8a6e87bacadb 100644
-> > > > --- a/include/uapi/drm/drm_fourcc.h
-> > > > +++ b/include/uapi/drm/drm_fourcc.h
-> > > > @@ -309,6 +309,7 @@ extern "C" {
-> > > >  #define DRM_FORMAT_MOD_VENDOR_BROADCOM 0x07
-> > > >  #define DRM_FORMAT_MOD_VENDOR_ARM     0x08
-> > > >  #define DRM_FORMAT_MOD_VENDOR_ALLWINNER 0x09
-> > > > +#define DRM_FORMAT_MOD_VENDOR_AMLOGIC 0x0a
-> > > >
-> > > >  /* add more to the end as needed */
-> > > >
-> > > > @@ -804,6 +805,61 @@ extern "C" {
-> > > >   */
-> > > >  #define DRM_FORMAT_MOD_ALLWINNER_TILED fourcc_mod_code(ALLWINNER, =
-1)
-> > > >
-> > > > +/*
-> > > > + * Amlogic Video Framebuffer Compression modifiers
-> > > > + *
-> > > > + * Amlogic uses a proprietary lossless image compression protocol =
-and format
-> > > > + * for their hardware video codec accelerators, either video decod=
-ers or
-> > > > + * video input encoders.
-> > > > + *
-> > > > + * It considerably reduces memory bandwidth while writing and read=
-ing
-> > > > + * frames in memory.
-> > > > + * Implementation details may be platform and SoC specific, and sh=
-ared
-> > > > + * between the producer and the decoder on the same platform. =20
-> > >
-> > > Hi,
-> > >
-> > > after a lengthy IRC discussion on #dri-devel, this "may be platform a=
-nd
-> > > SoC specific" is a problem.
-> > >
-> > > It can be an issue in two ways:
-> > >
-> > > - If something in the data acts like a sub-modifier, then advertising
-> > >   support for one modifier does not really tell if the data layout is
-> > >   supported or not.
-> > >
-> > > - If you need to know the platform and/or SoC to be able to interpret
-> > >   the data, it means the modifier is ill-defined and cannot be used in
-> > >   inter-machine communication (e.g. Pipewire).
-> > > =20
-> >
-> > Playing devil's advocate, the comment sounds similar to
-> > I915_FORMAT_MOD_{X,Y}_TILED:
-> >
-> >  * This format is highly platforms specific and not useful for cross-dr=
-iver
-> >  * sharing. It exists since on a given platform it does uniquely identi=
-fy the
-> >  * layout in a simple way for i915-specific userspace. =20
->=20
-> Yeah which we regret now. We need to now roll out a new set of
-> modifiers for at least some of the differences in these on the
-> modern-ish chips (the old crap is pretty much lost cause anyway).
->=20
-> This was kinda a nasty hack to smooth things over since we have epic
-> amounts of userspace, but it's really not a great idea (and no one
-> else really has epic amounts of existing userspace that uses tiling
-> flags everywhere, this is all new code).
-> -Daniel
->=20
-> > Isn't the statement that this for sharing between producer and decoder
-> > _on the same platform_ a similar clause with the same effect?
-> >
-> > What advantage is there to exposing the gory details? For Arm AFBC
-> > it's necessary because IP on the SoC can be (likely to be) from
-> > different vendors with different capabilities.
-> >
-> > If this is only for talking between Amlogic IP on the same SoC, and
-> > those devices support all the same "flavours", I don't see what is
-> > gained by making userspace care about internals. =20
->=20
-> The trouble is if you mix&match IP cores, and one of them supports
-> flavours A, B, C and the other C, D, E. But all you have is a single
-> magic modifier for "whatever the flavour is that soc prefers". So
-> someone gets to stuff this in DT.
->=20
-> Also eventually, maybe, perhaps ARM does grow up into the
-> client/server space with add-on pcie graphics, and at least for client
-> you very often end up with integrated + add-in pcie gpu. At that point
-> you really can't have magic per-soc modifiers anymore.
+NULL here doesn't really mean an error. It means that we don't need to
+handle Power domains because as you said the caller
+already used dev_pm_domain_attach.
 
-Hi,
+Similar with this:
 
-I also heard that Pipewire will copy buffers and modifiers verbatim
-from one machine to another when streaming across network, assuming
-that the same modifier means the same thing on all machines.[Citation neede=
-d]
+$ drivers/base/power/domain.c +2504
 
-If that is something that must not be done with DRM modifiers, then
-please contact them and document that.
+int genpd_dev_pm_attach(struct device *dev)
 
+         / * Devices with multiple PM domains must be attached separately, as we
+           * can only attach one PM domain per device.
+          */
+        if (of_count_phandle_with_args(dev->of_node, "power-domains",
+                                    "#power-domain-cells") != 1)
+               return 0;
 
-Thanks,
-pq
+Will update the description for when this function returns a NULL.
 
+>
+>> +               return NULL;
+>> +
+>> +       mpd = devm_kzalloc(dev, GFP_KERNEL, sizeof(*mpd));
+>> +       if (!mpd)
+>> +               return ERR_PTR(-ENOMEM);
+>> +
+>> +       mpd->dev = dev;
+>> +       mpd->num_domains = num_domains;
+>> +
+>> +       mpd->virt_devs = devm_kmalloc_array(dev, mpd->num_domains,
+>> +                                           sizeof(*mpd->virt_devs),
+>> +                                           GFP_KERNEL);
+>> +       if (!mpd->virt_devs)
+>> +               return ERR_PTR(-ENOMEM);
+>> +
+>> +       mpd->links = devm_kmalloc_array(dev, mpd->num_domains,
+>> +                                       sizeof(*mpd->links), GFP_KERNEL);
+>> +       if (!mpd->links)
+>> +               return ERR_PTR(-ENOMEM);
+>> +
+>> +       for (i = 0; i < mpd->num_domains; i++) {
+>> +               mpd->virt_devs[i] = dev_pm_domain_attach_by_id(dev, i);
+>> +               if (IS_ERR(mpd->virt_devs[i])) {
+>> +                       retp = (struct dev_multi_pm_domain_data *)
+>> +                               mpd->virt_devs[i];
+>
+> Should retp be PTR_ERR(mpd->virt_devs[i]) here?
 
-> If people get confused I'm happy to add a "WARNING: This was a dumb
-> idea for backwards compat with legacy code, no one with new stuff ever
-> repeat it" to the i915 modifers.
-> -Daniel
->=20
-> >
-> > Thanks,
-> > -Brian
-> > =20
-> > > Neil mentioned the data contains a "header" that further specifies
-> > > things, but there is no specification about the header itself.
-> > > Therefore I don't think we can even know if the header contains
-> > > something that acts like a sub-modifier or not.
-> > >
-> > > All this sounds like the modifier definitions here are not enough to
-> > > fully interpret the data. At the very least I would expect a reference
-> > > to a document explaining the "header", or even better, a kernel ReST
-> > > doc.
-> > >
-> > > I wonder if this is at all suitable as a DRM format modifier as is. I
-> > > have been assuming that a modifier together with all the usual FB
-> > > parameters should be enough to interpret the stored data, but in this
-> > > case I have doubt it actually is.
-> > >
-> > > I have no problem with proprietary data layouts as long as they are
-> > > fully specified.
-> > >
-> > > I do feel like I would not be able to write a software decoder for th=
-is
-> > > set of modifiers given the details below.
-> > >
-> > >
-> > > Thanks,
-> > > pq
-> > > =20
+PTR_ERR returns a long but our function needs to return struct
+dev_multi_pm_domain_data *.
 
---Sig_/CbiMmpJgoWAxyEnELUudiQH
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEEJQjwWQChkWOYOIONI1/ltBGqqqcFAl5eWtUACgkQI1/ltBGq
-qqeB2g/+MGx1BzpiVLYUgsdkyAdrgVpRKL5tjnoVHgr7PbXDFZwRniEXxSYQAUt1
-5jC/xpa95aN0nUZhZeGoHeMYzgEfXvUwCMcIvOEt4TcJgPeD4mp1bQI34cxFPpr1
-qMkFLhgtkcJKD9X1QcmNqIB9baP+DXQWFSB9ljrVw001TLswjaT3PQyIFOWzFHjg
-8XN6arfLYWYtL8Zz3wfrjN+yLMDGf06i6BquImC57KSSpwZpdIeQI81HdAi083Su
-+NQcgFedEwA0LWytGjUh+auTbTxQvpadRHhlLUY3reuOIId63VpfMKBmrkvFbvzk
-ziiLk9g+T+2N2Ioju3/ObIxNJIv/R5uQhyFCbsFsaYEcetXoe6HfUuehEtNOfYnP
-R73TXf27d6w4FUUzBuQUitYReFY2QdVxh6xxYi0pNrIj/HAu2OJWbv+Owe9ONoB3
-J1OTDBFPGE45LPqfGjkAoAvChT1Ma/C/AUrsHli0Vb6VlDre9jBc/EE3f14DKxUz
-qTnPE5xxpXq0Fun2vULFBEHNfAZd4GQ6B94TG6LBVSHF9TLj4G2hMy90On5E1x4z
-ehNZBCxBp0LuDXuuP9skuvXlLgKmnlAJKIKnuU11SNpRTUW9k5cq3158kI45rnhR
-8Z3hWCzgPo4hp74DCggpMLR7svN2h8I6IOGNtf66Dj2N63xz2gk=
-=QG9G
------END PGP SIGNATURE-----
-
---Sig_/CbiMmpJgoWAxyEnELUudiQH--
-
-
---===============3617664534819642680==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Thanks,
+> Ranjani
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3617664534819642680==--
-
