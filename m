@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C9E7176EDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 06:39:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 524D8176ED9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 06:38:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MuQpuC6UOFHyPh6gEZlXe0H4nOfqh2j+aJp7Jr2n5Bc=; b=gzsSnB3O0n5xFp
-	O+4rg/HbXqtzO7sQ32V/Oe6jXcxr2/UcwykCerAD745TAkXg1yJu2n0at0hlc20q32E1bd/0R60oh
-	DY3BQzXz5pZKoWjxyUEUvlELj3C99ipDedZ81CuPpsMNVeRuYOBmEScd78dccAde5gaf2J0JyC4SW
-	6UopAouXdE7uMYZ8Yirn3XRz2hlv7NlscrsB/exPneE+wLoCk/Yy20NtO8oYnN6ZcszdtHFjuNqME
-	yRm/r8i9zsyJ2OcdZkvBzWl2n8KxwP3F8cdNdH+wjUDOYnJBhgI0um9cFuXK6OnDm4eET/H8I3bFu
-	WErdpCokJmrlLNvNNOew==;
+	List-Owner; bh=vz82/GOodNhPojHhQPXFsqNKb6TgZgzwLqYhstrYtrY=; b=oaVmzTrR93vg8n
+	vWOLiKfN51fqL0euWTXe4H4cFQ1+Lj2xqcALG5/AGuaUyQc59smCbvlidEb4KazCNSmXXBc0UgHhp
+	o+LCC/GIqnOyHFV9ZEPiQpBDUVqV2UyhRcybFfTRYLNGWsz8YBH/nG9rfACxUmsPWZH9K5gN5/jRB
+	pGYvNz0fQTh/UTmY5X1xLB8zoq13rrqxXAFUgOYoEDFvC/AGfyUakDsTY7ejgFgwnzE/nipC3wpbR
+	uaOjwSQgSDKJV3Z2pYQ0bfKWGZq2xbS6d2MX2uCIlzr79kJHo/bUe0qXojSvhHoERsW87fDyl1vVM
+	WPDcTfrDyOHemrZduL6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j90Gk-0001y1-6W; Tue, 03 Mar 2020 05:39:02 +0000
+	id 1j90GU-0001h6-DB; Tue, 03 Mar 2020 05:38:46 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j90Fw-00019x-4I; Tue, 03 Mar 2020 05:38:13 +0000
-X-UUID: 9a6a8155633c4da099a0dc27dd6e24f0-20200302
+ id 1j90Fr-00012u-EY; Tue, 03 Mar 2020 05:38:08 +0000
+X-UUID: 7eb3f18483bb45ec8e189127c7bf1d8a-20200302
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=m2CcW1V41TM32eWWCi7FfNQYoqIdQyWhSRyF/aJpfA4=; 
- b=iL3BjG2oQ8RUXRl87N0Vi5mLolv6LduKYM7IbOQySXyoQWyFcH6xTlgXinBf6VC3N9grg/JyI2iyH4Hqje0GzFxLo70whh1V3birAfHBKMxI0jCpIJignZBXaDhKndSSrAi2ZXh18y2frHWWN1TqOtO2377RF2GwMzQg0McODFw=;
-X-UUID: 9a6a8155633c4da099a0dc27dd6e24f0-20200302
+ bh=sB31c1utjXoEI0bkxHgvZA0r/O+d8TC2fbnDDVG92d8=; 
+ b=RLCN62+1nXVlFbVoOONZPrKcEpjwpH18fb0tQ1Uzx7AEIjjwyZrDne8Ed7wbL3UA850GmC4/DQUoysxzV9t6GW1kxyFlqmgvQZIiOCDiqYazlYf20omM7u4q2IF2bPS5Bx4J3bHznYpFpAfDxcfmHJ4T3PQ7Y2trnMk1b1L11Kg=;
+X-UUID: 7eb3f18483bb45ec8e189127c7bf1d8a-20200302
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <jitao.shi@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1711637697; Mon, 02 Mar 2020 21:38:08 -0800
-Received: from MTKMBS33N2.mediatek.inc (172.27.4.76) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Mar 2020 21:28:56 -0800
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33N2.mediatek.inc
- (172.27.4.76) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Tue, 3 Mar 2020 13:28:21 +0800
+ with ESMTP id 1408934268; Mon, 02 Mar 2020 21:38:03 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Mar 2020 21:28:18 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33DR.mediatek.inc
+ (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 3 Mar 2020 13:23:39 +0800
 Received: from mszsdclx1018.gcn.mediatek.inc (10.16.6.18) by
  MTKCAS32.mediatek.inc (172.27.4.170) with Microsoft SMTP Server id
- 15.0.1395.4 via Frontend Transport; Tue, 3 Mar 2020 13:28:22 +0800
+ 15.0.1395.4 via Frontend Transport; Tue, 3 Mar 2020 13:28:31 +0800
 From: Jitao Shi <jitao.shi@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Matthias Brugger <matthias.bgg@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, <dri-devel@lists.freedesktop.org>,
  <linux-kernel@vger.kernel.org>
-Subject: [PATCH v12 4/6] dt-bindings: display: mediatek: convert the document
- format from txt to yaml
-Date: Tue, 3 Mar 2020 13:27:20 +0800
-Message-ID: <20200303052722.94795-5-jitao.shi@mediatek.com>
+Subject: [PATCH v12 6/6] drm/mediatek: set dpi pin mode to gpio low to avoid
+ leakage current
+Date: Tue, 3 Mar 2020 13:27:22 +0800
+Message-ID: <20200303052722.94795-7-jitao.shi@mediatek.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20200303052722.94795-1-jitao.shi@mediatek.com>
 References: <20200303052722.94795-1-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 4EE687C2724234A765D419272ADE765BFF1D0D518E863FE5D1C5D83969F78B132000:8
+X-TM-SNTS-SMTP: A7DA1D6B70A54B88BB92C62DF5B57B82FE7C188A7E6E462BA9E92C17D90207F02000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_213812_217308_18CB8E62 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20200302_213807_496358_30CCD9EF 
+X-CRM114-Status: GOOD (  12.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,163 +101,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Config dpi pins mode to output and pull low when dpi is disabled.
+Aovid leakage current from some dpi pins (Hsync Vsync DE ... ).
+
 Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
 ---
- .../display/mediatek/mediatek,dpi.txt         | 45 ---------
- .../display/mediatek/mediatek,dpi.yaml        | 92 +++++++++++++++++++
- 2 files changed, 92 insertions(+), 45 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
- create mode 100644 Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
+ drivers/gpu/drm/mediatek/mtk_dpi.c | 44 ++++++++++++++++++++++++++++--
+ 1 file changed, 42 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-deleted file mode 100644
-index 4eeead1d39db..000000000000
---- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
-+++ /dev/null
-@@ -1,45 +0,0 @@
--Mediatek DPI Device
--===================
--
--The Mediatek DPI function block is a sink of the display subsystem and
--provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
--output bus.
--
--Required properties:
--- compatible: "mediatek,<chip>-dpi"
--  the supported chips are mt2701 , mt8173 and mt8183.
--- reg: Physical base address and length of the controller's registers
--- interrupts: The interrupt signal from the function block.
--- clocks: device clocks
--  See Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
--- clock-names: must contain "pixel", "engine", and "pll"
--- port: Output port node with endpoint definitions as described in
--  Documentation/devicetree/bindings/graph.txt. This port should be connected
--  to the input port of an attached HDMI or LVDS encoder chip.
--
--Optional properties:
--- pinctrl-names: Contain "gpiomode" and "dpimode".
--  pinctrl-names see Documentation/devicetree/bindings/pinctrl/pinctrl-bindings.txt
--- pclk-sample: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
--
--Example:
--
--dpi0: dpi@1401d000 {
--	compatible = "mediatek,mt8173-dpi";
--	reg = <0 0x1401d000 0 0x1000>;
--	interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
--	clocks = <&mmsys CLK_MM_DPI_PIXEL>,
--		 <&mmsys CLK_MM_DPI_ENGINE>,
--		 <&apmixedsys CLK_APMIXED_TVDPLL>;
--	clock-names = "pixel", "engine", "pll";
--	pinctrl-names = "active", "idle";
--	pinctrl-0 = <&dpi_pin_func>;
--	pinctrl-1 = <&dpi_pin_idle>;
--
--	port {
--		dpi0_out: endpoint {
--			pclk-sample = <0>;
--			remote-endpoint = <&hdmi0_in>;
--		};
--	};
--};
-diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-new file mode 100644
-index 000000000000..eb2b0cb5eb5a
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.yaml
-@@ -0,0 +1,92 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/mediatek,dpi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+index db3272f7a4c4..b6359e979588 100644
+--- a/drivers/gpu/drm/mediatek/mtk_dpi.c
++++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+@@ -10,7 +10,9 @@
+ #include <linux/kernel.h>
+ #include <linux/of.h>
+ #include <linux/of_device.h>
++#include <linux/of_gpio.h>
+ #include <linux/of_graph.h>
++#include <linux/pinctrl/consumer.h>
+ #include <linux/platform_device.h>
+ #include <linux/types.h>
+ 
+@@ -74,6 +76,9 @@ struct mtk_dpi {
+ 	enum mtk_dpi_out_yc_map yc_map;
+ 	enum mtk_dpi_out_bit_num bit_num;
+ 	enum mtk_dpi_out_channel_swap channel_swap;
++	struct pinctrl *pinctrl;
++	struct pinctrl_state *pins_gpio;
++	struct pinctrl_state *pins_dpi;
+ 	int refcount;
+ 	u32 pclk_sample;
+ };
+@@ -387,6 +392,9 @@ static void mtk_dpi_power_off(struct mtk_dpi *dpi)
+ 	if (--dpi->refcount != 0)
+ 		return;
+ 
++	if (dpi->pinctrl && dpi->pins_gpio)
++		pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
 +
-+title: mediatek DPI Controller Device Tree Bindings
+ 	mtk_dpi_disable(dpi);
+ 	clk_disable_unprepare(dpi->pixel_clk);
+ 	clk_disable_unprepare(dpi->engine_clk);
+@@ -411,6 +419,9 @@ static int mtk_dpi_power_on(struct mtk_dpi *dpi)
+ 		goto err_pixel;
+ 	}
+ 
++	if (dpi->pinctrl && dpi->pins_dpi)
++		pinctrl_select_state(dpi->pinctrl, dpi->pins_dpi);
 +
-+maintainers:
-+  - CK Hu <ck.hu@mediatek.com>
-+  - Jitao shi <jitao.shi@mediatek.com>
+ 	mtk_dpi_enable(dpi);
+ 	return 0;
+ 
+@@ -705,6 +716,7 @@ static const struct mtk_dpi_conf mt8183_conf = {
+ static int mtk_dpi_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
++	struct device_node *ep;
+ 	struct mtk_dpi *dpi;
+ 	struct resource *mem;
+ 	int comp_id;
+@@ -716,9 +728,37 @@ static int mtk_dpi_probe(struct platform_device *pdev)
+ 
+ 	dpi->dev = dev;
+ 	dpi->conf = (struct mtk_dpi_conf *)of_device_get_match_data(dev);
+-	of_property_read_u32_index(dev->of_node, "pclk-sample", 1,
+-				   &dpi->pclk_sample);
+ 
++	ep = of_graph_get_endpoint_by_regs(dev->of_node, 0, 0);
++	if (!ep) {
++		dev_err(dev, "Failed get the endpoint port\n");
++		return -EINVAL;
++	}
 +
-+description: |
-+  The Mediatek DPI function block is a sink of the display subsystem and
-+  provides 8-bit RGB/YUV444 or 8/10/10-bit YUV422 pixel data on a parallel
-+  output bus.
++	/* Get the sampling edge from the endpoint. */
++	of_property_read_u32(ep, "pclk-sample", &dpi->pclk_sample);
++	of_node_put(ep);
 +
-+properties:
-+  compatible:
-+    enum:
-+      - mediatek,mt2701-dpi
-+      - mediatek,mt8173-dpi
-+      - mediatek,mt8183-dpi
++	dpi->pinctrl = devm_pinctrl_get(&pdev->dev);
++	if (IS_ERR(dpi->pinctrl)) {
++		dpi->pinctrl = NULL;
++		dev_dbg(&pdev->dev, "Cannot find pinctrl!\n");
++	}
++	if (dpi->pinctrl) {
++		dpi->pins_gpio = pinctrl_lookup_state(dpi->pinctrl, "sleep");
++		if (IS_ERR(dpi->pins_gpio)) {
++			dpi->pins_gpio = NULL;
++			dev_dbg(&pdev->dev, "Cannot find pinctrl idle!\n");
++		}
++		if (dpi->pins_gpio)
++			pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
 +
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Pixel Clock
-+      - description: Engine Clock
-+      - description: DPI PLL
-+
-+  clock-names:
-+    items:
-+      - const: pixel
-+      - const: engine
-+      - const: pll
-+
-+  pinctrl-names:
-+    items:
-+      - const: default
-+      - const: sleep
-+
-+  port:
-+    type: object
-+    description:
-+      Output port node with endpoint definitions as described in
-+      Documentation/devicetree/bindings/graph.txt. This port should be connected
-+      to the input port of an attached HDMI or LVDS encoder chip.
-+
-+    properties:
-+      pclk-sample:
-+      description: refer Documentation/devicetree/bindings/media/video-interfaces.txt.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+  - port
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    dpi0: dpi@1401d000 {
-+        compatible = "mediatek,mt8173-dpi";
-+        reg = <0 0x1401d000 0 0x1000>;
-+        interrupts = <GIC_SPI 194 IRQ_TYPE_LEVEL_LOW>;
-+        clocks = <&mmsys CLK_MM_DPI_PIXEL>,
-+             <&mmsys CLK_MM_DPI_ENGINE>,
-+             <&apmixedsys CLK_APMIXED_TVDPLL>;
-+        clock-names = "pixel", "engine", "pll";
-+        pinctrl-names = "default", "sleep";
-+        pinctrl-0 = <&dpi_pin_func>;
-+        pinctrl-1 = <&dpi_pin_idle>;
-+
-+        port {
-+            reg = <0>;
-+            dpi0_out: endpoint {
-+                pclk-sample = <0>;
-+                remote-endpoint = <&hdmi0_in>;
-+            };
-+        };
-+    };
-+
-+...
++		dpi->pins_dpi = pinctrl_lookup_state(dpi->pinctrl, "default");
++		if (IS_ERR(dpi->pins_dpi)) {
++			dpi->pins_dpi = NULL;
++			dev_dbg(&pdev->dev, "Cannot find pinctrl active!\n");
++		}
++	}
+ 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	dpi->regs = devm_ioremap_resource(dev, mem);
+ 	if (IS_ERR(dpi->regs)) {
 -- 
 2.21.0
 _______________________________________________
