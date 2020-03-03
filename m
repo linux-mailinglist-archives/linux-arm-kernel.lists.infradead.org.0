@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49E7F177317
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 10:50:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF944177324
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 10:52:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J5A6CYKuxhchLuZqXF1Bt0/YkVhb67BJ/Pzx0+CVpkw=; b=rGnoQ9slMVroJy
-	EDJYrJMxEXj0dV93C1a/GkdsojMVa41gy19nbG/iiJwNGh7A6RK+w8n/dXS76fu5+sLIO6F+MKVE2
-	5iklcoPVD3Q1sjiOuogh6i72DY7NN/ZTL8JRg7svcqIEQs8CtFDI+OQoA4W7V+uX6zpEkPDHznHkj
-	zYKN5ufDkjM4vT/uGZV+cewpjRt2SFYQPdYEMMU3gUCyIAkr/cNXTM5w2Rfp6T+CjrcyDB1J1iS/t
-	50GyOWTLvXE2nrAvyJxGmt2cuKw1KNBPu/vbi2M1e65XANl0nj3T7bJZSMk/I2Hv28ACheP2QwDvn
-	Kz+/ShjpVAG1aRz72zrA==;
+	List-Owner; bh=drFRsGWQRBl1eYep66czsXUe+YXyEl1go5VkJSBaw0M=; b=GxR+Uyc5vzdHV0
+	BXhmUg/UdWlxpNgLO+FLyTssBxLgIuNzB6XpGoqVsvzAefdUyIpmEinfh2bYG6a7nFmIDJ5fouPkr
+	+lhSGnUOQA8Z4yOWgOkl5bGB8quRnhK8YXQCYswEDMHyyEojKlK8rGOg3iSWa5f0JGNiXz8nAexAE
+	7WAYvG4bg66mqcutBEbdoVLYXHZavPIx4VOdvVk2uf/XYySSaLdFdElQwOEQwYbn/MUIgQj5AWoEO
+	nXcSAGa0FvpXSyOpKaIDNROyRrZyXF3XDPtdATXGC2+clMR37Do12Jzshwadg5wDF/Q9RhwDi2CbY
+	2BcSpM73aD8q3MWo2HsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j94CK-0002uj-Vs; Tue, 03 Mar 2020 09:50:45 +0000
-Received: from mail-wm1-f67.google.com ([209.85.128.67])
+	id 1j94Dv-0003MR-2C; Tue, 03 Mar 2020 09:52:23 +0000
+Received: from mail-wr1-f68.google.com ([209.85.221.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j94CB-0002tV-3E
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 09:50:37 +0000
-Received: by mail-wm1-f67.google.com with SMTP id 6so2320931wmi.5
+ id 1j94Dm-0003Ly-4K
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 09:52:15 +0000
+Received: by mail-wr1-f68.google.com with SMTP id q8so3501832wrm.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 01:50:34 -0800 (PST)
+ Tue, 03 Mar 2020 01:52:12 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=gN6xkBDxnfuze0g0pEotYsP0NnucUUMr4XIfi1Oy8Wk=;
- b=peBNixbvP0N7FMNqj1LeuOMj0A/7vW8EmOlVuWR/QszXfp8YL/8kirky4nF/y6yKYM
- rENCKtOBQNM0oHpwbD6/1FQizi57yqFfOb/4pU/bpOA8mw0LiQxE8CZS77bkBm0RHx5r
- E4CtEW4Faltn34QhaWCQGefLpkX8Hb3Puj8oQGvSI58lo60cZJRgZ+AUYeBhu0eISKWt
- QvvwLbueNnD49Mlf7eBmPlqIsWFuJ5kYImrAykA7tdPtyZHZyEEwUW0RhRYx5q2wT5OK
- IdXsOSzuJOAw8dNsw3+lxGYD12By4jHsn48WaVCI8XFDIdoieQT54QVTW5S0spAh+Ef/
- Hacw==
-X-Gm-Message-State: ANhLgQ10PCmZAwIsNRMeF4uhB2LRtEldpePJZ1hRlBIwuRUL09l1iO2g
- WHkB/BHYo0KyompGx/Sh+x8=
-X-Google-Smtp-Source: ADFU+vswAK2OmrLCkV6CaWZA8/Bb3zF3GN9Am30laiCBHy4k0h8NO05XmpdtouHwrxHDBBEXEarMeg==
-X-Received: by 2002:a05:600c:20c6:: with SMTP id
- y6mr3510617wmm.95.1583229033340; 
- Tue, 03 Mar 2020 01:50:33 -0800 (PST)
+ bh=GaGznwc3bS7Ckir2yH7mHcLmMNTfNWsu6+vGJH6ISPE=;
+ b=lDXbaQUI6ONdUCTaiuWiThvk1FgAStpBQJ1WRbhw2G4S180mr63kFqt+41HKS6TbeN
+ sKARJ1U2NmYReoApceS/Bjp6rER9NZh4d/Ns8mhnL6eHaVDQf69mFNq/o14BYF0vzZxN
+ yJBizvMOu8/+DWNDb61A1z6kh83XhHod/0fSr577MmHiqknYDQb4VNXi0xAsdXK5kabX
+ V34W6WYazKKJWjeH2qWsfR6JOg5wLC7nmtVrJP1JqAnbvj/DsxT9uqopSnUpRmG1TdfG
+ mlZC0hKgN4NOozFC4YMdFPm/n551d1+mb3cfqTYPDJB/nkvl7bewMnspoSXXVp0NGxib
+ ZbPg==
+X-Gm-Message-State: ANhLgQ3vsowm9V4DszEE6G9sG8QnxQZfFUIYldD9LJrEDO55v2oOwIUU
+ dGTwX5Z4l1qrcaoL6EsLWLY=
+X-Google-Smtp-Source: ADFU+vvr3HOdyj6p2BRxhXjy2tLDgseWSOODKsH2VuibtRly14pM+NQ4h9rtn+ez67vBm9UGimip8Q==
+X-Received: by 2002:a05:6000:106:: with SMTP id
+ o6mr4627708wrx.120.1583229131659; 
+ Tue, 03 Mar 2020 01:52:11 -0800 (PST)
 Received: from localhost (prg-ext-pat.suse.com. [213.151.95.130])
- by smtp.gmail.com with ESMTPSA id o9sm34194646wrw.20.2020.03.03.01.50.32
+ by smtp.gmail.com with ESMTPSA id q125sm3294236wme.19.2020.03.03.01.52.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 01:50:32 -0800 (PST)
-Date: Tue, 3 Mar 2020 10:50:32 +0100
+ Tue, 03 Mar 2020 01:52:11 -0800 (PST)
+Date: Tue, 3 Mar 2020 10:52:10 +0100
 From: Michal Hocko <mhocko@kernel.org>
 To: Logan Gunthorpe <logang@deltatee.com>
-Subject: Re: [PATCH v3 2/7] mm/memory_hotplug: Rename mhp_restrictions to
- mhp_params
-Message-ID: <20200303095032.GF4380@dhcp22.suse.cz>
+Subject: Re: [PATCH v3 3/7] x86/mm: Thread pgprot_t through
+ init_memory_mapping()
+Message-ID: <20200303095210.GG4380@dhcp22.suse.cz>
 References: <20200221182503.28317-1-logang@deltatee.com>
- <20200221182503.28317-3-logang@deltatee.com>
+ <20200221182503.28317-4-logang@deltatee.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200221182503.28317-3-logang@deltatee.com>
+In-Reply-To: <20200221182503.28317-4-logang@deltatee.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_015035_151364_8CABCFD8 
-X-CRM114-Status: GOOD (  25.69  )
+X-CRM114-CacheID: sfid-20200303_015214_178730_08D65E64 
+X-CRM114-Status: GOOD (  22.80  )
 X-Spam-Score: -1.2 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.67 listed in list.dnswl.org]
+ no trust [209.85.221.68 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mstsxfx[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.67 listed in wl.mailspike.net]
+ [209.85.221.68 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,13 +89,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+Cc: x86@kernel.org, linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
  Peter Zijlstra <peterz@infradead.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Dave Hansen <dave.hansen@linux.intel.com>, platform-driver-x86@vger.kernel.org,
- linux-mm@kvack.org, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, linux-s390@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, Ingo Molnar <mingo@redhat.com>,
+ linux-mm@kvack.org, "H. Peter Anvin" <hpa@zytor.com>,
+ Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
+ linux-s390@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>,
  Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Dan Williams <dan.j.williams@intel.com>, Borislav Petkov <bp@alien8.de>,
  Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
@@ -107,322 +108,290 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 21-02-20 11:24:58, Logan Gunthorpe wrote:
-> The mhp_restrictions struct really doesn't specify anything resembling
-> a restriction anymore so rename it to be mhp_params as it is a list
-> of extended parameters.
+On Fri 21-02-20 11:24:59, Logan Gunthorpe wrote:
+> In prepartion to support a pgprot_t argument for arch_add_memory().
 > 
+> It's required to move the prototype of init_memory_mapping() seeing
+> the original location came before the definition of pgprot_t.
+> 
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Borislav Petkov <bp@alien8.de>
+> Cc: "H. Peter Anvin" <hpa@zytor.com>
+> Cc: x86@kernel.org
+> Cc: Dave Hansen <dave.hansen@linux.intel.com>
+> Cc: Andy Lutomirski <luto@kernel.org>
+> Cc: Peter Zijlstra <peterz@infradead.org>
 > Signed-off-by: Logan Gunthorpe <logang@deltatee.com>
 
 Acked-by: Michal Hocko <mhocko@suse.com>
 
 > ---
->  arch/arm64/mm/mmu.c            |  4 ++--
->  arch/ia64/mm/init.c            |  4 ++--
->  arch/powerpc/mm/mem.c          |  4 ++--
->  arch/s390/mm/init.c            |  6 +++---
->  arch/sh/mm/init.c              |  4 ++--
->  arch/x86/mm/init_32.c          |  4 ++--
->  arch/x86/mm/init_64.c          |  8 ++++----
->  include/linux/memory_hotplug.h | 16 ++++++++--------
->  mm/memory_hotplug.c            |  8 ++++----
->  mm/memremap.c                  |  8 ++++----
->  10 files changed, 33 insertions(+), 33 deletions(-)
+>  arch/x86/include/asm/page_types.h |  3 ---
+>  arch/x86/include/asm/pgtable.h    |  3 +++
+>  arch/x86/kernel/amd_gart_64.c     |  3 ++-
+>  arch/x86/mm/init.c                |  9 +++++----
+>  arch/x86/mm/init_32.c             |  3 ++-
+>  arch/x86/mm/init_64.c             | 32 +++++++++++++++++--------------
+>  arch/x86/mm/mm_internal.h         |  3 ++-
+>  arch/x86/platform/uv/bios_uv.c    |  3 ++-
+>  8 files changed, 34 insertions(+), 25 deletions(-)
 > 
-> diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-> index 128f70852bf3..ee37bca8aba8 100644
-> --- a/arch/arm64/mm/mmu.c
-> +++ b/arch/arm64/mm/mmu.c
-> @@ -1050,7 +1050,7 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
+> diff --git a/arch/x86/include/asm/page_types.h b/arch/x86/include/asm/page_types.h
+> index c85e15010f48..bf7aa2e290ef 100644
+> --- a/arch/x86/include/asm/page_types.h
+> +++ b/arch/x86/include/asm/page_types.h
+> @@ -73,9 +73,6 @@ static inline phys_addr_t get_max_mapped(void)
 >  
->  #ifdef CONFIG_MEMORY_HOTPLUG
->  int arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions)
-> +		    struct mhp_params *params)
+>  bool pfn_range_is_mapped(unsigned long start_pfn, unsigned long end_pfn);
+>  
+> -extern unsigned long init_memory_mapping(unsigned long start,
+> -					 unsigned long end);
+> -
+>  extern void initmem_init(void);
+>  
+>  #endif	/* !__ASSEMBLY__ */
+> diff --git a/arch/x86/include/asm/pgtable.h b/arch/x86/include/asm/pgtable.h
+> index 7e118660bbd9..48d6a5960f28 100644
+> --- a/arch/x86/include/asm/pgtable.h
+> +++ b/arch/x86/include/asm/pgtable.h
+> @@ -1046,6 +1046,9 @@ static inline void __meminit init_trampoline_default(void)
+>  
+>  void __init poking_init(void);
+>  
+> +unsigned long init_memory_mapping(unsigned long start,
+> +				  unsigned long end, pgprot_t prot);
+> +
+>  # ifdef CONFIG_RANDOMIZE_MEMORY
+>  void __meminit init_trampoline(void);
+>  # else
+> diff --git a/arch/x86/kernel/amd_gart_64.c b/arch/x86/kernel/amd_gart_64.c
+> index 4e5f50236048..16133819415c 100644
+> --- a/arch/x86/kernel/amd_gart_64.c
+> +++ b/arch/x86/kernel/amd_gart_64.c
+> @@ -744,7 +744,8 @@ int __init gart_iommu_init(void)
+>  
+>  	start_pfn = PFN_DOWN(aper_base);
+>  	if (!pfn_range_is_mapped(start_pfn, end_pfn))
+> -		init_memory_mapping(start_pfn<<PAGE_SHIFT, end_pfn<<PAGE_SHIFT);
+> +		init_memory_mapping(start_pfn<<PAGE_SHIFT, end_pfn<<PAGE_SHIFT,
+> +				    PAGE_KERNEL);
+>  
+>  	pr_info("PCI-DMA: using GART IOMMU.\n");
+>  	iommu_size = check_iommu_size(info.aper_base, aper_size);
+> diff --git a/arch/x86/mm/init.c b/arch/x86/mm/init.c
+> index e7bb483557c9..1bba16c5742b 100644
+> --- a/arch/x86/mm/init.c
+> +++ b/arch/x86/mm/init.c
+> @@ -467,7 +467,7 @@ bool pfn_range_is_mapped(unsigned long start_pfn, unsigned long end_pfn)
+>   * the physical memory. To access them they are temporarily mapped.
+>   */
+>  unsigned long __ref init_memory_mapping(unsigned long start,
+> -					       unsigned long end)
+> +					unsigned long end, pgprot_t prot)
 >  {
->  	int flags = 0;
+>  	struct map_range mr[NR_RANGE_MR];
+>  	unsigned long ret = 0;
+> @@ -481,7 +481,8 @@ unsigned long __ref init_memory_mapping(unsigned long start,
 >  
-> @@ -1063,7 +1063,7 @@ int arch_add_memory(int nid, u64 start, u64 size,
->  	memblock_clear_nomap(start, size);
+>  	for (i = 0; i < nr_range; i++)
+>  		ret = kernel_physical_mapping_init(mr[i].start, mr[i].end,
+> -						   mr[i].page_size_mask);
+> +						   mr[i].page_size_mask,
+> +						   prot);
 >  
->  	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
-> -			   restrictions);
-> +			   params);
->  }
->  void arch_remove_memory(int nid, u64 start, u64 size,
->  			struct vmem_altmap *altmap)
-> diff --git a/arch/ia64/mm/init.c b/arch/ia64/mm/init.c
-> index b01d68a2d5d9..97bbc23ea1e3 100644
-> --- a/arch/ia64/mm/init.c
-> +++ b/arch/ia64/mm/init.c
-> @@ -670,13 +670,13 @@ mem_init (void)
+>  	add_pfn_range_mapped(start >> PAGE_SHIFT, ret >> PAGE_SHIFT);
 >  
->  #ifdef CONFIG_MEMORY_HOTPLUG
->  int arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions)
-> +		    struct mhp_params *params)
->  {
->  	unsigned long start_pfn = start >> PAGE_SHIFT;
->  	unsigned long nr_pages = size >> PAGE_SHIFT;
->  	int ret;
->  
-> -	ret = __add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	ret = __add_pages(nid, start_pfn, nr_pages, params);
->  	if (ret)
->  		printk("%s: Problem encountered in __add_pages() as ret=%d\n",
->  		       __func__,  ret);
-> diff --git a/arch/powerpc/mm/mem.c b/arch/powerpc/mm/mem.c
-> index ef7b1119b2e2..b4bece53bec0 100644
-> --- a/arch/powerpc/mm/mem.c
-> +++ b/arch/powerpc/mm/mem.c
-> @@ -128,7 +128,7 @@ static void flush_dcache_range_chunked(unsigned long start, unsigned long stop,
->  }
->  
->  int __ref arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions)
-> +			  struct mhp_params *params)
->  {
->  	unsigned long start_pfn = start >> PAGE_SHIFT;
->  	unsigned long nr_pages = size >> PAGE_SHIFT;
-> @@ -144,7 +144,7 @@ int __ref arch_add_memory(int nid, u64 start, u64 size,
->  		return -EFAULT;
+> @@ -521,7 +522,7 @@ static unsigned long __init init_range_memory_mapping(
+>  		 */
+>  		can_use_brk_pgt = max(start, (u64)pgt_buf_end<<PAGE_SHIFT) >=
+>  				    min(end, (u64)pgt_buf_top<<PAGE_SHIFT);
+> -		init_memory_mapping(start, end);
+> +		init_memory_mapping(start, end, PAGE_KERNEL);
+>  		mapped_ram_size += end - start;
+>  		can_use_brk_pgt = true;
 >  	}
+> @@ -661,7 +662,7 @@ void __init init_mem_mapping(void)
+>  #endif
 >  
-> -	return __add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	return __add_pages(nid, start_pfn, nr_pages, params);
->  }
+>  	/* the ISA range is always mapped regardless of memory holes */
+> -	init_memory_mapping(0, ISA_END_ADDRESS);
+> +	init_memory_mapping(0, ISA_END_ADDRESS, PAGE_KERNEL);
 >  
->  void __ref arch_remove_memory(int nid, u64 start, u64 size,
-> diff --git a/arch/s390/mm/init.c b/arch/s390/mm/init.c
-> index ac44bd76db4b..e9e4a7abd0cc 100644
-> --- a/arch/s390/mm/init.c
-> +++ b/arch/s390/mm/init.c
-> @@ -268,20 +268,20 @@ device_initcall(s390_cma_mem_init);
->  #endif /* CONFIG_CMA */
->  
->  int arch_add_memory(int nid, u64 start, u64 size,
-> -		struct mhp_restrictions *restrictions)
-> +		    struct mhp_params *params)
->  {
->  	unsigned long start_pfn = PFN_DOWN(start);
->  	unsigned long size_pages = PFN_DOWN(size);
->  	int rc;
->  
-> -	if (WARN_ON_ONCE(restrictions->altmap))
-> +	if (WARN_ON_ONCE(params->altmap))
->  		return -EINVAL;
->  
->  	rc = vmem_add_mapping(start, size);
->  	if (rc)
->  		return rc;
->  
-> -	rc = __add_pages(nid, start_pfn, size_pages, restrictions);
-> +	rc = __add_pages(nid, start_pfn, size_pages, params);
->  	if (rc)
->  		vmem_remove_mapping(start, size);
->  	return rc;
-> diff --git a/arch/sh/mm/init.c b/arch/sh/mm/init.c
-> index d1b1ff2be17a..e5114c053364 100644
-> --- a/arch/sh/mm/init.c
-> +++ b/arch/sh/mm/init.c
-> @@ -406,14 +406,14 @@ void __init mem_init(void)
->  
->  #ifdef CONFIG_MEMORY_HOTPLUG
->  int arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions)
-> +		    struct mhp_params *params)
->  {
->  	unsigned long start_pfn = PFN_DOWN(start);
->  	unsigned long nr_pages = size >> PAGE_SHIFT;
->  	int ret;
->  
->  	/* We only have ZONE_NORMAL, so this is easy.. */
-> -	ret = __add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	ret = __add_pages(nid, start_pfn, nr_pages, params);
->  	if (unlikely(ret))
->  		printk("%s: Failed, __add_pages() == %d\n", __func__, ret);
->  
+>  	/* Init the trampoline, possibly with KASLR memory offset */
+>  	init_trampoline();
 > diff --git a/arch/x86/mm/init_32.c b/arch/x86/mm/init_32.c
-> index 23df4885bbed..3ec3dac7c268 100644
+> index 3ec3dac7c268..e25a4218e6ff 100644
 > --- a/arch/x86/mm/init_32.c
 > +++ b/arch/x86/mm/init_32.c
-> @@ -853,12 +853,12 @@ void __init mem_init(void)
->  
->  #ifdef CONFIG_MEMORY_HOTPLUG
->  int arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions)
-> +		    struct mhp_params *params)
+> @@ -253,7 +253,8 @@ static inline int is_kernel_text(unsigned long addr)
+>  unsigned long __init
+>  kernel_physical_mapping_init(unsigned long start,
+>  			     unsigned long end,
+> -			     unsigned long page_size_mask)
+> +			     unsigned long page_size_mask,
+> +			     pgprot_t prot)
 >  {
->  	unsigned long start_pfn = start >> PAGE_SHIFT;
->  	unsigned long nr_pages = size >> PAGE_SHIFT;
->  
-> -	return __add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	return __add_pages(nid, start_pfn, nr_pages, params);
->  }
->  
->  void arch_remove_memory(int nid, u64 start, u64 size,
+>  	int use_pse = page_size_mask == (1<<PG_LEVEL_2M);
+>  	unsigned long last_map_addr = end;
 > diff --git a/arch/x86/mm/init_64.c b/arch/x86/mm/init_64.c
-> index abbdecb75fad..87977a8bfbbf 100644
+> index 87977a8bfbbf..9e7692080dda 100644
 > --- a/arch/x86/mm/init_64.c
 > +++ b/arch/x86/mm/init_64.c
-> @@ -844,11 +844,11 @@ static void update_end_of_memory_vars(u64 start, u64 size)
+> @@ -585,7 +585,7 @@ phys_pmd_init(pmd_t *pmd_page, unsigned long paddr, unsigned long paddr_end,
+>   */
+>  static unsigned long __meminit
+>  phys_pud_init(pud_t *pud_page, unsigned long paddr, unsigned long paddr_end,
+> -	      unsigned long page_size_mask, bool init)
+> +	      unsigned long page_size_mask, pgprot_t _prot, bool init)
+>  {
+>  	unsigned long pages = 0, paddr_next;
+>  	unsigned long paddr_last = paddr_end;
+> @@ -595,7 +595,7 @@ phys_pud_init(pud_t *pud_page, unsigned long paddr, unsigned long paddr_end,
+>  	for (; i < PTRS_PER_PUD; i++, paddr = paddr_next) {
+>  		pud_t *pud;
+>  		pmd_t *pmd;
+> -		pgprot_t prot = PAGE_KERNEL;
+> +		pgprot_t prot = _prot;
+>  
+>  		vaddr = (unsigned long)__va(paddr);
+>  		pud = pud_page + pud_index(vaddr);
+> @@ -644,9 +644,12 @@ phys_pud_init(pud_t *pud_page, unsigned long paddr, unsigned long paddr_end,
+>  		if (page_size_mask & (1<<PG_LEVEL_1G)) {
+>  			pages++;
+>  			spin_lock(&init_mm.page_table_lock);
+> +
+> +			prot = __pgprot(pgprot_val(prot) | __PAGE_KERNEL_LARGE);
+> +
+>  			set_pte_init((pte_t *)pud,
+>  				     pfn_pte((paddr & PUD_MASK) >> PAGE_SHIFT,
+> -					     PAGE_KERNEL_LARGE),
+> +					     prot),
+>  				     init);
+>  			spin_unlock(&init_mm.page_table_lock);
+>  			paddr_last = paddr_next;
+> @@ -669,7 +672,7 @@ phys_pud_init(pud_t *pud_page, unsigned long paddr, unsigned long paddr_end,
+>  
+>  static unsigned long __meminit
+>  phys_p4d_init(p4d_t *p4d_page, unsigned long paddr, unsigned long paddr_end,
+> -	      unsigned long page_size_mask, bool init)
+> +	      unsigned long page_size_mask, pgprot_t prot, bool init)
+>  {
+>  	unsigned long vaddr, vaddr_end, vaddr_next, paddr_next, paddr_last;
+>  
+> @@ -679,7 +682,7 @@ phys_p4d_init(p4d_t *p4d_page, unsigned long paddr, unsigned long paddr_end,
+>  
+>  	if (!pgtable_l5_enabled())
+>  		return phys_pud_init((pud_t *) p4d_page, paddr, paddr_end,
+> -				     page_size_mask, init);
+> +				     page_size_mask, prot, init);
+>  
+>  	for (; vaddr < vaddr_end; vaddr = vaddr_next) {
+>  		p4d_t *p4d = p4d_page + p4d_index(vaddr);
+> @@ -702,13 +705,13 @@ phys_p4d_init(p4d_t *p4d_page, unsigned long paddr, unsigned long paddr_end,
+>  		if (!p4d_none(*p4d)) {
+>  			pud = pud_offset(p4d, 0);
+>  			paddr_last = phys_pud_init(pud, paddr, __pa(vaddr_end),
+> -					page_size_mask, init);
+> +					page_size_mask, prot, init);
+>  			continue;
+>  		}
+>  
+>  		pud = alloc_low_page();
+>  		paddr_last = phys_pud_init(pud, paddr, __pa(vaddr_end),
+> -					   page_size_mask, init);
+> +					   page_size_mask, prot, init);
+>  
+>  		spin_lock(&init_mm.page_table_lock);
+>  		p4d_populate_init(&init_mm, p4d, pud, init);
+> @@ -722,7 +725,7 @@ static unsigned long __meminit
+>  __kernel_physical_mapping_init(unsigned long paddr_start,
+>  			       unsigned long paddr_end,
+>  			       unsigned long page_size_mask,
+> -			       bool init)
+> +			       pgprot_t prot, bool init)
+>  {
+>  	bool pgd_changed = false;
+>  	unsigned long vaddr, vaddr_start, vaddr_end, vaddr_next, paddr_last;
+> @@ -743,13 +746,13 @@ __kernel_physical_mapping_init(unsigned long paddr_start,
+>  			paddr_last = phys_p4d_init(p4d, __pa(vaddr),
+>  						   __pa(vaddr_end),
+>  						   page_size_mask,
+> -						   init);
+> +						   prot, init);
+>  			continue;
+>  		}
+>  
+>  		p4d = alloc_low_page();
+>  		paddr_last = phys_p4d_init(p4d, __pa(vaddr), __pa(vaddr_end),
+> -					   page_size_mask, init);
+> +					   page_size_mask, prot, init);
+>  
+>  		spin_lock(&init_mm.page_table_lock);
+>  		if (pgtable_l5_enabled())
+> @@ -778,10 +781,10 @@ __kernel_physical_mapping_init(unsigned long paddr_start,
+>  unsigned long __meminit
+>  kernel_physical_mapping_init(unsigned long paddr_start,
+>  			     unsigned long paddr_end,
+> -			     unsigned long page_size_mask)
+> +			     unsigned long page_size_mask, pgprot_t prot)
+>  {
+>  	return __kernel_physical_mapping_init(paddr_start, paddr_end,
+> -					      page_size_mask, true);
+> +					      page_size_mask, prot, true);
 >  }
 >  
->  int add_pages(int nid, unsigned long start_pfn, unsigned long nr_pages,
-> -				struct mhp_restrictions *restrictions)
-> +	      struct mhp_params *params)
+>  /*
+> @@ -796,7 +799,8 @@ kernel_physical_mapping_change(unsigned long paddr_start,
+>  			       unsigned long page_size_mask)
 >  {
->  	int ret;
->  
-> -	ret = __add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	ret = __add_pages(nid, start_pfn, nr_pages, params);
->  	WARN_ON_ONCE(ret);
->  
->  	/* update max_pfn, max_low_pfn and high_memory */
-> @@ -859,14 +859,14 @@ int add_pages(int nid, unsigned long start_pfn, unsigned long nr_pages,
+>  	return __kernel_physical_mapping_init(paddr_start, paddr_end,
+> -					      page_size_mask, false);
+> +					      page_size_mask, PAGE_KERNEL,
+> +					      false);
 >  }
 >  
->  int arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions)
-> +		    struct mhp_params *params)
->  {
+>  #ifndef CONFIG_NUMA
+> @@ -864,7 +868,7 @@ int arch_add_memory(int nid, u64 start, u64 size,
 >  	unsigned long start_pfn = start >> PAGE_SHIFT;
 >  	unsigned long nr_pages = size >> PAGE_SHIFT;
 >  
->  	init_memory_mapping(start, start + size);
+> -	init_memory_mapping(start, start + size);
+> +	init_memory_mapping(start, start + size, PAGE_KERNEL);
 >  
-> -	return add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	return add_pages(nid, start_pfn, nr_pages, params);
+>  	return add_pages(nid, start_pfn, nr_pages, params);
 >  }
+> diff --git a/arch/x86/mm/mm_internal.h b/arch/x86/mm/mm_internal.h
+> index eeae142062ed..3f37b5c80bb3 100644
+> --- a/arch/x86/mm/mm_internal.h
+> +++ b/arch/x86/mm/mm_internal.h
+> @@ -12,7 +12,8 @@ void early_ioremap_page_table_range_init(void);
 >  
->  #define PAGE_INUSE 0xFD
-> diff --git a/include/linux/memory_hotplug.h b/include/linux/memory_hotplug.h
-> index 69ff3037528d..c5df1b3dada0 100644
-> --- a/include/linux/memory_hotplug.h
-> +++ b/include/linux/memory_hotplug.h
-> @@ -54,10 +54,10 @@ enum {
->  };
+>  unsigned long kernel_physical_mapping_init(unsigned long start,
+>  					     unsigned long end,
+> -					     unsigned long page_size_mask);
+> +					     unsigned long page_size_mask,
+> +					     pgprot_t prot);
+>  unsigned long kernel_physical_mapping_change(unsigned long start,
+>  					     unsigned long end,
+>  					     unsigned long page_size_mask);
+> diff --git a/arch/x86/platform/uv/bios_uv.c b/arch/x86/platform/uv/bios_uv.c
+> index 607f58147311..c60255da5a6c 100644
+> --- a/arch/x86/platform/uv/bios_uv.c
+> +++ b/arch/x86/platform/uv/bios_uv.c
+> @@ -352,7 +352,8 @@ void __iomem *__init efi_ioremap(unsigned long phys_addr, unsigned long size,
+>  	if (type == EFI_MEMORY_MAPPED_IO)
+>  		return ioremap(phys_addr, size);
 >  
->  /*
-> - * Restrictions for the memory hotplug:
-> - * altmap: alternative allocator for memmap array
-> + * Extended parameters for memory hotplug:
-> + * altmap: alternative allocator for memmap array (optional)
->   */
-> -struct mhp_restrictions {
-> +struct mhp_params {
->  	struct vmem_altmap *altmap;
->  };
->  
-> @@ -108,7 +108,7 @@ extern int restore_online_page_callback(online_page_callback_t callback);
->  extern int try_online_node(int nid);
->  
->  extern int arch_add_memory(int nid, u64 start, u64 size,
-> -			struct mhp_restrictions *restrictions);
-> +			   struct mhp_params *params);
->  extern u64 max_mem_size;
->  
->  extern bool memhp_auto_online;
-> @@ -126,17 +126,17 @@ extern void __remove_pages(unsigned long start_pfn, unsigned long nr_pages,
->  
->  /* reasonably generic interface to expand the physical pages */
->  extern int __add_pages(int nid, unsigned long start_pfn, unsigned long nr_pages,
-> -		       struct mhp_restrictions *restrictions);
-> +		       struct mhp_params *params);
->  
->  #ifndef CONFIG_ARCH_HAS_ADD_PAGES
->  static inline int add_pages(int nid, unsigned long start_pfn,
-> -		unsigned long nr_pages, struct mhp_restrictions *restrictions)
-> +		unsigned long nr_pages, struct mhp_params *params)
->  {
-> -	return __add_pages(nid, start_pfn, nr_pages, restrictions);
-> +	return __add_pages(nid, start_pfn, nr_pages, params);
->  }
->  #else /* ARCH_HAS_ADD_PAGES */
->  int add_pages(int nid, unsigned long start_pfn, unsigned long nr_pages,
-> -	      struct mhp_restrictions *restrictions);
-> +	      struct mhp_params *params);
->  #endif /* ARCH_HAS_ADD_PAGES */
->  
->  #ifdef CONFIG_NUMA
-> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-> index 0a54ffac8c68..c69469e1b40e 100644
-> --- a/mm/memory_hotplug.c
-> +++ b/mm/memory_hotplug.c
-> @@ -299,11 +299,11 @@ static int check_hotplug_memory_addressable(unsigned long pfn,
->   * add the new pages.
->   */
->  int __ref __add_pages(int nid, unsigned long pfn, unsigned long nr_pages,
-> -		struct mhp_restrictions *restrictions)
-> +		      struct mhp_params *params)
->  {
->  	int err;
->  	unsigned long nr, start_sec, end_sec;
-> -	struct vmem_altmap *altmap = restrictions->altmap;
-> +	struct vmem_altmap *altmap = params->altmap;
->  
->  	err = check_hotplug_memory_addressable(pfn, nr_pages);
->  	if (err)
-> @@ -993,7 +993,7 @@ static int online_memory_block(struct memory_block *mem, void *arg)
->   */
->  int __ref add_memory_resource(int nid, struct resource *res)
->  {
-> -	struct mhp_restrictions restrictions = {};
-> +	struct mhp_params params = {};
->  	u64 start, size;
->  	bool new_node = false;
->  	int ret;
-> @@ -1021,7 +1021,7 @@ int __ref add_memory_resource(int nid, struct resource *res)
->  	new_node = ret;
->  
->  	/* call arch's memory hotadd */
-> -	ret = arch_add_memory(nid, start, size, &restrictions);
-> +	ret = arch_add_memory(nid, start, size, &params);
->  	if (ret < 0)
->  		goto error;
->  
-> diff --git a/mm/memremap.c b/mm/memremap.c
-> index 09b5b7adc773..6891a503a078 100644
-> --- a/mm/memremap.c
-> +++ b/mm/memremap.c
-> @@ -161,7 +161,7 @@ void *memremap_pages(struct dev_pagemap *pgmap, int nid)
->  {
->  	struct resource *res = &pgmap->res;
->  	struct dev_pagemap *conflict_pgmap;
-> -	struct mhp_restrictions restrictions = {
-> +	struct mhp_params params = {
->  		/*
->  		 * We do not want any optional features only our own memmap
->  		 */
-> @@ -275,7 +275,7 @@ void *memremap_pages(struct dev_pagemap *pgmap, int nid)
->  	 */
->  	if (pgmap->type == MEMORY_DEVICE_PRIVATE) {
->  		error = add_pages(nid, PHYS_PFN(res->start),
-> -				PHYS_PFN(resource_size(res)), &restrictions);
-> +				PHYS_PFN(resource_size(res)), &params);
->  	} else {
->  		error = kasan_add_zero_shadow(__va(res->start), resource_size(res));
->  		if (error) {
-> @@ -284,7 +284,7 @@ void *memremap_pages(struct dev_pagemap *pgmap, int nid)
->  		}
->  
->  		error = arch_add_memory(nid, res->start, resource_size(res),
-> -					&restrictions);
-> +					&params);
->  	}
->  
->  	if (!error) {
-> @@ -292,7 +292,7 @@ void *memremap_pages(struct dev_pagemap *pgmap, int nid)
->  
->  		zone = &NODE_DATA(nid)->node_zones[ZONE_DEVICE];
->  		move_pfn_range_to_zone(zone, PHYS_PFN(res->start),
-> -				PHYS_PFN(resource_size(res)), restrictions.altmap);
-> +				PHYS_PFN(resource_size(res)), params.altmap);
->  	}
->  
->  	mem_hotplug_done();
+> -	last_map_pfn = init_memory_mapping(phys_addr, phys_addr + size);
+> +	last_map_pfn = init_memory_mapping(phys_addr, phys_addr + size,
+> +					   PAGE_KERNEL);
+>  	if ((last_map_pfn << PAGE_SHIFT) < phys_addr + size) {
+>  		unsigned long top = last_map_pfn << PAGE_SHIFT;
+>  		efi_ioremap(top, size - (top - phys_addr), type, attribute);
 > -- 
 > 2.20.1
+> 
 
 -- 
 Michal Hocko
