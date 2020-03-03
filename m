@@ -2,84 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 679FA1778AB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:21:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3CCE1778BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:24:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oPr1PSGA4f3YcZ/IEfTkH3OqUeu0wQDPBgvjkJKVx1c=; b=Y8Pw1Mwc3GLe0D
-	2oDRU1uvotbjkbHsEnA40CVi67de5JvC2djmO+PUhTU71M5yuUb/2HT58YiwJ3VCVgARszyJo82gb
-	0tuj7ztrCpA3LxzsH0Ny0S4mrlMkQWa8Uv7o9uFg93qiuVEyEB291tzkwkHmT7h9odEJvXXiBVLbd
-	ruikIfftTOtV0q8UI4JIoOpmeaEzWY059jAWGLjCZieaoBGDDrF/1xZZnFjSLobIojFFAmB2seLGf
-	jeTNRBur+TsRUz33Yt1WkLJWZMgXDolTB4zyF1SBNn8sacWlZ+9YgCKVQXnuyZ0dR1eqgK0Ive9jB
-	sx0qlY2BInJTwcnfd1uA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EtfOFfeeykHTIPTNUwp2TxxW3vkoRRpCB6+bv5rkQaA=; b=XZ+O+nJ2AN5E2V
+	2Utknk/p/g0HV4NRYOwhFDQ51yQU1D6xdP1s7NAzy/IeZZEcxFSRO7LqE/uu0SehEu0J4i6mIUGX/
+	KeRQ/cG2Y9PzMSP2+4nqTQCS++VjUPsiAMMNMRFF6QNiTyiynoxOhQO+QW21CkB2HDPF03Z4S2dlz
+	nQj6hQ+HMU4E49VQPN45F7Q3jVunPCGEudhkGq+DiaPDpvLYWl0OHIZMOseR2z1AmeSb6qK9+31sj
+	SjlvnohJm6wGQHctlz/f2B0sZXSF0CR8A/OX6+0FYDc8uLRRJ5tjIb/wbEvXy8pdwYG0NW8yehJdz
+	kUXzlX2xVvlLFCZKlEZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j98QC-0006nw-2f; Tue, 03 Mar 2020 14:21:20 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j98TD-0007H3-Qe; Tue, 03 Mar 2020 14:24:27 +0000
+Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j98Q1-0006n3-IG
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:21:11 +0000
-Received: by mail-wm1-x342.google.com with SMTP id i9so1997481wml.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 06:21:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=NFqfyuaIMXDmhEYwybWDmV6br7ErXXNIWP0DfrtJhAg=;
- b=BxqgyUScA42ya5W/hS98tP3urB/eFkPXNoQrM9ONG1yTtYDYC4daSym5eFym6xUM8X
- sTJL5hq76g1DuAKaig8PJypHLYoLwVF9Rqdy21AjtTpGuJA+AlYkCdWfthQ976h8wD/+
- ZZgE3MTT+Ixz1RJ/h8cYHl54wBqjpsCQ2TSFNGErYN+9e9lQNswyvFfoDrumFmZi265X
- id3XKeV9L/pECKKLEmhIIISAn7dU1v5TQr94KQg1FTzFrCo93/2wCC8lxGBAg4FSeoOv
- RWwzzPS68juV98HgpKl7at4mU+Nz95TcMJsdmwgtqjgFEdUBaddhB4YAHZaH31XQvpkl
- zJ8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NFqfyuaIMXDmhEYwybWDmV6br7ErXXNIWP0DfrtJhAg=;
- b=qFuu1e+142YlVEXyjbofMqCI3j6jonkNBrY3nuC+yCU15Xa+Qu+HJhat1bHfN9+6EF
- 8Lm+eaNARbvS7GFuKflAr1awgYbwXsZ9T1Uno+zbCWo2knkcxBorSKmuEmNesNx9zdEI
- y25rIQLOkEQ1+DF49zdlCfn6KwgqKrOIBENUudhGhCDx4hP5iDxNBL2GKDGqJIE9PbxQ
- SHtrvq9GvGhBbBX9GAhfAnO7wl5SIAiGjuFcsa9kAK+A9y2AnxuxcCIuP5b4cm2laYMf
- 9u3QIUeGVV1Wb8YAi3cP1l52gAaxxc+IBIq+8JvHZTKy4REz/1Qm840uMMlYPti/xcf9
- oKbw==
-X-Gm-Message-State: ANhLgQ05lS/eWXdO7ZLhXHkwNNBPMJNwILikJE+UKYdlYexTkemooK2L
- aaM/gdPJi798b2fm/tSq55Q=
-X-Google-Smtp-Source: ADFU+vuA55YiBqZW8hozKVnA303Z8I+G6uCt/91NLr0beE3WRI/tNItyCX8dfci1a2+B6uQ5231B5w==
-X-Received: by 2002:a1c:a70a:: with SMTP id q10mr4525360wme.88.1583245267106; 
- Tue, 03 Mar 2020 06:21:07 -0800 (PST)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id h20sm11805212wrc.47.2020.03.03.06.21.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 06:21:06 -0800 (PST)
-Date: Tue, 3 Mar 2020 15:21:04 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: sunxi: a83t: does not boot anymore in BigEndian
-Message-ID: <20200303142104.GA8327@Red>
-References: <20200303074326.GA9935@Red>
- <65498b8e-a6c3-9edb-873f-6c011582a2eb@arm.com>
+ id 1j98T0-0007D8-Pf; Tue, 03 Mar 2020 14:24:17 +0000
+Received: from [IPv6:2001:983:e9a7:1:8c14:57ad:bac0:273b]
+ ([IPv6:2001:983:e9a7:1:8c14:57ad:bac0:273b])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id 98ScjVEzW9Im298SdjzuTx; Tue, 03 Mar 2020 15:24:06 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1583245446; bh=jS4ZxNmoD4GaWSXQE5OZus/wUWGTloTdylSEFmJJoA0=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=Jyu1whJcyO4vZ62Zisw/p+qhwKGGm+8ESbBbUTvzNENtTeqXlKjSiuRP6ngiOf05d
+ HkF8csghsgLmCjAuKEn1X+sDvJlBX0sr9fWqfwhNeMdCJAvMCHr+GPYee1GMe/d3RB
+ LHAo2VCrC3WHwGsivDGedpkOqy46oQFJr5+UqWqluRkFE+5xbHJTXZ0UhFDdq21J+f
+ q9o5NXFg/r/9UhFD9PO4/HADhvlvghsEv6pD0ITmQTW2Q31KWMy/E1RwYpImtVBLeS
+ HIL8G/CctpvrQ4VzAjLDyphZzABMAu3fpYDPxA++YGBEgeFCTsjGAYssMSq5ItnMmY
+ C9rGkZiPJ4FnQ==
+Subject: Re: [PATCH v4] media: mtk-vpu: avoid unaligned access to DTCM buffer.
+To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
+References: <20200302044021.97415-1-hsinyi@chromium.org>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Message-ID: <46f27a3b-de4c-8d43-d6d7-d6332ee30451@xs4all.nl>
+Date: Tue, 3 Mar 2020 15:23:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <65498b8e-a6c3-9edb-873f-6c011582a2eb@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200302044021.97415-1-hsinyi@chromium.org>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfOAPE1IN/cClyfoWL2QQFp0l8HqJGt1VbIXw4OS692YQI0LpaIy9p8tkRVqKdufrFX8q+ovnpamg9y5ayLzmkC7rguOgttrMKxhxUNq2xFE8/WwbIvLt
+ 7cPaRqSzRfFqog0jM/Me69vKU2L23wU8mqqZxo5Olok5RliChOW0EI2u3jIsVv0kCDiP5eLMdt8TdcYlDayUgzIwf8MKeJ+qc8pm7R3j1UxHQU4FJP+bLaEI
+ VmLCeKuA3l59ukrlGg9SdYJyL7+KleJvwD1Jn0QUo/1/Px7/7Dy0orezSJvCDNiXz/s88/xsbGZpoVfVH4MUZt6R6ZFKQr5eH7HvDDJh1n9LOn//+gykRonU
+ W6Isw26uPrM2YoGet961vuDDD8XuUL4sHiMUbJsnilyJpWuYTqey4cR5jxjxm6A+u7sp34MnRiCHMMi67XAUMVzkXaUJHiuc3AcbPdH0bnZCGSjBmXW80zNj
+ ou1UUE9jbZre6dO3Oel38u9NI8OBlti0emSVwqc2w868ywS9UiMe7XMsvbxkCple0UuvweRGbr6sv10LcrNJVkUwPEdn8a9kWLL7m7sIwwyGykzLxJNG7D9r
+ 9VS6MHerAY/J230B9d0tZUL3af6g3FfFMG4mNjyam1/o2zucpm16kM/NvTP6UwAqWhZ9LGswB4mcd0/trIFwQLilkmKlZJZdE6S1fUQHryowJ79r2WPK0eby
+ gLld5fFnNpFRRa3+MHq1Ry8Am7QdRU7O
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_062109_634919_D4E2DDB0 
-X-CRM114-Status: GOOD (  18.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200303_062415_000750_0D3C6E66 
+X-CRM114-Status: GOOD (  23.77  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.30 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [194.109.24.30 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,137 +87,277 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, maz@kernel.org,
- linux-kernel@vger.kernel.org, mripard@kernel.org, linux@armlinux.org.uk,
- wens@csie.org, linux-arm-kernel@lists.infradead.org
+Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Tiffany Lin <tiffany.lin@mediatek.com>, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 03, 2020 at 01:47:02PM +0000, Robin Murphy wrote:
-> On 03/03/2020 7:43 am, Corentin Labbe wrote:
-> > Hello
-> > 
-> > My sun8i-a83t-bananapi-m3 does not boot anymore in BE.
-> > Others sunxi platform I have seems not affected (a10, a20, a64, h3, h5, h6)
-> > 
-> > I have bisected this problem:
-> > git bisect start
-> > # bad: [98d54f81e36ba3bf92172791eba5ca5bd813989b] Linux 5.6-rc4
-> > git bisect bad 98d54f81e36ba3bf92172791eba5ca5bd813989b
-> > # bad: [d5226fa6dbae0569ee43ecfc08bdcd6770fc4755] Linux 5.5
-> > git bisect bad d5226fa6dbae0569ee43ecfc08bdcd6770fc4755
-> > # good: [219d54332a09e8d8741c1e1982f5eae56099de85] Linux 5.4
-> > git bisect good 219d54332a09e8d8741c1e1982f5eae56099de85
-> > # bad: [8c39f71ee2019e77ee14f88b1321b2348db51820] Merge git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net
-> > git bisect bad 8c39f71ee2019e77ee14f88b1321b2348db51820
-> > # bad: [3b397c7ccafe0624018cb09fc96729f8f6165573] Merge tag 'regmap-v5.5' of git://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap
-> > git bisect bad 3b397c7ccafe0624018cb09fc96729f8f6165573
-> > # good: [924ea58dadea23cc28b60d02b9c0896b7b168a6f] Merge tag 'mt76-for-kvalo-2019-11-20' of https://github.com/nbd168/wireless
-> > git bisect good 924ea58dadea23cc28b60d02b9c0896b7b168a6f
-> > # good: [3f3c8be973af10875cfa1e7b85a535b6ba76b44f] Merge tag 'for-linus-5.5a-rc1-tag' of git://git.kernel.org/pub/scm/linux/kernel/git/xen/tip
-> > git bisect good 3f3c8be973af10875cfa1e7b85a535b6ba76b44f
-> > # bad: [642356cb5f4a8c82b5ca5ebac288c327d10df236] Merge git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
-> > git bisect bad 642356cb5f4a8c82b5ca5ebac288c327d10df236
-> > # good: [57d8154f15e89f53dfb412f4ed32ebe3c3d755a0] crypto: atmel-aes - Change data type for "lastc" buffer
-> > git bisect good 57d8154f15e89f53dfb412f4ed32ebe3c3d755a0
-> > # bad: [752272f16dd18f2cac58a583a8673c8e2fb93abb] Merge tag 'for-linus' of git://git.kernel.org/pub/scm/virt/kvm/kvm
-> > git bisect bad 752272f16dd18f2cac58a583a8673c8e2fb93abb
-> > # good: [9477f4449b0b011ce1d058c09ec450bfcdaab784] KVM: VMX: Add helper to check reserved bits in IA32_PERF_GLOBAL_CTRL
-> > git bisect good 9477f4449b0b011ce1d058c09ec450bfcdaab784
-> > # bad: [cd7056ae34af0e9424da97bbc7d2b38246ba8a2c] Merge remote-tracking branch 'kvmarm/misc-5.5' into kvmarm/next
-> > git bisect bad cd7056ae34af0e9424da97bbc7d2b38246ba8a2c
-> > # bad: [c7892db5dd6afe921ead502aff7440a1e450d947] KVM: arm64: Select TASK_DELAY_ACCT+TASKSTATS rather than SCHEDSTATS
-> > git bisect bad c7892db5dd6afe921ead502aff7440a1e450d947
-> > # bad: [8564d6372a7d8a6d440441b8ed8020f97f744450] KVM: arm64: Support stolen time reporting via shared structure
-> > git bisect bad 8564d6372a7d8a6d440441b8ed8020f97f744450
-> > # bad: [55009c6ed2d24fc0f5521ab2482f145d269389ea] KVM: arm/arm64: Factor out hypercall handling from PSCI code
-> > git bisect bad 55009c6ed2d24fc0f5521ab2482f145d269389ea
-> > # bad: [6a7458485b390f48e481fcd4a0b20e6c5c843d2e] KVM: arm64: Document PV-time interface
-> > git bisect bad 6a7458485b390f48e481fcd4a0b20e6c5c843d2e
-> > # bad: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
-> > git bisect bad dcac930e9901d765234bc15004db4f7d4416db71
-> > # first bad commit: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
-> > 
-> > But bisect lead to a merge request.
+On 02/03/2020 05:40, Hsin-Yi Wang wrote:
+> media: mtk-vpu: avoid unaligned access to DTCM buffer.
 > 
-> FWIW once you've bisected to a merge commit, you can always then try 
-> bisecting down the merged branch itself (i.e. between 5.4-rc3 and 
-> e6ea46511b1a in this case) to narrow things down further.
+> Previously, vpu->recv_buf and send_buf are forced cast from
+> void __iomem *tcm. vpu->recv_buf->share_buf is passed to
+> vpu_ipi_desc.handler(). It's not able to do unaligned access. Otherwise
+> kernel would crash due to unable to handle kernel paging request.
 > 
-> Given that that branch is supposed to be a functionally-inert cleanup, 
-> and (judging by the DTS) this platform apparently isn't using PSCI 
-> anyway, it does seem a bit odd. Can you get any earlycon/earlyprintk 
-> output to suggest what the actual cause of the boot failure is?
+> struct vpu_run {
+> 	u32 signaled;
+> 	char fw_ver[VPU_FW_VER_LEN];
+> 	unsigned int	dec_capability;
+> 	unsigned int	enc_capability;
+> 	wait_queue_head_t wq;
+> };
 > 
+> fw_ver starts at 4 byte boundary. If system enables
+> CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS, strscpy() will do
+> read_word_at_a_time(), which tries to read 8-byte: *(unsigned long *)addr
+> 
+> vpu_init_ipi_handler() calls strscpy(), which would lead to crash.
+> 
+> vpu_init_ipi_handler() and several other handlers (eg.
+> vpu_dec_ipi_handler) only do read access to this data, so they can be
+> const, and we can use memcpy_fromio() to copy the buf to another non iomem
+> buffer then pass to handler.
+> 
+> Fixes: 85709cbf1524 ("media: replace strncpy() by strscpy()")
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> ---
+> Change in v4:
+> - Remove forced casting recv_buf from tcm. Copy iomem data before passing
+>   to handler.
+> Change in v2, v3:
+> - fix sparse warnings.
+> ---
+>  drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c  |  9 ++--
+>  .../media/platform/mtk-vcodec/vdec_vpu_if.c   |  6 +--
+>  .../media/platform/mtk-vcodec/venc_vpu_if.c   | 12 ++---
+>  drivers/media/platform/mtk-vpu/mtk_vpu.c      | 45 ++++++++++---------
+>  drivers/media/platform/mtk-vpu/mtk_vpu.h      |  2 +-
+>  5 files changed, 38 insertions(+), 36 deletions(-)
+> 
+> diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c b/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c
+> index 6720d11f50cf..dc95b8a44759 100644
+> --- a/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c
+> +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_vpu.c
+> @@ -15,7 +15,7 @@ static inline struct mtk_mdp_ctx *vpu_to_ctx(struct mtk_mdp_vpu *vpu)
+>  	return container_of(vpu, struct mtk_mdp_ctx, vpu);
+>  }
+>  
+> -static void mtk_mdp_vpu_handle_init_ack(struct mdp_ipi_comm_ack *msg)
+> +static void mtk_mdp_vpu_handle_init_ack(const struct mdp_ipi_comm_ack *msg)
+>  {
+>  	struct mtk_mdp_vpu *vpu = (struct mtk_mdp_vpu *)
+>  					(unsigned long)msg->ap_inst;
+> @@ -26,10 +26,11 @@ static void mtk_mdp_vpu_handle_init_ack(struct mdp_ipi_comm_ack *msg)
+>  	vpu->inst_addr = msg->vpu_inst_addr;
+>  }
+>  
+> -static void mtk_mdp_vpu_ipi_handler(void *data, unsigned int len, void *priv)
+> +static void mtk_mdp_vpu_ipi_handler(const void *data, unsigned int len,
+> +				    void *priv)
+>  {
+> -	unsigned int msg_id = *(unsigned int *)data;
+> -	struct mdp_ipi_comm_ack *msg = (struct mdp_ipi_comm_ack *)data;
+> +	unsigned int msg_id = *(const unsigned int *)data;
+> +	const struct mdp_ipi_comm_ack *msg = data;
 
-Hello
+Why not just do:
 
-With earlycon I got:
+	const struct mdp_ipi_comm_ack *msg = data;
+	unsigned int msg_id = msg->msg_id;
 
-bootz 0x42000000 0x43300000 0x43000000
-## Loading init Ramdisk from Legacy Image at 43300000 ...
-   Image Name:   
-   Image Type:   ARM Linux RAMDisk Image (uncompressed)
-   Data Size:    32397255 Bytes = 30.9 MiB
-   Load Address: 00000000
-   Entry Point:  00000000
-   Verifying Checksum ... OK
-## Flattened Device Tree blob at 43000000
-   Booting using the fdt blob at 0x43000000
-   Using Device Tree in place at 43000000, end 43008f07
-Starting kernel ...
-[    0.000000] Booting Linux on physical CPU 0x0
-[    0.000000] Linux version 5.6.0-rc4 (compile@Red) (gcc version 8.3.0 (Gentoo 8.3.0-r1 p1.1)) #21 SMP Tue Mar 3 15:07:20 CET 2020
-[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=12c5387d
-[    0.000000] CPU: div instructions available: patching division code
-[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
-[    0.000000] OF: fdt: Machine model: Banana Pi BPI-M3
-[    0.000000] earlycon: uart0 at MMIO32 0x01c28000 (options '')
-[    0.000000] printk: bootconsole [uart0] enabled
-[    0.000000] Memory policy: Data cache writealloc
-[    0.000000] cma: Reserved 16 MiB at 0xbf000000
-[    0.000000] percpu: Embedded 15 pages/cpu s31320 r8192 d21928 u61440
-[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 522752
-[    0.000000] Kernel command line: console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x01c28000 ip=dhcp
-[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
-[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
-[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
-[    0.000000] Memory: 2019352K/2097152K available (7168K kernel code, 485K rwdata, 2832K rodata, 1024K init, 248K bss, 61416K reserved, 16384K cma-reserved, 1294336K highmem)
-[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
-[    0.000000] rcu: Hierarchical RCU implementation.
-[    0.000000] rcu: 	RCU event tracing is enabled.
-[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
-[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
-[    0.000000] random: get_random_bytes called from start_kernel+0x2a4/0x440 with crng_init=0
-[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (virt).
-[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
-[    0.000008] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
-[    0.008636] Switching to timer-based delay loop, resolution 41ns
-[    0.015439] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns
-[    0.025876] Console: colour dummy device 80x30
-[    0.030743] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
-[    0.041927] pid_max: default: 32768 minimum: 301
-[    0.047093] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
-[    0.055003] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
-[    0.064553] CPU: Testing write buffer coherency: ok
-[    0.070534] /cpus/cpu@0 missing clock-frequency property
-[    0.076282] /cpus/cpu@1 missing clock-frequency property
-[    0.082071] /cpus/cpu@2 missing clock-frequency property
-[    0.087816] /cpus/cpu@3 missing clock-frequency property
-[    0.093560] /cpus/cpu@100 missing clock-frequency property
-[    0.099498] /cpus/cpu@101 missing clock-frequency property
-[    0.105441] /cpus/cpu@102 missing clock-frequency property
-[    0.111363] /cpus/cpu@103 missing clock-frequency property
-[    0.117292] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
-[    0.124164] Setting up static identity map for 0x40100000 - 0x40100060
-[    0.131496] ARM CCI driver probed
-[    0.135832] sunxi multi cluster SMP support installed
-[    0.141784] rcu: Hierarchical SRCU implementation.
-[    0.147537] smp: Bringing up secondary CPUs ...
+Much cleaner.
 
-I will try to redo the bisect
+Other than this small issue this patch looks nice. No more sparse/smatch warnings
+and no more weird casts :-)
+
+Regards,
+
+	Hans
+
+>  	struct mtk_mdp_vpu *vpu = (struct mtk_mdp_vpu *)
+>  					(unsigned long)msg->ap_inst;
+>  	struct mtk_mdp_ctx *ctx;
+> diff --git a/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c b/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c
+> index 70abfd4cd4b9..948a12fd9d46 100644
+> --- a/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c
+> +++ b/drivers/media/platform/mtk-vcodec/vdec_vpu_if.c
+> @@ -9,7 +9,7 @@
+>  #include "vdec_ipi_msg.h"
+>  #include "vdec_vpu_if.h"
+>  
+> -static void handle_init_ack_msg(struct vdec_vpu_ipi_init_ack *msg)
+> +static void handle_init_ack_msg(const struct vdec_vpu_ipi_init_ack *msg)
+>  {
+>  	struct vdec_vpu_inst *vpu = (struct vdec_vpu_inst *)
+>  					(unsigned long)msg->ap_inst_addr;
+> @@ -34,9 +34,9 @@ static void handle_init_ack_msg(struct vdec_vpu_ipi_init_ack *msg)
+>   * This function runs in interrupt context and it means there's an IPI MSG
+>   * from VPU.
+>   */
+> -static void vpu_dec_ipi_handler(void *data, unsigned int len, void *priv)
+> +static void vpu_dec_ipi_handler(const void *data, unsigned int len, void *priv)
+>  {
+> -	struct vdec_vpu_ipi_ack *msg = data;
+> +	const struct vdec_vpu_ipi_ack *msg = data;
+>  	struct vdec_vpu_inst *vpu = (struct vdec_vpu_inst *)
+>  					(unsigned long)msg->ap_inst_addr;
+>  
+> diff --git a/drivers/media/platform/mtk-vcodec/venc_vpu_if.c b/drivers/media/platform/mtk-vcodec/venc_vpu_if.c
+> index 3e931b0ed096..9540709c1905 100644
+> --- a/drivers/media/platform/mtk-vcodec/venc_vpu_if.c
+> +++ b/drivers/media/platform/mtk-vcodec/venc_vpu_if.c
+> @@ -8,26 +8,26 @@
+>  #include "venc_ipi_msg.h"
+>  #include "venc_vpu_if.h"
+>  
+> -static void handle_enc_init_msg(struct venc_vpu_inst *vpu, void *data)
+> +static void handle_enc_init_msg(struct venc_vpu_inst *vpu, const void *data)
+>  {
+> -	struct venc_vpu_ipi_msg_init *msg = data;
+> +	const struct venc_vpu_ipi_msg_init *msg = data;
+>  
+>  	vpu->inst_addr = msg->vpu_inst_addr;
+>  	vpu->vsi = vpu_mapping_dm_addr(vpu->dev, msg->vpu_inst_addr);
+>  }
+>  
+> -static void handle_enc_encode_msg(struct venc_vpu_inst *vpu, void *data)
+> +static void handle_enc_encode_msg(struct venc_vpu_inst *vpu, const void *data)
+>  {
+> -	struct venc_vpu_ipi_msg_enc *msg = data;
+> +	const struct venc_vpu_ipi_msg_enc *msg = data;
+>  
+>  	vpu->state = msg->state;
+>  	vpu->bs_size = msg->bs_size;
+>  	vpu->is_key_frm = msg->is_key_frm;
+>  }
+>  
+> -static void vpu_enc_ipi_handler(void *data, unsigned int len, void *priv)
+> +static void vpu_enc_ipi_handler(const void *data, unsigned int len, void *priv)
+>  {
+> -	struct venc_vpu_ipi_msg_common *msg = data;
+> +	const struct venc_vpu_ipi_msg_common *msg = data;
+>  	struct venc_vpu_inst *vpu =
+>  		(struct venc_vpu_inst *)(unsigned long)msg->venc_inst;
+>  
+> diff --git a/drivers/media/platform/mtk-vpu/mtk_vpu.c b/drivers/media/platform/mtk-vpu/mtk_vpu.c
+> index a768707abb94..2fbccc9b247b 100644
+> --- a/drivers/media/platform/mtk-vpu/mtk_vpu.c
+> +++ b/drivers/media/platform/mtk-vpu/mtk_vpu.c
+> @@ -203,8 +203,8 @@ struct mtk_vpu {
+>  	struct vpu_run run;
+>  	struct vpu_wdt wdt;
+>  	struct vpu_ipi_desc ipi_desc[IPI_MAX];
+> -	struct share_obj *recv_buf;
+> -	struct share_obj *send_buf;
+> +	struct share_obj __iomem *recv_buf;
+> +	struct share_obj __iomem *send_buf;
+>  	struct device *dev;
+>  	struct clk *clk;
+>  	bool fw_loaded;
+> @@ -292,7 +292,7 @@ int vpu_ipi_send(struct platform_device *pdev,
+>  		 unsigned int len)
+>  {
+>  	struct mtk_vpu *vpu = platform_get_drvdata(pdev);
+> -	struct share_obj *send_obj = vpu->send_buf;
+> +	struct share_obj __iomem *send_obj = vpu->send_buf;
+>  	unsigned long timeout;
+>  	int ret = 0;
+>  
+> @@ -325,9 +325,9 @@ int vpu_ipi_send(struct platform_device *pdev,
+>  		}
+>  	} while (vpu_cfg_readl(vpu, HOST_TO_VPU));
+>  
+> -	memcpy((void *)send_obj->share_buf, buf, len);
+> -	send_obj->len = len;
+> -	send_obj->id = id;
+> +	memcpy_toio(send_obj->share_buf, buf, len);
+> +	writel(len, &send_obj->len);
+> +	writel(id, &send_obj->id);
+>  
+>  	vpu->ipi_id_ack[id] = false;
+>  	/* send the command to VPU */
+> @@ -600,10 +600,10 @@ int vpu_load_firmware(struct platform_device *pdev)
+>  }
+>  EXPORT_SYMBOL_GPL(vpu_load_firmware);
+>  
+> -static void vpu_init_ipi_handler(void *data, unsigned int len, void *priv)
+> +static void vpu_init_ipi_handler(const void *data, unsigned int len, void *priv)
+>  {
+> -	struct mtk_vpu *vpu = (struct mtk_vpu *)priv;
+> -	struct vpu_run *run = (struct vpu_run *)data;
+> +	struct mtk_vpu *vpu = priv;
+> +	const struct vpu_run *run = data;
+>  
+>  	vpu->run.signaled = run->signaled;
+>  	strscpy(vpu->run.fw_ver, run->fw_ver, sizeof(vpu->run.fw_ver));
+> @@ -700,19 +700,21 @@ static int vpu_alloc_ext_mem(struct mtk_vpu *vpu, u32 fw_type)
+>  
+>  static void vpu_ipi_handler(struct mtk_vpu *vpu)
+>  {
+> -	struct share_obj *rcv_obj = vpu->recv_buf;
+> +	struct share_obj __iomem *rcv_obj = vpu->recv_buf;
+>  	struct vpu_ipi_desc *ipi_desc = vpu->ipi_desc;
+> -
+> -	if (rcv_obj->id < IPI_MAX && ipi_desc[rcv_obj->id].handler) {
+> -		ipi_desc[rcv_obj->id].handler(rcv_obj->share_buf,
+> -					      rcv_obj->len,
+> -					      ipi_desc[rcv_obj->id].priv);
+> -		if (rcv_obj->id > IPI_VPU_INIT) {
+> -			vpu->ipi_id_ack[rcv_obj->id] = true;
+> +	unsigned char data[SHARE_BUF_SIZE];
+> +	s32 id = readl(&rcv_obj->id);
+> +
+> +	memcpy_fromio(data, rcv_obj->share_buf, sizeof(data));
+> +	if (id < IPI_MAX && ipi_desc[id].handler) {
+> +		ipi_desc[id].handler(data, readl(&rcv_obj->len),
+> +				     ipi_desc[id].priv);
+> +		if (id > IPI_VPU_INIT) {
+> +			vpu->ipi_id_ack[id] = true;
+>  			wake_up(&vpu->ack_wq);
+>  		}
+>  	} else {
+> -		dev_err(vpu->dev, "No such ipi id = %d\n", rcv_obj->id);
+> +		dev_err(vpu->dev, "No such ipi id = %d\n", id);
+>  	}
+>  }
+>  
+> @@ -722,11 +724,10 @@ static int vpu_ipi_init(struct mtk_vpu *vpu)
+>  	vpu_cfg_writel(vpu, 0x0, VPU_TO_HOST);
+>  
+>  	/* shared buffer initialization */
+> -	vpu->recv_buf = (__force struct share_obj *)(vpu->reg.tcm +
+> -						     VPU_DTCM_OFFSET);
+> +	vpu->recv_buf = vpu->reg.tcm + VPU_DTCM_OFFSET;
+>  	vpu->send_buf = vpu->recv_buf + 1;
+> -	memset(vpu->recv_buf, 0, sizeof(struct share_obj));
+> -	memset(vpu->send_buf, 0, sizeof(struct share_obj));
+> +	memset_io(vpu->recv_buf, 0, sizeof(struct share_obj));
+> +	memset_io(vpu->send_buf, 0, sizeof(struct share_obj));
+>  
+>  	return 0;
+>  }
+> diff --git a/drivers/media/platform/mtk-vpu/mtk_vpu.h b/drivers/media/platform/mtk-vpu/mtk_vpu.h
+> index d4453b4bcee9..ee7c552ce928 100644
+> --- a/drivers/media/platform/mtk-vpu/mtk_vpu.h
+> +++ b/drivers/media/platform/mtk-vpu/mtk_vpu.h
+> @@ -15,7 +15,7 @@
+>   * VPU interfaces with other blocks by share memory and interrupt.
+>   **/
+>  
+> -typedef void (*ipi_handler_t) (void *data,
+> +typedef void (*ipi_handler_t) (const void *data,
+>  			       unsigned int len,
+>  			       void *priv);
+>  
+> 
 
 
 _______________________________________________
