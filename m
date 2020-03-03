@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8DC717797F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:49:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0611177983
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 15:49:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wugr1+XIgZmWdistQ+Eq28ruBOkBLKnWMoT6u20kcgw=; b=oNiWlA+SfDwcVIfWRX05meyjtC
-	qaBpyqPTdQY1yfyrIAOZ9EyxRCeNbnbR9aa2Y8TCzyxy6qbyX8scCT4wPQYje9Dx1LthRVm9n8aHZ
-	l9T5jImPCsV/g8sPrZFmT6HpxFLu1Z1mrx+IDiWpVVhrLvhbi4bInkkzQAnpGb87bOFdijEID7aUb
-	bQsfyHgPeGHMH5DBNAHvvLI7GNHOCD4N8tteuZt/4cCt32+t15wwpQd2FY5vH60IVuDv1VVesRnn/
-	Dj9Hu3iOg9U0vlblcHCB6ZkTysobLG/cu4Te7/tfCO5q3njLyHD7lrItFXMZ036yDvx6vIdsDadv1
-	g+RGfNsw==;
+	bh=jLPXSTtbx6Bq547Ya8nvHl+FhFfBkp+/w+6lQ0xFqvo=; b=ls7/RmfVUgXijwXh5LlRtBJzr1
+	WgyztrHCA22CsvuGFjOHk+i7wMuea0IEDd5dMBFESpuMKrWJSuw6+I7nMPmWTudi/vzhTq5CtT97T
+	oggBNAiRlJXiOOo+3s4L4VC3wlzO4KZ2qTWyPVLdXbsHh39QKOZ/CAK4gy9NqArhtEW/eqDGtrFzW
+	H7TQx3ZvvpoPFrxT7doyvFuJXny0TzGobCrgLhI+Gj3dt6kce/MEewagMONK09lGQDyrCuSnap3L+
+	DhgYJ2cPzrpjLzsSFtzHE4m+Gk8IGglNJbwkE6xvqXslVTjl912LCEQpPTJfqjL+8OwKJH9BZ1muj
+	J4kB/n7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j98r3-0004Qn-GY; Tue, 03 Mar 2020 14:49:05 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j98rU-0004lh-JE; Tue, 03 Mar 2020 14:49:32 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j98qs-0004Os-AK
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:48:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 6so3529788wmi.5
+ id 1j98r3-0004Yt-Mp
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 14:49:07 +0000
+Received: by mail-wr1-x442.google.com with SMTP id q8so4705258wrm.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 06:48:54 -0800 (PST)
+ Tue, 03 Mar 2020 06:49:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:references:from:autocrypt:organization:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=8kLqlPogYXhrPLsTe7sbJldHHGHfrdcoK+7+4Ses2js=;
- b=Qc5iqVaAsMkOHi3o/L7iMkzDirw37XZjK1wYyVS66xOyTEq2S0JPKAZJIHenaUJulB
- Z1eOK37I9l+k0E9Idc5wyJZ6vC9bbS0vC2UodBsPDAL6+GdmmQpFzXCEGB36EV0IY6zK
- r9WSE0VcISdXraZt0Fn0KJ60BvK8AjkyTgn4Q1p6iFCVUPtuRmC9gAKJ+NctlPogjAjT
- unY+YBJtPF6KeYKohlupICp8wN7ywT5qKad10xe7CA3Qqgkw+I2oYFUH7YP3miPQ5SUV
- aXUb/NYHpj8Qs6ud2MsdEoPhgqP05deG7HNOa/afMTsOtSbTW85ciaQpQNYXTeoJhRa9
- hMrw==
+ bh=jE8X0S9I5HP8Ogvr9GEfkXMWGXaUBNGXNUW2bqqKaDI=;
+ b=FMU529WojxXAH0SSTOOf0pQtaI7jVQX7D226yWFwER4LbdCWfgIWGopAYOOcoh6em2
+ goHPti00CpGAiq24guJxYX7VNyQNliX4cRV+z7PoY530WXtkIEYa+DgRwa13GUEYHtZ0
+ kWXTSFDgCd+RY9tPf9TaxSWNpeo71nXrGp6eF+S6D4O5c56IhZ9V4OJ8fHr5Tpy2vkia
+ 6RR7YsaReYsGRFGEOQPNP1/7PsBiE2TXD5L3kluHjDoq39DUn9PiB5eDgMxf/LRPluRt
+ J5xe2IknGn8OVxbJBOBdipdR8MSlhoKpDp53YVknFGG2FgriNWZoNGzIgePiL+qJ2CfJ
+ fpDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=8kLqlPogYXhrPLsTe7sbJldHHGHfrdcoK+7+4Ses2js=;
- b=OB5m6wWOlkc5ESpOyVH94X028rW4uUbncH8HWbLRajF8yheBCUDYTbS/nygEAc99wg
- Ld/CRTKxFWU+5A14eR91NqPh3Gxfu0guFtz4hWDr9sZEliA0gsX3dOzDCavjyf4qaBvX
- e9qhRgNAsRRi32mlgALg8mArKyMDYPobTXEsSutbzh9T9phmqkXUmeGfhPQHwCMQDuN2
- aEWsiumq9vwkXULDhLtKv1rldZTU9wvaqOS7OFDG0dI3Ds+SvoqGDBUQ0xx3IFMwiNZH
- 65pfcDqEG5cm4KMRrA7YOtp2egSxArFoQCCwc8CpfbFdFoNTSe1A7atN2FciSlr4GczY
- M+ng==
-X-Gm-Message-State: ANhLgQ3Xdje7XVITFcKn5MLfjmUuFk/vPsQCf2mIneuYdNb/ek1Tf7sQ
- ZgSHjCJV1uIKSko0hiLpIo5f1A==
-X-Google-Smtp-Source: ADFU+vtcufaByXfvsA9WTqeq+z/tuAqRK9cXjBDxIk25m27md6rhnsfQcdJF+SVhmXrMp6kgo1K67A==
-X-Received: by 2002:a1c:156:: with SMTP id 83mr4760640wmb.151.1583246932779;
- Tue, 03 Mar 2020 06:48:52 -0800 (PST)
+ bh=jE8X0S9I5HP8Ogvr9GEfkXMWGXaUBNGXNUW2bqqKaDI=;
+ b=LyYoG3Xm5P44uW9/mBEd8JNtXOwGW4Zv/CMRMPMRzkm4aV5ifS4RwbiGvqIqcuCyfH
+ 2POKiwNlmJno8eGGOOubnQlQr3QslSNy6x0s2ez7vJ6mw05tVdj5h9ZLJPLaTORkVKPn
+ 9OZRSOD8iAErChV67Izut3IZoLkpRtGUMma/yg2HQrps7t54RmaITV71ZZSL2kkduPLD
+ vszpMJglyPV7BNvNlysTqtKgguvhJHOs0HAiKNxdW+1sBq8MWuN79z4sB3mmOY6YRDp4
+ ZjL7TXVXnLecjbuT1+RaDPgLMoEpwhGc4svzIwDyM/qgXx2xBZFbRHgBFL0FA8N/MPcs
+ F8Pg==
+X-Gm-Message-State: ANhLgQ3BdDzAe+V//EsIFdvHyNRX58oGb5DxUe0ugn54NUKVCi5FtrVj
+ /S22VKr7E7vkR7HnXx/ZDa72aQ==
+X-Google-Smtp-Source: ADFU+vsOh6d3IL0rnj6kEZk4basmu+7zJwhR450xbUD/HVkZEh/7egPQCeEC91zSF9aDCsMwNpbIwA==
+X-Received: by 2002:a5d:504e:: with SMTP id h14mr5691321wrt.82.1583246943615; 
+ Tue, 03 Mar 2020 06:49:03 -0800 (PST)
 Received: from [10.1.3.173]
  (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id l8sm4498661wmj.2.2020.03.03.06.48.51
+ by smtp.gmail.com with ESMTPSA id b14sm24273225wrn.75.2020.03.03.06.49.02
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 03 Mar 2020 06:48:52 -0800 (PST)
-Subject: Re: [PATCH 2/2] arm64: dts: meson-g12a-tanix-tx5max: add initial
- device tree
+ Tue, 03 Mar 2020 06:49:03 -0800 (PST)
+Subject: Re: [PATCH 1/2] dt-bindings: arm: amlogic: add support for the Tanix
+ TX5 Max
 To: Christian Hewitt <christianshewitt@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
 References: <1582991214-85209-1-git-send-email-christianshewitt@gmail.com>
- <1582991214-85209-3-git-send-email-christianshewitt@gmail.com>
+ <1582991214-85209-2-git-send-email-christianshewitt@gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -121,23 +121,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <db658793-da57-9b70-c95a-7a8f6241b5c3@baylibre.com>
-Date: Tue, 3 Mar 2020 15:48:51 +0100
+Message-ID: <ab65c3db-1b8b-3148-efcf-a9cfae9ae9f7@baylibre.com>
+Date: Tue, 3 Mar 2020 15:49:02 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <1582991214-85209-3-git-send-email-christianshewitt@gmail.com>
+In-Reply-To: <1582991214-85209-2-git-send-email-christianshewitt@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_064854_382023_97B210D9 
-X-CRM114-Status: GOOD (  20.99  )
+X-CRM114-CacheID: sfid-20200303_064905_792383_C9FEE226 
+X-CRM114-Status: GOOD (  17.36  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -161,528 +161,26 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 29/02/2020 16:46, Christian Hewitt wrote:
-> The Oranth Tanix TX5 Max is based on the Amlogic U200 reference design
-> using the S905X2 chipset. Hardware specification:
-> 
-> - 4GB LPDDR4 RAM
-> - 32GB eMMC storage
-> - 10/100/1000 Base-T Ethernet using External RGMII PHY
-> - 802.11 a/b/g/b/ac + BT 4.1 sdio wireless
-> - HDMI 2.0 (4k@60p) video
-> - Composite video + 2-channel audio output on 3.5mm jack
-> - S/PDIF audio output
-> - 1x USB 3.0
-> - 1x USB 2.0
-> - 1x micro SD card slot
-> 
-> The device tree is based on the higher-spec X96 Max box device.
+> The Oranth (Tanix) TX5 Max is based on the Amlogic U200 reference
+> board with an S905X2 chip.
 > 
 > Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 > ---
->  arch/arm64/boot/dts/amlogic/Makefile               |   1 +
->  .../boot/dts/amlogic/meson-g12a-tanix-tx5max.dts   | 481 +++++++++++++++++++++
->  2 files changed, 482 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts
+>  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-> index eef0045..a1db803 100644
-> --- a/arch/arm64/boot/dts/amlogic/Makefile
-> +++ b/arch/arm64/boot/dts/amlogic/Makefile
-> @@ -1,6 +1,7 @@
->  # SPDX-License-Identifier: GPL-2.0
->  dtb-$(CONFIG_ARCH_MESON) += meson-axg-s400.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-sei510.dtb
-> +dtb-$(CONFIG_ARCH_MESON) += meson-g12a-tanix-tx5max.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-u200.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
->  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-a311d-khadas-vim3.dtb
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts
-> new file mode 100644
-> index 0000000..c3ef0ee
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/amlogic/meson-g12a-tanix-tx5max.dts
-> @@ -0,0 +1,481 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (c) 2018 BayLibre SAS. All rights reserved.
-> + */
-> +
-> +/dts-v1/;
-> +
-> +#include "meson-g12a.dtsi"
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/gpio/meson-g12a-gpio.h>
-> +#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
-> +
-> +/ {
-> +	compatible = "oranth,tx5-max", "amlogic,g12a";
-> +	model = "Tanix TX5 Max";
-> +
-> +	aliases {
-> +		serial0 = &uart_AO;
-> +		ethernet0 = &ethmac;
-> +	};
-> +
-> +	spdif_dit: audio-codec-1 {
-> +		#sound-dai-cells = <0>;
-> +		compatible = "linux,spdif-dit";
-> +		status = "okay";
-> +		sound-name-prefix = "DIT";
-> +	};
-> +
-> +	chosen {
-> +		stdout-path = "serial0:115200n8";
-> +	};
-> +	memory@0 {
-> +		device_type = "memory";
-> +		reg = <0x0 0x0 0x0 0x40000000>;
-> +	};
-> +
-> +	cvbs-connector {
-> +		compatible = "composite-video-connector";
-> +
-> +		port {
-> +			cvbs_connector_in: endpoint {
-> +				remote-endpoint = <&cvbs_vdac_out>;
-> +			};
-> +		};
-> +	};
-> +
-> +	hdmi-connector {
-> +		compatible = "hdmi-connector";
-> +		type = "a";
-> +
-> +		port {
-> +			hdmi_connector_in: endpoint {
-> +				remote-endpoint = <&hdmi_tx_tmds_out>;
-> +			};
-> +		};
-> +	};
-> +
-> +	emmc_pwrseq: emmc-pwrseq {
-> +		compatible = "mmc-pwrseq-emmc";
-> +		reset-gpios = <&gpio BOOT_12 GPIO_ACTIVE_LOW>;
-> +	};
-> +
-> +	sdio_pwrseq: sdio-pwrseq {
-> +		compatible = "mmc-pwrseq-simple";
-> +		reset-gpios = <&gpio GPIOX_6 GPIO_ACTIVE_LOW>;
-> +		clocks = <&wifi32k>;
-> +		clock-names = "ext_clock";
-> +	};
-> +
-> +	flash_1v8: regulator-flash_1v8 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "FLASH_1V8";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +		vin-supply = <&vcc_3v3>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	dc_in: regulator-dc_in {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "DC_IN";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	vcc_1v8: regulator-vcc_1v8 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VCC_1V8";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +		vin-supply = <&vcc_3v3>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	vcc_3v3: regulator-vcc_3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VCC_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		vin-supply = <&vddao_3v3>;
-> +		regulator-always-on;
-> +		/* FIXME: actually controlled by VDDCPU_B_EN */
-> +	};
-> +
-> +	vcc_5v: regulator-vcc_5v {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VCC_5V";
-> +		regulator-min-microvolt = <5000000>;
-> +		regulator-max-microvolt = <5000000>;
-> +		vin-supply = <&dc_in>;
-> +
-> +		gpio = <&gpio GPIOH_8 GPIO_OPEN_DRAIN>;
-> +		enable-active-low;
-> +	};
-> +
-> +	vddao_1v8: regulator-vddao_1v8 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDAO_1V8";
-> +		regulator-min-microvolt = <1800000>;
-> +		regulator-max-microvolt = <1800000>;
-> +		vin-supply = <&vddao_3v3>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	vddao_3v3: regulator-vddao_3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "VDDAO_3V3";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		vin-supply = <&dc_in>;
-> +		regulator-always-on;
-> +	};
-> +
-> +	vddcpu: regulator-vddcpu {
-> +		compatible = "pwm-regulator";
-> +
-> +		regulator-name = "VDDCPU";
-> +		regulator-min-microvolt = <721000>;
-> +		regulator-max-microvolt = <1022000>;
-> +
-> +		vin-supply = <&dc_in>;
-> +
-> +		pwms = <&pwm_AO_cd 1 1250 0>;
-> +		pwm-dutycycle-range = <100 0>;
-> +
-> +		regulator-boot-on;
-> +		regulator-always-on;
-> +	};
-> +
-> +	sound {
-> +		compatible = "amlogic,axg-sound-card";
-> +		model = "G12A-TANIX-TX5MAX";
-> +		audio-aux-devs = <&tdmout_b>;
-> +		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
-> +				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
-> +				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
-> +				"TDM_B Playback", "TDMOUT_B OUT",
-> +				"SPDIFOUT IN 0", "FRDDR_A OUT 3",
-> +				"SPDIFOUT IN 1", "FRDDR_B OUT 3",
-> +				"SPDIFOUT IN 2", "FRDDR_C OUT 3";
-> +
-> +		assigned-clocks = <&clkc CLKID_MPLL2>,
-> +				  <&clkc CLKID_MPLL0>,
-> +				  <&clkc CLKID_MPLL1>;
-> +		assigned-clock-parents = <0>, <0>, <0>;
-> +		assigned-clock-rates = <294912000>,
-> +				       <270950400>,
-> +				       <393216000>;
-> +		status = "okay";
-> +
-> +		dai-link-0 {
-> +			sound-dai = <&frddr_a>;
-> +		};
-> +
-> +		dai-link-1 {
-> +			sound-dai = <&frddr_b>;
-> +		};
-> +
-> +		dai-link-2 {
-> +			sound-dai = <&frddr_c>;
-> +		};
-> +
-> +		/* 8ch hdmi interface */
-> +		dai-link-3 {
-> +			sound-dai = <&tdmif_b>;
-> +			dai-format = "i2s";
-> +			dai-tdm-slot-tx-mask-0 = <1 1>;
-> +			dai-tdm-slot-tx-mask-1 = <1 1>;
-> +			dai-tdm-slot-tx-mask-2 = <1 1>;
-> +			dai-tdm-slot-tx-mask-3 = <1 1>;
-> +			mclk-fs = <256>;
-> +
-> +			codec {
-> +				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
-> +			};
-> +		};
-> +
-> +		/* spdif hdmi or toslink interface */
-> +		dai-link-4 {
-> +			sound-dai = <&spdifout>;
-> +
-> +			codec-0 {
-> +				sound-dai = <&spdif_dit>;
-> +			};
-> +
-> +			codec-1 {
-> +				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_A>;
-> +			};
-> +		};
-> +
-> +		/* spdif hdmi interface */
-> +		dai-link-5 {
-> +			sound-dai = <&spdifout_b>;
-> +
-> +			codec {
-> +				sound-dai = <&tohdmitx TOHDMITX_SPDIF_IN_B>;
-> +			};
-> +		};
-> +
-> +		/* hdmi glue */
-> +		dai-link-6 {
-> +			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
-> +
-> +			codec {
-> +				sound-dai = <&hdmi_tx>;
-> +			};
-> +		};
-> +	};
-> +
-> +	wifi32k: wifi32k {
-> +		compatible = "pwm-clock";
-> +		#clock-cells = <0>;
-> +		clock-frequency = <32768>;
-> +		pwms = <&pwm_ef 0 30518 0>; /* PWM_E at 32.768KHz */
-> +	};
-> +};
-> +
-> +&arb {
-> +	status = "okay";
-> +};
-> +
-> +&cec_AO {
-> +	pinctrl-0 = <&cec_ao_a_h_pins>;
-> +	pinctrl-names = "default";
-> +	status = "disabled";
-> +	hdmi-phandle = <&hdmi_tx>;
-> +};
-> +
-> +&cecb_AO {
-> +	pinctrl-0 = <&cec_ao_b_h_pins>;
-> +	pinctrl-names = "default";
-> +	status = "okay";
-> +	hdmi-phandle = <&hdmi_tx>;
-> +};
-> +
-> +&clkc_audio {
-> +	status = "okay";
-> +};
-> +
-> +&cpu0 {
-> +	cpu-supply = <&vddcpu>;
-> +	operating-points-v2 = <&cpu_opp_table>;
-> +	clocks = <&clkc CLKID_CPU_CLK>;
-> +	clock-latency = <50000>;
-> +};
-> +
-> +&cpu1 {
-> +	cpu-supply = <&vddcpu>;
-> +	operating-points-v2 = <&cpu_opp_table>;
-> +	clocks = <&clkc CLKID_CPU_CLK>;
-> +	clock-latency = <50000>;
-> +};
-> +
-> +&cpu2 {
-> +	cpu-supply = <&vddcpu>;
-> +	operating-points-v2 = <&cpu_opp_table>;
-> +	clocks = <&clkc CLKID_CPU_CLK>;
-> +	clock-latency = <50000>;
-> +};
-> +
-> +&cpu3 {
-> +	cpu-supply = <&vddcpu>;
-> +	operating-points-v2 = <&cpu_opp_table>;
-> +	clocks = <&clkc CLKID_CPU_CLK>;
-> +	clock-latency = <50000>;
-> +};
-> +
-> +&cvbs_vdac_port {
-> +	cvbs_vdac_out: endpoint {
-> +		remote-endpoint = <&cvbs_connector_in>;
-> +	};
-> +};
-> +
-> +&frddr_a {
-> +	status = "okay";
-> +};
-> +
-> +&frddr_b {
-> +	status = "okay";
-> +};
-> +
-> +&frddr_c {
-> +	status = "okay";
-> +};
-> +
-> +&hdmi_tx {
-> +	status = "okay";
-> +	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
-> +	pinctrl-names = "default";
-> +	hdmi-supply = <&vcc_5v>;
-> +};
-> +
-> +&hdmi_tx_tmds_port {
-> +	hdmi_tx_tmds_out: endpoint {
-> +		remote-endpoint = <&hdmi_connector_in>;
-> +	};
-> +};
-> +
-> +&ir {
-> +	status = "okay";
-> +	pinctrl-0 = <&remote_input_ao_pins>;
-> +	pinctrl-names = "default";
-> +	linux,rc-map-name = "rc-tx5max";
-> +};
-> +
-> +&pwm_AO_cd {
-> +	pinctrl-0 = <&pwm_ao_d_e_pins>;
-> +	pinctrl-names = "default";
-> +	clocks = <&xtal>;
-> +	clock-names = "clkin1";
-> +	status = "okay";
-> +};
-> +
-> +&ext_mdio {
-> +	external_phy: ethernet-phy@0 {
-> +		/* Realtek RTL8211F (0x001cc916) */
-> +		reg = <0>;
-> +		max-speed = <1000>;
-> +		eee-broken-1000t;
-> +
-> +		reset-assert-us = <10000>;
-> +		reset-deassert-us = <30000>;
-> +		reset-gpios = <&gpio GPIOZ_15 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
-> +
-> +		interrupt-parent = <&gpio_intc>;
-> +		/* MAC_INTR on GPIOZ_14 */
-> +		interrupts = <26 IRQ_TYPE_LEVEL_LOW>;
-> +	};
-> +};
-> +
-> +&ethmac {
-> +	pinctrl-0 = <&eth_pins>, <&eth_rgmii_pins>;
-> +	pinctrl-names = "default";
-> +	status = "okay";
-> +	phy-mode = "rgmii";
-> +	phy-handle = <&external_phy>;
-> +	amlogic,tx-delay-ns = <2>;
-> +};
-> +
-> +&pwm_ef {
-> +	status = "okay";
-> +	pinctrl-0 = <&pwm_e_pins>;
-> +	pinctrl-names = "default";
-> +	clocks = <&xtal>;
-> +	clock-names = "clkin0";
-> +};
-> +
-> +&uart_A {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_a_pins>, <&uart_a_cts_rts_pins>;
-> +	pinctrl-names = "default";
-> +	uart-has-rtscts;
-> +
-> +	bluetooth {
-> +		compatible = "brcm,bcm43438-bt";
-> +		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
-> +		max-speed = <2000000>;
-> +		clocks = <&wifi32k>;
-> +		clock-names = "lpo";
-> +	};
-> +};
-> +
-> +&uart_AO {
-> +	status = "okay";
-> +	pinctrl-0 = <&uart_ao_a_pins>;
-> +	pinctrl-names = "default";
-> +};
-> +
-> +&usb {
-> +	status = "okay";
-> +	dr_mode = "host";
-> +};
-> +
-> +/* SDIO */
-> +&sd_emmc_a {
-> +	status = "okay";
-> +	pinctrl-0 = <&sdio_pins>;
-> +	pinctrl-1 = <&sdio_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
-> +	#address-cells = <1>;
-> +	#size-cells = <0>;
-> +
-> +	bus-width = <4>;
-> +	cap-sd-highspeed;
-> +	sd-uhs-sdr50;
-> +	max-frequency = <100000000>;
-> +
-> +	non-removable;
-> +	disable-wp;
-> +
-> +	/* WiFi firmware requires power to be kept while in suspend */
-> +	keep-power-in-suspend;
-> +
-> +	mmc-pwrseq = <&sdio_pwrseq>;
-> +
-> +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddao_1v8>;
-> +
-> +	brcmf: wifi@1 {
-> +		reg = <1>;
-> +		compatible = "brcm,bcm4329-fmac";
-> +	};
-> +};
-> +
-> +/* SD card */
-> +&sd_emmc_b {
-> +	status = "okay";
-> +	pinctrl-0 = <&sdcard_c_pins>;
-> +	pinctrl-1 = <&sdcard_clk_gate_c_pins>;
-> +	pinctrl-names = "default", "clk-gate";
-> +
-> +	bus-width = <4>;
-> +	cap-sd-highspeed;
-> +	max-frequency = <100000000>;
-> +	disable-wp;
-> +
-> +	cd-gpios = <&gpio GPIOC_6 GPIO_ACTIVE_LOW>;
-> +	vmmc-supply = <&vddao_3v3>;
-> +	vqmmc-supply = <&vddao_3v3>;
-> +};
-> +
-> +/* eMMC */
-> +&sd_emmc_c {
-> +	status = "okay";
-> +	pinctrl-0 = <&emmc_pins>, <&emmc_ds_pins>;
-> +	pinctrl-1 = <&emmc_clk_gate_pins>;
-> +	pinctrl-names = "default", "clk-gate";
-> +
-> +	bus-width = <8>;
-> +	cap-mmc-highspeed;
-> +	max-frequency = <100000000>;
-> +	non-removable;
-> +	disable-wp;
-> +
-> +	mmc-pwrseq = <&emmc_pwrseq>;
-> +	vmmc-supply = <&vcc_3v3>;
-> +	vqmmc-supply = <&flash_1v8>;
-> +};
-> +
-> +&spdifout {
-> +	pinctrl-0 = <&spdif_out_h_pins>;
-> +	pinctrl-names = "default";
-> +	status = "okay";
-> +};
-> +
-> +&spdifout_b {
-> +	status = "okay";
-> +};
-> +
-> +&tdmif_b {
-> +	status = "okay";
-> +};
-> +
-> +&tdmout_b {
-> +	status = "okay";
-> +};
-> +
-> +&tohdmitx {
-> +	status = "okay";
-> +};
+> diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
+> index f74aba4..4003206 100644
+> --- a/Documentation/devicetree/bindings/arm/amlogic.yaml
+> +++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
+> @@ -136,6 +136,7 @@ properties:
+>                - amediatech,x96-max
+>                - amlogic,u200
+>                - seirobotics,sei510
+> +              - oranth,tx5-max
+>            - const: amlogic,g12a
+>  
+>        - description: Boards with the Amlogic Meson G12B A311D SoC
 > 
 
 Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
