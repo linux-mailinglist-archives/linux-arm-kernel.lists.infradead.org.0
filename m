@@ -2,78 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2753317703E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 08:43:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7FA6177055
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 08:48:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sWGPd7uRZu6fwfoFtuaEgeTL8a2FvY7YX98ri2w8QiA=; b=S44yt/mnSO0Sx7
-	pZniNXaynTMmH5if2E54Xhtig6Ax8sYQdjctTiFa7HoUkakIkLl109tHCV/eYSqR5ws5tvWrf0TNo
-	Co6HwKqu4WL0zRSErqSFDvTrvSTlySfCRZJlNPlrcyZIVOQFSc+8Mf5HNoUS+osRoQOK3UJB/jcsY
-	ujjm3t3qMs+0XLpPLHy2U/H/NJrWOWo5KDFWEoGQAV0fEOiaxz1k4S6BpPTlirMoAMpPRkGxgc+1X
-	vZDnBQgW8hFgakGieWDeBANNubT0FDLHnyuaoqe86E8OERfoqeMjkoGcNuLyZxqutfG7tnoXggynz
-	3UjxcZ+R/EmIlb0AxFXQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WN+DbHpCkV/o7rDcAOyb+SLB9+5AXoT2pSPwLDd4538=; b=j/7j7TpI3ZisFK
+	HdtAeohYe4wXxGfe1ZWrez+Ib+SuLKWtyiJioAyAFnBqxkoLMhNVAq0PF88bwJdOegudrrublt7rM
+	8Bqaj79JUHk6b8VGRC7YJlWwrQtU3YSujiZnXQyGc1phJiBWLiB5dThb8uEPG0lpNBH4VoDqd0Oik
+	Bu2RvNZ8UknF8rgWoLBuHTTg9P1/CWixK0mpZqTqcHAQEZwCyaLj3T0KSmQQQJza5JyEl9CTZbbHa
+	DdMe5Ojefef9oRx+m2S6vfLxcYgL2wA5TRak8JeqO3tZYo/aRsVJUgkkfdaba7UeACYI5ZnEL/wON
+	MJicEk6jUWQ0Tp6TAoMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j92DL-0000LE-OT; Tue, 03 Mar 2020 07:43:39 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j92I3-0002Cf-IM; Tue, 03 Mar 2020 07:48:31 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j92DD-0000Kb-BJ
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 07:43:32 +0000
-Received: by mail-wm1-x343.google.com with SMTP id i9so479410wml.4
+ id 1j92Hv-0002Ak-LK
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 07:48:24 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a5so1915745wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Mar 2020 23:43:30 -0800 (PST)
+ Mon, 02 Mar 2020 23:48:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=19y8hOwEla5LQ3+q+f8D7McftSkNCumM9N4Er3lVr7E=;
- b=qCaL00L+lgluqeD7V6Li2FtyeNm4SiJjl2I3OZo+ttzhqvUyXsu+W8M2GcGpzr5z1U
- Js/ngQ7Uq4qVDuioB6r6A1dtezHGNWmjaxoEkddUzlLZbs9kfRyn11bccHe+1bAo2O6T
- f47JDo8Chc156DXbObyfI6o6WmDtcgofD+v8e66DxWQAsFNi91ho7u9TjLS2LL8uzv8r
- L3wtY0IZKM3GSNQiwTTWCi6cGh0EDwsZEPyDE1bcYSILnDT6raz8lKAPbFZbUJjUsg12
- RBocHthCRJ370sbl4DLbaEPPYIEbWojWy1YCjZJ8ZgUVY/8C7Ws8vAbJ665D3yRCzamO
- xzYA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=S8P0LJ7u6TOFiOZkcDuJhkn/2H/OUG6d25AO7qTixAo=;
+ b=tMa+sriRSXr26gkkZ4JOU3NXaWVStazw6D0JzFbiDcrFlgTwuPRxVCf7o+qeIiZyTm
+ JBOi2SNBcUmyhgEJ/KaJJJNSWRxgysSYVcrsSC9jWhHBhms7GOR2TR1Kt2SOl3IVG7Bt
+ 30Otju7A1JXFcA5EQqEs75Tk4uJPFn2Ir541JbO8i5abn7JysWqJiI29d5btGTaU+Vgq
+ s6EYCzVdxTEWSlTw/x6tWkL60zjp1D7iT+awm03HbsIaqGwnqAE+9Hxk/omN6XwmdlG/
+ K9nejPTIClizao5I2hVcpTxLE7R3s+H8x3/dxputV6u78wni6kFrPWq9R1H3xzwo+0xC
+ My6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=19y8hOwEla5LQ3+q+f8D7McftSkNCumM9N4Er3lVr7E=;
- b=H7BwCJH2XzmZdI+XdF+bJjXsyNmqPoX7IiWRegmqdj9rYRNqJgpfILNCmzaitVeb/2
- bzZnTgaz12YncBvZtlYW17K3mNdesXbUkgRt/ELu/b7pHTdawUEsRVHenOxT5KxhVWJ2
- kfbEZMbj4Byndsx4GhLI/6C25lsBdqCAWwjYk5K1FK+xZGYRwx6CjUPwoC00X1TWXAYS
- 04GX2P+Tcft1K52D6Ca03xWxro27w5icRNpp6h4fehcsIR8irIh/RbLjlgLktYMt5Pj8
- K3IJiTGApYL5eV6ng2D5UptKJ7vipFKpfq/GOV+d3ehA5ptGdscKFoi+uDwrR7uYFe+2
- mozg==
-X-Gm-Message-State: ANhLgQ2mPNS37TK2x0bq9zGVFuMUFAgHJeVTk86Wh8JXowTLGe3Klb/v
- 0Eg6JLLizWsmkG9BbSPL/i8=
-X-Google-Smtp-Source: ADFU+vuw49wz51LirDGbH9qymWMVbsh0ZceIk1lUYnfagI/ccly8un3TZ7OYV+RRC94XY7n1OvtE5Q==
-X-Received: by 2002:a7b:c315:: with SMTP id k21mr2763832wmj.19.1583221409141; 
- Mon, 02 Mar 2020 23:43:29 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=S8P0LJ7u6TOFiOZkcDuJhkn/2H/OUG6d25AO7qTixAo=;
+ b=PS7axnAJhAMKHYwByB4nrbKzNwUxLtDET+S8iDvxpdxKQYycFNFTeoWkrU1yWHY9Fq
+ d5rDT9msayQvCkuH5VBWPEjkyrWb7Esojof8jxFVJ7/8M5Q3ZdlZ9O0YyDUkeumE/i/I
+ iTkJM9bRmN1o5GNlVh/G1dI0qTyr29gYILF1vBICKKlSNX43B3lUyHDP4IAB4l8qSScW
+ 6KIAqWZFf5Q1DOgcW+SoTEP+1bYNof/Ca8puUFjF/4FE5y1b8yLg6SZSEcDbJ/AFmLAo
+ DLArjbmYaqFHVNtIrvhLmzLLvueuOoTLkmkPIUijWSDdXcmde9fb2OmnZ6eIZN51zMXm
+ gfow==
+X-Gm-Message-State: ANhLgQ0ap+id9PJUUa2sZrhEsypansb9Cnio20SXbkFj6V66uFep2PSy
+ 59hxTOB8UlA/0D/6O31aNqM=
+X-Google-Smtp-Source: ADFU+vu8Gb4tXqwFBAViua1vl9+zS/LE0+lNqsDQ5GogCnCEm1+FqStbg/GYbA8hHXs7Zpj3rdrq3g==
+X-Received: by 2002:a1c:1fd0:: with SMTP id f199mr2833854wmf.168.1583221702071; 
+ Mon, 02 Mar 2020 23:48:22 -0800 (PST)
 Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id g7sm32066854wrq.21.2020.03.02.23.43.27
+ by smtp.googlemail.com with ESMTPSA id z64sm2537257wmg.35.2020.03.02.23.48.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Mar 2020 23:43:28 -0800 (PST)
-Date: Tue, 3 Mar 2020 08:43:26 +0100
+ Mon, 02 Mar 2020 23:48:21 -0800 (PST)
+Date: Tue, 3 Mar 2020 08:48:19 +0100
 From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: maz@kernel.org, wens@csie.org, mripard@kernel.org
-Subject: sunxi: a83t: does not boot anymore in BigEndian
-Message-ID: <20200303074326.GA9935@Red>
+To: Daniel Jordan <daniel.m.jordan@oracle.com>
+Subject: Re: WARNING: at kernel/workqueue.c:1473 __queue_work+0x3b8/0x3d0
+Message-ID: <20200303074819.GB9935@Red>
+References: <20200217204803.GA13479@Red>
+ <20200218163504.y5ofvaejleuf5tbh@ca-dmjordan1.us.oracle.com>
+ <20200220090350.GA19858@Red>
+ <20200221174223.r3y6tugavp3k5jdl@ca-dmjordan1.us.oracle.com>
+ <20200228123311.GE3275@willie-the-truck>
+ <20200228153331.uimy62rat2tdxxod@ca-dmjordan1.us.oracle.com>
+ <20200301175351.GA11684@Red>
+ <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20200302172510.fspofleipqjcdxak@ca-dmjordan1.us.oracle.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_234331_393093_FB9B1314 
-X-CRM114-Status: UNSURE (   7.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200302_234823_702383_D1A8281A 
+X-CRM114-Status: GOOD (  19.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [clabbe.montjoie[at]gmail.com]
@@ -97,59 +106,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux@armlinux.org.uk
+Cc: mark.rutland@arm.com, jiangshanlai@gmail.com, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org, tj@kernel.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Mar 02, 2020 at 12:25:10PM -0500, Daniel Jordan wrote:
+> On Sun, Mar 01, 2020 at 06:53:51PM +0100, Corentin Labbe wrote:
+> > I tried to bisect this problem, but the result is:
+> ...
+> > # first bad commit: [81ff5d2cba4f86cd850b9ee4a530cd221ee45aa3] Merge branch 'linus' of git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
+> > 
+> > The only interesting thing I see in this MR is: "Add fuzz testing to testmgr"
+> > 
+> > But this wont help.
+> 
+> Hm, that merge commit has only a couple lines of powerpc build change, so maybe
+> there's something nondeterministic going on.
+> 
+> Does this fix it?  I can't verify but figure it's worth trying the simplest
+> explanation first, which is that the work isn't initialized by the time it's
+> queued.
+> 
+> thanks,
+> daniel
+> 
+> ---8<---
+> 
+> Subject: [PATCH] module: statically initialize init section freeing data
+> 
+> Signed-off-by: Daniel Jordan <daniel.m.jordan@oracle.com>
+> ---
+>  kernel/module.c | 13 +++----------
+>  1 file changed, 3 insertions(+), 10 deletions(-)
+> 
+> diff --git a/kernel/module.c b/kernel/module.c
+> index 33569a01d6e1..db0cda206167 100644
+> --- a/kernel/module.c
+> +++ b/kernel/module.c
+> @@ -88,8 +88,9 @@ EXPORT_SYMBOL_GPL(module_mutex);
+>  static LIST_HEAD(modules);
+>  
+>  /* Work queue for freeing init sections in success case */
+> -static struct work_struct init_free_wq;
+> -static struct llist_head init_free_list;
+> +static void do_free_init(struct work_struct *w);
+> +static DECLARE_WORK(init_free_wq, do_free_init);
+> +static LLIST_HEAD(init_free_list);
+>  
+>  #ifdef CONFIG_MODULES_TREE_LOOKUP
+>  
+> @@ -3501,14 +3502,6 @@ static void do_free_init(struct work_struct *w)
+>  	}
+>  }
+>  
+> -static int __init modules_wq_init(void)
+> -{
+> -	INIT_WORK(&init_free_wq, do_free_init);
+> -	init_llist_head(&init_free_list);
+> -	return 0;
+> -}
+> -module_init(modules_wq_init);
+> -
+>  /*
+>   * This is where the real work happens.
+>   *
+
 Hello
 
-My sun8i-a83t-bananapi-m3 does not boot anymore in BE.
-Others sunxi platform I have seems not affected (a10, a20, a64, h3, h5, h6)
+The patch fix the issue. Thanks!
 
-I have bisected this problem:
-git bisect start
-# bad: [98d54f81e36ba3bf92172791eba5ca5bd813989b] Linux 5.6-rc4
-git bisect bad 98d54f81e36ba3bf92172791eba5ca5bd813989b
-# bad: [d5226fa6dbae0569ee43ecfc08bdcd6770fc4755] Linux 5.5
-git bisect bad d5226fa6dbae0569ee43ecfc08bdcd6770fc4755
-# good: [219d54332a09e8d8741c1e1982f5eae56099de85] Linux 5.4
-git bisect good 219d54332a09e8d8741c1e1982f5eae56099de85
-# bad: [8c39f71ee2019e77ee14f88b1321b2348db51820] Merge git://git.kernel.org/pub/scm/linux/kernel/git/netdev/net
-git bisect bad 8c39f71ee2019e77ee14f88b1321b2348db51820
-# bad: [3b397c7ccafe0624018cb09fc96729f8f6165573] Merge tag 'regmap-v5.5' of git://git.kernel.org/pub/scm/linux/kernel/git/broonie/regmap
-git bisect bad 3b397c7ccafe0624018cb09fc96729f8f6165573
-# good: [924ea58dadea23cc28b60d02b9c0896b7b168a6f] Merge tag 'mt76-for-kvalo-2019-11-20' of https://github.com/nbd168/wireless
-git bisect good 924ea58dadea23cc28b60d02b9c0896b7b168a6f
-# good: [3f3c8be973af10875cfa1e7b85a535b6ba76b44f] Merge tag 'for-linus-5.5a-rc1-tag' of git://git.kernel.org/pub/scm/linux/kernel/git/xen/tip
-git bisect good 3f3c8be973af10875cfa1e7b85a535b6ba76b44f
-# bad: [642356cb5f4a8c82b5ca5ebac288c327d10df236] Merge git://git.kernel.org/pub/scm/linux/kernel/git/herbert/crypto-2.6
-git bisect bad 642356cb5f4a8c82b5ca5ebac288c327d10df236
-# good: [57d8154f15e89f53dfb412f4ed32ebe3c3d755a0] crypto: atmel-aes - Change data type for "lastc" buffer
-git bisect good 57d8154f15e89f53dfb412f4ed32ebe3c3d755a0
-# bad: [752272f16dd18f2cac58a583a8673c8e2fb93abb] Merge tag 'for-linus' of git://git.kernel.org/pub/scm/virt/kvm/kvm
-git bisect bad 752272f16dd18f2cac58a583a8673c8e2fb93abb
-# good: [9477f4449b0b011ce1d058c09ec450bfcdaab784] KVM: VMX: Add helper to check reserved bits in IA32_PERF_GLOBAL_CTRL
-git bisect good 9477f4449b0b011ce1d058c09ec450bfcdaab784
-# bad: [cd7056ae34af0e9424da97bbc7d2b38246ba8a2c] Merge remote-tracking branch 'kvmarm/misc-5.5' into kvmarm/next
-git bisect bad cd7056ae34af0e9424da97bbc7d2b38246ba8a2c
-# bad: [c7892db5dd6afe921ead502aff7440a1e450d947] KVM: arm64: Select TASK_DELAY_ACCT+TASKSTATS rather than SCHEDSTATS
-git bisect bad c7892db5dd6afe921ead502aff7440a1e450d947
-# bad: [8564d6372a7d8a6d440441b8ed8020f97f744450] KVM: arm64: Support stolen time reporting via shared structure
-git bisect bad 8564d6372a7d8a6d440441b8ed8020f97f744450
-# bad: [55009c6ed2d24fc0f5521ab2482f145d269389ea] KVM: arm/arm64: Factor out hypercall handling from PSCI code
-git bisect bad 55009c6ed2d24fc0f5521ab2482f145d269389ea
-# bad: [6a7458485b390f48e481fcd4a0b20e6c5c843d2e] KVM: arm64: Document PV-time interface
-git bisect bad 6a7458485b390f48e481fcd4a0b20e6c5c843d2e
-# bad: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
-git bisect bad dcac930e9901d765234bc15004db4f7d4416db71
-# first bad commit: [dcac930e9901d765234bc15004db4f7d4416db71] Merge remote-tracking branch 'arm64/for-next/smccc-conduit-cleanup' into kvm-arm64/stolen-time
+So you could add:
+Reported-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+Tested-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+Tested-on: sun50i-h6-pine-h64
+Tested-on: imx8mn-ddr4-evk
+Tested-on: sun50i-a64-bananapi-m64
 
-But bisect lead to a merge request.
-
+Thanks again
 Regards
 
 _______________________________________________
