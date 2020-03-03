@@ -2,43 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5072C177E77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 19:33:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04011177E83
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 19:37:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WbwMlRSrOsthodHKWmLi+T9MXgbC/bX7pgiF/RmWd8s=; b=EcTjQ7+pomO5LICxKQTwpI+PY
-	pjzk1ufOmenLrMZzW3gIOTe1ynA5loadTjFZVxhpXm3p6EtVlfGe0D92K23JsHJ6KcPs9k9yDivv4
-	U9pFU2ZzSvq2eYKRpBKgIWhi9qOIRWKhPR1EuWuJtWMgC/oK3Pa3XZJyxiCUmK+RSU3EJ4456Ps/Y
-	Fi5DFDAATzmP5geCi/YSXHFcDZgfhbXa/js4XDmbG5OsnCxatI7oGZKDL+6DTtOz7l5VFu/sULE73
-	ehEfyXz8ofhcLm9WSxnvRmBvNVAUApuj2y0XwAAa9Ib9WEWjtW2KPxMHtXmm9Cp6711iDJ+SxdOpA
-	C9tTCDKCw==;
+	 bh=YxjOBfV8aEkQD7hqhx/BHRT03hoa0muGX/eAYkWUvS4=; b=nF2HuinwpkECN8BFKJJPtjwxR
+	1i6sDtnfif+GWDYysGSvSWltXLbr/2+7VmkxFpmuP4qklsiRBXZIathrjJ679t2PyMiedEtZYSgYr
+	ELzUOoGa0CgrS+pQLRd2asIzRmfwJtpDTbbwYYVjGG98BuIVk6sERXX4bPDvG6eS/aIvf7SNc5PQg
+	jR04R0PkeFPIUaPPsdQKBs/Rq+MsgxKmD8pntHAGW6bdym+anU3RswYKWTBwH/5IZSVVDsJROtiaS
+	mePxJdFh76T61UYVSgW2kJ6WjhoEVDgQTOsHLkcBLWBoCDhgzY8D5/agK8D+I36g1k2V3faEoDtYc
+	NUeO6NraQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9CLm-0006VE-Fj; Tue, 03 Mar 2020 18:33:02 +0000
+	id 1j9CQ4-0008L1-40; Tue, 03 Mar 2020 18:37:28 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9CLd-0006Ui-TJ; Tue, 03 Mar 2020 18:32:55 +0000
+ id 1j9CPx-0008KP-08; Tue, 03 Mar 2020 18:37:22 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id D161BB259;
- Tue,  3 Mar 2020 18:32:51 +0000 (UTC)
-Message-ID: <d706df27ceb8af106f15a328c2ffbe20f62d61c6.camel@suse.de>
-Subject: Re: [PATCH] DTS: bcm2711: Move emmc2 into its own bus
+ by mx2.suse.de (Postfix) with ESMTP id 79D8FAD2B;
+ Tue,  3 Mar 2020 18:37:19 +0000 (UTC)
+Message-ID: <03fcb1e2bc7f3ff389b6dfbf3964e159a93ae835.camel@suse.de>
+Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, Rob Herring <robh+dt@kernel.org>
-Date: Tue, 03 Mar 2020 19:32:49 +0100
-In-Reply-To: <b1b49120-701c-5ebd-8f2d-fd3c88ff3fac@gmail.com>
-References: <20200303120820.4377-1-nsaenzjulienne@suse.de>
- <b1b49120-701c-5ebd-8f2d-fd3c88ff3fac@gmail.com>
+To: Stefan Wahren <stefan.wahren@i2se.com>, Rob Herring
+ <robh+dt@kernel.org>,  Mark Rutland <mark.rutland@arm.com>, Florian
+ Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,  Scott
+ Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
+ Eric Anholt <eric@anholt.net>
+Date: Tue, 03 Mar 2020 19:37:17 +0100
+In-Reply-To: <736f0c59-352b-03b2-f77f-bfc22171b3fb@i2se.com>
+References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+ <736f0c59-352b-03b2-f77f-bfc22171b3fb@i2se.com>
 User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_103254_237151_0D9658EB 
-X-CRM114-Status: GOOD (  21.00  )
+X-CRM114-CacheID: sfid-20200303_103721_187752_19339D10 
+X-CRM114-Status: GOOD (  17.82  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,151 +66,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, florian.fainelli@broadcom.com,
- phil@raspberrypi.org, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5218321349186853154=="
+Cc: devicetree@vger.kernel.org, wahrenst@gmx.net,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============1936522923593224200=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5218321349186853154==
+--===============1936522923593224200==
 Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-RFl3Qiw92Rz2LT1BjykV"
+	protocol="application/pgp-signature"; boundary="=-tHP4KAwhH9LsysulVrwU"
 
 
---=-RFl3Qiw92Rz2LT1BjykV
+--=-tHP4KAwhH9LsysulVrwU
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Hi Florian,
-
-On Tue, 2020-03-03 at 10:21 -0800, Florian Fainelli wrote:
-> On 3/3/20 4:08 AM, Nicolas Saenz Julienne wrote:
-> > Depending on bcm2711's revision its emmc2 controller might have
-> > different DMA constraints. Raspberry Pi 4's firmware will take care of
-> > updating those, but only if a certain alias is found in the device tree=
-.
-> > So, move emmc2 into its own bus, so as not to pollute other devices wit=
-h
-> > dma-ranges changes and create the emmc2bus alias.
+On Tue, 2020-03-03 at 19:17 +0100, Stefan Wahren wrote:
+> Hi Nicolas,
+>=20
+> Am 03.03.20 um 18:32 schrieb Nicolas Saenz Julienne:
+> > The register based driver turned out to be unstable, specially on RPi3a=
++
+> > but not limited to it. While a fix is being worked on, we roll back to
+> > using firmware based scheme.
 > >=20
-> > Based in Phil ELwell's downstream implementation.
-> >=20
+> > Fixes: e1dc2b2e1bef ("ARM: bcm283x: Switch V3D over to using the PM dri=
+ver
+> > instead of firmware")
 > > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->=20
-> Nit: the subject should be ARM: dts: bcm2711. Some more comments below.
-
-Of course, should have known better.
-
 > > ---
-> >  arch/arm/boot/dts/bcm2711-rpi-4-b.dts |  1 +
-> >  arch/arm/boot/dts/bcm2711.dtsi        | 19 ++++++++++++++-----
-> >  2 files changed, 15 insertions(+), 5 deletions(-)
 > >=20
-> > diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > index 1d4b589fe233..e26ea9006378 100644
-> > --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-> > @@ -20,6 +20,7 @@ memory@0 {
-> >  	};
-> > =20
-> >  	aliases {
-> > +		emmc2bus =3D &emmc2bus;
-> >  		ethernet0 =3D &genet;
-> >  		pcie0 =3D &pcie0;
-> >  	};
-> > diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711=
-.dtsi
-> > index d1e684d0acfd..61ea8b44c51e 100644
-> > --- a/arch/arm/boot/dts/bcm2711.dtsi
-> > +++ b/arch/arm/boot/dts/bcm2711.dtsi
-> > @@ -241,17 +241,26 @@ pwm1: pwm@7e20c800 {
-> >  			status =3D "disabled";
-> >  		};
-> > =20
-> > +		hvs@7e400000 {
-> > +			interrupts =3D <GIC_SPI 97 IRQ_TYPE_LEVEL_HIGH>;
-> > +		};
-> > +	};
-> > +
-> > +	emmc2bus: emmc2bus {
-> > +		compatible =3D "simple-bus";
-> > +		#address-cells =3D <2>;
-> > +		#size-cells =3D <1>;
-> > +
-> > +		ranges =3D <0x0 0x7e000000  0x0 0xfe000000  0x01800000>;
-> > +		dma-ranges =3D <0x0 0xc0000000  0x0 0x00000000  0x40000000>;
+> > See https://github.com/raspberrypi/linux/issues/3046 for more reference=
+.
+> > Note: I tested this on RPi3b, RPi3a+ and RPi2b.
 >=20
-> This deserves a comment for two reasons:
+> as i already wrote this prevent X to start on current Raspbian on my
+> Raspberry Pi 3A+ (multi_v7_defconfig, no u-boot). We must be careful here=
+.
 >=20
-> - explaining which of these properties is getting patched by the
-> firmware (and it would be really nice if we had a concept of annotation
-> attributes for Device Tree such that you could express something like:
->=20
-> 	dma-ranges =3D <> __patchable;
+> I will take a look at the debug UART. Maybe there are more helpful
+> information.
 
-Something like this would've been useful to me some time ago while debuggin=
-g
-CMA issues on a random arm64 Board. I was left wondering if the memory node=
-s on
-that specific board were set in stone or just a placeholder.
-
-> - explaining why this is not collapsed in the soc bus node, because the
-> dma-ranges constraint can be different based on the Pi4 revision
-
-Noted
-
-> With that fixed, this looks good to me!
-
-Thanks!
-
->=20
-> > +
-> >  		emmc2: emmc2@7e340000 {
-> >  			compatible =3D "brcm,bcm2711-emmc2";
-> > -			reg =3D <0x7e340000 0x100>;
-> > +			reg =3D <0x0 0x7e340000 0x100>;
-> >  			interrupts =3D <GIC_SPI 126 IRQ_TYPE_LEVEL_HIGH>;
-> >  			clocks =3D <&clocks BCM2711_CLOCK_EMMC2>;
-> >  			status =3D "disabled";
-> >  		};
-> > -
-> > -		hvs@7e400000 {
-> > -			interrupts =3D <GIC_SPI 97 IRQ_TYPE_LEVEL_HIGH>;
-> > -		};
-> >  	};
-> > =20
-> >  	arm-pmu {
-> >=20
->=20
->=20
+It seems we're seeing different things, I tested this on raspbian
+(multi_v7_defconfig) and on arm64. I'll try again from scratch tomorrow.
 
 
---=-RFl3Qiw92Rz2LT1BjykV
+--=-tHP4KAwhH9LsysulVrwU
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5eotEACgkQlfZmHno8
-x/65SQgAjizh4jYhQUUdPkHWpK1vmzYwARYZ9gDu0tyF+J26+4j7LFgytfLPEUMg
-JHjH0xmFXW7cG80ISt2NxRInXjq/eaFytgby5zsBxG1DJhspUYn2zBb7VXWDevZ2
-FHWjiKw2adk6mzNkO4sNG4P/D9WTtUlSvwAFDuNvsHEV8kUmtIldA6iItq4Xtyg6
-BgojLHH0tqNjzdDeB0aOFaDXJMM7svxHiupbP0Li50uQByQgGoxiwsOVt2SBBdFa
-qa6ucFjQstOAn207YYZeAYZinMZaMa0K1+0VeQ/SuVsUCNHCavKLkl4c7JEqixUR
-TrQHZbzYvV//fJJISCqUAFBpdMNnTg==
-=9Zb+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5eo90ACgkQlfZmHno8
+x/5ClAf/Y6uayh0bvAB8AF2/oSO5SZiz1HYrfdlv6YrywX0n/5HiTLxo6Lb774cF
+mjqltChaF50e0bgMBPtLi6e4AMookHQ3U4c3tuRAQiuFYqjKLSMPAIg3XHNQp4Ou
+QE1MRfaEtE9IgUzMWco3DNvWvY3kdpM/72D8irbh99xYLdebH/Z/Q1sNByOrgi9e
+uc4hUQKrEKwlKK7T3sPIeM7O2N9tPJ65c4flgEByrqvBUQZK4mEwL5LktvT28yL7
+tPWn3xWGf53oJORFG9qQ8M1943FLrn4RrRrwPq5AA+tpO3mhYYsbDt85X5ChfL2J
+pWQP1x6BbFFKCbxpemYLIGiMQQcllw==
+=LF3R
 -----END PGP SIGNATURE-----
 
---=-RFl3Qiw92Rz2LT1BjykV--
+--=-tHP4KAwhH9LsysulVrwU--
 
 
 
---===============5218321349186853154==
+--===============1936522923593224200==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -217,6 +145,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5218321349186853154==--
+--===============1936522923593224200==--
 
 
