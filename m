@@ -2,84 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E5AC177E53
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 19:15:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E20C8177E5C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 19:17:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hJcj5uaLtxAq0ypgbF71aKjWq7AdxBLT23laYoubAIs=; b=Mi1z2784qn8LxT
-	dLKFm5Sw4M1h3a1RYCiWO5+fEhTmDXSzW5yx4ferdDB6PFMDn/7MuA4NS6k1c4a+4Fi6csnVX3DeD
-	IRH4HcBvlE4qmzjb5jqXwXZ1LhfI2ZPk/sDWkMxXkcMtoJSTftTm2zjDuCGVDfE0846stz2iCvPe4
-	RDW4bNBTka+lUrk+bCOx2Rs35KMWlO1Su9ipDGd0qk9g2HxvL/jsPMD0iRl9eTLzOWEJ05W63HINV
-	w1KkEJHQB9ltrSi/qJrfkkJVtFPuI/rjKU3HDfg/ASvEncjZeR/lQ3F0iEZSpIfg3GeMLuBs3HzH3
-	lAW2ntmZG56atf9l6k3Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cumFmyqYI/xkyHEku/LZaRMutIAtoDnZywODYmh7hkA=; b=s1R41n3eepQUj1
+	sZ79quBjbq2uHgkCq4ZcA86pwmGq586db/FceYgdP2LA8ba35MEmJ8gGYEj8LBQfP5QtO/nVm8AmR
+	KOr/6VUniu8AwoiW5ke8S2SR2bQTJZVv6VN+6ihrabJvG9k5P6iyXuSkE2tDsvPDZwzwbhQBd0DpM
+	Q+9l6LpOCVToqmRv/PbfzgE7VNmdOiBUojkvV6KFCP4V5b6sEFHRZ9V6ha/F8iOhS+oLCu+88H5oX
+	Dp48mkJxpql+681SOkt6AmbnKp6Ms8d/Mzkr6AvTT3BurssRFCkzWf147R8JVUyNGyM+9Y/OMuz/9
+	Kq6sK/cVOU+RL5CCoSLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9C4e-0000IE-QQ; Tue, 03 Mar 2020 18:15:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j9C6b-0000rE-GU; Tue, 03 Mar 2020 18:17:21 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9C4Q-0008AE-Bb
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 18:15:09 +0000
-Received: from mail-wm1-f53.google.com (mail-wm1-f53.google.com
- [209.85.128.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 873F02072D
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Mar 2020 18:15:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583259305;
- bh=zTcepHn6wp12/bnzGpuDY/OkQElcslnuRu8c8cz/4sw=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=lln1IKjC8hcO1FvK69a9xsoo5ku/pZqHjXG//ldOlK5BumBH83v4F+p4VoNHixTX8
- rXiQRWimL6nZ2L8Z3M1EuGlmQ66tPf7O5hu/wKtaA9YhvVzShrrvruVn0HHPM15MBF
- 7ujvWcQN4kqJWrioWpOnbY+vbi7B3St49dSo+4TY=
-Received: by mail-wm1-f53.google.com with SMTP id 6so4386263wmi.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 10:15:05 -0800 (PST)
-X-Gm-Message-State: ANhLgQ0yKdJTBA8zat7UqnNGCHZN0gbiTpd6AfBddU+OQ5dyAlsXKf1s
- 64S2QbqgHTuvm8N1ZtfYBgCy17QeduCmY5jOcrsrtA==
-X-Google-Smtp-Source: ADFU+vvLqu9EC+sbMzgiH11TZES2hoJP/L61Llj57hEnJjMib2K6TFfwpHUwuVTNt8D/0eUROGhQUbW180w0H4iVWV8=
-X-Received: by 2002:a1c:2d88:: with SMTP id t130mr5792119wmt.68.1583259303830; 
- Tue, 03 Mar 2020 10:15:03 -0800 (PST)
+ id 1j9C6T-0000qW-Re; Tue, 03 Mar 2020 18:17:15 +0000
+Received: from [192.168.1.183] ([37.4.249.171]) by mrelayeu.kundenserver.de
+ (mreue108 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1M3UdI-1j8ds32MFO-000b6V; Tue, 03 Mar 2020 19:17:05 +0100
+Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, Eric Anholt <eric@anholt.net>
+References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ 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 AQ==
+Message-ID: <736f0c59-352b-03b2-f77f-bfc22171b3fb@i2se.com>
+Date: Tue, 3 Mar 2020 19:17:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20200216182334.8121-1-ardb@kernel.org>
- <20200216182334.8121-17-ardb@kernel.org>
- <20200303160353.GA20372@roeck-us.net>
- <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
- <20200303175355.GA14065@roeck-us.net>
- <CAKv+Gu_4tbdR8zF0eerZBbiFhCh_hg20rTovxqcaByW8J4b-UA@mail.gmail.com>
-In-Reply-To: <CAKv+Gu_4tbdR8zF0eerZBbiFhCh_hg20rTovxqcaByW8J4b-UA@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 3 Mar 2020 19:14:52 +0100
-X-Gmail-Original-Message-ID: <CAKv+Gu8+JV0WLqNzX_cMGRwDH4vMS_v8a_uJ8ciDtgzGUVsmhA@mail.gmail.com>
-Message-ID: <CAKv+Gu8+JV0WLqNzX_cMGRwDH4vMS_v8a_uJ8ciDtgzGUVsmhA@mail.gmail.com>
-Subject: Re: [PATCH 16/18] efi: add 'runtime' pointer to struct efi
-To: Guenter Roeck <linux@roeck-us.net>
+In-Reply-To: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:tHaZlzBYnQQ7ozFJRk2l9T+p1xctV61HjSZXbmUpPOdeTgdbwPU
+ oYmgpY+86RmTHZc+lvzekJg+9yMur5QsDj/RW8jmOvZHuOWqejiikdi/Ike9t4cwk1HR77h
+ QT+GvVFjhJxuGgSYMtORM0vHP85L5CCEf6AGr0uAMGDA/nOtYPr2sOwD2jLGdLbgF8YzX/d
+ +Q6cWu1dRO9MmVSMepP1Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:FfmjNUweXJs=:EnXoeKrN8xSla3uku/bqRV
+ zGN+QhzEV+QApHgH5A7fM2DfZWM2nA1bgU6vSW9OxPTaAAAwpkozeJWeAv0GjzLphLKsdDfJh
+ 31QUZrbAPn50tr8Nan5kZBBMCZR7v98oDJ65iUctLRUHJUhrcU3wLhCNFrhS7IBEhAMwPACGE
+ 4e8x72tT4a9Sh8HNIYnrnfeSC6wRZHNa3WgvUrRvS1pvXpLDeR5XjWJBR/R2kxTY/Q3oon/sK
+ e30qdeZo2qKL5YepXyYGnwOEHVER7obCDGSJT2lYLn2kEmiiNuATKEjNWPBb/SejOj+LAzE2I
+ IrOyY63QtPT/pvy5Ocibk0Mo1Z/CtFO0i+eBIC8u0mDtUHQj+gC/JcwwolF0GcTCkoT8E+wTR
+ ccLBPY1MbzKfpJ/WcA0cbCWLxHy4iTuLQtJ21To7chPMui1UDok54Jlf71BQcbURVBhIKmDFQ
+ 4x/wdblB+1wHPg9Y4ruJu4H/tmTa7icf6ogdLpk9Eub8TJaOJO4i9hLaRx+5guasqcGe9g968
+ 2jESNK2Xgmm0uQSz1uu3qb/YucZKJmad3RvAOBk/FxOSsfX5yy1VIraG7nyoKTfegAVnpOwGr
+ B/SRIpeEp+qKAA+RZA4QAXiASRdjzCU3YUiTS/XsaKNfouIwtElbi6BZ3HVqwY8xUAKOFgkKA
+ +QtZZW43poiGpPukBY47ZBWo55ws6iCb/GpbvU65XsyDe0mQWk57blaZJUrkKzv8p5U+seyjh
+ riRb4h7f75HESw7Y/dqbbAsEQySKP6D4DFlYXekTx1bHItQNnEAJ7CSoDw1AGplzfcDzLuhIa
+ GM+96oc7CggoJGOlykeldApqJ2U1PNtKy6I+U1+09KTegbvW3pLFCs6mHYuekewdK4LF04m
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_101506_544306_C5E28402 
-X-CRM114-Status: GOOD (  27.69  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20200303_101714_195163_4BBCF96E 
+X-CRM114-Status: GOOD (  24.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-4.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,430 +124,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arvind Sankar <nivedita@alum.mit.edu>,
- linux-efi <linux-efi@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 3 Mar 2020 at 19:01, Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> On Tue, 3 Mar 2020 at 18:54, Guenter Roeck <linux@roeck-us.net> wrote:
-> >
-> > On Tue, Mar 03, 2020 at 05:39:43PM +0100, Ard Biesheuvel wrote:
-> > > On Tue, 3 Mar 2020 at 17:03, Guenter Roeck <linux@roeck-us.net> wrote:
-> > > >
-> > > > On Sun, Feb 16, 2020 at 07:23:32PM +0100, Ard Biesheuvel wrote:
-> > > > > Instead of going through the EFI system table each time, just copy the
-> > > > > runtime services table pointer into struct efi directly. This is the
-> > > > > last use of the system table pointer in struct efi, allowing us to
-> > > > > drop it in a future patch, along with a fair amount of quirky handling
-> > > > > of the translated address.
-> > > > >
-> > > > > Note that usually, the runtime services pointer changes value during
-> > > > > the call to SetVirtualAddressMap(), so grab the updated value as soon
-> > > > > as that call returns. (Mixed mode uses a 1:1 mapping, and kexec boot
-> > > > > enters with the updated address in the system table, so in those cases,
-> > > > > we don't need to do anything here)
-> > > > >
-> > > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > > >
-> > > > This patch results in a crash with i386 efi boots if PAE (CONFIG_HIGHMEM64G=y)
-> > > > is enabled. Bisect and crash logs attached. There is also a warning which
-> > > > I don't recall seeing before, but it may not be caused by this patch
-> > > > (I didn' bisect the warning). The warning is seen with all i386:efi boots,
-> > > > not only when PAE is enabled. The warning log is also attached.
-> > > >
-> > > > Guenter
-> > > >
-> > > > ---
-> > > > Qemu command line:
-> > > >
-> > > > qemu-system-i386 -kernel arch/x86/boot/bzImage -M pc -cpu Westmere \
-> > > >         -no-reboot -m 256 -snapshot \
-> > > >         -bios OVMF-pure-efi-32.fd \
-> > > >         -usb -device usb-storage,drive=d0 \
-> > > >         -drive file=rootfs.ext2,if=none,id=d0,format=raw \
-> > > >         --append 'earlycon=uart8250,io,0x3f8,9600n8 panic=-1 slub_debug=FZPUA root=/dev/sda rootwait mem=256M console=ttyS0' \
-> > > >         -nographic
-> > > >
-> > >
-> > > I am failing to reproduce this. Do you have a .config and a copy of
-> > > OVMF-pure-efi-32.fd anywhere?
-> > >
-> >
-> > https://github.com/groeck/linux-build-test/blob/master/rootfs/firmware/OVMF-pure-efi-32.fd
-> > https://github.com/groeck/linux-build-test/blob/master/rootfs/x86/rootfs.ext2.gz
-> >
-> > Config file is below, shortened by "make savedefconfig" on the actual
-> > configuration used on next-20200303. Qemu version is 4.2, though that
-> > should not really matter. Note that it isn't necessary to boot from usb,
-> > that was just my test case.
-> >
-> > Here is a pointer to a complete log, showing the various conditions
-> > resulting in the warning and the crash:
-> >
-> > https://kerneltests.org/builders/qemu-x86-next/builds/1310/steps/qemubuildcommand_1/logs/stdio
-> >
->
-> Thanks.
->
-> How do I generate your exact .config from the below? I still cannot
-> reproduce with the different firmware.
->
-> My qemu is 3.1 btw
->
+Hi Nicolas,
 
-Also, I don't see CONFIG_HIGHMEM64G=y anywhere below??
+Am 03.03.20 um 18:32 schrieb Nicolas Saenz Julienne:
+> The register based driver turned out to be unstable, specially on RPi3a+
+> but not limited to it. While a fix is being worked on, we roll back to
+> using firmware based scheme.
+>
+> Fixes: e1dc2b2e1bef ("ARM: bcm283x: Switch V3D over to using the PM driver instead of firmware")
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+>
+> See https://github.com/raspberrypi/linux/issues/3046 for more reference.
+> Note: I tested this on RPi3b, RPi3a+ and RPi2b.
 
+as i already wrote this prevent X to start on current Raspbian on my
+Raspberry Pi 3A+ (multi_v7_defconfig, no u-boot). We must be careful here.
+
+I will take a look at the debug UART. Maybe there are more helpful
+information.
+
+Regards
+Stefan
 
 >
-> >
-> > ---
-> > # CONFIG_LOCALVERSION_AUTO is not set
-> > CONFIG_SYSVIPC=y
-> > CONFIG_POSIX_MQUEUE=y
-> > CONFIG_USELIB=y
-> > CONFIG_AUDIT=y
-> > CONFIG_NO_HZ=y
-> > CONFIG_HIGH_RES_TIMERS=y
-> > CONFIG_PREEMPT_VOLUNTARY=y
-> > CONFIG_BSD_PROCESS_ACCT=y
-> > CONFIG_TASKSTATS=y
-> > CONFIG_TASK_DELAY_ACCT=y
-> > CONFIG_TASK_XACCT=y
-> > CONFIG_TASK_IO_ACCOUNTING=y
-> > CONFIG_LOG_BUF_SHIFT=18
-> > CONFIG_CGROUPS=y
-> > CONFIG_CGROUP_SCHED=y
-> > CONFIG_CGROUP_FREEZER=y
-> > CONFIG_CPUSETS=y
-> > CONFIG_CGROUP_CPUACCT=y
-> > CONFIG_NAMESPACES=y
-> > CONFIG_BLK_DEV_INITRD=y
-> > CONFIG_EXPERT=y
-> > # CONFIG_COMPAT_BRK is not set
-> > CONFIG_PROFILING=y
-> > CONFIG_SMP=y
-> > CONFIG_NR_CPUS=8
-> > CONFIG_X86_REROUTE_FOR_BROKEN_BOOT_IRQS=y
-> > CONFIG_MICROCODE_AMD=y
-> > CONFIG_X86_MSR=y
-> > CONFIG_X86_CPUID=y
-> > CONFIG_X86_CHECK_BIOS_CORRUPTION=y
-> > # CONFIG_MTRR_SANITIZER is not set
-> > CONFIG_EFI=y
-> > CONFIG_EFI_STUB=y
-> > CONFIG_HZ_1000=y
-> > CONFIG_KEXEC=y
-> > CONFIG_CRASH_DUMP=y
-> > CONFIG_HIBERNATION=y
-> > CONFIG_PM_DEBUG=y
-> > CONFIG_PM_TRACE_RTC=y
-> > CONFIG_ACPI_DOCK=y
-> > CONFIG_ACPI_BGRT=y
-> > CONFIG_CPU_FREQ_DEFAULT_GOV_USERSPACE=y
-> > CONFIG_CPU_FREQ_GOV_PERFORMANCE=y
-> > CONFIG_CPU_FREQ_GOV_ONDEMAND=y
-> > CONFIG_X86_ACPI_CPUFREQ=y
-> > CONFIG_EFI_VARS=y
-> > CONFIG_EFI_CAPSULE_LOADER=y
-> > # CONFIG_KVM_WERROR is not set
-> > CONFIG_KPROBES=y
-> > CONFIG_JUMP_LABEL=y
-> > CONFIG_STATIC_KEYS_SELFTEST=y
-> > CONFIG_COMPAT_32BIT_TIME=y
-> > CONFIG_MODULES=y
-> > CONFIG_MODULE_UNLOAD=y
-> > CONFIG_MODULE_FORCE_UNLOAD=y
-> > # CONFIG_UNUSED_SYMBOLS is not set
-> > CONFIG_BINFMT_MISC=y
-> > CONFIG_NET=y
-> > CONFIG_PACKET=y
-> > CONFIG_UNIX=y
-> > CONFIG_XFRM_USER=y
-> > CONFIG_INET=y
-> > CONFIG_IP_MULTICAST=y
-> > CONFIG_IP_ADVANCED_ROUTER=y
-> > CONFIG_IP_MULTIPLE_TABLES=y
-> > CONFIG_IP_ROUTE_MULTIPATH=y
-> > CONFIG_IP_ROUTE_VERBOSE=y
-> > CONFIG_IP_PNP=y
-> > CONFIG_IP_PNP_DHCP=y
-> > CONFIG_IP_PNP_BOOTP=y
-> > CONFIG_IP_PNP_RARP=y
-> > CONFIG_IP_MROUTE=y
-> > CONFIG_IP_PIMSM_V1=y
-> > CONFIG_IP_PIMSM_V2=y
-> > CONFIG_SYN_COOKIES=y
-> > # CONFIG_INET_DIAG is not set
-> > CONFIG_TCP_CONG_ADVANCED=y
-> > # CONFIG_TCP_CONG_BIC is not set
-> > # CONFIG_TCP_CONG_WESTWOOD is not set
-> > # CONFIG_TCP_CONG_HTCP is not set
-> > CONFIG_TCP_MD5SIG=y
-> > CONFIG_INET6_AH=y
-> > CONFIG_INET6_ESP=y
-> > CONFIG_NETLABEL=y
-> > CONFIG_NETFILTER=y
-> > # CONFIG_NETFILTER_ADVANCED is not set
-> > CONFIG_NF_CONNTRACK=y
-> > CONFIG_NF_CONNTRACK_FTP=y
-> > CONFIG_NF_CONNTRACK_IRC=y
-> > CONFIG_NF_CONNTRACK_SIP=y
-> > CONFIG_NF_CT_NETLINK=y
-> > CONFIG_NF_NAT=y
-> > CONFIG_NETFILTER_XT_TARGET_CONNSECMARK=y
-> > CONFIG_NETFILTER_XT_TARGET_NFLOG=y
-> > CONFIG_NETFILTER_XT_TARGET_SECMARK=y
-> > CONFIG_NETFILTER_XT_TARGET_TCPMSS=y
-> > CONFIG_NETFILTER_XT_MATCH_CONNTRACK=y
-> > CONFIG_NETFILTER_XT_MATCH_POLICY=y
-> > CONFIG_NETFILTER_XT_MATCH_STATE=y
-> > CONFIG_IP_NF_IPTABLES=y
-> > CONFIG_IP_NF_FILTER=y
-> > CONFIG_IP_NF_TARGET_REJECT=y
-> > CONFIG_IP_NF_TARGET_MASQUERADE=m
-> > CONFIG_IP_NF_MANGLE=y
-> > CONFIG_IP6_NF_IPTABLES=y
-> > CONFIG_IP6_NF_MATCH_IPV6HEADER=y
-> > CONFIG_IP6_NF_FILTER=y
-> > CONFIG_IP6_NF_TARGET_REJECT=y
-> > CONFIG_IP6_NF_MANGLE=y
-> > CONFIG_NET_SCHED=y
-> > CONFIG_NET_EMATCH=y
-> > CONFIG_NET_CLS_ACT=y
-> > CONFIG_HAMRADIO=y
-> > CONFIG_CFG80211=y
-> > CONFIG_MAC80211=y
-> > CONFIG_MAC80211_LEDS=y
-> > CONFIG_RFKILL=y
-> > CONFIG_RFKILL_INPUT=y
-> > CONFIG_PCI=y
-> > CONFIG_PCIEPORTBUS=y
-> > CONFIG_PCI_MSI=y
-> > CONFIG_HOTPLUG_PCI=y
-> > CONFIG_PCCARD=y
-> > CONFIG_YENTA=y
-> > CONFIG_DEVTMPFS=y
-> > CONFIG_DEVTMPFS_MOUNT=y
-> > CONFIG_DEBUG_DEVRES=y
-> > CONFIG_PM_QOS_KUNIT_TEST=y
-> > CONFIG_CONNECTOR=y
-> > CONFIG_BLK_DEV_LOOP=y
-> > CONFIG_VIRTIO_BLK=y
-> > CONFIG_BLK_DEV_NVME=y
-> > CONFIG_PCI_ENDPOINT_TEST=y
-> > CONFIG_BLK_DEV_SD=y
-> > CONFIG_BLK_DEV_SR=y
-> > CONFIG_CHR_DEV_SG=y
-> > CONFIG_SCSI_CONSTANTS=y
-> > CONFIG_MEGARAID_SAS=y
-> > CONFIG_SCSI_SYM53C8XX_2=y
-> > CONFIG_SCSI_DC395x=y
-> > CONFIG_SCSI_AM53C974=y
-> > CONFIG_SCSI_VIRTIO=y
-> > CONFIG_ATA=y
-> > CONFIG_SATA_AHCI=y
-> > CONFIG_ATA_PIIX=y
-> > CONFIG_PATA_AMD=y
-> > CONFIG_PATA_OLDPIIX=y
-> > CONFIG_PATA_SCH=y
-> > CONFIG_PATA_MPIIX=y
-> > CONFIG_ATA_GENERIC=y
-> > CONFIG_MD=y
-> > CONFIG_BLK_DEV_MD=y
-> > CONFIG_BLK_DEV_DM=y
-> > CONFIG_DM_MIRROR=y
-> > CONFIG_DM_ZERO=y
-> > CONFIG_FUSION=y
-> > CONFIG_FUSION_SAS=y
-> > CONFIG_MACINTOSH_DRIVERS=y
-> > CONFIG_MAC_EMUMOUSEBTN=y
-> > CONFIG_NETDEVICES=y
-> > CONFIG_NETCONSOLE=y
-> > CONFIG_BNX2=y
-> > CONFIG_TIGON3=y
-> > CONFIG_NET_TULIP=y
-> > CONFIG_E100=y
-> > CONFIG_E1000=y
-> > CONFIG_E1000E=y
-> > CONFIG_SKY2=y
-> > CONFIG_NE2K_PCI=y
-> > CONFIG_FORCEDETH=y
-> > CONFIG_8139TOO=y
-> > # CONFIG_8139TOO_PIO is not set
-> > CONFIG_R8169=y
-> > CONFIG_FDDI=y
-> > CONFIG_INPUT_POLLDEV=y
-> > CONFIG_INPUT_EVDEV=y
-> > CONFIG_INPUT_JOYSTICK=y
-> > CONFIG_INPUT_TABLET=y
-> > CONFIG_INPUT_TOUCHSCREEN=y
-> > CONFIG_INPUT_MISC=y
-> > # CONFIG_LEGACY_PTYS is not set
-> > CONFIG_SERIAL_NONSTANDARD=y
-> > CONFIG_SERIAL_8250=y
-> > CONFIG_SERIAL_8250_CONSOLE=y
-> > CONFIG_SERIAL_8250_NR_UARTS=32
-> > CONFIG_SERIAL_8250_EXTENDED=y
-> > CONFIG_SERIAL_8250_MANY_PORTS=y
-> > CONFIG_SERIAL_8250_SHARE_IRQ=y
-> > CONFIG_SERIAL_8250_DETECT_IRQ=y
-> > CONFIG_SERIAL_8250_RSA=y
-> > CONFIG_HW_RANDOM=y
-> > CONFIG_NVRAM=y
-> > CONFIG_HPET=y
-> > # CONFIG_HPET_MMAP is not set
-> > CONFIG_I2C_I801=y
-> > CONFIG_WATCHDOG=y
-> > CONFIG_AGP=y
-> > CONFIG_AGP_AMD64=y
-> > CONFIG_AGP_INTEL=y
-> > CONFIG_DRM=y
-> > CONFIG_DRM_I915=y
-> > CONFIG_FB_MODE_HELPERS=y
-> > CONFIG_FB_TILEBLITTING=y
-> > CONFIG_FB_EFI=y
-> > CONFIG_VGACON_SOFT_SCROLLBACK=y
-> > CONFIG_FRAMEBUFFER_CONSOLE=y
-> > CONFIG_LOGO=y
-> > # CONFIG_LOGO_LINUX_MONO is not set
-> > # CONFIG_LOGO_LINUX_VGA16 is not set
-> > CONFIG_SOUND=y
-> > CONFIG_SND=y
-> > CONFIG_SND_HRTIMER=y
-> > CONFIG_SND_SEQUENCER=y
-> > CONFIG_SND_SEQ_DUMMY=y
-> > CONFIG_SND_HDA_INTEL=y
-> > CONFIG_SND_HDA_HWDEP=y
-> > CONFIG_HIDRAW=y
-> > CONFIG_HID_A4TECH=y
-> > CONFIG_HID_APPLE=y
-> > CONFIG_HID_BELKIN=y
-> > CONFIG_HID_CHERRY=y
-> > CONFIG_HID_CHICONY=y
-> > CONFIG_HID_CYPRESS=y
-> > CONFIG_HID_EZKEY=y
-> > CONFIG_HID_GYRATION=y
-> > CONFIG_HID_ITE=y
-> > CONFIG_HID_KENSINGTON=y
-> > CONFIG_HID_LOGITECH=y
-> > CONFIG_LOGITECH_FF=y
-> > CONFIG_HID_REDRAGON=y
-> > CONFIG_HID_MICROSOFT=y
-> > CONFIG_HID_MONTEREY=y
-> > CONFIG_HID_NTRIG=y
-> > CONFIG_HID_PANTHERLORD=y
-> > CONFIG_PANTHERLORD_FF=y
-> > CONFIG_HID_PETALYNX=y
-> > CONFIG_HID_SAMSUNG=y
-> > CONFIG_HID_SONY=y
-> > CONFIG_HID_SUNPLUS=y
-> > CONFIG_HID_TOPSEED=y
-> > CONFIG_HID_PID=y
-> > CONFIG_USB_HIDDEV=y
-> > CONFIG_USB=y
-> > CONFIG_USB_ANNOUNCE_NEW_DEVICES=y
-> > CONFIG_USB_MON=y
-> > CONFIG_USB_XHCI_HCD=y
-> > CONFIG_USB_EHCI_HCD=y
-> > CONFIG_USB_OHCI_HCD=y
-> > CONFIG_USB_UHCI_HCD=y
-> > CONFIG_USB_PRINTER=y
-> > CONFIG_USB_STORAGE=y
-> > CONFIG_USB_UAS=y
-> > CONFIG_USB_TEST=y
-> > CONFIG_USB_EHSET_TEST_FIXTURE=y
-> > CONFIG_USB_LINK_LAYER_TEST=y
-> > CONFIG_MMC=y
-> > CONFIG_MMC_SDHCI=y
-> > CONFIG_MMC_SDHCI_PCI=y
-> > CONFIG_EDAC=y
-> > CONFIG_RTC_CLASS=y
-> > # CONFIG_RTC_HCTOSYS is not set
-> > CONFIG_DMADEVICES=y
-> > CONFIG_DMATEST=y
-> > CONFIG_VIRTIO_PCI=y
-> > CONFIG_VIRTIO_BALLOON=y
-> > CONFIG_VIRTIO_MMIO=y
-> > CONFIG_EEEPC_LAPTOP=y
-> > CONFIG_EXT3_FS=y
-> > CONFIG_EXT4_FS_POSIX_ACL=y
-> > CONFIG_EXT4_FS_SECURITY=y
-> > CONFIG_EXT4_KUNIT_TESTS=y
-> > CONFIG_BTRFS_FS=y
-> > CONFIG_QUOTA=y
-> > CONFIG_QUOTA_NETLINK_INTERFACE=y
-> > # CONFIG_PRINT_QUOTA_WARNING is not set
-> > CONFIG_QFMT_V2=y
-> > CONFIG_AUTOFS4_FS=y
-> > CONFIG_ISO9660_FS=y
-> > CONFIG_JOLIET=y
-> > CONFIG_ZISOFS=y
-> > CONFIG_MSDOS_FS=y
-> > CONFIG_VFAT_FS=y
-> > CONFIG_PROC_KCORE=y
-> > CONFIG_TMPFS_POSIX_ACL=y
-> > CONFIG_HUGETLBFS=y
-> > CONFIG_SQUASHFS=y
-> > CONFIG_SQUASHFS_XATTR=y
-> > CONFIG_SQUASHFS_4K_DEVBLK_SIZE=y
-> > CONFIG_NFS_FS=y
-> > CONFIG_NFS_V3_ACL=y
-> > CONFIG_NFS_V4=y
-> > CONFIG_ROOT_NFS=y
-> > CONFIG_NLS_DEFAULT="utf8"
-> > CONFIG_NLS_CODEPAGE_437=y
-> > CONFIG_NLS_ASCII=y
-> > CONFIG_NLS_ISO8859_1=y
-> > CONFIG_NLS_UTF8=y
-> > CONFIG_SECURITY=y
-> > CONFIG_SECURITY_NETWORK=y
-> > CONFIG_SECURITY_SELINUX=y
-> > CONFIG_SECURITY_SELINUX_BOOTPARAM=y
-> > CONFIG_SECURITY_SELINUX_DISABLE=y
-> > # CONFIG_CRYPTO_MANAGER_DISABLE_TESTS is not set
-> > CONFIG_CRC32_SELFTEST=y
-> > CONFIG_GLOB_SELFTEST=y
-> > CONFIG_STRING_SELFTEST=y
-> > CONFIG_PRINTK_TIME=y
-> > CONFIG_FRAME_WARN=1024
-> > CONFIG_MAGIC_SYSRQ=y
-> > CONFIG_DEBUG_RODATA_TEST=y
-> > CONFIG_DEBUG_STACK_USAGE=y
-> > CONFIG_DEBUG_MEMORY_INIT=y
-> > # CONFIG_SCHED_DEBUG is not set
-> > CONFIG_SCHEDSTATS=y
-> > CONFIG_PROVE_LOCKING=y
-> > CONFIG_DEBUG_LOCKDEP=y
-> > CONFIG_DEBUG_ATOMIC_SLEEP=y
-> > CONFIG_DEBUG_LOCKING_API_SELFTESTS=y
-> > CONFIG_WW_MUTEX_SELFTEST=y
-> > CONFIG_DEBUG_LIST=y
-> > CONFIG_RCU_EQS_DEBUG=y
-> > CONFIG_BLK_DEV_IO_TRACE=y
-> > CONFIG_PROVIDE_OHCI1394_DMA_INIT=y
-> > CONFIG_EARLY_PRINTK_DBGP=y
-> > CONFIG_DEBUG_TLBFLUSH=y
-> > CONFIG_DEBUG_BOOT_PARAMS=y
-> > CONFIG_DEBUG_NMI_SELFTEST=y
-> > CONFIG_UNWINDER_FRAME_POINTER=y
-> > CONFIG_KUNIT=y
-> > CONFIG_KUNIT_TEST=y
-> > CONFIG_TEST_SORT=y
-> > CONFIG_RBTREE_TEST=y
-> > CONFIG_INTERVAL_TREE_TEST=y
-> > CONFIG_TEST_BITMAP=y
-> > CONFIG_TEST_UUID=y
-> > CONFIG_TEST_FIRMWARE=y
-> > CONFIG_TEST_SYSCTL=y
-> > CONFIG_SYSCTL_KUNIT_TEST=y
-> > CONFIG_LIST_KUNIT_TEST=y
+>  arch/arm/boot/dts/bcm2835-common.dtsi     |  1 -
+>  arch/arm/boot/dts/bcm2835-rpi-common.dtsi | 12 ++++++++++++
+>  arch/arm/boot/dts/bcm2835.dtsi            |  1 +
+>  arch/arm/boot/dts/bcm2836.dtsi            |  1 +
+>  arch/arm/boot/dts/bcm2837.dtsi            |  1 +
+>  5 files changed, 15 insertions(+), 1 deletion(-)
+>  create mode 100644 arch/arm/boot/dts/bcm2835-rpi-common.dtsi
+>
+> diff --git a/arch/arm/boot/dts/bcm2835-common.dtsi b/arch/arm/boot/dts/bcm2835-common.dtsi
+> index 2b1d9d4c0cde..4119271c979d 100644
+> --- a/arch/arm/boot/dts/bcm2835-common.dtsi
+> +++ b/arch/arm/boot/dts/bcm2835-common.dtsi
+> @@ -130,7 +130,6 @@ v3d: v3d@7ec00000 {
+>  			compatible = "brcm,bcm2835-v3d";
+>  			reg = <0x7ec00000 0x1000>;
+>  			interrupts = <1 10>;
+> -			power-domains = <&pm BCM2835_POWER_DOMAIN_GRAFX_V3D>;
+>  		};
+>  
+>  		vc4: gpu {
+> diff --git a/arch/arm/boot/dts/bcm2835-rpi-common.dtsi b/arch/arm/boot/dts/bcm2835-rpi-common.dtsi
+> new file mode 100644
+> index 000000000000..b78a57534611
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/bcm2835-rpi-common.dtsi
+> @@ -0,0 +1,12 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * This include file covers the common peripherals and configuration between
+> + * bcm2835, bcm2836 and bcm2837 implementations that interact with RPi's
+> + * firmware interface.
+> + */
+> +
+> +#include <dt-bindings/power/raspberrypi-power.h>
+> +
+> +&v3d {
+> +	power-domains = <&power RPI_POWER_DOMAIN_V3D>;
+> +};
+> diff --git a/arch/arm/boot/dts/bcm2835.dtsi b/arch/arm/boot/dts/bcm2835.dtsi
+> index 53bf4579cc22..0549686134ea 100644
+> --- a/arch/arm/boot/dts/bcm2835.dtsi
+> +++ b/arch/arm/boot/dts/bcm2835.dtsi
+> @@ -1,6 +1,7 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  #include "bcm283x.dtsi"
+>  #include "bcm2835-common.dtsi"
+> +#include "bcm2835-rpi-common.dtsi"
+>  
+>  / {
+>  	compatible = "brcm,bcm2835";
+> diff --git a/arch/arm/boot/dts/bcm2836.dtsi b/arch/arm/boot/dts/bcm2836.dtsi
+> index 82d6c4662ae4..b390006aef79 100644
+> --- a/arch/arm/boot/dts/bcm2836.dtsi
+> +++ b/arch/arm/boot/dts/bcm2836.dtsi
+> @@ -1,6 +1,7 @@
+>  // SPDX-License-Identifier: GPL-2.0
+>  #include "bcm283x.dtsi"
+>  #include "bcm2835-common.dtsi"
+> +#include "bcm2835-rpi-common.dtsi"
+>  
+>  / {
+>  	compatible = "brcm,bcm2836";
+> diff --git a/arch/arm/boot/dts/bcm2837.dtsi b/arch/arm/boot/dts/bcm2837.dtsi
+> index 9e95fee78e19..0199ec98cd61 100644
+> --- a/arch/arm/boot/dts/bcm2837.dtsi
+> +++ b/arch/arm/boot/dts/bcm2837.dtsi
+> @@ -1,5 +1,6 @@
+>  #include "bcm283x.dtsi"
+>  #include "bcm2835-common.dtsi"
+> +#include "bcm2835-rpi-common.dtsi"
+>  
+>  / {
+>  	compatible = "brcm,bcm2837";
+
 
 _______________________________________________
 linux-arm-kernel mailing list
