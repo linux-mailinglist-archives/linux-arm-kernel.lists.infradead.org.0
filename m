@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75643177A0A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:09:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68D30177A11
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 16:09:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fdlPj9Odc/Ianmei0rcwGUkC39ItFLkzGzBOyZvBTY4=; b=ZgfTQKjcWok8P9
-	TW2nhL7ZRaWK5OltMfRNBzn0LxTy+O56qrVQhv8ImqEorjv9aAZgJRlqFGZp33QnO6CHWDyhTGHXh
-	WeS99XzWiV+PnAdeDreNMK7AZ6aWw44Nq/zCx/iSDojCxqigX5OLrbal6CZGMykeENw40x9pk9Mvu
-	8XBaUvxjJtZ30MaBiHrMzXpSzG7Sa297kJYNQYhIUUNtwyjA971B6csmz+oYNLF1mBSU1mTM6mxFI
-	KURtnJMCtleNpvIDouwLevSvUL1syjJ2UinSsGiUjuFsINWMjG3YfjiJ3WoxRLcYMk48x6WMJl9ad
-	Izy/z12V6Zcu7rj2m53A==;
+	List-Owner; bh=W6rsntkliTzwD/ggqXMSvH9IXUdfZyd1nRES5GQpqAY=; b=DNmbJfXwEPRGUS
+	a6fgHh+LpiVMrbpEXB8VsFROe9zgsUI8QAkWC+MMe5Pelwgi6kEhztd3aQbRfSRRHc+r2yYVWsBpX
+	NEIQAqj7rbz7oJUKFbF5sO1vMvW0+3AMvxbipylPKwCp5hW1nGr8yH57cDGdZ4pK3BFiDIlkNYqml
+	zb31X8QLZOT/gd7LHpPaERz7wBpmSkMZFcqTatLmO2dvF15O86FyYNvSn1/5JVFsUkjDhdtK416Kk
+	lHCUfsdk3gQ7KaQD8q63V6xmImYxju42oryTDfNY/pCNOQBM9HIQBfEXi378ablmTVQZCgR+1fVQM
+	nneGeV0CeAHyYmB2qnyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j99AT-0005er-8i; Tue, 03 Mar 2020 15:09:09 +0000
+	id 1j99Ak-0005wU-2p; Tue, 03 Mar 2020 15:09:26 +0000
 Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j999P-0004nS-ND
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:05 +0000
-Received: by mail-lf1-x141.google.com with SMTP id b13so1698613lfb.12
+ id 1j999R-0004p0-99
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 15:08:06 +0000
+Received: by mail-lf1-x141.google.com with SMTP id y17so3030125lfe.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 07:08:03 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oH2DPw9yOnkNvy1Ktf77A4iViJfMOE/P09y2cJqfUP0=;
- b=mPul6xhaNAuxo8T2+NE+xGn8787mHR5kxItdLJQJgLjWA7RHBJv120FuQ0vlz6JeMi
- L86z/EMCuNHoLke+7BgdQPJLpMsDrJY4PNNIR4KHK/5id2D6YAD4T+9SbyZ/nEvaDU+3
- epDaF59obqiYBlfBmYhFIi5QVk/ZNTprB/WeyY83K/5ILFe5xaQ2Vj9aVWajv4R+iESZ
- JeO21O78P8bErOdDEp5lNIkLGaGrtMc/pQ4/tusG+B/6aOnA0XkiAi90SxaWaztVSOHj
- 1sBD75JH05+mvHNLxdeTL1b7Th5uQowbmcuJJDknrkNnHyWmwp8THQeBzYamGO3C+TyE
- o/fw==
+ bh=/NDACQevUaDc6JLaPGhMJ8UIpdipROa3WbiIGkpAEKo=;
+ b=T4WeVLCjzQGfNUrES9Hy941MNj53A0yQWbbAPWTiPENyy1q1vpfzLRYqgm7ZJZQABy
+ n+t9IXXQ7k6vZ+zUAh62pucstlgWBz/uF9VNQM44sUO7whZqXxMo85IQZT81qliVMizQ
+ EzNMzQgacBQyzjLqjyxeGcTKGbWRyVSM7ZLqcsXGXlBSyPiUROa/VZQjo/Z8dLIHLlCq
+ WeRU8WycVDsUECgE480sgW58hWtWUSyIG4TRTLVzh1WYazOzYYyichLNmT2WsEdetIuF
+ j6weAufoJjq/B4ZsvsvymH2zVRnn4ENR5tsItmkzrxFQe0CmrvtMRL4IdtqwsOvwbKPP
+ B+vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oH2DPw9yOnkNvy1Ktf77A4iViJfMOE/P09y2cJqfUP0=;
- b=Zl5yuNcdiQeAdv5nsom+P+3t5OckfbzeDcjfL8WOgjNvqYOBt+u5GCmcEoTv40e+kL
- jqqA6CKQOd+pjKKlmss76LqS9EykLsf24HSecGwgum7FtpYuQO3C67C3iiZH9ItT/ZX7
- fXMT/rD+JpQbzNgIbc1i1JNaciSSPnV/BghZNHldZf2p3ZOASgQ9kGthPqICYaJeW/qF
- zOkXbngCjfcgnI0TnBg4e+t6Zi1cJBlithTWl1S3S0is7P0545ZfyCVvlQkzN5GS94Kt
- J5ig3R4OjthMpbOUpV4OmcvSGlY9XkauCOQuiGhWFiNUbJ8abqsq4tbjJaOF8DLIGA2I
- sCcA==
-X-Gm-Message-State: ANhLgQ1brBoXPN6MHCWJAUPhI80zn2JWQe5FPBGh+RM9EICCP/FNLcy7
- ETgeuy83R2NLBxkcmiuxrqmiWA==
-X-Google-Smtp-Source: ADFU+vvodELrLn3K9Dksie5B3U4dnmjJWJrhxSD42Lo+ggn0ROi0yWlkIY+w/726ufnV7RZRHghSUw==
-X-Received: by 2002:ac2:5ca5:: with SMTP id e5mr2984605lfq.122.1583248082142; 
- Tue, 03 Mar 2020 07:08:02 -0800 (PST)
+ bh=/NDACQevUaDc6JLaPGhMJ8UIpdipROa3WbiIGkpAEKo=;
+ b=BZn9maC5DmA56vVPLtXNY/tP7AornLz4fgkk/hxQwvhKoPYvHyMcxudR2aCvaILdgG
+ WxUrirfDEE9CkF95bEkOgq3uJmMLBNvV6XTOso7W74ZzUR7+AfPrwu8ysf3Xr7MqyWAp
+ zgxWT3sjFKd0JQIpnGRApWIem2QdmzVeGCM5Lbtt+EJT9LyUM+BQYkGykWn0SwN3w4YE
+ S82n8tSUgCosWno3RZUkTXcWajay1aF3C7b64XQ+cfelvCmcRJ0ITHJPRvyezZWbAZQs
+ x8xwVd9418ILX2B2N2RMbRSFAVerFcdgsn2h8zrcklobAv2jKnP3/uIv7RDii0yo5cJa
+ ERxQ==
+X-Gm-Message-State: ANhLgQ1lrJD88Eq8tl2FpeCKf+7jrpix8QM1qEXwahtwb+3Ga09dnD75
+ 97iG0TiaHK9iOhAj2PTF9qJDpw==
+X-Google-Smtp-Source: ADFU+vuGkkQiguth40cp1bw44U/CLR3j6mkPP+xXUr5/Vlp3zdPzogFaLS0srx11FKpgV5fWvZTJhg==
+X-Received: by 2002:ac2:59c7:: with SMTP id x7mr2953144lfn.148.1583248083583; 
+ Tue, 03 Mar 2020 07:08:03 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.08.00
+ by smtp.gmail.com with ESMTPSA id n189sm12143135lfa.14.2020.03.03.07.08.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 07:08:01 -0800 (PST)
+ Tue, 03 Mar 2020 07:08:02 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, devicetree@vger.kernel.org
-Subject: [PATCH 4/7] dt-bindings: power: Extend nodename pattern for
- power-domain providers
-Date: Tue,  3 Mar 2020 16:07:46 +0100
-Message-Id: <20200303150749.30566-5-ulf.hansson@linaro.org>
+Subject: [PATCH 5/7] dt-bindings: arm: Fixup the DT bindings for hierarchical
+ PSCI states
+Date: Tue,  3 Mar 2020 16:07:47 +0100
+Message-Id: <20200303150749.30566-6-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200303150749.30566-1-ulf.hansson@linaro.org>
 References: <20200303150749.30566-1-ulf.hansson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_070803_793415_8EE913F7 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20200303_070805_409235_FDBF54E9 
+X-CRM114-Status: GOOD (  13.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,49 +110,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The existing binding requires the nodename to have a '@', which is a bit
-limiting for the wider use case. Therefore, let's extend the pattern to
-allow either '@' or '-'.
+The hierarchical topology with power-domain should be described through
+child nodes, rather than as currently described in the PSCI root node. Fix
+this by adding a patternProperties with a corresponding reference to the
+power-domain DT binding.
 
-Additionally, let's update one of the examples to show how the updated
-pattern could be used.
+Additionally, update the example to conform to the new pattern, but also to
+the adjusted domain-idle-state DT binding.
 
 Fixes: a3f048b5424e ("dt: psci: Update DT bindings to support hierarchical PSCI states")
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 ---
- Documentation/devicetree/bindings/power/power-domain.yaml | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ .../devicetree/bindings/arm/psci.yaml         | 33 +++++++++----------
+ 1 file changed, 15 insertions(+), 18 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/power/power-domain.yaml b/Documentation/devicetree/bindings/power/power-domain.yaml
-index 207e63ae10f9..dc232759013e 100644
---- a/Documentation/devicetree/bindings/power/power-domain.yaml
-+++ b/Documentation/devicetree/bindings/power/power-domain.yaml
-@@ -25,7 +25,7 @@ description: |+
+diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+index 0bc3c43a525a..cae668b61265 100644
+--- a/Documentation/devicetree/bindings/arm/psci.yaml
++++ b/Documentation/devicetree/bindings/arm/psci.yaml
+@@ -102,11 +102,15 @@ properties:
+       [1] Kernel documentation - ARM idle states bindings
+         Documentation/devicetree/bindings/arm/idle-states.yaml
  
- properties:
-   $nodename:
--    pattern: "^(power-controller|power-domain)(@.*)?$"
-+    pattern: "^(power-controller|power-domain)([@-].*)?$"
+-  "#power-domain-cells":
+-    description:
+-      The number of cells in a PM domain specifier as per binding in [3].
+-      Must be 0 as to represent a single PM domain.
++required:
++  - compatible
++  - method
  
-   domain-idle-states:
-     $ref: /schemas/types.yaml#/definitions/phandle-array
-@@ -71,13 +71,13 @@ required:
++patternProperties:
++  "^(power-controller|power-domain)([@-].*)?$":
++    $ref: "../power/power-domain.yaml#"
++    type: object
++    description: |
+       ARM systems can have multiple cores, sometimes in an hierarchical
+       arrangement. This often, but not always, maps directly to the processor
+       power topology of the system. Individual nodes in a topology have their
+@@ -122,19 +126,9 @@ properties:
+       helps to implement support for OSI mode and OS implementations may choose
+       to mandate it.
  
- examples:
-   - |
--    power: power-controller@12340000 {
--        compatible = "foo,power-controller";
-+    power: power-domain-foo {
-+        compatible = "foo,power-domain";
-         reg = <0x12340000 0x1000>;
-         #power-domain-cells = <1>;
-     };
+-      [3] Documentation/devicetree/bindings/power/power_domain.txt
++      [3] Documentation/devicetree/bindings/power/power-domain.yaml
+       [4] Documentation/devicetree/bindings/power/domain-idle-state.yaml
  
--    // The node above defines a power controller that is a PM domain provider and
-+    // The node above defines a power domain that is a PM domain provider and
-     // expects one cell as its phandle argument.
+-  power-domains:
+-    $ref: '/schemas/types.yaml#/definitions/phandle-array'
+-    description:
+-      List of phandles and PM domain specifiers, as defined by bindings of the
+-      PM domain provider.
+-
+-required:
+-  - compatible
+-  - method
+-
+ allOf:
+   - if:
+       properties:
+@@ -224,6 +218,9 @@ examples:
+           exit-latency-us = <10>;
+           min-residency-us = <100>;
+         };
++      };
++
++      domain-idle-states {
  
-   - |
+         CLUSTER_RET: cluster-retention {
+           compatible = "domain-idle-state";
+@@ -247,19 +244,19 @@ examples:
+       compatible = "arm,psci-1.0";
+       method = "smc";
+ 
+-      CPU_PD0: cpu-pd0 {
++      CPU_PD0: power-domain-cpu0 {
+         #power-domain-cells = <0>;
+         domain-idle-states = <&CPU_PWRDN>;
+         power-domains = <&CLUSTER_PD>;
+       };
+ 
+-      CPU_PD1: cpu-pd1 {
++      CPU_PD1: power-domain-cpu1 {
+         #power-domain-cells = <0>;
+         domain-idle-states =  <&CPU_PWRDN>;
+         power-domains = <&CLUSTER_PD>;
+       };
+ 
+-      CLUSTER_PD: cluster-pd {
++      CLUSTER_PD: power-domain-cluster {
+         #power-domain-cells = <0>;
+         domain-idle-states = <&CLUSTER_RET>, <&CLUSTER_PWRDN>;
+       };
 -- 
 2.20.1
 
