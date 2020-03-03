@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 307D6178445
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 21:47:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBB44178450
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 21:51:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7AePJtzBXOETRjAvj8Ud49DzONB+KufbF2qZotE8O54=; b=VFx4uwc5oTELHS
-	kcEfKBPz2wjT/GEyoGv7p/9KQAVTnlRCNsTw2v8P53VG9BeTJsIUH2/arsQQS/CL1vbeETbZTNhTC
-	E5bzZwBPFq91udAPZRaeEiyWyv5wuqZgjTG2aEDbjWiDvvcKygOSq+TUVdveQQx4dsYHIscnq3Ozh
-	d9p/ia2RfEKx0LCVoPrYLX8Kh53qMMHHUIUnI2zSAQYiGdaLdp4l0ci4TwkldkX9zKviUOqT7pkds
-	XiQkkUqf1kw4DGwmOAEWsktvA1kjZWBFxZ2OINKSFgTTuhplDMfI7ZLapA76wgrXyPLCeV0ZOOp7C
-	3WY0uDiK4nXtk3rHwaFw==;
+	List-Owner; bh=9yiYLg4n64N/RSTR6GoLODLDDuETkUml/papOxFPTr8=; b=nWAKTQsnRAgMZ2
+	vUxCZG7nyudfTSIA5wQJXmr/LTu+GYY9TR5lCcWaZNnm5JNwwAP9f2SYdON3DiZkVSvS+5Fkt+ryk
+	8MfkD/35FhVxF6XfmhIbr4RQVswM5BaPC3yJtfVpyjbtKeUaLikQtqh6UboP64Fvp9dkJBKeLCQ+2
+	UwrJy42cCFylTZo1o8K7/7deoDUJwfWY0SGRA6/em/Hw9IOC9gxsJjpq/6HiDtOufZWeOwyQHeJ4M
+	GQBUJxSF/cknO0RmGjNhRDQi6zn0mWH1yEKJgWbUFk5ypY135Uf+54Z56psUBNvsqTaPc3iLG0esw
+	+CJetI+5YoUvNP4V5Rog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9ERw-0000pE-QG; Tue, 03 Mar 2020 20:47:32 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1j9EVC-0002WA-6U; Tue, 03 Mar 2020 20:50:54 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9ERo-0000ob-JE
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 20:47:25 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id t129so9366vkg.6
+ id 1j9EV4-0002Vb-7S
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 20:50:47 +0000
+Received: by mail-ua1-x941.google.com with SMTP id h32so1688697uah.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 12:47:24 -0800 (PST)
+ Tue, 03 Mar 2020 12:50:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=H8LzC1FkDwsheob6ti11k957HeWZgskHzijDc9F3t1w=;
- b=iTZkdrGA7NLhytKTFhNkpSopPcJQivDis2tK/K84C2BmU7f//AGarD3Oi4ul4ZA5p2
- 7ovMAz3duyVE7c7Gv9VYoR3nLxlVYWx4rLEXsVN6WEQivNege4qeNkPtMcAlLt76rsWq
- Sinub/FqaZUGTX7YrfSxoqY9xjrIuQ2ylwK2Ohy8yi57pBWR94i6Ve/S0VZ5O8r1AekV
- VNQBsdRAjRQoyvR3/N/mMB+VTBIWZpZm/vQA3UOfuXMwRP146yoUc9A+iJ8H80IJ4sZI
- tdqKkxfsSVRdT0cgM7rQ7gytnqS22pY9sB8LGDZRbK1CwwGcRn3E7ApDCfhnm4bvqcm6
- Mz1A==
+ :cc; bh=XD3hDQ0araAq5zv8njvI5qg6v85AS493J1Kabe5n9XU=;
+ b=WQs8CSKCVyivgzPN2r8nm7npkTrOFE4qfJa67otUlcSCrwaKSlDrF3gGH8TEf+fF84
+ v/9skIV1L0DMfuSSIQZjLFKzht8F/ZGa+MgsCy08Bx+vWOgIqBpxJ/PDPdFuev8VqNyA
+ h41lMLtPkCTJOhtkGYI7uguOfjiLVSYgoZMlkhibAvlNRLKb6mtXn/YHo9rJuDgJ+Uny
+ i00XJnN1ZkX4aEaM8574pbADLLmr065IX3iexNFRyOCjEx8Hq1B13jzs7IFm8K61v/Oj
+ 6ZXxP3hlFdm4pJYpgHUOC5+zIERiPT/vE9AGPanw3vpwqL5GPZDR4HF/ypGuwGF88vIc
+ R8fQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=H8LzC1FkDwsheob6ti11k957HeWZgskHzijDc9F3t1w=;
- b=U1GRzoU/NLJWuNgJ89NwIuh1Dr4jad6oG/0O5ZvqIixzFbbcEfy7SVf6MbDxHyiB6x
- 94mhYRCoLI5its2oP1TEIIEYnu8xYXb27jKxHiULjoLEUFleqO1DeyVGaL9xCcy9lZqN
- wvagTo327r4bOa6c9u35eqy3YOlDKnBMSbM3sbWI1+PsW2Mk+T6XzUv2K4bQ1GfJNla4
- 0GyhmZ+3XFEZMoNtHqc6UbTYY7ZVYHjv+wJXUhWFRjk2CMnmHIZAKZZKnE5K8+9NyZYl
- hCyR8DY4sZ1en2DCw2nG0Hh6gruDj8Yc7xyix3wWyLoq773WscFPJ392acGMrXpvDS+5
- jX3w==
-X-Gm-Message-State: ANhLgQ3+5YdNvfac2Pk69btH80UgaDOyo++c9+uQdUJTPorRvowfmU97
- PmEeCaIT0Oig8YvNgFA3m535DHgURaAhbeD4XuEjmQ==
-X-Google-Smtp-Source: ADFU+vuERFMpkWbnyw88Lrbiz3fboR9TvgiMmam5QelmxN9WhhxeUBTbt3kTGF03KMhQ35qpLPhxK03B5kLIBCnDqzw=
-X-Received: by 2002:ac5:c844:: with SMTP id g4mr3978713vkm.25.1583268443466;
- Tue, 03 Mar 2020 12:47:23 -0800 (PST)
+ bh=XD3hDQ0araAq5zv8njvI5qg6v85AS493J1Kabe5n9XU=;
+ b=Bpb83kPuZeGdeIvzEgTHBufGrMvfOnbystcMaiwBWcXls8G6aYAqfFCT6ChBlrT2gY
+ cZ0GLtINqPU1NdoaP6e79viMjp+jstQxWWnuYbYEvUQ+yetQ4M9mpR4dTYsxnNGGQDxA
+ E71pohAxw8P1jABdqYHzYg8jq9huPoEUh+E7vWZjUrAEtke3uI2gn5viT0XTyS/S3NSf
+ GJd6DvA/IVSFAwoLml1kPdC2o9+sMp2HLWfBwAJ3moieVtJQMleENBW2m6HGPnLSjyTE
+ wFnxZAGaG0bqpXyB+ONA5BTLd38y7OXcA8VXCZIaNTAcGv1alYUeCqMikPFXq6QQIXwp
+ Pvxw==
+X-Gm-Message-State: ANhLgQ2AGLAr6UpJ6A+oiXwXmyOlFRD1mkGAvl+sNSdAsGQghJftonRg
+ T5jdK8D0zBpb46o+Ur1ig05w+zx//ss6pmteLWzyxg==
+X-Google-Smtp-Source: ADFU+vuNcnNmh6x5IJ5M2yTWp4kLMylcBxLsMM68UQIba35vDPyCmNWmxoJ2HjjVcEPSIT6lr5mW0JrpuYGpEQbi/z0=
+X-Received: by 2002:ab0:7802:: with SMTP id x2mr3988409uaq.100.1583268644577; 
+ Tue, 03 Mar 2020 12:50:44 -0800 (PST)
 MIME-Version: 1.0
 References: <20200303150749.30566-1-ulf.hansson@linaro.org>
- <20200303150749.30566-5-ulf.hansson@linaro.org> <20200303170348.GB26191@bogus>
-In-Reply-To: <20200303170348.GB26191@bogus>
+ <20200303150749.30566-6-ulf.hansson@linaro.org> <20200303170641.GC26191@bogus>
+In-Reply-To: <20200303170641.GC26191@bogus>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 3 Mar 2020 21:46:47 +0100
-Message-ID: <CAPDyKFpcpjaouXeFOm+Fj+9x7KeaRyBYLY+5oDVLYnmkV93hTg@mail.gmail.com>
-Subject: Re: [PATCH 4/7] dt-bindings: power: Extend nodename pattern for
- power-domain providers
+Date: Tue, 3 Mar 2020 21:50:08 +0100
+Message-ID: <CAPDyKFrzy=88fPgesS0_S45rr4SdWthQRcjwnqJzRcMBKCo4=A@mail.gmail.com>
+Subject: Re: [PATCH 5/7] dt-bindings: arm: Fixup the DT bindings for
+ hierarchical PSCI states
 To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_124724_634789_81B60A9B 
-X-CRM114-Status: GOOD (  16.65  )
+X-CRM114-CacheID: sfid-20200303_125046_271899_A333BBAB 
+X-CRM114-Status: GOOD (  18.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,52 +106,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 3 Mar 2020 at 18:04, Rob Herring <robh@kernel.org> wrote:
+On Tue, 3 Mar 2020 at 18:06, Rob Herring <robh@kernel.org> wrote:
 >
-> On Tue, Mar 03, 2020 at 04:07:46PM +0100, Ulf Hansson wrote:
-> > The existing binding requires the nodename to have a '@', which is a bit
-> > limiting for the wider use case. Therefore, let's extend the pattern to
-> > allow either '@' or '-'.
->
-> That's fine, but...
->
-> > Additionally, let's update one of the examples to show how the updated
-> > pattern could be used.
+> On Tue, Mar 03, 2020 at 04:07:47PM +0100, Ulf Hansson wrote:
+> > The hierarchical topology with power-domain should be described through
+> > child nodes, rather than as currently described in the PSCI root node. Fix
+> > this by adding a patternProperties with a corresponding reference to the
+> > power-domain DT binding.
+> >
+> > Additionally, update the example to conform to the new pattern, but also to
+> > the adjusted domain-idle-state DT binding.
 > >
 > > Fixes: a3f048b5424e ("dt: psci: Update DT bindings to support hierarchical PSCI states")
 > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 > > ---
-> >  Documentation/devicetree/bindings/power/power-domain.yaml | 8 ++++----
-> >  1 file changed, 4 insertions(+), 4 deletions(-)
+> >  .../devicetree/bindings/arm/psci.yaml         | 33 +++++++++----------
+> >  1 file changed, 15 insertions(+), 18 deletions(-)
 > >
-> > diff --git a/Documentation/devicetree/bindings/power/power-domain.yaml b/Documentation/devicetree/bindings/power/power-domain.yaml
-> > index 207e63ae10f9..dc232759013e 100644
-> > --- a/Documentation/devicetree/bindings/power/power-domain.yaml
-> > +++ b/Documentation/devicetree/bindings/power/power-domain.yaml
-> > @@ -25,7 +25,7 @@ description: |+
+> > diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+> > index 0bc3c43a525a..cae668b61265 100644
+> > --- a/Documentation/devicetree/bindings/arm/psci.yaml
+> > +++ b/Documentation/devicetree/bindings/arm/psci.yaml
+> > @@ -102,11 +102,15 @@ properties:
+> >        [1] Kernel documentation - ARM idle states bindings
+> >          Documentation/devicetree/bindings/arm/idle-states.yaml
 > >
-> >  properties:
-> >    $nodename:
-> > -    pattern: "^(power-controller|power-domain)(@.*)?$"
-> > +    pattern: "^(power-controller|power-domain)([@-].*)?$"
-> >
-> >    domain-idle-states:
-> >      $ref: /schemas/types.yaml#/definitions/phandle-array
-> > @@ -71,13 +71,13 @@ required:
-> >
-> >  examples:
-> >    - |
-> > -    power: power-controller@12340000 {
-> > -        compatible = "foo,power-controller";
-> > +    power: power-domain-foo {
-> > +        compatible = "foo,power-domain";
-> >          reg = <0x12340000 0x1000>;
+> > -  "#power-domain-cells":
+> > -    description:
+> > -      The number of cells in a PM domain specifier as per binding in [3].
+> > -      Must be 0 as to represent a single PM domain.
+> > +required:
+> > +  - compatible
+> > +  - method
 >
-> When you have 'reg' you should have a unit-address.
+> No need to move this.
 
-Yes, of course, thanks!
+Okay.
+
+>
+> >
+> > +patternProperties:
+> > +  "^(power-controller|power-domain)([@-].*)?$":
+> > +    $ref: "../power/power-domain.yaml#"
+>
+> This has to be under an 'allOf' or the rest of the properties are
+> ignored.
+
+Sure, I had the feeling that something was missing. Thanks for reviewing!
 
 [...]
+
+Looks like I should a v2 of the series, or do you prefer to apply some
+of the patches before I resend?
 
 Kind regards
 Uffe
