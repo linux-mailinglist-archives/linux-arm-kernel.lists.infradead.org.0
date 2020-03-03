@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD327177C16
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 17:40:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F68F177C18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 17:40:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XxcbjRY/WwM/djd1C6uM31MiBfunM/DiGk4JnNsvxBU=; b=uamdnMC0wiDyas
-	B3zIoW81L1C5Fo4pWDCx9krJQc5vcE7xJI0N4tQHB4c/YsrxG1G9eztecaqItlMe9DDXx8gIrPioV
-	SK8C+dGlxH+ii3vp9vAIiCnFn5V3YuS0QiG09qcwhOW+cEuyaZRp+FNJqY6FjuUO6LAxdBcmV/D6/
-	Rq0FwgBn7BPCDfEYzpFDvoa1m90kKHwmIyRTbFgDJId4QNnxofWxfQzefnO2ub/0+Ei85hZmBvGfX
-	ns2HId8b4f3BeL0AoQfxL1QDRnhnlRpOF7kkB7ujYEI2gR5cWliSKTVhyaJroGxqDUVm/CdBi9BQ1
-	K+zRSnVL+wx7ylB5N9+w==;
+	List-Owner; bh=obN6i6a3+eeSQisiOyn5dnBy4SHiq6Db3SoK5VRQ50Y=; b=LmeYa3RuW7yzC7
+	9lmFYOEejrC/XxhxgWuhFOUV6IDxQ+p+bxQi9Qa7fNAQFpx4CX+AkDIuEj9ft+9NFdmi6do3Q3JEH
+	nrRiexsg5BO7GF8n7t5KbYDGxvn7Xh8iqqIoCRPcxFWhgQ7q5xAWIAhTYA+wylhPmYwV53Ay/EwPk
+	yRqK3eJO3tk1EYod+s2akL7a9Q/otMFL1aXrSa7U39SxfXiiKZKwk/7aFeDZJG8J9Qwp10M8QTs/7
+	l7YqbUb4bEyjdqvqBr5mDyAscMr7DwHnD0dkCS8Bg6fWOs1GKIgLWzbZN431PRAyEpqPunEbHWG3s
+	9aQ6/4jlqLXI9S0FvhcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Aab-0007ZW-8K; Tue, 03 Mar 2020 16:40:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j9Aaz-0000b2-1j; Tue, 03 Mar 2020 16:40:37 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9AaK-0007Z3-SA
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 16:39:58 +0000
-Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com
- [209.85.221.51])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B678B215A4
+ id 1j9Aar-0000Zc-Gb
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 16:40:31 +0000
+Received: from mail-qv1-f43.google.com ([209.85.219.43]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MS1G7-1ixzcZ1hut-00TUpH for <linux-arm-kernel@lists.infradead.org>; Tue,
+ 03 Mar 2020 17:40:24 +0100
+Received: by mail-qv1-f43.google.com with SMTP id u10so1975244qvi.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Mar 2020 16:39:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583253596;
- bh=zhaz8a1PzXVqJb9FuQ3w7HBH+VPURj1yIscuvDbYu+0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=kPQa1/p3XwXvjfOHz8UPbUkwjOnBMbPI7fviNZJ+lUqL8kZH0ASN37vgy7iS7aNYY
- pe1e9oRbQOiLcuRNkKY11bYAhaRvpnv7V1d1HmxbLQ4VDnzHAT76isGbvPCj159wvj
- EzgpY0vHLJ1ZYtVRHaLgwRVA/w0S4EEZndvayeOc=
-Received: by mail-wr1-f51.google.com with SMTP id j16so5224704wrt.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 08:39:55 -0800 (PST)
-X-Gm-Message-State: ANhLgQ1S0q7veYkMO+0laI9xlsOT9BZpYiKDJCuhMBKyXk12U5eC2lsH
- YnoGkX7gucsHhV7AX4204WtYumkZ1tqROUqpe5TptQ==
-X-Google-Smtp-Source: ADFU+vt4EfLydKMEgMYMNgyv3Ag29X1i9U4pWNpNDke5qphoNlBNkLBHVSaINpPY6XjJKVoZ3ER6Xr3q/f5Ge3cr+Ok=
-X-Received: by 2002:a5d:6051:: with SMTP id j17mr6185289wrt.151.1583253594066; 
- Tue, 03 Mar 2020 08:39:54 -0800 (PST)
+ Tue, 03 Mar 2020 08:40:24 -0800 (PST)
+X-Gm-Message-State: ANhLgQ1SIYNmYpHAVKUXO7IiU0C1D3RZlUhTle1r2j3QN28wry2h9PdP
+ 5tsz/NXYyK5YZU+31RjhQqjjS/4V8V+k0lZsJuI=
+X-Google-Smtp-Source: ADFU+vvYQ6QVCbbYeP2nxaqh43OevpTsL0y0S8ngiP8jykUds6UhfBGQ9l/IAMS619c4WMkVGB7+nyot4prtq/wbHaI=
+X-Received: by 2002:ad4:52eb:: with SMTP id p11mr4409475qvu.211.1583253623303; 
+ Tue, 03 Mar 2020 08:40:23 -0800 (PST)
 MIME-Version: 1.0
-References: <20200216182334.8121-1-ardb@kernel.org>
- <20200216182334.8121-17-ardb@kernel.org>
- <20200303160353.GA20372@roeck-us.net>
-In-Reply-To: <20200303160353.GA20372@roeck-us.net>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 3 Mar 2020 17:39:43 +0100
-X-Gmail-Original-Message-ID: <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
-Message-ID: <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
-Subject: Re: [PATCH 16/18] efi: add 'runtime' pointer to struct efi
-To: Guenter Roeck <linux@roeck-us.net>
+References: <2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com>
+ <c1489f55-369d-2cff-ff36-b10fb5d3ee79@kernel.org>
+ <8207cd51-5b94-2f15-de9f-d85c9c385bca@huawei.com>
+ <6115fa56-a471-1e9f-edbb-e643fa4e7e11@kernel.org>
+ <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
+In-Reply-To: <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 3 Mar 2020 17:40:07 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
+Message-ID: <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
+Subject: Re: About commit "io: change inX() to have their own IO barrier
+ overrides"
+To: John Garry <john.garry@huawei.com>
+X-Provags-ID: V03:K1:IKpZTjw3oApKR6s4104SJJV4ohSoCWBSycQ3pQ2Pja4OVyTQ2R6
+ PQt/4sZSbQRfRZEwTth5mp3q9RAi8M5cfqfqb/J7mZu4tBDQovjRRDi6zvoTSfnXoBI3V0/
+ /X+kfaX+Cp3PrQWUG+1BElN5hLMKgMrZrBd76KVV8CmqDtHfjm61TYCsojJYap6HJFqaVfA
+ wMyK00hEiILTYWl1vhsfA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:scq7n7j3ikA=:wjORVE39cnBpJHGcqnwKGs
+ qGjXZKCm/l2Th3QcIeeWAnycA269CCBj+FdALb57resxHegUFn3/bcQ7Z7GcjrU7jWK3r5JyF
+ UL+WRkfEKNfc1oI8iSIpEa9YTotu87dt4LMVOvfuKZnjJi6MtxhdSOz/AAEgrynmmuQHCKvDq
+ I78yREnCT5WV8crVk6aymBtPTlgsuSNguZDc0+f6hcWKToJ9JfV90Nj/ZiRvI7A8TSszyoiZ3
+ Pq85owcWekxhl6BWd41g8ytNpkpUpWtvkrhlGhcc9B/x0Gy21Re1H/9l4RxKUfxinm6xSvxeQ
+ 1T8GmLUagNX8p14GEZHhYomY8kX/T8DIikh37s8GqcNHV9RvA+tQr+lZWZbO0VWniFE4diDRM
+ S2BKYLN+uF6NzdI8tKIRfYpVywOXwZ1FM9MtVzuI6yjCni0y7XpDejqHaDKJmBmKVNqtdtApp
+ uM21zS5oE49NbUOnM+mzBM+wtbEtk8W3UB49zJI85cRgyN9iX8RjJMc3D5JvA+DOGn60VWsTa
+ CGEjg2Ml4h2cUp0ucELvcJROTH0Bc1U+hABBajdAwsHRdMwW1qhCknodsIzM6gUQ1TGKGAVa8
+ lSEoCSadFuQP9sNF3UU58echx6wMOpLWa1ZrJ54u/TwJ80j9NzqBcCP1dSINecTXI7r7QugiP
+ JWt/mJqrNtPP1XM0ma0z4LpcWRjWVaqBfDGoUApQOJ0xRpM/c3zGIhPGNGYOs8pOR1+Tz3IOz
+ jwd2R8Bj5jSiIjZDPPIzFXQ7pf7qc+lKUohZRfDFBS1H7TGgFpZLIyzA5/n2bFU3OhxXdis0S
+ tJK7FuD+PSuktmJObrHPYoPVfbg4STRQhTW1modII493GHqAm0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_083956_954298_363380B8 
-X-CRM114-Status: GOOD (  25.02  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200303_084029_840922_7849504C 
+X-CRM114-Status: GOOD (  16.30  )
+X-Spam-Score: -1.5 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.187 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,157 +92,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arvind Sankar <nivedita@alum.mit.edu>,
- linux-efi <linux-efi@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sinan Kaya <okaya@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jiaxun Yang <jiaxun.yang@flygoat.com>, "xuwei \(O\)" <xuwei5@hisilicon.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 3 Mar 2020 at 17:03, Guenter Roeck <linux@roeck-us.net> wrote:
+On Tue, Mar 3, 2020 at 2:18 PM John Garry <john.garry@huawei.com> wrote:
 >
-> On Sun, Feb 16, 2020 at 07:23:32PM +0100, Ard Biesheuvel wrote:
-> > Instead of going through the EFI system table each time, just copy the
-> > runtime services table pointer into struct efi directly. This is the
-> > last use of the system table pointer in struct efi, allowing us to
-> > drop it in a future patch, along with a fair amount of quirky handling
-> > of the translated address.
+> + linux-arch
+>
+> For background, see
+> https://lore.kernel.org/lkml/2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com/
+>
+> >>
+> >> So today only ARM64 uses it for this relevant code, above. But maybe
+> >> others in future will want to use it - any arch without native IO port
+> >> access is a candidate.
 > >
-> > Note that usually, the runtime services pointer changes value during
-> > the call to SetVirtualAddressMap(), so grab the updated value as soon
-> > as that call returns. (Mixed mode uses a 1:1 mapping, and kexec boot
-> > enters with the updated address in the system table, so in those cases,
-> > we don't need to do anything here)
+> > I'm looking at Arnd here for help.
 > >
-> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> >>
+> >>>
+> >>> As long as the expectations are set, I see no reason why it shouldn't
+> >>> but, I'll let Arnd comment on it too.
+> >>
+> >> ok, so it looks reasonable consider replicating your change for ***, above.
 >
-> This patch results in a crash with i386 efi boots if PAE (CONFIG_HIGHMEM64G=y)
-> is enabled. Bisect and crash logs attached. There is also a warning which
-> I don't recall seeing before, but it may not be caused by this patch
-> (I didn' bisect the warning). The warning is seen with all i386:efi boots,
-> not only when PAE is enabled. The warning log is also attached.
+> To be clear, I would make this change in lib/logic_pio.c since
+> __io_pbr() can be overridden per-arch:
 >
-> Guenter
->
-> ---
-> Qemu command line:
->
-> qemu-system-i386 -kernel arch/x86/boot/bzImage -M pc -cpu Westmere \
->         -no-reboot -m 256 -snapshot \
->         -bios OVMF-pure-efi-32.fd \
->         -usb -device usb-storage,drive=d0 \
->         -drive file=rootfs.ext2,if=none,id=d0,format=raw \
->         --append 'earlycon=uart8250,io,0x3f8,9600n8 panic=-1 slub_debug=FZPUA root=/dev/sda rootwait mem=256M console=ttyS0' \
->         -nographic
->
+>   #define BUILD_LOGIC_IO(bw, type)
+>   type logic_in##bw(unsigned long addr)
+>   {
+>        type ret = (type)~0;
+>        if (addr < MMIO_UPPER_LIMIT) {
+> -          ret = read##bw(PCI_IOBASE + addr);
+> +          __io_pbr();
+> +          ret = __raw_read##bw(PCI_IOBASE + addr);
+> +          __io_pbr();
 
-I am failing to reproduce this. Do you have a .config and a copy of
-OVMF-pure-efi-32.fd anywhere?
+__io_par();
 
+>        } else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {
+>            struct logic_pio_hwaddr *entry = find_io_range(addr);
+>
+> ...
+>
+> (forgetting leX_to_cpu for the moment)
 
-> ---
-> # bad: [e78aa714e3261e23c7413fd6e719820e271ff128] Add linux-next specific files for 20200303
-> # good: [98d54f81e36ba3bf92172791eba5ca5bd813989b] Linux 5.6-rc4
-> git bisect start 'HEAD' 'v5.6-rc4'
-> # good: [a2a09dd01b6aa08d10393c8d917de75787e3132e] Merge remote-tracking branch 'crypto/master'
-> git bisect good a2a09dd01b6aa08d10393c8d917de75787e3132e
-> # good: [5a8e63833f9ef8c26c42220a839bbb9687bfe71b] Merge remote-tracking branch 'spi/for-next'
-> git bisect good 5a8e63833f9ef8c26c42220a839bbb9687bfe71b
-> # bad: [e02ce27a4ed5d49b92cc5269c15a1acdd9bacd9b] Merge remote-tracking branch 'thunderbolt/next'
-> git bisect bad e02ce27a4ed5d49b92cc5269c15a1acdd9bacd9b
-> # bad: [943cba4a99fe46ebca32b66bedb867fddeff9a7b] Merge remote-tracking branch 'edac/edac-for-next'
-> git bisect bad 943cba4a99fe46ebca32b66bedb867fddeff9a7b
-> # good: [a47d8a0913d007555df3cde040091305878b45b1] Merge branch 'locking/kcsan'
-> git bisect good a47d8a0913d007555df3cde040091305878b45b1
-> # bad: [fe4db90a80cd12ebe4efe385d40d6636330149ed] efi: Add support for EFI_RT_PROPERTIES table
-> git bisect bad fe4db90a80cd12ebe4efe385d40d6636330149ed
-> # good: [0255973bd6e471e1c34284328098bfab89840df3] efi/libstub: Describe efi_relocate_kernel()
-> git bisect good 0255973bd6e471e1c34284328098bfab89840df3
-> # good: [686312927b13fc30b23b0e0f9be097c292343048] efi/ia64: Switch to efi_config_parse_tables()
-> git bisect good 686312927b13fc30b23b0e0f9be097c292343048
-> # bad: [223e3ee56f77570157aba8cc550208af430a869b] efi/x86: add headroom to decompressor BSS to account for setup block
-> git bisect bad 223e3ee56f77570157aba8cc550208af430a869b
-> # good: [9cd437ac0ef4f324a92e2579784b03bb487ae7fb] efi/x86: Make fw_vendor, config_table and runtime sysfs nodes x86 specific
-> git bisect good 9cd437ac0ef4f324a92e2579784b03bb487ae7fb
-> # bad: [59f2a619a2db86111e8bb30f349aebff6eb75baa] efi: Add 'runtime' pointer to struct efi
-> git bisect bad 59f2a619a2db86111e8bb30f349aebff6eb75baa
-> # good: [09308012d8546dda75e96c02bed19e2ba1e875fd] efi/x86: Merge assignments of efi.runtime_version
-> git bisect good 09308012d8546dda75e96c02bed19e2ba1e875fd
-> # first bad commit: [59f2a619a2db86111e8bb30f349aebff6eb75baa] efi: Add 'runtime' pointer to struct efi
->
-> ---
-> Crash:
->
-> [    1.022602] ------------[ cut here ]------------
-> [    1.022602] kernel BUG at arch/x86/mm/pat/set_memory.c:348!
-> [    1.022602] invalid opcode: 0000 [#1] SMP PTI
-> [    1.022602] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W         5.6.0-rc4-next-20200303 #1
-> [    1.022602] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 0.0.0 02/06/2015
-> [    1.022602] EIP: change_page_attr_set_clr+0x26c/0x280
-> [    1.022602] Code: c1 eb 05 c1 e8 03 83 e0 03 09 c3 0f b6 9b 40 89 83 c8 85 db 0f 95 45 a3 e9 b1 fe ff ff 80 3d 88 ef 93 c8 00 0f 85 b7 fe ff ff <0f> 0b e8 6d 8b 00 00 8d b4 26 00 00 00 00 8d b6 00 00 00 00 55 89
-> [    1.022602] EAX: 00000046 EBX: 00000000 ECX: 00000000 EDX: 00000000
-> [    1.022602] ESI: 00000000 EDI: 00000000 EBP: c880fef4 ESP: c880fe94
-> [    1.022602] DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068 EFLAGS: 00000046
-> [    1.022602] CR0: 80050033 CR2: ffbff000 CR3: 08a36000 CR4: 000006b0
-> [    1.022602] Call Trace:
-> [    1.022602]  ? memremap+0x1d/0x1b0
-> [    1.022602]  set_memory_x+0x39/0x40
-> [    1.022602]  efi_set_executable+0x5a/0x68
-> [    1.022602]  runtime_code_page_mkexec+0x2e/0x39
-> [    1.022602]  efi_runtime_update_mappings+0x11/0x14
-> [    1.022602]  efi_enter_virtual_mode+0x36c/0x388
-> [    1.022602]  start_kernel+0x3b7/0x443
-> [    1.022602]  i386_start_kernel+0x43/0x45
-> [    1.022602]  startup_32_smp+0x164/0x168
-> [    1.022602] Modules linked in:
-> [    1.022602] ---[ end trace 9d84af499f5da089 ]---
-> [    1.022602] EIP: change_page_attr_set_clr+0x26c/0x280
-> [    1.022602] Code: c1 eb 05 c1 e8 03 83 e0 03 09 c3 0f b6 9b 40 89 83 c8 85 db 0f 95 45 a3 e9 b1 fe ff ff 80 3d 88 ef 93 c8 00 0f 85 b7 fe ff ff <0f> 0b e8 6d 8b 00 00 8d b4 26 00 00 00 00 8d b6 00 00 00 00 55 89
-> [    1.022602] EAX: 00000046 EBX: 00000000 ECX: 00000000 EDX: 00000000
-> [    1.022602] ESI: 00000000 EDI: 00000000 EBP: c880fef4 ESP: c880fe94
-> [    1.022602] DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068 EFLAGS: 00000046
-> [    1.022602] CR0: 80050033 CR2: ffbff000 CR3: 08a36000 CR4: 000006b0
-> [    1.022602] Kernel panic - not syncing: Attempted to kill the idle task!
->
-> ---
-> Warning:
->
-> [    0.645996] ------------[ cut here ]------------
-> [    0.645996] WARNING: CPU: 0 PID: 0 at arch/x86/kernel/traps.c:811 do_debug+0x161/0x1e0
-> [    0.645996] Modules linked in:
-> [    0.645996] CPU: 0 PID: 0 Comm: swapper/0 Not tainted 5.6.0-rc4-next-20200303 #1
-> [    0.645996] Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 0.0.0 02/06/2015
-> [    0.645996] EIP: do_debug+0x161/0x1e0
-> [    0.645996] Code: 84 2b ff ff ff eb da 66 90 e8 cb 89 0c 00 e9 35 ff ff ff 8d b6 00 00 00 00 0f b7 53 34 83 e2 03 66 83 fa 03 0f 84 79 ff ff ff <0f> 0b 80 e4 bf 89 86 3c 0d 00 00 f0 80 0e 10 81 63 38 ff fe ff ff
-> [    0.645996] EAX: 00004000 EBX: cd3f9ec8 ECX: 00000000 EDX: 00000000
-> [    0.645996] ESI: cd408e80 EDI: 00004000 EBP: cd3f9ec0 ESP: cd3f9ea4
-> [    0.645996] DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068 EFLAGS: 00000093
-> [    0.645996] CR0: 80050033 CR2: ffd19000 CR3: 0d615000 CR4: 00000690
-> [    0.645996] Call Trace:
-> [    0.645996]  ? do_error_trap+0xd0/0xd0
-> [    0.645996]  common_exception+0x147/0x162
-> [    0.645996] EIP: trace_hardirqs_off+0x0/0x100
-> [    0.645996] Code: e8 85 3b f9 ff 8b 55 ec b8 60 34 43 cd e8 68 a1 f8 ff 64 ff 0d e4 47 5f cd 8b 5d 04 e9 49 ff ff ff 0f 0b eb 91 8d 74 26 00 90 <55> 89 e5 57 56 53 83 ec 08 64 a1 70 6e 60 cd 85 c0 0f 85 95 00 00
-> [    0.645996] EAX: 00000000 EBX: 000001e0 ECX: d0863f10 EDX: 80050033
-> [    0.645996] ESI: 00000000 EDI: 00000030 EBP: cd3f9f48 ESP: cd3f9f24
-> [    0.645996] DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068 EFLAGS: 000001c2
-> [    0.645996]  ? do_error_trap+0xd0/0xd0
-> [    0.645996]  ? trace_hardirqs_on_caller+0x100/0x100
-> [    0.645996]  ? efi_set_virtual_address_map+0x7d/0xb8
-> [    0.645996]  efi_enter_virtual_mode+0x340/0x380
-> [    0.645996]  start_kernel+0x3a6/0x432
-> [    0.645996]  i386_start_kernel+0x43/0x45
-> [    0.645996]  startup_32_smp+0x164/0x168
-> [    0.645996] irq event stamp: 3346
-> [    0.645996] hardirqs last  enabled at (3345): [<cc3e6ba5>] __slab_alloc.constprop.99+0x45/0x60
-> [    0.645996] hardirqs last disabled at (3346): [<cd568df9>] efi_set_virtual_address_map+0x51/0xb8
-> [    0.645996] softirqs last  enabled at (3298): [<ccf3c155>] __do_softirq+0x2c5/0x3bb
-> [    0.645996] softirqs last disabled at (3291): [<cc21fafd>] call_on_stack+0xd/0x50
-> [    0.645996] ---[ end trace 4d4ba9fe34c1e861 ]---
->
+Yes, I suppose this is required to get consistent behavior on arm64,
+which overrides __io_par() but not __io_ar(), with the current code
+the barrier after read is weaker when LOGIC_PIO is enabled than it
+is otherwise.
+
+For other architectures, I suppose we would need another indirection
+level, as those can also override the default inb() itself to do something
+other than readb(PCI_IOBASE + addr), and that is not handled
+here either. We can do that if we need LOGIC_PIO on a second
+architecture.
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
