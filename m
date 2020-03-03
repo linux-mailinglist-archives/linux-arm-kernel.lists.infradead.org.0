@@ -2,75 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71F94178502
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 22:40:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC9E317852D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 23:02:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8p7KSzSM2bqDSYGbMB1wcwE2sV7mn1Dg5AK0hEn6eJI=; b=BpNZmp95/AsZ3i
-	hs0MG/UF4dXy3z2W9tkDiqu/LUJwqSrVBLr3qX/TZ9ctTxoDDrHq6OeAb8+b65E7iOoxHu0bR8u/x
-	yAL5JqfTWjVLsBLbZHGVjWO8x1r+Z9M35RSQIC0H28DBa+Ew2aiehBesqOmXpMlSjO8VvSS9vfwIq
-	pKoL3J6JXo5cWNx275+AW0gTD9c6pOHaRtBqbmrGcstul3y7cJA3RT9FJ37NJDJTKQucD5X8Xvg3k
-	sVYFRpOS8COV+pt1p2/ZIbC+UbqKrPhvSMQVmlbSvYhDlbiuuOBkolhig+DHZWG7P1UtG0uJXh4oK
-	XSkO36kbLBjd2ZelyXRA==;
+	List-Owner; bh=1ZgoM0aFQUK/fzkvpaUQ6Hg3HvhYC67hiUM+i0d7QK0=; b=i68WF05PFYefMH
+	AJM6s0vKCM204NB5gR/CkhB19Zi4MNuLgaZ5sY95l7ZvKwAHP34sIe6Ul4neS65xXSRUCdOVeymV/
+	R5KUP0qEItH+UEPJDsJRfp514qAA2wqLs/4WGoJs42ZFAzpXZ2b4/oO1Xx7Qn/zwC3qEGEIlsNk5F
+	9sSmvyULXf8FMejQnxgeidWN28Dj9yv5wX9lbQM+g1w/RBfm3HT+p1aoycQftp0IcbZ+1+Eo8c0oO
+	SsFwkLTb6anijrJbRI/AwevqxrXfa0uf+98ady8MYU4B3MmGIK5t8ZngHfDY3nzGq9hb92bRczU7P
+	CCJ96CE+GE/Y8JMd5K+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9FHP-0002xw-Nx; Tue, 03 Mar 2020 21:40:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j9Fbx-0000gQ-1B; Tue, 03 Mar 2020 22:01:57 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9FHI-0002xV-Bn
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 21:40:38 +0000
-Received: from mail-wm1-f51.google.com (mail-wm1-f51.google.com
- [209.85.128.51])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BC39320870
+ id 1j9Fbp-0000fb-Cb
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 22:01:51 +0000
+Received: by mail-pf1-x442.google.com with SMTP id j9so2180173pfa.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Mar 2020 21:40:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583271636;
- bh=0jpsm3BBvnD478P2r5zTpeDAbp5w828MO+Ug3OmTz1Y=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=vV83R1WQOEwrilldQhJXU9KGgWVNk6TsLU0nQ/rrZJh8ai/KCnQBnqYKVmUYYf6jW
- ekhuKN3kiGxYF6aAFkl0dcHpEIdwgLXWMjURm9/wowTO5Zo89POSTgZrNZ8NzPcm/f
- oQAOPicbfhz/MDGF2wkFpkL63OCZziQKS7kMrZz8=
-Received: by mail-wm1-f51.google.com with SMTP id i10so3291364wmd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 13:40:35 -0800 (PST)
-X-Gm-Message-State: ANhLgQ3VejRVi5yEH9Jf+MrjmsA8Q48+Pm4DxXUkXwgqWfY+UeVB+Oll
- suZsg3x5dNk7SxXfo75KFJ70+8hOrXqTlSaGvYvPwQ==
-X-Google-Smtp-Source: ADFU+vv8K/yzcQfqLLdVnpOiBFhF4pvd3KmGe7fU1o40H8tR6B6No3Mj2vvp3wcRAAYE3cJq3QBoueGxcMNpfBbbYrE=
-X-Received: by 2002:a1c:2d88:: with SMTP id t130mr560545wmt.68.1583271634105; 
- Tue, 03 Mar 2020 13:40:34 -0800 (PST)
+ Tue, 03 Mar 2020 14:01:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rWUW/hFw9l9361bhE4imeaEyL7jHn9L6GXzM5ESAseU=;
+ b=BhVxK+/LHYafxOQAfuMTX9d/TRms7HTjQhUgidQSpDOh3ucN0yhwgG0GsR08VaGqe0
+ p1rUfVpFAaPgmoZck/OAGk2CoNPI1Y3b+68nSVd5nPpHFc/O55nkwEB9c9/gEjh7S5qs
+ nBGJ/2dqPhhvdC3KJfeWbrkVaGXje+y9JxV/bVIoy6u9P88L181uPzNtb45O2Al29D/W
+ ukEjGV9OazJXP9shM9rlBFZZ7Hz8U7deISs7AzcO/Pp0mst4G0D88hbAuWUmSU94hP/t
+ puyyPjM6DLwJMJW9HG1C6KF5RditipoQDM1oz6sPzZKFzEo5w23TwVwIdGbecoujEfua
+ Y8DQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rWUW/hFw9l9361bhE4imeaEyL7jHn9L6GXzM5ESAseU=;
+ b=lMGxm9vsdH7K3hLbPS1IdlWHsS1VMXzxx8ZSaml4jWglBZKoRJx1YVpu6qIRsEG95P
+ 9/g8E4b9AfD2KvJVpmwyNOiaAMBPMQaDsDYlSTALNeSyhCOv6eSMJY0DnNXkFCXKONnH
+ wp8NSThC75pCWvueGON54VvG12YQpjEqHHCU3aNFPETn9GLndm+juRXJ17scB/cvE1zi
+ Fz2BtyK6qRhX8EtpZEpEzX8fvVB4aZ/tcl8Qk+wz++uuy2yVAfyT/gyKqXo8KUYcyDFv
+ wg4aM7xwbvkoCfDKiFBBbtQ7gN9uYg1L4+FjCml/TzNtMW0v3wFEQpoZrIP53e25+HMr
+ dm8A==
+X-Gm-Message-State: ANhLgQ3uDWKK7ARA3JLe0tqdU9bcnlybcJQvNT1cWN7OMiyUM/NOYb8t
+ oy/eJTF9UFOqHiMIiXF0BKzHEA==
+X-Google-Smtp-Source: ADFU+vtbmNdboXaJVKJCCWsPJHhUQwS37qhm8rMETgAhfI6yoRx8bCGHJ6YZpsQW8cVKZNiK3wY79Q==
+X-Received: by 2002:a63:e803:: with SMTP id s3mr5803839pgh.237.1583272906003; 
+ Tue, 03 Mar 2020 14:01:46 -0800 (PST)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id x12sm16305062pfi.122.2020.03.03.14.01.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Mar 2020 14:01:45 -0800 (PST)
+Date: Tue, 3 Mar 2020 14:01:42 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Clement Leger <cleger@kalray.eu>
+Subject: Re: [PATCH v5 8/8] remoteproc: Adapt coredump to generate correct
+ elf type
+Message-ID: <20200303220142.GU1214176@minitux>
+References: <20200210162209.23149-1-cleger@kalray.eu>
+ <20200302093902.27849-1-cleger@kalray.eu>
+ <20200302093902.27849-9-cleger@kalray.eu>
 MIME-Version: 1.0
-References: <20200216182334.8121-1-ardb@kernel.org>
- <20200216182334.8121-17-ardb@kernel.org>
- <20200303160353.GA20372@roeck-us.net>
- <CAKv+Gu_dG2dsrNBWG3fV5S40y6iRGSj7MO2gbtZhqEUg5mXgyQ@mail.gmail.com>
- <20200303175355.GA14065@roeck-us.net>
- <CAKv+Gu_4tbdR8zF0eerZBbiFhCh_hg20rTovxqcaByW8J4b-UA@mail.gmail.com>
- <CAKv+Gu8+JV0WLqNzX_cMGRwDH4vMS_v8a_uJ8ciDtgzGUVsmhA@mail.gmail.com>
- <20200303203043.GA4078@roeck-us.net>
-In-Reply-To: <20200303203043.GA4078@roeck-us.net>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 3 Mar 2020 22:40:23 +0100
-X-Gmail-Original-Message-ID: <CAKv+Gu9bqB-nxk76ZKeaC14dTemS8ZZNtrwHd6PUWknkqnAueQ@mail.gmail.com>
-Message-ID: <CAKv+Gu9bqB-nxk76ZKeaC14dTemS8ZZNtrwHd6PUWknkqnAueQ@mail.gmail.com>
-Subject: Re: [PATCH 16/18] efi: add 'runtime' pointer to struct efi
-To: Guenter Roeck <linux@roeck-us.net>
+Content-Disposition: inline
+In-Reply-To: <20200302093902.27849-9-cleger@kalray.eu>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_134036_446435_FC10108E 
-X-CRM114-Status: GOOD (  29.12  )
-X-Spam-Score: -4.4 (----)
+X-CRM114-CacheID: sfid-20200303_140149_469267_0C777655 
+X-CRM114-Status: GOOD (  21.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-4.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,8 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,324 +101,187 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arvind Sankar <nivedita@alum.mit.edu>,
- linux-efi <linux-efi@vger.kernel.org>,
- the arch/x86 maintainers <x86@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Loic PALLARDY <loic.pallardy@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, Jonathan Corbet <corbet@lwn.net>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-doc@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ Patrice Chotard <patrice.chotard@st.com>, linux-kernel@vger.kernel.org,
+ Andy Gross <agross@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ s-anna <s-anna@ti.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 3 Mar 2020 at 21:30, Guenter Roeck <linux@roeck-us.net> wrote:
->
-> On Tue, Mar 03, 2020 at 07:14:52PM +0100, Ard Biesheuvel wrote:
-> > On Tue, 3 Mar 2020 at 19:01, Ard Biesheuvel <ardb@kernel.org> wrote:
-> > >
-> > > On Tue, 3 Mar 2020 at 18:54, Guenter Roeck <linux@roeck-us.net> wrote:
-> > > >
-> > > > On Tue, Mar 03, 2020 at 05:39:43PM +0100, Ard Biesheuvel wrote:
-> > > > > On Tue, 3 Mar 2020 at 17:03, Guenter Roeck <linux@roeck-us.net> wrote:
-> > > > > >
-> > > > > > On Sun, Feb 16, 2020 at 07:23:32PM +0100, Ard Biesheuvel wrote:
-> > > > > > > Instead of going through the EFI system table each time, just copy the
-> > > > > > > runtime services table pointer into struct efi directly. This is the
-> > > > > > > last use of the system table pointer in struct efi, allowing us to
-> > > > > > > drop it in a future patch, along with a fair amount of quirky handling
-> > > > > > > of the translated address.
-> > > > > > >
-> > > > > > > Note that usually, the runtime services pointer changes value during
-> > > > > > > the call to SetVirtualAddressMap(), so grab the updated value as soon
-> > > > > > > as that call returns. (Mixed mode uses a 1:1 mapping, and kexec boot
-> > > > > > > enters with the updated address in the system table, so in those cases,
-> > > > > > > we don't need to do anything here)
-> > > > > > >
-> > > > > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > > > > >
-> > > > > > This patch results in a crash with i386 efi boots if PAE (CONFIG_HIGHMEM64G=y)
-> > > > > > is enabled. Bisect and crash logs attached. There is also a warning which
-> > > > > > I don't recall seeing before, but it may not be caused by this patch
-> > > > > > (I didn' bisect the warning). The warning is seen with all i386:efi boots,
-> > > > > > not only when PAE is enabled. The warning log is also attached.
-> > > > > >
-> > > > > > Guenter
-> > > > > >
-> > > > > > ---
-> > > > > > Qemu command line:
-> > > > > >
-> > > > > > qemu-system-i386 -kernel arch/x86/boot/bzImage -M pc -cpu Westmere \
-> > > > > >         -no-reboot -m 256 -snapshot \
-> > > > > >         -bios OVMF-pure-efi-32.fd \
-> > > > > >         -usb -device usb-storage,drive=d0 \
-> > > > > >         -drive file=rootfs.ext2,if=none,id=d0,format=raw \
-> > > > > >         --append 'earlycon=uart8250,io,0x3f8,9600n8 panic=-1 slub_debug=FZPUA root=/dev/sda rootwait mem=256M console=ttyS0' \
-> > > > > >         -nographic
-> > > > > >
-> > > > >
-> > > > > I am failing to reproduce this. Do you have a .config and a copy of
-> > > > > OVMF-pure-efi-32.fd anywhere?
-> > > > >
-> > > >
-> > > > https://github.com/groeck/linux-build-test/blob/master/rootfs/firmware/OVMF-pure-efi-32.fd
-> > > > https://github.com/groeck/linux-build-test/blob/master/rootfs/x86/rootfs.ext2.gz
-> > > >
-> > > > Config file is below, shortened by "make savedefconfig" on the actual
-> > > > configuration used on next-20200303. Qemu version is 4.2, though that
-> > > > should not really matter. Note that it isn't necessary to boot from usb,
-> > > > that was just my test case.
-> > > >
-> > > > Here is a pointer to a complete log, showing the various conditions
-> > > > resulting in the warning and the crash:
-> > > >
-> > > > https://kerneltests.org/builders/qemu-x86-next/builds/1310/steps/qemubuildcommand_1/logs/stdio
-> > > >
-> > >
-> > > Thanks.
-> > >
-> > > How do I generate your exact .config from the below? I still cannot
-> > > reproduce with the different firmware.
-> > >
-> > > My qemu is 3.1 btw
-> > >
-> >
-> > Also, I don't see CONFIG_HIGHMEM64G=y anywhere below??
-> >
->
-> Sorry, I should have used make ARCH=i386 savedefconfig. Another attempt
-> below. This needs to be built with "make ARCH=i386".
->
+On Mon 02 Mar 01:39 PST 2020, Clement Leger wrote:
 
-It still doesn't enable CONFIG_HIGHMEM64G, and so it is not entirely
-clear to me how I should derive your failing config from this.
-Couldn't you simply share the whole thing?
+> Now that remoteproc can load an elf64, coredump elf class should be
+> the same as the loaded elf class. In order to do that, add a
+> elf_class field to rproc with default values. If an elf is loaded
+> successfully, this field will be updated with the loaded elf class.
+> Then, the coredump core code has been modified to use the generic elf
+> macro in order to create an elf file with correct class.
+> 
+> Signed-off-by: Clement Leger <cleger@kalray.eu>
 
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-
-
-> CONFIG_SYSVIPC=y
-> CONFIG_PREEMPT=y
-> CONFIG_BSD_PROCESS_ACCT=y
-> CONFIG_LOG_BUF_SHIFT=14
-> CONFIG_EXPERT=y
-> CONFIG_PROFILING=y
-> CONFIG_ARCH_PXA=y
-> CONFIG_PXA_SHARPSL=y
-> CONFIG_MACH_AKITA=y
-> CONFIG_MACH_BORZOI=y
-> CONFIG_ZBOOT_ROM_TEXT=0x0
-> CONFIG_ZBOOT_ROM_BSS=0x0
-> CONFIG_CMDLINE="console=ttyS0,115200n8 console=tty1 noinitrd root=/dev/mtdblock2 rootfstype=jffs2   debug"
-> CONFIG_FPE_NWFPE=y
-> CONFIG_OPROFILE=m
-> CONFIG_MODULES=y
-> CONFIG_MODULE_UNLOAD=y
-> CONFIG_MODULE_FORCE_UNLOAD=y
-> # CONFIG_BLK_DEV_BSG is not set
-> CONFIG_PARTITION_ADVANCED=y
-> CONFIG_BINFMT_MISC=m
-> CONFIG_NET=y
-> CONFIG_PACKET=y
-> CONFIG_UNIX=y
-> CONFIG_INET=y
-> CONFIG_SYN_COOKIES=y
-> CONFIG_INET6_AH=m
-> CONFIG_INET6_ESP=m
-> CONFIG_INET6_IPCOMP=m
-> CONFIG_IPV6_TUNNEL=m
-> CONFIG_NETFILTER=y
-> CONFIG_IP_NF_IPTABLES=m
-> CONFIG_IP_NF_MATCH_ECN=m
-> CONFIG_IP_NF_MATCH_TTL=m
-> CONFIG_IP_NF_FILTER=m
-> CONFIG_IP_NF_MANGLE=m
-> CONFIG_IP_NF_RAW=m
-> CONFIG_IP_NF_ARPTABLES=m
-> CONFIG_IP_NF_ARPFILTER=m
-> CONFIG_IP_NF_ARP_MANGLE=m
-> CONFIG_IP6_NF_IPTABLES=m
-> CONFIG_IP6_NF_MATCH_EUI64=m
-> CONFIG_IP6_NF_MATCH_FRAG=m
-> CONFIG_IP6_NF_MATCH_OPTS=m
-> CONFIG_IP6_NF_MATCH_HL=m
-> CONFIG_IP6_NF_MATCH_IPV6HEADER=m
-> CONFIG_IP6_NF_MATCH_RT=m
-> CONFIG_IP6_NF_FILTER=m
-> CONFIG_IP6_NF_MANGLE=m
-> CONFIG_IP6_NF_RAW=m
-> CONFIG_BT=m
-> CONFIG_BT_RFCOMM=m
-> CONFIG_BT_RFCOMM_TTY=y
-> CONFIG_BT_BNEP=m
-> CONFIG_BT_BNEP_MC_FILTER=y
-> CONFIG_BT_BNEP_PROTO_FILTER=y
-> CONFIG_BT_HIDP=m
-> CONFIG_BT_HCIUART=m
-> CONFIG_BT_HCIUART_H4=y
-> CONFIG_BT_HCIUART_BCSP=y
-> CONFIG_BT_HCIBCM203X=m
-> CONFIG_BT_HCIBPA10X=m
-> CONFIG_BT_HCIBFUSB=m
-> CONFIG_BT_HCIDTL1=m
-> CONFIG_BT_HCIBT3C=m
-> CONFIG_BT_HCIBLUECARD=m
-> CONFIG_BT_HCIVHCI=m
-> CONFIG_PCCARD=y
-> CONFIG_PCMCIA_PXA2XX=y
-> CONFIG_MTD=y
-> CONFIG_MTD_CMDLINE_PARTS=y
-> CONFIG_MTD_BLOCK=y
-> CONFIG_MTD_ROM=y
-> CONFIG_MTD_COMPLEX_MAPPINGS=y
-> CONFIG_MTD_RAW_NAND=y
-> CONFIG_MTD_NAND_SHARPSL=y
-> CONFIG_BLK_DEV_LOOP=y
-> CONFIG_BLK_DEV_SD=y
-> CONFIG_CHR_DEV_ST=m
-> CONFIG_BLK_DEV_SR=m
-> CONFIG_CHR_DEV_SG=m
-> CONFIG_ATA=y
-> CONFIG_PATA_PCMCIA=y
-> CONFIG_NETDEVICES=y
-> CONFIG_PCMCIA_PCNET=m
-> CONFIG_PPP=m
-> CONFIG_PPP_BSDCOMP=m
-> CONFIG_PPP_ASYNC=m
-> CONFIG_USB_CATC=m
-> CONFIG_USB_KAWETH=m
-> CONFIG_USB_PEGASUS=m
-> CONFIG_USB_RTL8150=m
-> CONFIG_USB_USBNET=m
-> # CONFIG_USB_NET_CDC_SUBSET is not set
-> CONFIG_INPUT_EVDEV=y
-> # CONFIG_KEYBOARD_ATKBD is not set
-> # CONFIG_INPUT_MOUSE is not set
-> CONFIG_INPUT_TOUCHSCREEN=y
-> CONFIG_TOUCHSCREEN_ADS7846=y
-> CONFIG_INPUT_MISC=y
-> CONFIG_INPUT_UINPUT=m
-> # CONFIG_SERIO is not set
-> # CONFIG_LEGACY_PTYS is not set
-> CONFIG_SERIAL_8250=m
-> CONFIG_SERIAL_8250_CS=m
-> CONFIG_SERIAL_PXA=y
-> CONFIG_SERIAL_PXA_CONSOLE=y
-> CONFIG_SPI_PXA2XX=y
-> CONFIG_FB=y
-> CONFIG_FB_PXA=y
-> CONFIG_LCD_CLASS_DEVICE=y
-> CONFIG_LCD_CORGI=y
-> CONFIG_BACKLIGHT_CLASS_DEVICE=y
-> CONFIG_FRAMEBUFFER_CONSOLE=y
-> CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=y
-> CONFIG_HID_A4TECH=m
-> CONFIG_HID_APPLE=m
-> CONFIG_HID_BELKIN=m
-> CONFIG_HID_CHERRY=m
-> CONFIG_HID_CHICONY=m
-> CONFIG_HID_CYPRESS=m
-> CONFIG_HID_EZKEY=m
-> CONFIG_HID_GYRATION=m
-> CONFIG_HID_MICROSOFT=m
-> CONFIG_HID_MONTEREY=m
-> CONFIG_HID_PANTHERLORD=m
-> CONFIG_HID_PETALYNX=m
-> CONFIG_HID_SAMSUNG=m
-> CONFIG_HID_SUNPLUS=m
-> CONFIG_USB_KBD=m
-> CONFIG_USB_MOUSE=m
-> CONFIG_USB=m
-> CONFIG_USB_MON=m
-> CONFIG_USB_OHCI_HCD=m
-> CONFIG_USB_SL811_HCD=m
-> CONFIG_USB_SL811_CS=m
-> CONFIG_USB_ACM=m
-> CONFIG_USB_PRINTER=m
-> CONFIG_USB_STORAGE=m
-> CONFIG_USB_MDC800=m
-> CONFIG_USB_MICROTEK=m
-> CONFIG_USB_SERIAL=m
-> CONFIG_USB_SERIAL_GENERIC=y
-> CONFIG_USB_SERIAL_BELKIN=m
-> CONFIG_USB_SERIAL_DIGI_ACCELEPORT=m
-> CONFIG_USB_SERIAL_CYPRESS_M8=m
-> CONFIG_USB_SERIAL_EMPEG=m
-> CONFIG_USB_SERIAL_FTDI_SIO=m
-> CONFIG_USB_SERIAL_VISOR=m
-> CONFIG_USB_SERIAL_IPAQ=m
-> CONFIG_USB_SERIAL_IR=m
-> CONFIG_USB_SERIAL_EDGEPORT=m
-> CONFIG_USB_SERIAL_EDGEPORT_TI=m
-> CONFIG_USB_SERIAL_GARMIN=m
-> CONFIG_USB_SERIAL_IPW=m
-> CONFIG_USB_SERIAL_KEYSPAN_PDA=m
-> CONFIG_USB_SERIAL_KEYSPAN=m
-> CONFIG_USB_SERIAL_KLSI=m
-> CONFIG_USB_SERIAL_KOBIL_SCT=m
-> CONFIG_USB_SERIAL_MCT_U232=m
-> CONFIG_USB_SERIAL_PL2303=m
-> CONFIG_USB_SERIAL_SAFE=m
-> CONFIG_USB_SERIAL_TI=m
-> CONFIG_USB_SERIAL_CYBERJACK=m
-> CONFIG_USB_SERIAL_XIRCOM=m
-> CONFIG_USB_SERIAL_OMNINET=m
-> CONFIG_USB_EMI62=m
-> CONFIG_USB_EMI26=m
-> CONFIG_USB_LEGOTOWER=m
-> CONFIG_USB_LCD=m
-> CONFIG_USB_CYTHERM=m
-> CONFIG_USB_IDMOUSE=m
-> CONFIG_USB_GADGET=m
-> CONFIG_USB_ZERO=m
-> CONFIG_USB_ETH=m
-> CONFIG_USB_GADGETFS=m
-> CONFIG_USB_MASS_STORAGE=m
-> CONFIG_USB_G_SERIAL=m
-> CONFIG_MMC=y
-> CONFIG_MMC_PXA=y
-> CONFIG_EXT2_FS=y
-> CONFIG_EXT2_FS_XATTR=y
-> CONFIG_EXT2_FS_POSIX_ACL=y
-> CONFIG_EXT2_FS_SECURITY=y
-> CONFIG_EXT3_FS=y
-> CONFIG_MSDOS_FS=y
-> CONFIG_VFAT_FS=y
-> CONFIG_TMPFS=y
-> CONFIG_JFFS2_FS=y
-> CONFIG_JFFS2_SUMMARY=y
-> CONFIG_JFFS2_COMPRESSION_OPTIONS=y
-> CONFIG_JFFS2_RUBIN=y
-> CONFIG_CRAMFS=m
-> CONFIG_NFS_FS=m
-> CONFIG_NFS_V4=m
-> CONFIG_NLS_DEFAULT="cp437"
-> CONFIG_NLS_CODEPAGE_437=y
-> CONFIG_NLS_ISO8859_1=y
-> CONFIG_NLS_UTF8=y
-> CONFIG_CRYPTO_TEST=m
-> CONFIG_CRYPTO_HMAC=y
-> CONFIG_CRYPTO_MD4=m
-> CONFIG_CRYPTO_MICHAEL_MIC=m
-> CONFIG_CRYPTO_SHA512=m
-> CONFIG_CRYPTO_WP512=m
-> CONFIG_CRYPTO_ANUBIS=m
-> CONFIG_CRYPTO_ARC4=m
-> CONFIG_CRYPTO_BLOWFISH=m
-> CONFIG_CRYPTO_CAST5=m
-> CONFIG_CRYPTO_CAST6=m
-> CONFIG_CRYPTO_KHAZAD=m
-> CONFIG_CRYPTO_SERPENT=m
-> CONFIG_CRYPTO_TEA=m
-> CONFIG_CRYPTO_TWOFISH=m
-> CONFIG_CRC_CCITT=y
-> CONFIG_LIBCRC32C=m
-> CONFIG_FONTS=y
-> CONFIG_FONT_8x8=y
-> CONFIG_FONT_8x16=y
-> CONFIG_MAGIC_SYSRQ=y
-> # CONFIG_DEBUG_PREEMPT is not set
-> # CONFIG_FTRACE is not set
-> CONFIG_DEBUG_LL=y
+> ---
+>  drivers/remoteproc/remoteproc_core.c       | 67 ++++++++++++++++--------------
+>  drivers/remoteproc/remoteproc_elf_loader.c |  3 ++
+>  include/linux/remoteproc.h                 |  1 +
+>  3 files changed, 39 insertions(+), 32 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> index b932a64a2be2..f923355aa3f9 100644
+> --- a/drivers/remoteproc/remoteproc_core.c
+> +++ b/drivers/remoteproc/remoteproc_core.c
+> @@ -38,6 +38,7 @@
+>  #include <linux/platform_device.h>
+>  
+>  #include "remoteproc_internal.h"
+> +#include "remoteproc_elf_helpers.h"
+>  
+>  #define HIGH_BITS_MASK 0xFFFFFFFF00000000ULL
+>  
+> @@ -1566,20 +1567,21 @@ EXPORT_SYMBOL(rproc_coredump_add_custom_segment);
+>  static void rproc_coredump(struct rproc *rproc)
+>  {
+>  	struct rproc_dump_segment *segment;
+> -	struct elf32_phdr *phdr;
+> -	struct elf32_hdr *ehdr;
+> +	void *phdr;
+> +	void *ehdr;
+>  	size_t data_size;
+>  	size_t offset;
+>  	void *data;
+>  	void *ptr;
+> +	u8 class = rproc->elf_class;
+>  	int phnum = 0;
+>  
+>  	if (list_empty(&rproc->dump_segments))
+>  		return;
+>  
+> -	data_size = sizeof(*ehdr);
+> +	data_size = elf_size_of_hdr(class);
+>  	list_for_each_entry(segment, &rproc->dump_segments, node) {
+> -		data_size += sizeof(*phdr) + segment->size;
+> +		data_size += elf_size_of_phdr(class) + segment->size;
+>  
+>  		phnum++;
+>  	}
+> @@ -1590,33 +1592,33 @@ static void rproc_coredump(struct rproc *rproc)
+>  
+>  	ehdr = data;
+>  
+> -	memset(ehdr, 0, sizeof(*ehdr));
+> -	memcpy(ehdr->e_ident, ELFMAG, SELFMAG);
+> -	ehdr->e_ident[EI_CLASS] = ELFCLASS32;
+> -	ehdr->e_ident[EI_DATA] = ELFDATA2LSB;
+> -	ehdr->e_ident[EI_VERSION] = EV_CURRENT;
+> -	ehdr->e_ident[EI_OSABI] = ELFOSABI_NONE;
+> -	ehdr->e_type = ET_CORE;
+> -	ehdr->e_machine = EM_NONE;
+> -	ehdr->e_version = EV_CURRENT;
+> -	ehdr->e_entry = rproc->bootaddr;
+> -	ehdr->e_phoff = sizeof(*ehdr);
+> -	ehdr->e_ehsize = sizeof(*ehdr);
+> -	ehdr->e_phentsize = sizeof(*phdr);
+> -	ehdr->e_phnum = phnum;
+> -
+> -	phdr = data + ehdr->e_phoff;
+> -	offset = ehdr->e_phoff + sizeof(*phdr) * ehdr->e_phnum;
+> +	memset(ehdr, 0, elf_size_of_hdr(class));
+> +	/* e_ident field is common for both elf32 and elf64 */
+> +	elf_hdr_init_ident(ehdr, class);
+> +
+> +	elf_hdr_set_e_type(class, ehdr, ET_CORE);
+> +	elf_hdr_set_e_machine(class, ehdr, EM_NONE);
+> +	elf_hdr_set_e_version(class, ehdr, EV_CURRENT);
+> +	elf_hdr_set_e_entry(class, ehdr, rproc->bootaddr);
+> +	elf_hdr_set_e_phoff(class, ehdr, elf_size_of_hdr(class));
+> +	elf_hdr_set_e_ehsize(class, ehdr, elf_size_of_hdr(class));
+> +	elf_hdr_set_e_phentsize(class, ehdr, elf_size_of_phdr(class));
+> +	elf_hdr_set_e_phnum(class, ehdr, phnum);
+> +
+> +	phdr = data + elf_hdr_get_e_phoff(class, ehdr);
+> +	offset = elf_hdr_get_e_phoff(class, ehdr);
+> +	offset += elf_size_of_phdr(class) * elf_hdr_get_e_phnum(class, ehdr);
+> +
+>  	list_for_each_entry(segment, &rproc->dump_segments, node) {
+> -		memset(phdr, 0, sizeof(*phdr));
+> -		phdr->p_type = PT_LOAD;
+> -		phdr->p_offset = offset;
+> -		phdr->p_vaddr = segment->da;
+> -		phdr->p_paddr = segment->da;
+> -		phdr->p_filesz = segment->size;
+> -		phdr->p_memsz = segment->size;
+> -		phdr->p_flags = PF_R | PF_W | PF_X;
+> -		phdr->p_align = 0;
+> +		memset(phdr, 0, elf_size_of_phdr(class));
+> +		elf_phdr_set_p_type(class, phdr, PT_LOAD);
+> +		elf_phdr_set_p_offset(class, phdr, offset);
+> +		elf_phdr_set_p_vaddr(class, phdr, segment->da);
+> +		elf_phdr_set_p_paddr(class, phdr, segment->da);
+> +		elf_phdr_set_p_filesz(class, phdr, segment->size);
+> +		elf_phdr_set_p_memsz(class, phdr, segment->size);
+> +		elf_phdr_set_p_flags(class, phdr, PF_R | PF_W | PF_X);
+> +		elf_phdr_set_p_align(class, phdr, 0);
+>  
+>  		if (segment->dump) {
+>  			segment->dump(rproc, segment, data + offset);
+> @@ -1632,8 +1634,8 @@ static void rproc_coredump(struct rproc *rproc)
+>  			}
+>  		}
+>  
+> -		offset += phdr->p_filesz;
+> -		phdr++;
+> +		offset += elf_phdr_get_p_filesz(class, phdr);
+> +		phdr += elf_size_of_phdr(class);
+>  	}
+>  
+>  	dev_coredumpv(&rproc->dev, data, data_size, GFP_KERNEL);
+> @@ -2031,6 +2033,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+>  	rproc->name = name;
+>  	rproc->priv = &rproc[1];
+>  	rproc->auto_boot = true;
+> +	rproc->elf_class = ELFCLASS32;
+>  
+>  	device_initialize(&rproc->dev);
+>  	rproc->dev.parent = dev;
+> diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+> index 4869fb7d8fe4..16e2c496fd45 100644
+> --- a/drivers/remoteproc/remoteproc_elf_loader.c
+> +++ b/drivers/remoteproc/remoteproc_elf_loader.c
+> @@ -248,6 +248,9 @@ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw)
+>  			memset(ptr + filesz, 0, memsz - filesz);
+>  	}
+>  
+> +	if (ret == 0)
+> +		rproc->elf_class = class;
+> +
+>  	return ret;
+>  }
+>  EXPORT_SYMBOL(rproc_elf_load_segments);
+> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+> index 1683d6c386a6..ed127b2d35ca 100644
+> --- a/include/linux/remoteproc.h
+> +++ b/include/linux/remoteproc.h
+> @@ -514,6 +514,7 @@ struct rproc {
+>  	bool auto_boot;
+>  	struct list_head dump_segments;
+>  	int nb_vdev;
+> +	u8 elf_class;
+>  };
+>  
+>  /**
+> -- 
+> 2.15.0.276.g89ea799
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
