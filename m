@@ -2,87 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B4D1177704
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:30:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55798177726
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Mar 2020 14:31:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EoRBVrEVF6tZer8qKUynjenH4WJJTxOetRS8R9JtWMY=; b=BVlmqLQWnCkfal
-	f3ZuRM3+MB7LcJ+Um+/irD/ZqJzGwzYPVpkTQEqkkwPrNj+xDV4UTs+g4RoHejqj7QpRUWM7Xin0v
-	Jh7s52YcCh0G5bS+a4/5SbGKuVVJfepwl1UKk78QYYFAF0IdYwF2ld1mJWj/u0bCPhgHm/uahw3SJ
-	KldzCVbFzW0F3JlEXKhtvRuAa79BDQAswsf14aMo6QMcIrExq4fNXuViybU6lFUwU0PuvH5bS1gCs
-	DxkdzggpTRp959pz/obPLu7dimhzcE+iVDx+SSGJsKFNNFphCADN72IIgYtMPqktZTOfNbtIjNNma
-	nIDVYXQFQfrAwKLe723w==;
+	List-Owner; bh=u/NHJsyf0i4zIdD+tCUTDeOjNIzVuFJSBCXm1e2Ifqg=; b=j6L2V2yshbXmMb
+	7MBvq6Pqcr0c3FdChQ6R+uMT20mQPai4dkINoN76kV6xK9AcyaJbPCFQkkG/QzCG7dx/Oij3N+566
+	X73QID5cDwZaRSUSV0WjdphxLeVrfStYynbDadGQlS+EQ9y6T/zKVtk1wsZDJ2u/FghcCXrwUbKW/
+	9ebJAhUF75vaFd5+hKkKHhk1kZRXRvsYIFbYj+2MAuyTngIOXBrXi0tQvj/BlzBmStCTzl9qgwsly
+	YPQ6yotwbCq1OkxCqnWJ6DrISMgOsUPeGPutfqOsrh2yjbx5bn1dnBIbDwgp/7pcu88qM5KuQBu0g
+	IIDzKn/8XvSuKWnT/mTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j97cX-0000G7-9I; Tue, 03 Mar 2020 13:30:01 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j97dc-0001uZ-6e; Tue, 03 Mar 2020 13:31:08 +0000
+Received: from smtp-fw-9101.amazon.com ([207.171.184.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j97cO-00007m-2O
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:29:53 +0000
-Received: by mail-wr1-x443.google.com with SMTP id v2so4267133wrp.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 05:29:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hicGAyZ5CpHfmsbw4Kl9cPGuNpt8g32PuytU/UcEDL8=;
- b=CV1elQMgZLhBpuFfL5DjPopxXqFjooMD4nNFS/3zO/mg/Y0/qPPlbnp33SZup+b6Xn
- R0cE9JzQP4R+zgJnfJFQeNA7dybshykF3a2Ldu9qefqWJuiMHnZSFlgqQpSJtEsRyXab
- qAGDJu1tgLL/6+jZDbiLPhijElTtaRK5jMYuE82RT5dC2hH+bHvuAP9EdL3BBOjQkmxT
- IqqyonwLWKq58HGm6CL1MVGtHWy1+FBRHWDoYPPWKlVhP9gL8EQOMMNbZGEZrl7vM5RD
- qncE4ethqNSxzsEB357sbW5pZKYYUinUGRcUtKfY65TpSbFeZUURs1wPKt6vMXtGRShc
- wPsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hicGAyZ5CpHfmsbw4Kl9cPGuNpt8g32PuytU/UcEDL8=;
- b=TqYG7Rv14iTzLgUXBETElkrV1FlveT0oSKTHOA5J9AFU9JUJ2zmt3U8rXaGhVS7zEW
- xh37X7nUJYff+F9hFSqFknTK7gWESraMSV5ABAhUE6punYgHai6ZVB5iVDlZSqaoQ4gL
- vVDfD1A17Tnj665Q6+YpEhfhhhcoH0N3YVS+CpNKAcgiawd3636OudgIxNyTGrhQPFxt
- UuEXpRPPkCoiUUgfL3AC7X7S3Kr/rmuSRJ6P67vFBFZy0eQN9GWFQ72QuFa3qgn0RGiz
- o1+4O7hv9ZIwd+G+IB048lDjC4sFVMKLmxv1B1LvVJ8INvZrzqXmzP1BlsdNUhxkjmU3
- rDQQ==
-X-Gm-Message-State: ANhLgQ0l24EJRMOcIpySbnEU/o/iHYKeGc/1lk1MhwDE0J/diERpgPH7
- EsvuZ3lSC46z++TTgYjYxzwEaEfbRvq795mTgLo=
-X-Google-Smtp-Source: ADFU+vuFtNgxjbewAK+JcEL9uWLOVuASSCsfonI72+FgdQg4t/bXLC/G4KfOc+tj4z3cmF6C36Db39T7GycrQg3xlxQ=
-X-Received: by 2002:adf:9dcc:: with SMTP id q12mr5802969wre.164.1583242185866; 
- Tue, 03 Mar 2020 05:29:45 -0800 (PST)
+ id 1j97dU-0001sz-Kw
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 13:31:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1583242261; x=1614778261;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=m9UC6YMrCEkdQKApcmjI1lOwtfkDHyrdWMSJSbIlTXI=;
+ b=BN9rds01IcO3z4Tmsa/78ycZkGRceuo+WbvhTgbBEekM8bK452/WdrlU
+ HCL5L52XBAIvUHw8CM8BlZcatvOgiQolD1hpdAz3V0XyX78FxyaHUfyMj
+ 5w6DbvCzw+i8Vibc+dXAC+i/s5bVYsWTTU74AM9HN3cqXul8RjsKovcbj c=;
+IronPort-SDR: VT0rCqnUvfwE/Cq6jTl9TgJjfOlKwfQKuSOQX1Fyv/VI5ahEKIBJDbjAYbD7CcZWUbyYVjBvJE
+ euQGgxZlUsFQ==
+X-IronPort-AV: E=Sophos;i="5.70,511,1574121600"; d="scan'208";a="20496287"
+Received: from sea32-co-svc-lb4-vlan3.sea.corp.amazon.com (HELO
+ email-inbound-relay-2a-538b0bfb.us-west-2.amazon.com) ([10.47.23.38])
+ by smtp-border-fw-out-9101.sea19.amazon.com with ESMTP;
+ 03 Mar 2020 13:30:47 +0000
+Received: from EX13MTAUEA002.ant.amazon.com
+ (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
+ by email-inbound-relay-2a-538b0bfb.us-west-2.amazon.com (Postfix) with ESMTPS
+ id 63879A2F96; Tue,  3 Mar 2020 13:30:45 +0000 (UTC)
+Received: from EX13D12EUC004.ant.amazon.com (10.43.164.129) by
+ EX13MTAUEA002.ant.amazon.com (10.43.61.77) with Microsoft SMTP Server (TLS)
+ id 15.0.1236.3; Tue, 3 Mar 2020 13:30:16 +0000
+Received: from EX13MTAUEE002.ant.amazon.com (10.43.62.24) by
+ EX13D12EUC004.ant.amazon.com (10.43.164.129) with Microsoft SMTP Server (TLS)
+ id 15.0.1497.2; Tue, 3 Mar 2020 13:30:13 +0000
+Received: from u961addbe640f56.ant.amazon.com (10.28.84.111) by
+ mail-relay.amazon.com (10.43.62.224) with Microsoft SMTP Server id
+ 15.0.1367.3 via Frontend Transport; Tue, 3 Mar 2020 13:30:09 +0000
+From: Stanislav Spassov <stanspas@amazon.com>
+To: <linux-pci@vger.kernel.org>
+Subject: [PATCH v3 07/17] PCI: Clean up and document PM/reset delays
+Date: Tue, 3 Mar 2020 14:28:42 +0100
+Message-ID: <20200303132852.13184-8-stanspas@amazon.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200303132852.13184-1-stanspas@amazon.com>
+References: <20200303132852.13184-1-stanspas@amazon.com>
 MIME-Version: 1.0
-References: <20200302205700.29746-1-daniel.baluta@oss.nxp.com>
- <20200302205700.29746-2-daniel.baluta@oss.nxp.com>
- <CAFQqKeU8YF+aZVTafj3ZiPvNUsx3nK-8cdr8eJUm=_9_2TkRQg@mail.gmail.com>
-In-Reply-To: <CAFQqKeU8YF+aZVTafj3ZiPvNUsx3nK-8cdr8eJUm=_9_2TkRQg@mail.gmail.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Tue, 3 Mar 2020 15:29:34 +0200
-Message-ID: <CAEnQRZBNMRNYOKwqweuZCeOYgMGh9DprRvz2ci3EOQPxqN3fhg@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/2] PM / domains: Introduce multi PM domains helpers
-To: "Sridharan, Ranjani" <ranjani.sridharan@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_052952_116397_75D721CD 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200303_053100_733955_5C0DDF38 
+X-CRM114-Status: GOOD (  19.54  )
+X-Spam-Score: -4.9 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [daniel.baluta[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,99 +92,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Daniel Baluta <daniel.baluta@oss.nxp.com>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Pavel Machek <pavel@ucw.cz>, Fabio Estevam <festevam@gmail.com>,
- khilman@kernel.org, Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
- dl-linux-imx <linux-imx@nxp.com>, "Brown, Len" <len.brown@intel.com>,
- linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- Paul Olaru <paul.olaru@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Greg KH <gregkh@linuxfoundation.org>,
- "S.j. Wang" <shengjiu.wang@nxp.com>, rjw@rjwysocki.net,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Ashok Raj <ashok.raj@intel.com>,
+ Len Brown <lenb@kernel.org>, Jonathan
+ Corbet <corbet@lwn.net>, Sinan Kaya <okaya@kernel.org>,
+ =?UTF-8?q?Jan=20H=20=2E=20Sch=C3=B6nherr?= <jschoenh@amazon.de>,
+ Stanislav Spassov <stanspas@amazon.de>, linux-acpi@vger.kernel.org,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Rajat Jain <rajatja@google.com>, Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org, kbuild test robot <lkp@intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Ranjani,
+From: Stanislav Spassov <stanspas@amazon.de>
 
-On Mon, Mar 2, 2020 at 11:24 PM Sridharan, Ranjani
-<ranjani.sridharan@intel.com> wrote:
+...and replace several "magic numbers" scattered throughout the code.
 
->> + */
->> +struct dev_multi_pm_domain_data *dev_multi_pm_attach(struct device *dev)
->> +{
->> +       struct dev_multi_pm_domain_data *mpd, *retp;
->> +       int num_domains;
->> +       int i;
->> +
->> +       num_domains = of_count_phandle_with_args(dev->of_node, "power-domains",
->> +                                                "#power-domain-cells");
->> +       if (num_domains < 2)
->
-> Hi Daniel,
->
-> Just out of curiosity, should it be an error when num_domains is 1? Is it an error because the expectation is that the caller would use dev_pm_domain_attach() in that case?
+Signed-off-by: Stanislav Spassov <stanspas@amazon.de>
+---
+ drivers/pci/controller/pci-aardvark.c |  2 +-
+ drivers/pci/controller/pci-mvebu.c    |  2 +-
+ drivers/pci/iov.c                     |  4 +-
+ drivers/pci/pci-acpi.c                |  4 +-
+ drivers/pci/pci.c                     | 21 ++------
+ drivers/pci/pci.h                     | 72 +++++++++++++++++++++++++--
+ 6 files changed, 80 insertions(+), 25 deletions(-)
 
-NULL here doesn't really mean an error. It means that we don't need to
-handle Power domains because as you said the caller
-already used dev_pm_domain_attach.
+diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
+index 2a20b649f40c..2ece24abf751 100644
+--- a/drivers/pci/controller/pci-aardvark.c
++++ b/drivers/pci/controller/pci-aardvark.c
+@@ -344,7 +344,7 @@ static void advk_pcie_setup_hw(struct advk_pcie *pcie)
+ 	 * fundamental reset. As required by PCI Express spec a delay for at
+ 	 * least 100ms after such a reset before link training is needed.
+ 	 */
+-	msleep(PCI_PM_D3COLD_WAIT);
++	msleep(PCI_RESET_DELAY);
+ 
+ 	/* Start link training */
+ 	reg = advk_readl(pcie, PCIE_CORE_LINK_CTRL_STAT_REG);
+diff --git a/drivers/pci/controller/pci-mvebu.c b/drivers/pci/controller/pci-mvebu.c
+index 153a64676bc9..c1cd1b7cf7ee 100644
+--- a/drivers/pci/controller/pci-mvebu.c
++++ b/drivers/pci/controller/pci-mvebu.c
+@@ -927,7 +927,7 @@ static int mvebu_pcie_powerup(struct mvebu_pcie_port *port)
+ 		return ret;
+ 
+ 	if (port->reset_gpio) {
+-		u32 reset_udelay = PCI_PM_D3COLD_WAIT * 1000;
++		u32 reset_udelay = PCI_RESET_DELAY * 1000;
+ 
+ 		of_property_read_u32(port->dn, "reset-delay-us",
+ 				     &reset_udelay);
+diff --git a/drivers/pci/iov.c b/drivers/pci/iov.c
+index 4d1f392b05f9..d4e4a0c0a97f 100644
+--- a/drivers/pci/iov.c
++++ b/drivers/pci/iov.c
+@@ -524,7 +524,7 @@ static int sriov_enable(struct pci_dev *dev, int nr_virtfn)
+ 	iov->ctrl |= PCI_SRIOV_CTRL_VFE | PCI_SRIOV_CTRL_MSE;
+ 	pci_cfg_access_lock(dev);
+ 	pci_write_config_word(dev, iov->pos + PCI_SRIOV_CTRL, iov->ctrl);
+-	msleep(100);
++	msleep(PCI_VF_ENABLE_DELAY);
+ 	pci_cfg_access_unlock(dev);
+ 
+ 	rc = sriov_add_vfs(dev, initial);
+@@ -735,7 +735,7 @@ static void sriov_restore_state(struct pci_dev *dev)
+ 	pci_iov_set_numvfs(dev, iov->num_VFs);
+ 	pci_write_config_word(dev, iov->pos + PCI_SRIOV_CTRL, iov->ctrl);
+ 	if (iov->ctrl & PCI_SRIOV_CTRL_VFE)
+-		msleep(100);
++		msleep(PCI_VF_ENABLE_DELAY);
+ }
+ 
+ /**
+diff --git a/drivers/pci/pci-acpi.c b/drivers/pci/pci-acpi.c
+index b147b61c6668..0ece144ac9c5 100644
+--- a/drivers/pci/pci-acpi.c
++++ b/drivers/pci/pci-acpi.c
+@@ -1242,7 +1242,7 @@ static void pci_acpi_optimize_delay(struct pci_dev *pdev,
+ 			value = (int)value_us / 1000;
+ 			if ((int)value_us % 1000 > 0)
+ 				value++;
+-			if (value < PCI_PM_D3COLD_WAIT)
++			if (value < PCI_RESET_DELAY)
+ 				pdev->d3cold_delay = value;
+ 		}
+ 		if (elements[3].type == ACPI_TYPE_INTEGER) {
+@@ -1250,7 +1250,7 @@ static void pci_acpi_optimize_delay(struct pci_dev *pdev,
+ 			value = (int)value_us / 1000;
+ 			if ((int)value_us % 1000 > 0)
+ 				value++;
+-			if (value < PCI_PM_D3_WAIT)
++			if (value < PCI_PM_D3HOT_DELAY)
+ 				pdev->d3_delay = value;
+ 		}
+ 	}
+diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
+index 4899b12b5a38..aaef00578487 100644
+--- a/drivers/pci/pci.c
++++ b/drivers/pci/pci.c
+@@ -2844,8 +2844,8 @@ void pci_pm_init(struct pci_dev *dev)
+ 
+ 	dev->pm_cap = pm;
+ 	dev->ignore_reset_delay_on_sx_resume = 0;
+-	dev->d3_delay = PCI_PM_D3_WAIT;
+-	dev->d3cold_delay = PCI_PM_D3COLD_WAIT;
++	dev->d3_delay = PCI_PM_D3HOT_DELAY;
++	dev->d3cold_delay = PCI_RESET_DELAY;
+ 	dev->bridge_d3 = pci_bridge_d3_possible(dev);
+ 	dev->d3cold_allowed = true;
+ 
+@@ -4500,12 +4500,7 @@ int pcie_flr(struct pci_dev *dev)
+ 	if (dev->imm_ready)
+ 		return 0;
+ 
+-	/*
+-	 * Per PCIe r4.0, sec 6.6.2, a device must complete an FLR within
+-	 * 100ms, but may silently discard requests while the FLR is in
+-	 * progress.  Wait 100ms before trying to access the device.
+-	 */
+-	msleep(100);
++	msleep(PCI_FLR_DELAY);
+ 
+ 	return pci_dev_wait(dev, "FLR", PCIE_RESET_READY_POLL_MS);
+ }
+@@ -4544,13 +4539,7 @@ static int pci_af_flr(struct pci_dev *dev, int probe)
+ 	if (dev->imm_ready)
+ 		return 0;
+ 
+-	/*
+-	 * Per Advanced Capabilities for Conventional PCI ECN, 13 April 2006,
+-	 * updated 27 July 2006; a device must complete an FLR within
+-	 * 100ms, but may silently discard requests while the FLR is in
+-	 * progress.  Wait 100ms before trying to access the device.
+-	 */
+-	msleep(100);
++	msleep(PCI_FLR_DELAY);
+ 
+ 	return pci_dev_wait(dev, "AF_FLR", PCIE_RESET_READY_POLL_MS);
+ }
+@@ -4590,7 +4579,7 @@ static int pci_pm_reset(struct pci_dev *dev, int probe)
+ 	csr &= ~PCI_PM_CTRL_STATE_MASK;
+ 	csr |= PCI_D3hot;
+ 	pci_write_config_word(dev, dev->pm_cap + PCI_PM_CTRL, csr);
+-	msleep(PCI_PM_D3_WAIT);
++	msleep(PCI_PM_D3HOT_DELAY);
+ 
+ 	csr &= ~PCI_PM_CTRL_STATE_MASK;
+ 	csr |= PCI_D0;
+diff --git a/drivers/pci/pci.h b/drivers/pci/pci.h
+index c4c3ba926f45..9b5dd6ea2f52 100644
+--- a/drivers/pci/pci.h
++++ b/drivers/pci/pci.h
+@@ -43,9 +43,75 @@ int pci_probe_reset_function(struct pci_dev *dev);
+ int pci_bridge_secondary_bus_reset(struct pci_dev *dev);
+ int pci_bus_error_reset(struct pci_dev *dev);
+ 
+-#define PCI_PM_D2_DELAY         200
+-#define PCI_PM_D3_WAIT          10
+-#define PCI_PM_D3COLD_WAIT      100
++/*
++ * These constants represent the minimum amounts of time mandated by the
++ * PCI Express Base specification that software needs to wait after
++ * various PCI device events involving (re-)initialization. Only after
++ * the appropriate delay has elapsed, is software permitted to issue
++ * Configuration Requests targeting the affected device.
++ *
++ * Relevant sections in PCI Express Base Specification r5.0 (May 22, 2019):
++ * - 6.6.1 "Conventional Reset" for PCI_RESET_DELAY and PCI_DL_UP_DELAY
++ * - 6.6.2 "Function Level Reset" for PCI_FLR_DELAY
++ * - 5.9 "State Transition Recovery Time Requirements" for PCI_PM_D3HOT_DELAY
++ *        and PCI_PM_D2_DELAY
++ * - 9.3.3.3.1 "VF Enable" for PCI_VF_ENABLE_DELAY
++ *
++ * There are mechanisms to reduce some of the delay values for specific devices:
++ * - a device may expose the Readiness Time Reporting Extended Capability from:
++ *   PCI Express Base Specification r4.0 (September 27, 2017), sec 7.9.17
++ *   (This is currently not supported by the kernel.)
++ * - system firmware may provide overrides using an ACPI _DSM Function 9:
++ *   PCI Firmware Specification r3.2 (January 26, 2015), sec 4.6.9
++ *   (see pci_acpi_optimize_delay)
++ *
++ * Unless overridden by _DSM Function 9, other mechanisms may be used to reduce
++ * or completely avoid some of the delays:
++ * - Readiness Notifications (DRS and FRS)
++ * - the Immediate Readiness bit of the Status Register in the PCI header
++ * - the Immediate_Readiness_on_Return_to_D0 in the Power Management
++ *   Capabilities Register in the PCI Power Management Capability
++ * (None of these are currently supported by the kernel.)
++ *
++ * Note: While devices are required to be responsive to Configuration
++ * Requests after these delays, they may not respond with Successful
++ * Completion status until they complete potentially lengthy internal
++ * initialization sequences. Instead, devices respond with Configuration
++ * Request Retry Status (CRS) Completions. Therefore, additional waiting
++ * is necessary as handled by pci_dev_wait().
++ */
++/*
++ * Conventional (non-FLR) reset delay, including D3cold->D0 transitions,
++ * Secondary Bus Reset, and any platform-specific means of triggering
++ * a Conventional Reset.
++ *
++ * According to PCI Firmware spec r3.2, sec 4.6.9, for devices beneath
++ * downstream ports supporting the Data Link Layer Active Reporting
++ * capability, this delay should not be used (see PCI_DL_UP_DELAY).
++ */
++#define PCI_RESET_DELAY		100
++/*
++ * Post-DL_Up (Data Link Layer Active) delay applicable for devices immediately
++ * under a Downstream Port that is capable of reporting Data Link Layer Ready.
++ * Not to be confused with how much time it takes for the link itself to become
++ * active (see pcie_wait_for_link_delay).
++ */
++#define PCI_DL_UP_DELAY		100
++/*
++ * Post-FLR delay
++ * Also applies to legacy devices supporting AF_FLR per Advanced Capabilities
++ * for Conventional PCI ECN, 13 April 2006, updated 27 July 2006)
++ */
++#define PCI_FLR_DELAY		100
++/*
++ * D0/D1/D2->D3hot and D3hot->D0 delay
++ * The specifications do *not* mention overridability of the ->D3hot direction
++ */
++#define PCI_PM_D3HOT_DELAY	10
++/* Post-VF_Enable delay */
++#define PCI_VF_ENABLE_DELAY	100
++/* D0/D1->D2 and D2->D0 delay */
++#define PCI_PM_D2_DELAY		200
+ 
+ /**
+  * struct pci_platform_pm_ops - Firmware PM callbacks
+-- 
+2.25.1
 
-Similar with this:
 
-$ drivers/base/power/domain.c +2504
 
-int genpd_dev_pm_attach(struct device *dev)
 
-         / * Devices with multiple PM domains must be attached separately, as we
-           * can only attach one PM domain per device.
-          */
-        if (of_count_phandle_with_args(dev->of_node, "power-domains",
-                                    "#power-domain-cells") != 1)
-               return 0;
+Amazon Development Center Germany GmbH
+Krausenstr. 38
+10117 Berlin
+Geschaeftsfuehrung: Christian Schlaeger, Jonathan Weiss
+Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
+Sitz: Berlin
+Ust-ID: DE 289 237 879
 
-Will update the description for when this function returns a NULL.
 
->
->> +               return NULL;
->> +
->> +       mpd = devm_kzalloc(dev, GFP_KERNEL, sizeof(*mpd));
->> +       if (!mpd)
->> +               return ERR_PTR(-ENOMEM);
->> +
->> +       mpd->dev = dev;
->> +       mpd->num_domains = num_domains;
->> +
->> +       mpd->virt_devs = devm_kmalloc_array(dev, mpd->num_domains,
->> +                                           sizeof(*mpd->virt_devs),
->> +                                           GFP_KERNEL);
->> +       if (!mpd->virt_devs)
->> +               return ERR_PTR(-ENOMEM);
->> +
->> +       mpd->links = devm_kmalloc_array(dev, mpd->num_domains,
->> +                                       sizeof(*mpd->links), GFP_KERNEL);
->> +       if (!mpd->links)
->> +               return ERR_PTR(-ENOMEM);
->> +
->> +       for (i = 0; i < mpd->num_domains; i++) {
->> +               mpd->virt_devs[i] = dev_pm_domain_attach_by_id(dev, i);
->> +               if (IS_ERR(mpd->virt_devs[i])) {
->> +                       retp = (struct dev_multi_pm_domain_data *)
->> +                               mpd->virt_devs[i];
->
-> Should retp be PTR_ERR(mpd->virt_devs[i]) here?
 
-PTR_ERR returns a long but our function needs to return struct
-dev_multi_pm_domain_data *.
-
-> Thanks,
-> Ranjani
 
 _______________________________________________
 linux-arm-kernel mailing list
