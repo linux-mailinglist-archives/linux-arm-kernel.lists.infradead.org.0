@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A37DB1789FC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 06:20:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0107C178A01
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 06:22:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2S4IGscb90g02RCeFIXgtP7ckFBuXlWh0hs7hGcDGu4=; b=T+kbuw3A5WvyQx
-	O1zA/2hSJAejeRaSeE2NB7hx0qR3TXRG2Ga8NHbs8+09UuZgC4QMgfCkxCP2sStIjuZ5LHlR3VuIi
-	mdsr/jTEsqQusmJ9UKxtJdlNUcGI0d+CHuRgE6c8foWqlvdpwP70IkvMBrnYNv2FwEWaEWDYai6+w
-	yHUvjhMEA404QCo29jaURRLjjt5fLBpImVT0/251nbZd1JWVffL3RXIee8o70UnkPSsbHwfUAaL8U
-	H8ky+7hTXBlw/OoTBOHaix2tqne4AGBuMr8xZE1KooboDd7NS3riX5L3fRTNPVfVZN25U0OZiHefm
-	EzBnChYDUl8HecmSEZSQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qu8pu5EoBz+b/3iSAWTsxb/TqAdr8yaYNKWovedYo/k=; b=Jx4RcrhHrFE4ru
+	ig3EaQBiyngnbdGUpgTxgpaHKKxQSpDYX908cuUv4UTT4/1QqzK7Iu5H2RInHdPQvqqUEQ8m6LuH0
+	5oNMD4C01xqFugi4EoBi5E2T668IpeLwjolGrUThMgMLnyFAvW38eYhKcxAX10lsVyEk/k+CjO0JI
+	hOCWAAhxF3yM4h/UfYaNNo0bTa/omDBAEE0e6GUwkD1Vg0VylXilvAgrEn3QxRYfSQeI2F202hEZY
+	Mpz2pw76bOGUfhSZYMH8ABWXpcs0kL6eNjP1bsVKqqwZ4CnYVn/DEo7ZVvdfcSh520IbMU/NEnEFK
+	KMvvBaMhvn8+N6MGjrTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9MRa-0003d9-1a; Wed, 04 Mar 2020 05:19:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9MRR-0003cJ-Kf; Wed, 04 Mar 2020 05:19:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3EE0E31B;
- Tue,  3 Mar 2020 21:19:31 -0800 (PST)
-Received: from [10.163.1.88] (unknown [10.163.1.88])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DDBA3F6CF;
- Tue,  3 Mar 2020 21:19:16 -0800 (PST)
-Subject: Re: [RFC 1/3] mm/vma: Define a default value for VM_DATA_DEFAULT_FLAGS
-To: Vlastimil Babka <vbabka@suse.cz>, linux-mm@kvack.org
-References: <1583131666-15531-1-git-send-email-anshuman.khandual@arm.com>
- <1583131666-15531-2-git-send-email-anshuman.khandual@arm.com>
- <b243be54-7b5e-c6e9-fb68-46369d7d7aa4@suse.cz>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <8b0f4c1b-f693-e139-4f66-ee4e1e88b95c@arm.com>
-Date: Wed, 4 Mar 2020 10:49:13 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1j9MUZ-0005gT-5U; Wed, 04 Mar 2020 05:22:47 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9MUQ-0005fy-Qv
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 05:22:40 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1j9MUO-0005cz-Uc; Wed, 04 Mar 2020 06:22:36 +0100
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1j9MUN-0005kn-F5; Wed, 04 Mar 2020 06:22:35 +0100
+Date: Wed, 4 Mar 2020 06:22:35 +0100
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Biwen Li <biwen.li@nxp.com>
+Subject: Re: [EXT] Re: [v6] i2c: imx: support slave mode for imx I2C driver
+Message-ID: <20200304052235.mvpjqa2u56joew3r@pengutronix.de>
+References: <20191203114809.21226-1-biwen.li@nxp.com>
+ <20191204100005.r56huywxa7h3c6zr@pengutronix.de>
+ <9a1a00c1-e9fa-36a1-0e79-3492d9b98d9f@pengutronix.de>
+ <DB7PR04MB4490D8434B77DE285A9518448FE50@DB7PR04MB4490.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <b243be54-7b5e-c6e9-fb68-46369d7d7aa4@suse.cz>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <DB7PR04MB4490D8434B77DE285A9518448FE50@DB7PR04MB4490.eurprd04.prod.outlook.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 06:19:12 up 109 days, 20:37, 124 users,  load average: 0.07, 0.06,
+ 0.02
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_211933_767304_D8B1D833 
-X-CRM114-Status: GOOD (  14.58  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200303_212238_874017_FA17B2F8 
+X-CRM114-Status: GOOD (  28.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,136 +77,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Guo Ren <guoren@kernel.org>, sparclinux@vger.kernel.org,
- linux-hexagon@vger.kernel.org, linux-riscv@lists.infradead.org,
- Jonas Bonn <jonas@southpole.se>, linux-s390@vger.kernel.org,
- linux-snps-arc@lists.infradead.org, linux-c6x-dev@linux-c6x.org,
- Brian Cain <bcain@codeaurora.org>, Michael Ellerman <mpe@ellerman.id.au>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, linux-parisc@vger.kernel.org,
- Mark Salter <msalter@redhat.com>, Paul Burton <paulburton@kernel.org>,
- uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
- Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Richard Henderson <rth@twiddle.net>, Chris Zankel <chris@zankel.net>,
- Michal Simek <monstr@monstr.eu>, Tony Luck <tony.luck@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, Nick Hu <nickhu@andestech.com>,
- Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-alpha@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "wsa@the-dreams.de" <wsa@the-dreams.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Xiaobo Xie <xiaobo.xie@nxp.com>,
+ Leo Li <leoyang.li@nxp.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ Clark Wang <xiaoning.wang@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Jiafei Pan <jiafei.pan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Biwen,
 
+On Wed, Mar 04, 2020 at 04:13:03AM +0000, Biwen Li wrote:
+> Hi Wolfram,
+> 
+> Any comments?
 
-On 03/03/2020 10:55 PM, Vlastimil Babka wrote:
-> On 3/2/20 7:47 AM, Anshuman Khandual wrote:
->> There are many platforms with exact same value for VM_DATA_DEFAULT_FLAGS
->> This creates a default value for VM_DATA_DEFAULT_FLAGS in line with the
->> existing VM_STACK_DEFAULT_FLAGS. While here, also define some more macros
->> with standard VMA access flag combinations that are used frequently across
->> many platforms. Apart from simplification, this reduces code duplication
->> as well.
->>
->> Cc: Richard Henderson <rth@twiddle.net>
->> Cc: Vineet Gupta <vgupta@synopsys.com>
->> Cc: Russell King <linux@armlinux.org.uk>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Mark Salter <msalter@redhat.com>
->> Cc: Guo Ren <guoren@kernel.org>
->> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
->> Cc: Brian Cain <bcain@codeaurora.org>
->> Cc: Tony Luck <tony.luck@intel.com>
->> Cc: Geert Uytterhoeven <geert@linux-m68k.org>
->> Cc: Michal Simek <monstr@monstr.eu>
->> Cc: Ralf Baechle <ralf@linux-mips.org>
->> Cc: Paul Burton <paulburton@kernel.org>
->> Cc: Nick Hu <nickhu@andestech.com>
->> Cc: Ley Foon Tan <ley.foon.tan@intel.com>
->> Cc: Jonas Bonn <jonas@southpole.se>
->> Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
->> Cc: Michael Ellerman <mpe@ellerman.id.au>
->> Cc: Paul Walmsley <paul.walmsley@sifive.com>
->> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
->> Cc: Rich Felker <dalias@libc.org>
->> Cc: "David S. Miller" <davem@davemloft.net>
->> Cc: Guan Xuetao <gxt@pku.edu.cn>
->> Cc: Thomas Gleixner <tglx@linutronix.de>
->> Cc: Jeff Dike <jdike@addtoit.com>
->> Cc: Chris Zankel <chris@zankel.net>
->> Cc: Andrew Morton <akpm@linux-foundation.org>
->> Cc: linux-alpha@vger.kernel.org
->> Cc: linux-kernel@vger.kernel.org
->> Cc: linux-snps-arc@lists.infradead.org
->> Cc: linux-arm-kernel@lists.infradead.org
->> Cc: linux-c6x-dev@linux-c6x.org
->> Cc: uclinux-h8-devel@lists.sourceforge.jp
->> Cc: linux-hexagon@vger.kernel.org
->> Cc: linux-ia64@vger.kernel.org
->> Cc: linux-m68k@lists.linux-m68k.org
->> Cc: linux-mips@vger.kernel.org
->> Cc: nios2-dev@lists.rocketboards.org
->> Cc: openrisc@lists.librecores.org
->> Cc: linux-parisc@vger.kernel.org
->> Cc: linuxppc-dev@lists.ozlabs.org
->> Cc: linux-riscv@lists.infradead.org
->> Cc: linux-s390@vger.kernel.org
->> Cc: linux-sh@vger.kernel.org
->> Cc: sparclinux@vger.kernel.org
->> Cc: linux-um@lists.infradead.org
->> Cc: linux-xtensa@linux-xtensa.org
->> Cc: linux-mm@kvack.org
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com
-> Reviewed-by: Vlastimil Babka <vbabka@suse.cz>
-> 
-> Nit:
-> 
->> diff --git a/include/linux/mm.h b/include/linux/mm.h
->> index b0e53ef13ff1..7a764ae6ab68 100644
->> --- a/include/linux/mm.h
->> +++ b/include/linux/mm.h
->> @@ -342,6 +342,21 @@ extern unsigned int kobjsize(const void *objp);
->>  /* Bits set in the VMA until the stack is in its final location */
->>  #define VM_STACK_INCOMPLETE_SETUP	(VM_RAND_READ | VM_SEQ_READ)
->>  
->> +#define TASK_EXEC ((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0)
->> +
->> +/* Common data flag combinations */
->> +#define VM_DATA_FLAGS_TSK_EXEC	(VM_READ | VM_WRITE | TASK_EXEC | \
->> +				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
->> +#define VM_DATA_FLAGS_NON_EXEC	(VM_READ | VM_WRITE | VM_MAYREAD | \
->> +				 VM_MAYWRITE | VM_MAYEXEC)
->> +#define VM_DATA_FLAGS_EXEC	(VM_READ | VM_WRITE | VM_EXEC | \
->> +				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
->> +
->> +#ifndef VM_DATA_DEFAULT_FLAGS		/* arch can override this */
->> +#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
->> +				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
-> 
-> Should you use VM_DATA_FLAGS_EXEC here? Yeah one more macro to expand, but it's
-> right above this.
+Wolfram is waiting until you react to our comments. Until this is not
+happened, I will not ACK this patch and Wolfram will not take it.
 
-Sure, can do that.
+regards,
+Oleksij
 
+> Best Regards,
+> Biwen Li
 > 
->> +#endif
->> +
->>  #ifndef VM_STACK_DEFAULT_FLAGS		/* arch can override this */
->>  #define VM_STACK_DEFAULT_FLAGS VM_DATA_DEFAULT_FLAGS
->>  #endif
->>
-> 
-> 
-> 
+> > 
+> > Hi,
+> > 
+> > On 04.12.19 11:00, Sascha Hauer wrote:
+> > > Hi,
+> > >
+> > > The patch looks ok to me now, but I still do not like the #ifdeffery
+> > > around CONFIG_I2C_SLAVE. With the patch I just sent (You are on Cc:)
+> > > we could apply the following on your patch which makes it more
+> > > readable and increases compile coverage.
+> > >
+> > > Wolfram, Biwen, what do you think?
+> > 
+> > 
+> > RCAR depends on slave:
+> > config I2C_RCAR
+> > 
+> >          tristate "Renesas R-Car I2C Controller"
+> > 
+> >          depends on ARCH_RENESAS || COMPILE_TEST
+> > 
+> >          select I2C_SLAVE
+> > see:
+> > drivers/i2c/busses/i2c-rcar.c
+> > 
+> > So, I would suggest to do the same in imx.
+> > 
+> > So far, I tested this patch on iMX6S. It works in one board (i2c-gpio + i2c-imx)
+> > and two board (i2c-imx + i2c-imx) configuration.
+> > Tested-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> > 
+> > 
+> > >
+> > > Sascha
+> > >
+> > > ---------------------------8<------------------------------
+> > >
+> > >  From 52f7c2bf59db61d4b27b59ca6404136e3ed77310 Mon Sep 17
+> > 00:00:00
+> > > 2001
+> > > From: Sascha Hauer <s.hauer@pengutronix.de>
+> > > Date: Wed, 4 Dec 2019 10:56:34 +0100
+> > > Subject: [PATCH] fixup! i2c: imx: support slave mode for imx I2C
+> > > driver
+> > >
+> > > ---
+> > >   drivers/i2c/busses/i2c-imx.c | 21 ++++++++++-----------
+> > >   1 file changed, 10 insertions(+), 11 deletions(-)
+> > >
+> > > diff --git a/drivers/i2c/busses/i2c-imx.c
+> > > b/drivers/i2c/busses/i2c-imx.c index 40ccfca600bf..c5d9ae8226cd 100644
+> > > --- a/drivers/i2c/busses/i2c-imx.c
+> > > +++ b/drivers/i2c/busses/i2c-imx.c
+> > > @@ -203,9 +203,7 @@ struct imx_i2c_struct {
+> > >       struct pinctrl_state *pinctrl_pins_gpio;
+> > >
+> > >       struct imx_i2c_dma      *dma;
+> > > -#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> > >       struct i2c_client       *slave;
+> > > -#endif
+> > >   };
+> > >
+> > >   static const struct imx_i2c_hwdata imx1_i2c_hwdata = { @@ -913,12
+> > > +911,10 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
+> > >
+> > >       dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
+> > >
+> > > -#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> > >       if (i2c_imx->slave) {
+> > >               dev_err(&i2c_imx->adapter.dev, "Please not do operations
+> > of master mode in slave mode");
+> > >               return -EBUSY;
+> > >       }
+> > > -#endif
+> > >
+> > >       result = pm_runtime_get_sync(i2c_imx->adapter.dev.parent);
+> > >       if (result < 0)
+> > > @@ -1068,7 +1064,6 @@ static u32 i2c_imx_func(struct i2c_adapter
+> > *adapter)
+> > >               | I2C_FUNC_SMBUS_READ_BLOCK_DATA;
+> > >   }
+> > >
+> > > -#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> > >   static int i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
+> > >   {
+> > >       int temp;
+> > > @@ -1159,6 +1154,10 @@ static int i2c_imx_reg_slave(struct i2c_client
+> > *client)
+> > >   {
+> > >       struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
+> > >       int ret;
+> > > +
+> > > +     if (!IS_ENABLED(CONFIG_I2C_SLAVE))
+> > > +             return -EINVAL;
+> > > +
+> > >       if (i2c_imx->slave)
+> > >               return -EBUSY;
+> > >
+> > > @@ -1173,6 +1172,9 @@ static int i2c_imx_unreg_slave(struct i2c_client
+> > *client)
+> > >   {
+> > >       struct imx_i2c_struct *i2c_imx =
+> > > i2c_get_adapdata(client->adapter);
+> > >
+> > > +     if (!IS_ENABLED(CONFIG_I2C_SLAVE))
+> > > +             return -EINVAL;
+> > > +
+> > >       if (!i2c_imx->slave)
+> > >               return -EINVAL;
+> > >
+> > > @@ -1188,15 +1190,12 @@ static int i2c_imx_unreg_slave(struct
+> > > i2c_client *client)
+> > >
+> > >       return 0;
+> > >   }
+> > > -#endif
+> > >
+> > >   static const struct i2c_algorithm i2c_imx_algo = {
+> > >       .master_xfer    = i2c_imx_xfer,
+> > >       .functionality  = i2c_imx_func,
+> > > -#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> > >       .reg_slave      = i2c_imx_reg_slave,
+> > >       .unreg_slave    = i2c_imx_unreg_slave,
+> > > -#endif
+> > >   };
+> > >
+> > >   static irqreturn_t i2c_imx_isr(int irq, void *dev_id) @@ -1208,10
+> > > +1207,10 @@ static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
+> > >
+> > >       if (status & I2SR_IIF) {
+> > >               i2c_imx_clr_if_bit(status, i2c_imx); -#if
+> > > IS_ENABLED(CONFIG_I2C_SLAVE)
+> > > -             if (i2c_imx->slave)
+> > > +
+> > > +             if (IS_ENABLED(CONFIG_I2C_SLAVE) && i2c_imx->slave)
+> > >                       return i2c_imx_slave_isr(i2c_imx); -#endif
+> > > +
+> > >               i2c_imx->i2csr = status;
+> > >               return i2c_imx_master_isr(i2c_imx);
+> > >       }
+> > >
+> > 
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
