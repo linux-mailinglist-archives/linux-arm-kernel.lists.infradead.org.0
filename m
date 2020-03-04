@@ -2,85 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 617E9178CE9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 09:56:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9785178D0F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 10:06:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bga5dCIYPCX5sFIhQFB6RGFPtgJ/prjGKipvHYDI2VM=; b=h6zsgcz5pI/A3s
-	2wWCnMV9DFRCSOdW10OqAIB1nC1HWtHPZAtzmDDLnr2Ozqv3fWuh3mwRcb4BYcdqLyBxgdeVmQg3k
-	YoEzgPXIW8ywc04ImSjfaXE+gsiVQMEnp4ushs6rM25jxi/DJSVv5nA6dZ4UMaqdkx77oIkR6oL4T
-	1EKhYVVlZTx9JIDH8DDRL9CD0Gqj9PAGNIVC3xXr6uAK8vgozrWogRIndInxdzG7TcrKgN+KGINLp
-	96hv9//g+xd4biiTmTLcAXgdWIhUYTasuliSmjY5cZPfTenNySZ256WWsaOO8TUvkeG1lwmldvPTJ
-	FeYBGJYN+nt40pAVzBLw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yQdfpWb/16b7prxEE+AVgpIAMmHSBZMIcTA7VwOoHXo=; b=aDgC2Tdiy3nwL9
+	nQ6s7MMb8emHzQas8NT4immi0WvkSnC/0haBFUU7U+h46ZBv5djBXGKMZQ66EnZsACCYeQ0UOzXVE
+	wDZTVMdSm3mzO5tf/VOa2IIqgMdtzvADATNyhytA61CCeS/+tMlSYlANVmWri8CoUOeLIL578N635
+	86t+yDQnTr6RvAnjyZ2vj8D39vaLDQWOI5uSCY0ApJqDudCAYkmTfaXaE7y6dV61I01wCLVbKmlag
+	fKTivmYEyATtpvoFCccxCodtExKAxtjSb410mPMrH0WwJQNgUvLt/MTl1wP6uCZjY/fa6gQd8mZVq
+	kRLpAvwmqmndsG544jfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Poz-0006JL-HU; Wed, 04 Mar 2020 08:56:05 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1j9Pyg-00011b-M6; Wed, 04 Mar 2020 09:06:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Pop-0006Io-5X
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 08:55:56 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0248s6Gp016466; Wed, 4 Mar 2020 09:55:50 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=/qiD8X3t4cPtlJawNy1q2Zqg0xWhtfmpQr6wgwRGjrM=;
- b=hz0b0Qz0JNlgGjP1cioYkf5IGoiRBgECEFc+UFw+3ZkktXnOidYT/kqNYTPSdyFu/W15
- 3c9Jvudx4NKmVAZscAkPTlEwDvgepIDzIiFBlC2psgIASwfVNIHwdjNLkaLXfwliyFbe
- 7kwLBhNJppeTrzb1BEfQgHaPOrD7Q6FizAX6dPzA0nfgc06HigMHv9Ut8j3lrHFabXPR
- qi42hY5070HPMsEP5vHDu3h5tUCSABYXYU9pWaGGfcEf8rTxksL/5AGKVDUwOE/il2N5
- pYoZ6M6+nHxvenxN0qnW9GiXui7k3XrpkDoCjaYX5QxhPa5lWSY6gtw3CsQAL+mIh5Ex 8g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2yfea6yqap-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 04 Mar 2020 09:55:50 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 01A0310003B;
- Wed,  4 Mar 2020 09:55:45 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3DD1920F831;
- Wed,  4 Mar 2020 09:55:45 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 4 Mar 2020 09:55:44 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <broonie@kernel.org>, <lgirdwood@gmail.com>
-Subject: [PATCH] regulator: stm32-vrefbuf: fix a possible overshoot when
- re-enabling
-Date: Wed, 4 Mar 2020 09:55:32 +0100
-Message-ID: <1583312132-20932-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+ id 1j9PyZ-00010j-S7; Wed, 04 Mar 2020 09:06:01 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D436E2072D;
+ Wed,  4 Mar 2020 09:05:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583312758;
+ bh=nv9z76qB1AKdNeHNDVvjHLCUMfYUelYmliFzrlCR1xI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=wTrJb2nLOkC3o5SdH0RfJuDO3+VKd84OhHaBaZVRb3O2Ur83RlzXVHaQkO0GfHzHu
+ 3gmkPcBjGwKBXwt3VXDXDLJJXPBz5eP9uphOkBtnCJaPRyDemc+cPP9jUcmkSAR3hn
+ MoNlOP+aswJByig32PeT4UbzI37cRSWxBn7/P6Kg=
+Date: Wed, 4 Mar 2020 10:05:55 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v3 4/4] USB: pci-quirks: Add Raspberry Pi 4 quirk
+Message-ID: <20200304090555.GC1429273@kroah.com>
+References: <20200302155528.19505-1-nsaenzjulienne@suse.de>
+ <20200302155528.19505-5-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-03-04_01:2020-03-03,
- 2020-03-04 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200302155528.19505-5-nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_005555_688910_C884BF55 
-X-CRM114-Status: GOOD (  14.60  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200304_010559_951799_709E04C4 
+X-CRM114-Status: GOOD (  19.78  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,53 +72,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: f.fainelli@gmail.com, Mathias Nyman <mathias.nyman@intel.com>,
+ linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, tim.gover@raspberrypi.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There maybe an overshoot, when disabling, then re-enabling vrefbuf
-too quickly. VREFBUF is used by ADC/DAC on some boards. When re-enabling
-too quickly, an overshoot on the reference voltage make the conversions
-inaccurate for a short period of time.
-- Don't put the VREFBUF in HiZ when disabling, to force an active
-discharge.
-- Enforce a 1ms OFF/ON delay
+On Mon, Mar 02, 2020 at 04:55:28PM +0100, Nicolas Saenz Julienne wrote:
+> On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+> loaded directly from an EEPROM or, if not present, by the SoC's
+> VideCore. Inform VideCore that VL805 was just reset.
+> 
+> Also, as this creates a dependency between XHCI_PCI and VideoCore's,
+> reflect that on the firmware interface Kconfg.
+> 
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> 
+> ---
+> 
+> Changes since v1:
+>  - Make RASPBERRYPI_FIRMWARE dependent on this quirk to make sure it
+>    gets compiled when needed.
+> 
+>  drivers/firmware/Kconfig      |  1 +
+>  drivers/usb/host/pci-quirks.c | 18 ++++++++++++++++++
+>  2 files changed, 19 insertions(+)
+> 
+> diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
+> index ea869addc89b..40a468d712a5 100644
+> --- a/drivers/firmware/Kconfig
+> +++ b/drivers/firmware/Kconfig
+> @@ -180,6 +180,7 @@ config ISCSI_IBFT
+>  config RASPBERRYPI_FIRMWARE
+>  	tristate "Raspberry Pi Firmware Driver"
+>  	depends on BCM2835_MBOX
+> +	default XHCI_PCI
+>  	help
+>  	  This option enables support for communicating with the firmware on the
+>  	  Raspberry Pi.
+> diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
+> index beb2efa71341..aee2eaa3f0e1 100644
+> --- a/drivers/usb/host/pci-quirks.c
+> +++ b/drivers/usb/host/pci-quirks.c
+> @@ -16,6 +16,9 @@
+>  #include <linux/export.h>
+>  #include <linux/acpi.h>
+>  #include <linux/dmi.h>
+> +
+> +#include <soc/bcm2835/raspberrypi-firmware.h>
+> +
+>  #include "pci-quirks.h"
+>  #include "xhci-ext-caps.h"
+>  
+> @@ -1243,11 +1246,26 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
+>  
+>  static void quirk_usb_early_handoff(struct pci_dev *pdev)
+>  {
+> +	int ret;
+> +
+>  	/* Skip Netlogic mips SoC's internal PCI USB controller.
+>  	 * This device does not need/support EHCI/OHCI handoff
+>  	 */
+>  	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
+>  		return;
+> +
+> +	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
+> +		ret = rpi_firmware_init_vl805(pdev);
+> +		if (ret)
+> +			/*
+> +			 * Firmware might be outdated, or else, something
+> +			 * failed, keep going and hope for the best.
+> +			 */
+> +			dev_warn(&pdev->dev,
+> +				 "Failed to load VL805's firmware: %d\n",
+> +				 ret);
 
-Fixes: 0cdbf481e927 ("regulator: Add support for stm32-vrefbuf")
+{} please.
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- drivers/regulator/stm32-vrefbuf.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Also, you might want to provide a better warning, something like:
+	"Failed to load VL805's firmware, will continue to attempt to
+	work, but bad things might happen, you should fix this..."
 
-diff --git a/drivers/regulator/stm32-vrefbuf.c b/drivers/regulator/stm32-vrefbuf.c
-index bdfaf7e..992bc18 100644
---- a/drivers/regulator/stm32-vrefbuf.c
-+++ b/drivers/regulator/stm32-vrefbuf.c
-@@ -88,7 +88,7 @@ static int stm32_vrefbuf_disable(struct regulator_dev *rdev)
- 	}
- 
- 	val = readl_relaxed(priv->base + STM32_VREFBUF_CSR);
--	val = (val & ~STM32_ENVR) | STM32_HIZ;
-+	val &= ~STM32_ENVR;
- 	writel_relaxed(val, priv->base + STM32_VREFBUF_CSR);
- 
- 	pm_runtime_mark_last_busy(priv->dev);
-@@ -175,6 +175,7 @@ static const struct regulator_desc stm32_vrefbuf_regu = {
- 	.volt_table = stm32_vrefbuf_voltages,
- 	.n_voltages = ARRAY_SIZE(stm32_vrefbuf_voltages),
- 	.ops = &stm32_vrefbuf_volt_ops,
-+	.off_on_delay = 1000,
- 	.type = REGULATOR_VOLTAGE,
- 	.owner = THIS_MODULE,
- };
--- 
-2.7.4
+or something to give people a chance to know what to do here.
 
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
