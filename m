@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DC7417865D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 00:31:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7EBC1786FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 01:24:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/a7upCdIAkIVzAleJN9aJ4mpOxqdQKjvghwEwXMvIys=; b=ManQaHLSK6psZSISGhQ7xOBJZ
-	KgolnisDY9H7cDKCuxhqkXNGxAzlKptNABTagLb88jHPy9muOciQ9d2rxx5YhgGCLFSHBGxobaSlv
-	09kVw3xxm6gOrVAWZCVJ2m1ZNNkpGr6cw/R98Nr7gqxEbIRaXnDzAq3XWpsTSaq5AMy7TER77WX/c
-	Qk/cZTMoKdwHHkma7lYnWFj61XKK5q0D+xK4YftUOy322wMpV2aKIY2ImISJBFR3gChYqxKeK1TcV
-	rHn+hMe7ucuMROeaaojpcb+bPE9059c4ncrAG95T5EBTIi91IoXOSnT9W0fC9fSERBxRw3lh2D+2X
-	k0sAY80jA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t7iBIE6Gye46yQ5dAwKXvM5MaRr2ixB91lbirr51RZg=; b=SDgMd1IZDKxiDv
+	KGiBwC+J0RfRbTC6qjUJB1Un5XHpxn9csalT68ewOxQRFWuq/aHMYQtwDceH5KfKggFk6OKG70ahj
+	wNnGfY2u5Yvv/09JU9dwcL8ZWqUhCLzcLg4Lf+VR6fSCs20FwHrSqx09kRsVihOxk8O8ULgBCavOG
+	sbFVCYSjD+/00TBokMwL//F4Y6l8nYSPGcEKMlJYh6xdqJvASKYpzNi0eciCh1Xjg7iUwPqwWPTuL
+	vTFlQ4fTQilBFPgsNcrEMza61O/LWi2DTWFBDjvxdFQobpvJ6TsN15jjxwBS+p8A34boaDhN8A6nU
+	7qdgopu/reNpxMLl5C8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9H07-0008Lb-NW; Tue, 03 Mar 2020 23:30:59 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Gzy-0008Kd-Qe
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Mar 2020 23:30:53 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1583278251; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=J7FQkIMZ5j8fIoYnJpIQnIykDivoVUW88IiijYyPyhQ=;
- b=Cos45C9Y8dn2q8BRshqleGDEM+YiuKulR5CGiCT9w0mj6L6s+i2UrkCTdCbXJ+EK3EHbr9Nx
- xpQ68mBoGQeoID8OVqZpAU8mRTiHbFssZlVsqQdm/IVRmgsKXxsnWwSogW+V41FyO571PcZZ
- XV0QGI+LCo5XVdkna1aDPz0GEjE=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e5ee89f.7fe2f6503ed8-smtp-out-n01;
- Tue, 03 Mar 2020 23:30:39 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 5DF79C4479C; Tue,  3 Mar 2020 23:30:38 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: rishabhb)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 2AE2FC433A2;
- Tue,  3 Mar 2020 23:30:37 +0000 (UTC)
+	id 1j9Hpj-0008Sx-Ja; Wed, 04 Mar 2020 00:24:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9Hpc-0008HN-5J
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 00:24:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DBBF530E;
+ Tue,  3 Mar 2020 16:24:06 -0800 (PST)
+Received: from localhost (e108754-lin.cambridge.arm.com [10.1.198.53])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7D0443F6C4;
+ Tue,  3 Mar 2020 16:24:06 -0800 (PST)
+Date: Wed, 4 Mar 2020 00:24:04 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v5 1/7] arm64: add support for the AMU extension v1
+Message-ID: <20200304002404.GA29652@arm.com>
+References: <20200226132947.29738-1-ionela.voinescu@arm.com>
+ <20200226132947.29738-2-ionela.voinescu@arm.com>
+ <20200228103234.GA3904776@arrakis.emea.arm.com>
+ <20200302142326.GA15709@arm.com>
+ <20200303165845.GF823373@arrakis.emea.arm.com>
 MIME-Version: 1.0
-Date: Tue, 03 Mar 2020 15:30:37 -0800
-From: rishabhb@codeaurora.org
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH 6/6] remoteproc: qcom: Add notification types to SSR
-In-Reply-To: <CANLsYkzUh_BRjapX_jDZZ00Lj8MMgMPM12+otYHDKqad1s-qHQ@mail.gmail.com>
-References: <1582167465-2549-1-git-send-email-sidgup@codeaurora.org>
- <1582167465-2549-7-git-send-email-sidgup@codeaurora.org>
- <20200227215940.GC20116@xps15>
- <1a615fcd5a5c435d1d8babe8d5c3f8c3@codeaurora.org>
- <20200228183832.GA23026@xps15>
- <cac45f2726a272ccd0ce82e12e46756f@codeaurora.org>
- <CANLsYkzUh_BRjapX_jDZZ00Lj8MMgMPM12+otYHDKqad1s-qHQ@mail.gmail.com>
-Message-ID: <050a8613cd00a84678b4478ef3387465@codeaurora.org>
-X-Sender: rishabhb@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Content-Disposition: inline
+In-Reply-To: <20200303165845.GF823373@arrakis.emea.arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_153051_520543_907DFB36 
-X-CRM114-Status: GOOD (  33.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200303_162412_296077_0F67ABA5 
+X-CRM114-Status: GOOD (  35.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,235 +66,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, tsoni@codeaurora.org,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- linux-remoteproc-owner@vger.kernel.org,
- Siddharth Gupta <sidgup@codeaurora.org>, psodagud@codeaurora.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, sudeep.holla@arm.com, will@kernel.org,
+ linux-pm@vger.kernel.org, peterz@infradead.org, maz@kernel.org,
+ linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ valentin.schneider@arm.com, mingo@redhat.com,
+ linux-arm-kernel@lists.infradead.org, lukasz.luba@arm.com,
+ viresh.kumar@linaro.org, pkondeti@codeaurora.org, dietmar.eggemann@arm.com,
+ suzuki.poulose@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-03-03 10:05, Mathieu Poirier wrote:
-> On Mon, 2 Mar 2020 at 13:54, <rishabhb@codeaurora.org> wrote:
->> 
->> On 2020-02-28 10:38, Mathieu Poirier wrote:
->> > On Thu, Feb 27, 2020 at 04:00:21PM -0800, rishabhb@codeaurora.org
->> > wrote:
->> >> On 2020-02-27 13:59, Mathieu Poirier wrote:
->> >> > On Wed, Feb 19, 2020 at 06:57:45PM -0800, Siddharth Gupta wrote:
->> >> > > The SSR subdevice only adds callback for the unprepare event. Add
->> >> > > callbacks
->> >> > > for unprepare, start and prepare events. The client driver for a
->> >> > > particular
->> >> > > remoteproc might be interested in knowing the status of the remoteproc
->> >> > > while undergoing SSR, not just when the remoteproc has finished
->> >> > > shutting
->> >> > > down.
->> >> > >
->> >> > > Signed-off-by: Siddharth Gupta <sidgup@codeaurora.org>
->> >> > > ---
->> >> > >  drivers/remoteproc/qcom_common.c | 39
->> >> > > +++++++++++++++++++++++++++++++++++----
->> >> > >  include/linux/remoteproc.h       | 15 +++++++++++++++
->> >> > >  2 files changed, 50 insertions(+), 4 deletions(-)
->> >> > >
->> >> > > diff --git a/drivers/remoteproc/qcom_common.c
->> >> > > b/drivers/remoteproc/qcom_common.c
->> >> > > index 6714f27..6f04a5b 100644
->> >> > > --- a/drivers/remoteproc/qcom_common.c
->> >> > > +++ b/drivers/remoteproc/qcom_common.c
->> >> > > @@ -183,9 +183,9 @@ EXPORT_SYMBOL_GPL(qcom_remove_smd_subdev);
->> >> > >   *
->> >> > >   * Returns pointer to srcu notifier head on success, ERR_PTR on
->> >> > > failure.
->> >> > >   *
->> >> > > - * This registers the @notify function as handler for restart
->> >> > > notifications. As
->> >> > > - * remote processors are stopped this function will be called, with
->> >> > > the rproc
->> >> > > - * pointer passed as a parameter.
->> >> > > + * This registers the @notify function as handler for
->> >> > > powerup/shutdown
->> >> > > + * notifications. This function will be invoked inside the
->> >> > > callbacks registered
->> >> > > + * for the ssr subdevice, with the rproc pointer passed as a
->> >> > > parameter.
->> >> > >   */
->> >> > >  void *qcom_register_ssr_notifier(struct rproc *rproc, struct
->> >> > > notifier_block *nb)
->> >> > >  {
->> >> > > @@ -227,11 +227,39 @@ int qcom_unregister_ssr_notifier(void *notify,
->> >> > > struct notifier_block *nb)
->> >> > >  }
->> >> > >  EXPORT_SYMBOL_GPL(qcom_unregister_ssr_notifier);
->> >> > >
->> >> > > +static int ssr_notify_prepare(struct rproc_subdev *subdev)
->> >> > > +{
->> >> > > +        struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> >> > > +
->> >> > > +        srcu_notifier_call_chain(ssr->rproc_notif_list,
->> >> > > +                                 RPROC_BEFORE_POWERUP, (void *)ssr->name);
->> >> > > +        return 0;
->> >> > > +}
->> >> > > +
->> >> > > +static int ssr_notify_start(struct rproc_subdev *subdev)
->> >> > > +{
->> >> > > +        struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> >> > > +
->> >> > > +        srcu_notifier_call_chain(ssr->rproc_notif_list,
->> >> > > +                                 RPROC_AFTER_POWERUP, (void *)ssr->name);
->> >> > > +        return 0;
->> >> > > +}
->> >> > > +
->> >> > > +static void ssr_notify_stop(struct rproc_subdev *subdev, bool
->> >> > > crashed)
->> >> > > +{
->> >> > > +        struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> >> > > +
->> >> > > +        srcu_notifier_call_chain(ssr->rproc_notif_list,
->> >> > > +                                 RPROC_BEFORE_SHUTDOWN, (void *)ssr->name);
->> >> > > +}
->> >> > > +
->> >> > > +
->> >> > >  static void ssr_notify_unprepare(struct rproc_subdev *subdev)
->> >> > >  {
->> >> > >          struct qcom_rproc_ssr *ssr = to_ssr_subdev(subdev);
->> >> > >
->> >> > > -        srcu_notifier_call_chain(ssr->rproc_notif_list, 0, (void
->> >> > > *)ssr->name);
->> >> > > +        srcu_notifier_call_chain(ssr->rproc_notif_list,
->> >> > > +                                 RPROC_AFTER_SHUTDOWN, (void *)ssr->name);
->> >> > >  }
->> >> > >
->> >> > >  /**
->> >> > > @@ -248,6 +276,9 @@ void qcom_add_ssr_subdev(struct rproc *rproc,
->> >> > > struct qcom_rproc_ssr *ssr,
->> >> > >  {
->> >> > >          ssr->name = ssr_name;
->> >> > >          ssr->subdev.name = kstrdup("ssr_notifs", GFP_KERNEL);
->> >> > > +        ssr->subdev.prepare = ssr_notify_prepare;
->> >> > > +        ssr->subdev.start = ssr_notify_start;
->> >> > > +        ssr->subdev.stop = ssr_notify_stop;
->> >> >
->> >> > Now that I have a better understanding of what this patchset is doing, I
->> >> > realise
->> >> > my comments in patch 04 won't work.  To differentiate the subdevs of an
->> >> > rproc I
->> >> > suggest to wrap them in a generic structure with a type and an enum.
->> >> > That way
->> >> > you can differenciate between subdevices without having to add to the
->> >> > core.
->> >> Ok. I can try that.
->> >> >
->> >> > That being said, I don't understand what patches 5 and 6 are doing...
->> >> > Registering with the global ssr_notifiers allowed to gracefully shutdown
->> >> > all the
->> >> > MCUs in the system when one of them would go down.  But now that we are
->> >> > using
->> >> > the notifier on a per MCU, I really don't see why each subdev couldn't
->> >> > implement
->> >> > the right prepare/start/stop functions.
->> >> >
->> >> > Am I missing something here?
->> >> We only want kernel clients to be notified when the Remoteproc they
->> >> are
->> >> interested
->> >> in changes state. For e.g. audio kernel driver should be notified when
->> >> audio
->> >> processor goes down but it does not care about any other remoteproc.
->> >> If you are suggesting that these kernel clients be added as subdevices
->> >> then
->> >> we will end up having many subdevices registered to each remoteproc.
->> >> So we
->> >> implemented a notifier chain per Remoteproc. This keeps the SSR
->> >> notifications as
->> >> the subdevice per remoteproc, and all interested clients can register
->> >> to it.
->> >
->> > It seems like I am missing information...  Your are referring to
->> > "kernel
->> > clients" and as such I must assume some drivers that are not part of
->> > the
->> > remoteproc/rpmsg subsystems are calling qcom_register_ssr_notifier().
->> > I must
->> Yes these are not part of remoteproc framework and they will register
->> for notifications.
->> > also assume these drivers (or that functionality) are not yet upsream
->> > because
->> > all I can see calling qcom_register_ssr_notifier() is
->> > qcom_glink_ssr_probe().
->> Correct.These are not upstreamed.
+Hi Catalin,
+
+On Tuesday 03 Mar 2020 at 16:58:45 (+0000), Catalin Marinas wrote:
+> On Mon, Mar 02, 2020 at 02:23:26PM +0000, Ionela Voinescu wrote:
+> > On Friday 28 Feb 2020 at 10:32:34 (+0000), Catalin Marinas wrote:
+> > > On Wed, Feb 26, 2020 at 01:29:41PM +0000, Ionela Voinescu wrote:
+> > > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> > > > index dbc22d684627..49f0c436928f 100644
+> > > > --- a/Documentation/admin-guide/kernel-parameters.txt
+> > > > +++ b/Documentation/admin-guide/kernel-parameters.txt
+> > > > @@ -318,6 +318,15 @@
+> > > >  			Format: <a>,<b>
+> > > >  			See also Documentation/input/joydev/joystick.rst
+> > > >  
+> > > > +	amu=		[ARM64]
+> > > > +			Enables or disables detection, enablement and access to
+> > > > +			counter registers of the Activity Monitors Unit (AMU).
+> > > > +			Format: amu=[0/1/on/off/y/n]
+> > > > +			amu=[0/off/n] ensures access to AMU's counter registers
+> > > > +				      is not attempted.
+> > > > +			amu=[1/on/y] (default) enables detection and access to
+> > > > +				     AMU's counter registers.
+> > > 
+> > > Is the only reason for this parameter to be able to disable the feature
+> > > if the firmware doesn't support it? According to the Kconfig entry, you
+> > > may see weird behaviour, firmware lock-up. Is the user supposed to try
+> > > again with amu=0?
+> > > 
+> > > I'm not particularly fond of adding kernel parameters to work around
+> > > broken firmware. We have other architecture features (e.g. PtrAuth) that
+> > > need enabling at EL3 but we don't have such parameters. If it's likely
+> > > that we hit this issue in practice, I'd rather have the firmware
+> > > describing the presence of AMU via some DT entry. But I'd rather not
+> > > bother at all, just get the vendors to update their firmware.
+> > 
+> > The firmware is supposed to do three actions for the kernel to be able
+> > to use the counters: enable access to EL2/EL1, enable the counters and
+> > save/restore the counters before/after core-off.
+> [...]
+> > Therefore, the amu kernel parameter is not only there if the firmware
+> > does not support AMU, but it's also there if the firmware support is
+> > broken/improper. The kernel parameter was added at Suzuki's
+> > recommendation to be able to bypass its use in single kernels that are
+> > meant to run on multiple platforms.
 > 
-> Ok, things are starting to make sense.
+> Single kernel images are supposed to run on multiple platforms while
+> using the same command line arguments.
 > 
->> >
->> > Speaking of which, what is the role of the qcom_glink_ssr_driver?  Is
->> > the glink
->> > device that driver is handling the same as the glink device registed in
->> > adsp_probe() and q6v5_probe()?
->> glink ssr driver will send out notifications to remoteprocs that have
->> opened the
->> "glink_ssr" channel that some subsystem has gone down or booted up. 
->> This
->> helps notify
->> neighboring subsystems about change in state of any other subsystem.
+> There are many other ways firmware can screw up but I'm not keen on
+> working on such assumption and preemptively adding options to ignore CPU
+> features.
 > 
-> I am still looking for an answer to my second question.
-Yes its the subdevice of the glink device that is registered in 
-adsp_probe.
-It uses the "glink_ssr" glink channel.
+> > I also believe this is nice to have even for platforms that properly
+> > support AMU, but they might not want the use of the feature in the
+> > kernel.
 > 
->> >
->> >> >
->> >> >
->> >> > >          ssr->subdev.unprepare = ssr_notify_unprepare;
->> >> > >          ssr->rproc_notif_list = kzalloc(sizeof(struct srcu_notifier_head),
->> >> > >                                                                  GFP_KERNEL);
->> >> > > diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
->> >> > > index e2f60cc..4be4478 100644
->> >> > > --- a/include/linux/remoteproc.h
->> >> > > +++ b/include/linux/remoteproc.h
->> >> > > @@ -449,6 +449,21 @@ struct rproc_dump_segment {
->> >> > >  };
->> >> > >
->> >> > >  /**
->> >> > > + * enum rproc_notif_type - Different stages of remoteproc
->> >> > > notifications
->> >> > > + * @RPROC_BEFORE_SHUTDOWN:      unprepare stage of  remoteproc
->> >> > > + * @RPROC_AFTER_SHUTDOWN:       stop stage of  remoteproc
->> >> > > + * @RPROC_BEFORE_POWERUP:       prepare stage of  remoteproc
->> >> > > + * @RPROC_AFTER_POWERUP:        start stage of  remoteproc
->> >> > > + */
->> >> > > +enum rproc_notif_type {
->> >> > > +        RPROC_BEFORE_SHUTDOWN,
->> >> > > +        RPROC_AFTER_SHUTDOWN,
->> >> > > +        RPROC_BEFORE_POWERUP,
->> >> > > +        RPROC_AFTER_POWERUP,
->> >> > > +        RPROC_MAX
->> >> > > +};
->> >> > > +
->> >> > > +/**
->> >> > >   * struct rproc - represents a physical remote processor device
->> >> > >   * @node: list node of this rproc object
->> >> > >   * @domain: iommu domain
->> >> > > --
->> >> > > Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
->> >> > > a Linux Foundation Collaborative Project
->> >> > >
->> >> > > _______________________________________________
->> >> > > linux-arm-kernel mailing list
->> >> > > linux-arm-kernel@lists.infradead.org
->> >> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
->> 
->> _______________________________________________
->> linux-arm-kernel mailing list
->> linux-arm-kernel@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Are there any downsides to this feature? If you want it for testing
+> purposes, i.e. different scheduler behaviour, fine by me but I'd change
+> the text in the Kconfig to not even imply that firmware is allowed to be
+> broken as we have a workaround in the kernel.
+> 
+
+This solution would not be appropriate to select different scheduler
+behaviours. That would be the end result of "amu=0", but it would not be
+a clean way to select the source of information for frequency
+invariance. The scheduler and the frequency invariance engine is only
+one of the potential users of activity monitors, while this kernel
+parameter would disable detection for the full feature so it will affect
+frequency invariance behaviour and other future users of the counters.
+
+In no way I want to send the message that firmware is allowed to be
+broken or that this is a good way to tune scheduler behaviour.
+
+My flawed logic above was to suggest that a few small reasons (potential 
+broken firmware, potential interest to turn off the feature at runtime)
+would make a big one to justify the parameter, but none of these
+fully stand on their own.
+
+> > > If we drop this parameter, patch 1 would need to change. Otherwise the
+> > > patches look fine.
+> > 
+> > This being said, I agree this was added as a 'just in case' and not as
+> > support for a likely scenario, therefore, I don't fully disagree to drop
+> > it for now.
+> 
+> If you need it for testing different scheduler behaviours, maybe
+> big.LITTLE where AMU is only supported on some CPUs, than keep it. If
+> it's only on the assumption that the firmware may be broken, please
+> remove it.
+> 
+
+In regards to frequency invariance, there is no downside of using the
+feature and, if available, it's preferred to use the counters independent
+on whether all CPUs support them on not. But this would be a bad way to
+switch between sources of information (cpufreq or counters) for
+frequency invariance in any case, so I'll remove the parameter.
+
+Thanks,
+Ionela.
+
+> Thanks.
+> 
+> -- 
+> Catalin
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
