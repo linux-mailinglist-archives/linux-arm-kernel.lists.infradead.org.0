@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35872179A07
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 21:36:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 384FF179A12
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 21:37:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ilk1lDOA4xMYpd9WB6KoTTMRNRmg6XpC7SGTdqO+PpA=; b=plhGE0sVNdmr/t
-	xgu0VenYwjHLmvAgB4lKQ39nZiCzHP0GJeRAPSx1YiJSkgvEggoDkP28vjFRumsmP9kvG0GfR64tq
-	ZwkogMAGavJhwfCJFaMUFJWFOKUdZMcOxZ44hF6HuycISz2mGYJBMs+Wx8U6Ys18Aj6Gr0eB95zuo
-	akZ1X3PhG670LKbt23eE6RgsVUO5blbwq8urdXf0luAxsQ0Ob0aUyU3Qf3NN5xN9z9rRyalMX9SsL
-	SVbE4ImSBM0c505Gu7izfrw0GtAxAE4p7K1tpugmspnqWPLj1BBBl77UfQHZ0R5Hel2dW6L9eBvMd
-	4qf2TXjSi2hsBxlkGPEA==;
+	List-Owner; bh=v7XpRNIEm4PyKD3La/insC55528m25rYoDGi8hqV/nc=; b=K5Yj1XPLiaLvNl
+	0lNGXMKE0LrNjT+nT3KN690akvx6wdUBs7U6tiwc/X8Or2eUVUvczYmWDn6vLs/U5Rf33mMaC/kzL
+	9nzS7kKlh7pIQpNNpMArcuaa+Gmutwy+A9k8u4q2+bVNI9COtfVtRkwsjEcDb79iDb2pryz3ZOm/q
+	6f/U90PWo35OLiXBdIpRJaHejyH4/KvLtPxiejDVPpUE4o7c18mkNNmCGHsd7V/NO+tZb3hhImxlr
+	8nHPsLfPr9LgA3BBXZfJMTRDsglTXQYw46CCgAZvkaLDTXPZAAZppeayPDRfpqH9U++pz/l3fxYNE
+	TLGw5M0Hl/xlDj0ACsvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9akk-00048j-Q0; Wed, 04 Mar 2020 20:36:26 +0000
+	id 1j9alH-0004YT-Uc; Wed, 04 Mar 2020 20:36:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9aj5-0001iq-Hg
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 20:34:44 +0000
+ id 1j9aj6-0001jK-A6
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 20:34:45 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 204DB2465D;
+ by mail.kernel.org (Postfix) with ESMTPSA id DDA9F24658;
  Wed,  4 Mar 2020 20:34:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583354083;
- bh=PUH4gvjgA21o9fb5+3YPbx9Fg5qB5gde4nKP+zU3Z/0=;
+ s=default; t=1583354084;
+ bh=j8zBrkFAZYg8aOlrVLwQ6xdlqxDuQgnwUjV/YeOSDME=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dL32XTKw9LNevAq5UBY1jmzQ+sCyO5FkFTx1Jp++JJTTIK3sGRGlOwutkPFO6WUvQ
- OfCvAvlQ4u/p5WycO7BCIxGvCCDoVXtP9D1wM1xrSnA3T5s2vI+PyuAkIUxmoE8Jbz
- oWrsh0h7KlsDoUrIBkyvAkz4oK0mtnY4E+7CCZkM=
+ b=mKT2wJ5CATASQrCVHIrXAS4mZnE7h3hbQZ4OGF9DK/S4YNdjPBHCanpr/KJ5b4doR
+ 7Vov2W70kxrE3d/mpqx5KMosTBEfdYtim4pqxOIDSUY3qWHg2yjMJ0tXkIdSdD94cb
+ D7oh2IjKPIjxmA/NVeZOMcSDeJj5qBmHtRVE4Of8=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j9aj3-00A59R-DV; Wed, 04 Mar 2020 20:34:41 +0000
+ id 1j9aj4-00A59R-4t; Wed, 04 Mar 2020 20:34:42 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v5 05/23] irqchip/gic-v4.1: Ensure mutual exclusion betwen
- invalidations on the same RD
-Date: Wed,  4 Mar 2020 20:33:12 +0000
-Message-Id: <20200304203330.4967-6-maz@kernel.org>
+Subject: [PATCH v5 06/23] irqchip/gic-v4.1: Advertise support v4.1 to KVM
+Date: Wed,  4 Mar 2020 20:33:13 +0000
+Message-Id: <20200304203330.4967-7-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200304203330.4967-1-maz@kernel.org>
 References: <20200304203330.4967-1-maz@kernel.org>
@@ -63,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_123443_621361_D9320981 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20200304_123444_405778_0BBAF5A8 
+X-CRM114-Status: GOOD (  13.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,86 +103,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GICv4.1 spec says that it is CONTRAINED UNPREDICTABLE to write to
-any of the GICR_INV{LPI,ALL}R registers if GICR_SYNCR.Busy == 1.
-
-To deal with it, we must ensure that only a single invalidation can
-happen at a time for a given redistributor. Add a per-RD lock to that
-effect and take it around the invalidation/syncr-read to deal with this.
+Tell KVM that we support v4.1. Nothing uses this information so far.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
+Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
 ---
- drivers/irqchip/irq-gic-v3-its.c   | 6 ++++++
- drivers/irqchip/irq-gic-v3.c       | 1 +
- include/linux/irqchip/arm-gic-v3.h | 1 +
- 3 files changed, 8 insertions(+)
+ drivers/irqchip/irq-gic-v3-its.c       | 9 ++++++++-
+ drivers/irqchip/irq-gic-v3.c           | 2 ++
+ include/linux/irqchip/arm-gic-common.h | 2 ++
+ 3 files changed, 12 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-index c84370245bea..fc5788584df7 100644
+index fc5788584df7..bcc1a0957cda 100644
 --- a/drivers/irqchip/irq-gic-v3-its.c
 +++ b/drivers/irqchip/irq-gic-v3-its.c
-@@ -1373,10 +1373,12 @@ static void direct_lpi_inv(struct irq_data *d)
+@@ -4870,6 +4870,7 @@ int __init its_init(struct fwnode_handle *handle, struct rdists *rdists,
+ 	struct device_node *of_node;
+ 	struct its_node *its;
+ 	bool has_v4 = false;
++	bool has_v4_1 = false;
+ 	int err;
  
- 	/* Target the redistributor this LPI is currently routed to */
- 	cpu = irq_to_cpuid_lock(d, &flags);
-+	raw_spin_lock(&gic_data_rdist_cpu(cpu)->rd_lock);
- 	rdbase = per_cpu_ptr(gic_rdists->rdist, cpu)->rd_base;
- 	gic_write_lpir(val, rdbase + GICR_INVLPIR);
+ 	gic_rdists = rdists;
+@@ -4890,8 +4891,14 @@ int __init its_init(struct fwnode_handle *handle, struct rdists *rdists,
+ 	if (err)
+ 		return err;
  
- 	wait_for_syncr(rdbase);
-+	raw_spin_unlock(&gic_data_rdist_cpu(cpu)->rd_lock);
- 	irq_to_cpuid_unlock(d, flags);
- }
+-	list_for_each_entry(its, &its_nodes, entry)
++	list_for_each_entry(its, &its_nodes, entry) {
+ 		has_v4 |= is_v4(its);
++		has_v4_1 |= is_v4_1(its);
++	}
++
++	/* Don't bother with inconsistent systems */
++	if (WARN_ON(!has_v4_1 && rdists->has_rvpeid))
++		rdists->has_rvpeid = false;
  
-@@ -3662,9 +3664,11 @@ static void its_vpe_send_inv(struct irq_data *d)
- 		void __iomem *rdbase;
- 
- 		/* Target the redistributor this VPE is currently known on */
-+		raw_spin_lock(&gic_data_rdist_cpu(vpe->col_idx)->rd_lock);
- 		rdbase = per_cpu_ptr(gic_rdists->rdist, vpe->col_idx)->rd_base;
- 		gic_write_lpir(d->parent_data->hwirq, rdbase + GICR_INVLPIR);
- 		wait_for_syncr(rdbase);
-+		raw_spin_unlock(&gic_data_rdist_cpu(vpe->col_idx)->rd_lock);
- 	} else {
- 		its_vpe_send_cmd(vpe, its_send_inv);
- 	}
-@@ -3825,10 +3829,12 @@ static void its_vpe_4_1_invall(struct its_vpe *vpe)
- 	val |= FIELD_PREP(GICR_INVALLR_VPEID, vpe->vpe_id);
- 
- 	/* Target the redistributor this vPE is currently known on */
-+	raw_spin_lock(&gic_data_rdist_cpu(vpe->col_idx)->rd_lock);
- 	rdbase = per_cpu_ptr(gic_rdists->rdist, vpe->col_idx)->rd_base;
- 	gic_write_lpir(val, rdbase + GICR_INVALLR);
- 
- 	wait_for_syncr(rdbase);
-+	raw_spin_unlock(&gic_data_rdist_cpu(vpe->col_idx)->rd_lock);
- }
- 
- static int its_vpe_4_1_set_vcpu_affinity(struct irq_data *d, void *vcpu_info)
+ 	if (has_v4 & rdists->has_vlpis) {
+ 		if (its_init_vpe_domain() ||
 diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-index 73e87e176d76..ba405becab53 100644
+index ba405becab53..03e4eadefb00 100644
 --- a/drivers/irqchip/irq-gic-v3.c
 +++ b/drivers/irqchip/irq-gic-v3.c
-@@ -835,6 +835,7 @@ static int __gic_populate_rdist(struct redist_region *region, void __iomem *ptr)
- 	typer = gic_read_typer(ptr + GICR_TYPER);
- 	if ((typer >> 32) == aff) {
- 		u64 offset = ptr - region->redist_base;
-+		raw_spin_lock_init(&gic_data_rdist()->rd_lock);
- 		gic_data_rdist_rd_base() = ptr;
- 		gic_data_rdist()->phys_base = region->phys_base + offset;
+@@ -1785,6 +1785,7 @@ static void __init gic_of_setup_kvm_info(struct device_node *node)
+ 		gic_v3_kvm_info.vcpu = r;
  
-diff --git a/include/linux/irqchip/arm-gic-v3.h b/include/linux/irqchip/arm-gic-v3.h
-index c29a02678a6f..b28acfa71f82 100644
---- a/include/linux/irqchip/arm-gic-v3.h
-+++ b/include/linux/irqchip/arm-gic-v3.h
-@@ -652,6 +652,7 @@
+ 	gic_v3_kvm_info.has_v4 = gic_data.rdists.has_vlpis;
++	gic_v3_kvm_info.has_v4_1 = gic_data.rdists.has_rvpeid;
+ 	gic_set_kvm_info(&gic_v3_kvm_info);
+ }
  
- struct rdists {
- 	struct {
-+		raw_spinlock_t	rd_lock;
- 		void __iomem	*rd_base;
- 		struct page	*pend_page;
- 		phys_addr_t	phys_base;
+@@ -2100,6 +2101,7 @@ static void __init gic_acpi_setup_kvm_info(void)
+ 	}
+ 
+ 	gic_v3_kvm_info.has_v4 = gic_data.rdists.has_vlpis;
++	gic_v3_kvm_info.has_v4_1 = gic_data.rdists.has_rvpeid;
+ 	gic_set_kvm_info(&gic_v3_kvm_info);
+ }
+ 
+diff --git a/include/linux/irqchip/arm-gic-common.h b/include/linux/irqchip/arm-gic-common.h
+index b9850f5f1906..fa8c0455c352 100644
+--- a/include/linux/irqchip/arm-gic-common.h
++++ b/include/linux/irqchip/arm-gic-common.h
+@@ -32,6 +32,8 @@ struct gic_kvm_info {
+ 	struct resource vctrl;
+ 	/* vlpi support */
+ 	bool		has_v4;
++	/* rvpeid support */
++	bool		has_v4_1;
+ };
+ 
+ const struct gic_kvm_info *gic_get_kvm_info(void);
 -- 
 2.20.1
 
