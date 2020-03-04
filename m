@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA7131791ED
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:09:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 891171791FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:10:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gG042kkCbGtaiaO2IjfJn+LsTGnVmfGCjkYDqaemxm0=; b=Gu1K6ucXLn/tkd
-	D7VMBYTC0utfiJpHQ5G3bVONG8EfnSsFu31npbCTAeKo+sc7bcbIti6U93hqVO3YO5ykzwwMeAYiy
-	gvV+ZqX42Yj+SB6yEvvweI3zgBqXaUot21a2mVWLqtouyULO1Uz2BlQbmBrxprhp+oo0KTLN/Bb1f
-	gOizsrKjhN1p5lDHQLCZvt5TmxRhBTC1rV4GIyl4i6vUvIPFIXEaqXsqO4Z+P1RF67/YCzVZaHyFm
-	dBAQHp+TP9CMfZTuVrTCvTbpZgQntL46qfLJBxY/4pkY2NtcJs0hkLsXjSzWLZQZNGT6TlFrfvBr8
-	JPHorLu0qDlcOEMxlxTw==;
+	List-Owner; bh=l8+kHMFPNQX6EacJDbeISYzuqCV9UTdxozkf2hcSMUw=; b=p4NkcS5qVgnPPR
+	UxblSBPCdtxiiZUKIGYd7NACnC8e/ZHxerrmNTMdwv5pZm3p1W95r7uBfM3qEn5HDtpC2XxDwmR0y
+	IQ0C0WnUo9R60k9X5amrA5GdTu9s+iut0nbKQTC5FRDkmV6e1RPvfIkS6/xkC7pSsaDtol4/mV9sh
+	2RRau9l3y4+gYeg56ffoEuttjOdYd9gAShdN07ZUvRjzMYjLfjCB7Mua5NmYy3omLUffrfGHFkRop
+	YW9xTfqVHJSdiZDcUsWpPY9lCweNtZKxGCrPvHs36V+bgPe1qqPmXAHHfB08q1uOAnjcieNfFyrSl
+	7aaRQonHPP6WepemQs3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Uhe-0005ky-Eo; Wed, 04 Mar 2020 14:08:50 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j9Uip-00064S-TR; Wed, 04 Mar 2020 14:10:03 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9UhX-0005kM-EH
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:08:45 +0000
-Received: by mail-wr1-x442.google.com with SMTP id n7so2529647wrt.11
+ id 1j9Uig-00063L-8R
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:09:55 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j7so2535963wrp.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 06:08:42 -0800 (PST)
+ Wed, 04 Mar 2020 06:09:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=TdUvMeA1bV5hMUNi9Uc9NGFwMrBhsdhhT6ZmBGFQFek=;
- b=ziaLQQMTnCJ7YSxd5sV95qsFJ5sMZH3rtvhOIq0q24OYVAeSN/juNgdJKUXVth7dmC
- +1cTjWWP/8vKz1/4KANL8PnAFbMAGOTkEIQvePO7fVK5ahr5EsdFhICYSslnU6Q/U3YP
- eaY+UNIzqcl1QfHqCD3sojdDlJ5DGbhtfT0Zz1unRHzAIht9z91VeCVs9QSOLqrFrm47
- yYvlbSX/dMxmGH7JaXW06sQkDqq+gICORzdo63QS61gI1f3znBgEbBwZYbXIUzNXW34m
- 9I41VXjpTFujhXGbhcU+sCmTSxEf+GPlgeOR7llOnK3kpBjcJOHvuvpYAM84w3umrZVW
- WibQ==
+ bh=EpXtvX1PfW3FZz13OtRHOjQvZ2fsaz2TnoP+n0E2ZUg=;
+ b=g8SWXvPTyPZzLcsUAC4+i3gEYS7VjOjujoBVioj8kKYK73oXfKh+MAvo8mRWnu071C
+ gxiMmhvSdwjKzrw34AWvhgikZX0Hrhz4jre0uVLyzI7CZYL/VDsf5gHJObclPdLagxZi
+ s+6qEVWA3DXyXew+YkVb+rgAVC49YN8D3mPAbPfbz2b2vq1fO6ty0UB+H65pdv6FjJ6Y
+ v3/70bPC/jxD75YgWO2V9B7pyWv0bv8SImmbScC8XftPtCDEBeJXHlj8SYkcVTIy6y7V
+ 32lZyBoyNgNFy1f0QHfB5NbM0+cCHEojMhPDvMZmAXMM6fqrb+f7yzzdQe1b3vIru/ak
+ r5Hg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=TdUvMeA1bV5hMUNi9Uc9NGFwMrBhsdhhT6ZmBGFQFek=;
- b=N6IPxuMpKVn/B5MWnRsodTv0piJNcubb8RZs2IA+0Y6s/hLOs/WA6v/eHE9EX01bhM
- eQa6q/v6qgVdsGDM2xAkrk+vlMRNITd5DGpwXHyB3UpxQLlWIAR9Jx3edbh7r0VgGNjL
- rL5RX9hjmV0950cfY+fCgq7uIfUpRUsWps813Lr84pvyjp8e0zzuSPXIv6SNQpVfdagU
- w6DfaWY57bwtLUeO6wdHAWnOSlzp19Keac7l1QjTFXz7gyYAGpUYSDQp9OmzOoqk+UCy
- m99w+UjWiQFgfAOSlGq/hrenVnPj/uVS4zHo5D0w88SjpeLxVeW9iueWTTaCS3Loq2uS
- ookA==
-X-Gm-Message-State: ANhLgQ1GrXHGRPr+6TeGSzgbdQJyNllWmEX3Bvi4BqumGLfKf0Cw55HE
- IbQBNLaVehWHZhoWjdKo5waN1A==
-X-Google-Smtp-Source: ADFU+vv0sKAwmtjvye94x9YIogv5zw/a9rZvkYsOZEBQWXGc8PUw1JEbwM9HPDBC/WwH/q9h2REFKg==
-X-Received: by 2002:a5d:4b82:: with SMTP id b2mr4303504wrt.102.1583330920810; 
- Wed, 04 Mar 2020 06:08:40 -0800 (PST)
+ bh=EpXtvX1PfW3FZz13OtRHOjQvZ2fsaz2TnoP+n0E2ZUg=;
+ b=srLBeynC7o5fWsnczO3aZkJx/0I98rztBjfS2SkE4OQy2qrR2GpIygDTYDMACSKJkS
+ mFvxJ+xprxaeMzc2TExvtib27xYHb1vypMteaXmb/JqPxrdHnUATrNgB0yuZw46mXoa9
+ OlpkGTIqgkvGrarlaAKmP4vhYaC6Auyw/+2gPJo3ZgUPgOaNpDj/EQ9mMmVVyXkjTPa8
+ efTi6UrDsxz/vj6U/BmBFiwCJfjODWP99vTj+4t7FPEcRybf6x4mV1NFW/zO896KFD/U
+ TpnmZyjmpkr2sH0ySkRs2IzuNPpyQAxu/XsA06E4RjxmrjvWrw4LIc+1/ifUzzMUyX8G
+ 4VjA==
+X-Gm-Message-State: ANhLgQ1vqMirjauHG8kJ0asHA7veEq6Z4lr2YHmvNfqlRFCZHpfCBE75
+ QJOzy/IUSTRR/gBQiEaMeNKn5g==
+X-Google-Smtp-Source: ADFU+vtZMIq6Jg8tdrdLMObmNELyKi8gzYZ2wKQ8Qt7PTkGgWzXVAaeuMwK7RkrXzELghSD1BcL3DQ==
+X-Received: by 2002:adf:e542:: with SMTP id z2mr4532686wrm.150.1583330987727; 
+ Wed, 04 Mar 2020 06:09:47 -0800 (PST)
 Received: from myrica ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id p17sm36750450wre.89.2020.03.04.06.08.39
+ by smtp.gmail.com with ESMTPSA id q12sm41792293wrg.71.2020.03.04.06.09.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Mar 2020 06:08:39 -0800 (PST)
-Date: Wed, 4 Mar 2020 15:08:33 +0100
+ Wed, 04 Mar 2020 06:09:46 -0800 (PST)
+Date: Wed, 4 Mar 2020 15:09:40 +0100
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+To: Xu Zaibo <xuzaibo@huawei.com>
 Subject: Re: [PATCH v4 23/26] iommu/arm-smmu-v3: Add stall support for
  platform devices
-Message-ID: <20200304140833.GB646000@myrica>
+Message-ID: <20200304140940.GC646000@myrica>
 References: <20200224182401.353359-1-jean-philippe@linaro.org>
  <20200224182401.353359-24-jean-philippe@linaro.org>
- <20200227181726.00007c9a@Huawei.com>
+ <db6fc8c2-2ff3-631f-2294-c1b49acd27aa@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200227181726.00007c9a@Huawei.com>
+In-Reply-To: <db6fc8c2-2ff3-631f-2294-c1b49acd27aa@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_060843_488333_939BC85E 
-X-CRM114-Status: GOOD (  26.18  )
+X-CRM114-CacheID: sfid-20200304_060954_305437_9F053E3C 
+X-CRM114-Status: GOOD (  17.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,22 +100,21 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+ will@kernel.org, Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ linux-pci@vger.kernel.org, linux-mm@kvack.org,
+ iommu@lists.linux-foundation.org, robh+dt@kernel.org, catalin.marinas@arm.com,
+ zhangfei.gao@linaro.org, robin.murphy@arm.com, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 06:17:26PM +0000, Jonathan Cameron wrote:
-> On Mon, 24 Feb 2020 19:23:58 +0100
-> Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+On Wed, Feb 26, 2020 at 04:44:53PM +0800, Xu Zaibo wrote:
+> Hi,
 > 
+> 
+> On 2020/2/25 2:23, Jean-Philippe Brucker wrote:
 > > From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
 > > 
 > > The SMMU provides a Stall model for handling page faults in platform
@@ -129,81 +128,32 @@ On Thu, Feb 27, 2020 at 06:17:26PM +0000, Jonathan Cameron wrote:
 > > the stall.
 > > 
 > > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> One question inline.
-> 
-> Thanks,
-> 
 > > ---
-> >  drivers/iommu/arm-smmu-v3.c | 271 ++++++++++++++++++++++++++++++++++--
-> >  drivers/iommu/of_iommu.c    |   5 +-
-> >  include/linux/iommu.h       |   2 +
-> >  3 files changed, 269 insertions(+), 9 deletions(-)
+> >   drivers/iommu/arm-smmu-v3.c | 271 ++++++++++++++++++++++++++++++++++--
+> >   drivers/iommu/of_iommu.c    |   5 +-
+> >   include/linux/iommu.h       |   2 +
+> >   3 files changed, 269 insertions(+), 9 deletions(-)
 > > 
 > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
 > > index 6a5987cce03f..da5dda5ba26a 100644
 > > --- a/drivers/iommu/arm-smmu-v3.c
 > > +++ b/drivers/iommu/arm-smmu-v3.c
 > > @@ -374,6 +374,13 @@
-> 
-> 
-> > +/*
-> > + * arm_smmu_flush_evtq - wait until all events currently in the queue have been
-> > + *                       consumed.
-> > + *
-> > + * Wait until the evtq thread finished a batch, or until the queue is empty.
-> > + * Note that we don't handle overflows on q->batch. If it occurs, just wait for
-> > + * the queue to be empty.
-> > + */
-> > +static int arm_smmu_flush_evtq(void *cookie, struct device *dev, int pasid)
+> >   #define CMDQ_PRI_1_GRPID		GENMASK_ULL(8, 0)
+> >   #define CMDQ_PRI_1_RESP			GENMASK_ULL(13, 12)
+> [...]
+> > +static int arm_smmu_page_response(struct device *dev,
+> > +				  struct iommu_fault_event *unused,
+> > +				  struct iommu_page_response *resp)
 > > +{
-> > +	int ret;
-> > +	u64 batch;
-> > +	struct arm_smmu_device *smmu = cookie;
-> > +	struct arm_smmu_queue *q = &smmu->evtq.q;
-> > +
-> > +	spin_lock(&q->wq.lock);
-> > +	if (queue_sync_prod_in(q) == -EOVERFLOW)
-> > +		dev_err(smmu->dev, "evtq overflow detected -- requests lost\n");
-> > +
-> > +	batch = q->batch;
-> 
-> So this is trying to be sure we have advanced the queue 2 spots?
+> > +	struct arm_smmu_cmdq_ent cmd = {0};
+> > +	struct arm_smmu_master *master = dev_iommu_fwspec_get(dev)->iommu_priv;
+> Here can use 'dev_to_master' ?
 
-So we call arm_smmu_flush_evtq() before decommissioning a PASID, to make
-sure that there aren't any pending event for this PASID languishing in the
-fault queues.
-
-The main test is queue_empty(). If that succeeds then we know that there
-aren't any pending event (and the PASID is safe to reuse). But if new
-events are constantly added to the queue then we wait for the evtq thread
-to handle a full batch, where one batch corresponds to the queue size. For
-that we take the batch number when entering flush(), and wait for the evtq
-thread to increment it twice.
-
-> Is there a potential race here?  q->batch could have updated before we take
-> a local copy.
-
-Yes we're just checking on the progress of the evtq thread. All accesses
-to batch are made while holding the wq lock.
-
-Flush is a rare event so the lock isn't contended, but the wake_up() that
-this patch introduces in arm_smmu_evtq_thread() does add some overhead
-(0.85% of arm_smmu_evtq_thread(), according to perf). It would be nice to
-get rid of it but I haven't found anything clever yet.
+Certainly, good catch
 
 Thanks,
 Jean
-
-> 
-> > +	ret = wait_event_interruptible_locked(q->wq, queue_empty(&q->llq) ||
-> > +					      q->batch >= batch + 2);
-> > +	spin_unlock(&q->wq.lock);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> ...
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
