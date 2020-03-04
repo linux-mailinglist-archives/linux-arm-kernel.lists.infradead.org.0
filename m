@@ -2,49 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 105E1178FAE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 12:42:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE4E9179005
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:03:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ncAXi/mBeqRLBeaY53ucI8zKTDPVZNirKpVItmjcHjw=; b=h4mRVl+ygmOK4u
-	M5/vFuU2o2+XawpQsl6X2lEu+y+UT05M01D35gWQ1abzhbcNbUq3xoa1s0Q8Mg2UQW4f85FI7Af1T
-	AuyNadboMLSt2q1/CWQpfhF0lNnKiX5XtmmcnXGZdIHizxzWHqj7l4vzsU5ZhLRllmbzxyshLP7vs
-	67ena2ql5MT4fOhqJdAxsjUE9q6gCAfRFuHYtoFoeeUZerdJRBSt0Yqv6yfPinWnvKo2JzudrR/QG
-	Z32RkK9mCSiPH7im1U5k7XKCqnJh1wTh2/MvLyibIkYbEjHNJ6gSLkPE5PIDQ6j8/WKOZe8eZze8e
-	OtCu31Ld03OdDNPcaSxQ==;
+	List-Owner; bh=L7aGeguQtIjvDSjC/wo3K3LjO6VzoFRaxG52DA8Nhg0=; b=TLdoUzdWk/Njh9
+	lPGWUL08f87SDmp7YwkB7IOvihNQxfVV51UBfbHgJ2Xt14zF8nq3gdPHdnEFQ2Ye4qh2fNd29CniW
+	TEDeHBWDKrvD3hlhupDr+yF5P2BNOkVn1HSK1m4TDwVwR6djQaS9wo2VEkKyRN9n2ycjjJ12yy7Fl
+	0eU08Nl86nUaPVwXcf5RHDwe0UBYSK7PQmqk78A9g3c6+GAkgvuym/AeoZtT7l04MrI0F+Hx0ui7r
+	sfSRcbvDnmy1V7AE3oYEyr/SoDS6xJSD1GEuCr0tMXt4aab3+GIEpm7/Dn2wXMGHqe5PLbUkA1044
+	YiJA/9TRclWaWWhgdTTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9SPR-0005YY-Qi; Wed, 04 Mar 2020 11:41:53 +0000
+	id 1j9SkP-0004jK-Ei; Wed, 04 Mar 2020 12:03:33 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9SPJ-0005Xf-QU
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 11:41:47 +0000
+ id 1j9SkJ-0004iM-2O
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:03:28 +0000
 Received: from lupine.hi.pengutronix.de
  ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <p.zabel@pengutronix.de>)
- id 1j9SP7-0001eR-T3; Wed, 04 Mar 2020 12:41:33 +0100
+ id 1j9SkE-00046M-B3; Wed, 04 Mar 2020 13:03:22 +0100
 Received: from pza by lupine with local (Exim 4.92)
  (envelope-from <p.zabel@pengutronix.de>)
- id 1j9SP7-0005kZ-6Z; Wed, 04 Mar 2020 12:41:33 +0100
-Message-ID: <ac6eb54c01cce4ec52560ac622e024ab47f2136c.camel@pengutronix.de>
-Subject: Re: [RFC 10/11] reset: imx: Add audiomix reset controller support
+ id 1j9SkB-0006zp-D7; Wed, 04 Mar 2020 13:03:19 +0100
+Message-ID: <a2878b95da2afaeb0eac1a8f2f1991ef5ff9cace.camel@pengutronix.de>
+Subject: Re: [PATCH 25/89] reset: simple: Add reset callback
 From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Abel Vesa <abel.vesa@nxp.com>, Rob Herring <robh@kernel.org>, Shawn Guo
- <shawnguo@kernel.org>, Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam
- <fabio.estevam@nxp.com>, Mike Turquette <mturquette@baylibre.com>, Stephen
- Boyd <sboyd@kernel.org>, Lee Jones <lee.jones@linaro.org>, Anson Huang
- <anson.huang@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan
- <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>
-Date: Wed, 04 Mar 2020 12:41:33 +0100
-In-Reply-To: <1583226206-19758-11-git-send-email-abel.vesa@nxp.com>
-References: <1583226206-19758-1-git-send-email-abel.vesa@nxp.com>
- <1583226206-19758-11-git-send-email-abel.vesa@nxp.com>
+To: Maxime Ripard <maxime@cerno.tech>, Nicolas Saenz Julienne
+ <nsaenzjulienne@suse.de>, Eric Anholt <eric@anholt.net>
+Date: Wed, 04 Mar 2020 13:03:19 +0100
+In-Reply-To: <e7e2c84206f2cc8c0cb36cd734226f73f3331198.1582533919.git-series.maxime@cerno.tech>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <e7e2c84206f2cc8c0cb36cd734226f73f3331198.1582533919.git-series.maxime@cerno.tech>
 User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
@@ -53,8 +49,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_034146_018859_91754D38 
-X-CRM114-Status: GOOD (  20.45  )
+X-CRM114-CacheID: sfid-20200304_040327_114220_6DD765CB 
+X-CRM114-Status: GOOD (  19.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,224 +69,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Abel,
+Hi Maxime,
 
-On Tue, 2020-03-03 at 11:03 +0200, Abel Vesa wrote:
-> The imx-mix MFD driver registers some devices, one of which, in case of
-> audiomix, maps correctly to a reset controller type. This driver registers
-> a reset controller for that. For now, only the EARC specific resets are added.
-> 
-> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
-> Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
+On Mon, 2020-02-24 at 10:06 +0100, Maxime Ripard wrote:
+> The reset-simple code lacks a reset callback that is still pretty easy to
+> implement. The only real thing to consider is the delay needed for a device
+> to be reset, so let's expose that as part of the reset-simple driver data.
+>
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+
+This shoulod be done in such a way that simple reset drivers which do
+not set the reset delay continue to return -ENOTSUPP from
+reset_control_reset().
+
 > ---
->  drivers/reset/Kconfig                          |   7 ++
->  drivers/reset/Makefile                         |   1 +
->  drivers/reset/reset-imx-audiomix.c             | 122 +++++++++++++++++++++++++
->  include/dt-bindings/reset/imx-audiomix-reset.h |  15 +++
->  4 files changed, 145 insertions(+)
->  create mode 100644 drivers/reset/reset-imx-audiomix.c
->  create mode 100644 include/dt-bindings/reset/imx-audiomix-reset.h
+>  drivers/reset/reset-simple.c       | 21 +++++++++++++++++++++
+>  include/linux/reset/reset-simple.h |  4 ++++
+>  2 files changed, 25 insertions(+)
 > 
-> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-> index d9efbfd..2f8d9b3 100644
-> --- a/drivers/reset/Kconfig
-> +++ b/drivers/reset/Kconfig
-> @@ -81,6 +81,13 @@ config RESET_INTEL_GW
->  	  Say Y to control the reset signals provided by reset controller.
->  	  Otherwise, say N.
+> diff --git a/drivers/reset/reset-simple.c b/drivers/reset/reset-simple.c
+> index c854aa351640..7a8c56512ae9 100644
+> --- a/drivers/reset/reset-simple.c
+> +++ b/drivers/reset/reset-simple.c
+> @@ -11,6 +11,7 @@
+>   * Maxime Ripard <maxime.ripard@free-electrons.com>
+>   */
 >  
-> +config RESET_IMX_AUDIOMIX
-> +	bool "i.MX Audiomix Reset Driver" if COMPILE_TEST
-> +	depends on HAS_IOMEM
-> +	default ARCH_MXC
-> +	help
-> +	  This enables the audiomix reset controller driver for i.MX SoCs.
-> +
->  config RESET_LANTIQ
->  	bool "Lantiq XWAY Reset Driver" if COMPILE_TEST
->  	default SOC_TYPE_XWAY
-> diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
-> index 249ed35..cf23d38 100644
-> --- a/drivers/reset/Makefile
-> +++ b/drivers/reset/Makefile
-> @@ -12,6 +12,7 @@ obj-$(CONFIG_RESET_BRCMSTB_RESCAL) += reset-brcmstb-rescal.o
->  obj-$(CONFIG_RESET_HSDK) += reset-hsdk.o
->  obj-$(CONFIG_RESET_IMX7) += reset-imx7.o
->  obj-$(CONFIG_RESET_INTEL_GW) += reset-intel-gw.o
-> +obj-$(CONFIG_RESET_IMX_AUDIOMIX) += reset-imx-audiomix.o
->  obj-$(CONFIG_RESET_LANTIQ) += reset-lantiq.o
->  obj-$(CONFIG_RESET_LPC18XX) += reset-lpc18xx.o
->  obj-$(CONFIG_RESET_MESON) += reset-meson.o
-> diff --git a/drivers/reset/reset-imx-audiomix.c b/drivers/reset/reset-imx-audiomix.c
-> new file mode 100644
-> index 00000000..d1c62ef
-> --- /dev/null
-> +++ b/drivers/reset/reset-imx-audiomix.c
-> @@ -0,0 +1,122 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#include <dt-bindings/reset/imx-audiomix-reset.h>
-> +#include <linux/err.h>
-> +#include <linux/io.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
-> +#include <linux/reset-controller.h>
-> +
-> +#define IMX_AUDIOMIX_EARC_CTRL_REG	0x200
-> +
-> +#define IMX_AUDIOMIX_EARC_RESET_BIT	0x0
-> +#define IMX_AUDIOMIX_EARC_PHY_RESET_BIT	0x1
-> +
-> +struct imx_audiomix_reset_data {
-> +	void __iomem *base;
-> +	struct reset_controller_dev rcdev;
-> +	spinlock_t lock;
-> +};
-> +
-> +static int imx_audiomix_reset_set(struct reset_controller_dev *rcdev,
-> +			  unsigned long id, bool assert)
+> +#include <linux/delay.h>
+>  #include <linux/device.h>
+>  #include <linux/err.h>
+>  #include <linux/io.h>
+> @@ -63,6 +64,25 @@ static int reset_simple_deassert(struct reset_controller_dev *rcdev,
+>  	return reset_simple_update(rcdev, id, false);
+>  }
+>  
+> +static int reset_simple_reset(struct reset_controller_dev *rcdev,
+> +			       unsigned long id)
 > +{
-> +	struct imx_audiomix_reset_data *drvdata = container_of(rcdev,
-> +			struct imx_audiomix_reset_data, rcdev);
-> +	void __iomem *reg_addr = drvdata->base;
-> +	unsigned long flags;
-> +	unsigned int offset;
-> +	u32 reg;
+> +	struct reset_simple_data *data = to_reset_simple_data(rcdev);
+> +	int ret;
+
+You could just return -ENOTSUPP here if data->reset_ms == 0.
+
+> +	ret = reset_simple_assert(rcdev, id);
+> +	if (ret)
+> +		return ret;
 > +
-> +	switch (id) {
-> +	case IMX_AUDIOMIX_EARC_PHY_RESET:
-> +		reg_addr += IMX_AUDIOMIX_EARC_CTRL_REG;
-> +		offset = IMX_AUDIOMIX_EARC_PHY_RESET_BIT;
-> +		break;
-> +	case IMX_AUDIOMIX_EARC_RESET:
-> +		reg_addr += IMX_AUDIOMIX_EARC_CTRL_REG;
-> +		offset = IMX_AUDIOMIX_EARC_RESET_BIT;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (assert) {
-> +		pm_runtime_get_sync(rcdev->dev);
+> +	mdelay(data->reset_ms);
 
-This seems wrong. Why is the runtime PM reference count incremented when
-a reset is asserted ...
+Have you considered specifying the delay in microseconds instead?
+That would allow to use usleep_range() for shorter delays.
 
-> +		spin_lock_irqsave(&drvdata->lock, flags);
-> +		reg = readl(reg_addr);
-> +		writel(reg & ~BIT(offset), reg_addr);
-> +		spin_unlock_irqrestore(&drvdata->lock, flags);
-> +	} else {
-> +		spin_lock_irqsave(&drvdata->lock, flags);
-> +		reg = readl(reg_addr);
-> +		writel(reg | BIT(offset), reg_addr);
-> +		spin_unlock_irqrestore(&drvdata->lock, flags);
-> +		pm_runtime_put(rcdev->dev);
-
-... and decremented when a reset is deasserted?
-
-Apart from the runtime PM handling this looks like it could reuse reset-
-simple.
-
-> +	}
+> +	ret = reset_simple_deassert(rcdev, id);
+> +	if (ret)
+> +		return ret;
 > +
 > +	return 0;
 > +}
 > +
-> +static int imx_audiomix_reset_assert(struct reset_controller_dev *rcdev,
-> +			     unsigned long id)
-> +{
-> +	return imx_audiomix_reset_set(rcdev, id, true);
-> +}
-> +
-> +static int imx_audiomix_reset_deassert(struct reset_controller_dev *rcdev,
-> +			       unsigned long id)
-> +{
-> +	return imx_audiomix_reset_set(rcdev, id, false);
-> +}
-> +
-> +static const struct reset_control_ops imx_audiomix_reset_ops = {
-> +	.assert		= imx_audiomix_reset_assert,
-> +	.deassert	= imx_audiomix_reset_deassert,
-> +};
-> +
-> +static int imx_audiomix_reset_probe(struct platform_device *pdev)
-> +{
-> +	struct imx_audiomix_reset_data *drvdata;
-> +	struct device *dev = &pdev->dev;
-> +
-> +	drvdata = devm_kzalloc(&pdev->dev, sizeof(*drvdata), GFP_KERNEL);
-> +	if (drvdata == NULL)
-> +		return -ENOMEM;
-> +
-> +	drvdata->base = dev_get_drvdata(dev->parent);
-> +
-> +	platform_set_drvdata(pdev, drvdata);
-> +
-> +	pm_runtime_enable(dev);
-> +
-> +	spin_lock_init(&drvdata->lock);
-> +
-> +	drvdata->rcdev.owner     = THIS_MODULE;
-> +	drvdata->rcdev.nr_resets = IMX_AUDIOMIX_RESET_NUM;
-> +	drvdata->rcdev.ops       = &imx_audiomix_reset_ops;
-> +	drvdata->rcdev.of_node   = dev->of_node;
-> +	drvdata->rcdev.dev	 = dev;
-> +
-> +	return devm_reset_controller_register(dev, &drvdata->rcdev);
-> +}
-> +
-> +static const struct of_device_id imx_audiomix_reset_dt_ids[] = {
-> +	{ .compatible = "fsl,imx8mp-audiomix-reset", },
-> +	{ /* sentinel */ },
-> +};
-> +
-> +static struct platform_driver imx_audiomix_reset_driver = {
-> +	.probe	= imx_audiomix_reset_probe,
-> +	.driver = {
-> +		.name		= KBUILD_MODNAME,
-> +		.of_match_table	= imx_audiomix_reset_dt_ids,
-> +	},
-> +};
-> +module_platform_driver(imx_audiomix_reset_driver);
-> diff --git a/include/dt-bindings/reset/imx-audiomix-reset.h b/include/dt-bindings/reset/imx-audiomix-reset.h
-> new file mode 100644
-> index 00000000..2e26878
-> --- /dev/null
-> +++ b/include/dt-bindings/reset/imx-audiomix-reset.h
-> @@ -0,0 +1,15 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#ifndef DT_BINDING_RESET_IMX_AUDIOMIX_H
-> +#define DT_BINDING_RESET_IMX_AUDIOMIX_H
-> +
-> +#define IMX_AUDIOMIX_EARC_RESET		0x0
-> +#define IMX_AUDIOMIX_EARC_PHY_RESET	0x1
-> +
-> +#define IMX_AUDIOMIX_RESET_NUM		2
-> +
-> +#endif
-> +
+>  static int reset_simple_status(struct reset_controller_dev *rcdev,
+>  			       unsigned long id)
+>  {
+> @@ -80,6 +100,7 @@ static int reset_simple_status(struct reset_controller_dev *rcdev,
+>  const struct reset_control_ops reset_simple_ops = {
+>  	.assert		= reset_simple_assert,
+>  	.deassert	= reset_simple_deassert,
+> +	.reset		= reset_simple_reset,
+>  	.status		= reset_simple_status,
+>  };
+>  EXPORT_SYMBOL_GPL(reset_simple_ops);
+> diff --git a/include/linux/reset/reset-simple.h b/include/linux/reset/reset-simple.h
+> index 08ccb25a55e6..a5887f6cbe50 100644
+> --- a/include/linux/reset/reset-simple.h
+> +++ b/include/linux/reset/reset-simple.h
+> @@ -27,6 +27,9 @@
+>   * @status_active_low: if true, bits read back as cleared while the reset is
+>   *                     asserted. Otherwise, bits read back as set while the
+>   *                     reset is asserted.
+> + * @reset_ms: Minimum delay in milliseconds needed that needs to be
+> + *            waited for between an assert and a deassert to reset the
+> + *            device.
 
-The imx-audiomix-reset.h change should go into a separate patch,
-together with the binding docs for fsl,imx8mp-audiomix-reset.
+If multiple consumers with different delay requirements are connected to
+this reset controllers, this must the largest minimum delay. Could you
+add mention for this in the comment?
 
 regards
 Philipp
