@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 151C5178989
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 05:29:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A37DB1789FC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 06:20:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=8gByrbDMvQLT0iC98xU0cbQ8ZrcXR3AbNDU1nrHSiAA=; b=HmDHEc+bf2GoCXiAkGBiE+31KI
-	GltoPyiMMeBnScG1c3cF+qpzjImv0dSpZOIz5ea3xQB9Bs7nJ9unqSzGVdKWWjkgPotkETRSMv1hg
-	Iiq/2opGVSt+dACsR3zfsRMiTV3QyMZw+Ia0kxMpmU9uq44lt1BxA8D2VeT3XpP0emMDbkIW3n4DT
-	KlqBjsLpf6bRMvei1Y09crOYbk0OXoVISO2qccDrx+Mw9w2f0hUtl6vJ9h63P/Xok8dZ6o0ab/nMM
-	NLJkxbLT/gfoanKSsaqVyCbSvUjX2VMcxEw3jv9R+pARPshbOA++v2a3lID1+tIEbnUhwO2fgfhwe
-	tz0zkvJA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2S4IGscb90g02RCeFIXgtP7ckFBuXlWh0hs7hGcDGu4=; b=T+kbuw3A5WvyQx
+	O1zA/2hSJAejeRaSeE2NB7hx0qR3TXRG2Ga8NHbs8+09UuZgC4QMgfCkxCP2sStIjuZ5LHlR3VuIi
+	mdsr/jTEsqQusmJ9UKxtJdlNUcGI0d+CHuRgE6c8foWqlvdpwP70IkvMBrnYNv2FwEWaEWDYai6+w
+	yHUvjhMEA404QCo29jaURRLjjt5fLBpImVT0/251nbZd1JWVffL3RXIee8o70UnkPSsbHwfUAaL8U
+	H8ky+7hTXBlw/OoTBOHaix2tqne4AGBuMr8xZE1KooboDd7NS3riX5L3fRTNPVfVZN25U0OZiHefm
+	EzBnChYDUl8HecmSEZSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9LfE-0005mo-BH; Wed, 04 Mar 2020 04:29:44 +0000
+	id 1j9MRa-0003d9-1a; Wed, 04 Mar 2020 05:19:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Leg-0005RA-UE
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 04:29:13 +0000
+ id 1j9MRR-0003cJ-Kf; Wed, 04 Mar 2020 05:19:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0ECB131B;
- Tue,  3 Mar 2020 20:29:10 -0800 (PST)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.88])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 107DD3F534;
- Tue,  3 Mar 2020 20:29:02 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3EE0E31B;
+ Tue,  3 Mar 2020 21:19:31 -0800 (PST)
+Received: from [10.163.1.88] (unknown [10.163.1.88])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DDBA3F6CF;
+ Tue,  3 Mar 2020 21:19:16 -0800 (PST)
+Subject: Re: [RFC 1/3] mm/vma: Define a default value for VM_DATA_DEFAULT_FLAGS
+To: Vlastimil Babka <vbabka@suse.cz>, linux-mm@kvack.org
+References: <1583131666-15531-1-git-send-email-anshuman.khandual@arm.com>
+ <1583131666-15531-2-git-send-email-anshuman.khandual@arm.com>
+ <b243be54-7b5e-c6e9-fb68-46369d7d7aa4@suse.cz>
 From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
- catalin.marinas@arm.com, will@kernel.org, rppt@linux.ibm.com
-Subject: [PATCH V14 2/2] arm64/mm: Enable memory hot remove
-Date: Wed,  4 Mar 2020 09:58:43 +0530
-Message-Id: <1583296123-18546-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1583296123-18546-1-git-send-email-anshuman.khandual@arm.com>
-References: <1583296123-18546-1-git-send-email-anshuman.khandual@arm.com>
+Message-ID: <8b0f4c1b-f693-e139-4f66-ee4e1e88b95c@arm.com>
+Date: Wed, 4 Mar 2020 10:49:13 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <b243be54-7b5e-c6e9-fb68-46369d7d7aa4@suse.cz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_202911_264830_882B2425 
-X-CRM114-Status: GOOD (  22.53  )
+X-CRM114-CacheID: sfid-20200303_211933_767304_D8B1D833 
+X-CRM114-Status: GOOD (  14.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,529 +64,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ira.weiny@intel.com, david@redhat.com,
- mgorman@techsingularity.net, steve.capper@arm.com, Robin.Murphy@arm.com,
- steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
- arunks@codeaurora.org, dan.j.williams@intel.com, anshuman.khandual@arm.com,
- logang@deltatee.com, valentin.schneider@arm.com, suzuki.poulose@arm.com,
- osalvador@suse.de
-MIME-Version: 1.0
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Guo Ren <guoren@kernel.org>, sparclinux@vger.kernel.org,
+ linux-hexagon@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Jonas Bonn <jonas@southpole.se>, linux-s390@vger.kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-c6x-dev@linux-c6x.org,
+ Brian Cain <bcain@codeaurora.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, linux-parisc@vger.kernel.org,
+ Mark Salter <msalter@redhat.com>, Paul Burton <paulburton@kernel.org>,
+ uclinux-h8-devel@lists.sourceforge.jp, linux-xtensa@linux-xtensa.org,
+ Jeff Dike <jdike@addtoit.com>, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Richard Henderson <rth@twiddle.net>, Chris Zankel <chris@zankel.net>,
+ Michal Simek <monstr@monstr.eu>, Tony Luck <tony.luck@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, Nick Hu <nickhu@andestech.com>,
+ Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-alpha@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arch code for hot-remove must tear down portions of the linear map and
-vmemmap corresponding to memory being removed. In both cases the page
-tables mapping these regions must be freed, and when sparse vmemmap is in
-use the memory backing the vmemmap must also be freed.
 
-This patch adds unmap_hotplug_range() and free_empty_tables() helpers which
-can be used to tear down either region and calls it from vmemmap_free() and
-___remove_pgd_mapping(). The free_mapped argument determines whether the
-backing memory will be freed.
 
-It makes two distinct passes over the kernel page table. In the first pass
-with unmap_hotplug_range() it unmaps, invalidates applicable TLB cache and
-frees backing memory if required (vmemmap) for each mapped leaf entry. In
-the second pass with free_empty_tables() it looks for empty page table
-sections whose page table page can be unmapped, TLB invalidated and freed.
+On 03/03/2020 10:55 PM, Vlastimil Babka wrote:
+> On 3/2/20 7:47 AM, Anshuman Khandual wrote:
+>> There are many platforms with exact same value for VM_DATA_DEFAULT_FLAGS
+>> This creates a default value for VM_DATA_DEFAULT_FLAGS in line with the
+>> existing VM_STACK_DEFAULT_FLAGS. While here, also define some more macros
+>> with standard VMA access flag combinations that are used frequently across
+>> many platforms. Apart from simplification, this reduces code duplication
+>> as well.
+>>
+>> Cc: Richard Henderson <rth@twiddle.net>
+>> Cc: Vineet Gupta <vgupta@synopsys.com>
+>> Cc: Russell King <linux@armlinux.org.uk>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Mark Salter <msalter@redhat.com>
+>> Cc: Guo Ren <guoren@kernel.org>
+>> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
+>> Cc: Brian Cain <bcain@codeaurora.org>
+>> Cc: Tony Luck <tony.luck@intel.com>
+>> Cc: Geert Uytterhoeven <geert@linux-m68k.org>
+>> Cc: Michal Simek <monstr@monstr.eu>
+>> Cc: Ralf Baechle <ralf@linux-mips.org>
+>> Cc: Paul Burton <paulburton@kernel.org>
+>> Cc: Nick Hu <nickhu@andestech.com>
+>> Cc: Ley Foon Tan <ley.foon.tan@intel.com>
+>> Cc: Jonas Bonn <jonas@southpole.se>
+>> Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
+>> Cc: Michael Ellerman <mpe@ellerman.id.au>
+>> Cc: Paul Walmsley <paul.walmsley@sifive.com>
+>> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+>> Cc: Rich Felker <dalias@libc.org>
+>> Cc: "David S. Miller" <davem@davemloft.net>
+>> Cc: Guan Xuetao <gxt@pku.edu.cn>
+>> Cc: Thomas Gleixner <tglx@linutronix.de>
+>> Cc: Jeff Dike <jdike@addtoit.com>
+>> Cc: Chris Zankel <chris@zankel.net>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Cc: linux-alpha@vger.kernel.org
+>> Cc: linux-kernel@vger.kernel.org
+>> Cc: linux-snps-arc@lists.infradead.org
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: linux-c6x-dev@linux-c6x.org
+>> Cc: uclinux-h8-devel@lists.sourceforge.jp
+>> Cc: linux-hexagon@vger.kernel.org
+>> Cc: linux-ia64@vger.kernel.org
+>> Cc: linux-m68k@lists.linux-m68k.org
+>> Cc: linux-mips@vger.kernel.org
+>> Cc: nios2-dev@lists.rocketboards.org
+>> Cc: openrisc@lists.librecores.org
+>> Cc: linux-parisc@vger.kernel.org
+>> Cc: linuxppc-dev@lists.ozlabs.org
+>> Cc: linux-riscv@lists.infradead.org
+>> Cc: linux-s390@vger.kernel.org
+>> Cc: linux-sh@vger.kernel.org
+>> Cc: sparclinux@vger.kernel.org
+>> Cc: linux-um@lists.infradead.org
+>> Cc: linux-xtensa@linux-xtensa.org
+>> Cc: linux-mm@kvack.org
+>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com
+> Reviewed-by: Vlastimil Babka <vbabka@suse.cz>
+> 
+> Nit:
+> 
+>> diff --git a/include/linux/mm.h b/include/linux/mm.h
+>> index b0e53ef13ff1..7a764ae6ab68 100644
+>> --- a/include/linux/mm.h
+>> +++ b/include/linux/mm.h
+>> @@ -342,6 +342,21 @@ extern unsigned int kobjsize(const void *objp);
+>>  /* Bits set in the VMA until the stack is in its final location */
+>>  #define VM_STACK_INCOMPLETE_SETUP	(VM_RAND_READ | VM_SEQ_READ)
+>>  
+>> +#define TASK_EXEC ((current->personality & READ_IMPLIES_EXEC) ? VM_EXEC : 0)
+>> +
+>> +/* Common data flag combinations */
+>> +#define VM_DATA_FLAGS_TSK_EXEC	(VM_READ | VM_WRITE | TASK_EXEC | \
+>> +				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
+>> +#define VM_DATA_FLAGS_NON_EXEC	(VM_READ | VM_WRITE | VM_MAYREAD | \
+>> +				 VM_MAYWRITE | VM_MAYEXEC)
+>> +#define VM_DATA_FLAGS_EXEC	(VM_READ | VM_WRITE | VM_EXEC | \
+>> +				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
+>> +
+>> +#ifndef VM_DATA_DEFAULT_FLAGS		/* arch can override this */
+>> +#define VM_DATA_DEFAULT_FLAGS	(VM_READ | VM_WRITE | VM_EXEC | \
+>> +				 VM_MAYREAD | VM_MAYWRITE | VM_MAYEXEC)
+> 
+> Should you use VM_DATA_FLAGS_EXEC here? Yeah one more macro to expand, but it's
+> right above this.
 
-While freeing intermediate level page table pages bail out if any of its
-entries are still valid. This can happen for partially filled kernel page
-table either from a previously attempted failed memory hot add or while
-removing an address range which does not span the entire page table page
-range.
+Sure, can do that.
 
-The vmemmap region may share levels of table with the vmalloc region.
-There can be conflicts between hot remove freeing page table pages with
-a concurrent vmalloc() walking the kernel page table. This conflict can
-not just be solved by taking the init_mm ptl because of existing locking
-scheme in vmalloc(). So free_empty_tables() implements a floor and ceiling
-method which is borrowed from user page table tear with free_pgd_range()
-which skips freeing page table pages if intermediate address range is not
-aligned or maximum floor-ceiling might not own the entire page table page.
-
-Boot memory on arm64 cannot be removed. Hence this registers a new memory
-hotplug notifier which prevents boot memory offlining and it's removal.
-
-While here update arch_add_memory() to handle __add_pages() failures by
-just unmapping recently added kernel linear mapping. Now enable memory hot
-remove on arm64 platforms by default with ARCH_ENABLE_MEMORY_HOTREMOVE.
-
-This implementation is overall inspired from kernel page table tear down
-procedure on X86 architecture and user page table tear down method.
-
-[Mike and Catalin added P4D page table level support]
-
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm64/Kconfig              |   3 +
- arch/arm64/include/asm/memory.h |   1 +
- arch/arm64/mm/mmu.c             | 379 +++++++++++++++++++++++++++++++-
- 3 files changed, 374 insertions(+), 9 deletions(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 0b30e884e088..8fb0ba221a26 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -281,6 +281,9 @@ config ZONE_DMA32
- config ARCH_ENABLE_MEMORY_HOTPLUG
- 	def_bool y
- 
-+config ARCH_ENABLE_MEMORY_HOTREMOVE
-+	def_bool y
-+
- config SMP
- 	def_bool y
- 
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index 4d94676e5a8b..2be67b232499 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -54,6 +54,7 @@
- #define MODULES_VADDR		(BPF_JIT_REGION_END)
- #define MODULES_VSIZE		(SZ_128M)
- #define VMEMMAP_START		(-VMEMMAP_SIZE - SZ_2M)
-+#define VMEMMAP_END		(VMEMMAP_START + VMEMMAP_SIZE)
- #define PCI_IO_END		(VMEMMAP_START - SZ_2M)
- #define PCI_IO_START		(PCI_IO_END - PCI_IO_SIZE)
- #define FIXADDR_TOP		(PCI_IO_START - SZ_2M)
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 128f70852bf3..9b08f7c7e6f0 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -17,6 +17,7 @@
- #include <linux/mman.h>
- #include <linux/nodemask.h>
- #include <linux/memblock.h>
-+#include <linux/memory.h>
- #include <linux/fs.h>
- #include <linux/io.h>
- #include <linux/mm.h>
-@@ -724,6 +725,312 @@ int kern_addr_valid(unsigned long addr)
- 
- 	return pfn_valid(pte_pfn(pte));
- }
-+
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+static void free_hotplug_page_range(struct page *page, size_t size)
-+{
-+	WARN_ON(PageReserved(page));
-+	free_pages((unsigned long)page_address(page), get_order(size));
-+}
-+
-+static void free_hotplug_pgtable_page(struct page *page)
-+{
-+	free_hotplug_page_range(page, PAGE_SIZE);
-+}
-+
-+static bool pgtable_range_aligned(unsigned long start, unsigned long end,
-+				  unsigned long floor, unsigned long ceiling,
-+				  unsigned long mask)
-+{
-+	start &= mask;
-+	if (start < floor)
-+		return false;
-+
-+	if (ceiling) {
-+		ceiling &= mask;
-+		if (!ceiling)
-+			return false;
-+	}
-+
-+	if (end - 1 > ceiling - 1)
-+		return false;
-+	return true;
-+}
-+
-+static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	pte_t *ptep, pte;
-+
-+	do {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+		if (pte_none(pte))
-+			continue;
-+
-+		WARN_ON(!pte_present(pte));
-+		pte_clear(&init_mm, addr, ptep);
-+		flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+		if (free_mapped)
-+			free_hotplug_page_range(pte_page(pte), PAGE_SIZE);
-+	} while (addr += PAGE_SIZE, addr < end);
-+}
-+
-+static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	unsigned long next;
-+	pmd_t *pmdp, pmd;
-+
-+	do {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd));
-+		if (pmd_sect(pmd)) {
-+			pmd_clear(pmdp);
-+
-+			/*
-+			 * One TLBI should be sufficient here as the PMD_SIZE
-+			 * range is mapped with a single block entry.
-+			 */
-+			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+			if (free_mapped)
-+				free_hotplug_page_range(pmd_page(pmd),
-+							PMD_SIZE);
-+			continue;
-+		}
-+		WARN_ON(!pmd_table(pmd));
-+		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_pud_range(p4d_t *p4dp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	unsigned long next;
-+	pud_t *pudp, pud;
-+
-+	do {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(p4dp, addr);
-+		pud = READ_ONCE(*pudp);
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud));
-+		if (pud_sect(pud)) {
-+			pud_clear(pudp);
-+
-+			/*
-+			 * One TLBI should be sufficient here as the PUD_SIZE
-+			 * range is mapped with a single block entry.
-+			 */
-+			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
-+			if (free_mapped)
-+				free_hotplug_page_range(pud_page(pud),
-+							PUD_SIZE);
-+			continue;
-+		}
-+		WARN_ON(!pud_table(pud));
-+		unmap_hotplug_pmd_range(pudp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_p4d_range(pgd_t *pgdp, unsigned long addr,
-+				    unsigned long end, bool free_mapped)
-+{
-+	unsigned long next;
-+	p4d_t *p4dp, p4d;
-+
-+	do {
-+		next = p4d_addr_end(addr, end);
-+		p4dp = p4d_offset(pgdp, addr);
-+		p4d = READ_ONCE(*p4dp);
-+		if (p4d_none(p4d))
-+			continue;
-+
-+		WARN_ON(!p4d_present(p4d));
-+		unmap_hotplug_pud_range(p4dp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void unmap_hotplug_range(unsigned long addr, unsigned long end,
-+				bool free_mapped)
-+{
-+	unsigned long next;
-+	pgd_t *pgdp, pgd;
-+
-+	do {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		unmap_hotplug_p4d_range(pgdp, addr, next, free_mapped);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void free_empty_pte_table(pmd_t *pmdp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	pte_t *ptep, pte;
-+	unsigned long i, start = addr;
-+
-+	do {
-+		ptep = pte_offset_kernel(pmdp, addr);
-+		pte = READ_ONCE(*ptep);
-+
-+		/*
-+		 * This is just a sanity check here which verifies that
-+		 * pte clearing has been done by earlier unmap loops.
-+		 */
-+		WARN_ON(!pte_none(pte));
-+	} while (addr += PAGE_SIZE, addr < end);
-+
-+	if (!pgtable_range_aligned(start, end, floor, ceiling, PMD_MASK))
-+		return;
-+
-+	/*
-+	 * Check whether we can free the pte page if the rest of the
-+	 * entries are empty. Overlap with other regions have been
-+	 * handled by the floor/ceiling check.
-+	 */
-+	ptep = pte_offset_kernel(pmdp, 0UL);
-+	for (i = 0; i < PTRS_PER_PTE; i++) {
-+		if (!pte_none(READ_ONCE(ptep[i])))
-+			return;
-+	}
-+
-+	pmd_clear(pmdp);
-+	__flush_tlb_kernel_pgtable(start);
-+	free_hotplug_pgtable_page(virt_to_page(ptep));
-+}
-+
-+static void free_empty_pmd_table(pud_t *pudp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	pmd_t *pmdp, pmd;
-+	unsigned long i, next, start = addr;
-+
-+	do {
-+		next = pmd_addr_end(addr, end);
-+		pmdp = pmd_offset(pudp, addr);
-+		pmd = READ_ONCE(*pmdp);
-+		if (pmd_none(pmd))
-+			continue;
-+
-+		WARN_ON(!pmd_present(pmd) || !pmd_table(pmd) || pmd_sect(pmd));
-+		free_empty_pte_table(pmdp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 2)
-+		return;
-+
-+	if (!pgtable_range_aligned(start, end, floor, ceiling, PUD_MASK))
-+		return;
-+
-+	/*
-+	 * Check whether we can free the pmd page if the rest of the
-+	 * entries are empty. Overlap with other regions have been
-+	 * handled by the floor/ceiling check.
-+	 */
-+	pmdp = pmd_offset(pudp, 0UL);
-+	for (i = 0; i < PTRS_PER_PMD; i++) {
-+		if (!pmd_none(READ_ONCE(pmdp[i])))
-+			return;
-+	}
-+
-+	pud_clear(pudp);
-+	__flush_tlb_kernel_pgtable(start);
-+	free_hotplug_pgtable_page(virt_to_page(pmdp));
-+}
-+
-+static void free_empty_pud_table(p4d_t *p4dp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	pud_t *pudp, pud;
-+	unsigned long i, next, start = addr;
-+
-+	do {
-+		next = pud_addr_end(addr, end);
-+		pudp = pud_offset(p4dp, addr);
-+		pud = READ_ONCE(*pudp);
-+		if (pud_none(pud))
-+			continue;
-+
-+		WARN_ON(!pud_present(pud) || !pud_table(pud) || pud_sect(pud));
-+		free_empty_pmd_table(pudp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+
-+	if (CONFIG_PGTABLE_LEVELS <= 3)
-+		return;
-+
-+	if (!pgtable_range_aligned(start, end, floor, ceiling, PGDIR_MASK))
-+		return;
-+
-+	/*
-+	 * Check whether we can free the pud page if the rest of the
-+	 * entries are empty. Overlap with other regions have been
-+	 * handled by the floor/ceiling check.
-+	 */
-+	pudp = pud_offset(p4dp, 0UL);
-+	for (i = 0; i < PTRS_PER_PUD; i++) {
-+		if (!pud_none(READ_ONCE(pudp[i])))
-+			return;
-+	}
-+
-+	p4d_clear(p4dp);
-+	__flush_tlb_kernel_pgtable(start);
-+	free_hotplug_pgtable_page(virt_to_page(pudp));
-+}
-+
-+static void free_empty_p4d_table(pgd_t *pgdp, unsigned long addr,
-+				 unsigned long end, unsigned long floor,
-+				 unsigned long ceiling)
-+{
-+	unsigned long next;
-+	p4d_t *p4dp, p4d;
-+
-+	do {
-+		next = p4d_addr_end(addr, end);
-+		p4dp = p4d_offset(pgdp, addr);
-+		p4d = READ_ONCE(*p4dp);
-+		if (p4d_none(p4d))
-+			continue;
-+
-+		WARN_ON(!p4d_present(p4d));
-+		free_empty_pud_table(p4dp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+}
-+
-+static void free_empty_tables(unsigned long addr, unsigned long end,
-+			      unsigned long floor, unsigned long ceiling)
-+{
-+	unsigned long next;
-+	pgd_t *pgdp, pgd;
-+
-+	do {
-+		next = pgd_addr_end(addr, end);
-+		pgdp = pgd_offset_k(addr);
-+		pgd = READ_ONCE(*pgdp);
-+		if (pgd_none(pgd))
-+			continue;
-+
-+		WARN_ON(!pgd_present(pgd));
-+		free_empty_p4d_table(pgdp, addr, next, floor, ceiling);
-+	} while (addr = next, addr < end);
-+}
-+#endif
-+
- #ifdef CONFIG_SPARSEMEM_VMEMMAP
- #if !ARM64_SWAPPER_USES_SECTION_MAPS
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
-@@ -771,6 +1078,12 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- void vmemmap_free(unsigned long start, unsigned long end,
- 		struct vmem_altmap *altmap)
- {
-+#ifdef CONFIG_MEMORY_HOTPLUG
-+	WARN_ON((start < VMEMMAP_START) || (end > VMEMMAP_END));
-+
-+	unmap_hotplug_range(start, end, true);
-+	free_empty_tables(start, end, VMEMMAP_START, VMEMMAP_END);
-+#endif
- }
- #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
- 
-@@ -1049,10 +1362,21 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
- }
- 
- #ifdef CONFIG_MEMORY_HOTPLUG
-+static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
-+{
-+	unsigned long end = start + size;
-+
-+	WARN_ON(pgdir != init_mm.pgd);
-+	WARN_ON((start < PAGE_OFFSET) || (end > PAGE_END));
-+
-+	unmap_hotplug_range(start, end, false);
-+	free_empty_tables(start, end, PAGE_OFFSET, PAGE_END);
-+}
-+
- int arch_add_memory(int nid, u64 start, u64 size,
- 			struct mhp_restrictions *restrictions)
- {
--	int flags = 0;
-+	int ret, flags = 0;
- 
- 	if (rodata_full || debug_pagealloc_enabled())
- 		flags = NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS;
-@@ -1062,22 +1386,59 @@ int arch_add_memory(int nid, u64 start, u64 size,
- 
- 	memblock_clear_nomap(start, size);
- 
--	return __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
-+	ret = __add_pages(nid, start >> PAGE_SHIFT, size >> PAGE_SHIFT,
- 			   restrictions);
-+	if (ret)
-+		__remove_pgd_mapping(swapper_pg_dir,
-+				     __phys_to_virt(start), size);
-+	return ret;
- }
-+
- void arch_remove_memory(int nid, u64 start, u64 size,
- 			struct vmem_altmap *altmap)
- {
- 	unsigned long start_pfn = start >> PAGE_SHIFT;
- 	unsigned long nr_pages = size >> PAGE_SHIFT;
- 
--	/*
--	 * FIXME: Cleanup page tables (also in arch_add_memory() in case
--	 * adding fails). Until then, this function should only be used
--	 * during memory hotplug (adding memory), not for memory
--	 * unplug. ARCH_ENABLE_MEMORY_HOTREMOVE must not be
--	 * unlocked yet.
--	 */
- 	__remove_pages(start_pfn, nr_pages, altmap);
-+	__remove_pgd_mapping(swapper_pg_dir, __phys_to_virt(start), size);
-+}
-+
-+/*
-+ * This memory hotplug notifier helps prevent boot memory from being
-+ * inadvertently removed as it blocks pfn range offlining process in
-+ * __offline_pages(). Hence this prevents both offlining as well as
-+ * removal process for boot memory which is initially always online.
-+ * In future if and when boot memory could be removed, this notifier
-+ * should be dropped and free_hotplug_page_range() should handle any
-+ * reserved pages allocated during boot.
-+ */
-+static int prevent_bootmem_remove_notifier(struct notifier_block *nb,
-+					   unsigned long action, void *data)
-+{
-+	struct mem_section *ms;
-+	struct memory_notify *arg = data;
-+	unsigned long end_pfn = arg->start_pfn + arg->nr_pages;
-+	unsigned long pfn = arg->start_pfn;
-+
-+	if (action != MEM_GOING_OFFLINE)
-+		return NOTIFY_OK;
-+
-+	for (; pfn < end_pfn; pfn += PAGES_PER_SECTION) {
-+		ms = __pfn_to_section(pfn);
-+		if (early_section(ms))
-+			return NOTIFY_BAD;
-+	}
-+	return NOTIFY_OK;
-+}
-+
-+static struct notifier_block prevent_bootmem_remove_nb = {
-+	.notifier_call = prevent_bootmem_remove_notifier,
-+};
-+
-+static int __init prevent_bootmem_remove_init(void)
-+{
-+	return register_memory_notifier(&prevent_bootmem_remove_nb);
- }
-+device_initcall(prevent_bootmem_remove_init);
- #endif
--- 
-2.20.1
-
+> 
+>> +#endif
+>> +
+>>  #ifndef VM_STACK_DEFAULT_FLAGS		/* arch can override this */
+>>  #define VM_STACK_DEFAULT_FLAGS VM_DATA_DEFAULT_FLAGS
+>>  #endif
+>>
+> 
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
