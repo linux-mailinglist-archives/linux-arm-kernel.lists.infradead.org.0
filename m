@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69DA5178ED9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 11:51:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BEA4178EF9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 11:53:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=REOV5PimvmKEJ/gATXD8KFNaW+ngjPqLzU1Yonv1i+E=; b=YKhobzjUlRlKRy
-	PCMq8kqvhaqgxdeRiLf+HukPeddL2gGzZ4D4j0YGPaLdjCK0BX767PYHzixXQUHEKEHIhBu6mVeqe
-	1sWuMHPps8ERuJlPm1YhIIwjyAeCKtkNiPpTx2BfcQAmlsTCCsIJHt/yagGz+2JgRqXZTGwU2Guke
-	ArnsJ9a1pH0/itO3rBKkmkcIe+b+NryWf04Bwc6tAG9YE0lfN+T/RTSibCKpel9J2ll1x4oohx027
-	tK/KsidAiuQPyZgjwJ1oL8so5IccdOpAFtb8ByX3OwT6BH5ZDwARxrhmAvdaMvgVNJsRycVWDYXqR
-	bEzgTcVbXH9btr91yp0g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MpMJrNFlo9OY0O2DHUV3Ax7elFYcyaunwJxRywLzWh8=; b=N+BxWGHQ/5pcHG
+	sEICub5Jh2sJnwpITnIlFjQnFSEB19+LwhOuKeslZdFAFItLufzU8DputyRgc8sIb86iBkgJq992N
+	C1SVJqXwy4Eibumy5Z8MrGzxOsSnfjAt1KsPe18tGPgjz3v1aey5a3lLC6ztJT84Pr9s6zi0N4AuU
+	6h4MHpLkGbteEKFerD7fZlYV2piYixhjkK0FO8duINHvf1S6ANlk5DpvzsNdlZYRGoz0jAt2AHG3Y
+	QSGUDm1YwAYwCN4qeyBR+YzVVBMquQYHNV5VRZ95kyOthbAQQj8JjRdCLrbuHFRcXxDSTHSr2sLm6
+	cQQIciV+wjySOe+ZcPLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Rc8-00039O-6k; Wed, 04 Mar 2020 10:50:56 +0000
+	id 1j9ReH-0003cg-Hb; Wed, 04 Mar 2020 10:53:09 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Rbv-00037K-Lf
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 10:50:45 +0000
+ id 1j9Re9-0003bD-T7
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 10:53:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C0C0030E;
- Wed,  4 Mar 2020 02:50:42 -0800 (PST)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 553B13F534;
- Wed,  4 Mar 2020 02:50:41 -0800 (PST)
-Date: Wed, 4 Mar 2020 10:50:39 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH v2 2/4] cpuidle: psci: Fixup support for domain idle
- states being zero
-Message-ID: <20200304105039.GC25004@bogus>
-References: <20200303203559.23995-1-ulf.hansson@linaro.org>
- <20200303203559.23995-3-ulf.hansson@linaro.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4981130E;
+ Wed,  4 Mar 2020 02:52:59 -0800 (PST)
+Received: from [10.37.12.88] (unknown [10.37.12.88])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA6DE3F534;
+ Wed,  4 Mar 2020 02:52:56 -0800 (PST)
+Subject: Re: [PATCH v5 16/17] arm64: compile the kernel with ptrauth return
+ address signing
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>
+References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
+ <1581931668-11559-17-git-send-email-amit.kachhap@arm.com>
+ <20200228182337.GK4019108@arrakis.emea.arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <d7efa284-77fe-9e60-3aa4-4d351550835b@arm.com>
+Date: Wed, 4 Mar 2020 10:53:16 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200303203559.23995-3-ulf.hansson@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200228182337.GK4019108@arrakis.emea.arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_025043_756069_2F90C785 
-X-CRM114-Status: GOOD (  17.53  )
+X-CRM114-CacheID: sfid-20200304_025301_985417_EBFF5C0A 
+X-CRM114-Status: GOOD (  15.93  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,61 +67,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 03, 2020 at 09:35:57PM +0100, Ulf Hansson wrote:
-> The current code intends to allow a PSCI PM domain to have none domain idle
-> states defined in DT. However, a few minor things needs to be fixed to make
-> this correctly supported, so let's do that.
->
-> Reported-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> Fixes: a65a397f2451 ("cpuidle: psci: Add support for PM domains by using genpd")
-> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> ---
->  drivers/cpuidle/cpuidle-psci-domain.c | 6 ++++++
->  1 file changed, 6 insertions(+)
->
-> diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
-> index 423f03bbeb74..c34b12c4069a 100644
-> --- a/drivers/cpuidle/cpuidle-psci-domain.c
-> +++ b/drivers/cpuidle/cpuidle-psci-domain.c
-> @@ -49,6 +49,9 @@ static int __init psci_pd_parse_state_nodes(struct genpd_power_state *states,
->  	int i, ret;
->  	u32 psci_state, *psci_state_buf;
->
-> +	if (!states)
-> +		return 0;
-> +
+Hi Catalin,
 
-Was any issue found ? Or just code inspection ? If states = NULL,
-state_count = 0, and I don't see anything blowing up. It may save couple
-of extra instruction execution.
+On 2/28/20 6:23 PM, Catalin Marinas wrote:
+> On Mon, Feb 17, 2020 at 02:57:47PM +0530, Amit Daniel Kachhap wrote:
+>> +ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+>> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+>> +# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
+>> +# to generate them and consequently to break the single image contract we pass it
+>> +# only to the assembler when clang is selected as a compiler. For the GNU toolchain
+>> +# this option is not used.
+>> +branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
+>> +KBUILD_CFLAGS += $(branch-prot-flags-y)
+>> +endif
+> 
+> Does this work with the clang integrated assembler? AFAIK it ignores the
+> -Wa, though it may be fine with the instructions generated by the
+> compiler. (while we don't officially support it, we merged patches to
+> facilitate it).
+> 
 
->  	for (i = 0; i < state_count; i++) {
->  		ret = psci_dt_parse_state_node(to_of_node(states[i].fwnode),
->  					&psci_state);
-> @@ -96,6 +99,9 @@ static void psci_pd_free_states(struct genpd_power_state *states,
->  {
->  	int i;
->
-> +	if (!states)
-> +		return;
-> +
+The kernel is currently built with "-no-integrated-as" (Makefile +538) when
+clang is selected. This means that the only assembler supported is the one
+provide by binutils in this scenario.
 
-Same here and kfree(NULL) is also valid.
+The only patch series that I am aware of that is trying to do something with the
+integrated as is [1] that uses it for inline assembly when LTO is enabled
+(mainly for Android kernels at the moment). And this series is still being
+reviewed.
 
---
+Curiosity, which one is the series you are referring to? And how do I enable the
+clang assembler for building the kernel?
+
+[1] https://github.com/samitolvanen/linux/commits/clang-cfi
+
+-- 
 Regards,
-Sudeep
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
