@@ -2,55 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DC89179214
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:12:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 330A417920C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:11:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lihdKOQ5xgyA872i7UkQoOFbzcsCEusraUirCJXg7U8=; b=TDi6iE5jfY+6AKeG69lAbaUGIO
-	If6I+CaED02y0OzZlydplSyItpsVTLc9Gn4hzqgwa9iU25VMQx9+0sPLMWlP86QuDrnhYJ6IfPbVv
-	uy2yXLte/1o9ljLU79hA3nNQo4u6Y0HOIkCfOkc5jgnLl4RF5PEJeJ5X0G/oVx+rGSgYiUhNNC8vy
-	RKIuU2BV1hdHF8Hc1Z4rU5FveJakv27QIa/9CEw1o1MFZjWrkypStVqlpOU04LxZ47q0OuORMk9hT
-	ipqIUI+/pD9KK1QzH99AQtL7iw2wskGIVxg0IzXqPpg7j/f7L+wGQo+x0pmzX5aI82kOS0dhs3NYf
-	HgdK/zVQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mrCGxBVuRiRc/n/o7cW1+Q7q/H3Co1e4wQE0ROv+FKA=; b=NRGAOD2SiviAsS
+	MBGsqhqmxi7FMh0+T7s2Bs+C2u1ldIwFk4jLHk5DSnJY076CEF7Mit8tfhLuUzu42OXhS2OefFzCy
+	/iYxgte2eAFbeLktI4voKVSnIfY+ScYxA/UrnM+kusZqOtv3ZCXfuXU6i0oEHxBRs10NUSkgUsv+C
+	h1PV4jQhZ+Uiith1oetwwGogRIaYe2/3kpy9/EA91uyf9Ac9FVHU4R8jR0WRhGK2z81Mda39v8RMP
+	wcDZT5Ujqo562TwMEjREbnoNEdp+4nk40QM+QOYu3hc715pKfzSjgNzFAj8xqFXoAjaRf6esWHcEV
+	tAPB4kykOt2XRFlRJV/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Ukf-0008T3-Mt; Wed, 04 Mar 2020 14:11:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Ujp-0007jF-5a
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:11:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 80A3A31B;
- Wed,  4 Mar 2020 06:11:04 -0800 (PST)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.88])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 605C03F6CF;
- Wed,  4 Mar 2020 06:11:00 -0800 (PST)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH V2 2/2] arm64/mm: Enable vmem_altmap support for vmemmap
- mappings
-Date: Wed,  4 Mar 2020 19:40:30 +0530
-Message-Id: <1583331030-7335-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1583331030-7335-1-git-send-email-anshuman.khandual@arm.com>
-References: <1583331030-7335-1-git-send-email-anshuman.khandual@arm.com>
+	id 1j9Ujp-0007bH-Hq; Wed, 04 Mar 2020 14:11:05 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9Uje-0007Yb-UC
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:10:58 +0000
+Received: by mail-wr1-x443.google.com with SMTP id r7so2588420wro.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Mar 2020 06:10:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=7HwHHOirHwI1c4j5Tv3u9lHj4prOjYmBbBNbHrFitZg=;
+ b=Q/6/YBabh+3hoAX2lwxr9pv+BA6F8RdNG6tLtX1bg/aislj9n8Gmj4CeXizdPlqgft
+ CmQpjJEBAbscYl1+fBWSTwIw3Q+wl4TrDmjZJrl5wmkDlW6cEO2OLALqUjnUpgfw44/u
+ XRD2SH+U+3LGbzsauCnxCczIwaG31q4mtJq6cN5NZdMgXdtdPJRXNnmjCr+94tPg+lLA
+ KHTfh6h5pCiaaBcIZl39MWPMll42zzUvIORJenCDE9jzUv9vXF8eUanvdU7aIzACWArf
+ 8xEZxTj5/LYzGeCYId9/Id5fwR1H6KylI5CO0NUUG2UMvrQ0U4LwsnJmTGCM23qHOhp1
+ tgUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=7HwHHOirHwI1c4j5Tv3u9lHj4prOjYmBbBNbHrFitZg=;
+ b=sMR3yUCNbE/XBvryrznpW4olcOWRDtAqMLx21uIGH+zgh6Hz+sGjhjGNqrQdgGxqII
+ q+ARRtRQQHbK/kS2xW9j9kzensXkEs1eCgQC/67WFWpIrsQ8L/QyX0yNiBPXcOmjSdY0
+ arJiH7uZ1aCCRuM+T7Bb5PMXRsTgt0XXn2bHou9iro2hIgplR0FgiQR1bdwBwMYe7CKY
+ dNQycvc8yVnA5oMFCICO1QrGRWxx2yRKBrJNS39c+E/2RQRAAYOk/zF4hmlVRQgoPzOo
+ iEXxQlJKgpY9n+yFsyIXB8FIIBpJV5qPBRTXzQ01YQ28Mf4dc3jK32xW10uj/cUwC9B3
+ G50g==
+X-Gm-Message-State: ANhLgQ3VUlBzwN9B9YbcIxTkLXpnsqKSlSVkW3MOCE4kj4qzAacx4DCl
+ VEijknBbuMJ4LaUHGu45hNVUkw==
+X-Google-Smtp-Source: ADFU+vtjRZ/ieGhvG1dNL4yvCidxtjrzWvostamf6vAXdMbRNS014Ivp7HqYWw4uSzXl8u6GytSgWA==
+X-Received: by 2002:a5d:698a:: with SMTP id g10mr4347543wru.155.1583331052514; 
+ Wed, 04 Mar 2020 06:10:52 -0800 (PST)
+Received: from myrica ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
+ by smtp.gmail.com with ESMTPSA id t124sm4805947wmg.13.2020.03.04.06.10.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Mar 2020 06:10:52 -0800 (PST)
+Date: Wed, 4 Mar 2020 15:10:45 +0100
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Subject: Re: [PATCH v4 07/26] arm64: mm: Pin down ASIDs for sharing mm with
+ devices
+Message-ID: <20200304141045.GD646000@myrica>
+References: <20200224182401.353359-1-jean-philippe@linaro.org>
+ <20200224182401.353359-8-jean-philippe@linaro.org>
+ <20200227174351.00004d0d@Huawei.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200227174351.00004d0d@Huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_061105_342991_886C4A0E 
-X-CRM114-Status: GOOD (  16.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200304_061056_420839_3FD8BA70 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,234 +99,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Yu Zhao <yuzhao@google.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Steve Capper <steve.capper@arm.com>,
- linux-kernel@vger.kernel.org, Hsin-Yi Wang <hsinyi@chromium.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
+ jacob.jun.pan@linux.intel.com,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
+ linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
+ yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Device memory ranges when getting hot added into ZONE_DEVICE, might require
-their vmemmap mapping's backing memory to be allocated from their own range
-instead of consuming system memory. This prevents large system memory usage
-for potentially large device memory ranges. Device driver communicates this
-request via vmem_altmap structure. Architecture needs to take this request
-into account while creating and tearing down vemmmap mappings.
+On Thu, Feb 27, 2020 at 05:43:51PM +0000, Jonathan Cameron wrote:
+> On Mon, 24 Feb 2020 19:23:42 +0100
+> Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+> 
+> > From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
+> > 
+> > To enable address space sharing with the IOMMU, introduce mm_context_get()
+> > and mm_context_put(), that pin down a context and ensure that it will keep
+> > its ASID after a rollover. Export the symbols to let the modular SMMUv3
+> > driver use them.
+> > 
+> > Pinning is necessary because a device constantly needs a valid ASID,
+> > unlike tasks that only require one when running. Without pinning, we would
+> > need to notify the IOMMU when we're about to use a new ASID for a task,
+> > and it would get complicated when a new task is assigned a shared ASID.
+> > Consider the following scenario with no ASID pinned:
+> > 
+> > 1. Task t1 is running on CPUx with shared ASID (gen=1, asid=1)
+> > 2. Task t2 is scheduled on CPUx, gets ASID (1, 2)
+> > 3. Task tn is scheduled on CPUy, a rollover occurs, tn gets ASID (2, 1)
+> >    We would now have to immediately generate a new ASID for t1, notify
+> >    the IOMMU, and finally enable task tn. We are holding the lock during
+> >    all that time, since we can't afford having another CPU trigger a
+> >    rollover. The IOMMU issues invalidation commands that can take tens of
+> >    milliseconds.
+> > 
+> > It gets needlessly complicated. All we wanted to do was schedule task tn,
+> > that has no business with the IOMMU. By letting the IOMMU pin tasks when
+> > needed, we avoid stalling the slow path, and let the pinning fail when
+> > we're out of shareable ASIDs.
+> > 
+> > After a rollover, the allocator expects at least one ASID to be available
+> > in addition to the reserved ones (one per CPU). So (NR_ASIDS - NR_CPUS -
+> > 1) is the maximum number of ASIDs that can be shared with the IOMMU.
+> > 
+> > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> A few more trivial points.
 
-This enables vmem_altmap support in vmemmap_populate() and vmemmap_free()
-which includes vmemmap_populate_basepages() used for ARM64_16K_PAGES and
-ARM64_64K_PAGES configs.
+I'll fix those, thanks
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Steve Capper <steve.capper@arm.com>
-Cc: David Hildenbrand <david@redhat.com>
-Cc: Yu Zhao <yuzhao@google.com>
-Cc: Hsin-Yi Wang <hsinyi@chromium.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm64/mm/mmu.c | 71 ++++++++++++++++++++++++++++++++-------------
- 1 file changed, 51 insertions(+), 20 deletions(-)
-
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 27cb95c471eb..0e0a0ecc812e 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -727,15 +727,30 @@ int kern_addr_valid(unsigned long addr)
- }
- 
- #ifdef CONFIG_MEMORY_HOTPLUG
--static void free_hotplug_page_range(struct page *page, size_t size)
-+static void free_hotplug_page_range(struct page *page, size_t size,
-+				    struct vmem_altmap *altmap)
- {
--	WARN_ON(PageReserved(page));
--	free_pages((unsigned long)page_address(page), get_order(size));
-+	if (altmap) {
-+		/*
-+		 * Though unmap_hotplug_range() will tear down altmap based
-+		 * vmemmap mappings at all page table levels, these mappings
-+		 * should only have been created either at PTE or PMD level
-+		 * with vmemmap_populate_basepages() or vmemmap_populate()
-+		 * respectively. Unmapping requests at any other level will
-+		 * be problematic. Drop these warnings when vmemmap mapping
-+		 * is supported at PUD (even perhaps P4D) level.
-+		 */
-+		WARN_ON((size != PAGE_SIZE) && (size != PMD_SIZE));
-+		vmem_altmap_free(altmap, size >> PAGE_SHIFT);
-+	} else {
-+		WARN_ON(PageReserved(page));
-+		free_pages((unsigned long)page_address(page), get_order(size));
-+	}
- }
- 
- static void free_hotplug_pgtable_page(struct page *page)
- {
--	free_hotplug_page_range(page, PAGE_SIZE);
-+	free_hotplug_page_range(page, PAGE_SIZE, NULL);
- }
- 
- static bool pgtable_range_aligned(unsigned long start, unsigned long end,
-@@ -758,7 +773,8 @@ static bool pgtable_range_aligned(unsigned long start, unsigned long end,
- }
- 
- static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
--				    unsigned long end, bool free_mapped)
-+				    unsigned long end, bool free_mapped,
-+				    struct vmem_altmap *altmap)
- {
- 	pte_t *ptep, pte;
- 
-@@ -772,12 +788,14 @@ static void unmap_hotplug_pte_range(pmd_t *pmdp, unsigned long addr,
- 		pte_clear(&init_mm, addr, ptep);
- 		flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
- 		if (free_mapped)
--			free_hotplug_page_range(pte_page(pte), PAGE_SIZE);
-+			free_hotplug_page_range(pte_page(pte),
-+						PAGE_SIZE, altmap);
- 	} while (addr += PAGE_SIZE, addr < end);
- }
- 
- static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
--				    unsigned long end, bool free_mapped)
-+				    unsigned long end, bool free_mapped,
-+				    struct vmem_altmap *altmap)
- {
- 	unsigned long next;
- 	pmd_t *pmdp, pmd;
-@@ -800,16 +818,17 @@ static void unmap_hotplug_pmd_range(pud_t *pudp, unsigned long addr,
- 			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
- 			if (free_mapped)
- 				free_hotplug_page_range(pmd_page(pmd),
--							PMD_SIZE);
-+							PMD_SIZE, altmap);
- 			continue;
- 		}
- 		WARN_ON(!pmd_table(pmd));
--		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped);
-+		unmap_hotplug_pte_range(pmdp, addr, next, free_mapped, altmap);
- 	} while (addr = next, addr < end);
- }
- 
- static void unmap_hotplug_pud_range(p4d_t *p4dp, unsigned long addr,
--				    unsigned long end, bool free_mapped)
-+				    unsigned long end, bool free_mapped,
-+				    struct vmem_altmap *altmap)
- {
- 	unsigned long next;
- 	pud_t *pudp, pud;
-@@ -832,16 +851,17 @@ static void unmap_hotplug_pud_range(p4d_t *p4dp, unsigned long addr,
- 			flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
- 			if (free_mapped)
- 				free_hotplug_page_range(pud_page(pud),
--							PUD_SIZE);
-+							PUD_SIZE, altmap);
- 			continue;
- 		}
- 		WARN_ON(!pud_table(pud));
--		unmap_hotplug_pmd_range(pudp, addr, next, free_mapped);
-+		unmap_hotplug_pmd_range(pudp, addr, next, free_mapped, altmap);
- 	} while (addr = next, addr < end);
- }
- 
- static void unmap_hotplug_p4d_range(pgd_t *pgdp, unsigned long addr,
--				    unsigned long end, bool free_mapped)
-+				    unsigned long end, bool free_mapped,
-+				    struct vmem_altmap *altmap)
- {
- 	unsigned long next;
- 	p4d_t *p4dp, p4d;
-@@ -854,16 +874,24 @@ static void unmap_hotplug_p4d_range(pgd_t *pgdp, unsigned long addr,
- 			continue;
- 
- 		WARN_ON(!p4d_present(p4d));
--		unmap_hotplug_pud_range(p4dp, addr, next, free_mapped);
-+		unmap_hotplug_pud_range(p4dp, addr, next, free_mapped, altmap);
- 	} while (addr = next, addr < end);
- }
- 
- static void unmap_hotplug_range(unsigned long addr, unsigned long end,
--				bool free_mapped)
-+				bool free_mapped, struct vmem_altmap *altmap)
- {
- 	unsigned long next;
- 	pgd_t *pgdp, pgd;
- 
-+	/*
-+	 * vmem_altmap can only be used as backing memory in a given
-+	 * page table mapping. In case backing memory itself is not
-+	 * being freed, then altmap is irrelevant. Warn about this
-+	 * inconsistency when encountered.
-+	 */
-+	WARN_ON(!free_mapped && altmap);
-+
- 	do {
- 		next = pgd_addr_end(addr, end);
- 		pgdp = pgd_offset_k(addr);
-@@ -872,7 +900,7 @@ static void unmap_hotplug_range(unsigned long addr, unsigned long end,
- 			continue;
- 
- 		WARN_ON(!pgd_present(pgd));
--		unmap_hotplug_p4d_range(pgdp, addr, next, free_mapped);
-+		unmap_hotplug_p4d_range(pgdp, addr, next, free_mapped, altmap);
- 	} while (addr = next, addr < end);
- }
- 
-@@ -1036,7 +1064,7 @@ static void free_empty_tables(unsigned long addr, unsigned long end,
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- 		struct vmem_altmap *altmap)
- {
--	return vmemmap_populate_basepages(start, end, node, NULL);
-+	return vmemmap_populate_basepages(start, end, node, altmap);
- }
- #else	/* !ARM64_SWAPPER_USES_SECTION_MAPS */
- int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
-@@ -1063,7 +1091,10 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
- 		if (pmd_none(READ_ONCE(*pmdp))) {
- 			void *p = NULL;
- 
--			p = vmemmap_alloc_block_buf(PMD_SIZE, node);
-+			if (altmap)
-+				p = altmap_alloc_block_buf(PMD_SIZE, altmap);
-+			else
-+				p = vmemmap_alloc_block_buf(PMD_SIZE, node);
- 			if (!p)
- 				return -ENOMEM;
- 
-@@ -1081,7 +1112,7 @@ void vmemmap_free(unsigned long start, unsigned long end,
- #ifdef CONFIG_MEMORY_HOTPLUG
- 	WARN_ON((start < VMEMMAP_START) || (end > VMEMMAP_END));
- 
--	unmap_hotplug_range(start, end, true);
-+	unmap_hotplug_range(start, end, true, altmap);
- 	free_empty_tables(start, end, VMEMMAP_START, VMEMMAP_END);
- #endif
- }
-@@ -1369,7 +1400,7 @@ static void __remove_pgd_mapping(pgd_t *pgdir, unsigned long start, u64 size)
- 	WARN_ON(pgdir != init_mm.pgd);
- 	WARN_ON((start < PAGE_OFFSET) || (end > PAGE_END));
- 
--	unmap_hotplug_range(start, end, false);
-+	unmap_hotplug_range(start, end, false, NULL);
- 	free_empty_tables(start, end, PAGE_OFFSET, PAGE_END);
- }
- 
--- 
-2.20.1
-
+Jean
 
 _______________________________________________
 linux-arm-kernel mailing list
