@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6620B179015
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:09:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0EC1179021
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:18:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJGr+ubIBcLi6OoeXAMlgDLnonlu+GNlOw9uuo3bkOE=; b=SywgIZP3bR5qCo
-	MsGOU4XSCdF1OkLzh63qFSm8cXrRo5RTnwTpbcQlmHKI6nZS8u0CcTFAKRqunCjCg/WeAHtkbbSDc
-	KdJyzzcqrLfEcKGEBraI0FC/3WqJHLq5uNWWKy904O0UAOrJBjGKodUiYglA6T0sK73Rn8yVdVk/t
-	u3DcNml3iGo4RqW+8lW75asQjXEavhmwJNNrrEr1kPyavWKwJxQc+8SwjQZrVnJh/kayYASb4xx4S
-	32Qj/sZ37azC85s/MqpSL0Rud0Xh1X6WJHM41TBbysDjrPTtXrsCDC8c+BJnB4ALkIMaZ+wUikKyZ
-	jzBmMQ8SjHG8MNjfOPJQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vR527CTsv6BudS3zXF+pkOleWjbz106ale2XYak67JY=; b=lU5WWHfoNq1Ge6
+	Uw+NUfQAgdzl6P0EyQ6T+EwY4Er97upXvfni6/jhRML2Szqu6sPc6Ns5gMl8TmcOIvDabW4v2ZwCl
+	TRoVI1tpYwBN1hvSWsdkRag66A8kRh5y2KNb5tgXRGVy0oRg1DFPIdeY2HIDuA00KLwvt4bYwl1SJ
+	1kxq2exnnVPKZR9FRBWGN/POo4uN4tyMbIijhejcXUQ16USPtMC6k5PRLQJWNT2zZjNGfULt8y25M
+	HuVIahHdNYaOOIwH3CvCuEKT9orpnjIbMSlYbBHUw/hn2AaHNebdCjJ/wnttCdLsddx8E/Am2Hurj
+	v/+tQ01EdA9N9MzS2gOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Sq9-0006Zz-Nw; Wed, 04 Mar 2020 12:09:29 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1j9Syy-00020v-Ds; Wed, 04 Mar 2020 12:18:36 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Sq1-0006ZL-Lw
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:09:23 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 024C9D8V129529;
- Wed, 4 Mar 2020 06:09:13 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1583323753;
- bh=JhEJq56rPjtPZfyWnCQPE/SGrmng2ck/eXL4JnTgN3I=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=dPCu8AlZNR7LEeL7hJy25iCw052pNU8U+kOPBkWY1t5f+ORnmEn1/esc7WQc5ds8B
- 2W8giGBQXA9qmLIQBdWQGm3jsZtpMmvg4ceFe3892gtQZ39wHL3XGTKnCJ5HaqOsU1
- R+KVVb8MUryDec2GtTYfYrRw/yfAQVWBip8AQuuE=
-Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 024C9DpU052249
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 4 Mar 2020 06:09:13 -0600
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 4 Mar
- 2020 06:09:13 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 4 Mar 2020 06:09:13 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 024C9Aop088563;
- Wed, 4 Mar 2020 06:09:10 -0600
-Subject: Re: [PATCH v2 0/7] phy: socionext: Add some improvements and legacy
- SoC support
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Masahiro Yamada
- <yamada.masahiro@socionext.com>
-References: <1580367165-16760-1-git-send-email-hayashi.kunihiko@socionext.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <0ec7417e-8c83-176e-6aab-c53541db823c@ti.com>
-Date: Wed, 4 Mar 2020 17:43:45 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j9Syp-00020G-Pd
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:18:30 +0000
+Received: by mail-ua1-x944.google.com with SMTP id o42so567312uad.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Mar 2020 04:18:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5ENDQdK0BnTgBrmbo1z33qY08hnGuLOjFToJM+EoACQ=;
+ b=dAcvZ6LIDOcMeA4h8UWulv+NWq+8i2LMIfn4ZJ/bK+tyXrXb63qiJ3FWzP2+iXu5AD
+ Bv2EGQi1kO/CG2yr6MHW18uOVD8P+728bCK6CcqUYAGPGnHaDDzRqriswg794wxTvJFj
+ 4jJ4CJQP8cILOiZ4idsLda7HIE9ig7ZvfxHbw+Z7/nsNeolzjOebgBijlLOLiFXCenuZ
+ E2tjdHg5/NdwbqF3FxUlnn/j1EEav4+2q/GL4kf7BxvvYYSSnot6pRUYKUayaKMo9Qig
+ 7nZqEuw69VfrGRIQ50xEb+2yABixBOayBmcG5hMLBPGWqrSzWhIRJUcJy7euMkBTI/Jh
+ FYAg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5ENDQdK0BnTgBrmbo1z33qY08hnGuLOjFToJM+EoACQ=;
+ b=Qg271GZE4rx7w9gvmqO5nFx3yxU+dCHNreSBqIwr9EQAK2GAtwSsR+3jMN1Xuf7ABd
+ GdvwuBWQQaUcIee5lOepSpYzSItxVDZL3kyjkHSo5SOqB+dHEmo08kC1Skp8IfFYByOq
+ FoC8itmJ26qe55BifenHXjeLRYYij3n9zVTF2eYlw7zC77u+1u72oDRbXlNBA1BTVMVj
+ 0Rs1BjNstgsSchKsBRcz6Z69S9lmxZ6Yf9HrcYs8uaPlf+kJe32n1ctxcz5CCgONdDay
+ Zqk1C8NRFpqVk0NFgJnH4QFZG621vGAd1baDVvV54dvRR4oLP0s2Tssh7Jy+a5m3bkU/
+ wWnA==
+X-Gm-Message-State: ANhLgQ3n/Xch0AZOYwdtCmht7OX2OIntXVxv4YueA9VeoA6rv3hqPdvy
+ MlqQqu7v4tgeKeeHgI2ZKlQ9AjhGlKady2b+XX6tkA==
+X-Google-Smtp-Source: ADFU+vs64WAXYstjh/9mMgNerdas9d2I6hWXLhFl8/qXXr1kzUvzPo2E7WUlATihcSCippJscfqookVKFmvVz0feZLE=
+X-Received: by 2002:ab0:20a:: with SMTP id 10mr1206957uas.19.1583324304979;
+ Wed, 04 Mar 2020 04:18:24 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <1580367165-16760-1-git-send-email-hayashi.kunihiko@socionext.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
+ <20200303203559.23995-3-ulf.hansson@linaro.org> <20200304105039.GC25004@bogus>
+In-Reply-To: <20200304105039.GC25004@bogus>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 4 Mar 2020 13:17:49 +0100
+Message-ID: <CAPDyKFqd0DswuyLCFQ1F6G7agCEEgf0vzofRVyBVVPQTn-vK+A@mail.gmail.com>
+Subject: Re: [PATCH v2 2/4] cpuidle: psci: Fixup support for domain idle
+ states being zero
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_040921_804790_324B0A89 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200304_041827_863118_717C438C 
+X-CRM114-Status: GOOD (  19.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,48 +92,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jassi Brar <jaswinder.singh@linaro.org>
+Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 4 Mar 2020 at 11:50, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Tue, Mar 03, 2020 at 09:35:57PM +0100, Ulf Hansson wrote:
+> > The current code intends to allow a PSCI PM domain to have none domain idle
+> > states defined in DT. However, a few minor things needs to be fixed to make
+> > this correctly supported, so let's do that.
+> >
+> > Reported-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> > Fixes: a65a397f2451 ("cpuidle: psci: Add support for PM domains by using genpd")
+> > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> > ---
+> >  drivers/cpuidle/cpuidle-psci-domain.c | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> >
+> > diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
+> > index 423f03bbeb74..c34b12c4069a 100644
+> > --- a/drivers/cpuidle/cpuidle-psci-domain.c
+> > +++ b/drivers/cpuidle/cpuidle-psci-domain.c
+> > @@ -49,6 +49,9 @@ static int __init psci_pd_parse_state_nodes(struct genpd_power_state *states,
+> >       int i, ret;
+> >       u32 psci_state, *psci_state_buf;
+> >
+> > +     if (!states)
+> > +             return 0;
+> > +
+>
+> Was any issue found ? Or just code inspection ? If states = NULL,
+> state_count = 0, and I don't see anything blowing up. It may save couple
+> of extra instruction execution.
 
+Code inspection, the real problem was fixed in patch 1.
 
-On 30/01/20 12:22 pm, Kunihiko Hayashi wrote:
-> This series adds some improvements to PHY interface drivers, and
-> adds legacy SoC support that needs to manage gio clock and reset.
+>
+> >       for (i = 0; i < state_count; i++) {
+> >               ret = psci_dt_parse_state_node(to_of_node(states[i].fwnode),
+> >                                       &psci_state);
+> > @@ -96,6 +99,9 @@ static void psci_pd_free_states(struct genpd_power_state *states,
+> >  {
+> >       int i;
+> >
+> > +     if (!states)
+> > +             return;
+> > +
+>
+> Same here and kfree(NULL) is also valid.
 
-merged, thanks!
+Yep, let's drop $subject patch from the series, it's not needed.
 
--Kishon
+Thanks for reviewing!
 
-> 
-> Changes since v1:
-> - dt-bindings: Add Reviewed-by: line
-> - Add SoC-dependent phy-mode function support for pcie-phy
-> 
-> Kunihiko Hayashi (7):
->   phy: socionext: Use devm_platform_ioremap_resource()
->   dt-bindings: phy: socionext: Add Pro5 support and remove Pro4 from
->     usb3-hsphy
->   phy: uniphier-usb3ss: Add Pro5 support
->   phy: uniphier-usb3hs: Add legacy SoC support for Pro5
->   phy: uniphier-usb3hs: Change Rx sync mode to avoid communication
->     failure
->   phy: uniphier-pcie: Add legacy SoC support for Pro5
->   phy: uniphier-pcie: Add SoC-dependent phy-mode function support
-> 
->  .../devicetree/bindings/phy/uniphier-pcie-phy.txt  |  13 ++-
->  .../bindings/phy/uniphier-usb3-hsphy.txt           |   6 +-
->  .../bindings/phy/uniphier-usb3-ssphy.txt           |   5 +-
->  drivers/phy/socionext/phy-uniphier-pcie.c          | 102 +++++++++++++++++----
->  drivers/phy/socionext/phy-uniphier-usb3hs.c        |  92 ++++++++++++++-----
->  drivers/phy/socionext/phy-uniphier-usb3ss.c        |   8 +-
->  6 files changed, 172 insertions(+), 54 deletions(-)
-> 
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
