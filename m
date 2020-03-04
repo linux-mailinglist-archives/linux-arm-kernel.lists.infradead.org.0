@@ -2,81 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AA001792A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:44:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B13B31792B1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:47:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+gRhXwHtE+MTtvGA6wphctQ3BGn9CrC+ikyc+/0uCMk=; b=uPjGlyO/eSGSPZ
-	4uh8aVpWjgOMm+/29EX8W7RVPXlsRec9M/peEhbbWQTv0X85MPPWo6i/7u0aIdjWR1B2zsjhpsbt0
-	XdZoY/4cGf8xqUGp2DUGhFexoyCcF9FnsxXUkug4l5LeORMCpmv3OY1j2UTjCEDOMsR0W0cd3xoaw
-	9uugn66FU7kqU7PWNi4B46Ke7FXnio2FIm0n2R296udPsR8gafB8538tgq8YKskNlwZrNbsgq+GAn
-	cRDszaC9scuRfNkpBGH67NhHmdMjoY6VRKnWw3i/PPl+3UWZSDEic0Tl28Fldldz0PM2Rd0CdEpA9
-	mS8djCyASj69Jf7C131Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2cTrHgrMo2QLNK1Kih2vTqfMVFOmkSD0gnA6cNNeI8Q=; b=rqIsrd7OxoHaKp
+	0svr1n0gNMRCVrsQ9E51gcq/NpnBPTWPtY/rXy7yZBNBxTU5bFlKXUI/82fbbj3UBb05vwfgkyRXD
+	JUMPYqYKtUeUNHlhQYHsliGF0EDA6/XRqTYn9EIX2bP4PBGtDhLeA9LFoXW3iBmk1qlufPnddI3nD
+	mk0XY0t4F4dEiKZOI+07M+HXHub64vGiYZvAqc3rlILWp6lDI+AMoZJiMFMutBa8qPb7LXSEwM6hq
+	bV6xXdURgMfk1FxBeRO8eBHGxv1kX2QorCEqSITNkOs/Hf37yAlXenWRnsDYiWgDfrneqMk+JDdsK
+	dsemE2e2GLeziQt7d3iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9VGD-0005Ka-Ie; Wed, 04 Mar 2020 14:44:33 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j9VIw-0006uU-Rz; Wed, 04 Mar 2020 14:47:22 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9VG7-0005K7-Lp
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:44:29 +0000
-Received: by mail-lj1-x243.google.com with SMTP id f13so2326708ljp.0
+ id 1j9VIi-0006u3-CN
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:47:09 +0000
+Received: by mail-ot1-f68.google.com with SMTP id x97so2227188ota.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 06:44:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=tYyOq+hrxAhHQ4C+tN2Qm0SMWYZSTQj65iUaePramxE=;
- b=emqRJLhIkHhwZdiDNOil36OjX5YUxTLlNz9BEZ5lVCcyc+AJHym0upRRkJgOd2v9W9
- 6+gfBbEbk7AsDFajiwjU3Te3Bl2Rthg9cee54W/fov/aGE477kY4wPA1Ryu+uQmYzFkn
- 06xWXFwzgtK/n6XhTgUU0N+M0wj4lDfwiuq4BsIIQfHBxrtY9YwEQi8z0M70M45tlMlu
- ouk4HNOW2SkXD1/1kkEB10iwamYuFZO9oPerzeJwfp+n4kr9BeeL6kx5eWPzca1uBijT
- 0qHSfnSxZHNt4QO7ObXuY9bbIV7xqEz1pWlRm3vccl1E32ciiVM+g8UsTA+UhByUyEDu
- 1Alw==
+ Wed, 04 Mar 2020 06:47:07 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=tYyOq+hrxAhHQ4C+tN2Qm0SMWYZSTQj65iUaePramxE=;
- b=FVuSOpjZgS4Wkt9RfQTOgx5RKPh0pxy1+/BpLjWO8wlt8KiEVguWA42Q3CDBEo8lN7
- yrxttBuXspPtdwxNmC8141jjQwh9fgv2uPtebgl3YP0NQKS3IZFL0Yc8i63O2yH0PjFH
- QQcXeoqSb6wpQosu+OwZr3dsbNZJr7g0+XQdvI+9ST1/BZkp/Ta9pNDtUtVerRc3Tj/j
- FlXkLhRK23lgVdz6sP5EU7VAU+KoIS6E3pS+IyCnkpMyAfv1hDxkjUcMdXybI5Km1E77
- FeASwMDlR+Zhc1PSvTd5/663BN4vBzZw3Ya2i6DajgKeLFx0NrASaX78sPBVqL6I5IHI
- TJsA==
-X-Gm-Message-State: ANhLgQ2dJOQjf4zmWavgnqMnygHTxp3jRd667JYz90MG+q18atycHWvC
- MdlzsnHntTCpc4oV683uJRKfD/T+nxlFJC9NTaJAiQ==
-X-Google-Smtp-Source: ADFU+vuHqs1AkmvRMBpn8wjy2QMfCytP9ZrjAuv7fqFkdxE1x//RCFyJ2giGiyqjd+2LszilninZxJXuYoEpXDI0SBE=
-X-Received: by 2002:a05:651c:44b:: with SMTP id
- g11mr2159036ljg.168.1583333064815; 
- Wed, 04 Mar 2020 06:44:24 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=e1DUnUjPD4cs9mZrpkxpL4JIApSZcJjsqgIO7F3uZcw=;
+ b=drDFbhPUp22vLRPutEimcF5bJDtW6iBGQYNb5rCaXK/MLKN43kNxuMfzmcJhsviCt6
+ nBXJXN0aTEFs51zDQ4HAhGHr/fe6vdOl5OXKP5v/y+4T21jDf25fz0nFNBlKVavurrsV
+ T/QhvEaOKt4DZJW+fmQ+wYA9jayNyHeHOj2ppsSFdL5Z2w5/17lE6tRtsiLFGBzNEBV5
+ Vtls84H9T62Vv/IWQgV+tNR0pJpDiA6LnGBr90J7Jyl6pOfyIetpYKOgS32diafwGdRQ
+ K24aO32TvtzNT3FAc5jkWQeG0BzMyMl65OVBcXV2pmzjCjVuJNFtGDRs4OAGW6vsBib/
+ BcgA==
+X-Gm-Message-State: ANhLgQ1OKsT/wFo1dX5YVdPm5FqxSYACYNJkIt1pVd+vs+qtqefPHVwk
+ YIHjxVbR+ia3EvT1KJv7JQ==
+X-Google-Smtp-Source: ADFU+vuv2Nvk4B7ivVbJLVEh0/GC20+gc6oP+nZrLgfo1+h+gcHdpJZ5L8QZydnr2GL6G7+II3O/RQ==
+X-Received: by 2002:a05:6830:155a:: with SMTP id
+ l26mr2644933otp.339.1583333226403; 
+ Wed, 04 Mar 2020 06:47:06 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id f20sm184242ots.47.2020.03.04.06.47.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Mar 2020 06:47:05 -0800 (PST)
+Received: (nullmailer pid 30371 invoked by uid 1000);
+ Wed, 04 Mar 2020 14:47:04 -0000
+Date: Wed, 4 Mar 2020 08:47:04 -0600
+From: Rob Herring <robh@kernel.org>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH 1/7] dt-bindings: arm: Correct links to idle states
+ definitions
+Message-ID: <20200304144704.GA30104@bogus>
+References: <20200303150749.30566-1-ulf.hansson@linaro.org>
+ <20200303150749.30566-2-ulf.hansson@linaro.org>
 MIME-Version: 1.0
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 4 Mar 2020 15:44:14 +0100
-Message-ID: <CACRpkdbbniYVnsE-pAmU2qCerswserNgEFtY48XQ+_K+DUNC9Q@mail.gmail.com>
-Subject: [GIT PULL] Versatile family DTS changes for kernel v5.7
-To: arm-soc <arm@kernel.org>, soc@kernel.org
+Content-Disposition: inline
+In-Reply-To: <20200303150749.30566-2-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_064427_745438_964B92F7 
-X-CRM114-Status: GOOD (  14.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200304_064708_424341_C7BCDF90 
+X-CRM114-Status: GOOD (  11.62  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,102 +96,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <Sudeep.Holla@arm.com>
+Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM/SoC maintainers,
+On Tue,  3 Mar 2020 16:07:43 +0100, Ulf Hansson wrote:
+> The arm,idle-state DT bindings recently got converted to the json-schema,
+> but some links are still pointing to the old, non-existing, txt file. Let's
+> update the links to fix this.
+> 
+> Fixes: baac82fe06db ("dt-bindings: arm: Convert arm,idle-state binding to DT schema")
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> ---
+>  Documentation/devicetree/bindings/arm/cpus.yaml               | 2 +-
+>  Documentation/devicetree/bindings/arm/msm/qcom,idle-state.txt | 2 +-
+>  Documentation/devicetree/bindings/arm/psci.yaml               | 2 +-
+>  3 files changed, 3 insertions(+), 3 deletions(-)
+> 
 
-Here is a set of patches fixing up the top level ARM Reference
-design DT bindings and also clean up the files themselves to
-conform better.
+Applied, thanks.
 
-You will notice that this hits bit arm and arm64 DTS files.
-This makes sense in this case, because as you know, the
-versatile express is special:
-arch/arm64/boot/dts/arm/vexpress-v2m-rs1.dtsi
-is a symlink to arm/boot/dts/vexpress-v2m-rs1.dtsi
-also the binding file for arm Versatile Express and
-arm64 Versatile Express/Juno is the same
-so because of the cross-dependencies it makes sense to
-patch all in one go.
-
-Please pull it in for v5.7!
-
-Yours,
-Linus Walleij
-
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-integrator.git
-tags/versatile-dts-v5.7-1
-
-for you to fetch changes up to bee7ff37ecf17317ef9295a6ab6e607db034f8a3:
-
-  ARM/arm64: dts: Rename SMB bus to just bus (2020-03-04 15:31:30 +0100)
-
-----------------------------------------------------------------
-Versatile DTS updates for the v5.7 series take one:
-
-- Schema validation for the top level of all ARM reference
-  designs: Integrator, Versatile, RealView, Juno.
-- Clean up some node names in the trees so they pass
-  validation fine.
-- Drop the old text bindings.
-- A top level DMA ranges patch from Rob.
-
-----------------------------------------------------------------
-Linus Walleij (8):
-      ARM: dts: Versatile: Use syscon as node name for IB2
-      ARM: dts: RealView: Fix the name of the SoC node
-      dt-bindings: arm: Add Integrator YAML schema
-      dt-bindings: arm: Add Versatile YAML schema
-      dt-bindings: arm: Add RealView YAML schema
-      dt-bindings: arm: Add Versatile Express and Juno YAML schema
-      dt-bindings: arm: Drop the non-YAML bindings
-      ARM/arm64: dts: Rename SMB bus to just bus
-
-Rob Herring (1):
-      ARM: dts: integratorap: Remove top level dma-ranges
-
- .../devicetree/bindings/arm/arm,integrator.yaml    |  86 ++++++++
- .../devicetree/bindings/arm/arm,realview.yaml      | 123 +++++++++++
- .../devicetree/bindings/arm/arm,versatile.yaml     |  71 ++++++
- .../devicetree/bindings/arm/arm,vexpress-juno.yaml | 223 +++++++++++++++++++
- Documentation/devicetree/bindings/arm/arm-boards   | 237 ---------------------
- Documentation/devicetree/bindings/arm/vexpress.txt | 229 --------------------
- arch/arm/boot/dts/arm-realview-pbx.dtsi            |   2 +-
- arch/arm/boot/dts/integratorap.dts                 |   1 -
- arch/arm/boot/dts/versatile-ab-ib2.dts             |   2 +-
- arch/arm/boot/dts/vexpress-v2m-rs1.dtsi            |   2 +-
- arch/arm/boot/dts/vexpress-v2m.dtsi                |   2 +-
- arch/arm/boot/dts/vexpress-v2p-ca15-tc1.dts        |   2 +-
- arch/arm/boot/dts/vexpress-v2p-ca15_a7.dts         |   2 +-
- arch/arm/boot/dts/vexpress-v2p-ca5s.dts            |   2 +-
- arch/arm/boot/dts/vexpress-v2p-ca9.dts             |   2 +-
- arch/arm64/boot/dts/arm/foundation-v8.dtsi         |   2 +-
- arch/arm64/boot/dts/arm/fvp-base-revc.dts          |   2 +-
- arch/arm64/boot/dts/arm/juno-base.dtsi             |   2 +-
- arch/arm64/boot/dts/arm/juno-motherboard.dtsi      |   2 +-
- arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts         |   2 +-
- .../boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi      |   2 +-
- arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi   |   2 +-
- .../boot/dts/arm/vexpress-v2f-1xv7-ca53x2.dts      |   2 +-
- 23 files changed, 519 insertions(+), 483 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/arm/arm,integrator.yaml
- create mode 100644 Documentation/devicetree/bindings/arm/arm,realview.yaml
- create mode 100644 Documentation/devicetree/bindings/arm/arm,versatile.yaml
- create mode 100644 Documentation/devicetree/bindings/arm/arm,vexpress-juno.yaml
- delete mode 100644 Documentation/devicetree/bindings/arm/arm-boards
- delete mode 100644 Documentation/devicetree/bindings/arm/vexpress.txt
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
