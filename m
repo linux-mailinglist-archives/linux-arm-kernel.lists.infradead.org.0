@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0979417874C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 01:56:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74ED81787A5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 02:40:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=cufEIa8SgNJ72WcndIX4hvmEvCycImnxGNqaoNUDkGk=; b=oWh
-	Oy28n4M8qFExiRdFAHdS9399whOpU4P8w0EP2tqzXsHgKoysIHRKiL9TUmFeRErGTxoG4nDRu7EXc
-	WfHP3TNWleV4FnHC/bqO8WnscM7bI69M30qonsH/snraoTKMGeXN6wKKnpwd4pOwsE8rgkun1zw+X
-	f+HysjUP9B1g/6jPvWRhMUpSGo5fx3ezsJDtnrDL/7NOx13gwcQyRr2vurdgK/llILNx9WRJs5W4n
-	3e2kv8/JF+/XjMBH8YEV9mA9u7lDlmcgZool/aMu1OnwiK1y0V55S9VCOPq41UQbmGPIPBr6pZNBD
-	HjvXGzZ5ltofiew+YX1fYw+E1dgAj/w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Hvmc0A+Ro86+Fvv7FR5wH/2RDTM8nbm/h32/k0+GWj8=; b=TiS7izu7w2Zab+
+	jbghzrIfzndopQxbbBGLflAnA7JwdSAtB0C4eOF+xWzhUs+/XMlO1AMYVOOo2MLtyo0PwxO2Ck9up
+	SUWbhUYpXAji8Jh/OulTkOoTmprrSVBQd5nSd3Xch8vGkg/eJ4fq0L2LCTWuWDuSAMRf3ot/RMLt3
+	u/DIeUfga9y1j19NNi8EW1a9xKYlj+HT8bnbqFK/Y1Gxn8SF5vQ6V97170w8hO3UVz3hz3lg12hpy
+	ucHzjPEsJMYZiX7JFzDLGTW+7Ge6M8ydtJnZ033v3z5OnnKyyKRa4aYPP+Y++VOjePZXt3SjY6s9s
+	+s4BsFIVP3fMgAjvJC1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9IKc-000307-M1; Wed, 04 Mar 2020 00:56:14 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j9J0s-00070I-By; Wed, 04 Mar 2020 01:39:54 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9IKP-0002zR-KQ
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 00:56:05 +0000
-Received: by mail-pf1-x444.google.com with SMTP id l184so39510pfl.7
+ id 1j9J0j-0006yo-1J
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 01:39:47 +0000
+Received: by mail-qk1-x743.google.com with SMTP id f3so93845qkh.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Mar 2020 16:56:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=7FmCSkIm6MX3wNuARoD/HwIWRM1E76H5kuO2i5Qtdl8=;
- b=kmrmx0+Po5H2TWGrXect4ExBgpwBvJ5DKxhm3ig9RN5aHxmSKyAnwBnvAhcinLHgoa
- dPofk1YmuynRhtITcLRVnxsVEHFVKTHJJ9CbKR2D5MGpMagQqFJB93hULgK3xQe5McHo
- y3cCOcdQpLP+piLkHseYGinrlNllEdyUFi+P8k+m5ULc7p1EkhYuD/pmh6h7SwAmb6DI
- Paq9O4OVrxYiMIVK+HQf9zN9qCitKaltf7ez4TuAo0w51O1+A9q6NrLta5ACxpkd79Nv
- awHJSobgA8ds45B/15nwxpDnp68OBwoVc3Si8UQFeJ9QOouRA5kFDLVjej2BMaNaWO2Y
- y4qg==
+ Tue, 03 Mar 2020 17:39:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=mime-version:subject:from:in-reply-to:date:cc
+ :content-transfer-encoding:message-id:references:to;
+ bh=VaNbOLyzmQNnvtlkcyDsArVlyCa7d+ljBldNpwYQ4ho=;
+ b=lfmxv2LcqLbBm4XJ6xDonFCZq3QMrZUIVP65HeyOyxQq5A7HRGnUCJ9pKfJvQr/Jc3
+ XR/h7DWyTDNQGo6WFJCrbopTdj1GP0U/AXcOsn2hLSgTMx+xp98XjFGdY/QZRRR97pEC
+ WpZf5JWZqWHCQdeXv34ztOKAd4+eja57iLQ74MOdsuOcmgbHtD0msJnh8QSlyu8cCBPu
+ qv0iSh0nNRjub9z4TTu26qmJVNwt5VK614hukVu3dFodFmkD0WK+OqYrmxeU0ZjSlxL+
+ fw0tC567UtZ4kWMb+2HUfhZnc367rg6s9jdP1MvozAu4PzNqPtWX5XVD8Sauehd5M8eP
+ 5HEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=7FmCSkIm6MX3wNuARoD/HwIWRM1E76H5kuO2i5Qtdl8=;
- b=LFBR3z6IH8LNnvF89z/QNtaGu0fsf69O0GbtK2d2k9kGqRfJSfbl/Np0H4P9K+Vr0W
- n5Rk2C7V5qbZuzRSb25wAaMD+iaIb51evns6i3TVsJng/6sr0svSKT8nLl63mz4n1l03
- ktdp/iYkerW86xPrwWX+LA18kssrxA/RJdssNagPmlR2xW6BRPWF7yj4o3pSnqyUmCp3
- qxHi8Y55HiTMp0jkNkBezuZClQjrt6emDjJcJ7RiWy0Pg8R2eUuy5WE2xtvcfShh+Mqa
- 0b+RpVc60U46mOO2fnA8NIyU/EMyoopuWR/v9IDgKBPcRJxGZ7RQUiaMs9BYktqKWZ8z
- MF2A==
-X-Gm-Message-State: ANhLgQ3uuqhVzqWCNlmBUbaRROFvFotVjZVgRdbmnho+9Tb5g+QAiHjv
- 6H52gdu/JnU3DYz5ze/oqAU=
-X-Google-Smtp-Source: ADFU+vuMZuDHrE/dFR+FHXOAb0Zt0uR/rLCX9lAmnMh07QN/3ec58J3R24VbyV341fxtg112KV3Jog==
-X-Received: by 2002:a63:131e:: with SMTP id i30mr150868pgl.43.1583283358684;
- Tue, 03 Mar 2020 16:55:58 -0800 (PST)
-Received: from localhost.localdomain ([106.51.232.35])
- by smtp.gmail.com with ESMTPSA id j38sm22359955pgi.51.2020.03.03.16.55.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Mar 2020 16:55:57 -0800 (PST)
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3] MIPS: Replace setup_irq() by request_irq()
-Date: Wed,  4 Mar 2020 06:25:43 +0530
-Message-Id: <20200304005549.5832-1-afzal.mohd.ma@gmail.com>
-X-Mailer: git-send-email 2.18.0
+ h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
+ :content-transfer-encoding:message-id:references:to;
+ bh=VaNbOLyzmQNnvtlkcyDsArVlyCa7d+ljBldNpwYQ4ho=;
+ b=MgvsxcgCKAFDYkskunZ1bGMEuuy4TAWk+SHD04lttMA97jfwTajKiPT/UVSo+/CqYd
+ 68tNy6BeUOl1g04hg1RJxl5CMyQhJaUcigsilas+YBGqdQiISwmuHGyl/h6brC4bdab2
+ ZPuJ6wAmcvTkwSXqmN4HCx3FVIsdgacG7gEFJThk1oxSKoiDjeWKkGQkxr7mt9/0ViTv
+ 7M8l8RwgiYRRtHFbtijT0H1/r8rGLJYh7JV4NzkPE3/FMiYH3msyXEY3izmBizK/yhUE
+ QpMo98nNVLwl8fq/wdVZbZFBAzy4FSlN/LIahoZ5WTubFbc+0ZGg3lBTppcTr/bc4vbS
+ 4EYA==
+X-Gm-Message-State: ANhLgQ0ksIj/3WqVYTtO5i8BYOml0VwDSx5ovjh1M6gLayl6ZyKkfRz7
+ d/NC2/3vnsISxue2yUcnyGQYYg==
+X-Google-Smtp-Source: ADFU+vt5v/whjVO7wXGbNMXm3Bz4Z/MSLla2que4as5Zf29YNXyjAw7GVBlUuRczlXwt7hyWvndyfw==
+X-Received: by 2002:a37:e317:: with SMTP id y23mr774828qki.431.1583285983342; 
+ Tue, 03 Mar 2020 17:39:43 -0800 (PST)
+Received: from [192.168.1.153] (pool-71-184-117-43.bstnma.fios.verizon.net.
+ [71.184.117.43])
+ by smtp.gmail.com with ESMTPSA id x19sm13105844qtm.47.2020.03.03.17.39.40
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 03 Mar 2020 17:39:42 -0800 (PST)
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.60.0.2.5\))
+Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
+ table helpers
+From: Qian Cai <cai@lca.pw>
+In-Reply-To: <e8516497-f1b9-b222-e219-73b68880ac75@arm.com>
+Date: Tue, 3 Mar 2020 20:39:39 -0500
+Message-Id: <12260F9A-695D-40F8-932F-61D86D77D441@lca.pw>
+References: <1581909460-19148-1-git-send-email-anshuman.khandual@arm.com>
+ <1582726182.7365.123.camel@lca.pw>
+ <7c707b7f-ce3d-993b-8042-44fdc1ed28bf@c-s.fr>
+ <1582732318.7365.129.camel@lca.pw> <1583178042.7365.146.camel@lca.pw>
+ <e8516497-f1b9-b222-e219-73b68880ac75@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+X-Mailer: Apple Mail (2.3608.60.0.2.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200303_165601_716316_AB455186 
-X-CRM114-Status: GOOD (  18.35  )
+X-CRM114-CacheID: sfid-20200303_173945_089224_42B5A9AE 
+X-CRM114-Status: GOOD (  20.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,1598 +102,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Paul Burton <paulburton@kernel.org>, Keguang Zhang <keguang.zhang@gmail.com>,
- Ralf Baechle <ralf@linux-mips.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- bcm-kernel-feedback-list@broadcom.com, Jiaxun Yang <jiaxun.yang@flygoat.com>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
- Huacai Chen <chenhc@lemote.com>, afzal mohammed <afzal.mohd.ma@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ the arch/x86 maintainers <x86@kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Vineet Gupta <vgupta@synopsys.com>,
+ LKML <linux-kernel@vger.kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
+ "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-request_irq() is preferred over setup_irq(). Invocations of setup_irq()
-occur after memory allocators are ready.
-
-Per tglx[1], setup_irq() existed in olden days when allocators were not
-ready by the time early interrupts were initialized.
-
-Hence replace setup_irq() by request_irq().
-
-remove_irq() has been replaced by free_irq() as well.
-
-[1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
-
-Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
----
-Hi mips maintainers,
-
-if okay w/ this change, please consider taking it thr' your tree, else please
-let me know.
-
-Regards
-afzal
-
-Link to v2 & v1,
-[v2] https://lkml.kernel.org/r/cover.1582471508.git.afzal.mohd.ma@gmail.com
-[v1] https://lkml.kernel.org/r/cover.1581478323.git.afzal.mohd.ma@gmail.com
-
-v3:
- * Split out from tree wide series, as Thomas suggested to get it thr'
-	respective maintainers
- * Modify pr_err displayed in case of error
- * Re-arrange code & choose pr_err args as required to improve readability
- * Remove irrelevant parts from commit message & improve
- 
-v2:
- * Replace pr_err("request_irq() on %s failed" by
-           pr_err("%s: request_irq() failed"
- * Commit message massage
-
- arch/mips/alchemy/common/time.c               | 11 +---
- arch/mips/ar7/irq.c                           | 16 ++---
- arch/mips/ath25/ar2315.c                      |  9 +--
- arch/mips/ath25/ar5312.c                      |  9 +--
- arch/mips/bcm63xx/irq.c                       | 41 +++++--------
- arch/mips/cobalt/irq.c                        | 18 +++---
- arch/mips/dec/setup.c                         | 59 ++++++++-----------
- arch/mips/emma/markeins/irq.c                 | 21 ++++---
- arch/mips/include/asm/sni.h                   |  2 +-
- arch/mips/jazz/irq.c                          | 12 +---
- arch/mips/kernel/cevt-bcm1480.c               | 11 +---
- arch/mips/kernel/cevt-ds1287.c                |  9 +--
- arch/mips/kernel/cevt-gt641xx.c               |  9 +--
- arch/mips/kernel/cevt-r4k.c                   |  4 +-
- arch/mips/kernel/cevt-sb1250.c                | 11 +---
- arch/mips/kernel/cevt-txx9.c                  | 11 +---
- arch/mips/kernel/i8253.c                      | 11 ++--
- arch/mips/kernel/rtlx-mt.c                    |  8 +--
- arch/mips/kernel/smp.c                        | 33 ++++-------
- arch/mips/lasat/interrupt.c                   | 10 +---
- arch/mips/loongson2ef/common/bonito-irq.c     |  9 +--
- .../loongson2ef/common/cs5536/cs5536_mfgpt.c  | 10 +---
- arch/mips/loongson2ef/fuloong-2e/irq.c        | 16 ++---
- arch/mips/loongson2ef/lemote-2f/irq.c         | 20 ++-----
- arch/mips/loongson32/common/irq.c             | 21 ++++---
- arch/mips/loongson32/common/time.c            | 12 ++--
- arch/mips/loongson64/hpet.c                   | 10 +---
- arch/mips/mti-malta/malta-int.c               | 10 +---
- arch/mips/netlogic/xlr/fmn.c                  | 11 +---
- arch/mips/pmcs-msp71xx/msp_irq.c              | 28 ++++-----
- arch/mips/pmcs-msp71xx/msp_smp.c              | 22 ++-----
- arch/mips/pmcs-msp71xx/msp_time.c             |  8 ++-
- arch/mips/ralink/cevt-rt3352.c                | 16 +++--
- arch/mips/sgi-ip22/ip22-eisa.c                | 10 +---
- arch/mips/sgi-ip22/ip22-int.c                 | 49 +++++----------
- arch/mips/sgi-ip32/ip32-irq.c                 | 18 ++----
- arch/mips/sni/a20r.c                          |  4 +-
- arch/mips/sni/irq.c                           |  8 +--
- arch/mips/sni/pcit.c                          |  8 ++-
- arch/mips/sni/rm200.c                         | 23 +++-----
- arch/mips/sni/time.c                          | 10 +---
- arch/mips/vr41xx/common/irq.c                 |  9 +--
- 42 files changed, 237 insertions(+), 410 deletions(-)
-
-diff --git a/arch/mips/alchemy/common/time.c b/arch/mips/alchemy/common/time.c
-index 3a21a6a18da7..d794ffb67412 100644
---- a/arch/mips/alchemy/common/time.c
-+++ b/arch/mips/alchemy/common/time.c
-@@ -72,13 +72,6 @@ static struct clock_event_device au1x_rtcmatch2_clockdev = {
- 	.cpumask	= cpu_possible_mask,
- };
- 
--static struct irqaction au1x_rtcmatch2_irqaction = {
--	.handler	= au1x_rtcmatch2_irq,
--	.flags		= IRQF_TIMER,
--	.name		= "timer",
--	.dev_id		= &au1x_rtcmatch2_clockdev,
--};
--
- static int __init alchemy_time_init(unsigned int m2int)
- {
- 	struct clock_event_device *cd = &au1x_rtcmatch2_clockdev;
-@@ -130,7 +123,9 @@ static int __init alchemy_time_init(unsigned int m2int)
- 	cd->min_delta_ns = clockevent_delta2ns(9, cd);
- 	cd->min_delta_ticks = 9;	/* ~0.28ms */
- 	clockevents_register_device(cd);
--	setup_irq(m2int, &au1x_rtcmatch2_irqaction);
-+	if (request_irq(m2int, au1x_rtcmatch2_irq, IRQF_TIMER, "timer",
-+			&au1x_rtcmatch2_clockdev))
-+		pr_err("Failed to register timer interrupt\n");
- 
- 	printk(KERN_INFO "Alchemy clocksource installed\n");
- 
-diff --git a/arch/mips/ar7/irq.c b/arch/mips/ar7/irq.c
-index 93a331fe0641..f0a7942d393e 100644
---- a/arch/mips/ar7/irq.c
-+++ b/arch/mips/ar7/irq.c
-@@ -83,12 +83,6 @@ static struct irq_chip ar7_sec_irq_type = {
- 	.irq_ack = ar7_ack_sec_irq,
- };
- 
--static struct irqaction ar7_cascade_action = {
--	.handler = no_action,
--	.name = "AR7 cascade interrupt",
--	.flags = IRQF_NO_THREAD,
--};
--
- static void __init ar7_irq_init(int base)
- {
- 	int i;
-@@ -116,8 +110,14 @@ static void __init ar7_irq_init(int base)
- 						 handle_level_irq);
- 	}
- 
--	setup_irq(2, &ar7_cascade_action);
--	setup_irq(ar7_irq_base, &ar7_cascade_action);
-+	if (request_irq(2, no_action, IRQF_NO_THREAD, "AR7 cascade interrupt",
-+			NULL))
-+		pr_err("Failed to request irq 2 (AR7 cascade interrupt)\n");
-+	if (request_irq(ar7_irq_base, no_action, IRQF_NO_THREAD,
-+			"AR7 cascade interrupt", NULL)) {
-+		pr_err("Failed to request irq %d (AR7 cascade interrupt)\n",
-+		       ar7_irq_base);
-+	}
- 	set_c0_status(IE_IRQ0);
- }
- 
-diff --git a/arch/mips/ath25/ar2315.c b/arch/mips/ath25/ar2315.c
-index 24f619199ee7..e7b53e3960c8 100644
---- a/arch/mips/ath25/ar2315.c
-+++ b/arch/mips/ath25/ar2315.c
-@@ -64,11 +64,6 @@ static irqreturn_t ar2315_ahb_err_handler(int cpl, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction ar2315_ahb_err_interrupt  = {
--	.handler	= ar2315_ahb_err_handler,
--	.name		= "ar2315-ahb-error",
--};
--
- static void ar2315_misc_irq_handler(struct irq_desc *desc)
- {
- 	u32 pending = ar2315_rst_reg_read(AR2315_ISR) &
-@@ -159,7 +154,9 @@ void __init ar2315_arch_init_irq(void)
- 		panic("Failed to add IRQ domain");
- 
- 	irq = irq_create_mapping(domain, AR2315_MISC_IRQ_AHB);
--	setup_irq(irq, &ar2315_ahb_err_interrupt);
-+	if (request_irq(irq, ar2315_ahb_err_handler, 0, "ar2315-ahb-error",
-+			NULL))
-+		pr_err("Failed to register ar2315-ahb-error interrupt\n");
- 
- 	irq_set_chained_handler_and_data(AR2315_IRQ_MISC,
- 					 ar2315_misc_irq_handler, domain);
-diff --git a/arch/mips/ath25/ar5312.c b/arch/mips/ath25/ar5312.c
-index 47f3e98974fc..42bf2afb4765 100644
---- a/arch/mips/ath25/ar5312.c
-+++ b/arch/mips/ath25/ar5312.c
-@@ -68,11 +68,6 @@ static irqreturn_t ar5312_ahb_err_handler(int cpl, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction ar5312_ahb_err_interrupt  = {
--	.handler = ar5312_ahb_err_handler,
--	.name    = "ar5312-ahb-error",
--};
--
- static void ar5312_misc_irq_handler(struct irq_desc *desc)
- {
- 	u32 pending = ar5312_rst_reg_read(AR5312_ISR) &
-@@ -154,7 +149,9 @@ void __init ar5312_arch_init_irq(void)
- 		panic("Failed to add IRQ domain");
- 
- 	irq = irq_create_mapping(domain, AR5312_MISC_IRQ_AHB_PROC);
--	setup_irq(irq, &ar5312_ahb_err_interrupt);
-+	if (request_irq(irq, ar5312_ahb_err_handler, 0, "ar5312-ahb-error",
-+			NULL))
-+		pr_err("Failed to register ar5312-ahb-error interrupt\n");
- 
- 	irq_set_chained_handler_and_data(AR5312_IRQ_MISC,
- 					 ar5312_misc_irq_handler, domain);
-diff --git a/arch/mips/bcm63xx/irq.c b/arch/mips/bcm63xx/irq.c
-index ec694b9628c0..2548013442f6 100644
---- a/arch/mips/bcm63xx/irq.c
-+++ b/arch/mips/bcm63xx/irq.c
-@@ -399,26 +399,6 @@ static struct irq_chip bcm63xx_external_irq_chip = {
- 	.irq_set_type	= bcm63xx_external_irq_set_type,
- };
- 
--static struct irqaction cpu_ip2_cascade_action = {
--	.handler	= no_action,
--	.name		= "cascade_ip2",
--	.flags		= IRQF_NO_THREAD,
--};
--
--#ifdef CONFIG_SMP
--static struct irqaction cpu_ip3_cascade_action = {
--	.handler	= no_action,
--	.name		= "cascade_ip3",
--	.flags		= IRQF_NO_THREAD,
--};
--#endif
--
--static struct irqaction cpu_ext_cascade_action = {
--	.handler	= no_action,
--	.name		= "cascade_extirq",
--	.flags		= IRQF_NO_THREAD,
--};
--
- static void bcm63xx_init_irq(void)
- {
- 	int irq_bits;
-@@ -531,7 +511,7 @@ static void bcm63xx_init_irq(void)
- 
- void __init arch_init_irq(void)
- {
--	int i;
-+	int i, irq;
- 
- 	bcm63xx_init_irq();
- 	mips_cpu_irq_init();
-@@ -544,14 +524,25 @@ void __init arch_init_irq(void)
- 					 handle_edge_irq);
- 
- 	if (!is_ext_irq_cascaded) {
--		for (i = 3; i < 3 + ext_irq_count; ++i)
--			setup_irq(MIPS_CPU_IRQ_BASE + i, &cpu_ext_cascade_action);
-+		for (i = 3; i < 3 + ext_irq_count; ++i) {
-+			irq = MIPS_CPU_IRQ_BASE + i;
-+			if (request_irq(irq, no_action, IRQF_NO_THREAD,
-+					"cascade_extirq", NULL)) {
-+				pr_err("Failed to request irq %d (cascade_extirq)\n",
-+				       irq);
-+			}
-+		}
- 	}
- 
--	setup_irq(MIPS_CPU_IRQ_BASE + 2, &cpu_ip2_cascade_action);
-+	irq = MIPS_CPU_IRQ_BASE + 2;
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD,	"cascade_ip2", NULL))
-+		pr_err("Failed to request irq %d (cascade_ip2)\n", irq);
- #ifdef CONFIG_SMP
- 	if (is_ext_irq_cascaded) {
--		setup_irq(MIPS_CPU_IRQ_BASE + 3, &cpu_ip3_cascade_action);
-+		irq = MIPS_CPU_IRQ_BASE + 3;
-+		if (request_irq(irq, no_action,	IRQF_NO_THREAD, "cascade_ip3",
-+				NULL))
-+			pr_err("Failed to request irq %d (cascade_ip3)\n", irq);
- 		bcm63xx_internal_irq_chip.irq_set_affinity =
- 			bcm63xx_internal_set_affinity;
- 
-diff --git a/arch/mips/cobalt/irq.c b/arch/mips/cobalt/irq.c
-index 965c777d3561..ead5ae41378d 100644
---- a/arch/mips/cobalt/irq.c
-+++ b/arch/mips/cobalt/irq.c
-@@ -45,18 +45,20 @@ asmlinkage void plat_irq_dispatch(void)
- 		spurious_interrupt();
- }
- 
--static struct irqaction cascade = {
--	.handler	= no_action,
--	.name		= "cascade",
--	.flags		= IRQF_NO_THREAD,
--};
--
- void __init arch_init_irq(void)
- {
- 	mips_cpu_irq_init();
- 	gt641xx_irq_init();
- 	init_i8259_irqs();
- 
--	setup_irq(GT641XX_CASCADE_IRQ, &cascade);
--	setup_irq(I8259_CASCADE_IRQ, &cascade);
-+	if (request_irq(GT641XX_CASCADE_IRQ, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL)) {
-+		pr_err("Failed to request irq %d (cascade)\n",
-+		       GT641XX_CASCADE_IRQ);
-+	}
-+	if (request_irq(I8259_CASCADE_IRQ, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL)) {
-+		pr_err("Failed to request irq %d (cascade)\n",
-+		       I8259_CASCADE_IRQ);
-+	}
- }
-diff --git a/arch/mips/dec/setup.c b/arch/mips/dec/setup.c
-index 61a0bf13e308..c8bbac0c5051 100644
---- a/arch/mips/dec/setup.c
-+++ b/arch/mips/dec/setup.c
-@@ -103,28 +103,8 @@ int_ptr asic_mask_nr_tbl[DEC_MAX_ASIC_INTS][2] = {
- int cpu_fpu_mask = DEC_CPU_IRQ_MASK(DEC_CPU_INR_FPU);
- int *fpu_kstat_irq;
- 
--static struct irqaction ioirq = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
--static struct irqaction fpuirq = {
--	.handler = no_action,
--	.name = "fpu",
--	.flags = IRQF_NO_THREAD,
--};
--
--static struct irqaction busirq = {
--	.name = "bus error",
--	.flags = IRQF_NO_THREAD,
--};
--
--static struct irqaction haltirq = {
--	.handler = dec_intr_halt,
--	.name = "halt",
--	.flags = IRQF_NO_THREAD,
--};
--
-+static irq_handler_t busirq_handler;
-+static unsigned int busirq_flags = IRQF_NO_THREAD;
- 
- /*
-  * Bus error (DBE/IBE exceptions and bus interrupts) handling setup.
-@@ -134,21 +114,21 @@ static void __init dec_be_init(void)
- 	switch (mips_machtype) {
- 	case MACH_DS23100:	/* DS2100/DS3100 Pmin/Pmax */
- 		board_be_handler = dec_kn01_be_handler;
--		busirq.handler = dec_kn01_be_interrupt;
--		busirq.flags |= IRQF_SHARED;
-+		busirq_handler = dec_kn01_be_interrupt;
-+		busirq_flags |= IRQF_SHARED;
- 		dec_kn01_be_init();
- 		break;
- 	case MACH_DS5000_1XX:	/* DS5000/1xx 3min */
- 	case MACH_DS5000_XX:	/* DS5000/xx Maxine */
- 		board_be_handler = dec_kn02xa_be_handler;
--		busirq.handler = dec_kn02xa_be_interrupt;
-+		busirq_handler = dec_kn02xa_be_interrupt;
- 		dec_kn02xa_be_init();
- 		break;
- 	case MACH_DS5000_200:	/* DS5000/200 3max */
- 	case MACH_DS5000_2X0:	/* DS5000/240 3max+ */
- 	case MACH_DS5900:	/* DS5900 bigmax */
- 		board_be_handler = dec_ecc_be_handler;
--		busirq.handler = dec_ecc_be_interrupt;
-+		busirq_handler = dec_ecc_be_interrupt;
- 		dec_ecc_be_init();
- 		break;
- 	}
-@@ -764,20 +744,29 @@ void __init arch_init_irq(void)
- 		int irq_fpu;
- 
- 		irq_fpu = dec_interrupt[DEC_IRQ_FPU];
--		setup_irq(irq_fpu, &fpuirq);
-+		if (request_irq(irq_fpu, no_action, IRQF_NO_THREAD, "fpu",
-+				NULL))
-+			pr_err("Failed to register fpu interrupt\n");
- 		desc_fpu = irq_to_desc(irq_fpu);
- 		fpu_kstat_irq = this_cpu_ptr(desc_fpu->kstat_irqs);
- 	}
--	if (dec_interrupt[DEC_IRQ_CASCADE] >= 0)
--		setup_irq(dec_interrupt[DEC_IRQ_CASCADE], &ioirq);
--
-+	if (dec_interrupt[DEC_IRQ_CASCADE] >= 0) {
-+		if (request_irq(dec_interrupt[DEC_IRQ_CASCADE], no_action,
-+				IRQF_NO_THREAD, "cascade", NULL))
-+			pr_err("Failed to register cascade interrupt\n");
-+	}
- 	/* Register the bus error interrupt. */
--	if (dec_interrupt[DEC_IRQ_BUS] >= 0 && busirq.handler)
--		setup_irq(dec_interrupt[DEC_IRQ_BUS], &busirq);
--
-+	if (dec_interrupt[DEC_IRQ_BUS] >= 0 && busirq_handler) {
-+		if (request_irq(dec_interrupt[DEC_IRQ_BUS], busirq_handler,
-+				busirq_flags, "bus error", NULL))
-+			pr_err("Failed to register bus error interrupt\n");
-+	}
- 	/* Register the HALT interrupt. */
--	if (dec_interrupt[DEC_IRQ_HALT] >= 0)
--		setup_irq(dec_interrupt[DEC_IRQ_HALT], &haltirq);
-+	if (dec_interrupt[DEC_IRQ_HALT] >= 0) {
-+		if (request_irq(dec_interrupt[DEC_IRQ_HALT], dec_intr_halt,
-+				IRQF_NO_THREAD, "halt", NULL))
-+			pr_err("Failed to register halt interrupt\n");
-+	}
- }
- 
- asmlinkage unsigned int dec_irq_dispatch(unsigned int irq)
-diff --git a/arch/mips/emma/markeins/irq.c b/arch/mips/emma/markeins/irq.c
-index 09427a49e7ae..4aebf559be2e 100644
---- a/arch/mips/emma/markeins/irq.c
-+++ b/arch/mips/emma/markeins/irq.c
-@@ -153,14 +153,6 @@ void emma2rh_gpio_irq_init(void)
- 					      handle_edge_irq, "edge");
- }
- 
--static struct irqaction irq_cascade = {
--	   .handler = no_action,
--	   .flags = IRQF_NO_THREAD,
--	   .name = "cascade",
--	   .dev_id = NULL,
--	   .next = NULL,
--};
--
- /*
-  * the first level int-handler will jump here if it is a emma2rh irq
-  */
-@@ -236,6 +228,7 @@ void emma2rh_irq_dispatch(void)
- void __init arch_init_irq(void)
- {
- 	u32 reg;
-+	int irq;
- 
- 	/* by default, interrupts are disabled. */
- 	emma2rh_out32(EMMA2RH_BHIF_INT_EN_0, 0);
-@@ -272,9 +265,15 @@ void __init arch_init_irq(void)
- 	mips_cpu_irq_init();
- 
- 	/* setup cascade interrupts */
--	setup_irq(EMMA2RH_IRQ_BASE + EMMA2RH_SW_CASCADE, &irq_cascade);
--	setup_irq(EMMA2RH_IRQ_BASE + EMMA2RH_GPIO_CASCADE, &irq_cascade);
--	setup_irq(MIPS_CPU_IRQ_BASE + 2, &irq_cascade);
-+	irq = EMMA2RH_IRQ_BASE + EMMA2RH_SW_CASCADE;
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", irq);
-+	irq = EMMA2RH_IRQ_BASE + EMMA2RH_GPIO_CASCADE;
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", irq);
-+	irq = MIPS_CPU_IRQ_BASE + 2;
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", irq);
- }
- 
- asmlinkage void plat_irq_dispatch(void)
-diff --git a/arch/mips/include/asm/sni.h b/arch/mips/include/asm/sni.h
-index a107201a2e1e..b8653de25ca1 100644
---- a/arch/mips/include/asm/sni.h
-+++ b/arch/mips/include/asm/sni.h
-@@ -239,6 +239,6 @@ static inline int sni_eisa_root_init(void)
- 
- /* common irq stuff */
- extern void (*sni_hwint)(void);
--extern struct irqaction sni_isa_irq;
-+extern irqreturn_t sni_isa_irq_handler(int dummy, void *p);
- 
- #endif /* __ASM_SNI_H */
-diff --git a/arch/mips/jazz/irq.c b/arch/mips/jazz/irq.c
-index 5d6828b2a750..04b9c4068493 100644
---- a/arch/mips/jazz/irq.c
-+++ b/arch/mips/jazz/irq.c
-@@ -125,24 +125,18 @@ static irqreturn_t r4030_timer_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction r4030_timer_irqaction = {
--	.handler	= r4030_timer_interrupt,
--	.flags		= IRQF_TIMER,
--	.name		= "R4030 timer",
--};
--
- void __init plat_time_init(void)
- {
- 	struct clock_event_device *cd = &r4030_clockevent;
--	struct irqaction *action = &r4030_timer_irqaction;
- 	unsigned int cpu = smp_processor_id();
- 
- 	BUG_ON(HZ != 100);
- 
- 	cd->cpumask		= cpumask_of(cpu);
- 	clockevents_register_device(cd);
--	action->dev_id = cd;
--	setup_irq(JAZZ_TIMER_IRQ, action);
-+	if (request_irq(JAZZ_TIMER_IRQ, r4030_timer_interrupt, IRQF_TIMER,
-+			"R4030 timer", cd))
-+		pr_err("Failed to register R4030 timer interrupt\n");
- 
- 	/*
- 	 * Set clock to 100Hz.
-diff --git a/arch/mips/kernel/cevt-bcm1480.c b/arch/mips/kernel/cevt-bcm1480.c
-index b3e8c11a8fa5..d39a2963b451 100644
---- a/arch/mips/kernel/cevt-bcm1480.c
-+++ b/arch/mips/kernel/cevt-bcm1480.c
-@@ -91,16 +91,15 @@ static irqreturn_t sibyte_counter_handler(int irq, void *dev_id)
- }
- 
- static DEFINE_PER_CPU(struct clock_event_device, sibyte_hpt_clockevent);
--static DEFINE_PER_CPU(struct irqaction, sibyte_hpt_irqaction);
- static DEFINE_PER_CPU(char [18], sibyte_hpt_name);
- 
- void sb1480_clockevent_init(void)
- {
- 	unsigned int cpu = smp_processor_id();
- 	unsigned int irq = K_BCM1480_INT_TIMER_0 + cpu;
--	struct irqaction *action = &per_cpu(sibyte_hpt_irqaction, cpu);
- 	struct clock_event_device *cd = &per_cpu(sibyte_hpt_clockevent, cpu);
- 	unsigned char *name = per_cpu(sibyte_hpt_name, cpu);
-+	unsigned long flags =  IRQF_PERCPU | IRQF_TIMER;
- 
- 	BUG_ON(cpu > 3);	/* Only have 4 general purpose timers */
- 
-@@ -133,11 +132,7 @@ void sb1480_clockevent_init(void)
- 
- 	bcm1480_unmask_irq(cpu, irq);
- 
--	action->handler = sibyte_counter_handler;
--	action->flags	= IRQF_PERCPU | IRQF_TIMER;
--	action->name	= name;
--	action->dev_id	= cd;
--
- 	irq_set_affinity(irq, cpumask_of(cpu));
--	setup_irq(irq, action);
-+	if (request_irq(irq, sibyte_counter_handler, flags, name, cd))
-+		pr_err("Failed to request irq %d (%s)\n", irq, name);
- }
-diff --git a/arch/mips/kernel/cevt-ds1287.c b/arch/mips/kernel/cevt-ds1287.c
-index 1e1edab4a63f..9a47fbcd4638 100644
---- a/arch/mips/kernel/cevt-ds1287.c
-+++ b/arch/mips/kernel/cevt-ds1287.c
-@@ -100,14 +100,9 @@ static irqreturn_t ds1287_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction ds1287_irqaction = {
--	.handler	= ds1287_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "ds1287",
--};
--
- int __init ds1287_clockevent_init(int irq)
- {
-+	unsigned long flags = IRQF_PERCPU | IRQF_TIMER;
- 	struct clock_event_device *cd;
- 
- 	cd = &ds1287_clockevent;
-@@ -122,5 +117,5 @@ int __init ds1287_clockevent_init(int irq)
- 
- 	clockevents_register_device(&ds1287_clockevent);
- 
--	return setup_irq(irq, &ds1287_irqaction);
-+	return request_irq(irq, ds1287_interrupt, flags, "ds1287", NULL);
- }
-diff --git a/arch/mips/kernel/cevt-gt641xx.c b/arch/mips/kernel/cevt-gt641xx.c
-index eb53548d2538..5b132e8c51da 100644
---- a/arch/mips/kernel/cevt-gt641xx.c
-+++ b/arch/mips/kernel/cevt-gt641xx.c
-@@ -120,12 +120,6 @@ static irqreturn_t gt641xx_timer0_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction gt641xx_timer0_irqaction = {
--	.handler	= gt641xx_timer0_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "gt641xx_timer0",
--};
--
- static int __init gt641xx_timer0_clockevent_init(void)
- {
- 	struct clock_event_device *cd;
-@@ -146,6 +140,7 @@ static int __init gt641xx_timer0_clockevent_init(void)
- 
- 	clockevents_register_device(&gt641xx_timer0_clockevent);
- 
--	return setup_irq(GT641XX_TIMER0_IRQ, &gt641xx_timer0_irqaction);
-+	return request_irq(GT641XX_TIMER0_IRQ, gt641xx_timer0_interrupt,
-+			   IRQF_PERCPU | IRQF_TIMER, "gt641xx_timer0", NULL);
- }
- arch_initcall(gt641xx_timer0_clockevent_init);
-diff --git a/arch/mips/kernel/cevt-r4k.c b/arch/mips/kernel/cevt-r4k.c
-index dd6a18bc10ab..64e917dfe6b2 100644
---- a/arch/mips/kernel/cevt-r4k.c
-+++ b/arch/mips/kernel/cevt-r4k.c
-@@ -252,6 +252,7 @@ unsigned int __weak get_c0_compare_int(void)
- 
- int r4k_clockevent_init(void)
- {
-+	unsigned long flags = IRQF_PERCPU | IRQF_TIMER | IRQF_SHARED;
- 	unsigned int cpu = smp_processor_id();
- 	struct clock_event_device *cd;
- 	unsigned int irq, min_delta;
-@@ -291,7 +292,8 @@ int r4k_clockevent_init(void)
- 
- 	cp0_timer_irq_installed = 1;
- 
--	setup_irq(irq, &c0_compare_irqaction);
-+	if (request_irq(irq, c0_compare_interrupt, flags, "timer", NULL))
-+		pr_err("Failed to request irq %d (timer)\n", irq);
- 
- 	return 0;
- }
-diff --git a/arch/mips/kernel/cevt-sb1250.c b/arch/mips/kernel/cevt-sb1250.c
-index e1a08606c27e..0451273fab9f 100644
---- a/arch/mips/kernel/cevt-sb1250.c
-+++ b/arch/mips/kernel/cevt-sb1250.c
-@@ -90,16 +90,15 @@ static irqreturn_t sibyte_counter_handler(int irq, void *dev_id)
- }
- 
- static DEFINE_PER_CPU(struct clock_event_device, sibyte_hpt_clockevent);
--static DEFINE_PER_CPU(struct irqaction, sibyte_hpt_irqaction);
- static DEFINE_PER_CPU(char [18], sibyte_hpt_name);
- 
- void sb1250_clockevent_init(void)
- {
- 	unsigned int cpu = smp_processor_id();
- 	unsigned int irq = K_INT_TIMER_0 + cpu;
--	struct irqaction *action = &per_cpu(sibyte_hpt_irqaction, cpu);
- 	struct clock_event_device *cd = &per_cpu(sibyte_hpt_clockevent, cpu);
- 	unsigned char *name = per_cpu(sibyte_hpt_name, cpu);
-+	unsigned long flags = IRQF_PERCPU | IRQF_TIMER;
- 
- 	/* Only have 4 general purpose timers, and we use last one as hpt */
- 	BUG_ON(cpu > 2);
-@@ -133,11 +132,7 @@ void sb1250_clockevent_init(void)
- 
- 	sb1250_unmask_irq(cpu, irq);
- 
--	action->handler = sibyte_counter_handler;
--	action->flags	= IRQF_PERCPU | IRQF_TIMER;
--	action->name	= name;
--	action->dev_id	= cd;
--
- 	irq_set_affinity(irq, cpumask_of(cpu));
--	setup_irq(irq, action);
-+	if (request_irq(irq, sibyte_counter_handler, flags, name, cd))
-+		pr_err("Failed to request irq %d (%s)\n", irq, name);
- }
-diff --git a/arch/mips/kernel/cevt-txx9.c b/arch/mips/kernel/cevt-txx9.c
-index 7b17c8f5009d..5709469c21ff 100644
---- a/arch/mips/kernel/cevt-txx9.c
-+++ b/arch/mips/kernel/cevt-txx9.c
-@@ -174,13 +174,6 @@ static irqreturn_t txx9tmr_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction txx9tmr_irq = {
--	.handler	= txx9tmr_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "txx9tmr",
--	.dev_id		= &txx9_clock_event_device,
--};
--
- void __init txx9_clockevent_init(unsigned long baseaddr, int irq,
- 				 unsigned int imbusclk)
- {
-@@ -202,7 +195,9 @@ void __init txx9_clockevent_init(unsigned long baseaddr, int irq,
- 	cd->irq = irq;
- 	cd->cpumask = cpumask_of(0),
- 	clockevents_register_device(cd);
--	setup_irq(irq, &txx9tmr_irq);
-+	if (request_irq(irq, txx9tmr_interrupt, IRQF_PERCPU | IRQF_TIMER,
-+			"txx9tmr", &txx9_clock_event_device))
-+		pr_err("Failed to request irq %d (txx9tmr)\n", irq);
- 	printk(KERN_INFO "TXx9: clockevent device at 0x%lx, irq %d\n",
- 	       baseaddr, irq);
- }
-diff --git a/arch/mips/kernel/i8253.c b/arch/mips/kernel/i8253.c
-index df7ddd246eaa..ca21210e06b5 100644
---- a/arch/mips/kernel/i8253.c
-+++ b/arch/mips/kernel/i8253.c
-@@ -18,16 +18,13 @@ static irqreturn_t timer_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction irq0  = {
--	.handler = timer_interrupt,
--	.flags = IRQF_NOBALANCING | IRQF_TIMER,
--	.name = "timer"
--};
--
- void __init setup_pit_timer(void)
- {
-+	unsigned long flags = IRQF_NOBALANCING | IRQF_TIMER;
-+
- 	clockevent_i8253_init(true);
--	setup_irq(0, &irq0);
-+	if (request_irq(0, timer_interrupt, flags, "timer", NULL))
-+		pr_err("Failed to request irq 0 (timer)\n");
- }
- 
- static int __init init_pit_clocksource(void)
-diff --git a/arch/mips/kernel/rtlx-mt.c b/arch/mips/kernel/rtlx-mt.c
-index cb95470e2e69..38c6925a1bea 100644
---- a/arch/mips/kernel/rtlx-mt.c
-+++ b/arch/mips/kernel/rtlx-mt.c
-@@ -51,11 +51,6 @@ static irqreturn_t rtlx_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction rtlx_irq = {
--	.handler	= rtlx_interrupt,
--	.name		= "RTLX",
--};
--
- static int rtlx_irq_num = MIPS_CPU_IRQ_BASE + MIPS_CPU_RTLX_IRQ;
- 
- void _interrupt_sp(void)
-@@ -124,8 +119,7 @@ int __init rtlx_module_init(void)
- 		goto out_class;
- 	}
- 
--	rtlx_irq.dev_id = rtlx;
--	err = setup_irq(rtlx_irq_num, &rtlx_irq);
-+	err = request_irq(rtlx_irq_num, rtlx_interrupt, 0, "RTLX", rtlx);
- 	if (err)
- 		goto out_class;
- 
-diff --git a/arch/mips/kernel/smp.c b/arch/mips/kernel/smp.c
-index f510c00bda88..d0e911f2421b 100644
---- a/arch/mips/kernel/smp.c
-+++ b/arch/mips/kernel/smp.c
-@@ -207,25 +207,13 @@ static irqreturn_t ipi_call_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction irq_resched = {
--	.handler	= ipi_resched_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI resched"
--};
--
--static struct irqaction irq_call = {
--	.handler	= ipi_call_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI call"
--};
--
--static void smp_ipi_init_one(unsigned int virq,
--				    struct irqaction *action)
-+static void smp_ipi_init_one(unsigned int virq, const char *name,
-+			     irq_handler_t handler)
- {
- 	int ret;
- 
- 	irq_set_handler(virq, handle_percpu_irq);
--	ret = setup_irq(virq, action);
-+	ret = request_irq(virq, handler, IRQF_PERCPU, name, NULL);
- 	BUG_ON(ret);
- }
- 
-@@ -278,12 +266,15 @@ int mips_smp_ipi_allocate(const struct cpumask *mask)
- 		int cpu;
- 
- 		for_each_cpu(cpu, mask) {
--			smp_ipi_init_one(call_virq + cpu, &irq_call);
--			smp_ipi_init_one(sched_virq + cpu, &irq_resched);
-+			smp_ipi_init_one(call_virq + cpu, "IPI call",
-+					 ipi_call_interrupt);
-+			smp_ipi_init_one(sched_virq + cpu, "IPI resched",
-+					 ipi_resched_interrupt);
- 		}
- 	} else {
--		smp_ipi_init_one(call_virq, &irq_call);
--		smp_ipi_init_one(sched_virq, &irq_resched);
-+		smp_ipi_init_one(call_virq, "IPI call", ipi_call_interrupt);
-+		smp_ipi_init_one(sched_virq, "IPI resched",
-+				 ipi_resched_interrupt);
- 	}
- 
- 	return 0;
-@@ -311,8 +302,8 @@ int mips_smp_ipi_free(const struct cpumask *mask)
- 		int cpu;
- 
- 		for_each_cpu(cpu, mask) {
--			remove_irq(call_virq + cpu, &irq_call);
--			remove_irq(sched_virq + cpu, &irq_resched);
-+			free_irq(call_virq + cpu, NULL);
-+			free_irq(sched_virq + cpu, NULL);
- 		}
- 	}
- 	irq_destroy_ipi(call_virq, mask);
-diff --git a/arch/mips/lasat/interrupt.c b/arch/mips/lasat/interrupt.c
-index 0f3a8975081d..7965bbd0d319 100644
---- a/arch/mips/lasat/interrupt.c
-+++ b/arch/mips/lasat/interrupt.c
-@@ -90,14 +90,9 @@ asmlinkage void plat_irq_dispatch(void)
- 	}
- }
- 
--static struct irqaction cascade = {
--	.handler	= no_action,
--	.name		= "cascade",
--	.flags		= IRQF_NO_THREAD,
--};
--
- void __init arch_init_irq(void)
- {
-+	int irq = LASAT_CASCADE_IRQ;
- 	int i;
- 
- 	if (IS_LASAT_200()) {
-@@ -119,5 +114,6 @@ void __init arch_init_irq(void)
- 	for (i = LASAT_IRQ_BASE; i <= LASAT_IRQ_END; i++)
- 		irq_set_chip_and_handler(i, &lasat_irq_type, handle_level_irq);
- 
--	setup_irq(LASAT_CASCADE_IRQ, &cascade);
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", irq);
- }
-diff --git a/arch/mips/loongson2ef/common/bonito-irq.c b/arch/mips/loongson2ef/common/bonito-irq.c
-index 82352cc25e4c..c06ad412ee20 100644
---- a/arch/mips/loongson2ef/common/bonito-irq.c
-+++ b/arch/mips/loongson2ef/common/bonito-irq.c
-@@ -30,11 +30,6 @@ static struct irq_chip bonito_irq_type = {
- 	.irq_unmask	= bonito_irq_enable,
- };
- 
--static struct irqaction __maybe_unused dma_timeout_irqaction = {
--	.handler	= no_action,
--	.name		= "dma_timeout",
--};
--
- void bonito_irq_init(void)
- {
- 	u32 i;
-@@ -44,6 +39,8 @@ void bonito_irq_init(void)
- 					 handle_level_irq);
- 
- #ifdef CONFIG_CPU_LOONGSON2E
--	setup_irq(LOONGSON_IRQ_BASE + 10, &dma_timeout_irqaction);
-+	i = LOONGSON_IRQ_BASE + 10;
-+	if (request_irq(i, no_action, 0, "dma_timeout", NULL))
-+		pr_err("Failed to request irq %d (dma_timeout)\n", i);
- #endif
- }
-diff --git a/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c b/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c
-index 30af1b7c7529..f21a540a1dd2 100644
---- a/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c
-+++ b/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c
-@@ -100,12 +100,6 @@ static irqreturn_t timer_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction irq5 = {
--	.handler = timer_interrupt,
--	.flags = IRQF_NOBALANCING | IRQF_TIMER,
--	.name = "timer"
--};
--
- /*
-  * Initialize the conversion factor and the min/max deltas of the clock event
-  * structure and register the clock event source with the framework.
-@@ -134,7 +128,9 @@ void __init setup_mfgpt0_timer(void)
- 
- 	clockevents_register_device(cd);
- 
--	setup_irq(CS5536_MFGPT_INTR, &irq5);
-+	if (request_irq(CS5536_MFGPT_INTR, timer_interrupt,
-+			IRQF_NOBALANCING | IRQF_TIMER, "timer", NULL))
-+		pr_err("Failed to register timer interrupt\n");
- }
- 
- /*
-diff --git a/arch/mips/loongson2ef/fuloong-2e/irq.c b/arch/mips/loongson2ef/fuloong-2e/irq.c
-index 32278e7bf85c..305aa2eb74ad 100644
---- a/arch/mips/loongson2ef/fuloong-2e/irq.c
-+++ b/arch/mips/loongson2ef/fuloong-2e/irq.c
-@@ -35,14 +35,10 @@ asmlinkage void mach_irq_dispatch(unsigned int pending)
- 		spurious_interrupt();
- }
- 
--static struct irqaction cascade_irqaction = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
--
- void __init mach_init_irq(void)
- {
-+	int irq;
-+
- 	/* init all controller
- 	 *   0-15	  ------> i8259 interrupt
- 	 *   16-23	  ------> mips cpu interrupt
-@@ -59,7 +55,11 @@ void __init mach_init_irq(void)
- 	bonito_irq_init();
- 
- 	/* bonito irq at IP2 */
--	setup_irq(MIPS_CPU_IRQ_BASE + 2, &cascade_irqaction);
-+	irq = MIPS_CPU_IRQ_BASE + 2;
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", irq);
- 	/* 8259 irq at IP5 */
--	setup_irq(MIPS_CPU_IRQ_BASE + 5, &cascade_irqaction);
-+	irq = MIPS_CPU_IRQ_BASE + 5;
-+	if (request_irq(irq, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", irq);
- }
-diff --git a/arch/mips/loongson2ef/lemote-2f/irq.c b/arch/mips/loongson2ef/lemote-2f/irq.c
-index c58a044c6c07..34e15e8b7a8f 100644
---- a/arch/mips/loongson2ef/lemote-2f/irq.c
-+++ b/arch/mips/loongson2ef/lemote-2f/irq.c
-@@ -90,18 +90,6 @@ static irqreturn_t ip6_action(int cpl, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction ip6_irqaction = {
--	.handler = ip6_action,
--	.name = "cascade",
--	.flags = IRQF_SHARED | IRQF_NO_THREAD,
--};
--
--static struct irqaction cascade_irqaction = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD | IRQF_NO_SUSPEND,
--};
--
- void __init mach_init_irq(void)
- {
- 	/* init all controller
-@@ -120,7 +108,11 @@ void __init mach_init_irq(void)
- 	bonito_irq_init();
- 
- 	/* setup north bridge irq (bonito) */
--	setup_irq(LOONGSON_NORTH_BRIDGE_IRQ, &ip6_irqaction);
-+	if (request_irq(LOONGSON_NORTH_BRIDGE_IRQ, ip6_action,
-+			IRQF_SHARED | IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to register north bridge cascade interrupt\n");
- 	/* setup source bridge irq (i8259) */
--	setup_irq(LOONGSON_SOUTH_BRIDGE_IRQ, &cascade_irqaction);
-+	if (request_irq(LOONGSON_SOUTH_BRIDGE_IRQ, no_action,
-+			IRQF_NO_THREAD | IRQF_NO_SUSPEND, "cascade", NULL))
-+		pr_err("Failed to register south bridge cascade interrupt\n");
- }
-diff --git a/arch/mips/loongson32/common/irq.c b/arch/mips/loongson32/common/irq.c
-index 168d221d4178..9a50070f74f7 100644
---- a/arch/mips/loongson32/common/irq.c
-+++ b/arch/mips/loongson32/common/irq.c
-@@ -149,12 +149,6 @@ asmlinkage void plat_irq_dispatch(void)
- 
- }
- 
--static struct irqaction cascade_irqaction = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
--
- static void __init ls1x_irq_init(int base)
- {
- 	int n;
-@@ -176,12 +170,17 @@ static void __init ls1x_irq_init(int base)
- 					 handle_level_irq);
- 	}
- 
--	setup_irq(INT0_IRQ, &cascade_irqaction);
--	setup_irq(INT1_IRQ, &cascade_irqaction);
--	setup_irq(INT2_IRQ, &cascade_irqaction);
--	setup_irq(INT3_IRQ, &cascade_irqaction);
-+	if (request_irq(INT0_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", INT0_IRQ);
-+	if (request_irq(INT1_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", INT1_IRQ);
-+	if (request_irq(INT2_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", INT2_IRQ);
-+	if (request_irq(INT3_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", INT3_IRQ);
- #if defined(CONFIG_LOONGSON1_LS1C)
--	setup_irq(INT4_IRQ, &cascade_irqaction);
-+	if (request_irq(INT4_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to request irq %d (cascade)\n", INT4_IRQ);
- #endif
- }
- 
-diff --git a/arch/mips/loongson32/common/time.c b/arch/mips/loongson32/common/time.c
-index 4cc73f7ac0d4..459b15c96d3b 100644
---- a/arch/mips/loongson32/common/time.c
-+++ b/arch/mips/loongson32/common/time.c
-@@ -176,13 +176,6 @@ static struct clock_event_device ls1x_clockevent = {
- 	.tick_resume		= ls1x_clockevent_tick_resume,
- };
- 
--static struct irqaction ls1x_pwmtimer_irqaction = {
--	.name		= "ls1x-pwmtimer",
--	.handler	= ls1x_clockevent_isr,
--	.dev_id		= &ls1x_clockevent,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--};
--
- static void __init ls1x_time_init(void)
- {
- 	struct clock_event_device *cd = &ls1x_clockevent;
-@@ -206,7 +199,10 @@ static void __init ls1x_time_init(void)
- 	if (ret)
- 		panic(KERN_ERR "Failed to register clocksource: %d\n", ret);
- 
--	setup_irq(LS1X_TIMER_IRQ, &ls1x_pwmtimer_irqaction);
-+	if (request_irq(LS1X_TIMER_IRQ, ls1x_clockevent_isr,
-+			IRQF_PERCPU | IRQF_TIMER, "ls1x-pwmtimer",
-+			&ls1x_clockevent))
-+		pr_err("Failed to register ls1x-pwmtimer interrupt\n");
- }
- #endif /* CONFIG_CEVT_CSRC_LS1X */
- 
-diff --git a/arch/mips/loongson64/hpet.c b/arch/mips/loongson64/hpet.c
-index ed15430ad64f..e4282592575b 100644
---- a/arch/mips/loongson64/hpet.c
-+++ b/arch/mips/loongson64/hpet.c
-@@ -187,12 +187,6 @@ static irqreturn_t hpet_irq_handler(int irq, void *data)
- 	return IRQ_NONE;
- }
- 
--static struct irqaction hpet_irq = {
--	.handler = hpet_irq_handler,
--	.flags = IRQF_NOBALANCING | IRQF_TIMER,
--	.name = "hpet",
--};
--
- /*
-  * hpet address assignation and irq setting should be done in bios.
-  * but pmon don't do this, we just setup here directly.
-@@ -224,6 +218,7 @@ static void hpet_setup(void)
- 
- void __init setup_hpet_timer(void)
- {
-+	unsigned long flags = IRQF_NOBALANCING | IRQF_TIMER;
- 	unsigned int cpu = smp_processor_id();
- 	struct clock_event_device *cd;
- 
-@@ -247,7 +242,8 @@ void __init setup_hpet_timer(void)
- 	cd->min_delta_ticks = HPET_MIN_PROG_DELTA;
- 
- 	clockevents_register_device(cd);
--	setup_irq(HPET_T0_IRQ, &hpet_irq);
-+	if (request_irq(HPET_T0_IRQ, hpet_irq_handler, flags, "hpet", NULL))
-+		pr_err("Failed to request irq %d (hpet)\n", HPET_T0_IRQ);
- 	pr_info("hpet clock event device register\n");
- }
- 
-diff --git a/arch/mips/mti-malta/malta-int.c b/arch/mips/mti-malta/malta-int.c
-index a840e0c1642c..03d85b2b3eea 100644
---- a/arch/mips/mti-malta/malta-int.c
-+++ b/arch/mips/mti-malta/malta-int.c
-@@ -144,12 +144,6 @@ static irqreturn_t corehi_handler(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction corehi_irqaction = {
--	.handler = corehi_handler,
--	.name = "CoreHi",
--	.flags = IRQF_NO_THREAD,
--};
--
- static msc_irqmap_t msc_irqmap[] __initdata = {
- 	{MSC01C_INT_TMR,		MSC01_IRQ_EDGE, 0},
- 	{MSC01C_INT_PCI,		MSC01_IRQ_LEVEL, 0},
-@@ -223,5 +217,7 @@ void __init arch_init_irq(void)
- 		corehi_irq = MIPS_CPU_IRQ_BASE + MIPSCPU_INT_COREHI;
- 	}
- 
--	setup_irq(corehi_irq, &corehi_irqaction);
-+	if (request_irq(corehi_irq, corehi_handler, IRQF_NO_THREAD, "CoreHi",
-+			NULL))
-+		pr_err("Failed to request irq %d (CoreHi)\n", corehi_irq);
- }
-diff --git a/arch/mips/netlogic/xlr/fmn.c b/arch/mips/netlogic/xlr/fmn.c
-index d428e8471eec..d7db1533889a 100644
---- a/arch/mips/netlogic/xlr/fmn.c
-+++ b/arch/mips/netlogic/xlr/fmn.c
-@@ -110,12 +110,6 @@ static irqreturn_t fmn_message_handler(int irq, void *data)
- 	return IRQ_HANDLED;
- }
- 
--struct irqaction fmn_irqaction = {
--	.handler = fmn_message_handler,
--	.flags = IRQF_PERCPU,
--	.name = "fmn",
--};
--
- void xlr_percpu_fmn_init(void)
- {
- 	struct xlr_fmn_info *cpu_fmn_info;
-@@ -195,8 +189,9 @@ void nlm_setup_fmn_irq(void)
- {
- 	uint32_t flags;
- 
--	/* setup irq only once */
--	setup_irq(IRQ_FMN, &fmn_irqaction);
-+	/* request irq only once */
-+	if (request_irq(IRQ_FMN, fmn_message_handler, IRQF_PERCPU, "fmn", NULL))
-+		pr_err("Failed to request irq %d (fmn)\n", IRQ_FMN);
- 
- 	flags = nlm_cop2_enable_irqsave();
- 	nlm_fmn_setup_intr(IRQ_FMN, (1 << nlm_threads_per_core) - 1);
-diff --git a/arch/mips/pmcs-msp71xx/msp_irq.c b/arch/mips/pmcs-msp71xx/msp_irq.c
-index 8d53d7a2ed45..d525cc931d89 100644
---- a/arch/mips/pmcs-msp71xx/msp_irq.c
-+++ b/arch/mips/pmcs-msp71xx/msp_irq.c
-@@ -107,18 +107,6 @@ asmlinkage void plat_irq_dispatch(void)
- 		do_IRQ(MSP_INT_SW1);
- }
- 
--static struct irqaction cic_cascade_msp = {
--	.handler = no_action,
--	.name	 = "MSP CIC cascade",
--	.flags	 = IRQF_NO_THREAD,
--};
--
--static struct irqaction per_cascade_msp = {
--	.handler = no_action,
--	.name	 = "MSP PER cascade",
--	.flags	 = IRQF_NO_THREAD,
--};
--
- void __init arch_init_irq(void)
- {
- 	/* assume we'll be using vectored interrupt mode except in UP mode*/
-@@ -142,8 +130,12 @@ void __init arch_init_irq(void)
- #endif	/* CONFIG_MIPS_MT_SMP */
- #endif	/* CONFIG_MIPS_MT */
- 	/* setup the cascaded interrupts */
--	setup_irq(MSP_INT_CIC, &cic_cascade_msp);
--	setup_irq(MSP_INT_PER, &per_cascade_msp);
-+	if (request_irq(MSP_INT_CIC, no_action, IRQF_NO_THREAD,
-+			"MSP CIC cascade", NULL))
-+		pr_err("Failed to register MSP CIC cascade interrupt\n");
-+	if (request_irq(MSP_INT_PER, no_action, IRQF_NO_THREAD,
-+			"MSP PER cascade", NULL))
-+		pr_err("Failed to register MSP PER cascade interrupt\n");
- 
- #else
- 	/*
-@@ -153,7 +145,11 @@ void __init arch_init_irq(void)
- 	msp_slp_irq_init();
- 
- 	/* setup the cascaded SLP/PER interrupts */
--	setup_irq(MSP_INT_SLP, &cic_cascade_msp);
--	setup_irq(MSP_INT_PER, &per_cascade_msp);
-+	if (request_irq(MSP_INT_SLP, no_action, IRQF_NO_THREAD,
-+			"MSP CIC cascade", NULL))
-+		pr_err("Failed to register MSP CIC cascade interrupt\n");
-+	if (request_irq(MSP_INT_PER, no_action, IRQF_NO_THREAD,
-+			"MSP PER cascade", NULL))
-+		pr_err("Failed to register MSP PER cascade interrupt\n");
- #endif
- }
-diff --git a/arch/mips/pmcs-msp71xx/msp_smp.c b/arch/mips/pmcs-msp71xx/msp_smp.c
-index 8f00d26f2a53..00092e2924ec 100644
---- a/arch/mips/pmcs-msp71xx/msp_smp.c
-+++ b/arch/mips/pmcs-msp71xx/msp_smp.c
-@@ -38,21 +38,10 @@ static irqreturn_t ipi_call_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction irq_resched = {
--	.handler	= ipi_resched_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI_resched"
--};
--
--static struct irqaction irq_call = {
--	.handler	= ipi_call_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI_call"
--};
--
--void __init arch_init_ipiirq(int irq, struct irqaction *action)
-+void __init arch_init_ipiirq(int irq, const char *name, irq_handler_t handler)
- {
--	setup_irq(irq, action);
-+	if (request_irq(irq, handler, IRQF_PERCPU, name, NULL))
-+		pr_err("Failed to request irq %d (%s)\n", irq, name);
- 	irq_set_handler(irq, handle_percpu_irq);
- }
- 
-@@ -60,7 +49,8 @@ void __init msp_vsmp_int_init(void)
- {
- 	set_vi_handler(MIPS_CPU_IPI_RESCHED_IRQ, ipi_resched_dispatch);
- 	set_vi_handler(MIPS_CPU_IPI_CALL_IRQ, ipi_call_dispatch);
--	arch_init_ipiirq(MIPS_CPU_IPI_RESCHED_IRQ, &irq_resched);
--	arch_init_ipiirq(MIPS_CPU_IPI_CALL_IRQ, &irq_call);
-+	arch_init_ipiirq(MIPS_CPU_IPI_RESCHED_IRQ, "IPI_resched",
-+			 ipi_resched_interrupt);
-+	arch_init_ipiirq(MIPS_CPU_IPI_CALL_IRQ, "IPI_call", ipi_call_interrupt);
- }
- #endif /* CONFIG_MIPS_MT_SMP */
-diff --git a/arch/mips/pmcs-msp71xx/msp_time.c b/arch/mips/pmcs-msp71xx/msp_time.c
-index d83de01f00b8..5f211d2d14ff 100644
---- a/arch/mips/pmcs-msp71xx/msp_time.c
-+++ b/arch/mips/pmcs-msp71xx/msp_time.c
-@@ -27,7 +27,6 @@
- #define get_current_vpe()   \
- 	((read_c0_tcbind() >> TCBIND_CURVPE_SHIFT) & TCBIND_CURVPE)
- 
--static struct irqaction timer_vpe1;
- static int tim_installed;
- 
- void __init plat_time_init(void)
-@@ -77,10 +76,13 @@ void __init plat_time_init(void)
- 
- unsigned int get_c0_compare_int(void)
- {
-+	unsigned log flags = IRQF_PERCPU | IRQF_TIMER | IRQF_SHARED;
-+
- 	/* MIPS_MT modes may want timer for second VPE */
- 	if ((get_current_vpe()) && !tim_installed) {
--		memcpy(&timer_vpe1, &c0_compare_irqaction, sizeof(timer_vpe1));
--		setup_irq(MSP_INT_VPE1_TIMER, &timer_vpe1);
-+		if (request_irq(MSP_INT_VPE1_TIMER, c0_compare_interrupt, flags,
-+				"timer", NULL))
-+			pr_err("Failed to register timer interrupt\n");
- 		tim_installed++;
- 	}
- 
-diff --git a/arch/mips/ralink/cevt-rt3352.c b/arch/mips/ralink/cevt-rt3352.c
-index 61a08943eb2f..84013214434a 100644
---- a/arch/mips/ralink/cevt-rt3352.c
-+++ b/arch/mips/ralink/cevt-rt3352.c
-@@ -82,12 +82,6 @@ static struct systick_device systick = {
- 	},
- };
- 
--static struct irqaction systick_irqaction = {
--	.handler = systick_interrupt,
--	.flags = IRQF_PERCPU | IRQF_TIMER,
--	.dev_id = &systick.dev,
--};
--
- static int systick_shutdown(struct clock_event_device *evt)
- {
- 	struct systick_device *sdev;
-@@ -104,12 +98,17 @@ static int systick_shutdown(struct clock_event_device *evt)
- 
- static int systick_set_oneshot(struct clock_event_device *evt)
- {
-+	const char *name = systick.dev.name;
- 	struct systick_device *sdev;
-+	int irq = systick.dev.irq;
- 
- 	sdev = container_of(evt, struct systick_device, dev);
- 
--	if (!sdev->irq_requested)
--		setup_irq(systick.dev.irq, &systick_irqaction);
-+	if (!sdev->irq_requested) {
-+		if (request_irq(irq, systick_interrupt,
-+				IRQF_PERCPU | IRQF_TIMER, name, &systick.dev))
-+			pr_err("Failed to request irq %d (%s)\n", irq, name);
-+	}
- 	sdev->irq_requested = 1;
- 	iowrite32(CFG_EXT_STK_EN | CFG_CNT_EN,
- 		  systick.membase + SYSTICK_CONFIG);
-@@ -125,7 +124,6 @@ static int __init ralink_systick_init(struct device_node *np)
- 	if (!systick.membase)
- 		return -ENXIO;
- 
--	systick_irqaction.name = np->name;
- 	systick.dev.name = np->name;
- 	clockevents_calc_mult_shift(&systick.dev, SYSTICK_FREQ, 60);
- 	systick.dev.max_delta_ns = clockevent_delta2ns(0x7fff, &systick.dev);
-diff --git a/arch/mips/sgi-ip22/ip22-eisa.c b/arch/mips/sgi-ip22/ip22-eisa.c
-index a0a79222ce0b..f3b0e90e0135 100644
---- a/arch/mips/sgi-ip22/ip22-eisa.c
-+++ b/arch/mips/sgi-ip22/ip22-eisa.c
-@@ -92,11 +92,6 @@ static irqreturn_t ip22_eisa_intr(int irq, void *dev_id)
- 	return IRQ_NONE;
- }
- 
--static struct irqaction eisa_action = {
--	.handler	= ip22_eisa_intr,
--	.name		= "EISA",
--};
--
- int __init ip22_eisa_init(void)
- {
- 	int i, c;
-@@ -136,9 +131,8 @@ int __init ip22_eisa_init(void)
- 
- 	init_i8259_irqs();
- 
--	/* Cannot use request_irq because of kmalloc not being ready at such
--	 * an early stage. Yes, I've been bitten... */
--	setup_irq(SGI_EISA_IRQ, &eisa_action);
-+	if (request_irq(SGI_EISA_IRQ, ip22_eisa_intr, 0, "EISA", NULL))
-+		pr_err("Failed to request irq %d (EISA)\n", SGI_EISA_IRQ);
- 
- 	EISA_bus = 1;
- 	return 0;
-diff --git a/arch/mips/sgi-ip22/ip22-int.c b/arch/mips/sgi-ip22/ip22-int.c
-index 3804895fa697..96798a4ab2de 100644
---- a/arch/mips/sgi-ip22/ip22-int.c
-+++ b/arch/mips/sgi-ip22/ip22-int.c
-@@ -159,36 +159,7 @@ static void __irq_entry indy_buserror_irq(void)
- 	irq_exit();
- }
- 
--static struct irqaction local0_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "local0 cascade",
--};
--
--static struct irqaction local1_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "local1 cascade",
--};
--
--static struct irqaction buserr = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "Bus Error",
--};
--
--static struct irqaction map0_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "mapable0 cascade",
--};
--
- #ifdef USE_LIO3_IRQ
--static struct irqaction map1_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "mapable1 cascade",
--};
- #define SGI_INTERRUPTS	SGINT_END
- #else
- #define SGI_INTERRUPTS	SGINT_LOCAL3
-@@ -322,14 +293,24 @@ void __init arch_init_irq(void)
- 	}
- 
- 	/* vector handler. this register the IRQ as non-sharable */
--	setup_irq(SGI_LOCAL_0_IRQ, &local0_cascade);
--	setup_irq(SGI_LOCAL_1_IRQ, &local1_cascade);
--	setup_irq(SGI_BUSERR_IRQ, &buserr);
-+	if (request_irq(SGI_LOCAL_0_IRQ, no_action, IRQF_NO_THREAD,
-+			"local0 cascade", NULL))
-+		pr_err("Failed to register local0 cascade interrupt\n");
-+	if (request_irq(SGI_LOCAL_1_IRQ, no_action, IRQF_NO_THREAD,
-+			"local1 cascade", NULL))
-+		pr_err("Failed to register local1 cascade interrupt\n");
-+	if (request_irq(SGI_BUSERR_IRQ, no_action, IRQF_NO_THREAD,
-+			"Bus Error", NULL))
-+		pr_err("Failed to register Bus Error interrupt\n");
- 
- 	/* cascade in cascade. i love Indy ;-) */
--	setup_irq(SGI_MAP_0_IRQ, &map0_cascade);
-+	if (request_irq(SGI_MAP_0_IRQ, no_action, IRQF_NO_THREAD,
-+			"mapable0 cascade", NULL))
-+		pr_err("Failed to register mapable0 cascade interrupt\n");
- #ifdef USE_LIO3_IRQ
--	setup_irq(SGI_MAP_1_IRQ, &map1_cascade);
-+	if (request_irq(SGI_MAP_1_IRQ, no_action, IRQF_NO_THREAD,
-+			"mapable1 cascade", NULL))
-+		pr_err("Failed to register mapable1 cascade interrupt\n");
- #endif
- 
- #ifdef CONFIG_EISA
-diff --git a/arch/mips/sgi-ip32/ip32-irq.c b/arch/mips/sgi-ip32/ip32-irq.c
-index a6a0ff7f5aed..1bbd5bfb5458 100644
---- a/arch/mips/sgi-ip32/ip32-irq.c
-+++ b/arch/mips/sgi-ip32/ip32-irq.c
-@@ -111,16 +111,6 @@ static inline void flush_mace_bus(void)
- extern irqreturn_t crime_memerr_intr(int irq, void *dev_id);
- extern irqreturn_t crime_cpuerr_intr(int irq, void *dev_id);
- 
--static struct irqaction memerr_irq = {
--	.handler = crime_memerr_intr,
--	.name = "CRIME memory error",
--};
--
--static struct irqaction cpuerr_irq = {
--	.handler = crime_cpuerr_intr,
--	.name = "CRIME CPU error",
--};
--
- /*
-  * This is for pure CRIME interrupts - ie not MACE.  The advantage?
-  * We get to split the register in half and do faster lookups.
-@@ -497,8 +487,12 @@ void __init arch_init_irq(void)
- 			break;
- 		}
- 	}
--	setup_irq(CRIME_MEMERR_IRQ, &memerr_irq);
--	setup_irq(CRIME_CPUERR_IRQ, &cpuerr_irq);
-+	if (request_irq(CRIME_MEMERR_IRQ, crime_memerr_intr, 0,
-+			"CRIME memory error", NULL))
-+		pr_err("Failed to register CRIME memory error interrupt\n");
-+	if (request_irq(CRIME_CPUERR_IRQ, crime_cpuerr_intr, 0,
-+			"CRIME CPU error", NULL))
-+		pr_err("Failed to register CRIME CPU error interrupt\n");
- 
- #define ALLINTS (IE_IRQ0 | IE_IRQ1 | IE_IRQ2 | IE_IRQ3 | IE_IRQ4 | IE_IRQ5)
- 	change_c0_status(ST0_IM, ALLINTS);
-diff --git a/arch/mips/sni/a20r.c b/arch/mips/sni/a20r.c
-index f9407e170476..ba966d62fb4b 100644
---- a/arch/mips/sni/a20r.c
-+++ b/arch/mips/sni/a20r.c
-@@ -222,7 +222,9 @@ void __init sni_a20r_irq_init(void)
- 		irq_set_chip_and_handler(i, &a20r_irq_type, handle_level_irq);
- 	sni_hwint = a20r_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ0);
--	setup_irq(SNI_A20R_IRQ_BASE + 3, &sni_isa_irq);
-+	if (request_irq(SNI_A20R_IRQ_BASE + 3, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("Failed to register ISA interrupt\n");
- }
- 
- void sni_a20r_init(void)
-diff --git a/arch/mips/sni/irq.c b/arch/mips/sni/irq.c
-index ac61b90bcc66..dec89afc9886 100644
---- a/arch/mips/sni/irq.c
-+++ b/arch/mips/sni/irq.c
-@@ -27,7 +27,7 @@ asmlinkage void plat_irq_dispatch(void)
- }
- 
- /* ISA irq handler */
--static irqreturn_t sni_isa_irq_handler(int dummy, void *p)
-+irqreturn_t sni_isa_irq_handler(int dummy, void *p)
- {
- 	int irq;
- 
-@@ -39,12 +39,6 @@ static irqreturn_t sni_isa_irq_handler(int dummy, void *p)
- 	return IRQ_HANDLED;
- }
- 
--struct irqaction sni_isa_irq = {
--	.handler = sni_isa_irq_handler,
--	.name = "ISA",
--	.flags = IRQF_SHARED
--};
--
- /*
-  * On systems with i8259-style interrupt controllers we assume for
-  * driver compatibility reasons interrupts 0 - 15 to be the i8295
-diff --git a/arch/mips/sni/pcit.c b/arch/mips/sni/pcit.c
-index 05bb51676e82..4a850ab03398 100644
---- a/arch/mips/sni/pcit.c
-+++ b/arch/mips/sni/pcit.c
-@@ -244,7 +244,9 @@ void __init sni_pcit_irq_init(void)
- 	*(volatile u32 *)SNI_PCIT_INT_REG = 0;
- 	sni_hwint = sni_pcit_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ1);
--	setup_irq(SNI_PCIT_INT_START + 6, &sni_isa_irq);
-+	if (request_irq(SNI_PCIT_INT_START + 6, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("Failed to register ISA interrupt\n");
- }
- 
- void __init sni_pcit_cplus_irq_init(void)
-@@ -257,7 +259,9 @@ void __init sni_pcit_cplus_irq_init(void)
- 	*(volatile u32 *)SNI_PCIT_INT_REG = 0x40000000;
- 	sni_hwint = sni_pcit_hwint_cplus;
- 	change_c0_status(ST0_IM, IE_IRQ0);
--	setup_irq(MIPS_CPU_IRQ_BASE + 3, &sni_isa_irq);
-+	if (request_irq(MIPS_CPU_IRQ_BASE + 3, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("Failed to register ISA interrupt\n");
- }
- 
- void __init sni_pcit_init(void)
-diff --git a/arch/mips/sni/rm200.c b/arch/mips/sni/rm200.c
-index f6fa9afcbfd3..ba1f2fc6a43e 100644
---- a/arch/mips/sni/rm200.c
-+++ b/arch/mips/sni/rm200.c
-@@ -356,11 +356,6 @@ void sni_rm200_init_8259A(void)
- /*
-  * IRQ2 is cascade interrupt to second interrupt controller
-  */
--static struct irqaction sni_rm200_irq2 = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
- 
- static struct resource sni_rm200_pic1_resource = {
- 	.name = "onboard ISA pic1",
-@@ -389,12 +384,6 @@ static irqreturn_t sni_rm200_i8259A_irq_handler(int dummy, void *p)
- 	return IRQ_HANDLED;
- }
- 
--struct irqaction sni_rm200_i8259A_irq = {
--	.handler = sni_rm200_i8259A_irq_handler,
--	.name = "onboard ISA",
--	.flags = IRQF_SHARED
--};
--
- void __init sni_rm200_i8259_irqs(void)
- {
- 	int i;
-@@ -417,7 +406,9 @@ void __init sni_rm200_i8259_irqs(void)
- 		irq_set_chip_and_handler(i, &sni_rm200_i8259A_chip,
- 					 handle_level_irq);
- 
--	setup_irq(RM200_I8259A_IRQ_BASE + PIC_CASCADE_IR, &sni_rm200_irq2);
-+	if (request_irq(RM200_I8259A_IRQ_BASE + PIC_CASCADE_IR, no_action,
-+			IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("Failed to register cascade interrupt\n");
- }
- 
- 
-@@ -481,8 +472,12 @@ void __init sni_rm200_irq_init(void)
- 		irq_set_chip_and_handler(i, &rm200_irq_type, handle_level_irq);
- 	sni_hwint = sni_rm200_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ0);
--	setup_irq(SNI_RM200_INT_START + 0, &sni_rm200_i8259A_irq);
--	setup_irq(SNI_RM200_INT_START + 1, &sni_isa_irq);
-+	if (request_irq(SNI_RM200_INT_START + 0, sni_rm200_i8259A_irq_handler,
-+			IRQF_SHARED, "onboard ISA", NULL))
-+		pr_err("Failed to register onboard ISA interrupt\n");
-+	if (request_irq(SNI_RM200_INT_START + 1, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("Failed to register ISA interrupt\n");
- }
- 
- void __init sni_rm200_init(void)
-diff --git a/arch/mips/sni/time.c b/arch/mips/sni/time.c
-index dbace1f3e1a9..5254a3a1f37c 100644
---- a/arch/mips/sni/time.c
-+++ b/arch/mips/sni/time.c
-@@ -55,12 +55,6 @@ static irqreturn_t a20r_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction a20r_irqaction = {
--	.handler	= a20r_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "a20r-timer",
--};
--
- /*
-  * a20r platform uses 2 counters to divide the input frequency.
-  * Counter 2 output is connected to Counter 0 & 1 input.
-@@ -74,7 +68,9 @@ static void __init sni_a20r_timer_setup(void)
- 	cd->cpumask		= cpumask_of(cpu);
- 	clockevents_register_device(cd);
- 	action->dev_id = cd;
--	setup_irq(SNI_A20R_IRQ_TIMER, &a20r_irqaction);
-+	if (request_irq(SNI_A20R_IRQ_TIMER, a20r_interrupt,
-+			IRQF_PERCPU | IRQF_TIMER, "a20r-timer", NULL))
-+		pr_err("Failed to register a20r-timer interrupt\n");
- }
- 
- #define SNI_8254_TICK_RATE	  1193182UL
-diff --git a/arch/mips/vr41xx/common/irq.c b/arch/mips/vr41xx/common/irq.c
-index 7a826fbf9060..8f68446ff2d9 100644
---- a/arch/mips/vr41xx/common/irq.c
-+++ b/arch/mips/vr41xx/common/irq.c
-@@ -17,12 +17,6 @@ typedef struct irq_cascade {
- 
- static irq_cascade_t irq_cascade[NR_IRQS] __cacheline_aligned;
- 
--static struct irqaction cascade_irqaction = {
--	.handler	= no_action,
--	.name		= "cascade",
--	.flags		= IRQF_NO_THREAD,
--};
--
- int cascade_irq(unsigned int irq, int (*get_irq)(unsigned int))
- {
- 	int retval = 0;
-@@ -36,7 +30,8 @@ int cascade_irq(unsigned int irq, int (*get_irq)(unsigned int))
- 	irq_cascade[irq].get_irq = get_irq;
- 
- 	if (get_irq != NULL) {
--		retval = setup_irq(irq, &cascade_irqaction);
-+		retval = request_irq(irq, no_action, IRQF_NO_THREAD,
-+				     "cascade", NULL);
- 		if (retval < 0)
- 			irq_cascade[irq].get_irq = NULL;
- 	}
--- 
-2.25.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cj4gQmVsb3cgaXMgc2xpZ2h0bHkgbW9kaWZpZWQgdmVyc2lvbiBvZiB5b3VyIGNoYW5nZSBhYm92
+ZSBhbmQgc2hvdWxkIHN0aWxsCj4gcHJldmVudCB0aGUgYnVnIG9uIHBvd2VycGMuIFdpbGwgaXQg
+YmUgcG9zc2libGUgZm9yIHlvdSB0byByZS10ZXN0IHRoaXMKPiA/IE9uY2UgY29uZmlybWVkLCB3
+aWxsIHNlbmQgYSBwYXRjaCBlbmFibGluZyB0aGlzIHRlc3Qgb24gcG93ZXJwYzY0Cj4ga2VlcGlu
+ZyB5b3VyIGF1dGhvcnNoaXAuIFRoYW5rIHlvdS4KClRoaXMgd29ya3MgZmluZSBvbiByYWRpeCBN
+TVUgYnV0IEkgZGVjaWRlZCB0byBnbyBhIGJpdCBmdXR1cmUgdG8gdGVzdCBoYXNoCk1NVS4gVGhl
+IGtlcm5lbCB3aWxsIHN0dWNrIGhlcmUgYmVsb3cuIEkgZGlkIGNvbmZpcm0gdGhhdCBwdGVfYWxs
+b2NfbWFwX2xvY2soKQp3YXMgc3VjY2Vzc2Z1bCwgc28gSSBkb27igJl0IHVuZGVyc3RhbmQgaGFz
+aCBNTVUgd2VsbCBlbm91Z2ggdG8gdGVsbCB3aHkKaXQgY291bGQgc3RpbGwgdGFrZSBhbiBpbnRl
+cnJ1cHQgYXQgcHRlX2NsZWFyX3Rlc3RzKCkgZXZlbiBiZWZvcmUgd2UgY2FsbHMKcHRlX3VubWFw
+X3VubG9jaygpPwoKWyAgIDMzLjg4MTUxNV1bICAgIFQxXSBvayA4IC0gcHJvcGVydHktZW50cnkK
+WyAgIDMzLjg4MzY1M11bICAgIFQxXSBkZWJ1Z192bV9wZ3RhYmxlOiBkZWJ1Z192bV9wZ3RhYmxl
+OiBWYWxpZGF0aW5nCmFyY2hpdGVjdHVyZSBwYWdlIHRhYmxlIGhlbHBlcnMKWyAgIDYwLjQxODg4
+NV1bICAgIEM4XSB3YXRjaGRvZzogQlVHOiBzb2Z0IGxvY2t1cCAtIENQVSM4IHN0dWNrIGZvciAy
+M3MhCltzd2FwcGVyLzA6MV0KWyAgIDYwLjQxODkxM11bICAgIEM4XSBNb2R1bGVzIGxpbmtlZCBp
+bjoKWyAgIDYwLjQxODkyN11bICAgIEM4XSBpcnEgZXZlbnQgc3RhbXA6IDI4OTY3NjIKWyAgIDYw
+LjQxODk0NV1bICAgIEM4XSBoYXJkaXJxcyBsYXN0ICBlbmFibGVkIGF0ICgyODk2NzYxKTogWzxj
+MDAwMDAwMDAwMDBkZWM4Pl0KZmFzdF9leGNfcmV0dXJuX2lycSsweDI4LzB4MzQKWyAgIDYwLjQx
+ODk2MF1bICAgIEM4XSBoYXJkaXJxcyBsYXN0IGRpc2FibGVkIGF0ICgyODk2NzYyKTogWzxjMDAw
+MDAwMDAwMDA5MjRjPl0KZGVjcmVtZW50ZXJfY29tbW9uKzB4MTBjLzB4MTMwClsgICA2MC40MTg5
+ODVdWyAgICBDOF0gc29mdGlycXMgbGFzdCAgZW5hYmxlZCBhdCAoMjg5Njc2MCk6IFs8YzAwMDAw
+MDAwMDlhMWJmMD5dCl9fZG9fc29mdGlycSsweDY0MC8weDhjOApbICAgNjAuNDE5MDA5XVsgICAg
+QzhdIHNvZnRpcnFzIGxhc3QgZGlzYWJsZWQgYXQgKDI4OTY3NTMpOiBbPGMwMDAwMDAwMDAxMTNj
+YmM+XQppcnFfZXhpdCsweDE2Yy8weDFkMApbICAgNjAuNDE5MDI0XVsgICAgQzhdIENQVTogOCBQ
+SUQ6IDEgQ29tbTogc3dhcHBlci8wIE5vdCB0YWludGVkIDUuNi4wLXJjNC1uZXh0LQoyMDIwMDMw
+MysgIzcKWyAgIDYwLjQxOTA1NV1bICAgIEM4XSBOSVA6ICBjMDAwMDAwMDAxMDNkYzE0IExSOiBj
+MDAwMDAwMDAxMDNkYjBjIENUUjoKMDAwMDAwMDAwMDAwMDAwMApbICAgNjAuNDE5MDc2XVsgICAg
+QzhdIFJFR1M6IGMwMDAwMDAwM2RkNGZhMzAgVFJBUDogMDkwMSAgIE5vdCB0YWludGVkICAoNS42
+LjAtCnJjNC1uZXh0LTIwMjAwMzAzKykKWyAgIDYwLjQxOTEwN11bICAgIEM4XSBNU1I6ICA5MDAw
+MDAwMDAwMDA5MDMzIDxTRixIVixFRSxNRSxJUixEUixSSSxMRT4gIENSOgo0MjAwMDIyMiAgWEVS
+OiAwMDAwMDAwMApbICAgNjAuNDE5MTM0XVsgICAgQzhdIENGQVI6IGMwMDAwMDAwMDEwM2RjMWMg
+SVJRTUFTSzogMCAKWyAgIDYwLjQxOTEzNF1bICAgIEM4XSBHUFIwMDogYzAwMDAwMDAwMTAzZGIw
+YyBjMDAwMDAwMDNkZDRmY2MwIGMwMDAwMDAwMDE2NTdkMDAKMDUyMTAwMDEwMDAwMDBjMCAKWyAg
+IDYwLjQxOTEzNF1bICAgIEM4XSBHUFIwNDogODAwMDAwMDAwMDAwMDEwNSAwMDAwMDAwMDAwMDAw
+MDBhIDAwMDAwMDAwZjRkOTg2NGMKMDAwMDAwMDAwMDAwMDAwMSAKWyAgIDYwLjQxOTEzNF1bICAg
+IEM4XSBHUFIwODogMDAwMDAwMDAwMDAwMDAwMCBmZmZmZmZmZmZmZmZmZmZmIDAwMDAwMDAwMDAw
+MDAwMDEKMDAwMDAwMDAwMDBhMDAwMCAKWyAgIDYwLjQxOTEzNF1bICAgIEM4XSBHUFIxMjogMDAw
+MDAwMDAwMDAwMDAwMCBjMDAwMDAxZmZmZmY5ODgwIApbICAgNjAuNDE5MjIwXVsgICAgQzhdIE5J
+UCBbYzAwMDAwMDAwMTAzZGMxNF0gZGVidWdfdm1fcGd0YWJsZSsweDdhOC8weGJiNApoYXNoX19w
+dGVfdXBkYXRlIGF0IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9ib29rM3MvNjQvaGFzaC5oOjE1
+OQooaW5saW5lZCBieSkgcHRlX3VwZGF0ZSBhdCBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vYm9v
+azNzLzY0L3BndGFibGUuaDozNTkKKGlubGluZWQgYnkpIHB0ZV9jbGVhciBhdCBhcmNoL3Bvd2Vy
+cGMvaW5jbHVkZS9hc20vYm9vazNzLzY0L3BndGFibGUuaDo0NzcKKGlubGluZWQgYnkpIHB0ZV9j
+bGVhcl90ZXN0cyBhdCBtbS9kZWJ1Z192bV9wZ3RhYmxlLmM6MjU5CihpbmxpbmVkIGJ5KSBkZWJ1
+Z192bV9wZ3RhYmxlIGF0IG1tL2RlYnVnX3ZtX3BndGFibGUuYzozNjgKWyAgIDYwLjQxOTI0MV1b
+ICAgIEM4XSBMUiBbYzAwMDAwMDAwMTAzZGIwY10gZGVidWdfdm1fcGd0YWJsZSsweDZhMC8weGJi
+NApwbWRfYmFzaWNfdGVzdHMgYXQgbW0vZGVidWdfdm1fcGd0YWJsZS5jOjc0CihpbmxpbmVkIGJ5
+KSBkZWJ1Z192bV9wZ3RhYmxlIGF0IG1tL2RlYnVnX3ZtX3BndGFibGUuYzozNjMKWyAgIDYwLjQx
+OTI2MF1bICAgIEM4XSBDYWxsIFRyYWNlOgpbICAgNjAuNDE5Mjc4XVsgICAgQzhdIFtjMDAwMDAw
+MDNkZDRmY2MwXSBbYzAwMDAwMDAwMTAzZDk5NF0KZGVidWdfdm1fcGd0YWJsZSsweDUyOC8weGJi
+NCAodW5yZWxpYWJsZSkKWyAgIDYwLjQxOTMwMl1bICAgIEM4XSBbYzAwMDAwMDAzZGQ0ZmRiMF0g
+W2MwMDAwMDAwMDAwMTBlYWNdCmtlcm5lbF9pbml0KzB4MzAvMHgxOTQKWyAgIDYwLjQxOTMyNV1b
+ICAgIEM4XSBbYzAwMDAwMDAzZGQ0ZmUyMF0gW2MwMDAwMDAwMDAwMGI3NDhdCnJldF9mcm9tX2tl
+cm5lbF90aHJlYWQrMHg1Yy8weDc0ClsgICA2MC40MTkzNjNdWyAgICBDOF0gSW5zdHJ1Y3Rpb24g
+ZHVtcDoKWyAgIDYwLjQxOTM4Ml1bICAgIEM4XSA3ZDA3NTA3OCA3Y2U3NGI3OCA3Y2UwZjlhZCA0
+MGMyZmZmMCA3ZTQ0OTM3OCA3ZmMzZjM3OAo0YjAzNTMxZCA2MDAwMDAwMCAKWyAgIDYwLjQxOTQx
+Nl1bICAgIEM4XSA0ODAwMDA4MCAzOTIwZmZmZiAzOTQwMDAwMSAzOTAwMDAwMCA8N2UwMGY4YTg+
+IDdlMDc1MDM5CjQwYzJmZmY4IDdlMDc0ODc4IApbICAgOTguOTA4ODg5XVsgICAgQzhdIHJjdTog
+SU5GTzogcmN1X3NjaGVkIHNlbGYtZGV0ZWN0ZWQgc3RhbGwgb24gQ1BVClsgICA5OC45MDg5MzNd
+WyAgICBDOF0gcmN1OiAgICAgICAgIDgtLi4uLjogKDY1MDAgdGlja3MgdGhpcyBHUCkKaWRsZT01
+MjIvMS8weDQwMDAwMDAwMDAwMDAwMDIgc29mdGlycT0xMzIvMTMyIGZxcz0zMjUwIApbICAgOTgu
+OTA4OTYzXVsgICAgQzhdICAgICAgICAgKHQ9NjUwMSBqaWZmaWVzIGc9LTcxOSBxPTUxMCkKWyAg
+IDk4LjkwODk4NF1bICAgIEM4XSBOTUkgYmFja3RyYWNlIGZvciBjcHUgOApbICAgOTguOTA5MDEy
+XVsgICAgQzhdIENQVTogOCBQSUQ6IDEgQ29tbTogc3dhcHBlci8wIFRhaW50ZWQ6CkcgICAgICAg
+ICAgICAgTCAgICA1LjYuMC1yYzQtbmV4dC0yMDIwMDMwMysgIzcKWyAgIDk4LjkwOTAyNV1bICAg
+IEM4XSBDYWxsIFRyYWNlOgpbICAgOTguOTA5MDQ2XVsgICAgQzhdIFtjMDAwMDAwMDNkZDRmMzYw
+XSBbYzAwMDAwMDAwMDk3MGZlMF0KZHVtcF9zdGFjaysweGY0LzB4MTY0ICh1bnJlbGlhYmxlKQpb
+ICAgOTguOTA5MDcwXVsgICAgQzhdIFtjMDAwMDAwMDNkZDRmM2IwXSBbYzAwMDAwMDAwMDk3ZGNm
+NF0Kbm1pX2NwdV9iYWNrdHJhY2UrMHgxYjQvMHgxZTAKWyAgIDk4LjkwOTA4NF1bICAgIEM4XSBb
+YzAwMDAwMDAzZGQ0ZjQ1MF0gW2MwMDAwMDAwMDA5N2RmNDhdCm5taV90cmlnZ2VyX2NwdW1hc2tf
+YmFja3RyYWNlKzB4MjI4LzB4MmMwClsgICA5OC45MDkxMThdWyAgICBDOF0gW2MwMDAwMDAwM2Rk
+NGY1MDBdIFtjMDAwMDAwMDAwMDU3YmY4XQphcmNoX3RyaWdnZXJfY3B1bWFza19iYWNrdHJhY2Ur
+MHgyOC8weDQwClsgICA5OC45MDkxNTJdWyAgICBDOF0gW2MwMDAwMDAwM2RkNGY1MjBdIFtjMDAw
+MDAwMDAwMjAyZGQ0XQpyY3VfZHVtcF9jcHVfc3RhY2tzKzB4MWM0LzB4MjM0ClsgICA5OC45MDkx
+ODRdWyAgICBDOF0gW2MwMDAwMDAwM2RkNGY1YTBdIFtjMDAwMDAwMDAwMjAxNjM0XQpyY3Vfc2No
+ZWRfY2xvY2tfaXJxKzB4ZDU0LzB4MTEzMApbICAgOTguOTA5MjA3XVsgICAgQzhdIFtjMDAwMDAw
+MDNkZDRmNmMwXSBbYzAwMDAwMDAwMDIxNzA2OF0KdXBkYXRlX3Byb2Nlc3NfdGltZXMrMHg0OC8w
+eGIwClsgICA5OC45MDkyMzldWyAgICBDOF0gW2MwMDAwMDAwM2RkNGY2ZjBdIFtjMDAwMDAwMDAw
+MjM1OGI0XQp0aWNrX3NjaGVkX2hhbmRsZSsweDM0LzB4YjAKWyAgIDk4LjkwOTI2Ml1bICAgIEM4
+XSBbYzAwMDAwMDAzZGQ0ZjcyMF0gW2MwMDAwMDAwMDAyMzYxZDhdCnRpY2tfc2NoZWRfdGltZXIr
+MHg2OC8weGUwClsgICA5OC45MDkyODRdWyAgICBDOF0gW2MwMDAwMDAwM2RkNGY3NjBdIFtjMDAw
+MDAwMDAwMjE5NzY4XQpfX2hydGltZXJfcnVuX3F1ZXVlcysweDUyOC8weGE2MApbICAgOTguOTA5
+MzA2XVsgICAgQzhdIFtjMDAwMDAwMDNkZDRmODgwXSBbYzAwMDAwMDAwMDIxYWI1OF0KaHJ0aW1l
+cl9pbnRlcnJ1cHQrMHgxMjgvMHgzMzAKWyAgIDk4LjkwOTMyOV1bICAgIEM4XSBbYzAwMDAwMDAz
+ZGQ0ZjkzMF0gW2MwMDAwMDAwMDAwMmUxYjRdCnRpbWVyX2ludGVycnVwdCsweDI2NC8weDY4MApb
+ICAgOTguOTA5MzUyXVsgICAgQzhdIFtjMDAwMDAwMDNkZDRmOWMwXSBbYzAwMDAwMDAwMDAwOTI2
+NF0KZGVjcmVtZW50ZXJfY29tbW9uKzB4MTI0LzB4MTMwClsgICA5OC45MDkzNjZdWyAgICBDOF0g
+LS0tIGludGVycnVwdDogOTAxIGF0IGRlYnVnX3ZtX3BndGFibGUrMHg3YTgvMHhiYjQKWyAgIDk4
+LjkwOTM2Nl1bICAgIEM4XSAgICAgTFIgPSBkZWJ1Z192bV9wZ3RhYmxlKzB4NmEwLzB4YmI0Clsg
+ICA5OC45MDk0MDJdWyAgICBDOF0gW2MwMDAwMDAwM2RkNGZjYzBdIFtjMDAwMDAwMDAxMDNkOTk0
+XQpkZWJ1Z192bV9wZ3RhYmxlKzB4NTI4LzB4YmI0ICh1bnJlbGlhYmxlKQpbICAgOTguOTA5NDM1
+XVsgICAgQzhdIFtjMDAwMDAwMDNkZDRmZGIwXSBbYzAwMDAwMDAwMDAxMGVhY10Ka2VybmVsX2lu
+aXQrMHgzMC8weDE5NApbICAgOTguOTA5NDY3XVsgICAgQzhdIFtjMDAwMDAwMDNkZDRmZTIwXSBb
+YzAwMDAwMDAwMDAwYjc0OF0KcmV0X2Zyb21fa2VybmVsX3RocmVhZCsweDVjLzB4NzQKWyAgMTI0
+LjQxODg4NV1bICAgIEM4XSB3YXRjaGRvZzogQlVHOiBzb2Z0IGxvY2t1cCAtIENQVSM4IHN0dWNr
+IGZvciAyMnMhCltzd2FwcGVyLzA6MV0KWyAgMTI0LjQxODkxNF1bICAgIEM4XSBNb2R1bGVzIGxp
+bmtlZCBpbjoKWyAgMTI0LjQxODkyNl1bICAgIEM4XSBpcnEgZXZlbnQgc3RhbXA6IDI5Mzc5MzgK
+WyAgMTI0LjQxODk0MF1bICAgIEM4XSBoYXJkaXJxcyBsYXN0ICBlbmFibGVkIGF0ICgyOTM3OTM3
+KTogWzxjMDAwMDAwMDAwMDBkZWM4Pl0KZmFzdF9leGNfcmV0dXJuX2lycSsweDI4LzB4MzQKWyAg
+MTI0LjQxODk2NF1bICAgIEM4XSBoYXJkaXJxcyBsYXN0IGRpc2FibGVkIGF0ICgyOTM3OTM4KTog
+WzxjMDAwMDAwMDAwMDA5MjRjPl0KZGVjcmVtZW50ZXJfY29tbW9uKzB4MTBjLzB4MTMwClsgIDEy
+NC40MTg5ODBdWyAgICBDOF0gc29mdGlycXMgbGFzdCAgZW5hYmxlZCBhdCAoMjkzNzkzNik6IFs8
+YzAwMDAwMDAwMDlhMWJmMD5dCl9fZG9fc29mdGlycSsweDY0MC8weDhjOApbICAxMjQuNDE5MDEz
+XVsgICAgQzhdIHNvZnRpcnFzIGxhc3QgZGlzYWJsZWQgYXQgKDI5Mzc5MjkpOiBbPGMwMDAwMDAw
+MDAxMTNjYmM+XQppcnFfZXhpdCsweDE2Yy8weDFkMApbICAxMjQuNDE5MDM2XVsgICAgQzhdIENQ
+VTogOCBQSUQ6IDEgQ29tbTogc3dhcHBlci8wIFRhaW50ZWQ6CkcgICAgICAgICAgICAgTCAgICA1
+LjYuMC1yYzQtbmV4dC0yMDIwMDMwMysgIzcKWyAgMTI0LjQxOTA1OV1bICAgIEM4XSBOSVA6ICBj
+MDAwMDAwMDAxMDNkYzE0IExSOiBjMDAwMDAwMDAxMDNkYjBjIENUUjoKMDAwMDAwMDAwMDAwMDAw
+MApbICAxMjQuNDE5MDgwXVsgICAgQzhdIFJFR1M6IGMwMDAwMDAwM2RkNGZhMzAgVFJBUDogMDkw
+MSAgIFRhaW50ZWQ6CkcgICAgICAgICAgICAgTCAgICAgKDUuNi4wLXJjNC1uZXh0LTIwMjAwMzAz
+KykKWyAgMTI0LjQxOTEwM11bICAgIEM4XSBNU1I6ICA5MDAwMDAwMDAwMDA5MDMzIDxTRixIVixF
+RSxNRSxJUixEUixSSSxMRT4gIENSOgo0MjAwMDIyMiAgWEVSOiAwMDAwMDAwMApbICAxMjQuNDE5
+MTIxXVsgICAgQzhdIENGQVI6IGMwMDAwMDAwMDEwM2RjMWMgSVJRTUFTSzogMCAKWyAgMTI0LjQx
+OTEyMV1bICAgIEM4XSBHUFIwMDogYzAwMDAwMDAwMTAzZGIwYyBjMDAwMDAwMDNkZDRmY2MwIGMw
+MDAwMDAwMDE2NTdkMDAKMDUyMTAwMDEwMDAwMDBjMCAKWyAgMTI0LjQxOTEyMV1bICAgIEM4XSBH
+UFIwNDogODAwMDAwMDAwMDAwMDEwNSAwMDAwMDAwMDAwMDAwMDBhIDAwMDAwMDAwZjRkOTg2NGMK
+MDAwMDAwMDAwMDAwMDAwMSAKWyAgMTI0LjQxOTEyMV1bICAgIEM4XSBHUFIwODogMDAwMDAwMDAw
+MDAwMDAwMCBmZmZmZmZmZmZmZmZmZmZmIDAwMDAwMDAwMDAwMDAwMDEKMDAwMDAwMDAwMDBhMDAw
+MCAKWyAgMTI0LjQxOTEyMV1bICAgIEM4XSBHUFIxMjogMDAwMDAwMDAwMDAwMDAwMCBjMDAwMDAx
+ZmZmZmY5ODgwIApbICAxMjQuNDE5MjM0XVsgICAgQzhdIE5JUCBbYzAwMDAwMDAwMTAzZGMxNF0g
+ZGVidWdfdm1fcGd0YWJsZSsweDdhOC8weGJiNApbICAxMjQuNDE5MjU0XVsgICAgQzhdIExSIFtj
+MDAwMDAwMDAxMDNkYjBjXSBkZWJ1Z192bV9wZ3RhYmxlKzB4NmEwLzB4YmI0ClsgIDEyNC40MTky
+NzRdWyAgICBDOF0gQ2FsbCBUcmFjZToKWyAgMTI0LjQxOTI5MV1bICAgIEM4XSBbYzAwMDAwMDAz
+ZGQ0ZmNjMF0gW2MwMDAwMDAwMDEwM2Q5OTRdCmRlYnVnX3ZtX3BndGFibGUrMHg1MjgvMHhiYjQg
+KHVucmVsaWFibGUpClsgIDEyNC40MTkzMjRdWyAgICBDOF0gW2MwMDAwMDAwM2RkNGZkYjBdIFtj
+MDAwMDAwMDAwMDEwZWFjXQprZXJuZWxfaW5pdCsweDMwLzB4MTk0ClsgIDEyNC40MTkzNDddWyAg
+ICBDOF0gW2MwMDAwMDAwM2RkNGZlMjBdIFtjMDAwMDAwMDAwMDBiNzQ4XQpyZXRfZnJvbV9rZXJu
+ZWxfdGhyZWFkKzB4NWMvMHg3NApbICAxMjQuNDE5MzU5XVsgICAgQzhdIEluc3RydWN0aW9uIGR1
+bXA6ClsgIDEyNC40MTkzNzhdWyAgICBDOF0gN2QwNzUwNzggN2NlNzRiNzggN2NlMGY5YWQgNDBj
+MmZmZjAgN2U0NDkzNzggN2ZjM2YzNzgKNGIwMzUzMWQgNjAwMDAwMDAgClsgIDEyNC40MTk0MTJd
+WyAgICBDOF0gNDgwMDAwODAgMzkyMGZmZmYgMzk0MDAwMDEgMzkwMDAwMDAgPDdlMDBmOGE4PiA3
+ZTA3NTAzOQo0MGMyZmZmOCA3ZTA3NDg3OAoKPiAKPiBtbS9kZWJ1Z192bV9wZ3RhYmxlLmMgfCAx
+MiArKysrKysrLS0tLS0KPiAxIGZpbGUgY2hhbmdlZCwgNyBpbnNlcnRpb25zKCspLCA1IGRlbGV0
+aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMgYi9tbS9kZWJ1
+Z192bV9wZ3RhYmxlLmMKPiBpbmRleCA5NmRkN2Q1NzRjZWYuLmMzMTBmNTJjMmI4MCAxMDA2NDQK
+PiAtLS0gYS9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMKPiArKysgYi9tbS9kZWJ1Z192bV9wZ3RhYmxl
+LmMKPiBAQCAtMjUwLDEzICsyNTAsMTQgQEAgc3RhdGljIHZvaWQgX19pbml0IHBnZF9wb3B1bGF0
+ZV90ZXN0cyhzdHJ1Y3QgbW1fc3RydWN0ICptbSwgcGdkX3QgKnBnZHAsCj4gfQo+ICNlbmRpZgo+
+IAo+IC1zdGF0aWMgdm9pZCBfX2luaXQgcHRlX2NsZWFyX3Rlc3RzKHN0cnVjdCBtbV9zdHJ1Y3Qg
+Km1tLCBwdGVfdCAqcHRlcCkKPiArc3RhdGljIHZvaWQgX19pbml0IHB0ZV9jbGVhcl90ZXN0cyhz
+dHJ1Y3QgbW1fc3RydWN0ICptbSwgcHRlX3QgKnB0ZXAsCj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICB1bnNpZ25lZCBsb25nIHZhZGRyKQo+IHsKPiAgICAgICAgcHRlX3QgcHRl
+ID0gUkVBRF9PTkNFKCpwdGVwKTsKPiAKPiAgICAgICAgcHRlID0gX19wdGUocHRlX3ZhbChwdGUp
+IHwgUkFORE9NX09SVkFMVUUpOwo+ICAgICAgICBXUklURV9PTkNFKCpwdGVwLCBwdGUpOwo+IC0g
+ICAgICAgcHRlX2NsZWFyKG1tLCAwLCBwdGVwKTsKPiArICAgICAgIHB0ZV9jbGVhcihtbSwgdmFk
+ZHIsIHB0ZXApOwo+ICAgICAgICBwdGUgPSBSRUFEX09OQ0UoKnB0ZXApOwo+ICAgICAgICBXQVJO
+X09OKCFwdGVfbm9uZShwdGUpKTsKPiB9Cj4gQEAgLTMwMiw2ICszMDMsNyBAQCBzdGF0aWMgdW5z
+aWduZWQgbG9uZyBfX2luaXQgZ2V0X3JhbmRvbV92YWRkcih2b2lkKQo+IHZvaWQgX19pbml0IGRl
+YnVnX3ZtX3BndGFibGUodm9pZCkKPiB7Cj4gICAgICAgIHN0cnVjdCBtbV9zdHJ1Y3QgKm1tOwo+
+ICsgICAgICAgc3BpbmxvY2tfdCAqdW5pbml0aWFsaXplZF92YXIocHRsKTsKPiAgICAgICAgcGdk
+X3QgKnBnZHA7Cj4gICAgICAgIHA0ZF90ICpwNGRwLCAqc2F2ZWRfcDRkcDsKPiAgICAgICAgcHVk
+X3QgKnB1ZHAsICpzYXZlZF9wdWRwOwo+IEBAIC0zNDQsNyArMzQ2LDcgQEAgdm9pZCBfX2luaXQg
+ZGVidWdfdm1fcGd0YWJsZSh2b2lkKQo+ICAgICAgICBwNGRwID0gcDRkX2FsbG9jKG1tLCBwZ2Rw
+LCB2YWRkcik7Cj4gICAgICAgIHB1ZHAgPSBwdWRfYWxsb2MobW0sIHA0ZHAsIHZhZGRyKTsKPiAg
+ICAgICAgcG1kcCA9IHBtZF9hbGxvYyhtbSwgcHVkcCwgdmFkZHIpOwo+IC0gICAgICAgcHRlcCA9
+IHB0ZV9hbGxvY19tYXAobW0sIHBtZHAsIHZhZGRyKTsKPiArICAgICAgIHB0ZXAgPSBwdGVfYWxs
+b2NfbWFwX2xvY2sobW0sIHBtZHAsIHZhZGRyLCAmcHRsKTsKPiAKPiAgICAgICAgLyoKPiAgICAg
+ICAgICogU2F2ZSBhbGwgdGhlIHBhZ2UgdGFibGUgcGFnZSBhZGRyZXNzZXMgYXMgdGhlIHBhZ2Ug
+dGFibGUKPiBAQCAtMzY0LDEzICszNjYsMTMgQEAgdm9pZCBfX2luaXQgZGVidWdfdm1fcGd0YWJs
+ZSh2b2lkKQo+ICAgICAgICBwNGRfYmFzaWNfdGVzdHMocDRkX2FsaWduZWQsIHByb3QpOwo+ICAg
+ICAgICBwZ2RfYmFzaWNfdGVzdHMocGdkX2FsaWduZWQsIHByb3QpOwo+IAo+IC0gICAgICAgcHRl
+X2NsZWFyX3Rlc3RzKG1tLCBwdGVwKTsKPiArICAgICAgIHB0ZV9jbGVhcl90ZXN0cyhtbSwgcHRl
+cCwgdmFkZHIpOwo+ICAgICAgICBwbWRfY2xlYXJfdGVzdHMobW0sIHBtZHApOwo+ICAgICAgICBw
+dWRfY2xlYXJfdGVzdHMobW0sIHB1ZHApOwo+ICAgICAgICBwNGRfY2xlYXJfdGVzdHMobW0sIHA0
+ZHApOwo+ICAgICAgICBwZ2RfY2xlYXJfdGVzdHMobW0sIHBnZHApOwo+IAo+IC0gICAgICAgcHRl
+X3VubWFwKHB0ZXApOwo+ICsgICAgICAgcHRlX3VubWFwX3VubG9jayhwdGVwLCBwdGwpOwo+IAo+
+ICAgICAgICBwbWRfcG9wdWxhdGVfdGVzdHMobW0sIHBtZHAsIHNhdmVkX3B0ZXApOwo+ICAgICAg
+ICBwdWRfcG9wdWxhdGVfdGVzdHMobW0sIHB1ZHAsIHNhdmVkX3BtZHApOwo+IC0tIAo+IDIuMjAu
+MQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
