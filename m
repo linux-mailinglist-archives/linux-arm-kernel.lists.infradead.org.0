@@ -2,117 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6DCC1790A3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:49:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EAEC1790BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 14:00:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gie5yo6gQgoAbbQUKqRs2sNGCuLhFBG/Xwl8N4Y7Fjk=; b=MALkEByhYSLdsC
-	uLKYvjhpQw55sAp1yRh2L3dyZS25tuNyNhlcpUUpmyrY4tQuNJi8ABOWhJt6mBH+P85zldaJzk/2f
-	KnGjUOE7KJCC/0EO4ifsIFCfaxBPbDzezppQSmLVzsdfOOWsq/aWO11zNaYJVXv9ZZZMq6eneB96+
-	AjQp6STUyWom+U5kufozizzBOp+MrepE3ThO5uU9eLxjFLqVoZLu/ytCTwSrAaUciM7cBoVt9L9PZ
-	2N5g3Gf7S40JL057T6wUVjFq6nBdMvHoi1aYO/qd9x2P7Hmefw+yPp1VjM9vyei3l4gcuSMSaFdcH
-	aXyvwjNS5f50P9tepvxA==;
+	List-Owner; bh=rNR7j7oUxLnfr2IF/Hz/r+1yVt09sxZJ158BxKTfToY=; b=p8eZ4kRGTpSSzb
+	IpcKsr/FMHjvK975f6/ErxOBMOMXD50ut5U507yLlK2ToK1oTqiM1WF+2qSx4j1H4jUSoMy7B2/ku
+	w7xe+EGEwgZkKaxlxOXEgBrVO2fXqfGHuohDGwPEtnffo5fRNn4+icqeTgDSk0mhKhUKWhitfANZn
+	INi9Sy9kR8xWxtFRvB69jhM3YpRUCdrrYsub+IrOdyQsdnQ2Q6MGgIcVZrfPNEaXrEpdVWnYuQtXg
+	N50Uf98EBYmSdcQmULtbxxQjxlWzQrCaYs8EUuQ1T9FxyfmB32vvxzd2kF7nfznEGd6r8efkBWdk4
+	W4VfmqPjaBRkfJXrxwgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9TT7-0000UB-0y; Wed, 04 Mar 2020 12:49:45 +0000
-Received: from mail-db5eur03on061d.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::61d]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1j9TdI-0005Fi-LN; Wed, 04 Mar 2020 13:00:16 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9TT0-0000T6-2X
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:49:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Wu9daGW0EFps3KFqrbFSw0cFEhqlVEJNIL9CmjCK/wmpWpdr0RnpIl6pBgyQVE1ag1ISk1khv3lprF+1IDBVomRDTPXLTg67BxygcLfODXpMZFb3FV3CtZW1hsPoG3KPpvWee2lcm6ICbnd6lGgFh4GD34tRjECWzpLZw9YHBJzjEg1o0UuhXd3ErbD+LccZVd9I1LvMwm0TrOoJtsodBmbd9Bsdhd0hfLUT4b8MgkY3tT13SMv5iB6hZa2CHD/zV9Yi5qImJE9zOXmmUOe6y22Pqe0YN8xxGb/BK9OZOHkWnPj6DNTGVae4Nq1s1L3rWNRtDzzP2ENyhfZXwcct8Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=izSysmV41v0lruO8f3RecODel0Mjyb8422Wv+tsZVU8=;
- b=ea9FP2z9gf0/Dvy5Pg7+O7G1yujFRf5qo8MpkwfoV8Hkj/NaJlMCsu+h+yzOgN0/ULmBuz60RpS3TIdrLS645nCU3UevGcnfC+OYsuEWM7Il6BolZm02RSjiAfbX0WnFTNERajUPXp53yasOEO2ONmXXlmCj3GqEjNCT2FocJn+pLpyUZsNlXwO1nAmM4i8E6BWhiSNEO7ssM3+3y/taS6Ln1oLBymW733ecD8Dk0J5wQ4a0YFBWoeyB1EfXetS/gF3qpfNZRsO5Hm3/UFOTuvawhiy0zMDoigpdN7E8fytBPhQWzCs/IkdVJKNrHNZlonHgQnpff9iK38RW9YAKLQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=izSysmV41v0lruO8f3RecODel0Mjyb8422Wv+tsZVU8=;
- b=rSSVdt4EOspOTnBKxpOlp2v5WBi6gFcalLI864BhrNjyN5/aD0wy9Vpeg/vP0TTmlGFR8tUFEdqraxhGu+aVgdN/qHB1rDB+nkFqT4SfRhaFn18OMqWBvWcrGR72aUhYgcjCL9lbKWV4WBK0cVUD5kAChcG1o0tsP8HQZ3Kn78Y=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4017.eurprd04.prod.outlook.com (52.134.92.159) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2772.14; Wed, 4 Mar 2020 12:49:32 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2772.019; Wed, 4 Mar 2020
- 12:49:32 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: RE: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-Thread-Topic: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-Thread-Index: AQHV8QFMuMBBDfh8hE244PoeMX235qg4QIWAgAAijkA=
-Date: Wed, 4 Mar 2020 12:49:32 +0000
-Message-ID: <AM0PR04MB4481A6DB7339C22A848DAFC988E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1583201219-15839-1-git-send-email-peng.fan@nxp.com>
- <1583201219-15839-3-git-send-email-peng.fan@nxp.com>
- <20200304103954.GA25004@bogus>
-In-Reply-To: <20200304103954.GA25004@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c1b6151c-f74c-4916-b52c-08d7c03a7c8e
-x-ms-traffictypediagnostic: AM0PR04MB4017:|AM0PR04MB4017:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4017BCE219C93DBFF293A25F88E50@AM0PR04MB4017.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0332AACBC3
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(396003)(136003)(39860400002)(366004)(189003)(199004)(26005)(478600001)(186003)(9686003)(81166006)(8936002)(86362001)(8676002)(55016002)(44832011)(54906003)(81156014)(6916009)(4326008)(5660300002)(33656002)(2906002)(52536014)(71200400001)(66446008)(6506007)(66476007)(316002)(76116006)(66556008)(7696005)(66946007)(64756008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4017;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Vb64GoVjyKgnLmn4frqHUOeN0YqqaRMWaEaThazqlQF+Ob7LWvveFWDprvHoG54Ef/9254brp7o6Sk5X/B70mJ/bBcHkOsTTp8DV9Cc8mwX2OgdYIUXfRretBiDP8p9993rSO0jjIWZEHJEkWUNZ64xiQbYNM1xQwWPbmc+JxqBsdDtuJcq5pQIlVDqgSBmrRPpHb1gUMLcUvktpHdfBeUCGa90U1ZyqGY9FzyQi24E1PGAKvNKgc91UcxDNR2CdCoMQZef+qJ43qmL+XfnfP3OlqF9LdN5KabxnQ9h98iGuOk4wV3875ufjDE0vLWeoFBz2XThmQLwRk9QkE19YUIDuFapT0ljvoezv9VpJ46ES08ef5maqgIhigODLCJviFxHIS6VxXPAJCTRlR7EWylT9uH4uyHwxf0fvWrfpbBCjWcXtc6xWw8mCjDgwQ5s3
-x-ms-exchange-antispam-messagedata: Eiu6a6g8FAI+Svltq5WOaUc56SMvqXK1CU93ppHZgk96yJ4cTfbp6UHzix7pU1aLDFsfvK6SsJG7VlxAkY5cSG5sM8NLhjw9RlzRhmv2F2EW84ODlRISu3m2eYHAcECgIUUCyQPCx5DF3gYRLlJO6Q==
+ id 1j9TdB-0004me-61
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 13:00:11 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id o18so721570qvf.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Mar 2020 05:00:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Beu3qvFTUH06Rlm0/R7E/eA87SF87SDv5KPlGbUEFUY=;
+ b=SjfdFlS3wO55dVhIbilav3RQtVBWgW91Cnb/+8n7jkIY3LxEaXZNW4wSRZ1w0P+Y2Z
+ m2wcVG3v4ccrUcE2gOaZ9eeheXa1jOFC15/2rUmkBSsjvSz5A70/65MZ8+07ABoV8gmL
+ lUJOwfGxVQgX8ZwatFqrgLAj0QQ4QVNzVsKWc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Beu3qvFTUH06Rlm0/R7E/eA87SF87SDv5KPlGbUEFUY=;
+ b=ipotPO8In0rJ6bY+UlucxAU5LDA7/iwHchLy1/3UwUnM1UmZ2XTtmC33OspdJAJzwK
+ OQe7NeBDGCfo4fWHptiSA+hbkqW8htX1uhaXTURwrsAcDpYoaZNboLmXMdFQ/Px7OZjW
+ CwvviH9KpRi0jnysCfhM+PKua81ZCpxOvO6SBtYpBXeCYfTYRRcHaTYip610ZPxdq0lu
+ Cwh4pzYOem6PUwZiocMgyxsZ33e/DeGWP39TN6YQUZTnkn2uHJP99T4PE/FVIHM/xpF+
+ MRuXhlSMNcKaas0IEQluWSNrC//Rw2+mPAyRaeouxkvZ+zmAuhRGSTygAkYCdxVt8qLj
+ XjUg==
+X-Gm-Message-State: ANhLgQ3Qtgo5bHnq19X2vzYicUEjqZw3O0mLDRbaZQ/axZJJhI7n5PGM
+ cVCWVkcpx+mUWx64t5gTFfeGAqr7mLpDnesmgoE/5w==
+X-Google-Smtp-Source: ADFU+vvAPd9eUBLgxOcz8KO1mdbkjC+PQUvSPfxQ3LEaj+3mlGdcvGhxsv7PsukxnD5IbwUM3xFfAimQpPOT+wKAGoo=
+X-Received: by 2002:a05:6214:1750:: with SMTP id
+ dc16mr1985308qvb.47.1583326806377; 
+ Wed, 04 Mar 2020 05:00:06 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c1b6151c-f74c-4916-b52c-08d7c03a7c8e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Mar 2020 12:49:32.4848 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: OCLdcQihNE+XA8iZypW+6N+mrN1fcfkdV3CfE8aQWBe6GIhxj9qVVkQGNuD0keoc+az/Q46euosIo6OKSU8u5A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4017
+References: <1580730044-30501-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1580730044-30501-5-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1580748607.31376.3.camel@mtksdaap41> <1581911502.20099.13.camel@mhfsdcap03>
+In-Reply-To: <1581911502.20099.13.camel@mhfsdcap03>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 4 Mar 2020 20:59:55 +0800
+Message-ID: <CANMq1KDTHcFV8Gue1PuOWkWXL20z_-j58u8JpwbBm_wUvLeqSg@mail.gmail.com>
+Subject: Re: [PATCH v8 4/5] rtc: mt6397: Add support for the MediaTek MT6358
+ RTC
+To: Ran Bi <ran.bi@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_044938_268077_0AC3DD13 
-X-CRM114-Status: GOOD (  11.76  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200304_050009_275263_A1B2116B 
+X-CRM114-Status: GOOD (  20.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:61d listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 1.0 FORGED_SPF_HELO        No description available.
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,56 +92,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Frank Wunderlich <frank-w@public-files.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sean Wang <sean.wang@mediatek.com>, Josef Friedl <josef.friedl@speed.at>,
+ lkml <linux-kernel@vger.kernel.org>, Richard Fontana <rfontana@redhat.com>,
+ Devicetree List <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Yingjoe Chen <yingjoe.chen@mediatek.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Eddie Huang <eddie.huang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
+Hi,
 
-> Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-> 
-> On Tue, Mar 03, 2020 at 10:06:59AM +0800, peng.fan@nxp.com wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
+On Mon, Feb 17, 2020 at 11:52 AM Ran Bi <ran.bi@mediatek.com> wrote:
+>
+> On Tue, 2020-02-04 at 00:50 +0800, Yingjoe Chen wrote:
+> > > diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rtc.h
+> > > index f84b916..fffe34a 100644
+> > > --- a/include/linux/mfd/mt6397/rtc.h
+> > > +++ b/include/linux/mfd/mt6397/rtc.h
+> > > @@ -18,7 +18,8 @@
+> > >  #define RTC_BBPU_CBUSY         BIT(6)
+> > >  #define RTC_BBPU_KEY            (0x43 << 8)
+> > >
+> > > -#define RTC_WRTGR              0x003c
+> > > +#define RTC_WRTGR_MT6358       0x3a
+> > > +#define RTC_WRTGR_MT6397       0x3c
+> > >
+> > >  #define RTC_IRQ_STA            0x0002
+> > >  #define RTC_IRQ_STA_AL         BIT(0)
+> > > @@ -57,6 +58,10 @@
+> > >  #define MTK_RTC_POLL_DELAY_US  10
+> > >  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+> > >
+> > > +struct mtk_rtc_data {
+> > > +   u32                     wrtgr;
+> > > +};
+> > > +
+> > >  struct mt6397_rtc {
+> > >     struct device           *dev;
+> > >     struct rtc_device       *rtc_dev;
+> > > @@ -66,6 +71,15 @@ struct mt6397_rtc {
+> > >     struct regmap           *regmap;
+> > >     int                     irq;
+> > >     u32                     addr_base;
+> > > +   const struct mtk_rtc_data *data;
+> > > +};
+> > > +
+> > > +static const struct mtk_rtc_data mt6358_rtc_data = {
+> > > +   .wrtgr = RTC_WRTGR_MT6358,
+> > > +};
+> > > +
+> > > +static const struct mtk_rtc_data mt6397_rtc_data = {
+> > > +   .wrtgr = RTC_WRTGR_MT6397,
+> > >  };
 > >
-> > Take arm,smc-id as the 1st arg, leave the other args as zero for now.
-> > There is no Rx, only Tx because of smc/hvc not support Rx.
+> > Hi,
 > >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> 
-> [...]
-> 
-> > +static int smc_send_message(struct scmi_chan_info *cinfo,
-> > +			    struct scmi_xfer *xfer)
-> > +{
-> > +	struct scmi_smc *scmi_info = cinfo->transport_info;
-> > +	struct arm_smccc_res res;
-> > +
-> > +	shmem_tx_prepare(scmi_info->shmem, xfer);
-> 
-> How do we protect another thread/process on another CPU going and
-> modifying the same shmem with another request ? We may need notion of
-> channel with associated shmem and it is protected with some lock.
+> > Putting these in header file doesn't looks right to me.
+> > Who need this? can you move them back to rtc-mt6397.c?
+> > Joe.C
+> >
+>
+> This could also effect kernel/drivers/power/reset/mt6323-poweroff.c
+> which using same region of RTC registers.
+> There are 2 ways of modification:
+> 1. kernel/drivers/rtc/rtc-mt6397.c implement do_pwroff function and
+> export to mt6323-poweroff.c
+> 2. Just modify mt6323-poweroff.c file to compatible this patch. I mean
+> using RTC_WRTGR_MT6397 to replace RTC_WRTGR. Or modify mt6323-poweroff.c
+> like rtc-mt6397.c
 
-This is valid concern. But I think if shmem is shared bwteen protocols,
-the access to shmem should be protected in 
-drivers/firmware/arm_scmi/driver.c: scmi_do_xfer,
-because send_message and fetch_response both touches shmem
+Oh, I see, so basically both rtc-mt6397.c and mt6323-poweroff.c need
+to know at what offset RTC_WRTGR actually is. Correct?
 
-The mailbox transport also has the issue you mentioned, I think.
+Is there any plan to have mt6323-poweroff.c support any of the other
+PMICs (not just MT6323?)?
 
-Thanks,
-Peng.
-> 
-> --
-> Regards,
-> Sudeep
+a. If not, I'd just add:
+#define RTC_WRTGR_MT6323 RTC_WRTGR_MT6397
+in rtc.h, for added clarity, use that in mt6323-poweroff.c
+(s/RTC_WRTGR/RTC_WRTGR_MT6323/), and be done with it.
+
+Actually, even if there's a plan, you can go ahead with this simpler
+solution for now, and fix later when the issue comes up.
+
+b. If you ever want to support multiple PMICs with mt6323-poweroff.c,
+you'd need that offset for 2 different sub-devices under the same mfd,
+so the matching logic belongs in the main mfd device, not in
+rtc/poweroff driver.
+
+So I'd move the matching logic in drivers/mfd/mt6397-core.c, and add
+rtc_wrtgr offset (or a full _data structure) to `struct mt6397_chip`,
+or, probably better, add a IORESOURCE_REG to the matching resources to
+specify the offset (that's what drivers/mfd/88pm860x-core.c seems to
+be doing, for example).
+
+And then mt6323-poweroff.c should probably be renamed to mt6397-poweroff.c.
+
+(actually, looking at this, I'm even questioning if mt6323-poweroff.c
+should even exist, and if you should just fold it into rtc-mt6397.c?
+Since they use the same registers?)
+
+Hope this makes sense?
+
+Best,
 
 _______________________________________________
 linux-arm-kernel mailing list
