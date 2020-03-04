@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 048481791D2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 14:58:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EAFA1791DC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:02:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=t/+q0SKFpLjv2n042h6sRyhmbE6eemaDfqmkDjaQXXY=; b=jjv
-	h0B3w5prjoA/LP8NQnzv99vOPhHFcnCqJb3XO8r4cJY1eyPOuYYffgo66lns/Y/rOEjeagDIISeNt
-	/YZjrW1TleIMN/76BxbiLM9HWXJwCEKs3KNwV4WOPozsm4TEr54m2vbLoeQKBaX61CG+K69IFk7cP
-	gvwTO8+7O7QdEh464/rTWZYM04NPSl095CoBODgwPwzWfFdQItvYAz0ZmQFb66wlXqHpEdYCMANcx
-	BdOfhrPXShYZlNxLtHlzjOLj2nkrxY3D3mO7Oozu2bk6x8z37M5AHGnTRyAU6BRhXhmrDA9HLX+l6
-	6WC6w5w77BozIYrJ3704XQO83BJvX4g==;
+	List-Owner; bh=1pRnNJb9cIsELLor73zDTnK33pc1mF8IwaSUdoMH1P4=; b=C6mbrxUFzdA7vM
+	NllaBLs+VwzXQ+L5WnqcJiSRtEHTOeMKpDymc6udUXcbLMYRGSsF8QH+RDEUDr/lPzqBXylfcf/72
+	fXAch3b0qaDGjqLF2OhgGbQBqtOA52Wg/UsSbVDaOMfRNNCCOitj1YUjctxI7C+OZgCqxW8XqPLT5
+	zIMjbQ2B5NG8KEtvTf7TDlbYZM9wNtCB6vwsRF3i+JaIBbwFJmg0I2TNPYGnqgChfoyId4Rk34j15
+	P3DtWJoqcb7VnTOCzcc3X4iq1nwDJ8U9o3XWW6boR42UPC5nOsmXKQlIRWqLZEyL3O4o/ALpUCEXj
+	aoqKVWeWtY/I3wpqwbaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9UX3-0001ya-As; Wed, 04 Mar 2020 13:57:53 +0000
+	id 1j9UbL-0003bU-PH; Wed, 04 Mar 2020 14:02:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9UWw-0001xo-JM
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 13:57:48 +0000
+ id 1j9UbE-0003az-KW
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:02:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FFEA31B;
- Wed,  4 Mar 2020 05:57:41 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B61B03F6CF;
- Wed,  4 Mar 2020 05:57:40 -0800 (PST)
-Date: Wed, 04 Mar 2020 13:57:39 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Applied "regulator: stm32-vrefbuf: fix a possible overshoot when
- re-enabling" to the regulator tree
-In-Reply-To: <1583312132-20932-1-git-send-email-fabrice.gasnier@st.com>
-Message-Id: <applied-1583312132-20932-1-git-send-email-fabrice.gasnier@st.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EA92631B;
+ Wed,  4 Mar 2020 06:02:11 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B8D33F6CF;
+ Wed,  4 Mar 2020 06:02:11 -0800 (PST)
+Date: Wed, 4 Mar 2020 14:02:09 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: =?utf-8?B?UsOpbWk=?= Denis-Courmont <remi@remlab.net>,
+ James Morse <james.morse@arm.com>
+Subject: Re: [PATCH] arm64/sdei: fix trampoline vector alignment
+Message-ID: <20200304140208.GB3575@lakrids.cambridge.arm.com>
+References: <20200304093516.190964-1-remi@remlab.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200304093516.190964-1-remi@remlab.net>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_055746_680652_33E31FD5 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200304_060212_721871_18DAA907 
+X-CRM114-Status: GOOD (  18.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,92 +64,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org, lgirdwood@gmail.com,
- Mark Brown <broonie@kernel.org>, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+Cc: catalin.marinas@arm.com, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
-
-   regulator: stm32-vrefbuf: fix a possible overshoot when re-enabling
-
-has been applied to the regulator tree at
-
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git 
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 02fbabd5f4ed182d2c616e49309f5a3efd9ec671 Mon Sep 17 00:00:00 2001
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Date: Wed, 4 Mar 2020 09:55:32 +0100
-Subject: [PATCH] regulator: stm32-vrefbuf: fix a possible overshoot when
- re-enabling
-
-There maybe an overshoot, when disabling, then re-enabling vrefbuf
-too quickly. VREFBUF is used by ADC/DAC on some boards. When re-enabling
-too quickly, an overshoot on the reference voltage make the conversions
-inaccurate for a short period of time.
-- Don't put the VREFBUF in HiZ when disabling, to force an active
-discharge.
-- Enforce a 1ms OFF/ON delay
-
-Fixes: 0cdbf481e927 ("regulator: Add support for stm32-vrefbuf")
-
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-Id: <1583312132-20932-1-git-send-email-fabrice.gasnier@st.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- drivers/regulator/stm32-vrefbuf.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/regulator/stm32-vrefbuf.c b/drivers/regulator/stm32-vrefbuf.c
-index bdfaf7edb75a..992bc18101ef 100644
---- a/drivers/regulator/stm32-vrefbuf.c
-+++ b/drivers/regulator/stm32-vrefbuf.c
-@@ -88,7 +88,7 @@ static int stm32_vrefbuf_disable(struct regulator_dev *rdev)
- 	}
- 
- 	val = readl_relaxed(priv->base + STM32_VREFBUF_CSR);
--	val = (val & ~STM32_ENVR) | STM32_HIZ;
-+	val &= ~STM32_ENVR;
- 	writel_relaxed(val, priv->base + STM32_VREFBUF_CSR);
- 
- 	pm_runtime_mark_last_busy(priv->dev);
-@@ -175,6 +175,7 @@ static const struct regulator_desc stm32_vrefbuf_regu = {
- 	.volt_table = stm32_vrefbuf_voltages,
- 	.n_voltages = ARRAY_SIZE(stm32_vrefbuf_voltages),
- 	.ops = &stm32_vrefbuf_volt_ops,
-+	.off_on_delay = 1000,
- 	.type = REGULATOR_VOLTAGE,
- 	.owner = THIS_MODULE,
- };
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUmVtaSwKCkluIGZ1dHVyZSBjb3VsZCB5b3UgcGxlYXNlIENjIG1haW50YWluZXJzPyBZb3Ug
+Y2FuIHVzZQpzY3JpcHRzL2dldF9tYWludGFpbmVyLnBsIHRvIGdldCBhIGxpc3Qgb2YgcmVsZXZh
+bnQgcGVvcGxlIGZvciBhIHBhdGNoIG9yIGZpbGUuCgpJJ3ZlIGFkZGVkIHRoZSByZWxldmFudCBh
+cm02NCBmb2xrIGhlcmUuCgpPbiBXZWQsIE1hciAwNCwgMjAyMCBhdCAxMTozNToxNkFNICswMjAw
+LCBSw6ltaSBEZW5pcy1Db3VybW9udCB3cm90ZToKPiBGcm9tOiBSZW1pIERlbmlzLUNvdXJtb250
+IDxyZW1pLmRlbmlzLmNvdXJtb250QGh1YXdlaS5jb20+Cj4gCj4gVGhlIGV4Y2VwdGlvbiB2ZWN0
+b3IgaXMgYWxpZ25lZCBvbiAyS2lCLiBUbyBjb21wdXRlIHRoZSBjb3JyZWN0IGFkZHJlc3MKPiB0
+byB0aGUgU0RFSSBoYW5kbGVyLCB1c2UgQURSUCBmb3IgdGhlIHBhZ2UgbnVtYmVyLiBUaGUgZXhp
+c3RpbmcgY29kZQo+IHVzaW5nIEFEUiB3b3VsZCBvbmx5IGNvbXB1dGUgdGhlIGNvcnJlY3QgYWRk
+cmVzcyBpZiB0aGUgdmVjdG9yIGlzCj4gYWxpZ25lZCBvbiA0S2lCLCBpLmUuLCB3b3JrcyBieSBs
+dWNrLgoKVGhpcyB3b3JrcyBiZWNhdXNlIC5lbnRyeS50cmFtcC50ZXN0IGlzIGFsaWduZWQgdG8g
+UEFHRV9TSVpFLCBhbmQgdHJhbXBfdmVjdG9ycwppcyB0aGUgZmlyc3QgZWxlbWVudCBpbiAuZW50
+cnkudHJhbXAudGVzdCwgc28gaXQncyBhbGlnbmVkIHRvIFBBR0VfU0laRS4KCk90aGVyIGNvZGUg
+cmVsaWVzIG9uIHRyYW1wX3ZlY3RvcnMgYmVpbmcgcGFnZSBhbGlnbmVkLApzbyBJIHRoaW5rIGl0
+IHdvdWxkIG1ha2Ugc2Vuc2UgdG8gcmVtb3ZlIHRoZSAiLmFsaWduIDExIiBhbmQgcmVwbGFjZSBp
+dAp3aXRoICIuYWxpZ24gUEFHRV9TSElGVCIgYW5kIGEgY29tbWVudCByZWdhcmRpbmcgLmVudHJ5
+LnRyYW1wLnRleHQgYmVpbmcKcGFnZS1hbGlnbmVkLgoKSSB0aGluayB0aGUgY29tbWl0IG1lc3Nh
+Z2UgbmVlZHMgdG8gYmUgY29ycmVjdGVkLCBzaW5jZSB0aGlzIHdvcmtzIGJ5Cm1vcmUgdGhhbiBs
+dWNrLgoKPiBUaGlzIGFsc28gY29tYmluZXMgdGhlIGZvbGxvd2luZyBBREQgYW5kIExEUiBpbnRv
+IGEgc2luZ2xlIExEUiB3aXRoIGEKPiByZWxvY2F0ZWQgb2Zmc2V0LgoKVGhpcyBsb29rcyBzYW5l
+IHRvIG1lLgoKVGhhbmtzLApNYXJrLgoKPiAKPiBTaWduZWQtb2ZmLWJ5OiBSZW1pIERlbmlzLUNv
+dXJtb250IDxyZW1pLmRlbmlzLmNvdXJtb250QGh1YXdlaS5jb20+Cj4gLS0tCj4gIGFyY2gvYXJt
+NjQva2VybmVsL2VudHJ5LlMgfCA1ICsrLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlv
+bnMoKyksIDMgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva2VybmVs
+L2VudHJ5LlMgYi9hcmNoL2FybTY0L2tlcm5lbC9lbnRyeS5TCj4gaW5kZXggOTQ2MWQ4MTJhZTI3
+Li4yMDI1OWU2YTJmZDcgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUwo+
+ICsrKyBiL2FyY2gvYXJtNjQva2VybmVsL2VudHJ5LlMKPiBAQCAtOTUzLDkgKzk1Myw4IEBAIEVO
+VFJZKF9fc2RlaV9hc21fZW50cnlfdHJhbXBvbGluZSkKPiAgMToJc3RyCXg0LCBbeDEsICMoU0RF
+SV9FVkVOVF9JTlRSRUdTICsgU19PUklHX0FERFJfTElNSVQpXQo+ICAKPiAgI2lmZGVmIENPTkZJ
+R19SQU5ET01JWkVfQkFTRQo+IC0JYWRyCXg0LCB0cmFtcF92ZWN0b3JzICsgUEFHRV9TSVpFCj4g
+LQlhZGQJeDQsIHg0LCAjOmxvMTI6X19zZGVpX2FzbV90cmFtcG9saW5lX25leHRfaGFuZGxlcgo+
+IC0JbGRyCXg0LCBbeDRdCj4gKwlhZHJwCXg0LCB0cmFtcF92ZWN0b3JzICsgUEFHRV9TSVpFCj4g
+KwlsZHIJeDQsIFt4NCwgIzpsbzEyOl9fc2RlaV9hc21fdHJhbXBvbGluZV9uZXh0X2hhbmRsZXJd
+Cj4gICNlbHNlCj4gIAlsZHIJeDQsID1fX3NkZWlfYXNtX2hhbmRsZXIKPiAgI2VuZGlmCj4gLS0g
+Cj4gMi4yNS4xCj4gCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
