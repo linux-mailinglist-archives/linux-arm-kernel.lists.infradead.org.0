@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 384FF179A12
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 21:37:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF00179A13
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 21:37:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v7XpRNIEm4PyKD3La/insC55528m25rYoDGi8hqV/nc=; b=K5Yj1XPLiaLvNl
-	0lNGXMKE0LrNjT+nT3KN690akvx6wdUBs7U6tiwc/X8Or2eUVUvczYmWDn6vLs/U5Rf33mMaC/kzL
-	9nzS7kKlh7pIQpNNpMArcuaa+Gmutwy+A9k8u4q2+bVNI9COtfVtRkwsjEcDb79iDb2pryz3ZOm/q
-	6f/U90PWo35OLiXBdIpRJaHejyH4/KvLtPxiejDVPpUE4o7c18mkNNmCGHsd7V/NO+tZb3hhImxlr
-	8nHPsLfPr9LgA3BBXZfJMTRDsglTXQYw46CCgAZvkaLDTXPZAAZppeayPDRfpqH9U++pz/l3fxYNE
-	TLGw5M0Hl/xlDj0ACsvQ==;
+	List-Owner; bh=hnJucdjvsEWsSDGLX+990RF777pKeNZwYK0dw9yIwOA=; b=PDb64B89ZuGmp6
+	zeFgWH92/Y6racimn8SAM2tYg7ajXBOiSjnHBvVmxHKY71vja9auagakdS79hvT/3OT2zAXLs7Igx
+	YRk2dcCoxdUjbFMjTy+dmM+QVu/bdgbRUjIAr9i9gZJwXHB6YivTr9yW8UQDdHCD3Dv/EvpKYn9Ob
+	Qon+sbbdW0UYweLKFfDnQDPmFoWb6HqQQTSrFCVgBuVn36aAGv1Q+lKwqN4e/9q/IhSaGZRZgwGhU
+	2mxo67HPgVoJ2cmLpQtUddplwIVsAopqbsZDKcKZv23hE23Q3Gyqq+uQhmGcEP2vRww/K0+oPk2W1
+	Wg2+H5GSCl+N/7nr+6mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9alH-0004YT-Uc; Wed, 04 Mar 2020 20:36:59 +0000
+	id 1j9alX-0004t1-Rz; Wed, 04 Mar 2020 20:37:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9aj6-0001jK-A6
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 20:34:45 +0000
+ id 1j9aj7-0001k5-2W
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 20:34:46 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DDA9F24658;
- Wed,  4 Mar 2020 20:34:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9849724679;
+ Wed,  4 Mar 2020 20:34:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1583354084;
- bh=j8zBrkFAZYg8aOlrVLwQ6xdlqxDuQgnwUjV/YeOSDME=;
+ bh=mjd4h8wsO7GO4FNYyLMX6kiNqR+30OF1Rvy8SpKjZfY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mKT2wJ5CATASQrCVHIrXAS4mZnE7h3hbQZ4OGF9DK/S4YNdjPBHCanpr/KJ5b4doR
- 7Vov2W70kxrE3d/mpqx5KMosTBEfdYtim4pqxOIDSUY3qWHg2yjMJ0tXkIdSdD94cb
- D7oh2IjKPIjxmA/NVeZOMcSDeJj5qBmHtRVE4Of8=
+ b=AMZEVqv4HH+RdGkzhkkaOPeXifQc+Ve9y2NCE8Rd24fv5/OeLktJ24eYDfxqzV9QG
+ p1Tw/g/l9gez+BbMqO6gJmcMN7YH9H+Govb8FPxf+xJXOKG47OmOYPaH20QLO/A42R
+ l4Xjfx1gKoIj7aV+zG746ecZWBmd+xpyj1+coW9Y=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j9aj4-00A59R-4t; Wed, 04 Mar 2020 20:34:42 +0000
+ id 1j9aj4-00A59R-Um; Wed, 04 Mar 2020 20:34:43 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v5 06/23] irqchip/gic-v4.1: Advertise support v4.1 to KVM
-Date: Wed,  4 Mar 2020 20:33:13 +0000
-Message-Id: <20200304203330.4967-7-maz@kernel.org>
+Subject: [PATCH v5 07/23] irqchip/gic-v4.1: Map the ITS SGIR register page
+Date: Wed,  4 Mar 2020 20:33:14 +0000
+Message-Id: <20200304203330.4967-8-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200304203330.4967-1-maz@kernel.org>
 References: <20200304203330.4967-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_123444_405778_0BBAF5A8 
-X-CRM114-Status: GOOD (  13.09  )
+X-CRM114-CacheID: sfid-20200304_123445_171365_D9F948CA 
+X-CRM114-Status: GOOD (  16.17  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,77 +103,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tell KVM that we support v4.1. Nothing uses this information so far.
+One of the new features of GICv4.1 is to allow virtual SGIs to be
+directly signaled to a VPE. For that, the ITS has grown a new
+64kB page containing only a single register that is used to
+signal a SGI to a given VPE.
+
+Add a second mapping covering this new 64kB range, and take this
+opportunity to limit the original mapping to 64kB, which is enough
+to cover the span of the ITS registers.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
 ---
- drivers/irqchip/irq-gic-v3-its.c       | 9 ++++++++-
- drivers/irqchip/irq-gic-v3.c           | 2 ++
- include/linux/irqchip/arm-gic-common.h | 2 ++
- 3 files changed, 12 insertions(+), 1 deletion(-)
+ drivers/irqchip/irq-gic-v3-its.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-index fc5788584df7..bcc1a0957cda 100644
+index bcc1a0957cda..54d6fdf7a28e 100644
 --- a/drivers/irqchip/irq-gic-v3-its.c
 +++ b/drivers/irqchip/irq-gic-v3-its.c
-@@ -4870,6 +4870,7 @@ int __init its_init(struct fwnode_handle *handle, struct rdists *rdists,
- 	struct device_node *of_node;
- 	struct its_node *its;
- 	bool has_v4 = false;
-+	bool has_v4_1 = false;
+@@ -96,6 +96,7 @@ struct its_node {
+ 	struct mutex		dev_alloc_lock;
+ 	struct list_head	entry;
+ 	void __iomem		*base;
++	void __iomem		*sgir_base;
+ 	phys_addr_t		phys_base;
+ 	struct its_cmd_block	*cmd_base;
+ 	struct its_cmd_block	*cmd_write;
+@@ -4456,7 +4457,7 @@ static int __init its_probe_one(struct resource *res,
+ 	struct page *page;
  	int err;
  
- 	gic_rdists = rdists;
-@@ -4890,8 +4891,14 @@ int __init its_init(struct fwnode_handle *handle, struct rdists *rdists,
- 	if (err)
- 		return err;
+-	its_base = ioremap(res->start, resource_size(res));
++	its_base = ioremap(res->start, SZ_64K);
+ 	if (!its_base) {
+ 		pr_warn("ITS@%pa: Unable to map ITS registers\n", &res->start);
+ 		return -ENOMEM;
+@@ -4507,6 +4508,13 @@ static int __init its_probe_one(struct resource *res,
  
--	list_for_each_entry(its, &its_nodes, entry)
-+	list_for_each_entry(its, &its_nodes, entry) {
- 		has_v4 |= is_v4(its);
-+		has_v4_1 |= is_v4_1(its);
-+	}
+ 		if (is_v4_1(its)) {
+ 			u32 svpet = FIELD_GET(GITS_TYPER_SVPET, typer);
 +
-+	/* Don't bother with inconsistent systems */
-+	if (WARN_ON(!has_v4_1 && rdists->has_rvpeid))
-+		rdists->has_rvpeid = false;
++			its->sgir_base = ioremap(res->start + SZ_128K, SZ_64K);
++			if (!its->sgir_base) {
++				err = -ENOMEM;
++				goto out_free_its;
++			}
++
+ 			its->mpidr = readl_relaxed(its_base + GITS_MPIDR);
  
- 	if (has_v4 & rdists->has_vlpis) {
- 		if (its_init_vpe_domain() ||
-diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-index ba405becab53..03e4eadefb00 100644
---- a/drivers/irqchip/irq-gic-v3.c
-+++ b/drivers/irqchip/irq-gic-v3.c
-@@ -1785,6 +1785,7 @@ static void __init gic_of_setup_kvm_info(struct device_node *node)
- 		gic_v3_kvm_info.vcpu = r;
- 
- 	gic_v3_kvm_info.has_v4 = gic_data.rdists.has_vlpis;
-+	gic_v3_kvm_info.has_v4_1 = gic_data.rdists.has_rvpeid;
- 	gic_set_kvm_info(&gic_v3_kvm_info);
- }
- 
-@@ -2100,6 +2101,7 @@ static void __init gic_acpi_setup_kvm_info(void)
+ 			pr_info("ITS@%pa: Using GICv4.1 mode %08x %08x\n",
+@@ -4520,7 +4528,7 @@ static int __init its_probe_one(struct resource *res,
+ 				get_order(ITS_CMD_QUEUE_SZ));
+ 	if (!page) {
+ 		err = -ENOMEM;
+-		goto out_free_its;
++		goto out_unmap_sgir;
  	}
- 
- 	gic_v3_kvm_info.has_v4 = gic_data.rdists.has_vlpis;
-+	gic_v3_kvm_info.has_v4_1 = gic_data.rdists.has_rvpeid;
- 	gic_set_kvm_info(&gic_v3_kvm_info);
- }
- 
-diff --git a/include/linux/irqchip/arm-gic-common.h b/include/linux/irqchip/arm-gic-common.h
-index b9850f5f1906..fa8c0455c352 100644
---- a/include/linux/irqchip/arm-gic-common.h
-+++ b/include/linux/irqchip/arm-gic-common.h
-@@ -32,6 +32,8 @@ struct gic_kvm_info {
- 	struct resource vctrl;
- 	/* vlpi support */
- 	bool		has_v4;
-+	/* rvpeid support */
-+	bool		has_v4_1;
- };
- 
- const struct gic_kvm_info *gic_get_kvm_info(void);
+ 	its->cmd_base = (void *)page_address(page);
+ 	its->cmd_write = its->cmd_base;
+@@ -4587,6 +4595,9 @@ static int __init its_probe_one(struct resource *res,
+ 	its_free_tables(its);
+ out_free_cmd:
+ 	free_pages((unsigned long)its->cmd_base, get_order(ITS_CMD_QUEUE_SZ));
++out_unmap_sgir:
++	if (its->sgir_base)
++		iounmap(its->sgir_base);
+ out_free_its:
+ 	kfree(its);
+ out_unmap:
 -- 
 2.20.1
 
