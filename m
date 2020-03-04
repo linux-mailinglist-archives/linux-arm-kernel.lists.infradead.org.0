@@ -2,75 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD943179034
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:21:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A97917903D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:23:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/t00soZFRI7joda6R81PwTddU83zEuc1JUhI7ff9UOM=; b=JWAn7TUfGxar+p
-	wnDMRZdcFphq0BGh4erGKjkGFwjOg0bG2AG6pKzeR9JWW+ElOhB9mr5mcN1mSYOJ2idGD2SROU2qq
-	/2R0oEubH0MQElWT7K8dlqrGEfd6L1mf1/2EMjrq7PobEW+lcp2015VpNZ2Y8TuO0BuE5PvHN+uSJ
-	tqnPRMIl24ZliE73op7mAx4Qpps3qe50e7KrGNf2I2In2pRq0FG1/IyWKVasdBqeTP/j86f4wavGT
-	7HT6Y4aPh4k3RLeUSXwsJ27qqocVIB+p9M/2OCYIEvgB5mjWUaMRw6qPtt/fVLHkiqaewPmaZ6pTI
-	olpEsroO+M958oyZzwOw==;
+	List-Owner; bh=StBJOjKNclYR10VZtzzDGfXeOUijl34q42FxbRzFF14=; b=HxVwGV/TZEiDaB
+	cWMYxaOkiR6BCDkpOoqFy6o/RScwkes/mMScpGEMhzKI7y8COkVUycKOlVsuDeVM4GWOYlceclo6p
+	O+Z+75YvuXOEQHKQ4rGw+dN0Q+Wa26MYu8WglVYX/dlZKtSNehaRkXA+qPtXFYKhV1peo+UoLX8ka
+	7LajFFlYK23BJUWiS5WYZZyCx9Ppz2GWjUjdWfd0GrlDe9PC8EAXNMGdbC6ilhlVyNPoVOqBZspAm
+	BLShrFMgl/dL8pN82EsBR6grK17y/uirI3g8zDQdg4fCjvkA1i2Udb9QNCtCe902p8skmAH7mwZzj
+	bCTay5CLyfyjMNsTzOIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9T1d-0004cX-EO; Wed, 04 Mar 2020 12:21:21 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1j9T36-0006TT-B9; Wed, 04 Mar 2020 12:22:52 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9T18-0004Og-Dn
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:20:53 +0000
-Received: by mail-ua1-x944.google.com with SMTP id o42so569626uad.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 04:20:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kqkG/bhqrYT0KI1bQ7LTANEUR/JJcWsfoTV7hOjxbYk=;
- b=mJIGctIoq6J7/fX0YIeKjPMmUkNgZRPXylwKm2DvLr5ssq89k+ZxCUgm9DWAtg4VNN
- pcEQ2mEv5P6qw7sb1i788ajaBrcAJPv2xZqD+qEoZE9PlKOjbsAMBVkDYat1tXguAsrb
- 5ZQ74b7neMNKy4b6+6MqegiUaWYxw2dCvAD6fdseLxkI45U26Usjl4O1VhDUAeXJiTZA
- 7CNDMG+szzAHk/0BaA1rOgTK7JlrQxqlJH+KI1AlsyJ9P/7MhfKho01LeOTmI7UVAGrd
- wWYW9VD64wFvrclyNKKKAfPFB8dPthsPhdoBv0yYnbrmCWxmbij8pbPvAenawz+EshWP
- OYdw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kqkG/bhqrYT0KI1bQ7LTANEUR/JJcWsfoTV7hOjxbYk=;
- b=FfaFagHborp370N/gQ974Ukf5JyHphp0wfAujOI6UZk7W9TRluWkFfcXMwlpOYZrUR
- driR0Ml4zwOOGWJubuN0YuXeYNbWQrupweKdxY7IfDcQQpahUgEl2QiLqtrk3UaX7oxR
- aLi7TN6SjUuol1yuVpdPvhF2IrQfvGBAnB7SP3hbq+fWuHt7MDas0By0wXHe+vWkKpea
- v3Bde1zYTXhhksFPoowBBoc2/talyXhHuy1FwdiSQTPb8DxtzIC4qdfKZogzbesf1Kyy
- eWjO5Edu6uxsJiCCoj9D20yoi7eM0dH+7zdlraMGKD29/p9ORf1ZD1DvdNjn1RZzJcDh
- Ta0Q==
-X-Gm-Message-State: ANhLgQ03yWHWcV4ECYO0cZ7cBTXsr6N1PZ9A1h0nx5fQf0HVIELJYVjn
- 7CoBgpPT6Lb4eJ8oZGeVrVMwBjZvr0EnPDXUawiXnA==
-X-Google-Smtp-Source: ADFU+vsoYL2SwwLyTOmmzRjMZQmnCIyUFDxkpiyZH9m9IHmHIRtOrB+VwoBC0ztP1VD8t+WEykeA5UXfnN9itygk2jI=
-X-Received: by 2002:ab0:24d2:: with SMTP id k18mr1286564uan.104.1583324449448; 
- Wed, 04 Mar 2020 04:20:49 -0800 (PST)
+ id 1j9T2p-0006Ab-UU; Wed, 04 Mar 2020 12:22:37 +0000
+X-UUID: 030cebc5bedd4b14853cb354e97ef111-20200304
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=G3qywGgyJLG5zIB5C4MO427fFnJC0uUmsvwjBMR84aU=; 
+ b=eRQ3etiQz0k00Y/O4qrGp5zeoDLOhNrZ4ojvFAtAXDxEWXpBTGh2IbBnX8KxMd8L10IaGPxFFfIjlbeptdFy6PQDpT8JfRr8HpWGIJbL+DZBcwGLdlquXaR4qGYBsRIoB38xriDIObO3TM/fDCY1AvvcMepSfYlQQN/2cp+NYM0=;
+X-UUID: 030cebc5bedd4b14853cb354e97ef111-20200304
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 624140711; Wed, 04 Mar 2020 04:22:29 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Mar 2020 04:22:27 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs05n1.mediatek.inc
+ (172.21.101.15) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Wed, 4 Mar 2020 20:21:18 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 4 Mar 2020 20:21:25 +0800
+Message-ID: <1583324538.4784.22.camel@mhfsdcap03>
+Subject: Re: [PATCH v2 3/3] iommu/mediatek: add support for MT8167
+From: Yong Wu <yong.wu@mediatek.com>
+To: Fabien Parent <fparent@baylibre.com>
+Date: Wed, 4 Mar 2020 20:22:18 +0800
+In-Reply-To: <20200302112152.2887131-3-fparent@baylibre.com>
+References: <20200302112152.2887131-1-fparent@baylibre.com>
+ <20200302112152.2887131-3-fparent@baylibre.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20200303203559.23995-1-ulf.hansson@linaro.org>
- <20200303203559.23995-4-ulf.hansson@linaro.org> <20200304121250.GD25004@bogus>
-In-Reply-To: <20200304121250.GD25004@bogus>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 4 Mar 2020 13:20:13 +0100
-Message-ID: <CAPDyKFo15UPXh5uGHa98Wgg+HHuo5D4cdEUucP9Yiw9JtLhKCw@mail.gmail.com>
-Subject: Re: [PATCH v2 3/4] cpuidle: psci: Split psci_dt_cpu_init_idle()
-To: Sudeep Holla <sudeep.holla@arm.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_042050_728616_4452E73B 
-X-CRM114-Status: GOOD (  21.43  )
+X-CRM114-CacheID: sfid-20200304_042236_012396_D4904DC4 
+X-CRM114-Status: GOOD (  15.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -80,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,77 +83,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, joro@8bytes.org, linux-kernel@vger.kernel.org,
+ ck.hu@mediatek.com, iommu@lists.linux-foundation.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 4 Mar 2020 at 13:12, Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> On Tue, Mar 03, 2020 at 09:35:58PM +0100, Ulf Hansson wrote:
-> > To make the code a bit more readable, but also to prepare some code to be
-> > re-used, let's move the OSI specific initialization out of the
-> > psci_dt_cpu_init_idle() and into a separate function.
-> >
-> > Fixes: a65a397f2451 ("cpuidle: psci: Add support for PM domains by using genpd")
->
-> Not sure if this fixes anything but I am fine to have this if next one is
-> a real fix.
+On Mon, 2020-03-02 at 12:21 +0100, Fabien Parent wrote:
+> Add support for the IOMMU on MT8167
+> 
+> Signed-off-by: Fabien Parent <fparent@baylibre.com>
+> ---
+> 
+> V2:
+> 	* removed if based on m4u_plat, and using instead the new
+> 	has_legacy_ivrp_paddr member that was introduced in patch 2.
+> 
+> ---
+>  drivers/iommu/mtk_iommu.c | 9 +++++++++
+>  drivers/iommu/mtk_iommu.h | 1 +
+>  2 files changed, 10 insertions(+)
+> 
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index 78cb14ab7dd0..25b7ad1647ba 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -782,6 +782,14 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+>  	.larbid_remap = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+>  };
+>  
+> +static const struct mtk_iommu_plat_data mt8167_data = {
+> +	.m4u_plat     = M4U_MT8167,
+> +	.has_4gb_mode = true,
+> +	.has_legacy_ivrp_paddr = true;
+> +	.reset_axi    = true,
+> +	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
 
-Yep, that's what I had in mind as well.
+Normally we put the file include/dt-bindings/memory/mt8167-larb-port.h
+into the first binding patch. 
 
->
-> > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > ---
-> >
-> > Changes in v2:
-> >       - Adopted suggestions from Stephen to use IS_ERR_OR_NULL and
-> >       PTR_ERR_OR_ZERO, which further clarified the code.
-> >
-> > ---
-> >  drivers/cpuidle/cpuidle-psci.c | 46 ++++++++++++++++++++--------------
-> >  1 file changed, 27 insertions(+), 19 deletions(-)
-> >
-> > diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> > index edd7a54ef0d3..bae9140a65a5 100644
-> > --- a/drivers/cpuidle/cpuidle-psci.c
-> > +++ b/drivers/cpuidle/cpuidle-psci.c
-> > @@ -160,6 +160,29 @@ int __init psci_dt_parse_state_node(struct device_node *np, u32 *state)
-> >       return 0;
-> >  }
-> >
-> > +static int __init psci_dt_cpu_init_topology(struct cpuidle_driver *drv,
-> > +                                         struct psci_cpuidle_data *data,
-> > +                                         unsigned int state_count, int cpu)
-> > +{
-> > +     /* Currently limit the hierarchical topology to be used in OSI mode. */
-> > +     if (!psci_has_osi_support())
-> > +             return 0;
-> > +
-> > +     data->dev = psci_dt_attach_cpu(cpu);
-> > +     if (IS_ERR_OR_NULL(data->dev))
-> > +             return PTR_ERR_OR_ZERO(data->dev);
-> > +
->
-> This is what I was asking to do before this was merged when I meant to drop
-> if(data->dev) check. So happy to see it :)
+If we have that file, we will know there is only 3 larbs in mt8167.
+thus, here should be: larbid_remap = {0, 1, 2}
 
-I probably didn't get you point well enough. Sorry.
+Other than this,
 
->
-> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+Reviewed-by: Yong Wu <yong.wu@mediatek.com>
 
-Thanks!
-
-Kind regards
-Uffe
+> +};
+> +
+>  static const struct mtk_iommu_plat_data mt8173_data = {
+>  	.m4u_plat     = M4U_MT8173,
+>  	.has_4gb_mode = true,
+> @@ -799,6 +807,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
+>  
+>  static const struct of_device_id mtk_iommu_of_ids[] = {
+>  	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
+> +	{ .compatible = "mediatek,mt8167-m4u", .data = &mt8167_data},
+>  	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+>  	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
+>  	{}
+> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> index 4696ba027a71..72f874ec9e9c 100644
+> --- a/drivers/iommu/mtk_iommu.h
+> +++ b/drivers/iommu/mtk_iommu.h
+> @@ -30,6 +30,7 @@ struct mtk_iommu_suspend_reg {
+>  enum mtk_iommu_plat {
+>  	M4U_MT2701,
+>  	M4U_MT2712,
+> +	M4U_MT8167,
+>  	M4U_MT8173,
+>  	M4U_MT8183,
+>  };
 
 _______________________________________________
 linux-arm-kernel mailing list
