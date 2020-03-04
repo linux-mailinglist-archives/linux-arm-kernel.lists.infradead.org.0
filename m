@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0602B17963A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 18:03:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBD7E179668
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 18:11:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BI+5pz7PgQEUfUPU0cgriElmKbQ/qBj3yv/bWk2i0f8=; b=lRopF15GFiCNNt
-	DzMkb0EOikrYBfrvqFov5ppOgYEa0jeSdKxo1l10kO/+i1lRfFYf6Einby/ggkjybS8rSkX/TtA8g
-	VIonv9EvfGAn8pn8Uh9nMuskEopAdSbBozx4A7eVE4djIZbxwrE6AouPuc2fNr2EDsgwyUhZw4qcf
-	j6V3jN82OtBR3IggGkC4ah1e7UtlqeyO57rbhEzISX/Q4z58fi3yyzP250PvO162VHWuJVdP7SZoq
-	kjvQ1hmGc3xzFhmLUVgEfEVdatuyy+UnzGp6AQLxhHS9T18zPx1AA+pb0F09j5zc8wxBkpObf0WYl
-	pRKJdW9w7WjgatZRBm8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BdXCtyhagmHi6/LpaYwYhKOe9dtey0BM9E2kXhUn9is=; b=Qi3m+KaN5jop09cHBb5o9XONx
+	edazzpD1sZWk/FI6mkdZuO15T5jNlfB7A8dOPJnef2pltWb1P/lsQhSvuinxVq+JjdWOnTbDW0RQN
+	gHtbdkcjXaYhtdTR30BY1GkoBXLJFbXfWf7N4LDIba4AG9yG9rCoF1hGDCyqBcbPkHhM8yMVP6QfU
+	jEEi7u0s+xZfp2bKSJX4U/Sdemjr8wd0UdvG1UYgemPAEV/ORZLEoA2WeL4rXPkGh+cEbX9/2jKSs
+	qho04PnI7aKHs5ySj0AkUmpv8+YXKreoXiz1kGHKh8tED3BS6DR3qe7HFRbFuQ5boUhoRhi4JtIkx
+	/whjou3dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9XQo-0006BB-Pd; Wed, 04 Mar 2020 17:03:38 +0000
+	id 1j9XXt-0001Sy-Gr; Wed, 04 Mar 2020 17:10:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9XQa-0006AK-Tm
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 17:03:26 +0000
+ id 1j9XXm-0001Sd-Ru; Wed, 04 Mar 2020 17:10:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6697E31B;
- Wed,  4 Mar 2020 09:03:23 -0800 (PST)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3073A3F6CF;
- Wed,  4 Mar 2020 09:03:22 -0800 (PST)
-Date: Wed, 4 Mar 2020 17:03:20 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-Message-ID: <20200304170319.GB44525@bogus>
-References: <1583201219-15839-1-git-send-email-peng.fan@nxp.com>
- <1583201219-15839-3-git-send-email-peng.fan@nxp.com>
- <20200304103954.GA25004@bogus>
- <AM0PR04MB4481A6DB7339C22A848DAFC988E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <AM0PR04MB44814B71E92C02956F4BED4588E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8DF031B;
+ Wed,  4 Mar 2020 09:10:49 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D0173F6CF;
+ Wed,  4 Mar 2020 09:10:49 -0800 (PST)
+Date: Wed, 4 Mar 2020 17:10:47 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v2 1/3] dt-bindings: spi: convert rockchip spi bindings
+ to yaml
+Message-ID: <20200304171047.GD5646@sirena.org.uk>
+References: <20200122224555.6845-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AM0PR04MB44814B71E92C02956F4BED4588E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200122224555.6845-1-jbx6244@gmail.com>
+X-Cookie: Tomorrow, you can be anywhere.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_090325_051807_16543718 
-X-CRM114-Status: GOOD (  24.68  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200304_091050_946333_229B3D05 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,106 +65,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2854992900183086510=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peng,
 
-On Wed, Mar 04, 2020 at 02:16:00PM +0000, Peng Fan wrote:
-> > Subject: RE: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-> >
-> > Hi Sudeep,
-> >
-> > > Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-> > >
-> > > On Tue, Mar 03, 2020 at 10:06:59AM +0800, peng.fan@nxp.com wrote:
-> > > > From: Peng Fan <peng.fan@nxp.com>
-> > > >
-> > > > Take arm,smc-id as the 1st arg, leave the other args as zero for now.
-> > > > There is no Rx, only Tx because of smc/hvc not support Rx.
-> > > >
-> > > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > >
-> > > [...]
-> > >
-> > > > +static int smc_send_message(struct scmi_chan_info *cinfo,
-> > > > +			    struct scmi_xfer *xfer)
-> > > > +{
-> > > > +	struct scmi_smc *scmi_info = cinfo->transport_info;
-> > > > +	struct arm_smccc_res res;
-> > > > +
-> > > > +	shmem_tx_prepare(scmi_info->shmem, xfer);
-> > >
-> > > How do we protect another thread/process on another CPU going and
-> > > modifying the same shmem with another request ? We may need notion of
-> > > channel with associated shmem and it is protected with some lock.
-> >
-> > This is valid concern. But I think if shmem is shared bwteen protocols, the
-> > access to shmem should be protected in
-> > drivers/firmware/arm_scmi/driver.c: scmi_do_xfer, because send_message
-> > and fetch_response both touches shmem
-> >
-> > The mailbox transport also has the issue you mentioned, I think.
+--===============2854992900183086510==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="kvUQC+jR9YzypDnK"
+Content-Disposition: inline
 
-No, it doesn't. I hope you realised that now based on your statement below.
 
->
-> Ignore my upper comments. How do think the following diff based on current patch?
->
-> If ok, I'll squash it with current patch and send out v5.
->
-> diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
-> index 88f91b68f297..7d770112f339 100644
-> --- a/drivers/firmware/arm_scmi/smc.c
-> +++ b/drivers/firmware/arm_scmi/smc.c
-> @@ -29,6 +29,8 @@ struct scmi_smc {
->         u32 func_id;
->  };
->
-> +static DEFINE_MUTEX(smc_mutex);
-> +
->  static bool smc_chan_available(struct device *dev, int idx)
->  {
->         return true;
-> @@ -99,11 +101,15 @@ static int smc_send_message(struct scmi_chan_info *cinfo,
->         struct scmi_smc *scmi_info = cinfo->transport_info;
->         struct arm_smccc_res res;
->
-> +       mutex_lock(&smc_mutex);
-> +
->         shmem_tx_prepare(scmi_info->shmem, xfer);
->
->         arm_smccc_1_1_invoke(scmi_info->func_id, 0, 0, 0, 0, 0, 0, 0, &res);
->         scmi_rx_callback(scmi_info->cinfo, shmem_read_header(scmi_info->shmem));
->
-> +       mutex_unlock(&smc_mutex);
-> +
->         return res.a0;
->  }
->
+--kvUQC+jR9YzypDnK
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Yes, this may fix the issue. However I would like to know if we need to
-support multiple channels/shared memory simultaneously. It is fair
-requirement and may need some work which should be fine. I just want to
-make sure we don't need anything more from DT or if we need to add more
-to DT bindings, we need to ensure it won't break single channel. I will
-think about that, but I would like to hear from other users of this SMC
-for SCMI.
+On Wed, Jan 22, 2020 at 11:45:53PM +0100, Johan Jonker wrote:
+> Current dts files with 'spi' nodes are manually verified.
+> In order to automate this process spi-rockchip.txt
+> has to be converted to yaml. In the new setup
+> spi-rockchip.yaml will inherit properties from
+> spi-controller.yaml.
+>=20
+> Add document to MAINTAINERS.
 
---
-Regards,
-Sudeep
+This doesn't apply against current code, please check and resend.
+
+--kvUQC+jR9YzypDnK
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5f4RYACgkQJNaLcl1U
+h9AUJQf+NIBVp/NuXcA8ap1DTnZKngd1ChQwtZBK7j45Ck2jg/rcwmKK8WT3Dd89
+tlhn7yP8Ad1Bx7jxd7w76jpBVuPE3K9z0EjZeI6nnxxMdv15bW5+Rcrp8QetP0qA
+Yn5L8jNUSpFS97y7ACecT98AkKB8C6mExQ84U4s9qxjl5rZqzzlPmJBJASt9rgF4
+Ox/eSAEqdiv85KsmMGzqc5171uhicslVUvjCw5YFB0RVhm+fZw8G3PFpdJdQGt1w
+KRQkMrkEyLUU/znr92Ggk6ehIdMu4gzoLSk3Qe6DihtXVQPyE9LuY5PUZi81RpVZ
+GyDX0FN7FIBIO0xBFkF+V1cPyGtWPA==
+=JWON
+-----END PGP SIGNATURE-----
+
+--kvUQC+jR9YzypDnK--
+
+
+--===============2854992900183086510==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2854992900183086510==--
+
