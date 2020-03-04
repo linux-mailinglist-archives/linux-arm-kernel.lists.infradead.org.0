@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED8C7178DBA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 10:46:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7E47178DC5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 10:47:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=K3E5BRPzh/++iwvb2Wq4Ev2eCfsdiqudMq06r3O/dsI=; b=tUT0FDqngN1OCL
-	1KyR+QKdFJpdSh69HTSagUrVradLQpHZjscvpaye81kPricjtdAtbyXXm02aS8qpz3aNowKUdxqLh
-	a8p4u5II3sh420miElqvoiSVUrZI1o5raA5u+GQrzN+Y16FyIU/jFep84SHjlvcq12gK5lqtwywn9
-	6MQp4yrHNq2a8T4dHj5iRg3ScaSnsGpyXFr2L1Z+ngP9epF2f+MPyqGK9C6Tyh/GrXKlm4LQsPtyU
-	YQnu5qSsjpyUWJmGfGWZwtn6oSqr740omFFo0sbTKUlrWOaunMDiPyj7+PqWxc6mciCXfmBCnOqBo
-	tv4pPcot3h5IzeOCG61w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=31cGKrfE2xmzaZFQLIlZKBWkCJozebHK2zsw0JeQ7JU=; b=MMU+7TZO1OumWq
+	zqtKj/1a+vvq8dNZ5DNv6cBcx59J6iR+pc30eQc0U8P/XeS9QZGEdftug4D05Zrk5d/QIpIaCBZkY
+	U+b81G5ccu4gI+SPjSBhQEUMmg1uIgrF5XXmO7oIszd1a/OPAFFumbfV3cljA+BeyCnuyH1THJGN2
+	jHO7duEjYqwCA8WsgPPKsTETiXSDe+KU2+899L5248d+g+6Sp6oY0Br4hTwcyHSBPPKDeyLa8FCls
+	2JyBOkSbkPtPx8YyBXDmoA9sYIFli9JmB3GOAPh8r4k8aL/C2Bo0tpUzj0k2eTY/AJ75GWhipY6NF
+	Dy2Fkm9kaw2RVnwiQLIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Qc7-0003Cs-Gi; Wed, 04 Mar 2020 09:46:51 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j9Qcq-0003u2-6f; Wed, 04 Mar 2020 09:47:36 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Qbp-00038W-RS
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 09:46:36 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z11so1519697wro.9
+ id 1j9Qbq-00038c-AU
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 09:46:37 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j16so1551375wrt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 01:46:33 -0800 (PST)
+ Wed, 04 Mar 2020 01:46:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1rJHZ6cV8qIVgYWrX2RtOqvJSLdzpo5KC9hRlaXj0rE=;
- b=LKnfIdgqIropC4TENJpdxj1oNwZtHiGtUu9+J+A9CcMefxRRJrpfsNXEc48WoNPvWW
- 7Axysd+MKLWruQIQ0lM/cFtbG9y5PoaCKSM8cuJKfbrF8VR4vAXKdlHC7fa/kLLVm105
- uXHAIK9IHWEew5zN/Vhqxov8xGRx6wnfhokdFYdWzsT0xKrR+j44MbnVHZm1iXcEgEqZ
- Rh55qndTAzVM51THW1Wl4HQuW4nL56ZtaSIoiejqNV9vOh3wqqXrjD/OdtkEobPno9AX
- SOUyrp6WQAGTJoL04PgW8Mj8tgAw3JRTTX+/xGXmA7LQimd7ViYDCcSqrmJRWK2AdloK
- 7dJw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=K5hjg1G3VFJLeuZ62RXxBnJp53DPSao1yCpZ+ZBtBN8=;
+ b=2SE/62ffNoNovHiDs1k+u5cTld9gBWOVjpxlimiyMzuGDcXNO7DUxt9Y14hP9n3+eL
+ NH+9A+7QJG3kGP10lLckXdEVA97WpRjF9zy0NHjXZmq7Jc4bmR3ep3dxqbaMwqx7CHRU
+ usGM+s3jBF5hjJA11vy0AStb7wZVycGK89BWs8Pqqs0InWE3NVc5febUgjUoOo4lRCcj
+ +LxhnmvycnOEXSWQf57tEgS0Q4nn8FMOhSDh4vwtVXySqWhzaS1mZB7NSDyea7/Q8+Yy
+ 6DIqNuLQwsNnqxuD0BT0LZWAZWKogGUIAS3hvuN0Daa6hf4lk0GPyxZygHBsYWv6GZrG
+ VnIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=1rJHZ6cV8qIVgYWrX2RtOqvJSLdzpo5KC9hRlaXj0rE=;
- b=cmHevUDFDvpL0pPbFAnzMQLNE9wmPWn61A/P9gxSO9MNxWM122TRBNaIkKAL2b5ZwZ
- diwcGYYeb5LNlpT2CoWKIBPjJgIc3o6tSvx0eyfBF2MjmHEnNNTURlNTVbLJozaqHGDK
- 1XTDHZELvufnX8ZNHFhjsF0W6/34SEnYgF5lNUengouITHuYOuZR8VBnzh3oPWCxIu0p
- kT3cO/8SoM95x4H+B7ybaFHCjqNHz9sUdP7F8a+64yJ4IBLQD/Aan69iNBHlFVZ4samu
- Ml4tGxEzKYI48gb4jRvBE40/ZGJLEYrjYNhp6HN7x10PLiautC/E2r969/uEfd6ZqwW6
- 511g==
-X-Gm-Message-State: ANhLgQ1JqNkbLvb9TXcrZQxpNzn36RSu+feBChV5dBT+0tZ04vmJOckl
- Hk6NZx/w1Qcjl42VRQt8FimDBg==
-X-Google-Smtp-Source: ADFU+vv7f4YuTU+v9je/hAdhTrmSTHlzbP85pjC9jtsLTan5g2h50q/hSo8WbAL/jeh87jz6s1CvKQ==
-X-Received: by 2002:adf:d4d2:: with SMTP id w18mr3429279wrk.180.1583315191953; 
- Wed, 04 Mar 2020 01:46:31 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=K5hjg1G3VFJLeuZ62RXxBnJp53DPSao1yCpZ+ZBtBN8=;
+ b=LSC7dVfY9+6YRhlc4u6m8Tty5iXPSEybOwUsrNllzDq0BYvxYfX4y4Y3JOxj+jNTY1
+ gZaWtroTCDRsT2NNMl0ZRLo2CJ85ZjELmcXppAMeUNhtW7+ucEpz4m8QbntWk73jk51S
+ z7518TTn9ltJjEEimlfl6AUF6HNXlroh+qkuzpzXVlOnf4eBm8G4cCrmNuJdtmBEWcyR
+ 1AHxRR8P5SznufqsYOn+NvClP2NVOGnn2Im1G7cGKRCJAl14vvPkwhlfC2Qrr8bUpHhV
+ J5o3EEMYtP4P+QBnjKo8/86AU0oaavmEzn7SNTECaVCxCXsgS3pdw78gBNN5fdq1ee8f
+ fdyA==
+X-Gm-Message-State: ANhLgQ05OCjO8jgiv5s4uC4yjFaVmTlj6XMr0WIrA8uASp2u9Ye3lv84
+ NEIygu5FIvqj5UymSuKAV6yyOLBnqWdEYg==
+X-Google-Smtp-Source: ADFU+vsmHI8XwQXXfnDZR562BoFU7zrqmPglShefMhkAEPAr3dqW+fmq4C1hsmjfc+4oVh7WFI4DFQ==
+X-Received: by 2002:adf:f604:: with SMTP id t4mr3308460wrp.96.1583315192881;
+ Wed, 04 Mar 2020 01:46:32 -0800 (PST)
 Received: from bender.baylibre.local
  (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id b10sm38696107wrw.61.2020.03.04.01.46.31
+ by smtp.gmail.com with ESMTPSA id b10sm38696107wrw.61.2020.03.04.01.46.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Mar 2020 01:46:31 -0800 (PST)
+ Wed, 04 Mar 2020 01:46:32 -0800 (PST)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: mchehab@kernel.org,
 	hans.verkuil@cisco.com
-Subject: [PATCH v7 0/5] media: meson: vdec: Add VP9 decoding support
-Date: Wed,  4 Mar 2020 10:46:20 +0100
-Message-Id: <20200304094625.2257-1-narmstrong@baylibre.com>
+Subject: [PATCH v7 1/5] media: meson: vdec: align stride on 32 bytes
+Date: Wed,  4 Mar 2020 10:46:21 +0100
+Message-Id: <20200304094625.2257-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20200304094625.2257-1-narmstrong@baylibre.com>
+References: <20200304094625.2257-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_014633_894651_C117347C 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200304_014634_361788_746E0904 
+X-CRM114-Status: GOOD (  11.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,207 +95,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-media@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+The HEVC/VP9 aligns the plane stride on 32, so align the planes stride
+for all codecs to 32 to satisfy HEVC/VP9 decoding using the "HEVC" HW.
 
-This patchset aims to bring VP9 decoding support to Amlogic GXL, G12A & SM1
-platforms for the amlogic stateful video decoder driver.
+This fixes VP9 decoding of streams with following (not limited) widths:
+- 264
+ -288
+- 350
+- 352
+- 472
+- 480
+- 528
+- 600
+- 720
+- 800
+- 848
+- 1440
 
-With this, it passes v4l2-compliance with streaming on Amlogic G12A and
-Amlogic SM1 SoCs successfully using the stream at [1] with a fixed
-pyv4l2compliance script for VP9 at [2].
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+Tested-by: Kevin Hilman <khilman@baylibre.com>
+---
+ drivers/staging/media/meson/vdec/vdec.c         | 10 +++++-----
+ drivers/staging/media/meson/vdec/vdec_helpers.c |  4 ++--
+ 2 files changed, 7 insertions(+), 7 deletions(-)
 
-The original script kept the IVF headers in the stream, confusing the
-decoder. The fixed script only extracts the payload from the IVF container.
-
-The decoder has been tested using the Google CTS TestVectorsIttiam VP9 yuv420
-samples and the VP9 Decoder Performance streams at [5], decoding all streams from
-Profile 0 and 2 up to Level 4.1, with 10bit downsampling to 8bit.
-
-This patchset depends on :
-- H.264 and compliance v7 at [4]
-
-Changes since v6 at [10]:
-- Fixes missed gcc warnings in codec_hevc_common.[ch]/esparser.c/codec_vp9.c
-
-Changes since v5 at [9]:
-- Fixed sparse warnings in codec_hevc_common.h/codec_vp9.c/vdec_hevc.c
-- No smatch warnings issued
-
-Changes since v4 at [8]:
-- Fixes checkpatch warning on patches 3 & 5
-
-Changes since v3 at [7]:
-- fixes necessary spare ref buffer handling in parser
-- added a comment to indicate how it's handled
-- fix VP9 on SM1, was working with G12A firmware, but needed some changed with SM1 specific firmware
-- pushed (gxl) and switched to missing (sm1) vp9 firmwares to linux-firmware repo
-
-Changes since v2 at [6]:
-- Rebased on H.264 and compliance at [4]
-
-Changes since v1 at [3]:
-- Fixed compliance for delta frame resize, but proper ref keeping is broken
-- Added warns for delta frame resize, to be fixed in a following patchset
-- Added VP9 probabilities parsing and transformation support to decore the VP9 performance streams
-- Fixed refs keeping, avoid deleting necessary refs for next frame
-- Properly used the kernel clamp_val() macros
-- Zeroed the workspace to avoid refs handling glitches
-- Add lock around the flush & stop to avoid race between IRQ and drain/stop
-
-[1] https://github.com/superna9999/pyv4l2compliance/raw/tests/output/Jellyfish_1080_10s_5MB.vp9.hdr
-[2] https://github.com/superna9999/pyv4l2compliance
-[3] https://lore.kernel.org/linux-media/20191205092454.26075-1-narmstrong@baylibre.com
-[4] https://lore.kernel.org/linux-media/20200303143320.32562-1-narmstrong@baylibre.com
-[5] https://www.webmproject.org/vp9/levels/
-[6] https://lore.kernel.org/linux-media/20191217111939.10387-1-narmstrong@baylibre.com
-[7] https://lore.kernel.org/linux-media/20200116133437.2443-1-narmstrong@baylibre.com
-[8] https://lore.kernel.org/linux-media/20200206084152.7070-1-narmstrong@baylibre.com
-[9] https://lore.kernel.org/linux-media/20200219140958.23542-1-narmstrong@baylibre.com
-[10] https://lore.kernel.org/linux-media/20200303143732.762-1-narmstrong@baylibre.com
-
-The compliance log is:
-# v4l2-compliance --stream-from-hdr Jellyfish_1080_10s_5MB.vp9.hdr -s 200
-v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bits
-
-Compliance test for meson-vdec device /dev/video0:
-
-Driver Info:
-	Driver name      : meson-vdec
-	Card type        : Amlogic Video Decoder
-	Bus info         : platform:meson-vdec
-	Driver version   : 5.5.0
-	Capabilities     : 0x84204000
-		Video Memory-to-Memory Multiplanar
-		Streaming
-		Extended Pix Format
-		Device Capabilities
-	Device Caps      : 0x04204000
-		Video Memory-to-Memory Multiplanar
-		Streaming
-		Extended Pix Format
-	Detected Stateful Decoder
-
-Required ioctls:
-	test VIDIOC_QUERYCAP: OK
-
-Allow for multiple opens:
-	test second /dev/video0 open: OK
-	test VIDIOC_QUERYCAP: OK
-	test VIDIOC_G/S_PRIORITY: OK
-	test for unlimited opens: OK
-
-Debug ioctls:
-	test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
-	test VIDIOC_LOG_STATUS: OK (Not Supported)
-
-Input ioctls:
-	test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
-	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-	test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
-	test VIDIOC_ENUMAUDIO: OK (Not Supported)
-	test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
-	test VIDIOC_G/S_AUDIO: OK (Not Supported)
-	Inputs: 0 Audio Inputs: 0 Tuners: 0
-
-Output ioctls:
-	test VIDIOC_G/S_MODULATOR: OK (Not Supported)
-	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-	test VIDIOC_ENUMAUDOUT: OK (Not Supported)
-	test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
-	test VIDIOC_G/S_AUDOUT: OK (Not Supported)
-	Outputs: 0 Audio Outputs: 0 Modulators: 0
-
-Input/Output configuration ioctls:
-	test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
-	test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
-	test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
-	test VIDIOC_G/S_EDID: OK (Not Supported)
-
-Control ioctls:
-	test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
-	test VIDIOC_QUERYCTRL: OK
-	test VIDIOC_G/S_CTRL: OK
-	test VIDIOC_G/S/TRY_EXT_CTRLS: OK
-	test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
-	test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
-	Standard Controls: 2 Private Controls: 0
-
-Format ioctls:
-	test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
-	test VIDIOC_G/S_PARM: OK (Not Supported)
-	test VIDIOC_G_FBUF: OK (Not Supported)
-	test VIDIOC_G_FMT: OK
-	test VIDIOC_TRY_FMT: OK
-	test VIDIOC_S_FMT: OK
-	test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
-	test Cropping: OK (Not Supported)
-	test Composing: OK (Not Supported)
-	test Scaling: OK (Not Supported)
-
-Codec ioctls:
-	test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
-	test VIDIOC_G_ENC_INDEX: OK (Not Supported)
-	test VIDIOC_(TRY_)DECODER_CMD: OK
-
-Buffer ioctls:
-	test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
-	test VIDIOC_EXPBUF: OK
-	test Requests: OK (Not Supported)
-
-Test input 0:
-
-Streaming ioctls:
-	test read/write: OK (Not Supported)
-	test blocking wait: OK
-	Video Capture Multiplanar: Captured 198 buffers   
-	test MMAP (select): OK
-	Video Capture Multiplanar: Captured 198 buffers   
-	test MMAP (epoll): OK
-	test USERPTR (select): OK (Not Supported)
-	test DMABUF: Cannot test, specify --expbuf-device
-
-Total for meson-vdec device /dev/video0: 49, Succeeded: 49, Failed: 0, Warnings: 0
-
-Maxime Jourdan (4):
-  media: meson: vdec: add helpers for lossless framebuffer compression
-    buffers
-  media: meson: vdec: add common HEVC decoder support
-  media: meson: vdec: add VP9 input support
-  media: meson: vdec: add VP9 decoder support
-
-Neil Armstrong (1):
-  media: meson: vdec: align stride on 32 bytes
-
- drivers/staging/media/meson/vdec/Makefile     |    4 +-
- .../media/meson/vdec/codec_hevc_common.c      |  297 +++
- .../media/meson/vdec/codec_hevc_common.h      |   71 +
- drivers/staging/media/meson/vdec/codec_vp9.c  | 2141 +++++++++++++++++
- drivers/staging/media/meson/vdec/codec_vp9.h  |   13 +
- drivers/staging/media/meson/vdec/esparser.c   |  150 +-
- drivers/staging/media/meson/vdec/hevc_regs.h  |  218 ++
- drivers/staging/media/meson/vdec/vdec.c       |   15 +-
- .../staging/media/meson/vdec/vdec_helpers.c   |   35 +-
- .../staging/media/meson/vdec/vdec_helpers.h   |    4 +
- drivers/staging/media/meson/vdec/vdec_hevc.c  |  231 ++
- drivers/staging/media/meson/vdec/vdec_hevc.h  |   13 +
- .../staging/media/meson/vdec/vdec_platform.c  |   38 +
- 13 files changed, 3217 insertions(+), 13 deletions(-)
- create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.c
- create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.h
- create mode 100644 drivers/staging/media/meson/vdec/codec_vp9.c
- create mode 100644 drivers/staging/media/meson/vdec/codec_vp9.h
- create mode 100644 drivers/staging/media/meson/vdec/hevc_regs.h
- create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.c
- create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.h
-
+diff --git a/drivers/staging/media/meson/vdec/vdec.c b/drivers/staging/media/meson/vdec/vdec.c
+index 92f0258868b1..bfca4c82aa56 100644
+--- a/drivers/staging/media/meson/vdec/vdec.c
++++ b/drivers/staging/media/meson/vdec/vdec.c
+@@ -528,20 +528,20 @@ vdec_try_fmt_common(struct amvdec_session *sess, u32 size,
+ 		memset(pfmt[1].reserved, 0, sizeof(pfmt[1].reserved));
+ 		if (pixmp->pixelformat == V4L2_PIX_FMT_NV12M) {
+ 			pfmt[0].sizeimage = output_size;
+-			pfmt[0].bytesperline = ALIGN(pixmp->width, 64);
++			pfmt[0].bytesperline = ALIGN(pixmp->width, 32);
+ 
+ 			pfmt[1].sizeimage = output_size / 2;
+-			pfmt[1].bytesperline = ALIGN(pixmp->width, 64);
++			pfmt[1].bytesperline = ALIGN(pixmp->width, 32);
+ 			pixmp->num_planes = 2;
+ 		} else if (pixmp->pixelformat == V4L2_PIX_FMT_YUV420M) {
+ 			pfmt[0].sizeimage = output_size;
+-			pfmt[0].bytesperline = ALIGN(pixmp->width, 64);
++			pfmt[0].bytesperline = ALIGN(pixmp->width, 32);
+ 
+ 			pfmt[1].sizeimage = output_size / 4;
+-			pfmt[1].bytesperline = ALIGN(pixmp->width, 64) / 2;
++			pfmt[1].bytesperline = ALIGN(pixmp->width, 32) / 2;
+ 
+ 			pfmt[2].sizeimage = output_size / 2;
+-			pfmt[2].bytesperline = ALIGN(pixmp->width, 64) / 2;
++			pfmt[2].bytesperline = ALIGN(pixmp->width, 32) / 2;
+ 			pixmp->num_planes = 3;
+ 		}
+ 	}
+diff --git a/drivers/staging/media/meson/vdec/vdec_helpers.c b/drivers/staging/media/meson/vdec/vdec_helpers.c
+index a4970ec1bf2e..3f7929c54dc6 100644
+--- a/drivers/staging/media/meson/vdec/vdec_helpers.c
++++ b/drivers/staging/media/meson/vdec/vdec_helpers.c
+@@ -154,8 +154,8 @@ int amvdec_set_canvases(struct amvdec_session *sess,
+ {
+ 	struct v4l2_m2m_buffer *buf;
+ 	u32 pixfmt = sess->pixfmt_cap;
+-	u32 width = ALIGN(sess->width, 64);
+-	u32 height = ALIGN(sess->height, 64);
++	u32 width = ALIGN(sess->width, 32);
++	u32 height = ALIGN(sess->height, 32);
+ 	u32 reg_cur = reg_base[0];
+ 	u32 reg_num_cur = 0;
+ 	u32 reg_base_cur = 0;
 -- 
 2.22.0
 
