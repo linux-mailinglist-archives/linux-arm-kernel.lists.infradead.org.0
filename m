@@ -2,92 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB195178F90
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 12:29:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 105E1178FAE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 12:42:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
-	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4jMnVYFrybgGiD5oRxxZhXx36Wp7XP5V/BlbivpZDXw=; b=YftGB6Kl36RH7/
-	WLT3Q00dgd7+I/7V4MN5oCg4/xIE6e1SZt5xiwWE6dTRx4EfJMIO2KrnWmITd9u7N3lcmX1M1iJEf
-	GgB7kCcNJ08V4L+ZQewZLu/bgaBYWv1b/hK+JCpzx9P/4fTLM94NvC3EPjZmhVYLILhFcX01NIaQU
-	VBCb1/46pi+noGFcPWsTTlNaKFWLdEDujS9XQO/MfXgJCk5cavYlssXUXc0AiTV8gsAfvAH1KP5iN
-	L/X9ZPirZwu9fb6sI+Qi9JQkyg9r+buNrN/w0sktY8ZFB38UfeSCuVzkuqBjb2aqGsYTEjbZPZOSv
-	0FYSt0iZdqFMHkequC9Q==;
+	List-Owner; bh=ncAXi/mBeqRLBeaY53ucI8zKTDPVZNirKpVItmjcHjw=; b=h4mRVl+ygmOK4u
+	M5/vFuU2o2+XawpQsl6X2lEu+y+UT05M01D35gWQ1abzhbcNbUq3xoa1s0Q8Mg2UQW4f85FI7Af1T
+	AuyNadboMLSt2q1/CWQpfhF0lNnKiX5XtmmcnXGZdIHizxzWHqj7l4vzsU5ZhLRllmbzxyshLP7vs
+	67ena2ql5MT4fOhqJdAxsjUE9q6gCAfRFuHYtoFoeeUZerdJRBSt0Yqv6yfPinWnvKo2JzudrR/QG
+	Z32RkK9mCSiPH7im1U5k7XKCqnJh1wTh2/MvLyibIkYbEjHNJ6gSLkPE5PIDQ6j8/WKOZe8eZze8e
+	OtCu31Ld03OdDNPcaSxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9SDY-0000am-O5; Wed, 04 Mar 2020 11:29:36 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1j9SPR-0005YY-Qi; Wed, 04 Mar 2020 11:41:53 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9SDP-0000Z5-8z
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 11:29:30 +0000
-Received: by mail-qk1-x742.google.com with SMTP id f198so1156378qke.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 03:29:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=content-transfer-encoding:from:mime-version:subject:date:message-id
- :references:cc:in-reply-to:to;
- bh=Jx+iSwpjH1MMUgtvqiqrwQ2sYugCQ9UmLyXay35eB1Q=;
- b=qUya1I+ID7bIC0Bkj4Q0zp0EdHdSdO6ykJWvMXw4HKDFjWyXV8ds3Bs9MArm+vdQdc
- RpunjqglWR6mGJe2Lv7g9advYS1SvRo9LA3gCW5QqI/AMIgsHiHRUFAsdYeij2rtzyTk
- sNSh4wHESGW+6lSzw7OKW4psbfNeqxjoimBZufpM/BoHmrYBRoQNs3Xc2GtPgWnsfXPf
- igl3aC/5VPWbzpP3KfCNQ0wpC8Mh4VlwHq19u+9gw6f3Ulw8FCMZG8YCqNbscon2aj4Z
- WYfZ5PGzedI3tG7vyVtTX+unDExTi5VMHoWYOeG+xlDzhECpmkCqkM7aufo6LUVMsIwj
- NApA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:from:mime-version
- :subject:date:message-id:references:cc:in-reply-to:to;
- bh=Jx+iSwpjH1MMUgtvqiqrwQ2sYugCQ9UmLyXay35eB1Q=;
- b=O3UJKneyTa2hoJq2mpwqxy+R22T8PT/GJDnaROQPVEgDLTNmqzwoJ5UDuXIgp0UvGy
- ED3HGP8xOpU6IS+WZTrWNvw1t1pbtkV+RPrhgfA3XpVGmS3GaW/Xn/Wb6UlFtnMHZ0lN
- BLRpIc2QxFIz4mKx2VE3LpoRbI7gZvbIBpJicq9Xr/k5uBDO2nfISdmz26bCP1c2oxxK
- 27ri85CyRyDYNWNLeVa9wdmTmpaoaQhMV3Ov8smchIC++EwQhp7dmCXh+PT3vxJxZ4v1
- 4T67Incnf1ovy2wrg+eX6Zv4hZGHPHNcFhGjI6xnmNERgiC2oF0VL0ww09UhPkKlXBmo
- Mimg==
-X-Gm-Message-State: ANhLgQ2VHPaj1r/mtzXhuWoX/t/mPoISCfJhuW0uTEIBn7oJZT1l/Glb
- iTV9WGPyH6pujuf0+xgjOf3aXA==
-X-Google-Smtp-Source: ADFU+vsraAELUldtqJkt+JLHLEkp9XWZWryntOEccYsrwg70reKk2W+439zfYVSLClVswo3lxz5LLw==
-X-Received: by 2002:a37:6115:: with SMTP id v21mr2464683qkb.105.1583321365177; 
- Wed, 04 Mar 2020 03:29:25 -0800 (PST)
-Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id u48sm85943qtc.79.2020.03.04.03.29.24
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Mar 2020 03:29:24 -0800 (PST)
-From: Qian Cai <cai@lca.pw>
-Mime-Version: 1.0 (1.0)
-Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
- table helpers
-Date: Wed, 4 Mar 2020 06:29:23 -0500
-Message-Id: <11F41980-97CF-411F-8120-41287DC1A382@lca.pw>
-References: <c022e863-0807-fab1-cd41-3c320381f448@c-s.fr>
-In-Reply-To: <c022e863-0807-fab1-cd41-3c320381f448@c-s.fr>
-To: Christophe Leroy <christophe.leroy@c-s.fr>
-X-Mailer: iPhone Mail (17D50)
+ id 1j9SPJ-0005Xf-QU
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 11:41:47 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1j9SP7-0001eR-T3; Wed, 04 Mar 2020 12:41:33 +0100
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1j9SP7-0005kZ-6Z; Wed, 04 Mar 2020 12:41:33 +0100
+Message-ID: <ac6eb54c01cce4ec52560ac622e024ab47f2136c.camel@pengutronix.de>
+Subject: Re: [RFC 10/11] reset: imx: Add audiomix reset controller support
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Abel Vesa <abel.vesa@nxp.com>, Rob Herring <robh@kernel.org>, Shawn Guo
+ <shawnguo@kernel.org>, Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam
+ <fabio.estevam@nxp.com>, Mike Turquette <mturquette@baylibre.com>, Stephen
+ Boyd <sboyd@kernel.org>, Lee Jones <lee.jones@linaro.org>, Anson Huang
+ <anson.huang@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>
+Date: Wed, 04 Mar 2020 12:41:33 +0100
+In-Reply-To: <1583226206-19758-11-git-send-email-abel.vesa@nxp.com>
+References: <1583226206-19758-1-git-send-email-abel.vesa@nxp.com>
+ <1583226206-19758-11-git-send-email-abel.vesa@nxp.com>
+User-Agent: Evolution 3.30.5-1.1 
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_032927_330286_E6D11825 
-X-CRM114-Status: UNSURE (   8.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200304_034146_018859_91754D38 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,38 +73,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>,
- the arch/x86 maintainers <x86@kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
- Vasily Gorbik <gor@linux.ibm.com>,
- Anshuman Khandual <Anshuman.Khandual@arm.com>, Borislav Petkov <bp@alien8.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Vineet Gupta <vgupta@synopsys.com>, LKML <linux-kernel@vger.kernel.org>,
- Palmer Dabbelt <palmer@dabbelt.com>,
- "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Cc: devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Abel,
 
-
-> On Mar 4, 2020, at 1:49 AM, Christophe Leroy <christophe.leroy@c-s.fr> wrote:
+On Tue, 2020-03-03 at 11:03 +0200, Abel Vesa wrote:
+> The imx-mix MFD driver registers some devices, one of which, in case of
+> audiomix, maps correctly to a reset controller type. This driver registers
+> a reset controller for that. For now, only the EARC specific resets are added.
 > 
-> AFAIU, you are not taking an interrupt here. You are stuck in the pte_update(), most likely due to nested locks. Try with LOCKDEP ?
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
+> ---
+>  drivers/reset/Kconfig                          |   7 ++
+>  drivers/reset/Makefile                         |   1 +
+>  drivers/reset/reset-imx-audiomix.c             | 122 +++++++++++++++++++++++++
+>  include/dt-bindings/reset/imx-audiomix-reset.h |  15 +++
+>  4 files changed, 145 insertions(+)
+>  create mode 100644 drivers/reset/reset-imx-audiomix.c
+>  create mode 100644 include/dt-bindings/reset/imx-audiomix-reset.h
+> 
+> diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
+> index d9efbfd..2f8d9b3 100644
+> --- a/drivers/reset/Kconfig
+> +++ b/drivers/reset/Kconfig
+> @@ -81,6 +81,13 @@ config RESET_INTEL_GW
+>  	  Say Y to control the reset signals provided by reset controller.
+>  	  Otherwise, say N.
+>  
+> +config RESET_IMX_AUDIOMIX
+> +	bool "i.MX Audiomix Reset Driver" if COMPILE_TEST
+> +	depends on HAS_IOMEM
+> +	default ARCH_MXC
+> +	help
+> +	  This enables the audiomix reset controller driver for i.MX SoCs.
+> +
+>  config RESET_LANTIQ
+>  	bool "Lantiq XWAY Reset Driver" if COMPILE_TEST
+>  	default SOC_TYPE_XWAY
+> diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
+> index 249ed35..cf23d38 100644
+> --- a/drivers/reset/Makefile
+> +++ b/drivers/reset/Makefile
+> @@ -12,6 +12,7 @@ obj-$(CONFIG_RESET_BRCMSTB_RESCAL) += reset-brcmstb-rescal.o
+>  obj-$(CONFIG_RESET_HSDK) += reset-hsdk.o
+>  obj-$(CONFIG_RESET_IMX7) += reset-imx7.o
+>  obj-$(CONFIG_RESET_INTEL_GW) += reset-intel-gw.o
+> +obj-$(CONFIG_RESET_IMX_AUDIOMIX) += reset-imx-audiomix.o
+>  obj-$(CONFIG_RESET_LANTIQ) += reset-lantiq.o
+>  obj-$(CONFIG_RESET_LPC18XX) += reset-lpc18xx.o
+>  obj-$(CONFIG_RESET_MESON) += reset-meson.o
+> diff --git a/drivers/reset/reset-imx-audiomix.c b/drivers/reset/reset-imx-audiomix.c
+> new file mode 100644
+> index 00000000..d1c62ef
+> --- /dev/null
+> +++ b/drivers/reset/reset-imx-audiomix.c
+> @@ -0,0 +1,122 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright 2019 NXP.
+> + */
+> +
+> +#include <dt-bindings/reset/imx-audiomix-reset.h>
+> +#include <linux/err.h>
+> +#include <linux/io.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_address.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/pm_runtime.h>
+> +#include <linux/reset-controller.h>
+> +
+> +#define IMX_AUDIOMIX_EARC_CTRL_REG	0x200
+> +
+> +#define IMX_AUDIOMIX_EARC_RESET_BIT	0x0
+> +#define IMX_AUDIOMIX_EARC_PHY_RESET_BIT	0x1
+> +
+> +struct imx_audiomix_reset_data {
+> +	void __iomem *base;
+> +	struct reset_controller_dev rcdev;
+> +	spinlock_t lock;
+> +};
+> +
+> +static int imx_audiomix_reset_set(struct reset_controller_dev *rcdev,
+> +			  unsigned long id, bool assert)
+> +{
+> +	struct imx_audiomix_reset_data *drvdata = container_of(rcdev,
+> +			struct imx_audiomix_reset_data, rcdev);
+> +	void __iomem *reg_addr = drvdata->base;
+> +	unsigned long flags;
+> +	unsigned int offset;
+> +	u32 reg;
+> +
+> +	switch (id) {
+> +	case IMX_AUDIOMIX_EARC_PHY_RESET:
+> +		reg_addr += IMX_AUDIOMIX_EARC_CTRL_REG;
+> +		offset = IMX_AUDIOMIX_EARC_PHY_RESET_BIT;
+> +		break;
+> +	case IMX_AUDIOMIX_EARC_RESET:
+> +		reg_addr += IMX_AUDIOMIX_EARC_CTRL_REG;
+> +		offset = IMX_AUDIOMIX_EARC_RESET_BIT;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (assert) {
+> +		pm_runtime_get_sync(rcdev->dev);
 
-Not exactly sure what did you mean here, but the kernel has all lockdep enabled and did not flag anything here.
+This seems wrong. Why is the runtime PM reference count incremented when
+a reset is asserted ...
+
+> +		spin_lock_irqsave(&drvdata->lock, flags);
+> +		reg = readl(reg_addr);
+> +		writel(reg & ~BIT(offset), reg_addr);
+> +		spin_unlock_irqrestore(&drvdata->lock, flags);
+> +	} else {
+> +		spin_lock_irqsave(&drvdata->lock, flags);
+> +		reg = readl(reg_addr);
+> +		writel(reg | BIT(offset), reg_addr);
+> +		spin_unlock_irqrestore(&drvdata->lock, flags);
+> +		pm_runtime_put(rcdev->dev);
+
+... and decremented when a reset is deasserted?
+
+Apart from the runtime PM handling this looks like it could reuse reset-
+simple.
+
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int imx_audiomix_reset_assert(struct reset_controller_dev *rcdev,
+> +			     unsigned long id)
+> +{
+> +	return imx_audiomix_reset_set(rcdev, id, true);
+> +}
+> +
+> +static int imx_audiomix_reset_deassert(struct reset_controller_dev *rcdev,
+> +			       unsigned long id)
+> +{
+> +	return imx_audiomix_reset_set(rcdev, id, false);
+> +}
+> +
+> +static const struct reset_control_ops imx_audiomix_reset_ops = {
+> +	.assert		= imx_audiomix_reset_assert,
+> +	.deassert	= imx_audiomix_reset_deassert,
+> +};
+> +
+> +static int imx_audiomix_reset_probe(struct platform_device *pdev)
+> +{
+> +	struct imx_audiomix_reset_data *drvdata;
+> +	struct device *dev = &pdev->dev;
+> +
+> +	drvdata = devm_kzalloc(&pdev->dev, sizeof(*drvdata), GFP_KERNEL);
+> +	if (drvdata == NULL)
+> +		return -ENOMEM;
+> +
+> +	drvdata->base = dev_get_drvdata(dev->parent);
+> +
+> +	platform_set_drvdata(pdev, drvdata);
+> +
+> +	pm_runtime_enable(dev);
+> +
+> +	spin_lock_init(&drvdata->lock);
+> +
+> +	drvdata->rcdev.owner     = THIS_MODULE;
+> +	drvdata->rcdev.nr_resets = IMX_AUDIOMIX_RESET_NUM;
+> +	drvdata->rcdev.ops       = &imx_audiomix_reset_ops;
+> +	drvdata->rcdev.of_node   = dev->of_node;
+> +	drvdata->rcdev.dev	 = dev;
+> +
+> +	return devm_reset_controller_register(dev, &drvdata->rcdev);
+> +}
+> +
+> +static const struct of_device_id imx_audiomix_reset_dt_ids[] = {
+> +	{ .compatible = "fsl,imx8mp-audiomix-reset", },
+> +	{ /* sentinel */ },
+> +};
+> +
+> +static struct platform_driver imx_audiomix_reset_driver = {
+> +	.probe	= imx_audiomix_reset_probe,
+> +	.driver = {
+> +		.name		= KBUILD_MODNAME,
+> +		.of_match_table	= imx_audiomix_reset_dt_ids,
+> +	},
+> +};
+> +module_platform_driver(imx_audiomix_reset_driver);
+> diff --git a/include/dt-bindings/reset/imx-audiomix-reset.h b/include/dt-bindings/reset/imx-audiomix-reset.h
+> new file mode 100644
+> index 00000000..2e26878
+> --- /dev/null
+> +++ b/include/dt-bindings/reset/imx-audiomix-reset.h
+> @@ -0,0 +1,15 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright 2019 NXP.
+> + */
+> +
+> +#ifndef DT_BINDING_RESET_IMX_AUDIOMIX_H
+> +#define DT_BINDING_RESET_IMX_AUDIOMIX_H
+> +
+> +#define IMX_AUDIOMIX_EARC_RESET		0x0
+> +#define IMX_AUDIOMIX_EARC_PHY_RESET	0x1
+> +
+> +#define IMX_AUDIOMIX_RESET_NUM		2
+> +
+> +#endif
+> +
+
+The imx-audiomix-reset.h change should go into a separate patch,
+together with the binding docs for fsl,imx8mp-audiomix-reset.
+
+regards
+Philipp
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
