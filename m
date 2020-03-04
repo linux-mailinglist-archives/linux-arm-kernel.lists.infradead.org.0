@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBD7E179668
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 18:11:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BFF5179676
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 18:14:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BdXCtyhagmHi6/LpaYwYhKOe9dtey0BM9E2kXhUn9is=; b=Qi3m+KaN5jop09cHBb5o9XONx
-	edazzpD1sZWk/FI6mkdZuO15T5jNlfB7A8dOPJnef2pltWb1P/lsQhSvuinxVq+JjdWOnTbDW0RQN
-	gHtbdkcjXaYhtdTR30BY1GkoBXLJFbXfWf7N4LDIba4AG9yG9rCoF1hGDCyqBcbPkHhM8yMVP6QfU
-	jEEi7u0s+xZfp2bKSJX4U/Sdemjr8wd0UdvG1UYgemPAEV/ORZLEoA2WeL4rXPkGh+cEbX9/2jKSs
-	qho04PnI7aKHs5ySj0AkUmpv8+YXKreoXiz1kGHKh8tED3BS6DR3qe7HFRbFuQ5boUhoRhi4JtIkx
-	/whjou3dg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1u96xRJ5FBcaFiPtRqT7FaeTNyeYBI3+bbLG3Z5Hjjs=; b=Bup/Ix+n6MsWe8
+	mNFXbXm80MoEUXVl/IysQZjEdmaHiU4FeY8AyMDxOfj2VtUkq2VDjHkj5ibjHMhUrrYiQ/8M1JIyW
+	hTGLzXZYRyO6kAk8cvRrI2HvOlKG0xLXyHFd1T+iXtBX7MEWeHv+QRxAd/Q6IE7sBqdmS4G1186Nz
+	kI84L+y/b414VjbzUMYf1QxhlAjUCiz99mtreZHV2GrbXTGLpbHOKvX8KBpR+uNtnhfX+p5SoVikS
+	budG5/GXaWOhsya4Qxrx9tx4yKhP1W8J0bQLqdEkbg8RXaXGxptkkLE9GsfmRTY5OwvmsyYYj0E3h
+	H7/e2/4zGYvjwDhdiiEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9XXt-0001Sy-Gr; Wed, 04 Mar 2020 17:10:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9XXm-0001Sd-Ru; Wed, 04 Mar 2020 17:10:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C8DF031B;
- Wed,  4 Mar 2020 09:10:49 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D0173F6CF;
- Wed,  4 Mar 2020 09:10:49 -0800 (PST)
-Date: Wed, 4 Mar 2020 17:10:47 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2 1/3] dt-bindings: spi: convert rockchip spi bindings
- to yaml
-Message-ID: <20200304171047.GD5646@sirena.org.uk>
-References: <20200122224555.6845-1-jbx6244@gmail.com>
+	id 1j9Xay-0001wi-2n; Wed, 04 Mar 2020 17:14:08 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9Xan-0001wK-Hj
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 17:13:59 +0000
+Received: by mail-io1-xd42.google.com with SMTP id d8so61162ion.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Mar 2020 09:13:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=4gG3qMsij+Zo/aEE0RJ5aXLnI0RJBhpPpMw/2lBOTbU=;
+ b=QYElvh60Cyyn7Y11uZwaVwCuwHUF2lUxPZZFVwXIyOoPle1lfUfdIGhc0pVks7+RrN
+ WSlaQacGeMOUoXrTP7pW88wNBfAN9wlCFUj4pvq0RHRtFZf9t9vByx9lZKHPFhA2m9Jj
+ JfjAsKvvf+MfcFnD+IMJbV0C4HJonC5kGkJ5/u9yeuEwNBL506h+MOiJ2ed3579CTVlg
+ PXndErOXThORJ6OOckQpkShznq7uU5mOapRDuLejjvmLWOA7cB81NTnC+YTfLaDMLvXt
+ +CQ67q5o8KfwknVXcRpaHGSuSgXciyyCmzX7FpPl0F0KM9b214VsOIIW8pUV+b4jEjUl
+ de9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4gG3qMsij+Zo/aEE0RJ5aXLnI0RJBhpPpMw/2lBOTbU=;
+ b=iVimpt8Gz6EDRZDYIZBWKyZqLAcwg3rIJv/P6+mhypY+2WaDadAAfnwE8gsDKClaow
+ hhUGMS+vJugjRC2atI6xcQT9M+MV4NVQ8WO/1X18ExrNEgy1iOYeytw3EjCEuIwye7rQ
+ zWPYdUWytLLy+BtFzR5V8nO63C6wm1OHOcvEtJwORTzwXobq5hzw93rl5aNI4i5/Eo1T
+ grYpFEC7y19fH1Cp8frwXgHgp7vBLIMdIwMfJsJiJfVnL+oBWU0sFIsQkuMa237715t8
+ yOEtVZDBHbESIecLAWWuKKBeswCfi4LDvALOvtoVyE5/UwJ5ZSITWdZXDTdlqnKfhSFy
+ iJng==
+X-Gm-Message-State: ANhLgQ0RcZIHYCKnRsqrbBvyDObDehMjmxzEJWU4vEknYzXESkF04env
+ LXsODjQBF+qly4V/JSnWNbb/zwbkIhYVck5J6f/YiyoB
+X-Google-Smtp-Source: ADFU+vuOPyKswOKZ61JIBgIoF+EANBFdB2xJk1AnRf0YUvp8KcQ7eG7l91fFfZagGVEMzsrhnPlGrjJNth+JpCUF/ic=
+X-Received: by 2002:a6b:8b8c:: with SMTP id n134mr2899306iod.58.1583342036746; 
+ Wed, 04 Mar 2020 09:13:56 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200122224555.6845-1-jbx6244@gmail.com>
-X-Cookie: Tomorrow, you can be anywhere.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200302213402.9650-1-natechancellor@gmail.com>
+In-Reply-To: <20200302213402.9650-1-natechancellor@gmail.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Wed, 4 Mar 2020 10:13:45 -0700
+Message-ID: <CANLsYkz_kh2BWoVy-YervDTRWUT+p8M+-_vUrsu--WF3fjDBPQ@mail.gmail.com>
+Subject: Re: [PATCH] coresight: cti: Remove unnecessary NULL check in
+ cti_sig_type_name
+To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_091050_946333_229B3D05 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200304_091357_652781_B8F0FCCC 
+X-CRM114-Status: GOOD (  15.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,65 +91,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2854992900183086510=="
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ clang-built-linux@googlegroups.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 2 Mar 2020 at 14:34, Nathan Chancellor <natechancellor@gmail.com> wrote:
+>
+> Clang warns:
+>
+> drivers/hwtracing/coresight/coresight-cti-sysfs.c:948:11: warning:
+> address of array 'grp->sig_types' will always evaluate to 'true'
+> [-Wpointer-bool-conversion]
+>         if (grp->sig_types) {
+>         ~~  ~~~~~^~~~~~~~~
+> 1 warning generated.
+>
+> sig_types is at the end of a struct so it cannot be NULL.
+>
+> Fixes: 85b6684eab65 ("coresight: cti: Add connection information to sysfs")
+> Link: https://github.com/ClangBuiltLinux/linux/issues/914
+> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+> ---
+>  drivers/hwtracing/coresight/coresight-cti-sysfs.c | 6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> index abb7f492c2cb..214d6552b494 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> @@ -945,10 +945,8 @@ cti_sig_type_name(struct cti_trig_con *con, int used_count, bool in)
+>         int idx = 0;
+>         struct cti_trig_grp *grp = in ? con->con_in : con->con_out;
+>
+> -       if (grp->sig_types) {
+> -               if (used_count < grp->nr_sigs)
+> -                       idx = grp->sig_types[used_count];
+> -       }
+> +       if (used_count < grp->nr_sigs)
+> +               idx = grp->sig_types[used_count];
+>         return sig_type_names[idx];
+>  }
 
---===============2854992900183086510==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="kvUQC+jR9YzypDnK"
-Content-Disposition: inline
+Applied - thanks,
+Mathieu
 
-
---kvUQC+jR9YzypDnK
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Jan 22, 2020 at 11:45:53PM +0100, Johan Jonker wrote:
-> Current dts files with 'spi' nodes are manually verified.
-> In order to automate this process spi-rockchip.txt
-> has to be converted to yaml. In the new setup
-> spi-rockchip.yaml will inherit properties from
-> spi-controller.yaml.
->=20
-> Add document to MAINTAINERS.
-
-This doesn't apply against current code, please check and resend.
-
---kvUQC+jR9YzypDnK
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5f4RYACgkQJNaLcl1U
-h9AUJQf+NIBVp/NuXcA8ap1DTnZKngd1ChQwtZBK7j45Ck2jg/rcwmKK8WT3Dd89
-tlhn7yP8Ad1Bx7jxd7w76jpBVuPE3K9z0EjZeI6nnxxMdv15bW5+Rcrp8QetP0qA
-Yn5L8jNUSpFS97y7ACecT98AkKB8C6mExQ84U4s9qxjl5rZqzzlPmJBJASt9rgF4
-Ox/eSAEqdiv85KsmMGzqc5171uhicslVUvjCw5YFB0RVhm+fZw8G3PFpdJdQGt1w
-KRQkMrkEyLUU/znr92Ggk6ehIdMu4gzoLSk3Qe6DihtXVQPyE9LuY5PUZi81RpVZ
-GyDX0FN7FIBIO0xBFkF+V1cPyGtWPA==
-=JWON
------END PGP SIGNATURE-----
-
---kvUQC+jR9YzypDnK--
-
-
---===============2854992900183086510==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>
+> --
+> 2.25.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2854992900183086510==--
-
