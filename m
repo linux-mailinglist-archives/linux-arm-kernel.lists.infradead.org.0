@@ -2,79 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66301179249
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:26:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7421917925B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 15:30:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=imolyJ63XwgT/teINdeYwVR5ncMfgcCcRWLlN/gp03Y=; b=OGTsXDrZ4Tk4CS
-	L8ofUQA6MG1IzakU19ERjTk9C6mHHh5iM2g6w1Z0O44kq6PwSalB7NV4n4x3D4S3e/+aDM2OAFWZc
-	ei7alZlnnV/dkzLx7amKK6UnukJB8TiMIIprDZ/d/8pD8+MkG0UH5HxFkPNdcopnHyu3qL0SjXnwM
-	G+pM9seQz9NldXgWPpwF+sIpgzcy2CVYRWZ16LozXbzCX9OwyN1f6aNo6COGW2OKLTqymRY4yzG3X
-	bSp9ysRNJAsUEzT5hJiFTqI6ygY37uh6lJkKi/oDeaEt/qJhVVngFc8QhViCAKZAdYLEPj0xseiuD
-	xr+j4nf8YTJ4jI/Qifog==;
+	List-Owner; bh=JW7lHZK3LUnQiROtPKQTfm4DzNzSG6WDTFyalzbZ+u4=; b=QPOAVPlf/Pmyy0
+	MZ2AMUHaIbr+K6ELEulEpXTDsYxvsTVO+um3wUFXyAwqYJwYKCUVWpDsKK74uzakX9AdUCXOJd/cZ
+	YeZXBDa2yHhYog1qcm27MTlkyOXHrj/eVteDrfcIttwv1ZwT60iGiSlRqRk9dZm2myH8AI3HcpWHV
+	+DZwtkxBk+OwFYpHxLcjvMkSu1X8joV0q6FLALwdubnHW73dqCdfvoZ9QYXXhi5mEc1wHagCv26A4
+	V6jSbFU6d4HsIa9aRQm7ZPKuoctxqkhNkkssua2mUd0hdOVCT7k/hj26trWa59lzbR5iFaEfdi+Zt
+	F5Hccw/iz4/R/YU9OLhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9UyA-0005wL-VT; Wed, 04 Mar 2020 14:25:54 +0000
-Received: from forward103j.mail.yandex.net ([5.45.198.246])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Uxv-0005pG-46
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:25:41 +0000
-Received: from forward101q.mail.yandex.net (forward101q.mail.yandex.net
- [IPv6:2a02:6b8:c0e:4b:0:640:4012:bb98])
- by forward103j.mail.yandex.net (Yandex) with ESMTP id 8C8F06740CBB;
- Wed,  4 Mar 2020 17:25:32 +0300 (MSK)
-Received: from mxback11q.mail.yandex.net (mxback11q.mail.yandex.net
- [IPv6:2a02:6b8:c0e:1b4:0:640:1f0c:10f2])
- by forward101q.mail.yandex.net (Yandex) with ESMTP id 87464CF40016;
- Wed,  4 Mar 2020 17:25:32 +0300 (MSK)
-Received: from vla5-47b3f4751bc4.qloud-c.yandex.net
- (vla5-47b3f4751bc4.qloud-c.yandex.net [2a02:6b8:c18:3508:0:640:47b3:f475])
- by mxback11q.mail.yandex.net (mxback/Yandex) with ESMTP id UCXxzZegUE-PVous9Uk;
- Wed, 04 Mar 2020 17:25:32 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maquefel.me; s=mail;
- t=1583331932; bh=Jng1nEj1zbxMUGN9K/Xjwz4cFmbLujsZJxv+9sN+qAg=;
- h=In-Reply-To:Subject:To:From:Cc:References:Date:Message-Id;
- b=Y0dDF7rKpb4+QNQNIAI98jMiP86mMDuVOZfHeceea3AJcf2ji3FFCHzWbNZEgI/w0
- RgLFBNe68h8LFeo1xcZGJMEdGCCH3OETtgRxicMb3csdQWnFyrzAE9j5AzwUWcykdi
- uVuoaB/FkBz45olpZs4yKqu3SD4fF3BtljG0IN1U=
-Authentication-Results: mxback11q.mail.yandex.net;
- dkim=pass header.i=@maquefel.me
-Received: by vla5-47b3f4751bc4.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id OSNMAAdVGo-PU3OCmWJ; Wed, 04 Mar 2020 17:25:30 +0300
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (Client certificate not present)
-From: Nikita Shubin <NShubin@topcon.com>
-To: 
-Subject: [PATCH 2/2] remoteproc: imx_rproc: set pc on start
-Date: Wed,  4 Mar 2020 17:26:28 +0300
-Message-Id: <20200304142628.8471-2-NShubin@topcon.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200304142628.8471-1-NShubin@topcon.com>
-References: <20200304142628.8471-1-NShubin@topcon.com>
+	id 1j9V2F-0006d4-2A; Wed, 04 Mar 2020 14:30:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9V23-0006S3-O6
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 14:29:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 28CA431B;
+ Wed,  4 Mar 2020 06:29:54 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F28A3F6CF;
+ Wed,  4 Mar 2020 06:29:53 -0800 (PST)
+Date: Wed, 4 Mar 2020 14:29:51 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: =?utf-8?B?UsOpbWk=?= Denis-Courmont <remi@remlab.net>
+Subject: Re: [PATCH] arm64: reduce trampoline data alignment
+Message-ID: <20200304142951.GC3575@lakrids.cambridge.arm.com>
+References: <20200304093621.191138-1-remi@remlab.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200304093621.191138-1-remi@remlab.net>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_062539_553650_7BBBC5CA 
-X-CRM114-Status: GOOD (  12.03  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200304_062955_876252_8E929EE6 
+X-CRM114-Status: GOOD (  21.75  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.45.198.246 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,96 +63,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
- Nikita Shubin <NShubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin.marinas@arm.com, will@kernel.org, james.morse@arm.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case elf file interrupt vector is not supposed to be at OCRAM_S,
-it is needed to write elf entry point to OCRAM_S + 0x4, to boot M4
-firmware.
-
-Otherwise firmware located anywhere besides OCRAM_S won't boot.
-
-The firmware must set stack poiner as first instruction:
-
-Reset_Handler:
-    ldr   sp, = __stack      /* set stack pointer */
-
-Signed-off-by: Nikita Shubin <NShubin@topcon.com>
----
- drivers/remoteproc/imx_rproc.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
-
-diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
-index 796b6b86550a..d02007f05ebd 100644
---- a/drivers/remoteproc/imx_rproc.c
-+++ b/drivers/remoteproc/imx_rproc.c
-@@ -45,6 +45,8 @@
- 
- #define IMX7D_RPROC_MEM_MAX		8
- 
-+#define IMX_BOOT_PC			0x4
-+
- /**
-  * struct imx_rproc_mem - slim internal memory structure
-  * @cpu_addr: MPU virtual address of the memory region
-@@ -85,6 +87,7 @@ struct imx_rproc {
- 	const struct imx_rproc_dcfg	*dcfg;
- 	struct imx_rproc_mem		mem[IMX7D_RPROC_MEM_MAX];
- 	struct clk			*clk;
-+	void __iomem			*bootreg;
- };
- 
- static const struct imx_rproc_att imx_rproc_att_imx7d[] = {
-@@ -162,11 +165,16 @@ static int imx_rproc_start(struct rproc *rproc)
- 	struct device *dev = priv->dev;
- 	int ret;
- 
-+	/* write entry point to program counter */
-+	writel(rproc->bootaddr, priv->bootreg);
-+
- 	ret = regmap_update_bits(priv->regmap, dcfg->src_reg,
- 				 dcfg->src_mask, dcfg->src_start);
- 	if (ret)
- 		dev_err(dev, "Failed to enable M4!\n");
- 
-+	dev_info(&rproc->dev, "Started from 0x%x\n", rproc->bootaddr);
-+
- 	return ret;
- }
- 
-@@ -182,6 +190,9 @@ static int imx_rproc_stop(struct rproc *rproc)
- 	if (ret)
- 		dev_err(dev, "Failed to stop M4!\n");
- 
-+	/* clear entry points */
-+	writel(0, priv->bootreg);
-+
- 	return ret;
- }
- 
-@@ -366,6 +377,8 @@ static int imx_rproc_probe(struct platform_device *pdev)
- 		goto err_put_rproc;
- 	}
- 
-+	priv->bootreg = imx_rproc_da_to_va(rproc, IMX_BOOT_PC, sizeof(u32));
-+
- 	/*
- 	 * clk for M4 block including memory. Should be
- 	 * enabled before .start for FW transfer.
--- 
-2.24.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+W2FkZGluZyBhcm02NCBmb2xrXQoKT24gV2VkLCBNYXIgMDQsIDIwMjAgYXQgMTE6MzY6MjFBTSAr
+MDIwMCwgUsOpbWkgRGVuaXMtQ291cm1vbnQgd3JvdGU6Cj4gRnJvbTogUmVtaSBEZW5pcy1Db3Vy
+bW9udCA8cmVtaS5kZW5pcy5jb3VybW9udEBodWF3ZWkuY29tPgo+IAo+IFRoZSB0cmFtcG9saW5l
+IGRhdGEsIGN1cnJlbnRseSBjb25zaXN0aW5nIG9mIHR3byByZWxvY2F0ZWQgcG9pbnRlcnMsCj4g
+bXVzdCBiZSB3aXRoaW4gYSBzaW5nbGUgcGFnZS4gSG93ZXZlciwgdGhlcmUgYXJlIG5vIG5lZWRz
+IGZvciBpdCB0bwo+IHN0YXJ0IGEgcGFnZS4KPiAKPiBUaGlzIHJlZHVjZXMgdGhlIGFsaWdubWVu
+dCB0byAxNiBieXRlcywgd2hpY2ggZW5zdXJlcyB0aGF0IHRoZSAxNiBieXRlcwo+IG9mIGRhdGEg
+YXJlIGluIHRoZSBzYW1lIHBhZ2UuCj4gCj4gVGhpcyBwYXRjaCBhc3N1bWVzIHRoYXQgdGhlIHBh
+Z2UgYWxpZ25tZW50IHdhcyBqdXN0IGEgcXVpY2sgYW5kIGRpcnR5Cj4gdHJpY2sgdG8gbm90IHdv
+cnJ5IGFib3V0IGZpeG1hcC4gSWYgaG93ZXZlciB0aGUgcGFnZSBhbGlnbm1lbnQgd2FzCj4gbWVh
+bnQgdG8gcHJlc2VudCBhIGRhdGEgcGFnZSB3aXRoIG5vIG90aGVyIGRhdGEgdGhhbiB0aGUgdHJh
+bXBvbGluZSdzLAo+IHRoZW4gYm90aCB0aGUgY3VycmVudCBjb2RlIGFuZCB0aGlzIHBhdGNoIGFy
+ZSB3cm9uZy4KCkkgdGhpbmsgdGhhdCBhbGlnbmluZyBpdCB0byBhIHBhZ2Ugd2FzIGEgc2ltcGxp
+ZmljYXRpb24gb3ZlcmFsbCwgbm90Cmp1c3QgZm9yIHRoZSBmaXhtYXAuIEhvd2V2ZXIsIEkgZG8g
+YWdyZWUgdGhhdCBhcyB0aGUgcGFnZSBpc24ndCBtYXBwZWQKZHVyaW5nIEVMMCBleGVjdXRpb24s
+IGl0J3MgZmluZSBmb3Igb3RoZXIgYml0cyBvZiAucm9kYXRhIHRvIHNoYXJlIHRoZQpwYWdlLgoK
+SSBhbHNvIHRoaW5rIHRoYXQgaXQncyBhIGJpdCBzY2FyeSB0aGF0IHdlIHJlbHkgb24gbm90aGlu
+ZyBiZWluZyBwbGFjZWQKaW4gLnJvZGF0YSBiZXR3ZWVuIF9fZW50cnlfdHJhbXBfZGF0YV9zdGFy
+dCBhbmQKX19zZGVpX2FzbV90cmFtcG9saW5lX25leHRfaGFuZGxlciwgc2luY2UgbWFjcm9zIGNv
+dWxkIGVhc2lseSBwbGFjZQpzb21ldGhpbmcgYmV0d2VlbiB0aGUgdHdvLiBMdWNraWx5IE5PS1BS
+T0JFKCkgYWRkcyBzdHVmZiB0byAuaW5pdC5kYXRhLApidXQgSSBoYWQgdG8gY2hlY2suCgpJIHRo
+aW5rIGl0IHdvdWxkIGJlIGJldHRlciB0byBhZGQgYSBuZXcgLmVudHJ5LnRyYW1wLmRhdGEgc2Vj
+dGlvbiB0bwplbnN1cmUgdGhhdCwgd2hpY2ggd2UgY2FuIGFsaWduIGFwcHJvcHJpYXRlbHkgaW4g
+dGhlIGxpbmtlciBzY3JpcHQuCgpUaGFua3MsCk1hcmsuCgo+IAo+IFNpZ25lZC1vZmYtYnk6IFJl
+bWkgRGVuaXMtQ291cm1vbnQgPHJlbWkuZGVuaXMuY291cm1vbnRAaHVhd2VpLmNvbT4KPiAtLS0K
+PiAgYXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUyB8IDYgKysrLS0tCj4gIGFyY2gvYXJtNjQvbW0v
+bW11LmMgICAgICAgfCA1ICsrLS0tCj4gIDIgZmlsZXMgY2hhbmdlZCwgNSBpbnNlcnRpb25zKCsp
+LCA2IGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC9lbnRy
+eS5TIGIvYXJjaC9hcm02NC9rZXJuZWwvZW50cnkuUwo+IGluZGV4IGFlOTliZjhiYjBhZS4uOTdk
+NmY4ZDE1YjNiIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQva2VybmVsL2VudHJ5LlMKPiArKysg
+Yi9hcmNoL2FybTY0L2tlcm5lbC9lbnRyeS5TCj4gQEAgLTgwNSw5ICs4MDUsOSBAQCBhbHRlcm5h
+dGl2ZV9lbHNlX25vcF9lbmRpZgo+ICAyOgo+ICAJdHJhbXBfbWFwX2tlcm5lbAl4MzAKPiAgI2lm
+ZGVmIENPTkZJR19SQU5ET01JWkVfQkFTRQo+IC0JYWRyCXgzMCwgdHJhbXBfdmVjdG9ycyArIFBB
+R0VfU0laRQo+ICsJYWRycAl4MzAsIHRyYW1wX3ZlY3RvcnMgKyBQQUdFX1NJWkUKPiAgYWx0ZXJu
+YXRpdmVfaW5zbiBpc2IsIG5vcCwgQVJNNjRfV09SS0FST1VORF9RQ09NX0ZBTEtPUl9FMTAwMwo+
+IC0JbGRyCXgzMCwgW3gzMF0KPiArCWxkcgl4MzAsIFt4MzAsICM6bG8xMjpfX2VudHJ5X3RyYW1w
+X2RhdGFfc3RhcnRdCj4gICNlbHNlCj4gIAlsZHIJeDMwLCA9dmVjdG9ycwo+ICAjZW5kaWYKPiBA
+QCAtODU4LDcgKzg1OCw3IEBAIEVORCh0cmFtcF9leGl0X2NvbXBhdCkKPiAgCS5wb3BzZWN0aW9u
+CQkJCS8vIC5lbnRyeS50cmFtcC50ZXh0Cj4gICNpZmRlZiBDT05GSUdfUkFORE9NSVpFX0JBU0UK
+PiAgCS5wdXNoc2VjdGlvbiAiLnJvZGF0YSIsICJhIgo+IC0JLmFsaWduIFBBR0VfU0hJRlQKPiAr
+CS5hbGlnbgk0Cj4gIAkuZ2xvYmwJX19lbnRyeV90cmFtcF9kYXRhX3N0YXJ0Cj4gIF9fZW50cnlf
+dHJhbXBfZGF0YV9zdGFydDoKPiAgCS5xdWFkCXZlY3RvcnMKPiBkaWZmIC0tZ2l0IGEvYXJjaC9h
+cm02NC9tbS9tbXUuYyBiL2FyY2gvYXJtNjQvbW0vbW11LmMKPiBpbmRleCAwNWVjOGU1ZjE0MzYu
+LjAzZTM1NTcyZmIxZSAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybTY0L21tL21tdS5jCj4gKysrIGIv
+YXJjaC9hcm02NC9tbS9tbXUuYwo+IEBAIC01OTksOSArNTk5LDggQEAgc3RhdGljIGludCBfX2lu
+aXQgbWFwX2VudHJ5X3RyYW1wb2xpbmUodm9pZCkKPiAgCWlmIChJU19FTkFCTEVEKENPTkZJR19S
+QU5ET01JWkVfQkFTRSkpIHsKPiAgCQlleHRlcm4gY2hhciBfX2VudHJ5X3RyYW1wX2RhdGFfc3Rh
+cnRbXTsKPiAgCj4gLQkJX19zZXRfZml4bWFwKEZJWF9FTlRSWV9UUkFNUF9EQVRBLAo+IC0JCQkg
+ICAgIF9fcGFfc3ltYm9sKF9fZW50cnlfdHJhbXBfZGF0YV9zdGFydCksCj4gLQkJCSAgICAgUEFH
+RV9LRVJORUxfUk8pOwo+ICsJCXBhX3N0YXJ0ID0gX19wYV9zeW1ib2woX19lbnRyeV90cmFtcF9k
+YXRhX3N0YXJ0KSAmIFBBR0VfTUFTSzsKPiArCQlfX3NldF9maXhtYXAoRklYX0VOVFJZX1RSQU1Q
+X0RBVEEsIHBhX3N0YXJ0LCBQQUdFX0tFUk5FTF9STyk7Cj4gIAl9Cj4gIAo+ICAJcmV0dXJuIDA7
+Cj4gLS0gCj4gMi4yNS4xCj4gCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
