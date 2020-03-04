@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53A96179C09
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 23:55:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CE60179C13
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 23:57:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=azPv/MGMnFyI58WY8Eym/r0CsuFxBTXDAlNuX8/XGaU=; b=ccdcaDICqBlzWQ
-	axEpZzH0IE/W2mQxRSh1QucjOICH7O77DlLsgdmCTPKlLQpDbgQMcezZYu736dlbEgfZ15et1i3UX
-	F2G4xp4JxQX1FKc9zYLelkYscHBXTxjS/xFm04B6dsVWK6+xH+6JhaXpFtTKrWeXb3OWHc+9Uxkys
-	CMWBhmdR7bX9fHYbTAmFVNRnHwbsx0aJtTcmncVe3ub4xwdqUVUMp+49p6ucN/JohtFfYiE0FTZLa
-	JN8wZKd3KaoUQddQHC0hqe5OvIeeeFPHhLK7gAB+t/P3+RtdfNCEKDR7GfRZtgAoG2DchlzxLXwFk
-	FAepNB/pw+Fyr0tBelcQ==;
+	List-Owner; bh=goCkCz7eu/ei49lVdUEVxCcmHBOV1pzksd3DNxrMu9w=; b=DanWPPZ5Q+gyeJ
+	+7Qawup1/Zb5eOm4jd1dCMX6C1TyhwPrgsTnoDKXIxAJ9n7Lkj2v2c2UO+UcqH/THZfHvEKHdUS4C
+	mCYlz3dtYsKhn22A9f8ljyJrr4GXLN5BrwRUdIkMY9fnM0ebKTR4ki+X1N42DpqXLSVzbioXl7zfD
+	HBprr1gZk7IMc0AyauUj5gzEsxCaEdjC7RtbCQstcncoOwGNmF6DUDMgLfymw8b1TeBx7eHnS29sC
+	1J4OyAqNUN7urQMFahDfs8FrYllQ7WUakF5WXnyo2kV+kZQRbpJZzD0iTfPFGxcObRcPb3Ipzdk85
+	McaANQFgARtB1U9DYJbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9cvM-0007uR-Ly; Wed, 04 Mar 2020 22:55:32 +0000
+	id 1j9cx0-00005c-G9; Wed, 04 Mar 2020 22:57:14 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9cud-0006Jp-2l
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 22:54:49 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id AA17481B1;
- Wed,  4 Mar 2020 22:55:31 +0000 (UTC)
+ id 1j9cwp-000058-O6
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 22:57:04 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 5112780F5;
+ Wed,  4 Mar 2020 22:57:48 +0000 (UTC)
+Date: Wed, 4 Mar 2020 14:56:59 -0800
 From: Tony Lindgren <tony@atomide.com>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH 3/3] Revert "gpio: omap: Fix lost edge wake-up interrupts"
-Date: Wed,  4 Mar 2020 14:54:32 -0800
-Message-Id: <20200304225433.37336-4-tony@atomide.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200304225433.37336-1-tony@atomide.com>
+Subject: Re: [PATCH 1/3] ARM: OMAP2+: Handle errors for cpu_pm
+Message-ID: <20200304225659.GA37466@atomide.com>
 References: <20200304225433.37336-1-tony@atomide.com>
+ <20200304225433.37336-2-tony@atomide.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200304225433.37336-2-tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_145447_155119_98A46BBA 
-X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-CacheID: sfid-20200304_145703_825486_53277A6B 
+X-CRM114-Status: UNSURE (   6.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -60,10 +61,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tero Kristo <t-kristo@ti.com>, Grygorii Strashko <grygorii.strashko@ti.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Keerthy <j-keerthy@ti.com>,
- Dave Gerlach <d-gerlach@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- linux-gpio@vger.kernel.org, Russell King <rmk+kernel@armlinux.org.uk>,
+Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
+ Keerthy <j-keerthy@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Tero Kristo <t-kristo@ti.com>, linux-gpio@vger.kernel.org,
+ Russell King <rmk+kernel@armlinux.org.uk>,
  Ladislav Michl <ladis@linux-mips.org>, linux-omap@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -71,57 +73,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit a522f1d0c381c42f3ace13b8bbeeccabdd6d2e5c.
+* Tony Lindgren <tony@atomide.com> [200304 22:55]:
+> We need to check for errors when calling cpu_pm_enter() and
+> cpu_cluster_pm_enter(). And we need to bail out on errors as
+> otherwise we can enter a deeper idle state when not desired.
+> 
+> I'm not aware of the lack of error handling causing issues yet,
+> but we need this at least for blocking deeper idle states when
+> a GPIO instance has pending interrupts.
 
-With cpu_pm handling fixed for omaps, and with gpio-omap now returning
-notify error on pending interrupts, we can drop the old workaround for
-seeing if there may be pending edge interrupts.
+Also, If these changes look OK, it's probably best to apply all
+three into some immutable gpio branch against v5.6-rc1 that
+I can merge in too if needed.
 
-Depends-on: ARM: OMAP2+: Handle errors for cpu_pm
-Depends-on: gpio: omap: Block idle on pending gpio interrupts
-Cc: Aaro Koskinen <aaro.koskinen@iki.fi>
-Cc: Grygorii Strashko <grygorii.strashko@ti.com>
-Cc: Keerthy <j-keerthy@ti.com>
-Cc: Ladislav Michl <ladis@linux-mips.org>
-Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Cc: Russell King <rmk+kernel@armlinux.org.uk>
-Cc: Tero Kristo <t-kristo@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- drivers/gpio/gpio-omap.c | 12 +-----------
- 1 file changed, 1 insertion(+), 11 deletions(-)
+Regards,
 
-diff --git a/drivers/gpio/gpio-omap.c b/drivers/gpio/gpio-omap.c
---- a/drivers/gpio/gpio-omap.c
-+++ b/drivers/gpio/gpio-omap.c
-@@ -1102,23 +1102,13 @@ static void omap_gpio_idle(struct gpio_bank *bank, bool may_lose_context)
- {
- 	struct device *dev = bank->chip.parent;
- 	void __iomem *base = bank->base;
--	u32 mask, nowake;
-+	u32 nowake;
- 
- 	bank->saved_datain = readl_relaxed(base + bank->regs->datain);
- 
- 	if (!bank->enabled_non_wakeup_gpios)
- 		goto update_gpio_context_count;
- 
--	/* Check for pending EDGE_FALLING, ignore EDGE_BOTH */
--	mask = bank->enabled_non_wakeup_gpios & bank->context.fallingdetect;
--	mask &= ~bank->context.risingdetect;
--	bank->saved_datain |= mask;
--
--	/* Check for pending EDGE_RISING, ignore EDGE_BOTH */
--	mask = bank->enabled_non_wakeup_gpios & bank->context.risingdetect;
--	mask &= ~bank->context.fallingdetect;
--	bank->saved_datain &= ~mask;
--
- 	if (!may_lose_context)
- 		goto update_gpio_context_count;
- 
--- 
-2.25.1
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
