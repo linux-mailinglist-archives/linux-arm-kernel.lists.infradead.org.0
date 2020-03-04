@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9785178D0F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 10:06:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A352178D35
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 10:15:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yQdfpWb/16b7prxEE+AVgpIAMmHSBZMIcTA7VwOoHXo=; b=aDgC2Tdiy3nwL9
-	nQ6s7MMb8emHzQas8NT4immi0WvkSnC/0haBFUU7U+h46ZBv5djBXGKMZQ66EnZsACCYeQ0UOzXVE
-	wDZTVMdSm3mzO5tf/VOa2IIqgMdtzvADATNyhytA61CCeS/+tMlSYlANVmWri8CoUOeLIL578N635
-	86t+yDQnTr6RvAnjyZ2vj8D39vaLDQWOI5uSCY0ApJqDudCAYkmTfaXaE7y6dV61I01wCLVbKmlag
-	fKTivmYEyATtpvoFCccxCodtExKAxtjSb410mPMrH0WwJQNgUvLt/MTl1wP6uCZjY/fa6gQd8mZVq
-	kRLpAvwmqmndsG544jfg==;
+	List-Owner; bh=SXDpYfIqrBYe6rhMCmGbf4Gw54mjpfHXQZMmcOVXB0A=; b=oznsauqOhtv3TC
+	nnSBIf8ir+eyUrHCsdeYZpgiRg28+TYgagpqJAw+WuRlisIgoxdObsjiJv5w50sQzh3tqptQDyNcb
+	R15n/pSwJfOnxZ5mUlnkIjGJTDEjI3k4VpSjcqS/bTrayJOxYK50P1W5/L3XsVXG0xg4Js3q13fLj
+	EU5FkxMy1KAnHw8/6p7s5t1+UkrxWaJPnLeMT9MJzP7v8AP2CY9df/O1fmMotSY4p+oCW0ObMzqG/
+	lBR2v9HYvvFDALMVbnrFYrp3SCeK8LuxHUsxU69isUh6KdvkNLU7ZzDfOPIUtSGIhV27PYbRK/Um0
+	5UNQe/Zn6peowS5LjNFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Pyg-00011b-M6; Wed, 04 Mar 2020 09:06:06 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j9Q84-0004oc-9A; Wed, 04 Mar 2020 09:15:48 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9PyZ-00010j-S7; Wed, 04 Mar 2020 09:06:01 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D436E2072D;
- Wed,  4 Mar 2020 09:05:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583312758;
- bh=nv9z76qB1AKdNeHNDVvjHLCUMfYUelYmliFzrlCR1xI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=wTrJb2nLOkC3o5SdH0RfJuDO3+VKd84OhHaBaZVRb3O2Ur83RlzXVHaQkO0GfHzHu
- 3gmkPcBjGwKBXwt3VXDXDLJJXPBz5eP9uphOkBtnCJaPRyDemc+cPP9jUcmkSAR3hn
- MoNlOP+aswJByig32PeT4UbzI37cRSWxBn7/P6Kg=
-Date: Wed, 4 Mar 2020 10:05:55 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v3 4/4] USB: pci-quirks: Add Raspberry Pi 4 quirk
-Message-ID: <20200304090555.GC1429273@kroah.com>
-References: <20200302155528.19505-1-nsaenzjulienne@suse.de>
- <20200302155528.19505-5-nsaenzjulienne@suse.de>
+ id 1j9Q7w-0004nS-Kv
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 09:15:42 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1j9Q7q-0002le-4g; Wed, 04 Mar 2020 10:15:34 +0100
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1j9Q7o-0004aA-7T; Wed, 04 Mar 2020 10:15:32 +0100
+Message-ID: <4d0e0f3ec4a883889f3abfb1d222abe8e137af2a.camel@pengutronix.de>
+Subject: Re: [PATCH 2/4] dt-bindings: reset: imx7: Document usage on i.MX8MP
+ SoC
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>, robh+dt@kernel.org,
+ mark.rutland@arm.com,  shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de,  festevam@gmail.com, devicetree@vger.kernel.org, 
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Date: Wed, 04 Mar 2020 10:15:32 +0100
+In-Reply-To: <1582708431-14161-2-git-send-email-Anson.Huang@nxp.com>
+References: <1582708431-14161-1-git-send-email-Anson.Huang@nxp.com>
+ <1582708431-14161-2-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200302155528.19505-5-nsaenzjulienne@suse.de>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_010559_951799_709E04C4 
-X-CRM114-Status: GOOD (  19.78  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200304_011540_999625_6759A478 
+X-CRM114-Status: GOOD (  13.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,96 +72,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, Mathias Nyman <mathias.nyman@intel.com>,
- linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, tim.gover@raspberrypi.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
+Cc: Linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 04:55:28PM +0100, Nicolas Saenz Julienne wrote:
-> On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
-> loaded directly from an EEPROM or, if not present, by the SoC's
-> VideCore. Inform VideCore that VL805 was just reset.
+Hi Anson,
+
+On Wed, 2020-02-26 at 17:13 +0800, Anson Huang wrote:
+> The driver now supports i.MX8MP, so update bindings accordingly.
 > 
-> Also, as this creates a dependency between XHCI_PCI and VideoCore's,
-> reflect that on the firmware interface Kconfg.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
+>  .../devicetree/bindings/reset/fsl,imx7-src.txt     |  4 +-
+>  include/dt-bindings/reset/imx8mp-reset.h           | 50 ++++++++++++++++++++++
+>  2 files changed, 53 insertions(+), 1 deletion(-)
+>  create mode 100644 include/dt-bindings/reset/imx8mp-reset.h
 > 
-> Changes since v1:
->  - Make RASPBERRYPI_FIRMWARE dependent on this quirk to make sure it
->    gets compiled when needed.
-> 
->  drivers/firmware/Kconfig      |  1 +
->  drivers/usb/host/pci-quirks.c | 18 ++++++++++++++++++
->  2 files changed, 19 insertions(+)
-> 
-> diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-> index ea869addc89b..40a468d712a5 100644
-> --- a/drivers/firmware/Kconfig
-> +++ b/drivers/firmware/Kconfig
-> @@ -180,6 +180,7 @@ config ISCSI_IBFT
->  config RASPBERRYPI_FIRMWARE
->  	tristate "Raspberry Pi Firmware Driver"
->  	depends on BCM2835_MBOX
-> +	default XHCI_PCI
->  	help
->  	  This option enables support for communicating with the firmware on the
->  	  Raspberry Pi.
-> diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
-> index beb2efa71341..aee2eaa3f0e1 100644
-> --- a/drivers/usb/host/pci-quirks.c
-> +++ b/drivers/usb/host/pci-quirks.c
-> @@ -16,6 +16,9 @@
->  #include <linux/export.h>
->  #include <linux/acpi.h>
->  #include <linux/dmi.h>
-> +
-> +#include <soc/bcm2835/raspberrypi-firmware.h>
-> +
->  #include "pci-quirks.h"
->  #include "xhci-ext-caps.h"
->  
-> @@ -1243,11 +1246,26 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
->  
->  static void quirk_usb_early_handoff(struct pci_dev *pdev)
->  {
-> +	int ret;
-> +
->  	/* Skip Netlogic mips SoC's internal PCI USB controller.
->  	 * This device does not need/support EHCI/OHCI handoff
->  	 */
->  	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
->  		return;
-> +
-> +	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
-> +		ret = rpi_firmware_init_vl805(pdev);
-> +		if (ret)
-> +			/*
-> +			 * Firmware might be outdated, or else, something
-> +			 * failed, keep going and hope for the best.
-> +			 */
-> +			dev_warn(&pdev->dev,
-> +				 "Failed to load VL805's firmware: %d\n",
-> +				 ret);
+> diff --git a/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt b/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
+> index 38ac251..e10502d 100644
+> --- a/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
+> +++ b/Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
+> @@ -10,6 +10,7 @@ Required properties:
+>  	- For i.MX8MQ SoCs should be "fsl,imx8mq-src", "syscon"
+>  	- For i.MX8MM SoCs should be "fsl,imx8mm-src", "fsl,imx8mq-src", "syscon"
+>  	- For i.MX8MN SoCs should be "fsl,imx8mn-src", "fsl,imx8mq-src", "syscon"
+> +	- For i.MX8MP SoCs should be "fsl,imx8mp-src", "syscon"
+>  - reg: should be register base and length as documented in the
+>    datasheet
+>  - interrupts: Should contain SRC interrupt
+> @@ -51,4 +52,5 @@ For list of all valid reset indices see
+>  <dt-bindings/reset/imx7-reset.h> for i.MX7,
+>  <dt-bindings/reset/imx8mq-reset.h> for i.MX8MQ and
+>  <dt-bindings/reset/imx8mq-reset.h> for i.MX8MM and
+> -<dt-bindings/reset/imx8mq-reset.h> for i.MX8MN
+> +<dt-bindings/reset/imx8mq-reset.h> for i.MX8MN and
+> +<dt-bindings/reset/imx8mp-reset.h> for i.MX8MP
+> diff --git a/include/dt-bindings/reset/imx8mp-reset.h b/include/dt-bindings/reset/imx8mp-reset.h
+> new file mode 100644
+> index 0000000..ee37769
+> --- /dev/null
+> +++ b/include/dt-bindings/reset/imx8mp-reset.h
+> @@ -0,0 +1,50 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
 
-{} please.
+Thank you, I've changed this to
 
-Also, you might want to provide a better warning, something like:
-	"Failed to load VL805's firmware, will continue to attempt to
-	work, but bad things might happen, you should fix this..."
+/* SPDX-License-Identifier: GPL-2.0-only */
 
-or something to give people a chance to know what to do here.
+and applied patches 1, 2, and 4.
 
-thanks,
-
-greg k-h
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
