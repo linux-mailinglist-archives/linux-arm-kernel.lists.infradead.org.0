@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49B58179766
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 19:01:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3483D179775
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 19:04:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HG4sTyJQEwFVYuGhRSNovcfXx8WYl+Q2RdtuGhdjH2o=; b=isdk7D1rHysXrj
-	bS4VQbDAAyyOPJkL71YMhnu0W4o/yonADtQgltT94AT2VC373Bh26gR/nfUNsH+8b4Qrm1jMb+Z9Y
-	LanvEE0FtLzPtgfyilYPdXrH2y1xGw+30DXo16yA9fUu64jmGn/BynB2SLexQMvBobR2l1Nt28oCQ
-	/zfZmBixLodfhPMHKghXIyC0QvrAXBtJUuEkul1riIBQlXa8px7E2tF/UANLpE8u8CzU3pxM1URXr
-	HS/XTX+PaDLyEuiaNBSjYfYwdxsaKHktYJZy7JR6hfosLBOFSjiijFAEeTjxlv2mAIDG1/YeButwk
-	0CCaGxzsG6r/s+wwwHHA==;
+	List-Owner; bh=FTRbh3Y9WfWHO9aJLOnMWDeAxbnepla4I3U2zvvrF88=; b=lqkrbpYfmxKyUN
+	PygN0gASHJrITz3lzsllPaBGqSHB4jwf4e5nFTKiwiVmaBVT7vs1nj/RKcl6eLAlO/g7cA1MVQyPB
+	LhpE9P9fqyTWIjiL32U2hAd86uSql2eaOLxglj9hlyTV2fD3kszOZHWV+6fd8GjvnZl1juey8UEWS
+	NYhQOmm7Ip5prik0jCZFX09kF9fVE2CypYjOVMr3h6unDkT8y+KLCc2tYWfACdCoCJiBP+qRRi9Tg
+	Ir2/ghWBSxeDNc0h/E/mL9NPakJ3O00zFiNhBSAOQSjVop/lTdXCFpG21WXwpjpKXObujHO1gmk9A
+	RhwNaS5lrmH5jbup02kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9YKM-0004uI-Lr; Wed, 04 Mar 2020 18:01:02 +0000
-Received: from mail-wr1-x42d.google.com ([2a00:1450:4864:20::42d])
+	id 1j9YN5-0005L2-UQ; Wed, 04 Mar 2020 18:03:51 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9YKF-0004sv-GU; Wed, 04 Mar 2020 18:00:56 +0000
-Received: by mail-wr1-x42d.google.com with SMTP id r17so3568834wrj.7;
- Wed, 04 Mar 2020 10:00:54 -0800 (PST)
+ id 1j9YMx-0005Jd-44; Wed, 04 Mar 2020 18:03:44 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n7so3556036wrt.11;
+ Wed, 04 Mar 2020 10:03:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=kgLAnNoaTeEkFv4F+WVYw5y3BkrfnRnLRAl57TS75sw=;
- b=DP8KH6Nx9exY88O/qLy4No//jIiqJRd2WfYRsFV4Ppe+YotNEKWkpBLT828aajGWLG
- sEJsEyVjowdIAIOPdLvmfC9nIxJcjze0Wx/41PmCsFm9CSrJks1nHl5xdcmH4wm1yH3S
- HzKPTzQxu4UwdqBAfYLr/khoSQ5o3fBoiuhS4VPV2IIwK9TLOjZKNL/t5zBNeeUS6iDY
- c+iQKeI2j+u04zVwCHdE+KEtlZvXpj5njbNp4V/d0PY76t/YXzEu7yHjku0c+KjLu6mC
- Cc6NjlO8eyI3FolO8EUysfa/nHldE2Y8PEtuyii4rAFojBNhMRegd09CfZ2aPf2vHOYF
- I6dQ==
+ bh=x3oBcuX3T5MDzUdnwPcGQIu+NJZ2SMp2mJNZKGglHnI=;
+ b=ki/3C0LUw3ARIDDWvYfWK2fA4pQYwch91XB8ZkAaJfFQBenNU4lsx1FDcWTptaxsQR
+ dO+yPvE3tW5QtJa/l7/s/8/dLbxmtLyDBUUymCpdK/BgrxmPP4iFvfAz889UpXR/bfm4
+ ljJ8kg7kx4Dp5kesWpskisfiqbWkhGZAnrZu8/w+58W72MBTXMys8dQ5ZkiP9Jojqznb
+ F20UfMUA80lbMdp3/WaYlbExtUiRpZbs+foO7bHjfB/mzKjwSVVDrucIVDbk6z1LeZWM
+ 2wcIzLIBXu6Lcrwhh9tbP39oq0U73nmnqFHOEXHU5BcPuSe6/XCGWGxW38PHO7+vVjFb
+ l9iA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=kgLAnNoaTeEkFv4F+WVYw5y3BkrfnRnLRAl57TS75sw=;
- b=BYpcXHj2Xm8iqCpUJYYR397x3wmXMcq6eJGGPmyGcQ7iiHRVF7ckZJ/xgw7HQNOzju
- VjhQi3GVKU8ayU/fHY0n1tT3xQv8g+XYIED2hwaAMoOpyr1etFpLptzVAbnJ0j3GzPC5
- 6WIOisuLA6DxLM3iEu6Pj2TyR6itkxocv1LhYUdO2xrrfHCn0gwAHpcixXU2lg5tkeOz
- F9VhuzQkcxw0oyruOJGXx6dR0ZVmu/s2pV1YJPEuPivOPqiklEAPOylCUQ9WT4JBvy53
- 7UvxPUAGpZjWQ1wkiYTZdoWwv/Nflz8DoBc1tlHsO/K+RrcRtX5EXNqpCMotLfwwueGQ
- T+5Q==
-X-Gm-Message-State: ANhLgQ1zojpi6TowCHm33XvXiRn4AN3TrvNB9Nc4deyO3UzvAph71BfN
- +nL10taRz52AV21/eEiS8T0=
-X-Google-Smtp-Source: ADFU+vtB9nBTJKMt9lQkD3tH71FXuux4DbgRVCXBK5jFuFAuoHACj/9Q/GEBUNGHtWJeEyLloZzAig==
-X-Received: by 2002:a5d:698f:: with SMTP id g15mr5092814wru.3.1583344853511;
- Wed, 04 Mar 2020 10:00:53 -0800 (PST)
+ bh=x3oBcuX3T5MDzUdnwPcGQIu+NJZ2SMp2mJNZKGglHnI=;
+ b=XlaKo79XZst+rDciFhmeprWUeo+FZBs62T7WlpghgegVgOCY71PlnOXUn2HPXv/3fQ
+ lbGS+qZcmfx/wIVnEw7j+PM6cHfbHlzq/0jaoxwJbRM7IRy2ty/b4vPUlpslsxQi3bwD
+ +HDMhMKdb6KGm6ci7blhrsmcoixFTwVu9HEaGXIiORhmdSbo/XtIBHAFcyFAKtbQ60yi
+ Ekhpjcp88OX7a2lB2Slg/52YBOuO0O/ArbygC6rN4sXr9kivf2eJ46vCH/xqgARrZRkz
+ KWpGgfkiuKPy9GzloWgeSjwniCY9H5dicCIzvTPc96erKhwWpbsu+KD9tkywX+kP3EKY
+ IDhg==
+X-Gm-Message-State: ANhLgQ3W6GnZ3ziPWHI3alm5rMF8ARS5uOYUvSVQ+s15jL87TpfE7uwm
+ 4X2xt8BOwemXSGmGjo7xcHV3KfG+
+X-Google-Smtp-Source: ADFU+vuGdLzQM51k3NCL/kBChbUubkHVNKmCdWNux3Z3XzqaobUq1fGEMGBUlGtz1jP57jBxPTRl+w==
+X-Received: by 2002:adf:ed4c:: with SMTP id u12mr5626518wro.204.1583345020752; 
+ Wed, 04 Mar 2020 10:03:40 -0800 (PST)
 Received: from ziggy.stardust (81.172.58.205.dyn.user.ono.com. [81.172.58.205])
- by smtp.gmail.com with ESMTPSA id r12sm5477953wrw.77.2020.03.04.10.00.52
+ by smtp.gmail.com with ESMTPSA id q3sm38905234wrs.1.2020.03.04.10.03.39
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Mar 2020 10:00:52 -0800 (PST)
-Subject: Re:
-To: Lee Jones <lee.jones@linaro.org>
-References: <1583249249-17380-1-git-send-email-gene.chen.richtek@gmail.com>
- <6b920875-8764-73a4-a763-788ce485b0cb@gmail.com> <20200304151512.GD3332@dell>
+ Wed, 04 Mar 2020 10:03:40 -0800 (PST)
+Subject: Re: [v3,2/2] arm: dts: mediatek: add mt7629 pwm support
+To: Sam Shih <sam.shih@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+References: <1583319973-20694-1-git-send-email-sam.shih@mediatek.com>
+ <1583319973-20694-3-git-send-email-sam.shih@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -134,23 +135,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <e718deb4-2fdf-ab8b-e187-8371b35919c9@gmail.com>
-Date: Wed, 4 Mar 2020 19:00:51 +0100
+Message-ID: <eebadba3-9a8c-fe9d-03ee-3326f6116115@gmail.com>
+Date: Wed, 4 Mar 2020 19:03:39 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200304151512.GD3332@dell>
+In-Reply-To: <1583319973-20694-3-git-send-email-sam.shih@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_100055_574769_A9111AD0 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20200304_100343_170611_43E5E24A 
+X-CRM114-Status: GOOD (  16.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42d listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -174,10 +175,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
- linux-mediatek@lists.infradead.org, Gene Chen <gene.chen.richtek@gmail.com>,
- Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
- shufan_lee@richtek.com
+Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -185,21 +184,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 04/03/2020 16:15, Lee Jones wrote:
-> On Wed, 04 Mar 2020, Matthias Brugger wrote:
+On 04/03/2020 12:06, Sam Shih wrote:
+> This adds pwm support for MT7629.
 > 
->> Please resend with appropiate commit message.
-> 
-> Please refrain from top-posting and don't forget to snip.
-> 
+> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
 
-It's difficult to write something below a missing subject line without
-top-posting. ;)
+I wrote "arm" in capital letters in the subject and pushed it to v5.6-next/dts32
 
-Sorry for forgetting to snip.
-
-Regards,
+Thanks!
 Matthias
+
+> ---
+> Used:
+> https://patchwork.kernel.org/patch/11160851/
+> 
+> Change since v2:
+> Updated bindings for MT7629 pwm controller.
+> 
+> ---
+>  arch/arm/boot/dts/mt7629.dtsi | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/mt7629.dtsi b/arch/arm/boot/dts/mt7629.dtsi
+> index 867b88103b9d..a2658fbadeca 100644
+> --- a/arch/arm/boot/dts/mt7629.dtsi
+> +++ b/arch/arm/boot/dts/mt7629.dtsi
+> @@ -241,6 +241,20 @@
+>  			status = "disabled";
+>  		};
+>  
+> +		pwm: pwm@11006000 {
+> +			compatible = "mediatek,mt7629-pwm";
+> +			reg = <0x11006000 0x1000>;
+> +			#pwm-cells = <2>;
+> +			clocks = <&topckgen CLK_TOP_PWM_SEL>,
+> +				 <&pericfg CLK_PERI_PWM_PD>,
+> +				 <&pericfg CLK_PERI_PWM1_PD>;
+> +			clock-names = "top", "main", "pwm1";
+> +			assigned-clocks = <&topckgen CLK_TOP_PWM_SEL>;
+> +			assigned-clock-parents =
+> +					<&topckgen CLK_TOP_UNIVPLL2_D4>;
+> +			status = "disabled";
+> +		};
+> +
+>  		i2c: i2c@11007000 {
+>  			compatible = "mediatek,mt7629-i2c",
+>  				     "mediatek,mt2712-i2c";
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
