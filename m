@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D1FF17956A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 17:34:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B63571795B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 17:49:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f6rIRqC/X9T1RjL2+PV/CDk6Swe/SiOmwtl+8MjlqOc=; b=E+wr5kkR5GVB4X
-	qq9ttVDVrFG6HCU3nwKiLONnr90cFM3WkZb1Qs8Cqh0f/TgnUni6inc5Sm0B/RO8Q2huvmcXwSd9y
-	psryC8+bm281dctltpnZeyQhNJEXaxtUOf1AeXWQf/v9MVHsp/Dx6TGWOX5t1/m/fUmyhgWhKvAwP
-	3BGk5n6z/7KA70O51NR2MET850nGOaSTj/dqYXc9vpu2B78n7ZQi5obODyKPG96CxL7c7Iu7xor2m
-	nKK9Tk98oGBwxPT7P8fa8kwryOk5urdqSdtYeK1fHkAmJfH/OMBdSsy/1NV5aXUae0BrLWZoiQ4QJ
-	mxwjv/oGy5bgQi2rfLLQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tQKBcyAg1/WdpTO/OoRNFRbYVMK9cWOFpecLkMfgbfM=; b=HeBPugq2hxFwR9
+	fBG/sGsW7BGZCLFbioDzxkrCgWH8ZR/Z7N9Pma8sENt8YIjcXLkP6H4qlXRilljI7rnd2EBwLq+Dc
+	oHQBRSYpm6QdXaFdp6M7N+GOnVqKFSAD+zZHibvkxaP04xjiUdRevdzjyJ6E5Mn3whJcLOQ7FM8pu
+	/okQZ99yEciHH03371SdALStSqIajlojOpaCS9APZ7kLqasVnTrBfY36dKGyLw1/QAXtpPLuaCyOQ
+	HBuE+F6ROFvTTQGv5zIhu4aIDA9oPDHlaH0TleDuI9ztLssZV2DZGwEYDnPXq+DslPTI3EfBRoV5u
+	AD2jQBWLBv1uHau+hwaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Wyf-0001rT-DG; Wed, 04 Mar 2020 16:34:33 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9WyU-0001pv-5k
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 16:34:23 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 5988F80F5;
- Wed,  4 Mar 2020 16:35:01 +0000 (UTC)
-Date: Wed, 4 Mar 2020 08:34:12 -0800
-From: Tony Lindgren <tony@atomide.com>
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-Subject: Re: [PATCH v3] ARM: OMAP: replace setup_irq() by request_irq()
-Message-ID: <20200304163412.GX37466@atomide.com>
-References: <20200301121945.3604-1-afzal.mohd.ma@gmail.com>
+	id 1j9XDR-0007gF-KV; Wed, 04 Mar 2020 16:49:49 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9XDH-0007fd-K7; Wed, 04 Mar 2020 16:49:40 +0000
+Received: from [10.18.90.110] (10.18.90.110) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Thu, 5 Mar 2020
+ 00:34:48 +0800
+Subject: Re: [PATCH v2] dt-bindings: power: Fix dt_binding_check error
+To: Rob Herring <robh@kernel.org>
+References: <1583164448-83438-1-git-send-email-jianxin.pan@amlogic.com>
+ <20200302201554.GA22028@bogus>
+From: Jianxin Pan <jianxin.pan@amlogic.com>
+Message-ID: <4fb6a6c2-5df3-9cff-eb00-a6d00963426d@amlogic.com>
+Date: Thu, 5 Mar 2020 00:34:47 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200301121945.3604-1-afzal.mohd.ma@gmail.com>
+In-Reply-To: <20200302201554.GA22028@bogus>
+Content-Language: en-US
+X-Originating-IP: [10.18.90.110]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_083422_262664_443D34F9 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200304_084939_660151_32E0CE44 
+X-CRM114-Status: GOOD (  12.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,37 +59,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aaro Koskinen <aaro.koskinen@iki.fi>,
- Viresh Kumar <viresh.kumar@linaro.org>, Kevin Hilman <khilman@kernel.org>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Stephen Rothwell <sfr@canb.auug.org.au>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, SoC Team <soc@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ devicetree@vger.kernel.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* afzal mohammed <afzal.mohd.ma@gmail.com> [200301 04:20]:
-> request_irq() is preferred over setup_irq(). Invocations of setup_irq()
-> occur after memory allocators are ready.
-> 
-> Per tglx[1], setup_irq() existed in olden days when allocators were not
-> ready by the time early interrupts were initialized.
-> 
-> Hence replace setup_irq() by request_irq().
-> 
-> [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
-> 
-> Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-> ---
-> Hi sub-arch maintainers,
-> 
-> If the patch is okay, please take it thr' your tree.
+Hi Rob,
 
-Thanks applied into omap-for-v5.7/omap1.
+On 2020/3/3 4:15, Rob Herring wrote:
+> On Mon, 2 Mar 2020 23:54:08 +0800, Jianxin Pan wrote:
+>> Missing ';' in the end of secure-monitor example node.
+>>
+>> Fixes: 165b5fb294e8 ("dt-bindings: power: add Amlogic secure power domains bindings")
+>> Reported-by: Rob Herring <robh+dt@kernel.org>
+>> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+>> ---
+>>  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+> 
+> Please add Acked-by/Reviewed-by tags when posting new versions. However,
+> there's no need to repost patches *only* to add the tags. The upstream
+> maintainer will do that for acks received on the version they apply.
+> 
+Sorry to forget the tag, Kevin has added it for me, and I will keep it in mind next time.
+> If a tag was not added on purpose, please state why and what changed.
+> 
+> .
+> 
 
-Regards,
-
-Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
