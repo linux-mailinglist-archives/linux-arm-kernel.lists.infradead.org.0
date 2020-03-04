@@ -2,81 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3A0C179846
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 19:45:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12C6D179961
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 20:56:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=61KHAF5eWdDVCloOJRUIHxKUJq2+mJ2aMs/BJchlkXM=; b=O7VvWhdsEc2QNV
-	OD/MFrizJMyWIpFP1OC/Yl6cGvCY+7eO633g0rOZhpO4mngTZ8IbcHWpnjkjNfYVRyujH6PT74Z+b
-	1Fw9ec6UjnSMhMo3LaVeA6g6ES+n1K7M2HLlYejl8gWcgL7m9QvooTUbMB2FkiNzTrAXbylC2ll8s
-	Q75L9VOFd1CanvtA5A5fU9VYGrSQjuCvqBb23erH25OOgs4rWzrsY0VjdRaNTJfw7vkwgYpj767km
-	gAUVgYUpKF4u1GZAbGPHlZjWFYoWSm6trkmuxVHSPg0PfMBbTySrnvu76fHKDncM9YH5HID09SP4w
-	9XxfktrLjRU6UKEVGnvA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ymVfavzUYC6kq/KaTphClRydHonfzhL2fQmE3QF6Nto=; b=SDHH8dOL/TzIUI
+	gtdJ2Nuvd3gdYTPtLd6s2LRLoPz+YN9iUXn1jMeG87Rfno2fHFcJANZYdL4ktIHOr/0yRTaINWPmz
+	yNBxYQgijRd4R6bqqGtTWSkZZsR9z5dsEmDNpU/hzbyg7IHEUnW4WdNBVBJOB2k8RQPP4iLtLaadF
+	Xt3LdUwiTzq808VzuYaJN8TOsTxIl1CN1lnvD9B6ExzkivDQt5ubhLd/mrIG8mlc1POVF6PhJqIvc
+	R6dDJrU4gsAyn2HYfkE/687GChf84AQa3qc8/fq8bw9FI1Zug0DaB16x/bKyFprx0czX6OEqwohgT
+	WWeDkC7Y9N2ZwJxwWTkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Z1e-00068k-12; Wed, 04 Mar 2020 18:45:46 +0000
-Received: from mail-ot1-f45.google.com ([209.85.210.45])
+	id 1j9a7Q-0006JV-0I; Wed, 04 Mar 2020 19:55:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Z1N-00067A-8f
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 18:45:38 +0000
-Received: by mail-ot1-f45.google.com with SMTP id a20so3088672otl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 10:45:28 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=BtIiA+N06wPoZ9FuadPnsILTRLs7MrxEmzb1hkMz4pU=;
- b=HehRUrHn2EdhmjnNZAD4PM2DLhenqaITCnaReHz8I9raLI4tYm4I8UmIqOD84Q9wcO
- MsK5PQHevjDCNqopMP7TnkAtOeJSlgt2rTbF9bS1/vP9OrDvkKZZrYj8tUMZ+QHOl0MR
- kUGukaftobqXLt7ua6BAvmk9hTNorDCDk5Flqr9b2VxlL73n9sOoPlDLG1mv2ZtGAKrF
- YU57uUEluO6LM80buUMPIcZ+rn/GbmXN1BZwoE/45sYt1Jm6O6xQ0oQj8a7teclOw5Uf
- ZsztvvXWVogcaxuRZM4bMqfDJlV3S3GSH4LLKrVm3fvvMYHHnoZq9RhG/j5lrqq0L0oq
- SOXw==
-X-Gm-Message-State: ANhLgQ25XYgNyw1tq5XBX90MTJmpqOYbIHed5iw6TljxbjtdmGgq4CLd
- YP73RHgOnd2eLjnwetbqLQ==
-X-Google-Smtp-Source: ADFU+vu0lAwJT3uRhe+5dNdpt87zUhsUZekxT4k6iOGNwkm4qOqFm/HIhwtQoByr8xgFboa7IQnVuA==
-X-Received: by 2002:a9d:7748:: with SMTP id t8mr3328789otl.187.1583347526979; 
- Wed, 04 Mar 2020 10:45:26 -0800 (PST)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id l10sm3647204oii.29.2020.03.04.10.45.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Mar 2020 10:45:26 -0800 (PST)
-From: Rob Herring <robh@kernel.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH] dt: Remove booting-without-of.txt
-Date: Wed,  4 Mar 2020 12:45:25 -0600
-Message-Id: <20200304184525.7643-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1j9a7H-0006I4-TN; Wed, 04 Mar 2020 19:55:42 +0000
+Received: from mail-qv1-f54.google.com (mail-qv1-f54.google.com
+ [209.85.219.54])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 678332465D;
+ Wed,  4 Mar 2020 19:55:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583351735;
+ bh=1ePJ0v0kWDJw+37eQnhUxFEupa6YFhyERaNWfe40SHk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=x7p83E95zhnmUTY9GigoZG57UOg2nd/VW73TzPkYlg9tEWpzOlIMELjzllLJoK/wo
+ APHMbwrk56V4wvWVB6YizpNPdmvXq+73wtvgeD4I5I9MPp6ea4BJEMWidbX8N6q0md
+ 6bGnLPt9omch4dtry80ziIVPrzww4C0rZRvhDd5c=
+Received: by mail-qv1-f54.google.com with SMTP id g16so1358061qvz.5;
+ Wed, 04 Mar 2020 11:55:35 -0800 (PST)
+X-Gm-Message-State: ANhLgQ1zQXgR7/beOtrq+wys7gOHf5KGniEvpVWxhPKvu3rblsrgxZlB
+ QED8D7qQ+qYjVKexhyGw43n9yaRsRQVGn+mkJg==
+X-Google-Smtp-Source: ADFU+vuIjehUM/gtF2KpVhwEIGdjqpusrSY+JR3Q/ZrdzMDOr3V5TcQyoAG4hhCash4cdpTEnt/D2ZLCEBaYq77oBXk=
+X-Received: by 2002:ad4:45e3:: with SMTP id q3mr3345501qvu.135.1583351734041; 
+ Wed, 04 Mar 2020 11:55:34 -0800 (PST)
 MIME-Version: 1.0
+References: <20200304174942.124070-1-pmalani@chromium.org>
+In-Reply-To: <20200304174942.124070-1-pmalani@chromium.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Wed, 4 Mar 2020 13:55:22 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJ5d5GmMFi1A3JN33PfD37auCLL-gSPh1NgEoNMAS0uAg@mail.gmail.com>
+Message-ID: <CAL_JsqJ5d5GmMFi1A3JN33PfD37auCLL-gSPh1NgEoNMAS0uAg@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: Convert usb-connector to YAML format.
+To: Prashant Malani <pmalani@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_104529_321259_B75FE507 
-X-CRM114-Status: GOOD (  34.51  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200304_115540_000019_5E5BBA3A 
+X-CRM114-Status: GOOD (  30.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.45 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.45 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,1161 +82,568 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "open list:USB SUBSYSTEM" <linux-usb@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
+ Benson Leung <bleung@chromium.org>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Well, not quite removed yet... Mauro is looking at moving this to ReST,
-but I think it would be better to trim or remove it.
+On Wed, Mar 4, 2020 at 11:50 AM Prashant Malani <pmalani@chromium.org> wrote:
+>
+> Convert the usb-connector.txt bindings file to YAML format. This allows
+> it to be used in dt_bindings_check verification. This patch was
+> born out of a patch series for the addition of a Type C connector
+> class port driver[1].
+>
+> An attempt has been made to maintain the same documentation text and
+> example structure as was in the .txt file, but wherever needed
+> modifications have been made to satisfy dt_bindings_check.
+>
+> Also, update all references to usb-connector.txt to now use
+> usb-connector.yaml.
+>
+> [1]: https://lkml.org/lkml/2020/2/19/1232
+>
+> Signed-off-by: Prashant Malani <pmalani@chromium.org>
+> ---
+>  .../connector/samsung,usb-connector-11pin.txt |   2 +-
+>  .../bindings/connector/usb-connector.txt      | 135 ------------
+>  .../bindings/connector/usb-connector.yaml     | 193 ++++++++++++++++++
+>  .../devicetree/bindings/usb/fcs,fusb302.txt   |   2 +-
+>  .../devicetree/bindings/usb/generic.txt       |   2 +-
+>  .../devicetree/bindings/usb/mediatek,mtu3.txt |   2 +-
+>  .../devicetree/bindings/usb/mediatek,musb.txt |   2 +-
+>  .../bindings/usb/richtek,rt1711h.txt          |   2 +-
+>  .../devicetree/bindings/usb/ti,hd3ss3220.txt  |   2 +-
+>  .../devicetree/bindings/usb/typec-tcpci.txt   |   2 +-
+>  .../devicetree/bindings/usb/usb-conn-gpio.txt |   4 +-
+>  11 files changed, 203 insertions(+), 145 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/connector/usb-connector.txt
+>  create mode 100644 Documentation/devicetree/bindings/connector/usb-connector.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/connector/samsung,usb-connector-11pin.txt b/Documentation/devicetree/bindings/connector/samsung,usb-connector-11pin.txt
+> index 22256e295a7a1..3dd8961154abf 100644
+> --- a/Documentation/devicetree/bindings/connector/samsung,usb-connector-11pin.txt
+> +++ b/Documentation/devicetree/bindings/connector/samsung,usb-connector-11pin.txt
+> @@ -19,7 +19,7 @@ Required nodes:
+>      0: High Speed (HS),
+>      3: Mobile High-Definition Link (MHL), specific to 11-pin Samsung micro-USB.
+>
+> -[1]: bindings/connector/usb-connector.txt
+> +[1]: bindings/connector/usb-connector.yaml
+>
+>  Example
+>  -------
+> diff --git a/Documentation/devicetree/bindings/connector/usb-connector.txt b/Documentation/devicetree/bindings/connector/usb-connector.txt
+> deleted file mode 100644
+> index 88578ac1a8a76..0000000000000
+> --- a/Documentation/devicetree/bindings/connector/usb-connector.txt
+> +++ /dev/null
+> @@ -1,135 +0,0 @@
+> -USB Connector
+> -=============
+> -
+> -A USB connector node represents a physical USB connector. It should be
+> -a child of a USB interface controller.
+> -
+> -Required properties:
+> -- compatible: describes type of the connector, must be one of:
+> -    "usb-a-connector",
+> -    "usb-b-connector",
+> -    "usb-c-connector".
+> -
+> -Optional properties:
+> -- label: symbolic name for the connector,
+> -- type: size of the connector, should be specified in case of USB-A, USB-B
+> -  non-fullsize connectors: "mini", "micro".
+> -- self-powered: Set this property if the usb device that has its own power
+> -  source.
+> -
+> -Optional properties for usb-b-connector:
+> -- id-gpios: an input gpio for USB ID pin.
+> -- vbus-gpios: an input gpio for USB VBUS pin, used to detect presence of
+> -  VBUS 5V.
+> -  see gpio/gpio.txt.
+> -- vbus-supply: a phandle to the regulator for USB VBUS if needed when host
+> -  mode or dual role mode is supported.
+> -  Particularly, if use an output GPIO to control a VBUS regulator, should
+> -  model it as a regulator.
+> -  see regulator/fixed-regulator.yaml
+> -- pinctrl-names : a pinctrl state named "default" is optional
+> -- pinctrl-0 : pin control group
+> -  see pinctrl/pinctrl-bindings.txt
+> -
+> -Optional properties for usb-c-connector:
+> -- power-role: should be one of "source", "sink" or "dual"(DRP) if typec
+> -  connector has power support.
+> -- try-power-role: preferred power role if "dual"(DRP) can support Try.SNK
+> -  or Try.SRC, should be "sink" for Try.SNK or "source" for Try.SRC.
+> -- data-role: should be one of "host", "device", "dual"(DRD) if typec
+> -  connector supports USB data.
+> -
+> -Required properties for usb-c-connector with power delivery support:
+> -- source-pdos: An array of u32 with each entry providing supported power
+> -  source data object(PDO), the detailed bit definitions of PDO can be found
+> -  in "Universal Serial Bus Power Delivery Specification" chapter 6.4.1.2
+> -  Source_Capabilities Message, the order of each entry(PDO) should follow
+> -  the PD spec chapter 6.4.1. Required for power source and power dual role.
+> -  User can specify the source PDO array via PDO_FIXED/BATT/VAR/PPS_APDO()
+> -  defined in dt-bindings/usb/pd.h.
+> -- sink-pdos: An array of u32 with each entry providing supported power
+> -  sink data object(PDO), the detailed bit definitions of PDO can be found
+> -  in "Universal Serial Bus Power Delivery Specification" chapter 6.4.1.3
+> -  Sink Capabilities Message, the order of each entry(PDO) should follow
+> -  the PD spec chapter 6.4.1. Required for power sink and power dual role.
+> -  User can specify the sink PDO array via PDO_FIXED/BATT/VAR/PPS_APDO() defined
+> -  in dt-bindings/usb/pd.h.
+> -- op-sink-microwatt: Sink required operating power in microwatt, if source
+> -  can't offer the power, Capability Mismatch is set. Required for power
+> -  sink and power dual role.
+> -
+> -Required nodes:
+> -- any data bus to the connector should be modeled using the OF graph bindings
+> -  specified in bindings/graph.txt, unless the bus is between parent node and
+> -  the connector. Since single connector can have multiple data buses every bus
+> -  has assigned OF graph port number as follows:
+> -    0: High Speed (HS), present in all connectors,
+> -    1: Super Speed (SS), present in SS capable connectors,
+> -    2: Sideband use (SBU), present in USB-C.
+> -
+> -Examples
+> ---------
+> -
+> -1. Micro-USB connector with HS lines routed via controller (MUIC):
+> -
+> -muic-max77843@66 {
+> -       ...
+> -       usb_con: connector {
+> -               compatible = "usb-b-connector";
+> -               label = "micro-USB";
+> -               type = "micro";
+> -       };
+> -};
+> -
+> -2. USB-C connector attached to CC controller (s2mm005), HS lines routed
+> -to companion PMIC (max77865), SS lines to USB3 PHY and SBU to DisplayPort.
+> -DisplayPort video lines are routed to the connector via SS mux in USB3 PHY.
+> -
+> -ccic: s2mm005@33 {
+> -       ...
+> -       usb_con: connector {
+> -               compatible = "usb-c-connector";
+> -               label = "USB-C";
+> -
+> -               ports {
+> -                       #address-cells = <1>;
+> -                       #size-cells = <0>;
+> -
+> -                       port@0 {
+> -                               reg = <0>;
+> -                               usb_con_hs: endpoint {
+> -                                       remote-endpoint = <&max77865_usbc_hs>;
+> -                               };
+> -                       };
+> -                       port@1 {
+> -                               reg = <1>;
+> -                               usb_con_ss: endpoint {
+> -                                       remote-endpoint = <&usbdrd_phy_ss>;
+> -                               };
+> -                       };
+> -                       port@2 {
+> -                               reg = <2>;
+> -                               usb_con_sbu: endpoint {
+> -                                       remote-endpoint = <&dp_aux>;
+> -                               };
+> -                       };
+> -               };
+> -       };
+> -};
+> -
+> -3. USB-C connector attached to a typec port controller(ptn5110), which has
+> -power delivery support and enables drp.
+> -
+> -typec: ptn5110@50 {
+> -       ...
+> -       usb_con: connector {
+> -               compatible = "usb-c-connector";
+> -               label = "USB-C";
+> -               power-role = "dual";
+> -               try-power-role = "sink";
+> -               source-pdos = <PDO_FIXED(5000, 2000, PDO_FIXED_USB_COMM)>;
+> -               sink-pdos = <PDO_FIXED(5000, 2000, PDO_FIXED_USB_COMM)
+> -                            PDO_VAR(5000, 12000, 2000)>;
+> -               op-sink-microwatt = <10000000>;
+> -       };
+> -};
+> diff --git a/Documentation/devicetree/bindings/connector/usb-connector.yaml b/Documentation/devicetree/bindings/connector/usb-connector.yaml
+> new file mode 100644
+> index 0000000000000..f0fac9bd63364
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/connector/usb-connector.yaml
+> @@ -0,0 +1,193 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/connector/usb-connector.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: USB Connector
+> +
+> +maintainers:
+> +  - linux-usb@vger.kernel.org
+> +
+> +description:
+> +  A USB connector node represents a physical USB connector. It should be a child
+> +  of a USB interface controller.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - usb-a-connector
+> +      - usb-b-connector
+> +      - usb-c-connector
+> +
+> +  label:
+> +    description: Symbolic name for the connector.
+> +
+> +  type:
+> +    description: Size of the connector, should be specified in case of USB-A,
+> +      USB-B non-fullsize connectors.
+> +    enum:
+> +      - mini
+> +      - micro
 
-boot-without-of.txt is an ancient document that first outlined
-Flattened DeviceTree. The DT world has evolved a lot in the 15 years
-since and boot-without-of.txt is pretty stale. The name of the document
-itself is confusing if you don't understand the evolution from real
-'OpenFirmware'. Much of what booting-without-of.txt contains is now in
-the DT specification (which evolved out of the ePAPR).
+Needs a type reference.
 
-This is a first pass of removing everything that has a DT spec
-equivalent or is no longer standard practice (e.g. soc<SoCName> for SoC
-nodes) in order to see what's left. This is what I have:
+> +
+> +  self-powered:
+> +    description: Set this property if the USB device has its own power source.
 
-TODO
-- Move boot interface details to arch specific docs
-- Document 'serial-number' property in DT spec
-- Document the 'hotpluggable' memory property in DT spec
-- Document the 'sleep' property (PPC only)
-- Document the 'dma-coherent' property in DT spec
-- Need the history of node names and 'name' property?
-- Need how addresses work?
+type: boolean
 
-Cc: Frank Rowand <frowand.list@gmail.com>
-Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: linuxppc-dev@lists.ozlabs.org
-Signed-off-by: Rob Herring <robh@kernel.org>
----
- .../devicetree/booting-without-of.txt         | 1027 +----------------
- 1 file changed, 1 insertion(+), 1026 deletions(-)
+> +
+> +  # The following are optional properties for "usb-b-connector".
+> +  id-gpios:
+> +    description: An input gpio for USB ID pin.
 
-diff --git a/Documentation/devicetree/booting-without-of.txt b/Documentation/devicetree/booting-without-of.txt
-index 4660ccee35a3..97beee828ba4 100644
---- a/Documentation/devicetree/booting-without-of.txt
-+++ b/Documentation/devicetree/booting-without-of.txt
-@@ -19,44 +19,17 @@ Table of Contents
-     5) Entry point for arch/sh
- 
-   II - The DT block format
--    1) Header
-     2) Device tree generalities
--    3) Device tree "structure" block
--    4) Device tree "strings" block
- 
-   III - Required content of the device tree
-     1) Note about cells and address representation
--    2) Note about "compatible" properties
--    3) Note about "name" properties
--    4) Note about node and property names and character set
-     5) Required nodes and properties
-       a) The root node
--      b) The /cpus node
--      c) The /cpus/* nodes
--      d) the /memory node(s)
--      e) The /chosen node
--      f) the /soc<SOCname> node
--
--  IV - "dtc", the device tree compiler
--
--  V - Recommendations for a bootloader
--
--  VI - System-on-a-chip devices and nodes
--    1) Defining child nodes of an SOC
--    2) Representing devices without a current OF specification
--
--  VII - Specifying interrupt information for devices
--    1) interrupts property
--    2) interrupt-parent property
--    3) OpenPIC Interrupt Controllers
--    4) ISA Interrupt Controllers
- 
-   VIII - Specifying device power management information (sleep property)
- 
-   IX - Specifying dma bus information
- 
--  Appendix A - Sample SOC node for MPC8540
--
- 
- Revision Information
- ====================
-@@ -105,19 +78,6 @@ Revision Information
- 			 - Added chapter VI
- 
- 
-- ToDo:
--	- Add some definitions of interrupt tree (simple/complex)
--	- Add some definitions for PCI host bridges
--	- Add some common address format examples
--	- Add definitions for standard properties and "compatible"
--	  names for cells that are not already defined by the existing
--	  OF spec.
--	- Compare FSL SOC use of PCI to standard and make sure no new
--	  node definition required.
--	- Add more information about node definitions for SOC devices
--  	  that currently have no standard, like the FSL CPM.
--
--
- I - Introduction
- ================
- 
-@@ -333,196 +293,17 @@ II - The DT block format
- ========================
- 
- 
--This chapter defines the actual format of the flattened device-tree
--passed to the kernel. The actual content of it and kernel requirements
--are described later. You can find example of code manipulating that
--format in various places, including arch/powerpc/kernel/prom_init.c
--which will generate a flattened device-tree from the Open Firmware
--representation, or the fs2dt utility which is part of the kexec tools
--which will generate one from a filesystem representation. It is
--expected that a bootloader like uboot provides a bit more support,
--that will be discussed later as well.
--
- Note: The block has to be in main memory. It has to be accessible in
- both real mode and virtual mode with no mapping other than main
- memory. If you are writing a simple flash bootloader, it should copy
- the block to RAM before passing it to the kernel.
- 
- 
--1) Header
-----------
--
--   The kernel is passed the physical address pointing to an area of memory
--   that is roughly described in include/linux/of_fdt.h by the structure
--   boot_param_header:
--
--struct boot_param_header {
--        u32     magic;                  /* magic word OF_DT_HEADER */
--        u32     totalsize;              /* total size of DT block */
--        u32     off_dt_struct;          /* offset to structure */
--        u32     off_dt_strings;         /* offset to strings */
--        u32     off_mem_rsvmap;         /* offset to memory reserve map
--                                           */
--        u32     version;                /* format version */
--        u32     last_comp_version;      /* last compatible version */
--
--        /* version 2 fields below */
--        u32     boot_cpuid_phys;        /* Which physical CPU id we're
--                                           booting on */
--        /* version 3 fields below */
--        u32     size_dt_strings;        /* size of the strings block */
--
--        /* version 17 fields below */
--        u32	size_dt_struct;		/* size of the DT structure block */
--};
--
--   Along with the constants:
--
--/* Definitions used by the flattened device tree */
--#define OF_DT_HEADER            0xd00dfeed      /* 4: version,
--						   4: total size */
--#define OF_DT_BEGIN_NODE        0x1             /* Start node: full name
--						   */
--#define OF_DT_END_NODE          0x2             /* End node */
--#define OF_DT_PROP              0x3             /* Property: name off,
--                                                   size, content */
--#define OF_DT_END               0x9
--
--   All values in this header are in big endian format, the various
--   fields in this header are defined more precisely below. All
--   "offset" values are in bytes from the start of the header; that is
--   from the physical base address of the device tree block.
--
--   - magic
--
--     This is a magic value that "marks" the beginning of the
--     device-tree block header. It contains the value 0xd00dfeed and is
--     defined by the constant OF_DT_HEADER
--
--   - totalsize
--
--     This is the total size of the DT block including the header. The
--     "DT" block should enclose all data structures defined in this
--     chapter (who are pointed to by offsets in this header). That is,
--     the device-tree structure, strings, and the memory reserve map.
--
--   - off_dt_struct
--
--     This is an offset from the beginning of the header to the start
--     of the "structure" part the device tree. (see 2) device tree)
--
--   - off_dt_strings
--
--     This is an offset from the beginning of the header to the start
--     of the "strings" part of the device-tree
--
--   - off_mem_rsvmap
--
--     This is an offset from the beginning of the header to the start
--     of the reserved memory map. This map is a list of pairs of 64-
--     bit integers. Each pair is a physical address and a size. The
--     list is terminated by an entry of size 0. This map provides the
--     kernel with a list of physical memory areas that are "reserved"
--     and thus not to be used for memory allocations, especially during
--     early initialization. The kernel needs to allocate memory during
--     boot for things like un-flattening the device-tree, allocating an
--     MMU hash table, etc... Those allocations must be done in such a
--     way to avoid overriding critical things like, on Open Firmware
--     capable machines, the RTAS instance, or on some pSeries, the TCE
--     tables used for the iommu. Typically, the reserve map should
--     contain _at least_ this DT block itself (header,total_size). If
--     you are passing an initrd to the kernel, you should reserve it as
--     well. You do not need to reserve the kernel image itself. The map
--     should be 64-bit aligned.
--
--   - version
--
--     This is the version of this structure. Version 1 stops
--     here. Version 2 adds an additional field boot_cpuid_phys.
--     Version 3 adds the size of the strings block, allowing the kernel
--     to reallocate it easily at boot and free up the unused flattened
--     structure after expansion. Version 16 introduces a new more
--     "compact" format for the tree itself that is however not backward
--     compatible. Version 17 adds an additional field, size_dt_struct,
--     allowing it to be reallocated or moved more easily (this is
--     particularly useful for bootloaders which need to make
--     adjustments to a device tree based on probed information). You
--     should always generate a structure of the highest version defined
--     at the time of your implementation. Currently that is version 17,
--     unless you explicitly aim at being backward compatible.
--
--   - last_comp_version
--
--     Last compatible version. This indicates down to what version of
--     the DT block you are backward compatible. For example, version 2
--     is backward compatible with version 1 (that is, a kernel build
--     for version 1 will be able to boot with a version 2 format). You
--     should put a 1 in this field if you generate a device tree of
--     version 1 to 3, or 16 if you generate a tree of version 16 or 17
--     using the new unit name format.
--
--   - boot_cpuid_phys
--
--     This field only exist on version 2 headers. It indicate which
--     physical CPU ID is calling the kernel entry point. This is used,
--     among others, by kexec. If you are on an SMP system, this value
--     should match the content of the "reg" property of the CPU node in
--     the device-tree corresponding to the CPU calling the kernel entry
--     point (see further chapters for more information on the required
--     device-tree contents)
--
--   - size_dt_strings
--
--     This field only exists on version 3 and later headers.  It
--     gives the size of the "strings" section of the device tree (which
--     starts at the offset given by off_dt_strings).
--
--   - size_dt_struct
--
--     This field only exists on version 17 and later headers.  It gives
--     the size of the "structure" section of the device tree (which
--     starts at the offset given by off_dt_struct).
--
--   So the typical layout of a DT block (though the various parts don't
--   need to be in that order) looks like this (addresses go from top to
--   bottom):
--
--
--             ------------------------------
--     base -> |  struct boot_param_header  |
--             ------------------------------
--             |      (alignment gap) (*)   |
--             ------------------------------
--             |      memory reserve map    |
--             ------------------------------
--             |      (alignment gap)       |
--             ------------------------------
--             |                            |
--             |    device-tree structure   |
--             |                            |
--             ------------------------------
--             |      (alignment gap)       |
--             ------------------------------
--             |                            |
--             |     device-tree strings    |
--             |                            |
--      -----> ------------------------------
--      |
--      |
--      --- (base + totalsize)
--
--  (*) The alignment gaps are not necessarily present; their presence
--      and size are dependent on the various alignment requirements of
--      the individual data blocks.
- 
- 
- 2) Device tree generalities
- ---------------------------
- 
--This device-tree itself is separated in two different blocks, a
--structure block and a strings block. Both need to be aligned to a 4
--byte boundary.
--
- First, let's quickly describe the device-tree concept before detailing
- the storage format. This chapter does _not_ describe the detail of the
- required types of nodes & properties for the kernel, this is done
-@@ -574,128 +355,6 @@ is) is also required to have a "compatible" property indicating the
- specific hardware and an optional list of devices it is fully
- backwards compatible with.
- 
--Finally, every node that can be referenced from a property in another
--node is required to have either a "phandle" or a "linux,phandle"
--property. Real Open Firmware implementations provide a unique
--"phandle" value for every node that the "prom_init()" trampoline code
--turns into "linux,phandle" properties. However, this is made optional
--if the flattened device tree is used directly. An example of a node
--referencing another node via "phandle" is when laying out the
--interrupt tree which will be described in a further version of this
--document.
--
--The "phandle" property is a 32-bit value that uniquely
--identifies a node. You are free to use whatever values or system of
--values, internal pointers, or whatever to generate these, the only
--requirement is that every node for which you provide that property has
--a unique value for it.
--
--Here is an example of a simple device-tree. In this example, an "o"
--designates a node followed by the node unit name. Properties are
--presented with their name followed by their content. "content"
--represents an ASCII string (zero terminated) value, while <content>
--represents a 32-bit value, specified in decimal or hexadecimal (the
--latter prefixed 0x). The various nodes in this example will be
--discussed in a later chapter. At this point, it is only meant to give
--you a idea of what a device-tree looks like. I have purposefully kept
--the "name" and "linux,phandle" properties which aren't necessary in
--order to give you a better idea of what the tree looks like in
--practice.
--
--  / o device-tree
--      |- name = "device-tree"
--      |- model = "MyBoardName"
--      |- compatible = "MyBoardFamilyName"
--      |- #address-cells = <2>
--      |- #size-cells = <2>
--      |- linux,phandle = <0>
--      |
--      o cpus
--      | | - name = "cpus"
--      | | - linux,phandle = <1>
--      | | - #address-cells = <1>
--      | | - #size-cells = <0>
--      | |
--      | o PowerPC,970@0
--      |   |- name = "PowerPC,970"
--      |   |- device_type = "cpu"
--      |   |- reg = <0>
--      |   |- clock-frequency = <0x5f5e1000>
--      |   |- 64-bit
--      |   |- linux,phandle = <2>
--      |
--      o memory@0
--      | |- name = "memory"
--      | |- device_type = "memory"
--      | |- reg = <0x00000000 0x00000000 0x00000000 0x20000000>
--      | |- linux,phandle = <3>
--      |
--      o chosen
--        |- name = "chosen"
--        |- bootargs = "root=/dev/sda2"
--        |- linux,phandle = <4>
--
--This tree is almost a minimal tree. It pretty much contains the
--minimal set of required nodes and properties to boot a linux kernel;
--that is, some basic model information at the root, the CPUs, and the
--physical memory layout.  It also includes misc information passed
--through /chosen, like in this example, the platform type (mandatory)
--and the kernel command line arguments (optional).
--
--The /cpus/PowerPC,970@0/64-bit property is an example of a
--property without a value. All other properties have a value. The
--significance of the #address-cells and #size-cells properties will be
--explained in chapter IV which defines precisely the required nodes and
--properties and their content.
--
--
--3) Device tree "structure" block
--
--The structure of the device tree is a linearized tree structure. The
--"OF_DT_BEGIN_NODE" token starts a new node, and the "OF_DT_END_NODE"
--ends that node definition. Child nodes are simply defined before
--"OF_DT_END_NODE" (that is nodes within the node). A 'token' is a 32
--bit value. The tree has to be "finished" with a OF_DT_END token
--
--Here's the basic structure of a single node:
--
--     * token OF_DT_BEGIN_NODE (that is 0x00000001)
--     * for version 1 to 3, this is the node full path as a zero
--       terminated string, starting with "/". For version 16 and later,
--       this is the node unit name only (or an empty string for the
--       root node)
--     * [align gap to next 4 bytes boundary]
--     * for each property:
--        * token OF_DT_PROP (that is 0x00000003)
--        * 32-bit value of property value size in bytes (or 0 if no
--          value)
--        * 32-bit value of offset in string block of property name
--        * property value data if any
--        * [align gap to next 4 bytes boundary]
--     * [child nodes if any]
--     * token OF_DT_END_NODE (that is 0x00000002)
--
--So the node content can be summarized as a start token, a full path,
--a list of properties, a list of child nodes, and an end token. Every
--child node is a full node structure itself as defined above.
--
--NOTE: The above definition requires that all property definitions for
--a particular node MUST precede any subnode definitions for that node.
--Although the structure would not be ambiguous if properties and
--subnodes were intermingled, the kernel parser requires that the
--properties come first (up until at least 2.6.22).  Any tools
--manipulating a flattened tree must take care to preserve this
--constraint.
--
--4) Device tree "strings" block
--
--In order to save space, property names, which are generally redundant,
--are stored separately in the "strings" block. This block is simply the
--whole bunch of zero terminated strings for all property names
--concatenated together. The device-tree property definitions in the
--structure block will contain offset values from the beginning of the
--strings block.
--
- 
- III - Required content of the device tree
- =========================================
-@@ -792,568 +451,14 @@ registers are visible on the parent bus using an identity mapping
- translation.  In other words, the parent bus address space is the same
- as the child bus address space.
- 
--2) Note about "compatible" properties
---------------------------------------
--
--These properties are optional, but recommended in devices and the root
--node. The format of a "compatible" property is a list of concatenated
--zero terminated strings. They allow a device to express its
--compatibility with a family of similar devices, in some cases,
--allowing a single driver to match against several devices regardless
--of their actual names.
--
--3) Note about "name" properties
---------------------------------
--
--While earlier users of Open Firmware like OldWorld macintoshes tended
--to use the actual device name for the "name" property, it's nowadays
--considered a good practice to use a name that is closer to the device
--class (often equal to device_type). For example, nowadays, Ethernet
--controllers are named "ethernet", an additional "model" property
--defining precisely the chip type/model, and "compatible" property
--defining the family in case a single driver can driver more than one
--of these chips. However, the kernel doesn't generally put any
--restriction on the "name" property; it is simply considered good
--practice to follow the standard and its evolutions as closely as
--possible.
--
--Note also that the new format version 16 makes the "name" property
--optional. If it's absent for a node, then the node's unit name is then
--used to reconstruct the name. That is, the part of the unit name
--before the "@" sign is used (or the entire unit name if no "@" sign
--is present).
--
--4) Note about node and property names and character set
---------------------------------------------------------
--
--While Open Firmware provides more flexible usage of 8859-1, this
--specification enforces more strict rules. Nodes and properties should
--be comprised only of ASCII characters 'a' to 'z', '0' to
--'9', ',', '.', '_', '+', '#', '?', and '-'. Node names additionally
--allow uppercase characters 'A' to 'Z' (property names should be
--lowercase. The fact that vendors like Apple don't respect this rule is
--irrelevant here). Additionally, node and property names should always
--begin with a character in the range 'a' to 'z' (or 'A' to 'Z' for node
--names).
--
--The maximum number of characters for both nodes and property names
--is 31. In the case of node names, this is only the leftmost part of
--a unit name (the pure "name" property), it doesn't include the unit
--address which can extend beyond that limit.
--
- 
- 5) Required nodes and properties
- --------------------------------
--  These are all that are currently required. However, it is strongly
--  recommended that you expose PCI host bridges as documented in the
--  PCI binding to Open Firmware, and your interrupt tree as documented
--  in OF interrupt tree specification.
--
--  a) The root node
--
--  The root node requires some properties to be present:
--
--    - model : this is your board name/model
--    - #address-cells : address representation for "root" devices
--    - #size-cells: the size representation for "root" devices
--    - compatible : the board "family" generally finds its way here,
--      for example, if you have 2 board models with a similar layout,
--      that typically get driven by the same platform code in the
--      kernel, you would specify the exact board model in the
--      compatible property followed by an entry that represents the SoC
--      model.
--
--  The root node is also generally where you add additional properties
--  specific to your board like the serial number if any, that sort of
--  thing. It is recommended that if you add any "custom" property whose
--  name may clash with standard defined ones, you prefix them with your
--  vendor name and a comma.
- 
-   Additional properties for the root node:
- 
-     - serial-number : a string representing the device's serial number
- 
--  b) The /cpus node
--
--  This node is the parent of all individual CPU nodes. It doesn't
--  have any specific requirements, though it's generally good practice
--  to have at least:
--
--               #address-cells = <00000001>
--               #size-cells    = <00000000>
--
--  This defines that the "address" for a CPU is a single cell, and has
--  no meaningful size. This is not necessary but the kernel will assume
--  that format when reading the "reg" properties of a CPU node, see
--  below
--
--  c) The /cpus/* nodes
--
--  So under /cpus, you are supposed to create a node for every CPU on
--  the machine. There is no specific restriction on the name of the
--  CPU, though it's common to call it <architecture>,<core>. For
--  example, Apple uses PowerPC,G5 while IBM uses PowerPC,970FX.
--  However, the Generic Names convention suggests that it would be
--  better to simply use 'cpu' for each cpu node and use the compatible
--  property to identify the specific cpu core.
--
--  Required properties:
--
--    - device_type : has to be "cpu"
--    - reg : This is the physical CPU number, it's a single 32-bit cell
--      and is also used as-is as the unit number for constructing the
--      unit name in the full path. For example, with 2 CPUs, you would
--      have the full path:
--        /cpus/PowerPC,970FX@0
--        /cpus/PowerPC,970FX@1
--      (unit addresses do not require leading zeroes)
--    - d-cache-block-size : one cell, L1 data cache block size in bytes (*)
--    - i-cache-block-size : one cell, L1 instruction cache block size in
--      bytes
--    - d-cache-size : one cell, size of L1 data cache in bytes
--    - i-cache-size : one cell, size of L1 instruction cache in bytes
--
--(*) The cache "block" size is the size on which the cache management
--instructions operate. Historically, this document used the cache
--"line" size here which is incorrect. The kernel will prefer the cache
--block size and will fallback to cache line size for backward
--compatibility.
--
--  Recommended properties:
--
--    - timebase-frequency : a cell indicating the frequency of the
--      timebase in Hz. This is not directly used by the generic code,
--      but you are welcome to copy/paste the pSeries code for setting
--      the kernel timebase/decrementer calibration based on this
--      value.
--    - clock-frequency : a cell indicating the CPU core clock frequency
--      in Hz. A new property will be defined for 64-bit values, but if
--      your frequency is < 4Ghz, one cell is enough. Here as well as
--      for the above, the common code doesn't use that property, but
--      you are welcome to re-use the pSeries or Maple one. A future
--      kernel version might provide a common function for this.
--    - d-cache-line-size : one cell, L1 data cache line size in bytes
--      if different from the block size
--    - i-cache-line-size : one cell, L1 instruction cache line size in
--      bytes if different from the block size
--
--  You are welcome to add any property you find relevant to your board,
--  like some information about the mechanism used to soft-reset the
--  CPUs. For example, Apple puts the GPIO number for CPU soft reset
--  lines in there as a "soft-reset" property since they start secondary
--  CPUs by soft-resetting them.
--
--
--  d) the /memory node(s)
--
--  To define the physical memory layout of your board, you should
--  create one or more memory node(s). You can either create a single
--  node with all memory ranges in its reg property, or you can create
--  several nodes, as you wish. The unit address (@ part) used for the
--  full path is the address of the first range of memory defined by a
--  given node. If you use a single memory node, this will typically be
--  @0.
--
--  Required properties:
--
--    - device_type : has to be "memory"
--    - reg : This property contains all the physical memory ranges of
--      your board. It's a list of addresses/sizes concatenated
--      together, with the number of cells of each defined by the
--      #address-cells and #size-cells of the root node. For example,
--      with both of these properties being 2 like in the example given
--      earlier, a 970 based machine with 6Gb of RAM could typically
--      have a "reg" property here that looks like:
--
--      00000000 00000000 00000000 80000000
--      00000001 00000000 00000001 00000000
--
--      That is a range starting at 0 of 0x80000000 bytes and a range
--      starting at 0x100000000 and of 0x100000000 bytes. You can see
--      that there is no memory covering the IO hole between 2Gb and
--      4Gb. Some vendors prefer splitting those ranges into smaller
--      segments, but the kernel doesn't care.
--
--  Additional properties:
--
--    - hotpluggable : The presence of this property provides an explicit
--      hint to the operating system that this memory may potentially be
--      removed later. The kernel can take this into consideration when
--      doing nonmovable allocations and when laying out memory zones.
--
--  e) The /chosen node
--
--  This node is a bit "special". Normally, that's where Open Firmware
--  puts some variable environment information, like the arguments, or
--  the default input/output devices.
--
--  This specification makes a few of these mandatory, but also defines
--  some linux-specific properties that would be normally constructed by
--  the prom_init() trampoline when booting with an OF client interface,
--  but that you have to provide yourself when using the flattened format.
--
--  Recommended properties:
--
--    - bootargs : This zero-terminated string is passed as the kernel
--      command line
--    - linux,stdout-path : This is the full path to your standard
--      console device if any. Typically, if you have serial devices on
--      your board, you may want to put the full path to the one set as
--      the default console in the firmware here, for the kernel to pick
--      it up as its own default console.
--
--  Note that u-boot creates and fills in the chosen node for platforms
--  that use it.
--
--  (Note: a practice that is now obsolete was to include a property
--  under /chosen called interrupt-controller which had a phandle value
--  that pointed to the main interrupt controller)
--
--  f) the /soc<SOCname> node
--
--  This node is used to represent a system-on-a-chip (SoC) and must be
--  present if the processor is a SoC. The top-level soc node contains
--  information that is global to all devices on the SoC. The node name
--  should contain a unit address for the SoC, which is the base address
--  of the memory-mapped register set for the SoC. The name of an SoC
--  node should start with "soc", and the remainder of the name should
--  represent the part number for the soc.  For example, the MPC8540's
--  soc node would be called "soc8540".
--
--  Required properties:
--
--    - ranges : Should be defined as specified in 1) to describe the
--      translation of SoC addresses for memory mapped SoC registers.
--    - bus-frequency: Contains the bus frequency for the SoC node.
--      Typically, the value of this field is filled in by the boot
--      loader.
--    - compatible : Exact model of the SoC
--
--
--  Recommended properties:
--
--    - reg : This property defines the address and size of the
--      memory-mapped registers that are used for the SOC node itself.
--      It does not include the child device registers - these will be
--      defined inside each child node.  The address specified in the
--      "reg" property should match the unit address of the SOC node.
--    - #address-cells : Address representation for "soc" devices.  The
--      format of this field may vary depending on whether or not the
--      device registers are memory mapped.  For memory mapped
--      registers, this field represents the number of cells needed to
--      represent the address of the registers.  For SOCs that do not
--      use MMIO, a special address format should be defined that
--      contains enough cells to represent the required information.
--      See 1) above for more details on defining #address-cells.
--    - #size-cells : Size representation for "soc" devices
--    - #interrupt-cells : Defines the width of cells used to represent
--       interrupts.  Typically this value is <2>, which includes a
--       32-bit number that represents the interrupt number, and a
--       32-bit number that represents the interrupt sense and level.
--       This field is only needed if the SOC contains an interrupt
--       controller.
--
--  The SOC node may contain child nodes for each SOC device that the
--  platform uses.  Nodes should not be created for devices which exist
--  on the SOC but are not used by a particular platform. See chapter VI
--  for more information on how to specify devices that are part of a SOC.
--
--  Example SOC node for the MPC8540:
--
--	soc8540@e0000000 {
--		#address-cells = <1>;
--		#size-cells = <1>;
--		#interrupt-cells = <2>;
--		device_type = "soc";
--		ranges = <0x00000000 0xe0000000 0x00100000>
--		reg = <0xe0000000 0x00003000>;
--		bus-frequency = <0>;
--	}
--
--
--
--IV - "dtc", the device tree compiler
--====================================
--
--
--dtc source code can be found at
--<http://git.jdl.com/gitweb/?p=dtc.git>
--
--WARNING: This version is still in early development stage; the
--resulting device-tree "blobs" have not yet been validated with the
--kernel. The current generated block lacks a useful reserve map (it will
--be fixed to generate an empty one, it's up to the bootloader to fill
--it up) among others. The error handling needs work, bugs are lurking,
--etc...
--
--dtc basically takes a device-tree in a given format and outputs a
--device-tree in another format. The currently supported formats are:
--
--  Input formats:
--  -------------
--
--     - "dtb": "blob" format, that is a flattened device-tree block
--       with
--        header all in a binary blob.
--     - "dts": "source" format. This is a text file containing a
--       "source" for a device-tree. The format is defined later in this
--        chapter.
--     - "fs" format. This is a representation equivalent to the
--        output of /proc/device-tree, that is nodes are directories and
--	properties are files
--
-- Output formats:
-- ---------------
--
--     - "dtb": "blob" format
--     - "dts": "source" format
--     - "asm": assembly language file. This is a file that can be
--       sourced by gas to generate a device-tree "blob". That file can
--       then simply be added to your Makefile. Additionally, the
--       assembly file exports some symbols that can be used.
--
--
--The syntax of the dtc tool is
--
--    dtc [-I <input-format>] [-O <output-format>]
--        [-o output-filename] [-V output_version] input_filename
--
--
--The "output_version" defines what version of the "blob" format will be
--generated. Supported versions are 1,2,3 and 16. The default is
--currently version 3 but that may change in the future to version 16.
--
--Additionally, dtc performs various sanity checks on the tree, like the
--uniqueness of linux, phandle properties, validity of strings, etc...
--
--The format of the .dts "source" file is "C" like, supports C and C++
--style comments.
--
--/ {
--}
--
--The above is the "device-tree" definition. It's the only statement
--supported currently at the toplevel.
--
--/ {
--  property1 = "string_value";	/* define a property containing a 0
--                                 * terminated string
--				 */
--
--  property2 = <0x1234abcd>;	/* define a property containing a
--                                 * numerical 32-bit value (hexadecimal)
--				 */
--
--  property3 = <0x12345678 0x12345678 0xdeadbeef>;
--                                /* define a property containing 3
--                                 * numerical 32-bit values (cells) in
--                                 * hexadecimal
--				 */
--  property4 = [0x0a 0x0b 0x0c 0x0d 0xde 0xea 0xad 0xbe 0xef];
--                                /* define a property whose content is
--                                 * an arbitrary array of bytes
--                                 */
--
--  childnode@address {	/* define a child node named "childnode"
--                                 * whose unit name is "childnode at
--				 * address"
--                                 */
--
--    childprop = "hello\n";      /* define a property "childprop" of
--                                 * childnode (in this case, a string)
--                                 */
--  };
--};
--
--Nodes can contain other nodes etc... thus defining the hierarchical
--structure of the tree.
--
--Strings support common escape sequences from C: "\n", "\t", "\r",
--"\(octal value)", "\x(hex value)".
--
--It is also suggested that you pipe your source file through cpp (gcc
--preprocessor) so you can use #include's, #define for constants, etc...
--
--Finally, various options are planned but not yet implemented, like
--automatic generation of phandles, labels (exported to the asm file so
--you can point to a property content and change it easily from whatever
--you link the device-tree with), label or path instead of numeric value
--in some cells to "point" to a node (replaced by a phandle at compile
--time), export of reserve map address to the asm file, ability to
--specify reserve map content at compile time, etc...
--
--We may provide a .h include file with common definitions of that
--proves useful for some properties (like building PCI properties or
--interrupt maps) though it may be better to add a notion of struct
--definitions to the compiler...
--
--
--V - Recommendations for a bootloader
--====================================
--
--
--Here are some various ideas/recommendations that have been proposed
--while all this has been defined and implemented.
--
--  - The bootloader may want to be able to use the device-tree itself
--    and may want to manipulate it (to add/edit some properties,
--    like physical memory size or kernel arguments). At this point, 2
--    choices can be made. Either the bootloader works directly on the
--    flattened format, or the bootloader has its own internal tree
--    representation with pointers (similar to the kernel one) and
--    re-flattens the tree when booting the kernel. The former is a bit
--    more difficult to edit/modify, the later requires probably a bit
--    more code to handle the tree structure. Note that the structure
--    format has been designed so it's relatively easy to "insert"
--    properties or nodes or delete them by just memmoving things
--    around. It contains no internal offsets or pointers for this
--    purpose.
--
--  - An example of code for iterating nodes & retrieving properties
--    directly from the flattened tree format can be found in the kernel
--    file drivers/of/fdt.c.  Look at the of_scan_flat_dt() function,
--    its usage in early_init_devtree(), and the corresponding various
--    early_init_dt_scan_*() callbacks. That code can be re-used in a
--    GPL bootloader, and as the author of that code, I would be happy
--    to discuss possible free licensing to any vendor who wishes to
--    integrate all or part of this code into a non-GPL bootloader.
--    (reference needed; who is 'I' here? ---gcl Jan 31, 2011)
--
--
--
--VI - System-on-a-chip devices and nodes
--=======================================
--
--Many companies are now starting to develop system-on-a-chip
--processors, where the processor core (CPU) and many peripheral devices
--exist on a single piece of silicon.  For these SOCs, an SOC node
--should be used that defines child nodes for the devices that make
--up the SOC. While platforms are not required to use this model in
--order to boot the kernel, it is highly encouraged that all SOC
--implementations define as complete a flat-device-tree as possible to
--describe the devices on the SOC.  This will allow for the
--genericization of much of the kernel code.
--
--
--1) Defining child nodes of an SOC
-----------------------------------
--
--Each device that is part of an SOC may have its own node entry inside
--the SOC node.  For each device that is included in the SOC, the unit
--address property represents the address offset for this device's
--memory-mapped registers in the parent's address space.  The parent's
--address space is defined by the "ranges" property in the top-level soc
--node. The "reg" property for each node that exists directly under the
--SOC node should contain the address mapping from the child address space
--to the parent SOC address space and the size of the device's
--memory-mapped register file.
--
--For many devices that may exist inside an SOC, there are predefined
--specifications for the format of the device tree node.  All SOC child
--nodes should follow these specifications, except where noted in this
--document.
--
--See appendix A for an example partial SOC node definition for the
--MPC8540.
--
--
--2) Representing devices without a current OF specification
------------------------------------------------------------
--
--Currently, there are many devices on SoCs that do not have a standard
--representation defined as part of the Open Firmware specifications,
--mainly because the boards that contain these SoCs are not currently
--booted using Open Firmware.  Binding documentation for new devices
--should be added to the Documentation/devicetree/bindings directory.
--That directory will expand as device tree support is added to more and
--more SoCs.
--
--
--VII - Specifying interrupt information for devices
--===================================================
--
--The device tree represents the buses and devices of a hardware
--system in a form similar to the physical bus topology of the
--hardware.
--
--In addition, a logical 'interrupt tree' exists which represents the
--hierarchy and routing of interrupts in the hardware.
--
--The interrupt tree model is fully described in the
--document "Open Firmware Recommended Practice: Interrupt
--Mapping Version 0.9".  The document is available at:
--<http://www.devicetree.org/open-firmware/practice/>
--
--1) interrupts property
------------------------
--
--Devices that generate interrupts to a single interrupt controller
--should use the conventional OF representation described in the
--OF interrupt mapping documentation.
--
--Each device which generates interrupts must have an 'interrupt'
--property.  The interrupt property value is an arbitrary number of
--of 'interrupt specifier' values which describe the interrupt or
--interrupts for the device.
--
--The encoding of an interrupt specifier is determined by the
--interrupt domain in which the device is located in the
--interrupt tree.  The root of an interrupt domain specifies in
--its #interrupt-cells property the number of 32-bit cells
--required to encode an interrupt specifier.  See the OF interrupt
--mapping documentation for a detailed description of domains.
--
--For example, the binding for the OpenPIC interrupt controller
--specifies  an #interrupt-cells value of 2 to encode the interrupt
--number and level/sense information. All interrupt children in an
--OpenPIC interrupt domain use 2 cells per interrupt in their interrupts
--property.
--
--The PCI bus binding specifies a #interrupt-cells value of 1 to encode
--which interrupt pin (INTA,INTB,INTC,INTD) is used.
--
--2) interrupt-parent property
------------------------------
--
--The interrupt-parent property is specified to define an explicit
--link between a device node and its interrupt parent in
--the interrupt tree.  The value of interrupt-parent is the
--phandle of the parent node.
--
--If the interrupt-parent property is not defined for a node, its
--interrupt parent is assumed to be an ancestor in the node's
--_device tree_ hierarchy.
--
--3) OpenPIC Interrupt Controllers
----------------------------------
--
--OpenPIC interrupt controllers require 2 cells to encode
--interrupt information.  The first cell defines the interrupt
--number.  The second cell defines the sense and level
--information.
--
--Sense and level information should be encoded as follows:
--
--	0 = low to high edge sensitive type enabled
--	1 = active low level sensitive type enabled
--	2 = active high level sensitive type enabled
--	3 = high to low edge sensitive type enabled
--
--4) ISA Interrupt Controllers
------------------------------
--
--ISA PIC interrupt controllers require 2 cells to encode
--interrupt information.  The first cell defines the interrupt
--number.  The second cell defines the sense and level
--information.
--
--ISA PIC interrupt controllers should adhere to the ISA PIC
--encodings listed below:
--
--	0 =  active low level sensitive type enabled
--	1 =  active high level sensitive type enabled
--	2 =  high to low edge sensitive type enabled
--	3 =  low to high edge sensitive type enabled
- 
- VIII - Specifying Device Power Management Information (sleep property)
- ===================================================================
-@@ -1386,6 +491,7 @@ reasonably grouped in this manner, then create a virtual sleep controller
- (similar to an interrupt nexus, except that defining a standardized
- sleep-map should wait until its necessity is demonstrated).
- 
-+
- IX - Specifying dma bus information
- 
- Some devices may have DMA memory range shifted relatively to the beginning of
-@@ -1420,134 +526,3 @@ Optional property:
- - dma-ranges: <empty> value. if present - It means that DMA addresses
- 	translation has to be enabled for this device.
- - dma-coherent: Present if dma operations are coherent
--
--Example:
--soc {
--		compatible = "ti,keystone","simple-bus";
--		ranges = <0x0 0x0 0x0 0xc0000000>;
--		dma-ranges = <0x80000000 0x8 0x00000000 0x80000000>;
--
--		[...]
--
--		usb: usb@2680000 {
--			compatible = "ti,keystone-dwc3";
--
--			[...]
--			dma-coherent;
--		};
--};
--
--Appendix A - Sample SOC node for MPC8540
--========================================
--
--	soc@e0000000 {
--		#address-cells = <1>;
--		#size-cells = <1>;
--		compatible = "fsl,mpc8540-ccsr", "simple-bus";
--		device_type = "soc";
--		ranges = <0x00000000 0xe0000000 0x00100000>
--		bus-frequency = <0>;
--		interrupt-parent = <&pic>;
--
--		ethernet@24000 {
--			#address-cells = <1>;
--			#size-cells = <1>;
--			device_type = "network";
--			model = "TSEC";
--			compatible = "gianfar", "simple-bus";
--			reg = <0x24000 0x1000>;
--			local-mac-address = [ 0x00 0xE0 0x0C 0x00 0x73 0x00 ];
--			interrupts = <0x29 2 0x30 2 0x34 2>;
--			phy-handle = <&phy0>;
--			sleep = <&pmc 0x00000080>;
--			ranges;
--
--			mdio@24520 {
--				reg = <0x24520 0x20>;
--				compatible = "fsl,gianfar-mdio";
--
--				phy0: ethernet-phy@0 {
--					interrupts = <5 1>;
--					reg = <0>;
--				};
--
--				phy1: ethernet-phy@1 {
--					interrupts = <5 1>;
--					reg = <1>;
--				};
--
--				phy3: ethernet-phy@3 {
--					interrupts = <7 1>;
--					reg = <3>;
--				};
--			};
--		};
--
--		ethernet@25000 {
--			device_type = "network";
--			model = "TSEC";
--			compatible = "gianfar";
--			reg = <0x25000 0x1000>;
--			local-mac-address = [ 0x00 0xE0 0x0C 0x00 0x73 0x01 ];
--			interrupts = <0x13 2 0x14 2 0x18 2>;
--			phy-handle = <&phy1>;
--			sleep = <&pmc 0x00000040>;
--		};
--
--		ethernet@26000 {
--			device_type = "network";
--			model = "FEC";
--			compatible = "gianfar";
--			reg = <0x26000 0x1000>;
--			local-mac-address = [ 0x00 0xE0 0x0C 0x00 0x73 0x02 ];
--			interrupts = <0x41 2>;
--			phy-handle = <&phy3>;
--			sleep = <&pmc 0x00000020>;
--		};
--
--		serial@4500 {
--			#address-cells = <1>;
--			#size-cells = <1>;
--			compatible = "fsl,mpc8540-duart", "simple-bus";
--			sleep = <&pmc 0x00000002>;
--			ranges;
--
--			serial@4500 {
--				device_type = "serial";
--				compatible = "ns16550";
--				reg = <0x4500 0x100>;
--				clock-frequency = <0>;
--				interrupts = <0x42 2>;
--			};
--
--			serial@4600 {
--				device_type = "serial";
--				compatible = "ns16550";
--				reg = <0x4600 0x100>;
--				clock-frequency = <0>;
--				interrupts = <0x42 2>;
--			};
--		};
--
--		pic: pic@40000 {
--			interrupt-controller;
--			#address-cells = <0>;
--			#interrupt-cells = <2>;
--			reg = <0x40000 0x40000>;
--			compatible = "chrp,open-pic";
--			device_type = "open-pic";
--		};
--
--		i2c@3000 {
--			interrupts = <0x43 2>;
--			reg = <0x3000 0x100>;
--			compatible  = "fsl-i2c";
--			dfsrr;
--			sleep = <&pmc 0x00000004>;
--		};
--
--		pmc: power@e0070 {
--			compatible = "fsl,mpc8540-pmc", "fsl,mpc8548-pmc";
--			reg = <0xe0070 0x20>;
--		};
--	};
--- 
-2.20.1
+maxItems: 1
 
+> +
+> +  vbus-gpios:
+> +    description: An input gpio for USB VBus pin, used to detect presence of
+> +      VBUS 5V. See gpio/gpio.txt.
+
+maxItems: 1
+
+> +
+> +  vbus-supply:
+> +    description: A phandle to the regulator for USB VBUS if needed when host
+> +      mode or dual role mode is supported.
+> +      Particularly, if use an output GPIO to control a VBUS regulator, should
+> +      model it as a regulator. See regulator/fixed-regulator.yaml
+> +
+> +  pinctrl-names:
+> +    description: A pinctrl state named "default" is optional.
+> +
+> +  pinctrl-0:
+> +    description: Pin control group. See pinctrl/pinctrl-bindings.txt
+
+pinctrl properties get added automatically, so you can drop these 2.
+
+> +
+> +  # The following are optional properties for "usb-c-connector".
+> +  power-role:
+> +    description: Determines the power role that the Type C connector will
+> +      support.
+> +    contains:
+> +      source:
+> +        description: Connector is a power source.
+> +      sink:
+> +        description: Connector is a power sink.
+> +      dual:
+> +        description: Connector is a Dual Role Port (DRP).
+
+Not valid json-schema. Should be like this:
+
+power-role:
+  allOf:
+    - $ref: /schemas/types.yaml#definitions/string
+  enum:
+    - source
+    - sink
+    - dual
+
+> +
+> +  try-power-role:
+> +    description: Preferred power role.
+> +    contains:
+> +      sink:
+> +        description: Try.SNK is preferred power role.
+> +      source:
+> +        description: Try.SRC is preferred power role.
+> +      dual:
+> +        description: DRP can support Try.SNK or Try.SRC.
+
+Same here.
+
+> +
+> +  data-role:
+> +    description: Data role if Type C connector supports USB data.
+> +    contains:
+> +      host:
+> +        description: Connector is a host.
+> +      device:
+> +        description: Connector is a device.
+> +      dual:
+> +        description: Connector is Dual Role Device (DRD).
+
+Similar here.
+
+> +
+> +  # The following are optional properties for "usb-c-connector" with power
+> +  # delivery support.
+> +  source-pdos:
+> +    description: An array of u32 with each entry providing supported power
+> +      source data object(PDO), the detailed bit definitions of PDO can be found
+> +      in "Universal Serial Bus Power Delivery Specification" chapter 6.4.1.2
+> +      Source_Capabilities Message, the order of each entry(PDO) should follow
+> +      the PD spec chapter 6.4.1. Required for power source and power dual role.
+> +      User can specify the source PDO array via PDO_FIXED/BATT/VAR/PPS_APDO()
+> +      defined in dt-bindings/usb/pd.h.
+> +    minItems: 1
+> +    maxItems: 7
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +
+> +
+> +  sink-pdos:
+> +    description: An array of u32 with each entry providing supported power sink
+> +      data object(PDO), the detailed bit definitions of PDO can be found in
+> +      "Universal Serial Bus Power Delivery Specification" chapter 6.4.1.3
+> +      Sink Capabilities Message, the order of each entry(PDO) should follow the
+> +      PD spec chapter 6.4.1. Required for power sink and power dual role. User
+> +      can specify the sink PDO array via PDO_FIXED/BATT/VAR/PPS_APDO() defined
+> +      in dt-bindings/usb/pd.h.
+> +    minItems: 1
+> +    maxItems: 7
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32-array
+> +
+> +  op-sink-microwatt:
+> +    description: Sink required operating power in microwatt, if source can't
+> +      offer the power, Capability Mismatch is set. Required for power sink and
+> +      power dual role.
+> +
+> +# Any data bus to the connector should be modeled using the OF graph bindings
+> +# specified in bindings/graph.txt, unless the bus is between parent node and
+> +# the connector. Since single connector can have multiple data buses every bus
+> +# has assigned OF graph port number as follows:
+> +# 0: High Speed (HS), present in all connectors,
+> +# 1: Super Speed (SS), present in SS capable connectors,
+> +# 2: Sideband use (SBU), present in USB-C.
+
+You need something like this:
+
+ports:
+  type: object
+  properties:
+    port@0:
+      type: object
+      description: High Speed (HS), present in all connectors
+    ...
+  required:
+    - port@0
+
+> +required:
+> +  - compatible
+> +
+> +examples:
+> +  # Micro-USB connector with HS lines routed via controller (MUIC).
+> +  - |+
+> +    muic-max77843@66 {
+> +      usb_con1: connector {
+> +        compatible = "usb-b-connector";
+> +        label = "micro-USB";
+> +        type = "micro";
+> +      };
+> +    };
+> +
+> +  # USB-C connector attached to CC controller (s2mm005), HS lines routed
+> +  # to companion PMIC (max77865), SS lines to USB3 PHY and SBU to DisplayPort.
+> +  # DisplayPort video lines are routed to the connector via SS mux in USB3 PHY.
+> +  - |+
+> +    ccic: s2mm005@33 {
+> +      usb_con2: connector {
+> +        compatible = "usb-c-connector";
+> +        label = "USB-C";
+> +
+> +        ports {
+> +          #address-cells = <1>;
+> +          #size-cells = <0>;
+> +
+> +          port@0 {
+> +            reg = <0>;
+> +            usb_con_hs: endpoint {
+> +              remote-endpoint = <&max77865_usbc_hs>;
+> +            };
+> +          };
+> +          port@1 {
+> +            reg = <1>;
+> +            usb_con_ss: endpoint {
+> +            remote-endpoint = <&usbdrd_phy_ss>;
+> +            };
+> +          };
+> +          port@2 {
+> +            reg = <2>;
+> +            usb_con_sbu: endpoint {
+> +            remote-endpoint = <&dp_aux>;
+> +            };
+> +          };
+> +        };
+> +      };
+> +    };
+> +
+> +  # USB-C connector attached to a typec port controller(ptn5110), which has
+> +  # power delivery support and enables drp.
+> +  - |+
+> +    #include <dt-bindings/usb/pd.h>
+> +    typec: ptn5110@50 {
+> +      usb_con3: connector {
+> +        compatible = "usb-c-connector";
+> +        label = "USB-C";
+> +        power-role = "dual";
+> +        try-power-role = "sink";
+> +        source-pdos = <PDO_FIXED(5000, 2000, PDO_FIXED_USB_COMM)>;
+> +        sink-pdos = <PDO_FIXED(5000, 2000, PDO_FIXED_USB_COMM)
+> +                     PDO_VAR(5000, 12000, 2000)>;
+> +        op-sink-microwatt = <10000000>;
+> +      };
+> +    };
+> diff --git a/Documentation/devicetree/bindings/usb/fcs,fusb302.txt b/Documentation/devicetree/bindings/usb/fcs,fusb302.txt
+> index ba2e32d500c02..60e4654297af7 100644
+> --- a/Documentation/devicetree/bindings/usb/fcs,fusb302.txt
+> +++ b/Documentation/devicetree/bindings/usb/fcs,fusb302.txt
+> @@ -9,7 +9,7 @@ Required sub-node:
+>  - connector : The "usb-c-connector" attached to the FUSB302 IC. The bindings
+>    of the connector node are specified in:
+>
+> -       Documentation/devicetree/bindings/connector/usb-connector.txt
+> +       Documentation/devicetree/bindings/connector/usb-connector.yaml
+>
+>
+>  Example:
+> diff --git a/Documentation/devicetree/bindings/usb/generic.txt b/Documentation/devicetree/bindings/usb/generic.txt
+> index e6790d2a4da9b..474e74c06522d 100644
+> --- a/Documentation/devicetree/bindings/usb/generic.txt
+> +++ b/Documentation/devicetree/bindings/usb/generic.txt
+> @@ -34,7 +34,7 @@ Optional properties:
+>   - usb-role-switch: boolean, indicates that the device is capable of assigning
+>                         the USB data role (USB host or USB device) for a given
+>                         USB connector, such as Type-C, Type-B(micro).
+> -                       see connector/usb-connector.txt.
+> +                       see connector/usb-connector.yaml.
+>
+>  This is an attribute to a USB controller such as:
+>
+> diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
+> index e0ae6096f7ac8..a82ca438aec1f 100644
+> --- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
+> +++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
+> @@ -34,7 +34,7 @@ Optional properties:
+>         dual-role mode.
+>         it's considered valid for compatibility reasons, not allowed for
+>         new bindings, and put into a usb-connector node.
+> -       see connector/usb-connector.txt.
+> +       see connector/usb-connector.yaml.
+>   - pinctrl-names : a pinctrl state named "default" is optional, and need be
+>         defined if auto drd switch is enabled, that means the property dr_mode
+>         is set as "otg", and meanwhile the property "mediatek,enable-manual-drd"
+> diff --git a/Documentation/devicetree/bindings/usb/mediatek,musb.txt b/Documentation/devicetree/bindings/usb/mediatek,musb.txt
+> index 2b8a87c90d9ea..5eedb02965622 100644
+> --- a/Documentation/devicetree/bindings/usb/mediatek,musb.txt
+> +++ b/Documentation/devicetree/bindings/usb/mediatek,musb.txt
+> @@ -23,7 +23,7 @@ Optional properties:
+>                       MTCMOS
+>
+>  Required child nodes:
+> - usb connector node as defined in bindings/connector/usb-connector.txt
+> + usb connector node as defined in bindings/connector/usb-connector.yaml
+>  Optional properties:
+>   - id-gpios        : input GPIO for USB ID pin.
+>   - vbus-gpios      : input GPIO for USB VBUS pin.
+> diff --git a/Documentation/devicetree/bindings/usb/richtek,rt1711h.txt b/Documentation/devicetree/bindings/usb/richtek,rt1711h.txt
+> index e3fc57e605ed6..6f8115db2ea9b 100644
+> --- a/Documentation/devicetree/bindings/usb/richtek,rt1711h.txt
+> +++ b/Documentation/devicetree/bindings/usb/richtek,rt1711h.txt
+> @@ -9,7 +9,7 @@ Required properties:
+>  Required sub-node:
+>  - connector: The "usb-c-connector" attached to the tcpci chip, the bindings
+>    of connector node are specified in
+> -  Documentation/devicetree/bindings/connector/usb-connector.txt
+> +  Documentation/devicetree/bindings/connector/usb-connector.yaml
+>
+>  Example :
+>  rt1711h@4e {
+> diff --git a/Documentation/devicetree/bindings/usb/ti,hd3ss3220.txt b/Documentation/devicetree/bindings/usb/ti,hd3ss3220.txt
+> index 25780e945b154..2bd21b22ce95b 100644
+> --- a/Documentation/devicetree/bindings/usb/ti,hd3ss3220.txt
+> +++ b/Documentation/devicetree/bindings/usb/ti,hd3ss3220.txt
+> @@ -9,7 +9,7 @@ Required sub-node:
+>   - connector: The "usb-c-connector" attached to the hd3ss3220 chip. The
+>     bindings of the connector node are specified in:
+>
+> -       Documentation/devicetree/bindings/connector/usb-connector.txt
+> +       Documentation/devicetree/bindings/connector/usb-connector.yaml
+>
+>  Example:
+>  hd3ss3220@47 {
+> diff --git a/Documentation/devicetree/bindings/usb/typec-tcpci.txt b/Documentation/devicetree/bindings/usb/typec-tcpci.txt
+> index 0dd1469e73180..2082522b1c326 100644
+> --- a/Documentation/devicetree/bindings/usb/typec-tcpci.txt
+> +++ b/Documentation/devicetree/bindings/usb/typec-tcpci.txt
+> @@ -13,7 +13,7 @@ Required properties:
+>  Required sub-node:
+>  - connector: The "usb-c-connector" attached to the tcpci chip, the bindings
+>    of connector node are specified in
+> -  Documentation/devicetree/bindings/connector/usb-connector.txt
+> +  Documentation/devicetree/bindings/connector/usb-connector.yaml
+>
+>  Example:
+>
+> diff --git a/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+> index 3d05ae56cb0dc..ec80641208a53 100644
+> --- a/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+> +++ b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+> @@ -8,11 +8,11 @@ Required properties:
+>  - compatible : should include "gpio-usb-b-connector" and "usb-b-connector".
+>  - id-gpios, vbus-gpios : input gpios, either one of them must be present,
+>         and both can be present as well.
+> -       see connector/usb-connector.txt
+> +       see connector/usb-connector.yaml
+>
+>  Optional properties:
+>  - vbus-supply : can be present if needed when supports dual role mode.
+> -       see connector/usb-connector.txt
+> +       see connector/usb-connector.yaml
+>
+>  - Sub-nodes:
+>         - port : can be present.
+> --
+> 2.25.0.265.gbab2e86ba0-goog
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
