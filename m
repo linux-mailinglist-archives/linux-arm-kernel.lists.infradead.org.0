@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7EB217954A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 17:30:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90370179555
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 17:32:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=WAdR2X8DukPzLXemFrB0zwL8P/U1puog9RlqwOsh9UU=; b=aPNIXaTKMjKtZeio2ZaY64Dg6h
-	wGYQwh5z/ontWw7Q/rE/AtB5uid6LeZrNI0cZuo1THRsd35M7pilSWmeC33VOpggMKI5g3SzE1sPz
-	BA5efMSvD/uCjtHwf5ZDfZcYOnXvuNYNbTj+PmS22BLWHlrzn9/0iOE+npSEgiqoV4XLEc2+Rvl+2
-	S3y/oOkbWZ+KHo98F53i+Rs8SFg9tnHdeaTb97Ri4XBOV7phP74V80WklB1Yf4eA8zFonBS6GgISl
-	nFsJ+gwVkODOUALDtfdeT0P4DruMJYBfKn8pby0PIh+5L/LYDaAZhsYZ/eFFbv5Af6gv0x1dPYt40
-	/WAhoxiQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oY3Hf7LNTB+AOg4XuWBMmYilLGzY4cU4hbNubb2q6rU=; b=RxuSQAbSBur8w/
+	i5dkWIac+TWZwtfQKZlywEg42++bgNkxdk3AeH3F49AfWMkICq10a/2cTPAFI5DXNXiiipxk/h28e
+	ZwUpuYEd51AWBDFRQI3yQXFFxAt+f0TkAqq66EJETFgk5XhYDRdHpTDGChcrhqZkc0wjE3woft7XQ
+	upPEmKPt5SLC1Md2K4hJroKE+MjbtvTjtaAjHTclWyDe7kx8xZeWPxSGQGsJAV+PbANh+7Eu/V6vc
+	d1qq0iKpusu8zUVSc58ez9P6YavrMQVON5RFHCx3PJ2vVn5g6xizq12JiPwSI+Jzk61AwmD+bhgTQ
+	job/cHF89l8mkge2CHGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Wup-0006b0-U7; Wed, 04 Mar 2020 16:30:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9WrE-00033N-Q1
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 16:26:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 70FCB31B;
- Wed,  4 Mar 2020 08:26:52 -0800 (PST)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 721AC3F6CF;
- Wed,  4 Mar 2020 08:26:51 -0800 (PST)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 13/13] firmware: arm_scmi: Add Base notifications support
-Date: Wed,  4 Mar 2020 16:25:58 +0000
-Message-Id: <20200304162558.48836-14-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200304162558.48836-1-cristian.marussi@arm.com>
-References: <20200304162558.48836-1-cristian.marussi@arm.com>
+	id 1j9WwF-0000Bb-JN; Wed, 04 Mar 2020 16:32:03 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9Wvw-0000Ai-KJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 16:31:45 +0000
+Received: by mail-ot1-f68.google.com with SMTP id f21so2582187otp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Mar 2020 08:31:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rFXkjTWHsplVbdF1oVVcfM4j+4ayf9BM6NdtGQfJExk=;
+ b=ogCT2uFfpAlBRRZoicnzuw51Twid/Hp9J+cvbhBr9/YNqni5r/IdIoKv6ismYo6uu0
+ ipXycTnOxrGCw/6FBKgygR4U9IQnhQH/3vlDYX9VXNH80f2+edM9mSp/juqlVGAbxufs
+ W6NpmiyJIxYdngy/Q+mqP2UBGuw6/mYt6ZA3DGo++aL2vS51D2qRJgWBFppVQNrC9gyc
+ eKAw9tYo7YEsroNFA8ytW+m2+49KZoN85soEXhjcrobqyF7JZtfFWR+hZDWKT1xVmp5h
+ MW2CIhoFaF48vyA6tsvOd97b/Z+HtL2njOnCeG29xpIJutw/jqOOPTkjOYRp39NF2i1O
+ cuCw==
+X-Gm-Message-State: ANhLgQ0GO4VVO73PrAhlP+uboC10f5Zo69+/L2n0ntsQ2NeoLOLNNDpO
+ I3qNmTpmEI3s5bio+CLgHg==
+X-Google-Smtp-Source: ADFU+vu1QDyc1xCSXEIrcz7/NjjRmHetwn5Pi7gqrRpZiLN1BGuoB0i/i/2pvrzhj/J3rgDEWZp6Rg==
+X-Received: by 2002:a9d:68ce:: with SMTP id i14mr3122164oto.233.1583339502993; 
+ Wed, 04 Mar 2020 08:31:42 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id b2sm6697131oii.20.2020.03.04.08.31.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Mar 2020 08:31:42 -0800 (PST)
+Received: (nullmailer pid 16517 invoked by uid 1000);
+ Wed, 04 Mar 2020 16:31:41 -0000
+Date: Wed, 4 Mar 2020 10:31:41 -0600
+From: Rob Herring <robh@kernel.org>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH V4 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transport
+Message-ID: <20200304163141.GA16460@bogus>
+References: <1583201219-15839-1-git-send-email-peng.fan@nxp.com>
+ <1583201219-15839-2-git-send-email-peng.fan@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1583201219-15839-2-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_082652_963613_A823D995 
-X-CRM114-Status: GOOD (  14.06  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200304_083144_669153_7A17A020 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,193 +94,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan.Cameron@Huawei.com, cristian.marussi@arm.com,
- james.quinlan@broadcom.com, lukasz.luba@arm.com, sudeep.holla@arm.com
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
+ f.fainelli@gmail.com, viresh.kumar@linaro.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, linux-imx@nxp.com, sudeep.holla@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make SCMI Base protocol register with the notification core.
+On Tue,  3 Mar 2020 10:06:58 +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> SCMI could use SMC/HVC as tranports. Since there is no
+> standardized id, we need to use vendor specific id. So
+> add into devicetree binding doc.
+> 
+> Also add arm,scmi-smc compatible string for smc/hvc transport
+> 
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+>  Documentation/devicetree/bindings/arm/arm,scmi.txt | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
 
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
-V3 --> V4
-- scmi_event field renamed
-V2 --> V3
-- added handle awareness
-V1 --> V2
-- simplified .set_notify_enabled() implementation moving the ALL_SRCIDs
-  logic out of protocol. ALL_SRCIDs logic is now in charge of the
-  notification core, together with proper reference counting of enables
-- switched to devres protocol-registration
----
- drivers/firmware/arm_scmi/base.c | 109 +++++++++++++++++++++++++++++++
- include/linux/scmi_protocol.h    |   8 +++
- 2 files changed, 117 insertions(+)
-
-diff --git a/drivers/firmware/arm_scmi/base.c b/drivers/firmware/arm_scmi/base.c
-index ce7d9203e41b..0582df9e0512 100644
---- a/drivers/firmware/arm_scmi/base.c
-+++ b/drivers/firmware/arm_scmi/base.c
-@@ -6,6 +6,9 @@
-  */
- 
- #include "common.h"
-+#include "notify.h"
-+
-+#define SCMI_BASE_NUM_SOURCES	1
- 
- enum scmi_base_protocol_cmd {
- 	BASE_DISCOVER_VENDOR = 0x3,
-@@ -29,6 +32,19 @@ struct scmi_msg_resp_base_attributes {
- 	__le16 reserved;
- };
- 
-+struct scmi_msg_base_error_notify {
-+	__le32 event_control;
-+#define BASE_TP_NOTIFY_ALL	BIT(0)
-+};
-+
-+struct scmi_base_error_notify_payld {
-+	__le32 agent_id;
-+	__le32 error_status;
-+#define IS_FATAL_ERROR(x)	((x) & BIT(31))
-+#define ERROR_CMD_COUNT(x)	FIELD_GET(GENMASK(9, 0), (x))
-+	__le64 msg_reports[8192];
-+};
-+
- /**
-  * scmi_base_attributes_get() - gets the implementation details
-  *	that are associated with the base protocol.
-@@ -222,6 +238,93 @@ static int scmi_base_discover_agent_get(const struct scmi_handle *handle,
- 	return ret;
- }
- 
-+static int scmi_base_error_notify(const struct scmi_handle *handle, bool enable)
-+{
-+	int ret;
-+	u32 evt_cntl = enable ? BASE_TP_NOTIFY_ALL : 0;
-+	struct scmi_xfer *t;
-+	struct scmi_msg_base_error_notify *cfg;
-+
-+	ret = scmi_xfer_get_init(handle, BASE_NOTIFY_ERRORS,
-+				 SCMI_PROTOCOL_BASE, sizeof(*cfg), 0, &t);
-+	if (ret)
-+		return ret;
-+
-+	cfg = t->tx.buf;
-+	cfg->event_control = cpu_to_le32(evt_cntl);
-+
-+	ret = scmi_do_xfer(handle, t);
-+
-+	scmi_xfer_put(handle, t);
-+	return ret;
-+}
-+
-+static bool scmi_base_set_notify_enabled(const struct scmi_handle *handle,
-+					 u8 evt_id, u32 src_id, bool enable)
-+{
-+	int ret;
-+
-+	ret = scmi_base_error_notify(handle, enable);
-+	if (ret)
-+		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLED - evt[%X] ret:%d\n",
-+			SCMI_PROTOCOL_BASE, evt_id, ret);
-+
-+	return !ret ? true : false;
-+}
-+
-+static void *scmi_base_fill_custom_report(u8 evt_id, u64 timestamp,
-+					  const void *payld, size_t payld_sz,
-+					  void *report, u32 *src_id)
-+{
-+	void *rep = NULL;
-+
-+	switch (evt_id) {
-+	case BASE_ERROR_EVENT:
-+	{
-+		int i;
-+		const struct scmi_base_error_notify_payld *p = payld;
-+		struct scmi_base_error_report *r = report;
-+
-+		/*
-+		 * BaseError notification payload is variable in size but
-+		 * up to a maximum length determined by the struct ponted by p.
-+		 * Instead payld_sz is the effective length of this notification
-+		 * payload so cannot be greater of the maximum allowed size as
-+		 * pointed by p.
-+		 */
-+		if (sizeof(*p) < payld_sz)
-+			break;
-+
-+		r->timestamp = timestamp;
-+		r->agent_id = le32_to_cpu(p->agent_id);
-+		r->fatal = IS_FATAL_ERROR(le32_to_cpu(p->error_status));
-+		r->cmd_count = ERROR_CMD_COUNT(le32_to_cpu(p->error_status));
-+		for (i = 0; i < r->cmd_count; i++)
-+			r->reports[i] = le64_to_cpu(p->msg_reports[i]);
-+		*src_id = 0;
-+		rep = r;
-+		break;
-+	}
-+	default:
-+		break;
-+	}
-+
-+	return rep;
-+}
-+
-+static const struct scmi_event base_events[] = {
-+	{
-+		.id = BASE_ERROR_EVENT,
-+		.max_payld_sz = 8192,
-+		.max_report_sz = sizeof(struct scmi_base_error_report),
-+	},
-+};
-+
-+static const struct scmi_protocol_event_ops base_event_ops = {
-+	.set_notify_enabled = scmi_base_set_notify_enabled,
-+	.fill_custom_report = scmi_base_fill_custom_report,
-+};
-+
- int scmi_base_protocol_init(struct scmi_handle *h)
- {
- 	int id, ret;
-@@ -256,6 +359,12 @@ int scmi_base_protocol_init(struct scmi_handle *h)
- 	dev_dbg(dev, "Found %d protocol(s) %d agent(s)\n", rev->num_protocols,
- 		rev->num_agents);
- 
-+	scmi_register_protocol_events(handle,
-+				      SCMI_PROTOCOL_BASE, (4 * PAGE_SIZE),
-+				      &base_event_ops, base_events,
-+				      ARRAY_SIZE(base_events),
-+				      SCMI_BASE_NUM_SOURCES);
-+
- 	for (id = 0; id < rev->num_agents; id++) {
- 		scmi_base_discover_agent_get(handle, id, name);
- 		dev_dbg(dev, "Agent %d: %s\n", id, name);
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 91c5fdf567d5..3a1bc8014f51 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -420,4 +420,12 @@ struct scmi_reset_issued_report {
- 	u32	reset_state;
- };
- 
-+struct scmi_base_error_report {
-+	ktime_t	timestamp;
-+	u32	agent_id;
-+	bool	fatal;
-+	u16	cmd_count;
-+	u64	reports[8192];
-+};
-+
- #endif /* _LINUX_SCMI_PROTOCOL_H */
--- 
-2.17.1
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
