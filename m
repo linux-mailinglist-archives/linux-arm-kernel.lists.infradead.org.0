@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE4E9179005
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:03:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87305179017
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Mar 2020 13:13:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L7aGeguQtIjvDSjC/wo3K3LjO6VzoFRaxG52DA8Nhg0=; b=TLdoUzdWk/Njh9
-	lPGWUL08f87SDmp7YwkB7IOvihNQxfVV51UBfbHgJ2Xt14zF8nq3gdPHdnEFQ2Ye4qh2fNd29CniW
-	TEDeHBWDKrvD3hlhupDr+yF5P2BNOkVn1HSK1m4TDwVwR6djQaS9wo2VEkKyRN9n2ycjjJ12yy7Fl
-	0eU08Nl86nUaPVwXcf5RHDwe0UBYSK7PQmqk78A9g3c6+GAkgvuym/AeoZtT7l04MrI0F+Hx0ui7r
-	sfSRcbvDnmy1V7AE3oYEyr/SoDS6xJSD1GEuCr0tMXt4aab3+GIEpm7/Dn2wXMGHqe5PLbUkA1044
-	YiJA/9TRclWaWWhgdTTw==;
+	List-Owner; bh=+Ig3Bq3fYwCQ9CZscMUOCKeginxFz2NQHrHrjuh+wOo=; b=cwdHV1QkrO4Ynv
+	4dSVfefOMH7V8elnru6ReQn4anBc207iZVUSAlXiMH4XHSJIsUYtAIqMQq6XAKcl5G3R2+CzDMdin
+	GAYtL9AsGV3dDuosd9Yc6rIDYKj9B3hFZhEzpX+rNAhT2LqeKQnkLHW8kHMuuLBrYaMC5ljgQTsmf
+	ma+kkS85CEyMdGpBebZvnfyvZn00nVLlYrXeCjvBU2vNUtlXj+/7OdirOONNqyAHTh/ee0uxENO4G
+	G5lzEuYNm0f01uvZGRX0dcATBbBuf+PUwvAYq0GYJeZL8ggX/G7mXAsKHt6B89Ru3IeXRsQJrN5Da
+	dU8nhT3U52yfiPEyH1hQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9SkP-0004jK-Ei; Wed, 04 Mar 2020 12:03:33 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9SkJ-0004iM-2O
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:03:28 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1j9SkE-00046M-B3; Wed, 04 Mar 2020 13:03:22 +0100
-Received: from pza by lupine with local (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1j9SkB-0006zp-D7; Wed, 04 Mar 2020 13:03:19 +0100
-Message-ID: <a2878b95da2afaeb0eac1a8f2f1991ef5ff9cace.camel@pengutronix.de>
-Subject: Re: [PATCH 25/89] reset: simple: Add reset callback
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Maxime Ripard <maxime@cerno.tech>, Nicolas Saenz Julienne
- <nsaenzjulienne@suse.de>, Eric Anholt <eric@anholt.net>
-Date: Wed, 04 Mar 2020 13:03:19 +0100
-In-Reply-To: <e7e2c84206f2cc8c0cb36cd734226f73f3331198.1582533919.git-series.maxime@cerno.tech>
-References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <e7e2c84206f2cc8c0cb36cd734226f73f3331198.1582533919.git-series.maxime@cerno.tech>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1j9Ste-0008F2-0f; Wed, 04 Mar 2020 12:13:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9StV-0008EQ-GY
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Mar 2020 12:12:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D02731B;
+ Wed,  4 Mar 2020 04:12:54 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15F823F534;
+ Wed,  4 Mar 2020 04:12:52 -0800 (PST)
+Date: Wed, 4 Mar 2020 12:12:51 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v2 3/4] cpuidle: psci: Split psci_dt_cpu_init_idle()
+Message-ID: <20200304121250.GD25004@bogus>
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
+ <20200303203559.23995-4-ulf.hansson@linaro.org>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20200303203559.23995-4-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_040327_114220_6DD765CB 
-X-CRM114-Status: GOOD (  19.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200304_041257_596297_1CF38D40 
+X-CRM114-Status: GOOD (  18.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,104 +63,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
-
-On Mon, 2020-02-24 at 10:06 +0100, Maxime Ripard wrote:
-> The reset-simple code lacks a reset callback that is still pretty easy to
-> implement. The only real thing to consider is the delay needed for a device
-> to be reset, so let's expose that as part of the reset-simple driver data.
+On Tue, Mar 03, 2020 at 09:35:58PM +0100, Ulf Hansson wrote:
+> To make the code a bit more readable, but also to prepare some code to be
+> re-used, let's move the OSI specific initialization out of the
+> psci_dt_cpu_init_idle() and into a separate function.
 >
-> Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> Fixes: a65a397f2451 ("cpuidle: psci: Add support for PM domains by using genpd")
 
-This shoulod be done in such a way that simple reset drivers which do
-not set the reset delay continue to return -ENOTSUPP from
-reset_control_reset().
+Not sure if this fixes anything but I am fine to have this if next one is
+a real fix.
 
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 > ---
->  drivers/reset/reset-simple.c       | 21 +++++++++++++++++++++
->  include/linux/reset/reset-simple.h |  4 ++++
->  2 files changed, 25 insertions(+)
-> 
-> diff --git a/drivers/reset/reset-simple.c b/drivers/reset/reset-simple.c
-> index c854aa351640..7a8c56512ae9 100644
-> --- a/drivers/reset/reset-simple.c
-> +++ b/drivers/reset/reset-simple.c
-> @@ -11,6 +11,7 @@
->   * Maxime Ripard <maxime.ripard@free-electrons.com>
->   */
->  
-> +#include <linux/delay.h>
->  #include <linux/device.h>
->  #include <linux/err.h>
->  #include <linux/io.h>
-> @@ -63,6 +64,25 @@ static int reset_simple_deassert(struct reset_controller_dev *rcdev,
->  	return reset_simple_update(rcdev, id, false);
+>
+> Changes in v2:
+> 	- Adopted suggestions from Stephen to use IS_ERR_OR_NULL and
+> 	PTR_ERR_OR_ZERO, which further clarified the code.
+>
+> ---
+>  drivers/cpuidle/cpuidle-psci.c | 46 ++++++++++++++++++++--------------
+>  1 file changed, 27 insertions(+), 19 deletions(-)
+>
+> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+> index edd7a54ef0d3..bae9140a65a5 100644
+> --- a/drivers/cpuidle/cpuidle-psci.c
+> +++ b/drivers/cpuidle/cpuidle-psci.c
+> @@ -160,6 +160,29 @@ int __init psci_dt_parse_state_node(struct device_node *np, u32 *state)
+>  	return 0;
 >  }
->  
-> +static int reset_simple_reset(struct reset_controller_dev *rcdev,
-> +			       unsigned long id)
+>
+> +static int __init psci_dt_cpu_init_topology(struct cpuidle_driver *drv,
+> +					    struct psci_cpuidle_data *data,
+> +					    unsigned int state_count, int cpu)
 > +{
-> +	struct reset_simple_data *data = to_reset_simple_data(rcdev);
-> +	int ret;
-
-You could just return -ENOTSUPP here if data->reset_ms == 0.
-
-> +	ret = reset_simple_assert(rcdev, id);
-> +	if (ret)
-> +		return ret;
+> +	/* Currently limit the hierarchical topology to be used in OSI mode. */
+> +	if (!psci_has_osi_support())
+> +		return 0;
 > +
-> +	mdelay(data->reset_ms);
-
-Have you considered specifying the delay in microseconds instead?
-That would allow to use usleep_range() for shorter delays.
-
-> +	ret = reset_simple_deassert(rcdev, id);
-> +	if (ret)
-> +		return ret;
+> +	data->dev = psci_dt_attach_cpu(cpu);
+> +	if (IS_ERR_OR_NULL(data->dev))
+> +		return PTR_ERR_OR_ZERO(data->dev);
 > +
-> +	return 0;
-> +}
-> +
->  static int reset_simple_status(struct reset_controller_dev *rcdev,
->  			       unsigned long id)
->  {
-> @@ -80,6 +100,7 @@ static int reset_simple_status(struct reset_controller_dev *rcdev,
->  const struct reset_control_ops reset_simple_ops = {
->  	.assert		= reset_simple_assert,
->  	.deassert	= reset_simple_deassert,
-> +	.reset		= reset_simple_reset,
->  	.status		= reset_simple_status,
->  };
->  EXPORT_SYMBOL_GPL(reset_simple_ops);
-> diff --git a/include/linux/reset/reset-simple.h b/include/linux/reset/reset-simple.h
-> index 08ccb25a55e6..a5887f6cbe50 100644
-> --- a/include/linux/reset/reset-simple.h
-> +++ b/include/linux/reset/reset-simple.h
-> @@ -27,6 +27,9 @@
->   * @status_active_low: if true, bits read back as cleared while the reset is
->   *                     asserted. Otherwise, bits read back as set while the
->   *                     reset is asserted.
-> + * @reset_ms: Minimum delay in milliseconds needed that needs to be
-> + *            waited for between an assert and a deassert to reset the
-> + *            device.
 
-If multiple consumers with different delay requirements are connected to
-this reset controllers, this must the largest minimum delay. Could you
-add mention for this in the comment?
+This is what I was asking to do before this was merged when I meant to drop
+if(data->dev) check. So happy to see it :)
 
-regards
-Philipp
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
