@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A186017AB7A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:14:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA5EF17AB6D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:14:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qKRWIDDNgm4oMQyiR/zCtxK2viJphqNxqi1HYRMWY8A=; b=RmATt7sx0xreCo
-	HT4+VQ/n3oKOSJMUcTYd1vMTtKha7gTmLWBsfxnmSIiG4F5zewcViVPPyTriuD4TtJ5lahMzUUsDp
-	hmDgadWByCvgM1hdEVdyhWb6vLg3U7V5OL0n7gvLlfku6RJZB/GHUl1qni/mAM4fKYEwyo0KLtn1z
-	E4R1P2Qix5Z/4QmFkxysZtEhy1DtJwg8G/wPTloxa7QfAd2HWa1WN9zLoPfMXOT7yPRVP0l/34uss
-	ppYCru2u37gkkSKrDApELKJJIFHAjgGUhVluoRtcgvdvzJQ9xNy9qIErIAeA2CHuth3pR0RkcSUzO
-	2usUFNNeXF6iWJpYzkqQ==;
+	List-Owner; bh=1GA4eFTsnZ05V1dspVoh7AZuNbwBVcUtPkS/ug02Lh4=; b=czsHnwkrx1j/02
+	oHw/0h7NH3il3IPXTgmJTY/GLzlczuRYYexGXq0VieYOVro4oGA2snIjUhRCPAYG0CM6EmyiG1T3w
+	mi6MYzEdOJYhdFkGsPMpYQRT6trQpwxIhI7QovAMocfy5C0IBdnU+9638U5twz6QXzVmvYaxUou/Z
+	nkiePDiz/gHZf0C0VgU6l83me0ZlNbG4/jhuGXT35c8Ukg8gVLs6tMs1JV1XSG8ruHYRnJ8Lo+dkb
+	qL3OLR9TXsU0MenaoRbVkhtX1qx2IZ9S+upFjZqIwrY3MY8RFn/VvcMxEt8gKk/uyojUIToq6d3yC
+	CE32IYuyQA3Tu20xiZRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9u58-0002kA-N1; Thu, 05 Mar 2020 17:14:46 +0000
+	id 1j9u4Y-0002G4-Iq; Thu, 05 Mar 2020 17:14:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9u4M-0002Dk-4m
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:14:05 +0000
+ id 1j9u4N-0002Dm-C1
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:14:04 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1660E2166E;
- Thu,  5 Mar 2020 17:13:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5211B20870;
+ Thu,  5 Mar 2020 17:13:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583428437;
- bh=apxNGTTawxO88AhaRt5S23Z7rTLns5Lk95jgyvF3/SA=;
+ s=default; t=1583428439;
+ bh=wgmoLWEcseM6n7d6+U/LOI7cmzjZ0l1QeI4r/EulqzA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pcz/2oswnYUZTcyl/uqXNbSEokJjxU3pwudTbJXkyBd7TTTf4Lq9abNMExkNQKHpj
- Eqfvz/uWSm6lZDNwziJIRo92u30OyyvgJNcepQlhYSxnDFvi8tUasb2ZvTLQKn+z+e
- f+3Zqa3xyPbqQKqrhSf4F4gN0sMaYazzTmAPvEXg=
+ b=NsrOvlICqq/ozNDC9kCUr8WZMGBm6UF9797vc65IPh6+AQl6T3aI+jAhpKfXS/6tF
+ kUpYnnvWGkfH5NUmYgVjMmwEKu/Ka37v83YTLtCwYArfWZPcu1OvNpBPjnuXbsIZyX
+ hfWsynSdVM62aZfMdHMsCXEvOm5QXN5pZLuLBblo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 35/67] net: ll_temac: Fix race condition causing
- TX hang
-Date: Thu,  5 Mar 2020 12:12:36 -0500
-Message-Id: <20200305171309.29118-35-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 36/67] net: ll_temac: Add more error handling of
+ dma_map_single() calls
+Date: Thu,  5 Mar 2020 12:12:37 -0500
+Message-Id: <20200305171309.29118-36-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200305171309.29118-1-sashal@kernel.org>
 References: <20200305171309.29118-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_091402_578010_7C277217 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20200305_091402_557961_4D80DDDB 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,65 +90,74 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Esben Haabendal <esben@geanix.com>
 
-[ Upstream commit 84823ff80f7403752b59e00bb198724100dc611c ]
+[ Upstream commit d07c849cd2b97d6809430dfb7e738ad31088037a ]
 
-It is possible that the interrupt handler fires and frees up space in
-the TX ring in between checking for sufficient TX ring space and
-stopping the TX queue in temac_start_xmit. If this happens, the
-queue wake from the interrupt handler will occur before the queue is
-stopped, causing a lost wakeup and the adapter's transmit hanging.
+This adds error handling to the remaining dma_map_single() calls, so that
+behavior is well defined if/when we run out of DMA memory.
 
-To avoid this, after stopping the queue, check again whether there is
-sufficient space in the TX ring. If so, wake up the queue again.
-
-This is a port of the similar fix in axienet driver,
-commit 7de44285c1f6 ("net: axienet: Fix race condition causing TX hang").
-
-Fixes: 23ecc4bde21f ("net: ll_temac: fix checksum offload logic")
+Fixes: 92744989533c ("net: add Xilinx ll_temac device driver")
 Signed-off-by: Esben Haabendal <esben@geanix.com>
 Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/xilinx/ll_temac_main.c | 19 ++++++++++++++++---
- 1 file changed, 16 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/xilinx/ll_temac_main.c | 26 +++++++++++++++++++--
+ 1 file changed, 24 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
-index 21c1b4322ea78..fd578568b3bff 100644
+index fd578568b3bff..fd4231493449b 100644
 --- a/drivers/net/ethernet/xilinx/ll_temac_main.c
 +++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
-@@ -788,6 +788,9 @@ static void temac_start_xmit_done(struct net_device *ndev)
- 		stat = be32_to_cpu(cur_p->app0);
- 	}
+@@ -367,6 +367,8 @@ static int temac_dma_bd_init(struct net_device *ndev)
+ 		skb_dma_addr = dma_map_single(ndev->dev.parent, skb->data,
+ 					      XTE_MAX_JUMBO_FRAME_SIZE,
+ 					      DMA_FROM_DEVICE);
++		if (dma_mapping_error(ndev->dev.parent, skb_dma_addr))
++			goto out;
+ 		lp->rx_bd_v[i].phys = cpu_to_be32(skb_dma_addr);
+ 		lp->rx_bd_v[i].len = cpu_to_be32(XTE_MAX_JUMBO_FRAME_SIZE);
+ 		lp->rx_bd_v[i].app0 = cpu_to_be32(STS_CTRL_APP0_IRQONEND);
+@@ -863,12 +865,13 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+ 	skb_dma_addr = dma_map_single(ndev->dev.parent, skb->data,
+ 				      skb_headlen(skb), DMA_TO_DEVICE);
+ 	cur_p->len = cpu_to_be32(skb_headlen(skb));
++	if (WARN_ON_ONCE(dma_mapping_error(ndev->dev.parent, skb_dma_addr)))
++		return NETDEV_TX_BUSY;
+ 	cur_p->phys = cpu_to_be32(skb_dma_addr);
+ 	ptr_to_txbd((void *)skb, cur_p);
  
-+	/* Matches barrier in temac_start_xmit */
-+	smp_mb();
-+
- 	netif_wake_queue(ndev);
- }
+ 	for (ii = 0; ii < num_frag; ii++) {
+-		lp->tx_bd_tail++;
+-		if (lp->tx_bd_tail >= TX_BD_NUM)
++		if (++lp->tx_bd_tail >= TX_BD_NUM)
+ 			lp->tx_bd_tail = 0;
  
-@@ -830,9 +833,19 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
- 	cur_p = &lp->tx_bd_v[lp->tx_bd_tail];
- 
- 	if (temac_check_tx_bd_space(lp, num_frag + 1)) {
--		if (!netif_queue_stopped(ndev))
--			netif_stop_queue(ndev);
--		return NETDEV_TX_BUSY;
-+		if (netif_queue_stopped(ndev))
+ 		cur_p = &lp->tx_bd_v[lp->tx_bd_tail];
+@@ -876,6 +879,25 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+ 					      skb_frag_address(frag),
+ 					      skb_frag_size(frag),
+ 					      DMA_TO_DEVICE);
++		if (dma_mapping_error(ndev->dev.parent, skb_dma_addr)) {
++			if (--lp->tx_bd_tail < 0)
++				lp->tx_bd_tail = TX_BD_NUM - 1;
++			cur_p = &lp->tx_bd_v[lp->tx_bd_tail];
++			while (--ii >= 0) {
++				--frag;
++				dma_unmap_single(ndev->dev.parent,
++						 be32_to_cpu(cur_p->phys),
++						 skb_frag_size(frag),
++						 DMA_TO_DEVICE);
++				if (--lp->tx_bd_tail < 0)
++					lp->tx_bd_tail = TX_BD_NUM - 1;
++				cur_p = &lp->tx_bd_v[lp->tx_bd_tail];
++			}
++			dma_unmap_single(ndev->dev.parent,
++					 be32_to_cpu(cur_p->phys),
++					 skb_headlen(skb), DMA_TO_DEVICE);
 +			return NETDEV_TX_BUSY;
-+
-+		netif_stop_queue(ndev);
-+
-+		/* Matches barrier in temac_start_xmit_done */
-+		smp_mb();
-+
-+		/* Space might have just been freed - check again */
-+		if (temac_check_tx_bd_space(lp, num_frag))
-+			return NETDEV_TX_BUSY;
-+
-+		netif_wake_queue(ndev);
- 	}
- 
- 	cur_p->app0 = 0;
++		}
+ 		cur_p->phys = cpu_to_be32(skb_dma_addr);
+ 		cur_p->len = cpu_to_be32(skb_frag_size(frag));
+ 		cur_p->app0 = 0;
 -- 
 2.20.1
 
