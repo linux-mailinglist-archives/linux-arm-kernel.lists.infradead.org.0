@@ -2,73 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 619C017A10F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 09:17:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3112517A125
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 09:22:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Pt5/JGZAO5YbNxfxRLMRMmfwQx2td/6PpqP/bKuprmw=; b=OJAcJ+LOzl8OZldvwIgcTEtNzO
-	gFSW+LtclTYenJ1zePQX8y8MpLWn3wSQqYsYx+PCNHfxS7mZ5xhSaWK3cFeELZASw0nNUB9GB59OK
-	utrZuWlKkO/OVXWDZaQb62ONJ9adMqlBRKpFrIKVpukBkSrYRrKrmjW4naAWmm8/qmFd6KHX3A3Cz
-	K+qhCp4NpM4iklsfSuylTPIBJkeOdqkcM9S4XXG1rVNfWtrc2iUkd7uNOvLGM2GGHqncPRu7icwh+
-	qvWVp/CRxwm8H9jwYBpyRMIBeJjRRDOIq8r5dxUhxOtlu/WAEkO6vc7LyUPOqUyddcpx5FkWMvf38
-	20f2DBDQ==;
+	bh=kXOG/a9hQqfnEjqeaTBAAQMoPh8pE8H4sE6aHaGOVG0=; b=Bb3L/TkfX85buqbVxW96NmD9Kb
+	X2th27UPPwrzZT8cYF7DOy+0Y5q0aWkKdmSqX+mQJmpFpjViHukopuXv/CAA8vqcx/9WyCG+g+3Qe
+	FP5XPNUYS4qkj8rbZL865eL+36GzOJHtKDONCu6C7Hv3QHEEH9FHagPmMn18XbAolP8X5ewSSMCTH
+	MvcphmKJfedDHKgiVaPqmTT7SJVmko/O9nbUsRpjwJlunBNKtEnFQ0gMCRBlQSO99vOIpy6WlDMDn
+	C0TiBllnvGlAYBoVTs11qE8Vwk/M+hBS4e1DgxorONck/OgAJnQY/dfDw14lWB+60v0++RgTM3hwH
+	GxgTwcYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9lgu-0003Xn-Iv; Thu, 05 Mar 2020 08:17:12 +0000
-Received: from lucky1.263xmail.com ([211.157.147.133])
+	id 1j9llk-0005sH-Ga; Thu, 05 Mar 2020 08:22:12 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9lgf-0003RL-9a
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 08:16:59 +0000
-Received: from localhost (unknown [192.168.167.209])
- by lucky1.263xmail.com (Postfix) with ESMTP id 3A7D89F87B;
- Thu,  5 Mar 2020 16:16:34 +0800 (CST)
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-ADDR-CHECKED4: 1
-X-ANTISPAM-LEVEL: 2
-X-ABS-CHECKED: 0
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P32633T140274034538240S1583396184137610_; 
- Thu, 05 Mar 2020 16:16:33 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <104baa6c45971adc002ce26f794e2d59>
-X-RL-SENDER: cl@rock-chips.com
-X-SENDER: cl@rock-chips.com
-X-LOGIN-NAME: cl@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-X-System-Flag: 0
-From: <cl@rock-chips.com>
-To: heiko@sntech.de
-Subject: [PATCH v1 1/1] sched/fair: do not preempt current task if it is going
- to call schedule()
-Date: Thu,  5 Mar 2020 16:16:11 +0800
-Message-Id: <20200305081611.29323-2-cl@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200305081611.29323-1-cl@rock-chips.com>
-References: <20200305081611.29323-1-cl@rock-chips.com>
+ id 1j9llc-0005r6-Vb
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 08:22:06 +0000
+Received: by mail-wm1-x344.google.com with SMTP id u9so4669229wml.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Mar 2020 00:22:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:subject:in-reply-to:date:message-id
+ :mime-version; bh=wy8PG+5094H0kwoE9azcIFtGBXe17DljDLj1gap6KjQ=;
+ b=XQhSxSzu+98TQDBaQbX8qV6wCsTohykSPQpUarrD/+uUdM2OhBCJRgfHiQgAeL2bqG
+ G87zQyeBW8INB88/a53JTOHfVNbpSp170zFo6ePYkoaYwrIkfClzdYU/ZE072Pq2MwIZ
+ Gm1D0BQH7FmM5AiBCcb01izbcw1l1h42XG0YJgv8L9V0og6/XIQgYZ8AQ8mGWH/HAM3a
+ cZHIb+VqXxsktjtO3C4zj7LMmWlcHd766DKDxx+7HwWMdGqV5C5Nfz3aJBhl9G60u4ZM
+ iJ2Nzj+6dVprj7KACOhkfYoW0JHDsxB7scJbNkpoq+xbFn94AW9l5OBu7i1aWpIZEQv9
+ PNWw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=wy8PG+5094H0kwoE9azcIFtGBXe17DljDLj1gap6KjQ=;
+ b=HtluyKlknVdingOdgZRSY5oPpPBlDAgO0t7pGz0iaupEURMvHLepXvWfC5y/wksiur
+ EGIcczXc7ZuMMc+qbZ0h2aIm6hmldLhlV1P0XbkT1wa6ju7H2Nz+G+w+SDXuc/OJia4a
+ 5g2821Dfl1V5XljTaYXQfvfq9ysCXScpuB9R6YCsEp9sY54jFXXscTSSg0JsE+sFGsXk
+ pJIZnHibM/AMm3Yix/LeC+ZhjgLFFB3hI8bxRjokFx9nZ2s6egW55KMJHQdrcWNqwzue
+ 0ZK96qaWcOwlPfDeZtTuANeyVPDWGbVs3B4zIRTO/ThM1y/fPMFenm2u47/TP9U4rQ67
+ RHvw==
+X-Gm-Message-State: ANhLgQ0NAWfjEtdENDhny33L3jHNXAk8MwcGCwitECJEyAMZLnZ33rOW
+ WjjV4vKxpew3pvtACzpFBka+KA==
+X-Google-Smtp-Source: ADFU+vtQyU4UfDH9d2/TXDERF+INdtSbx2/ljMK+EMqmPS+JCjhE5+wuGnUWn9fPAey5YSeP3jbcRA==
+X-Received: by 2002:a1c:dd45:: with SMTP id u66mr8644559wmg.154.1583396523188; 
+ Thu, 05 Mar 2020 00:22:03 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id m16sm11943105wrs.67.2020.03.05.00.22.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Mar 2020 00:22:02 -0800 (PST)
+References: <1582985353-83371-1-git-send-email-christianshewitt@gmail.com>
+ <1582985353-83371-3-git-send-email-christianshewitt@gmail.com>
+ <cc4c54c8-aa7f-8755-dc35-94e32d0019cd@baylibre.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 2/2] arm64: dts: meson-g12b-gtking: add initial device-tree
+In-reply-to: <cc4c54c8-aa7f-8755-dc35-94e32d0019cd@baylibre.com>
+Date: Thu, 05 Mar 2020 09:22:01 +0100
+Message-ID: <1jftencity.fsf@starbuckisacylon.baylibre.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_001657_823891_F0466034 
-X-CRM114-Status: GOOD (  16.19  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200305_002205_020053_42A51232 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.157.147.133 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,159 +101,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: juri.lelli@redhat.com, mark.rutland@arm.com, geert+renesas@glider.be,
- peterz@infradead.org, catalin.marinas@arm.com, bsegall@google.com,
- will@kernel.org, mpe@ellerman.id.au, linux@armlinux.org.uk,
- dietmar.eggemann@arm.com, ben.dooks@codethink.co.uk, mgorman@suse.de,
- Liang Chen <cl@rock-chips.com>, huangtao@rock-chips.com, keescook@chromium.org,
- anshuman.khandual@arm.com, rostedt@goodmis.org, tglx@linutronix.de,
- surenb@google.com, mingo@redhat.com, allison@lohutok.net,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, luto@amacapital.net,
- george_davis@mentor.com, sudeep.holla@arm.com, akpm@linux-foundation.org,
- info@metux.net, kstewart@linuxfoundation.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Liang Chen <cl@rock-chips.com>
 
-when we create a kthread with ktrhead_create_on_cpu(),the child thread
-entry is ktread.c:ktrhead() which will be preempted by the parent after
-call complete(done) while schedule() is not called yet,then the parent
-will call wait_task_inactive(child) but the child is still on the runqueue,
-so the parent will schedule_hrtimeout() for 1 jiffy,it will waste a lot of
-time,especially on startup.
+On Tue 03 Mar 2020 at 15:50, Neil Armstrong <narmstrong@baylibre.com> wrote:
 
-  parent                             child
-ktrhead_create_on_cpu()
-  wait_fo_completion(&done) -----> ktread.c:ktrhead()
-                             |----- complete(done);--wakeup and preempted by parent
- kthread_bind() <------------|  |-> schedule();--dequeue here
-  wait_task_inactive(child)     |
-   schedule_hrtimeout(1 jiffy) -|
+> On 29/02/2020 15:09, Christian Hewitt wrote:
+>> The Shenzen AZW (Beelink) GT-King is based on the Amlogic W400 reference
+>> board with an S922X chip.
+>> 
+>> - 4GB LPDDR4 RAM
+>> - 64GB eMMC storage
+>> - 10/100/1000 Base-T Ethernet
+>> - AP6356S Wireless (802.11 a/b/g/n/ac, BT 4.1)
+>> - HDMI 2.1 video
+>> - S/PDIF optical output
+>> - Analogue audio output
+>> - 1x USB 2.0 port
+>> - 2x USB 3.0 ports
+>> - IR receiver
+>> - 1x micro SD card slot
+>> 
+>> The device-tree is largely based on meson-g12b-ugoos-am6.
 
-So we hope the child just wakeup parent but not preempted by parent, and the
-child is going to call schedule() soon,then the parent will not call
-schedule_hrtimeout(1 jiffy) as the child is already dequeue.
+largely indeed ... Would you mind pointing out why the am6 dts can't be
+used and why this one is needed ?
 
-The same issue for ktrhead_park()&&kthread_parkme().
-This patch can save 120ms on rk312x startup with CONFIG_HZ=300.
+Maybe I missed something but they look the same to me.
 
-Signed-off-by: Liang Chen <cl@rock-chips.com>
----
- arch/arm/include/asm/thread_info.h   |  1 +
- arch/arm64/include/asm/thread_info.h |  1 +
- include/linux/sched.h                | 15 +++++++++++++++
- kernel/kthread.c                     |  4 ++++
- kernel/sched/fair.c                  |  4 ++++
- 5 files changed, 25 insertions(+)
+>> 
+>> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+>> ---
+>>  arch/arm64/boot/dts/amlogic/Makefile              |   1 +
+>>  arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts | 557 ++++++++++++++++++++++
+>>  2 files changed, 558 insertions(+)
+>>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts
+>> 
+>> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
+>> index eef0045..1fd28e8 100644
+>> --- a/arch/arm64/boot/dts/amlogic/Makefile
+>> +++ b/arch/arm64/boot/dts/amlogic/Makefile
+>> @@ -3,6 +3,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-axg-s400.dtb
+>>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-sei510.dtb
+>>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-u200.dtb
+>>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
+>> +dtb-$(CONFIG_ARCH_MESON) += meson-g12b-gtking.dtb
+>>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-a311d-khadas-vim3.dtb
+>>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-s922x-khadas-vim3.dtb
+>>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-odroid-n2.dtb
+>> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts
+>> new file mode 100644
+>> index 0000000..819f208
+>> --- /dev/null
+>> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts
+>> @@ -0,0 +1,557 @@
+>> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+>> +/*
+>> + * Copyright (c) 2019 BayLibre, SAS
+>> + * Author: Neil Armstrong <narmstrong@baylibre.com>
+>> + * Copyright (c) 2019 Christian Hewitt <christianshewitt@gmail.com>
+>> + */
+>> +
 
-diff --git a/arch/arm/include/asm/thread_info.h b/arch/arm/include/asm/thread_info.h
-index 0d0d5178e2c3..51802991ba1f 100644
---- a/arch/arm/include/asm/thread_info.h
-+++ b/arch/arm/include/asm/thread_info.h
-@@ -145,6 +145,7 @@ extern int vfp_restore_user_hwstate(struct user_vfp *,
- #define TIF_USING_IWMMXT	17
- #define TIF_MEMDIE		18	/* is terminating due to OOM killer */
- #define TIF_RESTORE_SIGMASK	20
-+#define TIF_GOING_TO_SCHED	27	/* task is going to call schedule() */
- 
- #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
- #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index f0cec4160136..332786f11dc3 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -78,6 +78,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define TIF_SVE_VL_INHERIT	24	/* Inherit sve_vl_onexec across exec */
- #define TIF_SSBD		25	/* Wants SSB mitigation */
- #define TIF_TAGGED_ADDR		26	/* Allow tagged user addresses */
-+#define TIF_GOING_TO_SCHED	27	/* task is going to call schedule() */
- 
- #define _TIF_SIGPENDING		(1 << TIF_SIGPENDING)
- #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
-diff --git a/include/linux/sched.h b/include/linux/sched.h
-index 04278493bf15..cb9058d2cf0b 100644
---- a/include/linux/sched.h
-+++ b/include/linux/sched.h
-@@ -1768,6 +1768,21 @@ static inline int test_tsk_need_resched(struct task_struct *tsk)
- 	return unlikely(test_tsk_thread_flag(tsk,TIF_NEED_RESCHED));
- }
- 
-+static inline void set_tsk_going_to_sched(struct task_struct *tsk)
-+{
-+	set_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED);
-+}
-+
-+static inline void clear_tsk_going_to_sched(struct task_struct *tsk)
-+{
-+	clear_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED);
-+}
-+
-+static inline int test_tsk_going_to_sched(struct task_struct *tsk)
-+{
-+	return unlikely(test_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED));
-+}
-+
- /*
-  * cond_resched() and cond_resched_lock(): latency reduction via
-  * explicit rescheduling in places that are safe. The return
-diff --git a/kernel/kthread.c b/kernel/kthread.c
-index b262f47046ca..8a4e4c9cdc22 100644
---- a/kernel/kthread.c
-+++ b/kernel/kthread.c
-@@ -199,8 +199,10 @@ static void __kthread_parkme(struct kthread *self)
- 		if (!test_bit(KTHREAD_SHOULD_PARK, &self->flags))
- 			break;
- 
-+		set_tsk_going_to_sched(current);
- 		complete(&self->parked);
- 		schedule();
-+		clear_tsk_going_to_sched(current);
- 	}
- 	__set_current_state(TASK_RUNNING);
- }
-@@ -245,8 +247,10 @@ static int kthread(void *_create)
- 	/* OK, tell user we're spawned, wait for stop or wakeup */
- 	__set_current_state(TASK_UNINTERRUPTIBLE);
- 	create->result = current;
-+	set_tsk_going_to_sched(current);
- 	complete(done);
- 	schedule();
-+	clear_tsk_going_to_sched(current);
- 
- 	ret = -EINTR;
- 	if (!test_bit(KTHREAD_SHOULD_STOP, &self->flags)) {
-diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
-index 3c8a379c357e..28a308743bf8 100644
---- a/kernel/sched/fair.c
-+++ b/kernel/sched/fair.c
-@@ -4330,6 +4330,8 @@ entity_tick(struct cfs_rq *cfs_rq, struct sched_entity *curr, int queued)
- 			hrtimer_active(&rq_of(cfs_rq)->hrtick_timer))
- 		return;
- #endif
-+	if (test_tsk_going_to_sched(rq_of(cfs_rq)->curr))
-+		return;
- 
- 	if (cfs_rq->nr_running > 1)
- 		check_preempt_tick(cfs_rq, curr);
-@@ -6633,6 +6635,8 @@ static void check_preempt_wakeup(struct rq *rq, struct task_struct *p, int wake_
- 	 */
- 	if (test_tsk_need_resched(curr))
- 		return;
-+	if (test_tsk_going_to_sched(curr))
-+		return;
- 
- 	/* Idle tasks are by definition preempted by non-idle tasks. */
- 	if (unlikely(task_has_idle_policy(curr)) &&
--- 
-2.17.1
+[...]
 
+>> +
+>> +&spdifout_b {
+>> +	status = "okay";
+>> +};
+>> +
 
-
+Again, not support by the HDMI controller and not used in the sound card.
 
 _______________________________________________
 linux-arm-kernel mailing list
