@@ -2,94 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3112517A125
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 09:22:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0CF017A193
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 09:42:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kXOG/a9hQqfnEjqeaTBAAQMoPh8pE8H4sE6aHaGOVG0=; b=Bb3L/TkfX85buqbVxW96NmD9Kb
-	X2th27UPPwrzZT8cYF7DOy+0Y5q0aWkKdmSqX+mQJmpFpjViHukopuXv/CAA8vqcx/9WyCG+g+3Qe
-	FP5XPNUYS4qkj8rbZL865eL+36GzOJHtKDONCu6C7Hv3QHEEH9FHagPmMn18XbAolP8X5ewSSMCTH
-	MvcphmKJfedDHKgiVaPqmTT7SJVmko/O9nbUsRpjwJlunBNKtEnFQ0gMCRBlQSO99vOIpy6WlDMDn
-	C0TiBllnvGlAYBoVTs11qE8Vwk/M+hBS4e1DgxorONck/OgAJnQY/dfDw14lWB+60v0++RgTM3hwH
-	GxgTwcYg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=BGKM0JE06VOiLdRCL09BokVtSNlaqgdJXx8uA3m00Xc=; b=SdtKz4Y3qX/kkV
+	nDemPCz4tpJk04UKYc2KeEtqQrDjZm9CbYyWrT92sjDmGcsg15wrFaTWzI0eADmQRpFIjU9fIHvbQ
+	W2sFfHAIEQ7EhNr9MeeKyquV9QlVKT9bS2fonXAOYEjMMGY40gxFXB02IYliNiLIBNev7YcpUN4hc
+	G6qO3Nei0e4Qdwx+zscYf29Ad1H5p41lh5Ct0mQTQWuOwdyEfEzDrlJTyuxXz/u4hdFH4RiKkvQfX
+	A1wPvIgJlgocMgk2I05nEYLvCE5ABGE01HjZX2PU2oxpyXiNZIrpTSp7GaoxOwJF8cvAo+8yWobhw
+	NO7OsuDwZlw4A+tW+lZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9llk-0005sH-Ga; Thu, 05 Mar 2020 08:22:12 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j9m5X-0005Fh-Fn; Thu, 05 Mar 2020 08:42:39 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9llc-0005r6-Vb
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 08:22:06 +0000
-Received: by mail-wm1-x344.google.com with SMTP id u9so4669229wml.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 00:22:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:subject:in-reply-to:date:message-id
- :mime-version; bh=wy8PG+5094H0kwoE9azcIFtGBXe17DljDLj1gap6KjQ=;
- b=XQhSxSzu+98TQDBaQbX8qV6wCsTohykSPQpUarrD/+uUdM2OhBCJRgfHiQgAeL2bqG
- G87zQyeBW8INB88/a53JTOHfVNbpSp170zFo6ePYkoaYwrIkfClzdYU/ZE072Pq2MwIZ
- Gm1D0BQH7FmM5AiBCcb01izbcw1l1h42XG0YJgv8L9V0og6/XIQgYZ8AQ8mGWH/HAM3a
- cZHIb+VqXxsktjtO3C4zj7LMmWlcHd766DKDxx+7HwWMdGqV5C5Nfz3aJBhl9G60u4ZM
- iJ2Nzj+6dVprj7KACOhkfYoW0JHDsxB7scJbNkpoq+xbFn94AW9l5OBu7i1aWpIZEQv9
- PNWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:subject
- :in-reply-to:date:message-id:mime-version;
- bh=wy8PG+5094H0kwoE9azcIFtGBXe17DljDLj1gap6KjQ=;
- b=HtluyKlknVdingOdgZRSY5oPpPBlDAgO0t7pGz0iaupEURMvHLepXvWfC5y/wksiur
- EGIcczXc7ZuMMc+qbZ0h2aIm6hmldLhlV1P0XbkT1wa6ju7H2Nz+G+w+SDXuc/OJia4a
- 5g2821Dfl1V5XljTaYXQfvfq9ysCXScpuB9R6YCsEp9sY54jFXXscTSSg0JsE+sFGsXk
- pJIZnHibM/AMm3Yix/LeC+ZhjgLFFB3hI8bxRjokFx9nZ2s6egW55KMJHQdrcWNqwzue
- 0ZK96qaWcOwlPfDeZtTuANeyVPDWGbVs3B4zIRTO/ThM1y/fPMFenm2u47/TP9U4rQ67
- RHvw==
-X-Gm-Message-State: ANhLgQ0NAWfjEtdENDhny33L3jHNXAk8MwcGCwitECJEyAMZLnZ33rOW
- WjjV4vKxpew3pvtACzpFBka+KA==
-X-Google-Smtp-Source: ADFU+vtQyU4UfDH9d2/TXDERF+INdtSbx2/ljMK+EMqmPS+JCjhE5+wuGnUWn9fPAey5YSeP3jbcRA==
-X-Received: by 2002:a1c:dd45:: with SMTP id u66mr8644559wmg.154.1583396523188; 
- Thu, 05 Mar 2020 00:22:03 -0800 (PST)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id m16sm11943105wrs.67.2020.03.05.00.22.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Mar 2020 00:22:02 -0800 (PST)
-References: <1582985353-83371-1-git-send-email-christianshewitt@gmail.com>
- <1582985353-83371-3-git-send-email-christianshewitt@gmail.com>
- <cc4c54c8-aa7f-8755-dc35-94e32d0019cd@baylibre.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>,
- Christian Hewitt <christianshewitt@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH 2/2] arm64: dts: meson-g12b-gtking: add initial device-tree
-In-reply-to: <cc4c54c8-aa7f-8755-dc35-94e32d0019cd@baylibre.com>
-Date: Thu, 05 Mar 2020 09:22:01 +0100
-Message-ID: <1jftencity.fsf@starbuckisacylon.baylibre.com>
+ id 1j9m4t-00057V-3Z
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 08:42:00 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 05 Mar 2020 00:41:57 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,517,1574150400"; d="scan'208";a="240745741"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga003.jf.intel.com with ESMTP; 05 Mar 2020 00:41:55 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1j9m4o-0007K3-Kb; Thu, 05 Mar 2020 16:41:54 +0800
+Date: Thu, 05 Mar 2020 16:41:25 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:for-next] BUILD SUCCESS
+ 09e7f9a4c8e2025f05b2af253db75ba360eb204b
+Message-ID: <5e60bb35.SADkNPhyrUPA+5qt%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_002205_020053_42A51232 
-X-CRM114-Status: GOOD (  14.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200305_004159_157664_007D7CC5 
+X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,80 +68,232 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  for-next
+branch HEAD: 09e7f9a4c8e2025f05b2af253db75ba360eb204b  Merge branch 'arm/fixes' into for-next
 
-On Tue 03 Mar 2020 at 15:50, Neil Armstrong <narmstrong@baylibre.com> wrote:
+elapsed time: 483m
 
-> On 29/02/2020 15:09, Christian Hewitt wrote:
->> The Shenzen AZW (Beelink) GT-King is based on the Amlogic W400 reference
->> board with an S922X chip.
->> 
->> - 4GB LPDDR4 RAM
->> - 64GB eMMC storage
->> - 10/100/1000 Base-T Ethernet
->> - AP6356S Wireless (802.11 a/b/g/n/ac, BT 4.1)
->> - HDMI 2.1 video
->> - S/PDIF optical output
->> - Analogue audio output
->> - 1x USB 2.0 port
->> - 2x USB 3.0 ports
->> - IR receiver
->> - 1x micro SD card slot
->> 
->> The device-tree is largely based on meson-g12b-ugoos-am6.
+configs tested: 205
+configs skipped: 0
 
-largely indeed ... Would you mind pointing out why the am6 dts can't be
-used and why this one is needed ?
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Maybe I missed something but they look the same to me.
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                               defconfig
+sparc                            allyesconfig
+i386                              allnoconfig
+s390                       zfcpdump_defconfig
+sparc64                          allmodconfig
+m68k                          multi_defconfig
+sh                               allmodconfig
+ia64                             allmodconfig
+sh                          rsk7269_defconfig
+i386                             alldefconfig
+i386                             allyesconfig
+i386                                defconfig
+ia64                             alldefconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+ia64                                defconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                           sun3_defconfig
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+parisc                            allnoconfig
+parisc                           allyesconfig
+parisc                generic-32bit_defconfig
+parisc                generic-64bit_defconfig
+x86_64               randconfig-a001-20200305
+x86_64               randconfig-a002-20200305
+x86_64               randconfig-a003-20200305
+i386                 randconfig-a001-20200305
+i386                 randconfig-a002-20200305
+i386                 randconfig-a003-20200305
+x86_64               randconfig-a001-20200304
+x86_64               randconfig-a002-20200304
+x86_64               randconfig-a003-20200304
+i386                 randconfig-a001-20200304
+i386                 randconfig-a002-20200304
+i386                 randconfig-a003-20200304
+alpha                randconfig-a001-20200305
+m68k                 randconfig-a001-20200305
+mips                 randconfig-a001-20200305
+nds32                randconfig-a001-20200305
+parisc               randconfig-a001-20200305
+riscv                randconfig-a001-20200305
+alpha                randconfig-a001-20200304
+m68k                 randconfig-a001-20200304
+mips                 randconfig-a001-20200304
+nds32                randconfig-a001-20200304
+parisc               randconfig-a001-20200304
+riscv                randconfig-a001-20200304
+c6x                  randconfig-a001-20200305
+h8300                randconfig-a001-20200305
+microblaze           randconfig-a001-20200305
+nios2                randconfig-a001-20200305
+sparc64              randconfig-a001-20200305
+c6x                  randconfig-a001-20200304
+h8300                randconfig-a001-20200304
+microblaze           randconfig-a001-20200304
+nios2                randconfig-a001-20200304
+sparc64              randconfig-a001-20200304
+sh                   randconfig-a001-20200304
+openrisc             randconfig-a001-20200304
+csky                 randconfig-a001-20200304
+s390                 randconfig-a001-20200304
+xtensa               randconfig-a001-20200304
+x86_64               randconfig-b001-20200305
+x86_64               randconfig-b002-20200305
+x86_64               randconfig-b003-20200305
+i386                 randconfig-b001-20200305
+i386                 randconfig-b002-20200305
+i386                 randconfig-b003-20200305
+x86_64               randconfig-c001-20200304
+x86_64               randconfig-c002-20200304
+x86_64               randconfig-c003-20200304
+i386                 randconfig-c001-20200304
+i386                 randconfig-c002-20200304
+i386                 randconfig-c003-20200304
+x86_64               randconfig-d001-20200304
+x86_64               randconfig-d002-20200304
+x86_64               randconfig-d003-20200304
+i386                 randconfig-d001-20200304
+i386                 randconfig-d002-20200304
+i386                 randconfig-d003-20200304
+x86_64               randconfig-d001-20200305
+x86_64               randconfig-d002-20200305
+x86_64               randconfig-d003-20200305
+i386                 randconfig-d001-20200305
+i386                 randconfig-d002-20200305
+i386                 randconfig-d003-20200305
+x86_64               randconfig-e001-20200305
+x86_64               randconfig-e002-20200305
+x86_64               randconfig-e003-20200305
+i386                 randconfig-e001-20200305
+i386                 randconfig-e002-20200305
+i386                 randconfig-e003-20200305
+x86_64               randconfig-e001-20200304
+x86_64               randconfig-e002-20200304
+x86_64               randconfig-e003-20200304
+i386                 randconfig-e001-20200304
+i386                 randconfig-e002-20200304
+i386                 randconfig-e003-20200304
+x86_64               randconfig-f001-20200304
+x86_64               randconfig-f002-20200304
+x86_64               randconfig-f003-20200304
+i386                 randconfig-f001-20200304
+i386                 randconfig-f002-20200304
+i386                 randconfig-f003-20200304
+x86_64               randconfig-g001-20200304
+x86_64               randconfig-g002-20200304
+x86_64               randconfig-g003-20200304
+i386                 randconfig-g001-20200304
+i386                 randconfig-g002-20200304
+i386                 randconfig-g003-20200304
+x86_64               randconfig-g001-20200305
+x86_64               randconfig-g002-20200305
+x86_64               randconfig-g003-20200305
+i386                 randconfig-g001-20200305
+i386                 randconfig-g002-20200305
+i386                 randconfig-g003-20200305
+x86_64               randconfig-h001-20200305
+x86_64               randconfig-h002-20200305
+x86_64               randconfig-h003-20200305
+i386                 randconfig-h001-20200305
+i386                 randconfig-h002-20200305
+i386                 randconfig-h003-20200305
+x86_64               randconfig-h001-20200304
+x86_64               randconfig-h002-20200304
+x86_64               randconfig-h003-20200304
+i386                 randconfig-h001-20200304
+i386                 randconfig-h002-20200304
+i386                 randconfig-h003-20200304
+arc                  randconfig-a001-20200304
+arm                  randconfig-a001-20200304
+arm64                randconfig-a001-20200304
+ia64                 randconfig-a001-20200304
+powerpc              randconfig-a001-20200304
+sparc                randconfig-a001-20200304
+riscv                            allmodconfig
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+s390                          debug_defconfig
+s390                             allyesconfig
+s390                              allnoconfig
+s390                             allmodconfig
+s390                             alldefconfig
+s390                                defconfig
+sh                                allnoconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+sparc                               defconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+um                           x86_64_defconfig
+um                             i386_defconfig
+um                                  defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
 
->> 
->> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
->> ---
->>  arch/arm64/boot/dts/amlogic/Makefile              |   1 +
->>  arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts | 557 ++++++++++++++++++++++
->>  2 files changed, 558 insertions(+)
->>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts
->> 
->> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
->> index eef0045..1fd28e8 100644
->> --- a/arch/arm64/boot/dts/amlogic/Makefile
->> +++ b/arch/arm64/boot/dts/amlogic/Makefile
->> @@ -3,6 +3,7 @@ dtb-$(CONFIG_ARCH_MESON) += meson-axg-s400.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-sei510.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-u200.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12a-x96-max.dtb
->> +dtb-$(CONFIG_ARCH_MESON) += meson-g12b-gtking.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-a311d-khadas-vim3.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-s922x-khadas-vim3.dtb
->>  dtb-$(CONFIG_ARCH_MESON) += meson-g12b-odroid-n2.dtb
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts
->> new file mode 100644
->> index 0000000..819f208
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/amlogic/meson-g12b-gtking.dts
->> @@ -0,0 +1,557 @@
->> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +/*
->> + * Copyright (c) 2019 BayLibre, SAS
->> + * Author: Neil Armstrong <narmstrong@baylibre.com>
->> + * Copyright (c) 2019 Christian Hewitt <christianshewitt@gmail.com>
->> + */
->> +
-
-[...]
-
->> +
->> +&spdifout_b {
->> +	status = "okay";
->> +};
->> +
-
-Again, not support by the HDMI controller and not used in the sound card.
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
