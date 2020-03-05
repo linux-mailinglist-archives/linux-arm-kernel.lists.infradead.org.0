@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9371517A73B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 15:18:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 387C317A798
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 15:36:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AqPJspPWTgekbIzHSWIMyMVgFKUQh2wUB9ji++1aCxs=; b=K8uCJDB/8v+TWK
-	wGvPTvumgzdzY9NT9oWXDKcpgVP9KS9nvILbruhKq91VeIYlaCpBCYwzuphRhKIfAVX68CvCoVJVi
-	+KyPy9DeHUVg+KEduTmVLPiYhaGQoxGz4eHSWSNb24u1Zscp4v7idcXLM0TQZYPhKpJfVxS1edcEK
-	p42mc2eXXHFAqAN3qa04W51nqjSudkI8+h39msHuQ9KKAy7AKQt25/xhPlWW06yHkEXbJLe6n64W5
-	jUlnZROT93jAEfSS7OvtFxMm2bEnohwDWqftGZV0Mhq/paluALRqZbPWYiQ11SN8bE23TETIA6j5B
-	uk55ZDLqKAUXybguZG4g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mT/wBBtLgVsUxPhl29YDTTOLa6FknKeosayAF6pybS8=; b=RVu
+	Qjy9zRaXk/uTzFasFgbkFYgZpgqkKrRwwVMl/x9x2WBpe0NgndOeFpyuesEzzW3EG32jNMiT2jlgm
+	wBMxWnfNzCqnWEyTDmjsGBvdnv2ol/L6wRvHzeXiVVWDsNNX8YCpdHt7weArgB92JHcLiThqDTK3k
+	DdjOAxY1SYwhP0ebtFW1jKEBuEdpKV5CWDrEd4JfxskLpaZfAzuKCCySpXfzmTBCNcHOafeaSIa5y
+	V51i36Cr+vR5M5XwqBQ8ebSBnNXUcPbwl10NpWukVA1dP/RKssN9wmgbarGs6jtWrfRAxSCPJQ7PY
+	HnfRaRlD3D3HGex51nu/6bqu6fQsl1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9rKW-0003bC-Kk; Thu, 05 Mar 2020 14:18:28 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1j9rc4-0001dK-2F; Thu, 05 Mar 2020 14:36:36 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9rKO-0003aT-NW
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 14:18:22 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id x194so1932536vsc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 06:18:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=T0wDyHzNqn+/6ChzKFPCyKMx102Jnw7HeFP/VoYqxN8=;
- b=SMkRCoBjs+DYJmTpaJRWyvYy3tXZsDisuWg4xIqbosMx73iqLgVTZ0/+4raYqhWTkM
- 9Hsx7NMtX9xsRhjp/VmsLwUSOdFMayJJqT6z4pJRbEmNROUrvLwtSioer3lGiukKk8e6
- pnPNwZRM2qZwor1BcFvVRMfreayHRoUa66z19fiDp6ymT/a+ZiSaCbVTgbnpbMTHahZQ
- KTxSnbiQvfwAvNMvcc0ixae3qC/QaHa5qLGkTuUadJsEBriqu8+3tRvTTXHpfc0EA9C6
- CsQii4o7PAEldXZ9QKQHiNpG/xCZYQNbmD+umwVkvKetJuD/jUgcREy8Pu0GbFVxFG5Z
- lodQ==
+ id 1j9rbr-0001bB-BR; Thu, 05 Mar 2020 14:36:25 +0000
+Received: by mail-wm1-x342.google.com with SMTP id g134so6572301wme.3;
+ Thu, 05 Mar 2020 06:36:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=Fzw97o/L2ddgOD9Mk5ZgJ4mz/W2IqpyyO7RKo3ExDqI=;
+ b=eGAZujSpLYN9hufM9nxWLtaND6o9cSpt+JU/hD4JLIn4WthADj76OEuPkhLFqQlGd9
+ oMT5VpoAMrgSKvfmlBhBsFTqW88Ew4UHfRuTcR0GL1s7pnVZYNkqGDEijmLnqSHdL5gB
+ 7u7eqswqR7ezXwbyCBuYzXKFWIAinvGgoZNyhTHX2nYq7adyiTSXSbdUqn72zZy93iNp
+ F0t+mLrEBZgySNr/cLo8rWmYaALeWt/vCC5FYUpH1UZz1mqw95qJYHFew/o8Xd2RkGUM
+ i9lJQipeqZz2lZXEDcEQOADzGDludU75qctFHTIS5rwBQT/AIo6V95MiT4Nb37PIOht4
+ M/JA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=T0wDyHzNqn+/6ChzKFPCyKMx102Jnw7HeFP/VoYqxN8=;
- b=Tf4AQ2vPwHg/1lZn32jbksdPQIJSUAY3LvSMVPc7xMD0Q/O+D2fzTezgnj63sZWM7y
- xJ4z1Es6gzDryGP76Et0Q+YG64boEMRGKAcJjaXz1qCbUfJ8HhNdS0iss9qlJgJXY2F2
- VUqFtuNSsdEIVK6+m0j63k1WlKwJ1tK5YWZ09ELD+8NI4cfPSc2/fiuwadEePOHsYbNl
- 61zhijoeG3fjcZuf9zDU2uTStz1iTir1EHwfs8tj/qF3zZEV0zyzg2bztjYm5Quk5WWT
- 9LunflC0ZY1YpyHZ1HCzT/dF2Yz4JEPDk/GgsqzQr9vFBgVY7q8u5Wu8fjM6+IpKEcqK
- ViFA==
-X-Gm-Message-State: ANhLgQ2likZrl8aEEX21niwBvn23xKS1ipSaNdrm3e1ztbwi1FXNt1hv
- Tu5pu9pgWLMIRiSTUoGceeWUtsvd3C2fOh3Oa/Wepw==
-X-Google-Smtp-Source: ADFU+vtToLQ+muWK+2stMVmcNTMXIicD7xT/G3cpottHThd7RLHVKgCMu9PUBaA/UB1KH77w6dcpVPPrncDfMV9Crj0=
-X-Received: by 2002:a67:800e:: with SMTP id b14mr5182339vsd.191.1583417898736; 
- Thu, 05 Mar 2020 06:18:18 -0800 (PST)
-MIME-Version: 1.0
-References: <20200303203559.23995-1-ulf.hansson@linaro.org>
- <20200303203559.23995-5-ulf.hansson@linaro.org> <20200304122312.GE25004@bogus>
-In-Reply-To: <20200304122312.GE25004@bogus>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 5 Mar 2020 15:17:42 +0100
-Message-ID: <CAPDyKFpcN-p6sKqB0ujHAY29qPSg7qpSjYGymPaJ4W8jgCKGcg@mail.gmail.com>
-Subject: Re: [PATCH v2 4/4] cpuidle: psci: Allow WFI to be the only state for
- the hierarchical topology
-To: Sudeep Holla <sudeep.holla@arm.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Fzw97o/L2ddgOD9Mk5ZgJ4mz/W2IqpyyO7RKo3ExDqI=;
+ b=ugSO555E+EzW/m+x3sfcxoB7Q71AwZve3qsH2JrgP0Mm48J/ThXfvVT4pLQbNA1xZw
+ dDWN8SF1o6fzwJeE+E0GZEdxd3Vfs3lDqpnPD/XxflRwmIt3YEUrEC9+pNOq+6CIX3Ff
+ KU1F/C/9iE1XcV8RXB4aE951vXE/eup65iYGJp8UCHTxyPABUhTsYiaCph+UNGRNwt8J
+ 6Msx9kt+sVZumQHawP7qAPx2/Mx2H0YXwaRkeJ5lSKmRO9GjaV0tukPXS9hN0hwKwl7X
+ Eq9rjVVeN/i1bv/lLAvqY8msTgJUGfvgn+ch9hkqPsavt7WXWkAHO0Nyuo2L1VgnitJP
+ IlZA==
+X-Gm-Message-State: ANhLgQ1Epowmj8/sUCxa4rrKzTRgmuaMXV238HU0MucYQ1PJwh8VEATP
+ anqpTu5z/1BbEKiJLkIYT4s=
+X-Google-Smtp-Source: ADFU+vuyVhCo3qL7TfM1oGCbV9+9jXtHRiIy6N9lQU97La20DxCBKFLnBjzVm2081txVHj9hMj8+yQ==
+X-Received: by 2002:a05:600c:22cd:: with SMTP id
+ 13mr10338852wmg.51.1583418980518; 
+ Thu, 05 Mar 2020 06:36:20 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id g201sm9365124wme.23.2020.03.05.06.36.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 05 Mar 2020 06:36:20 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v1 1/5] dt-bindings: i2c: convert rockchip i2c bindings to yaml
+Date: Thu,  5 Mar 2020 15:36:07 +0100
+Message-Id: <20200305143611.10733-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_061820_829482_B83948D0 
-X-CRM114-Status: GOOD (  27.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200305_063623_395452_3184A5ED 
+X-CRM114-Status: GOOD (  20.23  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,112 +94,257 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 4 Mar 2020 at 13:23, Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> The $subject is bit confusing. IIUC, if there are no idle states to
-> manage including hierarchical domain states you will not register the driver
-> right ? If so, you are not allowing WFI to be the only state, hence my
-> concern with $subject.
+Current dts files with 'i2c' nodes are manually verified.
+In order to automate this process i2c-rk3x.txt
+has to be converted to yaml. In the new setup
+i2c-rk3x.yaml will inherit properties from
+i2c-controller.yaml.
 
-I agree that's not so clear, but it wasn't easy to fit everything I
-wanted to say in one line. :-)
+Also change document name in MAINTAINERS.
 
-Is this below better and okay for you?
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ Documentation/devicetree/bindings/i2c/i2c-rk3x.txt |  68 -----------
+ .../devicetree/bindings/i2c/i2c-rk3x.yaml          | 129 +++++++++++++++++++++
+ MAINTAINERS                                        |   2 +-
+ 3 files changed, 130 insertions(+), 69 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
+ create mode 100644 Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
 
-"cpuidle: psci: Update condition when avoiding driver registration".
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-rk3x.txt b/Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
+deleted file mode 100644
+index 22f2eeb2c..000000000
+--- a/Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
++++ /dev/null
+@@ -1,68 +0,0 @@
+-* Rockchip RK3xxx I2C controller
+-
+-This driver interfaces with the native I2C controller present in Rockchip
+-RK3xxx SoCs.
+-
+-Required properties :
+-
+- - reg : Offset and length of the register set for the device
+- - compatible: should be one of the following:
+-   - "rockchip,rv1108-i2c": for rv1108
+-   - "rockchip,rk3066-i2c": for rk3066
+-   - "rockchip,rk3188-i2c": for rk3188
+-   - "rockchip,rk3228-i2c": for rk3228
+-   - "rockchip,rk3288-i2c": for rk3288
+-   - "rockchip,rk3328-i2c", "rockchip,rk3399-i2c": for rk3328
+-   - "rockchip,rk3399-i2c": for rk3399
+- - interrupts : interrupt number
+- - clocks: See ../clock/clock-bindings.txt
+-   - For older hardware (rk3066, rk3188, rk3228, rk3288):
+-     - There is one clock that's used both to derive the functional clock
+-       for the device and as the bus clock.
+-   - For newer hardware (rk3399): specified by name
+-     - "i2c": This is used to derive the functional clock.
+-     - "pclk": This is the bus clock.
+-
+-Required on RK3066, RK3188 :
+-
+- - rockchip,grf : the phandle of the syscon node for the general register
+-		  file (GRF)
+- - on those SoCs an alias with the correct I2C bus ID (bit offset in the GRF)
+-   is also required.
+-
+-Optional properties :
+-
+- - clock-frequency : SCL frequency to use (in Hz). If omitted, 100kHz is used.
+- - i2c-scl-rising-time-ns : Number of nanoseconds the SCL signal takes to rise
+-	(t(r) in I2C specification). If not specified this is assumed to be
+-	the maximum the specification allows(1000 ns for Standard-mode,
+-	300 ns for Fast-mode) which might cause slightly slower communication.
+- - i2c-scl-falling-time-ns : Number of nanoseconds the SCL signal takes to fall
+-	(t(f) in the I2C specification). If not specified this is assumed to
+-	be the maximum the specification allows (300 ns) which might cause
+-	slightly slower communication.
+- - i2c-sda-falling-time-ns : Number of nanoseconds the SDA signal takes to fall
+-	(t(f) in the I2C specification). If not specified we'll use the SCL
+-	value since they are the same in nearly all cases.
+-
+-Example:
+-
+-aliases {
+-	i2c0 = &i2c0;
+-}
+-
+-i2c0: i2c@2002d000 {
+-	compatible = "rockchip,rk3188-i2c";
+-	reg = <0x2002d000 0x1000>;
+-	interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+-	#address-cells = <1>;
+-	#size-cells = <0>;
+-
+-	rockchip,grf = <&grf>;
+-
+-	clock-names = "i2c";
+-	clocks = <&cru PCLK_I2C0>;
+-
+-	i2c-scl-rising-time-ns = <800>;
+-	i2c-scl-falling-time-ns = <100>;
+-};
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml b/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
+new file mode 100644
+index 000000000..962aefb7d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
+@@ -0,0 +1,129 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i2c/i2c-rk3x.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip RK3xxx I2C controller
++
++description:
++  This driver interfaces with the native I2C controller present in Rockchip
++  RK3xxx SoCs.
++
++allOf:
++  - $ref: /schemas/i2c/i2c-controller.yaml#
++
++maintainers:
++  - Heiko Stuebner <heiko@sntech.de>
++
++# Everything else is described in the common file
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,rv1108-i2c
++      - const: rockchip,rk3066-i2c
++      - const: rockchip,rk3188-i2c
++      - const: rockchip,rk3228-i2c
++      - const: rockchip,rk3288-i2c
++      - const: rockchip,rk3399-i2c
++      - items:
++          - enum:
++            - rockchip,rk3328-i2c
++          - const: rockchip,rk3399-i2c
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    minItems: 1
++    items:
++      - description:
++          For older hardware (rk3066, rk3188, rk3228, rk3288)
++          there is one clock that is used both to derive the functional clock
++          for the device and as the bus clock.
++          For newer hardware (rk3399) this clock is used to derive
++          the functional clock
++      - description:
++          For newer hardware (rk3399) this is the bus clock
++
++  clock-names:
++    minItems: 1
++    items:
++      - const: i2c
++      - const: pclk
++
++  rockchip,grf:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Required on RK3066, RK3188 the phandle of the syscon node for
++      the general register file (GRF)
++      On those SoCs an alias with the correct I2C bus ID
++      (bit offset in the GRF) is also required.
++
++  clock-frequency:
++    default: 100000
++    description:
++      SCL frequency to use (in Hz). If omitted, 100kHz is used.
++
++  i2c-scl-rising-time-ns:
++    default: 1000
++    description:
++      Number of nanoseconds the SCL signal takes to rise
++      (t(r) in I2C specification). If not specified this is assumed to be
++      the maximum the specification allows(1000 ns for Standard-mode,
++      300 ns for Fast-mode) which might cause slightly slower communication.
++
++  i2c-scl-falling-time-ns:
++    default: 300
++    description:
++      Number of nanoseconds the SCL signal takes to fall
++      (t(f) in the I2C specification). If not specified this is assumed to
++      be the maximum the specification allows (300 ns) which might cause
++      slightly slower communication.
++
++  i2c-sda-falling-time-ns:
++    default: 300
++    description:
++      Number of nanoseconds the SDA signal takes to fall
++      (t(f) in the I2C specification). If not specified we will use the SCL
++      value since they are the same in nearly all cases.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++if:
++  properties:
++    compatible:
++      contains:
++        enum:
++          - rockchip,rk3066-i2c
++          - rockchip,rk3188-i2c
++
++then:
++  required:
++    - rockchip,grf
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3188-cru-common.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    i2c0: i2c@2002d000 {
++      compatible = "rockchip,rk3188-i2c";
++      reg = <0x2002d000 0x1000>;
++      interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru PCLK_I2C0>;
++      clock-names = "i2c";
++      rockchip,grf = <&grf>;
++      i2c-scl-falling-time-ns = <100>;
++      i2c-scl-rising-time-ns = <800>;
++      #address-cells = <1>;
++      #size-cells = <0>;
++    };
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 42c21184d..a480cec62 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2279,7 +2279,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ L:	linux-rockchip@lists.infradead.org
+ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
+ S:	Maintained
+-F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
++F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
+ F:	Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
+ F:	Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+ F:	arch/arm/boot/dts/rk3*
+-- 
+2.11.0
 
->
-> On Tue, Mar 03, 2020 at 09:35:59PM +0100, Ulf Hansson wrote:
-> > It's possible that only the WFI state is supported for the CPU, while also
-> > a shared idle state exists for a group of CPUs.
-> >
-> > When the hierarchical topology is used, the shared idle state may not be
-> > compatible with arm,idle-state, rather with "domain-idle-state", which
-> > makes dt_init_idle_driver() to return zero. This leads to that the
-> > cpuidle-psci driver bails out during initialization, avoiding to register a
-> > cpuidle driver and instead relies on the default architectural back-end
-> > (called via cpu_do_idle()). In other words, the shared idle state becomes
-> > unused.
-> >
-> > Let's fix this behaviour, by allowing the dt_init_idle_driver() to return 0
-> > and then continue with the initialization. If it turns out that the
-> > hierarchical topology is used and we have some additional states to manage,
-> > then continue with the cpuidle driver registration, otherwise bail out as
-> > before.
-> >
-> > Reported-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> > Fixes: a65a397f2451 ("cpuidle: psci: Add support for PM domains by using genpd")
-> > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
-> > ---
-> >
-> > Changes in v2:
-> >       - Convert the error code returned from psci_cpu_suspend_enter() into an
-> >       expected error code by cpuidle core.
-> >
-> > ---
-> >  drivers/cpuidle/cpuidle-psci.c | 48 +++++++++++++++++++++-------------
-> >  1 file changed, 30 insertions(+), 18 deletions(-)
-> >
-> > diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> > index bae9140a65a5..ae0fabec2742 100644
-> > --- a/drivers/cpuidle/cpuidle-psci.c
-> > +++ b/drivers/cpuidle/cpuidle-psci.c
-> > @@ -56,16 +56,19 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
-> >       u32 *states = data->psci_states;
-> >       struct device *pd_dev = data->dev;
-> >       u32 state;
-> > -     int ret;
-> > +     int ret = 0;
-> >
-> >       /* Do runtime PM to manage a hierarchical CPU toplogy. */
-> >       pm_runtime_put_sync_suspend(pd_dev);
-> >
-> >       state = psci_get_domain_state();
-> > -     if (!state)
-> > +     if (!state && states)
-> >               state = states[idx];
-> >
-> > -     ret = psci_enter_state(idx, state);
-> > +     if (state)
-> > +             ret = psci_cpu_suspend_enter(state) ? -1 : idx;
-> > +     else
-> > +             cpu_do_idle();
->
-> May be, I haven't followed this completely yet, but I don't want to be
-> in the position to replicated default arch idle hook. Just use the one
-> that exist by simply not registering the driver.
-
-That doesn't work for the configuration I am solving.
-
-Assume this scenario: We have WFI and a domain/cluster idle state.
-From the cpuidle governor point of view, it always selects the WFI
-state, which means idx is zero.
-
-Then, after we have called pm_runtime_put_sync_suspend() a few lines
-above, we may potentially have a "domain state" to use, instead of the
-WFI state.
-
-In this case, if we would have called psci_enter_state(), that would
-lead us to calling cpu_do_idle() from the __CPU_PM_CPU_IDLE_ENTER()
-macro, becuase idx is zero. In other words, the domain state would
-become unused.
-
-Hope this clarifies what goes on here?
-
-Kind regards
-Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
