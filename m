@@ -2,82 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3C4917AD25
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:24:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BA1F17AD37
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:27:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jhy0k+RHVfoNkgphA2YzC7Wg3nXB7UnkPKTtqBhPdvg=; b=uBAH2OvOItpdZn
-	WbBDBORfQCVpotfsmZMMTw1lxhe9hTDUBSNueEW4n9hReitKtbjyJGmzqSRofbMkLK5i5QfDC8z76
-	WGjMCAOSui4O2wWnbk4xom0997FafzJuRYiHTAKFXfiDBR4GBR9KqGmO9EfzqITPpGtBV6bzusSMK
-	mdNFvSXtlf1y425pGa8RwxJDCQGS9AJoHKjsb2/3e51EooEqrD/iqYsA20YuBxvFVE9lsly50YnhN
-	S3j8jacpHTR7KngKC6U4G3b0ncXolaGhCXKwWF6KDdXupT7g7s5tq0gSxRKQxHG8r13/MaDKlQUgG
-	VxN/Y6yrWZhWJak/IVsA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zzng4CAuZjS2cudcOpHVIl8pmCqpejzCl0nzCMSxbKY=; b=XayqnBm85dFD7S
+	xGLggdwHilILKjg2bKDP134jNqA3Cq+2rxHyzEGaclwgsVE2X9EXEdQZ0AcFP95T9/t8QvUafZ4iE
+	Q5XD4egng3AsCrSbfYwJZo1kYU/K0oTH9KvFCzGVUNQlSKXJxi7HAyD/I5TtoGHyN9Yi7vAYPQLeH
+	0nz0Sr4P6SyBSQstqh+AhCpi0cuKXEXwBcD29j0UwZctyMZFs6scnp8IY1lm9nrv+LxNVDjEbCSh6
+	9eaHsfm9G2kn3G1gBRSiJq3V4bDZ44F7SmHSbB0mWXc1t2eshmA3E0kkCaA7ds/1sVYjj5uYDSkjM
+	HbC0nYYk/HfGhgdFMCxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9uEi-0008Qh-F7; Thu, 05 Mar 2020 17:24:40 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1j9uHH-0001ig-UU; Thu, 05 Mar 2020 17:27:19 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9uEb-0008QL-Ov
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:24:35 +0000
-Received: by mail-pl1-x642.google.com with SMTP id u3so2906699plr.9
+ id 1j9uHA-0001hN-Bs
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:27:13 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id o21so2493021pjs.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 09:24:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=mp5fWww43kwzuooPmGWsuVGO+tZOpFhcHE+Owcf1fPw=;
- b=E4Y/lUsmZXp9+AAsZa7Zo5SzTQ9O+aYrU5ndNRs7WiK1c8XxM2exp14Q62BFn1Venr
- djbBK0ms3ZbYweQUswq8VZGv8IkmQJfKAOH17R3IFd7GSLAKiPoGZsGuQ2RF56wnA37c
- sqxdD/b+BVBMNEXe4fDRy18jx9RD6LINy4hrY=
+ Thu, 05 Mar 2020 09:27:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=hM+3hR3nYd1ZUs9brVuH0Yagy5ovOQGBqoH01WL3Fwo=;
+ b=hWquPoinrb/xmUBjZEO5Tl6AvaMrbUGWw2qwxqKPUsKZ93yuYotF2uNyNB7V7nA0Uk
+ /Fmqcfy6aJY1yn0qNFgeoJJiG/slDXU2FiF3cAKxy5g2mphUGhOQMnNlCDWdHlnk7TlU
+ yBA5VZNHC3M23velbLEvaWyjGFCUHM/c1pk33oVkTtaTu1yyVRiIL78J4DVKFGliXsVK
+ Wm2X9Qr1fCEa/t0XiTDfm0CAYbKAITivDUdU3bU4xJVBk2rzcT4z1XRV/a6jzkRcZ4ll
+ iMtGR3PzincB7avp6walxKzqXKNqupexTYrFKZiG9lLvLQGdSUgBgL3mbSAggx+ppTPH
+ FWgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=mp5fWww43kwzuooPmGWsuVGO+tZOpFhcHE+Owcf1fPw=;
- b=rPQiW+omkjWcwfZbfg6EtjksLItzqEtLpMDh03svSzx0VGotXWdUdVGSP83NdVsAZe
- 1+Wk/6Y4ZQt0/0Mb6zWk3nrarKuiM760doRAT//Tp7RHxMZbO0elTNgZAR+TiNbBOTMC
- 2LXEvpc+SzMbG4wnP0aqXC3jzn0YWSVPWKwJGgk7OnllBvzxLFEhXGcSbdTQrNzFAbOC
- V5lEPwvrgfl2jTqQgtnponE/tKMq0+82OsWSXFBYHduWLHoGpVAuTHRw8XBOtAUKclnP
- pILeEubLrAyIgCS6Z5lE7UO1StcBimvtuvMM9PUgpkvWfV0zsBBzybqfUkVxxGABbp0u
- tFGg==
-X-Gm-Message-State: ANhLgQ2hSHHJ+6zqHf6Ktva30ylwm2eKKaRCDpwWfhFJXD87eGlLDWp6
- hATLT2OU6jjCUqUYKalc9NAKNg==
-X-Google-Smtp-Source: ADFU+vt9l0oVbJ6VNPpaOLHDblo5TqyZNoJVjyz+Iu+6pL5xZpvRVmjo1V8vi6bgpHk7AmIq2Mfksg==
-X-Received: by 2002:a17:90b:1983:: with SMTP id
- mv3mr9946768pjb.86.1583429072818; 
- Thu, 05 Mar 2020 09:24:32 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id t4sm10049060pfd.52.2020.03.05.09.24.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Mar 2020 09:24:31 -0800 (PST)
-Date: Thu, 5 Mar 2020 09:24:30 -0800
-From: Kees Cook <keescook@chromium.org>
-To: cl@rock-chips.com
-Subject: Re: [PATCH v2 1/1] sched/fair: do not preempt current task if it is
- going to call schedule()
-Message-ID: <202003050921.5559A8C3@keescook>
-References: <20200305095948.10873-1-cl@rock-chips.com>
- <20200305095948.10873-2-cl@rock-chips.com>
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=hM+3hR3nYd1ZUs9brVuH0Yagy5ovOQGBqoH01WL3Fwo=;
+ b=KpA1zawQ1HH3+MOVhkL0U86fiWCd1Q4CnE/yHL/Dfs8qbccZuUuNhUfSsTiTSYxTmO
+ ms+/7fClczcXSaNy7nScyN85Ck3beWqLG/Ie85ug6bozIgLP1n6xhoG/nNavtVoiWnHy
+ OsYTDSrMfwtzNeSaorqybC8WIXdjNWWwZIFMHM0PO/ED3/kTkiods8A0f7Ve2zi9119Q
+ bGWaN0T8Y4D9kmomkhvaXRKu+jlvxaoJX9P9zqEGYDjXV+WIrlfVRjLLl2Wu0AdAAf3a
+ kCqbrHoiZ+jTItJP81I9DTUkBnzEcTb6msHKY3bZYShYR2KwxFoXmzPJ/+L2xQRVGtfR
+ acMA==
+X-Gm-Message-State: ANhLgQ2JE3/wAJWWzYDjaYvV4bg8qBZvq0wubvbzIp4EPctgIwnCAP8r
+ zUz9YkQ8GorYn6HNpPnIC3bdLRwI
+X-Google-Smtp-Source: ADFU+vt0ZK77C8pYKUIAt1vrLyRBFi/scWxuhEdXpn4NvM7i+N+CxgpCkvtRLHseidUOyBOmwhzsBQ==
+X-Received: by 2002:a17:902:8215:: with SMTP id
+ x21mr9575592pln.59.1583429228049; 
+ Thu, 05 Mar 2020 09:27:08 -0800 (PST)
+Received: from [10.67.50.123] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id g18sm33216771pfi.80.2020.03.05.09.27.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 05 Mar 2020 09:27:06 -0800 (PST)
+Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
+To: Sudeep Holla <sudeep.holla@arm.com>, Peng Fan <peng.fan@nxp.com>
+References: <1583201219-15839-1-git-send-email-peng.fan@nxp.com>
+ <1583201219-15839-3-git-send-email-peng.fan@nxp.com>
+ <20200304103954.GA25004@bogus>
+ <AM0PR04MB4481A6DB7339C22A848DAFC988E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <AM0PR04MB44814B71E92C02956F4BED4588E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200304170319.GB44525@bogus>
+ <AM0PR04MB4481B90D03D1F68573B05BE088E20@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200305160613.GA53631@bogus>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <d9734fd6-f855-296b-3a0b-ffc45ed0e3cb@gmail.com>
+Date: Thu, 5 Mar 2020 09:27:00 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200305095948.10873-2-cl@rock-chips.com>
+In-Reply-To: <20200305160613.GA53631@bogus>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_092433_837876_64B88F13 
-X-CRM114-Status: GOOD (  25.31  )
+X-CRM114-CacheID: sfid-20200305_092712_432779_622FC44F 
+X-CRM114-Status: GOOD (  17.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,7 +152,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,152 +163,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: juri.lelli@redhat.com, mark.rutland@arm.com, heiko@sntech.de,
- geert+renesas@glider.be, peterz@infradead.org, catalin.marinas@arm.com,
- bsegall@google.com, will@kernel.org, mpe@ellerman.id.au, linux@armlinux.org.uk,
- dietmar.eggemann@arm.com, ben.dooks@codethink.co.uk, mgorman@suse.de,
- huangtao@rock-chips.com, anshuman.khandual@arm.com, rostedt@goodmis.org,
- tglx@linutronix.de, surenb@google.com, mingo@redhat.com, allison@lohutok.net,
- linux-arm-kernel@lists.infradead.org, wad@chromium.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, luto@amacapital.net,
- george_davis@mentor.com, sudeep.holla@arm.com, akpm@linux-foundation.org,
- info@metux.net, kstewart@linuxfoundation.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 05, 2020 at 05:59:48PM +0800, cl@rock-chips.com wrote:
-> From: Liang Chen <cl@rock-chips.com>
+On 3/5/20 8:06 AM, Sudeep Holla wrote:
+> On Thu, Mar 05, 2020 at 11:25:35AM +0000, Peng Fan wrote:
 > 
-> when we create a kthread with ktrhead_create_on_cpu(),the child thread
-> entry is ktread.c:ktrhead() which will be preempted by the parent after
-> call complete(done) while schedule() is not called yet,then the parent
-> will call wait_task_inactive(child) but the child is still on the runqueue,
-> so the parent will schedule_hrtimeout() for 1 jiffy,it will waste a lot of
-> time,especially on startup.
+> [...]
 > 
->   parent                             child
-> ktrhead_create_on_cpu()
->   wait_fo_completion(&done) -----> ktread.c:ktrhead()
->                              |----- complete(done);--wakeup and preempted by parent
->  kthread_bind() <------------|  |-> schedule();--dequeue here
->   wait_task_inactive(child)     |
->    schedule_hrtimeout(1 jiffy) -|
+>>>
+>>> Yes, this may fix the issue. However I would like to know if we need to support
+>>> multiple channels/shared memory simultaneously. It is fair requirement and
+>>> may need some work which should be fine.
+>>
+>> Do you have any suggestions? Currently I have not worked out an good
+>> solution.
+>>
 > 
-> So we hope the child just wakeup parent but not preempted by parent, and the
-> child is going to call schedule() soon,then the parent will not call
-> schedule_hrtimeout(1 jiffy) as the child is already dequeue.
-> 
-> The same issue for ktrhead_park()&&kthread_parkme().
-> This patch can save 120ms on rk312x startup with CONFIG_HZ=300.
-> 
-> Signed-off-by: Liang Chen <cl@rock-chips.com>
+> TBH, I haven't given it a much thought. I would like to know if people
+> are happy with just one SMC channel for SCMI or do they need more ?
+> If they need it, we can try to solve it. Otherwise, what you have will
+> suffice IMO.
 
-I'm not familiar with the subtleties of scheduler internals
-(e.g. is there a race between the end of "schedule();" and calling
-"task_clear_going_to_sched();" that effects the preemption test logic?),
-so I'll leave that review to the others. But speaking to the PFA change,
-it looks sane to me:
+On our platforms we have one channel/shared memory area/mailbox instance
+for all standard SCMI protocols, and we have a separate channel/shared
+memory area/mailbox driver instance for a proprietary one. They happen
+to have difference throughput requirements, hence the split.
 
-Reviewed-by: Kees Cook <keescook@chromium.org>
-
--Kees
-
-> ---
->  include/linux/sched.h |  5 +++++
->  kernel/kthread.c      |  4 ++++
->  kernel/sched/fair.c   | 13 +++++++++++++
->  3 files changed, 22 insertions(+)
-> 
-> diff --git a/include/linux/sched.h b/include/linux/sched.h
-> index 04278493bf15..54bf336f5790 100644
-> --- a/include/linux/sched.h
-> +++ b/include/linux/sched.h
-> @@ -1533,6 +1533,7 @@ static inline bool is_percpu_thread(void)
->  #define PFA_SPEC_IB_DISABLE		5	/* Indirect branch speculation restricted */
->  #define PFA_SPEC_IB_FORCE_DISABLE	6	/* Indirect branch speculation permanently restricted */
->  #define PFA_SPEC_SSB_NOEXEC		7	/* Speculative Store Bypass clear on execve() */
-> +#define PFA_GOING_TO_SCHED		8	/* task is going to call schedule() */
->  
->  #define TASK_PFA_TEST(name, func)					\
->  	static inline bool task_##func(struct task_struct *p)		\
-> @@ -1575,6 +1576,10 @@ TASK_PFA_CLEAR(SPEC_IB_DISABLE, spec_ib_disable)
->  TASK_PFA_TEST(SPEC_IB_FORCE_DISABLE, spec_ib_force_disable)
->  TASK_PFA_SET(SPEC_IB_FORCE_DISABLE, spec_ib_force_disable)
->  
-> +TASK_PFA_TEST(GOING_TO_SCHED, going_to_sched)
-> +TASK_PFA_SET(GOING_TO_SCHED, going_to_sched)
-> +TASK_PFA_CLEAR(GOING_TO_SCHED, going_to_sched)
-> +
->  static inline void
->  current_restore_flags(unsigned long orig_flags, unsigned long flags)
->  {
-> diff --git a/kernel/kthread.c b/kernel/kthread.c
-> index b262f47046ca..bc96de2648f6 100644
-> --- a/kernel/kthread.c
-> +++ b/kernel/kthread.c
-> @@ -199,8 +199,10 @@ static void __kthread_parkme(struct kthread *self)
->  		if (!test_bit(KTHREAD_SHOULD_PARK, &self->flags))
->  			break;
->  
-> +		task_set_going_to_sched(current);
->  		complete(&self->parked);
->  		schedule();
-> +		task_clear_going_to_sched(current);
->  	}
->  	__set_current_state(TASK_RUNNING);
->  }
-> @@ -245,8 +247,10 @@ static int kthread(void *_create)
->  	/* OK, tell user we're spawned, wait for stop or wakeup */
->  	__set_current_state(TASK_UNINTERRUPTIBLE);
->  	create->result = current;
-> +	task_set_going_to_sched(current);
->  	complete(done);
->  	schedule();
-> +	task_clear_going_to_sched(current);
->  
->  	ret = -EINTR;
->  	if (!test_bit(KTHREAD_SHOULD_STOP, &self->flags)) {
-> diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
-> index 3c8a379c357e..78666cec794a 100644
-> --- a/kernel/sched/fair.c
-> +++ b/kernel/sched/fair.c
-> @@ -4330,6 +4330,12 @@ entity_tick(struct cfs_rq *cfs_rq, struct sched_entity *curr, int queued)
->  			hrtimer_active(&rq_of(cfs_rq)->hrtick_timer))
->  		return;
->  #endif
-> +	/*
-> +	 * current task is going to call schedule(), do not preempt it or
-> +	 * it will casue more useless contex_switch().
-> +	 */
-> +	if (task_going_to_sched(rq_of(cfs_rq)->curr))
-> +		return;
->  
->  	if (cfs_rq->nr_running > 1)
->  		check_preempt_tick(cfs_rq, curr);
-> @@ -6634,6 +6640,13 @@ static void check_preempt_wakeup(struct rq *rq, struct task_struct *p, int wake_
->  	if (test_tsk_need_resched(curr))
->  		return;
->  
-> +	/*
-> +	 * current task is going to call schedule(), do not preempt it or
-> +	 * it will casue more useless contex_switch().
-> +	 */
-> +	if (task_going_to_sched(curr))
-> +		return;
-> +
->  	/* Idle tasks are by definition preempted by non-idle tasks. */
->  	if (unlikely(task_has_idle_policy(curr)) &&
->  	    likely(!task_has_idle_policy(p)))
-> -- 
-> 2.17.1
-> 
-> 
-> 
-
+If I read Peng's submission correctly, it seems to me that the usage
+model described before is still fine.
 -- 
-Kees Cook
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
