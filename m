@@ -2,72 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BA1F17AD37
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:27:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B09F617AD3A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:28:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zzng4CAuZjS2cudcOpHVIl8pmCqpejzCl0nzCMSxbKY=; b=XayqnBm85dFD7S
-	xGLggdwHilILKjg2bKDP134jNqA3Cq+2rxHyzEGaclwgsVE2X9EXEdQZ0AcFP95T9/t8QvUafZ4iE
-	Q5XD4egng3AsCrSbfYwJZo1kYU/K0oTH9KvFCzGVUNQlSKXJxi7HAyD/I5TtoGHyN9Yi7vAYPQLeH
-	0nz0Sr4P6SyBSQstqh+AhCpi0cuKXEXwBcD29j0UwZctyMZFs6scnp8IY1lm9nrv+LxNVDjEbCSh6
-	9eaHsfm9G2kn3G1gBRSiJq3V4bDZ44F7SmHSbB0mWXc1t2eshmA3E0kkCaA7ds/1sVYjj5uYDSkjM
-	HbC0nYYk/HfGhgdFMCxw==;
+	List-Owner; bh=tAQfKR+mGpgxIkEbGQcZWJTe9L6bv0RMUyoBgswvJAM=; b=mD6yAqT315JGfq
+	A+Qpb1Br5LoPg1KCXb7qh+KEQtKyCky/8W3XT6Q0nNsLnxd1xvpUbCNediQ/jHTnlb63H1sSHUo39
+	WZRttwRD/1BW3Fv9tiGQ+Sfaw+3cgr48r/BgCh85q6MSTxt2df6xsx7gZFDieE2wXoel+WQPNGP4S
+	oqH4h6Ny4BNf6xRao8wNhwMEhHTG/Ik4c01Zo9FrlQSnOxv36nPg3yWxKJuEysXmuRarCdEXFVdX0
+	8n9EmemJ0xOSE1fL2Gu2egOhll2/3vxXFzKEMbfntGJsvy+y/CO8DWHbSNo5DF6jRNOnyM8quFEi6
+	J4I/swWYES1w3H8y3dzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9uHH-0001ig-UU; Thu, 05 Mar 2020 17:27:19 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1j9uHv-00020q-GX; Thu, 05 Mar 2020 17:27:59 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9uHA-0001hN-Bs
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:27:13 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id o21so2493021pjs.0
+ id 1j9uHo-00020N-AZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:27:53 +0000
+Received: by mail-pl1-x644.google.com with SMTP id j20so2510182pll.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 09:27:08 -0800 (PST)
+ Thu, 05 Mar 2020 09:27:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=hM+3hR3nYd1ZUs9brVuH0Yagy5ovOQGBqoH01WL3Fwo=;
- b=hWquPoinrb/xmUBjZEO5Tl6AvaMrbUGWw2qwxqKPUsKZ93yuYotF2uNyNB7V7nA0Uk
- /Fmqcfy6aJY1yn0qNFgeoJJiG/slDXU2FiF3cAKxy5g2mphUGhOQMnNlCDWdHlnk7TlU
- yBA5VZNHC3M23velbLEvaWyjGFCUHM/c1pk33oVkTtaTu1yyVRiIL78J4DVKFGliXsVK
- Wm2X9Qr1fCEa/t0XiTDfm0CAYbKAITivDUdU3bU4xJVBk2rzcT4z1XRV/a6jzkRcZ4ll
- iMtGR3PzincB7avp6walxKzqXKNqupexTYrFKZiG9lLvLQGdSUgBgL3mbSAggx+ppTPH
- FWgg==
+ bh=D8D3vmEglvdfYXRsW6jSW3qpPxZDOdsUg5idUKVuC7o=;
+ b=F4LsRk2zho1RJv9AKx7r9afMFsEHDgLrY3hp1pA7KZs8WS/twZqxG31SOkO938WRsX
+ J1frGVG74kEYsPauOfRMFD61D1YbxkIkXGOuotRHalOnhJ7bEWtHQzutj7xnKLcPxvO2
+ sszt/aLqeAJB+sAV1oLIfNG7TsjpZpL4xhcn55MQEEnLRKYOHoUUSxBEcnYwXXXlV3+x
+ TH1Bz9A640nHAumSF9tSSC3vDLXZwkDeSAlX9IkgNnSyF17o3uzfqHemmbQZ3B6jL2BA
+ LegcjQ8HrEQXcJ5eigsF+QZnoo3IpEWWNvyNAjEZu1pzt6QOCZC1LCQ1rTaWBSCS4B97
+ dtiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=hM+3hR3nYd1ZUs9brVuH0Yagy5ovOQGBqoH01WL3Fwo=;
- b=KpA1zawQ1HH3+MOVhkL0U86fiWCd1Q4CnE/yHL/Dfs8qbccZuUuNhUfSsTiTSYxTmO
- ms+/7fClczcXSaNy7nScyN85Ck3beWqLG/Ie85ug6bozIgLP1n6xhoG/nNavtVoiWnHy
- OsYTDSrMfwtzNeSaorqybC8WIXdjNWWwZIFMHM0PO/ED3/kTkiods8A0f7Ve2zi9119Q
- bGWaN0T8Y4D9kmomkhvaXRKu+jlvxaoJX9P9zqEGYDjXV+WIrlfVRjLLl2Wu0AdAAf3a
- kCqbrHoiZ+jTItJP81I9DTUkBnzEcTb6msHKY3bZYShYR2KwxFoXmzPJ/+L2xQRVGtfR
- acMA==
-X-Gm-Message-State: ANhLgQ2JE3/wAJWWzYDjaYvV4bg8qBZvq0wubvbzIp4EPctgIwnCAP8r
- zUz9YkQ8GorYn6HNpPnIC3bdLRwI
-X-Google-Smtp-Source: ADFU+vt0ZK77C8pYKUIAt1vrLyRBFi/scWxuhEdXpn4NvM7i+N+CxgpCkvtRLHseidUOyBOmwhzsBQ==
-X-Received: by 2002:a17:902:8215:: with SMTP id
- x21mr9575592pln.59.1583429228049; 
- Thu, 05 Mar 2020 09:27:08 -0800 (PST)
+ bh=D8D3vmEglvdfYXRsW6jSW3qpPxZDOdsUg5idUKVuC7o=;
+ b=ewElrr+Oi30eoO/WhFJIO6d8iEhGYjQmBoeZp8FH29GtexxFD6wygqiIkBvoUYMvmp
+ m3MCb490pqJXs150QiksirCJHbi+oN3WIg76ttn25yVlZxyC4+1k87D2l8oXw4f0jbIr
+ 2a6F75ID9NrgioTedcIb+mdf3wZ6TQpZIRdLhEJB/W32fm24ICql+NYtmU5HSkiaS8z9
+ l+tnyLw4Mj+wm1o//Ck+FFHaixEGZR7wbqG8k5kFLU8M4uwurWvG+a8vqvBJoo1TlYQu
+ MwHtdr9U7JO2vlKy4NTH53CEF/JqyNFVomjvo011YArabS4RWJZwLYOblMik/vL2YThB
+ XbrA==
+X-Gm-Message-State: ANhLgQ25/P1kkSkxYQvUh4rsYG5KSMsI1WcBwoqtGqgcfXD3Uale3bq/
+ mmjSCk2lSAn5IXTL/xzF3M9n11E4
+X-Google-Smtp-Source: ADFU+vt+S07xVrBqhIWDK4dFYJ9Q7VSPhbqvrKQ6iybbRiDw53iVQHI+fILUL+jxuuBkXD+foKwbUg==
+X-Received: by 2002:a17:902:b903:: with SMTP id
+ bf3mr5814213plb.144.1583429271404; 
+ Thu, 05 Mar 2020 09:27:51 -0800 (PST)
 Received: from [10.67.50.123] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id g18sm33216771pfi.80.2020.03.05.09.27.04
+ by smtp.googlemail.com with ESMTPSA id h6sm16831034pfg.88.2020.03.05.09.27.50
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Mar 2020 09:27:06 -0800 (PST)
-Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
-To: Sudeep Holla <sudeep.holla@arm.com>, Peng Fan <peng.fan@nxp.com>
-References: <1583201219-15839-1-git-send-email-peng.fan@nxp.com>
- <1583201219-15839-3-git-send-email-peng.fan@nxp.com>
- <20200304103954.GA25004@bogus>
- <AM0PR04MB4481A6DB7339C22A848DAFC988E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <AM0PR04MB44814B71E92C02956F4BED4588E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200304170319.GB44525@bogus>
- <AM0PR04MB4481B90D03D1F68573B05BE088E20@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <20200305160613.GA53631@bogus>
+ Thu, 05 Mar 2020 09:27:50 -0800 (PST)
+Subject: Re: [PATCH] ethernet:broadcom:bcm63xx_enet:remove redundant variable
+ definitions
+To: tangbin <tangbin@cmss.chinamobile.com>, davem@davemloft.net
+References: <20200305122259.6104-1-tangbin@cmss.chinamobile.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -123,23 +117,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <d9734fd6-f855-296b-3a0b-ffc45ed0e3cb@gmail.com>
-Date: Thu, 5 Mar 2020 09:27:00 -0800
+Message-ID: <a419c6e1-47e8-64a0-4d58-9b2d8186f8bf@gmail.com>
+Date: Thu, 5 Mar 2020 09:27:49 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200305160613.GA53631@bogus>
+In-Reply-To: <20200305122259.6104-1-tangbin@cmss.chinamobile.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_092712_432779_622FC44F 
-X-CRM114-Status: GOOD (  17.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200305_092752_364036_67D818A1 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -152,6 +146,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 2.0 PDS_TONAME_EQ_TOLOCAL_SHORT Short body with To: name matches
+ everything in local email
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -163,46 +159,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: netdev@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/5/20 8:06 AM, Sudeep Holla wrote:
-> On Thu, Mar 05, 2020 at 11:25:35AM +0000, Peng Fan wrote:
-> 
-> [...]
-> 
->>>
->>> Yes, this may fix the issue. However I would like to know if we need to support
->>> multiple channels/shared memory simultaneously. It is fair requirement and
->>> may need some work which should be fine.
->>
->> Do you have any suggestions? Currently I have not worked out an good
->> solution.
->>
-> 
-> TBH, I haven't given it a much thought. I would like to know if people
-> are happy with just one SMC channel for SCMI or do they need more ?
-> If they need it, we can try to solve it. Otherwise, what you have will
-> suffice IMO.
-
-On our platforms we have one channel/shared memory area/mailbox instance
-for all standard SCMI protocols, and we have a separate channel/shared
-memory area/mailbox driver instance for a proprietary one. They happen
-to have difference throughput requirements, hence the split.
-
-If I read Peng's submission correctly, it seems to me that the usage
-model described before is still fine.
--- 
-Florian
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMy81LzIwIDQ6MjIgQU0sIHRhbmdiaW4gd3JvdGU6Cj4gaW4gdGhpcyBmdW5jdGlvbizigJhy
+ZXTigJkgaXMgYWx3YXlzIGFzc2lnbmVkLHNvIHRoaXMncyBkZWZpbml0aW9uCj4gJ3JldCA9IDAn
+IG1ha2Ugbm8gc2Vuc2UuCj4gCj4gU2lnbmVkLW9mZi1ieTogdGFuZ2JpbiA8dGFuZ2JpbkBjbXNz
+LmNoaW5hbW9iaWxlLmNvbT4KClRoaXMgbG9va3MgZmluZSwgYnV0IHlvdXIgc3ViamVjdCBzaG91
+bGQgYmU6CgpiY202M3h4X2VuZXQ6IFJlbW92ZSByZWR1bmRhbnQgdmFyaWFibGUgZGVmaW5pdGlv
+bnMKCnRvIG1hdGNodGhlIG1ham9yaXR5IG9mIGNvbW1pdCBzdWJqZWN0cyBkb25lIHRvIHRoYXQg
+ZmlsZS4gV2l0aCB0aGF0OgoKQWNrZWQtYnk6IEZsb3JpYW4gRmFpbmVsbGkgPGYuZmFpbmVsbGlA
+Z21haWwuY29tPgotLSAKRmxvcmlhbgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
