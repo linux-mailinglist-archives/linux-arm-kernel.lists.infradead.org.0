@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B0A317A328
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 11:33:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55FA317A329
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 11:33:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vyX1hu/xc9mnEBn+7qIHH//Xt9Xurd85SUQ67v93t+0=; b=b8BJqlt7aAPEqw
-	3PkGmHcj/UupCLLQq0soVP5wPp2xB9vKNa9cN5B46V50wEFU/qBWEGMrmTWwZEWkLqNpIEVQBKgDB
-	I27StdDlpP92ntQCtSjOhkUTsJWQjzXNYzovIJqskb2ujsBQTfMOiNSxFJUEkZzLIQ0cdFWEUzPLK
-	KtQ9Y5i1a3xcrVkrZKUBawnJV7XF3jZqCarnVkNZil2kQCdE9IZvow5AYA155yd7DrcLopXIZMi2X
-	JNkcQ/PSycTyqot2lMQOTenM6LH3V/cYwHhzbFLZ6kSiCUDcLqmdkL2b7bA89Jm8aZqgvainb4/Zg
-	AQHDxBFJrstRPfpOKaPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3Hhs3h+mCWrYA6gqviQzQF3v1PBQY+MCuk1ZkWdob/A=; b=m65EaVwG3YIkDT
+	Ww36i6idUsWlOxBzX993I1NnL1C9gsxik805Wes+06GnsT4A8SvGncUdopWfbhZ1jnqVO5cx49Wg6
+	IfP3ym6TmvtHAiFzgfGt58bglNhrNBzx8ZDrhsgB8v4CWggqANy/31d/F/9InjD5W4iUE1w7rtWfo
+	7WYxbCp8sB6K54hSPtwYtGJQxjZe/UxHtqOYMfP5o61AqRbxgVp/gR7J984k5F/B4x/jRp/bDRVbk
+	yez8jY1wlSUWfyeqp00+y8vs/PbwuR7xvZIq3VkFQjg3r5CYOasmliGaoh8cit0ZqPAOGfn5QNxlO
+	3xf2qyVGecGisuMNS/9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9noM-0007ue-Pw; Thu, 05 Mar 2020 10:33:02 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1j9nod-00082J-OY; Thu, 05 Mar 2020 10:33:19 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9noF-0007tn-KS
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 10:32:56 +0000
-Received: by mail-pg1-x544.google.com with SMTP id t3so2571544pgn.1
+ id 1j9noI-0007vV-Pa
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 10:33:00 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id l41so402379pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 02:32:54 -0800 (PST)
+ Thu, 05 Mar 2020 02:32:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=g6jvlcLfOVkePq/CeddtHcxNNxbcBUnyepFlczoKoYc=;
- b=UZzzyTL1ZB+yE8Jt4H6j1p0yCFX46aPS9ZVAdNXjxcjsGur/jB4RL5cMMdJTJGpUn9
- q/MOLQvyGC2HPHdgiMK02FBCt2o6KP1Wp+kbz8Akytmny/l/mf5JNhIySMszdPb8gzp5
- 8EVXlxu7bnHIaPcLpmpI/GkApgcj69lS6s3ZsUBONyErebXYbBnRB0NeWPhlDgp+4shU
- bd3IPUMzVnn/KKnxbCAAZgDRQNzLzyLvbL6g9kMeCp66G5bmJMAvaPsqHK765DG7iHgZ
- PaDbVA6j14QUozLFqClvOzW/89MtlDshCqkTf+6UIj+2kNESIZzNpfVmOtkuCKXpLB2s
- ASZQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=vsmWfQHYKO+IuisE4zoMrrWqQil3RoLQ09NM/R4vXz8=;
+ b=PnfP0bOcQb6PjDSK6KH7VyFI6lPRcbRKxQXVVwlFjpqKwUREnrvNYwuGVOOeteK46l
+ +ziFUEWNEhZ4HH1r5D4yvLldZTqLP1B2uxtlFvEFbevqxE6Q4PWw4Z0APOak1KTgfX6U
+ hxzlSAPkg/84vnQwYAIdOSZr9isyzANmrggt0Yn8ZrmbqAilHz1ctIexj6h3qljDRYgn
+ SrJhXCHML0kTVTJQCkBTiF3orv1usOgLZbXjj82UJBqjpho02d0GIUNX6w7cLLFdtpIV
+ ln3u6zd2iGo7YHWIlXYb4wBvy/339xHyTqYqRlQEi/0djWXaw8YHz1QSS5ERq1mG5x4z
+ 5MwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=g6jvlcLfOVkePq/CeddtHcxNNxbcBUnyepFlczoKoYc=;
- b=JBYZcobLMx67dW1rRYvJ0+WLpGdB1IRwf8l6xE++rs+sJLZ/QaMCeek4rUEAk9jqYg
- i3JXvojHhk0QgrLfeZz1WKrcIko6IF5RXrRt0x/uiLaVE34zGAtEv+VZQGlVOGuyjXOI
- fYBo3dMAno++EDTAuwnInQ6hwkj4IMZgVMusaUKFSMHrVp3i7L42jBafR+geLfGsim5t
- 8t63K3IIybs/xy+AlkWi9BFPNvAV66IjYXQUXoUaf2Ts4hVq5o/+YFmz4vpNj38nejES
- 0MbMCax24obJv06nGYPIJCCj/WkmH2BCAjOYz5Xxaftwh0IYpdcw6t7vVdYZpglhKswF
- U2/w==
-X-Gm-Message-State: ANhLgQ2zcQ4AW0s934jIX2AfmCPO4h2ux4U49gOZYcAt2/slG/6iUmjI
- auJWC/KApwuC07KmaKaNKSA=
-X-Google-Smtp-Source: ADFU+vvjSIb9MWOcCZUFhbK955O/9E7FK0p9nq90jMrFm/uX5fq+xfRZeu1hdPIvtSZHOabTmOSYPA==
-X-Received: by 2002:a63:8343:: with SMTP id h64mr6769837pge.73.1583404374332; 
- Thu, 05 Mar 2020 02:32:54 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=vsmWfQHYKO+IuisE4zoMrrWqQil3RoLQ09NM/R4vXz8=;
+ b=QfNNxRAzWvt4EHKAyqdXV+bHcLyE3B6pRdJ3Tddywcc0NHRMhv36q1HrQeBxCkl1wk
+ maVdcXzUkNOigAEAnnGshgABn0nJ8QRqTjitl+oLULuQJrY1O9lsYDTcfPfTnH0r7Ddo
+ Dr+tYr2+vCaWrqgf8Jwkiag1LEbJr1RBTjlgPxnqoCmuIFaxJWcX9LXFA1QEeoLi5YIW
+ vyT8ZOmlpOa1HIRNEDOUW2IymLuXgALecePMANqLjSHcIhlDZGodqIFmGcE1zR9uQlNG
+ xCNF+5/DDrVoFuvfDcG9sZ4CVM6qrUCJ37qCOAvRzI4YW/YZVaOHaBlPlOZHcUuN3ELh
+ u5GA==
+X-Gm-Message-State: ANhLgQ0a9/6C8WgESBwDud7yHaf3aTax5Dt3pI3sS+Bi8lk22+zxTsnH
+ IwFDnMhl9+gBB0IwquAr3pU=
+X-Google-Smtp-Source: ADFU+vuvup2OQ+LkXonFteqL3x/Q3zHIPTB1pvus9Rdsa06vHb/D3yAFoir8AtziitgcAYM/Iw/3Pg==
+X-Received: by 2002:a17:90a:e654:: with SMTP id
+ ep20mr8005006pjb.60.1583404378204; 
+ Thu, 05 Mar 2020 02:32:58 -0800 (PST)
 Received: from ubt.spreadtrum.com ([117.18.48.82])
- by smtp.gmail.com with ESMTPSA id t17sm31540145pgn.94.2020.03.05.02.32.50
+ by smtp.gmail.com with ESMTPSA id t17sm31540145pgn.94.2020.03.05.02.32.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Mar 2020 02:32:53 -0800 (PST)
+ Thu, 05 Mar 2020 02:32:57 -0800 (PST)
 From: Chunyan Zhang <zhang.lyra@gmail.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Jiri Slaby <jslaby@suse.com>
-Subject: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
-Date: Thu,  5 Mar 2020 18:32:27 +0800
-Message-Id: <20200305103228.9686-1-zhang.lyra@gmail.com>
+Subject: [PATCH 2/2] tty: serial: make SERIAL_SPRD not depend on ARCH_SPRD
+Date: Thu,  5 Mar 2020 18:32:28 +0800
+Message-Id: <20200305103228.9686-2-zhang.lyra@gmail.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200305103228.9686-1-zhang.lyra@gmail.com>
+References: <20200305103228.9686-1-zhang.lyra@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_023255_698105_2F931C12 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20200305_023258_869277_300E4CF0 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,28 +112,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chunyan Zhang <chunyan.zhang@unisoc.com>
 
-The default value of Kconfig for almost all sprd drivers are the same with
-ARCH_SPRD, making these drivers built as modules as default would be easier
-if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
+Remove the dependency with ARCH_SPRD from sprd serial/console Kconfig-s,
+since we want them can be built-in when ARCH_SPRD is set as 'm'.
 
 Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
 ---
- arch/arm64/Kconfig.platforms | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/tty/serial/Kconfig | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
-index b2b504ea6fd6..76778b2f520d 100644
---- a/arch/arm64/Kconfig.platforms
-+++ b/arch/arm64/Kconfig.platforms
-@@ -249,7 +249,7 @@ config ARCH_TEGRA
- 	  This enables support for the NVIDIA Tegra SoC family.
+diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+index 52eaac21ff9f..2b9addc0afb5 100644
+--- a/drivers/tty/serial/Kconfig
++++ b/drivers/tty/serial/Kconfig
+@@ -1452,7 +1452,6 @@ config SERIAL_MEN_Z135
  
- config ARCH_SPRD
--	bool "Spreadtrum SoC platform"
-+	tristate "Spreadtrum SoC platform"
+ config SERIAL_SPRD
+ 	tristate "Support for Spreadtrum serial"
+-	depends on ARCH_SPRD
+ 	select SERIAL_CORE
  	help
- 	  Support for Spreadtrum ARM based SoCs
- 
+ 	  This enables the driver for the Spreadtrum's serial.
 -- 
 2.20.1
 
