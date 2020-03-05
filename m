@@ -2,82 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5920217A92F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 16:48:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35EA017AA1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 17:05:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=JF+d6kho3FI3e7ygKFbv4uuSYLXGvnx27MyUzOJBahk=; b=Wxa
-	6sWmAc7wef60qFGL3HqS5ol5AcRwrrDswRtkRyklKYOjdpOjfReIqMPisRgJsDCjGgYGW/gcdFYAX
-	6JxF0hm7S7ymyKij6RVGtH9/XNLIOIGT3aIefnaCCNBsxbCYmeBchqdjzbYqovLsHjt5XZFi54oHc
-	E2s8x2JF838HNWsfmhGXM5nnWTHXL69IOhFFrS95o97aFMrNLofyTjCrhr2f6K8zfhpBUw/h/xAz+
-	DIlivhwpX7eD7s58SGn73lWQsFraVvyYIH3fpCoti0XsV0X4Q+qw8LkPEM1xmcFQB7O9hkWd6AzNN
-	V0YAoMZfmY/5zjjHTNo8mIfSuNbQnmQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=98zRAkEmJmQKxyGh7oyz4WoYamW8LpvdAqgi/z1aWFA=; b=MlPoyUr917Ug8q
+	TpHIkfLH1IO7Z6dH7TxWv8Sd78q5CKyu8ieaOLWiUMcWY6jgvQTgb95Fv8jnpQbQF8Cqbz6w9Ae+x
+	yjJdtgpp2uewhVhkvXB15syNSYvwvz1BE1lMINzn2K1b65Ta9/aaUjIV2x68BZJzAznMerC/C5xVT
+	LJMQTzzDdWUK+krj0PZKTVNTDlBqRNszT0YPMG0IYeY2LwIwNd6KGODbuhkrlO8INjdRa5lR4gZLJ
+	G0784C3aESasXBUodoZRApLSi6XWETlQjaataAEfw/tkjcf19z7L7cptViNMgJIx3qYLarpZgQFnn
+	WUqvqOd3qkA3ffEDoRJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9sjp-0001zz-OE; Thu, 05 Mar 2020 15:48:41 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j9t07-0002a8-C7; Thu, 05 Mar 2020 16:05:31 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9sji-0001zB-KO
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 15:48:36 +0000
-Received: by mail-wr1-x443.google.com with SMTP id x7so7638693wrr.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 07:48:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id;
- bh=6vKPBMFAdnWYkETwAnE+NZr/Oa9B4AUuvrv5+JlUIUk=;
- b=ha/iISKtT2+pJaZKrcGZZxC8b1yqDyVkddwdovsXqroFDgNG72EvdwnjQ8q+AuEfyP
- L2Ro3c8X6ZCY6Q/IZWmBpD3df/47EMYujeereZZqX2hTSFealvoR/0Z3tj9AcyT4YhTe
- 2jS7G4FspyKARvVgbl7WTdypb7H65+Ej1yhBkRnDMYujtkCWbF38hvBvz0aN3RJ60geF
- fFFLd8A5CIi3/SZ5yCJ3lUw2E810UFfw1JAgXatN9aKGhTVR+VBri4NACExWeBXUnTwX
- BJ8BaEsA/wS4Deoj02ML66A6LLuHUp6TerVrAvkUf51rWg56/hNPMG/YVdLefufbIYfz
- 9sjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=6vKPBMFAdnWYkETwAnE+NZr/Oa9B4AUuvrv5+JlUIUk=;
- b=U2dFxj8j9dXCossEpWdZIUUyZTRrpjZ2eK88nCHuckOczlMB0y1XVQ2nsmP0/lQVgE
- rQs1x41DGVx/PXN9jZijBSCjJUd1uUBd15A0h6Dyhv+nTlZOlVVnf0LPGT1y/Nw2k5LQ
- mAE22CHinm5/a9jJqRj5Xwq5PGEdlVIcMl9FhStYPwl0ZwpFMsotqIsRJ5IywEEQ8/3s
- j3poQf8Cud1yJVUbPgksTl92T+BbkvdOQWULT0LwHqXAPxd49FqoBmeCMFhEcM0uoB0V
- yNtUC8qhjZuT9H8zo8Ah2Lp0S6laO3sqTE9JjZZoQ4V4yP6g6DuruqyLP2KotJCdJEZ+
- zlEQ==
-X-Gm-Message-State: ANhLgQ1LC6lkI0IDIESwYssKmIF6tUW3YOK457M0zlwzbz1veehnWcEo
- GO4T8xJ0X50tka6lWqp1SLWWpw==
-X-Google-Smtp-Source: ADFU+vsvtG4BngtdZbRkezZWGdyNU2MQK7sMwHpKfqFfhZqwBj0F8TEfH2yT+3tKSqzsrXBCcl8rEQ==
-X-Received: by 2002:adf:a419:: with SMTP id d25mr11479372wra.210.1583423310070; 
- Thu, 05 Mar 2020 07:48:30 -0800 (PST)
-Received: from localhost.localdomain ([51.15.160.169])
- by smtp.googlemail.com with ESMTPSA id
- t187sm10175897wmt.25.2020.03.05.07.48.28
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 05 Mar 2020 07:48:29 -0800 (PST)
-From: Corentin Labbe <clabbe@baylibre.com>
-To: linux@armlinux.org.uk
-Subject: [PATCH] ARM: defconfig: enable storage for qemu
-Date: Thu,  5 Mar 2020 15:48:23 +0000
-Message-Id: <1583423303-25405-1-git-send-email-clabbe@baylibre.com>
-X-Mailer: git-send-email 2.7.4
+ id 1j9szy-0002YR-SF
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 16:05:24 +0000
+X-Originating-IP: 86.202.111.97
+Received: from localhost (lfbn-lyo-1-16-97.w86-202.abo.wanadoo.fr
+ [86.202.111.97])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 3DB26E0015;
+ Thu,  5 Mar 2020 16:04:58 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Barry Song <baohua@kernel.org>
+Subject: [PATCH 1/3] rtc: sirfsoc: convert to devm_rtc_allocate_device
+Date: Thu,  5 Mar 2020 17:04:50 +0100
+Message-Id: <20200305160452.27808-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_074834_813181_48396023 
-X-CRM114-Status: GOOD (  11.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200305_080523_053131_C08C878F 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,38 +64,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Corentin Labbe <clabbe@baylibre.com>
-MIME-Version: 1.0
+Cc: linux-rtc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The qemu versatilepb machine has some SCSI storage which cannot be used
-with this defconfig.
-The SCSI rely on PCI which is not enabled.
-So let's enable both PCI and SCSI.
+This allows further improvement of the driver. Also remove the unnecessary
+error string as the core will already display error messages.
 
-This will permit to use LAVA tests for versatilepb in kernelCI.
-
-Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- arch/arm/configs/versatile_defconfig | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/rtc/rtc-sirfsoc.c | 23 ++++++++---------------
+ 1 file changed, 8 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm/configs/versatile_defconfig b/arch/arm/configs/versatile_defconfig
-index 767935337413..6171b96cf9b8 100644
---- a/arch/arm/configs/versatile_defconfig
-+++ b/arch/arm/configs/versatile_defconfig
-@@ -96,3 +96,7 @@ CONFIG_MAGIC_SYSRQ=y
- CONFIG_DEBUG_KERNEL=y
- CONFIG_DEBUG_USER=y
- CONFIG_DEBUG_LL=y
-+CONFIG_PCI=y
-+CONFIG_PCI_VERSATILE=y
-+CONFIG_SCSI=y
-+CONFIG_SCSI_SYM53C8XX_2=y
+diff --git a/drivers/rtc/rtc-sirfsoc.c b/drivers/rtc/rtc-sirfsoc.c
+index a2c9c55667cd..b2e72597eee8 100644
+--- a/drivers/rtc/rtc-sirfsoc.c
++++ b/drivers/rtc/rtc-sirfsoc.c
+@@ -341,28 +341,21 @@ static int sirfsoc_rtc_probe(struct platform_device *pdev)
+ 	rtcdrv->overflow_rtc =
+ 		sirfsoc_rtc_readl(rtcdrv, RTC_SW_VALUE);
+ 
+-	rtcdrv->rtc = devm_rtc_device_register(&pdev->dev, pdev->name,
+-			&sirfsoc_rtc_ops, THIS_MODULE);
+-	if (IS_ERR(rtcdrv->rtc)) {
+-		err = PTR_ERR(rtcdrv->rtc);
+-		dev_err(&pdev->dev, "can't register RTC device\n");
+-		return err;
+-	}
++	rtcdrv->rtc = devm_rtc_allocate_device(&pdev->dev);
++	if (IS_ERR(rtcdrv->rtc))
++		return PTR_ERR(rtcdrv->rtc);
++
++	rtcdrv->rtc->ops = &sirfsoc_rtc_ops;
+ 
+ 	rtcdrv->irq = platform_get_irq(pdev, 0);
+-	err = devm_request_irq(
+-			&pdev->dev,
+-			rtcdrv->irq,
+-			sirfsoc_rtc_irq_handler,
+-			IRQF_SHARED,
+-			pdev->name,
+-			rtcdrv);
++	err = devm_request_irq(&pdev->dev, rtcdrv->irq, sirfsoc_rtc_irq_handler,
++			       IRQF_SHARED, pdev->name, rtcdrv);
+ 	if (err) {
+ 		dev_err(&pdev->dev, "Unable to register for the SiRF SOC RTC IRQ\n");
+ 		return err;
+ 	}
+ 
+-	return 0;
++	return rtc_register_device(rtcdrv->rtc);
+ }
+ 
+ #ifdef CONFIG_PM_SLEEP
 -- 
 2.24.1
 
