@@ -2,85 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 238EB17AD98
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:53:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A37EE17ADA2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 18:54:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9O4kvpWoP3IYwqLV+Vb4PMtGxLTfg1Qg7Bu3l2tDo14=; b=kiI0rrVUlxdDyh+YwDrvPr3S1
-	v1jb1zSaPTw8StcIBVs6dmZFD1IMZYfP7dZLzR8D+jJyBp+UV85HpA7KuU1Y2W/1WXu4kxYIhTm8K
-	2xC74b/K/ZfYWC4xjLSPEn7eb0KCB9rL4SQQPstv8bkyRjJEucN6woT6SuTTO+cLPUbWaoeKmO9oR
-	hAWO53a16+sz2wz3IU7n5gSvIFx4yBbiqYcx5t1AQz2cD7y9xiyVO+FQbHMwQVFIYIvjxpupYrtBo
-	21T0BCF0V+07/ebn/RUPBCA4YMTcvTGZk2rKON5D0ZXJXdSep5iBXWq+U+GCGf5EwQ5m8s/lrnpwp
-	pcnosaQOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e3+H7e5utsgRJsY/hbI2hrDTrH7obADTMAS6sJD0IAg=; b=lVz4yUWi0S77OR
+	9EjPyp3uj0kLzf7iFFZiL/NuBpLgcEPXMwIFF5V4yM/2qln58Cknym+WzeOWAEt8e1W30YQGEfQXo
+	ku4fh+5VNsMxaxysO0+DD/59VQr0n+jwSu85Woembk3BedfjXGVYy4+vp84w4v9eZn3zm69O6etqI
+	H4fjC3Zr8hJUbjDQnciUG8DrA1AMmODIofva9PkuRoSQa9sOMk+yL3paEXu+nB+WZo39HDP0CkfyS
+	t5vhR/+zO6ucymsQ6Hl5Msrb3adQorrlT9eDKTz8kbA0xhr4kqWcj68EKO2IqBHX3znIu/jeYx+N0
+	fGrCH0E1RWI5YMEv842A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9ug5-0002AO-71; Thu, 05 Mar 2020 17:52:57 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j9uhn-0002UQ-H0; Thu, 05 Mar 2020 17:54:43 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9ufy-00029I-Oo
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:52:52 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r7so8136697wro.2
+ id 1j9uhf-0002U5-12
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 17:54:36 +0000
+Received: by mail-io1-xd42.google.com with SMTP id u17so7422900iog.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 09:52:45 -0800 (PST)
+ Thu, 05 Mar 2020 09:54:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=KKlI4DeAEp5pv8YazXy5gr7JP+Ho6TalAmxr1k++h2E=;
- b=QfWd/9BzJII9/qo5WnkdjRKuOWQo15xjx9Cqq5bHumjZCc8tXKXrxnbdP/Mvwshj9X
- j2Y1q+PmDE8gZ4plzBTs2gcVJCoeTh/9fQwKEQwdsoJAeV8rIhwrK9vTtzEOXcO5GJxZ
- GaEXvryNPxht9wY5urXLqQXuDpm+wq/phxvBx16hoa2ecUV5su9z77VPWup34bFwIXye
- JpX+SVpkvYOa9gbj7gRodAnkh3f5lGri9u7jh1aEYwy5KleU3Qbv1ZCEQepk52xeU2tW
- k2n4ihyJqMR+ggmUEBPHIy/DcchZqGrwte+jtwg7/Fci3+Y+TnQNMO1KSVIDjHpuFyTE
- Zl4A==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nWP6NJ5Ufnl/Qfwtyeq+O8joFfs1L0Y4YDlGJGw2HAo=;
+ b=z7S+oDI+x6CnRYCgv92/5OnTRsGdpp+y0t3e9oT0oJ/0BeDDJdVS9juXISjgw851gm
+ GGacPtojUoWQbfZ52pcikVXqGlB2VRO/fKMhYQTD8oWTTfFPhtb7xXXB8WyHznS25jWy
+ yv5oCb7CwJ2XoT8GMacjXi0cAGkhZcb9cTYw/3X1/hGYOqcsuYzvjWFQ1S4SeyEKuFNY
+ CmWwSw8emOAuD0yxmqR0DmUIiwjPHTaIGm+1dZ80F28Qj0ckaLydGJE+vDGd851gonG/
+ 49t7i6mWE2mtVf06RGJAShRIKbpdzNzU3lEdkNO+AyffD2WWiKWcd7ww865xl7BcwvBL
+ xIRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=KKlI4DeAEp5pv8YazXy5gr7JP+Ho6TalAmxr1k++h2E=;
- b=BBVAJ+aQI7y4+4OpEfxjytX/1ymtx1MkjiqaCQI/QLTa5DLHigK6Upk02IaVZsBp9P
- 1KLgwT/xpQVKjcpWhaBTDvmJWPnkRz16RKRYy5OHd0qXme+WCNU+0vVtiB88l9WoDJue
- zM2GI/9hfOs5Ox2RZTqxUHuVlLDtKvjyzff/S3Y3BUM4PjjmQvQ+/uYGItUlh3g+mWi8
- oopdQti4IrgX3yVW6kUFKpjOGKCSkgL43NUlZOTjzelhCvhWa+gFXB4hp1UMVgh2FdXr
- SRQcnml7zaKLjyrf2U4r3RntVvk6YgFuDaK5L8gLTXomGxxGLn1CILkqyB82VX12L36t
- 8OAQ==
-X-Gm-Message-State: ANhLgQ136XZXrpCaosCOqNOcJHQinZ5G9rwieMKXExT2NvwdW16AGJAL
- h+eaGAhMbzcYdn+ebDkz//Dxkw==
-X-Google-Smtp-Source: ADFU+vsjY7vSv7aQngTiJFUNNqCNlMiQG1Q/oGLAEFjA2gwTj2/IFGvwnyfmLQ5qXYfEeijYNbA50Q==
-X-Received: by 2002:adf:9cd2:: with SMTP id h18mr63430wre.339.1583430764059;
- Thu, 05 Mar 2020 09:52:44 -0800 (PST)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id j15sm5716878wrp.85.2020.03.05.09.52.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 05 Mar 2020 09:52:42 -0800 (PST)
-Subject: Re: [PATCH] nvmem: imx-ocotp: Drop unnecessary initializations
-To: Anson Huang <Anson.Huang@nxp.com>, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <1582694533-18870-1-git-send-email-Anson.Huang@nxp.com>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <1e43bdb2-c9e4-2fbd-0f4d-0ab2e94403c8@linaro.org>
-Date: Thu, 5 Mar 2020 17:52:42 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nWP6NJ5Ufnl/Qfwtyeq+O8joFfs1L0Y4YDlGJGw2HAo=;
+ b=UMMh2eadOElXeYx+UYc3MNOKfzJM3qko78v3QJ8xzTZTSTycqBcqama5KB5YmlldG1
+ p/hTbhKuldv9FbINQgzqpx+M8jvbsrZi1Bki3EAaBm5WGJYL1BalHj3CYveWNH6k54vi
+ tRFmL/p1RxpPHvFrueSVj1PRF3lvMrBYXGTDLpkXFhYgRVAv2E99ORwhTiY9eSD8Glwp
+ NJkIe31yRJ5hC1i6jofXF5MiP0MJuv1pF/K3jE7wLHoYScZZvN+Krqhe4LKKVxrg/nkL
+ XXLojVeibGljySWg13iYLXA9Y+CZ7C7S1cyGp17rWRu8QsPA3yDG70pj8/qP1e3MpcMu
+ u0uQ==
+X-Gm-Message-State: ANhLgQ0zKBjQegDMiKSL5DG+jltyRz0toiG87P91pX5OGzXrNgONwS1K
+ V+qLehz6FfSoGf1sqOa8Eb6/msD+3X+V3uzBcvmTYw==
+X-Google-Smtp-Source: ADFU+vt/zBlELi1bLdW+KjbrwUUGrSXJOGD1C1rzpYL6NqnOhhJywlgeLDkLobXKBOoTHfrNdD3BifjP1rQvlXDxd7w=
+X-Received: by 2002:a05:6638:44a:: with SMTP id
+ r10mr8443557jap.36.1583430873469; 
+ Thu, 05 Mar 2020 09:54:33 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <1582694533-18870-1-git-send-email-Anson.Huang@nxp.com>
-Content-Language: en-US
+References: <20200304142628.8471-1-NShubin@topcon.com>
+ <CANLsYkzPROdphvmtpZ6YiajZ2dYLrojC-rGYkq4jK2yzTnAJ5A@mail.gmail.com>
+ <264561583429111@sas1-438a02fc058e.qloud-c.yandex.net>
+In-Reply-To: <264561583429111@sas1-438a02fc058e.qloud-c.yandex.net>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Thu, 5 Mar 2020 10:54:22 -0700
+Message-ID: <CANLsYkxj=1o8Y0V0WedbVirj9seZSArWeCvQvwk+N7wZa2_hPQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] remoteproc: imx_rproc: dummy kick method
+To: nikita.shubin@maquefel.me
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_095250_810815_A3CB43FC 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20200305_095435_101258_E4F2CD4D 
+X-CRM114-Status: GOOD (  20.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,21 +93,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
+ Nikita Shubin <nshubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-remoteproc <linux-remoteproc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 5 Mar 2020 at 10:29, <nikita.shubin@maquefel.me> wrote:
+>
+>
+>
+> 05.03.2020, 19:17, "Mathieu Poirier" <mathieu.poirier@linaro.org>:
+> > On Wed, 4 Mar 2020 at 07:25, Nikita Shubin <NShubin@topcon.com> wrote:
+> >>  add kick method that does nothing, to avoid errors in rproc_virtio_notify.
+> >>
+> >>  Signed-off-by: Nikita Shubin <NShubin@topcon.com>
+> >>  ---
+> >>   drivers/remoteproc/imx_rproc.c | 6 ++++++
+> >>   1 file changed, 6 insertions(+)
+> >>
+> >>  diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
+> >>  index 3e72b6f38d4b..796b6b86550a 100644
+> >>  --- a/drivers/remoteproc/imx_rproc.c
+> >>  +++ b/drivers/remoteproc/imx_rproc.c
+> >>  @@ -240,9 +240,15 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+> >>          return va;
+> >>   }
+> >>
+> >>  +static void imx_rproc_kick(struct rproc *rproc, int vqid)
+> >>  +{
+> >>  +
+> >>  +}
+> >>  +
+> >
+> > If rproc::kick() is empty, how does the MCU know there is packets to
+> > fetch in the virtio queues?
+>
+> Well, of course it doesn't i understand this perfectly - just following documentation citing:
+>
+> | Every remoteproc implementation should at least provide the ->start and ->stop
+> | handlers. If rpmsg/virtio functionality is also desired, then the ->kick handler
+> | should be provided as well.
+>
+> But i as i mentioned in "remoteproc: Fix NULL pointer dereference in rproc_virtio_notify" kick method will be called if
+> "resource_table exists in firmware and has "Virtio device entry" defined" anyway, the imx_rproc is not in control of what
+> exactly it is booting, so such situation can occur.
 
+If I understand correctly, the MCU can boot images that have a virtio
+device in its resource table and still do useful work even if the
+virtio device/rpmsg bus can't be setup - is this correct?
 
-On 26/02/2020 05:22, Anson Huang wrote:
-> Drop unnecessary initialization of variable 'clk_rate' and 'timing'.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Thanks,
+Mathieu
 
-Applied thanks,
---srini
+>
+> >
+> >>   static const struct rproc_ops imx_rproc_ops = {
+> >>          .start = imx_rproc_start,
+> >>          .stop = imx_rproc_stop,
+> >>  + .kick = imx_rproc_kick,
+> >>          .da_to_va = imx_rproc_da_to_va,
+> >>   };
+> >>
+> >>  --
+> >>  2.24.1
 
 _______________________________________________
 linux-arm-kernel mailing list
