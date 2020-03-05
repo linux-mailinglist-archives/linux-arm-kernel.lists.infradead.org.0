@@ -2,94 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09C25179FAD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 06:56:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F43E179FED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 07:23:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NuP6RcLUEiSOYWUr3OHVsRDU/W9HFXBENH09o9fteX4=; b=gmRAbbxoMkuCyU
-	uI1zNgTc/DpibfLKkEpBNiSqNhxaEWSwi9TFbK497BpSMJ7DaSVdCHlD8Gy8n3/VMr0BO5w3Vo5Wo
-	Ck/en8t0bDrBc5FCCPauH2549G8Pmiz7f1DUpggplJ2GTfMf0ag6qOeEPQYqhqmU/Yd1NwhBu9Hnx
-	s1VNF1OBDhe25Apvsu/DNRUiyqRj0NcHi5RsFz6QI7OX6TXdiesSmSeq0Eo7SDT2lE7pAxQD0Fm6V
-	SHHBRpUO2MCJ2irubAxsi5EbSK/ZXGK/TG4JfTwB56fYGi/7eypG76Ic/Ao+WVrB2L1sz9Zl6O6zq
-	k17jWtPRW1e/qybaWYzg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p18qt/UwVhgXjfPnJfNjfd52qIBty63HGn5DBPgyRAA=; b=Lqg8MP+g77gMU9
+	psHN4wi/cQi0Hu5joJlAjM7V9x6kn//jvlgHf7z1ZCYZ8rAoCW72m8X+K+3iuuotlagQiWEyIcT8U
+	072gfcmkUTkDBXZo1vQXA2fdK0P3Evt7QHv6stpbRJKjRYxtiiagt0R9rS/dC8Moc0aU7XCWncvYN
+	b2+Co362wHZZ6Eva0pWTGKWdy2xftb7NlkOBLO2KaKDWzPZdT16P5jMpN9BI3C25hg9U94wFvkSPY
+	cj3rRv6NmO9MdRfd1+CeRHs4T3XUJi9mrKW3377I7SbQkn+COYtEgWnnellNKhNmUxX95MqLdfI2o
+	voAPzf0vu8/TyG8AVltg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9jV6-000731-2y; Thu, 05 Mar 2020 05:56:52 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9jUq-0006ye-S4
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 05:56:38 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id l8so2008698pjy.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Mar 2020 21:56:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kM7p6iQbBTR9YfCmEPNGr14KUbGdbLJ4CLDWGt5kFJE=;
- b=HlO3Og2d5uy8+jp2KNfqeoyI4ZzMgtcXv4THIEFH85qz7Iq3CW0zjGMg2ETeHkdf0V
- VfmgUBsyW7Jv13z0mcKXYBkdDBaLI54IS0UyeQlJLstHLl5tFiobCZpnJiZsTvjy/xtr
- IitH9OrIam7YtS4J0jySlx3bJ1+oRszQjn4O1QAdYKQURxzKhQyUjCew0o5yCHtWSLGB
- 8P/iAqypxNaRFRkV7JXfP/9XozHsM7QnUa4ZQTnBpz3bMdPFKA5pQbcbOsUCeBNzBmzZ
- ElL/a94ot2WKiPA5nfZj8I7tze2spp6X99eodAnnRLaPSfDMrPH245IVIILue0GP4HdF
- Qp7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kM7p6iQbBTR9YfCmEPNGr14KUbGdbLJ4CLDWGt5kFJE=;
- b=OPhyjX+bJf7IuntZLa9amCUT8/wjFsKiTsI0cWOFZoB13ZNJ38uEXqO4yG9TWs2nTO
- a9ncbObgqAn9WFLs81+vA0uv3CU6H2IIUvcSYd/59Zq7nmqmoRxSPZ0xQnUuhwRHbPeA
- 9S7nZ/4sTCkPZYpmCfQzufJozjF6BeOxtGopEjKRLuAUe3DrpWkVSOCmmsHXjUndDqCt
- F9vnzeK8YmF/Qr+9wY6G6iKqPJntvJitZwrLm+soX8L6ajgHdsPaxWq4Zje+jWcV8CYY
- aM0hc1srOd0GhJL5DU77xj6OOeYhuxCF31UuXEe1T6VyK5YkqQ1jjjdhWU+dOxJZCzeF
- oZ5g==
-X-Gm-Message-State: ANhLgQ0DcuuMSsj8P1C3l/Dv7ctnzdN7WokMuZTk9tY9bwquJXvL4a9J
- ohOsL0vMYws8jQ+1AO5sS3k=
-X-Google-Smtp-Source: ADFU+vuE/IWJczM8wvkwqfTmwzFsFPEGEEsXubYB4VEY+7Kg1OaMFur89CTyXpNeC1VHckqxBzMhmA==
-X-Received: by 2002:a17:902:8e8a:: with SMTP id
- bg10mr6325624plb.219.1583387794925; 
- Wed, 04 Mar 2020 21:56:34 -0800 (PST)
-Received: from taoren-ubuntuvm (c-24-4-25-55.hsd1.ca.comcast.net. [24.4.25.55])
- by smtp.gmail.com with ESMTPSA id m59sm4784883pjb.41.2020.03.04.21.56.33
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Mar 2020 21:56:34 -0800 (PST)
-Date: Wed, 4 Mar 2020 21:56:27 -0800
-From: Tao Ren <rentao.bupt@gmail.com>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [PATCH] usb: gadget: aspeed: improve vhub port irq handling
-Message-ID: <20200305055627.GA2296@taoren-ubuntuvm>
-References: <20200305023859.21057-1-rentao.bupt@gmail.com>
- <8a9033d5e76951f5bec39531c5d0e0d6ef963ee5.camel@kernel.crashing.org>
+	id 1j9juw-0006dt-Cn; Thu, 05 Mar 2020 06:23:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9jup-0006cO-JV; Thu, 05 Mar 2020 06:23:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 17EB71FB;
+ Wed,  4 Mar 2020 22:23:23 -0800 (PST)
+Received: from [10.163.1.88] (unknown [10.163.1.88])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4D1843F534;
+ Wed,  4 Mar 2020 22:27:09 -0800 (PST)
+Subject: Re: [PATCH V14] mm/debug: Add tests validating architecture page
+ table helpers
+To: Christophe Leroy <christophe.leroy@c-s.fr>, Qian Cai <cai@lca.pw>
+References: <c022e863-0807-fab1-cd41-3c320381f448@c-s.fr>
+ <11F41980-97CF-411F-8120-41287DC1A382@lca.pw>
+ <57a3bc61-bbd5-e251-9621-7bc28f7901a1@arm.com>
+ <bcba7b7f-f351-4ee7-d74e-004a0bfbee47@c-s.fr>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <d198fc5a-5337-c346-a21c-1ff133202e68@arm.com>
+Date: Thu, 5 Mar 2020 11:53:12 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8a9033d5e76951f5bec39531c5d0e0d6ef963ee5.camel@kernel.crashing.org>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <bcba7b7f-f351-4ee7-d74e-004a0bfbee47@c-s.fr>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_215636_919066_257AD700 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200304_222327_688084_C37DEE1F 
+X-CRM114-Status: GOOD (  15.27  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rentao.bupt[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,41 +66,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Felipe Balbi <balbi@kernel.org>, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, openbmc@lists.ozlabs.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Joel Stanley <joel@jms.id.au>,
- taoren@fb.com, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ the arch/x86 maintainers <x86@kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
+ Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Vineet Gupta <vgupta@synopsys.com>, LKML <linux-kernel@vger.kernel.org>,
+ Palmer Dabbelt <palmer@dabbelt.com>,
+ "Aneesh Kumar K.V" <aneesh.kumar@linux.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 05, 2020 at 02:35:08PM +1100, Benjamin Herrenschmidt wrote:
-> On Wed, 2020-03-04 at 18:38 -0800, rentao.bupt@gmail.com wrote:
-> > From: Tao Ren <rentao.bupt@gmail.com>
-> > 
-> > This patch evaluates vhub ports' irq mask before going through per-
-> > port
-> > irq handling one by one, which helps to speed up irq handling in case
-> > there is no port interrupt.
-> > 
-> > Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
-> 
-> Looks reasonable, but did you try a find_next_bit() loop and whether
-> that's faster ?
-
-Make sense. It should be more efficient especially when most ports are
-idle (and I guess it's a common case). Will try and send out v2 soon.
-
-
-Cheers,
-
-Tao
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAwMy8wNS8yMDIwIDExOjEzIEFNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+IAo+IAo+
+IExlIDA1LzAzLzIwMjAgw6AgMDE6NTQsIEFuc2h1bWFuIEtoYW5kdWFsIGEgw6ljcml0wqA6Cj4+
+Cj4+Cj4+IE9uIDAzLzA0LzIwMjAgMDQ6NTkgUE0sIFFpYW4gQ2FpIHdyb3RlOgo+Pj4KPj4+Cj4+
+Pj4gT24gTWFyIDQsIDIwMjAsIGF0IDE6NDkgQU0sIENocmlzdG9waGUgTGVyb3kgPGNocmlzdG9w
+aGUubGVyb3lAYy1zLmZyPiB3cm90ZToKPj4+Pgo+Pj4+IEFGQUlVLCB5b3UgYXJlIG5vdCB0YWtp
+bmcgYW4gaW50ZXJydXB0IGhlcmUuIFlvdSBhcmUgc3R1Y2sgaW4gdGhlIHB0ZV91cGRhdGUoKSwg
+bW9zdCBsaWtlbHkgZHVlIHRvIG5lc3RlZCBsb2Nrcy4gVHJ5IHdpdGggTE9DS0RFUCA/Cj4+Pgo+
+Pj4gTm90IGV4YWN0bHkgc3VyZSB3aGF0IGRpZCB5b3UgbWVhbiBoZXJlLCBidXQgdGhlIGtlcm5l
+bCBoYXMgYWxsIGxvY2tkZXAgZW5hYmxlZCBhbmQgZGlkIG5vdCBmbGFnIGFueXRoaW5nIGhlcmUu
+Cj4+Cj4+IEFzIHRoZSBwYXRjaCBoYXMgYmVlbiBkcm9wcGVkIGZyb20gTGludXggbmV4dCAobmV4
+dC0yMDIwMDMwNCkgcGVyaGFwcyBpbgo+PiBvcmRlciB0byBmb2xkIGJhY2sgdGhlIF9fcGFfc3lt
+Ym9sKCkgZml4IFsxXSwgc28gSSBhbSBwbGFubmluZyB0byByZXNwaW4KPj4gdGhlIG9yaWdpbmFs
+IHBhdGNoIG9uY2UgbW9yZSBhcyBWMTUgd2hpbGUgYWRkaW5nIFFpYW4ncyBzaWduZWQgb2ZmIGJ5
+IGZvcgo+PiB0aGUgcG93ZXJwYyBwYXJ0LiBGb3Igbm93IGxldHMgZW5hYmxlIHJhZGl4IE1NVSBw
+cGM2NCBhbG9uZyB3aXRoIGV4aXN0aW5nCj4+IHBwYzMyLiBBcyBQUENfUkFESVhfTU1VIGRlcGVu
+ZHMgb24gUFBDX0JPT0szU182NCwgdGhlIGZvbGxvd2luZyBjaGFuZ2UKPj4gc2hvdWxkIGJlIGdv
+b2QgZW5vdWdoID8KPiAKPiBJIGRvbid0IHRoaW5rIHNvLCBldmVuIGlmIHlvdSBoYXZlIHRoZSBS
+YWRpeCBNTVUgY29tcGlsZWQgaW4sIGhhc2ggTU1VIGlzIHVzZWQgd2hlbiBSYWRpeCBpcyBub3Qg
+YXZhaWxhYmxlIG9yIGRpc2FibGVkLiBTbyB1bnRpbCB0aGUgSGFzaCBNTVUgcHJvYmxlbSBpcyBm
+aXhlZCwgeW91IGNhbm5vdCBlbmFibGUgaXQgYnkgZGVmYXVsdC4KClNvIHRoaXMgaW1wbGllcywg
+dGhhdCB3aXRoIERFQlVHX1ZNIGdpdmVuIGtlcm5lbCBjb21waWxlZCB3aXRoIFJhZGl4IE1NVSB3
+aWxsCmdldCBzdHVjayBpbiBzb2Z0IGxvY2sgdXAgd2hlbiBmb3JjZWQgdG8gdXNlIGhhc2ggTU1V
+IGluIGNhc2VzIHdoZXJlIFJhZGl4IE1NVQppcyBlaXRoZXIgbm90IGF2YWlsYWJsZSBvciBpcyBk
+aXNhYmxlZC4gSGVuY2UsIHdlIGNhbm5vdCBlbmFibGUgdGhhdC4KCkkgd2lsbCBzdGlsbCBmb2xk
+IHRoZSBjaGFuZ2VzIGZyb20gUWlhbiB3aXRob3V0IGVuYWJsaW5nIHBwYzY0IFJhZGl4IE1NVSBh
+bmQKcmVzcGluIFYxNS4gVGhlc2UgbmV3IGNoYW5nZXMgZG9udCBodXJ0LCBidWlsZCBldmVyeSB3
+aGVyZSBhbmQgd29ya3MgZ29vZApvbiBhcm02NCBhbmQgeDg2IHBsYXRmb3Jtcy4gTW9yZSBvdmVy
+IHdlIGtub3cgdGhhdCB0aGV5IGFsc28gZml4IGEgcHJvYmxlbQpmb3IgcHBjNjQgUmFkaXggTU1V
+IHBsYXRmb3Jtcy4gSGVuY2UgdW5sZXNzIHRoZXJlIGFyZSBzb21lIG90aGVyIGNvbmNlcm5zIHdl
+CnNob3VsZCBmb2xkIHRoZW0gaW4uCgo+IAo+IENocmlzdG9waGUKPiAKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
