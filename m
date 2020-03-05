@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F49117AEBA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 20:06:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8845317AEB8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 20:06:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Y/z/h2A0ccpxdvnppBSoeIM6OGdJwYDNXqrvANW0JcA=; b=HYa
-	tMoAAN69JJdnFMX69+bPPNv1hpxsjcg1xfx/hB4aHd/K/eQFj6homfBBuclVdX3BmZK4GHSVVEn+9
-	6SHETt26toUsCbvsWJXnvabEOImQyKB6+aHGQ0oEqY+g4sUAQ52sz2F55q7y6GCh5S6Ntwjcqd+WS
-	ogJkirEWWxekc8v4ihE5bZOzjeRYG+QrqKh7TASd652Cgrne+iaNOpLyBSXqwbNzXncQiFxq9Pf0F
-	Df8SQnosD/S/etFtDyyR4X3E1xSKZaxed7oUQijT03e2FWk1/eCUwAq9bEMl7RgTJhOa4fvDHIMP7
-	/D60//OMrSOHn1yfv/Ma6Rbp+nYRbaA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=9xyvPvf0g9QUR8f7BZE5X0JB6OQTK2aEP7EowthP/qo=; b=jJg0Uaxf2YYQOfi3jgf4VgNOLe
+	Q8exRBA9H7on4Ly4+mlv3SDoRv1yq7Ykeh6zSkhXlrhKizq6RwL1+SIGMwTw0S0IYepyhjSvgu8p8
+	RCWs1FoZ6OUW/YclDml9A/0Qx9r6c8urHi+4QZgVESKwzWPaJJ9JZCASOirW4G9KaDDiol8KIZYgk
+	8Yc2VxsKnZ51xpg9y2SmjDLmAqv8Bo39ebbYnrj0ddg4fs76O+s3dDqBVeu64usJ+iEBD9VSl0Evo
+	GC334kK/LqCPsJYQtZr9ax2V/DOxQY0Yc7S5+UW8vCJ/mE8BvDvijdyKV+g2zePRFpv1QNzZIpkuF
+	+8ydWObA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9vpJ-0002se-HF; Thu, 05 Mar 2020 19:06:33 +0000
+	id 1j9voj-0002No-1d; Thu, 05 Mar 2020 19:05:57 +0000
 Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9vob-0002C3-Dq
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 19:05:52 +0000
+ id 1j9voZ-0002C3-0K
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 19:05:49 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1583435150; h=Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=1sG3u0mTkH09rmGeFRjFz49NiO7dwyUuTIhoDE0H1I8=;
- b=I5GWk3ror7EFvJKEJkkRUta5SvcQo+ZR1he26Y7UDvJMVErF9lW5fWbUMU/PeZBeTQ5UgdS6
- UDwOr/kDAAXCFYsEywVp/XpIE1YKHwAh02ydxqctBwP/e/r9bll+QRhK5zLPUQnXMKp2hNj2
- X8l9iMWiKkN8hbvkfI2GrMr3OgA=
+ s=smtp; t=1583435144; h=References: In-Reply-To: Message-Id: Date:
+ Subject: Cc: To: From: Sender;
+ bh=9he5OM9ZQfvZ7qONjfRCprlmsDTELbV96jQflUusxsY=;
+ b=Qnj3aqCrK8z2QF/kjtQ+dEENirDB6NJEFsGyUycGAgQKsn78RPuRjzP9XI/jGohG9uPttLf6
+ 1r/U8uJC3U+FDDEvzsEdQ4/fW69aUHY9xLkn2Wpb/2i8bR2mJtCB9Heat4ZDa9IcNtb02Tsn
+ /E29HUIni3bsmVNzlYmWAsJDmpk=
 X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e614d85.7f03a1e67110-smtp-out-n03;
- Thu, 05 Mar 2020 19:05:41 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e614d86.7fd0e531c8f0-smtp-out-n03;
+ Thu, 05 Mar 2020 19:05:42 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id CD4B2C447A3; Thu,  5 Mar 2020 19:05:41 +0000 (UTC)
+ id 98581C447A0; Thu,  5 Mar 2020 19:05:42 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
 Received: from eberman-linux.qualcomm.com (i-global254.qualcomm.com
  [199.106.103.254])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: eberman)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E59EDC43383;
- Thu,  5 Mar 2020 19:05:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E59EDC43383
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 90E56C447A2;
+ Thu,  5 Mar 2020 19:05:41 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 90E56C447A2
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
@@ -58,13 +60,16 @@ From: Elliot Berman <eberman@codeaurora.org>
 To: Mark Rutland <mark.rutland@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>
-Subject: [PATCH v3 0/3] ARM PSCI: Add support for vendor-specific SYSTEM_RESET2
-Date: Thu,  5 Mar 2020 11:05:26 -0800
-Message-Id: <1583435129-31356-1-git-send-email-eberman@codeaurora.org>
+Subject: [PATCH v3 1/3] dt: psci: Add arm,
+ psci-sys-reset2-vendor-param property
+Date: Thu,  5 Mar 2020 11:05:27 -0800
+Message-Id: <1583435129-31356-2-git-send-email-eberman@codeaurora.org>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1583435129-31356-1-git-send-email-eberman@codeaurora.org>
+References: <1583435129-31356-1-git-send-email-eberman@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_110550_852979_117C409A 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200305_110547_118237_F63E049E 
+X-CRM114-Status: GOOD (  12.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -99,33 +104,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds support for vendor-specific SYSTEM_RESET2 to support
-Qualcomm target use cases of rebooting into a RAM dump download mode.
+Some implementors of PSCI may wish to use a different reset type than
+SYSTEM_WARM_RESET. For instance, Qualcomm SoCs support an alternate
+reset_type which may be used in more warm reboot scenarios than
+SYSTEM_WARM_RESET permits (e.g. to reboot into recovery mode).
 
-This patch series applies on top of [1].
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Elliot Berman <eberman@codeaurora.org>
+---
+ Documentation/devicetree/bindings/arm/psci.yaml | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-[1]: https://lore.kernel.org/patchwork/cover/1185759/
-
-Changes since v2:
- - dt property forces vendor-specifc reset type
-
-Changes since v1:
- - Address Sudeep's comments
-
-Changes since RFC v2:
- - None, tested on SM8250 MTP
-
-Elliot Berman (3):
-  dt: psci: Add arm,psci-sys-reset2-vendor-param property
-  firmware: psci: Add support for dt-supplied SYSTEM_RESET2 type
-  arm64: dts: qcom: sm8250: Add vendor-specific PSCI system reset2 type
-
- Documentation/devicetree/bindings/arm/psci.yaml |  7 +++++++
- arch/arm64/boot/dts/qcom/sm8250.dtsi            |  1 +
- drivers/firmware/psci/psci.c                    | 21 +++++++++++++++++----
- include/uapi/linux/psci.h                       |  5 +++++
- 4 files changed, 30 insertions(+), 4 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/arm/psci.yaml b/Documentation/devicetree/bindings/arm/psci.yaml
+index 8ef8542..1a9d2dd 100644
+--- a/Documentation/devicetree/bindings/arm/psci.yaml
++++ b/Documentation/devicetree/bindings/arm/psci.yaml
+@@ -102,6 +102,13 @@ properties:
+       [1] Kernel documentation - ARM idle states bindings
+         Documentation/devicetree/bindings/arm/idle-states.txt
+ 
++  arm,psci-sys-reset2-vendor-param:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description: |
++        Vendor-specific reset type parameter to use for SYSTEM_RESET2 during
++        a warm or soft reboot. If no value is provided, then architectural
++        reset type SYSTEM_WARM_RESET is used.
++
+   "#power-domain-cells":
+     description:
+       The number of cells in a PM domain specifier as per binding in [3].
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
