@@ -2,55 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D2DA17A7E6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 15:38:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4326217A7ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 15:39:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=pt5G2Tikh+xf//8Onp42dASnZDPEAUHl/+SJsKQZ4AI=; b=YnZ
-	lEHbFgJXpL+BBUZzGc53ycAN++FM71QbCHwbLq7c6YVtLHQSpazdjHgqfD8GJ1MfGGjo484D/PlHz
-	IlD2dsGxNfz10Q2h++7EmbOHRnZD2jGHJki9245BPw6haybYQIQYKfDj4LDwNTdN4jWU2s+sic8Il
-	FlL2/v0GPD92H0Z0G7ihXjCk0ex1RCXxshOSzN8ssRuFRWnBPuhybSqnsI/RrLpFHTZHedn0EZj54
-	6XGWDskpWMJVNs9AQRYn4hjB9ii8SbBhp8keUDQ16iE98cpExGTZ1oYh0sAsySexgNCO5CkNhaskO
-	ixY8YpWG1wyR6VR2hglrvHhnwH+5s8A==;
+	List-Owner; bh=tryJCSDXeGBmy/Dme8TXPzpQ8HkhYbOT78HkzRqwnXY=; b=ZJjrT4ug7T0OO6
+	5mU0p5jDTrzNsqQkZbtPVZnDwEJ/bvtOpHSZ6P9tErFZMkaODAyLFR8nBvHFq+6CUZnewMG04Vfpv
+	Pa/WN+Ln75XQoZFMCnjUBpjYudgJ4arhUkNXzZ+WxqfJ/NIN4dYU9tPu3qywBW49ABQqOid8L9QU/
+	/NHgUPslLIFEttQBlJm1bhT5Oe0QuNRFSRXhoi1dnNnL/0nIc1wgngp+0h8i1TQTJLn99HeGLItqy
+	AWY9e/XwDN2TtrD3chStHt1SAyLzpZ+IcPKlviMOJIqTz6aBdTEBAHpJB3P68rXfrSfsDlLALJhCG
+	l2MfUFEdPJFunfjta8/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9reB-0003d9-Sj; Thu, 05 Mar 2020 14:38:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9rcH-00022Y-It; Thu, 05 Mar 2020 14:36:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9E4101045;
- Thu,  5 Mar 2020 06:36:48 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 207613F534;
- Thu,  5 Mar 2020 06:36:47 -0800 (PST)
-Date: Thu, 05 Mar 2020 14:36:46 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Applied "dt-bindings: spi: convert rockchip spi bindings to yaml" to
- the spi tree
-In-Reply-To: <20200304184203.9548-1-jbx6244@gmail.com>
-Message-Id: <applied-20200304184203.9548-1-jbx6244@gmail.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1j9reg-000467-48; Thu, 05 Mar 2020 14:39:18 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9rdf-0003N9-Kz
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 14:38:17 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1j9rdY-0001EN-Iq; Thu, 05 Mar 2020 15:38:08 +0100
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1j9rdV-000208-Sz; Thu, 05 Mar 2020 15:38:05 +0100
+Date: Thu, 5 Mar 2020 15:38:05 +0100
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Philippe Schenker <philippe.schenker@toradex.com>
+Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
+Message-ID: <20200305143805.dk7fndblnqjnwxu6@pengutronix.de>
+References: <20200305134928.19775-1-philippe.schenker@toradex.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200305134928.19775-1-philippe.schenker@toradex.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 15:27:00 up 111 days,  5:45, 138 users,  load average: 0.18, 0.14,
+ 0.10
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_063649_715599_2A90E8AF 
-X-CRM114-Status: GOOD (  23.46  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200305_063815_701715_74433A8E 
+X-CRM114-Status: GOOD (  24.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,266 +74,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-spi@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Allison Randal <allison@lohutok.net>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+Hi Philippe,
 
-   dt-bindings: spi: convert rockchip spi bindings to yaml
+On Thu, Mar 05, 2020 at 02:49:28PM +0100, Philippe Schenker wrote:
+> The MAC of the i.MX6 SoC is compliant with RGMII v1.3. The KSZ9131 PHY
+> is like KSZ9031 adhering to RGMII v2.0 specification. This means the
+> MAC should provide a delay to the TXC line. Because the i.MX6 MAC does
+> not provide this delay this has to be done in the PHY.
+> 
+> This patch adds by default ~1.6ns delay to the TXC line. This should
+> be good for all boards that have the RGMII signals routed with the
+> same length.
+> 
+> The KSZ9131 has relatively high tolerances on skew registers from
+> MMD 2.4 to MMD 2.8. Therefore the new DLL-based delay of 2ns is used
+> and then as little as possibly subtracted from that so we get more
+> accurate delay. This is actually needed because the i.MX6 SoC has
+> an asynchron skew on TXC from -100ps to 900ps, to get all RGMII
+> values within spec.
 
-has been applied to the spi tree at
+This configuration has nothing to do in mach-imx/* It belongs to the
+board devicetree. Please see DT binding documentation for needed
+properties:
+Documentation/devicetree/bindings/net/micrel-ksz90x1.txt
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
+All of this mach-imx fixups are evil and should be removed or disabled by Kconfig
+option. Since they will run on all i.MX based boards even if this PHY are
+connected to some switch and not connected to the FEC directly.
+And.. If driver didn't made this configuration all this changes will be lost on
+suspend/resume cycle or on PHY reset.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Regards,
+Oleksij
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+> 
+> ---
+> 
+>  arch/arm/mach-imx/mach-imx6q.c | 37 ++++++++++++++++++++++++++++++++++
+>  1 file changed, 37 insertions(+)
+> 
+> diff --git a/arch/arm/mach-imx/mach-imx6q.c b/arch/arm/mach-imx/mach-imx6q.c
+> index edd26e0ffeec..8ae5f2fa33e2 100644
+> --- a/arch/arm/mach-imx/mach-imx6q.c
+> +++ b/arch/arm/mach-imx/mach-imx6q.c
+> @@ -61,6 +61,14 @@ static void mmd_write_reg(struct phy_device *dev, int device, int reg, int val)
+>  	phy_write(dev, 0x0e, val);
+>  }
+>  
+> +static int mmd_read_reg(struct phy_device *dev, int device, int reg)
+> +{
+> +	phy_write(dev, 0x0d, device);
+> +	phy_write(dev, 0x0e, reg);
+> +	phy_write(dev, 0x0d, (1 << 14) | device);
+> +	return phy_read(dev, 0x0e);
+> +}
+> +
+>  static int ksz9031rn_phy_fixup(struct phy_device *dev)
+>  {
+>  	/*
+> @@ -74,6 +82,33 @@ static int ksz9031rn_phy_fixup(struct phy_device *dev)
+>  	return 0;
+>  }
+>  
+> +#define KSZ9131_RXTXDLL_BYPASS	12
+> +
+> +static int ksz9131rn_phy_fixup(struct phy_device *dev)
+> +{
+> +	int tmp;
+> +
+> +	tmp = mmd_read_reg(dev, 2, 0x4c);
+> +	/* disable rxdll bypass (enable 2ns skew delay on RXC) */
+> +	tmp &= ~(1 << KSZ9131_RXTXDLL_BYPASS);
+> +	mmd_write_reg(dev, 2, 0x4c, tmp);
+> +
+> +	tmp = mmd_read_reg(dev, 2, 0x4d);
+> +	/* disable txdll bypass (enable 2ns skew delay on TXC) */
+> +	tmp &= ~(1 << KSZ9131_RXTXDLL_BYPASS);
+> +	mmd_write_reg(dev, 2, 0x4d, tmp);
+> +
+> +	/*
+> +	 * Subtract ~0.6ns from txdll = ~1.4ns delay.
+> +	 * leave RXC path untouched
+> +	 */
+> +	mmd_write_reg(dev, 2, 4, 0x007d);
+> +	mmd_write_reg(dev, 2, 6, 0xdddd);
+> +	mmd_write_reg(dev, 2, 8, 0x0007);
+> +
+> +	return 0;
+> +}
+> +
+>  /*
+>   * fixup for PLX PEX8909 bridge to configure GPIO1-7 as output High
+>   * as they are used for slots1-7 PERST#
+> @@ -167,6 +202,8 @@ static void __init imx6q_enet_phy_init(void)
+>  				ksz9021rn_phy_fixup);
+>  		phy_register_fixup_for_uid(PHY_ID_KSZ9031, MICREL_PHY_ID_MASK,
+>  				ksz9031rn_phy_fixup);
+> +		phy_register_fixup_for_uid(PHY_ID_KSZ9131, MICREL_PHY_ID_MASK,
+> +				ksz9131rn_phy_fixup);
+>  		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
+>  				ar8031_phy_fixup);
+>  		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,
+> -- 
+> 2.25.1
+> 
+> 
+> 
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From 5de04175fa2720bacf34196275123be5f32e2b82 Mon Sep 17 00:00:00 2001
-From: Johan Jonker <jbx6244@gmail.com>
-Date: Wed, 4 Mar 2020 19:42:01 +0100
-Subject: [PATCH] dt-bindings: spi: convert rockchip spi bindings to yaml
-
-Current dts files with 'spi' nodes are manually verified.
-In order to automate this process spi-rockchip.txt
-has to be converted to yaml. In the new setup
-spi-rockchip.yaml will inherit properties from
-spi-controller.yaml.
-
-Add document to MAINTAINERS.
-
-Also rk3188.dtsi, rk3288.dtsi, rk3368.dtsi and rk3399.dtsi
-use an extra fallback string, so change this in the documentation.
-
-Changed:
-"rockchip,rk3188-spi", "rockchip,rk3066-spi"
-"rockchip,rk3288-spi", "rockchip,rk3066-spi"
-"rockchip,rk3368-spi", "rockchip,rk3066-spi"
-"rockchip,rk3399-spi", "rockchip,rk3066-spi"
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200304184203.9548-1-jbx6244@gmail.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- .../devicetree/bindings/spi/spi-rockchip.txt  |  58 ----------
- .../devicetree/bindings/spi/spi-rockchip.yaml | 105 ++++++++++++++++++
- MAINTAINERS                                   |   1 +
- 3 files changed, 106 insertions(+), 58 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/spi/spi-rockchip.txt
- create mode 100644 Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-
-diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.txt b/Documentation/devicetree/bindings/spi/spi-rockchip.txt
-deleted file mode 100644
-index a0edac12d8df..000000000000
---- a/Documentation/devicetree/bindings/spi/spi-rockchip.txt
-+++ /dev/null
-@@ -1,58 +0,0 @@
--* Rockchip SPI Controller
--
--The Rockchip SPI controller is used to interface with various devices such as flash
--and display controllers using the SPI communication interface.
--
--Required Properties:
--
--- compatible: should be one of the following.
--    "rockchip,rv1108-spi" for rv1108 SoCs.
--    "rockchip,px30-spi", "rockchip,rk3066-spi" for px30 SoCs.
--    "rockchip,rk3036-spi" for rk3036 SoCS.
--    "rockchip,rk3066-spi" for rk3066 SoCs.
--    "rockchip,rk3188-spi" for rk3188 SoCs.
--    "rockchip,rk3228-spi" for rk3228 SoCS.
--    "rockchip,rk3288-spi" for rk3288 SoCs.
--    "rockchip,rk3368-spi" for rk3368 SoCs.
--    "rockchip,rk3399-spi" for rk3399 SoCs.
--- reg: physical base address of the controller and length of memory mapped
--       region.
--- interrupts: The interrupt number to the cpu. The interrupt specifier format
--              depends on the interrupt controller.
--- clocks: Must contain an entry for each entry in clock-names.
--- clock-names: Shall be "spiclk" for the transfer-clock, and "apb_pclk" for
--			   the peripheral clock.
--- #address-cells: should be 1.
--- #size-cells: should be 0.
--
--Optional Properties:
--
--- dmas: DMA specifiers for tx and rx dma. See the DMA client binding,
--		Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: DMA request names should include "tx" and "rx" if present.
--- rx-sample-delay-ns: nanoseconds to delay after the SCLK edge before sampling
--		Rx data (may need to be fine tuned for high capacitance lines).
--		No delay (0) by default.
--- pinctrl-names: Names for the pin configuration(s); may be "default" or
--		"sleep", where the "sleep" configuration may describe the state
--		the pins should be in during system suspend. See also
--		pinctrl/pinctrl-bindings.txt.
--
--
--Example:
--
--	spi0: spi@ff110000 {
--		compatible = "rockchip,rk3066-spi";
--		reg = <0xff110000 0x1000>;
--		dmas = <&pdma1 11>, <&pdma1 12>;
--		dma-names = "tx", "rx";
--		rx-sample-delay-ns = <10>;
--		#address-cells = <1>;
--		#size-cells = <0>;
--		interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
--		clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
--		clock-names = "spiclk", "apb_pclk";
--		pinctrl-0 = <&spi1_pins>;
--		pinctrl-1 = <&spi1_sleep>;
--		pinctrl-names = "default", "sleep";
--	};
-diff --git a/Documentation/devicetree/bindings/spi/spi-rockchip.yaml b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-new file mode 100644
-index 000000000000..bd1450c1274c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/spi/spi-rockchip.yaml
-@@ -0,0 +1,105 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/spi/spi-rockchip.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip SPI Controller
-+
-+description:
-+  The Rockchip SPI controller is used to interface with various devices such
-+  as flash and display controllers using the SPI communication interface.
-+
-+allOf:
-+  - $ref: "spi-controller.yaml#"
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+# Everything else is described in the common file
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rk3036-spi
-+      - const: rockchip,rk3066-spi
-+      - const: rockchip,rk3228-spi
-+      - const: rockchip,rv1108-spi
-+      - items:
-+          - enum:
-+            - rockchip,px30-spi
-+            - rockchip,rk3188-spi
-+            - rockchip,rk3288-spi
-+            - rockchip,rk3368-spi
-+            - rockchip,rk3399-spi
-+          - const: rockchip,rk3066-spi
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: transfer-clock
-+      - description: peripheral clock
-+
-+  clock-names:
-+    items:
-+      - const: spiclk
-+      - const: apb_pclk
-+
-+  dmas:
-+    items:
-+      - description: TX DMA Channel
-+      - description: RX DMA Channel
-+
-+  dma-names:
-+    items:
-+      - const: tx
-+      - const: rx
-+
-+  rx-sample-delay-ns:
-+    default: 0
-+    description:
-+      Nano seconds to delay after the SCLK edge before sampling Rx data
-+      (may need to be fine tuned for high capacitance lines).
-+      If not specified 0 will be used.
-+
-+  pinctrl-names:
-+    minItems: 1
-+    items:
-+      - const: default
-+      - const: sleep
-+    description:
-+      Names for the pin configuration(s); may be "default" or "sleep",
-+      where the "sleep" configuration may describe the state
-+      the pins should be in during system suspend.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3188-cru-common.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    spi0: spi@ff110000 {
-+      compatible = "rockchip,rk3066-spi";
-+      reg = <0xff110000 0x1000>;
-+      interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru SCLK_SPI0>, <&cru PCLK_SPI0>;
-+      clock-names = "spiclk", "apb_pclk";
-+      dmas = <&pdma1 11>, <&pdma1 12>;
-+      dma-names = "tx", "rx";
-+      pinctrl-0 = <&spi1_pins>;
-+      pinctrl-1 = <&spi1_sleep>;
-+      pinctrl-names = "default", "sleep";
-+      rx-sample-delay-ns = <10>;
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 48c372e7c718..7c1080015943 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2276,6 +2276,7 @@ T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
- S:	Maintained
- F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
- F:	Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
-+F:	Documentation/devicetree/bindings/spi/spi-rockchip.yaml
- F:	arch/arm/boot/dts/rk3*
- F:	arch/arm/boot/dts/rv1108*
- F:	arch/arm/mach-rockchip/
 -- 
-2.20.1
-
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
