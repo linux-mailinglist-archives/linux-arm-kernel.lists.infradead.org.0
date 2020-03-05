@@ -2,78 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C089A17A651
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 14:26:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 732C417A662
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 14:31:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kgYG8enV/oUcrqDGaMvIe+FKuTQNu/qVipJBfn7+b6Q=; b=GsIRR1FDedMz6i
-	lv2ifeOrC/GNi+ULOUHqCll6g8+VlXrrKeVcUZ7889KCwzfVRJgMqw3jWF2uMIaBJUmLZPVfmCqrS
-	RB7CXFyPViCcvdrlt8Czpm1+U8GxCYDq230NrJubSED+K18aqczZA96dy5n4mVJPI+qoLyyZZIR7Y
-	0NC1wkqZGz/Nvb51rTJdzcOoglEWXRiom99YuTiNmwETtm8KSUVdWOiDDZnKWVktBm8Y8hQzOomPe
-	EczIGjCPsX1y6P8FtCGV4kHGVWMN8fYUGJXOcqzhXZC74J0Rfwyn4xxt0s4vbEtnZuYEvcJx/E4wW
-	87PQBD2txAo1UUkhz7rg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nNTPhANnC7pjr7a/zM4Gr2QuAoN2pKZNqtIxFEYsyQ8=; b=r13gkYM7jGTakD
+	2pyiBMBZorPpfQsPHnAb2KPuULfcv0mClLwPosH8Cp65G+JroGJxJfE4ZFI6kCdKPfA+KT1yAjWYN
+	LPLPx/8xoPZvUA60RF+lEE0RtabXr9KPkQXtOVrb173rs6vBmoYN19ElitGlE9+URa+sSjyjCp8m2
+	QhYwwda7+cHsmsWkdhz6CBwSYxCNAKpmuypswcwlAQejrWrEJGCleUdISjPuQuHtrHAR9z8XCWcWw
+	P6ofZGmCoB7qzGB1hvVrGBu5eCHi2QL5nbQIQbdd83im891U/wPbSxrlrbA/Tk//6wyMhmvL1i866
+	NonL83xOiTtopgGZF4rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9qVx-0007IO-Ar; Thu, 05 Mar 2020 13:26:13 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j9qaU-0000nl-QC; Thu, 05 Mar 2020 13:30:54 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9qVq-0007HD-Vj
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 13:26:08 +0000
-Received: by mail-wm1-x342.google.com with SMTP id m3so5740141wmi.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 05:26:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=konsulko.com; s=google;
- h=date:from:to:cc:subject:message-id:organization:mime-version
- :content-transfer-encoding;
- bh=NzJlwBLu2PMXJhvFCCamBP6u57AQ/SuSFKrWPDuWILQ=;
- b=a697x9HiNkVQHItHTfxnttcSwWbaOhPz9ubP9b7NU9x/EP2Y2QUzX3zhaQVac6U4OL
- nteXZTLu5Z+SoZQm73w7R7oMIW9uuBa8Z1p5uqOE+RWUmjk0Px932a3MQMZAacBtTB8p
- AgWpqtFPPbqkbHLv9n9Xxsl4md9xcvfa0sPGg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:organization
- :mime-version:content-transfer-encoding;
- bh=NzJlwBLu2PMXJhvFCCamBP6u57AQ/SuSFKrWPDuWILQ=;
- b=OQnhcnClo0oKVbCkELatIKxwglGpKWJgIWmFW5l6ihDjc70dSkF2UBxhtxLzXzeAdZ
- dvTgk3NmdNaCk+tAJxJIZOt3cqzGYDtMpU2QQhDTOnKCli7ZMCAmSCEx0Wdvn/XGu4ug
- BejWZiWMI5XMJm+wO5MX0fYC3YeyicIYT4CkTa0e7R6ZnUprNyc0PJSd5ukhup+Oq4CB
- 5w54TN+4GyiMTXZhxdq9hVMl4fz9h2AsuhovpfIQIJ2hBkBpwuqM2mb6SYNppE9gdo8P
- 1KuhtijTx7UibQdO25yRXQ29wcbb0DwOu8AlPGRmn7JyCzA38gKURJEpg/Iu89cfILnt
- to2g==
-X-Gm-Message-State: ANhLgQ10QsHvzh1GHxMLVSV4JktEXpEH6j1R3wiyu01clyM+Y30CP7Tb
- F0iD/Qw5ubq5P36XZVeb/5vfpQ==
-X-Google-Smtp-Source: ADFU+vu/gQ9srOP39BIyg7ghYVlTbTb3qRklu4tSmUPv6SYBuqzYJ8pXCVAKp9igdxtEx8MyKa6QPQ==
-X-Received: by 2002:a1c:a4c4:: with SMTP id n187mr9982366wme.10.1583414764858; 
- Thu, 05 Mar 2020 05:26:04 -0800 (PST)
-Received: from ub1910 ([213.48.11.149])
- by smtp.gmail.com with ESMTPSA id j20sm9477139wmj.46.2020.03.05.05.26.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Mar 2020 05:26:04 -0800 (PST)
-Date: Thu, 5 Mar 2020 13:22:32 +0000
-From: Paul Barker <pbarker@konsulko.com>
-To: Thierry Reding <thierry.reding@gmail.com>, "Uwe =?UTF-8?B?S2xlaW5lLUs=?=
- =?UTF-8?B?w7ZuaWc=?=" <u.kleine-koenig@pengutronix.de>, Shawn Guo
- <shawnguo@kernel.org>, NXP Linux Team <linux-imx@nxp.com>
-Subject: Inverted PWM output on iMX6
-Message-ID: <20200305132232.1aced378@ub1910>
-Organization: Konsulko Group
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1j9qaN-0000n2-Fp; Thu, 05 Mar 2020 13:30:48 +0000
+X-UUID: 3e36fb96404d45f09e1041493798b962-20200305
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=vJUGDoFzTQdjcbPEZc20+na+H1fziGynCmehL0Gfwnk=; 
+ b=Edejk94UMt9bpOodRgLuaVcBa4S2X0Q+G3Pm6zylOtGdk37Kf36DvIY/Dz1aMXPkoGmDjCGn2RpKEGnN9btiYv9lu3P2J2e0jZoidPcutZT575g3CMQdFoYW4SW4IivKijgNmCcSqXyNhGSRrlDsRB4r5TiRu+vM9zdkf0yRY30=;
+X-UUID: 3e36fb96404d45f09e1041493798b962-20200305
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2028000410; Thu, 05 Mar 2020 05:30:38 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Mar 2020 05:26:18 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Mar 2020 21:23:54 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 5 Mar 2020 21:25:10 +0800
+Message-ID: <1583414757.14250.7.camel@mtksdccf07>
+Subject: RE: [PATCH v1 4/4] scsi: ufs-mediatek: remove delay for host enabling
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Avri Altman <Avri.Altman@wdc.com>
+Date: Thu, 5 Mar 2020 21:25:57 +0800
+In-Reply-To: <MN2PR04MB6991FAE18CCA3DACF2306E08FCE20@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <20200305040704.10645-1-stanley.chu@mediatek.com>
+ <20200305040704.10645-5-stanley.chu@mediatek.com>
+ <MN2PR04MB6991FAE18CCA3DACF2306E08FCE20@MN2PR04MB6991.namprd04.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_052607_029681_A3C0D61F 
-X-CRM114-Status: GOOD (  14.89  )
+X-CRM114-CacheID: sfid-20200305_053047_534431_C1DDF8AC 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,67 +86,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "beanhuo@micron.com" <beanhuo@micron.com>,
+ "bvanassche@acm.org" <bvanassche@acm.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi folks,
+Hi Avri,
 
-I recently ran into an issue using the pwm-fan driver with an inverted
-PWM output on iMX6.
+On Thu, 2020-03-05 at 13:14 +0000, Avri Altman wrote:
+> Hi Stanley,
+> 
+> > 
+> > 
+> > MediaTek platform and UFS controller do not require the delay
+> > for host enabling, thus remove it.
+> > 
+> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> > ---
+> >  drivers/scsi/ufs/ufs-mediatek.c | 2 ++
+> >  1 file changed, 2 insertions(+)
+> > 
+> > diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+> > index 3b0e575d7460..ea3b5fd62492 100644
+> > --- a/drivers/scsi/ufs/ufs-mediatek.c
+> > +++ b/drivers/scsi/ufs/ufs-mediatek.c
+> > @@ -258,6 +258,8 @@ static int ufs_mtk_init(struct ufs_hba *hba)
+> I would expect to set whatever is needed for your host controller
+> In ufshcd_vops_hce_enable_notify(hba, PRE_CHANGE), and not here.
+> 
 
-The fan is defined in the device tree as follows:
+I think this is a good suggestion! And thus we could have more
+flexibility to customize the value according to different scenarios.
 
-	fan0: pwm-fan {
-		compatible = "pwm-fan";
-		pwms = <&pwm2 0 25000 PWM_POLARITY_INVERTED>;
-		...
-	}
+I will consider this approach in next version.
 
-In pwm_imx27_probe() the support for a third `flags` argument in a pwm
-reference is enabled:
-
-	imx->chip.of_xlate = of_pwm_xlate_with_flags;
-	imx->chip.of_pwm_n_cells = 3;
-
-However, the flag is ignored and the output is not inverted.
-
-By adding some prints I saw that when of_pwm_xlate_with_flags() is
-called, args->args_count is 2 instead of 3.
-
-Looking at the definition of the pwm device itself in imx6qdl.dtsi I
-can see that the number of cells in a pwm reference is set to 2 not 3:
-
-	pwm2: pwm@2084000 {
-		#pwm-cells = <2>;
-		...
-	};
-
-That seems to be preventing a third argument from being passed.
-
-I can change `#pwm-cells` to <3> and then everything works for my
-device but I'm not sure that is the correct solution for everyone. That
-would require all pwm references on iMX6 devices to use 3 cells. The
-code in of_pwm_xlate_with_flags() seems to be built to handle either 2
-or 3 argument cells but I can't see any way to allow this choice in the
-device tree.
-
-If the solution is to set `#pwm-cells` to <3> I'm happy to send a patch
-which does this and updates all pwm references in device trees which
-include `imx6dql.dtsi`. Before I do that I'd like to know that it's the
-correct approach though.
-
-For context I've confirmed this is the case in Linux 5.4 and that the
-relevant files haven't changed between that release and 5.6.0-rc4.
-
-Thanks,
-
--- 
-Paul Barker
-Konsulko Group
+Thanks!
+Stanley Chu
 
 _______________________________________________
 linux-arm-kernel mailing list
