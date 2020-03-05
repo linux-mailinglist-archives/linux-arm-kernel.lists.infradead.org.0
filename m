@@ -2,137 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9601317A626
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 14:14:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D56F617A643
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 14:23:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k9rJn1PuU3Z9CHHCrzk8vE7Ct9Gw8OXXFXa6f02Tzts=; b=kav/YdjmxwXAeO
-	GFokxCtFta0z8LLktAPaZjKs4dhuvd9o1+OMXtW39HEGavqFLp0QNJ2e+uMZBL+PF329x9EM+RFR/
-	Poq6agnGSM42k1ZJbR0JEPGTy/n7gNZ0ige8atthK9P8ZhCYxzLMyf5OL1YwluE8yR2RHfya+goUo
-	3736rGWfAvH/TJtJacjE2O9GOBoGyWnwhlYXVIyvaKcRlkvp5Qtt9ecMfx3i2piBgq4OVmOjpo3k6
-	4PiwTMh1lcRD8v4u9maSyGjpiuxoq9yAdDRZEc0SRhBSANViIpO93GGFpXEh1jSqN+qgjrHHRuCNU
-	1jfcs2VFKh5x10R6DDhA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
+	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Cv3+6E20Tfx7WUDSq0w7RUrtBrbRBdoJcvKjWFmakY8=; b=spO0+g+lEAxPnc0A9+fpEf0Li
+	LKdqNzFXiPjz9lHZ/2CO0XSq3dWqYxlAIPX8zCYl/94eAdcpfrZdjammtdt8ckQWWiVHoSZGJFMfm
+	/OUXrj0k11brdthyJHb3nFK15KmZVJFhOU4QmxWfO2O+gnDrLqeRkHhKyVYdoDDbveVjbz858OGiP
+	l8LNXb8OvviaNGPqTYHISZ+bg3HDXoBI/dAcjXbTB3XcO9atUYAZK1h2CH4gmBDmUkith7lB20R4g
+	4gpH4+SGjr3AQg2vz0DcJiQx+mruADX9ekWxOTs78fSa0ZZFY2uOMG9sf0lheiiMfK7o7p+YeDIAw
+	uf32xIEqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9qKR-0002M8-Nj; Thu, 05 Mar 2020 13:14:19 +0000
-Received: from esa3.hgst.iphmx.com ([216.71.153.141])
+	id 1j9qTR-0005Zr-Ac; Thu, 05 Mar 2020 13:23:37 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9qKF-0002Kh-QN; Thu, 05 Mar 2020 13:14:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1583414047; x=1614950047;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=x9zGvDeOpV6YKeb9Xxm/GxjNUdXQBfik0BSRBvwZ+v4=;
- b=X2aem1+4PzySD6ivkPWxoUE/P6PTQM6vl0mPUpzzB8jSxKRF1AR8TqUG
- 0rY81qQZBF3wbCQ38PWSIXAFMCyPElXaiefApB4+GP12xGAv9tZpsTqYV
- 7iv7bWjUbq5c+TPNWDXNQfV+ocxL3FKWioSgfb1j0EWSUrYb7Q9FACwsP
- Z3MMlQ0NbSqMPOWYZ+HLGpEh9S6+b270SN0elBK9I8yI2SF2P5W2I4zIm
- V1aUX4jaH5La6DPi76J5tNQqBlQFOjOoiI06Qt7UG6+Uv+UGaK0T0x0uS
- A0Q5Lb+kl9L2Tq7DS0ovU2IdkMWXcornDwXZUQ3IYL0qq3CupkVm7/W4K g==;
-IronPort-SDR: xCiIAfIIVW1NWbpx+Ydj0fIUN7KAJM57jvx9Qsmre2wK18IrQz2Dk5BLgPTcViVrbPJF7ZAIFn
- H6Iv4LAPyvsS3cxfU4SWYHpak7Le9lr7vkjT2KnmSIkT3BE/pcrf6Jw5ud4P4BC842sq/H7ZK7
- m5FrgrZD47DvE2iNeqkayFtSQe/qLSIvhkuueR6CQNnbcrlmiN7Tl6aiWNfVkkdwq/DtEJGHcL
- c6GIbUB8MZuCITD+b96Xyxbthy8scl+hyUAkDPQYra1n+29qNpS9b83IhHPN2WnQ/JCOHKwBwe
- o9I=
-X-IronPort-AV: E=Sophos;i="5.70,518,1574092800"; d="scan'208";a="135970325"
-Received: from mail-mw2nam10lp2104.outbound.protection.outlook.com (HELO
- NAM10-MW2-obe.outbound.protection.outlook.com) ([104.47.55.104])
- by ob1.hgst.iphmx.com with ESMTP; 05 Mar 2020 21:14:03 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nHVin89DqoW61pK2KBkppewgoD0wIneeIuxGqbjVs1+DaOJ629dZscqqMiQNFLsYxD7xuQPotpGINm7wAznPTcLH0pVJne88Fvl+M++3AmwgLzHN98ki0DQQnoq9KhZKcRc6vDoGLNj6ObhQvWUZxq26+xlkh2RXoexsjebyLKYoE93DbikJRU/O17TBg2j+yOS9ucvfvmnqfyVKV7qNeBoATvOmH47GHbf9BOTG1iXr40dtZz9/KAnBgpGVkWrNfjo2piPhUbJK+kQpDvnWqyeLanKnpuouUT6Z/56AenuCXCH6C04U6a+SyEwquCpBu2Y9tAVZfJ+koFsIqH8u+w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+gJ1IZk6gMA5g7dZREBXQN5OiOEbqyDrbb+DzYlj6o8=;
- b=nsnPprbXMVGTu6VZ9gPdRAAEEZf5xhQ6ljPoagrclhTh+fHOoFk9s5uDpuKTCix8RTuaFrOpj4Lo7bHP/7/J/XmJH5EFQxVxge2TsTKchav4wCRLT+A0kjLz9sTaY+ZUSFBMmGqz0/1zVtO9YN6Yptyu/eNvAqCvTOZTZgNnWGb2UEBNkvSUf15KTKdNhsUoGy6ZDY8azfrbMWomod6pNOxJv4E5/dRgWYioOZBREqZnJ1PDRGNTolehPU8VqAu089jr1ENnloYaKZpT/RffXEjeNztzzmwoEjEdI3eYUgnBLosNjHHCbgPIiyc47MTrb+jChIlNrYnXpM7t2Fz1JA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+gJ1IZk6gMA5g7dZREBXQN5OiOEbqyDrbb+DzYlj6o8=;
- b=nTnG/ER4/AUEBgKwT4mGyoXgsB2ov89aHrt1L9ZjmhzpBV6rPPT3zUfIgD6zgV57b3rpl4XM0sysG5oynA+fXoX0QVtdVp6gd+OOw9GQeRp34fuZvPKoaxt6aI3S6oNYnXw07Od6C/dKIyn4Ix4g8lTXBE7fJMa7GEjhPFyKzeo=
-Received: from MN2PR04MB6991.namprd04.prod.outlook.com (2603:10b6:208:1e1::17)
- by MN2PR04MB6800.namprd04.prod.outlook.com (2603:10b6:208:1e5::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.14; Thu, 5 Mar
- 2020 13:14:01 +0000
-Received: from MN2PR04MB6991.namprd04.prod.outlook.com
- ([fe80::3885:5fac:44af:5de7]) by MN2PR04MB6991.namprd04.prod.outlook.com
- ([fe80::3885:5fac:44af:5de7%7]) with mapi id 15.20.2772.019; Thu, 5 Mar 2020
- 13:14:00 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>
-Subject: RE: [PATCH v1 4/4] scsi: ufs-mediatek: remove delay for host enabling
-Thread-Topic: [PATCH v1 4/4] scsi: ufs-mediatek: remove delay for host enabling
-Thread-Index: AQHV8qOOFwhGQ/NXrkqa0GY3KGA/B6g5+fjg
-Date: Thu, 5 Mar 2020 13:14:00 +0000
-Message-ID: <MN2PR04MB6991FAE18CCA3DACF2306E08FCE20@MN2PR04MB6991.namprd04.prod.outlook.com>
-References: <20200305040704.10645-1-stanley.chu@mediatek.com>
- <20200305040704.10645-5-stanley.chu@mediatek.com>
-In-Reply-To: <20200305040704.10645-5-stanley.chu@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [77.138.4.172]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a784fa61-0a70-48d7-e603-08d7c10711af
-x-ms-traffictypediagnostic: MN2PR04MB6800:
-x-microsoft-antispam-prvs: <MN2PR04MB68003A400B87D42A3C2013EFFCE20@MN2PR04MB6800.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 03333C607F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(396003)(39860400002)(346002)(366004)(136003)(376002)(189003)(199004)(66946007)(55016002)(9686003)(66476007)(478600001)(66446008)(76116006)(4326008)(6506007)(64756008)(66556008)(5660300002)(316002)(7416002)(110136005)(26005)(81156014)(52536014)(54906003)(7696005)(86362001)(8676002)(4744005)(81166006)(2906002)(33656002)(8936002)(186003)(71200400001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR04MB6800;
- H:MN2PR04MB6991.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: rweqDiZf+fl8gaiJHGzJlgHOV6PjdU0ntziKw3n6J5h4cMxiWVL2WiofqHtfduwVc5+E2TSfklSN4F8BkhS+B33Vhm/oevILxxSYrqbat5wfp9ITcZIN5NKA73wfrY9k4sl0E2a8T/MtFFaSGIs4U72UgTvqqa0esWR3vbUTj63pqr+HZMOVCmp1ACvaF3X/Sxbvot7wLzhfrMVy+L2TJhP7G7D4YwRfK+X82jgspnp1cmCrqlk1RjRtksHzLf7+JzX0iwwlK7tpOJBJnR2MUOm8Nml0088WlW7dD6fnZjr47KFYFNFPdsb5KAgMHqUSJ9LgJi6A9EVfWpp8ShXC3zjJU9MBEEDy89Ll1s6gWO8ZUmpXr09Ov9p2Vp/ln2XcKcjvQLvOvBPveivhf1SXmZW/SOy0M0sCMsgi0cOImrx2Vf4+Dx5UD9+QoxL8cDia
-x-ms-exchange-antispam-messagedata: Cx+G9DPJKCE4T7PAoKSA1J4p2yxv6XhMb/Vdb4ZTBn5eSXOPiqQ2Gucb75ujdPb97/BuruObsHnxAzqEoaT7VG1+q19apdDZlyN+9Oalr03WNw+3j2Zr5feRLT7T38AuOHPiXV5wQh+2zE4OYuWaVA==
-x-ms-exchange-transport-forked: True
+ id 1j9qTG-0005ZR-RS
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 13:23:28 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 05 Mar 2020 05:23:24 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,518,1574150400"; 
+ d="gz'50?scan'50,208,50";a="263971139"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga004.fm.intel.com with ESMTP; 05 Mar 2020 05:23:16 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1j9qT6-000Dfm-76; Thu, 05 Mar 2020 21:23:16 +0800
+Date: Thu, 5 Mar 2020 21:22:29 +0800
+From: kbuild test robot <lkp@intel.com>
+To: cl@rock-chips.com
+Subject: Re: [PATCH v1 1/1] sched/fair: do not preempt current task if it is
+ going to call schedule()
+Message-ID: <202003052148.eDFMSdq8%lkp@intel.com>
+References: <20200305081611.29323-2-cl@rock-chips.com>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a784fa61-0a70-48d7-e603-08d7c10711af
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Mar 2020 13:14:00.0393 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Y59bZ5xOdq3wbRc2ejWGEHZ0y+iUJRv5cPJLsBbI712Xy1bXMbDGWs216TOL8QZQslxEEpbJIrGAhC4FWmG78Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR04MB6800
+Content-Type: multipart/mixed; boundary="wac7ysb48OaltWcw"
+Content-Disposition: inline
+In-Reply-To: <20200305081611.29323-2-cl@rock-chips.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_051407_938547_E28616C4 
-X-CRM114-Status: GOOD (  13.89  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200305_052326_952427_8C78DEB5 
+X-CRM114-Status: GOOD (  12.54  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.141 listed in list.dnswl.org]
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,58 +72,310 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "beanhuo@micron.com" <beanhuo@micron.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: juri.lelli@redhat.com, mark.rutland@arm.com, heiko@sntech.de,
+ geert+renesas@glider.be, peterz@infradead.org, catalin.marinas@arm.com,
+ bsegall@google.com, will@kernel.org, mpe@ellerman.id.au, linux@armlinux.org.uk,
+ dietmar.eggemann@arm.com, ben.dooks@codethink.co.uk, mgorman@suse.de,
+ Liang Chen <cl@rock-chips.com>, huangtao@rock-chips.com, keescook@chromium.org,
+ anshuman.khandual@arm.com, rostedt@goodmis.org, wad@chromium.org,
+ tglx@linutronix.de, surenb@google.com, mingo@redhat.com, allison@lohutok.net,
+ linux-arm-kernel@lists.infradead.org, kbuild-all@lists.01.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, luto@amacapital.net,
+ george_davis@mentor.com, sudeep.holla@arm.com, akpm@linux-foundation.org,
+ info@metux.net, kstewart@linuxfoundation.org
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stanley,
 
-> 
-> 
-> MediaTek platform and UFS controller do not require the delay
-> for host enabling, thus remove it.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
->  drivers/scsi/ufs/ufs-mediatek.c | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-> index 3b0e575d7460..ea3b5fd62492 100644
-> --- a/drivers/scsi/ufs/ufs-mediatek.c
-> +++ b/drivers/scsi/ufs/ufs-mediatek.c
-> @@ -258,6 +258,8 @@ static int ufs_mtk_init(struct ufs_hba *hba)
-I would expect to set whatever is needed for your host controller
-In ufshcd_vops_hce_enable_notify(hba, PRE_CHANGE), and not here.
+--wac7ysb48OaltWcw
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Thanks,
-Avri
+Hi,
 
->         if (err)
->                 goto out_variant_clear;
-> 
-> +       hba->hba_enable_delay_us = 0;
-> +
->         /* Enable runtime autosuspend */
->         hba->caps |= UFSHCD_CAP_RPM_AUTOSUSPEND;
-> 
-> --
-> 2.18.0
+Thank you for the patch! Yet something to improve:
+
+[auto build test ERROR on tip/sched/core]
+[also build test ERROR on arm64/for-next/core tip/auto-latest linus/master v5.6-rc4 next-20200304]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+
+url:    https://github.com/0day-ci/linux/commits/cl-rock-chips-com/wait_task_inactive-spend-too-much-time-on-system-startup/20200305-201639
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git a0f03b617c3b2644d3d47bf7d9e60aed01bd5b10
+config: nds32-defconfig (attached as .config)
+compiler: nds32le-linux-gcc (GCC) 9.2.0
+reproduce:
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # save the attached .config to linux build tree
+        GCC_VERSION=9.2.0 make.cross ARCH=nds32 
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
+
+All errors (new ones prefixed by >>):
+
+   In file included from arch/nds32/kernel/asm-offsets.c:4:
+   include/linux/sched.h: In function 'set_tsk_going_to_sched':
+>> include/linux/sched.h:1776:27: error: 'TIF_GOING_TO_SCHED' undeclared (first use in this function)
+    1776 |  set_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED);
+         |                           ^~~~~~~~~~~~~~~~~~
+   include/linux/sched.h:1776:27: note: each undeclared identifier is reported only once for each function it appears in
+   include/linux/sched.h: In function 'clear_tsk_going_to_sched':
+   include/linux/sched.h:1781:29: error: 'TIF_GOING_TO_SCHED' undeclared (first use in this function)
+    1781 |  clear_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED);
+         |                             ^~~~~~~~~~~~~~~~~~
+   In file included from include/linux/kernel.h:11,
+                    from include/linux/list.h:9,
+                    from include/linux/rculist.h:10,
+                    from include/linux/pid.h:5,
+                    from include/linux/sched.h:14,
+                    from arch/nds32/kernel/asm-offsets.c:4:
+   include/linux/sched.h: In function 'test_tsk_going_to_sched':
+   include/linux/sched.h:1786:44: error: 'TIF_GOING_TO_SCHED' undeclared (first use in this function)
+    1786 |  return unlikely(test_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED));
+         |                                            ^~~~~~~~~~~~~~~~~~
+   include/linux/compiler.h:78:42: note: in definition of macro 'unlikely'
+      78 | # define unlikely(x) __builtin_expect(!!(x), 0)
+         |                                          ^
+   make[2]: *** [scripts/Makefile.build:101: arch/nds32/kernel/asm-offsets.s] Error 1
+   make[2]: Target '__build' not remade because of errors.
+   make[1]: *** [Makefile:1112: prepare0] Error 2
+   make[1]: Target 'prepare' not remade because of errors.
+   make: *** [Makefile:179: sub-make] Error 2
+   22 real  7 user  11 sys  85.87% cpu 	make prepare
+
+vim +/TIF_GOING_TO_SCHED +1776 include/linux/sched.h
+
+  1773	
+  1774	static inline void set_tsk_going_to_sched(struct task_struct *tsk)
+  1775	{
+> 1776		set_tsk_thread_flag(tsk, TIF_GOING_TO_SCHED);
+  1777	}
+  1778	
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+
+--wac7ysb48OaltWcw
+Content-Type: application/gzip
+Content-Disposition: attachment; filename=".config.gz"
+Content-Transfer-Encoding: base64
+
+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
+97yKlVX1f0TxZtbxpwAA
+
+--wac7ysb48OaltWcw
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--wac7ysb48OaltWcw--
+
