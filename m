@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 099F117B030
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 21:59:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE27017B033
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 22:00:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9qKBPJHIhtlBKpfiFskFzozcsYgEZHB/BnJy2b90Nis=; b=Z2NOl6UfXFXAQt
-	J1aRKcOVf7R/pqP+yRFjBP0BZc39osdMObpWIyQWDoy6UXNlVBCh4WV68BXtWrIym5X/Zfq3d4mat
-	baTg2WA2gkQsWTrAluOZhAt16sXO1CfDSFVKgsFFKPD+Hb3h+4Z6NDcCoJy9k08TXyzhAxMfGMi+t
-	u/2DESnQpOHLpeWDoVcMy+myTZlbDEvcAOU5TRALK7Wx0xv6Cy6jXS4CE4jzuYaq/23gA1WnGgRfB
-	48od49eCvHlCUB2zKJhRMmAeR9aYbWdOibstwA0hU557iLsYdH1scIwV7vwHsaZsEgEp8x2sLK+yJ
-	hKj1HiIVbbZrug7gJNGQ==;
+	List-Owner; bh=RWRK6C+CMdV/oidDoFatht4qR0kXbZ2OZ4XZYZFxqUk=; b=oCQfsag17gTqkB
+	/0Snpow0aG7Heqn12lvpLeknHkcGAQ8i4HyWcpsz/NogEi07OWoN/2yc+n//gTxbdA5EEbdqdzZcl
+	MCWvPTg8ZoTfkNxHBU0jvc33ZSbqIqnax2GUjrlDdIY8rJE4YO7m1M/w1hw3yjbEMx60Wcte/auR7
+	HgR0rbZhjT0nl+LAVIjxbAJQjOVGXE7nADSMdH+H2HKMGIX2j3wxOXGhzS+XNO81AlONKLClz2h38
+	GXw1k7QPOXzWzODoXy5ZKm80JbHKRGfYXDIycIGKkLXnvyIHj8UY2JzWrSpB+p42ighPERUKty0Bz
+	s3oZnFQDPSzhacMaMPnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9xan-0001jI-6A; Thu, 05 Mar 2020 20:59:41 +0000
+	id 1j9xbP-00029C-3v; Thu, 05 Mar 2020 21:00:19 +0000
 Received: from viti.kaiser.cx ([2a01:238:43fe:e600:cd0c:bd4a:7a3:8e9f])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9xad-0001gg-FM
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 20:59:32 +0000
+ id 1j9xae-0001h4-M0
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 20:59:34 +0000
 Received: from 250.57.4.146.static.wline.lns.sme.cust.swisscom.ch
  ([146.4.57.250] helo=martin-debian-2.paytec.ch)
  by viti.kaiser.cx with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.89) (envelope-from <martin@kaiser.cx>)
- id 1j9xaR-0000e9-TW; Thu, 05 Mar 2020 21:59:19 +0100
+ id 1j9xaW-0000e9-Av; Thu, 05 Mar 2020 21:59:24 +0100
 From: Martin Kaiser <martin@kaiser.cx>
 To: Herbert Xu <herbert@gondor.apana.org.au>,
  PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>,
  NXP Linux Team <linux-imx@nxp.com>
-Subject: [PATCH v2 1/5] hwrng: imx-rngc - fix an error path
-Date: Thu,  5 Mar 2020 21:58:20 +0100
-Message-Id: <20200305205824.4371-2-martin@kaiser.cx>
+Subject: [PATCH v2 3/5] hwrng: imx-rngc - (trivial) simplify error prints
+Date: Thu,  5 Mar 2020 21:58:22 +0100
+Message-Id: <20200305205824.4371-4-martin@kaiser.cx>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200305205824.4371-1-martin@kaiser.cx>
 References: <20200128110102.11522-1-martin@kaiser.cx>
  <20200305205824.4371-1-martin@kaiser.cx>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_125931_676473_347F141D 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20200305_125932_862581_72C67540 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,42 +61,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Kaiser <martin@kaiser.cx>, stable@vger.kernel.org,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Martin Kaiser <martin@kaiser.cx>, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make sure that the rngc interrupt is masked if the rngc self test fails.
-Self test failure means that probe fails as well. Interrupts should be
-masked in this case, regardless of the error.
+Remove the device name, it is added by the dev_...() routines.
 
-Cc: stable@vger.kernel.org
-Fixes: 1d5449445bd0 ("hwrng: mx-rngc - add a driver for Freescale RNGC")
+Drop the error code as well. It will be shown by the driver core when
+the probe operation failed.
+
 Reviewed-by: PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>
 Signed-off-by: Martin Kaiser <martin@kaiser.cx>
 ---
- drivers/char/hw_random/imx-rngc.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/char/hw_random/imx-rngc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/char/hw_random/imx-rngc.c b/drivers/char/hw_random/imx-rngc.c
-index 30cf00f8e9a0..0576801944fd 100644
+index 903894518c8d..92e93abcc9cc 100644
 --- a/drivers/char/hw_random/imx-rngc.c
 +++ b/drivers/char/hw_random/imx-rngc.c
-@@ -105,8 +105,10 @@ static int imx_rngc_self_test(struct imx_rngc *rngc)
- 		return -ETIMEDOUT;
+@@ -258,14 +258,14 @@ static int imx_rngc_probe(struct platform_device *pdev)
+ 	if (self_test) {
+ 		ret = imx_rngc_self_test(rngc);
+ 		if (ret) {
+-			dev_err(rngc->dev, "FSL RNGC self test failed.\n");
++			dev_err(rngc->dev, "self test failed\n");
+ 			goto err;
+ 		}
  	}
  
--	if (rngc->err_reg != 0)
-+	if (rngc->err_reg != 0) {
-+		imx_rngc_irq_mask_clear(rngc);
- 		return -EIO;
-+	}
+ 	ret = hwrng_register(&rngc->rng);
+ 	if (ret) {
+-		dev_err(&pdev->dev, "FSL RNGC registering failed (%d)\n", ret);
++		dev_err(&pdev->dev, "hwrng registration failed\n");
+ 		goto err;
+ 	}
  
- 	return 0;
- }
 -- 
 2.20.1
 
