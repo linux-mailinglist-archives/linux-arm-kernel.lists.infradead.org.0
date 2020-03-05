@@ -2,59 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D1F917A2CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 11:05:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D3AE17A2DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 11:11:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=DGXefS0zf3sVxp9/MbtrkFUM8H+VEVscWWGvQKS2EHY=; b=jX+PLaV+UmIWAwch6tnGUvqGT
-	dB3GtIcDCc+bJ3ilEkiyiI/DJa348q+KZ5gv4XojYQeFh84VFd0X4Wr7/2J8ZJdyoBAV4+7mLtpR7
-	AVsNWh84++GhkDqqy+OTQU6akTL9qBAc0t+WVs6Qy7RolGPiNK012M3aUJq/UyCMKPHlHUXf2SfuV
-	k4/Bje/f+Ev3EWHOapsxl030xNEszYbNxre/ri9oNh7tK4KX/nH56q2nJLwbLsLwlyVYcxHPCIXkF
-	8D+jrGo8upZEK19Fz5E+4/DdRZYf8Nxxzr73H9qk+klOP9Z84grPuffEtJMVIZdISiYSUlDwQjmf3
-	mDDsl98XA==;
+	 bh=PN4Fr1PJN8JpfOJuFwGics0q0y9bSkzqa0quMO1OJso=; b=suiFXq9MKOkVdjl7P9tkHUbZf
+	72TzWKiA/xwgEzNpqfb37px7T3jbQy6zbjXJa8KxYdnfw5h4JFkh98abgvg0yPqd7EtZqhPw7bunA
+	4GXlo8/MV3MzoMOk3bqL3PTxPBqTbZbTLk+NwPY36uylURDjaMIF7ejybf2oRVSkitk9SwnLiFRCC
+	d+X/Rhu0K7oRmy/YTs52pRRBbGl55CrF/YwImh2sCTOyRqnjxAg8niEPkoPtU4eZqvnp92Pu7FToX
+	cloUB8IkjSibLrrZXP5zmuqE7F1bLDsl42jsOOBH5EVPoiaIxgSu605ex4ztjwC9mhUdNo/4LLlEp
+	nHB+hZzPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9nNa-0006EE-Bx; Thu, 05 Mar 2020 10:05:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1j9nTG-0000jE-2b; Thu, 05 Mar 2020 10:11:14 +0000
+Received: from poy.remlab.net ([2001:41d0:2:5a1a::]
+ helo=ns207790.ip-94-23-215.eu)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9nNQ-0006Dc-LE
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 10:05:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C89F331B;
- Thu,  5 Mar 2020 02:05:11 -0800 (PST)
-Received: from [10.37.12.115] (unknown [10.37.12.115])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 73E993F6C4;
- Thu,  5 Mar 2020 02:05:07 -0800 (PST)
-Subject: Re: [PATCH] drm/exynos: Fix memory leak and release IOMMU mapping
- structures
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-References: <CGME20200304220106eucas1p232aae5af79945664c4586930a9412eda@eucas1p2.samsung.com>
- <20200304220022.8003-1-lukasz.luba@arm.com>
- <684ef9fb-eafb-22d3-40c1-50f596211d85@samsung.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <1044756c-39cf-9fea-4338-40e5a68349a9@arm.com>
-Date: Thu, 5 Mar 2020 10:05:03 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j9nT8-0000iq-Q7
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 10:11:08 +0000
+Received: from roundcube.remlab.net (ip6-localhost [IPv6:::1])
+ by ns207790.ip-94-23-215.eu (Postfix) with ESMTP id 238C45FD44;
+ Thu,  5 Mar 2020 11:10:59 +0100 (CET)
 MIME-Version: 1.0
-In-Reply-To: <684ef9fb-eafb-22d3-40c1-50f596211d85@samsung.com>
-Content-Language: en-US
+Date: Thu, 05 Mar 2020 12:10:59 +0200
+From: Remi Denis-Courmont <remi@remlab.net>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: reduce trampoline data alignment
+Organization: Remlab Tmi
+In-Reply-To: <20200305092353.GC19208@willie-the-truck>
+References: <20200304093621.191138-1-remi@remlab.net>
+ <20200304142951.GC3575@lakrids.cambridge.arm.com>
+ <20200305092353.GC19208@willie-the-truck>
+Message-ID: <43edb84793aaa43a0ce2774b3df19e2b@remlab.net>
+X-Sender: remi@remlab.net
+User-Agent: Roundcube Webmail/1.2.3
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_020512_738146_3F524653 
-X-CRM114-Status: GOOD (  14.38  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200305_021106_994722_77DF2062 
+X-CRM114-Status: GOOD (  15.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,49 +61,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jy0922.shim@samsung.com, b.zolnierkie@samsung.com, airlied@linux.ie,
- sw0312.kim@samsung.com, krzk@kernel.org, inki.dae@samsung.com,
- a.hajda@samsung.com, kyungmin.park@samsung.com, kgene@kernel.org,
- daniel@ffwll.ch, Dietmar.Eggemann@arm.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marek,
-
-On 3/5/20 7:07 AM, Marek Szyprowski wrote:
-> Hi Lukasz,
-> 
-> On 04.03.2020 23:00, Lukasz Luba wrote:
->> There is a memory leak which left some objects not freed. The reference
->> counter of mapping: 'mapping->kref' was 2 when calling
->> arm_iommu_detach_device(), so the release_iommu_mapping() won't be called.
->> Since the old mapping structure is not going to be used any more (because
->> it is detached and new one attached), call arm_iommu_release_mapping()
->> to trigger cleanup.
-> 
-> This will break IOMMU support in Exynos DRM if deferred probe happens.
-> Here is a proper fix:
-
-I forgot about the deferred probe.
-
-> 
-> https://patchwork.kernel.org/patch/11415715/
-> 
-> The mapping initially created by DMA-mapping framework should be
-> attached back when Exynos DRM releases the subdev device.
-> 
-
-Indeed, as you responded in that thread with the example, there is
-more dependencies and attaching back the old mapping will work.
-
-I am going add my reviewed-by to your patch.
-
-Regards,
-Lukasz
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgMjAyMC0wMy0wNSAxMToyMywgV2lsbCBEZWFjb24gYSDDqWNyaXTCoDoKPiBPbiBXZWQsIE1h
+ciAwNCwgMjAyMCBhdCAwMjoyOTo1MVBNICswMDAwLCBNYXJrIFJ1dGxhbmQgd3JvdGU6Cj4+IFth
+ZGRpbmcgYXJtNjQgZm9sa10KPj4gCj4+IE9uIFdlZCwgTWFyIDA0LCAyMDIwIGF0IDExOjM2OjIx
+QU0gKzAyMDAsIFLDqW1pIERlbmlzLUNvdXJtb250IHdyb3RlOgo+PiA+IEZyb206IFJlbWkgRGVu
+aXMtQ291cm1vbnQgPHJlbWkuZGVuaXMuY291cm1vbnRAaHVhd2VpLmNvbT4KPj4gPgo+PiA+IFRo
+ZSB0cmFtcG9saW5lIGRhdGEsIGN1cnJlbnRseSBjb25zaXN0aW5nIG9mIHR3byByZWxvY2F0ZWQg
+cG9pbnRlcnMsCj4+ID4gbXVzdCBiZSB3aXRoaW4gYSBzaW5nbGUgcGFnZS4gSG93ZXZlciwgdGhl
+cmUgYXJlIG5vIG5lZWRzIGZvciBpdCB0bwo+PiA+IHN0YXJ0IGEgcGFnZS4KPj4gPgo+PiA+IFRo
+aXMgcmVkdWNlcyB0aGUgYWxpZ25tZW50IHRvIDE2IGJ5dGVzLCB3aGljaCBlbnN1cmVzIHRoYXQg
+dGhlIDE2IGJ5dGVzCj4+ID4gb2YgZGF0YSBhcmUgaW4gdGhlIHNhbWUgcGFnZS4KPiAKPiBJIGRv
+bid0IGZvbGxvdyB0aGlzIGJpdDogaXQncyBvbmUgOCBieXRlIHBvaW50ZXIuCgpJIGd1ZXNzIEkg
+bWlzcmVhZCB0aGUgcXVhZCBwc2V1ZG8gb3AgYXMgNHg0IGluc3RlYWQgb2YgNHgyIGJ5dGVzLgoK
+U28gaXQgbWlnaHQgYWN0dWFsbHkgYmUgcG9zc2libGUgdG8gcmVtb3ZlIHRoZSBhbGlnbiBzdGFu
+emEgCmNvbXBsZXRlbHkuLi4KCj4+ID4gVGhpcyBwYXRjaCBhc3N1bWVzIHRoYXQgdGhlIHBhZ2Ug
+YWxpZ25tZW50IHdhcyBqdXN0IGEgcXVpY2sgYW5kIGRpcnR5Cj4+ID4gdHJpY2sgdG8gbm90IHdv
+cnJ5IGFib3V0IGZpeG1hcC4gSWYgaG93ZXZlciB0aGUgcGFnZSBhbGlnbm1lbnQgd2FzCj4+ID4g
+bWVhbnQgdG8gcHJlc2VudCBhIGRhdGEgcGFnZSB3aXRoIG5vIG90aGVyIGRhdGEgdGhhbiB0aGUg
+dHJhbXBvbGluZSdzLAo+PiA+IHRoZW4gYm90aCB0aGUgY3VycmVudCBjb2RlIGFuZCB0aGlzIHBh
+dGNoIGFyZSB3cm9uZy4KPj4gCj4+IEkgdGhpbmsgdGhhdCBhbGlnbmluZyBpdCB0byBhIHBhZ2Ug
+d2FzIGEgc2ltcGxpZmljYXRpb24gb3ZlcmFsbCwgbm90Cj4+IGp1c3QgZm9yIHRoZSBmaXhtYXAu
+IEhvd2V2ZXIsIEkgZG8gYWdyZWUgdGhhdCBhcyB0aGUgcGFnZSBpc24ndCBtYXBwZWQKPj4gZHVy
+aW5nIEVMMCBleGVjdXRpb24sIGl0J3MgZmluZSBmb3Igb3RoZXIgYml0cyBvZiAucm9kYXRhIHRv
+IHNoYXJlIHRoZQo+PiBwYWdlLgo+PiAKPj4gSSBhbHNvIHRoaW5rIHRoYXQgaXQncyBhIGJpdCBz
+Y2FyeSB0aGF0IHdlIHJlbHkgb24gbm90aGluZyBiZWluZyAKPj4gcGxhY2VkCj4+IGluIC5yb2Rh
+dGEgYmV0d2VlbiBfX2VudHJ5X3RyYW1wX2RhdGFfc3RhcnQgYW5kCj4+IF9fc2RlaV9hc21fdHJh
+bXBvbGluZV9uZXh0X2hhbmRsZXIsIHNpbmNlIG1hY3JvcyBjb3VsZCBlYXNpbHkgcGxhY2UKPj4g
+c29tZXRoaW5nIGJldHdlZW4gdGhlIHR3by4gTHVja2lseSBOT0tQUk9CRSgpIGFkZHMgc3R1ZmYg
+dG8gCj4+IC5pbml0LmRhdGEsCj4+IGJ1dCBJIGhhZCB0byBjaGVjay4KPj4gCj4+IEkgdGhpbmsg
+aXQgd291bGQgYmUgYmV0dGVyIHRvIGFkZCBhIG5ldyAuZW50cnkudHJhbXAuZGF0YSBzZWN0aW9u
+IHRvCj4+IGVuc3VyZSB0aGF0LCB3aGljaCB3ZSBjYW4gYWxpZ24gYXBwcm9wcmlhdGVseSBpbiB0
+aGUgbGlua2VyIHNjcmlwdC4KPiAKPiBSZW1pJ3MgcGF0Y2ggbG9va3MgZmluZSB0aG91Z2gsIG5v
+PyAobW9kdWxvIHRoZSBjb25mdXNpbmcgY29tbWl0IAo+IG1lc3NhZ2UpCgouLi4gdGhvdWdoIG5v
+dyBJJ20gbm90IHN1cmUgaWYgd2Ugd2FudCB0byBoYXZlIGEgc2VwYXJhdGUgLnRyYW1wLnJvZGF0
+YSAKc2VjdGlvbiwgYSBzZXBhcmF0ZSBwYWdlIHdpdGhpbiAucm9kYXRhLCBvciBqdXN0IGEgZml4
+ZWQgdmVyc2lvbiBvZiB0aGlzIApwYXRjaD8KCkkgc3VwcG9zZSBpdCdzIGEgdHJhZGVvZmYgYmV0
+d2VlbiBwZWFjZSBvZiBtaW5kIHJlZ2FyZGluZyBsZWFraW5nIGtlcm5lbCAKcmVhZC1vbmx5IGRh
+dGEgaW4gdGhlIHRyYW1wb2xpbmUgbWFwcGluZ3MgdmVyc3VzIG1lbW9yeSB1c2U/CgotLSAKUsOp
+bWkgRGVuaXMtQ291cm1vbnQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
+bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
