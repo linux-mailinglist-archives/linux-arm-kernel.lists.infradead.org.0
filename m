@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F205217A4F5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 13:12:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED5FD17A532
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 13:23:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/LgXJiFYMZWbORLKkgNXI6CRzoLleEMvylQ6Kd9yEAU=; b=gPAE7AqvMFof3A
-	rjbUntRIxl63pyC5CIefotODKVe9xcS4161Xt5TlrWbjsmxtjmqouNN7wKMnEyhMoo8Ty/DD4SW4W
-	ZxZY8imkrcKp77YIfAvyRe/k83yikJpuEqNGSuWsdei2xwD1Ayy3rLWN+09nC2+EvH09DFmxHFhC2
-	qj2E5NmSuJN292OXcWVzRVH3VCGgax3ZadDh1ghcTnNzv+3HmRqT1FhBKPpskpSj33y5CT8JGolcd
-	KaTqJcOa/ma0IqjdK7dt/1Ztkb4TfR+gCJqqhckaONKW3tEJN2TdQgjwZzQboZGwJ/hvZ9AIQ0CUT
-	3luMv+SAdc/hDbn4/p9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+a8Afc92Ew+g196Yr7ivrJwG/SPZRnZotuzFskgIxTk=; b=kg4N4SDQ0HSGw1
+	6g+HRsDWbgPMQsdHtQsgrrkZkTi+JH3dMBcN1+dMX6oQ1J3QLa8lwTrqW5aq9JFZmAZNR49HqCcFy
+	tuumrEV1gxAF3HDYa8Cx95i5yhWrsLzvH/2mXYVCf1JRwIhHwYqH1sX8NP7gapNnuVN/tlxjAyFVh
+	R0PtPIgS2eLanPSAugtPv7Q0LThrs9JVCxVU2K75MdVAguoz7bF39jXJQXDbIcd8ow7j74YXxBURh
+	6cPWY5Xyavn3r3hoMHImTD3KzQkAzT3SBytbgoJmUxBcp3yIL3FDQDVExoIU6jDKNZgkq9z8gns5Z
+	mpuEExRzpYfzyhgut5ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9pMA-0005JQ-06; Thu, 05 Mar 2020 12:12:02 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9pM2-0005IX-A8
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 12:11:55 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 0F5D6B080;
- Thu,  5 Mar 2020 12:11:50 +0000 (UTC)
-Subject: Re: [PATCH 2/2] mm/vma: Introduce VM_ACCESS_FLAGS
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <1583391014-8170-1-git-send-email-anshuman.khandual@arm.com>
- <1583391014-8170-3-git-send-email-anshuman.khandual@arm.com>
-From: Vlastimil Babka <vbabka@suse.cz>
-Message-ID: <b3ab3943-7c3a-9c0a-17ba-bea254c5d5df@suse.cz>
-Date: Thu, 5 Mar 2020 13:11:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+	id 1j9pX5-0000YT-5b; Thu, 05 Mar 2020 12:23:19 +0000
+Received: from cmccmta3.chinamobile.com ([221.176.66.81])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9pWx-0000XE-JZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 12:23:15 +0000
+Received: from spf.mail.chinamobile.com (unknown[172.16.121.11]) by
+ rmmx-syy-dmz-app12-12012 (RichMail) with SMTP id 2eec5e60eef0854-ff40d;
+ Thu, 05 Mar 2020 20:22:09 +0800 (CST)
+X-RM-TRANSID: 2eec5e60eef0854-ff40d
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG: 00000000
+Received: from localhost.localdomain (unknown[112.0.146.245])
+ by rmsmtp-syy-appsvr06-12006 (RichMail) with SMTP id 2ee65e60eeeec2d-dd790;
+ Thu, 05 Mar 2020 20:22:09 +0800 (CST)
+X-RM-TRANSID: 2ee65e60eeeec2d-dd790
+From: tangbin <tangbin@cmss.chinamobile.com>
+To: davem@davemloft.net
+Subject: [PATCH] ethernet:broadcom:bcm63xx_enet:remove redundant variable
+ definitions
+Date: Thu,  5 Mar 2020 20:22:59 +0800
+Message-Id: <20200305122259.6104-1-tangbin@cmss.chinamobile.com>
+X-Mailer: git-send-email 2.20.1.windows.1
 MIME-Version: 1.0
-In-Reply-To: <1583391014-8170-3-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_041154_495805_3048E15C 
-X-CRM114-Status: GOOD (  13.51  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200305_042312_331215_FABDAD75 
+X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [221.176.66.81 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,58 +65,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-s390@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Nick Hu <nickhu@andestech.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, hughd@google.com,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- linux-kernel@vger.kernel.org, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Rob Springer <rspringer@google.com>, Michael Ellerman <mpe@ellerman.id.au>,
- Mark Salter <msalter@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Guan Xuetao <gxt@pku.edu.cn>, Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: f.fainelli@gmail.com, tangbin <tangbin@cmss.chinamobile.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/5/20 7:50 AM, Anshuman Khandual wrote:
-> There are many places where all basic VMA access flags (read, write, exec)
-> are initialized or checked against as a group. One such example is during
-> page fault. Existing vma_is_accessible() wrapper already creates the notion
-> of VMA accessibility as a group access permissions. Hence lets just create
-> VM_ACCESS_FLAGS (VM_READ|VM_WRITE|VM_EXEC) which will not only reduce code
-> duplication but also extend the VMA accessibility concept in general.
-> 
-> Cc: Russell King <linux@armlinux.org.uk>
-> CC: Catalin Marinas <catalin.marinas@arm.com>
-> CC: Mark Salter <msalter@redhat.com>
-> Cc: Nick Hu <nickhu@andestech.com>
-> CC: Ley Foon Tan <ley.foon.tan@intel.com>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-> Cc: Guan Xuetao <gxt@pku.edu.cn>
-> Cc: Dave Hansen <dave.hansen@linux.intel.com>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Rob Springer <rspringer@google.com>
-> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: linux-s390@vger.kernel.org
-> Cc: devel@driverdev.osuosl.org
-> Cc: linux-mm@kvack.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-
-Reviewed-by: Vlastimil Babka <vbabka@suse.cz>
-
-Thanks.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aW4gdGhpcyBmdW5jdGlvbizigJhyZXTigJkgaXMgYWx3YXlzIGFzc2lnbmVkLHNvIHRoaXMncyBk
+ZWZpbml0aW9uCidyZXQgPSAwJyBtYWtlIG5vIHNlbnNlLgoKU2lnbmVkLW9mZi1ieTogdGFuZ2Jp
+biA8dGFuZ2JpbkBjbXNzLmNoaW5hbW9iaWxlLmNvbT4KLS0tCiBkcml2ZXJzL25ldC9ldGhlcm5l
+dC9icm9hZGNvbS9iY202M3h4X2VuZXQuYyB8IDEgLQogMSBmaWxlIGNoYW5nZWQsIDEgZGVsZXRp
+b24oLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC9ldGhlcm5ldC9icm9hZGNvbS9iY202M3h4
+X2VuZXQuYyBiL2RyaXZlcnMvbmV0L2V0aGVybmV0L2Jyb2FkY29tL2JjbTYzeHhfZW5ldC5jCmlu
+ZGV4IDYyMGNkM2ZjMS4uZWE1MDg3YThlIDEwMDY0NAotLS0gYS9kcml2ZXJzL25ldC9ldGhlcm5l
+dC9icm9hZGNvbS9iY202M3h4X2VuZXQuYworKysgYi9kcml2ZXJzL25ldC9ldGhlcm5ldC9icm9h
+ZGNvbS9iY202M3h4X2VuZXQuYwpAQCAtMTcwNiw3ICsxNzA2LDYgQEAgc3RhdGljIGludCBiY21f
+ZW5ldF9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCWlmICghcmVzX2lycSB8
+fCAhcmVzX2lycV9yeCB8fCAhcmVzX2lycV90eCkKIAkJcmV0dXJuIC1FTk9ERVY7CiAKLQlyZXQg
+PSAwOwogCWRldiA9IGFsbG9jX2V0aGVyZGV2KHNpemVvZigqcHJpdikpOwogCWlmICghZGV2KQog
+CQlyZXR1cm4gLUVOT01FTTsKLS0gCjIuMjAuMS53aW5kb3dzLjEKCgoKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
