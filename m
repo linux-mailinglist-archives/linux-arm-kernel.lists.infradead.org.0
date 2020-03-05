@@ -2,82 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B17C117B13E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 23:10:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CD7D17B158
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 23:22:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nQ6bcwhupO720uvIpuTiCxrx0eqB08RMEMIU5q8gmec=; b=fm5GppofnjIOcb
-	+lOY1LhwGGRveiJmWlcxyrQUuXYnUz3XRwMFiwnojepruu2851DbY0pUCk2MeFp0Bt6k7CKBSRsIQ
-	QSB1e0pD8c1mta3RMFzvlYcimibwrq0ycjOCxeOgV3fKf2gDzfyMawortyoRAPI0/+U5r8OGdKDFR
-	FVtmQv1hFcrGdxz6ce/ZJ7WRctYMc2Bq0JbSIMV1odJ7wAK3IVGSH6z5zMRuoQ/H5a5LMTudoDBjq
-	jBhkrucbUXuMi6hxyWw0YRriDGv+EnO6IndQyzzb/uxNgvfXzkxUawNvRkJEMRWMnG0rMfVY/26dV
-	1a7bckZGgMsRSGO52alw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/rREnrObTMIYfsk94cL4fRcd+U+qJf5eOkpEfTVC4n4=; b=UbcD5Lwhsxv7fO
+	hhrnQESGfmMPII6X9fiHXiKbgqLt5BR8z13Q2ytnCuWoH1fu54gSVWB58H+KGtk3e0IkVTqAGkqr6
+	GJ+Wn58olNpSmHD8hHoRQtpAG89oaH4MLbvd21eA8sTiDd7XxktwED/0IWGQphc9wLbchimGft7Ks
+	Q1DKWW9dKK+8nJXixp8wMP2Si1lEQp6oc7ir6cMlQ4liUIBqu8aFVhfiCTzfPQ5Epv2ctAIiPFvH2
+	fqnmQIO8u/PHBjwU3+vZ4tRIa58lV8L4GPb18+IkcJ8i6BRF4TNMUn/W6Lv2jBPmp/qkxQn1ZT2EG
+	mzudKYv2jZnPI+lovx+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9yhG-0004mt-Qr; Thu, 05 Mar 2020 22:10:26 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1j9ysZ-0000a3-0Y; Thu, 05 Mar 2020 22:22:07 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9yh8-0004m2-E7
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 22:10:20 +0000
-Received: by mail-pl1-x642.google.com with SMTP id b8so3228042plx.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 14:10:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=wP8ZLcoVfjRLy2wd1F6p7whOnIttnSe9o981shhqduQ=;
- b=EW642PHINIK0QQBXUVu9+0zYb98h6yXBQ6W1ECVmuPNBpv+xTNekh/mPEorDGkXbrP
- 8R/GZTy5gtZKaGotUgRHMrfabg8VJ1UKudix3XnEE4X0wo4xpwsNgzn259YyN7kdpphX
- +NkbZc+7O2mRuEKZocKBF4+CZJu68vbYYfirA=
+ id 1j9ysQ-0000YQ-Rm; Thu, 05 Mar 2020 22:22:00 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v2so30026wrp.12;
+ Thu, 05 Mar 2020 14:21:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Z7TiigNdjz+orfMlREKYMBZDrTKamsieMAuLprR2Fyw=;
+ b=DjlglfJNJgBMOUmIioZMi+av2xMFnc/T2klMGdKaUEe06g41gCfZe+GdBgLANYqHFX
+ YEy+LhwwPcxS+IzUlpR7Yu0fPJoFIsO/YtQgKWkHJPOux8wQCWy4uMX1phLX2cozPtbA
+ rZ6TESS/7JM35YzciXup4yFqEK6ME98LnEQfT41dSfiIBHJd3vvhqaYwm4Z1jOJ8+YJ1
+ hO2mdK6OiIT0dZmXXy/Ll4eoQYtZhPg7DTU/hoVFRNrzQ6GTnIe9O838s6bWWtTKQMJm
+ /mx8ecIwB4CdKPG+vxVFkqaknTLQhfHIg6DRiLB+ENIwkvWiqj7rj1GnLe6WvxhvV8AD
+ 3+aA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wP8ZLcoVfjRLy2wd1F6p7whOnIttnSe9o981shhqduQ=;
- b=OZRfXGlKlQ57QHKqXTbfAA+jRJvwsUdlz5cg8JrR2utpOlIxDqAGlOsX+3b6oPKzYU
- Go0/2ZiIlQYAkpGTPHy2FJSI4ou0A+F819/6+cLc4BSkw6OH8RgwKflYjIL1kKDAPVMp
- VcVkehtrNp2cPqv9Kn6osCVzVoLLxkqZdP3rjNtAXsZYyxmFElM+2+Zw9fAN9w/SULOo
- tUztFw+pGZE9OJ4UUDHsqL4rN5JXt2NDX2J16GmNxrGHD+xrq2tCk6qgY+2cd2edRA5y
- 1TuFiJ74qEZMcVTbq1dPGqCWoOaT//foOk33nlIprmnojF8O6LAtTQYX8TRmRD2VVzCU
- W5VQ==
-X-Gm-Message-State: ANhLgQ2uvfsDDGenrOCQeog7PSWnX6QXQl7e1IyiNhyma8YcCTaqgPO1
- sEseTk7PsCWKY5t4Xvzhmjj7WQ==
-X-Google-Smtp-Source: ADFU+vsGiwCvQZPWkXv7TRZ4jmXWr6psRLovg1wV5hcbdmqIqfAlL8UTuWw6Uuwi0lyBRg1ClCAohw==
-X-Received: by 2002:a17:90a:9416:: with SMTP id r22mr293883pjo.2.1583446217711; 
- Thu, 05 Mar 2020 14:10:17 -0800 (PST)
-Received: from google.com ([2620:15c:202:201:476b:691:abc3:38db])
- by smtp.gmail.com with ESMTPSA id q9sm32286268pgs.89.2020.03.05.14.10.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Mar 2020 14:10:17 -0800 (PST)
-Date: Thu, 5 Mar 2020 14:10:16 -0800
-From: Prashant Malani <pmalani@chromium.org>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: Convert usb-connector to YAML format.
-Message-ID: <20200305221016.GE142502@google.com>
-References: <20200305030135.210675-1-pmalani@chromium.org>
- <CAL_JsqJcJf0JZVHEuY5y0eHLyw3e0Wr2ZDJvPs4=cZaSMWg97A@mail.gmail.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Z7TiigNdjz+orfMlREKYMBZDrTKamsieMAuLprR2Fyw=;
+ b=XULslWNOelm7wAknwP6Ut3hniFZcnbxMEPP075kM0jQmnGYJOsC9A1xBQjYB6ZE5A5
+ GwQKiBvGEFytb6+12okDX7xHlOAhIOfdvwQmRQ0xK489+nKP6czO8si99277SOSBZuQM
+ UUxHm4x0iyb5c3BlmigINFKnZyllXivpKr5Fwe/wLo+6AI1vYG54Sx+K5FWlf/Na3T+d
+ wGzEPye2F41+x8zOeVk4RSI0t4ryTS+PKddNPYo+PZb5tte6AeDrRn3JTJ5Vp2ju3pW9
+ MM5e7HN3iyvJDendJGzTBEhbm4zeWg4QHuneenlb+q39Z182lezcP5m4iWGARY4TrtWi
+ yKzw==
+X-Gm-Message-State: ANhLgQ0yFTqETbIo9tLgXiJsBm855UKGfjQNcaaqjvvzifIN1NB/H8yq
+ o1hki34+4pGdzKget657RsKaeGbT
+X-Google-Smtp-Source: ADFU+vsPqjTKstCk+aKgW/j6ZMymiLJfuaIaKNq2Eq1mnpCpBxTW05y745VZ2m97812uXc1VuwMZOg==
+X-Received: by 2002:a5d:518b:: with SMTP id k11mr132122wrv.114.1583446914878; 
+ Thu, 05 Mar 2020 14:21:54 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id l5sm11017229wml.3.2020.03.05.14.21.53
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 05 Mar 2020 14:21:54 -0800 (PST)
+Subject: Re: [PATCH 2/3] ARM: dts: rockchip: add missing @0 to memory nodenames
+To: Heiko Stuebner <heiko@sntech.de>, robh+dt@kernel.org
+References: <20200304074051.8742-1-jbx6244@gmail.com>
+ <20200304074051.8742-2-jbx6244@gmail.com> <1784340.9KJLpVao5L@phil>
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <2a5ef6fc-2487-91ef-24ce-97dd47b0a137@gmail.com>
+Date: Thu, 5 Mar 2020 23:21:52 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqJcJf0JZVHEuY5y0eHLyw3e0Wr2ZDJvPs4=cZaSMWg97A@mail.gmail.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <1784340.9KJLpVao5L@phil>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_141018_478836_B2540946 
-X-CRM114-Status: GOOD (  23.77  )
-X-Spam-Score: 2.7 (++)
+X-CRM114-CacheID: sfid-20200305_142158_900693_6433B60D 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (2.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- 2.9 FSL_HELO_FAKE          No description available.
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,120 +102,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "open list:USB SUBSYSTEM" <linux-usb@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Bryan O'Donoghue <bryan.odonoghue@linaro.org>,
- Benson Leung <bleung@chromium.org>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob, Kindly see inline. Thanks as always.
-
-
-On Thu, Mar 05, 2020 at 03:29:00PM -0600, Rob Herring wrote:
-> On Wed, Mar 4, 2020 at 9:01 PM Prashant Malani <pmalani@chromium.org> wrote:
-> >
-> > Convert the usb-connector.txt bindings file to YAML format. This allows
-> > it to be used in dt_bindings_check verification. This patch was
-> > born out of a patch series for the addition of a Type C connector
-> > class port driver[1].
-> >
-> > An attempt has been made to maintain the same documentation text and
-> > example structure as was in the .txt file, but wherever needed
-> > modifications have been made to satisfy dt_bindings_check.
-> >
-> > Also, update all references to usb-connector.txt to now use
-> > usb-connector.yaml.
-> >
-> > [1]: https://lkml.org/lkml/2020/2/19/1232
-> >
-> > Signed-off-by: Prashant Malani <pmalani@chromium.org>
-> > ---
-> >
-> > Changes in v2:
-> > - Added type references for some properties.
-> > - Removed pinctrl properties.
-> > - Updated power-role, try-power-role and data-role properties to be in
-> >   valid schema format.
-> > - Added OF graph data bus binding property according to reviewer
-> >   suggestions.
-> >
-> >  .../connector/samsung,usb-connector-11pin.txt |   2 +-
-> >  .../bindings/connector/usb-connector.txt      | 135 ------------
-> >  .../bindings/connector/usb-connector.yaml     | 203 ++++++++++++++++++
-> >  .../devicetree/bindings/usb/fcs,fusb302.txt   |   2 +-
-> >  .../devicetree/bindings/usb/generic.txt       |   2 +-
-> >  .../devicetree/bindings/usb/mediatek,mtu3.txt |   2 +-
-> >  .../devicetree/bindings/usb/mediatek,musb.txt |   2 +-
-> >  .../bindings/usb/richtek,rt1711h.txt          |   2 +-
-> >  .../devicetree/bindings/usb/ti,hd3ss3220.txt  |   2 +-
-> >  .../devicetree/bindings/usb/typec-tcpci.txt   |   2 +-
-> >  .../devicetree/bindings/usb/usb-conn-gpio.txt |   4 +-
-> >  11 files changed, 213 insertions(+), 145 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/connector/usb-connector.txt
-> >  create mode 100644 Documentation/devicetree/bindings/connector/usb-connector.yaml
-> 
-> 
-> > diff --git a/Documentation/devicetree/bindings/connector/usb-connector.yaml b/Documentation/devicetree/bindings/connector/usb-connector.yaml
-> > new file mode 100644
-> > index 0000000000000..b386e2880405c
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/connector/usb-connector.yaml
-> > @@ -0,0 +1,203 @@
-> > +# SPDX-License-Identifier: GPL-2.0-only
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/connector/usb-connector.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: USB Connector
-> > +
-> > +maintainers:
-> > +  - linux-usb@vger.kernel.org
-> 
-> Person please. You can put me if no one else.
-> 
-
-I will list you as the maintainer.
-> > +description:
-> > +  A USB connector node represents a physical USB connector. It should be a child
-> > +  of a USB interface controller.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - usb-a-connector
-> > +      - usb-b-connector
-> > +      - usb-c-connector
-> > +
-> > +  label:
-> > +    description: Symbolic name for the connector.
-> > +
-> > +  type:
-> > +    description: Size of the connector, should be specified in case of USB-A,
-> > +      USB-B non-fullsize connectors.
-> > +    $ref: /schemas/types.yaml#definitions/string
-> 
-> Needs to be under an 'allOf' or the enum is ignored.
-
-Done.
-> 
-> Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSGVpa28sCgpHb2FsIHdhcyB0byByZWR1Y2UgdGhlIGVycm9yIG91dHB1dCBvZiBleGlzdGlu
+ZyBjb2RlIGEgbGl0dGxlIGJpdCwKc28gdGhhdCB3ZSBjYW4gdXNlIGl0IGZvciB0aGUgcmV2aWV3
+IG9mIG5ldyBwYXRjaGVzLgpTb21lIHF1ZXN0aW9uczoKQXMgSSBkb24ndCBoYXZlIHRoZSBoYXJk
+d2FyZSwgd2hlcmUgZWxzZSBpcyBjb3JlYm9vdCB1c2VkPwpJcyB0aGlzIGEgcmszMjg4LXZleXJv
+bi5kdHNpIHByb2JsZW0gb25seT8KaWUuIElzIGl0IGEgb3B0aW9uIHRvIHByb2R1Y2UgYSBwYXRj
+aCBzZXJpZSB2MiB3aXRob3V0IHZleXJvbj8KQ2FuIHNvbWVvbmUgaGVscCB0ZXN0aW5nPwoKSm9o
+YW4KCk9uIDMvNS8yMCAxMDozMSBQTSwgSGVpa28gU3R1ZWJuZXIgd3JvdGU6Cj4gSGkgSm9oYW4s
+Cj4KPiBBbSBNaXR0d29jaCwgNC4gTcOkcnogMjAyMCwgMDg6NDA6NTAgQ0VUIHNjaHJpZWIgSm9o
+YW4gSm9ua2VyOgo+PiBBIHRlc3Qgd2l0aCB0aGUgY29tbWFuZCBiZWxvdyBnaXZlcyBmb3IgZXhh
+bXBsZSB0aGlzIGVycm9yOgo+Pgo+PiBhcmNoL2FybS9ib290L2R0cy9yazMyODgtdGlua2VyLmR0
+LnlhbWw6IC86IG1lbW9yeToKPj4gRmFsc2Ugc2NoZW1hIGRvZXMgbm90IGFsbG93Cj4+IHsnZGV2
+aWNlX3R5cGUnOiBbJ21lbW9yeSddLCAncmVnJzogW1swLCAwLCAwLCAyMTQ3NDgzNjQ4XV19Cj4+
+Cj4+IFRoZSBtZW1vcnkgbm9kZXMgYWxsIGhhdmUgYSByZWcgcHJvcGVydHkgdGhhdCByZXF1aXJl
+cyAnQCcgaW4KPj4gdGhlIG5vZGVuYW1lLiBGaXggdGhpcyBlcnJvciBieSBhZGRpbmcgdGhlIG1p
+c3NpbmcgJ0AwJyB0bwo+PiB0aGUgaW52b2x2ZWQgbWVtb3J5IG5vZGVuYW1lcy4KPj4KPj4gbWFr
+ZSBBUkNIPWFybSBkdGJzX2NoZWNrCj4+IERUX1NDSEVNQV9GSUxFUz1+Ly5sb2NhbC9saWIvcHl0
+aG9uMy41L3NpdGUtcGFja2FnZXMvZHRzY2hlbWEvCj4+IHNjaGVtYXMvcm9vdC1ub2RlLnlhbWwK
+Pgo+IGNoYW5nZXMgdG8gbWVtb3J5IG5vZGVzIHlvdSBzYWRseSBjYW5ub3QgZG8gaW4gc3VjaCBh
+biBhdXRvbWF0ZWQgZmFzaGlvbi4KPiBJZiB5b3UgcmVhZCB0aGUgY29tbWVudCBpbiByazMyODgt
+dmV5cm9uLmR0c2kgeW91J2xsIHNlZSB0aGF0IGEgcHJldmlvdXMKPiBzaW1pbGFyIGl0ZXJhdGlv
+biBicm9rZSBhbGwgb2YgdGhvc2UgbWFjaGluZXMgYXMgdGhlaXIgY29yZWJvb3QgZG9lc24ndAo+
+IGNvcHkgd2l0aCBtZW1vcnlAMCBhbmQgd291bGQgaW5zZXJ0IGFub3RoZXIgbWVtb3J5IG5vZGUg
+d2l0aG91dCBAMAo+Cj4gSW4gdGhlIHBhc3QgaXRlcmF0aW9uIHRoZSBjb25zZW5zdXMgdGhlbiB3
+YXMgdGhhdCBtZW1vcnkgd2l0aG91dCBAMAo+IGlzIGFsc28gb2sgKGFzIGl0IGlzbid0IGNoYW5n
+ZWFibGUgYW55d2F5KS4KPgoKPiBBcyBJIGRvbid0IHJlYWxseSB3YW50IHRvIHJlcGVhdCB0aGF0
+LCBJJ2QgbGlrZSBhY3R1YWwgaGFyZHdhcmUgdGVzdHMKPiBiZWZvcmUgdG91Y2hpbmcgbWVtb3J5
+IG5vZGVzLgoKQW55IHN1Z2dlc3Rpb24vZmVlZGJhY2sgcmFwcG9ydCB3ZWxjb21lLgoKPgo+IEhl
+aWtvCj4KPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
