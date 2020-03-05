@@ -2,57 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68FB1179E48
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 04:35:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14797179E56
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 04:40:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ve61JFnfFDff6DwSYGreegPco5/wBvW5O+QiDVQXBa0=; b=jcYgbR7qhIxXul
-	gMcY2mUmIU3EiBYUOdjvrcDhYjFyfaTa4L5py7QvTeOSHIZjEY/ZA83xL1qIyyXNIEshqsGgkQ/Em
-	42uDTNjliPI/CrL8sOlUkcam5dlAthvEIXJtolUZDUmAu4RmxkrwJty+EeuTK+azOAUZ6/0fNIIoD
-	GW2vr/E4+IDAusjCnBKe9TTGchBWOGxG+0pWcXoDP4TKPomGigMRGgY6ipswT2MjAtQGNeQL6qnbL
-	Dg333eiTiDosBUiXJ06xPz7tHxjl8+oG0+xXX5tUANFEMYRwhENda6BTgnxd8STfHgMW6oZISzLOG
-	4kkCWSxeiok+KBFpdv6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=YbU/fN2OFdzIezMRsgTRA/FIaah8IttGESc8s6K7cno=; b=So9oLAaLWGHV4IEe8WLnQ5MgK
+	oXiloSGgELTZoNasJWeKqyAVf6guxH/+QRAWzP1MkfYsOyBvuYQAy+cXozf1fNiZdqRIsq4MNtICo
+	OF0eHx1jcfAT10uVLdDNpVQoqkFILy3wL3AY21V01zlKP15IGNFstxsrB8SJ8+t3myI40sn9ClfaU
+	zxT93a23j3w95hvqsLzpMvVRf92YcNvF/pGxHTswpQdIQNt/kw+jughw4QKzA6lri0uEN+zxtTOe6
+	XcDJJoRCIydF8JEmlsoVVMVkExJKlqYhGJfBCam4q0gxGUMCq7y3OL67wToh5tmbFoIebxjmOb/Cc
+	vLMCInFTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9hIX-0008Ht-Uy; Thu, 05 Mar 2020 03:35:45 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
+	id 1j9hMv-0001fT-OQ; Thu, 05 Mar 2020 03:40:17 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9hIP-0008H8-2K
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 03:35:38 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 0253Z9YA032350
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Wed, 4 Mar 2020 21:35:13 -0600
-Message-ID: <8a9033d5e76951f5bec39531c5d0e0d6ef963ee5.camel@kernel.crashing.org>
-Subject: Re: [PATCH] usb: gadget: aspeed: improve vhub port irq handling
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: rentao.bupt@gmail.com, Felipe Balbi <balbi@kernel.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Stephen Boyd <swboyd@chromium.org>, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, openbmc@lists.ozlabs.org, taoren@fb.com
-Date: Thu, 05 Mar 2020 14:35:08 +1100
-In-Reply-To: <20200305023859.21057-1-rentao.bupt@gmail.com>
-References: <20200305023859.21057-1-rentao.bupt@gmail.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1j9hMo-0000j2-5g
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 03:40:12 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id AD4361CEF13762CC0BFD;
+ Thu,  5 Mar 2020 11:40:00 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Thu, 5 Mar 2020
+ 11:39:52 +0800
+Subject: Re: [PATCH v5 00/23] irqchip/gic-v4: GICv4.1 architecture support
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20200304203330.4967-1-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <5613bec0-a207-1e59-82d0-8d44fc65a0a4@huawei.com>
+Date: Thu, 5 Mar 2020 11:39:50 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
+MIME-Version: 1.0
+In-Reply-To: <20200304203330.4967-1-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_193537_307984_F76CC42A 
-X-CRM114-Status: GOOD (  15.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200304_194010_384097_47C3A18A 
+X-CRM114-Status: GOOD (  20.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,96 +67,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>, Thomas
+ Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-03-04 at 18:38 -0800, rentao.bupt@gmail.com wrote:
-> From: Tao Ren <rentao.bupt@gmail.com>
-> 
-> This patch evaluates vhub ports' irq mask before going through per-
-> port
-> irq handling one by one, which helps to speed up irq handling in case
-> there is no port interrupt.
-> 
-> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+Hi Marc,
 
-Looks reasonable, but did you try a find_next_bit() loop and whether
-that's faster ?
-
-> ---
->  drivers/usb/gadget/udc/aspeed-vhub/core.c | 11 ++++++-----
->  drivers/usb/gadget/udc/aspeed-vhub/vhub.h |  8 ++++----
->  2 files changed, 10 insertions(+), 9 deletions(-)
+On 2020/3/5 4:33, Marc Zyngier wrote:
+> This (now shorter) series expands the existing GICv4 support to deal
+> with the new GICv4.1 architecture, which comes with a set of major
+> improvements compared to v4.0:
 > 
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> index f8d35dd60c34..a03e4e4ea401 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> @@ -134,11 +134,11 @@ static irqreturn_t ast_vhub_irq(int irq, void
-> *data)
->  	}
->  
->  	/* Handle device interrupts */
-> -	for (i = 0; i < vhub->max_ports; i++) {
-> -		u32 dev_mask = VHUB_IRQ_DEVICE1 << i;
-> -
-> -		if (istat & dev_mask)
-> -			ast_vhub_dev_irq(&vhub->ports[i].dev);
-> +	if (istat & vhub->port_irq_mask) {
-> +		for (i = 0; i < vhub->max_ports; i++) {
-> +			if (istat & VHUB_DEV_IRQ(i))
-> +				ast_vhub_dev_irq(&vhub->ports[i].dev);
-> +		}
->  	}
->  
->  	/* Handle top-level vHub EP0 interrupts */
-> @@ -332,6 +332,7 @@ static int ast_vhub_probe(struct platform_device
-> *pdev)
->  
->  	spin_lock_init(&vhub->lock);
->  	vhub->pdev = pdev;
-> +	vhub->port_irq_mask = GENMASK(vhub->max_ports + 8, 9);
->  
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->  	vhub->regs = devm_ioremap_resource(&pdev->dev, res);
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> index fac79ef6d669..e49924ec7e58 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/vhub.h
-> @@ -54,10 +54,6 @@
->  #define VHUB_IRQ_USB_CMD_DEADLOCK		(1 << 18)
->  #define VHUB_IRQ_EP_POOL_NAK			(1 << 17)
->  #define VHUB_IRQ_EP_POOL_ACK_STALL		(1 << 16)
-> -#define VHUB_IRQ_DEVICE5			(1 << 13)
-> -#define VHUB_IRQ_DEVICE4			(1 << 12)
-> -#define VHUB_IRQ_DEVICE3			(1 << 11)
-> -#define VHUB_IRQ_DEVICE2			(1 << 10)
->  #define VHUB_IRQ_DEVICE1			(1 << 9)
->  #define VHUB_IRQ_BUS_RESUME			(1 << 8)
->  #define VHUB_IRQ_BUS_SUSPEND 			(1 << 7)
-> @@ -70,6 +66,9 @@
->  #define VHUB_IRQ_HUB_EP0_SETUP			(1 << 0)
->  #define VHUB_IRQ_ACK_ALL			0x1ff
->  
-> +/* Downstream device IRQ mask. */
-> +#define VHUB_DEV_IRQ(n)				(VHUB_IRQ_DEVIC
-> E1 << (n))
-> +
->  /* SW reset reg */
->  #define VHUB_SW_RESET_EP_POOL			(1 << 9)
->  #define VHUB_SW_RESET_DMA_CONTROLLER		(1 << 8)
-> @@ -402,6 +401,7 @@ struct ast_vhub {
->  	/* Per-port info */
->  	struct ast_vhub_port		*ports;
->  	u32				max_ports;
-> +	u32				port_irq_mask;
->  
->  	/* Generic EP data structures */
->  	struct ast_vhub_ep		*epns;
+> - One architectural doorbell per vcpu, instead of one doorbell per VLPI
+> 
+> - Doorbell entirely managed by the HW, with an "at most once" delivery
+>    guarantee per non-residency phase and only when requested by the
+>    hypervisor
+> 
+> - A shared memory scheme between ITSs and redistributors, allowing for an
+>    optimised residency sequence (the use of VMOVP becomes less frequent)
+> 
+> - Support for direct virtual SGI delivery (the injection path still involves
+>    the hypervisor), at the cost of losing the active state on SGIs. It
+>    shouldn't be a big deal, but some guest operating systems might notice
+>    (Linux definitely won't care).
+> 
+> On the other hand, public documentation is not available yet, so that's a
+> bit annoying...
+> 
+> The series is roughly organised in 3 parts:
+> 
+> (0) Fixes
+> (1) v4.1 doorbell management
+> (2) Virtual SGI support
+> (3) Plumbing of virtual SGIs in KVM
+> 
+> Notes:
+> 
+>    - The whole thing is tested on a FVP model, which can be obtained
+>      free of charge on ARM's developer website. It requires you to
+>      create an account, unfortunately... You'll need a fix for the
+>      devicetree that is in the kernel tree (should be merged before
+>      the 5.6 release).
+> 
+>    - This series has uncovered a behaviour that looks like a HW bug on
+>      the Cavium ThunderX (aka TX1) platform. I'd very much welcome some
+>      clarification from the Marvell/Cavium folks on Cc, as well as an
+>      official erratum number if this happens to be an actual bug.
+> 
+>      [v3 update]
+>      People have ignored for two months now, and it is fairly obvious
+>      that support for this machine is slowly bit-rotting. Maybe I'll
+>      drop the patch and instead start the process of removing all TX1
+>      support from the kernel (we'd certainly be better off without it).
+> 
+>      [v4 update]
+>      TX1 is now broken in mainline, and nobody cares. Make of this what
+>      you want.
+> 
+>    - I'm extremely grateful for Zenghui Yu's huge effort in carefully
+>      reviewing this rather difficult series (if we ever get to meet
+>      face to face, drinks are definitely on me!).
+
+It's a pleasure to review this work and it's pretty useful for
+understanding how Linux works as a GICv4.1-capable hypervisor.
+Yay, cheers ;-)!
+
+I'll go through the v4.1 spec one more time before the final
+review of this series, as we still have plenty of time to do
+some reviews (and even some tests) before the 5.7 MW.
+
+> 
+>    - Unless someone cries wolf, I plan to take this into 5.7.
+
+Good news!
+
+
+Thanks,
+Zenghui
 
 
 _______________________________________________
