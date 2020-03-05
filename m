@@ -2,53 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1450179C96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 01:04:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EC73179D01
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 01:52:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JGwxFPUcu7TzVB7aKuqfDZxfqhUT4ZnGYQNgPTlWs70=; b=YN1qII+mUzt378
-	2pNTPxL/Z3Bot1Fcwna+IIO4UDgjM4FKWczi+Gcixrrp0WuVfqoarDzHWWQ2NmR2WajfFfz1M6dVT
-	YX22rBMDD7otqrOgl9N7aCgDr4fCiOHQJDQ1bVVmcFfEC8WFlv8jwI4QUsC8cRaKxJRIIfYpUAxmY
-	jDY2sV9kl5Ln+GtJaAOnypbOT5bYmd5e1vMSc1uHuvY4Zn/0kY1Nv0iXWrtxYOnyk/xaE81A+Zu5P
-	4L542Z6CpSdPpJ+5j5uQirX5L9r7YsD7g5hJ9LwbPQuI9J7nVivcA4dZzVzys9wuDzathy+x5vukC
-	95XUyUcon2rEVihmjsBQ==;
+	List-Owner; bh=rJ6Q0/m9HnJZFf5HCLIH8w8ha+1lGWGYzPLwSb3MGeM=; b=i+TJ3/Ho0/4RdV
+	bucMxYfrGwXMYrfW9TUgn18/tdxLBL40WAsrMjbLdnqK+egbM7616bwV1e3O5z/HWUoO5H+O5fuaw
+	POUuZzEOT1zOEb/ZGmtI/Zg+azus2+yw+K+odpsKcFDJ6yNApRIF1XnhSC+TFMzWPzSbd2fiX3IDS
+	ENxXnSY/cjPCtdAIz4tBCkm3+xtxSh2XPCdMCE235Br91uD6d2rXO9gHiE5h9n0c/5m+e8Qmec5SY
+	ywaN1jq8f6sFcP73HTGruN/9RLNkushPJQocjr3ykZy2US4bMxk/JxBtdRSj2RCw7EQNbFb60inDi
+	Va2F5GeYf0YQ45bOL3Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9dzU-0004pJ-Bk; Thu, 05 Mar 2020 00:03:52 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1j9ejv-0003xQ-Aw; Thu, 05 Mar 2020 00:51:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9dzN-0004od-Mv; Thu, 05 Mar 2020 00:03:47 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 4471C29637E
-Message-ID: <5fa8402863c7fb4171d8b2021a776b9ac0be1596.camel@collabora.com>
-Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>, 
- =?ISO-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@collabora.com>
-Date: Wed, 04 Mar 2020 21:03:30 -0300
-In-Reply-To: <2221545.2vEflg7qi2@diego>
-References: <20200302155703.278421-1-mylene.josserand@collabora.com>
- <20200302155703.278421-2-mylene.josserand@collabora.com>
- <2221545.2vEflg7qi2@diego>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+ id 1j9ejl-0003wJ-Hd; Thu, 05 Mar 2020 00:51:42 +0000
+X-UUID: 1fcea33272864bf999b650ee934ed032-20200304
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Dt+NjDKJnvFkl8R5AeUjlcgnglhu+f9HBOgNSX0bmEE=; 
+ b=Xwj1loR4Nq+7Sw402bvRcCWVaxghwi193wHlRv+MIMIqTepRD0jaBRlF5spKuX1dfN/9eybs2Zq1+/B4xrizQ6FY0O+OqjuwxoBPWbgk3EMfUjbqM6NwzD1MNP/FICR1hPoVYC3lWMFV5jWpTsupB8G/AUN03rZz6F2+wxLuV70=;
+X-UUID: 1fcea33272864bf999b650ee934ed032-20200304
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 724649678; Wed, 04 Mar 2020 16:51:39 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Mar 2020 16:49:03 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Mar 2020 08:47:54 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 5 Mar 2020 08:48:18 +0800
+Message-ID: <1583369342.28558.0.camel@mtkswgap22>
+Subject: Re: [PATCH v4 11/13] soc: mediatek: cmdq: add jump function
+From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>
+Date: Thu, 5 Mar 2020 08:49:02 +0800
+In-Reply-To: <1583290652.1062.2.camel@mtksdaap41>
+References: <1583233125-7827-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1583233125-7827-12-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1583290652.1062.2.camel@mtksdaap41>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_160346_012006_67CED5C6 
-X-CRM114-Status: GOOD (  25.75  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200304_165141_592041_26AF7039 
+X-CRM114-Status: GOOD (  17.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,116 +86,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux@armlinux.org.uk,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, wsd_upstream@mediatek.com, David
+ Airlie <airlied@linux.ie>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ HS Liao <hs.liao@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiBXZWQsIDIwMjAtMDMtMDQgYXQgMTE6NTkgKzAxMDAsIEhlaWtvIFN0w7xi
-bmVyIHdyb3RlOgo+IEhpLAo+IAo+IEFtIE1vbnRhZywgMi4gTcOkcnogMjAyMCwgMTY6NTc6MDIg
-Q0VUIHNjaHJpZWIgTXlsw6huZSBKb3NzZXJhbmQ6Cj4gPiBEZXRlcm1pbmUgd2hpY2ggcmV2aXNp
-b24gb2YgcmszMjg4IGJ5IGNoZWNraW5nIHRoZSBIRE1JIHZlcnNpb24uCj4gPiBBY2NvcmRpbmcg
-dG8gdGhlIFJvY2tjaGlwIEJTUCBrZXJuZWwsIG9uIHJrMzI4OHcsIHRoZSBIRE1JCj4gPiByZXZp
-c2lvbiBlcXVhbHMgMHgxQSB3aGljaCBpcyBub3QgdGhlIGNhc2UgZm9yIHRoZSByazMyODggWzFd
-Lgo+ID4gCj4gPiBBcyB0aGVzZSBTT0MgaGF2ZSBzb21lIGRpZmZlcmVuY2VzLCB0aGUgbmV3IGZ1
-bmN0aW9uCj4gPiAnc29jX2lzX3JrMzI4OHcnIHdpbGwgaGVscCB1cyB0byBrbm93IG9uIHdoaWNo
-IHJldmlzaW9uCj4gPiB3ZSBhcmUuCj4gCj4gd2hhdCBoYXBwZW5lZCB0byBqdXN0IGhhdmluZyBh
-IGRpZmZlcmVudCBjb21wYXRpYmxlIGluIHRoZSBkdHM/Cj4gQWthIGRvaW5nIGEgCj4gCj4gcmsz
-Mjg4dy5kdHNpIHdpdGgKPiAKPiAjaW5jbHVkZSAicmszMjg4LmR0c2kiCj4gCj4gJmNydSB7Cj4g
-CWNvbXBhdGlibGUgPSAicm9ja2NoaXAscmszMjg4dy1jcnUiOwo+IH0KPiAKCkkgZ3Vlc3MgeW91
-IGhhdmUgc29tZXRoaW5nIGxpa2UgdGhpcyBpbiBtaW5kOgoKc3RhdGljIHZvaWQgX19pbml0IHJr
-MzI4OF9jbGtfaW5pdChzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wKQp7CiAgICAgICAgX19yazMyODhf
-Y2xrX2luaXQobnAsIFJLMzI4OF9TT0NfUkVWX1JLMzI4OFcpOwp9CkNMS19PRl9ERUNMQVJFKHJr
-MzI4OF9jcnUsICJyb2NrY2hpcCxyazMyODgtY3J1IiwgcmszMjg4X2Nsa19pbml0KTsKCnN0YXRp
-YyB2b2lkIF9faW5pdCByazMyODh3X2Nsa19pbml0KHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnApCnsK
-ICAgICAgICBfX3JrMzI4OF9jbGtfaW5pdChucCwgUkszMjg4X1NPQ19SRVZfUkszMjg4KTsKfQpD
-TEtfT0ZfREVDTEFSRShyazMyODhfY3J1LCAicm9ja2NoaXAscmszMjg4dy1jcnUiLCByazMyODh3
-X2Nsa19pbml0KTsKCkFuZCB0aGUgcmVzdCBpcyBtb3N0bHkgdW50b3VjaGVkLCBleGNlcHQgdGhl
-IHJldmlzaW9uIGlzCm5vIGxvbmdlciBxdWVyaWVkIGFuZCBpcyBub3cgcGFzc2VkIGJ5IHRoZSBE
-VD8KClRoaXMgd291bGQgYmUgY2xlYW5lciBmb3IgdGhlIGtlcm5lbCwgd2l0aCB0aGUgb2J2aW91
-cwpkcmF3YmFjayBiZWluZyB0aGF0IHlvdSBub3cgaGF2ZSB0byBtYWludGFpbgphbm90aGVyIERU
-Uy4KClRoaXMgY291bGQgYmUgYW4gaW5jb252ZW5pZW5jZS4gSSBiZWxpZXZlClJLMzI4OFcgaXMg
-bWVhbnQgYXMgYSBkaXJlY3QgcmVwbGFjZW1lbnQgZm9yIFJLMzI4OCwKc28gZm9sa3MgYnVpbGRp
-bmcgcHJvZHVjdHMgd291bGQgZXhwZWN0IHRvIGp1c3QgdXNlClJLMzI4OFcsIGFuZCBub3QgcmVh
-bGx5IGJvdGhlciB3aXRoIHBhc3NpbmcgYQpkaWZmZXJlbnQgRFRTIG9yIHdoYXQgbm90LgoKPiBJ
-IHNvbWVob3cgZG9uJ3QgZXhwZWN0IGJvYXJkcyB0byBqdXN0IHN3aXRjaCBiZXR3ZWVuIHNvYyB2
-YXJpYW50cwo+IG9uIHRoZSBmbHkuCj4gCgpXaGlsZSBJIGFncmVlIHRoZXkgYXJlIG5hc3R5LCBx
-dWlya3MgbGlrZSB0aGlzCmFyZSBub3QgdW5jb21tb24uCgo+IEFsc28sIGRvaW5nIHRoaW5ncyBp
-biBtYWNoLXJvY2tjaGlwIGlzIG5vdCB2ZXJ5IGZ1dHVyZS1wcm9vZjoKPiAKClRoZXJlIGlzIGFj
-dHVhbGx5IG5vIHJlYXNvbiB0byBrZWVwIHRoaXMgaW4gbWFjaC1yb2NrY2hpcCwgcmlnaHQ/CgpU
-aGUgcXVpcmsgY291bGQgYmUgcGxhY2VkIGluIG90aGVyIHBsYWNlcy4gRm9yIGluc3RhbmNlLApk
-aXJlY3RseSBpbiB0aGUgY2xvY2sgZHJpdmVyLgoKVGhhbmtzIGZvciByZXZpZXdpbmchCkV6ZXF1
-aWVsCgo+ICgxKSBoYXZpbmcgcmFuZG9tIHNvYy1zcGVjaWZpYyBBUElzIHNwYW5uaW5nIHRoZSBr
-ZXJuZWwgZmVlbHMgd3JvbmcsCj4gICAgIGVzcGVjaWFsbHkgYXMgYXQgc29tZSBwb2ludCBpdCBt
-aWdodCBub3QgYmUgY29udGFpbmVkIHRvIG91ciBvd24gc3BlY2lhbAo+ICAgICBkcml2ZXJzIGxp
-a2UgdGhlIGNydS4gSSBjYW5ub3QgcmVhbGx5IHNlZSBwZW9wbGUgYmVpbmcgZW50aHVzaWFzdGlj
-IGlmCj4gICAgIHNvbWV0aGluZyBsaWtlIHRoaXMgd291bGQgYmUgbmVlZGVkIGluIHNheSB0aGUg
-Y29yZSBBbmFsb2dpeC1EUCBicmlkZ2UgOy0pCj4gKDIpIEkgZ3Vlc3MgdGhlIHJrMzI4OHcgd2ls
-bCBub3QgYmUgdGhlIGxhc3Qgc29jIGRvaW5nIHRoaXMgYW5kIG9uIGFybTY0IHlvdQo+ICAgICBj
-YW4ndCBkbyBpdCB0aGF0IHdheSwgYXMgdGhlcmUgaXMgbm8gbWFjaC1yb2NrY2hpcCB0aGVyZQo+
-IAo+IFNvIG15IHBlcnNvbmFsIHByZWZlcmVuY2Ugd291bGQgcmVhbGx5IHdvdWxkIGJlIGp1c3Qg
-YSBzcGVjaWZpYyBjb21wYXRpYmxlCj4gZm9yIGFmZmVjdGVkIGlwIGJsb2Nrcy4KPiAKPiBIZWlr
-bwo+IAo+ID4gWzFdOmh0dHBzOi8vZ2l0aHViLmNvbS9yb2NrY2hpcC1saW51eC91LWJvb3QvYmxv
-Yi9mOTkyZmUzMzM0YWE1MDkwYWNiNDQ4MjYxOTgyNjI4YjVhM2QzN2E1L2FyY2gvYXJtL2luY2x1
-ZGUvYXNtL2FyY2gtcm9ja2NoaXAvY3B1LmgjTDMwLi5MMzQKPiA+IAo+ID4gU2lnbmVkLW9mZi1i
-eTogTXlsw6huZSBKb3NzZXJhbmQgPG15bGVuZS5qb3NzZXJhbmRAY29sbGFib3JhLmNvbT4KPiA+
-IC0tLQo+ID4gIGFyY2gvYXJtL21hY2gtcm9ja2NoaXAvcm9ja2NoaXAuYyB8IDQ1ICsrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysKPiA+ICBpbmNsdWRlL3NvYy9yb2NrY2hpcC9yZXZpc2lv
-bi5oICAgfCAyMiArKysrKysrKysrKysrKysKPiA+ICAyIGZpbGVzIGNoYW5nZWQsIDY3IGluc2Vy
-dGlvbnMoKykKPiA+ICBjcmVhdGUgbW9kZSAxMDA2NDQgaW5jbHVkZS9zb2Mvcm9ja2NoaXAvcmV2
-aXNpb24uaAo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yb2Nr
-Y2hpcC5jIGIvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yb2NrY2hpcC5jCj4gPiBpbmRleCBmOTc5
-N2EyYjVkMGQuLmI5MDdiYTM5MDA5MyAxMDA2NDQKPiA+IC0tLSBhL2FyY2gvYXJtL21hY2gtcm9j
-a2NoaXAvcm9ja2NoaXAuYwo+ID4gKysrIGIvYXJjaC9hcm0vbWFjaC1yb2NrY2hpcC9yb2NrY2hp
-cC5jCj4gPiBAQCAtOSwxMiArOSwxNCBAQAo+ID4gICNpbmNsdWRlIDxsaW51eC9rZXJuZWwuaD4K
-PiA+ICAjaW5jbHVkZSA8bGludXgvaW5pdC5oPgo+ID4gICNpbmNsdWRlIDxsaW51eC9pby5oPgo+
-ID4gKyNpbmNsdWRlIDxsaW51eC9vZl9hZGRyZXNzLmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L29m
-X3BsYXRmb3JtLmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L2lycWNoaXAuaD4KPiA+ICAjaW5jbHVk
-ZSA8bGludXgvY2xrLXByb3ZpZGVyLmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L2Nsb2Nrc291cmNl
-Lmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L21mZC9zeXNjb24uaD4KPiA+ICAjaW5jbHVkZSA8bGlu
-dXgvcmVnbWFwLmg+Cj4gPiArI2luY2x1ZGUgPHNvYy9yb2NrY2hpcC9yZXZpc2lvbi5oPgo+ID4g
-ICNpbmNsdWRlIDxhc20vbWFjaC9hcmNoLmg+Cj4gPiAgI2luY2x1ZGUgPGFzbS9tYWNoL21hcC5o
-Pgo+ID4gICNpbmNsdWRlIDxhc20vaGFyZHdhcmUvY2FjaGUtbDJ4MC5oPgo+ID4gQEAgLTIyLDYg
-KzI0LDQ5IEBACj4gPiAgI2luY2x1ZGUgInBtLmgiCj4gPiAgCj4gPiAgI2RlZmluZSBSSzMyODhf
-VElNRVI2XzdfUEhZUyAweGZmODEwMDAwCj4gPiArI2RlZmluZSBSSzMyODhfSERNSV9SRVZfUkVH
-CTB4MDQKPiA+ICsjZGVmaW5lIFJLMzI4OFdfSERNSV9SRVYJMHgxQQo+ID4gKwo+ID4gK3N0YXRp
-YyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIHJrMzI4OF9kdF9oZG1pX21hdGNoW10gX19pbml0
-Y29uc3QgPSB7Cj4gPiArCXsgLmNvbXBhdGlibGUgPSAicm9ja2NoaXAscmszMjg4LWR3LWhkbWki
-IH0sCj4gPiArCXsgfQo+ID4gK307Cj4gPiArCj4gPiAraW50IHJrMzI4OF9nZXRfcmV2aXNpb24o
-dm9pZCkKPiA+ICt7Cj4gPiArCXN0YXRpYyBpbnQgcmV2aXNpb24gPSBSSzMyODhfU09DX1JFVl9V
-TktOT1dOOwo+ID4gKwlzdHJ1Y3QgZGV2aWNlX25vZGUgKmRuOwo+ID4gKwl2b2lkIF9faW9tZW0g
-KmhkbWlfYmFzZTsKPiA+ICsKPiA+ICsJaWYgKHJldmlzaW9uICE9IFJLMzI4OF9TT0NfUkVWX1VO
-S05PV04pCj4gPiArCQlyZXR1cm4gcmV2aXNpb247Cj4gPiArCj4gPiArCWRuID0gb2ZfZmluZF9t
-YXRjaGluZ19ub2RlKE5VTEwsIHJrMzI4OF9kdF9oZG1pX21hdGNoKTsKPiA+ICsJaWYgKCFkbikg
-ewo+ID4gKwkJcHJfZXJyKCIlczogQ291bGRuJ3QgZmluZCBIRE1JIG5vZGVcbiIsIF9fZnVuY19f
-KTsKPiA+ICsJCXJldHVybiAtRUlOVkFMOwo+ID4gKwl9Cj4gPiArCj4gPiArCWhkbWlfYmFzZSA9
-IG9mX2lvbWFwKGRuLCAwKTsKPiA+ICsJb2Zfbm9kZV9wdXQoZG4pOwo+ID4gKwo+ID4gKwlpZiAo
-IWhkbWlfYmFzZSkgewo+ID4gKwkJcHJfZXJyKCIlczogQ291bGRuJ3QgbWFwICVwT0YgcmVnc1xu
-IiwgX19mdW5jX18sCj4gPiArCQkgICAgICAgaGRtaV9iYXNlKTsKPiA+ICsJCXJldHVybiAtRU5Y
-SU87Cj4gPiArCX0KPiA+ICsKPiA+ICsJaWYgKHJlYWRsX3JlbGF4ZWQoaGRtaV9iYXNlICsgUksz
-Mjg4X0hETUlfUkVWX1JFRykgPT0KPiA+ICsJICAgIFJLMzI4OFdfSERNSV9SRVYpCj4gPiArCQly
-ZXZpc2lvbiA9IFJLMzI4OF9TT0NfUkVWX1JLMzI4OFc7Cj4gPiArCWVsc2UKPiA+ICsJCXJldmlz
-aW9uID0gUkszMjg4X1NPQ19SRVZfUkszMjg4Owo+ID4gKwo+ID4gKwlpb3VubWFwKGhkbWlfYmFz
-ZSk7Cj4gPiArCj4gPiArCXJldHVybiByZXZpc2lvbjsKPiA+ICt9Cj4gPiArRVhQT1JUX1NZTUJP
-TChyazMyODhfZ2V0X3JldmlzaW9uKTsKPiA+ICAKPiA+ICBzdGF0aWMgdm9pZCBfX2luaXQgcm9j
-a2NoaXBfdGltZXJfaW5pdCh2b2lkKQo+ID4gIHsKPiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL3Nv
-Yy9yb2NrY2hpcC9yZXZpc2lvbi5oIGIvaW5jbHVkZS9zb2Mvcm9ja2NoaXAvcmV2aXNpb24uaAo+
-ID4gbmV3IGZpbGUgbW9kZSAxMDA2NDQKPiA+IGluZGV4IDAwMDAwMDAwMDAwMC4uMjI2NDE5YzYw
-YWYwCj4gPiAtLS0gL2Rldi9udWxsCj4gPiArKysgYi9pbmNsdWRlL3NvYy9yb2NrY2hpcC9yZXZp
-c2lvbi5oCj4gPiBAQCAtMCwwICsxLDIyIEBACj4gPiArLyogU1BEWC1MaWNlbnNlLUlkZW50aWZp
-ZXI6IEdQTC0yLjAtb25seSAqLwo+ID4gKy8qCj4gPiArICogQ29weXJpZ2h0IDIwMjAgQ29sbGFi
-b3JhCj4gPiArICovCj4gPiArCj4gPiArI2lmbmRlZiBfX1NPQ19ST0NLQ0hJUF9SRVZJU0lPTl9I
-X18KPiA+ICsjZGVmaW5lIF9fU09DX1JPQ0tDSElQX1JFVklTSU9OX0hfXwo+ID4gKwo+ID4gK2Vu
-dW0gcmszMjg4X3NvY19yZXZpc2lvbiB7Cj4gPiArCVJLMzI4OF9TT0NfUkVWX1VOS05PV04sCj4g
-PiArCVJLMzI4OF9TT0NfUkVWX1JLMzI4OCwKPiA+ICsJUkszMjg4X1NPQ19SRVZfUkszMjg4VywK
-PiA+ICt9Owo+ID4gKwo+ID4gK2ludCByazMyODhfZ2V0X3JldmlzaW9uKHZvaWQpOwo+ID4gKwo+
-ID4gK3N0YXRpYyBpbmxpbmUgYm9vbCBzb2NfaXNfcmszMjg4dyh2b2lkKQo+ID4gK3sKPiA+ICsJ
-cmV0dXJuIHJrMzI4OF9nZXRfcmV2aXNpb24oKSA9PSBSSzMyODhfU09DX1JFVl9SSzMyODhXOwo+
-ID4gK30KPiA+ICsKPiA+ICsjZW5kaWYgLyogX19TT0NfUk9DS0NISVBfUkVWSVNJT05fSF9fICov
-Cj4gPiAKPiAKPiAKPiAKPiAKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi CK,
+
+Thanks for your comment.
+
+On Wed, 2020-03-04 at 10:57 +0800, CK Hu wrote:
+> Hi, Dennis:
+> 
+> On Tue, 2020-03-03 at 18:58 +0800, Dennis YC Hsieh wrote:
+> > Add jump function so that client can jump to any address which
+> > contains instruction.
+> > 
+> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-cmdq-helper.c | 12 ++++++++++++
+> >  include/linux/soc/mediatek/mtk-cmdq.h  | 11 +++++++++++
+> >  2 files changed, 23 insertions(+)
+> > 
+> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > index 59bc1164b411..f27c67034880 100644
+> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > @@ -372,6 +372,18 @@ int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value)
+> >  }
+> >  EXPORT_SYMBOL(cmdq_pkt_assign);
+> >  
+> > +int cmdq_pkt_jump(struct cmdq_pkt *pkt, dma_addr_t addr)
+> > +{
+> > +	struct cmdq_instruction inst = { {0} };
+> > +
+> > +	inst.op = CMDQ_CODE_JUMP;
+> > +	inst.offset = 1;
+> 
+> Symbolize the value '1'.
+
+miss in v4, will add in next version, thanks.
+
+
+Regards,
+Dennis
+
+
+> 
+> Regards,
+> CK
+> 
+> > +	inst.value = addr >>
+> > +		cmdq_mbox_shift(((struct cmdq_client *)pkt->cl)->chan);
+> > +	return cmdq_pkt_append_command(pkt, inst);
+> > +}
+> > +EXPORT_SYMBOL(cmdq_pkt_jump);
+> > +
+> >  int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+> >  {
+> >  	struct cmdq_instruction inst = { {0} };
+> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> > index 99e77155f967..1a6c56f3bec1 100644
+> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> > @@ -213,6 +213,17 @@ int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
+> >   */
+> >  int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value);
+> >  
+> > +/**
+> > + * cmdq_pkt_jump() - Append jump command to the CMDQ packet, ask GCE
+> > + *		     to execute an instruction that change current thread PC to
+> > + *		     a physical address which should contains more instruction.
+> > + * @pkt:        the CMDQ packet
+> > + * @addr:       physical address of target instruction buffer
+> > + *
+> > + * Return: 0 for success; else the error code is returned
+> > + */
+> > +int cmdq_pkt_jump(struct cmdq_pkt *pkt, dma_addr_t addr);
+> > +
+> >  /**
+> >   * cmdq_pkt_finalize() - Append EOC and jump command to pkt.
+> >   * @pkt:	the CMDQ packet
+> 
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
