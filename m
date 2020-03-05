@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 387C317A798
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 15:36:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6663417A7BA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 15:37:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mT/wBBtLgVsUxPhl29YDTTOLa6FknKeosayAF6pybS8=; b=RVu
-	Qjy9zRaXk/uTzFasFgbkFYgZpgqkKrRwwVMl/x9x2WBpe0NgndOeFpyuesEzzW3EG32jNMiT2jlgm
-	wBMxWnfNzCqnWEyTDmjsGBvdnv2ol/L6wRvHzeXiVVWDsNNX8YCpdHt7weArgB92JHcLiThqDTK3k
-	DdjOAxY1SYwhP0ebtFW1jKEBuEdpKV5CWDrEd4JfxskLpaZfAzuKCCySpXfzmTBCNcHOafeaSIa5y
-	V51i36Cr+vR5M5XwqBQ8ebSBnNXUcPbwl10NpWukVA1dP/RKssN9wmgbarGs6jtWrfRAxSCPJQ7PY
-	HnfRaRlD3D3HGex51nu/6bqu6fQsl1A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=khSd19p8Or/Ks0LY+CVZ+BpDUijWKTWKtlDhSPR1ryc=; b=GQvKQntQNmf4GaKvLcNWrjuYAp
+	scJz0I7gKnc0cqm+931T4C79gJHcvqGlRICXyJnWrB7xi2deomxynGJr+mBdT/ro5zW+/1dZIYga/
+	fXWvFGPobJSRm3wLEUolVHiGE1azf3chRy/cKviNVEauS1NvQE2ODjMegYTNA3cjvx1xCb4kXKxyn
+	LYaczThqNeuwGrfnJ1Aq9yD1+64D9lkglFzpKHj0cpfAFs+qNuj/6H0ozQswJyD7j/XannPmq879J
+	wi6yfJA1XbBEgsSrD7GktuMV5DNuHik1vxxBiEU6+pMsRZ66wXdBaAbs8J16lQ95BaXUd/U30Wm4S
+	xVseL6Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9rc4-0001dK-2F; Thu, 05 Mar 2020 14:36:36 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j9rcg-0002Eb-Pe; Thu, 05 Mar 2020 14:37:14 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9rbr-0001bB-BR; Thu, 05 Mar 2020 14:36:25 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g134so6572301wme.3;
- Thu, 05 Mar 2020 06:36:21 -0800 (PST)
+ id 1j9rbt-0001bD-2U; Thu, 05 Mar 2020 14:36:26 +0000
+Received: by mail-wm1-x341.google.com with SMTP id i9so6576645wml.4;
+ Thu, 05 Mar 2020 06:36:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Fzw97o/L2ddgOD9Mk5ZgJ4mz/W2IqpyyO7RKo3ExDqI=;
- b=eGAZujSpLYN9hufM9nxWLtaND6o9cSpt+JU/hD4JLIn4WthADj76OEuPkhLFqQlGd9
- oMT5VpoAMrgSKvfmlBhBsFTqW88Ew4UHfRuTcR0GL1s7pnVZYNkqGDEijmLnqSHdL5gB
- 7u7eqswqR7ezXwbyCBuYzXKFWIAinvGgoZNyhTHX2nYq7adyiTSXSbdUqn72zZy93iNp
- F0t+mLrEBZgySNr/cLo8rWmYaALeWt/vCC5FYUpH1UZz1mqw95qJYHFew/o8Xd2RkGUM
- i9lJQipeqZz2lZXEDcEQOADzGDludU75qctFHTIS5rwBQT/AIo6V95MiT4Nb37PIOht4
- M/JA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=uFpuBBMUDRGLySlw2LJfDDLm6H8b76IieodfF2vnzXM=;
+ b=Kta2qzw1d1E8RvneBZj8HMEMVqounDkPjTu1e2EkWI3hjdVg+nSI/vQLcrDc+bsK25
+ hpT8OWlYEh7M3lyAmx4iyVg1RUyJyQAYqvkIhYsqjUxrddniWhdn2c0wGNr5K2pIWsZV
+ MXm3KAcY/SKN+i6GfwPeI+j0+rA1OvGRv/3tv3ZlFk3sZNajlYcgR0SleOPh6+gDWp7k
+ OcFSjN8xHJVMMbazkB0XWWr5RwAcmX7B+PKmrpXoFyr1buGIzVo8ZhgeqiHmdk9NOc81
+ rb+b/Q0CliAZ7VUoRLF+U9a6K1rI1kNWBmG1ZqVd1TNna6tnzJePbz0xS7glMqXTkon3
+ Dnsw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Fzw97o/L2ddgOD9Mk5ZgJ4mz/W2IqpyyO7RKo3ExDqI=;
- b=ugSO555E+EzW/m+x3sfcxoB7Q71AwZve3qsH2JrgP0Mm48J/ThXfvVT4pLQbNA1xZw
- dDWN8SF1o6fzwJeE+E0GZEdxd3Vfs3lDqpnPD/XxflRwmIt3YEUrEC9+pNOq+6CIX3Ff
- KU1F/C/9iE1XcV8RXB4aE951vXE/eup65iYGJp8UCHTxyPABUhTsYiaCph+UNGRNwt8J
- 6Msx9kt+sVZumQHawP7qAPx2/Mx2H0YXwaRkeJ5lSKmRO9GjaV0tukPXS9hN0hwKwl7X
- Eq9rjVVeN/i1bv/lLAvqY8msTgJUGfvgn+ch9hkqPsavt7WXWkAHO0Nyuo2L1VgnitJP
- IlZA==
-X-Gm-Message-State: ANhLgQ1Epowmj8/sUCxa4rrKzTRgmuaMXV238HU0MucYQ1PJwh8VEATP
- anqpTu5z/1BbEKiJLkIYT4s=
-X-Google-Smtp-Source: ADFU+vuyVhCo3qL7TfM1oGCbV9+9jXtHRiIy6N9lQU97La20DxCBKFLnBjzVm2081txVHj9hMj8+yQ==
-X-Received: by 2002:a05:600c:22cd:: with SMTP id
- 13mr10338852wmg.51.1583418980518; 
- Thu, 05 Mar 2020 06:36:20 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=uFpuBBMUDRGLySlw2LJfDDLm6H8b76IieodfF2vnzXM=;
+ b=qV3O75QY7UUpWynpZ+w9rOBzZp+ukXumlW9yDpla68j0vo4NGTBtAVQCFNz11wTS57
+ HrZryVX98FUyqMkuCi89k2Pv9Enwm3f32d7Q3FaJchMhctIOQbmVaPYnBXAv5fPmG6O6
+ JJYpih4MUPZs1djJNOWyqQ/sqPZNenUOseEO8lokCJds+1+XFxeQFMEsNIHJiOHdl5bw
+ IT2h57EsrjOWgklSn3/qsqHcyWH4FIOk6GVu7dRIxZnuM8Jo91qm2t4wK9nxGyN95yFs
+ TdFA62BDGHK97E4NgLew2V1WI2uqfQYk0UzxXrsXNn6cIZuGrLpfZCx2Lj1BLfU44GnK
+ jdaA==
+X-Gm-Message-State: ANhLgQ2B+p+gO2Boyg2V8BGNsNvxJ619sT082LDOHva4ShSD2/QHfM0B
+ 3eHbLGMQQRKOnHXFwtfWqEE=
+X-Google-Smtp-Source: ADFU+vvsmmrg7ZLun9VSaqp5UjO/yXs+1arXJoFVq6y39FuhkgNuvHyEwjKoto903tolYaS7Zcpzxw==
+X-Received: by 2002:a1c:9602:: with SMTP id y2mr9742694wmd.23.1583418981555;
+ Thu, 05 Mar 2020 06:36:21 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id g201sm9365124wme.23.2020.03.05.06.36.19
+ by smtp.gmail.com with ESMTPSA id g201sm9365124wme.23.2020.03.05.06.36.20
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
  Thu, 05 Mar 2020 06:36:20 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH v1 1/5] dt-bindings: i2c: convert rockchip i2c bindings to yaml
-Date: Thu,  5 Mar 2020 15:36:07 +0100
-Message-Id: <20200305143611.10733-1-jbx6244@gmail.com>
+Subject: [PATCH v1 2/5] dt-bindings: i2c: i2c-rk3x: add description for rk3036
+Date: Thu,  5 Mar 2020 15:36:08 +0100
+Message-Id: <20200305143611.10733-2-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200305143611.10733-1-jbx6244@gmail.com>
+References: <20200305143611.10733-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_063623_395452_3184A5ED 
-X-CRM114-Status: GOOD (  20.23  )
+X-CRM114-CacheID: sfid-20200305_063625_110638_121BB194 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -103,245 +106,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current dts files with 'i2c' nodes are manually verified.
-In order to automate this process i2c-rk3x.txt
-has to be converted to yaml. In the new setup
-i2c-rk3x.yaml will inherit properties from
-i2c-controller.yaml.
-
-Also change document name in MAINTAINERS.
+The description below is already in use for rk3036.dtsi,
+but was somehow never added to a document, so add
+"rockchip,rk3036-i2c", "rockchip,rk3288-i2c"
+for i2c nodes on a rk3036 platform to i2c-rk3x.yaml.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/devicetree/bindings/i2c/i2c-rk3x.txt |  68 -----------
- .../devicetree/bindings/i2c/i2c-rk3x.yaml          | 129 +++++++++++++++++++++
- MAINTAINERS                                        |   2 +-
- 3 files changed, 130 insertions(+), 69 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
- create mode 100644 Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
+ Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-rk3x.txt b/Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
-deleted file mode 100644
-index 22f2eeb2c..000000000
---- a/Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
-+++ /dev/null
-@@ -1,68 +0,0 @@
--* Rockchip RK3xxx I2C controller
--
--This driver interfaces with the native I2C controller present in Rockchip
--RK3xxx SoCs.
--
--Required properties :
--
-- - reg : Offset and length of the register set for the device
-- - compatible: should be one of the following:
--   - "rockchip,rv1108-i2c": for rv1108
--   - "rockchip,rk3066-i2c": for rk3066
--   - "rockchip,rk3188-i2c": for rk3188
--   - "rockchip,rk3228-i2c": for rk3228
--   - "rockchip,rk3288-i2c": for rk3288
--   - "rockchip,rk3328-i2c", "rockchip,rk3399-i2c": for rk3328
--   - "rockchip,rk3399-i2c": for rk3399
-- - interrupts : interrupt number
-- - clocks: See ../clock/clock-bindings.txt
--   - For older hardware (rk3066, rk3188, rk3228, rk3288):
--     - There is one clock that's used both to derive the functional clock
--       for the device and as the bus clock.
--   - For newer hardware (rk3399): specified by name
--     - "i2c": This is used to derive the functional clock.
--     - "pclk": This is the bus clock.
--
--Required on RK3066, RK3188 :
--
-- - rockchip,grf : the phandle of the syscon node for the general register
--		  file (GRF)
-- - on those SoCs an alias with the correct I2C bus ID (bit offset in the GRF)
--   is also required.
--
--Optional properties :
--
-- - clock-frequency : SCL frequency to use (in Hz). If omitted, 100kHz is used.
-- - i2c-scl-rising-time-ns : Number of nanoseconds the SCL signal takes to rise
--	(t(r) in I2C specification). If not specified this is assumed to be
--	the maximum the specification allows(1000 ns for Standard-mode,
--	300 ns for Fast-mode) which might cause slightly slower communication.
-- - i2c-scl-falling-time-ns : Number of nanoseconds the SCL signal takes to fall
--	(t(f) in the I2C specification). If not specified this is assumed to
--	be the maximum the specification allows (300 ns) which might cause
--	slightly slower communication.
-- - i2c-sda-falling-time-ns : Number of nanoseconds the SDA signal takes to fall
--	(t(f) in the I2C specification). If not specified we'll use the SCL
--	value since they are the same in nearly all cases.
--
--Example:
--
--aliases {
--	i2c0 = &i2c0;
--}
--
--i2c0: i2c@2002d000 {
--	compatible = "rockchip,rk3188-i2c";
--	reg = <0x2002d000 0x1000>;
--	interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
--	#address-cells = <1>;
--	#size-cells = <0>;
--
--	rockchip,grf = <&grf>;
--
--	clock-names = "i2c";
--	clocks = <&cru PCLK_I2C0>;
--
--	i2c-scl-rising-time-ns = <800>;
--	i2c-scl-falling-time-ns = <100>;
--};
 diff --git a/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml b/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
-new file mode 100644
-index 000000000..962aefb7d
---- /dev/null
+index 962aefb7d..0bba39998 100644
+--- a/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
 +++ b/Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
-@@ -0,0 +1,129 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/i2c/i2c-rk3x.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Rockchip RK3xxx I2C controller
-+
-+description:
-+  This driver interfaces with the native I2C controller present in Rockchip
-+  RK3xxx SoCs.
-+
-+allOf:
-+  - $ref: /schemas/i2c/i2c-controller.yaml#
-+
-+maintainers:
-+  - Heiko Stuebner <heiko@sntech.de>
-+
-+# Everything else is described in the common file
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: rockchip,rv1108-i2c
-+      - const: rockchip,rk3066-i2c
-+      - const: rockchip,rk3188-i2c
-+      - const: rockchip,rk3228-i2c
-+      - const: rockchip,rk3288-i2c
-+      - const: rockchip,rk3399-i2c
+@@ -28,6 +28,10 @@ properties:
+       - const: rockchip,rk3399-i2c
+       - items:
+           - enum:
++            - rockchip,rk3036-i2c
++          - const: rockchip,rk3288-i2c
 +      - items:
 +          - enum:
-+            - rockchip,rk3328-i2c
-+          - const: rockchip,rk3399-i2c
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    minItems: 1
-+    items:
-+      - description:
-+          For older hardware (rk3066, rk3188, rk3228, rk3288)
-+          there is one clock that is used both to derive the functional clock
-+          for the device and as the bus clock.
-+          For newer hardware (rk3399) this clock is used to derive
-+          the functional clock
-+      - description:
-+          For newer hardware (rk3399) this is the bus clock
-+
-+  clock-names:
-+    minItems: 1
-+    items:
-+      - const: i2c
-+      - const: pclk
-+
-+  rockchip,grf:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description:
-+      Required on RK3066, RK3188 the phandle of the syscon node for
-+      the general register file (GRF)
-+      On those SoCs an alias with the correct I2C bus ID
-+      (bit offset in the GRF) is also required.
-+
-+  clock-frequency:
-+    default: 100000
-+    description:
-+      SCL frequency to use (in Hz). If omitted, 100kHz is used.
-+
-+  i2c-scl-rising-time-ns:
-+    default: 1000
-+    description:
-+      Number of nanoseconds the SCL signal takes to rise
-+      (t(r) in I2C specification). If not specified this is assumed to be
-+      the maximum the specification allows(1000 ns for Standard-mode,
-+      300 ns for Fast-mode) which might cause slightly slower communication.
-+
-+  i2c-scl-falling-time-ns:
-+    default: 300
-+    description:
-+      Number of nanoseconds the SCL signal takes to fall
-+      (t(f) in the I2C specification). If not specified this is assumed to
-+      be the maximum the specification allows (300 ns) which might cause
-+      slightly slower communication.
-+
-+  i2c-sda-falling-time-ns:
-+    default: 300
-+    description:
-+      Number of nanoseconds the SDA signal takes to fall
-+      (t(f) in the I2C specification). If not specified we will use the SCL
-+      value since they are the same in nearly all cases.
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+if:
-+  properties:
-+    compatible:
-+      contains:
-+        enum:
-+          - rockchip,rk3066-i2c
-+          - rockchip,rk3188-i2c
-+
-+then:
-+  required:
-+    - rockchip,grf
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/rk3188-cru-common.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/interrupt-controller/irq.h>
-+    i2c0: i2c@2002d000 {
-+      compatible = "rockchip,rk3188-i2c";
-+      reg = <0x2002d000 0x1000>;
-+      interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&cru PCLK_I2C0>;
-+      clock-names = "i2c";
-+      rockchip,grf = <&grf>;
-+      i2c-scl-falling-time-ns = <100>;
-+      i2c-scl-rising-time-ns = <800>;
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+    };
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 42c21184d..a480cec62 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -2279,7 +2279,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- L:	linux-rockchip@lists.infradead.org
- T:	git git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git
- S:	Maintained
--F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.txt
-+F:	Documentation/devicetree/bindings/i2c/i2c-rk3x.yaml
- F:	Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
- F:	Documentation/devicetree/bindings/spi/spi-rockchip.yaml
- F:	arch/arm/boot/dts/rk3*
+             - rockchip,rk3328-i2c
+           - const: rockchip,rk3399-i2c
+ 
 -- 
 2.11.0
 
