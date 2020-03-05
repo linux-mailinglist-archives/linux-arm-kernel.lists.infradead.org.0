@@ -2,77 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4779C17AE6C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 19:46:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F49117AEBA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 20:06:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:MIME-Version:Subject:
-	References:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5yrPUBsA/sHk/vobg6nmeFRRHQg6GHmz1eLMq7lgyC0=; b=pUIJz86Et2gXSr
-	D+mtDTnWGdRpeD53yK88oB+FaUyj9ySQam20MxAq8Rp9bJMB0ocBQQQvaMI5Ex2Cbpcdex7Fxi9LA
-	ZP0XKDHkL6Qx9oKtJlUbA7CuXarJ7Ri9rgHV7qYpgMjbbTpxeSQfiPq8XES8qTogmO7wVsyohfSnt
-	xzPcVL0jiqztXh8KxFX4nF81O+fFqw8ihaMSuMXBnSQX5bMdk0W7j43qO+xYHeJOYjtjwxqr2NWrE
-	na4YaqYum8cu9VvnznDzYtYEJBuLcsZmCvU3EXSoYMVXr2YxibU+JbwUnSLvFm0TLQvBlajzHH9a4
-	iTcnYd+Hy7KsoDHyONRw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Y/z/h2A0ccpxdvnppBSoeIM6OGdJwYDNXqrvANW0JcA=; b=HYa
+	tMoAAN69JJdnFMX69+bPPNv1hpxsjcg1xfx/hB4aHd/K/eQFj6homfBBuclVdX3BmZK4GHSVVEn+9
+	6SHETt26toUsCbvsWJXnvabEOImQyKB6+aHGQ0oEqY+g4sUAQ52sz2F55q7y6GCh5S6Ntwjcqd+WS
+	ogJkirEWWxekc8v4ihE5bZOzjeRYG+QrqKh7TASd652Cgrne+iaNOpLyBSXqwbNzXncQiFxq9Pf0F
+	Df8SQnosD/S/etFtDyyR4X3E1xSKZaxed7oUQijT03e2FWk1/eCUwAq9bEMl7RgTJhOa4fvDHIMP7
+	/D60//OMrSOHn1yfv/Ma6Rbp+nYRbaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9vW4-0003mT-F3; Thu, 05 Mar 2020 18:46:40 +0000
-Received: from forward501p.mail.yandex.net ([77.88.28.111])
+	id 1j9vpJ-0002se-HF; Thu, 05 Mar 2020 19:06:33 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9vVx-0003lz-Aa
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 18:46:35 +0000
-Received: from mxback30g.mail.yandex.net (mxback30g.mail.yandex.net
- [IPv6:2a02:6b8:0:1472:2741:0:8b7:330])
- by forward501p.mail.yandex.net (Yandex) with ESMTP id E27733500531;
- Thu,  5 Mar 2020 21:46:27 +0300 (MSK)
-Received: from localhost (localhost [::1])
- by mxback30g.mail.yandex.net (mxback/Yandex) with ESMTP id iGuMvhqZaa-kQYi1aoQ;
- Thu, 05 Mar 2020 21:46:27 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maquefel.me; s=mail;
- t=1583433987; bh=WbDDv6qYTqWmJsP3qfohS0aAr3PAr4lOdDNrBRZ/zy8=;
- h=Message-Id:Cc:Subject:In-Reply-To:Date:References:To:From;
- b=ipHhDMSs/4/WhzPQcS4NsH6Fqom/ChEWJK8QdMv5iXS+oV6rBy30120HjwOyBNt5t
- mUAmwqLxUU5qvsdfQ4GCFVpREBaLoKGLT1NvHO99TNyNdhFzax2k4JT+gbUd9e21cK
- Mn581akDZSmN+GZfCnzfca8SnNumZTpfYVGVEi14=
-Authentication-Results: mxback30g.mail.yandex.net;
- dkim=pass header.i=@maquefel.me
-Received: by myt3-605d5ea4bc20.qloud-c.yandex.net with HTTP;
- Thu, 05 Mar 2020 21:46:26 +0300
-From: nikita.shubin@maquefel.me
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-In-Reply-To: <CANLsYkyHaZFrCYFxWZVGqy=QwU86i2E2o9ENZ7k2mv70jU9pqg@mail.gmail.com>
-References: <20200304142628.8471-1-NShubin@topcon.com>
- <CANLsYkzPROdphvmtpZ6YiajZ2dYLrojC-rGYkq4jK2yzTnAJ5A@mail.gmail.com>
- <264561583429111@sas1-438a02fc058e.qloud-c.yandex.net>
- <CANLsYkxj=1o8Y0V0WedbVirj9seZSArWeCvQvwk+N7wZa2_hPQ@mail.gmail.com>
- <266371583430956@iva3-67f911cb3a01.qloud-c.yandex.net>
- <CANLsYkyHaZFrCYFxWZVGqy=QwU86i2E2o9ENZ7k2mv70jU9pqg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] remoteproc: imx_rproc: dummy kick method
-MIME-Version: 1.0
-X-Mailer: Yamail [ http://yandex.ru ] 5.0
-Date: Thu, 05 Mar 2020 21:46:26 +0300
-Message-Id: <272401583433950@myt4-c14277df27e9.qloud-c.yandex.net>
+ id 1j9vob-0002C3-Dq
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 19:05:52 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1583435150; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=1sG3u0mTkH09rmGeFRjFz49NiO7dwyUuTIhoDE0H1I8=;
+ b=I5GWk3ror7EFvJKEJkkRUta5SvcQo+ZR1he26Y7UDvJMVErF9lW5fWbUMU/PeZBeTQ5UgdS6
+ UDwOr/kDAAXCFYsEywVp/XpIE1YKHwAh02ydxqctBwP/e/r9bll+QRhK5zLPUQnXMKp2hNj2
+ X8l9iMWiKkN8hbvkfI2GrMr3OgA=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e614d85.7f03a1e67110-smtp-out-n03;
+ Thu, 05 Mar 2020 19:05:41 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id CD4B2C447A3; Thu,  5 Mar 2020 19:05:41 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from eberman-linux.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: eberman)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id E59EDC43383;
+ Thu,  5 Mar 2020 19:05:40 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org E59EDC43383
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=eberman@codeaurora.org
+From: Elliot Berman <eberman@codeaurora.org>
+To: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>
+Subject: [PATCH v3 0/3] ARM PSCI: Add support for vendor-specific SYSTEM_RESET2
+Date: Thu,  5 Mar 2020 11:05:26 -0800
+Message-Id: <1583435129-31356-1-git-send-email-eberman@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_104633_720740_F31EB4D9 
-X-CRM114-Status: GOOD (  16.17  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200305_110550_852979_117C409A 
+X-CRM114-Status: GOOD (  13.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [77.88.28.111 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,78 +88,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
- Nikita Shubin <nshubin@topcon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+Cc: Trilok Soni <tsoni@codeaurora.org>, David Collins <collinsd@codeaurora.org>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
  Bjorn Andersson <bjorn.andersson@linaro.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Prasad Sodagudi <psodagud@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhhdCdzIHRvdGFsbHkgb2theSAtIHRoYW5rIHlvdSBmb3IgcmV2aWV3LgoKMDUuMDMuMjAyMCwg
-MjE6MzYsICJNYXRoaWV1IFBvaXJpZXIiIDxtYXRoaWV1LnBvaXJpZXJAbGluYXJvLm9yZz46Cj4g
-T24gVGh1LCA1IE1hciAyMDIwIGF0IDExOjA3LCA8bmlraXRhLnNodWJpbkBtYXF1ZWZlbC5tZT4g
-d3JvdGU6Cj4+IMKgMDUuMDMuMjAyMCwgMjA6NTQsICJNYXRoaWV1IFBvaXJpZXIiIDxtYXRoaWV1
-LnBvaXJpZXJAbGluYXJvLm9yZz46Cj4+IMKgPiBPbiBUaHUsIDUgTWFyIDIwMjAgYXQgMTA6Mjks
-IDxuaWtpdGEuc2h1YmluQG1hcXVlZmVsLm1lPiB3cm90ZToKPj4gwqA+PiAwNS4wMy4yMDIwLCAx
-OToxNywgIk1hdGhpZXUgUG9pcmllciIgPG1hdGhpZXUucG9pcmllckBsaW5hcm8ub3JnPjoKPj4g
-wqA+PiA+IE9uIFdlZCwgNCBNYXIgMjAyMCBhdCAwNzoyNSwgTmlraXRhIFNodWJpbiA8TlNodWJp
-bkB0b3Bjb24uY29tPiB3cm90ZToKPj4gwqA+PiA+PiBhZGQga2ljayBtZXRob2QgdGhhdCBkb2Vz
-IG5vdGhpbmcsIHRvIGF2b2lkIGVycm9ycyBpbiBycHJvY192aXJ0aW9fbm90aWZ5Lgo+PiDCoD4+
-ID4+Cj4+IMKgPj4gPj4gU2lnbmVkLW9mZi1ieTogTmlraXRhIFNodWJpbiA8TlNodWJpbkB0b3Bj
-b24uY29tPgo+PiDCoD4+ID4+IC0tLQo+PiDCoD4+ID4+IGRyaXZlcnMvcmVtb3RlcHJvYy9pbXhf
-cnByb2MuYyB8IDYgKysrKysrCj4+IMKgPj4gPj4gMSBmaWxlIGNoYW5nZWQsIDYgaW5zZXJ0aW9u
-cygrKQo+PiDCoD4+ID4+Cj4+IMKgPj4gPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcmVtb3RlcHJv
-Yy9pbXhfcnByb2MuYyBiL2RyaXZlcnMvcmVtb3RlcHJvYy9pbXhfcnByb2MuYwo+PiDCoD4+ID4+
-IGluZGV4IDNlNzJiNmYzOGQ0Yi4uNzk2YjZiODY1NTBhIDEwMDY0NAo+PiDCoD4+ID4+IC0tLSBh
-L2RyaXZlcnMvcmVtb3RlcHJvYy9pbXhfcnByb2MuYwo+PiDCoD4+ID4+ICsrKyBiL2RyaXZlcnMv
-cmVtb3RlcHJvYy9pbXhfcnByb2MuYwo+PiDCoD4+ID4+IEBAIC0yNDAsOSArMjQwLDE1IEBAIHN0
-YXRpYyB2b2lkICppbXhfcnByb2NfZGFfdG9fdmEoc3RydWN0IHJwcm9jICpycHJvYywgdTY0IGRh
-LCBpbnQgbGVuKQo+PiDCoD4+ID4+IHJldHVybiB2YTsKPj4gwqA+PiA+PiB9Cj4+IMKgPj4gPj4K
-Pj4gwqA+PiA+PiArc3RhdGljIHZvaWQgaW14X3Jwcm9jX2tpY2soc3RydWN0IHJwcm9jICpycHJv
-YywgaW50IHZxaWQpCj4+IMKgPj4gPj4gK3sKPj4gwqA+PiA+PiArCj4+IMKgPj4gPj4gK30KPj4g
-wqA+PiA+PiArCj4+IMKgPj4gPgo+PiDCoD4+ID4gSWYgcnByb2M6OmtpY2soKSBpcyBlbXB0eSwg
-aG93IGRvZXMgdGhlIE1DVSBrbm93IHRoZXJlIGlzIHBhY2tldHMgdG8KPj4gwqA+PiA+IGZldGNo
-IGluIHRoZSB2aXJ0aW8gcXVldWVzPwo+PiDCoD4+Cj4+IMKgPj4gV2VsbCwgb2YgY291cnNlIGl0
-IGRvZXNuJ3QgaSB1bmRlcnN0YW5kIHRoaXMgcGVyZmVjdGx5IC0ganVzdCBmb2xsb3dpbmcgZG9j
-dW1lbnRhdGlvbiBjaXRpbmc6Cj4+IMKgPj4KPj4gwqA+PiB8IEV2ZXJ5IHJlbW90ZXByb2MgaW1w
-bGVtZW50YXRpb24gc2hvdWxkIGF0IGxlYXN0IHByb3ZpZGUgdGhlIC0+c3RhcnQgYW5kIC0+c3Rv
-cAo+PiDCoD4+IHwgaGFuZGxlcnMuIElmIHJwbXNnL3ZpcnRpbyBmdW5jdGlvbmFsaXR5IGlzIGFs
-c28gZGVzaXJlZCwgdGhlbiB0aGUgLT5raWNrIGhhbmRsZXIKPj4gwqA+PiB8IHNob3VsZCBiZSBw
-cm92aWRlZCBhcyB3ZWxsLgo+PiDCoD4+Cj4+IMKgPj4gQnV0IGkgYXMgaSBtZW50aW9uZWQgaW4g
-InJlbW90ZXByb2M6IEZpeCBOVUxMIHBvaW50ZXIgZGVyZWZlcmVuY2UgaW4gcnByb2NfdmlydGlv
-X25vdGlmeSIga2ljayBtZXRob2Qgd2lsbCBiZSBjYWxsZWQgaWYKPj4gwqA+PiAicmVzb3VyY2Vf
-dGFibGUgZXhpc3RzIGluIGZpcm13YXJlIGFuZCBoYXMgIlZpcnRpbyBkZXZpY2UgZW50cnkiIGRl
-ZmluZWQiIGFueXdheSwgdGhlIGlteF9ycHJvYyBpcyBub3QgaW4gY29udHJvbCBvZiB3aGF0Cj4+
-IMKgPj4gZXhhY3RseSBpdCBpcyBib290aW5nLCBzbyBzdWNoIHNpdHVhdGlvbiBjYW4gb2NjdXIu
-Cj4+IMKgPgo+PiDCoD4gSWYgSSB1bmRlcnN0YW5kIGNvcnJlY3RseSwgdGhlIE1DVSBjYW4gYm9v
-dCBpbWFnZXMgdGhhdCBoYXZlIGEgdmlydGlvCj4+IMKgPiBkZXZpY2UgaW4gaXRzIHJlc291cmNl
-IHRhYmxlIGFuZCBzdGlsbCBkbyB1c2VmdWwgd29yayBldmVuIGlmIHRoZQo+PiDCoD4gdmlydGlv
-IGRldmljZS9ycG1zZyBidXMgY2FuJ3QgYmUgc2V0dXAgLSBpcyB0aGlzIGNvcnJlY3Q/Cj4+Cj4+
-IMKgWWVzLCB0aGlzIGFzc3VtcHRpb24gaXMgY29ycmVjdC4KPj4KPj4gwqBEZXNwaXRlIHRoaXMg
-c2l0dWF0aW9uIGlzIG5vdCBpIGRlc2lyZSBhdCBhbGwgLSBzdWNoIHRoaW5nIGNhbiBoYXBwZW4u
-Cj4+IMKgSSBhbSBjdXJyZW50bHkgdXNpbmcgY28tcHJvYyBhcyBhIHJlYWx0aW1lIHBhcnQgb2Yg
-VUdWIGNvbnRyb2wsCj4+IMKgc28gaXQgbXVzdCBpbW1lZGlhdGVseSBzdG9wIHRoZSBlbmdpbmVz
-LCBpZiBub3QgcHJvdmlkZWQgd2l0aCBuYXZpZ2F0aW9uYWwgaW5mb3JtYXRpb24uCj4+Cj4+IMKg
-VGhlIGlteDdkIE1DVSBoYXZlIGFjY2VzcyB0byB0aGUgbW9zdCBwZXJpcGhlcnkgdGhhdCBoYXZl
-IHRoZSBtYWluIHByb2Nlc3Nvci4KPj4KPj4gwqBPZiBjb3Vyc2UgdGhlIGtpY2sgbWV0aG9kIHNo
-b3VsZCBkbyByZWFsIHdvcmssIGJ1dCBpIGRlY2lkZWQgdG8gc3VibWl0IHN0ZXAgYnkgc3RlcCBp
-ZiBpIGFtIGFsbG93ZWQgdG8gZG8gc28uCj4KPiBPaywgdGhlIHNpdHVhdGlvbiBpcyBjbGVhcmVy
-IG5vdyBhbmQgSSBoYXZlIHB1dCB5b3VyIHBhdGNoZXMgYmFjayBpbgo+IG15IHF1ZXVlLiBJIGFt
-IHNlcmlvdXNseSBiYWNrLWxvZ2dlZCBhdCB0aGlzIHRpbWUgc28gaXQgd2lsbCB0YWtlIGEKPiBs
-aXR0bGUgd2hpbGUgYmVmb3JlIEkgZ2V0IHRvIHRoZW0uCj4KPj4gwqA+Cj4+IMKgPiBUaGFua3Ms
-Cj4+IMKgPiBNYXRoaWV1Cj4+IMKgPgo+PiDCoD4+ID4KPj4gwqA+PiA+PiBzdGF0aWMgY29uc3Qg
-c3RydWN0IHJwcm9jX29wcyBpbXhfcnByb2Nfb3BzID0gewo+PiDCoD4+ID4+IC5zdGFydCA9IGlt
-eF9ycHJvY19zdGFydCwKPj4gwqA+PiA+PiAuc3RvcCA9IGlteF9ycHJvY19zdG9wLAo+PiDCoD4+
-ID4+ICsgLmtpY2sgPSBpbXhfcnByb2Nfa2ljaywKPj4gwqA+PiA+PiAuZGFfdG9fdmEgPSBpbXhf
-cnByb2NfZGFfdG9fdmEsCj4+IMKgPj4gPj4gfTsKPj4gwqA+PiA+Pgo+PiDCoD4+ID4+IC0tCj4+
-IMKgPj4gPj4gMi4yNC4xCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+This patch adds support for vendor-specific SYSTEM_RESET2 to support
+Qualcomm target use cases of rebooting into a RAM dump download mode.
+
+This patch series applies on top of [1].
+
+[1]: https://lore.kernel.org/patchwork/cover/1185759/
+
+Changes since v2:
+ - dt property forces vendor-specifc reset type
+
+Changes since v1:
+ - Address Sudeep's comments
+
+Changes since RFC v2:
+ - None, tested on SM8250 MTP
+
+Elliot Berman (3):
+  dt: psci: Add arm,psci-sys-reset2-vendor-param property
+  firmware: psci: Add support for dt-supplied SYSTEM_RESET2 type
+  arm64: dts: qcom: sm8250: Add vendor-specific PSCI system reset2 type
+
+ Documentation/devicetree/bindings/arm/psci.yaml |  7 +++++++
+ arch/arm64/boot/dts/qcom/sm8250.dtsi            |  1 +
+ drivers/firmware/psci/psci.c                    | 21 +++++++++++++++++----
+ include/uapi/linux/psci.h                       |  5 +++++
+ 4 files changed, 30 insertions(+), 4 deletions(-)
+
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
