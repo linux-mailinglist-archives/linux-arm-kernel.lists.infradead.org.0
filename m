@@ -2,54 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 641F917A03B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 07:51:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E84817A065
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Mar 2020 08:07:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=PcL5FG58/zdGOjtLW4lU4snPvG2qJSsZR4UZ5T4Hq/k=; b=GvvaANr3EqdcZ2agDj8C0V4OHr
-	PGnlyX7y5dunVH6x7dV0UDws5Ipbmdn7qdQhBS6cmwDPNeDGPQZCzvbhV1VXoKC/K0DZfI+Sda7o2
-	wV+AexV+5XNkHElzSqTwY20hWpy+Flz6I2TyN0NTrmVSWw4kSNLBvyH5SE5Ia4/jQY73v+A5Q1PZV
-	LBHO+OJox6qtHUNkRZubWVA5VfQRX2hExcl+g5OP7JZXsrrLSb1wVpekdN/ysg9V+s0cEvf6FUvdp
-	c1/c2ur1wXDAVwliwUkVuSL0mrXTBk41uPf23aOltF5R1tv2tWRlDUod+GBqYjmO+jVk0RRbv5nzP
-	Iv9VJKHQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wpS2U94HfwgR2Fz1L5GvZAnK+72mDgIpmZ6GfprS0eA=; b=aIcbUXb4RpLlOQ
+	Z1Jk8lT15t3VqTuT8vFkqIpTObZO/nBuRQBJeqHDWNwcuNFwjN6rl6PCkdvwX054SuO00lltt5ufy
+	JFkJPrp7hvv+CMYLwTV85IWiGfKkQJVpz6H2OkT8p7osAnUit+gQPZYSTZn3OMg/7A7YC1e9rB73V
+	YXMuHYeDh1odxHRzW/sHMdHabOIt2xyZjqoTHjRHSqHuY4VRFXALu0pz7Z+yilbFj2WMbdEF0xcLX
+	4NyARk9JQM0ZatIWBtKrwJ/rxToIF4GHGxLjS7qSbCX//I9vCMR/i+aUC7NBQHtp7PezODqbu4e20
+	o67PUNNsLrvrLJqdNCEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9kLe-0008Ou-5p; Thu, 05 Mar 2020 06:51:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9kLT-0008LN-Ka
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 06:51:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DFF9E4B2;
- Wed,  4 Mar 2020 22:50:58 -0800 (PST)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.88])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1E2853F534;
- Wed,  4 Mar 2020 22:54:46 -0800 (PST)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH 2/2] mm/vma: Introduce VM_ACCESS_FLAGS
-Date: Thu,  5 Mar 2020 12:20:14 +0530
-Message-Id: <1583391014-8170-3-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1583391014-8170-1-git-send-email-anshuman.khandual@arm.com>
-References: <1583391014-8170-1-git-send-email-anshuman.khandual@arm.com>
+	id 1j9kbQ-00058R-B2; Thu, 05 Mar 2020 07:07:28 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9kbI-000578-Ft
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Mar 2020 07:07:22 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200305070717euoutp01570d1fd3f8d24191d0195ff6abafc6a6~5VqtQTQsu2412724127euoutp01Q
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  5 Mar 2020 07:07:17 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200305070717euoutp01570d1fd3f8d24191d0195ff6abafc6a6~5VqtQTQsu2412724127euoutp01Q
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1583392037;
+ bh=BNesTyLQvVBEB+/M7jHYKs4b78sYTv7b/PnyNmhYe54=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=dp4IaxDUjU/Hv0RJdFKkukivtJrHrvfsw6pd/H/stCNOQo123utUHFFM2j0kyW7Fq
+ S8mO4rcjENV8IyfRY/Gqo2MI1WDdmvCyMI8TUgWML/BKW6padCOzmG61DvixqQi4+D
+ ywyIvkG10rUGX48Hc+vrhMk6EOSV/Ksc1mLd6OSk=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200305070717eucas1p1094961cc8a05d10cc6a95c97b395715b~5Vqs5Pji71003210032eucas1p1V;
+ Thu,  5 Mar 2020 07:07:17 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 70.C2.60698.525A06E5; Thu,  5
+ Mar 2020 07:07:17 +0000 (GMT)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200305070716eucas1p261a245d2a992c247df216999b63067f7~5VqsdKy2E0339303393eucas1p2B;
+ Thu,  5 Mar 2020 07:07:16 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200305070716eusmtrp2ab2471cdc84627ede9bab86b4756f3f6~5VqscaevE2209422094eusmtrp2T;
+ Thu,  5 Mar 2020 07:07:16 +0000 (GMT)
+X-AuditID: cbfec7f5-a29ff7000001ed1a-98-5e60a525ed06
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id EA.18.08375.425A06E5; Thu,  5
+ Mar 2020 07:07:16 +0000 (GMT)
+Received: from [106.120.51.15] (unknown [106.120.51.15]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200305070716eusmtip26f183909871836c7e203319d6fc9b9f7~5VqropC982907029070eusmtip2d;
+ Thu,  5 Mar 2020 07:07:16 +0000 (GMT)
+Subject: Re: [PATCH] drm/exynos: Fix memory leak and release IOMMU mapping
+ structures
+To: Lukasz Luba <lukasz.luba@arm.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-samsung-soc@vger.kernel.org
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <684ef9fb-eafb-22d3-40c1-50f596211d85@samsung.com>
+Date: Thu, 5 Mar 2020 08:07:13 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+MIME-Version: 1.0
+In-Reply-To: <20200304220022.8003-1-lukasz.luba@arm.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01SWUwTURT1dabToVryKJDeoIHYiCIKiEvyEg1Bo6QfxvhjNBCoVUY0UCCd
+ guKHICJqRQXcSiXiviCCIrLFtagVCGUzSoCACIhVERMsiBqRYUT5O+fcc3POfXkspRyQerG7
+ 4o2cIV4Xp2bkdPmLMXuA79WtUUvK+jFpL7ZLyTF7rYTcNZdIyXh5DkX6s+9T5JVziCG53dk0
+ +dDVTJMTvZ8o0th4R0Ya0j/LSGnvaylprc5niLnxkYRcTM+QEfNJBxOKNUXni5Dm4cgFWlNa
+ eITRVIy8lWq6j9okmntXUjXHywqRZrjUeyMbLl8VzcXtSuYMQSFb5TurO09KEkuW7qkdHaLT
+ 0EE/E2JZwMuhxhxjQnJWiW8gsDjO0CL5hsD5cooMI8goOy01IZfJjbq2PkYcXEdQkLn/LxlE
+ 8O5xp0xwuePN8KRrdHLgge8iaCuqQgKh8BiCW93DEsHF4GAwDZoYAStwCDgup01m0Hge5I31
+ IAF74kg4d7OGFj1uUJvXRwvNXTCBay3BgkxhH6gYzKdErIL2vgKJkAX4CAsPO5sosfda+F6f
+ Q4vYHT7aymQingPjVVMLBxD02G/LRJKFoDXdjETXSui0/2CEZAovhJLqIFFeDfuteVLxKV2h
+ bdBNLOEKueVnKVFWwOFMpeieDxZb8b/Yp00tVDZSW6ZdZpl2jmXaOZb/uRcQXYhUXBKvj+H4
+ ZfHc7kBep+eT4mMCtyfoS9HE96v/bXNWoke/tlkRZpF6luLDaW2UUqpL5lP0VgQspfZQuK+Y
+ kBTRupS9nCFBa0iK43grms3SapVi2SVHpBLH6IxcLMclcoapqYR18UpDz59t+Nq7ckPspv6a
+ DuPAurBtbxr0Sc2ph5oD1m+5HeE94BG92ZtP8+frbHdCf6ncHkeFNDT4z9zxXvsl0/maX5zv
+ 8Gr65OYbNkOyINp4dM1Y/tucrIUVTEfYiYjaoJ8+WWq/8MXrI4tTcozhT7RBpwb2hRVnjz94
+ 5en0m9tWuYhd5Kqm+Z26YH/KwOv+AKuUX2B6AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrJIsWRmVeSWpSXmKPExsVy+t/xe7oqSxPiDBbMMbK4te4cq0XvuZNM
+ FhtnrGe1+L9tIrPF0wlbmS2ufH3PZjHp/gQWixf3LrJY9D9+zWxx/vwGdouzTW/YLTY9vsZq
+ cXnXHDaLGef3MVksbGpht5gx+SWbg4DHmnlrGD32flvA4rFpVSebx/ZvD1g97ncfZ/LYvKTe
+ o2/LKkaPz5vkAjii9GyK8ktLUhUy8otLbJWiDS2M9AwtLfSMTCz1DI3NY62MTJX07WxSUnMy
+ y1KL9O0S9DJ23ZnMVLDeqOLk9/csDYytGl2MnBwSAiYSp248Yeti5OIQEljKKNG+8A4jREJG
+ 4uS0BlYIW1jiz7UuqKLXjBJth1+zgySEBcIlDtz7DpYQEdjIKDH//AoWEIdZ4CejxKzvL8BG
+ CQl0M0pMn+MNYrMJGEp0vQUZxcnBK2An8XIxxAoWARWJmT8fgtWLCsRK3JjZwQRRIyhxcuYT
+ oKEcHJwCFhLLLhmChJkFzCTmbX7IDGHLS2x/OwfKFpe49WQ+0wRGoVlIumchaZmFpGUWkpYF
+ jCyrGEVSS4tz03OLDfWKE3OLS/PS9ZLzczcxAqN927Gfm3cwXtoYfIhRgINRiYf3xdT4OCHW
+ xLLiytxDjBIczEoivMKmQCHelMTKqtSi/Pii0pzU4kOMpkC/TWSWEk3OByaivJJ4Q1NDcwtL
+ Q3Njc2MzCyVx3g6BgzFCAumJJanZqakFqUUwfUwcnFINjMJibSYsmw7lreYqFdWbrsWgwOql
+ n/Dk5ep3ybZimnd2lNxatkctOEhOYtPNLbP0L6QYRIQ+mnhnv33/rBuF7gX7Mo7tkLS5yvvV
+ fPm93yX+uXJHq1ztOrZ9C/k871vthv4W0bDr1/YZuqwI/lHi6RzU3cnls3GGZtH5Ft0KgfJI
+ DcmbcaUTlFiKMxINtZiLihMBWe8DUQwDAAA=
+X-CMS-MailID: 20200305070716eucas1p261a245d2a992c247df216999b63067f7
+X-Msg-Generator: CA
+X-RootMTR: 20200304220106eucas1p232aae5af79945664c4586930a9412eda
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200304220106eucas1p232aae5af79945664c4586930a9412eda
+References: <CGME20200304220106eucas1p232aae5af79945664c4586930a9412eda@eucas1p2.samsung.com>
+ <20200304220022.8003-1-lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_225059_778160_605C5214 
-X-CRM114-Status: GOOD (  16.64  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200304_230720_846914_FEF794AF 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,232 +143,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, devel@driverdev.osuosl.org,
- linux-s390@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, hughd@google.com,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- vbabka@suse.cz, Mark Salter <msalter@redhat.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Rob Springer <rspringer@google.com>, Thomas Gleixner <tglx@linutronix.de>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Nick Hu <nickhu@andestech.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-MIME-Version: 1.0
+Cc: jy0922.shim@samsung.com, b.zolnierkie@samsung.com, airlied@linux.ie,
+ sw0312.kim@samsung.com, krzk@kernel.org, inki.dae@samsung.com,
+ a.hajda@samsung.com, kyungmin.park@samsung.com, kgene@kernel.org,
+ daniel@ffwll.ch, Dietmar.Eggemann@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are many places where all basic VMA access flags (read, write, exec)
-are initialized or checked against as a group. One such example is during
-page fault. Existing vma_is_accessible() wrapper already creates the notion
-of VMA accessibility as a group access permissions. Hence lets just create
-VM_ACCESS_FLAGS (VM_READ|VM_WRITE|VM_EXEC) which will not only reduce code
-duplication but also extend the VMA accessibility concept in general.
+Hi Lukasz,
 
-Cc: Russell King <linux@armlinux.org.uk>
-CC: Catalin Marinas <catalin.marinas@arm.com>
-CC: Mark Salter <msalter@redhat.com>
-Cc: Nick Hu <nickhu@andestech.com>
-CC: Ley Foon Tan <ley.foon.tan@intel.com>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-Cc: Guan Xuetao <gxt@pku.edu.cn>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Rob Springer <rspringer@google.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linuxppc-dev@lists.ozlabs.org
-Cc: linux-s390@vger.kernel.org
-Cc: devel@driverdev.osuosl.org
-Cc: linux-mm@kvack.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm/mm/fault.c                  | 2 +-
- arch/arm64/mm/fault.c                | 2 +-
- arch/nds32/mm/fault.c                | 2 +-
- arch/powerpc/mm/book3s64/pkeys.c     | 2 +-
- arch/s390/mm/fault.c                 | 2 +-
- arch/unicore32/mm/fault.c            | 2 +-
- arch/x86/mm/pkeys.c                  | 2 +-
- drivers/staging/gasket/gasket_core.c | 2 +-
- include/linux/mm.h                   | 6 +++++-
- mm/mmap.c                            | 2 +-
- mm/mprotect.c                        | 4 ++--
- 11 files changed, 16 insertions(+), 12 deletions(-)
+On 04.03.2020 23:00, Lukasz Luba wrote:
+> There is a memory leak which left some objects not freed. The reference
+> counter of mapping: 'mapping->kref' was 2 when calling
+> arm_iommu_detach_device(), so the release_iommu_mapping() won't be called.
+> Since the old mapping structure is not going to be used any more (because
+> it is detached and new one attached), call arm_iommu_release_mapping()
+> to trigger cleanup.
 
-diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
-index bd0f4821f7e1..2c71028d9d6b 100644
---- a/arch/arm/mm/fault.c
-+++ b/arch/arm/mm/fault.c
-@@ -189,7 +189,7 @@ void do_bad_area(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
-  */
- static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
- {
--	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned int mask = VM_ACCESS_FLAGS;
- 
- 	if ((fsr & FSR_WRITE) && !(fsr & FSR_CM))
- 		mask = VM_WRITE;
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 85566d32958f..63f31206a12e 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -445,7 +445,7 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
- 	const struct fault_info *inf;
- 	struct mm_struct *mm = current->mm;
- 	vm_fault_t fault, major = 0;
--	unsigned long vm_flags = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned long vm_flags = VM_ACCESS_FLAGS;
- 	unsigned int mm_flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
- 
- 	if (kprobe_page_fault(regs, esr))
-diff --git a/arch/nds32/mm/fault.c b/arch/nds32/mm/fault.c
-index 906dfb25353c..55387a31bf42 100644
---- a/arch/nds32/mm/fault.c
-+++ b/arch/nds32/mm/fault.c
-@@ -79,7 +79,7 @@ void do_page_fault(unsigned long entry, unsigned long addr,
- 	struct vm_area_struct *vma;
- 	int si_code;
- 	vm_fault_t fault;
--	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned int mask = VM_ACCESS_FLAGS;
- 	unsigned int flags = FAULT_FLAG_ALLOW_RETRY | FAULT_FLAG_KILLABLE;
- 
- 	error_code = error_code & (ITYPE_mskINST | ITYPE_mskETYPE);
-diff --git a/arch/powerpc/mm/book3s64/pkeys.c b/arch/powerpc/mm/book3s64/pkeys.c
-index 59e0ebbd8036..11fd52b24f68 100644
---- a/arch/powerpc/mm/book3s64/pkeys.c
-+++ b/arch/powerpc/mm/book3s64/pkeys.c
-@@ -315,7 +315,7 @@ int __execute_only_pkey(struct mm_struct *mm)
- static inline bool vma_is_pkey_exec_only(struct vm_area_struct *vma)
- {
- 	/* Do this check first since the vm_flags should be hot */
--	if ((vma->vm_flags & (VM_READ | VM_WRITE | VM_EXEC)) != VM_EXEC)
-+	if ((vma->vm_flags & VM_ACCESS_FLAGS) != VM_EXEC)
- 		return false;
- 
- 	return (vma_pkey(vma) == vma->vm_mm->context.execute_only_pkey);
-diff --git a/arch/s390/mm/fault.c b/arch/s390/mm/fault.c
-index 7b0bb475c166..b2cb3c0d0e1a 100644
---- a/arch/s390/mm/fault.c
-+++ b/arch/s390/mm/fault.c
-@@ -584,7 +584,7 @@ void do_dat_exception(struct pt_regs *regs)
- 	int access;
- 	vm_fault_t fault;
- 
--	access = VM_READ | VM_EXEC | VM_WRITE;
-+	access = VM_ACCESS_FLAGS;
- 	fault = do_exception(regs, access);
- 	if (unlikely(fault))
- 		do_fault_error(regs, access, fault);
-diff --git a/arch/unicore32/mm/fault.c b/arch/unicore32/mm/fault.c
-index 76342de9cf8c..fc27c274d358 100644
---- a/arch/unicore32/mm/fault.c
-+++ b/arch/unicore32/mm/fault.c
-@@ -149,7 +149,7 @@ void do_bad_area(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
-  */
- static inline bool access_error(unsigned int fsr, struct vm_area_struct *vma)
- {
--	unsigned int mask = VM_READ | VM_WRITE | VM_EXEC;
-+	unsigned int mask = VM_ACCESS_FLAGS;
- 
- 	if (!(fsr ^ 0x12))	/* write? */
- 		mask = VM_WRITE;
-diff --git a/arch/x86/mm/pkeys.c b/arch/x86/mm/pkeys.c
-index c6f84c0b5d7a..8873ed1438a9 100644
---- a/arch/x86/mm/pkeys.c
-+++ b/arch/x86/mm/pkeys.c
-@@ -63,7 +63,7 @@ int __execute_only_pkey(struct mm_struct *mm)
- static inline bool vma_is_pkey_exec_only(struct vm_area_struct *vma)
- {
- 	/* Do this check first since the vm_flags should be hot */
--	if ((vma->vm_flags & (VM_READ | VM_WRITE | VM_EXEC)) != VM_EXEC)
-+	if ((vma->vm_flags & VM_ACCESS_FLAGS) != VM_EXEC)
- 		return false;
- 	if (vma_pkey(vma) != vma->vm_mm->context.execute_only_pkey)
- 		return false;
-diff --git a/drivers/staging/gasket/gasket_core.c b/drivers/staging/gasket/gasket_core.c
-index be6b50f454b4..81bb7d58dc49 100644
---- a/drivers/staging/gasket/gasket_core.c
-+++ b/drivers/staging/gasket/gasket_core.c
-@@ -689,7 +689,7 @@ static bool gasket_mmap_has_permissions(struct gasket_dev *gasket_dev,
- 
- 	/* Make sure that no wrong flags are set. */
- 	requested_permissions =
--		(vma->vm_flags & (VM_WRITE | VM_READ | VM_EXEC));
-+		(vma->vm_flags & VM_ACCESS_FLAGS);
- 	if (requested_permissions & ~(bar_permissions)) {
- 		dev_dbg(gasket_dev->dev,
- 			"Attempting to map a region with requested permissions "
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 3861524368a4..e89512f1c170 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -368,6 +368,10 @@ extern unsigned int kobjsize(const void *objp);
- 
- #define VM_STACK_FLAGS	(VM_STACK | VM_STACK_DEFAULT_FLAGS | VM_ACCOUNT)
- 
-+/* VMA basic access permission flags */
-+#define VM_ACCESS_FLAGS (VM_READ | VM_WRITE | VM_EXEC)
-+
-+
- /*
-  * Special vmas that are non-mergable, non-mlock()able.
-  * Note: mm/huge_memory.c VM_NO_THP depends on this definition.
-@@ -557,7 +561,7 @@ static inline bool vma_is_anonymous(struct vm_area_struct *vma)
- 
- static inline bool vma_is_accessible(struct vm_area_struct *vma)
- {
--	return vma->vm_flags & (VM_READ | VM_WRITE | VM_EXEC);
-+	return vma->vm_flags & VM_ACCESS_FLAGS;
- }
- 
- #ifdef CONFIG_SHMEM
-diff --git a/mm/mmap.c b/mm/mmap.c
-index 0d295f49b24d..57f74ade19a0 100644
---- a/mm/mmap.c
-+++ b/mm/mmap.c
-@@ -1221,7 +1221,7 @@ static int anon_vma_compatible(struct vm_area_struct *a, struct vm_area_struct *
- 	return a->vm_end == b->vm_start &&
- 		mpol_equal(vma_policy(a), vma_policy(b)) &&
- 		a->vm_file == b->vm_file &&
--		!((a->vm_flags ^ b->vm_flags) & ~(VM_READ|VM_WRITE|VM_EXEC|VM_SOFTDIRTY)) &&
-+		!((a->vm_flags ^ b->vm_flags) & ~(VM_ACCESS_FLAGS | VM_SOFTDIRTY)) &&
- 		b->vm_pgoff == a->vm_pgoff + ((b->vm_start - a->vm_start) >> PAGE_SHIFT);
- }
- 
-diff --git a/mm/mprotect.c b/mm/mprotect.c
-index 7a8e84f86831..8fbb7e7c08a5 100644
---- a/mm/mprotect.c
-+++ b/mm/mprotect.c
-@@ -359,7 +359,7 @@ mprotect_fixup(struct vm_area_struct *vma, struct vm_area_struct **pprev,
- 	 */
- 	if (arch_has_pfn_modify_check() &&
- 	    (vma->vm_flags & (VM_PFNMAP|VM_MIXEDMAP)) &&
--	    (newflags & (VM_READ|VM_WRITE|VM_EXEC)) == 0) {
-+	    (newflags & VM_ACCESS_FLAGS) == 0) {
- 		pgprot_t new_pgprot = vm_get_page_prot(newflags);
- 
- 		error = walk_page_range(current->mm, start, end,
-@@ -538,7 +538,7 @@ static int do_mprotect_pkey(unsigned long start, size_t len,
- 		newflags |= (vma->vm_flags & ~mask_off_old_flags);
- 
- 		/* newflags >> 4 shift VM_MAY% in place of VM_% */
--		if ((newflags & ~(newflags >> 4)) & (VM_READ | VM_WRITE | VM_EXEC)) {
-+		if ((newflags & ~(newflags >> 4)) & VM_ACCESS_FLAGS) {
- 			error = -EACCES;
- 			goto out;
- 		}
+This will break IOMMU support in Exynos DRM if deferred probe happens. 
+Here is a proper fix:
+
+https://patchwork.kernel.org/patch/11415715/
+
+The mapping initially created by DMA-mapping framework should be 
+attached back when Exynos DRM releases the subdev device.
+
+> Found using kmemleak detector, the output:
+>
+> unreferenced object 0xc2137640 (size 64):
+>    comm "swapper/0", pid 1, jiffies 4294937900 (age 3127.400s)
+>    hex dump (first 32 bytes):
+>      50 a3 14 c2 80 a2 14 c2 01 00 00 00 20 00 00 00  P........... ...
+>      00 10 00 00 00 80 00 00 00 00 00 00 00 00 00 00  ................
+>    backtrace:
+>      [<3acd268d>] arch_setup_dma_ops+0x4c/0x104
+>      [<9f7d2cce>] of_dma_configure+0x19c/0x3a4
+>      [<ba07704b>] really_probe+0xb0/0x47c
+>      [<4f510e4f>] driver_probe_device+0x78/0x1c4
+>      [<7481a0cf>] device_driver_attach+0x58/0x60
+>      [<0ff8f5c1>] __driver_attach+0xb8/0x158
+>      [<86006144>] bus_for_each_dev+0x74/0xb4
+>      [<10159dca>] bus_add_driver+0x1c0/0x200
+>      [<8a265265>] driver_register+0x74/0x108
+>      [<e0f3451a>] exynos_drm_init+0xb0/0x134
+>      [<db3fc7ba>] do_one_initcall+0x90/0x458
+>      [<6da35917>] kernel_init_freeable+0x188/0x200
+>      [<db3f74d4>] kernel_init+0x8/0x110
+>      [<1f3cddf9>] ret_from_fork+0x14/0x20
+>      [<8cd12507>] 0x0
+> unreferenced object 0xc214a280 (size 128):
+>    comm "swapper/0", pid 1, jiffies 4294937900 (age 3127.400s)
+>    hex dump (first 32 bytes):
+>      00 a0 ec ed 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>    backtrace:
+>      [<3acd268d>] arch_setup_dma_ops+0x4c/0x104
+>      [<9f7d2cce>] of_dma_configure+0x19c/0x3a4
+>      [<ba07704b>] really_probe+0xb0/0x47c
+>      [<4f510e4f>] driver_probe_device+0x78/0x1c4
+>      [<7481a0cf>] device_driver_attach+0x58/0x60
+>      [<0ff8f5c1>] __driver_attach+0xb8/0x158
+>      [<86006144>] bus_for_each_dev+0x74/0xb4
+>      [<10159dca>] bus_add_driver+0x1c0/0x200
+>      [<8a265265>] driver_register+0x74/0x108
+>      [<e0f3451a>] exynos_drm_init+0xb0/0x134
+>      [<db3fc7ba>] do_one_initcall+0x90/0x458
+>      [<6da35917>] kernel_init_freeable+0x188/0x200
+>      [<db3f74d4>] kernel_init+0x8/0x110
+>      [<1f3cddf9>] ret_from_fork+0x14/0x20
+>      [<8cd12507>] 0x0
+> unreferenced object 0xedeca000 (size 4096):
+>    comm "swapper/0", pid 1, jiffies 4294937900 (age 3127.400s)
+>    hex dump (first 32 bytes):
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+>    backtrace:
+>      [<3acd268d>] arch_setup_dma_ops+0x4c/0x104
+>      [<9f7d2cce>] of_dma_configure+0x19c/0x3a4
+>      [<ba07704b>] really_probe+0xb0/0x47c
+>      [<4f510e4f>] driver_probe_device+0x78/0x1c4
+>      [<7481a0cf>] device_driver_attach+0x58/0x60
+>      [<0ff8f5c1>] __driver_attach+0xb8/0x158
+>      [<86006144>] bus_for_each_dev+0x74/0xb4
+>      [<10159dca>] bus_add_driver+0x1c0/0x200
+>      [<8a265265>] driver_register+0x74/0x108
+>      [<e0f3451a>] exynos_drm_init+0xb0/0x134
+>      [<db3fc7ba>] do_one_initcall+0x90/0x458
+>      [<6da35917>] kernel_init_freeable+0x188/0x200
+>      [<db3f74d4>] kernel_init+0x8/0x110
+>      [<1f3cddf9>] ret_from_fork+0x14/0x20
+>      [<8cd12507>] 0x0
+> unreferenced object 0xc214a300 (size 128):
+>    comm "swapper/0", pid 1, jiffies 4294937900 (age 3127.400s)
+>    hex dump (first 32 bytes):
+>      00 a3 14 c2 00 a3 14 c2 00 40 18 c2 00 80 18 c2  .........@......
+>      02 00 02 00 ad 4e ad de ff ff ff ff ff ff ff ff  .....N..........
+>    backtrace:
+>      [<08cbd8bc>] iommu_domain_alloc+0x24/0x50
+>      [<b835abee>] arm_iommu_create_mapping+0xe4/0x134
+>      [<3acd268d>] arch_setup_dma_ops+0x4c/0x104
+>      [<9f7d2cce>] of_dma_configure+0x19c/0x3a4
+>      [<ba07704b>] really_probe+0xb0/0x47c
+>      [<4f510e4f>] driver_probe_device+0x78/0x1c4
+>      [<7481a0cf>] device_driver_attach+0x58/0x60
+>      [<0ff8f5c1>] __driver_attach+0xb8/0x158
+>      [<86006144>] bus_for_each_dev+0x74/0xb4
+>      [<10159dca>] bus_add_driver+0x1c0/0x200
+>      [<8a265265>] driver_register+0x74/0x108
+>      [<e0f3451a>] exynos_drm_init+0xb0/0x134
+>      [<db3fc7ba>] do_one_initcall+0x90/0x458
+>      [<6da35917>] kernel_init_freeable+0x188/0x200
+>      [<db3f74d4>] kernel_init+0x8/0x110
+>      [<1f3cddf9>] ret_from_fork+0x14/0x20
+>
+> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
+> ---
+>
+> Hi all,
+>
+> I have discovered this issue on OdroidXU4 while running some stress tests
+> for upcoming Energy Model. To reproduce it, kernel must be compiled with
+> DEBUG_KMEMLEAK. When the boot has finished, type:
+> # echo scan > /sys/kernel/debug/kmemleak
+> # cat /sys/kernel/debug/kmemleak
+> You should expect similar output to the one from the commit message.
+>
+> I don't know if it should go via stable tree as well. I can resend with CC
+> stable, if there is a need.
+>
+> Regards,
+> Lukasz Luba
+>
+>   drivers/gpu/drm/exynos/exynos_drm_dma.c | 7 ++++++-
+>   1 file changed, 6 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/gpu/drm/exynos/exynos_drm_dma.c b/drivers/gpu/drm/exynos/exynos_drm_dma.c
+> index 9ebc02768847..45f209ec107f 100644
+> --- a/drivers/gpu/drm/exynos/exynos_drm_dma.c
+> +++ b/drivers/gpu/drm/exynos/exynos_drm_dma.c
+> @@ -74,8 +74,13 @@ static int drm_iommu_attach_device(struct drm_device *drm_dev,
+>   		return ret;
+>   
+>   	if (IS_ENABLED(CONFIG_ARM_DMA_USE_IOMMU)) {
+> -		if (to_dma_iommu_mapping(subdrv_dev))
+> +		struct dma_iommu_mapping *mapping =
+> +					to_dma_iommu_mapping(subdrv_dev);
+> +
+> +		if (mapping) {
+>   			arm_iommu_detach_device(subdrv_dev);
+> +			arm_iommu_release_mapping(mapping);
+> +		}
+>   
+>   		ret = arm_iommu_attach_device(subdrv_dev, priv->mapping);
+>   	} else if (IS_ENABLED(CONFIG_IOMMU_DMA)) {
+
+Best regards
 -- 
-2.20.1
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
 
 
 _______________________________________________
