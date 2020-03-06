@@ -2,57 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81B2917C1B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 16:26:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED27F17C1EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 16:35:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9Oa/0yMIoiwESi+0V+zOT13LMridBWKYOR7HTCslT2c=; b=Nfz94SOuC6Mkt84w5ZoROz0x+4
-	NAhdawH+jS/6bbGrzWhY2QBfQ/bPHtkZ00gC4rNvjGGuVF8c0j138TrGK1d5XulCLGRhMCAkmky3v
-	o59OMdqfPd2na2L5KjIFjPPUZlrkTgj/okoXWB0PXAsSwx+NEhvjpDnwU2kjzj0KHfQNi2tWrqXzZ
-	BlIrryLqFigZl1HqbgXBjc7p+N80neK/hcvGBPs6A8g4jBUGX47lhbbLx/L+I8Jxo50i4Hrxsomm9
-	5TvZz50MmjRw15PiTeT5DXlIiVobgDgnN1JRpVYstLjwwiOFmVKeE4/5rGjbQNGRoTO2Y/47fGhUn
-	CcXifKuw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ue06yPdyjxyO3S1hyYsLC+Eqf+6th7DbwojBs/sABGk=; b=I+TiYxyuGqtLbF
+	hWpMBn00HqkqO0y/RpUY5Aowtr6lGQC5LCoH6VdJ1zlMPUn20W4+nA2Jd+XytT6zTMHk+Yso7q/07
+	5QVJFEoY8KicpBVO0wF9pze4X9OUAgulNkR+xed2RfIzHwav/GBa/iwDXIFP0sy242HSGvTK91cGV
+	MPQ6vvusU5Al3c8CaJEgy61FacbFTyk0YyrJ1IP8CCQusFhYSo/4MOaX8x4hzgbeD5eil7WfJPA/v
+	HOQRVutKwJBrq1IBxaoEfOioOQZd8nEP+Q7r99xO1sz7CKjhKgmtOAgOfvXLTKqeC0R/3J5Iu/Bp2
+	F8TFaxywgbqIPcjTgg+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAEsA-0004PR-DZ; Fri, 06 Mar 2020 15:26:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAErI-0003tR-GZ
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 15:25:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E3B8113E;
- Fri,  6 Mar 2020 07:25:52 -0800 (PST)
-Received: from e121896.warwick.arm.com (e121896.warwick.arm.com [10.32.36.26])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id
- D45643F237; Fri,  6 Mar 2020 07:25:48 -0800 (PST)
-From: James Clark <james.clark@arm.com>
-To: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v6 3/3] perf report: Add SPE options to --itrace argument
-Date: Fri,  6 Mar 2020 15:25:20 +0000
-Message-Id: <20200306152520.28233-4-james.clark@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200306152520.28233-1-james.clark@arm.com>
-References: <20200228160126.GI36089@lakrids.cambridge.arm.com>
- <20200306152520.28233-1-james.clark@arm.com>
+	id 1jAF0w-0007xU-Me; Fri, 06 Mar 2020 15:35:50 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAF0q-0007x2-Jy
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 15:35:46 +0000
+Received: by mail-qk1-x743.google.com with SMTP id f3so2691180qkh.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 07:35:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=vZAt7EuTcd6oJ9LombqPUkA52Qv+2N3r0RFkmD14qVs=;
+ b=rnRXuk5el8Wxi8pXes3tqCH5/QpR/Rfyx0OlYlxa3HVXHOg180fONcRy7EjtlMPSc6
+ Th959oJSCvaSPsPNe8hHiHe5eHfue1y+QAR0r0F++RYentyWwx0/REjwEPgM5wwWoPJZ
+ lE4hIaC0vKXC8DWEToNeW+yiqPE87K9SF7VBLjxK/1kifBC6Z7TfbtEMkjCGVAkAQYGW
+ AGMT4o0Udw8fAL0Mkb4Hy8nMyYIjLQZn112bWXk6zvO6Xwk3SnF30Wj0CSX+Fi9wj1k/
+ 5g7ggjP1tpiIBXhQlyDvb9B3+irKwyaBTa99/13XO/Bv2tbU/NSaiKeQPVavkVBG1UV/
+ mlAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=vZAt7EuTcd6oJ9LombqPUkA52Qv+2N3r0RFkmD14qVs=;
+ b=JoZAajwiDg2moGV6jRKCFIFmEn8LgrsqWMeXwKMF3aZiE1iuKA1ABl3P21GPGfO9ZL
+ pX9RsfE9wQTuhw4IXYrEfD/bIzjfVKraHWUzkOJf4M/XcvzRElJJ/Vep3cA+qi3bf4Fu
+ Sz7pgY+IMXCHWfrzvpu830kLwn9pz16avPdKXgo74Sg/sD1r6EzZLtbmJ1JD1U7d7Q+T
+ SVmjprJEONJRzzctwjmo8BkASpP79//2PIn7azafDD66ooVruCXIi4R/PgfeDyOl8aO8
+ aort+eXKo0h+wocax/Ad5U84vQRPCzYx+5GgSZJa3EUNkFNm2GyjR0s8MiQ0VnQt6dFj
+ Du0g==
+X-Gm-Message-State: ANhLgQ1tIXignznF/1dFVxheBjPRPV6OBz7ix/ZzIhLfTIDXPnxv9kVd
+ QpAfOXVmGMN7QgJez72FRd6NerVe77Bhz1tlQK3ZuQ==
+X-Google-Smtp-Source: ADFU+vsRwZwD/lvE0ZlhRuoPrPbsAUoOPliB8JM0vcI6fpS+pB2INIGaA49xhcDlqAc7wCKniJIHrrVENoCFi2UYcbg=
+X-Received: by 2002:a05:620a:16b8:: with SMTP id
+ s24mr3570871qkj.104.1583508942963; 
+ Fri, 06 Mar 2020 07:35:42 -0800 (PST)
+MIME-Version: 1.0
+References: <20200304122312.GE25004@bogus>
+ <CAPDyKFpcN-p6sKqB0ujHAY29qPSg7qpSjYGymPaJ4W8jgCKGcg@mail.gmail.com>
+ <20200305162321.GB53631@bogus>
+ <CAPDyKFogjPG+mRsfPaxN7RjB7TQL9=qHNzA=K_t0F6M6Q9-TuA@mail.gmail.com>
+ <20200306100431.GA16541@bogus>
+ <CA+M3ks764moVU2h9iZJuN6B-e4wBUMymBfPnob_zraf50xqezA@mail.gmail.com>
+ <20200306120646.GB44221@bogus>
+ <CA+M3ks7+P=CjvUE28boANhrR6bhzLzyjBLovzWL_LjwL3UqmzQ@mail.gmail.com>
+ <20200306134119.GB47929@bogus>
+ <CA+M3ks5XBFcJqQozA=k6nU2XawRYT_qKnLW9t_GdkoRGNEd1yA@mail.gmail.com>
+ <20200306144951.GA11624@bogus>
+In-Reply-To: <20200306144951.GA11624@bogus>
+From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Date: Fri, 6 Mar 2020 16:35:32 +0100
+Message-ID: <CA+M3ks6=gRj-5Qfe93+2BbECY=cGuj189MQu3yDnib-SbSM7Og@mail.gmail.com>
+Subject: Re: [PATCH v2 4/4] cpuidle: psci: Allow WFI to be the only state for
+ the hierarchical topology
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_072552_647005_F4063D6C 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_073544_689113_ECB12401 
+X-CRM114-Status: GOOD (  22.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,91 +103,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al Grant <al.grant@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Jiri Olsa <jolsa@redhat.com>, Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, James Clark <james.clark@arm.com>,
- Namhyung Kim <namhyung@kernel.org>, nd@arm.com, Will Deacon <will@kernel.org>,
- Tan Xiaojun <tanxiaojun@huawei.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tan Xiaojun <tanxiaojun@huawei.com>
-
-The previous patch added support in "perf report" for some arm-spe
-events(llc-miss, tlb-miss, branch-miss, remote_access). This patch
-adds their help instructions.
-
-Signed-off-by: Tan Xiaojun <tanxiaojun@huawei.com>
-Tested-by: Qi Liu <liuqi115@hisilicon.com>
-Signed-off-by: James Clark <james.clark@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Jiri Olsa <jolsa@redhat.com>
-Cc: Tan Xiaojun <tanxiaojun@huawei.com>
-Cc: Al Grant <al.grant@arm.com>
-Cc: Namhyung Kim <namhyung@kernel.org>
----
- tools/perf/Documentation/itrace.txt | 5 ++++-
- tools/perf/util/auxtrace.h          | 5 ++++-
- 2 files changed, 8 insertions(+), 2 deletions(-)
-
-diff --git a/tools/perf/Documentation/itrace.txt b/tools/perf/Documentation/itrace.txt
-index 82ff7dad40c2..da3e5ccc039e 100644
---- a/tools/perf/Documentation/itrace.txt
-+++ b/tools/perf/Documentation/itrace.txt
-@@ -1,5 +1,5 @@
- 		i	synthesize instructions events
--		b	synthesize branches events
-+		b	synthesize branches events (branch misses on Arm)
- 		c	synthesize branches events (calls only)
- 		r	synthesize branches events (returns only)
- 		x	synthesize transactions events
-@@ -9,6 +9,9 @@
- 			of aux-output (refer to perf record)
- 		e	synthesize error events
- 		d	create a debug log
-+		m	synthesize LLC miss events
-+		t	synthesize TLB miss events
-+		a	synthesize remote access events
- 		g	synthesize a call chain (use with i or x)
- 		l	synthesize last branch entries (use with i or x)
- 		s       skip initial number of events
-diff --git a/tools/perf/util/auxtrace.h b/tools/perf/util/auxtrace.h
-index 80617b0d044d..52e148eea7f8 100644
---- a/tools/perf/util/auxtrace.h
-+++ b/tools/perf/util/auxtrace.h
-@@ -587,7 +587,7 @@ void auxtrace__free(struct perf_session *session);
- 
- #define ITRACE_HELP \
- "				i:	    		synthesize instructions events\n"		\
--"				b:	    		synthesize branches events\n"		\
-+"				b:	    		synthesize branches events (branch misses on Arm)\n" \
- "				c:	    		synthesize branches events (calls only)\n"	\
- "				r:	    		synthesize branches events (returns only)\n" \
- "				x:	    		synthesize transactions events\n"		\
-@@ -595,6 +595,9 @@ void auxtrace__free(struct perf_session *session);
- "				p:	    		synthesize power events\n"			\
- "				e:	    		synthesize error events\n"			\
- "				d:	    		create a debug log\n"			\
-+"				m:	    		synthesize LLC miss events\n" \
-+"				t:	    		synthesize TLB miss events\n" \
-+"				a:	    		synthesize remote access events\n" \
- "				g[len]:     		synthesize a call chain (use with i or x)\n" \
- "				l[len]:     		synthesize last branch entries (use with i or x)\n" \
- "				sNUMBER:    		skip initial number of events\n"		\
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgdmVuLiA2IG1hcnMgMjAyMCDDoCAxNTo1MCwgU3VkZWVwIEhvbGxhIDxzdWRlZXAuaG9sbGFA
+YXJtLmNvbT4gYSDDqWNyaXQgOgo+Cj4gT24gRnJpLCBNYXIgMDYsIDIwMjAgYXQgMDM6NDQ6MzNQ
+TSArMDEwMCwgQmVuamFtaW4gR2FpZ25hcmQgd3JvdGU6Cj4gPiBMZSB2ZW4uIDYgbWFycyAyMDIw
+IMOgIDE1OjIzLCBTdWRlZXAgSG9sbGEgPHN1ZGVlcC5ob2xsYUBhcm0uY29tPiBhIMOpY3JpdCA6
+Cj4gPiA+Cj4gPiA+IE9uIEZyaSwgTWFyIDA2LCAyMDIwIGF0IDAxOjMyOjU5UE0gKzAxMDAsIEJl
+bmphbWluIEdhaWduYXJkIHdyb3RlOgo+ID4gPiA+IExlIHZlbi4gNiBtYXJzIDIwMjAgw6AgMTM6
+MDYsIFN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+IGEgw6ljcml0IDoKPiA+ID4g
+PiA+Cj4gPiA+Cj4gPiA+IFsuLi5dCj4gPiA+Cj4gPiA+ID4gPiBTdXJlLCBwbGVhc2UgY3JlYXRl
+IGEgZGVlcGVyIENQVSBzdGF0ZSB0aGFuIFdGSSBhbmQgZW50ZXIgc28gdGhhdCB0aGUgQ1BVCj4g
+PiA+ID4gPiBzdGF0ZSBpcyBzYXZlZCBhbmQgcmVzdG9yZWQgY29ycmVjdGx5LiBXaGF0IGlzIHRo
+ZSBwcm9ibGVtIGRvaW5nIHRoYXQgPwo+ID4gPiA+Cj4gPiA+ID4gVGhpcyBzdGF0ZSBzdG9wIHRo
+ZSBjbG9ja3MgZm9yIGFsbCB0aGUgaGFyZHdhcmUgYmxvY2tzIGFuZCBub3Qgb25seSB0aGUgQ1BV
+cwo+ID4gPiA+IHNvIHdlIGNhbid0IGdvIG9uIGl0IHdoaWxlIGRldmljZXMgYXJlbid0IHN1c3Bl
+bmRlZC4KPiA+ID4gPiBJIG1heSBoYXZlIG1pc3NlZCBzb21ldGhpbmcgYnV0IEkgZG9uJ3QgYmVs
+aWV2ZSB0aGF0IEkgY291bGQgYWRkIHRoaXMga2luZCBvZgo+ID4gPiA+IGNvbmRpdGlvbnMgaW4g
+YSBjcHUgaWRsZSBzdGF0ZSwgcmlnaHQgPwo+ID4gPiA+IEluIHRoaXMgc3RhdGUgSSBuZWVkIHRv
+IGJlIGFibGUgdG8gZW5hYmxlIHRoZSB3YWtlIHVwIHNvdXJjZXMgYmVjYXVzZQo+ID4gPiA+IGl0
+IGlzIHRoZSBvbmx5Cj4gPiA+ID4gZm9yIGhhcmR3YXJlIGJsb2NrIHVzZWQgYXMgYnJvYWRjYXN0
+IHRpbWVyIHRvIHdha2UgdXAgdGhlIHN5c3RlbS4KPiA+ID4gPgo+ID4gPgo+ID4gPiBXZSBoYXZl
+IGRpc2N1c3NlZCB0aGlzIGluIHBhc3QgaW4gdGhlIHRocmVhZCBJIG1lbnRpb25lZCBhbmQgbWF5
+IGJlCj4gPiA+IG90aGVycyB0b28uIEl0IHNvdW5kcyBsaWtlIGEgYnJva2VuIGhhcmR3YXJlLCBz
+b3JyeSBpZiBJIGFtIHdyb25nLgo+ID4gPiBCdXQgdGhpcyAkc3ViamVjdCBwYXRjaCBpcyBhIGhh
+Y2sgdG8gc29sdmUgdGhhdCBhbmQgSSBhbSBOQUNLLWluZyB0aGlzCj4gPiA+IG5vdy4gUGxlYXNl
+IGZpeCBpdCBhZGRpbmcgYW5vdGhlciBDUFUgbGV2ZWwgaWRsZSBzdGF0ZSwgd2UgYXJlIG5vdAo+
+ID4gPiBzdXBwb3J0aW5nIHdpdGhvdXQgdGhhdCBhbmQgdGhlcmUgaXMgYWJzb2x1dGVseSBubyBu
+ZWVkIHRvLgo+ID4KPiA+IEEgQ1BVIGlkbGUgc3RhdGUgb25seSB0YWtlIGNhcmUgb2YgQ1BVIGFj
+dGl2aXRpZXMsIHJpZ2h0ID8gYnV0IGJlZm9yZSBnb2luZyBpbgo+ID4gdGhlIHRhcmdldGluZyBz
+dGF0ZSBJIG5lZWQgdG8gYmUgc3VyZSB0aGF0IHRoZSBvdGhlciBoYXJkd2FyZSBibG9ja3MKPiA+
+IGFyZSBzdXNwZW5kZWQuCj4gPiBJcyBpdCBwb3NzaWJsZSB0byBkZXNjcmliZSB0aGF0IGluIGFu
+IGlkbGUgc3RhdGUgPwo+ID4gV2hhdCBzb3VuZCBicm9rZW4gPyBpcyBpdCBiZWNhdXNlIHdlIG5l
+ZWQgdG8gc2V0dXAgdGhlIHdha2UgdXAgc291cmNlcyA/Cj4gPgo+Cj4gWW91IHNhaWQ6ICIgSW4g
+RFQgSSBoYXZlIG9uZSBzeXN0ZW0gcG93ZXIgZG9tYWluIHdoZXJlIHRoZSBoYXJkd2FyZSBibG9j
+a3MKPiAoaTJjLHVhcnQ7IHNwaSwgZXRjLi4pIGFyZSBhdHRhY2hlZCArIGEgcG93ZXIgcGVyIENQ
+VSIuIE5vdyBzaW5jZSB0aGUgQ1BVCj4gc3RheXMgaW4gV0ZJIGFsd2F5cyBpbiB0aGlzIHBsYXRm
+b3JtLCBpdCBtZWFucyBpdCBpcyBhbHdheXMgT04gYW5kIHlvdQo+IGNhbid0IHZvdGUgdG8gcG93
+ZXIgZG93biB0aGUgbWFnaWMgInN5c3RlbSBwb3dlciBkb21haW4iLgoKQ1BVIHBvd2VyIGRvbWFp
+bnMgYXJlIHN1YmRvbWFpbnMgb2YgdGhlIHN5c3RlbSBwb3dlciBkb21haW4gc28gdGhleSBjYW4g
+dm90ZQpmb3IgdGhlIHRhcmdldGluZyBwb3dlciBkb21haW4uCgo+Cj4gLS0KPiBSZWdhcmRzLAo+
+IFN1ZGVlcAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
