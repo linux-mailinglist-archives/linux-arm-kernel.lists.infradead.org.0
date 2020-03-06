@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28D1E17BC18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:48:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 423ED17BC23
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:50:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x66sxn/Ld6cI9h6oI2UhgF7PiIbK8m8yQAoavm2l7Fs=; b=VIsnVAyyJXYrL6
-	jTqvmq8dXoVJ7eky6DM44DtQwdOm3G3cuUrUb2DN0SuqOHFBlLXnuUWgOtCcX4bdlBCher5ibqbyp
-	IugFX8pWQlXpbnvG1XcpunETuaNesIMyzFryv4BZPwGI5B6xy94r/hs98U94UU/3MTmYFzo5KF7jM
-	MSrjyvXes6e/M1ow/AzcRbpHyG1yzMlbqRGhgqo5XEPhcWRePVbmMxtal4b9uWz87LkO6iZav07Ar
-	ypwQfrvqng09+IBFTEFxyj1xlv+iyX7rhoIyieVdAfHUPwxj6RNck+TDc3QGRx7rTjaZ1zPD5EWOA
-	ZB5bQSQsiAh49JsBMU0g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=16gKZ0fbHGx3daEJmV47AYlO6jd7Xq7vxR6me2s5DaU=; b=CUH9+lv5fTohv3
+	4LaBYgIodPRP43Hb2T5geffm5IK6UyGIoyhv/7QKa9X1d+Q2TSKzlp6j70BofBM8nGzVKeWAsg8m4
+	QQx+FszV0DOPatV/d/2azhKAK6JlI4GF2h6s4VAAT7ytFkG0g5s6ApvVrndAh2f7RCt7Yo2wQGu+R
+	lgYwiEn9Kf0FgTDldGu97rqlhHCX3NVTcbBRtUrmvgbx1dQwz1wlYn34jN66td+ajoadCNrQDMmKE
+	st8pHwVzBD1ezXzXaC8wrPtzYTzWG4NDRbtjUBPdb0/WCnpc+hyF853o/MQxf+u8I53tdUKsMcjea
+	vCgbw+Vjfsi8WePsQbsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jABTH-00085m-Nm; Fri, 06 Mar 2020 11:48:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jABTA-00085E-NL
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:48:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E67B131B;
- Fri,  6 Mar 2020 03:48:43 -0800 (PST)
-Received: from [10.37.12.171] (unknown [10.37.12.171])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6294B3F6C4;
- Fri,  6 Mar 2020 03:48:41 -0800 (PST)
-Subject: Re: [PATCH v6 16/18] kconfig: Add support for 'as-option'
-To: Masahiro Yamada <masahiroy@kernel.org>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-17-git-send-email-amit.kachhap@arm.com>
- <CAK7LNAS63ed8zfoKukgHHmqVNEptXPh8XJTv-Zkh0ba=fLN+XQ@mail.gmail.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <8a332026-9c28-f7d5-95d4-3c44275fcf72@arm.com>
-Date: Fri, 6 Mar 2020 11:49:03 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jABUd-0008Sc-50; Fri, 06 Mar 2020 11:50:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jABUK-0008RC-3R
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:49:57 +0000
+Received: from localhost (unknown [213.57.247.131])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E90582072A;
+ Fri,  6 Mar 2020 11:49:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583495387;
+ bh=QT7chaIcpIKaXbYWCdy+77ofMpMDRDGRvvTu75QlMnM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=n/6EQCf54zDryvHFtcOyjbYpRReGsUEpHCLrRBhgBozy0gXd5/YPk5svKHVwt4oee
+ R2Hvml+CGY9GdfiNWysYtW0tgUNf0MvADD9PrhE1S/zXc+fcAM1OcLiBPvjKid3A65
+ 5ctG6XWqNyUK4vrwqf6fuguZ2POzWs+eSnY+PblU=
+Date: Fri, 6 Mar 2020 13:49:41 +0200
+From: Leon Romanovsky <leon@kernel.org>
+To: Alex Elder <elder@linaro.org>
+Subject: Re: [PATCH v2 01/17] remoteproc: add IPA notification to q6v5 driver
+Message-ID: <20200306114941.GO184088@unreal>
+References: <20200306042831.17827-1-elder@linaro.org>
+ <20200306042831.17827-2-elder@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <CAK7LNAS63ed8zfoKukgHHmqVNEptXPh8XJTv-Zkh0ba=fLN+XQ@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200306042831.17827-2-elder@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_034844_806043_892E3128 
-X-CRM114-Status: GOOD (  17.16  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_034956_190480_08FA93D8 
+X-CRM114-Status: GOOD (  27.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,72 +76,281 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Mark Rutland <mark.rutland@arm.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org, Dan Williams <dcbw@redhat.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Siddharth Gupta <sidgup@codeaurora.org>, Andy Gross <agross@kernel.org>,
+ Evan Green <evgreen@google.com>, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Masahiro,
+On Thu, Mar 05, 2020 at 10:28:15PM -0600, Alex Elder wrote:
+> Set up a subdev in the q6v5 modem remoteproc driver that generates
+> event notifications for the IPA driver to use for initialization and
+> recovery following a modem shutdown or crash.
+>
+> A pair of new functions provides a way for the IPA driver to register
+> and deregister a notification callback function that will be called
+> whenever modem events (about to boot, running, about to shut down,
+> etc.) occur.  A void pointer value (provided by the IPA driver at
+> registration time) and an event type are supplied to the callback
+> function.
+>
+> One event, MODEM_REMOVING, is signaled whenever the q6v5 driver is
+> about to remove the notification subdevice.  It requires the IPA
+> driver de-register its callback.
+>
+> This sub-device is only used by the modem subsystem (MSS) driver,
+> so the code that adds the new subdev and allows registration and
+> deregistration of the notifier is found in "qcom_q6v6_mss.c".
+>
+> Signed-off-by: Alex Elder <elder@linaro.org>
+> ---
+>  drivers/remoteproc/Kconfig                    |  6 ++
+>  drivers/remoteproc/Makefile                   |  1 +
+>  drivers/remoteproc/qcom_q6v5_ipa_notify.c     | 85 +++++++++++++++++++
+>  drivers/remoteproc/qcom_q6v5_mss.c            | 38 +++++++++
+>  .../linux/remoteproc/qcom_q6v5_ipa_notify.h   | 82 ++++++++++++++++++
+>  5 files changed, 212 insertions(+)
+>  create mode 100644 drivers/remoteproc/qcom_q6v5_ipa_notify.c
+>  create mode 100644 include/linux/remoteproc/qcom_q6v5_ipa_notify.h
+>
+> diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
+> index de3862c15fcc..56084635dd63 100644
+> --- a/drivers/remoteproc/Kconfig
+> +++ b/drivers/remoteproc/Kconfig
+> @@ -167,6 +167,12 @@ config QCOM_Q6V5_WCSS
+>  	  Say y here to support the Qualcomm Peripheral Image Loader for the
+>  	  Hexagon V5 based WCSS remote processors.
+>
+> +config QCOM_Q6V5_IPA_NOTIFY
+> +	tristate
+> +	depends on QCOM_IPA
+> +	depends on QCOM_Q6V5_MSS
+> +	default QCOM_IPA
+> +
+>  config QCOM_SYSMON
+>  	tristate "Qualcomm sysmon driver"
+>  	depends on RPMSG
+> diff --git a/drivers/remoteproc/Makefile b/drivers/remoteproc/Makefile
+> index e30a1b15fbac..0effd3825035 100644
+> --- a/drivers/remoteproc/Makefile
+> +++ b/drivers/remoteproc/Makefile
+> @@ -21,6 +21,7 @@ obj-$(CONFIG_QCOM_Q6V5_ADSP)		+= qcom_q6v5_adsp.o
+>  obj-$(CONFIG_QCOM_Q6V5_MSS)		+= qcom_q6v5_mss.o
+>  obj-$(CONFIG_QCOM_Q6V5_PAS)		+= qcom_q6v5_pas.o
+>  obj-$(CONFIG_QCOM_Q6V5_WCSS)		+= qcom_q6v5_wcss.o
+> +obj-$(CONFIG_QCOM_Q6V5_IPA_NOTIFY)	+= qcom_q6v5_ipa_notify.o
+>  obj-$(CONFIG_QCOM_SYSMON)		+= qcom_sysmon.o
+>  obj-$(CONFIG_QCOM_WCNSS_PIL)		+= qcom_wcnss_pil.o
+>  qcom_wcnss_pil-y			+= qcom_wcnss.o
+> diff --git a/drivers/remoteproc/qcom_q6v5_ipa_notify.c b/drivers/remoteproc/qcom_q6v5_ipa_notify.c
+> new file mode 100644
+> index 000000000000..e1c10a128bfd
+> --- /dev/null
+> +++ b/drivers/remoteproc/qcom_q6v5_ipa_notify.c
+> @@ -0,0 +1,85 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +/*
+> + * Qualcomm IPA notification subdev support
+> + *
+> + * Copyright (C) 2019 Linaro Ltd.
+> + */
+> +
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/remoteproc.h>
+> +#include <linux/remoteproc/qcom_q6v5_ipa_notify.h>
+> +
+> +static void
+> +ipa_notify_common(struct rproc_subdev *subdev, enum qcom_rproc_event event)
+> +{
+> +	struct qcom_rproc_ipa_notify *ipa_notify;
+> +	qcom_ipa_notify_t notify;
+> +
+> +	ipa_notify = container_of(subdev, struct qcom_rproc_ipa_notify, subdev);
+> +	notify = ipa_notify->notify;
+> +	if (notify)
+> +		notify(ipa_notify->data, event);
+> +}
+> +
+> +static int ipa_notify_prepare(struct rproc_subdev *subdev)
+> +{
+> +	ipa_notify_common(subdev, MODEM_STARTING);
+> +
+> +	return 0;
+> +}
+> +
+> +static int ipa_notify_start(struct rproc_subdev *subdev)
+> +{
+> +	ipa_notify_common(subdev, MODEM_RUNNING);
+> +
+> +	return 0;
+> +}
+> +
+> +static void ipa_notify_stop(struct rproc_subdev *subdev, bool crashed)
+> +
+> +{
+> +	ipa_notify_common(subdev, crashed ? MODEM_CRASHED : MODEM_STOPPING);
+> +}
+> +
+> +static void ipa_notify_unprepare(struct rproc_subdev *subdev)
+> +{
+> +	ipa_notify_common(subdev, MODEM_OFFLINE);
+> +}
+> +
+> +static void ipa_notify_removing(struct rproc_subdev *subdev)
+> +{
+> +	ipa_notify_common(subdev, MODEM_REMOVING);
+> +}
+> +
+> +/* Register the IPA notification subdevice with the Q6V5 MSS remoteproc */
+> +void qcom_add_ipa_notify_subdev(struct rproc *rproc,
+> +		struct qcom_rproc_ipa_notify *ipa_notify)
+> +{
+> +	ipa_notify->notify = NULL;
+> +	ipa_notify->data = NULL;
+> +	ipa_notify->subdev.prepare = ipa_notify_prepare;
+> +	ipa_notify->subdev.start = ipa_notify_start;
+> +	ipa_notify->subdev.stop = ipa_notify_stop;
+> +	ipa_notify->subdev.unprepare = ipa_notify_unprepare;
+> +
+> +	rproc_add_subdev(rproc, &ipa_notify->subdev);
+> +}
+> +EXPORT_SYMBOL_GPL(qcom_add_ipa_notify_subdev);
+> +
+> +/* Remove the IPA notification subdevice */
+> +void qcom_remove_ipa_notify_subdev(struct rproc *rproc,
+> +		struct qcom_rproc_ipa_notify *ipa_notify)
+> +{
+> +	struct rproc_subdev *subdev = &ipa_notify->subdev;
+> +
+> +	ipa_notify_removing(subdev);
+> +
+> +	rproc_remove_subdev(rproc, subdev);
+> +	ipa_notify->notify = NULL;	/* Make it obvious */
+> +}
+> +EXPORT_SYMBOL_GPL(qcom_remove_ipa_notify_subdev);
+> +
+> +MODULE_LICENSE("GPL v2");
+> +MODULE_DESCRIPTION("Qualcomm IPA notification remoteproc subdev");
+> diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
+> index a1cc9cbe038f..f9ccce76e44b 100644
+> --- a/drivers/remoteproc/qcom_q6v5_mss.c
+> +++ b/drivers/remoteproc/qcom_q6v5_mss.c
+> @@ -22,6 +22,7 @@
+>  #include <linux/regmap.h>
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/remoteproc.h>
+> +#include "linux/remoteproc/qcom_q6v5_ipa_notify.h"
+>  #include <linux/reset.h>
+>  #include <linux/soc/qcom/mdt_loader.h>
+>  #include <linux/iopoll.h>
+> @@ -201,6 +202,7 @@ struct q6v5 {
+>  	struct qcom_rproc_glink glink_subdev;
+>  	struct qcom_rproc_subdev smd_subdev;
+>  	struct qcom_rproc_ssr ssr_subdev;
+> +	struct qcom_rproc_ipa_notify ipa_notify_subdev;
+>  	struct qcom_sysmon *sysmon;
+>  	bool need_mem_protection;
+>  	bool has_alt_reset;
+> @@ -1540,6 +1542,39 @@ static int q6v5_alloc_memory_region(struct q6v5 *qproc)
+>  	return 0;
+>  }
+>
+> +#if IS_ENABLED(CONFIG_QCOM_Q6V5_IPA_NOTIFY)
+> +
+> +/* Register IPA notification function */
+> +int qcom_register_ipa_notify(struct rproc *rproc, qcom_ipa_notify_t notify,
+> +			     void *data)
+> +{
+> +	struct qcom_rproc_ipa_notify *ipa_notify;
+> +	struct q6v5 *qproc = rproc->priv;
+> +
+> +	if (!notify)
+> +		return -EINVAL;
+> +
+> +	ipa_notify = &qproc->ipa_notify_subdev;
+> +	if (ipa_notify->notify)
+> +		return -EBUSY;
+> +
+> +	ipa_notify->notify = notify;
+> +	ipa_notify->data = data;
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(qcom_register_ipa_notify);
+> +
+> +/* Deregister IPA notification function */
+> +void qcom_deregister_ipa_notify(struct rproc *rproc)
+> +{
+> +	struct q6v5 *qproc = rproc->priv;
+> +
+> +	qproc->ipa_notify_subdev.notify = NULL;
+> +}
+> +EXPORT_SYMBOL_GPL(qcom_deregister_ipa_notify);
+> +#endif /* !IS_ENABLED(CONFIG_QCOM_Q6V5_IPA_NOTIFY) */
+> +
+>  static int q6v5_probe(struct platform_device *pdev)
+>  {
+>  	const struct rproc_hexagon_res *desc;
+> @@ -1664,6 +1699,7 @@ static int q6v5_probe(struct platform_device *pdev)
+>  	qcom_add_glink_subdev(rproc, &qproc->glink_subdev);
+>  	qcom_add_smd_subdev(rproc, &qproc->smd_subdev);
+>  	qcom_add_ssr_subdev(rproc, &qproc->ssr_subdev, "mpss");
+> +	qcom_add_ipa_notify_subdev(rproc, &qproc->ipa_notify_subdev);
+>  	qproc->sysmon = qcom_add_sysmon_subdev(rproc, "modem", 0x12);
+>  	if (IS_ERR(qproc->sysmon)) {
+>  		ret = PTR_ERR(qproc->sysmon);
+> @@ -1677,6 +1713,7 @@ static int q6v5_probe(struct platform_device *pdev)
+>  	return 0;
+>
+>  detach_proxy_pds:
+> +	qcom_remove_ipa_notify_subdev(qproc->rproc, &qproc->ipa_notify_subdev);
+>  	q6v5_pds_detach(qproc, qproc->proxy_pds, qproc->proxy_pd_count);
+>  detach_active_pds:
+>  	q6v5_pds_detach(qproc, qproc->active_pds, qproc->active_pd_count);
+> @@ -1693,6 +1730,7 @@ static int q6v5_remove(struct platform_device *pdev)
+>  	rproc_del(qproc->rproc);
+>
+>  	qcom_remove_sysmon_subdev(qproc->sysmon);
+> +	qcom_remove_ipa_notify_subdev(qproc->rproc, &qproc->ipa_notify_subdev);
+>  	qcom_remove_glink_subdev(qproc->rproc, &qproc->glink_subdev);
+>  	qcom_remove_smd_subdev(qproc->rproc, &qproc->smd_subdev);
+>  	qcom_remove_ssr_subdev(qproc->rproc, &qproc->ssr_subdev);
+> diff --git a/include/linux/remoteproc/qcom_q6v5_ipa_notify.h b/include/linux/remoteproc/qcom_q6v5_ipa_notify.h
+> new file mode 100644
+> index 000000000000..0820edc0ab7d
+> --- /dev/null
+> +++ b/include/linux/remoteproc/qcom_q6v5_ipa_notify.h
+> @@ -0,0 +1,82 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +
+> +/* Copyright (C) 2019 Linaro Ltd. */
+> +
+> +#ifndef __QCOM_Q6V5_IPA_NOTIFY_H__
+> +#define __QCOM_Q6V5_IPA_NOTIFY_H__
+> +
+> +#if IS_ENABLED(CONFIG_QCOM_Q6V5_IPA_NOTIFY)
 
-On 3/6/20 11:37 AM, Masahiro Yamada wrote:
-> On Fri, Mar 6, 2020 at 3:36 PM Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
->>
->> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
->>
->> Currently kconfig does not have a feature that allows to detect if the
->> used assembler supports a specific compilation option.
->>
->> Introduce 'as-option' to serve this purpose in the context of Kconfig:
->>
->>         config X
->>                 def_bool $(as-option,...)
->>
->> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
->> Cc: linux-kbuild@vger.kernel.org
->> Acked-by: Masahiro Yamada <masahiroy@kernel.org>
->> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
->> ---
->> Changes since v5:
->>  * More descriptions for using /dev/zero.
-> 
-> 
-> FYI:
-> 
-> This has been fixed:
-> 
-> https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=3c968de5c7d1719b2f9b538f2f7f5f5922e5f311
-> 
-> 
-> So, this will not be a problem for the
-> future release of binutils.
-> 
-> Anyway, we need to take care of the released ones,
-> so I am fine with /dev/zero.
-> 
+Why don't you put this guard in the places where such include is called?
+Or the best variant is to ensure that this include is compiled in only
+in CONFIG_QCOM_Q6V5_IPA_NOTIFY flows.
 
-Thank you for letting us know.
+That is more common way to guard internal header files.
 
-I did not realize it was a compiler issue otherwise I would have reported it. I
-thought it was a mechanism to prevent people from trashing their code, but
-thinking at it more carefully, for devices does not make sense hence it is good
-that there is a fix already.
-
-[...]
-
--- 
-Regards,
-Vincenzo
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
