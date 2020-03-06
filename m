@@ -2,92 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EB6917B510
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 04:44:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD2C617B533
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 05:06:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l/YBpTs/AZ0Hj7jshxXLlUomtg1zS924scXvAL7X/GU=; b=G1R5BFeFrpclD/
-	fIdzhaoL9nd2KbuDzP5fU+icx6rC1bRxJAGUPr9g+eXL7K/cAXxG5SWqB8pUfrtsD+bJ76cfmOini
-	wP1vmDaDwFWazue/NE88xhCTVOs2eXZEEbVOVqlwUmhmKIT1x0L21LbkiZMvIPTpPWNdD+phLqe8t
-	dpe9szFlQRF1KgBH53rBiAJbS9mKqVCgcCm16oRLQGbLbh1seWglYltcfxOkbXAUKvTHcg8p6eNWs
-	X2ukgTkSOlQBcLxac6T+XFb6wCnrSJ7yaw90uM55/OjW0JC0M6mFYKNT7wZ3ULQOGZXy+BQ9PSCWw
-	oQDJ3k9QT4rQEG+y0STQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tzc8f2o4uzwF/qHiX7X8a2vC01N/SsfDOFIls8LcZvk=; b=I/V0oCsmrvjFWc
+	GU5WJNVSzX9tZNOhNURgFU4PeCsMjY4PdXAsYGshTD7o2PQa3/jg/E7z+OMvVJvLTEX2PjEd7oO3l
+	W11fHCJPtKdjEyx1naTZgCx4r0LbWU1VO2bMY8EEWNl5u3ThZHYoa+wbG3jv3YKLrS7/lgxPWnvpf
+	vfLjhJK/sTmWWZr2N+Iio2VztqAb6qW/QlGydYuiwr698ILHq+CV6MGZVbsmkzJ6RN+K5zFYOf6gy
+	/Rz4Yd3iVT9OscDX0HuLDgmYL52yosZu7WbWUtQq7aUIGH7CqSOhxlUcJA5hkeMuByo7ZQDx1og+E
+	bX1pkKZBq7sobRGHrjKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA3uO-0003nj-UM; Fri, 06 Mar 2020 03:44:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jA4FX-0002iI-34; Fri, 06 Mar 2020 04:06:11 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA3uI-0003mn-6L
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 03:44:15 +0000
-Received: from [192.168.1.74] (75-58-59-55.lightspeed.rlghnc.sbcglobal.net
- [75.58.59.55])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1C5DC2072D;
- Fri,  6 Mar 2020 03:44:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583466251;
- bh=LefwvxIBpcgDkUuII0S/6ZNAIAh8S5CPv6c9pW7foWk=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=pnYJLxBsg3kgxIIltlnzjm59zE9NAfTNOwWEpDEwnD13OJ5LQw/18xps2jKdCPjlc
- T6FJpo2I2+x6ysh1UJOnKm3N3gRXwOoRzz3kATGKFy8oe/CxrxwtQ854S6Ic4aju8y
- w1shkzNdaUFxc7GeZTMCSV2qsgtY1UpBeGMNBUvU=
-Subject: Re: About commit "io: change inX() to have their own IO barrier
- overrides"
-To: Arnd Bergmann <arnd@arndb.de>, John Garry <john.garry@huawei.com>
-References: <2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com>
- <c1489f55-369d-2cff-ff36-b10fb5d3ee79@kernel.org>
- <8207cd51-5b94-2f15-de9f-d85c9c385bca@huawei.com>
- <6115fa56-a471-1e9f-edbb-e643fa4e7e11@kernel.org>
- <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
- <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
-From: Sinan Kaya <okaya@kernel.org>
-Autocrypt: addr=okaya@kernel.org; keydata=
- mQENBFrnOrUBCADGOL0kF21B6ogpOkuYvz6bUjO7NU99PKhXx1MfK/AzK+SFgxJF7dMluoF6
- uT47bU7zb7HqACH6itTgSSiJeSoq86jYoq5s4JOyaj0/18Hf3/YBah7AOuwk6LtV3EftQIhw
- 9vXqCnBwP/nID6PQ685zl3vH68yzF6FVNwbDagxUz/gMiQh7scHvVCjiqkJ+qu/36JgtTYYw
- 8lGWRcto6gr0eTF8Wd8f81wspmUHGsFdN/xPsZPKMw6/on9oOj3AidcR3P9EdLY4qQyjvcNC
- V9cL9b5I/Ud9ghPwW4QkM7uhYqQDyh3SwgEFudc+/RsDuxjVlg9CFnGhS0nPXR89SaQZABEB
- AAG0HVNpbmFuIEtheWEgPG9rYXlhQGtlcm5lbC5vcmc+iQFOBBMBCAA4FiEEYdOlMSE+a7/c
- ckrQvGF4I+4LAFcFAlztcAoCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQvGF4I+4L
- AFfidAf/VKHInxep0Z96iYkIq42432HTZUrxNzG9IWk4HN7c3vTJKv2W+b9pgvBF1SmkyQSy
- 8SJ3Zd98CO6FOHA1FigFyZahVsme+T0GsS3/OF1kjrtMktoREr8t0rK0yKpCTYVdlkHadxmR
- Qs5xLzW1RqKlrNigKHI2yhgpMwrpzS+67F1biT41227sqFzW9urEl/jqGJXaB6GV+SRKSHN+
- ubWXgE1NkmfAMeyJPKojNT7ReL6eh3BNB/Xh1vQJew+AE50EP7o36UXghoUktnx6cTkge0ZS
- qgxuhN33cCOU36pWQhPqVSlLTZQJVxuCmlaHbYWvye7bBOhmiuNKhOzb3FcgT7kBDQRa5zq1
- AQgAyRq/7JZKOyB8wRx6fHE0nb31P75kCnL3oE+smKW/sOcIQDV3C7mZKLf472MWB1xdr4Tm
- eXeL/wT0QHapLn5M5wWghC80YvjjdolHnlq9QlYVtvl1ocAC28y43tKJfklhHiwMNDJfdZbw
- 9lQ2h+7nccFWASNUu9cqZOABLvJcgLnfdDpnSzOye09VVlKr3NHgRyRZa7me/oFJCxrJlKAl
- 2hllRLt0yV08o7i14+qmvxI2EKLX9zJfJ2rGWLTVe3EJBnCsQPDzAUVYSnTtqELu2AGzvDiM
- gatRaosnzhvvEK+kCuXuCuZlRWP7pWSHqFFuYq596RRG5hNGLbmVFZrCxQARAQABiQEfBBgB
- CAAJBQJa5zq1AhsMAAoJELxheCPuCwBX2UYH/2kkMC4mImvoClrmcMsNGijcZHdDlz8NFfCI
- gSb3NHkarnA7uAg8KJuaHUwBMk3kBhv2BGPLcmAknzBIehbZ284W7u3DT9o1Y5g+LDyx8RIi
- e7pnMcC+bE2IJExCVf2p3PB1tDBBdLEYJoyFz/XpdDjZ8aVls/pIyrq+mqo5LuuhWfZzPPec
- 9EiM2eXpJw+Rz+vKjSt1YIhg46YbdZrDM2FGrt9ve3YaM5H0lzJgq/JQPKFdbd5MB0X37Qc+
- 2m/A9u9SFnOovA42DgXUyC2cSbIJdPWOK9PnzfXqF3sX9Aol2eLUmQuLpThJtq5EHu6FzJ7Y
- L+s0nPaNMKwv/Xhhm6Y=
-Message-ID: <90af535f-00ef-c1e3-ec20-aae2bd2a0d88@kernel.org>
-Date: Thu, 5 Mar 2020 22:44:08 -0500
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jA4FP-0002hL-TI; Fri, 06 Mar 2020 04:06:05 +0000
+X-UUID: 4ce4a1f2e74b4cc78829d8dc4fd9f5c2-20200305
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=HbvwGK3+J6EJNiSbZ0JadzfJDjJt686R95a2GVph8QM=; 
+ b=uKiWET/2SI6kAvqgTgBgJYEOJiUReLrEKizAui8f3GOicKogIF0o1o2PUjf6eOnvdZXY28nTNXU7Uw567Ggn7RqWCpcxujzqvqxfQ5D+kQUB/JDXZ1G31fpfbK2FiVD6HX1d0q/RqzMaUg2bxrSJPJvO+Oyca96wO0lLbKTaRsQ=;
+X-UUID: 4ce4a1f2e74b4cc78829d8dc4fd9f5c2-20200305
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1479581992; Thu, 05 Mar 2020 20:05:58 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Mar 2020 19:55:55 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Mar 2020 11:54:29 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 6 Mar 2020 11:53:06 +0800
+Message-ID: <1583466941.18586.1.camel@mtksdaap41>
+Subject: Re: [PATCH v1 2/3] mailbox: mediatek: implement flush function
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Fri, 6 Mar 2020 11:55:41 +0800
+In-Reply-To: <1581931765.12547.0.camel@mtksdaap41>
+References: <20200217090532.16019-1-bibby.hsieh@mediatek.com>
+ <20200217090532.16019-3-bibby.hsieh@mediatek.com>
+ <1581931765.12547.0.camel@mtksdaap41>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
-Content-Language: en-US
+X-TM-SNTS-SMTP: 269D5AFE256631CE763A7BA8ECC2A47A2B9957979F165F20397039FB87C414FF2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_194414_258213_78D0C8F4 
-X-CRM114-Status: UNSURE (   8.12  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200305_200603_956019_77F2A19D 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,7 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,29 +87,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jiaxun Yang <jiaxun.yang@flygoat.com>, "xuwei \(O\)" <xuwei5@hisilicon.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Nicolas
+ Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, CK Hu <ck.hu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/3/2020 11:40 AM, Arnd Bergmann wrote:
->> -          ret = read##bw(PCI_IOBASE + addr);
->> +          __io_pbr();
->> +          ret = __raw_read##bw(PCI_IOBASE + addr);
->> +          __io_pbr();
-> __io_par();
+Hi, Jassi,
+
+https://patchwork.kernel.org/cover/11385839/
+
+I push a series of patches about remove atomic_exec feature in Mediatek
+CMDQ driver. Could you please review them if you are free?
+
+Thanks
+
+On Mon, 2020-02-17 at 17:29 +0800, CK Hu wrote:
+> Hi, Bibby:
 > 
-
-Why do we need to change read##bw above?
-
-read##bw already provides strong ordering guarantees across multiple
-architectures.
+> On Mon, 2020-02-17 at 17:05 +0800, Bibby Hsieh wrote:
+> > For client driver which need to reorganize the command buffer, it could
+> > use this function to flush the send command buffer.
+> > If the channel doesn't be started (usually in waiting for event), this
+> > function will abort it directly.
+> > 
+> 
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> 
+> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> > ---
+> >  drivers/mailbox/mtk-cmdq-mailbox.c | 52 ++++++++++++++++++++++++++++++
+> >  1 file changed, 52 insertions(+)
+> > 
+> > diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > index 9a6ce9f5a7db..0da5e2dc2c0e 100644
+> > --- a/drivers/mailbox/mtk-cmdq-mailbox.c
+> > +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > @@ -432,10 +432,62 @@ static void cmdq_mbox_shutdown(struct mbox_chan *chan)
+> >  {
+> >  }
+> >  
+> > +static int cmdq_mbox_flush(struct mbox_chan *chan, unsigned long timeout)
+> > +{
+> > +	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
+> > +	struct cmdq_task_cb *cb;
+> > +	struct cmdq_cb_data data;
+> > +	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
+> > +	struct cmdq_task *task, *tmp;
+> > +	unsigned long flags;
+> > +	u32 enable;
+> > +
+> > +	spin_lock_irqsave(&thread->chan->lock, flags);
+> > +	if (list_empty(&thread->task_busy_list))
+> > +		goto out;
+> > +
+> > +	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+> > +	if (!cmdq_thread_is_in_wfe(thread))
+> > +		goto wait;
+> > +
+> > +	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
+> > +				 list_entry) {
+> > +		cb = &task->pkt->async_cb;
+> > +		if (cb->cb) {
+> > +			data.sta = CMDQ_CB_ERROR;
+> > +			data.data = cb->data;
+> > +			cb->cb(data);
+> > +		}
+> > +		list_del(&task->list_entry);
+> > +		kfree(task);
+> > +	}
+> > +
+> > +	cmdq_thread_resume(thread);
+> > +	cmdq_thread_disable(cmdq, thread);
+> > +	clk_disable(cmdq->clock);
+> > +
+> > +out:
+> > +	spin_unlock_irqrestore(&thread->chan->lock, flags);
+> > +	return 0;
+> > +
+> > +wait:
+> > +	cmdq_thread_resume(thread);
+> > +	spin_unlock_irqrestore(&thread->chan->lock, flags);
+> > +	if (readl_poll_timeout_atomic(thread->base + CMDQ_THR_ENABLE_TASK,
+> > +				      enable, enable == 0, 1, timeout)) {
+> > +		dev_err(cmdq->mbox.dev, "Fail to wait GCE thread 0x%x done\n",
+> > +			(u32)(thread->base - cmdq->base));
+> > +
+> > +		return -EFAULT;
+> > +	}
+> > +	return 0;
+> > +}
+> > +
+> >  static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
+> >  	.send_data = cmdq_mbox_send_data,
+> >  	.startup = cmdq_mbox_startup,
+> >  	.shutdown = cmdq_mbox_shutdown,
+> > +	.flush = cmdq_mbox_flush,
+> >  };
+> >  
+> >  static struct mbox_chan *cmdq_xlate(struct mbox_controller *mbox,
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
