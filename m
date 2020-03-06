@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 172AF17C5C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 19:58:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A327717C5C6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 19:58:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yZsKh8YVf9t1Awj+4UHDEcsDFZW3IVA4NAQZCBPfZSc=; b=qKQ8fZx2y2NMEFeJ9GqGo+jMxf
-	9Ys6K9ljEL96NnjBNfIXtpEO3kSCv5bC5Vf5FQdGyysRnG8HEu+MXvwMhPGhV6Y/UxBK+EKv1KUlE
-	c29PqXdSYBI++/PNsYf3gNzdwqa/LOxLXN+n8JoneB6pBvusINGatJsThdOMAmpx7a/lcYIg5ILlN
-	KKAsuGMMghlkf0fmHCD9ciRP2UNgjGV38Gw9MpJhOmiuS8sCunRg6VZ4FaMVUjeApurIu3TphsSRz
-	94zSR3Uc+v11LuWUNJ1CG+IfJt4Hw3sEf5PQ4lDundXKnXh/cMWrnKrYMBlayWHvr9WLxkg6zOuLj
-	eJ6Kakrw==;
+	bh=0tYvMBkyqCFbShNMdwd9NQkOBA0YymuTRwfd0KzVE/w=; b=FFUL+/9iqnnRaqt8JSa9Z5dsJQ
+	2gY8cfQrhJzs7S2zwX8ABMn944x0IXaVxDPad0Eb6fsydGE03DGJjjdcRhUk9ZXZKEMPG8X6Ru1h0
+	HBrl5Pf0I9Dt+dKgoBRDK+GszcPG55h9/+VPU/wFgL0uHpyPrW+2IC8PcUNR/rOf0p2DJVEofPVpx
+	Ds3UNdvyNhyuJVphB1Fnd7qSFhap0hAc/F6hCKIu1rdHY2+8jP3ejZxhzkz1JM5r70uq5Ml+DqcBJ
+	wGgsh8iqceiNqHXJ7asGNlae6qjEgjq/4jXpUecWUf1fcNcOkUE/4+h+JhAhyBGsHHD76hrKBDD/M
+	/AI40e8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAIB1-0003uk-H3; Fri, 06 Mar 2020 18:58:27 +0000
+	id 1jAIBH-0004E8-Lj; Fri, 06 Mar 2020 18:58:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAIAa-0003l9-L4
+ id 1jAIAa-0003lg-JI
  for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 18:58:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AD5B31B;
- Fri,  6 Mar 2020 10:57:57 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47A614B2;
+ Fri,  6 Mar 2020 10:57:58 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8165F3F6C4;
- Fri,  6 Mar 2020 10:57:56 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E23D3F6C4;
+ Fri,  6 Mar 2020 10:57:57 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] arm64: smp: fix smp_send_stop() behaviour
-Date: Fri,  6 Mar 2020 18:57:38 +0000
-Message-Id: <20200306185739.3227-2-cristian.marussi@arm.com>
+Subject: [PATCH 2/2] arm64: smp: fix crash_smp_send_stop() behaviour
+Date: Fri,  6 Mar 2020 18:57:39 +0000
+Message-Id: <20200306185739.3227-3-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200306185739.3227-1-cristian.marussi@arm.com>
 References: <20200306185739.3227-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_105800_822234_4219B8A9 
-X-CRM114-Status: GOOD (  14.52  )
+X-CRM114-CacheID: sfid-20200306_105800_750150_9E56ECB8 
+X-CRM114-Status: GOOD (  17.95  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,102 +70,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On a system with only one CPU online, when another one CPU panics while
-starting-up, smp_send_stop() will fail to send any STOP message to the
-other already online core, resulting in a system still responsive and
-alive at the end of the panic procedure.
+On a system configured to trigger a crash_kexec() reboot, when only one CPU
+is online and another CPU panics while starting-up, crash_smp_send_stop()
+will fail to send any STOP message to the other already online core,
+resulting in fail to freeze and registers not properly saved.
 
-[  186.700083] CPU3: shutdown
-[  187.075462] CPU2: shutdown
-[  187.162869] CPU1: shutdown
-[  188.689998] ------------[ cut here ]------------
-[  188.691645] kernel BUG at arch/arm64/kernel/cpufeature.c:886!
-[  188.692079] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-[  188.692444] Modules linked in:
-[  188.693031] CPU: 3 PID: 0 Comm: swapper/3 Not tainted 5.6.0-rc4-00001-g338d25c35a98 #104
-[  188.693175] Hardware name: Foundation-v8A (DT)
-[  188.693492] pstate: 200001c5 (nzCv dAIF -PAN -UAO)
-[  188.694183] pc : has_cpuid_feature+0xf0/0x348
-[  188.694311] lr : verify_local_elf_hwcaps+0x84/0xe8
-[  188.694410] sp : ffff800011b1bf60
-[  188.694536] x29: ffff800011b1bf60 x28: 0000000000000000
-[  188.694707] x27: 0000000000000000 x26: 0000000000000000
-[  188.694801] x25: 0000000000000000 x24: ffff80001189a25c
-[  188.694905] x23: 0000000000000000 x22: 0000000000000000
-[  188.694996] x21: ffff8000114aa018 x20: ffff800011156a38
-[  188.695089] x19: ffff800010c944a0 x18: 0000000000000004
-[  188.695187] x17: 0000000000000000 x16: 0000000000000000
-[  188.695280] x15: 0000249dbde5431e x14: 0262cbe497efa1fa
-[  188.695371] x13: 0000000000000002 x12: 0000000000002592
-[  188.695472] x11: 0000000000000080 x10: 00400032b5503510
-[  188.695572] x9 : 0000000000000000 x8 : ffff800010c80204
-[  188.695659] x7 : 00000000410fd0f0 x6 : 0000000000000001
-[  188.695750] x5 : 00000000410fd0f0 x4 : 0000000000000000
-[  188.695836] x3 : 0000000000000000 x2 : ffff8000100939d8
-[  188.695919] x1 : 0000000000180420 x0 : 0000000000180480
-[  188.696253] Call trace:
-[  188.696410]  has_cpuid_feature+0xf0/0x348
-[  188.696504]  verify_local_elf_hwcaps+0x84/0xe8
-[  188.696591]  check_local_cpu_capabilities+0x44/0x128
-[  188.696666]  secondary_start_kernel+0xf4/0x188
-[  188.697150] Code: 52805001 72a00301 6b01001f 54000ec0 (d4210000)
-[  188.698639] ---[ end trace 3f12ca47652f7b72 ]---
-[  188.699160] Kernel panic - not syncing: Attempted to kill the idle task!
-[  188.699546] Kernel Offset: disabled
-[  188.699828] CPU features: 0x00004,20c02008
-[  188.700012] Memory Limit: none
-[  188.700538] ---[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
+Moreover even if the proper messages are sent (case CPUs > 2)
+it will similarly fail to account for the booting CPU when executing
+the final stop wait-loop, so potentially resulting in some CPU not
+been waited for shutdown before rebooting.
 
-[root@arch ~]# echo Helo
-Helo
-[root@arch ~]# cat /proc/cpuinfo | grep proce
-processor	: 0
+A tangible effect of this behaviour can be observed when, after a panic
+with kexec enabled and loaded, on the following reboot triggered by kexec,
+the cpu that could not be successfully stopped fails to come back online:
 
-Make smp_send_stop() account also for the online status of the calling CPU
-while evaluating how many CPUs are effectively online: this way, the right
-number of STOPs is sent, so enforcing a proper freeze of the system at the
-end of panic even under the above conditions.
+[  362.291022] ------------[ cut here ]------------
+[  362.291525] kernel BUG at arch/arm64/kernel/cpufeature.c:886!
+[  362.292023] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+[  362.292400] Modules linked in:
+[  362.292970] CPU: 3 PID: 0 Comm: swapper/3 Kdump: loaded Not tainted 5.6.0-rc4-00003-gc780b890948a #105
+[  362.293136] Hardware name: Foundation-v8A (DT)
+[  362.293382] pstate: 200001c5 (nzCv dAIF -PAN -UAO)
+[  362.294063] pc : has_cpuid_feature+0xf0/0x348
+[  362.294177] lr : verify_local_elf_hwcaps+0x84/0xe8
+[  362.294280] sp : ffff800011b1bf60
+[  362.294362] x29: ffff800011b1bf60 x28: 0000000000000000
+[  362.294534] x27: 0000000000000000 x26: 0000000000000000
+[  362.294631] x25: 0000000000000000 x24: ffff80001189a25c
+[  362.294718] x23: 0000000000000000 x22: 0000000000000000
+[  362.294803] x21: ffff8000114aa018 x20: ffff800011156a00
+[  362.294897] x19: ffff800010c944a0 x18: 0000000000000004
+[  362.294987] x17: 0000000000000000 x16: 0000000000000000
+[  362.295073] x15: 00004e53b831ae3c x14: 00004e53b831ae3c
+[  362.295165] x13: 0000000000000384 x12: 0000000000000000
+[  362.295251] x11: 0000000000000000 x10: 00400032b5503510
+[  362.295334] x9 : 0000000000000000 x8 : ffff800010c7e204
+[  362.295426] x7 : 00000000410fd0f0 x6 : 0000000000000001
+[  362.295508] x5 : 00000000410fd0f0 x4 : 0000000000000000
+[  362.295592] x3 : 0000000000000000 x2 : ffff8000100939d8
+[  362.295683] x1 : 0000000000180420 x0 : 0000000000180480
+[  362.296011] Call trace:
+[  362.296257]  has_cpuid_feature+0xf0/0x348
+[  362.296350]  verify_local_elf_hwcaps+0x84/0xe8
+[  362.296424]  check_local_cpu_capabilities+0x44/0x128
+[  362.296497]  secondary_start_kernel+0xf4/0x188
+[  362.296998] Code: 52805001 72a00301 6b01001f 54000ec0 (d4210000)
+[  362.298652] SMP: stopping secondary CPUs
+[  362.300615] Starting crashdump kernel...
+[  362.301168] Bye!
+[    0.000000] Booting Linux on physical CPU 0x0000000003 [0x410fd0f0]
+[    0.000000] Linux version 5.6.0-rc4-00003-gc780b890948a (crimar01@e120937-lin) (gcc version 8.3.0 (GNU Toolchain for the A-profile Architecture 8.3-2019.03 (arm-rel-8.36))) #105 SMP PREEMPT Fri Mar 6 17:00:42 GMT 2020
+[    0.000000] Machine model: Foundation-v8A
+[    0.000000] earlycon: pl11 at MMIO 0x000000001c090000 (options '')
+[    0.000000] printk: bootconsole [pl11] enabled
+.....
+[    0.138024] rcu: Hierarchical SRCU implementation.
+[    0.153472] its@2f020000: unable to locate ITS domain
+[    0.154078] its@2f020000: Unable to locate ITS domain
+[    0.157541] EFI services will not be available.
+[    0.175395] smp: Bringing up secondary CPUs ...
+[    0.209182] psci: failed to boot CPU1 (-22)
+[    0.209377] CPU1: failed to boot: -22
+[    0.274598] Detected PIPT I-cache on CPU2
+[    0.278707] GICv3: CPU2: found redistributor 1 region 0:0x000000002f120000
+[    0.285212] CPU2: Booted secondary processor 0x0000000001 [0x410fd0f0]
+[    0.369053] Detected PIPT I-cache on CPU3
+[    0.372947] GICv3: CPU3: found redistributor 2 region 0:0x000000002f140000
+[    0.378664] CPU3: Booted secondary processor 0x0000000002 [0x410fd0f0]
+[    0.401707] smp: Brought up 1 node, 3 CPUs
+[    0.404057] SMP: Total of 3 processors activated.
 
-Fixes: 08e875c16a16c ("arm64: SMP support")
-Reported-by: Dave Martin <Dave.Martin@arm.com>
+Make crash_smp_send_stop() account also for the online status of the
+calling CPU while evaluating how many CPUs are effectively online: this way
+the right number of STOPs is sent and all other stopped-cores's registers
+are properly saved.
+
+Fixes: 78fd584cdec05 ("arm64: kdump: implement machine_crash_shutdown()")
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
- arch/arm64/kernel/smp.c | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ arch/arm64/kernel/smp.c | 17 +++++++++++++++--
+ 1 file changed, 15 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index d4ed9a19d8fe..55779218ec56 100644
+index 55779218ec56..33466d197b1c 100644
 --- a/arch/arm64/kernel/smp.c
 +++ b/arch/arm64/kernel/smp.c
-@@ -961,8 +961,14 @@ void tick_broadcast(const struct cpumask *mask)
- void smp_send_stop(void)
- {
+@@ -997,6 +997,7 @@ void crash_smp_send_stop(void)
+ 	static int cpus_stopped;
+ 	cpumask_t mask;
  	unsigned long timeout;
 +	unsigned int this_cpu_online = cpu_online(smp_processor_id());
  
--	if (num_online_cpus() > 1) {
+ 	/*
+ 	 * This function can be called twice in panic path, but obviously
+@@ -1007,7 +1008,11 @@ void crash_smp_send_stop(void)
+ 
+ 	cpus_stopped = 1;
+ 
+-	if (num_online_cpus() == 1) {
 +	/*
-+	 * If this CPU isn't fully online, it will not be counted in
-+	 * num_online_cpus(): on a 2-CPU system this situation will
-+	 * result in no message being sent to the other already online CPU.
++	 * If this cpu is the only one alive at this point in time, online or
++	 * not, there are no stop messages to be sent around, so just back out.
 +	 */
-+	if (num_online_cpus() > this_cpu_online) {
- 		cpumask_t mask;
++	if (num_online_cpus() == this_cpu_online) {
+ 		sdei_mask_local_cpu();
+ 		return;
+ 	}
+@@ -1015,7 +1020,15 @@ void crash_smp_send_stop(void)
+ 	cpumask_copy(&mask, cpu_online_mask);
+ 	cpumask_clear_cpu(smp_processor_id(), &mask);
  
- 		cpumask_copy(&mask, cpu_online_mask);
-@@ -975,10 +981,10 @@ void smp_send_stop(void)
+-	atomic_set(&waiting_for_crash_ipi, num_online_cpus() - 1);
++	/*
++	 * Account for the online status of this cpu when counting for
++	 * waiting cpus; note that always holds true that:
++	 *
++	 *	num_online_cpus() >= this_cpu_online
++	 *
++	 * so the following subtraction is safe.
++	 */
++	atomic_set(&waiting_for_crash_ipi, num_online_cpus() - this_cpu_online);
  
- 	/* Wait up to one second for other CPUs to stop */
- 	timeout = USEC_PER_SEC;
--	while (num_online_cpus() > 1 && timeout--)
-+	while (num_online_cpus() > this_cpu_online && timeout--)
- 		udelay(1);
- 
--	if (num_online_cpus() > 1)
-+	if (num_online_cpus() > this_cpu_online)
- 		pr_warn("SMP: failed to stop secondary CPUs %*pbl\n",
- 			cpumask_pr_args(cpu_online_mask));
- 
+ 	pr_crit("SMP: stopping secondary CPUs\n");
+ 	smp_cross_call(&mask, IPI_CPU_CRASH_STOP);
 -- 
 2.17.1
 
