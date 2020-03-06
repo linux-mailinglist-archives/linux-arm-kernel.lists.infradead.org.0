@@ -2,90 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED5C917BB95
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:24:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9989F17BBA2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:26:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0ui2gkRUi5Dl8qltNTrwp+x5Ru9ufpoFBQyx1go3p+8=; b=WwtenBuB7/RngY
-	JErVVoBH5Ny1+REddx8CqZTuy0yisdmrVnrDEqWjIaJHZoI3aypFuV+hJS4oAVoRmLt4gtVTqVmrf
-	qvfGkirG2OgFzGpEYSCOWrqJjp6PjntDmUR7XMn5UFB7Tb+hTX1pvrT2ZW3pMAU9XIxyyFqbOf2IM
-	Lf3WZuLzBNLHgXbPYJ+bvex//TrQa4b4WlgKjNSftzbd9RdnUMfCTftWkUOaciwrFNeGOG6wPyc/c
-	2hDVU4jJQjcdKscTaujq2dtEZOpYmdoL71RxKeRacsMVJDoJ6ND0WJBkIVl3c9inU0xsVLtViCDSd
-	S9t7fZcsGDHI2HglHIyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
+	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LgevzccRrVf/Lz727/mUp8xSgRyoa84WeZEuFrkyfbg=; b=J0SMHkM/rSvOPlE8Uylu7lBrw
+	MWF7QUg/RZ16XBc7KivgVd1dL6+v7xGYQJeuUsl/2X47d6Zp6uy+zXIotIaIiPMtIzpVAXzohNSf1
+	EvMzkRb0pf7lOqRS4Mk4V5lPGbTETw6k7HabWjckj1w+sk1bNfd5Zi+TDLfPDV1+Lie10IZ6eQv8B
+	OyoswO9kz2piX7w7p+OtEsLqRWmscA+kuHRVNqru/M0eOCLluPWnpjTNhxpy4cdXwcJGHCFFHKg3J
+	ElLcPPQUbz7c397jl+XJsTppyY5116uuQwa0MfBeR6T5X8fdq1MnHhmfn/YQpKc+GFkm/m0lDHDVV
+	oL4Gp7XiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAB5G-0004M0-1d; Fri, 06 Mar 2020 11:24:02 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jAB7n-0006D3-O3; Fri, 06 Mar 2020 11:26:39 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAB4z-0004Jl-BW
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:23:49 +0000
-Received: by mail-pg1-x542.google.com with SMTP id t3so954014pgn.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 03:23:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=eQt7Spt+56Zw5leX6poGtsz5rSuCfvoeTR4cTyC86Ws=;
- b=R8Wj2wtNT217E55N3SWYzkGXtnhPOMzLzfqkOaeuueNbRT6KlDuop6EVp4VuFailJT
- AH86S0u7mhWhWCWBcyayBaZmZa/pU54JNB2LkBieb5XiWS6/e0zFuWLUJOD2/mSgayLK
- k5GEfCiurGnCSj/hlYna6M9Oxkk3gTZjXtHmQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=eQt7Spt+56Zw5leX6poGtsz5rSuCfvoeTR4cTyC86Ws=;
- b=gxY9bulH3j5Co464xeyu3x8Tse7zMF/NeY/Ejo+JKPOvgrNuu4PLa1hxfkz48+Hvjm
- Sa+6jkNZPRee7XP24Kzihnltj3VoVRLwnpGvbrGsiZIsUVzJGvs/QVWgPwHF6l7zlEQB
- f65nif8i9YmQgy4uSFz2aMn0KkgcWoD4LCTTRTaPzTkHgN7MIxlhEdMLEDpCa4R3Ef5P
- JqB6dkcWRDQwXWVQUpX4rryP2tRmEw8e4e9drSo0jH1cNrAOlFlQW139N/0uAD+wMawj
- qMd+2AKYQIW1xkHsrVAexWvwhNuZnf4ACPAcFHqNH9PTuoYB+Do2GsytjVZKwz9oPlRH
- FoWg==
-X-Gm-Message-State: ANhLgQ2wgSCxUFNoPT+V8+SdnaoJZRRM4MOS6RXjtkU2nTeF0pCUhAPT
- 9YtCXfwGrxL+wMmonpXzGU6Vnw==
-X-Google-Smtp-Source: ADFU+vv2BeysPFqXGnk9JIiDUT10lVb2/Ebyj//Dn0n+/g5zByMVpfbp9JUIaVtYMyS+C2RsWp5q0w==
-X-Received: by 2002:a63:ba05:: with SMTP id k5mr2818530pgf.174.1583493823111; 
- Fri, 06 Mar 2020 03:23:43 -0800 (PST)
-Received: from chromium.org ([2401:fa00:8f:203:f5fe:2a5e:f953:c0ed])
- by smtp.gmail.com with ESMTPSA id jx10sm9253484pjb.33.2020.03.06.03.23.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Mar 2020 03:23:42 -0800 (PST)
-Date: Fri, 6 Mar 2020 20:23:37 +0900
-From: Tomasz Figa <tfiga@chromium.org>
-To: Xia Jiang <xia.jiang@mediatek.com>
-Subject: Re: [PATCH v7 11/11] media: platform: Add jpeg dec/enc feature
-Message-ID: <20200306112337.GA163286@chromium.org>
-References: <20200303123446.20095-1-xia.jiang@mediatek.com>
- <20200303123446.20095-12-xia.jiang@mediatek.com>
+ id 1jAB7d-0006CB-JC; Fri, 06 Mar 2020 11:26:31 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 06 Mar 2020 03:26:27 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,518,1574150400"; 
+ d="gz'50?scan'50,208,50";a="259532166"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga002.jf.intel.com with ESMTP; 06 Mar 2020 03:26:21 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jAB7U-000C4d-V9; Fri, 06 Mar 2020 19:26:20 +0800
+Date: Fri, 6 Mar 2020 19:26:15 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Subject: Re: [PATCH v5 2/4] arm64: dts: mt8183: Add node for the Mali GPU
+Message-ID: <202003061908.5mJFKE6Q%lkp@intel.com>
+References: <20200306041345.259332-3-drinkcat@chromium.org>
 MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="zYM0uCDKw75PZbzx"
 Content-Disposition: inline
-In-Reply-To: <20200303123446.20095-12-xia.jiang@mediatek.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20200306041345.259332-3-drinkcat@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_032345_442389_7AB987D3 
-X-CRM114-Status: GOOD (  24.94  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20200306_032629_738179_A2219520 
+X-CRM114-Status: UNSURE (   4.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org] 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
- [URI: r.top (top)]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,1977 +71,964 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- Rick Chang <rick.chang@mediatek.com>, linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-mediatek@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ kbuild-all@lists.01.org, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel@lists.freedesktop.org, Steven Price <steven.price@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Nick Fan <nick.fan@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Xia,
 
-On Tue, Mar 03, 2020 at 08:34:46PM +0800, Xia Jiang wrote:
-> Add mtk jpeg encode v4l2 driver based on jpeg decode, because that jpeg
-> decode and encode have great similarities with function operation.
-
-Thank you for the patch. Please see my comments inline.
-
-[snip]
-
-> @@ -51,6 +54,42 @@ static struct mtk_jpeg_fmt mtk_jpeg_formats[] = {
->  		.v_align	= 3,
->  		.flags		= MTK_JPEG_FMT_FLAG_DEC_CAPTURE,
->  	},
-> +	{
-> +		.fourcc		= V4L2_PIX_FMT_NV12M,
-> +		.h_sample	= {4, 2, 2},
-> +		.v_sample	= {4, 2, 2},
-> +		.colplanes	= 2,
-> +		.h_align	= 4,
-> +		.v_align	= 4,
-> +		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-> +	},
-> +	{
-> +		.fourcc		= V4L2_PIX_FMT_NV21M,
-> +		.h_sample	= {4, 2, 2},
-> +		.v_sample	= {4, 2, 2},
-> +		.colplanes	= 2,
-> +		.h_align	= 4,
-> +		.v_align	= 4,
-> +		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-> +	},
-> +	{
-> +		.fourcc		= V4L2_PIX_FMT_YUYV,
-> +		.h_sample	= {4, 2, 2},
-> +		.v_sample	= {4, 4, 4},
-> +		.colplanes	= 1,
-> +		.h_align	= 4,
-> +		.v_align	= 3,
-> +		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-> +	},
-> +	{
-> +		.fourcc		= V4L2_PIX_FMT_YVYU,
-> +		.h_sample	= {4, 2, 2},
-> +		.v_sample	= {4, 4, 4},
-> +		.colplanes	= 1,
-> +		.h_align	= 4,
-> +		.v_align	= 3,
-> +		.flags		= MTK_JPEG_FMT_FLAG_ENC_OUTPUT,
-> +	},
->  };
-
-Since the encoder and decoder don't seem to share almost any format,
-perhaps it would make sense to just have separate format arrays for both?
-
->  
->  #define MTK_JPEG_NUM_FORMATS ARRAY_SIZE(mtk_jpeg_formats)
-> @@ -70,6 +109,11 @@ struct mtk_jpeg_src_buf {
->  static int debug;
->  module_param(debug, int, 0644);
->  
-> +static inline struct mtk_jpeg_ctx *ctrl_to_ctx(struct v4l2_ctrl *ctrl)
-> +{
-> +	return container_of(ctrl->handler, struct mtk_jpeg_ctx, ctrl_hdl);
-> +}
-> +
->  static inline struct mtk_jpeg_ctx *mtk_jpeg_fh_to_ctx(struct v4l2_fh *fh)
->  {
->  	return container_of(fh, struct mtk_jpeg_ctx, fh);
-> @@ -86,14 +130,69 @@ static int mtk_jpeg_querycap(struct file *file, void *priv,
->  {
->  	struct mtk_jpeg_dev *jpeg = video_drvdata(file);
->  
-> -	strscpy(cap->driver, MTK_JPEG_NAME " decoder", sizeof(cap->driver));
-> -	strscpy(cap->card, MTK_JPEG_NAME " decoder", sizeof(cap->card));
-> +	strscpy(cap->driver, MTK_JPEG_NAME, sizeof(cap->driver));
-> +	if (jpeg->mode ==  MTK_JPEG_ENC)
-> +		strscpy(cap->card, MTK_JPEG_NAME " encoder", sizeof(cap->card));
-> +	else
-> +		strscpy(cap->card, MTK_JPEG_NAME " decoder", sizeof(cap->card));
->  	snprintf(cap->bus_info, sizeof(cap->bus_info), "platform:%s",
->  		 dev_name(jpeg->dev));
->  
->  	return 0;
->  }
->  
-> +static int vidioc_jpeg_s_ctrl(struct v4l2_ctrl *ctrl)
-> +{
-> +	struct mtk_jpeg_ctx *ctx = ctrl_to_ctx(ctrl);
-> +	int ret = 0;
-> +
-> +	switch (ctrl->id) {
-> +	case V4L2_CID_JPEG_RESTART_INTERVAL:
-> +		ctx->restart_interval = ctrl->val;
-> +		break;
-> +	case V4L2_CID_JPEG_COMPRESSION_QUALITY:
-> +		ctx->enc_quality = ctrl->val;
-> +		break;
-> +	case V4L2_CID_JPEG_ACTIVE_MARKER:
-> +		ctx->enable_exif = ctrl->val & V4L2_JPEG_ACTIVE_MARKER_APP1;
-> +		break;
-> +	}
-> +
-> +	return ret;
-
-Wouldn't it be enough to just return 0 directly and remove ret?
-
-> +}
-> +
-> +static const struct v4l2_ctrl_ops mtk_jpeg_ctrl_ops = {
-> +	.s_ctrl = vidioc_jpeg_s_ctrl,
-> +};
-> +
-> +static int mtk_jpeg_ctrls_setup(struct mtk_jpeg_ctx *ctx)
-> +{
-> +	const struct v4l2_ctrl_ops *ops = &mtk_jpeg_ctrl_ops;
-> +	struct v4l2_ctrl_handler *handler = &ctx->ctrl_hdl;
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
-> +
-> +	v4l2_ctrl_handler_init(handler, 3);
-> +
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-> +		v4l2_ctrl_new_std(handler, ops, V4L2_CID_JPEG_RESTART_INTERVAL,
-> +				  0, 100, 1, 0);
-> +		v4l2_ctrl_new_std(handler, ops,
-> +				  V4L2_CID_JPEG_COMPRESSION_QUALITY, 48, 100, 1,
-> +				  90);
-> +		v4l2_ctrl_new_std(handler, ops, V4L2_CID_JPEG_ACTIVE_MARKER, 0,
-> +				  V4L2_JPEG_ACTIVE_MARKER_APP1, 0, 0);
-> +
-> +		if (handler->error) {
-> +			v4l2_ctrl_handler_free(&ctx->ctrl_hdl);
-> +			return handler->error;
-> +		}
-> +	}
-> +
-> +	v4l2_ctrl_handler_setup(&ctx->ctrl_hdl);
-> +
-> +	return 0;
-> +}
-> +
->  static int mtk_jpeg_enum_fmt(struct mtk_jpeg_fmt *mtk_jpeg_formats, int n,
->  			     struct v4l2_fmtdesc *f, u32 type)
->  {
-> @@ -118,19 +217,27 @@ static int mtk_jpeg_enum_fmt(struct mtk_jpeg_fmt *mtk_jpeg_formats, int n,
->  static int mtk_jpeg_enum_fmt_vid_cap(struct file *file, void *priv,
->  				     struct v4l2_fmtdesc *f)
->  {
-> +	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +
->  	return mtk_jpeg_enum_fmt(mtk_jpeg_formats, MTK_JPEG_NUM_FORMATS, f,
-> +				 ctx->jpeg->mode == MTK_JPEG_ENC ?
-> +				 MTK_JPEG_FMT_FLAG_ENC_CAPTURE :
->  				 MTK_JPEG_FMT_FLAG_DEC_CAPTURE);
-
-We wouldn't need this special casing if we separate the format arrays.
-
->  }
->  
->  static int mtk_jpeg_enum_fmt_vid_out(struct file *file, void *priv,
->  				     struct v4l2_fmtdesc *f)
->  {
-> +	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +
->  	return mtk_jpeg_enum_fmt(mtk_jpeg_formats, MTK_JPEG_NUM_FORMATS, f,
-> +				 ctx->jpeg->mode == MTK_JPEG_ENC ?
-> +				 MTK_JPEG_FMT_FLAG_ENC_OUTPUT :
->  				 MTK_JPEG_FMT_FLAG_DEC_OUTPUT);
-
-Ditto.
-
->  }
->  
-> -static struct mtk_jpeg_q_data *mtk_jpeg_get_q_data(struct mtk_jpeg_ctx *ctx,
-> -						   enum v4l2_buf_type type)
-> +static struct mtk_jpeg_q_data *
-> +mtk_jpeg_get_q_data(struct mtk_jpeg_ctx *ctx, enum v4l2_buf_type type)
->  {
->  	if (V4L2_TYPE_IS_OUTPUT(type))
->  		return &ctx->out_q;
-> @@ -143,9 +250,14 @@ static struct mtk_jpeg_fmt *mtk_jpeg_find_format(struct mtk_jpeg_ctx *ctx,
->  {
->  	unsigned int k, fmt_flag;
->  
-> -	fmt_flag = (fmt_type == MTK_JPEG_FMT_TYPE_OUTPUT) ?
-> -		   MTK_JPEG_FMT_FLAG_DEC_OUTPUT :
-> -		   MTK_JPEG_FMT_FLAG_DEC_CAPTURE;
-> +	if (ctx->jpeg->mode ==  MTK_JPEG_ENC)
-> +		fmt_flag = (fmt_type == MTK_JPEG_FMT_TYPE_OUTPUT) ?
-> +			   MTK_JPEG_FMT_FLAG_ENC_OUTPUT :
-> +			   MTK_JPEG_FMT_FLAG_ENC_CAPTURE;
-> +	else
-> +		fmt_flag = (fmt_type == MTK_JPEG_FMT_TYPE_OUTPUT) ?
-> +			   MTK_JPEG_FMT_FLAG_DEC_OUTPUT :
-> +			   MTK_JPEG_FMT_FLAG_DEC_CAPTURE;
-
-Ditto.
-
->  
->  	for (k = 0; k < MTK_JPEG_NUM_FORMATS; k++) {
->  		struct mtk_jpeg_fmt *fmt = &mtk_jpeg_formats[k];
-> @@ -177,9 +289,73 @@ static void mtk_jpeg_adjust_fmt_mplane(struct mtk_jpeg_ctx *ctx,
->  	}
->  }
->  
-> -static int mtk_jpeg_try_fmt_mplane(struct v4l2_format *f,
-> -				   struct mtk_jpeg_fmt *fmt,
-> -				   struct mtk_jpeg_ctx *ctx, int q_type)
-> +static int mtk_jpeg_try_enc_fmt_mplane(struct v4l2_format *f,
-> +				       struct mtk_jpeg_fmt *fmt,
-> +				       struct mtk_jpeg_ctx *ctx, int q_type)
-> +{
-> +	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
-> +	int i;
-> +
-> +	memset(pix_mp->reserved, 0, sizeof(pix_mp->reserved));
-
-Zeroing the reserved fields is handled by the core.
-
-> +	pix_mp->field = V4L2_FIELD_NONE;
-> +
-> +	if (ctx->state != MTK_JPEG_INIT) {
-
-Is this really the right condition? As per V4L2 semantics, the format can't
-be changed when the queue has buffers allocated (vb2_is_busy()). Also,
-CAPTURE queue of the encoder doesn't have anything that could be changed,
-as the pixelformat is always JPEG and the rest determined by the OUTPUT
-queue, so perhaps it should have all the G_/TRY_/S_FMT ioctls implemented
-like G_FMT?
-
-> +		mtk_jpeg_adjust_fmt_mplane(ctx, f);
-
-The name of thi function sounds like it adjusts something, but it
-effectively just gets the current format. Why not just call the
-implementation of G_FMT directly?
-
-> +		return 0;
-> +	}
-> +
-> +	pix_mp->num_planes = fmt->colplanes;
-> +	pix_mp->pixelformat = fmt->fourcc;
-> +
-> +	if (q_type == MTK_JPEG_FMT_TYPE_OUTPUT) {
-
-Why the custom queue type macro? Could we use standard definitions instead?
-I.e. V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE.
-
-> +		if (pix_mp->num_planes == 1U) {
-
-nit: It is unusual to add the U prefix in comparisions like this.
-
-> +			pix_mp->height = clamp(round_up(pix_mp->height, 8),
-> +					       MTK_JPEG_MIN_HEIGHT,
-> +					       MTK_JPEG_MAX_HEIGHT);
-> +			pix_mp->width = clamp(round_up(pix_mp->width, 32),
-> +					      MTK_JPEG_MIN_WIDTH,
-> +					      MTK_JPEG_MAX_WIDTH);
-> +			pix_mp->plane_fmt[0].bytesperline = pix_mp->width * 2;
-> +			pix_mp->plane_fmt[0].sizeimage =
-> +				pix_mp->width * pix_mp->height * 2;
-> +		}
-> +		if (pix_mp->num_planes == 2U) {
-> +			pix_mp->height = clamp(round_up(pix_mp->height, 16),
-> +					       MTK_JPEG_MIN_HEIGHT,
-> +					       MTK_JPEG_MAX_HEIGHT);
-> +			pix_mp->width = clamp(round_up(pix_mp->width, 16),
-> +					      MTK_JPEG_MIN_WIDTH,
-> +					      MTK_JPEG_MAX_WIDTH);
-> +			for (i = 0; i < pix_mp->num_planes; i++) {
-> +				pix_mp->plane_fmt[i].bytesperline =
-> +					pix_mp->width;
-> +				pix_mp->plane_fmt[i].sizeimage =
-> +					pix_mp->width * pix_mp->height /
-> +					(i + 1);
-> +			}
-> +		}
-> +	} else {
-> +		pix_mp->height = clamp(pix_mp->height, MTK_JPEG_MIN_HEIGHT,
-> +				       MTK_JPEG_MAX_HEIGHT);
-> +		pix_mp->width = clamp(pix_mp->width, MTK_JPEG_MIN_WIDTH,
-> +				      MTK_JPEG_MAX_WIDTH);
-> +
-> +		if (fmt->fourcc == V4L2_PIX_FMT_JPEG) {
-> +			pix_mp->plane_fmt[0].bytesperline = 0;
-> +			pix_mp->plane_fmt[0].sizeimage =
-> +				round_up(pix_mp->plane_fmt[0].sizeimage, 128);
-> +			if (pix_mp->plane_fmt[0].sizeimage == 0)
-> +				pix_mp->plane_fmt[0].sizeimage =
-> +					MTK_JPEG_DEFAULT_SIZEIMAGE;
-> +		}
-> +	}
-> +
-> +	return 0;
-> +}
-
-It doesn't look like the function above does anything specific to the
-encoder. It just does generic format adjustment.
-
-Could we just add various format parameters to the mtk_jpeg_fmt struct and
-have a generic function that is shared by both encoder and decoder? That
-would also let us remove the conditional code for queue type, because the
-operations below actually depend on the format, not the queue.
-
-> +
-> +static int mtk_jpeg_try_dec_fmt_mplane(struct v4l2_format *f,
-> +				       struct mtk_jpeg_fmt *fmt,
-> +				       struct mtk_jpeg_ctx *ctx, int q_type)
->  {
->  	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
->  	int i;
-> @@ -286,6 +462,7 @@ static int mtk_jpeg_try_fmt_vid_cap_mplane(struct file *file, void *priv,
->  {
->  	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
->  	struct mtk_jpeg_fmt *fmt;
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
->  
->  	fmt = mtk_jpeg_find_format(ctx, f->fmt.pix_mp.pixelformat,
->  				   MTK_JPEG_FMT_TYPE_CAPTURE);
-> @@ -299,7 +476,12 @@ static int mtk_jpeg_try_fmt_vid_cap_mplane(struct file *file, void *priv,
->  		 (fmt->fourcc >> 16 & 0xff),
->  		 (fmt->fourcc >> 24 & 0xff));
->  
-> -	return mtk_jpeg_try_fmt_mplane(f, fmt, ctx, MTK_JPEG_FMT_TYPE_CAPTURE);
-> +	if (jpeg->mode == MTK_JPEG_ENC)
-> +		return mtk_jpeg_try_enc_fmt_mplane(f, fmt, ctx,
-> +						   MTK_JPEG_FMT_TYPE_CAPTURE);
-> +	else
-> +		return mtk_jpeg_try_dec_fmt_mplane(f, fmt, ctx,
-> +						   MTK_JPEG_FMT_TYPE_CAPTURE);
-
-With a generic format adjustment function we wouldn't need this special
-casing.
-
->  }
->  
->  static int mtk_jpeg_try_fmt_vid_out_mplane(struct file *file, void *priv,
-> @@ -307,6 +489,7 @@ static int mtk_jpeg_try_fmt_vid_out_mplane(struct file *file, void *priv,
->  {
->  	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
->  	struct mtk_jpeg_fmt *fmt;
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
->  
->  	fmt = mtk_jpeg_find_format(ctx, f->fmt.pix_mp.pixelformat,
->  				   MTK_JPEG_FMT_TYPE_OUTPUT);
-> @@ -320,7 +503,12 @@ static int mtk_jpeg_try_fmt_vid_out_mplane(struct file *file, void *priv,
->  		 (fmt->fourcc >> 16 & 0xff),
->  		 (fmt->fourcc >> 24 & 0xff));
->  
-> -	return mtk_jpeg_try_fmt_mplane(f, fmt, ctx, MTK_JPEG_FMT_TYPE_OUTPUT);
-> +	if (jpeg->mode == MTK_JPEG_ENC)
-> +		return mtk_jpeg_try_enc_fmt_mplane(f, fmt, ctx,
-> +						   MTK_JPEG_FMT_TYPE_OUTPUT);
-> +	else
-> +		return mtk_jpeg_try_dec_fmt_mplane(f, fmt, ctx,
-> +						   MTK_JPEG_FMT_TYPE_OUTPUT);
-
-Ditto.
-
->  }
->  
->  static int mtk_jpeg_s_fmt_mplane(struct mtk_jpeg_ctx *ctx,
-> @@ -425,28 +613,48 @@ static int mtk_jpeg_g_selection(struct file *file, void *priv,
->  				struct v4l2_selection *s)
->  {
->  	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
->  
-> -	if (s->type != V4L2_BUF_TYPE_VIDEO_CAPTURE)
-> -		return -EINVAL;
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-> +		if (s->type != V4L2_BUF_TYPE_VIDEO_OUTPUT)
-> +			return -EINVAL;
-
-Instead of repeating the if/else in every callback, could we instead
-provide separate ops structs for encoder and decoder so they can have
-separate callbacks for those that need to differ significantly?
-
->  
-> -	switch (s->target) {
-> -	case V4L2_SEL_TGT_COMPOSE:
-> -	case V4L2_SEL_TGT_COMPOSE_DEFAULT:
-> -		s->r.width = ctx->out_q.w;
-> -		s->r.height = ctx->out_q.h;
-> -		s->r.left = 0;
-> -		s->r.top = 0;
-> -		break;
-> -	case V4L2_SEL_TGT_COMPOSE_BOUNDS:
-> -	case V4L2_SEL_TGT_COMPOSE_PADDED:
-> -		s->r.width = ctx->cap_q.w;
-> -		s->r.height = ctx->cap_q.h;
-> -		s->r.left = 0;
-> -		s->r.top = 0;
-> -		break;
-> -	default:
-> -		return -EINVAL;
-> +		switch (s->target) {
-> +		case V4L2_SEL_TGT_CROP:
-> +		case V4L2_SEL_TGT_CROP_BOUNDS:
-> +		case V4L2_SEL_TGT_CROP_DEFAULT:
-> +			s->r.width = ctx->out_q.w;
-> +			s->r.height = ctx->out_q.h;
-> +			s->r.left = 0;
-> +			s->r.top = 0;
-> +			break;
-> +		default:
-> +			return -EINVAL;
-> +		}
-> +	} else {
-> +		if (s->type != V4L2_BUF_TYPE_VIDEO_CAPTURE)
-> +			return -EINVAL;
-> +
-> +		switch (s->target) {
-> +		case V4L2_SEL_TGT_COMPOSE:
-> +		case V4L2_SEL_TGT_COMPOSE_DEFAULT:
-> +			s->r.width = ctx->out_q.w;
-> +			s->r.height = ctx->out_q.h;
-> +			s->r.left = 0;
-> +			s->r.top = 0;
-> +			break;
-> +		case V4L2_SEL_TGT_COMPOSE_BOUNDS:
-> +		case V4L2_SEL_TGT_COMPOSE_PADDED:
-> +			s->r.width = ctx->cap_q.w;
-> +			s->r.height = ctx->cap_q.h;
-> +			s->r.left = 0;
-> +			s->r.top = 0;
-> +			break;
-> +		default:
-> +			return -EINVAL;
-> +		}
->  	}
-> +
->  	return 0;
->  }
->  
-> @@ -454,20 +662,38 @@ static int mtk_jpeg_s_selection(struct file *file, void *priv,
->  				struct v4l2_selection *s)
->  {
->  	struct mtk_jpeg_ctx *ctx = mtk_jpeg_fh_to_ctx(priv);
-> +	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
->  
-> -	if (s->type != V4L2_BUF_TYPE_VIDEO_CAPTURE)
-> -		return -EINVAL;
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-> +		if (s->type != V4L2_BUF_TYPE_VIDEO_OUTPUT)
-> +			return -EINVAL;
-
-Ditto.
-
->  
-> -	switch (s->target) {
-> -	case V4L2_SEL_TGT_COMPOSE:
-> -		s->r.left = 0;
-> -		s->r.top = 0;
-> -		ctx->out_q.w = s->r.width;
-> -		ctx->out_q.h = s->r.height;
-> -		break;
-> -	default:
-> -		return -EINVAL;
-> +		switch (s->target) {
-> +		case V4L2_SEL_TGT_CROP:
-> +			s->r.left = 0;
-> +			s->r.top = 0;
-> +			ctx->out_q.w = s->r.width;
-> +			ctx->out_q.h = s->r.height;
-
-What happens if the userspace provides a value bigger than current format?
-
-> +			break;
-> +		default:
-> +			return -EINVAL;
-> +		}
-> +	} else {
-> +		if (s->type != V4L2_BUF_TYPE_VIDEO_CAPTURE)
-> +			return -EINVAL;
-> +
-> +		switch (s->target) {
-> +		case V4L2_SEL_TGT_COMPOSE:
-> +			s->r.left = 0;
-> +			s->r.top = 0;
-> +			ctx->out_q.w = s->r.width;
-> +			ctx->out_q.h = s->r.height;
-
-This is about existing code, but perhaps needs to be fixed. Shouldn't the
-decoder compose rectangle be read-only, as it means the visible size of the
-decoded JPEG as per the image metadata?
-
-> +			break;
-> +		default:
-> +			return -EINVAL;
-> +		}
->  	}
-> +
->  	return 0;
->  }
->  
-> @@ -643,29 +869,42 @@ static void mtk_jpeg_buf_queue(struct vb2_buffer *vb)
->  		goto end;
->  
->  	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(vb);
-> -	param = &jpeg_src_buf->dec_param;
-> -	memset(param, 0, sizeof(*param));
-> -
-> -	if (jpeg_src_buf->flags & MTK_JPEG_BUF_FLAGS_LAST_FRAME) {
-> -		v4l2_dbg(1, debug, &jpeg->v4l2_dev, "Got eos\n");
-> -		goto end;
-> -	}
-> -	header_valid = mtk_jpeg_parse(param, (u8 *)vb2_plane_vaddr(vb, 0),
-> -				      vb2_get_plane_payload(vb, 0));
-> -	if (!header_valid) {
-> -		v4l2_err(&jpeg->v4l2_dev, "Header invalid.\n");
-> -		vb2_buffer_done(vb, VB2_BUF_STATE_ERROR);
-> -		return;
-> -	}
-> -
-> -	if (ctx->state == MTK_JPEG_INIT) {
-> -		struct vb2_queue *dst_vq = v4l2_m2m_get_vq(
-> -			ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE);
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-> +		if (jpeg_src_buf->flags & MTK_JPEG_BUF_FLAGS_LAST_FRAME) {
-> +			v4l2_dbg(1, debug, &jpeg->v4l2_dev, "Got eos");
-> +			goto end;
-> +		}
-> +		if (ctx->state == MTK_JPEG_INIT)
-> +			ctx->state = MTK_JPEG_RUNNING;
-
-Why does the state change here? Queuing buffers is a repetitive operation.
-What's special about the first buffer?
-
-Perhaps the state should change when we start streaming on both queues?
-
-(On a side note, I don't see a need for ctx->state in case of the encoder.
-The information provided by vb2 by the means of vb2_is_busy() or
-vb2_is_streaming() should be enough.)
-
-> +	} else {
-> +		param = &jpeg_src_buf->dec_param;
-> +		memset(param, 0, sizeof(*param));
-> +
-> +		if (jpeg_src_buf->flags & MTK_JPEG_BUF_FLAGS_LAST_FRAME) {
-> +			v4l2_dbg(1, debug, &jpeg->v4l2_dev, "Got eos\n");
-> +			goto end;
-> +		}
-> +		header_valid = mtk_jpeg_parse(param,
-> +					      (u8 *)vb2_plane_vaddr(vb, 0),
-> +					      vb2_get_plane_payload(vb, 0));
-> +		if (!header_valid) {
-> +			v4l2_err(&jpeg->v4l2_dev, "Header invalid.\n");
-> +			vb2_buffer_done(vb, VB2_BUF_STATE_ERROR);
-> +			return;
-> +		}
->  
-> -		mtk_jpeg_queue_src_chg_event(ctx);
-> -		mtk_jpeg_set_queue_data(ctx, param);
-> -		ctx->state = vb2_is_streaming(dst_vq) ?
-> -				MTK_JPEG_SOURCE_CHANGE : MTK_JPEG_RUNNING;
-> +		if (ctx->state == MTK_JPEG_INIT) {
-> +			struct vb2_queue *dst_vq;
-> +
-> +			dst_vq = v4l2_m2m_get_vq
-> +					(ctx->fh.m2m_ctx,
-> +					 V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE);
-> +			mtk_jpeg_queue_src_chg_event(ctx);
-> +			mtk_jpeg_set_queue_data(ctx, param);
-> +			ctx->state = vb2_is_streaming(dst_vq) ?
-> +					MTK_JPEG_SOURCE_CHANGE :
-> +					MTK_JPEG_RUNNING;
-> +		}
->  	}
->  end:
->  	v4l2_m2m_buf_queue(ctx->fh.m2m_ctx, to_vb2_v4l2_buffer(vb));
-
-It sounds like we would also benefit from just having separate callbacks
-for encoder an decoder here.
-
-The code isn't included in this patch, but start_streaming implementation
-has a problem that I want to point out:
-
-	static int mtk_jpeg_start_streaming(struct vb2_queue *q, unsigned int count)
-	{
-		struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-		struct vb2_v4l2_buffer *vb;
-		int ret = 0;
-	
-		ret = pm_runtime_get_sync(ctx->jpeg->dev);
-		if (ret < 0)
-			goto err;
-
-This is a memory to memory device, so it doesn't need to keep running all
-the time when streaming is enabled. One would normally call
-pm_runtime_get_sync() before starting a frame and then pm_runtime_put()
-after completing it. This would save power for the time between processing
-two frames.
-
-		return 0;
-	err:
-		while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
-			v4l2_m2m_buf_done(vb, VB2_BUF_STATE_QUEUED);
-		return ret;
-	}
-
-> @@ -708,16 +947,16 @@ static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
->  	 * subsampling. Update capture queue when the stream is off.
->  	 */
->  	if (ctx->state == MTK_JPEG_SOURCE_CHANGE &&
-> -	    !V4L2_TYPE_IS_OUTPUT(q->type)) {
-> +	    !V4L2_TYPE_IS_OUTPUT(q->type) &&
-> +	    ctx->jpeg->mode == MTK_JPEG_DEC) {
->  		struct mtk_jpeg_src_buf *src_buf;
->  
->  		vb = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
->  		src_buf = mtk_jpeg_vb2_to_srcbuf(&vb->vb2_buf);
->  		mtk_jpeg_set_queue_data(ctx, &src_buf->dec_param);
->  		ctx->state = MTK_JPEG_RUNNING;
-> -	} else if (V4L2_TYPE_IS_OUTPUT(q->type)) {
-> +	} else if (V4L2_TYPE_IS_OUTPUT(q->type))
->  		ctx->state = MTK_JPEG_INIT;
-> -	}
-
-Wouldn't it be possible that at this point the encoder is actually in
-process of encoding a frame? Wouldn't this code race with the interrupt
-handler?
-
->  
->  	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
->  		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> @@ -772,6 +1011,45 @@ static int mtk_jpeg_set_dec_dst(struct mtk_jpeg_ctx *ctx,
->  	return 0;
->  }
->  
-> +static void mtk_jpeg_set_enc_dst(struct mtk_jpeg_ctx *ctx, void __iomem *base,
-> +				 struct vb2_buffer *dst_buf,
-> +				 struct mtk_jpeg_enc_bs *bs)
-> +{
-> +	bs->dma_addr = vb2_dma_contig_plane_dma_addr(dst_buf, 0);
-> +	bs->dma_addr_offset = ctx->enable_exif ? MTK_JPEG_DEFAULT_EXIF_SIZE : 0;
-
-Could you explain what is the meaning of the dma_addr_offset and where the
-default EXIF size comes from? Also, how is the encoder output affected by
-the enable_exif flag?
-
-> +	bs->dma_addr_offsetmask = bs->dma_addr & JPEG_ENC_DST_ADDR_OFFSET_MASK;
-> +	bs->size = round_up(vb2_plane_size(dst_buf, 0), 128);
-
-We can't round up the size that comes from vb2, because it could lead to a
-buffer overflow. We need to ensure that the hardware doesn't write more
-than the value returned by vb2_plane_size().
-
-> +
-> +	mtk_jpeg_enc_set_dst_addr(base, bs->dma_addr, bs->size,
-> +				  bs->dma_addr_offset,
-> +				  bs->dma_addr_offsetmask);
-> +}
-> +
-> +static void mtk_jpeg_set_enc_src(struct mtk_jpeg_ctx *ctx, void __iomem *base,
-> +				 struct vb2_buffer *src_buf,
-> +				 struct mtk_jpeg_enc_fb *fb)
-> +{
-> +	int i;
-> +
-> +	mtk_jpeg_enc_set_img_size(base, ctx->out_q.w, ctx->out_q.h);
-> +	mtk_jpeg_enc_set_enc_format(base, ctx->out_q.fmt->fourcc);
-> +	mtk_jpeg_enc_set_blk_num(base, ctx->out_q.fmt->fourcc, ctx->out_q.w,
-> +				 ctx->out_q.h);
-> +	mtk_jpeg_enc_set_stride(base, ctx->out_q.fmt->fourcc, ctx->out_q.w,
-> +				ctx->out_q.h, ctx->out_q.bytesperline[0]);
-> +
-> +	for (i = 0; i < src_buf->num_planes; i++) {
-> +		fb->fb_addr[i].dma_addr =
-> +			vb2_dma_contig_plane_dma_addr(src_buf, i) +
-> +			src_buf->planes[i].data_offset;
-> +		fb->fb_addr[i].size = vb2_plane_size(src_buf, i) -
-> +				      src_buf->planes[i].data_offset;
-> +	}
-> +
-> +	mtk_jpeg_enc_set_src_addr(base, fb->fb_addr[0].dma_addr,
-> +				  fb->fb_addr[1].dma_addr);
-
-What would be the second dma_addr in case of a format with 1 plane?
-
-> +}
-> +
->  static void mtk_jpeg_device_run(void *priv)
->  {
->  	struct mtk_jpeg_ctx *ctx = priv;
-> @@ -782,6 +1060,8 @@ static void mtk_jpeg_device_run(void *priv)
->  	struct mtk_jpeg_src_buf *jpeg_src_buf;
->  	struct mtk_jpeg_bs bs;
->  	struct mtk_jpeg_fb fb;
-> +	struct mtk_jpeg_enc_bs enc_bs;
-> +	struct mtk_jpeg_enc_fb enc_fb;
->  	int i;
->  
->  	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
-> @@ -792,30 +1072,47 @@ static void mtk_jpeg_device_run(void *priv)
->  		for (i = 0; i < dst_buf->vb2_buf.num_planes; i++)
->  			vb2_set_plane_payload(&dst_buf->vb2_buf, i, 0);
->  		buf_state = VB2_BUF_STATE_DONE;
-
-About existing code, but we may want to explain this.
-What is this last frame handling above for?
-
-> -		goto dec_end;
-> +		goto device_run_end;
->  	}
->  
-> -	if (mtk_jpeg_check_resolution_change(ctx, &jpeg_src_buf->dec_param)) {
-> -		mtk_jpeg_queue_src_chg_event(ctx);
-> -		ctx->state = MTK_JPEG_SOURCE_CHANGE;
-> -		v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-> -		return;
-> -	}
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-> +		spin_lock_irqsave(&jpeg->hw_lock, flags);
-> +		mtk_jpeg_enc_reset(jpeg->reg_base);
-
-Why do we need to reset every frame?
-
-> +
-> +		mtk_jpeg_set_enc_dst(ctx, jpeg->reg_base, &dst_buf->vb2_buf,
-> +				     &enc_bs);
-> +		mtk_jpeg_set_enc_src(ctx, jpeg->reg_base, &src_buf->vb2_buf,
-> +				     &enc_fb);
-> +		mtk_jpeg_enc_set_ctrl_cfg(jpeg->reg_base, ctx->enable_exif,
-> +					  ctx->enc_quality,
-> +					  ctx->restart_interval);
-> +
-> +		mtk_jpeg_enc_start(jpeg->reg_base);
-> +	} else {
-> +		if (mtk_jpeg_check_resolution_change
-> +			(ctx, &jpeg_src_buf->dec_param)) {
-> +			mtk_jpeg_queue_src_chg_event(ctx);
-> +			ctx->state = MTK_JPEG_SOURCE_CHANGE;
-> +			v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-
-This is a bit strange. Resolution change should be signaled when the
-hardware attempted to decode a frame and detected a different resolution
-than current. It shouldn't be necessary for the userspace to queue a pair
-of buffers to signal it, as with the current code.
-
-> +			return;
-> +		}
->  
-> -	mtk_jpeg_set_dec_src(ctx, &src_buf->vb2_buf, &bs);
-> -	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param, &dst_buf->vb2_buf, &fb))
-> -		goto dec_end;
-> +		mtk_jpeg_set_dec_src(ctx, &src_buf->vb2_buf, &bs);
-> +		if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param,
-> +					 &dst_buf->vb2_buf, &fb))
-> +			goto device_run_end;
->  
-> -	spin_lock_irqsave(&jpeg->hw_lock, flags);
-> -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-> -	mtk_jpeg_dec_set_config(jpeg->dec_reg_base,
-> -				&jpeg_src_buf->dec_param, &bs, &fb);
-> +		spin_lock_irqsave(&jpeg->hw_lock, flags);
-> +		mtk_jpeg_dec_reset(jpeg->reg_base);
-
-Same here, why do we need to reset the decoder every frame? Shouldn't it be
-enough to reset it in runtime resume callback?
-
-> +		mtk_jpeg_dec_set_config(jpeg->reg_base,
-> +					&jpeg_src_buf->dec_param, &bs, &fb);
->  
-> -	mtk_jpeg_dec_start(jpeg->dec_reg_base);
-> +		mtk_jpeg_dec_start(jpeg->reg_base);
-> +	}
->  	spin_unlock_irqrestore(&jpeg->hw_lock, flags);
->  	return;
->  
-> -dec_end:
-> +device_run_end:
->  	v4l2_m2m_src_buf_remove(ctx->fh.m2m_ctx);
->  	v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
->  	v4l2_m2m_buf_done(src_buf, buf_state);
-> @@ -875,30 +1172,30 @@ static void mtk_jpeg_clk_on(struct mtk_jpeg_dev *jpeg)
->  	ret = mtk_smi_larb_get(jpeg->larb);
->  	if (ret)
->  		dev_err(jpeg->dev, "mtk_smi_larb_get larbvdec fail %d\n", ret);
-> -	clk_prepare_enable(jpeg->clk_jdec_smi);
-> -	clk_prepare_enable(jpeg->clk_jdec);
-> +	if (jpeg->mode == MTK_JPEG_DEC)
-> +		clk_prepare_enable(jpeg->clk_jpeg_smi);
-
-Could the clk_bulk_* API be used instead? It would eliminate the need for
-this special casing.
-
-> +	clk_prepare_enable(jpeg->clk_jpeg);
->  }
->  
->  static void mtk_jpeg_clk_off(struct mtk_jpeg_dev *jpeg)
->  {
-> -	clk_disable_unprepare(jpeg->clk_jdec);
-> -	clk_disable_unprepare(jpeg->clk_jdec_smi);
-> +	clk_disable_unprepare(jpeg->clk_jpeg);
-> +	if (jpeg->mode == MTK_JPEG_DEC)
-> +		clk_disable_unprepare(jpeg->clk_jpeg_smi);
-
-Ditto.
-
->  	mtk_smi_larb_put(jpeg->larb);
->  }
->  
-> -static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
-> +static irqreturn_t mtk_jpeg_irq(int irq, void *priv)
->  {
->  	struct mtk_jpeg_dev *jpeg = priv;
->  	struct mtk_jpeg_ctx *ctx;
->  	struct vb2_v4l2_buffer *src_buf, *dst_buf;
->  	struct mtk_jpeg_src_buf *jpeg_src_buf;
->  	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
-> -	u32	dec_irq_ret;
-> -	u32 dec_ret;
-> +	u32 irq_ret;
-> +	u32 ret, result_size;
->  	int i;
->  
-> -	dec_ret = mtk_jpeg_dec_get_int_status(jpeg->dec_reg_base);
-> -	dec_irq_ret = mtk_jpeg_dec_enum_result(dec_ret);
->  	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
->  	if (!ctx) {
->  		v4l2_err(&jpeg->v4l2_dev, "Context is NULL\n");
-> @@ -909,32 +1206,89 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
->  	dst_buf = v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
->  	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
->  
-> -	if (dec_irq_ret >= MTK_JPEG_DEC_RESULT_UNDERFLOW)
-> -		mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-
-As the hardware blocks are completely different, we definitely want to have
-separate interrupt handlers for them, rather than this special casing.
-
-> +		ret = mtk_jpeg_enc_get_int_status(jpeg->reg_base);
-> +		irq_ret = mtk_jpeg_enc_enum_result(jpeg->reg_base, ret);
->  
-> -	if (dec_irq_ret != MTK_JPEG_DEC_RESULT_EOF_DONE) {
-> -		dev_err(jpeg->dev, "decode failed\n");
-> -		goto dec_end;
-> -	}
-> +		if (irq_ret >= MTK_JPEG_ENC_RESULT_STALL)
-> +			mtk_jpeg_enc_reset(jpeg->reg_base);
-> +
-> +		if (irq_ret != MTK_JPEG_ENC_RESULT_DONE) {
-> +			dev_err(jpeg->dev, "encode failed\n");
-> +			goto irq_end;
-> +		}
-> +
-> +		result_size = mtk_jpeg_enc_get_file_size(jpeg->reg_base);
-> +		vb2_set_plane_payload(&dst_buf->vb2_buf, 0,
-> +				      result_size);
-> +	} else {
-> +		ret = mtk_jpeg_dec_get_int_status(jpeg->reg_base);
-> +		irq_ret = mtk_jpeg_dec_enum_result(ret);
-> +
-> +		if (irq_ret >= MTK_JPEG_DEC_RESULT_UNDERFLOW)
-> +			mtk_jpeg_dec_reset(jpeg->reg_base);
->  
-> -	for (i = 0; i < dst_buf->vb2_buf.num_planes; i++)
-> -		vb2_set_plane_payload(&dst_buf->vb2_buf, i,
-> -				      jpeg_src_buf->dec_param.comp_size[i]);
-> +		if (irq_ret != MTK_JPEG_DEC_RESULT_EOF_DONE) {
-> +			dev_err(jpeg->dev, "decode failed\n");
-> +			goto irq_end;
-> +		}
-> +
-> +		for (i = 0; i < dst_buf->vb2_buf.num_planes; i++)
-> +			vb2_set_plane_payload
-> +				(&dst_buf->vb2_buf, i,
-> +				 jpeg_src_buf->dec_param.comp_size[i]);
-> +	}
->  
->  	buf_state = VB2_BUF_STATE_DONE;
->  
-> -dec_end:
-> +irq_end:
->  	v4l2_m2m_buf_done(src_buf, buf_state);
->  	v4l2_m2m_buf_done(dst_buf, buf_state);
->  	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
->  	return IRQ_HANDLED;
->  }
->  
-> -static void mtk_jpeg_set_default_params(struct mtk_jpeg_ctx *ctx)
-> +static void mtk_jpeg_set_enc_default_params(struct mtk_jpeg_ctx *ctx)
-> +{
-> +	struct mtk_jpeg_q_data *q = &ctx->out_q;
-> +
-> +	ctx->fh.ctrl_handler = &ctx->ctrl_hdl;
-
-Perhaps this could be just moved to the caller, rather than duplicating for
-encoder and decoder?
-
-> +
-> +	ctx->colorspace = V4L2_COLORSPACE_JPEG,
-> +	ctx->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
-> +	ctx->quantization = V4L2_QUANTIZATION_DEFAULT;
-> +	ctx->xfer_func = V4L2_XFER_FUNC_DEFAULT;
-> +
-> +	q->w = MTK_JPEG_MIN_WIDTH;
-> +	q->h = MTK_JPEG_MIN_HEIGHT;
-> +
-> +	q->fmt = mtk_jpeg_find_format(ctx, V4L2_PIX_FMT_YUYV,
-> +				      MTK_JPEG_FMT_TYPE_OUTPUT);
-> +
-> +	q->w = clamp(round_up(q->w, 32), MTK_JPEG_MIN_WIDTH,
-> +		     MTK_JPEG_MAX_WIDTH);
-> +	q->h = clamp(round_up(q->h, 8), MTK_JPEG_MIN_HEIGHT,
-> +		     MTK_JPEG_MAX_HEIGHT);
-
-Is this clamp() really needed? The code explicitly sets correct values
-few lines above.
-
-> +
-> +	q->sizeimage[0] = q->w * q->h * 2;
-> +	q->bytesperline[0] = q->w * 2;
-
-In general this kind of hardcoded computation is really error prone, e.g.
-if the default pixelformat changes for some reason. Could the same logic as
-for TRY_/S_FMT be called from here to compute these values?
-
-> +
-> +	q = &ctx->cap_q;
-> +	q->w = MTK_JPEG_MIN_WIDTH;
-> +	q->h = MTK_JPEG_MIN_HEIGHT;
-> +	q->fmt = mtk_jpeg_find_format(ctx, V4L2_PIX_FMT_JPEG,
-> +				      MTK_JPEG_FMT_TYPE_CAPTURE);
-> +	q->bytesperline[0] = 0;
-> +	q->sizeimage[0] = MTK_JPEG_DEFAULT_SIZEIMAGE;
-> +}
-> +
-> +static void mtk_jpeg_set_dec_default_params(struct mtk_jpeg_ctx *ctx)
->  {
->  	struct mtk_jpeg_q_data *q = &ctx->out_q;
->  	int i;
->  
-> +	ctx->fh.ctrl_handler = &ctx->ctrl_hdl;
-> +
->  	ctx->colorspace = V4L2_COLORSPACE_JPEG,
->  	ctx->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
->  	ctx->quantization = V4L2_QUANTIZATION_DEFAULT;
-> @@ -990,7 +1344,18 @@ static int mtk_jpeg_open(struct file *file)
->  		goto error;
->  	}
->  
-> -	mtk_jpeg_set_default_params(ctx);
-> +	ret = mtk_jpeg_ctrls_setup(ctx);
-> +	if (ret) {
-> +		v4l2_err(&jpeg->v4l2_dev, "Failed to setup controls() (%d)\n",
-
-nit: Is the "()" after "controls" necessary?
-
-> +			 ret);
-> +		goto error;
-> +	}
-> +
-> +	if (jpeg->mode == MTK_JPEG_ENC)
-> +		mtk_jpeg_set_enc_default_params(ctx);
-> +	else
-> +		mtk_jpeg_set_dec_default_params(ctx);
-> +
->  	mutex_unlock(&jpeg->lock);
->  	return 0;
->  
-> @@ -1010,6 +1375,7 @@ static int mtk_jpeg_release(struct file *file)
->  
->  	mutex_lock(&jpeg->lock);
->  	v4l2_m2m_ctx_release(ctx->fh.m2m_ctx);
-> +	v4l2_ctrl_handler_free(&ctx->ctrl_hdl);
->  	v4l2_fh_del(&ctx->fh);
->  	v4l2_fh_exit(&ctx->fh);
->  	kfree(ctx);
-> @@ -1043,19 +1409,24 @@ static int mtk_jpeg_clk_init(struct mtk_jpeg_dev *jpeg)
->  
->  	jpeg->larb = &pdev->dev;
->  
-> -	jpeg->clk_jdec = devm_clk_get(jpeg->dev, "jpgdec");
-> -	if (IS_ERR(jpeg->clk_jdec))
-> -		return PTR_ERR(jpeg->clk_jdec);
-> +	if (jpeg->mode == MTK_JPEG_ENC) {
-> +		jpeg->clk_jpeg = devm_clk_get(jpeg->dev, "jpgenc");
-> +		return PTR_ERR_OR_ZERO(jpeg->clk_jpeg);
-> +	}
-> +
-> +	jpeg->clk_jpeg = devm_clk_get(jpeg->dev, "jpgdec");
-> +	if (IS_ERR(jpeg->clk_jpeg))
-> +		return PTR_ERR(jpeg->clk_jpeg);
->  
-> -	jpeg->clk_jdec_smi = devm_clk_get(jpeg->dev, "jpgdec-smi");
-> -	return PTR_ERR_OR_ZERO(jpeg->clk_jdec_smi);
-> +	jpeg->clk_jpeg_smi = devm_clk_get(jpeg->dev, "jpgdec-smi");
-> +	return PTR_ERR_OR_ZERO(jpeg->clk_jpeg_smi);
-
-I'd suggest putting the clock names in a match_data struct, which could be
-pointed to by the .data field of of_device_id. Then devm_clk_bulk_get()
-could be used generically, without the need to special case between encoder
-and decoder.
-
->  }
->  
->  static int mtk_jpeg_probe(struct platform_device *pdev)
->  {
->  	struct mtk_jpeg_dev *jpeg;
->  	struct resource *res;
-> -	int dec_irq;
-> +	int jpeg_irq;
->  	int ret;
->  
->  	jpeg = devm_kzalloc(&pdev->dev, sizeof(*jpeg), GFP_KERNEL);
-> @@ -1065,28 +1436,26 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
->  	mutex_init(&jpeg->lock);
->  	spin_lock_init(&jpeg->hw_lock);
->  	jpeg->dev = &pdev->dev;
-> +	jpeg->mode = (enum mtk_jpeg_mode)of_device_get_match_data(jpeg->dev);
-
-As the match data is expected to be a pointer, it shouldn't be casted to a
-non-pointer value. Please define a struct with necessary hardware-specific
-data and have the .data field of of_device_id point to it.
-
->  
->  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	jpeg->dec_reg_base = devm_ioremap_resource(&pdev->dev, res);
-> -	if (IS_ERR(jpeg->dec_reg_base)) {
-> -		ret = PTR_ERR(jpeg->dec_reg_base);
-> +	jpeg->reg_base = devm_ioremap_resource(&pdev->dev, res);
-> +	if (IS_ERR(jpeg->reg_base)) {
-> +		ret = PTR_ERR(jpeg->reg_base);
->  		return ret;
->  	}
->  
-> -	res = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
-> -	dec_irq = platform_get_irq(pdev, 0);
-> -	if (!res || dec_irq < 0) {
-> -		dev_err(&pdev->dev, "Failed to get dec_irq %d.\n", dec_irq);
-> -		ret = -EINVAL;
-
-This is a bug fix, so plese do it in a separate patch, earlier in the
-series.
-
-> -		return ret;
-> +	jpeg_irq = platform_get_irq(pdev, 0);
-> +	if (jpeg_irq < 0) {
-> +		dev_err(&pdev->dev, "Failed to get jpeg_irq %d.\n", jpeg_irq);
-> +		return jpeg_irq;
->  	}
->  
-> -	ret = devm_request_irq(&pdev->dev, dec_irq, mtk_jpeg_dec_irq, 0,
-> +	ret = devm_request_irq(&pdev->dev, jpeg_irq, mtk_jpeg_irq, 0,
->  			       pdev->name, jpeg);
->  	if (ret) {
-> -		dev_err(&pdev->dev, "Failed to request dec_irq %d (%d)\n",
-> -			dec_irq, ret);
-> -		ret = -EINVAL;
-
-Ditto. (Could be in one patch as the similar fix above.)
-
-> +		dev_err(&pdev->dev, "Failed to request jpeg_irq %d (%d)\n",
-> +			jpeg_irq, ret);
->  		goto err_req_irq;
->  	}
->  
-> @@ -1110,33 +1479,35 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
->  		goto err_m2m_init;
->  	}
->  
-> -	jpeg->dec_vdev = video_device_alloc();
-> -	if (!jpeg->dec_vdev) {
-> +	jpeg->vfd_jpeg = video_device_alloc();
-
-Why "vfd"? "vdev" sounds more like video_device.
-
-Also, the "jpeg" suffix doesn't seem to be needed, as the parent struct is
-typically called "jpeg".
-
-> +	if (!jpeg->vfd_jpeg) {
->  		ret = -ENOMEM;
-> -		goto err_dec_vdev_alloc;
-> +		goto err_vfd_jpeg_alloc;
->  	}
-> -	snprintf(jpeg->dec_vdev->name, sizeof(jpeg->dec_vdev->name),
-> -		 "%s-dec", MTK_JPEG_NAME);
-> -	jpeg->dec_vdev->fops = &mtk_jpeg_fops;
-> -	jpeg->dec_vdev->ioctl_ops = &mtk_jpeg_ioctl_ops;
-> -	jpeg->dec_vdev->minor = -1;
-> -	jpeg->dec_vdev->release = video_device_release;
-> -	jpeg->dec_vdev->lock = &jpeg->lock;
-> -	jpeg->dec_vdev->v4l2_dev = &jpeg->v4l2_dev;
-> -	jpeg->dec_vdev->vfl_dir = VFL_DIR_M2M;
-> -	jpeg->dec_vdev->device_caps = V4L2_CAP_STREAMING |
-> +	snprintf(jpeg->vfd_jpeg->name, sizeof(jpeg->vfd_jpeg->name),
-> +		 "%s-%s", MTK_JPEG_NAME,
-> +		 jpeg->mode == MTK_JPEG_ENC ? "enc" : "dec");
-> +	jpeg->vfd_jpeg->fops = &mtk_jpeg_fops;
-> +	jpeg->vfd_jpeg->ioctl_ops = &mtk_jpeg_ioctl_ops;
-> +	jpeg->vfd_jpeg->minor = -1;
-> +	jpeg->vfd_jpeg->release = video_device_release;
-> +	jpeg->vfd_jpeg->lock = &jpeg->lock;
-> +	jpeg->vfd_jpeg->v4l2_dev = &jpeg->v4l2_dev;
-> +	jpeg->vfd_jpeg->vfl_dir = VFL_DIR_M2M;
-> +	jpeg->vfd_jpeg->device_caps = V4L2_CAP_STREAMING |
->  				      V4L2_CAP_VIDEO_M2M_MPLANE;
->  
-> -	ret = video_register_device(jpeg->dec_vdev, VFL_TYPE_GRABBER, 3);
-> +	ret = video_register_device(jpeg->vfd_jpeg, VFL_TYPE_GRABBER, -1);
-
-FYI the type changed to VFL_TYPE_VIDEO recently.
-
->  	if (ret) {
->  		v4l2_err(&jpeg->v4l2_dev, "Failed to register video device\n");
-> -		goto err_dec_vdev_register;
-> +		goto err_vfd_jpeg_register;
->  	}
->  
-> -	video_set_drvdata(jpeg->dec_vdev, jpeg);
-> +	video_set_drvdata(jpeg->vfd_jpeg, jpeg);
->  	v4l2_info(&jpeg->v4l2_dev,
-> -		  "decoder device registered as /dev/video%d (%d,%d)\n",
-> -		  jpeg->dec_vdev->num, VIDEO_MAJOR, jpeg->dec_vdev->minor);
-> +		  "jpeg device %d registered as /dev/video%d (%d,%d)\n",
-
-Here it would be actually useful to special case the encoder and decoder,
-because it would be easier for the user to know which device is which.
-
-> +		  jpeg->mode, jpeg->vfd_jpeg->num, VIDEO_MAJOR,
-> +		  jpeg->vfd_jpeg->minor);
->  
->  	platform_set_drvdata(pdev, jpeg);
->  
-> @@ -1144,10 +1515,10 @@ static int mtk_jpeg_probe(struct platform_device *pdev)
->  
->  	return 0;
->  
-> -err_dec_vdev_register:
-> -	video_device_release(jpeg->dec_vdev);
-> +err_vfd_jpeg_register:
-> +	video_device_release(jpeg->vfd_jpeg);
->  
-> -err_dec_vdev_alloc:
-> +err_vfd_jpeg_alloc:
->  	v4l2_m2m_release(jpeg->m2m_dev);
->  
->  err_m2m_init:
-> @@ -1167,8 +1538,8 @@ static int mtk_jpeg_remove(struct platform_device *pdev)
->  	struct mtk_jpeg_dev *jpeg = platform_get_drvdata(pdev);
->  
->  	pm_runtime_disable(&pdev->dev);
-> -	video_unregister_device(jpeg->dec_vdev);
-> -	video_device_release(jpeg->dec_vdev);
-> +	video_unregister_device(jpeg->vfd_jpeg);
-> +	video_device_release(jpeg->vfd_jpeg);
->  	v4l2_m2m_release(jpeg->m2m_dev);
->  	v4l2_device_unregister(&jpeg->v4l2_dev);
->  
-> @@ -1179,7 +1550,11 @@ static __maybe_unused int mtk_jpeg_pm_suspend(struct device *dev)
->  {
->  	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
->  
-> -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-> +	if (jpeg->mode == MTK_JPEG_ENC)
-> +		mtk_jpeg_enc_reset(jpeg->reg_base);
-> +	else
-> +		mtk_jpeg_dec_reset(jpeg->reg_base);
-
-Is the reset here really necessary? We're going to cut down the power to
-the IP block some time after the function returns.
-
-> +
->  	mtk_jpeg_clk_off(jpeg);
->  
->  	return 0;
-> @@ -1190,7 +1565,10 @@ static __maybe_unused int mtk_jpeg_pm_resume(struct device *dev)
->  	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
->  
->  	mtk_jpeg_clk_on(jpeg);
-> -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-> +	if (jpeg->mode == MTK_JPEG_ENC)
-> +		mtk_jpeg_enc_reset(jpeg->reg_base);
-> +	else
-> +		mtk_jpeg_dec_reset(jpeg->reg_base);
->  
->  	return 0;
->  }
-
-The code is not visible in this patch, but the implementation of the system
-PM ops doesn't look correct.
-
-	static __maybe_unused int mtk_jpeg_suspend(struct device *dev)
-	{
-		int ret;
-	
-		if (pm_runtime_suspended(dev))
-			return 0;
-	
-		ret = mtk_jpeg_pm_suspend(dev);
-
-The hardware may be currently processing a frame. Wouldn't this cause
-issues? Also, wouldn't this race with the interrupt handler?
-
-Normally one would prevent the driver from scheduling next frames here,
-wait for the driver to finish processing the current frame and only then
-suspend.
-
-		return ret;
-	}
-	
-	static __maybe_unused int mtk_jpeg_resume(struct device *dev)
-	{
-		int ret;
-	
-		if (pm_runtime_suspended(dev))
-			return 0;
-	
-		ret = mtk_jpeg_pm_resume(dev);
-
-Here one normally needs to unblock the driver from scheduling next frames.
-	
-		return ret;
-	}
-
-> @@ -1226,11 +1604,15 @@ static const struct dev_pm_ops mtk_jpeg_pm_ops = {
->  static const struct of_device_id mtk_jpeg_match[] = {
->  	{
->  		.compatible = "mediatek,mt8173-jpgdec",
-> -		.data       = NULL,
-> +		.data       = (void *)MTK_JPEG_DEC,
->  	},
->  	{
->  		.compatible = "mediatek,mt2701-jpgdec",
-> -		.data       = NULL,
-> +		.data       = (void *)MTK_JPEG_DEC,
-> +	},
-> +	{
-> +		.compatible = "mediatek,mtk-jpgenc",
-> +		.data       = (void *)MTK_JPEG_ENC,
->  	},
->  	{},
->  };
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-> index 9bbd615b1067..02a387d8be5d 100644
-> --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.h
-> @@ -3,6 +3,7 @@
->   * Copyright (c) 2016 MediaTek Inc.
->   * Author: Ming Hsiu Tsai <minghsiu.tsai@mediatek.com>
->   *         Rick Chang <rick.chang@mediatek.com>
-> + *         Xia Jiang <xia.jiang@mediatek.com>
->   */
->  
->  #ifndef _MTK_JPEG_CORE_H
-> @@ -19,16 +20,19 @@
->  
->  #define MTK_JPEG_FMT_FLAG_DEC_OUTPUT	BIT(0)
->  #define MTK_JPEG_FMT_FLAG_DEC_CAPTURE	BIT(1)
-> +#define MTK_JPEG_FMT_FLAG_ENC_OUTPUT	BIT(2)
-> +#define MTK_JPEG_FMT_FLAG_ENC_CAPTURE	BIT(3)
->  
->  #define MTK_JPEG_FMT_TYPE_OUTPUT	1
->  #define MTK_JPEG_FMT_TYPE_CAPTURE	2
->  
->  #define MTK_JPEG_MIN_WIDTH	32U
->  #define MTK_JPEG_MIN_HEIGHT	32U
-> -#define MTK_JPEG_MAX_WIDTH	8192U
-> -#define MTK_JPEG_MAX_HEIGHT	8192U
-> +#define MTK_JPEG_MAX_WIDTH	65535U
-> +#define MTK_JPEG_MAX_HEIGHT	65535U
-
-Is this correct even for the decoder?
-
->  
->  #define MTK_JPEG_DEFAULT_SIZEIMAGE	(1 * 1024 * 1024)
-> +#define MTK_JPEG_DEFAULT_EXIF_SIZE	(64 * 1024)
->  
->  /**
->   * enum mtk_jpeg_ctx_state - contex state of jpeg
-> @@ -39,6 +43,14 @@ enum mtk_jpeg_ctx_state {
->  	MTK_JPEG_SOURCE_CHANGE,
->  };
->  
-> +/**
-> + * enum mtk_jpeg_mode - mode of jpeg
-> + */
-> +enum mtk_jpeg_mode {
-> +	MTK_JPEG_ENC,
-> +	MTK_JPEG_DEC,
-> +};
-> +
-
-Perhaps bool is_encoder insted of an enum could simplify the code a bit?
-
->  /**
->   * struct mt_jpeg - JPEG IP abstraction
->   * @lock:		the mutex protecting this structure
-> @@ -48,11 +60,12 @@ enum mtk_jpeg_ctx_state {
->   * @v4l2_dev:		v4l2 device for mem2mem mode
->   * @m2m_dev:		v4l2 mem2mem device data
->   * @alloc_ctx:		videobuf2 memory allocator's context
-> - * @dec_vdev:		video device node for decoder mem2mem mode
-> - * @dec_reg_base:	JPEG registers mapping
-> - * @clk_jdec:		JPEG hw working clock
-> - * @clk_jdec_smi:	JPEG SMI bus clock
-> + * @vfd_jpeg:		video device node for jpeg mem2mem mode
-> + * @reg_base:		JPEG registers mapping
-> + * @clk_jpeg:		JPEG hw working clock
-> + * @clk_jpeg_smi:	JPEG SMI bus clock
->   * @larb:		SMI device
-> + * @mode:		compression (encode) operation or decompression (decode)
->   */
->  struct mtk_jpeg_dev {
->  	struct mutex		lock;
-> @@ -62,11 +75,12 @@ struct mtk_jpeg_dev {
->  	struct v4l2_device	v4l2_dev;
->  	struct v4l2_m2m_dev	*m2m_dev;
->  	void			*alloc_ctx;
-> -	struct video_device	*dec_vdev;
-> -	void __iomem		*dec_reg_base;
-> -	struct clk		*clk_jdec;
-> -	struct clk		*clk_jdec_smi;
-> +	struct video_device	*vfd_jpeg;
-> +	void __iomem		*reg_base;
-> +	struct clk		*clk_jpeg;
-> +	struct clk		*clk_jpeg_smi;
->  	struct device		*larb;
-> +	enum mtk_jpeg_mode	mode;
->  };
->  
->  /**
-> @@ -113,6 +127,7 @@ struct mtk_jpeg_q_data {
->   * @cap_q:		destination (capture) queue queue information
->   * @fh:			V4L2 file handle
->   * @state:		state of the context
-> + * @ctrl_hdl:		controls handler
->   * @colorspace: enum v4l2_colorspace; supplemental to pixelformat
->   * @ycbcr_enc: enum v4l2_ycbcr_encoding, Y'CbCr encoding
->   * @quantization: enum v4l2_quantization, colorspace quantization
-> @@ -124,6 +139,10 @@ struct mtk_jpeg_ctx {
->  	struct mtk_jpeg_q_data		cap_q;
->  	struct v4l2_fh			fh;
->  	enum mtk_jpeg_ctx_state		state;
-> +	u8				enable_exif;
-
-bool?
-
-> +	u8				enc_quality;
-> +	u8				restart_interval;
-> +	struct v4l2_ctrl_handler	ctrl_hdl;
->  
->  	enum v4l2_colorspace colorspace;
->  	enum v4l2_ycbcr_encoding ycbcr_enc;
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
-> index 1cc37dbfc8e7..ce263db5f30a 100644
-> --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_dec_hw.h
-> @@ -3,10 +3,11 @@
->   * Copyright (c) 2016 MediaTek Inc.
->   * Author: Ming Hsiu Tsai <minghsiu.tsai@mediatek.com>
->   *         Rick Chang <rick.chang@mediatek.com>
-> + *         Xia Jiang <xia.jiang@mediatek.com>
->   */
->  
-> -#ifndef _MTK_JPEG_HW_H
-> -#define _MTK_JPEG_HW_H
-> +#ifndef _MTK_JPEG_DEC_HW_H
-> +#define _MTK_JPEG_DEC_HW_H
->  
->  #include <media/videobuf2-core.h>
->  
-> @@ -75,4 +76,4 @@ void mtk_jpeg_dec_set_config(void __iomem *base,
->  void mtk_jpeg_dec_reset(void __iomem *dec_reg_base);
->  void mtk_jpeg_dec_start(void __iomem *dec_reg_base);
->  
-> -#endif /* _MTK_JPEG_HW_H */
-> +#endif /* _MTK_JPEG_DEC_HW_H */
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-> new file mode 100644
-> index 000000000000..da3e7a83a80a
-> --- /dev/null
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
-> @@ -0,0 +1,273 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Xia Jiang <xia.jiang@mediatek.com>
-> + *
-> + */
-> +
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <media/videobuf2-core.h>
-> +
-> +#include "mtk_jpeg_enc_hw.h"
-> +
-> +static struct mtk_jpeg_enc_qlt mtk_jpeg_enc_quality[] = {
-
-static const?
-
-> +	{
-> +		.quality_param		= 97,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q97,
-> +	},
-> +	{
-> +		.quality_param		= 95,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q95,
-> +	},
-> +	{
-> +		.quality_param		= 92,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q92,
-> +	},
-> +	{
-> +		.quality_param		= 90,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q90,
-> +	},
-> +	{
-> +		.quality_param		= 87,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q87,
-> +	},
-> +	{
-> +		.quality_param		= 84,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q84,
-> +	},
-> +	{
-> +		.quality_param		= 82,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q82,
-> +	},
-> +	{
-> +		.quality_param		= 80,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q80,
-> +	},
-> +	{
-> +		.quality_param		= 74,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q74,
-> +	},
-> +	{
-> +		.quality_param		= 68,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q68,
-> +	},
-> +	{
-> +		.quality_param		= 64,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q64,
-> +	},
-> +	{
-> +		.quality_param		= 60,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q60,
-> +	},
-> +	{
-> +		.quality_param		= 48,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q48,
-> +	},
-> +	{
-> +		.quality_param		= 39,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q39,
-> +	},
-> +	{
-> +		.quality_param		= 34,
-> +		.hardware_value	= JPEG_ENC_QUALITY_Q34,
-> +	},
-> +};
-
-nit: Perhaps we could condense this a bit? E.g.
-
-[...] = {
-	{ .quality = XX, .hw = YY }.
-	// ...
-};
-
-> +
-> +#define MTK_JPEG_ENC_NUM_QUALITY ARRAY_SIZE(mtk_jpeg_enc_quality)
-
-I think just using ARRAY_SIZE() directly would make the code clearer (and
-it's similar length to the macro).
-
-> +
-> +void mtk_jpeg_enc_reset(void __iomem *base)
-> +{
-> +	writel(0x00, base + JPEG_ENC_RSTB);
-> +	writel(JPEG_ENC_RESET_BIT, base + JPEG_ENC_RSTB);
-> +	writel(0x00, base + JPEG_ENC_CODEC_SEL);
-> +}
-> +
-> +u32 mtk_jpeg_enc_get_int_status(void __iomem *base)
-> +{
-> +	u32 ret;
-> +
-> +	ret = readl(base + JPEG_ENC_INT_STS) &
-> +		    JPEG_ENC_INT_STATUS_MASK_ALLIRQ;
-> +	if (ret)
-> +		writel(0, base + JPEG_ENC_INT_STS);
-> +
-> +	return ret;
-> +}
-
-Does it make sense to have a function for what is essentially just 2 lines?
-Also, the name is misleading, as the function not only gets but also
-clears.
-
-> +
-> +u32 mtk_jpeg_enc_get_file_size(void __iomem *base)
-> +{
-> +	return readl(base + JPEG_ENC_DMA_ADDR0) -
-> +	       readl(base + JPEG_ENC_DST_ADDR0);
-> +}
-
-This is called once from the interrupt handler, which is hardware-specific
-anyway, so one would normally just read the registers directly from there.
-
-> +
-> +u32 mtk_jpeg_enc_enum_result(void __iomem *base, u32 irq_status)
-> +{
-> +	if (irq_status & JPEG_ENC_INT_STATUS_DONE)
-> +		return MTK_JPEG_ENC_RESULT_DONE;
-> +	else if (irq_status & JPEG_ENC_INT_STATUS_STALL)
-> +		return MTK_JPEG_ENC_RESULT_STALL;
-> +	else if (irq_status & JPEG_ENC_INT_STATUS_VCODEC_IRQ)
-> +		return MTK_JPEG_ENC_RESULT_VCODEC_IRQ;
-> +	return MTK_JPEG_ENC_RESULT_ERROR_UNKNOWN;
-> +}
-
-I see this function being called only once in the interrupt handler.
-Wouldn't it be more readable if the interrupt masks were just checked
-directly there?
-
-> +
-> +void mtk_jpeg_enc_set_img_size(void __iomem *base, u32 width, u32 height)
-> +{
-> +	u32 value;
-> +
-> +	value = JPEG_ENC_WIDTH_HEIGHT(width, height);
-> +	writel(value, base + JPEG_ENC_IMG_SIZE);
-> +}
-> +
-> +void mtk_jpeg_enc_set_enc_format(void __iomem *base, u32 enc_format)
-> +{
-> +	u32 yuv_format, value;
-> +
-> +	yuv_format = JPEG_ENC_YUV_FORMAT_YUYV;
-> +	switch (enc_format) {
-> +	case V4L2_PIX_FMT_YUYV:
-> +		yuv_format = JPEG_ENC_YUV_FORMAT_YUYV;
-> +		break;
-> +	case V4L2_PIX_FMT_YVYU:
-> +		yuv_format = JPEG_ENC_YUV_FORMAT_YVYU;
-> +		break;
-> +	case V4L2_PIX_FMT_NV12M:
-> +		yuv_format = JPEG_ENC_YUV_FORMAT_NV12;
-> +		break;
-> +	case V4L2_PIX_FMT_NV21M:
-> +		yuv_format = JPEG_ENC_YUV_FORMAT_NV12;
-
-Instead of the explicit switch here, we could just have the hardware format
-contained in the mtk_jpeg_fmt struct.
-
-> +		break;
-> +	default:
-> +		break;
-> +	}
-> +
-> +	value = readl(base + JPEG_ENC_CTRL);
-> +	value &= ~JPEG_ENC_CTRL_YUV_FORMAT_MASK;
-> +	value |= JPEG_ENC_FORMAT(yuv_format);
-> +	writel(value, base + JPEG_ENC_CTRL);
-> +}
-> +
-> +void mtk_jpeg_enc_set_blk_num(void __iomem *base, u32 enc_format, u32 width,
-> +			      u32 height)
-> +{
-> +	u32 blk_num;
-> +	u32 is_420;
-> +	u32 padding_width;
-> +	u32 padding_height;
-> +
-> +	is_420 = (enc_format == V4L2_PIX_FMT_NV12M ||
-> +		  enc_format == V4L2_PIX_FMT_NV21M) ? 1 : 0;
-> +	padding_width = round_up(width, 16);
-> +	padding_height = round_up(height, is_420 ? 16 : 8);
-> +
-> +	blk_num = (padding_width >> 4) * (padding_height >> (is_420 ? 4 : 3)) *
-> +		  (is_420 ? 6 : 4) - 1;
-
-The whole code above could be rewritten as below:
-
-if (enc_format == V4L2_PIX_FMT_NV12M
-    || enc_format == V4L2_PIX_FMT_NV21M)
-	blk_num = DIV_ROUND_UP(width, 16) * DIV_ROUND_UP(height, 16) * 6 - 1;
-else
-	blk_num = DIV_ROUND_UP(width, 16) * DIV_ROUND_UP(height, 8) * 4 - 1;
-
-However the magic numbers deserve some explanation, especially
-multiplication by 6 or 4 and subtraction of 1.
-
-> +
-> +	writel(blk_num, base + JPEG_ENC_BLK_NUM);
-> +}
-> +
-> +void mtk_jpeg_enc_set_stride(void __iomem *base, u32 enc_format, u32 width,
-> +			     u32 height, u32 bytesperline)
-> +{
-> +	u32 width_even;
-> +	u32 is_420;
-
-Perhaps should be bool?
-
-> +	u32 img_stride;
-> +	u32 mem_stride;
-> +
-> +	width_even = round_up(width, 2);
-> +	is_420 = (enc_format == V4L2_PIX_FMT_NV12M ||
-> +		  enc_format == V4L2_PIX_FMT_NV21M) ? 1 : 0;
-
-No need for the explicit 1 : 0.
-
-> +	if (!is_420)
-> +		width_even = width_even << 1;
-> +	img_stride = round_up(width_even, (is_420 ? 16 : 32));
-> +	mem_stride = is_420 ? bytesperline : round_up(width_even, 32);
-
-Wouldn't it make the code more readable if it was rewritten like below?
-
-if (enc_format == V4L2_PIX_FMT_NV12M
-    || enc_format == V4L2_PIX_FMT_NV21M) {
-        /* 4:2:0 */
-	img_stride = round_up(width, 16);
-	mem_stride = bytesperline;
-} else {
-	/* 4:2:2 */
-	img_stride = round_up(width * 2, 32);
-	mem_stride = img_stride;
-}
-
-> +
-> +	writel(img_stride, base + JPEG_ENC_IMG_STRIDE);
-> +	writel(mem_stride, base + JPEG_ENC_STRIDE);
-
-Does the hardware assume that Y and CbCr planes have the same strides?
-
-What is the difference between img_stride and mem_stride?
-
-> +}
-> +
-> +void mtk_jpeg_enc_set_src_addr(void __iomem *base, u32 src_addr,
-> +			       u32 src_addr_c)
-> +{
-> +	writel(src_addr, base + JPEG_ENC_SRC_LUMA_ADDR);
-> +	writel(src_addr_c, base + JPEG_ENC_SRC_CHROMA_ADDR);
-> +}
-> +
-> +void mtk_jpeg_enc_set_dst_addr(void __iomem *base, u32 dst_addr,
-> +			       u32 stall_size, u32 init_offset,
-> +			       u32 offset_mask)
-> +{
-> +	writel(JPEG_ENC_INIT_OFFSET(init_offset), base + JPEG_ENC_OFFSET_ADDR);
-> +	writel(JPEG_ENC_OFFSET_MASK(offset_mask),
-> +	       base + JPEG_ENC_BYTE_OFFSET_MASK);
-> +	writel(JPEG_ENC_DST_ADDR(dst_addr), base + JPEG_ENC_DST_ADDR0);
-> +	writel(JPEG_ENC_STALL_ADDR(dst_addr, stall_size),
-> +	       base + JPEG_ENC_STALL_ADDR0);
-> +}
-> +
-> +static void mtk_jpeg_enc_set_quality(void __iomem *base, u32 quality)
-> +{
-> +	u32 value;
-> +	u32 i, enc_quality;
-> +
-> +	enc_quality = mtk_jpeg_enc_quality[0].hardware_value;
-
-For values less than 34, shouldn't we use the lowest quality, not the
-highest?
-
-> +	for (i = 0; i < MTK_JPEG_ENC_NUM_QUALITY; i++) {
-
-Please use ARRAY_SIZE() instead of the macro to make sure there is no
-accidental out of bounds access.
-
-> +		if (quality >= mtk_jpeg_enc_quality[i].quality_param) {
-> +			enc_quality = mtk_jpeg_enc_quality[i].hardware_value;
-> +			break;
-> +		}
-> +	}
-> +
-> +	value = readl(base + JPEG_ENC_QUALITY);
-
-Do we need to read the register?
-
-> +	value = JPEG_ENC_SET_QUALITY(value, enc_quality);
-> +	writel(value, base + JPEG_ENC_QUALITY);
-> +}
-> +
-> +static void mtk_jpeg_enc_set_restart_interval(void __iomem *base,
-> +					      u32 restart_interval)
-> +{
-> +	u32 value;
-> +
-> +	value = readl(base + JPEG_ENC_CTRL);
-> +	if (restart_interval)
-> +		value |= JPEG_ENC_CTRL_RESTART_EN_BIT;
-> +	else
-> +		value &= ~JPEG_ENC_CTRL_RESTART_EN_BIT;
-> +	writel(value, base + JPEG_ENC_CTRL);
-> +	writel(restart_interval, base + JPEG_ENC_RST_MCU_NUM);
-> +}
-
-Wouldn't it make more sense to just do all the register settings in one
-function, with comments? Splitting it like here introduces superfluous
-register reads and writes - we could just read JPEG_ENC_CTRL once, update
-all the fields in the local variable and write it once if done in one
-function.
-
-A typical approach is to have one function that receives the necessary V4L2
-context and then extracts necessary parameters directly from there and
-programs the registers. That reduces the level of abstraction and makes the
-code easier to follow for anyone familiar with V4L2.
-
-> +
-> +static void mtk_jpeg_enc_set_encode_mode(void __iomem *base, u32 exif_en)
-> +{
-> +	u32 value;
-> +
-> +	value = readl(base + JPEG_ENC_CTRL);
-> +	value &= ~JPEG_ENC_CTRL_FILE_FORMAT_BIT;
-> +	writel(value, base + JPEG_ENC_CTRL);
-> +
-> +	if (exif_en) {
-> +		value = readl(base + JPEG_ENC_CTRL);
-
-Do we need to read the register second time? Could we just read it once,
-take care of both fields and write once?
-
-> +		value |= JPEG_ENC_EN_JFIF_EXIF;
-> +		writel(value, base + JPEG_ENC_CTRL);
-> +	}
-> +}
-> +
-> +void mtk_jpeg_enc_set_ctrl_cfg(void __iomem *base, u32 exif_en, u32 quality,
-> +			       u32 restart_interval)
-> +{
-> +	mtk_jpeg_enc_set_quality(base, quality);
-> +
-> +	mtk_jpeg_enc_set_restart_interval(base, restart_interval);
-> +
-> +	mtk_jpeg_enc_set_encode_mode(base, exif_en);
-> +}
-> +
-> +void mtk_jpeg_enc_start(void __iomem *base)
-> +{
-> +	u32 value;
-> +
-> +	value = readl(base + JPEG_ENC_CTRL);
-> +	value |= JPEG_ENC_CTRL_INT_EN_BIT | JPEG_ENC_CTRL_ENABLE_BIT;
-> +	writel(value, base + JPEG_ENC_CTRL);
-> +}
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-> new file mode 100644
-> index 000000000000..d0d7d218a0c2
-> --- /dev/null
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-> @@ -0,0 +1,86 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Xia Jiang <xia.jiang@mediatek.com>
-> + *
-> + */
-> +
-> +#ifndef _MTK_JPEG_ENC_HW_H
-> +#define _MTK_JPEG_ENC_HW_H
-> +
-> +#include <media/videobuf2-core.h>
-> +
-> +#include "mtk_jpeg_core.h"
-> +#include "mtk_jpeg_enc_reg.h"
-> +
-> +enum {
-> +	MTK_JPEG_ENC_RESULT_DONE		= 0,
-
-nit: No need for explicit value assignment.
-
-> +	MTK_JPEG_ENC_RESULT_STALL,
-> +	MTK_JPEG_ENC_RESULT_VCODEC_IRQ,
-> +	MTK_JPEG_ENC_RESULT_ERROR_UNKNOWN
-> +};
-> +
-> +/**
-> + * struct mtk_jpeg_enc_qlt - JPEG encoder quality data
-> + * @quality_param:	quality value
-> + * @hardware_value:hardware value of quality
-> + */
-> +struct mtk_jpeg_enc_qlt {
-> +	u8	quality_param;
-> +	u8	hardware_value;
-> +};
-> +
-> +/**
-> + * struct mt_jpeg_enc_bs - JPEG encoder bitstream  buffer
-> + * @dma_addr:			JPEG encoder destination address
-> + * @size:			JPEG encoder bistream size
-> + * @dma_addr_offset:		JPEG encoder offset address
-> + * @dma_addr_offsetmask:	JPEG encoder destination address offset mask
-> + */
-> +struct mtk_jpeg_enc_bs {
-> +	dma_addr_t	dma_addr;
-> +	size_t		size;
-> +	u32			dma_addr_offset;
-> +	u32			dma_addr_offsetmask;
-
-Something seems to be wrong with the indentation here. In general it's
-advisable to avoid using tabs between types and field names and just have a
-single space, because changing some types or adding new fields could break
-the indentation if tabs are used.
-
-> +};
-> +
-> +/**
-> + * struct mtk_jpeg_mem - JPEG memory
-> + * @dma_addr:		memory address
-> + * @size:		memory size
-> + */
-> +struct mtk_jpeg_mem {
-> +	dma_addr_t	dma_addr;
-> +	size_t		size;
-> +};
-
-Do we need this intermediate struct? Perhaps we could just get these
-directly from vb2?
-
-> +
-> +/**
-> + * struct mtk_jpeg_enc_fb - JPEG encoder frame buffer
-> + * @fb_addr:		frmae buffer memory information
-> + * @num_planes:		number of planes
-> + */
-> +struct mtk_jpeg_enc_fb {
-> +	struct mtk_jpeg_mem	fb_addr[MTK_JPEG_COMP_MAX];
-
-Since it's just a small struct, I'd just suggest using VIDEO_MAX_PLANES.
-
-> +	u32			num_planes;
-> +};
-
-Or actually just dropping this struct at all. We should be able to just
-directly get these parameters from vb2 whenever needed.
-
-> +
-> +void mtk_jpeg_enc_reset(void __iomem *base);
-> +u32 mtk_jpeg_enc_get_int_status(void __iomem *base);
-> +u32 mtk_jpeg_enc_get_file_size(void __iomem *base);
-> +u32 mtk_jpeg_enc_enum_result(void __iomem *base, u32 irq_status);
-> +void mtk_jpeg_enc_set_img_size(void __iomem *base, u32 width, u32 height);
-> +void mtk_jpeg_enc_set_enc_format(void __iomem *base, u32 enc_format);
-> +void mtk_jpeg_enc_set_blk_num(void __iomem *base, u32 enc_format, u32 width,
-> +			      u32 height);
-> +void mtk_jpeg_enc_set_stride(void __iomem *base, u32 enc_format, u32 width,
-> +			     u32 height, u32 bytesperline);
-> +void mtk_jpeg_enc_set_src_addr(void __iomem *base, u32 src_addr,
-> +			       u32 src_addr_c);
-> +void mtk_jpeg_enc_set_dst_addr(void __iomem *base, u32 dst_addr,
-> +			       u32 stall_size, u32 init_offset,
-> +			       u32 offset_mask);
-> +void mtk_jpeg_enc_set_ctrl_cfg(void __iomem *base, u32 exif_en, u32 quality,
-> +			       u32 restart_interval);
-> +void mtk_jpeg_enc_start(void __iomem *enc_reg_base);
-> +
-> +#endif /* _MTK_JPEG_ENC_HW_H */
-> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_reg.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_reg.h
-> new file mode 100644
-> index 000000000000..cec3631addc5
-> --- /dev/null
-> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_reg.h
-> @@ -0,0 +1,78 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Xia Jiang <xia.jiang@mediatek.com>
-> + *
-> + */
-> +#ifndef _MTK_JPEG_ENC_REG_H
-> +#define _MTK_JPEG_ENC_REG_H
-> +
-> +#define JPEG_ENC_INT_STATUS_DONE			BIT(0)
-> +#define JPEG_ENC_INT_STATUS_STALL			BIT(1)
-> +#define JPEG_ENC_INT_STATUS_VCODEC_IRQ		BIT(4)
-> +#define JPEG_ENC_INT_STATUS_MASK_ALLIRQ		0x13
-> +
-> +#define JPEG_ENC_DST_ADDR_OFFSET_MASK GENMASK(3, 0)
-> +
-> +#define JPEG_ENC_CTRL_YUV_FORMAT_MASK 0x18
-> +#define JPEG_ENC_CTRL_RESTART_EN_BIT            BIT(10)
-> +#define JPEG_ENC_CTRL_FILE_FORMAT_BIT           BIT(5)
-> +#define JPEG_ENC_EN_JFIF_EXIF                   BIT(5)
-> +#define JPEG_ENC_CTRL_INT_EN_BIT                BIT(2)
-> +#define JPEG_ENC_CTRL_ENABLE_BIT                BIT(0)
-> +#define JPEG_ENC_RESET_BIT                      BIT(0)
-> +
-> +#define JPEG_ENC_YUV_FORMAT_YUYV 0
-> +#define JPEG_ENC_YUV_FORMAT_YVYU 1
-> +#define JPEG_ENC_YUV_FORMAT_NV12 2
-> +#define JEPG_ENC_YUV_FORMAT_NV21 3
-> +
-> +#define JPEG_ENC_QUALITY_Q60 0x0
-> +#define JPEG_ENC_QUALITY_Q80 0x1
-> +#define JPEG_ENC_QUALITY_Q90 0x2
-> +#define JPEG_ENC_QUALITY_Q95 0x3
-> +#define JPEG_ENC_QUALITY_Q39 0x4
-> +#define JPEG_ENC_QUALITY_Q68 0x5
-> +#define JPEG_ENC_QUALITY_Q84 0x6
-> +#define JPEG_ENC_QUALITY_Q92 0x7
-> +#define JPEG_ENC_QUALITY_Q48 0x8
-> +#define JPEG_ENC_QUALITY_Q74 0xa
-> +#define JPEG_ENC_QUALITY_Q87 0xb
-> +#define JPEG_ENC_QUALITY_Q34 0xc
-> +#define JPEG_ENC_QUALITY_Q64 0xe
-> +#define JPEG_ENC_QUALITY_Q82 0xf
-> +#define JPEG_ENC_QUALITY_Q97 0x10
-> +
-> +#define JPEG_ENC_RSTB				0x100
-> +#define JPEG_ENC_CTRL				0x104
-> +#define JPEG_ENC_QUALITY			0x108
-> +#define JPEG_ENC_BLK_NUM			0x10C
-> +#define JPEG_ENC_BLK_CNT			0x110
-> +#define JPEG_ENC_INT_STS			0x11c
-> +#define JPEG_ENC_DST_ADDR0			0x120
-> +#define JPEG_ENC_DMA_ADDR0			0x124
-> +#define JPEG_ENC_STALL_ADDR0		0x128
-> +#define JPEG_ENC_OFFSET_ADDR		0x138
-> +#define JPEG_ENC_RST_MCU_NUM		0x150
-> +#define JPEG_ENC_IMG_SIZE			0x154
-> +#define JPEG_ENC_DEBUG_INFO0		0x160
-> +#define JPEG_ENC_DEBUG_INFO1		0x164
-> +#define JPEG_ENC_TOTAL_CYCLE		0x168
-> +#define JPEG_ENC_BYTE_OFFSET_MASK	0x16c
-> +#define JPEG_ENC_SRC_LUMA_ADDR		0x170
-> +#define JPEG_ENC_SRC_CHROMA_ADDR	0x174
-> +#define JPEG_ENC_STRIDE				0x178
-> +#define JPEG_ENC_IMG_STRIDE			0x17c
-> +#define JPEG_ENC_DCM_CTRL			0x300
-> +#define JPEG_ENC_CODEC_SEL			0x314
-> +#define JPEG_ENC_ULTRA_THRES		0x318
-
-nit: Please make sure all the macro values are aligned nicely, using tabs. 
-
-> +
-> +#define JPEG_ENC_FORMAT(x)		(((x) & 3) << 3)
-> +#define JPEG_ENC_WIDTH_HEIGHT(w, h)	(((w) << 16) | (h))
-> +#define JPEG_ENC_INIT_OFFSET(x)		((x) & (~0xf))
-> +#define JPEG_ENC_OFFSET_MASK(x)		((x) & 0xf)
-> +#define JPEG_ENC_DST_ADDR(x)		((x) & (~0xf))
-> +#define JPEG_ENC_STALL_ADDR(x, y)		(((x) + (y)) & (~0xf))
-
-For the offset and address calculation, please just open code in the
-function that writes the registers, as they're not specific hardware
-register layouts, but just simple calculations.
-
-> +#define JPEG_ENC_SET_QUALITY(x, y)	(((x) & 0xffff0000) | (y))
-
-That's an unusual pattern. Normally macros just generate the values for the
-target bitfield. It's responsibility of the caller to OR it with the
-rest of the register. That way it's clear what the code does from reading
-it.
-
-Best regards,
-Tomasz
-
+--zYM0uCDKw75PZbzx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi Nicolas,
+
+Thank you for the patch! Yet something to improve:
+
+[auto build test ERROR on next-20200305]
+[also build test ERROR on v5.6-rc4]
+[cannot apply to robh/for-next linux/master linus/master v5.6-rc4 v5.6-rc3 v5.6-rc2]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+
+url:    https://github.com/0day-ci/linux/commits/Nicolas-Boichat/Add-dts-for-mt8183-GPU-and-misc-panfrost-patches/20200306-160905
+base:    47466dcf84ee66a973ea7d2fca7e582fe9328932
+config: arm64-defconfig (attached as .config)
+compiler: aarch64-linux-gcc (GCC) 7.5.0
+reproduce:
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # save the attached .config to linux build tree
+        GCC_VERSION=7.5.0 make.cross ARCH=arm64 
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
+
+All errors (new ones prefixed by >>):
+
+>> arch/arm64/boot/dts/mediatek/mt8183-evb.dts:10:10: fatal error: mt6358.dtsi: No such file or directory
+    #include "mt6358.dtsi"
+             ^~~~~~~~~~~~~
+   compilation terminated.
+
+vim +10 arch/arm64/boot/dts/mediatek/mt8183-evb.dts
+
+  > 10	#include "mt6358.dtsi"
+    11	
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+
+--zYM0uCDKw75PZbzx
+Content-Type: application/gzip
+Content-Disposition: attachment; filename=".config.gz"
+Content-Transfer-Encoding: base64
+
+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
+
+--zYM0uCDKw75PZbzx
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--zYM0uCDKw75PZbzx--
+
