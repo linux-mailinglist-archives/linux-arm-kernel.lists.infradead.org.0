@@ -2,76 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7197817BBD1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:38:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DDC817BBF9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:44:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oMRRWl+KIHCghnHXUjICADfIW23Bck20eyvOMU4bmkU=; b=CTimv00SBepqXG
-	ayjDmCCPb+rpcPVrRtUazBNd9TF+JH2oUsurpO5iNdHH8rD07xZ1zC2/57O76eZ30i/2sY42W0VGJ
-	dxgs60MAW6jsozaw0Sljegj5U2fYOUqzFRJqk+QsYnkpyN2mJS1/rra14KjL4D3IZialH4UG314vT
-	Tk3TgStWsWGpQIAKPi5HynetSnkY0nmOf12nghIvPOoK9CvRLWOE7MCH/u8XO+PUxjk8JAZX5xAVs
-	lqCxu4s+hpED2a8y+7gnl1MMwKVTwvqazBMGgcWnPprNPijfJnYAcp283KMvzQ4eBcjKPLNA+huC5
-	bWER8YzhaCR/vd2Uwrzw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GBRqY+ZlG9OubVSKnDeYLCVruZ7J7nz5KtdbtEvy1HQ=; b=Llyk9nNjISHUkT
+	K4Ku8ivAfJAFq8EtCWmNU5Vfm/GB9CiAfeVWDjzO1adIX8LZWq6ETkoy6jMVp61Q+6Iooroz7ZXHm
+	feW2+eKYdhYcGhzKOBQX7Ia2dM0TG/dNkRTDX7Gf6WeBWVsNpUR01Mxt2D/8bEYsGgmezccZziOcj
+	7Bm8D2QK+Mf4RAyRJW7NZxNu1mozJHQyOuAe6kMF5lnQ2edUlA1aLWjwVXTxigyUC9jfOkAC0Wsq0
+	5IeRyQzPbTzjrJ675bZndXZNpapvVspYZ+TiOEpAnUFCQoZU+MmNjDDAOTdr83Jelpa0WthvuAFPy
+	6EW/RQVfzNzRfdobIgVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jABJS-0002zW-Tq; Fri, 06 Mar 2020 11:38:42 +0000
-Received: from conssluserg-06.nifty.com ([210.131.2.91])
+	id 1jABP1-0005GK-33; Fri, 06 Mar 2020 11:44:27 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jABJM-0002yk-1L
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:38:37 +0000
-Received: from mail-vk1-f175.google.com (mail-vk1-f175.google.com
- [209.85.221.175]) (authenticated)
- by conssluserg-06.nifty.com with ESMTP id 026BcJjs027874
- for <linux-arm-kernel@lists.infradead.org>; Fri, 6 Mar 2020 20:38:20 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-06.nifty.com 026BcJjs027874
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1583494700;
- bh=ncu8WLAljVQR3QInSu6mMHuvxTgEWqiZtNOfEM4uZWo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=jDr8BKd+KpPa9mct9RcKcFzVUwXmkTgwNddiTugo1yxY0lv2SvJdxXPaTnemFc4rD
- YiiAiLzYtr3vZwy8ZuwJ1Ne5qhb6Y6vs9Xkaqduf9FAIuaiKJ0vUBwqeHnrPnAgWV9
- GWeRVxKjl3byW6tFRcJ4Al0+wsd+sJw/EH3XTOxqN7ets+v5WsIuUl4NjZv4zNe1VF
- jXMbmXTGNqFRilmn49EQgvm/CDh5WR5w6W0nCmhLhzXsmJmuL+NLBcuXAmKLTeqPWg
- RPJTaECKjUwLX0jAa0NhMzzdFsuKfinUxBfNN823t9u82hOfVyBqblq6mP+lKFxUnk
- VcfivaxL3aBXg==
-X-Nifty-SrcIP: [209.85.221.175]
-Received: by mail-vk1-f175.google.com with SMTP id y201so501882vky.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 03:38:19 -0800 (PST)
-X-Gm-Message-State: ANhLgQ0oIur800JHeVk6L8lv8xqeW64gRcEcLebaT3OKip4hXdbiw2T3
- KN0lNM6tZt/CvRsJvCT7eaQSmfNI3I15+hBVfb8=
-X-Google-Smtp-Source: ADFU+vtmXZGr7Ge50Ss53JblJfZbvh2OCKbpTUq7rB6QvrHFWeB9aTI49mIeYX5VgHRdp43DcgEXGMP7Ijnf/2CgIhU=
-X-Received: by 2002:a1f:cbc1:: with SMTP id b184mr1269535vkg.73.1583494698715; 
- Fri, 06 Mar 2020 03:38:18 -0800 (PST)
+ id 1jABOY-00051D-03; Fri, 06 Mar 2020 11:43:59 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 1C4D0AC23;
+ Fri,  6 Mar 2020 11:43:55 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/4]  USB: pci-quirks: Add Raspberry Pi 4 quirk
+Date: Fri,  6 Mar 2020 12:43:44 +0100
+Message-Id: <20200306114348.5172-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-17-git-send-email-amit.kachhap@arm.com>
-In-Reply-To: <1583476525-13505-17-git-send-email-amit.kachhap@arm.com>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Fri, 6 Mar 2020 20:37:42 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAS63ed8zfoKukgHHmqVNEptXPh8XJTv-Zkh0ba=fLN+XQ@mail.gmail.com>
-Message-ID: <CAK7LNAS63ed8zfoKukgHHmqVNEptXPh8XJTv-Zkh0ba=fLN+XQ@mail.gmail.com>
-Subject: Re: [PATCH v6 16/18] kconfig: Add support for 'as-option'
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_033836_452610_5826EE7E 
-X-CRM114-Status: GOOD (  15.93  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200306_034358_187453_F65C5942 
+X-CRM114-Status: GOOD (  13.53  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.91 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,89 +59,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: f.fainelli@gmail.com, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, tim.gover@raspberrypi.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-pci@vger.kernel.org, Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 6, 2020 at 3:36 PM Amit Daniel Kachhap <amit.kachhap@arm.com> wrote:
->
-> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
->
-> Currently kconfig does not have a feature that allows to detect if the
-> used assembler supports a specific compilation option.
->
-> Introduce 'as-option' to serve this purpose in the context of Kconfig:
->
->         config X
->                 def_bool $(as-option,...)
->
-> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-> Cc: linux-kbuild@vger.kernel.org
-> Acked-by: Masahiro Yamada <masahiroy@kernel.org>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-> ---
-> Changes since v5:
->  * More descriptions for using /dev/zero.
+On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+loaded directly from an EEPROM or, if not present, by the SoC's
+VideCore. This series adds support for the later.
 
+Note that there are a set of constraints we have to consider (some of
+them I missed on v1):
+ - We need to make sure the VideoCore firmware interface is up and
+   running before running the VL805 firmware load call.
 
-FYI:
+ - There is no way to discern RPi4's VL805 chip from other platforms',
+   so we need the firmware load to happen *before* running
+   quirk_usb_handoff_xhci(). Failure to do so results in an unwarranted
+   5 second wait while the fixup code polls xHC's unexisting state.
 
-This has been fixed:
+As per Stefan Wahren's comments I tested the behaviour on outdated
+firmware. Boards dependent on this will not boot if firmware is not
+up-to-date. Older boards with outdated firmware will fail to execute the
+VideoCore firmware call, but xHCI will perform reliably. I added a
+warning printout in case of failure.
 
-https://sourceware.org/git/gitweb.cgi?p=binutils-gdb.git;h=3c968de5c7d1719b2f9b538f2f7f5f5922e5f311
+I'm aware that Florian Fianelli noted on the previous revision that
+waiting on the VideoCore firmware interface during PCIe's probe is far
+from ideal. But this was before taking into account the second
+constraint mentioned above. Impact on non RPi4 boards is minimal.
 
+---
 
-So, this will not be a problem for the
-future release of binutils.
+Changes since v3:
+ - Addressed Greg's comments
 
-Anyway, we need to take care of the released ones,
-so I am fine with /dev/zero.
+There was no v2, my bad.
 
+Changes since v1:
+ - Addressed Floarians comments
 
+Nicolas Saenz Julienne (4):
+  soc: bcm2835: Sync xHCI reset firmware property with downstream
+  firmware: raspberrypi: Introduce vl805 init routine
+  PCI: brcmstb: Wait for Raspberry Pi's firmware when present
+  USB: pci-quirks: Add Raspberry Pi 4 quirk
 
-
-
->  scripts/Kconfig.include | 6 ++++++
->  1 file changed, 6 insertions(+)
->
-> diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
-> index 85334dc..a1c1925 100644
-> --- a/scripts/Kconfig.include
-> +++ b/scripts/Kconfig.include
-> @@ -31,6 +31,12 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -S -x c /dev/null -o /de
->  # Return y if the linker supports <flag>, n otherwise
->  ld-option = $(success,$(LD) -v $(1))
->
-> +# $(as-option,<flag>)
-> +# /dev/zero is used as output instead of /dev/null as some assembler cribs when
-> +# both input and output are same. Also both of them have same write behaviour so
-> +# can be easily substituted.
-> +as-option = $(success, $(CC) $(CLANG_FLAGS) $(1) -c -x assembler /dev/null -o /dev/zero)
-> +
->  # $(as-instr,<instr>)
->  # Return y if the assembler supports <instr>, n otherwise
->  as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
-> --
-> 2.7.4
->
-
+ drivers/firmware/Kconfig                   |  1 +
+ drivers/firmware/raspberrypi.c             | 38 ++++++++++++++++++++++
+ drivers/pci/controller/pcie-brcmstb.c      | 15 +++++++++
+ drivers/usb/host/pci-quirks.c              | 16 +++++++++
+ include/soc/bcm2835/raspberrypi-firmware.h |  9 ++++-
+ 5 files changed, 78 insertions(+), 1 deletion(-)
 
 -- 
-Best Regards
-Masahiro Yamada
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
