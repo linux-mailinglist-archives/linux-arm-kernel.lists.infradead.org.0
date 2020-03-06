@@ -2,54 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C09917BF33
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:39:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EC7617BF75
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:45:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FeVF0d1o+uqdmPDpz5djescgnOEirR+ftkPaNmlZ1yM=; b=FgcIf5NvGkixyC
-	P37p6sb37p7ZDNPBOkRCch1Vkx6IF1OuZ2sF4i1L+VrPSXlldjqKiOCw45QjgXoCc5hQCbflTtE4N
-	tDB4k4yrNFuM0+mLY//RDH+KOdEGj4pbKw8tWTvSbPTuWtp8j5lA7UG/OtzMZiqo2lZ4iVMk0F/Bc
-	IS6QL1F4lY8FOEP50lwU/EnaRZqGBRu5EZl/NX2mbK1EzkIa0sMPWOSuIAUjji/AUcNu7qEnewuhd
-	BIRkJNLpJc/9UnJsqLao/i9re5LTNHpM5q+3fEx0CVj5Q8uT/edAYjnYny52mjZjyKytjBauCPOvz
-	0/vjDICnR3fHxNpT8DiA==;
+	List-Owner; bh=tyeSw22C9Qn9k9yA/AgQ6BB2xl4A39d53oUhbu82Q2A=; b=WXxdiluQc2a8F/
+	+d4IjKyDkC2lnIdqnUCZODMb5H+isRSDM2/3uBx5OCUa3UBVde9BtNdr/OF5ncLqT5LhMWZRa11LX
+	ae/t8pFDDYFgBFZU/+pgaUBaSCDrJK4d3MwLRUeTA9v0ROwDyKB0pd0tJLgj78/pglIWNuA7WxyJ5
+	moLwKeXo8I1rv5AvxKqGEpXfrtC+kyJcM2bLeHAPDfEjDJWefSxCXWHmb9i7o+Q59EBaQ8tTssLYj
+	cpqrH0TEJZe309V6qKYWrD78Kpc55juVtHijJC9GDMjarnxuZ/yZUzA+ysluYlzHMf/aqVeTwFp+X
+	NmDPYxCfU7IvO9D0LsYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jADCK-00033w-3x; Fri, 06 Mar 2020 13:39:28 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1jADI7-00078e-Na; Fri, 06 Mar 2020 13:45:27 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jADC1-0002xi-ST
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:39:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=SMdbthzv3TX7S1U2DSWTkquAEKDYnwquXKKkz97UBdo=; b=mVevxdRoYevK+SpcVyNNWfMuUt
- c/62GzTNWFUryEFoFm1VRfCjAZeAz86XA44dOrcJ5d4Gsdvo6NZSGvmMQVMa3NxHCg415gFTS5QdN
- 5+bK1tJ2mwZm+W300PDhoQm4TI95F+rx+yKfcYBq8SH5mV7c5IpflwvPMSc6eI8Ic9So=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jADBg-00051y-7e; Fri, 06 Mar 2020 14:38:48 +0100
-Date: Fri, 6 Mar 2020 14:38:48 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Ahmad Fatoum <a.fatoum@pengutronix.de>
-Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
-Message-ID: <20200306133848.GB18310@lunn.ch>
-References: <20200305134928.19775-1-philippe.schenker@toradex.com>
- <20200305143805.dk7fndblnqjnwxu6@pengutronix.de>
- <20200305165145.GA25183@lunn.ch>
- <7191ffe6-642a-477c-ec37-e37dc9be4bf8@pengutronix.de>
+ id 1jADI0-00077l-G2
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:45:21 +0000
+Received: by mail-lj1-x241.google.com with SMTP id 143so2252296ljj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 05:45:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7HlHInjFMccqDiZAW2h7dIR71BCrB+D8mPZu9+j1MN8=;
+ b=FHQ6qk5hqbD2qhFvRgZ3LVpYdSyWjhuFzo8kQy9oW1+AW/vDKIqTBYC8mb4BrjqzYu
+ PUKHoxlds59gjOrwJZgYpIHlwyEpf7y2889eDr7CF8k4uM4yxFCVaq71Wml0/0xz+dWG
+ U8wChxbMKfNDhuI07VZcoqEEFyNrO3A80u58UScYrMHiIxQoP8so8W1+tKRMouzGeY6X
+ V0/OBotJRq7p0VlH836pIjR5s+msoqEWcnjd8EQ5sywecQBNKfrnW1Jpfp2XUsXtXd0e
+ GW5JF5yMarrByddEEJO9zne6E6EVIbnJUvPpZVQUgFHoHw9RLlA8oOy/jTh5SyiBt5Sw
+ i+sA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7HlHInjFMccqDiZAW2h7dIR71BCrB+D8mPZu9+j1MN8=;
+ b=Jsys46UI9YGkbThNm4CzFzj0NGKBxLpN+vE/egfASf3syd/s6Yb+i1S01yJ3/ntsdy
+ k/TeAiVuMaX3Su8ZjsfV9bHFz3fykYdaZ4Aw2LkMugDG1k48+nakN4X6mpu5MYDQGSCm
+ D/6wavRyrJvR9Y+3+69QeSkZDGpZgcE6UQeCDTY0j/91qanrdI95JRtmuiUk+Cy4ZLOH
+ erJrw5xZSXWxjgBewuBA/Hn8O7BM4arOHpaeHaVjueqW056HNjSxiP2X6QbYXhNN4mYY
+ JQ65AvVKWU8VXXaE5/ZVEVNqRWYLDgCTuUuOICj+R8iMXxUKHq7POn3lMEG+s5+FRzRe
+ pezA==
+X-Gm-Message-State: ANhLgQ0aFxfUyEZAusRIPM+58VDSsvigp/opAOsLXyNP1dgdQQ4euavI
+ jQHSp5Xu86R2PuVoDgJqXmf2ofkot0sSPVReyh4sJA==
+X-Google-Smtp-Source: ADFU+vtS4etaU8JF15tZD3Ix13FzFgX9XaRY1ceFufTOGBQl3SOmzB3BGAdD+9bvpxp6KQsusW0FzkuQaZihBrzNwzY=
+X-Received: by 2002:a2e:b169:: with SMTP id a9mr2039334ljm.258.1583502317443; 
+ Fri, 06 Mar 2020 05:45:17 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7191ffe6-642a-477c-ec37-e37dc9be4bf8@pengutronix.de>
+References: <20200306005809.38530-1-alexandre.belloni@bootlin.com>
+In-Reply-To: <20200306005809.38530-1-alexandre.belloni@bootlin.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 6 Mar 2020 14:45:06 +0100
+Message-ID: <CACRpkda3DnsoYQSwrny2iS-vx2VmqzdwhBjuNXb6KNUwp9zc5w@mail.gmail.com>
+Subject: Re: [PATCH 1/3] rtc: pl031: remove useless invalid alarm handling
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_053909_959357_3570251E 
-X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-CacheID: sfid-20200306_054520_539234_6F879342 
+X-CRM114-Status: UNSURE (   7.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -57,8 +69,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -78,62 +91,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Oleksij Rempel <o.rempel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Fabio Estevam <festevam@gmail.com>, Allison Randal <allison@lohutok.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > It probably does not even need that. Just
-> > 
-> > phy-mode = <rgmii-txid>
-> 
-> Looks to me like this isn't supported by the Micrel PHY driver or am
-> I missing something?
+On Fri, Mar 6, 2020 at 1:58 AM Alexandre Belloni
+<alexandre.belloni@bootlin.com> wrote:
 
-Ah, you are correct. It just has:
+> The core will never pass an invalid alarm to .set_alarm, it is not
+> necessary to check for its validity.
+>
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
-        if (of_node) {
-                ksz9021_load_values_from_of(phydev, of_node,
-                                    MII_KSZPHY_CLK_CONTROL_PAD_SKEW,
-                                    "txen-skew-ps", "txc-skew-ps",
-                                    "rxdv-skew-ps", "rxc-skew-ps");
-                ksz9021_load_values_from_of(phydev, of_node,
-                                    MII_KSZPHY_RX_DATA_PAD_SKEW,
-                                    "rxd0-skew-ps", "rxd1-skew-ps",
-                                    "rxd2-skew-ps", "rxd3-skew-ps");
-                ksz9021_load_values_from_of(phydev, of_node,
-                                    MII_KSZPHY_TX_DATA_PAD_SKEW,
-                                    "txd0-skew-ps", "txd1-skew-ps",
-                                    "txd2-skew-ps", "txd3-skew-ps");
-        }
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
-and no support for phydev->interface.
-
-At minimum, you should use these DT properties, not a platform fixup.
-
-If you want to, you can add support for rgmii-id, etc. There are five
-modes you need to support:
-
-        PHY_INTERFACE_MODE_NA,
-        PHY_INTERFACE_MODE_RGMII,
-        PHY_INTERFACE_MODE_RGMII_ID,
-        PHY_INTERFACE_MODE_RGMII_RXID,
-        PHY_INTERFACE_MODE_RGMII_TXID,
-
-NA means "don't touch". Leave the RGMII delays alone, as configured by
-hardware default, strapping, bootloader, etc.
-
-	 Andrew
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
