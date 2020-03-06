@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2BDA17C5E6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 20:07:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C37E17C5EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 20:08:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p1Ju79f7Gr9xhKeYC1lgzknWVHaBvpM3ilxmQwd/LI8=; b=Pi4ddY/o/e1m0z
-	9BgOAFrwcDEu8+SDRikxh0NJgDPunF9SU1xg31b77GE64UDdTUKmuvkja5nWQC4463WYVvKEpPgE3
-	camttaW7TaY32eBwGypIss9P3ujiVWUsKYngPp7MP3tyWCMufp8lP05BKeT0EcfRORsYtlgIdMMR5
-	xMngMNFDBzrvlOM2lGqvWVeKfniWTUAdRJZALDd5REoPDR1aUIRvuJLlbkqtRJNnazbBOlQIgkasC
-	q2A7PvZP2Zb4Mdlbwn+l488icVr6p2uveIf5tYnZiLj5lwP3SCjidnXBPr5sgxhOguP79XmxXugUG
-	l4Ymqx0jFdHUBCSl/FMA==;
+	List-Owner; bh=+NPdnDSIqXNq6HrVubFzy83itUjIAEdJmITaGP2Yk78=; b=bLef6aWn6xqHCA
+	Y7PKbC1HeuV3U2ioZlt+O73MzoOBSpAcDY3YKznLa0y+vWBqxMErNZgjdI741KBECuz2uO2agwNlo
+	xlYqyCbY2JK1jmkBnpRS/JiV/6XqubGVz/l4hSPWQuKosJ4oq9kq4nZAWHKGcvLshrAqFclotR6JR
+	g4c1b859PmSQ56a+J1Dyh0/OTjhz3UPMb6uthqU69R/ViaOPGrcPG4LfkDH2yqgMxvi6Iu75tSVep
+	cJZPBZya4DWvRrIkDYNNWIXIZ8JMhI8F7uLFs85wTd35xpIHR0GW1Zzk5yhQLz98tMqGyubu7+fnM
+	Tbyy/3D0Woli77oT7wYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAIK0-0007qr-3P; Fri, 06 Mar 2020 19:07:44 +0000
+	id 1jAIKJ-0008BU-0w; Fri, 06 Mar 2020 19:08:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAIJf-0007ld-MU
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 19:07:25 +0000
+ id 1jAIJl-0007s1-Pk
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 19:07:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73E8C1FB;
- Fri,  6 Mar 2020 11:07:22 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12A561FB;
+ Fri,  6 Mar 2020 11:07:29 -0800 (PST)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B51773F6C4;
- Fri,  6 Mar 2020 11:07:20 -0800 (PST)
-Subject: Re: [PATCH v6 06/18] arm64: ptrauth: Add bootup/runtime flags for
- __cpu_setup
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A0B73F6C4;
+ Fri,  6 Mar 2020 11:07:27 -0800 (PST)
+Subject: Re: [PATCH v6 04/18] arm64: install user ptrauth keys at kernel exit
+ time
 To: Amit Daniel Kachhap <amit.kachhap@arm.com>
 References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-7-git-send-email-amit.kachhap@arm.com>
+ <1583476525-13505-5-git-send-email-amit.kachhap@arm.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <5ea176fe-fe96-34e4-e7ad-0f0b4514b97d@arm.com>
-Date: Fri, 6 Mar 2020 19:07:19 +0000
+Message-ID: <247d3d60-b109-ab1d-5591-086cc0db6e07@arm.com>
+Date: Fri, 6 Mar 2020 19:07:26 +0000
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1583476525-13505-7-git-send-email-amit.kachhap@arm.com>
+In-Reply-To: <1583476525-13505-5-git-send-email-amit.kachhap@arm.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_110723_797446_F1B49115 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20200306_110730_047404_F5B43AEE 
+X-CRM114-Status: GOOD (  14.00  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -81,23 +81,43 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Amit,
 
 On 06/03/2020 06:35, Amit Daniel Kachhap wrote:
-> This patch allows __cpu_setup to be invoked with one of these flags,
-> ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_SECONDARY or ARM64_CPU_RUNTIME.
-> This is required as some cpufeatures need different handling during
-> different scenarios.
+> From: Kristina Martsenko <kristina.martsenko@arm.com>
 > 
-> The input parameter in x0 is preserved till the end to be used inside
-> this function.
+> As we're going to enable pointer auth within the kernel and use a
+> different APIAKey for the kernel itself, so move the user APIAKey
+> switch to EL0 exception return.
 > 
-> There should be no functional change with this patch and is useful
-> for the subsequent ptrauth patch which utilizes it. Some upcoming
-> arm cpufeatures can also utilize these flags.
+> The other 4 keys could remain switched during task switch, but are also
+> moved to keep things consistent.
+
+> diff --git a/arch/arm64/include/asm/asm_pointer_auth.h b/arch/arm64/include/asm/asm_pointer_auth.h
+> new file mode 100644
+> index 0000000..f820a13
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/asm_pointer_auth.h
+> @@ -0,0 +1,49 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ASM_ASM_POINTER_AUTH_H
+> +#define __ASM_ASM_POINTER_AUTH_H
+> +
+> +#include <asm/alternative.h>
+> +#include <asm/asm-offsets.h>
+> +#include <asm/cpufeature.h>
+> +#include <asm/sysreg.h>
+> +
+> +#ifdef CONFIG_ARM64_PTR_AUTH
+> +/*
+> + * thread.keys_user.ap* as offset exceeds the #imm offset range
+> + * so use the base value of ldp as thread.keys_user and offset as
+
+> + * keys_user.ap*.
+
+(Nit: thread.keys_user.ap*)
+
+> + */
+> +	.macro ptrauth_keys_install_user tsk, tmp1, tmp2, tmp3
 
 Reviewed-by: James Morse <james.morse@arm.com>
-
-
-(this will conflict with Ionela's AMU series, which will need to not clobber x0 during
-__cpu_setup.)
 
 
 Thanks,
