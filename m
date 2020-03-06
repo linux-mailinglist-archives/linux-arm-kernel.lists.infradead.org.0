@@ -2,56 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B212C17C63C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 20:22:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9977917C65D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 20:33:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HeOhnG3bavQeeVRvbC3SXDj6FokmoPLmVVxl7XrME5M=; b=Q8XJlBbOlrQCPr
-	CsKJ+g3LtIq5yKSazL/vBA6EjVOPqOqlVXq5bacYIux0hrIPZjji4wDsX7vTy12yerGhjsA3jG9qe
-	Px8vSYYWyiKEjPOFZ460SAOfyeXGTSvE5uVhTpj+OPprjSujiRPoosiO0QxbHSU6vGZVGzjpq3d72
-	aVY6XRJrELv6t4v8GemBvPPbd3MMbJoBvi8vM1Dln136giEVuhE0aRJ8ENJDIJqxmwmu2RMDq8R5l
-	s3OcwUC/0R+etK/qOofdTdkOeHY9VYSMQQ51O/ryPm9pAuPoxSO1RtFcA3mCXJcWtJYVWKTLIKvTL
-	2XrtAMm6/gP5SbOjRgcQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2h7A6jDvUTNlsUPbMydp1B/rRYkIkYqAfSIyiXLdExg=; b=O75rRDmHcHn6n6
+	dU0sZDZjFN1Jib9wkvicpss5ESLX3gsE+kWL/6UVfX+m9uVgKUts6eJpSPUDegQ83peAvCsjqhPN1
+	w9CB/yYVJYI7lI+ADB23FeKTdUB4gz+FgdrmCNh8HWEHQKrsG0RDdolejEJkdXFAdbmFnVfyNiWQ6
+	lRZjsQntSu/omdRweUATGoziGnrdKfjjs7/EwmY+FIQftu2O1s5xO66W4LLRmnXabnEQrdi68T7XH
+	x4Ao4KoeymM6pSfbSwMtuJQv38WLPe+4SROjM5uD1nxC1PNFzGLOCM2hoeh2quC9oA2Yl7PYT/TCI
+	wE7yk/S5xK7AUDu/jMuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAIYX-0006CE-Qq; Fri, 06 Mar 2020 19:22:45 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1jAIip-0000vG-A1; Fri, 06 Mar 2020 19:33:23 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAIYM-0006Av-L3; Fri, 06 Mar 2020 19:22:36 +0000
-X-Originating-IP: 109.190.253.14
-Received: from localhost (unknown [109.190.253.14])
- (Authenticated sender: repk@triplefau.lt)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id D557360006;
- Fri,  6 Mar 2020 19:22:16 +0000 (UTC)
-From: Remi Pommarel <repk@triplefau.lt>
-To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Jose Abreu <joabreu@synopsys.com>
-Subject: [PATCH] net: stmmac: dwmac1000: Disable ACS if enhanced descs are not
- used
-Date: Fri,  6 Mar 2020 20:30:36 +0100
-Message-Id: <20200306193036.18414-1-repk@triplefau.lt>
-X-Mailer: git-send-email 2.25.0
+ id 1jAIig-0000uN-N2
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 19:33:17 +0000
+Received: by mail-pl1-x643.google.com with SMTP id w3so1273038plz.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 11:33:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=z3KT8EeBZ4kaVLgnDAz4UiYDB1f5ZpcHkzDsT+BdSZk=;
+ b=rxSdDrqzraT4uwdK4VFCE5tw55F0ImCJ4F37HWzATRmaxytGqnISM36ath42eIQYyS
+ rBxO7a6vHaGFt06R6XSFwSP1nK647qwCkhSGR3uLvqqK0Zl6BgHyntKqbDXBoqlJf96k
+ mwsBKxGe3/qFV7x7SqiCwoCNzEaFRucueRUkHjxI/aduFKiKdxl109Pf5SL+vws6BKUK
+ +eMM7neFp8TqrDj96iPZM2jdRCKC3rsRpjxGUVUmlbD2WmHYrE+Ns/PpMw6e2BZbL4rF
+ kDtclqHTx03ggdYNn8/LVa11NjdycrQMnWIfiK/oLXyIG2vM3XUsWAvm3PMHLW5RPo/O
+ WW0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=z3KT8EeBZ4kaVLgnDAz4UiYDB1f5ZpcHkzDsT+BdSZk=;
+ b=CUjHs5Y7ksr5/ncGApkb/sfmaryNx6nzQ/epXW/7WKuoJhWrQdZweV1LRzgcr3TGVs
+ OCbr9lVdZ4Y87upBxaRmaslcV1hTQ3gLCjTrZk5ahnoC/eOXQs+no2FFclarAa8ggDhD
+ o29JbDODtOqcLhzsqECM+JLlwGqHCsQm+7YdjcXwUrOI3i0DpYaWMuyRFRjarcnc0WGs
+ z3cSVtrBTkkdzqAdNnEZnkrRbUHFRgw2G4p2+eJ+yx0qLo6MbNwPHLKBZZ8gX1J/Yeyj
+ DJKWyLjbXbx42KLsUvfWkf8ZygVl/INqaJ5C/h8VOW65ucjNUDaPi/3CPM+b9+nJFz2F
+ UBfA==
+X-Gm-Message-State: ANhLgQ2gr7s3/f5pk8KbmqZNTEdO5zg/gM0vpBaaBVeqa4z1txVWXBDY
+ /FB7PBj+LI+CP0sDG40YCMydzqP4
+X-Google-Smtp-Source: ADFU+vsT3WVYwhpJooawROdOiTWGvCsUv6cL9HuV5P5d1U/LqQqpNY07JVvpUBPh8/8LLWwZnSFs9Q==
+X-Received: by 2002:a17:90a:ef17:: with SMTP id
+ k23mr5138094pjz.139.1583523193162; 
+ Fri, 06 Mar 2020 11:33:13 -0800 (PST)
+Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
+ by smtp.gmail.com with ESMTPSA id a7sm10093043pjo.11.2020.03.06.11.33.11
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 06 Mar 2020 11:33:12 -0800 (PST)
+Date: Fri, 6 Mar 2020 11:33:10 -0800
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Message-ID: <20200306193310.GI217608@dtor-ws>
+References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
+ <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_112234_823610_75526E56 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200306_113315_229177_489EBAD8 
+X-CRM114-Status: GOOD (  14.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dmitry.torokhov[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,52 +102,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- Remi Pommarel <repk@triplefau.lt>, linux-amlogic@lists.infradead.org,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, m.felsch@pengutronix.de, festevam@gmail.com,
+ linux-rtc@vger.kernel.org, amit.kucheria@verdurent.com, wim@linux-watchdog.org,
+ daniel.lezcano@linaro.org, krzk@kernel.org, Linux-imx@nxp.com,
+ linux-input@vger.kernel.org, rui.zhang@intel.com, ronald@innovation.ch,
+ linux@roeck-us.net, linux-watchdog@vger.kernel.org, arnd@arndb.de,
+ linux-pm@vger.kernel.org, s.hauer@pengutronix.de, tglx@linutronix.de,
+ andriy.shevchenko@linux.intel.com, daniel.baluta@nxp.com,
+ linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ linux@rempel-privat.de, kernel@pengutronix.de, enric.balletbo@collabora.com,
+ shawnguo@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ACS (auto PAD/FCS stripping) removes FCS off 802.3 packets (LLC) so that
-there is no need to manually strip it for such packets. The enhanced DMA
-descriptors allow to flag LLC packets so that the receiving callback can
-use that to strip FCS manually or not. On the other hand, normal
-descriptors do not support that.
+On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
+> Add COMPILE_TEST support to i.MX SC keyboard driver for better compile
+> testing coverage.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Thus in order to not truncate LLC packet ACS should be disabled when
-using normal DMA descriptors.
+Applied, thank you.
 
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
----
- drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+> ---
+>  drivers/input/keyboard/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
+> index 4706ff0..81e26f6 100644
+> --- a/drivers/input/keyboard/Kconfig
+> +++ b/drivers/input/keyboard/Kconfig
+> @@ -467,7 +467,7 @@ config KEYBOARD_IMX
+>  
+>  config KEYBOARD_IMX_SC_KEY
+>  	tristate "IMX SCU Key Driver"
+> -	depends on IMX_SCU
+> +	depends on IMX_SCU || COMPILE_TEST
+>  	help
+>  	  This is the system controller key driver for NXP i.MX SoCs with
+>  	  system controller inside.
+> -- 
+> 2.7.4
+> 
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-index d0356fbd1e43..b468acf03b00 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-@@ -25,6 +25,7 @@ static void dwmac1000_core_init(struct mac_device_info *hw,
- 				struct net_device *dev)
- {
- 	void __iomem *ioaddr = hw->pcsr;
-+	struct stmmac_priv *priv = netdev_priv(dev);
- 	u32 value = readl(ioaddr + GMAC_CONTROL);
- 	int mtu = dev->mtu;
- 
-@@ -35,7 +36,7 @@ static void dwmac1000_core_init(struct mac_device_info *hw,
- 	 * Broadcom tags can look like invalid LLC/SNAP packets and cause the
- 	 * hardware to truncate packets on reception.
- 	 */
--	if (netdev_uses_dsa(dev))
-+	if (netdev_uses_dsa(dev) || !priv->plat->enh_desc)
- 		value &= ~GMAC_CONTROL_ACS;
- 
- 	if (mtu > 1500)
 -- 
-2.25.0
-
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
