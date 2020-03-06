@@ -2,62 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01A6317BB55
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:14:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E11A817BB8B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:21:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dlJmpfInWuNyMDmpkavQydWJ+BK2BHThA7uviYWwA2Y=; b=BcnspobW1jUCNP
-	UB2tDOpuMYg37ik4f0YzieDRBPh2QzzJhw3v7s+mH4+t/G7Pw63EwKq2Bq2w7p8shtbRHYrASO8Kf
-	+7Vs2N7IRAi8Ri5zqyPH2YLdm/O5iC/UQM/EUHKaHpMpq+TDLLrifm/ZQ2vkJy7MPMpciF2HsZiXw
-	sC6IXmXpcy8s8HR/Upx38a8O5ypvjvSDS7WHD0eAux7DJP3QMhZbbIUtR5Ef6i8WAD6O3YtleIIkR
-	eXXcqYvQEkO7ieWMyJtl5o79JTisqe8+t/fX6hAAJOlaLZ7IexSEVFoGeDkT/mpRjxZV8iGHYbGZM
-	NZHapS3Cd1AKd3VW5XKQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=edDsXk1JpjakKYZ3fbZr2eaaojNRuW87NM7KEaQAxrU=; b=amh2PXLlOd+Mdf
+	UGOn5158v3XepKnBy3Y8G2Kw1ojf2jS8fupZMg51xz1Acnix0fHAVSo0WKp56gzrJ2j24Rl3kfAx9
+	XxgM6zndlo3XzVTrCwWmmsj6VXJeNCbEbZcwRcSAJLintV2Bw6Cl2wHolyzA03XoCkZkY2CD6LzGI
+	1T7tCHKUk/6DqRAfnUEIaP/3qwpZcKc6SdL81/FNbt5xJ0En/RjVFIXfO5K6bZ4Twr77SV2geIwgb
+	rW1v8ju8fjwCBPPKblbY73UE5GAhT75pFwSAMAZGOrdIuEwqVkBrdBT1DM5VcLvuz0h3tJw9LUVB4
+	XcSKpUeDWBE1figruY4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAw8-0000Vg-6u; Fri, 06 Mar 2020 11:14:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAvy-0000UZ-Gm
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:14:27 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <a.fatoum@pengutronix.de>)
- id 1jAAvv-0007qh-Fv; Fri, 06 Mar 2020 12:14:23 +0100
-Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
-To: Philippe Schenker <philippe.schenker@toradex.com>,
- "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
- "andrew@lunn.ch" <andrew@lunn.ch>
-References: <20200305134928.19775-1-philippe.schenker@toradex.com>
- <20200305143805.dk7fndblnqjnwxu6@pengutronix.de>
- <20200305165145.GA25183@lunn.ch>
- <7191ffe6-642a-477c-ec37-e37dc9be4bf8@pengutronix.de>
- <4e48d56f184ed56d15d2ae6706fdb29e4c849132.camel@toradex.com>
-From: Ahmad Fatoum <a.fatoum@pengutronix.de>
-Message-ID: <f47a46b9-6d6a-e257-4309-7e49852bc88e@pengutronix.de>
-Date: Fri, 6 Mar 2020 12:14:20 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+	id 1jAB35-0003pS-1F; Fri, 06 Mar 2020 11:21:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAB2y-0003oc-KD
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:21:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9259731B;
+ Fri,  6 Mar 2020 03:21:38 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 637213F6C4; Fri,  6 Mar 2020 03:21:36 -0800 (PST)
+Date: Fri, 6 Mar 2020 11:21:34 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Ionela Voinescu <ionela.voinescu@arm.com>
+Subject: Re: [PATCH v6 0/7] arm64: ARMv8.4 Activity Monitors support
+Message-ID: <20200306112134.GD2503422@arrakis.emea.arm.com>
+References: <20200305090627.31908-1-ionela.voinescu@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <4e48d56f184ed56d15d2ae6706fdb29e4c849132.camel@toradex.com>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: a.fatoum@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20200305090627.31908-1-ionela.voinescu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_031426_556281_12C2E0FF 
-X-CRM114-Status: GOOD (  13.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200306_032140_709225_EC4292D5 
+X-CRM114-Status: GOOD (  10.29  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,60 +61,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "allison@lohutok.net" <allison@lohutok.net>
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, pkondeti@codeaurora.org,
+ maz@kernel.org, linux-pm@vger.kernel.org, linux-doc@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, dietmar.eggemann@arm.com,
+ peterz@infradead.org, mingo@redhat.com, viresh.kumar@linaro.org,
+ linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
+ valentin.schneider@arm.com, lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Philippe,
+Hi Ionela,
 
-On 3/6/20 10:46 AM, Philippe Schenker wrote:
-> Hi Andrew and Ahmad, thanks for your comments. I totally forgot about
-> those more specific phy-modes. But just because none of our driver
-> supports that. Either the i.MX6 fec-driver as well as the micrel.c PHY
-> driver supports this tags.
-> What do you guys suggest then how I should implement that skew stuff?
+On Thu, Mar 05, 2020 at 09:06:20AM +0000, Ionela Voinescu wrote:
+> v5 -> v6
+>  - v5 can be found at [7]
+>  - The current series is based on arm64/master [8].
 
-I think implementing them in the Micrel driver would make sense.
-When more specific skews are supplied, these are used.
-If not, the rgmii_[tx]?id applies the appropriate timings for length matched
-lines. Device trees matching your use case will then only have to specify
-rgmii-txid. 
+arm64/master is just some random point in the Linus tree, I didn't
+realise people are using it. I moved it to v5.6-rc3 as that's the base
+for the final arm64 for-next/core.
 
-> The problem is that i.MX6 has an asynchronic skew of -100 to 900ps only
-> enabling the PHY-delay on TXC and RXC is not in all cases within the
-> RGMII timing specs. That's why I implemented this 'weird' numbers.
+>  - [1/7] kernel parameter removed as Catalin recommended
+>  - [2/7, 4/7] changelog and documentation changed to remove information
+>    about the removed kernel parameter
+>  - [2/7, 3/7, 6/7] collected reviewed-by and acked-by from James,
+>    Marc and Lukasz.
 
-I am not too well-versed with this. What's an asynchronic skew?
-A non-deterministic internal delay..? So, you try to be as accurate as
-possible, so the skew is within the acceptable margin?
+The series looks fine. Once Sudeep reviews/acks the arch topology patch,
+I'll queue the patches.
 
-Cheers
-Ahmad
-
-
-> 
-> Philippe
-> 
+Thanks.
 
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
