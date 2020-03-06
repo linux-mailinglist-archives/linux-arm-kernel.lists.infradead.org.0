@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A1CF17C4D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:46:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A2B517C4D5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:46:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bBTx986GQ4POy8gSTFe7IxZgx1YTO0b7UHlEjMjx1IY=; b=lDVCfBjSN/Myha
-	5Dycq09R/3L23so/AKDZLZmRfAnygUKnZLG65H1/zZWnUQGXmWqgxpdLlw5rOsyx15+cqvNttWaSX
-	I4eRlq8rbpcOGCOIAqVwdvN4mYotp48og7I1MRY/H9KuDXt03pKh8hZ9Hb9wsfZ/xb3ZiL9KgKOl1
-	EzTseaxDV02C9iUcFeGCgEDh9xiDlS9jaWog8AZilza6bPgnqjtGct7/HUMjBhGCA5Dhq0pun7AW2
-	IP4n6CML4skXGJQ+2o2lO2ruSKQilhfoQCfmbxWeK42Psl9eqsG1WnFS3+Kx24S1zvr5cy3LlTXi3
-	b2CBGwNrz/0N2sQTgmRg==;
+	List-Owner; bh=qltZFA0Y9QkW1zo8+jpQ03/QX65AzRP1ZhcFOce7j/8=; b=GocaNRkvISiHj4
+	aGzuMYzfJKoCcX8ajWwvtMvj3z8rMB9di5V23ldkUewZKFVgLVHe4LE/ieCxaTObUFbUslOcvzJhz
+	MDekeCpgi01OQcGL/cGNorEiqo3V0AK4kDSM++XwVI1oOsdFXEe1QYJkwfAVMnqkOUcQaQrcc6duO
+	8E/38yuAsdAtp33wELTW4Rj9dAQeduNlsoQJBSVjS7L0+XCBYzxhw/PPebecmun/Cki0H4rsww5ke
+	hMNJenPpgQt1lAKeGYRx3xdR+f7XGpZkcVjHcjhWHQld6dmu9ZiPubTzwMMBcviG0/yLPEjqMcGwg
+	gupe8ixmEPIfnYRpSZ+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAH35-0002Mg-GD; Fri, 06 Mar 2020 17:46:11 +0000
+	id 1jAH3N-0002b6-0A; Fri, 06 Mar 2020 17:46:29 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAH1R-00080f-G3; Fri, 06 Mar 2020 17:44:31 +0000
+ id 1jAH1S-00081Z-Oq; Fri, 06 Mar 2020 17:44:32 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id E4D87AC66;
- Fri,  6 Mar 2020 17:44:27 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id E704DACC2;
+ Fri,  6 Mar 2020 17:44:28 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: adrian.hunter@intel.com,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 05/11] mmc: sdhci: pxav3: Use sdhci_set_power_and_voltage()
-Date: Fri,  6 Mar 2020 18:44:07 +0100
-Message-Id: <20200306174413.20634-6-nsaenzjulienne@suse.de>
+To: adrian.hunter@intel.com, linux-kernel@vger.kernel.org,
+ Hu Ziji <huziji@marvell.com>
+Subject: [PATCH v2 06/11] mmc: sdhci: xenon: Use sdhci_set_power_and_voltage()
+Date: Fri,  6 Mar 2020 18:44:08 +0100
+Message-Id: <20200306174413.20634-7-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_094430_111534_48D3B106 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20200306_094430_961744_3D7FD5C0 
+X-CRM114-Status: GOOD (  12.12  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,19 +77,19 @@ this controller's set_power() callback. Use it instead.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/mmc/host/sdhci-pxav3.c | 20 +-------------------
+ drivers/mmc/host/sdhci-xenon.c | 20 +-------------------
  1 file changed, 1 insertion(+), 19 deletions(-)
 
-diff --git a/drivers/mmc/host/sdhci-pxav3.c b/drivers/mmc/host/sdhci-pxav3.c
-index e55037ceda73..75fe90b88f9b 100644
---- a/drivers/mmc/host/sdhci-pxav3.c
-+++ b/drivers/mmc/host/sdhci-pxav3.c
-@@ -297,27 +297,9 @@ static void pxav3_set_uhs_signaling(struct sdhci_host *host, unsigned int uhs)
- 		__func__, uhs, ctrl_2);
+diff --git a/drivers/mmc/host/sdhci-xenon.c b/drivers/mmc/host/sdhci-xenon.c
+index 1dea1ba66f7b..1e9a7a76f2ba 100644
+--- a/drivers/mmc/host/sdhci-xenon.c
++++ b/drivers/mmc/host/sdhci-xenon.c
+@@ -213,24 +213,6 @@ static void xenon_set_uhs_signaling(struct sdhci_host *host,
+ 	sdhci_writew(host, ctrl_2, SDHCI_HOST_CONTROL2);
  }
  
--static void pxav3_set_power(struct sdhci_host *host, unsigned char mode,
--			    unsigned short vdd)
+-static void xenon_set_power(struct sdhci_host *host, unsigned char mode,
+-		unsigned short vdd)
 -{
 -	struct mmc_host *mmc = host->mmc;
 -	u8 pwr = host->pwr;
@@ -106,13 +106,18 @@ index e55037ceda73..75fe90b88f9b 100644
 -		mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
 -}
 -
- static const struct sdhci_ops pxav3_sdhci_ops = {
- 	.set_clock = sdhci_set_clock,
--	.set_power = pxav3_set_power,
-+	.set_power = sdhci_set_power_and_bus_voltage,
- 	.platform_send_init_74_clocks = pxav3_gen_init_74_clocks,
- 	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
- 	.set_bus_width = sdhci_set_bus_width,
+ static void xenon_voltage_switch(struct sdhci_host *host)
+ {
+ 	/* Wait for 5ms after set 1.8V signal enable bit */
+@@ -240,7 +222,7 @@ static void xenon_voltage_switch(struct sdhci_host *host)
+ static const struct sdhci_ops sdhci_xenon_ops = {
+ 	.voltage_switch		= xenon_voltage_switch,
+ 	.set_clock		= sdhci_set_clock,
+-	.set_power		= xenon_set_power,
++	.set_power		= sdhci_set_power_and_bus_voltage,
+ 	.set_bus_width		= sdhci_set_bus_width,
+ 	.reset			= xenon_reset,
+ 	.set_uhs_signaling	= xenon_set_uhs_signaling,
 -- 
 2.25.1
 
