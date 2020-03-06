@@ -2,81 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD9AC17C05D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 15:36:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D45417C06A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 15:40:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uZRoKOb0MawFb61DNHz4hCrcVo4zqQVt2tjxYh0AI1s=; b=btIx++1ZP7Hn3/
-	3GFhlvfp5POyfm3+k1l3CgNGFYP0HjOp2/06CWNzso6xhuuspSElGNNkJ/81aQmTh04s9iuY5MJX7
-	/IUYLFcG2ygq+VoWTwQ0nZOBwiEqzfVe0j4hEggsUg1/FbqZ3ZB/gbHHfaeikNNyRRv02kwIbzYW7
-	FqvzxElOi/xEp4+qGdAeZTOaWnhZcmuoPnpt50BRQhgyoZ/Xe5HSYsjNZ26grqlUEFBaIN6Xy0GlA
-	fP+RdpZU3tBlCgv3YW1TfjpdZaGRoldjqFwFkjtbE9WBFIxAHRSXdwfJILSsjwwEHhczSmbHFsV1L
-	MclwBCBCJl5jrOHiCRLg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ct2bnUevsnJeYT8VoAQi+tkPqySGkncwxLnVJ8yy9xk=; b=YighXLvMqM6zZo
+	c1+KnwGRmuPOZVVYakqnzS97NEBIEWRLqRYlqYUmwEDcPQtbqJVJjnpOp5cKC3Ei8A/0FL5TFQXj7
+	UmtnCIguRGMUEaakhzz0eYrO7p5LCozSv7baJuGHUnTIdMb2YOmfPVtctZVPmP7IMSt0z/cPfXKlL
+	3baAtnBbHAW+oOAS/5jv/sQA7xc8VPmAiv550gME8tSi+rpC/AIHqyMfpu/Lnlu8+0yUClwIOsUl0
+	knnVwfZ91Wmv6fZnWPo752VJwB6StD71kcwwA6M8GIjWsJ1b1Xn51U827cARRtJpsev74G4L7mbIg
+	/D6ItHE9HBy0ixSf9Dew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAE5J-0001QI-8C; Fri, 06 Mar 2020 14:36:17 +0000
+	id 1jAE9C-0003c2-Ct; Fri, 06 Mar 2020 14:40:18 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAE59-0001On-79
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 14:36:08 +0000
-Received: by mail-wm1-x344.google.com with SMTP id i14so2630240wmb.1
+ id 1jAE8z-0002wO-DE
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 14:40:08 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p9so2700880wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 06:36:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=IdtX3txS1Rj5y4dz7wIKkSyvH1Rw1XFvTfdagNbM2bU=;
- b=YUvu6JjSjCjKSmfeTWzbk/mitLMbkxf3DfR+DN3duN1k0wQoKseoCpJQmbriD7dA70
- 8lgpo6K+CWIlciFI2d54YI7ZPsG+7USrqrtkCgGFribhynpJBKxPSj45NC0zhWSn5/1Z
- QvmV51OgAMAsAphmeqXjhnhQfdicOmQ0U7o3dvPsmvRBEofJYP3mrx+y2ArtO8DyqDRd
- AoHZI/gJNMRX2c9O4/4ju3VY+bc3DPpqGuP494u/tNGEkyfhkaHCaRUslOhxBuZx0TnN
- OtknlK8DNrF218Ds29fpJK9GhchaEDI0LjqY89n2JxWqqXctj4YRUS+77wC9cESbAUFC
- 0YDg==
+ Fri, 06 Mar 2020 06:40:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:references:from:autocrypt:organization:cc:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=UHD8Cjg7cxe0FqPGUpuHhNgIy9D9uE3DNlkPjJCU8G8=;
+ b=l9aV7/iIMZWP7WExZGHmYOkk4/U6qN4T0pes5Cu/n3yRVNNMvlqwXVjFL/eECPwcRC
+ 0zfbRVw2vY3ZXn2qtFPJJfnYOaVr72U84zkD5uGe8cfrXdLT3SSjPnwe8G88GOrVFhuB
+ p26/ZrbLxY/Hi4uovWbZoyYOG5/g2gZv3OUQdL8/RgRk/P1KVMOwQw4V1naKFzY97qEG
+ zbUySt+FaP86FFKR6ypJkrZ7RjMRIfnccU7H2E3Hhm5yhH58GJ5hQBDG3IveGQwp51Zb
+ JKCopBvF6mL6QBnRnjsTtDa2X3QkMPikLUpQvqYb4gpEP1zTXkREy1TV/LZuL1EiP1Q4
+ 51Ww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=IdtX3txS1Rj5y4dz7wIKkSyvH1Rw1XFvTfdagNbM2bU=;
- b=jgZYzHbx7PndY80En8QlTmSUrIdHuZOq1yGB2VgJdzFOBdF1rDX3HbnYXXVQtGk3gH
- I0xK/mzZSkKbqUsXoWggDetGOnoXlI48ls74zOervefFJilmYUrNZ3KuNoQtn4wt0b8y
- fGNXVoIIWSDK1F64tEekUjbnStNW+y9LqZsyZf1YX2j1cUqCAQ3YM65Q+BRNx5uzOGfj
- z8cbt03t3ip304egqSq7RRH/8ts/B4qearN6W4n+6sJKM/SJpwWpBWr3QpLcxCRfcGph
- TBR1OhWMBV49MfiPfknVOF27wYlf5tlzi1q9p6p09kp7BrMxwyII0lpty5ZLyhar2opd
- uBTA==
-X-Gm-Message-State: ANhLgQ1d01Hzrg6waj4NRnM7gzkRq8u6g18UvrhCfrIH31W8kcuc/Ilw
- yQNNaoUcj1k4lebaSnyPMdQ/oQ==
-X-Google-Smtp-Source: ADFU+vso3XaLrSLsJHyy38nS4lkcofYSES+LpI4xvlFWzpkLgomnvoNduJx+7dNPFwc8Wt+DimCgxg==
-X-Received: by 2002:a7b:ca52:: with SMTP id m18mr4589811wml.168.1583505363558; 
- Fri, 06 Mar 2020 06:36:03 -0800 (PST)
-Received: from myrica ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id w8sm15370244wmm.0.2020.03.06.06.36.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Mar 2020 06:36:02 -0800 (PST)
-Date: Fri, 6 Mar 2020 15:35:56 +0100
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH v4 01/26] mm/mmu_notifiers: pass private data down to
- alloc_notifier()
-Message-ID: <20200306143556.GA99609@myrica>
-References: <20200224182401.353359-2-jean-philippe@linaro.org>
- <20200224190056.GT31668@ziepe.ca> <20200225092439.GB375953@myrica>
- <20200225140814.GW31668@ziepe.ca> <20200228143935.GA2156@myrica>
- <20200228144844.GQ31668@ziepe.ca> <20200228150427.GF2156@myrica>
- <20200228151339.GS31668@ziepe.ca> <20200306095614.GA50020@myrica>
- <20200306130919.GJ31668@ziepe.ca>
+ h=x-gm-message-state:subject:to:references:from:autocrypt
+ :organization:cc:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=UHD8Cjg7cxe0FqPGUpuHhNgIy9D9uE3DNlkPjJCU8G8=;
+ b=mf3CkYKGDBac4pKxgSdWgbuDhg6UXnCUqZ+3Sxarn9mVI1MwaY4ZN0SK3Ga1Mda4Kx
+ BfyZ2dF2o4Zmasn/180rvMqYIN4XtQRNQ8Z90FOvyT3k5BIgNNZM7tfAH8mgsxNPCCK+
+ O10FZLxppR+R/FleBjUeakXkklHpUrPrRbfKf1jErKe/rNOTiBtDEoOB3E9BeWcHsoA5
+ zakQVPR1bHhfQqOktonRPrtkQTM/j0ASIBSV5OOd6pFn7t12wQEMlGa0rETiFeLZRa+Y
+ y5WR9kXbMlcdmmpq6rB7lOeRSHUe5SguR7qLkI8CzWNqYWmdT4rKWQLycupeEE3KWDsn
+ /FkA==
+X-Gm-Message-State: ANhLgQ2nKnNzlJPp5HeiYtp6wGh3XeJCO/iQ0/GAyBEodTF/pSkQm0fC
+ vG9Ds94TSYbEvO5xJaIf8LRRS8jOEkrrew==
+X-Google-Smtp-Source: ADFU+vtrd1NhrnDH8NuluvSgfA17Px/Wd7uZBkEak0FqLMyq7DnyB2Oz9NJXqvdh6uYeJUMWEuqtCQ==
+X-Received: by 2002:a1c:7ec5:: with SMTP id z188mr4285735wmc.52.1583505603072; 
+ Fri, 06 Mar 2020 06:40:03 -0800 (PST)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2?
+ ([2a01:e35:2ec0:82b0:5c5f:613e:f775:b6a2])
+ by smtp.gmail.com with ESMTPSA id d15sm47329840wrp.37.2020.03.06.06.40.01
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 06 Mar 2020 06:40:02 -0800 (PST)
+Subject: Re: [PATCH 1/4] drm/fourcc: Add modifier definitions for describing
+ Amlogic Video Framebuffer Compression
+To: Pekka Paalanen <ppaalanen@gmail.com>,
+ Brian Starkey <brian.starkey@arm.com>, Daniel Vetter <daniel@ffwll.ch>
+References: <20200221090845.7397-1-narmstrong@baylibre.com>
+ <20200221090845.7397-2-narmstrong@baylibre.com>
+ <20200303121029.5532669d@eldfell.localdomain>
+ <20200303105325.bn4sob6yrdf5mwrh@DESKTOP-E1NTVVP.localdomain>
+ <CAKMK7uFgQGrnEkXyac15Wz8Opg43RTa=5cX0nN5=E_omb8oY8Q@mail.gmail.com>
+ <20200303152541.68ab6f3d@eldfell.localdomain>
+ <20200303173332.1c6daa09@eldfell.localdomain>
+ <20200306101328.GR2363188@phenom.ffwll.local>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <27d09559-055a-7bf3-0f23-9948da0e1f76@baylibre.com>
+Date: Fri, 6 Mar 2020 15:40:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200306130919.GJ31668@ziepe.ca>
+In-Reply-To: <20200306101328.GR2363188@phenom.ffwll.local>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_063607_294675_E6E84AC6 
-X-CRM114-Status: GOOD (  26.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200306_064005_455754_85F51380 
+X-CRM114-Status: GOOD (  27.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -85,12 +144,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,101 +157,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- Dimitri Sivanich <sivanich@sgi.com>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pci@vger.kernel.org,
- robin.murphy@arm.com, linux-mm@kvack.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- Andrew Morton <akpm@linux-foundation.org>, will@kernel.org,
- christian.koenig@amd.com, linux-arm-kernel@lists.infradead.org
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-amlogic@lists.infradead.org, nd <nd@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 06, 2020 at 09:09:19AM -0400, Jason Gunthorpe wrote:
-> On Fri, Mar 06, 2020 at 10:56:14AM +0100, Jean-Philippe Brucker wrote:
-> > I tried to keep it simple like that: normally mmu_notifier_get() is called
-> > in bind(), and mmu_notifier_put() is called in unbind(). 
-> > 
-> > Multiple device drivers may call bind() with the same mm. Each bind()
-> > calls mmu_notifier_get(), obtains the same io_mm, and returns a new bond
-> > (a device<->mm link). Each bond is freed by calling unbind(), which calls
-> > mmu_notifier_put().
-> > 
-> > That's the most common case. Now if the process is killed and the mm
-> > disappears, we do need to avoid use-after-free caused by DMA of the
-> > mappings and the page tables. 
+Hi Pekka, Brian, Daniel,
+
+On 06/03/2020 11:13, Daniel Vetter wrote:
+> On Tue, Mar 03, 2020 at 05:33:32PM +0200, Pekka Paalanen wrote:
+>> On Tue, 3 Mar 2020 15:25:41 +0200
+>> Pekka Paalanen <ppaalanen@gmail.com> wrote:
+>>
+>>> On Tue, 3 Mar 2020 12:37:16 +0100
+>>> Daniel Vetter <daniel@ffwll.ch> wrote:
+>>>
+>>>> On Tue, Mar 3, 2020 at 11:53 AM Brian Starkey <brian.starkey@arm.com> wrote:  
+>>>>>
+>>>>> Hi,
+>>>>>
+>>>>> On Tue, Mar 03, 2020 at 12:10:29PM +0200, Pekka Paalanen wrote:    
+>>>>>> On Fri, 21 Feb 2020 10:08:42 +0100
+>>>>>> Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>>>>>    
+>> ...
+>>>>>>> +/*
+>>>>>>> + * Amlogic Video Framebuffer Compression modifiers
+>>>>>>> + *
+>>>>>>> + * Amlogic uses a proprietary lossless image compression protocol and format
+>>>>>>> + * for their hardware video codec accelerators, either video decoders or
+>>>>>>> + * video input encoders.
+>>>>>>> + *
+>>>>>>> + * It considerably reduces memory bandwidth while writing and reading
+>>>>>>> + * frames in memory.
+>>>>>>> + * Implementation details may be platform and SoC specific, and shared
+>>>>>>> + * between the producer and the decoder on the same platform.    
+>>>>>>
+>>>>>> Hi,
+>>>>>>
+>>>>>> after a lengthy IRC discussion on #dri-devel, this "may be platform and
+>>>>>> SoC specific" is a problem.
+
+This one is definitely only for the SCATTER modifier, not the DEFAULT and MEM_SAVING.
+
+>>>>>>
+>>>>>> It can be an issue in two ways:
+>>>>>>
+>>>>>> - If something in the data acts like a sub-modifier, then advertising
+>>>>>>   support for one modifier does not really tell if the data layout is
+>>>>>>   supported or not.
+
+It's clearly not.
+
+The DEFAULT and MEM_SAVING modifiers are clearly transferable, and their layout is
+extremely simple. While we don't have the memory compression algorithm, the memory
+layout is simple to describe and doesn't act as a sub-modifier.
+
+The complexity lies in the SCATTER modifier, which describe an instant live memory
+layout, that is not transferable and with an unknown and variable layout.
+
+>>>>>>
+>>>>>> - If you need to know the platform and/or SoC to be able to interpret
+>>>>>>   the data, it means the modifier is ill-defined and cannot be used in
+>>>>>>   inter-machine communication (e.g. Pipewire).
+
+It's not the case for the DEFAULT and MEM_SAVING modifiers.
+
+The SCATTER modifier is mandatory for the Amlogic G12A and G12B HW video decoder,
+but the same HW is capable of displaying the non-SCATTER buffer for example.
+
+>>>>>>    
+>>>>>
+>>>>> Playing devil's advocate, the comment sounds similar to
+>>>>> I915_FORMAT_MOD_{X,Y}_TILED:
+>>>>>
+>>>>>  * This format is highly platforms specific and not useful for cross-driver
+>>>>>  * sharing. It exists since on a given platform it does uniquely identify the
+>>>>>  * layout in a simple way for i915-specific userspace.    
+>>>>
+>>>> Yeah which we regret now. We need to now roll out a new set of
+>>>> modifiers for at least some of the differences in these on the
+>>>> modern-ish chips (the old crap is pretty much lost cause anyway).
+>>>>
+>>>> This was kinda a nasty hack to smooth things over since we have epic
+>>>> amounts of userspace, but it's really not a great idea (and no one
+>>>> else really has epic amounts of existing userspace that uses tiling
+>>>> flags everywhere, this is all new code).
+>>>> -Daniel
+>>>>   
+>>>>> Isn't the statement that this for sharing between producer and decoder
+>>>>> _on the same platform_ a similar clause with the same effect?
+>>>>>
+>>>>> What advantage is there to exposing the gory details? For Arm AFBC
+>>>>> it's necessary because IP on the SoC can be (likely to be) from
+>>>>> different vendors with different capabilities.
+>>>>>
+>>>>> If this is only for talking between Amlogic IP on the same SoC, and
+>>>>> those devices support all the same "flavours", I don't see what is
+>>>>> gained by making userspace care about internals.    
+>>>>
+>>>> The trouble is if you mix&match IP cores, and one of them supports
+>>>> flavours A, B, C and the other C, D, E. But all you have is a single
+>>>> magic modifier for "whatever the flavour is that soc prefers". So
+>>>> someone gets to stuff this in DT.
+
+This is not the case here, maybe I should explicit the "DEFAULT" modifier with
+a bit like "BASIC" to explicitly define support for the currently defined
+DEFAULT mode.
+
+>>>>
+>>>> Also eventually, maybe, perhaps ARM does grow up into the
+>>>> client/server space with add-on pcie graphics, and at least for client
+>>>> you very often end up with integrated + add-in pcie gpu. At that point
+>>>> you really can't have magic per-soc modifiers anymore.  
+>>>
+>>> Hi,
+>>>
+>>> I also heard that Pipewire will copy buffers and modifiers verbatim
+>>> from one machine to another when streaming across network, assuming
+>>> that the same modifier means the same thing on all machines.[Citation needed]
+
+Transferring AFBC buffers doesn't sound like a good idea to me....
+
+>>>
+>>> If that is something that must not be done with DRM modifiers, then
+>>> please contact them and document that.
+>>
+>> Sorry, it's waypipe, not pipewire:
+>> https://gitlab.freedesktop.org/mstoeckl/waypipe/
 > 
-> This is why release must do invalidate all - but it doesn't need to do
-> any more - as no SPTE can be established without a mmget() - and
-> mmget() is no longer possible past release.
+> I do think this is very much something we want to make possible. They
+> might pick a silly modifier (compression modifiers only compress bw, by
+> necessity the lossless ones have to increase storage space so kinda dumb
+> thing to push over the network if you don't add .xz or whatever on top).
 
-In our case we don't have SPTEs, the whole pgd is shared between MMU and
-IOMMU (isolated using PASID tables).
+The AFBC, and Amlogic FBC are not size optimized compressions, but really
+layout and memory access optimized compressions, without a proper network
+size compression, transferring plain NV12 would be the same.
 
-Taking the concrete example of the crypto accelerator:
-
-1. A process opens a queue in the accelerator. That queue is bound to the
-   address space: a PASID is allocated for the mm, and mm->pgd is written
-   into the IOMMU PASID table.
-2. The process queues some work and waits. In the background, the
-   accelerators performs DMA on the process address space, by using the
-   mm's PASID.
-3. Now the process gets killed, and release() is called.
-
-At this point no one told the device to stop working on this queue, it may
-still be doing DMA on this address space. So the first thing we do is
-notify the device driver that the bond is going away, and that it must
-stop the queue and flush remaining DMA transactions for this PASID.
-
-Then we also clear the pgd from the IOMMU PASID table. If we only did
-invalidate-all and somehow the queue wasn't properly stopped, concurrent
-DMA would immediately form new IOTLB entries since the page tables haven't
-been wiped at this point. And later, it would use-after-free page tables
-and mappings. Whereas with a clear pgd it would just generate IOMMU fault
-events, which are undesirable but harmless.
-
-Thanks,
-Jean
-
-> > So the release() callback, before doing invalidate_all, stops DMA
-> > and clears the page table pointer on the IOMMU side. It detaches all
-> > bonds from the io_mm, calling mmu_notifier_put() for each of
-> > them. After release(), bond objects still exists and device drivers
-> > still need to free them with unbind(), but they don't point to an
-> > io_mm anymore.
 > 
-> Why is so much work needed in release? It really should just be
-> invalidate all, usually trying to sort out all the locking for the
-> more complicated stuff is not worthwhile.
+> I'm also hoping that intel's modifiers are definitely the one and only
+> that we ever screwed up, and we should be getting those fixed in the near
+> future too.
+
+I'd like too.
+
 > 
-> If other stuff is implicitly relying on the mm being alive and release
-> to fence against that then it is already racy. If it doesn't, then why
-> bother doing complicated work in release?
+> So maybe what we should do instead is add a comment to the modifier docs
+> that this stuff _is_ supposed to be transferrable over networks and work.
+
+Only the "SCATTER" is not transferable, the other options are definitely
+transferable, and across 6 families and at least between a minimum of 15
+different upstream supported SoCs.
+
+Should it be in the modifier description ? should I add a reserved bit
+in the Amlogic modifier space describing it's non-transferable nature ?
+
+
+> -Daniel
 > 
-> > > Then you can never get a stale
-> > > pointer. Don't worry about exit_mmap().
-> > > 
-> > > release() is an unusual callback and I see alot of places using it
-> > > wrong. The purpose of release is to invalidate_all, that is it.
-> > > 
-> > > Also, confusingly release may be called multiple times in some
-> > > situations, so it shouldn't disturb anything that might impact a 2nd
-> > > call.
-> > 
-> > I hadn't realized that. The current implementation should be safe against
-> > it, as release() is a nop if the io_mm doesn't have bonds anymore. Do you
-> > have an example of such a situation?  I'm trying to write tests for this
-> > kind of corner cases.
-> 
-> Hmm, let me think. Ah, you have to be using mmu_notifier_unregister()
-> to get that race. This is one of the things that get/put don't suffer
-> from - but they conversely don't guarantee that release() will be
-> called, so it is up to the caller to ensure everything is fenced
-> before calling put.
-> 
-> Jason
+
+Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
