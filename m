@@ -2,81 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADC7717C736
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 21:45:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EFD917C75D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 21:54:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0BUF6Bhgg/dlHAvpCR9gg1dtdIzjGKeafHi6y/ycDe0=; b=LGavh7TuH132IZ
-	NyUHu9EcgZg7NreS9C21HdK1xWUhmqvK9hqVqHG5RgjTpu1PLAHDrGLjVLW9uv3UKuLNt9eaWcJfN
-	/+QkQF7HE9mDt4o/HAILhlc3L1JPSHUNYBdYxqgF7jz5ynLStSWCqVuqfmiTdzzDs0PymXsF3Laut
-	bVu9XYmdprKry3F6rISelJ12K/rVkK1cgk8pNqwWecq84oGMIfT1lHoZKIp7UbmYtQ8OZBbx8EYEU
-	CyHTEp/uI0X3S7PbaObptmI+3BZcAnu61yNK1FbnATnVY6Z6PcN4jw7SKXvh0D4XavE7MbUBvbTbZ
-	WGDBjD2bMSVcSvaOoZBw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AmvyM+4hM5LopAN7PL9hUAjizUuwsQVTViKhMLCTcTw=; b=YV5CV70XvFZAPq
+	SRcIIsGCOJx8DdMYYs9rvGnk5ujzKLlk5Merv/exTdA9SpwJie36GLLEp7Orl8zgtEbMYVeHMt+JU
+	lGVFvLL6Y0NUHP61MzVJnLbtV3k5cQXnUcc390oZZV3YlfVHpiGxhaq6MOmTopad6v15Y5bdGGDJC
+	8b+HU2CpbzOwhgYS0irvNjV9BJK5Mlq+XbRIpcZ/uyydIhoisi6nHUT3i9PjYxiQPZLsdd4sseqP8
+	CQ1HVSu9fTlYM6bRnMo3WdLAN1tAgfYPNB5AyQGi2830VGMq0a3pYtZ859O2aCAEDgIhVkpTaaXIL
+	T69UFZgvNaqUB5kirKKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAJq9-0000Wu-7d; Fri, 06 Mar 2020 20:45:01 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1jAJzO-00041C-BU; Fri, 06 Mar 2020 20:54:34 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAJpu-0000UO-Na
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 20:44:48 +0000
-Received: by mail-qt1-x844.google.com with SMTP id l21so2729663qtr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 12:44:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=VIytyDCq7f0kiHtZyAPYuhAfxkdQ6oPpVlPc91ezlzw=;
- b=sVQp0SNzavyEmQgQgPO7gOzbjdxNHOBGOKLb2+i6xH5nTB6ZP6ociRcsHZFKZahWzv
- lVQMhT0TucKZE0jr1svRTaAecWqS9Lak/5QCDTaDSkOc6vq9y74In5QZ3C0vju5Y/YSJ
- seKiYzybOes0y2OWOOVvb45ZEYoBXTTL7/NQZvUeV5Umj/iFPmYuELjQmpwwRG/RbM00
- WMRsRryr0bUnfhZtTUXyLUc60zizY1/bRX7olknPmplQ8VZG+HU7CqTLWPWwICtR5QAk
- sPbgocfLtbClg6uijm1uY7WawL446OXTMUcERTf+StMaVG507VDTlm1AAJaTPJabMPKz
- 9fdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=VIytyDCq7f0kiHtZyAPYuhAfxkdQ6oPpVlPc91ezlzw=;
- b=DkfrT+Y1N+jYimgVpbYbuikZhwFWr+Zm+HIE0u/6pUICQWI9ps7fDvgdOrb40CopLc
- 6OiGPk9Ki/xd/jK9mB8P8LFDivC63urJNliwRyDZJKthsUH1Mb3mvbDluiT6RgZKxC3t
- AXl632+j5M2ObYhSJKMkx08nMQIdtwosvlb6IOLgOSv+G2J2MCDrj4me5GoHa9ISxh5y
- mDCaUQ/5aUUXu0Nx4A3fKIFDi4xQ9zQP2S8Aya8+hmGQE85U4z5mTn69zaDlNJ4cA+g0
- pdmJ12yR7TvxOm11jE6tkkACAtYMWB5zTvd+xGNVm8YD7zYPj0gQEMwnXD1oq/c954yz
- 1N4A==
-X-Gm-Message-State: ANhLgQ1GHSk/Q3Wu0fNhuVsagxcBZGM3zrNZYSQ1msMY0lSTtFWZK8Jh
- Zg2lmPvNY0YlTh9e+QR9gtSW2Q==
-X-Google-Smtp-Source: ADFU+vtc3atgWoG361itKB4xApBMGrMUExpxNIdab4Ow4UUWS5fC6T+QADXDozQS4OkwoR392p5sKA==
-X-Received: by 2002:ac8:43c1:: with SMTP id w1mr4780630qtn.381.1583527484932; 
- Fri, 06 Mar 2020 12:44:44 -0800 (PST)
-Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
- [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id g15sm14611541qtq.71.2020.03.06.12.44.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 06 Mar 2020 12:44:44 -0800 (PST)
-Message-ID: <1583527481.7365.165.camel@lca.pw>
-Subject: Re: [PATCH V15] mm/debug: Add tests validating architecture page
- table helpers
-From: Qian Cai <cai@lca.pw>
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-Date: Fri, 06 Mar 2020 15:44:41 -0500
-In-Reply-To: <1583452659-11801-1-git-send-email-anshuman.khandual@arm.com>
-References: <1583452659-11801-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
-Mime-Version: 1.0
+ id 1jAJzE-0003zv-93
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 20:54:26 +0000
+Received: from apollo.fritz.box (unknown
+ [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
+ SHA256) (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id A22C223E5A;
+ Fri,  6 Mar 2020 21:54:19 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1583528060;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=VtE01cIb9Gn/hXGSjdQ6xRPyGzVnT85+CchIdODSGAw=;
+ b=KN9dLTqLSM0CMDJogGdougKGwBd3nLcY8y5x3eCrp/1f/EBDzjgjjIVCx70SBE+BemU7X6
+ 7GsEO2ayBw6j7BuMA+qEZPLxMIOuKj0IKP5/kLrq/Z5vKYoZjuEJnLHFU1QCZVYWWXSBVS
+ Gjon35N8nTDOM/PKslwr4J83LtQRzgg=
+From: Michael Walle <michael@walle.cc>
+To: dmaengine@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/2] dt-bindings: dma: fsl-edma: fix ls1028a-edma compatible
+Date: Fri,  6 Mar 2020 21:54:02 +0100
+Message-Id: <20200306205403.29881-1-michael@walle.cc>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
+X-Spamd-Bar: ++++++
+X-Spam-Level: ******
+X-Rspamd-Server: web
+X-Spam-Status: Yes, score=6.40
+X-Spam-Score: 6.40
+X-Rspamd-Queue-Id: A22C223E5A
+X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
+ MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
+ NEURAL_SPAM(0.00)[0.549]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_SEVEN(0.00)[11]; MID_CONTAINS_FROM(1.00)[];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
+ ASN(0.00)[asn:31334, ipnet:2a02:810c:8000::/33, country:DE];
+ SUSPICIOUS_RECIPS(1.50)[]
+X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_124446_818972_50AAE32C 
-X-CRM114-Status: GOOD (  17.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200306_125424_476383_C73D3068 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,89 +95,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- linux-snps-arc@lists.infradead.org, Vasily Gorbik <gor@linux.ibm.com>,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Vineet Gupta <vgupta@synopsys.com>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Peng Ma <peng.ma@nxp.com>,
+ Michael Walle <michael@walle.cc>, Li Yang <leoyang.li@nxp.com>,
+ Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMDIwLTAzLTA2IGF0IDA1OjI3ICswNTMwLCBBbnNodW1hbiBLaGFuZHVhbCB3cm90
-ZToKPiBUaGlzIGFkZHMgdGVzdHMgd2hpY2ggd2lsbCB2YWxpZGF0ZSBhcmNoaXRlY3R1cmUgcGFn
-ZSB0YWJsZSBoZWxwZXJzIGFuZAo+IG90aGVyIGFjY2Vzc29ycyBpbiB0aGVpciBjb21wbGlhbmNl
-IHdpdGggZXhwZWN0ZWQgZ2VuZXJpYyBNTSBzZW1hbnRpY3MuCj4gVGhpcyB3aWxsIGhlbHAgdmFy
-aW91cyBhcmNoaXRlY3R1cmVzIGluIHZhbGlkYXRpbmcgY2hhbmdlcyB0byBleGlzdGluZwo+IHBh
-Z2UgdGFibGUgaGVscGVycyBvciBhZGRpdGlvbiBvZiBuZXcgb25lcy4KPiAKPiBUaGlzIHRlc3Qg
-Y292ZXJzIGJhc2ljIHBhZ2UgdGFibGUgZW50cnkgdHJhbnNmb3JtYXRpb25zIGluY2x1ZGluZyBi
-dXQgbm90Cj4gbGltaXRlZCB0byBvbGQsIHlvdW5nLCBkaXJ0eSwgY2xlYW4sIHdyaXRlLCB3cml0
-ZSBwcm90ZWN0IGV0YyBhdCB2YXJpb3VzCj4gbGV2ZWwgYWxvbmcgd2l0aCBwb3B1bGF0aW5nIGlu
-dGVybWVkaWF0ZSBlbnRyaWVzIHdpdGggbmV4dCBwYWdlIHRhYmxlIHBhZ2UKPiBhbmQgdmFsaWRh
-dGluZyB0aGVtLgo+IAo+IFRlc3QgcGFnZSB0YWJsZSBwYWdlcyBhcmUgYWxsb2NhdGVkIGZyb20g
-c3lzdGVtIG1lbW9yeSB3aXRoIHJlcXVpcmVkIHNpemUKPiBhbmQgYWxpZ25tZW50cy4gVGhlIG1h
-cHBlZCBwZm5zIGF0IHBhZ2UgdGFibGUgbGV2ZWxzIGFyZSBkZXJpdmVkIGZyb20gYQo+IHJlYWwg
-cGZuIHJlcHJlc2VudGluZyBhIHZhbGlkIGtlcm5lbCB0ZXh0IHN5bWJvbC4gVGhpcyB0ZXN0IGdl
-dHMgY2FsbGVkCj4gaW5zaWRlIGtlcm5lbF9pbml0KCkgcmlnaHQgYWZ0ZXIgYXN5bmNfc3luY2hy
-b25pemVfZnVsbCgpLgo+IAo+IFRoaXMgdGVzdCBnZXRzIGJ1aWx0IGFuZCBydW4gd2hlbiBDT05G
-SUdfREVCVUdfVk1fUEdUQUJMRSBpcyBzZWxlY3RlZC4gQW55Cj4gYXJjaGl0ZWN0dXJlLCB3aGlj
-aCBpcyB3aWxsaW5nIHRvIHN1YnNjcmliZSB0aGlzIHRlc3Qgd2lsbCBuZWVkIHRvIHNlbGVjdAo+
-IEFSQ0hfSEFTX0RFQlVHX1ZNX1BHVEFCTEUuIEZvciBub3cgdGhpcyBpcyBsaW1pdGVkIHRvIGFy
-YywgYXJtNjQsIHg4NiwgczM5MAo+IGFuZCBwcGMzMiBwbGF0Zm9ybXMgd2hlcmUgdGhlIHRlc3Qg
-aXMga25vd24gdG8gYnVpbGQgYW5kIHJ1biBzdWNjZXNzZnVsbHkuCj4gR29pbmcgZm9yd2FyZCwg
-b3RoZXIgYXJjaGl0ZWN0dXJlcyB0b28gY2FuIHN1YnNjcmliZSB0aGUgdGVzdCBhZnRlciBmaXhp
-bmcKPiBhbnkgYnVpbGQgb3IgcnVudGltZSBwcm9ibGVtcyB3aXRoIHRoZWlyIHBhZ2UgdGFibGUg
-aGVscGVycy4gTWVhbndoaWxlIGZvcgo+IGJldHRlciBwbGF0Zm9ybSBjb3ZlcmFnZSwgdGhlIHRl
-c3QgY2FuIGFsc28gYmUgZW5hYmxlZCB3aXRoIENPTkZJR19FWFBFUlQKPiBldmVuIHdpdGhvdXQg
-QVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRS4KPiAKPiBGb2xrcyBpbnRlcmVzdGVkIGluIG1ha2lu
-ZyBzdXJlIHRoYXQgYSBnaXZlbiBwbGF0Zm9ybSdzIHBhZ2UgdGFibGUgaGVscGVycwo+IGNvbmZv
-cm0gdG8gZXhwZWN0ZWQgZ2VuZXJpYyBNTSBzZW1hbnRpY3Mgc2hvdWxkIGVuYWJsZSB0aGUgYWJv
-dmUgY29uZmlnCj4gd2hpY2ggd2lsbCBqdXN0IHRyaWdnZXIgdGhpcyB0ZXN0IGR1cmluZyBib290
-LiBBbnkgbm9uIGNvbmZvcm1pdHkgaGVyZSB3aWxsCj4gYmUgcmVwb3J0ZWQgYXMgYW4gd2Fybmlu
-ZyB3aGljaCB3b3VsZCBuZWVkIHRvIGJlIGZpeGVkLiBUaGlzIHRlc3Qgd2lsbCBoZWxwCj4gY2F0
-Y2ggYW55IGNoYW5nZXMgdG8gdGhlIGFncmVlZCB1cG9uIHNlbWFudGljcyBleHBlY3RlZCBmcm9t
-IGdlbmVyaWMgTU0gYW5kCj4gZW5hYmxlIHBsYXRmb3JtcyB0byBhY2NvbW1vZGF0ZSBpdCB0aGVy
-ZWFmdGVyLgoKT0ssIEkgZ2V0IHRoaXMgd29ya2luZyBvbiBwb3dlcnBjIGhhc2ggTU1VIGFzIHdl
-bGwsIHNvIHRoaXM/CgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9mZWF0dXJlcy9kZWJ1Zy9k
-ZWJ1Zy12bS1wZ3RhYmxlL2FyY2gtc3VwcG9ydC50eHQKYi9Eb2N1bWVudGF0aW9uL2ZlYXR1cmVz
-L2RlYnVnL2RlYnVnLXZtLXBndGFibGUvYXJjaC1zdXBwb3J0LnR4dAppbmRleCA2NGQwZjliMTVj
-NDkuLmM1MjdkMDVjMDQ1OSAxMDA2NDQKLS0tIGEvRG9jdW1lbnRhdGlvbi9mZWF0dXJlcy9kZWJ1
-Zy9kZWJ1Zy12bS1wZ3RhYmxlL2FyY2gtc3VwcG9ydC50eHQKKysrIGIvRG9jdW1lbnRhdGlvbi9m
-ZWF0dXJlcy9kZWJ1Zy9kZWJ1Zy12bS1wZ3RhYmxlL2FyY2gtc3VwcG9ydC50eHQKQEAgLTIyLDgg
-KzIyLDcgQEAKwqDCoMKgwqDCoHzCoMKgwqDCoMKgwqDCoG5pb3MyOiB8IFRPRE8gfArCoMKgwqDC
-oMKgfMKgwqDCoMKgb3BlbnJpc2M6IHwgVE9ETyB8CsKgwqDCoMKgwqB8wqDCoMKgwqDCoMKgcGFy
-aXNjOiB8IFRPRE8gfAotwqDCoMKgwqB8wqDCoHBvd2VycGMvMzI6IHzCoMKgb2vCoMKgfAotwqDC
-oMKgwqB8wqDCoHBvd2VycGMvNjQ6IHwgVE9ETyB8CivCoMKgwqDCoHzCoMKgwqDCoMKgcG93ZXJw
-YzogfMKgwqBva8KgwqB8CsKgwqDCoMKgwqB8wqDCoMKgwqDCoMKgwqByaXNjdjogfCBUT0RPIHwK
-wqDCoMKgwqDCoHzCoMKgwqDCoMKgwqDCoMKgczM5MDogfMKgwqBva8KgwqB8CsKgwqDCoMKgwqB8
-wqDCoMKgwqDCoMKgwqDCoMKgwqBzaDogfCBUT0RPIHwKZGlmZiAtLWdpdCBhL2FyY2gvcG93ZXJw
-Yy9LY29uZmlnIGIvYXJjaC9wb3dlcnBjL0tjb25maWcKaW5kZXggMmU3ZWVlNTIzYmExLi4xNzY5
-MzBmNDBlMDcgMTAwNjQ0Ci0tLSBhL2FyY2gvcG93ZXJwYy9LY29uZmlnCisrKyBiL2FyY2gvcG93
-ZXJwYy9LY29uZmlnCkBAIC0xMTYsNyArMTE2LDcgQEAgY29uZmlnIFBQQwrCoAkjCsKgCXNlbGVj
-dCBBUkNIXzMyQklUX09GRl9UIGlmIFBQQzMyCsKgCXNlbGVjdCBBUkNIX0hBU19ERUJVR19WSVJU
-VUFMCi0Jc2VsZWN0IEFSQ0hfSEFTX0RFQlVHX1ZNX1BHVEFCTEUgaWYgUFBDMzIKKwlzZWxlY3Qg
-QVJDSF9IQVNfREVCVUdfVk1fUEdUQUJMRQrCoAlzZWxlY3QgQVJDSF9IQVNfREVWTUVNX0lTX0FM
-TE9XRUQKwqAJc2VsZWN0IEFSQ0hfSEFTX0VMRl9SQU5ET01JWkUKwqAJc2VsZWN0IEFSQ0hfSEFT
-X0ZPUlRJRllfU09VUkNFCmRpZmYgLS1naXQgYS9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMgYi9tbS9k
-ZWJ1Z192bV9wZ3RhYmxlLmMKaW5kZXggOTZhOTFiZGEzYTg1Li45ODk5MGE1MTUyNjggMTAwNjQ0
-Ci0tLSBhL21tL2RlYnVnX3ZtX3BndGFibGUuYworKysgYi9tbS9kZWJ1Z192bV9wZ3RhYmxlLmMK
-QEAgLTI1Niw3ICsyNTYsOCBAQCBzdGF0aWMgdm9pZCBfX2luaXQgcHRlX2NsZWFyX3Rlc3RzKHN0
-cnVjdCBtbV9zdHJ1Y3QgKm1tLApwdGVfdCAqcHRlcCwKwqAJcHRlX3QgcHRlID0gUkVBRF9PTkNF
-KCpwdGVwKTsKwqAKwqAJcHRlID0gX19wdGUocHRlX3ZhbChwdGUpIHwgUkFORE9NX09SVkFMVUUp
-OwotCVdSSVRFX09OQ0UoKnB0ZXAsIHB0ZSk7CisJc2V0X3B0ZV9hdChtbSwgdmFkZHIsIHB0ZXAs
-IHB0ZSk7CisJYmFycmllcigpOwrCoAlwdGVfY2xlYXIobW0sIHZhZGRyLCBwdGVwKTsKwqAJcHRl
-ID0gUkVBRF9PTkNFKCpwdGVwKTsKwqAJV0FSTl9PTighcHRlX25vbmUocHRlKSk7CgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+The bootloader will fix up the IOMMU entries only on nodes with the
+compatible "fsl,vf610-edma". Thus make this compatible string mandatory
+for the ls1028a-edma.
+
+While at it, fix the "fsl,fsl," typo.
+
+Signed-off-by: Michael Walle <michael@walle.cc>
+Fixes: d8c1bdb5288d ("dt-bindings: dma: fsl-edma: add new fsl,fsl,ls1028a-edma")
+---
+ Documentation/devicetree/bindings/dma/fsl-edma.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Documentation/devicetree/bindings/dma/fsl-edma.txt b/Documentation/devicetree/bindings/dma/fsl-edma.txt
+index e77b08ebcd06..ee1754739b4b 100644
+--- a/Documentation/devicetree/bindings/dma/fsl-edma.txt
++++ b/Documentation/devicetree/bindings/dma/fsl-edma.txt
+@@ -10,7 +10,8 @@ Required properties:
+ - compatible :
+ 	- "fsl,vf610-edma" for eDMA used similar to that on Vybrid vf610 SoC
+ 	- "fsl,imx7ulp-edma" for eDMA2 used similar to that on i.mx7ulp
+-	- "fsl,fsl,ls1028a-edma" for eDMA used similar to that on Vybrid vf610 SoC
++	- "fsl,ls1028a-edma" followed by "fsl,vf610-edma" for eDMA used on the
++	  LS1028A SoC.
+ - reg : Specifies base physical address(s) and size of the eDMA registers.
+ 	The 1st region is eDMA control register's address and size.
+ 	The 2nd and the 3rd regions are programmable channel multiplexing
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
