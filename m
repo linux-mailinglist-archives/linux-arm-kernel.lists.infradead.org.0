@@ -2,42 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0483817B6C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 07:36:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFC0117B6CA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 07:36:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=yYTIu1qt2zmONM4dWV0YkbGiE4ZtEeBmUZT5L86P9oo=; b=JSE
-	0KT0Prfak89WvLWgNdF+iYLW1SqXlwMY8mWLJjpSyi6YZYdA/5SliesORpIR66kB6jnzKevx6X9/r
-	ZyaS0hXd8Vlon6Ci82wqra9tCvVKNUzPADqBL+xxW2RWKOevYDdP0Fm4HIHv1ERj+NMmW4/hV3sHK
-	cAMTNbfmsaFzWPDn7w9obg2aHnc/X4fnCMewE8aLTOkiK+QJbdVCg7WPkHA/w+320y79wQkIRYcVf
-	LuhaS7oJBQXwaCSfD7il6wWMPSll/y6yz/kqsd2nrcnmX6ZO7C2zv0Gyn9+9/UDU/jqNsWvNDq/hG
-	0VSaap90eVUyvn8k7clHhbrC10oTmCA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=rdgPng5lBYecugB3Sk4jqI/ld76za+2ojVSL+Cgd7vM=; b=pWGu5/RqEYblUdUvkeX5oo2MZe
+	+WETvKnDgXU9ftk8Aah/1c4JeEiVZXt+qbKL6NdSSHRAzLCYPnI8VL5ePfzQkWE3DLjIS8tF/Z+LS
+	f9J7GkTnMRHchmqg2lJeXmPgpmlj7UjCNoyAlvlYar8+flA+3vHcpEKe6h4ood8CUJrXRBsxXckIM
+	JMw7hHaKyS/ZViGKorgK5cDFjGw5a9uhn7A+SZWbvcsnfwkwYiC8Jqum6Ou74yh4hQhECi17e7lzr
+	FB7C24erRUHk79/F3cgYeI6t8MFfaSmF4RyMU+oFPlYHx40lRfD3WNNXP0ZknHTgh9lWJ0x+JmCqP
+	2ObsDvEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA6aQ-0004dP-PV; Fri, 06 Mar 2020 06:35:54 +0000
+	id 1jA6am-0004lP-Jd; Fri, 06 Mar 2020 06:36:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA6aF-0004cV-Vn
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 06:35:45 +0000
+ id 1jA6aH-0004ck-2L
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 06:35:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5A1330E;
- Thu,  5 Mar 2020 22:35:38 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C67994B2;
+ Thu,  5 Mar 2020 22:35:42 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A2BF73F6CF;
- Thu,  5 Mar 2020 22:39:30 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C75B83F6CF;
+ Thu,  5 Mar 2020 22:39:34 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v6 00/18] arm64: return address signing
-Date: Fri,  6 Mar 2020 12:05:07 +0530
-Message-Id: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v6 01/18] arm64: cpufeature: Fix meta-capability cpufeature
+ check
+Date: Fri,  6 Mar 2020 12:05:08 +0530
+Message-Id: <1583476525-13505-2-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_223544_112805_49DB4D22 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20200305_223545_148251_1B59AAF1 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,99 +78,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Some existing/future meta cpucaps match need the presence of individual
+cpucaps. Currently the individual cpucaps checks it via an array based
+flag and this introduces dependency on the array entry order.
+This limitation exists only for system scope cpufeature.
 
-This series improves function return address protection for the arm64 kernel, by
-compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
-ptrauth hereafter). This should help protect the kernel against attacks using
-return-oriented programming.
+This patch introduces an internal helper function (__system_matches_cap)
+to invoke the matching handler for system scope. This helper has to be
+used during a narrow window when,
+- The system wide safe registers are set with all the SMP CPUs and,
+- The SYSTEM_FEATURE cpu_hwcaps may not have been set.
 
-Changes since v5 [1]:
- - Added a new patch(arm64: cpufeature: Move cpu capability..) to move cpucapability
-   type helpers in cpufeature.c file. This makes adding new cpucapability easier.
- - Moved kernel key restore to function __cpu_setup(proc.S) as suggested by Catalin.
- - More comments for as-option Kconfig option for concerns raised by Masahiro.
- - Clarified comments for -march=armv8.3-a non-integrated assembler option.
+Normal users should use the existing cpus_have_{const_}cap() global
+function.
 
-Changes since v4 [2]:
- - Rebased the patch series to v5.6-rc2.
- - Patch "arm64: cpufeature: Fix meta-capability" updated as per Suzuki's
-   review comments.
+Suggested-by: Catalin Marinas <catalin.marinas@arm.com>
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+---
+ arch/arm64/kernel/cpufeature.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
 
-Some additional work not implemented below will be taken up separately:
- - kdump tools may need some rework to work with ptrauth. The kdump
-   tools may need the ptrauth information to strip PAC bits. This will
-   be sent in a separate patch.
- - Few more ptrauth generic lkdtm tests as requested by Kees Cook.
- - Generate compile time warnings if requested Kconfig feature not 
-   supported by compilers.
-
-This series is based on Linux version v5.6-rc4. This complete series can be
-found at (git://linux-arm.org/linux-ak.git PAC_mainline_v6) for reference.
-
-Feedback welcome!
-
-Thanks,
-Amit Daniel
-
-[1]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-February/711699.html 
-[2]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-January/707567.html
-
-Amit Daniel Kachhap (9):
-  arm64: cpufeature: Fix meta-capability cpufeature check
-  arm64: create macro to park cpu in an infinite loop
-  arm64: ptrauth: Add bootup/runtime flags for __cpu_setup
-  arm64: cpufeature: Move cpu capability helpers inside C file
-  arm64: initialize ptrauth keys for kernel booting task
-  arm64: mask PAC bits of __builtin_return_address
-  arm64: __show_regs: strip PAC from lr in printk
-  arm64: suspend: restore the kernel ptrauth keys
-  lkdtm: arm64: test kernel pointer authentication
-
-Kristina Martsenko (7):
-  arm64: cpufeature: add pointer auth meta-capabilities
-  arm64: rename ptrauth key structures to be user-specific
-  arm64: install user ptrauth keys at kernel exit time
-  arm64: cpufeature: handle conflicts based on capability
-  arm64: enable ptrauth earlier
-  arm64: initialize and switch ptrauth kernel keys
-  arm64: compile the kernel with ptrauth return address 
-Mark Rutland (1):
-  arm64: unwind: strip PAC from kernel addresses
-
-Vincenzo Frascino (1):
-  kconfig: Add support for 'as-option'
-
- arch/arm64/Kconfig                        | 27 +++++++++-
- arch/arm64/Makefile                       | 11 ++++
- arch/arm64/include/asm/asm_pointer_auth.h | 65 +++++++++++++++++++++++
- arch/arm64/include/asm/compiler.h         | 20 +++++++
- arch/arm64/include/asm/cpucaps.h          |  4 +-
- arch/arm64/include/asm/cpufeature.h       | 39 +++++++-------
- arch/arm64/include/asm/pointer_auth.h     | 54 +++++++++----------
- arch/arm64/include/asm/processor.h        |  3 +-
- arch/arm64/include/asm/smp.h              | 10 ++++
- arch/arm64/include/asm/stackprotector.h   |  5 ++
- arch/arm64/kernel/asm-offsets.c           | 16 ++++++
- arch/arm64/kernel/cpufeature.c            | 87 +++++++++++++++++++++++--------
- arch/arm64/kernel/entry.S                 |  6 +++
- arch/arm64/kernel/head.S                  | 27 +++++-----
- arch/arm64/kernel/pointer_auth.c          |  7 +--
- arch/arm64/kernel/process.c               |  5 +-
- arch/arm64/kernel/ptrace.c                | 16 +++---
- arch/arm64/kernel/sleep.S                 |  2 +
- arch/arm64/kernel/smp.c                   | 10 ++++
- arch/arm64/kernel/stacktrace.c            |  3 ++
- arch/arm64/mm/proc.S                      | 71 +++++++++++++++++++++----
- drivers/misc/lkdtm/bugs.c                 | 36 +++++++++++++
- drivers/misc/lkdtm/core.c                 |  1 +
- drivers/misc/lkdtm/lkdtm.h                |  1 +
- include/linux/stackprotector.h            |  2 +-
- scripts/Kconfig.include                   |  6 +++
- 26 files changed, 424 insertions(+), 110 deletions(-)
- create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
- create mode 100644 arch/arm64/include/asm/compiler.h
-
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 0b67156..3818685 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -116,6 +116,8 @@ cpufeature_pan_not_uao(const struct arm64_cpu_capabilities *entry, int __unused)
+ 
+ static void cpu_enable_cnp(struct arm64_cpu_capabilities const *cap);
+ 
++static bool __system_matches_cap(unsigned int n);
++
+ /*
+  * NOTE: Any changes to the visibility of features should be kept in
+  * sync with the documentation of the CPU feature register ABI.
+@@ -2146,6 +2148,17 @@ bool this_cpu_has_cap(unsigned int n)
+ 	return false;
+ }
+ 
++static bool __system_matches_cap(unsigned int n)
++{
++	if (n < ARM64_NCAPS) {
++		const struct arm64_cpu_capabilities *cap = cpu_hwcaps_ptrs[n];
++
++		if (cap)
++			return cap->matches(cap, SCOPE_SYSTEM);
++	}
++	return false;
++}
++
+ void cpu_set_feature(unsigned int num)
+ {
+ 	WARN_ON(num >= MAX_CPU_FEATURES);
+@@ -2218,7 +2231,7 @@ void __init setup_cpu_features(void)
+ static bool __maybe_unused
+ cpufeature_pan_not_uao(const struct arm64_cpu_capabilities *entry, int __unused)
+ {
+-	return (cpus_have_const_cap(ARM64_HAS_PAN) && !cpus_have_const_cap(ARM64_HAS_UAO));
++	return (__system_matches_cap(ARM64_HAS_PAN) && !__system_matches_cap(ARM64_HAS_UAO));
+ }
+ 
+ static void __maybe_unused cpu_enable_cnp(struct arm64_cpu_capabilities const *cap)
 -- 
 2.7.4
 
