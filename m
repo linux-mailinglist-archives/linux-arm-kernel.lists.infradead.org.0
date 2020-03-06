@@ -2,45 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89CB617C4CE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:45:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A1CF17C4D3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:46:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=81g9nXaL1P5w4t8vGvcyjTYLnWk5qm8tmjwOXfks6L8=; b=Ij4XAbFs61OMyN
-	12xhH1SsRr+6559B/W/+Ssa2YPVIfjwX5KpHSQRBlUXajncedUCGprVLdfLkxEXBoueccRYcywfWP
-	vd3ukKRnGV4kDXVe3Oa+A9+eoletC9N3S1Hq84XNAsBJXKuMKhso6hmNxrun/ATBYILsyDGC2aegf
-	cH7jCXhd8/FxFyVah8EHSJHxb7pz5jNv8plaiJBaW4EIRj95PDWLGkJwBqToe8t6tOMGr6NxobgAJ
-	FZ7VFPs9fsA1E1HvpiG7gbl2WcFpmo0L0eAWeKHu8d/Pars0Ijz5cxUSpbUYIdhp74sAhOmpzDnB7
-	CuO6orASs4xlE1tT7yVQ==;
+	List-Owner; bh=bBTx986GQ4POy8gSTFe7IxZgx1YTO0b7UHlEjMjx1IY=; b=lDVCfBjSN/Myha
+	5Dycq09R/3L23so/AKDZLZmRfAnygUKnZLG65H1/zZWnUQGXmWqgxpdLlw5rOsyx15+cqvNttWaSX
+	I4eRlq8rbpcOGCOIAqVwdvN4mYotp48og7I1MRY/H9KuDXt03pKh8hZ9Hb9wsfZ/xb3ZiL9KgKOl1
+	EzTseaxDV02C9iUcFeGCgEDh9xiDlS9jaWog8AZilza6bPgnqjtGct7/HUMjBhGCA5Dhq0pun7AW2
+	IP4n6CML4skXGJQ+2o2lO2ruSKQilhfoQCfmbxWeK42Psl9eqsG1WnFS3+Kx24S1zvr5cy3LlTXi3
+	b2CBGwNrz/0N2sQTgmRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAH2d-0001or-4Q; Fri, 06 Mar 2020 17:45:43 +0000
+	id 1jAH35-0002Mg-GD; Fri, 06 Mar 2020 17:46:11 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAH1Q-0007z4-1v; Fri, 06 Mar 2020 17:44:29 +0000
+ id 1jAH1R-00080f-G3; Fri, 06 Mar 2020 17:44:31 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 33318AC46;
- Fri,  6 Mar 2020 17:44:26 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id E4D87AC66;
+ Fri,  6 Mar 2020 17:44:27 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: adrian.hunter@intel.com, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: [PATCH v2 04/11] mmc: sdhci: at91: Use sdhci_set_power_and_voltage()
-Date: Fri,  6 Mar 2020 18:44:06 +0100
-Message-Id: <20200306174413.20634-5-nsaenzjulienne@suse.de>
+To: adrian.hunter@intel.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 05/11] mmc: sdhci: pxav3: Use sdhci_set_power_and_voltage()
+Date: Fri,  6 Mar 2020 18:44:07 +0100
+Message-Id: <20200306174413.20634-6-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_094428_291948_BB7F9AE9 
-X-CRM114-Status: GOOD (  12.63  )
+X-CRM114-CacheID: sfid-20200306_094430_111534_48D3B106 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,45 +77,42 @@ this controller's set_power() callback. Use it instead.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/mmc/host/sdhci-of-at91.c | 18 +-----------------
- 1 file changed, 1 insertion(+), 17 deletions(-)
+ drivers/mmc/host/sdhci-pxav3.c | 20 +-------------------
+ 1 file changed, 1 insertion(+), 19 deletions(-)
 
-diff --git a/drivers/mmc/host/sdhci-of-at91.c b/drivers/mmc/host/sdhci-of-at91.c
-index ab2bd314a390..564a606f6729 100644
---- a/drivers/mmc/host/sdhci-of-at91.c
-+++ b/drivers/mmc/host/sdhci-of-at91.c
-@@ -101,22 +101,6 @@ static void sdhci_at91_set_clock(struct sdhci_host *host, unsigned int clock)
- 	sdhci_writew(host, clk, SDHCI_CLOCK_CONTROL);
+diff --git a/drivers/mmc/host/sdhci-pxav3.c b/drivers/mmc/host/sdhci-pxav3.c
+index e55037ceda73..75fe90b88f9b 100644
+--- a/drivers/mmc/host/sdhci-pxav3.c
++++ b/drivers/mmc/host/sdhci-pxav3.c
+@@ -297,27 +297,9 @@ static void pxav3_set_uhs_signaling(struct sdhci_host *host, unsigned int uhs)
+ 		__func__, uhs, ctrl_2);
  }
  
--/*
-- * In this specific implementation of the SDHCI controller, the power register
-- * needs to have a valid voltage set even when the power supply is managed by
-- * an external regulator.
-- */
--static void sdhci_at91_set_power(struct sdhci_host *host, unsigned char mode,
--		     unsigned short vdd)
+-static void pxav3_set_power(struct sdhci_host *host, unsigned char mode,
+-			    unsigned short vdd)
 -{
--	if (!IS_ERR(host->mmc->supply.vmmc)) {
--		struct mmc_host *mmc = host->mmc;
+-	struct mmc_host *mmc = host->mmc;
+-	u8 pwr = host->pwr;
 -
--		mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
--	}
 -	sdhci_set_power_noreg(host, mode, vdd);
+-
+-	if (host->pwr == pwr)
+-		return;
+-
+-	if (host->pwr == 0)
+-		vdd = 0;
+-
+-	if (!IS_ERR(mmc->supply.vmmc))
+-		mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
 -}
 -
- static void sdhci_at91_set_uhs_signaling(struct sdhci_host *host,
- 					 unsigned int timing)
- {
-@@ -145,7 +129,7 @@ static const struct sdhci_ops sdhci_at91_sama5d2_ops = {
- 	.set_bus_width		= sdhci_set_bus_width,
- 	.reset			= sdhci_at91_reset,
- 	.set_uhs_signaling	= sdhci_at91_set_uhs_signaling,
--	.set_power		= sdhci_at91_set_power,
-+	.set_power		= sdhci_set_power_and_bus_voltage,
- };
- 
- static const struct sdhci_pltfm_data sdhci_sama5d2_pdata = {
+ static const struct sdhci_ops pxav3_sdhci_ops = {
+ 	.set_clock = sdhci_set_clock,
+-	.set_power = pxav3_set_power,
++	.set_power = sdhci_set_power_and_bus_voltage,
+ 	.platform_send_init_74_clocks = pxav3_gen_init_74_clocks,
+ 	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
+ 	.set_bus_width = sdhci_set_bus_width,
 -- 
 2.25.1
 
