@@ -2,74 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5509F17BAB0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:45:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3C0417BAB8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:46:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qcvc2DG9TzX2BRaAk7ao7VybelDPFeBwujagw6Ig7i4=; b=lRfHAcE2N6KTne
-	J95we8z/I0/nX5P2D3epR303g5LTrLfyrDw10dLE5W9bh2BHT6oNId3EBkUg1iOf3dkKlEVCWg4dU
-	VZQSshBmC6xVg5JhTWDtrU6ScYwexNJEYlFrNYqvq1/7jZ7G4LV/NwQe4KpjDd0m6tgARSl1ZDCxt
-	g/Tr989O4VcBth37BuZ+8sw1dr9f4AL6tpufeB+a9ei9sszdc93TZjrjwRKvr0FMnRn+Cyrz9PAp7
-	H0BtaSIBi+FxgDLnoXhI3TXOMZmuYxV5ejBtG6t9AjLAA6Yg31jOPAGxA+swnPLwHxKTmw2maSW5+
-	M03EH7lQ8fUCEVZg0KFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SebqZ7y/Wk0TkaDuIoKHOEDObXB3qIyNxRBdHm4Rwo4=; b=mukfq4qmK4X10kmm7ZH2oE5vG
+	MYW7yecqJiQTdM34NaKlGBJhyt+qU89CMjw7TQNfQh/q1nOScpiyVBOa2whPDCknptSditrjc4tst
+	uyT299YKiDV5fOZ9lypSQz6ww9scIpJte4dzw/mUuba3eK5DwrP8YsaYKNr/28Gt9PxP6MYa3G9nU
+	x/YPkSz/fVhAH4ohZnS5aRhlR733RqZbsglNjGWg5yV+z1Biuo0uOORy6KjksPUMHMPxsCydUOTYD
+	VXIEBZ1+ZNX4SrLPkBHaVpbDj6libr8wezzO0NMwAXOzWmmpFnW905KdpDRPzgrpd99tq3mp0LhVH
+	dAOeYC8Zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAUI-0006BT-3M; Fri, 06 Mar 2020 10:45:50 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jAAUo-0006We-8d; Fri, 06 Mar 2020 10:46:22 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAU7-000696-3F; Fri, 06 Mar 2020 10:45:40 +0000
-Received: by mail-oi1-f196.google.com with SMTP id a22so2046162oid.13;
- Fri, 06 Mar 2020 02:45:37 -0800 (PST)
+ id 1jAAUg-0006Vq-Ij
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:46:15 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u9so1839883wml.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 02:46:13 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=raspberrypi.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=d9hiWNQ6J5n3j61Fv/V6tZE2JLkQSqjWYDVkkP/+6yE=;
+ b=eHClCP1d12t4vlxl6n7r39rqsL2C7OiH/LXFAM/DgTnYYvZJm3QDPnuKZyuXrv15/V
+ 0TW0q676MD43QFcX8P/UcUVTRGV3T2Dtc0k8eM8NGh/bvFz779Bc0F3UfQAg51D8Jd/v
+ B7QPKgFmd3ebbKD0/xYQGeR/udzkH+4t+LCRBlP9neskFizDKLBfssG9HJdF9ktIGDfo
+ 7ZSGzm+GfTPaFH97ubJ67Xi+EUBSqOsgEtSm8upPNm6C5h5Oa8EDidDycVKzMouwn0fF
+ mYD1G9KXWU8g5yG/xmlhn+lZ8A6mrcVhSlqCcCdC/aA1X5dHF7wG8mBOFoNi6KzafVrC
+ K1Kg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=HroD0on08tLEMYhs9qrREoR+/CxJ/32j4jpzzO71uX0=;
- b=c4fklFyB7FFMNJ8U4/gSTO49rNKoeU4dGmm7w4FD/EoDmBkIyXSeHuBwLF+srWsPYo
- EcovG7jQCxpSsn3i2V2KEJKOZXFtAGnYAQ/q0nUKLuYR2CswOhYOSkqTC6cxNyNO4Wew
- xxsTp6ipCSwA91hGppV4EKMHa0M1UhAs8xq+CpkIQxw6A0jnsz80poNipb5tvchig5oo
- huen5cJvceQbIO44ykTwynNfaevyasdlnLFaSJ7VY7+Bpp1g0sE/w8xC2q6651jPf4n3
- /uMuxLbe/ltIO3j1cCXbPIpFUlhrd1z/AHy0jFzwUtwmd8IRBbonvc6SUEcY40ZnkC40
- mX8g==
-X-Gm-Message-State: ANhLgQ3B2KPu8nxnmd0QnHHKmgkMYGEI+s6SUS7YM+g7HJx7FueCC+ZA
- 3aoX7HqkEsR0CXa1bqfejU2sNqhNg2sE8fEELagTDHYT
-X-Google-Smtp-Source: ADFU+vvtUPH3/Ph9fb3frspC4QqnvQ+CWNfeWzdZ5p3uA2hEhHOsJ1oZpb7TnnmVwlAmCRdczLdbAoij4DJyvJ/brwE=
-X-Received: by 2002:aca:1a06:: with SMTP id a6mr2005904oia.148.1583491536148; 
- Fri, 06 Mar 2020 02:45:36 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=d9hiWNQ6J5n3j61Fv/V6tZE2JLkQSqjWYDVkkP/+6yE=;
+ b=A8kbX0UhsQ+qEXzpKNS0JJQyPuV+5sS7hs4nOD2iXpbh2vg5FslMnSq/VR8kHzGr1D
+ mrXNnMATUdUvToEaCmvi2K+fekaRi+TloVI2Q5cDBxjJGebSNGxOmapOFs/1ZrjhBNJ0
+ 87hySal2bmCcVKGyQwIp9j9eikYVplvYB2m0K+ZrEJ/7dzNugIKJbkllU4x4DIn7aZLL
+ 4wVC1AN4QE0mlksXzAl9mpdNgVNyYUIEgbsW9nCcs5bH38kkuJJ7jeg9hSdOLb8MJ3I+
+ Oy/RkjKPtf/4K5aVyoYP37wAJ6hHGrB69O3rDEAThVhyHUiyw1NR6eAfrjfcxzPvzec5
+ 7HMg==
+X-Gm-Message-State: ANhLgQ0OZmI3FDoAyToFm0qz68hQjAMdhbbH95VqWccwU9Kp7nQcXlqR
+ vmPbHfda60naY5Wc2MYAN6az9g==
+X-Google-Smtp-Source: ADFU+vtyuUNlJMUe6+PBiy69yoy09fo5sBeHo942glDD+YgiDtuy/FwybcSRvw5ZFgPFJU/dlDmHzg==
+X-Received: by 2002:a1c:4681:: with SMTP id t123mr3509384wma.86.1583491571878; 
+ Fri, 06 Mar 2020 02:46:11 -0800 (PST)
+Received: from ?IPv6:2a00:1098:3142:14:3ca7:8f7d:279:5ab9?
+ ([2a00:1098:3142:14:3ca7:8f7d:279:5ab9])
+ by smtp.gmail.com with ESMTPSA id i14sm972437wmb.25.2020.03.06.02.46.10
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 06 Mar 2020 02:46:11 -0800 (PST)
+Subject: Re: [PATCH 00/10] Raspberry Pi vmmc regulator support
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-mmc@vger.kernel.org
+References: <20200306103857.23962-1-nsaenzjulienne@suse.de>
+From: Phil Elwell <phil@raspberrypi.com>
+Message-ID: <b33aadf7-d481-10db-c290-6e53b696b2d4@raspberrypi.com>
+Date: Fri, 6 Mar 2020 10:46:10 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200302155703.278421-1-mylene.josserand@collabora.com>
- <20200302155703.278421-2-mylene.josserand@collabora.com>
- <2221545.2vEflg7qi2@diego>
-In-Reply-To: <2221545.2vEflg7qi2@diego>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 6 Mar 2020 11:45:25 +0100
-Message-ID: <CAMuHMdXJQqaCcMko9GUAeUiYQzmy3vnX42yVQNPzhj5ijtFuYA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
-To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
+In-Reply-To: <20200306103857.23962-1-nsaenzjulienne@suse.de>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_024539_139638_F3880DCB 
-X-CRM114-Status: GOOD (  16.91  )
-X-Spam-Score: -1.2 (-)
+X-CRM114-CacheID: sfid-20200306_024614_660688_12BBA8E0 
+X-CRM114-Status: UNSURE (   9.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,55 +105,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Myl=C3=A8ne_Josserand?= <mylene.josserand@collabora.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: ulf.hansson@linaro.org, f.fainelli@gmail.com, adrian.hunter@intel.com,
+ linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiBXZWQsIE1hciA0LCAyMDIwIGF0IDEyOjAwIFBNIEhlaWtvIFN0w7xibmVy
-IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+IEFtIE1vbnRhZywgMi4gTcOkcnogMjAyMCwgMTY6
-NTc6MDIgQ0VUIHNjaHJpZWIgTXlsw6huZSBKb3NzZXJhbmQ6Cj4gPiBEZXRlcm1pbmUgd2hpY2gg
-cmV2aXNpb24gb2YgcmszMjg4IGJ5IGNoZWNraW5nIHRoZSBIRE1JIHZlcnNpb24uCj4gPiBBY2Nv
-cmRpbmcgdG8gdGhlIFJvY2tjaGlwIEJTUCBrZXJuZWwsIG9uIHJrMzI4OHcsIHRoZSBIRE1JCj4g
-PiByZXZpc2lvbiBlcXVhbHMgMHgxQSB3aGljaCBpcyBub3QgdGhlIGNhc2UgZm9yIHRoZSByazMy
-ODggWzFdLgo+ID4KPiA+IEFzIHRoZXNlIFNPQyBoYXZlIHNvbWUgZGlmZmVyZW5jZXMsIHRoZSBu
-ZXcgZnVuY3Rpb24KPiA+ICdzb2NfaXNfcmszMjg4dycgd2lsbCBoZWxwIHVzIHRvIGtub3cgb24g
-d2hpY2ggcmV2aXNpb24KPiA+IHdlIGFyZS4KPgo+IHdoYXQgaGFwcGVuZWQgdG8ganVzdCBoYXZp
-bmcgYSBkaWZmZXJlbnQgY29tcGF0aWJsZSBpbiB0aGUgZHRzPwo+IEFrYSBkb2luZyBhCj4KPiBy
-azMyODh3LmR0c2kgd2l0aAo+Cj4gI2luY2x1ZGUgInJrMzI4OC5kdHNpIgo+Cj4gJmNydSB7Cj4g
-ICAgICAgICBjb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzI4OHctY3J1IjsKPiB9Cj4KPiBJIHNv
-bWVob3cgZG9uJ3QgZXhwZWN0IGJvYXJkcyB0byBqdXN0IHN3aXRjaCBiZXR3ZWVuIHNvYyB2YXJp
-YW50cwo+IG9uIHRoZSBmbHkuCj4KPiBBbHNvLCBkb2luZyB0aGluZ3MgaW4gbWFjaC1yb2NrY2hp
-cCBpcyBub3QgdmVyeSBmdXR1cmUtcHJvb2Y6Cj4KPiAoMSkgaGF2aW5nIHJhbmRvbSBzb2Mtc3Bl
-Y2lmaWMgQVBJcyBzcGFubmluZyB0aGUga2VybmVsIGZlZWxzIHdyb25nLAo+ICAgICBlc3BlY2lh
-bGx5IGFzIGF0IHNvbWUgcG9pbnQgaXQgbWlnaHQgbm90IGJlIGNvbnRhaW5lZCB0byBvdXIgb3du
-IHNwZWNpYWwKPiAgICAgZHJpdmVycyBsaWtlIHRoZSBjcnUuIEkgY2Fubm90IHJlYWxseSBzZWUg
-cGVvcGxlIGJlaW5nIGVudGh1c2lhc3RpYyBpZgo+ICAgICBzb21ldGhpbmcgbGlrZSB0aGlzIHdv
-dWxkIGJlIG5lZWRlZCBpbiBzYXkgdGhlIGNvcmUgQW5hbG9naXgtRFAgYnJpZGdlIDstKQoKSW5k
-ZWVkLiAgWW91J3JlIGJldHRlciBvZiByZWdpc3RlcmluZyBhbiBzb2NfZGV2aWNlX2F0dHJpYnV0
-ZSB1c2luZwpzb2NfZGV2aWNlX3JlZ2lzdGVyKCksIGFmdGVyIHdoaWNoIGFueSBkcml2ZXIgY2Fu
-IHVzZSBzb2NfZGV2aWNlX21hdGNoKCkKdG8gZGlmZmVyZW50aWF0ZSBiYXNlZCBvbiB0aGUgU29D
-IHJldmlzaW9uLgoKPiAoMikgSSBndWVzcyB0aGUgcmszMjg4dyB3aWxsIG5vdCBiZSB0aGUgbGFz
-dCBzb2MgZG9pbmcgdGhpcyBhbmQgb24gYXJtNjQgeW91Cj4gICAgIGNhbid0IGRvIGl0IHRoYXQg
-d2F5LCBhcyB0aGVyZSBpcyBubyBtYWNoLXJvY2tjaGlwIHRoZXJlCgpUaGVyZSdzIGRyaXZlcnMv
-c29jL3JvY2tjaGlwIDstKQoKPiBTbyBteSBwZXJzb25hbCBwcmVmZXJlbmNlIHdvdWxkIHJlYWxs
-eSB3b3VsZCBiZSBqdXN0IGEgc3BlY2lmaWMgY29tcGF0aWJsZQo+IGZvciBhZmZlY3RlZCBpcCBi
-bG9ja3MuCgpEb2luZyB0aGF0IG9ubHkgZm9yIGFmZmVjdGVkIElQIGJsb2NrcyBtYXkgbWlzcyBp
-bnRlZ3JhdGlvbiBkaWZmZXJlbmNlcy4KT2YgY291cnNlLCB5b3UgY2FuIGFsd2F5cyByZXNvcnQg
-dG8gc29jX2RldmljZV9tYXRjaCgpIHRvIGhhbmRsZSB0aG9zZS4uLgoKR3J7b2V0amUsZWV0aW5n
-fXMsCgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdlZXJ0IFV5dHRlcmhvZXZl
-biAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4
-ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJ
-IGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0
-cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Nicolas,
+
+On 06/03/2020 10:38, Nicolas Saenz Julienne wrote:
+> The series snowballed into adding a new quirk, as I reliased
+> sdhci-iproc's behaviour is not that uncommon.
+> 
+> Based on Phil Elwell's work in the downstream Raspberry Pi kernel.
+
+There are a few typos in the commit messages ("reliased" -> "realised",
+"trough" -> "through"), but otherwise:
+
+Reviewed-by: Phil Elwell <phil@raspberrypi.com>
+
+Phil
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
