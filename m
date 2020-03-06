@@ -2,119 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C02517BB3F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:12:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01A6317BB55
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:14:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7S0AYBCv74VvQcoaLlD0T38W6VmcyegAJg6RnK/5WAY=; b=Uprpn7Ofa1+tak
-	i+G2NiqfJzXzR9h/HziSb2YrT65FZAk4NE4z5dsgJNoPG6DpPgHELXqHX0ff2S1LTyZ7O4DY+DHhT
-	B/q1zJc6cEGvQedlIsE2m/ChIKc/jOXn6RRxxAzF1r71cKGL/qEHGXaNFm9VVo7EJwl8I/c596csH
-	QmsnVxxdr3mgWIRmdYlOwFbISASwpPqnvrW8YpJEvg3oT2dd1cCiY4MX+VndXU6N0oFp8lBieCaQU
-	epHO9AY5neXcaeLAd72KMQRjrQ/5KK4Y5RN4zVlPtH9ZGHtoj+/5DAdIqZuEcC+Y+TTeYUZQ1c4IZ
-	EOsgelUjSo7rSr7r+BCg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dlJmpfInWuNyMDmpkavQydWJ+BK2BHThA7uviYWwA2Y=; b=BcnspobW1jUCNP
+	UB2tDOpuMYg37ik4f0YzieDRBPh2QzzJhw3v7s+mH4+t/G7Pw63EwKq2Bq2w7p8shtbRHYrASO8Kf
+	+7Vs2N7IRAi8Ri5zqyPH2YLdm/O5iC/UQM/EUHKaHpMpq+TDLLrifm/ZQ2vkJy7MPMpciF2HsZiXw
+	sC6IXmXpcy8s8HR/Upx38a8O5ypvjvSDS7WHD0eAux7DJP3QMhZbbIUtR5Ef6i8WAD6O3YtleIIkR
+	eXXcqYvQEkO7ieWMyJtl5o79JTisqe8+t/fX6hAAJOlaLZ7IexSEVFoGeDkT/mpRjxZV8iGHYbGZM
+	NZHapS3Cd1AKd3VW5XKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAu2-0008T9-6m; Fri, 06 Mar 2020 11:12:26 +0000
-Received: from mail-eopbgr130058.outbound.protection.outlook.com
- ([40.107.13.58] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1jAAw8-0000Vg-6u; Fri, 06 Mar 2020 11:14:36 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAtt-0008SS-MW
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:12:19 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YovSpe4EFfOj8RV/1eWsYDGAm6HOUtAL4zS9XlbmOyAfSm+uc0Tc07N9uWGa9KQYwMLzdjvTByj55WE9n5bWSQybeeXvloT42efSmGBOlHrmWmdU6fr5OwnxSV1/ngcsJbB8yfTME+UEn+xlIkUOCfmP5ErvHSmWBzNnGnPvDsDAcLRzi8tH3V1RxgWYoFGNfg/MomR/BuY/uBcxTC7ruSrG8FbCrNz0a5m/F6La+OMYYbIUwSZ9+kw8+jwKsw5PVx6nTfKvpJpUdhijy3n8f8Otpg6xdzPM2JMPHpWkFAJp/pCgHxlF+X3CwopdztVYO3IsW2CEIahaeEH4ckDN8w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9hwjz+JxwPUJhmJSAaZkZECaVjiCTFHzNNwzbEVHIo4=;
- b=aXFsVJ5WBwbjoU4Fhzq1aU/x//UCCY1YlWfcFiQVwREnHNqpkdlf0jRfcMFzpJJCiZUuNgB/ovYe2oS49ilBUdDRJahRBE9YVb5YkseuCxCP60wMTg8rZQpiLdrSyfpYB9CGNE1yR+xVh+fkTQ48qiYDHAFcTi9eKJxdrxPdPu3ApafgMNJqTJpWVSAkUntGTiLBGuWWAYIJwLuUa5AuX1GEqWkasGP2BB0wpfiMqOS16ML+IaP1jfTckt5CGkuSRIgVUKII3mM3C5sGDmdP5OXvJA9LNIAZbvMWHnwRY3s0iELjVjNLB3xoVqeFjQ4iv9PX+rjaKWqvkoK+7FvWcQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9hwjz+JxwPUJhmJSAaZkZECaVjiCTFHzNNwzbEVHIo4=;
- b=DUZ5o+melXqOOCJJPqk12VQSU370Wvdx8L4riXR91Kz0BimH/kNzh4sYo7fY6/oLkb9dKYAouIfZgCDwUBgmLfAcDbtffLGK7AFD4Z23NtG+c/W3PNxuPRNSJ1N6PmgoayaDLrBE+C1lcppd6kiF75tDiLmz0mzNvWzIfUeAQYI=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=laurentiu.palcu@oss.nxp.com; 
-Received: from VI1PR04MB5775.eurprd04.prod.outlook.com (20.178.126.145) by
- VI1PR04MB4048.eurprd04.prod.outlook.com (52.133.14.19) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.15; Fri, 6 Mar 2020 11:12:14 +0000
-Received: from VI1PR04MB5775.eurprd04.prod.outlook.com
- ([fe80::8542:a5b7:a83:6ff1]) by VI1PR04MB5775.eurprd04.prod.outlook.com
- ([fe80::8542:a5b7:a83:6ff1%3]) with mapi id 15.20.2772.019; Fri, 6 Mar 2020
- 11:12:14 +0000
-Date: Fri, 6 Mar 2020 13:12:10 +0200
-From: Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Subject: Re: [PATCH v3 2/4] drm/imx: Add initial support for DCSS on iMX8MQ
-Message-ID: <20200306111210.q7fceoahqw3mlxog@fsr-ub1864-141>
-References: <1575625964-27102-1-git-send-email-laurentiu.palcu@nxp.com>
- <1575625964-27102-3-git-send-email-laurentiu.palcu@nxp.com>
- <03b551925d079fcc151239afa735562332cfd557.camel@pengutronix.de>
- <20200306095830.sa5eig67phngr3fa@fsr-ub1864-141>
- <69903c69a95902c0ddc8fb9e7a6762abf28aa034.camel@pengutronix.de>
-Content-Disposition: inline
-In-Reply-To: <69903c69a95902c0ddc8fb9e7a6762abf28aa034.camel@pengutronix.de>
-User-Agent: NeoMutt/20171215
-X-ClientProxiedBy: AM3PR07CA0107.eurprd07.prod.outlook.com
- (2603:10a6:207:7::17) To VI1PR04MB5775.eurprd04.prod.outlook.com
- (2603:10a6:803:e2::17)
+ id 1jAAvy-0000UZ-Gm
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:14:27 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=[IPv6:::1])
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <a.fatoum@pengutronix.de>)
+ id 1jAAvv-0007qh-Fv; Fri, 06 Mar 2020 12:14:23 +0100
+Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
+To: Philippe Schenker <philippe.schenker@toradex.com>,
+ "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
+ "andrew@lunn.ch" <andrew@lunn.ch>
+References: <20200305134928.19775-1-philippe.schenker@toradex.com>
+ <20200305143805.dk7fndblnqjnwxu6@pengutronix.de>
+ <20200305165145.GA25183@lunn.ch>
+ <7191ffe6-642a-477c-ec37-e37dc9be4bf8@pengutronix.de>
+ <4e48d56f184ed56d15d2ae6706fdb29e4c849132.camel@toradex.com>
+From: Ahmad Fatoum <a.fatoum@pengutronix.de>
+Message-ID: <f47a46b9-6d6a-e257-4309-7e49852bc88e@pengutronix.de>
+Date: Fri, 6 Mar 2020 12:14:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from fsr-ub1864-141 (89.37.124.34) by
- AM3PR07CA0107.eurprd07.prod.outlook.com (2603:10a6:207:7::17) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2814.9 via Frontend Transport; Fri, 6 Mar 2020 11:12:12 +0000
-X-Originating-IP: [89.37.124.34]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: daab01e8-e2dc-4474-b08a-08d7c1bf391e
-X-MS-TrafficTypeDiagnostic: VI1PR04MB4048:|VI1PR04MB4048:
-X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR04MB40487928479A71FBBCE98D41BEE30@VI1PR04MB4048.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
-X-Forefront-PRVS: 0334223192
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(39860400002)(366004)(396003)(346002)(376002)(189003)(199004)(6496006)(2906002)(26005)(52116002)(81156014)(8676002)(9686003)(81166006)(186003)(66476007)(66946007)(5660300002)(66556008)(6916009)(86362001)(1076003)(8936002)(55016002)(16526019)(316002)(7416002)(478600001)(4326008)(33716001)(54906003)(44832011)(956004)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4048;
- H:VI1PR04MB5775.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: uHhxRW8OFh/p1Ky+n7oHcm3BuCPsZ/bJfkrhpZz+P1SLrpeJ1y5Uhj+3gUEaq+4lgUA4oaeDN/Ig1POJSXhQA3l5CJyEDnb51eVidNbjeNKVy9Ahb81zAdXXCnSgSCFG/K+ES1CfCiLTBejwWPkWLdLsFYadmBwEgQ760VK4hFMx46rhthgqX2huZiSYAJ5sytdsZiKa+SjqE9E9N12DIJUj2sMvD6I2ya7B4ln2VFZBiQ0jhnmgQQd1rzbDWBlSNpNY1G+FsknJcDdUzh0TWWjsPFm9GGYI6SxNKt3DjfEGzdGddknFHMTR/o7vsSc1ATTqKCSb01U33alK8xlhZvlb1YlGE1vt229vb52OV4Pf47ZBuKp2tC7lQycy3YhS8Vp+fG3z4qzhIFqWjFnelqJ0Uo52QOJNPSPcIJ1RA0rEcLbZbF6tifji7BL1xKMa/Yr4Nt0Dd7RwqzbRMfL5fhHvbV8BgtH2AjkxKCWygCvO3rPm/Vn29q4lJZw4rw3/
-X-MS-Exchange-AntiSpam-MessageData: sqE0XNL5N/ExwJb3T8PEeY9CkkvVa8g2TcrjVhqygFQclbdc9zFStiyy+LdCTYgjoRgP78s4kAVVLLHVc8zRy/0jpX0S3OayDvObJqpmYLodKE3PsF/rQGIHAHrpJGOM3N8ezZqGgppl6OSQ8/7/QA==
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: daab01e8-e2dc-4474-b08a-08d7c1bf391e
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Mar 2020 11:12:14.0039 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 06oszKkFTX0zQhDtWj2RpRMDytfD8Xvfo51YtJL+atzYqqif9JxvgYCk7imWNpd5KS3N5wAEQP5fq7KJEGJZqA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4048
+In-Reply-To: <4e48d56f184ed56d15d2ae6706fdb29e4c849132.camel@toradex.com>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: a.fatoum@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_031217_739324_8835E944 
-X-CRM114-Status: GOOD (  15.73  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200306_031426_556281_12C2E0FF 
+X-CRM114-Status: GOOD (  13.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.58 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,55 +71,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- lukas@mntmn.com, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Laurentiu Palcu <laurentiu.palcu@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- agx@sigxcpu.org, linux-arm-kernel@lists.infradead.org,
- Lucas Stach <l.stach@pengutronix.de>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "allison@lohutok.net" <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Philipp,
+Hello Philippe,
 
-On Fri, Mar 06, 2020 at 11:20:51AM +0100, Philipp Zabel wrote:
-> Hi Laurentiu,
+On 3/6/20 10:46 AM, Philippe Schenker wrote:
+> Hi Andrew and Ahmad, thanks for your comments. I totally forgot about
+> those more specific phy-modes. But just because none of our driver
+> supports that. Either the i.MX6 fec-driver as well as the micrel.c PHY
+> driver supports this tags.
+> What do you guys suggest then how I should implement that skew stuff?
+
+I think implementing them in the Micrel driver would make sense.
+When more specific skews are supplied, these are used.
+If not, the rgmii_[tx]?id applies the appropriate timings for length matched
+lines. Device trees matching your use case will then only have to specify
+rgmii-txid. 
+
+> The problem is that i.MX6 has an asynchronic skew of -100 to 900ps only
+> enabling the PHY-delay on TXC and RXC is not in all cases within the
+> RGMII timing specs. That's why I implemented this 'weird' numbers.
+
+I am not too well-versed with this. What's an asynchronic skew?
+A non-deterministic internal delay..? So, you try to be as accurate as
+possible, so the skew is within the acceptable margin?
+
+Cheers
+Ahmad
+
+
 > 
-> On Fri, 2020-03-06 at 11:58 +0200, Laurentiu Palcu wrote:
-> > On Wed, Feb 26, 2020 at 02:19:11PM +0100, Lucas Stach wrote:
-> [...]
-> > > > +/* This function will be called from interrupt context. */
-> > > > +void dcss_scaler_write_sclctrl(struct dcss_scaler *scl)
-> > > > +{
-> > > > +	int chnum;
-> > > > +
-> > > > +	for (chnum = 0; chnum < 3; chnum++) {
-> > > > +		struct dcss_scaler_ch *ch = &scl->ch[chnum];
-> > > > +
-> > > > +		if (ch->scaler_ctrl_chgd) {
-> > > > +			dcss_ctxld_write_irqsafe(scl->ctxld, scl->ctx_id,
-> > > > +						 ch->scaler_ctrl,
-> > > > +						 ch->base_ofs +
-> > > > +						 DCSS_SCALER_CTRL);
-> > > 
-> > > Why is this using the _irqsafe variant without any locking? Won't this
-> > > lead to potential internal state corruption? dcss_ctxld_write is using
-> > > the _irqsave locking variants, so it fine with being called from IRQ
-> > > context.
-> > 
-> > This is only called from __dcss_ctxld_enable() which is already protected
-> > by lock/unlock in dcss_ctxld_kick().
+> Philippe
 > 
-> You could add a lockdep_assert_held() line to the top of this function
-> to make it clear this depends on the lock being held.
 
-Thanks for the suggestion. Will add a check.
-
-Thanks,
-laurentiu
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
