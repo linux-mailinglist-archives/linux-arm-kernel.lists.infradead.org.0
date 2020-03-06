@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 559D817C90F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 00:51:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C476817C910
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 00:52:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0vT3R1ZmaJixvN0oFtXDv42XfeqeRczCA5TtLZzvS8Y=; b=cBXOCSLfzNlS8g
-	y6XZ1P0YQ8qbZlbZAUo0rkC7+uBYrCsC4kMaE/TOBjryhJzLOqL+h3zvzyFUNe/d0Rjn4ktkLvdzq
-	M/2qB4mSchSb8QmtmHekrSa52i/QqdMGAla/FdU6bcMERpwehNKGNxIaBZJ2D3TLsh+fsfxmXr9DB
-	MAawBdHGa3Yw0tHSpzu3pY9q4uUvGrqNwTLfpl23JPGw/Yd5cU4KPbtLM5uTijTNLt8DXTsE1wVIO
-	haSOKZ+VplTq7gMKxdwdfVzBpphU2RJGeZ/Mjwy8Agwq+hMjttbZo1c58fZfayzXaXCblS7d06dPc
-	NBm4YHFtOrb6SauShV5w==;
+	List-Owner; bh=7eMBRfijv2Wrwt8miWd9gMfNPn2vSVz/8R1MBqAnyHo=; b=T8wu+aTntVXDY2
+	X83l5aN0m0ybPZXCu6FkmVqUtxC3ddkOaJrOZMxBGwppAHtpaNhh2qX8KEidq7u6YWkfZ646Yqrjn
+	D1OfTU7/Nkm7PsOyupt3FuSFFXylX1iGHy8zuxY0UJH3ExGPEliihUH+JGkyq0EYME8/E3fs1GmBu
+	9V6ZG/IBUkL9Dn24uvY/2xXEnj4Ev7LKoQpiY9Mks/6qL8hCM/fWYDTTZ6ZgaCSMNq6+jfnqvLD6c
+	woElNerJ3JLEPTp4s4+0ScHQSApjmOwq8M2uV194xfWjt7TcIbBnp2sEHhd0bGQVu7C6N5hz1bh6E
+	l2Ke1r8scZJkW1ZuSDug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAMkh-0001T0-56; Fri, 06 Mar 2020 23:51:35 +0000
-Received: from mail-bn7nam10on2089.outbound.protection.outlook.com
- ([40.107.92.89] helo=NAM10-BN7-obe.outbound.protection.outlook.com)
+	id 1jAMl2-0001k2-Fb; Fri, 06 Mar 2020 23:51:56 +0000
+Received: from mail-eopbgr760049.outbound.protection.outlook.com
+ ([40.107.76.49] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAMhF-0005zQ-FU
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 23:48:08 +0000
+ id 1jAMhF-000603-JK
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 23:48:07 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JOOSUcPDBsoLzqdisvm35p500w0YBTMyGyViuxcOdl2B5bU7hBlyV82FoZ+IxJcG2kafr7g7gd3V9hky7YIFltx9EBZd3jScXzqdrpgJNGcVFVJTYxykdO0pVoAOV2qKY56NkcNYbEYORn4sEpAE/YgT0pDq1RQYEWIY++NFsTqxMv3ikJWZ0F3JFHwpMxdpHR7ZYo5R2D5XohzNYV1vkIvALEM5Ytu+Ob13JQCsRhLqO013AKNEY6TgxqmCofifTrxGmJrswPJY6kGT+bg0vNxf9v/d94yb97CKMGQKnGrF9ZS7J+5FqZyYt3leawcT5ROgkSXe/SCS5jGSGEkJVw==
+ b=ktnPhPWWSBd49TSf0LLXTkf1KPOAdNX1DuGEyFk6e3tuiMgeSCuJAe0PtjdsqH9Y4nMm+nuQ+/hPpMlA3+4+X9nyqVBbgxYILBFQPX+ZetRQWt1+VIYkO6QIsE8V9cNryj+FhalUpyaar3d4ObQHFp4Ee12tS7FETGZ3dzSo1D/ECvS8Qh3ei9laAw2S5SrISimhY8PHQZ+DBbncWj8nw46Zd1FEyHui3/SgeJAvXhtVWShzseoaT5NEfqGaZpw+C+ajoqOrJM9SttkcUcAD9tNFXp/UVJa7ssQ0ph/TT/pBMfDy6RtNyqAZMOHFkVNhwifBGQfbwe5uAo6bp+5uUA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/ARfBCYbaIkACVcxwYHH6q85GhI6mU0qHdEfiyx8T5o=;
- b=NpgpUynT6N3IJDYIfZr0+jx/4YjXvg4klVoYrLuMTkjhDexEG7qoQcuJlTyLmGXBz/Qf5JGKsM5EM2SQXsOoXRnsSmkwLHmeb4uyxnzA23YgHbvB85P6JiRnyLwwXg0ESweW9SLQuNstOUxJtH2IARR0HY96v5aSTfesGO4HDQoAqGRU97qugOISzB+9NzcyKQGOamCr/0aSrr7ud+LBiSpIKR0iEUN6G4ChoTXb8F4FHnAvIaqgFOwS5e3w66sI+GcIk6ev9qwmKFX7IUc9pZXJgk198QhU5qewbP0drC9pV98zPYJyfBBkcrZsFTbbJwf8e3N3QwfVNQX5FL71xQ==
+ bh=eUQD+tVNM9/V+kSwZK0vxdBl2Ob+4YuCk29XxL+gH5g=;
+ b=TR5vcAvJpUeLvLgGVEdKXeWsg0wo+6RFuwEP3WJBYCo/ZDeVkteBpYs2cPR7PYI7tBUXJRddnEB6QJNYwULhiGa7+qNrLSdU+n7uNcBzk3t1IkPuKcD1PyDrIiWrid6VT6OX6oUVF4QOZo5s8fQyS1CWGF44P4Z+6FmwXEl9+IMcDXhhpDwnGcr5oPzhJKbPuBMjSs86N8kHc5U2gTUCA6DbU/5HE3JT0HWMaQagscby5whaytcsRK0XYXjHYg7nANHOKY2WLTCxxbCv5dtggkedflOAsjHgvfhKaPI2ENOPGZwLomcTybaxpYtJWQWRFtvaf0hIVf7AbeKhfmIzmA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -38,18 +38,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=/ARfBCYbaIkACVcxwYHH6q85GhI6mU0qHdEfiyx8T5o=;
- b=PiOWT47yR7mL4QVmloixvbF5Oj0KnHiUJbJYRBh78zb+ABmSau/5Nit8+5tGtUl4hGxFVw4/wGzDdmzhY1V82Vs+hHRTjujbw0T5wv51SjdLLdlm/65qoeWiyU08gM24bJUkony6sgJUm98zC6Z7Pm9hujCZdhibtYvA+ko+azE=
-Received: from SN4PR0501CA0012.namprd05.prod.outlook.com
- (2603:10b6:803:40::25) by BL0PR02MB4546.namprd02.prod.outlook.com
- (2603:10b6:208:26::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.18; Fri, 6 Mar
- 2020 23:47:58 +0000
-Received: from SN1NAM02FT008.eop-nam02.prod.protection.outlook.com
- (2603:10b6:803:40:cafe::7f) by SN4PR0501CA0012.outlook.office365.com
- (2603:10b6:803:40::25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2814.7 via Frontend
- Transport; Fri, 6 Mar 2020 23:47:58 +0000
+ bh=eUQD+tVNM9/V+kSwZK0vxdBl2Ob+4YuCk29XxL+gH5g=;
+ b=Lyl8oWNCF3lSI5uM8x5j0PmcXnvrn4hs1rIPnVH9fr3KYG9YGs68eRSRVXNbdVqE8whRG8arupYOqOnhFlY2qDK9LUDnChpoUTPUwDNnRV2Y3522aBezFSJYzidUAEIRXvXeJ75vW/TKoXK6PC3IEWFvk3/kktv9nDAwGfmul4Y=
+Received: from SN4PR0601CA0018.namprd06.prod.outlook.com
+ (2603:10b6:803:2f::28) by DM6PR02MB4777.namprd02.prod.outlook.com
+ (2603:10b6:5:17::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2772.14; Fri, 6 Mar
+ 2020 23:47:59 +0000
+Received: from SN1NAM02FT028.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:803:2f:cafe::39) by SN4PR0601CA0018.outlook.office365.com
+ (2603:10b6:803:2f::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.16 via Frontend
+ Transport; Fri, 6 Mar 2020 23:47:59 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
  header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
@@ -58,31 +58,31 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT008.mail.protection.outlook.com (10.152.72.119) with Microsoft SMTP
+ SN1NAM02FT028.mail.protection.outlook.com (10.152.72.105) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2793.11
- via Frontend Transport; Fri, 6 Mar 2020 23:47:57 +0000
+ via Frontend Transport; Fri, 6 Mar 2020 23:47:59 +0000
 Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jAMhB-0003Q3-81; Fri, 06 Mar 2020 15:47:57 -0800
+ id 1jAMhC-0003QM-TZ; Fri, 06 Mar 2020 15:47:58 -0800
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jAMh6-0002g8-4W; Fri, 06 Mar 2020 15:47:52 -0800
-Received: from xsj-pvapsmtp01 (xsj-smtp.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 026Nlkav001021; 
+ id 1jAMh7-0002g8-QU; Fri, 06 Mar 2020 15:47:53 -0800
+Received: from xsj-pvapsmtp01 (smtp3.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 026NllQT002428; 
  Fri, 6 Mar 2020 15:47:47 -0800
 Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1jAMh0-0002eg-SK; Fri, 06 Mar 2020 15:47:46 -0800
+ id 1jAMh0-0002eg-Ul; Fri, 06 Mar 2020 15:47:46 -0800
 From: Jolly Shah <jolly.shah@xilinx.com>
 To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
  matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
  keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
-Subject: [PATCH v3 21/24] firmware: xilinx: Add sysfs interface
-Date: Fri,  6 Mar 2020 15:47:29 -0800
-Message-Id: <1583538452-1992-22-git-send-email-jolly.shah@xilinx.com>
+Subject: [PATCH v3 22/24] firmware: xilinx: Add system shutdown API interface
+Date: Fri,  6 Mar 2020 15:47:30 -0800
+Message-Id: <1583538452-1992-23-git-send-email-jolly.shah@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583538452-1992-1-git-send-email-jolly.shah@xilinx.com>
 References: <1583538452-1992-1-git-send-email-jolly.shah@xilinx.com>
@@ -93,38 +93,39 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(376002)(39860400002)(346002)(199004)(189003)(478600001)(70206006)(2906002)(54906003)(2616005)(6636002)(9786002)(70586007)(426003)(107886003)(8936002)(7696005)(30864003)(44832011)(6666004)(336012)(81156014)(7416002)(356004)(81166006)(4326008)(8676002)(36756003)(26005)(316002)(5660300002)(186003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BL0PR02MB4546; H:xsj-pvapsmtpgw01; FPR:;
+ SFS:(10009020)(4636009)(376002)(396003)(346002)(39860400002)(136003)(199004)(189003)(186003)(5660300002)(70206006)(26005)(478600001)(336012)(70586007)(107886003)(7696005)(6636002)(2616005)(8676002)(8936002)(9786002)(81156014)(81166006)(54906003)(316002)(426003)(6666004)(4326008)(356004)(2906002)(36756003)(44832011)(7416002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB4777; H:xsj-pvapsmtpgw01; FPR:;
  SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 6b784a20-3aea-418f-5b4e-08d7c228cc53
-X-MS-TrafficTypeDiagnostic: BL0PR02MB4546:
-X-Microsoft-Antispam-PRVS: <BL0PR02MB4546EFF204F62E6F698F95E3B8E30@BL0PR02MB4546.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: 3998ec2a-080c-44d1-5967-08d7c228cd45
+X-MS-TrafficTypeDiagnostic: DM6PR02MB4777:
+X-Microsoft-Antispam-PRVS: <DM6PR02MB4777AFE47DE2471FF983031DB8E30@DM6PR02MB4777.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:7219;
+X-MS-Oob-TLC-OOBClassifiers: OLM:556;
 X-Forefront-PRVS: 0334223192
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: YYmeK0aU6RvrZHpreDIs8r3gFAvlxFVjtpFH5O72arbu3Oda4vCI+pBJUwlYC67NCHfmoOn3Z/PVgq5t38W/LFEn3r64s1wGgzN/zop2OQ6I4vBwgzRi0YIKhGpNcgDzTr+Cz4fVIAhYJMdsBelF4DvzL7UP9UZ3UJa51jzfRphvEjHA6Ih4zMy5jHVaGyATCBGmsOJmtCOgBxQG9scVYPBJ/MK0ScQLWt4A08GCr9aozgMhufZi9xp7NrBNZmTnO18Q0r52eW1HTOpn9gLujAtCSpV0kasQpsgf09u/5q0wONSTfiLIi5nxlmKaVHoZHemcdf/woQ/5YZtE/2zA81GKsgl+7Uz3nJOmbPkPlXF/Yi/sDEUvpakmEV5CENKgzcK6Epq6D82fVRiF4frRmGN4nj2CT7OFGrWUurQ+nv+v79wddYxZwRE3FoBLjLXY
+X-Microsoft-Antispam-Message-Info: TkeylbjyAkkrsvozIPOyRNvFJlu0XoHZ7Tu4UqsqY/2ngCGwbHJif/+gJcYJcbid4jBPKe/06TuRGdoKUvRYdAhix7lJLPNEX5V8qdl5/aCEdEOVUXALcm5pYEa2UEX4FOngK7BpwV4jRv5Bo9XdWFb3ArQxzHwjyV+DnTR5e49VPMQq3wurBbQFgNlc6/s6HZt54AkST3+plmrf3goS32OCLHXGQbuqjNpamOYcwEEFvUQEW3pdKvLyk2DxWxPGXxAp9zgO/Yn/oFOGe0yvMquNSV0kz09SzlmiC8DW1F8DXySXKxTONnGdW3FKW0bNCcXz1GgfxRMw5LZ0vgL6s7RLKeHtSqRdn6SKmy0h9cF9D7lVtIGb4sSWLrpKd4rQs7cpXOuIeqTzwaw5+7mwlGlXS8fEYcDd5K+Ave8hMSRNmhlDGdRUes5aJ9zARYer
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Mar 2020 23:47:57.6878 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6b784a20-3aea-418f-5b4e-08d7c228cc53
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Mar 2020 23:47:59.3448 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3998ec2a-080c-44d1-5967-08d7c228cd45
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR02MB4546
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4777
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_154801_583378_26CD3040 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20200306_154801_636280_87A3441C 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.92.89 listed in list.dnswl.org]
+ no trust [40.107.76.49 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -141,10 +142,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>, Rajan Vaja <rajan.vaja@xilinx.com>,
- linux-kernel@vger.kernel.org, Jolly Shah <jollys@xilinx.com>,
- rajanv@xilinx.com, Jolly Shah <jolly.shah@xilinx.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Rajan Vaja <rajan.vaja@xilinx.com>, linux-kernel@vger.kernel.org,
+ Jolly Shah <jollys@xilinx.com>, rajanv@xilinx.com,
+ Jolly Shah <jolly.shah@xilinx.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -152,443 +152,64 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Rajan Vaja <rajan.vaja@xilinx.com>
 
-Add firmware-ggs sysfs interface which provides read/write
-interface to global storage registers.
+Add system shutdown API interface which asks firmware to
+perform system shutdown/restart.
 
 Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 Signed-off-by: Jolly Shah <jollys@xilinx.com>
-Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
 Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 ---
- .../ABI/stable/sysfs-driver-firmware-zynqmp        |  50 ++++
- drivers/firmware/xilinx/zynqmp.c                   | 319 ++++++++++++++++++++-
- include/linux/firmware/xlnx-zynqmp.h               |   4 +
- 3 files changed, 372 insertions(+), 1 deletion(-)
- create mode 100644 Documentation/ABI/stable/sysfs-driver-firmware-zynqmp
+ drivers/firmware/xilinx/zynqmp.c     | 13 +++++++++++++
+ include/linux/firmware/xlnx-zynqmp.h |  4 +++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp b/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp
-new file mode 100644
-index 0000000..7fd6e70
---- /dev/null
-+++ b/Documentation/ABI/stable/sysfs-driver-firmware-zynqmp
-@@ -0,0 +1,50 @@
-+What:		/sys/devices/platform/firmware\:zynqmp-firmware/ggs*
-+Date:		March 2020
-+KernelVersion:	5.6
-+Contact:	"Jolly Shah" <jollys@xilinx.com>
-+Description:
-+		Read/Write PMU global general storage register value,
-+		GLOBAL_GEN_STORAGE{0:3}.
-+		Global general storage register that can be used
-+		by system to pass information between masters.
-+
-+		The register is reset during system or power-on
-+		resets. Three registers are used by the FSBL and
-+		other Xilinx software products: GLOBAL_GEN_STORAGE{4:6}.
-+
-+		Usage:
-+		# cat /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
-+		# echo <mask> <value> > /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
-+
-+		Example:
-+		# cat /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
-+		# echo 0xFFFFFFFF 0x1234ABCD > /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
-+
-+Users:		Xilinx
-+
-+What:		/sys/devices/platform/firmware\:zynqmp-firmware/pggs*
-+Date:		March 2020
-+KernelVersion:	5.6
-+Contact:	"Jolly Shah" <jollys@xilinx.com>
-+Description:
-+		Read/Write PMU persistent global general storage register
-+		value, PERS_GLOB_GEN_STORAGE{0:3}.
-+		Persistent global general storage register that
-+		can be used by system to pass information between
-+		masters.
-+
-+		This register is only reset by the power-on reset
-+		and maintains its value through a system reset.
-+		Four registers are used by the FSBL and other Xilinx
-+		software products: PERS_GLOB_GEN_STORAGE{4:7}.
-+		Register is reset only by a POR reset.
-+
-+		Usage:
-+		# cat /sys/devices/platform/firmware\:zynqmp-firmware/pggs0
-+		# echo <mask> <value> > /sys/devices/platform/firmware\:zynqmp-firmware/pggs0
-+
-+		Example:
-+		# cat /sys/devices/platform/firmware\:zynqmp-firmware/pggs0
-+		# echo 0xFFFFFFFF 0x1234ABCD > /sys/devices/platform/firmware\:zynqmp-firmware/pggs0
-+
-+Users:		Xilinx
 diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-index de99613..f671b6b 100644
+index f671b6b..d3f637b 100644
 --- a/drivers/firmware/xilinx/zynqmp.c
 +++ b/drivers/firmware/xilinx/zynqmp.c
-@@ -2,7 +2,7 @@
- /*
-  * Xilinx Zynq MPSoC Firmware layer
-  *
-- *  Copyright (C) 2014-2018 Xilinx, Inc.
-+ *  Copyright (C) 2014-2020 Xilinx, Inc.
-  *
-  *  Michal Simek <michal.simek@xilinx.com>
-  *  Davorin Mista <davorin.mista@aggios.com>
-@@ -833,6 +833,322 @@ int zynqmp_pm_set_requirement(const u32 node, const u32 capabilities,
- }
+@@ -834,6 +834,19 @@ int zynqmp_pm_set_requirement(const u32 node, const u32 capabilities,
  EXPORT_SYMBOL_GPL(zynqmp_pm_set_requirement);
  
-+/**
-+ * ggs_show - Show global general storage (ggs) sysfs attribute
-+ * @device: Device structure
-+ * @attr: Device attribute structure
-+ * @buf: Requested available shutdown_scope attributes string
-+ * @reg: Register number
+ /**
++ * zynqmp_pm_system_shutdown - PM call to request a system shutdown or restart
++ * @type:	Shutdown or restart? 0 for shutdown, 1 for restart
++ * @subtype:	Specifies which system should be restarted or shut down
 + *
-+ * Return:Number of bytes printed into the buffer.
-+ *
-+ * Helper function for viewing a ggs register value.
-+ *
-+ * User-space interface for viewing the content of the ggs0 register.
-+ * cat /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
++ * Return:	Returns status, either success or error+reason
 + */
-+static ssize_t ggs_show(struct device *device,
-+			struct device_attribute *attr,
-+			char *buf,
-+			u32 reg)
++int zynqmp_pm_system_shutdown(const u32 type, const u32 subtype)
 +{
-+	int ret;
-+	u32 ret_payload[PAYLOAD_ARG_CNT];
-+
-+	ret = zynqmp_pm_read_ggs(reg, ret_payload);
-+	if (ret)
-+		return ret;
-+
-+	return sprintf(buf, "0x%x\n", ret_payload[1]);
++	return zynqmp_pm_invoke_fn(PM_SYSTEM_SHUTDOWN, type, subtype,
++				   0, 0, NULL);
 +}
 +
 +/**
-+ * ggs_store - Store global general storage (ggs) sysfs attribute
-+ * @device: Device structure
-+ * @attr: Device attribute structure
-+ * @buf: User entered shutdown_scope attribute string
-+ * @count: Size of buf
-+ * @reg: Register number
-+ *
-+ * Return: count argument if request succeeds, the corresponding
-+ * error code otherwise
-+ *
-+ * Helper function for storing a ggs register value.
-+ *
-+ * For example, the user-space interface for storing a value to the
-+ * ggs0 register:
-+ * echo 0xFFFFFFFF 0x1234ABCD > /sys/devices/platform/firmware\:zynqmp-firmware/ggs0
-+ */
-+static ssize_t ggs_store(struct device *device,
-+			 struct device_attribute *attr,
-+			 const char *buf, size_t count,
-+			 u32 reg)
-+{
-+	char *kern_buff, *inbuf, *tok;
-+	long mask, value;
-+	int ret;
-+	u32 ret_payload[PAYLOAD_ARG_CNT];
-+
-+	if (!device || !attr || !buf || !count || reg >= GSS_NUM_REGS)
-+		return -EINVAL;
-+
-+	kern_buff = kzalloc(count, GFP_KERNEL);
-+	if (!kern_buff)
-+		return -ENOMEM;
-+
-+	ret = strlcpy(kern_buff, buf, count);
-+	if (ret < 0) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	inbuf = kern_buff;
-+
-+	/* Read the write mask */
-+	tok = strsep(&inbuf, " ");
-+	if (!tok) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = kstrtol(tok, 16, &mask);
-+	if (ret) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	/* Read the write value */
-+	tok = strsep(&inbuf, " ");
-+	if (!tok) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = kstrtol(tok, 16, &value);
-+	if (ret) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = zynqmp_pm_read_ggs(reg, ret_payload);
-+	if (ret) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+	ret_payload[1] &= ~mask;
-+	value &= mask;
-+	value |= ret_payload[1];
-+
-+	ret = zynqmp_pm_write_ggs(reg, value);
-+	if (ret)
-+		count = -EFAULT;
-+
-+err:
-+	kfree(kern_buff);
-+
-+	return count;
-+}
-+
-+/* GGS register show functions */
-+#define GGS0_SHOW(N)						\
-+	ssize_t ggs##N##_show(struct device *device,		\
-+			      struct device_attribute *attr,	\
-+			      char *buf)			\
-+	{							\
-+		return ggs_show(device, attr, buf, N);		\
-+	}
-+
-+static GGS0_SHOW(0);
-+static GGS0_SHOW(1);
-+static GGS0_SHOW(2);
-+static GGS0_SHOW(3);
-+
-+/* GGS register store function */
-+#define GGS0_STORE(N)						\
-+	ssize_t ggs##N##_store(struct device *device,		\
-+			       struct device_attribute *attr,	\
-+			       const char *buf,			\
-+			       size_t count)			\
-+	{							\
-+		return ggs_store(device, attr, buf, count, N);	\
-+	}
-+
-+static GGS0_STORE(0);
-+static GGS0_STORE(1);
-+static GGS0_STORE(2);
-+static GGS0_STORE(3);
-+
-+/**
-+ * pggs_show - Show persistent global general storage (pggs) sysfs attribute
-+ * @device: Device structure
-+ * @attr: Device attribute structure
-+ * @buf: Requested available shutdown_scope attributes string
-+ * @reg: Register number
-+ *
-+ * Return:Number of bytes printed into the buffer.
-+ *
-+ * Helper function for viewing a pggs register value.
-+ */
-+static ssize_t pggs_show(struct device *device,
-+			 struct device_attribute *attr,
-+			 char *buf,
-+			 u32 reg)
-+{
-+	int ret;
-+	u32 ret_payload[PAYLOAD_ARG_CNT];
-+
-+	ret = zynqmp_pm_read_pggs(reg, ret_payload);
-+	if (ret)
-+		return ret;
-+
-+	return sprintf(buf, "0x%x\n", ret_payload[1]);
-+}
-+
-+/**
-+ * pggs_store - Store persistent global general storage (pggs) sysfs attribute
-+ * @device: Device structure
-+ * @attr: Device attribute structure
-+ * @buf: User entered shutdown_scope attribute string
-+ * @count: Size of buf
-+ * @reg: Register number
-+ *
-+ * Return: count argument if request succeeds, the corresponding
-+ * error code otherwise
-+ *
-+ * Helper function for storing a pggs register value.
-+ */
-+static ssize_t pggs_store(struct device *device,
-+			  struct device_attribute *attr,
-+			  const char *buf, size_t count,
-+			  u32 reg)
-+{
-+	char *kern_buff, *inbuf, *tok;
-+	long mask, value;
-+	int ret;
-+	u32 ret_payload[PAYLOAD_ARG_CNT];
-+
-+	if (!device || !attr || !buf || !count || reg >= GSS_NUM_REGS)
-+		return -EINVAL;
-+
-+	kern_buff = kzalloc(count, GFP_KERNEL);
-+	if (!kern_buff)
-+		return -ENOMEM;
-+
-+	ret = strlcpy(kern_buff, buf, count);
-+	if (ret < 0) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	inbuf = kern_buff;
-+
-+	/* Read the write mask */
-+	tok = strsep(&inbuf, " ");
-+	if (!tok) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = kstrtol(tok, 16, &mask);
-+	if (ret) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	/* Read the write value */
-+	tok = strsep(&inbuf, " ");
-+	if (!tok) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = kstrtol(tok, 16, &value);
-+	if (ret) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = zynqmp_pm_read_pggs(reg, ret_payload);
-+	if (ret) {
-+		count = -EFAULT;
-+		goto err;
-+	}
-+	ret_payload[1] &= ~mask;
-+	value &= mask;
-+	value |= ret_payload[1];
-+
-+	ret = zynqmp_pm_write_pggs(reg, value);
-+	if (ret)
-+		count = -EFAULT;
-+
-+err:
-+	kfree(kern_buff);
-+
-+	return count;
-+}
-+
-+#define PGGS0_SHOW(N)						\
-+	ssize_t pggs##N##_show(struct device *device,		\
-+			       struct device_attribute *attr,	\
-+			       char *buf)			\
-+	{							\
-+		return pggs_show(device, attr, buf, N);		\
-+	}
-+
-+#define PGGS0_STORE(N)						\
-+	ssize_t pggs##N##_store(struct device *device,		\
-+				struct device_attribute *attr,	\
-+				const char *buf,		\
-+				size_t count)			\
-+	{							\
-+		return pggs_store(device, attr, buf, count, N);	\
-+	}
-+
-+/* PGGS register show functions */
-+static PGGS0_SHOW(0);
-+static PGGS0_SHOW(1);
-+static PGGS0_SHOW(2);
-+static PGGS0_SHOW(3);
-+
-+/* PGGS register store functions */
-+static PGGS0_STORE(0);
-+static PGGS0_STORE(1);
-+static PGGS0_STORE(2);
-+static PGGS0_STORE(3);
-+
-+/* GGS register attributes */
-+static DEVICE_ATTR_RW(ggs0);
-+static DEVICE_ATTR_RW(ggs1);
-+static DEVICE_ATTR_RW(ggs2);
-+static DEVICE_ATTR_RW(ggs3);
-+
-+/* PGGS register attributes */
-+static DEVICE_ATTR_RW(pggs0);
-+static DEVICE_ATTR_RW(pggs1);
-+static DEVICE_ATTR_RW(pggs2);
-+static DEVICE_ATTR_RW(pggs3);
-+
-+static struct attribute *zynqmp_ggs_attrs[] = {
-+	&dev_attr_ggs0.attr,
-+	&dev_attr_ggs1.attr,
-+	&dev_attr_ggs2.attr,
-+	&dev_attr_ggs3.attr,
-+	&dev_attr_pggs0.attr,
-+	&dev_attr_pggs1.attr,
-+	&dev_attr_pggs2.attr,
-+	&dev_attr_pggs3.attr,
-+	NULL,
-+};
-+
-+static const struct attribute_group ggs_attribute_group = {
-+	.attrs = zynqmp_ggs_attrs,
-+};
-+
-+const struct attribute_group *firmware_attribute_groups[] = {
-+	&ggs_attribute_group,
-+	NULL,
-+};
-+
- static int zynqmp_firmware_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -910,6 +1226,7 @@ static struct platform_driver zynqmp_firmware_driver = {
- 	.driver = {
- 		.name = "zynqmp_firmware",
- 		.of_match_table = zynqmp_firmware_of_match,
-+		.dev_groups = firmware_attribute_groups,
- 	},
- 	.probe = zynqmp_firmware_probe,
- 	.remove = zynqmp_firmware_remove,
+  * ggs_show - Show global general storage (ggs) sysfs attribute
+  * @device: Device structure
+  * @attr: Device attribute structure
 diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-index 725dccf..8ccaa39 100644
+index 8ccaa39..13b9fdb 100644
 --- a/include/linux/firmware/xlnx-zynqmp.h
 +++ b/include/linux/firmware/xlnx-zynqmp.h
-@@ -13,6 +13,8 @@
- #ifndef __FIRMWARE_ZYNQMP_H__
- #define __FIRMWARE_ZYNQMP_H__
+@@ -66,7 +66,8 @@
  
-+#include <linux/device.h>
-+
- #define ZYNQMP_PM_VERSION_MAJOR	1
- #define ZYNQMP_PM_VERSION_MINOR	0
+ enum pm_api_id {
+ 	PM_GET_API_VERSION = 1,
+-	PM_REQUEST_NODE = 13,
++	PM_SYSTEM_SHUTDOWN = 12,
++	PM_REQUEST_NODE,
+ 	PM_RELEASE_NODE,
+ 	PM_SET_REQUIREMENT,
+ 	PM_RESET_ASSERT = 17,
+@@ -327,6 +328,7 @@ int zynqmp_pm_write_ggs(u32 index, u32 value);
+ int zynqmp_pm_read_ggs(u32 index, u32 *value);
+ int zynqmp_pm_write_pggs(u32 index, u32 value);
+ int zynqmp_pm_read_pggs(u32 index, u32 *value);
++int zynqmp_pm_system_shutdown(const u32 type, const u32 subtype);
+ int zynqmp_pm_invoke_fn(u32 pm_api_id, u32 arg0, u32 arg1,
+ 			u32 arg2, u32 arg3, u32 *ret_payload);
  
-@@ -42,6 +44,8 @@
- 
- #define ZYNQMP_PM_MAX_QOS		100U
- 
-+#define GSS_NUM_REGS	(4)
-+
- /* Node capabilities */
- #define	ZYNQMP_PM_CAPABILITY_ACCESS	0x1U
- #define	ZYNQMP_PM_CAPABILITY_CONTEXT	0x2U
 -- 
 2.7.4
 
