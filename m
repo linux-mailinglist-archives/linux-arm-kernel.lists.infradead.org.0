@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F36117BF13
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:37:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1000417BF20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:38:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KC1p68qj582YeQmg3u5FVPS6kyqHd0UF1XpGa3niJVs=; b=QbRpC8RdvLwB+A
-	tE/G7Xz/udRIXQ6ztrXWQutQ8S1vVFdIQQkexEpkl39PTsMRiY5ZrHV1BE4q+2RkSgdfZ/qiwQOeo
-	o75TAkYmGBGGEgAU8q+SBHfpd669dADcUM+XxN83sQziCW+UTA4ltUuP7vPmZPJZvJI/efhRJ3+vo
-	Jhzd7A13mGBFJWEgLTe8CbXO+MCgEJN9hE+Hk9mQsTQWHuJBNNV0sefHvISn7Ck5eDLUFDXpK4N/F
-	rN1YEVSA1tvNs505vfLPlWwdwhmcrlTett38LnlfIT0ova5dLr8pBKiTt+MQltWBWM6hJOoL8kqYI
-	yv0NHAgumDo87kS8BAWw==;
+	List-Owner; bh=3emod2GaYi8qgAw8q2krh+N8rwX0WZrH1BaOL7KxhNM=; b=mzryt+5IpVt6v4
+	Vg23y8qoWSI3cglZTBoEGg9TXWx0VbWyIgsNL7V4ya/MUP2JRd/qicUlqQ9lTOn/wPIWaA/+Xg1JL
+	5MQOurUwS7lbYxq907mHP7j9F/ENjtxRstCGhkMzfNKbKnmtdKW/qJtTHc5sHyf4ibVmr/lUkqYIJ
+	BjqGhF4yycZmh2VmOllKy88h3R1pmdvKmauzTCNGobnZKua+KDzu+m/0rUX5XlsS0T0ogsSKf6jw/
+	mdVQUCEg4ZRPBimH3Q6IAdKMupVWigK58F90v0Og9NqzgIZ5xeqh72Lrj3oUAzud3FQBCI9rtTvXe
+	ED8Glr3Yw4rxamKM79Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jADAi-0001bB-7P; Fri, 06 Mar 2020 13:37:48 +0000
+	id 1jADB6-0001vs-4h; Fri, 06 Mar 2020 13:38:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAD6k-0004zH-TR
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:33:45 +0000
+ id 1jAD6p-00052z-0q
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:33:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E0AA1063;
- Fri,  6 Mar 2020 05:33:42 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 560C7106F;
+ Fri,  6 Mar 2020 05:33:45 -0800 (PST)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F30B3F6CF;
- Fri,  6 Mar 2020 05:33:39 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 946EA3F6CF;
+ Fri,  6 Mar 2020 05:33:42 -0800 (PST)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v2 16/20] mips: vdso: Enable mips to use common headers
-Date: Fri,  6 Mar 2020 13:32:38 +0000
-Message-Id: <20200306133242.26279-17-vincenzo.frascino@arm.com>
+Subject: [PATCH v2 17/20] x86: vdso: Enable x86 to use common headers
+Date: Fri,  6 Mar 2020 13:32:39 +0000
+Message-Id: <20200306133242.26279-18-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306133242.26279-1-vincenzo.frascino@arm.com>
 References: <20200306133242.26279-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_053343_070786_097A1504 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20200306_053347_116734_86DDF638 
+X-CRM114-Status: GOOD (  14.78  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,11 +67,11 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Nick Desaulniers <ndesaulniers@google.com>,
  Dmitry Safonov <0x7f454c46@gmail.com>, Kees Cook <keescook@chromium.org>,
  Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Paul Burton <paulburton@kernel.org>,
- Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
- Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Russell King <linux@armlinux.org.uk>, Mark Salyzyn <salyzyn@android.com>,
+ Paul Burton <paul.burton@mips.com>, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Peter Collingbourne <pcc@google.com>, Andrei Vagin <avagin@openvz.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -79,24 +79,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable mips to use only the common headers in the implementation of
-the vDSO library.
+Enable x86 to use only the common headers in the implementation
+of the vDSO library.
 
-Cc: Paul Burton <paulburton@kernel.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Andy Lutomirski <luto@kernel.org>
+Cc: Ingo Molnar <mingo@redhat.com>
+Cc: Borislav Petkov <bp@alien8.de>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/mips/include/asm/common/processor.h  | 27 +++++++++++++++++++++++
- arch/mips/include/asm/processor.h         | 16 +-------------
- arch/mips/include/asm/vdso/gettimeofday.h |  4 ----
- 3 files changed, 28 insertions(+), 19 deletions(-)
- create mode 100644 arch/mips/include/asm/common/processor.h
+ arch/x86/include/asm/common/processor.h | 23 +++++++++++++++++++++++
+ arch/x86/include/asm/processor.h        | 12 +-----------
+ 2 files changed, 24 insertions(+), 11 deletions(-)
+ create mode 100644 arch/x86/include/asm/common/processor.h
 
-diff --git a/arch/mips/include/asm/common/processor.h b/arch/mips/include/asm/common/processor.h
+diff --git a/arch/x86/include/asm/common/processor.h b/arch/x86/include/asm/common/processor.h
 new file mode 100644
-index 000000000000..d2ee5d397d2b
+index 000000000000..60ca2ee6e672
 --- /dev/null
-+++ b/arch/mips/include/asm/common/processor.h
-@@ -0,0 +1,27 @@
++++ b/arch/x86/include/asm/common/processor.h
+@@ -0,0 +1,23 @@
 +/* SPDX-License-Identifier: GPL-2.0-only */
 +/*
 + * Copyright (C) 2020 ARM Ltd.
@@ -106,75 +108,50 @@ index 000000000000..d2ee5d397d2b
 +
 +#ifndef __ASSEMBLY__
 +
-+#ifdef CONFIG_CPU_LOONGSON64
-+/*
-+ * Loongson-3's SFB (Store-Fill-Buffer) may buffer writes indefinitely when a
-+ * tight read loop is executed, because reads take priority over writes & the
-+ * hardware (incorrectly) doesn't ensure that writes will eventually occur.
-+ *
-+ * Since spin loops of any kind should have a cpu_relax() in them, force an SFB
-+ * flush from cpu_relax() such that any pending writes will become visible as
-+ * expected.
-+ */
-+#define cpu_relax()	smp_mb()
-+#else
-+#define cpu_relax()	barrier()
-+#endif
++/* REP NOP (PAUSE) is a good thing to insert into busy-wait loops. */
++static __always_inline void rep_nop(void)
++{
++	asm volatile("rep; nop" ::: "memory");
++}
++
++static __always_inline void cpu_relax(void)
++{
++	rep_nop();
++}
 +
 +#endif /* __ASSEMBLY__ */
 +
 +#endif /* __ASM_COMMON_PROCESSOR_H */
-diff --git a/arch/mips/include/asm/processor.h b/arch/mips/include/asm/processor.h
-index 7619ad319400..b7eca25e2066 100644
---- a/arch/mips/include/asm/processor.h
-+++ b/arch/mips/include/asm/processor.h
-@@ -22,6 +22,7 @@
- #include <asm/dsemul.h>
- #include <asm/mipsregs.h>
- #include <asm/prefetch.h>
+diff --git a/arch/x86/include/asm/processor.h b/arch/x86/include/asm/processor.h
+index 09705ccc393c..d66c5dd42cff 100644
+--- a/arch/x86/include/asm/processor.h
++++ b/arch/x86/include/asm/processor.h
+@@ -26,6 +26,7 @@ struct vm86;
+ #include <asm/fpu/types.h>
+ #include <asm/unwind_hints.h>
+ #include <asm/vmxfeatures.h>
 +#include <asm/common/processor.h>
  
- /*
-  * System setup and hardware flags..
-@@ -385,21 +386,6 @@ unsigned long get_wchan(struct task_struct *p);
- #define KSTK_ESP(tsk) (task_pt_regs(tsk)->regs[29])
- #define KSTK_STATUS(tsk) (task_pt_regs(tsk)->cp0_status)
+ #include <linux/personality.h>
+ #include <linux/cache.h>
+@@ -677,17 +678,6 @@ static inline unsigned int cpuid_edx(unsigned int op)
+ 	return edx;
+ }
  
--#ifdef CONFIG_CPU_LOONGSON64
--/*
-- * Loongson-3's SFB (Store-Fill-Buffer) may buffer writes indefinitely when a
-- * tight read loop is executed, because reads take priority over writes & the
-- * hardware (incorrectly) doesn't ensure that writes will eventually occur.
-- *
-- * Since spin loops of any kind should have a cpu_relax() in them, force an SFB
-- * flush from cpu_relax() such that any pending writes will become visible as
-- * expected.
-- */
--#define cpu_relax()	smp_mb()
--#else
--#define cpu_relax()	barrier()
--#endif
+-/* REP NOP (PAUSE) is a good thing to insert into busy-wait loops. */
+-static __always_inline void rep_nop(void)
+-{
+-	asm volatile("rep; nop" ::: "memory");
+-}
+-
+-static __always_inline void cpu_relax(void)
+-{
+-	rep_nop();
+-}
 -
  /*
-  * Return_address is a replacement for __builtin_return_address(count)
-  * which on certain architectures cannot reasonably be implemented in GCC
-diff --git a/arch/mips/include/asm/vdso/gettimeofday.h b/arch/mips/include/asm/vdso/gettimeofday.h
-index a58687e26c5d..e8ab2fafe067 100644
---- a/arch/mips/include/asm/vdso/gettimeofday.h
-+++ b/arch/mips/include/asm/vdso/gettimeofday.h
-@@ -13,12 +13,8 @@
- 
- #ifndef __ASSEMBLY__
- 
--#include <linux/compiler.h>
--#include <linux/time.h>
--
- #include <asm/vdso/vdso.h>
- #include <asm/clocksource.h>
--#include <asm/io.h>
- #include <asm/unistd.h>
- #include <asm/vdso.h>
- 
+  * This function forces the icache and prefetched instruction stream to
+  * catch up with reality in two very specific cases:
 -- 
 2.25.1
 
