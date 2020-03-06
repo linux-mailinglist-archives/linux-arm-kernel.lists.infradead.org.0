@@ -2,88 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3C0417BAB8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:46:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3311F17BABA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:48:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SebqZ7y/Wk0TkaDuIoKHOEDObXB3qIyNxRBdHm4Rwo4=; b=mukfq4qmK4X10kmm7ZH2oE5vG
-	MYW7yecqJiQTdM34NaKlGBJhyt+qU89CMjw7TQNfQh/q1nOScpiyVBOa2whPDCknptSditrjc4tst
-	uyT299YKiDV5fOZ9lypSQz6ww9scIpJte4dzw/mUuba3eK5DwrP8YsaYKNr/28Gt9PxP6MYa3G9nU
-	x/YPkSz/fVhAH4ohZnS5aRhlR733RqZbsglNjGWg5yV+z1Biuo0uOORy6KjksPUMHMPxsCydUOTYD
-	VXIEBZ1+ZNX4SrLPkBHaVpbDj6libr8wezzO0NMwAXOzWmmpFnW905KdpDRPzgrpd99tq3mp0LhVH
-	dAOeYC8Zg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3PxDSDNRDiNE0unV+myRonG1TbA9B3PGFZHZZNJ9fYc=; b=exbnUEUEr4fC8Q
+	tIlIvqY+6jQU7BPB0r2qNRTLmW7pDJmGAAnSJrSvBXEZNVyGgvz+EWhmBNS/HznYbQjNLxbSBqzp8
+	bbF6bBkQ2YBY8fpP+Bs6F6WZdDnUw4QMAW9dPgCnkDZyvlQUj4H9jAaLTydsCCmwdfqkbaVnReCKz
+	vhFMmVGa9/M4URo8guuu2OrBpnly4uAVgtwK1v65zJ3q12ZSsG/g/Sb9uHfYToebn4hQcWSVgmCG8
+	FmyXhog0vHMCl32MwknE0ug3uNzV7EDmDfWxel9gX+LdpNhBQyotFOaa4id3ABoOqfN8ePDbADK61
+	se1F1UOG58LtB1ICYGTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAUo-0006We-8d; Fri, 06 Mar 2020 10:46:22 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jAAWP-0006tm-Km; Fri, 06 Mar 2020 10:48:01 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAUg-0006Vq-Ij
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:46:15 +0000
-Received: by mail-wm1-x343.google.com with SMTP id u9so1839883wml.3
+ id 1jAAWH-0006tI-TC
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:47:55 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id bt20so345069qvb.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 02:46:13 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=raspberrypi.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=d9hiWNQ6J5n3j61Fv/V6tZE2JLkQSqjWYDVkkP/+6yE=;
- b=eHClCP1d12t4vlxl6n7r39rqsL2C7OiH/LXFAM/DgTnYYvZJm3QDPnuKZyuXrv15/V
- 0TW0q676MD43QFcX8P/UcUVTRGV3T2Dtc0k8eM8NGh/bvFz779Bc0F3UfQAg51D8Jd/v
- B7QPKgFmd3ebbKD0/xYQGeR/udzkH+4t+LCRBlP9neskFizDKLBfssG9HJdF9ktIGDfo
- 7ZSGzm+GfTPaFH97ubJ67Xi+EUBSqOsgEtSm8upPNm6C5h5Oa8EDidDycVKzMouwn0fF
- mYD1G9KXWU8g5yG/xmlhn+lZ8A6mrcVhSlqCcCdC/aA1X5dHF7wG8mBOFoNi6KzafVrC
- K1Kg==
+ Fri, 06 Mar 2020 02:47:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=L9qllgBetj+BEQWfT/OiX2QC0uNgMlThjG4S3HBEVvA=;
+ b=bdhXAQ6gl3kdxFEBzTgcym4UaEMZ4lZe1QC4kNndxgcPzc9YZSwXW+SZoXj85K7NXN
+ Jg9AmHG5ZpHiJaZ1JJqJuX69h0MBw2IgWMTWKp+qSf1IZ/rckzt0if7mIDkI28SWA8LO
+ fjeBrXa93E6v8IS/KwAR5s2VMuHkA9E5YVXvhTd+gtaI+iKNz49+zhfcX4mcgLXr34Nv
+ dxEibUj3oE/VBLenqtUBlI7fnSmCRuGcnJjTKYHEi8+jvNiv+AqgZoVzvKKJeNw6/zVd
+ zkoSqxnqXbZwV54lkEgYg1sln4OuTWwKgGVYrWk4EMPUoh/cyC7J+603sACdDYtcOSB3
+ WiSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=d9hiWNQ6J5n3j61Fv/V6tZE2JLkQSqjWYDVkkP/+6yE=;
- b=A8kbX0UhsQ+qEXzpKNS0JJQyPuV+5sS7hs4nOD2iXpbh2vg5FslMnSq/VR8kHzGr1D
- mrXNnMATUdUvToEaCmvi2K+fekaRi+TloVI2Q5cDBxjJGebSNGxOmapOFs/1ZrjhBNJ0
- 87hySal2bmCcVKGyQwIp9j9eikYVplvYB2m0K+ZrEJ/7dzNugIKJbkllU4x4DIn7aZLL
- 4wVC1AN4QE0mlksXzAl9mpdNgVNyYUIEgbsW9nCcs5bH38kkuJJ7jeg9hSdOLb8MJ3I+
- Oy/RkjKPtf/4K5aVyoYP37wAJ6hHGrB69O3rDEAThVhyHUiyw1NR6eAfrjfcxzPvzec5
- 7HMg==
-X-Gm-Message-State: ANhLgQ0OZmI3FDoAyToFm0qz68hQjAMdhbbH95VqWccwU9Kp7nQcXlqR
- vmPbHfda60naY5Wc2MYAN6az9g==
-X-Google-Smtp-Source: ADFU+vtyuUNlJMUe6+PBiy69yoy09fo5sBeHo942glDD+YgiDtuy/FwybcSRvw5ZFgPFJU/dlDmHzg==
-X-Received: by 2002:a1c:4681:: with SMTP id t123mr3509384wma.86.1583491571878; 
- Fri, 06 Mar 2020 02:46:11 -0800 (PST)
-Received: from ?IPv6:2a00:1098:3142:14:3ca7:8f7d:279:5ab9?
- ([2a00:1098:3142:14:3ca7:8f7d:279:5ab9])
- by smtp.gmail.com with ESMTPSA id i14sm972437wmb.25.2020.03.06.02.46.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 06 Mar 2020 02:46:11 -0800 (PST)
-Subject: Re: [PATCH 00/10] Raspberry Pi vmmc regulator support
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-mmc@vger.kernel.org
-References: <20200306103857.23962-1-nsaenzjulienne@suse.de>
-From: Phil Elwell <phil@raspberrypi.com>
-Message-ID: <b33aadf7-d481-10db-c290-6e53b696b2d4@raspberrypi.com>
-Date: Fri, 6 Mar 2020 10:46:10 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=L9qllgBetj+BEQWfT/OiX2QC0uNgMlThjG4S3HBEVvA=;
+ b=b6UPAzrgjAr6JJomrABcVvTLBu7+k2No2uf9dK0a5F51cj5iBBK2VFw5tA2PT/foxE
+ kTlqxdPelefeTJObgVXoTbpS/bBXjaOk+/9FBOAJ95W2jXFJDqikCT1B1svaZ9FrwP16
+ K0sVLTFutPEPLyyt6Rd/b4j05hRQjae9OjcQ2Tthbg4hqtHaFB9BQkajyriikK73qioh
+ kFeWF1Cjh7eY/QutlWG1Sd9URJwa6y344diO3aZiYABdAqUisv3eqE/fczUMTleeogdq
+ h+qDeyqrFyZHJJrpWKAiyQk2/jQ7C9nGYAJX0aeHZIypsh/18g6SgcNGiH2KGjSxfo1w
+ TEZA==
+X-Gm-Message-State: ANhLgQ2RJtGhr4ZqWKHYBZiDTcKJVuDAkFdQ9ldFE54WwvW8EEyG+wVT
+ Vnmftxj5XUu7nArGJ4egHkhM6gBN9R3u6I6DW3qVLg==
+X-Google-Smtp-Source: ADFU+vsTn3fA0kraMXMGFlj/616/+NyRO05/rAFKlvewIjoL2RL/94yrpoO1r5hTt6eGiANfTO/TbGs9/ExYxCs1yHM=
+X-Received: by 2002:ad4:4861:: with SMTP id u1mr2220560qvy.233.1583491672115; 
+ Fri, 06 Mar 2020 02:47:52 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200306103857.23962-1-nsaenzjulienne@suse.de>
-Content-Language: en-GB
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
+ <20200303203559.23995-5-ulf.hansson@linaro.org> <20200304122312.GE25004@bogus>
+ <CAPDyKFpcN-p6sKqB0ujHAY29qPSg7qpSjYGymPaJ4W8jgCKGcg@mail.gmail.com>
+ <20200305162321.GB53631@bogus>
+ <CAPDyKFogjPG+mRsfPaxN7RjB7TQL9=qHNzA=K_t0F6M6Q9-TuA@mail.gmail.com>
+ <20200306100431.GA16541@bogus>
+In-Reply-To: <20200306100431.GA16541@bogus>
+From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Date: Fri, 6 Mar 2020 11:47:40 +0100
+Message-ID: <CA+M3ks764moVU2h9iZJuN6B-e4wBUMymBfPnob_zraf50xqezA@mail.gmail.com>
+Subject: Re: [PATCH v2 4/4] cpuidle: psci: Allow WFI to be the only state for
+ the hierarchical topology
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_024614_660688_12BBA8E0 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200306_024754_000531_75759ED4 
+X-CRM114-Status: GOOD (  21.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,29 +97,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, f.fainelli@gmail.com, adrian.hunter@intel.com,
- linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas,
-
-On 06/03/2020 10:38, Nicolas Saenz Julienne wrote:
-> The series snowballed into adding a new quirk, as I reliased
-> sdhci-iproc's behaviour is not that uncommon.
-> 
-> Based on Phil Elwell's work in the downstream Raspberry Pi kernel.
-
-There are a few typos in the commit messages ("reliased" -> "realised",
-"trough" -> "through"), but otherwise:
-
-Reviewed-by: Phil Elwell <phil@raspberrypi.com>
-
-Phil
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgdmVuLiA2IG1hcnMgMjAyMCDDoCAxMTowNCwgU3VkZWVwIEhvbGxhIDxzdWRlZXAuaG9sbGFA
+YXJtLmNvbT4gYSDDqWNyaXQgOgo+Cj4gT24gRnJpLCBNYXIgMDYsIDIwMjAgYXQgMTA6Mjg6MTBB
+TSArMDEwMCwgVWxmIEhhbnNzb24gd3JvdGU6Cj4gPiBPbiBUaHUsIDUgTWFyIDIwMjAgYXQgMTc6
+MjMsIFN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+IHdyb3RlOgo+ID4gPgo+Cj4g
+Wy4uLl0KPgo+ID4gPiBPSy4gVGhlIG9ubHkgc3RhdGUgdGhhdCBjbHVzdGVyIGNhbiBlbnRlciB3
+aGVuIENQVXMgYXJlIGluIFdGSSBhcmUKPiA+ID4gY2x1c3RlciBXRkkgYW5kIG1vc3QgaGFyZHdh
+cmUgY2FuIGhhbmRsZSBpdCBhdXRvbWF0aWNhbGx5LiBJIGRvbid0IHNlZQo+ID4gPiB0aGUgbmVl
+ZCB0byBkbyBhbnkgZXh0cmEgd29yayBmb3IgdGhhdC4KPiA+Cj4gPiBUaGlzIGlzbid0IGFib3V0
+IGNsdXN0ZXIgV0ZJLCBidXQgYWJvdXQgZGVlcGVyIGNsdXN0ZXIgc3RhdGVzLCBzdWNoIGFzCj4g
+PiBhIGNsdXN0ZXItY2xvY2stZ2F0ZWQtc3RhdGUgYW5kIGEgY2x1c3Rlci1wb3dlci1vZmYtc3Rh
+dGUuIEl0J3MgYW4gU1QKPiA+IHBsYXRmb3JtLCB3aGljaCBCZW5qYW1pbiBpcyB3b3JraW5nIG9u
+Lgo+ID4KPgo+IFRoZW4gZGVmaW5pdGVseSBzb21ldGhpbmcgaXMgY29tcGxldGVseSB3cm9uZy4g
+WW91IGNhbid0IGVudGVyIGRlZXBlcgo+IGNsdXN0ZXIgc3RhdGVzKGNsb2NrLWdhdGVkIGFuZCBw
+b3dlci1vZmYgdG8gYmUgc3BlY2lmaWMpIHdpdGggQ1BVIGluCj4ganVzdCBXRkkgc3RhdGUuIFNv
+LCBpZiB0aGUgYXR0ZW1wdCBoZXJlIGlzIHRvIGVudGVyIHRob3NlIHN0YXRlcywgSQo+IGRpc2Fn
+cmVlIHdpdGggdGhlIGNoYW5nZS4KPgo+IEJlbmphbWluLCBwbGVhc2Ugc2hhcmUgdGhlIGNvbXBs
+ZXRlIGhpZXJhcmNoaWNhbCB0b3BvbG9neSBmb3IgeW91ciBwbGF0Zm9ybS4KClRoZSBwbGF0Zm9y
+bSBpcyBzdG0zMm1wMTU3IFNvQyB3aGljaCBlbWJlZGRlZCB0d28gQ29ydGV4IEE3IGluIG9uZSBj
+bHVzdGVyLgpJIHdvdWxkIGxpa2UgdG8gYmUgYWJsZSB0byBwdXQgdGhlIHN5c3RlbSBpbiBhIHN0
+YXRlIHdoZXJlIGNsb2NrcyBvZiBDUFVzIGFuZApoYXJkd2FyZSBibG9ja3MgYXJlIGdhdGVkLiBJ
+biB0aGlzIHN0YXRlIGxvY2FsIHRpbWVyIGFyZSBvZmYuClRoZSBwbGF0Zm9ybSBzaG91bGQgYmUg
+YWxsb3dlZCB0byBnbyBpbiB0aGlzIHN0YXRlIHdoZW4gdGhlIGRldmljZXMKd2l0aGluIHRoZSBw
+b3dlcgpkb21haW4gYXJlIHBtX3J1bnRpbWVfc3VzcGVuZCBhbmQgdGhlIENQVXMgaW4gV0ZJLgpJ
+biBEVCBJIGhhdmUgb25lIHN5c3RlbSBwb3dlciBkb21haW4gd2hlcmUgdGhlIGhhcmR3YXJlIGJs
+b2NrcyAoaTIsCnVhcnQ7IHNwaSwgZXRjLi4pCmFyZSBhdHRhY2hlZCArIGEgcG93ZXIgcGVyIENQ
+VS4KCkJlbmphbWluCgo+Cj4gPiA+Cj4gPiA+ID4gVGhlbiwgYWZ0ZXIgd2UgaGF2ZSBjYWxsZWQg
+cG1fcnVudGltZV9wdXRfc3luY19zdXNwZW5kKCkgYSBmZXcgbGluZXMKPiA+ID4gPiBhYm92ZSwg
+d2UgbWF5IHBvdGVudGlhbGx5IGhhdmUgYSAiZG9tYWluIHN0YXRlIiB0byB1c2UsIGluc3RlYWQg
+b2YgdGhlCj4gPiA+ID4gV0ZJIHN0YXRlLgo+ID4gPiA+Cj4gPiA+Cj4gPiA+IEFyZSB0aGV5IGFu
+eSBwbGF0Zm9ybXMgd2l0aCB0aGlzIHBvdGVudGlhbCAiZG9tYWluIHN0YXRlIiB0byB1c2Ugd2l0
+aAo+ID4gPiBDUFUgV0ZJLiBJIHdhbnQgdG8gdW5kZXJzdGFuZCB0aGlzIGJldHRlci4KPiA+ID4K
+PiA+ID4gPiBJbiB0aGlzIGNhc2UsIGlmIHdlIHdvdWxkIGhhdmUgY2FsbGVkIHBzY2lfZW50ZXJf
+c3RhdGUoKSwgdGhhdCB3b3VsZAo+ID4gPiA+IGxlYWQgdXMgdG8gY2FsbGluZyBjcHVfZG9faWRs
+ZSgpIGZyb20gdGhlIF9fQ1BVX1BNX0NQVV9JRExFX0VOVEVSKCkKPiA+ID4gPiBtYWNybywgYmVj
+dWFzZSBpZHggaXMgemVyby4gSW4gb3RoZXIgd29yZHMsIHRoZSBkb21haW4gc3RhdGUgd291bGQK
+PiA+ID4gPiBiZWNvbWUgdW51c2VkLgo+ID4gPiA+Cj4gPiA+Cj4gPiA+IEZvciBhIGRvbWFpbiBz
+dGF0ZSB0byBiZWNvbWUgdW51c2VkIHdpdGggV0ZJLCBpdCBuZWVkcyB0byBiZSBhdmFpbGFibGUK
+PiA+ID4gYW5kIEkgYW0gbm90IDEwMCUgc3VyZSBvZiB0aGF0Lgo+ID4KPiA+IFdpdGggdGhlc2Ug
+Y2hhbmdlcyBmcm9tIHRoZSBzZXJpZXMsIHdlIGNhbiBmdWxseSBjb25mb3JtIHRvIHRoZQo+ID4g
+aGllcmFyY2hpY2FsIERUIGJpbmRpbmdzIGZvciBQU0NJLgo+ID4KPgo+IFRoZW9yZXRpY2FsbHkg
+bWF5IGJlLCBidXQgbWF5IG5vdCBjb25maXJtIHRvIHRoZSBoYXJkd2FyZSBzdGF0ZXMuCj4KPiA+
+IEkgYW0gbm90IHN1cmUgSSB1bmRlcnN0YW5kIHlvdXIgY29uY2VybiwgaXMgdGhlcmUgYSBjb3N0
+IGludm9sdmVkIGJ5Cj4gPiBhcHBseWluZyB0aGlzPwo+ID4KPgo+IFllcyBhcyBtZW50aW9uZWQg
+YWJvdmUuCj4KPiAtLQo+IFJlZ2FyZHMsCj4gU3VkZWVwCj4KPiBfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
