@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED47017C4D8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:47:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23F0D17C4DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:48:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uwmoUBe7WYtSPXJudhI4GM1SShwysP2rkzh9oA/iygA=; b=YjdlKV21P2YnYd
-	uFZk/zUDicQRMv6kHWHSeOubxKYNNZjuVUmkI6PWtCuEt37bz+3qPjaDWjY6QO0qR9wHKzxaPikjZ
-	upSKvBHf9jcYSON0gQhjCxZEGnfO3zrdObtnjdQFTTE9rJPiUXe+bIsvhqlNCO/5Xq4pXjSVR81Fw
-	IVfXtxtw0tmDjrN7VDqH+dhvUPrvLDRnXOHnolvQfQyuvyvSZ9I7Wn/c4fFJsZemBA7mjvORI7cTd
-	lVRuIqACikY2bT4Zh+ZtglOCFxtlNjCe60Dj94AnA/j51dvC8MHQOOD+HGKjGzKBwk5FONXjvKeUZ
-	kR8WGaZiQsG3hj3hzxyw==;
+	List-Owner; bh=yrr+wQNcWoBzz3a/8/AcMlS2enrwpsgYIWUpL8bLv8o=; b=nK9IFX75hVaG6g
+	t8PhPIHJnIGtQxqZ65valF8dAq8JXeUle2mgnW5xdfa/YWcgzajD9/LaS1qMXKW7wDU/rQ0GbSW9t
+	+8F8v8NQzCf34sfHmFBEl30S1pJN/dQVJKJk0kmx6/P9N+ig3vAyMVsPsXq1Xij+OU0aU8SU1V+mE
+	nZnwLti9oSRWY6sNhg1MoHB2DNBt/FBNtROGqiXh13ngQTg8C/HgYapnJnXb+GjrutVM2DzH+i/tG
+	OtgGRm0XoLRz5QjavZZHPmlHUm8pMxfgllYbUvrESNgDT06vBiPj4idCN7X1XXxxoqPsP3/k8kido
+	Py713+dNVA1gqQEWqG1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAH3w-0003wN-RE; Fri, 06 Mar 2020 17:47:04 +0000
+	id 1jAH4l-0004vA-BE; Fri, 06 Mar 2020 17:47:55 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAH1V-00085X-Ut; Fri, 06 Mar 2020 17:44:35 +0000
+ id 1jAH1W-00086J-W9; Fri, 06 Mar 2020 17:44:36 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 8906AACC2;
- Fri,  6 Mar 2020 17:44:32 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 8D8E5AEC5;
+ Fri,  6 Mar 2020 17:44:33 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: adrian.hunter@intel.com, linux-kernel@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v2 10/11] ARM: dts: bcm2711: Update expgpio's GPIO labels
-Date: Fri,  6 Mar 2020 18:44:12 +0100
-Message-Id: <20200306174413.20634-11-nsaenzjulienne@suse.de>
+Subject: [PATCH v2 11/11] ARM: dts: bcm2711: Add vmmc regulator in emmc2
+Date: Fri,  6 Mar 2020 18:44:13 +0100
+Message-Id: <20200306174413.20634-12-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_094434_171925_0978A2DC 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20200306_094435_205829_20FE02CB 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,26 +72,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 6th line of the GPIO expander is used to power the board's SD card.
+The SD card power can be controlled trough a pin routed into the board's
+external GPIO expander. Turn that into a regulator and provide it to
+emmc2.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
 diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-index 1d4b589fe233..b0ea8233b636 100644
+index b0ea8233b636..a2da058396fe 100644
 --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
 +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-@@ -68,7 +68,7 @@ expgpio: gpio {
- 				  "GLOBAL_RESET",
- 				  "VDD_SD_IO_SEL",
- 				  "CAM_GPIO",
--				  "",
-+				  "SD_PWR_ON",
- 				  "";
+@@ -55,6 +55,16 @@ sd_io_1v8_reg: sd_io_1v8_reg {
+ 			  3300000 0x0>;
  		status = "okay";
  	};
++
++	sd_vcc_reg: sd_vcc_reg {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc-sd";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-boot-on;
++		enable-active-high;
++		gpio = <&expgpio 6 GPIO_ACTIVE_HIGH>;
++	};
+ };
+ 
+ &firmware {
+@@ -173,6 +183,7 @@ brcmf: wifi@1 {
+ /* EMMC2 is used to drive the SD card */
+ &emmc2 {
+ 	vqmmc-supply = <&sd_io_1v8_reg>;
++	vmmc-supply = <&sd_vcc_reg>;
+ 	broken-cd;
+ 	status = "okay";
+ };
 -- 
 2.25.1
 
