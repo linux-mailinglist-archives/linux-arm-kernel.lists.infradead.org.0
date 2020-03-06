@@ -2,65 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC33017BCD8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:35:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E4DA17BCDE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:36:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=70tqm5Fx/PVlV80i1wQ/AGt/Z++FEwc264EC0C+1hL0=; b=UmNasj+5w8N0c3
-	tb/DKqYJDbM3xb6Ey1+rt3lv5eqv1+MrMg2l4FgUVTKbmgo+zXEaxBZgS6NZD1oEsdRRNQwNTyduj
-	cNqr3yRdiGQqa7sXocSO7rPfcdRe1yQ1FwlvSLmYMvO4Fu0KObIf0q4nB7Ge6vc/iJbSAryH4lOlL
-	mlcON/mQdgU6b9qLzO3y2u8tufmMZjU17tMnPYYYBQ3JHX+6MHEKFIbqjjZMENoUk3jg6XG7mOH+3
-	u1HbbUYNy4LyObJ5hobYug8MADF4yxmBIkSl+J2PCJ7v489hXTDztwy1sgrJB764BbtDV1jg4/IQr
-	Ckx85UQK6abKbdTsOp/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8YhSan8FGlp0DKr7sk5I0h755m5cPrtdCaK8Jc/oyhA=; b=no1vQwqhqJp23nA9vPMPKnHoJ
+	ln9cODGj7YFuLT0OXl5d1991z/fh3Ibxijmm+9igqDX9qDw0e0ibuRKKsYeDLUJXdnfShSv8kss0I
+	If+8PnMQD9B9fksmCphDugEPUUYLVvPjy6Ia4jrhNnvOnuuTgWPa1x4l0q6ioGkY5M2aMYGH0cW5m
+	NuyNt4//H591M/6MLI8oKffnCACC2H19BaX2siDgOB9uf5YBCX4FRfeK56lJ4hhB24gR07WfJbF//
+	veynOTEhw7Ja2f8/zJHK6z0flVdXvMNwUtm79NYO/8a/GU3hBfMpvMLqgrE+Nthiu5OfnTFsia0Bv
+	kKEsUEBYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jACCO-0002x5-Qj; Fri, 06 Mar 2020 12:35:28 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1jACD0-0003Jv-9j; Fri, 06 Mar 2020 12:36:06 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jACCF-0002w1-4n; Fri, 06 Mar 2020 12:35:20 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Mar 2020 04:35:18 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,522,1574150400"; d="scan'208";a="275524609"
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.167])
- ([10.237.72.167])
- by fmsmga002.fm.intel.com with ESMTP; 06 Mar 2020 04:35:14 -0800
-Subject: Re: [PATCH 01/10] mmc: sdhci: Add quirk SDHCI_QUIRK2_SET_BUS_VOLTAGE
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-mmc@vger.kernel.org
-References: <20200306103857.23962-1-nsaenzjulienne@suse.de>
- <20200306103857.23962-2-nsaenzjulienne@suse.de>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <55ef25ae-5c73-7778-dfda-976809cf9fe6@intel.com>
-Date: Fri, 6 Mar 2020 14:34:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jACCm-0003Gv-UK; Fri, 06 Mar 2020 12:35:54 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: alyssa) with ESMTPSA id EE776297096
+Date: Fri, 6 Mar 2020 07:35:43 -0500
+From: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Subject: Re: [PATCH v5 0/4] Add dts for mt8183 GPU (and misc panfrost patches)
+Message-ID: <20200306123543.GA1821@kevin>
+References: <20200306041345.259332-1-drinkcat@chromium.org>
 MIME-Version: 1.0
-In-Reply-To: <20200306103857.23962-2-nsaenzjulienne@suse.de>
-Content-Language: en-US
+In-Reply-To: <20200306041345.259332-1-drinkcat@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_043519_199743_46407A92 
-X-CRM114-Status: GOOD (  16.52  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_043553_112857_1D87B9CB 
+X-CRM114-Status: GOOD (  19.77  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,61 +57,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, f.fainelli@gmail.com, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, dri-devel@lists.freedesktop.org,
+ Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
+ hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Nick Fan <nick.fan@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6477256442582845437=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/03/20 12:38 pm, Nicolas Saenz Julienne wrote:
-> Adds quirk for controllers whose bus power select register has to be set
-> even when powering SD cards from a regulator.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->  drivers/mmc/host/sdhci.c | 5 +++++
->  drivers/mmc/host/sdhci.h | 2 ++
->  2 files changed, 7 insertions(+)
-> 
-> diff --git a/drivers/mmc/host/sdhci.c b/drivers/mmc/host/sdhci.c
-> index c59566363a42..c7fd87447457 100644
-> --- a/drivers/mmc/host/sdhci.c
-> +++ b/drivers/mmc/host/sdhci.c
-> @@ -1920,6 +1920,11 @@ static void sdhci_set_power_reg(struct sdhci_host *host, unsigned char mode,
->  
->  	mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
->  
-> +	if (host->quirks2 & SDHCI_QUIRK2_SET_BUS_VOLTAGE) {
 
-We don't really want to replace callbacks by quirks.
+--===============6477256442582845437==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="huq684BweRXVnRxX"
+Content-Disposition: inline
 
-Replace sdhci_milbeaut_set_power() etc by a common fn in sdhci.c if you want.
 
-> +		sdhci_set_power_noreg(host, mode, vdd);
-> +		return;
-> +	}
-> +
->  	if (mode != MMC_POWER_OFF)
->  		sdhci_writeb(host, SDHCI_POWER_ON, SDHCI_POWER_CONTROL);
->  	else
-> diff --git a/drivers/mmc/host/sdhci.h b/drivers/mmc/host/sdhci.h
-> index cac2d97782e6..9531a4e5b148 100644
-> --- a/drivers/mmc/host/sdhci.h
-> +++ b/drivers/mmc/host/sdhci.h
-> @@ -484,6 +484,8 @@ struct sdhci_host {
->   * block count.
->   */
->  #define SDHCI_QUIRK2_USE_32BIT_BLK_CNT			(1<<18)
-> +/* Set bus voltage even when powering from an external regulator */
-> +#define SDHCI_QUIRK2_SET_BUS_VOLTAGE			(1<<19)
->  
->  	int irq;		/* Device IRQ */
->  	void __iomem *ioaddr;	/* Mapped address */
-> 
+--huq684BweRXVnRxX
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Series has my r-b :)
+
+On Fri, Mar 06, 2020 at 12:13:41PM +0800, Nicolas Boichat wrote:
+> Hi!
+>=20
+> Follow-up on the v4: https://patchwork.kernel.org/cover/11369777/, some
+> of the core patches got merged already (thanks Rob!).
+>=20
+> The main purpose of this series is to upstream the dts change and the
+> binding document, but I wanted to see how far I could probe the GPU, to
+> check that the binding is indeed correct. The rest of the patches are
+> RFC/work-in-progress.
+>=20
+> So this is tested on MT8183 with a chromeos-4.19 kernel, and a ton of
+> backports to get the latest panfrost driver (I should probably try on
+> linux-next at some point but this was the path of least resistance).
+>=20
+> I tested it as a module as it's more challenging (originally probing would
+> work built-in, on boot, but not as a module, as I didn't have the power
+> domain changes, and all power domains are on by default during boot).
+>=20
+> Probing logs looks like this, currently. They look sane.
+> [  501.319728] panfrost 13040000.gpu: clock rate =3D 511999970
+> [  501.320041] panfrost 13040000.gpu: Linked as a consumer to regulator.14
+> [  501.320102] panfrost 13040000.gpu: Linked as a consumer to regulator.31
+> [  501.320651] panfrost 13040000.gpu: Linked as a consumer to genpd:0:130=
+40000.gpu
+> [  501.320954] panfrost 13040000.gpu: Linked as a consumer to genpd:1:130=
+40000.gpu
+> [  501.321062] panfrost 13040000.gpu: Linked as a consumer to genpd:2:130=
+40000.gpu
+> [  501.321734] panfrost 13040000.gpu: mali-g72 id 0x6221 major 0x0 minor =
+0x3 status 0x0
+> [  501.321741] panfrost 13040000.gpu: features: 00000000,13de77ff, issues=
+: 00000000,00000400
+> [  501.321747] panfrost 13040000.gpu: Features: L2:0x07120206 Shader:0x00=
+000000 Tiler:0x00000809 Mem:0x1 MMU:0x00002830 AS:0xff JS:0x7
+> [  501.321752] panfrost 13040000.gpu: shader_present=3D0x7 l2_present=3D0=
+x1
+> [  501.324951] [drm] Initialized panfrost 1.1.0 20180908 for 13040000.gpu=
+ on minor 2
+>=20
+> Some more changes are still required to get devfreq working, and of course
+> I do not have a userspace driver to test this with.
+>=20
+> I believe at least patches 1 & 2 can be merged (2 depends on another
+> patch series, so maybe we could start with 1 only for now...).
+>=20
+> Thanks!
+>=20
+> Nicolas Boichat (4):
+>   dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
+>   arm64: dts: mt8183: Add node for the Mali GPU
+>   RFC: drm/panfrost: Add mt8183-mali compatible string
+>   RFC: drm/panfrost: devfreq: Add support for 2 regulators
+>=20
+>  .../bindings/gpu/arm,mali-bifrost.yaml        |  25 +++++
+>  arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   7 ++
+>  arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 105 ++++++++++++++++++
+>  drivers/gpu/drm/panfrost/panfrost_devfreq.c   |  17 +++
+>  drivers/gpu/drm/panfrost/panfrost_device.h    |   1 +
+>  drivers/gpu/drm/panfrost/panfrost_drv.c       |  11 ++
+>  6 files changed, 166 insertions(+)
+>=20
+> --=20
+> 2.25.1.481.gfbce0eb801-goog
+>=20
+
+--huq684BweRXVnRxX
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEQ17gm7CvANAdqvY4/v5QWgr1WA0FAl5iQ5oACgkQ/v5QWgr1
+WA2Wfg/5Acx01qtWt1r6N8Am7rBvPeoVpmq9TkjjQ4RxwOUOdNmY0EdHiFThQMh+
+IcRWZd7FYzM43WLebWWFVxcPgajS9PXB6MPiJcYwxVGvck0F6AW1SbZysoLdY4S8
+AkaNQ5FLVHdr0sa5dkD80nAbLEnIyzkE48WXg7g1hIbdOjompFKdsHyv8UllLDdh
+exBzqdVkfCd4UWCF+89cxDhGFUB/KFKdzk3jezMTCzkFzH6U0NWSn54oRJNFYdn8
+x+1IscTm8NEZ9ghuldVcTLkiw+HDeEJ7tOgIq9REuUelwk312INaju2cxhF60Id0
+JgIrNn+p7G9E3sEMlrrfDkEAm2kzS9WDVQGJ2vG2hNpwAZZBmLPnGQuV0pFuUSCB
+Te5JrsafvUHZVWa3WrwFAxWM6F1iIfPlSXSQ1OYE6TrcSE2jWTZpWfXrHTg1oZOn
+vTg+ZPyg7VfH/VtI/BmjIGeCPDVvPwCmlIbLv351H/uZ+sLWbT0Q1c9Y8qptg0MY
+ldn2eRHR//yugNzH1QIWr6aPz0HTRHhEomrckZONP+40n1LinxHZEapOeTQnw0Ch
+IoQjaQCaNW615SGOd3z2ncpg84xcc9SS3xb8Lb2WZZb9GHCIP3479jdCj52fnlQG
+hYdjTL7nX7jwJkAXIUza7jiC2KIw7J8AfU10nxdyM9F5pHU9KS4=
+=SWdB
+-----END PGP SIGNATURE-----
+
+--huq684BweRXVnRxX--
+
+
+--===============6477256442582845437==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6477256442582845437==--
+
