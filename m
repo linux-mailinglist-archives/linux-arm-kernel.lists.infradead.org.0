@@ -2,96 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C08E717B74C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 08:22:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A86D817B79C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 08:42:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=54ZPjOEbwBVySl+HUo/pI/YObYgexdz5vjgxxB5FQrg=; b=IniBN/OV8YOPIb
-	AzDKL8UPM4C1+J5L0F45J00HkCzLQLNU9flT3aUsG4ZVzth25NFFLeaSJGuRbUNzIRIMFcDswnVBr
-	K3E5yFekxxWPUCfqS008IUfDEXSh51qS58QxcDWaXTIBXXzwgIdoO4Y/v2WZSpoY5NyzsVsMOWurU
-	Gp1hef4/qXfElg+GpK4LdjoTCv8c5B3xfEDXZYHtkEZ+BCyJfhM0CrUyQNy0O2yQylXg7ZmsB5bTa
-	fWB6XxFMUaBmcf6ANqYoq64+DR0DrWXK0h2FDF49d0HB5L5WX1ztKrzlTQVAirsiufPkc6X8wM6Gd
-	qcsyf5Wv/1+oj1GX1dsw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gt86+m7QoXopKIFA4epvUzXx8j1JPUvq0xbVlmJBZKE=; b=UV6cfWAOUq2xg3
+	FwGENFRekiyq8aehEg5I0moobGcp31EvPB+5lpJ4uGAzsZOP5iL7yJnTdQQAOi2uvOcUTIFPs7G84
+	NzKLYWSnLWArqjRMqIosqec3AgUGM24H2t9TLe1MI0m3gG+4avlZH66PFQePffvRaxbpR9+8IuwN5
+	I8xxqH48broYfydOH4/LnubQd+tEIwFbyx0gu519puZYfWJaJKEEEyij8Ot4R5WpXXI2LWkvZ3Dbg
+	7nUD1BbXLAHBxP/i5NFpKkT0T2whHk3yJYmcdoQApJCYnA4xxBLT7yrZ1BZcKOdml+I6JZnYCsrWg
+	qwaSD4DSFuX2kWvg1Iig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA7JI-0001mF-7H; Fri, 06 Mar 2020 07:22:16 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jA7cJ-0000n1-RZ; Fri, 06 Mar 2020 07:41:55 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA7J9-0001kQ-6b; Fri, 06 Mar 2020 07:22:08 +0000
-Received: by mail-wr1-x443.google.com with SMTP id s17so159033wrs.3;
- Thu, 05 Mar 2020 23:22:05 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=SnUqcrVsJzqJaaVzt0hPVe/gTQHBXGhcLib5WHQ/AJU=;
- b=p1IRc54H8JzpxRZeZG0bSTeItFXg8PjCDo21GH34exsa4OQYBGv6BRnOcCVkFANCiQ
- 8dZCcI8PQnGba7V5LgTgvN0ETfNr+6jiDBa9JtgXS3lQtjn/S3n1Kf3WHv+ew/SzUmSk
- w7qihFs65T7614lKbUMSZrVVzGFfLc6sHKR1zMjBMk1XXl9Uaw395Gr+zeZsQWU1C4zI
- XYRtTPb4dzWNR5zjwLdFKfaXb7fiDF3kwG+2KuDBV4zDlQYNrcJEeSxZw+CEh06Mhfvu
- gedGylWQ/43fy9sKMJ+fG3n9R6fgYGItazcFMNVKEuexXIiVh1Ixo2a9DIIeJz7NgNhQ
- Hmrg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=SnUqcrVsJzqJaaVzt0hPVe/gTQHBXGhcLib5WHQ/AJU=;
- b=K7O6fRPp4toyidBfeW/XlZiWlceSLSXZCc4dbmn9fUY7WyolbGqsWxHhAN42qkqlbS
- 6FiJPq+8Fphe+PtqaFWmhkh3ZYxNhEmU7P2flmfyrtm/tviZqIHK5wmUI4hu023xxr7K
- RgIsU5e22maCHNgWjvyZMrWmblFqrPVY9KWnoLuOrQU4jfoXru7zcQHBzkyFzw3FTeHP
- ZYLcYp/zv7xGTZlphrXLNFMScLZo5QHtX2qZXmUnYhBOXkOSWxzbuiOEGV0K+P4qJgaf
- 8777BbuPZBM3ZWR+yPghXOP1paIHQaNK+5q/sWldyreTLuuJOuNnx03Xguqdns3bk7zx
- 3eew==
-X-Gm-Message-State: ANhLgQ3PPI5dIhMfQnNo2+aoa68QmFtYATCfElmXuMyV/S1AT6NiJkZ2
- 47QFP+dW06yEBMUMOfn7yLk=
-X-Google-Smtp-Source: ADFU+vt15QdHPEyOlXqze4BvjuHTIZJH5fEAu12zNjWL5ctAZ2d9xwsBEuNTt0doZ65A7htgMnXryA==
-X-Received: by 2002:a5d:4d48:: with SMTP id a8mr2431238wru.35.1583479324472;
- Thu, 05 Mar 2020 23:22:04 -0800 (PST)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id f207sm14897847wme.9.2020.03.05.23.22.02
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Mar 2020 23:22:02 -0800 (PST)
-Subject: Re: [PATCH v4 2/2] arm64: dts: rockchip: Add initial support for
- Pinebook Pro
-To: Heiko Stuebner <heiko@sntech.de>, Tobias Schramm <t.schramm@manjaro.org>
-References: <20200304213023.689983-2-t.schramm@manjaro.org>
- <20200304213023.689983-3-t.schramm@manjaro.org> <6168222.Wuk326WHQK@phil>
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <7a799284-92ab-ea04-285e-37d655064118@gmail.com>
-Date: Fri, 6 Mar 2020 08:22:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jA7cC-0000mA-A1
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 07:41:49 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jA7c6-0000Vx-G3; Fri, 06 Mar 2020 08:41:42 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jA7c4-0004F5-4R; Fri, 06 Mar 2020 08:41:40 +0100
+Date: Fri, 6 Mar 2020 08:41:40 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Sam Shih <sam.shih@mediatek.com>
+Subject: Re: [PATCH v2 1/1] pwm: mediatek: add longer period support
+Message-ID: <20200306074140.6oyxk6cn7m4qg25f@pengutronix.de>
+References: <1583230755-25986-1-git-send-email-sam.shih@mediatek.com>
+ <1583230755-25986-2-git-send-email-sam.shih@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <6168222.Wuk326WHQK@phil>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1583230755-25986-2-git-send-email-sam.shih@mediatek.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_232207_269301_D5B40105 
-X-CRM114-Status: GOOD (  13.12  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200305_234148_348134_528D9E1A 
+X-CRM114-Status: GOOD (  21.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,34 +68,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Emmanuel Vadot <manu@freebsd.org>, Alexis Ballier <aballier@gentoo.org>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>,
- Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
- Andy Yan <andy.yan@rock-chips.com>, Matthias Kaehlcke <mka@chromium.org>,
- Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpNaXNzaW5nICNhZGRyZXNzLWNlbGxzLCAjc2l6ZS1jZWxscwpDYW4geW91IHN0aWxsIGZp
-eCB0aGF0PwoKT24gMy82LzIwIDE6MjMgQU0sIEhlaWtvIFN0dWVibmVyIHdyb3RlOgo+IEFtIE1p
-dHR3b2NoLCA0LiBNw6RyeiAyMDIwLCAyMjozMDoyMyBDRVQgc2NocmllYiBUb2JpYXMgU2NocmFt
-bToKPj4gVGhpcyBjb21taXQgYWRkcyBpbml0aWFsIGR0IHN1cHBvcnQgZm9yIHRoZSByazMzOTkg
-YmFzZWQgUGluZWJvb2sgUHJvLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBUb2JpYXMgU2NocmFtbSA8
-dC5zY2hyYW1tQG1hbmphcm8ub3JnPgo+IAo+IGFwcGxpZWQgZm9yIDUuNwo+IAo+IFRoYW5rcwo+
-IEhlaWtvCj4gCj4gCgo+ICsmZWRwIHsKPiArCWZvcmNlLWhwZDsKPiArCXBpbmN0cmwtbmFtZXMg
-PSAiZGVmYXVsdCI7Cj4gKwlwaW5jdHJsLTAgPSA8JmVkcF9ocGQ+Owo+ICsJc3RhdHVzID0gIm9r
-YXkiOwo+ICsKPiArCXBvcnRzIHsKCiNhZGRyZXNzLWNlbGxzID0gPDE+Owojc2l6ZS1jZWxscyA9
-IDwwPjsKCkRvbid0IGZvcmdldCB0aGF0IGV4dHJhIGVtcHR5IGxpbmUgaGVyZS4KCgo+ICsJCWVk
-cF9vdXQ6IHBvcnRAMSB7Cj4gKwkJCXJlZyA9IDwxPjsKPiArCQkJI2FkZHJlc3MtY2VsbHMgPSA8
-MT47Cj4gKwkJCSNzaXplLWNlbGxzID0gPDA+Owo+ICsKPiArCQkJZWRwX291dF9wYW5lbDogZW5k
-cG9pbnRAMCB7Cj4gKwkJCQlyZWcgPSA8MD47Cj4gKwkJCQlyZW1vdGUtZW5kcG9pbnQgPSA8JnBh
-bmVsX2luX2VkcD47Cj4gKwkJCX07Cj4gKwkJfTsKPiArCX07Cj4gK307CgoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Mar 03, 2020 at 06:19:15PM +0800, Sam Shih wrote:
+> The pwm clock source could be divided by 1625 with PWM_CON
+> BIT(3) setting in mediatek hardware.
+> =
+
+> This patch add support for longer pwm period configuration,
+> which allowing blinking LEDs via pwm interface.
+> =
+
+> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
+> ---
+>  drivers/pwm/pwm-mediatek.c | 34 ++++++++++++++++++++++++++++++----
+>  1 file changed, 30 insertions(+), 4 deletions(-)
+> =
+
+> diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
+> index b94e0d09c300..c64ecff6c550 100644
+> --- a/drivers/pwm/pwm-mediatek.c
+> +++ b/drivers/pwm/pwm-mediatek.c
+> @@ -121,8 +121,11 @@ static int pwm_mediatek_config(struct pwm_chip *chip=
+, struct pwm_device *pwm,
+>  			       int duty_ns, int period_ns)
+>  {
+>  	struct pwm_mediatek_chip *pc =3D to_pwm_mediatek_chip(chip);
+> -	u32 clkdiv =3D 0, cnt_period, cnt_duty, reg_width =3D PWMDWIDTH,
+> -	    reg_thres =3D PWMTHRES;
+> +	/* The source clock is divided by 2^clkdiv or iff the clksel bit
+> +	 * is set by (2^clkdiv*1625)
+> +	 */
+
+Please put the /* on it's own line. See
+https://www.kernel.org/doc/html/latest/process/coding-style.html#commenting
+
+> +	u32 clkdiv =3D 0, clksel =3D 0, cnt_period, cnt_duty,
+> +	    reg_width =3D PWMDWIDTH, reg_thres =3D PWMTHRES;
+>  	u64 resolution;
+>  	int ret;
+>  =
+
+> @@ -133,12 +136,30 @@ static int pwm_mediatek_config(struct pwm_chip *chi=
+p, struct pwm_device *pwm,
+>  =
+
+>  	/* Using resolution in picosecond gets accuracy higher */
+>  	resolution =3D (u64)NSEC_PER_SEC * 1000;
+> +	/* Calculate resolution based on current clock frequency */
+>  	do_div(resolution, clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
+> -
+> +	/* Using resolution to calculate cnt_period which represents
+> +	 * the effective range of the PWM period counter
+> +	 */
+>  	cnt_period =3D DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000, resolution);
+
+The existing code is rather bad. A better approach to calulate
+cnt_period (with a single division and higher accuracy):
+
+	cnt_period =3D DIV_ROUND_CLOSEST_ULL((u64)period_ns * clk_get_rate(..), NS=
+EC_PER_SEC);
+
+
+>  	while (cnt_period > 8191) {
+> +		/* Using clkdiv to reduce clock frequency and calculate
+> +		 * new resolution based on new clock speed
+> +		 */
+>  		resolution *=3D 2;
+>  		clkdiv++;
+> +		if (clkdiv > PWM_CLK_DIV_MAX && !clksel) {
+> +			/* Using clksel to divide the pwm source clock by
+> +			 * an additional 1625, and recalculate new clkdiv
+> +			 * and resolution
+> +			 */
+> +			clksel =3D 1;
+> +			clkdiv =3D 0;
+> +			resolution =3D (u64)NSEC_PER_SEC * 1000 * 1625;
+> +			do_div(resolution,
+> +				clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
+> +		}
+> +		/* Calculate cnt_period based on resolution */
+>  		cnt_period =3D DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000,
+>  						   resolution);
+>  	}
+> @@ -158,8 +179,13 @@ static int pwm_mediatek_config(struct pwm_chip *chip=
+, struct pwm_device *pwm,
+>  		reg_thres =3D PWM45THRES_FIXUP;
+>  	}
+>  =
+
+> +	/* Calculate cnt_duty based on resolution */
+>  	cnt_duty =3D DIV_ROUND_CLOSEST_ULL((u64)duty_ns * 1000, resolution);
+
+Using resolution as divisor is bad here, too, so the way to calculate
+cnt_duty should be changed accordingly.
+
+I think if the driver is simplified first, maybe even getting rid of the
+while loop, your change will get considerably easier, too.
+
+> -	pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
+> +	if (clksel)
+> +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | BIT(3) |
+> +				    clkdiv);
+> +	else
+> +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
+>  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_width, cnt_period);
+>  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_thres, cnt_duty);
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
