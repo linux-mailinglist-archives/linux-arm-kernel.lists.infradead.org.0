@@ -2,88 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9977917C65D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 20:33:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3659717C6C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 21:06:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2h7A6jDvUTNlsUPbMydp1B/rRYkIkYqAfSIyiXLdExg=; b=O75rRDmHcHn6n6
-	dU0sZDZjFN1Jib9wkvicpss5ESLX3gsE+kWL/6UVfX+m9uVgKUts6eJpSPUDegQ83peAvCsjqhPN1
-	w9CB/yYVJYI7lI+ADB23FeKTdUB4gz+FgdrmCNh8HWEHQKrsG0RDdolejEJkdXFAdbmFnVfyNiWQ6
-	lRZjsQntSu/omdRweUATGoziGnrdKfjjs7/EwmY+FIQftu2O1s5xO66W4LLRmnXabnEQrdi68T7XH
-	x4Ao4KoeymM6pSfbSwMtuJQv38WLPe+4SROjM5uD1nxC1PNFzGLOCM2hoeh2quC9oA2Yl7PYT/TCI
-	wE7yk/S5xK7AUDu/jMuw==;
+	List-Owner; bh=UedG2AHUhtJAczHX9iakT8T9lVdqwk8I4Thu6NweRoY=; b=EkcIOb98DB3v6n
+	tfQ65k09gkyzZF4jiV+TCLhqkPKNlqMeqH356LE1Byr4gxF4ujY3XhVztp4fs3if7jXlaubvra3jU
+	Iz7iO0A7QARKkiFsyOKamOT2/JwxrEoY98R0QCq3FVyRLObUlt+7/jdcXRb1IHXBrxWQ1LAK7b3Ji
+	NCcMDMmlq/qy1zJMf2oj5zPYjB2mUf5+K24FV/KPVO7gxUsDqwSe+LZj1VvtLwgqlV/g2qb1yPM8P
+	tPoI4dBIL7/nEqnKHYxZNiR/rtrySQQ2x8JCpFQcsVhmVilrqapudaT09IeDxvgc+x0km3AZiaXwf
+	uHz4dMNrIMYzKPjimmEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAIip-0000vG-A1; Fri, 06 Mar 2020 19:33:23 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jAJET-0005Mc-0V; Fri, 06 Mar 2020 20:06:05 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAIig-0000uN-N2
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 19:33:17 +0000
-Received: by mail-pl1-x643.google.com with SMTP id w3so1273038plz.5
+ id 1jAJEM-0005Lr-5t
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 20:05:59 +0000
+Received: by mail-io1-xd44.google.com with SMTP id u17so3273551iog.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 11:33:13 -0800 (PST)
+ Fri, 06 Mar 2020 12:05:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=z3KT8EeBZ4kaVLgnDAz4UiYDB1f5ZpcHkzDsT+BdSZk=;
- b=rxSdDrqzraT4uwdK4VFCE5tw55F0ImCJ4F37HWzATRmaxytGqnISM36ath42eIQYyS
- rBxO7a6vHaGFt06R6XSFwSP1nK647qwCkhSGR3uLvqqK0Zl6BgHyntKqbDXBoqlJf96k
- mwsBKxGe3/qFV7x7SqiCwoCNzEaFRucueRUkHjxI/aduFKiKdxl109Pf5SL+vws6BKUK
- +eMM7neFp8TqrDj96iPZM2jdRCKC3rsRpjxGUVUmlbD2WmHYrE+Ns/PpMw6e2BZbL4rF
- kDtclqHTx03ggdYNn8/LVa11NjdycrQMnWIfiK/oLXyIG2vM3XUsWAvm3PMHLW5RPo/O
- WW0w==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=LdHJwrkU78nb5BuTKVZ6D/qa0v1tI9iVbXcfDOAUWuU=;
+ b=BVmVik9dEamfXCKxb1sLMxZf1hIIA5pfcOZWjfAX/DioN021Z0EsuQfByfA3W9RI8X
+ udxDHDvpvOug6ueLZrkWnFyWB9Keq/z6Q99PFzJxvsrKRnimpJE67CLnoBQqfwrb/v/b
+ IzF0H7MmpNEXuPCyqhOpE6eecf9yq31mP+K+Lvpwr46nTPY8kavB9VYVFS0VfwsQdbQi
+ 5ToS7dkAWfgy6I2w/gPi+DCF/2bNoxx3Mz/EMHxC4Jp4AwWM3JmnleU8JyEiOvxAoENL
+ 41t2XgsspS8B6Wuvu/RlgYJ0gvo7Y9Zt6i8jw2zBxixJzUD0kMkIl9x8CNv9hencif4m
+ lBHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=z3KT8EeBZ4kaVLgnDAz4UiYDB1f5ZpcHkzDsT+BdSZk=;
- b=CUjHs5Y7ksr5/ncGApkb/sfmaryNx6nzQ/epXW/7WKuoJhWrQdZweV1LRzgcr3TGVs
- OCbr9lVdZ4Y87upBxaRmaslcV1hTQ3gLCjTrZk5ahnoC/eOXQs+no2FFclarAa8ggDhD
- o29JbDODtOqcLhzsqECM+JLlwGqHCsQm+7YdjcXwUrOI3i0DpYaWMuyRFRjarcnc0WGs
- z3cSVtrBTkkdzqAdNnEZnkrRbUHFRgw2G4p2+eJ+yx0qLo6MbNwPHLKBZZ8gX1J/Yeyj
- DJKWyLjbXbx42KLsUvfWkf8ZygVl/INqaJ5C/h8VOW65ucjNUDaPi/3CPM+b9+nJFz2F
- UBfA==
-X-Gm-Message-State: ANhLgQ2gr7s3/f5pk8KbmqZNTEdO5zg/gM0vpBaaBVeqa4z1txVWXBDY
- /FB7PBj+LI+CP0sDG40YCMydzqP4
-X-Google-Smtp-Source: ADFU+vsT3WVYwhpJooawROdOiTWGvCsUv6cL9HuV5P5d1U/LqQqpNY07JVvpUBPh8/8LLWwZnSFs9Q==
-X-Received: by 2002:a17:90a:ef17:: with SMTP id
- k23mr5138094pjz.139.1583523193162; 
- Fri, 06 Mar 2020 11:33:13 -0800 (PST)
-Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
- by smtp.gmail.com with ESMTPSA id a7sm10093043pjo.11.2020.03.06.11.33.11
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Mar 2020 11:33:12 -0800 (PST)
-Date: Fri, 6 Mar 2020 11:33:10 -0800
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
- KEYBOARD_IMX_SC_KEY
-Message-ID: <20200306193310.GI217608@dtor-ws>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LdHJwrkU78nb5BuTKVZ6D/qa0v1tI9iVbXcfDOAUWuU=;
+ b=UdugnlSCgQHwgs9I5zLuodR/Jb9ZcPKwGbHmfoYRcEVBnqF96+lgQV/DDpmImNvWo5
+ rIhmogalo33VcBU/Ke7O1PUe4GbNW6u1v36bO4FEBSG33phgVpNqK3wTIODOC9UAccTw
+ 6udg+pLNT2/Mbrsd20kgvu+GQNyQtOSkkS8YrQ7FIR+wWq3RXzouVZWAdWCAGr51DHXx
+ DdoxOLTdEPmr6bA3S6qmWZJMBcrTqx6mU4b41+uYpOgorn8CL2d73pMmyMgQLnMriAf+
+ 288b/EezA1SROrqhGOWDH0w7Pp2I7k7RSrfS/JnWwT1r+mNsMmIIOlJ+9WIdOBtWEdyg
+ f7CA==
+X-Gm-Message-State: ANhLgQ3JmFlz9YwW4g0IPMPYilZBKKhkxXKkl12e8M64F2+ktsusM8uy
+ QZFuoKqaksNPDD/uyYtW8TvIuV6CziBplFZp6Yk=
+X-Google-Smtp-Source: ADFU+vsGjBjSrVYdatEoW+ATr/qixFBpxQ+PrizOrE4IkcNicUVbWIuaSYnV3CVB0PtynC6ROLYZ1+L0CjdsBSoYE0Y=
+X-Received: by 2002:a02:c942:: with SMTP id u2mr4773355jao.49.1583525154366;
+ Fri, 06 Mar 2020 12:05:54 -0800 (PST)
+MIME-Version: 1.0
 References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
  <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+ <20200306193310.GI217608@dtor-ws>
+In-Reply-To: <20200306193310.GI217608@dtor-ws>
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Date: Fri, 6 Mar 2020 12:05:42 -0800
+Message-ID: <CAKdAkRRhXE6Hviqx90_5hWmP7YQnKO2QLJgDYnzt_CPjeH7D0A@mail.gmail.com>
+Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_113315_229177_489EBAD8 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20200306_120558_247173_FF709846 
+X-CRM114-Status: GOOD (  10.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [dmitry.torokhov[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -102,50 +95,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, m.felsch@pengutronix.de, festevam@gmail.com,
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Marco Felsch <m.felsch@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
  linux-rtc@vger.kernel.org, amit.kucheria@verdurent.com, wim@linux-watchdog.org,
- daniel.lezcano@linaro.org, krzk@kernel.org, Linux-imx@nxp.com,
- linux-input@vger.kernel.org, rui.zhang@intel.com, ronald@innovation.ch,
- linux@roeck-us.net, linux-watchdog@vger.kernel.org, arnd@arndb.de,
- linux-pm@vger.kernel.org, s.hauer@pengutronix.de, tglx@linutronix.de,
- andriy.shevchenko@linux.intel.com, daniel.baluta@nxp.com,
- linux-arm-kernel@lists.infradead.org, a.zummo@towertech.it,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- linux@rempel-privat.de, kernel@pengutronix.de, enric.balletbo@collabora.com,
- shawnguo@kernel.org
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, NXP Linux Team <Linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>,
+ =?UTF-8?Q?Ronald_Tschal=C3=A4r?= <ronald@innovation.ch>,
+ Guenter Roeck <linux@roeck-us.net>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ lkml <linux-kernel@vger.kernel.org>, Oleksij Rempel <linux@rempel-privat.de>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
-> Add COMPILE_TEST support to i.MX SC keyboard driver for better compile
-> testing coverage.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+On Fri, Mar 6, 2020 at 11:33 AM Dmitry Torokhov
+<dmitry.torokhov@gmail.com> wrote:
+>
+> On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
+> > Add COMPILE_TEST support to i.MX SC keyboard driver for better compile
+> > testing coverage.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+>
+> Applied, thank you.
 
-Applied, thank you.
+Actually, not:
 
-> ---
->  drivers/input/keyboard/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-> index 4706ff0..81e26f6 100644
-> --- a/drivers/input/keyboard/Kconfig
-> +++ b/drivers/input/keyboard/Kconfig
-> @@ -467,7 +467,7 @@ config KEYBOARD_IMX
->  
->  config KEYBOARD_IMX_SC_KEY
->  	tristate "IMX SCU Key Driver"
-> -	depends on IMX_SCU
-> +	depends on IMX_SCU || COMPILE_TEST
->  	help
->  	  This is the system controller key driver for NXP i.MX SoCs with
->  	  system controller inside.
-> -- 
-> 2.7.4
-> 
+ERROR: "imx_scu_irq_register_notifier"
+[drivers/input/keyboard/imx_sc_key.ko] undefined!
+ERROR: "imx_scu_get_handle" [drivers/input/keyboard/imx_sc_key.ko] undefined!
+ERROR: "imx_scu_call_rpc" [drivers/input/keyboard/imx_sc_key.ko] undefined!
+ERROR: "imx_scu_irq_unregister_notifier"
+[drivers/input/keyboard/imx_sc_key.ko] undefined!
+ERROR: "imx_scu_irq_group_enable"
+[drivers/input/keyboard/imx_sc_key.ko] undefined!
+make[1]: *** [scripts/Makefile.modpost:94: __modpost] Error 1
+make: *** [Makefile:1282: modules] Error 2
+
+If you want to enable compile test coverage you need to provide stubs
+for the above functions.
+
+Thanks.
 
 -- 
 Dmitry
