@@ -2,142 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 285E517C866
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 23:34:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D947D17C885
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 23:51:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iqj72qZarVwazolHGt8gXdSoFWXSiTvu22kj3XXk14w=; b=gXWTtFVI1CBi7l
-	XOoTEaTN+dG8miu5j/EwDvreck04PxgJvZBucaGkOWQTka55rchdCK7g+iNVoHcpBDbx3IVzxtpLi
-	kUlsYQr3w/9ywr+36Je3+29LhmVflvR4krYsS/cBCk7kGcUFIbx0iglREC6i+lBobnnQ1uL7Xxha6
-	Wzql81RGYPsRvbsoT6jz8k/MbT7IjBPHeUsYCg7BiN7cppMzCer5JNpiDF7m8/ZwLGmspOUGyaVat
-	PKFdoabtkZ17RlNwbqd3A6vrsGK/mZ8LSmkTBmaZdU+Yb4UyAZoiswGHm88LQ0cNaElBtArkiW1/2
-	RzRJS+O58OAVbkOq9YiA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
+	:In-Reply-To:References:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SI2yrrmVj+ZKpVbQqeGS3FudmuIQE146f0ycAmaVRuw=; b=sl3ShM2CdD918K
+	J5fzMo7zd5+oSxh0KWu9h8vXfW+VYdLOeafxtmyrokXin9GBOTPpw6mJejRTyyaPqbqB/uUtnVsn6
+	khcPF56Y5NTZJ++Dh/iOZYl3UlAaSUvB/iJgFhRAGV7YsMv2xP86RIiLCwi5byBx0+2dBWnHNM8RR
+	8GE9THrk9D27ga8tks5kGnjKM1HKfPf7Q4FRt3EFbX3vwTq0W9PEwqb9ug12/lA5SG/rDMPA/qAc7
+	J1FL6ITEJnX5SldmBXe/oNRQlwjG9K8VJdP+3DptQ/mvfGEx4wy56QAhj6bIynIhGu7oKTZYiZ2+y
+	IKE7X2thcKR4GaOIIlOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jALXd-0006wX-It; Fri, 06 Mar 2020 22:34:01 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jALo2-0004nh-MG; Fri, 06 Mar 2020 22:50:58 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jALXV-0006wD-FB
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 22:33:54 +0000
-Received: by mail-pg1-x542.google.com with SMTP id m15so1712482pgv.12
+ id 1jALnu-0004nN-Jk
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 22:50:52 +0000
+Received: by mail-lj1-x244.google.com with SMTP id j19so3913892lji.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 14:33:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=FS9+2bDY2vULPMbYtS5zKTaNGCBeXOr++Wtt8/sAX38=;
- b=bx2+x4gjWHAh3Lous3ONP4TSwUXN6JEzkZn1ZrFFOjana49CDhwujOOo3ZSK26X5Kd
- 1o1ARXO0kw9E5RYGTZ+6qrW17yQl3dptFaVoS6M6pRKnFHQtp0xPmNcZEIaIETqZ+mvi
- knRh+lOxW+JhIv8RuwZpfKAASqpUAA661tQhExUGqUatDBDl4gHhquj0hVwO3fzztOkT
- l1b3KD2tF5IMhCUobZBTNrQDFYwdEcz1mFGOUgWQZyoD2+QWEZ81oUlPd+c52OsQ2J/3
- 9HOaDPLOs+uoQTvsPesKkNy05YiKtq4yfIVQAYDSgj6QrCqWZg0tNickUEHbo6BL0x0T
- heqQ==
+ Fri, 06 Mar 2020 14:50:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:references:in-reply-to:mime-version:thread-index:date
+ :message-id:subject:to:cc;
+ bh=+KdFgHd0Khi4D1I+q98xetrP7WjqAjfW7zo+CRETAms=;
+ b=e8HNVypbS1BSjAYaVJJGJ+lKqiyoZLEYraBW0NcV4WgM3WRpmeJseFIlMHSsduthi8
+ bfvxHTjVtPlItpMk7F/T9BgaTmF4A0GeTIML+V+gg1wHMUr1twtjejyU971EbA3I7srS
+ P67lwS73bevLsMsn6lSRm+pieEbC3gt76dyLE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=FS9+2bDY2vULPMbYtS5zKTaNGCBeXOr++Wtt8/sAX38=;
- b=jB+uvUGt3s6T6Ti9F5r50VOxZI0sAHa7JTf9w3jFTPJiEntyQDidDJ1qr7I0hgyfRv
- LTwS/qthXgUVJWi1/nHg1Ocu5jSqGnORxzS1rdo5tCNEMuQ0Mo8aYuoretjMEMKpc7OB
- onbvHfVEULMaMYH1qXgMisF+WXzKXFBzGX25ZJdgcvVNgL0LIjsi7+VhXIxg9dCp1rpg
- wv3u7ZumhbK8VW8PiRUYBWS5lzKUZ7Lk4QxRLIhEfCVRRb8UQ5tmZbkkJkelp+QXQwb7
- 5RadUSU+nsUahni6trctPAUQ12WoBdy82kpydlink09IVDbTAcu5ikDp7D7ix7RfyWJ2
- /KSg==
-X-Gm-Message-State: ANhLgQ2+HhAxW7X/AwhDgRJNHZQUb1ezNGDCsZhPvzevAEWKfU58ebTY
- XOSu7jVp7QiLa0Nl7R2IhEvXx0C7
-X-Google-Smtp-Source: ADFU+vtD4/idDTlt2c4LtFn+sBQoFRZS8xjqFe321lMdM8lFIa5yunrPaFMzfSJchG6/7cf1aFJPHg==
-X-Received: by 2002:a62:874d:: with SMTP id i74mr5793894pfe.241.1583534031966; 
- Fri, 06 Mar 2020 14:33:51 -0800 (PST)
-Received: from [10.67.48.239] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id
- r14sm16371376pfh.119.2020.03.06.14.33.50
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 06 Mar 2020 14:33:51 -0800 (PST)
-Subject: Re: [PATCH] ASoC: brcm: Add DSL/PON SoC audio driver
-To: Kevin Li <kevin-ke.li@broadcom.com>, Mark Brown <broonie@kernel.org>
+ h=x-gm-message-state:from:references:in-reply-to:mime-version
+ :thread-index:date:message-id:subject:to:cc;
+ bh=+KdFgHd0Khi4D1I+q98xetrP7WjqAjfW7zo+CRETAms=;
+ b=MA5ciiMCxqZFQTn0XKdeZVkJQUwhsTYx0ZCSAfIPA4MUiWsu9OluZSSViu/moRavn/
+ 0w99kAr33a/Oyy0b6MhvSAkf8ws6DRoiPd4d9gTFBtmryzdD13dLW0mLqXu/JVKcaN0q
+ omvW1HvxuDNMRfechYy/40lWl5rolBR+8g374CL7AVY+eQ5TC6CpwfsrVOEv3PDe/L7v
+ IctKvIX+3xgSjU7o/iodZlH/OalaX/mljTb2AAejS4t6J7Wgv4I13MXqArN67y0lV/5t
+ yxosdcH/5OX6vC7149rbO+xIbInzKhKrR8RFn9T9dfJwrJXMHHj4grKJMm9nn9g6RIsG
+ KhYw==
+X-Gm-Message-State: ANhLgQ2+bjQGmGy2+pVQG68ROUu1nQ4ox5Bi8uCz5RB0vmbHzk5Cdt4x
+ T1wTyF1PSA5finzPLaL+CI/fsF5+LS0vvzQGiHsTjg==
+X-Google-Smtp-Source: ADFU+vvb+PrrT95TpfxieL14D0NqyXJi/a9FHEMKFcoukv944eoKgmEzoL0AOVCOoUwoDUqsoNYVB8prKmFXlelzJYQ=
+X-Received: by 2002:a2e:80c3:: with SMTP id r3mr3329042ljg.105.1583535048747; 
+ Fri, 06 Mar 2020 14:50:48 -0800 (PST)
+From: Kevin Li <kevin-ke.li@broadcom.com>
 References: <20200306222705.13309-1-kevin-ke.li@broadcom.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <8d4fc59e-f892-7228-4369-f40ced5dc2d3@gmail.com>
-Date: Fri, 6 Mar 2020 14:33:48 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ <8d4fc59e-f892-7228-4369-f40ced5dc2d3@gmail.com>
+In-Reply-To: <8d4fc59e-f892-7228-4369-f40ced5dc2d3@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200306222705.13309-1-kevin-ke.li@broadcom.com>
-Content-Language: en-US
+X-Mailer: Microsoft Outlook 15.0
+Thread-Index: AQK6AtPk+W1UvlC/8YJn5FlJAEq5hQIs4nExpmKljtA=
+Date: Fri, 6 Mar 2020 14:50:46 -0800
+Message-ID: <31b665e609f3cfee935f4489a073af21@mail.gmail.com>
+Subject: RE: [PATCH] ASoC: brcm: Add DSL/PON SoC audio driver
+To: Florian Fainelli <f.fainelli@gmail.com>, Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_143353_534227_4B02572E 
-X-CRM114-Status: GOOD (  15.16  )
+X-CRM114-CacheID: sfid-20200306_145050_655742_85CB086E 
+X-CRM114-Status: GOOD (  14.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -145,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -168,19 +104,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Florian,
+
+It is called from bcm63xx-i2s-whistler.c.
+Maybe the name "_probe" function confused. It was 2 platform drivers, I
+combined them together now.
+
+Let me know if this answers your question, and what to do to address your
+question.
+
+Regards!
+Kevin
+
+-----Original Message-----
+From: Florian Fainelli [mailto:f.fainelli@gmail.com]
+Sent: Friday, March 06, 2020 2:34 PM
+To: Kevin Li <kevin-ke.li@broadcom.com>; Mark Brown <broonie@kernel.org>
+Cc: alsa-devel@alsa-project.org; linux-kernel@vger.kernel.org; Kuninori
+Morimoto <kuninori.morimoto.gx@renesas.com>; Scott Branden
+<sbranden@broadcom.com>; Liam Girdwood <lgirdwood@gmail.com>; Ray Jui
+<rjui@broadcom.com>; Takashi Iwai <tiwai@suse.com>; Jaroslav Kysela
+<perex@perex.cz>; bcm-kernel-feedback-list@broadcom.com; Stephen Boyd
+<swboyd@chromium.org>; linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] ASoC: brcm: Add DSL/PON SoC audio driver
+
 On 3/6/20 2:27 PM, Kevin Li wrote:
-> This patch adds Broadcom DSL/PON SoC audio driver
-> with Whistler I2S block. The SoC supported by this
-> patch are BCM63158B0,BCM63178 and BCM47622/6755.
-> 
+> This patch adds Broadcom DSL/PON SoC audio driver with Whistler I2S
+> block. The SoC supported by this patch are BCM63158B0,BCM63178 and
+> BCM47622/6755.
+>
 > Signed-off-by: Kevin Li <kevin-ke.li@broadcom.com>
 > ---
 
 [snip]
 
 > +int bcm63xx_soc_platform_probe(struct platform_device *pdev,
-> +			       struct bcm_i2s_priv *i2s_priv)
-> +{
+> +			       struct bcm_i2s_priv *i2s_priv) {
 > +	int ret;
 > +
 > +	i2s_priv->r_irq = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
@@ -198,21 +157,19 @@ On 3/6/20 2:27 PM, Kevin Li wrote:
 > +	}
 > +
 > +	return devm_snd_soc_register_component(&pdev->dev,
-> +					&bcm63xx_soc_platform, NULL, 0);
-> +}
+> +					&bcm63xx_soc_platform, NULL, 0); }
 > +
-> +int bcm63xx_soc_platform_remove(struct platform_device *pdev)
-> +{
+> +int bcm63xx_soc_platform_remove(struct platform_device *pdev) {
 > +	return 0;
 > +}
 
-How does one probe this module if the bcm63xx_soc_platform_probe()
-functions are not called from anywhere and/or hooked up to the module
-entry/exit points?
+How does one probe this module if the bcm63xx_soc_platform_probe() functions
+are not called from anywhere and/or hooked up to the module entry/exit
+points?
 
 Are you not missing a platform_driver entry which matches the compatible
 string you defined?
--- 
+--
 Florian
 
 _______________________________________________
