@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EFF817C5C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 19:58:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA8D717C5E5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 20:07:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W2I17SguJbl1OE7iqOUL+8BG/3xg0egP5xO2hGMeuQA=; b=IN5l8gd/4JnHNt
-	JDS24f4TqKG11Q3YGYMEPal+RB7EQyzd/H/YNpUm8Soesvh79XGX2lXdO/HDPunV9s8Bk8C5+DiQc
-	EQgtU3uo4//xFWXC7JHe2bCiGj5JXTj0JzIkN2/nxcbwiZRM3sQX0FpoBF7O4QCeFMJz1uFQ3dVN2
-	oMsSHj7g6En6WXWT3xUwPdPwou/EAm6u1Y9DIcDTF6iPJyBBIcRF51vAQphzSar1UV1uUBngQ9DX0
-	So0EqJzJej+1+czHbtKwxR5GoV+t1NwimH0FQSnxUgQ9JL57IdxQJKAyTHNCUJ7OAVb2MrUzC5sZV
-	8GlPdQs6raPjE8jbMhzg==;
+	List-Owner; bh=0qtzyIwJ+NZV9KPnvlB8xGGlWML1XpysU2ueS5344ik=; b=ikZLl6RmKnXZYM
+	ikXwIEA1D8H41ccmy/7uk6MFu8DTiNs0jRnUCbxA+oOkInZCzWF2sNhcgXMRCGm6BP28HZwKg7I4c
+	CykyJ7226DBnOr3MN4ggPNJfQIXFvNev1kxQ13whdlBQAfG7hHQaM6JhjS3JGPfL/HIW23diaSCG8
+	xJ0T6IFArxG3dOKEFxaPwPmKoSgy75jCWKsxdQwIBgF7RoeAiOYct8K+LM4FyG9zdO7Yf1pXl8DfQ
+	p0dOPOpxKSAwEf3y4QvzXWxuq/jvzbuUYWOiZRvLqaUhd2tVF+H39rc9R5VtIBwKIaq8rwoaz/Vv9
+	/NLEtIXABfs+iRH1RzdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAIAf-0003lA-9t; Fri, 06 Mar 2020 18:58:05 +0000
-Received: from mail.manjaro.org ([176.9.38.148])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAIAU-0003kO-4K; Fri, 06 Mar 2020 18:57:55 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.manjaro.org (Postfix) with ESMTP id 9ADA13C21A13;
- Fri,  6 Mar 2020 19:57:49 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at manjaro.org
-Received: from mail.manjaro.org ([127.0.0.1])
- by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id tbmb0qDcjibI; Fri,  6 Mar 2020 19:57:47 +0100 (CET)
-Subject: Re: [PATCH v4 2/2] arm64: dts: rockchip: Add initial support for
- Pinebook Pro
-To: Heiko Stuebner <heiko@sntech.de>, Tobias Schramm <t.schramm@manjaro.org>
-References: <20200304213023.689983-2-t.schramm@manjaro.org>
- <20200304213023.689983-3-t.schramm@manjaro.org> <6168222.Wuk326WHQK@phil>
-From: Tobias Schramm <t.schramm@manjaro.org>
-Message-ID: <b30fef29-6667-9200-178b-4d0e9fc63c12@manjaro.org>
-Date: Fri, 6 Mar 2020 19:58:45 +0100
+	id 1jAIJi-0007he-FA; Fri, 06 Mar 2020 19:07:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAIJa-0007hE-3M
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 19:07:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 00C731FB;
+ Fri,  6 Mar 2020 11:07:14 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4DBB43F6C4;
+ Fri,  6 Mar 2020 11:07:13 -0800 (PST)
+Subject: Re: [PATCH v6 12/18] arm64: mask PAC bits of __builtin_return_address
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <1583476525-13505-13-git-send-email-amit.kachhap@arm.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <6171e139-cc10-53b3-1121-0053fc947b49@arm.com>
+Date: Fri, 6 Mar 2020 19:07:11 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <6168222.Wuk326WHQK@phil>
-Content-Language: en-US-large
+In-Reply-To: <1583476525-13505-13-git-send-email-amit.kachhap@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_105754_319308_56E7153E 
-X-CRM114-Status: UNSURE (   8.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200306_110718_230661_CDB9C3A7 
+X-CRM114-Status: GOOD (  23.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [176.9.38.148 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,46 +64,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Markus Reichl <m.reichl@fivetechno.de>, Alexis Ballier <aballier@gentoo.org>,
- Katsuhiro Suzuki <katsuhiro@katsuster.net>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, Emmanuel Vadot <manu@freebsd.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Kever Yang <kever.yang@rock-chips.com>,
- Jagan Teki <jagan@amarulasolutions.com>, Nick Xie <nick@khadas.com>,
- Andy Yan <andy.yan@rock-chips.com>, Johan Jonker <jbx6244@gmail.com>,
- Matthias Kaehlcke <mka@chromium.org>, Vivek Unune <npcomplete13@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Heiko,
+Hi Amit,
 
->> This commit adds initial dt support for the rk3399 based Pinebook Pro.
->>
->> Signed-off-by: Tobias Schramm <t.schramm@manjaro.org>
->
-> applied for 5.7
->
+On 06/03/2020 06:35, Amit Daniel Kachhap wrote:
+> This redefines __builtin_return_address to mask pac bits
+> when Pointer Authentication is enabled. As __builtin_return_address
+> is used mostly used to refer to the caller function symbol address
+> so masking runtime generated pac bits will help to find the match.
 
-any chance you can squeeze in another small fix? Somewhere in the
-process the vmcc and vqmmc supplies of the sdmmc controller were removed
-in error. Those should be added to the sdmmc controller like this:
+I'm not entirely sure what problem you are trying to solve from this paragraph.
 
- &sdmmc {
-        pinctrl-names = "default";
-        pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_bus4>;
-        sd-uhs-sdr104;
-+       vmmc-supply = <&vcc3v0_sd>;
-+       vqmmc-supply = <&vcc_sdio>;
-        status = "okay";
- };
 
-Thanks,
+> This patch adds a new file (asm/compiler.h) and is transitively
+> included (via include/compiler_types.h) on the compiler command line
+> so it is guaranteed to be loaded and the users of this macro will
+> not find a wrong version.
+> 
+> A helper macro ptrauth_kernel_pac_mask is created for this purpose
+> and added in this file. A similar macro ptrauth_user_pac_mask exists
+> in pointer_auth.h and is now moved here for the sake of consistency.
 
-Tobias
+> This change fixes the utilities like cat /proc/vmallocinfo to show
+> correct symbol names.
+
+This is to avoid things like:
+| 0x(____ptrval____)-0x(____ptrval____)   20480 0xb8b8000100f75fc pages=4 vmalloc N0=4
+| 0x(____ptrval____)-0x(____ptrval____)   20480 0xc0f28000100f75fc pages=4 vmalloc N0=4
+
+Where those 64bit values should be the same symbol name, not different LR values.
+
+Could you phrase the commit message to describe the problem, then how you fix it.
+something like:
+| Functions like vmap() record how much memory has been allocated by their callers,
+| callers are identified using __builtin_return_address(). Once the kernel is using
+| pointer-auth the return address will be signed. This means it will not match any kernel
+| symbol, and will vary between threads even for the same caller.
+|
+| Use the pre-processor to add logic to strip the PAC to __builtin_return_address()
+| callers.
+
+
+> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+> new file mode 100644
+> index 0000000..085e7cd0
+> --- /dev/null
+> +++ b/arch/arm64/include/asm/compiler.h
+> @@ -0,0 +1,20 @@
+> +/* SPDX-License-Identifier: GPL-2.0 */
+> +#ifndef __ASM_COMPILER_H
+> +#define __ASM_COMPILER_H
+> +
+> +#if defined(CONFIG_ARM64_PTR_AUTH)
+> +
+> +/*
+> + * The EL0/EL1 pointer bits used by a pointer authentication code.
+> + * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
+> + */
+> +#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
+> +#define ptrauth_kernel_pac_mask()	GENMASK_ULL(63, vabits_actual)
+> +
+> +#define __builtin_return_address(val)				\
+> +	(void *)((unsigned long)__builtin_return_address(val) |	\
+> +	ptrauth_kernel_pac_mask())
+
+
+This is pretty manky, ideally we would have some __arch_return_address() hook for this,
+but this works, and lets us postpone any tree-wide noise until its absolutely necessary.
+(I assume if this does ever break, it will be a build error)
+
+
+You add ptrauth_strip_insn_pac() in this patch, but don't use it until the next one.
+However... could you use it here?
+
+This would go wrong if __builtin_return_address() legitimately returned a value that was
+mapped by TTBR0, we would force the top bits to be set instead of clearing the PAC bits.
+This would corrupt the value instead of corrupting it.
+
+I don't think there is anywhere this could happen today, but passing callbacks into UEFI
+runtime services or making kernel calls from an idmap may both do this.
+
+
+With that:
+Reviewed-by: James Morse <james.morse@arm.com>
+
+
+
+Thanks!
+
+James
+
+
+> --- a/arch/arm64/include/asm/pointer_auth.h
+> +++ b/arch/arm64/include/asm/pointer_auth.h
+> @@ -68,16 +68,13 @@ static __always_inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kerne
+>  
+>  extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
+>  
+> -/*
+> - * The EL0 pointer bits used by a pointer authentication code.
+> - * This is dependent on TBI0 being enabled, or bits 63:56 would also apply.
+> - */
+> -#define ptrauth_user_pac_mask()	GENMASK(54, vabits_actual)
+> -
+> -/* Only valid for EL0 TTBR0 instruction pointers */
+> +/* Valid for EL0 TTBR0 and EL1 TTBR1 instruction pointers */
+>  static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
+>  {
+> -	return ptr & ~ptrauth_user_pac_mask();
+> +	if (ptr & BIT_ULL(55))
+> +		return ptr | ptrauth_kernel_pac_mask();
+> +	else
+> +		return ptr & ~ptrauth_user_pac_mask();
+>  }
+>  
+>  #define ptrauth_thread_init_user(tsk)					\
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
