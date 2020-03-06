@@ -2,54 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 826B717C477
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:32:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 243DD17C4AA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:43:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Fv5PMBffUQC0yQShZFf4QNl6MOo38wIH+GH9pEOZ4y4=; b=kgPbbmQkPmn/+9
-	hAXasR0/YJf0Ghn6Mvkdf5DblohgnGiCTx8pE9z5Rl7diESnSHpUPk40Kmgun/Ja3ZzAPFOtK6vx3
-	jBgDotkgWDYItXOm+V1JBLkzSkTycn99rurhTgHqzfpM9ZSNEmMzcc2j/HsaYxr2iNY7b6pHNJIQv
-	e2/6eJZf/4whvVLfv9wLCIkB/WdsXPVTAuZyGdjRr1gw0+5v0fNbZx0s05TiP9ttMXeXmHj9E4k5Y
-	EN2EwQCuf6aZ2OSxY/zr4gkoligDeXtQFV9qKeXE4mRBymbrQvhgZ3BKswc4WdqtFmP6DcoOqbkcH
-	g5su4g/lvHPb4Vtobmzg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ihMla5DagSnnSk92AgsOt5UWwxAsTWfihpzL6JT0FMc=; b=VHtkGoCZm9BbrN
+	orfMcwbjigDCtkUUg9zm9Prfmn4VS8E8FVJ7tAjqhvQKFU0RAVO5cf/47epMgpmCgOaH3MqT0A0jW
+	ry54uTVifx+0dlHjRDJxriFvfaMHcttq0EYEcnK3kouX0GVuRC87uAf03nx0FWWJsXwagSc05yrkK
+	OXuQbYgStM11uKJy38raK8+sQPvUkc7lL1S+8IVDwYd7vk28jJqMsDGpzcLw3WaAhhh/9ZeGzTJYu
+	aXKXU2Y32Q5WGg8wNtDipdAJboNrzS95JDbDLfuHemfgtzhAWzFshPMOJSGxEXUkveS1I3fHpisHi
+	AexL+zPQT/oxQn76zwYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAGpv-0004Qo-1p; Fri, 06 Mar 2020 17:32:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAGpm-0004Q3-KU
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 17:32:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D5AF30E;
- Fri,  6 Mar 2020 09:32:23 -0800 (PST)
-Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
- [10.1.195.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 62E113F6C4;
- Fri,  6 Mar 2020 09:32:22 -0800 (PST)
-From: Steven Price <steven.price@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH] arm64: Map page table of linear map readonly
-Date: Fri,  6 Mar 2020 17:32:17 +0000
-Message-Id: <20200306173217.44372-1-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
+	id 1jAGzv-0007Yi-Vu; Fri, 06 Mar 2020 17:42:56 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAGzn-0007Xq-50
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 17:42:48 +0000
+Received: by mail-qk1-x744.google.com with SMTP id e16so3078956qkl.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 09:42:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ziepe.ca; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=PxT02ryeWyx7p1SBqN6kTMwWdglwMPqc7wMiUtKckm8=;
+ b=fceAxzqKtPxKpBdyBHvIYC/k/jeNtyEFzrsgn7TJvkxLs22sR9WiBM6453QdPTwvJ2
+ 93UYmt1Orc9z4jHue6YWkq4c44RthUiPb/T9rH7qfZN2eZY2Xq3DFtWCpEtWlaAber1f
+ HTsaHpVQnQu0i950k23k9hzTJEjKD+BN7/Y/tDId6MCXM2Jq/oAfQ5infM5paw03g9Vz
+ fDBMIkB8bceHTgGX1/Vpyp9g9uOcrHu05i9iMph/9UxfrLbjUIDtwqwEFe+QO0y6kUt5
+ zKGrPWs4/zh+Z5lFrLMK9wdgK1uWKJWRJ5Z5s7FtAiUywEXkXWhLK89r07oF90jjf8ZV
+ UsTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=PxT02ryeWyx7p1SBqN6kTMwWdglwMPqc7wMiUtKckm8=;
+ b=XAdBfxB2fg6vpZf5wRudocLDra2wKnU7QVFC/HY/HOeEVdzCv9pb6XOeo6zTr/xaK8
+ WKWRImH8M2BTrHudGLb350jrE8JHRLWX852A16bhUDiE2pqA/hEk9ua4Mb9toDIIwppv
+ Ob7omWtM9ttd6ZDR3OI+tb64UBJOcbdJjZr68kbCXQESDg/5rVh7OWnHJ9N34Fg8Dpdf
+ SrsfqFV6Sh+ZQ51j7YLStOL7yroWtewuFwjw0/6PgIAJ6X1zTUSTuaxcqXcXrCI56HPI
+ cohyZ8Ch+KBCJJm5SrGGfjvRIKwlAl1Y0VDm6n4KpFD8MHzE5j3r+o+muu3A+PU4ItAW
+ MKbw==
+X-Gm-Message-State: ANhLgQ3ZP8U2CLpxLpiLLlLfivV90lrqvsY6SEMdroC0t94JkMXU6tLg
+ E5Yt50+87b5Ru1piyD0WWyuxGg==
+X-Google-Smtp-Source: ADFU+vsWbhZAJApLkHJjK1rpJphwwDR2QESHx2duAJgFhBpEHJLxHbOgXJEEbadil5uHQfcoM+kVpg==
+X-Received: by 2002:a37:a44a:: with SMTP id n71mr2362594qke.210.1583516560952; 
+ Fri, 06 Mar 2020 09:42:40 -0800 (PST)
+Received: from ziepe.ca
+ (hlfxns017vw-142-68-57-212.dhcp-dynamic.fibreop.ns.bellaliant.net.
+ [142.68.57.212])
+ by smtp.gmail.com with ESMTPSA id g15sm14342523qtq.71.2020.03.06.09.42.40
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 06 Mar 2020 09:42:40 -0800 (PST)
+Received: from jgg by mlx.ziepe.ca with local (Exim 4.90_1)
+ (envelope-from <jgg@ziepe.ca>)
+ id 1jAGzf-00060f-N3; Fri, 06 Mar 2020 13:42:39 -0400
+Date: Fri, 6 Mar 2020 13:42:39 -0400
+From: Jason Gunthorpe <jgg@ziepe.ca>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v4 01/26] mm/mmu_notifiers: pass private data down to
+ alloc_notifier()
+Message-ID: <20200306174239.GM31668@ziepe.ca>
+References: <20200225140814.GW31668@ziepe.ca> <20200228143935.GA2156@myrica>
+ <20200228144844.GQ31668@ziepe.ca> <20200228150427.GF2156@myrica>
+ <20200228151339.GS31668@ziepe.ca> <20200306095614.GA50020@myrica>
+ <20200306130919.GJ31668@ziepe.ca> <20200306143556.GA99609@myrica>
+ <20200306145245.GK31668@ziepe.ca> <20200306161519.GB99609@myrica>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200306161519.GB99609@myrica>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_093226_767598_35159022 
-X-CRM114-Status: GOOD (  18.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_094247_194798_E8B74762 
+X-CRM114-Status: GOOD (  25.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,238 +107,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Steven Price <steven.price@arm.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
+ Dimitri Sivanich <sivanich@sgi.com>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pci@vger.kernel.org,
+ robin.murphy@arm.com, linux-mm@kvack.org, iommu@lists.linux-foundation.org,
+ robh+dt@kernel.org, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
+ Andrew Morton <akpm@linux-foundation.org>, will@kernel.org,
+ christian.koenig@amd.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's fairly rare that linear mappings need to be updated, so to improve
-security we can map the leaf page table entries as read-only, this makes
-it harder for an attacker to modify the permissions of the linear
-mappings, while the overhead is low because the linear mappings don't
-need to be changed frequently. When they do need to be updated we can
-use fixmaps to create a temporary alternative mapping to do the update.
+On Fri, Mar 06, 2020 at 05:15:19PM +0100, Jean-Philippe Brucker wrote:
+> On Fri, Mar 06, 2020 at 10:52:45AM -0400, Jason Gunthorpe wrote:
+> > On Fri, Mar 06, 2020 at 03:35:56PM +0100, Jean-Philippe Brucker wrote:
+> > > On Fri, Mar 06, 2020 at 09:09:19AM -0400, Jason Gunthorpe wrote:
+> > > > On Fri, Mar 06, 2020 at 10:56:14AM +0100, Jean-Philippe Brucker wrote:
+> > > > > I tried to keep it simple like that: normally mmu_notifier_get() is called
+> > > > > in bind(), and mmu_notifier_put() is called in unbind(). 
+> > > > > 
+> > > > > Multiple device drivers may call bind() with the same mm. Each bind()
+> > > > > calls mmu_notifier_get(), obtains the same io_mm, and returns a new bond
+> > > > > (a device<->mm link). Each bond is freed by calling unbind(), which calls
+> > > > > mmu_notifier_put().
+> > > > > 
+> > > > > That's the most common case. Now if the process is killed and the mm
+> > > > > disappears, we do need to avoid use-after-free caused by DMA of the
+> > > > > mappings and the page tables. 
+> > > > 
+> > > > This is why release must do invalidate all - but it doesn't need to do
+> > > > any more - as no SPTE can be established without a mmget() - and
+> > > > mmget() is no longer possible past release.
+> > > 
+> > > In our case we don't have SPTEs, the whole pgd is shared between MMU and
+> > > IOMMU (isolated using PASID tables).
+> > 
+> > Okay, but this just means that 'invalidate all' also requires
+> > switching the PASID to use some pgd that is permanently 'all fail'.
+> > 
+> > > At this point no one told the device to stop working on this queue,
+> > > it may still be doing DMA on this address space.
+> > 
+> > Sure, but there are lots of cases where a defective user space can
+> > cause pages under active DMA to disappear, like munmap for
+> > instance. Process exit is really no different, the PASID should take
+> > errors and the device & driver should do whatever error flow it has.
+> 
+> We do have the possibility to shut things down in order, so to me this
+> feels like a band-aid. 
 
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/Kconfig              |  9 ++++++++
- arch/arm64/include/asm/fixmap.h | 20 ++++++++++++++++-
- arch/arm64/mm/mmu.c             | 38 +++++++++++++++++++++++++++++++--
- arch/arm64/mm/pageattr.c        | 36 ++++++++++++++++++++++++++++++-
- 4 files changed, 99 insertions(+), 4 deletions(-)
+->release() is called by exit_mmap which is called by mmput. There are
+over a 100 callsites to mmput() and I'm not totally sure what the
+rules are for release(). We've run into problems before with things
+like this.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 0b30e884e088..00362e9b9934 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1210,6 +1210,15 @@ config RODATA_FULL_DEFAULT_ENABLED
- 	  This requires the linear region to be mapped down to pages,
- 	  which may adversely affect performance in some cases.
- 
-+config LINEAR_PGTABLE_RO
-+	bool "Apply r/o permissions to page tables of linear mapping"
-+	help
-+	  Apply read-only attributes to the page tables that make up the
-+	  the linear mapping. This prevents the linear page tables from being
-+	  inadvertently modified.
-+
-+	  This requires rodata=on (or RODATA_FULL_DEFAULT_ENABLED).
-+
- config ARM64_SW_TTBR0_PAN
- 	bool "Emulate Privileged Access Never using TTBR0_EL1 switching"
- 	help
-diff --git a/arch/arm64/include/asm/fixmap.h b/arch/arm64/include/asm/fixmap.h
-index f987b8a8f325..55bf08151d73 100644
---- a/arch/arm64/include/asm/fixmap.h
-+++ b/arch/arm64/include/asm/fixmap.h
-@@ -67,6 +67,12 @@ enum fixed_addresses {
- 	FIX_ENTRY_TRAMP_TEXT,
- #define TRAMP_VALIAS		(__fix_to_virt(FIX_ENTRY_TRAMP_TEXT))
- #endif /* CONFIG_UNMAP_KERNEL_AT_EL0 */
-+
-+#ifdef CONFIG_LINEAR_PGTABLE_RO
-+	FIX_LINEAR_RO_BEGIN,
-+	FIX_LINEAR_RO_END = FIX_LINEAR_RO_BEGIN + NR_CPUS - 1,
-+#endif
-+
- 	__end_of_permanent_fixed_addresses,
- 
- 	/*
-@@ -77,7 +83,15 @@ enum fixed_addresses {
- #define FIX_BTMAPS_SLOTS	7
- #define TOTAL_FIX_BTMAPS	(NR_FIX_BTMAPS * FIX_BTMAPS_SLOTS)
- 
-+#ifdef CONFIG_LINEAR_PGTABLE_RO
-+	/*
-+	 * Share the space with the LINEAR_RO area as during early boot, the
-+	 * LINEAR_RO area isn't needed
-+	 */
-+	FIX_BTMAP_END = FIX_LINEAR_RO_BEGIN,
-+#else
- 	FIX_BTMAP_END = __end_of_permanent_fixed_addresses,
-+#endif
- 	FIX_BTMAP_BEGIN = FIX_BTMAP_END + TOTAL_FIX_BTMAPS - 1,
- 
- 	/*
-@@ -89,9 +103,13 @@ enum fixed_addresses {
- 	FIX_PUD,
- 	FIX_PGD,
- 
--	__end_of_fixed_addresses
-+	___end_of_fixed_addresses
- };
- 
-+static const enum fixed_addresses __end_of_fixed_addresses =
-+	___end_of_fixed_addresses > __end_of_permanent_fixed_addresses ?
-+	___end_of_fixed_addresses : __end_of_permanent_fixed_addresses;
-+
- #define FIXADDR_SIZE	(__end_of_permanent_fixed_addresses << PAGE_SHIFT)
- #define FIXADDR_START	(FIXADDR_TOP - FIXADDR_SIZE)
- 
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 128f70852bf3..9a2379b6179e 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -20,6 +20,7 @@
- #include <linux/fs.h>
- #include <linux/io.h>
- #include <linux/mm.h>
-+#include <linux/pagewalk.h>
- #include <linux/vmalloc.h>
- 
- #include <asm/barrier.h>
-@@ -455,6 +456,34 @@ void __init mark_linear_text_alias_ro(void)
- 			    PAGE_KERNEL_RO);
- }
- 
-+#ifdef CONFIG_LINEAR_PGTABLE_RO
-+static int __init mark_linear_pmd_ro(pmd_t *pmd, unsigned long addr,
-+				     unsigned long next, struct mm_walk *walk)
-+{
-+	phys_addr_t pmd_phys = pte_offset_phys(pmd, 0);
-+
-+	__map_memblock(walk->mm->pgd, pmd_phys, pmd_phys + PAGE_SIZE,
-+		       PAGE_KERNEL_RO, NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS);
-+
-+	return 0;
-+}
-+
-+static const struct mm_walk_ops mark_linear_pg_ro_ops __initconst = {
-+	.pmd_entry = mark_linear_pmd_ro,
-+};
-+
-+/*
-+ * Remove the write permission from the leaf page tables of the linear map
-+ */
-+void __init mark_linear_pg_ro(void)
-+{
-+	down_read(&init_mm.mmap_sem);
-+	walk_page_range_novma(&init_mm, PAGE_OFFSET, PAGE_END,
-+			      &mark_linear_pg_ro_ops, init_mm.pgd, NULL);
-+	up_read(&init_mm.mmap_sem);
-+}
-+#endif
-+
- static void __init map_mem(pgd_t *pgdp)
- {
- 	phys_addr_t kernel_start = __pa_symbol(_text);
-@@ -502,7 +531,7 @@ static void __init map_mem(pgd_t *pgdp)
- 	 * so we should avoid them here.
- 	 */
- 	__map_memblock(pgdp, kernel_start, kernel_end,
--		       PAGE_KERNEL, NO_CONT_MAPPINGS);
-+		       PAGE_KERNEL, flags | NO_CONT_MAPPINGS);
- 	memblock_clear_nomap(kernel_start, kernel_end - kernel_start);
- 
- #ifdef CONFIG_KEXEC_CORE
-@@ -678,6 +707,11 @@ void __init paging_init(void)
- 	cpu_replace_ttbr1(lm_alias(swapper_pg_dir));
- 	init_mm.pgd = swapper_pg_dir;
- 
-+#ifdef CONFIG_LINEAR_PGTABLE_RO
-+	if (rodata_full)
-+		mark_linear_pg_ro();
-+#endif
-+
- 	memblock_free(__pa_symbol(init_pg_dir),
- 		      __pa_symbol(init_pg_end) - __pa_symbol(init_pg_dir));
- 
-@@ -874,8 +908,8 @@ void __set_fixmap(enum fixed_addresses idx,
- 		set_pte(ptep, pfn_pte(phys >> PAGE_SHIFT, flags));
- 	} else {
- 		pte_clear(&init_mm, addr, ptep);
--		flush_tlb_kernel_range(addr, addr+PAGE_SIZE);
- 	}
-+	flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
- }
- 
- void *__init fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
-diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
-index 250c49008d73..52d34c06656c 100644
---- a/arch/arm64/mm/pageattr.c
-+++ b/arch/arm64/mm/pageattr.c
-@@ -7,6 +7,7 @@
- #include <linux/module.h>
- #include <linux/sched.h>
- #include <linux/vmalloc.h>
-+#include <linux/uaccess.h>
- 
- #include <asm/pgtable.h>
- #include <asm/set_memory.h>
-@@ -19,6 +20,33 @@ struct page_change_data {
- 
- bool rodata_full __ro_after_init = IS_ENABLED(CONFIG_RODATA_FULL_DEFAULT_ENABLED);
- 
-+#ifdef CONFIG_LINEAR_PGTABLE_RO
-+static void set_linear_pte_range(pte_t *ptep, pte_t pte)
-+{
-+	unsigned long flags;
-+	unsigned int idx;
-+	unsigned long addr;
-+
-+	local_irq_save(flags);
-+	preempt_disable();
-+
-+	/* During early boot we use FIX_PTE as we don't need a per-CPU slot */
-+	if (system_state < SYSTEM_SCHEDULING)
-+		idx = FIX_PTE;
-+	else
-+		idx = FIX_LINEAR_RO_BEGIN + smp_processor_id();
-+
-+	addr = virt_to_phys(ptep);
-+	set_fixmap(idx, addr);
-+	ptep = (pte_t *)(__fix_to_virt(idx) + (addr & ~PAGE_MASK));
-+	set_pte(ptep, pte);
-+	clear_fixmap(idx);
-+
-+	preempt_enable();
-+	local_irq_restore(flags);
-+}
-+#endif
-+
- static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
- {
- 	struct page_change_data *cdata = data;
-@@ -27,7 +55,13 @@ static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
- 	pte = clear_pte_bit(pte, cdata->clear_mask);
- 	pte = set_pte_bit(pte, cdata->set_mask);
- 
--	set_pte(ptep, pte);
-+#ifdef CONFIG_LINEAR_PGTABLE_RO
-+	if (addr >= PAGE_OFFSET)
-+		set_linear_pte_range(ptep, pte);
-+	else
-+#endif
-+		set_pte(ptep, pte);
-+
- 	return 0;
- }
- 
--- 
-2.20.1
+IMHO, due to this, it is best for release to be simple and have
+conservative requirements on context like all the other notifier
+callbacks. It is is not a good place to put complex HW fencing driver
+code.
 
+In particular that link you referenced is suggesting the driver tear
+down could take minutes - IMHO it is not OK to block mmput() for
+minutes.
+
+> The idea has come up before though [1], and I'm not strongly opposed
+> to this model, but I'm still not convinced it's necessary. It does
+> add more complexity to IOMMU drivers, to avoid printing out the
+> errors that we wouldn't otherwise see, whereas device drivers need
+> in any case to implement the logic that forces stop DMA.
+
+Errors should not be printed to the kernel log for PASID cases
+anyhow. PASID will be used by unpriv user, and unpriv user should not
+be able to trigger kernel prints at will, eg by doing dma to nmap VA
+or whatever. 
+
+Process exit is just another case of this, and should not be treated
+specially.
+
+Jason
 
 _______________________________________________
 linux-arm-kernel mailing list
