@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECD8017B6DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 07:39:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E80B17B6DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 07:40:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=S272OQMQCSOYVdrJW3C+EoWUMABImXvmrSpQPoh4JQk=; b=KqbCjLbQKoE89O88H02xSEH+HW
-	VF0byZcSERPS1lHjHu3FrdE0lFqU1YvrN2zvw3Xk298x8nK1+PvIyNE3ajgwbAQsyZp9g6PFqcqkv
-	ZU83f/SmTX0L7ZfN0Mjh1bhHfZstUSuyCxDDeJXmNHCS/AeLsf9I48PsPDN+Zs+vHctIymu3J/GEa
-	Rn6eRqVQJzbVjtixgzbmtxDFVLSnOoRgVyWdvdGqJXKyzFNVItkaGjp4rKF6MJMWYUELOLnPS3QJQ
-	jNTdQ/R4SJkbVq59pSLrGzEHwiodteIV/4i+KgD0/Qd1pE6ca8dTREbVULVnGlue6GB8W/lBTGfdM
-	u+ZjEz/A==;
+	bh=faUKDKi4XiNRv+sO4snOWcTHWOsKTnQvITMnAZ3QuIo=; b=I/zliBJtq9I+EQkWFY2B3P7hTF
+	RhPXD1UN+ONOiWR+qMD5vsYIMtTyWob7xa9JCB81RM1EIMctoFJeDNucYM9l80FzZuvrUyPgpU5J3
+	GzLftEWoSP92w5eF8P1GlqvqDt4+XhHbLHfzJKkIaqpdLBYgqttwh1lua8Bisef64km3d0wEpon7S
+	Ul9ffWNx3JA7gv0+ZWX1SK1rdS/OkTDbZW0CJjHHjwLa/6U5+jRNO2/hYb4FwWeszOIta9J3PNr91
+	MH+qXPmgSc1k1tstwNIybhK8xBVBbPwUJwae9mX+uekv1mejRPXcqkzyyCdYdAoaAGQgvSPcvggyq
+	1jKG8/nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA6eC-0007vu-4O; Fri, 06 Mar 2020 06:39:48 +0000
+	id 1jA6eU-0008Bb-Pq; Fri, 06 Mar 2020 06:40:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA6b3-0005OC-5U
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 06:36:35 +0000
+ id 1jA6b7-0005TD-G2
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 06:36:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D59030E;
- Thu,  5 Mar 2020 22:36:32 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE10530E;
+ Thu,  5 Mar 2020 22:36:36 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8B49C3F6CF;
- Thu,  5 Mar 2020 22:40:24 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B04EA3F6CF;
+ Thu,  5 Mar 2020 22:40:28 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v6 13/18] arm64: unwind: strip PAC from kernel addresses
-Date: Fri,  6 Mar 2020 12:05:20 +0530
-Message-Id: <1583476525-13505-14-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v6 14/18] arm64: __show_regs: strip PAC from lr in printk
+Date: Fri,  6 Mar 2020 12:05:21 +0530
+Message-Id: <1583476525-13505-15-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
 References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_223633_350135_0E6EBE49 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20200305_223637_587060_2D4D6F1A 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,45 +77,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mark Rutland <mark.rutland@arm.com>
+lr is printed with %pS which will try to find an entry in kallsyms.
+After enabling pointer authentication, this match will fail due to
+PAC present in the lr.
 
-When we enable pointer authentication in the kernel, LR values saved to
-the stack will have a PAC which we must strip in order to retrieve the
-real return address.
+Strip PAC from the lr to display the correct symbol name.
 
-Strip PACs when unwinding the stack in order to account for this.
-
-Reviewed-by: Kees Cook <keescook@chromium.org>
+Suggested-by: James Morse <james.morse@arm.com>
 Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
-[Amit: Re-position ptrauth_strip_insn_pac, comment]
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
- arch/arm64/kernel/stacktrace.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/kernel/process.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-index a336cb1..b479df7 100644
---- a/arch/arm64/kernel/stacktrace.c
-+++ b/arch/arm64/kernel/stacktrace.c
-@@ -14,6 +14,7 @@
- #include <linux/stacktrace.h>
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index 7db0302..cacae29 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -262,7 +262,7 @@ void __show_regs(struct pt_regs *regs)
  
- #include <asm/irq.h>
-+#include <asm/pointer_auth.h>
- #include <asm/stack_pointer.h>
- #include <asm/stacktrace.h>
- 
-@@ -101,6 +102,8 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
- 	}
- #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
- 
-+	frame->pc = ptrauth_strip_insn_pac(frame->pc);
-+
- 	/*
- 	 * Frames created upon entry from EL0 have NULL FP and PC values, so
- 	 * don't bother reporting these. Frames created by __noreturn functions
+ 	if (!user_mode(regs)) {
+ 		printk("pc : %pS\n", (void *)regs->pc);
+-		printk("lr : %pS\n", (void *)lr);
++		printk("lr : %pS\n", (void *)ptrauth_strip_insn_pac(lr));
+ 	} else {
+ 		printk("pc : %016llx\n", regs->pc);
+ 		printk("lr : %016llx\n", lr);
 -- 
 2.7.4
 
