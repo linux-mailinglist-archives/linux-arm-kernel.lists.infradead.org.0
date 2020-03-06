@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6E6E17BA6A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:39:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A9F517BA6B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:39:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lxyPpkl6m9jWcP8mOo2ylhMw6AE3VKFbVpt0+HSN9+g=; b=nGXxzK+kQj/GEZ
-	PMhb9hqzJSsfHXGIaFnERz985Xyv9P4cmJh5tCSKX+uiijaTB+wxWJMBB+6sqpy2vfaNLo6+vozic
-	tUtVxtDaQGxjJ06HW5mIBQjHOW7Uv6ysxCvGlIXJFLYWQPVqpIDHZLVd+dj9c7hTaDC0EgJ5XjBM9
-	uhU0Kriv+HQyD2woGtTW5i9RGKhz1PXL9Sq6HuYlZSubGgod/rbX8XmyUyM7HqyPVJwUZRtnG1WLu
-	ZUNAKF4reuJ9DT/xM7bLqUVkV0nWDxAkmEyaqfhCQbl6kyxBx40yGnw3BMszL1rRL9rEbCiox3I/P
-	9Vgb2Tc4IXGCw/UQum3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Mac6DkP3aOf92lezP6E5x/fW3ye4aUX1VFEbx+V0N4=; b=ewycQJBJYZWtXl
+	2Ox25NUcOYRint1saRn6y6McLVBQfvE6Y/SG9LDvlARZo8netI4c0Nl8En4p9kBl9dqKPSqUDAzkT
+	eYA+FQrAylg7gKOdiWS1CQ2yG/UBpRw3JkZs26oShu0oafH3Qcgixu+xLUtwh9Lo/mjXDi8HSd/6w
+	nQfQ4edCvodkArMFv5t1ki5WTwqsXytlYae985JRdj/ZJDNld3v95zKrIzWbRx1RnPh4GFbeej2Oz
+	qG54u8Gih2MaK8g8I+1bBUhwg4cVnAN3u2XH2bC7GtemxKnuGZTXBd6gsYLKEVT9ijWTJ/07A8iPH
+	QvhjVoUmXUZqjzvYKKDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAANx-0007en-Tp; Fri, 06 Mar 2020 10:39:17 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1jAAOH-0007xK-2p; Fri, 06 Mar 2020 10:39:37 +0000
+Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAANb-0007VH-Rr
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:38:57 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id x5so879098ywb.13
+ id 1jAANd-0007Vh-J7
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:38:59 +0000
+Received: by mail-yw1-xc44.google.com with SMTP id d79so701120ywd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 02:38:55 -0800 (PST)
+ Fri, 06 Mar 2020 02:38:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=i8oFDlEjKTXEkp27gAlgE/r86E023g4raleT3ZcWqMY=;
- b=JDBeq9tb1A5OkcYN7ne8hRchnK8x+Fq37ru+O+Q+fD7WVcbhle0adu+Cdmr0brRaM5
- 8vtoJn+q+iOBGjDEYBtmu3IjeIzh5p38VpPcORFAbmgXxKs6hDA2li882ZuOn6lOPZrk
- +9Pe06OR22siPhRjC5gTI2JFmcopftpJcIONCxLlEr4IgED1/jWQQ45CmcUBruNnlLqJ
- JXWmOiiOAq4ziwRWbhh75TcyyMeBjJby14CpboJt8h749mpqd9p/fH3TWb1j3a5X8l18
- co1Ib79LCPsCCGe6hAaVPqmR6OotNq7BAFLNwByPqjvXJgTcyCsihLWtdlsvhrXRTtBC
- qJKQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=NwT39Zmrk5nf0V1VVwAqtLl1QXPiCL2V82aJAhi4vfA=;
+ b=jX2u3qORktW5XuoKIWqnswVt8lzwsLlC4j1h4zXn3Q+LLavs4g4sU0uQ7Rr1I9Ax01
+ vRvys6knfWqQZRPt4slBnu8jjtFkqpAE6WoYSrJqLLfCLsNnCMb2qJ3eHRLJcg9GT14F
+ +kmdE+VF/yACRq6Zib2eKyMOHhsR9m7KscLM3i90s4vdN1J0PC9+HngvqDHNkla8zCHa
+ SImeyM9jcJVpAKOTrxtK0LKNkKCfSvj76kCBxBiKQx4BfCF9evsdlukNrySFcn397d7o
+ Od6zQEdAR5aUFPmac1hU3XQGWCXAfP5C2zS1Q73apy4ymSh7FMxwMQbQ187sd2Zsl+We
+ jo0A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=i8oFDlEjKTXEkp27gAlgE/r86E023g4raleT3ZcWqMY=;
- b=UC2vjsq/Kp+SYpWU07W+TyyfXT/VfYQYwsM6ijiholKKbx/Lu0Jre3SZUycPFrTpIw
- 8hXdWv2kk58yL9vy+6phWEZPhYPFtCMbRGFCtV1DiIsQ/ArejNWDgzAzyPMO+X1I6zEW
- HWuOTLWlt34XjCQmHRA73GrodT3YmEruWJ16qat0SnAefzJysQYnjZULembxz2lwbpK7
- vbZNk1HFe5eqwgRt4s2fwgG7oPoHXnxm5tTVI+OoVOfwhFJc6vf5HQWZgr9LBS4bh37e
- 06cLKGFv+a/mq8rHo5qqawdz5QrCKGVcNPt+H9w79oSw+HrAxWHMQtcXoPw0WYAb711E
- 305Q==
-X-Gm-Message-State: ANhLgQ1BsIq5GprXz5W/TGeJO9WIIX9l6FZTVOZUa7BPB80j7LqIruM4
- yXgabXjcimi3I6FZLqD+ulOL9y4UX80=
-X-Google-Smtp-Source: ADFU+vvKy8+4rNwuHHdT+UTdEbLzaEdtIoXz141O2iee73ZMJ6cAVqem+QhqWc3dAu9IKjJxAwh0ww==
-X-Received: by 2002:a0d:d303:: with SMTP id v3mr3167981ywd.299.1583491134096; 
- Fri, 06 Mar 2020 02:38:54 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=NwT39Zmrk5nf0V1VVwAqtLl1QXPiCL2V82aJAhi4vfA=;
+ b=PWhDldjjN4g0gW9JGs9ejSzGV8LApQn/C+1xzh4pJxsGvTZhOXFde5mYFXocQridqa
+ igIhr1Csd7yVFxB3vwMZguMc2affPjUpJGlydChQ1UjNARPr2DMfm6tBsDAuGGYMBdji
+ X1C8pab3sSBEszwT/dj7UB0+0qr2VecFIFJH5F/UV9qVi2lsGozucoUNmXufqyVqmVh6
+ Np9n6vi4hlhdnKkLtoi7qDIutEqbX85xj6PY4avBsHxeVBnnbQ+ctHJcqw1o/rQQGC1n
+ Q8QU5Va6OCDgVPoiWv1ozTL9RiAezWEr4cGecQEOsp+zQ7ffVhHVE+lmi6J2CjTfcame
+ 9OCQ==
+X-Gm-Message-State: ANhLgQ0pU3sNtHEaB8cIXUq8OWrq62obFOMO7DJ/rw7B5m3vnaBI3J9s
+ 1/VcYEorBbZBN9xN7uAq/hKzElIwWx4=
+X-Google-Smtp-Source: ADFU+vt2Wodk6ZZipaUnakhUniHCN5Q8WvcLQuqEGAxC4+KijtJXNOtuyVZky/tgzET7m383AchW4A==
+X-Received: by 2002:a25:6902:: with SMTP id e2mr3171907ybc.349.1583491135617; 
+ Fri, 06 Mar 2020 02:38:55 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id w132sm13345575ywc.51.2020.03.06.02.38.52
+ by smtp.gmail.com with ESMTPSA id w132sm13345575ywc.51.2020.03.06.02.38.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Mar 2020 02:38:53 -0800 (PST)
+ Fri, 06 Mar 2020 02:38:55 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: defconfig: Enable IMX27 PWM controller
-Date: Fri,  6 Mar 2020 04:38:37 -0600
-Message-Id: <20200306103839.1231057-1-aford173@gmail.com>
+Subject: [PATCH] arm64: defconfig: Enable IMX/FSL Audio Support for WM8962
+Date: Fri,  6 Mar 2020 04:38:38 -0600
+Message-Id: <20200306103839.1231057-2-aford173@gmail.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200306103839.1231057-1-aford173@gmail.com>
+References: <20200306103839.1231057-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_023855_923430_43ED1931 
-X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-CacheID: sfid-20200306_023857_649797_D5A9DFA4 
+X-CRM114-Status: UNSURE (   7.79  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [aford173[at]gmail.com]
@@ -108,23 +110,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The i.MX8M Mini and others use the i.MX27 PWM controller.
-This patch enables it as a module so various boards can use it.
+The Beacon EmbeddedWorks i.MX8M Mini kit has a WM8962 audio codec.
+This patch enables the required drivers as modules to enable sound.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index a8de3d327d03..d19ca82b3c40 100644
+index d19ca82b3c40..ab71a407288f 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -830,6 +830,7 @@ CONFIG_MPL3115=m
- CONFIG_PWM=y
- CONFIG_PWM_BCM2835=m
- CONFIG_PWM_CROS_EC=m
-+CONFIG_PWM_IMX27=m
- CONFIG_PWM_MESON=m
- CONFIG_PWM_RCAR=m
- CONFIG_PWM_ROCKCHIP=y
+@@ -601,6 +601,9 @@ CONFIG_SND_HDA_TEGRA=m
+ CONFIG_SND_HDA_CODEC_HDMI=m
+ CONFIG_SND_SOC=y
+ CONFIG_SND_BCM2835_SOC_I2S=m
++CONFIG_SND_IMX_SOC=m
++CONFIG_SND_SOC_FSL_ASOC_CARD=m
++CONFIG_SND_SOC_IMX_AUDMIX=m
+ CONFIG_SND_MESON_AXG_SOUND_CARD=m
+ CONFIG_SND_SOC_ROCKCHIP=m
+ CONFIG_SND_SOC_ROCKCHIP_SPDIF=m
+@@ -614,6 +617,7 @@ CONFIG_SND_SOC_ES7134=m
+ CONFIG_SND_SOC_ES7241=m
+ CONFIG_SND_SOC_PCM3168A_I2C=m
+ CONFIG_SND_SOC_TAS571X=m
++CONFIG_SND_SOC_WM8962=m
+ CONFIG_SND_SIMPLE_CARD=m
+ CONFIG_SND_AUDIO_GRAPH_CARD=m
+ CONFIG_I2C_HID=m
 -- 
 2.25.0
 
