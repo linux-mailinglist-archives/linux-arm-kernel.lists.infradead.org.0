@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6D2F17C22F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 16:49:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03A0817C230
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 16:49:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=V+VFyTlmRM2JZQXQdzpGfN9IekgGapcLOXrs1fASF4A=; b=q1ONb4GYF/6Rg4CHaZamd8ih+D
-	sQG/uM/ZWMtp7SZrhZyjj+oslruXXyOgY0hJgDQKfREvvgFW++cNzdRwRPS28zHJzxXkHCynMAWuu
-	wDm9aPtkuRis3W80YfqMPYIeQ1MKgRre31QvUrnhjxTXQKcyxiaLcff2eMrC4ATc6OCQ1Nteej3N7
-	A40PgTSiZP3/kG0kc4swo1a07HsnaeHlaLUQ+gFDnU+Av7TxbOYFWYeStfXWSen9rG3cSEzP/dXL3
-	+z14d2UfoxALG97mMnVce2oimeGGb9KciE11pqrrHemTPV09jHZmFl262xSAHKUXjbctStwRNSXQ2
-	uvAp9M2A==;
+	bh=9exTfth3XOoVsVi5dp4RIrfztQ39uelwFBiltIe4K44=; b=CnBV6StVJPuGULyNKlg3tWjS7W
+	6N0NtzoLhRGE7s20sSNwJlF7H1jm6//5xrDMc4PKJM1v4EPrUTuQJR38xxyI14LuuwZGUKOkjmZXC
+	5Y03/429ljdwjsBmesdSxHBOKKP5M1Vr0FiNJBKsDtSrePeRyuitMauBOL9sy/nf3BJ9Xq2nlwPnG
+	RGXzXcIibhwXkQk+6QRgenBB5Ocsvcju60fvNQWVDFNkgrGqZ0tr8dy7H0mIOBE+nNY2JhQuQ2leO
+	7zK0bb1pQB2x/QWhjDnS2DfEhiVJPZTScVqGR//ulg16Ts4738doMl4mEGpiiZl99Mf/Gv//NQ8bf
+	VCkZKdMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAFEA-0004RS-7u; Fri, 06 Mar 2020 15:49:30 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jAFEP-0004a6-G8; Fri, 06 Mar 2020 15:49:45 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAFE0-0004PH-Rn
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 15:49:22 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EC42D200BFC;
- Fri,  6 Mar 2020 16:49:17 +0100 (CET)
+ id 1jAFE2-0004Pj-30
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 15:49:23 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 50E141A0BBD;
+ Fri,  6 Mar 2020 16:49:20 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2A214200C23;
- Fri,  6 Mar 2020 16:49:01 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5037A1A0BD1;
+ Fri,  6 Mar 2020 16:49:03 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7B7094029B;
- Fri,  6 Mar 2020 23:48:47 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A2C7F402A0;
+ Fri,  6 Mar 2020 23:48:49 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, dmitry.torokhov@gmail.com, a.zummo@towertech.it,
@@ -47,25 +47,23 @@ To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-input@vger.kernel.org, linux-rtc@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
- KEYBOARD_IMX_SC_KEY
-Date: Fri,  6 Mar 2020 23:42:34 +0800
-Message-Id: <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 4/5] watchdog: add COMPILE_TEST support for IMX_SC_WDT
+Date: Fri,  6 Mar 2020 23:42:35 +0800
+Message-Id: <1583509356-8265-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
 References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_074921_038823_49A4950B 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200306_074922_275528_4FE75E38 
+X-CRM114-Status: GOOD (  10.31  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,27 +84,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add COMPILE_TEST support to i.MX SC keyboard driver for better compile
+Add COMPILE_TEST support to i.MX SC watchdog driver for better compile
 testing coverage.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/input/keyboard/Kconfig | 2 +-
+ drivers/watchdog/Kconfig | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-index 4706ff0..81e26f6 100644
---- a/drivers/input/keyboard/Kconfig
-+++ b/drivers/input/keyboard/Kconfig
-@@ -467,7 +467,7 @@ config KEYBOARD_IMX
- 
- config KEYBOARD_IMX_SC_KEY
- 	tristate "IMX SCU Key Driver"
+diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
+index 9ea2b43..6388154 100644
+--- a/drivers/watchdog/Kconfig
++++ b/drivers/watchdog/Kconfig
+@@ -712,7 +712,7 @@ config IMX2_WDT
+ config IMX_SC_WDT
+ 	tristate "IMX SC Watchdog"
+ 	depends on HAVE_ARM_SMCCC
 -	depends on IMX_SCU
 +	depends on IMX_SCU || COMPILE_TEST
+ 	select WATCHDOG_CORE
  	help
- 	  This is the system controller key driver for NXP i.MX SoCs with
- 	  system controller inside.
+ 	  This is the driver for the system controller watchdog
 -- 
 2.7.4
 
