@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D405A17BF03
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:35:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3198217BF04
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:35:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+1+70P+gSSSSn+nn96va6Tpq7QgvY2VVSt37u4rG9HE=; b=oKP4cxOpq2j78m
-	FrDzjVwdRB4pta+ZRJgpy7TitYDWjsA+2/fVULWtFoOqOLoTsw1U0vc0pEkOG474yR/ZUdsLmbKJy
-	VfnHW+CD8cskK5O0/5exFoLm68qSb8EOdRd4m9XYTU9ZoTdpqVDzsNrEfu5MMIIbwvb8+M0QyM5qo
-	p5cOEPgdLIxPCNDNJ7fIx/BMEElkIVdV6crbQfO/owzys7Uu+1GORa7LGMYiE0YRFNdMbRTL9zbPi
-	oUnuy4XrieK9M0vT2bPApYxiRtjheLPlm5bOCtGmWYL91J2KeTWoKixbSWLUo5nzQ8wy5SV8hxpil
-	vEZothCtVVZ4x5VxVX3Q==;
+	List-Owner; bh=Lxtxkq92ZaP6P7dgsvJkCGXgC9eXcNIYi4By+QubTz4=; b=l8VYvPMaDG7gQp
+	jTcagDk5Fm1JtckoXkRbDQHvKyb2NheJbjyrJxeC9fAWyPvgZQ9FHvS0IPwBOss2BUFPC9QfNA2Qw
+	XQqizdjjdKx/u+uSeJouPtc/mRACoEkwatvp2WJJk1PglkryX4eKnzN9Q7k/DuD4blwUdR0d9m1og
+	QhvDhl8elGi9AOprZNy1QQNBBEmH8NIjpEHmU5fsoExN3S7JWgeUa5/4oeB7LuD+EXvyBSBFFWckP
+	csPixvmzmRccOBQk5hwfswU4oxYrtvQvdM4RnpPU8m56nllKNcc3r/yVlMyPqrKaPeHp98lLB+sCt
+	jcvPzTgGsKGzQrCIz3Uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAD8V-0007gU-B6; Fri, 06 Mar 2020 13:35:31 +0000
+	id 1jAD8m-0007xi-4j; Fri, 06 Mar 2020 13:35:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAD6M-0004aE-5Q
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:33:19 +0000
+ id 1jAD6P-0004dv-JA
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:33:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE5DD4B2;
- Fri,  6 Mar 2020 05:33:17 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A70D81063;
+ Fri,  6 Mar 2020 05:33:20 -0800 (PST)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ECC3E3F6CF;
- Fri,  6 Mar 2020 05:33:14 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E57DA3F6CF;
+ Fri,  6 Mar 2020 05:33:17 -0800 (PST)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v2 08/20] linux/jiffies.h: Extract common header for vDSO
-Date: Fri,  6 Mar 2020 13:32:30 +0000
-Message-Id: <20200306133242.26279-9-vincenzo.frascino@arm.com>
+Subject: [PATCH v2 09/20] linux/ktime.h: Extract common header for vDSO
+Date: Fri,  6 Mar 2020 13:32:31 +0000
+Message-Id: <20200306133242.26279-10-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306133242.26279-1-vincenzo.frascino@arm.com>
 References: <20200306133242.26279-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_053318_258140_BA51D274 
-X-CRM114-Status: GOOD (  14.28  )
+X-CRM114-CacheID: sfid-20200306_053321_685062_23228117 
+X-CRM114-Status: GOOD (  14.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -84,55 +84,58 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split jiffies.h into linux and common headers to make the latter suitable
+Split ktime.h into linux and common headers to make the latter suitable
 for inclusion in the vDSO library.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/common/jiffies.h | 11 +++++++++++
- include/linux/jiffies.h  |  4 +---
- 2 files changed, 12 insertions(+), 3 deletions(-)
- create mode 100644 include/common/jiffies.h
+ include/common/ktime.h | 16 ++++++++++++++++
+ include/linux/ktime.h  |  9 +--------
+ 2 files changed, 17 insertions(+), 8 deletions(-)
+ create mode 100644 include/common/ktime.h
 
-diff --git a/include/common/jiffies.h b/include/common/jiffies.h
+diff --git a/include/common/ktime.h b/include/common/ktime.h
 new file mode 100644
-index 000000000000..ff0207f00550
+index 000000000000..4dd6c6762ad4
 --- /dev/null
-+++ b/include/common/jiffies.h
-@@ -0,0 +1,11 @@
++++ b/include/common/ktime.h
+@@ -0,0 +1,16 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __COMMON_JIFFIES_H
-+#define __COMMON_JIFFIES_H
++#ifndef __COMMON_KTIME_H
++#define __COMMON_KTIME_H
 +
-+#include <asm/param.h>			/* for HZ */
-+#include <common/time64.h>
-+
-+/* TICK_NSEC is the time between ticks in nsec assuming SHIFTED_HZ */
-+#define TICK_NSEC ((NSEC_PER_SEC+HZ/2)/HZ)
-+
-+#endif /* __COMMON_JIFFIES_H */
-diff --git a/include/linux/jiffies.h b/include/linux/jiffies.h
-index e3279ef24d28..710539d1e39b 100644
---- a/include/linux/jiffies.h
-+++ b/include/linux/jiffies.h
-@@ -8,6 +8,7 @@
- #include <linux/types.h>
- #include <linux/time.h>
- #include <linux/timex.h>
 +#include <common/jiffies.h>
- #include <asm/param.h>			/* for HZ */
- #include <generated/timeconst.h>
++
++/*
++ * The resolution of the clocks. The resolution value is returned in
++ * the clock_getres() system call to give application programmers an
++ * idea of the (in)accuracy of timers. Timer values are rounded up to
++ * this resolution values.
++ */
++#define LOW_RES_NSEC		TICK_NSEC
++#define KTIME_LOW_RES		(LOW_RES_NSEC)
++
++#endif /* __COMMON_KTIME_H */
+diff --git a/include/linux/ktime.h b/include/linux/ktime.h
+index d1fb05135665..c456b33c80e1 100644
+--- a/include/linux/ktime.h
++++ b/include/linux/ktime.h
+@@ -216,14 +216,7 @@ static inline __must_check bool ktime_to_timespec64_cond(const ktime_t kt,
+ 	}
+ }
  
-@@ -59,9 +60,6 @@
+-/*
+- * The resolution of the clocks. The resolution value is returned in
+- * the clock_getres() system call to give application programmers an
+- * idea of the (in)accuracy of timers. Timer values are rounded up to
+- * this resolution values.
+- */
+-#define LOW_RES_NSEC		TICK_NSEC
+-#define KTIME_LOW_RES		(LOW_RES_NSEC)
++#include <common/ktime.h>
  
- extern int register_refined_jiffies(long clock_tick_rate);
- 
--/* TICK_NSEC is the time between ticks in nsec assuming SHIFTED_HZ */
--#define TICK_NSEC ((NSEC_PER_SEC+HZ/2)/HZ)
--
- /* TICK_USEC is the time between ticks in usec assuming SHIFTED_HZ */
- #define TICK_USEC ((USEC_PER_SEC + HZ/2) / HZ)
- 
+ static inline ktime_t ns_to_ktime(u64 ns)
+ {
 -- 
 2.25.1
 
