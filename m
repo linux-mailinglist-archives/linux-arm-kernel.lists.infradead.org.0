@@ -2,62 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3872C17BA18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:21:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A40617BA1B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:21:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IrgAnUq9dkhJeLj7IseFnmAyVQFufOvepqhjasdZWjM=; b=GWHsNnTUrSBE2S
-	cSMVbOAI8d/VVicOrYtrm78t7nyPaI+6l6unRLgPSUzP5ZWplaO53p8kDJAAK92ZSEQ78T7YE/N3Y
-	J/29vYWWAdveZjYRav+dPMSzgtUlgAyUL+zHWiv6pbuqZPFCX9Cy3J8bQMOzvEvsb9Rn3Ng3iqulU
-	WtqUdQ3w52+m8eVKuD6Tg+cPxOLwheaVnqri4i0rlKkK91gpoJtRIQb7S9z1xFz6xBZHwVryitYoi
-	yJi8xktFOxjJP3YvFPgNHHRkbxUtNu0K3Lkz0fP6nOzV6T/Hm4i+37PQyTE7ytQ8AGqeAXQHyKYwG
-	nmvHICS5/dWmTQwZsebg==;
+	List-Owner; bh=aQccDX4/utQBZL6Y6xLOrry/2ZJ5+zeQLuWaF+sVx3E=; b=c+ll78Ge3HryuG
+	yjlYFsdt/Uph0HMtiqOy06pFHQQFDJZ5W8OuOAtJCYkY/hYS3E10CXtWtWIu+nsAm4rIarurBfl63
+	wDg/DCqabxno9T6Js1ReO0ygf6stMgLQlQHNHapc1P2/Xdnf4CizFuhdwX77fDBopxmMI/AL64udB
+	KhX0z234XcqQ3gbpUjwD1srC9Ys74WQCIYoYYcNJMCFMsaE8Y6XQpJZgPbb3tWMpDV/9otYcpzrcB
+	kuGX29YyfxrPKwqix2DoCfyERUVBVWvFYsdB6DbZ312czH5WGw1Msis4K/cvBYPczb9t9wrER5N9O
+	7Qct3fP9urqikIBY3l3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAA6P-0001Dp-UP; Fri, 06 Mar 2020 10:21:09 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAA6G-0001Am-Ui
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:21:03 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1jAA68-00018D-KZ; Fri, 06 Mar 2020 11:20:52 +0100
-Received: from pza by lupine with local (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1jAA67-0007hp-HB; Fri, 06 Mar 2020 11:20:51 +0100
-Message-ID: <69903c69a95902c0ddc8fb9e7a6762abf28aa034.camel@pengutronix.de>
-Subject: Re: [PATCH v3 2/4] drm/imx: Add initial support for DCSS on iMX8MQ
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Laurentiu Palcu <laurentiu.palcu@oss.nxp.com>, Lucas Stach
- <l.stach@pengutronix.de>
-Date: Fri, 06 Mar 2020 11:20:51 +0100
-In-Reply-To: <20200306095830.sa5eig67phngr3fa@fsr-ub1864-141>
-References: <1575625964-27102-1-git-send-email-laurentiu.palcu@nxp.com>
- <1575625964-27102-3-git-send-email-laurentiu.palcu@nxp.com>
- <03b551925d079fcc151239afa735562332cfd557.camel@pengutronix.de>
- <20200306095830.sa5eig67phngr3fa@fsr-ub1864-141>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1jAA6j-0001SE-46; Fri, 06 Mar 2020 10:21:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAA6X-0001RF-Lj
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:21:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E166331B;
+ Fri,  6 Mar 2020 02:21:16 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ EB6893F6C4; Fri,  6 Mar 2020 02:21:13 -0800 (PST)
+Date: Fri, 6 Mar 2020 10:21:11 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Alexander Viro <viro@zeniv.linux.org.uk>
+Subject: Re: [PATCH v8 00/11] arm64: Branch Target Identification support
+Message-ID: <20200306102111.GB2503422@arrakis.emea.arm.com>
+References: <20200227174417.23722-1-broonie@kernel.org>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20200227174417.23722-1-broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_022100_986635_0F88FAFC 
-X-CRM114-Status: GOOD (  12.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200306_022117_790867_1450DE83 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,49 +62,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- lukas@mntmn.com, linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Laurentiu Palcu <laurentiu.palcu@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- agx@sigxcpu.org, linux-arm-kernel@lists.infradead.org
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurentiu,
+On Thu, Feb 27, 2020 at 05:44:06PM +0000, Mark Brown wrote:
+> Dave Martin (10):
+>   ELF: UAPI and Kconfig additions for ELF program properties
+>   ELF: Add ELF program property parsing support
+>   arm64: Basic Branch Target Identification support
+>   elf: Allow arch to tweak initial mmap prot flags
 
-On Fri, 2020-03-06 at 11:58 +0200, Laurentiu Palcu wrote:
-> On Wed, Feb 26, 2020 at 02:19:11PM +0100, Lucas Stach wrote:
-[...]
-> > > +/* This function will be called from interrupt context. */
-> > > +void dcss_scaler_write_sclctrl(struct dcss_scaler *scl)
-> > > +{
-> > > +	int chnum;
-> > > +
-> > > +	for (chnum = 0; chnum < 3; chnum++) {
-> > > +		struct dcss_scaler_ch *ch = &scl->ch[chnum];
-> > > +
-> > > +		if (ch->scaler_ctrl_chgd) {
-> > > +			dcss_ctxld_write_irqsafe(scl->ctxld, scl->ctx_id,
-> > > +						 ch->scaler_ctrl,
-> > > +						 ch->base_ofs +
-> > > +						 DCSS_SCALER_CTRL);
-> > 
-> > Why is this using the _irqsafe variant without any locking? Won't this
-> > lead to potential internal state corruption? dcss_ctxld_write is using
-> > the _irqsave locking variants, so it fine with being called from IRQ
-> > context.
-> 
-> This is only called from __dcss_ctxld_enable() which is already protected
-> by lock/unlock in dcss_ctxld_kick().
+Al, are you ok for patches 1, 2 and 4 in this series to be merged via
+the arm64 tree? The full series is here:
 
-You could add a lockdep_assert_held() line to the top of this function
-to make it clear this depends on the lock being held.
+https://lore.kernel.org/linux-arm-kernel/20200227174417.23722-1-broonie@kernel.org/
 
-regards
-Philipp
+Thanks.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
