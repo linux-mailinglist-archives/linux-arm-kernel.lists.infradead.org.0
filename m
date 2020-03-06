@@ -2,67 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A5B17C167
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 16:12:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A9FB17C185
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 16:17:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/hFI2lKcLhcjlzCUdwtRvqOkk4XpSathoafrU3eHr9o=; b=D9rrWcKez5KdH9
-	05pQpVSsmB+a4WTPYKFUQ/e/NdXdeNcbXsCQaKOcWuVn1gTF8L8rz/kt4IYqn130HnLLRxRl/HQqY
-	ilf07BeasbFOTxiQZRqMh3GD3ogObpcXLudvUcJ+kEejmhQk69JV9XEXpNHGRJ1VFTtNQsgxwQmmp
-	EgC6CUBDnMbG2qMr9C976AM1ZH2FowY0DWCdw0Ef97BD8o3mKvKgR753Aca/XC/m4hqVr/7utepmN
-	EIrAEo2fp0tBPeNys0uzvoEFLTlIavY2uKY7xkyPR2+T62YmKtU703w1q6b0vFSCEKiGggLXDgrsW
-	rL3E/tXJAu5V5fmLs6Vg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ehn3ll9joFz7FVB9w35YfUl1V6ZOrzP1mRNwh+/3sgo=; b=qcqxjePMaAGSyr
+	8zcg7rADgH9HoFQHIFD22VJRYzRombPNt4z9A/eFh/KIMe4jbJaYsCdqr4QUr896KkeKvkFddbZwO
+	hum5q10SZiD1FpQG9/Gwb1FQwDLNZblCWLdECUQjPaO/Glo58Yr+HV0UpNQ2LTuT0iepmJMpqeVUH
+	CrshBoolOvTkyEBOoZGTkB3Bmm0XH0IEz4EmLpccARgw+iFLOl3sXlYRRomzoNlmwLtSjXU8G1PDw
+	/KXSn4crELdMbH6FXVc7q0J67AZj/WM7K8W2BZRfi0yoioEvbv+dhk8ZSpW/Usb6jTQJSiNJYx08E
+	Ue1XGjZLSNlfz06dqdEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAEeO-00074v-KW; Fri, 06 Mar 2020 15:12:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jAEj6-0000OH-F1; Fri, 06 Mar 2020 15:17:24 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAEeH-00074Y-Av
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 15:12:26 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 940DD2073D;
- Fri,  6 Mar 2020 15:12:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583507544;
- bh=UQeODx1wp4BqMIAVR0zSKtHv0AGBddff2t3nWTesA/Q=;
- h=Date:From:To:Cc:Subject:From;
- b=pd7TM5m2KanjZIsnsLqrg9eMqY3ne2LV//mj+WvBitRL8KIXd6ZZ9VVJyuIB+TXFq
- P17sMqLIUcDHmvAggDqk5OWRrXI5Dz9OdKVLvl39inxQ8S5EpolX+jtRt4uISOgRsj
- sQQX4Vta4BhX8TWpq2ctuXPO/0MDGURYrWrGufiA=
-Date: Fri, 6 Mar 2020 15:12:20 +0000
-From: Will Deacon <will@kernel.org>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64 fixes for -rc5
-Message-ID: <20200306151219.GA8409@willie-the-truck>
+ id 1jAEiw-0000NJ-Hw
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 15:17:17 +0000
+Received: from mail-qk1-f172.google.com ([209.85.222.172]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MS4ab-1ileU70cih-00TR2P for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 06 Mar 2020 16:17:12 +0100
+Received: by mail-qk1-f172.google.com with SMTP id j7so2598715qkd.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 07:17:09 -0800 (PST)
+X-Gm-Message-State: ANhLgQ22s2HfpZ/nBmYQzyuDExrx1+xO86qyfCkU3YVY4x6Ynih66rTv
+ gybrpf9IcnVhyJcAEIAUoqoQ+mSEguZWAEXQcRI=
+X-Google-Smtp-Source: ADFU+vuDaJsUN+5WX4+LLP5sq0sAGqnYo6p0nd7YbrvGU0xXwmka3Olj+EhE6qSwp8BgobIoBAs6cm1HFLnsNlxHW68=
+X-Received: by 2002:a37:b984:: with SMTP id j126mr3197034qkf.3.1583507828957; 
+ Fri, 06 Mar 2020 07:17:08 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com>
+ <c1489f55-369d-2cff-ff36-b10fb5d3ee79@kernel.org>
+ <8207cd51-5b94-2f15-de9f-d85c9c385bca@huawei.com>
+ <6115fa56-a471-1e9f-edbb-e643fa4e7e11@kernel.org>
+ <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
+ <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
+ <90af535f-00ef-c1e3-ec20-aae2bd2a0d88@kernel.org>
+ <CAK8P3a2Grd0JsBNsB19oAxrAFtOdpvjrpGcfeArKe7zD_jrUZw@mail.gmail.com>
+ <ae0a1bf1-948f-7df0-9efb-cd1e94e27d2d@huawei.com>
+In-Reply-To: <ae0a1bf1-948f-7df0-9efb-cd1e94e27d2d@huawei.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 6 Mar 2020 16:16:52 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a2wdCrBP=a8ZypWoC=HyCU3oYYNeCddWM7oT+xM9gTPhw@mail.gmail.com>
+Message-ID: <CAK8P3a2wdCrBP=a8ZypWoC=HyCU3oYYNeCddWM7oT+xM9gTPhw@mail.gmail.com>
+Subject: Re: About commit "io: change inX() to have their own IO barrier
+ overrides"
+To: John Garry <john.garry@huawei.com>
+X-Provags-ID: V03:K1:sO5lZ6HS+3b2dljta70DcOeHxvNX1PbgmP/UTZzsO0c0KOMvNUy
+ OSztKY/sOPhudQDJJoNzQ7RSlSCBGa2MmsSCXNINjMmNtPTjELzAvIBgr2OF9hDs/BZmKVF
+ HTfyhiPVknwIAOylj2huPWTRLsVrA1zIOknI/1wEz57MeZGlqQkoDLx83jWbxTGN3YyvraV
+ 1+4O/90Qdv2M3F12QkU9A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:/efaLolHcVw=:Sp2qBrnteenMDAhkacZw6G
+ Bd3MRX0O20s0EXuUswTThbxTq0eiHqhPPag4mEZTViIMqGAGIpZIhI6CUVmegS1jDabF9MDwi
+ JMguiIttk/xKlN8FZRPJUUHB01li3sU7xcTvJa3ZOpMHZV7hd4Y7XVOtsP3dOrTpzNDMwehHv
+ Ca1LylUkR84LCdC8L++/x/tK94L1Uqa2oKM9vMb6T+BDfq0SjZwZ1Cyow4ZPjv27CMP1o26J+
+ 7NXRu0LnH3ddDHcCML4UBW5GzTywn8200ZOqUTKaFgkwB+rUxCzZIxi3ogz+PyvtpChYqc1Dh
+ NfpQt8LVG90dEGGzynCVmWzOsHpWB7ljb5Cpvor84BZ3WSU8JPIbK/Gbaz95ElyQMI/Ywsdt4
+ BTwDtIMS+47E43rQDMw9VpS5xuAmGQfCczwWr/+LhYh3e+xXNJxUlZKjp2tkQqnnWY1ZOBOX3
+ iZf91D0kv65680Dd+iJi5IkBg4/yGg3XaQfkIF7x1QfecLH9zTHgbnrr3expsNyG4sWz9eJo8
+ 1xjWwxx+cAgKkwTcIjv3VYIQ10MQjkA8ftKHncZ5GKlmRDbd8maodUNB0YSpnk7S/tTTktgCU
+ X/49uraUp0joHJGTaGLdkIqQnHqU/IMDUzuO2Ek8yWRsttPmk7mqHSP+2CsHvGBPA5yAwrRNz
+ UctKs8Zlv22Ag1mYU2TLBB5ReR7oHuZF9ZB9KZzPDo3x/Z3fpLvqMpa76zNHQvsKnHMoIkxRl
+ EbxSzYvWyJX2aQxd2MoLvCbvEakFRK1FQ4DowFnpulSw454PCkPQn4mHcAN1YCPXdswdZWBUA
+ THGiCuZ1XYAEA6CMuEhPZasLIFR5yekthgB6HqNZEs7LXMGh3o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_071225_395733_AF0E7914 
-X-CRM114-Status: GOOD (  10.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200306_071716_600316_ED16B0D4 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.24 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,60 +94,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, kernel-team@android.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sinan Kaya <okaya@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jiaxun Yang <jiaxun.yang@flygoat.com>, "xuwei \(O\)" <xuwei5@hisilicon.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Fri, Mar 6, 2020 at 11:40 AM John Garry <john.garry@huawei.com> wrote:
+> On 06/03/2020 07:54, Arnd Bergmann wrote:
+> > On Fri, Mar 6, 2020 at 4:44 AM Sinan Kaya <okaya@kernel.org> wrote:
+> -- a/lib/logic_pio.c
+> +++ b/lib/logic_pio.c
+> @@ -229,13 +229,21 @@ unsigned long
+> logic_pio_trans_cpuaddr(resource_size_t addr)
+>   }
+>
+>   #if defined(CONFIG_INDIRECT_PIO) && defined(PCI_IOBASE)
+> +
+> +#define logic_in_to_cpu_b(x) (x)
+> +#define logic_in_to_cpu_w(x) __le16_to_cpu(x)
+> +#define logic_in_to_cpu_l(x) __le32_to_cpu(x)
+> +
+>   #define BUILD_LOGIC_IO(bw, type)                                      \
+>   type logic_in##bw(unsigned long addr)                                 \
+>   {                                                                     \
+>          type ret = (type)~0;                                           \
+>                                                                         \
+>          if (addr < MMIO_UPPER_LIMIT) {                                 \
+> -               ret = read##bw(PCI_IOBASE + addr);                     \
+> +               void __iomem *_addr = PCI_IOBASE + addr;               \
+> +               __io_pbr();                                            \
+> +               ret = logic_in_to_cpu_##bw(__raw_read##bw(_addr));     \
+> +               __io_par(ret);                                         \
+>          } else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {\
+>                  struct logic_pio_hwaddr *entry = find_io_rang
+>
+> We could prob combine the le_to_cpu and __raw_read into a single macro.
 
-Here are another three arm64 fixes for 5.6. Summary in the tag, but all
-pretty minor. Main thing is fixing a silly bug in the fsl_imx8_ddr PMU
-driver where we would zero the counters when disabling them.
+What is the purpose of splitting out the byteswap rather than leaving the
+open-coded rather than __le16_to_cpu(__raw_readw(PCI_IOBASE + addr))?
 
-Please pull.
+If this is needed to work across architectures, how about adding
+an intermediate __raw_inw() etc in asm-generic/io.h like
 
-Will
+#ifndef __raw_inw
+#define __raw_inw(a) __raw_readw(PCI_IOBASE + addr));
+#endif
 
---->8
+#include <linux/logic_pio.h>
 
-The following changes since commit dcde237319e626d1ec3c9d8b7613032f0fd4663a:
+#ifndef inw
+static inline u16 inw(unsigned long addr)
+{
+        u16 val;
 
-  mm: Avoid creating virtual address aliases in brk()/mmap()/mremap() (2020-02-20 10:03:14 +0000)
+        __io_pbr();
+        val = __le16_to_cpu(__raw_inw(addr));
+        __io_par(val);
+        return val;
+}
+#endif
 
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
-
-for you to fetch changes up to 9abd515a6e4a5c58c6eb4d04110430325eb5f5ac:
-
-  arm64: context: Fix ASID limit in boot messages (2020-03-02 12:10:38 +0000)
-
-----------------------------------------------------------------
-arm64 fixes for -rc5
-
-- Fix misreporting of ASID limit when KPTI is enabled
-
-- Fix busted NULL pointer checks for GICC structure in ACPI PMU code
-
-- Avoid nobbling the "fsl_imx8_ddr" PMU counters when disabling them
-
-----------------------------------------------------------------
-Jean-Philippe Brucker (1):
-      arm64: context: Fix ASID limit in boot messages
-
-Joakim Zhang (1):
-      drivers/perf: fsl_imx8_ddr: Correct the CLEAR bit definition
-
-luanshi (1):
-      drivers/perf: arm_pmu_acpi: Fix incorrect checking of gicc pointer
-
- arch/arm64/mm/context.c          | 20 +++++++++++++++-----
- drivers/perf/arm_pmu_acpi.c      |  7 ++-----
- drivers/perf/fsl_imx8_ddr_perf.c | 10 ++++++----
- 3 files changed, 23 insertions(+), 14 deletions(-)
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
