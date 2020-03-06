@@ -2,78 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7289617BE29
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:22:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C0CE17BE7E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:30:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bQoXgIwwMnlAnQc4LVp1H0fb7kSTJ2oThevM36uZ8aM=; b=ivc9PVj367xly+
-	N0Bf0NzRo3Ynz9aLQg7+RKjc9sMyraq7hfmDxTP+i4LWD5/+AYVdPRJkTE4SCiQOzGGqTNB7sJYaH
-	s2aCvqpXCPX/5wulCxbWjVSRukwDroSSrg8IaKCrRzdP5q2pOtVM23aOMV2hCjbpqEjFPAUeGP8qo
-	X2PikWJnqDXInwBLFTIcyPashJFQ5MJy9zS2FPSizebZV8EPIFKzFdv9BZ7VYTNHgAdfB9UEZFsIW
-	PrPMmAP9iHgVRdF55/kGdupDasujxCgbhMkl8+mFnlnmmRBhEunL9uqoPxAcERDUxxcvn3GbngAzL
-	fePl34YHqcY4x28HRv8w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LFDLUj5NJ9RzyInr8XPRPCcodFZe3oDRyECLqtgjcgw=; b=VR58ONrbEicaiV
+	D4jOjygcMs2vHTWgpNpdxUP3fCAX5LeH/9KkRPR+BBZ4nx8BmZby5+he3ag8SRFbModlqDSCGHnr2
+	CxPMxLV779Jbc+zbBTlT+8K2aDhAk/5+jgIQtlZB+5yP12wolkVrVWL8kJ47Xda9HACEWmh2KBdyC
+	K6EBtQCn8rmNudItC9gp3IS8ljnGOBsTipFHenPm/EVudIdjBcprGRmRf8uZQA3ZtKGuAckqslUEg
+	5IP6KDoHIyoGWdRBP54qQFNyIySwBheVkfVgMepnxJCxIwR7RGJBBcckWd98sSRwnYXHQa+I3MNwS
+	dZicqWiwLQ79OI5P2/LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jACvR-00087x-7I; Fri, 06 Mar 2020 13:22:01 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1jAD3e-0003cs-ET; Fri, 06 Mar 2020 13:30:30 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jACvI-000870-LT
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:21:54 +0000
-Received: by mail-oi1-f195.google.com with SMTP id v19so2458800oic.12
+ id 1jAD3R-0003c4-2M
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:30:19 +0000
+Received: by mail-il1-x143.google.com with SMTP id x2so2010016ila.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 05:21:52 -0800 (PST)
+ Fri, 06 Mar 2020 05:30:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Pg0E53f1mAa6g/1NYUXksaRgV81W69zTft5+Yoc7gDE=;
+ b=Kg8VgctwJ9sl2bTG3rzATydWCYvJWQCE+ermdWX2W6/tL1d4ooTTXJuxucMeR5HrSO
+ 1VngudrsPSy6SvXBIf+Y/JC/ayTGHJ6fpURzkse7qM0P31kiOutuJ53gCTgm/4fdXO2/
+ ZK+7UJ0oJ/wyIe0y/TWHPMUsTI7K+WDqulCZDNtCBHys0966gt2n/kZXpPgrDhE1Gfvo
+ 87Sp3W/lmVrl6Us1lh/ZORqWtpxOgMOSPZkKnPn6LSXxHmrLaIOR6aGQRitSaxpWzlV7
+ H9ejUcou5Kg7KhqSbUzlR6JhKfG+b3GJnyRWoC6D1Z6JI/nPhmrbV+jmjMERQGj372X0
+ Pt8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4egTRk5WwAGOwPzaFlwylsTR4rm7/1ScQ/ZrAguvL58=;
- b=s43SVV963FwG6ypRJk7LumyC2uWE4cLsHAUI837LSfwTjxmxzRQGT38VSqoaEVF+18
- CHstmvVPQWztBn1Z9/DWcfqEKQCY5VFzG7VnhAD+yKyHiuWHskEdklYjI4WKoIH00Iy3
- A8msgr0V5WGC93S8XvvVteTRqi6vRE0fXgwCixXaJYMVjO58KMXHzCHLuaeqkyJAJ8s6
- yOrpRaxsjUJTJzPfa+0lm2TT9XiIWfjX1WMQauHnunDLGAjpcLTLhZHGzX5idDiBwj6X
- s2OO7v4X1aiRdtjP9ZPBXvWxAhkOueTbGBryeEJ1uNb1OnmTsGILGAlRlYlyIZOE43ZL
- AFkQ==
-X-Gm-Message-State: ANhLgQ1MTx8HBdFflbMykKR9ALl3R93+qhytyWMa4jAZnhPKI+0QvA/c
- VsAC2HXc/H5GciS0CvVhjg1RchEYKzIqc42d8rk=
-X-Google-Smtp-Source: ADFU+vuZGLbnXTkhnQ8s6R8V7TRANbM+nGIn9F+2NHhqp1uQsKc1JP5svk0aPchpJM5g7mjfwjbhOSkCrkhgeWl/B5g=
-X-Received: by 2002:aca:b4c3:: with SMTP id d186mr2446348oif.131.1583500911215; 
- Fri, 06 Mar 2020 05:21:51 -0800 (PST)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Pg0E53f1mAa6g/1NYUXksaRgV81W69zTft5+Yoc7gDE=;
+ b=FbDM7VPk1CtIzort0dzeoCZd/Z+2briLhzc/4dmkB5jvQ4GE2LcFV3EpyBtoqgltpP
+ NBC0lD+DxABctOiCHFpV0+9tDUBfwJ24ASKqdCyZnOuZGPS4wQ/h2GERalL6jmWWBoSI
+ 8x+RIRK4YY/sv7jOQIYNvZyYm7VKkcJBbpu0QAoOIqLT/xm4eZF7NNhInLwent6G00w2
+ PeI6qMgeHahzFC8R7efrthFUFWZ/JFuMJwzWM6Re8yhpNxvbMoSkWqsMo4lI5AKKBudo
+ oSjlGPJXcVh/684mG0UkqM8qH5D3/bDZl4nbftCWHMPkTy7kUpDczDM5fhGUyzfnZ3tf
+ uhBw==
+X-Gm-Message-State: ANhLgQ3giyQsD/htPtYxQhEhgLMXfrLQ04Cqsgi6fSdP8ko9vsfQ89cB
+ GAQpqpUavAy3qFDkuo4HswOPOg==
+X-Google-Smtp-Source: ADFU+vtF7Sgabzn4gBNF+Q1WL6hlfCT9H3OiBs3TKH16d/VuIJCgyEsSlOKmaSfuT4a7s2taCKtlBw==
+X-Received: by 2002:a92:d9c4:: with SMTP id n4mr3077709ilq.124.1583501415806; 
+ Fri, 06 Mar 2020 05:30:15 -0800 (PST)
+Received: from [172.22.22.26] (c-73-185-129-58.hsd1.mn.comcast.net.
+ [73.185.129.58])
+ by smtp.googlemail.com with ESMTPSA id x6sm7019573ilg.42.2020.03.06.05.30.14
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 06 Mar 2020 05:30:15 -0800 (PST)
+Subject: Re: [PATCH v2 01/17] remoteproc: add IPA notification to q6v5 driver
+To: Leon Romanovsky <leon@kernel.org>
+References: <20200306042831.17827-1-elder@linaro.org>
+ <20200306042831.17827-2-elder@linaro.org> <20200306114941.GO184088@unreal>
+From: Alex Elder <elder@linaro.org>
+Message-ID: <5548579d-179d-b099-afa9-6b76e9fa5a89@linaro.org>
+Date: Fri, 6 Mar 2020 07:29:23 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200306102301.16870-1-geert+renesas@glider.be>
- <20200306103652.GA3634389@kroah.com>
- <CAMuHMdUy8RjkY+0gBv-=mpcuamNQgB=k4rvNsiaj2s4uUDc5UA@mail.gmail.com>
- <20200306130314.GA3778623@kroah.com>
-In-Reply-To: <20200306130314.GA3778623@kroah.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 6 Mar 2020 14:21:40 +0100
-Message-ID: <CAMuHMdUD1=qcG8NSYYnWZ0bLUBp0ys2ZQ=KqnxUKFb4gntBfJw@mail.gmail.com>
-Subject: Re: [PATCH] Revert "tty: serial: samsung_tty: build it for any
- platform"
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+In-Reply-To: <20200306114941.GO184088@unreal>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_052152_705571_FFA8DD63 
-X-CRM114-Status: GOOD (  36.38  )
-X-Spam-Score: -1.2 (-)
+X-CRM114-CacheID: sfid-20200306_053017_175691_927C920A 
+X-CRM114-Status: GOOD (  16.74  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-1.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,151 +101,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kevin Hilman <khilman@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Kukjin Kim <kgene@kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Olof Johansson <olof@lixom.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Mark Rutland <mark.rutland@arm.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org, Dan Williams <dcbw@redhat.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Siddharth Gupta <sidgup@codeaurora.org>, Andy Gross <agross@kernel.org>,
+ Evan Green <evgreen@google.com>, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Greg,
+On 3/6/20 5:49 AM, Leon Romanovsky wrote:
+> On Thu, Mar 05, 2020 at 10:28:15PM -0600, Alex Elder wrote:
+>> Set up a subdev in the q6v5 modem remoteproc driver that generates
+>> event notifications for the IPA driver to use for initialization and
+>> recovery following a modem shutdown or crash.
 
-On Fri, Mar 6, 2020 at 2:03 PM Greg Kroah-Hartman
-<gregkh@linuxfoundation.org> wrote:
-> On Fri, Mar 06, 2020 at 01:53:01PM +0100, Geert Uytterhoeven wrote:
-> > On Fri, Mar 6, 2020 at 1:29 PM Greg Kroah-Hartman
-> > <gregkh@linuxfoundation.org> wrote:
-> > > On Fri, Mar 06, 2020 at 11:23:01AM +0100, Geert Uytterhoeven wrote:
-> > > > This reverts commit 175b558d0efb8b4f33aa7bd2c1b5389b912d3019.
-> > > >
-> > > > When the user configures a kernel without support for Samsung SoCs, it
-> > > > makes no sense to ask the user about enabling "Samsung SoC serial
-> > > > support", as Samsung serial ports can only be found on Samsung SoCs.
-> > > >
-> > > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > > > ---
-> > > >  drivers/tty/serial/Kconfig | 1 +
-> > > >  1 file changed, 1 insertion(+)
-> > > >
-> > > > diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> > > > index 880b962015302dca..932ad51099deae7d 100644
-> > > > --- a/drivers/tty/serial/Kconfig
-> > > > +++ b/drivers/tty/serial/Kconfig
-> > > > @@ -237,6 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
-> > > >
-> > > >  config SERIAL_SAMSUNG
-> > > >       tristate "Samsung SoC serial support"
-> > > > +     depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
-> > > >       select SERIAL_CORE
-> > > >       help
-> > > >         Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
-> > >
-> > > {sigh}
-> >
-> > Exactly my feeling.
-> >
-> > > No, I don't want this.  My "goal" is to be able to get rid of all of the
-> > > crazy "PLAT_*" symbols as they make it impossible to build a single
-> > > kernel that supports multiple ARM64 systems.
-> >
-> > This dependency does not make it impossible to build a single
-> > kernel that supports multiple ARM64 systems.
-> >
-> > Those "PLAT_*" symbols are not crazy.  They are needed to configure a
-> > kernel for your specific hardware, leaving out support you don't need.
-> > Not everyone has the hardware resources to run an allyesconfig kernel.
-> >
-> > > As an example of just such a system, see the 5.4 tree here:
-> > >         https://android.googlesource.com/kernel/common/+/refs/heads/android-5.4
-> > > it is now building and booting on multiple SoCs.
-> >
-> > arm/multi_v7_defconfig and arm64/defconfig kernels are already booting
-> > on multiple SoCs in upstream, and have done so for years.
-> >
-> > > But yes, it still does have to enable some PLAT_* config options, but
-> > > the goal is to not have to do that eventually.
-> >
-> > Whether the dependency is present or not does not change this.
-> >
-> > > There is no reason that we need vendor-specific config options just to
-> > > lump random drivers into, like serial drivers.  If the hardware is not
-> > > present, the driver will just not bind to the hardware, and all is fine.
-> >
-> > Not having the dependency means you will ask the user useless questions
-> > when configuring his kernel.
-> > My goal is to make kernel configuration easier, not more difficult.
-> >
-> > > Just like x86, we don't have this issue there, and ARM64 should also not
-> > > have this.
-> >
-> > No, because x86 is considered the golden standard ;-)
-> >
-> > Dropping those dependencies is similar to always having a simple PCI
-> > core without any host PCI bridges, dropping "depends on PCI" from all
-> > PCI drivers, and building an all*config kernel for your old i386 that
-> > predates PCI (you can replace PCI by ACPI to modernize the example).
-> >
-> > What am I missing?!?
->
-> "depends on PCI" describes the hardware bus that a driver depends on.
+. . .
 
-Yes.
+>> diff --git a/include/linux/remoteproc/qcom_q6v5_ipa_notify.h b/include/linux/remoteproc/qcom_q6v5_ipa_notify.h
+>> new file mode 100644
+>> index 000000000000..0820edc0ab7d
+>> --- /dev/null
+>> +++ b/include/linux/remoteproc/qcom_q6v5_ipa_notify.h
+>> @@ -0,0 +1,82 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +
+>> +/* Copyright (C) 2019 Linaro Ltd. */
+>> +
+>> +#ifndef __QCOM_Q6V5_IPA_NOTIFY_H__
+>> +#define __QCOM_Q6V5_IPA_NOTIFY_H__
+>> +
+>> +#if IS_ENABLED(CONFIG_QCOM_Q6V5_IPA_NOTIFY)
+> 
+> Why don't you put this guard in the places where such include is called?
+> Or the best variant is to ensure that this include is compiled in only
+> in CONFIG_QCOM_Q6V5_IPA_NOTIFY flows.
 
-> PLAT_FOO is just trying to somehow classify that this type of driver
-> only shows up on this vendor's devices.  It is not defining the hardware
-> at all.  We try to always describe functionality of hardware, not try to
-> declare specific vendor's hardware choices, right?
+I did it this way so the no-op definitions resided in the same header
+file if the config option is not enabled.  And the no-ops were there
+so the calling code didn't have to use #ifdef.
 
-DT-based drivers do not bind to a hardware-specific bus, and thus there
-is no config symbol for a hardware-specific bus they can depend on.
-Still, there are hardware classes, based on SoC vendors and SoC families.
-Hence PLAT_FOO describes the latter.
+I have no objection to what you suggest.  I did a quick scan for other
+examples like this for guidance and found lots of examples of doing it
+the way I did.
 
-> PLAT_FOO is interesting, but given that a specific driver is really not
-> tied to that platform logically, only by virtue that no one else might
-> not happen to have that hardware, it seems odd to have that.
+So I'm happy to change it, but would like an additional request to do
+so before I do that work.
 
-There exist IP cores that are present on either PCI and non-PCI hardware.
-With hardware-specific bus drivers, drivers for these need to implement
-both a pci_driver and <some_other>_driver.  And they depend on PCI
-|| <OTHER>.
-With DT and ACPI, and device properties, a single platform_driver
-needs to be written, just the matching is done differently. And there is
-no "hard" (no "else the driver doesn't link") need for a hardware-specific
-config-symbol dependency.  But it's still good to have one.
+Thanks.
 
-> Yes, asking lots of questions is tough, but we passed that problem so
-> long ago.  Are we now trying to add PLAT_FOO entries to all hardware
-> drivers in order to make this type of selection easier?  I thought we
-> were just doing that by providing defconfig files to make the initial
-> selection saner.
+					-Alex
 
-Defconfigs were the previous step, from an evolutionary point of view.
-Arm64 has a single defconfig.  All dependencies must be expressed in
-Kconfig.  I can take arm64/defconfig, remove support for other SoC families,
-and I'll have a good kernel for my hardware, without bagage I don't need.
-Without these dependencies, I have to remove lots and lots of drivers
-I won't need.
+> That is more common way to guard internal header files.
+> 
+> Thanks
+> 
 
-If you want to compile drivers for hardware that cannot be present, use
-COMPILE_TEST=y.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
