@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3CE617BCB1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:29:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5632517BC4D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:07:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hs1B26lesMIvUN7diRFTW8MNAQxVMhc+eSkculzEwgs=; b=GMkemgKKRnyG92
-	jCKWqHd6hUDKlcUwW1K9qQ7D4lfM1r/Yys7g0DT6iEkv4FhwKlfjXgI8fSiU38m1qjC3Jpa1SRguw
-	plvQahNNSiPLcGxMBIJGG/pyFhafNsaAMDL0rzIv1KnKjOwP1vr6z4e3Gz6i8wwSgn4ITwzGYYxFb
-	9ZhhkteOK9vUeUlb9vzuhmdBcx+eNfSYHsYZFU198Hzq3m8hFUByCPmnEm3d8Hank0UY7/Msphr67
-	2wOPBDtsUaFHxY34zclNYYPEpREnjgMhU1iL49XFfg1/03C8VGEMKvzOqi/fpuStL0WLRltXdqhoN
-	2/AX3OiYdqDD5gRXVi1g==;
+	List-Owner; bh=UqM2zCj9sb9dgmde+sLKnz2iiIe8zWSxnZCseRrS8Nw=; b=UQlCBKryBpXz0a
+	FpotSEc4D6ci1QjBvRICv+u0KWLeGy/4N4qUdsW/C0fkCC6kyfkHHpv8DL3O5mqPDYpivfeh8QpPG
+	CR5zzAAZ5wgyAK832lIgAjTVUdBfyfbbSIloijVTBkMUJlHHpD6chNcc3LymlvZnMSbYUZfv6Qdkz
+	F8O6zRTwS0TAaEcuFxxKo1Jp7Z8i5mwawFF6iG5WXHSx8g6zxlTNKVpVdvcX4kDchWCEcooxctUbD
+	WW0xUpkiqXSQQxOxdz7OTtJUDvXrDfeoWfqYanMGdoZsDcCzQ3Pt5vxQhZH9rIL6cWNpu+UfJkt4S
+	1Dbnq0/ESvsskSPnLteA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAC6S-0007MB-Lk; Fri, 06 Mar 2020 12:29:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAC6K-0007LY-VB
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 12:29:14 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BAB152072A;
- Fri,  6 Mar 2020 12:29:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583497752;
- bh=d17V1gYzsp+fRg5i888PyT+fPs0MnH0tdgO0t6VHh5c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=t8BQ8YdbCK8NYU8ae8N+ekQAjgvaSQzA7GVKOg+FTl8RTt2VhDRHXrOS8WVRJe5Qs
- VKqUVw49sgIRfZ+yXYduMabcWYcoW/+Z16RanU9qF4gjAdeZ9POw8jLj/Nyaw+lLN1
- d+jW+ooS7YNAzqqMGQgAS8GB1DZJ+4fEGz9EpTWY=
-Date: Fri, 6 Mar 2020 11:36:52 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH] Revert "tty: serial: samsung_tty: build it for any
- platform"
-Message-ID: <20200306103652.GA3634389@kroah.com>
-References: <20200306102301.16870-1-geert+renesas@glider.be>
+	id 1jABkp-0007AK-NO; Fri, 06 Mar 2020 12:06:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jABkg-00079q-SP
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 12:06:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF38D31B;
+ Fri,  6 Mar 2020 04:06:49 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A8CC3F6C4;
+ Fri,  6 Mar 2020 04:06:48 -0800 (PST)
+Date: Fri, 6 Mar 2020 12:06:46 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Subject: Re: [PATCH v2 4/4] cpuidle: psci: Allow WFI to be the only state for
+ the hierarchical topology
+Message-ID: <20200306120646.GB44221@bogus>
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
+ <20200303203559.23995-5-ulf.hansson@linaro.org>
+ <20200304122312.GE25004@bogus>
+ <CAPDyKFpcN-p6sKqB0ujHAY29qPSg7qpSjYGymPaJ4W8jgCKGcg@mail.gmail.com>
+ <20200305162321.GB53631@bogus>
+ <CAPDyKFogjPG+mRsfPaxN7RjB7TQL9=qHNzA=K_t0F6M6Q9-TuA@mail.gmail.com>
+ <20200306100431.GA16541@bogus>
+ <CA+M3ks764moVU2h9iZJuN6B-e4wBUMymBfPnob_zraf50xqezA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200306102301.16870-1-geert+renesas@glider.be>
+In-Reply-To: <CA+M3ks764moVU2h9iZJuN6B-e4wBUMymBfPnob_zraf50xqezA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_042913_029707_333D5F31 
-X-CRM114-Status: GOOD (  20.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200306_040650_963091_29234368 
+X-CRM114-Status: GOOD (  19.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,68 +70,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 06, 2020 at 11:23:01AM +0100, Geert Uytterhoeven wrote:
-> This reverts commit 175b558d0efb8b4f33aa7bd2c1b5389b912d3019.
-> 
-> When the user configures a kernel without support for Samsung SoCs, it
-> makes no sense to ask the user about enabling "Samsung SoC serial
-> support", as Samsung serial ports can only be found on Samsung SoCs.
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
->  drivers/tty/serial/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> index 880b962015302dca..932ad51099deae7d 100644
-> --- a/drivers/tty/serial/Kconfig
-> +++ b/drivers/tty/serial/Kconfig
-> @@ -237,6 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
->  
->  config SERIAL_SAMSUNG
->  	tristate "Samsung SoC serial support"
-> +	depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
->  	select SERIAL_CORE
->  	help
->  	  Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
+On Fri, Mar 06, 2020 at 11:47:40AM +0100, Benjamin Gaignard wrote:
+> Le ven. 6 mars 2020 =E0 11:04, Sudeep Holla <sudeep.holla@arm.com> a =E9c=
+rit :
+> >
+> > On Fri, Mar 06, 2020 at 10:28:10AM +0100, Ulf Hansson wrote:
+> > > On Thu, 5 Mar 2020 at 17:23, Sudeep Holla <sudeep.holla@arm.com> wrot=
+e:
+> > > >
+> >
+> > [...]
+> >
+> > > > OK. The only state that cluster can enter when CPUs are in WFI are
+> > > > cluster WFI and most hardware can handle it automatically. I don't =
+see
+> > > > the need to do any extra work for that.
+> > >
+> > > This isn't about cluster WFI, but about deeper cluster states, such as
+> > > a cluster-clock-gated-state and a cluster-power-off-state. It's an ST
+> > > platform, which Benjamin is working on.
+> > >
+> >
+> > Then definitely something is completely wrong. You can't enter deeper
+> > cluster states(clock-gated and power-off to be specific) with CPU in
+> > just WFI state. So, if the attempt here is to enter those states, I
+> > disagree with the change.
+> >
+> > Benjamin, please share the complete hierarchical topology for your plat=
+form.
+>
+> The platform is stm32mp157 SoC which embedded two Cortex A7 in one cluste=
+r.
 
-{sigh}
+Hang on a minute, is this the same platform where you wanted high
+resolution timer and were hacking moving dirty tricks around[1]. Now I think
+you have landed here.
 
-No, I don't want this.  My "goal" is to be able to get rid of all of the
-crazy "PLAT_*" symbols as they make it impossible to build a single
-kernel that supports multiple ARM64 systems.
+> I would like to be able to put the system in a state where clocks of CPUs=
+ and
+> hardware blocks are gated. In this state local timer are off.
 
-As an example of just such a system, see the 5.4 tree here:
-	https://android.googlesource.com/kernel/common/+/refs/heads/android-5.4
-it is now building and booting on multiple SoCs.
+Sure, please create a deeper CPU state than WFI and enter so that the CPU
+state is saved and restored correctly. What is the problem doing that ?
 
-But yes, it still does have to enable some PLAT_* config options, but
-the goal is to not have to do that eventually.
+> The platform should be allowed to go in this state when the devices
+> within the power domain are pm_runtime_suspend and the CPUs in WFI.
 
-There is no reason that we need vendor-specific config options just to
-lump random drivers into, like serial drivers.  If the hardware is not
-present, the driver will just not bind to the hardware, and all is fine.
+Nope, we don't save and restore state when we enter/exit WFI. And hence
+we can't allow deeper idle states in the hierarchy. No more discussion
+on that.
 
-Just like x86, we don't have this issue there, and ARM64 should also not
-have this.
+> In DT I have one system power domain where the hardware blocks (i2,
+> uart; spi, etc..) are attached + a power per CPU.
 
-Sorry for delay in writing this back to the original thread where you
-objected to the original patch, it's still in my review queue along with
-a ton of other serial patches.
+You really need a CPU idle state here.
 
-thanks,
+--
+Regards,
+Sudeep
 
-greg k-h
+[1] https://lore.kernel.org/linux-arm-kernel/a42dd20677cddd8d09ea91a369a4e1=
+0b@www.loen.fr/
 
 _______________________________________________
 linux-arm-kernel mailing list
