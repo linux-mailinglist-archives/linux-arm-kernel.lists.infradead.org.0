@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE11617B5B9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 05:35:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C65717B5BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 05:35:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S6fZoRpGeXUUuBoXEF29hRVoBc4kIgYmWcjwQ+l1RRU=; b=FEr5LvCeQ7XPid
-	I7K3pfHwiHXgeEX9IPYRCruuyXaKVSPBo4yEU34fJfc1fdUScJLgGvEuUldYqTPNWOekJL3GLInSR
-	LMrW8hHOZNSXynPC70gdXO9e5U0D0eAO5aguQQZ5ptBILrFU6sRPCa2lVdGbVS1GL8EemOVlXENb8
-	VA7Y8GZUNQ4w0ieAhqMEbhZQaj1FUfOyHQfv7I19tRXaeZzkLdPcpJjO9xxwMwo9gn6qHPgxJmK0b
-	bvi22iMFlWTbNTGL5KpfvKcRO1BgMzVgX4zM8GKvwSlBg++kIrNlnPFSU6gDIbNOtXgpyk//QEpeU
-	3C52P0IZ7GtNRE/rOauQ==;
+	List-Owner; bh=9Z60FhZ0KdF7cmxcthJWrr3I8ZalkUMhgUIaUPfmmdM=; b=h32H1r6ZMVyIcG
+	lQFkZZR2vImz4EmuQnMdHZXe9/k9ocY1GrjtBPOJAqJbIhA7Fe6U0Wv57nbgj6ae0gEkgl0kq/guZ
+	3N4kBjk+ph1Je8cTysH7sxn2Fzo/8iObhWSNpYkQsnuoFWtGqIV99/wvopkCXhkxRwwD6YyAnO2T5
+	6rE42UtUufp6IH1ZJZxYx7qTuGcn71d6ce38K2c3yt7mKkKuXASbVhEjLR3sPexI8JF4YCV4UoccQ
+	OBZjeCAEs42f2cxLqalcTSLtnfi9TIJF7K1ReSYsykGPuIZcEUtPJNcncvJfNe5XP+NgoG4zkpgBU
+	EKP3hzISxJ+Q3kQz4G7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA4hY-00081P-J4; Fri, 06 Mar 2020 04:35:08 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1jA4i0-0001Ao-Ua; Fri, 06 Mar 2020 04:35:36 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA4bj-0002wd-0u
+ id 1jA4bk-0002yM-Oz
  for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 04:29:20 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id d79so38594ywd.2
+Received: by mail-yw1-xc41.google.com with SMTP id d79so38642ywd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Mar 2020 20:29:06 -0800 (PST)
+ Thu, 05 Mar 2020 20:29:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=miNN8i4IwcvOjiB/qs3BU+cs0LOJ0WZgNaPZTHxNf20=;
- b=eslwFNq4PwCC6+Z4KsPepXRVMSQtjU60CJu4GIG6B7Jnm4GZgJE8XkeUHt+m8sYvds
- Vb3v8FWdY/Hm7Tzv2QWOSvmxWCRZA1Q1yD2R6rTHqF0WUw8XWuYnojK+8Gzhbvnty8b1
- 4FvH9hKarM9faVP8AInLEsBWcB7CTrpeDbz8B+hwcTyTXoHH1F9L2iAZtZOdn8xNMZcd
- U0qjD73Dgm3vDJkC8eBdPh7pIcbBn++HjfXSEfbn8Eu+1PLU70HJ3MKuMjeyjdKnjrrX
- WG6/hgDgSof0z3abT9dUiOIGO0mE3Pt9dt2vYe6ncLAoY1prfQBYsXM42eiTP9qihY8l
- C40A==
+ bh=yRfDYcfz4PClGgSHNiGQSObIaHKPYjVoLJsVmUvy8Lo=;
+ b=OXDXHwpEpqm9D6EcBAAjatlE+DkIqArtmlE79u330SGvIljyyQS5qNc8upKinTIUFS
+ 2rVoFnb4MEcaWdeNW4ZLBTNsSq4JgxMVEwAAFjzXvkl31MSvgkWqP+ZGX1CyrF+flEY3
+ b7hSc7mD3NO11fAQX5vLYMveEjpzSvfcyULcFMrpq+ZL0oB7vA9bFxwQeobDEZ8P1WUz
+ sWq99rV4yu0jDyj8aWwi3hCgBT6QrkXNhljWXdm+57lPXotGyvyecDybaMHut2cUCoYm
+ ksiCCYCTqPFmR0IGa5hOny86DRJUr0yOif35Wc1WpAufYd5NlFH7UeLFEvyEMDax3aYw
+ GTng==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=miNN8i4IwcvOjiB/qs3BU+cs0LOJ0WZgNaPZTHxNf20=;
- b=Oh+wPmFfbaEVx8pZ1VvTjvcJuvIJdBxUYwOp7VwlWR8cwo0UjxCyFFp+rov0JBaoXd
- NGyQc8hF1eF4hYT26LdbNfMtzZfLzre0hUHwqQaRAEVOSGzhQyCFh5+cmY4dsE6SOABG
- TdQalm0JJYa+pTwA/67lhPY3VRyf/qjB/f1pj8UvDnwLI99JvI4hUlVNUyQ/zR+iVr78
- 7EebuI9NEJ+9LTEP/ePQ3PiRL0dbhRD2X1JP21uNPyM8cUV4ltz0BzcmTPOUrRP0eGiS
- pHVKWQtiTk33gG+ThZ3g+SXyRWdFFUZ4Ni2L0cAZNAYSHwmXeRp7HbP4zgyNlU631y8w
- SbKQ==
-X-Gm-Message-State: ANhLgQ2pAhsda9Fv1biteKlIB0gQplC3ANnZq5mB/XcvEQlv6xM1yvya
- Ezae7Ah/MMTuGOkd+CYRvQpiIA==
-X-Google-Smtp-Source: ADFU+vvvxCEfuf1gOKNFIP8+FrNcl9hJa0D2HXoL/aVi6uaZ18AjxRORPUKqhxu509Q6FwPA0HW7Tg==
-X-Received: by 2002:a81:49c5:: with SMTP id w188mr2205995ywa.186.1583468945849; 
- Thu, 05 Mar 2020 20:29:05 -0800 (PST)
+ bh=yRfDYcfz4PClGgSHNiGQSObIaHKPYjVoLJsVmUvy8Lo=;
+ b=KAyb+AShTk0lqEppqkiTnEO4izs/VdtRalo1t8kWhrUoN0zUOxqIN+uU62c7pBTSwz
+ thPB8T9M/0gVhiAdqVRqCC1LsuTndP3j2758j31oGNoBhrf4S59KGkSPeSq5ETy0CrCf
+ PJPP3VCg2qdtLgG9C2zDPqtjRSNcLhLz8N+QtbR1hzqmP66Y29u32IBDuxcfE2k5eDvn
+ xfAI3MbOYQl7ZDh9rMEj/hByCWufOOCIpdNIMb1/BkaKt2rE2Fkd7ACgvlFsFdwpJ4U6
+ +/SBbVaCTMUzdVpVZJPoIAfwYchPp9hABMIn7VAfNhMB+fPGJ0NrKaI7pi6/ilMV9jQp
+ x+WQ==
+X-Gm-Message-State: ANhLgQ04KL+mXG7ELBFUZYPgy/kdy0cSLFNfo9Ur4n3IU7ZBNQnO71j8
+ dnX95tMYlXZ7V9rwZtL42d/owA==
+X-Google-Smtp-Source: ADFU+vtbD6s3KdGkoHIR3Jf3W+cODKnwpaKznF0IhVNkYrhsjL5c3tCJAgWOSqj4enQpmdrmxj8CdA==
+X-Received: by 2002:a81:6c06:: with SMTP id h6mr2166065ywc.302.1583468947687; 
+ Thu, 05 Mar 2020 20:29:07 -0800 (PST)
 Received: from presto.localdomain (c-73-185-129-58.hsd1.mn.comcast.net.
  [73.185.129.58])
- by smtp.gmail.com with ESMTPSA id x2sm12581836ywa.32.2020.03.05.20.29.04
+ by smtp.gmail.com with ESMTPSA id x2sm12581836ywa.32.2020.03.05.20.29.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Mar 2020 20:29:05 -0800 (PST)
+ Thu, 05 Mar 2020 20:29:07 -0800 (PST)
 From: Alex Elder <elder@linaro.org>
 To: David Miller <davem@davemloft.net>,
 	Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH v2 15/17] soc: qcom: ipa: support build of IPA code
-Date: Thu,  5 Mar 2020 22:28:29 -0600
-Message-Id: <20200306042831.17827-16-elder@linaro.org>
+Subject: [PATCH v2 16/17] MAINTAINERS: add entry for the Qualcomm IPA driver
+Date: Thu,  5 Mar 2020 22:28:30 -0600
+Message-Id: <20200306042831.17827-17-elder@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200306042831.17827-1-elder@linaro.org>
 References: <20200306042831.17827-1-elder@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_202907_113595_396E621C 
-X-CRM114-Status: GOOD (  14.60  )
+X-CRM114-CacheID: sfid-20200305_202908_844392_D5926D6A 
+X-CRM114-Status: GOOD (  10.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,86 +115,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add build and Kconfig support for the Qualcomm IPA driver.
+Add an entry in the MAINTAINERS file for the Qualcomm IPA driver
 
 Signed-off-by: Alex Elder <elder@linaro.org>
 ---
- drivers/net/Kconfig      |  2 ++
- drivers/net/Makefile     |  1 +
- drivers/net/ipa/Kconfig  | 19 +++++++++++++++++++
- drivers/net/ipa/Makefile | 12 ++++++++++++
- 4 files changed, 34 insertions(+)
- create mode 100644 drivers/net/ipa/Kconfig
- create mode 100644 drivers/net/ipa/Makefile
+ MAINTAINERS | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/net/Kconfig b/drivers/net/Kconfig
-index 66e410e58c8e..02565bc2be8a 100644
---- a/drivers/net/Kconfig
-+++ b/drivers/net/Kconfig
-@@ -444,6 +444,8 @@ source "drivers/net/fddi/Kconfig"
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 2ec6a539fa42..e8666f980a21 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -13662,6 +13662,12 @@ L:	alsa-devel@alsa-project.org (moderated for non-subscribers)
+ S:	Supported
+ F:	sound/soc/qcom/
  
- source "drivers/net/hippi/Kconfig"
- 
-+source "drivers/net/ipa/Kconfig"
++QCOM IPA DRIVER
++M:	Alex Elder <elder@kernel.org>
++L:	netdev@vger.kernel.org
++S:	Supported
++F:	drivers/net/ipa/
 +
- config NET_SB1000
- 	tristate "General Instruments Surfboard 1000"
- 	depends on PNP
-diff --git a/drivers/net/Makefile b/drivers/net/Makefile
-index 65967246f240..94b60800887a 100644
---- a/drivers/net/Makefile
-+++ b/drivers/net/Makefile
-@@ -47,6 +47,7 @@ obj-$(CONFIG_ETHERNET) += ethernet/
- obj-$(CONFIG_FDDI) += fddi/
- obj-$(CONFIG_HIPPI) += hippi/
- obj-$(CONFIG_HAMRADIO) += hamradio/
-+obj-$(CONFIG_QCOM_IPA) += ipa/
- obj-$(CONFIG_PLIP) += plip/
- obj-$(CONFIG_PPP) += ppp/
- obj-$(CONFIG_PPP_ASYNC) += ppp/
-diff --git a/drivers/net/ipa/Kconfig b/drivers/net/ipa/Kconfig
-new file mode 100644
-index 000000000000..b8cb7cadbf75
---- /dev/null
-+++ b/drivers/net/ipa/Kconfig
-@@ -0,0 +1,19 @@
-+config QCOM_IPA
-+	tristate "Qualcomm IPA support"
-+	depends on ARCH_QCOM && 64BIT && NET
-+	select QCOM_QMI_HELPERS
-+	select QCOM_MDT_LOADER
-+	default QCOM_Q6V5_COMMON
-+	help
-+	  Choose Y or M here to include support for the Qualcomm
-+	  IP Accelerator (IPA), a hardware block present in some
-+	  Qualcomm SoCs.  The IPA is a programmable protocol processor
-+	  that is capable of generic hardware handling of IP packets,
-+	  including routing, filtering, and NAT.  Currently the IPA
-+	  driver supports only basic transport of network traffic
-+	  between the AP and modem, on the Qualcomm SDM845 SoC.
-+
-+	  Note that if selected, the selection type must match that
-+	  of QCOM_Q6V5_COMMON (Y or M).
-+
-+	  If unsure, say N.
-diff --git a/drivers/net/ipa/Makefile b/drivers/net/ipa/Makefile
-new file mode 100644
-index 000000000000..afe5df1e6eee
---- /dev/null
-+++ b/drivers/net/ipa/Makefile
-@@ -0,0 +1,12 @@
-+# Un-comment the next line if you want to validate configuration data
-+#ccflags-y		+=	-DIPA_VALIDATE
-+
-+obj-$(CONFIG_QCOM_IPA)	+=	ipa.o
-+
-+ipa-y			:=	ipa_main.o ipa_clock.o ipa_reg.o ipa_mem.o \
-+				ipa_table.o ipa_interrupt.o gsi.o gsi_trans.o \
-+				ipa_gsi.o ipa_smp2p.o ipa_uc.o \
-+				ipa_endpoint.o ipa_cmd.o ipa_modem.o \
-+				ipa_qmi.o ipa_qmi_msg.o
-+
-+ipa-y			+=	ipa_data-sdm845.o ipa_data-sc7180.o
+ QEMU MACHINE EMULATOR AND VIRTUALIZER SUPPORT
+ M:	Gabriel Somlo <somlo@cmu.edu>
+ M:	"Michael S. Tsirkin" <mst@redhat.com>
 -- 
 2.20.1
 
