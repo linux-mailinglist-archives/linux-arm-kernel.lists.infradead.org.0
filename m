@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D251C17BF11
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:37:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F36117BF13
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 14:37:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ctPx58G0TCP6bVsYuRPPb1S5ohE2EpNBRY3l8IKgpQ=; b=eONz7FUsq2/cHp
-	BdBRmJIIG1TLBmg6AYvQprWLDdrGBj0n3OPRpr3gaARojB0TH68GjJZRIMUj1ocbPMZZbBBMiaZ3r
-	yErOyDPhJ1EP/4K7A9kM+ZewgByPJzRFKnVKUpMfi1gMJGnnVEPHgfVaJF9PXZJVwQpD5aUwz+1oS
-	sq/Utk3Laljq9JbvexSRRhRg1luJZt6kMdHBibTfTB11beL+VUsE1kcCZQBLJel4h70Mb2Bpc4M34
-	ugp/GHbRsTFXpV26YwyP329Uh1KPsFJZRufJo/Uk1MO5GyGUn4cuOpD8/dE+djb+Jjm7WzdMHF39M
-	0U/jqwc2ha6qBwlW0whA==;
+	List-Owner; bh=KC1p68qj582YeQmg3u5FVPS6kyqHd0UF1XpGa3niJVs=; b=QbRpC8RdvLwB+A
+	tE/G7Xz/udRIXQ6ztrXWQutQ8S1vVFdIQQkexEpkl39PTsMRiY5ZrHV1BE4q+2RkSgdfZ/qiwQOeo
+	o75TAkYmGBGGEgAU8q+SBHfpd669dADcUM+XxN83sQziCW+UTA4ltUuP7vPmZPJZvJI/efhRJ3+vo
+	Jhzd7A13mGBFJWEgLTe8CbXO+MCgEJN9hE+Hk9mQsTQWHuJBNNV0sefHvISn7Ck5eDLUFDXpK4N/F
+	rN1YEVSA1tvNs505vfLPlWwdwhmcrlTett38LnlfIT0ova5dLr8pBKiTt+MQltWBWM6hJOoL8kqYI
+	yv0NHAgumDo87kS8BAWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jADAQ-0001Lf-8R; Fri, 06 Mar 2020 13:37:30 +0000
+	id 1jADAi-0001bB-7P; Fri, 06 Mar 2020 13:37:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAD6i-0004wl-5t
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:33:42 +0000
+ id 1jAD6k-0004zH-TR
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 13:33:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48DA231B;
- Fri,  6 Mar 2020 05:33:39 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E0AA1063;
+ Fri,  6 Mar 2020 05:33:42 -0800 (PST)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6D45D3F6CF;
- Fri,  6 Mar 2020 05:33:36 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F30B3F6CF;
+ Fri,  6 Mar 2020 05:33:39 -0800 (PST)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH v2 15/20] arm64: Introduce asm/common/arch_timer.h
-Date: Fri,  6 Mar 2020 13:32:37 +0000
-Message-Id: <20200306133242.26279-16-vincenzo.frascino@arm.com>
+Subject: [PATCH v2 16/20] mips: vdso: Enable mips to use common headers
+Date: Fri,  6 Mar 2020 13:32:38 +0000
+Message-Id: <20200306133242.26279-17-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306133242.26279-1-vincenzo.frascino@arm.com>
 References: <20200306133242.26279-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_053340_357635_E1D89250 
-X-CRM114-Status: GOOD (  17.22  )
+X-CRM114-CacheID: sfid-20200306_053343_070786_097A1504 
+X-CRM114-Status: GOOD (  15.03  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,14 +64,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Nick Desaulniers <ndesaulniers@google.com>,
+Cc: Nick Desaulniers <ndesaulniers@google.com>,
  Dmitry Safonov <0x7f454c46@gmail.com>, Kees Cook <keescook@chromium.org>,
  Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Russell King <linux@armlinux.org.uk>, Mark Salyzyn <salyzyn@android.com>,
- Paul Burton <paul.burton@mips.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Burton <paulburton@kernel.org>,
+ Will Deacon <will.deacon@arm.com>, Russell King <linux@armlinux.org.uk>,
+ Mark Salyzyn <salyzyn@android.com>, Paul Burton <paul.burton@mips.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>,
  Peter Collingbourne <pcc@google.com>, Andrei Vagin <avagin@openvz.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -79,185 +79,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The vDSO library should only include the necessary headers required for
-a userspace library (UAPI and a minimal set of kernel headers). To make
-this possible it is necessary to isolate from the kernel headers the
-common parts that are strictly necessary to build the library.
+Enable mips to use only the common headers in the implementation of
+the vDSO library.
 
-Introduce asm/common/arch_timer.h to contain all the arm64 specific
-code. This allows to replace the second isb() in __arch_get_hw_counter()
-with a fake dependent stack read of the counter which improves the vdso
-library peformances of ~4.5%. Below the results of vdsotest [1] ran for
-100 iterations.
-
-Before the patch:
-=================
-clock-gettime-monotonic: syscall: 771 nsec/call
-clock-gettime-monotonic:    libc: 130 nsec/call
-clock-gettime-monotonic:    vdso: 111 nsec/call
-...
-clock-gettime-realtime: syscall: 762 nsec/call
-clock-gettime-realtime:    libc: 130 nsec/call
-clock-gettime-realtime:    vdso: 111 nsec/call
-
-After the patch:
-================
-clock-gettime-monotonic: syscall: 792 nsec/call
-clock-gettime-monotonic:    libc: 124 nsec/call
-clock-gettime-monotonic:    vdso: 106 nsec/call
-...
-clock-gettime-realtime: syscall: 776 nsec/call
-clock-gettime-realtime:    libc: 124 nsec/call
-clock-gettime-realtime:    vdso: 106 nsec/call
-
-[1] https://github.com/nathanlynch/vdsotest
-
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
+Cc: Paul Burton <paulburton@kernel.org>
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/arm64/include/asm/arch_timer.h        | 29 ++++---------------
- arch/arm64/include/asm/common/arch_timer.h | 33 ++++++++++++++++++++++
- arch/arm64/include/asm/vdso/gettimeofday.h |  7 +++--
- 3 files changed, 42 insertions(+), 27 deletions(-)
- create mode 100644 arch/arm64/include/asm/common/arch_timer.h
+ arch/mips/include/asm/common/processor.h  | 27 +++++++++++++++++++++++
+ arch/mips/include/asm/processor.h         | 16 +-------------
+ arch/mips/include/asm/vdso/gettimeofday.h |  4 ----
+ 3 files changed, 28 insertions(+), 19 deletions(-)
+ create mode 100644 arch/mips/include/asm/common/processor.h
 
-diff --git a/arch/arm64/include/asm/arch_timer.h b/arch/arm64/include/asm/arch_timer.h
-index 7ae54d7d333a..6567e20a76b2 100644
---- a/arch/arm64/include/asm/arch_timer.h
-+++ b/arch/arm64/include/asm/arch_timer.h
-@@ -164,24 +164,7 @@ static inline void arch_timer_set_cntkctl(u32 cntkctl)
- 	isb();
- }
- 
--/*
-- * Ensure that reads of the counter are treated the same as memory reads
-- * for the purposes of ordering by subsequent memory barriers.
-- *
-- * This insanity brought to you by speculative system register reads,
-- * out-of-order memory accesses, sequence locks and Thomas Gleixner.
-- *
-- * http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631195.html
-- */
--#define arch_counter_enforce_ordering(val) do {				\
--	u64 tmp, _val = (val);						\
--									\
--	asm volatile(							\
--	"	eor	%0, %1, %1\n"					\
--	"	add	%0, sp, %0\n"					\
--	"	ldr	xzr, [%0]"					\
--	: "=r" (tmp) : "r" (_val));					\
--} while (0)
-+#include <asm/common/arch_timer.h>
- 
- static __always_inline u64 __arch_counter_get_cntpct_stable(void)
- {
-@@ -189,7 +172,7 @@ static __always_inline u64 __arch_counter_get_cntpct_stable(void)
- 
- 	isb();
- 	cnt = arch_timer_reg_read_stable(cntpct_el0);
--	arch_counter_enforce_ordering(cnt);
-+	cnt = arch_counter_enforce_ordering(cnt);
- 	return cnt;
- }
- 
-@@ -199,7 +182,7 @@ static __always_inline u64 __arch_counter_get_cntpct(void)
- 
- 	isb();
- 	cnt = read_sysreg(cntpct_el0);
--	arch_counter_enforce_ordering(cnt);
-+	cnt = arch_counter_enforce_ordering(cnt);
- 	return cnt;
- }
- 
-@@ -209,7 +192,7 @@ static __always_inline u64 __arch_counter_get_cntvct_stable(void)
- 
- 	isb();
- 	cnt = arch_timer_reg_read_stable(cntvct_el0);
--	arch_counter_enforce_ordering(cnt);
-+	cnt = arch_counter_enforce_ordering(cnt);
- 	return cnt;
- }
- 
-@@ -219,12 +202,10 @@ static __always_inline u64 __arch_counter_get_cntvct(void)
- 
- 	isb();
- 	cnt = read_sysreg(cntvct_el0);
--	arch_counter_enforce_ordering(cnt);
-+	cnt = arch_counter_enforce_ordering(cnt);
- 	return cnt;
- }
- 
--#undef arch_counter_enforce_ordering
--
- static inline int arch_timer_arch_init(void)
- {
- 	return 0;
-diff --git a/arch/arm64/include/asm/common/arch_timer.h b/arch/arm64/include/asm/common/arch_timer.h
+diff --git a/arch/mips/include/asm/common/processor.h b/arch/mips/include/asm/common/processor.h
 new file mode 100644
-index 000000000000..b11bd67a366e
+index 000000000000..d2ee5d397d2b
 --- /dev/null
-+++ b/arch/arm64/include/asm/common/arch_timer.h
-@@ -0,0 +1,33 @@
++++ b/arch/mips/include/asm/common/processor.h
+@@ -0,0 +1,27 @@
 +/* SPDX-License-Identifier: GPL-2.0-only */
 +/*
 + * Copyright (C) 2020 ARM Ltd.
 + */
-+#ifndef __ASM_COMMON_ARCH_TIMER_H
-+#define __ASM_COMMON_ARCH_TIMER_H
++#ifndef __ASM_COMMON_PROCESSOR_H
++#define __ASM_COMMON_PROCESSOR_H
 +
-+#include <uapi/linux/types.h>
++#ifndef __ASSEMBLY__
 +
++#ifdef CONFIG_CPU_LOONGSON64
 +/*
-+ * Ensure that reads of the counter are treated the same as memory reads
-+ * for the purposes of ordering by subsequent memory barriers.
++ * Loongson-3's SFB (Store-Fill-Buffer) may buffer writes indefinitely when a
++ * tight read loop is executed, because reads take priority over writes & the
++ * hardware (incorrectly) doesn't ensure that writes will eventually occur.
 + *
-+ * This insanity brought to you by speculative system register reads,
-+ * out-of-order memory accesses, sequence locks and Thomas Gleixner.
-+ *
-+ * http://lists.infradead.org/pipermail/linux-arm-kernel/2019-February/631195.html
-+ *
++ * Since spin loops of any kind should have a cpu_relax() in them, force an SFB
++ * flush from cpu_relax() such that any pending writes will become visible as
++ * expected.
 + */
-+static u64 arch_counter_enforce_ordering(u64 val)
-+{
-+	u64 tmp, _val = (val);
++#define cpu_relax()	smp_mb()
++#else
++#define cpu_relax()	barrier()
++#endif
 +
-+	asm volatile(
-+	"	eor	%0, %1, %1\n"
-+	"	add	%0, sp, %0\n"
-+	"	ldr	xzr, [%0]"
-+	: "=r" (tmp) : "r" (_val));
++#endif /* __ASSEMBLY__ */
 +
-+	return _val;
-+}
-+
-+#endif /* __ASM_COMMON_ARCH_TIMER_H */
-diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/include/asm/vdso/gettimeofday.h
-index cc3456416096..628bb3b187c4 100644
---- a/arch/arm64/include/asm/vdso/gettimeofday.h
-+++ b/arch/arm64/include/asm/vdso/gettimeofday.h
-@@ -8,6 +8,7 @@
++#endif /* __ASM_COMMON_PROCESSOR_H */
+diff --git a/arch/mips/include/asm/processor.h b/arch/mips/include/asm/processor.h
+index 7619ad319400..b7eca25e2066 100644
+--- a/arch/mips/include/asm/processor.h
++++ b/arch/mips/include/asm/processor.h
+@@ -22,6 +22,7 @@
+ #include <asm/dsemul.h>
+ #include <asm/mipsregs.h>
+ #include <asm/prefetch.h>
++#include <asm/common/processor.h>
+ 
+ /*
+  * System setup and hardware flags..
+@@ -385,21 +386,6 @@ unsigned long get_wchan(struct task_struct *p);
+ #define KSTK_ESP(tsk) (task_pt_regs(tsk)->regs[29])
+ #define KSTK_STATUS(tsk) (task_pt_regs(tsk)->cp0_status)
+ 
+-#ifdef CONFIG_CPU_LOONGSON64
+-/*
+- * Loongson-3's SFB (Store-Fill-Buffer) may buffer writes indefinitely when a
+- * tight read loop is executed, because reads take priority over writes & the
+- * hardware (incorrectly) doesn't ensure that writes will eventually occur.
+- *
+- * Since spin loops of any kind should have a cpu_relax() in them, force an SFB
+- * flush from cpu_relax() such that any pending writes will become visible as
+- * expected.
+- */
+-#define cpu_relax()	smp_mb()
+-#else
+-#define cpu_relax()	barrier()
+-#endif
+-
+ /*
+  * Return_address is a replacement for __builtin_return_address(count)
+  * which on certain architectures cannot reasonably be implemented in GCC
+diff --git a/arch/mips/include/asm/vdso/gettimeofday.h b/arch/mips/include/asm/vdso/gettimeofday.h
+index a58687e26c5d..e8ab2fafe067 100644
+--- a/arch/mips/include/asm/vdso/gettimeofday.h
++++ b/arch/mips/include/asm/vdso/gettimeofday.h
+@@ -13,12 +13,8 @@
+ 
  #ifndef __ASSEMBLY__
  
+-#include <linux/compiler.h>
+-#include <linux/time.h>
+-
+ #include <asm/vdso/vdso.h>
+ #include <asm/clocksource.h>
+-#include <asm/io.h>
  #include <asm/unistd.h>
-+#include <asm/common/arch_timer.h>
+ #include <asm/vdso.h>
  
- #define __VDSO_USE_SYSCALL		ULLONG_MAX
- 
-@@ -83,10 +84,10 @@ static __always_inline u64 __arch_get_hw_counter(s32 clock_mode)
- 	isb();
- 	asm volatile("mrs %0, cntvct_el0" : "=r" (res) :: "memory");
- 	/*
--	 * This isb() is required to prevent that the seq lock is
--	 * speculated.#
-+	 * arch_counter_enforce_ordering() is required to prevent that
-+	 * the seq lock is speculated.
- 	 */
--	isb();
-+	res = arch_counter_enforce_ordering(res);
- 
- 	return res;
- }
 -- 
 2.25.1
 
