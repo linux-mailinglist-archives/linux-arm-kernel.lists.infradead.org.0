@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 176A017BA9F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:41:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F259F17BAA5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:42:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xwe+HVqeTXwCKSj2ueST5ZDsNA6bg03Bb5P9zQ7g3L4=; b=a03b+dmAms6m77
-	8IZoVx9EQrClo5y2WhBqxtpcrF84i3U/M4g+vg8i0rrIFWsrvivqo8C7ihaGlRwQiVDW4cn2ciFPP
-	B6Oe45MiL/Idrm6q+mSrAYdKtTH6oiFi6Nay/8Vh47u0izs7mu+FOIHIVqDqYbhiGt28WcXuDjjnU
-	Jc/GNYcG0Pr7nQXpWyOOXEPY5VnvtOQ4AlzUrQmKqiWmAluNTx8lTt+wsEwoaKb4cm3wUjSiK29cY
-	00++V8n4uISwasn8d96Jk9gz+QQCOyAyaCq8rJ5KHgmgCii/p8gckBbSJKB/Oc7OFxac9Xvfmasut
-	XgSJPwrKpqKoP88AN7eg==;
+	List-Owner; bh=06VEoC9cVM8Z/5Cu83q/CvVRY4rFSRxs5SLLL8PzOcs=; b=kGVj86m/AKQfuM
+	Wb52LeN2a492lMrJ/9Ab1UmyCZw+pyCjea3hotnxtamF3c4WhQtEjK3etePjR87cUljdVF4euTLoj
+	6kxZqNXdXiN/v79ck2CnFzSxGBeRZHAtjYamblyd/88yww6wXVG/RJ3j3rD7sAH+g7CFjRAmjf8/t
+	uits3PYY4xltUQygDaU+r5IuY+rluP9qgj991r1z51ZS6OSUVHLZQALzTB/r/SzsM9nqOD2ezO2CC
+	iMN+Z+258c/35s1VNo5FHlIyDxD5Y2UV5n+BtyqC9yJCTrl1pMOiDB5p+dAWtMLKC0yxEH91IVh5Z
+	0ytvu5PQKnCDkGk7wNNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAPo-0002du-Cd; Fri, 06 Mar 2020 10:41:12 +0000
+	id 1jAAQk-0003eA-M1; Fri, 06 Mar 2020 10:42:10 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAO8-00086Z-0H; Fri, 06 Mar 2020 10:39:30 +0000
+ id 1jAAO9-00088E-Rp; Fri, 06 Mar 2020 10:39:32 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 7C308B230;
- Fri,  6 Mar 2020 10:39:26 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id AE761B282;
+ Fri,  6 Mar 2020 10:39:27 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>
-Subject: [PATCH 07/10] mmc: sdhci: am654: Use quirk instead of custom
- set_power()
-Date: Fri,  6 Mar 2020 11:38:52 +0100
-Message-Id: <20200306103857.23962-8-nsaenzjulienne@suse.de>
+Subject: [PATCH 08/10] mmc: sdhci: Unexport sdhci_set_power_noreg()
+Date: Fri,  6 Mar 2020 11:38:53 +0100
+Message-Id: <20200306103857.23962-9-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306103857.23962-1-nsaenzjulienne@suse.de>
 References: <20200306103857.23962-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_023928_351666_8F01E856 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20200306_023930_087795_9DEDDC56 
+X-CRM114-Status: GOOD (  12.15  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,92 +70,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With the introduction of SDHCI_QUIRK2_SET_BUS_VOLTAGE there is no need
-to use a custom set_power() implementation as the quirk takes care of
-configuring the bus voltage register even when powering trough a
-regulator.
+There are no users left and, ideally, it's not a function that should be
+called outside of the core sdhci code.
+
+As sdhci_set_power_reg() depends on sdhci_set_power_noreg() it was moved
+underneath it.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/mmc/host/sdhci_am654.c | 23 ++++++-----------------
- 1 file changed, 6 insertions(+), 17 deletions(-)
+ drivers/mmc/host/sdhci.c | 39 +++++++++++++++++++--------------------
+ drivers/mmc/host/sdhci.h |  2 --
+ 2 files changed, 19 insertions(+), 22 deletions(-)
 
-diff --git a/drivers/mmc/host/sdhci_am654.c b/drivers/mmc/host/sdhci_am654.c
-index 58183b5f4e82..4629596da86a 100644
---- a/drivers/mmc/host/sdhci_am654.c
-+++ b/drivers/mmc/host/sdhci_am654.c
-@@ -255,17 +255,6 @@ static void sdhci_j721e_4bit_set_clock(struct sdhci_host *host,
- 	sdhci_set_clock(host, clock);
+diff --git a/drivers/mmc/host/sdhci.c b/drivers/mmc/host/sdhci.c
+index c7fd87447457..728442b129f4 100644
+--- a/drivers/mmc/host/sdhci.c
++++ b/drivers/mmc/host/sdhci.c
+@@ -1913,25 +1913,7 @@ void sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
  }
+ EXPORT_SYMBOL_GPL(sdhci_set_clock);
  
--static void sdhci_am654_set_power(struct sdhci_host *host, unsigned char mode,
--				  unsigned short vdd)
+-static void sdhci_set_power_reg(struct sdhci_host *host, unsigned char mode,
+-				unsigned short vdd)
 -{
--	if (!IS_ERR(host->mmc->supply.vmmc)) {
--		struct mmc_host *mmc = host->mmc;
+-	struct mmc_host *mmc = host->mmc;
 -
--		mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
+-	mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
+-
+-	if (host->quirks2 & SDHCI_QUIRK2_SET_BUS_VOLTAGE) {
+-		sdhci_set_power_noreg(host, mode, vdd);
+-		return;
 -	}
--	sdhci_set_power_noreg(host, mode, vdd);
+-
+-	if (mode != MMC_POWER_OFF)
+-		sdhci_writeb(host, SDHCI_POWER_ON, SDHCI_POWER_CONTROL);
+-	else
+-		sdhci_writeb(host, 0, SDHCI_POWER_CONTROL);
 -}
 -
- static void sdhci_am654_write_b(struct sdhci_host *host, u8 val, int reg)
+-void sdhci_set_power_noreg(struct sdhci_host *host, unsigned char mode,
++static void sdhci_set_power_noreg(struct sdhci_host *host, unsigned char mode,
+ 			   unsigned short vdd)
  {
- 	unsigned char timing = host->mmc->ios.timing;
-@@ -321,7 +310,6 @@ static struct sdhci_ops sdhci_am654_ops = {
- 	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
- 	.set_uhs_signaling = sdhci_set_uhs_signaling,
- 	.set_bus_width = sdhci_set_bus_width,
--	.set_power = sdhci_am654_set_power,
- 	.set_clock = sdhci_am654_set_clock,
- 	.write_b = sdhci_am654_write_b,
- 	.irq = sdhci_am654_cqhci_irq,
-@@ -331,7 +319,8 @@ static struct sdhci_ops sdhci_am654_ops = {
- static const struct sdhci_pltfm_data sdhci_am654_pdata = {
- 	.ops = &sdhci_am654_ops,
- 	.quirks = SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
--	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN,
-+	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN |
-+		   SDHCI_QUIRK2_SET_BUS_VOLTAGE,
- };
+ 	u8 pwr = 0;
+@@ -2003,7 +1985,24 @@ void sdhci_set_power_noreg(struct sdhci_host *host, unsigned char mode,
+ 			mdelay(10);
+ 	}
+ }
+-EXPORT_SYMBOL_GPL(sdhci_set_power_noreg);
++
++static void sdhci_set_power_reg(struct sdhci_host *host, unsigned char mode,
++				unsigned short vdd)
++{
++	struct mmc_host *mmc = host->mmc;
++
++	mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
++
++	if (host->quirks2 & SDHCI_QUIRK2_SET_BUS_VOLTAGE) {
++		sdhci_set_power_noreg(host, mode, vdd);
++		return;
++	}
++
++	if (mode != MMC_POWER_OFF)
++		sdhci_writeb(host, SDHCI_POWER_ON, SDHCI_POWER_CONTROL);
++	else
++		sdhci_writeb(host, 0, SDHCI_POWER_CONTROL);
++}
  
- static const struct sdhci_am654_driver_data sdhci_am654_drvdata = {
-@@ -344,7 +333,6 @@ static struct sdhci_ops sdhci_j721e_8bit_ops = {
- 	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
- 	.set_uhs_signaling = sdhci_set_uhs_signaling,
- 	.set_bus_width = sdhci_set_bus_width,
--	.set_power = sdhci_am654_set_power,
- 	.set_clock = sdhci_am654_set_clock,
- 	.write_b = sdhci_am654_write_b,
- 	.irq = sdhci_am654_cqhci_irq,
-@@ -354,7 +342,8 @@ static struct sdhci_ops sdhci_j721e_8bit_ops = {
- static const struct sdhci_pltfm_data sdhci_j721e_8bit_pdata = {
- 	.ops = &sdhci_j721e_8bit_ops,
- 	.quirks = SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
--	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN,
-+	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN |
-+		   SDHCI_QUIRK2_SET_BUS_VOLTAGE,
- };
- 
- static const struct sdhci_am654_driver_data sdhci_j721e_8bit_drvdata = {
-@@ -367,7 +356,6 @@ static struct sdhci_ops sdhci_j721e_4bit_ops = {
- 	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
- 	.set_uhs_signaling = sdhci_set_uhs_signaling,
- 	.set_bus_width = sdhci_set_bus_width,
--	.set_power = sdhci_am654_set_power,
- 	.set_clock = sdhci_j721e_4bit_set_clock,
- 	.write_b = sdhci_am654_write_b,
- 	.irq = sdhci_am654_cqhci_irq,
-@@ -377,7 +365,8 @@ static struct sdhci_ops sdhci_j721e_4bit_ops = {
- static const struct sdhci_pltfm_data sdhci_j721e_4bit_pdata = {
- 	.ops = &sdhci_j721e_4bit_ops,
- 	.quirks = SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
--	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN,
-+	.quirks2 = SDHCI_QUIRK2_PRESET_VALUE_BROKEN |
-+		   SDHCI_QUIRK2_SET_BUS_VOLTAGE,
- };
- 
- static const struct sdhci_am654_driver_data sdhci_j721e_4bit_drvdata = {
+ void sdhci_set_power(struct sdhci_host *host, unsigned char mode,
+ 		     unsigned short vdd)
+diff --git a/drivers/mmc/host/sdhci.h b/drivers/mmc/host/sdhci.h
+index 9531a4e5b148..330557434519 100644
+--- a/drivers/mmc/host/sdhci.h
++++ b/drivers/mmc/host/sdhci.h
+@@ -774,8 +774,6 @@ void sdhci_set_clock(struct sdhci_host *host, unsigned int clock);
+ void sdhci_enable_clk(struct sdhci_host *host, u16 clk);
+ void sdhci_set_power(struct sdhci_host *host, unsigned char mode,
+ 		     unsigned short vdd);
+-void sdhci_set_power_noreg(struct sdhci_host *host, unsigned char mode,
+-			   unsigned short vdd);
+ void sdhci_request(struct mmc_host *mmc, struct mmc_request *mrq);
+ void sdhci_set_bus_width(struct sdhci_host *host, int width);
+ void sdhci_reset(struct sdhci_host *host, u8 mask);
 -- 
 2.25.1
 
