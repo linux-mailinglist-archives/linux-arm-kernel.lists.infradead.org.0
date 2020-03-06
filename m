@@ -2,114 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CB5217BC82
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:17:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CECDE17BCC7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:31:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8vViamgiSt4KrD+0d4oo3GPV0FdawhDWA6uz8pamKFA=; b=WCav49AVBAkZ42
-	wiGVpRAN0OpNXycghO3jBRtbeKeyd2lC1YtOr/p59VoKcd1feP8s7xFC52W2vlQVmlLXiOd33AX9E
-	fLSYDzWlN7jb2UgY+0Cu41i5e98eXTA4P+MbPiF2yST1HywXYGI+n5NL/5/LNSEzDXe9w2TlMdarc
-	kFA9G0jp/PO5f0ANg0A2D+qJbSDYJNxq0nYaSR+yHrQ2ShxKvme5SNyhEm8TD9icC/eTgR+h5QKU4
-	UbABSFaYhI2N4XRRHM8ihbYXTnbXLVOOCglvs1L9uDXYyH3UFjLvvsi0wihgyt0e3uJ++JbxlY6/G
-	bS4Yvud1cWm+oWG1FLQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qanVXLyqhPcp75SC08/BSkmV+oQpEIt44uYs4ujxXu8=; b=k4m/NnpiPw4ZOMYgxTas3SKqi
+	Xh1R09UYj0Emi0cZ47ayQSNqBo38BY/Mbcy+WLQ/yB8HXxMTcAnyXAq1WPZXn/A7vmtI/QnSgBNQ0
+	TOV2Ae60tg1hiYnTWhHckHe8qFD1S9iXC0/x+NbRihlT0rL+4EvZXwWuvWwvgCL71dFMxGLilURMr
+	EeiSFyu6Ra4YVlMaqNtrOjVKFrL5QB5q9vq+c807WVhJZSmmihG9Dew3agq8HrD8KyqzmzJt00L26
+	kuTd+MMh8nhuiBdOJGZLVoLMt8GrzWVpCwX9i/Y0HNiLg6Ext66ue6K6rxAuCONUHS5aBkyVCzIU3
+	hUcfcoBjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jABuW-000388-OV; Fri, 06 Mar 2020 12:17:00 +0000
-Received: from mail-eopbgr80101.outbound.protection.outlook.com
- ([40.107.8.101] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jAC8Q-0000de-DM; Fri, 06 Mar 2020 12:31:22 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jABuQ-00037P-8G
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 12:16:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NlUiXieJ2mpaPBKIVrRIKlWwSfqe05vM3xlxOrfbXntnBiLY8ZPusaFbrkcTTY/IrhWocFqMsZ4OKmpu+L73uYQ+tBlcc3GvE5xjlgkAC2LoAGfMTny/0n9zbI6FZMmMABsAYZ/KIMspzbkL0UH7WSJf+nXYtFPHZ/TPJZPgFn17GiRTEo+BXSCMCFI7sf0bhY0XK8HEp9ChPsSqYB/6mgsTtXfiDIGFsZdd8SDD4VxeQjK8xVzs7y/xCreCW03fR8nEbLlr4v2FOghyrNI9bbfghelw1V/99r28VbOfUJJtga9KpobkAo2l+ETMW4NcH5MRw6XVz1gm+SciPUBLGw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+E09GbmJqS9ei2PnP7pEqRYGj6enrrTw4hH06mXQHiw=;
- b=SkSDaP8jGJMzcnAvJoMT0KVs8gP0WC7pewIREO+BCrGj9Nf2uoQAbedzNRZ275S8FDnaTm7TAZuu+JqFgih01nvihbGNE441VRjXh7kMWNjuZGTb/4i83DR3ILDjfyOrBOEKYmNEwTxzQUpgiibj3zr2hVfASAbjO7OcRZOzjXzbjYDOeOfNssMZ3YvHbMuvx9aXNPTwikQfup8NtZItvu27lHHQT/S0TFnjJO0wffop3a+Wu2WNYyvRl558og9gTKxQZPqCrp1cXHRbVm/2uH/axZfiWKoZHJ4eWkmSXEa2kbdALfDLZVgXYbRb7yP1pjgfKEZTgurPloXrWwpboQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=+E09GbmJqS9ei2PnP7pEqRYGj6enrrTw4hH06mXQHiw=;
- b=uRIBqHF7tp2mn7JKI6reelxZlXqtzQU/eVPQVWxL13MIOvtiVGu5xhMGQu9nRZPRg5GYKje4/js4M1r+XS/H6F7I6433HRcNR43gfK/qmaC0P0YMIcGfi7pyuIFHdWeKJqSFRSNWMM1o/D8bOwFKbM8WB5wjUhD+Sp+4TIax/dg=
-Received: from AM6PR05MB6120.eurprd05.prod.outlook.com (20.179.1.217) by
- AM6PR05MB4197.eurprd05.prod.outlook.com (52.135.164.160) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2772.15; Fri, 6 Mar 2020 12:16:49 +0000
-Received: from AM6PR05MB6120.eurprd05.prod.outlook.com
- ([fe80::dee:ffa2:1d09:30e]) by AM6PR05MB6120.eurprd05.prod.outlook.com
- ([fe80::dee:ffa2:1d09:30e%4]) with mapi id 15.20.2772.019; Fri, 6 Mar 2020
- 12:16:49 +0000
-From: Philippe Schenker <philippe.schenker@toradex.com>
-To: "o.rempel@pengutronix.de" <o.rempel@pengutronix.de>,
- "a.fatoum@pengutronix.de" <a.fatoum@pengutronix.de>, "andrew@lunn.ch"
- <andrew@lunn.ch>
-Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
-Thread-Topic: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
-Thread-Index: AQHV8vTsfP1BktnxKEy+q0EhrXMNZqg6EXKAgAAlWYCAAPjzgIAAIqIAgAAYeQCAABF0AA==
-Date: Fri, 6 Mar 2020 12:16:49 +0000
-Message-ID: <e8ab2b1953dfd27fa38a15b2a3481584c7b53545.camel@toradex.com>
-References: <20200305134928.19775-1-philippe.schenker@toradex.com>
- <20200305143805.dk7fndblnqjnwxu6@pengutronix.de>
- <20200305165145.GA25183@lunn.ch>
- <7191ffe6-642a-477c-ec37-e37dc9be4bf8@pengutronix.de>
- <4e48d56f184ed56d15d2ae6706fdb29e4c849132.camel@toradex.com>
- <f47a46b9-6d6a-e257-4309-7e49852bc88e@pengutronix.de>
-In-Reply-To: <f47a46b9-6d6a-e257-4309-7e49852bc88e@pengutronix.de>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=philippe.schenker@toradex.com; 
-x-originating-ip: [31.10.206.124]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a0b4b8e1-0f8b-4ebd-e175-08d7c1c83f27
-x-ms-traffictypediagnostic: AM6PR05MB4197:
-x-microsoft-antispam-prvs: <AM6PR05MB4197B66E2EF1EFCB41BAD188F4E30@AM6PR05MB4197.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2089;
-x-forefront-prvs: 0334223192
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(396003)(376002)(136003)(39850400004)(346002)(366004)(199004)(189003)(6486002)(66946007)(6512007)(44832011)(7416002)(36756003)(91956017)(2616005)(71200400001)(76116006)(5660300002)(66476007)(64756008)(54906003)(66556008)(8676002)(478600001)(316002)(110136005)(66446008)(6506007)(81166006)(86362001)(81156014)(53546011)(26005)(186003)(2906002)(4326008)(8936002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:AM6PR05MB4197;
- H:AM6PR05MB6120.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: MWQtueJcWhPLefsSkmcRwdXVdKaE+4SvxR8K5TxQLMkz8sBgOUT6xGyj7R4yQsFqjnbHr5q0ntUBFIA0uvHgXqZveJQNK4iDctAwKIb52DggseXKqK2wbfzDjlfbnwPFhzSAdey0fOSphjx2hMZOoj4UrVBjOYn+ULDxM1lW1uEBNV2ldUsjIggkmqYc/w4NB/BzGpKAU+5NYAqcbku3/RiKDfBDBIru9h9INq+/s3GV7VKDjfeREmQ2QixuUN3VKD1d6zxlGJYXnOu8V/iIm0jjpiDjfpkznht5JU2Rt4aLyaKKmSjupOo+dXMZoJROme11fXTicRhtrs4S1cl9b5Fc2OjcT9fAH02aQyFIphXU8HkmAWjLu9RCnKi0tu2UhfRPYG4ivmyvm7DMb2ovC2XrAViuVtcZkYPflcsMR/DOGtsVDJIqpWqUlIPiKCDy
-x-ms-exchange-antispam-messagedata: MU/JIAr4Xls1bQfTaMmlS6AzduJre3Dnbzep7Hn1csKwwoeaHAQUueqdvO4mqWBDzC4vM0EHisNy/T6JejL4WHVmKQjK6rkcX7hdobbdjOiTuQQvTN9jlmvYHCYspffi3+p9NOXicCjQgXy4+MMLlw==
-x-ms-exchange-transport-forked: True
-Content-ID: <67C1775E882C2F4495C3ADF89349F3E7@eurprd05.prod.outlook.com>
+ id 1jAC8E-0000bd-8r; Fri, 06 Mar 2020 12:31:12 +0000
+Received: by mail-lj1-x242.google.com with SMTP id w1so2036546ljh.5;
+ Fri, 06 Mar 2020 04:31:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :mime-version; bh=to7bU+MtbuWq2zSmrshAa2RS+7lmc+xLVoJxUf+INQ0=;
+ b=l0EQ6qPcS14s2kGTIH/cVFg+M+r1om0oVHrp2ziFTs3W5dZo7pIDCpOuV3oEpxwQKI
+ FEaAttqwy0EDA2gpyd6VO4XVaFUXSJ2Piiwn0K/lkpbfgJfIfdFrNxwqpGGlsqKnjuE1
+ brEh3Lcq4oQ+ApN96M2bp4SkOCiW0hElG2AJUIyA4cKIjPFvyOiz2ox1AucBB3FDunAI
+ Q4TZ1fR8oyRRaOAyvrf7JmCEdx7t0SdR1dtQEjJYHnOJxhoHdiYybr/KZfusEKlnnq/i
+ zgGlREj08Ql/Pi+N6uAseYkxvj+szMrdMSWnKhZCfjfrzpHzEFTL1tMAjUFlIPGVqaz7
+ ldWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:mime-version;
+ bh=to7bU+MtbuWq2zSmrshAa2RS+7lmc+xLVoJxUf+INQ0=;
+ b=Sf0fhpol1nhn4D5DEXhBPGbW5W7zzbZ5A7KF46zGiirxJzu015x4sYxa8FYdGfaoRr
+ bH9H/qgTqTK2UAFFvb6kXVdwXH2IlejWe7Edr3VFNKt+LXqULms8WhCpzzlmNQMh6Aa+
+ mx+mjT6tqAX5oZLCajmZeTKjvfTRCa18ABFMgQuPTjckGFzs0A/m8N//xQ+HZ6nO4myC
+ ny4GJbsIv43PjBkr2nlqxRKyhnMX0wLCzxvBinYjIj81BcznIMRwoK5r21HlbRodAQ3K
+ PeIrig5PSuown8/BbyJApfKRD5MUHE4bIRHvISFTWyVIVeBUuD0vWYZeoSutrBZDI0xx
+ 7NIw==
+X-Gm-Message-State: ANhLgQ0Ox8/Q33N1hWax0cgNO+LW1MwRISI2ZDkAmwK7kgw5lW9satzt
+ 1EN2w8y3c4HWCVl3kJydwLE=
+X-Google-Smtp-Source: ADFU+vt4dBzbnq/Y0wVdLf39g1+fsGA0GgRTLzQx8tXoVUYdyq9dw+lDMisETRdewWX4xZ+IbYqubw==
+X-Received: by 2002:a2e:9008:: with SMTP id h8mr1902762ljg.217.1583497867526; 
+ Fri, 06 Mar 2020 04:31:07 -0800 (PST)
+Received: from eldfell.localdomain ([194.136.85.206])
+ by smtp.gmail.com with ESMTPSA id u4sm2691157lfo.79.2020.03.06.04.31.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 06 Mar 2020 04:31:07 -0800 (PST)
+Date: Fri, 6 Mar 2020 14:30:57 +0200
+From: Pekka Paalanen <ppaalanen@gmail.com>
+To: Daniel Vetter <daniel@ffwll.ch>
+Subject: Re: [PATCH 1/4] drm/fourcc: Add modifier definitions for describing
+ Amlogic Video Framebuffer Compression
+Message-ID: <20200306143057.1506cac3@eldfell.localdomain>
+In-Reply-To: <20200306101328.GR2363188@phenom.ffwll.local>
+References: <20200221090845.7397-1-narmstrong@baylibre.com>
+ <20200221090845.7397-2-narmstrong@baylibre.com>
+ <20200303121029.5532669d@eldfell.localdomain>
+ <20200303105325.bn4sob6yrdf5mwrh@DESKTOP-E1NTVVP.localdomain>
+ <CAKMK7uFgQGrnEkXyac15Wz8Opg43RTa=5cX0nN5=E_omb8oY8Q@mail.gmail.com>
+ <20200303152541.68ab6f3d@eldfell.localdomain>
+ <20200303173332.1c6daa09@eldfell.localdomain>
+ <20200306101328.GR2363188@phenom.ffwll.local>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a0b4b8e1-0f8b-4ebd-e175-08d7c1c83f27
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Mar 2020 12:16:49.2253 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 10/42m/d7SNKQoXDVl0UrTx0/R3VI0aVWoJbqJuZ2p3yfKB+ko1tiSk/WLq69jVn+Q3AfUeM/HnZwuAgxg63dXRpVDBLWzO6cx+ZYCjy6ik=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR05MB4197
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_041654_356772_F90B2ADB 
-X-CRM114-Status: GOOD (  17.05  )
+X-CRM114-CacheID: sfid-20200306_043110_314745_49F2F3E7 
+X-CRM114-Status: GOOD (  36.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.101 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [ppaalanen[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -128,75 +103,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "allison@lohutok.net" <allison@lohutok.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, linux-amlogic@lists.infradead.org,
+ nd <nd@arm.com>, Brian Starkey <brian.starkey@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7592435538798515455=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-03-06 at 12:14 +0100, Ahmad Fatoum wrote:
-> Hello Philippe,
-> 
-> On 3/6/20 10:46 AM, Philippe Schenker wrote:
-> > Hi Andrew and Ahmad, thanks for your comments. I totally forgot
-> > about
-> > those more specific phy-modes. But just because none of our driver
-> > supports that. Either the i.MX6 fec-driver as well as the micrel.c
-> > PHY
-> > driver supports this tags.
-> > What do you guys suggest then how I should implement that skew
-> > stuff?
-> 
-> I think implementing them in the Micrel driver would make sense.
-> When more specific skews are supplied, these are used.
-> If not, the rgmii_[tx]?id applies the appropriate timings for length
-> matched
-> lines. Device trees matching your use case will then only have to
-> specify
-> rgmii-txid. 
-> 
-> > The problem is that i.MX6 has an asynchronic skew of -100 to 900ps
-> > only
-> > enabling the PHY-delay on TXC and RXC is not in all cases within the
-> > RGMII timing specs. That's why I implemented this 'weird' numbers.
-> 
-> I am not too well-versed with this. What's an asynchronic skew?
-> A non-deterministic internal delay..? So, you try to be as accurate as
-> possible, so the skew is within the acceptable margin?
+--===============7592435538798515455==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ boundary="Sig_/r_fP+nfVOoASHK7UVgVRJ0U"; protocol="application/pgp-signature"
 
-Asynchronic was a term I introduced because in RGMII spec, TXC of a MAC
-should have -500 to 500ps skew. However the i.MX6 has "asynchronic" -100
-to 900ps.
+--Sig_/r_fP+nfVOoASHK7UVgVRJ0U
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: quoted-printable
 
-I did a worst-case study of those timing values. If I only enable the
-2ns delay on the KSZ9131 PHY this is resulting in a T_setup_T of 1.9-
-2.4ns (min-max). Under the assumption that tcyc (cycle time of the
-clock) has min-max of 7.2-8.8ns this results in T_hold_T values of min-
-max 0.7-2.5ns. The 0.7ns should be at least 1ns according to spec.
+On Fri, 6 Mar 2020 11:13:28 +0100
+Daniel Vetter <daniel@ffwll.ch> wrote:
 
-If I fine tune these values with the other registers I can "middle-out"
-the clock-edges in relation to data signals and therefore I get all
-values to be within RGMII timing specs.
-> 
-> Cheers
-> Ahmad
-> 
-> 
-> > Philippe
-> > 
+> On Tue, Mar 03, 2020 at 05:33:32PM +0200, Pekka Paalanen wrote:
+> > On Tue, 3 Mar 2020 15:25:41 +0200
+> > Pekka Paalanen <ppaalanen@gmail.com> wrote:
+> >  =20
+> > > On Tue, 3 Mar 2020 12:37:16 +0100
+> > > Daniel Vetter <daniel@ffwll.ch> wrote:
+> > >  =20
+> > > > On Tue, Mar 3, 2020 at 11:53 AM Brian Starkey <brian.starkey@arm.co=
+m> wrote:   =20
+> > > > >
+> > > > > Hi,
+> > > > >
+> > > > > On Tue, Mar 03, 2020 at 12:10:29PM +0200, Pekka Paalanen wrote:  =
+   =20
+> > > > > > On Fri, 21 Feb 2020 10:08:42 +0100
+> > > > > > Neil Armstrong <narmstrong@baylibre.com> wrote:
+> > > > > >     =20
+> > ... =20
+> > > > > > > +/*
+> > > > > > > + * Amlogic Video Framebuffer Compression modifiers
+> > > > > > > + *
+> > > > > > > + * Amlogic uses a proprietary lossless image compression pro=
+tocol and format
+> > > > > > > + * for their hardware video codec accelerators, either video=
+ decoders or
+> > > > > > > + * video input encoders.
+> > > > > > > + *
+> > > > > > > + * It considerably reduces memory bandwidth while writing an=
+d reading
+> > > > > > > + * frames in memory.
+> > > > > > > + * Implementation details may be platform and SoC specific, =
+and shared
+> > > > > > > + * between the producer and the decoder on the same platform=
+.     =20
+> > > > > >
+> > > > > > Hi,
+> > > > > >
+> > > > > > after a lengthy IRC discussion on #dri-devel, this "may be plat=
+form and
+> > > > > > SoC specific" is a problem.
+> > > > > >
+> > > > > > It can be an issue in two ways:
+> > > > > >
+> > > > > > - If something in the data acts like a sub-modifier, then adver=
+tising
+> > > > > >   support for one modifier does not really tell if the data lay=
+out is
+> > > > > >   supported or not.
+> > > > > >
+> > > > > > - If you need to know the platform and/or SoC to be able to int=
+erpret
+> > > > > >   the data, it means the modifier is ill-defined and cannot be =
+used in
+> > > > > >   inter-machine communication (e.g. Pipewire).
+> > > > > >     =20
+> > > > >
+> > > > > Playing devil's advocate, the comment sounds similar to
+> > > > > I915_FORMAT_MOD_{X,Y}_TILED:
+> > > > >
+> > > > >  * This format is highly platforms specific and not useful for cr=
+oss-driver
+> > > > >  * sharing. It exists since on a given platform it does uniquely =
+identify the
+> > > > >  * layout in a simple way for i915-specific userspace.     =20
+> > > >=20
+> > > > Yeah which we regret now. We need to now roll out a new set of
+> > > > modifiers for at least some of the differences in these on the
+> > > > modern-ish chips (the old crap is pretty much lost cause anyway).
+> > > >=20
+> > > > This was kinda a nasty hack to smooth things over since we have epic
+> > > > amounts of userspace, but it's really not a great idea (and no one
+> > > > else really has epic amounts of existing userspace that uses tiling
+> > > > flags everywhere, this is all new code).
+> > > > -Daniel
+> > > >    =20
+> > > > > Isn't the statement that this for sharing between producer and de=
+coder
+> > > > > _on the same platform_ a similar clause with the same effect?
+> > > > >
+> > > > > What advantage is there to exposing the gory details? For Arm AFBC
+> > > > > it's necessary because IP on the SoC can be (likely to be) from
+> > > > > different vendors with different capabilities.
+> > > > >
+> > > > > If this is only for talking between Amlogic IP on the same SoC, a=
+nd
+> > > > > those devices support all the same "flavours", I don't see what is
+> > > > > gained by making userspace care about internals.     =20
+> > > >=20
+> > > > The trouble is if you mix&match IP cores, and one of them supports
+> > > > flavours A, B, C and the other C, D, E. But all you have is a single
+> > > > magic modifier for "whatever the flavour is that soc prefers". So
+> > > > someone gets to stuff this in DT.
+> > > >=20
+> > > > Also eventually, maybe, perhaps ARM does grow up into the
+> > > > client/server space with add-on pcie graphics, and at least for cli=
+ent
+> > > > you very often end up with integrated + add-in pcie gpu. At that po=
+int
+> > > > you really can't have magic per-soc modifiers anymore.   =20
+> > >=20
+> > > Hi,
+> > >=20
+> > > I also heard that Pipewire will copy buffers and modifiers verbatim
+> > > from one machine to another when streaming across network, assuming
+> > > that the same modifier means the same thing on all machines.[Citation=
+ needed]
+> > >=20
+> > > If that is something that must not be done with DRM modifiers, then
+> > > please contact them and document that. =20
+> >=20
+> > Sorry, it's waypipe, not pipewire:
+> > https://gitlab.freedesktop.org/mstoeckl/waypipe/ =20
+>=20
+> I do think this is very much something we want to make possible. They
+> might pick a silly modifier (compression modifiers only compress bw, by
+> necessity the lossless ones have to increase storage space so kinda dumb
+> thing to push over the network if you don't add .xz or whatever on top).
+>=20
+> I'm also hoping that intel's modifiers are definitely the one and only
+> that we ever screwed up, and we should be getting those fixed in the near
+> future too.
+>=20
+> So maybe what we should do instead is add a comment to the modifier docs
+> that this stuff _is_ supposed to be transferrable over networks and work.
+
+Personally I was not sure if it was so. Good to hear it is. Writing it
+down would be much appreciated.
+
+While at it, could you also write down something about the requirements
+of memory layout documentation? What I mean is, is it required that the
+memory layout is publicly specified *somewhere* if not in the modifier
+doc itself?
+
+It's not necessary for anyone to actually know the memory layout when
+the use cases only involve hardware access, but if there is no public
+spec I fear it would be easy to adapt an incompatible layout somewhere
+and never be able to notice until some rare case of interoperability
+mysteriously produces garbage.
+
+
+Thanks,
+pq
+
+--Sig_/r_fP+nfVOoASHK7UVgVRJ0U
+Content-Type: application/pgp-signature
+Content-Description: OpenPGP digital signature
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEJQjwWQChkWOYOIONI1/ltBGqqqcFAl5iQoEACgkQI1/ltBGq
+qqfCGxAAox4nO+w/VXB7GvaaUnfq9XR88+4sxGBKVIkfOVSsxxnE7oA+DAPrzq3C
+FqWKzbVYJhYTD84jea8tM029FeGPAlQbxZAph4YRM1kfCKqduxoPwoLOqR5k3W9X
+vkLo0T0m6oKslV2Gico/FFIRwCMZjHPh++ye8Ka9e/b+cNTTsYFH03gyAmyfiHa5
+wmt91K/ubByRZTmY9QoihQto4M1W7t5V76hl2yjVRDkU6BVM1K8DB0K1VhPBTDfZ
+ratG+r1scmAM2bsbsFWwxaTiv1zF9Z1zvUZcSSKFkWbbsU+AF+rmdYBs+M9/Wnny
+INwPZIMg7GqzwV4z6J++E4TajjFLeku/pqmZSX2ITGu7f4WtOV64m5+aQDdohNuh
+kUepGl2CCFtWaAOLUwdpwfGw8SFA74g4ac1xTyBGgNECewmt44fkP785imtmtYAn
+BiTchituR4jNrOTEo9WiZ4+bDC5dgjhp9dfZdWSEe7l0r3HgDOdFYcNbaCap3tKt
+5PE6MqyXXOD6yxqwfgpuFp/hja0T73RfzutNi6s84Bdx7M00lAg0owl3JrHx2Zou
+buqgRbNYYUYD7qmoYMUvpYlEsTCXClURVawf9G+Gh5Uc3bW5lGIR/DdzAw3tdPwW
+9TkR0C7rUWVWIotYUxwUujYoq4FXWv1mD4C2t/F2FXD8WAiVBqs=
+=eeJ1
+-----END PGP SIGNATURE-----
+
+--Sig_/r_fP+nfVOoASHK7UVgVRJ0U--
+
+
+--===============7592435538798515455==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7592435538798515455==--
+
