@@ -2,59 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F327217C0A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 15:44:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA1DD17C0CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 15:45:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fU6zVs2jx4Uku4efAOB9/GfDB0CJBqJJRnhykJ7REu0=; b=Dd9gOJap03coDC
-	mk/8h0tWyhi56d8a/4znj2NAdmH/WFFkFZpZQy/dYfPwAFlmlGH5U8jyhJvtONaDzT0N1AXQIiRXR
-	DAeArdh7Kw2u5MfylcZ/STMXnyw7uyZkGRg/U5/LcVAhYNh5WuPcENsShdopSWBRvvQGrMUs8X+I4
-	IbZtJdK0Xm2/2ZJTftXPT1e/xB9QNFhohZLPYPl3PLhT6kjH1+DwKZPSntDT+riM9uyZeeI+k0/Kd
-	FPJi0Alf9Arno6zSMHYzi/CJqAbj/yu1LZdwR5fWs4si3TJ/90EeyJZUNGE1Kimeo7lI2W6mjJ2CI
-	6O5QWHwu3mmvghtUXfzw==;
+	List-Owner; bh=XWTCZ0s6MXo4xgxNIP357qMsSsknYuWYpkUL8dafX8s=; b=q0EuAmpXYpnrM9
+	qMm/eiav5JTwNl114kiSPCoHmSuP8tkl23+yYifVIAQ053Fp49BCFhQpMTShOJY3t9xdu0sHn6elE
+	anLaLppu0k729oBPGoWeIFsZ1JC9+oaBIVZ0pxVO6V6yvgjNL2QiRJ8H4OtxA4BuMLaE+YeeB1Q3b
+	sZzCAb9LIJc98JLF/NuPBTJX8HJ7bz2rvoC2esItedCGIB1ls5R82+bxZXAv+XXaGzlI8vbZ3zhvW
+	1PesQzySz805ZGVZj32XBnq7Wupemn3NErzRyXSKkFQ9yKVqkt5xcAhcC01iv4Kk+JAOiZ7OXZQGf
+	+ftE30gMB7YabGHQOGeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAECe-0004D2-7U; Fri, 06 Mar 2020 14:43:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAECW-0004C4-DD; Fri, 06 Mar 2020 14:43:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F34831B;
- Fri,  6 Mar 2020 06:43:43 -0800 (PST)
-Received: from arm.com (e112269-lin.cambridge.arm.com [10.1.195.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 132703F534;
- Fri,  6 Mar 2020 06:43:40 -0800 (PST)
-Date: Fri, 6 Mar 2020 14:43:36 +0000
-From: Steven Price <steven.price@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v4 1/7] dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
-Message-ID: <20200306144336.GA9234@arm.com>
-References: <20200207052627.130118-1-drinkcat@chromium.org>
- <20200207052627.130118-2-drinkcat@chromium.org>
- <20200225171613.GA7063@bogus>
- <CANMq1KAVX4o5yC7c_88Wq_O=F+MaSN_V4uNcs1nzS3wBS6A5AA@mail.gmail.com>
- <1583462055.4947.6.camel@mtksdaap41>
- <CAL_JsqLoUnxfrJh0WCs0jgro1KHAjWaYMsaKkKfAKA2KJ252_g@mail.gmail.com>
+	id 1jAEDd-0004a0-Ih; Fri, 06 Mar 2020 14:44:53 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAEDW-0004ZY-1L
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 14:44:47 +0000
+Received: by mail-qt1-x844.google.com with SMTP id e13so1857764qts.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Mar 2020 06:44:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=518hMwbsCsnyP/dB9C2/OgbWz00OdebKwI9UeSAw2TQ=;
+ b=UKn3ZOmHliESQFL4acmMtFs6xNMVgD2SYN401x8G989e969hHmIOBDhUUkzPbvn2ze
+ t8iUUEi8b2Pi5GNrW7Rt0fOtIbgOJ7yxdNxXDIOQOQh/kDQtHBi5IFKikg4ciABcKkRN
+ Q7Nv3kYSXtRPYepWvOl6k241BTN+Hc6ouBTMLUI9T46c2tdUHy+72JLrQ1YnxD4y2gQH
+ x2VGkLZeS98C636ScvmdZ18jX0reOyV8e0LjHL3G3jtvRRkx7kiQDtznF2sxBMB+ODB/
+ FX8+EHMdl8FKzPNrGOqOxJXa1pSnlFcIFD5Wah3u5qWtlIBdHeUFdoPkl4ipsE5LeFy9
+ fwuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=518hMwbsCsnyP/dB9C2/OgbWz00OdebKwI9UeSAw2TQ=;
+ b=sbsHuSUOKXzeAyzmV+5cQRCMCZ7SPwVZbjb2OXzNIYxgZBTXTAKZQTVhI17THKVTFr
+ SXEKUYMEbG8HmqBy/CIOtmxrpl9Yw4U/1oKPhqk/DJgW31km+TPNzucKhibrDccpTt21
+ bgYIBpcGc7PXu/2f2GUnWOPRhlYvLpLw2WKK0Q1c1jZ3dechwhIefLKmr6upVeqwYkuP
+ NHQcpgsfDLk53aE5jqzt8HOUgD0T2krOfje0CohcAxGb6tLhsd0G83IGIJ4a2AHJvjmS
+ scJjwdNl35DR8CBVJjnd/Dv2pyv04JcFDbZpHh6kNoKv88H0/BUfSFQVZRc6gxiRMXVO
+ Rf4g==
+X-Gm-Message-State: ANhLgQ1dmY4gv0vWq+fZj+RQSiV0vJM2ams1asHJTycVTteczBpQ/Xe+
+ JSU03ubVZI/FLJbz36kkR43JyCzF8QZf7SMIEcAAIw==
+X-Google-Smtp-Source: ADFU+vu4U/dNx0QcNZ2vEVN12gifYuQ7Fr8ARH3ry0S07HX1FFcS8SFZtPwPvlsBxyvk8A6DHHwNRQC4nAghZCJ4Xvc=
+X-Received: by 2002:aed:3f3c:: with SMTP id p57mr3299105qtf.234.1583505884448; 
+ Fri, 06 Mar 2020 06:44:44 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqLoUnxfrJh0WCs0jgro1KHAjWaYMsaKkKfAKA2KJ252_g@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
+ <20200303203559.23995-5-ulf.hansson@linaro.org> <20200304122312.GE25004@bogus>
+ <CAPDyKFpcN-p6sKqB0ujHAY29qPSg7qpSjYGymPaJ4W8jgCKGcg@mail.gmail.com>
+ <20200305162321.GB53631@bogus>
+ <CAPDyKFogjPG+mRsfPaxN7RjB7TQL9=qHNzA=K_t0F6M6Q9-TuA@mail.gmail.com>
+ <20200306100431.GA16541@bogus>
+ <CA+M3ks764moVU2h9iZJuN6B-e4wBUMymBfPnob_zraf50xqezA@mail.gmail.com>
+ <20200306120646.GB44221@bogus>
+ <CA+M3ks7+P=CjvUE28boANhrR6bhzLzyjBLovzWL_LjwL3UqmzQ@mail.gmail.com>
+ <20200306134119.GB47929@bogus>
+In-Reply-To: <20200306134119.GB47929@bogus>
+From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Date: Fri, 6 Mar 2020 15:44:33 +0100
+Message-ID: <CA+M3ks5XBFcJqQozA=k6nU2XawRYT_qKnLW9t_GdkoRGNEd1yA@mail.gmail.com>
+Subject: Re: [PATCH v2 4/4] cpuidle: psci: Allow WFI to be the only state for
+ the hierarchical topology
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_064344_494709_0BF2FA44 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_064446_111503_BB45606A 
+X-CRM114-Status: GOOD (  17.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,52 +101,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Nicolas Boichat <drinkcat@chromium.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- Liam Girdwood <lgirdwood@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- lkml <linux-kernel@vger.kernel.org>, Sj Huang <sj.huang@mediatek.com>,
- Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Nick Fan <nick.fan@mediatek.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 06, 2020 at 02:13:08PM +0000, Rob Herring wrote:
-> On Thu, Mar 5, 2020 at 8:34 PM Nick Fan <nick.fan@mediatek.com> wrote:
-> >
-> > Sorry for my late reply.
-> > I have checked internally.
-> > The MT8183_POWER_DOMAIN_MFG_2D is just a legacy name, not really 2D
-> > domain.
-> >
-> > If the naming too confusing, we can change this name to
-> > MT8183_POWER_DOMAIN_MFG_CORE2 for consistency.
-> 
-> Can you clarify what's in each domain? Are there actually 3 shader
-> cores (IIRC, that should be discoverable)?
-
-The cover letter from Nicolas includes:
-
-> [  501.321752] panfrost 13040000.gpu: shader_present=0x7 l2_present=0x1
-
-0x7 is three bits set, so it certainly looks like there are 3 shader
-cores. Of course I wouldn't guarantee that it is as simple as each power
-domain has a shader core in. The job manager and tiler also need to be
-powered somehow, so they are either sharing with a shader core or
-there's something more complex going on.
-
-Steve
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgdmVuLiA2IG1hcnMgMjAyMCDDoCAxNToyMywgU3VkZWVwIEhvbGxhIDxzdWRlZXAuaG9sbGFA
+YXJtLmNvbT4gYSDDqWNyaXQgOgo+Cj4gT24gRnJpLCBNYXIgMDYsIDIwMjAgYXQgMDE6MzI6NTlQ
+TSArMDEwMCwgQmVuamFtaW4gR2FpZ25hcmQgd3JvdGU6Cj4gPiBMZSB2ZW4uIDYgbWFycyAyMDIw
+IMOgIDEzOjA2LCBTdWRlZXAgSG9sbGEgPHN1ZGVlcC5ob2xsYUBhcm0uY29tPiBhIMOpY3JpdCA6
+Cj4gPiA+Cj4KPiBbLi4uXQo+Cj4gPiA+IFN1cmUsIHBsZWFzZSBjcmVhdGUgYSBkZWVwZXIgQ1BV
+IHN0YXRlIHRoYW4gV0ZJIGFuZCBlbnRlciBzbyB0aGF0IHRoZSBDUFUKPiA+ID4gc3RhdGUgaXMg
+c2F2ZWQgYW5kIHJlc3RvcmVkIGNvcnJlY3RseS4gV2hhdCBpcyB0aGUgcHJvYmxlbSBkb2luZyB0
+aGF0ID8KPiA+Cj4gPiBUaGlzIHN0YXRlIHN0b3AgdGhlIGNsb2NrcyBmb3IgYWxsIHRoZSBoYXJk
+d2FyZSBibG9ja3MgYW5kIG5vdCBvbmx5IHRoZSBDUFVzCj4gPiBzbyB3ZSBjYW4ndCBnbyBvbiBp
+dCB3aGlsZSBkZXZpY2VzIGFyZW4ndCBzdXNwZW5kZWQuCj4gPiBJIG1heSBoYXZlIG1pc3NlZCBz
+b21ldGhpbmcgYnV0IEkgZG9uJ3QgYmVsaWV2ZSB0aGF0IEkgY291bGQgYWRkIHRoaXMga2luZCBv
+Zgo+ID4gY29uZGl0aW9ucyBpbiBhIGNwdSBpZGxlIHN0YXRlLCByaWdodCA/Cj4gPiBJbiB0aGlz
+IHN0YXRlIEkgbmVlZCB0byBiZSBhYmxlIHRvIGVuYWJsZSB0aGUgd2FrZSB1cCBzb3VyY2VzIGJl
+Y2F1c2UKPiA+IGl0IGlzIHRoZSBvbmx5Cj4gPiBmb3IgaGFyZHdhcmUgYmxvY2sgdXNlZCBhcyBi
+cm9hZGNhc3QgdGltZXIgdG8gd2FrZSB1cCB0aGUgc3lzdGVtLgo+ID4KPgo+IFdlIGhhdmUgZGlz
+Y3Vzc2VkIHRoaXMgaW4gcGFzdCBpbiB0aGUgdGhyZWFkIEkgbWVudGlvbmVkIGFuZCBtYXkgYmUK
+PiBvdGhlcnMgdG9vLiBJdCBzb3VuZHMgbGlrZSBhIGJyb2tlbiBoYXJkd2FyZSwgc29ycnkgaWYg
+SSBhbSB3cm9uZy4KPiBCdXQgdGhpcyAkc3ViamVjdCBwYXRjaCBpcyBhIGhhY2sgdG8gc29sdmUg
+dGhhdCBhbmQgSSBhbSBOQUNLLWluZyB0aGlzCj4gbm93LiBQbGVhc2UgZml4IGl0IGFkZGluZyBh
+bm90aGVyIENQVSBsZXZlbCBpZGxlIHN0YXRlLCB3ZSBhcmUgbm90Cj4gc3VwcG9ydGluZyB3aXRo
+b3V0IHRoYXQgYW5kIHRoZXJlIGlzIGFic29sdXRlbHkgbm8gbmVlZCB0by4KCkEgQ1BVIGlkbGUg
+c3RhdGUgb25seSB0YWtlIGNhcmUgb2YgQ1BVIGFjdGl2aXRpZXMsIHJpZ2h0ID8gYnV0IGJlZm9y
+ZSBnb2luZyBpbgp0aGUgdGFyZ2V0aW5nIHN0YXRlIEkgbmVlZCB0byBiZSBzdXJlIHRoYXQgdGhl
+IG90aGVyIGhhcmR3YXJlIGJsb2NrcwphcmUgc3VzcGVuZGVkLgpJcyBpdCBwb3NzaWJsZSB0byBk
+ZXNjcmliZSB0aGF0IGluIGFuIGlkbGUgc3RhdGUgPwpXaGF0IHNvdW5kIGJyb2tlbiA/IGlzIGl0
+IGJlY2F1c2Ugd2UgbmVlZCB0byBzZXR1cCB0aGUgd2FrZSB1cCBzb3VyY2VzID8KCj4KPiAtLQo+
+IFJlZ2FyZHMsCj4gU3VkZWVwCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
