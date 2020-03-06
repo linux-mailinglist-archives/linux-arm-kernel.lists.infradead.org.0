@@ -2,62 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EFD917C75D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 21:54:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EE9517C75E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 21:54:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AmvyM+4hM5LopAN7PL9hUAjizUuwsQVTViKhMLCTcTw=; b=YV5CV70XvFZAPq
-	SRcIIsGCOJx8DdMYYs9rvGnk5ujzKLlk5Merv/exTdA9SpwJie36GLLEp7Orl8zgtEbMYVeHMt+JU
-	lGVFvLL6Y0NUHP61MzVJnLbtV3k5cQXnUcc390oZZV3YlfVHpiGxhaq6MOmTopad6v15Y5bdGGDJC
-	8b+HU2CpbzOwhgYS0irvNjV9BJK5Mlq+XbRIpcZ/uyydIhoisi6nHUT3i9PjYxiQPZLsdd4sseqP8
-	CQ1HVSu9fTlYM6bRnMo3WdLAN1tAgfYPNB5AyQGi2830VGMq0a3pYtZ859O2aCAEDgIhVkpTaaXIL
-	T69UFZgvNaqUB5kirKKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Dd7Vldqt/wmnJuVTGLq9+Jvo+zfl12Pbm2fYH4MgsJk=; b=c8x1X4Vx6nuVU/
+	rP6SrBR6n378UyGgehVX1P17xHyJd0VzixI4s7/X40YnSejUyQJDr7yxLVwa9osGBbr55BYU6C4bn
+	jLZcx6fqyG6u+VBoav8nPR+kkvgN4eUHKkhKl2cwIJ3xdXeppFwSnPBcY8ZmvaNYEJNC7fY5S4mkt
+	SqbpwqB0Zf0GGFuG1j1AWdpxiSxlMw1HdaqFu2lefG8axASu7pxl3bgerx2j3PnZWy6N7qITCPIjh
+	9aTEKAFFIIxo5ufHBiCgbUW0Sk8Is7IpnmvkfCfSzq/vbGOA4X5xoESefJMK1Xaauq9yPlNhSP7g5
+	ojQt/853PRRz8bAL1cNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAJzO-00041C-BU; Fri, 06 Mar 2020 20:54:34 +0000
+	id 1jAJzg-00048c-Lq; Fri, 06 Mar 2020 20:54:52 +0000
 Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAJzE-0003zv-93
+ id 1jAJzE-0003zw-93
  for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 20:54:26 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id A22C223E5A;
- Fri,  6 Mar 2020 21:54:19 +0100 (CET)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 2567423E5E;
+ Fri,  6 Mar 2020 21:54:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1583528060;
+ s=mail2016061301; t=1583528062;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=VtE01cIb9Gn/hXGSjdQ6xRPyGzVnT85+CchIdODSGAw=;
- b=KN9dLTqLSM0CMDJogGdougKGwBd3nLcY8y5x3eCrp/1f/EBDzjgjjIVCx70SBE+BemU7X6
- 7GsEO2ayBw6j7BuMA+qEZPLxMIOuKj0IKP5/kLrq/Z5vKYoZjuEJnLHFU1QCZVYWWXSBVS
- Gjon35N8nTDOM/PKslwr4J83LtQRzgg=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=hzKqrLamkZ42gxVzayrqWzN/O0E6BMz8ovZ+w0kjSIo=;
+ b=txDXsBLxUsMt5A8XawCp+G/wo0uMZ9rr6fYz1IJp+K4rneiMU8cp1mThpLnwFs+eQ3o4mk
+ STTchkbnKERubAZVngr4SrehGvk4j4S0j3cS6e85HSE9T6I33SwiXw5SidJK6Ad2eOpSVM
+ JUKl7oqEGi/Gy52hDOThCO6GDnv4fU8=
 From: Michael Walle <michael@walle.cc>
 To: dmaengine@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] dt-bindings: dma: fsl-edma: fix ls1028a-edma compatible
-Date: Fri,  6 Mar 2020 21:54:02 +0100
-Message-Id: <20200306205403.29881-1-michael@walle.cc>
+Subject: [PATCH 2/2] arm64: dts: ls1028a: add "fsl,vf610-edma" compatible
+Date: Fri,  6 Mar 2020 21:54:03 +0100
+Message-Id: <20200306205403.29881-2-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200306205403.29881-1-michael@walle.cc>
+References: <20200306205403.29881-1-michael@walle.cc>
 MIME-Version: 1.0
 X-Spamd-Bar: ++++++
 X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: A22C223E5A
+X-Rspamd-Queue-Id: 2567423E5E
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.549]; DKIM_SIGNED(0.00)[];
+ NEURAL_SPAM(0.00)[0.548]; DKIM_SIGNED(0.00)[];
  RCPT_COUNT_SEVEN(0.00)[11]; MID_CONTAINS_FROM(1.00)[];
  RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
  MIME_TRACE(0.00)[0:+];
@@ -65,8 +68,8 @@ X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_125424_476383_C73D3068 
-X-CRM114-Status: GOOD (  11.13  )
+X-CRM114-CacheID: sfid-20200306_125424_477514_5A489B38 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -104,32 +107,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The bootloader will fix up the IOMMU entries only on nodes with the
-compatible "fsl,vf610-edma". Thus make this compatible string mandatory
-for the ls1028a-edma.
-
-While at it, fix the "fsl,fsl," typo.
+The bootloader does the IOMMU fixup and dynamically adds the "iommus"
+property to devices according to its compatible string. In case of the
+eDMA controller this property is missing. Add it. After that the IOMMU
+will work with the eDMA core.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
-Fixes: d8c1bdb5288d ("dt-bindings: dma: fsl-edma: add new fsl,fsl,ls1028a-edma")
 ---
- Documentation/devicetree/bindings/dma/fsl-edma.txt | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/dma/fsl-edma.txt b/Documentation/devicetree/bindings/dma/fsl-edma.txt
-index e77b08ebcd06..ee1754739b4b 100644
---- a/Documentation/devicetree/bindings/dma/fsl-edma.txt
-+++ b/Documentation/devicetree/bindings/dma/fsl-edma.txt
-@@ -10,7 +10,8 @@ Required properties:
- - compatible :
- 	- "fsl,vf610-edma" for eDMA used similar to that on Vybrid vf610 SoC
- 	- "fsl,imx7ulp-edma" for eDMA2 used similar to that on i.mx7ulp
--	- "fsl,fsl,ls1028a-edma" for eDMA used similar to that on Vybrid vf610 SoC
-+	- "fsl,ls1028a-edma" followed by "fsl,vf610-edma" for eDMA used on the
-+	  LS1028A SoC.
- - reg : Specifies base physical address(s) and size of the eDMA registers.
- 	The 1st region is eDMA control register's address and size.
- 	The 2nd and the 3rd regions are programmable channel multiplexing
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index b152fa90cf5c..aa467bff2209 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -447,7 +447,7 @@
+ 
+ 		edma0: dma-controller@22c0000 {
+ 			#dma-cells = <2>;
+-			compatible = "fsl,ls1028a-edma";
++			compatible = "fsl,ls1028a-edma", "fsl,vf610-edma";
+ 			reg = <0x0 0x22c0000 0x0 0x10000>,
+ 			      <0x0 0x22d0000 0x0 0x10000>,
+ 			      <0x0 0x22e0000 0x0 0x10000>;
 -- 
 2.20.1
 
