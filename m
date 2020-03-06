@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B36717C4CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:46:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1331C17C4CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:45:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AcwJLIsrTftAabPJryDimvjmUiGLo8k3BvVuvZ6t1ek=; b=PGkXZg5gz09wOW
-	vnBgeSsKKm3Xh4eUvPQUAa5S7RJnoTGSUO45vQlsj9b4Xxxisen0w7bfwdHFVIdlT6VCDh48Gl1we
-	GWDsTTfUA+tmSCEDW2YshpqcCcph1aZpjI7U00MDUiUbFBBRP8bhdhiIW/BMqUwht/Gy3ESaR7e0h
-	ShHhkIipTlYRal6MK29DXch0survfkRJ3Bzwf7Tw4IgknUOZ5PnjqIKYAF5Pb+uDuB32fYhStO+nB
-	4RtT9Y92DY3GtCEp//tKFLej/ZyM9SPO9ObBWnuC+pBtekki37AfsNivzp6OIACEnxFvO90nYxwi9
-	e+iOzmwGD3ZHFl0LgMcw==;
+	List-Owner; bh=N5XcA3qlYiaVCxun846kia6St81dqwn1c9QS9inpJV0=; b=QE+I0wmXTX1WSn
+	AJ8rlpUdr9ddvgQXHkFDNd1rWcgjXdhQ4/Nr0Wb7zOgM+GWNPvcYLefREhISHPj1vB01TMLhsXnv2
+	nesmgZrKUPuJjaVBU/pfZEgYx91acWCf6q+FPsOVXVfZjX8/oeN7qQ2MUUopc7qFsZQbvCxXQxekm
+	i04OUU457SOwSvEKom6soB/YgYeVJkIV0aff+1RP0QHV9uUBGPiaZPnaSU2Ui2H6+LqNRS4sKmEjn
+	R5l1jy5fuKMuTVUqvat5/kdtUD08Cvm4x7gdfJSZC2lRYu+oGQwAG1GnbSZnv8L0ZjQzkwuwH9t4z
+	zyalfQbMFPRTtnvxlV4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAH2s-00025r-Vu; Fri, 06 Mar 2020 17:45:58 +0000
+	id 1jAH2N-0001a7-TZ; Fri, 06 Mar 2020 17:45:27 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAH1O-0007wT-0H; Fri, 06 Mar 2020 17:44:27 +0000
+ id 1jAH1O-0007wu-6W; Fri, 06 Mar 2020 17:44:27 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 5547EAD11;
+ by mx2.suse.de (Postfix) with ESMTP id DCF25ACC2;
  Fri,  6 Mar 2020 17:44:24 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: adrian.hunter@intel.com, linux-kernel@vger.kernel.org,
- Michal Simek <michal.simek@xilinx.com>
-Subject: [PATCH v2 02/11] mmc: sdhci: arasan: Use sdhci_set_power_and_voltage()
-Date: Fri,  6 Mar 2020 18:44:04 +0100
-Message-Id: <20200306174413.20634-3-nsaenzjulienne@suse.de>
+To: adrian.hunter@intel.com,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v2 03/11] mmc: sdhci: milbeaut: Use
+ sdhci_set_power_and_voltage()
+Date: Fri,  6 Mar 2020 18:44:05 +0100
+Message-Id: <20200306174413.20634-4-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_094426_286063_5C19219B 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20200306_094426_384492_DF419223 
+X-CRM114-Status: GOOD (  12.04  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,19 +78,19 @@ this controller's set_power() callback. Use it instead.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/mmc/host/sdhci-of-arasan.c | 15 ++-------------
- 1 file changed, 2 insertions(+), 13 deletions(-)
+ drivers/mmc/host/sdhci-milbeaut.c | 13 +------------
+ 1 file changed, 1 insertion(+), 12 deletions(-)
 
-diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
-index 0146d7dd315b..d4905c106c06 100644
---- a/drivers/mmc/host/sdhci-of-arasan.c
-+++ b/drivers/mmc/host/sdhci-of-arasan.c
-@@ -325,17 +325,6 @@ static int sdhci_arasan_voltage_switch(struct mmc_host *mmc,
- 	return -EINVAL;
+diff --git a/drivers/mmc/host/sdhci-milbeaut.c b/drivers/mmc/host/sdhci-milbeaut.c
+index 92f30a1db435..4e7cc0680f94 100644
+--- a/drivers/mmc/host/sdhci-milbeaut.c
++++ b/drivers/mmc/host/sdhci-milbeaut.c
+@@ -121,17 +121,6 @@ static void sdhci_milbeaut_reset(struct sdhci_host *host, u8 mask)
+ 	}
  }
  
--static void sdhci_arasan_set_power(struct sdhci_host *host, unsigned char mode,
--		     unsigned short vdd)
+-static void sdhci_milbeaut_set_power(struct sdhci_host *host,
+-			unsigned char mode, unsigned short vdd)
 -{
 -	if (!IS_ERR(host->mmc->supply.vmmc)) {
 -		struct mmc_host *mmc = host->mmc;
@@ -99,27 +100,18 @@ index 0146d7dd315b..d4905c106c06 100644
 -	sdhci_set_power_noreg(host, mode, vdd);
 -}
 -
- static const struct sdhci_ops sdhci_arasan_ops = {
- 	.set_clock = sdhci_arasan_set_clock,
- 	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
-@@ -343,7 +332,7 @@ static const struct sdhci_ops sdhci_arasan_ops = {
+ static const struct sdhci_ops sdhci_milbeaut_ops = {
+ 	.voltage_switch = sdhci_milbeaut_soft_voltage_switch,
+ 	.get_min_clock = sdhci_milbeaut_get_min_clock,
+@@ -139,7 +128,7 @@ static const struct sdhci_ops sdhci_milbeaut_ops = {
+ 	.set_clock = sdhci_set_clock,
  	.set_bus_width = sdhci_set_bus_width,
- 	.reset = sdhci_arasan_reset,
  	.set_uhs_signaling = sdhci_set_uhs_signaling,
--	.set_power = sdhci_arasan_set_power,
+-	.set_power = sdhci_milbeaut_set_power,
 +	.set_power = sdhci_set_power_and_bus_voltage,
  };
  
- static const struct sdhci_pltfm_data sdhci_arasan_pdata = {
-@@ -414,7 +403,7 @@ static const struct sdhci_ops sdhci_arasan_cqe_ops = {
- 	.set_bus_width = sdhci_set_bus_width,
- 	.reset = sdhci_arasan_reset,
- 	.set_uhs_signaling = sdhci_set_uhs_signaling,
--	.set_power = sdhci_arasan_set_power,
-+	.set_power = sdhci_set_power_and_bus_voltage,
- 	.irq = sdhci_arasan_cqhci_irq,
- };
- 
+ static void sdhci_milbeaut_bridge_reset(struct sdhci_host *host,
 -- 
 2.25.1
 
