@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37D0F17BAA7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:43:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5509F17BAB0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:45:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PCaNpA3L6Xx7SCA0ikvF0vpztMlL/Wvi85ulgEfxi/w=; b=JCmd7CAFpD5HyR+rgG1ZbNnoA
-	ofcaNpx98fR7FGbBJeFZQDVWhvXbw2+a/ZONtSUIvwEnwx8zmIP3OB1KzmAld6FYB5wzW4NPDlq3v
-	7VwFagK1YGpB4yl47lAH/74RKJ8Mpaf5WT52kMarLOXagZ/9DIKo3rFhT2bF57WfLzb56nTmQmvml
-	HNp64CXH3MTZn3JWWrU7HzWfLniimUF01r5C6oyrQZVTBpPSba+srLqKlUdSXhTyMQ7yqD7LEWOR7
-	EZmYxZdfjaBPzHTBc2uh4blEqVaLURPmFTSMMi4FQ4M5ZPr5Vta4WidK6tUM8uTQbCDAhYKC6c74t
-	Xluv+uqwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qcvc2DG9TzX2BRaAk7ao7VybelDPFeBwujagw6Ig7i4=; b=lRfHAcE2N6KTne
+	J95we8z/I0/nX5P2D3epR303g5LTrLfyrDw10dLE5W9bh2BHT6oNId3EBkUg1iOf3dkKlEVCWg4dU
+	VZQSshBmC6xVg5JhTWDtrU6ScYwexNJEYlFrNYqvq1/7jZ7G4LV/NwQe4KpjDd0m6tgARSl1ZDCxt
+	g/Tr989O4VcBth37BuZ+8sw1dr9f4AL6tpufeB+a9ei9sszdc93TZjrjwRKvr0FMnRn+Cyrz9PAp7
+	H0BtaSIBi+FxgDLnoXhI3TXOMZmuYxV5ejBtG6t9AjLAA6Yg31jOPAGxA+swnPLwHxKTmw2maSW5+
+	M03EH7lQ8fUCEVZg0KFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAARQ-0004FS-9W; Fri, 06 Mar 2020 10:42:52 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jAAUI-0006BT-3M; Fri, 06 Mar 2020 10:45:50 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAOo-0000JT-3j
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:40:12 +0000
-Received: from lhreml703-cah.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id CD22D7FCF6C196E470F8;
- Fri,  6 Mar 2020 10:40:00 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml703-cah.china.huawei.com (10.201.108.44) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 6 Mar 2020 10:40:00 +0000
-Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 6 Mar 2020
- 10:40:00 +0000
-Subject: Re: About commit "io: change inX() to have their own IO barrier
- overrides"
-To: Arnd Bergmann <arnd@arndb.de>, Sinan Kaya <okaya@kernel.org>
-References: <2e80d7bc-32a0-cc40-00a9-8a383a1966c2@huawei.com>
- <c1489f55-369d-2cff-ff36-b10fb5d3ee79@kernel.org>
- <8207cd51-5b94-2f15-de9f-d85c9c385bca@huawei.com>
- <6115fa56-a471-1e9f-edbb-e643fa4e7e11@kernel.org>
- <7c955142-1fcb-d99e-69e4-1e0d3d9eb8c3@huawei.com>
- <CAK8P3a0f9hnKGd6GJ8qFZSu+J-n4fY23TCGxQkmgJaxbpre50Q@mail.gmail.com>
- <90af535f-00ef-c1e3-ec20-aae2bd2a0d88@kernel.org>
- <CAK8P3a2Grd0JsBNsB19oAxrAFtOdpvjrpGcfeArKe7zD_jrUZw@mail.gmail.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <ae0a1bf1-948f-7df0-9efb-cd1e94e27d2d@huawei.com>
-Date: Fri, 6 Mar 2020 10:39:59 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jAAU7-000696-3F; Fri, 06 Mar 2020 10:45:40 +0000
+Received: by mail-oi1-f196.google.com with SMTP id a22so2046162oid.13;
+ Fri, 06 Mar 2020 02:45:37 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=HroD0on08tLEMYhs9qrREoR+/CxJ/32j4jpzzO71uX0=;
+ b=c4fklFyB7FFMNJ8U4/gSTO49rNKoeU4dGmm7w4FD/EoDmBkIyXSeHuBwLF+srWsPYo
+ EcovG7jQCxpSsn3i2V2KEJKOZXFtAGnYAQ/q0nUKLuYR2CswOhYOSkqTC6cxNyNO4Wew
+ xxsTp6ipCSwA91hGppV4EKMHa0M1UhAs8xq+CpkIQxw6A0jnsz80poNipb5tvchig5oo
+ huen5cJvceQbIO44ykTwynNfaevyasdlnLFaSJ7VY7+Bpp1g0sE/w8xC2q6651jPf4n3
+ /uMuxLbe/ltIO3j1cCXbPIpFUlhrd1z/AHy0jFzwUtwmd8IRBbonvc6SUEcY40ZnkC40
+ mX8g==
+X-Gm-Message-State: ANhLgQ3B2KPu8nxnmd0QnHHKmgkMYGEI+s6SUS7YM+g7HJx7FueCC+ZA
+ 3aoX7HqkEsR0CXa1bqfejU2sNqhNg2sE8fEELagTDHYT
+X-Google-Smtp-Source: ADFU+vvtUPH3/Ph9fb3frspC4QqnvQ+CWNfeWzdZ5p3uA2hEhHOsJ1oZpb7TnnmVwlAmCRdczLdbAoij4DJyvJ/brwE=
+X-Received: by 2002:aca:1a06:: with SMTP id a6mr2005904oia.148.1583491536148; 
+ Fri, 06 Mar 2020 02:45:36 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a2Grd0JsBNsB19oAxrAFtOdpvjrpGcfeArKe7zD_jrUZw@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.202.226.45]
-X-ClientProxiedBy: lhreml716-chm.china.huawei.com (10.201.108.67) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+References: <20200302155703.278421-1-mylene.josserand@collabora.com>
+ <20200302155703.278421-2-mylene.josserand@collabora.com>
+ <2221545.2vEflg7qi2@diego>
+In-Reply-To: <2221545.2vEflg7qi2@diego>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 6 Mar 2020 11:45:25 +0100
+Message-ID: <CAMuHMdXJQqaCcMko9GUAeUiYQzmy3vnX42yVQNPzhj5ijtFuYA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
+To: =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_024010_306077_05BEF0E7 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_024539_139638_F3880DCB 
+X-CRM114-Status: GOOD (  16.91  )
+X-Spam-Score: -1.2 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
+ -1.5 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,79 +81,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jiaxun Yang <jiaxun.yang@flygoat.com>, "xuwei \(O\)" <xuwei5@hisilicon.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
+Cc: =?UTF-8?Q?Myl=C3=A8ne_Josserand?= <mylene.josserand@collabora.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/03/2020 07:54, Arnd Bergmann wrote:
-> On Fri, Mar 6, 2020 at 4:44 AM Sinan Kaya <okaya@kernel.org> wrote:
->>
->> On 3/3/2020 11:40 AM, Arnd Bergmann wrote:
->>>> -          ret = read##bw(PCI_IOBASE + addr);
->>>> +          __io_pbr();
->>>> +          ret = __raw_read##bw(PCI_IOBASE + addr);
->>>> +          __io_pbr();
->>> __io_par();
->>>
->>
->> Why do we need to change read##bw above?
->>
->> read##bw already provides strong ordering guarantees across multiple
->> architectures.
-> 
-> The exact semantics of inl() and readl() are slightly different, so they
-> have distinct sets of barriers in the asm-generic/io.h implementation.
-> 
-> For instance, the arm64 architectures defines in_par() as '__iormb(v)',
-> but defines __io_ar() as a  '__rmb()'. Similarly, riscv defines them
-> as "fence i,ior" and "fence i,r".
-> 
-> You could argue that the definitions are wrong (I have not checked the
-> history of the definitions), but as long as the inb() in asm-generic/io.h
-> uses those, the implementation in lib/logic_pio.c uses the same ones
-> to make the two behave the same way.
-> 
-
-So the change would look like:
-
--- a/lib/logic_pio.c
-+++ b/lib/logic_pio.c
-@@ -229,13 +229,21 @@ unsigned long 
-logic_pio_trans_cpuaddr(resource_size_t addr)
-  }
-
-  #if defined(CONFIG_INDIRECT_PIO) && defined(PCI_IOBASE)
-+
-+#define logic_in_to_cpu_b(x) (x)
-+#define logic_in_to_cpu_w(x) __le16_to_cpu(x)
-+#define logic_in_to_cpu_l(x) __le32_to_cpu(x)
-+
-  #define BUILD_LOGIC_IO(bw, type)                                      \
-  type logic_in##bw(unsigned long addr)                                 \
-  {                                                                     \
-         type ret = (type)~0;                                           \
-                                                                        \
-         if (addr < MMIO_UPPER_LIMIT) {                                 \
--               ret = read##bw(PCI_IOBASE + addr);                     \
-+               void __iomem *_addr = PCI_IOBASE + addr;               \
-+               __io_pbr();                                            \
-+               ret = logic_in_to_cpu_##bw(__raw_read##bw(_addr));     \
-+               __io_par(ret);                                         \
-         } else if (addr >= MMIO_UPPER_LIMIT && addr < IO_SPACE_LIMIT) {\
-                 struct logic_pio_hwaddr *entry = find_io_rang
-
-We could prob combine the le_to_cpu and __raw_read into a single macro.
-
-John
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSGVpa28sCgpPbiBXZWQsIE1hciA0LCAyMDIwIGF0IDEyOjAwIFBNIEhlaWtvIFN0w7xibmVy
+IDxoZWlrb0BzbnRlY2guZGU+IHdyb3RlOgo+IEFtIE1vbnRhZywgMi4gTcOkcnogMjAyMCwgMTY6
+NTc6MDIgQ0VUIHNjaHJpZWIgTXlsw6huZSBKb3NzZXJhbmQ6Cj4gPiBEZXRlcm1pbmUgd2hpY2gg
+cmV2aXNpb24gb2YgcmszMjg4IGJ5IGNoZWNraW5nIHRoZSBIRE1JIHZlcnNpb24uCj4gPiBBY2Nv
+cmRpbmcgdG8gdGhlIFJvY2tjaGlwIEJTUCBrZXJuZWwsIG9uIHJrMzI4OHcsIHRoZSBIRE1JCj4g
+PiByZXZpc2lvbiBlcXVhbHMgMHgxQSB3aGljaCBpcyBub3QgdGhlIGNhc2UgZm9yIHRoZSByazMy
+ODggWzFdLgo+ID4KPiA+IEFzIHRoZXNlIFNPQyBoYXZlIHNvbWUgZGlmZmVyZW5jZXMsIHRoZSBu
+ZXcgZnVuY3Rpb24KPiA+ICdzb2NfaXNfcmszMjg4dycgd2lsbCBoZWxwIHVzIHRvIGtub3cgb24g
+d2hpY2ggcmV2aXNpb24KPiA+IHdlIGFyZS4KPgo+IHdoYXQgaGFwcGVuZWQgdG8ganVzdCBoYXZp
+bmcgYSBkaWZmZXJlbnQgY29tcGF0aWJsZSBpbiB0aGUgZHRzPwo+IEFrYSBkb2luZyBhCj4KPiBy
+azMyODh3LmR0c2kgd2l0aAo+Cj4gI2luY2x1ZGUgInJrMzI4OC5kdHNpIgo+Cj4gJmNydSB7Cj4g
+ICAgICAgICBjb21wYXRpYmxlID0gInJvY2tjaGlwLHJrMzI4OHctY3J1IjsKPiB9Cj4KPiBJIHNv
+bWVob3cgZG9uJ3QgZXhwZWN0IGJvYXJkcyB0byBqdXN0IHN3aXRjaCBiZXR3ZWVuIHNvYyB2YXJp
+YW50cwo+IG9uIHRoZSBmbHkuCj4KPiBBbHNvLCBkb2luZyB0aGluZ3MgaW4gbWFjaC1yb2NrY2hp
+cCBpcyBub3QgdmVyeSBmdXR1cmUtcHJvb2Y6Cj4KPiAoMSkgaGF2aW5nIHJhbmRvbSBzb2Mtc3Bl
+Y2lmaWMgQVBJcyBzcGFubmluZyB0aGUga2VybmVsIGZlZWxzIHdyb25nLAo+ICAgICBlc3BlY2lh
+bGx5IGFzIGF0IHNvbWUgcG9pbnQgaXQgbWlnaHQgbm90IGJlIGNvbnRhaW5lZCB0byBvdXIgb3du
+IHNwZWNpYWwKPiAgICAgZHJpdmVycyBsaWtlIHRoZSBjcnUuIEkgY2Fubm90IHJlYWxseSBzZWUg
+cGVvcGxlIGJlaW5nIGVudGh1c2lhc3RpYyBpZgo+ICAgICBzb21ldGhpbmcgbGlrZSB0aGlzIHdv
+dWxkIGJlIG5lZWRlZCBpbiBzYXkgdGhlIGNvcmUgQW5hbG9naXgtRFAgYnJpZGdlIDstKQoKSW5k
+ZWVkLiAgWW91J3JlIGJldHRlciBvZiByZWdpc3RlcmluZyBhbiBzb2NfZGV2aWNlX2F0dHJpYnV0
+ZSB1c2luZwpzb2NfZGV2aWNlX3JlZ2lzdGVyKCksIGFmdGVyIHdoaWNoIGFueSBkcml2ZXIgY2Fu
+IHVzZSBzb2NfZGV2aWNlX21hdGNoKCkKdG8gZGlmZmVyZW50aWF0ZSBiYXNlZCBvbiB0aGUgU29D
+IHJldmlzaW9uLgoKPiAoMikgSSBndWVzcyB0aGUgcmszMjg4dyB3aWxsIG5vdCBiZSB0aGUgbGFz
+dCBzb2MgZG9pbmcgdGhpcyBhbmQgb24gYXJtNjQgeW91Cj4gICAgIGNhbid0IGRvIGl0IHRoYXQg
+d2F5LCBhcyB0aGVyZSBpcyBubyBtYWNoLXJvY2tjaGlwIHRoZXJlCgpUaGVyZSdzIGRyaXZlcnMv
+c29jL3JvY2tjaGlwIDstKQoKPiBTbyBteSBwZXJzb25hbCBwcmVmZXJlbmNlIHdvdWxkIHJlYWxs
+eSB3b3VsZCBiZSBqdXN0IGEgc3BlY2lmaWMgY29tcGF0aWJsZQo+IGZvciBhZmZlY3RlZCBpcCBi
+bG9ja3MuCgpEb2luZyB0aGF0IG9ubHkgZm9yIGFmZmVjdGVkIElQIGJsb2NrcyBtYXkgbWlzcyBp
+bnRlZ3JhdGlvbiBkaWZmZXJlbmNlcy4KT2YgY291cnNlLCB5b3UgY2FuIGFsd2F5cyByZXNvcnQg
+dG8gc29jX2RldmljZV9tYXRjaCgpIHRvIGhhbmRsZSB0aG9zZS4uLgoKR3J7b2V0amUsZWV0aW5n
+fXMsCgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdlZXJ0IFV5dHRlcmhvZXZl
+biAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4
+ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJ
+IGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0
+cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
