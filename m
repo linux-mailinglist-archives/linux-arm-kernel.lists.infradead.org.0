@@ -2,78 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8706E17C003
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 15:13:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 525ED17C026
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 15:24:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rp8xrgAhge6juWoexYoqt9h5qD1ESQcj9TzuMvbPVKs=; b=XiFq/IlsBHkYGb
-	+uKe26/8u1xyocgtEH6+rdo4VDaofMQIFGuwRn9gcT6a52+/EurP7QCDUYJqDJzBN4yqV0TteVCcg
-	IDw1frWo9G5J6p1htkM1JsnND3XifcEI3t1mCEoQd/ghc05wHuy0G2R3XfibHzNbb72Wfc6oKp+3r
-	+fMdhC5lqXxj1gxQiQ248w659sdKsxwc8cxD1xYNXRCH5vH2iPaw/H5PDiY5ddD082OQkAbPt+5h/
-	TLXPfGTNBnub8Jc5oRj4BP5w7coPrBp6PCw1xREDRDcHmCZ8BvSaVp7AOKLH3V8YhvXZGQUco0pQv
-	xkVobWCYpsXFALIyU9Qw==;
+	List-Owner; bh=T/My8xZPcUaksc1qJX5ZHwNI8Qyfa0+H96rp2lrXd/k=; b=XRkNCW49P1Yax4
+	dAkvpS3pZXGnBrGUv46qnRObC/bxslPuwqk6MKw4uZ+8rhMSTjXoP0eETg8CJPzx1obfURLaWI6Bz
+	xXVlYw3teneT8hwQiWUd5XFDNIytvw7HjJR4SGLPnANnm56gDpnZMOVksv5zc+Sxi3d7vWu/KJNpj
+	u3LP2O3gn7SqBFQWS/wuDwK8JjjSfg8u/xV4CLlRn4bCoUYakUP/Hn7qdHHsJSBVITYtBZgIW1hZV
+	j9QLpHKaDmSuf+mNhBB5v1pMvKvgfhRfyVn6xvD6SmTNClHPkT0HBlkUpgyukKX5YtPOwjtY4rTWR
+	hYgYrsmCV9NBdydeuF4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jADjI-0000o1-29; Fri, 06 Mar 2020 14:13:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jADj8-0000nX-Uo; Fri, 06 Mar 2020 14:13:24 +0000
-Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
- [209.85.160.177])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C4B09208CD;
- Fri,  6 Mar 2020 14:13:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583504001;
- bh=8HMSv45RmcowcvUV+/JVwCs/5SkwykqDSsq0zxlngI4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=kwDxgZlOXDyDbl3r6rSK08+Sd8k5f1bwGh0lcEG94uqfILJBo3jo/PxP9wbPgyaCP
- NLB9f8j7t4VXm6EFEEZ/lxmd9wKxWoqUFcJjYga6NBEsm38Ive2pM8k+5BfuWtqO+e
- maiHZptvwMIIrk8aVL4xXnB5i4SADPrfQ3o5caMs=
-Received: by mail-qt1-f177.google.com with SMTP id a4so1752835qto.12;
- Fri, 06 Mar 2020 06:13:21 -0800 (PST)
-X-Gm-Message-State: ANhLgQ25Mz+267u/Q0SevzBxURfPkyPcaLz8JeF3QaicC0pvHq0542dp
- 5inp9+7ki4tbYi+FRq6MoQoDUEVitrHNuueChQ==
-X-Google-Smtp-Source: ADFU+vtV93a6Fp58Tncd6cIdfe2+CpsQ5PI8x6hov3jHYzgAVFu8JmXylmr7k0+5bR+Gvm/UG+tSzfOnnksdk3kV1RI=
-X-Received: by 2002:aed:3461:: with SMTP id w88mr3133057qtd.143.1583504000926; 
- Fri, 06 Mar 2020 06:13:20 -0800 (PST)
+	id 1jADt4-0004tj-SU; Fri, 06 Mar 2020 14:23:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jADsw-0004sT-Et
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 14:23:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6006C31B;
+ Fri,  6 Mar 2020 06:23:23 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2B29E3F534;
+ Fri,  6 Mar 2020 06:23:22 -0800 (PST)
+Date: Fri, 6 Mar 2020 14:23:13 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Peng Fan <peng.fan@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
+Message-ID: <20200306123442.GA47929@bogus>
+References: <1583201219-15839-1-git-send-email-peng.fan@nxp.com>
+ <1583201219-15839-3-git-send-email-peng.fan@nxp.com>
+ <20200304103954.GA25004@bogus>
+ <AM0PR04MB4481A6DB7339C22A848DAFC988E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <AM0PR04MB44814B71E92C02956F4BED4588E50@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200304170319.GB44525@bogus>
+ <AM0PR04MB4481B90D03D1F68573B05BE088E20@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <20200305160613.GA53631@bogus>
+ <d9734fd6-f855-296b-3a0b-ffc45ed0e3cb@gmail.com>
+ <AM0PR04MB448167BD133BF57E548F2F0588E30@AM0PR04MB4481.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20200207052627.130118-1-drinkcat@chromium.org>
- <20200207052627.130118-2-drinkcat@chromium.org> <20200225171613.GA7063@bogus>
- <CANMq1KAVX4o5yC7c_88Wq_O=F+MaSN_V4uNcs1nzS3wBS6A5AA@mail.gmail.com>
- <1583462055.4947.6.camel@mtksdaap41>
-In-Reply-To: <1583462055.4947.6.camel@mtksdaap41>
-From: Rob Herring <robh@kernel.org>
-Date: Fri, 6 Mar 2020 08:13:08 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLoUnxfrJh0WCs0jgro1KHAjWaYMsaKkKfAKA2KJ252_g@mail.gmail.com>
-Message-ID: <CAL_JsqLoUnxfrJh0WCs0jgro1KHAjWaYMsaKkKfAKA2KJ252_g@mail.gmail.com>
-Subject: Re: [PATCH v4 1/7] dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
-To: Nick Fan <nick.fan@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB448167BD133BF57E548F2F0588E30@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_061323_016657_D943029D 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200306_062330_543845_B9DB1E81 
+X-CRM114-Status: GOOD (  22.18  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,38 +71,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, Nicolas Boichat <drinkcat@chromium.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Sj Huang <sj.huang@mediatek.com>,
- Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 5, 2020 at 8:34 PM Nick Fan <nick.fan@mediatek.com> wrote:
->
-> Sorry for my late reply.
-> I have checked internally.
-> The MT8183_POWER_DOMAIN_MFG_2D is just a legacy name, not really 2D
-> domain.
->
-> If the naming too confusing, we can change this name to
-> MT8183_POWER_DOMAIN_MFG_CORE2 for consistency.
+On Fri, Mar 06, 2020 at 08:07:19AM +0000, Peng Fan wrote:
+> > Subject: Re: [PATCH V4 2/2] firmware: arm_scmi: add smc/hvc transport
+> >
+> > On 3/5/20 8:06 AM, Sudeep Holla wrote:
+> > > On Thu, Mar 05, 2020 at 11:25:35AM +0000, Peng Fan wrote:
+> > >
+> > > [...]
+> > >
+> > >>>
+> > >>> Yes, this may fix the issue. However I would like to know if we need
+> > >>> to support multiple channels/shared memory simultaneously. It is
+> > >>> fair requirement and may need some work which should be fine.
+> > >>
+> > >> Do you have any suggestions? Currently I have not worked out an good
+> > >> solution.
+> > >>
+> > >
+> > > TBH, I haven't given it a much thought. I would like to know if people
+> > > are happy with just one SMC channel for SCMI or do they need more ?
+> > > If they need it, we can try to solve it. Otherwise, what you have will
+> > > suffice IMO.
+> >
+> > On our platforms we have one channel/shared memory area/mailbox
+> > instance for all standard SCMI protocols, and we have a separate
+> > channel/shared memory area/mailbox driver instance for a proprietary one.
+> > They happen to have difference throughput requirements, hence the split.
+> >
 
-Can you clarify what's in each domain? Are there actually 3 shader
-cores (IIRC, that should be discoverable)?
+OK, when you refer proprietary protocol, do you mean outside the scope of
+SCMI ? The reason I ask is SCMI allows vendor specific protocols and if
+you are using other channel for that, it still make sense to add
+multi-channel support here.
 
-Rob
+> > If I read Peng's submission correctly, it seems to me that the usage model
+> > described before is still fine.
+>
+> Thanks.
+>
+> Sudeep,
+>
+> Then should I repost with the global mutex added?
+>
+
+Sure, you can send the updated. I will think about adding support for more
+than one channel and send a patch on top of it if I get around it.
+
+Note that I sent PR for v5.7 last earlier this week, so this will be for v5.8
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
