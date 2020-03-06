@@ -2,59 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C72417BA41
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:31:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78EB117BA63
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:39:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uAMvIs0IaUwTQXubZ+folhOD7ZyjSsx+qWeRs3dPISs=; b=derVxI3HQDST+s
-	5UZK0EDv5o2kwyxbOWWTizhhs1KWqe4BHtopbWsyXfwGLyNJHBbHGZCePAvDr3MaFaCbmbvGjekP4
-	Y+FnAy+tD+O3gcKkJ2ujFzVnMIFcKSldRnrr/8xQh9C+Tcdlqp8nHWDs/k4jyrAYnMOhAAnPTLBgb
-	5gsw0K7zpUFBqSAvtkGCyarUsgZK7sTTswOJOwB6cpg35ShpYwdS8FHK3cRf9X/FuE79l3yz5ongN
-	MChRGj2Puo3vBoGwjN3wJpwp7oVsVjszFBVtEn5t5deC2XqyHFoxnHGF2EFy7RpoCi6LkLvrYOuio
-	F19T4GEpQ/JabBPaB8MQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=2Y2j4AHWFJLu7OVlmy/pW/UztBYZQjfjbAunI2uSKbc=; b=TnYaPt5W7fIZkg6x0L4qLPrT0
+	JQQn4K8N/HHvMnGSzLsUwE//4yAWFkrgeSM7pBLD0549zQMMuNagjNhSzJYx+IUaPKzU7Q4JZn5+7
+	R8TWC1ZjiuOTfzos++cshInmge/Y49hM6r/AGdeGFMh+vM25W5pqCSkvbPUzxK+qC4dAqNGoku8Vv
+	dLQg2trRyEbvBB+OGWe/2bB2d04TjI3VMq11W3RYuMRTNzkOBA3Avfl0zHkzoqfcOwc5cyiJ0jCCJ
+	Mb3Cyb2LnN1u5/vAya+rGEDdGISgsaOLUbcpLZMeTM4rVHysJqlCz8yNtolZ74dGQAQ3LijzH6gFn
+	lxL9uFVCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAGG-0005R8-D3; Fri, 06 Mar 2020 10:31:20 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jAANi-0007Va-Qv; Fri, 06 Mar 2020 10:39:02 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAG7-0005QZ-RM; Fri, 06 Mar 2020 10:31:13 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id EC114296FC2
-Message-ID: <8f3ef079b0c96d65e5855a58efd6d8dc32cd32e7.camel@collabora.com>
-Subject: Re: [PATCH 1/2] ARM: Rockchip: Handle rk3288/rk3288w revision
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Kever Yang <kever.yang@rock-chips.com>, Heiko =?ISO-8859-1?Q?St=FCbner?=
- <heiko@sntech.de>
-Date: Fri, 06 Mar 2020 07:30:56 -0300
-In-Reply-To: <933e1ce3-68be-9e78-18a3-eb3d4e038cfb@rock-chips.com>
-References: <20200302155703.278421-1-mylene.josserand@collabora.com>
- <2221545.2vEflg7qi2@diego>
- <5fa8402863c7fb4171d8b2021a776b9ac0be1596.camel@collabora.com>
- <35989681.7qWAQounLj@diego>
- <8b993ec8ae9dccc6a8633cfe5e5b6d40d58ffbae.camel@collabora.com>
- <506e1aeda3ed14276734f22f320b0ceb6a4b06b0.camel@collabora.com>
- <933e1ce3-68be-9e78-18a3-eb3d4e038cfb@rock-chips.com>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+ id 1jAANZ-0007Uq-6B
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:38:55 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jAANM-00031M-8Q; Fri, 06 Mar 2020 11:38:40 +0100
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jAANJ-0002Qa-AC; Fri, 06 Mar 2020 11:38:37 +0100
+Date: Fri, 6 Mar 2020 11:38:37 +0100
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Philippe Schenker <philippe.schenker@toradex.com>
+Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
+Message-ID: <20200306103837.4b2qfrsnqf2ebqqa@pengutronix.de>
+References: <20200305134928.19775-1-philippe.schenker@toradex.com>
+ <20200305143805.dk7fndblnqjnwxu6@pengutronix.de>
+ <240b86a0aa76ac1f1d3948fc3089e3d13266f4b1.camel@toradex.com>
 MIME-Version: 1.0
+In-Reply-To: <240b86a0aa76ac1f1d3948fc3089e3d13266f4b1.camel@toradex.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 11:17:37 up 112 days,  1:36, 141 users,  load average: 0.00, 0.01,
+ 0.04
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_023112_150051_7EA83386 
-X-CRM114-Status: GOOD (  30.90  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200306_023853_389298_F2DCAC59 
+X-CRM114-Status: GOOD (  33.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,116 +75,232 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?ISO-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@collabora.com>,
- sboyd@kernel.org, mturquette@baylibre.com, linux@armlinux.org.uk,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "allison@lohutok.net" <allison@lohutok.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============9158061066172669729=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMDIwLTAzLTA2IGF0IDEwOjQ0ICswODAwLCBLZXZlciBZYW5nIHdyb3RlOgo+IEhp
-IEV6ZXF1aWVsLAo+IAo+IAo+IE9uIDIwMjAvMy81IOS4i+WNiDc6MzUsIEV6ZXF1aWVsIEdhcmNp
-YSB3cm90ZToKPiA+IChBZGRpbmcgS2V2ZXIgdG8gdGhlIGxvb3ApCj4gPiAKPiA+IE9uIFRodSwg
-MjAyMC0wMy0wNSBhdCAwODozMiAtMDMwMCwgRXplcXVpZWwgR2FyY2lhIHdyb3RlOgo+ID4gPiBP
-biBUaHUsIDIwMjAtMDMtMDUgYXQgMDE6NTEgKzAxMDAsIEhlaWtvIFN0w7xibmVyIHdyb3RlOgo+
-ID4gPiA+IEhpIEV6ZXF1aWVsLAo+ID4gPiA+IAo+ID4gPiA+IEFtIERvbm5lcnN0YWcsIDUuIE3D
-pHJ6IDIwMjAsIDAxOjAzOjMwIENFVCBzY2hyaWViIEV6ZXF1aWVsIEdhcmNpYToKPiA+ID4gPiA+
-IEhpIEhlaWtvLAo+ID4gPiA+ID4gCj4gPiA+ID4gPiBPbiBXZWQsIDIwMjAtMDMtMDQgYXQgMTE6
-NTkgKzAxMDAsIEhlaWtvIFN0w7xibmVyIHdyb3RlOgo+ID4gPiA+ID4gPiBIaSwKPiA+ID4gPiA+
-ID4gCj4gPiA+ID4gPiA+IEFtIE1vbnRhZywgMi4gTcOkcnogMjAyMCwgMTY6NTc6MDIgQ0VUIHNj
-aHJpZWIgTXlsw6huZSBKb3NzZXJhbmQ6Cj4gPiA+ID4gPiA+ID4gRGV0ZXJtaW5lIHdoaWNoIHJl
-dmlzaW9uIG9mIHJrMzI4OCBieSBjaGVja2luZyB0aGUgSERNSSB2ZXJzaW9uLgo+ID4gPiA+ID4g
-PiA+IEFjY29yZGluZyB0byB0aGUgUm9ja2NoaXAgQlNQIGtlcm5lbCwgb24gcmszMjg4dywgdGhl
-IEhETUkKPiA+ID4gPiA+ID4gPiByZXZpc2lvbiBlcXVhbHMgMHgxQSB3aGljaCBpcyBub3QgdGhl
-IGNhc2UgZm9yIHRoZSByazMyODggWzFdLgo+ID4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiA+IEFz
-IHRoZXNlIFNPQyBoYXZlIHNvbWUgZGlmZmVyZW5jZXMsIHRoZSBuZXcgZnVuY3Rpb24KPiA+ID4g
-PiA+ID4gPiAnc29jX2lzX3JrMzI4OHcnIHdpbGwgaGVscCB1cyB0byBrbm93IG9uIHdoaWNoIHJl
-dmlzaW9uCj4gPiA+ID4gPiA+ID4gd2UgYXJlLgo+ID4gPiA+ID4gPiB3aGF0IGhhcHBlbmVkIHRv
-IGp1c3QgaGF2aW5nIGEgZGlmZmVyZW50IGNvbXBhdGlibGUgaW4gdGhlIGR0cz8KPiA+ID4gPiA+
-ID4gQWthIGRvaW5nIGEKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiA+IHJrMzI4OHcuZHRzaSB3aXRo
-Cj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gPiAjaW5jbHVkZSAicmszMjg4LmR0c2kiCj4gPiA+ID4g
-PiA+IAo+ID4gPiA+ID4gPiAmY3J1IHsKPiA+ID4gPiA+ID4gCWNvbXBhdGlibGUgPSAicm9ja2No
-aXAscmszMjg4dy1jcnUiOwo+ID4gPiA+ID4gPiB9Cj4gPiA+ID4gPiA+IAo+ID4gPiA+ID4gSSBn
-dWVzcyB5b3UgaGF2ZSBzb21ldGhpbmcgbGlrZSB0aGlzIGluIG1pbmQ6Cj4gPiA+ID4gPiAKPiA+
-ID4gPiA+IHN0YXRpYyB2b2lkIF9faW5pdCByazMyODhfY2xrX2luaXQoc3RydWN0IGRldmljZV9u
-b2RlICpucCkKPiA+ID4gPiA+IHsKPiA+ID4gPiA+ICAgICAgICAgIF9fcmszMjg4X2Nsa19pbml0
-KG5wLCBSSzMyODhfU09DX1JFVl9SSzMyODhXKTsKPiA+ID4gPiA+IH0KPiA+ID4gPiA+IENMS19P
-Rl9ERUNMQVJFKHJrMzI4OF9jcnUsICJyb2NrY2hpcCxyazMyODgtY3J1IiwgcmszMjg4X2Nsa19p
-bml0KTsKPiA+ID4gPiA+IAo+ID4gPiA+ID4gc3RhdGljIHZvaWQgX19pbml0IHJrMzI4OHdfY2xr
-X2luaXQoc3RydWN0IGRldmljZV9ub2RlICpucCkKPiA+ID4gPiA+IHsKPiA+ID4gPiA+ICAgICAg
-ICAgIF9fcmszMjg4X2Nsa19pbml0KG5wLCBSSzMyODhfU09DX1JFVl9SSzMyODgpOwo+ID4gPiA+
-ID4gfQo+ID4gPiA+ID4gQ0xLX09GX0RFQ0xBUkUocmszMjg4X2NydSwgInJvY2tjaGlwLHJrMzI4
-OHctY3J1IiwgcmszMjg4d19jbGtfaW5pdCk7Cj4gPiA+ID4gPiAKPiA+ID4gPiA+IEFuZCB0aGUg
-cmVzdCBpcyBtb3N0bHkgdW50b3VjaGVkLCBleGNlcHQgdGhlIHJldmlzaW9uIGlzCj4gPiA+ID4g
-PiBubyBsb25nZXIgcXVlcmllZCBhbmQgaXMgbm93IHBhc3NlZCBieSB0aGUgRFQ/Cj4gPiA+ID4g
-RXNzZW50aWFsbHkgeWVzLCBidXQgSSBndWVzcyBJIHdhcyBtb3JlIHRoaW5raW5nIGFsb25nIHRo
-ZSBsaW5lcyBvZgo+ID4gPiA+IHRoZSByazMxODgvcmszMDY2YS9yazMxODhhIChkcml2ZXJzL2Ns
-ay9yb2NrY2hpcC9jbGstcmszMTg4LmMpCj4gPiA+ID4gCj4gPiA+ID4gCj4gPiA+ID4gPiBUaGlz
-IHdvdWxkIGJlIGNsZWFuZXIgZm9yIHRoZSBrZXJuZWwsIHdpdGggdGhlIG9idmlvdXMKPiA+ID4g
-PiA+IGRyYXdiYWNrIGJlaW5nIHRoYXQgeW91IG5vdyBoYXZlIHRvIG1haW50YWluCj4gPiA+ID4g
-PiBhbm90aGVyIERUUy4KPiA+ID4gPiBSaWdodCBub3cgd2Ugd291bGQgZW5kIHVwIHdpdGggdGhl
-IHByZXR0eSBtaW5pbWFsIGRldmljZXRyZWUKPiA+ID4gPiBoYXZpbmcganVzdCB0aGF0IGNydS4g
-U28gbm90IHZlcnkgaW52YXNpdmUuCj4gPiA+ID4gCj4gPiA+ID4gCj4gPiA+ID4gPiBUaGlzIGNv
-dWxkIGJlIGFuIGluY29udmVuaWVuY2UuIEkgYmVsaWV2ZQo+ID4gPiA+ID4gUkszMjg4VyBpcyBt
-ZWFudCBhcyBhIGRpcmVjdCByZXBsYWNlbWVudCBmb3IgUkszMjg4LAo+ID4gPiA+ID4gc28gZm9s
-a3MgYnVpbGRpbmcgcHJvZHVjdHMgd291bGQgZXhwZWN0IHRvIGp1c3QgdXNlCj4gPiA+ID4gPiBS
-SzMyODhXLCBhbmQgbm90IHJlYWxseSBib3RoZXIgd2l0aCBwYXNzaW5nIGEKPiA+ID4gPiA+IGRp
-ZmZlcmVudCBEVFMgb3Igd2hhdCBub3QuCj4gPiA+ID4gTm90IHN1cmUgSSBmb2xsb3cuIEFzIGJl
-bG93LCBJIGRvbid0IHRoaW5rIGJvYXJkcyB3aWxsIG1hZ2ljYWxseSBzd2l0Y2gKPiA+ID4gPiBi
-ZXR3ZWVuIHNvYyB2YXJpYW50cywgc28gYSBib2FyZHMgZGV2aWNldHJlZSBzaG91bGQganVzdCBp
-bmNsdWRlCj4gPiA+ID4gdGhlIHZhcmlhbnQgLSBlc3BlY2lhbGx5IGFzIEkgZG9uJ3QgcmVhbGx5
-IGtub3cgaG93IG1hbnkKPiA+ID4gPiBhZGRpdGlvbmFsIG5ldyBib2FyZHMgd2Ugd2lsbCBzZWUg
-d2l0aCBpdCAocmszMjg4IGJlaW5nIHF1aXRlIG9sZCBpdHNlbGYpLgo+ID4gPiA+IAo+ID4gPiBJ
-dCdzIG5vdCBhYm91dCBuZXcgYm9hcmRzLCBhbnkgY29tcGFueSBkb2VzIHNlbGxzIHNvbWUgUksz
-Mjg4OC1iYXNlZCBwcm9kdWN0LAo+ID4gPiB3aWxsIGV2ZW50dWFsbHkgd2FudCB0byBwcm9kdWNl
-IHNvbWUgbW9yZS4KPiA+ID4gCj4gPiA+IElmIEkgdW5kZXJzdGFuZCBjb3JyZWN0bHksIFJLMzI4
-OFcgaXMgdGhlIFNvQyB0aGF0IFJvY2tjaGlwIGlzIG5vdyBvZmZlcmluZywKPiA+ID4gYW5kIG5v
-dCBSSzMyODggYW55bW9yZS4KPiAKPiBObywgdGhlIFJLMzI4OCB3aWxsIGNvbnRpbnVlIHRvIHN1
-cHBseSB0byB0aGUgbGVnYWN5IHByb2plY3RzIHdoaWNoIG1heSAKPiBoYXZlIGEgbG9uZyBjb250
-cmFjdCB3aXRoIFJvY2tjaGlwLAo+IAo+IGFuZCBSSzMyODhXIGlzIHRoZSByZWNvbW1lbmQgdG8g
-dXNlIGluIGFsbCBuZXcgcHJvamVjdC4KPiAKCkkgZ3Vlc3MgdGhpcyBtZWFucyB0aGF0IGlmIGEg
-Y29tcGFueSBub3QgaGF2aW5nIGEgbG9uZyBjb250cmFjdAp3YW50cyB0byBrZWVwIHByb2R1Y2lu
-ZyBhbiBSSzMyODgtYmFzZWQgcHJvZHVjdCwgaXQgd2lsbCBoYXZlIHRvCnJlc29ydCB0byBSSzMy
-ODhXLgoKQW5kIElJUkMsIGl0J3MgbWVhbnQgdG8gYmUgYSBkaXJlY3QgcmVwbGFjZW1lbnQuCiAK
-PiA+ID4gU28sIGlmIHlvdSBoYXZlIHRvIHByb2R1Y2UgYW5vdGhlciBiYXRjaCBvZiBfdGhlIHNh
-bWUgUkszMjg4XyBwcm9kdWN0LAo+ID4gPiB5b3UnbGwgaGF2ZSB0byB1c2UgUkszMjg4Vy4gSW4g
-b3RoZXIgd29yZHMsIHRoZXkgd291bGQgImp1c3Qgc3dpdGNoIgo+ID4gPiBiZXR3ZWVuIFNvQyB2
-YXJpYW50cy4KPiA+ID4gCj4gPiA+IEluIGZhY3QsIHN1Y2ggYSBjYXNlIG1vdGl2YXRlcyB0aGVz
-ZSBwYXRjaGVzIDotKQo+ID4gPiAKPiA+ID4gPiA+ID4gSSBzb21laG93IGRvbid0IGV4cGVjdCBi
-b2FyZHMgdG8ganVzdCBzd2l0Y2ggYmV0d2VlbiBzb2MgdmFyaWFudHMKPiA+ID4gPiA+ID4gb24g
-dGhlIGZseS4KPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiBXaGlsZSBJIGFncmVlIHRoZXkgYXJlIG5h
-c3R5LCBxdWlya3MgbGlrZSB0aGlzCj4gPiA+ID4gPiBhcmUgbm90IHVuY29tbW9uLgo+ID4gPiA+
-ID4gCj4gPiA+ID4gPiA+IEFsc28sIGRvaW5nIHRoaW5ncyBpbiBtYWNoLXJvY2tjaGlwIGlzIG5v
-dCB2ZXJ5IGZ1dHVyZS1wcm9vZjoKPiA+ID4gPiA+ID4gCj4gPiA+ID4gPiBUaGVyZSBpcyBhY3R1
-YWxseSBubyByZWFzb24gdG8ga2VlcCB0aGlzIGluIG1hY2gtcm9ja2NoaXAsIHJpZ2h0Pwo+ID4g
-PiA+ID4gCj4gPiA+ID4gPiBUaGUgcXVpcmsgY291bGQgYmUgcGxhY2VkIGluIG90aGVyIHBsYWNl
-cy4gRm9yIGluc3RhbmNlLAo+ID4gPiA+ID4gZGlyZWN0bHkgaW4gdGhlIGNsb2NrIGRyaXZlci4K
-PiA+ID4gPiBNYXBwaW5nIHRoZSBoZG1pIGNvbnRyb2xsZXIgaW5zaWRlIHRoZSBjbG9jayBkcml2
-ZXIgdG8gcmVhZCBzb21lICJyYW5kb20iCj4gPiA+ID4gcmVnaXN0ZXIgdGhhdCBob3BlZnVsbHkg
-aW5kaWNhdGVzIGFuICh1bmRvY3VtZW50ZWQpIGRpc3RpbmN0aW9uIGJldHdlZW4gc29jCj4gPiA+
-ID4gdmFyaWFudHMuCj4gPiA+ID4gCj4gPiA+ID4gU29tZWhvdyBqdXN0IGhhdmluZyB0aGF0IG1p
-bmltYWwgZGV2aWNldHJlZSBmb3IgdGhlICJ3IiBzb3VuZHMKPiA+ID4gPiB3YXkgY2xlYW5lciA7
-LSkgLgo+IAo+IEkgYWdyZWUgd2l0aCBIZWlrbyBvbiB0aGlzLgo+IAo+IFdoYXQgUm9ja2NoaXAg
-ZG9uZSBpczoKPiAKPiAtIGtlcm5lbCBpcyB1c2luZyAicm9ja2NoaXAscmszMjg4dyIgY29tcGF0
-aWJsZSB0byBpZGVudGlmeSByazMyODh3LCAKPiB3aGljaCBpcyBjbGVhbiBpbiBrZXJuZWw7Cj4g
-Cj4gLSBrZXJuZWwgZXZiIGR0cyBkbyBub3QgaGF2ZSBjb21wYXRpYmxlICJyb2NrY2hpcCxyazMy
-ODh3IiBmb3Igd2Ugd291bGQgCj4gbGlrZSB0byBpZGVudGlmeSBpdCBkeW5hbWljIGluIGJvb3Rs
-b2FkZXI7Cj4gCj4gLSBXZSB1c2UgVS1Cb290IHRvIGlkZW50aWZ5IHRoZSByazMyODh3IHdpdGgg
-SERNSSByZWcgdmFsdWUsIGFuZCBwYXNzIGl0IAo+IHRvIGtlcm5lbCB2aWEgbW9kaWZ5IHRoZQo+
-IAo+ICAgICBkdGIgcGFzcyB0byBrZXJuZWwsIHNvIHRoYXQgd2UgY2FuIHN1cHBvcnQgYWxsIGtp
-bmQgb2Ygcm9ja2NoaXAgCj4gY3VzdG9tZXIgcHJvamVjdHMgd2l0aCBhbnkga2luZCBvZiByazMy
-ODg7Cj4gCj4gLSBGb3IgdXBzdHJlYW0ga2VybmVsLCBpdCBtYWtlIHNlbnNlIHRvIGFkZCAicm9j
-a2NoaXAscmszMjg4dyIgaW4gYm9hcmQgCj4gZHRzIGZvciB3aGljaCB1c2luZyByazMyODh3IFNv
-Qy4KPiAKClNvIHlvdSBwcm9wb3NpbmcgdG8gbW92ZSB0aGlzIHJldmlzaW9uIGRldGVjdGlvbiBj
-b2RlCmZyb20gdGhlIGtlcm5lbCB0byBhbGwgdGhlIGJvb3Rsb2FkZXJzIChVLUJvb3QgaXMgbm90
-IHRoZQpvbmx5IG9uZSwgcmlnaHQ/KS4KCkkgdW5kZXJzdGFuZCB0aGF0IGJvb3Rsb2FkZXJzIGFy
-ZSBtYXliZSBsZXNzIHN0cmljdAp0byBxdWlya3MgbGlrZSB0aGlzLCBidXQgT1RPSCB0aGlzIGFw
-cHJvYWNoIHNlZW1zIGxpa2UKanVzdCBtb3ZpbnQgdGhpbmdzIGFyb3VuZCwgcGx1cyByZXF1aXJp
-bmcgbm93IHRvIHVwZGF0ZQp0d28gY29tcG9uZW50cywgaW5zdGVhZCBvZiBqdXN0IG9uZS4KCkFu
-ZCBhbHNvLCBhcmUgd2Ugc3VyZSB0aGUgYm9vdGxvYWRlcnMgbWFpbnRhaW5lcnMKd2lsbCBhY2Nl
-cHQgdGhlIHF1aXJrPwoKVGhhbmtzLApFemVxdWllbAoKIAoKCgoKX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
-c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
-YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+--===============9158061066172669729==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ctfe6omlsgsb22re"
+Content-Disposition: inline
+
+
+--ctfe6omlsgsb22re
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Philippe,
+
+On Fri, Mar 06, 2020 at 09:55:06AM +0000, Philippe Schenker wrote:
+> On Thu, 2020-03-05 at 15:38 +0100, Oleksij Rempel wrote:
+> > Hi Philippe,
+> >=20
+> > On Thu, Mar 05, 2020 at 02:49:28PM +0100, Philippe Schenker wrote:
+> > > The MAC of the i.MX6 SoC is compliant with RGMII v1.3. The KSZ9131
+> > > PHY
+> > > is like KSZ9031 adhering to RGMII v2.0 specification. This means the
+> > > MAC should provide a delay to the TXC line. Because the i.MX6 MAC
+> > > does
+> > > not provide this delay this has to be done in the PHY.
+> > >=20
+> > > This patch adds by default ~1.6ns delay to the TXC line. This should
+> > > be good for all boards that have the RGMII signals routed with the
+> > > same length.
+> > >=20
+> > > The KSZ9131 has relatively high tolerances on skew registers from
+> > > MMD 2.4 to MMD 2.8. Therefore the new DLL-based delay of 2ns is used
+> > > and then as little as possibly subtracted from that so we get more
+> > > accurate delay. This is actually needed because the i.MX6 SoC has
+> > > an asynchron skew on TXC from -100ps to 900ps, to get all RGMII
+> > > values within spec.
+>=20
+> Hi Oleksij! Thanks for your comments and review.
+> >=20
+> > This configuration has nothing to do in mach-imx/* It belongs to the
+> > board devicetree. Please see DT binding documentation for needed
+> > properties:
+> > Documentation/devicetree/bindings/net/micrel-ksz90x1.txt
+>=20
+> I know that nowadays this stuff only belongs in the devicetree. I fully
+> agree with you. I am also aware of the devicetree bindings.
+> >=20
+> > All of this mach-imx fixups are evil and should be removed or disabled
+> > by Kconfig
+> > option. Since they will run on all i.MX based boards even if this PHY
+> > are
+> > connected to some switch and not connected to the FEC directly.
+> > And.. If driver didn't made this configuration all this changes will
+> > be lost on
+> > suspend/resume cycle or on PHY reset.
+>=20
+> I am also aware of this behaviour.
+
+=2E.. =C3=B2_=C3=B4 ...
+
+> But the i.MX6 is a SoC used in
+> embedded applications and I guess no one comes and plugs in a PCIe MAC
+> card in an embedded device.
+
+=2E.. hm ...
+
+> But yes you're right you never know.
+
+well, it is not theoretical discussion. This devices do exist.. With
+this patch you will break other existing systems.
+
+> Because the i.MX6 is an embedded processor I still think we should place
+> that fixup in mach-imx. There is already a fixup for the predecessor
+> KSZ9031 in that code. The KSZ9131 is pin-compatible with KSZ9031 and
+> also software compatible, just not with the skew settings.
+
+This fixups will be removed or disabled with Kconfig option:
+https://lore.kernel.org/patchwork/patch/1164172/
+
+> I really dislike reinventing the weel here for an old SoC.
+
+Well, you are doing it not for a SoC (old or new), you are doing it for
+PHY. PHY fixes belong to PHY driver.
+
+> Philippe
+> >=20
+> > Regards,
+> > Oleksij
+> >=20
+> > > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+> > >=20
+> > > ---
+> > >=20
+> > >  arch/arm/mach-imx/mach-imx6q.c | 37
+> > > ++++++++++++++++++++++++++++++++++
+> > >  1 file changed, 37 insertions(+)
+> > >=20
+> > > diff --git a/arch/arm/mach-imx/mach-imx6q.c b/arch/arm/mach-
+> > > imx/mach-imx6q.c
+> > > index edd26e0ffeec..8ae5f2fa33e2 100644
+> > > --- a/arch/arm/mach-imx/mach-imx6q.c
+> > > +++ b/arch/arm/mach-imx/mach-imx6q.c
+> > > @@ -61,6 +61,14 @@ static void mmd_write_reg(struct phy_device *dev,
+> > > int device, int reg, int val)
+> > >  	phy_write(dev, 0x0e, val);
+> > >  }
+> > > =20
+> > > +static int mmd_read_reg(struct phy_device *dev, int device, int
+> > > reg)
+> > > +{
+> > > +	phy_write(dev, 0x0d, device);
+> > > +	phy_write(dev, 0x0e, reg);
+> > > +	phy_write(dev, 0x0d, (1 << 14) | device);
+> > > +	return phy_read(dev, 0x0e);
+> > > +}
+> > > +
+> > >  static int ksz9031rn_phy_fixup(struct phy_device *dev)
+> > >  {
+> > >  	/*
+> > > @@ -74,6 +82,33 @@ static int ksz9031rn_phy_fixup(struct phy_device
+> > > *dev)
+> > >  	return 0;
+> > >  }
+> > > =20
+> > > +#define KSZ9131_RXTXDLL_BYPASS	12
+> > > +
+> > > +static int ksz9131rn_phy_fixup(struct phy_device *dev)
+> > > +{
+> > > +	int tmp;
+> > > +
+> > > +	tmp =3D mmd_read_reg(dev, 2, 0x4c);
+> > > +	/* disable rxdll bypass (enable 2ns skew delay on RXC) */
+> > > +	tmp &=3D ~(1 << KSZ9131_RXTXDLL_BYPASS);
+> > > +	mmd_write_reg(dev, 2, 0x4c, tmp);
+> > > +
+> > > +	tmp =3D mmd_read_reg(dev, 2, 0x4d);
+> > > +	/* disable txdll bypass (enable 2ns skew delay on TXC) */
+> > > +	tmp &=3D ~(1 << KSZ9131_RXTXDLL_BYPASS);
+> > > +	mmd_write_reg(dev, 2, 0x4d, tmp);
+> > > +
+> > > +	/*
+> > > +	 * Subtract ~0.6ns from txdll =3D ~1.4ns delay.
+> > > +	 * leave RXC path untouched
+> > > +	 */
+> > > +	mmd_write_reg(dev, 2, 4, 0x007d);
+> > > +	mmd_write_reg(dev, 2, 6, 0xdddd);
+> > > +	mmd_write_reg(dev, 2, 8, 0x0007);
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > >  /*
+> > >   * fixup for PLX PEX8909 bridge to configure GPIO1-7 as output High
+> > >   * as they are used for slots1-7 PERST#
+> > > @@ -167,6 +202,8 @@ static void __init imx6q_enet_phy_init(void)
+> > >  				ksz9021rn_phy_fixup);
+> > >  		phy_register_fixup_for_uid(PHY_ID_KSZ9031,
+> > > MICREL_PHY_ID_MASK,
+> > >  				ksz9031rn_phy_fixup);
+> > > +		phy_register_fixup_for_uid(PHY_ID_KSZ9131,
+> > > MICREL_PHY_ID_MASK,
+> > > +				ksz9131rn_phy_fixup);
+> > >  		phy_register_fixup_for_uid(PHY_ID_AR8031, 0xffffffef,
+> > >  				ar8031_phy_fixup);
+> > >  		phy_register_fixup_for_uid(PHY_ID_AR8035, 0xffffffef,
+> > > --=20
+> > > 2.25.1
+> > >=20
+> > >=20
+> > >=20
+
+--=20
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
+--ctfe6omlsgsb22re
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl5iKCcACgkQ4omh9DUa
+UbMdoxAApaNnKMpkRYngo5clBs9/blpB/yrFdBsqF4OR7883X+stDApm9dk+ZBvr
+oJzuj2m+FJ5GdazPWF3J4Ynt2vaZRQIip/R51/KSPp/b9DbUGpXbMZD0GXFnqmVk
+1sErMn3ZV0QdIOdq8X+0HKg0Sl3zxSti+6TQolLlRvmZ0+LRqkM1TT40VQ2SdpK+
+YxB6lginMrBz74vX7JBkgyQOBT9ECuWBvFodBHGhjGLXzkwgit+/c5Fxd7SLQc6o
+kTiRmZEezVvBYh4t+JQCkm8ZWbelUv2KGjaO5SHLVBCGuVZ0fyoT7UqNYVNIINag
+Skrv4H5t+2zMwn8ixXlFN1uRlKgUPxrhP7ehXn3rMyIwwG6rICWZT7XsTmT7+S/m
+zn4Az0DGpECCIVIX/l2bx1xYJFu+eWy3PyYgL32g/EpV1nkAxYwJv/j7eWHZ5en7
+RCSOLWoNqRW817h625OSS/NZVg8vcBnmXpV04JwumvJoBM3x6lsYNyd2sILIimmH
++T6qKZqaJ6o5vMw5PqDoZ1qqhTGr/l2xUu8a39oJToTQ0RtvnRZLzBeSmangprLH
+2TeW3IGm61D8RNiF8BgxV42+NWwjatfbD+IwFARodwbM25ncg0PABeExdyLVKM8l
+XmVKStnZ0taO/dk2DCRwGgEPXmTi66E9b8P4Ji1GJP3cJSKwgv0=
+=Juw9
+-----END PGP SIGNATURE-----
+
+--ctfe6omlsgsb22re--
+
+
+--===============9158061066172669729==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============9158061066172669729==--
+
