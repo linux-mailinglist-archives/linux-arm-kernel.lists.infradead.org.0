@@ -2,57 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8B7917BC35
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 12:54:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3CE617BCB1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 13:29:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rsNb+rusZk0xRg+N0RQdXGededyUf3KFx5dtPnjPa+8=; b=u2XERr3uQBLVws
-	mAcPx4mdGc+4udAMKHWjlaaTOoLIbgDa/L1MROVqht7Z3pC4ElSTWld1+Qz0cwJSYKMznx7/wL8Fn
-	dPegyJGzsxjTSRDfQak0KJOFr2yXVkNw1ZSVSssTEXSthhVURKWfwyAYxkbcZPugQFXq8pp1bpxLC
-	p/zQB3FR5w7c/PmE2UfuczVH3inDluGkx5F8weUETtGGvfznUY3JmhzMkKfrkxPUE88prhXHuu+bs
-	JAzv924XpPsRKyZ1vY4kzt01AdLHwR7+i5Y6V8EvoVh9tvsxYJ5Ew4YsZah9vTULCPCpkA+M/frxn
-	hQJussZ0I8wZLisnKddw==;
+	List-Owner; bh=Hs1B26lesMIvUN7diRFTW8MNAQxVMhc+eSkculzEwgs=; b=GMkemgKKRnyG92
+	jCKWqHd6hUDKlcUwW1K9qQ7D4lfM1r/Yys7g0DT6iEkv4FhwKlfjXgI8fSiU38m1qjC3Jpa1SRguw
+	plvQahNNSiPLcGxMBIJGG/pyFhafNsaAMDL0rzIv1KnKjOwP1vr6z4e3Gz6i8wwSgn4ITwzGYYxFb
+	9ZhhkteOK9vUeUlb9vzuhmdBcx+eNfSYHsYZFU198Hzq3m8hFUByCPmnEm3d8Hank0UY7/Msphr67
+	2wOPBDtsUaFHxY34zclNYYPEpREnjgMhU1iL49XFfg1/03C8VGEMKvzOqi/fpuStL0WLRltXdqhoN
+	2/AX3OiYdqDD5gRXVi1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jABYE-000231-9Y; Fri, 06 Mar 2020 11:53:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jABY7-00021s-53
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 11:53:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4756F31B;
- Fri,  6 Mar 2020 03:53:49 -0800 (PST)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EFEAA3F6C4;
- Fri,  6 Mar 2020 03:53:46 -0800 (PST)
-Date: Fri, 6 Mar 2020 11:53:41 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-Subject: Re: [PATCH v6 6/7] arm64: use activity monitors for frequency
- invariance
-Message-ID: <20200306115341.GA44221@bogus>
-References: <20200305090627.31908-1-ionela.voinescu@arm.com>
- <20200305090627.31908-7-ionela.voinescu@arm.com>
+	id 1jAC6S-0007MB-Lk; Fri, 06 Mar 2020 12:29:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAC6K-0007LY-VB
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 12:29:14 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BAB152072A;
+ Fri,  6 Mar 2020 12:29:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583497752;
+ bh=d17V1gYzsp+fRg5i888PyT+fPs0MnH0tdgO0t6VHh5c=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=t8BQ8YdbCK8NYU8ae8N+ekQAjgvaSQzA7GVKOg+FTl8RTt2VhDRHXrOS8WVRJe5Qs
+ VKqUVw49sgIRfZ+yXYduMabcWYcoW/+Z16RanU9qF4gjAdeZ9POw8jLj/Nyaw+lLN1
+ d+jW+ooS7YNAzqqMGQgAS8GB1DZJ+4fEGz9EpTWY=
+Date: Fri, 6 Mar 2020 11:36:52 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH] Revert "tty: serial: samsung_tty: build it for any
+ platform"
+Message-ID: <20200306103652.GA3634389@kroah.com>
+References: <20200306102301.16870-1-geert+renesas@glider.be>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200305090627.31908-7-ionela.voinescu@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200306102301.16870-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_035351_352651_C587A160 
-X-CRM114-Status: GOOD (  28.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200306_042913_029707_333D5F31 
+X-CRM114-Status: GOOD (  20.17  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,127 +73,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, pkondeti@codeaurora.org,
- catalin.marinas@arm.com, linux-pm@vger.kernel.org, linux-doc@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, dietmar.eggemann@arm.com,
- peterz@infradead.org, mingo@redhat.com, viresh.kumar@linaro.org,
- linux-arm-kernel@lists.infradead.org, maz@kernel.org, will@kernel.org,
- valentin.schneider@arm.com, lukasz.luba@arm.com
+Cc: linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 05, 2020 at 09:06:26AM +0000, Ionela Voinescu wrote:
-> The Frequency Invariance Engine (FIE) is providing a frequency
-> scaling correction factor that helps achieve more accurate
-> load-tracking.
->
-> So far, for arm and arm64 platforms, this scale factor has been
-> obtained based on the ratio between the current frequency and the
-> maximum supported frequency recorded by the cpufreq policy. The
-> setting of this scale factor is triggered from cpufreq drivers by
-> calling arch_set_freq_scale. The current frequency used in computation
-> is the frequency requested by a governor, but it may not be the
-> frequency that was implemented by the platform.
->
-> This correction factor can also be obtained using a core counter and a
-> constant counter to get information on the performance (frequency based
-> only) obtained in a period of time. This will more accurately reflect
-> the actual current frequency of the CPU, compared with the alternative
-> implementation that reflects the request of a performance level from
-> the OS.
->
-> Therefore, implement arch_scale_freq_tick to use activity monitors, if
-> present, for the computation of the frequency scale factor.
->
-> The use of AMU counters depends on:
->  - CONFIG_ARM64_AMU_EXTN - depents on the AMU extension being present
->  - CONFIG_CPU_FREQ - the current frequency obtained using counter
->    information is divided by the maximum frequency obtained from the
->    cpufreq policy.
->
-> While it is possible to have a combination of CPUs in the system with
-> and without support for activity monitors, the use of counters for
-> frequency invariance is only enabled for a CPU if all related CPUs
-> (CPUs in the same frequency domain) support and have enabled the core
-> and constant activity monitor counters. In this way, there is a clear
-> separation between the policies for which arch_set_freq_scale (cpufreq
-> based FIE) is used, and the policies for which arch_scale_freq_tick
-> (counter based FIE) is used to set the frequency scale factor. For
-> this purpose, a late_initcall_sync is registered to trigger validation
-> work for policies that will enable or disable the use of AMU counters
-> for frequency invariance. If CONFIG_CPU_FREQ is not defined, the use
-> of counters is enabled on all CPUs only if all possible CPUs correctly
-> support the necessary counters.
->
-> Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
+On Fri, Mar 06, 2020 at 11:23:01AM +0100, Geert Uytterhoeven wrote:
+> This reverts commit 175b558d0efb8b4f33aa7bd2c1b5389b912d3019.
+> 
+> When the user configures a kernel without support for Samsung SoCs, it
+> makes no sense to ask the user about enabling "Samsung SoC serial
+> support", as Samsung serial ports can only be found on Samsung SoCs.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > ---
->  arch/arm64/include/asm/topology.h |   9 ++
->  arch/arm64/kernel/cpufeature.c    |   4 +
->  arch/arm64/kernel/topology.c      | 180 ++++++++++++++++++++++++++++++
->  drivers/base/arch_topology.c      |  12 ++
->  include/linux/arch_topology.h     |   2 +
->  5 files changed, 207 insertions(+)
->
+>  drivers/tty/serial/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+> index 880b962015302dca..932ad51099deae7d 100644
+> --- a/drivers/tty/serial/Kconfig
+> +++ b/drivers/tty/serial/Kconfig
+> @@ -237,6 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
+>  
+>  config SERIAL_SAMSUNG
+>  	tristate "Samsung SoC serial support"
+> +	depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
+>  	select SERIAL_CORE
+>  	help
+>  	  Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
 
-[...]
+{sigh}
 
-> diff --git a/drivers/base/arch_topology.c b/drivers/base/arch_topology.c
-> index 6119e11a9f95..8d63673c1689 100644
-> --- a/drivers/base/arch_topology.c
-> +++ b/drivers/base/arch_topology.c
-> @@ -21,6 +21,10 @@
->  #include <linux/sched.h>
->  #include <linux/smp.h>
->
-> +__weak bool arch_freq_counters_available(struct cpumask *cpus)
-> +{
-> +	return false;
-> +}
->  DEFINE_PER_CPU(unsigned long, freq_scale) = SCHED_CAPACITY_SCALE;
->
->  void arch_set_freq_scale(struct cpumask *cpus, unsigned long cur_freq,
-> @@ -29,6 +33,14 @@ void arch_set_freq_scale(struct cpumask *cpus, unsigned long cur_freq,
->  	unsigned long scale;
->  	int i;
->
-> +	/*
-> +	 * If the use of counters for FIE is enabled, just return as we don't
-> +	 * want to update the scale factor with information from CPUFREQ.
-> +	 * Instead the scale factor will be updated from arch_scale_freq_tick.
-> +	 */
-> +	if (arch_freq_counters_available(cpus))
-> +		return;
-> +
->  	scale = (cur_freq << SCHED_CAPACITY_SHIFT) / max_freq;
->
->  	for_each_cpu(i, cpus)
-> diff --git a/include/linux/arch_topology.h b/include/linux/arch_topology.h
-> index 3015ecbb90b1..1ccdddb541a7 100644
-> --- a/include/linux/arch_topology.h
-> +++ b/include/linux/arch_topology.h
-> @@ -33,6 +33,8 @@ unsigned long topology_get_freq_scale(int cpu)
->  	return per_cpu(freq_scale, cpu);
->  }
->
-> +bool arch_freq_counters_available(struct cpumask *cpus);
-> +
->  struct cpu_topology {
->  	int thread_id;
->  	int core_id;
+No, I don't want this.  My "goal" is to be able to get rid of all of the
+crazy "PLAT_*" symbols as they make it impossible to build a single
+kernel that supports multiple ARM64 systems.
 
-Sorry for the delay. The arch_topology part looks fine to me. For that part:
+As an example of just such a system, see the 5.4 tree here:
+	https://android.googlesource.com/kernel/common/+/refs/heads/android-5.4
+it is now building and booting on multiple SoCs.
 
-Acked-by: Sudeep Holla <sudeep.holla@arm.com>
+But yes, it still does have to enable some PLAT_* config options, but
+the goal is to not have to do that eventually.
 
---
-Regards,
-Sudeep
+There is no reason that we need vendor-specific config options just to
+lump random drivers into, like serial drivers.  If the hardware is not
+present, the driver will just not bind to the hardware, and all is fine.
+
+Just like x86, we don't have this issue there, and ARM64 should also not
+have this.
+
+Sorry for delay in writing this back to the original thread where you
+objected to the original patch, it's still in my review queue along with
+a ton of other serial patches.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
