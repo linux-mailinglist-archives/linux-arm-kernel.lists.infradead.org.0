@@ -2,54 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18A9117B40C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 02:53:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5734117B480
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 03:34:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nfKhCuKbrwik4v5lstaeg5+NzesKsOp7cxvUhJrE+R0=; b=s10S/8QCl4MiGd
-	WLdmZHiTbUCKTVONLkG7FmYkBV6HPhXhMSyyKP6NeE9vJzjcPQrBkbdKft4liA/sXXBlZ1xQfD5zH
-	m+h9kLW9x24uR1lAWlSmxjHvoQuwNE7my5Yu24MEEPaL2YFZGvpcW9d9t9+ZllefNvGKj7Rg6lX7F
-	bttbZSWROTl70MZK4jUeLbJF7C6wfQa+RFvp0sVGvLvAHukQIC7/0iq5rKstsX3nvJhSFI7lWX70z
-	JEB/aAiVkmAE+AvX53E925iHxcRcLle1+6zPUPMXgW+Mvv0u6DonWsIz4OFtYG0e0BQr2TXvlFYsK
-	JThrjcZICjVHjnzNb85g==;
+	List-Owner; bh=KqI/cJsfnvlvPDYZiPPZ42ZlU9t7Z3r+RFJjL/F5pkQ=; b=LgYw5gBW95tdVe
+	TEEKhqjO6BqmuQSEg7ZircbP4Q8oTiGizN606UnwGsb9hgtGngwPx9AplIn8ZVMACveqNwx59eLjQ
+	fdGBqk72Wjf8VdT16MPjsEnXWfEcP6w0+2PWc82XzZBm9GFwtcQ9cUe4i1E2KGeC79MKhybTjYFZl
+	HDTLMpqYjsjyxPJBOjokwKi/fjgfWU2Sn6ewVLrFT7avSS+upecOpy2PSxTB3dvqfiBeBNnMCe9bT
+	27KLtEjYMOM0O1ycxZG5oh9qVFkeO0jTuzGH1BK+puQyAh25IAJwgJaDyJ9/Xj88oZWq5A0cDYgh4
+	wPvQiGrha6RCbnpzMjnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA2Ai-00007J-UO; Fri, 06 Mar 2020 01:53:04 +0000
-Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
+	id 1jA2oq-0004Ot-KO; Fri, 06 Mar 2020 02:34:32 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA2AY-00006o-S1
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 01:52:56 +0000
-Received: from gwarestrin.me.apana.org.au ([192.168.0.7]
- helo=gwarestrin.arnor.me.apana.org.au)
- by fornost.hmeau.com with smtp (Exim 4.89 #2 (Debian))
- id 1jA2AF-0005ws-Lf; Fri, 06 Mar 2020 12:52:36 +1100
-Received: by gwarestrin.arnor.me.apana.org.au (sSMTP sendmail emulation);
- Fri, 06 Mar 2020 12:52:35 +1100
-Date: Fri, 6 Mar 2020 12:52:35 +1100
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Stefan Agner <stefan@agner.ch>
-Subject: Re: [PATCH] crypto: arm/ghash-ce - define fpu before fpu registers
- are referenced
-Message-ID: <20200306015235.GO30653@gondor.apana.org.au>
-References: <c41cc67321d0b366e356440e6dbc9eceb1babfe4.1583105749.git.stefan@agner.ch>
+ id 1jA2oj-0004O5-DQ; Fri, 06 Mar 2020 02:34:27 +0000
+X-UUID: 3b37ddd7469c412185d0e0e173e61948-20200305
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=lw7Z2hh6lxCttqw2IBWx1RQ1VaA6UHtHaJjaKiScxsU=; 
+ b=t+WEOMVNd7ZhhmTf2qEIHa8Y/IyHKOYig5O5oZb4Fk30Hb7d0QsXIXTRG+ZWyM32G1vE8JjGlnWwJ6uaGCjKTeqwRik5tDn4aavoimZgLLizcCDFWRWz9loSPpm02J4aomj3IapNoQ+cPaeLH6fRbGgxR9cTWWPg0SzGj0iXgns=;
+X-UUID: 3b37ddd7469c412185d0e0e173e61948-20200305
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <nick.fan@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 648841798; Thu, 05 Mar 2020 18:34:18 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Mar 2020 18:34:16 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Mar 2020 10:33:05 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 6 Mar 2020 10:34:16 +0800
+Message-ID: <1583462055.4947.6.camel@mtksdaap41>
+Subject: Re: [PATCH v4 1/7] dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
+From: Nick Fan <nick.fan@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Fri, 6 Mar 2020 10:34:15 +0800
+In-Reply-To: <CANMq1KAVX4o5yC7c_88Wq_O=F+MaSN_V4uNcs1nzS3wBS6A5AA@mail.gmail.com>
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <20200207052627.130118-2-drinkcat@chromium.org>
+ <20200225171613.GA7063@bogus>
+ <CANMq1KAVX4o5yC7c_88Wq_O=F+MaSN_V4uNcs1nzS3wBS6A5AA@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c41cc67321d0b366e356440e6dbc9eceb1babfe4.1583105749.git.stefan@agner.ch>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_175255_153461_18BBD148 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200305_183425_460222_6FB7FADF 
+X-CRM114-Status: GOOD (  16.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,36 +85,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux@armlinux.org.uk, jiancai@google.com,
- clang-built-linux@googlegroups.com, linux-crypto@vger.kernel.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
- manojgupta@google.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, Tomeu
+ Vizoso <tomeu.vizoso@collabora.com>,
+ Devicetree List <devicetree@vger.kernel.org>, David
+ Airlie <airlied@linux.ie>, lkml <linux-kernel@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Sj Huang <sj.huang@mediatek.com>,
+ Mark Brown <broonie@kernel.org>, "moderated
+ list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi
+ Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 12:37:14AM +0100, Stefan Agner wrote:
-> Building ARMv7 with Clang's integrated assembler leads to errors such
-> as:
-> arch/arm/crypto/ghash-ce-core.S:34:11: error: register name expected
->  t3l .req d16
->           ^
-> 
-> Since no FPU has selected yet Clang considers d16 not a valid register.
-> Moving the FPU directive on-top allows Clang to parse the registers and
-> allows to successfully build this file with Clang's integrated assembler.
-> 
-> Signed-off-by: Stefan Agner <stefan@agner.ch>
-> ---
->  arch/arm/crypto/ghash-ce-core.S | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
+Sorry for my late reply.
+I have checked internally.
+The MT8183_POWER_DOMAIN_MFG_2D is just a legacy name, not really 2D
+domain.
 
-Patch applied.  Thanks.
--- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+If the naming too confusing, we can change this name to
+MT8183_POWER_DOMAIN_MFG_CORE2 for consistency.
+
+Thanks
+
+Nick Fan
+
+On Wed, 2020-02-26 at 08:55 +0800, Nicolas Boichat wrote:
+
+> +Nick Fan +Sj Huang @ MTK
+> 
+> On Wed, Feb 26, 2020 at 1:16 AM Rob Herring <robh@kernel.org> wrote:
+> >
+> > On Fri, Feb 07, 2020 at 01:26:21PM +0800, Nicolas Boichat wrote:
+> > > Define a compatible string for the Mali Bifrost GPU found in
+> > > Mediatek's MT8183 SoCs.
+> > >
+> > > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+> > > Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
+> > > ---
+> > >
+> > > v4:
+> > >  - Add power-domain-names description
+> > >    (kept Alyssa's reviewed-by as the change is minor)
+> > > v3:
+> > >  - No change
+> > >
+> > >  .../bindings/gpu/arm,mali-bifrost.yaml        | 25 +++++++++++++++++++
+> > >  1 file changed, 25 insertions(+)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> > > index 4ea6a8789699709..0d93b3981445977 100644
+> > > --- a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> > > +++ b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
+> > > @@ -17,6 +17,7 @@ properties:
+> > >      items:
+> > >        - enum:
+> > >            - amlogic,meson-g12a-mali
+> > > +          - mediatek,mt8183-mali
+> > >            - realtek,rtd1619-mali
+> > >            - rockchip,px30-mali
+> > >        - const: arm,mali-bifrost # Mali Bifrost GPU model/revision is fully discoverable
+> > > @@ -62,6 +63,30 @@ allOf:
+> > >            minItems: 2
+> > >        required:
+> > >          - resets
+> > > +  - if:
+> > > +      properties:
+> > > +        compatible:
+> > > +          contains:
+> > > +            const: mediatek,mt8183-mali
+> > > +    then:
+> > > +      properties:
+> > > +        sram-supply: true
+> > > +        power-domains:
+> > > +          description:
+> > > +            List of phandle and PM domain specifier as documented in
+> > > +            Documentation/devicetree/bindings/power/power_domain.txt
+> > > +          minItems: 3
+> > > +          maxItems: 3
+> > > +        power-domain-names:
+> > > +          items:
+> > > +            - const: core0
+> > > +            - const: core1
+> > > +            - const: 2d
+> >
+> > AFAIK, there's no '2d' block in bifrost GPUs. A power domain for each
+> > core group is correct though.
+> 
+> Good question... Hopefully Nick/SJ@MTK can comment, the non-upstream DTS has:
+> gpu: mali@13040000 {
+> compatible = "mediatek,mt8183-mali", "arm,mali-bifrost";
+> power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>;
+> ...
+> }
+> 
+> gpu_core1: mali_gpu_core1 {
+> compatible = "mediatek,gpu_core1";
+> power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>;
+> };
+> 
+> gpu_core2: mali_gpu_core2 {
+> compatible = "mediatek,gpu_core2";
+> power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
+> };
+> 
+> So I picked core0/core1/2d as names, but looking at this, it's likely
+> core2 is more appropriate (and MT8183_POWER_DOMAIN_MFG_2D might just
+> be a internal/legacy name, if there is no real 2d domain).
+> 
+> Thanks.
+> 
+> > Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
