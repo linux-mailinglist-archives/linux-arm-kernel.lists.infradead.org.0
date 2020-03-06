@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A15317C4DA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:47:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED47017C4D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:47:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EoDDIySUDMAi/MR6n0tspH8+X7yg6XQQcKDgw4gpwJ4=; b=R1/MiBwQ77+ixu
-	os3vBm7g/d6UvygM8jJt4XRCQ/xCEvHcQNMFDXJQIkS2zziusxRlkKGqbiW8OJFr6gAOrf1zxtrTG
-	fywK7xKUTdOTmKKjAZXOYYBP2YfBo+b5SZlglG4jBGEXFuC59onLCwwdaLj9c5U1o9lX8BXyc1992
-	ob9OoPX2RmCFVJm1RSUTN53OgyAsUbE5GBXOIHySefTSYTJKf35UuM8gH4/OsD5zBMDJPGbHvaZhx
-	Co3jZB+D176tpQRSAXIiGMD44lpR6Hrukevi1ezy0nd5h+l2D2G3AbFtyAPIz8v+w/TpwSF3EjjbI
-	w4f9jh/kl5jZ8m85KV6w==;
+	List-Owner; bh=uwmoUBe7WYtSPXJudhI4GM1SShwysP2rkzh9oA/iygA=; b=YjdlKV21P2YnYd
+	uFZk/zUDicQRMv6kHWHSeOubxKYNNZjuVUmkI6PWtCuEt37bz+3qPjaDWjY6QO0qR9wHKzxaPikjZ
+	upSKvBHf9jcYSON0gQhjCxZEGnfO3zrdObtnjdQFTTE9rJPiUXe+bIsvhqlNCO/5Xq4pXjSVR81Fw
+	IVfXtxtw0tmDjrN7VDqH+dhvUPrvLDRnXOHnolvQfQyuvyvSZ9I7Wn/c4fFJsZemBA7mjvORI7cTd
+	lVRuIqACikY2bT4Zh+ZtglOCFxtlNjCe60Dj94AnA/j51dvC8MHQOOD+HGKjGzKBwk5FONXjvKeUZ
+	kR8WGaZiQsG3hj3hzxyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAH4Y-0004fv-FG; Fri, 06 Mar 2020 17:47:42 +0000
+	id 1jAH3w-0003wN-RE; Fri, 06 Mar 2020 17:47:04 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAH1V-00084h-4n; Fri, 06 Mar 2020 17:44:34 +0000
+ id 1jAH1V-00085X-Ut; Fri, 06 Mar 2020 17:44:35 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 9963FAC66;
- Fri,  6 Mar 2020 17:44:31 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 8906AACC2;
+ Fri,  6 Mar 2020 17:44:32 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: adrian.hunter@intel.com, linux-kernel@vger.kernel.org,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com
-Subject: [PATCH v2 09/11] mmc: sdhci: iproc: Add custom set_power() callback
- for bcm2711
-Date: Fri,  6 Mar 2020 18:44:11 +0100
-Message-Id: <20200306174413.20634-10-nsaenzjulienne@suse.de>
+ Rob Herring <robh+dt@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: [PATCH v2 10/11] ARM: dts: bcm2711: Update expgpio's GPIO labels
+Date: Fri,  6 Mar 2020 18:44:12 +0100
+Message-Id: <20200306174413.20634-11-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_094433_359935_F62D5AFD 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20200306_094434_171925_0978A2DC 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,9 +63,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, Ulf Hansson <ulf.hansson@linaro.org>,
- f.fainelli@gmail.com, linux-mmc@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+Cc: stefan.wahren@i2se.com, devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ linux-mmc@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, phil@raspberrypi.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -74,49 +72,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The controller needs a valid bus voltage in its power register
-regardless of whether an external regulator is taking care of the power
-supply.
-
-The sdhci core already provides a helper function for this,
-sdhci_set_power_and_bus_voltage(), so create a bcm2711 specific 'struct
-sdhci_ops' which makes use of it.
+The 6th line of the GPIO expander is used to power the board's SD card.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/mmc/host/sdhci-iproc.c | 17 ++++++++++++++++-
- 1 file changed, 16 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
-index f4f5f0a70cda..225603148d7d 100644
---- a/drivers/mmc/host/sdhci-iproc.c
-+++ b/drivers/mmc/host/sdhci-iproc.c
-@@ -261,9 +261,24 @@ static const struct sdhci_iproc_data bcm2835_data = {
- 	.mmc_caps = 0x00000000,
- };
- 
-+static const struct sdhci_ops sdhci_iproc_bcm2711_ops = {
-+	.read_l = sdhci_iproc_readl,
-+	.read_w = sdhci_iproc_readw,
-+	.read_b = sdhci_iproc_readb,
-+	.write_l = sdhci_iproc_writel,
-+	.write_w = sdhci_iproc_writew,
-+	.write_b = sdhci_iproc_writeb,
-+	.set_clock = sdhci_set_clock,
-+	.set_power = sdhci_set_power_and_bus_voltage,
-+	.get_max_clock = sdhci_iproc_get_max_clock,
-+	.set_bus_width = sdhci_set_bus_width,
-+	.reset = sdhci_reset,
-+	.set_uhs_signaling = sdhci_set_uhs_signaling,
-+};
-+
- static const struct sdhci_pltfm_data sdhci_bcm2711_pltfm_data = {
- 	.quirks = SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
--	.ops = &sdhci_iproc_32only_ops,
-+	.ops = &sdhci_iproc_bcm2711_ops,
- };
- 
- static const struct sdhci_iproc_data bcm2711_data = {
+diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+index 1d4b589fe233..b0ea8233b636 100644
+--- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
++++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+@@ -68,7 +68,7 @@ expgpio: gpio {
+ 				  "GLOBAL_RESET",
+ 				  "VDD_SD_IO_SEL",
+ 				  "CAM_GPIO",
+-				  "",
++				  "SD_PWR_ON",
+ 				  "";
+ 		status = "okay";
+ 	};
 -- 
 2.25.1
 
