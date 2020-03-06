@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF88617C3EE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:12:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 826B717C477
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 18:32:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CTB0Dw0Yhh1VSDhCYGTFpi2YjpEgULgSItGhKUkBcmM=; b=qk6ch9tMvXLCWv
-	whjaUCk3e6veysDbOmhXpApGKRVbLrlkCWC9SyMPn0FSUzrmowb1pTRcMM9Vg3Dlbe9yTJuPaDGLg
-	tpx/l8Dc1tQu87vnKrGGjfi6bHQYWTj12UdiwgjGFu9ywWZkRbZk/6+jE6jeripOSLrUztqKsx7EH
-	uPX9J+kapTvPiLZqeSxPen1Cmj6KZXBgysRGXY5e/R9gfDXQln2l5aFEyc8Slp+gWJDBgowfEvM31
-	1yvaiTbV+QRC5F8ul0gaLVREdGDsg4QTRykwEWqRks5gX+ShhZmpvr2FImRnK9rAdRFZpk2HfmS+u
-	1dbEkSiHvuE0KD0bL6iQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Fv5PMBffUQC0yQShZFf4QNl6MOo38wIH+GH9pEOZ4y4=; b=kgPbbmQkPmn/+9
+	hAXasR0/YJf0Ghn6Mvkdf5DblohgnGiCTx8pE9z5Rl7diESnSHpUPk40Kmgun/Ja3ZzAPFOtK6vx3
+	jBgDotkgWDYItXOm+V1JBLkzSkTycn99rurhTgHqzfpM9ZSNEmMzcc2j/HsaYxr2iNY7b6pHNJIQv
+	e2/6eJZf/4whvVLfv9wLCIkB/WdsXPVTAuZyGdjRr1gw0+5v0fNbZx0s05TiP9ttMXeXmHj9E4k5Y
+	EN2EwQCuf6aZ2OSxY/zr4gkoligDeXtQFV9qKeXE4mRBymbrQvhgZ3BKswc4WdqtFmP6DcoOqbkcH
+	g5su4g/lvHPb4Vtobmzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAGW0-0006Bt-Uz; Fri, 06 Mar 2020 17:12:00 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAGUt-0005Od-Pl; Fri, 06 Mar 2020 17:10:53 +0000
-Received: from ip5f5a5d2f.dynamic.kabel-deutschland.de ([95.90.93.47]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1jAGUl-0002MU-S0; Fri, 06 Mar 2020 18:10:43 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v3] dt-bindings: convert rockchip-drm.txt to
- rockchip-drm.yaml
-Date: Fri, 06 Mar 2020 18:10:43 +0100
-Message-ID: <31674303.xIi5ycrUlD@diego>
-In-Reply-To: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
-References: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
+	id 1jAGpv-0004Qo-1p; Fri, 06 Mar 2020 17:32:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAGpm-0004Q3-KU
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 17:32:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2D5AF30E;
+ Fri,  6 Mar 2020 09:32:23 -0800 (PST)
+Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
+ [10.1.195.32])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 62E113F6C4;
+ Fri,  6 Mar 2020 09:32:22 -0800 (PST)
+From: Steven Price <steven.price@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: Map page table of linear map readonly
+Date: Fri,  6 Mar 2020 17:32:17 +0000
+Message-Id: <20200306173217.44372-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_091052_000343_E6D2D78F 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200306_093226_767598_35159022 
+X-CRM114-Status: GOOD (  18.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,31 +61,237 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, airlied@linux.ie,
- dafna3@gmail.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
- linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
- robh+dt@kernel.org, daniel@ffwll.ch, kernel@collabora.com,
- ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Steven Price <steven.price@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dafna,
+It's fairly rare that linear mappings need to be updated, so to improve
+security we can map the leaf page table entries as read-only, this makes
+it harder for an attacker to modify the permissions of the linear
+mappings, while the overhead is low because the linear mappings don't
+need to be changed frequently. When they do need to be updated we can
+use fixmaps to create a temporary alternative mapping to do the update.
 
-Am Dienstag, 21. Januar 2020, 16:43:14 CET schrieb Dafna Hirschfeld:
-> convert the binding file rockchip-drm.txt to yaml format.
-> This was tested and verified on ARM and ARM64 with:
-> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
-> 
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Signed-off-by: Steven Price <steven.price@arm.com>
+---
+ arch/arm64/Kconfig              |  9 ++++++++
+ arch/arm64/include/asm/fixmap.h | 20 ++++++++++++++++-
+ arch/arm64/mm/mmu.c             | 38 +++++++++++++++++++++++++++++++--
+ arch/arm64/mm/pageattr.c        | 36 ++++++++++++++++++++++++++++++-
+ 4 files changed, 99 insertions(+), 4 deletions(-)
 
-applied to drm-misc-next with Rob's Reviewed-by
-
-Thanks
-Heiko
-
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 0b30e884e088..00362e9b9934 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1210,6 +1210,15 @@ config RODATA_FULL_DEFAULT_ENABLED
+ 	  This requires the linear region to be mapped down to pages,
+ 	  which may adversely affect performance in some cases.
+ 
++config LINEAR_PGTABLE_RO
++	bool "Apply r/o permissions to page tables of linear mapping"
++	help
++	  Apply read-only attributes to the page tables that make up the
++	  the linear mapping. This prevents the linear page tables from being
++	  inadvertently modified.
++
++	  This requires rodata=on (or RODATA_FULL_DEFAULT_ENABLED).
++
+ config ARM64_SW_TTBR0_PAN
+ 	bool "Emulate Privileged Access Never using TTBR0_EL1 switching"
+ 	help
+diff --git a/arch/arm64/include/asm/fixmap.h b/arch/arm64/include/asm/fixmap.h
+index f987b8a8f325..55bf08151d73 100644
+--- a/arch/arm64/include/asm/fixmap.h
++++ b/arch/arm64/include/asm/fixmap.h
+@@ -67,6 +67,12 @@ enum fixed_addresses {
+ 	FIX_ENTRY_TRAMP_TEXT,
+ #define TRAMP_VALIAS		(__fix_to_virt(FIX_ENTRY_TRAMP_TEXT))
+ #endif /* CONFIG_UNMAP_KERNEL_AT_EL0 */
++
++#ifdef CONFIG_LINEAR_PGTABLE_RO
++	FIX_LINEAR_RO_BEGIN,
++	FIX_LINEAR_RO_END = FIX_LINEAR_RO_BEGIN + NR_CPUS - 1,
++#endif
++
+ 	__end_of_permanent_fixed_addresses,
+ 
+ 	/*
+@@ -77,7 +83,15 @@ enum fixed_addresses {
+ #define FIX_BTMAPS_SLOTS	7
+ #define TOTAL_FIX_BTMAPS	(NR_FIX_BTMAPS * FIX_BTMAPS_SLOTS)
+ 
++#ifdef CONFIG_LINEAR_PGTABLE_RO
++	/*
++	 * Share the space with the LINEAR_RO area as during early boot, the
++	 * LINEAR_RO area isn't needed
++	 */
++	FIX_BTMAP_END = FIX_LINEAR_RO_BEGIN,
++#else
+ 	FIX_BTMAP_END = __end_of_permanent_fixed_addresses,
++#endif
+ 	FIX_BTMAP_BEGIN = FIX_BTMAP_END + TOTAL_FIX_BTMAPS - 1,
+ 
+ 	/*
+@@ -89,9 +103,13 @@ enum fixed_addresses {
+ 	FIX_PUD,
+ 	FIX_PGD,
+ 
+-	__end_of_fixed_addresses
++	___end_of_fixed_addresses
+ };
+ 
++static const enum fixed_addresses __end_of_fixed_addresses =
++	___end_of_fixed_addresses > __end_of_permanent_fixed_addresses ?
++	___end_of_fixed_addresses : __end_of_permanent_fixed_addresses;
++
+ #define FIXADDR_SIZE	(__end_of_permanent_fixed_addresses << PAGE_SHIFT)
+ #define FIXADDR_START	(FIXADDR_TOP - FIXADDR_SIZE)
+ 
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index 128f70852bf3..9a2379b6179e 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -20,6 +20,7 @@
+ #include <linux/fs.h>
+ #include <linux/io.h>
+ #include <linux/mm.h>
++#include <linux/pagewalk.h>
+ #include <linux/vmalloc.h>
+ 
+ #include <asm/barrier.h>
+@@ -455,6 +456,34 @@ void __init mark_linear_text_alias_ro(void)
+ 			    PAGE_KERNEL_RO);
+ }
+ 
++#ifdef CONFIG_LINEAR_PGTABLE_RO
++static int __init mark_linear_pmd_ro(pmd_t *pmd, unsigned long addr,
++				     unsigned long next, struct mm_walk *walk)
++{
++	phys_addr_t pmd_phys = pte_offset_phys(pmd, 0);
++
++	__map_memblock(walk->mm->pgd, pmd_phys, pmd_phys + PAGE_SIZE,
++		       PAGE_KERNEL_RO, NO_BLOCK_MAPPINGS | NO_CONT_MAPPINGS);
++
++	return 0;
++}
++
++static const struct mm_walk_ops mark_linear_pg_ro_ops __initconst = {
++	.pmd_entry = mark_linear_pmd_ro,
++};
++
++/*
++ * Remove the write permission from the leaf page tables of the linear map
++ */
++void __init mark_linear_pg_ro(void)
++{
++	down_read(&init_mm.mmap_sem);
++	walk_page_range_novma(&init_mm, PAGE_OFFSET, PAGE_END,
++			      &mark_linear_pg_ro_ops, init_mm.pgd, NULL);
++	up_read(&init_mm.mmap_sem);
++}
++#endif
++
+ static void __init map_mem(pgd_t *pgdp)
+ {
+ 	phys_addr_t kernel_start = __pa_symbol(_text);
+@@ -502,7 +531,7 @@ static void __init map_mem(pgd_t *pgdp)
+ 	 * so we should avoid them here.
+ 	 */
+ 	__map_memblock(pgdp, kernel_start, kernel_end,
+-		       PAGE_KERNEL, NO_CONT_MAPPINGS);
++		       PAGE_KERNEL, flags | NO_CONT_MAPPINGS);
+ 	memblock_clear_nomap(kernel_start, kernel_end - kernel_start);
+ 
+ #ifdef CONFIG_KEXEC_CORE
+@@ -678,6 +707,11 @@ void __init paging_init(void)
+ 	cpu_replace_ttbr1(lm_alias(swapper_pg_dir));
+ 	init_mm.pgd = swapper_pg_dir;
+ 
++#ifdef CONFIG_LINEAR_PGTABLE_RO
++	if (rodata_full)
++		mark_linear_pg_ro();
++#endif
++
+ 	memblock_free(__pa_symbol(init_pg_dir),
+ 		      __pa_symbol(init_pg_end) - __pa_symbol(init_pg_dir));
+ 
+@@ -874,8 +908,8 @@ void __set_fixmap(enum fixed_addresses idx,
+ 		set_pte(ptep, pfn_pte(phys >> PAGE_SHIFT, flags));
+ 	} else {
+ 		pte_clear(&init_mm, addr, ptep);
+-		flush_tlb_kernel_range(addr, addr+PAGE_SIZE);
+ 	}
++	flush_tlb_kernel_range(addr, addr + PAGE_SIZE);
+ }
+ 
+ void *__init fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
+diff --git a/arch/arm64/mm/pageattr.c b/arch/arm64/mm/pageattr.c
+index 250c49008d73..52d34c06656c 100644
+--- a/arch/arm64/mm/pageattr.c
++++ b/arch/arm64/mm/pageattr.c
+@@ -7,6 +7,7 @@
+ #include <linux/module.h>
+ #include <linux/sched.h>
+ #include <linux/vmalloc.h>
++#include <linux/uaccess.h>
+ 
+ #include <asm/pgtable.h>
+ #include <asm/set_memory.h>
+@@ -19,6 +20,33 @@ struct page_change_data {
+ 
+ bool rodata_full __ro_after_init = IS_ENABLED(CONFIG_RODATA_FULL_DEFAULT_ENABLED);
+ 
++#ifdef CONFIG_LINEAR_PGTABLE_RO
++static void set_linear_pte_range(pte_t *ptep, pte_t pte)
++{
++	unsigned long flags;
++	unsigned int idx;
++	unsigned long addr;
++
++	local_irq_save(flags);
++	preempt_disable();
++
++	/* During early boot we use FIX_PTE as we don't need a per-CPU slot */
++	if (system_state < SYSTEM_SCHEDULING)
++		idx = FIX_PTE;
++	else
++		idx = FIX_LINEAR_RO_BEGIN + smp_processor_id();
++
++	addr = virt_to_phys(ptep);
++	set_fixmap(idx, addr);
++	ptep = (pte_t *)(__fix_to_virt(idx) + (addr & ~PAGE_MASK));
++	set_pte(ptep, pte);
++	clear_fixmap(idx);
++
++	preempt_enable();
++	local_irq_restore(flags);
++}
++#endif
++
+ static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
+ {
+ 	struct page_change_data *cdata = data;
+@@ -27,7 +55,13 @@ static int change_page_range(pte_t *ptep, unsigned long addr, void *data)
+ 	pte = clear_pte_bit(pte, cdata->clear_mask);
+ 	pte = set_pte_bit(pte, cdata->set_mask);
+ 
+-	set_pte(ptep, pte);
++#ifdef CONFIG_LINEAR_PGTABLE_RO
++	if (addr >= PAGE_OFFSET)
++		set_linear_pte_range(ptep, pte);
++	else
++#endif
++		set_pte(ptep, pte);
++
+ 	return 0;
+ }
+ 
+-- 
+2.20.1
 
 
 _______________________________________________
