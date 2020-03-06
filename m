@@ -2,83 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3311F17BABA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:48:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5500817BAC9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:52:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3PxDSDNRDiNE0unV+myRonG1TbA9B3PGFZHZZNJ9fYc=; b=exbnUEUEr4fC8Q
-	tIlIvqY+6jQU7BPB0r2qNRTLmW7pDJmGAAnSJrSvBXEZNVyGgvz+EWhmBNS/HznYbQjNLxbSBqzp8
-	bbF6bBkQ2YBY8fpP+Bs6F6WZdDnUw4QMAW9dPgCnkDZyvlQUj4H9jAaLTydsCCmwdfqkbaVnReCKz
-	vhFMmVGa9/M4URo8guuu2OrBpnly4uAVgtwK1v65zJ3q12ZSsG/g/Sb9uHfYToebn4hQcWSVgmCG8
-	FmyXhog0vHMCl32MwknE0ug3uNzV7EDmDfWxel9gX+LdpNhBQyotFOaa4id3ABoOqfN8ePDbADK61
-	se1F1UOG58LtB1ICYGTg==;
+	List-Owner; bh=5f7y9dYxpsR5dN8vSQAbeLp3oo3/SY17hFmDiad/Lt8=; b=aon7cFiGc2/Dc/
+	qzM+xtJM5LrBNaYbvJCUnX9okqN1JkpCluTgA78ELrU5RqXhrCqyKYuwFRxJLKuMff4qO1VnIR+F3
+	ITWYAXFhKavYa2T/W/l22/u89W9DdWPqJw59e01ntb6i9gjdyy69WcSU97Ep5HcWeyNw8LUPs7b1M
+	kKiEaADJUQWcCbwmKkSKkzy4GKja2Bn78Wqtb4G61027vzOPYbUBHxNnOLO0BI6aUfeltRus+n/Zm
+	2W41aP4ZG+DF2mdHI0cSDddYA32R6JuVrI1367CysE40+qzy/BbzfN0Pjbi2e5gYzqHolRmPJKVc/
+	WpJ1Lq4CI6uDo5UoiAqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAWP-0006tm-Km; Fri, 06 Mar 2020 10:48:01 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
+	id 1jAAb4-0000LY-Jw; Fri, 06 Mar 2020 10:52:50 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAWH-0006tI-TC
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:47:55 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id bt20so345069qvb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 02:47:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=L9qllgBetj+BEQWfT/OiX2QC0uNgMlThjG4S3HBEVvA=;
- b=bdhXAQ6gl3kdxFEBzTgcym4UaEMZ4lZe1QC4kNndxgcPzc9YZSwXW+SZoXj85K7NXN
- Jg9AmHG5ZpHiJaZ1JJqJuX69h0MBw2IgWMTWKp+qSf1IZ/rckzt0if7mIDkI28SWA8LO
- fjeBrXa93E6v8IS/KwAR5s2VMuHkA9E5YVXvhTd+gtaI+iKNz49+zhfcX4mcgLXr34Nv
- dxEibUj3oE/VBLenqtUBlI7fnSmCRuGcnJjTKYHEi8+jvNiv+AqgZoVzvKKJeNw6/zVd
- zkoSqxnqXbZwV54lkEgYg1sln4OuTWwKgGVYrWk4EMPUoh/cyC7J+603sACdDYtcOSB3
- WiSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=L9qllgBetj+BEQWfT/OiX2QC0uNgMlThjG4S3HBEVvA=;
- b=b6UPAzrgjAr6JJomrABcVvTLBu7+k2No2uf9dK0a5F51cj5iBBK2VFw5tA2PT/foxE
- kTlqxdPelefeTJObgVXoTbpS/bBXjaOk+/9FBOAJ95W2jXFJDqikCT1B1svaZ9FrwP16
- K0sVLTFutPEPLyyt6Rd/b4j05hRQjae9OjcQ2Tthbg4hqtHaFB9BQkajyriikK73qioh
- kFeWF1Cjh7eY/QutlWG1Sd9URJwa6y344diO3aZiYABdAqUisv3eqE/fczUMTleeogdq
- h+qDeyqrFyZHJJrpWKAiyQk2/jQ7C9nGYAJX0aeHZIypsh/18g6SgcNGiH2KGjSxfo1w
- TEZA==
-X-Gm-Message-State: ANhLgQ2RJtGhr4ZqWKHYBZiDTcKJVuDAkFdQ9ldFE54WwvW8EEyG+wVT
- Vnmftxj5XUu7nArGJ4egHkhM6gBN9R3u6I6DW3qVLg==
-X-Google-Smtp-Source: ADFU+vsTn3fA0kraMXMGFlj/616/+NyRO05/rAFKlvewIjoL2RL/94yrpoO1r5hTt6eGiANfTO/TbGs9/ExYxCs1yHM=
-X-Received: by 2002:ad4:4861:: with SMTP id u1mr2220560qvy.233.1583491672115; 
- Fri, 06 Mar 2020 02:47:52 -0800 (PST)
+ id 1jAAas-000079-1h
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 10:52:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=+eCbWq0p4lGocrZoNaHZbhQT4nz1r0kZeOfZlpXjdII=; b=t+SFO1txth65KjN4lnsPYlCCP
+ DOVHUE+cdW6DWivbrqzzt57KhsZTQcBhGw1Le/i4UXZ6Nfxs069TdlVDwaOMBbZHfhWAtpZDnwV7S
+ Ib2rPnNmMVpPQM0aJXN1/DNSZ5rinns2h1jqnPBsFEF+azwjsx94wDcA8sZphIXHXuOqVO3mzEc03
+ rljV9Q8MH9rZTrzYUIjiJy5Xc+7S02yFCXNZFcSK60cjHBHVlR1bPnZk0t3A7qkF5c/L2T8J7gOeC
+ hQNo+PjoJN/rVs4oY64EHtfUakKaE5QDd1XwTwDDVH19iej1CaNaX6Huh3QtavhuFxMKiCNId9no2
+ IV5vsDnVw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:49386)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jAAaU-0004AJ-RS; Fri, 06 Mar 2020 10:52:15 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jAAaO-0000OM-IQ; Fri, 06 Mar 2020 10:52:08 +0000
+Date: Fri, 6 Mar 2020 10:52:08 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Philippe Schenker <philippe.schenker@toradex.com>
+Subject: Re: [PATCH] ARM: mach-imx6q: add ksz9131rn_phy_fixup
+Message-ID: <20200306105208.GG25745@shell.armlinux.org.uk>
+References: <20200305134928.19775-1-philippe.schenker@toradex.com>
+ <20200305135346.GD25745@shell.armlinux.org.uk>
+ <98f5901a121b83d4f7d75f9a9056bd3719e2ee89.camel@toradex.com>
 MIME-Version: 1.0
-References: <20200303203559.23995-1-ulf.hansson@linaro.org>
- <20200303203559.23995-5-ulf.hansson@linaro.org> <20200304122312.GE25004@bogus>
- <CAPDyKFpcN-p6sKqB0ujHAY29qPSg7qpSjYGymPaJ4W8jgCKGcg@mail.gmail.com>
- <20200305162321.GB53631@bogus>
- <CAPDyKFogjPG+mRsfPaxN7RjB7TQL9=qHNzA=K_t0F6M6Q9-TuA@mail.gmail.com>
- <20200306100431.GA16541@bogus>
-In-Reply-To: <20200306100431.GA16541@bogus>
-From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Date: Fri, 6 Mar 2020 11:47:40 +0100
-Message-ID: <CA+M3ks764moVU2h9iZJuN6B-e4wBUMymBfPnob_zraf50xqezA@mail.gmail.com>
-Subject: Re: [PATCH v2 4/4] cpuidle: psci: Allow WFI to be the only state for
- the hierarchical topology
-To: Sudeep Holla <sudeep.holla@arm.com>
+Content-Disposition: inline
+In-Reply-To: <98f5901a121b83d4f7d75f9a9056bd3719e2ee89.camel@toradex.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_024754_000531_75759ED4 
-X-CRM114-Status: GOOD (  21.49  )
+X-CRM114-CacheID: sfid-20200306_025238_508680_231C035B 
+X-CRM114-Status: GOOD (  26.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,66 +88,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "allison@lohutok.net" <allison@lohutok.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgdmVuLiA2IG1hcnMgMjAyMCDDoCAxMTowNCwgU3VkZWVwIEhvbGxhIDxzdWRlZXAuaG9sbGFA
-YXJtLmNvbT4gYSDDqWNyaXQgOgo+Cj4gT24gRnJpLCBNYXIgMDYsIDIwMjAgYXQgMTA6Mjg6MTBB
-TSArMDEwMCwgVWxmIEhhbnNzb24gd3JvdGU6Cj4gPiBPbiBUaHUsIDUgTWFyIDIwMjAgYXQgMTc6
-MjMsIFN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+IHdyb3RlOgo+ID4gPgo+Cj4g
-Wy4uLl0KPgo+ID4gPiBPSy4gVGhlIG9ubHkgc3RhdGUgdGhhdCBjbHVzdGVyIGNhbiBlbnRlciB3
-aGVuIENQVXMgYXJlIGluIFdGSSBhcmUKPiA+ID4gY2x1c3RlciBXRkkgYW5kIG1vc3QgaGFyZHdh
-cmUgY2FuIGhhbmRsZSBpdCBhdXRvbWF0aWNhbGx5LiBJIGRvbid0IHNlZQo+ID4gPiB0aGUgbmVl
-ZCB0byBkbyBhbnkgZXh0cmEgd29yayBmb3IgdGhhdC4KPiA+Cj4gPiBUaGlzIGlzbid0IGFib3V0
-IGNsdXN0ZXIgV0ZJLCBidXQgYWJvdXQgZGVlcGVyIGNsdXN0ZXIgc3RhdGVzLCBzdWNoIGFzCj4g
-PiBhIGNsdXN0ZXItY2xvY2stZ2F0ZWQtc3RhdGUgYW5kIGEgY2x1c3Rlci1wb3dlci1vZmYtc3Rh
-dGUuIEl0J3MgYW4gU1QKPiA+IHBsYXRmb3JtLCB3aGljaCBCZW5qYW1pbiBpcyB3b3JraW5nIG9u
-Lgo+ID4KPgo+IFRoZW4gZGVmaW5pdGVseSBzb21ldGhpbmcgaXMgY29tcGxldGVseSB3cm9uZy4g
-WW91IGNhbid0IGVudGVyIGRlZXBlcgo+IGNsdXN0ZXIgc3RhdGVzKGNsb2NrLWdhdGVkIGFuZCBw
-b3dlci1vZmYgdG8gYmUgc3BlY2lmaWMpIHdpdGggQ1BVIGluCj4ganVzdCBXRkkgc3RhdGUuIFNv
-LCBpZiB0aGUgYXR0ZW1wdCBoZXJlIGlzIHRvIGVudGVyIHRob3NlIHN0YXRlcywgSQo+IGRpc2Fn
-cmVlIHdpdGggdGhlIGNoYW5nZS4KPgo+IEJlbmphbWluLCBwbGVhc2Ugc2hhcmUgdGhlIGNvbXBs
-ZXRlIGhpZXJhcmNoaWNhbCB0b3BvbG9neSBmb3IgeW91ciBwbGF0Zm9ybS4KClRoZSBwbGF0Zm9y
-bSBpcyBzdG0zMm1wMTU3IFNvQyB3aGljaCBlbWJlZGRlZCB0d28gQ29ydGV4IEE3IGluIG9uZSBj
-bHVzdGVyLgpJIHdvdWxkIGxpa2UgdG8gYmUgYWJsZSB0byBwdXQgdGhlIHN5c3RlbSBpbiBhIHN0
-YXRlIHdoZXJlIGNsb2NrcyBvZiBDUFVzIGFuZApoYXJkd2FyZSBibG9ja3MgYXJlIGdhdGVkLiBJ
-biB0aGlzIHN0YXRlIGxvY2FsIHRpbWVyIGFyZSBvZmYuClRoZSBwbGF0Zm9ybSBzaG91bGQgYmUg
-YWxsb3dlZCB0byBnbyBpbiB0aGlzIHN0YXRlIHdoZW4gdGhlIGRldmljZXMKd2l0aGluIHRoZSBw
-b3dlcgpkb21haW4gYXJlIHBtX3J1bnRpbWVfc3VzcGVuZCBhbmQgdGhlIENQVXMgaW4gV0ZJLgpJ
-biBEVCBJIGhhdmUgb25lIHN5c3RlbSBwb3dlciBkb21haW4gd2hlcmUgdGhlIGhhcmR3YXJlIGJs
-b2NrcyAoaTIsCnVhcnQ7IHNwaSwgZXRjLi4pCmFyZSBhdHRhY2hlZCArIGEgcG93ZXIgcGVyIENQ
-VS4KCkJlbmphbWluCgo+Cj4gPiA+Cj4gPiA+ID4gVGhlbiwgYWZ0ZXIgd2UgaGF2ZSBjYWxsZWQg
-cG1fcnVudGltZV9wdXRfc3luY19zdXNwZW5kKCkgYSBmZXcgbGluZXMKPiA+ID4gPiBhYm92ZSwg
-d2UgbWF5IHBvdGVudGlhbGx5IGhhdmUgYSAiZG9tYWluIHN0YXRlIiB0byB1c2UsIGluc3RlYWQg
-b2YgdGhlCj4gPiA+ID4gV0ZJIHN0YXRlLgo+ID4gPiA+Cj4gPiA+Cj4gPiA+IEFyZSB0aGV5IGFu
-eSBwbGF0Zm9ybXMgd2l0aCB0aGlzIHBvdGVudGlhbCAiZG9tYWluIHN0YXRlIiB0byB1c2Ugd2l0
-aAo+ID4gPiBDUFUgV0ZJLiBJIHdhbnQgdG8gdW5kZXJzdGFuZCB0aGlzIGJldHRlci4KPiA+ID4K
-PiA+ID4gPiBJbiB0aGlzIGNhc2UsIGlmIHdlIHdvdWxkIGhhdmUgY2FsbGVkIHBzY2lfZW50ZXJf
-c3RhdGUoKSwgdGhhdCB3b3VsZAo+ID4gPiA+IGxlYWQgdXMgdG8gY2FsbGluZyBjcHVfZG9faWRs
-ZSgpIGZyb20gdGhlIF9fQ1BVX1BNX0NQVV9JRExFX0VOVEVSKCkKPiA+ID4gPiBtYWNybywgYmVj
-dWFzZSBpZHggaXMgemVyby4gSW4gb3RoZXIgd29yZHMsIHRoZSBkb21haW4gc3RhdGUgd291bGQK
-PiA+ID4gPiBiZWNvbWUgdW51c2VkLgo+ID4gPiA+Cj4gPiA+Cj4gPiA+IEZvciBhIGRvbWFpbiBz
-dGF0ZSB0byBiZWNvbWUgdW51c2VkIHdpdGggV0ZJLCBpdCBuZWVkcyB0byBiZSBhdmFpbGFibGUK
-PiA+ID4gYW5kIEkgYW0gbm90IDEwMCUgc3VyZSBvZiB0aGF0Lgo+ID4KPiA+IFdpdGggdGhlc2Ug
-Y2hhbmdlcyBmcm9tIHRoZSBzZXJpZXMsIHdlIGNhbiBmdWxseSBjb25mb3JtIHRvIHRoZQo+ID4g
-aGllcmFyY2hpY2FsIERUIGJpbmRpbmdzIGZvciBQU0NJLgo+ID4KPgo+IFRoZW9yZXRpY2FsbHkg
-bWF5IGJlLCBidXQgbWF5IG5vdCBjb25maXJtIHRvIHRoZSBoYXJkd2FyZSBzdGF0ZXMuCj4KPiA+
-IEkgYW0gbm90IHN1cmUgSSB1bmRlcnN0YW5kIHlvdXIgY29uY2VybiwgaXMgdGhlcmUgYSBjb3N0
-IGludm9sdmVkIGJ5Cj4gPiBhcHBseWluZyB0aGlzPwo+ID4KPgo+IFllcyBhcyBtZW50aW9uZWQg
-YWJvdmUuCj4KPiAtLQo+IFJlZ2FyZHMsCj4gU3VkZWVwCj4KPiBfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Fri, Mar 06, 2020 at 09:57:15AM +0000, Philippe Schenker wrote:
+> On Thu, 2020-03-05 at 13:53 +0000, Russell King - ARM Linux admin wrote:
+> > On Thu, Mar 05, 2020 at 02:49:28PM +0100, Philippe Schenker wrote:
+> > > The MAC of the i.MX6 SoC is compliant with RGMII v1.3. The KSZ9131
+> > > PHY
+> > > is like KSZ9031 adhering to RGMII v2.0 specification. This means the
+> > > MAC should provide a delay to the TXC line. Because the i.MX6 MAC
+> > > does
+> > > not provide this delay this has to be done in the PHY.
+> > > 
+> > > This patch adds by default ~1.6ns delay to the TXC line. This should
+> > > be good for all boards that have the RGMII signals routed with the
+> > > same length.
+> > > 
+> > > The KSZ9131 has relatively high tolerances on skew registers from
+> > > MMD 2.4 to MMD 2.8. Therefore the new DLL-based delay of 2ns is used
+> > > and then as little as possibly subtracted from that so we get more
+> > > accurate delay. This is actually needed because the i.MX6 SoC has
+> > > an asynchron skew on TXC from -100ps to 900ps, to get all RGMII
+> > > values within spec.
+> > > 
+> > > Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
+> > > 
+> > > ---
+> > > 
+> > >  arch/arm/mach-imx/mach-imx6q.c | 37
+> > > ++++++++++++++++++++++++++++++++++
+> > >  1 file changed, 37 insertions(+)
+> > > 
+> > > diff --git a/arch/arm/mach-imx/mach-imx6q.c b/arch/arm/mach-
+> > > imx/mach-imx6q.c
+> > > index edd26e0ffeec..8ae5f2fa33e2 100644
+> > > --- a/arch/arm/mach-imx/mach-imx6q.c
+> > > +++ b/arch/arm/mach-imx/mach-imx6q.c
+> > > @@ -61,6 +61,14 @@ static void mmd_write_reg(struct phy_device *dev,
+> > > int device, int reg, int val)
+> > >  	phy_write(dev, 0x0e, val);
+> > >  }
+> > >  
+> > > +static int mmd_read_reg(struct phy_device *dev, int device, int
+> > > reg)
+> > > +{
+> > > +	phy_write(dev, 0x0d, device);
+> > > +	phy_write(dev, 0x0e, reg);
+> > > +	phy_write(dev, 0x0d, (1 << 14) | device);
+> > > +	return phy_read(dev, 0x0e);
+> > > +}
+> > 
+> > These look like the standard MII MMD registers, and it also looks like
+> > you're reinventing phy_read_mmd() - but badly due to lack of locking.
+> > 
+> > I guess you need this because phy_read_mmd() may be modular - maybe
+> > we should arrange for the accessors to be separately buildable into
+> > the kernel, so that such fixups can stop badly reinventing the wheel?
+> 
+> Yes, I did that because of two reasons:
+> 1. I tried phy_read_mmd() and phy_write_mmd() but this panic'd
+
+That is because phydev->drv->read_mmd and phydev->drv is NULL at this
+point.  There has been a patch around to solve that though.
+
+> 2. There is already mmd_write_reg in that code so I thought it would be
+> no big deal to also have a read in there.
+> 
+> But yeah, you're right that mmd_write_reg is from 2013...
+> 
+> How do you suggest to implement that?
+> 
+> Philippe
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
