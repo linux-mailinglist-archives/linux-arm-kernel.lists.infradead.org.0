@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53D7817BA8B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:40:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C807217BA9E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 11:41:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rrGTF7SSOy0i+h91FVxhO5+ZgQwTDtgZlJ+VplXMRPQ=; b=ucTzmwRx4Z3Zc7
-	YqjGP4caur2dGzGlLLcterWXOdTKav3G4z/rquwHh0VuuidyAa0SXABt2HmmnwMLeEChXaC3o3JmI
-	0TrPXWlq9wZ18ZY5FoHMnDD6+E2Yupzqpm3RyvPjX7BKXh8HfTPr1E9aFS/YXuYm5RDg6JwrTIR5O
-	xQQ2TJL9IT37LdjuDrWOht3xZlCIdXX/E1AKw6A89XoFRv8UVMmsoTKPbBP14/dUX/dUaiMFDBGRv
-	cUy9cnjX98ugikIfLcSo1/Lvy54ZLm+abovQDjYvu4TUThY4ZD8sG6bR1MozrhYiU1oQewKdBW+yh
-	fidWNvbGH5rnsP5nJJlg==;
+	List-Owner; bh=yzDZA6AcDmodol4yLDlOhowHJ5BxDSneBzS7bYtZEi4=; b=X0DiHAdPfgiXPF
+	j42+OmudnHYbpFoUtFMJlgxqDregfYx/HsLngSfomrJetDMwZ/rh06bbXlQ1NboWPxDcLNpOA2N3v
+	X4keAKMVG0NtlF0ps0Oj8dQ63Ym5j7YjRibqLxScURWsIKCTngQT2YDzd6MOI/r3RYkQZFvERtCG4
+	XsHAvj42onZ+S6Heiuym2Tq6Hc+Xo7/ItPOhVYhVo9lBKSc8AAlJeQ+O1zFMdggNb6zO8NUkCyrqL
+	I6VqjZ4qyCGV0vh+nnVv8GaiZtdVjmFs4I0RIHsBWpjs3tnk9wSqD3CfsxkVtyYnOHbv2r1xlWsTu
+	Tg+sLhjpd5AvSpABP41w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAAP6-0000Ss-34; Fri, 06 Mar 2020 10:40:28 +0000
+	id 1jAAPV-0002Gb-Lv; Fri, 06 Mar 2020 10:40:53 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAAO6-00084H-5H; Fri, 06 Mar 2020 10:39:29 +0000
+ id 1jAAO7-00085c-FH; Fri, 06 Mar 2020 10:39:29 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 9FF06B22D;
- Fri,  6 Mar 2020 10:39:24 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 987C7ADE8;
+ Fri,  6 Mar 2020 10:39:25 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-mmc@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>
-Subject: [PATCH 05/10] mmc: sdhci: pxav3: Use quirk instead of custom
+ linux-mmc@vger.kernel.org, Hu Ziji <huziji@marvell.com>,
+ Adrian Hunter <adrian.hunter@intel.com>
+Subject: [PATCH 06/10] mmc: sdhci: xenon: Use quirk instead of custom
  set_power()
-Date: Fri,  6 Mar 2020 11:38:50 +0100
-Message-Id: <20200306103857.23962-6-nsaenzjulienne@suse.de>
+Date: Fri,  6 Mar 2020 11:38:51 +0100
+Message-Id: <20200306103857.23962-7-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200306103857.23962-1-nsaenzjulienne@suse.de>
 References: <20200306103857.23962-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_023926_363892_11461EBF 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20200306_023927_761480_FE5E52DD 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,19 +79,19 @@ regulator.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/mmc/host/sdhci-pxav3.c | 20 +-------------------
+ drivers/mmc/host/sdhci-xenon.c | 20 +-------------------
  1 file changed, 1 insertion(+), 19 deletions(-)
 
-diff --git a/drivers/mmc/host/sdhci-pxav3.c b/drivers/mmc/host/sdhci-pxav3.c
-index e55037ceda73..dc4a1e69e6f6 100644
---- a/drivers/mmc/host/sdhci-pxav3.c
-+++ b/drivers/mmc/host/sdhci-pxav3.c
-@@ -297,27 +297,8 @@ static void pxav3_set_uhs_signaling(struct sdhci_host *host, unsigned int uhs)
- 		__func__, uhs, ctrl_2);
+diff --git a/drivers/mmc/host/sdhci-xenon.c b/drivers/mmc/host/sdhci-xenon.c
+index 1dea1ba66f7b..5bca5f9e5660 100644
+--- a/drivers/mmc/host/sdhci-xenon.c
++++ b/drivers/mmc/host/sdhci-xenon.c
+@@ -213,24 +213,6 @@ static void xenon_set_uhs_signaling(struct sdhci_host *host,
+ 	sdhci_writew(host, ctrl_2, SDHCI_HOST_CONTROL2);
  }
  
--static void pxav3_set_power(struct sdhci_host *host, unsigned char mode,
--			    unsigned short vdd)
+-static void xenon_set_power(struct sdhci_host *host, unsigned char mode,
+-		unsigned short vdd)
 -{
 -	struct mmc_host *mmc = host->mmc;
 -	u8 pwr = host->pwr;
@@ -107,20 +108,25 @@ index e55037ceda73..dc4a1e69e6f6 100644
 -		mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
 -}
 -
- static const struct sdhci_ops pxav3_sdhci_ops = {
- 	.set_clock = sdhci_set_clock,
--	.set_power = pxav3_set_power,
- 	.platform_send_init_74_clocks = pxav3_gen_init_74_clocks,
- 	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
- 	.set_bus_width = sdhci_set_bus_width,
-@@ -330,6 +311,7 @@ static const struct sdhci_pltfm_data sdhci_pxav3_pdata = {
- 		| SDHCI_QUIRK_NO_ENDATTR_IN_NOPDESC
- 		| SDHCI_QUIRK_32BIT_ADMA_SIZE
- 		| SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN,
+ static void xenon_voltage_switch(struct sdhci_host *host)
+ {
+ 	/* Wait for 5ms after set 1.8V signal enable bit */
+@@ -240,7 +222,6 @@ static void xenon_voltage_switch(struct sdhci_host *host)
+ static const struct sdhci_ops sdhci_xenon_ops = {
+ 	.voltage_switch		= xenon_voltage_switch,
+ 	.set_clock		= sdhci_set_clock,
+-	.set_power		= xenon_set_power,
+ 	.set_bus_width		= sdhci_set_bus_width,
+ 	.reset			= xenon_reset,
+ 	.set_uhs_signaling	= xenon_set_uhs_signaling,
+@@ -252,6 +233,7 @@ static const struct sdhci_pltfm_data sdhci_xenon_pdata = {
+ 	.quirks = SDHCI_QUIRK_NO_ENDATTR_IN_NOPDESC |
+ 		  SDHCI_QUIRK_NO_SIMULT_VDD_AND_POWER |
+ 		  SDHCI_QUIRK_CAP_CLOCK_BASE_BROKEN,
 +	.quirks2 = SDHCI_QUIRK2_SET_BUS_VOLTAGE,
- 	.ops = &pxav3_sdhci_ops,
  };
  
+ /*
 -- 
 2.25.1
 
