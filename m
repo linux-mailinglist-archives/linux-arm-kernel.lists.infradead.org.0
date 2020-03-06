@@ -2,59 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98FF317B347
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 01:59:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B93717B35B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Mar 2020 02:02:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=59SXILWljyvCWgfj+a1YE8swiFlWyTV1BRwswqfk4N4=; b=JzP8w6kgUIfOWW
-	nkWCOMtU5+wksIqjyZfQbXvR1yeAZsl1MPt3NM14DXK8TLedLQzwL7jsl/uH49M5qnZBE3EB3+U/F
-	TFrX8q8XRGpBnJJhX4pFRFspzM8VsvFqq/g21+kfGyYvpZ3brZLwoCf2QVY+8NK1uWJvEWvQ2rVjX
-	ndxck6RiKfx9mVOfJ6yI0Gu+cerrz5QjMnOKF3vxAn1AXSJtfsIJYHd+L5CuiIQOrOCp+o88TrFUL
-	9QLPEIctO/MXYryee4PlI29T8x0LKBJit3pNCgalpledjdFvHORkXUtNVCvc9zyBmIEeGyWw55Q5z
-	IXkHOvlMs91w3i6Dk1Bg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Bz//C4XEp/BoSgjKNuOXWZNjH9dh8a3cMvSOVWzohq4=; b=EdEICYhFqbYAFO
+	0yFTcXIxV4hiAi6A2/LL1Yszsm5ENNbTX6peuvLzkfbIMZ+Ld4rQWsYKxKXxUpiUs/EeQcCo0NkGK
+	mLFwcDfdLGc3aPPfNE2ri2xzvkwbCmDPHbu1CfmEZtl/7lQ1wdSQHhO0BhyQscoFC0qbgAFQ/D1rQ
+	t3T9/AsceHDG5KMrry3E+waFgCIKV+o1C+xVgQelt4N5lfKCOJJ9EjhjtR9OBViXAT3zTj//EbO/n
+	z0bfpu/H79mGmPZp0tOUJuUseiJtahbQG89LZv5rdsTnDsRppHwHO4qOwsS2i4g7MdKbxdPvBDYRT
+	Am6VfiLX6c3L1H6hFyzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jA1KD-0004BM-QF; Fri, 06 Mar 2020 00:58:49 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1jA1NA-0006J1-Ol; Fri, 06 Mar 2020 01:01:52 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jA1Jn-00043u-RI
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 00:58:25 +0000
+ id 1jA1N4-0006Io-H6
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 06 Mar 2020 01:01:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=JOU3VM87n/HvCYVSeH/2bfBPM8cXTgBEy9FhN+oOJZI=; b=v2wRJec4M4zj7t1CglVLr2yBvP
+ 5Pp+yAyPX33q11xOXpgzQGe7ptH4Zj6WgearQJP73Je9nIZOPwMoV6yDcjOiB7BLUoocJmpixtm0u
+ /UjTqw0a1FC8X/00km3B7kO8TsILZv8B4zAaWzTLhwjFgbCf8oxp83NYEK3ugGS3laIEuryfjhsJx
+ 1Ojr3C0ulo7Ht4MW/QcX47dXxIVf07ksJVkjk01lj8gqnYipD0ThYFzjsh0WRGvhvo+mYWd37cwWv
+ AXHaKJbuKv/NEKM1BLMl6E3fq1ey57aNX7iGB4j1+naMoekk8xeMnNEgLNzq1XgWAxxAsE78xtC17
+ xVvuO08A==;
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jA1Mz-0007J2-00
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Mar 2020 01:01:44 +0000
 X-Originating-IP: 86.202.105.35
 Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
  [86.202.105.35])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id B2565E0004;
- Fri,  6 Mar 2020 00:58:15 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id E03C420005;
+ Fri,  6 Mar 2020 01:01:05 +0000 (UTC)
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Alessandro Zummo <a.zummo@towertech.it>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: [PATCH 3/3] rtc: pl031: switch to rtc_time64_to_tm/rtc_tm_to_time64
-Date: Fri,  6 Mar 2020 01:58:09 +0100
-Message-Id: <20200306005809.38530-3-alexandre.belloni@bootlin.com>
+Subject: [PATCH] rtc: ab8500: switch to rtc_time64_to_tm/rtc_tm_to_time64
+Date: Fri,  6 Mar 2020 02:01:01 +0100
+Message-Id: <20200306010101.39517-1-alexandre.belloni@bootlin.com>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200306005809.38530-1-alexandre.belloni@bootlin.com>
-References: <20200306005809.38530-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_165824_012572_81A1DBB5 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-CacheID: sfid-20200306_010141_211430_148E296E 
+X-CRM114-Status: GOOD (  13.09  )
+X-Spam-Score: -2.6 (--)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-2.6 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,85 +84,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Call the 64bit versions of rtc_tm time conversion to allow extending
-support after 2106 and properly supporting the STv2 range.
+Call the 64bit versions of rtc_tm time conversion.
 
 Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/rtc/rtc-pl031.c | 27 +++++++--------------------
- 1 file changed, 7 insertions(+), 20 deletions(-)
+ drivers/rtc/rtc-ab8500.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/rtc/rtc-pl031.c b/drivers/rtc/rtc-pl031.c
-index 07dc0f264100..40d7450a1ce4 100644
---- a/drivers/rtc/rtc-pl031.c
-+++ b/drivers/rtc/rtc-pl031.c
-@@ -125,11 +125,9 @@ static int pl031_stv2_tm_to_time(struct device *dev,
- 		return -EINVAL;
- 	} else if (wday == -1) {
- 		/* wday is not provided, calculate it here */
--		unsigned long time;
- 		struct rtc_time calc_tm;
+diff --git a/drivers/rtc/rtc-ab8500.c b/drivers/rtc/rtc-ab8500.c
+index 8492ffed4ca6..3d60f3283f11 100644
+--- a/drivers/rtc/rtc-ab8500.c
++++ b/drivers/rtc/rtc-ab8500.c
+@@ -100,7 +100,7 @@ static int ab8500_rtc_read_time(struct device *dev, struct rtc_time *tm)
+ 	secs =	secs / COUNTS_PER_SEC;
+ 	secs =	secs + (mins * 60);
  
--		rtc_tm_to_time(tm, &time);
--		rtc_time_to_tm(time, &calc_tm);
-+		rtc_time64_to_tm(rtc_tm_to_time64(tm), &calc_tm);
- 		wday = calc_tm.tm_wday;
- 	}
- 
-@@ -246,30 +244,25 @@ static int pl031_read_time(struct device *dev, struct rtc_time *tm)
- {
- 	struct pl031_local *ldata = dev_get_drvdata(dev);
- 
--	rtc_time_to_tm(readl(ldata->base + RTC_DR), tm);
-+	rtc_time64_to_tm(readl(ldata->base + RTC_DR), tm);
- 
+-	rtc_time_to_tm(secs, tm);
++	rtc_time64_to_tm(secs, tm);
  	return 0;
  }
  
- static int pl031_set_time(struct device *dev, struct rtc_time *tm)
- {
--	unsigned long time;
- 	struct pl031_local *ldata = dev_get_drvdata(dev);
--	int ret;
+@@ -110,7 +110,7 @@ static int ab8500_rtc_set_time(struct device *dev, struct rtc_time *tm)
+ 	unsigned char buf[ARRAY_SIZE(ab8500_rtc_time_regs)];
+ 	unsigned long no_secs, no_mins, secs = 0;
  
--	ret = rtc_tm_to_time(tm, &time);
--
--	if (ret == 0)
--		writel(time, ldata->base + RTC_LR);
-+	writel(rtc_tm_to_time64(tm), ldata->base + RTC_LR);
+-	rtc_tm_to_time(tm, &secs);
++	secs = rtc_tm_to_time64(tm);
  
--	return ret;
-+	return 0;
+ 	no_mins = secs / 60;
+ 
+@@ -168,7 +168,7 @@ static int ab8500_rtc_read_alarm(struct device *dev, struct rtc_wkalrm *alarm)
+ 	mins = (buf[0] << 16) | (buf[1] << 8) | (buf[2]);
+ 	secs = mins * 60;
+ 
+-	rtc_time_to_tm(secs, &alarm->time);
++	rtc_time64_to_tm(secs, &alarm->time);
+ 
+ 	return 0;
  }
+@@ -188,7 +188,7 @@ static int ab8500_rtc_set_alarm(struct device *dev, struct rtc_wkalrm *alarm)
+ 	struct rtc_time curtm;
  
- static int pl031_read_alarm(struct device *dev, struct rtc_wkalrm *alarm)
- {
- 	struct pl031_local *ldata = dev_get_drvdata(dev);
+ 	/* Get the number of seconds since 1970 */
+-	rtc_tm_to_time(&alarm->time, &secs);
++	secs = rtc_tm_to_time64(&alarm->time);
  
--	rtc_time_to_tm(readl(ldata->base + RTC_MR), &alarm->time);
-+	rtc_time64_to_tm(readl(ldata->base + RTC_MR), &alarm->time);
- 
- 	alarm->pending = readl(ldata->base + RTC_RIS) & RTC_BIT_AI;
- 	alarm->enabled = readl(ldata->base + RTC_IMSC) & RTC_BIT_AI;
-@@ -280,16 +273,10 @@ static int pl031_read_alarm(struct device *dev, struct rtc_wkalrm *alarm)
- static int pl031_set_alarm(struct device *dev, struct rtc_wkalrm *alarm)
- {
- 	struct pl031_local *ldata = dev_get_drvdata(dev);
--	unsigned long time;
--	int ret;
- 
--	ret = rtc_tm_to_time(&alarm->time, &time);
--	if (ret == 0) {
--		writel(time, ldata->base + RTC_MR);
--		pl031_alarm_irq_enable(dev, alarm->enabled);
--	}
-+	writel(rtc_tm_to_time64(&alarm->time), ldata->base + RTC_MR);
- 
--	return ret;
-+	return 0;
- }
- 
- static int pl031_remove(struct amba_device *adev)
+ 	/*
+ 	 * Check whether alarm is set less than 1min.
+@@ -196,7 +196,7 @@ static int ab8500_rtc_set_alarm(struct device *dev, struct rtc_wkalrm *alarm)
+ 	 * return -EINVAL, so UIE EMUL can take it up, incase of UIE_ON
+ 	 */
+ 	ab8500_rtc_read_time(dev, &curtm); /* Read current time */
+-	rtc_tm_to_time(&curtm, &cursec);
++	cursec = rtc_tm_to_time64(&curtm);
+ 	if ((secs - cursec) < 59) {
+ 		dev_dbg(dev, "Alarm less than 1 minute not supported\r\n");
+ 		return -EINVAL;
 -- 
 2.24.1
 
