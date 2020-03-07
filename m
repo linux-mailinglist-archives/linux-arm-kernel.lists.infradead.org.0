@@ -2,83 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DDE617CB7C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 04:25:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADEF317CB8B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 04:34:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rwSGGC5qX7NRyuf8vt8eJC4jwESgUqvAcV3N9QC76L0=; b=Sbsf8KK4WGiMok
-	Br6RRRFiHvaXaKJaSBW4ZGPd+hKAJ3Wm9FPxgKTo/g65tYlmjskyighjilP14Q2iW1+0tknI7BSrj
-	Aho6rOsXyc37cbSHhfu1NeejHUPZPO9eWP5med7nmUvLpn/9iNjpNSwIh9/Dh8OHJCprlE49ONNLz
-	BgqZUrxrp5gtoRiaw/5NEFQRi/uSsLkCrm2tp0zuUeXkLgqRGtas0Zom2UQQAAxWZnqG0YlFAB/OW
-	8upC6kDNFNgfkNiBGTH+2OSjRmfk1azyaGnCaiu5RG9CWvuKFNe/GEWrOsTx7ZFC14Tpl2lginX9S
-	erLumye8VrR0/wH0P5ZQ==;
+	List-Owner; bh=QYJX6+UXx8UDXfzlSp1IO/dCaJriaiX5EoH9q01QWfo=; b=V3iQ80rWTLMkh0
+	BGP9+PQxUpzP75neOq0CL1c/KVDKDtIoCCq0kEsxE+u/XyXCVep/LoMABtYnTQJJjsthgGo2Iok0X
+	vWhhTI7LxC9+hT6R0CHJd4CeH157eDX6vQ0aV3p6OPLmzk1ZSO4o7fVfzsnIlYGA28aKAequRtqSi
+	4UTAagpcxOHbeFhEub/mRkWRq16Bk7Jztf7XP6c2roh1vxsqalpOCUe7D7+Z3kCfd/FymvXC3laBG
+	AQo7tY6vibfVxWv84PqSDIMug8cui2KN06kxewLGPr0TRo+nFbtfGqytltvtqNRXio/3USMsOXmQO
+	R9WskcKSvXs8ChU3JJUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAQ5E-0008GQ-OO; Sat, 07 Mar 2020 03:25:00 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1jAQE3-0002xD-NY; Sat, 07 Mar 2020 03:34:07 +0000
+Received: from mail-db8eur05on2055.outbound.protection.outlook.com
+ ([40.107.20.55] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAQ55-0008FH-Aa
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 03:24:52 +0000
-Received: by mail-qk1-x741.google.com with SMTP id f3so4358480qkh.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 19:24:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xx47FJX+QZbsjpJJ8x5FoZzQPuJdzEkyLKKPH7vo5sk=;
- b=V6CTG2BcTle4ax3VW2GMHUYNQikRPHCX4W8GrQB30I7oTu+yciihautJPRVRVjQ/Fc
- 4kw1eamGfYWI+0JA2+f4WTC0j66nFLcnd99j+u/JabWCi3MKzZqlGYpUGHSL2uG7mtIF
- BfhUwv1spkZ3ujZfrr3fUBm8ngmoJQzhDuiHuJu/QP0GKueGBjshtLXt46XuOmZgKx/k
- JuhzFIkghSF56z6430kkDS6XYJ9RA+oqlafgd4aUUnS5t52RLf0rttvgMrL1JBERiRYX
- RpwRRbLrCwoL2EWUcYPnjqPBEq6rHC9UTbskZJ/gSdsjmpVPKgwIbE0mfl05KL3hJagt
- G8jA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xx47FJX+QZbsjpJJ8x5FoZzQPuJdzEkyLKKPH7vo5sk=;
- b=OcjgrqbI2bvOEDExBga12FEnxiecdHkrkyM6I3pu4Dn3jf21I6agmbVWnOJycQmh3I
- 3wJugm8mkQD4csDjIdjVCmn/GWTtuEAttt7+sd09+6OYaQgi3T56x6zVoUe4YjiDShNq
- Pi29Q2egduGtPoNubMDyiD2BkDTemMCxturD4yzbbxZnEjlhMGH03JlcnrZ1to3BeE5S
- OR7bDaScUKA4Je0YP6aYd+F0elcwZI6gDFV29Jw1W1JDCw97dGKCiqb+/9diD+Ox/a1V
- skHSVsI0zp2Qdrev20x0CZu1td3dM2p+R7qizTB2P7GELMqAEjG/FY/D40mGNulz1iZt
- nnHw==
-X-Gm-Message-State: ANhLgQ3zDhZTnl1SydiD/X6zcy5kWh9nUvRGgTW7yKE+G4KsgYIT/gVt
- v4XXAldrS+cdDz6pG7rspTS26I2+EaUqeoGRjfA=
-X-Google-Smtp-Source: ADFU+vsrgn/I7/3yq0U87aezc5EPcL/v/ioSyi8uCEcZqO8JoZIjCstooShLZGMYvgHn2vn/uc1R6Au9Gus47NWljDo=
-X-Received: by 2002:a37:a50d:: with SMTP id o13mr5736750qke.37.1583551482955; 
- Fri, 06 Mar 2020 19:24:42 -0800 (PST)
+ id 1jAQDv-0002we-KX
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 03:34:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BE0V8OKClMyHoyqDFlDvAltzMVaUhA0XLgZKmz092hHWa6VewmLjV2VeOpJnl7++zJnZHGB+G9ea30uxp76SRBu2zggkrR5L7x4hRexnvnrtFHrqklDnexcE2n6IZDPIxe7jBC9uNCVualYNJmt1M62PeTjNv0EtqC2cf426/rgupHQZMG6Gng3EsbVhEsUAjAnY5LM98KWvHSN3CBGxOqRZc/O4v92+56ccJx6ceyV39OsYmAdfL2E4TfdzfaVewZciQSSLgA19N57D3UkfVENr3WvntPK19CQ5Ff5qdRI/2lzkIh0mBqeC1bqFJ32mkxeK6l4IKq0EDBrP3eCiCA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vLEiQOSUtp8iJ2N1iOGEfwWkny4ppPuBUaLFRdJtzIs=;
+ b=D/sLdFOHLEVPC8ZrYa4ieqb04rKv4KIo/3nfg7wF1OBRVwHza3CGqULDR+BYKpjgVP3a5U1pqKI1uSSprBy3HfqJpE/uDR6vTydO0tbplT0Mj0E7tSKaGinNQdiDDdUUMvDcZ/qnhmy4Jt+vN0Z05xjHyAivQmiG+Ibm7QXGUhtxKp/yf7CKOiLZnB6uTZMVa4QAnLoN6KjGIq/MVuFmi9gMI3Pie8SdiSSc+7SyPLbR00eHaimywYZJL6be1KM/V/c0wi87QCZEAisAAgkD2dtpys6sWolqnY8e4nAP7aMg1gTkoazmV5guns6nZz0FQK4pPcJNgKChBW0eaAzmMg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vLEiQOSUtp8iJ2N1iOGEfwWkny4ppPuBUaLFRdJtzIs=;
+ b=RyTYxwpioisoiuqSHVfbGnan8DDtOl3ozbunALvMp9TdfHDXC1JC4EXg8oBriV/ueyH8k7px4WKUk0vYK7uASklKkRNVeHBtm/CCAMi2LUaNIkEz6PeZGbTxkKXYlTqUJDU5k8qR3tSU165DKhyqFJWkfolnzQCCSRBFJqwVEdE=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3899.eurprd04.prod.outlook.com (52.134.71.154) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.19; Sat, 7 Mar 2020 03:33:54 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2772.019; Sat, 7 Mar 2020
+ 03:33:54 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: RE: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Thread-Topic: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Thread-Index: AQHV887MNanm8ugiD0KiUbBo9lnYDag79IUAgAAJFwCAABOKAIAASDdQgAAXQQCAAAmasA==
+Date: Sat, 7 Mar 2020 03:33:54 +0000
+Message-ID: <DB3PR0402MB3916FCC28C5E49FE571226A3F5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
+ <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
+ <20200306193310.GI217608@dtor-ws>
+ <CAKdAkRRhXE6Hviqx90_5hWmP7YQnKO2QLJgDYnzt_CPjeH7D0A@mail.gmail.com>
+ <20200306211538.GA8060@piout.net>
+ <DB3PR0402MB39164192146D17327A45DA6CF5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20200307025720.GA52231@piout.net>
+In-Reply-To: <20200307025720.GA52231@piout.net>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 550d3af9-9582-4b68-e2f6-08d7c2485cbc
+x-ms-traffictypediagnostic: DB3PR0402MB3899:|DB3PR0402MB3899:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3899927EAF5A63E2B147C2E9F5E00@DB3PR0402MB3899.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 03355EE97E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(39860400002)(136003)(396003)(366004)(199004)(189003)(86362001)(33656002)(55016002)(7416002)(71200400001)(76116006)(2906002)(6916009)(53546011)(6506007)(66446008)(7696005)(66556008)(66946007)(64756008)(54906003)(44832011)(81166006)(8936002)(9686003)(478600001)(81156014)(52536014)(316002)(186003)(26005)(4326008)(8676002)(5660300002)(66476007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3899;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: QFS+73QNtgV8NnFmcIbuKfy8DKK6TDU5De6RPfr8Vshxf8ymbtYhknxb4uMj/S8KznPlIdSjyLgOBlc/ZHblo1B1M03doWUSFXqDw1f+cu3J14TDVlKoRPfLLpRgdYAQueq0aztGNAFb8GY+dbeTBHQkSO46JSxs3JrcBPry+UP7TKq2mIBfgxb0EQc9t89ZshHsWiQujehVlfNInl+Nrt/IhcSDmmD0uCTjVst5NBLj4UYf5nlk+LsTSMzAVr67aEKEVig9PTsGyEwf7Py8434gR0s7DWZUmT1q700+fw6w8ht5txiyja7s1ritbkUp8/G26P+uuxOhqCZf8sV48WadApgddFl732JRNroDXVHjwWNSTInukfGY1gRb7mRVozMjFknZpS/9jJfPRM+W5+Q3iBfKov9MFyQ5PZ/OJ7OilaWHb+BZAewELfomM8T0
+x-ms-exchange-antispam-messagedata: phVcIBbvcq4rTZjuciAmylQ1fTJ2CJmkljLkevfUpZwn0O72yD/zl7gdzoip+GEctXtO3qJL1q/BqFCSuVczx8IEHKYCz1HMlf5FECa08izQi2Lsd2k4DKZ1AHnH+kNWIqf3G1tKEXRydCD/BLFZ7A==
 MIME-Version: 1.0
-References: <cover.1583039752.git.shengjiu.wang@nxp.com>
- <872c2e1082de6348318e14ccd31884d62355c282.1583039752.git.shengjiu.wang@nxp.com>
- <20200303014133.GA24596@bogus>
- <CAA+D8ANgECaz=tRtRwNP=jMXBD0XciAE0HUYROH8uuo03iDejg@mail.gmail.com>
- <20200303124739.GE3866@sirena.org.uk>
-In-Reply-To: <20200303124739.GE3866@sirena.org.uk>
-From: Shengjiu Wang <shengjiu.wang@gmail.com>
-Date: Sat, 7 Mar 2020 11:24:32 +0800
-Message-ID: <CAA+D8AMkmHZoZ7Oa0_OGfgRAC+H-117e1bNJgzyiWGTueyxDzg@mail.gmail.com>
-Subject: Re: [PATCH v4 1/8] ASoC: dt-bindings: fsl_asrc: Change asrc-width to
- asrc-format
-To: Mark Brown <broonie@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 550d3af9-9582-4b68-e2f6-08d7c2485cbc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Mar 2020 03:33:54.4841 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8gtvQISnmNRpnTO+aFhi+9RN3EJ6cb/j/L4Z5bHiOuOpwmNWeeqFQvWENGtQ9TenDsgvEnyo4PX2r7lB4oUrTg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3899
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_192451_366120_B8E359E9 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20200306_193359_755211_58FF5863 
+X-CRM114-Status: GOOD (  19.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.20.55 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [shengjiu.wang[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,48 +128,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Timur Tabi <timur@kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, shawnguo@kernel.org,
- Shengjiu Wang <shengjiu.wang@nxp.com>, Xiubo Li <Xiubo.Lee@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
- Nicolin Chen <nicoleotsuka@gmail.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
- linuxppc-dev@lists.ozlabs.org, s.hauer@pengutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: Marco Felsch <m.felsch@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>,
+ =?utf-8?B?Um9uYWxkIFRzY2hhbMOkcg==?= <ronald@innovation.ch>,
+ Guenter Roeck <linux@roeck-us.net>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ lkml <linux-kernel@vger.kernel.org>, Oleksij Rempel <linux@rempel-privat.de>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+Hi, Alexandre
 
-On Tue, Mar 3, 2020 at 8:47 PM Mark Brown <broonie@kernel.org> wrote:
->
-> On Tue, Mar 03, 2020 at 11:59:30AM +0800, Shengjiu Wang wrote:
-> > On Tue, Mar 3, 2020 at 9:43 AM Rob Herring <robh@kernel.org> wrote:
->
-> > > > -   - fsl,asrc-width  : Defines a mutual sample width used by DPCM Back Ends.
-> > > > +   - fsl,asrc-format : Defines a mutual sample format used by DPCM Back
-> > > > +                       Ends. The value is one of SNDRV_PCM_FORMAT_XX in
-> > > > +                       "include/uapi/sound/asound.h"
->
-> > > You can't just change properties. They are an ABI.
->
-> > I have updated all the things related with this ABI in this patch series.
-> > What else should I do?
->
-> Like Nicolin says you should continue to support the old stuff.  The
-> kernel should work with people's out of tree DTs too so simply updating
-> everything in the tree isn't enough.
+> Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+> KEYBOARD_IMX_SC_KEY
+> 
+> On 07/03/2020 01:36:39+0000, Anson Huang wrote:
+> > Hi, Alexandre
+> >
+> > > Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support
+> > > for KEYBOARD_IMX_SC_KEY
+> > >
+> > > On 06/03/2020 12:05:42-0800, Dmitry Torokhov wrote:
+> > > > On Fri, Mar 6, 2020 at 11:33 AM Dmitry Torokhov
+> > > > <dmitry.torokhov@gmail.com> wrote:
+> > > > >
+> > > > > On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
+> > > > > > Add COMPILE_TEST support to i.MX SC keyboard driver for better
+> > > > > > compile testing coverage.
+> > > > > >
+> > > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > > >
+> > > > > Applied, thank you.
+> > > >
+> > > > Actually, not:
+> > > >
+> > > > ERROR: "imx_scu_irq_register_notifier"
+> > > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> > > > ERROR: "imx_scu_get_handle" [drivers/input/keyboard/imx_sc_key.ko]
+> > > undefined!
+> > > > ERROR: "imx_scu_call_rpc" [drivers/input/keyboard/imx_sc_key.ko]
+> > > undefined!
+> > > > ERROR: "imx_scu_irq_unregister_notifier"
+> > > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> > > > ERROR: "imx_scu_irq_group_enable"
+> > > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> > > > make[1]: *** [scripts/Makefile.modpost:94: __modpost] Error 1
+> > > > make: *** [Makefile:1282: modules] Error 2
+> > > >
+> > > > If you want to enable compile test coverage you need to provide
+> > > > stubs for the above functions.
+> > > >
+> > >
+> > > or select IMX_SCU
+> > >
+> > > or leave out COMPILE_TEST from the individual drivers as having
+> > > COMPILE_TEST for IMX_SCU is enough to be able to select the drivers.
+> >
+> > Thanks, I already added the COMPILE_TEST for IMX_SCU which is in this
+> > same patch series, without that IMX_SCU COMPILE_TEST patch, the build
+> > will failed, so in V2, I also added the stubs into those IMX SCU APIs
+> > to make sure even IMX_SCU is NOT enabled, modules with COMPILE_TEST
+> can still pass build, please help review V2 patch set.
+> >
+> 
+> My point is that there is no need for the stubs. Simply have COMPILE_TEST
+> for IMX_SCU as this is enough to extend coverage to all the drivers and
+> significantly reduces the code size versus what you did in v2.
 
-Thanks for review, I will update patch in next version.
+OK, then I think V1 patch set is already what you expected, patch 1/5 adds the COMPILE_TEST
+for IMX_SCU. I think maintainers can just pick up the V1 patch set.
 
-best regards
-wang shengjiu
-
+Thanks,
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
