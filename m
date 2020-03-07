@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93B4C17C9B6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 01:27:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C45A17C9B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 01:26:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dbEJZzuCiXlyZb0HxznaECKZnJQBtvrCI3UVFZbzDFU=; b=EfmgIEq85y7BCe
-	hIq4aWWzVBghqUF1dZHqO6yipTcXaLc7jP5lipjx6T+30+K9atwiWkRziBztAhcL3U+Qh+59qmBOF
-	YbWxg4U2sPriWYbSj22AQ/ea2jSX+/pim1KUWCBKjt+EkntAA3Ap+qqWIfMvWDDjL45itDyov6WNv
-	b8Dhx5ouThlSYJuQYIppaPcGqdFrsbsELVGKCVf1RurfD/Gdaec9OJE0LEDcLJcTiunKTV0W3g55T
-	fzHVTJPnU5kgsap7xPnSawXrNJ10+gpYsHafBJHGoUnQtTXv0LVTeWMkPQMLE9EmGNbOKyAYAHIWQ
-	F0r5+52tjAXx9NdUQjfA==;
+	List-Owner; bh=xyIal4PbuD7qBR7X3voAAJJepUIhKT3EU8B+lDvYsYs=; b=BV4ddT8b1hasM/
+	fYXe+257DQTHEhcZpx5SoDQeY3Hbyzje2I7H0M0ztIsp3XMqfnE4T32JsuEwQpiET1+kCFwQqobch
+	TwQl9qRJh3USeq0VuHJWXpNk/KZW0p+CDOS3A9tadE9Bfnnsq7YYTKuzKA0GziXj/o8aG17Sbnkvy
+	ZcrRLsniebB3rnioZFfLQrXLO8Zbfk18q2HxsLCrkXyKffsvfB4pC8A9n1r6Wz4E6n3q3fG8J4idZ
+	s9jkGklqCEaDoITgz5FhYixDd7BdNS+W4oLUbZquwuGDHwLe5gXEzGriSo9l7RNJ5iqljxMu3QOrY
+	NDceCKZH6YtA+Ufre+Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jANJg-0002Td-VT; Sat, 07 Mar 2020 00:27:44 +0000
-Received: from gateway31.websitewelcome.com ([192.185.144.96])
+	id 1jANIJ-00023G-Mp; Sat, 07 Mar 2020 00:26:19 +0000
+Received: from gateway24.websitewelcome.com ([192.185.51.61])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jANJZ-0002T5-PW
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 00:27:39 +0000
-Received: from cm16.websitewelcome.com (cm16.websitewelcome.com [100.42.49.19])
- by gateway31.websitewelcome.com (Postfix) with ESMTP id B65B920432
+ id 1jANI9-00021z-RC
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 00:26:11 +0000
+Received: from cm11.websitewelcome.com (cm11.websitewelcome.com [100.42.49.5])
+ by gateway24.websitewelcome.com (Postfix) with ESMTP id 6F7629ED1D
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Mar 2020 18:25:53 -0600 (CST)
+ Fri,  6 Mar 2020 18:26:08 -0600 (CST)
 Received: from br164.hostgator.com.br ([192.185.176.180]) by cmsmtp with SMTP
- id ANHtjQxsg8vkBANHtjKMa2; Fri, 06 Mar 2020 18:25:53 -0600
+ id ANI8j8R8ISl8qANI8jkRiJ; Fri, 06 Mar 2020 18:26:08 -0600
 X-Authority-Reason: nr=8
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=castello.eng.br; s=default; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ d=castello.eng.br; s=default; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=a0fH3cAF828a4S/+b1Nbsier8zx9VXfLEXnuCfekO00=; b=EpxtDvLgSuOZQ7sofuiVpGCRFs
- 6RdXWHY6RtMMGx1ldUhC+j9iMeVI2Thg2V2qKefOhji1J8Qls+nEs2pciJuVztr3GeIF+4bwbEr/0
- WCC3tDwVv64wzTFiUECIyj7QVpevzHme/2+Q0OG0vnbIPE/7hu3xLfaawTQBXUhFf1OTJ0F1jS0vA
- 8ruTO/pYEZ+PXoLzlHZJ+gFPITFDb8+JV4V2fXrKWSzGJ9aGRihO/Q/4Plv3PEDbmEWJ2lkEkiW7X
- zY2Hg9RDsMmEH6/nj5udwibpccWTO9QBBWfEGAMrR4LyQOszG69v29MqRalxmxw3CTTvWPTl6psFL
- JHE9iyWA==;
+ bh=msXgc3TGQhw2fSPO6AXY+2RmKkB9onA2Nue9cLwXGQI=; b=hzsuDJzqHrn7CrKIhYBOffx5FB
+ reovpBTHdQE0LIYla3E2AySPD7mJ957Nl/JTwPDB2xijwvGHSAAe+duO1JNfGW+Jcwl393c4S/uUd
+ fJrrkmUgxY9Vrkw3J5IknOlGwWoR3VtO57uvpSOQcoim+2raXEDOpkfoiV3lb9NlS/aBZvlXWlOd6
+ GAbJ39Eg6TEt1JjeEDeY8xNEJivr7Zcj2t2gVPdbmC3D1zEsm7UxYQAVMp2vhYBWNGL+JUFszd4q9
+ gizZrCZJ93q4ZQy/RAR3h7P5IvyL6JnB77kjnY1KDoN4oLaSANkxUJsStUEqKprNnUy62SWePA+7x
+ 5RtjdTOg==;
 Received: from [191.31.207.132] (port=48872 helo=castello.castello)
  by br164.hostgator.com.br with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
  (envelope-from <matheus@castello.eng.br>)
- id 1jANHt-001YDM-4h; Fri, 06 Mar 2020 21:25:53 -0300
+ id 1jANI7-001YDM-Ri; Fri, 06 Mar 2020 21:26:08 -0300
 From: Matheus Castello <matheus@castello.eng.br>
 To: afaerber@suse.de, manivannan.sadhasivam@linaro.org, mark.rutland@arm.com,
  robh+dt@kernel.org
-Subject: [PATCH v2 2/3] dt-bindings: arm: actions: Document Caninos Loucos
- Labrador
-Date: Fri,  6 Mar 2020 21:24:52 -0300
-Message-Id: <20200307002453.350430-3-matheus@castello.eng.br>
+Subject: [PATCH v2 3/3] ARM: dts: Add Caninos Loucos Labrador
+Date: Fri,  6 Mar 2020 21:24:53 -0300
+Message-Id: <20200307002453.350430-4-matheus@castello.eng.br>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200307002453.350430-1-matheus@castello.eng.br>
 References: <20200229104358.GB19610@mani>
@@ -68,26 +67,25 @@ X-AntiAbuse: Sender Address Domain - castello.eng.br
 X-BWhitelist: no
 X-Source-IP: 191.31.207.132
 X-Source-L: No
-X-Exim-ID: 1jANHt-001YDM-4h
+X-Exim-ID: 1jANI7-001YDM-Ri
 X-Source: 
 X-Source-Args: 
 X-Source-Dir: 
 X-Source-Sender: (castello.castello) [191.31.207.132]:48872
 X-Source-Auth: matheus@castello.eng.br
-X-Email-Count: 19
+X-Email-Count: 27
 X-Source-Cap: Y2FzdGUyNDg7Y2FzdGUyNDg7YnIxNjQuaG9zdGdhdG9yLmNvbS5icg==
 X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_162737_878802_B1AFD3D9 
-X-CRM114-Status: UNSURE (   5.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200306_162609_987856_1F08D33A 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.144.96 listed in list.dnswl.org]
+ no trust [192.185.51.61 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -111,41 +109,53 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Matheus Castello <matheus@castello.eng.br>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the documentation to add the Caninos Loucos Labrador. Labrador
-project consists of a computer on module based on the Actions Semi S500
-processor and the Labrador base board.
-
-Signed-off-by: Matheus Castello <matheus@castello.eng.br>
----
- Documentation/devicetree/bindings/arm/actions.yaml | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/arm/actions.yaml b/Documentation/devicetree/bindings/arm/actions.yaml
-index ace3fdaa8396..1b131ceb884a 100644
---- a/Documentation/devicetree/bindings/arm/actions.yaml
-+++ b/Documentation/devicetree/bindings/arm/actions.yaml
-@@ -24,6 +24,11 @@ properties:
-               - lemaker,guitar-bb-rev-b # LeMaker Guitar Base Board rev. B
-           - const: lemaker,guitar
-           - const: actions,s500
-+      - items:
-+          - enum:
-+              - caninos,labrador-bb # Caninos Loucos Labrador Base Board
-+          - const: caninos,labrador
-+          - const: actions,s500
-
-       # The Actions Semi S700 is a quad-core ARM Cortex-A53 SoC.
-       - items:
---
-2.25.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QWRkIERldmljZSBUcmVlcyBmb3IgQ2FuaW5vcyBMb3Vjb3MgTGFicmFkb3IgQ29NIGFuZCBiYXNl
+IGJvYXJkLgpCYXNlZCBvbiB0aGUgd29yayBvZiBBbmRyZWFzIEbDpHJiZXIgb24gTGVtYWtlciBH
+dWl0YXIgZGV2aWNlIHRyZWUuCgpTaWduZWQtb2ZmLWJ5OiBNYXRoZXVzIENhc3RlbGxvIDxtYXRo
+ZXVzQGNhc3RlbGxvLmVuZy5icj4KLS0tCiBhcmNoL2FybS9ib290L2R0cy9NYWtlZmlsZSAgICAg
+ICAgICAgICAgICAgIHwgIDEgKwogYXJjaC9hcm0vYm9vdC9kdHMvb3dsLXM1MDAtbGFicmFkb3It
+YmIuZHRzICB8IDM0ICsrKysrKysrKysrKysrKysrKysrKwogYXJjaC9hcm0vYm9vdC9kdHMvb3ds
+LXM1MDAtbGFicmFkb3ItdjIuZHRzaSB8IDIxICsrKysrKysrKysrKysKIDMgZmlsZXMgY2hhbmdl
+ZCwgNTYgaW5zZXJ0aW9ucygrKQogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2Jvb3QvZHRz
+L293bC1zNTAwLWxhYnJhZG9yLWJiLmR0cwogY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtL2Jv
+b3QvZHRzL293bC1zNTAwLWxhYnJhZG9yLXYyLmR0c2kKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9i
+b290L2R0cy9NYWtlZmlsZSBiL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCmluZGV4IGQ2NTQ2
+ZDI2NzZiOS4uOTlmNjMzNDYwODMzIDEwMDY0NAotLS0gYS9hcmNoL2FybS9ib290L2R0cy9NYWtl
+ZmlsZQorKysgYi9hcmNoL2FybS9ib290L2R0cy9NYWtlZmlsZQpAQCAtODQyLDYgKzg0Miw3IEBA
+IGR0Yi0kKENPTkZJR19BUkNIX09SSU9ONVgpICs9IFwKIGR0Yi0kKENPTkZJR19BUkNIX0FDVElP
+TlMpICs9IFwKIAlvd2wtczUwMC1jdWJpZWJvYXJkNi5kdGIgXAogCW93bC1zNTAwLWd1aXRhci1i
+Yi1yZXYtYi5kdGIgXAorCW93bC1zNTAwLWxhYnJhZG9yLWJiLmR0YiBcCiAJb3dsLXM1MDAtc3Bh
+cmt5LmR0YgogZHRiLSQoQ09ORklHX0FSQ0hfUFJJTUEyKSArPSBcCiAJcHJpbWEyLWV2Yi5kdGIK
+ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL293bC1zNTAwLWxhYnJhZG9yLWJiLmR0cyBi
+L2FyY2gvYXJtL2Jvb3QvZHRzL293bC1zNTAwLWxhYnJhZG9yLWJiLmR0cwpuZXcgZmlsZSBtb2Rl
+IDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLjkxMDEyYjRhNGMzMAotLS0gL2Rldi9udWxsCisr
+KyBiL2FyY2gvYXJtL2Jvb3QvZHRzL293bC1zNTAwLWxhYnJhZG9yLWJiLmR0cwpAQCAtMCwwICsx
+LDM0IEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9SIE1JVCkKKy8q
+CisgKiBDYW5pbm9zIExhYnJhZG9yIEJhc2UgQm9hcmQKKyAqCisgKiBDb3B5cmlnaHQgKGMpIDIw
+MTktMjAyMCBNYXRoZXVzIENhc3RlbGxvCisgKi8KKworL2R0cy12MS87CisKKyNpbmNsdWRlICJv
+d2wtczUwMC1sYWJyYWRvci12Mi5kdHNpIgorCisvIHsKKwljb21wYXRpYmxlID0gImNhbmlub3Ms
+bGFicmFkb3ItYmIiLCAiY2FuaW5vcyxsYWJyYWRvciIsICJhY3Rpb25zLHM1MDAiOworCW1vZGVs
+ID0gIkNhbmlub3MgTGFicmFkb3IgQmFzZSBCb2FyZCBNIHYxLjAiOworCisJYWxpYXNlcyB7CisJ
+CXNlcmlhbDMgPSAmdWFydDM7CisJfTsKKworCWNob3NlbiB7CisJCXN0ZG91dC1wYXRoID0gInNl
+cmlhbDM6MTE1MjAwbjgiOworCX07CisKKwl1YXJ0M19jbGs6IHVhcnQzLWNsayB7CisJCWNvbXBh
+dGlibGUgPSAiZml4ZWQtY2xvY2siOworCQljbG9jay1mcmVxdWVuY3kgPSA8OTIxNjAwPjsKKwkJ
+I2Nsb2NrLWNlbGxzID0gPDA+OworCX07Cit9OworCismdWFydDMgeworCXN0YXR1cyA9ICJva2F5
+IjsKKwljbG9ja3MgPSA8JnVhcnQzX2Nsaz47Cit9OwpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9v
+dC9kdHMvb3dsLXM1MDAtbGFicmFkb3ItdjIuZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL293bC1z
+NTAwLWxhYnJhZG9yLXYyLmR0c2kKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAw
+MDAwLi4wYjU0ZjFlZjNlYzAKLS0tIC9kZXYvbnVsbAorKysgYi9hcmNoL2FybS9ib290L2R0cy9v
+d2wtczUwMC1sYWJyYWRvci12Mi5kdHNpCkBAIC0wLDAgKzEsMjEgQEAKKy8vIFNQRFgtTGljZW5z
+ZS1JZGVudGlmaWVyOiAoR1BMLTIuMCsgT1IgTUlUKQorLyoKKyAqIENhbmlub3MgTGFicmFkb3Ig
+Q29NIFYyCisgKgorICogQ29weXJpZ2h0IChjKSAyMDE5LTIwMjAgTWF0aGV1cyBDYXN0ZWxsbwor
+ICovCisKKyNpbmNsdWRlICJvd2wtczUwMC5kdHNpIgorCisvIHsKKwljb21wYXRpYmxlID0gImNh
+bmlub3MsbGFicmFkb3IiLCAiYWN0aW9ucyxzNTAwIjsKKworCW1lbW9yeUAwIHsKKwkJZGV2aWNl
+X3R5cGUgPSAibWVtb3J5IjsKKwkJcmVnID0gPDB4MCAweDgwMDAwMDAwPjsKKwl9OworfTsKKwor
+JnRpbWVyIHsKKwljbG9ja3MgPSA8Jmhvc2M+OworfTsKLS0KMi4yNS4wCgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
