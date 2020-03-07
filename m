@@ -2,89 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C19E017CD50
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 10:40:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41ACD17CD59
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 10:54:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GqfNjoGkaOvH7Y1znxuQYw132K3SJgVCZrZ2qBQS87E=; b=Vu6HRDlNj9YTFi
-	ndHs35ZrsnsNDSu1MN9d+GvdhollDum3o5QvjMeVCYcGy4CmXNNPwic7nATaFS3PLRyYZP3CZr4If
-	7fAdADuB8em91NFZaFquKQEp51IeoWaengV9n+WrqQWJiT9/bIAyh98mOu2Unu4eVFXsRO8r/pAkb
-	cepfmKEG+mABcbuWtR+0E13jIn4XRN1bUsCVcKlhnZrHP7ncd1J13ggB4l7j3fvn4kLxSXLp8G6kN
-	XYZ6SHq8mRADWGclqjG8NMaIwSDpltceooRGHew+amONGE463yZdvT20M0tikRLXX0K2vgz+JGoTG
-	lXcRBYvcynH/9M59LCiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Vff6I0nElsUlwlXZvfKd2udrnGV+A7SZvJIBhJ4ww+4=; b=ZJ6nWWAcAJLl9CUVO4SRyIup5
+	9LWFlrKb+X2GyYpp9JueSdM8B71psjzPeTHlewwWm6N2q1zoSr6PjcIGwnaOyiEsdXkEmeASoJ3bZ
+	ooHLlCTN7s9ctScQZxQ6+Px8CPFomoX9NcZxeB7RZvmKSDDDVt8bqqb/pFtNFVWcnpCEBTL3FkO0e
+	GJWds6cRiQmLYItH64cP3fWPSxbjtMK5DFzu5QjRMlaUXS9tPxj6qCc+caRnC+NLiA7LX3ofdTnQP
+	GeJVNVeG6H08k+iYcI8GLDXDaBarHr0+JYH1ZvZahs5R1ORaQaltUCqT7zqN1P9kw5ZvLagE6hGl4
+	OoGqkpeYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAVw1-0004vm-A8; Sat, 07 Mar 2020 09:39:53 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jAWAO-0001Qn-Qb; Sat, 07 Mar 2020 09:54:44 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAVvs-0004v9-70
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 09:39:45 +0000
-Received: by mail-pg1-x541.google.com with SMTP id y30so2263062pga.13
+ id 1jAWAG-0001PJ-AC
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 09:54:38 +0000
+Received: by mail-lf1-x142.google.com with SMTP id t21so3831903lfe.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 07 Mar 2020 01:39:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=TQrEvZ13F8kEvhfqqpGuqFY2wEN2DIfUxspJmPRPnIo=;
- b=S/Ump+m7pX1/2CQ88Se755gIiG6OFrXK2l/vah7aFG/d2RAfEoB7TE8hjfGUTil34U
- yOaTgDLAAka5xml/5Pud4/O/GJ4N43tPXekh3oTC0Ip5ViOMJHy5GwRKliFKleSrNjt5
- CntuBDxL66X6Tt4URFw7EACYFPbil8BU9wlYdCaH/uXNYaDvqi624jOc9Un1jcgUEi3p
- MNa45X3SwRRzhlZoAhG5vXImE/Yy7RrqiZw18wVv0XwDZ17L+OjYm4JBQmXEmeD2mfXp
- CcoGiIiEnVw6N4a3/flDIX+mJwATmetu4O3tOBszVqf/yyvFawLFMIaIn+CEIlN8y7V+
- ugXw==
+ Sat, 07 Mar 2020 01:54:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cogentembedded-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=+iY7vg8Db28lbZpkj8YbZ4nAiqLqC1ZkxS8MIhuLcMU=;
+ b=ylpat4kRdMth3tgWlvM26uho69yQ9OBDlJqz9C4W2FP/opded7R33Gs9dCZ441sDeE
+ XXcCUprakY2Zx3bRayE+q+uD4obMIAircprbTxdJYpe0/qTADFTqpBe8JJ2igckRHAvT
+ dP4JYIuo8Y/qjWN7nj4ykCDfVsEOCmPMALohd4iLGEzL4XbxBtw8A+esMWN4Y62zJU9t
+ eGNr4baLxZ2rUHx2gNf2f5QIze1ZEoBsuHtfznFaQerUm+yB8zo/NKsh2ibjgx4tEY6e
+ Hd8Xp1eCtoOc1T7H4kcg3+4wc1scUop9Bh1WiUdxKbXAe3XK/R1Nx3UcKD5Hdmv6qH/1
+ whIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=TQrEvZ13F8kEvhfqqpGuqFY2wEN2DIfUxspJmPRPnIo=;
- b=BSugz8eSAOyuLUEkdibcIDO1iBFNG7gTxcrohkMabwyDV8lgQFnu701BiHlc/Vo+LY
- wNZmHELn6sXw1IQ07orol8B4LX7e1cuLMr07YadSmAfvEZ/z6R98dRm487DBEh00juPt
- ae7Nm5HIDycHPjOZyikxNu5eGhHy676y0Q4Zc5dMh2GOgLpHouw54WFGl9LWvOTarZyp
- s/4zRIRTes7MFkpr3zqSsRqR+K/HRU7ANqul0kXq3pRlZqNe7lC7KvuJiI8gfvBSB4Rm
- MAF6Ay/H7ck2wWqaxXAQXw54wh/rGYoxqrA2LCrJVfFCEUAJil0U4s9Jfdu6OHuHkEow
- mSzg==
-X-Gm-Message-State: ANhLgQ0BXtmQnCkLJ3GJ77K/iSAsIkW1m6u2e8OvTuiN+K4l0yYmv3Zt
- KNQpcFuT+hry3MgfpoI/7mo=
-X-Google-Smtp-Source: ADFU+vsMj19AZ1LMNkk/TpNkNt56C7jYnDIJMIFA0yMpCIVVFSYlfPbfxqUpAEoPlL07hhQWMJ5ofg==
-X-Received: by 2002:a63:348b:: with SMTP id b133mr7346984pga.372.1583573980485; 
- Sat, 07 Mar 2020 01:39:40 -0800 (PST)
-Received: from debian.net.fpt ([2405:4800:58f7:2133:c967:474d:b56a:15e9])
- by smtp.gmail.com with ESMTPSA id q13sm37932689pgh.30.2020.03.07.01.39.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Mar 2020 01:39:39 -0800 (PST)
-From: Phong Tran <tranmanphong@gmail.com>
-To: catalin.marinas@arm.com, will@kernel.org, alexios.zavras@intel.com,
- tglx@linutronix.de, akpm@linux-foundation.org, steven.price@arm.com,
- steve.capper@arm.com, mark.rutland@arm.com, broonie@kernel.org,
- keescook@chromium.org
-Subject: [PATCH] arm64: add check_wx_pages debugfs for CHECK_WX
-Date: Sat,  7 Mar 2020 16:39:26 +0700
-Message-Id: <20200307093926.27145-1-tranmanphong@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ bh=+iY7vg8Db28lbZpkj8YbZ4nAiqLqC1ZkxS8MIhuLcMU=;
+ b=JnYeyW54B4Iwcz99eUQwxi0xW0a42ukZWjVCB2DCycZNch+VcTZc/Pg7SUWI/pufUz
+ 1hm674+TRYELiQtD1t3DVRx6JKF9TBOODTB9PKe8RyJi9jCcibo6fKvcQ0BHwuzhL9/o
+ XS1p5CVo79QX/4gPrRVslJx3kWAP0jHIyFKq7Lbd6ZjW+zsxyC/MqrenYXtu3C/cV503
+ 3S1HSgLLGbAOT1QwfYCEASGvRs94KGRM2vLaYbFkRAqr+8lts/+8PRu/rox0nFahjTai
+ 32X54UXM0YbPzFSF/YDETpiB6UqT/VFyAWuCea4Nr94q7AAtPQbgjW96DJaIKMceDRKI
+ s9cw==
+X-Gm-Message-State: ANhLgQ393sYzYg+OVPkPHwTm8U0rjeRllZh953EIVWg6Dxrwuz98V+vy
+ Tn0J5yolMhyIXxQZJ6NoYIr7pg==
+X-Google-Smtp-Source: ADFU+vv6OIWzoXOg4mWHENdK4mbxgfXz8v6v9hX1jJMwhRRBJ60rFJUXuMg07DvgtCrrYsNkhjdr7Q==
+X-Received: by 2002:a05:6512:692:: with SMTP id
+ t18mr4284908lfe.212.1583574870677; 
+ Sat, 07 Mar 2020 01:54:30 -0800 (PST)
+Received: from ?IPv6:2a00:1fa0:402:864b:dd24:504:68eb:a9fe?
+ ([2a00:1fa0:402:864b:dd24:504:68eb:a9fe])
+ by smtp.gmail.com with ESMTPSA id j17sm2554029ljc.0.2020.03.07.01.54.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 07 Mar 2020 01:54:29 -0800 (PST)
+Subject: Re: [PATCH v4 4/4] USB: pci-quirks: Add Raspberry Pi 4 quirk
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-kernel@vger.kernel.org, Mathias Nyman <mathias.nyman@intel.com>
+References: <20200306114348.5172-1-nsaenzjulienne@suse.de>
+ <20200306114348.5172-5-nsaenzjulienne@suse.de>
+From: Sergei Shtylyov <sergei.shtylyov@cogentembedded.com>
+Message-ID: <b4fb58f0-6d51-657b-bcf6-5f4b0c798312@cogentembedded.com>
+Date: Sat, 7 Mar 2020 12:54:27 +0300
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200306114348.5172-5-nsaenzjulienne@suse.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_013944_280733_8B7CCA85 
-X-CRM114-Status: GOOD (  11.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200307_015436_776604_30A95E8F 
+X-CRM114-Status: GOOD (  17.55  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tranmanphong[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -99,95 +100,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Phong Tran <tranmanphong@gmail.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kernel-hardening@lists.openwall.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: f.fainelli@gmail.com, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ tim.gover@raspberrypi.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-follow the suggestion from
-https://github.com/KSPP/linux/issues/35
+Hello!
 
-Signed-off-by: Phong Tran <tranmanphong@gmail.com>
----
- arch/arm64/Kconfig.debug        |  3 ++-
- arch/arm64/include/asm/ptdump.h |  2 ++
- arch/arm64/mm/dump.c            |  1 +
- arch/arm64/mm/ptdump_debugfs.c  | 18 ++++++++++++++++++
- 4 files changed, 23 insertions(+), 1 deletion(-)
+On 06.03.2020 14:43, Nicolas Saenz Julienne wrote:
 
-diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
-index 1c906d932d6b..be552fa351e2 100644
---- a/arch/arm64/Kconfig.debug
-+++ b/arch/arm64/Kconfig.debug
-@@ -48,7 +48,8 @@ config DEBUG_WX
- 	  of other unfixed kernel bugs easier.
- 
- 	  There is no runtime or memory usage effect of this option
--	  once the kernel has booted up - it's a one time check.
-+	  once the kernel has booted up - it's a one time check and
-+	  can be checked by echo "1" to "check_wx_pages" debugfs in runtime.
- 
- 	  If in doubt, say "Y".
- 
-diff --git a/arch/arm64/include/asm/ptdump.h b/arch/arm64/include/asm/ptdump.h
-index 38187f74e089..b80d6b4fc508 100644
---- a/arch/arm64/include/asm/ptdump.h
-+++ b/arch/arm64/include/asm/ptdump.h
-@@ -24,9 +24,11 @@ struct ptdump_info {
- void ptdump_walk(struct seq_file *s, struct ptdump_info *info);
- #ifdef CONFIG_PTDUMP_DEBUGFS
- void ptdump_debugfs_register(struct ptdump_info *info, const char *name);
-+int ptdump_check_wx_init(void);
- #else
- static inline void ptdump_debugfs_register(struct ptdump_info *info,
- 					   const char *name) { }
-+static inline int ptdump_check_wx_init(void) { return 0; }
- #endif
- void ptdump_check_wx(void);
- #endif /* CONFIG_PTDUMP_CORE */
-diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
-index 860c00ec8bd3..60c99a047763 100644
---- a/arch/arm64/mm/dump.c
-+++ b/arch/arm64/mm/dump.c
-@@ -378,6 +378,7 @@ static int ptdump_init(void)
- #endif
- 	ptdump_initialize();
- 	ptdump_debugfs_register(&kernel_ptdump_info, "kernel_page_tables");
-+	ptdump_check_wx_init();
- 	return 0;
- }
- device_initcall(ptdump_init);
-diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
-index 1f2eae3e988b..73cddc12c3c2 100644
---- a/arch/arm64/mm/ptdump_debugfs.c
-+++ b/arch/arm64/mm/ptdump_debugfs.c
-@@ -16,3 +16,21 @@ void ptdump_debugfs_register(struct ptdump_info *info, const char *name)
- {
- 	debugfs_create_file(name, 0400, NULL, info, &ptdump_fops);
- }
-+
-+static int check_wx_debugfs_set(void *data, u64 val)
-+{
-+	if (val != 1ULL)
-+		return -EINVAL;
-+
-+	ptdump_check_wx();
-+
-+	return 0;
-+}
-+
-+DEFINE_SIMPLE_ATTRIBUTE(check_wx_fops, NULL, check_wx_debugfs_set, "%llu\n");
-+
-+int ptdump_check_wx_init(void)
-+{
-+	return debugfs_create_file("check_wx_pages", 0200, NULL,
-+				   NULL, &check_wx_fops) ? 0 : -ENOMEM;
-+}
--- 
-2.20.1
+> On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+> loaded directly from an EEPROM or, if not present, by the SoC's
+> VideCore. Inform VideCore that VL805 was just reset.
+> 
+> Also, as this creates a dependency between XHCI_PCI and VideoCore's
+> firmware interface, reflect that on the firmware interface Kconfg.
+> 
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+> 
+> Changes since v3:
+>   - Add more complete error message.
+>   - Add braces around if statement
+> 
+> Changes since v1:
+>   - Make RASPBERRYPI_FIRMWARE dependent on this quirk to make sure it
+>     gets compiled when needed.
+> 
+>   drivers/firmware/Kconfig      |  1 +
+>   drivers/usb/host/pci-quirks.c | 16 ++++++++++++++++
+>   2 files changed, 17 insertions(+)
+[...]
+> diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
+> index beb2efa71341..452f5f12b042 100644
+> --- a/drivers/usb/host/pci-quirks.c
+> +++ b/drivers/usb/host/pci-quirks.c
+> @@ -16,6 +16,9 @@
+>   #include <linux/export.h>
+>   #include <linux/acpi.h>
+>   #include <linux/dmi.h>
+> +
+> +#include <soc/bcm2835/raspberrypi-firmware.h>
+> +
+>   #include "pci-quirks.h"
+>   #include "xhci-ext-caps.h"
+>   
+> @@ -1243,11 +1246,24 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
+>   
+>   static void quirk_usb_early_handoff(struct pci_dev *pdev)
+>   {
+> +	int ret;
+> +
+>   	/* Skip Netlogic mips SoC's internal PCI USB controller.
+>   	 * This device does not need/support EHCI/OHCI handoff
+>   	 */
+>   	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
+>   		return;
+> +
+> +	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
+> +		ret = rpi_firmware_init_vl805(pdev);
+> +		if (ret) {
+> +			/* Firmware might be outdated, or something failed */
+> +			dev_warn(&pdev->dev, "Failed to load VL805's firmware: %d\n", ret);
+> +			dev_warn(&pdev->dev, "Will continue to attempt to work, "
+> +				 "but bad things might happen. You should fix this...\n");
 
+    Don't break up the long kernel messages (checkpatch.pl should not complain 
+about them).
+
+[...]
+
+MBR, Sergei
 
 _______________________________________________
 linux-arm-kernel mailing list
