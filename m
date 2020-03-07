@@ -2,65 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C66617CEA1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 15:12:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AB3117CED2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 15:50:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
-	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XNvbvquhp9KUj3N6x7ohJRK1f5WJFvzIN1sYziTEqqs=; b=EnH7D8NAZpQEh7DMkNC1I31JE
-	DInuX0D3WXWJo9yA/qj/pVDKwKPiJN3BtnaYYnYUnhDD0+8LMAvRmXOqEZXqurmWlRDI9QO1fobgo
-	e6J1gwktOjlQt2ka7mmmQRNfIYbg2tavyN2vhuNz82dehlvrP3XWCs37xA9gyrjfjCE9/3Mzf5QfQ
-	Cq7y8jP6ifXfIiU1nMEJYl+8cMmiyuJn8Igq7AMXbkp2hnPlabjipsTfOxuUil1YXTsFQGkNOOxhm
-	2votoPxo0onc7+WtHMCj+V3BhNHKzPSsnXBNDghG9a6iF0i9jyAwJ/doz8fDogJR+X9qHnUAUA4d/
-	u8JMlqGKQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nOZmmSU+bnXli4k1008czF/rhkfTd4GO7smt/kJnTrM=; b=cB+BL3LHGog1UN
+	yU8cLbjzLLYG6UrCs66jDQo4W8trmXslZqxirjosThAQRaNwrOzewJQ74PBrUTvY92IPo55drZbEa
+	O0cIWAG9YleYjPeJAhLFIMPYjehIM72MnQqzBAy/ztvO1yF9DR/G+FSfJ5neVN9eOVroYqnndktNw
+	5As5UXJhwq2XSEgR4DwCNSBHt21s7zjCaL7fk5hwbhdQ81Zb4ujZ8KDOrmbgKwpbt5zxz7hXFrl8w
+	PfIoCw6zKanUUJJ0ZLUwWzWWqBo/yQb8razWxGaAmLZiUgpnAwC0TPyG81GizcRZFOCExTMXSpXVu
+	829OW9ZwuDRgF1Qd78ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAaBa-0001TB-Gq; Sat, 07 Mar 2020 14:12:14 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1jAamI-0005Of-G9; Sat, 07 Mar 2020 14:50:12 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAaBO-0001SS-LF
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 14:12:04 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 07 Mar 2020 06:11:56 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,526,1574150400"; 
- d="gz'50?scan'50,208,50";a="275921829"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga002.fm.intel.com with ESMTP; 07 Mar 2020 06:11:52 -0800
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jAaBE-00017B-97; Sat, 07 Mar 2020 22:11:52 +0800
-Date: Sat, 7 Mar 2020 22:11:01 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH] drivers: soc: Fix COMPILE_TEST for IMX SCU
-Message-ID: <202003072202.55QFC29B%lkp@intel.com>
-References: <20200306113119.56577-1-vincenzo.frascino@arm.com>
+ id 1jAam2-0005Nn-06; Sat, 07 Mar 2020 14:49:57 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D4568260112;
+ Sat,  7 Mar 2020 14:49:45 +0000 (GMT)
+Date: Sat, 7 Mar 2020 15:49:42 +0100
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: <Tudor.Ambarus@microchip.com>
+Subject: Re: [PATCH 23/23] mtd: spi-nor: Trim what is exposed in spi-nor.h
+Message-ID: <20200307154942.0902e187@collabora.com>
+In-Reply-To: <20200302180730.1886678-24-tudor.ambarus@microchip.com>
+References: <20200302180730.1886678-1-tudor.ambarus@microchip.com>
+ <20200302180730.1886678-24-tudor.ambarus@microchip.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="W/nzBZO5zC0uMSeA"
-Content-Disposition: inline
-In-Reply-To: <20200306113119.56577-1-vincenzo.frascino@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_061202_812270_1E685E6D 
-X-CRM114-Status: UNSURE (   7.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200307_064954_317574_A5B2F60B 
+X-CRM114-Status: GOOD (  24.79  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,759 +60,1024 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: kstewart@linuxfoundation.org, alexandre.belloni@bootlin.com,
+ vigneshr@ti.com, linux-aspeed@lists.ozlabs.org, thor.thayer@linux.intel.com,
+ michal.simek@xilinx.com, rfontana@redhat.com, linux-mtd@lists.infradead.org,
+ miquel.raynal@bootlin.com, opensource@jilayne.com, richard@nod.at,
+ jethro@fortanix.com, Ludovic.Desroches@microchip.com, joel@jms.id.au,
+ nishkadg.linux@gmail.com, john.garry@huawei.com, swboyd@chromium.org,
+ alexander.sverdlin@nokia.com, matthias.bgg@gmail.com, tglx@linutronix.de,
+ vz@mleia.com, mika.westerberg@linux.intel.com, allison@lohutok.net,
+ linux-arm-kernel@lists.infradead.org, bbrezillon@kernel.org, andrew@aj.id.au,
+ linux-kernel@vger.kernel.org, dinguyen@kernel.org, michael@walle.cc,
+ ludovic.barre@st.com, linux-mediatek@lists.infradead.org, info@metux.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 2 Mar 2020 18:07:57 +0000
+<Tudor.Ambarus@microchip.com> wrote:
 
---W/nzBZO5zC0uMSeA
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
+> 
+> The SPI NOR controllers drivers must not be able to use structures that
+> are meant just for the SPI NOR core.
+> 
+> struct spi_nor_flash_parameter is filled at run-time with info gathered
+> from flash_info, manufacturer and sfdp data. struct spi_nor_flash_parameter
+> should be opaque to the SPI NOR controller drivers, make sure it is.
+> 
+> spi_nor_option_flags, spi_nor_read_command, spi_nor_pp_command,
+> spi_nor_read_command_index and spi_nor_pp_command_index are defined for the
+> core use, make sure they are opaque to the SPI NOR controller drivers.
+> 
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-Hi Vincenzo,
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 
-I love your patch! Yet something to improve:
+> ---
+>  drivers/mtd/spi-nor/core.c       |  86 ++++++----
+>  drivers/mtd/spi-nor/core.h       | 214 +++++++++++++++++++++++++
+>  drivers/mtd/spi-nor/gigadevice.c |   2 +-
+>  drivers/mtd/spi-nor/issi.c       |   2 +-
+>  drivers/mtd/spi-nor/macronix.c   |   4 +-
+>  drivers/mtd/spi-nor/micron-st.c  |   4 +-
+>  drivers/mtd/spi-nor/sfdp.c       |  10 ++
+>  drivers/mtd/spi-nor/spansion.c   |   2 +-
+>  drivers/mtd/spi-nor/winbond.c    |   2 +-
+>  drivers/mtd/spi-nor/xilinx.c     |   4 +-
+>  include/linux/mtd/spi-nor.h      | 259 +------------------------------
+>  11 files changed, 294 insertions(+), 295 deletions(-)
+> 
+> diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
+> index a2e1917b608d..860dac1dff90 100644
+> --- a/drivers/mtd/spi-nor/core.c
+> +++ b/drivers/mtd/spi-nor/core.c
+> @@ -802,7 +802,7 @@ static int spi_nor_write_16bit_sr_and_check(struct spi_nor *nor, u8 sr1)
+>  		ret = spi_nor_read_cr(nor, &sr_cr[1]);
+>  		if (ret)
+>  			return ret;
+> -	} else if (nor->params.quad_enable) {
+> +	} else if (nor->params->quad_enable) {
+>  		/*
+>  		 * If the Status Register 2 Read command (35h) is not
+>  		 * supported, we should at least be sure we don't
+> @@ -810,7 +810,7 @@ static int spi_nor_write_16bit_sr_and_check(struct spi_nor *nor, u8 sr1)
+>  		 *
+>  		 * We can safely assume that when the Quad Enable method is
+>  		 * set, the value of the QE bit is one, as a consequence of the
+> -		 * nor->params.quad_enable() call.
+> +		 * nor->params->quad_enable() call.
+>  		 *
+>  		 * We can safely assume that the Quad Enable bit is present in
+>  		 * the Status Register 2 at BIT(1). According to the JESD216
+> @@ -1075,6 +1075,11 @@ static u8 spi_nor_convert_3to4_erase(u8 opcode)
+>  				      ARRAY_SIZE(spi_nor_3to4_erase));
+>  }
+>  
+> +static bool spi_nor_has_uniform_erase(const struct spi_nor *nor)
+> +{
+> +	return !!nor->params->erase_map.uniform_erase_type;
+> +}
+> +
+>  static void spi_nor_set_4byte_opcodes(struct spi_nor *nor)
+>  {
+>  	nor->read_opcode = spi_nor_convert_3to4_read(nor->read_opcode);
+> @@ -1082,7 +1087,7 @@ static void spi_nor_set_4byte_opcodes(struct spi_nor *nor)
+>  	nor->erase_opcode = spi_nor_convert_3to4_erase(nor->erase_opcode);
+>  
+>  	if (!spi_nor_has_uniform_erase(nor)) {
+> -		struct spi_nor_erase_map *map = &nor->params.erase_map;
+> +		struct spi_nor_erase_map *map = &nor->params->erase_map;
+>  		struct spi_nor_erase_type *erase;
+>  		int i;
+>  
+> @@ -1119,10 +1124,10 @@ void spi_nor_unlock_and_unprep(struct spi_nor *nor)
+>  
+>  static u32 spi_nor_convert_addr(struct spi_nor *nor, loff_t addr)
+>  {
+> -	if (!nor->params.convert_addr)
+> +	if (!nor->params->convert_addr)
+>  		return addr;
+>  
+> -	return nor->params.convert_addr(nor, addr);
+> +	return nor->params->convert_addr(nor, addr);
+>  }
+>  
+>  /*
+> @@ -1227,6 +1232,16 @@ spi_nor_find_best_erase_type(const struct spi_nor_erase_map *map,
+>  	return NULL;
+>  }
+>  
+> +static u64 spi_nor_region_is_last(const struct spi_nor_erase_region *region)
+> +{
+> +	return region->offset & SNOR_LAST_REGION;
+> +}
+> +
+> +static u64 spi_nor_region_end(const struct spi_nor_erase_region *region)
+> +{
+> +	return (region->offset & ~SNOR_ERASE_FLAGS_MASK) + region->size;
+> +}
+> +
+>  /**
+>   * spi_nor_region_next() - get the next spi nor region
+>   * @region:	pointer to a structure that describes a SPI NOR erase region
+> @@ -1331,7 +1346,7 @@ static int spi_nor_init_erase_cmd_list(struct spi_nor *nor,
+>  				       struct list_head *erase_list,
+>  				       u64 addr, u32 len)
+>  {
+> -	const struct spi_nor_erase_map *map = &nor->params.erase_map;
+> +	const struct spi_nor_erase_map *map = &nor->params->erase_map;
+>  	const struct spi_nor_erase_type *erase, *prev_erase = NULL;
+>  	struct spi_nor_erase_region *region;
+>  	struct spi_nor_erase_command *cmd = NULL;
+> @@ -1817,7 +1832,7 @@ static int spi_nor_lock(struct mtd_info *mtd, loff_t ofs, uint64_t len)
+>  	if (ret)
+>  		return ret;
+>  
+> -	ret = nor->params.locking_ops->lock(nor, ofs, len);
+> +	ret = nor->params->locking_ops->lock(nor, ofs, len);
+>  
+>  	spi_nor_unlock_and_unprep(nor);
+>  	return ret;
+> @@ -1832,7 +1847,7 @@ static int spi_nor_unlock(struct mtd_info *mtd, loff_t ofs, uint64_t len)
+>  	if (ret)
+>  		return ret;
+>  
+> -	ret = nor->params.locking_ops->unlock(nor, ofs, len);
+> +	ret = nor->params->locking_ops->unlock(nor, ofs, len);
+>  
+>  	spi_nor_unlock_and_unprep(nor);
+>  	return ret;
+> @@ -1847,7 +1862,7 @@ static int spi_nor_is_locked(struct mtd_info *mtd, loff_t ofs, uint64_t len)
+>  	if (ret)
+>  		return ret;
+>  
+> -	ret = nor->params.locking_ops->is_locked(nor, ofs, len);
+> +	ret = nor->params->locking_ops->is_locked(nor, ofs, len);
+>  
+>  	spi_nor_unlock_and_unprep(nor);
+>  	return ret;
+> @@ -2312,7 +2327,7 @@ static int spi_nor_spimem_check_pp(struct spi_nor *nor,
+>  static void
+>  spi_nor_spimem_adjust_hwcaps(struct spi_nor *nor, u32 *hwcaps)
+>  {
+> -	struct spi_nor_flash_parameter *params =  &nor->params;
+> +	struct spi_nor_flash_parameter *params = nor->params;
+>  	unsigned int cap;
+>  
+>  	/* DTR modes are not supported yet, mask them all. */
+> @@ -2411,7 +2426,7 @@ static int spi_nor_select_read(struct spi_nor *nor,
+>  	if (cmd < 0)
+>  		return -EINVAL;
+>  
+> -	read = &nor->params.reads[cmd];
+> +	read = &nor->params->reads[cmd];
+>  	nor->read_opcode = read->opcode;
+>  	nor->read_proto = read->proto;
+>  
+> @@ -2442,7 +2457,7 @@ static int spi_nor_select_pp(struct spi_nor *nor,
+>  	if (cmd < 0)
+>  		return -EINVAL;
+>  
+> -	pp = &nor->params.page_programs[cmd];
+> +	pp = &nor->params->page_programs[cmd];
+>  	nor->program_opcode = pp->opcode;
+>  	nor->write_proto = pp->proto;
+>  	return 0;
+> @@ -2503,7 +2518,7 @@ spi_nor_select_uniform_erase(struct spi_nor_erase_map *map,
+>  
+>  static int spi_nor_select_erase(struct spi_nor *nor)
+>  {
+> -	struct spi_nor_erase_map *map = &nor->params.erase_map;
+> +	struct spi_nor_erase_map *map = &nor->params->erase_map;
+>  	const struct spi_nor_erase_type *erase = NULL;
+>  	struct mtd_info *mtd = &nor->mtd;
+>  	u32 wanted_size = nor->info->sector_size;
+> @@ -2552,7 +2567,7 @@ static int spi_nor_select_erase(struct spi_nor *nor)
+>  static int spi_nor_default_setup(struct spi_nor *nor,
+>  				 const struct spi_nor_hwcaps *hwcaps)
+>  {
+> -	struct spi_nor_flash_parameter *params = &nor->params;
+> +	struct spi_nor_flash_parameter *params = nor->params;
+>  	u32 ignored_mask, shared_mask;
+>  	int err;
+>  
+> @@ -2613,10 +2628,10 @@ static int spi_nor_default_setup(struct spi_nor *nor,
+>  static int spi_nor_setup(struct spi_nor *nor,
+>  			 const struct spi_nor_hwcaps *hwcaps)
+>  {
+> -	if (!nor->params.setup)
+> +	if (!nor->params->setup)
+>  		return 0;
+>  
+> -	return nor->params.setup(nor, hwcaps);
+> +	return nor->params->setup(nor, hwcaps);
+>  }
+>  
+>  /**
+> @@ -2646,13 +2661,13 @@ static void spi_nor_sfdp_init_params(struct spi_nor *nor)
+>  {
+>  	struct spi_nor_flash_parameter sfdp_params;
+>  
+> -	memcpy(&sfdp_params, &nor->params, sizeof(sfdp_params));
+> +	memcpy(&sfdp_params, nor->params, sizeof(sfdp_params));
+>  
+>  	if (spi_nor_parse_sfdp(nor, &sfdp_params)) {
+>  		nor->addr_width = 0;
+>  		nor->flags &= ~SNOR_F_4B_OPCODES;
+>  	} else {
+> -		memcpy(&nor->params, &sfdp_params, sizeof(nor->params));
+> +		memcpy(nor->params, &sfdp_params, sizeof(*nor->params));
+>  	}
+>  }
+>  
+> @@ -2663,7 +2678,7 @@ static void spi_nor_sfdp_init_params(struct spi_nor *nor)
+>   */
+>  static void spi_nor_info_init_params(struct spi_nor *nor)
+>  {
+> -	struct spi_nor_flash_parameter *params = &nor->params;
+> +	struct spi_nor_flash_parameter *params = nor->params;
+>  	struct spi_nor_erase_map *map = &params->erase_map;
+>  	const struct flash_info *info = nor->info;
+>  	struct device_node *np = spi_nor_get_flash_node(nor);
+> @@ -2782,8 +2797,8 @@ static void spi_nor_late_init_params(struct spi_nor *nor)
+>  	 * NOR protection support. When locking_ops are not provided, we pick
+>  	 * the default ones.
+>  	 */
+> -	if (nor->flags & SNOR_F_HAS_LOCK && !nor->params.locking_ops)
+> -		nor->params.locking_ops = &spi_nor_sr_locking_ops;
+> +	if (nor->flags & SNOR_F_HAS_LOCK && !nor->params->locking_ops)
+> +		nor->params->locking_ops = &spi_nor_sr_locking_ops;
+>  }
+>  
+>  /**
+> @@ -2823,8 +2838,12 @@ static void spi_nor_late_init_params(struct spi_nor *nor)
+>   * ->default_init() hook or the SFDP parser do not set specific params.
+>   *		spi_nor_late_init_params()
+>   */
+> -static void spi_nor_init_params(struct spi_nor *nor)
+> +static int spi_nor_init_params(struct spi_nor *nor)
+>  {
+> +	nor->params = devm_kzalloc(nor->dev, sizeof(*nor->params), GFP_KERNEL);
+> +	if (!nor->params)
+> +		return -ENOMEM;
+> +
+>  	spi_nor_info_init_params(nor);
+>  
+>  	spi_nor_manufacturer_init_params(nor);
+> @@ -2836,6 +2855,8 @@ static void spi_nor_init_params(struct spi_nor *nor)
+>  	spi_nor_post_sfdp_fixups(nor);
+>  
+>  	spi_nor_late_init_params(nor);
+> +
+> +	return 0;
+>  }
+>  
+>  /**
+> @@ -2846,14 +2867,14 @@ static void spi_nor_init_params(struct spi_nor *nor)
+>   */
+>  static int spi_nor_quad_enable(struct spi_nor *nor)
+>  {
+> -	if (!nor->params.quad_enable)
+> +	if (!nor->params->quad_enable)
+>  		return 0;
+>  
+>  	if (!(spi_nor_get_protocol_width(nor->read_proto) == 4 ||
+>  	      spi_nor_get_protocol_width(nor->write_proto) == 4))
+>  		return 0;
+>  
+> -	return nor->params.quad_enable(nor);
+> +	return nor->params->quad_enable(nor);
+>  }
+>  
+>  /**
+> @@ -2868,7 +2889,7 @@ static int spi_nor_quad_enable(struct spi_nor *nor)
+>  static int spi_nor_unlock_all(struct spi_nor *nor)
+>  {
+>  	if (nor->flags & SNOR_F_HAS_LOCK)
+> -		return spi_nor_unlock(&nor->mtd, 0, nor->params.size);
+> +		return spi_nor_unlock(&nor->mtd, 0, nor->params->size);
+>  
+>  	return 0;
+>  }
+> @@ -2899,7 +2920,7 @@ static int spi_nor_init(struct spi_nor *nor)
+>  		 */
+>  		WARN_ONCE(nor->flags & SNOR_F_BROKEN_RESET,
+>  			  "enabling reset hack; may not recover from unexpected reboots\n");
+> -		nor->params.set_4byte(nor, true);
+> +		nor->params->set_4byte(nor, true);
+>  	}
+>  
+>  	return 0;
+> @@ -2923,7 +2944,7 @@ void spi_nor_restore(struct spi_nor *nor)
+>  	/* restore the addressing mode */
+>  	if (nor->addr_width == 4 && !(nor->flags & SNOR_F_4B_OPCODES) &&
+>  	    nor->flags & SNOR_F_BROKEN_RESET)
+> -		nor->params.set_4byte(nor, false);
+> +		nor->params->set_4byte(nor, false);
+>  }
+>  EXPORT_SYMBOL_GPL(spi_nor_restore);
+>  
+> @@ -3028,7 +3049,6 @@ int spi_nor_scan(struct spi_nor *nor, const char *name,
+>  	struct device *dev = nor->dev;
+>  	struct mtd_info *mtd = &nor->mtd;
+>  	struct device_node *np = spi_nor_get_flash_node(nor);
+> -	struct spi_nor_flash_parameter *params = &nor->params;
+>  	int ret;
+>  	int i;
+>  
+> @@ -3079,7 +3099,9 @@ int spi_nor_scan(struct spi_nor *nor, const char *name,
+>  	mtd->_write = spi_nor_write;
+>  
+>  	/* Init flash parameters based on flash_info struct and SFDP */
+> -	spi_nor_init_params(nor);
+> +	ret = spi_nor_init_params(nor);
+> +	if (ret)
+> +		return ret;
+>  
+>  	if (!mtd->name)
+>  		mtd->name = dev_name(dev);
+> @@ -3087,12 +3109,12 @@ int spi_nor_scan(struct spi_nor *nor, const char *name,
+>  	mtd->type = MTD_NORFLASH;
+>  	mtd->writesize = 1;
+>  	mtd->flags = MTD_CAP_NORFLASH;
+> -	mtd->size = params->size;
+> +	mtd->size = nor->params->size;
+>  	mtd->_erase = spi_nor_erase;
+>  	mtd->_read = spi_nor_read;
+>  	mtd->_resume = spi_nor_resume;
+>  
+> -	if (nor->params.locking_ops) {
+> +	if (nor->params->locking_ops) {
+>  		mtd->_lock = spi_nor_lock;
+>  		mtd->_unlock = spi_nor_unlock;
+>  		mtd->_is_locked = spi_nor_is_locked;
+> @@ -3115,7 +3137,7 @@ int spi_nor_scan(struct spi_nor *nor, const char *name,
+>  		mtd->flags |= MTD_NO_ERASE;
+>  
+>  	mtd->dev.parent = dev;
+> -	nor->page_size = params->page_size;
+> +	nor->page_size = nor->params->page_size;
+>  	mtd->writebufsize = nor->page_size;
+>  
+>  	if (of_property_read_bool(np, "broken-flash-reset"))
+> diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
+> index 3541a84c03d8..7654b6f3b966 100644
+> --- a/drivers/mtd/spi-nor/core.h
+> +++ b/drivers/mtd/spi-nor/core.h
+> @@ -11,6 +11,220 @@
+>  
+>  #define SPI_NOR_MAX_ID_LEN	6
+>  
+> +enum spi_nor_option_flags {
+> +	SNOR_F_USE_FSR		= BIT(0),
+> +	SNOR_F_HAS_SR_TB	= BIT(1),
+> +	SNOR_F_NO_OP_CHIP_ERASE	= BIT(2),
+> +	SNOR_F_READY_XSR_RDY	= BIT(3),
+> +	SNOR_F_USE_CLSR		= BIT(4),
+> +	SNOR_F_BROKEN_RESET	= BIT(5),
+> +	SNOR_F_4B_OPCODES	= BIT(6),
+> +	SNOR_F_HAS_4BAIT	= BIT(7),
+> +	SNOR_F_HAS_LOCK		= BIT(8),
+> +	SNOR_F_HAS_16BIT_SR	= BIT(9),
+> +	SNOR_F_NO_READ_CR	= BIT(10),
+> +	SNOR_F_HAS_SR_TB_BIT6	= BIT(11),
+> +};
+> +
+> +struct spi_nor_read_command {
+> +	u8			num_mode_clocks;
+> +	u8			num_wait_states;
+> +	u8			opcode;
+> +	enum spi_nor_protocol	proto;
+> +};
+> +
+> +struct spi_nor_pp_command {
+> +	u8			opcode;
+> +	enum spi_nor_protocol	proto;
+> +};
+> +
+> +enum spi_nor_read_command_index {
+> +	SNOR_CMD_READ,
+> +	SNOR_CMD_READ_FAST,
+> +	SNOR_CMD_READ_1_1_1_DTR,
+> +
+> +	/* Dual SPI */
+> +	SNOR_CMD_READ_1_1_2,
+> +	SNOR_CMD_READ_1_2_2,
+> +	SNOR_CMD_READ_2_2_2,
+> +	SNOR_CMD_READ_1_2_2_DTR,
+> +
+> +	/* Quad SPI */
+> +	SNOR_CMD_READ_1_1_4,
+> +	SNOR_CMD_READ_1_4_4,
+> +	SNOR_CMD_READ_4_4_4,
+> +	SNOR_CMD_READ_1_4_4_DTR,
+> +
+> +	/* Octal SPI */
+> +	SNOR_CMD_READ_1_1_8,
+> +	SNOR_CMD_READ_1_8_8,
+> +	SNOR_CMD_READ_8_8_8,
+> +	SNOR_CMD_READ_1_8_8_DTR,
+> +
+> +	SNOR_CMD_READ_MAX
+> +};
+> +
+> +enum spi_nor_pp_command_index {
+> +	SNOR_CMD_PP,
+> +
+> +	/* Quad SPI */
+> +	SNOR_CMD_PP_1_1_4,
+> +	SNOR_CMD_PP_1_4_4,
+> +	SNOR_CMD_PP_4_4_4,
+> +
+> +	/* Octal SPI */
+> +	SNOR_CMD_PP_1_1_8,
+> +	SNOR_CMD_PP_1_8_8,
+> +	SNOR_CMD_PP_8_8_8,
+> +
+> +	SNOR_CMD_PP_MAX
+> +};
+> +
+> +/**
+> + * struct spi_nor_erase_type - Structure to describe a SPI NOR erase type
+> + * @size:		the size of the sector/block erased by the erase type.
+> + *			JEDEC JESD216B imposes erase sizes to be a power of 2.
+> + * @size_shift:		@size is a power of 2, the shift is stored in
+> + *			@size_shift.
+> + * @size_mask:		the size mask based on @size_shift.
+> + * @opcode:		the SPI command op code to erase the sector/block.
+> + * @idx:		Erase Type index as sorted in the Basic Flash Parameter
+> + *			Table. It will be used to synchronize the supported
+> + *			Erase Types with the ones identified in the SFDP
+> + *			optional tables.
+> + */
+> +struct spi_nor_erase_type {
+> +	u32	size;
+> +	u32	size_shift;
+> +	u32	size_mask;
+> +	u8	opcode;
+> +	u8	idx;
+> +};
+> +
+> +/**
+> + * struct spi_nor_erase_command - Used for non-uniform erases
+> + * The structure is used to describe a list of erase commands to be executed
+> + * once we validate that the erase can be performed. The elements in the list
+> + * are run-length encoded.
+> + * @list:		for inclusion into the list of erase commands.
+> + * @count:		how many times the same erase command should be
+> + *			consecutively used.
+> + * @size:		the size of the sector/block erased by the command.
+> + * @opcode:		the SPI command op code to erase the sector/block.
+> + */
+> +struct spi_nor_erase_command {
+> +	struct list_head	list;
+> +	u32			count;
+> +	u32			size;
+> +	u8			opcode;
+> +};
+> +
+> +/**
+> + * struct spi_nor_erase_region - Structure to describe a SPI NOR erase region
+> + * @offset:		the offset in the data array of erase region start.
+> + *			LSB bits are used as a bitmask encoding flags to
+> + *			determine if this region is overlaid, if this region is
+> + *			the last in the SPI NOR flash memory and to indicate
+> + *			all the supported erase commands inside this region.
+> + *			The erase types are sorted in ascending order with the
+> + *			smallest Erase Type size being at BIT(0).
+> + * @size:		the size of the region in bytes.
+> + */
+> +struct spi_nor_erase_region {
+> +	u64		offset;
+> +	u64		size;
+> +};
+> +
+> +#define SNOR_ERASE_TYPE_MAX	4
+> +#define SNOR_ERASE_TYPE_MASK	GENMASK_ULL(SNOR_ERASE_TYPE_MAX - 1, 0)
+> +
+> +#define SNOR_LAST_REGION	BIT(4)
+> +#define SNOR_OVERLAID_REGION	BIT(5)
+> +
+> +#define SNOR_ERASE_FLAGS_MAX	6
+> +#define SNOR_ERASE_FLAGS_MASK	GENMASK_ULL(SNOR_ERASE_FLAGS_MAX - 1, 0)
+> +
+> +/**
+> + * struct spi_nor_erase_map - Structure to describe the SPI NOR erase map
+> + * @regions:		array of erase regions. The regions are consecutive in
+> + *			address space. Walking through the regions is done
+> + *			incrementally.
+> + * @uniform_region:	a pre-allocated erase region for SPI NOR with a uniform
+> + *			sector size (legacy implementation).
+> + * @erase_type:		an array of erase types shared by all the regions.
+> + *			The erase types are sorted in ascending order, with the
+> + *			smallest Erase Type size being the first member in the
+> + *			erase_type array.
+> + * @uniform_erase_type:	bitmask encoding erase types that can erase the
+> + *			entire memory. This member is completed at init by
+> + *			uniform and non-uniform SPI NOR flash memories if they
+> + *			support at least one erase type that can erase the
+> + *			entire memory.
+> + */
+> +struct spi_nor_erase_map {
+> +	struct spi_nor_erase_region	*regions;
+> +	struct spi_nor_erase_region	uniform_region;
+> +	struct spi_nor_erase_type	erase_type[SNOR_ERASE_TYPE_MAX];
+> +	u8				uniform_erase_type;
+> +};
+> +
+> +/**
+> + * struct spi_nor_locking_ops - SPI NOR locking methods
+> + * @lock:	lock a region of the SPI NOR.
+> + * @unlock:	unlock a region of the SPI NOR.
+> + * @is_locked:	check if a region of the SPI NOR is completely locked
+> + */
+> +struct spi_nor_locking_ops {
+> +	int (*lock)(struct spi_nor *nor, loff_t ofs, uint64_t len);
+> +	int (*unlock)(struct spi_nor *nor, loff_t ofs, uint64_t len);
+> +	int (*is_locked)(struct spi_nor *nor, loff_t ofs, uint64_t len);
+> +};
+> +
+> +/**
+> + * struct spi_nor_flash_parameter - SPI NOR flash parameters and settings.
+> + * Includes legacy flash parameters and settings that can be overwritten
+> + * by the spi_nor_fixups hooks, or dynamically when parsing the JESD216
+> + * Serial Flash Discoverable Parameters (SFDP) tables.
+> + *
+> + * @size:		the flash memory density in bytes.
+> + * @page_size:		the page size of the SPI NOR flash memory.
+> + * @hwcaps:		describes the read and page program hardware
+> + *			capabilities.
+> + * @reads:		read capabilities ordered by priority: the higher index
+> + *                      in the array, the higher priority.
+> + * @page_programs:	page program capabilities ordered by priority: the
+> + *                      higher index in the array, the higher priority.
+> + * @erase_map:		the erase map parsed from the SFDP Sector Map Parameter
+> + *                      Table.
+> + * @quad_enable:	enables SPI NOR quad mode.
+> + * @set_4byte:		puts the SPI NOR in 4 byte addressing mode.
+> + * @convert_addr:	converts an absolute address into something the flash
+> + *                      will understand. Particularly useful when pagesize is
+> + *                      not a power-of-2.
+> + * @setup:              configures the SPI NOR memory. Useful for SPI NOR
+> + *                      flashes that have peculiarities to the SPI NOR standard
+> + *                      e.g. different opcodes, specific address calculation,
+> + *                      page size, etc.
+> + * @locking_ops:	SPI NOR locking methods.
+> + */
+> +struct spi_nor_flash_parameter {
+> +	u64				size;
+> +	u32				page_size;
+> +
+> +	struct spi_nor_hwcaps		hwcaps;
+> +	struct spi_nor_read_command	reads[SNOR_CMD_READ_MAX];
+> +	struct spi_nor_pp_command	page_programs[SNOR_CMD_PP_MAX];
+> +
+> +	struct spi_nor_erase_map        erase_map;
+> +
+> +	int (*quad_enable)(struct spi_nor *nor);
+> +	int (*set_4byte)(struct spi_nor *nor, bool enable);
+> +	u32 (*convert_addr)(struct spi_nor *nor, u32 addr);
+> +	int (*setup)(struct spi_nor *nor, const struct spi_nor_hwcaps *hwcaps);
+> +
+> +	const struct spi_nor_locking_ops *locking_ops;
+> +};
+> +
+>  /**
+>   * struct spi_nor_fixups - SPI NOR fixup hooks
+>   * @default_init: called after default flash parameters init. Used to tweak
+> diff --git a/drivers/mtd/spi-nor/gigadevice.c b/drivers/mtd/spi-nor/gigadevice.c
+> index 7930e4490dab..447d84bb2128 100644
+> --- a/drivers/mtd/spi-nor/gigadevice.c
+> +++ b/drivers/mtd/spi-nor/gigadevice.c
+> @@ -16,7 +16,7 @@ static void gd25q256_default_init(struct spi_nor *nor)
+>  	 * indicate the quad_enable method for this case, we need
+>  	 * to set it in the default_init fixup hook.
+>  	 */
+> -	nor->params.quad_enable = spi_nor_sr1_bit6_quad_enable;
+> +	nor->params->quad_enable = spi_nor_sr1_bit6_quad_enable;
+>  }
+>  
+>  static struct spi_nor_fixups gd25q256_fixups = {
+> diff --git a/drivers/mtd/spi-nor/issi.c b/drivers/mtd/spi-nor/issi.c
+> index 3a1c34c41388..ffcb60e54a80 100644
+> --- a/drivers/mtd/spi-nor/issi.c
+> +++ b/drivers/mtd/spi-nor/issi.c
+> @@ -68,7 +68,7 @@ static const struct flash_info issi_parts[] = {
+>  
+>  static void issi_default_init(struct spi_nor *nor)
+>  {
+> -	nor->params.quad_enable = spi_nor_sr1_bit6_quad_enable;
+> +	nor->params->quad_enable = spi_nor_sr1_bit6_quad_enable;
+>  }
+>  
+>  static const struct spi_nor_fixups issi_fixups = {
+> diff --git a/drivers/mtd/spi-nor/macronix.c b/drivers/mtd/spi-nor/macronix.c
+> index 1ae609c44676..d73bd0363144 100644
+> --- a/drivers/mtd/spi-nor/macronix.c
+> +++ b/drivers/mtd/spi-nor/macronix.c
+> @@ -82,8 +82,8 @@ static const struct flash_info macronix_parts[] = {
+>  
+>  static void macronix_default_init(struct spi_nor *nor)
+>  {
+> -	nor->params.quad_enable = spi_nor_sr1_bit6_quad_enable;
+> -	nor->params.set_4byte = spi_nor_en4_ex4_set_4byte;
+> +	nor->params->quad_enable = spi_nor_sr1_bit6_quad_enable;
+> +	nor->params->set_4byte = spi_nor_en4_ex4_set_4byte;
+>  }
+>  
+>  static const struct spi_nor_fixups macronix_fixups = {
+> diff --git a/drivers/mtd/spi-nor/micron-st.c b/drivers/mtd/spi-nor/micron-st.c
+> index 8017ca58b3a5..5be817d2f27c 100644
+> --- a/drivers/mtd/spi-nor/micron-st.c
+> +++ b/drivers/mtd/spi-nor/micron-st.c
+> @@ -106,8 +106,8 @@ static void micron_st_default_init(struct spi_nor *nor)
+>  {
+>  	nor->flags |= SNOR_F_HAS_LOCK;
+>  	nor->flags &= ~SNOR_F_HAS_16BIT_SR;
+> -	nor->params.quad_enable = NULL;
+> -	nor->params.set_4byte = spi_nor_en4_ex4_wen_set_4byte;
+> +	nor->params->quad_enable = NULL;
+> +	nor->params->set_4byte = spi_nor_en4_ex4_wen_set_4byte;
+>  }
+>  
+>  static const struct spi_nor_fixups micron_st_fixups = {
+> diff --git a/drivers/mtd/spi-nor/sfdp.c b/drivers/mtd/spi-nor/sfdp.c
+> index b790c3ec871f..6829dc7e4f74 100644
+> --- a/drivers/mtd/spi-nor/sfdp.c
+> +++ b/drivers/mtd/spi-nor/sfdp.c
+> @@ -734,6 +734,16 @@ static const u32 *spi_nor_get_map_in_use(struct spi_nor *nor, const u32 *smpt,
+>  	return ret;
+>  }
+>  
+> +static void spi_nor_region_mark_end(struct spi_nor_erase_region *region)
+> +{
+> +	region->offset |= SNOR_LAST_REGION;
+> +}
+> +
+> +static void spi_nor_region_mark_overlay(struct spi_nor_erase_region *region)
+> +{
+> +	region->offset |= SNOR_OVERLAID_REGION;
+> +}
+> +
+>  /**
+>   * spi_nor_region_check_overlay() - set overlay bit when the region is overlaid
+>   * @region:	pointer to a structure that describes a SPI NOR erase region
+> diff --git a/drivers/mtd/spi-nor/spansion.c b/drivers/mtd/spi-nor/spansion.c
+> index 16683983a20e..6756202ace4b 100644
+> --- a/drivers/mtd/spi-nor/spansion.c
+> +++ b/drivers/mtd/spi-nor/spansion.c
+> @@ -74,7 +74,7 @@ static const struct flash_info spansion_parts[] = {
+>  
+>  static void spansion_post_sfdp_fixups(struct spi_nor *nor)
+>  {
+> -	if (nor->params.size <= SZ_16M)
+> +	if (nor->params->size <= SZ_16M)
+>  		return;
+>  
+>  	nor->flags |= SNOR_F_4B_OPCODES;
+> diff --git a/drivers/mtd/spi-nor/winbond.c b/drivers/mtd/spi-nor/winbond.c
+> index 1e77dffbf729..f15be50024d1 100644
+> --- a/drivers/mtd/spi-nor/winbond.c
+> +++ b/drivers/mtd/spi-nor/winbond.c
+> @@ -97,7 +97,7 @@ static int winbond_set_4byte(struct spi_nor *nor, bool enable)
+>  
+>  static void winbond_default_init(struct spi_nor *nor)
+>  {
+> -	nor->params.set_4byte = winbond_set_4byte;
+> +	nor->params->set_4byte = winbond_set_4byte;
+>  }
+>  
+>  static const struct spi_nor_fixups winbond_fixups = {
+> diff --git a/drivers/mtd/spi-nor/xilinx.c b/drivers/mtd/spi-nor/xilinx.c
+> index fcf635d89f65..1138bdbf4199 100644
+> --- a/drivers/mtd/spi-nor/xilinx.c
+> +++ b/drivers/mtd/spi-nor/xilinx.c
+> @@ -70,7 +70,7 @@ static int xilinx_nor_setup(struct spi_nor *nor,
+>  		nor->mtd.erasesize = 8 * nor->page_size;
+>  	} else {
+>  		/* Flash in Default addressing mode */
+> -		nor->params.convert_addr = s3an_convert_addr;
+> +		nor->params->convert_addr = s3an_convert_addr;
+>  		nor->mtd.erasesize = nor->info->sector_size;
+>  	}
+>  
+> @@ -79,7 +79,7 @@ static int xilinx_nor_setup(struct spi_nor *nor,
+>  
+>  static void xilinx_post_sfdp_fixups(struct spi_nor *nor)
+>  {
+> -	nor->params.setup = xilinx_nor_setup;
+> +	nor->params->setup = xilinx_nor_setup;
+>  }
+>  
+>  static const struct spi_nor_fixups xilinx_fixups = {
+> diff --git a/include/linux/mtd/spi-nor.h b/include/linux/mtd/spi-nor.h
+> index dde2988a809e..d3d34c4eea48 100644
+> --- a/include/linux/mtd/spi-nor.h
+> +++ b/include/linux/mtd/spi-nor.h
+> @@ -227,110 +227,6 @@ static inline u8 spi_nor_get_protocol_width(enum spi_nor_protocol proto)
+>  	return spi_nor_get_protocol_data_nbits(proto);
+>  }
+>  
+> -enum spi_nor_option_flags {
+> -	SNOR_F_USE_FSR		= BIT(0),
+> -	SNOR_F_HAS_SR_TB	= BIT(1),
+> -	SNOR_F_NO_OP_CHIP_ERASE	= BIT(2),
+> -	SNOR_F_READY_XSR_RDY	= BIT(3),
+> -	SNOR_F_USE_CLSR		= BIT(4),
+> -	SNOR_F_BROKEN_RESET	= BIT(5),
+> -	SNOR_F_4B_OPCODES	= BIT(6),
+> -	SNOR_F_HAS_4BAIT	= BIT(7),
+> -	SNOR_F_HAS_LOCK		= BIT(8),
+> -	SNOR_F_HAS_16BIT_SR	= BIT(9),
+> -	SNOR_F_NO_READ_CR	= BIT(10),
+> -	SNOR_F_HAS_SR_TB_BIT6	= BIT(11),
+> -
+> -};
+> -
+> -/**
+> - * struct spi_nor_erase_type - Structure to describe a SPI NOR erase type
+> - * @size:		the size of the sector/block erased by the erase type.
+> - *			JEDEC JESD216B imposes erase sizes to be a power of 2.
+> - * @size_shift:		@size is a power of 2, the shift is stored in
+> - *			@size_shift.
+> - * @size_mask:		the size mask based on @size_shift.
+> - * @opcode:		the SPI command op code to erase the sector/block.
+> - * @idx:		Erase Type index as sorted in the Basic Flash Parameter
+> - *			Table. It will be used to synchronize the supported
+> - *			Erase Types with the ones identified in the SFDP
+> - *			optional tables.
+> - */
+> -struct spi_nor_erase_type {
+> -	u32	size;
+> -	u32	size_shift;
+> -	u32	size_mask;
+> -	u8	opcode;
+> -	u8	idx;
+> -};
+> -
+> -/**
+> - * struct spi_nor_erase_command - Used for non-uniform erases
+> - * The structure is used to describe a list of erase commands to be executed
+> - * once we validate that the erase can be performed. The elements in the list
+> - * are run-length encoded.
+> - * @list:		for inclusion into the list of erase commands.
+> - * @count:		how many times the same erase command should be
+> - *			consecutively used.
+> - * @size:		the size of the sector/block erased by the command.
+> - * @opcode:		the SPI command op code to erase the sector/block.
+> - */
+> -struct spi_nor_erase_command {
+> -	struct list_head	list;
+> -	u32			count;
+> -	u32			size;
+> -	u8			opcode;
+> -};
+> -
+> -/**
+> - * struct spi_nor_erase_region - Structure to describe a SPI NOR erase region
+> - * @offset:		the offset in the data array of erase region start.
+> - *			LSB bits are used as a bitmask encoding flags to
+> - *			determine if this region is overlaid, if this region is
+> - *			the last in the SPI NOR flash memory and to indicate
+> - *			all the supported erase commands inside this region.
+> - *			The erase types are sorted in ascending order with the
+> - *			smallest Erase Type size being at BIT(0).
+> - * @size:		the size of the region in bytes.
+> - */
+> -struct spi_nor_erase_region {
+> -	u64		offset;
+> -	u64		size;
+> -};
+> -
+> -#define SNOR_ERASE_TYPE_MAX	4
+> -#define SNOR_ERASE_TYPE_MASK	GENMASK_ULL(SNOR_ERASE_TYPE_MAX - 1, 0)
+> -
+> -#define SNOR_LAST_REGION	BIT(4)
+> -#define SNOR_OVERLAID_REGION	BIT(5)
+> -
+> -#define SNOR_ERASE_FLAGS_MAX	6
+> -#define SNOR_ERASE_FLAGS_MASK	GENMASK_ULL(SNOR_ERASE_FLAGS_MAX - 1, 0)
+> -
+> -/**
+> - * struct spi_nor_erase_map - Structure to describe the SPI NOR erase map
+> - * @regions:		array of erase regions. The regions are consecutive in
+> - *			address space. Walking through the regions is done
+> - *			incrementally.
+> - * @uniform_region:	a pre-allocated erase region for SPI NOR with a uniform
+> - *			sector size (legacy implementation).
+> - * @erase_type:		an array of erase types shared by all the regions.
+> - *			The erase types are sorted in ascending order, with the
+> - *			smallest Erase Type size being the first member in the
+> - *			erase_type array.
+> - * @uniform_erase_type:	bitmask encoding erase types that can erase the
+> - *			entire memory. This member is completed at init by
+> - *			uniform and non-uniform SPI NOR flash memories if they
+> - *			support at least one erase type that can erase the
+> - *			entire memory.
+> - */
+> -struct spi_nor_erase_map {
+> -	struct spi_nor_erase_region	*regions;
+> -	struct spi_nor_erase_region	uniform_region;
+> -	struct spi_nor_erase_type	erase_type[SNOR_ERASE_TYPE_MAX];
+> -	u8				uniform_erase_type;
+> -};
+> -
+>  /**
+>   * struct spi_nor_hwcaps - Structure for describing the hardware capabilies
+>   * supported by the SPI controller (bus master).
+> @@ -406,61 +302,7 @@ struct spi_nor_hwcaps {
+>  #define SNOR_HWCAPS_ALL		(SNOR_HWCAPS_READ_MASK |	\
+>  				 SNOR_HWCAPS_PP_MASK)
+>  
+> -struct spi_nor_read_command {
+> -	u8			num_mode_clocks;
+> -	u8			num_wait_states;
+> -	u8			opcode;
+> -	enum spi_nor_protocol	proto;
+> -};
+> -
+> -struct spi_nor_pp_command {
+> -	u8			opcode;
+> -	enum spi_nor_protocol	proto;
+> -};
+> -
+> -enum spi_nor_read_command_index {
+> -	SNOR_CMD_READ,
+> -	SNOR_CMD_READ_FAST,
+> -	SNOR_CMD_READ_1_1_1_DTR,
+> -
+> -	/* Dual SPI */
+> -	SNOR_CMD_READ_1_1_2,
+> -	SNOR_CMD_READ_1_2_2,
+> -	SNOR_CMD_READ_2_2_2,
+> -	SNOR_CMD_READ_1_2_2_DTR,
+> -
+> -	/* Quad SPI */
+> -	SNOR_CMD_READ_1_1_4,
+> -	SNOR_CMD_READ_1_4_4,
+> -	SNOR_CMD_READ_4_4_4,
+> -	SNOR_CMD_READ_1_4_4_DTR,
+> -
+> -	/* Octal SPI */
+> -	SNOR_CMD_READ_1_1_8,
+> -	SNOR_CMD_READ_1_8_8,
+> -	SNOR_CMD_READ_8_8_8,
+> -	SNOR_CMD_READ_1_8_8_DTR,
+> -
+> -	SNOR_CMD_READ_MAX
+> -};
+> -
+> -enum spi_nor_pp_command_index {
+> -	SNOR_CMD_PP,
+> -
+> -	/* Quad SPI */
+> -	SNOR_CMD_PP_1_1_4,
+> -	SNOR_CMD_PP_1_4_4,
+> -	SNOR_CMD_PP_4_4_4,
+> -
+> -	/* Octal SPI */
+> -	SNOR_CMD_PP_1_1_8,
+> -	SNOR_CMD_PP_1_8_8,
+> -	SNOR_CMD_PP_8_8_8,
+> -
+> -	SNOR_CMD_PP_MAX
+> -};
+> -
+> -/* Forward declaration that will be used in 'struct spi_nor_flash_parameter' */
+> +/* Forward declaration that is used in 'struct spi_nor_controller_ops' */
+>  struct spi_nor;
+>  
+>  /**
+> @@ -491,74 +333,14 @@ struct spi_nor_controller_ops {
+>  	int (*erase)(struct spi_nor *nor, loff_t offs);
+>  };
+>  
+> -/**
+> - * struct spi_nor_locking_ops - SPI NOR locking methods
+> - * @lock:	lock a region of the SPI NOR.
+> - * @unlock:	unlock a region of the SPI NOR.
+> - * @is_locked:	check if a region of the SPI NOR is completely locked
+> - */
+> -struct spi_nor_locking_ops {
+> -	int (*lock)(struct spi_nor *nor, loff_t ofs, uint64_t len);
+> -	int (*unlock)(struct spi_nor *nor, loff_t ofs, uint64_t len);
+> -	int (*is_locked)(struct spi_nor *nor, loff_t ofs, uint64_t len);
+> -};
+> -
+> -/**
+> - * struct spi_nor_flash_parameter - SPI NOR flash parameters and settings.
+> - * Includes legacy flash parameters and settings that can be overwritten
+> - * by the spi_nor_fixups hooks, or dynamically when parsing the JESD216
+> - * Serial Flash Discoverable Parameters (SFDP) tables.
+> - *
+> - * @size:		the flash memory density in bytes.
+> - * @page_size:		the page size of the SPI NOR flash memory.
+> - * @hwcaps:		describes the read and page program hardware
+> - *			capabilities.
+> - * @reads:		read capabilities ordered by priority: the higher index
+> - *                      in the array, the higher priority.
+> - * @page_programs:	page program capabilities ordered by priority: the
+> - *                      higher index in the array, the higher priority.
+> - * @erase_map:		the erase map parsed from the SFDP Sector Map Parameter
+> - *                      Table.
+> - * @quad_enable:	enables SPI NOR quad mode.
+> - * @set_4byte:		puts the SPI NOR in 4 byte addressing mode.
+> - * @convert_addr:	converts an absolute address into something the flash
+> - *                      will understand. Particularly useful when pagesize is
+> - *                      not a power-of-2.
+> - * @setup:              configures the SPI NOR memory. Useful for SPI NOR
+> - *                      flashes that have peculiarities to the SPI NOR standard
+> - *                      e.g. different opcodes, specific address calculation,
+> - *                      page size, etc.
+> - * @locking_ops:	SPI NOR locking methods.
+> - */
+> -struct spi_nor_flash_parameter {
+> -	u64				size;
+> -	u32				page_size;
+> -
+> -	struct spi_nor_hwcaps		hwcaps;
+> -	struct spi_nor_read_command	reads[SNOR_CMD_READ_MAX];
+> -	struct spi_nor_pp_command	page_programs[SNOR_CMD_PP_MAX];
+>  
+> -	struct spi_nor_erase_map        erase_map;
+> -
+> -	int (*quad_enable)(struct spi_nor *nor);
+> -	int (*set_4byte)(struct spi_nor *nor, bool enable);
+> -	u32 (*convert_addr)(struct spi_nor *nor, u32 addr);
+> -	int (*setup)(struct spi_nor *nor, const struct spi_nor_hwcaps *hwcaps);
+> -
+> -	const struct spi_nor_locking_ops *locking_ops;
+> -};
+> -
+> -/**
+> - * struct flash_info - Forward declaration of a structure used internally by
+> - *		       spi_nor_scan()
+> +/*
+> + * Forward declarations that are used internally by the core and manufacturer
+> + * drivers.
+>   */
+>  struct flash_info;
+> -
+> -/**
+> - * struct spi_nor_manufacturer - Forward declaration of a structure used
+> - * internally by the core and manufacturer drivers.
+> - */
+>  struct spi_nor_manufacturer;
+> +struct spi_nor_flash_parameter;
+>  
+>  /**
+>   * struct spi_nor - Structure for defining a the SPI NOR layer
+> @@ -613,7 +395,7 @@ struct spi_nor {
+>  
+>  	const struct spi_nor_controller_ops *controller_ops;
+>  
+> -	struct spi_nor_flash_parameter params;
+> +	struct spi_nor_flash_parameter *params;
+>  
+>  	struct {
+>  		struct spi_mem_dirmap_desc *rdesc;
+> @@ -623,35 +405,6 @@ struct spi_nor {
+>  	void *priv;
+>  };
+>  
+> -static u64 __maybe_unused
+> -spi_nor_region_is_last(const struct spi_nor_erase_region *region)
+> -{
+> -	return region->offset & SNOR_LAST_REGION;
+> -}
+> -
+> -static u64 __maybe_unused
+> -spi_nor_region_end(const struct spi_nor_erase_region *region)
+> -{
+> -	return (region->offset & ~SNOR_ERASE_FLAGS_MASK) + region->size;
+> -}
+> -
+> -static void __maybe_unused
+> -spi_nor_region_mark_end(struct spi_nor_erase_region *region)
+> -{
+> -	region->offset |= SNOR_LAST_REGION;
+> -}
+> -
+> -static void __maybe_unused
+> -spi_nor_region_mark_overlay(struct spi_nor_erase_region *region)
+> -{
+> -	region->offset |= SNOR_OVERLAID_REGION;
+> -}
+> -
+> -static bool __maybe_unused spi_nor_has_uniform_erase(const struct spi_nor *nor)
+> -{
+> -	return !!nor->params.erase_map.uniform_erase_type;
+> -}
+> -
+>  static inline void spi_nor_set_flash_node(struct spi_nor *nor,
+>  					  struct device_node *np)
+>  {
 
-[auto build test ERROR on shawnguo/for-next]
-[also build test ERROR on v5.6-rc4 next-20200306]
-[if your patch is applied to the wrong git tree, please drop us a note to help
-improve the system. BTW, we also suggest to use '--base' option to specify the
-base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
-
-url:    https://github.com/0day-ci/linux/commits/Vincenzo-Frascino/drivers-soc-Fix-COMPILE_TEST-for-IMX-SCU/20200307-033704
-base:   https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git for-next
-config: x86_64-randconfig-c003-20200307 (attached as .config)
-compiler: gcc-7 (Debian 7.5.0-5) 7.5.0
-reproduce:
-        # save the attached .config to linux build tree
-        make ARCH=x86_64 
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-All errors (new ones prefixed by >>):
-
-   ld: drivers/firmware/imx/imx-scu.o: in function `imx_scu_call_rpc':
->> (.text+0x149): undefined reference to `mbox_send_message'
-   ld: drivers/firmware/imx/imx-scu.o: in function `imx_scu_probe':
-   imx-scu.c:(.text+0x6ec): undefined reference to `mbox_request_channel_byname'
-   ld: drivers/firmware/imx/imx-scu-irq.o: in function `imx_scu_enable_general_irq_channel':
->> (.text+0x31f): undefined reference to `mbox_request_channel_byname'
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
-
---W/nzBZO5zC0uMSeA
-Content-Type: application/gzip
-Content-Disposition: attachment; filename=".config.gz"
-Content-Transfer-Encoding: base64
-
-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
-
---W/nzBZO5zC0uMSeA
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---W/nzBZO5zC0uMSeA--
-
