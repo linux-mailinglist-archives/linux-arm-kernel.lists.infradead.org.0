@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A8417CEEE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 16:08:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6CBB17CF03
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 16:21:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o6ZXoa7slSI8k8M+7rrOKweMIBB17eTgiJ8Ak24hz+k=; b=Uh0r2a3fXJIt7B
-	7BZ0GfhAAqqQ/oePSwIxFdFY3gWV3G2hXLeWKMXxLFd4qohd0eL3cScxQO1ZT8zALkmK+K/BNg3Zj
-	pBgm3LDlzd1poWqVB0OQl3o9mKFNWXoKZJgoCoQz3Uw7YHeDJxqTAFSeU37ZXYOdeSbKrJNYwNvF4
-	Sil0RcvATSlAp75eaOWXoMpVNUfBn4VmNV9m8nCfONP30DnoQsvBE0e7HuPZGO2hvuAJLORqZ1nN9
-	QGSYVCmPUfZHz1owiL56hhwUZnD1fGk+V1IYlsSSOKICZPzBmzcPNoW9dTF7VZ4ezXIJtvDIeBqpc
-	P4oSac8qugUS6AnPIfIg==;
+	List-Owner; bh=EBHjHSm6Kr8KMfhFziWse+Z5b4ZawR93QEIQ+6HV/Xo=; b=m3Osu3BhJJO63y
+	h5Hk0LIIwh4XmqQsVinaalt6akp/dIFauWkqv1X80pIxpPm7mdSIQoeBxYSvX44GWybRFfksXu9GH
+	joV3ills8UmqdMtEST/f6dYMU6ivOjj8lJUTOhQL8HtockHAf856mXOX9VuEF94PQmExn5AcjLBl0
+	+mKazUDiSfQq1leG07tQWpwPVcIKG8vjvbuEqfnq4rf6mxePoLv+RolWc4K4PitdsJ9RGl9IXJT0X
+	dURagXIa4Pw5+QwTN0MXF5pyM/JU+PkKeHY8szx+rcJcOmPBM317YKbDl6QqcNnbrXzEHpnZqMjjQ
+	zs9IyAjCFCk65G6x4gOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAb3p-0003uT-Tx; Sat, 07 Mar 2020 15:08:17 +0000
+	id 1jAbFy-0000Tt-6B; Sat, 07 Mar 2020 15:20:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAb3f-0003u2-2x
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 15:08:08 +0000
+ id 1jAbFn-0000TU-Uo
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 15:20:41 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 91AEB20675;
- Sat,  7 Mar 2020 15:08:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9FC6D20674;
+ Sat,  7 Mar 2020 15:20:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583593686;
- bh=RQpDqkyyxmFg9c3rc/jOhh1yQA+Hq7TSDoK7PRzgQ0I=;
+ s=default; t=1583594439;
+ bh=WXObIi33XmoyMwmcEZvaU65yLjmbN66OToWMCu6nPyE=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=QRgraDd5g2lyhqe/VHYJfWH8Kx0++0nF5g8fRF/GUXbIuEPV9DQEEa1eot9plToWK
- vpMZCqgUDGZG+77uAOPhuyjJUC1uClW+UBh0S8S+YKoo8YF15uRlT08pYMHJjPDCJJ
- PsQvSvEBfJGiP17xk+Yba/GFY1PuY6mHGdbrQqAI=
-Date: Sat, 7 Mar 2020 15:08:01 +0000
+ b=FV+tBombC10mD94wQu/owOffP+3osxZtdkbQHT2q9THGErYc3/8iSvySgWfc89yyw
+ NoiEst1cjF1D/c+/yUYQQt5IIACUVC++KmwWImLlyNWgkWnOBcppBH6CsloyMsVl73
+ G9iYUgHc4YxqVoeAFFl6RGOgoc9z+8Umw5WMSdFw=
+Date: Sat, 7 Mar 2020 15:20:34 +0000
 From: Jonathan Cameron <jic23@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Re: [PATCH] iio: adc: stm32-adc: fix sleep in atomic context
-Message-ID: <20200307150801.011f35b2@archlinux>
-In-Reply-To: <20200306155335.6019-1-olivier.moysan@st.com>
-References: <20200306155335.6019-1-olivier.moysan@st.com>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH 1/2] iio: trigger: stm32-timer: rename enabled flag
+Message-ID: <20200307152034.0d7e01a5@archlinux>
+In-Reply-To: <1583247585-16698-2-git-send-email-fabrice.gasnier@st.com>
+References: <1583247585-16698-1-git-send-email-fabrice.gasnier@st.com>
+ <1583247585-16698-2-git-send-email-fabrice.gasnier@st.com>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_070807_170958_444962C7 
-X-CRM114-Status: GOOD (  18.63  )
+X-CRM114-CacheID: sfid-20200307_072040_038595_C0F15993 
+X-CRM114-Status: GOOD (  17.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,100 +77,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, benjamin.gaignard@st.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, pmeerw@pmeerw.net, knaack.h@gmx.de,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, alexandre.torgue@st.com
+Cc: lars@metafoo.de, olivier.moysan@st.com, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, knaack.h@gmx.de,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 6 Mar 2020 16:53:35 +0100
-Olivier Moysan <olivier.moysan@st.com> wrote:
+On Tue, 3 Mar 2020 15:59:44 +0100
+Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
-> This commit fixes the following error:
-> "BUG: sleeping function called from invalid context at kernel/irq/chip.c"
+> "clk_enabled" flag reflects enabled state of the timer, for master mode,
+> slave mode or trigger (with sampling_frequency). So rename it to "enabled".
 > 
-> In DMA mode suppress the trigger irq handler, and make the buffer
-> transfers directly in DMA callback, instead.
-> 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-looks good to me, but... fixes tag?
-
-We probably want to backport this so good to know when we introduced
-the issue.
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+Applied to the togreg branch of iio.git and pushed out as testing for
+the autobuilders to play with it.
 
 Thanks,
 
 Jonathan
 
 > ---
-> This solution has been already discussed in the thread
-> https://lkml.org/lkml/2019/3/30/171, and applied in STM32 DFSDM driver:
-> e19ac9d9a978 ("iio: adc: stm32-dfsdm: fix sleep in atomic context")
-> ---
->  drivers/iio/adc/stm32-adc.c | 31 ++++++++++++++++++++++++++++---
->  1 file changed, 28 insertions(+), 3 deletions(-)
+>  drivers/iio/trigger/stm32-timer-trigger.c | 28 ++++++++++++++--------------
+>  1 file changed, 14 insertions(+), 14 deletions(-)
 > 
-> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-> index 80c3f963527b..ae622ee6d08c 100644
-> --- a/drivers/iio/adc/stm32-adc.c
-> +++ b/drivers/iio/adc/stm32-adc.c
-> @@ -1418,8 +1418,30 @@ static unsigned int stm32_adc_dma_residue(struct stm32_adc *adc)
->  static void stm32_adc_dma_buffer_done(void *data)
->  {
->  	struct iio_dev *indio_dev = data;
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
-> +	int residue = stm32_adc_dma_residue(adc);
-> +
-> +	/*
-> +	 * In DMA mode the trigger services of IIO are not used
-> +	 * (e.g. no call to iio_trigger_poll).
-> +	 * Calling irq handler associated to the hardware trigger is not
-> +	 * relevant as the conversions have already been done. Data
-> +	 * transfers are performed directly in DMA callback instead.
-> +	 * This implementation avoids to call trigger irq handler that
-> +	 * may sleep, in an atomic context (DMA irq handler context).
-> +	 */
-> +	dev_dbg(&indio_dev->dev, "%s bufi=%d\n", __func__, adc->bufi);
+> diff --git a/drivers/iio/trigger/stm32-timer-trigger.c b/drivers/iio/trigger/stm32-timer-trigger.c
+> index 16a3b6b..32e1249 100644
+> --- a/drivers/iio/trigger/stm32-timer-trigger.c
+> +++ b/drivers/iio/trigger/stm32-timer-trigger.c
+> @@ -79,7 +79,7 @@ struct stm32_timer_trigger {
+>  	struct device *dev;
+>  	struct regmap *regmap;
+>  	struct clk *clk;
+> -	bool clk_enabled;
+> +	bool enabled;
+>  	u32 max_arr;
+>  	const void *triggers;
+>  	const void *valids;
+> @@ -140,8 +140,8 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+>  		return -EBUSY;
 >  
-> -	iio_trigger_poll_chained(indio_dev->trig);
-> +	while (residue >= indio_dev->scan_bytes) {
-> +		u16 *buffer = (u16 *)&adc->rx_buf[adc->bufi];
-> +
-> +		iio_push_to_buffers(indio_dev, buffer);
-> +
-> +		residue -= indio_dev->scan_bytes;
-> +		adc->bufi += indio_dev->scan_bytes;
-> +		if (adc->bufi >= adc->rx_buf_sz)
-> +			adc->bufi = 0;
-> +	}
->  }
+>  	mutex_lock(&priv->lock);
+> -	if (!priv->clk_enabled) {
+> -		priv->clk_enabled = true;
+> +	if (!priv->enabled) {
+> +		priv->enabled = true;
+>  		clk_enable(priv->clk);
+>  	}
 >  
->  static int stm32_adc_dma_start(struct iio_dev *indio_dev)
-> @@ -1845,6 +1867,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
->  {
->  	struct iio_dev *indio_dev;
->  	struct device *dev = &pdev->dev;
-> +	irqreturn_t (*handler)(int irq, void *p) = NULL;
->  	struct stm32_adc *adc;
->  	int ret;
+> @@ -185,8 +185,8 @@ static void stm32_timer_stop(struct stm32_timer_trigger *priv)
+>  	/* Make sure that registers are updated */
+>  	regmap_update_bits(priv->regmap, TIM_EGR, TIM_EGR_UG, TIM_EGR_UG);
 >  
-> @@ -1911,9 +1934,11 @@ static int stm32_adc_probe(struct platform_device *pdev)
->  	if (ret < 0)
->  		return ret;
+> -	if (priv->clk_enabled) {
+> -		priv->clk_enabled = false;
+> +	if (priv->enabled) {
+> +		priv->enabled = false;
+>  		clk_disable(priv->clk);
+>  	}
+>  	mutex_unlock(&priv->lock);
+> @@ -305,9 +305,9 @@ static ssize_t stm32_tt_store_master_mode(struct device *dev,
+>  		if (!strncmp(master_mode_table[i], buf,
+>  			     strlen(master_mode_table[i]))) {
+>  			mutex_lock(&priv->lock);
+> -			if (!priv->clk_enabled) {
+> +			if (!priv->enabled) {
+>  				/* Clock should be enabled first */
+> -				priv->clk_enabled = true;
+> +				priv->enabled = true;
+>  				clk_enable(priv->clk);
+>  			}
+>  			regmap_update_bits(priv->regmap, TIM_CR2, mask,
+> @@ -476,8 +476,8 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+>  	case IIO_CHAN_INFO_ENABLE:
+>  		mutex_lock(&priv->lock);
+>  		if (val) {
+> -			if (!priv->clk_enabled) {
+> -				priv->clk_enabled = true;
+> +			if (!priv->enabled) {
+> +				priv->enabled = true;
+>  				clk_enable(priv->clk);
+>  			}
+>  			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+> @@ -485,8 +485,8 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+>  		} else {
+>  			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+>  					   0);
+> -			if (priv->clk_enabled) {
+> -				priv->clk_enabled = false;
+> +			if (priv->enabled) {
+> +				priv->enabled = false;
+>  				clk_disable(priv->clk);
+>  			}
+>  		}
+> @@ -594,9 +594,9 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+>  	 * enable counter clock, so it can use it. Keeps it in sync with CEN.
+>  	 */
+>  	mutex_lock(&priv->lock);
+> -	if (sms == 6 && !priv->clk_enabled) {
+> +	if (sms == 6 && !priv->enabled) {
+>  		clk_enable(priv->clk);
+> -		priv->clk_enabled = true;
+> +		priv->enabled = true;
+>  	}
+>  	mutex_unlock(&priv->lock);
 >  
-> +	if (!adc->dma_chan)
-> +		handler = &stm32_adc_trigger_handler;
-> +
->  	ret = iio_triggered_buffer_setup(indio_dev,
-> -					 &iio_pollfunc_store_time,
-> -					 &stm32_adc_trigger_handler,
-> +					 &iio_pollfunc_store_time, handler,
->  					 &stm32_adc_buffer_setup_ops);
->  	if (ret) {
->  		dev_err(&pdev->dev, "buffer setup failed\n");
+> @@ -806,7 +806,7 @@ static int stm32_timer_trigger_remove(struct platform_device *pdev)
+>  	if (!(val & TIM_CCER_CCXE))
+>  		regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, 0);
+>  
+> -	if (priv->clk_enabled)
+> +	if (priv->enabled)
+>  		clk_disable(priv->clk);
+>  
+>  	return 0;
 
 
 _______________________________________________
