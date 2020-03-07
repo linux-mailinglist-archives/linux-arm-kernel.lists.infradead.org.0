@@ -2,79 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 568B817CD3F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 10:26:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C19E017CD50
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 10:40:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2n3S1Y66cc9jc2FzTlsgyUx2GgddU7ggr49vAkdIUFE=; b=jW7qqJ3FgfcE34E1CNeEXn3WG
-	JVLFhjNbTTHjlEbbSxcr73eT2SMAgwU+KB5CDdrTUUkFeD1slGXEerAN4fxwCLjMhcRpnNMKBtbkH
-	W0POLJyNYX7nRIrtoFLeNlO7UkdILyNqVj3PsuYfvt38spGnD1iz38vgnb9Iq0Pa7XvZbaPhpwMON
-	0Dzpph0whQKuRQKUoCI0Jw16xGjtSBetroek5mK+05aBRq0E7qAB/9wqr0P+5htQbkB+aT45D170j
-	fW7ouQInf2dRrZAXoluC/CkBrLiqlkjJ2IwFWQ/epCs2jmfEN5HoYErdt17nZ119cSALaIPU5RCIT
-	gGj5X9tjg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GqfNjoGkaOvH7Y1znxuQYw132K3SJgVCZrZ2qBQS87E=; b=Vu6HRDlNj9YTFi
+	ndHs35ZrsnsNDSu1MN9d+GvdhollDum3o5QvjMeVCYcGy4CmXNNPwic7nATaFS3PLRyYZP3CZr4If
+	7fAdADuB8em91NFZaFquKQEp51IeoWaengV9n+WrqQWJiT9/bIAyh98mOu2Unu4eVFXsRO8r/pAkb
+	cepfmKEG+mABcbuWtR+0E13jIn4XRN1bUsCVcKlhnZrHP7ncd1J13ggB4l7j3fvn4kLxSXLp8G6kN
+	XYZ6SHq8mRADWGclqjG8NMaIwSDpltceooRGHew+amONGE463yZdvT20M0tikRLXX0K2vgz+JGoTG
+	lXcRBYvcynH/9M59LCiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAViq-0001O1-3K; Sat, 07 Mar 2020 09:26:16 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jAVw1-0004vm-A8; Sat, 07 Mar 2020 09:39:53 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAViY-0001Iy-7O
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 09:26:00 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 11FCA23EB4;
- Sat,  7 Mar 2020 10:25:56 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1583573156;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=k5ZQ+jGPB/XqVL4rRP9EmsAWoBDvpiXvAb7VKbopIoM=;
- b=ZOqzzySJsyMFJdD2BnnD0p1c2FIDVyA1rZSwjwFlgyKyIuYiUXq8hJPZ3bhvzq4vFWspVW
- xdNVvVSKbL/plsWkSUo9TlTb+xhQKzVP8uf9VP/sbxpkJxs3RuFK+lseR6BEufLKutSHH8
- pjfkdV4Qoxlopt0pYskNih+n9Q8oj2w=
+ id 1jAVvs-0004v9-70
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 09:39:45 +0000
+Received: by mail-pg1-x541.google.com with SMTP id y30so2263062pga.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 07 Mar 2020 01:39:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TQrEvZ13F8kEvhfqqpGuqFY2wEN2DIfUxspJmPRPnIo=;
+ b=S/Ump+m7pX1/2CQ88Se755gIiG6OFrXK2l/vah7aFG/d2RAfEoB7TE8hjfGUTil34U
+ yOaTgDLAAka5xml/5Pud4/O/GJ4N43tPXekh3oTC0Ip5ViOMJHy5GwRKliFKleSrNjt5
+ CntuBDxL66X6Tt4URFw7EACYFPbil8BU9wlYdCaH/uXNYaDvqi624jOc9Un1jcgUEi3p
+ MNa45X3SwRRzhlZoAhG5vXImE/Yy7RrqiZw18wVv0XwDZ17L+OjYm4JBQmXEmeD2mfXp
+ CcoGiIiEnVw6N4a3/flDIX+mJwATmetu4O3tOBszVqf/yyvFawLFMIaIn+CEIlN8y7V+
+ ugXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=TQrEvZ13F8kEvhfqqpGuqFY2wEN2DIfUxspJmPRPnIo=;
+ b=BSugz8eSAOyuLUEkdibcIDO1iBFNG7gTxcrohkMabwyDV8lgQFnu701BiHlc/Vo+LY
+ wNZmHELn6sXw1IQ07orol8B4LX7e1cuLMr07YadSmAfvEZ/z6R98dRm487DBEh00juPt
+ ae7Nm5HIDycHPjOZyikxNu5eGhHy676y0Q4Zc5dMh2GOgLpHouw54WFGl9LWvOTarZyp
+ s/4zRIRTes7MFkpr3zqSsRqR+K/HRU7ANqul0kXq3pRlZqNe7lC7KvuJiI8gfvBSB4Rm
+ MAF6Ay/H7ck2wWqaxXAQXw54wh/rGYoxqrA2LCrJVfFCEUAJil0U4s9Jfdu6OHuHkEow
+ mSzg==
+X-Gm-Message-State: ANhLgQ0BXtmQnCkLJ3GJ77K/iSAsIkW1m6u2e8OvTuiN+K4l0yYmv3Zt
+ KNQpcFuT+hry3MgfpoI/7mo=
+X-Google-Smtp-Source: ADFU+vsMj19AZ1LMNkk/TpNkNt56C7jYnDIJMIFA0yMpCIVVFSYlfPbfxqUpAEoPlL07hhQWMJ5ofg==
+X-Received: by 2002:a63:348b:: with SMTP id b133mr7346984pga.372.1583573980485; 
+ Sat, 07 Mar 2020 01:39:40 -0800 (PST)
+Received: from debian.net.fpt ([2405:4800:58f7:2133:c967:474d:b56a:15e9])
+ by smtp.gmail.com with ESMTPSA id q13sm37932689pgh.30.2020.03.07.01.39.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 07 Mar 2020 01:39:39 -0800 (PST)
+From: Phong Tran <tranmanphong@gmail.com>
+To: catalin.marinas@arm.com, will@kernel.org, alexios.zavras@intel.com,
+ tglx@linutronix.de, akpm@linux-foundation.org, steven.price@arm.com,
+ steve.capper@arm.com, mark.rutland@arm.com, broonie@kernel.org,
+ keescook@chromium.org
+Subject: [PATCH] arm64: add check_wx_pages debugfs for CHECK_WX
+Date: Sat,  7 Mar 2020 16:39:26 +0700
+Message-Id: <20200307093926.27145-1-tranmanphong@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Date: Sat, 07 Mar 2020 10:25:55 +0100
-From: Michael Walle <michael@walle.cc>
-To: Peng Ma <peng.ma@nxp.com>
-Subject: Re: [EXT] [PATCH 2/2] arm64: dts: ls1028a: add "fsl,vf610-edma"
- compatible
-In-Reply-To: <VI1PR04MB44312A940BC5BFC7F13A5706EDE00@VI1PR04MB4431.eurprd04.prod.outlook.com>
-References: <20200306205403.29881-1-michael@walle.cc>
- <20200306205403.29881-2-michael@walle.cc>
- <VI1PR04MB44312A940BC5BFC7F13A5706EDE00@VI1PR04MB4431.eurprd04.prod.outlook.com>
-Message-ID: <e0be23f7d1307621151594dd66d2b8fd@walle.cc>
-X-Sender: michael@walle.cc
-User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: 11FCA23EB4
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_SEVEN(0.00)[10];
- NEURAL_HAM(-0.00)[-0.462]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_012558_419942_DC7F1138 
-X-CRM114-Status: GOOD (  17.15  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200307_013944_280733_8B7CCA85 
+X-CRM114-Status: GOOD (  11.13  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tranmanphong[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,64 +99,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Leo Li <leoyang.li@nxp.com>,
- Vinod Koul <vkoul@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- dmaengine@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Phong Tran <tranmanphong@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kernel-hardening@lists.openwall.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUGVuZywKCkFtIDIwMjAtMDMtMDcgMDM6MDksIHNjaHJpZWIgUGVuZyBNYToKPj4gLS0tLS1P
-cmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4gRnJvbTogTWljaGFlbCBXYWxsZSA8bWljaGFlbEB3YWxs
-ZS5jYz4KPj4gU2VudDogMjAyMOW5tDPmnIg35pelIDQ6NTQKPj4gVG86IGRtYWVuZ2luZUB2Z2Vy
-Lmtlcm5lbC5vcmc7IGRldmljZXRyZWVAdmdlci5rZXJuZWwub3JnOwo+PiBsaW51eC1rZXJuZWxA
-dmdlci5rZXJuZWwub3JnOyBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPj4g
-Q2M6IFZpbm9kIEtvdWwgPHZrb3VsQGtlcm5lbC5vcmc+OyBSb2IgSGVycmluZyA8cm9iaCtkdEBr
-ZXJuZWwub3JnPjsgCj4+IE1hcmsKPj4gUnV0bGFuZCA8bWFyay5ydXRsYW5kQGFybS5jb20+OyBT
-aGF3biBHdW8gPHNoYXduZ3VvQGtlcm5lbC5vcmc+OyBMZW8gCj4+IExpCj4+IDxsZW95YW5nLmxp
-QG54cC5jb20+OyBQZW5nIE1hIDxwZW5nLm1hQG54cC5jb20+OyBNaWNoYWVsIFdhbGxlCj4+IDxt
-aWNoYWVsQHdhbGxlLmNjPgo+PiBTdWJqZWN0OiBbRVhUXSBbUEFUQ0ggMi8yXSBhcm02NDogZHRz
-OiBsczEwMjhhOiBhZGQgImZzbCx2ZjYxMC1lZG1hIgo+PiBjb21wYXRpYmxlCj4+IAo+PiBDYXV0
-aW9uOiBFWFQgRW1haWwKPj4gCj4+IFRoZSBib290bG9hZGVyIGRvZXMgdGhlIElPTU1VIGZpeHVw
-IGFuZCBkeW5hbWljYWxseSBhZGRzIHRoZSAiaW9tbXVzIgo+PiBwcm9wZXJ0eSB0byBkZXZpY2Vz
-IGFjY29yZGluZyB0byBpdHMgY29tcGF0aWJsZSBzdHJpbmcuIEluIGNhc2Ugb2YgdGhlIAo+PiBl
-RE1BCj4+IGNvbnRyb2xsZXIgdGhpcyBwcm9wZXJ0eSBpcyBtaXNzaW5nLiBBZGQgaXQuIEFmdGVy
-IHRoYXQgdGhlIElPTU1VIHdpbGwgCj4+IHdvcmsgd2l0aAo+PiB0aGUgZURNQSBjb3JlLgo+PiAK
-Pj4gU2lnbmVkLW9mZi1ieTogTWljaGFlbCBXYWxsZSA8bWljaGFlbEB3YWxsZS5jYz4KPj4gLS0t
-Cj4+IGFyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2ZzbC1sczEwMjhhLmR0c2kgfCAyICst
-Cj4+IDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+PiAKPj4g
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvZnJlZXNjYWxlL2ZzbC1sczEwMjhhLmR0
-c2kKPj4gYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9mc2wtbHMxMDI4YS5kdHNpCj4+
-IGluZGV4IGIxNTJmYTkwY2Y1Yy4uYWE0NjdiZmYyMjA5IDEwMDY0NAo+PiAtLS0gYS9hcmNoL2Fy
-bTY0L2Jvb3QvZHRzL2ZyZWVzY2FsZS9mc2wtbHMxMDI4YS5kdHNpCj4+ICsrKyBiL2FyY2gvYXJt
-NjQvYm9vdC9kdHMvZnJlZXNjYWxlL2ZzbC1sczEwMjhhLmR0c2kKPj4gQEAgLTQ0Nyw3ICs0NDcs
-NyBAQAo+PiAKPj4gICAgICAgICAgICAgICAgZWRtYTA6IGRtYS1jb250cm9sbGVyQDIyYzAwMDAg
-ewo+PiAgICAgICAgICAgICAgICAgICAgICAgICNkbWEtY2VsbHMgPSA8Mj47Cj4+IC0gICAgICAg
-ICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAiZnNsLGxzMTAyOGEtZWRtYSI7Cj4+ICsgICAg
-ICAgICAgICAgICAgICAgICAgIGNvbXBhdGlibGUgPSAiZnNsLGxzMTAyOGEtZWRtYSIsCj4+ICsg
-ImZzbCx2ZjYxMC1lZG1hIjsKPiBIaSBNaWNoYWVsLAo+IAo+IFlvdSBzaG91bGQgY2hhbmdlIGl0
-IG9uIGJvb3Rsb2FkZXIgaW5zdGVhZCBvZiBrZXJuZWwsIFNvbWUgUmVnIG9mCj4gTFMxMDI4YSBp
-cyBkaWZmZXJlbnQKPiBmcm9tIG90aGVycywgU28gd2UgdXNlZCBjb21wYXRpYmxlICJmc2wsbHMx
-MDI4YS1lZG0iIHRvIGRpc3Rpbmd1aXNoICIKPiBmc2wsdmY2MTAtZWRtYSIuCgpZZXMgdGhpcyBt
-aWdodCBiZSB0aGUgcmlnaHQgdGhpbmcgdG8gZG8uIFNvIHNpbmNlIGl0IGlzIE5YUHMgYm9vdGxv
-YWRlcgpmZWVsIGZyZWUgdG8gZml4IHRoYXQgOykgTG9va2luZyBhdCB0aGUgdS1ib290IGNvZGUg
-cmlnaHQgbm93LCBJIGRvbid0CmV2ZW4ga25vdyBpdCB0aGF0IGlzIHRoZSByaWdodCBmaXggYXQg
-YWxsLiBUaGUgZml4dXAgY29kZSBpbiB1LWJvb3QgaXMKU29DIGluZGVwZW5kZW50IChpdHMgaW4g
-ZnNsX2ljaWQuaCBhbmQgaXMgZW5hYmxlZCB3aXRoIENPTkZJR19MU0NIMywgaWUKeW91ciBjaGFz
-c2lzIHZlcnNpb24pLiBGb3IgZXhhbXBsZSwgdGhlIHNkaGMgZml4dXAgd2lsbCBzY2FuIHRoZSBu
-b2Rlcwpmb3IgImNvbXBhdGlibGUgPSBmc2wsZXNkaGMiLCB3aGljaCBpcyBhbHNvIHRoZSBzZWNv
-bmRhcnkgY29tcGF0aWJsZQpmb3IgdGhlICJsczEwMjhhLWVzZGhjIiBjb21wYXRpYmxlLgoKQW5k
-IGhlcmUgaXMgYW5vdGhlciByZWFzb24gdG8gaGF2ZSBpdCB0aGlzIHdheTogd2UgbmVlZCBiYWNr
-d2FyZHMKY29tcGF0aWJpbGl0eSwgdGhlIGFyZSBhbHJlYWR5IGJvYXJkcyBvdXQgdGhlcmUgd2hv
-c2UgYm9vdGxvYWRlciB3aWxsCmZpeC11cCB0aGUgIm9sZCIgbm9kZS4gVGh1cyBJIGRvbid0IHNl
-ZSBhbnkgb3RoZXIgcG9zc2liaWx0eS4KCi1taWNoYWVsCgo+IAo+IFRoYW5rcywKPiBQZW5nCj4+
-ICAgICAgICAgICAgICAgICAgICAgICAgcmVnID0gPDB4MCAweDIyYzAwMDAgMHgwIDB4MTAwMDA+
-LAo+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwweDAgMHgyMmQwMDAwIDB4MCAweDEw
-MDAwPiwKPj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8MHgwIDB4MjJlMDAwMCAweDAg
-MHgxMDAwMD47Cj4+IC0tCj4+IDIuMjAuMQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+follow the suggestion from
+https://github.com/KSPP/linux/issues/35
+
+Signed-off-by: Phong Tran <tranmanphong@gmail.com>
+---
+ arch/arm64/Kconfig.debug        |  3 ++-
+ arch/arm64/include/asm/ptdump.h |  2 ++
+ arch/arm64/mm/dump.c            |  1 +
+ arch/arm64/mm/ptdump_debugfs.c  | 18 ++++++++++++++++++
+ 4 files changed, 23 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
+index 1c906d932d6b..be552fa351e2 100644
+--- a/arch/arm64/Kconfig.debug
++++ b/arch/arm64/Kconfig.debug
+@@ -48,7 +48,8 @@ config DEBUG_WX
+ 	  of other unfixed kernel bugs easier.
+ 
+ 	  There is no runtime or memory usage effect of this option
+-	  once the kernel has booted up - it's a one time check.
++	  once the kernel has booted up - it's a one time check and
++	  can be checked by echo "1" to "check_wx_pages" debugfs in runtime.
+ 
+ 	  If in doubt, say "Y".
+ 
+diff --git a/arch/arm64/include/asm/ptdump.h b/arch/arm64/include/asm/ptdump.h
+index 38187f74e089..b80d6b4fc508 100644
+--- a/arch/arm64/include/asm/ptdump.h
++++ b/arch/arm64/include/asm/ptdump.h
+@@ -24,9 +24,11 @@ struct ptdump_info {
+ void ptdump_walk(struct seq_file *s, struct ptdump_info *info);
+ #ifdef CONFIG_PTDUMP_DEBUGFS
+ void ptdump_debugfs_register(struct ptdump_info *info, const char *name);
++int ptdump_check_wx_init(void);
+ #else
+ static inline void ptdump_debugfs_register(struct ptdump_info *info,
+ 					   const char *name) { }
++static inline int ptdump_check_wx_init(void) { return 0; }
+ #endif
+ void ptdump_check_wx(void);
+ #endif /* CONFIG_PTDUMP_CORE */
+diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+index 860c00ec8bd3..60c99a047763 100644
+--- a/arch/arm64/mm/dump.c
++++ b/arch/arm64/mm/dump.c
+@@ -378,6 +378,7 @@ static int ptdump_init(void)
+ #endif
+ 	ptdump_initialize();
+ 	ptdump_debugfs_register(&kernel_ptdump_info, "kernel_page_tables");
++	ptdump_check_wx_init();
+ 	return 0;
+ }
+ device_initcall(ptdump_init);
+diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
+index 1f2eae3e988b..73cddc12c3c2 100644
+--- a/arch/arm64/mm/ptdump_debugfs.c
++++ b/arch/arm64/mm/ptdump_debugfs.c
+@@ -16,3 +16,21 @@ void ptdump_debugfs_register(struct ptdump_info *info, const char *name)
+ {
+ 	debugfs_create_file(name, 0400, NULL, info, &ptdump_fops);
+ }
++
++static int check_wx_debugfs_set(void *data, u64 val)
++{
++	if (val != 1ULL)
++		return -EINVAL;
++
++	ptdump_check_wx();
++
++	return 0;
++}
++
++DEFINE_SIMPLE_ATTRIBUTE(check_wx_fops, NULL, check_wx_debugfs_set, "%llu\n");
++
++int ptdump_check_wx_init(void)
++{
++	return debugfs_create_file("check_wx_pages", 0200, NULL,
++				   NULL, &check_wx_fops) ? 0 : -ENOMEM;
++}
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
