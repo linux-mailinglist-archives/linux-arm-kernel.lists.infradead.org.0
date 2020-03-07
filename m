@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A2A617CE81
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 14:49:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F18B17CE85
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 14:50:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,68 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r8GHIY5YuNOb/cfaTt+67W0oohjrqKzfKbzF8azE3Ns=; b=EBQ7XPaGCLO6f1PMvySmuZh/9i
-	K3yVdMn+6wlk3PReIHwHpRtyTtuIEmau/NlzjsSrGLuculpKZ9Yi1XD1FBCJIgdk6hESylUB18we2
-	QFAZ52qxBVSQ2P/plvxtoroL8AGqGGcp+/ei3OFhISb22QRGe4jxjjPvm3qTw+rrJVazOLFNX7P0c
-	SqelMs377uIDOa/5u+P5d/dpKR0DyrJV0LuXTENwR4JO5Ay7BbMTPm/hhQF16q3agJZAPsJnmEV6l
-	ouoSbBlr/QXqksTYm0Te66jq/2bRFmUyeqk1XhNnzT7+9JTAeh0njiy0yWKmho7T29KQ7lzYn6nbw
-	1guKTknQ==;
+	bh=Ol+lHR7KWPF+0qu732HuDLqDVP/WGre4M9E/REeyS3Q=; b=oMKNRlDzXpLoVXZ8/YHDDAVxWN
+	jSShtIHWV3C4v1jpO6sYzUO6508/mACX6TroTdQCSHWmfYgn/aiYpghyoaXR7ijiCqqlGP9vmLjgs
+	jb4U/pSKkec4EnJDfnwdCacz8HyyThIeIJfz5umepD6HGC9GxKAODFhFGeZ4KpjSbPSjlgU7SkpKE
+	BtfwVpxyRMdBrDkQh1SYEOzoQgIsNxYQyWw7i+4REnvTq9Toe1PnZam+bAX45gJIsQFf5agu6Zu/R
+	uJa6Cf5bJL8GOPjnByHWn5TJ/T56t1UUuP32Ht8HMKj3hZ4lh7qBHTBD0rMiu9lgMYU74sPTVm1BY
+	4DTIknNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAZpQ-0001RO-9x; Sat, 07 Mar 2020 13:49:20 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jAZq3-00024S-35; Sat, 07 Mar 2020 13:49:59 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAZox-00019Z-Qv; Sat, 07 Mar 2020 13:48:53 +0000
-Received: by mail-wm1-x344.google.com with SMTP id e26so5241734wme.5;
- Sat, 07 Mar 2020 05:48:51 -0800 (PST)
+ id 1jAZoy-0001A0-Dp; Sat, 07 Mar 2020 13:48:54 +0000
+Received: by mail-wm1-x342.google.com with SMTP id a5so5413276wmb.0;
+ Sat, 07 Mar 2020 05:48:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2IH7KzQC1elq12VnowpNAipmMQUPET2Kh6DcuNwrX+E=;
- b=guNv2u8aad75h2Dy+CJemJg8fZOWKV4MRdf8+4vmo1vcdNRW4xM0xlxHbfDzcSVTWH
- lpKIilyU+OfrRv9S4WBaa9wGJYEmYtV8cQfsmwHTeKzpchK29R3S/OWZVMtH/DlKV+L+
- wdQvR7I0hckZ/b4y6ewyPLyuhF0n5h1/g1TXJiTwltIOG2NpgAckcU44N0O8PMVaDnpl
- Gr+DAdmg1TUfS0AVs0sDJVJu4PILQ/CYpCEgsqUHZ8ukdPqafisx3oJve9p5h6LMUdM2
- iozvkvfbM2szO74WAIW4QRYDCzVo5E/Pgp/J1w91GdxIGAz7diGsiwe9TAd1siaXorel
- CRQw==
+ bh=STsCYmVzqE0DyGQSLcvjOSy6vdxPWBxzS0jjS6ORcro=;
+ b=rMI7D0qKgKibOcLcQS/QK9oNfgZ2LNDtF/Z/YgZsX1xLCBu6Hnc/lKSrbOQBIEPLSg
+ v33E7/H4iz+xsgbL6klyAa2fO1kLmSk9WFqB3c2ywEYP4BrQ5FQBwLJR/w/7ZVewQ5Er
+ x9vt6l9dgXR4fq1ZR+GjY5VwDC/kWtcYmlxiLWv67te7rD91XlNwNHh4dIFuaM6ZgYLV
+ j2IlO3Bkc1QfTXJmt9crdZlOMc29O3PBfvM+e6ecbZkXb2fT5WBtxaDiA7whoQLBhfu3
+ jsEv8QPE9yD2K3nbYB+voC9kE5WhA+/zYjgFrXL8V7e1RTiZYDXH3LBsGxem2LC4vzot
+ xd9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=2IH7KzQC1elq12VnowpNAipmMQUPET2Kh6DcuNwrX+E=;
- b=HOdN6lS/OitduK7Bv+EmJQrP8NbrFdBKmKG/uXQ0MLtmyO1u+SdD/kVxc35vkRA35I
- p+bRew+HHSF4xkdabW6LdGkjufElhCvpdM9KqbJm6rwNQLtBua+yb8wQZ/Bd+DgGV49C
- +7chBDtU1oXu2OJ5vkPThGttUfBZjmuMPIFAfuSEilc5Cz56zuX1e6P1VC2+ffwAMOyq
- PDX9MnRyTKgxApCC2bpaLem8T+YCGy3s89sbYq1G85xgMMLr4qgSHzSSJ2bVnY5qgLB+
- fKnK6T59P/jHtGpW5J+KlUBpxe0fAEJuRrkH5WDCsDZ6DgAUd+JrCz9pwyTGp/fI+oEn
- EQsg==
-X-Gm-Message-State: ANhLgQ01IBBp7FOZ12kcsdLER7tit+cdh1yzi/nY7dicXrqK94LKPScu
- AoYB/JHyxPSpEKjf4tfCK0k=
-X-Google-Smtp-Source: ADFU+vv3PgqIbCaqS+/cHZ/qOpqqVZm0POM2tszTay3g45d6g3SYV6XbuREuuyTf4OoiuGgSVA9FVg==
-X-Received: by 2002:a1c:cc11:: with SMTP id h17mr10429280wmb.154.1583588930249; 
- Sat, 07 Mar 2020 05:48:50 -0800 (PST)
+ bh=STsCYmVzqE0DyGQSLcvjOSy6vdxPWBxzS0jjS6ORcro=;
+ b=OuGBRky0RxJYtMjG7kj0MCZqHTt+7SzFhwtlSNuRSxPDXMUfxOE3sSzTr6e7lkPyUL
+ MaH1MfWv6pGBbHD3Q2o1+BuJX2j36l+45OEG2LvSO1F3zN8Hqk6yxGJpCjiTUosIBYBC
+ JL/Bj1g0n3fsV23UNGieHURTUtdotdONjGW0fbk0C0LbNugaT6pUHg+6ol8bv4HMVExF
+ zJdjxyWpExSA6f4aq5m1eFaTvxtlgGmFtI+KzLsqNg52As2x9Hbk/yRfT2BDZQKN0+2L
+ lwdyp+oWvCuHr+bUgEiJs+ocM3np/Xi0pFZTtGjpDwhws3QFkGhgrcF377G2rMkb2uIe
+ Erbw==
+X-Gm-Message-State: ANhLgQ1OIDu0P+ft4+iTmIJ/xjE5Lh7s2rofoAS7gesUYzzGjSsp0xDh
+ HKyNmzBs92LE2xkH0E450WU=
+X-Google-Smtp-Source: ADFU+vs3yoiMYHy+aHEyVA2e2f6aaRqhgHSl816HFm9nXq+rhUBv2x3rBlfeJzF3+oI0XniuPhuGcw==
+X-Received: by 2002:a1c:e0d6:: with SMTP id x205mr9352590wmg.29.1583588931283; 
+ Sat, 07 Mar 2020 05:48:51 -0800 (PST)
 Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id 9sm11767265wmx.32.2020.03.07.05.48.49
+ by smtp.gmail.com with ESMTPSA id 9sm11767265wmx.32.2020.03.07.05.48.50
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 07 Mar 2020 05:48:49 -0800 (PST)
+ Sat, 07 Mar 2020 05:48:50 -0800 (PST)
 From: Johan Jonker <jbx6244@gmail.com>
 To: heiko@sntech.de
-Subject: [PATCH v1 3/5] arm64: dts: remove no-emmc from mmc node for Rockchip
- PX5 EVB
-Date: Sat,  7 Mar 2020 14:48:39 +0100
-Message-Id: <20200307134841.13803-3-jbx6244@gmail.com>
+Subject: [PATCH v1 4/5] arm64: dts: rockchip: fix vqmmc-supply property name
+ for rk3399 puma
+Date: Sat,  7 Mar 2020 14:48:40 +0100
+Message-Id: <20200307134841.13803-4-jbx6244@gmail.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200307134841.13803-1-jbx6244@gmail.com>
 References: <20200307134841.13803-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_054851_906224_4A5E5FFC 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20200307_054852_482487_02D9C4E4 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [jbx6244[at]gmail.com]
@@ -122,34 +122,35 @@ First when we combine rockchip-dw-mshc.yaml,
 synopsys-dw-mshc-common.yaml and mmc-controller.yaml it gives
 this error:
 
-arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dt.yaml: mmc@ff0c0000:
-'no-emmc' does not match any of the regexes:
+arch/arm64/boot/dts/rockchip/rk3399-puma-haikou.dt.yaml: mmc@fe320000:
+'vqmmc' does not match any of the regexes:
 '^.*@[0-9]+$', '^clk-phase-(legacy|sd-hs|mmc-(hs|hs[24]00|ddr52)|
 uhs-(sdr(12|25|50|104)|ddr50))$', 'pinctrl-[0-9]+'
 
-'no-emmc' is not a valid property name for mmc nodes,
-so remove it.
+'vqmmc' is not a valid property name for mmc nodes.
+Fix this error by renaming it to 'vqmmc-supply'.
 
 make ARCH=arm64 dtbs_check
 DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts | 1 -
- 1 file changed, 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts b/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts
-index 231db0305..5ffd7b4d3 100644
---- a/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3368-px5-evb.dts
-@@ -239,7 +239,6 @@
- 	cap-mmc-highspeed;
- 	cap-sd-highspeed;
- 	card-detect-delay = <200>;
--	no-emmc;
- 	no-sdio;
- 	sd-uhs-sdr12;
- 	sd-uhs-sdr25;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi
+index c1edca387..07694b196 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-puma.dtsi
+@@ -480,7 +480,7 @@
+ };
+ 
+ &sdmmc {
+-	vqmmc = <&vcc_sd>;
++	vqmmc-supply = <&vcc_sd>;
+ };
+ 
+ &spi1 {
 -- 
 2.11.0
 
