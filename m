@@ -2,111 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26F1C17CA08
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 02:01:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FA7C17CA28
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 02:09:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gctuE3uP26qdXnfb4EfeJc/r/+a0v+X/j4Go9bLg3iU=; b=p7UbL4vOg4ZYZd
-	UKjxuNmSkkuYttvaNPr88zU5OvCVfGkRX1WyTJFMYuyeaEIVFcrQO0n2k4WERK2812EoAvfBAYH3r
-	NhOGuizuA/GEYR7h/wxx215wHmUm+qshTRZSrNsZGJG/NmmHgFZu4QN4NhGghPFm7sAz8r7vsCvcH
-	im4dyQwXb4ThCqXv+JbCInoQjLnGmvDmiuqXKoRX9ls8VEFz/Z3TuxeB+dw3e1bSEXJnbcyXjc66v
-	4pilyGc/DC869cIq5383nzInkmJriEl0+x9TjdSKHXFYJpxV4Gi2ANcFgxk0n2s4DWxbG02UIj/CQ
-	Z0jl+K0Mi2mixhVfqvag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GQfoAru8sR9HQdgs1GDm0MMhkCWdpRzicBTokul95Ak=; b=a4PdPPFBZ571uJxKmjAjk2vtN
+	1ueUXDxUPSaAqvfHFeKjc+AyX1Uu3lxr/psiqAngPYHSvZAzqTVrHOCTZAZI9/0zvUjeKa2imAag4
+	3WmkZdkwsMaxFdCErw4XaAdvbik+JyJhFJULFPWzyBH/m9Hjtm0E+YAy4sXXxhe501LMuTh9gU6Ev
+	n+jLip92F8StHE0HUwfYdjVY8DRDZ7HGOFsmMUecbxzfZ+m7drwABLEEIuxu275tExvYYRSfTo4ix
+	ISVkz+D3MNNSxYBoC25AoG2pw0UPVclSwgLkjO1yEw4QA1rk2J3Gex9enuz47/9nyv9jsHp9tov8S
+	arLgxTwSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jANqO-0006Bj-4m; Sat, 07 Mar 2020 01:01:32 +0000
-Received: from mail-am6eur05on2082.outbound.protection.outlook.com
- ([40.107.22.82] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1jANxg-00084J-V9; Sat, 07 Mar 2020 01:09:04 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jANqE-0006BK-Ch
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 01:01:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QLbFmuDDosB79CitMeowxCMP+UEsPTEWokaib8nknw326zdwDDFIPh5WBK+iPBPVh8FiUoaiJZSU6OZJWpwi0AF2ybRO3JIxyLHDVMdkKBtagM+3TPO99Id/aNgEeSiuLQEUdcZatp8xFSAfF4WMixJcN2y66m/i5xMHzu+JqtCWyEFKqGOYuJPsVYHuQP/lIk+f8rN4sIaBfee63F4KZQFNeXSPOn5RGlsgUgmtYokYhLbqzw7x8CGWcxS2ye2lVDZL9b1Wj7av8QRr0pW7FyyNHX+l/SN9Jxmqp65FQpv0/VwgeTdOt7ADAV221FTxixrplMnxxqXuXWWt/B3pog==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sX6jb+CyQCnFTzT9UUvEEGYqdw1fUSw4wqB+g0WroqQ=;
- b=kR3nCZW3roU5SSx6sfhBriDA/ByxauM4wmFoBQWtCUHNv16M/rRwwhWwoyuV1gtcVsbXhO3+jGqqmlNN9ncKqf3q45BIMciA/+Jo6L7h+67xqIg20lQ07iJZtwKkyyJj2MpO+DJF5X+8xM/c/vBQMvccQb9f7SdWyUT8GNhOXdug6eL4je3gHEIpNoDGtjypi9nJyIFZ6p3pvSATcLCD/WNCEDyXvh12kNVkmgmCFhsILO+YcOr2e7II16MPNHYwgzhSueMsdRiFUrk4F5urFYYAdnnUkV85p3GnRc88DWobtD+4lBbBQQmjg8u8B7WEAZJ0mH3iye0upSatP6/lSA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sX6jb+CyQCnFTzT9UUvEEGYqdw1fUSw4wqB+g0WroqQ=;
- b=mq5svQXi+zXLwfK07t23auYGiAD4j+LnUbA5HITcBu3zsEgvKf8OrAaEhEeAj+OrUEhQQYVyD7zDqLTuXanKkCT//+svXW5ObZELEklm/5lmFmsYdHSYAV0XvOO8ZSAgunEnzoRqeuTY1dcCjJDwIDuwWOzhqjVGA3Z4oq1BDRA=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3865.eurprd04.prod.outlook.com (52.134.73.19) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2772.19; Sat, 7 Mar 2020 01:01:19 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2772.019; Sat, 7 Mar 2020
- 01:01:19 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-Subject: RE: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
- KEYBOARD_IMX_SC_KEY
-Thread-Topic: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
- KEYBOARD_IMX_SC_KEY
-Thread-Index: AQHV887MNanm8ugiD0KiUbBo9lnYDag79IUAgAAJFwCAAEHEgIAADikAgAACUZA=
-Date: Sat, 7 Mar 2020 01:01:19 +0000
-Message-ID: <DB3PR0402MB3916D31AEF0CEA8E4DC42BC3F5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
- <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
- <20200306193310.GI217608@dtor-ws>
- <CAKdAkRRhXE6Hviqx90_5hWmP7YQnKO2QLJgDYnzt_CPjeH7D0A@mail.gmail.com>
- <DB3PR0402MB3916EA7BAACBBE64F2609DB6F5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <20200307005146.GM217608@dtor-ws>
-In-Reply-To: <20200307005146.GM217608@dtor-ws>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 61be2b08-8adb-4a00-aebe-08d7c2330be2
-x-ms-traffictypediagnostic: DB3PR0402MB3865:|DB3PR0402MB3865:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3865D0ACC089E26CDA2EEB14F5E00@DB3PR0402MB3865.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
-x-forefront-prvs: 03355EE97E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(136003)(396003)(39860400002)(366004)(199004)(189003)(66946007)(66476007)(55016002)(8936002)(66446008)(66556008)(64756008)(6916009)(81156014)(186003)(9686003)(81166006)(26005)(8676002)(86362001)(44832011)(33656002)(2906002)(5660300002)(71200400001)(316002)(478600001)(4326008)(53546011)(54906003)(7416002)(7696005)(6506007)(76116006)(52536014);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3865;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: HjmGSarB8sNSH8SAxJ9nuJ+ZPh8i3Bi5l7eMtj39BNgpvWwbfPFEKqBLXakQRhcPCrkEoVtdxZfIXidveEcRhpWSjQrcL4jiDvE6n7lWURIomBP2RggWbmbhWLPv/xFLLdFjRvRzT9WV6nVkEe/HL7L/nb8ZxK8V7iAN1qN+O4UKB0oEXlN59s9aLs8hRPAM4K+54cUXXuaXO4Z3scfpNxxny36n43Q4zUyF5E3R8/RULywPJHx7Kpq5BBTrV7nb1DUmR9DJ4bpaFkxfcLs2/Mjy4ZgTCRzzWmqiYu5gGdPVVGJ20Jql60jDFTrUJM2eaB4P9VgYpmbwEhFP4F7UN5XHLb9IwbqOyMGBXR0Uks8+l2MagmZgKYs3kWCDV+gvZWD9fSY/cih6CfB4cXutHSem0w8p4UFZWTlqRu4gnjDeIvcOazH6Odol2WauHjpj
-x-ms-exchange-antispam-messagedata: 9/0+ky0YwM6huviQIGajw6qgV2gmEcVEnB69+I83fZQf2fJOys40kgV8OeM5KFeb8T8Jbld1mEpKeCyC9pvGGcbQHmuOYfUQgHXREF0NzpLHg83485spUGkecWccO8TztbmJCH5b5rjJx6YfasbJYg==
+ id 1jANxZ-00083Z-DZ
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 01:08:58 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0270xSfu089023;
+ Sat, 7 Mar 2020 01:08:24 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=jZ/9waIGl3FuS/HeKNiN38qC4SIq/ljoQkSPu9FdPf8=;
+ b=Uqs0s22zrTEyv0b7mZ6uR92KBRV+hDQZyS/SZQiDnL7G8R9y8dakPYUR8NdJm/DePhqC
+ Q2c4t32fLC00Y/1D+Xctdb4lydFk+pIGcgIT6XI+GKSONNQY7mIQmbj8M5fG9kK/tfBL
+ 9mtqxay+7QRBJxDY9Mg6Jqx6rBqT82qIkJ0qUJi5ONbTPG4y7jPujNrsvbpqzIS6RoMp
+ YtcsgSG39WelIKtN9gPBi8/EKSL0YO+4f+8ZFUzw1xFQu6UG/vuio2nWnXHUkdr4j3LL
+ TIghQTqX/nRg2rcl0qAKXXCSb0XSkxKkpsgBG53/IW/PRpQHDjxPImEgtJtzR2HjRI3/ Tg== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 2yghn3syrr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 07 Mar 2020 01:08:24 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02716utR147358;
+ Sat, 7 Mar 2020 01:08:24 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2ym0quu3wk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 07 Mar 2020 01:08:24 +0000
+Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 027184eq023779;
+ Sat, 7 Mar 2020 01:08:04 GMT
+Received: from [10.11.0.40] (/10.11.0.40)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 06 Mar 2020 17:08:04 -0800
+Subject: Re: [PATCH] vfs: keep inodes with page cache off the inode shrinker
+ LRU
+To: Nishanth Menon <nm@ti.com>
+References: <20200211193101.GA178975@cmpxchg.org>
+ <20200211154438.14ef129db412574c5576facf@linux-foundation.org>
+ <CAHk-=wiGbz3oRvAVFtN-whW-d2F-STKsP1MZT4m_VeycAr1_VQ@mail.gmail.com>
+ <20200211164701.4ac88d9222e23d1e8cc57c51@linux-foundation.org>
+ <CAHk-=wg1ZDADD3Vuw_sXhmBOrQ2xsp8YWxmtWiA6vG0RT-ZQ+A@mail.gmail.com>
+ <20200212085004.GL25745@shell.armlinux.org.uk>
+ <CAK8P3a3pzgVvwyDhHPoiSOqyv+h_ixbsdWMqG3sELenRJqFuew@mail.gmail.com>
+ <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
+ <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
+ <7c4c1459-60d5-24c8-6eb9-da299ead99ea@oracle.com>
+ <20200306203439.peytghdqragjfhdx@kahuna>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <7b179d51-3d08-53f5-9b6e-552869f8ed78@oracle.com>
+Date: Fri, 6 Mar 2020 17:08:03 -0800
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.2
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 61be2b08-8adb-4a00-aebe-08d7c2330be2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Mar 2020 01:01:19.3760 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pf5jboyHfPB1E0Up2kCn3dMaEdPHgpxjqjoZ9aBUbQCXx1QhbKI8P5sNkp0ukOR8ybNpmDmgqNYmXXvet2n3yw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3865
+In-Reply-To: <20200306203439.peytghdqragjfhdx@kahuna>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9552
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ spamscore=0
+ suspectscore=0 mlxscore=0 adultscore=0 bulkscore=0 mlxlogscore=999
+ phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2003070004
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9552
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ phishscore=0 spamscore=0
+ impostorscore=0 mlxscore=0 adultscore=0 mlxlogscore=999 lowpriorityscore=0
+ priorityscore=1501 bulkscore=0 clxscore=1011 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003070003
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_170122_433250_9BA1FB8A 
-X-CRM114-Status: GOOD (  19.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200306_170857_501410_A7B24A2D 
+X-CRM114-Status: GOOD (  22.90  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.22.82 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -116,6 +110,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,95 +122,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Marco Felsch <m.felsch@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
- "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
- "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
- "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- =?utf-8?B?Um9uYWxkIFRzY2hhbMOkcg==?= <ronald@innovation.ch>,
- Guenter Roeck <linux@roeck-us.net>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- lkml <linux-kernel@vger.kernel.org>, Oleksij Rempel <linux@rempel-privat.de>,
- Sascha Hauer <kernel@pengutronix.de>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Michal Hocko <mhocko@suse.com>, Arnd Bergmann <arnd@arndb.de>,
+ Rik van Riel <riel@surriel.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Roman Gushchin <guro@fb.com>, Johannes Weiner <hannes@cmpxchg.org>,
+ Dave Chinner <david@fromorbit.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Linux-MM <linux-mm@kvack.org>,
+ Yafang Shao <laoar.shao@gmail.com>, Al Viro <viro@zeniv.linux.org.uk>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>, kernel-team@fb.com,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Dmitry
 
-> Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
-> KEYBOARD_IMX_SC_KEY
-> 
-> On Sat, Mar 07, 2020 at 12:18:38AM +0000, Anson Huang wrote:
-> > Hi, Dmitry
-> >
-> > > Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support
-> > > for KEYBOARD_IMX_SC_KEY
-> > >
-> > > On Fri, Mar 6, 2020 at 11:33 AM Dmitry Torokhov
-> > > <dmitry.torokhov@gmail.com> wrote:
-> > > >
-> > > > On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
-> > > > > Add COMPILE_TEST support to i.MX SC keyboard driver for better
-> > > > > compile testing coverage.
-> > > > >
-> > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > >
-> > > > Applied, thank you.
-> > >
-> > > Actually, not:
-> > >
-> > > ERROR: "imx_scu_irq_register_notifier"
-> > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
-> > > ERROR: "imx_scu_get_handle" [drivers/input/keyboard/imx_sc_key.ko]
-> > > undefined!
-> > > ERROR: "imx_scu_call_rpc" [drivers/input/keyboard/imx_sc_key.ko]
-> > > undefined!
-> > > ERROR: "imx_scu_irq_unregister_notifier"
-> > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
-> > > ERROR: "imx_scu_irq_group_enable"
-> > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
-> > > make[1]: *** [scripts/Makefile.modpost:94: __modpost] Error 1
-> > > make: *** [Makefile:1282: modules] Error 2
-> > >
-> > > If you want to enable compile test coverage you need to provide
-> > > stubs for the above functions.
-> >
-> > These i.MX SCU drivers depends on IMX_SCU, I already add the
-> > COMPILE_TEST to IMX_SCU driver as well, that is why I put these patches in
-> a patch series.
-> 
-> Adding "|| COMPILE_TEST" you are removing hard dependency on IMX_SCU,
-> which as you can see can result in broken build.
-> 
-> > Maybe
-> > I can add stubs as well to make sure build passed even when IMX_SCU is
-> NOT compiled?
-> > Will send V2 to add stubs, it makes more sense.
-> 
-> It is up to you whether you make IMX_SCU buildable with COMPILE_TEST and
-> leave the sub-driver as is, or add the stubs and make sub-drivers buildable
-> even without IMX_SCU being present.
 
-Thank you, I already added COMPILE_TEST to IMX_SCU driver, and I will also add
-stubs for those APIs in V2.
+On 3/6/20 12:34 PM, Nishanth Menon wrote:
+> On 13:11-20200226, santosh.shilimkar@oracle.com wrote:
+>> +Nishant, Tero
+>>
+>> On 2/26/20 1:01 PM, Arnd Bergmann wrote:
+>>> On Wed, Feb 26, 2020 at 7:04 PM <santosh.shilimkar@oracle.com> wrote:
+>>>>
+>>>> On 2/13/20 8:52 AM, Arnd Bergmann wrote:
+>>>>> On Wed, Feb 12, 2020 at 9:50 AM Russell King - ARM Linux admin
+>>>>> <linux@armlinux.org.uk> wrote:
+>>>>
+>>>> The Keystone generations of SOCs have been used in different areas and
+>>>> they will be used for long unless says otherwise.
+>>>>
+>>>> Apart from just split of lowmem and highmem, one of the peculiar thing
+>>>> with Keystome family of SOCs is the DDR is addressable from two
+>>>> addressing ranges. The lowmem address range is actually non-cached
+>>>> range and the higher range is the cacheable.
+>>>
+>>> I'm aware of Keystone's special physical memory layout, but for the
+>>> discussion here, this is actually irrelevant for the discussion about
+>>> highmem here, which is only about the way we map all or part of the
+>>> available physical memory into the 4GB of virtual address space.
+>>>
+>>> The far more important question is how much memory any users
+>>> (in particular the subset that are going to update their kernels
+>>> several years from now) actually have installed. Keystone-II is
+>>> one of the rare 32-bit chips with fairly wide memory interfaces,
+>>> having two 72-bit (with ECC) channels rather than the usual one
+>>>    or two channels of 32-bit DDR3. This means a relatively cheap
+>>> 4GB configuration using eight 256Mx16 chips is possible, or
+>>> even a 8GB using sixteen or eighteen 512Mx8.
+>>>
+>>> Do you have an estimate on how common these 4GB and 8GB
+>>> configurations are in practice outside of the TI evaluation
+>>> board?
+>>>
+>>  From my TI memories, many K2 customers were going to install
+>> more than 2G memory. Don't remember 8G, but 4G was the dominant
+>> one afair. Will let Nishant/Tero elaborate latest on this.
+>>
+> 
+> Thanks for the headsup, it took a little to dig up the current
+> situation:
+> 
+> ~few 1000s still relevant spread between 4G and 8G (confirmed that both
+> are present, relevant and in use).
+> 
+> I wish we could sunset, but unfortunately, I am told(and agree)
+> that we should'nt just leave products (and these are long term
+> products stuck in critical parts in our world) hanging in the air, and
+> migrations to newer kernel do still take place periodically (the best
+> I can talk in public forum at least).
+> 
+Thanks Nishant !!
 
-Thanks,
-Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
