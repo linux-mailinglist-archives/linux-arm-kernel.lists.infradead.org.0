@@ -2,91 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7767D17CD22
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 10:13:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E841817CD3E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 10:26:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UOe/MRIpT9sALZIVfNnvVYDz+bNx3+dTK63VsB9vDmI=; b=HoV1SS+2DUSWBk
-	b+No9PjiCD3ZE4/QdUJszxZWIhDnvnRgsxfXwZet/YL+HUoPrNbOl/TJZj8jWgIXLVu/ZFfeLoLk6
-	VMmCjeZTwcberaGB04Ce5mCubm/J635y7tIp+70xT53uxYve57va4RBb26wP8yDfU1gk4EOe5Revm
-	VnuXEK35bNu6ChswccX9jbZZtPL+rB8s/ihJ5T89JS0wTg+lcYr36ZC2N2r4hByLd5pIC9ljI370R
-	Yt9kgLrZ6RnEJ4fDdb96h2BUm19Y56Zuom74w+3P6XwP3B7MF+qzGhXevaqjAiylWQ7RQcC4k1wNO
-	OYu15XrZuBsCYgCcFfLg==;
+	List-Owner; bh=QIVirz0MpJ57FSexOsOrxzAIun4xkYz0gdPaMdBLG5Q=; b=S+6D2uroAnUL0B
+	zypvqFzge0qni/9JJuzxcAjsZ6oFaZWUr2jxim8n0nDFsLmMu2ZDwmuLzX7NF0rU78PZubvgb0V5x
+	4zEQl3hvGZfe77nmB9QWVTSDuiIj/XSOFm553lIsjV2w/kCUW1w9a35SFgitV3hywx5l03Hf2Rj/J
+	yElaN0WXq+vMoz+tY9f+DBmUHEtujO6IhPO+Vb+JkiAvtpd95RYUih19gtguKR9qsbud+ecwh18GJ
+	TXb9bOdZ0GXyM98lfLLwT4/dhScE2Sl6G6/adeM29SGvuectUVDlsly9j32NQzbn5EXFAvo3wHZCg
+	a04UYZyGljwuPr/tAKgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAVWb-0004Ax-3u; Sat, 07 Mar 2020 09:13:37 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jAViU-00017d-05; Sat, 07 Mar 2020 09:25:54 +0000
+Received: from asavdk4.altibox.net ([109.247.116.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAVWR-0004AA-Fz
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 09:13:29 +0000
-Received: from apollo.fritz.box (unknown
- [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 9B74C23EB7;
- Sat,  7 Mar 2020 10:13:22 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1583572402;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=g1ACtH0H0GvtIkqKJiDBMWfJEJqdKgxNsfjSR0V/lTo=;
- b=K6I2vz+ZcSSftmWfv2wd5BmSMENd3h5vWrQD045cBx3g1SWSSL3r5QywII6GYy9qvfzWXb
- IYuAh6IFsVFRkw4BLqHNHkmqoHDN7nrBi5M4yin+vHSaovARmMi4iZFVmvMsXJUoiCxZxh
- 3BiWPM2qCGT0fPCIKoiPQV3o6AuXfqQ=
-From: Michael Walle <michael@walle.cc>
-To: linux-serial@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/2] arm64: dts: ls1028a: add missing LPUART nodes
-Date: Sat,  7 Mar 2020 10:13:02 +0100
-Message-Id: <20200307091302.14881-2-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200307091302.14881-1-michael@walle.cc>
-References: <20200307091302.14881-1-michael@walle.cc>
+ id 1jAViK-00017D-Lz
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 09:25:47 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk4.altibox.net (Postfix) with ESMTPS id 9AF258050C;
+ Sat,  7 Mar 2020 10:25:40 +0100 (CET)
+Date: Sat, 7 Mar 2020 10:25:39 +0100
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Daniel Vetter <daniel.vetter@ffwll.ch>
+Subject: Re: [PATCH 38/51] drm/stm: Drop explicit drm_mode_config_cleanup call
+Message-ID: <20200307092539.GG28810@ravnborg.org>
+References: <20200302222631.3861340-1-daniel.vetter@ffwll.ch>
+ <20200302222631.3861340-39-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 9B74C23EB7
-X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
- MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.520]; DKIM_SIGNED(0.00)[];
- DBL_PROHIBIT(0.00)[0.34.241.80:email,0.34.202.64:email,0.34.124.32:email,0.34.163.48:email];
- RCPT_COUNT_SEVEN(0.00)[10]; MID_CONTAINS_FROM(1.00)[];
- RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
- MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:31334, ipnet:2a02:810c:8000::/33, country:DE];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+Content-Disposition: inline
+In-Reply-To: <20200302222631.3861340-39-daniel.vetter@ffwll.ch>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=XpTUx2N9 c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=7gkXJVJtAAAA:8
+ a=8b9GpE9nAAAA:8 a=P1BnusSwAAAA:8 a=QyXUC8HyAAAA:8 a=KKAkSRfTAAAA:8
+ a=pGLkceISAAAA:8 a=phlkwaE_AAAA:8 a=JfrnYn6hAAAA:8 a=e5mUnYsNAAAA:8
+ a=2cXivglsN4UzH7uZjNsA:9 a=m2WR8TVE0Z7MX67Z:21 a=-yedZiAf9xy0JtVK:21
+ a=CjuIK1q_8ugA:10 a=E9Po1WZjFZOl8hwRPBS3:22 a=T3LWEMljR5ZiDmsYVIUa:22
+ a=D0XLA9XvdZm18NrgonBM:22 a=cvBusfyB2V15izCimMoJ:22
+ a=uKTQOUHymn4LaG7oTSIC:22 a=1CNFftbPRP8L7MoqJWF3:22
+ a=Vxmtnl_E_bksehYqCbjh:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_011327_678578_459FD363 
-X-CRM114-Status: GOOD (  10.24  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200307_012545_087569_9126B807 
+X-CRM114-Status: GOOD (  19.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [109.247.116.15 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,114 +73,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Li Yang <leoyang.li@nxp.com>,
- Michael Walle <michael@walle.cc>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Thomas Zimmermann <tzimmermann@suse.de>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Philippe Cornu <philippe.cornu@st.com>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ Yannick Fertre <yannick.fertre@st.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Daniel Vetter <daniel.vetter@intel.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The LS1028A has six LPUART controllers. Add the nodes.
+On Mon, Mar 02, 2020 at 11:26:18PM +0100, Daniel Vetter wrote:
+> It's right above the drm_dev_put().
+> 
+> This is made possible by a preceeding patch which added a drmm_
+> cleanup action to drm_mode_config_init(), hence all we need to do to
+> ensure that drm_mode_config_cleanup() is run on final drm_device
+> cleanup is check the new error code for _init().
+> 
+> Aside: Another driver with a bit much devm_kzalloc, which should
+> probably use drmm_kzalloc instead ...
+> 
+> v2: Explain why this cleanup is possible (Laurent).
+> 
+> v3: Use drmm_mode_config_init() for more clarity (Sam, Thomas)
+> 
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Thomas Zimmermann <tzimmermann@suse.de>
+> Acked-by: Philippe Cornu <philippe.cornu@st.com>
+> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+> Cc: Yannick Fertre <yannick.fertre@st.com>
+> Cc: Philippe Cornu <philippe.cornu@st.com>
+> Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+> Cc: Vincent Abriou <vincent.abriou@st.com>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> Cc: linux-arm-kernel@lists.infradead.org
 
-This was tested on a custom board.
+Acked-by: Sam Ravnborg <sam@ravnborg.org>
 
-Signed-off-by: Michael Walle <michael@walle.cc>
----
-changes since v1:
- - none
-
- .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 73 +++++++++++++++++++
- 1 file changed, 73 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 41c9633293fb..b152fa90cf5c 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -372,6 +372,79 @@
- 			status = "disabled";
- 		};
- 
-+
-+		lpuart0: serial@2260000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2260000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 32>,
-+			       <&edma0 1 33>;
-+			status = "disabled";
-+		};
-+
-+		lpuart1: serial@2270000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2270000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 30>,
-+			       <&edma0 1 31>;
-+			status = "disabled";
-+		};
-+
-+		lpuart2: serial@2280000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2280000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 28>,
-+			       <&edma0 1 29>;
-+			status = "disabled";
-+		};
-+
-+		lpuart3: serial@2290000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x2290000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 26>,
-+			       <&edma0 1 27>;
-+			status = "disabled";
-+		};
-+
-+		lpuart4: serial@22a0000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x22a0000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 24>,
-+			       <&edma0 1 25>;
-+			status = "disabled";
-+		};
-+
-+		lpuart5: serial@22b0000 {
-+			compatible = "fsl,ls1028a-lpuart";
-+			reg = <0x0 0x22b0000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 1>;
-+			clock-names = "ipg";
-+			dma-names = "rx","tx";
-+			dmas = <&edma0 1 22>,
-+			       <&edma0 1 23>;
-+			status = "disabled";
-+		};
-+
- 		edma0: dma-controller@22c0000 {
- 			#dma-cells = <2>;
- 			compatible = "fsl,ls1028a-edma";
--- 
-2.20.1
-
+> ---
+>  drivers/gpu/drm/stm/drv.c | 10 ++++------
+>  1 file changed, 4 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
+> index ea9fcbdc68b3..0f85dd86cafa 100644
+> --- a/drivers/gpu/drm/stm/drv.c
+> +++ b/drivers/gpu/drm/stm/drv.c
+> @@ -88,7 +88,9 @@ static int drv_load(struct drm_device *ddev)
+>  
+>  	ddev->dev_private = (void *)ldev;
+>  
+> -	drm_mode_config_init(ddev);
+> +	ret = drmm_mode_config_init(ddev);
+> +	if (ret)
+> +		return ret;
+>  
+>  	/*
+>  	 * set max width and height as default value.
+> @@ -103,7 +105,7 @@ static int drv_load(struct drm_device *ddev)
+>  
+>  	ret = ltdc_load(ddev);
+>  	if (ret)
+> -		goto err;
+> +		return ret;
+>  
+>  	drm_mode_config_reset(ddev);
+>  	drm_kms_helper_poll_init(ddev);
+> @@ -111,9 +113,6 @@ static int drv_load(struct drm_device *ddev)
+>  	platform_set_drvdata(pdev, ddev);
+>  
+>  	return 0;
+> -err:
+> -	drm_mode_config_cleanup(ddev);
+> -	return ret;
+>  }
+>  
+>  static void drv_unload(struct drm_device *ddev)
+> @@ -122,7 +121,6 @@ static void drv_unload(struct drm_device *ddev)
+>  
+>  	drm_kms_helper_poll_fini(ddev);
+>  	ltdc_unload(ddev);
+> -	drm_mode_config_cleanup(ddev);
+>  }
+>  
+>  static __maybe_unused int drv_suspend(struct device *dev)
+> -- 
+> 2.24.1
+> 
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
 _______________________________________________
 linux-arm-kernel mailing list
