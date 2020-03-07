@@ -2,65 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5450C17CAF4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 03:31:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A010A17CB60
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 03:58:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=OONl2/IDNVXf0iJ9tqDZA6RdqKHIEKy/XWezlMdIpqY=; b=JeRbUuxWQ17hww9oo8z801hkPi
-	YuXD623k53UmDDhzGX3e/r1O/y4KvP6/J4NzzfTiZ1KNYOyjNx8l7a9kn+o87Vrd9I7HnXcmUSJg0
-	6ODWP5pA/BAGB8VINAU7slvtMWqTfbiJXh0h5Q7hARPb+wsB9BU+DqQ/noO/KWsPri3lxFv/BlKtZ
-	idpxF8Oy8YAC8PE8L+/1SBuNDbQk+PFtgUgxZAZHtP5ip3lPxARwwsvC8+VimCkdFIXlUdKjT064a
-	nsPH2Sv78CQ5kv4M8SzwKJvdaj8bgUEEc8GJSAZmsbhwIAZYuYk+q2mm1W33WxMv7Mr1eFFatwiGj
-	5ZwATumA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5TDdEuK01PcMSsChjjbaEvJStPpzl53UXqRBNRJO+DM=; b=uMWflD2yiesOS4
+	JqJDSWPomhiAIlF8n/1IzqXKDFp+Avp0jZ0VuzBKsfIbLtWSDieJZrthftgsAst6OnjRIi5GljvfQ
+	vDnD2z3R5RqeeMlE8Aq6MEXkSlDHJ4D2AiZAxWbjCtA1Se9An92M4jGfxcBVtrwaw5tnrVrnO2lr4
+	9ilfVN9eoR5UIN0rk2reH5IsS/m84KzgezfN2BGCyE9i0pEMzzY3SE+yVmV7frl+DYk+VsLL8hLXg
+	ExCJp4bJHYEUGyZd7vbp0WGvUt64tAqmNXlf7q0PUnyLPFL04sskfhrZxNr921h/AICWxSVeQ3+re
+	t7oCKPUjIl690DztShGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAPF8-0006f0-En; Sat, 07 Mar 2020 02:31:10 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jAPfH-0000vD-Go; Sat, 07 Mar 2020 02:58:11 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAPDL-00044i-Ru
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 02:29:21 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 411551A19A4;
- Sat,  7 Mar 2020 03:29:15 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F06021A19A6;
- Sat,  7 Mar 2020 03:28:29 +0100 (CET)
-Received: from titan.ap.freescale.net (titan.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4CF41402E5;
- Sat,  7 Mar 2020 10:28:18 +0800 (SGT)
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: Zhiqiang.Hou@nxp.com, Minghuan.Lian@nxp.com, mingkai.hu@nxp.com,
- bhelgaas@google.com, robh+dt@kernel.org, shawnguo@kernel.org,
- leoyang.li@nxp.com, kishon@ti.com, lorenzo.pieralisi@arm.com,
- roy.zang@nxp.com, amurray@thegoodpenguin.co.uk, jingoohan1@gmail.com,
- gustavo.pimentel@synopsys.com, linux-pci@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH v5 11/11] misc: pci_endpoint_test: Add LS1088a in
- pci_device_id table
-Date: Sat,  7 Mar 2020 10:14:30 +0800
-Message-Id: <20200307021430.36826-12-xiaowei.bao@nxp.com>
-X-Mailer: git-send-email 2.9.5
-In-Reply-To: <20200307021430.36826-1-xiaowei.bao@nxp.com>
-References: <20200307021430.36826-1-xiaowei.bao@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_182920_046781_70A999B1 
-X-CRM114-Status: UNSURE (   6.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ id 1jAPfD-0000v5-L1
+ for linux-arm-kernel@bombadil.infradead.org; Sat, 07 Mar 2020 02:58:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=oNocI03EYs1Z+pGvwVoMrM4xrMbRGicYCCbHzVDgI7M=; b=0nNKKNRhhM2jfNWckowCqdVcCK
+ N++fCSv1ixpFrfyUQXythe7twzL8WVzusDxseU53ZvduFun2oolGUOwUXlNO4R5HVPWf1J/ErTd7z
+ ob6gfmlTDQFdQULfbQkh/7ryGSJw6fZhcl38PZBjZXhDsxliXV+fp5km/Ql97syTWHllmVKil6UcE
+ rPH+ZpF6FZxD4NfavrwOLAhYd55V2Eh+OEaXlV5b237D8gpcIBXs1zoNwu425M8mNGpSWzwvOC33C
+ lvc4SLyazUGatLZcLStoazfBjvADNEw+Q5xn6KfZh4t6bcpia/KWyNd0A0CAqowKnv5DeCNxjQrwQ
+ WRX/5K0A==;
+Received: from relay12.mail.gandi.net ([217.70.178.232])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jAPf9-0007YL-I2
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 02:58:04 +0000
+Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
+ [86.202.105.35])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id E1D1F200002;
+ Sat,  7 Mar 2020 02:57:20 +0000 (UTC)
+Date: Sat, 7 Mar 2020 03:57:20 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Message-ID: <20200307025720.GA52231@piout.net>
+References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
+ <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
+ <20200306193310.GI217608@dtor-ws>
+ <CAKdAkRRhXE6Hviqx90_5hWmP7YQnKO2QLJgDYnzt_CPjeH7D0A@mail.gmail.com>
+ <20200306211538.GA8060@piout.net>
+ <DB3PR0402MB39164192146D17327A45DA6CF5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <DB3PR0402MB39164192146D17327A45DA6CF5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,54 +78,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>
-MIME-Version: 1.0
+Cc: Marco Felsch <m.felsch@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>,
+ Ronald =?iso-8859-1?Q?Tschal=E4r?= <ronald@innovation.ch>,
+ Guenter Roeck <linux@roeck-us.net>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ lkml <linux-kernel@vger.kernel.org>, Oleksij Rempel <linux@rempel-privat.de>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add LS1088a in pci_device_id table so that pci-epf-test can be used
-for testing PCIe EP in LS1088a.
+On 07/03/2020 01:36:39+0000, Anson Huang wrote:
+> Hi, Alexandre
+> 
+> > Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+> > KEYBOARD_IMX_SC_KEY
+> > 
+> > On 06/03/2020 12:05:42-0800, Dmitry Torokhov wrote:
+> > > On Fri, Mar 6, 2020 at 11:33 AM Dmitry Torokhov
+> > > <dmitry.torokhov@gmail.com> wrote:
+> > > >
+> > > > On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
+> > > > > Add COMPILE_TEST support to i.MX SC keyboard driver for better
+> > > > > compile testing coverage.
+> > > > >
+> > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > >
+> > > > Applied, thank you.
+> > >
+> > > Actually, not:
+> > >
+> > > ERROR: "imx_scu_irq_register_notifier"
+> > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> > > ERROR: "imx_scu_get_handle" [drivers/input/keyboard/imx_sc_key.ko]
+> > undefined!
+> > > ERROR: "imx_scu_call_rpc" [drivers/input/keyboard/imx_sc_key.ko]
+> > undefined!
+> > > ERROR: "imx_scu_irq_unregister_notifier"
+> > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> > > ERROR: "imx_scu_irq_group_enable"
+> > > [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> > > make[1]: *** [scripts/Makefile.modpost:94: __modpost] Error 1
+> > > make: *** [Makefile:1282: modules] Error 2
+> > >
+> > > If you want to enable compile test coverage you need to provide stubs
+> > > for the above functions.
+> > >
+> > 
+> > or select IMX_SCU
+> > 
+> > or leave out COMPILE_TEST from the individual drivers as having
+> > COMPILE_TEST for IMX_SCU is enough to be able to select the drivers.
+> 
+> Thanks, I already added the COMPILE_TEST for IMX_SCU which is in this same patch series,
+> without that IMX_SCU COMPILE_TEST patch, the build will failed, so in V2, I also added
+> the stubs into those IMX SCU APIs to make sure even IMX_SCU is NOT enabled, modules
+> with COMPILE_TEST can still pass build, please help review V2 patch set.
+> 
 
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
----
-v2:
- - No change.
-v3:
- - No change.
-v4:
- - Use a maco to define the LS1088a device ID.
-v5:
- - No change.
- 
- drivers/misc/pci_endpoint_test.c | 2 ++
- 1 file changed, 2 insertions(+)
+My point is that there is no need for the stubs. Simply have
+COMPILE_TEST for IMX_SCU as this is enough to extend coverage to all the
+drivers and significantly reduces the code size versus what you did in
+v2.
 
-diff --git a/drivers/misc/pci_endpoint_test.c b/drivers/misc/pci_endpoint_test.c
-index a5e3170..72d694f 100644
---- a/drivers/misc/pci_endpoint_test.c
-+++ b/drivers/misc/pci_endpoint_test.c
-@@ -65,6 +65,7 @@
- #define PCI_ENDPOINT_TEST_IRQ_NUMBER		0x28
- 
- #define PCI_DEVICE_ID_TI_AM654			0xb00c
-+#define PCI_DEVICE_ID_LS1088A			0x80c0
- 
- #define is_am654_pci_dev(pdev)		\
- 		((pdev)->device == PCI_DEVICE_ID_TI_AM654)
-@@ -793,6 +794,7 @@ static const struct pci_device_id pci_endpoint_test_tbl[] = {
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA74x) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_DRA72x) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, 0x81c0) },
-+	{ PCI_DEVICE(PCI_VENDOR_ID_FREESCALE, PCI_DEVICE_ID_LS1088A) },
- 	{ PCI_DEVICE_DATA(SYNOPSYS, EDDA, NULL) },
- 	{ PCI_DEVICE(PCI_VENDOR_ID_TI, PCI_DEVICE_ID_TI_AM654),
- 	  .driver_data = (kernel_ulong_t)&am654_data
+
 -- 
-2.9.5
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
