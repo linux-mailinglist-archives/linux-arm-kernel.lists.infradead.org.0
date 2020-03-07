@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4958F17CC45
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 06:33:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D02617CC46
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 06:33:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
 	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Z5x8jWeK3UTK22ir9erD4uC8AyJ5a3csiGr/Xl0r2TI=; b=PQtl7Ll9Ck2vxI
-	30DFqNVPtMhpxxyS6CIvDsFwU4b3Jx5PD9wRMiy+1zb5l1VsCFA7/ahjot4HPZ8M/AcotplNwby+g
-	LiaugupwW5FKqfx1NNuoa6LCTnpiPQppQg6JReAaH7qt5DZIEu0/C6RHUTckbvTqwRxdAXxskNHr/
-	eoJRIfmwNP4wOfmJP/0t+HFWsSIQc37nGL1rAr7offGPiM31N8gTGNFI3/CtgJt65gUuLY+Yyb7Fx
-	px4UahwRsuVUhJ3T4kvU9M8FAUZ/rNxKnbtP2oRQcmbOu0quHoAI3kz3Sil+lUv21p7hbdy61w2A9
-	JTtUcbEt1DU7qA2/W+DQ==;
+	List-Owner; bh=Kb2nyimd/4q8vAd+5X2rUmHjqx3bY6CeYGwh/tqP6+0=; b=LAe1F7887fwupe
+	uI940MjXCJERx9bmw1BETfenhD/vle0b7mU8XYOWZKvHcpm/bA7XMr9xen7UZG5YZrbRU+pfkwTak
+	O40VZBIWKNfa0m/790oWAx+mDFUmwOKi4GRaXq7T9IUpaKU+BrTk9q+/80N7P43MZ9AvrheLPE7Hv
+	hYNm6OUqpUCiJ1vebSZ3wK5oNaDSQSqg7uKDEMJI85+ZxTzOHytnU6cOoqsmI3IKhKEzGTWaBIxzP
+	TB1Rm9T3ObQuRqfAekElnG13vRVs674q3ZebT2/POEQAZ5BScF9xA4KRXttkvhN7OVZgS0hj37OeW
+	OGiu42fVLROcwFH26NZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAS4v-0005Rk-Si; Sat, 07 Mar 2020 05:32:49 +0000
-Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
+	id 1jAS5F-0005cq-JV; Sat, 07 Mar 2020 05:33:09 +0000
+Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAS4o-0005RJ-QO
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 05:32:44 +0000
-Received: by mail-pg1-x531.google.com with SMTP id m5so2093014pgg.0
+ id 1jAS4y-0005aD-S8
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 05:32:54 +0000
+Received: by mail-pj1-x1032.google.com with SMTP id a16so1998251pju.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 21:32:41 -0800 (PST)
+ Fri, 06 Mar 2020 21:32:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=kernelci-org.20150623.gappssmtp.com; s=20150623;
  h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=Ff21IMG0e67ga06dtAjAVgoII53A/IDb8xQQ+MvdO7M=;
- b=r8BgYoUX5ajR9PjoDX0n+jQ1tOYRxLEJeIl7Ehru8AduTB/oweuSfsNsM49ipiCbJB
- Ij6i/o3OsVbKaTPuB+axy6tGJyHDcAwOy2R2cRe9dwZpmcAxzmcFxlpwA+zHMJegDwcQ
- cfT0TBr0LGtob+Sd8+G7c4UXbkm96/i8uRHnU1CIM3rbwHttIh6f3/QT0GnLI6PmAOac
- f1iqLWVJDPGg9GgJ4xE1nRj9ebDxyVqmfJfTTchPCeN5fqiy7plgRVwHa3hJDSmW2AyB
- tTYv+/dnhP2JsopLspD04t6ushDZCA2kU+lWDJSVikGCm4vci6ilUc8xw87Nki18L9Jw
- +J+g==
+ :from; bh=of0SHcTFyAKMv3ItJw2eJkNdgd536KEeQ6xfFrkGouo=;
+ b=r772NbmbHH1LIgitQyBPUBKObRMtJ3W4o9XkbdyuaiNmgx9BFX/6q1YuqNHUDC2/uB
+ DJOnzr6avNPeo40XE4uX+LUDl79axbACLidBMMSjL0jN0yFx5PompYDfqrKy+j+VnYql
+ 0Y/p2MN29bVbm1CccL77CoRGCuWgrjKMM73sL8vV5KZSXxYO4G2MYBENVKe5i/fbckqf
+ 0mH/HcdMvwv1hfPBMZh3oqkNY62t9FHmKyC/PQIJXi6hN4AvVW2/8AgVxE07rCD2jwfs
+ Utm5uHLHqQZxzg3HPApdHOIa7xcghq2rbHxc3t7oNfMcAP5WJps77qdQb+eo5WE8hssY
+ oACQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:date:mime-version
  :content-transfer-encoding:subject:to:from;
- bh=Ff21IMG0e67ga06dtAjAVgoII53A/IDb8xQQ+MvdO7M=;
- b=UjGAsoA/9udjsRmdDhcE2lCUO8syv8neibNlUSr0XM0Y5QLplTJvYwhsTG+5cm2UbV
- FjioABVBCyrysgIGyZAiXiVIRFmqhz5nSzoPNaavnc7+YSGOQFVuDknAFDIsCQ3z0Zlj
- sbS6sMMs6Yr03Mkmsrhq592own/EINOH+Ipz/uK8LWCfDoZE4DXqLoCS+9V2j3fZHDAi
- JW1iCUX8HGRU4CZdpsVlDVIfcJUHVxPSP1rE4qLArn8gaTztd7EjpmyItk9xV67S9Vrz
- +wAZuvBEc7uiP3Aw8lR/8Vn/ITp4eIoHE1XMvHysQzl7Fda2lDGnHM6kV3v6aJvpUKjI
- VQqQ==
-X-Gm-Message-State: ANhLgQ091s2zaMDTkxsxpHfRw6A1Ndd840fiaLl/cpLrGzIxlDhTLn8z
- XFxYkKBZN3dgQBRDGvCFYYq7hQ==
-X-Google-Smtp-Source: ADFU+vtfTPLbYhXr4SU7vzXppUrSNQEKaaMqbXdKQXfaavLmxxctVoWrfc5Cg8ahmvFo4IswwZeS8w==
-X-Received: by 2002:a63:a35c:: with SMTP id v28mr6812763pgn.251.1583559161104; 
- Fri, 06 Mar 2020 21:32:41 -0800 (PST)
+ bh=of0SHcTFyAKMv3ItJw2eJkNdgd536KEeQ6xfFrkGouo=;
+ b=jnj6pLRMlwJUhB0W44qj8H8uHg6+kYEcuK/hwRNDE8FBCsWytDxqDwkk6QOol77T2V
+ nx1weqVxG19YX2g8v7c7TTmS4q7Iq4KWMRe5L4T/GC9PHhwgD79TWPa3CeTWmZEqzu92
+ kCiQIpgninNGcGrTU4mrX0mTaBM2Yu9YacNOQolAN1WPRwBMLuZt42kV6CoKUBCIQwnu
+ M8bFw7owiPrrd3/aFUZdCQZEPJ8J0hnCi4B/H/CN0sLIi8hCKntc8Lp1H17759KqeCWs
+ zL+hfp08OoEPrBsn94PB49zTTuCM2WCgeCfqrcHhm8b78hhT+RxREbFWylm5nmQE1uAo
+ nk5A==
+X-Gm-Message-State: ANhLgQ1eCOjQHnP8nxdB5nTMfENqNuyLcizV+g5vuX3DpV4m2T2hf+sE
+ L2qZMs73+e4Z5rlCjarEMGi3fc78NYE=
+X-Google-Smtp-Source: ADFU+vtNqc2OZbP/tPcMPH4u+oakwUdnwzEVqYh1IE4CtBsOR8hm76vhZfKdJ819Q0HJAq6pP+5ICw==
+X-Received: by 2002:a17:902:b692:: with SMTP id
+ c18mr6415301pls.7.1583559171987; 
+ Fri, 06 Mar 2020 21:32:51 -0800 (PST)
 Received: from [10.0.9.4] ([52.250.1.28])
- by smtp.gmail.com with ESMTPSA id c15sm11671547pja.30.2020.03.06.21.32.39
+ by smtp.gmail.com with ESMTPSA id w195sm35248595pfd.65.2020.03.06.21.32.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Mar 2020 21:32:40 -0800 (PST)
-Message-ID: <5e6331f8.1c69fb81.661c0.f3d4@mx.google.com>
-Date: Fri, 06 Mar 2020 21:32:40 -0800 (PST)
+ Fri, 06 Mar 2020 21:32:50 -0800 (PST)
+Message-ID: <5e633202.1c69fb81.24a49.d65e@mx.google.com>
+Date: Fri, 06 Mar 2020 21:32:50 -0800 (PST)
 MIME-Version: 1.0
 X-Kernelci-Branch: for-kernelci
 X-Kernelci-Tree: arm64
 X-Kernelci-Kernel: v5.6-rc4-20-g215ae3ad8d91
-X-Kernelci-Report-Type: boot
-Subject: arm64/for-kernelci boot: 21 boots: 0 failed,
- 21 passed (v5.6-rc4-20-g215ae3ad8d91)
+X-Kernelci-Report-Type: test
+Subject: arm64/for-kernelci baseline: 21 runs,
+ 0 regressions (v5.6-rc4-20-g215ae3ad8d91)
 To: will@kernel.org, catalin.marinas@arm.com,
  linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
 From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_213242_863969_0A58372E 
-X-CRM114-Status: UNSURE (   3.05  )
+X-CRM114-CacheID: sfid-20200306_213252_934294_DA025A51 
+X-CRM114-Status: UNSURE (   4.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -78,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:531 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1032 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,20 +102,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-arm64/for-kernelci boot: 21 boots: 0 failed, 21 passed (v5.6-rc4-20-g215ae3ad8d91)
+arm64/for-kernelci baseline: 21 runs, 0 regressions (v5.6-rc4-20-g215ae3ad8d91)
 
-Full Boot Summary: https://kernelci.org/boot/all/job/arm64/branch/for-kernelci/kernel/v5.6-rc4-20-g215ae3ad8d91/
-Full Build Summary: https://kernelci.org/build/arm64/branch/for-kernelci/kernel/v5.6-rc4-20-g215ae3ad8d91/
+Test results summary
+--------------------
 
-Tree: arm64
-Branch: for-kernelci
-Git Describe: v5.6-rc4-20-g215ae3ad8d91
-Git Commit: 215ae3ad8d91782b7e88e07c246a1501a724e164
-Git URL: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-Tested: 21 unique boards, 6 SoC families, 1 build out of 3
+run | platform                     | arch  | lab                   | compiler | defconfig | results
+----+------------------------------+-------+-----------------------+----------+-----------+--------
+1   | bcm2711-rpi-4-b              | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+2   | bcm2837-rpi-3-b              | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+3   | imx8mn-ddr4-evk              | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+4   | meson-g12a-sei510            | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+5   | meson-g12a-u200              | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+6   | meson-g12a-x96-max           | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+7   | meson-g12b-a311d-khadas-vim3 | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+8   | meson-g12b-odroid-n2         | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+9   | meson-gxl-s805x-p241         | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+10  | meson-gxl-s905d-p230         | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+11  | meson-gxl-s905x-khadas-vim   | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+12  | meson-gxl-s905x-libretech-cc | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+13  | meson-gxm-khadas-vim2        | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+14  | meson-gxm-q200               | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+15  | meson-sm1-khadas-vim3l       | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+16  | meson-sm1-sei610             | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+17  | qemu_arm64-virt-gicv2        | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+18  | qemu_arm64-virt-gicv3        | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+19  | rk3399-puma-haikou           | arm64 | lab-theobroma-systems | gcc-8    | defconfig | 5/5    
+20  | sun50i-a64-pine64-plus       | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
+21  | sun50i-h5-lib...ch-all-h3-cc | arm64 | lab-baylibre          | gcc-8    | defconfig | 5/5    
 
----
-For more info write to <info@kernelci.org>
+
+  Test:     baseline
+  Tree:     arm64
+  Branch:   for-kernelci
+  Describe: v5.6-rc4-20-g215ae3ad8d91
+  URL:      git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+  SHA:      215ae3ad8d91782b7e88e07c246a1501a724e164 
 
 _______________________________________________
 linux-arm-kernel mailing list
