@@ -2,79 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5007F17C982
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 01:14:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 982F617C99C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 01:19:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xpdP4+1rrD4kk1uS+8qKCIUgL4b2OjhZoAMPHOReEts=; b=VYt
-	CbIZDUhQilqt45ScTfJjHmzL+y1cxOiEY8TnZCqpd74oxKRGPM6UADtyoME584z2ftxN7vWtnmbPt
-	ALmlb2940Ahdcy+v6xorbgORPCj2AqOuwG16u1UWfHyolsXwe1O223LmuNRd68scjg6FXWmgTWWHi
-	ZzDmgj6IQnzS3PGvCal45h128elVc3t9KwqxZ3mn9ocXIBYWEDdQ5GwcnJVWajyM658WEdOHZqR5n
-	9DgT/LPtDu60zgSwp2MfFcCSPPapOTUBqlh73JYBUjLOmmLZ/N361qHMXS6Ypqeh1Mr2z3EEt2G4G
-	ARua/oCDax0C4m6wACn4aP6AU7Zw8QQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8xaK3QaBSgzLjgB6IzWs9i6Hy+O9T2n+6FR1L3xWG+E=; b=H/bAmIw0uOR8kh
+	q0hAFOtQlbVQUk9hyh2G6/ESIh3fASSeuAAg+ith85Rwa6WcT3qVLS6w3Ztwa45Aye49aIRQrzlht
+	i2mCm3fml4tTl4iPHVjuQf281nSvbHUjxV7Ih5B+S5xDq+FYbuPRo9Vf9BBrX0K/j8A0vXLDOSLNk
+	ON64afr8ODT2AkATbC/ao3mlUneuTtGptY3XhV5y6AG4oxn1WZYgo7gial8cYfldAxCIFWrvTLKKD
+	E2mS8xNAExLIPxTFAYT9ZakDxw15OH/C1NzlR3tnkfF9WYv02abN2/2DtSCxPZn5Zy0Xt1OtC6+lt
+	6I6rDUSfaEVq2purArVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAN6d-0004fA-Sp; Sat, 07 Mar 2020 00:14:15 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jANB8-0006pB-Iw; Sat, 07 Mar 2020 00:18:54 +0000
+Received: from mail-eopbgr80051.outbound.protection.outlook.com ([40.107.8.51]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAN6W-0004eM-S4
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 00:14:10 +0000
-Received: by mail-pf1-x441.google.com with SMTP id f5so1876850pfk.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Mar 2020 16:14:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=hDYVA9f/L/3nXUZdsuoFqZfc8mAyfA73aRbFdpVcGqc=;
- b=XB0ph0r+2HgvDAqyqb2/Cr6wxaivqkVjhN/an0c4Z18SEDlj3j+4OZbRp++gaoiWE1
- CHoKLbUWDokwbzHNDpAof3rST5/dNaCwTPUN1RHGDgYwfQDDqnv7ckUHmxjMHYPTQIuU
- VTJFP+ADKPDezmK3OZMypVinGO0XVPrEDwQsj2Gtxs7L678WJsknfqVF80FdMom3svQ0
- e2ehbodObuJMWROKY+bLKrttZou1tX2nFH6Hn+NJZpoiH+xqlnnly2BANkp6O0HLcAyn
- zZciGMmvs2lBzbUW1e6FiSNmMoPmOwKfc91+XwVAm8c1cDjWAijCNWF+90lQW9mnPKoI
- +8uw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hDYVA9f/L/3nXUZdsuoFqZfc8mAyfA73aRbFdpVcGqc=;
- b=Z/d8uUKbzLONNrF9apukBKSx/txbnWoUO63sUPRZ+ZAWLFtuBNAnlfqpGQChcYIcxk
- ZyE4ZHD8y/kEzgdVsT35dQUnWPXAGVNQh5Slh2DS7OTu2sdixXNvTueZ/irIJoIjwPMb
- NrPF2eZ/zV08FhxTml+JdOMFrikn1Do53gVM03EBTMfXTP7bKRm/si2jyWUCFRBBZADh
- rIH5wFvBjqtWppQJIWYljUGD98+X6dWwQKSCu9iTrBIgsdIer8iMUWUi51OQKY4JUGF1
- EdpJ2s++ITqGsOZb4fabsk+XIyI0la9wi2pu+hMRAgEz2DNGX7KH8xlRr7yv+pYUbzsa
- 3JEw==
-X-Gm-Message-State: ANhLgQ1yjqfv6orkbyI6hvYrb/p0k0BFKgrjO0eTyEXQWEb0LvYZD9gk
- 0lVRKaQCou4Pd2ZOw/588zk=
-X-Google-Smtp-Source: ADFU+vu081bHBamqDSIur/Av+nz1dI+BeMe/H/ym0Ex6y1uepe0Hnbawqf3vUFGAn/2q6whw0bk7tQ==
-X-Received: by 2002:a62:17c8:: with SMTP id 191mr6287295pfx.105.1583540046576; 
- Fri, 06 Mar 2020 16:14:06 -0800 (PST)
-Received: from stbirv-lnx-3.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id h65sm14568846pfg.12.2020.03.06.16.14.05
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Fri, 06 Mar 2020 16:14:06 -0800 (PST)
-From: Doug Berger <opendmb@gmail.com>
-To: Gregory Fong <gregory.0xf0@gmail.com>
-Subject: [PATCH] gpio: brcmstb: support gpio-line-names property
-Date: Fri,  6 Mar 2020 16:13:06 -0800
-Message-Id: <1583539986-573-1-git-send-email-opendmb@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jANAz-0006lB-Oz
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Mar 2020 00:18:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=mEcOXu3fzYIA0yIoQ+V7kqWGrkUkAvU3OMqQKKQanU/vv5WAsLVqHQ+YRUOcRI4zqMNtA59HH3etpbQefSlybjNFOj9sCEjeUUg35Fv+NyBS68lfdW3U2ideyWeG4P0YqvBvkbNxJeGwUs+2IIa/buIfRR2ZsUhkPc4ubBtL3pXw2VeOO2Dgu0vyu0mCKHDqsY0LySuR7y+2X8zonMOT1uIcYuF/CExj3PjAmBhX4umIHUb/mflI3K56MI/cz5Quba+9mz0ALYGJhaRk2mVGmh5GTNcaZlj6w7qsHDIePl47kk5HPsoB/nb/viG7e0eIAHyG2vS84YSzoeoM+yeTbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Uf9mR5PdB0GN4wMHEMbzXtq/OqaYUAcb6mIj9y+EvyM=;
+ b=ZwmzBkOyUXBJBH+etCKNjSz1WI9dFVvCAvEBk5AIEIkrAK0XxWfJwR3bcjkfsSTCU5NsnFPK3KemB9rbXszmzb4zMQ9MTmrRS1E1lY5s5EsGr0B2c3GEy2CnDJrII9t044Qqcff66vuZecSoZJbCxCKMfpl1tzrscjbx6pVimRy7r3ILYmrC8W2Q+7O9ef0OOt6dU8vZB/gX/7eSmtzUzxgnT+4DqNSvrDkEuBhcsL6h64YB2ZlpMffXxrDWDbu8yHzpKItDUEXSys7aIOcjxB3tW7u8rLX3iZE1CE2AON/UviddCY6+YvJI4Azvfzr1tcYALU0Lbg+PvhHFraYBjA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Uf9mR5PdB0GN4wMHEMbzXtq/OqaYUAcb6mIj9y+EvyM=;
+ b=qWC7iIR1cf/7ExNUtGxAZ0xAmwams6ozb8+aFzySwL97HlOUtrNXa2QmSsaumiETt5Mv5noO8PtLGo3VWUgMq/IeO3kWAsa9H0GQYH1rRc4TNYtdfF67EHyWRMmViSr18WDr8iRIwdy8FObweaqSBnTScEK8Z7XCuSgjGRxpHos=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3818.eurprd04.prod.outlook.com (52.134.71.29) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2772.18; Sat, 7 Mar 2020 00:18:39 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2772.019; Sat, 7 Mar 2020
+ 00:18:39 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+Subject: RE: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Thread-Topic: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Thread-Index: AQHV887MNanm8ugiD0KiUbBo9lnYDag79IUAgAAJFwCAAEHEgA==
+Date: Sat, 7 Mar 2020 00:18:38 +0000
+Message-ID: <DB3PR0402MB3916EA7BAACBBE64F2609DB6F5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1583509356-8265-1-git-send-email-Anson.Huang@nxp.com>
+ <1583509356-8265-3-git-send-email-Anson.Huang@nxp.com>
+ <20200306193310.GI217608@dtor-ws>
+ <CAKdAkRRhXE6Hviqx90_5hWmP7YQnKO2QLJgDYnzt_CPjeH7D0A@mail.gmail.com>
+In-Reply-To: <CAKdAkRRhXE6Hviqx90_5hWmP7YQnKO2QLJgDYnzt_CPjeH7D0A@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 51e1c290-77a6-40e8-695d-08d7c22d15cf
+x-ms-traffictypediagnostic: DB3PR0402MB3818:|DB3PR0402MB3818:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB38180894FE9FFB08CA126914F5E00@DB3PR0402MB3818.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2449;
+x-forefront-prvs: 03355EE97E
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(136003)(346002)(376002)(39860400002)(199004)(189003)(71200400001)(33656002)(66946007)(6916009)(44832011)(52536014)(7416002)(2906002)(64756008)(66476007)(86362001)(66556008)(26005)(316002)(66446008)(4326008)(81156014)(81166006)(186003)(8676002)(5660300002)(54906003)(7696005)(55016002)(53546011)(478600001)(6506007)(9686003)(8936002)(76116006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3818;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: MGw99w86PNgBMGKP/RgnaO4f5u1JAq5PLFHmypOyPqBXp0SUcN0n4481mjALOpXwMDFnaEqfqlv/kP4q2AMUOQaDrWTT06QUciNOCgSNnm9IfJGUY4QaTKdU9Wcq+JSuOkYwCAWb1DJ557Lm3Q6Mk0HI14kN7A7/tMJMJfxkdp+dOoskXYmTau29L8qg2f2DXSli4eONlLdSrl3yh8NqHV6c07AYwedOC6/RynS8DCjdQdscq1preteHKHW8dKjm2ZlFA396XeOPJZ/0D/scuxHYMwDt6E6EKx28lmNbm5eVAeM2DPJgCSGZM+2Jc2XoBTtVHI/1YPXbWiHqrdbG/6LeJQD/nJH2Eda7I4x2DlOF6/9lv1QJZ7UVgvRHnvJQ58HWXAMR9cgM1iCpzTatnO/yHDVXDiPYVLUiae9t5kT6rrI9HQEh8jyYDjnxhHsD
+x-ms-exchange-antispam-messagedata: 4zZHg2zNODRJrryfGOQ+r4vwtVyZFkDatkndTMe+NkFLt5jlZMBFJ8mOR/Wumqqcpzw+ZN0B99vAXyJ+o2LdxzMq5RK4QNrd/kwvlXOILpluFoms4MtQb2NufDLfVhyW1vw9Pu35dc8V6LvEOKKeVQ==
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 51e1c290-77a6-40e8-695d-08d7c22d15cf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Mar 2020 00:18:38.9916 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jsHwqEr6oKNXNBzZsE23Ram/kLBAq9Am0wTksjFivWnNDGLaTKZf+qH5l/YE4ORLFB0uH3+WWd39SIyhXad4hQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3818
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_161408_908713_587381C9 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20200306_161845_911120_474A82F9 
+X-CRM114-Status: GOOD (  13.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.8.51 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [opendmb[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,96 +125,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, linux-gpio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Doug Berger <opendmb@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Marco Felsch <m.felsch@pengutronix.de>, Fabio Estevam <festevam@gmail.com>,
+ "linux-rtc@vger.kernel.org" <linux-rtc@vger.kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>,
+ =?utf-8?B?Um9uYWxkIFRzY2hhbMOkcg==?= <ronald@innovation.ch>,
+ Guenter Roeck <linux@roeck-us.net>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Linux PM <linux-pm@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ lkml <linux-kernel@vger.kernel.org>, Oleksij Rempel <linux@rempel-privat.de>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The default handling of the gpio-line-names property by the
-gpiolib-of implementation does not work with the multiple
-gpiochip banks per device structure used by the gpio-brcmstb
-driver.
+Hi, Dmitry
 
-This commit adds driver level support for the device tree
-property so that GPIO lines can be assigned friendly names.
+> Subject: Re: [PATCH 3/5] input: keyboard: add COMPILE_TEST support for
+> KEYBOARD_IMX_SC_KEY
+> 
+> On Fri, Mar 6, 2020 at 11:33 AM Dmitry Torokhov
+> <dmitry.torokhov@gmail.com> wrote:
+> >
+> > On Fri, Mar 06, 2020 at 11:42:34PM +0800, Anson Huang wrote:
+> > > Add COMPILE_TEST support to i.MX SC keyboard driver for better
+> > > compile testing coverage.
+> > >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> >
+> > Applied, thank you.
+> 
+> Actually, not:
+> 
+> ERROR: "imx_scu_irq_register_notifier"
+> [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> ERROR: "imx_scu_get_handle" [drivers/input/keyboard/imx_sc_key.ko]
+> undefined!
+> ERROR: "imx_scu_call_rpc" [drivers/input/keyboard/imx_sc_key.ko]
+> undefined!
+> ERROR: "imx_scu_irq_unregister_notifier"
+> [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> ERROR: "imx_scu_irq_group_enable"
+> [drivers/input/keyboard/imx_sc_key.ko] undefined!
+> make[1]: *** [scripts/Makefile.modpost:94: __modpost] Error 1
+> make: *** [Makefile:1282: modules] Error 2
+> 
+> If you want to enable compile test coverage you need to provide stubs for
+> the above functions.
 
-Signed-off-by: Doug Berger <opendmb@gmail.com>
----
- drivers/gpio/gpio-brcmstb.c | 44 ++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 44 insertions(+)
+These i.MX SCU drivers depends on IMX_SCU, I already add the COMPILE_TEST
+to IMX_SCU driver as well, that is why I put these patches in a patch series. Maybe
+I can add stubs as well to make sure build passed even when IMX_SCU is NOT compiled?
+Will send V2 to add stubs, it makes more sense.
 
-diff --git a/drivers/gpio/gpio-brcmstb.c b/drivers/gpio/gpio-brcmstb.c
-index 05e3f99ae59c..e9ab246e2d42 100644
---- a/drivers/gpio/gpio-brcmstb.c
-+++ b/drivers/gpio/gpio-brcmstb.c
-@@ -603,6 +603,49 @@ static const struct dev_pm_ops brcmstb_gpio_pm_ops = {
- 	.resume_noirq = brcmstb_gpio_resume,
- };
- 
-+static void brcmstb_gpio_set_names(struct device *dev,
-+				   struct brcmstb_gpio_bank *bank)
-+{
-+	struct device_node *np = dev->of_node;
-+	const char **names;
-+	int nstrings, base;
-+	unsigned int i;
-+
-+	base = bank->id * MAX_GPIO_PER_BANK;
-+
-+	nstrings = of_property_count_strings(np, "gpio-line-names");
-+	if (nstrings <= base)
-+		/* Line names not present */
-+		return;
-+
-+	names = devm_kcalloc(dev, MAX_GPIO_PER_BANK, sizeof(char *),
-+			     GFP_KERNEL);
-+	if (!names)
-+		return;
-+
-+	/*
-+	 * Make sure to not index beyond the end of the number of descriptors
-+	 * of the GPIO device.
-+	 */
-+	for (i = 0; i < bank->width; i++) {
-+		const char *name;
-+		int ret;
-+
-+		ret = of_property_read_string_index(np, "gpio-line-names",
-+						    base + i, &name);
-+		if (ret) {
-+			if (ret != -ENODATA)
-+				dev_err(dev, "unable to name line %d: %d\n",
-+					i, ret);
-+			break;
-+		}
-+		if (*name)
-+			names[i] = name;
-+	}
-+
-+	bank->gc.names = names;
-+}
-+
- static int brcmstb_gpio_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -726,6 +769,7 @@ static int brcmstb_gpio_probe(struct platform_device *pdev)
- 		need_wakeup_event |= !!__brcmstb_gpio_get_active_irqs(bank);
- 		gc->write_reg(reg_base + GIO_MASK(bank->id), 0);
- 
-+		brcmstb_gpio_set_names(dev, bank);
- 		err = gpiochip_add_data(gc, bank);
- 		if (err) {
- 			dev_err(dev, "Could not add gpiochip for bank %d\n",
--- 
-2.7.4
-
-
+Thanks,
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
