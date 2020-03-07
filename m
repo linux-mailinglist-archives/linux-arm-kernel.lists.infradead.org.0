@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 065A717CC99
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 08:05:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0437117CCDD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 09:36:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Y/2PUqkdZyXvoJgbK71UkpLj4VK/I0NMGmPEBXqqcbI=; b=WahAt+t7kF10F/0vi80eZg4E1
-	ufNwAaurTHAbW5KTEjoSCBQrscagLHRv4/Yf6gKQYmXqt71BuQ3anYP47fNABsy/PJNBj68jwTCYA
-	3H5ivym2sKIZ7V7jZsDUq5ZH4+1KMISB1YR7w4v60KtgTGMKM7VP4kxqf5zX0XEeiXjINEmD+Oq7J
-	GADuYJkgMzdSjCY8uxLL2Gy4+BAE3yqy3J+S/MFWjjbTiBrTec4AnrnAr0OsM5QSdXcjUObE4dkZL
-	j3CpP4876hQmimcyHEYfMTLkuQkvnkADYSD3F7KpUy7g1rPbQEiq1NJKPN8P63++qd+Xf1khCSjoO
-	64e2Rfobw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9F8aoa5D6dSvp3PZmgkuaMhdYipCnV8M1BUNxzdHl7w=; b=uoX2wGJQIOn0Q+
+	vDIKA7IbdlFSIlLvyJihlJ/AuMpHgx/YILOgjnRAla66dL8jiI+rufGLnXSr8frODtvP958a3MeQi
+	mBCcD2gHGY8RtuAYHFlJCxFKGDNOrVXXorkpcgSeJGnD0xoH+pGiw/wVo11B6kxwAXH8ImyzBY6yl
+	nzJoNFlCDB1Gy0o8XUWvI/zVq1GaYlX2ikec2dMRFovFO6+H4md3ODf2+z9rV1O7vjOA1DOHfZ2Uy
+	ILTwnCYV8GVk53hnhpejoFpBDjs0hBeKlgJHPicuFjsP6143oqZCbY3AUayISSIjXKE7VWIrYX5zY
+	2vy0s9mLNSeHzWdbxd0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jATWd-0007xf-GJ; Sat, 07 Mar 2020 07:05:31 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1jAUwj-0000hb-W7; Sat, 07 Mar 2020 08:36:34 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jATWW-0007wa-Nk; Sat, 07 Mar 2020 07:05:26 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 48ZFqW22V5zB09Zy;
- Sat,  7 Mar 2020 08:05:11 +0100 (CET)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=hFwvKFlt; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id JH70JFMo2Nhm; Sat,  7 Mar 2020 08:05:11 +0100 (CET)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 48ZFqW06j2zB09Zx;
- Sat,  7 Mar 2020 08:05:11 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1583564711; bh=KLykoiwakmvXlj7iOgiNeBA+k4S6on8FDV27weKg6MI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=hFwvKFlt5tItEoeChiMcVbq8Z6WEJiAIueL914VqsjAkNiTW/tX4E4mkXgZPRPVQp
- 1TSwGC1wl0uEf1SM3tvrvXA0/srRG2BvZ2uOnFi+rWlXqmPEgF9Of2NNwJRqkfVxFW
- 8RUJEw8G1tWI+NWaS36EliXDmOzscoTf3q3gSbXQ=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id D550D8B784;
- Sat,  7 Mar 2020 08:05:11 +0100 (CET)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id OhKGFoGl11OV; Sat,  7 Mar 2020 08:05:11 +0100 (CET)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 4A0DC8B776;
- Sat,  7 Mar 2020 08:05:09 +0100 (CET)
-Subject: Re: [PATCH V15] mm/debug: Add tests validating architecture page
- table helpers
-To: Anshuman Khandual <anshuman.khandual@arm.com>, Qian Cai <cai@lca.pw>
-References: <61250cdc-f80b-2e50-5168-2ec67ec6f1e6@arm.com>
- <CEEAD95E-D468-4C58-A65B-7E8AED91168A@lca.pw>
- <a45834bc-e6f2-ac21-de9e-1aff67d12797@arm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <c40d907a-b64b-ae0d-e58f-33dddf0e8edc@c-s.fr>
-Date: Sat, 7 Mar 2020 08:05:09 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jAUwc-0000gf-13; Sat, 07 Mar 2020 08:36:28 +0000
+Received: by mail-wm1-x344.google.com with SMTP id a141so4759716wme.2;
+ Sat, 07 Mar 2020 00:36:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=to:cc:references:subject:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=+llLPrGd5t8/uzhFM/JY7vfZMQbUY9JxBp7ItfeQETg=;
+ b=ZRhN2JuBc1yZkvqlv8Nz7tw90jGoUvvyG5U5lSFosjd87xniaE35kHUCrXF3gbRgLO
+ 8sCahkAPj+kUccqOrd4W4nZB+MOZ0pcyAYA3jJdTbG0dwvmKvVCtI1AH1D8csPp0s219
+ UvO7kbWsUHIs9Kez4Bquy4BtmJ4yrbY2afogLT1fHIS/Yk++SNF8dOa5znqbjKMRSk6N
+ BT1N3wYStmxMV+cfQPACYhHZ5r/PsUDPzZ/LnIsus9Kz2M3ZpTyykH4XP3iT6ka9Tx9y
+ vFFEAfm6qDCMb7RnLrmbKYMqEQoGoDv5gXsq5241upGF9shsghC2DcKTfpKHF83a8iUU
+ pOlw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:to:cc:references:subject:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=+llLPrGd5t8/uzhFM/JY7vfZMQbUY9JxBp7ItfeQETg=;
+ b=fANIiuPX4WgMeZsaWJKvGnhx0Uhk8T2Y8Y4koLWsZvmoXsWhLee7TyiLeupewc/TlV
+ dy6hiJCYOI9Rid99GOLY874r46/uQM9bSBS1n8rMxighpsrqxzbgQZqcB95nTXKVceqj
+ /b5g75TrmCNl5ArAjUiIN5SxOH0gKtPn6OuZiGD1FYc4RMiJh/5qH07qCWWgY0/TNOVw
+ M5ODAYHxPMIS+YuGSSyAjXT4MD2SkX6XOheCW/1hZiyHn2Ql2dmproHpo3PSCmwbG5qk
+ LEv6/sDo5ZGiLIe9cwXTv+X0L2+u8GfivaXWvurXh2ugo/srS+T9WgSz7UQ6u5AZr/I9
+ dA7Q==
+X-Gm-Message-State: ANhLgQ1fHG3u8EjSL4JzuTgMx5sUcXZ8Xd3qtnJUVSupz/99Z/R4cAE3
+ YjSrEGl7LBE6LKSL2EGhkDw=
+X-Google-Smtp-Source: ADFU+vuyotHzjwL5WHrLpokrRMf3GK6+z5AfHgvriTox//HNu4OX1ioXJSvmX6mkBnSUaOZ/5FGaVQ==
+X-Received: by 2002:a7b:cb42:: with SMTP id v2mr8904028wmj.170.1583570181971; 
+ Sat, 07 Mar 2020 00:36:21 -0800 (PST)
+Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id f17sm31420661wrm.3.2020.03.07.00.36.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sat, 07 Mar 2020 00:36:21 -0800 (PST)
+To: heiko@sntech.de
+References: <20200306210922.172346-3-heiko@sntech.de>
+Subject: Re: [PATCH 3/3] arm64: dts: rockchip: add Odroid Advance Go
+From: Johan Jonker <jbx6244@gmail.com>
+Message-ID: <59bdf2c1-79cf-2c45-263e-80a9358c7fdd@gmail.com>
+Date: Sat, 7 Mar 2020 09:36:19 +0100
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <a45834bc-e6f2-ac21-de9e-1aff67d12797@arm.com>
-Content-Language: fr
+In-Reply-To: <20200306210922.172346-3-heiko@sntech.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_230525_070600_8ACC380D 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200307_003626_104031_9735F40A 
+X-CRM114-Status: GOOD (  19.39  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -96,67 +101,651 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- linux-riscv@lists.infradead.org, Will Deacon <will@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Mike Rapoport <rppt@linux.ibm.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-snps-arc@lists.infradead.org,
- Vasily Gorbik <gor@linux.ibm.com>, Borislav Petkov <bp@alien8.de>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Vineet Gupta <vgupta@synopsys.com>, linux-kernel@vger.kernel.org,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ heiko.stuebner@theobroma-systems.com, kever.yang@rock-chips.com,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAwNy8wMy8yMDIwIMOgIDAxOjU2LCBBbnNodW1hbiBLaGFuZHVhbCBhIMOpY3JpdMKgOgo+
-IAo+IAo+IE9uIDAzLzA3LzIwMjAgMDY6MDQgQU0sIFFpYW4gQ2FpIHdyb3RlOgo+Pgo+Pgo+Pj4g
-T24gTWFyIDYsIDIwMjAsIGF0IDc6MDMgUE0sIEFuc2h1bWFuIEtoYW5kdWFsIDxBbnNodW1hbi5L
-aGFuZHVhbEBhcm0uY29tPiB3cm90ZToKPj4+Cj4+PiBIbW0sIHNldF9wdGVfYXQoKSBmdW5jdGlv
-biBpcyBub3QgcHJlZmVycmVkIGhlcmUgZm9yIHRoZXNlIHRlc3RzLiBUaGUgaWRlYQo+Pj4gaXMg
-dG8gYXZvaWQgb3IgYXRsZWFzdCBtaW5pbWl6ZSBUTEIvY2FjaGUgZmx1c2hlcyB0cmlnZ2VyZWQg
-ZnJvbSB0aGVzZSBzb3J0Cj4+PiBvZiAnc3RhdGljJyB0ZXN0cy4gc2V0X3B0ZV9hdCgpIGlzIHBs
-YXRmb3JtIHByb3ZpZGVkIGFuZCBjb3VsZC9taWdodCB0cmlnZ2VyCj4+PiB0aGVzZSBmbHVzaGVz
-IG9yIHNvbWUgb3RoZXIgcGxhdGZvcm0gc3BlY2lmaWMgc3luY2hyb25pemF0aW9uIHN0dWZmLiBK
-dXN0Cj4+Cj4+IFdoeSBpcyB0aGF0IGltcG9ydGFudCBmb3IgdGhpcyBkZWJ1Z2dpbmcgb3B0aW9u
-Pwo+IAo+IFByaW1hcmlseSByZWFzb24gaXMgdG8gYXZvaWQgVExCL2NhY2hlIGZsdXNoIGluc3Ry
-dWN0aW9ucyBvbiB0aGUgc3lzdGVtCj4gZHVyaW5nIHRoZXNlIHRlc3RzIHRoYXQgb25seSBpbnZv
-bHZlIHRyYW5zZm9ybWluZyBkaWZmZXJlbnQgcGFnZSB0YWJsZQo+IGxldmVsIGVudHJpZXMgdGhy
-b3VnaCBoZWxwZXJzLiBVbmxlc3MgcmVhbGx5IG5lY2Vzc2FyeSwgd2h5IHNob3VsZCBpdAo+IGVt
-aXQgYW55IFRMQi9jYWNoZSBmbHVzaCBpbnN0cnVjdGlvbnMgPwoKV2hhdCdzIHRoZSBwcm9ibGVt
-IHdpdGggdGhvc2VzIGZsdXNoZXMgPwoKPiAKPj4KPj4+IHdvbmRlcmluZyBpcyB0aGVyZSBzcGVj
-aWZpYyByZWFzb24gd2l0aCByZXNwZWN0IHRvIHRoZSBzb2Z0IGxvY2sgdXAgcHJvYmxlbQo+Pj4g
-bWFraW5nIGl0IG5lY2Vzc2FyeSB0byB1c2Ugc2V0X3B0ZV9hdCgpIHJhdGhlciB0aGFuIGEgc2lt
-cGxlIFdSSVRFX09OQ0UoKSA/Cj4+Cj4+IExvb2tzIGF0IHRoZSBzMzkwIHZlcnNpb24gb2Ygc2V0
-X3B0ZV9hdCgpLCBpdCBoYXMgdGhpcyBjb21tZW50LAo+PiB2bWFkZHIpOwo+Pgo+PiAvKgo+PiAg
-ICogQ2VydGFpbiBhcmNoaXRlY3R1cmVzIG5lZWQgdG8gZG8gc3BlY2lhbCB0aGluZ3Mgd2hlbiBQ
-VEVzCj4+ICAgKiB3aXRoaW4gYSBwYWdlIHRhYmxlIGFyZSBkaXJlY3RseSBtb2RpZmllZC4gIFRo
-dXMsIHRoZSBmb2xsb3dpbmcKPj4gICAqIGhvb2sgaXMgbWFkZSBhdmFpbGFibGUuCj4+ICAgKi8K
-Pj4KPj4gSSBjYW4gb25seSBndWVzcyB0aGF0IHBvd2VycGMgIGNvdWxkIGJlIHRoZSBzYW1lIGhl
-cmUuCj4gCj4gVGhpcyBjb21tZW50IGlzIHByZXNlbnQgaW4gbXVsdGlwbGUgcGxhdGZvcm1zIHdo
-aWxlIGRlZmluaW5nIHNldF9wdGVfYXQoKS4KPiBJcyBub3QgJ2JhcnJpZXIoKScgaGVyZSBhbG9u
-ZSBnb29kIGVub3VnaCA/IEVsc2Ugd2hhdCBleGFjdGx5IHNldF9wdGVfYXQoKQo+IGRvZXMgYXMg
-Y29tcGFyZWQgdG8gV1JJVEVfT05DRSgpIHRoYXQgYXZvaWRzIHRoZSBzb2Z0IGxvY2sgdXAsIGp1
-c3QgdHJ5aW5nCj4gdG8gdW5kZXJzdGFuZC4KPiAKCgpBcmdoICEgSSBkaWRuJ3QgcmVhbGlzZSB0
-aGF0IHlvdSB3ZXJlIHdyaXRpbmcgZGlyZWN0bHkgaW50byB0aGUgcGFnZSAKdGFibGVzLiBXaGVu
-IGl0IHdvcmtzLCB0aGF0J3Mgb25seSBieSBjaGFuY2UgSSBndWVzcy4KClRvIHByb3Blcmx5IHNl
-dCB0aGUgcGFnZSB0YWJsZSBlbnRyaWVzLCBzZXRfcHRlX2F0KCkgaGFzIHRvIGJlIHVzZWQ6Ci0g
-T24gcG93ZXJwYyA4eHgsIHdpdGggMTZrIHBhZ2VzLCB0aGUgcGFnZSB0YWJsZSBlbnRyeSBtdXN0
-IGJlIGNvcGllZCAKZm91ciB0aW1lcy4gc2V0X3B0ZV9hdCgpIGRvZXMgaXQsIFdSSVRFX09OQ0Uo
-KSBkb2Vzbid0LgotIE9uIHBvd2VycGMgYm9vazNzLzMyIChoYXNoIE1NVSksIHRoZSBmbGFnIF9Q
-QUdFX0hBU0hQVEUgbXVzdCBiZSAKcHJlc2VydmVkIGFtb25nIHdyaXRlcy4gc2V0X3B0ZV9hdCgp
-IHByZXNlcnZlcyBpdCwgV1JJVEVfT05DRSgpIGRvZXNuJ3QuCgpzZXRfcHRlX2F0KCkgYWxzbyBk
-b2VzIGEgZmV3IG90aGVyIG1hbmRhdG9yeSB0aGluZ3MsIGxpa2UgY2FsbGluZyAKcHRlX21rcHRl
-KCkKClNvLCB0aGUgV1JJVEVfT05DRSgpIG11c3QgZGVmaW5pdGVseSBiZWNvbWUgYSBzZXRfcHRl
-X2F0KCkKCkNocmlzdG9waGUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Heiko,
+
+The 'heartbeat' led seems to need some changes. The rest is inherited
+from px30.dtsi I think. How do you deal with all the compatible
+properties names that are normally SoC specific?
+
+Also include all mail lists found with:
+./scripts/get_maintainer.pl --nogit-fallback --nogit
+
+linux-kernel@vger.kernel.org
+
+  DTC     arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dtb
+  DTC     arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml
+  CHECK   arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: tsadc:
+tsadc-otp-gpio: {'rockchip,pins': [[0, 6, 0, 123]], 'phandle': [[90]]}
+is not of type 'array'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff340000:
+'clock-names', 'power-domains' do not match any of the regexes:
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff300000:
+'power-domains' does not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb@ff350000:
+'clock-names', 'power-domains' do not match any of the regexes:
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: gpio-leds:
+'heartbeat' does not match any of the regexes: '(^led-[0-9a-f]$|led)',
+'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dt.yaml: usb2-phy@100:
+'#phy-cells' is a required property
+
+> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> 
+> The Odroid Advance Go is a handheld based on Rockchip's rk3326 soc
+> with a DSI display and some handheld controls including an analog
+> joystick connected to the saradc.
+> 
+> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3326-odroid-go2.dts   | 544 ++++++++++++++++++
+>  2 files changed, 545 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+> index af1e1c3707d0..86c38467d487 100644
+> --- a/arch/arm64/boot/dts/rockchip/Makefile
+> +++ b/arch/arm64/boot/dts/rockchip/Makefile
+> @@ -6,6 +6,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-copperhead-ltk101b4029w.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-roc-cc.dtb
+> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3326-odroid-go2.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> new file mode 100644
+> index 000000000000..a16f4a0d1d4d
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3326-odroid-go2.dts
+> @@ -0,0 +1,544 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2019 Hardkernel Co., Ltd
+> + * Copyright (c) 2020 Theobroma Systems Design und Consulting GmbH
+> + */
+> +
+> +/dts-v1/;
+> +#include <dt-bindings/gpio/gpio.h>
+> +#include <dt-bindings/input/input.h>
+> +#include <dt-bindings/pinctrl/rockchip.h>
+> +#include "rk3326.dtsi"
+> +
+> +/ {
+> +	model = "ODROID-GO Advance";
+> +	compatible = "hardkernel,rk3326-odroid-go2", "rockchip,rk3326";
+> +
+> +	chosen {
+> +		stdout-path = "serial2:115200n8";
+> +	};
+> +
+> +	gpio-keys {
+> +		compatible = "gpio-keys";
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&btn_pins>;
+> +
+> +		/*
+> +		 *      *** ODROIDGO2-Advance Switch layoout ***
+> +		 * |------------------------------------------------|
+> +		 * | sw15                                      sw16 |
+> +		 * |------------------------------------------------|
+> +		 * |     sw1      |-------------------|      sw8    |
+> +		 * |  sw3   sw4   |                   |   sw7   sw5 |
+> +		 * |     sw2      |    LCD Display    |      sw6    |
+> +		 * |              |                   |             |
+> +		 * |              |-------------------|             |
+> +		 * |         sw9 sw10   sw11 sw12   sw13 sw14       |
+> +		 * |------------------------------------------------|
+> +		 */
+> +
+> +		sw1 {
+> +			gpios = <&gpio1 RK_PB4 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-UP";
+> +			linux,code = <BTN_DPAD_UP>;
+> +		};
+> +		sw2 {
+> +			gpios = <&gpio1 RK_PB5 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-DOWN";
+> +			linux,code = <BTN_DPAD_DOWN>;
+> +		};
+> +		sw3 {
+> +			gpios = <&gpio1 RK_PB6 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-LEFT";
+> +			linux,code = <BTN_DPAD_LEFT>;
+> +		};
+> +		sw4 {
+> +			gpios = <&gpio1 RK_PB7 GPIO_ACTIVE_LOW>;
+> +			label = "DPAD-RIGHT";
+> +			linux,code = <BTN_DPAD_RIGHT>;
+> +		};
+> +		sw5 {
+> +			gpios = <&gpio1 RK_PA2 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-A";
+> +			linux,code = <BTN_EAST>;
+> +		};
+> +		sw6 {
+> +			gpios = <&gpio1 RK_PA5 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-B";
+> +			linux,code = <BTN_SOUTH>;
+> +		};
+> +		sw7 {
+> +			gpios = <&gpio1 RK_PA6 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-Y";
+> +			linux,code = <BTN_WEST>;
+> +		};
+> +		sw8 {
+> +			gpios = <&gpio1 RK_PA7 GPIO_ACTIVE_LOW>;
+> +			label = "BTN-X";
+> +			linux,code = <BTN_NORTH>;
+> +		};
+> +		sw9 {
+> +			gpios = <&gpio2 RK_PA0 GPIO_ACTIVE_LOW>;
+> +			label = "F1";
+> +			linux,code = <BTN_TRIGGER_HAPPY1>;
+> +		};
+> +		sw10 {
+> +			gpios = <&gpio2 RK_PA1 GPIO_ACTIVE_LOW>;
+> +			label = "F2";
+> +			linux,code = <BTN_TRIGGER_HAPPY2>;
+> +		};
+> +		sw11 {
+> +			gpios = <&gpio2 RK_PA2 GPIO_ACTIVE_LOW>;
+> +			label = "F3";
+> +			linux,code = <BTN_TRIGGER_HAPPY3>;
+> +		};
+> +		sw12 {
+> +			gpios = <&gpio2 RK_PA3 GPIO_ACTIVE_LOW>;
+> +			label = "F4";
+> +			linux,code = <BTN_TRIGGER_HAPPY4>;
+> +		};
+> +		sw13 {
+> +			gpios = <&gpio2 RK_PA4 GPIO_ACTIVE_LOW>;
+> +			label = "F5";
+> +			linux,code = <BTN_TRIGGER_HAPPY5>;
+> +		};
+> +		sw14 {
+> +			gpios = <&gpio2 RK_PA5 GPIO_ACTIVE_LOW>;
+> +			label = "F6";
+> +			linux,code = <BTN_TRIGGER_HAPPY6>;
+> +		};
+> +		sw15 {
+> +			gpios = <&gpio2 RK_PA6 GPIO_ACTIVE_LOW>;
+> +			label = "TOP-LEFT";
+> +			linux,code = <BTN_TL>;
+> +		};
+> +		sw16 {
+> +			gpios = <&gpio2 RK_PA7 GPIO_ACTIVE_LOW>;
+> +			label = "TOP-RIGHT";
+> +			linux,code = <BTN_TR>;
+> +		};
+> +	};
+> +
+> +	leds: gpio-leds {
+> +		compatible = "gpio-leds";
+> +		pinctrl-names = "led_pins";
+> +		pinctrl-0 = <&led_pins>;
+> +
+> +		/* Blue LED : GPIO0_C1 */
+> +		heartbeat {
+> +			label = "blue:heartbeat";
+> +			gpios = <&gpio0 RK_PC1 GPIO_ACTIVE_HIGH>;
+> +			linux,default-trigger = "heartbeat";
+> +		};
+> +	};
+> +
+
+> +	backlight: backlight {
+> +		compatible = "pwm-backlight";
+> +		power-supply = <&vcc_bl>;
+> +		pwms = <&pwm1 0 25000 0>;
+> +	};
+
+sort nodenames
+
+> +
+> +	vccsys: vccsys {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc3v8_sys";
+> +		regulator-always-on;
+> +		regulator-min-microvolt = <3800000>;
+> +		regulator-max-microvolt = <3800000>;
+> +	};
+> +
+> +	vcc_host: vcc_host {
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "vcc_host";
+> +		regulator-min-microvolt = <5000000>;
+> +		regulator-max-microvolt = <5000000>;
+> +
+> +		gpio = <&gpio0 RK_PB7 GPIO_ACTIVE_HIGH>;
+> +		enable-active-high;
+> +		regulator-always-on;
+> +		vin-supply = <&vccsys>;
+> +	};
+> +};
+> +
+> +&cpu0 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cpu1 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cpu2 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cpu3 {
+> +	cpu-supply = <&vdd_arm>;
+> +};
+> +
+> +&cru {
+> +	assigned-clocks = <&cru PLL_NPLL>,
+> +		<&cru ACLK_BUS_PRE>, <&cru ACLK_PERI_PRE>,
+> +		<&cru HCLK_BUS_PRE>, <&cru HCLK_PERI_PRE>,
+> +		<&cru PCLK_BUS_PRE>, <&cru SCLK_GPU>,
+> +		<&cru PLL_CPLL>;
+> +
+> +	assigned-clock-rates = <1188000000>,
+> +		<200000000>, <200000000>,
+> +		<150000000>, <150000000>,
+> +		<100000000>, <200000000>,
+> +		<17000000>;
+> +};
+> +
+> +&display_subsystem {
+> +	status = "okay";
+> +};
+> +
+> +&dsi {
+> +	status = "okay";
+> +
+> +	ports {
+> +		mipi_out: port@1 {
+> +			reg = <1>;
+> +
+> +			mipi_out_panel: endpoint {
+> +				remote-endpoint = <&mipi_in_panel>;
+> +			};
+> +		};
+> +	};
+> +
+> +	panel@0 {
+> +		compatible = "elida,kd35t133";
+> +		reg = <0>;
+> +		backlight = <&backlight>;
+> +		iovcc-supply = <&vcc_lcd>;
+> +		reset-gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_LOW>;
+> +		vdd-supply = <&vcc_lcd>;
+> +
+> +		port {
+> +			mipi_in_panel: endpoint {
+> +				remote-endpoint = <&mipi_out_panel>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&dsi_dphy {
+> +	status = "okay";
+> +};
+> +
+> +&gpu {
+> +	mali-supply = <&vdd_logic>;
+> +	status = "okay";
+> +};
+> +
+> +&i2c0 {
+
+> +	status = "okay";
+
+status below
+
+> +	clock-frequency = <400000>;
+
+> +	i2c-scl-rising-time-ns = <280>;
+> +	i2c-scl-falling-time-ns = <16>;
+
+sort
+
+> +
+> +	rk817: pmic@20 {
+> +		compatible = "rockchip,rk817";
+> +		reg = <0x20>;
+> +		interrupt-parent = <&gpio0>;
+> +		interrupts = <RK_PB2 IRQ_TYPE_LEVEL_LOW>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pmic_int>;
+> +		rockchip,system-power-controller;
+> +		wakeup-source;
+> +		#clock-cells = <1>;
+> +		clock-output-names = "rk808-clkout1", "xin32k";
+> +
+> +		vcc1-supply = <&vccsys>;
+> +		vcc2-supply = <&vccsys>;
+> +		vcc3-supply = <&vccsys>;
+> +		vcc4-supply = <&vccsys>;
+> +		vcc5-supply = <&vccsys>;
+> +		vcc6-supply = <&vccsys>;
+> +		vcc7-supply = <&vccsys>;
+> +
+> +		regulators {
+> +			vdd_logic: DCDC_REG1 {
+> +				regulator-name = "vdd_logic";
+> +				regulator-min-microvolt = <950000>;
+> +				regulator-max-microvolt = <1150000>;
+> +				regulator-ramp-delay = <6001>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <950000>;
+> +				};
+> +			};
+> +
+> +			vdd_arm: DCDC_REG2 {
+> +				regulator-name = "vdd_arm";
+> +				regulator-min-microvolt = <950000>;
+> +				regulator-max-microvolt = <1350000>;
+> +				regulator-ramp-delay = <6001>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <950000>;
+> +				};
+> +			};
+> +
+> +			vcc_ddr: DCDC_REG3 {
+> +				regulator-name = "vcc_ddr";
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +				};
+> +			};
+> +
+> +			vcc_3v3: DCDC_REG4 {
+> +				regulator-name = "vcc_3v3";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_1v8: LDO_REG2 {
+> +				regulator-name = "vcc_1v8";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <1800000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <1800000>;
+> +				};
+> +			};
+> +
+> +			vdd_1v0: LDO_REG3 {
+> +				regulator-name = "vdd_1v0";
+> +				regulator-min-microvolt = <1000000>;
+> +				regulator-max-microvolt = <1000000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <1000000>;
+> +				};
+> +			};
+> +
+> +			vcc3v3_pmu: LDO_REG4 {
+> +				regulator-name = "vcc3v3_pmu";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vccio_sd: LDO_REG5 {
+> +				regulator-name = "vccio_sd";
+> +				regulator-min-microvolt = <1800000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-always-on;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_sd: LDO_REG6 {
+> +				regulator-name = "vcc_sd";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +				regulator-boot-on;
+> +
+> +				regulator-state-mem {
+> +					regulator-on-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_bl: LDO_REG7 {
+> +				regulator-name = "vcc_bl";
+> +				regulator-min-microvolt = <3300000>;
+> +				regulator-max-microvolt = <3300000>;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <3300000>;
+> +				};
+> +			};
+> +
+> +			vcc_lcd: LDO_REG8 {
+> +				regulator-name = "vcc_lcd";
+> +				regulator-min-microvolt = <2800000>;
+> +				regulator-max-microvolt = <2800000>;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <2800000>;
+> +				};
+> +			};
+> +
+> +			vcc_cam: LDO_REG9 {
+> +				regulator-name = "vcc_cam";
+> +				regulator-min-microvolt = <3000000>;
+> +				regulator-max-microvolt = <3000000>;
+> +
+> +				regulator-state-mem {
+> +					regulator-off-in-suspend;
+> +					regulator-suspend-microvolt = <3000000>;
+> +				};
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +/* EXT Header(P2) : 7(SCL:GPIO0.C2), 8(SDA:GPIO0.C3) */
+> +&i2c1 {
+
+> +	status = "okay";
+
+status below
+
+> +	clock-frequency = <400000>;
+> +};
+> +
+> +/* I2S 1 Channel Used */
+> +&i2s1_2ch {
+
+> +	status = "okay";
+
+status below
+
+> +	#sound-dai-cells = <0>;
+> +};
+> +
+> +&io_domains {
+> +	vccio1-supply = <&vcc_3v3>;
+> +	vccio2-supply = <&vccio_sd>;
+> +	vccio3-supply = <&vcc_3v3>;
+> +	vccio4-supply = <&vcc_3v3>;
+> +	vccio5-supply = <&vcc_3v3>;
+> +	vccio6-supply = <&vcc_3v3>;
+> +	status = "okay";
+> +};
+> +
+> +&pmu_io_domains {
+> +	pmuio1-supply = <&vcc3v3_pmu>;
+> +	pmuio2-supply = <&vcc3v3_pmu>;
+> +	status = "okay";
+> +};
+> +
+> +&pwm1 {
+> +	status = "okay";
+> +};
+> +
+> +&saradc {
+> +	vref-supply = <&vcc_1v8>;
+> +	status = "okay";
+> +};
+> +
+> +&sdmmc {
+> +	bus-width = <4>;
+> +	cap-sd-highspeed;
+
+> +	card-detect-delay = <800>;
+
+Other dts use 200. Why we need 800?
+
+> +	cd-gpios = <&gpio0 RK_PA3 GPIO_ACTIVE_LOW>;
+> +	sd-uhs-sdr12;
+> +	sd-uhs-sdr25;
+> +	sd-uhs-sdr50;
+> +	sd-uhs-sdr104;
+> +	vmmc-supply = <&vcc_sd>;
+> +	vqmmc-supply = <&vccio_sd>;
+> +	status = "okay";
+> +};
+> +
+> +&tsadc {
+> +	pinctrl-names = "gpio", "otpout";
+> +	pinctrl-0 = <&tsadc_otp_gpio>;
+> +	pinctrl-1 = <&tsadc_otp_out>;
+> +	status = "okay";
+> +};
+> +
+> +&u2phy {
+> +	status = "okay";
+> +
+> +	u2phy_host: host-port {
+> +		status = "okay";
+> +	};
+> +
+> +	u2phy_otg: otg-port {
+> +		status = "disabled";
+> +	};
+> +};
+> +
+> +&usb20_otg {
+> +	status = "okay";
+> +};
+> +
+> +&uart1 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart1_xfer &uart1_cts>;
+> +	status = "okay";
+> +};
+> +
+> +&uart2 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&uart2m1_xfer>;
+> +	status = "okay";
+> +};
+> +
+> +&vopb {
+> +	status = "okay";
+> +};
+> +
+> +&vopb_mmu {
+> +	status = "okay";
+> +};
+> +
+> +&pinctrl {
+> +	pmic {
+> +		pmic_int: pmic-int {
+> +			rockchip,pins = <0 RK_PB2 RK_FUNC_GPIO &pcfg_pull_up>;
+> +		};
+> +
+> +		dc_det: dc-det {
+> +			rockchip,pins = <0 RK_PB3 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +	};
+> +
+> +	leds {
+> +		led_pins: led-pins {
+> +			rockchip,pins = <0 RK_PC1 RK_FUNC_GPIO &pcfg_pull_none>;
+> +		};
+> +	};
+> +
+> +	btns {
+> +		btn_pins: btn-pins {
+> +			rockchip,pins = <1 RK_PB4 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PB5 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PB6 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PB7 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<1 RK_PA7 RK_FUNC_GPIO &pcfg_pull_up>,
+> +
+> +					<2 RK_PA0 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA1 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA2 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA3 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA4 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA6 RK_FUNC_GPIO &pcfg_pull_up>,
+> +					<2 RK_PA7 RK_FUNC_GPIO &pcfg_pull_up>;
+> +		};
+> +	};
+> +};
+> --
+> 2.24.1
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
