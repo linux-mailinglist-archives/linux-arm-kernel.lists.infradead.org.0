@@ -2,83 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EDC317D686
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 22:50:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 292B517D6BB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 23:22:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NvMiEDcOJH7fDBq0UVcm6Yrg3bsb+E9iE2BAK/MzI+A=; b=hVD7uEKaYCC66C
-	8N0ODa7ioW/QcOs3LlEhYjBE4l6H0VmkXbMeMZgMWdU91VNrHsaCpV8uTxRwXFMs3yr1AtBEs1kfg
-	vD8RV0bl6k5nTBAEq01n4uwhRJyBmTMOQ2wNJA09IOPpv+FCaWAgqe5rspHgR6qQBLbgRghm2XzZX
-	ZOUn6y4y/5cJAQtjtQtOrToiiLipUSx23TqoCAV4srenNO0YZrIUi93fXUMbxN8rCcx/iuI4PkZgo
-	X1TkOqg777Zld99Kw5JBXwwXyheztZv4/tXy4cdFMDxAIeraVv/JW0Baf+hMHrYDbOccSjji1ZooN
-	MMSXhIPxkDFwFMosEsOA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=DLjw1KzV8o6D2eS1OVHOM44cw3dMiKTeriyAFrdfx0Y=; b=tw/
+	6C9NkqDMvk0XYwYwSdejTh39zZbTG7ffsuaDRRYZcKVVpJ1wnJQWv0z992pBcXC4Vow56KVJn6I2C
+	Xn1pWO6EEGoLiMFCzAkQh4r7ex1K4tELnrZnmlabOr5HzYo+4ELm5O8/VBSJn9r4xy5N/4UMRrW0z
+	o/VN7+lCR7OffWw/u5ufMUkTqfapAwAJKz8MOnEwkM4cYIlwjGr+GPcdJnSUxbTQd1Ukl01FYPXq5
+	3+eTBEcp6BWGezDUb25+wxUJONBWxN7oPL2iwUS3/BpENdERbIU5sif0xwRjJKfUpIeC91QvOj9gL
+	3rOl1HxCSc48rXgksjmsqjT0i6KLjXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB3o8-0001Hw-Q6; Sun, 08 Mar 2020 21:50:00 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1jB4JW-0003Lb-0U; Sun, 08 Mar 2020 22:22:26 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB3o2-0001HS-0K
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 21:49:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1583704176;
- bh=uvTnr5QT5mOgGF73WARSWzpFJoFtVP4k+lkjGy7VaEE=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=EygN2SjKr6omx8QyzHBd3aD+c/3WnsdyRbRwwqN87qTpwotlDUm4oHZhcerMEVS9A
- OKgWBdsvnPRdXX3iYab3IrKnn4Jp8rcWA8hQe85hp1849j2uHhJnznJ0nSQqqkA1jY
- YiCpHQZTntXk0QbdadJu2mt8buClnbj2rwBVvCb4=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from longitude ([37.201.214.212]) by mail.gmx.com (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1N7R1J-1jP8If2jHx-017l3H; Sun, 08
- Mar 2020 22:49:36 +0100
-From: =?UTF-8?q?Jonathan=20Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>
-To: linux-clk@vger.kernel.org
-Subject: [PATCH] clk: imx: gate2: Fix a few typos
-Date: Sun,  8 Mar 2020 22:49:26 +0100
-Message-Id: <20200308214927.16688-1-j.neuschaefer@gmx.net>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Provags-ID: V03:K1:TR0iVzdX+30Zder+jNCdtNUVjBN6YV/5WNwW7AyqXPrAWGNQWUM
- /ysJa9gQ6nGCJJejBMJPcfDhNEroAVHxs7orNweEg97xgrHZ7gMuiDv2kitzBDaFuCD4FZ8
- /vJooFp24hWq+C1nZ+7r6yOZgoLW5JNsoO0sOW5PN/lj9TWLn9fPAHlq1tmOAtnRHhqxqZW
- xAytEn1376bJoGjKOW8xg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:wwDlsyUpAjg=:MsBHMYfRXw/ljJvdaaAlmq
- Ww+UVemjqlWKGpGxwfYa92RtEtiLFydmZjBBoV1MSkRF2cuSEfWssEAIqQCkih0l5++voqsXs
- TFCvIB0749vQ859whrkJa8dgnBnuTvLcp8GPn2s30T6hy7zFefkzmPrsrBXkbiyxYcFbn0saZ
- XzxJ6tWvCFcAl7rbZb//OPVj6dhTrR6Id3T6NLH1pDrU6BZqD7B1ou4sl/QL2iVSSvNPioTNd
- sFNJJNkE2phGwkumMENE1B/tYjkXkH7L1rDa5JzquAMVPw0t6BfdLZmz+ZJyig7/5BBz+/7wZ
- cbSjed88LUtr/heJe3+ZgXaUa+5JeST/Z4VHmP6nOz2IVgZVlpYWqx+LtKIhKN6vnrKy8dUjh
- GUKm+bX5jyL8LQ58RjQuxWqv3j1NsctW0wSpOmPF7rlahfl0VxDMmG0OWE1JHK7Qlw0Or6Ibi
- zEAnX5NQ00Xe4bASKTZeVimgMsXdkH+W4dlZCLpLT6/9z/81XICttfd0lewWT59Qo2dBbO8wU
- E5bbcZi4hKE+pSili1XhX6+53rYkkl1Bj7KA7OjX0vi03wROQeLBNDzuYEW05Zx145w5w3Tjd
- dlSXuHKxnalLeSCkBCXndZNsssLxosM7jGGKtAfyCUQUJIqP6enfaUJ9BGxiYc44TtsAS3znE
- y88zwyQfk5h28t7lXsm95pMECsQFb3mQTiPoxVTW7WOdznOOADpmG9XGcayMyFPOQPIZVdEF2
- SuHfoAuVkiKOgjqIXvtdZuH163xbUizGs+WHTDVcc7S8BKFtYsu62ZCZytVthmrZfCH1A20EA
- fU1ol910Iz/lT6uHWSuLV21sI/Coswd0nK/iH1m0AlxeYDgysN3Gvq/MiD6VwAIQBXAp7VFD7
- LPE4xTY9DjJxHMD7fH/OPxEX2lWD75qQptWZY66Ieh2W2OqGiNiDVZMN5vkjo45qarGLWoBi4
- wMhNAWusjOOimBw91s6lQCTUuiwWbf/DGHSaVf7PGY+TLS1jxP410+GDuvgIsz5m85YG+oBWQ
- f3L1Ah5UlimAJStD7j0DtBFBbN4q/nOrQZjWq+XF0fXqfUklwdrM5Wq/kKxA6OmToqQCHT5kH
- HTNY25gCnQ8LS58lvxgiwm+lwqffE2/Y6L3252UKMET+S63TbIm6cXe89I+cGnuElGL0bBmvm
- +kMkhoxEAs4wAZnI3N5Z+FUJH9fxW8eS9HRpiuvw6/G+CkWGEXt+BEtcVj+3ZMgCEkq/tf08l
- KpD0SdgJuHLMmQTq4
+ id 1jB4JO-0003LD-52
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 22:22:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1583706133;
+ s=strato-dkim-0002; d=heimpold.de;
+ h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
+ Subject:Sender;
+ bh=d9uANtqqjVRwOWMSyb++r8818TlXjH+7k+MeOvfjjAo=;
+ b=tix8UU/oJfTHj6CEgk9YlbGjEFa2brHBENxmTz0t0cwSeoiPVIKouE5Zduwsn0WnFp
+ yBLRTMKU8GjBp95X05PhGbUy9hQJc11QPSObGzcDrLeOiQubdOcMn/PiIftsbEkoncdS
+ Ov90mIVQCNVZMf4VsdVKxF6G14oDdUa+F4dfFsxhMRiZmG0vgxIkZszbjEQCfhuPifss
+ hEQmVk3LVJkW9IBesere2aS1N8FZ3J7xaC/0U0dd4map8iu4yzWCDue7ZxWeD1TxGH7T
+ JNCc5G9+JqYNWrNPtAf+RjTPx9V+V0XGB2+LjqZf1JL0OxCnsn3bpCYQ7aTbNSDhtG7l
+ xdjw==
+X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGQORRBv+ASfYPl1MuUOoWmb+wVC/S4hO3Q59Bxjg5s+JNFtEYYiw=="
+X-RZG-CLASS-ID: mo00
+Received: from tonne.mhei.heimpold.itr by smtp.strato.de (RZmta 46.2.0 AUTH)
+ with ESMTPSA id Q06422w28MM4gKy
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
+ with 256 ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Sun, 8 Mar 2020 23:22:04 +0100 (CET)
+Received: from kerker.mhei.heimpold.itr (kerker.mhei.heimpold.itr
+ [192.168.8.1])
+ by tonne.mhei.heimpold.itr (Postfix) with ESMTP id 6D0F71512E1;
+ Sun,  8 Mar 2020 23:22:03 +0100 (CET)
+From: Michael Heimpold <mhei@heimpold.de>
+To: shawnguo@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
+Subject: [PATCH] ARM: dts: imx23: introduce mmc0_sck_cfg
+Date: Sun,  8 Mar 2020 23:21:44 +0100
+Message-Id: <20200308222144.24863-1-mhei@heimpold.de>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_144954_344843_40F2F64E 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200308_152218_784328_3244ABA7 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [j.neuschaefer[at]gmx.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5301:0:0:3 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,32 +86,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Enrico Weigelt <info@metux.net>, Abel Vesa <abel.vesa@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>,
- =?UTF-8?q?Jonathan=20Neusch=C3=A4fer?= <j.neuschaefer@gmx.net>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Thomas Gleixner <tglx@linutronix.de>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Allison Randal <allison@lohutok.net>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Michael Heimpold <mhei@heimpold.de>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U2lnbmVkLW9mZi1ieTogSm9uYXRoYW4gTmV1c2Now6RmZXIgPGoubmV1c2NoYWVmZXJAZ214Lm5l
-dD4KLS0tCiBkcml2ZXJzL2Nsay9pbXgvY2xrLWdhdGUyLmMgfCAyICstCiAxIGZpbGUgY2hhbmdl
-ZCwgMSBpbnNlcnRpb24oKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2Ns
-ay9pbXgvY2xrLWdhdGUyLmMgYi9kcml2ZXJzL2Nsay9pbXgvY2xrLWdhdGUyLmMKaW5kZXggN2Q0
-NGNlODE0ODA2Li5hMTIzMGNjMjE1YzQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvY2xrL2lteC9jbGst
-Z2F0ZTIuYworKysgYi9kcml2ZXJzL2Nsay9pbXgvY2xrLWdhdGUyLmMKQEAgLTE1LDcgKzE1LDcg
-QEAKICNpbmNsdWRlICJjbGsuaCIKCiAvKioKLSAqIERPQzogYmFzaWMgZ2F0YWJsZSBjbG9jayB3
-aGljaCBjYW4gZ2F0ZSBhbmQgdW5nYXRlIGl0J3Mgb3VwdXQKKyAqIERPQzogYmFzaWMgZ2F0ZWFi
-bGUgY2xvY2sgd2hpY2ggY2FuIGdhdGUgYW5kIHVuZ2F0ZSBpdHMgb3V0cHV0CiAgKgogICogVHJh
-aXRzIG9mIHRoaXMgY2xvY2s6CiAgKiBwcmVwYXJlIC0gY2xrXyh1bilwcmVwYXJlIG9ubHkgZW5z
-dXJlcyBwYXJlbnQgaXMgKHVuKXByZXBhcmVkCi0tCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+The Olimex Olinuxino board has a user led connected to SSP1_DETECT.
+But since this pin is listed in mmc0_pins_fixup, it is already claimed
+by MMC driver and this results in this error during boot:
+
+[    1.390000] imx23-pinctrl 80018000.pinctrl: pin SSP1_DETECT already
+  requested by 80010000.spi; cannot claim for leds
+[    1.400000] imx23-pinctrl 80018000.pinctrl: pin-65 (leds) status -22
+[    1.410000] imx23-pinctrl 80018000.pinctrl: could not request pin 65
+   (SSP1_DETECT) from group led_gpio2_1.0  on device 80018000.pinctrl
+[    1.420000] leds-gpio leds: Error applying setting, reverse things back
+[    1.430000] leds-gpio: probe of leds failed with error -22
+
+This fix it, introduce mmc0_sck_cfg and switch the Olinuxino board to it.
+
+Signed-off-by: Michael Heimpold <mhei@heimpold.de>
+---
+ arch/arm/boot/dts/imx23-olinuxino.dts | 2 +-
+ arch/arm/boot/dts/imx23.dtsi          | 8 ++++++++
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/imx23-olinuxino.dts b/arch/arm/boot/dts/imx23-olinuxino.dts
+index 4c9aafe00b5d..0729e72f2283 100644
+--- a/arch/arm/boot/dts/imx23-olinuxino.dts
++++ b/arch/arm/boot/dts/imx23-olinuxino.dts
+@@ -23,7 +23,7 @@
+ 			ssp0: spi@80010000 {
+ 				compatible = "fsl,imx23-mmc";
+ 				pinctrl-names = "default";
+-				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_pins_fixup>;
++				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_sck_cfg>;
+ 				bus-width = <4>;
+ 				broken-cd;
+ 				status = "okay";
+diff --git a/arch/arm/boot/dts/imx23.dtsi b/arch/arm/boot/dts/imx23.dtsi
+index 8257630f7a49..e18ad74d5470 100644
+--- a/arch/arm/boot/dts/imx23.dtsi
++++ b/arch/arm/boot/dts/imx23.dtsi
+@@ -267,6 +267,14 @@
+ 					fsl,pull-up = <MXS_PULL_DISABLE>;
+ 				};
+ 
++				mmc0_sck_cfg: mmc0-sck-cfg@0 {
++					reg = <0>;
++					fsl,pinmux-ids = <
++						MX23_PAD_SSP1_SCK__SSP1_SCK
++					>;
++					fsl,pull-up = <MXS_PULL_DISABLE>;
++				};
++
+ 				mmc1_4bit_pins_a: mmc1-4bit@0 {
+ 					reg = <0>;
+ 					fsl,pinmux-ids = <
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
