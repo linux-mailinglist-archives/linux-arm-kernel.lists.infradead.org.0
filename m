@@ -2,67 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08B7B17D2D6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 10:18:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77B5317D374
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 11:55:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZfVbeWtBw9DBdICmFX2fqr+CdDzeqNUkSmVQaZHcrMQ=; b=s8HnIYiCNdH3Ad
-	vR4KwIW0Wc5EY967HkzZiS1CNekclbDLc5Mev4hhdNj0DhhM1K+u1qj54w9TjUfCQfeQn6M8rUf04
-	7zYOsyl0ufnnIfWxry9xvXD6V6m/+vuX8EN3/c3uoQcfwC4haVPNdFpyolVwLKOG/1ZW0JhA4DUIw
-	JZ4ba5KRkRyS0LtnDdwavVuqRSYt2jt9aPzt1weDORXdbDiL383nq0SaLPezjZuzQi1om2Ye/lRze
-	AiSmYB020iCnTaGmzAhRBMWJXYET7ow+lp4mFdOAnIr6VBSQHmg3h1ndPrhkq3W+zkPk6TTZBoqUh
-	clKCNWkUeve4zamtpHEg==;
+	List-Owner; bh=orDjyD3k5VRbmK17Blou22ko7dIs+aqrqWW/XmM3zG0=; b=lA7Hyv1vw2RGpT
+	btqeysCZbys4KlKIYH5bHadCY+S+thauLmY+gE51ahmqwbA7ZuXFiabCcN5JmUReNpUJ+qKnZV/RM
+	QqlZ/jB4kBmnbmFMn566thZapaeNuFne8Zn4Y7/6n8ee353dSJA2iLcoPzEs2KIlphx6a9Atyf1Ar
+	7IkbPNWZb8XKQPMxnw8n33zlq4S+NCQMhCIJYtA6aEURfyW2MJ/SIP3BDVPzqmLCZY0o1KWYEYZE1
+	KYnoqVVFgkGlfiSYLGLxDOv0Lu0A61mXdWQIWLMKibQD4WaLpK+bv4kgN1A/tvugn1GF53+XoqUrT
+	6uaS5855e2g9nijje9tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAs5F-0003ho-C8; Sun, 08 Mar 2020 09:18:53 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1jAtaL-00087h-Jl; Sun, 08 Mar 2020 10:55:05 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAs54-0003gi-LZ; Sun, 08 Mar 2020 09:18:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=fhp4Lejt1xnuncUJTAw5EqBMO8VXI2TdMyiIcLrV4cI=; b=XFgo88O/Ea+L8R9wxSMUYIEG0w
- UhYShn6JSBNJGFa4VLc7mooizBP/l7rQv1S0NLCpZ7prz94eV5zq5EX3iqElMWvMu7PWYwnA99CCk
- JrAeJhL1Fkf6t81zxgfRW9jk2pQ25bhI6mbiLfhAy/MMPnTce7zMMxD/MkTFSyBQzFR72iuGNXUFq
- nJdMSMWZP7sV16aK1W6xur8WlanXsSMeoSEFJuLxXrhWJWX2Mm7t72U54PUHNm7GGxW8npmMhzBjZ
- bMR6b/Pa3YcyE4lJ1yvSb4DZL769Ng3fJAQHiLLoJvHkxTuDZAe/k7rAdMvxoMz0XCSkjxX1VRh8y
- 20HBRs0Q==;
-Received: from relay12.mail.gandi.net ([217.70.178.232])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAs4U-0003C1-RC; Sun, 08 Mar 2020 09:18:39 +0000
-Received: from localhost (unknown [37.167.192.10])
- (Authenticated sender: repk@triplefau.lt)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 0965D200006;
- Sun,  8 Mar 2020 09:17:17 +0000 (UTC)
-From: Remi Pommarel <repk@triplefau.lt>
-To: Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Jose Abreu <joabreu@synopsys.com>
-Subject: [PATCH v2] net: stmmac: dwmac1000: Disable ACS if enhanced descs are
- not used
-Date: Sun,  8 Mar 2020 10:25:56 +0100
-Message-Id: <20200308092556.23881-1-repk@triplefau.lt>
-X-Mailer: git-send-email 2.25.0
+ id 1jAtYX-0006Y4-3N; Sun, 08 Mar 2020 10:53:17 +0000
+X-UUID: e119f701f6cd488c872aa35969c83cbd-20200308
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=GxTjmEm049B3GShhfkpoy+9dkylx+QGAxLN83d+jIDk=; 
+ b=dG5A6N4VprMwPggjgqUYJYQegrZKzv6IJp9Dl76oICqgRdCJ0jgoN7MAtPmBLbIc3rY0bQo/AK6FyNbre9dUPleeeZCNJ9cNUGtgmPpUdY4mafXgzMAscde3bOPS5LiC3/UGLhkaMm8F0PwSTyDFbwlmUM/6PZpVSrC4tqf9g60=;
+X-UUID: e119f701f6cd488c872aa35969c83cbd-20200308
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1481110567; Sun, 08 Mar 2020 02:53:01 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Mar 2020 03:53:00 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Mar 2020 18:51:55 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Sun, 8 Mar 2020 18:52:58 +0800
+From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Jassi Brar
+ <jassisinghbrar@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, "David
+ Airlie" <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
+Subject: [PATCH v5 00/13] support gce on mt6779 platform 
+Date: Sun, 8 Mar 2020 18:52:42 +0800
+Message-ID: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_091809_216383_2688F0C4 
-X-CRM114-Status: GOOD (  11.10  )
-X-Spam-Score: -2.6 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
- Content analysis details:   (-2.6 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200308_035313_149334_0638E146 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,60 +88,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Remi Pommarel <repk@triplefau.lt>,
- linux-amlogic@lists.infradead.org, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ HS Liao <hs.liao@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ACS (auto PAD/FCS stripping) removes FCS off 802.3 packets (LLC) so that
-there is no need to manually strip it for such packets. The enhanced DMA
-descriptors allow to flag LLC packets so that the receiving callback can
-use that to strip FCS manually or not. On the other hand, normal
-descriptors do not support that.
+This patch support gce on mt6779 platform.
 
-Thus in order to not truncate LLC packet ACS should be disabled when
-using normal DMA descriptors.
+Change since v4:
+- do not clear disp event again in drm driver
+- symbolize value 1 to jump relative
 
-Fixes: 47dd7a540b8a0 ("net: add support for STMicroelectronics Ethernet controllers.")
-Cc: stable@vger.kernel.org
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
----
-Changes since v1:
-  - Use reverse christmas tree like declaration
-  - Add Fixes tag
----
- drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Change since v3:
+- refine code for local variable usage
+- use cmdq error code to consistent with current design
+- return error directly after send if error code return
+- also modify drm driver which uses cmdq_pkt_wfe api
+- add finalize in drm driver
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-index d0356fbd1e43..542784300620 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac1000_core.c
-@@ -24,6 +24,7 @@
- static void dwmac1000_core_init(struct mac_device_info *hw,
- 				struct net_device *dev)
- {
-+	struct stmmac_priv *priv = netdev_priv(dev);
- 	void __iomem *ioaddr = hw->pcsr;
- 	u32 value = readl(ioaddr + GMAC_CONTROL);
- 	int mtu = dev->mtu;
-@@ -35,7 +36,7 @@ static void dwmac1000_core_init(struct mac_device_info *hw,
- 	 * Broadcom tags can look like invalid LLC/SNAP packets and cause the
- 	 * hardware to truncate packets on reception.
- 	 */
--	if (netdev_uses_dsa(dev))
-+	if (netdev_uses_dsa(dev) || !priv->plat->enh_desc)
- 		value &= ~GMAC_CONTROL_ACS;
- 
- 	if (mtu > 1500)
+[... snip ...]
+
+
+
+Dennis YC Hsieh (13):
+  dt-binding: gce: add gce header file for mt6779
+  mailbox: cmdq: variablize address shift in platform
+  mailbox: cmdq: support mt6779 gce platform definition
+  mailbox: mediatek: cmdq: clear task in channel before shutdown
+  soc: mediatek: cmdq: return send msg error code
+  soc: mediatek: cmdq: add assign function
+  soc: mediatek: cmdq: add write_s function
+  soc: mediatek: cmdq: add read_s function
+  soc: mediatek: cmdq: add write_s value function
+  soc: mediatek: cmdq: export finalize function
+  soc: mediatek: cmdq: add jump function
+  soc: mediatek: cmdq: add clear option in cmdq_pkt_wfe api
+  soc: mediatek: cmdq: add set event function
+
+ .../devicetree/bindings/mailbox/mtk-gce.txt   |   8 +-
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |   3 +-
+ drivers/mailbox/mtk-cmdq-mailbox.c            | 101 ++++++--
+ drivers/soc/mediatek/mtk-cmdq-helper.c        | 144 +++++++++++-
+ include/dt-bindings/gce/mt6779-gce.h          | 222 ++++++++++++++++++
+ include/linux/mailbox/mtk-cmdq-mailbox.h      |  10 +-
+ include/linux/soc/mediatek/mtk-cmdq.h         |  94 +++++++-
+ 7 files changed, 549 insertions(+), 33 deletions(-)
+ create mode 100644 include/dt-bindings/gce/mt6779-gce.h
+
 -- 
-2.25.0
-
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
