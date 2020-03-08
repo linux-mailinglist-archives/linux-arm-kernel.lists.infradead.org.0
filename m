@@ -2,79 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 292B517D6BB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 23:22:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4708317D6CC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 23:33:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DLjw1KzV8o6D2eS1OVHOM44cw3dMiKTeriyAFrdfx0Y=; b=tw/
-	6C9NkqDMvk0XYwYwSdejTh39zZbTG7ffsuaDRRYZcKVVpJ1wnJQWv0z992pBcXC4Vow56KVJn6I2C
-	Xn1pWO6EEGoLiMFCzAkQh4r7ex1K4tELnrZnmlabOr5HzYo+4ELm5O8/VBSJn9r4xy5N/4UMRrW0z
-	o/VN7+lCR7OffWw/u5ufMUkTqfapAwAJKz8MOnEwkM4cYIlwjGr+GPcdJnSUxbTQd1Ukl01FYPXq5
-	3+eTBEcp6BWGezDUb25+wxUJONBWxN7oPL2iwUS3/BpENdERbIU5sif0xwRjJKfUpIeC91QvOj9gL
-	3rOl1HxCSc48rXgksjmsqjT0i6KLjXQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Z980cvlknwBGYWlpY0FOoMcgpICqnp60A7NkR/krQno=; b=eKgGKtXWE6xm9n
+	ZQU+MoIrYjCAls34OTz0t/U3EgVkx003jQ9HoPiBCj/nY+qSgrdRT/xk+1hvrFKnRj5yDGq6fvYn1
+	BHiWhPq5r5oJqr6YgPJSuu/c1tcV8sZOaSMSetAf0ZTWRPyQwbOoJwUwAYSh55z2vR8hrFKKty14C
+	l7BP86tPTYk19T3fQhF8ID3ZqZjegeTWB8hvFFI0DqcDmgR12oaEv/0Kxvhn2XT2C309n8N6uG/VG
+	1uWyBezG6CZOHf0kNsQ6DsBBEI5vDGInCH1hdjuC3xd6gVDxUxD8v6KQD31VUbEPVcxkpZRvwYf8L
+	NqJ78IXXMHMz104ZLz+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB4JW-0003Lb-0U; Sun, 08 Mar 2020 22:22:26 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::3])
+	id 1jB4U6-0006nW-8l; Sun, 08 Mar 2020 22:33:22 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB4JO-0003LD-52
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 22:22:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1583706133;
- s=strato-dkim-0002; d=heimpold.de;
- h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
- Subject:Sender;
- bh=d9uANtqqjVRwOWMSyb++r8818TlXjH+7k+MeOvfjjAo=;
- b=tix8UU/oJfTHj6CEgk9YlbGjEFa2brHBENxmTz0t0cwSeoiPVIKouE5Zduwsn0WnFp
- yBLRTMKU8GjBp95X05PhGbUy9hQJc11QPSObGzcDrLeOiQubdOcMn/PiIftsbEkoncdS
- Ov90mIVQCNVZMf4VsdVKxF6G14oDdUa+F4dfFsxhMRiZmG0vgxIkZszbjEQCfhuPifss
- hEQmVk3LVJkW9IBesere2aS1N8FZ3J7xaC/0U0dd4map8iu4yzWCDue7ZxWeD1TxGH7T
- JNCc5G9+JqYNWrNPtAf+RjTPx9V+V0XGB2+LjqZf1JL0OxCnsn3bpCYQ7aTbNSDhtG7l
- xdjw==
-X-RZG-AUTH: ":O2kGeEG7b/pS1EW8QnKjhhg/vO4pzqdNytq77N6ZKUSN7PfdWTGQORRBv+ASfYPl1MuUOoWmb+wVC/S4hO3Q59Bxjg5s+JNFtEYYiw=="
-X-RZG-CLASS-ID: mo00
-Received: from tonne.mhei.heimpold.itr by smtp.strato.de (RZmta 46.2.0 AUTH)
- with ESMTPSA id Q06422w28MM4gKy
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve X9_62_prime256v1
- with 256 ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Sun, 8 Mar 2020 23:22:04 +0100 (CET)
-Received: from kerker.mhei.heimpold.itr (kerker.mhei.heimpold.itr
- [192.168.8.1])
- by tonne.mhei.heimpold.itr (Postfix) with ESMTP id 6D0F71512E1;
- Sun,  8 Mar 2020 23:22:03 +0100 (CET)
-From: Michael Heimpold <mhei@heimpold.de>
-To: shawnguo@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org
-Subject: [PATCH] ARM: dts: imx23: introduce mmc0_sck_cfg
-Date: Sun,  8 Mar 2020 23:21:44 +0100
-Message-Id: <20200308222144.24863-1-mhei@heimpold.de>
-X-Mailer: git-send-email 2.17.1
+ id 1jB4Ts-0006lL-G6; Sun, 08 Mar 2020 22:33:10 +0000
+Received: from p508fd11c.dip0.t-ipconnect.de ([80.143.209.28]
+ helo=phil.fritz.box)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jB4Tk-0003xR-CD; Sun, 08 Mar 2020 23:33:00 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-rockchip@lists.infradead.org
+Subject: [PATCH v2 1/3] arm64: dts: rockchip: add core devicetree for rk3326
+Date: Sun,  8 Mar 2020 23:32:48 +0100
+Message-Id: <20200308223250.353053-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_152218_784328_3244ABA7 
-X-CRM114-Status: GOOD (  11.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200308_153308_686222_C77E7B2E 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5301:0:0:3 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,67 +55,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Heimpold <mhei@heimpold.de>
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ kever.yang@rock-chips.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ jbx6244@gmail.com, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Olimex Olinuxino board has a user led connected to SSP1_DETECT.
-But since this pin is listed in mmc0_pins_fixup, it is already claimed
-by MMC driver and this results in this error during boot:
+From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-[    1.390000] imx23-pinctrl 80018000.pinctrl: pin SSP1_DETECT already
-  requested by 80010000.spi; cannot claim for leds
-[    1.400000] imx23-pinctrl 80018000.pinctrl: pin-65 (leds) status -22
-[    1.410000] imx23-pinctrl 80018000.pinctrl: could not request pin 65
-   (SSP1_DETECT) from group led_gpio2_1.0  on device 80018000.pinctrl
-[    1.420000] leds-gpio leds: Error applying setting, reverse things back
-[    1.430000] leds-gpio: probe of leds failed with error -22
+The rk3326 is basically a px30 without the second display controller.
+So add a dtsi based on that, that just removes the affected nodes.
 
-This fix it, introduce mmc0_sck_cfg and switch the Olinuxino board to it.
-
-Signed-off-by: Michael Heimpold <mhei@heimpold.de>
+Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 ---
- arch/arm/boot/dts/imx23-olinuxino.dts | 2 +-
- arch/arm/boot/dts/imx23.dtsi          | 8 ++++++++
- 2 files changed, 9 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/rk3326.dtsi | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3326.dtsi
 
-diff --git a/arch/arm/boot/dts/imx23-olinuxino.dts b/arch/arm/boot/dts/imx23-olinuxino.dts
-index 4c9aafe00b5d..0729e72f2283 100644
---- a/arch/arm/boot/dts/imx23-olinuxino.dts
-+++ b/arch/arm/boot/dts/imx23-olinuxino.dts
-@@ -23,7 +23,7 @@
- 			ssp0: spi@80010000 {
- 				compatible = "fsl,imx23-mmc";
- 				pinctrl-names = "default";
--				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_pins_fixup>;
-+				pinctrl-0 = <&mmc0_4bit_pins_a &mmc0_sck_cfg>;
- 				bus-width = <4>;
- 				broken-cd;
- 				status = "okay";
-diff --git a/arch/arm/boot/dts/imx23.dtsi b/arch/arm/boot/dts/imx23.dtsi
-index 8257630f7a49..e18ad74d5470 100644
---- a/arch/arm/boot/dts/imx23.dtsi
-+++ b/arch/arm/boot/dts/imx23.dtsi
-@@ -267,6 +267,14 @@
- 					fsl,pull-up = <MXS_PULL_DISABLE>;
- 				};
- 
-+				mmc0_sck_cfg: mmc0-sck-cfg@0 {
-+					reg = <0>;
-+					fsl,pinmux-ids = <
-+						MX23_PAD_SSP1_SCK__SSP1_SCK
-+					>;
-+					fsl,pull-up = <MXS_PULL_DISABLE>;
-+				};
+diff --git a/arch/arm64/boot/dts/rockchip/rk3326.dtsi b/arch/arm64/boot/dts/rockchip/rk3326.dtsi
+new file mode 100644
+index 000000000000..2ba6da125137
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3326.dtsi
+@@ -0,0 +1,15 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2020 Fuzhou Rockchip Electronics Co., Ltd
++ */
 +
- 				mmc1_4bit_pins_a: mmc1-4bit@0 {
- 					reg = <0>;
- 					fsl,pinmux-ids = <
++#include "px30.dtsi"
++
++&display_subsystem {
++	ports = <&vopb_out>;
++};
++
++/delete-node/ &dsi_in_vopl;
++/delete-node/ &lvds_vopl_in;
++/delete-node/ &vopl;
++/delete-node/ &vopl_mmu;
 -- 
-2.17.1
+2.24.1
 
 
 _______________________________________________
