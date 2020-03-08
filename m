@@ -2,84 +2,148 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED4B417D4DD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 17:36:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D097617D4E7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 17:44:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jejq97umHz+QcWl1KlAdXnCVuTMnWbxmn83+BOinYaU=; b=RHGJcUpinDbRea
-	wj2LTU1KBDpEJMBL9Wj5+HAGW+WzJQEbh1L5CLkx//zXp5FE6PdskAmC0YeranWltKFx3tKrEYGTh
-	ERbUk3G2u5JcR7i1xwtXW6b5OAYRxEG7yBBA4wLbOfBS+yTph3nwDxx9Th19A/AFyjo4jL2VE+7W/
-	tDYOi0ve5FLLYq3D+OBMiBwXSqDg5sE9BWeyYONB9zYolkfnv4lUcyadpWoZ0nU8Cx9MjLfQXZAsL
-	xHAKzCbzymU4Uw3H+CeoI4j6bcumV7QUZARSQV7mizY7d8fzTZIHq0R+NpomZP4nObvT4ygkLeFmq
-	UNFkexLDPe8hb6y83MJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iYahTpO0SN2l/5GwAu+ljOTgqVKisZmI7lBZmU8WsbI=; b=pCOsYnNRMgoRhX
+	su3xCAs+KZF3+SDRP5vIRmq4Dun5VbcX/3C+0BdSM67natrmbU9ic5dZ5GrzS+4fNHIqGRXbj2f/I
+	h+t5R7hDGoZ58b4wTLnb9VenIjg18cMfCjPPMqLtsholpb4qbF//lk0u42H5Kjf6LJ4sAzRS4tEBo
+	N/vOoRbxIs0GZmrPEM/rzw0gl4l1iZ3m+Jl/alflInwR+aejAnX/xc1TMduoFpIJkIVuWa48RakPr
+	oJU/+HA2ZeAaE7L4U2IxiCLRUSSAAExCqwdKlGh1XxOPI4DiL3QiWtq52rYFFE0YqKcxML1+XYqNS
+	xeG4gGOu4qtuwyRTH+6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAyuT-0003m7-QS; Sun, 08 Mar 2020 16:36:13 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jAz1y-0006tG-Ty; Sun, 08 Mar 2020 16:43:58 +0000
+Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAyu3-0003Tc-Ke
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 16:35:53 +0000
-Received: by mail-lf1-x144.google.com with SMTP id t21so5651189lfe.9
+ id 1jAz1r-0006sv-JG
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 16:43:52 +0000
+Received: by mail-pl1-x636.google.com with SMTP id d9so2991594plo.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 08 Mar 2020 09:35:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ragnatech-se.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=SCn2CpVC/7ynZUWvGTDmpECNjpBPxtQHPMbxz1lBSOQ=;
- b=VBwElsPwH4qLkHurgScNaHNHOiGUnQFVuXLs47+GzkvBpuVSogd92FF/MYnHIn9d/m
- 8F4fcpi2vppv8TT0bOMhzzYFk+CqYgNJWuH6q31JTUYoxqndZbhItF/tAC2EI5s8wpk/
- o5onxJelZaDxOUI4COgA/C9cn76H2+iiQ487IQwrvdGPlAf/Un4T9vock+xKOwdy8Dj4
- Uq8bXPLzu9T+WvWQU86PMi3FCRwPJrPOs+GGpi+cO0t32PuCDVFOp30dQsJqgmRbHCQg
- KdzHi4WjOZ5F+W2hYQkNbxRiPcwg5yW2jz2fWDxOpaDSEBdv91NRKOFmtEnjlIT/GKm2
- iNNg==
+ Sun, 08 Mar 2020 09:43:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=9IVcsj9+bDYP6mY7eEU9djUXt7sUQfPnADhF5EW0Grg=;
+ b=o3CprRbl+XMVaAZstY+EjRvp8VzF6+z7o7fgDmNfVAZ8iNjyNWGftK5syzOlfIxDbI
+ mXCh1ug/jNcV0nM3JDUkBR+G2o9O93kzPW4UyuozdLn9OxzNWxr9sH7MRwJWDnYFOWaZ
+ eu3Dm7ZDePwz8y5bsy6getowoz0NOyqMFsGDQ8I8v8lnLYQdNwIOdhkxvWQWsgz4xp5i
+ ne3T8uM8CoobspFo+4oXRp37oA+jfE4tKkoV4jmh28xflQ2Hc8X9MQTxKoshX7GdrmkF
+ WHzKaUeOjbnvph/tRYbf1i6336/UvsG6/Tb1sQT1A3xEJ/RBPzIkoQWD4r3gvbsVDym5
+ F+dw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=SCn2CpVC/7ynZUWvGTDmpECNjpBPxtQHPMbxz1lBSOQ=;
- b=Q84M4PARQbthnaZR2tpOzajJBrcNf4oe3sQ/JpfkfIdKQW5r4lel11vTpc4vgWc39V
- Fotkv3E2uH9FZZ1RXGqh1OjTXzzxZjTBJESsiwsFZ0MiFQ4HFRiIf/GgzIynx+0/jngs
- KZicNeQPWxGj95yibVI5cZmHYCqeb5xowTzlBSKJmfdDrikcAWf4rall+8hjQedlBz/i
- w9U7EZesFZ/YfIJGlfurCNHuJ9+fMu0q2gCtsqDML2Jp/VsiGWDXhmcd2x3XszwqfOcH
- 4oRfwkowwun/d6NXAN0U9SccUB6NLtuTnmYz597euehqDKrVEGKPMBjg0apGMjS9ws0e
- HLYA==
-X-Gm-Message-State: ANhLgQ2mTMD6+cFR+muDi/CqEJzV7XlsfjoJGkfduANHVIXK3wc5QDUr
- IWK9zLy+bInS7NkJubL0rcdeAjZzpSc=
-X-Google-Smtp-Source: ADFU+vuo9cIWcyNT/HEu7Hn2mCrfDG0g9mOpd0bFl78MAIG7W5xNck5AJIKMHv1L7fu+OcBX7OdTfA==
-X-Received: by 2002:ac2:4201:: with SMTP id y1mr7412717lfh.92.1583685345015;
- Sun, 08 Mar 2020 09:35:45 -0700 (PDT)
-Received: from localhost (h-200-138.A463.priv.bahnhof.se. [176.10.200.138])
- by smtp.gmail.com with ESMTPSA id o4sm14989027lfl.62.2020.03.08.09.35.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 08 Mar 2020 09:35:44 -0700 (PDT)
-Date: Sun, 8 Mar 2020 17:35:43 +0100
-From: Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH] arm64: dts: renesas: r8a77961: Add thermal nodes
-Message-ID: <20200308163543.GD2975348@oden.dyn.berto.se>
-References: <20200306110025.24747-1-geert+renesas@glider.be>
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=9IVcsj9+bDYP6mY7eEU9djUXt7sUQfPnADhF5EW0Grg=;
+ b=FxyNoTZVjIL9XHo44M461Thata0kpgkUVxDsmP86FyH77jXnRtKpqfzWqltIxfWDs8
+ phIDWLDUXgrTWeVqWOn0SmUxunQ49o2CCVhQju966HHs6B93L94Ddv41L5NL2YD9plAv
+ aAZxVHFVbdxhrUhHzRyR8ieLtbhIKFPt/tKrS+FK7sY799JoVB06DfbJcrgWS8urDuce
+ GYs8GCO9FQg8A+BVN9OTrvPMg2XlgulAFIXW2lE7tyRDvCf6LU9cBb3b4pFNpwcWF3p3
+ hJzZKvX4y6538p1uIq/itkr0bQUU7gJ/l65s5mTtB2sQxuuLbSG8p/6SFpcIjEDOb/gV
+ 6JoA==
+X-Gm-Message-State: ANhLgQ0WaeRKNG5Ve4M9UJZVVTNMd6uAcdaggv70K4jtzn00RGRKKsS1
+ DItXGuKe06elLLcS4KuFs8I=
+X-Google-Smtp-Source: ADFU+vvECFRi+4TC5ewtzR0ffxXyRw8ZQFTmSfCOtxxuyhiLSvIMZ2bTf9zy9xbB/4/vq4JDb48cSQ==
+X-Received: by 2002:a17:90a:ec10:: with SMTP id
+ l16mr9290762pjy.37.1583685830169; 
+ Sun, 08 Mar 2020 09:43:50 -0700 (PDT)
+Received: from [10.230.30.195] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id q9sm40859237pgs.89.2020.03.08.09.43.46
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 08 Mar 2020 09:43:49 -0700 (PDT)
+Subject: Re: [PATCH V5 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transport
+To: peng.fan@nxp.com, sudeep.holla@arm.com, robh+dt@kernel.org
+References: <1583673879-20714-1-git-send-email-peng.fan@nxp.com>
+ <1583673879-20714-2-git-send-email-peng.fan@nxp.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <28538d48-ef20-49f1-2882-9e5592c1352c@gmail.com>
+Date: Sun, 8 Mar 2020 09:43:44 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200306110025.24747-1-geert+renesas@glider.be>
+In-Reply-To: <1583673879-20714-2-git-send-email-peng.fan@nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_093547_697217_E24E2E25 
-X-CRM114-Status: GOOD (  16.38  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200308_094351_660433_69DEF958 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:636 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,166 +158,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: viresh.kumar@linaro.org, devicetree@vger.kernel.org, linux-imx@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
-
-Thanks for your work.
-
-On 2020-03-06 12:00:25 +0100, Geert Uytterhoeven wrote:
-> Add a device node for the Thermal Sensor/Chip Internal Voltage Monitor
-> in the R-Car M3-W+ (R8A77961) SoC, and describe the thermal zones.
-> =
-
-> According to the R-Car Gen3 Hardware Manual Errata for Revision 2.00 of
-> Jan 31, 2020, the thermal parameters for R-Car M3-W+ are the same as for
-> R-Car M3-W.
-> =
-
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> It's a bit cold in Magnus' lab:
-> =
-
-> / # grep . /sys/devices/virtual/thermal/thermal_zone?/temp
-> /sys/devices/virtual/thermal/thermal_zone0/temp:17000
-> /sys/devices/virtual/thermal/thermal_zone1/temp:19000
-> /sys/devices/virtual/thermal/thermal_zone2/temp:18000
-> ---
->  arch/arm64/boot/dts/renesas/r8a77961.dtsi | 80 +++++++++++++++++++++++
->  1 file changed, 80 insertions(+)
-> =
-
-> diff --git a/arch/arm64/boot/dts/renesas/r8a77961.dtsi b/arch/arm64/boot/=
-dts/renesas/r8a77961.dtsi
-> index b6915319a61c8bf0..2f016458f57d3a33 100644
-> --- a/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-> +++ b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-> @@ -474,6 +474,20 @@
->  			#power-domain-cells =3D <1>;
->  		};
->  =
-
-> +		tsc: thermal@e6198000 {
-> +			compatible =3D "renesas,r8a77961-thermal";
-> +			reg =3D <0 0xe6198000 0 0x100>,
-> +			      <0 0xe61a0000 0 0x100>,
-> +			      <0 0xe61a8000 0 0x100>;
-> +			interrupts =3D <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
-> +				     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
-> +			clocks =3D <&cpg CPG_MOD 522>;
-> +			power-domains =3D <&sysc R8A77961_PD_ALWAYS_ON>;
-> +			resets =3D <&cpg 522>;
-> +			#thermal-sensor-cells =3D <1>;
-> +		};
-> +
->  		intc_ex: interrupt-controller@e61c0000 {
->  			#interrupt-cells =3D <2>;
->  			interrupt-controller;
-> @@ -785,6 +799,7 @@
->  			status =3D "disabled";
->  		};
->  =
-
-> +
-
-This don't looks like it's needed :-) With this fixed,
-
-Reviewed-by: Niklas S=F6derlund <niklas.soderlund+renesas@ragnatech.se>
-
->  		pwm1: pwm@e6e31000 {
->  			reg =3D <0 0xe6e31000 0 8>;
->  			#pwm-cells =3D <2>;
-> @@ -1073,6 +1088,71 @@
->  		};
->  	};
->  =
-
-> +	thermal-zones {
-> +		sensor_thermal1: sensor-thermal1 {
-> +			polling-delay-passive =3D <250>;
-> +			polling-delay =3D <1000>;
-> +			thermal-sensors =3D <&tsc 0>;
-> +			sustainable-power =3D <3874>;
-> +
-> +			trips {
-> +				sensor1_crit: sensor1-crit {
-> +					temperature =3D <120000>;
-> +					hysteresis =3D <1000>;
-> +					type =3D "critical";
-> +				};
-> +			};
-> +		};
-> +
-> +		sensor_thermal2: sensor-thermal2 {
-> +			polling-delay-passive =3D <250>;
-> +			polling-delay =3D <1000>;
-> +			thermal-sensors =3D <&tsc 1>;
-> +			sustainable-power =3D <3874>;
-> +
-> +			trips {
-> +				sensor2_crit: sensor2-crit {
-> +					temperature =3D <120000>;
-> +					hysteresis =3D <1000>;
-> +					type =3D "critical";
-> +				};
-> +			};
-> +		};
-> +
-> +		sensor_thermal3: sensor-thermal3 {
-> +			polling-delay-passive =3D <250>;
-> +			polling-delay =3D <1000>;
-> +			thermal-sensors =3D <&tsc 2>;
-> +			sustainable-power =3D <3874>;
-> +
-> +			cooling-maps {
-> +				map0 {
-> +					trip =3D <&target>;
-> +					cooling-device =3D <&a57_0 2 4>;
-> +					contribution =3D <1024>;
-> +				};
-> +				map1 {
-> +					trip =3D <&target>;
-> +					cooling-device =3D <&a53_0 0 2>;
-> +					contribution =3D <1024>;
-> +				};
-> +			};
-> +			trips {
-> +				target: trip-point1 {
-> +					temperature =3D <100000>;
-> +					hysteresis =3D <1000>;
-> +					type =3D "passive";
-> +				};
-> +
-> +				sensor3_crit: sensor3-crit {
-> +					temperature =3D <120000>;
-> +					hysteresis =3D <1000>;
-> +					type =3D "critical";
-> +				};
-> +			};
-> +		};
-> +	};
-> +
->  	timer {
->  		compatible =3D "arm,armv8-timer";
->  		interrupts-extended =3D <&gic GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ=
-_TYPE_LEVEL_LOW)>,
-> -- =
-
-> 2.17.1
-> =
 
 
--- =
+On 3/8/2020 6:24 AM, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> SCMI could use SMC/HVC as tranports. Since there is no
+> standardized id, we need to use vendor specific id. So
+> add into devicetree binding doc.
+> 
+> Also add arm,scmi-smc compatible string for smc/hvc transport
+> 
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
-Regards,
-Niklas S=F6derlund
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
