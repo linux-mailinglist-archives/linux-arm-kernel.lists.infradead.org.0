@@ -2,69 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 129AC17D5A6
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 19:55:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C41C617D61E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 21:18:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=G6iQcSFkX6baSnLuAUomZdkXuwK9Rin2K91urpCS79c=; b=cXPOHyy6o3qiRo3RbttYLgZoy
-	feeUDpMHK7AwbANvMKyDnq9iVfbICVtYlZsnhv9WuKlhsAuLZH340DIm29gJj6qROjQVYSzm4dydC
-	bnzew+X7QgrJXiMaO+1ZsJOBo6ydtTIi17RfxAtC8+XCOv+P5/bQS48dt+ySEgg406sKRf+OoYPJ3
-	RDnYK+Jyr9Xce7iI1rwKVvlTn0AOukWkC10xMFr8SI+UEieFxBIIrhQtmnP0RYe5rU06zhvjIrt8M
-	qt22T/xrdupwqxh6UljkwOH+GO1h55HUavKTPgXcdfhifB1hLkIYSYVS9fBII1F9SRGY213UT5u8S
-	m+5Z3hKrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TnEo09gg5iP0L+BE92SQQ2o0KRa7CBpOhzH0oV1GCaY=; b=qT1tTQLIqRBVZl
+	SlnZKUW6ATOZ7MKhi++0JHkeyp5VkCv0ytvhYDdhAdmOqnqntwnVs6ZdMFd0rsNAwuqV3VXmWFQac
+	KrITbbeyadK1IBRzBEASGR/1vGdoAz7cMGgIJS1LUvdbLgpmd7FLq2uJ9flwC9P0pIrH2wTR3dmfO
+	yeRqMaEjpeIQJJ52qIsH3D5cxemCTuZdBno2fZT5gRl4Ao44EvjuMwcy0bfdfUqew0eBysgc5pYLR
+	EQGclq/H1R3EpVO3zZnXU085mMjMcTOZPzgamKm/HrEIZxkIbqxdMaS0+08VkRqOPpPeMXti6jyIW
+	Ge5+q9QytRyO6HQkH3+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB14j-0004lK-5m; Sun, 08 Mar 2020 18:54:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jB2No-0005qN-Al; Sun, 08 Mar 2020 20:18:44 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB14Z-0004kx-Mg
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 18:54:49 +0000
-Received: from earth.universe (unknown [185.62.205.105])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C576E20663;
- Sun,  8 Mar 2020 18:54:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583693687;
- bh=Q+kfL4mkXLvM4nEGnLgXVk4GKzZ0+K/A2ern3w+0xSU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GL42HVY51ZG+Fp9Jnf0GgKOU1R/rQc66l7JTQISLGNJHbMqKeLW+DTThTwAEk5JxL
- zselZ4tkuwqc/tZOcqiKK1DhPGWmmEuB/ySZGmCypYcBkhrH0THm2TLNewIn4GaJWd
- 62mbeKY+pBVqH/rdXrd91X1p6Qo7HdhfgIZXDCT8=
-Received: by earth.universe (Postfix, from userid 1000)
- id 5DAAB3C0C82; Sun,  8 Mar 2020 19:54:44 +0100 (CET)
-Date: Sun, 8 Mar 2020 19:54:44 +0100
-From: Sebastian Reichel <sre@kernel.org>
-To: Claudiu.Beznea@microchip.com
-Subject: Re: [PATCH 00/15] rework at91-reset driver
-Message-ID: <20200308185444.lpkpumgxhya7n356@earth.universe>
-References: <1579601001-5711-1-git-send-email-claudiu.beznea@microchip.com>
+ id 1jB2Ng-0005oW-OX
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 20:18:38 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jB2NU-0003GY-PR; Sun, 08 Mar 2020 21:18:24 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jB2NH-0006Ms-Fq; Sun, 08 Mar 2020 21:18:11 +0100
+Date: Sun, 8 Mar 2020 21:18:11 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Subject: Re: [PATCH v2 1/1] pwm: mediatek: add longer period support
+Message-ID: <20200308201811.hlac57s3h4p4cgev@pengutronix.de>
+References: <1583230755-25986-1-git-send-email-sam.shih@mediatek.com>
+ <1583230755-25986-2-git-send-email-sam.shih@mediatek.com>
+ <1a3a523e-62ff-e380-c67b-12f742d348ea@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1579601001-5711-1-git-send-email-claudiu.beznea@microchip.com>
+Content-Disposition: inline
+In-Reply-To: <1a3a523e-62ff-e380-c67b-12f742d348ea@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_115447_782400_06CDBFB5 
-X-CRM114-Status: GOOD (  12.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200308_131836_802963_75A2D862 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,95 +69,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+Cc: linux-pwm@vger.kernel.org, Sam Shih <sam.shih@mediatek.com>,
+ linux-kernel@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3303032597601007552=="
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello,
 
---===============3303032597601007552==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="kc3gxuytlvcwlxwg"
-Content-Disposition: inline
+On Sat, Mar 07, 2020 at 10:28:36PM +0100, Matthias Brugger wrote:
+> On 03/03/2020 11:19, Sam Shih wrote:
+> > The pwm clock source could be divided by 1625 with PWM_CON
+> > BIT(3) setting in mediatek hardware.
+> > =
 
+> > This patch add support for longer pwm period configuration,
+> > which allowing blinking LEDs via pwm interface.
+> =
 
---kc3gxuytlvcwlxwg
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> Is this a fix? In this case please provide a Fixes tag with the commit ID=
+ which
+> introduced the bug.
 
-Hi,
+I'd say it qualifies as a fix if without it a request with a long period
+returns success but isn't properly implemented. Otherwise it's only a
+new feature.
 
-On Tue, Jan 21, 2020 at 10:03:29AM +0000, Claudiu.Beznea@microchip.com wrot=
-e:
-> The following patches rework the at91-reset driver and solves
-> the SAM9X60 VDDCORE fast drop in the first 100us after power down.
+Best regards
+Uwe
 
-Thanks, queued to power-supply's for-next branch.
+-- =
 
--- Sebastian
-
-> Claudiu Beznea (15):
->   power: reset: at91-reset: introduce struct at91_reset
->   power: reset: at91-reset: add ramc_base[] to struct at91_reset
->   power: reset: at91-reset: add sclk to struct at91_reset
->   power: reset: at91-reset: add notifier block to struct at91_reset
->   power: reset: at91-reset: convert reset in pointer to struct
->     at91_reset
->   power: reset: at91-reset: pass rstc base address to
->     at91_reset_status()
->   power: reset: at91-reset: devm_kzalloc() for at91_reset data structure
->   power: reset: at91-reset: introduce struct at91_reset_data
->   power: reset: at91-reset: introduce args member in at91_reset_data
->   power: reset: at91-reset: use r4 as tmp argument
->   power: reset: at91-reset: introduce ramc_lpr to struct at91_reset
->   power: reset: at91-reset: make at91sam9g45_restart() generic
->   power: reset: at91-reset: keep only one reset function
->   power: reset: at91-reset: get rid of at91_reset_data
->   power: reset: at91-reset: handle nrst async for sam9x60
->=20
->  drivers/power/reset/at91-reset.c | 190 +++++++++++++++++++--------------=
-------
->  1 file changed, 94 insertions(+), 96 deletions(-)
->=20
-> --=20
-> 2.7.4
-
---kc3gxuytlvcwlxwg
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl5lP20ACgkQ2O7X88g7
-+prHbg/+O0XOtdVGtEj+dgQdKkxCtRq/tHyIWB/3PAUQ3fAEGtBmQVdDZS6EHi9A
-xvKRTAIPw4NL4LvX3KLx90iyJdwokAU61/MX6aGcWUe7v5jgOGHsdXlfEIVlMzEo
-U7UEexjUAMEAgA2aG1Dl38GNY6q/Df1QKRg63D2x1n6wRD72lzgLTYpVxQVmeEoL
-FP6wYdjvYgBrvjHd0VVoUdrk218eQtzFBA/BsEyJ3Vh3RNiqTNJWamaxe83p10vb
-XMVfSkdyqc/hqBDx95+QkwFcsZM6y/B1iTfjaoc08uEh3GI3k0ggpRoZDm+S3aVr
-Y2n1CDekjlVisufZhwvTkDYijwyWelH4aXlUbyAK/TBJ0zOeESq7mJxHry5az5u2
-+161MxZZivVZvklCh0QUgpgP0DOv1vWA4sX7thw7EXLz5HHIJacstKAQGnrUtZNL
-ohIZLEU4awX3xplOltncY0PqKztbv+BTfE9RN8K6EWFjqo76pkMgHoXE+J1VtZA7
-eSQiRvByrAWiWdftZGwoSjTgcO5BlqxAvzFK7nuyvAgrTkip28i+5QGs4ihgpLbz
-s6DWLgts47zHLA03Ymr0Cqw9Ej+2mSeZNhzR4yJAG/fmzoICs4kvfSin9uHJDHyZ
-wubsG9S0HGzZJoGQkm8458zN2GFus96QrGOwx4TLebvipvS69GU=
-=ox0n
------END PGP SIGNATURE-----
-
---kc3gxuytlvcwlxwg--
-
-
---===============3303032597601007552==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3303032597601007552==--
-
