@@ -2,89 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9FE917D383
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 11:59:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1418717D391
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 12:04:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wTCUfcSh+vUv5Hsc+uSKatscDsicBpvl0Eh9Deddkfw=; b=FWM1pVF4G9NdD7
-	8KebVZ7ztkDr9dbpIYAvTUsEsvMjksEgTXxPMt6CFDn4vPtgHZg8jT3EmExt4KIH5sDBFmU8l1EsD
-	2W4lDXVlz3zcd7XD55oHU8VV+iABQmJCL2fn5P2owu3qHJqpjcHqJWczXxHcVDVCC/IW0DbhN5kip
-	Zn2oy/Gv96OII8a7aLor2G2SJ6OydxXsRPOfkEsWjUKCRgnTYJKkx5SBSaYK0LcIofyHfflIgF1e5
-	Pwd6TyFhljtQKy2hjuS+o+gAgzwuB08CxUFvFN2Nj2J9uVi8vUsb9YLAyHRqRlPqy42371bzJvE8Z
-	BIkmt+O5PnLhIDKBrj7w==;
+	List-Owner; bh=FGdToKWI6Np0ksd22+rKeEtABfwL2JCEackcAxL6YvM=; b=jmCKjh4wjV8vev
+	Z/2FBnhJW54Z0zJGNZerDBVGORwuzjl0m/WmMLo8+Mzg4v3R5TUZeDijI4t172B6TMH/Xyyt+iRTG
+	wXNmfXtgLsVpnUe9S6gb3udZTx4mRuIkGhBdtVKWv4viylEWikzY7DjavtUQyyNPduQAxlB/cAsXX
+	7WHDnCvMMFXOON1mkGtKsCS6xxgonmdkAT1uHK89qXrClo8uM4qxORusqnhv/gHWdQtVymT4GyG8i
+	EbfugCALz9P0twQ0pqGyWW2gCcaG6I9nyg8RXA/p1AGFk7O6hpAP9alwxGTX6XRRJqiUlCSFcbsdx
+	Lm2WpgzMKf1ZrskkOEyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAteX-0003ES-F6; Sun, 08 Mar 2020 10:59:25 +0000
-Received: from mout.kundenserver.de ([217.72.192.75])
+	id 1jAtjC-0005t6-MS; Sun, 08 Mar 2020 11:04:14 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAteN-0003DW-No
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 10:59:17 +0000
-Received: from mail-qk1-f171.google.com ([209.85.222.171]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MplsZ-1jgy832d0n-00qD9p for <linux-arm-kernel@lists.infradead.org>; Sun,
- 08 Mar 2020 11:59:10 +0100
-Received: by mail-qk1-f171.google.com with SMTP id c145so829436qke.12
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 08 Mar 2020 03:59:10 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ2DM9lVx83dXpOXFNue05/IuMrkoX6Kdzeoc8S6tlaqi0igO9Gj
- 9XyKqXfRa9SgdnMNOse9PwktevW92gDbKMVOJvE=
-X-Google-Smtp-Source: ADFU+vtLZCrqsvoVRLgLjaKncW5qncKt1oeFxxk4ajRHsCJw8gSTZvblgXUZetJgeQGkfwQsqjkOMZPRrTin3JkbS24=
-X-Received: by 2002:a37:b984:: with SMTP id j126mr10069404qkf.3.1583665149525; 
- Sun, 08 Mar 2020 03:59:09 -0700 (PDT)
+ id 1jAtiH-000554-0r; Sun, 08 Mar 2020 11:03:19 +0000
+X-UUID: 70fd1f6f8d68409bb8151eb5e108ed87-20200308
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=BCXL5tDvzkDDYvZAF6tXplZXEZt+EddIzFxmBA+lZ14=; 
+ b=gDzej5CX4kAUYuUuHUN9qM1FT4D3MWYcgl6quuCeA2ewt1kKZ+vqTimEctfsAefRvZAafTD0cVQ+naPJf/YoyAwLuuaavh+eyATxT76b1HaIa6gFNZkW3DkyiEMjdw3VBTECfIHDQKHPYxGotclkDiN5JcPdIZqQZRRpFuLSolE=;
+X-UUID: 70fd1f6f8d68409bb8151eb5e108ed87-20200308
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 431213984; Sun, 08 Mar 2020 03:03:04 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Mar 2020 03:53:37 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Mar 2020 18:54:07 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Sun, 8 Mar 2020 18:52:58 +0800
+From: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Jassi Brar
+ <jassisinghbrar@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>, "David
+ Airlie" <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>
+Subject: [PATCH v5 02/13] mailbox: cmdq: variablize address shift in platform
+Date: Sun, 8 Mar 2020 18:52:44 +0800
+Message-ID: <1583664775-19382-3-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+References: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
 MIME-Version: 1.0
-References: <20200211193101.GA178975@cmpxchg.org>
- <20200211154438.14ef129db412574c5576facf@linux-foundation.org>
- <CAHk-=wiGbz3oRvAVFtN-whW-d2F-STKsP1MZT4m_VeycAr1_VQ@mail.gmail.com>
- <20200211164701.4ac88d9222e23d1e8cc57c51@linux-foundation.org>
- <CAHk-=wg1ZDADD3Vuw_sXhmBOrQ2xsp8YWxmtWiA6vG0RT-ZQ+A@mail.gmail.com>
- <20200212085004.GL25745@shell.armlinux.org.uk>
- <CAK8P3a3pzgVvwyDhHPoiSOqyv+h_ixbsdWMqG3sELenRJqFuew@mail.gmail.com>
- <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
- <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
- <7c4c1459-60d5-24c8-6eb9-da299ead99ea@oracle.com>
- <20200306203439.peytghdqragjfhdx@kahuna>
-In-Reply-To: <20200306203439.peytghdqragjfhdx@kahuna>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sun, 8 Mar 2020 11:58:52 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0Gyqu7kzO1JF=j9=jJ0T5ut=hbKepvke-2bppuPNKTuQ@mail.gmail.com>
-Message-ID: <CAK8P3a0Gyqu7kzO1JF=j9=jJ0T5ut=hbKepvke-2bppuPNKTuQ@mail.gmail.com>
-Subject: Re: [PATCH] vfs: keep inodes with page cache off the inode shrinker
- LRU
-To: Nishanth Menon <nm@ti.com>
-X-Provags-ID: V03:K1:bRNJidUnrvGef/Tf/2qxHxjnrnbd0gH1j7L4oNUOAIzibakFgcE
- qqMOS2A9ojbjql+hYbI4nvu8amuq6m+/n5SDlOP2ijvuRR8TpMvtKE5qNwkT9K5tzNBbZJV
- ZC8s7xZG1zX4X3HglAIx0pcJpKXn26Ng9kHTmGgPJ4Cv9hFhcmggSOEo8rHPu76MIKSOE4U
- k/SZxiqrExgwJUubUDR6w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:LFEwsW3HKb4=:Li44QPhHmpQbBiA73hdQdE
- qEIlM/N61qksQIdBl92fHoPNtMMCZCLunr6TadPAmJ3JQOUo8yOl3LdLKe6sbkIHE4GajGA2L
- gyAQqLRYpgbuckVbmogWcmQU41aUfDofZyefyJLbdzpXm+Hfg8r8tc5D82Q+Q0hAi/AFn8Z6+
- kjIDzBcKR7IcJfUcTgu1GM6M3UmmRAQWpzh8AQey1/jlwUnBTGgzKj2DQV3ITgFbaYsbNeHos
- iP0MrAzEQu4vqrcMWW51ONj79gHMUbS8a1EK4cXrrJel2oPG8gg8TJA6Kiahtvcgrtem3O1gk
- ca82+XS6favRgYA1dCeUcyFujwAkldFVjUbr35HzR+hGURFRNnLhPox7SfsfZm+teoDAkuPaa
- 7lUfQEO4XBtYjRIOO/FywI/SjdHI9Sc0NIQTCkB9nypUJn1CGB+wUDBqhLZTnO1XoXaRRlZ1H
- 6rtVBsncJWIcxySOlljUQG79FqR69NmQU4Ua9Q1kfZmEL7ciehA4HafyhJLd1TcTQCFq8s/vg
- pMkhGHVE+ka1K+RmXvUVqz5tkHYZvQg75HKCe20i0/a90B4+apcds1cvo2d2kggr66ZBqdOWT
- aQSBrx43y72q2gOOyl7DdGo0SPKhnGCg1DBoecOAGKdBLtFKNOXpbK9PE8uIItJfFa8BjwVjM
- fTk8kFGjV+oHypdblDv7w0FMxtBl+4T8Lw+agwvfvLdkKsEnY0D1aBoJg0vqfwnDg99k+IRU+
- VdW6iaPQ6EKoBttpsOk5bDARDY8Y6Xm1fy5W0G1aOKD5BVECPOdV7RBzd8QiJKlO6i6Z7bORG
- QOYo2AO1dl2kMrDuaw1dLHSlHe5F6eVzJynwKmQVt3qxO0Pxg4=
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_035916_069570_44F53495 
-X-CRM114-Status: GOOD (  17.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200308_040317_131357_894E4E1D 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.75 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,72 +89,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, Johannes Weiner <hannes@cmpxchg.org>,
- Rik van Riel <riel@surriel.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Roman Gushchin <guro@fb.com>, Santosh Shilimkar <santosh.shilimkar@oracle.com>,
- Dave Chinner <david@fromorbit.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Linux-MM <linux-mm@kvack.org>,
- Yafang Shao <laoar.shao@gmail.com>, Al Viro <viro@zeniv.linux.org.uk>,
- Santosh Shilimkar <ssantosh@kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, kernel-team@fb.com,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ HS Liao <hs.liao@mediatek.com>, Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 6, 2020 at 9:36 PM Nishanth Menon <nm@ti.com> wrote:
-> On 13:11-20200226, santosh.shilimkar@oracle.com wrote:
+Some gce hardware shift pc and end address in register to support
+large dram addressing.
+Implement gce address shift when write or read pc and end register.
+And add shift bit in platform definition.
 
->
-> ~few 1000s still relevant spread between 4G and 8G (confirmed that both
-> are present, relevant and in use).
->
-> I wish we could sunset, but unfortunately, I am told(and agree)
-> that we should'nt just leave products (and these are long term
-> products stuck in critical parts in our world) hanging in the air, and
-> migrations to newer kernel do still take place periodically (the best
-> I can talk in public forum at least).
+Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+---
+ drivers/mailbox/mtk-cmdq-mailbox.c       | 61 ++++++++++++++++++------
+ drivers/soc/mediatek/mtk-cmdq-helper.c   |  3 +-
+ include/linux/mailbox/mtk-cmdq-mailbox.h |  2 +
+ 3 files changed, 50 insertions(+), 16 deletions(-)
 
-Thank you for the clear answer!
-
-I agree we should certainly not break any such use cases, and for the
-8GB case there is not really a good replacement (using zram/zswap
-instead of highmem could work for some new workloads, but would be a
-rather risky change for an upgrade on already deployed systems).
-
-I hope it's ok to ask the same question every few years until you are
-reasonably sure that the users are ready to stop upgrading kernels
-beyond the following LTS kernel version. We can also do the same
-thing for the other 32-bit platforms that exceed the maximum amount
-of lowmem, and document which ones are known.
-
-In the meantime, it would seem useful to increase the amount of
-lowmem that can be used by default, using a combination of some
-of the changes mentioned earlier
-
-- add a VMSPLIT_2G_OPT config option for non-LPAE ARM kernels
-  to handle the common i.MX6 case with 2GB of RAM without highmem
-
-- make VMSPLIT_2G_OPT (without LPAE) or VMSPLIT_2G (with
-  LPAE) the default in most ARM defconfig files as well as distros,
-  and disable highmem where possible, to see what breaks.
-
-- extend zswap to use all the available high memory for swap space
-  when highmem is disabled.
-
-- revisit CONFIG_VMSPLIT_4G_4G for arm32 (and maybe mips32)
-  to see if it can be done, and what the overhead is. This is probably
-  more work than the others combined, but also the most promising
-  as it allows the most user address space and physical ram to be used.
-
-       Arnd
-
+diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+index 9a6ce9f5a7db..4dbee9258127 100644
+--- a/drivers/mailbox/mtk-cmdq-mailbox.c
++++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+@@ -76,8 +76,22 @@ struct cmdq {
+ 	struct cmdq_thread	*thread;
+ 	struct clk		*clock;
+ 	bool			suspended;
++	u8			shift_pa;
+ };
+ 
++struct gce_plat {
++	u32 thread_nr;
++	u8 shift;
++};
++
++u8 cmdq_mbox_shift(struct mbox_chan *chan)
++{
++	struct cmdq *cmdq = container_of(chan->mbox, struct cmdq, mbox);
++
++	return cmdq->shift_pa;
++}
++EXPORT_SYMBOL(cmdq_mbox_shift);
++
+ static int cmdq_thread_suspend(struct cmdq *cmdq, struct cmdq_thread *thread)
+ {
+ 	u32 status;
+@@ -183,7 +197,7 @@ static void cmdq_task_remove_wfe(struct cmdq_task *task)
+ 	for (i = 0; i < CMDQ_NUM_CMD(task->pkt); i++)
+ 		if (cmdq_command_is_wfe(base[i]))
+ 			base[i] = (u64)CMDQ_JUMP_BY_OFFSET << 32 |
+-				  CMDQ_JUMP_PASS;
++				  CMDQ_JUMP_PASS >> task->cmdq->shift_pa;
+ 	dma_sync_single_for_device(dev, task->pa_base, task->pkt->cmd_buf_size,
+ 				   DMA_TO_DEVICE);
+ }
+@@ -221,13 +235,15 @@ static void cmdq_task_handle_error(struct cmdq_task *task)
+ {
+ 	struct cmdq_thread *thread = task->thread;
+ 	struct cmdq_task *next_task;
++	struct cmdq *cmdq = task->cmdq;
+ 
+-	dev_err(task->cmdq->mbox.dev, "task 0x%p error\n", task);
+-	WARN_ON(cmdq_thread_suspend(task->cmdq, thread) < 0);
++	dev_err(cmdq->mbox.dev, "task 0x%p error\n", task);
++	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+ 	next_task = list_first_entry_or_null(&thread->task_busy_list,
+ 			struct cmdq_task, list_entry);
+ 	if (next_task)
+-		writel(next_task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
++		writel(next_task->pa_base >> cmdq->shift_pa,
++		       thread->base + CMDQ_THR_CURR_ADDR);
+ 	cmdq_thread_resume(thread);
+ }
+ 
+@@ -257,7 +273,7 @@ static void cmdq_thread_irq_handler(struct cmdq *cmdq,
+ 	else
+ 		return;
+ 
+-	curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR);
++	curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR) << cmdq->shift_pa;
+ 
+ 	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
+ 				 list_entry) {
+@@ -373,16 +389,20 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+ 		WARN_ON(clk_enable(cmdq->clock) < 0);
+ 		WARN_ON(cmdq_thread_reset(cmdq, thread) < 0);
+ 
+-		writel(task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
+-		writel(task->pa_base + pkt->cmd_buf_size,
++		writel(task->pa_base >> cmdq->shift_pa,
++		       thread->base + CMDQ_THR_CURR_ADDR);
++		writel((task->pa_base + pkt->cmd_buf_size) >> cmdq->shift_pa,
+ 		       thread->base + CMDQ_THR_END_ADDR);
++
+ 		writel(thread->priority, thread->base + CMDQ_THR_PRIORITY);
+ 		writel(CMDQ_THR_IRQ_EN, thread->base + CMDQ_THR_IRQ_ENABLE);
+ 		writel(CMDQ_THR_ENABLED, thread->base + CMDQ_THR_ENABLE_TASK);
+ 	} else {
+ 		WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+-		curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR);
+-		end_pa = readl(thread->base + CMDQ_THR_END_ADDR);
++		curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR) <<
++			cmdq->shift_pa;
++		end_pa = readl(thread->base + CMDQ_THR_END_ADDR) <<
++			cmdq->shift_pa;
+ 
+ 		/*
+ 		 * Atomic execution should remove the following wfe, i.e. only
+@@ -395,7 +415,7 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+ 				cmdq_thread_wait_end(thread, end_pa);
+ 				WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+ 				/* set to this task directly */
+-				writel(task->pa_base,
++				writel(task->pa_base >> cmdq->shift_pa,
+ 				       thread->base + CMDQ_THR_CURR_ADDR);
+ 			} else {
+ 				cmdq_task_insert_into_thread(task);
+@@ -407,14 +427,14 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+ 			if (curr_pa == end_pa - CMDQ_INST_SIZE ||
+ 			    curr_pa == end_pa) {
+ 				/* set to this task directly */
+-				writel(task->pa_base,
++				writel(task->pa_base >> cmdq->shift_pa,
+ 				       thread->base + CMDQ_THR_CURR_ADDR);
+ 			} else {
+ 				cmdq_task_insert_into_thread(task);
+ 				smp_mb(); /* modify jump before enable thread */
+ 			}
+ 		}
+-		writel(task->pa_base + pkt->cmd_buf_size,
++		writel((task->pa_base + pkt->cmd_buf_size) >> cmdq->shift_pa,
+ 		       thread->base + CMDQ_THR_END_ADDR);
+ 		cmdq_thread_resume(thread);
+ 	}
+@@ -461,6 +481,7 @@ static int cmdq_probe(struct platform_device *pdev)
+ 	struct resource *res;
+ 	struct cmdq *cmdq;
+ 	int err, i;
++	struct gce_plat *plat_data;
+ 
+ 	cmdq = devm_kzalloc(dev, sizeof(*cmdq), GFP_KERNEL);
+ 	if (!cmdq)
+@@ -479,7 +500,14 @@ static int cmdq_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
+-	cmdq->thread_nr = (u32)(unsigned long)of_device_get_match_data(dev);
++	plat_data = (struct gce_plat *)of_device_get_match_data(dev);
++	if (!plat_data) {
++		dev_err(dev, "failed to get match data\n");
++		return -EINVAL;
++	}
++
++	cmdq->thread_nr = plat_data->thread_nr;
++	cmdq->shift_pa = plat_data->shift;
+ 	cmdq->irq_mask = GENMASK(cmdq->thread_nr - 1, 0);
+ 	err = devm_request_irq(dev, cmdq->irq, cmdq_irq_handler, IRQF_SHARED,
+ 			       "mtk_cmdq", cmdq);
+@@ -542,9 +570,12 @@ static const struct dev_pm_ops cmdq_pm_ops = {
+ 	.resume = cmdq_resume,
+ };
+ 
++static const struct gce_plat gce_plat_v2 = {.thread_nr = 16};
++static const struct gce_plat gce_plat_v3 = {.thread_nr = 24};
++
+ static const struct of_device_id cmdq_of_ids[] = {
+-	{.compatible = "mediatek,mt8173-gce", .data = (void *)16},
+-	{.compatible = "mediatek,mt8183-gce", .data = (void *)24},
++	{.compatible = "mediatek,mt8173-gce", .data = (void *)&gce_plat_v2},
++	{.compatible = "mediatek,mt8183-gce", .data = (void *)&gce_plat_v3},
+ 	{}
+ };
+ 
+diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+index de20e6cba83b..2e1bc513569b 100644
+--- a/drivers/soc/mediatek/mtk-cmdq-helper.c
++++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+@@ -291,7 +291,8 @@ static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+ 
+ 	/* JUMP to end */
+ 	inst.op = CMDQ_CODE_JUMP;
+-	inst.value = CMDQ_JUMP_PASS;
++	inst.value = CMDQ_JUMP_PASS >>
++		cmdq_mbox_shift(((struct cmdq_client *)pkt->cl)->chan);
+ 	err = cmdq_pkt_append_command(pkt, inst);
+ 
+ 	return err;
+diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
+index a4dc45fbec0a..dfe5b2eb85cc 100644
+--- a/include/linux/mailbox/mtk-cmdq-mailbox.h
++++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
+@@ -88,4 +88,6 @@ struct cmdq_pkt {
+ 	void			*cl;
+ };
+ 
++u8 cmdq_mbox_shift(struct mbox_chan *chan);
++
+ #endif /* __MTK_CMDQ_MAILBOX_H__ */
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
