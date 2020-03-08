@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F5B317D13A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 04:51:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E91DF17D140
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 04:53:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
 	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Tnk6pnN19/ZZLDaocUHsrPeUrfuI7n1zjzn0uN7ANs=; b=h7KZ0va+HY483k
-	4pnvSVTTxgwFejIU9Y615Qmn29Nr/oVffDBu9ryumeC3U7/6wX+g5QcYM7OPOkBeHM/z4k2OBBy58
-	/RdSGTcwPAPGBeLuna1cGbgaHBVhX8U1pXXrDUwmHMIbUNNbegSmaGA2YqGLkf06fJkR9mym0zcM4
-	oE4RzN0NUM8JnxutymPLicmKXN0p1w/HY2pA248ZqWfsmaACn8Xch2kekMAGXMLS2Hmn3C61DOd95
-	UEfmCadk/uoZTyqkiUwX+SghTL2lZXeGfdyywIkUhIfb4yXKTaN2dGjVNI9C+7vaDGGlG4LVT2/HY
-	PhbBe4Tw3xERrHYvSfBw==;
+	List-Owner; bh=GUITrib7BXVagjbqjYh2ZRgkB5r4JI7zzuxHOasmmhs=; b=Kg1tU0s/5hDeiu
+	Hz/TS8XSkCKAiPdMtsQUW2m+0S5IpQq4bdclt9IAhvdewi2H+qxGUtmJEJK0XZE03drGjtwwQUMrU
+	eTkYOcw7QTYgQrz2KEcGkZgW/o5B4N232uNxvXoqeJ982VekDql6MNLIq8FUpbRij1nWpYCyDXWmK
+	wc8A/4fnzdNkuaW8CF9LcIdQfR3ciO/at1t0bMwlukZpDM4gllZJVvLH1NUB3rm129CWeYH1upnP2
+	jhZ9ap9CHTCv0Fb/8QToXKwOTIWu/Vl2ba+Tc4QvHZeNps2hk9hXWSJcFfwDQauP8co0UG1p406lQ
+	iviKxDG+5Z/XzrnV6+Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAmyU-0000Pm-0p; Sun, 08 Mar 2020 03:51:34 +0000
+	id 1jAmzs-0000jX-IW; Sun, 08 Mar 2020 03:53:00 +0000
 Received: from mx0a-0016f401.pphosted.com ([67.231.148.174]
  helo=mx0b-0016f401.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAmyL-0000P7-E6
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 03:51:28 +0000
+ id 1jAmzf-0000j9-OG
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 03:52:49 +0000
 Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
  by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0283kvjj010537; Sat, 7 Mar 2020 19:51:01 -0800
+ 0283l0Ch010565; Sat, 7 Mar 2020 19:52:20 -0800
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
  h=from : to : cc :
  subject : date : message-id : references : in-reply-to : content-type :
  content-id : content-transfer-encoding : mime-version; s=pfpt0818;
- bh=O+bhqr4/bcv5yvmoUmApccrZL//vCN8BtdiyigeXwLc=;
- b=EfPq7fObGNuDgMpWG1C/PTN+yoKKiboFj/H3V3EAlQpvbE/875uTsmYaIPijVzCOPXOK
- +gZR3YrEs9vSfjPpLVgtqXkbqhLa+Ntv0ZOwuRtT7tZE1lNPY5Iye7UWxSrmDzzkuS2h
- MEzm9OhjJjRaf54JnvB061W5BQW0wP4F+JaMkgO6IWWN1ghkikeHV5P/4tPFxfS4h0/d
- eFXVlb9UjOyfFMt67RXK1Ssv8ajix6OL/Sp5ocqyLEMsSO8WJPB+x4hNgo6+nLMZ1aAf
- pejPUljI5n7PGY30yzUZeOcGhaCj9JEY33DaUtPjsrqo23QMEQ/cERBmq/Ln9cKW2iPS yQ== 
+ bh=MTgWmjDqBAQ16SXK7Xqo80CSSZHLL5odf6Rput0yktE=;
+ b=eC2uXGxCFZoV0dYMWXP1qQlBD40o3RyHCUrjIK84OXJe4nK6m1k/U+o+qKdnw32T1Zr9
+ Ocv3N3DI3b+Ai4nU9WuAD8EcbT2j/tjX2LknQgFo0qWCJmoAM3UuIgGe2PkZe3yl++Hs
+ e4ny9L4roB18R7r7lvc6YOBYKftJE3Kk1jRz0KUxsRwt7PYPqY2miqz5u0KY19xzfJ3L
+ Givv+v6vXKJbNGSRJF5HHTU+4prRrbexVKaRcXwlJ5Oml9UsUM/uVkMTugvD1vnjHBrS
+ vRIHko8SLmoZGFFIm/x60p3Wzpr2Bj7jCz7iVgzCYLBL89ZX0hunwJASYdn8DI0YlDd3 MQ== 
 Received: from sc-exch02.marvell.com ([199.233.58.182])
- by mx0a-0016f401.pphosted.com with ESMTP id 2ym9uwav83-1
+ by mx0a-0016f401.pphosted.com with ESMTP id 2ym9uwavaa-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Sat, 07 Mar 2020 19:51:01 -0800
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by SC-EXCH02.marvell.com
- (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Sat, 7 Mar 2020 19:51:00 -0800
-Received: from SC-EXCH04.marvell.com (10.93.176.84) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Sat, 7 Mar 2020 19:50:59 -0800
-Received: from NAM10-MW2-obe.outbound.protection.outlook.com (104.47.55.107)
- by SC-EXCH04.marvell.com (10.93.176.84) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2 via Frontend Transport; Sat, 7 Mar 2020 19:50:59 -0800
+ Sat, 07 Mar 2020 19:52:20 -0800
+Received: from SC-EXCH01.marvell.com (10.93.176.81) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Sat, 7 Mar
+ 2020 19:52:18 -0800
+Received: from NAM11-DM6-obe.outbound.protection.outlook.com (104.47.57.173)
+ by SC-EXCH01.marvell.com (10.93.176.81) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2 via Frontend Transport; Sat, 7 Mar 2020 19:52:18 -0800
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nGxIzGGeFxL1lnxSIWI+WAdo2swHErC80zJ1tCmz3xyaSuF3XA62dI7UYG8JeMDTkzIMc0mQZjKs/mjvkXy1+i1sbzZj35pjVv82hs1W1p/t5mL+vyVofDBWpEBtsUYJIrv/69sPzkMZyCcbkgeiLm0sVO0e+zRFIPVTIsh8H1iX0fPiSMWOnBThBgHygvh95DXKYb2TV4A8A30Z1nxhADwL+hDvgqGDHIkjHlOCcsU0YyBIlYvx897Py7GQxkwRBrSwQlCDRHjgHvIKSjAIk6zOGYeO3wYVctCNav+XGISmk23sKkU3PA2HHhY9gpXKVM9/+RVEBAj4PxDDE7aSAQ==
+ b=m+mXdxEKAdG+5In9jHxcWkdFx7s+tu/GioDDSsamcxP2gncQw3RIqyRohlx2ngfTuL6eZCxiFnBd6Y1pWERhR2T+qUT6mlGkGb+G1nOoHgLPLujbJyz+DhrEEKHuzGmPp7JOUVuGf853Lt9zP0r/ofRzif/7T0sqoCZRi/YhH910wRic1HcZu3XHNdqTgCZDk1Qxf1jZIIRDiwevAbcncd98ofQOtKib+EJuQS8pEs5oSpip4pvcBqqdiEJVvoWObPay/ZzTd3YDhqgksN7V4Uxj8+k7xOhKJzw+LPoQbFFfT4z79XMer9TSnHCa8PaklVggjqtD8I3nQ5TRbjU7qQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O+bhqr4/bcv5yvmoUmApccrZL//vCN8BtdiyigeXwLc=;
- b=bQX3YLwRYV/lVslA7cTMjjwE8ritYtA/dCBAYagkwHxKyctGrDc8GQqgUJcRnET+hKGVVS9063jJ6uegWXuij7lzA1wH333IWd/w4a2BlYZeyWYjkDDjCZFEPB6/G5fm9xy1CF7md0/WNN71So39zIcTyWp18tB+sFuLPpUWt62ia1VguWE31I10ylTDhe0wxF1opHePRzbuR3YF4M/RQxoVp6UhRXZfEwiN/EqCZKCnJjGNMn1dyVWfjxwsPlPOj86EDaPw6Gju5iuc8HRmne0FSO3E2StzC54pneUmwcYPNKgKAuZN2s+3aI1OK4QIWh1U82363bm7D6Xw52NcXQ==
+ bh=MTgWmjDqBAQ16SXK7Xqo80CSSZHLL5odf6Rput0yktE=;
+ b=WZ7vNWHqpQUDYdzmqE+269MI5YDTyzZUzNWO8jHDwMQp/LDNg2pfxMpVdU7YOWnLR+zWqCH5xMhD8MlO972F2QKhbB5mpFi30tKb45xRJFj+5i3uMw3Dl4b5rkWJ8QpdhHrLE5HcGi5iu8AK3KaMxWkDz1DE6Lj2GH8aTDfWlQBGNxdKkRFPCkFdlDwFgIsJFA573F3exoEK220vGjem8vSs0O9x9Hu8lpC9T9I/r50XWMU3sOLLmZwmKtwmXGoN+ja2LG99+OssWZlSnZIj0SnVUmvdqMdWxkfkShWdsIyOr8H1Fo9vaZSrNf/CVFAVP4XR6pC/dAmDQRQcNlQbRg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
  dkim=pass header.d=marvell.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=O+bhqr4/bcv5yvmoUmApccrZL//vCN8BtdiyigeXwLc=;
- b=r0NP050VazPRHLwbfAD4rZKDVGUQ7NiurSPluBYYAESBm4NZGi6t2xZOFE2tKrKekm71swtehXwbTFYbQA0CS2uuoWlqvZL2m8f3JgjXr4+qji7GWpGkXa0Rk+MGEe2lV7SupTBzsxv0XLeatRpRAezXF9qAtAzCIuKj7bno+YA=
+ bh=MTgWmjDqBAQ16SXK7Xqo80CSSZHLL5odf6Rput0yktE=;
+ b=nvJ5ZSo/9D/VdwVTgxHxoFqs9eJyq2rNI3AwRMSnZ6me2R0ogNa2/wTRbA+iGPkLQlWXdfc6BzlJGZ8Dkq5dp8RcqDPWk0guZWDMB3wMyxPBvzkAqN2YQSMvU1U8a1PhiXtozTx3VTyJVNNn4EHrL3GBrBZY33eaozGSEciAWMk=
 Received: from BYAPR18MB2535.namprd18.prod.outlook.com (2603:10b6:a03:137::17)
- by BYAPR18MB2920.namprd18.prod.outlook.com (2603:10b6:a03:10b::25)
+ by BYAPR18MB2661.namprd18.prod.outlook.com (2603:10b6:a03:136::26)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.14; Sun, 8 Mar
- 2020 03:50:58 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.17; Sun, 8 Mar
+ 2020 03:52:16 +0000
 Received: from BYAPR18MB2535.namprd18.prod.outlook.com
  ([fe80::8cd1:1741:8d2d:1c23]) by BYAPR18MB2535.namprd18.prod.outlook.com
  ([fe80::8cd1:1741:8d2d:1c23%7]) with mapi id 15.20.2793.013; Sun, 8 Mar 2020
- 03:50:58 +0000
+ 03:52:16 +0000
 From: Alex Belits <abelits@marvell.com>
 To: "frederic@kernel.org" <frederic@kernel.org>, "rostedt@goodmis.org"
  <rostedt@goodmis.org>
-Subject: [PATCH v2 06/12] task_isolation: arch/arm64: enable task isolation
+Subject: [PATCH v2 07/12] task_isolation: arch/arm: enable task isolation
  functionality
-Thread-Topic: [PATCH v2 06/12] task_isolation: arch/arm64: enable task
- isolation functionality
-Thread-Index: AQHV9PzGqYwRhIb41UmglY+oy7CR8w==
-Date: Sun, 8 Mar 2020 03:50:58 +0000
-Message-ID: <b559513e03dfd09f64ace29452590ddb92c3196f.camel@marvell.com>
+Thread-Topic: [PATCH v2 07/12] task_isolation: arch/arm: enable task isolation
+ functionality
+Thread-Index: AQHV9Pz1/BmyVtfMrEiERiaNilF2mQ==
+Date: Sun, 8 Mar 2020 03:52:16 +0000
+Message-ID: <8b86f8e92208d56cdfd1a680aa53001d27eab994.camel@marvell.com>
 References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
  <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
 In-Reply-To: <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
@@ -93,39 +90,39 @@ X-MS-Has-Attach:
 X-MS-TNEF-Correlator: 
 x-originating-ip: [199.233.58.128]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 707ff5f4-e4bc-4c19-b080-08d7c313e959
-x-ms-traffictypediagnostic: BYAPR18MB2920:
+x-ms-office365-filtering-correlation-id: 09a35ce6-9ba8-48c6-a719-08d7c31417db
+x-ms-traffictypediagnostic: BYAPR18MB2661:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR18MB2920829DC3A23258C8A85F22BCE10@BYAPR18MB2920.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-microsoft-antispam-prvs: <BYAPR18MB2661869EE1AAAC02C31CC86BBCE10@BYAPR18MB2661.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 03361FCC43
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(346002)(39850400004)(396003)(136003)(189003)(199004)(4326008)(2616005)(110136005)(186003)(36756003)(54906003)(81156014)(81166006)(86362001)(7416002)(8676002)(26005)(2906002)(6486002)(71200400001)(8936002)(66946007)(5660300002)(6512007)(316002)(478600001)(91956017)(6506007)(66446008)(64756008)(66556008)(66476007)(76116006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR18MB2920;
+ SFS:(10009020)(4636009)(376002)(346002)(39850400004)(136003)(366004)(396003)(189003)(199004)(5660300002)(186003)(26005)(66946007)(66446008)(66476007)(64756008)(66556008)(6486002)(6506007)(6512007)(91956017)(478600001)(76116006)(7416002)(4326008)(2906002)(86362001)(36756003)(71200400001)(2616005)(8936002)(81156014)(8676002)(81166006)(54906003)(110136005)(316002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR18MB2661;
  H:BYAPR18MB2535.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: marvell.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: fKVz9Sj1r1ln5LNarZpj69qeq/HB2JfmnhFroEhw4CtGLY1iWvsufQr47dQUqTNRdZvX0xCTuSp5vDhXQxkEe7g+sl9wHu6BG/j0Hf9flvp4LamWTpG5Sqjp78RVhA+ycv2Ac942YGRW/MGZB9mwPf1h916c2GVBBjITNrmU0nMjcPUk+Hrl9aF1gcsHR95Nk0tO4QTfH7007Mdnjrg0Ss1c3Ss4EejC3L5gq73etYj0Wa4gWf/4VivCCh679H1+MUHznd9PAQWcAcKxEVJy49w0cG88NsH7ZijCLqFnUPEmX/+GnxVvRECkqf+4aO4jICoJxwuZTRau4k0aSQJDx8G+dFLYuFsNs1OMjEyDLxQWVq8EGJFA+DE0sk0B6Gz+d9ADuBGbDHdakTJIigQRfSXEdBl6+tvCGudzP+qMFxXGShPGKtRoNCNhAXkIFB8r
-x-ms-exchange-antispam-messagedata: wHcYKq3xpR8QXOC1WJtPOg946YjvsMsDSvx/9tzt2O4wo01xX4IObDJ49ZnkQ+Ldq/R/5Lqwm2jgE7HudrRYhJ9T+vOZitqCDjNBPrfOFGkW16bIeo4vyJeP3PVWgjPMlmIuCwIj4hwRXPKMFvKu2A==
-Content-ID: <5488B4749FDB154F978D946B283098A9@namprd18.prod.outlook.com>
+x-microsoft-antispam-message-info: s+0sV43imQGrl8KTQ53uM1z74M8xw9GJ6yXgpFGPdGdVMa7bGG36czs6+6ShynJm0Nn0htoFGN4O8JY57MUi8Fv4PjbCtnoYDyWoSwgCXVi8j5uMNwHQAo1RZ2mRWmjblJxs1nA7vo2xAr3LdrMxnlTh5edxr/KpOkbnfniSrPAl+rsJ8P85h3G8Dc9IriWlnQ1t1wOUjxbuQIelzFIdfSc+BmCgekLN0RyhVGuoNzOY/GEogvwY5M9utCEmOgyOQdayt7nLsSdsGLxF+0qqZ072vaXPQ5PdobQBHNr7vQ3KggxUc8mchGx8N/LlX2jNc4GPB9cfCUDsCpEQoFR8vsKO5PtiLYl10MBiNv0aCR0/M1kSdK3f886VHUqDQkbMN7gfOTeNWldfwwLNIa5VRapUvGKxEUkNl99v9sDCF5Lx4o5xe5gL0c+HYc+9MuZJ
+x-ms-exchange-antispam-messagedata: k0f58bPzKTJoHeaLtoEYg237ZIpwDc1kEWLpys/yZ49d4Faml2aqLu73+PzoaVJcAvMMoxuRhyEQiTWYl30lt3JitzOPWxolphHEmp9excQZvfydJ2iyHJbu2nJ1UfnbtI68sKd99mMtbz1eeXOspg==
+Content-ID: <B0E686FC9E04DA4AA478375E3CF7E1E2@namprd18.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 707ff5f4-e4bc-4c19-b080-08d7c313e959
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Mar 2020 03:50:58.1079 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 09a35ce6-9ba8-48c6-a719-08d7c31417db
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Mar 2020 03:52:16.0909 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: pM1zl+1OZoAlmP+Hv/ncqceWwhI7Z8qUCK61WE9oxuQg2rVDi9ZqXQ/V4LqlKGEHY6OPLDtbpspx6ocdHhjDyw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2920
+X-MS-Exchange-CrossTenant-userprincipalname: Oj6Qy/gC8SeKe0LroFqDkRH3vVN7XIoLqPlE+oKCm/LxATsmK50+U3gnzpAZ6XrAaoPQ2kw8bNF3y4mOiomrbg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2661
 X-OriginatorOrg: marvell.com
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-03-07_09:2020-03-06,
  2020-03-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_195126_282030_8A959A10 
-X-CRM114-Status: GOOD (  19.79  )
+X-CRM114-CacheID: sfid-20200307_195247_804452_FB424C25 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -169,184 +166,230 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chris Metcalf <cmetcalf@mellanox.com>
+From: Francis Giraldeau <francis.giraldeau@gmail.com>
 
-In do_notify_resume(), call task_isolation_start() for
-TIF_TASK_ISOLATION tasks. Add _TIF_TASK_ISOLATION to _TIF_WORK_MASK,
-and define a local NOTIFY_RESUME_LOOP_FLAGS to check in the loop,
-since we don't clear _TIF_TASK_ISOLATION in the loop.
+This patch is a port of the task isolation functionality to the arm 32-bit
+architecture. The task isolation needs an additional thread flag that
+requires to change the entry assembly code to accept a bitfield larger than
+one byte. The constants _TIF_SYSCALL_WORK and _TIF_WORK_MASK are now
+defined in the literal pool. The rest of the patch is straightforward and
+reflects what is done on other architectures.
 
-We instrument the smp_send_reschedule() routine so that it checks for
-isolated tasks and generates a suitable warning if needed.
+To avoid problems with the tst instruction in the v7m build, we renumber
+TIF_SECCOMP to bit 8 and let TIF_TASK_ISOLATION use bit 7.
 
-Finally, report on page faults in task-isolation processes in
-do_page_faults().
-
-Signed-off-by: Chris Metcalf <cmetcalf@mellanox.com>
-[abelits@marvell.com: simplified to match kernel 5.6]
+Signed-off-by: Francis Giraldeau <francis.giraldeau@gmail.com>
+Signed-off-by: Chris Metcalf <cmetcalf@mellanox.com> [with modifications]
+[abelits@marvell.com: modified for kernel 5.6, added isolation cleanup]
 Signed-off-by: Alex Belits <abelits@marvell.com>
 ---
- arch/arm64/Kconfig                   |  1 +
- arch/arm64/include/asm/thread_info.h |  5 ++++-
- arch/arm64/kernel/ptrace.c           | 10 ++++++++++
- arch/arm64/kernel/signal.c           | 13 ++++++++++++-
- arch/arm64/kernel/smp.c              |  7 +++++++
- arch/arm64/mm/fault.c                |  5 +++++
- 6 files changed, 39 insertions(+), 2 deletions(-)
+ arch/arm/Kconfig                   |  1 +
+ arch/arm/include/asm/thread_info.h | 10 +++++++---
+ arch/arm/kernel/entry-common.S     | 15 ++++++++++-----
+ arch/arm/kernel/ptrace.c           | 10 ++++++++++
+ arch/arm/kernel/signal.c           | 13 ++++++++++++-
+ arch/arm/kernel/smp.c              |  4 ++++
+ arch/arm/mm/fault.c                |  8 +++++++-
+ 7 files changed, 51 insertions(+), 10 deletions(-)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 0b30e884e088..93b6aabc8be9 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -129,6 +129,7 @@ config ARM64
- 	select HAVE_ARCH_PREL32_RELOCATIONS
- 	select HAVE_ARCH_SECCOMP_FILTER
- 	select HAVE_ARCH_STACKLEAK
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 97864aabc2a6..1a66e6c6807c 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -67,6 +67,7 @@ config ARM
+ 	select HAVE_ARCH_KGDB if !CPU_ENDIAN_BE32 && MMU
+ 	select HAVE_ARCH_MMAP_RND_BITS if MMU
+ 	select HAVE_ARCH_SECCOMP_FILTER if AEABI && !OABI_COMPAT
 +	select HAVE_ARCH_TASK_ISOLATION
  	select HAVE_ARCH_THREAD_STRUCT_WHITELIST
  	select HAVE_ARCH_TRACEHOOK
- 	select HAVE_ARCH_TRANSPARENT_HUGEPAGE
-diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-index f0cec4160136..7563098eb5b2 100644
---- a/arch/arm64/include/asm/thread_info.h
-+++ b/arch/arm64/include/asm/thread_info.h
-@@ -63,6 +63,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define TIF_FOREIGN_FPSTATE	3	/* CPU's FP state is not current's */
- #define TIF_UPROBE		4	/* uprobe breakpoint or singlestep */
- #define TIF_FSCHECK		5	/* Check FS is USER_DS on return */
-+#define TIF_TASK_ISOLATION	6
- #define TIF_NOHZ		7
- #define TIF_SYSCALL_TRACE	8	/* syscall trace active */
- #define TIF_SYSCALL_AUDIT	9	/* syscall auditing */
-@@ -83,6 +84,7 @@ void arch_release_task_struct(struct task_struct *tsk);
- #define _TIF_NEED_RESCHED	(1 << TIF_NEED_RESCHED)
- #define _TIF_NOTIFY_RESUME	(1 << TIF_NOTIFY_RESUME)
- #define _TIF_FOREIGN_FPSTATE	(1 << TIF_FOREIGN_FPSTATE)
-+#define _TIF_TASK_ISOLATION	(1 << TIF_TASK_ISOLATION)
- #define _TIF_NOHZ		(1 << TIF_NOHZ)
+ 	select HAVE_ARM_SMCCC if CPU_V7
+diff --git a/arch/arm/include/asm/thread_info.h b/arch/arm/include/asm/thread_info.h
+index 0d0d5178e2c3..ec3c2084c391 100644
+--- a/arch/arm/include/asm/thread_info.h
++++ b/arch/arm/include/asm/thread_info.h
+@@ -139,7 +139,8 @@ extern int vfp_restore_user_hwstate(struct user_vfp *,
+ #define TIF_SYSCALL_TRACE	4	/* syscall trace active */
+ #define TIF_SYSCALL_AUDIT	5	/* syscall auditing active */
+ #define TIF_SYSCALL_TRACEPOINT	6	/* syscall tracepoint instrumentation */
+-#define TIF_SECCOMP		7	/* seccomp syscall filtering active */
++#define TIF_TASK_ISOLATION	7	/* task isolation active */
++#define TIF_SECCOMP		8	/* seccomp syscall filtering active */
+ 
+ #define TIF_NOHZ		12	/* in adaptive nohz mode */
+ #define TIF_USING_IWMMXT	17
+@@ -153,18 +154,21 @@ extern int vfp_restore_user_hwstate(struct user_vfp *,
  #define _TIF_SYSCALL_TRACE	(1 << TIF_SYSCALL_TRACE)
  #define _TIF_SYSCALL_AUDIT	(1 << TIF_SYSCALL_AUDIT)
-@@ -96,7 +98,8 @@ void arch_release_task_struct(struct task_struct *tsk);
+ #define _TIF_SYSCALL_TRACEPOINT	(1 << TIF_SYSCALL_TRACEPOINT)
++#define _TIF_TASK_ISOLATION	(1 << TIF_TASK_ISOLATION)
+ #define _TIF_SECCOMP		(1 << TIF_SECCOMP)
+ #define _TIF_USING_IWMMXT	(1 << TIF_USING_IWMMXT)
  
+ /* Checks for any syscall work in entry-common.S */
+ #define _TIF_SYSCALL_WORK (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_AUDIT | \
+-			   _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP)
++			   _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP | \
++			   _TIF_TASK_ISOLATION)
+ 
+ /*
+  * Change these and you break ASM code in entry-common.S
+  */
  #define _TIF_WORK_MASK		(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
- 				 _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
--				 _TIF_UPROBE | _TIF_FSCHECK)
-+				 _TIF_UPROBE | _TIF_FSCHECK | \
+-				 _TIF_NOTIFY_RESUME | _TIF_UPROBE)
++				 _TIF_NOTIFY_RESUME | _TIF_UPROBE | \
 +				 _TIF_TASK_ISOLATION)
  
- #define _TIF_SYSCALL_WORK	(_TIF_SYSCALL_TRACE | _TIF_SYSCALL_AUDIT | \
- 				 _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP | \
-diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-index cd6e5fa48b9c..b35b9b0c594c 100644
---- a/arch/arm64/kernel/ptrace.c
-+++ b/arch/arm64/kernel/ptrace.c
-@@ -29,6 +29,7 @@
- #include <linux/regset.h>
+ #endif /* __KERNEL__ */
+ #endif /* __ASM_ARM_THREAD_INFO_H */
+diff --git a/arch/arm/kernel/entry-common.S b/arch/arm/kernel/entry-common.S
+index 271cb8a1eba1..6ceb5cb808a9 100644
+--- a/arch/arm/kernel/entry-common.S
++++ b/arch/arm/kernel/entry-common.S
+@@ -53,7 +53,8 @@ __ret_fast_syscall:
+ 	cmp	r2, #TASK_SIZE
+ 	blne	addr_limit_check_failed
+ 	ldr	r1, [tsk, #TI_FLAGS]		@ re-check for syscall tracing
+-	tst	r1, #_TIF_SYSCALL_WORK | _TIF_WORK_MASK
++	ldr	r2, =_TIF_SYSCALL_WORK | _TIF_WORK_MASK
++	tst	r1, r2
+ 	bne	fast_work_pending
+ 
+ 
+@@ -90,7 +91,8 @@ __ret_fast_syscall:
+ 	cmp	r2, #TASK_SIZE
+ 	blne	addr_limit_check_failed
+ 	ldr	r1, [tsk, #TI_FLAGS]		@ re-check for syscall tracing
+-	tst	r1, #_TIF_SYSCALL_WORK | _TIF_WORK_MASK
++	ldr	r2, =_TIF_SYSCALL_WORK | _TIF_WORK_MASK
++	tst	r1, r2
+ 	beq	no_work_pending
+  UNWIND(.fnend		)
+ ENDPROC(ret_fast_syscall)
+@@ -98,7 +100,8 @@ ENDPROC(ret_fast_syscall)
+ 	/* Slower path - fall through to work_pending */
+ #endif
+ 
+-	tst	r1, #_TIF_SYSCALL_WORK
++	ldr	r2, =_TIF_SYSCALL_WORK
++	tst	r1, r2
+ 	bne	__sys_trace_return_nosave
+ slow_work_pending:
+ 	mov	r0, sp				@ 'regs'
+@@ -131,7 +134,8 @@ ENTRY(ret_to_user_from_irq)
+ 	cmp	r2, #TASK_SIZE
+ 	blne	addr_limit_check_failed
+ 	ldr	r1, [tsk, #TI_FLAGS]
+-	tst	r1, #_TIF_WORK_MASK
++	ldr	r2, =_TIF_WORK_MASK
++	tst	r1, r2
+ 	bne	slow_work_pending
+ no_work_pending:
+ 	asm_trace_hardirqs_on save = 0
+@@ -251,7 +255,8 @@ local_restart:
+ 	ldr	r10, [tsk, #TI_FLAGS]		@ check for syscall tracing
+ 	stmdb	sp!, {r4, r5}			@ push fifth and sixth args
+ 
+-	tst	r10, #_TIF_SYSCALL_WORK		@ are we tracing syscalls?
++	ldr	r11, =_TIF_SYSCALL_WORK		@ are we tracing syscalls?
++	tst	r10, r11
+ 	bne	__sys_trace
+ 
+ 	invoke_syscall tbl, scno, r10, __ret_fast_syscall
+diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
+index b606cded90cd..a69b0bfd71ae 100644
+--- a/arch/arm/kernel/ptrace.c
++++ b/arch/arm/kernel/ptrace.c
+@@ -24,6 +24,7 @@
+ #include <linux/audit.h>
  #include <linux/tracehook.h>
- #include <linux/elf.h>
+ #include <linux/unistd.h>
 +#include <linux/isolation.h>
  
- #include <asm/compat.h>
- #include <asm/cpufeature.h>
-@@ -1836,6 +1837,15 @@ int syscall_trace_enter(struct pt_regs *regs)
- 			return -1;
- 	}
+ #include <asm/pgtable.h>
+ #include <asm/traps.h>
+@@ -921,6 +922,15 @@ asmlinkage int syscall_trace_enter(struct pt_regs *regs, int scno)
+ 	if (test_thread_flag(TIF_SYSCALL_TRACE))
+ 		tracehook_report_syscall(regs, PTRACE_SYSCALL_ENTER);
  
 +	/*
 +	 * In task isolation mode, we may prevent the syscall from
 +	 * running, and if so we also deliver a signal to the process.
 +	 */
 +	if (test_thread_flag(TIF_TASK_ISOLATION)) {
-+		if (task_isolation_syscall(regs->syscallno) == -1)
++		if (task_isolation_syscall(scno) == -1)
 +			return -1;
 +	}
 +
- 	/* Do the secure computing after ptrace; failures should be fast. */
+ 	/* Do seccomp after ptrace; syscall may have changed. */
+ #ifdef CONFIG_HAVE_ARCH_SECCOMP_FILTER
  	if (secure_computing() == -1)
- 		return -1;
-diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-index 339882db5a91..d488c91a4877 100644
---- a/arch/arm64/kernel/signal.c
-+++ b/arch/arm64/kernel/signal.c
-@@ -20,6 +20,7 @@
+diff --git a/arch/arm/kernel/signal.c b/arch/arm/kernel/signal.c
+index ab2568996ddb..29ccef8403cd 100644
+--- a/arch/arm/kernel/signal.c
++++ b/arch/arm/kernel/signal.c
+@@ -12,6 +12,7 @@
  #include <linux/tracehook.h>
- #include <linux/ratelimit.h>
+ #include <linux/uprobes.h>
  #include <linux/syscalls.h>
 +#include <linux/isolation.h>
  
- #include <asm/daifflags.h>
- #include <asm/debug-monitors.h>
-@@ -898,6 +899,11 @@ static void do_signal(struct pt_regs *regs)
- 	restore_saved_sigmask();
+ #include <asm/elf.h>
+ #include <asm/cacheflush.h>
+@@ -639,6 +640,9 @@ static int do_signal(struct pt_regs *regs, int syscall)
+ 	return 0;
  }
  
-+#define NOTIFY_RESUME_LOOP_FLAGS \
-+	(_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
-+	_TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
-+	_TIF_UPROBE | _TIF_FSCHECK)
++#define WORK_PENDING_LOOP_FLAGS	(_TIF_NEED_RESCHED | _TIF_SIGPENDING |	\
++				 _TIF_NOTIFY_RESUME | _TIF_UPROBE)
 +
- asmlinkage void do_notify_resume(struct pt_regs *regs,
- 				 unsigned long thread_flags)
+ asmlinkage int
+ do_work_pending(struct pt_regs *regs, unsigned int thread_flags, int syscall)
  {
-@@ -908,6 +914,8 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
+@@ -648,6 +652,9 @@ do_work_pending(struct pt_regs *regs, unsigned int thread_flags, int syscall)
+ 	 * Update the trace code with the current status.
  	 */
  	trace_hardirqs_off();
- 
++
 +	task_isolation_check_run_cleanup();
 +
  	do {
- 		/* Check valid user FS if needed */
- 		addr_limit_user_check();
-@@ -938,7 +946,10 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
- 
- 		local_daif_mask();
- 		thread_flags = READ_ONCE(current_thread_info()->flags);
+ 		if (likely(thread_flags & _TIF_NEED_RESCHED)) {
+ 			schedule();
+@@ -676,7 +683,11 @@ do_work_pending(struct pt_regs *regs, unsigned int thread_flags, int syscall)
+ 		}
+ 		local_irq_disable();
+ 		thread_flags = current_thread_info()->flags;
 -	} while (thread_flags & _TIF_WORK_MASK);
-+	} while (thread_flags & NOTIFY_RESUME_LOOP_FLAGS);
++	} while (thread_flags & WORK_PENDING_LOOP_FLAGS);
 +
 +	if (thread_flags & _TIF_TASK_ISOLATION)
 +		task_isolation_start();
++
+ 	return 0;
  }
  
- unsigned long __ro_after_init signal_minsigstksz;
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index d4ed9a19d8fe..00f0f77adea0 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -32,6 +32,7 @@
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index 46e1be9e57a8..95f19b980776 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -26,6 +26,7 @@
+ #include <linux/completion.h>
+ #include <linux/cpufreq.h>
  #include <linux/irq_work.h>
- #include <linux/kexec.h>
- #include <linux/kvm_host.h>
 +#include <linux/isolation.h>
  
- #include <asm/alternative.h>
- #include <asm/atomic.h>
-@@ -818,6 +819,7 @@ void arch_send_call_function_single_ipi(int cpu)
- #ifdef CONFIG_ARM64_ACPI_PARKING_PROTOCOL
+ #include <linux/atomic.h>
+ #include <asm/bugs.h>
+@@ -560,6 +561,7 @@ void arch_send_call_function_ipi_mask(const struct cpumask *mask)
+ 
  void arch_send_wakeup_ipi_mask(const struct cpumask *mask)
  {
 +	task_isolation_remote_cpumask(mask, "wakeup IPI");
  	smp_cross_call(mask, IPI_WAKEUP);
  }
- #endif
-@@ -886,6 +888,9 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
- 		__inc_irq_stat(cpu, ipi_irqs[ipinr]);
- 	}
  
-+	task_isolation_interrupt("IPI type %d (%s)", ipinr,
-+				 ipinr < NR_IPI ? ipi_types[ipinr] : "unknown");
-+
- 	switch (ipinr) {
- 	case IPI_RESCHEDULE:
- 		scheduler_ipi();
-@@ -948,12 +953,14 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
- 
- void smp_send_reschedule(int cpu)
- {
-+	task_isolation_remote(cpu, "reschedule IPI");
- 	smp_cross_call(cpumask_of(cpu), IPI_RESCHEDULE);
- }
- 
+@@ -579,6 +581,7 @@ void arch_irq_work_raise(void)
  #ifdef CONFIG_GENERIC_CLOCKEVENTS_BROADCAST
  void tick_broadcast(const struct cpumask *mask)
  {
@@ -354,29 +397,41 @@ index d4ed9a19d8fe..00f0f77adea0 100644
  	smp_cross_call(mask, IPI_TIMER);
  }
  #endif
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 85566d32958f..fc4b42c81c4f 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -23,6 +23,7 @@
+@@ -702,6 +705,7 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+ 
+ void smp_send_reschedule(int cpu)
+ {
++	task_isolation_remote(cpu, "reschedule IPI");
+ 	smp_cross_call(cpumask_of(cpu), IPI_RESCHEDULE);
+ }
+ 
+diff --git a/arch/arm/mm/fault.c b/arch/arm/mm/fault.c
+index bd0f4821f7e1..acd11a69c4e4 100644
+--- a/arch/arm/mm/fault.c
++++ b/arch/arm/mm/fault.c
+@@ -17,6 +17,7 @@
+ #include <linux/sched/debug.h>
+ #include <linux/highmem.h>
  #include <linux/perf_event.h>
- #include <linux/preempt.h>
- #include <linux/hugetlb.h>
 +#include <linux/isolation.h>
  
- #include <asm/acpi.h>
- #include <asm/bug.h>
-@@ -543,6 +544,10 @@ static int __kprobes do_page_fault(unsigned long addr, unsigned int esr,
+ #include <asm/pgtable.h>
+ #include <asm/system_misc.h>
+@@ -332,8 +333,13 @@ do_page_fault(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+ 	/*
+ 	 * Handle the "normal" case first - VM_FAULT_MAJOR
  	 */
- 	if (likely(!(fault & (VM_FAULT_ERROR | VM_FAULT_BADMAP |
- 			      VM_FAULT_BADACCESS)))) {
+-	if (likely(!(fault & (VM_FAULT_ERROR | VM_FAULT_BADMAP | VM_FAULT_BADACCESS))))
++	if (likely(!(fault & (VM_FAULT_ERROR | VM_FAULT_BADMAP |
++			      VM_FAULT_BADACCESS)))) {
 +		/* No signal was generated, but notify task-isolation tasks. */
 +		if (user_mode(regs))
 +			task_isolation_interrupt("page fault at %#lx", addr);
-+
- 		/*
- 		 * Major/minor page fault accounting is only done
- 		 * once. If we go through a retry, it is extremely
+ 		return 0;
++	}
+ 
+ 	/*
+ 	 * If we are in kernel mode at this point, we
 -- 
 2.20.1
 
