@@ -2,162 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C69B417D04D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Mar 2020 22:29:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02C6217D11A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Mar 2020 04:44:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YpUzWGMUDKRms1I83MFWvcMebQe4SzkIdw/LXUfngJU=; b=W+2STCZlbfDMwH
-	uxemBlTO0ziguZjgVsQEqc7wZy2SaOTLbC53nTDRPJ2VDjR3m1EaA+tvifKRnSpRDGYHXsId8JK6D
-	7cO3FJwuyFeoyenxJNnpxYSMn59KQnnyhXTpO/7Vc0zktLJO1/iw4BxcQ36/QQ3MVNB5BN9TniPGd
-	14iftXmDGv2H6W1ZjELhSD9tXKNwdvPGdVPy7bJw+wqngl58ja3/TroAMxWZqgUJikxfWzbF8P1uS
-	JlG79ar8bM5b+MfIeGjIkPfbeYm6iZU4tlgWEjqIN0jlttiIykoaQdrNgqGZhc4fqD4Gzkj/ukYoY
-	JzZ0nAcIW6iPoErCYrLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+mQCRZ/ug/rH+YacXenHSa4TuvvytBigQIgAd486DTM=; b=mtfWfOC5nB6xZx
+	bSSYNM0hglhgVkdrZo6Zz7Pp9krbHW196ncGqOXeE+ufLsTZtZD009lrQr96//AaOSDiX4T6nMpmJ
+	W4G7jt8QFxU4OfEBTfxAq1Z5SFB66TFyVP8pKG8y2oXQT9yBpIbbnqfT26NFs35h1SSL8MxLtMurp
+	4bh+LM5aNNvmI5bOh2Kn87ymKeO/qbW18VcxZt5K1SxmhEu5JFCfggWnHEkz26naaocJai8XGseGP
+	S4oH9tiNMjKIgRkrH6ETwDzAN7/0IINILH3DRj3IcbQVuana0AmbzJIhZEGkWWQmzzv4DEquTRh7r
+	EUSQ2wH2rCtrRL/YQ1mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAh08-00083C-Ly; Sat, 07 Mar 2020 21:28:52 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jAmrC-00049j-Eg; Sun, 08 Mar 2020 03:44:02 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAgzw-00081P-7F; Sat, 07 Mar 2020 21:28:41 +0000
-Received: by mail-wr1-x444.google.com with SMTP id 6so6449259wre.4;
- Sat, 07 Mar 2020 13:28:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ueTdXm38iULk42VR8rVExSQUffRrtj0Iz9PSB0/iBPw=;
- b=POwpoa6DTHcAFg9bkriEfLwyjnxF+WNx4Bm27ekR8IuXAWPZmM2W/YdPr/ZI4Drpb3
- uxq788hx6N+qxdHZrZEMkWWjG71Jlgl/UydUXO6JyVHNa3pXPW5K7ZHn30wQ7eZisQ4y
- j3WQrpEucEbzSARLq7jyQICuzsmeVGCdl1VHfwtZqxHd2obQuRafAKjkBfmIGx+ZkvHB
- //2cCq8+1rd6QFw4Dg9GWfPxOjxml5U0k85RPjy/gRPcO6wuwxzBp4ATwjaSw8u0mQjm
- E1zPzXkeD3Oyb1Qs/OK/GpTCzSOEpK6c4Rbz3G5xFxbx1nzesNl5FyBLncZDs6AaMAtD
- ZAlQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=ueTdXm38iULk42VR8rVExSQUffRrtj0Iz9PSB0/iBPw=;
- b=ClOzSkfpkVVYZKwg1ngD+gb1CZHdAtFB/2T6O9u2yf1Rz9p91dDKPtGLU/A2BWxnzu
- H76gg930fWv0Z8iEe6s3sOY6n/GR5FC8Uqd8eJVZAIZbfs0AipV97uL9WiqJ6+wbAVqt
- AF7J0vrMm3hwo1tFgvkv2RnyUx1GHsGY09K7qeKTou7aRLTtGM0WZCoZGTWkkos2mdnT
- u3eBWWvZLN5sdJBDX44PRE/iK0hfvN5L7n6MlI5N64hj6nLIOkZX/HibQdV/ikO+JxrZ
- VPM9+TCwCOoRJkUn8gRB38P+snNlaLoyQYZU1Y+1B6iDt0UkBYubAGP//jwcfoqFqeLC
- 5JEw==
-X-Gm-Message-State: ANhLgQ3zNjJf3XYcdSs6RAIVg9f0ksSZqwLjWHk+cJukhTvQWSdd1fPD
- h3MWbYoSLfsFZpZRHtFr6HhPJwVN
-X-Google-Smtp-Source: ADFU+vsSDPqUsCoGjmQ0pTrfSMijkI7I6/Hn681LImaNHg8v8HT+IXCeWe3DjhXOxEBvH5AJm61MyQ==
-X-Received: by 2002:a05:6000:1081:: with SMTP id
- y1mr11121742wrw.52.1583616518396; 
- Sat, 07 Mar 2020 13:28:38 -0800 (PST)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id u1sm35669998wrt.78.2020.03.07.13.28.36
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 07 Mar 2020 13:28:37 -0800 (PST)
-Subject: Re: [PATCH v2 1/1] pwm: mediatek: add longer period support
-To: Sam Shih <sam.shih@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
-References: <1583230755-25986-1-git-send-email-sam.shih@mediatek.com>
- <1583230755-25986-2-git-send-email-sam.shih@mediatek.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <1a3a523e-62ff-e380-c67b-12f742d348ea@gmail.com>
-Date: Sat, 7 Mar 2020 22:28:36 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <1583230755-25986-2-git-send-email-sam.shih@mediatek.com>
+ id 1jAmr4-000494-Bk
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Mar 2020 03:43:57 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0283fYCH011829; Sat, 7 Mar 2020 19:42:57 -0800
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-id : content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=FHiiO+ZKgQCoLsP5+I5EzI9zmBNeKAaw5lxaRpwJjsk=;
+ b=ihg0RSz3mk7KOs/27wkaC0ZqGx6ViuFv8Z+58Ohagn2usariI16fhy0XQBu+QJNfxNNh
+ EtRJbDzS7LCtkRNws1IbbUFhsJ7+nrobh5TsUdYvQY9TpHLmIRQmBnwGuGgZpZAXMk2V
+ esQr2ZtXcEeBtfdxwzhkKKAc/dkXEv25lcV7CPfmZWybQ8pjPYqYe0qDxk/b5LVlaYWq
+ NXW1Lyn2bdIHvwCUmU/hmNET3q6kbkkIrTOMGxzVwEkO7D7RkpKzzA+tOYH2E2NiFC6c
+ CImDiWRTyiv0JoV/WEIfhb4+U+gbRBuGS2KBu7p76LOzNwcUwXOfus1eOaT/eLML1Xp4 FQ== 
+Received: from sc-exch04.marvell.com ([199.233.58.184])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2ymc0sj1c0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Sat, 07 Mar 2020 19:42:57 -0800
+Received: from SC-EXCH04.marvell.com (10.93.176.84) by SC-EXCH04.marvell.com
+ (10.93.176.84) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Sat, 7 Mar
+ 2020 19:42:55 -0800
+Received: from NAM11-BN8-obe.outbound.protection.outlook.com (104.47.58.168)
+ by SC-EXCH04.marvell.com (10.93.176.84) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2 via Frontend Transport; Sat, 7 Mar 2020 19:42:55 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=De1pPRcvUZmWja8cuVVecWqyRFu/BrxkYR8SPVFREupzSckMGuN4UkyFwimV6MOvgYYvTSxI32UZjmC9i15EBqtmc6cfRZRmRaYQ80mJaQYDSNEOOAj95yTdQB6us/TvaSAkMloeOP8Pnd32L3EYrb6PSzuglEGnmlAo8Q+rn4a4GyLrhIouOforbXNfZdAA0Tebk/uDf6k6Zgq3JLSpdazCmqSo3I6NuLVpHFKDW4ap1uCuibEUhJyhvTjoDQWnXoG/5WggKlb4+J59qJl9qw80Dr4UWuQEQ2vBw0Kl8SlbZhYQE/n3YQJcHE6t7PY14TdSRuiZJKFSkeQN7TIIxw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FHiiO+ZKgQCoLsP5+I5EzI9zmBNeKAaw5lxaRpwJjsk=;
+ b=ZKkAmbuBZOHUMNJz5oGaCmkHegkgkprX5LLYLiaKBfvnOiC0aIWkXVLSlqpXpkZHbaHiX2Vhx181lZ4FC5KDgUbZMIo5Ao5197x94UtkV84GK8VUKuY1VYl1Z08yv5ssNilLtA9jDrhsIgZgicwW/jLgsvwoWk7+MO0jz3n8A8hnuWAU7G45+kyNdcg0qmIeYdtWmtrHn5DwQjf6iUEDxQPBWNkrmUR8SGKTkRiZuKbeIYVPWAG0L/X8oYIR7uGRDxUuJxLqffM8qNjVzYwIBGoeE8eoZ4+pJBDMkvCB1bH+Yx8rBKRIrs411Mty9EjJ4fVERT4P92hjY7ZhT7Dc7w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FHiiO+ZKgQCoLsP5+I5EzI9zmBNeKAaw5lxaRpwJjsk=;
+ b=uUZbw6qrouCs40rXK98st1/wdQcNNPS5HO088hbCHH4YtKGGZ3YHrF61mycUcnHiBry8MB52Fglhpp8T+p3eMXYlQJjxe/L9opWi5foArWtzPyzodekjjYzOErcY3xModHAedwDINBJ1CvFEOuJIWKgltZK+KXwUknUEddwRZZg=
+Received: from BYAPR18MB2535.namprd18.prod.outlook.com (2603:10b6:a03:137::17)
+ by BYAPR18MB2920.namprd18.prod.outlook.com (2603:10b6:a03:10b::25)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2793.14; Sun, 8 Mar
+ 2020 03:42:52 +0000
+Received: from BYAPR18MB2535.namprd18.prod.outlook.com
+ ([fe80::8cd1:1741:8d2d:1c23]) by BYAPR18MB2535.namprd18.prod.outlook.com
+ ([fe80::8cd1:1741:8d2d:1c23%7]) with mapi id 15.20.2793.013; Sun, 8 Mar 2020
+ 03:42:52 +0000
+From: Alex Belits <abelits@marvell.com>
+To: "frederic@kernel.org" <frederic@kernel.org>, "rostedt@goodmis.org"
+ <rostedt@goodmis.org>
+Subject: [PATCH v2 00/12] "Task_isolation" mode
+Thread-Topic: [PATCH v2 00/12] "Task_isolation" mode
+Thread-Index: AQHV9PukP2RDgHZcrEOg6J4fp5SMZg==
+Date: Sun, 8 Mar 2020 03:42:51 +0000
+Message-ID: <aed12dd15ea2981bc9554cfa8b5e273c1342c756.camel@marvell.com>
+References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+In-Reply-To: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [199.233.58.128]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: a33bf6bf-9a05-47b4-b7b1-08d7c312c7a9
+x-ms-traffictypediagnostic: BYAPR18MB2920:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BYAPR18MB2920ED0D078993635FD4C2B0BCE10@BYAPR18MB2920.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1303;
+x-forefront-prvs: 03361FCC43
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(396003)(39840400004)(376002)(346002)(366004)(199004)(189003)(316002)(66946007)(5660300002)(6512007)(478600001)(8936002)(71200400001)(2906002)(6486002)(4744005)(66556008)(66476007)(76116006)(6506007)(91956017)(64756008)(66446008)(36756003)(54906003)(4326008)(2616005)(186003)(110136005)(8676002)(26005)(81166006)(81156014)(86362001)(7416002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR18MB2920;
+ H:BYAPR18MB2535.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: m6KiucSSjsuR9c1gFZsLkXoNQaM3Dx63GJqdsr0tvJhIhwwT7HzaD6ZifUYsK+DLIUBen78t8zaPmOjpqCy1qevGLrrKefNfHfz+EjhMifQvcfJviAd3cbr9OgTmzxLv6B/0PFzYSM/GYlwaUyO7ooxEHQyiWiYZ3l/oNKH4vDmGgNktPXOLU3wXQI4T15UfzlNgq5C+dV4WvRtTAouShpsDFFldhSfrvUMX+aDzUBoIm/79sLNBB4rv/h1vVqrkIVT5HWX7p3FOVFzpJuU+k6FP5ezbl5CXUOBd+yqdimWTJvbppHC0m7N374eUreMwxz/vmV4MJJLPe/LKHTd7fQhRoeb96LY7JGhxVpJlbt8UTszsl4o7xWQX4yMA1qPj5mvMJN+/dJnD1eJLS2KSb/KElRSogqSiGkeSXOSbBfDFy//OeVsBva8ysxgLKBMP
+x-ms-exchange-antispam-messagedata: lVT9wxB5k6dtnA0H6kz0rmhuEUjDL2M1drNyuLQyM7QeceAWB5XJLWJeiESM5jY6EvCBhKsYGOZapQZQx8p51SCQDrLjX3ZG3waRpndMLuOMt/cDYgoRTAa52l9/TgfJ3ltccScUL98ESo/+NJbsaw==
+Content-ID: <ACC41A63E97F9F4C9AB5136C731F89B3@namprd18.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: a33bf6bf-9a05-47b4-b7b1-08d7c312c7a9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Mar 2020 03:42:51.9112 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: PfHeIwg1DGGoc6u6tl2Lk6rWZew92DR4g7rz+78HFo7IOn0TKrzyasy7GeCESbiFWs7qN5aL0Aq3kenKobEeSg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2920
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-03-07_09:2020-03-06,
+ 2020-03-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_132840_268409_BD9F3965 
-X-CRM114-Status: GOOD (  22.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200307_194354_809708_6152AF56 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -177,101 +147,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- John Crispin <john@phrozen.org>
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Prasun Kapoor <pkapoor@marvell.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, "will@kernel.org" <will@kernel.org>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is the updated version of task isolation patchset.
 
-
-On 03/03/2020 11:19, Sam Shih wrote:
-> The pwm clock source could be divided by 1625 with PWM_CON
-> BIT(3) setting in mediatek hardware.
-> 
-> This patch add support for longer pwm period configuration,
-> which allowing blinking LEDs via pwm interface.
-
-Is this a fix? In this case please provide a Fixes tag with the commit ID which
-introduced the bug.
-
-Thanks
-Matthias
-
-> 
-> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
-> ---
->  drivers/pwm/pwm-mediatek.c | 34 ++++++++++++++++++++++++++++++----
->  1 file changed, 30 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
-> index b94e0d09c300..c64ecff6c550 100644
-> --- a/drivers/pwm/pwm-mediatek.c
-> +++ b/drivers/pwm/pwm-mediatek.c
-> @@ -121,8 +121,11 @@ static int pwm_mediatek_config(struct pwm_chip *chip, struct pwm_device *pwm,
->  			       int duty_ns, int period_ns)
->  {
->  	struct pwm_mediatek_chip *pc = to_pwm_mediatek_chip(chip);
-> -	u32 clkdiv = 0, cnt_period, cnt_duty, reg_width = PWMDWIDTH,
-> -	    reg_thres = PWMTHRES;
-> +	/* The source clock is divided by 2^clkdiv or iff the clksel bit
-> +	 * is set by (2^clkdiv*1625)
-> +	 */
-> +	u32 clkdiv = 0, clksel = 0, cnt_period, cnt_duty,
-> +	    reg_width = PWMDWIDTH, reg_thres = PWMTHRES;
->  	u64 resolution;
->  	int ret;
->  
-> @@ -133,12 +136,30 @@ static int pwm_mediatek_config(struct pwm_chip *chip, struct pwm_device *pwm,
->  
->  	/* Using resolution in picosecond gets accuracy higher */
->  	resolution = (u64)NSEC_PER_SEC * 1000;
-> +	/* Calculate resolution based on current clock frequency */
->  	do_div(resolution, clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
-> -
-> +	/* Using resolution to calculate cnt_period which represents
-> +	 * the effective range of the PWM period counter
-> +	 */
->  	cnt_period = DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000, resolution);
->  	while (cnt_period > 8191) {
-> +		/* Using clkdiv to reduce clock frequency and calculate
-> +		 * new resolution based on new clock speed
-> +		 */
->  		resolution *= 2;
->  		clkdiv++;
-> +		if (clkdiv > PWM_CLK_DIV_MAX && !clksel) {
-> +			/* Using clksel to divide the pwm source clock by
-> +			 * an additional 1625, and recalculate new clkdiv
-> +			 * and resolution
-> +			 */
-> +			clksel = 1;
-> +			clkdiv = 0;
-> +			resolution = (u64)NSEC_PER_SEC * 1000 * 1625;
-> +			do_div(resolution,
-> +				clk_get_rate(pc->clk_pwms[pwm->hwpwm]));
-> +		}
-> +		/* Calculate cnt_period based on resolution */
->  		cnt_period = DIV_ROUND_CLOSEST_ULL((u64)period_ns * 1000,
->  						   resolution);
->  	}
-> @@ -158,8 +179,13 @@ static int pwm_mediatek_config(struct pwm_chip *chip, struct pwm_device *pwm,
->  		reg_thres = PWM45THRES_FIXUP;
->  	}
->  
-> +	/* Calculate cnt_duty based on resolution */
->  	cnt_duty = DIV_ROUND_CLOSEST_ULL((u64)duty_ns * 1000, resolution);
-> -	pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
-> +	if (clksel)
-> +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | BIT(3) |
-> +				    clkdiv);
-> +	else
-> +		pwm_mediatek_writel(pc, pwm->hwpwm, PWMCON, BIT(15) | clkdiv);
->  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_width, cnt_period);
->  	pwm_mediatek_writel(pc, pwm->hwpwm, reg_thres, cnt_duty);
->  
-> 
+1. Commit messages updated to match changes.
+2. Sign-off lines restored from original patches, changes listed wherever applicable.
+3. arm platform -- added missing calls to syscall check and cleanup procedure after leaving isolation.
+4. x86 platform -- added missing calls to cleanup procedure after leaving isolation.
 
 _______________________________________________
 linux-arm-kernel mailing list
