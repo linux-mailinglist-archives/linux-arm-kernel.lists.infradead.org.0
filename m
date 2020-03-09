@@ -2,93 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42FEE17E833
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:21:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BEE617E841
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:23:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p7fyzSbvWj6aJmDUviEXvlL4O7qFUwCtb/IPZMcv+G8=; b=h02a3mbtdmWMyH
-	8Yb2G4Sa1T82HQEzxfSRy8jPJEaNTCIa2bJPoC5avIL/fWQSMfy1C6TI1rR0iY8XUzLtPIRHO0jqP
-	9BIdCRV6KVtIU+E8M+YbRLxqRerv4hVVLeYk6cqyuC0xydtR1962ftwWcQwW7W11ZrPnCgjMPOrak
-	VHzMoFTnGx32laxCld4z+DU4o/IuFdNyJ3WXB85SpC3kZZtX46sctDNUw9Epc5AzkShyfUuzST+Jg
-	iliOTQbqLwxJrH3fjgOmqbV2FZMoOuqDfYlfn9muXwnvGfXA9a9eo6PTZYAnxzuDlmjEtaCVjGwqi
-	AwNhQNPR4w4oZj/Lq2cA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FKjzDZFwQnoW5cNesAuW1T/84p9/gLOk0v/LGiAigVk=; b=e4Edvm9YXRjiPeS2u7ToNr9uu
+	JXO9q9vJdxCZOSRJfDLGMhBIzm7rp/e3XRNbhKuK4/Rx/4tI8TSEHiAuyoQGTNQgrQBQekoFN9OaX
+	TdCATpbn9TPkx8f98ljYVeQVdx7QB6DfTseybsA0HpxGQ9LqMIVfglQh4zdXVaFDy6x3DDbTuQ36t
+	4MTUq+y0JKsM7uUzQYRFCFILhuZ98ei8rzUznmwV5OXdAe5B0/Ng8kc8fA9EqHdSqyTvsVKG369yK
+	bY2Un2VE5yTkpj0yap3EkRrQKxs2jWXaXgBWgnJsIJdJ1OCDd6LuTP/rVQxnXfPFmLm/ocvL4uc8N
+	5X7XnbzQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBNxw-0004ys-5d; Mon, 09 Mar 2020 19:21:28 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jBNzQ-0005In-PV; Mon, 09 Mar 2020 19:23:00 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBNxn-0004y2-LD
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 19:21:21 +0000
-Received: by mail-pg1-x543.google.com with SMTP id d9so5162847pgu.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 12:21:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/Ve3mrSvm1dOHAsegEEjiuaMrFQOijqF+lr2yreUyLE=;
- b=PKCtKC7uyC8i/DN0MO+jBy7A9dYjm0BvRQHCcABOBfgDupKb+axXLHJ1pIr5+0N6v+
- EOZwJYSIfs2miXWm90Qjb6yE5EBWGSBAsw/IRyuFapS9v6j5tiHTfsj8sy8fndA4ooO9
- UKs1UUhQk1xKwDJGKHHRiGZ4SR4ShkUpFn6QuntqJF3mhLrBK3keXR9SOUl0Epx2yryK
- dqYB3wkDKVT3frMmHokgUdQyCvgwBogJgN9Hy0rbNBvNYsfsuDcnCMas98lYqxyv775v
- T7xrFLTYcuTQgavNN3+2Qvly5vFOFiA8Upap+DllXIKkLvxGERM74sfSGkAAiWy7yk2p
- JNtQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/Ve3mrSvm1dOHAsegEEjiuaMrFQOijqF+lr2yreUyLE=;
- b=NIs+GiT7mtsI4vV2QNm0CZrladqBkVJnIo7TOTn89zIrQcep6dUJtJN3TgClHe7zIm
- ixik28vlVyNnR4XHWGAdh2cEKP13RuxRkDJJPLW16/+OaBJkbg9BA4h3SzigScd5kZXs
- UhvYqmRL1VtENLPcBPMa1Ttgj7vi0DH42Op2QGOOFCnjvrHhsdTwD20HGHy8hdKV5JWt
- WQfTxIAbFtpq2vHmxtjDzf1Em20UZkNrqTFeuzXfn75OUU9xcsGG/+1XFoYWQLtGbk/G
- TgLqijwU/zFpi+mK4yLXuwXvPRAy2aH54WLnMptI7yvV+OeVEKu5UrpDq5t1UOEallgp
- 1uJQ==
-X-Gm-Message-State: ANhLgQ05VhykH6vAI69ztlL0dPAOBKtF2Rw3f8KAJZct6Y4SL+ILtQaf
- JU+KqfQohK9GCSIPwBMJ8AZtTw==
-X-Google-Smtp-Source: ADFU+vv4DHskMayr9V263F+RoX6mwXATWLbep1JlrTDrd3s5h6v5M8VMmhrUgv94rrg0OOERe/5wyg==
-X-Received: by 2002:a62:25c3:: with SMTP id l186mr18053778pfl.52.1583781678971; 
- Mon, 09 Mar 2020 12:21:18 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id u14sm27167815pgg.67.2020.03.09.12.21.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Mar 2020 12:21:18 -0700 (PDT)
-Date: Mon, 9 Mar 2020 13:21:15 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Clement Leger <cleger@kalray.eu>
-Subject: Re: [PATCH v5 2/8] remoteproc: Use size_t instead of int for
- rproc_mem_entry len
-Message-ID: <20200309192115.GB1399@xps15>
-References: <20200210162209.23149-1-cleger@kalray.eu>
- <20200302093902.27849-1-cleger@kalray.eu>
- <20200302093902.27849-3-cleger@kalray.eu>
+ id 1jBNzF-0005HN-IB; Mon, 09 Mar 2020 19:22:51 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 55DADB06A;
+ Mon,  9 Mar 2020 19:22:47 +0000 (UTC)
+Message-ID: <9e685fce547d808f269e59e2290331e75c66f3e4.camel@suse.de>
+Subject: Re: [PATCH] ARM: dts: bcm283x: Use firmware PM driver for V3D
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stefan Wahren <stefan.wahren@i2se.com>, Rob Herring
+ <robh+dt@kernel.org>,  Mark Rutland <mark.rutland@arm.com>, Florian
+ Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,  Scott
+ Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com,
+ Eric Anholt <eric@anholt.net>
+Date: Mon, 09 Mar 2020 20:22:45 +0100
+In-Reply-To: <ddcb8fd5-9e35-454c-b38d-d36e7b41ef07@i2se.com>
+References: <20200303173217.3987-1-nsaenzjulienne@suse.de>
+ <736f0c59-352b-03b2-f77f-bfc22171b3fb@i2se.com>
+ <03fcb1e2bc7f3ff389b6dfbf3964e159a93ae835.camel@suse.de>
+ <d3d40174-9c08-f42f-e088-08e23c2dc029@i2se.com>
+ <f2ec22160ac86aec8d252ade7d6eb8789777cc42.camel@suse.de>
+ <01ceb60e-a791-b6ca-352e-ad2e79f264e3@i2se.com>
+ <ddcb8fd5-9e35-454c-b38d-d36e7b41ef07@i2se.com>
+User-Agent: Evolution 3.34.4 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200302093902.27849-3-cleger@kalray.eu>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_122119_725656_B24291B5 
-X-CRM114-Status: GOOD (  18.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200309_122249_889937_BFEDACD7 
+X-CRM114-Status: GOOD (  23.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,142 +71,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Loic PALLARDY <loic.pallardy@st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>, Jonathan Corbet <corbet@lwn.net>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-doc@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- Patrice Chotard <patrice.chotard@st.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- s-anna <s-anna@ti.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, wahrenst@gmx.net,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6638074184389545934=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 02, 2020 at 10:38:56AM +0100, Clement Leger wrote:
-> Now that rproc_da_to_va uses a size_t for length, use a size_t for len field
-> of rproc_mem_entry. Function used to create such structures now takes
-> a size_t instead of int to allow full size range to be handled.
-> 
-> Signed-off-by: Clement Leger <cleger@kalray.eu>
 
-With the checkpatch warning fixed:
+--===============6638074184389545934==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-tZ303xiG7cDiGT02SWOp"
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-> ---
->  drivers/remoteproc/remoteproc_core.c    | 14 ++++++++------
->  drivers/remoteproc/remoteproc_debugfs.c |  2 +-
->  include/linux/remoteproc.h              |  6 +++---
->  3 files changed, 12 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 5ab094fc1b55..4bfaf4a3c4a3 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -318,8 +318,9 @@ int rproc_alloc_vring(struct rproc_vdev *rvdev, int i)
->  	struct device *dev = &rproc->dev;
->  	struct rproc_vring *rvring = &rvdev->vring[i];
->  	struct fw_rsc_vdev *rsc;
-> -	int ret, size, notifyid;
-> +	int ret, notifyid;
->  	struct rproc_mem_entry *mem;
-> +	size_t size;
->  
->  	/* actual size of vring (in bytes) */
->  	size = PAGE_ALIGN(vring_size(rvring->len, rvring->align));
-> @@ -746,11 +747,12 @@ static int rproc_alloc_carveout(struct rproc *rproc,
->  	va = dma_alloc_coherent(dev->parent, mem->len, &dma, GFP_KERNEL);
->  	if (!va) {
->  		dev_err(dev->parent,
-> -			"failed to allocate dma memory: len 0x%x\n", mem->len);
-> +			"failed to allocate dma memory: len 0x%zx\n",
-> +			mem->len);
->  		return -ENOMEM;
->  	}
->  
-> -	dev_dbg(dev, "carveout va %pK, dma %pad, len 0x%x\n",
-> +	dev_dbg(dev, "carveout va %pK, dma %pad, len 0x%zx\n",
->  		va, &dma, mem->len);
->  
->  	if (mem->da != FW_RSC_ADDR_ANY && !rproc->domain) {
-> @@ -957,7 +959,7 @@ EXPORT_SYMBOL(rproc_add_carveout);
->   */
->  struct rproc_mem_entry *
->  rproc_mem_entry_init(struct device *dev,
-> -		     void *va, dma_addr_t dma, int len, u32 da,
-> +		     void *va, dma_addr_t dma, size_t len, u32 da,
->  		     int (*alloc)(struct rproc *, struct rproc_mem_entry *),
->  		     int (*release)(struct rproc *, struct rproc_mem_entry *),
->  		     const char *name, ...)
-> @@ -999,7 +1001,7 @@ EXPORT_SYMBOL(rproc_mem_entry_init);
->   * provided by client.
->   */
->  struct rproc_mem_entry *
-> -rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
-> +rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
->  			     u32 da, const char *name, ...)
->  {
->  	struct rproc_mem_entry *mem;
-> @@ -1270,7 +1272,7 @@ static void rproc_resource_cleanup(struct rproc *rproc)
->  		unmapped = iommu_unmap(rproc->domain, entry->da, entry->len);
->  		if (unmapped != entry->len) {
->  			/* nothing much to do besides complaining */
-> -			dev_err(dev, "failed to unmap %u/%zu\n", entry->len,
-> +			dev_err(dev, "failed to unmap %zx/%zu\n", entry->len,
->  				unmapped);
->  		}
->  
-> diff --git a/drivers/remoteproc/remoteproc_debugfs.c b/drivers/remoteproc/remoteproc_debugfs.c
-> index dd93cf04e17f..82dc34b819df 100644
-> --- a/drivers/remoteproc/remoteproc_debugfs.c
-> +++ b/drivers/remoteproc/remoteproc_debugfs.c
-> @@ -293,7 +293,7 @@ static int rproc_carveouts_show(struct seq_file *seq, void *p)
->  		seq_printf(seq, "\tVirtual address: %pK\n", carveout->va);
->  		seq_printf(seq, "\tDMA address: %pad\n", &carveout->dma);
->  		seq_printf(seq, "\tDevice address: 0x%x\n", carveout->da);
-> -		seq_printf(seq, "\tLength: 0x%x Bytes\n\n", carveout->len);
-> +		seq_printf(seq, "\tLength: 0x%zx Bytes\n\n", carveout->len);
->  	}
->  
->  	return 0;
-> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index 89215798eaea..bee559330204 100644
-> --- a/include/linux/remoteproc.h
-> +++ b/include/linux/remoteproc.h
-> @@ -329,7 +329,7 @@ struct rproc;
->  struct rproc_mem_entry {
->  	void *va;
->  	dma_addr_t dma;
-> -	int len;
-> +	size_t len;
->  	u32 da;
->  	void *priv;
->  	char name[32];
-> @@ -599,13 +599,13 @@ void rproc_add_carveout(struct rproc *rproc, struct rproc_mem_entry *mem);
->  
->  struct rproc_mem_entry *
->  rproc_mem_entry_init(struct device *dev,
-> -		     void *va, dma_addr_t dma, int len, u32 da,
-> +		     void *va, dma_addr_t dma, size_t len, u32 da,
->  		     int (*alloc)(struct rproc *, struct rproc_mem_entry *),
->  		     int (*release)(struct rproc *, struct rproc_mem_entry *),
->  		     const char *name, ...);
->  
->  struct rproc_mem_entry *
-> -rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, int len,
-> +rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
->  			     u32 da, const char *name, ...);
->  
->  int rproc_boot(struct rproc *rproc);
-> -- 
-> 2.15.0.276.g89ea799
-> 
+--=-tZ303xiG7cDiGT02SWOp
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Stefan,
+
+On Mon, 2020-03-09 at 16:41 +0100, Stefan Wahren wrote:
+> Hi Nicolas,
+>=20
+> On 06.03.20 21:33, Stefan Wahren wrote:
+> > Hi Nicolas,
+> >=20
+> > Am 05.03.20 um 11:44 schrieb Nicolas Saenz Julienne:
+> > > Hi Stefan,
+> > >=20
+> > > On Tue, 2020-03-03 at 20:24 +0100, Stefan Wahren wrote:
+> > > > > > > Note: I tested this on RPi3b, RPi3a+ and RPi2b.
+> > > > > > as i already wrote this prevent X to start on current Raspbian =
+on my
+> > > > > > Raspberry Pi 3A+ (multi_v7_defconfig, no u-boot). We must be ca=
+reful
+> > > > > > here.
+> > > > > >=20
+> > > > > > I will take a look at the debug UART. Maybe there are more help=
+ful
+> > > > > > information.
+> > > > > It seems we're seeing different things, I tested this on raspbian
+> > > > > (multi_v7_defconfig) and on arm64. I'll try again from scratch
+> > > > > tomorrow.
+> > > > My modifications to the Raspbian image (from 13.2.2020) are little:
+> > > >=20
+> > > > - specify devicetree to config.txt
+> > > > - change console to ttyS1 and remove "silent" in cmdline.txt
+> > > > - rename all original kernel7*.img
+> > > > - copy dtb and kernel7.img to boot partition
+> > > > - copy kernel modules to root partition
+> > > Would you mind retesting with the latest linux-next? I validated an i=
+mage
+> > > based
+> > > on 5.6.0-rc4-next-20200305-00001-g285a7a64cd56 and a fresh raspbian
+> > > download on
+> > > RPi3a+ without X issues.
+> > i retested with todays linux-next and the issue persists on my RPi 3A+ =
+/
+> > HP ZR2440w with this patch applied.
+>=20
+> I tested my display with a RPI 3B, 3B+ and a Zero W. All of them had the
+> same issue. Btw i used this display the last years for testing the
+> Raspberry Pi.
+>=20
+> After that i connected the RPI 3B to my TV screen and it works with the
+> patch applied.
+
+Thanks for taking the time on this. I guess all we have left is looking dee=
+per
+into it. I'll add it to my backlog for now.
+
+Regards,
+Nicolas
+
+
+--=-tZ303xiG7cDiGT02SWOp
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5ml4UACgkQlfZmHno8
+x/43iAgAkAzhEC+LqzxtkdHiNML8ngJfJVRbuYYwyH9gHGl/3lrYW1ecvisK9ZwB
+aJkbQkDEpPceupdXb9TsNr98lJ1Idhk4b8yZbm2FCzVFnHuIYc2NsxlkGc6fvp9a
+S6BIgQYnfRyBzmMBpLofF7rDmdcd9SBtLqkLTKmJx4WROMK17jREEkOSYLF3//RO
+Z1urTNh2l1hUHq5DGyJvGQX5KMPGYfxoZ1IL4FgLB54DelxscpQxxdgli2RNHKxA
+9WkI0l6XlcL1b5ke6KcoU0lKbPQ3SEcLrZUukqd37JxhgIXu8ow1RK5dAtWOGZVK
+oo6I7gSafUtvGrFpqlNpc9hepfltCQ==
+=/qXY
+-----END PGP SIGNATURE-----
+
+--=-tZ303xiG7cDiGT02SWOp--
+
+
+
+--===============6638074184389545934==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6638074184389545934==--
+
+
