@@ -2,82 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FC0A17D84C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 04:36:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02FB017D899
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 05:29:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D7UcFnvKDoEliOhpXCrvMPQE7modzIu3dF9xSbgidaE=; b=p2ic2RL3FhEU2X
-	ANoFbhh2URJtbvfTPZojFmKcG6WLx+OSEG1pVvYt6AXYviBb3McpmAI5K27YDlzrs3knlxMoLNhZ6
-	wDx4F6/RvLpmsziCZ129bSCiUv8x0HMtyZzJ0LCykFtYIMaeqpUcyfrEXKBmei/oOvMK39WZ8FFXg
-	ffv/tnJRVkNkNxVXPYkADDWTm6H3c3E2gpkXytZgT9rHo8dnh4PCh0XRsUSwasvoez17ACHM0RreQ
-	l+6xRL/BNBLWb0UP5MjZ/qiu23qUGZ5Zg09o6Xhcli4zvdVbCsi1BFVRPQTbcvKD35w+yvTrub8Hd
-	3pFbO3aHUwRIR/pfkIBA==;
+	List-Owner; bh=FA8fpjPKhqw4/YFjlmNzjCvVqmVk5GDRq8jxPr99nH8=; b=bFRZ5YS0hcP7Ph
+	IWTuZ5K6FSED75aST3OnEwF0kVyovzzWENAaVgJUo3LXrKzAZ2WpGV5L9Gt8yu7iz8Xa/RZvW+wcD
+	VBSi4kHsEzMqSHchLVRaw1pZs6nexKCM95P52boken4p7DdGuDBwmUVVWXJDfxWAbFWrCpCFgXZAa
+	lOPwQN4EME3Fw0IEyY0TAZ463cf2F839mwncEKHEUhIpCxDV4D3oG87u5VAsdDOCUoW23NEaeRlez
+	5rP4vXQ8qWtkqb40K+pLal4mEyPemr7ZL7xAI8U8JU3u1XAL2kArLRawT44kPA25aanAbE4sa/jCo
+	EXyjFo0JUmR7T+Da3l4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB9D2-00085b-H0; Mon, 09 Mar 2020 03:36:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jBA2m-00065f-7V; Mon, 09 Mar 2020 04:29:32 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB9Ct-00083d-L2; Mon, 09 Mar 2020 03:35:57 +0000
-X-UUID: 7d1e5005fd2c4a6393e834ca6484086a-20200308
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=NPplXrKgtKtz1x0Ix8YmImoSvkv1+1IC9efSsIgz5rA=; 
- b=AB2oTMhhsGwn7IAr4Qzok/BmldTZg5IS9JmZN2xCjI5wr/ORouceMWiyafGUawfICQvU95eYdBUDW/qbTz6nxSeSEz3QFGN7yysqmtAjGFoGAZvA/zTOtd9ld+v+4Gd8/bt7HxL6+7CNpjsWsr7/Yab57m4v1KKZhDyoidVVKTY=;
-X-UUID: 7d1e5005fd2c4a6393e834ca6484086a-20200308
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <sam.shih@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1619119128; Sun, 08 Mar 2020 19:35:45 -0800
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 8 Mar 2020 20:35:46 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Mar 2020 11:35:41 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 9 Mar 2020 11:35:38 +0800
-Message-ID: <1583724941.15393.8.camel@mtksdccf07>
-Subject: Re: [PATCH v2 1/1] pwm: mediatek: add longer period support
-From: Sam Shih <sam.shih@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>, Uwe
- =?ISO-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-Date: Mon, 9 Mar 2020 11:35:41 +0800
-In-Reply-To: <20200308201811.hlac57s3h4p4cgev@pengutronix.de>
-References: <1583230755-25986-1-git-send-email-sam.shih@mediatek.com>
- <1583230755-25986-2-git-send-email-sam.shih@mediatek.com>
- <1a3a523e-62ff-e380-c67b-12f742d348ea@gmail.com>
- <20200308201811.hlac57s3h4p4cgev@pengutronix.de>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: BF9287628D924EBECDF23B1AA8716029622345E5AC47F06F0882C90E7795C30A2000:8
-X-MTK: N
+ id 1jBA2b-000648-7Q; Mon, 09 Mar 2020 04:29:22 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 3F658158B5851;
+ Sun,  8 Mar 2020 21:29:12 -0700 (PDT)
+Date: Sun, 08 Mar 2020 21:29:11 -0700 (PDT)
+Message-Id: <20200308.212911.623712971851173339.davem@davemloft.net>
+To: repk@triplefau.lt
+Subject: Re: [PATCH v2] net: stmmac: dwmac1000: Disable ACS if enhanced
+ descs are not used
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200308092556.23881-1-repk@triplefau.lt>
+References: <20200308092556.23881-1-repk@triplefau.lt>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sun, 08 Mar 2020 21:29:12 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_203555_701682_ED606157 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200308_212921_272300_5749521D 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,51 +63,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org, Thierry
- Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- John Crispin <john@phrozen.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-15"
-Content-Transfer-Encoding: quoted-printable
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org, joabreu@synopsys.com,
+ linux-amlogic@lists.infradead.org, peppe.cavallaro@st.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+From: Remi Pommarel <repk@triplefau.lt>
+Date: Sun,  8 Mar 2020 10:25:56 +0100
 
-On Sun, 2020-03-08 at 21:18 +0100, Uwe Kleine-K=F6nig wrote:
-> Hello,
-> =
+> ACS (auto PAD/FCS stripping) removes FCS off 802.3 packets (LLC) so that
+> there is no need to manually strip it for such packets. The enhanced DMA
+> descriptors allow to flag LLC packets so that the receiving callback can
+> use that to strip FCS manually or not. On the other hand, normal
+> descriptors do not support that.
+> 
+> Thus in order to not truncate LLC packet ACS should be disabled when
+> using normal DMA descriptors.
+> 
+> Fixes: 47dd7a540b8a0 ("net: add support for STMicroelectronics Ethernet controllers.")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
 
-> On Sat, Mar 07, 2020 at 10:28:36PM +0100, Matthias Brugger wrote:
-> > On 03/03/2020 11:19, Sam Shih wrote:
-> > > The pwm clock source could be divided by 1625 with PWM_CON
-> > > BIT(3) setting in mediatek hardware.
-> > > =
+Please don't CC: stable for networking fixes as per the netdev FAQ.
 
-> > > This patch add support for longer pwm period configuration,
-> > > which allowing blinking LEDs via pwm interface.
-> > =
-
-> > Is this a fix? In this case please provide a Fixes tag with the commit =
-ID which
-> > introduced the bug.
-> =
-
-> I'd say it qualifies as a fix if without it a request with a long period
-> returns success but isn't properly implemented. Otherwise it's only a
-> new feature.
-> =
-
-
-It's only a new feature.
-
-Without this patch, pwm_mediatek_config return -EINVAL when receive a
-long period request.
-
-I will send v3 to reply Uwe's comment.
-
-
-Best Regards,
-Sam Shih
+Applied and queued up for -stable, thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
