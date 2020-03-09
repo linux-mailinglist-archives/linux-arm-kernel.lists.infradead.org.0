@@ -2,67 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD8E217DDEA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 11:49:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AF2717DDF0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 11:51:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BzcjIpErqW9mr0al3fmu2M6qpxNXusKECPWqZW0dMdU=; b=GY1t7VNvw2FdsB
-	9Efzo7K5Al6jaVhlz6lWkV/3HLi86o8k9DXNFxHtFGiQk1J+q+Sb9jK0InktOxiualIuT8dDXg11Q
-	YgpFyO5HOhdmF0TXkSTcF6iVaqVmvWruzBBOC0d7xXRQqSRcPBZsUxbpQoUAxYb+Z9kMOHxZE2/e7
-	ZMn2Z7tv2JVcwr0flZ3g8JQmmavdc133AZamZ/Lpj1RViqQ8V/DZODtm8zkGnhDer31eaMLZnTPAv
-	/1KzEuj2AQ7KHdxjOqn3++JSkNnILSrRhwWu3hox46nq6q6Jl9mBm8eRkTpnw+JE5gbsetcCpE1hr
-	+RGEMkMmcq19vefQ3LLQ==;
+	List-Owner; bh=datGF6CqcHRQcVISx+utlrBvpa1XtQVTUC4B4Rcolek=; b=eDXOO8ZRCLXGsB
+	gr1UbNdWyqRPT5XjXFzzMdko2hzfiJnPlP55xw+lQX4sVTmhGcrhSneAvHzco7m3CEaY8f2AvJ72z
+	O2JYxe6Zo9tto5FcTTj8wO2Jk9SyRzw4HUdRQCKH9QhpST9YxPSovMZibG7f4J2KO2qvi69SfY0Qg
+	RTKjCKvjH1dhmJ4aGugMsYGBSwMn1WlhT4/qc3iwpl3OjpthoRziikNQwFWQgCMwkgUMOaW2YfC9L
+	JnmWauogAj8lSVM4KVupKN21R2UnKKzG4B2sfpz5vT5a1UipkeMmEdSlpBjdtRCVGSsk/9DZFJNm1
+	VMnkVm9AMymVKgw5+LcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBFy3-0004n5-5U; Mon, 09 Mar 2020 10:49:03 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jBG0E-0006Tv-LL; Mon, 09 Mar 2020 10:51:18 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBFxt-0004ly-OX
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 10:48:56 +0000
-Received: from LHREML714-CAH.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id E289F9BDFECA97C73EEA;
- Mon,  9 Mar 2020 10:48:39 +0000 (GMT)
-Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
- LHREML714-CAH.china.huawei.com (10.201.108.37) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 9 Mar 2020 10:48:39 +0000
-Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
- (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Mon, 9 Mar 2020
- 10:48:39 +0000
-Date: Mon, 9 Mar 2020 10:48:26 +0000
-From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v4 23/26] iommu/arm-smmu-v3: Add stall support for
- platform devices
-Message-ID: <20200309104826.000052c1@Huawei.com>
-In-Reply-To: <20200304140833.GB646000@myrica>
-References: <20200224182401.353359-1-jean-philippe@linaro.org>
- <20200224182401.353359-24-jean-philippe@linaro.org>
- <20200227181726.00007c9a@Huawei.com>
- <20200304140833.GB646000@myrica>
-Organization: Huawei Technologies Research and Development (UK) Ltd.
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1jBG03-0006St-Vi
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 10:51:09 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jBFzx-0000So-P8; Mon, 09 Mar 2020 11:51:01 +0100
+Received: from pza by lupine with local (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1jBFzv-0007F2-QO; Mon, 09 Mar 2020 11:50:59 +0100
+Message-ID: <10f02dbe4e7b0966d279508b636e718e031e2e61.camel@pengutronix.de>
+Subject: Re: [PATCH] drm/imx: parallel-display: Adjust bus_flags and
+ bus_format handling
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Marek Vasut <marex@denx.de>, dri-devel@lists.freedesktop.org
+Date: Mon, 09 Mar 2020 11:50:59 +0100
+In-Reply-To: <20191114131751.26746-1-marex@denx.de>
+References: <20191114131751.26746-1-marex@denx.de>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.57]
-X-ClientProxiedBy: lhreml706-chm.china.huawei.com (10.201.108.55) To
- lhreml710-chm.china.huawei.com (10.201.108.61)
-X-CFilter-Loop: Reflected
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_034853_945643_6EB864A7 
-X-CRM114-Status: GOOD (  29.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200309_035108_024630_6A4200F9 
+X-CRM114-Status: GOOD (  25.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,123 +68,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- linux-pci@vger.kernel.org, joro@8bytes.org, robin.murphy@arm.com,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, robh+dt@kernel.org,
- yi.l.liu@intel.com, catalin.marinas@arm.com, zhangfei.gao@linaro.org,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 4 Mar 2020 15:08:33 +0100
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+Hi Marek,
 
-> On Thu, Feb 27, 2020 at 06:17:26PM +0000, Jonathan Cameron wrote:
-> > On Mon, 24 Feb 2020 19:23:58 +0100
-> > Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
-> >   
-> > > From: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>
-> > > 
-> > > The SMMU provides a Stall model for handling page faults in platform
-> > > devices. It is similar to PCI PRI, but doesn't require devices to have
-> > > their own translation cache. Instead, faulting transactions are parked and
-> > > the OS is given a chance to fix the page tables and retry the transaction.
-> > > 
-> > > Enable stall for devices that support it (opt-in by firmware). When an
-> > > event corresponds to a translation error, call the IOMMU fault handler. If
-> > > the fault is recoverable, it will call us back to terminate or continue
-> > > the stall.
-> > > 
-> > > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>  
-> > One question inline.
-> > 
-> > Thanks,
-> >   
-> > > ---
-> > >  drivers/iommu/arm-smmu-v3.c | 271 ++++++++++++++++++++++++++++++++++--
-> > >  drivers/iommu/of_iommu.c    |   5 +-
-> > >  include/linux/iommu.h       |   2 +
-> > >  3 files changed, 269 insertions(+), 9 deletions(-)
-> > > 
-> > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > > index 6a5987cce03f..da5dda5ba26a 100644
-> > > --- a/drivers/iommu/arm-smmu-v3.c
-> > > +++ b/drivers/iommu/arm-smmu-v3.c
-> > > @@ -374,6 +374,13 @@  
-> > 
-> >   
-> > > +/*
-> > > + * arm_smmu_flush_evtq - wait until all events currently in the queue have been
-> > > + *                       consumed.
-> > > + *
-> > > + * Wait until the evtq thread finished a batch, or until the queue is empty.
-> > > + * Note that we don't handle overflows on q->batch. If it occurs, just wait for
-> > > + * the queue to be empty.
-> > > + */
-> > > +static int arm_smmu_flush_evtq(void *cookie, struct device *dev, int pasid)
-> > > +{
-> > > +	int ret;
-> > > +	u64 batch;
-> > > +	struct arm_smmu_device *smmu = cookie;
-> > > +	struct arm_smmu_queue *q = &smmu->evtq.q;
-> > > +
-> > > +	spin_lock(&q->wq.lock);
-> > > +	if (queue_sync_prod_in(q) == -EOVERFLOW)
-> > > +		dev_err(smmu->dev, "evtq overflow detected -- requests lost\n");
-> > > +
-> > > +	batch = q->batch;  
-> > 
-> > So this is trying to be sure we have advanced the queue 2 spots?  
-> 
-> So we call arm_smmu_flush_evtq() before decommissioning a PASID, to make
-> sure that there aren't any pending event for this PASID languishing in the
-> fault queues.
-> 
-> The main test is queue_empty(). If that succeeds then we know that there
-> aren't any pending event (and the PASID is safe to reuse). But if new
-> events are constantly added to the queue then we wait for the evtq thread
-> to handle a full batch, where one batch corresponds to the queue size. For
-> that we take the batch number when entering flush(), and wait for the evtq
-> thread to increment it twice.
-> 
-> > Is there a potential race here?  q->batch could have updated before we take
-> > a local copy.  
-> 
-> Yes we're just checking on the progress of the evtq thread. All accesses
-> to batch are made while holding the wq lock.
-> 
-> Flush is a rare event so the lock isn't contended, but the wake_up() that
-> this patch introduces in arm_smmu_evtq_thread() does add some overhead
-> (0.85% of arm_smmu_evtq_thread(), according to perf). It would be nice to
-> get rid of it but I haven't found anything clever yet.
-> 
+On Thu, 2019-11-14 at 14:17 +0100, Marek Vasut wrote:
+> The bus_flags and bus_format handling logic does not seem to cover
+> all potential usecases. Specifically, this seems to fail with an
+> "edt,etm0700g0edh6" display attached to an 24bit display interface,
+> with interface-pix-fmt = "rgb24" set in DT.
 
-Thanks.  Maybe worth a few comments in the code as this is a bit esoteric.
+interface-pix-fmt is a legacy property that was never intended to be
+used as an override for the panel bus format. The bus flags were
+supposed to be set from the display-timings node, back when there was no
+of-graph connected panel at all.
 
-Thanks,
+That being said, there isn't really a proper alternative that allows to
+override the bus format requested by the panel driver in the device tree
+to account for weird wiring. We could reuse the bus-width endpoint
+property documented in [1], but that wouldn't completely specify how the
+RGB components are to be mapped onto the parallel bus.
 
-Jonathan
+[1] Documentation/devicetree/bindings/media/video-interfaces.txt
 
-> Thanks,
-> Jean
+I do wonder whether for your case it would be better to implement a
+MEDIA_BUS_FMT_RGB666_1X24_CPADLO though, to leave the LSBs untouched
+instead of risking to dump them into accidental PCB antennae.
+
+> In this specific setup, the panel-simple.c driver entry for the display
+> sets .bus_flags to non-zero value. However, as imxpd->bus_format is set
+> from the DT property "interface-pix-fmt", imx_pd_encoder_atomic_check()
+> will set imx_crtc_state->bus_flags = imxpd->bus_flags even though the
+> imxpd->bus_flags is zero, while the di->bus_flags is correctly set by
+> the panel-simple.c and non-zero.
+>
+> The result is incorrect flags being
+> used for the display configuration and thus an image corruption.
+> (Specifically, DRM_BUS_FLAG_PIXDATA_POSEDGE is not propagated and thus
+> the ipuv3 clocks pixels on the wrong edge).
 > 
-> >   
-> > > +	ret = wait_event_interruptible_locked(q->wq, queue_empty(&q->llq) ||
-> > > +					      q->batch >= batch + 2);
-> > > +	spin_unlock(&q->wq.lock);
-> > > +
-> > > +	return ret;
-> > > +}
-> > > +  
-> > ...
-> >   
+> This patch fixes the problem by overriding the imx_crtc_state->bus_format
+> from the imxpd->bus_format only if the DT property "interface-pix-fmt" is
+> present or if the DI provides no formats. Similarly for bus_flags, which
+> are set from imxpd->bus_flags only if the DI provides no formats.
+> 
+> Signed-off-by: Marek Vasut <marex@denx.de>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: NXP Linux Team <linux-imx@nxp.com>
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Cc: Sascha Hauer <s.hauer@pengutronix.de>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> To: dri-devel@lists.freedesktop.org
+> ---
+>  drivers/gpu/drm/imx/parallel-display.c | 13 ++++++++-----
+>  1 file changed, 8 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/imx/parallel-display.c b/drivers/gpu/drm/imx/parallel-display.c
+> index 35518e5de356..92f00b12c068 100644
+> --- a/drivers/gpu/drm/imx/parallel-display.c
+> +++ b/drivers/gpu/drm/imx/parallel-display.c
+> @@ -113,13 +113,16 @@ static int imx_pd_encoder_atomic_check(struct drm_encoder *encoder,
+>  	struct drm_display_info *di = &conn_state->connector->display_info;
+>  	struct imx_parallel_display *imxpd = enc_to_imxpd(encoder);
+>  
+> -	if (!imxpd->bus_format && di->num_bus_formats) {
+> -		imx_crtc_state->bus_flags = di->bus_flags;
+> +	if (imxpd->bus_format || !di->num_bus_formats)
 
+I see no reason to invert the logic here. Let's keep the common case
+first.
 
+> +		imx_crtc_state->bus_format = imxpd->bus_format;
+> +	else
+>  		imx_crtc_state->bus_format = di->bus_formats[0];
+> -	} else {
+> +
+> +	if (di->num_bus_formats)
+> +		imx_crtc_state->bus_flags = di->bus_flags;
+> +	else
+>  		imx_crtc_state->bus_flags = imxpd->bus_flags;
+> -		imx_crtc_state->bus_format = imxpd->bus_format;
+> -	}
+> +
+>  	imx_crtc_state->di_hsync_pin = 2;
+>  	imx_crtc_state->di_vsync_pin = 3;
+
+So while I don't like this being used at all, I think the patch improves
+consistency, as imx_pd_connector_get_modes doesn't allow to override the
+panel's modes with DT display-timings either.
+
+regards
+Philipp
 
 _______________________________________________
 linux-arm-kernel mailing list
