@@ -2,77 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2602517DC95
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 10:39:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A62BA17DCD0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 10:58:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gAf2oJfVxTJl3Wu9lnEgNdI2LOHrsDyoLaDULvZYmMk=; b=KukGYGZ8iFnXzS
-	AtVGZRZ/DOeWKD3EwTZ/lL1Z3GNG0ydeHS/FQbU8dmHQcEITNKiEn6QCpRt0kE6/dkwytA8jssSbR
-	kcf0UZzda946vna04hC/X7N17ciRRyMhsDW+2AMYUySNtgGtibaY6YRm2SIzmPwqhMifT0j2nYND2
-	tDfvgiemhT2/vIVDak4ORlsF5FlHgFVtbhNeGSC0zcdtxwlHZh9n3utN7KQNQgILO/PJNnxmANcMk
-	/cLPIwQAcmgRTm2wGkbHWrXmrWtLOd+gAmJWgxh5+2MUMwVihx3Si2WU06hfU26Z1dCoBgb5Evt93
-	opGCHiKd1OeB0ds3CvDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hRpb5ad0bWIfGtGkH5S/xaf7jAlHCASDdIi8oP+zrxY=; b=lQAYkiaNIQZwlYUFN1gl56LD7
+	EH9VHVZhDzXmCq7q8+Ety8m1A5zz8FgSVrGIymUpvQ7+GFb8syb/h3ooLPZilauFZ+95omigs6Sna
+	bBz7cgRbF5sfonfU/h49L57m2oDrzO7NDu1rYZVWE1MCwBmbF9Yv3E3rhD2TObakC0ES84baYEiY2
+	SZd0ITQk9/aZ0xPK541VZRTKONLT9HUgLr4XHNmQZHqrRUI0NqR7PdBccDN/SY6rX3yEbqYeL48P7
+	Itu/y8Ndr+6hHr7JPAK6eitszxEmnhs3OC4TwTY6mMVYsp82VrPV3JQmBzMfE5hmBzcAUjwMZkZr/
+	GzNX1hcQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBEsj-00048L-N2; Mon, 09 Mar 2020 09:39:29 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jBFB9-0002G3-64; Mon, 09 Mar 2020 09:58:31 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBEsd-000481-Fr
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 09:39:24 +0000
-Received: by mail-lj1-x243.google.com with SMTP id 19so6337679ljj.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 02:39:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GWafhgkHqGjhRe8y+m1pE0quFmlowBtOnAE/oPWGyN0=;
- b=vXkFRFdzlpOZtT+31ydgd9FX6Z1Zvo7ZtEaYUUUUW+uBV0RVnItMZc3YcFbcE7StgI
- vFAu7B5k5ORVKbJJlmV5EaSIhBSm06bToQPWxW2sw0hcVM+qy6K+yhMcZaQzIacJvJnk
- me07kNBcAGV55Bm1xfEIxflpbzWiBrTxe/u04FpXKoHPfK+iddC/bwDnFI2tr0SQIOyd
- iElasMAdPOJOJjbiD8Df9etU+Xl/hIVTSSAN4OFehXJBCj5AukvJdc+mEHgduzN6ckSU
- pA9oabtckEopSKnlebbTUOLNLAse71uhJXUJks5a8jE7XQC1qt36yei5GNrrB10bz5C7
- UIvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GWafhgkHqGjhRe8y+m1pE0quFmlowBtOnAE/oPWGyN0=;
- b=O86W4tKnQYZXm3Kw4df4HjDzfYPhnj5lg5K6mcQ4mxKZii6iHlYLYWmVFtJpP4gXFq
- Dt1KoHg8KkXnpfe/mXfgo8LSUher0Bbjd/CtWeuV1iIs7TpeUYDjrOkSIDw18Robz4dI
- xC0CV32NTuWxtxhT9NzzaJIVjMhK/ZkZFrbVbnQVZFIBlSccGmj9Fv95RB6rcJ9IKK71
- b7ZcBfG2SUuID74GceRNFIndcd7ots63ORJOwUTq7S+jWO+8+CqHSx89AOvqcMUKkv3i
- Rru3ob4Q3Jy1UNmUEsNXS1OAJb4zqxLLSo7aVQ6CCcxaW7YOGzIP4m7ZV0bQUtMU5JY9
- kjfw==
-X-Gm-Message-State: ANhLgQ207Hqy6KaVTBOZipGi6XXgh7eOmXGqqx7umYji3rXdETYdfpjl
- bHhN5QtsFkmGJH8Svx2H1cIMBFG9kIQiZbBD9y5MuQ==
-X-Google-Smtp-Source: ADFU+vu6HqaH4j3SJuv247SDzYUyvCKTi4MauowZ3Ck69fFNO8x9HHykET10xqulLd8bodNOiiPts9wgXPa49Wa6eH0=
-X-Received: by 2002:a2e:894d:: with SMTP id b13mr8156479ljk.99.1583746761788; 
- Mon, 09 Mar 2020 02:39:21 -0700 (PDT)
+ id 1jBFB2-0002EO-04; Mon, 09 Mar 2020 09:58:25 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id BA7F52616;
+ Mon,  9 Mar 2020 05:58:14 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 09 Mar 2020 05:58:14 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=x843TymkohDL0CNnlBbHCXKt7Ii
+ gsbMrdZT6H6SSLmM=; b=rhP8IqmZ+jnmVnsMHlCOIX+LbZ63kU8RwEc3J0svGNY
+ 6l8keSJodZj1KEAzWpHFBUVsnNW/4Hoc5BNgfSJx1dlqwpUOnP6llj1JLVytgp8n
+ G1VcpWl/HmiI62RepxfoKu4dquSqAHs+Yz2NPjR98pBIxB6DvTh0Oe7zzXa4V2io
+ bzkne9Fd1SjR1ug31fLXuWQM62HVBP5MBI0uuZDcCSzNA9ForGP2B3w+r3lSMXGc
+ Uaml2qVaTO/vYNR1e5lJAGzgiN6rewod4YdnLGuTyoNiwxk4k/H9Sd1Ox4uG0vX7
+ 8GALFXpaZxngop8xIjwSQ+ObinvCPW7UGMToYY+QvEw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=x843Ty
+ mkohDL0CNnlBbHCXKt7IigsbMrdZT6H6SSLmM=; b=MalW71/b0+98hpXSkEDGTd
+ vItpnoXZ67gxttvgn8L//69iT2ScZYAkAXmTTi686fLpmjy6KIfpyTygbxyjv2gu
+ NHiCm6ALZHS2jrMN4UW0bUHTyOJB4wgSaiuosEQwG3fqjuFm8t6MeuFNiPQbtBov
+ H28FF+AvM84P6KVV/DHjHXvXL300JIBQWkkTqg4qxh7Nv8b9Oqhc4qaygrsNWMBe
+ Yjr7emvKu9pF2YVO/Cf1pnTTr/WCYh/BplhCbQIgkVvWzJWyws+sPlDOVkQ8mUD5
+ zRvHUEB5Efx+n/zMaqbn+U2GTLEJMZDUFhMIZcC8TL+lDH+hKe/OC2IfF60iJJUg
+ ==
+X-ME-Sender: <xms:NRNmXpJ642poT0Dt5Kmbum1UY08WvQ2u-9noaK5LPgiEhXZ_Q_8JcA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedruddukedgudduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:NRNmXvJKMpM5sDIjsIbInMlrLqbf8VAmWT6jQzFtiXrlhS7-654RDg>
+ <xmx:NRNmXrxTqXFf5uSjuEE01s01PFt-cmZKHMZHD60E7njKY7Tmp-clFA>
+ <xmx:NRNmXsJk5dlb4qXdDhwjsS0WwflSz1y6CIusJe9p-qL30nODKfJnfw>
+ <xmx:NhNmXjlWHrL3bFOKqIfhkg4kI_jidnrmXT-SZ4RyTgi6r-VKZPseCg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 0A780328005D;
+ Mon,  9 Mar 2020 05:58:12 -0400 (EDT)
+Date: Mon, 9 Mar 2020 10:58:11 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH 4/7] mtd: rawnand: sunxi: Use dma_request_chan() instead
+ dma_request_slave_channel()
+Message-ID: <20200309095811.hg4maq663eaj3opz@gilmour.lan>
+References: <20200227123749.24064-1-peter.ujfalusi@ti.com>
+ <20200227123749.24064-5-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
-References: <20200306010101.39517-1-alexandre.belloni@bootlin.com>
-In-Reply-To: <20200306010101.39517-1-alexandre.belloni@bootlin.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 9 Mar 2020 10:39:10 +0100
-Message-ID: <CACRpkdZ_GdA=37mng6OBA=9JAVGxesAJF2_DeYBOzJy3Y1UvDg@mail.gmail.com>
-Subject: Re: [PATCH] rtc: ab8500: switch to rtc_time64_to_tm/rtc_tm_to_time64
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+In-Reply-To: <20200227123749.24064-5-peter.ujfalusi@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_023923_531913_DFE0A8D5 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20200309_025824_180543_65F677E0 
+X-CRM114-Status: UNSURE (   7.01  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,27 +104,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: vkoul@kernel.org, vigneshr@ti.com, richard@nod.at,
+ linux-kernel@vger.kernel.org, wens@csie.org, linux-mtd@lists.infradead.org,
+ mcoquelin.stm32@gmail.com, miquel.raynal@bootlin.com, han.xu@nxp.com,
+ linux-arm-kernel@lists.infradead.org, alexandre.torgue@st.com
+Content-Type: multipart/mixed; boundary="===============2886440775199320947=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 6, 2020 at 2:01 AM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
 
-> Call the 64bit versions of rtc_tm time conversion.
+--===============2886440775199320947==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ghgfzfwbprbf3thj"
+Content-Disposition: inline
+
+
+--ghgfzfwbprbf3thj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Feb 27, 2020 at 02:37:46PM +0200, Peter Ujfalusi wrote:
+> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+> eating up the error code.
 >
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> By using dma_request_chan() directly the driver can support deferred
+> probing against DMA.
+>
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 
-Acked-by: Linus Walleij <linus.walleij@linaro.org>
+Acked-by: Maxime Ripard <mripard@kernel.org>
 
-Yours,
-Linus Walleij
+Thanks!
+Maxime
+
+--ghgfzfwbprbf3thj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXmYTMwAKCRDj7w1vZxhR
+xUqpAP9DxNAJ2AawCZ9Jr/Mw8AxjK5nNtLKe6A6jtOsi8iEfGAD/ScHhr9eJJULD
+Ty0cjoA0+ExrVGQk6FoSzvrsIHJ3BwE=
+=BoAI
+-----END PGP SIGNATURE-----
+
+--ghgfzfwbprbf3thj--
+
+
+--===============2886440775199320947==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2886440775199320947==--
+
