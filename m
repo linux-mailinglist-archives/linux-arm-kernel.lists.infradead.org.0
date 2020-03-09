@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65E9817DC70
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 10:30:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A14E17DC73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 10:31:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sztod1g+Z3Xmts5ScEjzW+5Ja7haYtrWSHIvBEfs08E=; b=UVULo/TkiOF1jr
-	zPGjxXOsBQJ8KfIyM9dYWzIxxR7R5oMDl4LnRhGMU7O73GtyhlmfILyCNLlb2+5MJPV42q3VZyo9d
-	70P9NpQjS8ZLk2ydGryvC2PV0I+BKIkzUwfTisIeJZIAvLfF50IQnZOHtAvkCPXUlwhVNH7EgCdJi
-	6j6V09Ts2PcK+Ve+7/kNITV0Svht9BvA2213e/YIQXYFD1CLFwn7bKYhXGmvd4Tj5Cle1cmODqand
-	1LJgPNnq15AEyCpgEl9O0Euo7en6cM3KuXw0mZEGkcUbelHjaN5hVzgDFJIyKSpZzeL5f9bMWkXwv
-	4PjH0nmAGu+Ozbx/0fdg==;
+	List-Owner; bh=JvyQeOzniY0xam41auLd41sRs4khpXx9SPh3WFKd9AE=; b=awZHH+Y6VeuYdF
+	6pWH7ZyDGzvx8V/KbMFr7DXcXpT13OO2EO/DjpQqwE6W4c4yztdwFtuCglgFKVOrPGByrga47cU9b
+	K6+ry1JlPeU7LgTmQHglu6pDS1nQR5tzH+VXVRYIsFDe9KTauL2m7sjA5YG/Cd9WEPRWAqSocx6Dm
+	WyrcyfZGCytDDYRYybIKRDWK25rS45EkAepBmnc9GvnXsXAgjfncnxatDM8TV+1arcWynyTTIPi9D
+	+s11UxHofKyJD1Grs212opZez1g25Pnr/tgeT+2/uaX+z5SNQZo/HR4gnI7B7JjNq7lX+2NHnTqyd
+	LDLqihdCPpf9PtS1OJUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBEjz-0001XH-A0; Mon, 09 Mar 2020 09:30:27 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jBEka-0001pE-SJ; Mon, 09 Mar 2020 09:31:04 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBEjs-0001Wo-SG
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 09:30:22 +0000
-Received: by mail-lf1-x143.google.com with SMTP id q10so6321096lfo.8
+ id 1jBEkT-0001od-AS
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 09:30:58 +0000
+Received: by mail-lj1-x243.google.com with SMTP id d12so9153520lji.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 02:30:20 -0700 (PDT)
+ Mon, 09 Mar 2020 02:30:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=5BPdUCBHlhfxC1rf07ErhiV9Y3RjZ/uMH/FRYyL0Tdo=;
- b=NT6VnCACPTlfQ6tWkirEMRPIFXPc5uK7jgSYi0wnLddxfiCCEj05iElpYaDaH3cZ75
- LqklW21zdCUaNQtn3QFqKyHl0yqr3btYYcm5H6Ka7nVRYJi04kLWL8ehoZFX1T24ci5g
- 68/yypQ2HROcI28ReRXFtzEcA7Ukj6JPraEAdjarZILSamvIOefZJJWw3gLWYzIwGyGC
- 3rpk0OwRTmQqrGN3iAIz8L9gh1kwpAMa+0uGcPJsfKdGw3qvXLH5MFsbn2Q6I5rsamHy
- i56/xRCkG/2LfWs+C5mD5MK4iVGp5H+Tq4JO1XVq4f0TI9JDDCKnLuIw71tA9Kuzi0/w
- GcEA==
+ :cc; bh=TYcdgI6FvewhDZOpmZcO42Ni58JD8wtrbZBYBFXrvO0=;
+ b=sRH0acWgVBB+9NR/UF5Prr3uv/MZcxnZ+8nOsAZrAiX2cGHuBUSZGp5KF76D51wW5+
+ 1vYXf1TBVeSiGoEsT2pmlwUhOuepbYKdlkjCPVCw4sBtFaOPwmOdSJI3sSaM7tq0uNG6
+ siccDlzUYxpVRNs2MaD9/nYbm8BWPBDdVmWXomSKG9mCt46XKyPZpSuLt8OvyB83k2mi
+ L2eZQBNi55o/zfEG7a/Zm0ke8ZxW9xPo8Hok6vXKrAiSYV7mXwPnnJRr6635mKt1SMGC
+ Dsrukcb2WSwlW6OQ5Ee68+LNBCmgcXiVt3Fhz4fwpJGbbJpPcJHgCykIMfdN9OKiFTGh
+ T/UA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=5BPdUCBHlhfxC1rf07ErhiV9Y3RjZ/uMH/FRYyL0Tdo=;
- b=G1Yh0PYg2hNwzwYKqfqeonLOMgYoXnf+J344Ht3CzHreXQ7zRlGU/7Pv32jww+FSRS
- Z0KbqcXaWiccfNbdmCRXfhNMPq//nT+A8vA3T1UaBdDC6AtLf+oBlv2jlN3CiE/CCsjZ
- RoksRQIQ/1dcSHcAWTO//AEvDg8cSuWTlW4c7s6t9JdMWOYMQ+/iM5FkaIqfQOIA4pLy
- 2otugvwe4S4sBOCJajhmolhAd/LboPBcjBQgLQ82DpzsSWrwJhqcrKOkDZlzA35W/2/9
- 35eRtMe3fyx6FDe+mdXvuzMWVVzm5WHUYVWC+IREleaeEnqL/tojDGMKfVWx3pNdQlJ7
- 8iGg==
-X-Gm-Message-State: ANhLgQ1Ex5zZiYsg9DBqY05/xTm4FHGDtJd19TMm25Cv55LMJw7FC8cZ
- gept/DrOW6HNrNjoaLiThl23QbOThB4ZQDWBOc4UKQ==
-X-Google-Smtp-Source: ADFU+vvOV5BngHUN/iOXkIp0aCZj3DO7RIX6/Jfe8ek7Mb4Q3qAwKJPpaPcDy0NqYQc1dT6I+NcBqHSrx9nC2FYST9M=
-X-Received: by 2002:ac2:5e6d:: with SMTP id a13mr9224214lfr.89.1583746219481; 
- Mon, 09 Mar 2020 02:30:19 -0700 (PDT)
+ bh=TYcdgI6FvewhDZOpmZcO42Ni58JD8wtrbZBYBFXrvO0=;
+ b=qUWk7Rltk3kQwPEgtQpoUgpBAdxza2nOJzoSuE06bVZAMdDtqmUXICNuuMLUVQGsON
+ 02LuJ2PJjD89xojFg095ArA2V4JkVQkWnPTMPKLv96bBOja0ZLZcxaHwMR/ex3molefu
+ CRB3NNPKyIlitKFpC7HqPzpguhsxoPLgqSyjbU6I8ePPiZw3MGyGtV552i90XoZjbYl9
+ bmtu4fjiaFr8rvZ9mMMoBDtvHssjGhrINXFUVZr/nhsDlkdjhRsrYNCCWC/6KvA6NgsJ
+ 1dkjRDao/aF1QWdlp3jljP56WE/yWCzNkoBOPpcaThbTxqOJV0vJ8sn2ZY6PAuXMXw91
+ e5xQ==
+X-Gm-Message-State: ANhLgQ2RNYJ7oXrfaZOWGZQ4KYjzoOs0E+S9DU734ApnUa/AKGROU1EU
+ vq5zJkAf4jTCYkV+Xj7WEEkaRdIO/eSnrwPeODHvjQ==
+X-Google-Smtp-Source: ADFU+vuye/I8arS2yl53n56BiFwgYP0noR11NDx+eCmf1Q8F7bLzVJ3uGQe5T1ymxPZxIR9TSkq+SUJBK9BAL8hqd5Y=
+X-Received: by 2002:a05:651c:1026:: with SMTP id
+ w6mr908328ljm.168.1583746255448; 
+ Mon, 09 Mar 2020 02:30:55 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200306005809.38530-1-alexandre.belloni@bootlin.com>
- <20200306005809.38530-2-alexandre.belloni@bootlin.com>
-In-Reply-To: <20200306005809.38530-2-alexandre.belloni@bootlin.com>
+ <20200306005809.38530-3-alexandre.belloni@bootlin.com>
+In-Reply-To: <20200306005809.38530-3-alexandre.belloni@bootlin.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 9 Mar 2020 10:30:08 +0100
-Message-ID: <CACRpkdbs_wtyU5wjqFcdpYanA9ZMRczysw4kwkA7y+qeB0pHEw@mail.gmail.com>
-Subject: Re: [PATCH 2/3] rtc: pl031: set range
+Date: Mon, 9 Mar 2020 10:30:44 +0100
+Message-ID: <CACRpkdZxnkni+zjYn2vgPGVLDMDghzdu8U4Parp8MSQb6CycfA@mail.gmail.com>
+Subject: Re: [PATCH 3/3] rtc: pl031: switch to
+ rtc_time64_to_tm/rtc_tm_to_time64
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_023020_918521_943B8886 
-X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-CacheID: sfid-20200309_023057_358114_7BF29ED3 
+X-CRM114-Status: UNSURE (   8.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -70,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,13 +105,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Fri, Mar 6, 2020 at 1:58 AM Alexandre Belloni
 <alexandre.belloni@bootlin.com> wrote:
 
-> The PL031 and ST v1 RTC are 32bit seconds counters. STv2 is a BCD RTC
-> apparently going from 0000 to 9999, hopefully handling the leap days
-> properly until then.
+> Call the 64bit versions of rtc_tm time conversion to allow extending
+> support after 2106 and properly supporting the STv2 range.
 >
 > Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
 Yours,
 Linus Walleij
