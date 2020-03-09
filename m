@@ -2,80 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 836AA17DDAC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 11:32:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B7C217DDAD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 11:33:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FKjw9Ezv/jOEN8/Pa+sC9Rc62wVv8gtU2/rAZ/gv2uA=; b=nFYZ891wVdTysu
-	WsIrDQ1W9jfIu3gzHQt0y5uzSh88liyC9d002goH0pZKxHwj4J1T/7jQcfeQlN3OYU2P63Oqa30wH
-	AtVCCedMLGMC+ElVs7Qfnzl+FpI3X5LE9/0DS4dAhbiPQI677f5DjsmeZdo2qCNz4i4feYQ8wVjPG
-	JuNGU3HCgx6T1gX5QCDzZcXIvq376VKabiSlSaNzhRFoFYu44xUFv6XgrFzia+Bs11bI5nenlLolb
-	evw0Dy+UfwQo4gvK7sqIIbZVsl8GDOwMYX2SlGTQ/KvQRPWFGneff+uOtViEvhjweXHJll2y5eOBE
-	RLEV9WWf1LpfTRBdHLoA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=78fZPovFpwILSLU/cCm1eX5SHQ1g/z8Elq1YYr6C/WM=; b=lXg3bXWGJkUJHX
+	WM2PFnucQdKjx4kX68QFkP3HCswnaTNdt4cejDlgKGHEf8ukAzNHwWHX1qPStZKL+AaPe8G0w4tND
+	gNGDjc8iTIDeq9aOC6ejcGsLg8/I53/5LnDQs3yoiRK1Rr02baOlb/E6BS0HZ1tIrB0yvkJ+YgnfR
+	CPw6b35IunpsiVcOEs5xgzB5u+iGtGVaX4/sK7X7bOrHMldhxZpiefYwhevL4kfNlH/bJMrxal0YH
+	E00q2wZYak5EqMllJ7nYXx3ZFu7zUSCWcvsdiq/1haOmAie6mxqAyqBhdEIt6BmvYVz+kmff/d0N8
+	bj6baTotkBxgC6GT7/tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBFiJ-00072U-QG; Mon, 09 Mar 2020 10:32:47 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBFiA-00070x-4g
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 10:32:40 +0000
-Received: by mail-ot1-f68.google.com with SMTP id g15so2919119otr.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 03:32:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=W04cd8gXdHqCmadUdyg5wxomjkoAadthvQ2P3gMSd+8=;
- b=EQ13K4ry2SLqStabmPCVyibBPvN0fgNJubrWSbYhBoTe0ePWSHNvhO5EDvnQfb8Lag
- /yVQXnfbDNquL8zfI3oUqtFvKj4y0IAOh7nJqxzdtvjMBCU4/Tq64Mclmi6C9IWR9l5B
- Nsm7+3IJHHlfHiXcmZNbVh+BD1PNQewaJbX/LGmA0UZbXBvwUIAaX/UW5/BAmNvVSTor
- kQqmmHmQ+cd0Db4GakGMx4QnJbyOfL3s3OYwlXgwaUj73q4ARPitcBogD2bOo5FRI8Nj
- heGcuRsjt/C/UCzojgCOdNCmRFQdM+xdvuE0cGZC1mXG1N38zUtW/9EfAx1/QblYOcFB
- 1RLA==
-X-Gm-Message-State: ANhLgQ3aQSZuBI8ycmmSRQ0aFwfeHBGyOj3sMPjBpLr9NLoSH0B8a4XA
- fcc0E8p6dx0TTpuNe69dyZCv2pflNikgo2UgIBk=
-X-Google-Smtp-Source: ADFU+vuVh6fkJGhu+5hmMbyrYecsnL9gWVa5R6t/lywxheWDLQwPc4My1fEjTIzo75HPjSFXa2cg380naqShaRyyTng=
-X-Received: by 2002:a9d:1708:: with SMTP id i8mr10206182ota.250.1583749957218; 
- Mon, 09 Mar 2020 03:32:37 -0700 (PDT)
+	id 1jBFic-0007Fs-H5; Mon, 09 Mar 2020 10:33:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBFiD-0006xj-M3
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 10:32:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 08E7D1FB;
+ Mon,  9 Mar 2020 03:32:31 -0700 (PDT)
+Received: from [10.1.195.32] (e112269-lin.cambridge.arm.com [10.1.195.32])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 75E5F3F67D;
+ Mon,  9 Mar 2020 03:32:29 -0700 (PDT)
+Subject: Re: [PATCH] arm64: add check_wx_pages debugfs for CHECK_WX
+To: Phong Tran <tranmanphong@gmail.com>,
+ Catalin Marinas <Catalin.Marinas@arm.com>, "will@kernel.org"
+ <will@kernel.org>, "alexios.zavras@intel.com" <alexios.zavras@intel.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
+ Steve Capper <Steve.Capper@arm.com>, Mark Rutland <Mark.Rutland@arm.com>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "keescook@chromium.org" <keescook@chromium.org>
+References: <20200307093926.27145-1-tranmanphong@gmail.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <34739c99-3436-e88f-769b-43c48caa8817@arm.com>
+Date: Mon, 9 Mar 2020 10:32:27 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200305103228.9686-1-zhang.lyra@gmail.com>
- <20200305103228.9686-2-zhang.lyra@gmail.com>
- <CAMuHMdU-gAhupHotQTHAZfopkGF_jQc-VrVxb24caw_BfzWd6g@mail.gmail.com>
- <CAAfSe-sonfA=6x9uvQXaHniQaXR8hWZa4uOcWxoo+Z_XT9QNhw@mail.gmail.com>
- <CAMuHMdUBkS+pPyPid2K=40jaTOSnAE_L-vJP5knmyVr8Fr5_hg@mail.gmail.com>
- <CAAfSe-uZSYZopDCGxQbGBQQ5+NZK6L79P+T62nfnL9CiZka++g@mail.gmail.com>
-In-Reply-To: <CAAfSe-uZSYZopDCGxQbGBQQ5+NZK6L79P+T62nfnL9CiZka++g@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 9 Mar 2020 11:32:25 +0100
-Message-ID: <CAMuHMdXY5=QS4FA0T55_G=ARPs9V0NLbWwF3hd76rwO=8ahZbA@mail.gmail.com>
-Subject: Re: [PATCH 2/2] tty: serial: make SERIAL_SPRD not depend on ARCH_SPRD
-To: Chunyan Zhang <zhang.lyra@gmail.com>
+In-Reply-To: <20200307093926.27145-1-tranmanphong@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_033238_208038_F8CF17D4 
-X-CRM114-Status: GOOD (  22.74  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200309_033241_806499_DAB7A929 
+X-CRM114-Status: GOOD (  25.18  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,85 +70,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
- Orson Zhai <orsonzhai@gmail.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "kernel-hardening@lists.openwall.com" <kernel-hardening@lists.openwall.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chunyan,
+On 07/03/2020 09:39, Phong Tran wrote:
+> follow the suggestion from
+> https://github.com/KSPP/linux/issues/35
+> 
+> Signed-off-by: Phong Tran <tranmanphong@gmail.com>
+> ---
+>  arch/arm64/Kconfig.debug        |  3 ++-
+>  arch/arm64/include/asm/ptdump.h |  2 ++
+>  arch/arm64/mm/dump.c            |  1 +
+>  arch/arm64/mm/ptdump_debugfs.c  | 18 ++++++++++++++++++
+>  4 files changed, 23 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig.debug b/arch/arm64/Kconfig.debug
+> index 1c906d932d6b..be552fa351e2 100644
+> --- a/arch/arm64/Kconfig.debug
+> +++ b/arch/arm64/Kconfig.debug
+> @@ -48,7 +48,8 @@ config DEBUG_WX
+>  	  of other unfixed kernel bugs easier.
+>  
+>  	  There is no runtime or memory usage effect of this option
+> -	  once the kernel has booted up - it's a one time check.
+> +	  once the kernel has booted up - it's a one time check and
+> +	  can be checked by echo "1" to "check_wx_pages" debugfs in runtime.
 
-On Mon, Mar 9, 2020 at 9:43 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> On Mon, 9 Mar 2020 at 16:01, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Mon, Mar 9, 2020 at 2:18 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > > On Fri, 6 Mar 2020 at 20:41, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > > > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > > > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
-> > > > >
-> > > > > Remove the dependency with ARCH_SPRD from sprd serial/console Kconfig-s,
-> > > > > since we want them can be built-in when ARCH_SPRD is set as 'm'.
-> > > >
-> > > > Why would you want a serial driver for a specific platform to be builtin,
-> > > > while all other platform support is modular?
-> > >
-> > > Oh, that's not this patch means.
-> > >
-> > > We just want serial driver can be builtin for any platform, so it
-> >
-> > What would be the benefit of the user to be able to have the SPRD serial
-> > driver built-in on any platform?  AFAIU, it supports only Spreadtrum
-> > platforms.
->
-> Right, it does support Spreadtrum platforms only indeed.
-> Like I said on the replay to patch 1/2, simply because I want serial
-> driver can be builtin all the time, no matter ARCH_SPRD is m or y.
+I would suggest it may be better spelling this out a bit more, because
+at the moment it's a little confusing when the config option is "Warn on
+W+X mappings at boot", but your change makes it sound like it only
+happens when you do the echo. Perhaps something like:
 
-OK.
+	  There is no runtime or memory usage effect of this option
+	  once the kernel has booted up - it's a one time check at
+	  boot, and can also be triggered at runtime by echo "1" to
+	  "check_wx_pages".
 
-So shouldn't the dependency become
+>  
+>  	  If in doubt, say "Y".
+>  
+> diff --git a/arch/arm64/include/asm/ptdump.h b/arch/arm64/include/asm/ptdump.h
+> index 38187f74e089..b80d6b4fc508 100644
+> --- a/arch/arm64/include/asm/ptdump.h
+> +++ b/arch/arm64/include/asm/ptdump.h
+> @@ -24,9 +24,11 @@ struct ptdump_info {
+>  void ptdump_walk(struct seq_file *s, struct ptdump_info *info);
+>  #ifdef CONFIG_PTDUMP_DEBUGFS
+>  void ptdump_debugfs_register(struct ptdump_info *info, const char *name);
+> +int ptdump_check_wx_init(void);
+>  #else
+>  static inline void ptdump_debugfs_register(struct ptdump_info *info,
+>  					   const char *name) { }
+> +static inline int ptdump_check_wx_init(void) { return 0; }
+>  #endif
+>  void ptdump_check_wx(void);
+>  #endif /* CONFIG_PTDUMP_CORE */
 
-    depends on ARCH_SPRD || ARCH_SPRD=m || COMPILE_TEST
+This is a confusing! Why have you made it dependent on
+CONFIG_PTDUMP_DEBUGFS?
 
-instead, to avoid asking the question when you're not building a kernel
-plus modules for Spreadtrum platforms?
+Well actually I can see why - it's because you've put the new functions
+in ptdump_debugfs.c which is (currently) only built when
+CONFIG_PTDUMP_DBEUGFS is enabled.
 
+So you need to either:
 
-> > > should not depend on a config which can be set as 'm' (i.e. ARCH_SPRD)
-> > > , otherwise if the config was set as 'm', the serial driver can't be
-> > > selected as 'y' then.
-> >
-> > I ask about that as a reply to PATCH 1/2.
-> >
-> > > That's what I mean.
-> >
-> > > > > --- a/drivers/tty/serial/Kconfig
-> > > > > +++ b/drivers/tty/serial/Kconfig
-> > > > > @@ -1452,7 +1452,6 @@ config SERIAL_MEN_Z135
-> > > > >
-> > > > >  config SERIAL_SPRD
-> > > > >         tristate "Support for Spreadtrum serial"
-> > > > > -       depends on ARCH_SPRD
-> > > > >         select SERIAL_CORE
-> > > > >         help
-> > > > >           This enables the driver for the Spreadtrum's serial.
+ a) Ensure the new code is built when CONFIG_PTDUMP_DEBUGFS isn't enabled.
 
-Gr{oetje,eeting}s,
+ b) Update the Kconfig help text to say that the debugfs file for
+triggering a runtime W+X check is only available if
+CONFIG_PTDUMP_DEBUGFS is also enabled.
 
-                        Geert
+Other than the confusion over config symbols this looks good.
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Thanks,
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Steve
+
+> diff --git a/arch/arm64/mm/dump.c b/arch/arm64/mm/dump.c
+> index 860c00ec8bd3..60c99a047763 100644
+> --- a/arch/arm64/mm/dump.c
+> +++ b/arch/arm64/mm/dump.c
+> @@ -378,6 +378,7 @@ static int ptdump_init(void)
+>  #endif
+>  	ptdump_initialize();
+>  	ptdump_debugfs_register(&kernel_ptdump_info, "kernel_page_tables");
+> +	ptdump_check_wx_init();
+>  	return 0;
+>  }
+>  device_initcall(ptdump_init);
+> diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
+> index 1f2eae3e988b..73cddc12c3c2 100644
+> --- a/arch/arm64/mm/ptdump_debugfs.c
+> +++ b/arch/arm64/mm/ptdump_debugfs.c
+> @@ -16,3 +16,21 @@ void ptdump_debugfs_register(struct ptdump_info *info, const char *name)
+>  {
+>  	debugfs_create_file(name, 0400, NULL, info, &ptdump_fops);
+>  }
+> +
+> +static int check_wx_debugfs_set(void *data, u64 val)
+> +{
+> +	if (val != 1ULL)
+> +		return -EINVAL;
+> +
+> +	ptdump_check_wx();
+> +
+> +	return 0;
+> +}
+> +
+> +DEFINE_SIMPLE_ATTRIBUTE(check_wx_fops, NULL, check_wx_debugfs_set, "%llu\n");
+> +
+> +int ptdump_check_wx_init(void)
+> +{
+> +	return debugfs_create_file("check_wx_pages", 0200, NULL,
+> +				   NULL, &check_wx_fops) ? 0 : -ENOMEM;
+> +}
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
