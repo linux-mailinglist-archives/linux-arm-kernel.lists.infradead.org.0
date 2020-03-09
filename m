@@ -2,68 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6777717ECAD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 00:31:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0E2217ECEF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 00:57:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5E3ZzDKQokEYAMK6PweocsxGXSzVd8tie62Uqfj6xGk=; b=YSc1YXXrTYDNmE
-	W/iLoQFXsHA9VFC/2Uk866ME34ebYoP7/tv6YWxWOF4agx3qD+wY/wWbkrxEza8Pt1eijHAu1fqRk
-	XXlfyvySvUXIg87OEk8M+TqQXP1x2MBxqkbD0FdQrVw3l8AN3gsRdYCiTwMI5J3KX9jN8Gb/ycvcU
-	TLYDSdkTN/zI+Zrs6QEHlWL2BS0A3nxoUx/zADQwq6AU4zZYqbquuIRkHIADOvmJYq1yiRoSg22Em
-	LHBrNIgCjEztSU7DucCAi4NfPe/4TuTzIeBfaznEY0kxWITgoxBH/2nxaP887ZINr1rUVcFrytkFU
-	7p4k3WgPAfrXJEm3uh2w==;
+	List-Owner; bh=z8+Kg/mcTefHOYt4MEln66JfktUq95dGQWSAi6czmqE=; b=s1AChJB/hq5tC4
+	9f2jCshq25eteGUfISzfEj1Ul4DL3uf1JmztJ2c0yUweh36DaTLqLcBTd2u4Mi+GqnuPpZrXSe4pH
+	9Ru3TdezZYufAIKvuSfkAfVckiePSftFHxQj7HcymnHq2inTMFw/AwI5XQ8jW5jZlaecDoQYnA7VQ
+	DfXfQDNR+Pknc9S1zWtuD4DGCChCt1pTIOQ6xStGtZ8yy35NsfPQOZiUxIh1hyOhdUaPhF+fDxCRx
+	F4fEMjoi4tY+r4hPM9tAj4tg7HLeyJWFrMCxqD1mT0X+BNtzg/CYx2DyC6eqs50O+SQybgoJKrAAQ
+	ldi87l2YMYn6dbll5snw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBRrp-0007Ch-0o; Mon, 09 Mar 2020 23:31:25 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jBSGy-0006qr-Lv; Mon, 09 Mar 2020 23:57:24 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBRrg-0007C7-Lv; Mon, 09 Mar 2020 23:31:18 +0000
-X-UUID: 61cec5a51ff94b26b9524ffaad2b2e0b-20200309
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=/ML3Ledtqy4m3bKFwbFWPyytmDkR4UuhLn++0IipQ84=; 
- b=TZorDZQcjDTH8lhmhgwVC1EltnoyQvnZ/vx2FIVo0ORShoGzK930oQGd0abkK3LzJNKUE19zlwu7m2pdA0eea2zZRC3XoEikCEDXxOvcqsZgLl02BezOl57hK1Lui4QRqPs9SLiyu6/0PwW7+3KAMnBP9WGJMZK5ox+whgKW4H0=;
-X-UUID: 61cec5a51ff94b26b9524ffaad2b2e0b-20200309
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chun-hung.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 989306467; Mon, 09 Mar 2020 15:31:09 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Mar 2020 16:21:06 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Mar 2020 07:19:53 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 10 Mar 2020 07:18:21 +0800
-Message-ID: <1583796065.23665.8.camel@mtkswgap22>
-Subject: Re: [PATCH 1/4] [1/4] mmc: core: expose MMC_CAP2_CQE* to dt
-From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 10 Mar 2020 07:21:05 +0800
-In-Reply-To: <CACRpkdauCe-zAcsO5q_79+Ux_a2=bktA5UqKjWs4XdBJZ3wWeg@mail.gmail.com>
-References: <1581921111-24172-1-git-send-email-chun-hung.wu@mediatek.com>
- <1581921111-24172-2-git-send-email-chun-hung.wu@mediatek.com>
- <CACRpkdauCe-zAcsO5q_79+Ux_a2=bktA5UqKjWs4XdBJZ3wWeg@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jBSGq-0006pr-OI
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 23:57:18 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id d8so617351pje.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Mar 2020 16:57:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Wm5Lg2OwLb2Gbu8UbdOxInuFFy/j485NdtgtI1w3Uso=;
+ b=ujTKLPaj9u3KLK5hwlZ/+TqVXXhRL4HdPMdOFe+PwRXGMA03qhOh3IS8bCIgGOfn+2
+ zB2HKz6Oc2Ud0gyhpPcoKmfe0SfHvS1ZaACo9iJIJMjRjfeoTVIcq3CzC4Jx0kWY1w3j
+ rXksS8cZMI9i4h2gNfQ+aeZ2I629bN73hLx8iUwZd60JcZgiCj0qkubn98L85GG4SKXd
+ pLFl0JjNe/otONTb9RIeVrAhXgw1h+aVcVDUcObfGcAxsK9yX+CAhvPV20RrjRKYnS99
+ S3LMIUDZCUYT3R75+2wunM4Hv6E5O0acqqdrKdDbiSQF7jiFImvWsL6OXMD9RiYueXfg
+ ZD1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Wm5Lg2OwLb2Gbu8UbdOxInuFFy/j485NdtgtI1w3Uso=;
+ b=rgSH+SaybAWQ26MNPCTkBYL4E+F0e7ts3LYT/uWcR8T6lmOp+Rd/O5gaNKhw37jgso
+ +BuAcAE/0iWTcpRPKs1ucvbFQUO7Rb7LV4Pv5c94oFu/Sx9mE/PXS7a7aKaYZzs9mw0v
+ iBrCavvPf5RKQHG6lD7elXAAR5CvZdauSank9GD6wcu8qE0nOSNwNW2rPWApZQkunwTt
+ cSI/ElL00OzVQ1tj5vT9nDpHUGNeCHilR1uWDI8mMBeap+HVE3w+/U8lcRKh5w7sC0Rn
+ CPsd8uTS/IFterhlzhT3+6NfMnNTYA6DaU7UmtkLu7+WlM9/uhK7I7FUAeJWP6Kq8HqI
+ lA4g==
+X-Gm-Message-State: ANhLgQ0NASUeWC6zsOptwl/BnZdRqc8/OSoUkQAONfLG1YpEHsI7O4ol
+ tGTpOz3ofuG2gXBPbdM9ub/Shg==
+X-Google-Smtp-Source: ADFU+vuICM5X4u6FyXIBRBP5ZXvJd/9oP2avw/hORIe39UaN62nh9Bh5YWGsAGP95j+U/WVfFkmKtw==
+X-Received: by 2002:a17:90a:1912:: with SMTP id
+ 18mr1267198pjg.10.1583798234106; 
+ Mon, 09 Mar 2020 16:57:14 -0700 (PDT)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id 184sm12651664pfe.11.2020.03.09.16.57.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 09 Mar 2020 16:57:13 -0700 (PDT)
+Date: Mon, 9 Mar 2020 16:57:10 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v5 8/8] remoteproc: Adapt coredump to generate correct
+ elf type
+Message-ID: <20200309235710.GE14744@builder>
+References: <20200210162209.23149-1-cleger@kalray.eu>
+ <20200302093902.27849-1-cleger@kalray.eu>
+ <20200302093902.27849-9-cleger@kalray.eu>
+ <20200309203223.GE1399@xps15>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200309203223.GE1399@xps15>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_163116_729137_1F45ED83 
-X-CRM114-Status: GOOD (  21.37  )
+X-CRM114-CacheID: sfid-20200309_165716_856773_9CE7B644 
+X-CRM114-Status: GOOD (  27.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -73,8 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,85 +103,215 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, wsd_upstream@mediatek.com,
- linux-mmc <linux-mmc@vger.kernel.org>, Pan Bian <bianpan2016@163.com>, Pavel
- Machek <pavel@ucw.cz>, Chaotian Jing <chaotian.jing@mediatek.com>,
- kernel-team@android.com, "open list:OPEN FIRMWARE AND FLATTENED
- DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Thomas
- Gleixner <tglx@linutronix.de>, Stanley Chu <stanley.chu@mediatek.com>,
- Allison Randal <allison@lohutok.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Mathieu Malaterre <malat@debian.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kuohong Wang <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Loic PALLARDY <loic.pallardy@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, Jonathan Corbet <corbet@lwn.net>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-doc@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ Patrice Chotard <patrice.chotard@st.com>, linux-kernel@vger.kernel.org,
+ Clement Leger <cleger@kalray.eu>, Andy Gross <agross@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ s-anna <s-anna@ti.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-02-21 at 15:33 +0100, Linus Walleij wrote:
-> On Mon, Feb 17, 2020 at 7:32 AM Chun-Hung Wu <chun-hung.wu@mediatek.com> wrote:
-> 
-> > Expose MMC_CAP2_CQE and MMC_CAP2_CQE_DCMD
-> > to host->caps2 if
-> > 1. "supports-cqe" is defined in dt and
-> > 2. "disable-cqe-dcmd" is not defined in dt.
-> >
+On Mon 09 Mar 13:32 PDT 2020, Mathieu Poirier wrote:
+
+> On Mon, Mar 02, 2020 at 10:39:02AM +0100, Clement Leger wrote:
+> > Now that remoteproc can load an elf64, coredump elf class should be
+> > the same as the loaded elf class. In order to do that, add a
+> > elf_class field to rproc with default values. If an elf is loaded
+> > successfully, this field will be updated with the loaded elf class.
+> > Then, the coredump core code has been modified to use the generic elf
+> > macro in order to create an elf file with correct class.
+> > 
+> > Signed-off-by: Clement Leger <cleger@kalray.eu>
 > > ---
-> >  drivers/mmc/core/host.c | 8 ++++++++
-> >  1 file changed, 8 insertions(+)
-> >
-> > diff --git a/drivers/mmc/core/host.c b/drivers/mmc/core/host.c
-> > index 105b7a7..efb0dbe 100644
-> > --- a/drivers/mmc/core/host.c
-> > +++ b/drivers/mmc/core/host.c
-> > @@ -319,6 +319,14 @@ int mmc_of_parse(struct mmc_host *host)
-> >                 host->caps2 |= MMC_CAP2_NO_SD;
-> >         if (device_property_read_bool(dev, "no-mmc"))
-> >                 host->caps2 |= MMC_CAP2_NO_MMC;
-> > +       if (device_property_read_bool(dev, "supports-cqe"))
-> > +               host->caps2 |= MMC_CAP2_CQE;
+> >  drivers/remoteproc/remoteproc_core.c       | 67 ++++++++++++++++--------------
+> >  drivers/remoteproc/remoteproc_elf_loader.c |  3 ++
+> >  include/linux/remoteproc.h                 |  1 +
+> >  3 files changed, 39 insertions(+), 32 deletions(-)
+> > 
+> > diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> > index b932a64a2be2..f923355aa3f9 100644
+> > --- a/drivers/remoteproc/remoteproc_core.c
+> > +++ b/drivers/remoteproc/remoteproc_core.c
+> > @@ -38,6 +38,7 @@
+> >  #include <linux/platform_device.h>
+> >  
+> >  #include "remoteproc_internal.h"
+> > +#include "remoteproc_elf_helpers.h"
+> >  
+> >  #define HIGH_BITS_MASK 0xFFFFFFFF00000000ULL
+> >  
+> > @@ -1566,20 +1567,21 @@ EXPORT_SYMBOL(rproc_coredump_add_custom_segment);
+> >  static void rproc_coredump(struct rproc *rproc)
+> >  {
+> >  	struct rproc_dump_segment *segment;
+> > -	struct elf32_phdr *phdr;
+> > -	struct elf32_hdr *ehdr;
+> > +	void *phdr;
+> > +	void *ehdr;
+> >  	size_t data_size;
+> >  	size_t offset;
+> >  	void *data;
+> >  	void *ptr;
+> > +	u8 class = rproc->elf_class;
+> >  	int phnum = 0;
+> >  
+> >  	if (list_empty(&rproc->dump_segments))
+> >  		return;
+> >  
+> > -	data_size = sizeof(*ehdr);
+> > +	data_size = elf_size_of_hdr(class);
+> >  	list_for_each_entry(segment, &rproc->dump_segments, node) {
+> > -		data_size += sizeof(*phdr) + segment->size;
+> > +		data_size += elf_size_of_phdr(class) + segment->size;
+> >  
+> >  		phnum++;
+> >  	}
+> > @@ -1590,33 +1592,33 @@ static void rproc_coredump(struct rproc *rproc)
+> >  
+> >  	ehdr = data;
+> >  
+> > -	memset(ehdr, 0, sizeof(*ehdr));
+> > -	memcpy(ehdr->e_ident, ELFMAG, SELFMAG);
+> > -	ehdr->e_ident[EI_CLASS] = ELFCLASS32;
+> > -	ehdr->e_ident[EI_DATA] = ELFDATA2LSB;
+> > -	ehdr->e_ident[EI_VERSION] = EV_CURRENT;
+> > -	ehdr->e_ident[EI_OSABI] = ELFOSABI_NONE;
+> > -	ehdr->e_type = ET_CORE;
+> > -	ehdr->e_machine = EM_NONE;
+> > -	ehdr->e_version = EV_CURRENT;
+> > -	ehdr->e_entry = rproc->bootaddr;
+> > -	ehdr->e_phoff = sizeof(*ehdr);
+> > -	ehdr->e_ehsize = sizeof(*ehdr);
+> > -	ehdr->e_phentsize = sizeof(*phdr);
+> > -	ehdr->e_phnum = phnum;
+> > -
+> > -	phdr = data + ehdr->e_phoff;
+> > -	offset = ehdr->e_phoff + sizeof(*phdr) * ehdr->e_phnum;
+> > +	memset(ehdr, 0, elf_size_of_hdr(class));
+> > +	/* e_ident field is common for both elf32 and elf64 */
+> > +	elf_hdr_init_ident(ehdr, class);
+> > +
+> > +	elf_hdr_set_e_type(class, ehdr, ET_CORE);
+> > +	elf_hdr_set_e_machine(class, ehdr, EM_NONE);
+> > +	elf_hdr_set_e_version(class, ehdr, EV_CURRENT);
+> > +	elf_hdr_set_e_entry(class, ehdr, rproc->bootaddr);
+> > +	elf_hdr_set_e_phoff(class, ehdr, elf_size_of_hdr(class));
+> > +	elf_hdr_set_e_ehsize(class, ehdr, elf_size_of_hdr(class));
+> > +	elf_hdr_set_e_phentsize(class, ehdr, elf_size_of_phdr(class));
+> > +	elf_hdr_set_e_phnum(class, ehdr, phnum);
+> > +
+> > +	phdr = data + elf_hdr_get_e_phoff(class, ehdr);
+> > +	offset = elf_hdr_get_e_phoff(class, ehdr);
+> > +	offset += elf_size_of_phdr(class) * elf_hdr_get_e_phnum(class, ehdr);
+> > +
+> >  	list_for_each_entry(segment, &rproc->dump_segments, node) {
+> > -		memset(phdr, 0, sizeof(*phdr));
+> > -		phdr->p_type = PT_LOAD;
+> > -		phdr->p_offset = offset;
+> > -		phdr->p_vaddr = segment->da;
+> > -		phdr->p_paddr = segment->da;
+> > -		phdr->p_filesz = segment->size;
+> > -		phdr->p_memsz = segment->size;
+> > -		phdr->p_flags = PF_R | PF_W | PF_X;
+> > -		phdr->p_align = 0;
+> > +		memset(phdr, 0, elf_size_of_phdr(class));
+> > +		elf_phdr_set_p_type(class, phdr, PT_LOAD);
+> > +		elf_phdr_set_p_offset(class, phdr, offset);
+> > +		elf_phdr_set_p_vaddr(class, phdr, segment->da);
+> > +		elf_phdr_set_p_paddr(class, phdr, segment->da);
+> > +		elf_phdr_set_p_filesz(class, phdr, segment->size);
+> > +		elf_phdr_set_p_memsz(class, phdr, segment->size);
+> > +		elf_phdr_set_p_flags(class, phdr, PF_R | PF_W | PF_X);
+> > +		elf_phdr_set_p_align(class, phdr, 0);
+> >  
+> >  		if (segment->dump) {
+> >  			segment->dump(rproc, segment, data + offset);
+> > @@ -1632,8 +1634,8 @@ static void rproc_coredump(struct rproc *rproc)
+> >  			}
+> >  		}
+> >  
+> > -		offset += phdr->p_filesz;
+> > -		phdr++;
+> > +		offset += elf_phdr_get_p_filesz(class, phdr);
+> > +		phdr += elf_size_of_phdr(class);
+> >  	}
+> >  
+> >  	dev_coredumpv(&rproc->dev, data, data_size, GFP_KERNEL);
+> > @@ -2031,6 +2033,7 @@ struct rproc *rproc_alloc(struct device *dev, const char *name,
+> >  	rproc->name = name;
+> >  	rproc->priv = &rproc[1];
+> >  	rproc->auto_boot = true;
+> > +	rproc->elf_class = ELFCLASS32;
 > 
-> I don't understand why this is even a DT property as it should
-> be clear from the hosts compatible whether it supports CQE or
-> not. But it's too late to do anything about that I suppose, and
-> I just assume there is something I don't understand here.
-"supports-cqe" as my understanding is like HS400 HS200 is a host
-capability.
+> I would initialise this to ELFCLASSNONE to make sure that if a platform driver
+> overwrites rproc_elf_load_segments or doesn't provide one, we don't falsely
+> deduce the elf type.  It goes without saying that if elf_class == ELFCLASSNONE,
+> a coredump is not generated. 
 > 
-> > +       /* Must be after "supports-cqe" check */
-> > +       if (!device_property_read_bool(dev, "disable-cqe-dcmd")) {
-> > +               if (host->caps2 & MMC_CAP2_CQE)
-> > +                       host->caps2 |= MMC_CAP2_CQE_DCMD;
-> > +       }
+
+I like the idea of making the choice explicit, perhaps even more
+explicit than the assumption that the coredumps should be of the same
+type as the ELF loaded. Note that it's different consumers of the two
+ELF files.
+
+> Unless you think this is a seriously bad idea or Bjorn over rules me,
 > 
-> This is the right place to do this I suppose. Disabling CQE
-> selectively is something you might wanna do for debugging.
-> Acked-by: Linus Walleij <linus.walleij@linaro.org>
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > 
-> I see that some drivers are already parsing this DT property
-> on their own, should we follow up with patches so that these:
+
+Not sure if it count as "over ruling", I accept your suggestion but used
+your R-b to merge the patch as is, no need to hold this up any longer.
+
+Clement, can you please follow up with a patch implementing this (don't
+forget that the qcom drivers doesn't use rproc_elf_load_segments())
+
+Thanks Clement and thanks for the reviews Mathieu.
+
+Regards,
+Bjorn
+
+> Thanks,
+> Mathieu
 > 
-> $ git grep 'supports-cqe'
-> drivers/mmc/host/sdhci-brcmstb.c:       if
-> (device_property_read_bool(&pdev->dev, "supports-cqe")) {
-> drivers/mmc/host/sdhci-msm.c:   if (of_property_read_bool(node, "supports-cqe"))
-> drivers/mmc/host/sdhci-tegra.c: if
-> (device_property_read_bool(host->mmc->parent, "supports-cqe"))
-> 
-> Make use of the central parsing instead?
-In v4, I will remove the vendor driver dt setting and use central
-parsing instead.
-> 
-> Yours,
-> Linus Walleij
+> >  
+> >  	device_initialize(&rproc->dev);
+> >  	rproc->dev.parent = dev;
+> > diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
+> > index 4869fb7d8fe4..16e2c496fd45 100644
+> > --- a/drivers/remoteproc/remoteproc_elf_loader.c
+> > +++ b/drivers/remoteproc/remoteproc_elf_loader.c
+> > @@ -248,6 +248,9 @@ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw)
+> >  			memset(ptr + filesz, 0, memsz - filesz);
+> >  	}
+> >  
+> > +	if (ret == 0)
+> > +		rproc->elf_class = class;
+> > +
+> >  	return ret;
+> >  }
+> >  EXPORT_SYMBOL(rproc_elf_load_segments);
+> > diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+> > index 1683d6c386a6..ed127b2d35ca 100644
+> > --- a/include/linux/remoteproc.h
+> > +++ b/include/linux/remoteproc.h
+> > @@ -514,6 +514,7 @@ struct rproc {
+> >  	bool auto_boot;
+> >  	struct list_head dump_segments;
+> >  	int nb_vdev;
+> > +	u8 elf_class;
+> >  };
+> >  
+> >  /**
+> > -- 
+> > 2.15.0.276.g89ea799
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
