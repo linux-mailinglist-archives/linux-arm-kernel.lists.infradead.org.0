@@ -2,56 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44F9E17E47C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 17:17:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F03D17E48E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 17:18:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5xqrLlrafQaOazEnbAnm8SvOP0mbST3UKs4yaP5wGFU=; b=skMbhuBNsUypjq
-	CJlYdEDcWCNUXlU0ctAT3LBjem+4Dlt5IWlRrM0FEcXb63hCBTj9FuUWSLpB474APXrDOgk9kp55x
-	s0n4k2cbHoe4fyZ+BkT3Vymc+bpZWdrkEuCT+GnSoDLRAeHiQT9TxkAkeoOSqEq0DjlGfKutMRnsT
-	bV0PM8I9ZFUJKkkgS0a6JeOJX7EtVRVN3ML/0UU1m25YSwvqyk1WpByDt0ckrRbJl3gvI/6+B7Hjx
-	o1oyr0arveefsGfk2GQ07FYAnaqdqsSFbHdKRCyIISYyLtLsaJCpLZkGQJG6GeMo52wSLbhH9sPwA
-	K3akpoCSqNKfwjPcWLxg==;
+	List-Owner; bh=nCM8d3EKD7fKCrYSltl952RuqXmMzfenMREJCZP+TzY=; b=m5tNlPqok5oquJ
+	bWJ5mrYZqvCoNE14u4tprkv0OCiThenNyLvAnXazanRk+X6TEqf+m1yUOgrfUL1VZf3MEHapXtiCj
+	fCeDXktJYVMZFS9zz6jBXgZ3fnyuaCq1dx5oe9pd1SXH1TkZEy6/NSLx+r19/yhC75F0VKrP3ODdC
+	irkf3iMhNHxkH7mKm3Wo9tAc0wHO3bU5Lq5gYfXkuS/1UsOOF6chCvkE7rBvl4R5SGrdqqhJJc0t0
+	2vZ48l0KRVxX9c7zZeB8mv6TlPRE8/qNKRjxfpo9/5VzN4rn37OyRN409xLmfVs8p2FI7yb+T89Zl
+	Wg0/s6AQKHwdDYyGyHBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBL65-0008Ez-19; Mon, 09 Mar 2020 16:17:41 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jBL71-0000Ka-2G; Mon, 09 Mar 2020 16:18:39 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBL5s-0008E5-Jf
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 16:17:30 +0000
-Received: from pendragon.bb.dnainternet.fi (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id D59DA2D2;
- Mon,  9 Mar 2020 17:17:16 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1583770637;
- bh=ml87TgXbfAEwecY2YM0QeCIphKoRoAmA8kLHojFY760=;
- h=From:To:Cc:Subject:Date:From;
- b=nmPfM390BLJvUmzRNb7BjZSJr2NUlRQffwKm9umL9JQa/Ub48LRnTRjw7U/mQbDkJ
- vXODXEYfzQ6tJ6+rgHzsVMmemW+HIXXfM8Z58xnvJ0pJ8EA/W7oInGe25V2ACwASOs
- sRLa9xP1FGqGPuInbW6vBQP5FcGJEa0lNt9F3WNs=
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: linux-clk@vger.kernel.org
-Subject: [PATCH] clk: imx7d: Add PXP clock
-Date: Mon,  9 Mar 2020 18:17:09 +0200
-Message-Id: <20200309161709.30982-1-laurent.pinchart@ideasonboard.com>
-X-Mailer: git-send-email 2.24.1
+ id 1jBL6E-0008SU-ES
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 16:17:52 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id d8so43293pje.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Mar 2020 09:17:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=w+EuGboWkCGYso9gYjOWNAC83ZosPayQVPNA4G1V2eE=;
+ b=fLi4SKjsIboh6FDxhRljAQDXqB1dkqX+IsIyNLHh/4K2bD9f+SBcWvXFTzMP5M3AqZ
+ XS+DzBWbQGgXHcvjS0ahGDiP6Q8cKtCHrVCu0QBEXxSmrKzxHEBZuma8cSAFUtFXJ4ss
+ ivIi0GLoRmSnBoacfZuQdZhny81HACm3E67PRZc9Xt+j/8ZrBfzFTpFKmtfGuQbpYBBH
+ mYvpLehxS4IMdnyQngUhbSJOhNd38mzs/w5Hz8b1LLTFqZ8aufQaQ8sKbScI0rA6wHBP
+ xe4cQmbH0NooTY2B/tN3hfK/bINqy621esvagi0jZaVs0e0Pzx4MVwYURASZMQmYg+3s
+ PN9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=w+EuGboWkCGYso9gYjOWNAC83ZosPayQVPNA4G1V2eE=;
+ b=PCV/0xNF10dfBXdYC2UiwB7tMJ3JLJU2SgLffOwi78vTh72F93WdPVCYqG0gefhtWe
+ tJacb/52o3hKVSsI1+A0TPM3aJrOvXKCjPKB8GA3oHiMDJWMT+k0zKvG5/u9vVI9bd1p
+ o/xDVOyRl5sjX9kc7iRcGz3D+dg3fW4URZSb272PoRPeAjyjVcuH7EtOoEkXnCRayeW2
+ 5KJLvy5VyzmMbtW/cijpGlOH1BK+VyApmDVkUdxUpnqO9AWW7axS+b8sqX4xmxlUhVV8
+ Ib0CHTWnaN5kqClfOxX03i6KyatqoZKst2cU6yeAVFYp9PDuMHk+jPbSsycHIJxWRXCs
+ 5OHw==
+X-Gm-Message-State: ANhLgQ3eaaQH8lB5OkOBk7NwNHS8BGR9YQ+7cRKOXXHxEMtwnnW6zAHH
+ xUDWdkbEZmAnKfZw757nNK4ZzW9p5dA=
+X-Google-Smtp-Source: ADFU+vsoKb6i1cv2d1tEoqVfgMygCD6mwEdH8szR01q3S3bkhYzxH7T3qc276Ckf2pR4Evp0OfUvCA==
+X-Received: by 2002:a17:90a:c251:: with SMTP id
+ d17mr28053pjx.179.1583770669475; 
+ Mon, 09 Mar 2020 09:17:49 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id m11sm38403pjl.18.2020.03.09.09.17.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 09 Mar 2020 09:17:49 -0700 (PDT)
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH 00/13] coresight: next v5.6-rc5 
+Date: Mon,  9 Mar 2020 10:17:35 -0600
+Message-Id: <20200309161748.31975-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_091728_855291_6D5E1FF4 
-X-CRM114-Status: UNSURE (   9.96  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200309_091750_513364_777CA349 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -70,52 +96,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The PXP has a single CCGR clock gate, gating both the IPG_CLK_ROOT and
-the MAIN_AXI_CLK_ROOT. Add a single clock to cover both.
+Hi Greg,
 
-Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
----
- drivers/clk/imx/clk-imx7d.c             | 1 +
- include/dt-bindings/clock/imx7d-clock.h | 3 ++-
- 2 files changed, 3 insertions(+), 1 deletion(-)
+Here is what I have for inclusion in the v5.7 cycle.  As usual it applies to
+your char-misc branch.  Please have a look when time permits.
 
-diff --git a/drivers/clk/imx/clk-imx7d.c b/drivers/clk/imx/clk-imx7d.c
-index fbea774ef687..4f1ead22781e 100644
---- a/drivers/clk/imx/clk-imx7d.c
-+++ b/drivers/clk/imx/clk-imx7d.c
-@@ -802,6 +802,7 @@ static void __init imx7d_clocks_init(struct device_node *ccm_node)
- 	hws[IMX7D_PCIE_PHY_ROOT_CLK] = imx_clk_hw_gate4("pcie_phy_root_clk", "pcie_phy_post_div", base + 0x4600, 0);
- 	hws[IMX7D_EPDC_PIXEL_ROOT_CLK] = imx_clk_hw_gate4("epdc_pixel_root_clk", "epdc_pixel_post_div", base + 0x44a0, 0);
- 	hws[IMX7D_LCDIF_PIXEL_ROOT_CLK] = imx_clk_hw_gate4("lcdif_pixel_root_clk", "lcdif_pixel_post_div", base + 0x44b0, 0);
-+	hws[IMX7D_PXP_CLK] = imx_clk_hw_gate4("pxp_clk", "main_axi_root_clk", base + 0x44c0, 0);
- 	hws[IMX7D_MIPI_DSI_ROOT_CLK] = imx_clk_hw_gate4("mipi_dsi_root_clk", "mipi_dsi_post_div", base + 0x4650, 0);
- 	hws[IMX7D_MIPI_CSI_ROOT_CLK] = imx_clk_hw_gate4("mipi_csi_root_clk", "mipi_csi_post_div", base + 0x4640, 0);
- 	hws[IMX7D_MIPI_DPHY_ROOT_CLK] = imx_clk_hw_gate4("mipi_dphy_root_clk", "mipi_dphy_post_div", base + 0x4660, 0);
-diff --git a/include/dt-bindings/clock/imx7d-clock.h b/include/dt-bindings/clock/imx7d-clock.h
-index e6a670e1a3f8..1d4c0dfe0202 100644
---- a/include/dt-bindings/clock/imx7d-clock.h
-+++ b/include/dt-bindings/clock/imx7d-clock.h
-@@ -451,5 +451,6 @@
- #define IMX7D_SNVS_CLK			442
- #define IMX7D_CAAM_CLK			443
- #define IMX7D_KPP_ROOT_CLK		444
--#define IMX7D_CLK_END			445
-+#define IMX7D_PXP_CLK			445
-+#define IMX7D_CLK_END			446
- #endif /* __DT_BINDINGS_CLOCK_IMX7D_H */
+Thanks,
+Mathieu
+
+Mike Leach (12):
+  coresight: cti: Initial CoreSight CTI Driver
+  coresight: cti: Add sysfs coresight mgmt register access
+  coresight: cti: Add sysfs access to program function registers
+  coresight: cti: Add sysfs trigger / channel programming API
+  dt-bindings: arm: Adds CoreSight CTI hardware definitions
+  coresight: cti: Add device tree support for v8 arch CTI
+  coresight: cti: Add device tree support for custom CTI
+  coresight: cti: Enable CTI associated with devices
+  coresight: cti: Add connection information to sysfs
+  docs: coresight: Update documentation for CoreSight to cover CTI
+  docs: sysfs: coresight: Add sysfs ABI documentation for CTI
+  Update MAINTAINERS to add reviewer for CoreSight
+
+Nathan Chancellor (1):
+  coresight: cti: Remove unnecessary NULL check in cti_sig_type_name
+
+ .../testing/sysfs-bus-coresight-devices-cti   |  221 ++++
+ .../bindings/arm/coresight-cti.yaml           |  336 +++++
+ .../devicetree/bindings/arm/coresight.txt     |    7 +
+ .../trace/coresight/coresight-ect.rst         |  211 +++
+ Documentation/trace/coresight/coresight.rst   |   13 +
+ MAINTAINERS                                   |    3 +
+ drivers/hwtracing/coresight/Kconfig           |   21 +
+ drivers/hwtracing/coresight/Makefile          |    3 +
+ .../coresight/coresight-cti-platform.c        |  485 +++++++
+ .../hwtracing/coresight/coresight-cti-sysfs.c | 1173 +++++++++++++++++
+ drivers/hwtracing/coresight/coresight-cti.c   |  745 +++++++++++
+ drivers/hwtracing/coresight/coresight-cti.h   |  235 ++++
+ .../hwtracing/coresight/coresight-platform.c  |   20 +
+ drivers/hwtracing/coresight/coresight-priv.h  |   15 +
+ drivers/hwtracing/coresight/coresight.c       |   86 +-
+ include/dt-bindings/arm/coresight-cti-dt.h    |   37 +
+ include/linux/coresight.h                     |   27 +
+ 17 files changed, 3624 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
+ create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
+ create mode 100644 Documentation/trace/coresight/coresight-ect.rst
+ create mode 100644 drivers/hwtracing/coresight/coresight-cti-platform.c
+ create mode 100644 drivers/hwtracing/coresight/coresight-cti-sysfs.c
+ create mode 100644 drivers/hwtracing/coresight/coresight-cti.c
+ create mode 100644 drivers/hwtracing/coresight/coresight-cti.h
+ create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
+
+
+base-commit: bb3a151dd42765acc8f469ff994de3ab31f15a95
 -- 
-Regards,
-
-Laurent Pinchart
+2.20.1
 
 
 _______________________________________________
