@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B6FD17D77D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 01:45:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7355C17D787
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 01:45:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rNS2KcVEIC1YpOk3Qis6gnAU1Ee4oSt2Zorn9UExNWA=; b=aKO+yVxSPaZuRojIbG/zUk14QE
-	aWZviSAx/sffMFrXsF6Y3eV8LXlB988a0glf5bna3xXGFeFQlu9cC6E+G1MLOEqBhX4DgTjuDwk7L
-	ureTPGoEdY7N8vJgmIH+4gSU+ydRb1r/EQtvaNW/esHB6y0nvSF4SkS7pEVfbnBkgfzIjCdJ2QFnW
-	y3FtJlSat3oWlCn1A7pLnr2o2MlUci2ZVkMGsKQUES2+tDskS5OD+V/tLBI0HYZ7aT3GfHrK/XpZ3
-	GpqIOjhQ9HtMwbGDlItO5prsiMgHGuFSKkFwICB+9PiV7CPVqNMJpZIub7d5vs3Y07NxzEBAR4/59
-	V75eqUig==;
+	bh=2u8ipBY0/+038ds7+efCFHMq7TJ8wUzS5Pm8OTp5uVo=; b=dzqWIzclDZyaSNfI01ivWJuBsa
+	gpBemh3GAliBMdJDUj2gPgmass/hwjUhjOrzmTVDA40cSDTLqYPPB1w8yPyOgXsl70AScQicS1eje
+	G5cZcnXFMy7PriwXky9gMUo+3V8EdnwHLbiunMAynSu29PlWJ7W8Eb+9opurZXmOVcK0afssZwfr6
+	EwAId2eu5vuep4GRKXokn2GoEw/bMqsBxbBf3MlOA+/3O8M6bZHElaS41H2RoHLtQyC0zmRRQU4k2
+	WGc1lGPiRZPo8uOf89BzCkpehU9oi0g+JbezDXBpokwtGf0007/tIxFBoKkKJcQxU/WMXMgWpzi0o
+	difPVaaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB6Xz-0005dX-KQ; Mon, 09 Mar 2020 00:45:31 +0000
+	id 1jB6YG-0005wO-Sg; Mon, 09 Mar 2020 00:45:48 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB6Xc-00056A-Uj
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 00:45:10 +0000
+ id 1jB6Xf-0005UJ-GK
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 00:45:13 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B5DE71A169E;
- Mon,  9 Mar 2020 01:45:07 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 088041A168B;
+ Mon,  9 Mar 2020 01:45:10 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1D8651A0B31;
- Mon,  9 Mar 2020 01:44:49 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6B9D11A168A;
+ Mon,  9 Mar 2020 01:44:51 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4FDD4402A5;
- Mon,  9 Mar 2020 08:44:35 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9745E402C1;
+ Mon,  9 Mar 2020 08:44:37 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, dmitry.torokhov@gmail.com, a.zummo@towertech.it,
@@ -48,16 +48,16 @@ To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-input@vger.kernel.org, linux-rtc@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: [PATCH V3 2/7] firmware: imx: add COMPILE_TEST support
-Date: Mon,  9 Mar 2020 08:38:15 +0800
-Message-Id: <1583714300-19085-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 3/7] rtc: add COMPILE_TEST support for i.MX SC RTC
+Date: Mon,  9 Mar 2020 08:38:16 +0800
+Message-Id: <1583714300-19085-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
 References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_174509_154639_DD3E35A2 
-X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-CacheID: sfid-20200308_174511_736493_FD4B7FD4 
+X-CRM114-Status: UNSURE (   9.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -86,37 +86,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add COMPILE_TEST support to i.MX SCU drivers for better compile
+Add COMPILE_TEST support to i.MX SC RTC driver for better compile
 testing coverage.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No change.
 ---
- drivers/firmware/imx/Kconfig | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/rtc/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/imx/Kconfig b/drivers/firmware/imx/Kconfig
-index 1d2e5b8..116707a 100644
---- a/drivers/firmware/imx/Kconfig
-+++ b/drivers/firmware/imx/Kconfig
-@@ -12,7 +12,7 @@ config IMX_DSP
+diff --git a/drivers/rtc/Kconfig b/drivers/rtc/Kconfig
+index acaf6f98..a86768f 100644
+--- a/drivers/rtc/Kconfig
++++ b/drivers/rtc/Kconfig
+@@ -1772,7 +1772,7 @@ config RTC_DRV_SNVS
+ 	   will be called "rtc-snvs".
  
- config IMX_SCU
- 	bool "IMX SCU Protocol driver"
--	depends on IMX_MBOX
-+	depends on IMX_MBOX || COMPILE_TEST
- 	help
- 	  The System Controller Firmware (SCFW) is a low-level system function
- 	  which runs on a dedicated Cortex-M core to provide power, clock, and
-@@ -24,6 +24,6 @@ config IMX_SCU
- 
- config IMX_SCU_PD
- 	bool "IMX SCU Power Domain driver"
+ config RTC_DRV_IMX_SC
 -	depends on IMX_SCU
 +	depends on IMX_SCU || COMPILE_TEST
+ 	depends on HAVE_ARM_SMCCC
+ 	tristate "NXP i.MX System Controller RTC support"
  	help
- 	  The System Controller Firmware (SCFW) based power domain driver.
 -- 
 2.7.4
 
