@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7355C17D787
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 01:45:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69BE617D788
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 01:46:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2u8ipBY0/+038ds7+efCFHMq7TJ8wUzS5Pm8OTp5uVo=; b=dzqWIzclDZyaSNfI01ivWJuBsa
-	gpBemh3GAliBMdJDUj2gPgmass/hwjUhjOrzmTVDA40cSDTLqYPPB1w8yPyOgXsl70AScQicS1eje
-	G5cZcnXFMy7PriwXky9gMUo+3V8EdnwHLbiunMAynSu29PlWJ7W8Eb+9opurZXmOVcK0afssZwfr6
-	EwAId2eu5vuep4GRKXokn2GoEw/bMqsBxbBf3MlOA+/3O8M6bZHElaS41H2RoHLtQyC0zmRRQU4k2
-	WGc1lGPiRZPo8uOf89BzCkpehU9oi0g+JbezDXBpokwtGf0007/tIxFBoKkKJcQxU/WMXMgWpzi0o
-	difPVaaw==;
+	bh=UEfrBUMsRlsRmejkdOzalXTGgXz8T0OLPLYrktYyQdo=; b=KFU/uXgkneE3ZxXRAYNiN+BBav
+	q3jqMaLYJLIs7SXeZHNQR5WpKTMsXkGdXqOhLo36Kc/g8LFdcp+hbZ1mOZUFwYgcPHyY8PaB8pFpe
+	md90HB+VtST+Lk3O1RW6/zHYBpLWascz7W139QV3KKZO8RnY4A8RHPmE1rTr6K2ThG3RVgq0KhLGo
+	9GoPnGf7epCyocJWMcTdlWUqIn4jtfbiVtx4bbD0kLoXtGp4LYwJgItR0Ixz5MBcvbvhsLBzgUXQu
+	eU+oDGWjbJ+8HKn5AwZgbJlIdVGk6wJU5WDVC/RCly8hIJwUwVQ7nlAYdwnSfKymsxQLg3/g7JBpO
+	FRwMR0aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB6YG-0005wO-Sg; Mon, 09 Mar 2020 00:45:48 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jB6YV-0006FU-5M; Mon, 09 Mar 2020 00:46:03 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB6Xf-0005UJ-GK
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 00:45:13 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 088041A168B;
- Mon,  9 Mar 2020 01:45:10 +0100 (CET)
+ id 1jB6Xh-0005XO-W4
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 00:45:15 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 41E3620152A;
+ Mon,  9 Mar 2020 01:45:12 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6B9D11A168A;
- Mon,  9 Mar 2020 01:44:51 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3CF9420000D;
+ Mon,  9 Mar 2020 01:44:53 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9745E402C1;
- Mon,  9 Mar 2020 08:44:37 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DEB2D402CA;
+ Mon,  9 Mar 2020 08:44:39 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, dmitry.torokhov@gmail.com, a.zummo@towertech.it,
@@ -48,16 +48,17 @@ To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-input@vger.kernel.org, linux-rtc@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: [PATCH V3 3/7] rtc: add COMPILE_TEST support for i.MX SC RTC
-Date: Mon,  9 Mar 2020 08:38:16 +0800
-Message-Id: <1583714300-19085-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 4/7] input: keyboard: add COMPILE_TEST support for
+ KEYBOARD_IMX_SC_KEY
+Date: Mon,  9 Mar 2020 08:38:17 +0800
+Message-Id: <1583714300-19085-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
 References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_174511_736493_FD4B7FD4 
-X-CRM114-Status: UNSURE (   9.14  )
+X-CRM114-CacheID: sfid-20200308_174514_206745_4ABC0A76 
+X-CRM114-Status: UNSURE (   9.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -65,7 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,29 +87,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add COMPILE_TEST support to i.MX SC RTC driver for better compile
+Add COMPILE_TEST support to i.MX SC keyboard driver for better compile
 testing coverage.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 No change.
 ---
- drivers/rtc/Kconfig | 2 +-
+ drivers/input/keyboard/Kconfig | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/rtc/Kconfig b/drivers/rtc/Kconfig
-index acaf6f98..a86768f 100644
---- a/drivers/rtc/Kconfig
-+++ b/drivers/rtc/Kconfig
-@@ -1772,7 +1772,7 @@ config RTC_DRV_SNVS
- 	   will be called "rtc-snvs".
+diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
+index 9709137..87e0be8 100644
+--- a/drivers/input/keyboard/Kconfig
++++ b/drivers/input/keyboard/Kconfig
+@@ -467,7 +467,7 @@ config KEYBOARD_IMX
  
- config RTC_DRV_IMX_SC
+ config KEYBOARD_IMX_SC_KEY
+ 	tristate "IMX SCU Key Driver"
 -	depends on IMX_SCU
 +	depends on IMX_SCU || COMPILE_TEST
- 	depends on HAVE_ARM_SMCCC
- 	tristate "NXP i.MX System Controller RTC support"
  	help
+ 	  This is the system controller key driver for NXP i.MX SoCs with
+ 	  system controller inside.
 -- 
 2.7.4
 
