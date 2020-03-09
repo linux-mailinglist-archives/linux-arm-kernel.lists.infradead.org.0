@@ -2,77 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80FDF17DAF5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 09:33:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA9D817DB2E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 09:38:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q75eptDCqepgvtc+5MzKiDisiN5TM6nqUYUpe1sRfac=; b=s3rPKuU00LNRz3
-	kvUDXhy+qUvOzOgRdGQIalHJesuNKjRaPpXT0Px5GPXGlxzMNimlhI2/SKRKYnRGtxVzxJJB/IxQu
-	NvmcpEuQB3SvPPZsKJ9x3h/1DiAOxvOyrTUWxRozTHr4YZhhygmbtS1QU+Guumb92wdXUb1oMdZXP
-	tkW/2qd6A6GIPrhZ5RMvqXUimPfVBPvlSCVDNM45tdlQvPLMxWgcx4/NuVgfeCcXfKLQb9/80tNNB
-	1hCPCUiAiMEu7wbj59mJeJ9hjqo36RqYBASCQC23Mn+6EzrGF6iolGrdmnONL8atsRCtgrEi+vfb6
-	6tKZlNvZiZa/6EfBsuVg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=M08q/PcgYOGkY8ZV/bnWOuFrSE8Ol46F0CJD2S9pHXk=; b=udx
+	RkpWZz6he1049VVKELSh+NLyonmz6PU4cNUZX18bSue7pf18h5TE0WbLpRyV732Lq1DbNZWr4Q+0T
+	d/uSWvy2yd0RmE/Jj1il0Gi8AL0z0ZwH9C9iqP0Por0pkzhQNe55R4x0l3+t817GoYQ9Z/ipZlVNQ
+	mPnQCl73o6bIRWpFievHzxHGx8qgR2BYFQ4mmRWRDZh7D4zAEWzEhpzNdqjC2E5OsP4TRu+EIngda
+	EFBZcw+tybbG3rkYp0LrVF3DOMtyHyeXjCkePcApqnwXOwiN+aSWmlxQDhswnACsad9zyrEIcEpvU
+	lUstgGhDWfbyHqzpE1ApNjf9o+mV38A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBDqH-0001Do-Ja; Mon, 09 Mar 2020 08:32:53 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jBDvY-0004GI-PH; Mon, 09 Mar 2020 08:38:20 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBDq7-0001DN-5T
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 08:32:45 +0000
-Received: by mail-wr1-x441.google.com with SMTP id m9so848878wro.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 01:32:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=af2cfZjf9x1S9FZ9MDXkYOztGP6qP0GOneEhB/eEIC0=;
- b=Avi03q8clgrFOrP5q3tRQewNL0Fw0MR443djbetfTNlO/BnS3HlkfETHL3Tu63qtNv
- gvsi9LD2DzFzpVf0OPveF87+GFgPH4S16hoDLA+KSBIhEpn+v56HrnhqkgWcnzwpcvs0
- xzcKX1XCRmZUfGbbDPLo5wyOzbQ6H8f6Ieo8y4XmMs+tN1NWsU8gvW4yOLLK39rBcji8
- yqan3UVUJ9K/wW4TknQtHZ5r/iuBzOqAxVNMQHHG8VtjKlnfOv0OHlqVW595w/AWK7rP
- K2D6GjaTeqgQ6o99g8I6aOPQ/Jbc/HVZlJ24l+VrsYYumIbiXLL69FiR7dwrVhrCGWsC
- kPKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=af2cfZjf9x1S9FZ9MDXkYOztGP6qP0GOneEhB/eEIC0=;
- b=QdIyvvvtA1ilcT1Ju8Vv9RuWqq7+anqagKpJwFVlGqi2zqbGSczoWNGVcI1A8i0TBv
- EpuvCJsAxIuNwYF1Rdc7+/sGtrxPmp6ZBc4y/7g/KhHaQcNiriLP50Wgd1ySifhPtjDz
- KUnIS8NJyGMfLTgm5oAZWDrhbTjDMniricdwxAt9AcBnfYzWGw8ioa8sOi88MSn1m1lM
- nDqMCV0GzLkKkteuQhczFjYor7HGl4UqoLGGX7+NzPu6AiPVyFASLBs3T6U63xY7XNMd
- wldPagYx1LN2z6iwweOCJpvdpR08wjWM/Ww5Vi7xa0Xd5hBmxJvKxqTC2y8hqa2CKGIW
- Umpg==
-X-Gm-Message-State: ANhLgQ2HbkBKYeft8YKh6IUXOixmltlZ3+kfhtLN2U/8SUrIp1mjvS75
- U/o5J+WK9o33RGEwp4nYCHAfz2M0EFgyqNDIUoE=
-X-Google-Smtp-Source: ADFU+vse2mrhpQWQ46FGqAThVW5dYVYVNTdtnUQxbnZFtx6sP4gIg5N4+80B7pi4VKVVc7UzQq04sWlnL39gJJ/hXbs=
-X-Received: by 2002:adf:e408:: with SMTP id g8mr20764712wrm.198.1583742761475; 
- Mon, 09 Mar 2020 01:32:41 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200305103228.9686-1-zhang.lyra@gmail.com>
- <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
-In-Reply-To: <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
-From: Chunyan Zhang <zhang.lyra@gmail.com>
-Date: Mon, 9 Mar 2020 16:32:04 +0800
-Message-ID: <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+ id 1jBDu2-0002wo-LC
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 08:36:49 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F11C2C04C0;
+ Mon,  9 Mar 2020 08:36:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1583743004; bh=nNW7ATs8+GuGeb3XY+MZ9vqqRxlVeew7FQjk122/a3E=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ZcicXufR4XTCBX1R49tN9rvomFqt9gJOHipcnE6Ebh37+J79vyF5cZX7VHlzDm7Hl
+ tuuHmZbca9mllw360dlR2UgwNMtNVuSDfKJI8TUgzUNveltSy3Az250ONW4p1SWVCo
+ V3qWxpYjhlG8PL5YVdsa+AWYQcQ7rf4Cj9jGsElUJPvdh2IlVs4IoGUyrbaUslnxPe
+ Fy+Ee6fPi+hvm/35w5hKcq2lYY8mmwAS5FUxk3SgTPtgPPj7wXDcq9ffkDlsFUVTc6
+ X3c4jVSzPL1TdQjjYUrjPapoIxH+A/9ZR6a6dRCA9+5stxGSuOTYDZmeQ5wG5WNIp/
+ eax4z/zWeagug==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id C741CA005C;
+ Mon,  9 Mar 2020 08:36:38 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next 0/8] net: Add support for Synopsys DesignWare XPCS
+Date: Mon,  9 Mar 2020 09:36:19 +0100
+Message-Id: <cover.1583742615.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_013243_234767_270B56D5 
-X-CRM114-Status: GOOD (  17.62  )
+X-CRM114-CacheID: sfid-20200309_013646_776729_A6E7B0BC 
+X-CRM114-Status: GOOD (  14.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhang.lyra[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,68 +76,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, Catalin Marinas <catalin.marinas@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
- Orson Zhai <orsonzhai@gmail.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Andrew Lunn <andrew@lunn.ch>,
+ Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-stm32@st-md-mailman.stormreply.com,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Jakub Kicinski <kuba@kernel.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Heiner Kallweit <hkallweit1@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+This adds support for Synopsys DesignWare XPCS in net subsystem and
+integrates it into stmmac.
 
-On Mon, 9 Mar 2020 at 16:03, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Hi Chunyan.
->
-> On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
-> >
-> > The default value of Kconfig for almost all sprd drivers are the same with
-> > ARCH_SPRD, making these drivers built as modules as default would be easier
-> > if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
-> >
-> > Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
->
-> Can you actually boot a kernel on a Spreadtrum platform when all platform
-> and driver support is modular?
+At 1/8, we start by removing the limitation of stmmac selftests that needed
+a PHY to pass all the tests.
 
-Yes, even if all drivers are modular.
-But I hope serial can be builtin, then I can have a console to see
-kernel output before loading modules.
-Also, this's what Google GKI [1] asked :)
+Then at 2/8 we use some helpers in stmmac so that some code can be
+simplified.
 
-Regards,
-Chunyan
+At 3/8, we fallback to dev_fwnode() so that PCI based setups wich may
+not have CONFIG_OF can still use FW node.
 
-[1] https://arstechnica.com/gadgets/2019/11/google-outlines-plans-for-mainline-linux-kernel-support-in-android/
+At 4/8, we adapt stmmac to the new PHYLINK changes as suggested by Russell
+King.
 
->
-> > +++ b/arch/arm64/Kconfig.platforms
-> > @@ -249,7 +249,7 @@ config ARCH_TEGRA
-> >           This enables support for the NVIDIA Tegra SoC family.
-> >
-> >  config ARCH_SPRD
-> > -       bool "Spreadtrum SoC platform"
-> > +       tristate "Spreadtrum SoC platform"
-> >         help
-> >           Support for Spreadtrum ARM based SoCs
->
-> Gr{oetje,eeting}s,
->
->                         Geert
->
-> --
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
->
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
+We proceed by doing changes in PHYLINK in order to support XPCS: At 5/8 we
+add some missing speeds that USXGMII supports and at 6/8 we check if
+Autoneg is supported after initial parameters are validated.
+
+Support for XPCS is finally introduced at 7/8, along with the usage of it
+in stmmac driver at 8/8.
+
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Jakub Kicinski <kuba@kernel.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: Andrew Lunn <andrew@lunn.ch>
+Cc: Florian Fainelli <f.fainelli@gmail.com>
+Cc: Heiner Kallweit <hkallweit1@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
+
+Jose Abreu (8):
+  net: stmmac: selftests: Do not fail if PHY is not attached
+  net: stmmac: Switch to linkmode_and()/linkmode_andnot()
+  net: stmmac: Fallback to dev_fwnode() if needed
+  net: stmmac: Use resolved link config in mac_link_up()
+  net: phylink: Add missing Backplane speeds
+  net: phylink: Test if MAC/PCS support Autoneg
+  net: phy: Add Synopsys DesignWare XPCS MDIO module
+  net: stmmac: Integrate it with DesignWare XPCS
+
+ MAINTAINERS                                        |   7 +
+ drivers/net/ethernet/stmicro/stmmac/Kconfig        |   1 +
+ drivers/net/ethernet/stmicro/stmmac/common.h       |   3 +
+ drivers/net/ethernet/stmicro/stmmac/hwif.h         |  12 +
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |  96 ++--
+ drivers/net/ethernet/stmicro/stmmac/stmmac_mdio.c  |  27 +
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c |   2 +-
+ drivers/net/phy/Kconfig                            |   6 +
+ drivers/net/phy/Makefile                           |   1 +
+ drivers/net/phy/mdio-xpcs.c                        | 612 +++++++++++++++++++++
+ drivers/net/phy/phylink.c                          |   5 +
+ include/linux/mdio-xpcs.h                          |  41 ++
+ include/linux/stmmac.h                             |   1 +
+ 13 files changed, 771 insertions(+), 43 deletions(-)
+ create mode 100644 drivers/net/phy/mdio-xpcs.c
+ create mode 100644 include/linux/mdio-xpcs.h
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
