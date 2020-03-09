@@ -2,87 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E400D17DCDF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 11:03:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7306E17DD9B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 11:32:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fECRfqqJgrPiMX9YaW+6eJi0Q/UM7PafXgGj01jjr1o=; b=Ft4LiTW5An2B3A
-	ZwDzKgcXCCyEwUcIW26XAg26Myt2nvMqvopRPiNY5J4m98oR1t5DogFT/e9usWzCVW6EFBb3rRTvR
-	2oIkkL4YM9ZBlOaZgjEZB6iWU7Qg9nq+GiGnscln8Vyh/tbkuO8d06BSafnKUiQizvjiqqWr9sGxT
-	sGOWQxfY61yIwetKnMQFR7bMpdt57f63sumLsHOElxVwjPu7EhK51Mo8e3NGD4WXNF5zFD+ZeemCX
-	r9/jJwZ9ZQL2jOv9BXnhusA7bZGaLb6v6rhjwwWYvhcDEHFxG9ryX+V/D2O3G7Yk1jgkh5fVcWeT7
-	raP+X6R4k6V0CH0ClfLg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+P8a6JM3y3ny1hcRxc4Vj9Y7d79+TGAkf04GvEKSGNw=; b=E9xPjgVPam9+VM
+	yChfP2pnl8ZBnef89uJl6h+p4D/GGToo5Y+tt5UnMdEdM7JxieQ4kMM9qUNBEpRTaqcbEAPti+ZJC
+	kIzdqNt3elSqS6kaNx7wN6TcHNVJh/qg10GvD/lRbNy5gNz3mfCD5t2sy1HICsHMdAkrwdzsF0jdf
+	rOrvkFA5JPS7DLZcPgplNz5uyB3MRie+FP5IrU9TRGo2dc2Ko6Ks6uPS18z+jnjZgtj32E9ZvcCCj
+	mN8l7whczwQBuCgCWfusG8Gt7zrghSKXk8R3NkIsqDMuEaKe317XW1jH8pq6CphGJ5cjd4d6cubAX
+	s3j+U+oIzXXS3lIyCaog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBFFe-0004Ma-1S; Mon, 09 Mar 2020 10:03:10 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jBFhx-0006lc-JF; Mon, 09 Mar 2020 10:32:25 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBFFW-0004Li-As
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 10:03:04 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 029A2fit029340; Mon, 9 Mar 2020 11:02:53 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=EEpTmJLKqEHuccfl2GlQ14M0nlV3ck8Nzcse6ro+Vy0=;
- b=DozwLS7K8kjaoo53KukoT1Z+NXxCmbP7h3EUHK7cGIQZrZXjKmG+JsYRiDtBupGmmVFH
- vhxxpC7Ivt0Fo+dg+5NcWdK1VGixf6WupJXPGrCB+pFWpbxVcraRToID8QB3Bnic0bME
- Z0hV84ISLOxIFJv33Oa3bNQVirotzVg5Hs5mjQAg1yRc0XsxDyvBAoQAFueJVV5RqhBa
- rRfLUEJezI83Ku6w0tRJGxJaB6FONysIPAmNI7aDl5gnUOQ4sljXC666unlI53lxPOUS
- oR8pvNXS1kBXVWW7eE2/ue/nn96RT86i7eq+xc8lv9/krJ4jBk82tJDd5vV8PT/aynXG /g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2ym292391k-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 09 Mar 2020 11:02:53 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 68A0E100038;
- Mon,  9 Mar 2020 11:02:48 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2D6082A9719;
- Mon,  9 Mar 2020 11:02:48 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Mon, 9 Mar 2020 11:02:47 +0100
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <jic23@kernel.org>, <knaack.h@gmx.de>, <lars@metafoo.de>,
- <pmeerw@pmeerw.net>, <alexandre.torgue@st.com>,
- <fabrice.gasnier@st.com>, <benjamin.gaignard@st.com>,
- <olivier.moysan@st.com>
-Subject: [PATCH v2] iio: adc: stm32-adc: fix sleep in atomic context
-Date: Mon, 9 Mar 2020 11:02:12 +0100
-Message-ID: <20200309100212.16499-1-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jBFhq-0006kg-0b
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 10:32:20 +0000
+Received: by mail-ot1-f65.google.com with SMTP id x19so9020204otp.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Mar 2020 03:32:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pN1NhwV5FZU7mvbB/Fyos9y0uYvy+acNwUtvUwLUiRQ=;
+ b=MB1bgmSwfghUcwak1x/SxsTFl+NnyGyEDpUUqti+iUIBhH111JaElGrpb/3sg1D6tT
+ tS44qdR/tZTiHPOVz+mS40RUwKOgGDCgOUPApvkBRg7Mr7n/p+JV0fdzB7m/SRyhNlDp
+ vmiEUPL+l24FQXIwgHNYUD8S3WBmAVpzms31qO2X79/7OnnPa0fob5ATE8yZPBuIvtc6
+ Dnhxp6tr26ebsX4RIBBAxbIvexI2+n9hZvcscv1zW+go0E2xzlzdegSv+IzfuibbQtUO
+ frEHOnjHlWnd3XS2kkwbUSyAlDEdKkHMa+NjzG+wcR6GUIiWu/yEOW1nXU8/csL/BbF1
+ mCKA==
+X-Gm-Message-State: ANhLgQ0P0C5lb0s4wsE85ZssELUbeb4LeSqE9MUgiAhicAFKxiWe/twv
+ YUbEzyUZhcQRItDWqufCRp4kSijlXNDX3uc64Sw=
+X-Google-Smtp-Source: ADFU+vvWEUII/TFq+DBVwE8+/gWKHsyLSflVItjuPLkHr74fKp/RQBIfJzV4NZ2ge/14b9Bn2Mfny2XLzY2FCAHqPAU=
+X-Received: by 2002:a9d:b89:: with SMTP id 9mr12586549oth.297.1583749937349;
+ Mon, 09 Mar 2020 03:32:17 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-03-09_02:2020-03-08,
- 2020-03-09 signatures=0
+References: <20200305103228.9686-1-zhang.lyra@gmail.com>
+ <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
+ <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
+In-Reply-To: <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 9 Mar 2020 11:32:06 +0100
+Message-ID: <CAMuHMdV1qQZF-kAwbcxhHQZZ9hs0dG-OTZ2NcB25Jtra6ii5iA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
+To: Chunyan Zhang <zhang.lyra@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_030302_852090_A956ED37 
-X-CRM114-Status: GOOD (  16.01  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200309_033218_059894_9D2BF2EB 
+X-CRM114-Status: GOOD (  17.95  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,94 +84,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Android Kernel Team <kernel-team@android.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
+ Orson Zhai <orsonzhai@gmail.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit fixes the following error:
-"BUG: sleeping function called from invalid context at kernel/irq/chip.c"
+Hi Chunyan,
 
-In DMA mode suppress the trigger irq handler, and make the buffer
-transfers directly in DMA callback, instead.
+On Mon, Mar 9, 2020 at 9:32 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> On Mon, 9 Mar 2020 at 16:03, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> > >
+> > > The default value of Kconfig for almost all sprd drivers are the same with
+> > > ARCH_SPRD, making these drivers built as modules as default would be easier
+> > > if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
+> > >
+> > > Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> >
+> > Can you actually boot a kernel on a Spreadtrum platform when all platform
+> > and driver support is modular?
+>
+> Yes, even if all drivers are modular.
 
-Fixes: 2763ea0585c9 ("iio: adc: stm32: add optional dma support")
+Cool. No hard dependencies on e.g. regulators that are turned off when
+unused?
 
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
----
-Changes in v2:
-- Add "Fixes" tag in commit message
+> But I hope serial can be builtin, then I can have a console to see
+> kernel output before loading modules.
 
-This solution has been already discussed in the thread
-https://lkml.org/lkml/2019/3/30/171, and applied in STM32 DFSDM driver:
-e19ac9d9a978 ("iio: adc: stm32-dfsdm: fix sleep in atomic context")
----
- drivers/iio/adc/stm32-adc.c | 31 ++++++++++++++++++++++++++++---
- 1 file changed, 28 insertions(+), 3 deletions(-)
+No dependency on the clock driver?
+Oh, I see you have a hack in the serial driver, to assume default
+values when the serial port's parent clock is not found.  That may
+limit use of the other serial ports, depending on the actual serial
+hardware.
+And on Sharkl64, the serial port's clock is a fixed-clock anyway, so
+you don't even need the hack.
 
-diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-index 80c3f963527b..ae622ee6d08c 100644
---- a/drivers/iio/adc/stm32-adc.c
-+++ b/drivers/iio/adc/stm32-adc.c
-@@ -1418,8 +1418,30 @@ static unsigned int stm32_adc_dma_residue(struct stm32_adc *adc)
- static void stm32_adc_dma_buffer_done(void *data)
- {
- 	struct iio_dev *indio_dev = data;
-+	struct stm32_adc *adc = iio_priv(indio_dev);
-+	int residue = stm32_adc_dma_residue(adc);
-+
-+	/*
-+	 * In DMA mode the trigger services of IIO are not used
-+	 * (e.g. no call to iio_trigger_poll).
-+	 * Calling irq handler associated to the hardware trigger is not
-+	 * relevant as the conversions have already been done. Data
-+	 * transfers are performed directly in DMA callback instead.
-+	 * This implementation avoids to call trigger irq handler that
-+	 * may sleep, in an atomic context (DMA irq handler context).
-+	 */
-+	dev_dbg(&indio_dev->dev, "%s bufi=%d\n", __func__, adc->bufi);
- 
--	iio_trigger_poll_chained(indio_dev->trig);
-+	while (residue >= indio_dev->scan_bytes) {
-+		u16 *buffer = (u16 *)&adc->rx_buf[adc->bufi];
-+
-+		iio_push_to_buffers(indio_dev, buffer);
-+
-+		residue -= indio_dev->scan_bytes;
-+		adc->bufi += indio_dev->scan_bytes;
-+		if (adc->bufi >= adc->rx_buf_sz)
-+			adc->bufi = 0;
-+	}
- }
- 
- static int stm32_adc_dma_start(struct iio_dev *indio_dev)
-@@ -1845,6 +1867,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
- {
- 	struct iio_dev *indio_dev;
- 	struct device *dev = &pdev->dev;
-+	irqreturn_t (*handler)(int irq, void *p) = NULL;
- 	struct stm32_adc *adc;
- 	int ret;
- 
-@@ -1911,9 +1934,11 @@ static int stm32_adc_probe(struct platform_device *pdev)
- 	if (ret < 0)
- 		return ret;
- 
-+	if (!adc->dma_chan)
-+		handler = &stm32_adc_trigger_handler;
-+
- 	ret = iio_triggered_buffer_setup(indio_dev,
--					 &iio_pollfunc_store_time,
--					 &stm32_adc_trigger_handler,
-+					 &iio_pollfunc_store_time, handler,
- 					 &stm32_adc_buffer_setup_ops);
- 	if (ret) {
- 		dev_err(&pdev->dev, "buffer setup failed\n");
+But in general you cannot rely on that, especially if your SoC has clock
+and/or power domains.
+
+BTW, what about the watchdog driver? That one does need a clock, and
+loading it too late will reboot your system.
+
+> Also, this's what Google GKI [1] asked :)
+>
+> Regards,
+> Chunyan
+>
+> [1] https://arstechnica.com/gadgets/2019/11/google-outlines-plans-for-mainline-linux-kernel-support-in-android/
+
+Let's see how having everything modular works out on an SoC where all
+hardware is part of a clock and power domain.
+
+Thanks!
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
 -- 
-2.17.1
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
