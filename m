@@ -2,58 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D510017E03A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 13:28:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ED9417E042
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 13:29:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=agm1KHScxJM3xwwlXVb7SuumqSvmzfmXLLRXtmkqOS8=; b=JGlU4AqttbN1iLaNDLpAXmiRc
-	uHTGhZGLFrbGZmmac2Fy+oFrQamgMjgwC4xLQhwTNydA9warmrbyGCRDPbZ5n4Hzx7iBJ/uQmHO4d
-	r6Lo9wo5JJuGHtHlD7N2OvIz75J2YJGCNfygMbgkzvG9zDZ4usBaNPEoNUC+C8UP7El2CvuiFNGCa
-	tEq60XXRlFThtXs/y/TJhhJCO4rb45RBcL67t8ZnCqhlP5lHomIL1wS7wHlIV67iMrQkKWDbN7ykj
-	vz0qvXXH7Ohe0VFGSiw6J9tD8GIpXu8vz8U56ZDSvonu9xFbArHtwtLcW30iNC0pwoZw+ixV59Rbs
-	SbODq/DiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qgwwM0Lh0rlDYgE0mYfgUJ55ewMAqyG5HyDQIgoW050=; b=ucGXtau9DEAmnR
+	9Jg3+ixBAKo/eEVZSO+UcJtNswnjTLBwihG9ekuSj5S4Vs0AdwcAwl2AhAoQRPWyS+uQCprIruNd2
+	OnFwUST8RQY09uHp6FDL1BlPEMuYwHAXP8fmzIWtRkN0Bc/H2RTtok8AuIdn6MXU2olG/kn2d681l
+	PYC8U/pP8m98xYlY+VS43gbZfI0tSTxVz4/vD5Vz+lOIOxwCZtZgGZSmJjne+4p2fbqFtKyS68NPD
+	fRaFQZn0saCGJjzYNQ4IkLJCClwLOzBN0BYU5FJ/Nw1UiswqAO44YaJTnLNopj3eWdZzAhndmMeC3
+	NLn1QbIpMgfzT9Pw3vDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBHVs-0006bW-OP; Mon, 09 Mar 2020 12:28:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBHVl-0006b2-3B
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 12:27:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E944F30E;
- Mon,  9 Mar 2020 05:27:53 -0700 (PDT)
-Received: from [10.163.1.218] (unknown [10.163.1.218])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 087993F6CF;
- Mon,  9 Mar 2020 05:27:46 -0700 (PDT)
-Subject: Re: [PATCH v6 12/18] arm64: mask PAC bits of __builtin_return_address
-To: James Morse <james.morse@arm.com>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-13-git-send-email-amit.kachhap@arm.com>
- <6171e139-cc10-53b3-1121-0053fc947b49@arm.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <44df1424-9bc5-e5e9-3c89-0eab66419bff@arm.com>
-Date: Mon, 9 Mar 2020 17:57:46 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jBHX7-0007iV-3C; Mon, 09 Mar 2020 12:29:21 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBHWm-0007bR-O3
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 12:29:02 +0000
+Received: from lhreml702-cah.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 25BE655240FDB99D9C3C;
+ Mon,  9 Mar 2020 12:28:56 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml702-cah.china.huawei.com (10.201.108.43) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 9 Mar 2020 12:28:55 +0000
+Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Mon, 9 Mar 2020
+ 12:28:55 +0000
+Date: Mon, 9 Mar 2020 12:28:53 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v4 09/13] firmware: arm_scmi: Add Power notifications
+ support
+Message-ID: <20200309122853.000019b0@Huawei.com>
+In-Reply-To: <20200304162558.48836-10-cristian.marussi@arm.com>
+References: <20200304162558.48836-1-cristian.marussi@arm.com>
+ <20200304162558.48836-10-cristian.marussi@arm.com>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-In-Reply-To: <6171e139-cc10-53b3-1121-0053fc947b49@arm.com>
-Content-Language: en-US
+X-Originating-IP: [10.202.226.57]
+X-ClientProxiedBy: lhreml706-chm.china.huawei.com (10.201.108.55) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_052757_225457_82D2796B 
-X-CRM114-Status: GOOD (  27.91  )
+X-CRM114-CacheID: sfid-20200309_052900_953143_8C8FA9EC 
+X-CRM114-Status: GOOD (  16.99  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,156 +72,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: james.quinlan@broadcom.com, lukasz.luba@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+On Wed, 4 Mar 2020 16:25:54 +0000
+Cristian Marussi <cristian.marussi@arm.com> wrote:
 
-On 3/7/20 12:37 AM, James Morse wrote:
-> Hi Amit,
+> Make SCMI Power protocol register with the notification core.
 > 
-> On 06/03/2020 06:35, Amit Daniel Kachhap wrote:
->> This redefines __builtin_return_address to mask pac bits
->> when Pointer Authentication is enabled. As __builtin_return_address
->> is used mostly used to refer to the caller function symbol address
->> so masking runtime generated pac bits will help to find the match.
-> 
-> I'm not entirely sure what problem you are trying to solve from this paragraph.
-> 
-> 
->> This patch adds a new file (asm/compiler.h) and is transitively
->> included (via include/compiler_types.h) on the compiler command line
->> so it is guaranteed to be loaded and the users of this macro will
->> not find a wrong version.
->>
->> A helper macro ptrauth_kernel_pac_mask is created for this purpose
->> and added in this file. A similar macro ptrauth_user_pac_mask exists
->> in pointer_auth.h and is now moved here for the sake of consistency.
-> 
->> This change fixes the utilities like cat /proc/vmallocinfo to show
->> correct symbol names.
-> 
-> This is to avoid things like:
-> | 0x(____ptrval____)-0x(____ptrval____)   20480 0xb8b8000100f75fc pages=4 vmalloc N0=4
-> | 0x(____ptrval____)-0x(____ptrval____)   20480 0xc0f28000100f75fc pages=4 vmalloc N0=4
-> 
-> Where those 64bit values should be the same symbol name, not different LR values.
-> 
-> Could you phrase the commit message to describe the problem, then how you fix it.
-> something like:
-> | Functions like vmap() record how much memory has been allocated by their callers,
-> | callers are identified using __builtin_return_address(). Once the kernel is using
-> | pointer-auth the return address will be signed. This means it will not match any kernel
-> | symbol, and will vary between threads even for the same caller.
-> |
-> | Use the pre-processor to add logic to strip the PAC to __builtin_return_address()
-> | callers.
-> 
+> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 
-Thanks for the detailed description. I will update my commit message.
+One comment inline on an unusual code construct, otherwise fine.
 
-> 
->> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
->> new file mode 100644
->> index 0000000..085e7cd0
->> --- /dev/null
->> +++ b/arch/arm64/include/asm/compiler.h
->> @@ -0,0 +1,20 @@
->> +/* SPDX-License-Identifier: GPL-2.0 */
->> +#ifndef __ASM_COMPILER_H
->> +#define __ASM_COMPILER_H
->> +
->> +#if defined(CONFIG_ARM64_PTR_AUTH)
->> +
->> +/*
->> + * The EL0/EL1 pointer bits used by a pointer authentication code.
->> + * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
->> + */
->> +#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
->> +#define ptrauth_kernel_pac_mask()	GENMASK_ULL(63, vabits_actual)
->> +
->> +#define __builtin_return_address(val)				\
->> +	(void *)((unsigned long)__builtin_return_address(val) |	\
->> +	ptrauth_kernel_pac_mask())
-> 
-> 
-> This is pretty manky, ideally we would have some __arch_return_address() hook for this,
-> but this works, and lets us postpone any tree-wide noise until its absolutely necessary.
-> (I assume if this does ever break, it will be a build error)
+Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
-ok.
+> ---
+> V3 --> V4
+> - scmi_event field renamed
+> V2 --> V3
+> - added handle awareness
+> V1 --> V2
+> - simplified .set_notify_enabled() implementation moving the ALL_SRCIDs
+>   logic out of protocol. ALL_SRCIDs logic is now in charge of the
+>   notification core, together with proper reference counting of enables
+> - switched to devres protocol-registration
+> ---
+>  drivers/firmware/arm_scmi/power.c | 123 ++++++++++++++++++++++++++++++
+>  include/linux/scmi_protocol.h     |  15 ++++
+>  2 files changed, 138 insertions(+)
+> 
+> diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
+> index cf7f0312381b..281da7e7e33a 100644
+> --- a/drivers/firmware/arm_scmi/power.c
+> +++ b/drivers/firmware/arm_scmi/power.c
+> @@ -6,6 +6,7 @@
+>   */
+>  
+>  #include "common.h"
+> +#include "notify.h"
+>  
+>  enum scmi_power_protocol_cmd {
+>  	POWER_DOMAIN_ATTRIBUTES = 0x3,
+> @@ -48,6 +49,12 @@ struct scmi_power_state_notify {
+>  	__le32 notify_enable;
+>  };
+>  
+> +struct scmi_power_state_notify_payld {
+> +	__le32 agent_id;
+> +	__le32 domain_id;
+> +	__le32 power_state;
+> +};
+> +
+>  struct power_dom_info {
+>  	bool state_set_sync;
+>  	bool state_set_async;
+> @@ -63,6 +70,11 @@ struct scmi_power_info {
+>  	struct power_dom_info *dom_info;
+>  };
+>  
+> +static enum scmi_power_protocol_cmd evt_2_cmd[] = {
+> +	POWER_STATE_NOTIFY,
+> +	POWER_STATE_CHANGE_REQUESTED_NOTIFY,
+> +};
+> +
+>  static int scmi_power_attributes_get(const struct scmi_handle *handle,
+>  				     struct scmi_power_info *pi)
+>  {
+> @@ -186,6 +198,111 @@ static struct scmi_power_ops power_ops = {
+>  	.state_get = scmi_power_state_get,
+>  };
+>  
+> +static int scmi_power_request_notify(const struct scmi_handle *handle,
+> +				     u32 domain, int message_id, bool enable)
+> +{
+> +	int ret;
+> +	struct scmi_xfer *t;
+> +	struct scmi_power_state_notify *notify;
+> +
+> +	ret = scmi_xfer_get_init(handle, message_id, SCMI_PROTOCOL_POWER,
+> +				 sizeof(*notify), 0, &t);
+> +	if (ret)
+> +		return ret;
+> +
+> +	notify = t->tx.buf;
+> +	notify->domain = cpu_to_le32(domain);
+> +	notify->notify_enable = enable ? cpu_to_le32(BIT(0)) : 0;
+> +
+> +	ret = scmi_do_xfer(handle, t);
+> +
+> +	scmi_xfer_put(handle, t);
+> +	return ret;
+> +}
+> +
+> +static bool scmi_power_set_notify_enabled(const struct scmi_handle *handle,
+> +					  u8 evt_id, u32 src_id, bool enable)
+> +{
+> +	int ret, cmd_id;
+> +
+> +	cmd_id = MAP_EVT_TO_ENABLE_CMD(evt_id, evt_2_cmd);
+> +	if (cmd_id < 0)
+> +		return false;
+> +
+> +	ret = scmi_power_request_notify(handle, src_id, cmd_id, enable);
+> +	if (ret)
+> +		pr_warn("SCMI Notifications - Proto:%X - FAIL_ENABLE - evt[%X] dom[%d] - ret:%d\n",
+> +				SCMI_PROTOCOL_POWER, evt_id, src_id, ret);
+> +
+> +	return !ret ? true : false;
 
-> 
-> 
-> You add ptrauth_strip_insn_pac() in this patch, but don't use it until the next one.
-> However... could you use it here?
+	return !ret;
 
-Yes ptrauth_strip_insn_pac can be used here not as a C function but as a 
-macro. I will post in my next version.
+	Is the same thing...
 
-> 
-> This would go wrong if __builtin_return_address() legitimately returned a value that was
-> mapped by TTBR0, we would force the top bits to be set instead of clearing the PAC bits.
-> This would corrupt the value instead of corrupting it.
-> 
-> I don't think there is anywhere this could happen today, but passing callbacks into UEFI
-> runtime services or making kernel calls from an idmap may both do this.
+> +}
+> +
+> +static void *scmi_power_fill_custom_report(u8 evt_id, u64 timestamp,
+> +					   const void *payld, size_t payld_sz,
+> +					   void *report, u32 *src_id)
+> +{
+> +	void *rep = NULL;
+> +
+> +	switch (evt_id) {
+> +	case POWER_STATE_CHANGED:
+> +	{
+> +		const struct scmi_power_state_notify_payld *p = payld;
+> +		struct scmi_power_state_changed_report *r = report;
+> +
+> +		if (sizeof(*p) != payld_sz)
+> +			break;
+> +
+> +		r->timestamp = timestamp;
+> +		r->agent_id = le32_to_cpu(p->agent_id);
+> +		r->domain_id = le32_to_cpu(p->domain_id);
+> +		r->power_state = le32_to_cpu(p->power_state);
+> +		*src_id = r->domain_id;
+> +		rep = r;
+> +		break;
+> +	}
+> +	case POWER_STATE_CHANGE_REQUESTED:
+> +	{
+> +		const struct scmi_power_state_notify_payld *p = payld;
+> +		struct scmi_power_state_change_requested_report *r = report;
+> +
+> +		if (sizeof(*p) != payld_sz)
+> +			break;
+> +
+> +		r->timestamp = timestamp;
+> +		r->agent_id = le32_to_cpu(p->agent_id);
+> +		r->domain_id = le32_to_cpu(p->domain_id);
+> +		r->power_state = le32_to_cpu(p->power_state);
+> +		*src_id = r->domain_id;
+> +		rep = r;
+> +		break;
+> +	}
+> +	default:
+> +		break;
+> +	}
+> +
+> +	return rep;
+> +}
+> +
+> +static const struct scmi_event power_events[] = {
+> +	{
+> +		.id = POWER_STATE_CHANGED,
+> +		.max_payld_sz = 12,
+> +		.max_report_sz =
+> +			sizeof(struct scmi_power_state_changed_report),
+> +	},
+> +	{
+> +		.id = POWER_STATE_CHANGE_REQUESTED,
+> +		.max_payld_sz = 12,
+> +		.max_report_sz =
+> +			sizeof(struct scmi_power_state_change_requested_report),
+> +	},
+> +};
+> +
+> +static const struct scmi_protocol_event_ops power_event_ops = {
+> +	.set_notify_enabled = scmi_power_set_notify_enabled,
+> +	.fill_custom_report = scmi_power_fill_custom_report,
+> +};
+> +
+>  static int scmi_power_protocol_init(struct scmi_handle *handle)
+>  {
+>  	int domain;
+> @@ -214,6 +331,12 @@ static int scmi_power_protocol_init(struct scmi_handle *handle)
+>  		scmi_power_domain_attributes_get(handle, domain, dom);
+>  	}
+>  
+> +	scmi_register_protocol_events(handle,
+> +				      SCMI_PROTOCOL_POWER, PAGE_SIZE,
+> +				      &power_event_ops, power_events,
+> +				      ARRAY_SIZE(power_events),
+> +				      pinfo->num_domains);
+> +
+>  	pinfo->version = version;
+>  	handle->power_ops = &power_ops;
+>  	handle->power_priv = pinfo;
+> diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
+> index 797e1e03ae52..baa117f9eda3 100644
+> --- a/include/linux/scmi_protocol.h
+> +++ b/include/linux/scmi_protocol.h
+> @@ -377,4 +377,19 @@ typedef int (*scmi_prot_init_fn_t)(struct scmi_handle *);
+>  int scmi_protocol_register(int protocol_id, scmi_prot_init_fn_t fn);
+>  void scmi_protocol_unregister(int protocol_id);
+>  
+> +/* SCMI Notification API - Custom Event Reports */
+> +struct scmi_power_state_changed_report {
+> +	ktime_t	timestamp;
+> +	u32	agent_id;
+> +	u32	domain_id;
+> +	u32	power_state;
+> +};
+> +
+> +struct scmi_power_state_change_requested_report {
+> +	ktime_t	timestamp;
+> +	u32	agent_id;
+> +	u32	domain_id;
+> +	u32	power_state;
+> +};
+> +
+>  #endif /* _LINUX_SCMI_PROTOCOL_H */
 
-I didnt thought about this scenario so did this way.
 
-> 
-> 
-> With that:
-> Reviewed-by: James Morse <james.morse@arm.com>
-
-Thankyou.
-
-Cheers,
-Amit
-> 
-> 
-> 
-> Thanks!
-> 
-> James
-> 
-> 
->> --- a/arch/arm64/include/asm/pointer_auth.h
->> +++ b/arch/arm64/include/asm/pointer_auth.h
->> @@ -68,16 +68,13 @@ static __always_inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kerne
->>   
->>   extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
->>   
->> -/*
->> - * The EL0 pointer bits used by a pointer authentication code.
->> - * This is dependent on TBI0 being enabled, or bits 63:56 would also apply.
->> - */
->> -#define ptrauth_user_pac_mask()	GENMASK(54, vabits_actual)
->> -
->> -/* Only valid for EL0 TTBR0 instruction pointers */
->> +/* Valid for EL0 TTBR0 and EL1 TTBR1 instruction pointers */
->>   static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
->>   {
->> -	return ptr & ~ptrauth_user_pac_mask();
->> +	if (ptr & BIT_ULL(55))
->> +		return ptr | ptrauth_kernel_pac_mask();
->> +	else
->> +		return ptr & ~ptrauth_user_pac_mask();
->>   }
->>   
->>   #define ptrauth_thread_init_user(tsk)					\
->>
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
