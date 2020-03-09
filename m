@@ -2,87 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B3C717E1A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 14:50:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1EFF17E1B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 14:53:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TllObklBuUn730AtAklPxW7f3syjIrnbAgWtZKyWO1M=; b=hoEhXxpH1wok5p
-	olr18FGUzhvE7r4S0NJa4XeEO4v3//dVz9m8+jhuMiu4WhSR4hAiZo3CuGLr5MtLfWDC1Y9NYCg2K
-	Hl0GJNDnDknH3ILg84GNwg95g9PU3CpvRkvEU+9aIGqhuhbbSW6oHL5MBd6NRjPTe6DZPINgk4+/3
-	+IdYGXgVZhO6f+jeYgVJlKnPj4jdQi/Qn42rl7ZpMg89+r3evbMudwutRAOlhTyiGTMH+LH5kd0aP
-	jTrSgbv3lm2YTooex6KXkU6+3h9/mvT5yxHCN9U30Z1sYTFB7JQ1BU+JaNVyIm6UthkpHpIB5GLc8
-	oZ026lLxCTKDCHkmCW6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=L+FEVpw1tKgRvQy6lKarXbTMR8IB2XYddRs1JuXn4lM=; b=HKGgWZoxh/+JSI4/JAF1n2k5E
+	kLw5n8DwGzpCyLB/sh2UdAt9gzb7EIjeJ4DjB/rXt7lc2DgNR9+NVmJk1ySNfKzDMhUldYLDt0U63
+	6zqPgLJqcnDnD4DiqmULqCX6oklvA4uXW95mk29kaFdGnsiOttGVr8+bu59sXcKOcWRebeVfBvbv+
+	k6Lk1ZON7T5iQjNHplN2iHmRy4ekOrBYQdy23kIpO8gtlq/U0rqP7NX5hxkV0ceY7+Tcp1LrtyLOL
+	eL2gjS4gY6cy0doawrepUKublJWqwetbgeZqd9YzRtCAmue51IZfo9ZqjmYxLLYq1aAHLjydXU6t4
+	4iD8iQ1OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBInu-0007DE-42; Mon, 09 Mar 2020 13:50:46 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBInm-0007CQ-QX
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 13:50:40 +0000
-Received: from mail-qk1-f173.google.com ([209.85.222.173]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1N4hex-1jIpp605ih-011fIb for <linux-arm-kernel@lists.infradead.org>; Mon,
- 09 Mar 2020 14:50:35 +0100
-Received: by mail-qk1-f173.google.com with SMTP id f198so9181556qke.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 06:50:34 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ2opjs8FuAbwTu0VVFr0VCxzS4yGggLUe3+YJWbIeRY00856zMK
- grZC7h4dLVdQbNHD7xDGH3gkDAvJ45xvWoiDWKk=
-X-Google-Smtp-Source: ADFU+vuqpwW8ZhxLQBpNPchoZcyzxLU401q7S/l6dUozKVJq9KHwtsxSODvooMUjZKLBpgQVX9CQBQG+FwLDoTO1dSg=
-X-Received: by 2002:a37:a4d6:: with SMTP id n205mr4917403qke.352.1583761833703; 
- Mon, 09 Mar 2020 06:50:33 -0700 (PDT)
+	id 1jBIqg-0007fw-Rm; Mon, 09 Mar 2020 13:53:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBIqV-0007f1-AM
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 13:53:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 700CD30E;
+ Mon,  9 Mar 2020 06:53:24 -0700 (PDT)
+Received: from [10.1.195.53] (e123572-lin.cambridge.arm.com [10.1.195.53])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 75DB73F67D;
+ Mon,  9 Mar 2020 06:53:22 -0700 (PDT)
+Subject: Re: [PATCH v2 16/19] arm64: mte: Allow user control of the tag check
+ mode via prctl()
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200226180526.3272848-1-catalin.marinas@arm.com>
+ <20200226180526.3272848-17-catalin.marinas@arm.com>
+From: Kevin Brodsky <kevin.brodsky@arm.com>
+Message-ID: <726c4184-ff15-b78c-9364-a81b76000107@arm.com>
+Date: Mon, 9 Mar 2020 13:53:02 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-References: <1578989048-10162-1-git-send-email-peng.fan@nxp.com>
- <20200114081751.3wjbbnaem7lbnn3v@pengutronix.de>
- <AM0PR04MB4481A2FB7E2C56C2386297E888340@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CAK8P3a3x55A8y9kR34zy8YyRhto8uay7PZGbDAufupiNS3+ihA@mail.gmail.com>
- <AM0PR04MB44813A1D55659658E3FA203188370@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CAK8P3a29=KWrhO8uu7mMS2gbeCGpkL7Q-xaaUVO2wcVD9MN93g@mail.gmail.com>
- <CAHCN7xKtfKVQeaAg9sjvc3cHjLoAqAX6F-JyvkG5u23w1OG8CA@mail.gmail.com>
- <AM0PR04MB4481B8BDAD2CD7376208B5F2880B0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CAK8P3a2gOq=qv5C6_0QwBXPuENqhBinK_KkzL5AcAEJtTDyB1w@mail.gmail.com>
- <AM0PR04MB44813F8292A36D84B3F80AEA88FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR04MB44813F8292A36D84B3F80AEA88FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 9 Mar 2020 14:50:17 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0Lc--pDmBG3mBiKyjpOEZVdKVBnLNYBdCjzdgN1byU3w@mail.gmail.com>
-Message-ID: <CAK8P3a0Lc--pDmBG3mBiKyjpOEZVdKVBnLNYBdCjzdgN1byU3w@mail.gmail.com>
-Subject: Re: [PATCH] soc: imx: Makefile: only build soc-imx8 when CONFIG_ARM64
-To: Peng Fan <peng.fan@nxp.com>
-X-Provags-ID: V03:K1:BPBJWKeONckSlyyXVfpMd7TY0ocWSddq0bQC7hC1HG4NvtTKWq+
- lb2huGMVofSF9U9fs6GHDkQWBRk40fq0dNC9Em54QnaZFzZ6OS8KCDr7CB3gEL/NJJUUEza
- prw1m1cq3+ipWu+fmRmZp824NCBNLG0Zmmn1mt8q9zmTBrc8GPlh79Wd4dqneXY0lgsaDUt
- FtCHWnb0dqGLVSpcP0Hig==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:p3DgtEONrEU=:wlEIW4Ve3LV8y17IW3dkEN
- uQyZu1mZXV/xAKWuTnMrWWHcwQi57FibE3MoubJR3ue6xdQkA49kIZQHo3+TZ61yzlUvqYaHQ
- pFHm+VaG/xXPiDYGo7zySR0yLNtBMSzDVCXS+aNI6aVg2l8NuB4+ausS6R4yfqOfoDPP+wgYu
- Ox2kOL0uoGSXNaZcX3tEsJ41EFrlbC0KxpslfdB2MhPTY/RI3AMnJl2/lbVsoUnQZLvD5EEwm
- ipiWDfGJGKxlqNEElFc9/RIJmzBQYbySBthQ3k9/oAXVq1KQvdTAMITpC+CS9j9/Dnfv+xo5c
- Br7HWipBMeQB1nOD1ViZp4QWTiTwqzN3elutijSY5og8HmIwlVpKGD+GQVZYo9wX0/HS9Vtnn
- 7yqECCbSt8bQSW2jaHl2NgRbbqGJHe0W3+kw4D7OpJrDkOcY0wu3qj3V9Igh7SCDcjFezlizd
- HNAsHfksnQXnMna2wBWMS7AhN9+LrODgqOLmCkwG6/QYadZY0EfJFVa0+doolWY2e47GA8BG/
- HKAY0fzpqbJhI3pRV/Xxi9/hmmx/ejKhKH1a+vbkJxJwDm8E3bAAG5Dhtvn2xPzdPrt/4ZVxh
- +nFKBxmHYFN6Otsi5bzWHpF8mWHPyPGrJSOQqBQaqXs9W5Q5pTpScylfrNxilYsXud3rnqZb6
- SEkn1XcK2P6SV7cWtIlj2TS3ZnCoW2o6BEkhFPVo7aoI/cUXGFTTrSaG65Z0+nDfiLB2S8Icg
- 13Jea6rf1Ag7ca+MhUplHvqk/YwZsjWpIqwF05ZIqxOsVEcIntaVmLMKa0DlgoMnESmjQw5Ld
- 6dG/Ozr4eYBEY9XCaBQFNi+zSWlMjyyQwoLMrD0RngVzV8j0tA=
+In-Reply-To: <20200226180526.3272848-17-catalin.marinas@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_065039_150529_FD58E4E3 
-X-CRM114-Status: GOOD (  23.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200309_065328_380142_BC2A49A0 
+X-CRM114-Status: GOOD (  26.29  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,82 +66,266 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <anson.huang@nxp.com>, Adam Ford <aford173@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 9, 2020 at 2:28 PM Peng Fan <peng.fan@nxp.com> wrote:
-> > Subject: Re: [PATCH] soc: imx: Makefile: only build soc-imx8 when
-> > CONFIG_ARM64
-> >
-> > On Mon, Jan 27, 2020 at 6:05 AM Peng Fan <peng.fan@nxp.com> wrote:
-> > > > Subject: Re: [PATCH] soc: imx: Makefile: only build soc-imx8 when
-> > > > Does anyone have any suggestions on where I might find some generic
-> > > > stuff for either iMX8M or generic ARMv8 docs for doing something like
-> > this?
-> > >
-> > > We did a porting for one customer, but code is not public available.
-> > >
-> > > First let uboot switch to AARCH32 mode when booting Linux, this is
-> > > already supported by uboot mailine.
-> > >
-> > > Second, create a mach-imx8m.c under arch/arm/mach-imx to handle
-> > i.MX8M
-> > > just like other i.mx arm32 socs. This is not preferred by Linux community.
-> > >
-> > > 3rd, build i.MX8M drivers when using imx_v7_defconfig( or
-> > > imx_v6_v7_defconfig in upstream)
-> >
-> > I think the third part is something we can clearly do once it actually boots.
-> >
-> > Can you post the patch for the second part for reference? In theory nothing
-> > should be necessary there, so I wonder what I'm missing (as we need no code
-> > for arch/arm64) and what we can do differently to make it work out of the
-> > box.
-> >
-> > Is the problem that the SMP bringup using PSCI for arm64 doesn't work with
-> > the 32-bit kernel for some reason?
+
+
+On 26/02/2020 18:05, Catalin Marinas wrote:
+> By default, even if PROT_MTE is set on a memory range, there is no tag
+> check fault reporting (SIGSEGV). Introduce a set of option to the
+> exiting prctl(PR_SET_TAGGED_ADDR_CTRL) to allow user control of the tag
+> check fault mode:
 >
-> Sorry for long time delay. I forgot your mail. I did some try again, seems only need
-> the following piece code to make it boot, also select GIC_V3 and drop some ARM64
-> dependencies in Kconfig for some i.MX drivers.
-> Need some addition work in ATF/U-Boot
-> to make smp work, that is not Linux related.
-
-Ah, nice!
-
-> +static const char *const imx8mm_dt_compat[] __initconst = {
-> +       "fsl,imx8mm",
-> +       NULL,
-> +};
+>    PR_MTE_TCF_NONE  - no reporting (default)
+>    PR_MTE_TCF_SYNC  - synchronous tag check fault reporting
+>    PR_MTE_TCF_ASYNC - asynchronous tag check fault reporting
+>
+> These options translate into the corresponding SCTLR_EL1.TCF0 bitfield,
+> context-switched by the kernel. Note that uaccess done by the kernel is
+> not checked and cannot be configured by the user.
+>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>
+> Notes:
+>      v2:
+>      - Handle SCTLR_EL1_TCF0_NONE explicitly for consistency with PR_MTE_TCF_NONE.
+>      - Fix SCTLR_EL1 register setting in flush_mte_state() (thanks to Peter
+>        Collingbourne).
+>      - Added ISB to update_sctlr_el1_tcf0() since, with the latest
+>        architecture update/fix, the TCF0 field is used by the uaccess
+>        routines.
+>
+>   arch/arm64/include/asm/mte.h       | 10 +++++
+>   arch/arm64/include/asm/processor.h |  3 ++
+>   arch/arm64/kernel/mte.c            | 71 ++++++++++++++++++++++++++++++
+>   arch/arm64/kernel/process.c        | 19 ++++++--
+>   include/uapi/linux/prctl.h         |  6 +++
+>   5 files changed, 106 insertions(+), 3 deletions(-)
+>
+> diff --git a/arch/arm64/include/asm/mte.h b/arch/arm64/include/asm/mte.h
+> index 0d7f7ca07ee6..3dc0a7977124 100644
+> --- a/arch/arm64/include/asm/mte.h
+> +++ b/arch/arm64/include/asm/mte.h
+> @@ -12,6 +12,8 @@ int mte_memcmp_pages(const void *page1_addr, const void *page2_addr);
+>   #ifdef CONFIG_ARM64_MTE
+>   void flush_mte_state(void);
+>   void mte_thread_switch(struct task_struct *next);
+> +long set_mte_ctrl(unsigned long arg);
+> +long get_mte_ctrl(void);
+>   #else
+>   static inline void flush_mte_state(void)
+>   {
+> @@ -19,6 +21,14 @@ static inline void flush_mte_state(void)
+>   static inline void mte_thread_switch(struct task_struct *next)
+>   {
+>   }
+> +static inline long set_mte_ctrl(unsigned long arg)
+> +{
+> +	return 0;
+> +}
+> +static inline long get_mte_ctrl(void)
+> +{
+> +	return 0;
+> +}
+>   #endif
+>   
+>   #endif /* __ASSEMBLY__ */
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index 5ba63204d078..91aa270afc7d 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -148,6 +148,9 @@ struct thread_struct {
+>   #ifdef CONFIG_ARM64_PTR_AUTH
+>   	struct ptrauth_keys	keys_user;
+>   #endif
+> +#ifdef CONFIG_ARM64_MTE
+> +	u64			sctlr_tcf0;
+> +#endif
+>   };
+>   
+>   static inline void arch_thread_struct_whitelist(unsigned long *offset,
+> diff --git a/arch/arm64/kernel/mte.c b/arch/arm64/kernel/mte.c
+> index 0c2c900fa01c..4b926d779940 100644
+> --- a/arch/arm64/kernel/mte.c
+> +++ b/arch/arm64/kernel/mte.c
+> @@ -3,12 +3,34 @@
+>    * Copyright (C) 2020 ARM Ltd.
+>    */
+>   
+> +#include <linux/prctl.h>
+> +#include <linux/sched.h>
+>   #include <linux/thread_info.h>
+>   
+>   #include <asm/cpufeature.h>
+>   #include <asm/mte.h>
+>   #include <asm/sysreg.h>
+>   
+> +static void update_sctlr_el1_tcf0(u64 tcf0)
+> +{
+> +	/* ISB required for the kernel uaccess routines */
+> +	sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
+> +	isb();
+> +}
 > +
-> +#include <asm/mach/arch.h>
-> +DT_MACHINE_START(IMX7D, "Freescale i.MX8MM (Device Tree)")
-> +       .dt_compat      = imx8mm_dt_compat,
-> +MACHINE_END
->
->
-> Are you ok we add such piece code in drivers/soc/imx/soc-imx8.c to support
-> aarch32 linux?
+> +static void set_sctlr_el1_tcf0(u64 tcf0)
+> +{
+> +	/*
+> +	 * mte_thread_switch() checks current->thread.sctlr_tcf0 as an
+> +	 * optimisation. Disable preemption so that it does not see
+> +	 * the variable update before the SCTLR_EL1.TCF0 one.
+> +	 */
+> +	preempt_disable();
+> +	current->thread.sctlr_tcf0 = tcf0;
+> +	update_sctlr_el1_tcf0(tcf0);
+> +	preempt_enable();
+> +}
+> +
+>   void flush_mte_state(void)
+>   {
+>   	if (!system_supports_mte())
+> @@ -16,6 +38,8 @@ void flush_mte_state(void)
+>   
+>   	/* clear any pending asynchronous tag fault */
+>   	clear_thread_flag(TIF_MTE_ASYNC_FAULT);
+> +	/* disable tag checking */
+> +	set_sctlr_el1_tcf0(0);
 
-I don't think that code does anything other than set the machine name. Are you
-sure it doesn't work without that?
+For consistency: set_sctlr_el1_tcf0(SCTLR_EL1_TCF0_NONE);
 
-If it's indeed required, I'd prefer to add a file for in arch/arm/mach-imx than
-in drivers/soc/.
+Kevin
 
-      Arnd
+>   }
+>   
+>   void mte_thread_switch(struct task_struct *next)
+> @@ -34,4 +58,51 @@ void mte_thread_switch(struct task_struct *next)
+>   		set_thread_flag(TIF_MTE_ASYNC_FAULT);
+>   		write_sysreg_s(0, SYS_TFSRE0_EL1);
+>   	}
+> +
+> +	/* avoid expensive SCTLR_EL1 accesses if no change */
+> +	if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
+> +		update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
+> +}
+> +
+> +long set_mte_ctrl(unsigned long arg)
+> +{
+> +	u64 tcf0;
+> +
+> +	if (!system_supports_mte())
+> +		return 0;
+> +
+> +	switch (arg & PR_MTE_TCF_MASK) {
+> +	case PR_MTE_TCF_NONE:
+> +		tcf0 = SCTLR_EL1_TCF0_NONE;
+> +		break;
+> +	case PR_MTE_TCF_SYNC:
+> +		tcf0 = SCTLR_EL1_TCF0_SYNC;
+> +		break;
+> +	case PR_MTE_TCF_ASYNC:
+> +		tcf0 = SCTLR_EL1_TCF0_ASYNC;
+> +		break;
+> +	default:
+> +		return -EINVAL;
+> +	}
+> +
+> +	set_sctlr_el1_tcf0(tcf0);
+> +
+> +	return 0;
+> +}
+> +
+> +long get_mte_ctrl(void)
+> +{
+> +	if (!system_supports_mte())
+> +		return 0;
+> +
+> +	switch (current->thread.sctlr_tcf0) {
+> +	case SCTLR_EL1_TCF0_NONE:
+> +		return PR_MTE_TCF_NONE;
+> +	case SCTLR_EL1_TCF0_SYNC:
+> +		return PR_MTE_TCF_SYNC;
+> +	case SCTLR_EL1_TCF0_ASYNC:
+> +		return PR_MTE_TCF_ASYNC;
+> +	}
+> +
+> +	return 0;
+>   }
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 1b732150f51a..b3c8cd64b88a 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -578,9 +578,15 @@ static unsigned int tagged_addr_disabled;
+>   
+>   long set_tagged_addr_ctrl(unsigned long arg)
+>   {
+> +	unsigned long valid_mask = PR_TAGGED_ADDR_ENABLE;
+> +
+>   	if (is_compat_task())
+>   		return -EINVAL;
+> -	if (arg & ~PR_TAGGED_ADDR_ENABLE)
+> +
+> +	if (system_supports_mte())
+> +		valid_mask |= PR_MTE_TCF_MASK;
+> +
+> +	if (arg & ~valid_mask)
+>   		return -EINVAL;
+>   
+>   	/*
+> @@ -590,6 +596,9 @@ long set_tagged_addr_ctrl(unsigned long arg)
+>   	if (arg & PR_TAGGED_ADDR_ENABLE && tagged_addr_disabled)
+>   		return -EINVAL;
+>   
+> +	if (set_mte_ctrl(arg) != 0)
+> +		return -EINVAL;
+> +
+>   	update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
+>   
+>   	return 0;
+> @@ -597,13 +606,17 @@ long set_tagged_addr_ctrl(unsigned long arg)
+>   
+>   long get_tagged_addr_ctrl(void)
+>   {
+> +	long ret = 0;
+> +
+>   	if (is_compat_task())
+>   		return -EINVAL;
+>   
+>   	if (test_thread_flag(TIF_TAGGED_ADDR))
+> -		return PR_TAGGED_ADDR_ENABLE;
+> +		ret = PR_TAGGED_ADDR_ENABLE;
+>   
+> -	return 0;
+> +	ret |= get_mte_ctrl();
+> +
+> +	return ret;
+>   }
+>   
+>   /*
+> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+> index 07b4f8131e36..2390ab324afa 100644
+> --- a/include/uapi/linux/prctl.h
+> +++ b/include/uapi/linux/prctl.h
+> @@ -233,6 +233,12 @@ struct prctl_mm_map {
+>   #define PR_SET_TAGGED_ADDR_CTRL		55
+>   #define PR_GET_TAGGED_ADDR_CTRL		56
+>   # define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
+> +/* MTE tag check fault modes */
+> +# define PR_MTE_TCF_SHIFT		1
+> +# define PR_MTE_TCF_NONE		(0UL << PR_MTE_TCF_SHIFT)
+> +# define PR_MTE_TCF_SYNC		(1UL << PR_MTE_TCF_SHIFT)
+> +# define PR_MTE_TCF_ASYNC		(2UL << PR_MTE_TCF_SHIFT)
+> +# define PR_MTE_TCF_MASK		(3UL << PR_MTE_TCF_SHIFT)
+>   
+>   /* Control reclaim behavior when allocating memory */
+>   #define PR_SET_IO_FLUSHER		57
+
 
 _______________________________________________
 linux-arm-kernel mailing list
