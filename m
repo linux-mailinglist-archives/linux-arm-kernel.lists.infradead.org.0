@@ -2,56 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3D5517E721
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:30:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 291D417E770
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:47:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=us9I10b56wtOou8FOWQ2+1eVMHgHRaOrYtMOtLsELqA=; b=J9hzOnNsugoXAc
-	nPHh1tY4sCzwVR4fR9y9APSs/VnOwlYEsGCyoazRisnYog7G8rgiDFGNlVFEg5gqEyr8oXNWrDXj7
-	n4pNrAYnZEuL5l2McAqHCyG5PSOkHZaWbmUFCbL/YRLdU0TPP09gLsVqrfzMjiVqsojM4mjXVzQaA
-	Y7etJG24q100OImjPMg6Sh08iBIUdufcJHil1vzeyGAYUeK7fs4zW+Oe1394ir3dQTLluEa2H685N
-	iwus/jwURxoF/XoMgVoFKd5e9ov73d5ztCME2U/3XPkqzlW/MgbvIYOmWFyEkpbTudvmMPGPsBPFn
-	Csfx/afmeqfJhTUP3khw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6z3Fto95EP/XKdk9n1vZAiJNJtDFHKHeAojZuIi21N0=; b=QlHhnBuVe6fM0Y
+	OjNDLzzVanoO2vToLfsEmAo8PvgGICFZLF1nYL8nnos4vEGHW/qOZv+aOCONuOOGKCOJu7u5qD2NJ
+	YWWQYw66tr+evs1OIM4di6QB1XOvs+rGBgN9OW3PbxYEjLxaA7irUmR8YyC3jiqMWUBIv9i7DDRnw
+	LuwB1NYT+69SLaH6Y+0OQCqJo6ZPF+Nqs1Y/NOei98m+VezVrNuuSxE+Dc77uhL66OolUuTtJFuuJ
+	IS/vXQcd31xm4Aw+Ov+Rrsus7NFXYHBxdefz5Jemk2s3Y2jFynrhpOPzEqwZ6vb30fuC1kIDy8Gfd
+	tuAdKMPGQKBbuSittWkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBNAK-0000kG-9z; Mon, 09 Mar 2020 18:30:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBNAC-0000jb-DD
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:30:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8606C1FB;
- Mon,  9 Mar 2020 11:30:03 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 42EEA3F67D;
- Mon,  9 Mar 2020 11:30:02 -0700 (PDT)
-Date: Mon, 9 Mar 2020 18:29:59 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: "David S . Miller" <davem@davemloft.net>, Radhey Shyam Pandey
- <radhey.shyam.pandey@xilinx.com>
-Subject: Re: [PATCH v2 04/14] net: axienet: Fix DMA descriptor cleanup path
-Message-ID: <20200309182959.080fa773@donnerap.cambridge.arm.com>
-In-Reply-To: <20200309181851.190164-5-andre.przywara@arm.com>
+	id 1jBNQe-0008Ro-0q; Mon, 09 Mar 2020 18:47:04 +0000
+Received: from sed198n136.sedsystems.ca ([198.169.180.136])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBNQW-0008RJ-Ms
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:46:58 +0000
+Received: from barney.sedsystems.ca (barney [198.169.180.121])
+ by sed198n136.sedsystems.ca  with ESMTP id 029IkPJZ008513
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 9 Mar 2020 12:46:26 -0600 (CST)
+Received: from eng1n65.eng.sedsystems.ca (eng1n65.eng.sedsystems.ca
+ [172.21.1.65])
+ by barney.sedsystems.ca (8.14.7/8.14.4) with ESMTP id 029IkPuG051188
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Mon, 9 Mar 2020 12:46:25 -0600
+Subject: Re: [PATCH v2 12/14] net: axienet: Upgrade descriptors to hold 64-bit
+ addresses
+To: Andre Przywara <andre.przywara@arm.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 References: <20200309181851.190164-1-andre.przywara@arm.com>
- <20200309181851.190164-5-andre.przywara@arm.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+ <20200309181851.190164-13-andre.przywara@arm.com>
+From: Robert Hancock <hancock@sedsystems.ca>
+Autocrypt: addr=hancock@sedsystems.ca; prefer-encrypt=mutual; keydata=
+ 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
+Organization: SED Systems
+Message-ID: <a0cab814-4c93-a59c-55cb-3c5f17c1bcde@sedsystems.ca>
+Date: Mon, 9 Mar 2020 12:46:25 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200309181851.190164-13-andre.przywara@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.64 on 198.169.180.136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_113004_535897_A564F70C 
-X-CRM114-Status: GOOD (  21.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200309_114656_950520_D4DA9B17 
+X-CRM114-Status: GOOD (  25.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [198.169.180.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,111 +116,334 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
  linux-kernel@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
- Robert Hancock <hancock@sedsystems.ca>, rmk+kernel@arm.linux.org.uk,
- linux-arm-kernel@lists.infradead.org
+ rmk+kernel@arm.linux.org.uk, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon,  9 Mar 2020 18:18:41 +0000
-Andre Przywara <andre.przywara@arm.com> wrote:
-
-Hi Radhey,
-
-you looked at this patch before, it was [PATCH 03/14] back then.
-You ended up saying "Looks fine then.", but I didn't dare to convert this into a "Reviewed-by:" tag.
-Just a hint that I didn't change anything, that might simplify the review.
-
-Cheers,
-Andre
-
-> When axienet_dma_bd_init() bails out during the initialisation process,
-> it might do so with parts of the structure already allocated and
-> initialised, while other parts have not been touched yet. Before
-> returning in this case, we call axienet_dma_bd_release(), which does not
-> take care of this corner case.
-> This is most obvious by the first loop happily dereferencing
-> lp->rx_bd_v, which we actually check to be non NULL *afterwards*.
+On 2020-03-09 12:18 p.m., Andre Przywara wrote:
+> Newer revisions of the AXI DMA IP (>= v7.1) support 64-bit addresses,
+> both for the descriptors itself, as well as for the buffers they are
+> pointing to.
+> This is realised by adding "MSB" words for the next and phys pointer
+> right behind the existing address word, now named "LSB". These MSB words
+> live in formerly reserved areas of the descriptor.
 > 
-> Make sure we only unmap or free already allocated structures, by:
-> - directly returning with -ENOMEM if nothing has been allocated at all
-> - checking for lp->rx_bd_v to be non-NULL *before* using it
-> - only unmapping allocated DMA RX regions
+> If the hardware supports it, write both words when setting an address.
+> The buffer address is handled by two wrapper functions, the two
+> occasions where we set the next pointers are open coded.
 > 
-> This avoids NULL pointer dereferences when initialisation fails.
+> For now this is guarded by a flag which we don't set yet.
 > 
 > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 > ---
->  .../net/ethernet/xilinx/xilinx_axienet_main.c | 43 ++++++++++++-------
->  1 file changed, 28 insertions(+), 15 deletions(-)
+>  drivers/net/ethernet/xilinx/xilinx_axienet.h  |   9 +-
+>  .../net/ethernet/xilinx/xilinx_axienet_main.c | 113 ++++++++++++------
+>  2 files changed, 83 insertions(+), 39 deletions(-)
 > 
+> diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet.h b/drivers/net/ethernet/xilinx/xilinx_axienet.h
+> index fb7450ca5c53..84c4c3655516 100644
+> --- a/drivers/net/ethernet/xilinx/xilinx_axienet.h
+> +++ b/drivers/net/ethernet/xilinx/xilinx_axienet.h
+> @@ -328,6 +328,7 @@
+>  #define XAE_FEATURE_PARTIAL_TX_CSUM	(1 << 1)
+>  #define XAE_FEATURE_FULL_RX_CSUM	(1 << 2)
+>  #define XAE_FEATURE_FULL_TX_CSUM	(1 << 3)
+> +#define XAE_FEATURE_DMA_64BIT		(1 << 4)
+>  
+>  #define XAE_NO_CSUM_OFFLOAD		0
+>  
+> @@ -340,9 +341,9 @@
+>  /**
+>   * struct axidma_bd - Axi Dma buffer descriptor layout
+>   * @next:         MM2S/S2MM Next Descriptor Pointer
+> - * @reserved1:    Reserved and not used
+> + * @next_msb:     MM2S/S2MM Next Descriptor Pointer (high 32 bits)
+>   * @phys:         MM2S/S2MM Buffer Address
+> - * @reserved2:    Reserved and not used
+> + * @phys_msb:     MM2S/S2MM Buffer Address (high 32 bits)
+>   * @reserved3:    Reserved and not used
+>   * @reserved4:    Reserved and not used
+>   * @cntrl:        MM2S/S2MM Control value
+> @@ -355,9 +356,9 @@
+>   */
+>  struct axidma_bd {
+>  	u32 next;	/* Physical address of next buffer descriptor */
+> -	u32 reserved1;
+> +	u32 next_msb;	/* high 32 bits for IP >= v7.1, reserved on older IP */
+>  	u32 phys;
+> -	u32 reserved2;
+> +	u32 phys_msb;	/* for IP >= v7.1, reserved for older IP */
+>  	u32 reserved3;
+>  	u32 reserved4;
+>  	u32 cntrl;
 > diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> index 64f73533cabe..9903205d57ec 100644
+> index ea44ef4cf288..edee0666d52c 100644
 > --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 > +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-> @@ -160,24 +160,37 @@ static void axienet_dma_bd_release(struct net_device *ndev)
->  	int i;
->  	struct axienet_local *lp = netdev_priv(ndev);
->  
-> +	/* If we end up here, tx_bd_v must have been DMA allocated. */
-> +	dma_free_coherent(ndev->dev.parent,
-> +			  sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
-> +			  lp->tx_bd_v,
-> +			  lp->tx_bd_p);
-> +
-> +	if (!lp->rx_bd_v)
-> +		return;
-> +
->  	for (i = 0; i < lp->rx_bd_num; i++) {
-> -		dma_unmap_single(ndev->dev.parent, lp->rx_bd_v[i].phys,
-> -				 lp->max_frm_size, DMA_FROM_DEVICE);
-> +		/* A NULL skb means this descriptor has not been initialised
-> +		 * at all.
-> +		 */
-> +		if (!lp->rx_bd_v[i].skb)
-> +			break;
-> +
->  		dev_kfree_skb(lp->rx_bd_v[i].skb);
-> -	}
->  
-> -	if (lp->rx_bd_v) {
-> -		dma_free_coherent(ndev->dev.parent,
-> -				  sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
-> -				  lp->rx_bd_v,
-> -				  lp->rx_bd_p);
-> -	}
-> -	if (lp->tx_bd_v) {
-> -		dma_free_coherent(ndev->dev.parent,
-> -				  sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
-> -				  lp->tx_bd_v,
-> -				  lp->tx_bd_p);
-> +		/* For each descriptor, we programmed cntrl with the (non-zero)
-> +		 * descriptor size, after it had been successfully allocated.
-> +		 * So a non-zero value in there means we need to unmap it.
-> +		 */
-> +		if (lp->rx_bd_v[i].cntrl)
-> +			dma_unmap_single(ndev->dev.parent, lp->rx_bd_v[i].phys,
-> +					 lp->max_frm_size, DMA_FROM_DEVICE);
->  	}
-> +
-> +	dma_free_coherent(ndev->dev.parent,
-> +			  sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
-> +			  lp->rx_bd_v,
-> +			  lp->rx_bd_p);
+> @@ -153,6 +153,25 @@ static void axienet_dma_out_addr(struct axienet_local *lp, off_t reg,
+>  	axienet_dma_out32(lp, reg, lower_32_bits(addr));
 >  }
 >  
->  /**
-> @@ -207,7 +220,7 @@ static int axienet_dma_bd_init(struct net_device *ndev)
->  					 sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
->  					 &lp->tx_bd_p, GFP_KERNEL);
->  	if (!lp->tx_bd_v)
-> -		goto out;
-> +		return -ENOMEM;
->  
->  	lp->rx_bd_v = dma_alloc_coherent(ndev->dev.parent,
->  					 sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
+> +static void desc_set_phys_addr(struct axienet_local *lp, dma_addr_t addr,
+> +			       struct axidma_bd *desc)
+> +{
+> +	desc->phys = lower_32_bits(addr);
+> +	if (lp->features & XAE_FEATURE_DMA_64BIT)
+> +		desc->phys_msb = upper_32_bits(addr);
+> +}
+> +
+> +static dma_addr_t desc_get_phys_addr(struct axienet_local *lp,
+> +				     struct axidma_bd *desc)
+> +{
+> +	dma_addr_t ret = desc->phys;
+> +
+> +	if (lp->features & XAE_FEATURE_DMA_64BIT)
+> +		ret |= (dma_addr_t)desc->phys_msb << 32;
 
+Does this compile/work properly on a 32-bit kernel? If dma_addr_t was a
+32-bit type, I would expect that left-shifting by 32 bits may not do
+what you want. Not sure if there is an inverse to lower_32_bits and
+upper_32_bits macros?
+
+> +
+> +	return ret;
+> +}
+> +
+>  /**
+>   * axienet_dma_bd_release - Release buffer descriptor rings
+>   * @ndev:	Pointer to the net_device structure
+> @@ -176,6 +195,8 @@ static void axienet_dma_bd_release(struct net_device *ndev)
+>  		return;
+>  
+>  	for (i = 0; i < lp->rx_bd_num; i++) {
+> +		dma_addr_t phys;
+> +
+>  		/* A NULL skb means this descriptor has not been initialised
+>  		 * at all.
+>  		 */
+> @@ -188,9 +209,11 @@ static void axienet_dma_bd_release(struct net_device *ndev)
+>  		 * descriptor size, after it had been successfully allocated.
+>  		 * So a non-zero value in there means we need to unmap it.
+>  		 */
+> -		if (lp->rx_bd_v[i].cntrl)
+> -			dma_unmap_single(ndev->dev.parent, lp->rx_bd_v[i].phys,
+> +		if (lp->rx_bd_v[i].cntrl) {
+> +			phys = desc_get_phys_addr(lp, &lp->rx_bd_v[i]);
+> +			dma_unmap_single(ndev->dev.parent, phys,
+>  					 lp->max_frm_size, DMA_FROM_DEVICE);
+> +		}
+>  	}
+>  
+>  	dma_free_coherent(ndev->dev.parent,
+> @@ -235,29 +258,36 @@ static int axienet_dma_bd_init(struct net_device *ndev)
+>  		goto out;
+>  
+>  	for (i = 0; i < lp->tx_bd_num; i++) {
+> -		lp->tx_bd_v[i].next = lp->tx_bd_p +
+> -				      sizeof(*lp->tx_bd_v) *
+> -				      ((i + 1) % lp->tx_bd_num);
+> +		dma_addr_t addr = lp->tx_bd_p +
+> +				  sizeof(*lp->tx_bd_v) *
+> +				  ((i + 1) % lp->tx_bd_num);
+> +
+> +		lp->tx_bd_v[i].next = lower_32_bits(addr);
+> +		if (lp->features & XAE_FEATURE_DMA_64BIT)
+> +			lp->tx_bd_v[i].next_msb = upper_32_bits(addr);
+>  	}
+>  
+>  	for (i = 0; i < lp->rx_bd_num; i++) {
+> -		lp->rx_bd_v[i].next = lp->rx_bd_p +
+> -				      sizeof(*lp->rx_bd_v) *
+> -				      ((i + 1) % lp->rx_bd_num);
+> +		dma_addr_t addr;
+> +
+> +		addr = lp->rx_bd_p + sizeof(*lp->rx_bd_v) *
+> +			((i + 1) % lp->rx_bd_num);
+> +		lp->rx_bd_v[i].next = lower_32_bits(addr);
+> +		if (lp->features & XAE_FEATURE_DMA_64BIT)
+> +			lp->rx_bd_v[i].next_msb = upper_32_bits(addr);
+>  
+>  		skb = netdev_alloc_skb_ip_align(ndev, lp->max_frm_size);
+>  		if (!skb)
+>  			goto out;
+>  
+>  		lp->rx_bd_v[i].skb = skb;
+> -		lp->rx_bd_v[i].phys = dma_map_single(ndev->dev.parent,
+> -						     skb->data,
+> -						     lp->max_frm_size,
+> -						     DMA_FROM_DEVICE);
+> -		if (dma_mapping_error(ndev->dev.parent, lp->rx_bd_v[i].phys)) {
+> +		addr = dma_map_single(ndev->dev.parent, skb->data,
+> +				      lp->max_frm_size, DMA_FROM_DEVICE);
+> +		if (dma_mapping_error(ndev->dev.parent, addr)) {
+>  			netdev_err(ndev, "DMA mapping error\n");
+>  			goto out;
+>  		}
+> +		desc_set_phys_addr(lp, addr, &lp->rx_bd_v[i]);
+>  
+>  		lp->rx_bd_v[i].cntrl = lp->max_frm_size;
+>  	}
+> @@ -573,6 +603,7 @@ static int axienet_free_tx_chain(struct net_device *ndev, u32 first_bd,
+>  	struct axienet_local *lp = netdev_priv(ndev);
+>  	int max_bds = (nr_bds != -1) ? nr_bds : lp->tx_bd_num;
+>  	struct axidma_bd *cur_p;
+> +	dma_addr_t phys;
+>  	unsigned int status;
+>  	int i;
+>  
+> @@ -586,9 +617,10 @@ static int axienet_free_tx_chain(struct net_device *ndev, u32 first_bd,
+>  		if (nr_bds == -1 && !(status & XAXIDMA_BD_STS_COMPLETE_MASK))
+>  			break;
+>  
+> -		dma_unmap_single(ndev->dev.parent, cur_p->phys,
+> -				(cur_p->cntrl & XAXIDMA_BD_CTRL_LENGTH_MASK),
+> -				DMA_TO_DEVICE);
+> +		phys = desc_get_phys_addr(lp, cur_p);
+> +		dma_unmap_single(ndev->dev.parent, phys,
+> +				 (cur_p->cntrl & XAXIDMA_BD_CTRL_LENGTH_MASK),
+> +				 DMA_TO_DEVICE);
+>  
+>  		if (cur_p->skb && (status & XAXIDMA_BD_STS_COMPLETE_MASK))
+>  			dev_consume_skb_irq(cur_p->skb);
+> @@ -684,7 +716,7 @@ axienet_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+>  	u32 csum_start_off;
+>  	u32 csum_index_off;
+>  	skb_frag_t *frag;
+> -	dma_addr_t tail_p;
+> +	dma_addr_t tail_p, phys;
+>  	struct axienet_local *lp = netdev_priv(ndev);
+>  	struct axidma_bd *cur_p;
+>  	u32 orig_tail_ptr = lp->tx_bd_tail;
+> @@ -723,14 +755,15 @@ axienet_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+>  		cur_p->app0 |= 2; /* Tx Full Checksum Offload Enabled */
+>  	}
+>  
+> -	cur_p->phys = dma_map_single(ndev->dev.parent, skb->data,
+> -				     skb_headlen(skb), DMA_TO_DEVICE);
+> -	if (unlikely(dma_mapping_error(ndev->dev.parent, cur_p->phys))) {
+> +	phys = dma_map_single(ndev->dev.parent, skb->data,
+> +			      skb_headlen(skb), DMA_TO_DEVICE);
+> +	if (unlikely(dma_mapping_error(ndev->dev.parent, phys))) {
+>  		if (net_ratelimit())
+>  			netdev_err(ndev, "TX DMA mapping error\n");
+>  		ndev->stats.tx_dropped++;
+>  		return NETDEV_TX_OK;
+>  	}
+> +	desc_set_phys_addr(lp, phys, cur_p);
+>  	cur_p->cntrl = skb_headlen(skb) | XAXIDMA_BD_CTRL_TXSOF_MASK;
+>  
+>  	for (ii = 0; ii < num_frag; ii++) {
+> @@ -738,11 +771,11 @@ axienet_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+>  			lp->tx_bd_tail = 0;
+>  		cur_p = &lp->tx_bd_v[lp->tx_bd_tail];
+>  		frag = &skb_shinfo(skb)->frags[ii];
+> -		cur_p->phys = dma_map_single(ndev->dev.parent,
+> -					     skb_frag_address(frag),
+> -					     skb_frag_size(frag),
+> -					     DMA_TO_DEVICE);
+> -		if (unlikely(dma_mapping_error(ndev->dev.parent, cur_p->phys))) {
+> +		phys = dma_map_single(ndev->dev.parent,
+> +				      skb_frag_address(frag),
+> +				      skb_frag_size(frag),
+> +				      DMA_TO_DEVICE);
+> +		if (unlikely(dma_mapping_error(ndev->dev.parent, phys))) {
+>  			if (net_ratelimit())
+>  				netdev_err(ndev, "TX DMA mapping error\n");
+>  			ndev->stats.tx_dropped++;
+> @@ -752,6 +785,7 @@ axienet_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+>  
+>  			return NETDEV_TX_OK;
+>  		}
+> +		desc_set_phys_addr(lp, phys, cur_p);
+>  		cur_p->cntrl = skb_frag_size(frag);
+>  	}
+>  
+> @@ -790,10 +824,12 @@ static void axienet_recv(struct net_device *ndev)
+>  	cur_p = &lp->rx_bd_v[lp->rx_bd_ci];
+>  
+>  	while ((cur_p->status & XAXIDMA_BD_STS_COMPLETE_MASK)) {
+> +		dma_addr_t phys;
+> +
+>  		tail_p = lp->rx_bd_p + sizeof(*lp->rx_bd_v) * lp->rx_bd_ci;
+>  
+> -		dma_unmap_single(ndev->dev.parent, cur_p->phys,
+> -				 lp->max_frm_size,
+> +		phys = desc_get_phys_addr(lp, cur_p);
+> +		dma_unmap_single(ndev->dev.parent, phys, lp->max_frm_size,
+>  				 DMA_FROM_DEVICE);
+>  
+>  		skb = cur_p->skb;
+> @@ -829,15 +865,16 @@ static void axienet_recv(struct net_device *ndev)
+>  		if (!new_skb)
+>  			return;
+>  
+> -		cur_p->phys = dma_map_single(ndev->dev.parent, new_skb->data,
+> -					     lp->max_frm_size,
+> -					     DMA_FROM_DEVICE);
+> -		if (unlikely(dma_mapping_error(ndev->dev.parent, cur_p->phys))) {
+> +		phys = dma_map_single(ndev->dev.parent, new_skb->data,
+> +				      lp->max_frm_size,
+> +				      DMA_FROM_DEVICE);
+> +		if (unlikely(dma_mapping_error(ndev->dev.parent, phys))) {
+>  			if (net_ratelimit())
+>  				netdev_err(ndev, "RX DMA mapping error\n");
+>  			dev_kfree_skb(new_skb);
+>  			return;
+>  		}
+> +		desc_set_phys_addr(lp, phys, cur_p);
+>  
+>  		cur_p->cntrl = lp->max_frm_size;
+>  		cur_p->status = 0;
+> @@ -882,7 +919,8 @@ static irqreturn_t axienet_tx_irq(int irq, void *_ndev)
+>  		return IRQ_NONE;
+>  	if (status & XAXIDMA_IRQ_ERROR_MASK) {
+>  		dev_err(&ndev->dev, "DMA Tx error 0x%x\n", status);
+> -		dev_err(&ndev->dev, "Current BD is at: 0x%x\n",
+> +		dev_err(&ndev->dev, "Current BD is at: 0x%x%08x\n",
+> +			(lp->tx_bd_v[lp->tx_bd_ci]).phys_msb,
+>  			(lp->tx_bd_v[lp->tx_bd_ci]).phys);
+>  
+>  		cr = axienet_dma_in32(lp, XAXIDMA_TX_CR_OFFSET);
+> @@ -931,7 +969,8 @@ static irqreturn_t axienet_rx_irq(int irq, void *_ndev)
+>  		return IRQ_NONE;
+>  	if (status & XAXIDMA_IRQ_ERROR_MASK) {
+>  		dev_err(&ndev->dev, "DMA Rx error 0x%x\n", status);
+> -		dev_err(&ndev->dev, "Current BD is at: 0x%x\n",
+> +		dev_err(&ndev->dev, "Current BD is at: 0x%x%08x\n",
+> +			(lp->rx_bd_v[lp->rx_bd_ci]).phys_msb,
+>  			(lp->rx_bd_v[lp->rx_bd_ci]).phys);
+>  
+>  		cr = axienet_dma_in32(lp, XAXIDMA_TX_CR_OFFSET);
+> @@ -1633,14 +1672,18 @@ static void axienet_dma_err_handler(struct work_struct *work)
+>  
+>  	for (i = 0; i < lp->tx_bd_num; i++) {
+>  		cur_p = &lp->tx_bd_v[i];
+> -		if (cur_p->cntrl)
+> -			dma_unmap_single(ndev->dev.parent, cur_p->phys,
+> +		if (cur_p->cntrl) {
+> +			dma_addr_t addr = desc_get_phys_addr(lp, cur_p);
+> +
+> +			dma_unmap_single(ndev->dev.parent, addr,
+>  					 (cur_p->cntrl &
+>  					  XAXIDMA_BD_CTRL_LENGTH_MASK),
+>  					 DMA_TO_DEVICE);
+> +		}
+>  		if (cur_p->skb)
+>  			dev_kfree_skb_irq(cur_p->skb);
+>  		cur_p->phys = 0;
+> +		cur_p->phys_msb = 0;
+>  		cur_p->cntrl = 0;
+>  		cur_p->status = 0;
+>  		cur_p->app0 = 0;
+> 
+
+-- 
+Robert Hancock
+Senior Hardware Designer
+SED Systems, a division of Calian Ltd.
+Email: hancock@sedsystems.ca
 
 _______________________________________________
 linux-arm-kernel mailing list
