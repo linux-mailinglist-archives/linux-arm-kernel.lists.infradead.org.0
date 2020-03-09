@@ -2,131 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5118517E162
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 14:40:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83D7F17E168
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 14:41:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JL1XugP4SYgL7mNZQZy3hfrG8S91d7YFzH0Ao/TgCu0=; b=Njr1FWHgvgCjeF
-	GrNPfbazCruQW3GVtaP0ezRyFPIgVoV/2Bt2V5x/mORDMylkAPUUF1LIcioz3fz9lQ2p7sHuEvWCz
-	hXQtEm/iyXvuRnnVXtlqzI1luXGJKDQjAnNlVLCQdJ7lTdpm9O1wCo7EKBP7AHgmk9lGftJhsehxV
-	OZuWpuVWybrIB+I5SSMIwo+B3r5ZuN3uMEL09n7fzA6n1q4N+0mH/7KnQcDfIQsKJ6NbfN9f7UB83
-	S/iigxu/TeBL3h9QYoiOqosncKRWAS3oXuc/Z824tR37QIiHjnBbaiDsxoxyQyD3zzPXBs3DHKd5k
-	U8tmGxtMA9YFz3rI+xHA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Vj31nscGIqfRKmZz2VnswUYE3mbjj64e3N7wVw/rWc0=; b=bzc
+	a7xjXRe0uw/B3lFSbhiYXT7PM4hGTAIAQdaErDjoQ6tssKogB/nT0R3yIKUQcxl+V8PuukIA9Tuv3
+	fZG1P3xxJpuI211PaB+IXK8PPlm7IeLs355H1pmQ+SrppY17Uz4bdwakv7aetSrvYBX3jrSPLu7ZG
+	WAvnp8dIRIWKhuWq6cVXCUq8Gin1YoCxkrsnvBdz7ZT4YKVnSnWZq/2lsqk0f6O+Y3hupc3X8akEl
+	k9OL5SRhX9fCyFIQTFvtfSiddvw5obirzseFI9G4e3Ir+5/8ortAhXmJZTxL7SYjrINtr/mdCOSuP
+	PdDRcki8Fnfo+14m5j04T9q5jmS8wqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBIdy-00021b-9i; Mon, 09 Mar 2020 13:40:30 +0000
-Received: from mail-eopbgr20084.outbound.protection.outlook.com ([40.107.2.84]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1jBIeN-0002BV-FN; Mon, 09 Mar 2020 13:40:55 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBIdr-000217-1R
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 13:40:24 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lYnVjA3zP0uVnB8rHCxVNQe+5QyodIUayaujkMu6VnwRsaaWMcNA3yCwtciDCTdV98+OGCC2nP7eFIEKKJDdlJYLZ23KTqX0Uwd8oXJCwm3tF+8FKnojmzrJVvG1pAbxfDGyoYGEGS1YPK1PGWMPSmmu1jomsAfSoTtUchFiahE+ko1nS321pFFaLl3Zdft0Y+fpdnzdP7BYAd8u0oII/4sbXqdgT+jkQ/K2774Ku2xbgHth2QUne+KNpLk0Jl+s+7uJ4VgVGAUzQ5oPH0kNFirkyjjNRcReQFMKRKmVgekTcuqK/KH0rR7Z6e+3t51D/GjByps5AeCed7BvaMSjKQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KMidsTvdLF3grg+vGMKuvpMmjkv8LS6hXSx26cqDJXk=;
- b=QpSY8l9FHO/wc3hjsJmg6B2bOt/moSWfNCea4GiTKBgf4K7nbkSaIG4Dbchh+u7CDwCm3KABrQXTxh23Ksg76fjaQbWFNCU26ge23LzIqz8yAI65oPgi4V2mS/Z9FoN+gCsDxVCZxNEOI8cuyDjbRtvQASEtBRXWjfZzL2l48FAV0AuOG7geNxz1+nzvKhK1x8mMLBNnVTt394v9VkW9JtEdfaUpotLlxnixwUeDPR4E0ToT96y5UTbOxU6LI2Y0DO5nhG2syLMv/CCMcA0gYWFUZ251reD2oxvzvArJKq+d5apfv8YMl+bskzWjHV3Wpp25mDZEGB4OBQ8aiDbsqw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KMidsTvdLF3grg+vGMKuvpMmjkv8LS6hXSx26cqDJXk=;
- b=GcjkwchOxIzhFiZTSy+HdEn4sER+0yjIqpCG93T959cq6B5yvBcFaATIpgNJT5MPeCN2lJg5d/NEq9/Z9v+bPS1ilzBgauSyNpA13SYOtYgko5rYogcO+Svh3Sra2ZY+oXGjHmLvkLC94eTt0POQRGWwStXleLzAo55vK4pXxeg=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6659.eurprd04.prod.outlook.com (20.179.255.152) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.11; Mon, 9 Mar 2020 13:40:18 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::548f:4941:d4eb:4c11%6]) with mapi id 15.20.2793.013; Mon, 9 Mar 2020
- 13:40:18 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, "dmitry.torokhov@gmail.com"
- <dmitry.torokhov@gmail.com>, "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>, "amit.kucheria@verdurent.com"
- <amit.kucheria@verdurent.com>, "wim@linux-watchdog.org"
- <wim@linux-watchdog.org>, "linux@roeck-us.net" <linux@roeck-us.net>, Daniel
- Baluta <daniel.baluta@nxp.com>, "gregkh@linuxfoundation.org"
- <gregkh@linuxfoundation.org>, "linux@rempel-privat.de"
- <linux@rempel-privat.de>, "tglx@linutronix.de" <tglx@linutronix.de>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- "arnd@arndb.de" <arnd@arndb.de>, "ronald@innovation.ch"
- <ronald@innovation.ch>, "krzk@kernel.org" <krzk@kernel.org>,
- "robh@kernel.org" <robh@kernel.org>, Leonard Crestez
- <leonard.crestez@nxp.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-input@vger.kernel.org"
- <linux-input@vger.kernel.org>, "linux-rtc@vger.kernel.org"
- <linux-rtc@vger.kernel.org>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>, "linux-watchdog@vger.kernel.org"
- <linux-watchdog@vger.kernel.org>
-Subject: RE: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Thread-Topic: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Thread-Index: AQHV9av6lP0y7UryDUCSkdoJ2q6AXKhARRTA
-Date: Mon, 9 Mar 2020 13:40:18 +0000
-Message-ID: <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: de9658cf-a8b4-490b-12b4-08d7c42f67f1
-x-ms-traffictypediagnostic: AM0PR04MB6659:|AM0PR04MB6659:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB665911A08592AAC8535CF9B288FE0@AM0PR04MB6659.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1360;
-x-forefront-prvs: 0337AFFE9A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(396003)(366004)(39860400002)(376002)(346002)(199004)(189003)(8936002)(9686003)(55016002)(7416002)(4326008)(2906002)(86362001)(66946007)(6506007)(5660300002)(966005)(81156014)(81166006)(7696005)(71200400001)(316002)(76116006)(44832011)(478600001)(33656002)(52536014)(66476007)(66446008)(8676002)(186003)(66556008)(26005)(64756008)(110136005)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6659;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1PoFkMa15tZ46KLhGlyo8zb94cPa2Upb+OL0q3ee4X0V0YqwKW+AQxl6FSzVG4v6mKfhW1mLh7C+KdoQO0d4dfoWflV4vdEo25Utb7TeEDGEoi1E9xdRI0AIGcAkh9Kk6Ravpd/TXTAHCaOCAvvDi1tMcP9W++/6mZ9GzVTSUvF1WSp3AJG96njWkBc99H2Aho4S0zWFyn6Z3GaF2bfCcgsxbun8ReGZVqIiZAVnOECEI2MT4vN4JleGIhnGmiksZwVHG79cNYoDKNi8vswD7hiBQTvJa5tpi2FlHtHfl1zU8BvOMlDVSMSot+Nv08nooePpVF+Kh78n///rxfcKfRUaqLhPF91WeoJ6T12TI1IqpjEKkUbgE9ym8SveOobiB8Pfd0tFS6f+TaGYitrFv4ZDvns8fMcB/yY+d50dzQDRVv/6xahZHznJArPoEVmnDbHBgEnEGHJN+qGSDbsfQq3zN92EIXEPYIu28EsuU91lPmn3c30K9oVIBqRtMaHWpK7JOvDlRtbvB1j1abU1IFMVwCE0jgtAOmqQ2LzeXxAkolUKazlQt9IKx1v+JqksBMKIQOkLtDcajuXUuBJ5aw==
-x-ms-exchange-antispam-messagedata: pq6kPcSrFhIFN19wWcF2MPiJKUHgunIozl4hXG9thhhS73JNDw9pyNrv6q2TMk9ufBeXJ9IbZaZ1ZW8IIQY+40ukMaV9smeK+FlgxGtC9SrWuBZDTVIatkSTFWxq17/nCn8ZOOJ5iDEmWcgR1kiVNQ==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: de9658cf-a8b4-490b-12b4-08d7c42f67f1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Mar 2020 13:40:18.0814 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ESZRSNZMHriNm9xIi4xELVmoB4YRXTHo1mspcwwexasFf9vwa5SUQSPh1ypwMGGeCb3PCXU7ABBoTuGs1t0JQg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6659
+ id 1jBIdx-00025J-NV; Mon, 09 Mar 2020 13:40:31 +0000
+Received: by mail-wr1-x441.google.com with SMTP id s5so7288786wrg.3;
+ Mon, 09 Mar 2020 06:40:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=dfCIxcOnP/0No04iQLbl9qRZ5XXuFOMBWpVPNhSslK0=;
+ b=TvE+QjV/Emq8Ejod4yOAQ3SjW85I9pv4uA1tuM280dy+KaH8L+rQ+0/nqV9rlllRl3
+ 6qc2ydP1JNclBtIw6xQYxivq5UnAgp5mqn86M6p0yx3dLW63cYSX4covJC3RKMZMuybD
+ hIy5eZ99mJLKOhGh4sazWeUvxa2zaMc2mB636k5Cxh1N/W61/9fuv3UebPQUsTAVRR97
+ MXqShPt2kM1mXpGDpgk6lPFb5Pfrjtq9rro7lxlewNqVlVPsO4cFvXm+sgduc5X09Z3j
+ MNx3cZ3DpBPa5O5TIoq2kWX2Uycp7XI1cxY6swoxzmhcScv7iBBUFKWscptX7dtHAHFm
+ W72g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=dfCIxcOnP/0No04iQLbl9qRZ5XXuFOMBWpVPNhSslK0=;
+ b=ooZwIVf1AbX3oqQi0Oo2ZQwxAh53sJJdqn5soXLCN60rKYrdzOxuyWXuJVKMUOftHu
+ B94+nUYt+C5ugJGo+MXh4NGi3Dgk7gFRq1g6inYZdDc1fe90gWeFYN6ratuLkIQwwHek
+ g3E8W6+6R5cIwNgMalyPX7XicUWP9Rqp7l49bIXY1N1rFTyKdWsGhBH52+m1QAu9YKj3
+ NacdFfXAKvEeVfsQdGs6VttTrhdy9LJNPblF860+umqia+bEzgQRK51aUYAzvvXe0pBj
+ Kxcs7AvvZHHHasAq+LtswYLy4I/90coAszOb481NideS1lzcnaMIujQ2hiWTivSodMH8
+ GL5g==
+X-Gm-Message-State: ANhLgQ3naTVi2aU0sIiQQAC2BVE0p88Na8hmQo99LSAi8Rs+i8epqtSG
+ qkHMR73vTV6DX0DiRb1VvyQ=
+X-Google-Smtp-Source: ADFU+vum0vFqAdXvHbJNX40jof7bCt99HKnCoeew+WNOZtw7BQ4UtkW70Jon8MgOr+2lGqDoKY28Rw==
+X-Received: by 2002:adf:a419:: with SMTP id d25mr22152214wra.210.1583761227808; 
+ Mon, 09 Mar 2020 06:40:27 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id i14sm8888439wrp.82.2020.03.09.06.40.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 09 Mar 2020 06:40:27 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [RFC PATCH] ARM: dts: rockchip: remove #dma-cells from dma client
+ nodes for rv1108
+Date: Mon,  9 Mar 2020 14:40:20 +0100
+Message-Id: <20200309134020.14935-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_064023_083608_7380E9C9 
-X-CRM114-Status: GOOD (  15.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200309_064029_792799_27C55DA4 
+X-CRM114-Status: GOOD (  19.77  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.84 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -145,96 +94,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
+When we combine spi-rockchip.yaml and
+spi-controller.yaml and add 'additionalProperties: false'
+it gives for example this error:
 
-I have one patch pending reviewing.
-https://patchwork.kernel.org/patch/11395247/
+arch/arm/boot/dts/rv1108-evb.dt.yaml: spi@10270000:
+'#dma-cells' does not match any of the regexes:
+'^.*@[0-9a-f]+$', '^slave$'
 
-Thanks,
-Peng.
+'#dma-cells' are not used for dma clients, so remove them all.
 
-> 
-> Add stubs for those i.MX SCU APIs to make those modules depending on
-> IMX_SCU can pass build when COMPILE_TEST is enabled.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V2:
-> 	- return error for stubs.
-> ---
->  include/linux/firmware/imx/ipc.h | 11 +++++++++++
-> include/linux/firmware/imx/sci.h | 19 +++++++++++++++++++
->  2 files changed, 30 insertions(+)
-> 
-> diff --git a/include/linux/firmware/imx/ipc.h
-> b/include/linux/firmware/imx/ipc.h
-> index 8910574..9e3d808 100644
-> --- a/include/linux/firmware/imx/ipc.h
-> +++ b/include/linux/firmware/imx/ipc.h
-> @@ -34,6 +34,7 @@ struct imx_sc_rpc_msg {
->  	uint8_t func;
->  };
-> 
-> +#ifdef CONFIG_IMX_SCU
->  /*
->   * This is an function to send an RPC message over an IPC channel.
->   * It is called by client-side SCFW API function shims.
-> @@ -55,4 +56,14 @@ int imx_scu_call_rpc(struct imx_sc_ipc *ipc, void *msg,
-> bool have_resp);
->   * @return Returns an error code (0 = success, failed if < 0)
->   */
->  int imx_scu_get_handle(struct imx_sc_ipc **ipc);
-> +#else
-> +static inline int imx_scu_call_rpc(struct imx_sc_ipc *ipc, void *msg,
-> +bool have_resp) {
-> +	return -ENOENT;
-> +}
-> +static inline int imx_scu_get_handle(struct imx_sc_ipc **ipc) {
-> +	return -ENOENT;
-> +}
-> +#endif
->  #endif /* _SC_IPC_H */
-> diff --git a/include/linux/firmware/imx/sci.h
-> b/include/linux/firmware/imx/sci.h
-> index 17ba4e4..022129b 100644
-> --- a/include/linux/firmware/imx/sci.h
-> +++ b/include/linux/firmware/imx/sci.h
-> @@ -16,8 +16,27 @@
->  #include <linux/firmware/imx/svc/misc.h>  #include
-> <linux/firmware/imx/svc/pm.h>
-> 
-> +#ifdef CONFIG_IMX_SCU
->  int imx_scu_enable_general_irq_channel(struct device *dev);  int
-> imx_scu_irq_register_notifier(struct notifier_block *nb);  int
-> imx_scu_irq_unregister_notifier(struct notifier_block *nb);  int
-> imx_scu_irq_group_enable(u8 group, u32 mask, u8 enable);
-> +#else
-> +static inline int imx_scu_enable_general_irq_channel(struct device
-> +*dev) {
-> +	return -ENOENT;
-> +}
-> +static inline int imx_scu_irq_register_notifier(struct notifier_block
-> +*nb) {
-> +	return -ENOENT;
-> +}
-> +static inline int imx_scu_irq_unregister_notifier(struct notifier_block
-> +*nb) {
-> +	return -ENOENT;
-> +}
-> +static inline int imx_scu_irq_group_enable(u8 group, u32 mask, u8
-> +enable) {
-> +	return -ENOENT;
-> +}
-> +#endif
->  #endif /* _SC_SCI_H */
-> --
-> 2.7.4
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm/boot/dts/rv1108.dtsi | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/arch/arm/boot/dts/rv1108.dtsi b/arch/arm/boot/dts/rv1108.dtsi
+index 59295babd..fda16f976 100644
+--- a/arch/arm/boot/dts/rv1108.dtsi
++++ b/arch/arm/boot/dts/rv1108.dtsi
+@@ -120,7 +120,6 @@
+ 		clocks = <&cru SCLK_UART2>, <&cru PCLK_UART2>;
+ 		clock-names = "baudclk", "apb_pclk";
+ 		dmas = <&pdma 6>, <&pdma 7>;
+-		#dma-cells = <2>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&uart2m0_xfer>;
+ 		status = "disabled";
+@@ -136,7 +135,6 @@
+ 		clocks = <&cru SCLK_UART1>, <&cru PCLK_UART1>;
+ 		clock-names = "baudclk", "apb_pclk";
+ 		dmas = <&pdma 4>, <&pdma 5>;
+-		#dma-cells = <2>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&uart1_xfer>;
+ 		status = "disabled";
+@@ -152,7 +150,6 @@
+ 		clocks = <&cru SCLK_UART0>, <&cru PCLK_UART0>;
+ 		clock-names = "baudclk", "apb_pclk";
+ 		dmas = <&pdma 2>, <&pdma 3>;
+-		#dma-cells = <2>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+ 		status = "disabled";
+@@ -208,7 +205,6 @@
+ 		clock-names = "spiclk", "apb_pclk";
+ 		dmas = <&pdma 8>, <&pdma 9>;
+ 		dma-names = "tx", "rx";
+-		#dma-cells = <2>;
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+ 		status = "disabled";
+-- 
+2.11.0
 
 
 _______________________________________________
