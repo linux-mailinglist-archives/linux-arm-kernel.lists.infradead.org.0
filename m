@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A795F17D790
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 01:46:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBF2417D791
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 01:47:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=GAOuQqiEEIysAf6YApmEZ3oKQGz89Jx5Zivg04fMzBg=; b=IVnqsgprmZX9fiWuiEMM+SUhBe
-	edBmCLJ0dSL0CCqzOPv93QG7elUR4dMI2rKO/pMEku716qnL8ITp3s3YZlVM8RVv8cpPJt6QwAh50
-	DG6Yo+2fgRs2IGvAP8IKJZbpLuBQL4EvpBzj1PTQK+1TPBAq5Zuj+pKEBbmDhAQ+iGC09kn+6Xd5L
-	29hVCEMZYaTrWaw/yG6YAnAwIvBPrEEXjKEFM6PuqsBUtlWMzMYUbfB3qNRzV3p8sceXqJyISqfpi
-	R6biwj7TJq7r5e7d0aFxBvklbdEjxCvZSOIvbnb7D+gmbW9WN04tIn5So42cU2sL44HcRm29s63So
-	mfN5CY3w==;
+	bh=IUA24Im+6ixmLqlekwj0ODH9GBCPh0krVjoZMdMuVKc=; b=cEfl41AZEZd7vZa9ToffX4tZJ1
+	DvPgEx+ffyiip/OvPt8pEQUzQjaOEdcba5R+ks2r2RILFEpZ5vnBsWx+mO9o4FO3cZx07tJ7mIuc4
+	8OMgb5ixuSNbGYwj5GiD4cTAqgAdindGifxQVfkBTsEUEuZafeMx2QsKWlfYXz5P3DWoYeRKWcgOF
+	SuqepCUlKRH3t3+M2wAh/aez/mfbl7CDSBxnO5JMa0h6nLGUnZNnAEwVvHkf4Haxc+KbkTZDUnmtD
+	iUd1l9PR39uQt8Z9vUth8wE//LDQdqALpQXxphnCTdkHgzQnyzYsxnb9PFuQFZGN3hFkY/UJJcTSV
+	SYoq0OJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB6Z2-0006jp-1P; Mon, 09 Mar 2020 00:46:36 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jB6ZE-00070k-RL; Mon, 09 Mar 2020 00:46:48 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB6Xu-0005or-Mx
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 00:45:28 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 61A361A0B31;
- Mon,  9 Mar 2020 01:45:25 +0100 (CET)
+ id 1jB6Xy-0005tc-Pn
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 00:45:33 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0157720151B;
+ Mon,  9 Mar 2020 01:45:29 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 596801A078B;
- Mon,  9 Mar 2020 01:45:06 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6BA57201527;
+ Mon,  9 Mar 2020 01:45:10 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 78902402DA;
- Mon,  9 Mar 2020 08:44:44 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BF832402E5;
+ Mon,  9 Mar 2020 08:44:46 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, dmitry.torokhov@gmail.com, a.zummo@towertech.it,
@@ -48,23 +48,24 @@ To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-input@vger.kernel.org, linux-rtc@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-watchdog@vger.kernel.org
-Subject: [PATCH V3 6/7] watchdog: add COMPILE_TEST support for IMX_SC_WDT
-Date: Mon,  9 Mar 2020 08:38:19 +0800
-Message-Id: <1583714300-19085-6-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V3 7/7] thermal: add COMPILE_TEST support for IMX_SC_THERMAL
+Date: Mon,  9 Mar 2020 08:38:20 +0800
+Message-Id: <1583714300-19085-7-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
 References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_174526_960492_304D0F2A 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20200308_174531_023016_322A04E2 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,29 +86,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add COMPILE_TEST support to i.MX SC watchdog driver for better compile
+Add COMPILE_TEST support to i.MX SC thermal driver for better compile
 testing coverage.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
 ---
 No change.
 ---
- drivers/watchdog/Kconfig | 2 +-
+ drivers/thermal/Kconfig | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-index cec868f..c5cc567 100644
---- a/drivers/watchdog/Kconfig
-+++ b/drivers/watchdog/Kconfig
-@@ -711,7 +711,7 @@ config IMX2_WDT
- config IMX_SC_WDT
- 	tristate "IMX SC Watchdog"
- 	depends on HAVE_ARM_SMCCC
+diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
+index 9f388ed..6235949 100644
+--- a/drivers/thermal/Kconfig
++++ b/drivers/thermal/Kconfig
+@@ -253,7 +253,7 @@ config IMX_THERMAL
+ 
+ config IMX_SC_THERMAL
+ 	tristate "Temperature sensor driver for NXP i.MX SoCs with System Controller"
 -	depends on IMX_SCU
 +	depends on IMX_SCU || COMPILE_TEST
- 	select WATCHDOG_CORE
+ 	depends on OF
  	help
- 	  This is the driver for the system controller watchdog
+ 	  Support for Temperature Monitor (TEMPMON) found on NXP i.MX SoCs with
 -- 
 2.7.4
 
