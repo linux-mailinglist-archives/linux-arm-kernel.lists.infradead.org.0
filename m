@@ -2,74 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6878117DA2C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 09:03:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B66D17DA7C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 09:16:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rE0f44H/cfiWTp7imY0eqfQpvXQO6Q61va5QvxxLjIc=; b=TViDQ8hLi+0lBH
-	SVS/5f6RB539Hyb+3SBDdXw4N8MLFNRfIvqGwVtrrLKQS9/xQ7afk3U6pFJAhycGr/s3nq4UZxaj7
-	lOlQphJQNEgEmu8aZbw2jSLDe/A4WtuTAdejxEfBY2R2MW16x4ohWI1I+aM+qE+3TdbZfHjJnTsxM
-	vcP9Q3Vo2TaOWoyHWNHCoYGU9fd2qBG1LFGlSTiOHFZbf4WIV/HjA4ZN+mzWjKUlKNWfuvwM6MDPL
-	C+VFDz7qPIDumiLeEqPS/ke4FlXjt/6U1Wbbx2aP/ot9Z2Pu+RCzd/Kw+vEOwfyYvUS8pCgdlMW+P
-	R5OZ65RysffjjL75dJkA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gJpE35hwC2dinUp5/xa7dAn4VUqRnY9Wfolx3f99NV0=; b=mmV
+	tX9fombodqI7V2j4HEDmfBJlkfuc5k+ExiCNExrr0dcOXsxY4kHranH5NRxK5pXFx6D3Uvepqoede
+	xBeMb0FPRLOF/ymg3IclNwUDuJliXINoedlJ55EXaMu3ibsr4GN8h3nLpt8ffDJBt9jh3bYdNNj3S
+	7UpnHA6vZv/DPx1cubbdy4MJpVSEdAVSIvld2/fH6W14b8xwakcFa/EXzCdtzwJz+mXAMdPwlCfvq
+	x/TtD5HFm6ULZcDj6leF2zmbHtnJKvDBsNZWdrWZ93meKEUTyigEQTa2htAhWAvBH2YFoAemhf+SM
+	q6hr9VyUYPyLTYYIgfVXAd3O/7+MLpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBDNq-0007Rw-QF; Mon, 09 Mar 2020 08:03:30 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jBDaG-0003SK-HM; Mon, 09 Mar 2020 08:16:20 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBDNi-0007Ra-0e
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 08:03:23 +0000
-Received: by mail-oi1-f196.google.com with SMTP id k21so2349973oij.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 01:03:21 -0700 (PDT)
+ id 1jBDa6-0003Ru-RS; Mon, 09 Mar 2020 08:16:12 +0000
+Received: by mail-wm1-x343.google.com with SMTP id f7so4153154wml.4;
+ Mon, 09 Mar 2020 01:16:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=21vOxRxDjKqcfrgbiaoQAsuWSgoqLHAftWopA3ShZhI=;
+ b=oIEHJnHDukzw19P80JbWF7J3wp/aDWOpD/frO9t4Av3oqEH1wlFFAKDwbw7ZxK5hdt
+ ovZKGRwTYKxENfkzlsCflHhjRJ4uX/8hyJ23ArR/BuaB8zyE6Cf75hA4tG8vbaPg4F7N
+ al6blJrPk47C5cwgWlf0P1Z161QWjiy8iJNQJsFUYPwA0O1iGNPleIa2v6YiWjF8aBN8
+ RhxEJz5dnfzgjMNqzmqAa4P3iIAo8yhtt2aukcdDJeYAxHFGO5G1RvJCGbCPfnI+4Jf8
+ V+GY5ch26FATDwdb3BTivgWx+EFi2pylYXY9MD5vSng24iNw1EsUbZVLd0SgBsVW9njh
+ DEIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GlxhLCzBWLBcTK+nyEBCaSV9wLdQnn+A1WWbazSD9FQ=;
- b=AjRC2HuDHw/t0Ct1JaokWv3u1u6GIx6fbhVxs+jtXIWCa9AJ8iN+os/D4w+uwJLXQO
- FM51gqWCGLHYL8rgM6jiq8i59MlFLfCMsQHdZqvDSSiCznBXfByLVD3q/0Qugz7ZRi7K
- KTnhc/2MIpQ0w4v/Sx6dRpjnSnE6JIIWVXVMoZynAARwglOpJov2AYaoq59crRRPcyEx
- OndsXGaKRDigzK5sBrKTBu0XbhlIibf48dXvsVFzFzbGBfySgbHy63Pk7RBdOzyVUpdc
- dqLrOa/kFudyYT3uipzwzKvE6ILtNjrZLqsGHnhPRz4iVegV95X1BxevxcRk50THbg00
- qkWg==
-X-Gm-Message-State: ANhLgQ0tWi0NsNm8dlx6cjza0bHg5SGC6NmeaWNeY0fWFQTFvGyCPG6k
- lRbcNp7Nei7BdoK4ziVnKSTDi76jj/UvqedNnxg=
-X-Google-Smtp-Source: ADFU+vsEnvEXz092Ba8rHTDMlFV+mJV7f1t+H+q6yO9aRXpnLYyqXDaEvw5trHzcZDuV1wPX+OKtcn4+88iZFeSMFyk=
-X-Received: by 2002:aca:1a06:: with SMTP id a6mr10074950oia.148.1583741001068; 
- Mon, 09 Mar 2020 01:03:21 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200305103228.9686-1-zhang.lyra@gmail.com>
-In-Reply-To: <20200305103228.9686-1-zhang.lyra@gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 9 Mar 2020 09:03:09 +0100
-Message-ID: <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
-To: Chunyan Zhang <zhang.lyra@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=21vOxRxDjKqcfrgbiaoQAsuWSgoqLHAftWopA3ShZhI=;
+ b=K9mUlsnR1PWDTOwcKUd4ZeGl4A0K9pTT3ubf788aIWvKrHmoL9ERZK9U42zEle3/oX
+ x1x2azTD6wHraUdr2BjpXaEYM3pI2PzOEw2BRsAa+TH5jDNn1MkexuwkTT+YpnOEWu5S
+ bGGDXIkWtglbsMvqaXvRioDNWLtsW6ZKvEjMZ6V8YYsRtWvZkhm5bR74C5uzB+FFhqxQ
+ /LQxaAKP+T15HbwjtZb3Dkjyz2lvMbPi7IC7LnzKpvzIZPiG6bvY4Uv+5lwJXo+FIzUU
+ tWk4L0Kbakm7j0ru6JZDqXVKbUFB0goGiL4ma3ELm+3ZuHX0PkjnIwJIOzlK2VkjcHl9
+ k6kA==
+X-Gm-Message-State: ANhLgQ11vaqi7iGXJJ8a2tCK+m56RW9jmXp1vv0oB3sHNUY8dKlC3fc8
+ WJw5j889Y6WMFRr8fRVoyUk=
+X-Google-Smtp-Source: ADFU+vt3Yqf7ZPutJlxBROOJKc49aGfr7tYraWP+grvURFzG5aqwAEF03ai0VObc3auLb7YasfTsDg==
+X-Received: by 2002:a7b:c770:: with SMTP id x16mr4736819wmk.159.1583741769115; 
+ Mon, 09 Mar 2020 01:16:09 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id q2sm1097096wrv.65.2020.03.09.01.16.08
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 09 Mar 2020 01:16:08 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: remove rockchip,
+ grf from vop nodes for px30
+Date: Mon,  9 Mar 2020 09:16:00 +0100
+Message-Id: <20200309081600.3887-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_010322_059276_4145B351 
-X-CRM114-Status: GOOD (  12.88  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200309_011610_890319_A3E127D1 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,53 +94,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
- Orson Zhai <orsonzhai@gmail.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chunyan.
+An experimental test with the command below without
+additional properties in 'rockchip-vop.yaml' gives this error:
 
-On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> From: Chunyan Zhang <chunyan.zhang@unisoc.com>
->
-> The default value of Kconfig for almost all sprd drivers are the same with
-> ARCH_SPRD, making these drivers built as modules as default would be easier
-> if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
->
-> Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
+arch/arm64/boot/dts/rockchip/px30-evb.dt.yaml: vop@ff470000:
+'power-domains', 'rockchip,grf'
+do not match any of the regexes: 'pinctrl-[0-9]+'
+arch/arm64/boot/dts/rockchip/px30-evb.dt.yaml: vop@ff460000:
+'power-domains', 'rockchip,grf'
+do not match any of the regexes: 'pinctrl-[0-9]+'
 
-Can you actually boot a kernel on a Spreadtrum platform when all platform
-and driver support is modular?
+'rockchip,grf' is not used by the Rockchip VOP driver,
+so remove it from 'vop' nodes in 'px30.dtsi'.
 
-> +++ b/arch/arm64/Kconfig.platforms
-> @@ -249,7 +249,7 @@ config ARCH_TEGRA
->           This enables support for the NVIDIA Tegra SoC family.
->
->  config ARCH_SPRD
-> -       bool "Spreadtrum SoC platform"
-> +       tristate "Spreadtrum SoC platform"
->         help
->           Support for Spreadtrum ARM based SoCs
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/
+rockchip/rockchip-vop.yaml
 
-Gr{oetje,eeting}s,
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 2 --
+ 1 file changed, 2 deletions(-)
 
-                        Geert
-
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index 215515ccb..1bbed660f 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -1030,7 +1030,6 @@
+ 		reset-names = "axi", "ahb", "dclk";
+ 		iommus = <&vopb_mmu>;
+ 		power-domains = <&power PX30_PD_VO>;
+-		rockchip,grf = <&grf>;
+ 		status = "disabled";
+ 
+ 		vopb_out: port {
+@@ -1072,7 +1071,6 @@
+ 		reset-names = "axi", "ahb", "dclk";
+ 		iommus = <&vopl_mmu>;
+ 		power-domains = <&power PX30_PD_VO>;
+-		rockchip,grf = <&grf>;
+ 		status = "disabled";
+ 
+ 		vopl_out: port {
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.11.0
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
