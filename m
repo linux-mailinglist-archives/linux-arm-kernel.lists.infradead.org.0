@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0C5017E6A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:20:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98EA017E6DB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:20:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3ZXSonBGue17AWHHq4yZh+9jhMEg6JmQfBCmPyI3dtc=; b=YR//y4D57+RGxSiBO/iqlAX0JI
-	YsF5sbbnpnYdcJHt5jQh6WmvVjEWtljHyPkjVqeSX0Od/6iImHyJ9/PXSl5FTZ8Zf0tEGvvB/GRC+
-	2NNXuRNMUNh385921EwjtJ4pSFZtps5MSr7VHzrOgbyJo6FVSJeYCiBjrqqxg+2DC+EN41tSUcMux
-	Km6sbrv64I193HJqT9wIxJxsn3vWkqEpTTjWgIR1UjQMwRyigpaUOjwHIl4ZPMhBrylKL9i93LFKe
-	WYYgXot8o+zCiUDlTkcu34H5GAYsW1PVQoSCX4ASSW9ZQxQLnu3Fru24pABSj20I7D1P0F4aveEMC
-	+8EY6LOQ==;
+	bh=nHJfmAIDAqjgaT4AfVDGBSuQ/pzswvjxjfI4PAwNlJI=; b=UsQjhY6J2pbbYSVlpAMMkczDuN
+	h5sD0yzYFPhf3r5XpivkblTswLlkw+vM6nrOeSZT8ZufwVSdoPbo+1yrLDr9VhYVVAOwjvhyg/Pkn
+	G9XJvwStOVnPl6UN7u7BPtK+D20hjyjtTaDHaKalLsAmHoxJBrFIhPhlsiuS47RHIFMS6vJxJb87A
+	h8YWWHiDbNDmeaKuUt0teBV3qiV0cxRGKKE9xjaVJ8Ov8JX4aK/DybNbedJYfiOUR5f0x+/yC2keY
+	0kZ/lH0ylIXYs+YeZNlMhgK9zOzi6zCMPD2y8kRE8PEnluvT1O7aTbPL+r/8uuYzb838BVfR98NBR
+	QSHWaFXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBN0E-00026l-J9; Mon, 09 Mar 2020 18:19:46 +0000
+	id 1jBN16-00042O-D9; Mon, 09 Mar 2020 18:20:40 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBMzc-0001nI-58
+ id 1jBMzd-0001nk-Ix
  for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:19:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 92D7411D4;
- Mon,  9 Mar 2020 11:19:07 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2132011FB;
+ Mon,  9 Mar 2020 11:19:09 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 44AC73F67D;
- Mon,  9 Mar 2020 11:19:06 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C6C1C3F67D;
+ Mon,  9 Mar 2020 11:19:07 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH v2 03/14] net: axienet: Propagate failure of DMA descriptor
- setup
-Date: Mon,  9 Mar 2020 18:18:40 +0000
-Message-Id: <20200309181851.190164-4-andre.przywara@arm.com>
+Subject: [PATCH v2 04/14] net: axienet: Fix DMA descriptor cleanup path
+Date: Mon,  9 Mar 2020 18:18:41 +0000
+Message-Id: <20200309181851.190164-5-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200309181851.190164-1-andre.przywara@arm.com>
 References: <20200309181851.190164-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_111908_276313_BEB36427 
-X-CRM114-Status: GOOD (  15.31  )
+X-CRM114-CacheID: sfid-20200309_111909_710743_21776379 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,106 +72,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When we fail allocating the DMA buffers in axienet_dma_bd_init(), we
-report this error, but carry on with initialisation nevertheless.
+When axienet_dma_bd_init() bails out during the initialisation process,
+it might do so with parts of the structure already allocated and
+initialised, while other parts have not been touched yet. Before
+returning in this case, we call axienet_dma_bd_release(), which does not
+take care of this corner case.
+This is most obvious by the first loop happily dereferencing
+lp->rx_bd_v, which we actually check to be non NULL *afterwards*.
 
-This leads to a kernel panic when the driver later wants to send a
-packet, as it uses uninitialised data structures.
+Make sure we only unmap or free already allocated structures, by:
+- directly returning with -ENOMEM if nothing has been allocated at all
+- checking for lp->rx_bd_v to be non-NULL *before* using it
+- only unmapping allocated DMA RX regions
 
-Make the axienet_device_reset() routine return an error value, as it
-contains the DMA buffer initialisation. Make sure we propagate the error
-up the chain and eventually fail the driver initialisation, to avoid
-relying on non-initialised buffers.
+This avoids NULL pointer dereferences when initialisation fails.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 ---
- .../net/ethernet/xilinx/xilinx_axienet_main.c | 26 ++++++++++++++-----
- 1 file changed, 19 insertions(+), 7 deletions(-)
+ .../net/ethernet/xilinx/xilinx_axienet_main.c | 43 ++++++++++++-------
+ 1 file changed, 28 insertions(+), 15 deletions(-)
 
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 6ebfd19097d2..64f73533cabe 100644
+index 64f73533cabe..9903205d57ec 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -437,9 +437,10 @@ static void axienet_setoptions(struct net_device *ndev, u32 options)
- 	lp->options |= options;
- }
- 
--static void __axienet_device_reset(struct axienet_local *lp)
-+static int __axienet_device_reset(struct axienet_local *lp)
- {
- 	u32 timeout;
-+
- 	/* Reset Axi DMA. This would reset Axi Ethernet core as well. The reset
- 	 * process of Axi DMA takes a while to complete as all pending
- 	 * commands/transfers will be flushed or completed during this
-@@ -455,9 +456,11 @@ static void __axienet_device_reset(struct axienet_local *lp)
- 		if (--timeout == 0) {
- 			netdev_err(lp->ndev, "%s: DMA reset timeout!\n",
- 				   __func__);
--			break;
-+			return -ETIMEDOUT;
- 		}
- 	}
-+
-+	return 0;
- }
- 
- /**
-@@ -470,13 +473,17 @@ static void __axienet_device_reset(struct axienet_local *lp)
-  * areconnected to Axi Ethernet reset lines, this in turn resets the Axi
-  * Ethernet core. No separate hardware reset is done for the Axi Ethernet
-  * core.
-+ * Returns 0 on success or a negative error number otherwise.
-  */
--static void axienet_device_reset(struct net_device *ndev)
-+static int axienet_device_reset(struct net_device *ndev)
- {
- 	u32 axienet_status;
+@@ -160,24 +160,37 @@ static void axienet_dma_bd_release(struct net_device *ndev)
+ 	int i;
  	struct axienet_local *lp = netdev_priv(ndev);
-+	int ret;
  
--	__axienet_device_reset(lp);
-+	ret = __axienet_device_reset(lp);
-+	if (ret)
-+		return ret;
- 
- 	lp->max_frm_size = XAE_MAX_VLAN_FRAME_SIZE;
- 	lp->options |= XAE_OPTION_VLAN;
-@@ -491,9 +498,11 @@ static void axienet_device_reset(struct net_device *ndev)
- 			lp->options |= XAE_OPTION_JUMBO;
- 	}
- 
--	if (axienet_dma_bd_init(ndev)) {
-+	ret = axienet_dma_bd_init(ndev);
-+	if (ret) {
- 		netdev_err(ndev, "%s: descriptor allocation failed\n",
- 			   __func__);
-+		return ret;
- 	}
- 
- 	axienet_status = axienet_ior(lp, XAE_RCW1_OFFSET);
-@@ -518,6 +527,8 @@ static void axienet_device_reset(struct net_device *ndev)
- 	axienet_setoptions(ndev, lp->options);
- 
- 	netif_trans_update(ndev);
++	/* If we end up here, tx_bd_v must have been DMA allocated. */
++	dma_free_coherent(ndev->dev.parent,
++			  sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
++			  lp->tx_bd_v,
++			  lp->tx_bd_p);
 +
-+	return 0;
++	if (!lp->rx_bd_v)
++		return;
++
+ 	for (i = 0; i < lp->rx_bd_num; i++) {
+-		dma_unmap_single(ndev->dev.parent, lp->rx_bd_v[i].phys,
+-				 lp->max_frm_size, DMA_FROM_DEVICE);
++		/* A NULL skb means this descriptor has not been initialised
++		 * at all.
++		 */
++		if (!lp->rx_bd_v[i].skb)
++			break;
++
+ 		dev_kfree_skb(lp->rx_bd_v[i].skb);
+-	}
+ 
+-	if (lp->rx_bd_v) {
+-		dma_free_coherent(ndev->dev.parent,
+-				  sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
+-				  lp->rx_bd_v,
+-				  lp->rx_bd_p);
+-	}
+-	if (lp->tx_bd_v) {
+-		dma_free_coherent(ndev->dev.parent,
+-				  sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
+-				  lp->tx_bd_v,
+-				  lp->tx_bd_p);
++		/* For each descriptor, we programmed cntrl with the (non-zero)
++		 * descriptor size, after it had been successfully allocated.
++		 * So a non-zero value in there means we need to unmap it.
++		 */
++		if (lp->rx_bd_v[i].cntrl)
++			dma_unmap_single(ndev->dev.parent, lp->rx_bd_v[i].phys,
++					 lp->max_frm_size, DMA_FROM_DEVICE);
+ 	}
++
++	dma_free_coherent(ndev->dev.parent,
++			  sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
++			  lp->rx_bd_v,
++			  lp->rx_bd_p);
  }
  
  /**
-@@ -921,8 +932,9 @@ static int axienet_open(struct net_device *ndev)
- 	 */
- 	mutex_lock(&lp->mii_bus->mdio_lock);
- 	axienet_mdio_disable(lp);
--	axienet_device_reset(ndev);
--	ret = axienet_mdio_enable(lp);
-+	ret = axienet_device_reset(ndev);
-+	if (ret == 0)
-+		ret = axienet_mdio_enable(lp);
- 	mutex_unlock(&lp->mii_bus->mdio_lock);
- 	if (ret < 0)
- 		return ret;
+@@ -207,7 +220,7 @@ static int axienet_dma_bd_init(struct net_device *ndev)
+ 					 sizeof(*lp->tx_bd_v) * lp->tx_bd_num,
+ 					 &lp->tx_bd_p, GFP_KERNEL);
+ 	if (!lp->tx_bd_v)
+-		goto out;
++		return -ENOMEM;
+ 
+ 	lp->rx_bd_v = dma_alloc_coherent(ndev->dev.parent,
+ 					 sizeof(*lp->rx_bd_v) * lp->rx_bd_num,
 -- 
 2.17.1
 
