@@ -2,68 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B908F17D80B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 03:08:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69E3917D820
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 03:28:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IYYUUt2qhauYrwknX4QunDRxOuFmZ15qG29BJkQftwE=; b=hopkiuyOu9FJJo
-	JjdVdZ//PHF+6wQhJV9x3+SnlLEGD9mfFGimQjscERiabsJ//lp2XK2LK4NSfblcWme9+O0kNhuoa
-	QeDs/hdhGQHzsHPyQFII/vPTS740mePiakIzrQQCwCChGjiDJlD2Lt62Mof+ymhlLyOmZYS+0Ssyb
-	mM8vu2x+5Yo5/KNKW4lIET/tsu7j22QPu4CVExpjLdxIASxmSEjGDXz8lbqs7TspSP1/A6wfQZbb3
-	P23P2gPppOMZQnOtxGePalMXwZXu6MEXUya5O0m07sgYkLkZR/hNc5t6CcxQpwYRdHVVz1GbyC8EL
-	xEagDSj7zWeyiJeGobRA==;
+	List-Owner; bh=eDyrbrIBiQVng3OZ/Chj7aLebbAcvHCJuA5T2s6+n1g=; b=j0ErwLAqEq0gZH
+	A5Gpn5zTzF8Vf9PBf6eB740eeKLuXsNm30SX1uKJq3ncFpbF+XpoJtP8bpnzGnNhwME+x9gZIXeut
+	Np+dikYuLzVeru0m6sxCy2cLKJvnmYfQnIDa04iw69rUhe5SHzLShfkVbCS8nUMULhy8ZutvhD3S5
+	KhNlwC6j1uOTD3r1JJtqb4m8vGGyecxsLZCyLbNQF671F6pRLl03YJfPljfNXJLuz4zh95W4BOJU/
+	UwSlLG3T3x4p0hzzJvAbVAzbwwsYzHqFIKuzAcj8mVt0GlakI+TTfsvIMU/yrGBrrysBNyJeSZSRD
+	s+UI+92mHW7/LLRdYXpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jB7pr-00072o-QU; Mon, 09 Mar 2020 02:08:03 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jB89p-0004Ly-Rd; Mon, 09 Mar 2020 02:28:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jB7ph-000719-M9; Mon, 09 Mar 2020 02:07:57 +0000
-X-UUID: 30491f7bb51e4adc93d01b5f7359216c-20200308
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=17MyIh5es8+oWEfzyMzpzHwqTieeb22zUb4UUI66VDE=; 
- b=GsbEro2QROKwbTUJcqFz6G+vVTLniRBvF+e8J4Z9Qqk/BYiixF5YhWtxizwGfSMXOre02+Wh99mivEJB5iPmzRdP5Dr6kJ9r4bbuv6CMA4bEdilrsllEaj3bEzXIYippAVPJLht7V0yNK8bRg4fiQN09RvTWN5tBZEKjlAodfjA=;
-X-UUID: 30491f7bb51e4adc93d01b5f7359216c-20200308
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 928221497; Sun, 08 Mar 2020 18:07:43 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 8 Mar 2020 19:07:40 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Mar 2020 10:08:45 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 9 Mar 2020 10:07:36 +0800
-Message-ID: <1583719659.28331.1.camel@mtksdaap41>
-Subject: Re: [PATCH v5 12/13] soc: mediatek: cmdq: add clear option in
- cmdq_pkt_wfe api
-From: CK Hu <ck.hu@mediatek.com>
-To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-Date: Mon, 9 Mar 2020 10:07:39 +0800
-In-Reply-To: <1583664775-19382-13-git-send-email-dennis-yc.hsieh@mediatek.com>
-References: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1583664775-19382-13-git-send-email-dennis-yc.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jB89i-0004LH-07
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 02:28:35 +0000
+Received: from localhost (lfbn-ncy-1-985-231.w90-101.abo.wanadoo.fr
+ [90.101.63.231])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD74B20637;
+ Mon,  9 Mar 2020 02:28:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583720912;
+ bh=5Klv9i0gcwrEZVuZa+BIxD+FYTa6nxm4aw60GyHS0xI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=hNSdzBDok5iJiJMWz5xJCqDSs2Kiw1Njm5O8MpOv68dsn0lXzL9Ly20CTyKNErqdj
+ ire7Go761k+v5N+w7FDOgFMhXBJtxuKpw9trPEUy8Lq3o7H7uYTnOFSuJiYhlpLkhu
+ zER5t9sviw+3mq1MeCu+MgQmxwblkqzSxeEpCk8E=
+Date: Mon, 9 Mar 2020 03:28:30 +0100
+From: Frederic Weisbecker <frederic@kernel.org>
+To: Alex Belits <abelits@marvell.com>
+Subject: Re: [EXT] Re: [PATCH 11/12] task_isolation: kick_all_cpus_sync:
+ don't kick isolated cpus
+Message-ID: <20200309022829.GB9615@lenoir>
+References: <4473787e1b6bc3cc226067e8d122092a678b63de.camel@marvell.com>
+ <dfa5e0e9f34e6ff0ef048c81bc70496354f31300.camel@marvell.com>
+ <20200306153446.GC8590@lenoir>
+ <7e0ce8988f4811e7453859e22654d2618557d9ab.camel@marvell.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <7e0ce8988f4811e7453859e22654d2618557d9ab.camel@marvell.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_190753_988051_6013989B 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200308_192834_085471_9473E670 
+X-CRM114-Status: GOOD (  30.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -73,8 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,106 +81,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, wsd_upstream@mediatek.com, David
- Airlie <airlied@linux.ie>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- HS Liao <hs.liao@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ Prasun Kapoor <pkapoor@marvell.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "rostedt@goodmis.org" <rostedt@goodmis.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-api@vger.kernel.org" <linux-api@vger.kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, "will@kernel.org" <will@kernel.org>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Dennis:
-
-On Sun, 2020-03-08 at 18:52 +0800, Dennis YC Hsieh wrote:
-> Add clear parameter to let client decide if
-> event should be clear to 0 after GCE receive it.
+On Sun, Mar 08, 2020 at 06:48:43AM +0000, Alex Belits wrote:
+> On Fri, 2020-03-06 at 16:34 +0100, Frederic Weisbecker wrote:
+> > On Wed, Mar 04, 2020 at 04:15:24PM +0000, Alex Belits wrote:
+> > > From: Yuri Norov <ynorov@marvell.com>
+> > > 
+> > > Make sure that kick_all_cpus_sync() does not call CPUs that are
+> > > running
+> > > isolated tasks.
+> > > 
+> > > Signed-off-by: Alex Belits <abelits@marvell.com>
+> > > ---
+> > >  kernel/smp.c | 14 +++++++++++++-
+> > >  1 file changed, 13 insertions(+), 1 deletion(-)
+> > > 
+> > > diff --git a/kernel/smp.c b/kernel/smp.c
+> > > index 3a8bcbdd4ce6..d9b4b2fedfed 100644
+> > > --- a/kernel/smp.c
+> > > +++ b/kernel/smp.c
+> > > @@ -731,9 +731,21 @@ static void do_nothing(void *unused)
+> > >   */
+> > >  void kick_all_cpus_sync(void)
+> > >  {
+> > > +	struct cpumask mask;
+> > > +
+> > >  	/* Make sure the change is visible before we kick the cpus */
+> > >  	smp_mb();
+> > > -	smp_call_function(do_nothing, NULL, 1);
+> > > +
+> > > +	preempt_disable();
+> > > +#ifdef CONFIG_TASK_ISOLATION
+> > > +	cpumask_clear(&mask);
+> > > +	task_isolation_cpumask(&mask);
+> > > +	cpumask_complement(&mask, &mask);
+> > > +#else
+> > > +	cpumask_setall(&mask);
+> > > +#endif
+> > > +	smp_call_function_many(&mask, do_nothing, NULL, 1);
+> > > +	preempt_enable();
+> > >  }
+> > 
+> > That looks very dangerous, the callers of kick_all_cpus_sync() want
+> > to
+> > sync all CPUs for a reason. You will rather need to fix the callers.
 > 
-
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
-
-> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c  | 2 +-
->  drivers/soc/mediatek/mtk-cmdq-helper.c   | 5 +++--
->  include/linux/mailbox/mtk-cmdq-mailbox.h | 3 +--
->  include/linux/soc/mediatek/mtk-cmdq.h    | 5 +++--
->  4 files changed, 8 insertions(+), 7 deletions(-)
+> All callers of this use this function to synchronize IPIs and icache,
+> and they have no idea if there is anything special about the state of
+> CPUs. If a task is isolated, this call would not be necessary because
+> the task is in userspace, and it would have to enter kernel for any of
+> that to become relevant but then it will have to switch from userspace
+> to kernel. At worst it is returning to userspace after entering
+> isolation or back in kernel running cleanup after isolation is broken
+> but before tsk_thread_flags_cache is updated. There will be nothing to
+> run on the same CPU because we have just left isolation, so task will
+> either exit or go back to userspace.
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index 7daaabc26eb1..a065b3a412cf 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -488,7 +488,7 @@ static void mtk_drm_crtc_hw_config(struct mtk_drm_crtc *mtk_crtc)
->  	if (mtk_crtc->cmdq_client) {
->  		cmdq_handle = cmdq_pkt_create(mtk_crtc->cmdq_client, PAGE_SIZE);
->  		cmdq_pkt_clear_event(cmdq_handle, mtk_crtc->cmdq_event);
-> -		cmdq_pkt_wfe(cmdq_handle, mtk_crtc->cmdq_event);
-> +		cmdq_pkt_wfe(cmdq_handle, mtk_crtc->cmdq_event, false);
->  		mtk_crtc_ddp_config(crtc, cmdq_handle);
->  		cmdq_pkt_finalize(cmdq_handle);
->  		cmdq_pkt_flush_async(cmdq_handle, ddp_cmdq_cb, cmdq_handle);
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index bb5be20fc70a..ec5637d43254 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -296,15 +296,16 @@ int cmdq_pkt_write_s_value(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
->  }
->  EXPORT_SYMBOL(cmdq_pkt_write_s_value);
->  
-> -int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
-> +int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event, bool clear)
->  {
->  	struct cmdq_instruction inst = { {0} };
-> +	u32 clear_option = clear ? CMDQ_WFE_UPDATE : 0;
->  
->  	if (event >= CMDQ_MAX_EVENT)
->  		return -EINVAL;
->  
->  	inst.op = CMDQ_CODE_WFE;
-> -	inst.value = CMDQ_WFE_OPTION;
-> +	inst.value = CMDQ_WFE_OPTION | clear_option;
->  	inst.event = event;
->  
->  	return cmdq_pkt_append_command(pkt, inst);
-> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> index 3f6bc0dfd5da..42d2a30e6a70 100644
-> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> @@ -27,8 +27,7 @@
->   * bit 16-27: update value
->   * bit 31: 1 - update, 0 - no update
->   */
-> -#define CMDQ_WFE_OPTION			(CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | \
-> -					CMDQ_WFE_WAIT_VALUE)
-> +#define CMDQ_WFE_OPTION			(CMDQ_WFE_WAIT | CMDQ_WFE_WAIT_VALUE)
->  
->  /** cmdq event maximum */
->  #define CMDQ_MAX_EVENT			0x3ff
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index 1a6c56f3bec1..d63749440697 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -152,11 +152,12 @@ int cmdq_pkt_write_s_value(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
->  /**
->   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
->   * @pkt:	the CMDQ packet
-> - * @event:	the desired event type to "wait and CLEAR"
-> + * @event:	the desired event type to wait
-> + * @clear:	clear event or not after event arrive
->   *
->   * Return: 0 for success; else the error code is returned
->   */
-> -int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event);
-> +int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event, bool clear);
->  
->  /**
->   * cmdq_pkt_clear_event() - append clear event command to the CMDQ packet
+> Is there any reason for a race at that point?
+
+
+I can imagine several races:
+
+1) The isolated task has set the cpumask but hasn't exited the kernel
+yet. If it still runs kernel code while kick_all_cpus_sync() has completed,
+we fail.
+
+2) The isolated task is running do_exit() but the caller of kick_all_cpus_sync()
+still sees the target as part of the isolated mask.
+
+3) The isolated task has just set the isolated cpumask and entered userspace
+but the caller still don't see the new value in the isolated cpumask, so it sends
+the IPI to the isolated CPU.
+
+Besides, any caller of kick_all_cpus_sync() is in its right to expect that
+everything preceding the call to that function is visible to all CPUs
+after that call. If you spare that IPI to an isolated CPU, what ensures
+it will see what it is supposed to once it calls do_exit() or prctl()?
+
+Is there a way we could fix the callers instead? For example synchronize_rcu()
+could be a replacement (it handles very well nohz_full CPUs), provided the
+callsites can sleep. It seems to be the case for __do_tune_cpucache() at least.
+
+flush_icache_range() is scarier I have to admit, doesn't look like it can
+sleep.
+
+
+> > Thanks.
+> > 
+> > >  EXPORT_SYMBOL_GPL(kick_all_cpus_sync);
+> > >  
+> > > -- 
+> > > 2.20.1
+> > > 
+> 
+> -- 
+> Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
