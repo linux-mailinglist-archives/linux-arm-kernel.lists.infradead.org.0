@@ -2,59 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4A9B17E575
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 18:12:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93CB217E598
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 18:20:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UoJaZvDNHYcm1f/6ZrAPt9zDJCsXwphl3sktzaQf5o0=; b=dO4
-	bDQjSYkEbSCr1zv6Yf0lbfpEh/DoNXN621C4APVGjbKo4P3D/s35gWMPLvEfU37afmAdUGJkt6zc+
-	TekHtWufjjpV8NhQHFWpv64hiAYB6S3DxPOYvcLIRcdbjTkNBrDLfQBz0SOeXSGVICfh2BMXRErYw
-	gthFmobqvjYUlX5JQ+Qw8j7a7PU7bhXlfvO+CZb+Qxt1bwWTACA6qEqLynsoww8WND8B+izyP82Lv
-	GCwwnlQyz3OHOFc4vafgU7MGa2zwkFuAmzwbyZuYjk1g/+oow2Creo6QO/Cs9PyPMzNjaOYvMNnYX
-	0qH4LEViOdsnzVF3aZSXF3q3EYQvS4g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YIV0KRJsjJj6eNpQpK4pQIQ02/dqHwt1EoyOEvQJ0vk=; b=WfMHwAaH68uSHz
+	wXvACXiioPPyezeW4kZOWfCM2Q+GszstVs7813ujREwtCzsT7LhrxAxXirhrwVGaQJrqqiUSyI6PS
+	CMOz2j4FblCcHCoJKb4W2RPDWkzzU6kQUxC78LSwT7MlmjNOxj2eRWYtX6bVkQpGnFJihBcV/h+lv
+	3Nv2Far2/3ZUiPO5dr0Ymb7r9M+OMrwvjh7bq2IJvrsSlR+BU97l+2YbA6OdYSY8fakX5y5sLRuTx
+	remgj+1SW5Bsk6qZU88a35nFFaPki6jIxv/SsGlLLMr52ppl1qHPdXHhoJZG+YG2FySIiSYWvMxv8
+	5a280euwZmOZUj1aY9xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBLww-0001Qq-Me; Mon, 09 Mar 2020 17:12:18 +0000
-Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+	id 1jBM50-000596-21; Mon, 09 Mar 2020 17:20:38 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBLwp-0001QP-D8
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 17:12:13 +0000
-Received: from ramsan ([84.195.182.253])
- by baptiste.telenet-ops.be with bizsmtp
- id CHC1220045USYZQ01HC10z; Mon, 09 Mar 2020 18:12:01 +0100
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1jBLwf-0007LE-4G; Mon, 09 Mar 2020 18:12:01 +0100
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1jBLwf-0005X5-2i; Mon, 09 Mar 2020 18:12:01 +0100
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH] arm64: dts: renesas: r8a77990: Add CPUIdle support for CA53
- cores
-Date: Mon,  9 Mar 2020 18:12:00 +0100
-Message-Id: <20200309171200.21226-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+ id 1jBM4r-000579-Rl; Mon, 09 Mar 2020 17:20:31 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 029HKJhW081517;
+ Mon, 9 Mar 2020 12:20:19 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1583774419;
+ bh=9tqG8lsZxDbDWkjZmACtivY21dcKdEeq8w0vOUqH4wM=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=VIDlz9gZSFX3vc5gnrDWmH9BzHO1hAaTY7kP7VJhbF0/J6Ei/Hg68fdhKNih8KbF2
+ t6pZCiBmY+w9oLRjvEbPESi9UJHewOPo4bddYsBhyo/yDskkNi2wMjF+PnrwaMhCVS
+ vv/Kx6Gb4pVV0CT3LCvFcnQpRJ7l2+dr/fON115g=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 029HKJGN068509;
+ Mon, 9 Mar 2020 12:20:19 -0500
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 9 Mar
+ 2020 12:20:19 -0500
+Received: from localhost.localdomain (10.64.41.19) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 9 Mar 2020 12:20:19 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by localhost.localdomain (8.15.2/8.15.2) with ESMTP id 029HKJUl079705;
+ Mon, 9 Mar 2020 12:20:19 -0500
+Date: Mon, 9 Mar 2020 12:26:07 -0500
+From: Bin Liu <b-liu@ti.com>
+To: Macpaul Lin <macpaul.lin@mediatek.com>
+Subject: Re: [PATCH] usb: musb: tusb6010: fix a possible missing data type
+ replacement
+Message-ID: <20200309172607.GA3839@iaqt7>
+Mail-Followup-To: Bin Liu <b-liu@ti.com>,
+ Macpaul Lin <macpaul.lin@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Min.Guo@mediatek.com, Chunfeng.Yun@mediatek.com,
+ Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org
+References: <1579603670-10970-1-git-send-email-macpaul.lin@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1579603670-10970-1-git-send-email-macpaul.lin@mediatek.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_101211_704425_CA6881A8 
-X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-CacheID: sfid-20200309_102029_989622_90F26C92 
+X-CRM114-Status: UNSURE (   7.07  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.4 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:13 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,72 +98,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- Takeshi Kihara <takeshi.kihara.df@renesas.com>,
- Ulrich Hecht <uli+renesas@fpond.eu>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
+Cc: Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Min.Guo@mediatek.com, Chunfeng.Yun@mediatek.com,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Takeshi Kihara <takeshi.kihara.df@renesas.com>
+On Tue, Jan 21, 2020 at 06:47:50PM +0800, Macpaul Lin wrote:
+> Replace "unsigned" to "u32" for checkpatch fix to tusb_writeb().
+> 
+> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 
-Enable cpuidle (core shutdown) support for the CA53 cores on R-Car E3.
-
-Signed-off-by: Takeshi Kihara <takeshi.kihara.df@renesas.com>
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
-To be queued in renesas-devel for v5.7.
-
- arch/arm64/boot/dts/renesas/r8a77990.dtsi | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/renesas/r8a77990.dtsi b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-index 0ad20b78e6eb62fd..1543f18e834f4bea 100644
---- a/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-@@ -88,6 +88,7 @@
- 			power-domains = <&sysc R8A77990_PD_CA53_CPU0>;
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
-+			cpu-idle-states = <&CPU_SLEEP_0>;
- 			dynamic-power-coefficient = <277>;
- 			clocks =<&cpg CPG_CORE R8A77990_CLK_Z2>;
- 			operating-points-v2 = <&cluster1_opp>;
-@@ -100,6 +101,7 @@
- 			power-domains = <&sysc R8A77990_PD_CA53_CPU1>;
- 			next-level-cache = <&L2_CA53>;
- 			enable-method = "psci";
-+			cpu-idle-states = <&CPU_SLEEP_0>;
- 			clocks =<&cpg CPG_CORE R8A77990_CLK_Z2>;
- 			operating-points-v2 = <&cluster1_opp>;
- 		};
-@@ -110,6 +112,19 @@
- 			cache-unified;
- 			cache-level = <2>;
- 		};
-+
-+		idle-states {
-+			entry-method = "psci";
-+
-+			CPU_SLEEP_0: cpu-sleep-0 {
-+				compatible = "arm,idle-state";
-+				arm,psci-suspend-param = <0x0010000>;
-+				local-timer-stop;
-+				entry-latency-us = <700>;
-+				exit-latency-us = <700>;
-+				min-residency-us = <5000>;
-+			};
-+		};
- 	};
- 
- 	extal_clk: extal {
--- 
-2.17.1
-
+Queued for v5.7. Thanks.
+-Bin.
 
 _______________________________________________
 linux-arm-kernel mailing list
