@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3099717E7C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:04:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1755417E825
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:18:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aB7ibKP9MgOkVvch8Dibpg9U44+2aiz9hkuF2/g+ESA=; b=PduT3iQjt+rY+S
-	nkt6SmHAJv5mmcD0OoEFdi0l982azx8KVAaH7ppQ6o1tTGxrLnP+0MIvYQfXYsPlTEyWT94UzAslB
-	r67SjagnCBLzr6f2DT+d7/2iZ6rMXrxBLLyWZDENGTShuLSHtfvx09hpBBdJqsPNTTO472z++Ntxo
-	q69cVOjcYwSkdQ1pdhKD0a5x1iTETuU1/FDaw9XYQlkcQyoeQ41wv6WetSWjiXN+N29KZT/7gD4cw
-	jkHqaMJZhxZTB1kKpdOOWBvBKwq2hBCWEY46sKU8kE0P/5N3zQp4NB75OA5XPgelNAvPR1NiKo0oZ
-	dG6ugEmM5aaWskMpV3Bg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8NU6L4cT8eOpGRKzJlsvDqhPv5wSR7xfVBoGIwNKx9o=; b=pxrHvKJwIhfZXV2SMyxPs8uWn
+	+KEqWn0L2W+iK8NC5X4aa4LcHysu+A1wv7JoY16bUQSZRHuwDUtvKnjHN4o4/AUneHXtPMPmez2Go
+	ROxdHhUkV3jOqcCfi9LSucDpEd2wWcxpXFzcVuHTPhQqx+mCroTt4ljo7vKhuGlyz+IgiE961KQMr
+	vGaTsiNw3UiP0OZX9l0GSmkEhB9zin+bwDgb90aFWcZELy56uhYObv6hvnMsc+HkFZOeq8DkqHXaQ
+	UBStZ/HqqViLe9E4vxsVGYWiOcG2cfzX0xQtA7w0879/B8qgqy3mxeGTysiM6IpcUsM8isDlXWHfV
+	2odiC26zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBNh8-0006X3-9o; Mon, 09 Mar 2020 19:04:06 +0000
+	id 1jBNux-00039b-Ae; Mon, 09 Mar 2020 19:18:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBNgz-0006NV-U6
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 19:03:59 +0000
+ id 1jBNuq-00038n-Mx
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 19:18:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA5431FB;
- Mon,  9 Mar 2020 12:03:56 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 120E63F67D;
- Mon,  9 Mar 2020 12:03:54 -0700 (PDT)
-Subject: Re: [PATCH v6 13/18] arm64: unwind: strip PAC from kernel addresses
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-14-git-send-email-amit.kachhap@arm.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <ec2c78db-31e7-9e82-525e-921b9bf6b3a3@arm.com>
-Date: Mon, 9 Mar 2020 19:03:53 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 796B01FB;
+ Mon,  9 Mar 2020 12:18:15 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC4793F67D;
+ Mon,  9 Mar 2020 12:18:14 -0700 (PDT)
+Date: Mon, 9 Mar 2020 19:18:13 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Kevin Li <kevin-ke.li@broadcom.com>
+Subject: Re: [PATCH] ASoC: brcm: Add DSL/PON SoC audio driver
+Message-ID: <20200309191813.GA51173@sirena.org.uk>
+References: <20200306222705.13309-1-kevin-ke.li@broadcom.com>
+ <20200309123307.GE4101@sirena.org.uk>
+ <69138568e9c18afa57d5edba6be9887b@mail.gmail.com>
+ <20200309175205.GJ4101@sirena.org.uk>
+ <8113837129a1b41aee674c68258cd37f@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1583476525-13505-14-git-send-email-amit.kachhap@arm.com>
-Content-Language: en-GB
+In-Reply-To: <8113837129a1b41aee674c68258cd37f@mail.gmail.com>
+X-Cookie: Beware of dog.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_120358_059712_B5D86D47 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200309_121816_800064_944103DD 
+X-CRM114-Status: GOOD (  13.86  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,116 +68,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Scott Branden <sbranden@broadcom.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, bcm-kernel-feedback-list@broadcom.com,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6097501494005592500=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Amit,
 
-On 06/03/2020 06:35, Amit Daniel Kachhap wrote:
-> From: Mark Rutland <mark.rutland@arm.com>
-> 
-> When we enable pointer authentication in the kernel, LR values saved to
-> the stack will have a PAC which we must strip in order to retrieve the
-> real return address.
-> 
-> Strip PACs when unwinding the stack in order to account for this.
-
-This patch had me looking at the wider pointer-auth + ftrace interaction...
+--===============6097501494005592500==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="G4iJoqBmSsgzjUCe"
+Content-Disposition: inline
 
 
-> diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
-> index a336cb1..b479df7 100644
-> --- a/arch/arm64/kernel/stacktrace.c
-> +++ b/arch/arm64/kernel/stacktrace.c
-> @@ -14,6 +14,7 @@
->  #include <linux/stacktrace.h>
->  
->  #include <asm/irq.h>
-> +#include <asm/pointer_auth.h>
->  #include <asm/stack_pointer.h>
->  #include <asm/stacktrace.h>
->  
-> @@ -101,6 +102,8 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+--G4iJoqBmSsgzjUCe
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-There is an earlier reader of frame->pc:
-| #ifdef CONFIG_FUNCTION_GRAPH_TRACER
-| 	if (tsk->ret_stack &&
-| 			(frame->pc == (unsigned long)return_to_handler)) {
+On Mon, Mar 09, 2020 at 11:14:18AM -0700, Kevin Li wrote:
 
+Please fix your mailer, it looks like you've included some text I wrote
+here:
 
-Which leads down the rat-hole of: does this need ptrauth_strip_insn_pac()?
+> I can't really parse what you're talking about here (perhaps some of that
+> context would have helped...) but it doesn't seem to be the clocking of
+> the I2S bus which would normally be what master and slave would be talking
+> about.
 
-The version of GCC on my desktop supports patchable-function-entry, the function pre-amble
-has two nops for use by ftrace[0]. This means if prepare_ftrace_return() re-writes the
-saved LR, it does it before the caller paciasp's it.
+but it's completely indistinguishable from the new text that you've
+added.
 
-I think that means if you stack-trace from a function that had been hooked by the
-function_graph_tracer, you will see the LR with a PAC, meaning the above == won't match.
+> It is the clock setting of I2S bus master or slave.
+> If I am playing music only, I set TX as master. All others are slave.
+> If I am recording only. I set RX as master. All others are slave.
+> If I am playing and recording at same time, I set first coming stream as
+> master second coming stream as slave. If I shut down first stream before
+> second stream, then I will set the second stream as master, otherwise
+> there will be no clock/FS signal on the I2S bus to maintain the second
+> stream to its end.
 
+This is not how any of this is supposed to work, it's unlikely to work
+well with other devices.  If the device supports both master and slave
+operation then you should let the machine driver pick if the SoC or the
+CODEC is master via set_fmt(), randomly varying this at runtime is not
+going to be helpful.
 
-The version of LLVM on my desktop however doesn't support patchable-function-entry, it
-uses _mcount() to do the ftrace stuff[1]. Here prepare_ftrace_return() overwrites a
-paciasp'd LR with one that isn't, which will fail.
+--G4iJoqBmSsgzjUCe
+Content-Type: application/pgp-signature; name="signature.asc"
 
+-----BEGIN PGP SIGNATURE-----
 
-Could the ptrauth_strip_insn_pac() call move above the CONFIG_FUNCTION_GRAPH_TRACER block,
-and could we add something like:
-|	depends on (!FTRACE || HAVE_DYNAMIC_FTRACE_WITH_REGS)
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5mlnQACgkQJNaLcl1U
+h9DJ4gf/W/+cBKoBjZFDxUg3x8GtQhsWd7Wv5h7M1lAX2b3JG3TYTn/9KTw8pw9t
+IqRQlZ5fYkIaqXjoH9c29EHV+7Oc1H7ipYTypjRpmai4D17oAixzgMg6JfsdczV0
+RpmZZbDWEYfaIHAC8mAetFWYs0JAd9VLDjRUVY0ineBnXdjCrsZBc4UQsg9vYj+h
+uV3z8auOgOz1dHgOk/FYdomT2aXtIJ3vxYQPzXK1Q19uhmlLcO3ELmk+I4opLVZH
+CnUx839AjYN+UOsa7z5I/z3RVndp/dtPIBF6TMTLrBJmgdU6QLCPBuVgLE4gdCQ2
+W4g38ZUD3DpNTiKgsPbhrXu/v7MxQg==
+=Ukbe
+-----END PGP SIGNATURE-----
 
-to the Kconfig to prevent both FTRACE and PTR_AUTH being enabled unless the compiler has
-support for patchable-function-entry?
-
-
->  	}
->  #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
->  
-> +	frame->pc = ptrauth_strip_insn_pac(frame->pc);
-> +
->  	/*
->  	 * Frames created upon entry from EL0 have NULL FP and PC values, so
->  	 * don't bother reporting these. Frames created by __noreturn functions
+--G4iJoqBmSsgzjUCe--
 
 
-Thanks,
-
-James
-
-[0] gcc (Debian 9.2.1-28) 9.2.1 20200203
-0000000000000048 <sync_icache_aliases>:
-  48:   d503201f        nop
-  4c:   d503201f        nop
-  50:   90000002        adrp    x2, 0 <__icache_flags>
-  54:   d503233f        paciasp
-  58:   a9bf7bfd        stp     x29, x30, [sp, #-16]!
-  5c:   910003fd        mov     x29, sp
-  60:   f9400044        ldr     x4, [x2]
-  64:   36000124        tbz     w4, #0, 88 <sync_icache_al
-
-
-[1] clang version 9.0.0-1 (tags/RELEASE_900/final)
-0000000000000000 <sync_icache_aliases>:
-   0:   d503233f        paciasp
-   4:   a9be4ff4        stp     x20, x19, [sp, #-32]!
-   8:   a9017bfd        stp     x29, x30, [sp, #16]
-   c:   910043fd        add     x29, sp, #0x10
-  10:   aa0103f4        mov     x20, x1
-  14:   aa0003f3        mov     x19, x0
-  18:   94000000        bl      0 <_mcount>
-  1c:   90000008        adrp    x8, 0 <__icache_flags>
-  20:   f9400108        ldr     x8, [x8]
-  24:   370000a8        tbnz    w8, #0, 38 <sync_icache_aliases+0x38>
+--===============6097501494005592500==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6097501494005592500==--
+
