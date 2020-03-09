@@ -2,75 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07B4617E08B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 13:49:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 445F217E09A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 13:52:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cuch5PPg28LqvwjZoeAQCM0T6MaxI/M2vtnxlePek9w=; b=hDcnMAU2+/kik8
-	dJZFrOWERuI6D3kR6TTF3vuv1vHgdDxAtL9mYhwCYNlWd2Dk+12CGwXCaNWn+lRnjePT/iHT8vUQ2
-	gWxcRycSxYXMHJhhjYgnWIPKE1SHzIaU4oj09xTJsGShMN+uNeO1+GMt9pmWVfsTyRTev9nOQm7WR
-	LaZ8lncxgQFDo2z7yJv24Iq+XihujDPx4tywdPocO11VhyEojt2CosDhAHnGAQam0YzrCOhW7plqF
-	MLfUMnINSUDO2YjjwiEh32K5s6IBKQABerZV/RDG/XnbIf++PYmUyMkYqj4JR83mV/svQNAGw/FS7
-	rP+oE6F94PwFysq5yoTA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0Zn1sHsHtqBBT1faEB9SUNWUXV70xe9Bjb3CSn5UPSw=; b=Id+
+	Fs6FXk3DNnDaPp7czp4xAo5oul3/aigwgpdoKQ2ptW+WHY5OKoS7yfr+bLhXm0RKEqRyeLTAEUFOj
+	MlO6UyQ5dV5/ubBfb19M9BxEruenZZXJZh+naWG8zKUFkPNUFIqFHKH3EI4d78+bmc/2x3+od84gK
+	M2TFmCgt5SC3r5AbWFb6yhvaWIKjVoZGWBDCV8VQlRWObKWGC2FtfuhxIgs6jcI1DaHORdP55Tz7J
+	KJ8Unh3bMvR3NhDLG+OFoE3TZLI78LkCU5lLMAK1E/NcGHSiFfVBDkW9dAci279E999qhWYTJ2Kmq
+	flJ95k8dDT6uXoEUGBrHbQXjRfn6PMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBHqd-00079w-Dn; Mon, 09 Mar 2020 12:49:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jBHt5-0000Zb-4j; Mon, 09 Mar 2020 12:52:03 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBHpt-0006jE-N0
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 12:48:48 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 43F6E20866;
- Mon,  9 Mar 2020 12:48:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583758125;
- bh=9sTOwmipWBkuYFmW99E2qokfucw21rAYEF30PetE1g0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cBIlgajuyPyHGJ3OqQGtTRH52t71yuBMuSl+M2Q2eK9Acs9oQT3hlFH4OHvLcYrCY
- FciEI5Orm5TKpYqgvAgLIWtuZuEqcjAWF275KEf4LXdbAQ6b5ztMM6bMMPwVwSalXT
- NxWstij5W48OAe8LjrObuJXiKDitQ5hDIjtO1paQ=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jBHpr-00BHiN-Hv; Mon, 09 Mar 2020 12:48:43 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH v2 2/2] KVM: arm64: Document PMU filtering API
-Date: Mon,  9 Mar 2020 12:48:37 +0000
-Message-Id: <20200309124837.19908-3-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200309124837.19908-1-maz@kernel.org>
-References: <20200309124837.19908-1-maz@kernel.org>
-MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com, robin.murphy@arm.com,
- mark.rutland@arm.com, eric.auger@redhat.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+ id 1jBHsv-0000ZD-7S; Mon, 09 Mar 2020 12:51:54 +0000
+Received: by mail-wr1-x444.google.com with SMTP id a25so7159947wrd.0;
+ Mon, 09 Mar 2020 05:51:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=x1PptPbFNehJRLUAcVtBI+Vv+nO2YeUsId4RwTPHqBA=;
+ b=Fmbt/s57JOvGC+t5yT6BOuG+VuAV+C1vdOBucJ2qiE9DA5S13as4YRRV/vKilghnS1
+ qCmwRQ40bTYX/E5Oi7OqKpaTZPPYm0UHI8wV6UnPq3oD4SxiMkxf3m3RrE3cd05LWt7d
+ jaFr8ytttI+TRgfOzMo/KMzE7oIfFm9pHBCKqyqPH0CpRWtaatkaWFXV42k9l9KwYWMG
+ MZC5ngxwUkLTnxmkUh1rMZxbIBFMpw77ykaPWiQ8hHMK7ACE0Zdtfo0q439DXKeCex1E
+ PF+0tMWqcOhzJFm8QAOKg8Rb9ig1E6S+Jdwo0rhRV58/yiKfAB/jdye8798KS4/++TlP
+ XdZw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=x1PptPbFNehJRLUAcVtBI+Vv+nO2YeUsId4RwTPHqBA=;
+ b=jiF3I3Hd0ZqFmPBNDRgOg3IhHNXFIQPPHLeD/mf4uHCcTFJjuHVGOqTHT4br2SGxik
+ 5EkI1AC7EbZxXFb6CflnBUa8UcBaI0CpxKcJonMN/y0eo0Cl+XeLpIuetTfxDHLctgxa
+ ycQiHOQzqEHUTwaTkAyRw2yLEnQK0B0zi47BOJBUek0imhYNTWeW6LMQcLyAis1tRTb1
+ +vmLHXEBk8CP0TUlUbvi9yaUKiqaRVgsM5gJbE/oNn2IdAhgV2/jcl459la6bIDJJQoM
+ fSyfY3ftVvyX8p8jk1VQ4yUr7BEmxhnZHwPWEY6IK/A1+da7aemmGCDhmnyLplHlbl6u
+ 8zvQ==
+X-Gm-Message-State: ANhLgQ0b721Y9H863gOEPTuESWvPX3//xa3RqUMcHoUCq8FoAx9TrzXN
+ nVxV+elV6SEY9oasts47kRhS+q+4
+X-Google-Smtp-Source: ADFU+vugr4WovSuV+zASQpMXVbLmM8ABazZhoZEpd53p08W7sWLhtWk5N82r7d6SgIM3qCpKurVBLQ==
+X-Received: by 2002:a05:6000:1081:: with SMTP id
+ y1mr20922811wrw.52.1583758312017; 
+ Mon, 09 Mar 2020 05:51:52 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id k133sm6417635wma.11.2020.03.09.05.51.51
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 09 Mar 2020 05:51:51 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH] arm64: dts: rockchip: remove max-freq from &spi1 node for
+ Hugsun X99
+Date: Mon,  9 Mar 2020 13:51:45 +0100
+Message-Id: <20200309125145.14455-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_054845_789970_5244DDD3 
-X-CRM114-Status: GOOD (  13.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200309_055153_271937_5A6A74A6 
+X-CRM114-Status: GOOD (  11.81  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -78,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,75 +95,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Eric Auger <eric.auger@redhat.com>,
- James Morse <james.morse@arm.com>, Robin Murphy <robin.murphy@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a small blurb describing how the event filtering API gets used.
+A test with the command below does not detect all errors
+in combination with 'additionalProperties: false' and
+allOf:
+  - $ref: "spi-controller.yaml#"
 
-Signed-off-by: Marc Zyngier <maz@kernel.org>
+'additionalProperties' applies to all properties that are not
+accounted-for by 'properties' or 'patternProperties' in
+the immediate schema.
+
+First when we combine spi-rockchip.yaml and
+spi-controller.yaml it gives this error:
+
+arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dt.yaml: spi@ff1d0000:
+'max-freq' does not match any of the regexes:
+'^.*@[0-9a-f]+$', '^slave$'
+
+'max-freq' is not a valid property name for spi nodes,
+so remove it.
+
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-rockchip.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 ---
- Documentation/virt/kvm/devices/vcpu.rst | 40 +++++++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+ arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/Documentation/virt/kvm/devices/vcpu.rst b/Documentation/virt/kvm/devices/vcpu.rst
-index 9963e680770a..7262c0469856 100644
---- a/Documentation/virt/kvm/devices/vcpu.rst
-+++ b/Documentation/virt/kvm/devices/vcpu.rst
-@@ -55,6 +55,46 @@ Request the initialization of the PMUv3.  If using the PMUv3 with an in-kernel
- virtual GIC implementation, this must be done after initializing the in-kernel
- irqchip.
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+index f2ffee639..ee4867fbe 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-hugsun-x99.dts
+@@ -610,7 +610,6 @@
  
-+1.3 ATTRIBUTE: KVM_ARM_VCPU_PMU_V3_FILTER
-+---------------------------------------
-+
-+:Parameters: in kvm_device_attr.addr the address for a PMU event filter is a
-+             pointer to a struct kvm_pmu_event_filter
-+
-+:Returns:
-+
-+	 =======  ======================================================
-+	 -ENODEV: PMUv3 not supported or GIC not initialized
-+	 -ENXIO:  PMUv3 not properly configured or in-kernel irqchip not
-+	 	  configured as required prior to calling this attribute
-+	 -EBUSY:  PMUv3 already initialized
-+	 =======  ======================================================
-+
-+Request the installation of a PMU event filter describe as follows:
-+
-+struct kvm_pmu_event_filter {
-+	__u16	base_event;
-+	__u16	nevents;
-+
-+#define KVM_PMU_EVENT_ALLOW	0
-+#define KVM_PMU_EVENT_DENY	1
-+
-+	__u8	action;
-+	__u8	pad[3];
-+};
-+
-+A filter range is defined as the range [@base_event, @base_event + @nevents[,
-+together with an @action (KVM_PMU_EVENT_ALLOW or KVM_PMU_EVENT_DENY). The
-+first registered range defines the global policy (global ALLOW if the first
-+@action is DENY, global DENY if the first @action is ALLOW). Multiple ranges
-+can be programmed, and must fit within the 16bit space defined by the ARMv8.1
-+PMU architecture.
-+
-+Restrictions: Event 0 (SW_INCR) is never filtered, as it doesn't count a
-+hardware event. Filtering event 0x1E (CHAIN) has no effect either, as it
-+isn't strictly speaking an event. Filtering the cycle counter is possible
-+using event 0x11 (CPU_CYCLES).
-+
+ &spi1 {
+ 	status = "okay";
+-	max-freq = <10000000>;
  
- 2. GROUP: KVM_ARM_VCPU_TIMER_CTRL
- =================================
+ 	flash@0 {
+ 		compatible = "jedec,spi-nor";
 -- 
-2.20.1
+2.11.0
 
 
 _______________________________________________
