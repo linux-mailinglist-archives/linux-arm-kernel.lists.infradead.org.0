@@ -2,65 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A3FD17D9DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 08:30:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5774217D9FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 08:45:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QbyQTloqzaMWajEZhtBR5leu5/0z8ksnDxIVrjSFeUU=; b=WU1F8RwAMRQzk3
-	Ny/ZO+tZ57P84BtC77yYMUWyYsgRO1w7at6SmXVpXtOCWOoov0LKo9svBLJNy4VTiOspXenXPJW2y
-	BDHSAeb7XGHYst5PlX3rtA13UOzRe32AMD7HxeesM4dcbTRNFT35SB4xiuafaEqhdbnJkgEp42iLJ
-	y/hp1o5BtfBI9VPNhCkqGE3TYU1cIIw7BBMj5C8g9kK78GFo2TJCUp4G+20PgHQh/EU40HTsvjiIM
-	SaRepcN40EZzFdKHIc18ydqXMYev03ZjwcVYmzIHDb1taF7ELcRwcoGbEnUq96/5YL4ls4opIBNJb
-	UFovFpkjqFdj2KivxUrQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S4GAzVUzbwvBhUhgBI4u00TRg2T58Vx0mU83Pqe1cQE=; b=DAOdOAJGQ8b4MB
+	MlDK6vVq1ciqbFERUnK9U7WWFf+hzWFBsqZajMlY4YUN9Nyu8QRQNrtGDfptmkq8v5Tr0PzJDAc1b
+	mRpfhXm0eLG9FrMy221Rllw3vDF5SRjRaZqQMO9yWqwqacF/Kd9EtEVu+RvVqTrZYvv/hy5KMT8US
+	VSS1Ow6txWG+K+bN4xGDO2iQb38IkYiSvTmCgjuMpRJauLrHgr4SVZsR992Re/TUJ+QRBE2T9pmiK
+	9k0DbDcXr48pykST5E31C44R1Yl4dt8ux3JLzA6v1S4iaWeaiZPUagKDXKtiSh9kZV5QjL5IfGNF8
+	s/hfeHCG/Tu/db47Qxjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBCrR-0002Ug-7w; Mon, 09 Mar 2020 07:30:01 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1jBD6f-0001Nm-Ur; Mon, 09 Mar 2020 07:45:45 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBCrI-0002U3-2B; Mon, 09 Mar 2020 07:29:53 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 09 Mar 2020 00:29:50 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,532,1574150400"; d="scan'208";a="235519831"
-Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.167])
- ([10.237.72.167])
- by fmsmga008.fm.intel.com with ESMTP; 09 Mar 2020 00:29:47 -0700
-Subject: Re: [PATCH v2 09/11] mmc: sdhci: iproc: Add custom set_power()
- callback for bcm2711
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-kernel@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
- <20200306174413.20634-10-nsaenzjulienne@suse.de>
-From: Adrian Hunter <adrian.hunter@intel.com>
-Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
- Business Identity Code: 0357606 - 4, Domiciled in Helsinki
-Message-ID: <254549a8-804a-eb8a-7fce-374852bbd9af@intel.com>
-Date: Mon, 9 Mar 2020 09:29:02 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jBD6T-0001Mp-GP
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 07:45:34 +0000
+Received: by mail-wr1-x441.google.com with SMTP id t11so9706113wrw.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Mar 2020 00:45:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JohOmOJ2T+csOaen6ynllfQT2PQ8VgsBqiM3qEbp8as=;
+ b=HP+Om+gmFPxPOXCJQ4AgXeIEU4/wRrwvfwQH7ZxwqOgJbeyO9kv2rUkMUkXSWLslto
+ m5Bf9EmNlvde6i0960insg5nBP0LL+mrPaueYnFfZwdWllo5wyB8nqTH906n2IFvoUFC
+ mk0Kgl5ryDblG0fZEEPLTl/51Py2oVhukshG+F5BDobuFxf0QJdzoc/OLAeCjm7W5ORV
+ Ti3pxp0c4v5390A8Q/T19lw1wQA+71tX3p9oRELquG68t5KXXE+rbUc5CLrKsoSxfCnE
+ rpdXolv2ETmowsmmfOS4L+BGcIRl8YHMW+5X5WvRMGlXl/vhWwgz1yLmFOv+E9SK8aYy
+ qt7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JohOmOJ2T+csOaen6ynllfQT2PQ8VgsBqiM3qEbp8as=;
+ b=Qj4PJtJJ1f4r+B4iPNEHm2eE688u4VNiuBQ4sa1rto4FlEzz68L5ZzP2J64uf0Q4ix
+ QYnPPiYibRtIQ3aY5r3vJla1yzOwtqOJWas2DH8e+2Nsnc5zHDp8vq/nn5G7IsAzm6Qi
+ XpYDXBfNYUjqav4fxQVYjtrz2SW8IGozNEcd2G2ZCPsVClTHni4BRugyhglQ8Dt7f29v
+ EsP5Tk11UK4yRIdB7M4j7b8K9MHuofrpmYvSKMadnfuhY1kg7NE6mOF5dKOkayg5rVeB
+ JKA9ZZGqwU2gfwzKge8lrYtrSbNVT5EvmBg+/Lm8yG6WdH+1PLrGT/lucecJDeyLunx4
+ To3w==
+X-Gm-Message-State: ANhLgQ3V4qCjxQdYf6pYP3fTK5mkFjVHN9NukMbPmJ6c2fXEG1vtyNKi
+ R8wpA2CsbJc276d73iQQ3UGV9zqj2H+beZd8Q1I=
+X-Google-Smtp-Source: ADFU+vt4iAmDL5h0y/kV4E7Ipmkv+BBc24pv9MRc0ozJhfCIh3aP/zVHGMnQwBBM+ci4u4lNUsbZ8iMb8yog2Jeb0TA=
+X-Received: by 2002:a5d:4902:: with SMTP id x2mr20682737wrq.301.1583739929355; 
+ Mon, 09 Mar 2020 00:45:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200306174413.20634-10-nsaenzjulienne@suse.de>
-Content-Language: en-US
+References: <1583539986-573-1-git-send-email-opendmb@gmail.com>
+In-Reply-To: <1583539986-573-1-git-send-email-opendmb@gmail.com>
+From: Gregory Fong <gregory.0xf0@gmail.com>
+Date: Mon, 9 Mar 2020 00:45:02 -0700
+Message-ID: <CADtm3G4eq_p1YZtQrtcx4LGPiY82BpgXf55YtJCW+WJSrM7siw@mail.gmail.com>
+Subject: Re: [PATCH] gpio: brcmstb: support gpio-line-names property
+To: Doug Berger <opendmb@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_002952_113938_E53D6BB3 
-X-CRM114-Status: GOOD (  18.24  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200309_004533_542759_195C938C 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [gregory.0xf0[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [gregory.0xf0[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,64 +94,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stefan.wahren@i2se.com, Ulf Hansson <ulf.hansson@linaro.org>,
- f.fainelli@gmail.com, linux-mmc@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, phil@raspberrypi.com,
+Cc: Florian Fainelli <f.fainelli@gmail.com>, linux-gpio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/03/20 7:44 pm, Nicolas Saenz Julienne wrote:
-> The controller needs a valid bus voltage in its power register
-> regardless of whether an external regulator is taking care of the power
-> supply.
-> 
-> The sdhci core already provides a helper function for this,
-> sdhci_set_power_and_bus_voltage(), so create a bcm2711 specific 'struct
-> sdhci_ops' which makes use of it.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Hi Doug,
 
-Acked-by: Adrian Hunter <adrian.hunter@intel.com>
+On Fri, Mar 6, 2020 at 4:14 PM Doug Berger <opendmb@gmail.com> wrote:
+>
+> The default handling of the gpio-line-names property by the
+> gpiolib-of implementation does not work with the multiple
+> gpiochip banks per device structure used by the gpio-brcmstb
+> driver.
+>
+> This commit adds driver level support for the device tree
+> property so that GPIO lines can be assigned friendly names.
+>
+> Signed-off-by: Doug Berger <opendmb@gmail.com>
+
+I've added a few comments below.  With the suggested updates:
+Acked-by: Gregory Fong <gregory.0xf0@gmail.com>
 
 > ---
->  drivers/mmc/host/sdhci-iproc.c | 17 ++++++++++++++++-
->  1 file changed, 16 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/mmc/host/sdhci-iproc.c b/drivers/mmc/host/sdhci-iproc.c
-> index f4f5f0a70cda..225603148d7d 100644
-> --- a/drivers/mmc/host/sdhci-iproc.c
-> +++ b/drivers/mmc/host/sdhci-iproc.c
-> @@ -261,9 +261,24 @@ static const struct sdhci_iproc_data bcm2835_data = {
->  	.mmc_caps = 0x00000000,
+>  drivers/gpio/gpio-brcmstb.c | 44 ++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 44 insertions(+)
+>
+> diff --git a/drivers/gpio/gpio-brcmstb.c b/drivers/gpio/gpio-brcmstb.c
+> index 05e3f99ae59c..e9ab246e2d42 100644
+> --- a/drivers/gpio/gpio-brcmstb.c
+> +++ b/drivers/gpio/gpio-brcmstb.c
+> @@ -603,6 +603,49 @@ static const struct dev_pm_ops brcmstb_gpio_pm_ops = {
+>         .resume_noirq = brcmstb_gpio_resume,
 >  };
->  
-> +static const struct sdhci_ops sdhci_iproc_bcm2711_ops = {
-> +	.read_l = sdhci_iproc_readl,
-> +	.read_w = sdhci_iproc_readw,
-> +	.read_b = sdhci_iproc_readb,
-> +	.write_l = sdhci_iproc_writel,
-> +	.write_w = sdhci_iproc_writew,
-> +	.write_b = sdhci_iproc_writeb,
-> +	.set_clock = sdhci_set_clock,
-> +	.set_power = sdhci_set_power_and_bus_voltage,
-> +	.get_max_clock = sdhci_iproc_get_max_clock,
-> +	.set_bus_width = sdhci_set_bus_width,
-> +	.reset = sdhci_reset,
-> +	.set_uhs_signaling = sdhci_set_uhs_signaling,
-> +};
+>
+> +static void brcmstb_gpio_set_names(struct device *dev,
+> +                                  struct brcmstb_gpio_bank *bank)
+> +{
+> +       struct device_node *np = dev->of_node;
+> +       const char **names;
+> +       int nstrings, base;
+> +       unsigned int i;
 > +
->  static const struct sdhci_pltfm_data sdhci_bcm2711_pltfm_data = {
->  	.quirks = SDHCI_QUIRK_MULTIBLOCK_READ_ACMD12,
-> -	.ops = &sdhci_iproc_32only_ops,
-> +	.ops = &sdhci_iproc_bcm2711_ops,
->  };
->  
->  static const struct sdhci_iproc_data bcm2711_data = {
-> 
+> +       base = bank->id * MAX_GPIO_PER_BANK;
+> +
+> +       nstrings = of_property_count_strings(np, "gpio-line-names");
+> +       if (nstrings <= base)
+> +               /* Line names not present */
+> +               return;
+> +
+> +       names = devm_kcalloc(dev, MAX_GPIO_PER_BANK, sizeof(char *),
 
+Please use sizeof(*names) instead of sizeof(char *).
+
+> +                            GFP_KERNEL);
+> +       if (!names)
+> +               return;
+> +
+> +       /*
+> +        * Make sure to not index beyond the end of the number of descriptors
+> +        * of the GPIO device.
+> +        */
+> +       for (i = 0; i < bank->width; i++) {
+> +               const char *name;
+> +               int ret;
+> +
+> +               ret = of_property_read_string_index(np, "gpio-line-names",
+> +                                                   base + i, &name);
+> +               if (ret) {
+> +                       if (ret != -ENODATA)
+> +                               dev_err(dev, "unable to name line %d: %d\n",
+> +                                       i, ret);
+
+Recommend adding the GPIO bank ID to this error message.
+
+Best regards,
+Gregory
 
 _______________________________________________
 linux-arm-kernel mailing list
