@@ -2,93 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB35617E79F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:54:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C079F17E7BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:02:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oW9/ye93UKJmAdY4ZYYjO+BYmcZpaJ4lF7pouc2xsMI=; b=ri/MUXd45rfLJC
-	Ike123X2BlPlTePsFpftKHuepGo/SQJV4IB4Dised53Uz9A8v0EQ5DRIv2YnG0z369PMSHtb2OhFc
-	l2lTBDL+0ffI716tbsLW52MZIAp5UewEizrl6Ui+Ob65+1GNpGSz7C+dpHIMrvK2Grk+3JZptBm0Z
-	t6EOMTmZxn/AMalj3blF8CHfEVQKdlrb9/3Sc/jG6iG6RewTZ4cpSByXN4+5FFaUt5Y5ObBhfoM8H
-	zyy04wApHItfA0rIhs1dM0Gy2fs9ixCyMYx92PkpE/VT0KhYgvfzD+/S6os8YEpE78KdZBOldkaQv
-	Z8nHbn8nqmNVxYjxkS2w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ztS6HlyMoQXsddIYSg+Zfpuhdi+fzSQserMSUoz9U/4=; b=V+s
+	Uqw5sIcsj54R2pJKT4NRH97ZPF5c73L0yN3SRgRdBFjlgMDiDtdmKHmjDpYcVx+4WDFfoe3WSY8cn
+	4/rQWpMGGnttFihrd8pcms7ChzVPr3vZu1ot9zi1/uGSESAOgrhPyqMS0zlEl2ir1Je9dOolYddTo
+	RdwZxRs4+cfO6fPpfCxRobgY6dTOdwdXTpiJk2orKbYWxoJbfcVrQBBBUmyl/lE/Mr/AD66axymuA
+	bjS5HS3VZMU/mymPUesi5OVr3eksZ/FS7U82ZEvMbZrjvnHy5N0k7IBcX5fd4J9As7bxSENlvIUrB
+	vZZtZp9CooAiHrxK01B1CoS6HTe009w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBNY2-0002AM-Sj; Mon, 09 Mar 2020 18:54:42 +0000
-Received: from mail-qt1-x836.google.com ([2607:f8b0:4864:20::836])
+	id 1jBNfe-0005rR-DM; Mon, 09 Mar 2020 19:02:34 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBNXv-00029z-UC
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:54:37 +0000
-Received: by mail-qt1-x836.google.com with SMTP id 59so7845309qtb.1
+ id 1jBNfW-0005qv-EA
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 19:02:27 +0000
+Received: by mail-pg1-x542.google.com with SMTP id t3so5147048pgn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 11:54:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ossystems-com-br.20150623.gappssmtp.com; s=20150623;
- h=from:mime-version:date:message-id:subject:to;
- bh=gW+iriUdtxlZCcttcADThfqktlutCqmObVsZzeSTfPY=;
- b=v2chXXaRVG5vuD5kFLHQEDXvsMGK7uIFfVzTpEx4AhLStQHihyDwaC77PFehhKa/wG
- D5EyVVhEEUautHa79a2pTHhObnj5dHWkr7paCh+GgcmJuRYzApZHvrXOHR43/a5K4J4d
- b/Y3Rnr+mTwYV5ryUhPBulYrGmMv6t2ELiC6KFi0pqgl0qy6DlyfPVNMMGhj4jxuwyBX
- NwXSLl72YQM1B12SSU8om0b2c9UML098raw/p3q2Gc7Um84j85VmGKFyuoiOgYuZJB2N
- FhHswBvNDGaC2AaCtVkEwhRw8xZj6/15iBTAMH9fggJTZhFt+vTySFcL/5ZmEJpJHHjZ
- 4JTg==
+ Mon, 09 Mar 2020 12:02:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=LqjgG/BRzXge1SRKmRz2Izg1e1FT7fpH0mgiegLZaD8=;
+ b=f2+PRJpfuQtEeh3NodtIE9kNC/TOuTePSMQH5x7j3+liuDNeLVvUwcTT7z0D7ArA+P
+ rxhFd9xEJh/cNudISU7Bzq1TAwrc3XdcK47YvYteWi6BEirAHUDbpUfzcIp3QpRJtd0/
+ 4RoW15JweTZaJHwrwi4U52yYTaYSHhMYiTWQu1CWXL2sJN+3og3dsW83rrOyqgTS+vPY
+ jaeh6wLEHe7VtlkpIi0cSm4LC2+yfXzhxpNhlJ8Z+IUFHY+4vdBbGTDypLoCbnmsghCh
+ CalEHE4ASU0O+un8fvGd6kgysDKeJlpGHUmtF4/7+l9M6TmN1L3XvhVUQsbLRvaUhX1A
+ HZkw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:mime-version:date:message-id:subject:to;
- bh=gW+iriUdtxlZCcttcADThfqktlutCqmObVsZzeSTfPY=;
- b=j6CS2e/zYH2kML6tyRb+XIzPN5nWBETSleY/hL6x12AOQ6XyCUdaMRuy+AYY0S9AzG
- vOx8mFCLe/VGp5d1qpaLbZgcSzmLfFLxl3c4ik+Or277/ss2zJzcEo9ld8SqEApSf1Td
- /Lj0u8zgsvOcjaCX2nTpOZZNSrXB1Ph5P59Xct8iIKWaxWJvpeZcuRR7qdvNA/6gSJBR
- iYzEZy300Naw8yACu+N4pypkXjbKd1jU1dXvPTAc2T8ZZOOvK92yxgXyhs+oNAttgUdb
- XjD2J/Sg/85Dab5To2kkyEBgDoO/VFKOyQdraw+SE1OxUl1nswKl5wmmVps/SXVWaRMY
- yOEA==
-X-Gm-Message-State: ANhLgQ1Bwx5CVM1RlhRSVO7AZGDGB4won8QSiNMWpOTvTpWnuRSK3aaL
- Et9zBm4mIC51wFNDPn4HT/PJN1k2OgBClw==
-X-Google-Smtp-Source: ADFU+vuLE890YFqYB3EwS5uHPS0+iOZSW6yA1aRWmqHT9vGOblGU98QQQBFMm6myMJpGVcj5OtNaLQ==
-X-Received: by 2002:ac8:7508:: with SMTP id u8mr15962002qtq.163.1583780074044; 
- Mon, 09 Mar 2020 11:54:34 -0700 (PDT)
-Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com.
- [209.85.160.174])
- by smtp.gmail.com with ESMTPSA id r20sm5882436qtt.6.2020.03.09.11.54.32
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 09 Mar 2020 11:54:33 -0700 (PDT)
-From: Otavio Salvador <otavio.salvador@ossystems.com.br>
-X-Google-Original-From: Otavio Salvador <otavio@ossystems.com.br>
-Received: by mail-qt1-f174.google.com with SMTP id a4so7791806qto.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 11:54:32 -0700 (PDT)
-X-Received: by 2002:ac8:607:: with SMTP id d7mr15667506qth.271.1583780072098; 
- Mon, 09 Mar 2020 11:54:32 -0700 (PDT)
-MIME-Version: 1.0
-Date: Mon, 9 Mar 2020 15:54:20 -0300
-X-Gmail-Original-Message-ID: <CAP9ODKpW=h6SVtsn-uuDQ4+TgR0NnjBW==8vwyQD4+x_dbFzRQ@mail.gmail.com>
-Message-ID: <CAP9ODKpW=h6SVtsn-uuDQ4+TgR0NnjBW==8vwyQD4+x_dbFzRQ@mail.gmail.com>
-Subject: SPI irq regression
-To: kernel@esmil.dk, Heiko Stuebner <heiko@sntech.de>,
- Mark Brown <broonie@kernel.org>, 
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=LqjgG/BRzXge1SRKmRz2Izg1e1FT7fpH0mgiegLZaD8=;
+ b=Vx1xKC8CZGNkQx0cnSyhWFbe0fBBJI2IN8e6LPro0+kVl+XsjYVVVnEPXDR3f5Au99
+ m52+l7YJIJpAFmxSY5nMA1WLkW5wkx2kO+U/sxOoAliDVLGh6pckGOZoIUK3sHWmNjF+
+ 9TYJPdCRliZm2eYZykwoof/Gs/dunzpYXThRiKgoZGY+H7qh0Xn9xlGoikRWJzh7FmNp
+ eX1ZILoaf9q1mluuKPmH/8pjvFDLpfcZsXtvIwlsqw5Gtf0cYqJyxoe8qGZyGfyOCKJv
+ RLE7umsm+BKxtQRe9II+NFfM65aHXUXWnpL3h/WFmAvTATZ83poG1iuZ8f7/2dUoj9V/
+ numw==
+X-Gm-Message-State: ANhLgQ1JXaiLgIDKB0niAUDPQULeobG1OXXZEdZvWUY8LtM+gvfo+65d
+ nqtnc204ldNlSqYa785SMI0=
+X-Google-Smtp-Source: ADFU+vsr6TmwDmzuNPLlgUI9yBuj0NFXy8B4HJffvWJ+MQY1DRFUMkUWr980hOOF+1FU799k+AJmig==
+X-Received: by 2002:a62:6842:: with SMTP id d63mr18012944pfc.113.1583780545890; 
+ Mon, 09 Mar 2020 12:02:25 -0700 (PDT)
+Received: from stbirv-lnx-3.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id v8sm289616pjr.10.2020.03.09.12.02.24
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Mon, 09 Mar 2020 12:02:25 -0700 (PDT)
+From: Doug Berger <opendmb@gmail.com>
+To: Gregory Fong <gregory.0xf0@gmail.com>
+Subject: [PATCH V2] gpio: brcmstb: support gpio-line-names property
+Date: Mon,  9 Mar 2020 12:02:01 -0700
+Message-Id: <1583780521-45702-1-git-send-email-opendmb@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_115436_116773_023543D6 
-X-CRM114-Status: UNSURE (   6.07  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200309_120226_503674_0E824ECB 
+X-CRM114-Status: GOOD (  16.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:836 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [opendmb[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,43 +93,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Florian Fainelli <f.fainelli@gmail.com>, linux-gpio@vger.kernel.org,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Doug Berger <opendmb@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The default handling of the gpio-line-names property by the
+gpiolib-of implementation does not work with the multiple
+gpiochip banks per device structure used by the gpio-brcmstb
+driver.
 
-Since commit:
+This commit adds driver level support for the device tree
+property so that GPIO lines can be assigned friendly names.
 
-commit 01b59ce5dac856323a0c13c1d51d99a819f32efe
-Author: Emil Renner Berthing <kernel@esmil.dk>
-Date:   Wed Oct 31 11:57:09 2018 +0100
+Signed-off-by: Doug Berger <opendmb@gmail.com>
+---
+ drivers/gpio/gpio-brcmstb.c | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
 
-    spi: rockchip: use irq rather than polling
-
-    Register an interrupt handler to fill/empty the
-    tx and rx fifos rather than busy-looping.
-
-    Signed-off-by: Emil Renner Berthing <kernel@esmil.dk>
-    Tested-by: Heiko Stuebner <heiko@sntech.de>
-    Signed-off-by: Mark Brown <broonie@kernel.org>
-
-SPI is no longer functional on a RV1108 Elgin board.
-
-The error messages are:
-
-[   46.186916] spidev spi0.0: SPI transfer timed out
-[   46.187435] spi_master spi0: failed to transfer one message from queue
-
-Reverting this commit makes SPI to work again.
-
-Any ideas on how we can properly fix this regression?
-
+diff --git a/drivers/gpio/gpio-brcmstb.c b/drivers/gpio/gpio-brcmstb.c
+index 05e3f99ae59c..fcfc1a1f1a5c 100644
+--- a/drivers/gpio/gpio-brcmstb.c
++++ b/drivers/gpio/gpio-brcmstb.c
+@@ -603,6 +603,49 @@ static const struct dev_pm_ops brcmstb_gpio_pm_ops = {
+ 	.resume_noirq = brcmstb_gpio_resume,
+ };
+ 
++static void brcmstb_gpio_set_names(struct device *dev,
++				   struct brcmstb_gpio_bank *bank)
++{
++	struct device_node *np = dev->of_node;
++	const char **names;
++	int nstrings, base;
++	unsigned int i;
++
++	base = bank->id * MAX_GPIO_PER_BANK;
++
++	nstrings = of_property_count_strings(np, "gpio-line-names");
++	if (nstrings <= base)
++		/* Line names not present */
++		return;
++
++	names = devm_kcalloc(dev, MAX_GPIO_PER_BANK, sizeof(*names),
++			     GFP_KERNEL);
++	if (!names)
++		return;
++
++	/*
++	 * Make sure to not index beyond the end of the number of descriptors
++	 * of the GPIO device.
++	 */
++	for (i = 0; i < bank->width; i++) {
++		const char *name;
++		int ret;
++
++		ret = of_property_read_string_index(np, "gpio-line-names",
++						    base + i, &name);
++		if (ret) {
++			if (ret != -ENODATA)
++				dev_err(dev, "unable to name line %d: %d\n",
++					base + i, ret);
++			break;
++		}
++		if (*name)
++			names[i] = name;
++	}
++
++	bank->gc.names = names;
++}
++
+ static int brcmstb_gpio_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -726,6 +769,7 @@ static int brcmstb_gpio_probe(struct platform_device *pdev)
+ 		need_wakeup_event |= !!__brcmstb_gpio_get_active_irqs(bank);
+ 		gc->write_reg(reg_base + GIO_MASK(bank->id), 0);
+ 
++		brcmstb_gpio_set_names(dev, bank);
+ 		err = gpiochip_add_data(gc, bank);
+ 		if (err) {
+ 			dev_err(dev, "Could not add gpiochip for bank %d\n",
 -- 
-Otavio Salvador                             O.S. Systems
-http://www.ossystems.com.br        http://code.ossystems.com.br
-Mobile: +55 (53) 9 9981-7854          Mobile: +1 (347) 903-9750
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
