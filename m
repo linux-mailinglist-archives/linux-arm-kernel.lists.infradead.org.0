@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C079F17E7BF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:02:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3099717E7C4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 20:04:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ztS6HlyMoQXsddIYSg+Zfpuhdi+fzSQserMSUoz9U/4=; b=V+s
-	Uqw5sIcsj54R2pJKT4NRH97ZPF5c73L0yN3SRgRdBFjlgMDiDtdmKHmjDpYcVx+4WDFfoe3WSY8cn
-	4/rQWpMGGnttFihrd8pcms7ChzVPr3vZu1ot9zi1/uGSESAOgrhPyqMS0zlEl2ir1Je9dOolYddTo
-	RdwZxRs4+cfO6fPpfCxRobgY6dTOdwdXTpiJk2orKbYWxoJbfcVrQBBBUmyl/lE/Mr/AD66axymuA
-	bjS5HS3VZMU/mymPUesi5OVr3eksZ/FS7U82ZEvMbZrjvnHy5N0k7IBcX5fd4J9As7bxSENlvIUrB
-	vZZtZp9CooAiHrxK01B1CoS6HTe009w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aB7ibKP9MgOkVvch8Dibpg9U44+2aiz9hkuF2/g+ESA=; b=PduT3iQjt+rY+S
+	nkt6SmHAJv5mmcD0OoEFdi0l982azx8KVAaH7ppQ6o1tTGxrLnP+0MIvYQfXYsPlTEyWT94UzAslB
+	r67SjagnCBLzr6f2DT+d7/2iZ6rMXrxBLLyWZDENGTShuLSHtfvx09hpBBdJqsPNTTO472z++Ntxo
+	q69cVOjcYwSkdQ1pdhKD0a5x1iTETuU1/FDaw9XYQlkcQyoeQ41wv6WetSWjiXN+N29KZT/7gD4cw
+	jkHqaMJZhxZTB1kKpdOOWBvBKwq2hBCWEY46sKU8kE0P/5N3zQp4NB75OA5XPgelNAvPR1NiKo0oZ
+	dG6ugEmM5aaWskMpV3Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBNfe-0005rR-DM; Mon, 09 Mar 2020 19:02:34 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBNfW-0005qv-EA
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 19:02:27 +0000
-Received: by mail-pg1-x542.google.com with SMTP id t3so5147048pgn.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Mar 2020 12:02:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=LqjgG/BRzXge1SRKmRz2Izg1e1FT7fpH0mgiegLZaD8=;
- b=f2+PRJpfuQtEeh3NodtIE9kNC/TOuTePSMQH5x7j3+liuDNeLVvUwcTT7z0D7ArA+P
- rxhFd9xEJh/cNudISU7Bzq1TAwrc3XdcK47YvYteWi6BEirAHUDbpUfzcIp3QpRJtd0/
- 4RoW15JweTZaJHwrwi4U52yYTaYSHhMYiTWQu1CWXL2sJN+3og3dsW83rrOyqgTS+vPY
- jaeh6wLEHe7VtlkpIi0cSm4LC2+yfXzhxpNhlJ8Z+IUFHY+4vdBbGTDypLoCbnmsghCh
- CalEHE4ASU0O+un8fvGd6kgysDKeJlpGHUmtF4/7+l9M6TmN1L3XvhVUQsbLRvaUhX1A
- HZkw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=LqjgG/BRzXge1SRKmRz2Izg1e1FT7fpH0mgiegLZaD8=;
- b=Vx1xKC8CZGNkQx0cnSyhWFbe0fBBJI2IN8e6LPro0+kVl+XsjYVVVnEPXDR3f5Au99
- m52+l7YJIJpAFmxSY5nMA1WLkW5wkx2kO+U/sxOoAliDVLGh6pckGOZoIUK3sHWmNjF+
- 9TYJPdCRliZm2eYZykwoof/Gs/dunzpYXThRiKgoZGY+H7qh0Xn9xlGoikRWJzh7FmNp
- eX1ZILoaf9q1mluuKPmH/8pjvFDLpfcZsXtvIwlsqw5Gtf0cYqJyxoe8qGZyGfyOCKJv
- RLE7umsm+BKxtQRe9II+NFfM65aHXUXWnpL3h/WFmAvTATZ83poG1iuZ8f7/2dUoj9V/
- numw==
-X-Gm-Message-State: ANhLgQ1JXaiLgIDKB0niAUDPQULeobG1OXXZEdZvWUY8LtM+gvfo+65d
- nqtnc204ldNlSqYa785SMI0=
-X-Google-Smtp-Source: ADFU+vsr6TmwDmzuNPLlgUI9yBuj0NFXy8B4HJffvWJ+MQY1DRFUMkUWr980hOOF+1FU799k+AJmig==
-X-Received: by 2002:a62:6842:: with SMTP id d63mr18012944pfc.113.1583780545890; 
- Mon, 09 Mar 2020 12:02:25 -0700 (PDT)
-Received: from stbirv-lnx-3.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id v8sm289616pjr.10.2020.03.09.12.02.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 09 Mar 2020 12:02:25 -0700 (PDT)
-From: Doug Berger <opendmb@gmail.com>
-To: Gregory Fong <gregory.0xf0@gmail.com>
-Subject: [PATCH V2] gpio: brcmstb: support gpio-line-names property
-Date: Mon,  9 Mar 2020 12:02:01 -0700
-Message-Id: <1583780521-45702-1-git-send-email-opendmb@gmail.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jBNh8-0006X3-9o; Mon, 09 Mar 2020 19:04:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBNgz-0006NV-U6
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 19:03:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA5431FB;
+ Mon,  9 Mar 2020 12:03:56 -0700 (PDT)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 120E63F67D;
+ Mon,  9 Mar 2020 12:03:54 -0700 (PDT)
+Subject: Re: [PATCH v6 13/18] arm64: unwind: strip PAC from kernel addresses
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <1583476525-13505-14-git-send-email-amit.kachhap@arm.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <ec2c78db-31e7-9e82-525e-921b9bf6b3a3@arm.com>
+Date: Mon, 9 Mar 2020 19:03:53 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <1583476525-13505-14-git-send-email-amit.kachhap@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_120226_503674_0E824ECB 
-X-CRM114-Status: GOOD (  16.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200309_120358_059712_B5D86D47 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [opendmb[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,95 +64,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, linux-gpio@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Doug Berger <opendmb@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The default handling of the gpio-line-names property by the
-gpiolib-of implementation does not work with the multiple
-gpiochip banks per device structure used by the gpio-brcmstb
-driver.
+Hi Amit,
 
-This commit adds driver level support for the device tree
-property so that GPIO lines can be assigned friendly names.
+On 06/03/2020 06:35, Amit Daniel Kachhap wrote:
+> From: Mark Rutland <mark.rutland@arm.com>
+> 
+> When we enable pointer authentication in the kernel, LR values saved to
+> the stack will have a PAC which we must strip in order to retrieve the
+> real return address.
+> 
+> Strip PACs when unwinding the stack in order to account for this.
 
-Signed-off-by: Doug Berger <opendmb@gmail.com>
----
- drivers/gpio/gpio-brcmstb.c | 44 ++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 44 insertions(+)
+This patch had me looking at the wider pointer-auth + ftrace interaction...
 
-diff --git a/drivers/gpio/gpio-brcmstb.c b/drivers/gpio/gpio-brcmstb.c
-index 05e3f99ae59c..fcfc1a1f1a5c 100644
---- a/drivers/gpio/gpio-brcmstb.c
-+++ b/drivers/gpio/gpio-brcmstb.c
-@@ -603,6 +603,49 @@ static const struct dev_pm_ops brcmstb_gpio_pm_ops = {
- 	.resume_noirq = brcmstb_gpio_resume,
- };
- 
-+static void brcmstb_gpio_set_names(struct device *dev,
-+				   struct brcmstb_gpio_bank *bank)
-+{
-+	struct device_node *np = dev->of_node;
-+	const char **names;
-+	int nstrings, base;
-+	unsigned int i;
-+
-+	base = bank->id * MAX_GPIO_PER_BANK;
-+
-+	nstrings = of_property_count_strings(np, "gpio-line-names");
-+	if (nstrings <= base)
-+		/* Line names not present */
-+		return;
-+
-+	names = devm_kcalloc(dev, MAX_GPIO_PER_BANK, sizeof(*names),
-+			     GFP_KERNEL);
-+	if (!names)
-+		return;
-+
-+	/*
-+	 * Make sure to not index beyond the end of the number of descriptors
-+	 * of the GPIO device.
-+	 */
-+	for (i = 0; i < bank->width; i++) {
-+		const char *name;
-+		int ret;
-+
-+		ret = of_property_read_string_index(np, "gpio-line-names",
-+						    base + i, &name);
-+		if (ret) {
-+			if (ret != -ENODATA)
-+				dev_err(dev, "unable to name line %d: %d\n",
-+					base + i, ret);
-+			break;
-+		}
-+		if (*name)
-+			names[i] = name;
-+	}
-+
-+	bank->gc.names = names;
-+}
-+
- static int brcmstb_gpio_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -726,6 +769,7 @@ static int brcmstb_gpio_probe(struct platform_device *pdev)
- 		need_wakeup_event |= !!__brcmstb_gpio_get_active_irqs(bank);
- 		gc->write_reg(reg_base + GIO_MASK(bank->id), 0);
- 
-+		brcmstb_gpio_set_names(dev, bank);
- 		err = gpiochip_add_data(gc, bank);
- 		if (err) {
- 			dev_err(dev, "Could not add gpiochip for bank %d\n",
--- 
-2.7.4
 
+> diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+> index a336cb1..b479df7 100644
+> --- a/arch/arm64/kernel/stacktrace.c
+> +++ b/arch/arm64/kernel/stacktrace.c
+> @@ -14,6 +14,7 @@
+>  #include <linux/stacktrace.h>
+>  
+>  #include <asm/irq.h>
+> +#include <asm/pointer_auth.h>
+>  #include <asm/stack_pointer.h>
+>  #include <asm/stacktrace.h>
+>  
+> @@ -101,6 +102,8 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+
+There is an earlier reader of frame->pc:
+| #ifdef CONFIG_FUNCTION_GRAPH_TRACER
+| 	if (tsk->ret_stack &&
+| 			(frame->pc == (unsigned long)return_to_handler)) {
+
+
+Which leads down the rat-hole of: does this need ptrauth_strip_insn_pac()?
+
+The version of GCC on my desktop supports patchable-function-entry, the function pre-amble
+has two nops for use by ftrace[0]. This means if prepare_ftrace_return() re-writes the
+saved LR, it does it before the caller paciasp's it.
+
+I think that means if you stack-trace from a function that had been hooked by the
+function_graph_tracer, you will see the LR with a PAC, meaning the above == won't match.
+
+
+The version of LLVM on my desktop however doesn't support patchable-function-entry, it
+uses _mcount() to do the ftrace stuff[1]. Here prepare_ftrace_return() overwrites a
+paciasp'd LR with one that isn't, which will fail.
+
+
+Could the ptrauth_strip_insn_pac() call move above the CONFIG_FUNCTION_GRAPH_TRACER block,
+and could we add something like:
+|	depends on (!FTRACE || HAVE_DYNAMIC_FTRACE_WITH_REGS)
+
+to the Kconfig to prevent both FTRACE and PTR_AUTH being enabled unless the compiler has
+support for patchable-function-entry?
+
+
+>  	}
+>  #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
+>  
+> +	frame->pc = ptrauth_strip_insn_pac(frame->pc);
+> +
+>  	/*
+>  	 * Frames created upon entry from EL0 have NULL FP and PC values, so
+>  	 * don't bother reporting these. Frames created by __noreturn functions
+
+
+Thanks,
+
+James
+
+[0] gcc (Debian 9.2.1-28) 9.2.1 20200203
+0000000000000048 <sync_icache_aliases>:
+  48:   d503201f        nop
+  4c:   d503201f        nop
+  50:   90000002        adrp    x2, 0 <__icache_flags>
+  54:   d503233f        paciasp
+  58:   a9bf7bfd        stp     x29, x30, [sp, #-16]!
+  5c:   910003fd        mov     x29, sp
+  60:   f9400044        ldr     x4, [x2]
+  64:   36000124        tbz     w4, #0, 88 <sync_icache_al
+
+
+[1] clang version 9.0.0-1 (tags/RELEASE_900/final)
+0000000000000000 <sync_icache_aliases>:
+   0:   d503233f        paciasp
+   4:   a9be4ff4        stp     x20, x19, [sp, #-32]!
+   8:   a9017bfd        stp     x29, x30, [sp, #16]
+   c:   910043fd        add     x29, sp, #0x10
+  10:   aa0103f4        mov     x20, x1
+  14:   aa0003f3        mov     x19, x0
+  18:   94000000        bl      0 <_mcount>
+  1c:   90000008        adrp    x8, 0 <__icache_flags>
+  20:   f9400108        ldr     x8, [x8]
+  24:   370000a8        tbnz    w8, #0, 38 <sync_icache_aliases+0x38>
 
 _______________________________________________
 linux-arm-kernel mailing list
