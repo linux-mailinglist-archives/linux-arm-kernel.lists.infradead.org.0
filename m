@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2835817DB33
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 09:38:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBBAB17DB28
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 09:37:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=knbiOqQbo2ZiqSustv68wEVhFb+Ul4OzrZf8VlJnbuc=; b=klPQEM/r8ukaI0H4L5qWzBufm8
-	DDGAXRM7eq9DbbzDPN4+qqZST5GiMXaX695VRLq0k2jeLvmXgbzG3F2eaOG7fwhAEDpZ55ezV8R4T
-	Qt9Cxszp3E/w+ZWgXVR+ZTXcoF5n5ZofWH4jSIkx7CMn2Vg98cgmfAp0PllOZidayTF99BxNQ1cCz
-	+gpKg6wyecsVeyELvlGpWIK8+MeLgI1YYXCwJUd74qYj0imIOk/nk89h59i6NEfZDLvfc5C+iIf0S
-	QeNQFfosz7qs0MVMRYfKlO02FHZW8VjKLHAp0OKKz0elFsL+3w9g8vae4niuMaFY0GrpjIv0gZTQZ
-	M5lTqQyg==;
+	bh=cFut+Z+LZm03gVgHu4/p0/cX/BEIxA55keSoNL/fwLQ=; b=GgEw9syoAWPfRGJm/UVOYNYy0G
+	mvqIxF0lm2KKn3eE1ifxYAgfR7E6RsYWlCTGfOarAhpoVKZ/wCLt9s5CkLyeuQJ81DKGUnkNy3f6q
+	8UWg4oas51kMtvYsqc3dGpjkwkUHCl8kpfEzoW/56mAhe+dmJbj0k8OIR66T5iOqIPxW1BSxdg6Z+
+	NB41rjLZsm79LuJVSTWY8t76L9ynSTf+5Vw5+ZGsdXIBRDfkpiTykFUgjbprCu5E47Uua5g0mSDW4
+	oEj212n9yQEUNfsUqhA5C/xpYCgQRpioU/SUkdiseEfGVm6AITVOSuqCaSR70yaCH8IxBuMEu5KDN
+	+OvF9tCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBDvn-0004Ua-Sg; Mon, 09 Mar 2020 08:38:35 +0000
+	id 1jBDup-0003W3-80; Mon, 09 Mar 2020 08:37:35 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBDu2-0002wp-LD
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 08:36:49 +0000
+ id 1jBDu2-0002wz-ME
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 08:36:48 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F18A9C04C2;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id F1330C04C1;
  Mon,  9 Mar 2020 08:36:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1583743004; bh=B4fi+wGhWTrFTQp3mAnhu+p1yjvs3nFstYvqGhSlpYE=;
+ t=1583743004; bh=G3io2HtqWrz75qyPw31i1mMVlC9mUpQx2JEEWDPYGq4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=gCGuSu0cHw9XWnuyfdn+0l3N2bLAY+tmOgeWAy5/AQnbPVPm7n1PdsPDqUrhOUS3y
- KVMo96VC4UpMu7/Tz4j+IRkrIdxVLF0M+k52AN6GuxkCtlAf/10V8LeyqtNY3xeq1Z
- PTamDuAkNWBS/Gyqd0PgHDtwyAhl/WUhq8OibxirzKLyDuBhW6JptArTvbEo1sTuOJ
- z1uKsMZUpb9Q9thG7bqQZp/0Py5csGuToy7gnPG59WPMajXrNCGMHbp0x5s33sxJFY
- AbqlAA9apRHuOe3NZv32Z8odwJX3HjN6WV+CyyqHBJgTGxt6uYf0HhZqLSv8hUsJ+s
- w1SZCczazTlgQ==
+ b=UE4HnfD9Y4yrPQJP78MfJT9lw1jU3QpfncTPiPFXyfjvW7PEh9FIzKpneVk0wQ7XT
+ fIYqs5Nk07lIV0u40Ht7NP0nomYopwWWuXXeRd7bs91XqdtgwyLbd0qJ39GfWd1I6R
+ 1iLsFtBssXKINU1hgu4KKDrCByE2iMRKsmn/ElRXyN404iRRwljyGIkyhHDlCceORR
+ aF4vADoFRFNHLy1NpRRTKgQ5jMDQuI/+4v5ht3kZ4AQT9/W25CnPexj0KFL3uLOoR9
+ e8yTWEI5ksEhHApIgDVcYqTRLP2KCZMvKrlQXBpABLjFv3TuGsZ8wPm4BKodLQIMSA
+ uXdmQR6FL9qDg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 54EA7A006D;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 5E9FAA0071;
  Mon,  9 Mar 2020 08:36:41 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 4/8] net: stmmac: Use resolved link config in
- mac_link_up()
-Date: Mon,  9 Mar 2020 09:36:23 +0100
-Message-Id: <8841e003101a27c97f59f9f1fe8c044a2807dcdb.1583742615.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 5/8] net: phylink: Add missing Backplane speeds
+Date: Mon,  9 Mar 2020 09:36:24 +0100
+Message-Id: <72f937085fd6167f9dd6e8c72e0f7f0a161d8001.1583742616.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1583742615.git.Jose.Abreu@synopsys.com>
 References: <cover.1583742615.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1583742615.git.Jose.Abreu@synopsys.com>
 References: <cover.1583742615.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_013646_781331_74457366 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20200309_013646_771081_E42DE414 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,10 +97,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the stmmac ethernet driver to use the finalised link parameters
-in mac_link_up() rather than the parameters in mac_config().
+USXGMII also supports these missing backplane speeds.
 
-Suggested-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -120,116 +117,27 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 66 +++++++++++------------
- 1 file changed, 33 insertions(+), 33 deletions(-)
+ drivers/net/phy/phylink.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 8e555f4e82d7..3a190cf250e6 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -874,14 +874,39 @@ static void stmmac_mac_pcs_get_state(struct phylink_config *config,
- static void stmmac_mac_config(struct phylink_config *config, unsigned int mode,
- 			      const struct phylink_link_state *state)
- {
-+	/* Nothing for now. */
-+}
-+
-+static void stmmac_mac_an_restart(struct phylink_config *config)
-+{
-+	/* Not Supported */
-+}
-+
-+static void stmmac_mac_link_down(struct phylink_config *config,
-+				 unsigned int mode, phy_interface_t interface)
-+{
-+	struct stmmac_priv *priv = netdev_priv(to_net_dev(config->dev));
-+
-+	stmmac_mac_set(priv, priv->ioaddr, false);
-+	priv->eee_active = false;
-+	stmmac_eee_init(priv);
-+	stmmac_set_eee_pls(priv, priv->hw, false);
-+}
-+
-+static void stmmac_mac_link_up(struct phylink_config *config,
-+			       struct phy_device *phy,
-+			       unsigned int mode, phy_interface_t interface,
-+			       int speed, int duplex,
-+			       bool tx_pause, bool rx_pause)
-+{
- 	struct stmmac_priv *priv = netdev_priv(to_net_dev(config->dev));
- 	u32 ctrl;
- 
- 	ctrl = readl(priv->ioaddr + MAC_CTRL_REG);
- 	ctrl &= ~priv->hw->link.speed_mask;
- 
--	if (state->interface == PHY_INTERFACE_MODE_USXGMII) {
--		switch (state->speed) {
-+	if (interface == PHY_INTERFACE_MODE_USXGMII) {
-+		switch (speed) {
- 		case SPEED_10000:
- 			ctrl |= priv->hw->link.xgmii.speed10000;
- 			break;
-@@ -895,7 +920,7 @@ static void stmmac_mac_config(struct phylink_config *config, unsigned int mode,
- 			return;
- 		}
- 	} else {
--		switch (state->speed) {
-+		switch (speed) {
- 		case SPEED_2500:
- 			ctrl |= priv->hw->link.speed2500;
- 			break;
-@@ -913,46 +938,21 @@ static void stmmac_mac_config(struct phylink_config *config, unsigned int mode,
- 		}
- 	}
- 
--	priv->speed = state->speed;
-+	priv->speed = speed;
- 
- 	if (priv->plat->fix_mac_speed)
--		priv->plat->fix_mac_speed(priv->plat->bsp_priv, state->speed);
-+		priv->plat->fix_mac_speed(priv->plat->bsp_priv, speed);
- 
--	if (!state->duplex)
-+	if (!duplex)
- 		ctrl &= ~priv->hw->link.duplex;
- 	else
- 		ctrl |= priv->hw->link.duplex;
- 
- 	/* Flow Control operation */
--	if (state->pause)
--		stmmac_mac_flow_ctrl(priv, state->duplex);
-+	if (tx_pause && rx_pause)
-+		stmmac_mac_flow_ctrl(priv, duplex);
- 
- 	writel(ctrl, priv->ioaddr + MAC_CTRL_REG);
--}
--
--static void stmmac_mac_an_restart(struct phylink_config *config)
--{
--	/* Not Supported */
--}
--
--static void stmmac_mac_link_down(struct phylink_config *config,
--				 unsigned int mode, phy_interface_t interface)
--{
--	struct stmmac_priv *priv = netdev_priv(to_net_dev(config->dev));
--
--	stmmac_mac_set(priv, priv->ioaddr, false);
--	priv->eee_active = false;
--	stmmac_eee_init(priv);
--	stmmac_set_eee_pls(priv, priv->hw, false);
--}
--
--static void stmmac_mac_link_up(struct phylink_config *config,
--			       struct phy_device *phy,
--			       unsigned int mode, phy_interface_t interface,
--			       int speed, int duplex,
--			       bool tx_pause, bool rx_pause)
--{
--	struct stmmac_priv *priv = netdev_priv(to_net_dev(config->dev));
- 
- 	stmmac_mac_set(priv, priv->ioaddr, true);
- 	if (phy && priv->dma_cap.eee) {
+diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
+index b4367fab7899..47f4ce02d7bc 100644
+--- a/drivers/net/phy/phylink.c
++++ b/drivers/net/phy/phylink.c
+@@ -312,11 +312,13 @@ static int phylink_parse_mode(struct phylink *pl, struct fwnode_handle *fwnode)
+ 			phylink_set(pl->supported, 1000baseT_Half);
+ 			phylink_set(pl->supported, 1000baseT_Full);
+ 			phylink_set(pl->supported, 1000baseX_Full);
++			phylink_set(pl->supported, 1000baseKX_Full);
+ 			phylink_set(pl->supported, 2500baseT_Full);
+ 			phylink_set(pl->supported, 2500baseX_Full);
+ 			phylink_set(pl->supported, 5000baseT_Full);
+ 			phylink_set(pl->supported, 10000baseT_Full);
+ 			phylink_set(pl->supported, 10000baseKR_Full);
++			phylink_set(pl->supported, 10000baseKX4_Full);
+ 			phylink_set(pl->supported, 10000baseCR_Full);
+ 			phylink_set(pl->supported, 10000baseSR_Full);
+ 			phylink_set(pl->supported, 10000baseLR_Full);
 -- 
 2.7.4
 
