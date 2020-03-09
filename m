@@ -2,132 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5046617E242
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 15:09:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6917017E252
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 15:11:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a3htC/VGvjTcXOdnezHrH7vkZgkL2aXrfRQfZQFAPh0=; b=CSlj6moMEoXqiW
-	2STe3ppBqu1Q2sNHOh0tleRvkKBdDpFCzUbgABvuDLXheelJwHv9Z0wHBXJF7gDaXBaR2QgrPdOal
-	t+n8dgrFG74ulR0S51bD384q6l6vK8X1rOWVvSu4iiIhKnopjK9mjqdjeQcxMJSO4XZwgQ3PoYvf1
-	CLP6tMMKoiSSeXgEKLtzXB80Lubc+fOw2GGTPAqHybOX63WcLLpkYPtZdfLl6CIVPkkKfU+D2ozAC
-	5rkDMcXVjwFJ7DBqEsjkM7YCFfOnNyAlcl7f9Nz2Gb0zAqs0J+TA6flk/KekgvddCOXzUJvSyLzfy
-	xd2fUEFZ17SZQs7p9UKw==;
+	List-Owner; bh=0PGyJS348mnDwmHIA1ksdRZzo0RGHehhK3+e7cxTwQo=; b=TAYtdSRt5j/2ix
+	u0GJ5RzW2v6aPE/EYDUCjjTLczGcaSrwpIeAQqcxSSfqBevOcEJ0bNhDWgSfiUkYcigNaW8RGDEvO
+	DaAujCETBf87yzHTqd8wlJ0zNk6VXiwXBdmOpH+azhQSF/BOo6LY+Fce79BKdZRxIcZwmZSJ6xm7T
+	AmNotCwEan/mkoj8BMIn/yT639r61TlMROOw5Q+l0+DcaRalDwQn6GXz3YrmWsa8DwRyP5kwGgU3Q
+	HBaBS2liYdK9EOxWK5zEvBU1DlFylwCEBsH0ESGdxE1q4wgKO0k42GQJVGx6+q3bbySGoAY7DN+4G
+	Ku9k/DKEH3uqH510uo4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBJ5r-00076X-PS; Mon, 09 Mar 2020 14:09:19 +0000
-Received: from mail-eopbgr40084.outbound.protection.outlook.com ([40.107.4.84]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1jBJ7t-0000Ql-Ix; Mon, 09 Mar 2020 14:11:25 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBJ5c-00075S-RA
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 14:09:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=k3PUDEG2WiEMCi7ZI+a5r61NOg2JgiQrB1MIFlSCXYh8xaPfP409rJs+PkQrwPcpmJNUMl469fNo/FtAhfc/0M+bZ1t8WmqvA1wV3DqXkZEHW63fCmXtn70ipVzj2PJahAAom0dZu7mFg9c3NNqxxlShHJwjl8EB2RddDiI+b2D/6yHctpbd/MmfPqacG/8KuYJRphf6vs9sh6CvEmghisTg4c16bVjIyeW/F204gF7eAerTupjyfF2hAGL24SiG7GHQw+y4e0RrPF2W/8ji8JgEi+JokZDKTZyYjJHqiAV9oeQbPWH+Q6okvONHhbzOnmT69Tj0jbLoSRi8anbRPQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=l6QW/wY1tp0T4HdD1BZX5dsHxITHlG1M6PLh4Uc95PE=;
- b=bX5EMUEMxRkWFrLmQXbX/ObpB7oW14+Msq7OeQ7GEvvah/xnViR/mZcdnBodPhZvh8DGFV8QF/lwhids7jpXcznkdmRhDRezRLT5CrLDAB4Lf97fQsbcZdRyGX7kcoEtfiEY+Lqq2hPtM+D5axWY9i9CrULrIgVFLiLOz/XFqlYv/HmtvjszcnY1QIyY/iKb8Y9r+xNAQJev4bfcQUS6wCLGN4IG1CLpOFnRhgd7GpV1El/3bpGIiDnbtaa3YnmsjkNp0FZsU38Czr1NJTw5xYJzRzQ5YQG5DiFUwdsRPsEq/XOScbdCDIMKtkFvSkkO1KcwetHLARwFruwsrPojGA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=l6QW/wY1tp0T4HdD1BZX5dsHxITHlG1M6PLh4Uc95PE=;
- b=UZ+32TGpYRh6up+cYJ9NTusaYSlB43bqT22xV+WiVvs5P6PbBMDJARCteOsadufnSizhcnTRDztUOOvy7Qe2VycFggf3iPnAfovhQX2u8M/HgCqhrdcM7FkID4/Lhy4BS73UBmK2gEhGWnNGuWkkjtsbjwAqx7H/mVj8Gb9X6To=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3914.eurprd04.prod.outlook.com (52.134.71.157) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.17; Mon, 9 Mar 2020 14:09:00 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2793.013; Mon, 9 Mar 2020
- 14:09:00 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- "a.zummo@towertech.it" <a.zummo@towertech.it>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "rui.zhang@intel.com" <rui.zhang@intel.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>, "amit.kucheria@verdurent.com"
- <amit.kucheria@verdurent.com>, "wim@linux-watchdog.org"
- <wim@linux-watchdog.org>, "linux@roeck-us.net" <linux@roeck-us.net>, Daniel
- Baluta <daniel.baluta@nxp.com>, "gregkh@linuxfoundation.org"
- <gregkh@linuxfoundation.org>, "linux@rempel-privat.de"
- <linux@rempel-privat.de>, "tglx@linutronix.de" <tglx@linutronix.de>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- "arnd@arndb.de" <arnd@arndb.de>, "ronald@innovation.ch"
- <ronald@innovation.ch>, "krzk@kernel.org" <krzk@kernel.org>,
- "robh@kernel.org" <robh@kernel.org>, Leonard Crestez
- <leonard.crestez@nxp.com>, Aisheng Dong <aisheng.dong@nxp.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-input@vger.kernel.org"
- <linux-input@vger.kernel.org>, "linux-rtc@vger.kernel.org"
- <linux-rtc@vger.kernel.org>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>, "linux-watchdog@vger.kernel.org"
- <linux-watchdog@vger.kernel.org>
-Subject: RE: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Thread-Topic: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU case
-Thread-Index: AQHV9av62LAReQhoZkKZ9LnT5dFdbahARTIAgAAHnnA=
-Date: Mon, 9 Mar 2020 14:09:00 +0000
-Message-ID: <DB3PR0402MB39160749F06C0CD4C752AF88F5FE0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1583714300-19085-1-git-send-email-Anson.Huang@nxp.com>
- <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR04MB4481F087AC3CDA691300710288FE0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ec31ce58-33e0-4fab-a460-08d7c4336abe
-x-ms-traffictypediagnostic: DB3PR0402MB3914:|DB3PR0402MB3914:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB391412630D5EA7024E788352F5FE0@DB3PR0402MB3914.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3631;
-x-forefront-prvs: 0337AFFE9A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(366004)(396003)(39860400002)(376002)(346002)(189003)(199004)(478600001)(4326008)(7416002)(8936002)(66946007)(76116006)(86362001)(186003)(33656002)(66476007)(44832011)(966005)(9686003)(26005)(55016002)(66556008)(6506007)(8676002)(316002)(64756008)(110136005)(81166006)(81156014)(5660300002)(52536014)(7696005)(71200400001)(66446008)(2906002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3914;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1anTmzqJGit4agYAh/pyy6cn+nxwm4hnondXlirTW2cbDoM7Ldp5/ekI9CQXCW25R55agpa/8+cAJOBvCzmAzjy0im3jc7yW2wme3cks9KPbo7Bx39IvDgVAyU7sm6/DSRRMqYY9ze8ZjCI21fcGWAmqijZEQBv+UCXenWOuaF39lAXcYOPjeuZWIf43/NN8li0kaGtmBKdROXMrkVV2jmbwcJnmrOzXDJvEAkLrb03N5AbZC/g1o5ZkdTEoVNe/BYmytgJRL9Sjy5b0Vgjf5IxXFTMj5M9XhfGe00w2NV8vaR5hE1Izq3/iR3sWi20yG0TcGLZhwTIKQkrb2IRitbBobaYtRwTSxynf9fiQevbD9u5rH3w/9GUFbZ1CHRTG38d8mpIJbgStxBMtApClCIUzg3yxoJzkVbHpdFCT24sUUZKTkFrpjLE1wlf/SlJYojOHmbz0pziDYc1uhyChl6D36kt1msyv/JhYXdDKcpESXwonsiW7EP81dBeYxatv6HG3fLr440Qjhmsm6ICtkPj50uBC6uZi2c52oAbNvaMbT0R4n1Kjq8afXydyIGC+34EwR1+2U0G3u92A1R3qcA==
-x-ms-exchange-antispam-messagedata: YRBg7086ld7yyMINmDemmCMLVTwaCKcO1718my+ekBV9udKqxrYmtZCv+5HzkpGuSUgoNaINYW16fenbeqW7o3ASbozbcQzq/7kvNcSFlPQIrAWRr/NJyPaPnzY23w6Ivk+Jx1gZnOaocnQFZ7XuRw==
+ id 1jBJ7W-0000Gj-Bt
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 14:11:03 +0000
+Received: by mail-lf1-x143.google.com with SMTP id x22so7815416lff.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Mar 2020 07:11:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1DONZyJhzIw61vc2b8VyfHEnmtSL8XmCoaWpkr0Q6yQ=;
+ b=ZYDWaVXI+O+RUpYxYfXm8ia4oOLkw/O+R89i+fHtsyE7gL+aPkvQ6/74KlAZ7upBOy
+ mVkW/vEl9ymGQtMH96WKfn9Hl9vP2enpx2WSUQVt5eNiOZcBSPMGvWaD1xhAx24j218x
+ TssPVDmyorIu6yhB4IZASsU3vvyEwVPLv2jnnokvy9Y5/c7QhkrdURMMpyYom7hAAf83
+ 0+1LWvmFyikllT7rr9CQOxn7hYse57X0T2WNRzV76ixDvKlEOO/B3d2skZ4yPNRtbbPT
+ BMfcq/IX+sZXcbLGV2NFlvHPnT/i864dbduIhTa+QK+inCG7Vr8hhA627LXSrkzIyzMl
+ Pcsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1DONZyJhzIw61vc2b8VyfHEnmtSL8XmCoaWpkr0Q6yQ=;
+ b=Gey4MeBtOA0FzmUSHU871fiv1RgpEybEZumO84wNIFGAmr//jbDncV4YPRmxr20krI
+ 1GCjrjA8HT8NkSE9giHzxqxsQpRk6upNyRB9XHWpfoLqljHbC0rqFDhMSCkxO3rRXgU3
+ guqzHIgMYHipfv4MovhCUlbOUCg6tuJZbWuJdTKPb5Wx3s/LiQ0qWVjBvVYOab+Y2y6F
+ iAOGu65qe3zVagpl+wxAraK1oGy25xRx1c7folXAernfKZ37arn1PuoZLf81LWp7to7y
+ AEuAIZ1GcO+rtzzpIqGlBvfCg3TfxutyO4a54ZWG/wK/c6QaFDsPd7IzQohEV7hvwD/w
+ D9nw==
+X-Gm-Message-State: ANhLgQ0SRYPT15LU7TIeylgroqfxL6BYiyiovqVj7Ev6f+qBVeLqtI+o
+ 4BqBHojwoBkX4nGJMsyBMcEJ8WDm0rLdYhou2mg=
+X-Google-Smtp-Source: ADFU+vvx9Zry9HVFrw2gJwvh8jIGcVMrga/iTAAcWL9fq/CZaQKdL1vmx4qaRTpNg/N7VZXOUKv1Ct6BP9Ehy3e7OIY=
+X-Received: by 2002:ac2:5328:: with SMTP id f8mr9426587lfh.47.1583763059624;
+ Mon, 09 Mar 2020 07:10:59 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec31ce58-33e0-4fab-a460-08d7c4336abe
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Mar 2020 14:09:00.8709 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: l5KPTdm4+SGbIFxyqv9Nujz6dhORiNgyOF7o9TISRwCg0SOObOgGWE4iFDNGXapXlL03zWGcCba8OgXIF1yU7A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3914
+References: <20200305103228.9686-1-zhang.lyra@gmail.com>
+ <20200305103228.9686-2-zhang.lyra@gmail.com>
+ <CAMuHMdU-gAhupHotQTHAZfopkGF_jQc-VrVxb24caw_BfzWd6g@mail.gmail.com>
+ <CAAfSe-sonfA=6x9uvQXaHniQaXR8hWZa4uOcWxoo+Z_XT9QNhw@mail.gmail.com>
+ <CAMuHMdUBkS+pPyPid2K=40jaTOSnAE_L-vJP5knmyVr8Fr5_hg@mail.gmail.com>
+In-Reply-To: <CAMuHMdUBkS+pPyPid2K=40jaTOSnAE_L-vJP5knmyVr8Fr5_hg@mail.gmail.com>
+From: Orson Zhai <orsonzhai@gmail.com>
+Date: Mon, 9 Mar 2020 22:10:41 +0800
+Message-ID: <CA+H2tpFBDSGfwYT--G_FsaEceNJW_xBJjjiSMnhZDVhZamj_QQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] tty: serial: make SERIAL_SPRD not depend on ARCH_SPRD
+To: Geert Uytterhoeven <geert@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_070904_886220_3379357C 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20200309_071102_403618_1CC8C0B6 
+X-CRM114-Status: GOOD (  25.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.84 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [orsonzhai[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -146,109 +96,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: kernel-team@android.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-> Subject: RE: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU
-> case
-> 
-> > Subject: [PATCH V3 1/7] firmware: imx: Add stubs for !CONFIG_IMX_SCU
-> > case
-> 
-> I have one patch pending reviewing.
-> https://patchwork.kernel.org/patch/11395247/
-
-OK, if your patch is picked up, then 1/7 is unnecessary for this patch series, but
-the rest are still needed.
-
-Anson
+Hi Geert,
 
 
-> 
-> Thanks,
-> Peng.
-> 
+On Mon, Mar 9, 2020 at 4:01 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+>
+> Hi Chunyan,
+>
+> On Mon, Mar 9, 2020 at 2:18 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > On Fri, 6 Mar 2020 at 20:41, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> > > >
+> > > > Remove the dependency with ARCH_SPRD from sprd serial/console Kconfig-s,
+> > > > since we want them can be built-in when ARCH_SPRD is set as 'm'.
+> > >
+> > > Why would you want a serial driver for a specific platform to be builtin,
+> > > while all other platform support is modular?
 > >
-> > Add stubs for those i.MX SCU APIs to make those modules depending on
-> > IMX_SCU can pass build when COMPILE_TEST is enabled.
+> > Oh, that's not this patch means.
 > >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> > Changes since V2:
-> > 	- return error for stubs.
-> > ---
-> >  include/linux/firmware/imx/ipc.h | 11 +++++++++++
-> > include/linux/firmware/imx/sci.h | 19 +++++++++++++++++++
-> >  2 files changed, 30 insertions(+)
-> >
-> > diff --git a/include/linux/firmware/imx/ipc.h
-> > b/include/linux/firmware/imx/ipc.h
-> > index 8910574..9e3d808 100644
-> > --- a/include/linux/firmware/imx/ipc.h
-> > +++ b/include/linux/firmware/imx/ipc.h
-> > @@ -34,6 +34,7 @@ struct imx_sc_rpc_msg {
-> >  	uint8_t func;
-> >  };
-> >
-> > +#ifdef CONFIG_IMX_SCU
-> >  /*
-> >   * This is an function to send an RPC message over an IPC channel.
-> >   * It is called by client-side SCFW API function shims.
-> > @@ -55,4 +56,14 @@ int imx_scu_call_rpc(struct imx_sc_ipc *ipc, void
-> > *msg, bool have_resp);
-> >   * @return Returns an error code (0 = success, failed if < 0)
-> >   */
-> >  int imx_scu_get_handle(struct imx_sc_ipc **ipc);
-> > +#else
-> > +static inline int imx_scu_call_rpc(struct imx_sc_ipc *ipc, void *msg,
-> > +bool have_resp) {
-> > +	return -ENOENT;
-> > +}
-> > +static inline int imx_scu_get_handle(struct imx_sc_ipc **ipc) {
-> > +	return -ENOENT;
-> > +}
-> > +#endif
-> >  #endif /* _SC_IPC_H */
-> > diff --git a/include/linux/firmware/imx/sci.h
-> > b/include/linux/firmware/imx/sci.h
-> > index 17ba4e4..022129b 100644
-> > --- a/include/linux/firmware/imx/sci.h
-> > +++ b/include/linux/firmware/imx/sci.h
-> > @@ -16,8 +16,27 @@
-> >  #include <linux/firmware/imx/svc/misc.h>  #include
-> > <linux/firmware/imx/svc/pm.h>
-> >
-> > +#ifdef CONFIG_IMX_SCU
-> >  int imx_scu_enable_general_irq_channel(struct device *dev);  int
-> > imx_scu_irq_register_notifier(struct notifier_block *nb);  int
-> > imx_scu_irq_unregister_notifier(struct notifier_block *nb);  int
-> > imx_scu_irq_group_enable(u8 group, u32 mask, u8 enable);
-> > +#else
-> > +static inline int imx_scu_enable_general_irq_channel(struct device
-> > +*dev) {
-> > +	return -ENOENT;
-> > +}
-> > +static inline int imx_scu_irq_register_notifier(struct notifier_block
-> > +*nb) {
-> > +	return -ENOENT;
-> > +}
-> > +static inline int imx_scu_irq_unregister_notifier(struct
-> > +notifier_block
-> > +*nb) {
-> > +	return -ENOENT;
-> > +}
-> > +static inline int imx_scu_irq_group_enable(u8 group, u32 mask, u8
-> > +enable) {
-> > +	return -ENOENT;
-> > +}
-> > +#endif
-> >  #endif /* _SC_SCI_H */
-> > --
-> > 2.7.4
+> > We just want serial driver can be builtin for any platform, so it
+>
+> What would be the benefit of the user to be able to have the SPRD serial
+> driver built-in on any platform?  AFAIU, it supports only Spreadtrum
+> platforms.
+>
+Assume there is a all-in-one common kernel binary image say arm64 for
+all SoC platform and all
+device drivers are built as modules from different vendors for each
+specific devices.
+But for serial driver it is too late to be initialized as a module if
+users want to check early console log.
+At this circumstance vendors prefer to set their serial driver to be
+built into that all-in-one image as easy
+as to only set one config instead of enabling whole platform then
+disabling many out of serial.
+
+-Orson
+
+> > should not depend on a config which can be set as 'm' (i.e. ARCH_SPRD)
+> > , otherwise if the config was set as 'm', the serial driver can't be
+> > selected as 'y' then.
+>
+> I ask about that as a reply to PATCH 1/2.
+>
+> > That's what I mean.
+>
+> > > > --- a/drivers/tty/serial/Kconfig
+> > > > +++ b/drivers/tty/serial/Kconfig
+> > > > @@ -1452,7 +1452,6 @@ config SERIAL_MEN_Z135
+> > > >
+> > > >  config SERIAL_SPRD
+> > > >         tristate "Support for Spreadtrum serial"
+> > > > -       depends on ARCH_SPRD
+> > > >         select SERIAL_CORE
+> > > >         help
+> > > >           This enables the driver for the Spreadtrum's serial.
+>
+> Gr{oetje,eeting}s,
+>
+>                         Geert
+>
+> --
+> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+>
+> In personal conversations with technical people, I call myself a hacker. But
+> when I'm talking to journalists I just say "programmer" or something like that.
+>                                 -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
