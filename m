@@ -2,85 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDCF117E69F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:17:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A10F417E6AA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:20:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eTV16AOBkTeHBumrflhA4Q6M3UxWs2L+K9jk9KdJmLE=; b=oWuB66Zedo/fqr
-	pRItJLwJ2/IQlYG5zDtHwJVDwzq2qGm6fOnfmGhvH2RlXJ4UIRQppbY4NVfjwyD83Wqb+0/ZSFPld
-	T4XDeEMCRVSIEfKfkyaZxYHcbpeX57Qyn0a56Sv0Z6kmrK930x3Op1A8QO812edfuuAAOAQ/UKMsC
-	cT9gdVovo20nHpDPWdha2o0IN9wqxd0mzZG40QPC7UWwIdUkRJ47AiBBTU47FgOiGMCmU5gwsruc1
-	CNgCinYbFRSEbKYAgNIFp2X0V6qwyNkVnDTOJzMpbXSlTR4f7mBrUuGUHP/d79LwmbfcNh1D8Hfj1
-	M76obSgQwySeUT7A+xsw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5/CkENkAyPx2Msl4W2AK3x+N0fkkEauZJ6AsCt0WSn4=; b=Ts5
+	RhuKvg/BQcIEhj6T1O27KwwyrDF3R4p92mc1fzP6xbswGjJPfKO4+hsHh+PmwiMwwoQXGF9uk8xC5
+	qXeVa5EY50twwC4xF48Ne0qs8NzQTa2OOJAqpI05nkD7AZp11tWUb+0uZAMsZsDjNPYrUB1mAfidW
+	ksYJM7k9l1I+8oWXWfynmGJ1FmJkSH6Ntb4e2V3QXu8wonv2AgtBJyn8uHpXo4Xy8ZqJV3zl2sad+
+	wt7ONa9xpdi9mT+b2ZcdyTCjXUy7M56kujxXZZJ9h5fK4qDtshThOT0UtMAWTBicgZzgEJRxggZen
+	1M/XRBNX+d8BWie61yRgZurw46vZZug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBMy0-0001TH-7k; Mon, 09 Mar 2020 18:17:28 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBMxs-0001SM-Fh
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:17:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1583777838;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=AcKeyBIFIAYs+7QT/qIbpPBFwomeSgcpZFyE84PAy9U=;
- b=Ek0WW09CCUDtl7Mfo18FLQ6Mg5Dprt6Itl60PoOIjso6A+hldyJPlW8TGjhYeEuSWtd4lR
- 0zkkuor94m7/lGAUGX1uNchZ6R9tIl9mF5NCoxW0GomFQ6U1OnQ0T+xMpArNuab2w/SFdt
- WsCBshS852DspRlu7d2G+zXWNxsieJQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-348-v-Lmv5crPmyT1kNrDWhytg-1; Mon, 09 Mar 2020 14:17:14 -0400
-X-MC-Unique: v-Lmv5crPmyT1kNrDWhytg-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C2AA1107ACC9;
- Mon,  9 Mar 2020 18:17:12 +0000 (UTC)
-Received: from [10.36.116.59] (ovpn-116-59.ams2.redhat.com [10.36.116.59])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B58D460C05;
- Mon,  9 Mar 2020 18:17:10 +0000 (UTC)
-Subject: Re: [PATCH v2 2/2] KVM: arm64: Document PMU filtering API
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20200309124837.19908-1-maz@kernel.org>
- <20200309124837.19908-3-maz@kernel.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <7943c896-013b-d9cb-ba89-2040b46437fe@redhat.com>
-Date: Mon, 9 Mar 2020 19:17:09 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <20200309124837.19908-3-maz@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+	id 1jBN0O-0002Ly-7O; Mon, 09 Mar 2020 18:19:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBMzb-0001m4-A0
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:19:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F32031FB;
+ Mon,  9 Mar 2020 11:19:02 -0700 (PDT)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A35A23F67D;
+ Mon,  9 Mar 2020 11:19:01 -0700 (PDT)
+From: Andre Przywara <andre.przywara@arm.com>
+To: "David S . Miller" <davem@davemloft.net>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Subject: [PATCH v2 00/14] net: axienet: Update error handling and add 64-bit
+ DMA support
+Date: Mon,  9 Mar 2020 18:18:37 +0000
+Message-Id: <20200309181851.190164-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_111720_601838_7810EB24 
-X-CRM114-Status: GOOD (  21.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200309_111907_475394_1E50B4F9 
+X-CRM114-Status: GOOD (  14.94  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,89 +60,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Robin Murphy <robin.murphy@arm.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
+ Robert Hancock <hancock@sedsystems.ca>, rmk+kernel@arm.linux.org.uk,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi,
 
-On 3/9/20 1:48 PM, Marc Zyngier wrote:
-> Add a small blurb describing how the event filtering API gets used.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  Documentation/virt/kvm/devices/vcpu.rst | 40 +++++++++++++++++++++++++
->  1 file changed, 40 insertions(+)
-> 
-> diff --git a/Documentation/virt/kvm/devices/vcpu.rst b/Documentation/virt/kvm/devices/vcpu.rst
-> index 9963e680770a..7262c0469856 100644
-> --- a/Documentation/virt/kvm/devices/vcpu.rst
-> +++ b/Documentation/virt/kvm/devices/vcpu.rst
-> @@ -55,6 +55,46 @@ Request the initialization of the PMUv3.  If using the PMUv3 with an in-kernel
->  virtual GIC implementation, this must be done after initializing the in-kernel
->  irqchip.
->  
-> +1.3 ATTRIBUTE: KVM_ARM_VCPU_PMU_V3_FILTER
-> +---------------------------------------
-> +
-> +:Parameters: in kvm_device_attr.addr the address for a PMU event filter is a
-> +             pointer to a struct kvm_pmu_event_filter
-> +
-> +:Returns:
-> +
-> +	 =======  ======================================================
-> +	 -ENODEV: PMUv3 not supported or GIC not initialized
-> +	 -ENXIO:  PMUv3 not properly configured or in-kernel irqchip not
-> +	 	  configured as required prior to calling this attribute
-> +	 -EBUSY:  PMUv3 already initialized
-maybe document -EINVAL?
-> +	 =======  ======================================================
-> +
-> +Request the installation of a PMU event filter describe as follows:
-s/describe/described
-> +
-> +struct kvm_pmu_event_filter {
-> +	__u16	base_event;
-> +	__u16	nevents;
-> +
-> +#define KVM_PMU_EVENT_ALLOW	0
-> +#define KVM_PMU_EVENT_DENY	1
-> +
-> +	__u8	action;
-> +	__u8	pad[3];
-> +};
-> +
-> +A filter range is defined as the range [@base_event, @base_event + @nevents[,
-> +together with an @action (KVM_PMU_EVENT_ALLOW or KVM_PMU_EVENT_DENY). The
-> +first registered range defines the global policy (global ALLOW if the first
-> +@action is DENY, global DENY if the first @action is ALLOW). Multiple ranges
-> +can be programmed, and must fit within the 16bit space defined by the ARMv8.1
-> +PMU architecture.
-what about before 8.1 where the range was 10 bits? Should it be tested
-in the code?
+this is an update to the axienet improvement/64-bit support series.
+Compared to v1 I fixed the issues mentioned in the reviews, removed
+the hackish and wrong SGMII fix (there is now a much better solution
+by Russell), and reworked the 64-bit DMA detection. We get away without
+a DT property now: the MSB registers are autodetected, and the full
+64 bit DMA mask is used when they are available.
+Also I fixed two additional existing bugs/issues in the driver.
 
-nitpicking: It is not totally obvious what does happen if the user space
-sets a deny filter on a range and then an allow filter on the same
-range. it is supported but may be worth telling so? Also explain the the
-default filtering remains "allow" by default?
-> +
-> +Restrictions: Event 0 (SW_INCR) is never filtered, as it doesn't count a
-> +hardware event. Filtering event 0x1E (CHAIN) has no effect either, as it
-> +isn't strictly speaking an event. Filtering the cycle counter is possible
-> +using event 0x11 (CPU_CYCLES).
-Thanks
+This series is based on net-next as of today (e2f5cb7280f8), which
+includes Russell's fixes [1].
 
-Eric
-> +
->  
->  2. GROUP: KVM_ARM_VCPU_TIMER_CTRL
->  =================================
-> 
+A git branch is available at:
+http://www.linux-arm.org/git?p=linux-ap.git;a=shortlog;h=refs/heads/axienet/v2
+git://linux-arm.org/linux-ap.git branch axienet/v2
+
+Thanks,
+Andre
+
+[1] https://lore.kernel.org/netdev/E1j6trA-0003GY-N1@rmk-PC.armlinux.org.uk/
+
+Changelog v1 .. v2:
+- Add Reviewed-by: tags from Radhey
+- Extend kerndoc documentation
+- Convert DMA error handler tasklet to work queue
+- log DMA mapping errors
+- mark DMA mapping error checks as unlikely (in "hot" paths)
+- return NETDEV_TX_OK on TX DMA mapping error (increasing TX drop counter)
+- Request eth IRQ as an optional IRQ
+- Remove no longer needed MDIO IRQ register names
+- Drop DT propery check for address width, assume full 64 bit
+
+===============
+This series updates the Xilinx Axienet driver to work on our board
+here. One big issue was broken SGMII support, which Russell fixed already
+(in net-next).
+While debugging and understanding the driver, I found several problems
+in the error handling and cleanup paths, which patches 2-7 address.
+Patch 8 removes a annoying error message, patch 9 paves the way for newer
+revisions of the IP. The next patch adds mii-tool support, just for good
+measure.
+
+The next four patches add support for 64-bit DMA. This is an integration
+option on newer IP revisions (>= v7.1), and expects MSB bits in formerly
+reserved registers. Without writing to those MSB registers, the state
+machine won't trigger, so it's mandatory to access them, even if they
+are zero. Patches 11 and 12 prepare the code by adding accessors, to
+wrap this properly and keep it working on older IP revisions.
+Patch 13 enables access to the MSB registers, by trying to write a
+non-zero value to them and checking if that sticks. Older IP revisions
+always read those registers as zero.
+Patch 14 then adjusts the DMA mask, based on the autodetected MSB
+feature. It uses the full 64 bits in this case, the rest of the system
+(actual physical addresses in use) should provide a natural limit if the
+chip has connected fewer address lines. If not, the parent DT node can
+use a dma-range property.
+
+The Xilinx PG138 and PG021 documents (in versions 7.1 in both cases)
+were used for this series.
+
+Andre Przywara (14):
+  net: xilinx: temac: Relax Kconfig dependencies
+  net: axienet: Convert DMA error handler to a work queue
+  net: axienet: Propagate failure of DMA descriptor setup
+  net: axienet: Fix DMA descriptor cleanup path
+  net: axienet: Improve DMA error handling
+  net: axienet: Factor out TX descriptor chain cleanup
+  net: axienet: Check for DMA mapping errors
+  net: axienet: Mark eth_irq as optional
+  net: axienet: Drop MDIO interrupt registers from ethtools dump
+  net: axienet: Add mii-tool support
+  net: axienet: Wrap DMA pointer writes to prepare for 64 bit
+  net: axienet: Upgrade descriptors to hold 64-bit addresses
+  net: axienet: Autodetect 64-bit DMA capability
+  net: axienet: Allow DMA to beyond 4GB
+
+ drivers/net/ethernet/xilinx/Kconfig           |   1 -
+ drivers/net/ethernet/xilinx/xilinx_axienet.h  |  19 +-
+ .../net/ethernet/xilinx/xilinx_axienet_main.c | 378 +++++++++++++-----
+ 3 files changed, 284 insertions(+), 114 deletions(-)
+
+-- 
+2.17.1
 
 
 _______________________________________________
