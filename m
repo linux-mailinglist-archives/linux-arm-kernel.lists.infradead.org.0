@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3E2D17E6A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:19:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1393317E6C4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 19:20:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WNzN1mkCuPFaOm+bAFlprP5OpibCDcDmDfteldMTbzs=; b=UCbhg/ru8LPfAZ/iQYVBGnRYvA
-	4hkTejXqMvCIXkqEhliFej/tAVKDEaA7LfuhUwPKqNxwtBaDDr1vIgB6a78wC7HMKArtcXQR7WkN+
-	LQ50yZVIUQUoAnwWCJQnePe99352y0OMk3TcR9cV3U+JbMN5Una2eFicH2cLsgtJ9st9aAQ4Rj/6v
-	6GklzNJfKhs47Y+lOwLgS0W80M+F7fopvVhZr7zBmGRIwMz9zLq+q0kqre8ve5875Hpvh8djzoVKV
-	1ao1ypqRWgiiYUGMHV25y7Nsgt1YTuzmzQgVpUxlEXG13lCrgrjqu2aIFuntOnLZVQUsB2EiM8uo0
-	MO1K6WvA==;
+	bh=qcvRqQlCwHUZc5TSTGVozs/cSSb/Wo+otjbzw3QnW4g=; b=Tdbl98/02l5di1YeZHD1JPKN2I
+	nrQMg4rbIHWWUa+jiw9Q6R0KWLqlF8wwfy44awTaq84yI5TadBIQ3f1NrQFYByfpmryg/gnP8a/gh
+	G8ZVd8z2IN8xyf1D81ZpW8upamg3fZrMaErnjqc0yvvlFQL1gBM9FRf7Jt6GzW9Yz2nPG2IupIoLh
+	HtGwt6cEm89vUwxPgxqcFnBcxVQLGVhCDXvSjNzs51B9baiJ8QmW01HW6KFf+/KJRz/ci0p5uBAWW
+	EQsycMNVuKEB2fvnnI6QOx3igYEAqgVWvXuPcuUtP/Js+zi+KUagXY8pZLKWKDdUInFGMqueAlDdk
+	gC72b2Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBMzw-0001pG-FS; Mon, 09 Mar 2020 18:19:28 +0000
+	id 1jBN0n-0002XS-7t; Mon, 09 Mar 2020 18:20:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBMza-0001mC-TW
+ id 1jBMzc-0001mF-0U
  for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 18:19:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 82ED97FA;
- Mon,  9 Mar 2020 11:19:04 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1141A106F;
+ Mon,  9 Mar 2020 11:19:06 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 31C0D3F67D;
- Mon,  9 Mar 2020 11:19:03 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B6FA33F67D;
+ Mon,  9 Mar 2020 11:19:04 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: "David S . Miller" <davem@davemloft.net>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: [PATCH v2 01/14] net: xilinx: temac: Relax Kconfig dependencies
-Date: Mon,  9 Mar 2020 18:18:38 +0000
-Message-Id: <20200309181851.190164-2-andre.przywara@arm.com>
+Subject: [PATCH v2 02/14] net: axienet: Convert DMA error handler to a work
+ queue
+Date: Mon,  9 Mar 2020 18:18:39 +0000
+Message-Id: <20200309181851.190164-3-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200309181851.190164-1-andre.przywara@arm.com>
 References: <20200309181851.190164-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_111907_015048_D450EAAA 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20200309_111908_136707_653EC095 
+X-CRM114-Status: GOOD (  15.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,38 +73,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similar to axienet, the temac driver is now architecture agnostic, and
-can be at least compiled for several architectures.
-Especially the fact that this is a soft IP for implementing in FPGAs
-makes the current restriction rather pointless, as it could literally
-appear on any architecture, as long as an FPGA is connected to the bus.
+The DMA error handler routine is currently a tasklet, scheduled to run
+after the DMA error IRQ was handled.
+However it needs to take the MDIO mutex, which is not allowed to do in a
+tasklet. A kernel (with debug options) complains consequently:
+[  614.050361] net eth0: DMA Tx error 0x174019
+[  614.064002] net eth0: Current BD is at: 0x8f84aa0ce
+[  614.080195] BUG: sleeping function called from invalid context at kernel/locking/mutex.c:935
+[  614.109484] in_atomic(): 1, irqs_disabled(): 0, non_block: 0, pid: 40, name: kworker/u4:4
+[  614.135428] 3 locks held by kworker/u4:4/40:
+[  614.149075]  #0: ffff000879863328 ((wq_completion)rpciod){....}, at: process_one_work+0x1f0/0x6a8
+[  614.177528]  #1: ffff80001251bdf8 ((work_completion)(&task->u.tk_work)){....}, at: process_one_work+0x1f0/0x6a8
+[  614.209033]  #2: ffff0008784e0110 (sk_lock-AF_INET-RPC){....}, at: tcp_sendmsg+0x24/0x58
+[  614.235429] CPU: 0 PID: 40 Comm: kworker/u4:4 Not tainted 5.6.0-rc3-00926-g4a165a9d5921 #26
+[  614.260854] Hardware name: ARM Test FPGA (DT)
+[  614.274734] Workqueue: rpciod rpc_async_schedule
+[  614.289022] Call trace:
+[  614.296871]  dump_backtrace+0x0/0x1a0
+[  614.308311]  show_stack+0x14/0x20
+[  614.318751]  dump_stack+0xbc/0x100
+[  614.329403]  ___might_sleep+0xf0/0x140
+[  614.341018]  __might_sleep+0x4c/0x80
+[  614.352201]  __mutex_lock+0x5c/0x8a8
+[  614.363348]  mutex_lock_nested+0x1c/0x28
+[  614.375654]  axienet_dma_err_handler+0x38/0x388
+[  614.389999]  tasklet_action_common.isra.15+0x160/0x1a8
+[  614.405894]  tasklet_action+0x24/0x30
+[  614.417297]  efi_header_end+0xe0/0x494
+[  614.429020]  irq_exit+0xd0/0xd8
+[  614.439047]  __handle_domain_irq+0x60/0xb0
+[  614.451877]  gic_handle_irq+0xdc/0x2d0
+[  614.463486]  el1_irq+0xcc/0x180
+[  614.473451]  __tcp_transmit_skb+0x41c/0xb58
+[  614.486513]  tcp_write_xmit+0x224/0x10a0
+[  614.498792]  __tcp_push_pending_frames+0x38/0xc8
+[  614.513126]  tcp_rcv_established+0x41c/0x820
+[  614.526301]  tcp_v4_do_rcv+0x8c/0x218
+[  614.537784]  __release_sock+0x5c/0x108
+[  614.549466]  release_sock+0x34/0xa0
+[  614.560318]  tcp_sendmsg+0x40/0x58
+[  614.571053]  inet_sendmsg+0x40/0x68
+[  614.582061]  sock_sendmsg+0x18/0x30
+[  614.593074]  xs_sendpages+0x218/0x328
+[  614.604506]  xs_tcp_send_request+0xa0/0x1b8
+[  614.617461]  xprt_transmit+0xc8/0x4f0
+[  614.628943]  call_transmit+0x8c/0xa0
+[  614.640028]  __rpc_execute+0xbc/0x6f8
+[  614.651380]  rpc_async_schedule+0x28/0x48
+[  614.663846]  process_one_work+0x298/0x6a8
+[  614.676299]  worker_thread+0x40/0x490
+[  614.687687]  kthread+0x134/0x138
+[  614.697804]  ret_from_fork+0x10/0x18
+[  614.717319] xilinx_axienet 7fe00000.ethernet eth0: Link is Down
+[  615.748343] xilinx_axienet 7fe00000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
 
-The driver hasn't been actually tried on any hardware, it is just a
-drive-by patch when doing the same for axienet (a similar patch for
-axienet is already merged).
-
-This (temac and axienet) have been compile-tested for:
-alpha hppa64 microblaze mips64 powerpc powerpc64 riscv64 s390 sparc64
-(using kernel.org cross compilers).
+Since tasklets are not really popular anymore anyway, lets convert this
+over to a work queue, which can sleep and thus can take the MDIO mutex.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 ---
- drivers/net/ethernet/xilinx/Kconfig | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/net/ethernet/xilinx/xilinx_axienet.h  |  2 +-
+ .../net/ethernet/xilinx/xilinx_axienet_main.c | 24 +++++++++----------
+ 2 files changed, 13 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/net/ethernet/xilinx/Kconfig b/drivers/net/ethernet/xilinx/Kconfig
-index 6304ebd8b5c6..0810af8193cb 100644
---- a/drivers/net/ethernet/xilinx/Kconfig
-+++ b/drivers/net/ethernet/xilinx/Kconfig
-@@ -32,7 +32,6 @@ config XILINX_AXI_EMAC
+diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet.h b/drivers/net/ethernet/xilinx/xilinx_axienet.h
+index 2dacfc85b3ba..04e51af32178 100644
+--- a/drivers/net/ethernet/xilinx/xilinx_axienet.h
++++ b/drivers/net/ethernet/xilinx/xilinx_axienet.h
+@@ -435,7 +435,7 @@ struct axienet_local {
+ 	void __iomem *regs;
+ 	void __iomem *dma_regs;
  
- config XILINX_LL_TEMAC
- 	tristate "Xilinx LL TEMAC (LocalLink Tri-mode Ethernet MAC) driver"
--	depends on PPC || MICROBLAZE || X86 || COMPILE_TEST
- 	select PHYLIB
- 	---help---
- 	  This driver supports the Xilinx 10/100/1000 LocalLink TEMAC
+-	struct tasklet_struct dma_err_tasklet;
++	struct work_struct dma_err_task;
+ 
+ 	int tx_irq;
+ 	int rx_irq;
+diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+index c2f4c5ca2e80..6ebfd19097d2 100644
+--- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
++++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
+@@ -806,7 +806,7 @@ static irqreturn_t axienet_tx_irq(int irq, void *_ndev)
+ 		/* Write to the Rx channel control register */
+ 		axienet_dma_out32(lp, XAXIDMA_RX_CR_OFFSET, cr);
+ 
+-		tasklet_schedule(&lp->dma_err_tasklet);
++		schedule_work(&lp->dma_err_task);
+ 		axienet_dma_out32(lp, XAXIDMA_TX_SR_OFFSET, status);
+ 	}
+ out:
+@@ -855,7 +855,7 @@ static irqreturn_t axienet_rx_irq(int irq, void *_ndev)
+ 		/* write to the Rx channel control register */
+ 		axienet_dma_out32(lp, XAXIDMA_RX_CR_OFFSET, cr);
+ 
+-		tasklet_schedule(&lp->dma_err_tasklet);
++		schedule_work(&lp->dma_err_task);
+ 		axienet_dma_out32(lp, XAXIDMA_RX_SR_OFFSET, status);
+ 	}
+ out:
+@@ -891,7 +891,7 @@ static irqreturn_t axienet_eth_irq(int irq, void *_ndev)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static void axienet_dma_err_handler(unsigned long data);
++static void axienet_dma_err_handler(struct work_struct *work);
+ 
+ /**
+  * axienet_open - Driver open routine.
+@@ -935,9 +935,8 @@ static int axienet_open(struct net_device *ndev)
+ 
+ 	phylink_start(lp->phylink);
+ 
+-	/* Enable tasklets for Axi DMA error handling */
+-	tasklet_init(&lp->dma_err_tasklet, axienet_dma_err_handler,
+-		     (unsigned long) lp);
++	/* Enable worker thread for Axi DMA error handling */
++	INIT_WORK(&lp->dma_err_task, axienet_dma_err_handler);
+ 
+ 	/* Enable interrupts for Axi DMA Tx */
+ 	ret = request_irq(lp->tx_irq, axienet_tx_irq, IRQF_SHARED,
+@@ -966,7 +965,7 @@ static int axienet_open(struct net_device *ndev)
+ err_tx_irq:
+ 	phylink_stop(lp->phylink);
+ 	phylink_disconnect_phy(lp->phylink);
+-	tasklet_kill(&lp->dma_err_tasklet);
++	cancel_work_sync(&lp->dma_err_task);
+ 	dev_err(lp->dev, "request_irq() failed\n");
+ 	return ret;
+ }
+@@ -1025,7 +1024,7 @@ static int axienet_stop(struct net_device *ndev)
+ 	axienet_mdio_enable(lp);
+ 	mutex_unlock(&lp->mii_bus->mdio_lock);
+ 
+-	tasklet_kill(&lp->dma_err_tasklet);
++	cancel_work_sync(&lp->dma_err_task);
+ 
+ 	if (lp->eth_irq > 0)
+ 		free_irq(lp->eth_irq, ndev);
+@@ -1504,17 +1503,18 @@ static const struct phylink_mac_ops axienet_phylink_ops = {
+ };
+ 
+ /**
+- * axienet_dma_err_handler - Tasklet handler for Axi DMA Error
+- * @data:	Data passed
++ * axienet_dma_err_handler - Work queue task for Axi DMA Error
++ * @work:	pointer to work_struct
+  *
+  * Resets the Axi DMA and Axi Ethernet devices, and reconfigures the
+  * Tx/Rx BDs.
+  */
+-static void axienet_dma_err_handler(unsigned long data)
++static void axienet_dma_err_handler(struct work_struct *work)
+ {
+ 	u32 axienet_status;
+ 	u32 cr, i;
+-	struct axienet_local *lp = (struct axienet_local *) data;
++	struct axienet_local *lp = container_of(work, struct axienet_local,
++						dma_err_task);
+ 	struct net_device *ndev = lp->ndev;
+ 	struct axidma_bd *cur_p;
+ 
 -- 
 2.17.1
 
