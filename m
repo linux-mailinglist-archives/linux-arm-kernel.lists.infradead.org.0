@@ -2,130 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DC1417E4B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 17:23:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C06F417E4C1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 17:26:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vJVLMev6i5WaBAGIC8VgL10rqr5fsh2MH+SLLoi8+oM=; b=b0809WUIooxJGO
-	nzGEkjLFmY7wPDmGAIez2o6KR2FyvDbMEqTmSj90LmzK6Mh1d2xNYdWNEUt7ANPBJ4UCenuVUFxS4
-	gxJ4XEwPzaUOR98SX7YnYh+4nFNDLSowB6rY4PiVLIWM3S3z1BpJeMQsDg0GiulEuJr7zYmWTYtq1
-	+K1M+I9gM5knFUk9SyQ4hXRkPjrlLrv2sghSHpHV9F0luFGVzfDIgPcBlOjxy5EXxwnWwpu0VXXVS
-	sDCgoKlKNEJpTtJpA5VL4h8H1pHFovVAun4pP70A3bnAh/eoGxIFJ5N5UqPzmnhuKdCIrMG0qZe7n
-	dXRQZlR5wxd9NS+kjkAw==;
+	List-Owner; bh=TJLK3xPr2iHxoDauRDDtgkjdS7lvGn4Xica8G5TyxZU=; b=QCrLgmc7pGssST
+	+1LQQ8Kbrg/pscW91qZfqbZsWJC2S8/KjVVLkaOaNOgPbVMbso89hPGpkqZIF5DHnECMv9Lw3K0Wg
+	eTJoacCRoEqlmyrRcfM13J2+lrFfWuJZblODCACaMKxyl+a1m7QFFoDnqo7NvyfqdJqK5wfbRbqsg
+	7E3wasrKq4AULBXw/dYwowAsT/rAH8VORoqlNzKml+E2ebi8UegvAso9mgfdvjgh5/YhZzkUei5DL
+	YtxTGiYGwVXFCfbVQijkFv7XMDOOUI+U4FlV+vxD+5fNh6b6aPRG1nyea6ccGPMQpeM8blIkIFgIV
+	lhWSKau334RbtMpz4org==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBLBw-0005Ux-VR; Mon, 09 Mar 2020 16:23:44 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jBLEI-00075m-GT; Mon, 09 Mar 2020 16:26:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBLBm-0005U5-Lr
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 16:23:36 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200309162332euoutp015ad4c656c12b23a304acb16aa5fd0f27~6r1g7uFt22550225502euoutp01w
+ id 1jBLEA-000752-OV
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 16:26:04 +0000
+Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
+ [209.85.222.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5E6542464B
  for <linux-arm-kernel@lists.infradead.org>;
- Mon,  9 Mar 2020 16:23:32 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200309162332euoutp015ad4c656c12b23a304acb16aa5fd0f27~6r1g7uFt22550225502euoutp01w
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1583771012;
- bh=mVaSzErXXr6NkeK167F1lomH4Gm8JqQhQ+aVHg2/4o8=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=mMmigeNknFMFtAV13UVky5lBOLNbmelucHrz+0NJhlJPELLZggyQssSJ8Xxbfjwhi
- hjy7kTh/RXLEpWJA6F8XJOFd7g8toZtp30n+TIO1Rsz4gdf/DWH9NFwi+IyLP04CRx
- z2/rnOBp4Gz6TlaCy6zMkYczNZ6RG7OY96OhIGw0=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200309162332eucas1p2bae9eb1d7c08ded75beb0d3730f212d6~6r1gq3ZkH1251512515eucas1p2g;
- Mon,  9 Mar 2020 16:23:32 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id DA.C2.61286.48D666E5; Mon,  9
- Mar 2020 16:23:32 +0000 (GMT)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200309162331eucas1p206c78f3ed49cccd2f401980b158654ab~6r1gW2pe-1255312553eucas1p2o;
- Mon,  9 Mar 2020 16:23:31 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200309162331eusmtrp2298c3dcb041eef344c24c03f4d890f10~6r1gWKkqI3143831438eusmtrp2I;
- Mon,  9 Mar 2020 16:23:31 +0000 (GMT)
-X-AuditID: cbfec7f2-ef1ff7000001ef66-96-5e666d849f15
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 51.FC.07950.38D666E5; Mon,  9
- Mar 2020 16:23:31 +0000 (GMT)
-Received: from [106.120.51.71] (unknown [106.120.51.71]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200309162331eusmtip1e47cac4268bd201db6e9c36373ef8856~6r1f3cI341492714927eusmtip12;
- Mon,  9 Mar 2020 16:23:31 +0000 (GMT)
-Subject: Re: [PATCH] Revert
- "tty: serial: samsung_tty: build it for any platform"
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Geert Uytterhoeven
- <geert@linux-m68k.org>
-From: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Message-ID: <6ec29c9d-4a59-77fc-6cb4-38b86d62d22f@samsung.com>
-Date: Mon, 9 Mar 2020 17:23:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ Mon,  9 Mar 2020 16:26:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583771161;
+ bh=Oufh7MrQPjXo9lbYsp3qWQvteiioqKO/EGPSF2qFeBo=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WSQZahaxTQSMDiV2kIuXICnK4TWpj3HS3+x9d6T8gFH3ZZoSfLvTEHw4Hi1O5q6RA
+ R7VS//IYFN4OQ6jLw2so+oiCEKt0V+T00ucYfwrYhljZCKPqaR4cmoQF/Jx6ECNm0E
+ uGMZjp3m5CnUbyvIoP4/4IgnEuyW3CK4STRDSB4w=
+Received: by mail-qk1-f181.google.com with SMTP id e11so9759277qkg.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Mar 2020 09:26:01 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ2lzXENyrJ04s9MWAP+n2UL9apxx81JocIGHKKd9olPzU4D4YDi
+ vOgcrSXCKJKlz3gyn19AAurgaKF0+HqeBKKzSQ==
+X-Google-Smtp-Source: ADFU+vvixMGurwQ+Y+ORKkEGc9gr3ZpwxMARQ8Q4TNyr445pL5cPgVGTC43iI5nbEau/Eu6+ardKHSm3ZVBnmSRoZ0o=
+X-Received: by 2002:ae9:f205:: with SMTP id m5mr16056405qkg.152.1583771160417; 
+ Mon, 09 Mar 2020 09:26:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200306130314.GA3778623@kroah.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SbUhTYRiGeXfOzjlai7dp+KRWMCIy0LSsDpVhILZ+GQQlZeqyk0puyo5a
- +qPsA51CmlMpZ2a10mWlY4qmqdEmWvlVlhYmJPiBZiNTS3JpeTxK/rve+7lvnvuBlyHkbVJ3
- JlaTyGk1qjgF5UzWtPzu8r6mPhvuO+Ag2Tl9C82O9DVK2KvGSorNN09I2JzBcYIdrhqUsF1d
- Zpq1DPZK2VtdTRK23XidZt98nKICVykds3qktJRnUkqrTYeUL4qf0MqqB5eUH15dkSorq3tI
- 5ZRl4xHmhPP+M1xcbDKn3X4g0jmm3/GUSviy/kJFTlgaGnHNQk4MYH/ov5tGZyFnRo5NCEwv
- 66XiYxpBkSmTFFxyPIXgqnnzcmKks5gQTWUI5od1hGiyL5gmQgR2wUdBP2eTCOyKI6F52kgJ
- AQLPSKCn5jMSBhTeC7kZ5Ysswwcge/TPwjaGIfFmqDZ5CfI6HAqTAzapaFkLrwuHFgs5YT+o
- NFsWmcBu0DdUIhF5E9Taby+WAzxGQ07Ne0psHQQPa+tokV3ga2v1EnvC3zohLAQqEMzpRpfS
- tQjK8uaX0vugv3OWEtoR2Asq67eL8kFoKPxNCzLgNfDJvlYssQb0NTcJUZaBLl0uureAudRM
- La/NqntE3EAKw4rTDCvOMaw4x/B/711EliM3LolXR3O8n4Y778Or1HySJtonKl5tQQtfrG2+
- dfIZ+tl92oowgxSrZTHeZ8PlUlUyn6K2ImAIhavs8raocLnsjColldPGR2iT4jjeijwYUuEm
- 23l/7JQcR6sSuXMcl8Bpl6cSxsk9DTWtM/fn9myKSJ9qCHwcUtbxw7+gPKyxMGB/tuMQb5zt
- oNvHjaVlu96S777d6Z5pj325p+DkbcOE7vvuoDl9QLTNmuGZGpp43MnUYnqkmW4t8ShKe55i
- ts00/DIG74joPfbL3nduQ2P3vaats0d0zXZL30Uu7ylUSPOD93k7ug/7Kkg+RuW3jdDyqn8P
- Zu1sXgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrDIsWRmVeSWpSXmKPExsVy+t/xu7rNuWlxBuvmGVr8nXSM3eLZrb1M
- Fs2L17NZTNnwgcmi//FrZounmx8zWZw/v4HdYtPja6wWM87vY7I4s7iX3eLU9c9sDtwev39N
- YvTYtKqTzePQ4Q5Gj/1z17B7bF5S73HlRBOrx/otV1k8Pm+SC+CI0rMpyi8tSVXIyC8usVWK
- NrQw0jO0tNAzMrHUMzQ2j7UyMlXSt7NJSc3JLEst0rdL0Mu483stW8F9yYp1/TENjM9Euhg5
- OSQETCSenZvL3MXIxSEksJRRYs7qN6xdjBxACRmJ4+vLIGqEJf5c62IDsYUEXjNKPPvKC1Ii
- LBAsceaHFkhYRCBB4kbHVCaQMcwCP5kkFj6ewwo1k0li/Z/fYM1sAlYSE9tXMYLYvAJ2En0v
- /rCADGIRUJHYskITJCwqECFxeMcsqBJBiZMzn7CA2JwChhLrN2wCs5kF1CX+zLvEDGGLS9x6
- Mp8JwpaX2P52DvMERqFZSNpnIWmZhaRlFpKWBYwsqxhFUkuLc9Nzi430ihNzi0vz0vWS83M3
- MQJjdtuxn1t2MHa9Cz7EKMDBqMTDK6CdFifEmlhWXJl7iFGCg1lJhLdRKzlOiDclsbIqtSg/
- vqg0J7X4EKMp0G8TmaVEk/OB6SSvJN7Q1NDcwtLQ3Njc2MxCSZy3Q+BgjJBAemJJanZqakFq
- EUwfEwenVAPjmj1O5tuMyx0Z5Hk29nyNSn0WsNbsYoDlhNqQI5wC8zgTlNnnqJYe9D20gMG1
- jKHD2qJxXvjnSysOK9Xqv7a4vSj6xpWW/VdvnJ+xvP/QSZ45pSEdetWG/A/ik3Zv6oh5fdjg
- oGzyjIXZmx++mHP85UUvSWbBCUnTVR/W3FjK/GXSH9kvv7rWKbEUZyQaajEXFScCAIf8/0fv
- AgAA
-X-CMS-MailID: 20200309162331eucas1p206c78f3ed49cccd2f401980b158654ab
-X-Msg-Generator: CA
-X-RootMTR: 20200306130320eucas1p18bda7b5cdf613e1a811bda6eb99a5847
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200306130320eucas1p18bda7b5cdf613e1a811bda6eb99a5847
-References: <20200306102301.16870-1-geert+renesas@glider.be>
- <20200306103652.GA3634389@kroah.com>
- <CAMuHMdUy8RjkY+0gBv-=mpcuamNQgB=k4rvNsiaj2s4uUDc5UA@mail.gmail.com>
- <CGME20200306130320eucas1p18bda7b5cdf613e1a811bda6eb99a5847@eucas1p1.samsung.com>
- <20200306130314.GA3778623@kroah.com>
+References: <20190822092643.593488-1-lkundrak@v3.sk>
+ <20190822092643.593488-7-lkundrak@v3.sk>
+In-Reply-To: <20190822092643.593488-7-lkundrak@v3.sk>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 9 Mar 2020 11:25:49 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLpDa0viedjBVDGGa9p1ytpRizw9hE3m1FE8_xVv6+FmQ@mail.gmail.com>
+Message-ID: <CAL_JsqLpDa0viedjBVDGGa9p1ytpRizw9hE3m1FE8_xVv6+FmQ@mail.gmail.com>
+Subject: Re: [PATCH v2 06/20] irqchip/mmp: do not use of_address_to_resource()
+ to get mux regs
+To: Lubomir Rintel <lkundrak@v3.sk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_092334_918180_E9357029 
-X-CRM114-Status: GOOD (  24.55  )
+X-CRM114-CacheID: sfid-20200309_092602_839842_0D117CB9 
+X-CRM114-Status: GOOD (  26.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -133,7 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -146,99 +87,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Olof Johansson <olof@lixom.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Pavel Machek <pavel@ucw.cz>,
+ Olof Johansson <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Aug 22, 2019 at 4:34 AM Lubomir Rintel <lkundrak@v3.sk> wrote:
+>
+> The "regs" property of the "mrvl,mmp2-mux-intc" devices are silly. They
+> are offsets from intc's base, not addresses on the parent bus. At this
+> point it probably can't be fixed.
 
-On 3/6/20 2:03 PM, Greg Kroah-Hartman wrote:
-> On Fri, Mar 06, 2020 at 01:53:01PM +0100, Geert Uytterhoeven wrote:
->> Hi Greg,
->>
->> On Fri, Mar 6, 2020 at 1:29 PM Greg Kroah-Hartman
->> <gregkh@linuxfoundation.org> wrote:
->>> On Fri, Mar 06, 2020 at 11:23:01AM +0100, Geert Uytterhoeven wrote:
->>>> This reverts commit 175b558d0efb8b4f33aa7bd2c1b5389b912d3019.
->>>>
->>>> When the user configures a kernel without support for Samsung SoCs, it
->>>> makes no sense to ask the user about enabling "Samsung SoC serial
->>>> support", as Samsung serial ports can only be found on Samsung SoCs.
->>>>
->>>> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
->>>> ---
->>>>  drivers/tty/serial/Kconfig | 1 +
->>>>  1 file changed, 1 insertion(+)
->>>>
->>>> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
->>>> index 880b962015302dca..932ad51099deae7d 100644
->>>> --- a/drivers/tty/serial/Kconfig
->>>> +++ b/drivers/tty/serial/Kconfig
->>>> @@ -237,6 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
->>>>
->>>>  config SERIAL_SAMSUNG
->>>>       tristate "Samsung SoC serial support"
->>>> +     depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
->>>>       select SERIAL_CORE
->>>>       help
->>>>         Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
->>>
->>> {sigh}
+Another option is for platform code to fixup the live DT and just add
+'ranges' to make this work.
 
-[...]
+> On an OLPC XO-1.75 machine, the muxes are children of the intc, not the
+> axi bus, and thus of_address_to_resource() won't work. We should treat
+> the values as mere integers as opposed to bus addresses.
+>
+> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+> Acked-by: Pavel Machek <pavel@ucw.cz>
+>
+> ---
+> Changes since v4 of "MMP platform fixes" set:
+> - Add a comment, as suggested by Pavel
+>
+> Changes since v1:
+> - Fix up typoes in the comment
+> - Do not allow the regs property be larger than the bindings document.
+>
+>  drivers/irqchip/irq-mmp.c | 22 +++++++++++++---------
+>  1 file changed, 13 insertions(+), 9 deletions(-)
+>
+> diff --git a/drivers/irqchip/irq-mmp.c b/drivers/irqchip/irq-mmp.c
+> index 14618dc0bd396..e41e47ab71d3b 100644
+> --- a/drivers/irqchip/irq-mmp.c
+> +++ b/drivers/irqchip/irq-mmp.c
+> @@ -424,9 +424,9 @@ IRQCHIP_DECLARE(mmp2_intc, "mrvl,mmp2-intc", mmp2_of_init);
+>  static int __init mmp2_mux_of_init(struct device_node *node,
+>                                    struct device_node *parent)
+>  {
+> -       struct resource res;
+>         int i, ret, irq, j = 0;
+>         u32 nr_irqs, mfp_irq;
+> +       u32 reg[4];
+>
+>         if (!parent)
+>                 return -ENODEV;
+> @@ -438,18 +438,22 @@ static int __init mmp2_mux_of_init(struct device_node *node,
+>                 pr_err("Not found mrvl,intc-nr-irqs property\n");
+>                 return -EINVAL;
+>         }
+> -       ret = of_address_to_resource(node, 0, &res);
+> +
+> +       /*
+> +        * For historical reasons, the "regs" property of the
+> +        * mrvl,mmp2-mux-intc is not a regular "regs" property containing
+> +        * addresses on the parent bus, but offsets from the intc's base.
+> +        * That is why we can't use of_address_to_resource() here.
+> +        */
+> +       ret = of_property_read_variable_u32_array(node, "reg", reg,
+> +                                                 ARRAY_SIZE(reg),
+> +                                                 ARRAY_SIZE(reg));
+>         if (ret < 0) {
+>                 pr_err("Not found reg property\n");
+>                 return -EINVAL;
+>         }
+> -       icu_data[i].reg_status = mmp_icu_base + res.start;
 
->> Dropping those dependencies is similar to always having a simple PCI
->> core without any host PCI bridges, dropping "depends on PCI" from all
->> PCI drivers, and building an all*config kernel for your old i386 that
->> predates PCI (you can replace PCI by ACPI to modernize the example).
->>
->> What am I missing?!?
-> 
-> "depends on PCI" describes the hardware bus that a driver depends on.
-> 
-> PLAT_FOO is just trying to somehow classify that this type of driver
-> only shows up on this vendor's devices.  It is not defining the hardware
-> at all.  We try to always describe functionality of hardware, not try to
-> declare specific vendor's hardware choices, right?
-> 
-> PLAT_FOO is interesting, but given that a specific driver is really not
-> tied to that platform logically, only by virtue that no one else might
-> not happen to have that hardware, it seems odd to have that.
+Seems like it was treated as an offset already?
 
-Your particular patch is not about removing PLAT_FOO dependency but
-about removing actual architecture/platform specific dependencies.
+> -       ret = of_address_to_resource(node, 1, &res);
+> -       if (ret < 0) {
+> -               pr_err("Not found reg property\n");
+> -               return -EINVAL;
+> -       }
+> -       icu_data[i].reg_mask = mmp_icu_base + res.start;
+> +       icu_data[i].reg_status = mmp_icu_base + reg[0];
+> +       icu_data[i].reg_mask = mmp_icu_base + reg[2];
 
-Please look at your patch and note that in addition to removing
-PLAT_SAMSUNG dependency (even ignoring for a moment that it can be
-replaced by a few ARCH_* dependencies and PLAT_SAMSUNG was used only
-because it was shorter) has also removed ARCH_EXYNOS dependency.
+This is a bit fragile as it's hard coding the cell sizes. Are they the
+same for all the platforms? I'd be more comfortable doing that in
+platform specific fixup code than here.
 
-How do you explain this?
-
-> Yes, asking lots of questions is tough, but we passed that problem so
-> long ago.  Are we now trying to add PLAT_FOO entries to all hardware
-> drivers in order to make this type of selection easier?  I thought we
-
-We are not going to add anything because for the vast majority of
-the drivers the needed entries are already there:
-
-$ find drivers/ -name 'Kconfig*'|xargs cat|grep "depends on"|grep ARCH_|wc -l
-1310
-
-> were just doing that by providing defconfig files to make the initial
-> selection saner.
-
-Best regards,
---
-Bartlomiej Zolnierkiewicz
-Samsung R&D Institute Poland
-Samsung Electronics
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
