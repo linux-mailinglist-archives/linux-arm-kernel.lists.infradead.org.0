@@ -2,87 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB69117D999
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 08:10:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A953517D9BB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Mar 2020 08:21:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LQgLpuNM8IPO8nc3J/gBpo/tijB333aqo5V3hSeqC3E=; b=ibihFprffPcXt9
-	09GHsoDqe+lT5wVfQ1R2vc7upRRrq82/3yw+aacG+atQ6oorxviMSgyCPkkkIxuHMzuMAkY0cvwMb
-	Tg5c1eirczkz+fqNnPsbaAiQDZ7Wc3g1ffZjPiRwo39ipfPv+Nhd6YaA7/PW2hsHA+eniA+KCUxjw
-	4IIyvoErPv7yDbMvGeeT1If+0uLVGnc6clNWuCOB7sF4ab22SM7vmikPC2hnItk6xymsUX1JIkqOA
-	9HcglJ2yU9oNizzxJkW6YpHECT0v7oxOeSlsRdiuy6pSq3S9t+/mKVo+FEUiVYuTTbV4SgAKsdL1z
-	LcnSyX3Cpk6aa6a7wAvQ==;
+	List-Owner; bh=vb8hfUXF+1+5Jxa1cSuBxJ5CIjqBkae07Zu8Y+/lmK0=; b=Af3zf8NZORG07T
+	eFS9OKkDY1GpcwqliRpjDQw+6zL6kBUl4jrZs+zIOVuaIuDi0aBwkSqyKmiz9Xv7CbHkqfaHnlhEw
+	x9tCxhMRJ8YnTvLF1jvX0oA0uLo7g9h/a5o25ZOb5i+BOJuaeWGPt3KMzC/ypBDoKFLMnzfaIfrPf
+	9d7TaQEQR0WKdJGOqpqdmUifVf0KKd1a5oce7XRoEeLE7OjZ/b8K24hfmAIYn5T8hohMAJQu0TV84
+	J5d37IwQHJHb35JB/xXTCRfNaldSmb6nKDEQt08SAD6yegbKw8YAvu6S7QBs360ofB0rXJQVngJAx
+	hSc97+dr8BxNmVWNUt8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBCYK-0003B3-E3; Mon, 09 Mar 2020 07:10:16 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jBCjE-00075K-5l; Mon, 09 Mar 2020 07:21:32 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBCYC-0002n5-P9
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Mar 2020 07:10:10 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0297A0fD010391;
- Mon, 9 Mar 2020 02:10:00 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1583737800;
- bh=uZAT8o07ZjnRf5vBt9YtdwA7qFwAH2KyAIpBPpjxOzM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=O+owxSwo5ZuYAsLRqzOQcQTztjfmer4a/5uQZyihMDROaHptvvljVCu6RvQZ0pR8t
- 7k4ei8ZsVpiozO0DPJEg1TWnEy6fH/X/zB3+7rgXd1R/YUSA73TvX/HLuk/YOw4REL
- bvUOZO1w128iv46Iv7AX8Sqeu0sb13jJGYXIXRhE=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0297A0tZ077937
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 9 Mar 2020 02:10:00 -0500
-Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 9 Mar
- 2020 02:09:59 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 9 Mar 2020 02:09:59 -0500
-Received: from [10.24.69.157] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02979veZ046277;
- Mon, 9 Mar 2020 02:09:57 -0500
-Subject: Re: [PATCH] arm: dts: ti: k3-am654-main: Update otap-del-sel values
-To: Tero Kristo <t-kristo@ti.com>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>
-References: <20200109085152.10573-1-faiz_abbas@ti.com>
- <5dc0bca0-502d-01b8-554b-4c4bc06688a8@ti.com>
-From: Faiz Abbas <faiz_abbas@ti.com>
-Message-ID: <54c5abfd-7ac5-92ba-e89b-aeae9ee4e275@ti.com>
-Date: Mon, 9 Mar 2020 12:41:47 +0530
+ id 1jBCit-0006xN-QS; Mon, 09 Mar 2020 07:21:13 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Mar 2020 00:21:02 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,532,1574150400"; d="scan'208";a="235518417"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.167])
+ ([10.237.72.167])
+ by fmsmga008.fm.intel.com with ESMTP; 09 Mar 2020 00:20:58 -0700
+Subject: Re: [PATCH v2 05/11] mmc: sdhci: pxav3: Use
+ sdhci_set_power_and_voltage()
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-kernel@vger.kernel.org
+References: <20200306174413.20634-1-nsaenzjulienne@suse.de>
+ <20200306174413.20634-6-nsaenzjulienne@suse.de>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <92473c9e-693a-fa98-2a96-a200a86dc2fc@intel.com>
+Date: Mon, 9 Mar 2020 09:20:14 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <5dc0bca0-502d-01b8-554b-4c4bc06688a8@ti.com>
+In-Reply-To: <20200306174413.20634-6-nsaenzjulienne@suse.de>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_001008_924329_80504F35 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200309_002111_907262_EE59FC6D 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,31 +71,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, nm@ti.com, robh+dt@kernel.org
+Cc: stefan.wahren@i2se.com, Ulf Hansson <ulf.hansson@linaro.org>,
+ f.fainelli@gmail.com, linux-mmc@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ phil@raspberrypi.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tero,
-
-On 17/01/20 1:38 pm, Tero Kristo wrote:
-> On 09/01/2020 10:51, Faiz Abbas wrote:
->> According to the latest AM65x Data Manual[1], a different output tap
->> delay value is optimum for a given speed mode. Update these values.
->>
->> [1] http://www.ti.com/lit/gpn/am6526
->>
->> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+On 6/03/20 7:44 pm, Nicolas Saenz Julienne wrote:
+> The sdhci core provides a helper function with the same functionality as
+> this controller's set_power() callback. Use it instead.
 > 
-> I believe this patch is going to be updated, as the dt binding has
-> received comments. As such, going to ignore this for now.
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+>  drivers/mmc/host/sdhci-pxav3.c | 20 +-------------------
+>  1 file changed, 1 insertion(+), 19 deletions(-)
+> 
+> diff --git a/drivers/mmc/host/sdhci-pxav3.c b/drivers/mmc/host/sdhci-pxav3.c
+> index e55037ceda73..75fe90b88f9b 100644
+> --- a/drivers/mmc/host/sdhci-pxav3.c
+> +++ b/drivers/mmc/host/sdhci-pxav3.c
+> @@ -297,27 +297,9 @@ static void pxav3_set_uhs_signaling(struct sdhci_host *host, unsigned int uhs)
+>  		__func__, uhs, ctrl_2);
+>  }
+>  
+> -static void pxav3_set_power(struct sdhci_host *host, unsigned char mode,
+> -			    unsigned short vdd)
+> -{
+> -	struct mmc_host *mmc = host->mmc;
+> -	u8 pwr = host->pwr;
+> -
+> -	sdhci_set_power_noreg(host, mode, vdd);
+> -
+> -	if (host->pwr == pwr)
+> -		return;
+> -
+> -	if (host->pwr == 0)
+> -		vdd = 0;
+> -
+> -	if (!IS_ERR(mmc->supply.vmmc))
+> -		mmc_regulator_set_ocr(mmc, mmc->supply.vmmc, vdd);
+> -}
+
+This code is different.  The commit message should explain why it is
+equivalent.  Has it been tested?
+
+> -
+>  static const struct sdhci_ops pxav3_sdhci_ops = {
+>  	.set_clock = sdhci_set_clock,
+> -	.set_power = pxav3_set_power,
+> +	.set_power = sdhci_set_power_and_bus_voltage,
+>  	.platform_send_init_74_clocks = pxav3_gen_init_74_clocks,
+>  	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
+>  	.set_bus_width = sdhci_set_bus_width,
 > 
 
-Those other series are merged now so you should be able to pick this up.
-
-Thanks,
-Faiz
 
 _______________________________________________
 linux-arm-kernel mailing list
