@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83EB918044F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:05:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB3F5180458
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:06:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sQqxhYdIHIY2YHkOwjY83pi1ZbzAeSFazjF1msAxxck=; b=ffkd/gBaeEOHVohW5J6c6nP4w
-	9iS1EHVIW9QQdRe5fRkXr4IDdt4vMp1doBcfirwXb8I2cJyDZ7/HfBWcoBy/BX+mHqOeUDoXXV/xU
-	4nmyuijzEw5u0lpr4QXC/r24Q7eWxNaoDijuYLTeYJUJ2FIrsRschpICs+0qqMT6qZ2Hkjlw60KIG
-	4F2UHt9hy25AdnfX57kW+Bfztl98uYs/gQomPdRsdQt0weepehIa2yKLOO4CRhbACPKsuHlqhsuBt
-	pFs72b7WHD14We27oqGYKmvWdF++xlcCgClK26H7sHKvuynpeFVyd2nKvvhbQkIW8fQkziTiF2p9h
-	6/dU33MHg==;
+	 bh=N44ROYLYNZyHHCotFD2775ybcOLiOnXKwWj3N0KBkQo=; b=RnpVPT/2j2WNZttTuHF21BleF
+	BnHLfXDexJM2nB9B5Qvb5DxY3BPLT+ST4WFfhVqleSRBebcy1bOqLRICi7d/4Ubey/liCmJ55dmI/
+	GKXVhJaSdcVoIBOMDbLs2KKH9motIgpt3ucC56aHLvqvIWdEhdSFDwcVEa5DyjBlo0N/ilHn+l3OJ
+	gZCyk/AaYVbN0KMwNJh1efG1Ty0nuzDQFMJUvh4OsAKtXwpLWPeKk/inBPDxUfDYW7t0Fvut9FoXv
+	LH3qk4S94Y4Kd7Ur9junf7O5Em4KgtKGCCfhi9+piRzHOqekE7wAI0ZQ34pHrupkfgzhw4B3OJXKI
+	8v07wLnjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBiJl-0006hg-Id; Tue, 10 Mar 2020 17:05:21 +0000
+	id 1jBiKx-00073L-OS; Tue, 10 Mar 2020 17:06:35 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBiJd-0006gs-CH
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:05:14 +0000
-Received: by mail-wr1-x441.google.com with SMTP id s14so3196970wrt.8
+ id 1jBiKo-00072v-QB
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:06:28 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v11so16836066wrm.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 10:05:13 -0700 (PDT)
+ Tue, 10 Mar 2020 10:06:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=6OEUqmMP57cb74MhBgNDVNN+KyC7WBhjSIu721xvBNU=;
- b=VHm/SShvv2oKDxW/Ex9HZ/5D/Hlf5Ru68Xy1a7ESmyT/NhZvBUFu/A3bRF1NVV7qKM
- FKKiI1raEcI7niAr0wL+5WWU+U/NR0eWQExTMW9Pe0W7xoFg6xs5T++o1Nwy6TWWqnp8
- ThDf8+ulnumZ705uFuUJF8MgNzlGlelU+LlAYCL7n01kjG3+jLzk+7828jUgfNI4tgPU
- vlZUkQaf+mw8dLwWutKKEFha1Sj8QB1bzzyH1vn4fU2L3ME/bZebyD66+Dg8sDmDVhPE
- gstZH1y/ZBC7EE0fzENEr+JnK/a9kYxpKSNyIBo9v75WBuXd5+EyYbPJRRSTjkoeI7JA
- dL3A==
+ bh=XrGRKIT36erQNGi90+/pLC99u3bWc1O21GG8hCOkNRE=;
+ b=Yada3ftEE8092Q/Iq3Od7CZNxgDKFJnhOarNP27TG1WVDy8KOdU8r2+jts0mtjT85D
+ i4XhuAD7EBj/6w8DtUBahPLCgjSPVbs9YKyPQv+LdLVF9bPNDbvmVOhz3nflUiPPwGqM
+ yDl/Xsp65Bi06576qVsZu9OOM6hhlu5dEwzDV4RavFqpsCOr2s886xnmNnID8tv/Cl7Q
+ 8PgjglWXRu+Ca9BFwKdRe2WMurY3quL4OoRjgbNwchfH6Uohp+0RiGtLjhDyDV30jB0A
+ wlMuagEd48v1UhhFnfbO6OSWJ0dOUY3xF+l2/xKEMiScMqvlfUVsMnGmqqC0rTkjlq4S
+ cYkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=6OEUqmMP57cb74MhBgNDVNN+KyC7WBhjSIu721xvBNU=;
- b=P2UbJc1RtqVmArTIrdA9YFD8c5skw+h+ijwzMvlAnRPqeKGaJlEnDd7h4KHCrZcVor
- jrbBe83TTDnjOlPCPh8GgrE50lALgdteCe9IBjAa5cc5iLuHAEFg8jPFwCyZ9nMHLzbg
- v0ySZqZahsBfz0vW5ehW6rC31slnfep6btrOBnNBioTNY3CBdSICl+ZykYUwZVOetplx
- aRQwqKHaieyX/z5SD/udI8KjV1/Y+Eo8V82/fcnRPs94+L9jpGsLtKNLXZ+IRwqhWYSD
- JN0oN3XpnmwCqqLsGK0VSjPAwAERZmYuYnkugJUpJd7nyGVgW9w9dQtEuJoLr1ra00Le
- S5Yg==
-X-Gm-Message-State: ANhLgQ1MMibKwQ5olwtv0EdYkuyim9s5z1d7EpZTUPV5ph04t6Vz5n6z
- M+h8IqNY9otk9XDRUyfZZec=
-X-Google-Smtp-Source: ADFU+vv+IEQslBSOgKdHxaft8X7ofDv4clakgjSuWe9FiCBWvzGCaoweilLbkexC2zw/U2MvtO+lhQ==
-X-Received: by 2002:a05:6000:44:: with SMTP id
- k4mr13774361wrx.205.1583859911867; 
- Tue, 10 Mar 2020 10:05:11 -0700 (PDT)
+ bh=XrGRKIT36erQNGi90+/pLC99u3bWc1O21GG8hCOkNRE=;
+ b=eoE20jVoBdDvfsJToZZJFS/SfmK1n6YlqSF5I2ezFeOhHgOaEPbe2HE3Tx9CyfnpXd
+ kj6tQ2GAcND95bfVerE78d4VYYlbW2/iEWO09WtaObXhLv3HGp1NCrntZTjepnutwiAL
+ 9tq6h4bIx8F6RGDCc+FpTJBNCLHfM5kKXBqhab4KLHkOe0aJAFzkSXZrn5nPQOoUEkC5
+ cCETw/6ASBprsgSdzd9NS1CUcRhB9iUGZfoldwL0/QAcOmmtMT5hVCuugLLFnVpPOzFA
+ Nmu/IzQAzMW9dF8zf/EMB+dqSrOU77YNVFgq9qs1AoeCaxvHiCv9mOZoEzgf3jGUkKaV
+ caZQ==
+X-Gm-Message-State: ANhLgQ28WayvCkw3aKsyNsMOjuFDuh8Mteq0txvm1UwiFx//jbGyaXml
+ nqrILTxg86tTYgueqZUSQEOvqezE
+X-Google-Smtp-Source: ADFU+vtKX71Iaq0ZvODPt8uubjEReGxoUwFjE6wgsU7zyGOLz4NnXKO+RjMXHD0yGlA1A8JZDboy2w==
+X-Received: by 2002:a5d:522f:: with SMTP id i15mr17949131wra.231.1583859985628; 
+ Tue, 10 Mar 2020 10:06:25 -0700 (PDT)
 Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
- by smtp.gmail.com with ESMTPSA id q13sm15604915wrs.91.2020.03.10.10.05.09
+ by smtp.gmail.com with ESMTPSA id d18sm4073319wrq.22.2020.03.10.10.06.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 10:05:09 -0700 (PDT)
-Date: Tue, 10 Mar 2020 18:05:08 +0100
+ Tue, 10 Mar 2020 10:06:24 -0700 (PDT)
+Date: Tue, 10 Mar 2020 18:06:23 +0100
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Dmitry Osipenko <digetx@gmail.com>
-Subject: Re: [PATCH v5 1/8] clk: tegra: Add PLLP_UD and PLLMB_UD for Tegra210
-Message-ID: <20200310170508.GA3079591@ulmo>
+Subject: Re: [PATCH v5 2/8] clk: tegra: Export functions for EMC clock scaling
+Message-ID: <20200310170623.GB3079591@ulmo>
 References: <20200310152003.2945170-1-thierry.reding@gmail.com>
- <20200310152003.2945170-2-thierry.reding@gmail.com>
- <9b343fd1-15df-409a-390f-e30fa6bbbfe7@gmail.com>
+ <20200310152003.2945170-3-thierry.reding@gmail.com>
+ <8e1f11e9-a95a-500f-ff44-6f44ad990863@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <9b343fd1-15df-409a-390f-e30fa6bbbfe7@gmail.com>
+In-Reply-To: <8e1f11e9-a95a-500f-ff44-6f44ad990863@gmail.com>
 User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_100513_425848_49FBAD10 
-X-CRM114-Status: GOOD (  16.38  )
+X-CRM114-CacheID: sfid-20200310_100626_853633_02E175B8 
+X-CRM114-Status: GOOD (  13.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,90 +105,74 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
  Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5717784694641859717=="
+Content-Type: multipart/mixed; boundary="===============3226590634965855356=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5717784694641859717==
+--===============3226590634965855356==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="uAKRQypu60I7Lcqm"
+	protocol="application/pgp-signature"; boundary="DBIVS5p969aUjpLe"
 Content-Disposition: inline
 
 
---uAKRQypu60I7Lcqm
+--DBIVS5p969aUjpLe
 Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Tue, Mar 10, 2020 at 07:19:59PM +0300, Dmitry Osipenko wrote:
+On Tue, Mar 10, 2020 at 07:13:25PM +0300, Dmitry Osipenko wrote:
 > 10.03.2020 18:19, Thierry Reding =D0=BF=D0=B8=D1=88=D0=B5=D1=82:
 > > From: Joseph Lo <josephl@nvidia.com>
 > >=20
-> > Introduce the low jitter path of PLLP and PLLMB which can be used as EMC
-> > clock source.
+> > Export functions to allow accessing the CAR register required by EMC
+> > clock scaling. These functions will be used to access the CAR register
+> > as part of the scaling sequence.
 > >=20
 > > Signed-off-by: Joseph Lo <josephl@nvidia.com>
 > > Signed-off-by: Thierry Reding <treding@nvidia.com>
 > > ---
-> >  drivers/clk/tegra/clk-tegra210.c         | 11 +++++++++++
-> >  include/dt-bindings/clock/tegra210-car.h |  4 ++--
-> >  2 files changed, 13 insertions(+), 2 deletions(-)
+> > Changes in v5:
+> > - remove tegra210_clk_emc_update_setting() which is no longer needed
 > >=20
-> > diff --git a/drivers/clk/tegra/clk-tegra210.c b/drivers/clk/tegra/clk-t=
-egra210.c
-> > index 45d54ead30bc..f99647b4a71f 100644
-> > --- a/drivers/clk/tegra/clk-tegra210.c
-> > +++ b/drivers/clk/tegra/clk-tegra210.c
-> > @@ -3161,6 +3161,17 @@ static void __init tegra210_pll_init(void __iome=
-m *clk_base,
-> >  	clk_register_clkdev(clk, "pll_m_ud", NULL);
-> >  	clks[TEGRA210_CLK_PLL_M_UD] =3D clk;
-> > =20
-> > +	/* PLLMB_UD */
-> > +	clk =3D clk_register_fixed_factor(NULL, "pll_mb_ud", "pll_mb",
-> > +					CLK_SET_RATE_PARENT, 1, 1);
-> > +	clk_register_clkdev(clk, "pll_mb_ud", NULL);
-> > +	clks[TEGRA210_CLK_PLL_MB_UD] =3D clk;
-> > +
-> > +	/* PLLP_UD */
-> > +	clk =3D clk_register_fixed_factor(NULL, "pll_p_ud", "pll_p",
-> > +					0, 1, 1);
-> > +	clks[TEGRA210_CLK_PLL_P_UD] =3D clk;
+> ...
+> > +EXPORT_SYMBOL_GPL(tegra210_clk_emc_update_setting);
+> ...
+> > +extern void tegra210_clk_emc_dll_enable(bool flag);
+> > +extern void tegra210_clk_emc_dll_update_setting(u32 emc_dll_src_value);
+> > +extern void tegra210_clk_emc_update_setting(u32 emc_src_value);
 >=20
-> Isn't it possible to auto-enable the low-jitter bit when necessary
-> during of the rate-change based on a given clock-rate?
+> Why these exports are needed given that the EMC driver is built-in?
 
-I don't think so. These new clocks (pll_mb_ud and pll_p_ud) are parents
-for the emc clock, so they are needed to properly reflect the position
-of the emc clock in the clock tree.
+Let me try if I can make the driver tristate. Given that it's fairly
+large it may be better to keep that as an option.
 
 Thierry
 
---uAKRQypu60I7Lcqm
+--DBIVS5p969aUjpLe
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5nyMIACgkQ3SOs138+
-s6EMCA//Uxo0Bgi/lGCwUNR+qekqxpV446rEudb/jWg4Kh7pFTMGgzA/YUE8sFUV
-Q2y2URjCPwMRveAm1dE4gBq7UA/eLIYBBMl/9tmc8PVad14aOyoKuiDX3jYddvg7
-/kXm+UZPC3HLCPuSZKpF34zadrI4ndEw9z22S8hWClGuaUYBegAApiOI28T5FSSX
-ZrPydC1NjdkXPNxL5KLaCugVCbBP4J36UhjY9xOhAxCLb3MX5Qxwbh0BKJDe+7xw
-l/b134bBjjaF8yIogH6PmSABg1bsL0K+aCzK3JVXvEmMJXZwl0rSeQFs0kZZRdND
-yvMdV7RyvhnPvuplbMU3Mym3o/RfQB2XUzsPqj8g6yQqBokJdV5xyTJ60H7sqamW
-Ag+5jrVpzud7nJLXMjBYteAsCMBMvOe9T4SknvruYNxpWAWsLDTkqoa0YQ1P7kvD
-rT3aW0XDLCt9jyQ+bHjl5xhYgCbJdAVgdq9sRe8BBNcQOPCh9Fk8vIEJyglcRDJ4
-flGMTeQTGvnugxfEzQ4auDqpm1EjWHB9M/CRCbRgvFdB/irb+N/J42xqIPQUzAa5
-iFIq+4u9NfKAGKO+QONto4nHk2cnEMZaCA3DKXf1zQ/9T+/ELbDV8LbpxkUJZadB
-4pWq0GsF2rjnAApsk8Uyo69TZyWLhxZFLjxhNDEJZZTHkLbHRTo=
-=oCYd
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl5nyQ8ACgkQ3SOs138+
+s6FOXhAAocJcbbDxFJK3TvLJTTuZlywjEwIb3UcWO1BERHW2K7hEx8rNt2UqhoGu
+EoqVqjO7HnXaOT++1BbSFSRP3ye4ErmWyQcSRKSObSl20m+lGvWgvv1Chk8jCJha
+uJ47NctrQMiBD0lb/Ip7vup/4Qqi6WjJpLNfvct92NFTGty6TuwFAV39r4L874wd
+yEryO/AwteBrAClEMLH8SS+bZwHSWy5jCHuirgGxe0ck29Hx5kBUb4HAmiMQxJH3
+v0dNrkzAXl+dd98s93uI7ocOWtiKjQWJiQJ8mSDVLnmClkiPjFnRDvgu3TkbAQEh
+BLAgRFgmaCTmKvdD8LBlA88W0DVP3J5bx6iQKMOrYvJ95PmntiDtURq4rmXRXl/v
+BX7KUlkV3eXTLkukY2r/z4uHOhOCdo1LD6/12jzezVLSA32Uw6QXeyuDa2Cg7Hc6
+C99avAx0XUVVjGr++9yY1Rn3jpLEvBsAWk6tjNNXn2a/5+l5ygCjvDfZeOKl//j8
+6Mcsw4ML1Lj/CV52+YM2rtAwXr3hRCpwGHPEN9K5i+mozudHb4TOV3Yt3KTEGUW/
+3rdlIPacpzyQmM8+xUp2E4oF4PqGqgp2wllYb8NNC7MFXDzp1JwXUvCAVabOnaw3
+xqcijH1JXc4rsCeUVNMD4rE/PQkrq0mFfPMd8Jv4I9RqY4FkZPI=
+=x6Nz
 -----END PGP SIGNATURE-----
 
---uAKRQypu60I7Lcqm--
+--DBIVS5p969aUjpLe--
 
 
---===============5717784694641859717==
+--===============3226590634965855356==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -200,5 +183,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5717784694641859717==--
+--===============3226590634965855356==--
 
