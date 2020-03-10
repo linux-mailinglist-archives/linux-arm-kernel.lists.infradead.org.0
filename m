@@ -2,88 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA53B17F760
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 13:26:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6108F17F767
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 13:27:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=sV3tieLvIlw7bPzDf5g5KXqNJb2SenAvWxpOkBF/rhI=; b=h2p
-	kr/FnOtkrbnv3nnSD7dHI6rLXOV81wRsFupxdkkivHU5Dd7pIcmJQUAC36163aZvRdXzBenzC5/0r
-	usrUdlxcdUwDL+XtHs7x86fIx+0T86nvEm8Lka+pNNu8LbEJYUdh5+9CpqdLo5jZTTo/PF8yEaEV9
-	LcW0xyEfS0ELxcHzCgCxB9FipSlfRXju330fzmM1F7caGck/dfQGhRyq2KmFMgFmf8TAC5l2pe7qo
-	3ripHJ0weaNH8d5j6oOLSMxkOQn+T4Mt1nfHqmnRhseuzYiccdq2h5Hw0Nv1l33IFXqJe1BK3cBrV
-	8bHCEy6konZ1X9wTTGW4c4Zd4x/XmzA==;
+	References:List-Owner; bh=OGA2O0Icns8WFmmOXJ+zHh7FdJ+W+FWj78+kk2QJvXs=; b=SUC
+	Ek9LK+XqMFZBsmG4PHlnsYm6LfhyEURgPMN17FwRttL9VdrhuSlP4VnRyGJuJgs0rFkn6fXgaP4/6
+	vAvQleZTGS3gF+WLySlzFaoHBm+tMb1s0VZ/dyvwL6XQHy2fPvKUvPv2y35Ju4JcgRNHQl66CWENc
+	e0JX1St4fwwud3k5z3r5R6chsy3utYntaU2rCijIwKNW9kfk3GhUmnirOu/ENwfqii1LO0ER839Hu
+	ZVatexsH/M6MFuQVy/jG2xpMbrKCggGP6GD75EwRYDaaIE6ono3kC8RLSkVOU655h8Zupp0JNLrbo
+	fQf6ttrnRLC2w4Ga6VMr+POdZTi8UCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBdxy-0000iT-Dj; Tue, 10 Mar 2020 12:26:34 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jBdzB-000128-6u; Tue, 10 Mar 2020 12:27:49 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBdxo-0000hs-Vl
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 12:26:26 +0000
-Received: by mail-pf1-x441.google.com with SMTP id p14so6406337pfn.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 05:26:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=aqG1gpI3UojXGpXKG8hweJC7Y4rK/8MUyRGkcr9E4Og=;
- b=NRk29ZvL9dXRWhydPFZ1MNK8u+VK026HEZdZ6QJrhG6+YwgQJuM7hPfBqK43y29Z/P
- hWjhYn+xQYQ139crRXlL6FVPYINBUyzwkWupHkYDkopCT25pfhSL/C+lh7wspGkpamcO
- HygLSE48s954ZazP/AOdt6BNis2UE2+oCV+23F2KC92SOkyyT8Z46DyqmlybGYQQPnoL
- o3dP2LYSOlpEKs3G44b5dpHRWF0F4ZCaQHnnfQGsQqsZOFhA/MfKa2yp1KNWo5I5zPa4
- 0HoLFM9+y1dGU69VBRHAS+ULujVS+3wcyH+yKDkDERtzTPYeMQZcwWxvGf1bYoGtNIn6
- ONnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=aqG1gpI3UojXGpXKG8hweJC7Y4rK/8MUyRGkcr9E4Og=;
- b=bkrnMFwFn4g6FgIm2x9mKBWWPBduEHLmDNg9gtt/dQi4s97pmSKUkcstQFVhmsEWsE
- 9KNQF7oMnpPalxCIDl2YjVw132M8WLyybFSnJoddsCmryKJkeV07jPhQMf/YH1r4taOn
- fi8lQ9HOCvBsD4yKe4B8Jn7BubOhu/4ZkIdcjZJb3zWGeyxN5ZJcMCWOrZJL/mMylOwj
- bguyl4e8fdi+QA2UoXMv1yjVhrkFOfbszhH+4Tcc/wt7NvL1Dv/2bsupUoswkenW24l9
- QFtgPHxmRSF729f4TE/Qaq3rRSziEd50X089Ya9ZrQldTYNd1Mu+tKGUgptHdAFFDMVv
- zomA==
-X-Gm-Message-State: ANhLgQ0v1RCctDiejxNlDsX5ODF9y5desANoG3lSbxxKKqHRbD1JOSRJ
- N1HHi/Gd+unHXxvCX77VKzE=
-X-Google-Smtp-Source: ADFU+vsGROcltLUCt7lKgq5KZYHU57Q1LyZzFESKeWrFihj5+bJ1r/nBxQ+urASpaa7ZFtj7UtrrtA==
-X-Received: by 2002:a63:5864:: with SMTP id i36mr21841664pgm.426.1583843183996; 
- Tue, 10 Mar 2020 05:26:23 -0700 (PDT)
-Received: from localhost.localdomain ([149.129.63.152])
- by smtp.gmail.com with ESMTPSA id w11sm47557396pfn.4.2020.03.10.05.26.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 05:26:22 -0700 (PDT)
-From: Jianhui Zhao <zhaojh329@gmail.com>
-To: herbert@gondor.apana.org.au
-Subject: [PATCH v2] crypto: atmel-i2c - Fix wakeup fail
-Date: Tue, 10 Mar 2020 20:25:51 +0800
-Message-Id: <20200310122551.27831-1-zhaojh329@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jBdz3-00011Z-1Q; Tue, 10 Mar 2020 12:27:42 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 5DD49AC4A;
+ Tue, 10 Mar 2020 12:27:37 +0000 (UTC)
+Message-ID: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
+Subject: [GIT PULL RESEND 1/2]  bcm2835-dt-next-2020-03-09
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Date: Tue, 10 Mar 2020 13:27:35 +0100
+User-Agent: Evolution 3.34.4 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_052625_045203_E8143AA3 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200310_052741_227371_64D72EFF 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhaojh329[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhaojh329[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,43 +60,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- ludovic.desroches@microchip.com, Jianhui Zhao <zhaojh329@gmail.com>,
- linux-crypto@vger.kernel.org, davem@davemloft.net,
+Cc: bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============2488212771055247120=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The wake token cannot be sent without ignoring the nack for the
-device address
 
-Signed-off-by: Jianhui Zhao <zhaojh329@gmail.com>
----
- drivers/crypto/atmel-i2c.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+--===============2488212771055247120==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-uUrpCZAmsEtDFdsgFQJN"
 
-diff --git a/drivers/crypto/atmel-i2c.c b/drivers/crypto/atmel-i2c.c
-index 1d3355913b40..e8e8281e027d 100644
---- a/drivers/crypto/atmel-i2c.c
-+++ b/drivers/crypto/atmel-i2c.c
-@@ -176,7 +176,8 @@ static int atmel_i2c_wakeup(struct i2c_client *client)
- 	 * device is idle, asleep or during waking up. Don't check for error
- 	 * when waking up the device.
- 	 */
--	i2c_master_send(client, i2c_priv->wake_token, i2c_priv->wake_token_sz);
-+	i2c_transfer_buffer_flags(client, i2c_priv->wake_token,
-+				i2c_priv->wake_token_sz, I2C_M_IGNORE_NAK);
- 
- 	/*
- 	 * Wait to wake the device. Typical execution times for ecdh and genkey
--- 
-2.17.1
 
+--=-uUrpCZAmsEtDFdsgFQJN
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Florian,
+
+The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9=
+:
+
+Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+
+are available in the Git repository at:
+
+git://git.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm=
+2835-dt-next-2020-03-09
+
+for you to fetch changes up to 3d2cbb64483691c8f8cf88e17d7d581d9402ac4b:
+
+ARM: dts: bcm2711: Move emmc2 into its own bus (2020-03-09 21:18:03 +0100)
+
+----------------------------------------------------------------
+This tag adds GPIO labels to RPi4 and moves emmc2 to its own bus in
+order for RPi4's firmware to correct its DMA constraints.
+
+----------------------------------------------------------------
+Nicolas Saenz Julienne (1):
+ARM: dts: bcm2711: Move emmc2 into its own bus
+
+Stefan Wahren (1):
+ARM: dts: bcm2711-rpi-4-b: Add SoC GPIO labels
+
+arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 74 ++++++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++++++++++
+arch/arm/boot/dts/bcm2711.dtsi        | 25 ++++++++++++++++++++-----
+2 files changed, 94 insertions(+), 5 deletions(-)
+
+
+--=-uUrpCZAmsEtDFdsgFQJN
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5nh7cACgkQlfZmHno8
+x/5pkgf/bwl7xaytsli5RX03TEd5WtJ8OWiseWbNwjc8rJLK4AbmSkpraW5m2sFu
+ouKF4h3bzW7q7FKfR/XCDXR28OC/l5pTY/0Y1/MG4wIa52Gi22danx5nS3pWL5Q9
+X1RwIuW2lKMNux5DVtsmzKgST3mZu0xCuNQwV3FbOpvY6F75qFNkcnC9i5JmrlvU
+9x+Dzq/khDwrsG5f3db3lE956dZdKRW0iaralgyQp2H36U1HYuVfCaTjjLf6ZBXr
+FuB0Dcby4Et+Dj7OTrNAXvhJZq3mMEJGIhg6El8p7ChXyjzOeckfuIV2+v4x8c+Y
+aBJrVwJvHFmmfJkqiejURbOHnx/lTg==
+=H9tH
+-----END PGP SIGNATURE-----
+
+--=-uUrpCZAmsEtDFdsgFQJN--
+
+
+
+--===============2488212771055247120==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2488212771055247120==--
+
+
