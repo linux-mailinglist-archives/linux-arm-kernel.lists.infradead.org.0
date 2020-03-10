@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78DD617F3E2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:41:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C15E17F424
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:51:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hVP7bVK1O1ANEvKnp19ZpZ9LocGgR81KLlZE049RcEQ=; b=indOwVb1xV9Rud
-	DJkYWjhJVa09g2+0RpEfT53823eYimfIixgZkIvnZ3OfmN+flNoX+4m4HIEO2wSSmONGrcXrNDg6x
-	M9Dg1sAoBym09xcrozfTTXDcjVuUlA9HIamgRU+iGKznPreysflXX4dKckYxbxnDzo9d9BwBnqUjL
-	xuivlI6P+NwFttb9ZlDnJXfwKWPbZq4DQolnPpa8qqbAWMe28C/PnDU/LKYNfQI7cbSYrwPRP8Cv3
-	dNQlASk66wrD2FexhsffNT41cG0Be3i3dBmObLthpf36nbjJUlHSgMjrfGJntimEkVLS1Io3/xp4H
-	DMu9LRbFFB7bF1wmXoEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I5sSc3XlYkEj2fSVO/0l+VxWuB1cWHleMUqGzMKxxsg=; b=t/2RFP96WAm3er
+	jTypGkiQGxUUeVCxor28ec3Xs3ReF/NKn7hB+b7y6kCq7D5pjQxFlSRkfTCmbcHVCIXqJso07ekEH
+	4Ka9H0KzwPYU7PoVd1JJwfVPwUEHErADHteoKWRe5Sr11axvh5bvQHYdz0oT6y5xDAxFseWqGUKqN
+	FeBr3BLuVpx4NpcQll6whsIaMnH6T23z2RY6rRFuUuL9KnBzlN4/SIjDlcMzzKLfUEga7P44fFJPU
+	3kXzlYVXHXilgOfb4Rd3IK6H+s9FxIWKztrFCH89U1CS4mi3Ha8YzkCTph7fHroXhlLvVDJhEIYeo
+	VOr8RDFDu+HluwccKTrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBbOL-00034E-FT; Tue, 10 Mar 2020 09:41:37 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jBbXM-00080y-0E; Tue, 10 Mar 2020 09:50:56 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBbOC-00033W-Mk
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:41:30 +0000
-Received: by mail-lj1-x241.google.com with SMTP id d12so13329882lji.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 02:41:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YaRVVvZe82f7PICjBJhATGndS8gB7Og7ojx2leFE1C8=;
- b=qmgqsy1VrS/eXemTV3L1tff6TLx+hApE+cDMEYWENUlA6Av/G7trT0ltO5rIGfkQJJ
- OXvdTrGt/0U40hM4O7FqrYhV3r5umIg14moWgX9nIgdV/Xsw8+NPTLNoylDs9IO4KFJL
- E2yAhSSaSCPeOgNeWS2+XC0J/ov0dh179PkFTN52VQDsuZNrKvzgLVA1nRBLp6aaYafH
- 4DH6ou71NI1ibntcUjiAHDUjMi3fysWfyCxQ748ycUqtSlC/qrR59MqLk4wBIsaLoPJq
- qF10hhSm/blyptIxwZ/XV/poEwkFUkX4V7qdXxMdRUU7hEcbusG2pbixW74lC13GuIuk
- oK7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YaRVVvZe82f7PICjBJhATGndS8gB7Og7ojx2leFE1C8=;
- b=JkJiwYFj74CGQW6Sz0h/Qz/NFQX9tfbnN8so1M4fndybWdJKrwC6mUwAfGobmYLtKb
- bCVEKg7p06TrpBX+kwr8LhklqMlxBavyCx6XHr8uXX5GF51ntGvJqbBn0kCfLNSTjbE2
- dqY01jQ5muRuPmdYJcvODrJ1CXjGD2rJZbHmWrmTXVnFBoVaIKYfs7c/wnPr/sHVTSC7
- C9RO64rDFjgEe1WEuYLC4gwpDYwaglt55gAHzynwbn3pw3TEjd2lCQVOLhniez7AMVqP
- wpUHgTrcRai+4monZCsQWJ6gB60nPLlqN3eZ1TlXDbPdjUgGUfnXrZLTZaitAiFyQDgN
- tQIg==
-X-Gm-Message-State: ANhLgQ2pn1FnyE6ADerCcOw4df3t0cGLwa00S+E/7L83i70AUfWkQmZJ
- oc86ngXTIIBik1Q4g8Hp44Zu7cygTALyyWs0GsA=
-X-Google-Smtp-Source: ADFU+vtRC8LeiEKpj+k2mKLQ0pmXFHNR7wTfcHTUGrxFaLczWpylo9qeN63FCf2joLyGJrDrt/Jrju/Zs/E9NzKJKug=
-X-Received: by 2002:a2e:8699:: with SMTP id l25mr4602504lji.148.1583833286522; 
- Tue, 10 Mar 2020 02:41:26 -0700 (PDT)
+ id 1jBbX9-0007xn-Mi; Tue, 10 Mar 2020 09:50:45 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 54EA929595C
+Subject: Re: [PATCH v11 3/5] soc: mediatek: Move mt8173 MMSYS to platform
+ driver
+To: Matthias Brugger <mbrugger@suse.com>, Stephen Boyd <sboyd@kernel.org>,
+ Enric Balletbo Serra <eballetbo@gmail.com>
+References: <20200302110128.2664251-1-enric.balletbo@collabora.com>
+ <20200302110128.2664251-4-enric.balletbo@collabora.com>
+ <158344207340.7173.8369925839829696256@swboyd.mtv.corp.google.com>
+ <8bfc4350-6e92-e657-18f2-3624a2558521@collabora.com>
+ <158353062701.66766.10488072352849985568@swboyd.mtv.corp.google.com>
+ <CAFqH_51hL07c7z2mBSWMejKwZMkNHPVYiB7JpMPPgck0XycEug@mail.gmail.com>
+ <158379424337.149997.7454036134629466675@swboyd.mtv.corp.google.com>
+ <21b43196-230c-5000-546e-b90d4b6b44a3@suse.com>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <1c726a44-dd8a-d69e-0563-dfbbc455317e@collabora.com>
+Date: Tue, 10 Mar 2020 10:50:34 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-References: <20200305103228.9686-1-zhang.lyra@gmail.com>
- <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
- <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
- <CAMuHMdV1qQZF-kAwbcxhHQZZ9hs0dG-OTZ2NcB25Jtra6ii5iA@mail.gmail.com>
-In-Reply-To: <CAMuHMdV1qQZF-kAwbcxhHQZZ9hs0dG-OTZ2NcB25Jtra6ii5iA@mail.gmail.com>
-From: Orson Zhai <orsonzhai@gmail.com>
-Date: Tue, 10 Mar 2020 17:41:14 +0800
-Message-ID: <CA+H2tpEzFAbfzMuUGMfW3BqCKv2+kk+cLL5gWpR-zJZFYwWKqw@mail.gmail.com>
-Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+In-Reply-To: <21b43196-230c-5000-546e-b90d4b6b44a3@suse.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_024128_745602_A6AAC880 
-X-CRM114-Status: GOOD (  24.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_025044_020160_8C2B44D9 
+X-CRM114-Status: GOOD (  20.79  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [orsonzhai[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,95 +69,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Android Kernel Team <kernel-team@android.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, David Airlie <airlied@linux.ie>,
+ Michael Turquette <mturquette@baylibre.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Richard Fontana <rfontana@redhat.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Chen-Yu Tsai <wens@csie.org>, Allison Randal <allison@lohutok.net>,
+ CK HU <ck.hu@mediatek.com>, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
+ sean.wang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ ARM/Mediatek SoC support <linux-mediatek@lists.infradead.org>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, fwll.ch@freedesktop.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Randy Dunlap <rdunlap@infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Houlong Wei <"houlong.w ei"@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+Hi all,
 
-On Mon, Mar 9, 2020 at 6:32 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
->
-> Hi Chunyan,
->
-> On Mon, Mar 9, 2020 at 9:32 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > On Mon, 9 Mar 2020 at 16:03, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
-> > > >
-> > > > The default value of Kconfig for almost all sprd drivers are the same with
-> > > > ARCH_SPRD, making these drivers built as modules as default would be easier
-> > > > if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
-> > > >
-> > > > Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
-> > >
-> > > Can you actually boot a kernel on a Spreadtrum platform when all platform
-> > > and driver support is modular?
-> >
-> > Yes, even if all drivers are modular.
->
-> Cool. No hard dependencies on e.g. regulators that are turned off when
-> unused?
->
-> > But I hope serial can be builtin, then I can have a console to see
-> > kernel output before loading modules.
->
-> No dependency on the clock driver?
-> Oh, I see you have a hack in the serial driver, to assume default
-> values when the serial port's parent clock is not found.  That may
-> limit use of the other serial ports, depending on the actual serial
-> hardware.
+On 10/3/20 10:40, Matthias Brugger wrote:
+> 
+> 
+> On 09/03/2020 23:50, Stephen Boyd wrote:
+>> Quoting Enric Balletbo Serra (2020-03-06 14:09:50)
+>>> Missatge de Stephen Boyd <sboyd@kernel.org> del dia dv., 6 de mar
+>>> 2020 a les 22:37:
+>>>>
+>>>> Quoting Enric Balletbo i Serra (2020-03-06 08:30:16)
+>>>>> On 5/3/20 22:01, Stephen Boyd wrote:
+>>>>>> Quoting Enric Balletbo i Serra (2020-03-02 03:01:26)
+>>>>>>> diff --git a/drivers/soc/mediatek/mtk-mmsys.c b/drivers/soc/mediatek/mtk-mmsys.c
+>>>>>>> new file mode 100644
+>>>>>>> index 000000000000..473cdf732fb5
+>>>>>>> --- /dev/null
+>>>>>>> +++ b/drivers/soc/mediatek/mtk-mmsys.c
+>>>>>>> @@ -0,0 +1,154 @@
+>>>>>>> +// SPDX-License-Identifier: GPL-2.0-only
+>>>>>>> +/*
+>>>>>>> + * Copyright (c) 2014 MediaTek Inc.
+>>>>>>> + * Author: James Liao <jamesjj.liao@mediatek.com>
+>>>>>>> + */
+>>>>>>> +
+>>>>>>> +#include <linux/clk-provider.h>
+>>>>>>> +#include <linux/of_device.h>
+>>>>>>> +#include <linux/platform_device.h>
+>>>>>>> +
+>>>>>>> +#include "../../clk/mediatek/clk-gate.h"
+>>>>>>> +#include "../../clk/mediatek/clk-mtk.h"
+>>>>>>
+>>>>>> Why not use include/linux/clk/?
+>>>>>>
+>>>>>
+>>>>> I can move these files to include, this will impact a lot more of drivers but,
+>>>>> yes, I think is the right way.
+>>>>>
+>>>>>> But I also don't understand why the clk driver is moved outside of
+>>>>>> drivers/clk/ into drivers/soc/. Commit text saying that it has shared
+>>>>>> registers doesn't mean it can't still keep the clk driver part in the
+>>>>>> drivers/clk/ area.
+>>>>>>
+>>>>>
+>>>>> Actually moving this to the soc directory has been requested by CK (mediatek) as
+>>>>> a change in v8. You can see the discussion in [1]
+>>>>>
+>>>>
+>>>> I can reply there in that thread if necessary, but we shouldn't need to
+>>>> force simple-mfd into DT bindings to support this. Match the compatible
+>>>> string in drivers/soc/ and register devices in software for the
+>>>> different pieces of this overall hardware block. If necessary, pass down
+>>>> the ioremapped addresss down through device data to each logical driver
+>>>> in the respective subsystem.
+>>>>
+>>>> So yes, it looks like an MFD, but that doesn't mean we have to change
+>>>> the DT binding or put it in drivers/mfd to support that. And we don't
+>>>> have to fix any problems with allowing two drivers to probe the same
+>>>> compatible string.
+>>>>
+>>>
+>>> That thread maybe has too much information and things evolved since
+>>> then. Note that the final solution is not an MFD neither we change the
+>>> bindings. I pointed to that thread just because CK (CK please correct
+>>> me if I'm wrong) thought that the driver is not a pure clock driver
+>>> and he preferred to move to drivers/soc/mediatek (in that thread, he
+>>> exposes his opinion on that).  Sorry to introduce more confusion.
+>>>
+>>> You seem to be fine with the approach (just minor changes), so it
+>>> looks to me that the only problem is if this should be in drivers/clk
+>>> or drivers/soc. Honestly, this is not something I can't decide and
+>>> I'll let you (the soc and clk maintainers) decide. I don't really have
+>>> a strong opinion here. I don't mind move again to drivers/clk if that
+>>> is what we want but let's come to an agreement.
+>>>
+>>
+>> It's already in drivers/clk, so leave the clk part there and register
+>> the clk device and any other devices by matching the compatible in
+>> drivers/soc. That is my preferred solution. Can that be done?
+>>
+> 
+> I think we can once again create a platform device in drivers/soc which matches
+> the drivers/clk and then do the routing in drivers/soc. Enric any thoughts?
+> 
 
-There is an function named "sprd_uart_is_console()" in the driver
-code. So the hack could be only applied when the
-port is identified as console. And other ports might return
-PROBE_DEFER until the clock is ready.
+Yes, working already on a new version.
 
-Could it work out of the limitation?
+Thanks,
+ Enric
 
--Orson
-
-> And on Sharkl64, the serial port's clock is a fixed-clock anyway, so
-> you don't even need the hack.
->
-> But in general you cannot rely on that, especially if your SoC has clock
-> and/or power domains.
->
-> BTW, what about the watchdog driver? That one does need a clock, and
-> loading it too late will reboot your system.
->
-> > Also, this's what Google GKI [1] asked :)
-> >
-> > Regards,
-> > Chunyan
-> >
-> > [1] https://arstechnica.com/gadgets/2019/11/google-outlines-plans-for-mainline-linux-kernel-support-in-android/
->
-> Let's see how having everything modular works out on an SoC where all
-> hardware is part of a clock and power domain.
->
-> Thanks!
->
-> Gr{oetje,eeting}s,
->
->                         Geert
->
-> --
-> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
->
-> In personal conversations with technical people, I call myself a hacker. But
-> when I'm talking to journalists I just say "programmer" or something like that.
->                                 -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
