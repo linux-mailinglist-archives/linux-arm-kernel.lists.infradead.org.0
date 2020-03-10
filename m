@@ -2,119 +2,137 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 143CB17F3CF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:36:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CB8A17F3DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:40:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dO/pLm0Y5TID3tXFVKPAzFVTsUmM0LPMGPKJXnDwZa0=; b=SecatzztqTgHwZ
-	JG95KJ9LLVkCPQ/wE0IQlMU+TP2gUYk51gI7lqjLZ0xGZW2pLTX3hWOjNZP3R/gAJCbfwV43UNri2
-	6lpDw04ePwkFNoBQQlnNnx4JNm3wjaYT8JeVFs2WcTPJTRxxy/sypnlJS8RxvGfMUkrM+2TkCWWCD
-	dmxANIij5MfqPxbPHClR/mnegKxD56FTjZsj6mZ+xpjy/wWKhIc16mxrPw1H/hE3a5rDYOZNQGYSE
-	BTkkLk+ku3bQI92j2rVZE3tfowdCP2Fp0lviiSR7rGPkjIP5wCNq2gCRQqx/xIlEh2Q/0mqE7eNrF
-	hDTqCOD9ZrjVGwdSU43w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3lNSZIcR4nIQBJhhnMxBUw6LdQAmONZ4eH4zDgGN+6Q=; b=UuZA4UkulTkBN6
+	BB5oyrS+2aYeazhiRwfsiP52wsIelZciH4gZWSm++QlrRQdmssbbBwz43dJagRMbD9F7vXP59D/i6
+	tbSJUKb6eGKMkgbp8ciUdJ93BOYBl3gsgmDZddRc5Lp/ss92Ixmr/W+2cWOTXlkZxB++OGEPaWpS0
+	s6SkDy5RYHLU2iLt7c0ingl35UyTRprZ4lWq5ZEa8+ay4X77NjCxMhOzNnplsVdBwimXFIuSz9QNn
+	Da+4U9cyHvLGE1dVmuF2YnEaa41sdu5B+hipF4hFgQkYtJw5oZ2Bp5qhcXgi59LaCYYqwYxK7iA79
+	ZBu1MU/NE7hJU24jhCWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBbJE-0000os-5k; Tue, 10 Mar 2020 09:36:20 +0000
-Received: from mail-eopbgr70048.outbound.protection.outlook.com ([40.107.7.48]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1jBbNJ-0002gJ-95; Tue, 10 Mar 2020 09:40:33 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBbIf-0000ad-Sl
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:35:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XzVfako77uqb1HuH4c9OE2wEthMx73zeu5g63jyn9wptzvrqOPYvPTTR7R8K/SxdVC3qFQ173uX9SMjT4d8aTWzvkazehYFKt5GW4IB8SWGriWOqEPMq/FgQwgm8KqqHINfSuuBYJIGOKFyHOxh06jCY43VQy79fDGudJhmJEhUcJOKn3YQEg8QejKdGkstcTBHqQ6BRzaZdFtmPb0mA6P7WzXkNP8T+lBSprfk+YkUO4yHNbei/gHFInG5IUr3DkFU3yB08sMYyTSjQiDFpZMaRaX1BsEe1NWYdEpQnnSB8+qFURJMVzcls1kerkei60F8oaJ8xPxjYR9xo/ZEVSA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KhmorSx/erpe5aXotBne0VkfIw2hsIV92G/Vp0qZ7mY=;
- b=g3k2uYaSHN0uVfwg0+KhNCye6CZ+CixXTi5o9LVdScobAnVtTwkUVXS1aKwMe7dqPe4mNU0g2by7pVLFw4BlyQUhvARX5TKnydincq9OQVHkfj8NuEoJiT1593VfTIbwwotFlvHn9r7aQ7YjpDEFSPG1HLMo9a3AhjlUOm4yZOtJoSsV5l9H5ulMLzkrbawbkvzgkQSNMUjt+B2qp3jsyQ5vyvXd3aXQNZKDGePDnGrbYy9mO7CNbNkoAeVHFiiN1oVHPTLUFSNTeRLVdMIJrx959xi1QfHhGAh+j1rOQrbmIdY8/4PKRUdnJWAab/8lwAm9AekkYcsppKy8wgRgoQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KhmorSx/erpe5aXotBne0VkfIw2hsIV92G/Vp0qZ7mY=;
- b=PbD6WlosiKl+UUZYcAD/V5p4E0tBTOlQ1t2SuHhgNTeZIr+v0PGTw5pt6riW21p/+tnwCDNVNk0XhJ/xMZMdKDN5kgj4DCKzFjAXLTORnsrIl8SPV0H1jYzYpus4Bt+S9Zi1GKOJWi0QI41QDCGCxlt4mBN0w7y3mkluLpdxMYc=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
- VE1PR04MB6431.eurprd04.prod.outlook.com (10.255.118.77) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.17; Tue, 10 Mar 2020 09:35:40 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::490:6caa:24b:4a31]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::490:6caa:24b:4a31%6]) with mapi id 15.20.2793.013; Tue, 10 Mar 2020
- 09:35:40 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: RE: [RESEND v6  09/13] dmaengine: imx-sdma: remove ERR009165 on
- i.mx6ul
-Thread-Topic: [RESEND v6  09/13] dmaengine: imx-sdma: remove ERR009165 on
- i.mx6ul
-Thread-Index: AQHV9oxi9deJ9GVPPUGUNCzRt8EnOKhBfB+AgAAGp2CAAAyGgIAAAbGQ
-Date: Tue, 10 Mar 2020 09:35:40 +0000
-Message-ID: <VE1PR04MB66388CC09E1D3AD956AF94CC89FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1583839922-22699-1-git-send-email-yibin.gong@nxp.com>
- <1583839922-22699-10-git-send-email-yibin.gong@nxp.com>
- <20200310081925.GT3335@pengutronix.de>
- <VE1PR04MB6638029458AFDE3005C6E4A489FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200310092803.GW3335@pengutronix.de>
-In-Reply-To: <20200310092803.GW3335@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=yibin.gong@nxp.com; 
-x-originating-ip: [92.121.68.129]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7a6f9f2d-f2c2-4102-3b37-08d7c4d665d6
-x-ms-traffictypediagnostic: VE1PR04MB6431:|VE1PR04MB6431:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6431589F9F6366F3B1E7C19C89FF0@VE1PR04MB6431.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1079;
-x-forefront-prvs: 033857D0BD
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10001)(10009020)(4636009)(346002)(376002)(136003)(39860400002)(366004)(396003)(189003)(199004)(478600001)(9686003)(45080400002)(64756008)(86362001)(76116006)(4326008)(66476007)(66946007)(2906002)(66446008)(8676002)(66556008)(6506007)(7696005)(71200400001)(186003)(966005)(55016002)(5660300002)(7416002)(6916009)(33656002)(54906003)(52536014)(26005)(81166006)(8936002)(81156014)(316002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6431;
- H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: I/IoROG8ussx14TNZJWgEVQyY5sPhGvIszFcks272q3oc/KYud2MRgqmgrRKq8ZK2Yl/Xe8s03nBMA/TuZYhDRPfnD4OlWWhKzoWj/CyJfSjM0H78HrJcwkp91yXs/uL7Amb/fmGZos5bjyK+/dy+HtgUbFvil85NeebEc3txD8knpHatv32WY9UVQ69/HDWEn/wMwSFCD481sm3wRDZ0+v5KrPy04Vne4BN1pLR36ZiZGiV3VjZcuBi5H0zAMfNCOT9m8QSOURGpuAt9wpQifWXD2dEc6MWi5OduX248CfRo7fzKXa95jlDwarW5szEuWBKFaX4pwY2rjouK1TztE90iqLo/OGTIU1ZgM/r4arRsnOYQqD+k3PlkvsOXrIRkYu6BxmmDzn8fQ6rPUpJ5UZeACCeGzUgkYB3EyQNXV7R/okJi8Z0no6Basj9kUrTCkFBFnYTZeDOZmYTI85JtLBFmyyI8RyC0w4DESXRJN/2LFOF0zox4CtP5lk+BRNvXqeGTeEu9JPFdZtWul9KYbn/KuGOGbf5WK7qye3+bdaBb7ofXoXoTU6kACfzklzWEVl4PqRj6t1577w9bGp1S8mjfE6WSLNWmt3keKVtYYiUsJvI7MR/3mRKzdCOV0Z1
-x-ms-exchange-antispam-messagedata: bMScxs1Cgus6uuyAIHEirnPBEXR661geVuDPjxVffYjq9jfqOBNLYELkaqxUAFLyBAuncgowdXADKRssxma5iSm8tTaHfv3HIepSDr3uE9VAZjP4jE+0/HlYDIFJz1oz+uu+HkKEIDlaE8uFgJiQVQ==
+ id 1jBbN9-0002f1-UN; Tue, 10 Mar 2020 09:40:26 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 0A6ACAC37;
+ Tue, 10 Mar 2020 09:40:19 +0000 (UTC)
+Subject: Re: [PATCH v11 3/5] soc: mediatek: Move mt8173 MMSYS to platform
+ driver
+To: Stephen Boyd <sboyd@kernel.org>, Enric Balletbo Serra <eballetbo@gmail.com>
+References: <20200302110128.2664251-1-enric.balletbo@collabora.com>
+ <20200302110128.2664251-4-enric.balletbo@collabora.com>
+ <158344207340.7173.8369925839829696256@swboyd.mtv.corp.google.com>
+ <8bfc4350-6e92-e657-18f2-3624a2558521@collabora.com>
+ <158353062701.66766.10488072352849985568@swboyd.mtv.corp.google.com>
+ <CAFqH_51hL07c7z2mBSWMejKwZMkNHPVYiB7JpMPPgck0XycEug@mail.gmail.com>
+ <158379424337.149997.7454036134629466675@swboyd.mtv.corp.google.com>
+From: Matthias Brugger <mbrugger@suse.com>
+Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
+ 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
+ HxUCQ9Y1Y/Ct
+Message-ID: <21b43196-230c-5000-546e-b90d4b6b44a3@suse.com>
+Date: Tue, 10 Mar 2020 10:40:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7a6f9f2d-f2c2-4102-3b37-08d7c4d665d6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Mar 2020 09:35:40.5029 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 96pBSrYFQ3XRdbaFrrQo2lit20MsizORAz0paNEEugM7tbz6ja07rgwxXDZVGpQ4CYKZQfSIapYCEBCqcDEziQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6431
+In-Reply-To: <158379424337.149997.7454036134629466675@swboyd.mtv.corp.google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_023546_045081_90E0CEF1 
-X-CRM114-Status: GOOD (  22.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_024024_274642_E0E80254 
+X-CRM114-Status: GOOD (  22.67  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.48 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,140 +144,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, David Airlie <airlied@linux.ie>,
+ Michael Turquette <mturquette@baylibre.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Richard Fontana <rfontana@redhat.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Chen-Yu Tsai <wens@csie.org>, Allison Randal <allison@lohutok.net>,
+ CK HU <ck.hu@mediatek.com>, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+ frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
+ sean.wang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ ARM/Mediatek SoC support <linux-mediatek@lists.infradead.org>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, fwll.ch@freedesktop.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Houlong Wei <"houlong.w ei"@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, matthias.bgg@kernel.org,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/03/10 Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> On Tue, Mar 10, 2020 at 08:59:03AM +0000, Robin Gong wrote:
-> > On 2020/03/10 Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> > > On Tue, Mar 10, 2020 at 07:31:58PM +0800, Robin Gong wrote:
-> > > > ECSPI issue fixed from i.mx6ul at hardware level, no need
-> > > > ERR009165 anymore on those chips such as i.mx8mq. Add i.mx6sx from
-> > > > where i.mx6ul source.
-> > > >
-> > > > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-> > > > Acked-by: Vinod Koul <vkoul@kernel.org>
-> > > > ---
-> > > >  drivers/dma/imx-sdma.c | 51
-> > > > +++++++++++++++++++++++++++++++++++++++++++++++++-
-> > > >  1 file changed, 50 insertions(+), 1 deletion(-)
-> > > >
-> > > > diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c index
-> > > > 56288d8..5ae7237 100644
-> > > > --- a/drivers/dma/imx-sdma.c
-> > > > +++ b/drivers/dma/imx-sdma.c
-> > > > @@ -419,6 +419,13 @@ struct sdma_driver_data {
-> > > >  	int num_events;
-> > > >  	struct sdma_script_start_addrs	*script_addrs;
-> > > >  	bool check_ratio;
-> > > > +	/*
-> > > > +	 * ecspi ERR009165 fixed should be done in sdma script
-> > > > +	 * and it has been fixed in soc from i.mx6ul.
-> > > > +	 * please get more information from the below link:
-> > > > +	 *
-> > > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fww
-> > > w.nx
-> p.com%2Fdocs%2Fen%2Ferrata%2FIMX6DQCE.pdf&amp;data=02%7C01%7Cyi
-> > >
-> bin.gong%40nxp.com%7C91d42046e6894501d48508d7c4cbcae2%7C686ea1d3
-> > >
-> bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637194251876090170&amp;sdata=
-> > > T6LA4xz9CUFlNpnyjHSThEQb8i1rhbY9e1nUyxIGD5Q%3D&amp;reserved=0
-> > > > +	 */
-> > > > +	bool ecspi_fixed;
-> > > >  };
-> > > >
-> > > >  struct sdma_engine {
-> > > > @@ -539,6 +546,31 @@ static struct sdma_driver_data sdma_imx6q = {
-> > > >  	.script_addrs = &sdma_script_imx6q,  };
-> > > >
-> > > > +static struct sdma_script_start_addrs sdma_script_imx6sx = {
-> > > > +	.ap_2_ap_addr = 642,
-> > > > +	.uart_2_mcu_addr = 817,
-> > > > +	.mcu_2_app_addr = 747,
-> > > > +	.uartsh_2_mcu_addr = 1032,
-> > > > +	.mcu_2_shp_addr = 960,
-> > > > +	.app_2_mcu_addr = 683,
-> > > > +	.shp_2_mcu_addr = 891,
-> > > > +	.spdif_2_mcu_addr = 1100,
-> > > > +	.mcu_2_spdif_addr = 1134,
-> > > > +};
-> > > > +
-> > > > +static struct sdma_driver_data sdma_imx6sx = {
-> > > > +	.chnenbl0 = SDMA_CHNENBL0_IMX35,
-> > > > +	.num_events = 48,
-> > > > +	.script_addrs = &sdma_script_imx6sx, };
-> > > > +
-> > > > +static struct sdma_driver_data sdma_imx6ul = {
-> > > > +	.chnenbl0 = SDMA_CHNENBL0_IMX35,
-> > > > +	.num_events = 48,
-> > > > +	.script_addrs = &sdma_script_imx6sx,
-> > > > +	.ecspi_fixed = true,
-> > > > +};
-> > > > +
-> > > >  static struct sdma_script_start_addrs sdma_script_imx7d = {
-> > > >  	.ap_2_ap_addr = 644,
-> > > >  	.uart_2_mcu_addr = 819,
-> > > > @@ -584,9 +616,15 @@ static const struct platform_device_id
-> > > sdma_devtypes[] = {
-> > > >  		.name = "imx6q-sdma",
-> > > >  		.driver_data = (unsigned long)&sdma_imx6q,
-> > > >  	}, {
-> > > > +		.name = "imx6sx-sdma",
-> > > > +		.driver_data = (unsigned long)&sdma_imx6sx,
-> > > > +	}, {
-> > >
-> > > Now the i.MX6sx uses a new sdma_script_start_addrs entry which is
-> > > the same as the i.MX6q one we used before with one exception: it
-> > > lacks the per_2_per_addr = 6331 entry. This is only used for
-> > > IMX_DMATYPE_ASRC and
-> > Totally same script for i.mx6 chips whatever i.MX6sx, i.MX6q or i.MX6ul.
+
+
+On 09/03/2020 23:50, Stephen Boyd wrote:
+> Quoting Enric Balletbo Serra (2020-03-06 14:09:50)
+>> Missatge de Stephen Boyd <sboyd@kernel.org> del dia dv., 6 de mar
+>> 2020 a les 22:37:
+>>>
+>>> Quoting Enric Balletbo i Serra (2020-03-06 08:30:16)
+>>>> On 5/3/20 22:01, Stephen Boyd wrote:
+>>>>> Quoting Enric Balletbo i Serra (2020-03-02 03:01:26)
+>>>>>> diff --git a/drivers/soc/mediatek/mtk-mmsys.c b/drivers/soc/mediatek/mtk-mmsys.c
+>>>>>> new file mode 100644
+>>>>>> index 000000000000..473cdf732fb5
+>>>>>> --- /dev/null
+>>>>>> +++ b/drivers/soc/mediatek/mtk-mmsys.c
+>>>>>> @@ -0,0 +1,154 @@
+>>>>>> +// SPDX-License-Identifier: GPL-2.0-only
+>>>>>> +/*
+>>>>>> + * Copyright (c) 2014 MediaTek Inc.
+>>>>>> + * Author: James Liao <jamesjj.liao@mediatek.com>
+>>>>>> + */
+>>>>>> +
+>>>>>> +#include <linux/clk-provider.h>
+>>>>>> +#include <linux/of_device.h>
+>>>>>> +#include <linux/platform_device.h>
+>>>>>> +
+>>>>>> +#include "../../clk/mediatek/clk-gate.h"
+>>>>>> +#include "../../clk/mediatek/clk-mtk.h"
+>>>>>
+>>>>> Why not use include/linux/clk/?
+>>>>>
+>>>>
+>>>> I can move these files to include, this will impact a lot more of drivers but,
+>>>> yes, I think is the right way.
+>>>>
+>>>>> But I also don't understand why the clk driver is moved outside of
+>>>>> drivers/clk/ into drivers/soc/. Commit text saying that it has shared
+>>>>> registers doesn't mean it can't still keep the clk driver part in the
+>>>>> drivers/clk/ area.
+>>>>>
+>>>>
+>>>> Actually moving this to the soc directory has been requested by CK (mediatek) as
+>>>> a change in v8. You can see the discussion in [1]
+>>>>
+>>>
+>>> I can reply there in that thread if necessary, but we shouldn't need to
+>>> force simple-mfd into DT bindings to support this. Match the compatible
+>>> string in drivers/soc/ and register devices in software for the
+>>> different pieces of this overall hardware block. If necessary, pass down
+>>> the ioremapped addresss down through device data to each logical driver
+>>> in the respective subsystem.
+>>>
+>>> So yes, it looks like an MFD, but that doesn't mean we have to change
+>>> the DT binding or put it in drivers/mfd to support that. And we don't
+>>> have to fix any problems with allowing two drivers to probe the same
+>>> compatible string.
+>>>
+>>
+>> That thread maybe has too much information and things evolved since
+>> then. Note that the final solution is not an MFD neither we change the
+>> bindings. I pointed to that thread just because CK (CK please correct
+>> me if I'm wrong) thought that the driver is not a pure clock driver
+>> and he preferred to move to drivers/soc/mediatek (in that thread, he
+>> exposes his opinion on that).  Sorry to introduce more confusion.
+>>
+>> You seem to be fine with the approach (just minor changes), so it
+>> looks to me that the only problem is if this should be in drivers/clk
+>> or drivers/soc. Honestly, this is not something I can't decide and
+>> I'll let you (the soc and clk maintainers) decide. I don't really have
+>> a strong opinion here. I don't mind move again to drivers/clk if that
+>> is what we want but let's come to an agreement.
+>>
 > 
-> When it's the same then use it.
+> It's already in drivers/clk, so leave the clk part there and register
+> the clk device and any other devices by matching the compatible in
+> drivers/soc. That is my preferred solution. Can that be done?
 > 
-> > > IMX_DMATYPE_ASRC_SP, both are entirely unused in the mainline
-> > > kernel. So why must the i.MX6sx changed here and what has this to do with
-> ECSPI?
-> > i.MX6ul is based on i.MX6sx, so adding i.MX6sx could keep good shape on our
-> i.MX family evolution.
-> 
-> My point is that there is no difference between i.MX6q and i.MX6sx here, so do
-> not artificially introduce i.MX6sx support when all you do is copying the i.MX6q
-> support.
-Okay, will remove i.MX6sx now.
-> --
-> Pengutronix e.K.                           |
-> |
-> Steuerwalder Str. 21                       |
-> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.pe
-> ngutronix.de%2F&amp;data=02%7C01%7Cyibin.gong%40nxp.com%7C02af95d
-> 81bf745b7b2cc08d7c4d55ed2%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0
-> %7C0%7C637194293001547060&amp;sdata=cN13LuC6Bgs1m9W6oKc2q03j5rf
-> KvsMbonpd1JALA%2Fk%3D&amp;reserved=0  |
-> 31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0
-> |
-> Amtsgericht Hildesheim, HRA 2686           | Fax:
-> +49-5121-206917-5555 |
+
+I think we can once again create a platform device in drivers/soc which matches
+the drivers/clk and then do the routing in drivers/soc. Enric any thoughts?
 
 _______________________________________________
 linux-arm-kernel mailing list
