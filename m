@@ -2,67 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6975180027
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 15:30:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C806418003B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 15:31:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KHUgytxDjGeSevxy2g80cnJN1+bZPf/JLXLfdVjSwRE=; b=El7Gr0391RbIVv
-	hWnQ1I3HyfEPWkAtZ4FsK5L7VKmu5vNtE+XXi7G1kx6q0ft/3l3UejVsQSMkqLO6It6epr4386mme
-	PbgcuX9k+6BBgrABouIcuPccbwTsvGjHE4PrpnvR8TdqhYC92KXKB5tb2qyFjHkF0bZC9a/MppgSi
-	m5PRi6GkjR9nPOt1g65BpJe0nJdEUk+I2DzxYlEmROpU7cx+tz/atqWknI8o8IzqktXE5VO610ua1
-	Wu9yGmAQjjPRT6+59EFbr4TKwD9Hl8L7EdcjNvzNY0H9Kbx08UlV+GqopmFCghAe/tqiYEXf2nO94
-	g9RmzyWTdAVPpAt4yZXQ==;
+	References:List-Owner; bh=o+3/YM1Gat9HuVObhrI32cLIcvx1Lkk1ZVFE/orB+2s=; b=ceg
+	aqBWNjYyWz+fZ0QclOgmkMSqYKa0WcRujm4gojfxs/AI3omTM0wAVjhWDLkdWOQ+Ci5LADxaV87iY
+	AO8Scp1biSclHhMripHK1Gpq7309KR9xTJL10NuMvNAi5sB7y0VXSiJB20CE0dNJult1+mYXSHOFX
+	1uCmAFpRGDcjiY14/1SiMvUjnZKQlm2kCGvwmQNLpxMhF9Ys4PQQ1+Ezu1yaEql6+y391HcBBIHMe
+	+gacCLYxyXH2olOP9OjNNLITHnm8XRoYUx3oWIwAySoR9/mo8nPzqJ1zMO7fxMKORcIQOAlvD7M+S
+	Sl5aIyR6+17hq3Rt5SOAAKEPYtvlbCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBftp-0004U2-BI; Tue, 10 Mar 2020 14:30:25 +0000
-Received: from mga09.intel.com ([134.134.136.24])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBfti-0004TT-IO; Tue, 10 Mar 2020 14:30:19 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Mar 2020 07:30:17 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,537,1574150400"; d="scan'208";a="443182666"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga006.fm.intel.com with ESMTP; 10 Mar 2020 07:30:13 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jBfte-008U3F-Qf; Tue, 10 Mar 2020 16:30:14 +0200
-Date: Tue, 10 Mar 2020 16:30:14 +0200
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [v1 3/3] media: ov8856: Implement sensor module revision
- identification
-Message-ID: <20200310143014.GL1922688@smile.fi.intel.com>
-References: <20200310134603.30260-1-robert.foss@linaro.org>
- <20200310134603.30260-4-robert.foss@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200310134603.30260-4-robert.foss@linaro.org>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+	id 1jBfup-0004so-Ll; Tue, 10 Mar 2020 14:31:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBfui-0004sI-3i; Tue, 10 Mar 2020 14:31:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3443430E;
+ Tue, 10 Mar 2020 07:31:19 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B7AD33F6CF;
+ Tue, 10 Mar 2020 07:31:18 -0700 (PDT)
+Date: Tue, 10 Mar 2020 14:31:16 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Applied "spi: rockchip: add compatible string for px30 rk3308 rk3328"
+ to the spi tree
+In-Reply-To: <20200309151004.7780-1-jbx6244@gmail.com>
+Message-Id: <applied-20200309151004.7780-1-jbx6244@gmail.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_073018_659073_85902824 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200310_073120_196978_79FA723E 
+X-CRM114-Status: GOOD (  14.17  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,45 +62,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- Tomasz Figa <tfiga@chromium.org>, ben.kao@intel.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Jonathan.Cameron@huawei.com, matthias.bgg@gmail.com, mchehab@kernel.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: heiko@sntech.de, linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 10, 2020 at 02:46:03PM +0100, Robert Foss wrote:
-> Query the sensor for its module revision, and compare it
-> to known revisions.
-> Currently only the '1B' revision has been added.
+The patch
 
-Are you sure you send latest version?
+   spi: rockchip: add compatible string for px30 rk3308 rk3328
 
-I have a d=E9j=E0 vu that I have seen this already and this one doesn't add=
-ress any
-comment given.
+has been applied to the spi tree at
 
-...
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
 
-> +	dev_info(&client->dev, "OV8856 revision %x (%s) at address 0x%02x\n",
-> +		val,
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-> +		val =3D=3D OV8856_1B_MODULE ? "1B" : "unknown revision",
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-This is weird. Can you add a bit more general way of showing revision?
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-> +		client->addr);
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
--- =
+Thanks,
+Mark
 
-With Best Regards,
-Andy Shevchenko
+From c6486eadb4feae730b68dda95fe2cc8dbe210fae Mon Sep 17 00:00:00 2001
+From: Johan Jonker <jbx6244@gmail.com>
+Date: Mon, 9 Mar 2020 16:10:03 +0100
+Subject: [PATCH] spi: rockchip: add compatible string for px30 rk3308 rk3328
 
+The Rockchip spi binding is updated to yaml and new models
+were added. The spi on px30,rk3308 and rk3328 are the same as
+other Rockchip based SoCs, so add compatible string for it.
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Link: https://lore.kernel.org/r/20200309151004.7780-1-jbx6244@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-rockchip.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
+index 2cc6d9951b52..70ef63e0b6b8 100644
+--- a/drivers/spi/spi-rockchip.c
++++ b/drivers/spi/spi-rockchip.c
+@@ -843,14 +843,17 @@ static const struct dev_pm_ops rockchip_spi_pm = {
+ };
+ 
+ static const struct of_device_id rockchip_spi_dt_match[] = {
+-	{ .compatible = "rockchip,rv1108-spi", },
++	{ .compatible = "rockchip,px30-spi", },
+ 	{ .compatible = "rockchip,rk3036-spi", },
+ 	{ .compatible = "rockchip,rk3066-spi", },
+ 	{ .compatible = "rockchip,rk3188-spi", },
+ 	{ .compatible = "rockchip,rk3228-spi", },
+ 	{ .compatible = "rockchip,rk3288-spi", },
++	{ .compatible = "rockchip,rk3308-spi", },
++	{ .compatible = "rockchip,rk3328-spi", },
+ 	{ .compatible = "rockchip,rk3368-spi", },
+ 	{ .compatible = "rockchip,rk3399-spi", },
++	{ .compatible = "rockchip,rv1108-spi", },
+ 	{ },
+ };
+ MODULE_DEVICE_TABLE(of, rockchip_spi_dt_match);
+-- 
+2.20.1
 
 
 _______________________________________________
