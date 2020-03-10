@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69B1B1805DD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:09:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D82A1805DE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:09:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=O8Gg1fcDJIV8ib6I4BT7R3LzDkUdXrehK5UEY//kY8g=; b=YeGH4uPHfXHNKFFOoqwaWaExgp
-	fym+SqJvDEN25w93K9mE9eFgaflg8c0g5rFFTUFs0rtg/TfJTJsToTnUALVYtpivdDIk7LQkmYH8A
-	T29rpj2nM8//n19TXUn+r/v/fT6rorkjzeTAx9Q8Y5NRoFNDamaJpvDXdCpuVAy3ItUgJ8oGF9FGd
-	JXglpPHuR9O+wv0WYJ9KOO17OZGjZY++P9eLYdaqyi9jNvXWuanV/gy58zkeoLh7Kapw0+ILqa02Q
-	u88DGO8s6X4/sFq/JUE1NPelYYn00p9NkmUehBLxnwWiaSZ6PzivTz6WMFyWuaDY4m57fwzqT9v3+
-	zL4jzRWA==;
+	bh=lg9c98VUBFVnlfXlboQv/UvZ4ERjYJLiswoCX2J9JRY=; b=a6EcX/FLulE/rXA/NKMkbumZS0
+	ZS1/FE14Trf6zXbO2YS8ZX4IDcnq1ff4YWcWCVAxLOLi/FNTgrJHkb6GJbLADugOFmCX7hNsAh8Ru
+	Sc7GnjRUl1JZpz/G6XFGBpO7kwEPmaSSU9DAwk+bum96jrG60qkZaFYotSSoGlG4mSNdTl+CxHvn+
+	PAwess4ROJr9dlTLjrP9w2oZ9x3qHn4UMUjBR0JVqSdZ4Jama/ujNk/04pODW0qyTX2V4/JIe2ZDm
+	GUDQDxy+k4wNozkfeVQwXqO7m5rU1pMvpDoPbKLCU2vvq7Jb84QK5LvbAqoFIWil3br9fJP8Zvzwi
+	PdjTdD3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjJj-0000oa-1w; Tue, 10 Mar 2020 18:09:23 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1jBjJz-0001Dq-8V; Tue, 10 Mar 2020 18:09:39 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjJ2-0000Qm-Dx
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:08:42 +0000
-Received: by mail-qk1-x741.google.com with SMTP id p62so13678928qkb.0
+ id 1jBjJ5-0000Uj-S0
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:08:45 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id l17so555252qvu.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 11:08:39 -0700 (PDT)
+ Tue, 10 Mar 2020 11:08:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Bnd+dV97Of1gzlLSXuML0/e/DO8s77XB3KGyM9X9Y78=;
- b=q+ar7slh9UUin4VNa0tQmCpbNTemq39L5IHKC84JTVR3nZVOwMMm2Ac7FnlSj81YLB
- a/naKkWCewRYQx/0Bq7WjMkWteQ2UimBpMAZeXZfnLk6Ck/hGVHzoCrS0sASZ7eFCgxg
- CX3NX3l78UJDQ7Z835Qxb3aELpXfsOeKJgZlIzCMJHqFXbP7s50dRhFBXkPBF29IUJ6i
- cIH4rNbexEptClgn9Xf862u4C5TFDNij0rznf8J5cuIP1eacpxqaNdXYt3Xboo5nVA9w
- eP+Js3L7Kv7S2mrTM8XPrWWS1+asPUW9uWDqbma+dMSTTkHOpohvF/Y+nWP7zjry+nUr
- iUFw==
+ bh=HVlUjwmBfQ/bJDemOmKbR+CIRVB4PM1YQlpjhiqC0yI=;
+ b=mKk1CUnChfgQdYp2wwysfFZV+QQCIO46Xxhd6LtCYUycreMsgI6kh0M3iSQ2nljhTh
+ oDFC+fdOWjeC90U/scpKtZ9nOL+BAMjpkDHRDwyg6S5fvsFt7zgR6TzNHmRXOlHGocsq
+ F44z2iokOdAaPf1rYTW2rI2s5CQNEc8eKHbDjQGMEHmAt9gQRQlSKG/X/waOn7oPtSW2
+ zHZdh1WzI2KmLrDuVA5RnEjaSPNNn8eIPNS4hRp9l79EWIfLcq34R9KaCISd0irFb5DG
+ hSLFA7XHIQKCdhKI3ZugntF85vDdqNntOYhOEOAAzHRnM3YUQoN6xV55qfO14IcUfYP0
+ MUaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Bnd+dV97Of1gzlLSXuML0/e/DO8s77XB3KGyM9X9Y78=;
- b=XVDn04ODMdIqXQMUKNqbqH1kUpQMjyOIRYgbBgm3Gw1bgllk6dvEMaE9JyIl7ecUw1
- NtWyrZBBoNxf3uYk4xpHoK1PBPHT0f28ugVT2BJ5iLNZ+eBk/+HeFHH7F2kjkbDzfXzH
- bzgD+HmaF2x14e24Wp3LsWmdqHUZbmwNIMA5+2r1BTxA3vUTTG5iS3vPtbxSd1FJ2WNV
- VH0KY0QopbafxtbyWyOs+mxlQlHecvCI++a6WVA0BxEHJ6ODza4gzytECYKCxDT6tB3u
- GtDcB1r9GkQau92bs9LGzYqzBUK3X8wyFgC5pQ0nn9eIoH0Kspz5ytaX2615TwtyPlef
- 2QZw==
-X-Gm-Message-State: ANhLgQ2l2ND5M33Pb2zHceTADNUiM12siVARk1j7uGhABXVmRDtPfq+z
- Wx1WsxF1T0qpM99+0knpJEo=
-X-Google-Smtp-Source: ADFU+vvEmO075gFXxYZT46n3yw54rkxtqO3eJ3ClbukU3dn1bolj+MSAfJhnnbOiAYIe5o5xtdR5vg==
-X-Received: by 2002:a37:6cc7:: with SMTP id
- h190mr21402942qkc.358.1583863718547; 
- Tue, 10 Mar 2020 11:08:38 -0700 (PDT)
+ bh=HVlUjwmBfQ/bJDemOmKbR+CIRVB4PM1YQlpjhiqC0yI=;
+ b=p2gkT32rUCrSncDBSWBU17RdCcYXcTxct0QaIBDxWLu+0llBCWhoiB7JGFwbSlmWCG
+ rMCK1bLw5CFIr4WDHjGfmSLZPl0QETqvNlpFcJjmE2Uz+XPwCVJxIweMOjo4a58oZ4QF
+ C6hTtAYB3IVR5e8EcMnIlNkzVBT2AmlXwX1rJPYrFQBxWoHpSZoLHRSkKAV8FZaVRlIx
+ Iv1vidn2nw1v5iHhCyGYSr4mrD+TOjFO1LRIcVJdKOCU659LL5a3zhnwA2V+0dr7rQgv
+ flVdYIZOlgTWGVsK/jPz0qr0bdxMRgd91tBFMs1SDzon+hIVTcz+jnfLZtEgVpB8b6am
+ ymKg==
+X-Gm-Message-State: ANhLgQ280lqKrwVsWZK7IBbPFn76B8+QyHECis3FqmMYHA/+zKjGzGjT
+ sYZ3x6yxQZpe6r5tuptm2Z8=
+X-Google-Smtp-Source: ADFU+vsB8ljBbtjiA3BQiIaPALFcdACXvwIoHAq0ZSsjFQYHgKbS+YJhzL+9PwXvQ2zLCwkCGvlcCw==
+X-Received: by 2002:a0c:eccb:: with SMTP id o11mr10535111qvq.129.1583863721657; 
+ Tue, 10 Mar 2020 11:08:41 -0700 (PDT)
 Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id 127sm17848821qkj.97.2020.03.10.11.08.35
+ by smtp.gmail.com with ESMTPSA id 127sm17848821qkj.97.2020.03.10.11.08.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 11:08:37 -0700 (PDT)
+ Tue, 10 Mar 2020 11:08:40 -0700 (PDT)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH v2 3/5] ARM: dts: imx7d-pico: Add support for the nymph
+Subject: [PATCH v2 4/5] ARM: dts: imx6ul-pico: Add support for the dwarf
  baseboard
-Date: Tue, 10 Mar 2020 15:08:23 -0300
-Message-Id: <20200310180825.10111-3-festevam@gmail.com>
+Date: Tue, 10 Mar 2020 15:08:24 -0300
+Message-Id: <20200310180825.10111-4-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200310180825.10111-1-festevam@gmail.com>
 References: <20200310180825.10111-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_110840_579084_EBE9CE65 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20200310_110843_914807_03EE0349 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [festevam[at]gmail.com]
@@ -107,36 +106,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the imx7d pico board with nymph baseboard combination.
+Add support for the imx6ul pico board with dwarf baseboard combination.
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
 Changes since v1:
 - Use audio-codec as the codec node name
 
- arch/arm/boot/dts/Makefile             |  1 +
- arch/arm/boot/dts/imx7d-pico-nymph.dts | 84 ++++++++++++++++++++++++++
- 2 files changed, 85 insertions(+)
- create mode 100644 arch/arm/boot/dts/imx7d-pico-nymph.dts
+ arch/arm/boot/dts/Makefile              |  1 +
+ arch/arm/boot/dts/imx6ul-pico-dwarf.dts | 52 +++++++++++++++++++++++++
+ 2 files changed, 53 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6ul-pico-dwarf.dts
 
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 38a71988ac2a..c46416725a63 100644
+index c46416725a63..4b1759f2cb9b 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
-@@ -619,6 +619,7 @@ dtb-$(CONFIG_SOC_IMX7D) += \
- 	imx7d-nitrogen7.dtb \
- 	imx7d-pico-dwarf.dtb \
- 	imx7d-pico-hobbit.dtb \
-+	imx7d-pico-nymph.dtb \
- 	imx7d-pico-pi.dtb \
- 	imx7d-sbc-imx7.dtb \
- 	imx7d-sdb.dtb \
-diff --git a/arch/arm/boot/dts/imx7d-pico-nymph.dts b/arch/arm/boot/dts/imx7d-pico-nymph.dts
+@@ -594,6 +594,7 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+ 	imx6ul-kontron-n6310-s-43.dtb \
+ 	imx6ul-liteboard.dtb \
+ 	imx6ul-opos6uldev.dtb \
++	imx6ul-pico-dwarf.dtb \
+ 	imx6ul-pico-hobbit.dtb \
+ 	imx6ul-pico-pi.dtb \
+ 	imx6ul-phytec-segin-ff-rdk-nand.dtb \
+diff --git a/arch/arm/boot/dts/imx6ul-pico-dwarf.dts b/arch/arm/boot/dts/imx6ul-pico-dwarf.dts
 new file mode 100644
-index 000000000000..104a85254adb
+index 000000000000..162dc259edc8
 --- /dev/null
-+++ b/arch/arm/boot/dts/imx7d-pico-nymph.dts
-@@ -0,0 +1,84 @@
++++ b/arch/arm/boot/dts/imx6ul-pico-dwarf.dts
+@@ -0,0 +1,52 @@
 +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
 +//
 +// Copyright 2015 Technexion Ltd.
@@ -146,25 +145,14 @@ index 000000000000..104a85254adb
 +//	   Tapani Utriainen <tapani@technexion.com>
 +/dts-v1/;
 +
-+#include "imx7d-pico.dtsi"
++#include "imx6ul-pico.dtsi"
 +/ {
-+	model = "TechNexion PICO-IMX7 and NYMPH baseboard";
-+	compatible = "technexion,imx7d-pico-nymph", "fsl,imx7d";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&pinctrl_gpio_leds>;
-+
-+		led {
-+			label = "gpio-led";
-+			gpios = <&gpio2 13 GPIO_ACTIVE_HIGH>;
-+		};
-+	};
++	model = "TechNexion PICO-IMX6UL and DWARF baseboard";
++	compatible = "technexion,imx6ul-pico-dwarf", "fsl,imx6ul";
 +
 +	sound {
 +		compatible = "fsl,imx-audio-sgtl5000";
-+		model = "imx7d-sgtl5000";
++		model = "imx6ul-sgtl5000";
 +		audio-cpu = <&sai1>;
 +		audio-codec = <&sgtl5000>;
 +		audio-routing =
@@ -181,10 +169,10 @@ index 000000000000..104a85254adb
 +	};
 +};
 +
-+&i2c1 {
++&i2c2 {
 +	clock_frequency = <100000>;
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c1>;
++	pinctrl-0 = <&pinctrl_i2c2>;
 +	status = "okay";
 +
 +	sgtl5000: audio-codec@a {
@@ -195,30 +183,9 @@ index 000000000000..104a85254adb
 +		VDDIO-supply = <&reg_3p3v>;
 +	};
 +
-+	adc@52 {
-+		compatible = "ti,adc081c";
-+		reg = <0x52>;
-+		vref-supply = <&reg_2p5v>;
-+	};
-+};
-+
-+&i2c2 {
-+	clock_frequency = <100000>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_i2c2>;
-+	status = "okay";
-+
-+	rtc@68 {
-+		compatible = "dallas,ds1337";
-+		reg = <0x68>;
-+	};
-+};
-+
-+&iomuxc {
-+	pinctrl_gpio_leds: gpioledsgrp {
-+		fsl,pins = <
-+			MX7D_PAD_EPDC_DATA13__GPIO2_IO13	0x14
-+		>;
++	pressure-sensor@60 {
++		compatible = "fsl,mpl3115";
++		reg = <0x60>;
 +	};
 +};
 -- 
