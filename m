@@ -2,75 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE81D18024C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:47:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8E14180262
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:49:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0B0VPSNZvj5dm1HQl8EVixD6yvpOeYSuFwJlaV988rI=; b=i81AgBcKnYsHH5
-	m3XQi4D1OTjZCBGqp7a+uurqXF8Kvmy9oDW2LesUhoEv74+SBb7gBFkdQqTWCqWoSV3E5B7E8Rzpa
-	eB5uHFjxc+dqmMll1BEBkd3S6+oISM109o5UxenSP/JMR51l12g4/9eXHduKCU+iEH/UdhxddUel0
-	Lvx7p9eCu/A4WtD6c8zvC++yiUYMuGra6XAlibGEm40VJM7Map58jeijJCuCfAkt44G6sHzcmeHiN
-	vaJsTP39XrcdXM9kNTVvhaEvtNaINvYmS4cefDSHoClh+6tvKGHeGt+UWDi4scH+Ro5yYlITTc1cK
-	2J8KHoEag9VW7Wjcw7fg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZWdHTiEPyNjIdoyHffajWmGXUYubGd8jXVQ6SL1VzRw=; b=ENjJ1HxuALzm5eDi8dcfq6S0h
+	kcbWK0v+b57TgiBYqKC58i4lCnoWcKqcrsb6GjTl0pl/LjvmyEPq8GAUFeM0dvNTHcFugXR8bvdpx
+	LKaI91G83CVXTvSqULI/Z+A8w6nfIPzUn2PcbHkZG0e5cXcRhbWlkMV1bxgeDmgMfIc3cseZypInI
+	GxfRP5m1Vrhw5UzY0faVPxlMiMgaLAdCJR2D8nYVC0BQWVa6nu+xiUrMlkjGnOfa1IwHU//JqotUg
+	MJDUayMyTpIfKJ5QCBFLnbyM9mi2UfbKS66XKAXA4Gicm/SOmudJwS5RowjtRBdPuOWbHITblDckr
+	3wzX4AdHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBh6K-0007AF-Dc; Tue, 10 Mar 2020 15:47:24 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jBh8I-0007YO-KQ; Tue, 10 Mar 2020 15:49:26 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBh64-00071w-Qm
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:47:11 +0000
-Received: by mail-ot1-x343.google.com with SMTP id b3so13617327otp.4
+ id 1jBh88-0007XW-4V
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:49:17 +0000
+Received: by mail-wr1-x443.google.com with SMTP id t11so16542907wrw.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 08:47:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4HrHpJuYloPdd64QgDvsMEZuP7xh7v2AxwQIiGYP/MQ=;
- b=nyX2OVgPZVTO0zNEHpYlZ63oRyFSngj5xEudidOqj0uclLGX1S3zY0a0pfVYbatnkh
- 2D8dMoBtwD6CVOzC+glCPpuvt8B96EHbtS82/rUczghAC0dNb4kQCpDrfGDyM9WZnqhE
- cD6V6C6atqbJIAFiPVYvmYb94/db0bZxLbC57HdisRWP2TiqR6vE7vFtKOUuGN2Qqnoy
- UMexxU5mlNO2XThhD5qTcBXOc17qUOjEsd6a01vAIa4/bhVs6QdAKwNo165h4SqsC52p
- ITAZxkyx2Yityikj+lkO5XXyvLWVkLC9LbqQ8yZeKIwAnTwqHFumm0Ja4JSGxjFCyNUe
- iFPw==
+ Tue, 10 Mar 2020 08:49:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=JLUdZSd1H1lEETpHvCclAtf9Hxyai7jGSGVa9mBHeW4=;
+ b=SXaaUnjufFDt8Mlnfyn9/nZlPn4Sx6yJeTDI9xCvB0eIdKUVY7sYTWP+92HvG9vn6s
+ hxMoVzkzmbTNU/nbfIVXiPxyh1TZJEgXBe18cH53Z8C5SRpBpd8VnYKB8hswLRpiAVbx
+ siJujdMUqn6EeQV4dClu6RdiAVRMN0A8eMh88=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4HrHpJuYloPdd64QgDvsMEZuP7xh7v2AxwQIiGYP/MQ=;
- b=cUXkwV4Jxt4WnDzWoE96ouI9leXmBUDislzXszGuH+iSrrOEJIlOwsgBuTR3hRL5CM
- 6AVmdkDdJBBlmUcS/vhMEoL6KkCj00wrVcVyTyyapX7SlqOLjnpXKTungQdvo+UxFd/G
- mqXyw4FgZwOzz1/IbVmm6Y8v/c+czs7G78GwcR+4A+kHWUOcbNlqC9BGoQDTV7B3Z6+Y
- D2al2ANEh9f8Dz48YG9R0Gjl3VaYdbqPmt/NdMltOmptjGNEhbjwIbQdWvh/BKx8IXDL
- ZfU9MItBiWbk4aY5Q+NISHIMGS37h529CVuG+VlyQdk1gw/SOdBBVc81XDfcEHJuy2NO
- iTqg==
-X-Gm-Message-State: ANhLgQ33iz3VEn77pIb0MB4t+HGv3NoMTQQaL++KkWXaI6FRSVlf3+k9
- YjpnAgqR1/p2oCHmjlZVlJh2O8KZHHSF675F7bdisA==
-X-Google-Smtp-Source: ADFU+vvtWUnpgSR4cBsrFTI3Mtf9+RyaT5KjmUoKRwAbx1+YCbYzwZsgMVbDCYPSxtaSHxlcT6lv+BwV3Srw2n+HtWY=
-X-Received: by 2002:a9d:19e9:: with SMTP id k96mr17642241otk.68.1583855227689; 
- Tue, 10 Mar 2020 08:47:07 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=JLUdZSd1H1lEETpHvCclAtf9Hxyai7jGSGVa9mBHeW4=;
+ b=niL9fgx/OEezwzvQNy8kVvz7SCs+3kuCih+Arnrp3adelJd6/TmKLMOSWHs5arT9TN
+ 3xlwO+Qvly2pX7lu9eOg2PQ9MvcRii1LzrL2ZnmHnev4LfWWrzmJfGWDWB5cAMM/4k1O
+ nAu3cae7Re4lhc5qhLHqxvU7do8TnccPaCNUj7d5j4TWwippvqT/T38lM6EcIIIt3P5X
+ w3mKCK+n06QwEUBFkacCz7p2zL+VOzrIUc19G89tBgCAhFSAh0lhWDdTKOLMScScCYC8
+ bh4WWAUMlxnDeMnh0i3O7X0Vv+5IESSSg7sGa92oeWavcFrek5UHmfEVNyruqpMDs0LT
+ sKHw==
+X-Gm-Message-State: ANhLgQ2LKcSutC66PxWfADxWsgboN/wChKgh8eypMZmeAJ5CjRp+zgCL
+ eRe8qMChfu39TpGsEXJHtmtVMQ==
+X-Google-Smtp-Source: ADFU+vv3M5cRnol8JRj1p0ysE6tMfdFNrNvEtcwqdFl+xa2EzKzZTzLC9tOnI+8oafPBbV9yqs7dYg==
+X-Received: by 2002:adf:f70f:: with SMTP id r15mr28468158wrp.269.1583855354940; 
+ Tue, 10 Mar 2020 08:49:14 -0700 (PDT)
+Received: from [10.136.12.253] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id b187sm1201195wmb.42.2020.03.10.08.49.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 10 Mar 2020 08:49:14 -0700 (PDT)
+Subject: Re: [PATCH] ASoC: brcm: Add DSL/PON SoC audio driver
+To: Mark Brown <broonie@kernel.org>
+References: <20200306222705.13309-1-kevin-ke.li@broadcom.com>
+ <20200309123307.GE4101@sirena.org.uk>
+ <69138568e9c18afa57d5edba6be9887b@mail.gmail.com>
+ <20200309175205.GJ4101@sirena.org.uk>
+ <8113837129a1b41aee674c68258cd37f@mail.gmail.com>
+ <20200309191813.GA51173@sirena.org.uk>
+From: Kevin Li <kevin-ke.li@broadcom.com>
+Message-ID: <1165b736-d0fc-1247-6f46-94a51d392532@broadcom.com>
+Date: Tue, 10 Mar 2020 08:49:08 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.8.0
 MIME-Version: 1.0
-References: <20200310134603.30260-1-robert.foss@linaro.org>
- <20200310134603.30260-3-robert.foss@linaro.org>
- <CAOMZO5D7N6FfPMiycGun-eui-G-tbp15stwRWBWs4L98JHFfGA@mail.gmail.com>
-In-Reply-To: <CAOMZO5D7N6FfPMiycGun-eui-G-tbp15stwRWBWs4L98JHFfGA@mail.gmail.com>
-From: Robert Foss <robert.foss@linaro.org>
-Date: Tue, 10 Mar 2020 16:46:56 +0100
-Message-ID: <CAG3jFyuwHEXHD1JbWMwNX_LDtawJ1+-zEptzq2yrn8Uk+S3fdQ@mail.gmail.com>
-Subject: Re: [v1 2/3] media: ov8856: Add devicetree support
-To: Fabio Estevam <festevam@gmail.com>
+In-Reply-To: <20200309191813.GA51173@sirena.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_084708_873236_2DA05E78 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20200310_084916_183319_E5B49617 
+X-CRM114-Status: GOOD (  15.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -81,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,114 +102,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
- ben.kao@intel.com, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Jonathan.Cameron@huawei.com, Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Scott Branden <sbranden@broadcom.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, bcm-kernel-feedback-list@broadcom.com,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Mar 2020 at 15:03, Fabio Estevam <festevam@gmail.com> wrote:
->
-> On Tue, Mar 10, 2020 at 10:47 AM Robert Foss <robert.foss@linaro.org> wrote:
->
-> > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > +{
-> > +       struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > +       int ret;
-> > +
-> > +       ret = clk_prepare_enable(ov8856->xvclk);
-> > +       if (ret < 0) {
-> > +               dev_err(&client->dev, "failed to enable xvclk\n");
-> > +               return ret;
-> > +       }
-> > +
-> > +       gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_LOW);
-> > +
-> > +       ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> > +       if (ret < 0) {
-> > +               dev_err(&client->dev, "failed to enable regulators\n");
-> > +               goto disable_clk;
-> > +       }
-> > +
-> > +       gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_HIGH);
->
-> To power it up you probably only need:
->
-> gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, 0);
->
-> And use reset-gpios as active low in your device tree. Assuming the
-> reset-gpios is active low like other OmniVision sensors.
 
-Ack.
 
->
-> > +
-> > +       usleep_range(1500, 1800);
-> > +
-> > +       return 0;
-> > +
-> > +disable_clk:
-> > +       clk_disable_unprepare(ov8856->xvclk);
-> > +
-> > +       return ret;
-> > +}
-> > +
-> > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > +{
-> > +       gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_LOW);
-> > +       regulator_bulk_disable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> > +       clk_disable_unprepare(ov8856->xvclk);
-> > +}
-> > +
-> > +
->
-> Unneede extra blank line.
+> This is not how any of this is supposed to work, it's unlikely to work
+> well with other devices.  If the device supports both master and slave
+> operation then you should let the machine driver pick if the SoC or the
+> CODEC is master via set_fmt(), randomly varying this at runtime is not
+> going to be helpful.
 
-Ack.
+Maybe the name "master/slave" is confusing, these names come from internal
+chip signals and do not represent the state of the i2s bus master. Our SoC
+supports only master mode in the i2s bus. The Rx and Tx block each have an
+independent bit to indicate if it is generating the clock for the i2s bus.
+The i2s bus clocks need to be generated from either the Rx block or the Tx
+block, but not both.
 
->
-> >         v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
-> > +       ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-> > +       if (IS_ERR(ov8856->xvclk)) {
-> > +               dev_err(&client->dev, "failed to get xvclk\n");
-> > +               return -EINVAL;
->
-> You should better return the real error insteald
-> PTR_ERR(ov8856->xvclk). This way defer probe could work.
->
-
-Ack.
-
-> > +       }
-> > +
-> > +       ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_24);
-> > +       if (ret < 0) {
-> > +               dev_err(&client->dev, "failed to set xvclk rate (24MHz)\n");
-> > +               return ret;
-> > +       }
-> > +
-> > +       ov8856->n_shutdn_gpio = devm_gpiod_get(&client->dev, "reset",
-> > +                                              GPIOD_OUT_LOW);
-> > +       if (IS_ERR(ov8856->n_shutdn_gpio)) {
-> > +               dev_err(&client->dev, "failed to get reset-gpios\n");
-> > +               return -EINVAL;
->
-> Please return the real error.
-
-Ack.
 
 _______________________________________________
 linux-arm-kernel mailing list
