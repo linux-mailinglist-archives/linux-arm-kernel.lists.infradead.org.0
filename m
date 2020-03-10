@@ -2,81 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5333180A23
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 22:15:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35D1A180B18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 23:02:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wNwjSP5Y695clYHg3CBJpALejCvzSlPHyBQ6Kl8Bw1A=; b=f7KQtubpZ9Lkp0
-	llPfr4jnWNyR/RL45P/+dAog+Ahb9ln1Bgimx/yj5AM3iXhKiXK77/CtUn3ldWnqHHDVKUyzQGLu0
-	XsMmgkiCXT6ZqntDHd6NOVQMq/sOwIOsU9VZmGphdgPny2uRs6+2dnGBkqM1gNVS8YQ8lnlGC3JTJ
-	1xjs7UHC2YAJZrCkP8DG8xfhYXR+yD2SIJLgw5e/lJN/9lXrdUtUY9FPs3MbXuO0nMgIKyf2c/e+e
-	aes8SR43S+7/X3nf4Ciuogr1a3rmgjQMX53QuL9qwZZUUZPzfF22ksMZA4WwzS9n4H33bccGZ8J6I
-	/KmijO9B4TVpdiweb2Ug==;
+	List-Owner; bh=SO7xwnaJE5DjEgPeHsFiv86aX2bOZoyr7PLt54S+dHQ=; b=f5YjoINFc9g5LV
+	pAJThVFYxbR3WHw1Jv0otuHcgfPk+tmp7b0n4lbxUXdFJMYlkbwHcInwT4qVE/BVfrEoRStjMo4Hc
+	wv6Ur/JiHVxMNhpVCjbiNdH8TIrFBvl7PjEN+RCYI8iK2uq9s2VFayK8UVtrPwuFxUtAOKZJ0X7hT
+	810MBgljLjrS02IOUKcU0NtBPYYxHFysJdsepXPiy/ni8zt4UrcER8Q3RmrC4YXW8eL6OfKgjaVDX
+	e4Jn1uFzsK/ODMlnzBVpFtnF4UxB1x493i3Jstktvrkw62SX8cH99M4NwlcXu9C7RgN/VkeW81U7K
+	V9Wr1Y/bXapFLcj33uUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBmDs-0003rk-Rp; Tue, 10 Mar 2020 21:15:32 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jBmwm-0002wx-Dg; Tue, 10 Mar 2020 22:01:56 +0000
+Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBmDl-0003qx-BW; Tue, 10 Mar 2020 21:15:26 +0000
-Received: by mail-ot1-x344.google.com with SMTP id s15so6444817otq.8;
- Tue, 10 Mar 2020 14:15:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7hNWBofucArT17MnCRXZQMQQdTzbenzVIK3M8zSgFrs=;
- b=dN1DJyXu9qxAGT5sUE6ZtOnH6zUyhErKldhJDm/7WbWLTndvrlMjzXlxKt0BofnnWE
- gH1NiZ39GxjP1zKwRIUjTFC78v6faijm/bXy1SykgDIiA9HQsxDhPDqfO0MbUk3w52cK
- NAPx3NUnmyHQqMvrs7UO60oNGKIM7di5I/ovX860fDPPgCrG+QntBATS4ZeoB5joKLJx
- VHIoh5WWDwrL+7hQIz6IlCuKhtLvjR66DH1AWCSMwwHVYrWSSThc/iQgU8Zsx5872Ouu
- FePQ3k15JNhQTQGFroMnrQZ/39pHC+lZr07mZXoOxcdm/2FlRaK/bwLZxC1FMUEW+aky
- 47Bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7hNWBofucArT17MnCRXZQMQQdTzbenzVIK3M8zSgFrs=;
- b=pRiOszUpHHdGDslg7WJpRHbxs62faCztXYy0pBmTGlSqJ62RJ4QP5bDQlnKVT/tdgp
- GU5v/f1S6vQaRqLVXC/dRK/JQLD7DSVgzA24cIJuTdMjemGFgrC07QAwPu0E+R3Pxvyl
- /cKFW2tTdG9VwG1JJgbqPI4j+Sft+/DadGDQVdwyHW8jjerkXMp3Qau12yiMgq73Br/a
- EaCVELgJA0HmhoenuCUZi2hOUi/syaMjiLdU9tXBnAsa8J3Af1DTaD62Nq5yV1AbscMJ
- hgbQ5mu3NQwEASEes/bO1Ydkvis3ktN/azZ4OMoBfGmy59Ljj3IbL3RyH5Mdl5Olls8n
- XtvQ==
-X-Gm-Message-State: ANhLgQ3smcZ/GBTSuQsx13oHoSmkgrIAOwxzbOFjpmWP7/8gJF2DzIMi
- Ruhe4B0X40I1joItKMXxMeI=
-X-Google-Smtp-Source: ADFU+vvjtpN/bwJQkI2vcndXaZbxD8dD0mCBVB9RhSu8g5NE5E5B4HBs9qwmz9bvppBuPjIrS4onDw==
-X-Received: by 2002:a9d:6348:: with SMTP id y8mr687408otk.347.1583874924146;
- Tue, 10 Mar 2020 14:15:24 -0700 (PDT)
-Received: from localhost.localdomain ([2604:1380:4111:8b00::1])
- by smtp.gmail.com with ESMTPSA id j90sm205345otc.21.2020.03.10.14.15.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 14:15:23 -0700 (PDT)
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Ohad Ben-Cohen <ohad@wizery.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: [PATCH] remoteproc/mediatek: Use size_t type for len in scp_da_to_va
-Date: Tue, 10 Mar 2020 14:15:14 -0700
-Message-Id: <20200310211514.32288-1-natechancellor@gmail.com>
-X-Mailer: git-send-email 2.26.0.rc1
+ id 1jBmwN-0002p7-KL
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 22:01:34 +0000
+Received: from zyt.lan (unknown [IPv6:2a02:169:3df5::564])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id 1E5BF5C2157;
+ Tue, 10 Mar 2020 23:01:25 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
+ t=1583877685;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:
+ content-transfer-encoding:content-transfer-encoding:in-reply-to:
+ references; bh=y9mUQ47Qx5sWxU4e4s/o/28BEccjHtCQBjF8z/UpJQA=;
+ b=myQMTVO9iLbwC69i6CgS14cavDxa3wRcSvyTw2x8TEZPdhyjXpSUnaXFceu7NNWcTEBJs7
+ pf3ixShGDXOIbwMQnyWr7xcXSEVSoDaqlJ2gtLApsaVmOJeP5lNv9Be6mTxMbr/3J64CTC
+ 24wOk8GGmKBHVICv329Ipn1ASCGvVNw=
+From: Stefan Agner <stefan@agner.ch>
+To: linux@armlinux.org.uk
+Subject: [PATCH 0/3] ARM: make use of UAL VFP mnemonics when possible
+Date: Tue, 10 Mar 2020 23:01:18 +0100
+Message-Id: <cover.1583360296.git.stefan@agner.ch>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_141525_396174_E539E574 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20200310_150132_265524_A596C2EE 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [natechancellor[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,53 +70,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, linux-mediatek@lists.infradead.org,
- Nathan Chancellor <natechancellor@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: clang-built-linux@googlegroups.com, arnd@arndb.de,
+ ard.biesheuvel@linaro.org, ndesaulniers@google.com,
+ linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
+ jiancai@google.com, yamada.masahiro@socionext.com, manojgupta@google.com,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Clang errors:
+To build the kernel with Clang's integrated assembler the VFP code needs
+to make use of the unified assembler language (UAL) VFP mnemonics.
 
-drivers/remoteproc/mtk_scp.c:364:14: error: incompatible function
-pointer types initializing 'void *(*)(struct rproc *, u64, size_t)' (aka
-'void *(*)(struct rproc *, unsigned long long, unsigned int)') with an
-expression of type 'void *(struct rproc *, u64, int)' (aka 'void
-*(struct rproc *, unsigned long long, int)')
-[-Werror,-Wincompatible-function-pointer-types]
-        .da_to_va       = scp_da_to_va,
-                          ^~~~~~~~~~~~
-1 error generated.
+At first I tried to get rid of the co-processor instructions to access
+the floating point unit along with the macros completely. However, due
+to missing FPINST/FPINST2 argument support in older binutils versions we
+have to keep them around. Once we drop support for binutils 2.24 and
+older, the move to UAL VFP mnemonics will be straight forward with this
+changes applied.
 
-Make the same change as commit 0fcbb369f052 ("remoteproc: Use size_t
-type for len in da_to_va"), which was not updated for the acceptance of
-commit 63c13d61eafe ("remoteproc/mediatek: add SCP support for mt8183").
+Tested using Clang with integrated assembler as well as external
+(binutils assembler), various gcc/binutils version down to 4.7/2.23.
+Disassembled and compared the object files in arch/arm/vfp/ to make
+sure this changes leads to the same code. Besides different inlining
+behavior I was not able to spot a difference.
 
-Fixes: 0fcbb369f052 ("remoteproc: Use size_t type for len in da_to_va")
-Link: https://github.com/ClangBuiltLinux/linux/issues/927
-Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
----
- drivers/remoteproc/mtk_scp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+This replaces (and extends) my earlier patch "ARM: use assembly mnemonics
+for VFP register access"
+http://lore.kernel.org/r/8bb16ac4b15a7e28a8e819ef9aae20bfc3f75fbc.1582266841.git.stefan@agner.ch
 
-diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
-index 7ccdf64ff3ea..ea3743e7e794 100644
---- a/drivers/remoteproc/mtk_scp.c
-+++ b/drivers/remoteproc/mtk_scp.c
-@@ -320,7 +320,7 @@ static int scp_start(struct rproc *rproc)
- 	return ret;
- }
- 
--static void *scp_da_to_va(struct rproc *rproc, u64 da, int len)
-+static void *scp_da_to_va(struct rproc *rproc, u64 da, size_t len)
- {
- 	struct mtk_scp *scp = (struct mtk_scp *)rproc->priv;
- 	int offset;
+--
+Stefan
+
+Stefan Agner (3):
+  ARM: use .fpu assembler directives instead of assembler arguments
+  ARM: use VFP assembler mnemonics in register load/store macros
+  ARM: use VFP assembler mnemonics if available
+
+ arch/arm/include/asm/vfp.h       |  2 ++
+ arch/arm/include/asm/vfpmacros.h | 31 ++++++++++++++++++++++---------
+ arch/arm/vfp/Makefile            |  5 ++++-
+ arch/arm/vfp/vfphw.S             | 31 ++++++++++++++++++++-----------
+ arch/arm/vfp/vfpinstr.h          | 23 +++++++++++++++++++----
+ 5 files changed, 67 insertions(+), 25 deletions(-)
+
 -- 
-2.26.0.rc1
+2.25.1
 
 
 _______________________________________________
