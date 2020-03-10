@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D990E18088C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 20:50:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A0118088E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 20:51:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Stt/xVPVfyG4AP4u9JjfOmeiPz2VYfNxW5NH4Pbbt6E=; b=jBRILXQdX1M9AO
-	++SW/v+431FQy4Md3+Pz5TkHlFJCWTEESnZqoBJmux/QmbRSWMlYmAHoav4oKm0gkyiw7mapDY7YZ
-	Qdy3ea5RRFjUYjA1siRG/pFwmVEMJeG549Q86YPP9PArfTWjaSLDJ2NvdY9EKW7l6kDHQgSPdHWpI
-	4De524hHNJCw/r/mxL8eyp8XHJ2z+S7fC/h04tDQkMywmqfZ/SbDY1exsitx/MXENgsd3Q2At7oTJ
-	aQuUuI00H4qjk42bQi3etbdwhjr+qI+YuJtZL8ppx8tvE1viKv0rqutt6JcltZX0XtUSxSIhI+iSU
-	OaZLWXans9NReui8Md4w==;
+	List-Owner; bh=Tk3idSvb39fQuhoG1rYkOElpt/5SQBVMNdJHHHBxJpo=; b=QAggjN4gtAuSp+
+	tprx1A5OSzwtlECeGJn96P4v/TMBQOW4de0lWIhWWOxVKYg1xugAXqExw6w47iwOdrqEQe/EF3aW/
+	WLQkQjWILZixZfj//DwIyAK7q0Me87ed4jA5U47eoMw8giTuPrNQA4pYp5Gsf8oYkGoc8mZuWNkXm
+	aOExVUcaMrnqQyHMMIFR6WtxTkygdFbknvdTMqCXXU7H5iEREey8JWP+Rd9D+0vOrKeWFsw/nrw5i
+	Jo9EPyFbc/MyaHikpBk6KmmngJ1vjQngAHKMDPz+aUnWsW3xIZxFSyN61fOeWacCEt+Jg/UKcjmZs
+	Cr7MceBiNntU5qU23hjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBktk-0003h9-KG; Tue, 10 Mar 2020 19:50:40 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jBku6-00041I-7w; Tue, 10 Mar 2020 19:51:02 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBksq-0001vM-Ht
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 19:49:49 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 23so5190311pfj.1
+ id 1jBksv-00020m-9n
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 19:49:51 +0000
+Received: by mail-pl1-x641.google.com with SMTP id g6so5867272plt.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 12:49:44 -0700 (PDT)
+ Tue, 10 Mar 2020 12:49:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qy+AMvg+nSvSC0ONVo240hNIxIkSB0OeFrGgfVG5/JQ=;
- b=Ryl8SeA+3eogYZ6yPC1SyQIH0votU+mlri3VVKOquAkHVa+fCFv5+PY9+tRb3y/TG9
- wNcmZ7oGBLJwE0SyMVjO4rPq2UTrWs3y0Wf2N8cthoIha2UmDdlv3foUJgkgqvAPmWX4
- ZwO+McwVCHwuPAhcl3VWZ6ubnsb/EFV67Qm/rVfnpBzvf0AIL3yFbTY3IEyfc9Jpjt4i
- DicuxNzeb4Fh4gG9Cpd+kk9aJnAtZvb5pbbFztVE/Xw7clyfaIXvyB7bFcSbruEm/4Gc
- tj5xoyrfXLDTTj1ZxCCsN30qlAlEr+H0OeTyeC8wbe1GLL4idYtuQiGQp8bkWsjWjes5
- MCog==
+ bh=z9ZKe9DPK55G94wFxazjpOuNWkVTtqx7CppQ9HO6NqY=;
+ b=QxA1mfJNuNo101umOeAqQ1YfnCfKPylu4nJIhD8ICZb+kA1lQjLgkrzbxjk25h9SQr
+ pZ5PkAaIlTsqDsvLkgZqL3tlvvp1XW9cPNAyB78bh/rEsJurcqd5DWeG30lDAWmR39Ad
+ uW7KbxfzTH4jlBTd0WHwYTYPNKorO5VQDSD4WM6EKOJZ9tIt3gq3Lq/jWHo2sQ/r/y+A
+ DhW3HSUJ0GFiNByu57by+d8FfdQSqK2BDl3J4+4tGoo0iMBayPuPQlUu9G4ljDYR0c3S
+ VZV0FovHyoTyzy2UMcwIU/SDGBlzJh2RwIVQYo9kTDPW0n2g3u8GRg7K4BwXTRIaLJrj
+ rgnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qy+AMvg+nSvSC0ONVo240hNIxIkSB0OeFrGgfVG5/JQ=;
- b=G/t42DUV3BZWAPPl5U+tl1kRKrJR0JIkAhH6gTc/LC06eGcIgLUTEhgtwkPlq0BZNF
- 9X7qx6TcGvvXUFRvsXXzmhlSfWFrcr3c80u3qm6Fbw4PKX/4jozi0E38FwHHazA+PvOl
- HvuUFvo1QBRBcWe7KLK93BQ+d4G8ciunXsyv9q87l3SRTkn+zrBMBmJ10TMTFkOPYh5H
- JDYQldDXI550Sqzph3HBNW72t9YSDXbH7pImhxRt0TUhyebo+klAyXFgEO85IpTYBR0p
- 3jquuXbvRW7OxuzQKRIx5EK9jnaubu/l3uUaNuJlBdymnPLj0hw3x7LuRwB8qjc4jlDf
- lWLg==
-X-Gm-Message-State: ANhLgQ0ZES44NRB8vPCXbMVxQl327XVAUnR9ExP+QL/LJZ+97qrY+wMI
- NyGnFh5Rka26YdcYMnYkXTo=
-X-Google-Smtp-Source: ADFU+vs2n4qmIA2s6IYw23zn3QxspN7ea/eADdMqXUX6lRw9+Nj+HTWuyikX+b/VavTLEPf/k/KcXA==
-X-Received: by 2002:a62:1552:: with SMTP id 79mr10399764pfv.215.1583869783177; 
- Tue, 10 Mar 2020 12:49:43 -0700 (PDT)
+ bh=z9ZKe9DPK55G94wFxazjpOuNWkVTtqx7CppQ9HO6NqY=;
+ b=sGNg8mEyIaqVnlKRTAGkjSnHNIY3iz4dvAQjZO8EkI2n00YNRw6N7tu2qjSFGzBnPj
+ YaqFsOKrJ8azknRA6Xc3fXQLsbpWF1Odr74lA4byWckWPpVmaAGb6LeJl/C5IMvhuNVv
+ Tk0XNTOGapb8bP91FaPOkSQ6qZyiNJSyImCkopfYCHt+rDi5fvpPIWGzjzEnc/swUBgW
+ WAqTW2+NgQvn2xt+JRXzLMknzhsvootP+kJiAuUolNUkbdwX3mdD6/sacLNhNzeo7+Vq
+ 9OzZ/OlYZUO+BapDY1VCtT4NxGZsT+qB7C+ILeWN2LVZo/Px28vnDqzISRbWfnuVVsDc
+ B5cA==
+X-Gm-Message-State: ANhLgQ3qd4P825rEpF2rqhKEU4VsgXg+YErJ3ke3+6G4976Er4fKDOvW
+ JX9FWM7AvuoUipEC+zD8ZxU=
+X-Google-Smtp-Source: ADFU+vttShOB0et+FIE14Un1vRU7k4VYoJ6iz35zEx98edQYoJE8W2h24Jqu/B/zyrxKywi6Kqvs+A==
+X-Received: by 2002:a17:902:9b95:: with SMTP id
+ y21mr8418083plp.101.1583869788247; 
+ Tue, 10 Mar 2020 12:49:48 -0700 (PDT)
 Received: from localhost.localdomain ([45.114.62.228])
- by smtp.gmail.com with ESMTPSA id d19sm3784490pfd.82.2020.03.10.12.49.38
+ by smtp.gmail.com with ESMTPSA id d19sm3784490pfd.82.2020.03.10.12.49.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 12:49:42 -0700 (PDT)
+ Tue, 10 Mar 2020 12:49:47 -0700 (PDT)
 From: Anand Moon <linux.amoon@gmail.com>
 To: linux-usb@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org
-Subject: [PATCHv3 4/5] usb: dwc3: exynos: Add support for Exynos5422 suspend
- clk
-Date: Tue, 10 Mar 2020 19:48:53 +0000
-Message-Id: <20200310194854.831-5-linux.amoon@gmail.com>
+Subject: [PATCHv3 5/5] clk: samsung: exynos542x: Move FSYS subsystem clocks to
+ its sub-CMU
+Date: Tue, 10 Mar 2020 19:48:54 +0000
+Message-Id: <20200310194854.831-6-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200310194854.831-1-linux.amoon@gmail.com>
 References: <20200310194854.831-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_124944_663361_5206AA61 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20200310_124949_490524_F55A89A0 
+X-CRM114-Status: GOOD (  14.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [linux.amoon[at]gmail.com]
@@ -113,44 +114,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Exynos5422 DWC3 module support two clk USBD300 and SCLK_USBD300
-so add missing code to enable/disable code and suspend clk, for this
-add a new compatible samsung,exynos5420-dwusb3 to help configure
-dwc3 code and dwc3 suspend clock. Suspend clock controls the PHY power
-change from P0 to P1/P2/P3 during U0 to U1/U2/U3 transition.
+FSYS power domain support usbdrd3, pdma and usb2 power gaiting,
+hence move FSYS clk setting to sub-CMU block to support power domain
+on/off sequences for device nodes.
 
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
- drivers/usb/dwc3/dwc3-exynos.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+New patch in the series
+---
+ drivers/clk/samsung/clk-exynos5420.c | 45 +++++++++++++++++++++-------
+ 1 file changed, 34 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/usb/dwc3/dwc3-exynos.c b/drivers/usb/dwc3/dwc3-exynos.c
-index 90bb022737da..48b68b6f0dc8 100644
---- a/drivers/usb/dwc3/dwc3-exynos.c
-+++ b/drivers/usb/dwc3/dwc3-exynos.c
-@@ -162,6 +162,12 @@ static const struct dwc3_exynos_driverdata exynos5250_drvdata = {
- 	.suspend_clk_idx = -1,
+diff --git a/drivers/clk/samsung/clk-exynos5420.c b/drivers/clk/samsung/clk-exynos5420.c
+index c9e5a1fb6653..6c4c47dfcdce 100644
+--- a/drivers/clk/samsung/clk-exynos5420.c
++++ b/drivers/clk/samsung/clk-exynos5420.c
+@@ -859,12 +859,6 @@ static const struct samsung_div_clock exynos5x_div_clks[] __initconst = {
+ 	DIV(0, "dout_maudio0", "mout_maudio0", DIV_MAU, 20, 4),
+ 	DIV(0, "dout_maupcm0", "dout_maudio0", DIV_MAU, 24, 8),
+ 
+-	/* USB3.0 */
+-	DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
+-	DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
+-	DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
+-	DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
+-
+ 	/* MMC */
+ 	DIV(0, "dout_mmc0", "mout_mmc0", DIV_FSYS1, 0, 10),
+ 	DIV(0, "dout_mmc1", "mout_mmc1", DIV_FSYS1, 10, 10),
+@@ -1031,8 +1025,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+ 
+ 	/* FSYS Block */
+ 	GATE(CLK_TSI, "tsi", "aclk200_fsys", GATE_BUS_FSYS0, 0, 0, 0),
+-	GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
+-	GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
+ 	GATE(CLK_UFS, "ufs", "aclk200_fsys2", GATE_BUS_FSYS0, 3, 0, 0),
+ 	GATE(CLK_RTIC, "rtic", "aclk200_fsys", GATE_IP_FSYS, 9, 0, 0),
+ 	GATE(CLK_MMC0, "mmc0", "aclk200_fsys2", GATE_IP_FSYS, 12, 0, 0),
+@@ -1040,9 +1032,6 @@ static const struct samsung_gate_clock exynos5x_gate_clks[] __initconst = {
+ 	GATE(CLK_MMC2, "mmc2", "aclk200_fsys2", GATE_IP_FSYS, 14, 0, 0),
+ 	GATE(CLK_SROMC, "sromc", "aclk200_fsys2",
+ 			GATE_IP_FSYS, 17, CLK_IGNORE_UNUSED, 0),
+-	GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
+-	GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
+-	GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
+ 	GATE(CLK_SCLK_UNIPRO, "sclk_unipro", "dout_unipro",
+ 			SRC_MASK_FSYS, 24, CLK_SET_RATE_PARENT, 0),
+ 
+@@ -1258,6 +1247,28 @@ static struct exynos5_subcmu_reg_dump exynos5x_gsc_suspend_regs[] = {
+ 	{ DIV2_RATIO0, 0, 0x30 },	/* DIV dout_gscl_blk_300 */
  };
  
-+static const struct dwc3_exynos_driverdata exynos5420_drvdata = {
-+	.clk_names = { "usbdrd30", "usbdrd30_susp_clk"},
-+	.num_clks = 2,
-+	.suspend_clk_idx = 1,
++/* USB3.0 */
++static const struct samsung_div_clock exynos5x_fsys_div_clks[] __initconst = {
++	DIV(0, "dout_usbphy301", "mout_usbd301", DIV_FSYS0, 12, 4),
++	DIV(0, "dout_usbphy300", "mout_usbd300", DIV_FSYS0, 16, 4),
++	DIV(0, "dout_usbd301", "mout_usbd301", DIV_FSYS0, 20, 4),
++	DIV(0, "dout_usbd300", "mout_usbd300", DIV_FSYS0, 24, 4),
 +};
 +
- static const struct dwc3_exynos_driverdata exynos5433_drvdata = {
- 	.clk_names = { "aclk", "susp_clk", "pipe_pclk", "phyclk" },
- 	.num_clks = 4,
-@@ -178,6 +184,9 @@ static const struct of_device_id exynos_dwc3_match[] = {
- 	{
- 		.compatible = "samsung,exynos5250-dwusb3",
- 		.data = &exynos5250_drvdata,
-+	}, {
-+		.compatible = "samsung,exynos5420-dwusb3",
-+		.data = &exynos5420_drvdata,
- 	}, {
- 		.compatible = "samsung,exynos5433-dwusb3",
- 		.data = &exynos5433_drvdata,
++static const struct samsung_gate_clock exynos5x_fsys_gate_clks[] __initconst = {
++	GATE(CLK_PDMA0, "pdma0", "aclk200_fsys", GATE_BUS_FSYS0, 1, 0, 0),
++	GATE(CLK_PDMA1, "pdma1", "aclk200_fsys", GATE_BUS_FSYS0, 2, 0, 0),
++	GATE(CLK_USBH20, "usbh20", "aclk200_fsys", GATE_IP_FSYS, 18, 0, 0),
++	GATE(CLK_USBD300, "usbd300", "aclk200_fsys", GATE_IP_FSYS, 19, 0, 0),
++	GATE(CLK_USBD301, "usbd301", "aclk200_fsys", GATE_IP_FSYS, 20, 0, 0),
++};
++
++static struct exynos5_subcmu_reg_dump exynos5x_fsys_suspend_regs[] = {
++	{ GATE_IP_FSYS, 0xffffffff, 0xffffffff }, /* FSYS gates */
++	{ SRC_TOP3, 0, BIT(24) },                 /* SW_MUX_PCLK_200_FSYS_SEL */
++	{ SRC_TOP3, 0, BIT(28) },                 /* SW_MUX_ACLK_200_FSYS_SEL */
++};
++
+ static const struct samsung_gate_clock exynos5x_g3d_gate_clks[] __initconst = {
+ 	GATE(CLK_G3D, "g3d", "mout_user_aclk_g3d", GATE_IP_G3D, 9,
+ 	     CLK_SET_RATE_PARENT, 0),
+@@ -1376,12 +1387,23 @@ static const struct exynos5_subcmu_info exynos5800_mau_subcmu = {
+ 	.pd_name	= "MAU",
+ };
+ 
++static const struct exynos5_subcmu_info exynos5x_fsys_subcmu = {
++	.div_clks       = exynos5x_fsys_div_clks,
++	.nr_div_clks    = ARRAY_SIZE(exynos5x_fsys_div_clks),
++	.gate_clks	= exynos5x_fsys_gate_clks,
++	.nr_gate_clks	= ARRAY_SIZE(exynos5x_fsys_gate_clks),
++	.suspend_regs	= exynos5x_fsys_suspend_regs,
++	.nr_suspend_regs = ARRAY_SIZE(exynos5x_fsys_suspend_regs),
++	.pd_name	= "FSYS",
++};
++
+ static const struct exynos5_subcmu_info *exynos5x_subcmus[] = {
+ 	&exynos5x_disp_subcmu,
+ 	&exynos5x_gsc_subcmu,
+ 	&exynos5x_g3d_subcmu,
+ 	&exynos5x_mfc_subcmu,
+ 	&exynos5x_mscl_subcmu,
++	&exynos5x_fsys_subcmu,
+ };
+ 
+ static const struct exynos5_subcmu_info *exynos5800_subcmus[] = {
+@@ -1391,6 +1413,7 @@ static const struct exynos5_subcmu_info *exynos5800_subcmus[] = {
+ 	&exynos5x_mfc_subcmu,
+ 	&exynos5x_mscl_subcmu,
+ 	&exynos5800_mau_subcmu,
++	&exynos5x_fsys_subcmu,
+ };
+ 
+ static const struct samsung_pll_rate_table exynos5420_pll2550x_24mhz_tbl[] __initconst = {
 -- 
 2.25.1
 
