@@ -2,62 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A78B218069D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:34:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 763F31806A1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:34:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qOoXRoW/TzIje1n6XGZM2DfvVIF8YYeBGlWP7TYTWO0=; b=Me20xwHby2kMC+
-	Wvb3KEMnCz6Pvn9PAP1ct7F2/lOHamboNd2I9+xlf8hF7BAymAJ4kJLaFSiZdWNuy+5aj0D3TqMDl
-	FibziUbq55MtOdJsW15DqO+qxWXdpJTx0HVBasuCbHUHSu1J1rb1rXIvSn3589oIARU+t39BtSOo1
-	ZZVPFAeeub9P5qMlQr9XzHdD25KLEtvIJjD4FfiBNtQ2gZf8Mc6mUc/LAwnqXrt4yzt1Ggscs+q3m
-	hjzAlVmvgvkkR8mF41/2uQbbvjTEG7YdPoHX1JxY/IzVBBBv+H5hqsoOxZWsqY5PJo6wtrGscnF9k
-	jSBc3YMghQb/4EtT+Jiw==;
+	List-Owner; bh=QxtWPrB8/+Cg5P/IxsZIjQ7a8LNkxNUJ2hSzH7NMJk0=; b=dtbuD9G0hk+xdP
+	wXPncThzHul686mDGV7tvLZDHO3OU7/y4GedoskvcDGrSITI1uGMF9XUCqI7BiP9aSH8SXaslGGY+
+	wGfSUujwqP38T5ampQbOF8ie6SGf5MqubR3eEv0YRhDaLSozpkl2usC+0QFrQHt2C1nHWyJQgQ4hN
+	BkYEKrocL4wT3O6aKkuWHwnT4biCygiExNbYdSVr6NjBvmuQdYAVza51rN8NKG5AWFog+NFyzxMdk
+	Vq3ef+H568X+dfk/87YDJ2y0oAnrjvg8SsuwX3uz6w6h49pJHhJyMoaWE75/1gOT4dzTwsicmBFCj
+	JR6tcmiMwjWGMk0lw7AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjhg-0006lA-Vw; Tue, 10 Mar 2020 18:34:08 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1jBjiF-0007IS-1K; Tue, 10 Mar 2020 18:34:43 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjef-0003wt-QO; Tue, 10 Mar 2020 18:31:03 +0000
-X-Originating-IP: 91.224.148.103
+ id 1jBjet-0004Aq-KL; Tue, 10 Mar 2020 18:31:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description;
+ bh=08GJiHsfIZeuJnAo+UURMB8VLpxUDPt+1+jtNAFEtg0=; b=ZyYX1Tt7Ho9/0T9F7cIeohIQEK
+ Z4vIbtnPF6f1AejhpKTb9nyY2xHNMn50cciEyPtOlHKED7kVqtih4uj9/2t11U8/BVyM73/Mfu2hk
+ 1kBXgUNEa/Lty5hkmxUGMu1aT+ln3HVUvJWSAFUBpUvCK1VZP89pebOHFGXwCR4+0n+dt7sXPxHrL
+ VYkeyWEkjsu0P1cOKzVrKZ+GJNm5muhH6GoltORNDJYh7uP5Ts+kBxxeSQnMEdqrEsfeS56OMbsyi
+ rFjJLoi6pv25QM9vbLHXyOgHC9bYR3bMAwzuO1/P+dbU/iJjOEp5zi7AqY9Rybk6FNB8QXAPSajAX
+ eDyno/Uw==;
+Received: from relay12.mail.gandi.net ([217.70.178.232])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBjeq-0003UU-Oy; Tue, 10 Mar 2020 18:31:13 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 2DBFB24000B;
- Tue, 10 Mar 2020 18:30:46 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id CEFDF200008;
+ Tue, 10 Mar 2020 18:30:53 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>, vigneshr@ti.com,
  miquel.raynal@bootlin.com, han.xu@nxp.com, richard@nod.at,
  mripard@kernel.org, wens@csie.org, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com
-Subject: Re: [PATCH 4/7] mtd: rawnand: sunxi: Use dma_request_chan() instead
+Subject: Re: [PATCH 3/7] mtd: rawnand: marvell: Use dma_request_chan() instead
  dma_request_slave_channel()
-Date: Tue, 10 Mar 2020 19:30:46 +0100
-Message-Id: <20200310183046.18314-1-miquel.raynal@bootlin.com>
+Date: Tue, 10 Mar 2020 19:30:52 +0100
+Message-Id: <20200310183052.18377-1-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200227123749.24064-5-peter.ujfalusi@ti.com>
+In-Reply-To: <20200227123749.24064-4-peter.ujfalusi@ti.com>
 References: 
 MIME-Version: 1.0
 X-linux-mtd-patch-notification: thanks
-X-linux-mtd-patch-commit: d33252c1486699b6d1fa8b44b950a03e011fd137
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_113102_020712_EA76048B 
-X-CRM114-Status: UNSURE (   5.80  )
-X-CRM114-Notice: Please train this message.
+X-linux-mtd-patch-commit: 5b7a13c9de313a4125d25a04e93707cb8a5ce9a1
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [217.70.178.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,15 +82,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-02-27 at 12:37:46 UTC, Peter Ujfalusi wrote:
+On Thu, 2020-02-27 at 12:37:45 UTC, Peter Ujfalusi wrote:
 > dma_request_slave_channel() is a wrapper on top of dma_request_chan()
 > eating up the error code.
 > 
-> By using dma_request_chan() directly the driver can support deferred
-> probing against DMA.
+> Use using dma_request_chan() directly to return the real error code.
 > 
 > Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> Acked-by: Maxime Ripard <mripard@kernel.org>
 
 Applied to https://git.kernel.org/pub/scm/linux/kernel/git/mtd/linux.git nand/next, thanks.
 
