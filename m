@@ -2,79 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B201817F42C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:52:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A71A017F431
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:53:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3T86fOY3g027B55ifOawRbPzhFa+AnUfh9I/ZtJh2Yk=; b=Mm9HC1HO2uVHlw
-	xZifQd2CA3GHrcoVQuNK0WZkNVO/tDgNc8IqF0CsY5f8ycvC2w1tdsV09Azz2keDjad9Lmi1+4XEq
-	bV6iUx+KcLeqasGRfXrwI3RaiXue1xmdHN4MANyV0niZFfArjoW2cJy9r5WW89hEY8Y7GLt/xQn5T
-	MgZO19XPdWyn8U4ATPyycKx08e3jwqDmmQg9uyI7KAzHOFi6NuwICj5ekvpyvBBzS29ZBFUNl5RmB
-	ihLKWLGBvLBH5RDnQw05PR4/FLu4EBirzdWvFIGnYMnKbChwg1Y9SySa29SxMg1T97pP183j8TUXz
-	RVkNXl5RGpioPhKmaiMA==;
+	List-Owner; bh=NMp+ul6XDKW/yhK5qEn/2oIWNlI/t3f2X2A73Q4SIPA=; b=uOfxzSStb6Ae4K
+	41WBolis4d3RSQRiJmf6qtv4h2yCmKS5AfXCeIYlo/ZGfORGLe3rD4Gf31jVUHFzeMUtUZSdRqDTJ
+	o5jWoGQwc+QrArqNx6Jxy265d5NY2k/g4ChNB0NnZcdCNbBUOHg+NARs9u59rA93k0HSq+YR2TEyW
+	kT+xUjkSij896Yo089rJL5P+2ofEwUn67mb23zgHOUI+9oG/fdv7bOoIBy6dj8AVayKqpo/zdahw3
+	DVBPduVe6ySmyFpeR+fDT4LfLHrWl+WFwboV3/gDZnZkJZMzRpDjQSfKE8sufhIcZvCWB/kCR1Cyh
+	l1MEnwoGKng90CGUhEoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBbYs-0000Ep-1N; Tue, 10 Mar 2020 09:52:30 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1jBbZr-0000dj-Rn; Tue, 10 Mar 2020 09:53:31 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBbYk-0000EO-K0
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:52:23 +0000
-Received: by mail-ot1-f68.google.com with SMTP id a6so4618832otb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 02:52:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=D2V/UePASyU230tuKRbMCAGcZJI5X8GF+a664jH15CU=;
- b=iYts+wfVSvpZVFI6/exXBaSvAIwY4cXc6kyhn3SNvOrk9rwalf+EcRX/b4puHJAJFa
- VzLKDULZdoG+CDxbzgCKIQHvPO+UoFSCJdCBWtUAos3jnok51M2RtZ4H2nezByBXrCsz
- uzZbYVg6frIkzVK1pOHYC5UIAqOdaks0UTGi2PsAPXSQzAgnWFT31Dh0B2R3my5YL584
- rSTG7VgGkTtiSpHtVGMj5wpqxmTmaZH9bzwk2QcD2GbvmBVBvW9R5mkjY7CvX4fjY2LA
- SBXfEj//pup4gFeylVahJP2/1ZWq9n2DVCa88a2XVmhHN1AdwrGuGLOOBNuiLHMBLTKH
- PmhQ==
-X-Gm-Message-State: ANhLgQ1ukNiW5Zv2mt33Dj815UcLljHwuVnJy9UxtLX8vg5nkn0QWJ9p
- cWpIHJNZP/gSzNN7yMwg/bwTgOrekkRU4uwRs7Y=
-X-Google-Smtp-Source: ADFU+vsj5UWJdrV7QmKDiwgSvDldXSei2pp+JGaKb/Y7ORMGEFfH2B3XQIlZ+H27C0XBvXY1wG4vDKm2MB7xCJwnqls=
-X-Received: by 2002:a9d:b89:: with SMTP id 9mr16432511oth.297.1583833941607;
- Tue, 10 Mar 2020 02:52:21 -0700 (PDT)
+ id 1jBbZg-0000ch-6j; Tue, 10 Mar 2020 09:53:21 +0000
+X-Originating-IP: 90.89.41.158
+Received: from xps13 (lfbn-tou-1-1473-158.w90-89.abo.wanadoo.fr [90.89.41.158])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 9661B1C0012;
+ Tue, 10 Mar 2020 09:53:08 +0000 (UTC)
+Date: Tue, 10 Mar 2020 10:53:08 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: Re: [PATCH] drm/rockchip: rgb: don't count non-existent devices
+ when determining subdrivers
+Message-ID: <20200310105308.1c5fadf9@xps13>
+In-Reply-To: <20200121224828.4070067-1-heiko@sntech.de>
+References: <20200121224828.4070067-1-heiko@sntech.de>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <20200305103228.9686-1-zhang.lyra@gmail.com>
- <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
- <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
- <CAMuHMdV1qQZF-kAwbcxhHQZZ9hs0dG-OTZ2NcB25Jtra6ii5iA@mail.gmail.com>
- <CA+H2tpEzFAbfzMuUGMfW3BqCKv2+kk+cLL5gWpR-zJZFYwWKqw@mail.gmail.com>
-In-Reply-To: <CA+H2tpEzFAbfzMuUGMfW3BqCKv2+kk+cLL5gWpR-zJZFYwWKqw@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 10 Mar 2020 10:52:10 +0100
-Message-ID: <CAMuHMdUKD5Ob_o4E3bH9wx=6r2PU+7U3RQ_GVRj7ZQc-e5Y4TA@mail.gmail.com>
-Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
-To: Orson Zhai <orsonzhai@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_025222_658902_C061FD77 
-X-CRM114-Status: GOOD (  20.98  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200310_025320_380971_427B046F 
+X-CRM114-Status: GOOD (  13.46  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.197 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,77 +63,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Android Kernel Team <kernel-team@android.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Chunyan Zhang <zhang.lyra@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chunyan Zhang <chunyan.zhang@unisoc.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Orson,
-
-On Tue, Mar 10, 2020 at 10:41 AM Orson Zhai <orsonzhai@gmail.com> wrote:
-> On Mon, Mar 9, 2020 at 6:32 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Mon, Mar 9, 2020 at 9:32 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > > On Mon, 9 Mar 2020 at 16:03, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > > > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> > > > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
-> > > > >
-> > > > > The default value of Kconfig for almost all sprd drivers are the same with
-> > > > > ARCH_SPRD, making these drivers built as modules as default would be easier
-> > > > > if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
-> > > > >
-> > > > > Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
-> > > >
-> > > > Can you actually boot a kernel on a Spreadtrum platform when all platform
-> > > > and driver support is modular?
-> > >
-> > > Yes, even if all drivers are modular.
-> >
-> > Cool. No hard dependencies on e.g. regulators that are turned off when
-> > unused?
-> >
-> > > But I hope serial can be builtin, then I can have a console to see
-> > > kernel output before loading modules.
-> >
-> > No dependency on the clock driver?
-> > Oh, I see you have a hack in the serial driver, to assume default
-> > values when the serial port's parent clock is not found.  That may
-> > limit use of the other serial ports, depending on the actual serial
-> > hardware.
->
-> There is an function named "sprd_uart_is_console()" in the driver
-> code. So the hack could be only applied when the
-> port is identified as console. And other ports might return
-> PROBE_DEFER until the clock is ready.
->
-> Could it work out of the limitation?
-
-Yes, that could work.  You also have only a single SPRD_DEFAULT_SOURCE_CLK,
-which makes it simple to handle.
-For other SoCs, there may be a variation of possible values, depending on
-SoC and/or board.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSGVpa28sCgpIZWlrbyBTdHVlYm5lciA8aGVpa29Ac250ZWNoLmRlPiB3cm90ZSBvbiBUdWUs
+IDIxIEphbiAyMDIwIDIzOjQ4OjI4CiswMTAwOgoKPiBGcm9tOiBIZWlrbyBTdHVlYm5lciA8aGVp
+a28uc3R1ZWJuZXJAdGhlb2Jyb21hLXN5c3RlbXMuY29tPgo+IAo+IHJvY2tjaGlwX2RybV9lbmRw
+b2ludF9pc19zdWJkcml2ZXIoKSBtYXkgYWxzbyByZXR1cm4gZXJyb3IgY29kZXMuCj4gRm9yIGV4
+YW1wbGUgaWYgdGhlIHRhcmdldC1ub2RlIGlzIGluIHRoZSBkaXNhYmxlZCBzdGF0ZSwgc28gbm8K
+PiBwbGF0Zm9ybS1kZXZpY2UgaXMgZ2V0dGluZyBjcmVhdGVkIGZvciBpdC4KPiAKPiBJbiB0aGF0
+IGNhc2UgY3VycmVudCBjb2RlIHdvdWxkIGNvdW50IHRoYXQgYXMgZXh0ZXJuYWwgcmdiIGRldmlj
+ZSwKPiB3aGljaCBpbiB0dXJuIHdvdWxkIG1ha2UgcHJvYmluZyB0aGUgcm9ja2NoaXAtZHJtIGRl
+dmljZSBmYWlsLgo+IAo+IFNvIG9ubHkgY291bnQgdGhlIHRhcmdldCBhcyByZ2IgZGV2aWNlIGlm
+IHRoZSBmdW5jdGlvbiBhY3R1YWxseQo+IHJldHVybnMgMC4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBI
+ZWlrbyBTdHVlYm5lciA8aGVpa28uc3R1ZWJuZXJAdGhlb2Jyb21hLXN5c3RlbXMuY29tPgo+IC0t
+LQo+ICBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfcmdiLmMgfCAzICsrLQo+ICAx
+IGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAt
+LWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9yZ2IuYyBiL2RyaXZlcnMv
+Z3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9yZ2IuYwo+IGluZGV4IGFlNzMwMjc1YTM0Zi4uNzlh
+N2U2MDYzM2UwIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hp
+cF9yZ2IuYwo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9yZ2IuYwo+
+IEBAIC05OCw3ICs5OCw4IEBAIHN0cnVjdCByb2NrY2hpcF9yZ2IgKnJvY2tjaGlwX3JnYl9pbml0
+KHN0cnVjdCBkZXZpY2UgKmRldiwKPiAgCQlpZiAob2ZfcHJvcGVydHlfcmVhZF91MzIoZW5kcG9p
+bnQsICJyZWciLCAmZW5kcG9pbnRfaWQpKQo+ICAJCQllbmRwb2ludF9pZCA9IDA7Cj4gIAo+IC0J
+CWlmIChyb2NrY2hpcF9kcm1fZW5kcG9pbnRfaXNfc3ViZHJpdmVyKGVuZHBvaW50KSA+IDApCj4g
+KwkJLyogaWYgc3ViZHJpdmVyICg+IDApIG9yIGVycm9yIGNhc2UgKDwgMCksIGlnbm9yZSBlbnRy
+eSAqLwo+ICsJCWlmIChyb2NrY2hpcF9kcm1fZW5kcG9pbnRfaXNfc3ViZHJpdmVyKGVuZHBvaW50
+KSAhPSAwKQo+ICAJCQljb250aW51ZTsKPiAgCj4gIAkJY2hpbGRfY291bnQrKzsKClJldmlld2Vk
+LWJ5OiBNaXF1ZWwgUmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPgoKVGhhbmtzLApN
+aXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
