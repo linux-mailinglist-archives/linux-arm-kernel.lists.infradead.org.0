@@ -2,96 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C1661801B6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:23:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A60641801BB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:23:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rdkG3oEJSPaNq8CnThmCNfaw+EsncDEzpKxLKk7lBZU=; b=jcxSbIin92jVY2
-	U05E3Va1pmdd5Z48M/HzabznTHCUPgZmxj2qrXMF417KS19EosLAxT/jU88BLwWn341AZstGaHuQG
-	kiNbTF+ib5YUncAIi7yGMRO2Cez4x4w321NDTFRXNst80xZNT3ZsZO9D8nT5RHVpRm8KNpwl6PylF
-	ZYiBYX9Vmb071y8jQlYk+MzJrcUb3R/rNGK9m7kZXUoSxo4DcjegSe3rnsZyR3spsN/3z9jXZ5rpy
-	nrxls6ZSHVl0iYMJBIWdwafCIoCsGMwwNImBOCRE8Tmft5mkJ5AmB6CHvqgIUm/ecPRuw8eJ5+LLs
-	b92hhGPRghsZEkEJjnBQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4pE9+rETsE+O6YSn2HLB1IlS8yWnmvmWjXbFk/MNdz0=; b=epfpWqObOOnkFU
+	jJHqMoh4tK0rvUhWUH/gvIs5L36VBYWorjwrroB2hAbOz1V843H1pKeoS6boN1Hnj2m0JZsZLg2E+
+	2KCwXe/KBFOySyoyguIFVP532erZPUwlAFxUdcq6z0wHRyJRyXGssEU6Dxf771Ssm9jYorswGmr6e
+	WPwLf/i4ro4ucU6eTULHmqUDH2EjI3dWuOoBjJAsRmg4B2ICeYDh3lxAOc+JoBQQU0IXTR+2dpk4F
+	Nzt5n7FCvVpgG+wGxsNeQN3vOEa1qTzWirmN4kOfM4MHVPowAZfzYnhz7fDL5eNAZHmlVLet1uhoO
+	li4fLaDznM+D+ObTVlAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBgiu-0004cq-SY; Tue, 10 Mar 2020 15:23:12 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jBgjQ-00056u-37; Tue, 10 Mar 2020 15:23:44 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBggN-0002O6-2x
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:20:37 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b72so3058379pfb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 08:20:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=6MhFgIdze8CFf2DOrBawMYLjN6c8ytgEy4KTgM5UsKI=;
- b=m/zNCZ70DcHzitOz0JSTs00aicOWLVtUPobgMC2juOgSuvBdRUs2ULP0Ups4xAIQ4+
- GkiAoRRV7UEuj9/HSK3R8iaYqmCTarzCPhjS+DlYPrfcEvSBosUBkj+izKK2cQjS8BjW
- GFq1ZXcm0Cgr3caOvqgwfypDmqe3jbdjn018IQLTmBYACIgMYqij/5lRoPNNCUMhGdhX
- gTfK86J+0GkyCRD62BYej6x5QSHQ4y6zPt7H+6m6gOtGalne8wVoFc0jlhTdYfolU+Qu
- Ng3TUPVBRljKkoRg3ffG8G99Z61/jah0DJbo9NMGFbjDtP1dnbj6HzePS3abQQ81/6bp
- UdNw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=6MhFgIdze8CFf2DOrBawMYLjN6c8ytgEy4KTgM5UsKI=;
- b=U05ezQOPcZ28naOPORt4k1IhVe/+MiRFlKqx4xKNxib/GNyorBHfwEdpm/F7BCkd9O
- YhRT76Dc5bjFrFsr1HWpBA+QVNx494OCuUaMrf83XZ2OnIpADv3jFo1NeK0APFJKHJ52
- pN2A9Gpshano8Sppm9Db+Y/6Eo+6ry8uxNWQTM2guY1KxEnfu272aW+Wq6JiMteeYf+M
- drwY5ty1eZ/Rz1DPZn/xsWoE8ZIyr7TWuimiiVYQScbkNOqHu2Xjq4g0X9fktQrrILpd
- UmtN+7WR6cBAsZMBzfPxh9Bi+cpKxQaofIdjgHLxnJzEKHxaACLdCsH8SNxcKSTFFXPj
- fdZg==
-X-Gm-Message-State: ANhLgQ3pCiy42/kDW0Cfise6ZHG6JYzXDuyHi7KcRuTqzFeqWfYqQS6K
- eyrCtDLZj66evlYl1/cK77bSTg==
-X-Google-Smtp-Source: ADFU+vuDMeVSrBmcnm1f3SeMtYbGOm0trJg8lN9EATMG0oGxhlTM5PSR5uh75bg8T3fDm2w5zn88ZA==
-X-Received: by 2002:a62:ce48:: with SMTP id y69mr10163479pfg.178.1583853634107; 
- Tue, 10 Mar 2020 08:20:34 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id dw19sm2662207pjb.16.2020.03.10.08.20.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 08:20:33 -0700 (PDT)
-Date: Tue, 10 Mar 2020 09:20:31 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH v5 5/8] remoteproc: Rename rproc_elf_sanity_check for elf32
-Message-ID: <20200310152031.GA25781@xps15>
-References: <20200210162209.23149-1-cleger@kalray.eu>
- <20200302093902.27849-1-cleger@kalray.eu>
- <20200302093902.27849-6-cleger@kalray.eu>
- <20200302231342.GE262924@yoga>
- <482678048.7666348.1583222551942.JavaMail.zimbra@kalray.eu>
- <20200310000005.GF14744@builder>
+ id 1jBghY-0003dp-JZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:21:53 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Mar 2020 08:21:45 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,537,1574150400"; d="scan'208";a="388963397"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga004.jf.intel.com with ESMTP; 10 Mar 2020 08:21:43 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jBghS-000Bs0-Jx; Tue, 10 Mar 2020 23:21:42 +0800
+Date: Tue, 10 Mar 2020 23:21:07 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+Subject: [keystone:for_5.7/keystone-dts] BUILD SUCCESS
+ 7856488bd83b0182548a84d05c07326321ae6138
+Message-ID: <5e67b063.tYKKhV8s3d5sPMhl%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200310000005.GF14744@builder>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_082035_178608_36341F5B 
-X-CRM114-Status: GOOD (  26.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_082148_743084_7FE2D43F 
+X-CRM114-Status: UNSURE (   7.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -4.0 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,237 +68,256 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Fabio Estevam <festevam@gmail.com>,
- Loic PALLARDY <loic.pallardy@st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>, Jonathan Corbet <corbet@lwn.net>,
- Cl?ment Leger <cleger@kalrayinc.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-doc <linux-doc@vger.kernel.org>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Patrice Chotard <patrice.chotard@st.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Andy Gross <agross@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, s-anna <s-anna@ti.com>,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Mar 09, 2020 at 05:00:05PM -0700, Bjorn Andersson wrote:
-> On Tue 03 Mar 00:02 PST 2020, Cl?ment Leger wrote:
-> =
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git  for_5.7/keystone-dts
+branch HEAD: 7856488bd83b0182548a84d05c07326321ae6138  ARM: dts: keystone-k2g-evm: add HDMI video support
 
-> > Hi Bjorn, =
+elapsed time: 4166m
 
-> > =
+configs tested: 229
+configs skipped: 153
 
-> > ----- On 3 Mar, 2020, at 00:13, Bjorn Andersson bjorn.andersson@linaro.=
-org wrote:
-> > =
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-> > > On Mon 02 Mar 01:38 PST 2020, Clement Leger wrote:
-> > > =
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm                           efm32_defconfig
+arm                         at91_dt_defconfig
+arm                        shmobile_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                           sunxi_defconfig
+arm                        multi_v7_defconfig
+arm64                               defconfig
+sparc                            allyesconfig
+openrisc                 simple_smp_defconfig
+sh                            titan_defconfig
+ia64                              allnoconfig
+powerpc                       ppc64_defconfig
+ia64                             allmodconfig
+ia64                             allyesconfig
+s390                                defconfig
+mips                              allnoconfig
+mips                             allyesconfig
+openrisc                    or1ksim_defconfig
+riscv                               defconfig
+s390                              allnoconfig
+um                             i386_defconfig
+xtensa                       common_defconfig
+ia64                                defconfig
+h8300                     edosk2674_defconfig
+i386                              allnoconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+xtensa                          iss_defconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+x86_64               randconfig-a001-20200308
+x86_64               randconfig-a002-20200308
+x86_64               randconfig-a003-20200308
+i386                 randconfig-a001-20200308
+i386                 randconfig-a002-20200308
+i386                 randconfig-a003-20200308
+x86_64               randconfig-a001-20200310
+x86_64               randconfig-a002-20200310
+x86_64               randconfig-a003-20200310
+i386                 randconfig-a001-20200310
+i386                 randconfig-a002-20200310
+i386                 randconfig-a003-20200310
+alpha                randconfig-a001-20200309
+m68k                 randconfig-a001-20200309
+mips                 randconfig-a001-20200309
+nds32                randconfig-a001-20200309
+parisc               randconfig-a001-20200309
+riscv                randconfig-a001-20200309
+alpha                randconfig-a001-20200308
+m68k                 randconfig-a001-20200308
+mips                 randconfig-a001-20200308
+nds32                randconfig-a001-20200308
+parisc               randconfig-a001-20200308
+c6x                  randconfig-a001-20200310
+h8300                randconfig-a001-20200310
+microblaze           randconfig-a001-20200310
+nios2                randconfig-a001-20200310
+sparc64              randconfig-a001-20200310
+csky                 randconfig-a001-20200309
+openrisc             randconfig-a001-20200309
+s390                 randconfig-a001-20200309
+sh                   randconfig-a001-20200309
+xtensa               randconfig-a001-20200309
+csky                 randconfig-a001-20200310
+openrisc             randconfig-a001-20200310
+s390                 randconfig-a001-20200310
+sh                   randconfig-a001-20200310
+xtensa               randconfig-a001-20200310
+csky                 randconfig-a001-20200308
+openrisc             randconfig-a001-20200308
+s390                 randconfig-a001-20200308
+sh                   randconfig-a001-20200308
+xtensa               randconfig-a001-20200308
+x86_64               randconfig-b001-20200308
+x86_64               randconfig-b002-20200308
+x86_64               randconfig-b003-20200308
+i386                 randconfig-b001-20200308
+i386                 randconfig-b002-20200308
+i386                 randconfig-b003-20200308
+x86_64               randconfig-b001-20200310
+x86_64               randconfig-b002-20200310
+x86_64               randconfig-b003-20200310
+i386                 randconfig-b001-20200310
+i386                 randconfig-b002-20200310
+i386                 randconfig-b003-20200310
+x86_64               randconfig-b001-20200309
+x86_64               randconfig-b002-20200309
+x86_64               randconfig-b003-20200309
+i386                 randconfig-b001-20200309
+i386                 randconfig-b002-20200309
+i386                 randconfig-b003-20200309
+x86_64               randconfig-c001-20200310
+x86_64               randconfig-c002-20200310
+x86_64               randconfig-c003-20200310
+i386                 randconfig-c001-20200310
+i386                 randconfig-c002-20200310
+i386                 randconfig-c003-20200310
+x86_64               randconfig-c001-20200308
+x86_64               randconfig-c002-20200308
+x86_64               randconfig-c003-20200308
+i386                 randconfig-c001-20200308
+i386                 randconfig-c002-20200308
+i386                 randconfig-c003-20200308
+x86_64               randconfig-c001-20200309
+x86_64               randconfig-c002-20200309
+x86_64               randconfig-c003-20200309
+i386                 randconfig-c001-20200309
+i386                 randconfig-c002-20200309
+i386                 randconfig-c003-20200309
+x86_64               randconfig-d001-20200310
+x86_64               randconfig-d002-20200310
+x86_64               randconfig-d003-20200310
+i386                 randconfig-d001-20200310
+i386                 randconfig-d002-20200310
+i386                 randconfig-d003-20200310
+x86_64               randconfig-d001-20200308
+x86_64               randconfig-d002-20200308
+x86_64               randconfig-d003-20200308
+i386                 randconfig-d001-20200308
+i386                 randconfig-d002-20200308
+i386                 randconfig-d003-20200308
+x86_64               randconfig-d001-20200309
+x86_64               randconfig-d002-20200309
+x86_64               randconfig-d003-20200309
+i386                 randconfig-d001-20200309
+i386                 randconfig-d002-20200309
+i386                 randconfig-d003-20200309
+x86_64               randconfig-e001-20200308
+x86_64               randconfig-e002-20200308
+x86_64               randconfig-e003-20200308
+i386                 randconfig-e001-20200308
+i386                 randconfig-e002-20200308
+i386                 randconfig-e003-20200308
+x86_64               randconfig-e001-20200310
+x86_64               randconfig-e002-20200310
+x86_64               randconfig-e003-20200310
+i386                 randconfig-e001-20200310
+i386                 randconfig-e002-20200310
+i386                 randconfig-e003-20200310
+x86_64               randconfig-f001-20200310
+x86_64               randconfig-f002-20200310
+x86_64               randconfig-f003-20200310
+i386                 randconfig-f001-20200310
+i386                 randconfig-f002-20200310
+i386                 randconfig-f003-20200310
+x86_64               randconfig-f001-20200308
+x86_64               randconfig-f002-20200308
+x86_64               randconfig-f003-20200308
+i386                 randconfig-f001-20200308
+i386                 randconfig-f002-20200308
+i386                 randconfig-f003-20200308
+x86_64               randconfig-f001-20200309
+x86_64               randconfig-f002-20200309
+x86_64               randconfig-f003-20200309
+i386                 randconfig-f001-20200309
+i386                 randconfig-f002-20200309
+i386                 randconfig-f003-20200309
+x86_64               randconfig-g001-20200310
+x86_64               randconfig-g002-20200310
+x86_64               randconfig-g003-20200310
+i386                 randconfig-g001-20200310
+i386                 randconfig-g002-20200310
+i386                 randconfig-g003-20200310
+x86_64               randconfig-g001-20200308
+x86_64               randconfig-g002-20200308
+x86_64               randconfig-g003-20200308
+i386                 randconfig-g001-20200308
+i386                 randconfig-g002-20200308
+i386                 randconfig-g003-20200308
+x86_64               randconfig-h001-20200308
+x86_64               randconfig-h002-20200308
+x86_64               randconfig-h003-20200308
+i386                 randconfig-h001-20200308
+i386                 randconfig-h002-20200308
+i386                 randconfig-h003-20200308
+x86_64               randconfig-h001-20200310
+x86_64               randconfig-h002-20200310
+x86_64               randconfig-h003-20200310
+i386                 randconfig-h001-20200310
+i386                 randconfig-h002-20200310
+i386                 randconfig-h003-20200310
+x86_64               randconfig-h001-20200309
+x86_64               randconfig-h002-20200309
+x86_64               randconfig-h003-20200309
+i386                 randconfig-h001-20200309
+i386                 randconfig-h002-20200309
+i386                 randconfig-h003-20200309
+arc                  randconfig-a001-20200308
+arm                  randconfig-a001-20200308
+arm64                randconfig-a001-20200308
+ia64                 randconfig-a001-20200308
+powerpc              randconfig-a001-20200308
+sparc                randconfig-a001-20200308
+s390                             alldefconfig
+s390                             allmodconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                       zfcpdump_defconfig
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+i386                             allyesconfig
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+i386                             alldefconfig
+um                                  defconfig
+um                           x86_64_defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
 
-> > >> Since this function will be modified to support both elf32 and elf64,
-> > >> rename the existing one to elf32 (which is the only supported format
-> > >> at the moment). This will allow not to introduce possible side effect
-> > >> when adding elf64 support (ie: all backends will still support only
-> > >> elf32 if not requested explicitely using rproc_elf_sanity_check).
-> > >> =
-
-> > > =
-
-> > > Is there a reason for preventing ELF64 binaries be loaded?
-> > =
-
-> > I decided to go this way to let driver maintainer decide if they want
-> > to support elf64 to avoid problems with 64bits addresses/sizes which do
-> > not fit in their native type (size_t for instance). This is probably
-> > not going to happen and there are additionnal checks before calling
-> > rproc_da_to_va. And addresses should be filtered by rproc_da_to_va.
-> > So, actually it seems there is no reason to forbid supporting elf32/64
-> > for all drivers.
-> > =
-
-> =
-
-> I was hoping to hear some additional feedback on this from others.
-
-I didn't follow up on this one because I agreed with your assesment and did=
-n't
-think it was needed.
-
-Simply put I would rather see rproc_elf_sanity_check() gain support for elf=
-64
-and let the platform code decide what to do with format they don't support
-rather than spinning a new function.
-
-> =
-
-> I've merge the patch as is, but think it would be nice to clean this up
-> and just have the driver ignore if fed a 32 or 64-elf.
-
-It would be really nice to see this cleaned up in time for the coming merge
-window...
-
-Thanks
-Mathieu
-
-> =
-
-> Regards,
-> Bjorn
-> =
-
-> > Regards,
-> > =
-
-> > Cl=E9ment
-> > =
-
-> > > =
-
-> > > Regards,
-> > > Bjorn
-> > > =
-
-> > >> Signed-off-by: Clement Leger <cleger@kalray.eu>
-> > >> ---
-> > >>  drivers/remoteproc/remoteproc_core.c       | 2 +-
-> > >>  drivers/remoteproc/remoteproc_elf_loader.c | 6 +++---
-> > >>  drivers/remoteproc/remoteproc_internal.h   | 2 +-
-> > >>  drivers/remoteproc/st_remoteproc.c         | 2 +-
-> > >>  drivers/remoteproc/st_slim_rproc.c         | 2 +-
-> > >>  drivers/remoteproc/stm32_rproc.c           | 2 +-
-> > >>  6 files changed, 8 insertions(+), 8 deletions(-)
-> > >> =
-
-> > >> diff --git a/drivers/remoteproc/remoteproc_core.c
-> > >> b/drivers/remoteproc/remoteproc_core.c
-> > >> index 4bfaf4a3c4a3..99f0b796fbc7 100644
-> > >> --- a/drivers/remoteproc/remoteproc_core.c
-> > >> +++ b/drivers/remoteproc/remoteproc_core.c
-> > >> @@ -2055,7 +2055,7 @@ struct rproc *rproc_alloc(struct device *dev, =
-const char
-> > >> *name,
-> > >>  		rproc->ops->load =3D rproc_elf_load_segments;
-> > >>  		rproc->ops->parse_fw =3D rproc_elf_load_rsc_table;
-> > >>  		rproc->ops->find_loaded_rsc_table =3D rproc_elf_find_loaded_rsc_t=
-able;
-> > >> -		rproc->ops->sanity_check =3D rproc_elf_sanity_check;
-> > >> +		rproc->ops->sanity_check =3D rproc_elf32_sanity_check;
-> > >>  		rproc->ops->get_boot_addr =3D rproc_elf_get_boot_addr;
-> > >>  	}
-> > >>  =
-
-> > >> diff --git a/drivers/remoteproc/remoteproc_elf_loader.c
-> > >> b/drivers/remoteproc/remoteproc_elf_loader.c
-> > >> index c2a9783cfb9a..5a67745f2638 100644
-> > >> --- a/drivers/remoteproc/remoteproc_elf_loader.c
-> > >> +++ b/drivers/remoteproc/remoteproc_elf_loader.c
-> > >> @@ -25,13 +25,13 @@
-> > >>  #include "remoteproc_internal.h"
-> > >>  =
-
-> > >>  /**
-> > >> - * rproc_elf_sanity_check() - Sanity Check ELF firmware image
-> > >> + * rproc_elf_sanity_check() - Sanity Check ELF32 firmware image
-> > >>   * @rproc: the remote processor handle
-> > >>   * @fw: the ELF firmware image
-> > >>   *
-> > >>   * Make sure this fw image is sane.
-> > >>   */
-> > >> -int rproc_elf_sanity_check(struct rproc *rproc, const struct firmwa=
-re *fw)
-> > >> +int rproc_elf32_sanity_check(struct rproc *rproc, const struct firm=
-ware *fw)
-> > >>  {
-> > >>  	const char *name =3D rproc->firmware;
-> > >>  	struct device *dev =3D &rproc->dev;
-> > >> @@ -89,7 +89,7 @@ int rproc_elf_sanity_check(struct rproc *rproc, co=
-nst struct
-> > >> firmware *fw)
-> > >>  =
-
-> > >>  	return 0;
-> > >>  }
-> > >> -EXPORT_SYMBOL(rproc_elf_sanity_check);
-> > >> +EXPORT_SYMBOL(rproc_elf32_sanity_check);
-> > >>  =
-
-> > >>  /**
-> > >>   * rproc_elf_get_boot_addr() - Get rproc's boot address.
-> > >> diff --git a/drivers/remoteproc/remoteproc_internal.h
-> > >> b/drivers/remoteproc/remoteproc_internal.h
-> > >> index 0deae5f237b8..28639c588d58 100644
-> > >> --- a/drivers/remoteproc/remoteproc_internal.h
-> > >> +++ b/drivers/remoteproc/remoteproc_internal.h
-> > >> @@ -54,7 +54,7 @@ void *rproc_da_to_va(struct rproc *rproc, u64 da, =
-size_t len);
-> > >>  phys_addr_t rproc_va_to_pa(void *cpu_addr);
-> > >>  int rproc_trigger_recovery(struct rproc *rproc);
-> > >>  =
-
-> > >> -int rproc_elf_sanity_check(struct rproc *rproc, const struct firmwa=
-re *fw);
-> > >> +int rproc_elf32_sanity_check(struct rproc *rproc, const struct firm=
-ware *fw);
-> > >>  u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmw=
-are *fw);
-> > >>  int rproc_elf_load_segments(struct rproc *rproc, const struct firmw=
-are *fw);
-> > >>  int rproc_elf_load_rsc_table(struct rproc *rproc, const struct firm=
-ware *fw);
-> > >> diff --git a/drivers/remoteproc/st_remoteproc.c
-> > >> b/drivers/remoteproc/st_remoteproc.c
-> > >> index a3268d95a50e..a6cbfa452764 100644
-> > >> --- a/drivers/remoteproc/st_remoteproc.c
-> > >> +++ b/drivers/remoteproc/st_remoteproc.c
-> > >> @@ -233,7 +233,7 @@ static const struct rproc_ops st_rproc_ops =3D {
-> > >>  	.parse_fw		=3D st_rproc_parse_fw,
-> > >>  	.load			=3D rproc_elf_load_segments,
-> > >>  	.find_loaded_rsc_table	=3D rproc_elf_find_loaded_rsc_table,
-> > >> -	.sanity_check		=3D rproc_elf_sanity_check,
-> > >> +	.sanity_check		=3D rproc_elf32_sanity_check,
-> > >>  	.get_boot_addr		=3D rproc_elf_get_boot_addr,
-> > >>  };
-> > >>  =
-
-> > >> diff --git a/drivers/remoteproc/st_slim_rproc.c
-> > >> b/drivers/remoteproc/st_slim_rproc.c
-> > >> index 09bcb4d8b9e0..3cca8b65a8db 100644
-> > >> --- a/drivers/remoteproc/st_slim_rproc.c
-> > >> +++ b/drivers/remoteproc/st_slim_rproc.c
-> > >> @@ -203,7 +203,7 @@ static const struct rproc_ops slim_rproc_ops =3D=
- {
-> > >>  	.da_to_va       =3D slim_rproc_da_to_va,
-> > >>  	.get_boot_addr	=3D rproc_elf_get_boot_addr,
-> > >>  	.load		=3D rproc_elf_load_segments,
-> > >> -	.sanity_check	=3D rproc_elf_sanity_check,
-> > >> +	.sanity_check	=3D rproc_elf32_sanity_check,
-> > >>  };
-> > >>  =
-
-> > >>  /**
-> > >> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/s=
-tm32_rproc.c
-> > >> index a18f88044111..9a8b5f5e2572 100644
-> > >> --- a/drivers/remoteproc/stm32_rproc.c
-> > >> +++ b/drivers/remoteproc/stm32_rproc.c
-> > >> @@ -505,7 +505,7 @@ static struct rproc_ops st_rproc_ops =3D {
-> > >>  	.load		=3D rproc_elf_load_segments,
-> > >>  	.parse_fw	=3D stm32_rproc_parse_fw,
-> > >>  	.find_loaded_rsc_table =3D rproc_elf_find_loaded_rsc_table,
-> > >> -	.sanity_check	=3D rproc_elf_sanity_check,
-> > >> +	.sanity_check	=3D rproc_elf32_sanity_check,
-> > >>  	.get_boot_addr	=3D rproc_elf_get_boot_addr,
-> > >>  };
-> > >>  =
-
-> > >> --
-> > >> 2.15.0.276.g89ea799
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
