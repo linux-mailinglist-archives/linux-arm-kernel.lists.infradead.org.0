@@ -2,87 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCFC9180791
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 20:01:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 003851807B1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 20:10:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iIQD665Sq+J5kMJTsw6NJjfi0vuYf/cGNUzrZTCUYwg=; b=bBYNkzre+Gwb54
-	cLl9o2bPDDDQMTQo+BIhODjQIB1Rm4EiDmRBsVwlvtcduockzrKmmvkuQd8OIG6g+lVLqhjV+bEW0
-	SsYq9LXCe2OOi2jtXOFFNa85bjIIkSyphIIyKK16nDRMKAhTfy33M8w84yR5uaybt4bfpFZBKpKGW
-	PrN9LKNyd/8jfJdgPKsmB3xEoyPHf1ANdfoEIgRYljpKwY1suPUSrdy0i/dAfoLyebknqRGmw9ffq
-	V2jeemU0xl4ml1Oa4wmQ2joVcW6XxuWuE4AoXs48dVFEYj5q/VoNkRyeFVFreB0gKq0imBzEdZ4Wf
-	xk85ATBcM0VbmlunyP9A==;
+	List-Owner; bh=08VIQRoWxF/b4YF0RJR2GF6r+sWc0YZ1GmkeNplHFRM=; b=ANAETzILK8J5nf
+	0MqoWgi0JEExmzWKHFDMryRksHKZIwwXT5RbwPTqio6VAd58fEzu5yX0voK56/BPYQSVtQGIeOmZa
+	On9QmDfIVRpJPSw+mmNBCCfvYU6k6Ic6VpKifMw6TXQHuzR8y7KT99/pGm/upjd6ryWViyD72sI/t
+	YeHV0UJWXvvTJvuhCiQ8tyUVrdFMGeQ7Z3lwVSTsKEYZVERRXmhEkvW0ItOAQqaviULhUxn1fH9la
+	pON8uco0hoiSc1roObtl1MT7XoWkXa9bR0zUx3K/jIHv5VzSxPvDzHhxDpHFCIxSRIZyztV28SVuw
+	eQSf4eaiasjeVyG0j/4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBk7o-0006KG-0k; Tue, 10 Mar 2020 19:01:08 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1jBkH2-0001Ai-KX; Tue, 10 Mar 2020 19:10:40 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBk7d-0006II-5R
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 19:00:58 +0000
-Received: by mail-ot1-f66.google.com with SMTP id b3so14286610otp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 12:00:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=xrW22r5IgXxjJkco6J5hYgaefJp0zEugXeX1yVtVQQw=;
- b=e12gMrjvl1Tpwe2C3aqF9296WWG9T+ZAZsMJYnNitDf3CdK3Q8Z55ZBDe1EbgHqKnl
- vTpMOxHYUmWu8R9iMCISZkTP3RdlqAS3x4w+Q/L09pEkJHfoVPxfmjjEk32nGa3/C5Fe
- YvpS/H0UuTyiKSnR7BxxQxHzw3Cf42Uw/cwi72MdWF1ZrzIoYvWNi2EM0upZDb0rdUC9
- EUfSY3HGa7tFb35CoaAsC2UzlVue63Nkh6+nsJ2fVyjcUpNnOM6wmCsbm14wpjbkyp4v
- HivTysoMJy6Y3zFspJuGHyUl4gEefbvDJH5w9KQ0v/OZNQ4WBfmgk7tBDAb2g3rPSYl1
- KUQQ==
-X-Gm-Message-State: ANhLgQ0vPcuumi6tsJc8gwbJlosKWiyjxa6yS7ZiYzjxQjbpPpaDMANJ
- SOtkm0GwLmqcrDgaVDywEg==
-X-Google-Smtp-Source: ADFU+vsTVy/bN+/Yx0XnJKlcuYj2yXiLOzpK+Ll/Tq1shrnyv0KxkX3AgutsfYoYbIbd8kIetQiYeA==
-X-Received: by 2002:a9d:4c10:: with SMTP id l16mr6789936otf.109.1583866855618; 
- Tue, 10 Mar 2020 12:00:55 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 187sm3993505oii.35.2020.03.10.12.00.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 12:00:55 -0700 (PDT)
-Received: (nullmailer pid 2887 invoked by uid 1000);
- Tue, 10 Mar 2020 19:00:54 -0000
-Date: Tue, 10 Mar 2020 14:00:54 -0500
-From: Rob Herring <robh@kernel.org>
-To: Martin Devera <devik@eaxlabs.cz>
-Subject: Re: [PATCH 2/2] dt-bindings: serial: Add st,swap to stm32-usart
-Message-ID: <20200310190054.GA2826@bogus>
-References: <20200229160507.31309-1-devik@eaxlabs.cz>
- <20200229160507.31309-2-devik@eaxlabs.cz>
+ id 1jBkGt-00019q-EZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 19:10:32 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 10 Mar 2020 12:10:29 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,538,1574150400"; d="scan'208";a="353691156"
+Received: from stinkbox.fi.intel.com (HELO stinkbox) ([10.237.72.174])
+ by fmsmga001.fm.intel.com with SMTP; 10 Mar 2020 12:10:25 -0700
+Received: by stinkbox (sSMTP sendmail emulation);
+ Tue, 10 Mar 2020 21:10:24 +0200
+Date: Tue, 10 Mar 2020 21:10:24 +0200
+From: Ville =?iso-8859-1?Q?Syrj=E4l=E4?= <ville.syrjala@linux.intel.com>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH 1/2] drm/panel: Add Starry KR070PE2T
+Message-ID: <20200310191024.GQ13686@intel.com>
+References: <20200310102725.14591-1-dev@pascalroeleven.nl>
+ <20200310102725.14591-2-dev@pascalroeleven.nl>
+ <20200310185422.GA22095@ravnborg.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200229160507.31309-2-devik@eaxlabs.cz>
+In-Reply-To: <20200310185422.GA22095@ravnborg.org>
+X-Patchwork-Hint: comment
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_120057_209433_B7C17F46 
-X-CRM114-Status: GOOD (  10.20  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200310_121031_542668_913DD919 
+X-CRM114-Status: GOOD (  25.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,29 +71,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Martin Devera <devik@eaxlabs.cz>, open list <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- "moderated list:ARM/STM32 ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ Pascal Roeleven <dev@pascalroeleven.nl>, Rob Herring <robh+dt@kernel.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 29 Feb 2020 17:05:07 +0100, Martin Devera wrote:
-> Add new st,swap property to allow for RX & TX pin swapping.
-> 
-> Signed-off-by: Martin Devera <devik@eaxlabs.cz>
-> ---
->  Documentation/devicetree/bindings/serial/st,stm32-usart.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+On Tue, Mar 10, 2020 at 07:54:23PM +0100, Sam Ravnborg wrote:
+> Hi Pascal.
+> =
 
-Acked-by: Rob Herring <robh@kernel.org>
+> Thanks for submitting.
+> =
+
+> On Tue, Mar 10, 2020 at 11:27:23AM +0100, Pascal Roeleven wrote:
+> > The KR070PE2T is a 7" panel with a resolution of 800x480.
+> > =
+
+> > KR070PE2T is the marking present on the ribbon cable. As this panel is
+> > probably available under different brands, this marking will catch
+> > most devices.
+> > =
+
+> > Signed-off-by: Pascal Roeleven <dev@pascalroeleven.nl>
+> =
+
+> A few things to improve.
+> =
+
+> The binding should be a separate patch.
+> subject - shall start with dt-bindings:
+> Shall be sent to deveicetree mailing list.
+> =
+
+> For panel we no longer accept .txt bindings.
+> But the good news is that since the panel is simple,
+> you only need to list your compatible in the file
+> bindings/display/panel/panel-simple.yaml
+> - must be en alphabetical order
+> - vendor prefix must be present in vendor-prefixes
+> =
+
+> =
+
+> =
+
+> > ---
+> >  .../display/panel/starry,kr070pe2t.txt        |  7 +++++
+> >  drivers/gpu/drm/panel/panel-simple.c          | 26 +++++++++++++++++++
+> >  2 files changed, 33 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/display/panel/sta=
+rry,kr070pe2t.txt
+> > =
+
+> > diff --git a/Documentation/devicetree/bindings/display/panel/starry,kr0=
+70pe2t.txt b/Documentation/devicetree/bindings/display/panel/starry,kr070pe=
+2t.txt
+> > new file mode 100644
+> > index 000000000..699ad5eb2
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/display/panel/starry,kr070pe2t.=
+txt
+> > @@ -0,0 +1,7 @@
+> > +Starry 7" (800x480 pixels) LCD panel
+> > +
+> > +Required properties:
+> > +- compatible: should be "starry,kr070pe2t"
+> > +
+> > +This binding is compatible with the simple-panel binding, which is spe=
+cified
+> > +in simple-panel.txt in this directory.
+> > diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/pan=
+el/panel-simple.c
+> > index e14c14ac6..027a2612b 100644
+> > --- a/drivers/gpu/drm/panel/panel-simple.c
+> > +++ b/drivers/gpu/drm/panel/panel-simple.c
+> > @@ -2842,6 +2842,29 @@ static const struct panel_desc shelly_sca07010_b=
+fn_lnn =3D {
+> >  	.bus_format =3D MEDIA_BUS_FMT_RGB666_1X18,
+> >  };
+> >  =
+
+> > +static const struct drm_display_mode starry_kr070pe2t_mode =3D {
+> > +	.clock =3D 33000,
+> > +	.hdisplay =3D 800,
+> > +	.hsync_start =3D 800 + 209,
+> > +	.hsync_end =3D 800 + 209 + 1,
+> > +	.htotal =3D 800 + 209 + 1 + 45,
+> > +	.vdisplay =3D 480,
+> > +	.vsync_start =3D 480 + 22,
+> > +	.vsync_end =3D 480 + 22 + 1,
+> > +	.vtotal =3D 480 + 22 + 1 + 22,
+> > +	.vrefresh =3D 60,
+> > +};
+> =
+
+> Please adjust so:
+> vrefresh * htotal * vtotal =3D=3D clock.
+> I cannot say what needs to be adjusted.
+> But we are moving away from specifying vrefresh and want the
+> data to be OK.
+
+This one actually looks OK to me. Unless I typoed the numbers
+the timings give us a vrefresh of 59.58 which gets rounded to 60.
+So no change once .vrefresh disappears AFAICS.
+
+-- =
+
+Ville Syrj=E4l=E4
+Intel
 
 _______________________________________________
 linux-arm-kernel mailing list
