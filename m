@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A9C518070C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:39:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C509A18070E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:40:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KRNwoHVFdVzcZwZG7wlkPvegwifOQSpF4MQYRvGT9IY=; b=J1S/bc/Qr0BfNF
-	SrUztPqwMapC6EQ6R/Pfz7Vz9RqX7jACG3A3c93zPwXRpDcUoJB1PV+dbu8VhQ0kqThAs/OtgbWt8
-	b7xR4QNUjuMd5CQefiSGIJX4U8GC11whqlAMkvG+t8YLsEcO92hpQiOjAiMFl3zW1M7JhoEDOPp80
-	L7lOWVKvWMnEgLAeH/FPf6kD9mr+g/mOYeE8TDGdz0AU+bGIhksS34eB+AsFkJofo8V6oGdSSVWsq
-	Rw4a8h6j9h8XKKPBZq2Wl2J4US1DaIA0AKXQr00cNpyCVRnsH+q4MboUqAx0FAbjdGmS0m2kCvZfC
-	csO90UnWYW+Q3brmGAZw==;
+	List-Owner; bh=QAUOunUitrJ20JUCKGBsezSuTfTHnGuQeGlmis2KFG8=; b=uy68VaK4Zz6iGR
+	oKxlB6oXZoSqZ+U2k3TliIN9TRvpasi77h9w7vAkacYoSWByot1TeKZGLCf6gUWKjuAsdUlTyXN4S
+	YBcmdfWp+g4YpxB4Hvq1VMddmUfZpKhLk046g+wSgTH4qUlX/dNFGLhMQ1vYjVXvnNrIx++QJQwQo
+	80l7R4qPdtruDd0Wy7xAdaiug5+6lLfM+BASk4D1zN8l/Wx4vW7jIbvKA2kW1p87i9bwkZ5APHQmc
+	8ckMkRAlIARsecV7c455ISLGESsfst0KjFQ95YF7G3ncQXQtJOyMNnEHv6WxfS4jZj0jF8q/wp6Rk
+	Vp+/VgiQEhuWewmzFBqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjnB-0004sL-3v; Tue, 10 Mar 2020 18:39:49 +0000
+	id 1jBjno-00066d-Sk; Tue, 10 Mar 2020 18:40:28 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjg3-0005EA-1Y; Tue, 10 Mar 2020 18:32:30 +0000
+ id 1jBjg8-0005JB-OM; Tue, 10 Mar 2020 18:32:34 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id C4E46240008;
- Tue, 10 Mar 2020 18:32:23 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id A61A524000A;
+ Tue, 10 Mar 2020 18:32:29 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Janusz Krzysztofik <jmkrzyszt@gmail.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>
-Subject: Re: [RFC PATCH 12/14] mtd: rawnand: ams-delta: Drop useless local
- variable
-Date: Tue, 10 Mar 2020 19:32:23 +0100
-Message-Id: <20200310183223.19149-1-miquel.raynal@bootlin.com>
+Subject: Re: [RFC PATCH 11/14] mtd: rawnand: ams-delta: Support custom driver
+ initialisation
+Date: Tue, 10 Mar 2020 19:32:28 +0100
+Message-Id: <20200310183228.19211-1-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200212003929.6682-13-jmkrzyszt@gmail.com>
+In-Reply-To: <20200212003929.6682-12-jmkrzyszt@gmail.com>
 References: 
 MIME-Version: 1.0
 X-linux-mtd-patch-notification: thanks
-X-linux-mtd-patch-commit: 3a4293d91929c224f7358816b96546e49934036b
+X-linux-mtd-patch-commit: 481d9f044e3b129fb1739d5dbf67fbb4ccf5dd37
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_113227_236118_7E2042CF 
-X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-CacheID: sfid-20200310_113233_028473_251C142F 
+X-CRM114-Status: UNSURE (   5.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -72,11 +72,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-02-12 at 00:39:27 UTC, Janusz Krzysztofik wrote:
-> For consistency with adjacent code patterns used in the driver probe
-> function, store data GPIO array pointer directly in a respective field
-> of the driver private structure instead of storing it intermediately
-> in a local variable for error checking.
+On Wed, 2020-02-12 at 00:39:26 UTC, Janusz Krzysztofik wrote:
+> In preparation for extending the driver with custom I/O support, try to
+> obtain device specific initialisation routine from a matching device
+> table entry and run it as an additional step of device probe.
 > 
 > Signed-off-by: Janusz Krzysztofik <jmkrzyszt@gmail.com>
 
