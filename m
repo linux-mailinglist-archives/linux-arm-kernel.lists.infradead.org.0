@@ -2,90 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AA92180634
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:26:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD8FF180635
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:26:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=OWaHThe/w6y1mKkW7Aphe3D/M5oO5rQJr4lO5k8YGSQ=; b=Nrj
-	Yo+Gs1QIaIFVMuRohag16g/dbTCF1TD1qWabbWLFdM21esrCO3emg9gqB75sHsBXpp83pgem7HEvp
-	TYn24BBa55auohH9lhwJRda1NJ7PplyGJAvGkPVPeIfQxnnDA5yc7Cd6ZC5GkMS7z6Gqv5Ps75vIk
-	OaHk1bsMs9nUCtUtbvo0pqbb1hZ6zI8dqjQAqI7anBeX7acfXC+RhgL5h9OXp6VRyASMs494KmRcM
-	tmlFzv7IcFhT5slsqkHvU4AEou/jlMfOSdewRloMn5a9h6yRrCUR2qaPTFUIMMZEstxWSi1bkKk5C
-	qm36MopSFzHmqyv/fSuhALCCQQ7uHEw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=B5Ujs+3XolhA0cTRALivEdCJsaMuWhkngJxOsPxqiBo=; b=VdqJxGI1NZIaiVDpRzc6ZOotS
+	RzflSsRRKPCjIaruoJ4cI5BoVCLlYHgzHsN0u9zGGtN0B+NOTHyrYEV6iFNHIhYJuu/RV08HdiUA/
+	1CCAIsRFi6jUU/USEthb8Ce4d0+T3G2lPD/bkZxCoQzFgfYRfFJkyIsvaHqKHm6EjwQ/4YxajbqaU
+	gKgj9FEuypYxoohLknEVgksoWrFAJx6cB/hTVkNiQ9+jYsWnlRNS1vBIIN4sU60K+JpSW0yBpmcJs
+	tw8AIUibHaErjRhafpmp1WzMVuIdQbJjivVRd+cPNXpj5oncc4qTmvBy44ValPtuGXTiCItrO0KZU
+	xfq1IcFRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjZq-0000UV-8w; Tue, 10 Mar 2020 18:26:02 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1jBjaP-0000wh-0y; Tue, 10 Mar 2020 18:26:37 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjZc-0000Tp-OK; Tue, 10 Mar 2020 18:25:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1583864741;
- bh=bFNqpua+YkzWFVc3UHXXvzS3AdF4ncGup9hQJF7JgsM=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=HRuCOVZZtfp+KcUwATt3A57HJU3nd/6Gt3AGzr8fVOQ26mh/cYH8AvkJDaxla7LrH
- WTHAoWtV6HOELVnR0phT97MYCOHjJ4dF08SpizBl2jgwiDyCSCsw0LT97S8OzR8//y
- ZTjtvv+/hCleFNMOElJQ1mYObS/pvkipnTZiGdtA=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from zoom ([188.223.33.120]) by mail.gmx.com (mrgmx104
- [212.227.17.174]) with ESMTPSA (Nemesis) id 1MD9XF-1j2h0v3fpx-009C8y; Tue, 10
- Mar 2020 19:25:41 +0100
-Received: by zoom (Postfix, from userid 2000)
- id 33D2119C87C9; Tue, 10 Mar 2020 18:25:39 +0000 (GMT)
-From: nick.hudson@gmx.co.uk
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- devicetree@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: bcm2835-rpi-zero-w: Add missing pinctrl name
-Date: Tue, 10 Mar 2020 18:25:37 +0000
-Message-Id: <20200310182537.8156-1-nick.hudson@gmx.co.uk>
-X-Mailer: git-send-email 2.17.1
-X-Provags-ID: V03:K1:3/Rt0YeR7CTtZzR1Fqp91cdaAaSx69K/t/4zI3jdBuV2UhzC3n4
- MmdrwDddFGb8jLk2u+lcAMOmgNAeNjmwa/lg/1z7eoVYBNlrndFDsOo/rolirFwofzX0Xs3
- RdIe3l8fONwTn+qW19f4sOCCoWTZzTvJVybor7qfgr3Dcf1ym5LAEQm+f+uXWLvoQ0iJpAG
- k2bQo6mSBNTu2p3vK70Fg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:gG3GKwolD78=:s7UQlNhpF4wArl+OpyY9rX
- YE2f5jIYCHVmzWKuayMb7Q1H5k441i+Z0RmUEJETKfGzl5KrzR6u8boufYIwY2bG/NqhaXJxr
- BoLcoABo1rlpj+sUJoDJ72SIjPNKgEjdPpD7xRuT91Zk4S0yMZMuhe2qPkqkP6c056JNIzKaL
- h7tJWQsK0co+oE55lpBRzz/bVJ9H92+Il1pbzUSpQPu6BaH4d7OxN51G17AZUUQhGFOiDqame
- 1NOqVklyU2bqm1elS6OVzKxlAJz/mp+QTmwkmPB8EQOOv/3D02Tlvjvh6DcxuxDmsmhvgIZOU
- To8eesWE8heEzGOXhM8w2XbFSf2z9vKUJUmn1zWsH/LC05iRVDNi/tlOLVP6BiJusJ1EhmYv9
- 70ICsPqYVo+Glc2OrbvUKrU9pfqLcjkuBNVQgUmtM94K1M1ZEglarxO1zJJLkjyLW83ml+Jew
- 3XW57bDRfct6k0Y2fgfOq+xKtlzCn6uRD4KTjhuurNxdxE8Qxii3BDsmB0VteM/CgxT9NRS/o
- v++5alr6LXvAtA4BjIjZzQb1lJsbfqr3t+AuXjMWMQDyJOWf71tGkRObBixwTBMNCV9rYBZfU
- ilA6pK0oHPNjFn+kM0t95opLSBc0J7Ze5fEFdLDzFtbHOGcMGT3chtHN2CnDFhvhzWfqEZ+3p
- qgZV6uiXviDBPZjqw58lJ++/ht/UNlWitM5zpFoOeW3GFwbu4Vb5WfOFdAdqDf0NOeefqHbJ0
- yrNh/+p4KWBTWTp8DR4MtpG+YkOps5qp0RBlYiWdEkbwaDrVW9FdbOp/4lrftyGNNGiuiblVa
- b9nDznXG+UNDApsO+oWH3g8iQyD88hcQt/XaDn4YupsPTe7A46aAZUPF7f/nP3BWJDTTe5kL0
- YGrcwSHB4Of3mhKmAFWKDr+mGbANqcHGfKhXn58w2RD7WVBvTbb8vBInhiz7knJw1IFTXzBFL
- ZiVxLKkYdXl0M8stLzYqKZeRX73rUIm6VHFpxiNB7rr19FS0UmRf36FXX6FKBL6xd+pykwjG2
- IEP9j8w3px+E2nRzvhV7MWTXJUeWj/8dKMQ16bwR97GcHum2CkZw3yfelfRRCRJcd+43vig70
- dmJkTJwwvTsddA/DTpJLLGXs8PIpsO+2K5HN07diWVo9vLjmaRFXNcMNhGQSfME50BzZL+dIG
- TNTn2xgnr+BApp6+9BhIRHk/MGJIKMKL8EZ8bOWtg/U5hPnqESVru8G7V74L3l+JxgQ6XFoi7
- q2JTZfQneUOsuPraT
+ id 1jBjaE-0000wH-CD; Tue, 10 Mar 2020 18:26:27 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 9905CABD1;
+ Tue, 10 Mar 2020 18:26:24 +0000 (UTC)
+Message-ID: <f7f08a5df266ae6897065d3c66e30074951708e4.camel@suse.de>
+Subject: Re: [GIT PULL RESEND 1/2] bcm2835-dt-next-2020-03-09
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Date: Tue, 10 Mar 2020 19:26:23 +0100
+In-Reply-To: <552efb02-f62e-c78c-419c-fe8aec4ce7c2@gmail.com>
+References: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
+ <552efb02-f62e-c78c-419c-fe8aec4ce7c2@gmail.com>
+User-Agent: Evolution 3.34.4 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_112549_125533_98452DD4 
-X-CRM114-Status: GOOD (  10.22  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200310_112626_556963_A4BA3A4D 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,42 +62,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nick Hudson <skrll@netbsd.org>, Nick Hudson <nick.hudson@gmx.co.uk>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7183481185745255839=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nick Hudson <nick.hudson@gmx.co.uk>
 
-Define the sdhci pinctrl state as "default" so it gets applied
-correctly and to match all other RPis.
+--===============7183481185745255839==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-t/OJZM8jxIPGwulkbssO"
 
-Fixes: 2c7c040c73e9 ("ARM: dts: bcm2835: Add Raspberry Pi Zero W")
 
-Signed-off-by: Nick Hudson <skrll@netbsd.org>
----
- arch/arm/boot/dts/bcm2835-rpi-zero-w.dts | 1 +
- 1 file changed, 1 insertion(+)
+--=-t/OJZM8jxIPGwulkbssO
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-index b75af21069f9..4c3f606e5b8d 100644
---- a/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-+++ b/arch/arm/boot/dts/bcm2835-rpi-zero-w.dts
-@@ -112,6 +112,7 @@
- &sdhci {
- 	#address-cells = <1>;
- 	#size-cells = <0>;
-+	pinctrl-names = "default";
- 	pinctrl-0 = <&emmc_gpio34 &gpclk2_gpio43>;
- 	bus-width = <4>;
- 	mmc-pwrseq = <&wifi_pwrseq>;
---
-2.17.1
+On Tue, 2020-03-10 at 11:09 -0700, Florian Fainelli wrote:
+> On 3/10/20 5:27 AM, Nicolas Saenz Julienne wrote:
+> > Hi Florian,
+> >=20
+> > The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea098=
+62b9:
+> >=20
+> > Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+> >=20
+> > are available in the Git repository at:
+> >=20
+> > git://git.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git
+> > tags/bcm2835-dt-next-2020-03-09
+> >=20
+> > for you to fetch changes up to 3d2cbb64483691c8f8cf88e17d7d581d9402ac4b=
+:
+> >=20
+> > ARM: dts: bcm2711: Move emmc2 into its own bus (2020-03-09 21:18:03 +01=
+00)
+> >=20
+> > ----------------------------------------------------------------
+> > This tag adds GPIO labels to RPi4 and moves emmc2 to its own bus in
+> > order for RPi4's firmware to correct its DMA constraints.
+> >=20
+> > ----------------------------------------------------------------
+>=20
+> I have applied both for integration but it looks like you are not using
+> git request-pull and you are possibly copy/pasting the content of the
+> command into an email? For instance your second message has this:
+>=20
+> tags/bcm2835- defconfig-next-2020-03-09
+>              ^=3D=3D=3D additional space here which should not be here.
 
+Thanks!
+
+Yes, my process is still pretty much manual. The message got wrapped/unwrap=
+ped
+in the mail client and I guess something went wrong in the process.
+
+It's time to re-tailor your gen-pull.pl script to my needs :)
+
+Regards,
+Nicolas
+
+
+--=-t/OJZM8jxIPGwulkbssO
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5n288ACgkQlfZmHno8
+x/7KQQf9G0jV6/U+tnLTiGtYHXqJ0lVFF40jIp3wM/+d1cuAm3FgdE6iYVmZ4SKz
+Iu/aO+GEaTyk5a/aiRmnOnxhmAQa3tM8514f5P4XDPPghqbL7jRGiZ27m+DJih9F
+FdyZWDaHHpDY/MeHgk56iry55tyX9DKVTx2w/aM9Gfiarlts4Bz7qQbifMAZI4Zw
+dna+B7VrwEd+8LpP9Ow18vCHZPMRXs24yYRBq7fCR7YHQ/O6zMWUzuPdl+nhEf+U
+d71MJ4LsRZHEi+vdKohcOllbiu2h09ws5Z5I+z7RtdS6nP6MN+7xC3DlyXgAzEjG
+1pRA1iDq6wEu13MgT/43vhimG6dxIg==
+=nmq+
+-----END PGP SIGNATURE-----
+
+--=-t/OJZM8jxIPGwulkbssO--
+
+
+
+--===============7183481185745255839==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7183481185745255839==--
+
+
