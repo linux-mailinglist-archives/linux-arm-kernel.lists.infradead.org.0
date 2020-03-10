@@ -2,73 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B982617F4EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 11:20:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D99917F4DA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 11:16:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNvCidIJ4p/wl+C/0GikvpfMfOO73kKEsd7Ovb6ZWjw=; b=VF4Tuh9s5UB4PC
-	p6glcd+vSz0n9S66JSQ3u1d+RCwCcZSXtUBtv1/tML3QHkKExoO6Sw7zQ2Dd/OGO8AzP0QC+0tqG8
-	vuCUDRnlERuy6j2Jvdcv7+nqqOKyroS5L75n766gD5hOKI1U17JMglXH0/v2aid3IhtF1aPJEWvDD
-	M2AE2VS4RTYp4LgTwD2v54h4ECFbmed5jAwPRw7Y83L6RSqNVsh5ry5FSQY8OBOAOGRMiUMHse83o
-	y12PRxc6p9hyPydr5th1Zm+FoRL9YeIicPJQBVzh8wTwStipqFl8shU1ckbG/OFmAOEXIxf4iAGtw
-	/tIaIm+FsA+HIYP2KeUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OMryJHrtrgIfRPWM5AkBwkffQMK/BGsvidcQwoGAmGU=; b=vEKEtTak8ljwE5/f7KbDwxJBl
+	K9SZUatgnYzDzu1Z1lvdCRm2ky0bs/xjpLEirn6cOJSOA/IaGdm/qhcj3wTvXwwThvg5vgxFaNyU5
+	hfQRqbCwyZjvQ7imHak7xd0JLxvbE8yfcUR37CjaFl50FO+b89SI9g+VSbGeoT4pTUWnKsk4uAGJZ
+	nk8J0M3NnRlK9B0jUwY+A5qOOwHawLZ7F1YYR+inxm+IGpUeilCKg34E1FSo8dvBdAmChy4r8wIGF
+	rbDKSQASnD7YgyvbbCRIdOKy/MMLSrEi8BWYJ+04BY3BX9It4tHMAFAuHsElYi7u31h93Zi2fJ9HC
+	cc0Zu+6NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBbzP-0007Qp-EK; Tue, 10 Mar 2020 10:19:55 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBbzA-0007Ok-1X
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 10:19:41 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 3851D20020;
- Tue, 10 Mar 2020 11:19:33 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 23F5C1FF7A;
- Tue, 10 Mar 2020 11:19:33 +0100 (CET)
-Subject: [PATCH v5 1/2] devres: Provide new helper for devm functions
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-To: Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Russell King <linux@armlinux.org.uk>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Rafael Wysocki <rjw@rjwysocki.net>, Suzuki Poulose <suzuki.poulose@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-References: <e8221bff-3e2a-7607-c5c8-abcf9cebb1b5@free.fr>
-Message-ID: <0b5c5f40-9118-1b87-6cf4-928107ccd20e@free.fr>
-Date: Tue, 10 Mar 2020 11:15:10 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1jBbw1-00063v-Nw; Tue, 10 Mar 2020 10:16:25 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBbvq-00061r-Ng; Tue, 10 Mar 2020 10:16:16 +0000
+Received: from localhost (p54B33196.dip0.t-ipconnect.de [84.179.49.150])
+ by pokefinder.org (Postfix) with ESMTPSA id F2DDE2C1EB6;
+ Tue, 10 Mar 2020 11:16:13 +0100 (CET)
+Date: Tue, 10 Mar 2020 11:16:13 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH 04/89] i2c: brcmstb: Allow to compile it on BCM2835
+Message-ID: <20200310101613.GN1987@ninjato>
+References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
+ <0ec2a26c7492b1ef6554d3bdada7a6fb8b41ab1c.1582533919.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
-In-Reply-To: <e8221bff-3e2a-7607-c5c8-abcf9cebb1b5@free.fr>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Tue Mar 10 11:19:33 2020 +0100 (CET)
+In-Reply-To: <0ec2a26c7492b1ef6554d3bdada7a6fb8b41ab1c.1582533919.git-series.maxime@cerno.tech>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_031940_246091_73AF7DCC 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200310_031614_921017_39623DD7 
+X-CRM114-Status: UNSURE (   6.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [marc.w.gonzalez[at]free.fr]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,80 +59,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-i2c@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2729560736467424612=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Provide a simple wrapper for devres_alloc / devres_add.
 
-Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
- drivers/base/devres.c  | 28 ++++++++++++++++++++++++++++
- include/linux/device.h |  3 +++
- 2 files changed, 31 insertions(+)
+--===============2729560736467424612==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ztcJpsdPpsnnlAp8"
+Content-Disposition: inline
 
-diff --git a/drivers/base/devres.c b/drivers/base/devres.c
-index 0bbb328bd17f..b4c18c105f39 100644
---- a/drivers/base/devres.c
-+++ b/drivers/base/devres.c
-@@ -685,6 +685,34 @@ int devres_release_group(struct device *dev, void *id)
- }
- EXPORT_SYMBOL_GPL(devres_release_group);
- 
-+/**
-+ * devm_add - allocate and register new device resource
-+ * @dev: device to add resource to
-+ * @func: resource release function
-+ * @arg: resource data
-+ * @size: resource data size
-+ *
-+ * Simple wrapper for devres_alloc / devres_add.
-+ * Releases the resource if the allocation failed.
-+ *
-+ * RETURNS:
-+ * 0 on success, -ENOMEM otherwise.
-+ */
-+int devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
-+{
-+	void *data = devres_alloc(func, size, GFP_KERNEL);
-+
-+	if (!data) {
-+		func(dev, arg);
-+		return -ENOMEM;
-+	}
-+
-+	memcpy(data, arg, size);
-+	devres_add(dev, data);
-+	return 0;
-+}
-+EXPORT_SYMBOL_GPL(devm_add);
-+
- /*
-  * Custom devres actions allow inserting a simple function call
-  * into the teadown sequence.
-diff --git a/include/linux/device.h b/include/linux/device.h
-index 0cd7c647c16c..55be3be9b276 100644
---- a/include/linux/device.h
-+++ b/include/linux/device.h
-@@ -247,6 +247,9 @@ void __iomem *devm_of_iomap(struct device *dev,
- 			    struct device_node *node, int index,
- 			    resource_size_t *size);
- 
-+int devm_add(struct device *dev, dr_release_t func, void *arg, size_t size);
-+#define devm_vadd(dev, func, type, args...) \
-+	devm_add(dev, func, &(struct type){args}, sizeof(struct type))
- /* allows to add/remove a custom action to devres stack */
- int devm_add_action(struct device *dev, void (*action)(void *), void *data);
- void devm_remove_action(struct device *dev, void (*action)(void *), void *data);
--- 
-2.17.1
+
+--ztcJpsdPpsnnlAp8
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+
+>  config I2C_BRCMSTB
+>  	tristate "BRCM Settop/DSL I2C controller"
+>  	depends on ARCH_BRCMSTB || BMIPS_GENERIC || ARCH_BCM_63XX || \
+> -		   COMPILE_TEST
+> +		   COMPILE_TEST || ARCH_BCM2835
+
+Can you please sort if for easier maintenance?
+
+
+--ztcJpsdPpsnnlAp8
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl5naO0ACgkQFA3kzBSg
+Kbbotw/+MzEKdBWRAl9XS4c7JMOrYWcaHDXRPlPcgpby/WGwtkBcP3qMVLzhUK3P
+wmRIwVMeZxmVzF6//Nj0RUMzHdMABDfMxroBW71xRaksB0X1Z4QwQoPhJrySz880
+n7CosfR4WmdVujIgSA4G5Wx7Izqbw6Y3F5MBI4q9hDQC4yB6+0ByDA5PdC2c/ze8
+UtrISDP7GZyfGY8j7+R5jycrYzGAZo+nsQ96AphoZYqnMoOaVhMU8e9zKzcPZjXE
+y7gjuKI9drofcEYwZSwfA7xBN3mjG/zGaQdcfw8wYd9dX6+7Rw4ufZ36t6xKjvGv
+OtMuow5QkSJAnjoTxFx8AvfqpXuGFTaRIq8znaIPOLp3OfwbWy6YpMQXwBTuhdip
+GHouuNT9FKOfKhNxWo4wRox1VnaI9a/88X6L8VPu6hCpk2y+Ok6vzdcd//aA56/W
+JeSFvdkFW305mu4CGGLq7CSH/w86tjSSmQveOXgRrsYfZ8fJL5TrQUIkkVCZG9Gk
+Tj9LqtT4b97xVY6bNloTPRF3xAiu9t6pvJna/J8RSSIct6bjSPXJ5wuZW7eykUYD
+DKOCd2LRmDbjwU0niH6Xt9K5FOK05SVdQDvSgFNABjGJTkaH29yxtoA+MQ8PTDaS
+5J1H1Vzqf6tuGQ1I4Iv/W2yS9GmOlwY6pW8qvi+csOoeW4TXMR8=
+=UluX
+-----END PGP SIGNATURE-----
+
+--ztcJpsdPpsnnlAp8--
+
+
+--===============2729560736467424612==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2729560736467424612==--
+
