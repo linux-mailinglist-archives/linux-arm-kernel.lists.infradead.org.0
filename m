@@ -2,55 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C806418003B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 15:31:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9B5718004F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 15:36:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=o+3/YM1Gat9HuVObhrI32cLIcvx1Lkk1ZVFE/orB+2s=; b=ceg
-	aqBWNjYyWz+fZ0QclOgmkMSqYKa0WcRujm4gojfxs/AI3omTM0wAVjhWDLkdWOQ+Ci5LADxaV87iY
-	AO8Scp1biSclHhMripHK1Gpq7309KR9xTJL10NuMvNAi5sB7y0VXSiJB20CE0dNJult1+mYXSHOFX
-	1uCmAFpRGDcjiY14/1SiMvUjnZKQlm2kCGvwmQNLpxMhF9Ys4PQQ1+Ezu1yaEql6+y391HcBBIHMe
-	+gacCLYxyXH2olOP9OjNNLITHnm8XRoYUx3oWIwAySoR9/mo8nPzqJ1zMO7fxMKORcIQOAlvD7M+S
-	Sl5aIyR6+17hq3Rt5SOAAKEPYtvlbCQ==;
+	List-Owner; bh=CLDxDB7ipSq7EivJHJJldYwqsl3UD0ZvHEu0khjia8g=; b=OFbkLKrt8P9F5G
+	nm4d7qHQemCyMNFuX/9N8gqz150PyPVUxH5pS64CskHglSsIyg6bicOMXlmYAG9Fq8OG9f/cJO4lu
+	ocgmH3PmddvOzn6aGqvcDFlVoJtICivmHBu+YAVY+MzqFBejR+6xLZt55ClraLqRP7jwNJyN4M9w/
+	AqVzMsRobj8ICpGSq9wzRW8CgUo8/fmnJTnQ0jvjbFBHBWhmhsDdIxSiJNAOoYIEzj/QRD7yMdRwl
+	IptHkWsdf+obzDHJnoExF9QV8h+9wVHFvMO6k8uDCbIi9L/1dQbVPZEji1MbiWZaiMzaMcTqlqMTi
+	HU/jxYDOGjJRbpC+CQBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBfup-0004so-Ll; Tue, 10 Mar 2020 14:31:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBfui-0004sI-3i; Tue, 10 Mar 2020 14:31:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3443430E;
- Tue, 10 Mar 2020 07:31:19 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B7AD33F6CF;
- Tue, 10 Mar 2020 07:31:18 -0700 (PDT)
-Date: Tue, 10 Mar 2020 14:31:16 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Applied "spi: rockchip: add compatible string for px30 rk3308 rk3328"
- to the spi tree
-In-Reply-To: <20200309151004.7780-1-jbx6244@gmail.com>
-Message-Id: <applied-20200309151004.7780-1-jbx6244@gmail.com>
-X-Patchwork-Hint: ignore
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+	id 1jBfzG-0006fB-Vx; Tue, 10 Mar 2020 14:36:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBfz9-0006ei-D1
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 14:35:56 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8169720873;
+ Tue, 10 Mar 2020 14:35:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583850954;
+ bh=aCCuA3dmGtkJtVIm9+cu7oR9EQfoMXkZDErROpFdOnw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HZc4jcnM4S0S2twxQbZDvHetUiXt8rTb2p94bhnjTVbfh6TRwKE/XqRk9G+ExqMQW
+ 4KnT8iadi5r7a7aoXWYjxgsV9DHeeKvji5li0FbfcD6FvioVdg4PmkAIkc981GblEb
+ YWQw79FBPhG6cjd/CA/XN9oaLAZmzEzKA/smWxbk=
+Date: Tue, 10 Mar 2020 22:35:49 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH 2/6] ARM: dts: imx7d-pico: Add support for the dwarf
+ baseboard
+Message-ID: <20200310143548.GA21213@dragon>
+References: <20200224193200.2773-1-festevam@gmail.com>
+ <20200224193200.2773-2-festevam@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200224193200.2773-2-festevam@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_073120_196978_79FA723E 
-X-CRM114-Status: GOOD (  14.17  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200310_073555_482635_F735B196 
+X-CRM114-Status: GOOD (  17.16  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,84 +78,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Mark Brown <broonie@kernel.org>,
+Cc: robh+dt@kernel.org, otavio@ossystems.com.br,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Mon, Feb 24, 2020 at 04:31:56PM -0300, Fabio Estevam wrote:
+> Add support for the imx7d pico board with dwarf baseboard combination.
+> 
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> ---
+>  .../devicetree/bindings/arm/fsl.yaml          |  1 +
 
-   spi: rockchip: add compatible string for px30 rk3308 rk3328
+Have bindings as a separate patch.  Or just merge it into patch #1.
 
-has been applied to the spi tree at
+>  arch/arm/boot/dts/Makefile                    |  1 +
+>  arch/arm/boot/dts/imx7d-pico-dwarf.dts        | 87 +++++++++++++++++++
+>  3 files changed, 89 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/imx7d-pico-dwarf.dts
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+> index bad56df60f87..098aee4930a0 100644
+> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
+> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+> @@ -286,6 +286,7 @@ properties:
+>                - fsl,imx7d-sdb             # i.MX7 SabreSD Board
+>                - fsl,imx7d-sdb-reva        # i.MX7 SabreSD Rev-A Board
+>                - novtech,imx7d-meerkat96   # i.MX7 Meerkat96 Board
+> +              - technexion,imx7d-pico-dwarf   # TechNexion i.MX7D Pico-Dwarf
+>                - technexion,imx7d-pico-hobbit  # TechNexion i.MX7D Pico-Hobbit
+>                - technexion,imx7d-pico-pi      # TechNexion i.MX7D Pico-Pi
+>                - toradex,colibri-imx7d                   # Colibri iMX7 Dual Module
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 732933318a61..888eaa8b1f92 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -615,6 +615,7 @@ dtb-$(CONFIG_SOC_IMX7D) += \
+>  	imx7d-mba7.dtb \
+>  	imx7d-meerkat96.dtb \
+>  	imx7d-nitrogen7.dtb \
+> +	imx7d-pico-dwarf.dtb \
+>  	imx7d-pico-hobbit.dtb \
+>  	imx7d-pico-pi.dtb \
+>  	imx7d-sbc-imx7.dtb \
+> diff --git a/arch/arm/boot/dts/imx7d-pico-dwarf.dts b/arch/arm/boot/dts/imx7d-pico-dwarf.dts
+> new file mode 100644
+> index 000000000000..ff734936b77b
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/imx7d-pico-dwarf.dts
+> @@ -0,0 +1,87 @@
+> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+> +//
+> +// Copyright 2015 Technexion Ltd.
+> +//
+> +// Author: Wig Cheng  <wig.cheng@technexion.com>
+> +//	   Richard Hu <richard.hu@technexion.com>
+> +//	   Tapani Utriainen <tapani@technexion.com>
+> +/dts-v1/;
+> +
+> +#include "imx7d-pico.dtsi"
+> +/ {
+> +	model = "TechNexion PICO-IMX7D and DWARF baseboard";
+> +	compatible = "technexion,imx7d-pico-dwarf", "fsl,imx7d";
+> +
+> +	sound {
+> +		compatible = "fsl,imx-audio-sgtl5000";
+> +		model = "imx7d-sgtl5000";
+> +		audio-cpu = <&sai1>;
+> +		audio-codec = <&sgtl5000>;
+> +		audio-routing =
+> +			"LINE_IN", "Line In Jack",
+> +			"MIC_IN", "Mic Jack",
+> +			"Mic Jack", "Mic Bias",
+> +			"Headphone Jack", "HP_OUT";
+> +	};
+> +
+> +	sys_mclk: clock-sys-mclk {
+> +		compatible = "fixed-clock";
+> +		#clock-cells = <0>;
+> +		clock-frequency = <24576000>;
+> +	};
+> +};
+> +
+> +&i2c1 {
+> +	clock_frequency = <100000>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_i2c1>;
+> +	status = "okay";
+> +
+> +	sgtl5000: codec@a {
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git 
+audio-codec for node name.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Shawn
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
-From c6486eadb4feae730b68dda95fe2cc8dbe210fae Mon Sep 17 00:00:00 2001
-From: Johan Jonker <jbx6244@gmail.com>
-Date: Mon, 9 Mar 2020 16:10:03 +0100
-Subject: [PATCH] spi: rockchip: add compatible string for px30 rk3308 rk3328
-
-The Rockchip spi binding is updated to yaml and new models
-were added. The spi on px30,rk3308 and rk3328 are the same as
-other Rockchip based SoCs, so add compatible string for it.
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200309151004.7780-1-jbx6244@gmail.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- drivers/spi/spi-rockchip.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
-index 2cc6d9951b52..70ef63e0b6b8 100644
---- a/drivers/spi/spi-rockchip.c
-+++ b/drivers/spi/spi-rockchip.c
-@@ -843,14 +843,17 @@ static const struct dev_pm_ops rockchip_spi_pm = {
- };
- 
- static const struct of_device_id rockchip_spi_dt_match[] = {
--	{ .compatible = "rockchip,rv1108-spi", },
-+	{ .compatible = "rockchip,px30-spi", },
- 	{ .compatible = "rockchip,rk3036-spi", },
- 	{ .compatible = "rockchip,rk3066-spi", },
- 	{ .compatible = "rockchip,rk3188-spi", },
- 	{ .compatible = "rockchip,rk3228-spi", },
- 	{ .compatible = "rockchip,rk3288-spi", },
-+	{ .compatible = "rockchip,rk3308-spi", },
-+	{ .compatible = "rockchip,rk3328-spi", },
- 	{ .compatible = "rockchip,rk3368-spi", },
- 	{ .compatible = "rockchip,rk3399-spi", },
-+	{ .compatible = "rockchip,rv1108-spi", },
- 	{ },
- };
- MODULE_DEVICE_TABLE(of, rockchip_spi_dt_match);
--- 
-2.20.1
-
+> +		reg = <0x0a>;
+> +		compatible = "fsl,sgtl5000";
+> +		clocks = <&sys_mclk>;
+> +		VDDA-supply = <&reg_2p5v>;
+> +		VDDIO-supply = <&reg_3p3v>;
+> +	};
+> +
+> +	pressure-sensor@60 {
+> +		compatible = "fsl,mpl3115";
+> +		reg = <0x60>;
+> +	};
+> +};
+> +
+> +&i2c4 {
+> +	clock_frequency = <100000>;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&pinctrl_i2c1>;
+> +	status = "okay";
+> +
+> +	pca9554: io-expander@25 {
+> +		compatible = "nxp,pca9554";
+> +		gpio-controller;
+> +		#gpio-cells = <2>;
+> +		#interrupt-cells = <2>;
+> +		reg = <0x25>;
+> +	};
+> +
+> +	touchscreen@38 {
+> +		compatible = "edt,edt-ft5x06";
+> +		reg = <0x38>;
+> +		pinctrl-names = "default";
+> +		pinctrl-0 = <&pinctrl_touchscreen>;
+> +		interrupt-parent = <&gpio2>;
+> +		interrupts = <13 IRQ_TYPE_EDGE_FALLING>;
+> +		reset-gpios = <&pca9554 4 GPIO_ACTIVE_LOW>;
+> +		touchscreen-size-x = <800>;
+> +		touchscreen-size-y = <480>;
+> +	};
+> +};
+> +
+> +&iomuxc {
+> +	pinctrl_touchscreen: touchscreengrp {
+> +		fsl,pins = <
+> +			MX7D_PAD_EPDC_DATA13__GPIO2_IO13	0x14
+> +		>;
+> +	};
+> +};
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
