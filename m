@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA1FA18019F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:20:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EBDC1801A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:21:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qqb9kLdb0eiDJvLHakVSOhn1BnRFHDqTSNNlUJPFxp4=; b=S1c5w9DTvxguX0
-	xuK2GfjqBIF5omrueCJUu86eA/iTnVP2En+9ZvDX98jVHqtxuayOP57V1U3l/r7wvTcqK+zORUmZR
-	/OCYTGhPCR8/a9evBr/9Tu8zGz7oVisad/thVZJBl6yNVNfJUH233fjy6BbnMnb7T1gKJcIjzZQMZ
-	MGQSnSclOBvN/ulZVW+H5v80TiRE+HSngoeCmXOlx13PLGzTac5KgPqMkmLNjrHK6xRKPf2kmMMUi
-	rhhqM7sf0/VGX3nsQsq5HwkQTzkamxCG0mSEnX3WVBoZzlknpdbu5C6i05X00hAvlXCnjRsBLjviO
-	/i6EtqBLIWHbsBy4aT2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4P3yJbQoWUlm6Ls8crj4zlUKhwJoa3ThtwS8N1nP3zg=; b=XN+ASs7w1dCN/Z
+	qNQa5wPYfu0R/JVjcv7QAvnZMrAwXhrDu8esuni/J5d5EdV0GpTJwRB3p1XFLDyISIRvSxgTZf1Hd
+	ZHiA0ZTadotxPpm3b6P6j8ChjF9bhVCNwZhgyU9d1pDYqvBiCSpzMsdt/gsyvgg1tTmmrQoEwKBok
+	0IRJMWJEo08U14HMv/ACz2xGpyKxlmYhzquBxbEZXr9d6eIGXAZGoiBx4INl+SUQtFcsbsxzDEtFf
+	ZLzULPUd+7bSSyfIqPctz8V5dl8wWa+TJPa9fesnTfYuGVBGAeh+8AQH0W0AZ84JIA4uusnwOZxE4
+	wncWn844bigqHh1MQWxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBggY-0002Kn-1w; Tue, 10 Mar 2020 15:20:46 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jBggq-0002ZZ-NG; Tue, 10 Mar 2020 15:21:04 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBgg2-0001DL-1t
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:20:15 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r7so16423865wro.2
+ id 1jBgg4-0001dZ-L5
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:20:18 +0000
+Received: by mail-wm1-x341.google.com with SMTP id n8so1844782wmc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 08:20:12 -0700 (PDT)
+ Tue, 10 Mar 2020 08:20:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4n2mLbjo7aNwrYZdMSacX3rbOo2B1BidTBnQhKnQzMY=;
- b=hGnPcZLOVtBzDoE+WzzkasurCg1KMifhIB0cT0mfVWjDCpDX37pU6cHYixT/kBuRTW
- fj6ky1PozzwITKbkfZ6PikNwIt4+o7or4KXFv12jpwRMCYEU+Rk7tumvdMru+48LdhMp
- Zv8gx9tWF1Iu+GXHXivdfwRfabg6g256vFiqg+eSdbXYyZzcFqx5oGuZ2c4zUVeAsgsu
- lmhqJreT86cmN+Z/7BHBX0qyblFrDsGz6fgT3gmdaGzcTGpsa2Oaz5MJpROeEVuNH9sb
- T4JlORBEr3VUhy/P+aDDL9LZAgiFyS3I2UFfsVXXTMseOv98jGqcpdViLVopkUGKSGF3
- KfPA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=kOW4sWg6Q7VGPDYbJbyB7HbqHDmbBp1ycDkxRC8YVxA=;
+ b=bhReD04xb47VJuOb863x1yRYJpYpSJLzDmqHmONtE6BqjWWb1xza3YQXQzUVanb+1v
+ VOLgMp4HmmsQUxcv7PS4j3j0OmfQ7BA20kY4jXEDTtSOI5rDkDFFz7hlgBCGAp4na+gg
+ vmph4Iq71vvISazrB8QEYdHb9f2wMNpCH/LgL6YAvu8UIvoRIlGZZML/sZT3MWSYawd3
+ /febHCnezEAF0RxtgPNBgkHEqvR8p84IecwAgC9RTNDtsrgbXqnC8LUX5e9eiRYqmlyg
+ m/6c5LDGrO97bzB8SFtZk7jdMgGTwLmmbrvkWygBqRRR+haujBWSRajhaZqfcKDY6NkJ
+ tYcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4n2mLbjo7aNwrYZdMSacX3rbOo2B1BidTBnQhKnQzMY=;
- b=UH1SU/80eMkoBqdUm89JNCq/SKlJ6k83XKlMUjSfYHAzTCgpfzczy7HnYal7gYzKny
- O98/XFpnYyOxvPxxFHEGGfyKN2b7R5uEfBIXoxdWqxM09Jus58d3zZbnIedT6w3Bgepp
- VHPtdZeDlhOG+oW+Jp5SVqCHLJsu8dZeGO78tI+1soDhqopynxp5P/2rEK/0eh7xG7Dd
- zUiUAG38Bvnt2t6nrOvCXqqvce4rqRyHi6XTAx/H0uDcT/OnR3vWQlZ4OeSIuBhKvoZ0
- IW6H0ke7BJXKBVztxz50Xm65OlMRY2s+Xj08rF5LzgvbEJZW/ZGiy9Rie+IvuaDOg8sy
- nvhw==
-X-Gm-Message-State: ANhLgQ2GZcXkZMkRvbn2VIdOcXkh9o4Peh+iBvgshkaGja5vZtdoUFiq
- FEwxsNzHDZmqUXftjWY5F98=
-X-Google-Smtp-Source: ADFU+vtdcepOM3l2BB9d90s/i+qW7uZK5sCMgjr8svNQswMlI4uZgM5Yxn7HJr/DclKr1TyOG7ycGA==
-X-Received: by 2002:adf:e98c:: with SMTP id h12mr11964222wrm.345.1583853611077; 
- Tue, 10 Mar 2020 08:20:11 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=kOW4sWg6Q7VGPDYbJbyB7HbqHDmbBp1ycDkxRC8YVxA=;
+ b=PGIN2WcJDGxhkk6XTHhyVWx9jjhza1ue683xb9D6yR51BoWBHcjBrDAn1V0AF3QO5X
+ m4/A0tlAotW2drNJKGa/72Bdr00dLUKjl8c5TKcVw3qW/INjVmiGBvUgjGg3QN4xrbfJ
+ nvV4/Z1iDduzwwMHD3sYphmKxmxA9LKU6WljcWdAlQSP52kLW+SdGh9AX20JGSGQOLx6
+ 8u/ADNYO7DqYMxzN9hD0D8BmTETcfCoh514ijQvJ4BYnZ4R4hCWfR18jYXnqK/RIK4cB
+ Y0bbN+QPlqJFFM3Gw0PyNlbKKHJNN3H7oaaLSP2Ki5ILLXT/ynlb3fT/PsU31lrf22oV
+ cAgg==
+X-Gm-Message-State: ANhLgQ0hZAC7HU6JVOUJSdvLC8Kc0R6fP2tHus31QpWGnXH4ah0aIUu/
+ Ip4t4mYkBz5OThrKtfL8cNY=
+X-Google-Smtp-Source: ADFU+vu468Cq8+15bTySdCPrW5DR0zf2iX5vUsNk41jQPts1j/zhomX5PEvvoDppHlQBS0o81G+9wQ==
+X-Received: by 2002:a1c:964f:: with SMTP id y76mr2589173wmd.62.1583853613555; 
+ Tue, 10 Mar 2020 08:20:13 -0700 (PDT)
 Received: from localhost (pD9E516A9.dip0.t-ipconnect.de. [217.229.22.169])
- by smtp.gmail.com with ESMTPSA id d63sm4416772wmd.44.2020.03.10.08.20.09
+ by smtp.gmail.com with ESMTPSA id o9sm69181610wrw.20.2020.03.10.08.20.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 08:20:09 -0700 (PDT)
+ Tue, 10 Mar 2020 08:20:11 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH v5 0/8] Add EMC scaling support for Tegra210
-Date: Tue, 10 Mar 2020 16:19:55 +0100
-Message-Id: <20200310152003.2945170-1-thierry.reding@gmail.com>
+Subject: [PATCH v5 1/8] clk: tegra: Add PLLP_UD and PLLMB_UD for Tegra210
+Date: Tue, 10 Mar 2020 16:19:56 +0100
+Message-Id: <20200310152003.2945170-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200310152003.2945170-1-thierry.reding@gmail.com>
+References: <20200310152003.2945170-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_082014_173784_E0F4498E 
-X-CRM114-Status: GOOD (  13.87  )
+X-CRM114-CacheID: sfid-20200310_082016_751583_B310570D 
+X-CRM114-Status: GOOD (  12.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [thierry.reding[at]gmail.com]
@@ -107,56 +109,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+From: Joseph Lo <josephl@nvidia.com>
 
-This series introduces the EMC clock scaling support for Tegra210. The
-EMC table of supported frequencies is passed to the kernel via a device
-tree reserved memory region.
+Introduce the low jitter path of PLLP and PLLMB which can be used as EMC
+clock source.
 
-Joseph posted the v4 of this series[0] about a year ago. I've dusted it
-off a bit and tried to address all of the comments that Dmitry had made
-in response to v4.
+Signed-off-by: Joseph Lo <josephl@nvidia.com>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/clk/tegra/clk-tegra210.c         | 11 +++++++++++
+ include/dt-bindings/clock/tegra210-car.h |  4 ++--
+ 2 files changed, 13 insertions(+), 2 deletions(-)
 
-Changes in v4:
-- major rework to split this into a clk driver and an EMC driver
-- refactored some code to remove duplication and improve readability
-- removed some unused code and variables
-
-Thierry
-
-[0]: https://lore.kernel.org/linux-arm-kernel/20190529082139.5581-1-josephl@nvidia.com/
-
-Joseph Lo (8):
-  clk: tegra: Add PLLP_UD and PLLMB_UD for Tegra210
-  clk: tegra: Export functions for EMC clock scaling
-  clk: tegra: Implement Tegra210 EMC clock
-  dt-bindings: memory: tegra: Add external memory controller binding for
-    Tegra210
-  memory: tegra: Add EMC scaling support code for Tegra210
-  memory: tegra: Add EMC scaling sequence code for Tegra210
-  arm64: tegra: Add external memory controller node for Tegra210
-  clk: tegra: Remove the old emc_mux clock for Tegra210
-
- .../nvidia,tegra210-emc.yaml                  |   83 +
- arch/arm64/boot/dts/nvidia/tegra210.dtsi      |   11 +
- drivers/clk/tegra/Makefile                    |    1 +
- drivers/clk/tegra/clk-tegra210-emc.c          |  352 ++++
- drivers/clk/tegra/clk-tegra210.c              |   83 +-
- drivers/clk/tegra/clk.h                       |    3 +
- drivers/memory/tegra/Kconfig                  |   10 +
- drivers/memory/tegra/Makefile                 |    1 +
- drivers/memory/tegra/tegra210-emc-cc-r21021.c | 1782 ++++++++++++++++
- drivers/memory/tegra/tegra210-emc.c           | 1800 +++++++++++++++++
- drivers/memory/tegra/tegra210-emc.h           | 1065 ++++++++++
- include/dt-bindings/clock/tegra210-car.h      |    4 +-
- include/linux/clk/tegra.h                     |   26 +
- 13 files changed, 5202 insertions(+), 19 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/memory-controllers/nvidia,tegra210-emc.yaml
- create mode 100644 drivers/clk/tegra/clk-tegra210-emc.c
- create mode 100644 drivers/memory/tegra/tegra210-emc-cc-r21021.c
- create mode 100644 drivers/memory/tegra/tegra210-emc.c
- create mode 100644 drivers/memory/tegra/tegra210-emc.h
-
+diff --git a/drivers/clk/tegra/clk-tegra210.c b/drivers/clk/tegra/clk-tegra210.c
+index 45d54ead30bc..f99647b4a71f 100644
+--- a/drivers/clk/tegra/clk-tegra210.c
++++ b/drivers/clk/tegra/clk-tegra210.c
+@@ -3161,6 +3161,17 @@ static void __init tegra210_pll_init(void __iomem *clk_base,
+ 	clk_register_clkdev(clk, "pll_m_ud", NULL);
+ 	clks[TEGRA210_CLK_PLL_M_UD] = clk;
+ 
++	/* PLLMB_UD */
++	clk = clk_register_fixed_factor(NULL, "pll_mb_ud", "pll_mb",
++					CLK_SET_RATE_PARENT, 1, 1);
++	clk_register_clkdev(clk, "pll_mb_ud", NULL);
++	clks[TEGRA210_CLK_PLL_MB_UD] = clk;
++
++	/* PLLP_UD */
++	clk = clk_register_fixed_factor(NULL, "pll_p_ud", "pll_p",
++					0, 1, 1);
++	clks[TEGRA210_CLK_PLL_P_UD] = clk;
++
+ 	/* PLLU_VCO */
+ 	if (!tegra210_init_pllu()) {
+ 		clk = clk_register_fixed_rate(NULL, "pll_u_vco", "pll_ref", 0,
+diff --git a/include/dt-bindings/clock/tegra210-car.h b/include/dt-bindings/clock/tegra210-car.h
+index 7a8f10b9a66d..5c93b01156d4 100644
+--- a/include/dt-bindings/clock/tegra210-car.h
++++ b/include/dt-bindings/clock/tegra210-car.h
+@@ -351,8 +351,8 @@
+ #define TEGRA210_CLK_PLL_P_OUT_XUSB 317
+ #define TEGRA210_CLK_XUSB_SSP_SRC 318
+ #define TEGRA210_CLK_PLL_RE_OUT1 319
+-/* 320 */
+-/* 321 */
++#define TEGRA210_CLK_PLL_MB_UD 320
++#define TEGRA210_CLK_PLL_P_UD 321
+ #define TEGRA210_CLK_ISP 322
+ #define TEGRA210_CLK_PLL_A_OUT_ADSP 323
+ #define TEGRA210_CLK_PLL_A_OUT0_OUT_ADSP 324
 -- 
 2.24.1
 
