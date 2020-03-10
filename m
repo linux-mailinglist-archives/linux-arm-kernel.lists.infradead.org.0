@@ -2,96 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 663A5180336
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 17:26:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34083180341
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 17:28:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1bn60Dq6SrVdc8W1MeSDuMoK/gYO97waEPNiJWI7SPA=; b=M+C9WGW2QzgW5b
-	jePZZ+PNaEoFIVbw1nSQnIjz7Me9/Stqf+dxy4l/JwZCvVs8IaplV82BmkculbtSPdc6AyQTdVmVW
-	D32nvQx2aPd3rnblTmDDelDoRjDzQuc4CkWnbovlVLOv0bjDmlqn3lU/L/nVZJbHFDxFEQmLB0uX1
-	H0135RxiMRDui1krbbqqgECC7paJ9L9rl41k0G8c2j2jRFwtu8SwKoqDlggmjTqCo7n9QHvlo+REh
-	u4kRaFVLbqs8J+Mb/F3woa+S07tERSm0lucFhZxQHMdiDv80kfnYbrNFpNLBk/o+mvurRTbnwEkKD
-	21IWGxKEEHvkaGbfeSPQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=af7o0pkaCq89QEM1ytg4SN7GEeZiN0TIfiefPbjL38Y=; b=VtWUAEFCSwxFLxzDNXo4HCtlJ
+	/maBezoLq5VjDm0hzunHIuWQ+mrjkRVcWxjp30u/7d1jRIrrfwp0BIrknKpS1pC8AsA1Hz8opKYBv
+	PVBKMi+vDL7xBWlSoSw3vrpyxye4IlT8oJJ2KJHHCM3usr7pE47WF7KPF9opHI8KxVu57qAMQFW9P
+	Mmm79u7FTwu1l81C8T7n24WfI+aYbx9+NHrF7hB1nkkptRMLgNB1v99n7T5sqf5b7Xbby2V3SSvUI
+	+Wan9jmHwfzhdGngHlwBHIVLvym+6z5o94OzsZJWal5nRdwTHsQwG7mev/Rtkvs4PLDelzk+QZHpQ
+	Cuu6RJ3rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBhiJ-0006MD-Kl; Tue, 10 Mar 2020 16:26:39 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBhiC-0006Le-4K
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 16:26:33 +0000
-Received: by mail-lf1-x144.google.com with SMTP id i19so5488905lfl.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 09:26:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=3kZ96VsUJ4A3yK6VGR9AXLTuIfooSdtJ0HnhKEGe9Fw=;
- b=Lgzsxr6oMFzOsPxY9dqSyyz+TWPWYZAYaIZybxHwPbTDTnpTfhcf8T7cmTQLxxeocf
- JFBzSHHXm9Id0YNDU2fxUGwLkp9N/UdZqQjoe9REJMwJvhVqE1a1wz3Yu2Kc45aDoebD
- p3MZ6O+MRPBq21lDU2CDWhIHursel7f6T21qSG9f+QLlQuVzLaZ200WMZjHJNXFknaHF
- V5IpTSiTfmThvMfZqAwsF97GR/Kgxoc03rpn5/BdIijvGI2RosWcR+V391wkXb3d51lW
- kNtc1sFbVEyZlKhAuMIG68F4XkLMlHf1sOzz+Al9dmAeCr7HI+efqXyIdHlcWa4Hx5tQ
- 2/BQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=3kZ96VsUJ4A3yK6VGR9AXLTuIfooSdtJ0HnhKEGe9Fw=;
- b=kPIxupWNl52W/3jwrgxVHwKh5vWogqD+k2fDTwlXcDze4LcpHpVxI6A17VQBdyjvBc
- gTAi1WnmdtaP+3AEj6gkEgj8xZ1TDN1Y8RYXKl0BIgs1mwDNECDoP/P2Csvr88tExV04
- aOzbI4S2D2XVLnffA62EGb6hu83QRBOUa+9oyFXF/H6ru3zX2mTeTzfcLQJHtBu0PZjZ
- w+/DfSnKjFd0WqAXvwOEVw/pSb30zTRBEimoIirwH5hXXgh7FVSDyNAD0I/bhc+18HDL
- s1hu8yYvy9j6g99AePmaAyokKtQqMarpwCBBMdCLcUGxKFRz9HuK+rGIq2ZBLBJnk70+
- xwaw==
-X-Gm-Message-State: ANhLgQ2FRe1CaPX56jVoRJWREUSmICRZbr7+XITucXpNfcx4LzHI9PTd
- rdh2mxOnmQ+MSZIyOS7/pNt/Ilc4
-X-Google-Smtp-Source: ADFU+vv2oMyShABl/4K04lOItrbsFoT02OEztRR3TdqYw5HWhLqIU0OqmWKQc+hKqbxT2Y49HNphaA==
-X-Received: by 2002:ac2:51bc:: with SMTP id f28mr12918101lfk.112.1583857589703; 
- Tue, 10 Mar 2020 09:26:29 -0700 (PDT)
-Received: from [192.168.2.145] (94-29-39-224.dynamic.spd-mgts.ru.
- [94.29.39.224])
- by smtp.googlemail.com with ESMTPSA id w24sm22958192ljh.26.2020.03.10.09.26.28
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 10 Mar 2020 09:26:29 -0700 (PDT)
-Subject: Re: [PATCH v5 3/8] clk: tegra: Implement Tegra210 EMC clock
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20200310152003.2945170-1-thierry.reding@gmail.com>
- <20200310152003.2945170-4-thierry.reding@gmail.com>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <88d18719-b6dd-98d0-e147-f89eed2f3f0c@gmail.com>
-Date: Tue, 10 Mar 2020 19:26:28 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+	id 1jBhjx-0006o5-Sm; Tue, 10 Mar 2020 16:28:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBhjp-0006mX-9X
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 16:28:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8ADE21FB;
+ Tue, 10 Mar 2020 09:28:10 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0FC453F67D;
+ Tue, 10 Mar 2020 09:28:09 -0700 (PDT)
+Date: Tue, 10 Mar 2020 16:28:08 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Kevin Li <kevin-ke.li@broadcom.com>
+Subject: Re: [PATCH] ASoC: brcm: Add DSL/PON SoC audio driver
+Message-ID: <20200310162808.GI4106@sirena.org.uk>
+References: <20200306222705.13309-1-kevin-ke.li@broadcom.com>
+ <20200309123307.GE4101@sirena.org.uk>
+ <69138568e9c18afa57d5edba6be9887b@mail.gmail.com>
+ <20200309175205.GJ4101@sirena.org.uk>
+ <8113837129a1b41aee674c68258cd37f@mail.gmail.com>
+ <20200309191813.GA51173@sirena.org.uk>
+ <1165b736-d0fc-1247-6f46-94a51d392532@broadcom.com>
 MIME-Version: 1.0
-In-Reply-To: <20200310152003.2945170-4-thierry.reding@gmail.com>
-Content-Language: en-US
+In-Reply-To: <1165b736-d0fc-1247-6f46-94a51d392532@broadcom.com>
+X-Cookie: In space, no one can hear you fart.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_092632_191774_B2B9C7D5 
-X-CRM114-Status: GOOD (  14.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_092813_378142_5A5946A0 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,33 +70,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Scott Branden <sbranden@broadcom.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, bcm-kernel-feedback-list@broadcom.com,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5449584711293743298=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MTAuMDMuMjAyMCAxODoxOSwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKPiBGcm9tOiBKb3Nl
-cGggTG8gPGpvc2VwaGxAbnZpZGlhLmNvbT4KPiAKPiBUaGUgRU1DIGNsb2NrIG5lZWRzIHRvIGNh
-cmVmdWxseSBjb29yZGluYXRlIHdpdGggdGhlIEVNQyBjb250cm9sbGVyCj4gcHJvZ3JhbW1pbmcg
-dG8gbWFrZSBzdXJlIGV4dGVybmFsIG1lbW9yeSBjYW4gYmUgcHJvcGVybHkgY2xvY2tlZC4gRG8g
-c28KPiBieSBob29raW5nIHVwIHRoZSBFTUMgY2xvY2sgd2l0aCBhbiBFTUMgcHJvdmlkZXIgdGhh
-dCB3aWxsIHNwZWNpZnkgd2hpY2gKPiByYXRlcyBhcmUgc3VwcG9ydGVkIGJ5IHRoZSBFTUMgYW5k
-IHByb3ZpZGUgYSBjYWxsYmFjayB0byB1c2UgZm9yIHNldHRpbmcKPiB0aGUgY2xvY2sgcmF0ZSBh
-dCB0aGUgRU1DLgo+IAo+IEJhc2VkIG9uIHdvcmsgYnkgUGV0ZXIgRGUgU2NocmlqdmVyIDxwZGVz
-Y2hyaWp2ZXJAbnZpZGlhLmNvbT4uCj4gCj4gU2lnbmVkLW9mZi1ieTogSm9zZXBoIExvIDxqb3Nl
-cGhsQG52aWRpYS5jb20+Cj4gU2lnbmVkLW9mZi1ieTogVGhpZXJyeSBSZWRpbmcgPHRyZWRpbmdA
-bnZpZGlhLmNvbT4KPiAtLS0KPiBDaGFuZ2VzIGluIHY1Ogo+IC0gbWFqb3IgcmV3b3JrIGFuZCBj
-bGVhbnVwCgouLi4KCj4gK3UzMiBlbWNfcmVhZGwoc3RydWN0IHRlZ3JhX2VtYyAqZW1jLCB1bnNp
-Z25lZCBsb25nIG9mZnNldCkKPiArewo+ICsJcmV0dXJuIHJlYWRsX3JlbGF4ZWQoZW1jLT5lbWNf
-YmFzZVtSRUdfRU1DXSArIG9mZnNldCk7Cj4gK30KCnN0YXRpYyB1MzIgZW1jX3JlYWRsKCkKCj4g
-K3UzMiBlbWNfcmVhZGxfcGVyX2NoKHN0cnVjdCB0ZWdyYV9lbWMgKmVtYywgaW50IHR5cGUsCj4g
-KwkJCSAgICB1bnNpZ25lZCBsb25nIG9mZnNldCkKCnN0YXRpYyB1MzIgZW1jX3JlYWRsX3Blcl9j
-aCgpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+
+--===============5449584711293743298==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="WR+jf/RUebEcofwt"
+Content-Disposition: inline
+
+
+--WR+jf/RUebEcofwt
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Mar 10, 2020 at 08:49:08AM -0700, Kevin Li wrote:
+
+> > This is not how any of this is supposed to work, it's unlikely to work
+> > well with other devices.  If the device supports both master and slave
+> > operation then you should let the machine driver pick if the SoC or the
+> > CODEC is master via set_fmt(), randomly varying this at runtime is not
+> > going to be helpful.
+
+> Maybe the name "master/slave" is confusing, these names come from internal
+> chip signals and do not represent the state of the i2s bus master. Our SoC
+> supports only master mode in the i2s bus. The Rx and Tx block each have an
+> independent bit to indicate if it is generating the clock for the i2s bus.
+> The i2s bus clocks need to be generated from either the Rx block or the Tx
+> block, but not both.
+
+Right, at the very least this needs to be better documented in the code.
+
+--WR+jf/RUebEcofwt
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5nwBcACgkQJNaLcl1U
+h9A6pQf/bT2lCprxs3DA2/Vx/yM3Ff2ZDC3VmEzFcFoscpWNx2hOh9KohpTKb48l
+laXl5M87VISWnaTdNMb1uBh1FPljBqHfYdE8IlUbr9qU0i88TJ883m9YxTPQ5xv7
+Xt27ndFU/3gzEzDrpwKB/tbCCcYKoCwMIgPTs5eRNUzN+TY46HcgnxFFQ6ztGQ99
+lh/5tl7Bgchn3Vy0GgBJKj0LDxkZta0GAI8MMt5M4pMOBUFJSG9ULQfdyNhB1n8D
+ev0H3RU4FWKIfJx6CkWwwhnb/BrdZ+xPTF1kTYaGmkXeL7dJgjwJe6rfsSnDWbOU
+01yQDtxGqZZMUMHy7OA6TlHLpyd5UA==
+=Pkro
+-----END PGP SIGNATURE-----
+
+--WR+jf/RUebEcofwt--
+
+
+--===============5449584711293743298==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5449584711293743298==--
+
