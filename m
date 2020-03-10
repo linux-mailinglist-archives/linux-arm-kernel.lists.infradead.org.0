@@ -2,66 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BA6E180B1B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 23:02:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A123F180B26
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 23:03:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4RxSPvfSH3DwO+GD3ivradwTxBAhrYD3K3LS55B1AXs=; b=KUQpA71suLHT+4
-	Fcu+5J8nZrvmhCM3U2HvmKdyZ6NfdADHyBujepoGm+ds+qC7sUZxVrGsqmQ7nSC8GYXg/dyk7kcyL
-	VEbm6M105Mu9kvsT1gCaM/e96WjZTNqT8ly6jZOSxwoOxxcZHQ2U0tNNyz+LGo5MOD06Jvsy8XeDt
-	E+T12Bvk3yRbBAvDdQjqUvUlqggWgVePhNyZnNf9DGocObjWLXFCU7+BiMEDbWHaDDOkokUQiwsXs
-	A+oAlcvVLSFWP0B1NBfdr9lyP4e5EBOmjuJgAIQecSmFSBbv4925WXdZypcu04gHb2TqpSWmZtjQf
-	BD0CO7GneGZXwTTX4nVQ==;
+	List-Owner; bh=WswFIFadZr6832+iEQVm8pCuI/DtgrsBlBC4PQdW4SI=; b=AC3nvrdURy7mcr
+	Ajp/pTRj/DZqfeRlnywSNV5UD9XJMfrDWItgFEZ+pxn03xhucnjj2e+hPYeNj+rbAgQpJ7ts3s6pb
+	BTUz6cP7/HMgAfSCv8sgQkJqj4PY3DQ6i+VjRgLMCGzBLjM8WgNDEEds0XiFEYxtAnrDsNxhyUu6z
+	hVN74oviw3EZo+gtAt5B03ET6nUa37wO9d7HJhD/E+g/M+bxH30UJ44JEuG8Yuun6dXzlFqZB522u
+	Ai1WqX7VUnu9jy6fNs/MbDLN5JBLIJY1FgqcrKMdQR7UOkQjYA2OWg6Id98gBxndTbURRYv0plvKx
+	5vTAxnAoFzy1LhGdTKAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBmxM-0003W4-F1; Tue, 10 Mar 2020 22:02:32 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
+	id 1jBmyO-0003yk-JR; Tue, 10 Mar 2020 22:03:36 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBmwN-0002p8-J4
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 22:01:35 +0000
-Received: from zyt.lan (unknown [IPv6:2a02:169:3df5::564])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id 7CE245C4F77;
- Tue, 10 Mar 2020 23:01:25 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1583877685;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=iuHVTJkLweKCJuZWDefjVMbM1hgCkPZXzUUonobozno=;
- b=ahIkeuJRhZukJATJRseCals6g6MH0+Qu2ES2ZbEFAcH1YkiXBeyQorphoQwymeQVrPcKrh
- m5UiR0FS9IR1SIFz7yJEE6EyZczjv/9anSy69AYWj3kkqCF7G2RUXAKVT4aeWLq97PfoJa
- c+ESNj+WLhN1gryd/AR9SQlSZXUqrhQ=
-From: Stefan Agner <stefan@agner.ch>
-To: linux@armlinux.org.uk
-Subject: [PATCH 3/3] ARM: use VFP assembler mnemonics if available
-Date: Tue, 10 Mar 2020 23:01:21 +0100
-Message-Id: <3c8127839ced991fadb08c0a5a7beebb3ff489af.1583360296.git.stefan@agner.ch>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <cover.1583360296.git.stefan@agner.ch>
-References: <cover.1583360296.git.stefan@agner.ch>
+ id 1jBmy8-0003wq-Ry
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 22:03:23 +0000
+Received: by mail-wm1-x341.google.com with SMTP id r7so1761200wmg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 15:03:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=dYEP1uE4NnVFr/AeDKddTWSxJgA20EPFg2G+JAahXU0=;
+ b=I20JsyOJIesiZZQ8aV/IdyM+r4UI4cQUwV9OU88GjMqXQdcGxyWCcTu+TKnMpQTwzR
+ 8zsRR1Ku3VvKEiqj1/PL8R5Nrk6wcQBvAnxyWKr7fOA7HdZ08IH0zfDTMBnRXrE4sv+B
+ 1FJbyCwTIoyCOqD2c6zdL2IiWQINHKswybaSp4LQ7NJ/mx5atiVaaCA7KJmFqkI1NxgO
+ ZLyx0BgypSHUQzKXHvqeJWj1ZAU41f5jkODNqWwySdRgLuSbY/bjut3UAN1jCydVdFW5
+ 4q0nzPNiNsFhSQ2UmsMYO7SYzoSm7Xv0C8TZTspbL4HFRap19/7Ybum6IG+LQMJ662fW
+ FIwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=dYEP1uE4NnVFr/AeDKddTWSxJgA20EPFg2G+JAahXU0=;
+ b=ZvY6dWAk4XYxy1cU3Q8zSdWGIT4MgawCKRhGJTd7yVE5xT/heGECXXJAPEiCQWNpKr
+ XHZtFmAN7gV+qfEqP5xZ6Wf/uKDcyYfAlA5t5cm9Q2oZeiTQAZ70906mFkR/htzUZQpV
+ JJKJBixTPvA5VCrrvxTuYnWJ4WdqP0cV+cKRMOYsIbmO48RTcY9Ufvd7UTg3D7LgdcnW
+ Ak8cCyz4eBmlGIzo9Zw8Nr4YR7hWpA2W20207xkpivOOfRafhfcuSs3aHv+qpW21LiJr
+ 4QVJIGnpwFRcONMQnW4FDZ0KT8e+dcCV6PreGqJNj8gJSI61ottezRH38Cr8UTW0hrKR
+ Mzxw==
+X-Gm-Message-State: ANhLgQ2vdGcPo5YvLI8vd4Q5JtB9gj22IC/odw/BC5u0/+2QbAwdjp6C
+ brf8QbPw4CZp1rH9vPzBRd2Rnw==
+X-Google-Smtp-Source: ADFU+vsFsnumgp9VoOGVYqCrNLZ5ay6csw80CWgZBfUy0rM6bs6wjkEgt0Ofqq4WtgfmKA4Ub4RhiQ==
+X-Received: by 2002:a1c:4e14:: with SMTP id g20mr3853268wmh.143.1583877798471; 
+ Tue, 10 Mar 2020 15:03:18 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id w67sm1892315wmb.41.2020.03.10.15.03.17
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 10 Mar 2020 15:03:17 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCH v2] dt-bindings: power: Fix dt_binding_check error
+In-Reply-To: <CAL_JsqJAxfL_Q3HYHk_8VeefdXnhYT7kcPe3F5Gzk1Vfj+xtww@mail.gmail.com>
+References: <1583164448-83438-1-git-send-email-jianxin.pan@amlogic.com>
+ <7hsgiqra5x.fsf@baylibre.com>
+ <CAL_JsqJAxfL_Q3HYHk_8VeefdXnhYT7kcPe3F5Gzk1Vfj+xtww@mail.gmail.com>
+Date: Tue, 10 Mar 2020 15:03:15 -0700
+Message-ID: <7h36afn9zw.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_150132_269421_8719D91A 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_150321_512582_62B38B26 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,171 +94,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com, arnd@arndb.de,
- ard.biesheuvel@linaro.org, ndesaulniers@google.com,
- linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
- jiancai@google.com, yamada.masahiro@socionext.com, manojgupta@google.com,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ SoC Team <soc@kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Stephen Rothwell <sfr@canb.auug.org.au>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Clang's integrated assembler does not allow to to use the mcr
-instruction to access floating point co-processor registers:
-arch/arm/vfp/vfpmodule.c:342:2: error: invalid operand for instruction
-        fmxr(FPEXC, fpexc & ~(FPEXC_EX|FPEXC_DEX|FPEXC_FP2V|FPEXC_VV|FPEXC_TRAP_MASK));
-        ^
-arch/arm/vfp/vfpinstr.h:79:6: note: expanded from macro 'fmxr'
-        asm("mcr p10, 7, %0, " vfpreg(_vfp_) ", cr0, 0 @ fmxr   " #_vfp_ ", %0" \
-            ^
-<inline asm>:1:6: note: instantiated into assembly here
-        mcr p10, 7, r0, cr8, cr0, 0 @ fmxr      FPEXC, r0
-            ^
+Rob Herring <robh+dt@kernel.org> writes:
 
-Ideally we would replace this code with the unified assembler language
-mnemonics vmrs/vmsr on call sites along with .fpu assembler directives.
-The GNU assembler supports the .fpu directive at least since 2.17 (when
-documentation has been added). Since Linux requires binutils 2.21 it is
-safe to use .fpu directive. However, binutils does not allow to use
-FPINST or FPINST2 as an argument to vmrs/vmsr instructions up to
-binutils 2.24 (see binutils commit 16d02dc907c5).
+> On Mon, Mar 2, 2020 at 10:31 AM Kevin Hilman <khilman@baylibre.com> wrote:
+>>
+>> Hi Jianxin,
+>>
+>> Jianxin Pan <jianxin.pan@amlogic.com> writes:
+>>
+>> > Missing ';' in the end of secure-monitor example node.
+>> >
+>> > Fixes: 165b5fb294e8 ("dt-bindings: power: add Amlogic secure power domains bindings")
+>> > Reported-by: Rob Herring <robh+dt@kernel.org>
+>> > Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+>> > ---
+>> >  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
+>> >  1 file changed, 1 insertion(+), 1 deletion(-)
+>> >
+>> > diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>> > index af32209..bc4e037 100644
+>> > --- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>> > +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>> > @@ -36,5 +36,5 @@ examples:
+>> >              compatible = "amlogic,meson-a1-pwrc";
+>> >              #power-domain-cells = <1>;
+>> >          };
+>> > -    }
+>> > +    };
+>>
+>> Thanks for the fix.  Queued for v5.7.
+>>
+>> @Arnd, @Olof: you can ignore this one.  I requested Jianxin to send to
+>> you thinking this was a fix for something you already queued, but it's
+>> not.  I'll handle it.
+>
+> Someone has what needs fixing queued in linux-next, but this fix is
+> still not there. Somehow it seems like features show up in linux-next
+> faster than fixes for SoC tree...
 
-Use as-instr to check if FPINST/FPINST2 can be used. If they can be used
-make use of .fpu directives and UAL VFP mnemonics for register access.
+The fix (this patch) is queued in my 'for-next' branch which I pushed
+yesterday.  I guess it missed next-20200310 but should be in tomorrow.
 
-This allows to build vfpmodule.c with Clang and its integrated assembler.
+Kevin
 
-Link: https://github.com/ClangBuiltLinux/linux/issues/905
-Signed-off-by: Stefan Agner <stefan@agner.ch>
----
- arch/arm/include/asm/vfp.h       |  2 ++
- arch/arm/include/asm/vfpmacros.h | 12 +++++++++++-
- arch/arm/vfp/Makefile            |  5 +++++
- arch/arm/vfp/vfphw.S             |  1 +
- arch/arm/vfp/vfpinstr.h          | 23 +++++++++++++++++++----
- 5 files changed, 38 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm/include/asm/vfp.h b/arch/arm/include/asm/vfp.h
-index 7157d2a30a49..a73c29ff4d1f 100644
---- a/arch/arm/include/asm/vfp.h
-+++ b/arch/arm/include/asm/vfp.h
-@@ -9,6 +9,7 @@
- #ifndef __ASM_VFP_H
- #define __ASM_VFP_H
- 
-+#ifndef HAVE_VMRS_FPINST
- #define FPSID			cr0
- #define FPSCR			cr1
- #define MVFR1			cr6
-@@ -16,6 +17,7 @@
- #define FPEXC			cr8
- #define FPINST			cr9
- #define FPINST2			cr10
-+#endif
- 
- /* FPSID bits */
- #define FPSID_IMPLEMENTER_BIT	(24)
-diff --git a/arch/arm/include/asm/vfpmacros.h b/arch/arm/include/asm/vfpmacros.h
-index 947ee5395e1f..eb8d3738f227 100644
---- a/arch/arm/include/asm/vfpmacros.h
-+++ b/arch/arm/include/asm/vfpmacros.h
-@@ -8,7 +8,16 @@
- 
- #include <asm/vfp.h>
- 
--@ Macros to allow building with old toolkits (with no VFP support)
-+#ifdef HAVE_VMRS_FPINST
-+	.macro	VFPFMRX, rd, sysreg, cond
-+	vmrs\cond	\rd, \sysreg
-+	.endm
-+
-+	.macro	VFPFMXR, sysreg, rd, cond
-+	vmsr\cond	\sysreg, \rd
-+	.endm
-+#else
-+	@ Macros to allow building with old toolkits (with no VFP support)
- 	.macro	VFPFMRX, rd, sysreg, cond
- 	MRC\cond	p10, 7, \rd, \sysreg, cr0, 0	@ FMRX	\rd, \sysreg
- 	.endm
-@@ -16,6 +25,7 @@
- 	.macro	VFPFMXR, sysreg, rd, cond
- 	MCR\cond	p10, 7, \rd, \sysreg, cr0, 0	@ FMXR	\sysreg, \rd
- 	.endm
-+#endif
- 
- 	@ read all the working registers back into the VFP
- 	.macro	VFPFLDMIA, base, tmp
-diff --git a/arch/arm/vfp/Makefile b/arch/arm/vfp/Makefile
-index 749901a72d6d..f145c99fba6b 100644
---- a/arch/arm/vfp/Makefile
-+++ b/arch/arm/vfp/Makefile
-@@ -8,4 +8,9 @@
- # ccflags-y := -DDEBUG
- # asflags-y := -DDEBUG
- 
-+vmrs_fpinst    := $(call as-instr,.fpu vfpv2\nvmrs r0$(comma)FPINST,-DHAVE_VMRS_FPINST=1)
-+
-+KBUILD_CFLAGS  += $(vmrs_fpinst)
-+KBUILD_AFLAGS  += $(vmrs_fpinst)
-+
- obj-y		+= vfpmodule.o entry.o vfphw.o vfpsingle.o vfpdouble.o
-diff --git a/arch/arm/vfp/vfphw.S b/arch/arm/vfp/vfphw.S
-index e214007a20a2..90e5659827c7 100644
---- a/arch/arm/vfp/vfphw.S
-+++ b/arch/arm/vfp/vfphw.S
-@@ -78,6 +78,7 @@
- ENTRY(vfp_support_entry)
- 	DBGSTR3	"instr %08x pc %08x state %p", r0, r2, r10
- 
-+	.fpu	vfpv2
- 	ldr	r3, [sp, #S_PSR]	@ Neither lazy restore nor FP exceptions
- 	and	r3, r3, #MODE_MASK	@ are supported in kernel mode
- 	teq	r3, #USR_MODE
-diff --git a/arch/arm/vfp/vfpinstr.h b/arch/arm/vfp/vfpinstr.h
-index 38dc154e39ff..0db3825c4b4f 100644
---- a/arch/arm/vfp/vfpinstr.h
-+++ b/arch/arm/vfp/vfpinstr.h
-@@ -62,10 +62,23 @@
- #define FPSCR_C (1 << 29)
- #define FPSCR_V	(1 << 28)
- 
--/*
-- * Since we aren't building with -mfpu=vfp, we need to code
-- * these instructions using their MRC/MCR equivalents.
-- */
-+#ifdef HAVE_VMRS_FPINST
-+
-+#define fmrx(_vfp_) ({			\
-+	u32 __v;			\
-+	asm(".fpu	vfpv2\n"	\
-+	    "vmrs	%0, " #_vfp_	\
-+	    : "=r" (__v) : : "cc");	\
-+	__v;				\
-+ })
-+
-+#define fmxr(_vfp_,_var_)		\
-+	asm(".fpu	vfpv2\n"	\
-+	    "vmsr	" #_vfp_ ", %0"	\
-+	   : : "r" (_var_) : "cc")
-+
-+#else
-+
- #define vfpreg(_vfp_) #_vfp_
- 
- #define fmrx(_vfp_) ({			\
-@@ -79,6 +92,8 @@
- 	asm("mcr p10, 7, %0, " vfpreg(_vfp_) ", cr0, 0 @ fmxr	" #_vfp_ ", %0"	\
- 	   : : "r" (_var_) : "cc")
- 
-+#endif
-+
- u32 vfp_single_cpdo(u32 inst, u32 fpscr);
- u32 vfp_single_cprt(u32 inst, u32 fpscr, struct pt_regs *regs);
- 
--- 
-2.25.1
-
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git/log/?h=for-next
 
 _______________________________________________
 linux-arm-kernel mailing list
