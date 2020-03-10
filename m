@@ -2,59 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 670BF17F74E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 13:20:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA53B17F760
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 13:26:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/0tO5B3YnPZzqmkQpsXwCHk2+8QQQqtWNRDGUdttbSs=; b=hPoLZtfVb0Ptsx
-	Df4dtZAoy270moB6UkbkNhe7/xa/cHVIAFTKVEXyVQI3uY2I4+V0K2klHrEbg1hOY9sTPeNwyWHqU
-	StJ7K2a3aUyMRNTwDfrx6e3vY5XadhcuwjHl4HZ6MwyYjnxZ10DvzmxomVYKnaCmlxOZ7q0bGaeq0
-	mszTZm/Ti4RBvr87X5HiGpo6akjKOkpLc0ETcr6X1N+JGwb7rAcApiZ1NQQWvh3/6arlSsDwGRktJ
-	c8efYyY/CgCZ6CgT8PTci/awORl8hugQCJLDdybbhjFwrxwvBipKo4RHES4FxLdF4J924wDnKwSB2
-	JacG+qADUWNOCVx5VUmQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=sV3tieLvIlw7bPzDf5g5KXqNJb2SenAvWxpOkBF/rhI=; b=h2p
+	kr/FnOtkrbnv3nnSD7dHI6rLXOV81wRsFupxdkkivHU5Dd7pIcmJQUAC36163aZvRdXzBenzC5/0r
+	usrUdlxcdUwDL+XtHs7x86fIx+0T86nvEm8Lka+pNNu8LbEJYUdh5+9CpqdLo5jZTTo/PF8yEaEV9
+	LcW0xyEfS0ELxcHzCgCxB9FipSlfRXju330fzmM1F7caGck/dfQGhRyq2KmFMgFmf8TAC5l2pe7qo
+	3ripHJ0weaNH8d5j6oOLSMxkOQn+T4Mt1nfHqmnRhseuzYiccdq2h5Hw0Nv1l33IFXqJe1BK3cBrV
+	8bHCEy6konZ1X9wTTGW4c4Zd4x/XmzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBdsJ-0007Bl-VU; Tue, 10 Mar 2020 12:20:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBdsC-0007BP-BJ
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 12:20:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5B4D630E;
- Tue, 10 Mar 2020 05:20:35 -0700 (PDT)
-Received: from [10.37.12.115] (unknown [10.37.12.115])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D077E3F67D;
- Tue, 10 Mar 2020 05:20:32 -0700 (PDT)
-Subject: Re: [PATCH v6 07/18] arm64: cpufeature: Move cpu capability helpers
- inside C file
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-8-git-send-email-amit.kachhap@arm.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <eb3acde3-ba4c-162d-b1d2-54183ab4e921@arm.com>
-Date: Tue, 10 Mar 2020 12:20:57 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <1583476525-13505-8-git-send-email-amit.kachhap@arm.com>
-Content-Language: en-US
+	id 1jBdxy-0000iT-Dj; Tue, 10 Mar 2020 12:26:34 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBdxo-0000hs-Vl
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 12:26:26 +0000
+Received: by mail-pf1-x441.google.com with SMTP id p14so6406337pfn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 05:26:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=aqG1gpI3UojXGpXKG8hweJC7Y4rK/8MUyRGkcr9E4Og=;
+ b=NRk29ZvL9dXRWhydPFZ1MNK8u+VK026HEZdZ6QJrhG6+YwgQJuM7hPfBqK43y29Z/P
+ hWjhYn+xQYQ139crRXlL6FVPYINBUyzwkWupHkYDkopCT25pfhSL/C+lh7wspGkpamcO
+ HygLSE48s954ZazP/AOdt6BNis2UE2+oCV+23F2KC92SOkyyT8Z46DyqmlybGYQQPnoL
+ o3dP2LYSOlpEKs3G44b5dpHRWF0F4ZCaQHnnfQGsQqsZOFhA/MfKa2yp1KNWo5I5zPa4
+ 0HoLFM9+y1dGU69VBRHAS+ULujVS+3wcyH+yKDkDERtzTPYeMQZcwWxvGf1bYoGtNIn6
+ ONnQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=aqG1gpI3UojXGpXKG8hweJC7Y4rK/8MUyRGkcr9E4Og=;
+ b=bkrnMFwFn4g6FgIm2x9mKBWWPBduEHLmDNg9gtt/dQi4s97pmSKUkcstQFVhmsEWsE
+ 9KNQF7oMnpPalxCIDl2YjVw132M8WLyybFSnJoddsCmryKJkeV07jPhQMf/YH1r4taOn
+ fi8lQ9HOCvBsD4yKe4B8Jn7BubOhu/4ZkIdcjZJb3zWGeyxN5ZJcMCWOrZJL/mMylOwj
+ bguyl4e8fdi+QA2UoXMv1yjVhrkFOfbszhH+4Tcc/wt7NvL1Dv/2bsupUoswkenW24l9
+ QFtgPHxmRSF729f4TE/Qaq3rRSziEd50X089Ya9ZrQldTYNd1Mu+tKGUgptHdAFFDMVv
+ zomA==
+X-Gm-Message-State: ANhLgQ0v1RCctDiejxNlDsX5ODF9y5desANoG3lSbxxKKqHRbD1JOSRJ
+ N1HHi/Gd+unHXxvCX77VKzE=
+X-Google-Smtp-Source: ADFU+vsGROcltLUCt7lKgq5KZYHU57Q1LyZzFESKeWrFihj5+bJ1r/nBxQ+urASpaa7ZFtj7UtrrtA==
+X-Received: by 2002:a63:5864:: with SMTP id i36mr21841664pgm.426.1583843183996; 
+ Tue, 10 Mar 2020 05:26:23 -0700 (PDT)
+Received: from localhost.localdomain ([149.129.63.152])
+ by smtp.gmail.com with ESMTPSA id w11sm47557396pfn.4.2020.03.10.05.26.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Mar 2020 05:26:22 -0700 (PDT)
+From: Jianhui Zhao <zhaojh329@gmail.com>
+To: herbert@gondor.apana.org.au
+Subject: [PATCH v2] crypto: atmel-i2c - Fix wakeup fail
+Date: Tue, 10 Mar 2020 20:25:51 +0800
+Message-Id: <20200310122551.27831-1-zhaojh329@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_052036_434646_51162E07 
-X-CRM114-Status: GOOD (  14.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200310_052625_045203_E8143AA3 
+X-CRM114-Status: GOOD (  11.15  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zhaojh329[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [zhaojh329[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,73 +95,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
+Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ ludovic.desroches@microchip.com, Jianhui Zhao <zhaojh329@gmail.com>,
+ linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Amit,
+The wake token cannot be sent without ignoring the nack for the
+device address
 
-On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
+Signed-off-by: Jianhui Zhao <zhaojh329@gmail.com>
+---
+ drivers/crypto/atmel-i2c.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-[...]
-
->  
-> -static inline bool
-> -cpucap_late_cpu_optional(const struct arm64_cpu_capabilities *cap)
-> -{
-> -	return !!(cap->type & ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU);
-> -}
-> -
-> -static inline bool
-> -cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
-> -{
-> -	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
-> -}
-> -
->  /*
->   * Generic helper for handling capabilties with multiple (match,enable) pairs
->   * of call backs, sharing the same capability bit.
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index b12e386..865dce6 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -1363,6 +1363,19 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
->  }
->  #endif
->  
-> +/* Internal helper functions to match cpu capability type */
-> +static bool
-> +cpucap_late_cpu_optional(const struct arm64_cpu_capabilities *cap)
-> +{
-> +	return !!(cap->type & ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU);
-> +}
-> +
-> +static bool
-> +cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
-> +{
-> +	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
-> +}
-> +
->  static const struct arm64_cpu_capabilities arm64_features[] = {
->  	{
->  		.desc = "GIC system register CPU interface",
-> 
-
-Seems that the signature of the functions above is changed during the migration.
-In particular you dropped "inline". Is there any specific reason?
-
+diff --git a/drivers/crypto/atmel-i2c.c b/drivers/crypto/atmel-i2c.c
+index 1d3355913b40..e8e8281e027d 100644
+--- a/drivers/crypto/atmel-i2c.c
++++ b/drivers/crypto/atmel-i2c.c
+@@ -176,7 +176,8 @@ static int atmel_i2c_wakeup(struct i2c_client *client)
+ 	 * device is idle, asleep or during waking up. Don't check for error
+ 	 * when waking up the device.
+ 	 */
+-	i2c_master_send(client, i2c_priv->wake_token, i2c_priv->wake_token_sz);
++	i2c_transfer_buffer_flags(client, i2c_priv->wake_token,
++				i2c_priv->wake_token_sz, I2C_M_IGNORE_NAK);
+ 
+ 	/*
+ 	 * Wait to wake the device. Typical execution times for ecdh and genkey
 -- 
-Regards,
-Vincenzo
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
