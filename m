@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDF9F180555
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:47:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7108B180563
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:48:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OLoSIUhfD0xjAXXOuHHzpc68TvKSwywUk0WKbA2TEcA=; b=hPQzeTGAlztNGi
-	VQGUQMo6aqm1HRncIw5luHZlUWYMenHsNkA09DERMnFuveL0iQEMuCdNG2Ts9ROqGKdzLbkc9jq0o
-	lo9sTjcizv/1MCnI2RwdY7JOfK7hrUvX4vXDqhnGlwlDA7+iKwke7HdkrT72FNFkxFUwa7sPep5ln
-	b0Fsy/Z5gyJZd3p4yPeVeguKECOfcQDxc1CO3foPM/EKGCtLvHZpmp5Q868O6pE8n0Ylsc/6ZO3yS
-	y/9A5eioB8OqudNds0RzMcGoiKf9JZ5+6tHpM2rNFReNvb1eirkMsEs4wMTnJjbzO40wThx4B2jsF
-	l8wmDrl7JPs2BVXqVFPA==;
+	List-Owner; bh=/Q5pipVNvZnsAKofNsVbiBJE5BqXksJotctuBTNGivU=; b=isjb94n0u6WPCn
+	Q0Fpy6hL1d48DuLqBrvFPn7etpjy+vhR6ooCL2qBuv2B5JTUltQqYU04bfRaZ44pQgut4o0IekbPu
+	/QlazCPyM7p/lXwO+SR0ExmMNEQK+1QuRLYvP5IgQr55DSxcVcXkzrI5LkcXEZbbSVCv/OcAePlRp
+	CvHY1rxZpuSLmUPqSw+/vfguJEy+zrELIZpE1G/rNEp1rS/S2MaRng4jhQNi+8PvBSHr9lI2G2tC+
+	WBmOUK6Gk/Xh/Ve5h6dD0eN7R0B5XjkrOgn6p0Lup7yY9RdSN/k+z8ztbrdB70hTEax7mHJpUVt3Y
+	iHCktXmC1y45Y7Rg2OHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBiyg-0008F3-31; Tue, 10 Mar 2020 17:47:38 +0000
+	id 1jBiyv-0008U3-GY; Tue, 10 Mar 2020 17:47:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBiyH-00082n-SD
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:47:15 +0000
+ id 1jBiyH-00082o-VB
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:47:16 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C0C4121D7E;
+ by mail.kernel.org (Postfix) with ESMTPSA id C6996222C3;
  Tue, 10 Mar 2020 17:47:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1583862432;
- bh=L/g69189loolLa5gwwsa6SGkomtLZ00efuDIf4aB4kk=;
+ bh=GOx4OHBvG32/cclcjnBNpdMqfGpHrRJvLJMaBmsudos=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Q9vL0XX/mfnj7A/ngBoRrJFrke2SgqrL6rNIKO8ipP5EycnLce+R+zi6GpfsvDK4K
- rhFg9MEplTMdnx7eZb3bvcQkonOPuqtF0xkijYIafz9k3xyu3NF/E3ByXWmXjifSvH
- sYABcsJGTdMGe3SoSZCXbvfDZQzzi21aOtdmsI1o=
+ b=qt2AfPD5pSEEtyxk692KetnfrHYUOfrynhczQwxVq0/FhgZ/z+cHZkIUaUf9YWSUs
+ q6UjCdeF/4XigqzSsjpyfLDD5wF2PoN50Lag8JuwFF81zHVvZqu/bvWN4ytqyBp41a
+ CpiATD3FXlngWnL3zTf55p2iY7kuR/I05ie5dI5A=
 Received: by wens.tw (Postfix, from userid 1000)
- id 2AC5A604E2; Wed, 11 Mar 2020 01:47:09 +0800 (CST)
+ id 20CDA604FD; Wed, 11 Mar 2020 01:47:10 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH 1/3] ARM: dts: sun8i: r40: Move AHCI device node based on
- address order
-Date: Wed, 11 Mar 2020 01:47:07 +0800
-Message-Id: <20200310174709.24174-2-wens@kernel.org>
+Subject: [PATCH 2/3] ARM: dts: sun8i: r40: Fix register base address for SPI2
+ and SPI3
+Date: Wed, 11 Mar 2020 01:47:08 +0800
+Message-Id: <20200310174709.24174-3-wens@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200310174709.24174-1-wens@kernel.org>
 References: <20200310174709.24174-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_104713_933257_D2BF8865 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20200310_104714_052931_9E196C1D 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,58 +87,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-When the AHCI device node was added, it was added in the wrong location
-in the device tree file. The device nodes should be sorted by register
-address.
+When the SPI device nodes were added, SPI2 and SPI3 had incorrect
+register base addresses.
 
-Move the device node to before EHCI1, where it belongs.
+Fix the base address for both of them.
 
-Fixes: 41c64d3318aa ("ARM: dts: sun8i: r40: add sata node")
+Fixes: 554581b79139 ("ARM: dts: sun8i: R40: Add SPI controllers nodes and pinmuxes")
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm/boot/dts/sun8i-r40.dtsi | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
+ arch/arm/boot/dts/sun8i-r40.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
-index d5442b5b6fd2..b278686d0c22 100644
+index b278686d0c22..81cc92ddc78b 100644
 --- a/arch/arm/boot/dts/sun8i-r40.dtsi
 +++ b/arch/arm/boot/dts/sun8i-r40.dtsi
-@@ -307,6 +307,17 @@ crypto: crypto@1c15000 {
- 			resets = <&ccu RST_BUS_CE>;
- 		};
- 
-+		ahci: sata@1c18000 {
-+			compatible = "allwinner,sun8i-r40-ahci";
-+			reg = <0x01c18000 0x1000>;
-+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SATA>, <&ccu CLK_SATA>;
-+			resets = <&ccu RST_BUS_SATA>;
-+			reset-names = "ahci";
-+			status = "disabled";
-+
-+		};
-+
- 		ehci1: usb@1c19000 {
- 			compatible = "allwinner,sun8i-r40-ehci", "generic-ehci";
- 			reg = <0x01c19000 0x100>;
-@@ -733,17 +744,6 @@ spi3: spi@1c0f000 {
+@@ -718,10 +718,10 @@ spi1: spi@1c06000 {
  			#size-cells = <0>;
  		};
  
--		ahci: sata@1c18000 {
--			compatible = "allwinner,sun8i-r40-ahci";
--			reg = <0x01c18000 0x1000>;
--			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_BUS_SATA>, <&ccu CLK_SATA>;
--			resets = <&ccu RST_BUS_SATA>;
--			reset-names = "ahci";
--			status = "disabled";
--
--		};
--
- 		gmac: ethernet@1c50000 {
- 			compatible = "allwinner,sun8i-r40-gmac";
- 			syscon = <&ccu>;
+-		spi2: spi@1c07000 {
++		spi2: spi@1c17000 {
+ 			compatible = "allwinner,sun8i-r40-spi",
+ 				     "allwinner,sun8i-h3-spi";
+-			reg = <0x01c07000 0x1000>;
++			reg = <0x01c17000 0x1000>;
+ 			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&ccu CLK_BUS_SPI2>, <&ccu CLK_SPI2>;
+ 			clock-names = "ahb", "mod";
+@@ -731,10 +731,10 @@ spi2: spi@1c07000 {
+ 			#size-cells = <0>;
+ 		};
+ 
+-		spi3: spi@1c0f000 {
++		spi3: spi@1c1f000 {
+ 			compatible = "allwinner,sun8i-r40-spi",
+ 				     "allwinner,sun8i-h3-spi";
+-			reg = <0x01c0f000 0x1000>;
++			reg = <0x01c1f000 0x1000>;
+ 			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&ccu CLK_BUS_SPI3>, <&ccu CLK_SPI3>;
+ 			clock-names = "ahb", "mod";
 -- 
 2.25.1
 
