@@ -2,84 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 720A0180214
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:41:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F11F180229
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 16:45:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rTcf2aEGqn6g+qGx9QZ2X/v7reoHOl85Mbd6CoRoS90=; b=mN4PhyLkPe0vk9X8Z3GQO13lW
-	5iX/BYUhClRuj+O6GO+A5KAngGyWSP7jH9Koo1i/MjTQCco3u1+CPV+/w1fV0zapuCeOpr4ZrJGTb
-	ymxqDv/TfByJtaWNKlHx7fwDoiIdS82vpg+RRBTzNR0A56jHt33V023FhUnEJkPrunZe6SLgvsey+
-	HwOtWeH5bUI5URWunM1iTRWGbITiAIUt/cnfKGYPo3WPbPGrU5GI8MA1Dfc+vt94yjUaYCw6pDqy+
-	X9eALhyJtgKZdPKOew7HU3DAO2zvEmXNdgi6wMtfdLj1K6nacP1M6eyjW7sj19xA6W7wLFioJ/ppv
-	KxVXt/5qg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MDksplxsPwiHRXUbtqiCwTEnk9n8226l9ap2sFVHUsM=; b=oysLXXeZDkqs1G
+	+3zWyEvvnHx3GH1CpoNlBUGgrDKtCiXslhnSrqDrHDYq4LvNd7oyzi/qkGTIilnW18p+piiT/acyP
+	npqulHuJNJAitZyzYDDOVLZ+bWCsBHBMTH7xafwlQwMm5GMUZlGc9PQzt6hFZ7e0wrkPCu7dj8qIU
+	zfjMlsPr1M2vvFlavruNtc9plgm/PU2PTCQv7S3fRnVC5nw8JLl+cCzPtZYaoSOrfxOqkgbcrHaWr
+	VHMvBO19iUvQT08q+YmWzN4Ox1xO4MwSLMlqoQxGNc/EqhvkVCSHVILQlkRxLIUkACtzP0JbazD3Q
+	2Auc6LofBjTEweYeEuTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBh0a-0004QS-M4; Tue, 10 Mar 2020 15:41:28 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBh0Q-0004Pn-Hq
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:41:20 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02AFf771071642;
- Tue, 10 Mar 2020 10:41:07 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1583854867;
- bh=o8p5fgauZyRiTn5E7k0GtjXIgdIv7UAxDQEKWWWaJfY=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Ra5+SIXXQfeVOZm3RvbV5swiBlvbReP7NTLQX/D8K+VqcBi9liQGpquLYWf9iw29J
- 4ETfAYOode0Lsr6LyYcndg4kc9ygQL/UoqToEg+Mm/9Os5MJgYsXqFy0d+m4uILvmf
- 6RtL7KddBk0DvyXZIsBQQg04LHxSa2E8YXiCrum0=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02AFf7mA050793
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 10 Mar 2020 10:41:07 -0500
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 10
- Mar 2020 10:41:07 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 10 Mar 2020 10:41:06 -0500
-Received: from [128.247.81.242] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02AFf6vb119386;
- Tue, 10 Mar 2020 10:41:06 -0500
-Subject: Re: [PATCH] bus: ti-sysc: Fix quirk flags for lcdc on am335x
-To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20200309181912.28645-1-tony@atomide.com>
-From: Dave Gerlach <d-gerlach@ti.com>
-Message-ID: <1196fb5a-ed41-51bb-67a4-dc9c7fe3ed36@ti.com>
-Date: Tue, 10 Mar 2020 10:45:01 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1jBh41-00053n-Ei; Tue, 10 Mar 2020 15:45:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBh3t-00053B-UZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 15:44:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 588A71FB;
+ Tue, 10 Mar 2020 08:44:53 -0700 (PDT)
+Received: from [10.37.12.115] (unknown [10.37.12.115])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A5A943F534;
+ Tue, 10 Mar 2020 08:44:48 -0700 (PDT)
+Subject: Re: [PATCH v6 09/18] arm64: enable ptrauth earlier
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <1583476525-13505-10-git-send-email-amit.kachhap@arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <4000de90-6196-364d-dcad-5476d85e18e0@arm.com>
+Date: Tue, 10 Mar 2020 15:45:13 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200309181912.28645-1-tony@atomide.com>
+In-Reply-To: <1583476525-13505-10-git-send-email-amit.kachhap@arm.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_084118_679127_BEE83DAF 
-X-CRM114-Status: GOOD (  19.72  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200310_084454_034415_E5919660 
+X-CRM114-Status: GOOD (  16.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,75 +65,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Jyri Sarha <jsarha@ti.com>, "Andrew F . Davis" <afd@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Keerthy <j-keerthy@ti.com>, Suman Anna <s-anna@ti.com>,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tony,
-On 3/9/20 1:19 PM, Tony Lindgren wrote:
-> Commit adb72394e2ab ("ARM: OMAP2+: Drop legacy platform data for am3
-> lcdc") dropped legacy platform data but we never added the quirks for
-> SWSUP_SIDLE and SWSUP_MSTANDBY for lcdc for ti-sysc driver.
+Hi Amit,
+
+On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
+> From: Kristina Martsenko <kristina.martsenko@arm.com>
 > 
-> This breaks suspend/resume. Let's fix the issue by enabling the same
-> quirks for ti-sysc driver as we had earlier with platform data.
+> When the kernel is compiled with pointer auth instructions, the boot CPU
+> needs to start using address auth very early, so change the cpucap to
+> account for this.
 > 
-> Fixes: adb72394e2ab ("ARM: OMAP2+: Drop legacy platform data for am3 lcdc")
-> Fixes: 23731eac9848 ("bus: ti-sysc: Detect devices on am335x when DEBUG is enabled")
-> Reported-by: Keerthy <j-keerthy@ti.com>
-> Cc: Jyri Sarha <jsarha@ti.com>
-> Cc: Keerthy <j-keerthy@ti.com>
-> Cc: Dave Gerlach <d-gerlach@ti.com>
-> Cc: Tero Kristo <t-kristo@ti.com>
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
-> ---
+> Pointer auth must be enabled before we call C functions, because it is
+> not possible to enter a function with pointer auth disabled and exit it
+> with pointer auth enabled. Note, mismatches between architected and
+> IMPDEF algorithms will still be caught by the cpufeature framework (the
+> separate *_ARCH and *_IMP_DEF cpucaps).
 > 
-> This patch is against v5.6-rc series, it needs a merge conflict resolved
-> for Linux next next is using -ENODEV instead of -1 for missing registers.
+> Note the change in behavior: if the boot CPU has address auth and a
+> late CPU does not, then the late CPU is parked by the cpufeature
+> framework. Also, if the boot CPU does not have address auth and the late
+> CPU has then the late cpu will still boot but with ptrauth feature
+> disabled.
+> 
+> Leave generic authentication as a "system scope" cpucap for now, since
+> initially the kernel will only use address authentication.
+> 
 
+I can't find in this patch were CPU_STUCK_REASON_NO_PTRAUTH is set. Maybe I am
+missing something. Please feel free to correct me if I am wrong.
 
-Tested with v5.6-rc5, can confirm that suspend looks OK now and is 
-exited without "pm33xx pm33xx: PM: Could not transition all powerdomains 
-to target state" message with this patch.
+My expectation is that you should call early_park_cpu to do that if the
+secondary does not support PTRAUTH similar to what you did in v2 of this series:
 
-Tested-by: Dave Gerlach <d-gerlach@ti.com>
+ENTRY(__cpu_secondary_checkptrauth)
+#ifdef CONFIG_ARM64_PTR_AUTH
+       /* Check if the CPU supports ptrauth */
+       mrs     x2, id_aa64isar1_el1
+       ubfx    x2, x2, #ID_AA64ISAR1_APA_SHIFT, #8
+       cbnz    x2, 1f
+alternative_if ARM64_HAS_ADDRESS_AUTH
+       mov     x3, 1
+alternative_else
+       mov     x3, 0
+alternative_endif
+       cbz     x3, 1f
+       /* Park the mismatched secondary CPU */
+       early_park_cpu CPU_STUCK_REASON_NO_PTRAUTH
+#endif
+1:     ret
+ENDPROC(__cpu_secondary_checkptrauth)
 
+and then check it during the secondary_startup, similar to what happens for
+52BIT_VA for example.
+
+In this way "update_early_cpu_boot_status" would update the
+CPU_STUCK_REASON_NO_PTRAUTH flag.
+
+[...]
+
+-- 
 Regards,
-Dave
-
-> 
-> ---
->   drivers/bus/ti-sysc.c | 3 ++-
->   1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
-> --- a/drivers/bus/ti-sysc.c
-> +++ b/drivers/bus/ti-sysc.c
-> @@ -1266,6 +1266,8 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
->   	SYSC_QUIRK("gpu", 0x50000000, 0x14, -1, -1, 0x00010201, 0xffffffff, 0),
->   	SYSC_QUIRK("gpu", 0x50000000, 0xfe00, 0xfe10, -1, 0x40000000 , 0xffffffff,
->   		   SYSC_MODULE_QUIRK_SGX),
-> +	SYSC_QUIRK("lcdc", 0, 0, 0x54, -1, 0x4f201000, 0xffffffff,
-> +		   SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_SWSUP_MSTANDBY),
->   	SYSC_QUIRK("usb_otg_hs", 0, 0x400, 0x404, 0x408, 0x00000050,
->   		   0xffffffff, SYSC_QUIRK_SWSUP_SIDLE | SYSC_QUIRK_SWSUP_MSTANDBY),
->   	SYSC_QUIRK("usb_otg_hs", 0, 0, 0x10, -1, 0x4ea2080d, 0xffffffff,
-> @@ -1294,7 +1296,6 @@ static const struct sysc_revision_quirk sysc_revision_quirks[] = {
->   	SYSC_QUIRK("gpu", 0, 0xfe00, 0xfe10, -1, 0x40000000 , 0xffffffff, 0),
->   	SYSC_QUIRK("hsi", 0, 0, 0x10, 0x14, 0x50043101, 0xffffffff, 0),
->   	SYSC_QUIRK("iss", 0, 0, 0x10, -1, 0x40000101, 0xffffffff, 0),
-> -	SYSC_QUIRK("lcdc", 0, 0, 0x54, -1, 0x4f201000, 0xffffffff, 0),
->   	SYSC_QUIRK("mcasp", 0, 0, 0x4, -1, 0x44306302, 0xffffffff, 0),
->   	SYSC_QUIRK("mcasp", 0, 0, 0x4, -1, 0x44307b02, 0xffffffff, 0),
->   	SYSC_QUIRK("mcbsp", 0, -1, 0x8c, -1, 0, 0, 0),
-> 
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
