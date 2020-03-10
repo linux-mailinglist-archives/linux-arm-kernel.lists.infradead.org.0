@@ -2,112 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B9EB17F278
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 09:58:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3724917F335
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:15:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H/Sf4Yen8rT2iLNG61MRb5DA9mc7arO3F1k4TI1cT0I=; b=iZ2AeabIjCJMCx
-	yX5AXuI8cJDc16l9ttNff1JpCfJrOL2DmH66PpUHL4J9bXKegmxw/Ko2RvUxtLvtheLH2AZqt9nKr
-	Dt5RjxmsHAbV7OxNG2cERHdBvS8va++tqE2KriDOOBHPztFk3nfDn+ZdDaLJUIyWHFIJTEc3vrjgE
-	iQs30goZuZUndt91u2K5df7Do+YlbTpy7FLEkMlbFG/9xOKE6xkkcI6IiySU9kTuycuLBDkGn7MFm
-	+RP6ApSMDJ5dvH7OL4QrlyFxPXgWihVD8kzTxs2xMWrBj8L2zPYswo6s/oF/Sg0FfctmB+FKbZGLo
-	r78pbP+nDnPXyhNmUHSQ==;
+	List-Owner; bh=gQq3feXxm6BPR73pWVaLk9wUZadc+8BxIyKXzIYmTIQ=; b=DFzc5qOcUQax41
+	OLN7FYaWKxPx2BOkY2ICEdVm74/7fgxYNf0ShJmRHqZOkYgCy7nNOBJkbEwKcwUVwuj50g07FDOMp
+	W1wui18d/9REYM0CmTZ4H4mi4fmm/fmDls6PVCHDwTVl3sV/Cqx18vIDAGqZ3X0lvGQVrP4I8YgeQ
+	bM0doUVyXB2SMIxm0snk84XYCwjVogLu3OgtCssnhPl8DGEMaWeSH+s1rmyaFtp1Kl65PHOagL7vi
+	DQ9/Vh+MGmtYmFktF8djSnD6aTWlkfFnRVZSjpPWOx7e1u/945vdq3zb6p4b2cT35FRirn+DUSAxh
+	QLUmE88ZrO3Tg9QjR12w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBai6-00073Y-V7; Tue, 10 Mar 2020 08:57:58 +0000
-Received: from mail-eopbgr1410098.outbound.protection.outlook.com
- ([40.107.141.98] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1jBayY-0007O1-9T; Tue, 10 Mar 2020 09:14:58 +0000
+Received: from mail-vi1eur05on2043.outbound.protection.outlook.com
+ ([40.107.21.43] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBahx-00072d-Ir
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 08:57:51 +0000
+ id 1jBayO-0007Mc-3J
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:14:49 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=E4i+SAoHRTgRt5wVSL6VZeJlRwhhmsAWTEM/chWYKD6388vIPuQksMB9UT5xodlmaqMHFdKQjEBVFRuQdvj2Ywyy/eV5azhrAWJb2K265JJbldZwCkatPse+Ga16ossIA+0o80zjxJzLROnx+5xRl3zKECGHcyVUHW8ph9YhGO93kAdu8iQOmeLqw1+z9ilUpOcoqFT/ScDJGk7Tx+9+8iCXGE6RxQRGq0WGLb7YCwAvKtIUmatzP+2ij/zMyrDZuJRNmMUS85ltYxBkdC7rayvyzLJ6ys6bG7Ep+jLq3vFCZNyEmGgexh4nO5lcf83NvEEOnemamiGkKIdPdz2S2w==
+ b=e96rwsfPqrOD1urrUD3KaHVj31wkCsfELC6xpTpT4pvkbtmKD9U/2pC0ac+TjpZ0EoxZE02heUkPmLiuxr9/0bNlBgoUhW7+g6LQKSpONQUxVdCNDC5GxSb+hIhKay8tqCjK4co+Zm8elRATCwegU3hMgY6n+uimXk/2+r9zXbKSPF03OiLlnYK8kAK/DuLELsPAs9VT2MTtKIEDZuLTNgI+ayDEfMU0Iyosnng4oGiQhJDXPrRduHMSES/YXSKGRldDizJndvxJ3WejK7Ph3sTVbA9Cml4/1Lk+mHFj5kIT9owDLggcSsKRIlWwsb4x9ACrkOVNzNO9hIYCfcQ8BA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kDPEk/Ljw/aMGgoBNBhlqfmgjnKHnpcNetx3IG5UJ1o=;
- b=eK3fowrtJnqgBogxTDPLC5jG321ewN0KDLRuI98sbY3kC2DjdFCTK61jujqQQEnddfGDCpR3c4CPBodmK0vMgRuIraYaajC52JlrE2elLw2YSU01R7VoI95kI/E4InAZIhpb45rYsHvZlrHRa/9sz2G2AgUh0IsI4xn0AtCbwY/Oq/gbhZkwwHQIw12Kr406MhVv5ZxzT45qAc6UwTdApVa19nDEHQ5+6qs3CgWik7d2R02dzlibDjQP57Ge6f0KfX6FX86lYB1+TGpYlFeYl0zEd9cdUUwgCdG10Pa7ZNkkj2js64jSfddraHRRaWYFinUMs9NmfODHeQqCkQb1Xw==
+ bh=ugHTLhGlBTEfeaP/oV0xlnhckQhEFqENdUJ9010PM5k=;
+ b=YVi7Ge/auli/++oZPVYdqiZRN6YLm+gXQfPgNPQesgooNUu4l+IyBvuG49Zr6UccKGljmOgyA9xyYdE3mjYVhzoBKu9WLTlSmdBXJ6dQmygKyA5EDFDtO6F/ue3SUm6ErqOxsyCJkb3sUVqURLtKutWloIzNX/RUM2soxmNv4y49bsz3wPGobvENXbfsJMeEvE/JekSJ/3cxsoMzsCVm1P6WRck07KCoYxzvLFuuBC6oiYDT+RL5X//VpXmOwPkfBOU0HAvBWFhoJnV27Gtk34qMzKeNc9BgP5jgfknztff6nOCy+c8MZrOYr9gggUqaIWOqhZib02M7zfZLBMGx9w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=bp.renesas.com; dmarc=pass action=none
- header.from=bp.renesas.com; dkim=pass header.d=bp.renesas.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kDPEk/Ljw/aMGgoBNBhlqfmgjnKHnpcNetx3IG5UJ1o=;
- b=gKg+K8sce8pV4u8HD+bNQXgy8Dew4Za1T7DXQMm5mMAwRUOUtzLok7rGhTDDVaB8N5uobSXnoMzu1xXwLdPp7V49+Z3YBUIh/KDXBGdrFVCT/em7R5CUhdX8laRio29oqyifUySQBH3lbG0wkthQ+69xmPKdl5q+nzpZLk3mJmo=
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com (20.178.97.80) by
- OSBPR01MB2168.jpnprd01.prod.outlook.com (52.134.242.11) with Microsoft SMTP
+ bh=ugHTLhGlBTEfeaP/oV0xlnhckQhEFqENdUJ9010PM5k=;
+ b=AdC43ylwGcEZwQeniVK3KzmiOMhPYufnO6n0ojyw26PRWgXHVBZ2V3BxJ5cAi4BFZuG4fQ3ka2hywkjSaFAwaV/Sd8Iy85EWGZtp0pmuNMYPTi/xqwm71Su8JrJ1FC40xJaiec/vCyDhoJNiCb8O/YuVYXgy3ifmGsXDCQI6kbQ=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.232.15) by
+ VE1PR04MB6749.eurprd04.prod.outlook.com (10.255.118.22) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.17; Tue, 10 Mar 2020 08:57:42 +0000
-Received: from OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::6df0:eb47:a259:b94b]) by OSBPR01MB3590.jpnprd01.prod.outlook.com
- ([fe80::6df0:eb47:a259:b94b%7]) with mapi id 15.20.2793.013; Tue, 10 Mar 2020
- 08:57:42 +0000
-From: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Sakari Ailus <sakari.ailus@linux.intel.com>
-Subject: RE: [PATCH 2/2] media: i2c: ov5645: Switch to assigned-clock-rates
-Thread-Topic: [PATCH 2/2] media: i2c: ov5645: Switch to assigned-clock-rates
-Thread-Index: AQHV9ghyXLEK7w0bFkWyEANalmhRxqhBhdKAgAAAdqA=
-Date: Tue, 10 Mar 2020 08:57:42 +0000
-Message-ID: <OSBPR01MB3590059F0ADB45559111C135AAFF0@OSBPR01MB3590.jpnprd01.prod.outlook.com>
-References: <1583754373-16510-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1583754373-16510-3-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200310085027.GA5379@paasikivi.fi.intel.com>
-In-Reply-To: <20200310085027.GA5379@paasikivi.fi.intel.com>
-Accept-Language: en-GB, en-US
+ 15.20.2793.17; Tue, 10 Mar 2020 08:59:03 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::490:6caa:24b:4a31]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::490:6caa:24b:4a31%6]) with mapi id 15.20.2793.013; Tue, 10 Mar 2020
+ 08:59:03 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Subject: RE: [RESEND v6  09/13] dmaengine: imx-sdma: remove ERR009165 on
+ i.mx6ul
+Thread-Topic: [RESEND v6  09/13] dmaengine: imx-sdma: remove ERR009165 on
+ i.mx6ul
+Thread-Index: AQHV9oxi9deJ9GVPPUGUNCzRt8EnOKhBfB+AgAAGp2A=
+Date: Tue, 10 Mar 2020 08:59:03 +0000
+Message-ID: <VE1PR04MB6638029458AFDE3005C6E4A489FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1583839922-22699-1-git-send-email-yibin.gong@nxp.com>
+ <1583839922-22699-10-git-send-email-yibin.gong@nxp.com>
+ <20200310081925.GT3335@pengutronix.de>
+In-Reply-To: <20200310081925.GT3335@pengutronix.de>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=prabhakar.mahadev-lad.rj@bp.renesas.com; 
-x-originating-ip: [193.141.220.21]
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [92.121.68.129]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 9fa99573-dda6-48c3-e4c9-08d7c4d117f6
-x-ms-traffictypediagnostic: OSBPR01MB2168:
-x-microsoft-antispam-prvs: <OSBPR01MB2168F76207CF5DAA1AB04B1EAAFF0@OSBPR01MB2168.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-ms-office365-filtering-correlation-id: 653da096-f08a-461d-76b2-08d7c4d14819
+x-ms-traffictypediagnostic: VE1PR04MB6749:|VE1PR04MB6749:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB67498569032F3046013F363D89FF0@VE1PR04MB6749.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
 x-forefront-prvs: 033857D0BD
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(346002)(39860400002)(366004)(376002)(396003)(189003)(199004)(54906003)(2906002)(4326008)(53546011)(6916009)(6506007)(7696005)(5660300002)(316002)(52536014)(478600001)(71200400001)(7416002)(81166006)(55016002)(81156014)(66476007)(66446008)(33656002)(8936002)(86362001)(26005)(64756008)(8676002)(66556008)(186003)(66946007)(9686003)(76116006);
- DIR:OUT; SFP:1102; SCL:1; SRVR:OSBPR01MB2168;
- H:OSBPR01MB3590.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: bp.renesas.com does not designate
+ SFS:(10009020)(4636009)(396003)(366004)(376002)(136003)(39860400002)(346002)(199004)(189003)(81156014)(66476007)(8936002)(64756008)(66556008)(66446008)(76116006)(66946007)(8676002)(54906003)(186003)(71200400001)(26005)(7696005)(316002)(81166006)(6506007)(4326008)(7416002)(478600001)(966005)(45080400002)(2906002)(6916009)(33656002)(52536014)(5660300002)(86362001)(9686003)(55016002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6749;
+ H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 5qE61C1+mnKb5jsmGaeIumj1yd5t8U+fdCMuBbdXEfaZmZdLyLLrd473b3NShjoHZ/u3K05NvWW8/WOVm2atYAsDBsJr8B+5urJcQ0Prc619LjM/VhLbvOAY9hS66w1RyQjJUVamaYWN/ZaRgg2odMZAnM6CVHlOF8ZkOBSw+zzGXmuYx6qBGJSqvM/hkx1zPgjMjE0LMMOpxxGgAuTlfximOjXBBCwAhCQ1OkM2LcVVZf2Zqh5TqBGV3iaUI/zQqvcXJ9MjWdHnu3dWQTl5WAaOP5SDftqmMIFIB0fSmDvFHaqleAUV87dC0TCqqG/ci5jTTJsVpa5onQskAPC9/Ohv3X7H/WSkdzcjxvJg7bwa0Psb300nLSvkt8KVPQfPFdY+Xig/ygGkR0FQdQg5iN/GQSzgGvjzwgDxynNnIL6rmpX4mfUPlGMNJflB9kDh
-x-ms-exchange-antispam-messagedata: ZLvfwDD8A/9QuYvYAd3nxEc+wL+4iOCLG5DFys4JHavglSaTmtn9hCKRT/bzfCFRcAwmJi/o77nT278L99rWYEyXm6jbXXrTQpLr6uGz/+3onttAfLptp0sBKh/ryTxaGKK1Ze93sAnXKL8jy9xJQg==
-x-ms-exchange-transport-forked: True
+x-microsoft-antispam-message-info: J8v00ssN6BGfgXaoMy/LkN4iLJAJ7eTYJPBa/pVT2ysS643zFvbYNyV1BpEBWRDQ17ioRhpLd8SgbZdHPz3mkz0chvXSJSU51NReCpuI6cgruiMX92u7SUrKq1/0pPJUDs2LD+q65S3o4Kbm/bdMLiwLqW0Dcz9ugdBWIMwwmvQ+agzwCk95hq+UylIVzST4guMXnnbLEsJ8LdhVT5dBrxqmWmnTmBhOgQMlH7dgXvWQVDsrhADcMgPA9FJOXZtHLCtpX05CYYNO/4K18gpGbmtNmKppQAL8dk4TpiYsTvY327qtO7dNxSVbH87rpFS4mOJ0TowHytXZucAwwXU+1lV55oD32JDnSPExjzzSUZOeVW0v1q4rfJhuTE1HqUqLcbHr+Q/J+YFjZ1LdoE0jpb5P9MbbeYJ61a+VcxMh5aodQczl/jyfXqGjbtEaW7oeb2EettrActHH0li+jFUaJaK029Yfh+JiVN1dXFufabVv4bpPoj5ggqgfWWMmwxpNwv+f0/T71HAILMhjB048fA==
+x-ms-exchange-antispam-messagedata: oa4NusZbqKQqRKRiKVKnOJUIr8hrTHn/lhgPBmfpKAp4OOx3iBvAvDMAlTZ16I0Q6iWgwO+GSGarXxdV+410VxJzvvKTa1fMh6f78bEAVyCUfhgn8LyNuMWnVvXsU2pZlOBEJibE/wsXnHCt+YAqfQ==
 MIME-Version: 1.0
-X-OriginatorOrg: bp.renesas.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9fa99573-dda6-48c3-e4c9-08d7c4d117f6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Mar 2020 08:57:42.2331 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 653da096-f08a-461d-76b2-08d7c4d14819
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Mar 2020 08:59:03.2032 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: FSFJB/Jl+WMUCB6VZgNiUqIAMR3gaX/Gwrku697496hjB3nfwqfl+rgu3ocPMRcLJaKscwRw1ftECoUddu7LW0VW9VgMk8e5B1yun9QVWPfrikFWVRhMGL4j2Wv1yLMW
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB2168
+X-MS-Exchange-CrossTenant-userprincipalname: bNv+FCPOiz243tzKQ5R1APxgg6RTfGjZUfAe0hGK6xwiOZOEy0Jewquz7vp72LsN5NIeg23PuaNfkMSwyhMiZg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6749
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_015749_666212_FA70091D 
-X-CRM114-Status: GOOD (  27.20  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200310_021448_155843_9D0EC54C 
+X-CRM114-Status: GOOD (  21.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.98 listed in list.dnswl.org]
+ no trust [40.107.21.43 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,126 +124,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Lad Prabhakar <prabhakar.csengg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
-
-Thank you for the review.
-
-> -----Original Message-----
-> From: Sakari Ailus <sakari.ailus@linux.intel.com>
-> Sent: 10 March 2020 08:50
-> To: Prabhakar Mahadev Lad <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>; Rob Herring
-> <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>; Shawn
-> Guo <shawnguo@kernel.org>; Sascha Hauer <s.hauer@pengutronix.de>;
-> Pengutronix Kernel Team <kernel@pengutronix.de>; Fabio Estevam
-> <festevam@gmail.com>; NXP Linux Team <linux-imx@nxp.com>; Kieran
-> Bingham <kieran.bingham+renesas@ideasonboard.com>; linux-
-> media@vger.kernel.org; devicetree@vger.kernel.org; linux-
-> kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; Lad
-> Prabhakar <prabhakar.csengg@gmail.com>
-> Subject: Re: [PATCH 2/2] media: i2c: ov5645: Switch to assigned-clock-rates
->
-> Hi Prabhakar,
->
-> On Mon, Mar 09, 2020 at 11:46:13AM +0000, Lad Prabhakar wrote:
-> > This patch switches to assigned-clock-rates for specifying the clock rate.
-> > The clk-conf.c internally handles setting the clock rate, as a result
-> > setting the clk rate from the driver is dropped.
+On 2020/03/10 Sascha Hauer <s.hauer@pengutronix.de> wrote: 
+> On Tue, Mar 10, 2020 at 07:31:58PM +0800, Robin Gong wrote:
+> > ECSPI issue fixed from i.mx6ul at hardware level, no need
+> > ERR009165 anymore on those chips such as i.mx8mq. Add i.mx6sx from
+> > where i.mx6ul source.
 > >
-> > Correspondingly imx6qdl-wandboard.dtsi which references to ov5645 has
-> > been updated to use assigned-clock-rates in the same patch to avoid
-> > bisect failures.
-> >
-> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-
-> lad.rj@bp.renesas.com>
+> > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> > Acked-by: Vinod Koul <vkoul@kernel.org>
 > > ---
-> >  arch/arm/boot/dts/imx6qdl-wandboard.dtsi | 3 ++-
-> >  drivers/media/i2c/ov5645.c               | 9 ++-------
-> >  2 files changed, 4 insertions(+), 8 deletions(-)
+> >  drivers/dma/imx-sdma.c | 51
+> > +++++++++++++++++++++++++++++++++++++++++++++++++-
+> >  1 file changed, 50 insertions(+), 1 deletion(-)
 > >
-> > diff --git a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> > b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> > index c070893..71f5f75 100644
-> > --- a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> > +++ b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
-> > @@ -126,7 +126,8 @@
-> >  reg = <0x3c>;
-> >  clocks = <&clks IMX6QDL_CLK_CKO2>;
-> >  clock-names = "xclk";
-> > -clock-frequency = <24000000>;
-> > +assigned-clocks = <&clks IMX6QDL_CLK_CKO2>;
-> > +assigned-clock-rates = <24000000>;
-> >  vdddo-supply = <&reg_1p8v>;
-> >  vdda-supply = <&reg_2p8v>;
-> >  vddd-supply = <&reg_1p5v>;
->
-> Shouldn't this be a separate patch?
->
-I did think about it, but realized it might break bisect, but with below changes this can
-be a separate patch now.
-
-> > diff --git a/drivers/media/i2c/ov5645.c b/drivers/media/i2c/ov5645.c
-> > index a6c17d1..2aa2677 100644
-> > --- a/drivers/media/i2c/ov5645.c
-> > +++ b/drivers/media/i2c/ov5645.c
-> > @@ -1094,7 +1094,8 @@ static int ov5645_probe(struct i2c_client *client)
-> >  return PTR_ERR(ov5645->xclk);
-> >  }
+> > diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c index
+> > 56288d8..5ae7237 100644
+> > --- a/drivers/dma/imx-sdma.c
+> > +++ b/drivers/dma/imx-sdma.c
+> > @@ -419,6 +419,13 @@ struct sdma_driver_data {
+> >  	int num_events;
+> >  	struct sdma_script_start_addrs	*script_addrs;
+> >  	bool check_ratio;
+> > +	/*
+> > +	 * ecspi ERR009165 fixed should be done in sdma script
+> > +	 * and it has been fixed in soc from i.mx6ul.
+> > +	 * please get more information from the below link:
+> > +	 *
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.nx
+> p.com%2Fdocs%2Fen%2Ferrata%2FIMX6DQCE.pdf&amp;data=02%7C01%7Cyi
+> bin.gong%40nxp.com%7C91d42046e6894501d48508d7c4cbcae2%7C686ea1d3
+> bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637194251876090170&amp;sdata=
+> T6LA4xz9CUFlNpnyjHSThEQb8i1rhbY9e1nUyxIGD5Q%3D&amp;reserved=0
+> > +	 */
+> > +	bool ecspi_fixed;
+> >  };
 > >
-> > -ret = of_property_read_u32(dev->of_node, "clock-frequency",
-> &xclk_freq);
-> > +ret = of_property_read_u32(dev->of_node, "assigned-clock-rates",
-> > +   &xclk_freq);
->
-> I think you'd still need to check for clock-frequency to be compatible with
-> existing DT binaries.
->
-Makes sense, I will add the check for it and if clock-frequency is specified Ill let the driver
-set the clock.
-
-Cheers,
---Prabhakar
-
-> >  if (ret) {
-> >  dev_err(dev, "could not get xclk frequency\n");
-> >  return ret;
-> > @@ -1107,12 +1108,6 @@ static int ov5645_probe(struct i2c_client *client)
-> >  return -EINVAL;
-> >  }
+> >  struct sdma_engine {
+> > @@ -539,6 +546,31 @@ static struct sdma_driver_data sdma_imx6q = {
+> >  	.script_addrs = &sdma_script_imx6q,
+> >  };
 > >
-> > -ret = clk_set_rate(ov5645->xclk, xclk_freq);
-> > -if (ret) {
-> > -dev_err(dev, "could not set xclk frequency\n");
-> > -return ret;
-> > -}
-> > -
-> >  for (i = 0; i < OV5645_NUM_SUPPLIES; i++)
-> >  ov5645->supplies[i].supply = ov5645_supply_name[i];
+> > +static struct sdma_script_start_addrs sdma_script_imx6sx = {
+> > +	.ap_2_ap_addr = 642,
+> > +	.uart_2_mcu_addr = 817,
+> > +	.mcu_2_app_addr = 747,
+> > +	.uartsh_2_mcu_addr = 1032,
+> > +	.mcu_2_shp_addr = 960,
+> > +	.app_2_mcu_addr = 683,
+> > +	.shp_2_mcu_addr = 891,
+> > +	.spdif_2_mcu_addr = 1100,
+> > +	.mcu_2_spdif_addr = 1134,
+> > +};
+> > +
+> > +static struct sdma_driver_data sdma_imx6sx = {
+> > +	.chnenbl0 = SDMA_CHNENBL0_IMX35,
+> > +	.num_events = 48,
+> > +	.script_addrs = &sdma_script_imx6sx, };
+> > +
+> > +static struct sdma_driver_data sdma_imx6ul = {
+> > +	.chnenbl0 = SDMA_CHNENBL0_IMX35,
+> > +	.num_events = 48,
+> > +	.script_addrs = &sdma_script_imx6sx,
+> > +	.ecspi_fixed = true,
+> > +};
+> > +
+> >  static struct sdma_script_start_addrs sdma_script_imx7d = {
+> >  	.ap_2_ap_addr = 644,
+> >  	.uart_2_mcu_addr = 819,
+> > @@ -584,9 +616,15 @@ static const struct platform_device_id
+> sdma_devtypes[] = {
+> >  		.name = "imx6q-sdma",
+> >  		.driver_data = (unsigned long)&sdma_imx6q,
+> >  	}, {
+> > +		.name = "imx6sx-sdma",
+> > +		.driver_data = (unsigned long)&sdma_imx6sx,
+> > +	}, {
+> 
+> Now the i.MX6sx uses a new sdma_script_start_addrs entry which is the same
+> as the i.MX6q one we used before with one exception: it lacks the
+> per_2_per_addr = 6331 entry. This is only used for IMX_DMATYPE_ASRC and
+Totally same script for i.mx6 chips whatever i.MX6sx, i.MX6q or i.MX6ul. 
+> IMX_DMATYPE_ASRC_SP, both are entirely unused in the mainline kernel. So
+> why must the i.MX6sx changed here and what has this to do with ECSPI?
+i.MX6ul is based on i.MX6sx, so adding i.MX6sx could keep good shape on our i.MX family evolution.
+> 
+> Sascha
+> 
+> >  		.name = "imx7d-sdma",
+> >  		.driver_data = (unsigned long)&sdma_imx7d,
+> >  	}, {
+> > +		.name = "imx6ul-sdma",
+> > +		.driver_data = (unsigned long)&sdma_imx6ul,
+> > +	}, {
+> >  		.name = "imx8mq-sdma",
+> >  		.driver_data = (unsigned long)&sdma_imx8mq,
+> >  	}, {
+> > @@ -602,7 +640,9 @@ static const struct of_device_id sdma_dt_ids[] = {
+> >  	{ .compatible = "fsl,imx35-sdma", .data = &sdma_imx35, },
+> >  	{ .compatible = "fsl,imx31-sdma", .data = &sdma_imx31, },
+> >  	{ .compatible = "fsl,imx25-sdma", .data = &sdma_imx25, },
+> > +	{ .compatible = "fsl,imx6sx-sdma", .data = &sdma_imx6sx, },
+> >  	{ .compatible = "fsl,imx7d-sdma", .data = &sdma_imx7d, },
+> > +	{ .compatible = "fsl,imx6ul-sdma", .data = &sdma_imx6ul, },
+> >  	{ .compatible = "fsl,imx8mq-sdma", .data = &sdma_imx8mq, },
+> >  	{ /* sentinel */ }
+> >  };
+> > @@ -1169,8 +1209,17 @@ static int sdma_config_channel(struct dma_chan
+> *chan)
+> >  			if (sdmac->peripheral_type == IMX_DMATYPE_ASRC_SP ||
+> >  			    sdmac->peripheral_type == IMX_DMATYPE_ASRC)
+> >  				sdma_set_watermarklevel_for_p2p(sdmac);
+> > -		} else
+> > +		} else {
+> > +			/*
+> > +			 * ERR009165 fixed from i.mx6ul, no errata need,
+> > +			 * set bit31 to let sdma script skip the errata.
+> > +			 */
+> > +			if (sdmac->peripheral_type == IMX_DMATYPE_CSPI &&
+> > +			    sdmac->direction == DMA_MEM_TO_DEV &&
+> > +			    sdmac->sdma->drvdata->ecspi_fixed)
+> > +				__set_bit(31, &sdmac->watermark_level);
+> >  			__set_bit(sdmac->event_id0, sdmac->event_mask);
+> > +		}
 > >
->
+> >  		/* Address */
+> >  		sdmac->shp_addr = sdmac->per_address;
+> > --
+> > 2.7.4
+> >
+> >
+> 
 > --
-> Regards,
->
-> Sakari Ailus
-
-
-Renesas Electronics Europe GmbH, Geschaeftsfuehrer/President: Carsten Jauch, Sitz der Gesellschaft/Registered office: Duesseldorf, Arcadiastrasse 10, 40472 Duesseldorf, Germany, Handelsregister/Commercial Register: Duesseldorf, HRB 3708 USt-IDNr./Tax identification no.: DE 119353406 WEEE-Reg.-Nr./WEEE reg. no.: DE 14978647
+> Pengutronix e.K.                           |
+> |
+> Steuerwalder Str. 21                       |
+> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.pe
+> ngutronix.de%2F&amp;data=02%7C01%7Cyibin.gong%40nxp.com%7C91d4204
+> 6e6894501d48508d7c4cbcae2%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0
+> %7C1%7C637194251876090170&amp;sdata=d0X1DBm%2Fc0lwcHVUtTW0ITw
+> o5qW3SKtVd5Va0EVVw3E%3D&amp;reserved=0  |
+> 31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0
+> |
+> Amtsgericht Hildesheim, HRA 2686           | Fax:
+> +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
