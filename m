@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9744917F0E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 08:05:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A38AC17F0F4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 08:10:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jguOm0AUxSbuF51Zb03Ny/4Hde3c6lFTjOBnQytPMBY=; b=OOso5iL5W6UBhE
-	Lqje6eVaJxHfnbXapgdXuPqclQz32d+BPuXK3h4v3uQVq0dvA51b5RxId48F2bDUVwZEaMyD5eE0h
-	RcdmjiBPohN82OI/vvT1R5pyxTLgOn7B2iRVvM10g4v0AN2MDqjY8ySS/FysOhuamhM9OWbCiZXJy
-	lpNFqaSwB39XuvuPT7KYIotnceKGhQdnRWFWRWLlr+6+JCY2SEFWpNACNYtmbQt2lzaORyAjwqQYL
-	yn9vfb4ErAphZHekupZxpAL2+cfxBTH4UYUKp/uHeNNr1knftr7+THj0W+GQTmmE0C3mE8YvmLfXt
-	a4VkbMy2v9maV8PToYVw==;
+	List-Owner; bh=CAf4fslp8x8qELfC0T5YniUheHmnBSF+MBkL1PFPtkM=; b=qXszM2ZXOCQOOF
+	VWkHwTpqKqLnC8a1x79q8np5+6zeXZTH41nXP+TX4yMjPF9OMy1O+VKrss2qVeZP7c54VWgmA1SYp
+	xyuQrjcrW1XreqJRS+atXU/Tmssnc/+N4NfQxZfiJWHqrdOZjNjeW1s3DTVTeQijXh/74p6it20Iy
+	DiRTVLwYRSxPk1yyl3Oyi9bKSTh/7BQSlgD+n5PTRc86R2w6J7uG7Bh9ZNJCeoFNeWwYggAfxjGeI
+	rv0oswurbxox8b/hfnq07WL4gIEEZ0n7DSbf47Dh6D/l3jFssgmixk0OIaK0btFC9MG53NZQKct8U
+	aCsWdzVoKX8Sr/MKyAsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBYwj-00044D-Si; Tue, 10 Mar 2020 07:04:57 +0000
+	id 1jBZ1W-0005w4-Nj; Tue, 10 Mar 2020 07:09:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBYwc-00043f-Fj
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 07:04:51 +0000
+ id 1jBZ1O-0005va-UJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 07:09:48 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 090892468A;
- Tue, 10 Mar 2020 07:04:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2D79824677;
+ Tue, 10 Mar 2020 07:09:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583823889;
- bh=EEzHE5+Ej4Ntn//ujeATmWKpJYLdDKimf0zxr2e+Ajw=;
+ s=default; t=1583824186;
+ bh=L11SdzzQTyUNNRxclnarGF3ZTYF1cI+qdg4ZV5PcXDQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EXymqZ1VrUNLGskZXVzQs/HQA/VJBZJ0xkP996JzXmIt7G+I/x6DrvhfVjW7S25Vz
- NQanULMljX2/3hH4IHyhrsmLLIjAJ55AL0CWASIuMmpdh30lz+IRyGlNZeesoYYBBs
- bDh2ShGU7wyW9b/prVufhTopqGjse/s0uunD5Wj0=
-Date: Tue, 10 Mar 2020 15:04:38 +0800
+ b=lktXBtD6NO4hhBukLkC1l8I8yzsKD/dc7CaQMdMGMOzA4WGkwh1vxYWNAdBOX6pdL
+ rpE4An+4S7gMURXu7b5U8rg3/FeD4IFeAJ2PZQ/I9BXgyGsGrr4HZaIWpekUVEbRsx
+ xZOjrneNU3I8yx18lXvfWSMZSbOzyMRkkYLoJEvk=
+Date: Tue, 10 Mar 2020 15:09:40 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V16 5/5] arm64: dts: imx: add i.MX8QXP thermal support
-Message-ID: <20200310070437.GC17772@dragon>
-References: <1582330132-13461-1-git-send-email-Anson.Huang@nxp.com>
- <1582330132-13461-5-git-send-email-Anson.Huang@nxp.com>
+To: Horia =?utf-8?Q?Geant=C4=83?= <horia.geanta@nxp.com>
+Subject: Re: [PATCH] arm64: dts: imx8mp: add crypto node
+Message-ID: <20200310070939.GD17772@dragon>
+References: <20200224125023.29780-1-horia.geanta@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582330132-13461-5-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20200224125023.29780-1-horia.geanta@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_000450_543872_41AC4694 
-X-CRM114-Status: GOOD (  13.46  )
+X-CRM114-CacheID: sfid-20200310_000947_001226_96755032 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,108 +77,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peng.fan@nxp.com, catalin.marinas@arm.com,
- bjorn.andersson@linaro.org, srinivas.kandagatla@linaro.org,
- leonard.crestez@nxp.com, will@kernel.org, amit.kucheria@verdurent.com,
- festevam@gmail.com, daniel.lezcano@linaro.org, krzk@kernel.org,
- marcin.juszkiewicz@linaro.org, Linux-imx@nxp.com, rui.zhang@intel.com,
- linux@roeck-us.net, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- s.hauer@pengutronix.de, robh+dt@kernel.org, daniel.baluta@nxp.com,
- linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
- fugang.duan@nxp.com, linux-kernel@vger.kernel.org, dinguyen@kernel.org,
- kernel@pengutronix.de, olof@lixom.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 22, 2020 at 08:08:52AM +0800, Anson Huang wrote:
-> Add i.MX8QXP CPU thermal zone support.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> No change.
-> ---
->  arch/arm64/boot/dts/freescale/imx8qxp.dtsi | 36 ++++++++++++++++++++++++++++++
->  1 file changed, 36 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> index fb5f752..0a14fe4 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
-> @@ -11,6 +11,7 @@
->  #include <dt-bindings/input/input.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
->  #include <dt-bindings/pinctrl/pads-imx8qxp.h>
-> +#include <dt-bindings/thermal/thermal.h>
->  
->  / {
->  	interrupt-parent = <&gic>;
-> @@ -189,6 +190,11 @@
->  			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-wdt";
->  			timeout-sec = <60>;
->  		};
-> +
-> +		tsens: thermal-sensor {
-> +			compatible = "fsl,imx8qxp-sc-thermal", "fsl,imx-sc-thermal";
-> +			#thermal-sensor-cells = <1>;
-> +		};
->  	};
->  
->  	timer {
-> @@ -586,4 +592,34 @@
->  			#clock-cells = <1>;
->  		};
->  	};
-> +
-> +	thermal_zones: thermal-zones {
-> +		cpu-thermal0 {
-> +			polling-delay-passive = <250>;
-> +			polling-delay = <2000>;
-> +			thermal-sensors = <&tsens IMX_SC_R_SYSTEM>;
-
-newline
-
-> +			trips {
-> +				cpu_alert0: trip0 {
-> +					temperature = <107000>;
-> +					hysteresis = <2000>;
-> +					type = "passive";
-> +				};
-
-newline
-
-> +				cpu_crit0: trip1 {
-> +					temperature = <127000>;
-> +					hysteresis = <2000>;
-> +					type = "critical";
-> +				};
-> +			};
-
-newline
-
-I fixed them up and applied the patch.
-
-Shawn
-
-> +			cooling-maps {
-> +				map0 {
-> +					trip = <&cpu_alert0>;
-> +					cooling-device =
-> +						<&A35_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> +						<&A35_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> +						<&A35_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-> +						<&A35_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-> +				};
-> +			};
-> +		};
-> +	};
->  };
-> -- 
-> 2.7.4
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBGZWIgMjQsIDIwMjAgYXQgMDI6NTA6MjNQTSArMDIwMCwgSG9yaWEgR2VhbnTEgyB3
+cm90ZToKPiBBZGQgbm9kZSBmb3IgQ0FBTSAtIENyeXB0b2dyYXBoaWMgQWNjZWxlcmF0aW9uIGFu
+ZCBBc3N1cmFuY2UgTW9kdWxlLgo+IAo+IFNpZ25lZC1vZmYtYnk6IEhvcmlhIEdlYW50xIMgPGhv
+cmlhLmdlYW50YUBueHAuY29tPgoKQXBwbGllZCwgdGhhbmtzLgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
