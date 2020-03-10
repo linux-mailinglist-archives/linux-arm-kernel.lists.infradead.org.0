@@ -2,89 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C87A717F348
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:16:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D00C917F375
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:26:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qPj3uhyHybEaqA2YyYnVFux653ULEcUlYSE9qwNKfdw=; b=J5ZJQyNY9WRo7z
-	miYct/wi/zIQxDL/tSdDKzPsUvxx1xcNrHJnQmu86KDX9tv/S96a1uoRU6oSfRA1U7pLJt1XQPymr
-	OR/hKbL4agjYLFwpnwUlL/H/EAycmutCuuHrLAw20qiTEyFOF34OkE0bWieVqu1A2CTrW+O1/zOUE
-	SCJWJ5guU99FVLcs1Zi7gBIDNFOdA+lvNxBBi8vURDI8+5x5rDxYF6GyrxjtVgv9c62awdGp+Ik99
-	coQjuXnHpUCORq+uYsxaEECulgbpKthi5HgTZYextcqU81g3N4fRIIevRZKEwNi0u8iNEE04IXJ02
-	ptQzV5chQtwhR61G+vKQ==;
+	List-Owner; bh=h80LxvQwil9YZMG1leb0LoRKOMWqCl5RCZLQu7ioNs0=; b=k8TKS0j/rGeUYP
+	+lRfBI/bFQtqEKbSd6ccsDFLk2c3+SMwZCqGx4yd1DIaHTw5UL7A5JSEHmvr9GAD82iz7YH6U0+GM
+	Vfm2sqe4AQdd0UnzXsLpPr299ekathaHK+aSwxDx95Hov0ST58qT7Ar9io0IXKYy/HpNCtaTaArMX
+	miPUG/sxd9J+1VSZlGXI9upJn/0EWq1n9qVbHseckNWf3IUNNU/cFXVQfsoZxCarATaqaoUmErf9s
+	yciKwtfAXvxL929opobeNsDzTtTz9Hk16Gt1kx/jOHOCPxfv7VdWZwbLMbOUcY1H/Y2HnWnYnJCkB
+	GarQVVWNPcrApg0TzC8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBb0M-0000tC-HS; Tue, 10 Mar 2020 09:16:50 +0000
-Received: from mail-wr1-f66.google.com ([209.85.221.66])
+	id 1jBb9A-0004te-6i; Tue, 10 Mar 2020 09:25:56 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBb0D-0000sS-6t
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:16:42 +0000
-Received: by mail-wr1-f66.google.com with SMTP id v11so14768986wrm.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 02:16:39 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=fz3n4QEA4mMM+MBbJX+cMGlCMEaVSqf4LwkZvYcSZEw=;
- b=A8gkYaLF922fjKSpCKik5Fk+JAgwMKvzRKglUO/ZeoUMAKxjBMERQznKTkTzoiXe2R
- qKarPA/Wv1Qzv7kQDPLxSG2+JZIKavX2spB7UDLnQ36wiXCqo4nb6zQFtvym8yJY7zWR
- Qh+sbE5kMpPtFTqwziB3giJ8xZKrltDLgPWlLZF+ZQj7L9LPOgRJTD73s/kuf4BsdOwb
- 3Z0EpKOvPIqBtmO72JVElN+Vxpyhs3S8aZAEWBlvBb0LVMGbHQGiOdS5cdibMrcOcL6o
- E61mS7rGz4iqHWxkiJywMB7lu6SYS/IeivdM4qZNDQXZWXvhiEj0tqUEbkR6z/0npuGg
- GF4A==
-X-Gm-Message-State: ANhLgQ05o+K5boY+FkaxXL000G7sMDiI9KGXovm2ZWJDAtBeMoqhw4zW
- c2F77n7FCKgtRXxS+QBghyI=
-X-Google-Smtp-Source: ADFU+vszMTJIkVmx1ZNqIN9KzQ8vaeAT6TaRYkPc1p0pHRH6nNgZB8aQkPvG80FiR8Kt9mo3LxxChg==
-X-Received: by 2002:adf:92c2:: with SMTP id 60mr9876964wrn.177.1583831798497; 
- Tue, 10 Mar 2020 02:16:38 -0700 (PDT)
-Received: from localhost (prg-ext-pat.suse.com. [213.151.95.130])
- by smtp.gmail.com with ESMTPSA id j14sm65506521wrn.32.2020.03.10.02.16.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 02:16:37 -0700 (PDT)
-Date: Tue, 10 Mar 2020 10:16:37 +0100
-From: Michal Hocko <mhocko@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] vfs: keep inodes with page cache off the inode shrinker
- LRU
-Message-ID: <20200310091637.GC8447@dhcp22.suse.cz>
-References: <CAK8P3a3pzgVvwyDhHPoiSOqyv+h_ixbsdWMqG3sELenRJqFuew@mail.gmail.com>
- <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
- <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
- <7c4c1459-60d5-24c8-6eb9-da299ead99ea@oracle.com>
- <20200306203439.peytghdqragjfhdx@kahuna>
- <CAK8P3a0Gyqu7kzO1JF=j9=jJ0T5ut=hbKepvke-2bppuPNKTuQ@mail.gmail.com>
- <20200308141923.GI25745@shell.armlinux.org.uk>
- <CAK8P3a2Gz5H_fcNtW0yCCjO1cRNa0nyd568sDYR0nNphu49YqQ@mail.gmail.com>
- <20200309140439.GL25745@shell.armlinux.org.uk>
- <CAK8P3a1HEhwie1uUObQMJyGcs_WSwz4Gj81tAWXZX4d2ff77XA@mail.gmail.com>
+ id 1jBb92-0004t0-Oh
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:25:50 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jBb8q-00066g-Ok; Tue, 10 Mar 2020 10:25:36 +0100
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jBb8n-0006XS-8W; Tue, 10 Mar 2020 10:25:33 +0100
+Date: Tue, 10 Mar 2020 10:25:33 +0100
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [RESEND v6  07/13] spi: imx: remove ERR009165 workaround on
+ i.mx6ul
+Message-ID: <20200310092533.GV3335@pengutronix.de>
+References: <1583839922-22699-1-git-send-email-yibin.gong@nxp.com>
+ <1583839922-22699-8-git-send-email-yibin.gong@nxp.com>
+ <20200310080240.GS3335@pengutronix.de>
+ <VE1PR04MB66384342F94C7B789C980F7A89FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK8P3a1HEhwie1uUObQMJyGcs_WSwz4Gj81tAWXZX4d2ff77XA@mail.gmail.com>
+In-Reply-To: <VE1PR04MB66384342F94C7B789C980F7A89FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 10:08:54 up 19 days, 16:39, 58 users,  load average: 0.05, 0.18, 0.20
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_021641_411204_5B957925 
-X-CRM114-Status: GOOD (  13.99  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200310_022548_802914_2E9F6534 
+X-CRM114-Status: GOOD (  19.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mstsxfx[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,50 +77,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Johannes Weiner <hannes@cmpxchg.org>,
- Rik van Riel <riel@surriel.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Roman Gushchin <guro@fb.com>, Santosh Shilimkar <santosh.shilimkar@oracle.com>,
- Dave Chinner <david@fromorbit.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Linux-MM <linux-mm@kvack.org>,
- Yafang Shao <laoar.shao@gmail.com>, Al Viro <viro@zeniv.linux.org.uk>,
- Santosh Shilimkar <ssantosh@kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, kernel-team@fb.com,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ "vkoul@kernel.org" <vkoul@kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I am worried this went quite tangent to the original patch under
-discussion here, but let me clarify at least one point.
+On Tue, Mar 10, 2020 at 08:43:10AM +0000, Robin Gong wrote:
+> On 2020/03/10 Sascha Hauer <s.hauer@pengutronix.de> wrote:
+> > On Tue, Mar 10, 2020 at 07:31:56PM +0800, Robin Gong wrote:
+> > > ERR009165 fixed on i.mx6ul/6ull/6sll. All other i.mx6/7 and i.mx8m/8mm
+> > > still need this errata. Please refer to nxp official errata document
+> > > from
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.nx
+> > p.com%2F&amp;data=02%7C01%7Cyibin.gong%40nxp.com%7Cf73bfc11a68c4
+> > 2f5f6d308d7c4c96efa%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C
+> > 637194241755109112&amp;sdata=xzIUP8qZkrlDXX0yjTcUNZB6zDrevTdHFg1o4
+> > PZZd8E%3D&amp;reserved=0 .
+> > >
+> > > For removing workaround on those chips. Add new i.mx6ul type.
+> > >
+> > > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> > > Acked-by: Mark Brown <broonie@kernel.org>
+> > > ---
+> > >  drivers/spi/spi-imx.c | 50
+> > > +++++++++++++++++++++++++++++++++++++++++++++-----
+> > >  1 file changed, 45 insertions(+), 5 deletions(-)
+> > >
+> > > diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c index
+> > > 842a86e..f7ee2ec 100644
+> > > --- a/drivers/spi/spi-imx.c
+> > > +++ b/drivers/spi/spi-imx.c
+> > > @@ -57,6 +57,7 @@ enum spi_imx_devtype {
+> > >  	IMX35_CSPI,	/* CSPI on all i.mx except above */
+> > >  	IMX51_ECSPI,	/* ECSPI on i.mx51 */
+> > >  	IMX53_ECSPI,	/* ECSPI on i.mx53 and later */
+> > > +	IMX6UL_ECSPI,	/* ERR009165 fix from i.mx6ul */
+> > >  };
+> > >
+> > >  struct spi_imx_data;
+> > > @@ -75,6 +76,11 @@ struct spi_imx_devtype_data {
+> > >  	bool has_slavemode;
+> > >  	unsigned int fifo_size;
+> > >  	bool dynamic_burst;
+> > > +	/*
+> > > +	 * ERR009165 fixed or not:
+> > > +	 *
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.nx
+> > p.com%2Fdocs%2Fen%2Ferrata%2FIMX6DQCE.pdf&amp;data=02%7C01%7Cyi
+> > bin.gong%40nxp.com%7Cf73bfc11a68c42f5f6d308d7c4c96efa%7C686ea1d3bc
+> > 2b4c6fa92cd99c5c301635%7C0%7C1%7C637194241755109112&amp;sdata=m
+> > uw4HL5nMDjREJwVd885Wrxka0moMaaZ%2BhJgsAgY3eo%3D&amp;reserved=
+> > 0
+> > > +	 */
+> > > +	bool tx_glitch_fixed;
+> > >  	enum spi_imx_devtype devtype;
+> > >  };
+> > >
+> > > @@ -128,7 +134,8 @@ static inline int is_imx35_cspi(struct
+> > > spi_imx_data *d)
+> > >
+> > >  static inline int is_imx51_ecspi(struct spi_imx_data *d)  {
+> > > -	return d->devtype_data->devtype == IMX51_ECSPI;
+> > > +	return d->devtype_data->devtype == IMX51_ECSPI ||
+> > > +	       d->devtype_data->devtype == IMX6UL_ECSPI;
+> > >  }
+> > 
+> > Erm, no. A i.MX51 ECSPI is a i.MX51 ECSPI and not a i.MX6UL ECSPI. If you want
+> > to handle them equally somewhere then explicitly test for i.MX6ul *and*
+> > i.MX51 there.
+> But all i.mx6 chips including i.MX53 ECSPI are almost same as i.MX51 ECSPI, and ERR00915 is fixed from i.mx6ul....
 
-On Mon 09-03-20 16:04:54, Arnd Bergmann wrote:
-> On Mon, Mar 9, 2020 at 3:05 PM Russell King - ARM Linux admin
-[...]
-> > What happened to requests for memory from highmem being able to be
-> > sourced from lowmem if highmem wasn't available?  That used to be
-> > standard kernel behaviour.
-> 
-> AFAICT this is how it's supposed to work, but for some reason it
-> doesn't always. I don't know the details, but have heard of recent
-> complaints about it. I don't think it's the actual get_free_pages
-> failing, but rather some heuristic looking at the number of free pages.
+You introduce .devtype = IMX6UL_ECSPI in this series, so apparently it
+is *not* the same as IMX51_ECSPI, then please also don't introduce a
+function which claims they are the same.
 
-This is indeed the case. There are low memory reserves which are not
-allowed for requests which can be satisfied from higher zones. This is
-the case for many many years. Just have a look at lowmem_reserve and
-their usage in __zone_watermark_ok. The layout of the reserves can be
-configured by /proc/sys/vm/lowmem_reserve_ratio.
+Sascha
 
-HTH
 -- 
-Michal Hocko
-SUSE Labs
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
