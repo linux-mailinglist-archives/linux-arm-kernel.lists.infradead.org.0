@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A123F180B26
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 23:03:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED2B8180B87
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 23:26:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WswFIFadZr6832+iEQVm8pCuI/DtgrsBlBC4PQdW4SI=; b=AC3nvrdURy7mcr
-	Ajp/pTRj/DZqfeRlnywSNV5UD9XJMfrDWItgFEZ+pxn03xhucnjj2e+hPYeNj+rbAgQpJ7ts3s6pb
-	BTUz6cP7/HMgAfSCv8sgQkJqj4PY3DQ6i+VjRgLMCGzBLjM8WgNDEEds0XiFEYxtAnrDsNxhyUu6z
-	hVN74oviw3EZo+gtAt5B03ET6nUa37wO9d7HJhD/E+g/M+bxH30UJ44JEuG8Yuun6dXzlFqZB522u
-	Ai1WqX7VUnu9jy6fNs/MbDLN5JBLIJY1FgqcrKMdQR7UOkQjYA2OWg6Id98gBxndTbURRYv0plvKx
-	5vTAxnAoFzy1LhGdTKAQ==;
+	List-Owner; bh=bsM/cgdl237BpVsU98mpm1BnCFQGjp9d8tVWL35xHSs=; b=dIlht4VBPGbASn
+	p2s6h4SjTL/cVH1CS81zlQN2ZlgsqHCXyujyFSo7xNYqIMmXGs5oRuP6H9ywYJV93Z28sTwoSBh8U
+	s7AZwSHNRB2fTSR6G5zwAg9ycjUFhPw0uaNRW5GYTq3d5GC98NOwyEDpGnpX0w7y5q7V97o8ZFxnE
+	5RUOnlZjeuvyDwizguDmbBtQYeyIppFDco5jCxn3dx/xZyWBI2HjmXDEm/R+enP+17b0QWKwSLGdK
+	gkaEZjzYxMirWMGx+vglT5v6Y5yXTmum3vzLlNQNtg4ugXOQKcPpzS6n+w8XMX03KM+oPk89+OhXo
+	JaiWAplszFxSO1uxjyyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBmyO-0003yk-JR; Tue, 10 Mar 2020 22:03:36 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jBnJy-00043s-1k; Tue, 10 Mar 2020 22:25:54 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBmy8-0003wq-Ry
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 22:03:23 +0000
-Received: by mail-wm1-x341.google.com with SMTP id r7so1761200wmg.0
+ id 1jBnJp-00042D-OT
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 22:25:47 +0000
+Received: by mail-pg1-x543.google.com with SMTP id m15so49392pgv.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 15:03:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=dYEP1uE4NnVFr/AeDKddTWSxJgA20EPFg2G+JAahXU0=;
- b=I20JsyOJIesiZZQ8aV/IdyM+r4UI4cQUwV9OU88GjMqXQdcGxyWCcTu+TKnMpQTwzR
- 8zsRR1Ku3VvKEiqj1/PL8R5Nrk6wcQBvAnxyWKr7fOA7HdZ08IH0zfDTMBnRXrE4sv+B
- 1FJbyCwTIoyCOqD2c6zdL2IiWQINHKswybaSp4LQ7NJ/mx5atiVaaCA7KJmFqkI1NxgO
- ZLyx0BgypSHUQzKXHvqeJWj1ZAU41f5jkODNqWwySdRgLuSbY/bjut3UAN1jCydVdFW5
- 4q0nzPNiNsFhSQ2UmsMYO7SYzoSm7Xv0C8TZTspbL4HFRap19/7Ybum6IG+LQMJ662fW
- FIwg==
+ Tue, 10 Mar 2020 15:25:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=+SMw3KzwW0qIsxOajP3cV8dZM1F0dvmhCHxZU/Nkvn4=;
+ b=kXz7NuyqUXk06IqGmoTk11IMzDW5AzrbJi35Fg7DHg8FyMNbD2e7cBObxGFy6GQFaZ
+ dbNZPDzIsV9c6hMAlwZKh4x5bUKzT0J7VK/vU68bKIga53ppfumHvMB5M7I9GByTA+E0
+ usgCHNvznKWBrJNV+rJDfZjjITw4IHL+w5b86vHZ8EhxRJnCyFJCGMHuJvrlFaTY2Fvv
+ o2lIdi4kOS1rtjP7m8kRlSBig0jyNKN3ISii8t4Iv1RSoyNziWIZvqJG1OdTckQX2LN/
+ IGer/J6Jg9aoAZPgRZcw0PbwTw7bNUHUATwHip1aKHSA2JlD9GvveB7fJDj+RESHDNTV
+ q2wA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=dYEP1uE4NnVFr/AeDKddTWSxJgA20EPFg2G+JAahXU0=;
- b=ZvY6dWAk4XYxy1cU3Q8zSdWGIT4MgawCKRhGJTd7yVE5xT/heGECXXJAPEiCQWNpKr
- XHZtFmAN7gV+qfEqP5xZ6Wf/uKDcyYfAlA5t5cm9Q2oZeiTQAZ70906mFkR/htzUZQpV
- JJKJBixTPvA5VCrrvxTuYnWJ4WdqP0cV+cKRMOYsIbmO48RTcY9Ufvd7UTg3D7LgdcnW
- Ak8cCyz4eBmlGIzo9Zw8Nr4YR7hWpA2W20207xkpivOOfRafhfcuSs3aHv+qpW21LiJr
- 4QVJIGnpwFRcONMQnW4FDZ0KT8e+dcCV6PreGqJNj8gJSI61ottezRH38Cr8UTW0hrKR
- Mzxw==
-X-Gm-Message-State: ANhLgQ2vdGcPo5YvLI8vd4Q5JtB9gj22IC/odw/BC5u0/+2QbAwdjp6C
- brf8QbPw4CZp1rH9vPzBRd2Rnw==
-X-Google-Smtp-Source: ADFU+vsFsnumgp9VoOGVYqCrNLZ5ay6csw80CWgZBfUy0rM6bs6wjkEgt0Ofqq4WtgfmKA4Ub4RhiQ==
-X-Received: by 2002:a1c:4e14:: with SMTP id g20mr3853268wmh.143.1583877798471; 
- Tue, 10 Mar 2020 15:03:18 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id w67sm1892315wmb.41.2020.03.10.15.03.17
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 10 Mar 2020 15:03:17 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: power: Fix dt_binding_check error
-In-Reply-To: <CAL_JsqJAxfL_Q3HYHk_8VeefdXnhYT7kcPe3F5Gzk1Vfj+xtww@mail.gmail.com>
-References: <1583164448-83438-1-git-send-email-jianxin.pan@amlogic.com>
- <7hsgiqra5x.fsf@baylibre.com>
- <CAL_JsqJAxfL_Q3HYHk_8VeefdXnhYT7kcPe3F5Gzk1Vfj+xtww@mail.gmail.com>
-Date: Tue, 10 Mar 2020 15:03:15 -0700
-Message-ID: <7h36afn9zw.fsf@baylibre.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+SMw3KzwW0qIsxOajP3cV8dZM1F0dvmhCHxZU/Nkvn4=;
+ b=opk0klYG6dL2uOhGvG60kPeELE704GBDq3GEZHNIRuzI47vLgL5AxbQveNbeir9A2C
+ k92U+LYaLuEX20ynQqlvePhCoyf03k7rZ8xC51PZ9ilnkGly5CECWpLaj7FCxp0iSNHA
+ PfO0tZgQP2FOHhcc8OvFKlNCgeFcxBq9NYXn/l2VF6aMQyO5kRSJ58mMXAkrTLp4ojGj
+ 8yZkXyVHQY0apKKhLqs0p7Ntob6bGlEGfmxAnijFh5kH40K3U2HClXxMX4JZom+kFXrV
+ WVlext1a9iIHdsBcc0o8qM70TmvdxgeAnkZZyA8JJQhzVhgzwvqU3JZ/KpTUNr37aPtu
+ BeIg==
+X-Gm-Message-State: ANhLgQ13Hd7xg5xglSOmo4I4Yk/khf5eUaQwvSDYBQJnQN0KSvBLZffD
+ 5V/6mgxkiO0iQ9Db1MX5kXQs7jut87Y=
+X-Google-Smtp-Source: ADFU+vsP3GEkD/yGCbjWZr9amUrSp8lGkyIkcahbLxq5xe/LUQjUc2fdKy0+00IllBQ6HMvbgl29QA==
+X-Received: by 2002:a65:5905:: with SMTP id f5mr21428215pgu.87.1583879144413; 
+ Tue, 10 Mar 2020 15:25:44 -0700 (PDT)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id q9sm47191418pgs.89.2020.03.10.15.25.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Mar 2020 15:25:43 -0700 (PDT)
+Date: Tue, 10 Mar 2020 15:25:41 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Nathan Chancellor <natechancellor@gmail.com>
+Subject: Re: [PATCH] remoteproc/mediatek: Use size_t type for len in
+ scp_da_to_va
+Message-ID: <20200310222541.GG14744@builder>
+References: <20200310211514.32288-1-natechancellor@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200310211514.32288-1-natechancellor@gmail.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_150321_512582_62B38B26 
-X-CRM114-Status: GOOD (  15.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200310_152545_831749_2ECA9F8A 
+X-CRM114-Status: GOOD (  15.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,66 +99,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- SoC Team <soc@kernel.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Jerome Brunet <jbrunet@baylibre.com>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, clang-built-linux@googlegroups.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rob Herring <robh+dt@kernel.org> writes:
+On Tue 10 Mar 14:15 PDT 2020, Nathan Chancellor wrote:
 
-> On Mon, Mar 2, 2020 at 10:31 AM Kevin Hilman <khilman@baylibre.com> wrote:
->>
->> Hi Jianxin,
->>
->> Jianxin Pan <jianxin.pan@amlogic.com> writes:
->>
->> > Missing ';' in the end of secure-monitor example node.
->> >
->> > Fixes: 165b5fb294e8 ("dt-bindings: power: add Amlogic secure power domains bindings")
->> > Reported-by: Rob Herring <robh+dt@kernel.org>
->> > Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
->> > ---
->> >  Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml | 2 +-
->> >  1 file changed, 1 insertion(+), 1 deletion(-)
->> >
->> > diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> > index af32209..bc4e037 100644
->> > --- a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> > +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
->> > @@ -36,5 +36,5 @@ examples:
->> >              compatible = "amlogic,meson-a1-pwrc";
->> >              #power-domain-cells = <1>;
->> >          };
->> > -    }
->> > +    };
->>
->> Thanks for the fix.  Queued for v5.7.
->>
->> @Arnd, @Olof: you can ignore this one.  I requested Jianxin to send to
->> you thinking this was a fix for something you already queued, but it's
->> not.  I'll handle it.
->
-> Someone has what needs fixing queued in linux-next, but this fix is
-> still not there. Somehow it seems like features show up in linux-next
-> faster than fixes for SoC tree...
+> Clang errors:
+> 
+> drivers/remoteproc/mtk_scp.c:364:14: error: incompatible function
+> pointer types initializing 'void *(*)(struct rproc *, u64, size_t)' (aka
+> 'void *(*)(struct rproc *, unsigned long long, unsigned int)') with an
+> expression of type 'void *(struct rproc *, u64, int)' (aka 'void
+> *(struct rproc *, unsigned long long, int)')
+> [-Werror,-Wincompatible-function-pointer-types]
+>         .da_to_va       = scp_da_to_va,
+>                           ^~~~~~~~~~~~
+> 1 error generated.
+> 
+> Make the same change as commit 0fcbb369f052 ("remoteproc: Use size_t
+> type for len in da_to_va"), which was not updated for the acceptance of
+> commit 63c13d61eafe ("remoteproc/mediatek: add SCP support for mt8183").
+> 
+> Fixes: 0fcbb369f052 ("remoteproc: Use size_t type for len in da_to_va")
+> Link: https://github.com/ClangBuiltLinux/linux/issues/927
+> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
 
-The fix (this patch) is queued in my 'for-next' branch which I pushed
-yesterday.  I guess it missed next-20200310 but should be in tomorrow.
+Applied, thank you.
 
-Kevin
+Regards,
+Bjorn
 
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git/log/?h=for-next
+> ---
+>  drivers/remoteproc/mtk_scp.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
+> index 7ccdf64ff3ea..ea3743e7e794 100644
+> --- a/drivers/remoteproc/mtk_scp.c
+> +++ b/drivers/remoteproc/mtk_scp.c
+> @@ -320,7 +320,7 @@ static int scp_start(struct rproc *rproc)
+>  	return ret;
+>  }
+>  
+> -static void *scp_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *scp_da_to_va(struct rproc *rproc, u64 da, size_t len)
+>  {
+>  	struct mtk_scp *scp = (struct mtk_scp *)rproc->priv;
+>  	int offset;
+> -- 
+> 2.26.0.rc1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
