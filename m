@@ -2,51 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BD0117EDC1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 02:10:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32B2417EE06
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 02:31:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+UeXJNm4vLZEdJPGJ1uZ00avXsTpKlRHIoknDOFY+rQ=; b=d2U
-	QX5Re09k29PiRpwc+RDppK+oNorgS4Vz6y3txG+X00Vv7wItTZH+ydC7MTSmkAJQ8soHlxjUy1JNB
-	c0wHszlyYvA9hlEdz02qmd6Rx7MZOMb6SuFYS2vlwVyME1OJK0P9mBVC4aV+7KZs5x4DaE2gifvok
-	V+Bieszq0jqn+Ycas/1sAd8w+AYy96AqiD1WUhXmPLA5+pcJh1ztEEu4DojDwfz6I4zs4HCyCfQ3R
-	iV3EfgpvDlUl/41Jy5OiU/zxK6PPvxy3nLYblzEf7dYzRJkFzSwObpCUjPwkY83MMGuSaIhw8YxUD
-	OR0hufyZfGhuvlieaK5+uhc8ZFA4vkA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZNTKLwTquhDe2Bp0I98qpyu1vPIa17hdz0BGoOIHonw=; b=Wm0LkwW12PSnOO
+	0LN9tMAk4guHA6WBq54q6tsSCY2HvuWdFMXyh42qXLUORcSRf2crC+pTo6bwtotZV2xdGCkWNwJYs
+	GWVAU5ZN7lPr+0QSC4Mmm+OYfr21QOg7gXAiTLBWTnE8p1LbyUbacvhRutK0Ld5dLwMJC6KgCWqqw
+	JYCMLL6nlxNioMh8iWui8vQ/LEW/IKhhqmb+iq78orR+fN1/jk6N1hYK/4ahjXd8K+A74bU/74+as
+	5QuA33qSjIgle+EVhuCQuYGEih1LCfxTZjGRdpC9sKkY10y7/8mIMOhimy/iqrDsRIZjly0h3xiBL
+	kC2J+LLFIvmdiynSwHHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBTP6-0005iP-Ke; Tue, 10 Mar 2020 01:09:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBTOy-0005gg-Gj; Tue, 10 Mar 2020 01:09:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D755630E;
- Mon,  9 Mar 2020 18:09:36 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.203])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D2D6D3F67D;
- Mon,  9 Mar 2020 18:09:24 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-mm@kvack.org
-Subject: [PATCH V2] mm/special: Create generic fallbacks for pte_special() and
- pte_mkspecial()
-Date: Tue, 10 Mar 2020 06:39:11 +0530
-Message-Id: <1583802551-15406-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jBTjT-0005i3-J3; Tue, 10 Mar 2020 01:30:55 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBTjJ-0005es-Ed; Tue, 10 Mar 2020 01:30:48 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id A251B7E4828CF1C25233;
+ Tue, 10 Mar 2020 09:30:27 +0800 (CST)
+Received: from [127.0.0.1] (10.173.223.253) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0;
+ Tue, 10 Mar 2020 09:30:19 +0800
+Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
+ crash dump kernel
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ <20191223152349.180172-3-chenzhou10@huawei.com>
+ <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
+ <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
+ <CAJ2QiJL5Zj3Z=jrLVVn_n3vwNnTVtUZZMSkEaiVNLTA-ZmOe-Q@mail.gmail.com>
+ <f95f2761-f4c9-58b6-485c-2da6c8cc6811@gmail.com>
+From: chenzhou <chenzhou10@huawei.com>
+Message-ID: <cdf7dea4-732e-4d9d-932c-9435b0ed7b9b@huawei.com>
+Date: Tue, 10 Mar 2020 09:30:18 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
+MIME-Version: 1.0
+In-Reply-To: <f95f2761-f4c9-58b6-485c-2da6c8cc6811@gmail.com>
+X-Originating-IP: [10.173.223.253]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_180944_652501_7CA5E9ED 
-X-CRM114-Status: GOOD (  17.32  )
+X-CRM114-CacheID: sfid-20200309_183045_837489_3CF9C048 
+X-CRM114-Status: GOOD (  17.51  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,619 +69,553 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- linux-kernel@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
- linux-csky@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-hexagon@vger.kernel.org, Vincent Chen <deanbo422@gmail.com>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>,
- Jonas Bonn <jonas@southpole.se>, Paul Burton <paulburton@kernel.org>,
- Richard Weinberger <richard@nod.at>, Helge Deller <deller@gmx.de>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>, linux-parisc@vger.kernel.org,
- linux-arch@vger.kernel.org, Matt Turner <mattst88@gmail.com>,
- Sam Creasey <sammy@sammy.net>, Fenghua Yu <fenghua.yu@intel.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, Jeff Dike <jdike@addtoit.com>,
- linux-um@lists.infradead.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- Ivan Kokshaysky <ink@jurassic.park.msu.ru>, Greentime Hu <green.hu@gmail.com>,
- Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, Richard Henderson <rth@twiddle.net>,
- Chris Zankel <chris@zankel.net>, Michal Simek <monstr@monstr.eu>,
- Tony Luck <tony.luck@intel.com>, Brian Cain <bcain@codeaurora.org>,
- Nick Hu <nickhu@andestech.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-alpha@vger.kernel.org,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- "David S. Miller" <davem@davemloft.net>
-MIME-Version: 1.0
+Cc: horms@verge.net.au,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Will Deacon <will@kernel.org>, xiexiuqi@huawei.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mingo@redhat.com,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ dyoung@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently there are many platforms that dont enable ARCH_HAS_PTE_SPECIAL
-but required to define quite similar fallback stubs for special page table
-entry helpers such as pte_special() and pte_mkspecial(), as they get build
-in generic MM without a config check. This creates two generic fallback
-stub definitions for these helpers, eliminating much code duplication.
+Hi,
 
-mips platform has a special case where pte_special() and pte_mkspecial()
-visibility is wider than what ARCH_HAS_PTE_SPECIAL enablement requires.
-This restricts those symbol visibility in order to avoid redefinitions
-which is now exposed through this new generic stubs and subsequent build
-failure. arm platform set_pte_at() definition needs to be moved into a C
-file just to prevent a build failure.
+On 2020/3/9 23:51, Prabhakar Kushwaha wrote:
+> On 3/9/2020 10:18 AM, Prabhakar Kushwaha wrote:
+>> Hi Chen,
+>>
+>> On Sat, Mar 7, 2020 at 4:36 PM Chen Zhou <chenzhou10@huawei.com> wrote:
+>>>
+>>>
+>>>
+>>> On 2020/3/5 18:13, Prabhakar Kushwaha wrote:
+>>>> On Mon, Dec 23, 2019 at 8:57 PM Chen Zhou <chenzhou10@huawei.com> wrote:
+>>>>>
+>>>>> Crashkernel=X tries to reserve memory for the crash dump kernel under
+>>>>> 4G. If crashkernel=X,low is specified simultaneously, reserve spcified
+>>>>> size low memory for crash kdump kernel devices firstly and then reserve
+>>>>> memory above 4G.
+>>>>>
+>>>>> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
+>>>>> ---
+>>>>>  arch/arm64/kernel/setup.c |  8 +++++++-
+>>>>>  arch/arm64/mm/init.c      | 31 +++++++++++++++++++++++++++++--
+>>>>>  2 files changed, 36 insertions(+), 3 deletions(-)
+>>>>>
+>>>>> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+>>>>> index 56f6645..04d1c87 100644
+>>>>> --- a/arch/arm64/kernel/setup.c
+>>>>> +++ b/arch/arm64/kernel/setup.c
+>>>>> @@ -238,7 +238,13 @@ static void __init request_standard_resources(void)
+>>>>>                     kernel_data.end <= res->end)
+>>>>>                         request_resource(res, &kernel_data);
+>>>>>  #ifdef CONFIG_KEXEC_CORE
+>>>>> -               /* Userspace will find "Crash kernel" region in /proc/iomem. */
+>>>>> +               /*
+>>>>> +                * Userspace will find "Crash kernel" region in /proc/iomem.
+>>>>> +                * Note: the low region is renamed as Crash kernel (low).
+>>>>> +                */
+>>>>> +               if (crashk_low_res.end && crashk_low_res.start >= res->start &&
+>>>>> +                               crashk_low_res.end <= res->end)
+>>>>> +                       request_resource(res, &crashk_low_res);
+>>>>>                 if (crashk_res.end && crashk_res.start >= res->start &&
+>>>>>                     crashk_res.end <= res->end)
+>>>>>                         request_resource(res, &crashk_res);
+>>>>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+>>>>> index b65dffd..0d7afd5 100644
+>>>>> --- a/arch/arm64/mm/init.c
+>>>>> +++ b/arch/arm64/mm/init.c
+>>>>> @@ -80,6 +80,7 @@ static void __init reserve_crashkernel(void)
+>>>>>  {
+>>>>>         unsigned long long crash_base, crash_size;
+>>>>>         int ret;
+>>>>> +       phys_addr_t crash_max = arm64_dma32_phys_limit;
+>>>>>
+>>>>>         ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
+>>>>>                                 &crash_size, &crash_base);
+>>>>> @@ -87,12 +88,38 @@ static void __init reserve_crashkernel(void)
+>>>>>         if (ret || !crash_size)
+>>>>>                 return;
+>>>>>
+>>>>> +       ret = reserve_crashkernel_low();
+>>>>> +       if (!ret && crashk_low_res.end) {
+>>>>> +               /*
+>>>>> +                * If crashkernel=X,low specified, there may be two regions,
+>>>>> +                * we need to make some changes as follows:
+>>>>> +                *
+>>>>> +                * 1. rename the low region as "Crash kernel (low)"
+>>>>> +                * In order to distinct from the high region and make no effect
+>>>>> +                * to the use of existing kexec-tools, rename the low region as
+>>>>> +                * "Crash kernel (low)".
+>>>>> +                *
+>>>>> +                * 2. change the upper bound for crash memory
+>>>>> +                * Set MEMBLOCK_ALLOC_ACCESSIBLE upper bound for crash memory.
+>>>>> +                *
+>>>>> +                * 3. mark the low region as "nomap"
+>>>>> +                * The low region is intended to be used for crash dump kernel
+>>>>> +                * devices, just mark the low region as "nomap" simply.
+>>>>> +                */
+>>>>> +               const char *rename = "Crash kernel (low)";
+>>>>> +
+>>>>> +               crashk_low_res.name = rename;
+>>>>> +               crash_max = MEMBLOCK_ALLOC_ACCESSIBLE;
+>>>>> +               memblock_mark_nomap(crashk_low_res.start,
+>>>>> +                                   resource_size(&crashk_low_res));
+>>>>> +       }
+>>>>> +
+>>>>>         crash_size = PAGE_ALIGN(crash_size);
+>>>>>
+>>>>>         if (crash_base == 0) {
+>>>>>                 /* Current arm64 boot protocol requires 2MB alignment */
+>>>>> -               crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
+>>>>> -                               crash_size, SZ_2M);
+>>>>> +               crash_base = memblock_find_in_range(0, crash_max, crash_size,
+>>>>> +                               SZ_2M);
+>>>>>                 if (crash_base == 0) {
+>>>>>                         pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
+>>>>>                                 crash_size);
+>>>>> --
+>>>>
+>>>> I tested this patch series on ARM64-ThunderX2 with no issue with
+>>>> bootargs crashkenel=X@Y crashkernel=250M,low
+>>>>
+>>>> $ dmesg | grep crash
+>>>> [    0.000000] crashkernel reserved: 0x0000000b81200000 -
+>>>> 0x0000000c81200000 (4096 MB)
+>>>> [    0.000000] Kernel command line:
+>>>> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
+>>>> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro
+>>>> crashkernel=4G@0xb81200000 crashkernel=250M,low nowatchdog earlycon
+>>>> [   29.310209]     crashkernel=250M,low
+>>>>
+>>>> $  kexec -p -i /boot/vmlinuz-`uname -r`
+>>>> --initrd=/boot/initrd.img-`uname -r` --reuse-cmdline
+>>>> $ echo 1 > /proc/sys/kernel/sysrq ; echo c > /proc/sysrq-trigger
+>>>>
+>>>> But when i tried with crashkernel=4G crashkernel=250M,low as bootargs.
+>>>> Kernel is not able to allocate memory.
+>>>> [    0.000000] cannot allocate crashkernel (size:0x100000000)
+>>>> [    0.000000] Kernel command line:
+>>>> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
+>>>> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro crashkernel=4G
+>>>> crashkernel=250M,low nowatchdog
+>>>> [   29.332081]     crashkernel=250M,low
+>>>>
+>>>> does crashkernel=X@Y mandatory to get allocated beyond 4G?
+>>>> am I missing something?
+>>>
+>>> I can't reproduce the problem in my environment, can you test with other size,
+>>> such as "crashkernel=1G crashkernel=250M,low", see if there is the same issue.
+>>>
+>> I tried 1G also. Same error, please find the logs
+>>
+>> $ dmesg | grep crash
+>> [    0.000000] cannot allocate crashkernel (size:0x40000000)
+>> [    0.000000] Kernel command line:
+>> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
+>> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro nowatchdog earlycon
+>> crashkernel=1G crashkernel=250M,low
+>> [   29.326916]     crashkernel=250M,low
+>>
+>>
+>>> Besides, crashkernel=X@Y isn't mandatory to get allocated beyond 4G,
+>>
+>> this was my understanding also.
+>>
+>>> can you show the whole file /proc/iomem.
+>>>
+>>
+>> $ cat /proc/iomem
+>> 00000000-00000000 : PCI ECAM
+>> 00000000-00000000 : PCI ECAM
+>> 00000000-00000000 : PCI Bus 0000:00
+>>   00000000-00000000 : PCI Bus 0000:0f
+>>     00000000-00000000 : PCI Bus 0000:10
+>>       00000000-00000000 : 0000:10:00.0
+>>       00000000-00000000 : 0000:10:00.0
+>>   00000000-00000000 : PCI Bus 0000:01
+>>     00000000-00000000 : 0000:01:00.0
+>>     00000000-00000000 : 0000:01:00.1
+>>   00000000-00000000 : PCI Bus 0000:05
+>>     00000000-00000000 : 0000:05:00.0
+>>     00000000-00000000 : 0000:05:00.1
+>>   00000000-00000000 : PCI Bus 0000:09
+>>     00000000-00000000 : 0000:09:00.0
+>>     00000000-00000000 : 0000:09:00.1
+>>   00000000-00000000 : 0000:00:10.0
+>>     00000000-00000000 : ahci
+>>   00000000-00000000 : 0000:00:10.1
+>>     00000000-00000000 : ahci
+>> 00000000-00000000 : PCI Bus 0000:80
+>>   00000000-00000000 : PCI Bus 0000:83
+>>     00000000-00000000 : 0000:83:00.0
+>>     00000000-00000000 : 0000:83:00.0
+>>       00000000-00000000 : nvme
+>>   00000000-00000000 : PCI Bus 0000:89
+>>     00000000-00000000 : 0000:89:00.0
+>>       00000000-00000000 : e1000e
+>>     00000000-00000000 : 0000:89:00.0
+>>     00000000-00000000 : 0000:89:00.0
+>>       00000000-00000000 : e1000e
+>>     00000000-00000000 : 0000:89:00.0
+>>       00000000-00000000 : e1000e
+>>   00000000-00000000 : PCI Bus 0000:8d
+>>     00000000-00000000 : 0000:8d:00.0
+>>     00000000-00000000 : 0000:8d:00.0
+>>       00000000-00000000 : mpt3sas
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : Kernel code
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : Kernel data
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : CAV901C:00
+>> 00000000-00000000 : CAV901D:00
+>>   00000000-00000000 : CAV901C:00
+>> 00000000-00000000 : CAV901E:00
+>>   00000000-00000000 : CAV901C:00
+>> 00000000-00000000 : CAV901F:00
+>>   00000000-00000000 : CAV901C:00
+>> 00000000-00000000 : CAV9006:00
+>>   00000000-00000000 : CAV9006:00
+>> 00000000-00000000 : ARMH0011:00
+>>   00000000-00000000 : ARMH0011:00
+>> 00000000-00000000 : arm-smmu-v3.0.auto
+>>   00000000-00000000 : arm-smmu-v3.0.auto
+>> 00000000-00000000 : arm-smmu-v3.1.auto
+>>   00000000-00000000 : arm-smmu-v3.1.auto
+>> 00000000-00000000 : arm-smmu-v3.2.auto
+>>   00000000-00000000 : arm-smmu-v3.2.auto
+>> 00000000-00000000 : CAV901C:01
+>> 00000000-00000000 : CAV901D:01
+>>   00000000-00000000 : CAV901C:01
+>> 00000000-00000000 : CAV901E:01
+>>   00000000-00000000 : CAV901C:01
+>> 00000000-00000000 : CAV901F:01
+>>   00000000-00000000 : CAV901C:01
+>> 00000000-00000000 : CAV9007:06
+>>   00000000-00000000 : CAV9007:06
+>> 00000000-00000000 : arm-smmu-v3.3.auto
+>>   00000000-00000000 : arm-smmu-v3.3.auto
+>> 00000000-00000000 : arm-smmu-v3.4.auto
+>>   00000000-00000000 : arm-smmu-v3.4.auto
+>> 00000000-00000000 : arm-smmu-v3.5.auto
+>>   00000000-00000000 : arm-smmu-v3.5.auto
+>> 00000000-00000000 : System RAM
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : System RAM
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>>   00000000-00000000 : reserved
+>> 00000000-00000000 : PCI Bus 0000:00
+>>   00000000-00000000 : PCI Bus 0000:01
+>>     00000000-00000000 : 0000:01:00.0
+>>     00000000-00000000 : 0000:01:00.1
+>>     00000000-00000000 : 0000:01:00.0
+>>     00000000-00000000 : 0000:01:00.1
+>>     00000000-00000000 : 0000:01:00.0
+>>     00000000-00000000 : 0000:01:00.1
+>>   00000000-00000000 : PCI Bus 0000:05
+>>     00000000-00000000 : 0000:05:00.0
+>>       00000000-00000000 : bnx2x
+>>     00000000-00000000 : 0000:05:00.1
+>>       00000000-00000000 : bnx2x
+>>     00000000-00000000 : 0000:05:00.0
+>>       00000000-00000000 : bnx2x
+>>     00000000-00000000 : 0000:05:00.0
+>>       00000000-00000000 : bnx2x
+>>     00000000-00000000 : 0000:05:00.1
+>>       00000000-00000000 : bnx2x
+>>     00000000-00000000 : 0000:05:00.1
+>>       00000000-00000000 : bnx2x
+>>   00000000-00000000 : PCI Bus 0000:09
+>>     00000000-00000000 : 0000:09:00.0
+>>       00000000-00000000 : i40e
+>>     00000000-00000000 : 0000:09:00.1
+>>       00000000-00000000 : i40e
+>>     00000000-00000000 : 0000:09:00.0
+>>     00000000-00000000 : 0000:09:00.1
+>>     00000000-00000000 : 0000:09:00.0
+>>       00000000-00000000 : i40e
+>>     00000000-00000000 : 0000:09:00.1
+>>       00000000-00000000 : i40e
+>>     00000000-00000000 : 0000:09:00.0
+>>     00000000-00000000 : 0000:09:00.1
+>>   00000000-00000000 : 0000:00:0f.0
+>>     00000000-00000000 : xhci-hcd
+>>   00000000-00000000 : 0000:00:0f.0
+>>   00000000-00000000 : 0000:00:0f.1
+>>     00000000-00000000 : xhci-hcd
+>>   00000000-00000000 : 0000:00:0f.1
+>>   00000000-00000000 : 0000:00:10.0
+>>     00000000-00000000 : ahci
+>>   00000000-00000000 : 0000:00:10.1
+>>     00000000-00000000 : ahci
+>> 00000000-00000000 : PCI Bus 0000:80
+>>
+> 
+> resending with correct logs (after login as root)
+> 
+> $ cat /proc/iomem
+> 30000000-37ffffff : PCI ECAM
+> 38000000-3fffffff : PCI ECAM
+> 40000000-5fffffff : PCI Bus 0000:00
+>   40000000-417fffff : PCI Bus 0000:0f
+>     40000000-417fffff : PCI Bus 0000:10
+>       40000000-40ffffff : 0000:10:00.0
+>       41000000-4101ffff : 0000:10:00.0
+>   41800000-418fffff : PCI Bus 0000:01
+>     41800000-4183ffff : 0000:01:00.0
+>     41840000-4187ffff : 0000:01:00.1
+>   41900000-419fffff : PCI Bus 0000:05
+>     41900000-4197ffff : 0000:05:00.0
+>     41980000-419fffff : 0000:05:00.1
+>   41a00000-41afffff : PCI Bus 0000:09
+>     41a00000-41a7ffff : 0000:09:00.0
+>     41a80000-41afffff : 0000:09:00.1
+>   41b00000-41b0ffff : 0000:00:10.0
+>     41b00000-41b0ffff : ahci
+>   41b10000-41b1ffff : 0000:00:10.1
+>     41b10000-41b1ffff : ahci
+> 60000000-7fffffff : PCI Bus 0000:80
+>   60000000-600fffff : PCI Bus 0000:83
+>     60000000-6001ffff : 0000:83:00.0
+>     60020000-60023fff : 0000:83:00.0
+>       60020000-60023fff : nvme
+>   60100000-601fffff : PCI Bus 0000:89
+>     60100000-6017ffff : 0000:89:00.0
+>       60100000-6017ffff : e1000e
+>     60180000-601bffff : 0000:89:00.0
+>     601c0000-601dffff : 0000:89:00.0
+>       601c0000-601dffff : e1000e
+>     601e0000-601e3fff : 0000:89:00.0
+>       601e0000-601e3fff : e1000e
+>   60200000-603fffff : PCI Bus 0000:8d
+>     60200000-602fffff : 0000:8d:00.0
+>     60300000-6030ffff : 0000:8d:00.0
+>       60300000-6030ffff : mpt3sas
+> 802f0000-8030ffff : reserved
+> e6247000-e6247fff : reserved
+> e6720000-e690ffff : reserved
+> e6a90000-e6a9ffff : reserved
+> e6ab0000-e721ffff : reserved
+> e7240000-e7240fff : reserved
+> fac00000-fafdffff : reserved
+> 400040400-40004041f : CAV901C:00
+> 400040480-400040567 : CAV901D:00
+>   400040480-400040567 : CAV901C:00
+> 400040600-40004073b : CAV901E:00
+>   400040600-40004073b : CAV901C:00
+> 400041400-40004177f : CAV901F:00
+>   400041400-40004177f : CAV901C:00
+> 402000100-402000fff : CAV9006:00
+>   402000100-402000fff : CAV9006:00
+> 402020000-40202ffff : ARMH0011:00
+>   402020000-40202ffff : ARMH0011:00
+> 402300000-40230ffff : arm-smmu-v3.0.auto
+>   402300000-40230ffff : arm-smmu-v3.0.auto
+> 402320000-40232ffff : arm-smmu-v3.1.auto
+>   402320000-40232ffff : arm-smmu-v3.1.auto
+> 402340000-40234ffff : arm-smmu-v3.2.auto
+>   402340000-40234ffff : arm-smmu-v3.2.auto
+> 440040400-44004041f : CAV901C:01
+> 440040480-440040567 : CAV901D:01
+>   440040480-440040567 : CAV901C:01
+> 440040600-44004073b : CAV901E:01
+>   440040600-44004073b : CAV901C:01
+> 440041400-44004177f : CAV901F:01
+>   440041400-44004177f : CAV901C:01
+> 4421a0000-4421affff : CAV9007:06
+>   4421a0000-4421affff : CAV9007:06
+> 442300000-44230ffff : arm-smmu-v3.3.auto
+>   442300000-44230ffff : arm-smmu-v3.3.auto
+> 442320000-44232ffff : arm-smmu-v3.4.auto
+>   442320000-44232ffff : arm-smmu-v3.4.auto
+> 442340000-44234ffff : arm-smmu-v3.5.auto
+>   442340000-44234ffff : arm-smmu-v3.5.auto
+> b81200000-c811fffff : System RAM
+>   b81280000-b8270ffff : Kernel code
+>   b82710000-b82dfffff : reserved
+>   b82e00000-b83168fff : Kernel data
+>   b83169000-baccd7fff : reserved
+>   c78a00000-c7fffffff : reserved
+>   c80129000-c801a9fff : reserved
+>   c801aa000-c809e9fff : reserved
+>   c809ec000-c809eefff : reserved
+>   c809ef000-c811fffff : reserved
+> 10000000000-13fffffffff : PCI Bus 0000:00
+>   10000000000-100013fffff : PCI Bus 0000:01
+>     10000000000-100007fffff : 0000:01:00.0
+>     10000800000-10000ffffff : 0000:01:00.1
+>     10001000000-1000101ffff : 0000:01:00.0
+>     10001020000-1000103ffff : 0000:01:00.1
+>     10001040000-1000104ffff : 0000:01:00.0
+>     10001050000-1000105ffff : 0000:01:00.1
+>   10001400000-100037fffff : PCI Bus 0000:05
+>     10001400000-1000140ffff : 0000:05:00.0
+>       10001400000-1000140ffff : bnx2x
+>     10001410000-1000141ffff : 0000:05:00.1
+>       10001410000-1000141ffff : bnx2x
+>     10001800000-10001ffffff : 0000:05:00.0
+>       10001800000-10001ffffff : bnx2x
+>     10002000000-100027fffff : 0000:05:00.0
+>       10002000000-100027fffff : bnx2x
+>     10002800000-10002ffffff : 0000:05:00.1
+>       10002800000-10002ffffff : bnx2x
+>     10003000000-100037fffff : 0000:05:00.1
+>       10003000000-100037fffff : bnx2x
+>   10003800000-100053fffff : PCI Bus 0000:09
+>     10003800000-10003ffffff : 0000:09:00.0
+>       10003800000-10003ffffff : i40e
+>     10004000000-100047fffff : 0000:09:00.1
+>       10004000000-100047fffff : i40e
+>     10004800000-10004bfffff : 0000:09:00.0
+>     10004c00000-10004ffffff : 0000:09:00.1
+>     10005000000-10005007fff : 0000:09:00.0
+>       10005000000-10005007fff : i40e
+>     10005008000-1000500ffff : 0000:09:00.1
+>       10005008000-1000500ffff : i40e
+>     10005010000-1000510ffff : 0000:09:00.0
+>     10005110000-1000520ffff : 0000:09:00.1
+>   10005400000-1000540ffff : 0000:00:0f.0
+>     10005400000-1000540ffff : xhci-hcd
+>   10005410000-1000541ffff : 0000:00:0f.0
+>   10005420000-1000542ffff : 0000:00:0f.1
+>     10005420000-1000542ffff : xhci-hcd
+>   10005430000-1000543ffff : 0000:00:0f.1
+>   10005440000-1000544ffff : 0000:00:10.0
+>     10005440000-1000544ffff : ahci
+>   10005450000-1000545ffff : 0000:00:10.1
+>     10005450000-1000545ffff : ahci
+> 14000000000-17fffffffff : PCI Bus 0000:80
+> 
+> 
+> failure with crashkernel=1G
+> 
+> :~$ dmesg | grep crash
+> [    0.000000] cannot allocate crashkernel (size:0x40000000)
+> [    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
+> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro nowatchdog earlycon
+> crashkernel=1G crashkernel=250M,low
+> [   29.326916]     crashkernel=250M,low
+> 
 
-Cc: Richard Henderson <rth@twiddle.net>
-Cc: Ivan Kokshaysky <ink@jurassic.park.msu.ru>
-Cc: Matt Turner <mattst88@gmail.com>
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: Guo Ren <guoren@kernel.org>
-Cc: Brian Cain <bcain@codeaurora.org>
-Cc: Tony Luck <tony.luck@intel.com>
-Cc: Fenghua Yu <fenghua.yu@intel.com>
-Cc: Geert Uytterhoeven <geert@linux-m68k.org>
-Cc: Sam Creasey <sammy@sammy.net>
-Cc: Michal Simek <monstr@monstr.eu>
-Cc: Ralf Baechle <ralf@linux-mips.org>
-Cc: Paul Burton <paulburton@kernel.org>
-Cc: Nick Hu <nickhu@andestech.com>
-Cc: Greentime Hu <green.hu@gmail.com>
-Cc: Vincent Chen <deanbo422@gmail.com>
-Cc: Ley Foon Tan <ley.foon.tan@intel.com>
-Cc: Jonas Bonn <jonas@southpole.se>
-Cc: Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>
-Cc: Stafford Horne <shorne@gmail.com>
-Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
-Cc: Helge Deller <deller@gmx.de>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Jeff Dike <jdike@addtoit.com>
-Cc: Richard Weinberger <richard@nod.at>
-Cc: Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Cc: Guan Xuetao <gxt@pku.edu.cn>
-Cc: Chris Zankel <chris@zankel.net>
-Cc: Max Filippov <jcmvbkbc@gmail.com>
-Cc: Andrew Morton <akpm@linux-foundation.org>
-Cc: linux-alpha@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-csky@vger.kernel.org
-Cc: linux-hexagon@vger.kernel.org
-Cc: linux-ia64@vger.kernel.org
-Cc: linux-m68k@lists.linux-m68k.org
-Cc: linux-mips@vger.kernel.org
-Cc: nios2-dev@lists.rocketboards.org
-Cc: openrisc@lists.librecores.org
-Cc: linux-parisc@vger.kernel.org
-Cc: sparclinux@vger.kernel.org
-Cc: linux-um@lists.infradead.org
-Cc: linux-xtensa@linux-xtensa.org
-Cc: linux-arch@vger.kernel.org
-Cc: linux-mm@kvack.org
-Cc: linux-kernel@vger.kernel.org
-Acked-by: Guo Ren <guoren@kernel.org>			# csky
-Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>	# m68k
-Acked-by: Stafford Horne <shorne@gmail.com>		# openrisc
-Acked-by: Helge Deller <deller@gmx.de>			# parisc
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
-Build tested on multiple platforms but boot tested only for arm64.
+I read these clearly, found that your all testcases failed including
+"crashkernel=4G@0xb81200000 crashkernel=250M,low".
 
-Changes in V2:
+There is no "Crash kernel (low)" in all your tests, that is there is no enough
+low memory, in these cases, parameters equal to 4G@0xb81200000, crashkernel=4G
+and crashkernel=1G.
 
-- s/HAVE_ARCH_PTE_SPECIAL/ARCH_HAS_PTE_SPECIAL per Geert
+crashkernel=4G and crashkernel=1G all failed because there is no low memory.
 
-Changes in V1: (https://patchwork.kernel.org/patch/11414613/)
+Thanks,
+Chen Zhou
 
- arch/alpha/include/asm/pgtable.h         |  2 --
- arch/arm/include/asm/pgtable-2level.h    |  2 --
- arch/arm/include/asm/pgtable.h           | 15 ++------
- arch/arm/mm/mmu.c                        | 14 ++++++++
- arch/csky/include/asm/pgtable.h          |  3 --
- arch/hexagon/include/asm/pgtable.h       |  2 --
- arch/ia64/include/asm/pgtable.h          |  2 --
- arch/m68k/include/asm/mcf_pgtable.h      | 10 ------
- arch/m68k/include/asm/motorola_pgtable.h |  2 --
- arch/m68k/include/asm/sun3_pgtable.h     |  2 --
- arch/microblaze/include/asm/pgtable.h    |  4 ---
- arch/mips/include/asm/pgtable.h          | 44 ++++++++++++++++--------
- arch/nds32/include/asm/pgtable.h         |  9 -----
- arch/nios2/include/asm/pgtable.h         |  3 --
- arch/openrisc/include/asm/pgtable.h      |  2 --
- arch/parisc/include/asm/pgtable.h        |  2 --
- arch/sparc/include/asm/pgtable_32.h      |  7 ----
- arch/um/include/asm/pgtable.h            | 10 ------
- arch/unicore32/include/asm/pgtable.h     |  3 --
- arch/xtensa/include/asm/pgtable.h        |  3 --
- include/linux/mm.h                       | 12 +++++++
- 21 files changed, 58 insertions(+), 95 deletions(-)
-
-diff --git a/arch/alpha/include/asm/pgtable.h b/arch/alpha/include/asm/pgtable.h
-index 299791ce14b6..0267aa8a4f86 100644
---- a/arch/alpha/include/asm/pgtable.h
-+++ b/arch/alpha/include/asm/pgtable.h
-@@ -268,7 +268,6 @@ extern inline void pud_clear(pud_t * pudp)	{ pud_val(*pudp) = 0; }
- extern inline int pte_write(pte_t pte)		{ return !(pte_val(pte) & _PAGE_FOW); }
- extern inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & _PAGE_DIRTY; }
- extern inline int pte_young(pte_t pte)		{ return pte_val(pte) & _PAGE_ACCESSED; }
--extern inline int pte_special(pte_t pte)	{ return 0; }
- 
- extern inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) |= _PAGE_FOW; return pte; }
- extern inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~(__DIRTY_BITS); return pte; }
-@@ -276,7 +275,6 @@ extern inline pte_t pte_mkold(pte_t pte)	{ pte_val(pte) &= ~(__ACCESS_BITS); ret
- extern inline pte_t pte_mkwrite(pte_t pte)	{ pte_val(pte) &= ~_PAGE_FOW; return pte; }
- extern inline pte_t pte_mkdirty(pte_t pte)	{ pte_val(pte) |= __DIRTY_BITS; return pte; }
- extern inline pte_t pte_mkyoung(pte_t pte)	{ pte_val(pte) |= __ACCESS_BITS; return pte; }
--extern inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
- 
- #define PAGE_DIR_OFFSET(tsk,address) pgd_offset((tsk),(address))
- 
-diff --git a/arch/arm/include/asm/pgtable-2level.h b/arch/arm/include/asm/pgtable-2level.h
-index 0d3ea35c97fe..9e084a464a97 100644
---- a/arch/arm/include/asm/pgtable-2level.h
-+++ b/arch/arm/include/asm/pgtable-2level.h
-@@ -211,8 +211,6 @@ static inline pmd_t *pmd_offset(pud_t *pud, unsigned long addr)
- #define pmd_addr_end(addr,end) (end)
- 
- #define set_pte_ext(ptep,pte,ext) cpu_set_pte_ext(ptep,pte,ext)
--#define pte_special(pte)	(0)
--static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
- 
- /*
-  * We don't have huge page support for short descriptors, for the moment
-diff --git a/arch/arm/include/asm/pgtable.h b/arch/arm/include/asm/pgtable.h
-index eabcb48a7840..556468240ba5 100644
---- a/arch/arm/include/asm/pgtable.h
-+++ b/arch/arm/include/asm/pgtable.h
-@@ -252,19 +252,8 @@ static inline void __sync_icache_dcache(pte_t pteval)
- extern void __sync_icache_dcache(pte_t pteval);
- #endif
- 
--static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
--			      pte_t *ptep, pte_t pteval)
--{
--	unsigned long ext = 0;
--
--	if (addr < TASK_SIZE && pte_valid_user(pteval)) {
--		if (!pte_special(pteval))
--			__sync_icache_dcache(pteval);
--		ext |= PTE_EXT_NG;
--	}
--
--	set_pte_ext(ptep, pteval, ext);
--}
-+void set_pte_at(struct mm_struct *mm, unsigned long addr,
-+		      pte_t *ptep, pte_t pteval);
- 
- static inline pte_t clear_pte_bit(pte_t pte, pgprot_t prot)
- {
-diff --git a/arch/arm/mm/mmu.c b/arch/arm/mm/mmu.c
-index 5d0d0f86e790..16e9b041d7cf 100644
---- a/arch/arm/mm/mmu.c
-+++ b/arch/arm/mm/mmu.c
-@@ -1672,3 +1672,17 @@ void __init early_mm_init(const struct machine_desc *mdesc)
- 	build_mem_type_table();
- 	early_paging_init(mdesc);
- }
-+
-+void set_pte_at(struct mm_struct *mm, unsigned long addr,
-+			      pte_t *ptep, pte_t pteval)
-+{
-+	unsigned long ext = 0;
-+
-+	if (addr < TASK_SIZE && pte_valid_user(pteval)) {
-+		if (!pte_special(pteval))
-+			__sync_icache_dcache(pteval);
-+		ext |= PTE_EXT_NG;
-+	}
-+
-+	set_pte_ext(ptep, pteval, ext);
-+}
-diff --git a/arch/csky/include/asm/pgtable.h b/arch/csky/include/asm/pgtable.h
-index 9b7764cb7645..9ab4a445ad99 100644
---- a/arch/csky/include/asm/pgtable.h
-+++ b/arch/csky/include/asm/pgtable.h
-@@ -110,9 +110,6 @@ extern unsigned long empty_zero_page[PAGE_SIZE / sizeof(unsigned long)];
- extern void load_pgd(unsigned long pg_dir);
- extern pte_t invalid_pte_table[PTRS_PER_PTE];
- 
--static inline int pte_special(pte_t pte) { return 0; }
--static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
--
- static inline void set_pte(pte_t *p, pte_t pte)
- {
- 	*p = pte;
-diff --git a/arch/hexagon/include/asm/pgtable.h b/arch/hexagon/include/asm/pgtable.h
-index 2fec20ad939e..d383e8bea5b2 100644
---- a/arch/hexagon/include/asm/pgtable.h
-+++ b/arch/hexagon/include/asm/pgtable.h
-@@ -158,8 +158,6 @@ extern pgd_t swapper_pg_dir[PTRS_PER_PGD];  /* located in head.S */
- 
- /* Seems to be zero even in architectures where the zero page is firewalled? */
- #define FIRST_USER_ADDRESS 0UL
--#define pte_special(pte)	0
--#define pte_mkspecial(pte)	(pte)
- 
- /*  HUGETLB not working currently  */
- #ifdef CONFIG_HUGETLB_PAGE
-diff --git a/arch/ia64/include/asm/pgtable.h b/arch/ia64/include/asm/pgtable.h
-index d602e7c622db..0e7b645b76c6 100644
---- a/arch/ia64/include/asm/pgtable.h
-+++ b/arch/ia64/include/asm/pgtable.h
-@@ -298,7 +298,6 @@ extern unsigned long VMALLOC_END;
- #define pte_exec(pte)		((pte_val(pte) & _PAGE_AR_RX) != 0)
- #define pte_dirty(pte)		((pte_val(pte) & _PAGE_D) != 0)
- #define pte_young(pte)		((pte_val(pte) & _PAGE_A) != 0)
--#define pte_special(pte)	0
- 
- /*
-  * Note: we convert AR_RWX to AR_RX and AR_RW to AR_R by clearing the 2nd bit in the
-@@ -311,7 +310,6 @@ extern unsigned long VMALLOC_END;
- #define pte_mkclean(pte)	(__pte(pte_val(pte) & ~_PAGE_D))
- #define pte_mkdirty(pte)	(__pte(pte_val(pte) | _PAGE_D))
- #define pte_mkhuge(pte)		(__pte(pte_val(pte)))
--#define pte_mkspecial(pte)	(pte)
- 
- /*
-  * Because ia64's Icache and Dcache is not coherent (on a cpu), we need to
-diff --git a/arch/m68k/include/asm/mcf_pgtable.h b/arch/m68k/include/asm/mcf_pgtable.h
-index b9f45aeded25..0031cd387b75 100644
---- a/arch/m68k/include/asm/mcf_pgtable.h
-+++ b/arch/m68k/include/asm/mcf_pgtable.h
-@@ -235,11 +235,6 @@ static inline int pte_young(pte_t pte)
- 	return pte_val(pte) & CF_PAGE_ACCESSED;
- }
- 
--static inline int pte_special(pte_t pte)
--{
--	return 0;
--}
--
- static inline pte_t pte_wrprotect(pte_t pte)
- {
- 	pte_val(pte) &= ~CF_PAGE_WRITABLE;
-@@ -312,11 +307,6 @@ static inline pte_t pte_mkcache(pte_t pte)
- 	return pte;
- }
- 
--static inline pte_t pte_mkspecial(pte_t pte)
--{
--	return pte;
--}
--
- #define swapper_pg_dir kernel_pg_dir
- extern pgd_t kernel_pg_dir[PTRS_PER_PGD];
- 
-diff --git a/arch/m68k/include/asm/motorola_pgtable.h b/arch/m68k/include/asm/motorola_pgtable.h
-index 62bedc61f110..a6f4b96d674e 100644
---- a/arch/m68k/include/asm/motorola_pgtable.h
-+++ b/arch/m68k/include/asm/motorola_pgtable.h
-@@ -168,7 +168,6 @@ static inline void pud_set(pud_t *pudp, pmd_t *pmdp)
- static inline int pte_write(pte_t pte)		{ return !(pte_val(pte) & _PAGE_RONLY); }
- static inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & _PAGE_DIRTY; }
- static inline int pte_young(pte_t pte)		{ return pte_val(pte) & _PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte)	{ return 0; }
- 
- static inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) |= _PAGE_RONLY; return pte; }
- static inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~_PAGE_DIRTY; return pte; }
-@@ -186,7 +185,6 @@ static inline pte_t pte_mkcache(pte_t pte)
- 	pte_val(pte) = (pte_val(pte) & _CACHEMASK040) | m68k_supervisor_cachemode;
- 	return pte;
- }
--static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
- 
- #define PAGE_DIR_OFFSET(tsk,address) pgd_offset((tsk),(address))
- 
-diff --git a/arch/m68k/include/asm/sun3_pgtable.h b/arch/m68k/include/asm/sun3_pgtable.h
-index bc4155264810..0caa18a08437 100644
---- a/arch/m68k/include/asm/sun3_pgtable.h
-+++ b/arch/m68k/include/asm/sun3_pgtable.h
-@@ -155,7 +155,6 @@ static inline void pmd_clear (pmd_t *pmdp) { pmd_val (*pmdp) = 0; }
- static inline int pte_write(pte_t pte)		{ return pte_val(pte) & SUN3_PAGE_WRITEABLE; }
- static inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & SUN3_PAGE_MODIFIED; }
- static inline int pte_young(pte_t pte)		{ return pte_val(pte) & SUN3_PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte)	{ return 0; }
- 
- static inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) &= ~SUN3_PAGE_WRITEABLE; return pte; }
- static inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~SUN3_PAGE_MODIFIED; return pte; }
-@@ -168,7 +167,6 @@ static inline pte_t pte_mknocache(pte_t pte)	{ pte_val(pte) |= SUN3_PAGE_NOCACHE
- //static inline pte_t pte_mkcache(pte_t pte)	{ pte_val(pte) &= SUN3_PAGE_NOCACHE; return pte; }
- // until then, use:
- static inline pte_t pte_mkcache(pte_t pte)	{ return pte; }
--static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
- 
- extern pgd_t swapper_pg_dir[PTRS_PER_PGD];
- extern pgd_t kernel_pg_dir[PTRS_PER_PGD];
-diff --git a/arch/microblaze/include/asm/pgtable.h b/arch/microblaze/include/asm/pgtable.h
-index 2def331f9e2c..db9bdfcf46b7 100644
---- a/arch/microblaze/include/asm/pgtable.h
-+++ b/arch/microblaze/include/asm/pgtable.h
-@@ -80,10 +80,6 @@ extern pte_t *va_to_pte(unsigned long address);
-  * Undefined behaviour if not..
-  */
- 
--static inline int pte_special(pte_t pte)	{ return 0; }
--
--static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
--
- /* Start and end of the vmalloc area. */
- /* Make sure to map the vmalloc area above the pinned kernel memory area
-    of 32Mb.  */
-diff --git a/arch/mips/include/asm/pgtable.h b/arch/mips/include/asm/pgtable.h
-index aef5378f909c..8e4e4be1ca00 100644
---- a/arch/mips/include/asm/pgtable.h
-+++ b/arch/mips/include/asm/pgtable.h
-@@ -269,6 +269,36 @@ static inline void set_pte_at(struct mm_struct *mm, unsigned long addr,
-  */
- extern pgd_t swapper_pg_dir[];
- 
-+/*
-+ * Platform specific pte_special() and pte_mkspecial() definitions
-+ * are required only when ARCH_HAS_PTE_SPECIAL is enabled.
-+ */
-+#if !defined(CONFIG_32BIT) && !defined(CONFIG_CPU_HAS_RIXI)
-+#if defined(CONFIG_PHYS_ADDR_T_64BIT) && defined(CONFIG_CPU_MIPS32)
-+static inline int pte_special(pte_t pte)
-+{
-+	return pte.pte_low & _PAGE_SPECIAL;
-+}
-+
-+static inline pte_t pte_mkspecial(pte_t pte)
-+{
-+	pte.pte_low |= _PAGE_SPECIAL;
-+	return pte;
-+}
-+#else
-+static inline int pte_special(pte_t pte)
-+{
-+	return pte_val(pte) & _PAGE_SPECIAL;
-+}
-+
-+static inline pte_t pte_mkspecial(pte_t pte)
-+{
-+	pte_val(pte) |= _PAGE_SPECIAL;
-+	return pte;
-+}
-+#endif
-+#endif
-+
- /*
-  * The following only work if pte_present() is true.
-  * Undefined behaviour if not..
-@@ -277,7 +307,6 @@ extern pgd_t swapper_pg_dir[];
- static inline int pte_write(pte_t pte)	{ return pte.pte_low & _PAGE_WRITE; }
- static inline int pte_dirty(pte_t pte)	{ return pte.pte_low & _PAGE_MODIFIED; }
- static inline int pte_young(pte_t pte)	{ return pte.pte_low & _PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte) { return pte.pte_low & _PAGE_SPECIAL; }
- 
- static inline pte_t pte_wrprotect(pte_t pte)
- {
-@@ -338,17 +367,10 @@ static inline pte_t pte_mkyoung(pte_t pte)
- 	}
- 	return pte;
- }
--
--static inline pte_t pte_mkspecial(pte_t pte)
--{
--	pte.pte_low |= _PAGE_SPECIAL;
--	return pte;
--}
- #else
- static inline int pte_write(pte_t pte)	{ return pte_val(pte) & _PAGE_WRITE; }
- static inline int pte_dirty(pte_t pte)	{ return pte_val(pte) & _PAGE_MODIFIED; }
- static inline int pte_young(pte_t pte)	{ return pte_val(pte) & _PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte) { return pte_val(pte) & _PAGE_SPECIAL; }
- 
- static inline pte_t pte_wrprotect(pte_t pte)
- {
-@@ -392,12 +414,6 @@ static inline pte_t pte_mkyoung(pte_t pte)
- 	return pte;
- }
- 
--static inline pte_t pte_mkspecial(pte_t pte)
--{
--	pte_val(pte) |= _PAGE_SPECIAL;
--	return pte;
--}
--
- #ifdef CONFIG_MIPS_HUGE_TLB_SUPPORT
- static inline int pte_huge(pte_t pte)	{ return pte_val(pte) & _PAGE_HUGE; }
- 
-diff --git a/arch/nds32/include/asm/pgtable.h b/arch/nds32/include/asm/pgtable.h
-index 6abc58ac406d..476cc4dd1709 100644
---- a/arch/nds32/include/asm/pgtable.h
-+++ b/arch/nds32/include/asm/pgtable.h
-@@ -286,15 +286,6 @@ PTE_BIT_FUNC(mkclean, &=~_PAGE_D);
- PTE_BIT_FUNC(mkdirty, |=_PAGE_D);
- PTE_BIT_FUNC(mkold, &=~_PAGE_YOUNG);
- PTE_BIT_FUNC(mkyoung, |=_PAGE_YOUNG);
--static inline int pte_special(pte_t pte)
--{
--	return 0;
--}
--
--static inline pte_t pte_mkspecial(pte_t pte)
--{
--	return pte;
--}
- 
- /*
-  * Mark the prot value as uncacheable and unbufferable.
-diff --git a/arch/nios2/include/asm/pgtable.h b/arch/nios2/include/asm/pgtable.h
-index 99985d8b7166..f98b7f4519ba 100644
---- a/arch/nios2/include/asm/pgtable.h
-+++ b/arch/nios2/include/asm/pgtable.h
-@@ -113,7 +113,6 @@ static inline int pte_dirty(pte_t pte)		\
- 	{ return pte_val(pte) & _PAGE_DIRTY; }
- static inline int pte_young(pte_t pte)		\
- 	{ return pte_val(pte) & _PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte)	{ return 0; }
- 
- #define pgprot_noncached pgprot_noncached
- 
-@@ -168,8 +167,6 @@ static inline pte_t pte_mkdirty(pte_t pte)
- 	return pte;
- }
- 
--static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
--
- static inline pte_t pte_mkyoung(pte_t pte)
- {
- 	pte_val(pte) |= _PAGE_ACCESSED;
-diff --git a/arch/openrisc/include/asm/pgtable.h b/arch/openrisc/include/asm/pgtable.h
-index 248d22d8faa7..7f3fb9ceb083 100644
---- a/arch/openrisc/include/asm/pgtable.h
-+++ b/arch/openrisc/include/asm/pgtable.h
-@@ -236,8 +236,6 @@ static inline int pte_write(pte_t pte) { return pte_val(pte) & _PAGE_WRITE; }
- static inline int pte_exec(pte_t pte)  { return pte_val(pte) & _PAGE_EXEC; }
- static inline int pte_dirty(pte_t pte) { return pte_val(pte) & _PAGE_DIRTY; }
- static inline int pte_young(pte_t pte) { return pte_val(pte) & _PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte) { return 0; }
--static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
- 
- static inline pte_t pte_wrprotect(pte_t pte)
- {
-diff --git a/arch/parisc/include/asm/pgtable.h b/arch/parisc/include/asm/pgtable.h
-index f0a365950536..9832c73a7021 100644
---- a/arch/parisc/include/asm/pgtable.h
-+++ b/arch/parisc/include/asm/pgtable.h
-@@ -377,7 +377,6 @@ static inline void pud_clear(pud_t *pud) {
- static inline int pte_dirty(pte_t pte)		{ return pte_val(pte) & _PAGE_DIRTY; }
- static inline int pte_young(pte_t pte)		{ return pte_val(pte) & _PAGE_ACCESSED; }
- static inline int pte_write(pte_t pte)		{ return pte_val(pte) & _PAGE_WRITE; }
--static inline int pte_special(pte_t pte)	{ return 0; }
- 
- static inline pte_t pte_mkclean(pte_t pte)	{ pte_val(pte) &= ~_PAGE_DIRTY; return pte; }
- static inline pte_t pte_mkold(pte_t pte)	{ pte_val(pte) &= ~_PAGE_ACCESSED; return pte; }
-@@ -385,7 +384,6 @@ static inline pte_t pte_wrprotect(pte_t pte)	{ pte_val(pte) &= ~_PAGE_WRITE; ret
- static inline pte_t pte_mkdirty(pte_t pte)	{ pte_val(pte) |= _PAGE_DIRTY; return pte; }
- static inline pte_t pte_mkyoung(pte_t pte)	{ pte_val(pte) |= _PAGE_ACCESSED; return pte; }
- static inline pte_t pte_mkwrite(pte_t pte)	{ pte_val(pte) |= _PAGE_WRITE; return pte; }
--static inline pte_t pte_mkspecial(pte_t pte)	{ return pte; }
- 
- /*
-  * Huge pte definitions.
-diff --git a/arch/sparc/include/asm/pgtable_32.h b/arch/sparc/include/asm/pgtable_32.h
-index 6d6f44c0cad9..0de659ae0ba4 100644
---- a/arch/sparc/include/asm/pgtable_32.h
-+++ b/arch/sparc/include/asm/pgtable_32.h
-@@ -223,11 +223,6 @@ static inline int pte_young(pte_t pte)
- 	return pte_val(pte) & SRMMU_REF;
- }
- 
--static inline int pte_special(pte_t pte)
--{
--	return 0;
--}
--
- static inline pte_t pte_wrprotect(pte_t pte)
- {
- 	return __pte(pte_val(pte) & ~SRMMU_WRITE);
-@@ -258,8 +253,6 @@ static inline pte_t pte_mkyoung(pte_t pte)
- 	return __pte(pte_val(pte) | SRMMU_REF);
- }
- 
--#define pte_mkspecial(pte)    (pte)
--
- #define pfn_pte(pfn, prot)		mk_pte(pfn_to_page(pfn), prot)
- 
- static inline unsigned long pte_pfn(pte_t pte)
-diff --git a/arch/um/include/asm/pgtable.h b/arch/um/include/asm/pgtable.h
-index 2daa58df2190..b5ddf5d98bd5 100644
---- a/arch/um/include/asm/pgtable.h
-+++ b/arch/um/include/asm/pgtable.h
-@@ -167,11 +167,6 @@ static inline int pte_newprot(pte_t pte)
- 	return(pte_present(pte) && (pte_get_bits(pte, _PAGE_NEWPROT)));
- }
- 
--static inline int pte_special(pte_t pte)
--{
--	return 0;
--}
--
- /*
-  * =================================
-  * Flags setting section.
-@@ -247,11 +242,6 @@ static inline pte_t pte_mknewpage(pte_t pte)
- 	return(pte);
- }
- 
--static inline pte_t pte_mkspecial(pte_t pte)
--{
--	return(pte);
--}
--
- static inline void set_pte(pte_t *pteptr, pte_t pteval)
- {
- 	pte_copy(*pteptr, pteval);
-diff --git a/arch/unicore32/include/asm/pgtable.h b/arch/unicore32/include/asm/pgtable.h
-index c8f7ba12f309..3b8731b3a937 100644
---- a/arch/unicore32/include/asm/pgtable.h
-+++ b/arch/unicore32/include/asm/pgtable.h
-@@ -177,7 +177,6 @@ extern struct page *empty_zero_page;
- #define pte_dirty(pte)		(pte_val(pte) & PTE_DIRTY)
- #define pte_young(pte)		(pte_val(pte) & PTE_YOUNG)
- #define pte_exec(pte)		(pte_val(pte) & PTE_EXEC)
--#define pte_special(pte)	(0)
- 
- #define PTE_BIT_FUNC(fn, op) \
- static inline pte_t pte_##fn(pte_t pte) { pte_val(pte) op; return pte; }
-@@ -189,8 +188,6 @@ PTE_BIT_FUNC(mkdirty,   |= PTE_DIRTY);
- PTE_BIT_FUNC(mkold,     &= ~PTE_YOUNG);
- PTE_BIT_FUNC(mkyoung,   |= PTE_YOUNG);
- 
--static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
--
- /*
-  * Mark the prot value as uncacheable.
-  */
-diff --git a/arch/xtensa/include/asm/pgtable.h b/arch/xtensa/include/asm/pgtable.h
-index 27ac17c9da09..8be0c0568c50 100644
---- a/arch/xtensa/include/asm/pgtable.h
-+++ b/arch/xtensa/include/asm/pgtable.h
-@@ -266,7 +266,6 @@ static inline void paging_init(void) { }
- static inline int pte_write(pte_t pte) { return pte_val(pte) & _PAGE_WRITABLE; }
- static inline int pte_dirty(pte_t pte) { return pte_val(pte) & _PAGE_DIRTY; }
- static inline int pte_young(pte_t pte) { return pte_val(pte) & _PAGE_ACCESSED; }
--static inline int pte_special(pte_t pte) { return 0; }
- 
- static inline pte_t pte_wrprotect(pte_t pte)	
- 	{ pte_val(pte) &= ~(_PAGE_WRITABLE | _PAGE_HW_WRITE); return pte; }
-@@ -280,8 +279,6 @@ static inline pte_t pte_mkyoung(pte_t pte)
- 	{ pte_val(pte) |= _PAGE_ACCESSED; return pte; }
- static inline pte_t pte_mkwrite(pte_t pte)
- 	{ pte_val(pte) |= _PAGE_WRITABLE; return pte; }
--static inline pte_t pte_mkspecial(pte_t pte)
--	{ return pte; }
- 
- #define pgprot_noncached(prot) (__pgprot(pgprot_val(prot) & ~_PAGE_CA_MASK))
- 
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index c54fb96cb1e6..b2b43c88bff2 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -1720,6 +1720,18 @@ static inline void sync_mm_rss(struct mm_struct *mm)
- }
- #endif
- 
-+#ifndef CONFIG_ARCH_HAS_PTE_SPECIAL
-+static inline int pte_special(pte_t pte)
-+{
-+	return 0;
-+}
-+
-+static inline pte_t pte_mkspecial(pte_t pte)
-+{
-+	return pte;
-+}
-+#endif
-+
- #ifndef CONFIG_ARCH_HAS_PTE_DEVMAP
- static inline int pte_devmap(pte_t pte)
- {
--- 
-2.20.1
+> --pk
+> 
+> .
+> 
 
 
 _______________________________________________
