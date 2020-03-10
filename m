@@ -2,74 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7ED517F426
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:51:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B201817F42C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 10:52:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XaWHPeUICjiquyriEuXtoNNfmV+ncKH5JONXWgqDsKA=; b=G9IKO5TVbQSplk
-	RWBqi4QJuZ55NexlvnOPinJqxFiyJ5u/exr52yNg6A+sOMa5uxvQL5ens/rl68aFbLX09tloX2q6t
-	Lh0wQGw4O9za5zkMC/2GHR5la+Ogxnxv2tPks5jLI2/DedOxqjtSCLf83pOJ3ABf6U1vR3TrNcAXe
-	EyrKwLk0zGPmB15FPoGAAs3HnzhqZuZTAfFJXUJjisaT3erLTFbb9t9q/Bp0OrFK7INoTxnM2q5VR
-	X/qJYOOsjtEu1JHnRaAEDMOv4uwb1hWAJ+dZy97siC7D7fUSwT6MQ0md+w+26ex/Gl/myTEeZDcD6
-	MAuuOFAxOe7+uwX/25Qw==;
+	List-Owner; bh=3T86fOY3g027B55ifOawRbPzhFa+AnUfh9I/ZtJh2Yk=; b=Mm9HC1HO2uVHlw
+	xZifQd2CA3GHrcoVQuNK0WZkNVO/tDgNc8IqF0CsY5f8ycvC2w1tdsV09Azz2keDjad9Lmi1+4XEq
+	bV6iUx+KcLeqasGRfXrwI3RaiXue1xmdHN4MANyV0niZFfArjoW2cJy9r5WW89hEY8Y7GLt/xQn5T
+	MgZO19XPdWyn8U4ATPyycKx08e3jwqDmmQg9uyI7KAzHOFi6NuwICj5ekvpyvBBzS29ZBFUNl5RmB
+	ihLKWLGBvLBH5RDnQw05PR4/FLu4EBirzdWvFIGnYMnKbChwg1Y9SySa29SxMg1T97pP183j8TUXz
+	RVkNXl5RGpioPhKmaiMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBbXg-0008IF-2z; Tue, 10 Mar 2020 09:51:16 +0000
-Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::3])
+	id 1jBbYs-0000Ep-1N; Tue, 10 Mar 2020 09:52:30 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBbXO-00088b-S8
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:51:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1583833854;
- s=strato-dkim-0002; d=gerhold.net;
- h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=h9kSHq8EdIzpHjiW3/VTN3VIa71t1JN+kAFKx7UCM4E=;
- b=Nqy3IiNnza9GCgeOlGRN4vSx+pR6wyzuFAYLZR2yYjauBBZGT6bB5rH9dHr1sT8n7i
- tYoPirGIBXiY4jOAMYUrD3FJpcZ7hhk8c7aUGrkCmQ0Y2j+i6zBfKJZ9H7k/JPQWu0kZ
- lT4BDMK8lk7w+ztWeLus7/ck3Gd/wPJSvrQyCSLchvCyFHOPXwt10MeDa2JhH4Cfb5Na
- cVk8aC7jSnSEs4Kiate3riQKgChgshqC3vS3FFg4fDRMKREb67f6v58+4+1tv1XmBDUU
- +9/MCu2mbGnSFcv7NlHIvR5Uh3x2fNlV4kgR8Nw577HQz5yh7htMLztDnYggGDHm4nIT
- i7rg==
-X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u26zEodhPgRDZ8fxIczHa4o="
-X-RZG-CLASS-ID: mo00
-Received: from gerhold.net by smtp.strato.de (RZmta 46.2.0 DYNA|AUTH)
- with ESMTPSA id c04535w2A9oruDz
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Tue, 10 Mar 2020 10:50:53 +0100 (CET)
-Date: Tue, 10 Mar 2020 10:50:46 +0100
-From: Stephan Gerhold <stephan@gerhold.net>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2] ARM: dts: Add devicetree for Samsung GT-S7710
-Message-ID: <20200310095046.GA6468@gerhold.net>
-References: <20200307193627.4092-1-linus.walleij@linaro.org>
+ id 1jBbYk-0000EO-K0
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 09:52:23 +0000
+Received: by mail-ot1-f68.google.com with SMTP id a6so4618832otb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 02:52:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=D2V/UePASyU230tuKRbMCAGcZJI5X8GF+a664jH15CU=;
+ b=iYts+wfVSvpZVFI6/exXBaSvAIwY4cXc6kyhn3SNvOrk9rwalf+EcRX/b4puHJAJFa
+ VzLKDULZdoG+CDxbzgCKIQHvPO+UoFSCJdCBWtUAos3jnok51M2RtZ4H2nezByBXrCsz
+ uzZbYVg6frIkzVK1pOHYC5UIAqOdaks0UTGi2PsAPXSQzAgnWFT31Dh0B2R3my5YL584
+ rSTG7VgGkTtiSpHtVGMj5wpqxmTmaZH9bzwk2QcD2GbvmBVBvW9R5mkjY7CvX4fjY2LA
+ SBXfEj//pup4gFeylVahJP2/1ZWq9n2DVCa88a2XVmhHN1AdwrGuGLOOBNuiLHMBLTKH
+ PmhQ==
+X-Gm-Message-State: ANhLgQ1ukNiW5Zv2mt33Dj815UcLljHwuVnJy9UxtLX8vg5nkn0QWJ9p
+ cWpIHJNZP/gSzNN7yMwg/bwTgOrekkRU4uwRs7Y=
+X-Google-Smtp-Source: ADFU+vsj5UWJdrV7QmKDiwgSvDldXSei2pp+JGaKb/Y7ORMGEFfH2B3XQIlZ+H27C0XBvXY1wG4vDKm2MB7xCJwnqls=
+X-Received: by 2002:a9d:b89:: with SMTP id 9mr16432511oth.297.1583833941607;
+ Tue, 10 Mar 2020 02:52:21 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200307193627.4092-1-linus.walleij@linaro.org>
+References: <20200305103228.9686-1-zhang.lyra@gmail.com>
+ <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
+ <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
+ <CAMuHMdV1qQZF-kAwbcxhHQZZ9hs0dG-OTZ2NcB25Jtra6ii5iA@mail.gmail.com>
+ <CA+H2tpEzFAbfzMuUGMfW3BqCKv2+kk+cLL5gWpR-zJZFYwWKqw@mail.gmail.com>
+In-Reply-To: <CA+H2tpEzFAbfzMuUGMfW3BqCKv2+kk+cLL5gWpR-zJZFYwWKqw@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 10 Mar 2020 10:52:10 +0100
+Message-ID: <CAMuHMdUKD5Ob_o4E3bH9wx=6r2PU+7U3RQ_GVRj7ZQc-e5Y4TA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
+To: Orson Zhai <orsonzhai@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_025059_668808_81104BB2 
-X-CRM114-Status: GOOD (  29.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_025222_658902_C061FD77 
+X-CRM114-Status: GOOD (  20.98  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5300:0:0:3 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,686 +86,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Android Kernel Team <kernel-team@android.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Mar 07, 2020 at 08:36:27PM +0100, Linus Walleij wrote:
-> The Samsung GT-S7710 also known as XCover 2 or Skomer is a
-> Ux500-based mobile phone. In the source code release from
-> Samsung's open source site it is referred to as "Skomer".
-> 
-> Cc: Stephan Gerhold <stephan@gerhold.net>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
-> ChangeLog v1->v2:
-> - Set SD level shifter to be a simple fixed regulator
->   at 2.9V
-> - Set the eMMC supply LDO to be at 3.3V not 1.8V
-> - Move the accelerator to the hardware I2C2 bus instead
->   of the bit-banged GPIO bus.
-> - Move the touchscreen placeholder to the hardware I2C3
->   bus.
-> - Drop unused pin configs associated with the deleted
->   GPIO I2C buses.
-> - Rename the two remaning bit-banged GPIO I2C buses as
->   i2c-gpio-0 and i2c-gpio-1.
-> - Drop the UHS speeds from the SD card, no 1.8V
-> - Flag the eMMC card as nonremovable and tag that it
->   supports mmc-ddr-1_8v (works great when testing).
-> - Use standard mc2_a_1 pin config for the eMMC SDI2 slot.
-> - Use standard UART pin control set-ups just like Golden.
-> - Use mc0_a_1 for the SD card pin config, but EXTEND IT
->   so we also cover DAT31DIR. Apparently this machine
->   makes use of DAT31DIR!
-> - Move the level shifter GPIO pin control into its own
->   pin config node and associate it with the level
->   shifter regulator.
-> - Switch the WLAN SDIO to use "mc1_a_2" configs instead
->   of the mock group which was buggy anyway.
-> - Do not disable USB, drop custom USB pin config which
->   is identical to the default.
+Hi Orson,
 
-Thanks for taking the time to fix all this. Looks much cleaner now :)
+On Tue, Mar 10, 2020 at 10:41 AM Orson Zhai <orsonzhai@gmail.com> wrote:
+> On Mon, Mar 9, 2020 at 6:32 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > On Mon, Mar 9, 2020 at 9:32 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > > On Mon, 9 Mar 2020 at 16:03, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > > > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> > > > >
+> > > > > The default value of Kconfig for almost all sprd drivers are the same with
+> > > > > ARCH_SPRD, making these drivers built as modules as default would be easier
+> > > > > if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
+> > > > >
+> > > > > Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> > > >
+> > > > Can you actually boot a kernel on a Spreadtrum platform when all platform
+> > > > and driver support is modular?
+> > >
+> > > Yes, even if all drivers are modular.
+> >
+> > Cool. No hard dependencies on e.g. regulators that are turned off when
+> > unused?
+> >
+> > > But I hope serial can be builtin, then I can have a console to see
+> > > kernel output before loading modules.
+> >
+> > No dependency on the clock driver?
+> > Oh, I see you have a hack in the serial driver, to assume default
+> > values when the serial port's parent clock is not found.  That may
+> > limit use of the other serial ports, depending on the actual serial
+> > hardware.
+>
+> There is an function named "sprd_uart_is_console()" in the driver
+> code. So the hack could be only applied when the
+> port is identified as console. And other ports might return
+> PROBE_DEFER until the clock is ready.
+>
+> Could it work out of the limitation?
 
-> ---
->  arch/arm/boot/dts/Makefile                    |   3 +-
->  .../arm/boot/dts/ste-ux500-samsung-skomer.dts | 583 ++++++++++++++++++
->  2 files changed, 585 insertions(+), 1 deletion(-)
->  create mode 100644 arch/arm/boot/dts/ste-ux500-samsung-skomer.dts
-> 
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index d6546d2676b9..a7671831ecf6 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -1202,7 +1202,8 @@ dtb-$(CONFIG_ARCH_U8500) += \
->  	ste-hrefv60plus-stuib.dtb \
->  	ste-hrefv60plus-tvk.dtb \
->  	ste-href520-tvk.dtb \
-> -	ste-ux500-samsung-golden.dtb
-> +	ste-ux500-samsung-golden.dtb \
-> +	ste-ux500-samsung-skomer.dtb
->  dtb-$(CONFIG_ARCH_UNIPHIER) += \
->  	uniphier-ld4-ref.dtb \
->  	uniphier-ld6b-ref.dtb \
-> diff --git a/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts b/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts
-> new file mode 100644
-> index 000000000000..f799e45f5b10
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts
-> @@ -0,0 +1,583 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Devicetree for the Samsung XCover 2 GT-S7710 also known as Skomer.
-> + */
-> +
-> +/dts-v1/;
-> +#include "ste-db8500.dtsi"
-> +#include "ste-ab8505.dtsi"
-> +#include "ste-dbx5x0-pinctrl.dtsi"
-> +#include <dt-bindings/gpio/gpio.h>
-> +#include <dt-bindings/input/input.h>
-> +#include <dt-bindings/interrupt-controller/irq.h>
-> +
-> +/ {
-> +	model = "Samsung XCover 2 (GT-S7710)";
-> +	compatible = "samsung,skomer", "st-ericsson,u8500";
-> +
-> +	chosen {
-> +		stdout-path = &serial2;
-> +	};
-> +
-> +	/* TI TXS0206 level translator for 2.9 V */
-> +	sd_level_translator: regulator-gpio {
-> +		compatible = "regulator-fixed";
-> +
-> +		/* GPIO87 EN */
-> +		gpios = <&gpio2 23 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +
-> +		regulator-name = "sd-level-translator";
-> +		regulator-min-microvolt = <2900000>;
-> +		regulator-max-microvolt = <2900000>;
-> +		regulator-type = "voltage";
-> +
-> +		startup-delay-us = <200>;
-> +
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&sd_level_translator_default>;
-> +	};
-> +
-> +	/* External LDO MIC5366-3.3YMT for eMMC */
-> +	ldo_3v3_reg: regulator-gpio-ldo-3v3 {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "en-3v3-fixed-supply";
-> +		regulator-min-microvolt = <3300000>;
-> +		regulator-max-microvolt = <3300000>;
-> +		gpio = <&gpio6 31 GPIO_ACTIVE_HIGH>;
-> +		startup-delay-us = <5000>;
-> +		enable-active-high;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&emmc_ldo_en_default_mode>;
-> +	};
-> +
-> +	wlan_en: regulator-gpio-wlan-en {
-> +		compatible = "regulator-fixed";
-> +		regulator-name = "wl-reg-on";
-> +		regulator-min-microvolt = <3000000>;
-> +		regulator-max-microvolt = <3000000>;
-> +		startup-delay-us = <200000>;
-> +		/* GPIO215 WLAN_EN */
-> +		gpio = <&gpio6 23 GPIO_ACTIVE_HIGH>;
-> +		enable-active-high;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&wlan_en_default_mode>;
-> +	};
-> +
-> +	vibrator {
-> +		compatible = "gpio-vibrator";
-> +		enable-gpios = <&gpio6 3 GPIO_ACTIVE_HIGH>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&vibrator_default>;
-> +	};
-> +
-> +	gpio-keys {
-> +		compatible = "gpio-keys";
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&gpio_keys_default_mode>;
-> +
-> +		button-home {
-> +			linux,code = <KEY_HOME>;
-> +			label = "HOME";
-> +			/* GPIO91 */
-> +			gpios = <&gpio2 27 GPIO_ACTIVE_LOW>;
-> +		};
-> +		button-volup {
-> +			linux,code = <KEY_VOLUMEUP>;
-> +			label = "VOL+";
-> +			/* GPIO67 */
-> +			gpios = <&gpio2 3 GPIO_ACTIVE_LOW>;
-> +		};
-> +		button-voldown {
-> +			linux,code = <KEY_VOLUMEDOWN>;
-> +			label = "VOL-";
-> +			/* GPIO92 */
-> +			gpios = <&gpio2 28 GPIO_ACTIVE_LOW>;
-> +		};
-> +		button-menu {
-> +			linux,code = <KEY_MENU>;
-> +			label = "MENU";
-> +			/* GPIO204 */
-> +			gpios = <&gpio6 12 GPIO_ACTIVE_LOW>;
-> +		};
-> +		button-back {
-> +			linux,code = <KEY_BACK>;
-> +			label = "BACK";
-> +			/* GPIO205 */
-> +			gpios = <&gpio6 13 GPIO_ACTIVE_LOW>;
-> +		};
-> +	};
-> +
-> +	/*
-> +	 * FIXME: this is not quite GPIO backlight. This is a
-> +	 * KTD253 one-wire GPIO-controlled backlight. It can
-> +	 * work as a GPIO backlight.
-> +	 */
-> +	gpio_bl: backlight {
-> +		compatible = "gpio-backlight";
-> +		/* GPIO 69 */
-> +		gpios = <&gpio2 5 GPIO_ACTIVE_HIGH>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&gpio_backlight_default_mode>;
-> +	};
-> +
-> +	i2c-gpio-0 {
-> +		compatible = "i2c-gpio";
-> +		sda-gpios = <&gpio4 16 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-> +		scl-gpios = <&gpio4 15 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&i2c_gpio_0_default>;
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		/* TODO: this should be used by the NCP6914 Camera power management unit */
-> +	};
-> +
-> +	i2c-gpio-1 {
-> +		compatible = "i2c-gpio";
-> +		sda-gpios = <&gpio4 24 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-> +		scl-gpios = <&gpio4 23 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&i2c_gpio_1_default>;
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +		/* TODO: this should be used by the ALPS HSCDTD008A compass sensor */
-> +	};
-> +
-> +	soc {
-> +		// External Micro SD slot
-> +		sdi0_per1@80126000 {
-> +			arm,primecell-periphid = <0x10480180>;
-> +			max-frequency = <100000000>;
-> +			bus-width = <4>;
-> +			cap-sd-highspeed;
-> +			cap-mmc-highspeed;
-> +			/* All direction control is used */
-> +			st,sig-dir-cmd;
-> +			st,sig-dir-dat0;
-> +			st,sig-dir-dat2;
-> +			st,sig-dir-dat31;
-> +			st,sig-pin-fbclk;
-> +			full-pwr-cycle;
-> +			vmmc-supply = <&ab8500_ldo_aux3_reg>;
-> +			vqmmc-supply = <&sd_level_translator>;
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&mc0_a_1_default>;
-> +			pinctrl-1 = <&mc0_a_1_sleep>;
-> +			status = "okay";
-> +		};
-> +
-> +		// WLAN SDIO channel
-> +		sdi1_per2@80118000 {
-> +			arm,primecell-periphid = <0x10480180>;
-> +			max-frequency = <50000000>;
-> +			bus-width = <4>;
-> +			non-removable;
-> +			cap-sd-highspeed;
-> +			vmmc-supply = <&wlan_en>;
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&mc1_a_2_default>;
-> +			pinctrl-1 = <&mc1_a_2_sleep>;
-> +			status = "okay";
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +
-> +			wifi@1 {
-> +				compatible = "brcm,bcm4329-fmac";
-> +				reg = <1>;
-> +				/* GPIO216 WL_HOST_WAKE */
-> +				interrupt-parent = <&gpio6>;
-> +				interrupts = <24 IRQ_TYPE_EDGE_FALLING>;
-> +				interrupt-names = "host-wake";
-> +				pinctrl-names = "default";
-> +				pinctrl-0 = <&wlan_default_mode>;
-> +			};
-> +		};
-> +
-> +		// eMMC
-> +		sdi2_per3@80005000 {
-> +			arm,primecell-periphid = <0x10480180>;
-> +		        max-frequency = <100000000>;
-> +			bus-width = <8>;
-> +			non-removable;
-> +			cap-mmc-highspeed;
-> +			mmc-ddr-1_8v;
-> +			vmmc-supply = <&ldo_3v3_reg>;
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&mc2_a_1_default>;
-> +			pinctrl-1 = <&mc2_a_1_sleep>;
-> +
-> +			status = "okay";
-> +		};
-> +
-> +		/* GBF (Bluetooth) UART */
-> +		uart@80120000 {
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&u0_a_1_default>;
-> +			pinctrl-1 = <&u0_a_1_sleep>;
-> +			status = "okay";
-> +
-> +			/* FIXME: not quite working yet, probably needs regulators */
+Yes, that could work.  You also have only a single SPRD_DEFAULT_SOURCE_CLK,
+which makes it simple to handle.
+For other SoCs, there may be a variation of possible values, depending on
+SoC and/or board.
 
-Not sure which regulators you would add here. AFAIK BCM4334 is supplied
-directly by the battery, internal regulators for BT get activated with
-the "shutdown" GPIO.
+Gr{oetje,eeting}s,
 
-But yeah, for some reason it's not working properly.
-Just wanted to mention it, no need for a change here :)
+                        Geert
 
-> +			bluetooth {
-> +				compatible = "brcm,bcm4330-bt";
-> +				shutdown-gpios = <&gpio6 30 GPIO_ACTIVE_HIGH>;
-> +				device-wakeup-gpios = <&gpio6 7 GPIO_ACTIVE_HIGH>;
-> +				host-wakeup-gpios = <&gpio3 1 GPIO_ACTIVE_HIGH>;
-> +				pinctrl-names = "default";
-> +				pinctrl-0 = <&bluetooth_default_mode>;
-> +			};
-> +		};
-> +
-> +		/* GPF UART */
-> +		uart@80121000 {
-> +			status = "okay";
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&u1rxtx_a_1_default &u1ctsrts_a_1_default>;
-> +			pinctrl-1 = <&u1rxtx_a_1_sleep &u1ctsrts_a_1_sleep>;
-> +		};
-> +
-> +		/* Debugging console UART connected to AB8505 USB */
-> +		uart@80007000 {
-> +			status = "okay";
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&u2rxtx_c_1_default>;
-> +			pinctrl-1 = <&u2rxtx_c_1_sleep>;
-> +		};
-> +
-> +		prcmu@80157000 {
-> +			ab8505 {
-> +				ab8500_usb {
-> +					pinctrl-names = "default", "sleep";
-> +					pinctrl-0 = <&usb_a_1_default>;
-> +					pinctrl-1 = <&usb_a_1_sleep>;
-> +				};
-> +
-> +				ab8505-regulators {
-> +					ab8500_ldo_aux1 {
-> +						/* Used for VDD for sensors */
-> +						regulator-name = "AUX1";
-> +						regulator-min-microvolt = <3000000>;
-> +						regulator-max-microvolt = <3300000>;
-> +					};
-> +
-> +					ab8500_ldo_aux2 {
-> +						/* Supplies the Cypress TMA140 touchscreen only with 3.3V */
-> +						regulator-name = "AUX2";
-> +						regulator-min-microvolt = <3300000>;
-> +						regulator-max-microvolt = <3300000>;
-> +					};
-> +
-> +					ab8500_ldo_aux3 {
-> +						/* Used for voltage for external MMC/SD card */
-> +						regulator-name = "AUX3";
-> +						regulator-min-microvolt = <1100000>;
-> +						regulator-max-microvolt = <3300000>;
-> +					};
-> +
-> +					ab8500_ldo_aux4 {
-> +						regulator-name = "AUX4";
-> +						/* Hammer to 3.0V for the display */
-> +						regulator-min-microvolt = <3000000>;
-> +						regulator-max-microvolt = <3000000>;
-> +					};
-> +
-> +					ab8500_ldo_aux5 {
-> +						regulator-name = "AUX5";
-> +						regulator-min-microvolt = <1050000>;
-> +						regulator-max-microvolt = <2790000>;
-> +						regulator-always-on;
-> +					};
-> +
-> +					ab8500_ldo_aux6 {
-> +						regulator-name = "AUX6";
-> +						/* Hammer to 1.8V for the display */
-> +						regulator-min-microvolt = <1800000>;
-> +						regulator-max-microvolt = <1800000>;
-> +					};
-> +
-> +					ab8500_ldo_aux8 {
-> +						/* Mostly VIO for sensors */
-> +						regulator-name = "AUX8";
-> +					};
-> +				};
-> +			};
-> +		};
-> +
-> +		/* I2C0 */
-> +		i2c@80004000 {
-> +			status = "okay";
-> +
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&i2c0_a_1_default>;
-> +			pinctrl-1 = <&i2c0_a_1_sleep>;
-> +
-> +			proximity@44 {
-> +				compatible = "sharp,gp2ap002s00f";
-> +				clock-frequency = <400000>;
-> +				reg = <0x44>;
-> +
-> +				interrupt-parent = <&gpio4>;
-> +				interrupts = <18 IRQ_TYPE_EDGE_FALLING>;
-> +				vdd-supply = <&ab8500_ldo_aux1_reg>;
-> +				vio-supply = <&ab8500_ldo_aux8_reg>;
-> +				pinctrl-names = "default";
-> +				pinctrl-0 = <&gp2ap002_skomer_default>;
-> +				sharp,proximity-far-hysteresis = /bits/ 8 <0x2f>;
-> +				sharp,proximity-close-hysteresis = /bits/ 8 <0x0f>;
-> +			};
-> +		};
-> +
-> +
-> +		/* I2C2 */
-> +		i2c@80128000 {
-> +			status = "okay";
-> +
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&i2c2_b_2_default>;
-> +			pinctrl-1 = <&i2c2_b_2_sleep>;
-> +
-> +			accel@18 {
-> +				compatible = "bosch,bma254";
-> +				clock-frequency = <400000>;
-> +				reg = <0x18>;
-> +
-> +				/* GPIO224 used as "smart alert" interrupt */
-> +				interrupt-parent = <&gpio7>;
-> +				interrupts = <0 IRQ_TYPE_EDGE_RISING>;
-> +
-> +				mount-matrix = "0", "1", "0",
-> +					       "-1", "0", "0",
-> +					       "0", "0", "1";
-> +				vdd-supply = <&ab8500_ldo_aux1_reg>;
-> +				vddio-supply = <&ab8500_ldo_aux8_reg>;
-> +				pinctrl-names = "default";
-> +				pinctrl-0 = <&bma254_skomer_default>;
-> +			};
-> +		};
-> +
-> +		/* I2C3 */
-> +		i2c@80110000 {
-> +			status = "okay";
-> +
-> +			pinctrl-names = "default", "sleep";
-> +			pinctrl-0 = <&i2c3_c_2_default>;
-> +			pinctrl-1 = <&i2c3_c_2_sleep>;
-> +
-> +			/* TODO: this should be used by the Cypress TMA140 touchscreen */
-> +		};
-> +
-> +		mcde@a0350000 {
-> +			status = "okay";
-> +			pinctrl-names = "default";
-> +			pinctrl-0 = <&dsi_default_mode>;
-> +
-> +			dsi@a0351000 {
-> +				panel {
-> +					/* NT35510-based Hydis HVA40WV1 */
-> +					compatible = "hydis,hva40wv1", "novatek,nt35510";
-> +					reg = <0>;
-> +					/* v_lcd_3v0 2.3-4.8V */
-> +					vdd-supply = <&ab8500_ldo_aux4_reg>;
-> +					/* v_lcd_1v8 1.65-3.3V */
-> +					vddi-supply = <&ab8500_ldo_aux6_reg>;
-> +					/* GPIO 139 */
-> +					reset-gpios = <&gpio4 11 GPIO_ACTIVE_LOW>;
-> +					pinctrl-names = "default";
-> +					pinctrl-0 = <&display_default_mode>;
-> +					backlight = <&gpio_bl>;
-> +				};
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&pinctrl {
-> +	/*
-> +	 * This extends the MC0 default config to include DAT32DIR
-> +	 * which is used by this machine. If we don't do this the
-> +	 * SD card does not work.
-> +	 */
-> +	sdi0 {
-> +		mc0_a_1_default {
-> +			default_mux {
-> +				function = "mc0";
-> +				/* This machine uses the DAT31 pin */
-> +				groups = "mc0_a_1", "mc0dat31dir_a_1";
-> +			};
-> +			default_cfg5 {
-> +				pins = "GPIO21_AB3"; /* DAT31DIR */
-> +				ste,config = <&out_hi>;
-> +			};
-> +		};
-> +	};
-> +
-> +	mcde {
-> +		dsi_default_mode: dsi_default {
-> +			default_mux1 {
-> +				/* Mux in VSI0 used for DSI TE */
-> +				function = "lcd";
-> +				groups =
-> +				"lcdvsi0_a_1"; /* VSI0 for LCD */
-> +			};
-> +			default_cfg1 {
-> +				pins =
-> +				"GPIO68_E1"; /* VSI0 */
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-Overall it looks good to me now, just two cosmetic comments:
-
-The "groups" line above and this "pins" line isn't particularly long,
-so I think it would be better readable if you keep it on one line.
-(the unindented line wrapping is a bit hard to read...)
-
-> +				ste,config = <&in_nopull>;
-> +			};
-> +		};
-> +	};
-> +
-> +	/* Two GPIO lines used by the display */
-> +	display {
-> +		display_default_mode: display_default {
-> +			skomer_cfg1 {
-> +				/*
-> +				 * OLED DETECT or check_pba, this appears to be high
-> +				 * on "PBA" which I guess is "prototype board A".
-> +				 */
-> +				pins = "GPIO93_B7";
-> +				ste,config = <&gpio_in_nopull>;
-> +			};
-> +			skomer_cfg2 {
-> +				pins = "GPIO139_C9";
-> +				/*
-> +				 * MIPI_DSI0_RESET_N resets the display, leave high
-> +				 * (de-asserted) so we only assert reset explicitly
-> +				 * from the display driver.
-> +				 */
-> +				ste,config = <&gpio_out_hi>;
-> +			};
-> +		};
-> +	};
-> +	backlight {
-> +		gpio_backlight_default_mode: backlight_default {
-> +			skomer_cfg1 {
-> +				pins = "GPIO69_E2"; /* LCD_BL_CTRL */
-> +				ste,config = <&gpio_out_lo>;
-> +			};
-> +		};
-> +	};
-> +	/* GPIO that enables the 2.9V SD card level translator */
-> +	sd-level-translator {
-> +		sd_level_translator_default: sd_level_translator_default {
-> +			/* level shifter on GPIO87 */
-> +			skomer_cfg1 {
-> +				pins = "GPIO87_B3";
-> +				ste,config = <&gpio_out_hi>;
-> +			};
-> +		};
-> +	};
-> +	/* GPIO that enables the LDO regulator for the eMMC */
-> +	emmc-ldo {
-> +		emmc_ldo_en_default_mode: emmc_ldo_default {
-> +			/* LDO enable on GPIO223 */
-> +			skomer_cfg1 {
-> +				pins = "GPIO223_AH9";
-> +				ste,config = <&gpio_out_hi>;
-> +			};
-> +		};
-> +	};
-> +	/* GPIO keys */
-> +	gpio-keys {
-> +		gpio_keys_default_mode: gpio_keys_default {
-> +			skomer_cfg1 {
-> +				pins = "GPIO67_G2", /* VOL UP */
-> +				       "GPIO91_B6", /* HOME */
-> +				       "GPIO92_D6", /* VOL DOWN */
-> +				       "GPIO204_AF23", /* MENU */
-> +				       "GPIO205_AG23"; /* BACK */
-> +					ste,config = <&gpio_in_pu>;
-
-And here the indentation is weird, it should be on the same level
-as "pins". With that fixed:
-
-Reviewed-by: Stephan Gerhold <stephan@gerhold.net>
-
-Thank you!
-Stephan
-
-> +			};
-> +		};
-> +	};
-> +	/* Interrupt line for BMA254 */
-> +	bma254 {
-> +		bma254_skomer_default: bma254_skomer {
-> +			skomer_cfg1 {
-> +				pins = "GPIO224_AG9";
-> +				ste,config = <&gpio_in_pd>;
-> +			};
-> +		};
-> +	};
-> +	/* Interrupt line for light/proximity sensor GP2AP002 */
-> +	gp2ap002 {
-> +		gp2ap002_skomer_default: gp2ap002_skomer {
-> +			skomer_cfg1 {
-> +				pins = "GPIO146_D13";
-> +				ste,config = <&gpio_in_nopull>;
-> +			};
-> +		};
-> +	};
-> +	/* GPIO-based I2C bus for NCP6914 */
-> +	i2c-gpio-0 {
-> +		i2c_gpio_0_default: i2c_gpio_0 {
-> +			skomer_cfg1 {
-> +				pins = "GPIO143_D12", "GPIO144_B13";
-> +				ste,config = <&gpio_in_nopull>;
-> +			};
-> +		};
-> +	};
-> +	/* GPIO-based I2C bus for ALPS HSCD compass */
-> +	i2c-gpio-1 {
-> +		i2c_gpio_1_default: i2c_gpio_1 {
-> +			skomer_cfg1 {
-> +				pins = "GPIO151_B17", "GPIO152_D16";
-> +				ste,config = <&gpio_in_nopull>;
-> +			};
-> +		};
-> +	};
-> +	wlan {
-> +		wlan_default_mode: wlan_default {
-> +			skomer_cfg1 {
-> +				pins = "GPIO216_AG12";
-> +				ste,config = <&gpio_in_pd>;
-> +			};
-> +		};
-> +		wlan_en_default_mode: wlan_en_default {
-> +			skomer_cfg2 {
-> +				pins = "GPIO215_AH13";
-> +				ste,config = <&gpio_out_lo>;
-> +			};
-> +		};
-> +	};
-> +	bluetooth {
-> +		bluetooth_default_mode: bluetooth_default {
-> +			skomer_cfg1 {
-> +				pins = "GPIO199_AH23", "GPIO222_AJ9";
-> +				ste,config = <&gpio_out_lo>;
-> +			};
-> +			skomer_cfg2 {
-> +				pins = "GPIO97_D9";
-> +				ste,config = <&gpio_in_nopull>;
-> +			};
-> +		};
-> +	};
-> +	vibrator {
-> +		vibrator_default: vibrator_default {
-> +			skomer_cfg1 {
-> +				pins = "GPIO195_AG28";	/* MOT_EN */
-> +				ste,config = <&gpio_out_lo>;
-> +			};
-> +		};
-> +	};
-> +};
-> +
-> +&ab8505_gpio {
-> +	/* Hog a few default settings */
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&gpio_default>;
-> +
-> +	gpio {
-> +		gpio_default: gpio_default {
-> +			skomer_mux {
-> +				/* Change unused pins to GPIO mode */
-> +				function = "gpio";
-> +				groups = "gpio3_a_1",	/* default: SysClkReq4 */
-> +					 "gpio14_a_1";	/* default: PWMOut1 */
-> +			};
-> +			skomer_cfg1 {
-> +				pins = "GPIO11_B17", "GPIO13_D17", "GPIO50_L4";
-> +				bias-disable;
-> +			};
-> +		};
-> +	};
-> +};
-> -- 
-> 2.21.1
-> 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
