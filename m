@@ -2,98 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51AA0180575
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:50:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E553A1805A0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:56:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L4uYUalvT4nNq13nT+vMzo7JpRI83TbW2njhQrCLK3w=; b=PHlC4F+7ojazY1
-	6FKoCPRJFpn5kErmuHnCBmYZnAdHovEhsYwSUnfnhE01/xs1UucK/Yz8tPsS7IfmYOoVO8gcFIHKm
-	cUXPRKHq48qf0i/db5QSAAsba8DFpZ08eBgemXodK6H3d4MURI4x9iiIYj2y9X1/K2JzujFUg3icy
-	ZF0eiQEZsvP2URixWoQ1h22oArtFCTTxHPLvi8UoiDzB4x395ZFBc3vsFsDF3aa+pCljIebc/4L6d
-	0m0ByQMGDajDSMzt39PjLp7KAORmQ0JXdHZH9GtwRJYTqK736E6aWxSoAL8XJsdJwaPfPhwnpq/db
-	bOROXJtPUGG4NdKjxWuQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Wvq8y6sBRqzcf+dWOz/rmMsE8XJ0nVdSptPGxdtQjBI=; b=HZ2kZJM4429TOh
+	xsVK0U013G1IrG0zI//27BzPg5IOPNBsmJrgeipjf9Wc1/KgBm5pAc+X3Zx88LkHnP9MveppeHhiR
+	hQDmP6B8HGCW7DNr4Qnpvpa1TcN5s3Qur8d6dsuozNzJVLSRVRXwM0Ee2uH2FnMhmcgb8eudxoiSW
+	hUH9FpXEG5+qe/2m/c+FrQL1fmmUN//dYndg6oA/lTf8TAaQ9tnjI6rgE4iAr62f8mp3zknkVhQbr
+	6XDsJLbRYCSLYMTI8phMsWQq/SMDud1GhH1+kxiSu8cX9aLORVpSX0vS5aQ05oXX/Hg44uMqskB03
+	XbT4+alA7nhTOW076PIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBj1G-00021w-M4; Tue, 10 Mar 2020 17:50:18 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jBj7T-0004PZ-Bj; Tue, 10 Mar 2020 17:56:43 +0000
+Received: from ms.lwn.net ([45.79.88.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBj19-00021T-9F
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:50:12 +0000
-Received: by mail-lf1-x144.google.com with SMTP id l7so2632543lfe.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 10:50:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=goAJpXnujj5+7IIzD+wIBEHPOokKFfYUjpyJQHVTm40=;
- b=QVJKIqehKcu24dwMaIGjeKR3UcVe2tBBwUWG9c7Q39xSfZwynDqZCcNrt0YCQL5nDF
- 2w5fBlb7VU4jM2EChm9DqJCxrThJiyV5UVpTqBDE7FbrrDNBVzkyUickKywYgYfM5rYK
- EkEqPaz3HzhQo9hNond4t6WQ77eirGLRfVoEuNUIp05k1gYpwPcOweGxUNwR0Mz0Y/vr
- TUUf5cdypFPO5CRchV54kityiuo13nzdJ5v5KBoRJrgdTo1m9DxriKpfmPYLf9zxi+07
- PO9vynNMhGomYSsEYrEnwVlSDLuFrXYQzbtWVK505JXmQXXXQR3M0D47nvImMzwNETv5
- sg2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=goAJpXnujj5+7IIzD+wIBEHPOokKFfYUjpyJQHVTm40=;
- b=VDRK+j6dbS+vDzdkCClBVl+Tm9C1la7ldpxfjLzacGfewj3z2Q93SRxcQNIkCANorm
- Zu18Y4XR/d2VqBfn4vQKvJ2TQkPfXdihs54UfVy10MAD36vJha3MmSPk4FdI6RFUG1c0
- 2yQyiNeme5NOC2gGe+ds8Ii1J2b6sreW+OhneHHKbWojlxn+kx8E+VbDNOLirkXuDw1H
- 6m5LkyaK3Eh2c4q4oa8QTVmOsecND56gGJBfzJxt6EKKavPfPcrSH8/Yp+m8Pqe2AiCy
- Xh6ijRswwJEzIQd1iIx5Qs8j2U3i9PBzbZnxNTJZ2nUMfVeM5NyZ8clOT4dcaJ/9JtPG
- 3l/A==
-X-Gm-Message-State: ANhLgQ2xZLj1Ib0iwqweQAtXT4CeP8+g16JjSICdAuoZmut7Kf5DWp4m
- qjDqB1/reIPkY9vZ9zf9urtnQKTq
-X-Google-Smtp-Source: ADFU+vsz/i/6+z2fGDLGQ6vPCi+tDh/3r1l13kXnFFBiFEwDokoqykXzX3KvIfu9fJ0gV/juMevAlQ==
-X-Received: by 2002:ac2:50c7:: with SMTP id h7mr13554346lfm.101.1583862609134; 
- Tue, 10 Mar 2020 10:50:09 -0700 (PDT)
-Received: from [192.168.2.145] (94-29-39-224.dynamic.spd-mgts.ru.
- [94.29.39.224])
- by smtp.googlemail.com with ESMTPSA id r23sm7375579lfe.53.2020.03.10.10.50.07
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 10 Mar 2020 10:50:08 -0700 (PDT)
-Subject: Re: [PATCH v5 1/8] clk: tegra: Add PLLP_UD and PLLMB_UD for Tegra210
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20200310152003.2945170-1-thierry.reding@gmail.com>
- <20200310152003.2945170-2-thierry.reding@gmail.com>
- <9b343fd1-15df-409a-390f-e30fa6bbbfe7@gmail.com>
- <20200310170508.GA3079591@ulmo>
-From: Dmitry Osipenko <digetx@gmail.com>
-Message-ID: <f613a047-bf3f-3fb5-4034-ce435bb6cd6d@gmail.com>
-Date: Tue, 10 Mar 2020 20:50:07 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jBj7I-0004P4-Mj
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:56:35 +0000
+Received: from lwn.net (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ms.lwn.net (Postfix) with ESMTPSA id 9681F537;
+ Tue, 10 Mar 2020 17:56:30 +0000 (UTC)
+Date: Tue, 10 Mar 2020 11:56:29 -0600
+From: Jonathan Corbet <corbet@lwn.net>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH 8/9] docs: perf: imx-ddr.rst: get rid of a warning
+Message-ID: <20200310115629.15a66690@lwn.net>
+In-Reply-To: <b27b54bd4f847032fd33313d6497ff320c0f3d78.1583250595.git.mchehab+huawei@kernel.org>
+References: <afbe367ccb7b9abcb9fab7bc5cb5e0686c105a53.1583250595.git.mchehab+huawei@kernel.org>
+ <b27b54bd4f847032fd33313d6497ff320c0f3d78.1583250595.git.mchehab+huawei@kernel.org>
+Organization: LWN.net
 MIME-Version: 1.0
-In-Reply-To: <20200310170508.GA3079591@ulmo>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_105011_356776_0EB6F10F 
-X-CRM114-Status: GOOD (  16.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_105632_757458_80D8F3F5 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [digetx[at]gmail.com]
+ no trust [45.79.88.28 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,48 +61,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
- Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-doc@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Frank Li <Frank.li@nxp.com>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MTAuMDMuMjAyMCAyMDowNSwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKPiBPbiBUdWUsIE1h
-ciAxMCwgMjAyMCBhdCAwNzoxOTo1OVBNICswMzAwLCBEbWl0cnkgT3NpcGVua28gd3JvdGU6Cj4+
-IDEwLjAzLjIwMjAgMTg6MTksIFRoaWVycnkgUmVkaW5nINC/0LjRiNC10YI6Cj4+PiBGcm9tOiBK
-b3NlcGggTG8gPGpvc2VwaGxAbnZpZGlhLmNvbT4KPj4+Cj4+PiBJbnRyb2R1Y2UgdGhlIGxvdyBq
-aXR0ZXIgcGF0aCBvZiBQTExQIGFuZCBQTExNQiB3aGljaCBjYW4gYmUgdXNlZCBhcyBFTUMKPj4+
-IGNsb2NrIHNvdXJjZS4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBKb3NlcGggTG8gPGpvc2VwaGxA
-bnZpZGlhLmNvbT4KPj4+IFNpZ25lZC1vZmYtYnk6IFRoaWVycnkgUmVkaW5nIDx0cmVkaW5nQG52
-aWRpYS5jb20+Cj4+PiAtLS0KPj4+ICBkcml2ZXJzL2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYyAg
-ICAgICAgIHwgMTEgKysrKysrKysrKysKPj4+ICBpbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL3Rl
-Z3JhMjEwLWNhci5oIHwgIDQgKystLQo+Pj4gIDIgZmlsZXMgY2hhbmdlZCwgMTMgaW5zZXJ0aW9u
-cygrKSwgMiBkZWxldGlvbnMoLSkKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jbGsvdGVn
-cmEvY2xrLXRlZ3JhMjEwLmMgYi9kcml2ZXJzL2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYwo+Pj4g
-aW5kZXggNDVkNTRlYWQzMGJjLi5mOTk2NDdiNGE3MWYgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJz
-L2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYwo+Pj4gKysrIGIvZHJpdmVycy9jbGsvdGVncmEvY2xr
-LXRlZ3JhMjEwLmMKPj4+IEBAIC0zMTYxLDYgKzMxNjEsMTcgQEAgc3RhdGljIHZvaWQgX19pbml0
-IHRlZ3JhMjEwX3BsbF9pbml0KHZvaWQgX19pb21lbSAqY2xrX2Jhc2UsCj4+PiAgCWNsa19yZWdp
-c3Rlcl9jbGtkZXYoY2xrLCAicGxsX21fdWQiLCBOVUxMKTsKPj4+ICAJY2xrc1tURUdSQTIxMF9D
-TEtfUExMX01fVURdID0gY2xrOwo+Pj4gIAo+Pj4gKwkvKiBQTExNQl9VRCAqLwo+Pj4gKwljbGsg
-PSBjbGtfcmVnaXN0ZXJfZml4ZWRfZmFjdG9yKE5VTEwsICJwbGxfbWJfdWQiLCAicGxsX21iIiwK
-Pj4+ICsJCQkJCUNMS19TRVRfUkFURV9QQVJFTlQsIDEsIDEpOwo+Pj4gKwljbGtfcmVnaXN0ZXJf
-Y2xrZGV2KGNsaywgInBsbF9tYl91ZCIsIE5VTEwpOwo+Pj4gKwljbGtzW1RFR1JBMjEwX0NMS19Q
-TExfTUJfVURdID0gY2xrOwo+Pj4gKwo+Pj4gKwkvKiBQTExQX1VEICovCj4+PiArCWNsayA9IGNs
-a19yZWdpc3Rlcl9maXhlZF9mYWN0b3IoTlVMTCwgInBsbF9wX3VkIiwgInBsbF9wIiwKPj4+ICsJ
-CQkJCTAsIDEsIDEpOwo+Pj4gKwljbGtzW1RFR1JBMjEwX0NMS19QTExfUF9VRF0gPSBjbGs7Cj4+
-Cj4+IElzbid0IGl0IHBvc3NpYmxlIHRvIGF1dG8tZW5hYmxlIHRoZSBsb3ctaml0dGVyIGJpdCB3
-aGVuIG5lY2Vzc2FyeQo+PiBkdXJpbmcgb2YgdGhlIHJhdGUtY2hhbmdlIGJhc2VkIG9uIGEgZ2l2
-ZW4gY2xvY2stcmF0ZT8KPiAKPiBJIGRvbid0IHRoaW5rIHNvLiBUaGVzZSBuZXcgY2xvY2tzIChw
-bGxfbWJfdWQgYW5kIHBsbF9wX3VkKSBhcmUgcGFyZW50cwo+IGZvciB0aGUgZW1jIGNsb2NrLCBz
-byB0aGV5IGFyZSBuZWVkZWQgdG8gcHJvcGVybHkgcmVmbGVjdCB0aGUgcG9zaXRpb24KPiBvZiB0
-aGUgZW1jIGNsb2NrIGluIHRoZSBjbG9jayB0cmVlLgoKT2theSwgZXZlbiBpZiBpdCdzIHBvc3Np
-YmxlIHRvIGRvLCBJIGd1ZXNzIHRoYXQgd29uJ3QgYmUgdmVyeSBjb21wYXRpYmxlCndpdGggdGhl
-IGZpcm13YXJlLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+On Tue,  3 Mar 2020 16:50:38 +0100
+Mauro Carvalho Chehab <mchehab+huawei@kernel.org> wrote:
+
+>     Documentation/admin-guide/perf/imx-ddr.rst:47: WARNING: Unexpected indentation.
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  Documentation/admin-guide/perf/imx-ddr.rst | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/Documentation/admin-guide/perf/imx-ddr.rst b/Documentation/admin-guide/perf/imx-ddr.rst
+> index 3726a10a03ba..f05f56c73b7d 100644
+> --- a/Documentation/admin-guide/perf/imx-ddr.rst
+> +++ b/Documentation/admin-guide/perf/imx-ddr.rst
+> @@ -43,7 +43,8 @@ value 1 for supported.
+>  
+>    AXI_ID and AXI_MASKING are mapped on DPCR1 register in performance counter.
+>    When non-masked bits are matching corresponding AXI_ID bits then counter is
+> -  incremented. Perf counter is incremented if
+> +  incremented. Perf counter is incremented if::
+> +
+
+Applied, thanks.
+
+jon
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
