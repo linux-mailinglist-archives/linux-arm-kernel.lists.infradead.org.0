@@ -2,90 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 539131805F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:11:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACEA1180606
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:16:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8OxoLNzfd47pInqyQuHYLJtID9VWe9sy//na5dEQ9Ec=; b=L7KHbjpGzyfPwD
-	8CZYoofUgK3ly0RhSj3RQ9ZMCxlXG1XYTF4Mncvg8dJN+W9DENlh6CLNrQoodpQjIYGmZ3eD7x8PL
-	A6zGv5Yc9BwzFSN+xXiLfc+VkfH0SDr6136eRtEv5JKbcNuKynGDQ/iZAl3YU0IJQpLqg+SmXTP3C
-	EI1tuKcYMLKdeTPsmlI2kuLLk8SyFn2JGMVZyxeYFk3MYU+BN5MyPb91x+P4JWtRgR8ZOdTrMmgKd
-	KQo3s0rfL6iSFiBfNMFab4Hgc6trB1H1IIcxgqlbfydJQOUcoxfLFd00UuLkmPBfS3//tABphiyXc
-	6vWLW/i9+Ym/upAWsAbQ==;
+	List-Owner; bh=fj0hSCzMwiBRS+GJrLD+M5Y0lzM/187ymcoMRfF+prk=; b=eNzywswLLFOrNB
+	kbUMlrZ7Le7ughbKiAsy/BsaI9X4gP1cwkoYAejIVC0p53ZPOUDcWyksqwyLnKQ38wzvWwrVa/iGa
+	+xqYE3bKWlf+vOrhdyPRSuM09iOt7HuwocOHgqd6FGxGo9247FnZI7aypI6usdfrN2ITbMUzuECEY
+	N/kW8OR13eK4F11SCuxSDqNBvrvoiEqCDDvLz+T4fiq+JZl7VGyR920Mz+1xdni85UGn4amPWIVaV
+	5X40XZDZRv/PmaA15OMEy69Q2QIdBE1HX2JtSpckhz2cNehcEFq7dlPsgNSesPClvsT/YuT2O197Q
+	LhGd/PK+2M0rL7gM8amA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjLD-0003VO-FM; Tue, 10 Mar 2020 18:10:55 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1jBjQE-0005h7-BE; Tue, 10 Mar 2020 18:16:06 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjKX-0002HY-DU
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:10:22 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 328B021B6A;
- Tue, 10 Mar 2020 14:10:07 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 10 Mar 2020 14:10:07 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=SRt+6h/WZcgD+dTltRfTPOTYiLo
- w8DtLgwozFTB/+oc=; b=vX+vq8QtTgWR3mMawoHQd6j2nLo7dUfFVqhyUVUG+rX
- M/1LbMAR7c/l1V2e4EXXH/JOeQ9XG+vZh1rTpakd07ChzI60sbXGzqHb8jJFT0Qa
- eI8WqWApgYjISQJ2EqfqELSa4SBhMQaMR0exYMNYk8E1s5Jm5mgjYzGmTqgUiI6M
- l5v5Pzw7jHa3NNMJ/TgkzGJeIk+Pm/5Q2DGSwwlvnU/o+6MY242jgI3eMiGgk5Um
- 8JCidPckRX+I3fMBDor54sWUivAlMqDBMjeVr5FnLP7IQ/Luj+p+xTDTk9Re4tbh
- IlWVFToLBGdSaVXtC5c8cu2y6PNyjN1gpatNoyrdunQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=SRt+6h
- /WZcgD+dTltRfTPOTYiLow8DtLgwozFTB/+oc=; b=0LGbYfQ14FzuF/Rv8VEMhm
- iGvLR+5HQ7402JxSGmQVDpLHd9ObHUQZyd5XI4niHMeP8IdnCZ5YOsDEJkXbNe98
- h8l1+axoA4OCe2Ngy9XqpVjUbBA7YpBmwIqryGRw0SZ79fJJwLvsgunrLjSAXGG0
- QsKOq8JvZRX1KNtaiQToUU+Z/MV2naiCRgQCR26dyeYc0yr4qmPGS4xpgH7C29yz
- znxJQv2lJzvaA3Fuho89JB85PwNp+aNovL2z/QnKDLcARdFu7NJ8IWhRbmI3tJsk
- 3+MkUCR2qeiDf/wLDYNydqoAnTbjriBP9ILl+Giks9CEk1Fpd5uac5Ar1YonUF8w
- ==
-X-ME-Sender: <xms:_tdnXsOsQ2mA9hmgDFPqCuYs25fk-JMG8pBjm8paz4oTGA5yw-5qeA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedruddvtddguddtvdcutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfhfgggtuggjsehttd
- ertddttddvnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegt
- vghrnhhordhtvggthheqnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrh
- fuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhho
- rdhtvggthh
-X-ME-Proxy: <xmx:_tdnXvo7v2kSvu7oGDiu8kaCvbytm33atHG-UxrEmKyeMxWhM329lw>
- <xmx:_tdnXjuYIexMDgz57AjlVoFjPRhSgBjqAh2Fc9iksBckbx5bQIWwCA>
- <xmx:_tdnXrTusp0U3H24pWAZfbWvkLlnN1fOFcvUySRDB7QG0K4NJR6H0w>
- <xmx:_9dnXms0pgFeSe9rLJJnPv8rnkshn5jct2UsywzduMVS5MBN8pYYeA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 504353280065;
- Tue, 10 Mar 2020 14:10:06 -0400 (EDT)
-Date: Tue, 10 Mar 2020 19:10:03 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH 0/3] ARM: dts: sun8i: r40: fix SPI address and reorder
- nodes
-Message-ID: <20200310181003.wgryf373em5zwlvb@gilmour.lan>
-References: <20200310174709.24174-1-wens@kernel.org>
+ id 1jBjQ7-0005gL-0E
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:16:00 +0000
+Received: by mail-lj1-x241.google.com with SMTP id r7so15275502ljp.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 11:15:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=TEnTlL2Y3TqqLrksusrcuBEL+aeZ/EnEGMPZvry1whE=;
+ b=FSySuFOOpbwy/dARmhj3sZKbP0ENT2DZ7iw21R7jsHOwlGZPErIaXZ0ikV5ywa5mmE
+ yhYrbE/9qD9+0Q8B47gybEcpdwk8SmOibpF5LHnQhk080O+Fkmx22oMwNOm6YHD76VqO
+ aAWOZ4pG5vGLS1db0UDjeTECmPV/z+UoygQ3UKtCCe7+GGUbWW+E22GoQzvZNgEy0tc6
+ A7eLuom+EvoGH2yyLjG9HN9a71ZzTlV03ni0FZdnshbdOUo+46K4tmp3/lMKxR5qD6Z9
+ W4c2wEmw5Ucp18wCRWfBjgctKZZ7sEG/fZDeSMfLRywiGfxs7dlYfRawVhdiz1dYcm3v
+ q+Fg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=TEnTlL2Y3TqqLrksusrcuBEL+aeZ/EnEGMPZvry1whE=;
+ b=U+OJbhHkGkB7D6DEHviwyxR+GCYdt3wWPSSykvTvxSQTVsm9ydNmSXQvLc4OaQLWPz
+ XpQTidvMq0DbPVdFuB50KQnEvcrOnltiR8aSmpb+5ml6999Ai0rwgWACvfAdBoauL/GR
+ hygfJXLKuuvvMg6oW+5QqT+MuYHEQbgaPAGfQL5SfYz/+6Mng1NJ4geYvsqGs+z6ib/b
+ +vgHm4HXl68fsLVjnH1ejn6ph+awjRChxnVvh8UxQ38F5yHtkoyF2DMUOU8hqUYgDtv5
+ dqn6B65PRiJG1tVSIwmp1bOGmXN/4yFAmKoHnJeuEQpxoeJf+w/OCOZn3Mtsl1Tx8HXX
+ elQw==
+X-Gm-Message-State: ANhLgQ2QfDnU33tQ6yyhC0a21fkKMPL8+B87KNIo9UQQTlalWITPq/BQ
+ WBYKMpSKVD6pfcUceDDhHInVsssTKlrAahK+fGg=
+X-Google-Smtp-Source: ADFU+vu1mAcwXd7c+gzOW+S2is+sCf+dS8bi5PaZTX1tMdbXEvl6XwAosKG2tRdA7SmfrFf8OVEIZe6jmOuUyZVozZo=
+X-Received: by 2002:a2e:86d0:: with SMTP id n16mr13155833ljj.117.1583864153614; 
+ Tue, 10 Mar 2020 11:15:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200310174709.24174-1-wens@kernel.org>
+References: <20200224193200.2773-1-festevam@gmail.com>
+ <20200224193200.2773-3-festevam@gmail.com>
+ <20200310143656.GB21213@dragon>
+In-Reply-To: <20200310143656.GB21213@dragon>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Tue, 10 Mar 2020 15:15:44 -0300
+Message-ID: <CAOMZO5DWbyUwFq3xhbMY4T4n_MODgPiBTMOLxXwrpAAMgRtH+A@mail.gmail.com>
+Subject: Re: [PATCH 3/6] ARM: dts: imx6ul-pico-hobbit: Add ADC support
+To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_111013_588291_33F825F2 
-X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-CacheID: sfid-20200310_111559_077309_F2257402 
+X-CRM114-Status: UNSURE (   7.78  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -105,29 +95,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh+dt@kernel.org>, Otavio Salvador <otavio@ossystems.com.br>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 01:47:06AM +0800, Chen-Yu Tsai wrote:
-> From: Chen-Yu Tsai <wens@csie.org>
->
-> Hi,
->
-> Here are some fixes for the R40 device tree for v5.6. The base addresses
-> for SPI2 and SPI3 were incorrect and are fixed. I also found some nodes
-> were not added in the proper order, possibly because git matched the
-> incorrect place when applying the patch. These are fixed as well.
->
-> ChenYu
+Hi Shawn,
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
+On Tue, Mar 10, 2020 at 11:37 AM Shawn Guo <shawnguo@kernel.org> wrote:
 
-Thanks!
-Maxime
+> > +     adc081c: adc@50 {
+>
+> Sort the node in unit-address.
+
+I have just realized that this patch is not needed as the ADC node is
+already present.
+
+I addressed your comments and sent a v2.
+
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
