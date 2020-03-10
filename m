@@ -2,64 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 882E3180755
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:48:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16AEE180758
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:48:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LUIZJZYXPgsoLxZmRhyoo4+uA8KweQ+/bKp5ADSYYNc=; b=kM2g1HrBlB1+DM
-	ebALa43Nv1DwlzvNU+3RxHrJaveXUTjWmOdJm90vnPG3BZZPG5iIhKRZVfLISFz1GVxLLdg4VLLjB
-	gJiJsB/8cf3IRjbBTW9GKyfCiW6HaDx5BO/BiIfYhREs3eGrfqTSuElArQocsWc7dFTYdMncBLiEy
-	y1aM7Z14d8ekXi84dzSKrdtTG6jRSBvytiMRLZF0kDelvDeGow0Et1f9W4/tGNXy5qza9jyHKQr2c
-	VDQLuyOjCsq8Mxa8E5i3zxB2pON+PVhfAzcQvKS7cRSyDEBdwOf0V7LeqkQdFS6K7Ld4BsmtyvWrd
-	SbGyLWs7EgtsXA8HW0/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ywEO8cXZ3z3Pdu7OKtXpIpu86sUmIYcq1EhstaM5o7g=; b=JN/iB5FQ7w5ygj
+	BMQbtJ6AJBNqm9nIdFFgoC6a2dxRoS3ISEsKgvyqXhAD1dmlW9Abc4ww8Q2Qlj1wAI1zaWu/t41AV
+	Rgl4SefmHzJTvuh/iMpRnxmc5UcuADdEyi91ayaJ8bU2vQONmkwyNaaHe85xxjnEUhuzS/e+7abY2
+	1U69yK2tlVmSNwA/EE2D3kfPCdo5sph/Se+aUGTNYQtcKA0Q2aBrOrjDWLQpCQgiwNz+fM0nwgpYQ
+	pKOtiLFS1CGrK/Gl3BiDqy4cRGkIrRht+kTznfD3kF/IsfzEpYnJqurSSP8aM59pjooRdEU4Fc5gg
+	QBeviuZjldtGodwTnnAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjvc-0006wS-Ge; Tue, 10 Mar 2020 18:48:32 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jBjvu-0007AJ-Pa; Tue, 10 Mar 2020 18:48:50 +0000
+Received: from mail-ot1-f53.google.com ([209.85.210.53])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjmJ-00040P-Gw
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:38:57 +0000
-Received: from lhreml706-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 273686508D9D73721EED;
- Tue, 10 Mar 2020 18:38:51 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml706-cah.china.huawei.com (10.201.108.47) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 10 Mar 2020 18:38:50 +0000
-Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Tue, 10 Mar
- 2020 18:38:50 +0000
-From: John Garry <john.garry@huawei.com>
-Subject: arm64 system corruption on linux-next?
-To: "linux-next@vger.kernel.org" <linux-next@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Message-ID: <8c018ee5-de2a-d948-fcae-feaf1303e160@huawei.com>
-Date: Tue, 10 Mar 2020 18:38:49 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jBjoQ-0007al-Kf
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:41:10 +0000
+Received: by mail-ot1-f53.google.com with SMTP id a9so8006590otl.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 11:41:06 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=PQABEcEk14Djn/LTjb5Ace2N+AY5AMQXCZutVyQXiUs=;
+ b=Dhbna80zoFIm7/hpG97Xp4oTguniF3n8/gaNzEIHj14FV2zkxpoWDyIoqsKfYv0B7Q
+ 9leCa11opSWlspDIYf3wFRnSxLT+ddQ12N2s56JPOvdKODpr5C07EiHIO+arpL7juhC3
+ iSRWFNKTSJD8zp7rIgAwo5Wff3M/MmTrH65mQjaarMuBdyRHF/Esxa5o+GQMcwpxoOC/
+ mAxGK0TnbeaTOwTnDnWhOQ7Ou9WcgRlSA/bjT7UsqHIueP9BoF6v6g5FDFA5RFL6PLQD
+ 96aZkXJeEFu1drahcjlnaCZee/Qj1SfGB8u6QaqPtDXFCPA3KGipQDgpUpykVFWNTS/G
+ JO+w==
+X-Gm-Message-State: ANhLgQ0xEc8ioD0wZFRJNYTVW5UCl/aSQlxY4adueR/t9fyc+9XWM6Km
+ Nwbd7O2thSZjBSb7VLsmzg==
+X-Google-Smtp-Source: ADFU+vuCpy55+wQ03dvYMG8T9a9Ha2z5esUQgxNizO1+WBHUPrvJ7vapbxm/UI4ejAFS/eHYpZMrxg==
+X-Received: by 2002:a9d:67c7:: with SMTP id c7mr3275865otn.85.1583865665110;
+ Tue, 10 Mar 2020 11:41:05 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s128sm4496355oia.4.2020.03.10.11.41.03
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Mar 2020 11:41:04 -0700 (PDT)
+Received: (nullmailer pid 2384 invoked by uid 1000);
+ Tue, 10 Mar 2020 18:41:03 -0000
+Date: Tue, 10 Mar 2020 13:41:03 -0500
+From: Rob Herring <robh@kernel.org>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [RESEND v6  08/13] spi: imx: add new i.mx6ul compatible name in
+ binding doc
+Message-ID: <20200310184103.GA2192@bogus>
+References: <1583839922-22699-1-git-send-email-yibin.gong@nxp.com>
+ <1583839922-22699-9-git-send-email-yibin.gong@nxp.com>
 MIME-Version: 1.0
-Content-Language: en-US
-X-Originating-IP: [10.202.226.45]
-X-ClientProxiedBy: lhreml706-chm.china.huawei.com (10.201.108.55) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <1583839922-22699-9-git-send-email-yibin.gong@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_113855_724865_25830FD2 
-X-CRM114-Status: UNSURE (   4.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200310_114106_740822_438E2F8D 
+X-CRM114-Status: GOOD (  10.38  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.53 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.53 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,44 +95,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, catalin.marinas@arm.com,
+ kernel@pengutronix.de, festevam@gmail.com, s.hauer@pengutronix.de,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-spi@vger.kernel.org, vkoul@kernel.org, broonie@kernel.org,
+ linux-imx@nxp.com, martin.fuzzey@flowbird.group,
+ u.kleine-koenig@pengutronix.de, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgYWxsLAoKT24gbXkgYXJtNjQgSHVhd2VpIEQwNiBkZXYgYm9hcmQsIEkgc2VlIHRoaXMgb24g
-c29tZXRpbWVzIG9uIGxpbnV4LW5leHQgCjIwMjAwMzEwIGp1c3QgYXMgdGhlIGJvb3QgY29tcGxl
-dGVzOgoKWyAgIDQ4LjQ1MjY3NF0gcGNpZXBvcnQgMDAwMDpiNDowMS4wOiBBZGRpbmcgdG8gaW9t
-bXUgZ3JvdXAgNDAKWyAgIDQ4LjQ3MzQyNl0gcnRjLWVmaSBydGMtZWZpLjA6IHNldHRpbmcgc3lz
-dGVtIGNsb2NrIHRvIAoyMDIwLTAzLTEwVDE4OjMxOjI5IFVUQyAoMTU4Mzg2NTA4OSkKWyAgIDQ4
-LjQ3MzQyNl0gcnRjLWVmaSBydGMtZWZpLjA6IHNldHRpbmcgc3lzdGVtIGNsb2NrIHRvIAoyMDIw
-LTAzLTEwVDE4OjMxOjI5IFVUQyAoMTU4Mzg2NTA4OSkKWyAgIDQ4LjQ4Njc1NV0gaGlkLWdlbmVy
-aWMgMDAwMzoxMkQxOjAwMDMuMDAwMTogaW5wdXQ6IFVTQiBISUQgdjEuMTAgCktleWJvYXJkIFtL
-ZXlib2FyZC9Nb3VzZSBLVk0gMS4xLjBdIG9uIHVzYi0wMDAwOjdhOjAxLjAtMS4xL2lucHV0MApb
-ICAgNDguNDg2NzU1XSBoaWQtZ2VuZXJpYyAwMDAzOjEyRDE6MDAwMy4wMDAxOiBpbnB1dDogVVNC
-IEhJRCB2MS4xMCAKS2V5Ym9hcmQgW0tleWJvYXJkL01vdXNlIEtWTSAxLjEuMF0gb24gdXNiLTAw
-MDA6N2E6MDEuMC0xLjEvaW5wdXQwClsgICA0OC40OTEwMzNdIEFMU0EgZGV2aWNlIGxpc3Q6Clsg
-ICA0OEEgZGV2aWNlIGxpc3Q6ClsgICA0OC41MjIzMDRdICAgTm8gc291bmRjYXJkcyBmb3VuZC4K
-WyAgIDQ4LjUyMjMwNF0gICBObyBzb3VuZGNhcmRzIGZvdW5kLgpbICAgNDguNTI2MzE5XSBpbnB1
-dDogS2V5Ym9hcmQvTW91c2UgS1ZNIDEuMS4wIGFzIAovZGV2aWNlcy9wY2kwMDAwOjdhLzAwMDA6
-N2E6MDEuMC91c2IxLzEtMS8xLTEuMS8xLTEuMToxLjEvMDAwMzoxMkQxOjAwMDMuMDAwMi9pbnB1
-dC9pbnB1dDIKWyAgIDQ4LjUyNjMxOV0gaW5wdXQ6IEtleWJvYXJkL01vdXNlIEtWTSAxLjEuMCBh
-cyAKL2RldmljZXMvcGNpMDAwMDo3YS8wMDAwOjdhOjAxLjAvdXNiMS8xLTEvMS0xLjEvMS0xLjE6
-MS4xLzAwMDM6MTJEMTowMDAzLjAwMDIvaW5wdXQvaW5wdXQyClt8VXoK77+977+977+9cCBYNG4w
-Smog0KxILHB+d3bvv71eO++/vX5UdO+/vWvvv71277+977+9Iu+/ve+/vcKx77+9CiAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIO+/vXJa77+9LO+/vSDvv70g77+977+9SGvv
-v73vv70KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIHY377+9QyAo77+977+977+977+9INW577+9RV7vv70tIHoKICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDv
-v70KwrHvv70gCiAg77+9IO+/ve+/ve+/vSDvv71cIO+/ve+/ve+/vXAgWDRuMEpqIHDvv71ILHB+
-d3bvv71eOyt+VHTvv71r77+9du+/vSAi77+9Cnfvv71i77+977+977+9UO+/vWvvv71o77+9UO+/
-ve+/vS7vv71w77+977+977+9Tu+/vVAgUO+/vVjvv73vv70577+9IDDvv70g77+9a++/vWjvv71Q
-77+9aS7vv71w77+977+977+9Tu+/ve+/vSbvv73vv73vv73vv73vv70uwqzvv71qUO+/vVbvv712
-IAp077+9We+/ve+/vSrvv71277+977+977+977+9IO+/vUY577+9CgoKVGhlIHN5c3RlbSBpcyBz
-dGlsbCBhbGl2ZSwgYXMga2V5cHJlc3NlcyByZXNwb25kIHdpdGggZ2FyYmFnZS4KCkZ1bGwgZG1l
-c2c6Cmh0dHBzOi8vcGFzdGViaW4uY29tL0MyWHkweVVXCgoKdjUuNi1yYzQgaXMgb2sgZnJvbSBt
-eSBhdHRlbXB0cy4KCkFueW9uZSBlbHNlIHNlZSBzdWNoIGFuIGlzc3VlPwoKVGhhbmtzLApKb2hu
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+On Tue, 10 Mar 2020 19:31:57 +0800, Robin Gong wrote:
+> ERR009165 fixed from i.mx6ul, add its compatible name in binding doc.
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> Acked-by: Mark Brown <broonie@kernel.org>
+> ---
+>  Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
+
+If a tag was not added on purpose, please state why and what changed.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
