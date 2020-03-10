@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 198FC17EF57
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 04:35:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 759EE17EF64
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 04:42:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R/P0Lo2e8sXYoAWTsd4t3cRVkZ9YpWuiH3jPExR63uU=; b=SyABSNHHTSFWtV
-	TCvxgwIiWQnoYSi1vO7RH+D/9tIRlvIqfvqeLD1H/eHlXcpLyhHOaGjyFLNuZwcLzI4fgoUJCnet+
-	HAXLWJSWynUJNzYw/z+I4L8HwwwSh8qFSvX8Lh+5jvCOvHPqCNga8UbHYfEivXqL38St4UBrTEIyd
-	QK7eXq05kWoH096NTvqP9bYG0join+KKEWy+7NSUVI4uDPlTisG7dRfVZ4043N/bFnALMR0Gi+8Zo
-	LcSa1vN9sX+gF46p7SUt2IG3DlRW6LeUsHz5MHUpVLmWjE/S/NKL4Y8roLXb6ZgzsyVerqxJIVwOI
-	EZysGyYBNr/b6az1KY8w==;
+	List-Owner; bh=OjwFl837V/yGdGIbUJ+kzd5qahySAF9rY31Q9LpulRE=; b=DGZAOMVlaZsDTP
+	fV0ZnUyPE7E+8xq/ipV2/7BNe1LWgVUBA2GGjYMQAG4nGYJXdKUPp4CB4BHTR5rH3kLShbvpdlF1a
+	kqXbTSdqN9HgW+1K2xUwio4JDtEvNn6oy89FmXDZG0vk5vSG8D8ZXP+z+DBcM5vayQ/p6XJgbmcSA
+	OrBs2zKH4Nr3M5a9a89NtjszWV9XoySBZfmbuyg17MX9ApumXH4nBeGMEvBdafxTWsPpRWQL8Jpu3
+	UZ+OpvT2dzN6f6aaVN2Y5g1pYurXtQGmERaO4HG5n9vroTLlYDSDyvHQZ4aok7IqhsRzPZowvL/fi
+	I3E/7uIFt7MLgZXMaEUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBVfS-0005tj-Cs; Tue, 10 Mar 2020 03:34:54 +0000
+	id 1jBVmr-0000YV-Iq; Tue, 10 Mar 2020 03:42:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBVdM-0003tO-71
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 03:32:47 +0000
+ id 1jBVmk-0000Y4-Kk
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 03:42:27 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E7C6024671;
- Tue, 10 Mar 2020 03:32:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8022224649;
+ Tue, 10 Mar 2020 03:42:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583811163;
- bh=qkDKOMV7QctTl0QDnIlpTw5MQKWwxRKuxkYh93xEX70=;
+ s=default; t=1583811746;
+ bh=9t6PQTF4yZhBSTuBT59aCA5e/8OFUhyc/DijBpBFCMQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=VwvcrPfjbTGrIGLthzALZvv20YpylM4lN7J8wElvRok/GOACijl8xx1KFWqXrEaCi
- YGvjijssmi8xH+wXHor3numDwqTCSdudVYxCTWHURGULepnCATc3jFutdzFyET6gec
- Di5blsdV1ock5d59nCokk582bmuC3owvrhl6HR4s=
-Date: Tue, 10 Mar 2020 11:32:32 +0800
+ b=ELC4laBnmWyQWgtZJRyxXX+wvcGYrYptReol9dy2C3ggnAg2cY9PZ1OrFLqsto5O9
+ tn20frD/Hqh27tEbDmU+/a+bYw3QDHLxoSQlmL0qZcLO+5zejMPu1kyug5rZmeiFYV
+ yiALkYFxuWN8B0V8zbnTLxDUbpJw0kg9IFB65Lfk=
+Date: Tue, 10 Mar 2020 11:42:15 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Joakim Zhang <qiangqing.zhang@nxp.com>
-Subject: Re: [PATCH 1/7] firmware: imx: scu-pd: add power domain for I2C and
- INTMUX in CM40 SS
-Message-ID: <20200310033230.GA15729@dragon>
+Subject: Re: [PATCH 2/7] clk: imx8: Add SCU and LPCG clocks for I2C in CM40 SS
+Message-ID: <20200310034214.GB15729@dragon>
 References: <1581909561-12058-1-git-send-email-qiangqing.zhang@nxp.com>
- <1581909561-12058-2-git-send-email-qiangqing.zhang@nxp.com>
+ <1581909561-12058-3-git-send-email-qiangqing.zhang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1581909561-12058-2-git-send-email-qiangqing.zhang@nxp.com>
+In-Reply-To: <1581909561-12058-3-git-send-email-qiangqing.zhang@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_203244_336974_2D9AB18A 
-X-CRM114-Status: UNSURE (   7.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200309_204226_705285_88A9EA1B 
+X-CRM114-Status: GOOD (  12.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,12 +89,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 11:19:15AM +0800, Joakim Zhang wrote:
-> Add power domain for I2C and INTMUX in CM40 SS.
+On Mon, Feb 17, 2020 at 11:19:16AM +0800, Joakim Zhang wrote:
+> Add SCU and LPCG clocks for I2C in CM40 SS.
 > 
 > Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+> ---
+>  include/dt-bindings/clock/imx8-clock.h | 13 ++++++++++++-
+>  1 file changed, 12 insertions(+), 1 deletion(-)
 
-Applied, thanks.
+I think it can be merged into patch #4.
+
+Shawn
+
+> 
+> diff --git a/include/dt-bindings/clock/imx8-clock.h b/include/dt-bindings/clock/imx8-clock.h
+> index 673a8c662340..84a442be700f 100644
+> --- a/include/dt-bindings/clock/imx8-clock.h
+> +++ b/include/dt-bindings/clock/imx8-clock.h
+> @@ -131,7 +131,12 @@
+>  #define IMX_ADMA_PWM_CLK				188
+>  #define IMX_ADMA_LCD_CLK				189
+>  
+> -#define IMX_SCU_CLK_END					190
+> +/* CM40 SS */
+> +#define IMX_CM40_IPG_CLK				200
+> +#define IMX_CM40_I2C_CLK				205
+> +
+> +#define IMX_SCU_CLK_END					220
+> +
+>  
+>  /* LPCG clocks */
+>  
+> @@ -290,4 +295,10 @@
+>  
+>  #define IMX_ADMA_LPCG_CLK_END				45
+>  
+> +/* CM40 SS LPCG */
+> +#define IMX_CM40_LPCG_I2C_IPG_CLK			0
+> +#define IMX_CM40_LPCG_I2C_CLK				1
+> +
+> +#define IMX_CM40_LPCG_CLK_END				2
+> +
+>  #endif /* __DT_BINDINGS_CLOCK_IMX_H */
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
