@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9B5718004F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 15:36:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32F23180050
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 15:37:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CLDxDB7ipSq7EivJHJJldYwqsl3UD0ZvHEu0khjia8g=; b=OFbkLKrt8P9F5G
-	nm4d7qHQemCyMNFuX/9N8gqz150PyPVUxH5pS64CskHglSsIyg6bicOMXlmYAG9Fq8OG9f/cJO4lu
-	ocgmH3PmddvOzn6aGqvcDFlVoJtICivmHBu+YAVY+MzqFBejR+6xLZt55ClraLqRP7jwNJyN4M9w/
-	AqVzMsRobj8ICpGSq9wzRW8CgUo8/fmnJTnQ0jvjbFBHBWhmhsDdIxSiJNAOoYIEzj/QRD7yMdRwl
-	IptHkWsdf+obzDHJnoExF9QV8h+9wVHFvMO6k8uDCbIi9L/1dQbVPZEji1MbiWZaiMzaMcTqlqMTi
-	HU/jxYDOGjJRbpC+CQBg==;
+	List-Owner; bh=ccRKaxCUBgm13ncjqMJsMp/AxQ8gvUQCIVVepXzx7nI=; b=TTndRyL4KzGtCS
+	Hc2JCW19ng4czDjf+iJaUiyMzqc7i7ElPsmLqOjmGaaVkuYnnF60vuTe2WIeeAdL41jZqs1ZBEKyk
+	AoEgNE3ejCePoYeSILndPF8kRhLqh9YrNcQtSF8HlPpSE4PD9lEdB9SkhfnUr+TjjKckPVuBnYUsl
+	0Zqw1M71r+8UOih7TU/0pr4l/pyNPXCXOS3aAT/Jus72w5qRy0w+qV2UNmIwNvcrEZPkpMtUeZzYa
+	R/wio/Lqgy9GuhgDjXHkBusJZ7cX6Ckn/sHSsKIMEArD2rZiaemEEYS+kTGKwkCduybpXsBNRFJzI
+	gM4BIqsV84PozdNrD6hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBfzG-0006fB-Vx; Tue, 10 Mar 2020 14:36:03 +0000
+	id 1jBg0N-0006wh-AN; Tue, 10 Mar 2020 14:37:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBfz9-0006ei-D1
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 14:35:56 +0000
+ id 1jBg0E-0006wC-5P
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 14:37:03 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8169720873;
- Tue, 10 Mar 2020 14:35:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8FA5420848;
+ Tue, 10 Mar 2020 14:37:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583850954;
- bh=aCCuA3dmGtkJtVIm9+cu7oR9EQfoMXkZDErROpFdOnw=;
+ s=default; t=1583851021;
+ bh=qtr/Wxdxp9yhGS/GKWcLxeXTtIunv0pNegIjpoN7uwI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=HZc4jcnM4S0S2twxQbZDvHetUiXt8rTb2p94bhnjTVbfh6TRwKE/XqRk9G+ExqMQW
- 4KnT8iadi5r7a7aoXWYjxgsV9DHeeKvji5li0FbfcD6FvioVdg4PmkAIkc981GblEb
- YWQw79FBPhG6cjd/CA/XN9oaLAZmzEzKA/smWxbk=
-Date: Tue, 10 Mar 2020 22:35:49 +0800
+ b=TRl409m2vmUtgri0erpqzGvayd3XmANPNM5xru9wSm6RbjZVwkO+wVvzMB7c/pq9y
+ hy66tUXJ5c+CvEFZ4HPhZZGZWzlev2GxP7YnG4pQ/oEVLiUCTxC3HCRrxBHx2UEkIq
+ s9q7ddDV4uHpXg+zi0yR+CGeom0ZPSpWQ1NRs2w8=
+Date: Tue, 10 Mar 2020 22:36:57 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 2/6] ARM: dts: imx7d-pico: Add support for the dwarf
- baseboard
-Message-ID: <20200310143548.GA21213@dragon>
+Subject: Re: [PATCH 3/6] ARM: dts: imx6ul-pico-hobbit: Add ADC support
+Message-ID: <20200310143656.GB21213@dragon>
 References: <20200224193200.2773-1-festevam@gmail.com>
- <20200224193200.2773-2-festevam@gmail.com>
+ <20200224193200.2773-3-festevam@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200224193200.2773-2-festevam@gmail.com>
+In-Reply-To: <20200224193200.2773-3-festevam@gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_073555_482635_F735B196 
-X-CRM114-Status: GOOD (  17.16  )
+X-CRM114-CacheID: sfid-20200310_073702_228059_1B4B57F5 
+X-CRM114-Status: GOOD (  13.87  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,142 +84,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 04:31:56PM -0300, Fabio Estevam wrote:
-> Add support for the imx7d pico board with dwarf baseboard combination.
+On Mon, Feb 24, 2020 at 04:31:57PM -0300, Fabio Estevam wrote:
+> imx6ul-pico-hobbit has a ADC081 under I2C3.
+> 
+> Add support for it.
 > 
 > Signed-off-by: Fabio Estevam <festevam@gmail.com>
 > ---
->  .../devicetree/bindings/arm/fsl.yaml          |  1 +
-
-Have bindings as a separate patch.  Or just merge it into patch #1.
-
->  arch/arm/boot/dts/Makefile                    |  1 +
->  arch/arm/boot/dts/imx7d-pico-dwarf.dts        | 87 +++++++++++++++++++
->  3 files changed, 89 insertions(+)
->  create mode 100644 arch/arm/boot/dts/imx7d-pico-dwarf.dts
+>  arch/arm/boot/dts/imx6ul-pico-hobbit.dts | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-> index bad56df60f87..098aee4930a0 100644
-> --- a/Documentation/devicetree/bindings/arm/fsl.yaml
-> +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-> @@ -286,6 +286,7 @@ properties:
->                - fsl,imx7d-sdb             # i.MX7 SabreSD Board
->                - fsl,imx7d-sdb-reva        # i.MX7 SabreSD Rev-A Board
->                - novtech,imx7d-meerkat96   # i.MX7 Meerkat96 Board
-> +              - technexion,imx7d-pico-dwarf   # TechNexion i.MX7D Pico-Dwarf
->                - technexion,imx7d-pico-hobbit  # TechNexion i.MX7D Pico-Hobbit
->                - technexion,imx7d-pico-pi      # TechNexion i.MX7D Pico-Pi
->                - toradex,colibri-imx7d                   # Colibri iMX7 Dual Module
-> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-> index 732933318a61..888eaa8b1f92 100644
-> --- a/arch/arm/boot/dts/Makefile
-> +++ b/arch/arm/boot/dts/Makefile
-> @@ -615,6 +615,7 @@ dtb-$(CONFIG_SOC_IMX7D) += \
->  	imx7d-mba7.dtb \
->  	imx7d-meerkat96.dtb \
->  	imx7d-nitrogen7.dtb \
-> +	imx7d-pico-dwarf.dtb \
->  	imx7d-pico-hobbit.dtb \
->  	imx7d-pico-pi.dtb \
->  	imx7d-sbc-imx7.dtb \
-> diff --git a/arch/arm/boot/dts/imx7d-pico-dwarf.dts b/arch/arm/boot/dts/imx7d-pico-dwarf.dts
-> new file mode 100644
-> index 000000000000..ff734936b77b
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/imx7d-pico-dwarf.dts
-> @@ -0,0 +1,87 @@
-> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-> +//
-> +// Copyright 2015 Technexion Ltd.
-> +//
-> +// Author: Wig Cheng  <wig.cheng@technexion.com>
-> +//	   Richard Hu <richard.hu@technexion.com>
-> +//	   Tapani Utriainen <tapani@technexion.com>
-> +/dts-v1/;
-> +
-> +#include "imx7d-pico.dtsi"
-> +/ {
-> +	model = "TechNexion PICO-IMX7D and DWARF baseboard";
-> +	compatible = "technexion,imx7d-pico-dwarf", "fsl,imx7d";
-> +
-> +	sound {
-> +		compatible = "fsl,imx-audio-sgtl5000";
-> +		model = "imx7d-sgtl5000";
-> +		audio-cpu = <&sai1>;
-> +		audio-codec = <&sgtl5000>;
-> +		audio-routing =
-> +			"LINE_IN", "Line In Jack",
-> +			"MIC_IN", "Mic Jack",
-> +			"Mic Jack", "Mic Bias",
-> +			"Headphone Jack", "HP_OUT";
-> +	};
-> +
-> +	sys_mclk: clock-sys-mclk {
-> +		compatible = "fixed-clock";
-> +		#clock-cells = <0>;
-> +		clock-frequency = <24576000>;
-> +	};
-> +};
-> +
-> +&i2c1 {
-> +	clock_frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c1>;
-> +	status = "okay";
-> +
-> +	sgtl5000: codec@a {
+> diff --git a/arch/arm/boot/dts/imx6ul-pico-hobbit.dts b/arch/arm/boot/dts/imx6ul-pico-hobbit.dts
+> index 09f7ffa9ad8c..2a951d6ffa63 100644
+> --- a/arch/arm/boot/dts/imx6ul-pico-hobbit.dts
+> +++ b/arch/arm/boot/dts/imx6ul-pico-hobbit.dts
+> @@ -60,6 +60,12 @@
+>  &i2c3 {
+>  	status = "okay";
+>  
+> +	adc081c: adc@50 {
 
-audio-codec for node name.
+Sort the node in unit-address.
 
 Shawn
 
-> +		reg = <0x0a>;
-> +		compatible = "fsl,sgtl5000";
-> +		clocks = <&sys_mclk>;
-> +		VDDA-supply = <&reg_2p5v>;
-> +		VDDIO-supply = <&reg_3p3v>;
+> +		compatible = "ti,adc081c";
+> +		reg = <0x50>;
+> +		vref-supply = <&reg_3p3v>;
 > +	};
 > +
-> +	pressure-sensor@60 {
-> +		compatible = "fsl,mpl3115";
-> +		reg = <0x60>;
-> +	};
-> +};
-> +
-> +&i2c4 {
-> +	clock_frequency = <100000>;
-> +	pinctrl-names = "default";
-> +	pinctrl-0 = <&pinctrl_i2c1>;
-> +	status = "okay";
-> +
-> +	pca9554: io-expander@25 {
-> +		compatible = "nxp,pca9554";
-> +		gpio-controller;
-> +		#gpio-cells = <2>;
-> +		#interrupt-cells = <2>;
-> +		reg = <0x25>;
-> +	};
-> +
-> +	touchscreen@38 {
-> +		compatible = "edt,edt-ft5x06";
-> +		reg = <0x38>;
-> +		pinctrl-names = "default";
-> +		pinctrl-0 = <&pinctrl_touchscreen>;
-> +		interrupt-parent = <&gpio2>;
-> +		interrupts = <13 IRQ_TYPE_EDGE_FALLING>;
-> +		reset-gpios = <&pca9554 4 GPIO_ACTIVE_LOW>;
-> +		touchscreen-size-x = <800>;
-> +		touchscreen-size-y = <480>;
-> +	};
-> +};
-> +
-> +&iomuxc {
-> +	pinctrl_touchscreen: touchscreengrp {
-> +		fsl,pins = <
-> +			MX7D_PAD_EPDC_DATA13__GPIO2_IO13	0x14
-> +		>;
-> +	};
-> +};
+>  	polytouch: touchscreen@38 {
+>  		compatible = "edt,edt-ft5x06";
+>  		reg = <0x38>;
 > -- 
 > 2.17.1
 > 
