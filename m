@@ -2,72 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24C4F17F184
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 09:13:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71BBF17F187
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 09:13:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:References:
-	In-Reply-To:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+C9dRuSSONSbX6A0kabymZ4zk6pBeQcN8oGtNw46GMQ=; b=uVQOcX96IsHxg1
-	FXf5jeEC9pHhqCGFSJJIvbW5DRIp+H67gCWOwzh7D7KHM27BxJkAGgywu4dm+MgjtASPo/SIxM0nk
-	aR44moyAeZlKzMGb75MhWppfw1SUflqtSHMSIoZNZXPZFNWduj3znUnUH0nmn/Qd+ck/RbYbAllFF
-	3LNwm07s5PBUi3YMnjAfTCWhzeXzJogehDirpVfFy4TZbHPw57Nu2QbdqZZvuMCPGJgtDhkhKrtCq
-	q03raW8xQtTyx4VZl8XcD2GXA2iMeQlGVyz0cEPohLCUkTaywpZ7D4KAom7sL0KEYCD22fm0jb6dL
-	pCWMQwvN3iHE2vlU6xOg==;
+	List-Owner; bh=nb9vSlv+lLxj6I/H9zO7JMHYljrGMlLyQkY+0iHwCoE=; b=ddA4165bXlgY3x
+	m/7Tb+sNUVCOChQAqPyfNStlEb0AsJ/Qo12fudzGR8v+Pn/hYv40GN5ln1n/VOyokFteSPEx4v6iX
+	fYskuK82bOoEdWvC4J8pMMsajZjubIie84zQfOhDZXHDttPurO+9H440QLqdtll8JYXvEWrXG57IR
+	a701pOhnH/Bnndhaz5SooQX2YoRzVLiB9ms7dTglYhkziBxiSuyzxKV4IbH2dRRFtSwUEt4iJF+q6
+	Eh6c7EnT1W6a7CNEA9Xlh70kuaIfOOrMTZu2ezu2fn1if4Tb4St7jatxG0rmbmWKbPvb+q8MHX1hM
+	/It7rrnZe5e4R4Bfvw7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBa0Z-0005o8-6N; Tue, 10 Mar 2020 08:12:59 +0000
-Received: from zimbra2.kalray.eu ([92.103.151.219])
+	id 1jBa1I-00068l-DP; Tue, 10 Mar 2020 08:13:44 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBa0N-0005n9-0Q
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 08:12:48 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 10EAA27E0589;
- Tue, 10 Mar 2020 09:12:45 +0100 (CET)
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id suHw1Lkpx2r5; Tue, 10 Mar 2020 09:12:44 +0100 (CET)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 53AB727E05D7;
- Tue, 10 Mar 2020 09:12:44 +0100 (CET)
-X-Virus-Scanned: amavisd-new at zimbra2.kalray.eu
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id nSuIx9HZ4Lhp; Tue, 10 Mar 2020 09:12:44 +0100 (CET)
-Received: from zimbra2.kalray.eu (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id 35E2027E0589;
- Tue, 10 Mar 2020 09:12:44 +0100 (CET)
-Date: Tue, 10 Mar 2020 09:12:44 +0100 (CET)
-From: =?utf-8?Q?Cl=C3=A9ment?= Leger <cleger@kalrayinc.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Message-ID: <1569234651.9042535.1583827964044.JavaMail.zimbra@kalray.eu>
-In-Reply-To: <20200309235710.GE14744@builder>
-References: <20200210162209.23149-1-cleger@kalray.eu>
- <20200302093902.27849-1-cleger@kalray.eu>
- <20200302093902.27849-9-cleger@kalray.eu> <20200309203223.GE1399@xps15>
- <20200309235710.GE14744@builder>
-Subject: Re: [PATCH v5 8/8] remoteproc: Adapt coredump to generate correct
- elf type
+ id 1jBa19-000689-JL
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 08:13:37 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id AB40E29589A;
+ Tue, 10 Mar 2020 08:13:33 +0000 (GMT)
+Date: Tue, 10 Mar 2020 09:13:29 +0100
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH] drm/imx: parallel-display: Adjust bus_flags and
+ bus_format handling
+Message-ID: <20200310091329.099245fc@collabora.com>
+In-Reply-To: <20200309204805.GA875@pendragon.ideasonboard.com>
+References: <20191114131751.26746-1-marex@denx.de>
+ <10f02dbe4e7b0966d279508b636e718e031e2e61.camel@pengutronix.de>
+ <20200309192306.GA20358@pendragon.ideasonboard.com>
+ <20200309205559.3c860aae@collabora.com>
+ <20200309195926.GC4916@pendragon.ideasonboard.com>
+ <20200309212218.11ac77ae@collabora.com>
+ <20200309203211.GE4916@pendragon.ideasonboard.com>
+ <20200309214244.4d4671d9@collabora.com>
+ <20200309204805.GA875@pendragon.ideasonboard.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-X-Originating-IP: [192.168.40.202]
-X-Mailer: Zimbra 8.8.15_GA_3895 (ZimbraWebClient - GC75 (Linux)/8.8.15_GA_3895)
-Thread-Topic: remoteproc: Adapt coredump to generate correct elf type
-Thread-Index: aSfVDzvI7FHWKtYkTa2dk6v5khxkEA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_011247_383225_AF0C53E0 
-X-CRM114-Status: GOOD (  23.68  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200310_011335_917927_9EE2B0F9 
+X-CRM114-Status: GOOD (  35.14  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [92.103.151.219 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -80,234 +71,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Loic PALLARDY <loic.pallardy@st.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-doc <linux-doc@vger.kernel.org>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Patrice Chotard <patrice.chotard@st.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Andy Gross <agross@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>, s-anna <s-anna@ti.com>,
- Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Marek Vasut <marex@denx.de>, David Airlie <airlied@linux.ie>,
+ Sascha Hauer <s.hauer@pengutronix.de>, dri-devel@lists.freedesktop.org,
+ NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+On Mon, 9 Mar 2020 22:48:05 +0200
+Laurent Pinchart <laurent.pinchart@ideasonboard.com> wrote:
 
------ On 10 Mar, 2020, at 00:57, Bjorn Andersson bjorn.andersson@linaro.org wrote:
+> Hi Boris,
+> 
+> On Mon, Mar 09, 2020 at 09:42:44PM +0100, Boris Brezillon wrote:
+> > On Mon, 9 Mar 2020 22:32:11 +0200 Laurent Pinchart wrote:  
+> > > On Mon, Mar 09, 2020 at 09:22:18PM +0100, Boris Brezillon wrote:  
+> > >> On Mon, 9 Mar 2020 21:59:26 +0200 Laurent Pinchart wrote:    
+> > >>> On Mon, Mar 09, 2020 at 08:55:59PM +0100, Boris Brezillon wrote:    
+> > >>>> On Mon, 9 Mar 2020 21:23:06 +0200 Laurent Pinchart wrote:      
+> > >>>>> On Mon, Mar 09, 2020 at 11:50:59AM +0100, Philipp Zabel wrote:      
+> > >>>>>> On Thu, 2019-11-14 at 14:17 +0100, Marek Vasut wrote:        
+> > >>>>>>> The bus_flags and bus_format handling logic does not seem to cover
+> > >>>>>>> all potential usecases. Specifically, this seems to fail with an
+> > >>>>>>> "edt,etm0700g0edh6" display attached to an 24bit display interface,
+> > >>>>>>> with interface-pix-fmt = "rgb24" set in DT.        
+> > >>>>>> 
+> > >>>>>> interface-pix-fmt is a legacy property that was never intended to be
+> > >>>>>> used as an override for the panel bus format. The bus flags were
+> > >>>>>> supposed to be set from the display-timings node, back when there was no
+> > >>>>>> of-graph connected panel at all.
+> > >>>>>> 
+> > >>>>>> That being said, there isn't really a proper alternative that allows to
+> > >>>>>> override the bus format requested by the panel driver in the device tree
+> > >>>>>> to account for weird wiring. We could reuse the bus-width endpoint
+> > >>>>>> property documented in [1], but that wouldn't completely specify how the
+> > >>>>>> RGB components are to be mapped onto the parallel bus.
+> > >>>>>> 
+> > >>>>>> [1] Documentation/devicetree/bindings/media/video-interfaces.txt        
+> > >>>>> 
+> > >>>>> Things are funny sometimes, I've run into the exact same problem with a
+> > >>>>> different display controller today.
+> > >>>>> 
+> > >>>>> Shouldn't we use the data-shift property from [1] to specify this ?
+> > >>>>> Combined with Boris' bus format negotiation for bridges, I think we
+> > >>>>> would have all the components in place to solve this problem properly.      
+> > >>>> 
+> > >>>> I wonder if we shouldn't take more complex pin mappings into account
+> > >>>> now and go directly for a data-mapping property describing those
+> > >>>> mappings using a string. This way we'd have a single property that
+> > >>>> would work for both fully parallel buses (DPI/RGB) and serial (or
+> > >>>> partially parallel) ones (LVDS).      
+> > >>> 
+> > >>> I'm all for standardization, but I'm not sure data-mapping is the right
+> > >>> property, at least with its current definition. It's really meant to
+> > >>> describe how individual bits are mapped to the LVDS time slots. I'm fine
+> > >>> extending it, but we need to define it clearly. How would you envision
+> > >>> it being used in this case ?    
+> > >> 
+> > >> Well, clearly the data-width/data-shift approach does not solve all
+> > >> problems: what do you do if the source R pins are connected to the sink
+> > >> B pins? Well, the first answer would probably be 'have a serious
+> > >> discussion with the HW designer responsible for this insanity' :-), but
+> > >> once you've passed this 'WTF' stage, you'll have to find a way to tell
+> > >> the source component it should use RGBxyx while the sink should use
+> > >> BGRxyx (or vice-versa). This is something you can't extract that from
+> > >> those width/shift props though. My suggestion would be to have one
+> > >> string per MEDIA_BUS_FMT definition, so we can force things at the DT
+> > >> level if we really have to. That's basically what the interface-pix-fmt
+> > >> property was doing, except we would standardize the prop and values and
+> > >> probably provide helpers so bridge elements don't have to parse this
+> > >> prop manually.    
+> > > 
+> > > I don't think that would work in the general case though. We may want to
+> > > use different formats and pick one of them at runtime based on external
+> > > information (for instance when the sink can accept both RGB and YUV),
+> > > hardcoding formats in DT isn't a good option. We instead need to add
+> > > information to DT to specify how lines are connected, and deduce formats
+> > > based on that.  
+> > 
+> > If we start describing the role of each pin, we're not that far from a
+> > pinmux definition, the only difference being that we want pin configs
+> > to match between the source and sink, where actual pinmux configs are
+> > only controlled by one element (the HW block requesting exclusive
+> > access to those pins).  
+> 
+> The trick here will be to find an appropriate middle-ground. I don't
+> think we need to describe the role of each pin, but only to take into
+> account the parallel bus routing configurations that are likely to
+> happen in practice. Connecting MSBs to LSBs when decreasing the bus
+> width (or the other way around when increasing it) is a common issue.
+> Flipping R and B should be less common, but I suppose it can happen in
+> practice if the display controller supports both RGB and BGR formats (it
+> will just need to adjust the format internally if there's no dedicated
+> R<->B flipping hardware option). What else do we have ?
 
-> On Mon 09 Mar 13:32 PDT 2020, Mathieu Poirier wrote:
-> 
->> On Mon, Mar 02, 2020 at 10:39:02AM +0100, Clement Leger wrote:
->> > Now that remoteproc can load an elf64, coredump elf class should be
->> > the same as the loaded elf class. In order to do that, add a
->> > elf_class field to rproc with default values. If an elf is loaded
->> > successfully, this field will be updated with the loaded elf class.
->> > Then, the coredump core code has been modified to use the generic elf
->> > macro in order to create an elf file with correct class.
->> > 
->> > Signed-off-by: Clement Leger <cleger@kalray.eu>
->> > ---
->> >  drivers/remoteproc/remoteproc_core.c       | 67 ++++++++++++++++--------------
->> >  drivers/remoteproc/remoteproc_elf_loader.c |  3 ++
->> >  include/linux/remoteproc.h                 |  1 +
->> >  3 files changed, 39 insertions(+), 32 deletions(-)
->> > 
->> > diff --git a/drivers/remoteproc/remoteproc_core.c
->> > b/drivers/remoteproc/remoteproc_core.c
->> > index b932a64a2be2..f923355aa3f9 100644
->> > --- a/drivers/remoteproc/remoteproc_core.c
->> > +++ b/drivers/remoteproc/remoteproc_core.c
->> > @@ -38,6 +38,7 @@
->> >  #include <linux/platform_device.h>
->> >  
->> >  #include "remoteproc_internal.h"
->> > +#include "remoteproc_elf_helpers.h"
->> >  
->> >  #define HIGH_BITS_MASK 0xFFFFFFFF00000000ULL
->> >  
->> > @@ -1566,20 +1567,21 @@ EXPORT_SYMBOL(rproc_coredump_add_custom_segment);
->> >  static void rproc_coredump(struct rproc *rproc)
->> >  {
->> >  	struct rproc_dump_segment *segment;
->> > -	struct elf32_phdr *phdr;
->> > -	struct elf32_hdr *ehdr;
->> > +	void *phdr;
->> > +	void *ehdr;
->> >  	size_t data_size;
->> >  	size_t offset;
->> >  	void *data;
->> >  	void *ptr;
->> > +	u8 class = rproc->elf_class;
->> >  	int phnum = 0;
->> >  
->> >  	if (list_empty(&rproc->dump_segments))
->> >  		return;
->> >  
->> > -	data_size = sizeof(*ehdr);
->> > +	data_size = elf_size_of_hdr(class);
->> >  	list_for_each_entry(segment, &rproc->dump_segments, node) {
->> > -		data_size += sizeof(*phdr) + segment->size;
->> > +		data_size += elf_size_of_phdr(class) + segment->size;
->> >  
->> >  		phnum++;
->> >  	}
->> > @@ -1590,33 +1592,33 @@ static void rproc_coredump(struct rproc *rproc)
->> >  
->> >  	ehdr = data;
->> >  
->> > -	memset(ehdr, 0, sizeof(*ehdr));
->> > -	memcpy(ehdr->e_ident, ELFMAG, SELFMAG);
->> > -	ehdr->e_ident[EI_CLASS] = ELFCLASS32;
->> > -	ehdr->e_ident[EI_DATA] = ELFDATA2LSB;
->> > -	ehdr->e_ident[EI_VERSION] = EV_CURRENT;
->> > -	ehdr->e_ident[EI_OSABI] = ELFOSABI_NONE;
->> > -	ehdr->e_type = ET_CORE;
->> > -	ehdr->e_machine = EM_NONE;
->> > -	ehdr->e_version = EV_CURRENT;
->> > -	ehdr->e_entry = rproc->bootaddr;
->> > -	ehdr->e_phoff = sizeof(*ehdr);
->> > -	ehdr->e_ehsize = sizeof(*ehdr);
->> > -	ehdr->e_phentsize = sizeof(*phdr);
->> > -	ehdr->e_phnum = phnum;
->> > -
->> > -	phdr = data + ehdr->e_phoff;
->> > -	offset = ehdr->e_phoff + sizeof(*phdr) * ehdr->e_phnum;
->> > +	memset(ehdr, 0, elf_size_of_hdr(class));
->> > +	/* e_ident field is common for both elf32 and elf64 */
->> > +	elf_hdr_init_ident(ehdr, class);
->> > +
->> > +	elf_hdr_set_e_type(class, ehdr, ET_CORE);
->> > +	elf_hdr_set_e_machine(class, ehdr, EM_NONE);
->> > +	elf_hdr_set_e_version(class, ehdr, EV_CURRENT);
->> > +	elf_hdr_set_e_entry(class, ehdr, rproc->bootaddr);
->> > +	elf_hdr_set_e_phoff(class, ehdr, elf_size_of_hdr(class));
->> > +	elf_hdr_set_e_ehsize(class, ehdr, elf_size_of_hdr(class));
->> > +	elf_hdr_set_e_phentsize(class, ehdr, elf_size_of_phdr(class));
->> > +	elf_hdr_set_e_phnum(class, ehdr, phnum);
->> > +
->> > +	phdr = data + elf_hdr_get_e_phoff(class, ehdr);
->> > +	offset = elf_hdr_get_e_phoff(class, ehdr);
->> > +	offset += elf_size_of_phdr(class) * elf_hdr_get_e_phnum(class, ehdr);
->> > +
->> >  	list_for_each_entry(segment, &rproc->dump_segments, node) {
->> > -		memset(phdr, 0, sizeof(*phdr));
->> > -		phdr->p_type = PT_LOAD;
->> > -		phdr->p_offset = offset;
->> > -		phdr->p_vaddr = segment->da;
->> > -		phdr->p_paddr = segment->da;
->> > -		phdr->p_filesz = segment->size;
->> > -		phdr->p_memsz = segment->size;
->> > -		phdr->p_flags = PF_R | PF_W | PF_X;
->> > -		phdr->p_align = 0;
->> > +		memset(phdr, 0, elf_size_of_phdr(class));
->> > +		elf_phdr_set_p_type(class, phdr, PT_LOAD);
->> > +		elf_phdr_set_p_offset(class, phdr, offset);
->> > +		elf_phdr_set_p_vaddr(class, phdr, segment->da);
->> > +		elf_phdr_set_p_paddr(class, phdr, segment->da);
->> > +		elf_phdr_set_p_filesz(class, phdr, segment->size);
->> > +		elf_phdr_set_p_memsz(class, phdr, segment->size);
->> > +		elf_phdr_set_p_flags(class, phdr, PF_R | PF_W | PF_X);
->> > +		elf_phdr_set_p_align(class, phdr, 0);
->> >  
->> >  		if (segment->dump) {
->> >  			segment->dump(rproc, segment, data + offset);
->> > @@ -1632,8 +1634,8 @@ static void rproc_coredump(struct rproc *rproc)
->> >  			}
->> >  		}
->> >  
->> > -		offset += phdr->p_filesz;
->> > -		phdr++;
->> > +		offset += elf_phdr_get_p_filesz(class, phdr);
->> > +		phdr += elf_size_of_phdr(class);
->> >  	}
->> >  
->> >  	dev_coredumpv(&rproc->dev, data, data_size, GFP_KERNEL);
->> > @@ -2031,6 +2033,7 @@ struct rproc *rproc_alloc(struct device *dev, const char
->> > *name,
->> >  	rproc->name = name;
->> >  	rproc->priv = &rproc[1];
->> >  	rproc->auto_boot = true;
->> > +	rproc->elf_class = ELFCLASS32;
->> 
->> I would initialise this to ELFCLASSNONE to make sure that if a platform driver
->> overwrites rproc_elf_load_segments or doesn't provide one, we don't falsely
->> deduce the elf type.  It goes without saying that if elf_class == ELFCLASSNONE,
->> a coredump is not generated.
->> 
-> 
-> I like the idea of making the choice explicit, perhaps even more
-> explicit than the assumption that the coredumps should be of the same
-> type as the ELF loaded. Note that it's different consumers of the two
-> ELF files.
-> 
->> Unless you think this is a seriously bad idea or Bjorn over rules me,
+That's all I can think of, at least for DPI/RGB buses. So your
+recommendation would be to keep data-width/data-shift props and
+complement them with dpi-swap-red-blue-signals, right? Not entirely sure
+data-width is enough to describe all kind of bus-width
+increase/shrinking (don't we have RGB combinations taking the same
+number of signals but with different layouts)?
 
-Ok, I tried to do the equivalent of what was existing (ie elf32 by default).
-But IMHO, letting the driver choose the elf type is a better idea.
+Alternatively we could describe the 'out-src-format <-> in-sink-format'
+mappings using pair of strings:
 
->> 
->> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
->> 
-> 
-> Not sure if it count as "over ruling", I accept your suggestion but used
-> your R-b to merge the patch as is, no need to hold this up any longer.
-> 
-> Clement, can you please follow up with a patch implementing this (don't
-> forget that the qcom drivers doesn't use rproc_elf_load_segments())
+	port {
+	...
+		endpoint {
+			bus-formats = <out-src-format1>,
+				      <in-sink-format1>,
+				      <out-src-format2>,
+				      <in-sink-format2>,
+					...;
+		};
+	};
 
-I was going to send a v7, please tell me if you want to hold it a bit more.
-If not, I will address the remaining comments in next commits.
+but I'm almost sure you won't like this idea (actually, I don't like it
+either :-)).
 
-> 
-> Thanks Clement and thanks for the reviews Mathieu.
-> 
-> Regards,
-> Bjorn
-> 
->> Thanks,
->> Mathieu
->> 
->> >  
->> >  	device_initialize(&rproc->dev);
->> >  	rproc->dev.parent = dev;
->> > diff --git a/drivers/remoteproc/remoteproc_elf_loader.c
->> > b/drivers/remoteproc/remoteproc_elf_loader.c
->> > index 4869fb7d8fe4..16e2c496fd45 100644
->> > --- a/drivers/remoteproc/remoteproc_elf_loader.c
->> > +++ b/drivers/remoteproc/remoteproc_elf_loader.c
->> > @@ -248,6 +248,9 @@ int rproc_elf_load_segments(struct rproc *rproc, const
->> > struct firmware *fw)
->> >  			memset(ptr + filesz, 0, memsz - filesz);
->> >  	}
->> >  
->> > +	if (ret == 0)
->> > +		rproc->elf_class = class;
->> > +
->> >  	return ret;
->> >  }
->> >  EXPORT_SYMBOL(rproc_elf_load_segments);
->> > diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
->> > index 1683d6c386a6..ed127b2d35ca 100644
->> > --- a/include/linux/remoteproc.h
->> > +++ b/include/linux/remoteproc.h
->> > @@ -514,6 +514,7 @@ struct rproc {
->> >  	bool auto_boot;
->> >  	struct list_head dump_segments;
->> >  	int nb_vdev;
->> > +	u8 elf_class;
->> >  };
->> >  
->> >  /**
->> > --
->> > 2.15.0.276.g89ea799
+Anyway, I don't have much time to spend on this, so I'll probably
+respin the lvds-codec patches, extending it to support bus-width on the
+input side of an encoder element.
 
 _______________________________________________
 linux-arm-kernel mailing list
