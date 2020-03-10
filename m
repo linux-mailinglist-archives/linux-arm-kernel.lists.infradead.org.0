@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A11718078A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 20:00:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCFC9180791
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 20:01:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mv3+wU+aXPH2jQcaaFsFyk0lUNkJEl+f/Qmh9huNBGE=; b=o/IHyk1+Aez58T
-	pKWPpvNmLBJsT4sq/wb6SuocychiIPRR46c7JNCgGWeZp5ctSQn5KvAeasIz6CX6Wr1FPRFAugbra
-	NcHpa28qpXaD/y3b7xR89nPxeUhfoe6xywMeHYg6X5G5xo0tAjRS5wblGKgIE6eTkl6JYgreeNuk3
-	cSoYO4LHhsRFuU2IRrHcMRU1xvxwA0kAMtZIC/A6LzWi0dvmbSJiZXQY5friAHrEmS+0/ZqYz6XFc
-	+3N7vvWr2KNvqEdto7p5nU7VjPEZ4MldnuvnPkFpJSJLn3zn8Ja3qNpoHwx2Qkm2MAXIgzu/9U0VD
-	G1pcarpH7yt/Ft0oyzBA==;
+	List-Owner; bh=iIQD665Sq+J5kMJTsw6NJjfi0vuYf/cGNUzrZTCUYwg=; b=bBYNkzre+Gwb54
+	cLl9o2bPDDDQMTQo+BIhODjQIB1Rm4EiDmRBsVwlvtcduockzrKmmvkuQd8OIG6g+lVLqhjV+bEW0
+	SsYq9LXCe2OOi2jtXOFFNa85bjIIkSyphIIyKK16nDRMKAhTfy33M8w84yR5uaybt4bfpFZBKpKGW
+	PrN9LKNyd/8jfJdgPKsmB3xEoyPHf1ANdfoEIgRYljpKwY1suPUSrdy0i/dAfoLyebknqRGmw9ffq
+	V2jeemU0xl4ml1Oa4wmQ2joVcW6XxuWuE4AoXs48dVFEYj5q/VoNkRyeFVFreB0gKq0imBzEdZ4Wf
+	xk85ATBcM0VbmlunyP9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBk6z-0004Gn-RR; Tue, 10 Mar 2020 19:00:17 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1jBk7o-0006KG-0k; Tue, 10 Mar 2020 19:01:08 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBk6e-0004GP-Sc; Tue, 10 Mar 2020 18:59:58 +0000
-Received: by mail-oi1-f196.google.com with SMTP id i1so14989114oie.8;
- Tue, 10 Mar 2020 11:59:56 -0700 (PDT)
+ id 1jBk7d-0006II-5R
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 19:00:58 +0000
+Received: by mail-ot1-f66.google.com with SMTP id b3so14286610otp.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 12:00:56 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ptx5WrEqMj8ChwfbIT/3T1+w1q+nwH6s5pImyQy4SnA=;
- b=gL6nyLKULAeUo7ndmz10kuq2emShm6RJ2RdBEOqSnchp7o8cLwmQoXLP2bm3wbp2dP
- fnDqND66d3uoWj55zkr0UG0h4cbRMTV+CD5p3awD4dz8IAS/f1BaDB39A/ryHndTNlVk
- LeFgAKkMKPXoF1Kx5FQfYyWfl29XQMKF5/vwiOQd/SMAHlS0V/l18pFVq16JLu+TZPo3
- Wn49+jW1PL8QDSKhpWR+1esx14yjIqbXHLmFRju87zRS/v9BlabLkbQXgvIYzE6S/ZC3
- zdP7kH1oXZB5Q/77glvmGCupKI38SYzDfPQFJWtWyzpia0fWWdAKeC/NgN0ia+qKzvqV
- vh+Q==
-X-Gm-Message-State: ANhLgQ1xkE0RRMw0ZOgZUsL5ZXkcCo/iA9uZD33z9sd38ovFYfID3L/W
- VdHeFZrNqzHo1y97ehQDLA==
-X-Google-Smtp-Source: ADFU+vvN6GDhTro5nK0+rHJsZkUlb/MbNtLqDxIxxZhQuJR6uGPF1cnMz4xazTrFsG+NiHskw3fT3g==
-X-Received: by 2002:aca:5408:: with SMTP id i8mr2233293oib.157.1583866796263; 
- Tue, 10 Mar 2020 11:59:56 -0700 (PDT)
+ bh=xrW22r5IgXxjJkco6J5hYgaefJp0zEugXeX1yVtVQQw=;
+ b=e12gMrjvl1Tpwe2C3aqF9296WWG9T+ZAZsMJYnNitDf3CdK3Q8Z55ZBDe1EbgHqKnl
+ vTpMOxHYUmWu8R9iMCISZkTP3RdlqAS3x4w+Q/L09pEkJHfoVPxfmjjEk32nGa3/C5Fe
+ YvpS/H0UuTyiKSnR7BxxQxHzw3Cf42Uw/cwi72MdWF1ZrzIoYvWNi2EM0upZDb0rdUC9
+ EUfSY3HGa7tFb35CoaAsC2UzlVue63Nkh6+nsJ2fVyjcUpNnOM6wmCsbm14wpjbkyp4v
+ HivTysoMJy6Y3zFspJuGHyUl4gEefbvDJH5w9KQ0v/OZNQ4WBfmgk7tBDAb2g3rPSYl1
+ KUQQ==
+X-Gm-Message-State: ANhLgQ0vPcuumi6tsJc8gwbJlosKWiyjxa6yS7ZiYzjxQjbpPpaDMANJ
+ SOtkm0GwLmqcrDgaVDywEg==
+X-Google-Smtp-Source: ADFU+vsTVy/bN+/Yx0XnJKlcuYj2yXiLOzpK+Ll/Tq1shrnyv0KxkX3AgutsfYoYbIbd8kIetQiYeA==
+X-Received: by 2002:a9d:4c10:: with SMTP id l16mr6789936otf.109.1583866855618; 
+ Tue, 10 Mar 2020 12:00:55 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u18sm2707305otg.43.2020.03.10.11.59.55
+ by smtp.gmail.com with ESMTPSA id 187sm3993505oii.35.2020.03.10.12.00.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 11:59:55 -0700 (PDT)
-Received: (nullmailer pid 904 invoked by uid 1000);
- Tue, 10 Mar 2020 18:59:54 -0000
-Date: Tue, 10 Mar 2020 13:59:54 -0500
+ Tue, 10 Mar 2020 12:00:55 -0700 (PDT)
+Received: (nullmailer pid 2887 invoked by uid 1000);
+ Tue, 10 Mar 2020 19:00:54 -0000
+Date: Tue, 10 Mar 2020 14:00:54 -0500
 From: Rob Herring <robh@kernel.org>
-To: Christian Hewitt <christianshewitt@gmail.com>
-Subject: Re: [PATCH 1/2] dt-bindings: arm: amlogic: add support for the Tanix
- TX5 Max
-Message-ID: <20200310185954.GA811@bogus>
-References: <1582991214-85209-1-git-send-email-christianshewitt@gmail.com>
- <1582991214-85209-2-git-send-email-christianshewitt@gmail.com>
+To: Martin Devera <devik@eaxlabs.cz>
+Subject: Re: [PATCH 2/2] dt-bindings: serial: Add st,swap to stm32-usart
+Message-ID: <20200310190054.GA2826@bogus>
+References: <20200229160507.31309-1-devik@eaxlabs.cz>
+ <20200229160507.31309-2-devik@eaxlabs.cz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582991214-85209-2-git-send-email-christianshewitt@gmail.com>
+In-Reply-To: <20200229160507.31309-2-devik@eaxlabs.cz>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_115956_922819_CD816154 
-X-CRM114-Status: UNSURE (   9.33  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200310_120057_209433_B7C17F46 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -78,8 +78,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,22 +94,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>,
- Christian Hewitt <christianshewitt@gmail.com>, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Martin Devera <devik@eaxlabs.cz>, open list <linux-kernel@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ "moderated list:ARM/STM32 ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 29 Feb 2020 19:46:53 +0400, Christian Hewitt wrote:
-> The Oranth (Tanix) TX5 Max is based on the Amlogic U200 reference
-> board with an S905X2 chip.
+On Sat, 29 Feb 2020 17:05:07 +0100, Martin Devera wrote:
+> Add new st,swap property to allow for RX & TX pin swapping.
 > 
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+> Signed-off-by: Martin Devera <devik@eaxlabs.cz>
 > ---
->  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
+>  Documentation/devicetree/bindings/serial/st,stm32-usart.txt | 1 +
 >  1 file changed, 1 insertion(+)
 > 
 
