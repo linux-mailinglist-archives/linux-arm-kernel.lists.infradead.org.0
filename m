@@ -2,88 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16AEE180758
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:48:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37600180759
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:49:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ywEO8cXZ3z3Pdu7OKtXpIpu86sUmIYcq1EhstaM5o7g=; b=JN/iB5FQ7w5ygj
-	BMQbtJ6AJBNqm9nIdFFgoC6a2dxRoS3ISEsKgvyqXhAD1dmlW9Abc4ww8Q2Qlj1wAI1zaWu/t41AV
-	Rgl4SefmHzJTvuh/iMpRnxmc5UcuADdEyi91ayaJ8bU2vQONmkwyNaaHe85xxjnEUhuzS/e+7abY2
-	1U69yK2tlVmSNwA/EE2D3kfPCdo5sph/Se+aUGTNYQtcKA0Q2aBrOrjDWLQpCQgiwNz+fM0nwgpYQ
-	pKOtiLFS1CGrK/Gl3BiDqy4cRGkIrRht+kTznfD3kF/IsfzEpYnJqurSSP8aM59pjooRdEU4Fc5gg
-	QBeviuZjldtGodwTnnAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XUwNEhULOA/qLsZdgNkVIPdB5FvZJIBIy0NHgQ2igWg=; b=B8WvMlna100QbP
+	R9QyDl/muDvRU8wxPzrMR6ogoVQeJv+b2uCdO04AYJFLLLc6l/04tukIWsDGSALHbHBeLS5gTtbgy
+	eSaCdh8XwV6sfAiXbf/OCaczzGqlNDUq5Hi0H/+mq/t7X+Tt0HoAgvh9xsKD3XdFZc7f10X8XBGK7
+	Uz4SUel/gSkUepfdLUom7KFie9eefkWlMT0PHaC7F0LD/j7Zba3DNvNmQqEEUJidal7a4oulrv4Yn
+	Xk7YZf8v8evlbcjaleflqcvOvQbiLcMcehWbcROYpofUJQ7EMEujbpRw9mvK3GEPgw9zvkf4vA/lf
+	84KIM79yjBm74XVVbPwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjvu-0007AJ-Pa; Tue, 10 Mar 2020 18:48:50 +0000
-Received: from mail-ot1-f53.google.com ([209.85.210.53])
+	id 1jBjwB-0007UL-UH; Tue, 10 Mar 2020 18:49:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjoQ-0007al-Kf
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:41:10 +0000
-Received: by mail-ot1-f53.google.com with SMTP id a9so8006590otl.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 11:41:06 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=PQABEcEk14Djn/LTjb5Ace2N+AY5AMQXCZutVyQXiUs=;
- b=Dhbna80zoFIm7/hpG97Xp4oTguniF3n8/gaNzEIHj14FV2zkxpoWDyIoqsKfYv0B7Q
- 9leCa11opSWlspDIYf3wFRnSxLT+ddQ12N2s56JPOvdKODpr5C07EiHIO+arpL7juhC3
- iSRWFNKTSJD8zp7rIgAwo5Wff3M/MmTrH65mQjaarMuBdyRHF/Esxa5o+GQMcwpxoOC/
- mAxGK0TnbeaTOwTnDnWhOQ7Ou9WcgRlSA/bjT7UsqHIueP9BoF6v6g5FDFA5RFL6PLQD
- 96aZkXJeEFu1drahcjlnaCZee/Qj1SfGB8u6QaqPtDXFCPA3KGipQDgpUpykVFWNTS/G
- JO+w==
-X-Gm-Message-State: ANhLgQ0xEc8ioD0wZFRJNYTVW5UCl/aSQlxY4adueR/t9fyc+9XWM6Km
- Nwbd7O2thSZjBSb7VLsmzg==
-X-Google-Smtp-Source: ADFU+vuCpy55+wQ03dvYMG8T9a9Ha2z5esUQgxNizO1+WBHUPrvJ7vapbxm/UI4ejAFS/eHYpZMrxg==
-X-Received: by 2002:a9d:67c7:: with SMTP id c7mr3275865otn.85.1583865665110;
- Tue, 10 Mar 2020 11:41:05 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s128sm4496355oia.4.2020.03.10.11.41.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Mar 2020 11:41:04 -0700 (PDT)
-Received: (nullmailer pid 2384 invoked by uid 1000);
- Tue, 10 Mar 2020 18:41:03 -0000
-Date: Tue, 10 Mar 2020 13:41:03 -0500
-From: Rob Herring <robh@kernel.org>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [RESEND v6  08/13] spi: imx: add new i.mx6ul compatible name in
- binding doc
-Message-ID: <20200310184103.GA2192@bogus>
-References: <1583839922-22699-1-git-send-email-yibin.gong@nxp.com>
- <1583839922-22699-9-git-send-email-yibin.gong@nxp.com>
+ id 1jBjuE-0005ld-FG
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:47:07 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9A9D920873;
+ Tue, 10 Mar 2020 18:47:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583866025;
+ bh=Z+esqeekOvcK2NlG82c5Na805Zd2SVU9aa9FMtHbcgI=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Dw5jTlja9XP7O1fqEFD4L6MkTZj+EU7cladxfLVf1k3Mr1RiCGHzVo3nhaFgaHf7U
+ wUAFvkpY4VEBekOd8lyR2m2h+fuu1upgLipXpZTTjDNd9ImS1InEsHxa7rgnLNXoRN
+ hhnTZMOUzweHmK8HjbFWXz67vuHr3w13DZ+eqleQ=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jBjuB-00Bi21-U7; Tue, 10 Mar 2020 18:47:04 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/4] irqchip: Random irq_retrigger fixes
+Date: Tue, 10 Mar 2020 18:46:53 +0000
+Message-Id: <20200310184653.23204-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1583839922-22699-9-git-send-email-yibin.gong@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, tglx@linutronix.de, jason@lakedaemon.net,
+ linux@arm.linux.org.uk, nicolas.ferre@microchip.com,
+ alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
+ yuzenghui@huawei.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_114106_740822_438E2F8D 
-X-CRM114-Status: GOOD (  10.38  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200310_114706_580165_D1297B65 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.53 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.53 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,34 +90,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, catalin.marinas@arm.com,
- kernel@pengutronix.de, festevam@gmail.com, s.hauer@pengutronix.de,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-spi@vger.kernel.org, vkoul@kernel.org, broonie@kernel.org,
- linux-imx@nxp.com, martin.fuzzey@flowbird.group,
- u.kleine-koenig@pengutronix.de, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Russell King <linux@arm.linux.org.uk>, Jason Cooper <jason@lakedaemon.net>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, Thomas Gleixner <tglx@linutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Mar 2020 19:31:57 +0800, Robin Gong wrote:
-> ERR009165 fixed from i.mx6ul, add its compatible name in binding doc.
-> 
-> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-> Acked-by: Mark Brown <broonie@kernel.org>
-> ---
->  Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+As I was investigating some ugly retrigger locking issues (see patch 4),
+I managed to find three occurences of irq_retrigger callbacks that return
+the wrong value, leading to a SW retrigger on top of the HW one.
 
-Please add Acked-by/Reviewed-by tags when posting new versions. However,
-there's no need to repost patches *only* to add the tags. The upstream
-maintainer will do that for acks received on the version they apply.
+Not really a big deal, but definitely worth fixing.
 
-If a tag was not added on purpose, please state why and what changed.
+Marc Zyngier (4):
+  irqchip/atmel-aic: Fix irq_retrigger callback return value
+  irqchip/atmel-aic5: Fix irq_retrigger callback return value
+  ARM: sa1111: Fix irq_retrigger callback return value
+  irqchip/gic-v4: Provide irq_retrigger to avoid circular locking
+    dependency
+
+ arch/arm/common/sa1111.c         | 7 +++++--
+ drivers/irqchip/irq-atmel-aic.c  | 2 +-
+ drivers/irqchip/irq-atmel-aic5.c | 2 +-
+ drivers/irqchip/irq-gic-v3-its.c | 6 ++++++
+ 4 files changed, 13 insertions(+), 4 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
