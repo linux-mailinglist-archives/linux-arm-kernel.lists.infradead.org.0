@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1432D18071D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:42:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB38C180724
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:42:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c4OIckfo5YdvkLe6j2OCb2Pd5mNQxO9s4Qeferwm3wo=; b=PWxBG0QnE0906N
-	1b8DrQBT7NBAAieUr3+ur+ddxnbLLXaIMtfje4fBzx/NsWk2D+5MQEOhM2Bt/cmr8X6Mzmuv5Q7O7
-	5fTG4DVmhfeUxbLSg9ms3YfCEIFc7O/ITxEg30OWVb1OknRtg00tegGc8PsDJYF/zi1I1c2p1ezo3
-	NW0RbLzCGjjxnF8GtJnsCvqR3tu89UWgm2CFil/HklTSBNjDxxHV4lUB1q2jCl4Ve84UjaICaGf8q
-	/XKQZAe2MxLzQi3kyXvzQ/si1rUszz42i3IUczy2o4OXViNEskZzelLSjg3xYuErwo6eLOkVE0+1Y
-	Pe4WpVZBgPjfdVtFNtZA==;
+	List-Owner; bh=NFZewqAj899sb4ocA2FidchT9Dk53y1o9JzN5N9Ktco=; b=Mv/RFZFYdgzWOR
+	Worv8zLet2ICIi6XzlD5np1OeNjLNsqNtsWnR5oRkz0iChR/mQmsoKHEjEpMhn4QeOkkXsB155//L
+	udbtCZB1WAGDYtfeTpelAjpUPygvUnGSmxJ2u869qBXET1i9BhM2jO20q60EGfR2vs4GCBtN8TX8I
+	qROc6xgQrowUk2edsL2q1dgWE831clecD65qlH+Gepfgmo7NUWKTj/y9jJeft++lxfRArbmjdOQH0
+	Q0PLA7Tdxq3duVMgNLS79QyqKq78CGKbBc2s3AR6WIIbj7fPVdNGjtKaRWl0KrjRKarQpN9PzD3NT
+	2iCOV+5VINFWdxdwToTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjpK-0008Bq-5u; Tue, 10 Mar 2020 18:42:02 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1jBjpu-0000G2-QO; Tue, 10 Mar 2020 18:42:38 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjgP-0005dO-L8; Tue, 10 Mar 2020 18:32:57 +0000
-X-Originating-IP: 91.224.148.103
+ id 1jBjgV-0005ia-3H; Tue, 10 Mar 2020 18:33:04 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id B308C240005;
- Tue, 10 Mar 2020 18:32:46 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 3867A200008;
+ Tue, 10 Mar 2020 18:32:52 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Janusz Krzysztofik <jmkrzyszt@gmail.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>
-Subject: Re: [RFC PATCH 08/14] mtd: rawnand: ams-delta: Make read pulses
- optional
-Date: Tue, 10 Mar 2020 19:32:45 +0100
-Message-Id: <20200310183246.19401-1-miquel.raynal@bootlin.com>
+Subject: Re: [RFC PATCH 07/14] mtd: rawnand: ams-delta: Don't hardcode
+ read/write pulse widths
+Date: Tue, 10 Mar 2020 19:32:51 +0100
+Message-Id: <20200310183251.19464-1-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200212003929.6682-9-jmkrzyszt@gmail.com>
+In-Reply-To: <20200212003929.6682-8-jmkrzyszt@gmail.com>
 References: 
 MIME-Version: 1.0
 X-linux-mtd-patch-notification: thanks
-X-linux-mtd-patch-commit: 586a746b326c35d2c0b2773dba61ffa1d4818711
+X-linux-mtd-patch-commit: ccada49b050f44df9499859f09b822b8aebc3a4d
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_113249_845980_3DD93A8F 
-X-CRM114-Status: UNSURE (   4.50  )
+X-CRM114-CacheID: sfid-20200310_113255_317239_E8C42AB6 
+X-CRM114-Status: UNSURE (   4.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -51,12 +50,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,11 +72,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-02-12 at 00:39:23 UTC, Janusz Krzysztofik wrote:
-> Allow platforms to omit NRE pin from device configuration by requesting
-> that pin as optional.  In that case, also don't apply read pulse width
-> from chip SDR timings.  There should be no need for further code
-> adjustments as gpiolib can handle NULL GPIO descriptor pointers.
+On Wed, 2020-02-12 at 00:39:22 UTC, Janusz Krzysztofik wrote:
+> Instead of forcing Amstrad Delta specific read/write pulse widths, use
+> variables initialised from respective fields of chip SDR timings.
 > 
 > Signed-off-by: Janusz Krzysztofik <jmkrzyszt@gmail.com>
 
