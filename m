@@ -2,51 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9B7B17F4BC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 11:14:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 556C217F4CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 11:15:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Qdw6RxtDYvPC+mVEWwG09/s/8O8a5O5pxBPjD7f2TZY=; b=CUjk69L5kKNME/po1uAF5Jlr0
-	C1q4/tdQufQTtDo+K+YPw/sJq0rCyga+fJlO4/Ubgv2FhyQILhfec7sNYvuEoP1xj8iMGzuJ+Uhos
-	TtaO05rmmIBFj9iojQPDSyxevN/Gs6li1r5tx7MIJGY6nzIG4x07zTTqB/80HSEYuwM86Ujxw661l
-	D/Gl+cW7WiwDYB76btjt7a7dgWTFlR3iRQ81hdWfPicpfVuw7QEdXxqazcDxW1BaU3BNA6f/UUksh
-	3nd6sOtxL6OK6Sf8r3/gRZ+bkm0Z/tdAxwSI5UQ+je+YKGPY797yJsDLogDbBnK6kfUhkCsEE20iK
-	WDHjM6/ZQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TQygyTvgri9JJHMZOB9ZBXRUvd4nP2PKVnMGEpFSxoM=; b=I4XX2MqsBKbuaw
+	h2Fd97F6l/qqTup4CcZrC4Al/wd5LY7grWyLuOqnQmeTwQyp/emaiZcohKiJE825A+77NRXj7pqMz
+	J8ozjeykZfO2aehf1+tJNomAoEzSAzOweFKQ/eXa6ddaSahc976K7j5UCHXSNN/5IjHGN3HjijQPj
+	E8YA/vRKc6VHuFb76Qckkn8+yFPvk0fEFe2vq/2REsagmROpyfOW8nfzFzD4RyS0h8UNfglfRW/pG
+	nbdQFY06Lv/VHVPNW3GNeVa8lt/VyWqEtUcQyuWgcecZPLWOEvmqOg0X0D46WUP0c6t3oOM53W/G4
+	FGwI8cEhariSy98mPLhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBbuS-0003v6-Ex; Tue, 10 Mar 2020 10:14:48 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBbsF-0002Lu-1L; Tue, 10 Mar 2020 10:12:33 +0000
-Received: from localhost (p54B33196.dip0.t-ipconnect.de [84.179.49.150])
- by pokefinder.org (Postfix) with ESMTPSA id 321342C1EB6;
- Tue, 10 Mar 2020 11:12:30 +0100 (CET)
-Date: Tue, 10 Mar 2020 11:12:29 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 03/89] i2c: brcmstb: Support BCM2711 HDMI BSC controllers
-Message-ID: <20200310101229.GM1987@ninjato>
-References: <cover.6c896ace9a5a7840e9cec008b553cbb004ca1f91.1582533919.git-series.maxime@cerno.tech>
- <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
+	id 1jBbur-0004Ep-9X; Tue, 10 Mar 2020 10:15:13 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBbtm-0003ga-L1
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 10:14:13 +0000
+Received: by mail-lf1-x142.google.com with SMTP id i19so4426188lfl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 03:14:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=H41EK6fFWsu7lc3SctFKC6jvmteBRlGuxbpCpld6vno=;
+ b=g8ZD6JIS5Nbi5VQkoVKI9M/R0asumknvg+5tJnMpLTrwLqopBa459G+Q/XQzcwPv1A
+ dnFXMhqtT5oJqRaM0Kwk034c0qEj7/G4f0UyF3vC+FunNgutepJnWbUIIsGWNMpGPrij
+ jCA2K6vv24K2GdNo8Kj6muOUhaj5wLjo7+xZTE36a18WvipB2aBXdQTWg0csU9DCnIdr
+ zMRrnaF4sdNWdxAyrCOzLDh60CE54BVAevIoJBTwsg102Mg3I3iWoDVg8tiNJ8LskBgt
+ 3Uik+QIPptsu2Tb68aLInTso3Nwoo+3e8nPPA+WZWFbBl4GCkwQ4O6CZhst/1TtrprRx
+ aaXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=H41EK6fFWsu7lc3SctFKC6jvmteBRlGuxbpCpld6vno=;
+ b=ScTbc63/px2DbwWyzh6E2REVxSjibBtUG0MvIPDYpJxHOcMpkiU/tg+BCxeeEl6D3u
+ 9nsv2ENgEkDy0HY3OIqNBUIQg2khE/uslhqIIAlQk5bGBX0nr6jRD28szToU2MtEbF9a
+ KiSzSZe24uNlM5yBJSzYvjR42arbL+7HfrJ2fKGvBll4tCpk4K6Ini/z7l1REH7URLgZ
+ Fy0zFvw7caZm7hXRkZetK3b5nLMNz/laL1kvxs7f/IEervin97vJcfoqAh7nD26mQ8+u
+ 1Dl4FlFZnIDGt5SoKvsAcfcJp7MejOSfARhodiDXv+2bcVQM0m3lHNr6F96cU95QhFw9
+ O6vA==
+X-Gm-Message-State: ANhLgQ2ZIvfz7r8bb/CwYuL4B8SFDdgoHmjazmQulbK6jmMMnGjs9AKm
+ 8XaV4CXHPVFhewutqjYIfBoO6xeDgW0XM5682HWQc+fCxE8=
+X-Google-Smtp-Source: ADFU+vsQgLEAeKs3QBpJxub3atlz11c+n+Pl9FnwgZlDHA1wgeUPgTtZl/KRIlugnXJikY9VrxzECcYh0hftZrqU0oQ=
+X-Received: by 2002:a19:f615:: with SMTP id x21mr325697lfe.47.1583835244537;
+ Tue, 10 Mar 2020 03:14:04 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1ed75ec6dc9310afd768c0bbfd8e73268e8cdfa9.1582533919.git-series.maxime@cerno.tech>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200305103228.9686-1-zhang.lyra@gmail.com>
+ <CAMuHMdVyy3v24zBxJFe5hYdnzdj80dvE2Z9GO4=AC1N8fD64pw@mail.gmail.com>
+ <CAAfSe-spu2oNmfEYt+WQvRQy1bCC0e1MFjbUyBAFzghd5XNBfw@mail.gmail.com>
+ <CAMuHMdV1qQZF-kAwbcxhHQZZ9hs0dG-OTZ2NcB25Jtra6ii5iA@mail.gmail.com>
+ <CA+H2tpEzFAbfzMuUGMfW3BqCKv2+kk+cLL5gWpR-zJZFYwWKqw@mail.gmail.com>
+ <CAMuHMdUKD5Ob_o4E3bH9wx=6r2PU+7U3RQ_GVRj7ZQc-e5Y4TA@mail.gmail.com>
+In-Reply-To: <CAMuHMdUKD5Ob_o4E3bH9wx=6r2PU+7U3RQ_GVRj7ZQc-e5Y4TA@mail.gmail.com>
+From: Orson Zhai <orsonzhai@gmail.com>
+Date: Tue, 10 Mar 2020 18:13:51 +0800
+Message-ID: <CA+H2tpFaEp0Wbna=Z-A0bnno5hymVrSDE-397-Jdp6Uqsm0+qQ@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: change ARCH_SPRD Kconfig to tristate
+To: Geert Uytterhoeven <geert@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_031231_410319_18466218 
-X-CRM114-Status: GOOD (  12.75  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200310_031406_713006_0F149345 
+X-CRM114-Status: GOOD (  23.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [orsonzhai[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,107 +97,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Kamal Dasu <kdasu.kdev@gmail.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-i2c@vger.kernel.org,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8789109997464328513=="
+Cc: Android Kernel Team <kernel-team@android.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Chunyan Zhang <zhang.lyra@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Baolin Wang <baolin.wang7@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Mar 10, 2020 at 5:52 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+>
+> Hi Orson,
+>
+> On Tue, Mar 10, 2020 at 10:41 AM Orson Zhai <orsonzhai@gmail.com> wrote:
+> > On Mon, Mar 9, 2020 at 6:32 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > On Mon, Mar 9, 2020 at 9:32 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > > > On Mon, 9 Mar 2020 at 16:03, Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+> > > > > On Thu, Mar 5, 2020 at 11:33 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
+> > > > > > From: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> > > > > >
+> > > > > > The default value of Kconfig for almost all sprd drivers are the same with
+> > > > > > ARCH_SPRD, making these drivers built as modules as default would be easier
+> > > > > > if we can set ARCH_SPRD as 'm', so this patch change ARCH_SPRD to tristate.
+> > > > > >
+> > > > > > Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
+> > > > >
+> > > > > Can you actually boot a kernel on a Spreadtrum platform when all platform
+> > > > > and driver support is modular?
+> > > >
+> > > > Yes, even if all drivers are modular.
+> > >
+> > > Cool. No hard dependencies on e.g. regulators that are turned off when
+> > > unused?
+> > >
+> > > > But I hope serial can be builtin, then I can have a console to see
+> > > > kernel output before loading modules.
+> > >
+> > > No dependency on the clock driver?
+> > > Oh, I see you have a hack in the serial driver, to assume default
+> > > values when the serial port's parent clock is not found.  That may
+> > > limit use of the other serial ports, depending on the actual serial
+> > > hardware.
+> >
+> > There is an function named "sprd_uart_is_console()" in the driver
+> > code. So the hack could be only applied when the
+> > port is identified as console. And other ports might return
+> > PROBE_DEFER until the clock is ready.
+> >
+> > Could it work out of the limitation?
+>
+> Yes, that could work.  You also have only a single SPRD_DEFAULT_SOURCE_CLK,
+> which makes it simple to handle.
+> For other SoCs, there may be a variation of possible values, depending on
+> SoC and/or board.
 
---===============8789109997464328513==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="bPrm2PuLP7ysUh6c"
-Content-Disposition: inline
+Ok, thanks.
 
+-Orson
 
---bPrm2PuLP7ysUh6c
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, Feb 24, 2020 at 10:06:05AM +0100, Maxime Ripard wrote:
-> The HDMI blocks in the BCM2771 have an i2c controller to retrieve the
-> EDID. This block is split into two parts, the BSC and the AUTO_I2C,
-> lying in two separate register areas.
->=20
-> The AUTO_I2C block has a mailbox-like interface and will take away the
-> BSC control from the CPU if enabled. However, the BSC is the actually
-> the same controller than the one supported by the brcmstb driver, and
-> the AUTO_I2C doesn't really bring any immediate benefit.
->=20
-> Let's use the BSC then, but let's also tie the AUTO_I2C registers with a
-> separate compatible so that we can enable AUTO_I2C if needed in the
-> future.
->=20
-> The AUTO_I2C is enabled by default at boot though, so we first need to
-> release the BSC from the AUTO_I2C control.
->=20
-> Cc: Kamal Dasu <kdasu.kdev@gmail.com>
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Wolfram Sang <wsa@the-dreams.de>
-> Cc: bcm-kernel-feedback-list@broadcom.com
-> Cc: linux-i2c@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-
-Fixed the acked-by and applied to for-next, thanks!
-
-FYI, cppcheck rightfully warned about this in the driver:
-
-drivers/i2c/busses/i2c-brcmstb.c:319:7: warning: Condition 'CMD_RD' is alwa=
-ys true [knownConditionTrueFalse]
- if ((CMD_RD || CMD_WR) &&
-      ^
-drivers/i2c/busses/i2c-brcmstb.c:319:17: warning: Condition 'CMD_WR' is alw=
-ays false [knownConditionTrueFalse]
- if ((CMD_RD || CMD_WR) &&
-                ^
-drivers/i2c/busses/i2c-brcmstb.c:464:0: warning: Variable 'len' is assigned=
- a value that is never used. [unreadVariable]
- int len =3D 0;
-
-Not related to this patch, but maybe one of you is interested...
-
-
---bPrm2PuLP7ysUh6c
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl5naAkACgkQFA3kzBSg
-Kba2JQ/9HdPkWxyj7kgAVp3iCcUbIkAtwDpmrhGYLSr9AUHb+mlfe6sB92mog9+X
-P3ETy/m7Gs6cwIBqlhmQuR4E0S89dDTnC1zFk+sAyQvOp1deyoTW+P3xteUyiR9W
-9Y72Z2nhdTS1LouythkJled4kCfJ1PF3lst9/o1umYF5Q68akoWIGRq20MMBz80K
-eEXbI5+ZfvbIfzsuD220A3v3IH+KNI9rGx8Yj7ze+B/iwmTVQd7NnEkRQdD2eAxW
-yfQK9TTn+fhJWUOEJ5PvYmkYd2zfEjQQdOIdqi93nqE4w9dZ43P1YcrlPQBGqv0c
-TRXyls9o1HK2iw7ISd0tZgQBAytHuaxzST+RFHjCI8tvhU48AzplJLcc1BcXixI8
-9tAcRvbud+1WeOLk43q6jA+mIuV19/E88iJt2oqGMoUWOxnalSgg9vvkYS5MumZY
-XenAGha5oYmvszOd9tU/cDkktv+RdMNVzpOBa2gG8uiOyaEZfGLp1vaCBra7TJLw
-BZg8EzpWi6iea304u43d8P9NLfuIlNmZFTcZ7sO7UPpy9fuwaeHXRPwmIj8DmGrW
-o/TNxAnkSIOhRE/f/JnhOHHJ+BM9kuSydjAr0NHi0nnBUNTQw5J9YsPWGUSUEKHP
-IatOEa4v1/N5hUB+jP9YLWGUiBYU3bpuHEF70XNtg6jQVYyCj6c=
-=Dx35
------END PGP SIGNATURE-----
-
---bPrm2PuLP7ysUh6c--
-
-
---===============8789109997464328513==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>
+> Gr{oetje,eeting}s,
+>
+>                         Geert
+>
+> --
+> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+>
+> In personal conversations with technical people, I call myself a hacker. But
+> when I'm talking to journalists I just say "programmer" or something like that.
+>                                 -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8789109997464328513==--
-
