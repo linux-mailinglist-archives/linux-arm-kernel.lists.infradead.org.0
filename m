@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CA0B1805CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:07:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEB2E1805D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:08:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=045CqqdTw+r4FBg3boE57sHN0PSNAzQb8+4TIw1Tn4Y=; b=lYh193DJXYG4Kel1Uz3qJvKeE
-	blfz4CWhzD0owy+Zu0NBC/4vhe7EO1/qBHDVZEtH6++hacb1s5S6lDaapfZ1zfctPj8lupCf+ZyM4
-	bwsSHJtFwDWWoTBzlx0wKcXtXwMT0oOQjrE1j52sHuZMiWIooVqQDx+Zc4B7bAuy/mkub2zF2zziI
-	qn5EY19iwAPEBrMeakODKLfrvjPzA3xjKOkZ0y4Cy3D3H9D9dpJKzt29rz00RoF1ws2uBBopzTT03
-	sieZZrxBsWSEz79i5ef+5lXNgWgiGGn0oHzIbQvl0hfh4CH06R5NfaMCt40VjQkzn0C2CzhKL5lXe
-	o+Wcd7iOg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=grA7dxItJtA06xzHDO0nFffRJjAhVa21hIahjpK9cEQ=; b=OFO
+	GwociGs8vdZmB7DJcCDnWJjwa2F6Fhw8xgDCcOtE+NkuZHmkPhvJ7oQb7Tq3nzs2Wkw0S2T/npgvJ
+	He22tFLB+bHDIGexboh1lANrxXY+SSIhGYSuzU8LzxAVmFIUV8Qu/I76Nfb1KR3Yc+3YG8fj2t/+e
+	bUb3SWqK3puwksrXXUc4STrJP9m8eEMrY0ReR3xVM+TjNW/DtrEtZXUT1/b5FQHx8t2tDF6s1+WDo
+	qyIcwCrLWwbfbxHIl3vbDjvV/yIVAbw6p9o7y9+gLhg7uO1BOxBKg+FTq96V5ByMhNLiNQLbB4OP7
+	kpDgaowQjG0osf+/S97426JXIv+GtZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjHj-0008E7-10; Tue, 10 Mar 2020 18:07:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jBjJ4-0000Lg-PT; Tue, 10 Mar 2020 18:08:42 +0000
+Received: from mail-qk1-x72b.google.com ([2607:f8b0:4864:20::72b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjHa-0008Dc-H4
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:07:11 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 110802146E;
- Tue, 10 Mar 2020 18:07:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583863630;
- bh=rHYS2dfliP5kBBFI8WXzNz2+NnXttJ2pOTUrYGHzrPs=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=NvQi3eK//4yMrQUAifYnYu1PWXL+qiDJEyW/u+fxmWzYSscjcFAkzncBvknsJMDgu
- yJVMiSJom2dyM3axRabWI01RADaSXS3ohbIc7WSgmuyu7pFmH/xcwQop4RRQTv5EiD
- wIkQwTkihaIqbjVQ6J4yoIjMS4YMwZfM+Ge2tS48=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jBjHY-00Bh7w-9n; Tue, 10 Mar 2020 18:07:08 +0000
-MIME-Version: 1.0
-Date: Tue, 10 Mar 2020 18:07:08 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Auger Eric <eric.auger@redhat.com>
-Subject: Re: [PATCH v2 2/2] KVM: arm64: Document PMU filtering API
-In-Reply-To: <867c7926-df43-7ab0-d20a-211a59d7612d@redhat.com>
-References: <20200309124837.19908-1-maz@kernel.org>
- <20200309124837.19908-3-maz@kernel.org>
- <7943c896-013b-d9cb-ba89-2040b46437fe@redhat.com>
- <07f4ef9b5ff6c6c5086c9723c64c035f@kernel.org>
- <867c7926-df43-7ab0-d20a-211a59d7612d@redhat.com>
-Message-ID: <79f80ab568138e1287d0a515e0caa98c@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: eric.auger@redhat.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com, robin.murphy@arm.com,
- mark.rutland@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+ id 1jBjIv-0000L8-HN
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:08:34 +0000
+Received: by mail-qk1-x72b.google.com with SMTP id c145so7848764qke.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 11:08:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=94RPXFu+kyZVOWDCvspW3Fmhnjp4ZietGZ5aahydPE8=;
+ b=S5iO+KwKb+u3LXB5lH6LhqY9kI9I1Yd6VR4VZItObFmCs0WSRp+R1Qz5frNX1GELQq
+ pKEIudl+kKvLc0FpwDAk2h4VhIWK6IocKgVQCOLGwwoWL6Lzd73CK4oOnoosJ9NBSS27
+ XA/c5M0vlsRigkwgdntcdyzzFfBU8c7b5RloHuttpelv29u0QkOpJ+1/dlmcxX3WmX1D
+ gV+m6Wojf1YmZ9yoXl123RlGmWJPGYqJuB5CZv1j2HA4l11exDlXFVw/ArEZhAYdfThO
+ F5ciK6ByPyIIshEES1XobUb5LRRQfbVBZy6VkSUskeqfZFFLT3v2NsSpt6cM41t6l/jA
+ 39oA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=94RPXFu+kyZVOWDCvspW3Fmhnjp4ZietGZ5aahydPE8=;
+ b=gvor4CnN6kLUltYlrg7rkPRc6dtQ9MKXVf212oLaOzPtvnd8tttAr/oJRD0gPa/74E
+ x8sz+ZLmzeNNe76UOK9iuLCZNHYujZavM14FPYjAJNwJFQaoLJ5N36a1uVJ1GsOrwyJH
+ GHTix2s3ecnLW1sdpajh/EyJne+NKMXr404fmLp7CaIu6Lop5zDPiL31qjuUj/OMGJl1
+ ip0EYowGADihulDIqj3ImH/QT9J3wLGu8AHJ2i0Adi6iCxt7Z8J9fsh9py+fEwcfBO2z
+ U2ZKjsjqZa0DwA5SP6/jxzt+cAFee2SpIsaYCzGBhCZ7oHL1Ly+LicTAFmG4R6+/9OzZ
+ zdyQ==
+X-Gm-Message-State: ANhLgQ2XLf31NM/VU5nlQB+ZPD+e9VbXJFt/CSr0JV8c9Zd3PWRzlvHq
+ xMsdidn40VRjZAh9zf/0xW8=
+X-Google-Smtp-Source: ADFU+vuvMUFYZTh0oG/mqeDkOzC1qsCLTwew52z3bdtwj/C3P7Sn3+PFBUmBhHxIXh2AOd28bhC3AQ==
+X-Received: by 2002:a37:9b51:: with SMTP id d78mr21434818qke.65.1583863712215; 
+ Tue, 10 Mar 2020 11:08:32 -0700 (PDT)
+Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
+ by smtp.gmail.com with ESMTPSA id 127sm17848821qkj.97.2020.03.10.11.08.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Mar 2020 11:08:31 -0700 (PDT)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH v2 1/5] dt-bindings: arm: fsl: Add TechNexion boards
+Date: Tue, 10 Mar 2020 15:08:21 -0300
+Message-Id: <20200310180825.10111-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_110710_610641_C50005A6 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200310_110833_600521_8762FF94 
+X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:72b listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,82 +94,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ otavio.salvador@ossystems.com.br, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wMy0xMCAxNzozMCwgQXVnZXIgRXJpYyB3cm90ZToKPiBIaSBNYXJjLAo+IAo+IE9u
-IDMvMTAvMjAgMTI6NTQgUE0sIE1hcmMgWnluZ2llciB3cm90ZToKPj4gT24gMjAyMC0wMy0wOSAx
-ODoxNywgQXVnZXIgRXJpYyB3cm90ZToKPj4+IEhpIE1hcmMsCj4+PiAKPj4+IE9uIDMvOS8yMCAx
-OjQ4IFBNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+Pj4gQWRkIGEgc21hbGwgYmx1cmIgZGVzY3Jp
-YmluZyBob3cgdGhlIGV2ZW50IGZpbHRlcmluZyBBUEkgZ2V0cyB1c2VkLgo+Pj4+IAo+Pj4+IFNp
-Z25lZC1vZmYtYnk6IE1hcmMgWnluZ2llciA8bWF6QGtlcm5lbC5vcmc+Cj4+Pj4gLS0tCj4+Pj4g
-wqBEb2N1bWVudGF0aW9uL3ZpcnQva3ZtL2RldmljZXMvdmNwdS5yc3QgfCA0MCAKPj4+PiArKysr
-KysrKysrKysrKysrKysrKysrKysrCj4+Pj4gwqAxIGZpbGUgY2hhbmdlZCwgNDAgaW5zZXJ0aW9u
-cygrKQo+Pj4+IAo+Pj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL3ZpcnQva3ZtL2Rldmlj
-ZXMvdmNwdS5yc3QKPj4+PiBiL0RvY3VtZW50YXRpb24vdmlydC9rdm0vZGV2aWNlcy92Y3B1LnJz
-dAo+Pj4+IGluZGV4IDk5NjNlNjgwNzcwYS4uNzI2MmMwNDY5ODU2IDEwMDY0NAo+Pj4+IC0tLSBh
-L0RvY3VtZW50YXRpb24vdmlydC9rdm0vZGV2aWNlcy92Y3B1LnJzdAo+Pj4+ICsrKyBiL0RvY3Vt
-ZW50YXRpb24vdmlydC9rdm0vZGV2aWNlcy92Y3B1LnJzdAo+Pj4+IEBAIC01NSw2ICs1NSw0NiBA
-QCBSZXF1ZXN0IHRoZSBpbml0aWFsaXphdGlvbiBvZiB0aGUgUE1VdjMuwqAgSWYgCj4+Pj4gdXNp
-bmcKPj4+PiB0aGUgUE1VdjMgd2l0aCBhbiBpbi1rZXJuZWwKPj4+PiDCoHZpcnR1YWwgR0lDIGlt
-cGxlbWVudGF0aW9uLCB0aGlzIG11c3QgYmUgZG9uZSBhZnRlciBpbml0aWFsaXppbmcgCj4+Pj4g
-dGhlCj4+Pj4gaW4ta2VybmVsCj4+Pj4gwqBpcnFjaGlwLgo+Pj4+IAo+Pj4+ICsxLjMgQVRUUklC
-VVRFOiBLVk1fQVJNX1ZDUFVfUE1VX1YzX0ZJTFRFUgo+Pj4+ICstLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0KPj4+PiArCj4+Pj4gKzpQYXJhbWV0ZXJzOiBpbiBrdm1fZGV2
-aWNlX2F0dHIuYWRkciB0aGUgYWRkcmVzcyBmb3IgYSBQTVUgZXZlbnQKPj4+PiBmaWx0ZXIgaXMg
-YQo+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcG9pbnRlciB0byBhIHN0cnVjdCBrdm1f
-cG11X2V2ZW50X2ZpbHRlcgo+Pj4+ICsKPj4+PiArOlJldHVybnM6Cj4+Pj4gKwo+Pj4+ICvCoMKg
-wqDCoCA9PT09PT09wqAgCj4+Pj4gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09Cj4+Pj4gK8KgwqDCoMKgIC1FTk9ERVY6IFBNVXYzIG5vdCBzdXBw
-b3J0ZWQgb3IgR0lDIG5vdCBpbml0aWFsaXplZAo+Pj4+ICvCoMKgwqDCoCAtRU5YSU86wqAgUE1V
-djMgbm90IHByb3Blcmx5IGNvbmZpZ3VyZWQgb3IgaW4ta2VybmVsIGlycWNoaXAgCj4+Pj4gbm90
-Cj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgIGNvbmZpZ3VyZWQgYXMgcmVxdWlyZWQgcHJpb3Ig
-dG8gY2FsbGluZyB0aGlzIGF0dHJpYnV0ZQo+Pj4+ICvCoMKgwqDCoCAtRUJVU1k6wqAgUE1VdjMg
-YWxyZWFkeSBpbml0aWFsaXplZAo+Pj4gbWF5YmUgZG9jdW1lbnQgLUVJTlZBTD8KPj4gCj4+IFl1
-cCwgZGVmaW5pdGVseS4KPj4gCj4+Pj4gK8KgwqDCoMKgID09PT09PT3CoCAKPj4+PiA9PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KPj4+PiArCj4+
-Pj4gK1JlcXVlc3QgdGhlIGluc3RhbGxhdGlvbiBvZiBhIFBNVSBldmVudCBmaWx0ZXIgZGVzY3Jp
-YmUgYXMgZm9sbG93czoKPj4+IHMvZGVzY3JpYmUvZGVzY3JpYmVkCj4+Pj4gKwo+Pj4+ICtzdHJ1
-Y3Qga3ZtX3BtdV9ldmVudF9maWx0ZXIgewo+Pj4+ICvCoMKgwqAgX191MTbCoMKgwqAgYmFzZV9l
-dmVudDsKPj4+PiArwqDCoMKgIF9fdTE2wqDCoMKgIG5ldmVudHM7Cj4+Pj4gKwo+Pj4+ICsjZGVm
-aW5lIEtWTV9QTVVfRVZFTlRfQUxMT1fCoMKgwqAgMAo+Pj4+ICsjZGVmaW5lIEtWTV9QTVVfRVZF
-TlRfREVOWcKgwqDCoCAxCj4+Pj4gKwo+Pj4+ICvCoMKgwqAgX191OMKgwqDCoCBhY3Rpb247Cj4+
-Pj4gK8KgwqDCoCBfX3U4wqDCoMKgIHBhZFszXTsKPj4+PiArfTsKPj4+PiArCj4+Pj4gK0EgZmls
-dGVyIHJhbmdlIGlzIGRlZmluZWQgYXMgdGhlIHJhbmdlIFtAYmFzZV9ldmVudCwgQGJhc2VfZXZl
-bnQgKwo+Pj4+IEBuZXZlbnRzWywKPj4+PiArdG9nZXRoZXIgd2l0aCBhbiBAYWN0aW9uIChLVk1f
-UE1VX0VWRU5UX0FMTE9XIG9yCj4+Pj4gS1ZNX1BNVV9FVkVOVF9ERU5ZKS4gVGhlCj4+Pj4gK2Zp
-cnN0IHJlZ2lzdGVyZWQgcmFuZ2UgZGVmaW5lcyB0aGUgZ2xvYmFsIHBvbGljeSAoZ2xvYmFsIEFM
-TE9XIGlmCj4+Pj4gdGhlIGZpcnN0Cj4+Pj4gK0BhY3Rpb24gaXMgREVOWSwgZ2xvYmFsIERFTlkg
-aWYgdGhlIGZpcnN0IEBhY3Rpb24gaXMgQUxMT1cpLgo+Pj4+IE11bHRpcGxlIHJhbmdlcwo+Pj4+
-ICtjYW4gYmUgcHJvZ3JhbW1lZCwgYW5kIG11c3QgZml0IHdpdGhpbiB0aGUgMTZiaXQgc3BhY2Ug
-ZGVmaW5lZCBieQo+Pj4+IHRoZSBBUk12OC4xCj4+Pj4gK1BNVSBhcmNoaXRlY3R1cmUuCj4+PiB3
-aGF0IGFib3V0IGJlZm9yZSA4LjEgd2hlcmUgdGhlIHJhbmdlIHdhcyAxMCBiaXRzPyBTaG91bGQg
-aXQgYmUgCj4+PiB0ZXN0ZWQKPj4+IGluIHRoZSBjb2RlPwo+PiAKPj4gSXQncyBhIGdvb2QgcG9p
-bnQuIFdlIGNvdWxkIHRlc3QgdGhhdCB1cG9uIGluc3RhbGxpbmcgdGhlIGZpbHRlciBhbmQgCj4+
-IGxpbWl0Cj4+IHRoZSBiaXRtYXAgYWxsb2NhdGlvbiB0byB0aGUgbWluaW11bS4KPj4gCj4+PiBu
-aXRwaWNraW5nOiBJdCBpcyBub3QgdG90YWxseSBvYnZpb3VzIHdoYXQgZG9lcyBoYXBwZW4gaWYg
-dGhlIHVzZXIgCj4+PiBzcGFjZQo+Pj4gc2V0cyBhIGRlbnkgZmlsdGVyIG9uIGEgcmFuZ2UgYW5k
-IHRoZW4gYW4gYWxsb3cgZmlsdGVyIG9uIHRoZSBzYW1lCj4+PiByYW5nZS4gaXQgaXMgc3VwcG9y
-dGVkIGJ1dCBtYXkgYmUgd29ydGggdGVsbGluZyBzbz8gQWxzbyBleHBsYWluIHRoZSAKPj4+IHRo
-ZQo+Pj4gZGVmYXVsdCBmaWx0ZXJpbmcgcmVtYWlucyAiYWxsb3ciIGJ5IGRlZmF1bHQ/Cj4+IAo+
-PiBPdmVybGFwcGluZyBmaWx0ZXJzIGFyZSBlYXN5OiB0aGUgbGFzdCBvbmUgd2lucy4gQW5kIHll
-cywgbm8gZmlsdGVyIAo+PiBtZWFucwo+PiBqdXN0IHRoYXQ6IG5vIGZpbHRlci4KPiBBY3R1YWxs
-eSB0aGUgcG9pbnQgSSB3YW50ZWQgdG8gcHV0IGZvcndhcmQgaXMKPiAxKSBzZXQgYWxsb3cgZmls
-dGVyIG9uIHJhbmdlIFswLWFdIC0+IGRlZmF1bHQgc2V0dGluZyBpcyBkZW55IGFuZCBhbGxvdwo+
-IFswLWFdIG9ubHkKPiAyKSBkZW55IGRlbnkgZmlsdGVyIG9uIHJhbmcgWzAtYV0gLT4gdGhlcmUg
-aXMgbm8gInJlYWwiIGFjdGl2ZSAKPiBmaWx0ZXJpbmcKPiBhbnltb3JlIGJ1dCBkZWZhdWx0IGJl
-aGF2aW9yIHN0aWxsIGlzIGRlbnkuIGllLiB5b3UgZG8gbm90IGRlc3Ryb3kgdGhlCj4gYml0bWFw
-IG9uIHRoZSBsYXN0IGZpbHRlciByZW1vdmFsIGJ1dCBvbiB0aGUgVk0gcmVtb3ZhbC4KCkFoLCBn
-b3RjaGEuIFllcywgdGhpcyBpcyBvZGQuIFRoZSBzb2x1dGlvbiB0byB0aGlzIGlzIHRvIHJlLWFw
-cGx5IGEgCmRlZmF1bHQKYmVoYXZpb3VyLiBCdXQgdGhpcyBuZWVkcyBkb2N1bWVudGluZy4uLgoK
-VGhhbmtzLAoKICAgICAgICBNLgotLSAKSmF6eiBpcyBub3QgZGVhZC4gSXQganVzdCBzbWVsbHMg
-ZnVubnkuLi4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+Add entries for the TechNexion boards.
+
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+Changes since v1:
+- Put all TechNexion entries on the same patch
+
+ Documentation/devicetree/bindings/arm/fsl.yaml | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+index 06715a6be23e..cd3fbe7e3948 100644
+--- a/Documentation/devicetree/bindings/arm/fsl.yaml
++++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+@@ -119,6 +119,10 @@ properties:
+               - fsl,imx6q-sabreauto
+               - fsl,imx6q-sabrelite
+               - fsl,imx6q-sabresd
++              - technexion,imx6q-pico-dwarf   # TechNexion i.MX6Q Pico-Dwarf
++              - technexion,imx6q-pico-hobbit  # TechNexion i.MX6Q Pico-Hobbit
++              - technexion,imx6q-pico-nymph   # TechNexion i.MX6Q Pico-Nymph
++              - technexion,imx6q-pico-pi      # TechNexion i.MX6Q Pico-Pi
+               - technologic,imx6q-ts4900
+               - technologic,imx6q-ts7970
+               - toradex,apalis_imx6q            # Apalis iMX6 Module
+@@ -166,6 +170,10 @@ properties:
+               - emtrion,emcon-mx6-avari   # emCON-MX6S or emCON-MX6DL SoM on Avari Base
+               - fsl,imx6dl-sabreauto      # i.MX6 DualLite/Solo SABRE Automotive Board
+               - fsl,imx6dl-sabresd        # i.MX6 DualLite SABRE Smart Device Board
++              - technexion,imx6dl-pico-dwarf   # TechNexion i.MX6DL Pico-Dwarf
++              - technexion,imx6dl-pico-hobbit  # TechNexion i.MX6DL Pico-Hobbit
++              - technexion,imx6dl-pico-nymph   # TechNexion i.MX6DL Pico-Nymph
++              - technexion,imx6dl-pico-pi      # TechNexion i.MX6DL Pico-Pi
+               - technologic,imx6dl-ts4900
+               - technologic,imx6dl-ts7970
+               - toradex,colibri_imx6dl          # Colibri iMX6 Module
+@@ -225,6 +233,9 @@ properties:
+               - fsl,imx6ul-14x14-evk      # i.MX6 UltraLite 14x14 EVK Board
+               - kontron,imx6ul-n6310-som  # Kontron N6310 SOM
+               - kontron,imx6ul-n6311-som  # Kontron N6311 SOM
++              - technexion,imx6ul-pico-dwarf   # TechNexion i.MX6UL Pico-Dwarf
++              - technexion,imx6ul-pico-hobbit  # TechNexion i.MX6UL Pico-Hobbit
++              - technexion,imx6ul-pico-pi      # TechNexion i.MX6UL Pico-Pi
+           - const: fsl,imx6ul
+ 
+       - description: Kontron N6310 S Board
+@@ -285,6 +296,10 @@ properties:
+               - fsl,imx7d-sdb             # i.MX7 SabreSD Board
+               - fsl,imx7d-sdb-reva        # i.MX7 SabreSD Rev-A Board
+               - novtech,imx7d-meerkat96   # i.MX7 Meerkat96 Board
++              - technexion,imx7d-pico-dwarf   # TechNexion i.MX7D Pico-Dwarf
++              - technexion,imx7d-pico-hobbit  # TechNexion i.MX7D Pico-Hobbit
++              - technexion,imx7d-pico-nymph   # TechNexion i.MX7D Pico-Nymph
++              - technexion,imx7d-pico-pi      # TechNexion i.MX7D Pico-Pi
+               - toradex,colibri-imx7d                   # Colibri iMX7 Dual Module
+               - toradex,colibri-imx7d-aster             # Colibri iMX7 Dual Module on Aster Carrier Board
+               - toradex,colibri-imx7d-emmc              # Colibri iMX7 Dual 1GB (eMMC) Module
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
