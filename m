@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37600180759
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:49:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2E74180765
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:50:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XUwNEhULOA/qLsZdgNkVIPdB5FvZJIBIy0NHgQ2igWg=; b=B8WvMlna100QbP
-	R9QyDl/muDvRU8wxPzrMR6ogoVQeJv+b2uCdO04AYJFLLLc6l/04tukIWsDGSALHbHBeLS5gTtbgy
-	eSaCdh8XwV6sfAiXbf/OCaczzGqlNDUq5Hi0H/+mq/t7X+Tt0HoAgvh9xsKD3XdFZc7f10X8XBGK7
-	Uz4SUel/gSkUepfdLUom7KFie9eefkWlMT0PHaC7F0LD/j7Zba3DNvNmQqEEUJidal7a4oulrv4Yn
-	Xk7YZf8v8evlbcjaleflqcvOvQbiLcMcehWbcROYpofUJQ7EMEujbpRw9mvK3GEPgw9zvkf4vA/lf
-	84KIM79yjBm74XVVbPwQ==;
+	List-Owner; bh=XUwNEhULOA/qLsZdgNkVIPdB5FvZJIBIy0NHgQ2igWg=; b=LtpM2HQh/bRdqm
+	K+EvG0gavOQIHdxq0ItoPB22CoeXOUt0XpDreigbxtw8jPYpS4z0QMb2PjVAeTbxRvMAOEa4kZogP
+	8RCCiI67k4Bq/4Duz/0gtQQCFYJdJByUr58o3fohFd22pCMLGnAeFo1nKxtRBi2GIqlEnCkUlGkUR
+	q+rn+ot2OhhGxTLaKkwQ9nB+Sp+A9LOzBeSaVbrrjZY1/zT3uuQQUw6CkEquHmPsu6Q8saQt3wiJW
+	eUaBDTDFEdInCDcjP3wuMdAFVBkIPjmwsyZ1dg116ATOboD/2UppyCQiVjWW33Hj15fcWNmxt5Olj
+	yqpVmZTXcmqwPVtOYxnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjwB-0007UL-UH; Tue, 10 Mar 2020 18:49:07 +0000
+	id 1jBjwz-00085v-IB; Tue, 10 Mar 2020 18:49:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjuE-0005ld-FG
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:47:07 +0000
+ id 1jBjwZ-0007w0-W5
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 18:49:33 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9A9D920873;
- Tue, 10 Mar 2020 18:47:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F18C208C3;
+ Tue, 10 Mar 2020 18:49:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583866025;
+ s=default; t=1583866169;
  bh=Z+esqeekOvcK2NlG82c5Na805Zd2SVU9aa9FMtHbcgI=;
  h=From:To:Cc:Subject:Date:From;
- b=Dw5jTlja9XP7O1fqEFD4L6MkTZj+EU7cladxfLVf1k3Mr1RiCGHzVo3nhaFgaHf7U
- wUAFvkpY4VEBekOd8lyR2m2h+fuu1upgLipXpZTTjDNd9ImS1InEsHxa7rgnLNXoRN
- hhnTZMOUzweHmK8HjbFWXz67vuHr3w13DZ+eqleQ=
+ b=e2UggPeF8iA59akyJ483DNpcLE+EGJD1P244SZYW9oLCBJ7O2l2FGNT1KnYCOMYCi
+ rP12B1uIXWZj22kFXhhzqtz6KvszfbarvaZoxP3xNrdr8vcMlseCBC27SyRgel3sbe
+ z6pkEo+rEIArhs2H0UuUmMmuuvO2qNFu9IE+WAsQ=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jBjuB-00Bi21-U7; Tue, 10 Mar 2020 18:47:04 +0000
+ id 1jBjwV-00Bi6k-Lr; Tue, 10 Mar 2020 18:49:27 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
 Subject: [PATCH 0/4] irqchip: Random irq_retrigger fixes
-Date: Tue, 10 Mar 2020 18:46:53 +0000
-Message-Id: <20200310184653.23204-1-maz@kernel.org>
+Date: Tue, 10 Mar 2020 18:49:17 +0000
+Message-Id: <20200310184921.23552-1-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
@@ -59,8 +59,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_114706_580165_D1297B65 
-X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-CacheID: sfid-20200310_114932_089005_563E68E1 
+X-CRM114-Status: UNSURE (   9.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
