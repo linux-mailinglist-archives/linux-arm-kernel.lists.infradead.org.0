@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3AAB180729
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:43:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68AF2180728
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 19:43:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3aTBEcy0VFCUiHFsC/mISsUrBgvsw6WpnjTF2qwnhOc=; b=s3bRrUOePb6vIN
-	Erizq7Ynd17wL9veraVaczKYlOLZwUaZgEJlAYB5NEkCOpOwMMOXblBgSTFklSD0A9MC8q80usHrr
-	3bdrcMlsjI8tw1TF6G5VtGGr9Qhg3JDpWGBfO0mNSYgAAs+vFg7LXz26U13tUaqkivDcCw71YP5rE
-	oMlwUVyOR8nru5p474rBw8hMDwA3oF8q0q0QxGTXCdn+64ZqsWAgpWE6kynSt7H9pCnKIA2VTP/2r
-	0m94RZyEXuz6pTsdMuCOiM/9iNe4MWu7uASunavdfiUE8UqCGRmwOcHy2w3ndltKETn3gbw1zcrKs
-	O/LhzRFhehzBebgxow0A==;
+	List-Owner; bh=FpTNc7fzPBGbVaibrUqywXTm9YCLIayAl0+s5ulF+00=; b=WZurj8uM5bNDfP
+	BVI+jg2UouHS2ixMW8FkU3Qy0KxoEJkSxNPPJ4K7oWT2uVhvMWCNdzMONs1SqTYLY9SGhUtcVTmHr
+	hYsxRJnh0OpI/jYgLCDkIJ0OMT5Ap3iM3MzxA7IVVqQVINOi44WYm/+EhIxydB95rNFoCeiGxK8QT
+	p2nRrfTB6Ai5NqXdvi2tc0dYIj12EI9HRdRjhcvBchs4yHv9zw0NZp7Mr3ugrUem9XaykgJxq+V5Z
+	okDSetZunRPibiEb3PRfDLpp7+SZF+FHP1U8q2K+0HYYU5iy0dZpss2WYJo7/Cl/lM6rsQIZIl0aE
+	DQCverPllrIgLmVgJmTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBjqj-0000yq-R0; Tue, 10 Mar 2020 18:43:29 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1jBjqQ-0000jS-9A; Tue, 10 Mar 2020 18:43:10 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBjgb-0005pm-2U; Tue, 10 Mar 2020 18:33:10 +0000
+ id 1jBjgj-0005uw-HK; Tue, 10 Mar 2020 18:33:13 +0000
+X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 51A3A20000B;
- Tue, 10 Mar 2020 18:32:58 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 9AF4820002;
+ Tue, 10 Mar 2020 18:33:05 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Janusz Krzysztofik <jmkrzyszt@gmail.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>
-Subject: Re: [RFC PATCH 06/14] mtd: rawnand: ams-delta: Push inversion
- handling to gpiolib
-Date: Tue, 10 Mar 2020 19:32:57 +0100
-Message-Id: <20200310183257.19526-1-miquel.raynal@bootlin.com>
+Subject: Re: [RFC PATCH 05/14] mtd: rawnand: ams-delta: Enable OF partition
+ info support
+Date: Tue, 10 Mar 2020 19:33:05 +0100
+Message-Id: <20200310183305.19588-1-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200212003929.6682-7-jmkrzyszt@gmail.com>
+In-Reply-To: <20200212003929.6682-6-jmkrzyszt@gmail.com>
 References: 
 MIME-Version: 1.0
 X-linux-mtd-patch-notification: thanks
-X-linux-mtd-patch-commit: 241008ed0bb5955e52e06d7270e87c974bbaadd6
+X-linux-mtd-patch-commit: 2cef3d4cf4498e260f5bc2d5fab850e4a52be382
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_113301_297356_DEA06FA8 
-X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-CacheID: sfid-20200310_113310_064976_271A2EBA 
+X-CRM114-Status: UNSURE (   4.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -50,7 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ low trust [217.70.183.200 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,16 +73,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-02-12 at 00:39:21 UTC, Janusz Krzysztofik wrote:
-> Let platforms take care of declaring correct GPIO pin polarity so we
-> can just ask a GPIO line to be asserted or deasserted and gpiolib deals
-> with the rest depending on how the platform is configured.
-> 
-> Inspired by similar changes to regulator drivers by Linus Walleij
-> <linus.walleij@linaro.org>, thanks!
+On Wed, 2020-02-12 at 00:39:20 UTC, Janusz Krzysztofik wrote:
+> Provide MTD layer with device OF node info required by OF partition
+> parser.
 > 
 > Signed-off-by: Janusz Krzysztofik <jmkrzyszt@gmail.com>
-> Acked-by: Tony Lindgren <tony@atomide.com>
 
 Applied to https://git.kernel.org/pub/scm/linux/kernel/git/mtd/linux.git nand/next, thanks.
 
