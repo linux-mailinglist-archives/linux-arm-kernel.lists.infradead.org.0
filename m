@@ -2,63 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C36C17F20D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 09:37:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16B1017F210
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 09:38:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P2Sq61sRs83SGN1O5vppYLXtHj4vbMUZkBvtuUcikWc=; b=hn1sHzBXi1nUUs
-	MrIk4anmF1QYJhFy3J6sov2HSKykAOK3kAkkqQ37xb/SLXRHqlSa3HXzk9+LgeATfAQjv5PE8WEF+
-	mtAaOMbOJBKloy1ZSP/L2+3yb5zwRseQ20XQ/2UjZxSh6tarF/z+1giuXvK0jeFMdJeqHAOI8eSr9
-	wQ9PI5kVFBSTg2OPthsAwGiDYbQ2buSZTOu9rYj717dtLzboylhgYyFq+vBXFnM0+m5v/p8Y2n+MH
-	SLo7ViieYldSB+QFfkFV6FCiOh68xPdUdtiJaqORTU3qL/McMW1+HymcDWc5PLj8QN2BKnXG2sXok
-	lBhj7DJ7VGrZJaFiMBdg==;
+	List-Owner; bh=D6F2BL5rHAV/JIBS2s3OTdK6+y4eFmk9vwX9e2rjTts=; b=A9w2B+dGhiDXZh
+	AqMzm5i+L2dK9PZ/Dy2oNO67desmCVfpLYM44Pmp44rQ/W0mxxNxJeL9EoKerYBpqtgCqfUgVr/AX
+	nD6E01bVjkLCV5A8+Y3RzrlvB0GX8oLg4AcTN+rVuTuXgL6jLewWKJkgjKKXwA8W9UTn2D6025Xwq
+	rvFqhB9gxiXg1hsglh26BkN5hQot2pkI/l3GbPbIwyRzW6+CJiuiIjhIjJP5yB72icNsq+F13lQI0
+	JvqULDgFLipkLJcmQpOhsX9gw/2juP4C82PFu/fB7YJ5lYq7n4ZPP7dsLwOou/7ZuuUw0TdVgvPVY
+	RTsqrc2dESOnuRbi/ueA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBaOY-00074s-Br; Tue, 10 Mar 2020 08:37:46 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jBaOz-0007LP-TJ; Tue, 10 Mar 2020 08:38:13 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBaOR-00073y-5E
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 08:37:40 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1jBaOF-0008Uo-Lg; Tue, 10 Mar 2020 09:37:27 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1jBaOD-00047A-I9; Tue, 10 Mar 2020 09:37:25 +0100
-Date: Tue, 10 Mar 2020 09:37:25 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [RESEND v6  06/13] spi: imx: fix ERR009165
-Message-ID: <20200310083725.sb6cufp5wznvxcji@pengutronix.de>
-References: <1583839922-22699-1-git-send-email-yibin.gong@nxp.com>
- <1583839922-22699-7-git-send-email-yibin.gong@nxp.com>
- <20200310073920.GR3335@pengutronix.de>
- <VE1PR04MB66384DA6732A840FE1D80C1989FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ id 1jBaOp-0007KR-UG
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 08:38:05 +0000
+Received: by mail-oi1-f193.google.com with SMTP id g6so13058052oiy.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 01:38:03 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Edv5FGx6HfQViwOHvX4++3OuZDAlkVwMs+TRV+ocKyE=;
+ b=rJXtlWdGopNDxTvQJ3Pirlphi5dxWxF6EcILbUwtvURa9bGb+Ho6RNm4UsgelgQyEp
+ HkcD3vkJw26Jh4xPUrgVE2hIEq/CnXjOGSxhE0zYcXZn3MAg3zWj83Vy6fo1+HxTqvSv
+ imXzqhnzm3g7OPYOKb4/ujjeZJxD+lSlfUCiqUL4R8jF3a2U+jwVdfpeaxKp+ZL41Mb1
+ t38Grzkefw6vHbHQJfSw8DkluQArLm5EO+otF/OWMlRnN9ygFRVDb//NIUS90W3ifsTk
+ wqNiFHmHnYmgA9TZva0ApVGWVrTUMxcygh6db1ZBS2Oz7w6eEJmstZJMQGLeKK7a0SuT
+ o2gA==
+X-Gm-Message-State: ANhLgQ3v8uVw5N3e9hqIoIdyWpcioTYWCMP6n5LSGc/z812ioeuGDh3J
+ qSPuaha+RfkHdHHujq2p6mtQ2qtWoy5N/Y2uYTw=
+X-Google-Smtp-Source: ADFU+vtxKj1FXGdXpMM5q7fMJsZPCOH9fUrMlzex1LWI8M8+68iu8RsU/KevMNJjhu1oBsetZIr4gh2j9nSlvsgxdZY=
+X-Received: by 2002:aca:5155:: with SMTP id f82mr350047oib.103.1583829480926; 
+ Tue, 10 Mar 2020 01:38:00 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VE1PR04MB66384DA6732A840FE1D80C1989FF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20200303203559.23995-1-ulf.hansson@linaro.org>
+ <CAJZ5v0j86N5WgEJhCD6a7K2NG7NoK-wqG5h-vbc-Z7qH4fkySQ@mail.gmail.com>
+ <CAPDyKFo3o6k8kiXTG337_4OkcunQn9T1FgPM-PngO3t9Sg9eBw@mail.gmail.com>
+In-Reply-To: <CAPDyKFo3o6k8kiXTG337_4OkcunQn9T1FgPM-PngO3t9Sg9eBw@mail.gmail.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Tue, 10 Mar 2020 09:37:50 +0100
+Message-ID: <CAJZ5v0gjhTCA=puG515Bf-it9xt-zgTNyJUmiDK+Oip_ucMThQ@mail.gmail.com>
+Subject: Re: [PATCH v2 0/4] cpuidle: psci: Some fixes when using the
+ hierarchical layout
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_013739_199441_C2346B84 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200310_013803_977635_2B2E753B 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rjwysocki[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,63 +84,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
-
-On Tue, Mar 10, 2020 at 08:27:41AM +0000, Robin Gong wrote:
-> On 2020/03/10 Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> > On Tue, Mar 10, 2020 at 07:31:55PM +0800, Robin Gong wrote:
-> > >  	writel(ctrl, spi_imx->base + MX51_ECSPI_CTRL);
+On Mon, Mar 9, 2020 at 8:21 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>
+> On Tue, 3 Mar 2020 at 23:28, Rafael J. Wysocki <rafael@kernel.org> wrote:
+> >
+> > On Tue, Mar 3, 2020 at 9:36 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
 > > >
-> > > @@ -612,12 +613,14 @@ static int mx51_ecspi_prepare_transfer(struct
-> > > spi_imx_data *spi_imx,
+> > > Changes in v2:
+> > >         - Small changes to patch 3 and 4, see their changelogs.
 > > >
-> > >  static void mx51_setup_wml(struct spi_imx_data *spi_imx)  {
-> > > +	u32 tx_wml =3D 0;
-> > > +
-> > >  	/*
-> > >  	 * Configure the DMA register: setup the watermark
-> > >  	 * and enable DMA request.
-> > >  	 */
-> > >  	writel(MX51_ECSPI_DMA_RX_WML(spi_imx->wml - 1) |
-> > > -		MX51_ECSPI_DMA_TX_WML(spi_imx->wml) |
-> > > +		MX51_ECSPI_DMA_TX_WML(tx_wml) |
-> > =
+> > > While collaborating with Benjamin Gaignard to deploy the hierarchical layout
+> > > for an ST SoC, it has turned that I have clearly missed to test a couple of
+> > > corner cases in recently added support to the cpuidle-psci driver.
+> > >
+> > > This series are fixing the issues we have found.
+> >
+> > I can apply the whole series, but I'd need an ACK from the PSCI driver
+> > maintainers for that.
+>
+> Patch 1 and patch 3 is ready to go. Although, patch 3 don't need the
+> fixes tag and can be queued for v5.17 instead.
+>
+> Do you want me to resend or can you pick them from the series?
 
-> > tx_wml is never assigned any other value than 0. Drop the variable.
-> That's prepared for 07/13 patch which may assign spi_imx->wml to tx_wml.
-
-Then this belongs into patch 7, right?
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+Yes, please!
 
 _______________________________________________
 linux-arm-kernel mailing list
