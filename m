@@ -2,55 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CABF717F76B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 13:29:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9248C17F778
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 13:31:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U/63gjRSlHZP9OpF5ZpwP2lSTcZGZf/YQ/q5/6pMkU8=; b=PdkowNi7SrSXWRWqAYTcNavFV
-	tcHt0ibtZmRlTwXnHpfJrcViUb+//HzgERzB12E3k+X5NAD4Q99Y/UByIZLKhQj4YJEWvM4lwMIzB
-	EroYO7eov5aVC+wwhToeHP7foTnsyVOhltKH1yIeIe6pC/71HSBz2ySEoKt+SCYySBK46oE0gFnPB
-	dzvFxIZti9T1PAgV8h5W2hEg+J52qVOKkq5BXy0k9z/J+ElkTaLdjPubE807j9m3/feu18gty8xyn
-	sJMd0Sz+xxLP/Dc+jjHBZzKksKQ+AxCWq8SQQN1oIe0PyKkIcMIXqEaZzT5ySffjYhymNOUGTVc4L
-	uAbhca+IQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SZU38kjNxPuiipODHuSPULWn+tE3CG5zlEPRiyaeDVw=; b=Nm4tp7wvQ+VeHC
+	UTSWBkkO9yJlyW+rPm4JHX21vYzmMIOAWxnw2JOtsOujmvxcAsFdNgqR7DG8zYvarQCQHMg77Z3VR
+	qdAzZp4JXJhUr1vmmbJmJ8FBBBdhG63+GF33Jl7co/m7Sw9SPW08RLwWJKWRY5IhjE5mrSpPKD6sz
+	UwPI8f54ZS/VmEDmRBUH5UOLAtCDyTfIM7MLZwp3PAksQIK2sRRKAxttOLGbGzLtOKV2LwztiZECu
+	xgG12nz4140olu8cvFiHdfxTrQiraculnpzbchpBHqGt51B0bte1/ihp0sxYz7jlwZZKR1Or4ia3F
+	Bub/LVcP3OgU/XVKhnEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBe0a-0001cm-3b; Tue, 10 Mar 2020 12:29:16 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBe0R-0001c6-WA; Tue, 10 Mar 2020 12:29:09 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 801ECAF7E;
- Tue, 10 Mar 2020 12:29:06 +0000 (UTC)
-Message-ID: <5cff48d9bb0f774c3668811165435bf3d5ef1152.camel@suse.de>
-Subject: [GIT PULL RESEND 2/2]  bcm2835-defconfig-next-2020-03-09
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Date: Tue, 10 Mar 2020 13:29:05 +0100
-In-Reply-To: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
-References: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
-User-Agent: Evolution 3.34.4 
+	id 1jBe31-0003Lv-9O; Tue, 10 Mar 2020 12:31:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBe2q-0003LU-3v
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 12:31:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21AD730E;
+ Tue, 10 Mar 2020 05:31:35 -0700 (PDT)
+Received: from [10.37.12.115] (unknown [10.37.12.115])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 567273F67D;
+ Tue, 10 Mar 2020 05:31:32 -0700 (PDT)
+Subject: Re: [PATCH v6 08/18] arm64: cpufeature: handle conflicts based on
+ capability
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+ <1583476525-13505-9-git-send-email-amit.kachhap@arm.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <d0f66afd-3cf3-77eb-9aa6-703f6201bc47@arm.com>
+Date: Tue, 10 Mar 2020 12:31:56 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <1583476525-13505-9-git-send-email-amit.kachhap@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_052908_208274_4093F038 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200310_053136_200477_09FC79FC 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,84 +66,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8644764485489169576=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Amit,
 
---===============8644764485489169576==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-3CcWMWcsO0R7REj/5MFP"
+On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
 
+[...]
 
---=-3CcWMWcsO0R7REj/5MFP
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+>  
+> +static bool
+> +cpucap_panic_on_conflict(const struct arm64_cpu_capabilities *cap)
+> +{
+> +	return !!(cap->type & ARM64_CPUCAP_PANIC_ON_CONFLICT);
+> +}
+> +
 
-Hi Florian,
+If there is no specific reason in the previous patch for changing the signature,
+could you please make "inline" even this function, for symmetry with the others?
 
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9=
-:
+[...]
 
-Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-
-are available in the Git repository at:
-
-git://git.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm=
-2835- defconfig-next-2020-03-09
-
-for you to fetch changes up to 93d3ae352bb5cda928570cfa2247d9c529605bef:
-
-ARM: bcm2835_defconfig: add support for Raspberry Pi4 (2020-03-09 20:36:30 =
-+0100)
-
-----------------------------------------------------------------
-This tag introduces configuration options in bcm2835_defconfig for basic RP=
-i4 support.
-
-----------------------------------------------------------------
-Marek Szyprowski (1):
-ARM: bcm2835_defconfig: add support for Raspberry Pi4
-
-arch/arm/configs/bcm2835_defconfig | 5 +++++
-1 file changed, 5 insertions(+)
-
-
---=-3CcWMWcsO0R7REj/5MFP
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5niBEACgkQlfZmHno8
-x/4obQgAsF+08eqx5XTxfdxIQTMg1ryd2T/l7nGTjyutjycc5gWJ5LKcpRUviQtj
-oLiIYC+/QnLMBQ04wROK2YvzaVp/7XAFep0YR9jHMXUp2+BbqaiY6FtAoCXUxevW
-ZqoWuxPM/GM85hKWJH6hTBmDUazPZ2t+zClKNvUKRLRFUwS3HmI8q1A1gvw+c90G
-w8Ap6Yfd+n7be88+TqpvMT3/hvrqJc1Op710NMqkqlCCGDGUhgMks78qy4qXllTh
-+iBCvYMHW3a/OQ4GfywSpXswiihfgbk+LwEAYbJ/4Av13ZiULcV5WslXnixDEOo4
-9GR/lAfifMSq24mvfDv0GWgN4C5HLg==
-=cAsx
------END PGP SIGNATURE-----
-
---=-3CcWMWcsO0R7REj/5MFP--
-
-
-
---===============8644764485489169576==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8644764485489169576==--
-
-
