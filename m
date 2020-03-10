@@ -2,61 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98CBE18056D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:48:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51AA0180575
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Mar 2020 18:50:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m0wrvOczY+f3F4oO45zoTbxdaueV3uXA24rEfrp4Ee4=; b=Vba1CdDUTgextz
-	rsC54wxdQFzA03YivnuHTSNjt2WMybiaX4m5uQwn1w2wMmS22Am80sj4jxaT/Tn9c7ELiYshVWsiw
-	gp0OPSTpeq4KFR5AhQofQZm6tVZHdcxM2ONeIVy8WAPSM43e7smm1gBDHz4pU/+7KwTQXiXHVRkxH
-	QRnKbCa8j/05gzqZtd7HHoM6/2e6iET1c2Ps1+0gr3DRcnEaO1L83u7ok95tC/+Lx2r6C5/aJwDhc
-	RSC88F9QAoO+blIbd0mH7NjjnAuyyQU8kvf5VRTAQ5zgz04U0MBcnTLIfs96lPu+BVZbQLcrTWi40
-	EYypMvLU9/Gnvo/lCQNA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L4uYUalvT4nNq13nT+vMzo7JpRI83TbW2njhQrCLK3w=; b=PHlC4F+7ojazY1
+	6FKoCPRJFpn5kErmuHnCBmYZnAdHovEhsYwSUnfnhE01/xs1UucK/Yz8tPsS7IfmYOoVO8gcFIHKm
+	cUXPRKHq48qf0i/db5QSAAsba8DFpZ08eBgemXodK6H3d4MURI4x9iiIYj2y9X1/K2JzujFUg3icy
+	ZF0eiQEZsvP2URixWoQ1h22oArtFCTTxHPLvi8UoiDzB4x395ZFBc3vsFsDF3aa+pCljIebc/4L6d
+	0m0ByQMGDajDSMzt39PjLp7KAORmQ0JXdHZH9GtwRJYTqK736E6aWxSoAL8XJsdJwaPfPhwnpq/db
+	bOROXJtPUGG4NdKjxWuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBizB-0000Ja-TC; Tue, 10 Mar 2020 17:48:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jBj1G-00021w-M4; Tue, 10 Mar 2020 17:50:18 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBiyH-00082m-VK
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:47:16 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C0BDC2146E;
- Tue, 10 Mar 2020 17:47:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583862432;
- bh=yEVqSVzjSrlW03t5Uobt/12zNzyYOKdExRRlDrrKUNg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nTwcoteXlhPI4lyJgviLHnEf8uRhovlKa30fr68qYMQc7fzq1uwEH+p9V9FeXUJ8X
- 2QMS5aUIecXbxGl3iy/hAhJohWHqWu0j3BCBmYCliTQr1jPww21H2QRiOr8xlyqsPT
- /iTc2G5/PKwqhFXOdMqXThGDDjftjDjkrUtREdnA=
-Received: by wens.tw (Postfix, from userid 1000)
- id 14A9960308; Wed, 11 Mar 2020 01:47:10 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH 3/3] ARM: dts: sun8i: r40: Move SPI device nodes based on
- address order
-Date: Wed, 11 Mar 2020 01:47:09 +0800
-Message-Id: <20200310174709.24174-4-wens@kernel.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200310174709.24174-1-wens@kernel.org>
-References: <20200310174709.24174-1-wens@kernel.org>
+ id 1jBj19-00021T-9F
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Mar 2020 17:50:12 +0000
+Received: by mail-lf1-x144.google.com with SMTP id l7so2632543lfe.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 10:50:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=goAJpXnujj5+7IIzD+wIBEHPOokKFfYUjpyJQHVTm40=;
+ b=QVJKIqehKcu24dwMaIGjeKR3UcVe2tBBwUWG9c7Q39xSfZwynDqZCcNrt0YCQL5nDF
+ 2w5fBlb7VU4jM2EChm9DqJCxrThJiyV5UVpTqBDE7FbrrDNBVzkyUickKywYgYfM5rYK
+ EkEqPaz3HzhQo9hNond4t6WQ77eirGLRfVoEuNUIp05k1gYpwPcOweGxUNwR0Mz0Y/vr
+ TUUf5cdypFPO5CRchV54kityiuo13nzdJ5v5KBoRJrgdTo1m9DxriKpfmPYLf9zxi+07
+ PO9vynNMhGomYSsEYrEnwVlSDLuFrXYQzbtWVK505JXmQXXXQR3M0D47nvImMzwNETv5
+ sg2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=goAJpXnujj5+7IIzD+wIBEHPOokKFfYUjpyJQHVTm40=;
+ b=VDRK+j6dbS+vDzdkCClBVl+Tm9C1la7ldpxfjLzacGfewj3z2Q93SRxcQNIkCANorm
+ Zu18Y4XR/d2VqBfn4vQKvJ2TQkPfXdihs54UfVy10MAD36vJha3MmSPk4FdI6RFUG1c0
+ 2yQyiNeme5NOC2gGe+ds8Ii1J2b6sreW+OhneHHKbWojlxn+kx8E+VbDNOLirkXuDw1H
+ 6m5LkyaK3Eh2c4q4oa8QTVmOsecND56gGJBfzJxt6EKKavPfPcrSH8/Yp+m8Pqe2AiCy
+ Xh6ijRswwJEzIQd1iIx5Qs8j2U3i9PBzbZnxNTJZ2nUMfVeM5NyZ8clOT4dcaJ/9JtPG
+ 3l/A==
+X-Gm-Message-State: ANhLgQ2xZLj1Ib0iwqweQAtXT4CeP8+g16JjSICdAuoZmut7Kf5DWp4m
+ qjDqB1/reIPkY9vZ9zf9urtnQKTq
+X-Google-Smtp-Source: ADFU+vsz/i/6+z2fGDLGQ6vPCi+tDh/3r1l13kXnFFBiFEwDokoqykXzX3KvIfu9fJ0gV/juMevAlQ==
+X-Received: by 2002:ac2:50c7:: with SMTP id h7mr13554346lfm.101.1583862609134; 
+ Tue, 10 Mar 2020 10:50:09 -0700 (PDT)
+Received: from [192.168.2.145] (94-29-39-224.dynamic.spd-mgts.ru.
+ [94.29.39.224])
+ by smtp.googlemail.com with ESMTPSA id r23sm7375579lfe.53.2020.03.10.10.50.07
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 10 Mar 2020 10:50:08 -0700 (PDT)
+Subject: Re: [PATCH v5 1/8] clk: tegra: Add PLLP_UD and PLLMB_UD for Tegra210
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20200310152003.2945170-1-thierry.reding@gmail.com>
+ <20200310152003.2945170-2-thierry.reding@gmail.com>
+ <9b343fd1-15df-409a-390f-e30fa6bbbfe7@gmail.com>
+ <20200310170508.GA3079591@ulmo>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <f613a047-bf3f-3fb5-4034-ce435bb6cd6d@gmail.com>
+Date: Tue, 10 Mar 2020 20:50:07 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <20200310170508.GA3079591@ulmo>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_104714_047635_81F31E71 
-X-CRM114-Status: GOOD (  13.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200310_105011_356776_0EB6F10F 
+X-CRM114-Status: GOOD (  16.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [digetx[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +94,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,168 +105,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Jon Hunter <jonathanh@nvidia.com>, Rob Herring <robh+dt@kernel.org>,
+ Joseph Lo <josephl@nvidia.com>, linux-tegra@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
-
-When the SPI device nodes were added, they were added in the wrong
-location in the device tree file. The device nodes should be sorted
-by register address.
-
-Move the devices node to their correct positions within the file.
-
-Fixes: 554581b79139 ("ARM: dts: sun8i: R40: Add SPI controllers nodes and pinmuxes")
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
- arch/arm/boot/dts/sun8i-r40.dtsi | 104 +++++++++++++++----------------
- 1 file changed, 52 insertions(+), 52 deletions(-)
-
-diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
-index 81cc92ddc78b..f0ede4f52aa3 100644
---- a/arch/arm/boot/dts/sun8i-r40.dtsi
-+++ b/arch/arm/boot/dts/sun8i-r40.dtsi
-@@ -198,6 +198,32 @@ nmi_intc: interrupt-controller@1c00030 {
- 			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
- 		};
- 
-+		spi0: spi@1c05000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c05000 0x1000>;
-+			interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI0>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		spi1: spi@1c06000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c06000 0x1000>;
-+			interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI1>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
- 		csi0: csi@1c09000 {
- 			compatible = "allwinner,sun8i-r40-csi0",
- 				     "allwinner,sun7i-a20-csi0";
-@@ -307,6 +333,19 @@ crypto: crypto@1c15000 {
- 			resets = <&ccu RST_BUS_CE>;
- 		};
- 
-+		spi2: spi@1c17000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c17000 0x1000>;
-+			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI2>, <&ccu CLK_SPI2>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI2>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
- 		ahci: sata@1c18000 {
- 			compatible = "allwinner,sun8i-r40-ahci";
- 			reg = <0x01c18000 0x1000>;
-@@ -364,6 +403,19 @@ ohci2: usb@1c1c400 {
- 			status = "disabled";
- 		};
- 
-+		spi3: spi@1c1f000 {
-+			compatible = "allwinner,sun8i-r40-spi",
-+				     "allwinner,sun8i-h3-spi";
-+			reg = <0x01c1f000 0x1000>;
-+			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_SPI3>, <&ccu CLK_SPI3>;
-+			clock-names = "ahb", "mod";
-+			resets = <&ccu RST_BUS_SPI3>;
-+			status = "disabled";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
- 		ccu: clock@1c20000 {
- 			compatible = "allwinner,sun8i-r40-ccu";
- 			reg = <0x01c20000 0x400>;
-@@ -692,58 +744,6 @@ i2c4: i2c@1c2c000 {
- 			#size-cells = <0>;
- 		};
- 
--		spi0: spi@1c05000 {
--			compatible = "allwinner,sun8i-r40-spi",
--				     "allwinner,sun8i-h3-spi";
--			reg = <0x01c05000 0x1000>;
--			interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_BUS_SPI0>, <&ccu CLK_SPI0>;
--			clock-names = "ahb", "mod";
--			resets = <&ccu RST_BUS_SPI0>;
--			status = "disabled";
--			#address-cells = <1>;
--			#size-cells = <0>;
--		};
--
--		spi1: spi@1c06000 {
--			compatible = "allwinner,sun8i-r40-spi",
--				     "allwinner,sun8i-h3-spi";
--			reg = <0x01c06000 0x1000>;
--			interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_BUS_SPI1>, <&ccu CLK_SPI1>;
--			clock-names = "ahb", "mod";
--			resets = <&ccu RST_BUS_SPI1>;
--			status = "disabled";
--			#address-cells = <1>;
--			#size-cells = <0>;
--		};
--
--		spi2: spi@1c17000 {
--			compatible = "allwinner,sun8i-r40-spi",
--				     "allwinner,sun8i-h3-spi";
--			reg = <0x01c17000 0x1000>;
--			interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_BUS_SPI2>, <&ccu CLK_SPI2>;
--			clock-names = "ahb", "mod";
--			resets = <&ccu RST_BUS_SPI2>;
--			status = "disabled";
--			#address-cells = <1>;
--			#size-cells = <0>;
--		};
--
--		spi3: spi@1c1f000 {
--			compatible = "allwinner,sun8i-r40-spi",
--				     "allwinner,sun8i-h3-spi";
--			reg = <0x01c1f000 0x1000>;
--			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_BUS_SPI3>, <&ccu CLK_SPI3>;
--			clock-names = "ahb", "mod";
--			resets = <&ccu RST_BUS_SPI3>;
--			status = "disabled";
--			#address-cells = <1>;
--			#size-cells = <0>;
--		};
--
- 		gmac: ethernet@1c50000 {
- 			compatible = "allwinner,sun8i-r40-gmac";
- 			syscon = <&ccu>;
--- 
-2.25.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MTAuMDMuMjAyMCAyMDowNSwgVGhpZXJyeSBSZWRpbmcg0L/QuNGI0LXRgjoKPiBPbiBUdWUsIE1h
+ciAxMCwgMjAyMCBhdCAwNzoxOTo1OVBNICswMzAwLCBEbWl0cnkgT3NpcGVua28gd3JvdGU6Cj4+
+IDEwLjAzLjIwMjAgMTg6MTksIFRoaWVycnkgUmVkaW5nINC/0LjRiNC10YI6Cj4+PiBGcm9tOiBK
+b3NlcGggTG8gPGpvc2VwaGxAbnZpZGlhLmNvbT4KPj4+Cj4+PiBJbnRyb2R1Y2UgdGhlIGxvdyBq
+aXR0ZXIgcGF0aCBvZiBQTExQIGFuZCBQTExNQiB3aGljaCBjYW4gYmUgdXNlZCBhcyBFTUMKPj4+
+IGNsb2NrIHNvdXJjZS4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBKb3NlcGggTG8gPGpvc2VwaGxA
+bnZpZGlhLmNvbT4KPj4+IFNpZ25lZC1vZmYtYnk6IFRoaWVycnkgUmVkaW5nIDx0cmVkaW5nQG52
+aWRpYS5jb20+Cj4+PiAtLS0KPj4+ICBkcml2ZXJzL2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYyAg
+ICAgICAgIHwgMTEgKysrKysrKysrKysKPj4+ICBpbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL3Rl
+Z3JhMjEwLWNhci5oIHwgIDQgKystLQo+Pj4gIDIgZmlsZXMgY2hhbmdlZCwgMTMgaW5zZXJ0aW9u
+cygrKSwgMiBkZWxldGlvbnMoLSkKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jbGsvdGVn
+cmEvY2xrLXRlZ3JhMjEwLmMgYi9kcml2ZXJzL2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYwo+Pj4g
+aW5kZXggNDVkNTRlYWQzMGJjLi5mOTk2NDdiNGE3MWYgMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJz
+L2Nsay90ZWdyYS9jbGstdGVncmEyMTAuYwo+Pj4gKysrIGIvZHJpdmVycy9jbGsvdGVncmEvY2xr
+LXRlZ3JhMjEwLmMKPj4+IEBAIC0zMTYxLDYgKzMxNjEsMTcgQEAgc3RhdGljIHZvaWQgX19pbml0
+IHRlZ3JhMjEwX3BsbF9pbml0KHZvaWQgX19pb21lbSAqY2xrX2Jhc2UsCj4+PiAgCWNsa19yZWdp
+c3Rlcl9jbGtkZXYoY2xrLCAicGxsX21fdWQiLCBOVUxMKTsKPj4+ICAJY2xrc1tURUdSQTIxMF9D
+TEtfUExMX01fVURdID0gY2xrOwo+Pj4gIAo+Pj4gKwkvKiBQTExNQl9VRCAqLwo+Pj4gKwljbGsg
+PSBjbGtfcmVnaXN0ZXJfZml4ZWRfZmFjdG9yKE5VTEwsICJwbGxfbWJfdWQiLCAicGxsX21iIiwK
+Pj4+ICsJCQkJCUNMS19TRVRfUkFURV9QQVJFTlQsIDEsIDEpOwo+Pj4gKwljbGtfcmVnaXN0ZXJf
+Y2xrZGV2KGNsaywgInBsbF9tYl91ZCIsIE5VTEwpOwo+Pj4gKwljbGtzW1RFR1JBMjEwX0NMS19Q
+TExfTUJfVURdID0gY2xrOwo+Pj4gKwo+Pj4gKwkvKiBQTExQX1VEICovCj4+PiArCWNsayA9IGNs
+a19yZWdpc3Rlcl9maXhlZF9mYWN0b3IoTlVMTCwgInBsbF9wX3VkIiwgInBsbF9wIiwKPj4+ICsJ
+CQkJCTAsIDEsIDEpOwo+Pj4gKwljbGtzW1RFR1JBMjEwX0NMS19QTExfUF9VRF0gPSBjbGs7Cj4+
+Cj4+IElzbid0IGl0IHBvc3NpYmxlIHRvIGF1dG8tZW5hYmxlIHRoZSBsb3ctaml0dGVyIGJpdCB3
+aGVuIG5lY2Vzc2FyeQo+PiBkdXJpbmcgb2YgdGhlIHJhdGUtY2hhbmdlIGJhc2VkIG9uIGEgZ2l2
+ZW4gY2xvY2stcmF0ZT8KPiAKPiBJIGRvbid0IHRoaW5rIHNvLiBUaGVzZSBuZXcgY2xvY2tzIChw
+bGxfbWJfdWQgYW5kIHBsbF9wX3VkKSBhcmUgcGFyZW50cwo+IGZvciB0aGUgZW1jIGNsb2NrLCBz
+byB0aGV5IGFyZSBuZWVkZWQgdG8gcHJvcGVybHkgcmVmbGVjdCB0aGUgcG9zaXRpb24KPiBvZiB0
+aGUgZW1jIGNsb2NrIGluIHRoZSBjbG9jayB0cmVlLgoKT2theSwgZXZlbiBpZiBpdCdzIHBvc3Np
+YmxlIHRvIGRvLCBJIGd1ZXNzIHRoYXQgd29uJ3QgYmUgdmVyeSBjb21wYXRpYmxlCndpdGggdGhl
+IGZpcm13YXJlLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
