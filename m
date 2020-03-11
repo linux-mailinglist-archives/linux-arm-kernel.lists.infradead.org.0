@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 404C718256D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:58:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B14C018256C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:58:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=36ShtzZYZ/ExqgH3k5XRKFsJPLrAwvv0WGOE3z+kg9A=; b=av8Qb+VzcHTCXD
-	ReKlnHjqb76zZaWYVZt2p8ngR8GIhS1oEYl0Y1KNKNujYXEZooI5IX7HY6TCF5Hkdnr0r9BAJG3/3
-	N2NbTjS0aov5lC3LrfuvY1m8rv8riPMhNNT0Npi/u/J3jqoIhys7mM58TMooNoMQeD7Ts5JK6tD4Q
-	pUzoVmUsxmJGSYfQlaUgPO2ijN/Vq4nLAng352/Fc6GvrM7WffIAArSKW9FQ0MTui+jEltULw+F8b
-	SccybHVk45aBRennRf+mQJ9H+zAPQyw0oX/058QS288RNmlyk5Ng43xUqK9Jf8AZwEteYKg/IVngI
-	JsLX1buiZsOhKKhd6siA==;
+	List-Owner; bh=RXdqdGIkcGGmMecy1nhDKkesv8E2FFQbyN9ONQ1M01Q=; b=Zyily3Byrn8ZAe
+	tLges8qAtk40zmAGDDps7iX2428Y5hIx0OdxO/q4+QVPV+pdCdrgAfs2u4+/NIwGtuwtoVxf4tlpy
+	7Igbt/v/26FdbChBTd7e2WPfnjXv9nDwC+y8fiZmuM1M8UfzmWe2dy+CB5QBMh8T3aWnlb0QQfWpW
+	blAkCHmfZ4Dqyt9HtZd9PJ4AeB0Gzu1ocXjIcQRBsCOsH6bIHXGxmNIl/1EhzVEt6DOnOHlxrd02T
+	7A1/apa6e9IxpcrscL/3KQLvJ9FUwN4C03KUfHc81Z0ocfq2eHT8KuFNbJHeXErUqwdEfKZIr3oVa
+	hNUBsd9zctAz00GxhAow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCAIt-0001wp-VE; Wed, 11 Mar 2020 22:58:20 +0000
+	id 1jCAIf-0001fp-Sw; Wed, 11 Mar 2020 22:58:05 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCAEv-0004rx-PH
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:54:15 +0000
+ id 1jCAEw-0004ss-P4
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:54:16 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D1FFE200BF2;
- Wed, 11 Mar 2020 23:54:10 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1DA0D200BF8;
+ Wed, 11 Mar 2020 23:54:11 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9B0AB200BF8;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id DB239200BF9;
  Wed, 11 Mar 2020 23:54:10 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 2A43340A5F; Wed, 11 Mar 2020 15:54:10 -0700 (MST)
+ 6AC1940A63; Wed, 11 Mar 2020 15:54:10 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 14/15] arm64: defconfig: Enable PHY devices used on QorIQ
- boards
-Date: Wed, 11 Mar 2020 17:53:16 -0500
-Message-Id: <20200311225317.11198-15-leoyang.li@nxp.com>
+Subject: [PATCH v2 15/15] arm64: defconfig: Enable e1000 device
+Date: Wed, 11 Mar 2020 17:53:17 -0500
+Message-Id: <20200311225317.11198-16-leoyang.li@nxp.com>
 X-Mailer: git-send-email 2.25.1.377.g2d2118b
 In-Reply-To: <20200311225317.11198-1-leoyang.li@nxp.com>
 References: <20200311225317.11198-1-leoyang.li@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_155413_978093_09B01414 
-X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-CacheID: sfid-20200311_155414_983421_9894B94E 
+X-CRM114-Status: UNSURE (   7.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,46 +74,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables various PHY device drivers and PHY MUX drivers used on QorIQ
-reference boards supported in mainline kernel.
-
-Enabled as built-in to boot from network without an initramfs.
+Enables e1000 Ethernet device as it is used as a low-cost failover
+Ethernet port on various QorIQ reference boards.  Enabled as built-in
+for booting from network without initramfs.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index b092adecf724..a6e9d046e65d 100644
+index a6e9d046e65d..e5e86d94035d 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -306,13 +306,17 @@ CONFIG_SNI_AVE=y
- CONFIG_SNI_NETSEC=y
- CONFIG_STMMAC_ETH=m
- CONFIG_MDIO_BUS_MUX_MMIOREG=y
-+CONFIG_MDIO_BUS_MUX_MULTIPLEXER=y
-+CONFIG_AQUANTIA_PHY=y
- CONFIG_MARVELL_PHY=m
- CONFIG_MARVELL_10G_PHY=m
- CONFIG_MESON_GXL_PHY=m
- CONFIG_MICREL_PHY=y
-+CONFIG_MICROSEMI_PHY=y
- CONFIG_AT803X_PHY=y
- CONFIG_REALTEK_PHY=m
- CONFIG_ROCKCHIP_PHY=y
-+CONFIG_VITESSE_PHY=y
- CONFIG_USB_PEGASUS=m
- CONFIG_USB_RTL8150=m
- CONFIG_USB_RTL8152=m
-@@ -880,6 +884,7 @@ CONFIG_FPGA_REGION=m
- CONFIG_OF_FPGA_REGION=m
- CONFIG_TEE=y
- CONFIG_OPTEE=y
-+CONFIG_MUX_MMIO=y
- CONFIG_EXT2_FS=y
- CONFIG_EXT3_FS=y
- CONFIG_EXT4_FS_POSIX_ACL=y
+@@ -289,6 +289,7 @@ CONFIG_HNS_ENET=y
+ CONFIG_HNS3=y
+ CONFIG_HNS3_HCLGE=y
+ CONFIG_HNS3_ENET=y
++CONFIG_E1000=y
+ CONFIG_E1000E=y
+ CONFIG_IGB=y
+ CONFIG_IGBVF=y
 -- 
 2.17.1
 
