@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92B74180E05
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 03:37:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37CC6180E3F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 03:57:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PReqQ3IP/Ujutq01U7hjIuxMm8FEK249voks6Bwar/8=; b=JXT
-	stb43S0iLy7/MKKE0rAJ3Li2AiC7IAND002LrwRarp5tMX6FzZPUlWNNyZ5khDU80Y2pgVELwVqyt
-	94RgR/lBtI3rj+6IMlXYWGPq3ERr14NJl3DATZf4L93+Af3bGx6Pj6uykZ0mMOPCg93T0ZsNaLfs2
-	HQMoNAdiy9mBTYnW6V2nD+HCcSmGoA+FygfldQ/IxZxYisr/bB9LpDvMBch0CuUMpjyObvHoqIljL
-	Uj1UxC4k+7aYh9XSzM/ZEvkZlcZ7fBKymD77eVdamVyprStuX5kI/rPK/kKuaYApQMfW0yBoSHxkX
-	H95lB+hOuo7dfsXALBeq8++Cog5pGsQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+t60BHyaAWJOzqemEYL43hcCVD5cROFWPz123BXWoos=; b=RYo+uhjQqbJxB9
+	jgWyZ+8II/bx+lFzMQpFGARQaKz5ALUo1T9TP3Mh0NzfFyeOc5Hv7Ro+3DpS/que819siqgw0tDg7
+	dvHN/992/Wg8ma7exdCJZlbV/Stv4TzE3bpSAprbnKPtzPiO//3g+bK2bEtao4Gd0BS765GqkKdm3
+	k1WPn5RLzzWkStiPg9rdbtNrMl4VvmRRCpdh+aKzuPhXj5LnU3ArZJ0YJ1VnPNSVmru6p3PPHdEu5
+	HUR3Ew35Gs4HCCyovr6g5R1nTbzYvqvSgcmS2ukKCdshWPLdsVqJ8WS7tNP/u61+6/KKDAMVol6Fc
+	93tQ1sjMq2+VNPGT365Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBrFW-0005Xm-4S; Wed, 11 Mar 2020 02:37:34 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBrFM-0005XR-EZ
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 02:37:26 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 11 Mar 2020 11:37:21 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id A8A7F603AB;
- Wed, 11 Mar 2020 11:37:21 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 11 Mar 2020 11:37:21 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 082E81A01BB;
- Wed, 11 Mar 2020 11:37:21 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Mark Brown <broonie@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will@kernel.org>
-Subject: [PATCH] arm64: entry-ftrace.S: Fix missing argument for
- CONFIG_FUNCTION_GRAPH_TRACER=y
-Date: Wed, 11 Mar 2020 11:36:53 +0900
-Message-Id: <1583894213-7633-1-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jBrYi-0003xn-1v; Wed, 11 Mar 2020 02:57:24 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBrXy-0003Vg-1M
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 02:56:39 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id D688528DB561F007B992;
+ Wed, 11 Mar 2020 10:56:23 +0800 (CST)
+Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
+ DGGEMS414-HUB.china.huawei.com (10.3.19.214) with Microsoft SMTP Server id
+ 14.3.487.0; Wed, 11 Mar 2020 10:56:14 +0800
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+To: <mark.rutland@arm.com>, <catalin.marinas@arm.com>, <will@kernel.org>,
+ <aneesh.kumar@linux.ibm.com>, <maz@kernel.org>, <steven.price@arm.com>,
+ <broonie@kernel.org>, <guohanjun@huawei.com>
+Subject: [RFC PATCH v1 0/3] arm64: tlb: add support for TTL field
+Date: Wed, 11 Mar 2020 10:53:06 +0800
+Message-ID: <20200311025309.1743-1-yezhenyu2@huawei.com>
+X-Mailer: git-send-email 2.22.0.windows.1
+MIME-Version: 1.0
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_193724_601217_C685C36D 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200310_195638_280257_F89EDA60 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,39 +63,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, yezhenyu2@huawei.com,
+ linux-kernel@vger.kernel.org, xiexiangyou@huawei.com, linux-mm@kvack.org,
+ arm@kernel.org, prime.zeng@hisilicon.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Missing argument of another SYM_INNER_LABEL() breaks build for
-CONFIG_FUNCTION_GRAPH_TRACER=y.
+ARMv8.4-TTL provides the TTL field in tlbi instruction to indicate
+the level of translation table walk holding the leaf entry for the
+address that is being invalidated. Hardware can use this information
+to determine if there was a risk of splintering.
 
-Fixes: e2d591d29d44 ("arm64: entry-ftrace.S: Convert to modern annotations for assembly functions")
-Cc: Mark Brown <broonie@kernel.org>
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- arch/arm64/kernel/entry-ftrace.S | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+This set of patches adds TTL field to __TLBI_ADDR, and uses
+Architecture-specific MM context to pass the TTL value to tlb interface.
 
-diff --git a/arch/arm64/kernel/entry-ftrace.S b/arch/arm64/kernel/entry-ftrace.S
-index 8201018..833d48c 100644
---- a/arch/arm64/kernel/entry-ftrace.S
-+++ b/arch/arm64/kernel/entry-ftrace.S
-@@ -279,7 +279,7 @@ SYM_INNER_LABEL(ftrace_call, SYM_L_GLOBAL)	// tracer(pc, lr);
- 					// where xxx can be any kind of tracer.
- 
- #ifdef CONFIG_FUNCTION_GRAPH_TRACER
--SYM_INNER_LABEL(ftrace_graph_call)		// ftrace_graph_caller();
-+SYM_INNER_LABEL(ftrace_graph_call, SYM_L_GLOBAL) // ftrace_graph_caller();
- 	nop				// If enabled, this will be replaced
- 					// "b ftrace_graph_caller"
- #endif
+The default value of TTL is 0, which will not have any impact on the
+TLB maintenance instructions. The last patch trys to use TTL field in
+some obviously tlb-flush interface.
+
+Zhenyu Ye (3):
+  arm64: tlb: add TTL field to __TLBI_ADDR
+  arm64: tlb: use mm_struct.context.flags to indicate TTL
+  arm64: tlb: add support for TTL in some functions
+
+ arch/arm64/include/asm/cpucaps.h  |  3 ++-
+ arch/arm64/include/asm/mmu.h      | 11 ++++++++++
+ arch/arm64/include/asm/sysreg.h   |  4 ++++
+ arch/arm64/include/asm/tlb.h      |  3 +++
+ arch/arm64/include/asm/tlbflush.h | 35 +++++++++++++++++++++++--------
+ arch/arm64/kernel/cpufeature.c    | 10 +++++++++
+ arch/arm64/kernel/sys_compat.c    |  2 +-
+ arch/arm64/mm/hugetlbpage.c       |  2 ++
+ 8 files changed, 59 insertions(+), 11 deletions(-)
+
 -- 
-2.7.4
+2.19.1
+
 
 
 _______________________________________________
