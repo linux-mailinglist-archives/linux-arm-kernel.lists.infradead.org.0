@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B441C182284
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 20:34:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F022182292
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 20:34:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WjI5uYPNtPbLq0koBAldpIllXON8HjlL5ejOAJA50qA=; b=seAx4cBzEA2DGr
-	x9dFqGcvGiHu8ZDaANwE7UfB1dyhtsv427YRcTGF2Cy2Rp+mYDmuBb6FO/rwTeOLgCPKRUiKATO85
-	8NF+RQvDdJSuA5bVKjGRE5VJc5OIgRPQnn5rk42wFUcqYCtZ1UChfD2xvV+R+9dFitz0S2PhmL1Pk
-	nML1LaVL+JQgTy2TVHM7E+aGJEpI38tgM0prqOKJUz1n4vaRzQqdmTF/uSr1vvjfgX1nWAat4Wyga
-	DTQzIJ70mOvlAnwtsexH6Lb9pC3YTGauhen0qtKz00dKYgNRKGj0kzG5q1Dy8v3pzjuMoy7auveJ8
-	J8nnpp3UtNopHl7bZyfw==;
+	List-Owner; bh=8BXIESEekb9HHmvnS71UazCz9v08NvNsvw0fNNdivZw=; b=BlfluxzF5UlHhK
+	4XZAdR3ZT5I3dQBNva6EkkNKGKRYu6Tc5mNaw+9JM2WsPoxuwHpeJ5uS+iqBQddZmHymy9b5AZJg5
+	uUQr8ihNOimBKJi4YVvHVOu7XQi9j1D4FihLUU6yW5JYRiREThInEmefkcJpOHNF41Be9b/KmSIUt
+	X1c0BR3j0Mh26UPlDwXRh7I264wRCOFjK61AFs7kM94JwJkrU7QcdCOMqer2aSuHszQizE0JS11Vv
+	kag89HiLSMHCfRiN2VCaNWJPMxgMkAmzp9Z0Aen/6IOex5TXZp3YaNEfAKv/lnCAwxDDQ/fLamvNV
+	TRDlAPlnfVYY3X8G0VXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC77c-000558-MV; Wed, 11 Mar 2020 19:34:28 +0000
+	id 1jC77r-0005LU-D2; Wed, 11 Mar 2020 19:34:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC76K-0003yq-7M
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 19:33:10 +0000
+ id 1jC76M-00041T-Ax
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 19:33:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 75C3D1FB;
- Wed, 11 Mar 2020 12:33:07 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8749B7FA;
+ Wed, 11 Mar 2020 12:33:09 -0700 (PDT)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C99F63F534;
- Wed, 11 Mar 2020 12:33:06 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0AA403F534;
+ Wed, 11 Mar 2020 12:33:09 -0700 (PDT)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v9 04/13] elf: Allow arch to tweak initial mmap prot flags
-Date: Wed, 11 Mar 2020 19:25:59 +0000
-Message-Id: <20200311192608.40095-5-broonie@kernel.org>
+Subject: [PATCH v9 05/13] arm64: elf: Enable BTI at exec based on ELF program
+ properties
+Date: Wed, 11 Mar 2020 19:26:00 +0000
+Message-Id: <20200311192608.40095-6-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200311192608.40095-1-broonie@kernel.org>
 References: <20200311192608.40095-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_123308_531013_4199EDB9 
-X-CRM114-Status: GOOD (  14.60  )
+X-CRM114-CacheID: sfid-20200311_123310_529727_B1B03C38 
+X-CRM114-Status: GOOD (  16.07  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -84,128 +85,182 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Martin <Dave.Martin@arm.com>
 
-An arch may want to tweak the mmap prot flags for an
-ELFexecutable's initial mappings.  For example, arm64 is going to
-need to add PROT_BTI for executable pages in an ELF process whose
-executable is marked as using Branch Target Identification (an
-ARMv8.5-A control flow integrity feature).
+For BTI protection to be as comprehensive as possible, it is
+desirable to have BTI enabled from process startup.  If this is not
+done, the process must use mprotect() to enable BTI for each of its
+executable mappings, but this is painful to do in the libc startup
+code.  It's simpler and more sound to have the kernel do it
+instead.
 
-So that this can be done in a generic way, add a hook
-arch_elf_adjust_prot() to modify the prot flags as desired: arches
-can select CONFIG_HAVE_ELF_PROT and implement their own backend
-where necessary.
-
-By default, leave the prot flags unchanged.
+To this end, detect BTI support in the executable (or ELF
+interpreter, as appropriate), via the
+NT_GNU_PROGRAM_PROPERTY_TYPE_0 note, and tweak the initial prot
+flags for the process' executable pages to include PROT_BTI as
+appropriate.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- fs/Kconfig.binfmt   |  3 +++
- fs/binfmt_elf.c     | 18 ++++++++++++------
- include/linux/elf.h | 12 ++++++++++++
- 3 files changed, 27 insertions(+), 6 deletions(-)
+ arch/arm64/Kconfig           |  3 +++
+ arch/arm64/include/asm/elf.h | 50 ++++++++++++++++++++++++++++++++++++
+ arch/arm64/kernel/process.c  | 19 ++++++++++++++
+ include/uapi/linux/elf.h     |  6 +++++
+ 4 files changed, 78 insertions(+)
 
-diff --git a/fs/Kconfig.binfmt b/fs/Kconfig.binfmt
-index d2cfe0729a73..2358368319b8 100644
---- a/fs/Kconfig.binfmt
-+++ b/fs/Kconfig.binfmt
-@@ -36,6 +36,9 @@ config COMPAT_BINFMT_ELF
- config ARCH_BINFMT_ELF_STATE
- 	bool
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 0b30e884e088..8a15bc68dadd 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -9,6 +9,7 @@ config ARM64
+ 	select ACPI_MCFG if (ACPI && PCI)
+ 	select ACPI_SPCR_TABLE if ACPI
+ 	select ACPI_PPTT if ACPI
++	select ARCH_BINFMT_ELF_STATE
+ 	select ARCH_CLOCKSOURCE_DATA
+ 	select ARCH_HAS_DEBUG_VIRTUAL
+ 	select ARCH_HAS_DEVMEM_IS_ALLOWED
+@@ -33,6 +34,7 @@ config ARM64
+ 	select ARCH_HAS_SYSCALL_WRAPPER
+ 	select ARCH_HAS_TEARDOWN_DMA_OPS if IOMMU_SUPPORT
+ 	select ARCH_HAS_TICK_BROADCAST if GENERIC_CLOCKEVENTS_BROADCAST
++	select ARCH_HAVE_ELF_PROT
+ 	select ARCH_HAVE_NMI_SAFE_CMPXCHG
+ 	select ARCH_INLINE_READ_LOCK if !PREEMPTION
+ 	select ARCH_INLINE_READ_LOCK_BH if !PREEMPTION
+@@ -62,6 +64,7 @@ config ARM64
+ 	select ARCH_INLINE_SPIN_UNLOCK_IRQRESTORE if !PREEMPTION
+ 	select ARCH_KEEP_MEMBLOCK
+ 	select ARCH_USE_CMPXCHG_LOCKREF
++	select ARCH_USE_GNU_PROPERTY if BINFMT_ELF
+ 	select ARCH_USE_QUEUED_RWLOCKS
+ 	select ARCH_USE_QUEUED_SPINLOCKS
+ 	select ARCH_SUPPORTS_MEMORY_FAILURE
+diff --git a/arch/arm64/include/asm/elf.h b/arch/arm64/include/asm/elf.h
+index b618017205a3..4f00d50585a4 100644
+--- a/arch/arm64/include/asm/elf.h
++++ b/arch/arm64/include/asm/elf.h
+@@ -114,7 +114,11 @@
  
-+config ARCH_HAVE_ELF_PROT
-+	bool
+ #ifndef __ASSEMBLY__
+ 
++#include <uapi/linux/elf.h>
+ #include <linux/bug.h>
++#include <linux/errno.h>
++#include <linux/fs.h>
++#include <linux/types.h>
+ #include <asm/processor.h> /* for signal_minsigstksz, used by ARCH_DLINFO */
+ 
+ typedef unsigned long elf_greg_t;
+@@ -224,6 +228,52 @@ extern int aarch32_setup_additional_pages(struct linux_binprm *bprm,
+ 
+ #endif /* CONFIG_COMPAT */
+ 
++struct arch_elf_state {
++	int flags;
++};
 +
- config ARCH_USE_GNU_PROPERTY
- 	bool
- 
-diff --git a/fs/binfmt_elf.c b/fs/binfmt_elf.c
-index 1fb67e506b68..cceb29d6ef1d 100644
---- a/fs/binfmt_elf.c
-+++ b/fs/binfmt_elf.c
-@@ -544,7 +544,8 @@ static inline int arch_check_elf(struct elfhdr *ehdr, bool has_interp,
- 
- #endif /* !CONFIG_ARCH_BINFMT_ELF_STATE */
- 
--static inline int make_prot(u32 p_flags)
-+static inline int make_prot(u32 p_flags, struct arch_elf_state *arch_state,
-+			    bool has_interp, bool is_interp)
- {
- 	int prot = 0;
- 
-@@ -554,7 +555,8 @@ static inline int make_prot(u32 p_flags)
- 		prot |= PROT_WRITE;
- 	if (p_flags & PF_X)
- 		prot |= PROT_EXEC;
--	return prot;
++#define ARM64_ELF_BTI		(1 << 0)
 +
-+	return arch_elf_adjust_prot(prot, arch_state, has_interp, is_interp);
- }
- 
- /* This is much more generalized than the library routine read function,
-@@ -564,7 +566,8 @@ static inline int make_prot(u32 p_flags)
- 
- static unsigned long load_elf_interp(struct elfhdr *interp_elf_ex,
- 		struct file *interpreter,
--		unsigned long no_base, struct elf_phdr *interp_elf_phdata)
-+		unsigned long no_base, struct elf_phdr *interp_elf_phdata,
-+		struct arch_elf_state *arch_state)
- {
- 	struct elf_phdr *eppnt;
- 	unsigned long load_addr = 0;
-@@ -596,7 +599,8 @@ static unsigned long load_elf_interp(struct elfhdr *interp_elf_ex,
- 	for (i = 0; i < interp_elf_ex->e_phnum; i++, eppnt++) {
- 		if (eppnt->p_type == PT_LOAD) {
- 			int elf_type = MAP_PRIVATE | MAP_DENYWRITE;
--			int elf_prot = make_prot(eppnt->p_flags);
-+			int elf_prot = make_prot(eppnt->p_flags, arch_state,
-+						 true, true);
- 			unsigned long vaddr = 0;
- 			unsigned long k, map_addr;
- 
-@@ -1041,7 +1045,8 @@ static int load_elf_binary(struct linux_binprm *bprm)
- 			}
- 		}
- 
--		elf_prot = make_prot(elf_ppnt->p_flags);
-+		elf_prot = make_prot(elf_ppnt->p_flags, &arch_state,
-+				     !!interpreter, false);
- 
- 		elf_flags = MAP_PRIVATE | MAP_DENYWRITE | MAP_EXECUTABLE;
- 
-@@ -1184,7 +1189,8 @@ static int load_elf_binary(struct linux_binprm *bprm)
- 	if (interpreter) {
- 		elf_entry = load_elf_interp(&loc->interp_elf_ex,
- 					    interpreter,
--					    load_bias, interp_elf_phdata);
-+					    load_bias, interp_elf_phdata,
-+					    &arch_state);
- 		if (!IS_ERR((void *)elf_entry)) {
- 			/*
- 			 * load_elf_interp() returns relocation
-diff --git a/include/linux/elf.h b/include/linux/elf.h
-index db5113479f5e..5d5b0321da0b 100644
---- a/include/linux/elf.h
-+++ b/include/linux/elf.h
-@@ -87,4 +87,16 @@ extern int arch_parse_elf_property(u32 type, const void *data, size_t datasz,
- 				   bool compat, struct arch_elf_state *arch);
- #endif
- 
-+#ifdef CONFIG_ARCH_HAVE_ELF_PROT
-+int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
-+			 bool has_interp, bool is_interp);
-+#else
-+static inline int arch_elf_adjust_prot(int prot,
-+				       const struct arch_elf_state *state,
-+				       bool has_interp, bool is_interp)
++#define INIT_ARCH_ELF_STATE {			\
++	.flags = 0,				\
++}
++
++static inline int arch_parse_elf_property(u32 type, const void *data,
++					  size_t datasz, bool compat,
++					  struct arch_elf_state *arch)
 +{
++	/* No known properties for AArch32 yet */
++	if (IS_ENABLED(CONFIG_COMPAT) && compat)
++		return 0;
++
++	if (type == GNU_PROPERTY_AARCH64_FEATURE_1_AND) {
++		const u32 *p = data;
++
++		if (datasz != sizeof(*p))
++			return -ENOEXEC;
++
++		if (system_supports_bti() &&
++		    (*p & GNU_PROPERTY_AARCH64_FEATURE_1_BTI))
++			arch->flags |= ARM64_ELF_BTI;
++	}
++
++	return 0;
++}
++
++static inline int arch_elf_pt_proc(void *ehdr, void *phdr,
++				   struct file *f, bool is_interp,
++				   struct arch_elf_state *state)
++{
++	return 0;
++}
++
++static inline int arch_check_elf(void *ehdr, bool has_interp,
++				 void *interp_ehdr,
++				 struct arch_elf_state *state)
++{
++	return 0;
++}
++
+ #endif /* !__ASSEMBLY__ */
+ 
+ #endif
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index 00626057a384..b8e3faa8d406 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -11,6 +11,7 @@
+ 
+ #include <linux/compat.h>
+ #include <linux/efi.h>
++#include <linux/elf.h>
+ #include <linux/export.h>
+ #include <linux/sched.h>
+ #include <linux/sched/debug.h>
+@@ -18,6 +19,7 @@
+ #include <linux/sched/task_stack.h>
+ #include <linux/kernel.h>
+ #include <linux/lockdep.h>
++#include <linux/mman.h>
+ #include <linux/mm.h>
+ #include <linux/stddef.h>
+ #include <linux/sysctl.h>
+@@ -654,3 +656,20 @@ asmlinkage void __sched arm64_preempt_schedule_irq(void)
+ 	if (system_capabilities_finalized())
+ 		preempt_schedule_irq();
+ }
++
++#ifdef CONFIG_BINFMT_ELF
++int arch_elf_adjust_prot(int prot, const struct arch_elf_state *state,
++			 bool has_interp, bool is_interp)
++{
++	if (is_interp != has_interp)
++		return prot;
++
++	if (!(state->flags & ARM64_ELF_BTI))
++		return prot;
++
++	if (prot & PROT_EXEC)
++		prot |= PROT_BTI;
++
 +	return prot;
 +}
 +#endif
+diff --git a/include/uapi/linux/elf.h b/include/uapi/linux/elf.h
+index 20900f4496b7..c6dd0215482e 100644
+--- a/include/uapi/linux/elf.h
++++ b/include/uapi/linux/elf.h
+@@ -448,4 +448,10 @@ typedef struct elf64_note {
+   Elf64_Word n_type;	/* Content type */
+ } Elf64_Nhdr;
+ 
++/* .note.gnu.property types for EM_AARCH64: */
++#define GNU_PROPERTY_AARCH64_FEATURE_1_AND	0xc0000000
 +
- #endif /* _LINUX_ELF_H */
++/* Bits for GNU_PROPERTY_AARCH64_FEATURE_1_BTI */
++#define GNU_PROPERTY_AARCH64_FEATURE_1_BTI	(1U << 0)
++
+ #endif /* _UAPI_LINUX_ELF_H */
 -- 
 2.20.1
 
