@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CFD51818B1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 13:47:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 919D61818B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 13:48:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kUivg86qAh8A1GuvjNQ6UgazEKDKHYwGXphiFhhfurA=; b=nGcp+u1+XzEIzo
-	O3Dm3pA9SNKRYiwt0fxwmZcRLaizNBbblmhE7JwWedlolaXJRXcHS3UjSO3AvAt8KKQZuWvS+Uhrp
-	K8KpmR+kmvQlT8fbrVXmDlmx7L+EaVSkFXL7B6dszS+TjN8bFsyFD2uHF6tcWquyAUe4Icn7pBkQD
-	PrzgpfR600rb76yD7nPxq5Fl6+KxcvqdyefYatGkSqn+gPdBi894jayOkELXvwVvS3iVihLxA9VSo
-	kpk3Q2eJKaWImiteLKOMdqP+seh9c3q4mHTz6icaEkjgsfqREI6LW5xhVlLAxk7pD4nyqureDZ3FN
-	QNy4qUpmPJzOwBeNb3ag==;
+	List-Owner; bh=QtOs/niMka8wc2xSQInpRlzm1I7WvFp/iZg/rIlWYkY=; b=SEdGVyXEWcU3xR
+	N59UTH/8ziL+HMwueKOlmcK+sPkZ7s3yUDMW7tGuiveIw5bWtOARV1tb6PBKLcUxol4vQ3UD+X4VW
+	q2e4QgsPcfXGTjcMG1cZO39oAcCBPqPOYgJ1ITXBLNKsGMHFtn5y++SjsmSycNDwMFY3BHZKHqIyC
+	Yt+z0/48G/z3zBjDIq1nBmFIKmgerLoNkQYJCzrRq+8g3PZVyp347QmnwFpRGAG7soWqZOn6pT+Zp
+	Vpg2lssm1AXfLU0xRuDY2f8NYG2ShyGgXerwL8ZjivaSOxZvKFZsR0aGfRU4oYxwDzkCFtswPuE1C
+	tgH3Ayi2EhdsqekfyPdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC0lz-0008TH-7S; Wed, 11 Mar 2020 12:47:43 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jC0mR-0000Vx-MQ; Wed, 11 Mar 2020 12:48:11 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC0lG-00082y-AW
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 12:46:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id s5so2455128wrg.3
+ id 1jC0lH-00083g-IY
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 12:47:01 +0000
+Received: by mail-wm1-x344.google.com with SMTP id m3so1978131wmi.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 05:46:58 -0700 (PDT)
+ Wed, 11 Mar 2020 05:46:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=N4gyYG6pd1qHC2GjZUAc/a5emn2edBGVA7chcRhvAO8=;
- b=R8RuT72WL1I4haJ6qD2A19NADfHGGL4h8E65a5bB32JeKEnVO9JbfE6y04C41FHnLL
- AiH3yxrWmV4b4ouGsgZnYDvH6JyHDntuFb3/9DvYzPs3xRWl9CkmzwGARwuOAyD3ENG8
- ExLs4O2EfRkqOxjujXUUTbIjhiAylBxQ8ybvym8Qyo1jwtRGcka/n1mIYt++nCi7pTJf
- r7VZnDbXLgsvy6IWe8+Hwi6VVKzu0VjNNczUmct/KxpEmMqWQtjtAeb2DhsSv3KYbkPr
- VSYMt4h9O6gpK0lYTWS8aMFDJFwbWDK7v4kkJazCh6yUcurLTvS7ONepD43137VO3oBz
- gmyQ==
+ bh=d7fzzw/5lEfLgru+68iO/J8krazqjJjWjKm9fH3TH5I=;
+ b=d0OldcPYPTwC6lUxav+jf6KB+UcGBjwxPVFVLOS8P+DRcf4Nq9+Cgk3ER62YCupyKO
+ n63Plm+lXXP1tDCSs66zuHCHs/M9n6CcfUD83j6S1A3sgTchEZWf/GNdy1+Sg6PJsXx7
+ v6vVCuz7+yMQ9U+jeSTzabfnBGdgbxAl7+8p5eiV0vMWAbcwpvxqhcw3kVlpD7RcuEis
+ e5lM+BenuFHNorZQvoPD0B0I5/lix/gZ+JhB+tlQQjDMmJ4sZt8Pupm67tdBc4wFY0mf
+ EgB/VSPg8NrV9V5qGawXDH19VqniDfIEy7gvlpILkFxSAN86lG2R7fZNu+SKWuDilrZc
+ hdmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=N4gyYG6pd1qHC2GjZUAc/a5emn2edBGVA7chcRhvAO8=;
- b=bpd4GgH7f/WfsJvmNnET3lJ266ATU1EEtqW62b0RjO2qJmCDV07aAdsugn2tDRKiKp
- Zbz2Jdc2NiOxL55Cfw1V7/7JMOhTO/0JXG0BSlZUXewhWTXS4rHWTADCrsjNyoE/OPoh
- hpYvHmQ6OY9lWftJ71WtkalqQ6A0NUxkytyFCGcxEMHQ0z8flbua6+vgq2SylaFFBkMS
- OfhwtmbgN3Hz7khaFDffqRee8yU2P54fdZw0TH/aUbPsine/h21A57b37eDWqCX4QGZL
- 2yLeTx4KK151Pcr2vN5P1mtEItqA+ASUijNPK86WmvARwNjcPtmlrwmRI7/G/b/Xz4W0
- I03Q==
-X-Gm-Message-State: ANhLgQ0IOhLHTm6L4/s77Gm9Q+MFMh2h7ZFuBaNMKLGg/ZwMb4DFNHII
- xnp3/JlzWMVxxRGsUmVnlt4lyQ==
-X-Google-Smtp-Source: ADFU+vtVplsLJKhJ5k96cjG7bQIJiqMwH6aOvBxLDVX3vK8y4Ou+veGu1hCYgxMQXp8PN1ugVbeDHg==
-X-Received: by 2002:adf:a555:: with SMTP id j21mr4427467wrb.409.1583930817062; 
- Wed, 11 Mar 2020 05:46:57 -0700 (PDT)
+ bh=d7fzzw/5lEfLgru+68iO/J8krazqjJjWjKm9fH3TH5I=;
+ b=V9q8lQOsGGEeFKbOgGPLvZXQtpdMMNieGObE/pilXD0XfgXnf9XNYbhg+Yda0aeQuR
+ CeyPLv4ESKkiy2ERCXP1mdpLHCkrV3Q6/GiWGJ/H1uPL710fBvo9F5cgZc9YbshYzxY1
+ ehDpBYxB72YO/5SsRqPvCPBNQ5XdejCEn67/wJdDSNznqBW6581bjRlDzdm+E8ACWvfu
+ A1fcvLPrppL2ur3U7nmsQsHYpqVsjr/6TgumOb50sdPq9bXCPUWWPhxZ3o7dtFRT/i50
+ H6dZsrLU5I9ieDc/+KoeesOBzlZ12eBfEF69UYO8/2JfPxfmWRDOuX5bVpdblfzzrBoR
+ D0cw==
+X-Gm-Message-State: ANhLgQ32hOrawwYgncSQXkrx4WP2eRHs8LHaNn3jMFnrZdPIWlUp/vXD
+ 1ZhFk5xqLJEU9Ej+bMN18LzSDg==
+X-Google-Smtp-Source: ADFU+vtrrbz3xW1uwROP0nlDBlOyziir6FkZYgi3Shk3F4IjgLnSc2vkzPiEnYQH9VQXQDGBOwBJWg==
+X-Received: by 2002:a1c:7e08:: with SMTP id z8mr3550520wmc.166.1583930818310; 
+ Wed, 11 Mar 2020 05:46:58 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:171b:c9a8:fbc0:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id c2sm8380020wma.39.2020.03.11.05.46.55
+ by smtp.gmail.com with ESMTPSA id c2sm8380020wma.39.2020.03.11.05.46.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Mar 2020 05:46:56 -0700 (PDT)
+ Wed, 11 Mar 2020 05:46:57 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: bhelgaas@google.com, will@kernel.org, robh+dt@kernel.org, joro@8bytes.org,
  baolu.lu@linux.intel.com, sudeep.holla@arm.com, linux-doc@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-acpi@vger.kernel.org,
  iommu@lists.linux-foundation.org
-Subject: [PATCH v2 02/11] PCI: Add ats_supported host bridge flag
-Date: Wed, 11 Mar 2020 13:44:57 +0100
-Message-Id: <20200311124506.208376-3-jean-philippe@linaro.org>
+Subject: [PATCH v2 03/11] PCI: OF: Check whether the host bridge supports ATS
+Date: Wed, 11 Mar 2020 13:44:58 +0100
+Message-Id: <20200311124506.208376-4-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200311124506.208376-1-jean-philippe@linaro.org>
 References: <20200311124506.208376-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_054658_365334_145CFAC6 
-X-CRM114-Status: GOOD (  12.26  )
+X-CRM114-CacheID: sfid-20200311_054659_649090_8524E212 
+X-CRM114-Status: GOOD (  11.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,51 +111,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Each vendor has their own way of describing whether a host bridge
-supports ATS.  The Intel and AMD ACPI tables selectively enable or
-disable ATS per device or sub-tree, while Arm has a single bit for each
-host bridge.  For those that need it, add an ats_supported bit to the
-host bridge structure.
+When setting up a generic host on a device-tree based system, copy the
+ats-supported flag into the pci_host_bridge structure.
 
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
-v1->v2: try to improve the comment
+v1->v2: keep the helper in pci-host-common.c
 ---
- drivers/pci/probe.c | 8 ++++++++
- include/linux/pci.h | 1 +
- 2 files changed, 9 insertions(+)
+ drivers/pci/controller/pci-host-common.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-index 512cb4312ddd..b5e36f06b40a 100644
---- a/drivers/pci/probe.c
-+++ b/drivers/pci/probe.c
-@@ -598,6 +598,14 @@ static void pci_init_host_bridge(struct pci_host_bridge *bridge)
- 	bridge->native_shpc_hotplug = 1;
- 	bridge->native_pme = 1;
- 	bridge->native_ltr = 1;
-+
-+	/*
-+	 * Some systems (ACPI IORT, device-tree) declare ATS support at the host
-+	 * bridge, and clear this bit when ATS isn't supported. Others (ACPI
-+	 * DMAR and IVRS) declare ATS support with a smaller granularity, and
-+	 * need this bit set.
-+	 */
-+	bridge->ats_supported = 1;
+diff --git a/drivers/pci/controller/pci-host-common.c b/drivers/pci/controller/pci-host-common.c
+index 250a3fc80ec6..2e800bc6ae7a 100644
+--- a/drivers/pci/controller/pci-host-common.c
++++ b/drivers/pci/controller/pci-host-common.c
+@@ -54,6 +54,16 @@ static struct pci_config_window *gen_pci_init(struct device *dev,
+ 	return ERR_PTR(err);
  }
  
- struct pci_host_bridge *pci_alloc_host_bridge(size_t priv)
-diff --git a/include/linux/pci.h b/include/linux/pci.h
-index 3840a541a9de..9fe2e84d74d7 100644
---- a/include/linux/pci.h
-+++ b/include/linux/pci.h
-@@ -511,6 +511,7 @@ struct pci_host_bridge {
- 	unsigned int	native_pme:1;		/* OS may use PCIe PME */
- 	unsigned int	native_ltr:1;		/* OS may use PCIe LTR */
- 	unsigned int	preserve_config:1;	/* Preserve FW resource setup */
-+	unsigned int	ats_supported:1;
++static void of_pci_host_check_ats(struct pci_host_bridge *bridge)
++{
++	struct device_node *np = bridge->bus->dev.of_node;
++
++	if (!np)
++		return;
++
++	bridge->ats_supported = of_property_read_bool(np, "ats-supported");
++}
++
+ int pci_host_common_probe(struct platform_device *pdev,
+ 			  struct pci_ecam_ops *ops)
+ {
+@@ -92,6 +102,7 @@ int pci_host_common_probe(struct platform_device *pdev,
+ 		return ret;
+ 	}
  
- 	/* Resource alignment requirements */
- 	resource_size_t (*align_resource)(struct pci_dev *dev,
++	of_pci_host_check_ats(bridge);
+ 	platform_set_drvdata(pdev, bridge->bus);
+ 	return 0;
+ }
 -- 
 2.25.1
 
