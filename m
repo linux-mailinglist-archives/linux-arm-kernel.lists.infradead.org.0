@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 448EF181E05
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:35:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 993D6181E07
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:35:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6SXbPKuLCTMpPf5E7eHulyekFicTdHjwd1ePxeSuLWk=; b=jRTgc39JrXzHI4
-	T705wTm+S9iTFchWKxW9TYXd9lbiyvi4Cm0/2OVlurSC67Hwx1g38+mdF2fZFdB3gS9n7VwlIFzsn
-	xThameL/Z5UmCcaUwrcAAfz7XoDUNlQSS/E5P3LeGLSesKY20HP9PTvLgWGXDrC9kuk/RPqaVQocM
-	XE7HQ3Zc70nPjxayngzy8IiuVG39mkJk6pz1MVoZhQmoj+RKQmm7FX479Cjgd9RfZ1VKmOGASL+qk
-	hikL0vUZ9nUJW/IC8wbNBdstzGpULCndYxNasIakpGFkMAip3A8iB4vkfOZLQIRn9gC9JPtYe6Km3
-	+V7ORYCKLFAJ5PWwsd7g==;
+	List-Owner; bh=vcSUHaBuv77e1Qv9Pa88qBdQHmU21yQg/yuFdCehjB0=; b=g7pqd10geo5OTH
+	yOAvlzNdsO9UhUNxWNjSyECUoixcpmnMNNrW8DMM/ziSOUP3nuOvJ57VBEpSzEd8AaSKkOilFulIt
+	9fY8c/YnfM2y+HSH2mQNowbsExbxth23hTSAsX9W/LjdFgU/Ds6kLymEsTS5HFAVx4KRadwvf1ZW2
+	/fg/46Mr5KPW+/48kwNoMS5kIDQh4dI+zN1hEu7H7MEHPLw7mvbVXhwVdgd7b7o1Taq0lz2iyIZvl
+	6XWX74KkY2mxBMxA0YQ3hzzC1YbVcqzgqKJ3Zi5ES7fXPCJ2t4vLD9xgfTkRsVpccpqXEqGLM6KOF
+	bAPhIJ/LP9N/9qavABLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4KH-0004NX-8D; Wed, 11 Mar 2020 16:35:21 +0000
+	id 1jC4KW-0005tu-Nl; Wed, 11 Mar 2020 16:35:36 +0000
 Received: from dodo.xh.is ([2001:19f0:8001:184d:5400:2ff:fe7b:e8bd])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4JZ-00046P-9Q
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:34:39 +0000
+ id 1jC4K0-0004Xy-AC
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:35:07 +0000
 X-Spam: yes
 X-Spam-Score: 6.6 / 99999
-X-Spam-Symbols: TO_DN_SOME, R_MISSING_CHARSET, BROKEN_CONTENT_TYPE, MIME_TRACE,
- ARC_NA, FREEMAIL_ENVRCPT, TO_MATCH_ENVRCPT_SOME, FROM_HAS_DN,
- TAGGED_RCPT, FREEMAIL_TO, RCVD_NO_TLS_LAST, FROM_EQ_ENVFROM,
- ASN, RCVD_VIA_SMTP_AUTH, MID_CONTAINS_FROM, RCPT_COUNT_TWELVE,
- RCVD_COUNT_TWO, SUSPICIOUS_RECIPS
-Received: by dodo.xh.is (OpenSMTPD) with ESMTPSA id 7cbb8e7a
+X-Spam-Symbols: TO_MATCH_ENVRCPT_SOME, FROM_EQ_ENVFROM, MIME_TRACE,
+ RCVD_COUNT_TWO, SUSPICIOUS_RECIPS, TO_DN_SOME,
+ FREEMAIL_ENVRCPT, R_MISSING_CHARSET, BROKEN_CONTENT_TYPE,
+ MID_CONTAINS_FROM, RCVD_VIA_SMTP_AUTH, FROM_HAS_DN,
+ TAGGED_RCPT, FREEMAIL_TO, ASN, ARC_NA, RCVD_NO_TLS_LAST,
+ RCPT_COUNT_TWELVE
+Received: by dodo.xh.is (OpenSMTPD) with ESMTPSA id 4bc59161
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
- Wed, 11 Mar 2020 09:34:35 -0700 (PDT)
+ Wed, 11 Mar 2020 09:35:03 -0700 (PDT)
 Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
  icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id 2554C4C335;
- Wed, 11 Mar 2020 16:34:29 +0000 (UTC)
+ by hermes.aosc.io (Postfix) with ESMTPSA id 547A64C335;
+ Wed, 11 Mar 2020 16:34:53 +0000 (UTC)
 From: Icenowy Zheng <icenowy@aosc.io>
 To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
  Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>, Ondrej Jirman <megous@megous.com>
-Subject: [PATCH 4/5] drm/sun4i: sun6i_mipi_dsi: fix horizontal timing
- calculation
-Date: Thu, 12 Mar 2020 00:33:28 +0800
-Message-Id: <20200311163329.221840-5-icenowy@aosc.io>
+Subject: [PATCH 5/5] arm64: allwinner: dts: a64: add LCD-related device nodes
+ for PinePhone
+Date: Thu, 12 Mar 2020 00:33:29 +0800
+Message-Id: <20200311163329.221840-6-icenowy@aosc.io>
 In-Reply-To: <20200311163329.221840-1-icenowy@aosc.io>
 References: <20200311163329.221840-1-icenowy@aosc.io>
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aosc.io; s=dkim;
- t=1583944474;
+ t=1583944501;
  h=from:subject:date:message-id:to:cc:mime-version:content-transfer-encoding:in-reply-to:references;
- bh=U2GxqfdymldYXpFrmpoV6T/L6VN/aPLvUF+27UYMKNM=;
- b=tIV6lwpp+xUu1yh4SMhtRjYtnNU8O1efXGjwMBU6+K4WLy9VFlS6syxUXosBQHHhVI5sXQ
- wqqe/lJ0Z0jZtgQMh+g7fgIPlImrhm2xCibz4wNeaYLAvpCZYuL5mQc6UnYyZk+jw7Rzhd
- dd7JFj4hPaMvnnyRnz+4/VYq9QYocXw=
+ bh=u9w5nAbN8r7AuM3w2A7hm0aQ2elaDIKLhYe17LG/UKw=;
+ b=OuclH6urbbHX4kgu9EHBRU0pQYaQnNhzw7kkFHhgFmMBeN52FCgbhRETL7FJ/OdQ5cZDi3
+ TaqZ7I76I/vIVkrPIFWCY6+FP3GVx8pJLjoeGSkYfvUYudOZjCpInO0mTBx49H5kfAuo8s
+ cboEN30pn3Ae2Brmh0trBPrEOR/qwu0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_093437_621342_407459B4 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20200311_093504_515851_E04C6CAF 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,57 +95,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The max() function call in horizontal timing calculation shouldn't pad a
-length already subtracted with overhead to overhead, instead it should
-only prevent the set timing to underflow.
+PinePhone uses PWM backlight and a XBD599 LCD panel over DSI for
+display.
+
+Add its device nodes.
 
 Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
 ---
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ .../dts/allwinner/sun50i-a64-pinephone.dtsi   | 37 +++++++++++++++++++
+ 1 file changed, 37 insertions(+)
 
-diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-index 059939789730..5f2313c40328 100644
---- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-+++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-@@ -555,7 +555,7 @@ static void sun6i_dsi_setup_timings(struct sun6i_dsi *dsi,
- 		 */
- #define HSA_PACKET_OVERHEAD	10
- 		hsa = max((unsigned int)HSA_PACKET_OVERHEAD,
--			  (mode->hsync_end - mode->hsync_start) * Bpp - HSA_PACKET_OVERHEAD);
-+			  (mode->hsync_end - mode->hsync_start) * Bpp) - HSA_PACKET_OVERHEAD;
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+index cefda145c3c9..96d9150423e0 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
+@@ -16,6 +16,15 @@ aliases {
+ 		serial0 = &uart0;
+ 	};
  
- 		/*
- 		 * The backporch is set using a blanking packet (4
-@@ -564,7 +564,7 @@ static void sun6i_dsi_setup_timings(struct sun6i_dsi *dsi,
- 		 */
- #define HBP_PACKET_OVERHEAD	6
- 		hbp = max((unsigned int)HBP_PACKET_OVERHEAD,
--			  (mode->htotal - mode->hsync_end) * Bpp - HBP_PACKET_OVERHEAD);
-+			  (mode->htotal - mode->hsync_end) * Bpp) - HBP_PACKET_OVERHEAD;
++	backlight: backlight {
++		compatible = "pwm-backlight";
++		pwms = <&r_pwm 0 50000 PWM_POLARITY_INVERTED>;
++		brightness-levels = <0 16 18 20 22 24 26 29 32 35 38 42 46 51 56 62 68 75 83 91 100>;
++		default-brightness-level = <15>;
++		enable-gpios = <&pio 7 10 GPIO_ACTIVE_HIGH>; /* PH10 */
++		power-supply = <&reg_ldo_io0>;
++	};
++
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
+@@ -84,6 +93,30 @@ &dai {
+ 	status = "okay";
+ };
  
- 		/*
- 		 * The frontporch is set using a sync event (4 bytes)
-@@ -574,7 +574,7 @@ static void sun6i_dsi_setup_timings(struct sun6i_dsi *dsi,
- 		 */
- #define HFP_PACKET_OVERHEAD	16
- 		hfp = max((unsigned int)HFP_PACKET_OVERHEAD,
--			  (mode->hsync_start - mode->hdisplay) * Bpp - HFP_PACKET_OVERHEAD);
-+			  (mode->hsync_start - mode->hdisplay) * Bpp) - HFP_PACKET_OVERHEAD;
++&de {
++	status = "okay";
++};
++
++&dphy {
++	status = "okay";
++};
++
++&dsi {
++	vcc-dsi-supply = <&reg_dldo1>;
++	#address-cells = <1>;
++	#size-cells = <0>;
++	status = "okay";
++
++	panel@0 {
++		compatible = "xingbangda,xbd599";
++		reg = <0>;
++		reset-gpios = <&pio 3 23 GPIO_ACTIVE_LOW>; /* PD23 */
++		iovcc-supply = <&reg_dldo2>;
++		vcc-supply = <&reg_ldo_io0>;
++		backlight = <&backlight>;
++	};
++};
++
+ &ehci0 {
+ 	status = "okay";
+ };
+@@ -188,6 +221,10 @@ &r_pio {
+ 	 */
+ };
  
- 		/*
- 		 * The blanking is set using a sync event (4 bytes)
-@@ -583,8 +583,8 @@ static void sun6i_dsi_setup_timings(struct sun6i_dsi *dsi,
- 		 */
- #define HBLK_PACKET_OVERHEAD	10
- 		hblk = max((unsigned int)HBLK_PACKET_OVERHEAD,
--			   (mode->htotal - (mode->hsync_end - mode->hsync_start)) * Bpp -
--			   HBLK_PACKET_OVERHEAD);
-+			   (mode->htotal - (mode->hsync_end - mode->hsync_start)) * Bpp) -
-+			   HBLK_PACKET_OVERHEAD;
++&r_pwm {
++	status = "okay";
++};
++
+ &r_rsb {
+ 	status = "okay";
  
- 		/*
- 		 * And I'm not entirely sure what vblk is about. The driver in
 -- 
 2.24.1
 
