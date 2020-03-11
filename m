@@ -2,86 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75E52181CCA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 16:48:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 442FA181CED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 16:53:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3lX59THgjXqDyxzuPFtx1WFeuGGMBC1aQ5XvMDrQUwY=; b=hNIhZVXo+dYfRSvd/NJmSzaVw
-	n1oPTAhM5JVIh/bTiSsgUu6fi/IFx5OAGp+GDmQRRzRe5k/D4ExyD/n4Ti12WFuHv3KGCno10El+X
-	kbmXmKHnVTGabYEh7CTwzW+iuo2/l648A6z6E95uw7pl+tyjAuaQNQSfYgfF2LPNnOURAa8L90PCn
-	tjBW07mPVR+qpObK5MId95Q4YdOiQh3dhrj+x9DKPhh2JijVtXcTdC1xAmRKytyipRvvlHlw53MvS
-	ObZHQc7ek68VsbJzTRwWZ1cY0ZogU1PtY+dWpsPH90C8ZepxbuGB72ZxY6Xl3llVAPaxBldK5GNUq
-	Ru2PIkj6Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gNIZVxcFnb7+z63bT1/n8quCD5oyLueQh7JeWL7OjFg=; b=m8CCCON/IstSLh
+	0++DbdMn/hVovYfv6Dgsr/L/xOauuFB5UzsoXfS7mslz2N/J13FuO1pYYkmTzVqCl8yFBChIS3iUI
+	oa8yzaTSmcOrNunSkcG7njgkdDN3HNmLH1pqY94aT7DHSrUIBNWqvFWbcitDmasnlBG4WqhSOX55a
+	muzYw7tNs95iytCLxGJmue7qyZcRH78tP4vsiz31+3jdZC/V6YtPjBziuQaioDb3dW5RRZJu/9s34
+	RwJqCcmIj8LRbdiyglxZwuqhDzyOfxOa+3IRSLl/EpMVxUaOTsqJZ+ZXCglXH/HKVval2P9h2BdW3
+	+IAYWgKWC9LjwdpMyEeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC3ao-0007bj-1S; Wed, 11 Mar 2020 15:48:22 +0000
-Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
+	id 1jC3fm-0001TZ-U8; Wed, 11 Mar 2020 15:53:30 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC3ad-0007b7-K3
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 15:48:13 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5e69080d0001>; Wed, 11 Mar 2020 08:47:25 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Wed, 11 Mar 2020 08:48:10 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Wed, 11 Mar 2020 08:48:10 -0700
-Received: from [10.25.76.193] (172.20.13.39) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 11 Mar
- 2020 15:48:05 +0000
-Subject: Re: [PATCH V5 0/5] Add support for PCIe endpoint mode in Tegra194
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, <thierry.reding@gmail.com>
-References: <20200303181052.16134-1-vidyas@nvidia.com>
- <20200311105141.GA30083@e121166-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <e49b3c8d-f669-007b-5d35-b8ec4f0529aa@nvidia.com>
-Date: Wed, 11 Mar 2020 21:18:02 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ id 1jC3fY-0001Sy-Jj; Wed, 11 Mar 2020 15:53:18 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id EC0A3293F52
+Subject: Re: [PATCH v11 0/5] arm/arm64: mediatek: Fix mt8173 mmsys device
+ probing
+To: CK Hu <ck.hu@mediatek.com>
+References: <20200311115614.1425528-1-enric.balletbo@collabora.com>
+ <1583931705.29614.3.camel@mtksdaap41>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <24893e7f-5d76-e10e-61db-4b0abd43d12d@collabora.com>
+Date: Wed, 11 Mar 2020 16:53:05 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200311105141.GA30083@e121166-lin.cambridge.arm.com>
-X-Originating-IP: [172.20.13.39]
-X-ClientProxiedBy: HQMAIL107.nvidia.com (172.20.187.13) To
- HQMAIL107.nvidia.com (172.20.187.13)
+In-Reply-To: <1583931705.29614.3.camel@mtksdaap41>
 Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1583941645; bh=ywvixbNO+/N+yt4O8EWdBUGbwryGxLJH9bz6Oivel4E=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=FUr9rm3ZDnaGkISW2fqFeQV6c9pGe4voXCRhfLm6YSBXRi1w8HYJNa8/I8bfNPJZ0
- hrvJzdioW7B0VV1xDJZl38c+TJcJV+KIjyRryJyYj+nF9IqXosGb48Ru5Rzl7X9PuQ
- xeqi9ruu0zODcJlLs68teXh/cON40ntYNfdx1DuZAkFrt9DKr8AE0NVAcbdP9PcPEg
- y0TF7XWWQpo73L1oNJfHpDQX3qHnrJJ8qYBxYrWerdWJ6trWhksnPj6k/0qaZdNTVF
- PkPHL/U5VcNEI8kIWQRmXkUai/qB8i/kSr2X+0RJw+0Am0rEg3tMthMIaAg/ooMlGN
- n1/Ibsjw1TkiQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_084811_949819_7F234B36 
-X-CRM114-Status: GOOD (  14.41  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200311_085316_915281_680EE341 
+X-CRM114-Status: GOOD (  22.58  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,81 +60,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
- linux-tegra@vger.kernel.org, robh+dt@kernel.org, linux-pci@vger.kernel.org,
- bhelgaas@google.com, andrew.murray@arm.com, jonathanh@nvidia.com,
- linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Weiyi Lu <weiyi.lu@mediatek.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ wens@csie.org, linux-arm-kernel@lists.infradead.org,
+ mtk01761 <wendell.lin@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ p.zabel@pengutronix.de, frank-w@public-files.de,
+ Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
+ Fabien Parent <fparent@baylibre.com>, sboyd@kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ matthias.bgg@kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi CK,
 
+On 11/3/20 14:01, CK Hu wrote:
+> Hi, Enric:
+> 
+> I'm confused this is v11 or v12.
+> For v12, you've lost some 'Acked-by' and 'Reviewed-by' tag.
+> 
 
-On 3/11/2020 4:22 PM, Lorenzo Pieralisi wrote:
-> External email: Use caution opening links or attachments
-> 
-> 
-> On Tue, Mar 03, 2020 at 11:40:47PM +0530, Vidya Sagar wrote:
->> Tegra194 has three (C0, C4 & C5) dual mode PCIe controllers that can operate
->> either in root port mode or in end point mode but only in one mode at a time.
->> Platform P2972-0000 supports enabling endpoint mode for C5 controller. This
->> patch series adds support for PCIe endpoint mode in both the driver as well as
->> in DT.
->> This patch series depends on the changes made for Synopsys DesignWare endpoint
->> mode subsystem that are recently accepted.
->> @ https://patchwork.kernel.org/project/linux-pci/list/?series=202211
->> which in turn depends on the patch made by Kishon
->> @ https://patchwork.kernel.org/patch/10975123/
->> which is also under review.
->>
->> V5:
->> * Rebased patch-2 on top of Lorenzo's pci/endpoint branch
->> * Removed unwanted header files inclusion in patch-5
-> 
-> Applied patches 1,2,5 to pci/endpoint for v5.7, please let me know
-> if something is missing.
-Thanks Lorenzo and Thierry.
+Right, sorry about that, I messed my workflow after a patman upgrade that didn't
+work. I'll collect the acks and reviews and send a v12 later today, so it's
+clear which patches to apply.
 
 Thanks,
-Vidya Sagar
+ Enric
 
+> Regards,
+> CK
 > 
-> Thanks,
-> Lorenzo
+> On Wed, 2020-03-11 at 12:56 +0100, Enric Balletbo i Serra wrote:
+>> Dear all,
+>>
+>> These patches are intended to solve an old standing issue on some
+>> Mediatek devices (mt8173, mt2701 and mt2712 are affected by this issue).
+>>
+>> Up to now both drivers, clock and drm are probed with the same device tree
+>> compatible. But only the first driver gets probed, which in effect breaks
+>> graphics on those devices.
+>>
+>> The MMSYS (Multimedia subsystem) in Mediatek SoCs has some registers to
+>> control clock gates (which is used in the clk driver) and some registers
+>> to set the routing and enable the differnet blocks of the display
+>> and MDP (Media Data Path) subsystem. On this series the clk driver is
+>> not a pure clock controller but a system controller that can provide
+>> access to the shared registers between the different drivers that need
+>> it (mediatek-drm and mediatek-mdp). Hence the MMSYS clk driver was moved
+>> to drivers/soc/mediatek and is the entry point (parent) which will trigger
+>> the probe of the corresponding mediatek-drm driver.
+>>
+>> **IMPORTANT** This series only fixes the issue on mt8173 to make it
+>> simple and as is the only platform I can test. Similar changes should be
+>> applied for mt2701 and mt2712 to have display working.
+>>
+>> These patches apply on top of linux-next.
+>>
+>> For reference, here are the links to the old discussions:
+>> * v10: https://patchwork.kernel.org/project/linux-mediatek/list/?series=248505
+>> * v9: https://patchwork.kernel.org/project/linux-clk/list/?series=247591
+>> * v8: https://patchwork.kernel.org/project/linux-mediatek/list/?series=244891
+>> * v7: https://patchwork.kernel.org/project/linux-mediatek/list/?series=241217
+>> * v6: https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
+>> * v5: https://patchwork.kernel.org/project/linux-mediatek/list/?series=44063
+>> * v4:
+>>   * https://patchwork.kernel.org/patch/10530871/
+>>   * https://patchwork.kernel.org/patch/10530883/
+>>   * https://patchwork.kernel.org/patch/10530885/
+>>   * https://patchwork.kernel.org/patch/10530911/
+>>   * https://patchwork.kernel.org/patch/10530913/
+>> * v3:
+>>   * https://patchwork.kernel.org/patch/10367857/
+>>   * https://patchwork.kernel.org/patch/10367861/
+>>   * https://patchwork.kernel.org/patch/10367877/
+>>   * https://patchwork.kernel.org/patch/10367875/
+>>   * https://patchwork.kernel.org/patch/10367885/
+>>   * https://patchwork.kernel.org/patch/10367883/
+>>   * https://patchwork.kernel.org/patch/10367889/
+>>   * https://patchwork.kernel.org/patch/10367907/
+>>   * https://patchwork.kernel.org/patch/10367909/
+>>   * https://patchwork.kernel.org/patch/10367905/
+>> * v2: No relevant discussion, see v3
+>> * v1:
+>>   * https://patchwork.kernel.org/patch/10016497/
+>>   * https://patchwork.kernel.org/patch/10016499/
+>>   * https://patchwork.kernel.org/patch/10016505/
+>>   * https://patchwork.kernel.org/patch/10016507/
+>>
+>> Best regards,
+>>  Enric
+>>
+>> Changes in v11:
+>> - Leave the clocks part in drivers/clk (clk-mt8173-mm)
+>> - Instantiate the clock driver from the mtk-mmsys driver.
+>> - Add default config option to not break anything.
+>> - Removed the Reviewed-by CK tag as changed the organization.
+>>
+>> Changes in v10:
+>> - Update the binding documentation for the mmsys system controller.
+>> - Renamed to be generic mtk-mmsys
+>> - Add driver data support to be able to support diferent SoCs
+>> - Select CONFIG_MTK_MMSYS (CK)
+>> - Pass device pointer of mmsys device instead of config regs (CK)
+>> - Match driver data to get display routing.
+>>
+>> Changes in v9:
+>> - Move mmsys to drivers/soc/mediatek (CK)
+>> - Introduced a new patch to move routing control into mmsys driver.
+>> - Removed the patch to use regmap as is not needed anymore.
+>> - Do not move the display routing from the drm driver (CK)
+>>
+>> Changes in v8:
+>> - Be a builtin_platform_driver like other mediatek mmsys drivers.
+>> - New patch introduced in this series.
+>>
+>> Changes in v7:
+>> - Free clk_data->clks as well
+>> - Get rid of private data structure
+>>
+>> Enric Balletbo i Serra (3):
+>>   dt-bindings: mediatek: Update mmsys binding to reflect it is a system
+>>     controller
+>>   soc / drm: mediatek: Move routing control to mmsys device
+>>   soc / drm: mediatek: Fix mediatek-drm device probing
+>>
+>> Matthias Brugger (2):
+>>   drm/mediatek: Omit warning on probe defers
+>>   clk / soc: mediatek: Move mt8173 MMSYS to platform driver
+>>
+>>  .../bindings/arm/mediatek/mediatek,mmsys.txt  |   7 +-
+>>  drivers/clk/mediatek/Kconfig                  |   7 +
+>>  drivers/clk/mediatek/Makefile                 |   1 +
+>>  drivers/clk/mediatek/clk-mt8173-mm.c          | 146 ++++++++
+>>  drivers/clk/mediatek/clk-mt8173.c             | 104 ------
+>>  drivers/gpu/drm/mediatek/Kconfig              |   1 +
+>>  drivers/gpu/drm/mediatek/mtk_disp_color.c     |   5 +-
+>>  drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |   5 +-
+>>  drivers/gpu/drm/mediatek/mtk_disp_rdma.c      |   5 +-
+>>  drivers/gpu/drm/mediatek/mtk_dpi.c            |  12 +-
+>>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |  19 +-
+>>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c        | 259 +-------------
+>>  drivers/gpu/drm/mediatek/mtk_drm_ddp.h        |   7 -
+>>  drivers/gpu/drm/mediatek/mtk_drm_drv.c        |  45 +--
+>>  drivers/gpu/drm/mediatek/mtk_drm_drv.h        |   2 +-
+>>  drivers/gpu/drm/mediatek/mtk_dsi.c            |   8 +-
+>>  drivers/gpu/drm/mediatek/mtk_hdmi.c           |   4 +-
+>>  drivers/soc/mediatek/Kconfig                  |   8 +
+>>  drivers/soc/mediatek/Makefile                 |   1 +
+>>  drivers/soc/mediatek/mtk-mmsys.c              | 335 ++++++++++++++++++
+>>  include/linux/soc/mediatek/mtk-mmsys.h        |  20 ++
+>>  21 files changed, 590 insertions(+), 411 deletions(-)
+>>  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
+>>  create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
+>>  create mode 100644 include/linux/soc/mediatek/mtk-mmsys.h
+>>
 > 
->> V4:
->> * Started using threaded irqs instead of kthreads
->>
->> V3:
->> * Re-ordered patches in the series to make the driver change as the last patch
->> * Took care of Thierry's review comments
->>
->> V2:
->> * Addressed Thierry & Bjorn's review comments
->> * Added EP mode specific binding documentation to already existing binding documentation file
->> * Removed patch that enables GPIO controller nodes explicitly as they are enabled already
->>
->> Vidya Sagar (5):
->>    soc/tegra: bpmp: Update ABI header
->>    dt-bindings: PCI: tegra: Add DT support for PCIe EP nodes in Tegra194
->>    arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
->>    arm64: tegra: Add support for PCIe endpoint mode in P2972-0000
->>      platform
->>    PCI: tegra: Add support for PCIe endpoint mode in Tegra194
->>
->>   .../bindings/pci/nvidia,tegra194-pcie.txt     | 125 +++-
->>   .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  18 +
->>   arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  99 +++
->>   drivers/pci/controller/dwc/Kconfig            |  30 +-
->>   drivers/pci/controller/dwc/pcie-tegra194.c    | 679 +++++++++++++++++-
->>   include/soc/tegra/bpmp-abi.h                  |  10 +-
->>   6 files changed, 916 insertions(+), 45 deletions(-)
->>
->> --
->> 2.17.1
->>
 
 _______________________________________________
 linux-arm-kernel mailing list
