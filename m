@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 238A21812F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 09:31:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BFCC18130E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 09:35:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bf5pxeY4T1rm0s0Ws7LLXPosiRIVLUI9+FZPC1KxFHo=; b=aTtl+LNlttfkYR
-	i1cCyGHrUA+MpTHt6mwTIh9qTyTigbCXtXVnFBd10NofnxccFz7i2SIRHqnl3M0SVujqh4vC7Mph4
-	P7F87AEzcq3mm2C43XM3Ol3WcMT9CoYCtCxoi5N3b4l+vXGZNgMkChDRrlL1ZWTm4ZvNHt9mr57Jk
-	F2m+j2Bdgwy6IgWJkgb1mjAcInUV7x3hIXGhuMFXGhT7xnayD5DJF7Fb9Xsxj0ezK/w87E5MXyWPD
-	uEh7eB1oFdQDH/cJ3ouQoJeSg6qOFT6lsUVGEoO1NFGz3zsbAd48zQQla5nFhfAlqfJn3nO+rydjy
-	LC5hJh8oGA93PGL+CSMQ==;
+	List-Owner; bh=xF3hCE0cD7aRZzRc7tepspdTPX/riF/J5GDjBXGdovw=; b=L+F/aCMbdx5Enp
+	54Y8S82awC+4kpLk2tFPZXzFFhE9cCgxvDYLSgxDT1A+HBr8yRhbGp2VxBDGQiibMCkKqTO7DjLJ4
+	ldulWt5nOGICJOCSPA93JTBzLdPJpYGVfHrc8cJOXOycEH6eoh/cHl7nRaa77N/bdACQZ/Sg6wV3Z
+	+0xaPens2+iw7xclDh1T9hYpiumZlr++FSorf1SUG8O2t1edpp5uuDIlbJrDxEAzWZ7XwC1Y5EDkj
+	FhkLLXKCww8NisO3eKi7iwsy9Q8GdESEZx7AorIq3LLt3S+RTDdFkXBMV6DbzphTB/Y6KT0NsePnv
+	foIf2AA7tel8uNdOH6yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBwli-0001pt-4Y; Wed, 11 Mar 2020 08:31:10 +0000
+	id 1jBwpa-0002Nw-BA; Wed, 11 Mar 2020 08:35:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBwlY-0001pa-5A
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 08:31:01 +0000
+ id 1jBwpH-0002NQ-90
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 08:34:52 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C91AC20848;
- Wed, 11 Mar 2020 08:30:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E216420828;
+ Wed, 11 Mar 2020 08:34:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583915459;
- bh=rIWT9c23MTBVlaTh1Eb6lpf59lA1osIAXiNlIrkeg/U=;
+ s=default; t=1583915691;
+ bh=MXW2z5LPp0WQucUkJT7tI/HgnXFy6BLbj6K20XcMANg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PmrV3SBmAO/5xRR+ybHP68yc0R7xxRl/oaiqY1r4hJ8wa9wRJUgPn1CQKEA9GHKVi
- UA9LjjCVNtrwB+IJCS7PWZOgeeI5Br2yGlnux0CRVoPfmpPJkdPRvYXPkXeCwcZI1s
- /cxWTtSI/ddBabdOgeSrp1Hzg7Vwmg6IJtKTd9Fk=
-Date: Wed, 11 Mar 2020 16:30:52 +0800
+ b=r8TBtGrwq/ozgqTAaonxpvDixFBdqsY1wNC8Bk1qH6SheUDDFmbU3oHSYgPWjgVjP
+ MSWROiFHvc2W+1Rcnq+ClqGiGBoVRv8HPIIPSkK8qiWTkypgNUHMDIEyd3kIDAKnUa
+ IfKVPWLEV7xr8WkkdxNmmTX0e1PSQgj6x33ArmUo=
+Date: Wed, 11 Mar 2020 16:34:44 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: peng.fan@nxp.com
-Subject: Re: [PATCH 1/3] ARM: dts: imx: add nvmem property for cpu0
-Message-ID: <20200311083052.GD29269@dragon>
-References: <1583201690-16068-1-git-send-email-peng.fan@nxp.com>
- <1583201690-16068-2-git-send-email-peng.fan@nxp.com>
+To: Kuldeep Singh <kuldeep.singh@nxp.com>
+Subject: Re: [PATCH 1/2] arm64: dts: lx2160ardb: Update FSPI node properties
+Message-ID: <20200311083442.GE29269@dragon>
+References: <1583217512-27994-1-git-send-email-kuldeep.singh@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1583201690-16068-2-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1583217512-27994-1-git-send-email-kuldeep.singh@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_013100_247285_BAA37497 
-X-CRM114-Status: GOOD (  14.87  )
+X-CRM114-CacheID: sfid-20200311_013451_340918_5D05464A 
+X-CRM114-Status: UNSURE (   8.34  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,159 +77,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Anson.Huang@nxp.com, linux-pm@vger.kernel.org,
- viresh.kumar@linaro.org, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 03, 2020 at 10:14:48AM +0800, peng.fan@nxp.com wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On Tue, Mar 03, 2020 at 12:08:31PM +0530, Kuldeep Singh wrote:
+> Update fspi node compatibles of LX2160A-RDB to "jedec,spi-nor" for
+> automatic detection of flash.
 > 
-> Add nvmem related property for cpu0, then nvmem API could be used
-> to read cpu speed grading to avoid directly read OCOTP registers
-> mapped which could not handle defer probe.
+> This also helps in fixing below warning:
+> spi-nor spi0.0: found mt35xu512aba, expected m25p80
+> spi-nor spi0.1: found mt35xu512aba, expected m25p80
 > 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  arch/arm/boot/dts/imx6dl.dtsi  | 2 ++
->  arch/arm/boot/dts/imx6q.dtsi   | 2 ++
->  arch/arm/boot/dts/imx6qdl.dtsi | 7 +++++++
->  arch/arm/boot/dts/imx6sl.dtsi  | 9 +++++++++
->  arch/arm/boot/dts/imx6sll.dtsi | 6 ++++++
->  arch/arm/boot/dts/imx6sx.dtsi  | 6 ++++++
->  6 files changed, 32 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/imx6dl.dtsi b/arch/arm/boot/dts/imx6dl.dtsi
-> index 4b3a128d9260..055f1d875bac 100644
-> --- a/arch/arm/boot/dts/imx6dl.dtsi
-> +++ b/arch/arm/boot/dts/imx6dl.dtsi
-> @@ -44,6 +44,8 @@
->  			arm-supply = <&reg_arm>;
->  			pu-supply = <&reg_pu>;
->  			soc-supply = <&reg_soc>;
-> +			nvmem-cells = <&cpu_speed_grade>;
-> +			nvmem-cell-names = "speed_grade";
->  		};
->  
->  		cpu@1 {
-> diff --git a/arch/arm/boot/dts/imx6q.dtsi b/arch/arm/boot/dts/imx6q.dtsi
-> index 0fad13f9d336..d3ba9d4a1290 100644
-> --- a/arch/arm/boot/dts/imx6q.dtsi
-> +++ b/arch/arm/boot/dts/imx6q.dtsi
-> @@ -49,6 +49,8 @@
->  			arm-supply = <&reg_arm>;
->  			pu-supply = <&reg_pu>;
->  			soc-supply = <&reg_soc>;
-> +			nvmem-cells = <&cpu_speed_grade>;
-> +			nvmem-cell-names = "speed_grade";
->  		};
->  
->  		cpu1: cpu@1 {
-> diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-> index 70fb8b56b1d7..982f546b0b89 100644
-> --- a/arch/arm/boot/dts/imx6qdl.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl.dtsi
-> @@ -1165,6 +1165,13 @@
->  				compatible = "fsl,imx6q-ocotp", "syscon";
->  				reg = <0x021bc000 0x4000>;
->  				clocks = <&clks IMX6QDL_CLK_IIM>;
-> +
+> Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
 
-Please drop such newline.  Do not really think they are necessary.
-
-Shawn
-
-> +				#address-cells = <1>;
-> +				#size-cells = <1>;
-> +
-> +				cpu_speed_grade: speed-grade@10 {
-> +					reg = <0x10 4>;
-> +				};
->  			};
->  
->  			tzasc@21d0000 { /* TZASC1 */
-> diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-> index c8ec46fe8302..de943341e4f2 100644
-> --- a/arch/arm/boot/dts/imx6sl.dtsi
-> +++ b/arch/arm/boot/dts/imx6sl.dtsi
-> @@ -74,6 +74,8 @@
->  			arm-supply = <&reg_arm>;
->  			pu-supply = <&reg_pu>;
->  			soc-supply = <&reg_soc>;
-> +			nvmem-cells = <&cpu_speed_grade>;
-> +			nvmem-cell-names = "speed_grade";
->  		};
->  	};
->  
-> @@ -953,6 +955,13 @@
->  				compatible = "fsl,imx6sl-ocotp", "syscon";
->  				reg = <0x021bc000 0x4000>;
->  				clocks = <&clks IMX6SL_CLK_OCOTP>;
-> +
-> +				#address-cells = <1>;
-> +				#size-cells = <1>;
-> +
-> +				cpu_speed_grade: speed-grade@10 {
-> +					reg = <0x10 4>;
-> +				};
->  			};
->  
->  			audmux: audmux@21d8000 {
-> diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-> index 797f850492fe..6b7fb3cec9f6 100644
-> --- a/arch/arm/boot/dts/imx6sll.dtsi
-> +++ b/arch/arm/boot/dts/imx6sll.dtsi
-> @@ -72,6 +72,8 @@
->  				 <&clks IMX6SLL_CLK_PLL1_SYS>;
->  			clock-names = "arm", "pll2_pfd2_396m", "step",
->  				      "pll1_sw", "pll1_sys";
-> +			nvmem-cells = <&cpu_speed_grade>;
-> +			nvmem-cell-names = "speed_grade";
->  		};
->  	};
->  
-> @@ -791,6 +793,10 @@
->  				reg = <0x021bc000 0x4000>;
->  				clocks = <&clks IMX6SLL_CLK_OCOTP>;
->  
-> +				cpu_speed_grade: speed-grade@10 {
-> +					reg = <0x10 4>;
-> +				};
-> +
->  				tempmon_calib: calib@38 {
->  					reg = <0x38 4>;
->  				};
-> diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-> index e47d346a3543..63aa19d81b42 100644
-> --- a/arch/arm/boot/dts/imx6sx.dtsi
-> +++ b/arch/arm/boot/dts/imx6sx.dtsi
-> @@ -87,6 +87,8 @@
->  				      "pll1_sw", "pll1_sys";
->  			arm-supply = <&reg_arm>;
->  			soc-supply = <&reg_soc>;
-> +			nvmem-cells = <&cpu_speed_grade>;
-> +			nvmem-cell-names = "speed_grade";
->  		};
->  	};
->  
-> @@ -1058,6 +1060,10 @@
->  				reg = <0x021bc000 0x4000>;
->  				clocks = <&clks IMX6SX_CLK_OCOTP>;
->  
-> +				cpu_speed_grade: speed-grade@10 {
-> +					reg = <0x10 4>;
-> +				};
-> +
->  				tempmon_calib: calib@38 {
->  					reg = <0x38 4>;
->  				};
-> -- 
-> 2.16.4
-> 
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
