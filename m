@@ -2,97 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7DCA18249A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:18:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ABA01824AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:21:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O5ULOSBR6+KmatwXImdBNg/2hh3jbducq1DIw74NsVA=; b=oPbKg7Yzvt0rDB
-	599bJazHrXP7gqfR+WmbqhTBtdmD///2+xJYonJl6LddM5rMc08o15QpGD7QD3e+UCUIDRnvP9HoZ
-	vfxgElGMKYgYXKPxQnS20VsVuhJlNZpqo6n2UyBGF0Vd3rvtubIdW7oBemLPYQQEXT9hgrTtP7nsa
-	eP2Sc1Q4p+QDoPFPGOxSfMcpDbDvxTPdNruVjFZGakcuKPzKwlizUwNuzz6qkuhq/bzX8el56FcwI
-	AVdJr2Rz51W8X3WXs4uaNJnbH20LRNpurOcOHxcLBqGbvk3SB53OUyAYpJnj6SjRYFg+q4pHh5uYD
-	efsJwGLFgwun64ZupA+Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uGCdjTh/dk5wkoRH0vzlkxNQB0hvj/5Q0EcNw3oyNGA=; b=JhYVTZDz4iFOxL
+	aKBG9kc4zEFQo5qiKqXaOxFZbLvQQPp2Ax3LUTRIMYyUPnxb4SZMggon0OhUowkJ1uehbTdT2nrf0
+	7bul38v71H2byKpmw3ueCKc8eFelzBY0IRJlwgFCAxVCj9hYvmEPUZ27DI6U3boIsPLIC8VtrJ6hh
+	zpIl6UaXvtvSbbM6gV6rBcPrPshWNxroFBAg67b1NSuLUVSGEj1EoKGjI20jxZ6s25fFGSzmIl/Ie
+	7QPFoOj4oQyBVyi8PFqfa03v1LqxuVPmmEgC/88TTUI0Yqbz1iIiihtzPtBg4/p8BzNbLIYdFpzrp
+	KCDcizp3/qengwybccEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC9fy-0000sP-L9; Wed, 11 Mar 2020 22:18:06 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jC9jG-0002V9-G0; Wed, 11 Mar 2020 22:21:30 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC9fr-0000rq-6H
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:18:00 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id y7so1655286pjn.1
+ id 1jC9j7-0002UR-8e
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:21:22 +0000
+Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MuDHR-1jSSDj3kHF-00uWs8 for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 11 Mar 2020 23:21:19 +0100
+Received: by mail-qk1-f182.google.com with SMTP id e11so3762282qkg.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 15:17:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=nRYie0QyD+cdnhyddPb9ZD6MZri8AoRElYc1Lmc36hE=;
- b=e+V1sIESfX0FctKsPmQvgrEDc4zbPfgdr9ALswG6YdboRPAAfcRvBQkR2Q4av0ZVpN
- FYScNTZbenpdyA2htFDRlNsrMWF00GPDxFC1OCVkZfugBjd9PQWJq4TZP63Dqzci4+0Y
- mAqrh4aG5ekBqBm0iPNRj3MD4lal8Rre/NPxJebAUNhTYsipARs7EcLXB0GMAQQ65GAN
- fgDYmsLNIheUbFFGZsob4cz32SzBXbtShOntOwJNybjwA80gECzoNZDlN8YCt7bjrCsj
- nOPPwUzYST3PRS/gHU4ILUz7X8foFzcoturMNV0gqr2bQiw6uBa3hTXpknxyW5zRbRkY
- Okug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=nRYie0QyD+cdnhyddPb9ZD6MZri8AoRElYc1Lmc36hE=;
- b=rjSLlO5OPe3iS9swZPwG9Bmu2aDqgBOaZ2JmoQi6Rer7+28fBN753SQpBLKzPKQfq7
- IqBPTnypx6zHS/tx3BqfuuiwhYBDyKEhCbLOoqpyxdCc2CbLqjeXkKqXOfXfFqJsBLWM
- 06+VJktgI8n2P2l101SfQLg+slg9IppT+8OX5P34KkfD5ScA5pRFaDF/TF0PvvQdbBT1
- zHSuYf48RG5UtUlpcYLC/rLY5HOF9lpZTdEO5T4hLJeOwstW+OQssl96izoRxas/uIi0
- 508x7Km3oTZSgbGWVwgF59Hu/PE0a9XHIAnY8igxo/mIwk69w/ixJnvgqthRMawg+JDd
- waRg==
-X-Gm-Message-State: ANhLgQ1FePmjjIBxnBdqD/EkaFwLcOw2cQxwdSElGXBd4L9rIp7s7M0W
- 2LS8pSRSy/Eazkr2yGlb4MTG7A==
-X-Google-Smtp-Source: ADFU+vuqclAJuGflnAIq8cnrsyrMIS5uLHU9vn4bhcJZpIKT78qUgs2mCU42WQim5LsEXlDajXLjmA==
-X-Received: by 2002:a17:902:9f86:: with SMTP id
- g6mr4715169plq.299.1583965078277; 
- Wed, 11 Mar 2020 15:17:58 -0700 (PDT)
-Received: from [192.168.1.11] (97-126-123-70.tukw.qwest.net. [97.126.123.70])
- by smtp.gmail.com with ESMTPSA id
- a3sm29439695pfi.161.2020.03.11.15.17.56
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Mar 2020 15:17:57 -0700 (PDT)
-Subject: Re: [PATCH v2 19/19] arm64: mte: Add Memory Tagging Extension
- documentation
-To: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20200226180526.3272848-1-catalin.marinas@arm.com>
- <20200226180526.3272848-20-catalin.marinas@arm.com>
-From: Richard Henderson <richard.henderson@linaro.org>
-Message-ID: <0857cca0-9f75-398d-e755-f645d2d8a594@linaro.org>
-Date: Wed, 11 Mar 2020 15:17:54 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Wed, 11 Mar 2020 15:21:18 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ2ncPssues7OSpGXwgkhMV5SUbxAoZTC0/DH6vXqgIoKOFQqqER
+ wbiNhm+kPA9vObJYqkEjwKbxi4H/QGVGU/dKxUs=
+X-Google-Smtp-Source: ADFU+vtUX6596ckwbsQtKLPYKkjWdRNNv2OExbN7pWVykWRKgnRWddSMydtufZDaxYnGmzl5giJGitq9nSLOAiz/v+U=
+X-Received: by 2002:a37:8707:: with SMTP id j7mr2513764qkd.394.1583965277788; 
+ Wed, 11 Mar 2020 15:21:17 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200226180526.3272848-20-catalin.marinas@arm.com>
-Content-Language: en-US
+References: <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
+ <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
+ <7c4c1459-60d5-24c8-6eb9-da299ead99ea@oracle.com>
+ <20200306203439.peytghdqragjfhdx@kahuna>
+ <CAK8P3a0Gyqu7kzO1JF=j9=jJ0T5ut=hbKepvke-2bppuPNKTuQ@mail.gmail.com>
+ <20200309155945.GA4124965@arrakis.emea.arm.com>
+ <20200309160919.GM25745@shell.armlinux.org.uk>
+ <CAK8P3a2yyJLmkifpSabMwtUiAvumMPwLEzT5RpsBA=LYn=ZXUw@mail.gmail.com>
+ <20200311142905.GI3216816@arrakis.emea.arm.com>
+ <CAK8P3a2RC+sg2Tz4M8mkQ_d78FTFdES+YsucUzDFx=UK+L8Oww@mail.gmail.com>
+ <20200311172631.GN3216816@arrakis.emea.arm.com>
+In-Reply-To: <20200311172631.GN3216816@arrakis.emea.arm.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 11 Mar 2020 23:21:01 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a0QTKsqoxE7HS7aNrASSHOfFJHfp3+KZNTVoQ12wHi3VQ@mail.gmail.com>
+Message-ID: <CAK8P3a0QTKsqoxE7HS7aNrASSHOfFJHfp3+KZNTVoQ12wHi3VQ@mail.gmail.com>
+Subject: Re: [PATCH] vfs: keep inodes with page cache off the inode shrinker
+ LRU
+To: Catalin Marinas <catalin.marinas@arm.com>
+X-Provags-ID: V03:K1:qKd8/YRt3ysap/A6UAIo8juxn3YF4vWmhlyQwULsOgJyKwVcVME
+ yu3Hxi8gAHiN2neBd02Oe/QL5+m4nXnN4YPaV4saAezYNlNAdSuGsVSakcop7JNsoBbBCop
+ EwPx6pX8swfk8kHLGl+i5vQJ2j6sA77zWUwtWCS3RUCSJDqIcWuuQYuAT+syx2KGWx7o+gE
+ REUmjmo1UKL0qjCBszxrQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:W/QeN4t1laU=:JHPB5skF3/Ixl4gIqMMwGg
+ HuUQDBCM2E8c7RwwNRo/iI3Zr9YFEsdL5qmEgVAB0G+2KXy4+uAXGZHgnbfT+slEOEqRAbWPv
+ BJgLcokl5uw9bZAN6JpaWUIeLvYl9ti6jeK0PC1xe0KHtO8velFJxLm8csQNof84veakh1BVR
+ +VkMDyHUTNkUDJ0quvI8Tg4lKlO9ycKNmZLC8j6OLiUxO6O41dHJBieNdMwWorQX6s7y89OS8
+ aZ5bF7CMyeZgO65RQBLZg8h55i7gqnGalEc3Frirh1JB9fGtvwFfptkzMzBKsWeTakmAIDRtj
+ yDQTY6CsNOH3eEe0pWIw6Uohs6N7naxg7ME9tul21E/7QWnOc6vLN/EitoG3TOmt8ei3QT1qY
+ tS162KUg71tl0agB+9Txi/Wwy7+G/DvN4jfH69Hrv/Mh8zJjWLwSslrP/azZTTkjxH5vjvMgT
+ oNs5/DwZAzvWHYGYQ55bDJkiBfgQvYApka1copGwehqJSKrMWv/QxVSxwb5iNKeX4grOcBlaB
+ SSNZtWq8yNbs26VEWK1DSrxOfTu3kZxaqhC4kNN21NtDiDkc8mxlYQByY+DYm58761I2Ey9ea
+ U9nbWc3djdfazw7TlQcExwzwqnA1WmVAb0y2BTafpr+KdE8i0s2IgluZ0/zXuPle8je4WeYiO
+ 9l4AAnq4ZIA+Aza4Cbf+8aHWc8XpbKtO8cy7sEzH54gIlTfBikO2cmJPHWVDDif8NpxkLZAPe
+ PozS3wKSYuUbxgZOhGkpEvLF3ZC90S2/4ib+7/AcXf5asbg89+yZOghRPoGwlMJrKQqV34P/Z
+ T2J1JW2fXm2LFDNwRvhtpf8v87i965TmLZgCr/dBxj7oBFQnbs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_151759_288823_8FCC15E1 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_152121_596861_EF744FA6 
+X-CRM114-Status: GOOD (  15.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,42 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>
+Cc: Nishanth Menon <nm@ti.com>, Michal Hocko <mhocko@suse.com>,
+ Johannes Weiner <hannes@cmpxchg.org>, Rik van Riel <riel@surriel.com>,
+ Roman Gushchin <guro@fb.com>, Santosh Shilimkar <santosh.shilimkar@oracle.com>,
+ Dave Chinner <david@fromorbit.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Linux-MM <linux-mm@kvack.org>,
+ Yafang Shao <laoar.shao@gmail.com>, Al Viro <viro@zeniv.linux.org.uk>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>, kernel-team@fb.com,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/26/20 10:05 AM, Catalin Marinas wrote:
-> +    /*
-> +     * From include/uapi/linux/prctl.h
-> +     */
-> +    #define PR_SET_TAGGED_ADDR_CTRL 55
-> +    #define PR_GET_TAGGED_ADDR_CTRL 56
-> +    # define PR_TAGGED_ADDR_ENABLE  (1UL << 0)
-> +    # define PR_MTE_TCF_SHIFT       1
-> +    # define PR_MTE_TCF_NONE        (0UL << PR_MTE_TCF_SHIFT)
-> +    # define PR_MTE_TCF_SYNC        (1UL << PR_MTE_TCF_SHIFT)
-> +    # define PR_MTE_TCF_ASYNC       (2UL << PR_MTE_TCF_SHIFT)
-> +    # define PR_MTE_TCF_MASK        (3UL << PR_MTE_TCF_SHIFT)
-> +    # define PR_MTE_TAG_SHIFT       3
-> +    # define PR_MTE_TAG_MASK        (0xffffUL << PR_MTE_TAG_SHIFT)
+On Wed, Mar 11, 2020 at 6:26 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> On Wed, Mar 11, 2020 at 05:59:53PM +0100, Arnd Bergmann wrote:
+> > On Wed, Mar 11, 2020 at 3:29 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > Do you have an estimate of how long writing to TTBR0_64 takes on Cortex-A7
+> > and A15, respectively?
+>
+> I don't have numbers but it's usually not cheap since you need an ISB to
+> synchronise the context after TTBR0 update (basically flushing the
+> pipeline).
 
-Is there a reason not to include TCMA into the set of bits that userland can
-control with this prcrl?
+Ok.
 
-I know that ordinarily TCR_ELx requires expensive syncing, but for this
-particular field there is a note about "software may change this control bit on
-a context switch".  Which I take to mean that the usual TLB-related syncing may
-be omitted.
+> > Another way might be to use a use a temporary buffer that is already
+> > mapped, and add a memcpy() through L1-cache to reduce the number
+> > of ttbr0 changes. The buffer would probably have to be on the stack,
+> > which limits the size, but for large copies get_user_pages()+memcpy()
+> > may end up being faster anyway.
+>
+> IIRC, the x86 attempt from Ingo some years ago was using
+> get_user_pages() for uaccess. Depending on the size of the buffer, this
+> may be faster than copying twice.
 
+I guess the tradeoffs for that were rather different, as x86 back
+then had no ASIDs, so changing the page tables required a full
+TLB flush.
 
-r~
+         Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
