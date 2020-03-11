@@ -2,59 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D87231822F1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 20:58:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5705C18237A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 21:46:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FV84orepOnpeRKFflNlO7snRjG9Gdv7VfdIlVrs5USc=; b=Dr+7uQJ0JriQwiA9uRvLV+8ee
-	MQVc53wY7K2t8XuthGW5PMUGnniD2HjMOQmHLVyEKDq7rHPofMi97DdK5vGbZdzZNDbCWg4hZJQV7
-	iVxXfOesoggi8sTmk14Epx+qAkuz1vTd8DF2lvpV2UOSxudLHVQrp6CZblq+NT+2LNtHFYJqWir2/
-	pF8gTSk8Rc20MBwVSu7vAkfEfM8XF8mdnuVKyb2OPtZgHgPPmJBk8KBzNHeGt0bPWx96zyI0fJKb9
-	zwamjjVL3NGAeI3VH9J+pih8qcQDNJTebmKW8AgnHBjRVxmrXzsV1UXi6vk2iRP2EArKlYH72FPRj
-	oeV+mAnyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AedN/C/p3KZ2WYm14IAXZqtWdx6+BqwHAhlOmR2uy7o=; b=Sx/nhLipYmRts0
+	5cAWrsKeiQZLjr8rC+PvCzN9WB3jI3hakDFqufi5dijs0e7ZPa02Ynu0mag010bbA23C3F6+y385z
+	hxvcnaX0jD208QBKrYsUCyvCAqsX/yM0iaOPc1xWOxztp0WNeWa/FkkBgt02vjXi4GtO54QjHL7br
+	U8PRJta7w3Es+23TYXrtxfsXzYgWfanN4SMhxCNyD6KPehqara08ohOSEDY+WR1vm0tdZ6m77tCMf
+	z/k1f7xottWa50o54f+P68pYOl93taAYx+KkGu9Q1NyJnFTkToHYFBTIzJnaRfdw84BGRZF3cjyHK
+	NOmoBW5A2TCKRc7olJWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC7UT-0000VF-QW; Wed, 11 Mar 2020 19:58:05 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC7UH-0000UG-Oh; Wed, 11 Mar 2020 19:57:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 199F71FB;
- Wed, 11 Mar 2020 12:57:53 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8EEF73F534;
- Wed, 11 Mar 2020 12:57:52 -0700 (PDT)
-Date: Wed, 11 Mar 2020 19:57:50 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Tudor.Ambarus@microchip.com
-Subject: Re: [PATCH v3 4/4] mtd: spi-nor: remove mtk-quadspi driver
-Message-ID: <20200311195750.GL5411@sirena.org.uk>
-References: <20200306085052.28258-1-gch981213@gmail.com>
- <20200309121020.GD4101@sirena.org.uk>
- <2471214.x7VzW1FXlQ@localhost.localdomain>
- <4427171.IzkiAjLLdB@localhost.localdomain>
+	id 1jC8Ew-0002fQ-54; Wed, 11 Mar 2020 20:46:06 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jC8Em-0002eT-27
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 20:45:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=lWqnS0cz202pymudp+fi5S2BVavTcKkGDJBwh6JxRl4=; b=Kiv1J97Q8JPE8ZCa5dB851mFp
+ W4a0looOhxyYJXowNd7RWtL2s5gl1JqNnoQpNvCjfnx3oMdzxjDkwALD0SK3hJMDW9r+E5netNRw2
+ gTa6OnqbDYIr3mEoYzRUvgGElWRkLcCaqPqiInqHIk8QujnuQo+raQFv7Ltv+4td/t4Lk27id2OpA
+ Ik1RbOzbuLpGG1Pcs/cOXF4/nX0Pfc+QXXQdwAmI7s0Jn92cKyosaw2vEwSHMfcQbJU/maS0+GPOw
+ mA62cq5sKkvh3YDW3uKLukGmsWpKjwuufduP7KtP1o/E4TL0TQbGJsM8lsDNbDAXdsH/8B9TZjnw+
+ OTd58mRnA==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:51728)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jC8ET-0005Qw-MZ; Wed, 11 Mar 2020 20:45:37 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jC8EN-0005di-5m; Wed, 11 Mar 2020 20:45:31 +0000
+Date: Wed, 11 Mar 2020 20:45:31 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v3] ARM: smp: add support for per-task stack canaries
+Message-ID: <20200311204531.GU25745@shell.armlinux.org.uk>
+References: <20181206083257.9596-1-ard.biesheuvel@linaro.org>
+ <20200309164931.GA23889@roeck-us.net>
+ <202003111020.D543B4332@keescook>
+ <04a8c31a-3c43-3dcf-c9fd-82ba225a19f6@roeck-us.net>
+ <202003111146.E3FC1924@keescook>
 MIME-Version: 1.0
-In-Reply-To: <4427171.IzkiAjLLdB@localhost.localdomain>
-X-Cookie: I'm a Lisp variable -- bind me!
+Content-Disposition: inline
+In-Reply-To: <202003111146.E3FC1924@keescook>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_125753_891559_73AC4BC8 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200311_134556_103545_66DC2A13 
+X-CRM114-Status: GOOD (  22.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,104 +90,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, vigneshr@ti.com, richard@nod.at,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org, robh+dt@kernel.org,
- linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
- matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org,
- gch981213@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7704404869844802559=="
+Cc: Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ kernel-hardening@lists.openwall.com, linux-kernel@vger.kernel.org,
+ Emese Revfy <re.emese@gmail.com>, Guenter Roeck <linux@roeck-us.net>,
+ Laura Abbott <labbott@redhat.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Mar 11, 2020 at 11:47:20AM -0700, Kees Cook wrote:
+> On Wed, Mar 11, 2020 at 11:31:13AM -0700, Guenter Roeck wrote:
+> > On 3/11/20 10:21 AM, Kees Cook wrote:
+> > > On Mon, Mar 09, 2020 at 09:49:31AM -0700, Guenter Roeck wrote:
+> > >> On Thu, Dec 06, 2018 at 09:32:57AM +0100, Ard Biesheuvel wrote:
+> > >>> On ARM, we currently only change the value of the stack canary when
+> > >>> switching tasks if the kernel was built for UP. On SMP kernels, this
+> > >>> is impossible since the stack canary value is obtained via a global
+> > >>> symbol reference, which means
+> > >>> a) all running tasks on all CPUs must use the same value
+> > >>> b) we can only modify the value when no kernel stack frames are live
+> > >>>    on any CPU, which is effectively never.
+> > >>>
+> > >>> So instead, use a GCC plugin to add a RTL pass that replaces each
+> > >>> reference to the address of the __stack_chk_guard symbol with an
+> > >>> expression that produces the address of the 'stack_canary' field
+> > >>> that is added to struct thread_info. This way, each task will use
+> > >>> its own randomized value.
+> > >>>
+> > >>> Cc: Russell King <linux@armlinux.org.uk>
+> > >>> Cc: Kees Cook <keescook@chromium.org>
+> > >>> Cc: Emese Revfy <re.emese@gmail.com>
+> > >>> Cc: Arnd Bergmann <arnd@arndb.de>
+> > >>> Cc: Laura Abbott <labbott@redhat.com>
+> > >>> Cc: kernel-hardening@lists.openwall.com
+> > >>> Acked-by: Nicolas Pitre <nico@linaro.org>
+> > >>> Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > >>
+> > >> Since this patch is in the tree, cc-option no longer works on
+> > >> the arm architecture if CONFIG_STACKPROTECTOR_PER_TASK is enabled.
+> > >>
+> > >> Any idea how to fix that ? 
+> > > 
+> > > I thought Arnd sent a patch to fix it and it got picked up?
+> > > 
+> > 
+> > Yes, but the fix is not upstream (it is only in -next), and I missed it.
+> 
+> Ah, yes, I found it again now too; it went through rmk's tree.
+> 
+> For thread posterity:
+> 
+> ARM: 8961/2: Fix Kbuild issue caused by per-task stack protector GCC plugin
+> https://www.arm.linux.org.uk/developer/patches/viewpatch.php?id=8961/2
 
---===============7704404869844802559==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="TnYVF1hk1c8rpHiF"
-Content-Disposition: inline
+It's in my fixes branch, waiting for me to do my (now usual) push
+of fixes to Linus.
 
+I'm not sure whether the above discussion is suggesting that there's
+a problem with this patch, or whether it's trying to encourage me
+to send it up to Linus.  I _think_ there's the suggestion that it
+causes a regression, hmm?
 
---TnYVF1hk1c8rpHiF
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Mar 10, 2020 at 09:11:29AM +0000, Tudor.Ambarus@microchip.com wrote:
-
-> You can also create an immutable tag that I can merge in my spi-nor/next=
-=20
-> branch, so that Linus doesn't have to deal with the conflict.
-
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-
-are available in the Git repository at:
-
-  https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git tags/mtk-=
-mtd-spi-move
-
-for you to fetch changes up to e11e8473bcec748c3820636f11b986f611c9309b:
-
-  mtd: spi-nor: remove mtk-quadspi driver (2020-03-11 19:56:08 +0000)
-
-----------------------------------------------------------------
-spi: Rewrite mtk-quadspi spi-nor driver with spi-mem
-
-This patchset from Chuanhong Guo <gch981213@gmail.com> adds a spi-mem
-driver for Mediatek SPI-NOR controller, which already has limited
-support by mtk-quadspi. This new driver can make use of full quadspi
-capability of this controller.
-
-----------------------------------------------------------------
-Chuanhong Guo (4):
-      spi: make spi-max-frequency optional
-      spi: add support for mediatek spi-nor controller
-      dt-bindings: convert mtk-quadspi binding doc for spi-mtk-nor
-      mtd: spi-nor: remove mtk-quadspi driver
-
- .../{mtd/mtk-quadspi.txt =3D> spi/spi-mtk-nor.txt}   |  15 +-
- drivers/mtd/spi-nor/Kconfig                        |   8 -
- drivers/mtd/spi-nor/Makefile                       |   1 -
- drivers/mtd/spi-nor/mtk-quadspi.c                  | 565 -----------------
- drivers/spi/Kconfig                                |  10 +
- drivers/spi/Makefile                               |   1 +
- drivers/spi/spi-mtk-nor.c                          | 689 +++++++++++++++++=
-++++
- drivers/spi/spi.c                                  |   9 +-
- 8 files changed, 708 insertions(+), 590 deletions(-)
- rename Documentation/devicetree/bindings/{mtd/mtk-quadspi.txt =3D> spi/spi=
--mtk-nor.txt} (75%)
- delete mode 100644 drivers/mtd/spi-nor/mtk-quadspi.c
- create mode 100644 drivers/spi/spi-mtk-nor.c
-
---TnYVF1hk1c8rpHiF
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5pQr0ACgkQJNaLcl1U
-h9BuJgf+J4BVeDZ89cXm1ecHsmkFxwEbC3B2+ALUZTKsTZ4n5rM4aliKanEGJ5XX
-llfEUpxE7QAnZE9vv8yoKCfE8njVTTmyYi2TBJKg0hrcXb1Q3pvbsQJTO8uXm57g
-iajxxjrO0mdISzR0gErKYgJjdDyIUThSR89v5b7YXpWP4dHf7JSA4qwIWFhOLCZd
-fX3G8RIjqXkSJx2yKPjK7+xkA7u7GvP7U9kt1Nynt1NOlRtGyUywUZblL5MhZ2MG
-Bjln0lpBnhN285Mvntm49LmpoEnPdeHzbozsMVZHmD0+sdpGZ8PIQSiILb/mGCJf
-jpg/Q++KbM01LDw26eSGVIsnqAFBdA==
-=Neg9
------END PGP SIGNATURE-----
-
---TnYVF1hk1c8rpHiF--
-
-
---===============7704404869844802559==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7704404869844802559==--
-
