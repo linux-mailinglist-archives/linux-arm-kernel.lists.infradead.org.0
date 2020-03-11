@@ -2,87 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F6BB180F0C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 05:58:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B5FA180F45
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 06:07:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h1Fh0Yp3SNb91nEZfSkf5Zpnn/tlueixtPhY1OchvR4=; b=LSsm25x8+wKHM0
-	6ecMxO4eOpGmvhFnaOn4p/fsr63VPD4MK8cRN+/3ViK4lKsS7VXtljiH3/t6LMpsA6sgH/XnJFKHw
-	H2yoSn/tHPKli64I/3j2vbPFkYM0eykBDJuXX32+RlUCuysIBqUy6HEYk7/QFioDGtLPV2s2iPiiN
-	nlvRqIZ3QuJNEe7WfXFIAo1rdTWfgIzTfVUo7szJnDeVTIg8w4lhNaDq9jSlBQWHpy44So/h3lhkw
-	y5lzUkvgOFeBvGeNxUclLvuinZ54OtyZVnSABO4rOUYy9xWrZWjbf945pN7UFZz99vfDlWcNNvAcf
-	VtuOEIBcxNSQc+TQYDGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fpAlgEkFvE/e6+G1zAOIbf1pxleTBnAsasjDqktjGH0=; b=pVmnvrzWmFr7a9
+	MPy92TH4KRW1xVY8L3fqyDfed2EOkRzkJtPPd+RyumW6TJxTSlfegAfRu/8y/VYN6fuvksArMfbAa
+	RaLbFLcN23oxaqTzYMVWZYBYTDvv8A3NPYVb2GFLda1LazwfzlE+kx2VN8SuPVX02DOdKBk4dgPam
+	lgWu9RtjDpACTPBChrlO8714dFe57YK5o0jSFlErzbZjdTDElFlrEk5MosnchxZ9mV9EmKLv6To71
+	wbzl2lSdEw7xUEcXTjO0upEalkwby+4nvztN1aeqp1UAOu5+qj6D96BKAiKG+BPhKcjAcWyCbtw9C
+	tn7gfswFtoE9dZFZSVcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBtRp-0003Vh-Ie; Wed, 11 Mar 2020 04:58:25 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jBtan-0007Wv-VV; Wed, 11 Mar 2020 05:07:42 +0000
+Received: from smtprelay0244.hostedemail.com ([216.40.44.244]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBtRh-0003VG-F1
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 04:58:19 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 02B4vliK085472;
- Tue, 10 Mar 2020 23:57:47 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1583902667;
- bh=MFTqGdrDyTmeaJQ1bZpBzfDtbpnP3ovZ3eA6y3Etkpg=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=LxyfcpIh2W+Bsk5crUUjzOQjTkD+k2r8DTKINGYZI4hjjSWMWyIekWRblL9BFyK0r
- 2CMSJJG9jE6OdD55+B0kykLUyHNFd98Vp+AmDZQeCmo21uMDzycgsEKRFEkd4fOB8i
- o6DR36lvZrdupylA+QzkBojFkE/TCocpBSkg1tFs=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 02B4vlbe057182
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 10 Mar 2020 23:57:47 -0500
-Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 10
- Mar 2020 23:57:47 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 10 Mar 2020 23:57:47 -0500
-Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 02B4vgLT066746;
- Tue, 10 Mar 2020 23:57:42 -0500
-Subject: Re: [PATCH v8 07/14] gpio: thunderx: Use the default parent apis for
- {request,release}_resources
-To: Tim Harvey <tharvey@gateworks.com>
-References: <20190430101230.21794-1-lokeshvutla@ti.com>
- <20190430101230.21794-8-lokeshvutla@ti.com>
- <CAJ+vNU2gnKKxX2YL1JUSnpF7qNqKVAsPhC2emv=Y79HPJbZXzw@mail.gmail.com>
-From: Lokesh Vutla <lokeshvutla@ti.com>
-Message-ID: <ed6472a7-5bd8-25bd-e2bc-f88f97a82607@ti.com>
-Date: Wed, 11 Mar 2020 10:26:47 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1jBta0-000737-6J
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 05:06:53 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay07.hostedemail.com (Postfix) with ESMTP id B7691181D3025;
+ Wed, 11 Mar 2020 05:06:50 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 50, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:541:800:960:967:973:982:988:989:1260:1311:1314:1345:1359:1437:1515:1534:1541:1711:1730:1747:1777:1792:2393:2525:2560:2563:2682:2685:2859:2901:2902:2933:2937:2939:2942:2945:2947:2951:2954:3022:3138:3139:3140:3141:3142:3352:3865:3866:3867:3934:3936:3938:3941:3944:3947:3950:3953:3956:3959:4250:4321:5007:6119:6261:9025:10004:10848:11026:11473:11657:11658:11914:12043:12296:12297:12438:12555:12679:12895:12986:13069:13311:13357:13894:13972:14181:14384:14394:14721:21080:21433:21627:21811:21939:21990:30054,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:1, LUA_SUMMARY:none
+X-HE-Tag: jewel27_1e8115a6f7d16
+X-Filterd-Recvd-Size: 2301
+Received: from joe-laptop.perches.com (unknown [47.151.143.254])
+ (Authenticated sender: joe@perches.com)
+ by omf16.hostedemail.com (Postfix) with ESMTPA;
+ Wed, 11 Mar 2020 05:06:49 +0000 (UTC)
+From: Joe Perches <joe@perches.com>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: [PATCH -next 005/491] ARM/UNIPHIER ARCHITECTURE: Use fallthrough;
+Date: Tue, 10 Mar 2020 21:51:19 -0700
+Message-Id: <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
+X-Mailer: git-send-email 2.24.0
+In-Reply-To: <cover.1583896344.git.joe@perches.com>
+References: <cover.1583896344.git.joe@perches.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJ+vNU2gnKKxX2YL1JUSnpF7qNqKVAsPhC2emv=Y79HPJbZXzw@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_215817_588661_613144C6 
-X-CRM114-Status: GOOD (  23.25  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200310_220652_321435_DE926A61 
+X-CRM114-Status: GOOD (  10.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.244 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.244 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,87 +75,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Jason Cooper <jason@lakedaemon.net>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Marc Zyngier <marc.zyngier@arm.com>, Linus Walleij <linus.walleij@linaro.org>,
- Sekhar Nori <nsekhar@ti.com>, open list <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Tony Lindgren <tony@atomide.com>,
- Rob Herring <robh+dt@kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Santosh Shilimkar <ssantosh@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tim,
+Convert the various uses of fallthrough comments to fallthrough;
 
-On 11/03/20 4:57 AM, Tim Harvey wrote:
-> On Tue, Apr 30, 2019 at 3:14 AM Lokesh Vutla <lokeshvutla@ti.com> wrote:
->>
->> thunderx_gpio_irq_{request,release}_resources apis are trying to
->> {request,release} resources on parent interrupt. There are default
->> apis doing the same. Use the default parent apis instead of writing
->> the same code snippet.
->>
->> Cc: linux-gpio@vger.kernel.org
->> Cc: Linus Walleij <linus.walleij@linaro.org>
->> Acked-by: Linus Walleij <linus.walleij@linaro.org>
->> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
->> ---
->> Changes since v7:
->> - None
->>
->>  drivers/gpio/gpio-thunderx.c | 16 ++++------------
->>  1 file changed, 4 insertions(+), 12 deletions(-)
->>
->> diff --git a/drivers/gpio/gpio-thunderx.c b/drivers/gpio/gpio-thunderx.c
->> index 1306722faa5a..715371b5102a 100644
->> --- a/drivers/gpio/gpio-thunderx.c
->> +++ b/drivers/gpio/gpio-thunderx.c
->> @@ -363,22 +363,16 @@ static int thunderx_gpio_irq_request_resources(struct irq_data *data)
->>  {
->>         struct thunderx_line *txline = irq_data_get_irq_chip_data(data);
->>         struct thunderx_gpio *txgpio = txline->txgpio;
->> -       struct irq_data *parent_data = data->parent_data;
->>         int r;
->>
->>         r = gpiochip_lock_as_irq(&txgpio->chip, txline->line);
->>         if (r)
->>                 return r;
->>
->> -       if (parent_data && parent_data->chip->irq_request_resources) {
->> -               r = parent_data->chip->irq_request_resources(parent_data);
->> -               if (r)
->> -                       goto error;
->> -       }
->> +       r = irq_chip_request_resources_parent(data);
->> +       if (r)
->> +               gpiochip_unlock_as_irq(&txgpio->chip, txline->line);
-> 
-> Lokesh,
-> 
-> This patch breaks irq resources for thunderx-gpio as
-> parent_data->chip->irq_request_resources is undefined thus your new
-> irq_chip_request_resources_parent() returns -ENOSYS causing this
-> function to return an error where as before it would happily return 0.
+Done via script
+Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
 
-Returning -ENOSYS is the right behaviour. If the parent doesn't have the
-resources, child driver should not hook it at all.
+Signed-off-by: Joe Perches <joe@perches.com>
+---
+ drivers/tty/serial/8250/8250_uniphier.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-> 
-> Is the following the correct fix or should we qualify
-> data->parent_data->chip->irq_request_resources before calling
-> irq_chip_request_resources_parent() in thunderx-gpio?
+diff --git a/drivers/tty/serial/8250/8250_uniphier.c b/drivers/tty/serial/8250/8250_uniphier.c
+index e0b73a5..a2978ab 100644
+--- a/drivers/tty/serial/8250/8250_uniphier.c
++++ b/drivers/tty/serial/8250/8250_uniphier.c
+@@ -75,7 +75,7 @@ static unsigned int uniphier_serial_in(struct uart_port *p, int offset)
+ 		break;
+ 	case UART_LCR:
+ 		valshift = 8;
+-		/* fall through */
++		fallthrough;
+ 	case UART_MCR:
+ 		offset = UNIPHIER_UART_LCR_MCR;
+ 		break;
+@@ -101,7 +101,7 @@ static void uniphier_serial_out(struct uart_port *p, int offset, int value)
+ 	case UART_SCR:
+ 		/* No SCR for this hardware.  Use CHAR as a scratch register */
+ 		valshift = 8;
+-		/* fall through */
++		fallthrough;
+ 	case UART_FCR:
+ 		offset = UNIPHIER_UART_CHAR_FCR;
+ 		break;
+@@ -109,7 +109,7 @@ static void uniphier_serial_out(struct uart_port *p, int offset, int value)
+ 		valshift = 8;
+ 		/* Divisor latch access bit does not exist. */
+ 		value &= ~UART_LCR_DLAB;
+-		/* fall through */
++		fallthrough;
+ 	case UART_MCR:
+ 		offset = UNIPHIER_UART_LCR_MCR;
+ 		break;
+-- 
+2.24.0
 
-If there are no parent resources why should  thunderx-gpio request parent
-resources at all?
-
-Thanks and regards,
-Lokesh
 
 _______________________________________________
 linux-arm-kernel mailing list
