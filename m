@@ -2,55 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF556181EDC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 18:13:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9DBD181F2C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 18:21:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=wIMB5lf7/5/xN55jkGOVGLZTwXQGAqq5VNSp3QkoTOw=; b=U5tkWoSHkUXkQgEjWhtsESeND9
-	pJBs1MwrsbFiWXxFg9zP5rzrNXnRgRjTgf1w0AEEnjGuo6o/lGB6IauGENoyS5EtlDvtGJ0ycHLgn
-	R1Offu/GqcFBc8/kiBJsK5Pwunvyio+oONTF3HSUZTX47ZC9K/xZZTL5YgFtzZSODbZaVZWKGz4Cv
-	uDv4/x3U+PJjOoO+FAG6PEKvT2bCwzl0uB2mxZ1UaU6RJB5aN/o5Zxq1VWUsTWjL2pXU2a4CaqonS
-	1C2jbPIDqaylAufydLJt57lOupB8Jf09bCrCayOvpCnzXXLasZe7oT3p34T+oOp6VcrRlm2625c9/
-	gOnvgNxA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iJ9Cr8L82EGFXBYO5pKot2MHHmmMkCCylaatzvS4VXo=; b=LWtgoClLfXFUWk
+	qltLy8NMrGdtldLa/Y94D5xv77wGLzqokVFhN5FUM4y5vkzdyktiyY3UpKKXJKPg2T1IJMAd9Q1QS
+	0CD3riT0I+YKQNmBIMMF/BUH0h2yhKMcBsPUfARH45H7XSve60CyYJ6m2neNmX2rYQLWX4Ln2jESy
+	TRL6M1tocj+8gz7aYZPZ4novKWIIDjfkDYGG0k0gNumqoFuX7GDPqzjYhPEYbvc5qGlgYjpsf4eoC
+	I3/EmgkOcumv4QwFVBvjGprwn7uzTorJXvVgd2mmkJdwJSJWVjL6LJVf3gvAcdGvyhDyWkmFk9stI
+	yY60QYfDWWDmMK9K/zcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4vS-0006gI-Ps; Wed, 11 Mar 2020 17:13:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4uh-0006CJ-MK
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 17:13:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E2B26FEC;
- Wed, 11 Mar 2020 10:12:57 -0700 (PDT)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24DFE3F6CF;
- Wed, 11 Mar 2020 10:12:57 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/2] arm64: smp: fix crash_smp_send_stop() behaviour
-Date: Wed, 11 Mar 2020 17:12:45 +0000
-Message-Id: <20200311171245.45443-3-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200311171245.45443-1-cristian.marussi@arm.com>
-References: <20200311171245.45443-1-cristian.marussi@arm.com>
+	id 1jC52z-0002id-Vf; Wed, 11 Mar 2020 17:21:33 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jC52p-0002hA-F1
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 17:21:24 +0000
+Received: by mail-pl1-x644.google.com with SMTP id d9so1388784plo.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 10:21:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=48QMmtUizH1thzm0jNujCj845cQ2EXOxCkSOb8ufm7M=;
+ b=hBmJYWBfK3SX/U+Wa4lao0YnvSduvT0NJG7V47ocA+P7MefK8eMomjpe/u+lfXRu15
+ xn2lsBH74aGiSSYjBxFvcQm5wdnJipqlMRNpIOXkiI+AmYbIVDCGXMTkE3S2azr3V/iG
+ 82LN/7oe0JmAHSXXbhgxIZZvf2n5P7G6lOJCw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=48QMmtUizH1thzm0jNujCj845cQ2EXOxCkSOb8ufm7M=;
+ b=N9dgwpwAbSrrneDfwJSs/QSgxtBXFlqaW+pMSe2fh88rFkZ7xE2YLlmcAISMtoJhWz
+ UpN3jqNWCTKkrTJgm+J4p4nMS39JNf4q5CWGrtXY57ZeqvfJ6AIlHMac0scZE5rb+IeA
+ NfAQ9BNROkVVFL5isjT+3d5ylUOsjE++9ZlwtuezjLYFgjOh68C91D9R/aKOmU9omVmV
+ 8KSHxrDNVwXVBJGZSa/wqmyHz6ylk8sJGLVF+kCKbsxVUpXZkr6zxELxnyWsZyI2KbUC
+ bNYg8sfGu6B5ODD9ci6UK7LGogENxeS1LWB8m68e3xUUD6PzfCFv9J4V/CAU8tIv1nIM
+ BZ9w==
+X-Gm-Message-State: ANhLgQ2SLRZF32TLxUUrjNFhZn/+eYPqTGkgIktSTWJjUIpb4lGR3Fz/
+ Wvgyp+XRIyfKH3yBBNzD7IyBXA==
+X-Google-Smtp-Source: ADFU+vtS/zoEiYrbfBlqHQlR3ycd/w8ksv3ZJl14F8NXwUqH9zruMZSDylPWrhrRh1sygoxYbEZgXg==
+X-Received: by 2002:a17:902:8509:: with SMTP id
+ bj9mr4163017plb.123.1583947282062; 
+ Wed, 11 Mar 2020 10:21:22 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id q187sm51566754pfq.185.2020.03.11.10.21.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 10:21:21 -0700 (PDT)
+Date: Wed, 11 Mar 2020 10:21:20 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH v3] ARM: smp: add support for per-task stack canaries
+Message-ID: <202003111020.D543B4332@keescook>
+References: <20181206083257.9596-1-ard.biesheuvel@linaro.org>
+ <20200309164931.GA23889@roeck-us.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200309164931.GA23889@roeck-us.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_101259_818894_8372A6A9 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200311_102123_504493_838C3AAF 
+X-CRM114-Status: GOOD (  18.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,124 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
- james.morse@arm.com
-MIME-Version: 1.0
+Cc: Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ kernel-hardening@lists.openwall.com, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Emese Revfy <re.emese@gmail.com>,
+ Laura Abbott <labbott@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On a system configured to trigger a crash_kexec() reboot, when only one CPU
-is online and another CPU panics while starting-up, crash_smp_send_stop()
-will fail to send any STOP message to the other already online core,
-resulting in fail to freeze and registers not properly saved.
+On Mon, Mar 09, 2020 at 09:49:31AM -0700, Guenter Roeck wrote:
+> On Thu, Dec 06, 2018 at 09:32:57AM +0100, Ard Biesheuvel wrote:
+> > On ARM, we currently only change the value of the stack canary when
+> > switching tasks if the kernel was built for UP. On SMP kernels, this
+> > is impossible since the stack canary value is obtained via a global
+> > symbol reference, which means
+> > a) all running tasks on all CPUs must use the same value
+> > b) we can only modify the value when no kernel stack frames are live
+> >    on any CPU, which is effectively never.
+> > 
+> > So instead, use a GCC plugin to add a RTL pass that replaces each
+> > reference to the address of the __stack_chk_guard symbol with an
+> > expression that produces the address of the 'stack_canary' field
+> > that is added to struct thread_info. This way, each task will use
+> > its own randomized value.
+> > 
+> > Cc: Russell King <linux@armlinux.org.uk>
+> > Cc: Kees Cook <keescook@chromium.org>
+> > Cc: Emese Revfy <re.emese@gmail.com>
+> > Cc: Arnd Bergmann <arnd@arndb.de>
+> > Cc: Laura Abbott <labbott@redhat.com>
+> > Cc: kernel-hardening@lists.openwall.com
+> > Acked-by: Nicolas Pitre <nico@linaro.org>
+> > Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> 
+> Since this patch is in the tree, cc-option no longer works on
+> the arm architecture if CONFIG_STACKPROTECTOR_PER_TASK is enabled.
+> 
+> Any idea how to fix that ? 
 
-Moreover even if the proper messages are sent (case CPUs > 2)
-it will similarly fail to account for the booting CPU when executing
-the final stop wait-loop, so potentially resulting in some CPU not
-been waited for shutdown before rebooting.
+I thought Arnd sent a patch to fix it and it got picked up?
 
-A tangible effect of this behaviour can be observed when, after a panic
-with kexec enabled and loaded, on the following reboot triggered by kexec,
-the cpu that could not be successfully stopped fails to come back online:
-
-[  362.291022] ------------[ cut here ]------------
-[  362.291525] kernel BUG at arch/arm64/kernel/cpufeature.c:886!
-[  362.292023] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-[  362.292400] Modules linked in:
-[  362.292970] CPU: 3 PID: 0 Comm: swapper/3 Kdump: loaded Not tainted 5.6.0-rc4-00003-gc780b890948a #105
-[  362.293136] Hardware name: Foundation-v8A (DT)
-[  362.293382] pstate: 200001c5 (nzCv dAIF -PAN -UAO)
-[  362.294063] pc : has_cpuid_feature+0xf0/0x348
-[  362.294177] lr : verify_local_elf_hwcaps+0x84/0xe8
-[  362.294280] sp : ffff800011b1bf60
-[  362.294362] x29: ffff800011b1bf60 x28: 0000000000000000
-[  362.294534] x27: 0000000000000000 x26: 0000000000000000
-[  362.294631] x25: 0000000000000000 x24: ffff80001189a25c
-[  362.294718] x23: 0000000000000000 x22: 0000000000000000
-[  362.294803] x21: ffff8000114aa018 x20: ffff800011156a00
-[  362.294897] x19: ffff800010c944a0 x18: 0000000000000004
-[  362.294987] x17: 0000000000000000 x16: 0000000000000000
-[  362.295073] x15: 00004e53b831ae3c x14: 00004e53b831ae3c
-[  362.295165] x13: 0000000000000384 x12: 0000000000000000
-[  362.295251] x11: 0000000000000000 x10: 00400032b5503510
-[  362.295334] x9 : 0000000000000000 x8 : ffff800010c7e204
-[  362.295426] x7 : 00000000410fd0f0 x6 : 0000000000000001
-[  362.295508] x5 : 00000000410fd0f0 x4 : 0000000000000000
-[  362.295592] x3 : 0000000000000000 x2 : ffff8000100939d8
-[  362.295683] x1 : 0000000000180420 x0 : 0000000000180480
-[  362.296011] Call trace:
-[  362.296257]  has_cpuid_feature+0xf0/0x348
-[  362.296350]  verify_local_elf_hwcaps+0x84/0xe8
-[  362.296424]  check_local_cpu_capabilities+0x44/0x128
-[  362.296497]  secondary_start_kernel+0xf4/0x188
-[  362.296998] Code: 52805001 72a00301 6b01001f 54000ec0 (d4210000)
-[  362.298652] SMP: stopping secondary CPUs
-[  362.300615] Starting crashdump kernel...
-[  362.301168] Bye!
-[    0.000000] Booting Linux on physical CPU 0x0000000003 [0x410fd0f0]
-[    0.000000] Linux version 5.6.0-rc4-00003-gc780b890948a (crimar01@e120937-lin) (gcc version 8.3.0 (GNU Toolchain for the A-profile Architecture 8.3-2019.03 (arm-rel-8.36))) #105 SMP PREEMPT Fri Mar 6 17:00:42 GMT 2020
-[    0.000000] Machine model: Foundation-v8A
-[    0.000000] earlycon: pl11 at MMIO 0x000000001c090000 (options '')
-[    0.000000] printk: bootconsole [pl11] enabled
-.....
-[    0.138024] rcu: Hierarchical SRCU implementation.
-[    0.153472] its@2f020000: unable to locate ITS domain
-[    0.154078] its@2f020000: Unable to locate ITS domain
-[    0.157541] EFI services will not be available.
-[    0.175395] smp: Bringing up secondary CPUs ...
-[    0.209182] psci: failed to boot CPU1 (-22)
-[    0.209377] CPU1: failed to boot: -22
-[    0.274598] Detected PIPT I-cache on CPU2
-[    0.278707] GICv3: CPU2: found redistributor 1 region 0:0x000000002f120000
-[    0.285212] CPU2: Booted secondary processor 0x0000000001 [0x410fd0f0]
-[    0.369053] Detected PIPT I-cache on CPU3
-[    0.372947] GICv3: CPU3: found redistributor 2 region 0:0x000000002f140000
-[    0.378664] CPU3: Booted secondary processor 0x0000000002 [0x410fd0f0]
-[    0.401707] smp: Brought up 1 node, 3 CPUs
-[    0.404057] SMP: Total of 3 processors activated.
-
-Make crash_smp_send_stop() account also for the online status of the
-calling CPU while evaluating how many CPUs are effectively online: this way
-the right number of STOPs is sent and all other stopped-cores's registers
-are properly saved.
-
-Fixes: 78fd584cdec05 ("arm64: kdump: implement machine_crash_shutdown()")
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
- arch/arm64/kernel/smp.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index e4dc241c5a8e..5407bf5d98ac 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -1012,7 +1012,11 @@ void crash_smp_send_stop(void)
- 
- 	cpus_stopped = 1;
- 
--	if (num_online_cpus() == 1) {
-+	/*
-+	 * If this cpu is the only one alive at this point in time, online or
-+	 * not, there are no stop messages to be sent around, so just back out.
-+	 */
-+	if (num_other_online_cpus() == 0) {
- 		sdei_mask_local_cpu();
- 		return;
- 	}
-@@ -1020,7 +1024,7 @@ void crash_smp_send_stop(void)
- 	cpumask_copy(&mask, cpu_online_mask);
- 	cpumask_clear_cpu(smp_processor_id(), &mask);
- 
--	atomic_set(&waiting_for_crash_ipi, num_online_cpus() - 1);
-+	atomic_set(&waiting_for_crash_ipi, num_other_online_cpus());
- 
- 	pr_crit("SMP: stopping secondary CPUs\n");
- 	smp_cross_call(&mask, IPI_CPU_CRASH_STOP);
 -- 
-2.17.1
-
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
