@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3272918205E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 19:06:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9CB918205F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 19:06:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mWnjR3EExZCIvUA5inOOZGKWyrhr9Gwwj+0Y3J4nitA=; b=ujz9//NP/Ehnxo
-	ZBZwVSveaiR+q7Len9JJQ2zydTEUDb9oP22VBhRmZHnZ+ZWRHqa4NpJ56lnm83VZOxfYNpf9Uc3QO
-	jAkZpvACWGb+olrsmMK0Wjugabgb8Vj19L8beCbGz4jjjVdqCIsSuxC45+2jLX20lMnMDL1WKqXt+
-	9ZQ1gLokN/vpdGIH4UxGRrRWHUEEnXG5Ebw4/LWzcZO0ptjMkJBfeN2EQdLnq5osMo1kS2tKf1Rsy
-	Ve7iNR3TnoZGwIs3LmQ6JmHyjaNzp7LThKW46gAELOSf9BoAV/CyL/wgXlVxWHhtA9tBPzcA9Jgd6
-	xihpbbLDZ2fwST6iF9TQ==;
+	List-Owner; bh=bC6Aa3tqYhsqQwzy21wEB3e6dDO5mER4Q48fCcuRCcc=; b=ZAbV+frYqQTFGE
+	gf6tPMGlFg9Y9njRfDwbxQErHTw8P6viIRAMrWcGzKTSJrwqO/ghUnK89Tt0/DGNpMKDaZOKiDMGU
+	z7ysKSY40yvcQmgrnchzQYaR7xSlnq7GInEq7JS/8Z8cCyexyjbmkX1vSpRiyettSPVAyzgSMv5BZ
+	XjulpcYOZshNHnCOh0ZiJuCodNeBHJAkvjL9sQs+QRWe7admd9F3pM+I9z9q9goU5XmNY/EJ1B1Li
+	ri35aKGJdDvdEbaDuUWikRnZcLtipEqZwpMCaQsIAK7SB8ian6XpQ7ZVLKN7BZFwk3pdU1Zs2xgun
+	KY10PTcGpmhR+1msaV4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC5ju-0004wq-FZ; Wed, 11 Mar 2020 18:05:54 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jC5k9-0005DL-C5; Wed, 11 Mar 2020 18:06:09 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC5iR-0002Yq-Im
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 18:04:25 +0000
-Received: by mail-pl1-x641.google.com with SMTP id g12so1458672plo.3
+ id 1jC5iT-0002aX-5p
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 18:04:26 +0000
+Received: by mail-pf1-x442.google.com with SMTP id c19so1753663pfo.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 11:04:23 -0700 (PDT)
+ Wed, 11 Mar 2020 11:04:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=rRlA/iukqeG70j0phoHwOcUE8Ba0KMBf/TBqK8AS108=;
- b=NOn7OFtfPM6Oo+/Jdq2nycgnWs6OYPGTaSyyan/J/kQV8mIifuZLXbXV1DNPi/4q7T
- xkdCavwV7CvKUQkNE4ywkLN+9AAvrRHEMMenUXzUKO+mEW132b2XOjIVGe5OdZyG1JKl
- 2uaDAGrzOi4PH6CxgAxoVzcnySW+cLkvh8p3wWmdt6+/Cxp4QOoR0fsTYIeSg9WYKfr2
- F5nSEurAYgVRs2uQYBhlr0h5KciqSU9ZhQKHwN+18HuaA8xsHPSxPgUTCEiy8jpGea4p
- wEL7eK97PH5o8Y7FxU+IwW3vqoR26vNamv4rsnsIq9MM7v51BBZzWmheIBM25VmWzsCv
- EwTw==
+ bh=fKXZLI6n3/AnumpioC86wuiyj2J9DLc+W/VvwUAj/TY=;
+ b=NuyZoITgQq1QkCFuTDBFYHPoJ5E3mEM60W24VhWOeFt5uXWIL4eIFRMO0HNuugHwuS
+ NIGzAvsPuFFe/nsLsQAv7ptVEZFnWNHwN8nduAPoxidMahtNC9MNTD+kY8pTn6AJl6Ed
+ sGxY6FbXIr9SWrdF1cBxx/l6mkmrpqmdoeNEyDtp5is8ewTqRYxdPgF8ziPTMRj/otKn
+ MJ3svc6WJLl16X2MsudRoy+kM0kdCw6YI3pfBqUZLXxhgAkJh4mi2FzzW18N2Q3FmlVP
+ SOU1zE42Z6Zz1eg20qzrlrlh1may7GM6/GGuE+J77vSSo3Y1Jzs8MRTk+GYk7Xmim44g
+ Gskw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=rRlA/iukqeG70j0phoHwOcUE8Ba0KMBf/TBqK8AS108=;
- b=FXBxO4v2YSqFIMmT4SRddSQ/hPWioaddOvMC4AQC2FGpOEuH7Y43gGsR8p34Nulo40
- 6W6/nyHg31B3xsApmAAqAOZYbwhJ3zE324V5oKqRE4T0ZprVyJKx6Ih0w3LiDm4ogYTf
- weUI4n1ayloZU6jhDUkvbRFVt+Lt7V4QSxCemhWY/YW3sibibwnqHe7SSvc+CtWjJlMK
- 4Iu/A+eg5yaVhUR6plq5OH/clMJbTe7Z0qkoAM53ZTjxB7hIzZRfb5TtkF1TWEsrQI9u
- odjvKp+4B+lf7G5zvHqcQY6ClBseN0kfCaZzMPF2UKy1872MGYhVIoe7a9XsuRN93BqX
- KaQQ==
-X-Gm-Message-State: ANhLgQ0eyOhp+2opheShwk9r5o2j7+izS6OzFr0fJ8CZL3u+d6gq5tqb
- qTys9ajFbdoQ7zTxcuq+QUn0+iRS8PI=
-X-Google-Smtp-Source: ADFU+vsg7cjdYkTjf0yRL1KMyasGSTxaZ0yb0otbM4iNRplBhrB/buQQppKO/HyLYan18jdVpQKuNQ==
-X-Received: by 2002:a17:902:aa88:: with SMTP id
- d8mr4072384plr.201.1583949862608; 
- Wed, 11 Mar 2020 11:04:22 -0700 (PDT)
+ bh=fKXZLI6n3/AnumpioC86wuiyj2J9DLc+W/VvwUAj/TY=;
+ b=LGk7vWnhdCLEnHS/8jLnHEAvE5JksE01v3llDdiyJNnQAqTvQgkHLslImUsV7FsxDi
+ VkFN238ZG8WgHWiRShEeLH7his7T7DZLnU3qCqmazIU1aBVJGg2eAcbcID1SPpWaBIHt
+ 90eesa1nDtUYk1sMMglVQ8oPOMNP61AI2sJ39qrp0ksJza7++zhnWAa65UFqe5L4nqH1
+ YBlznyWHbrdwNQZzkTGhCi8CI8TxthaB0/i+m/Q98qNw0eaaPs3ixL6oA96SGbfSEcTD
+ 32Fb0Rx0WaWDp/yQDPKWrwNbDZLWfQQOSZrx2Aj0ny2mGuP5frET3gzZlTf+OC0umGzi
+ 6MxA==
+X-Gm-Message-State: ANhLgQ11F10EVZ41csi9mqTZO0rzcZ9/zqtnocwekRXjC9ElKS7NNHGL
+ Wc22OkWtCbH2c6Y89PUyKV59JiwVerU=
+X-Google-Smtp-Source: ADFU+vt4j3Xt2PzLd1LAdj3UyX6Biq+53MGD4NP9QVvfuiFLcxIQtHe+Ly2n4kvFUNJiEtbHA1JvHg==
+X-Received: by 2002:a63:8148:: with SMTP id t69mr3892026pgd.187.1583949864103; 
+ Wed, 11 Mar 2020 11:04:24 -0700 (PDT)
 Received: from localhost.localdomain (97-126-123-70.tukw.qwest.net.
  [97.126.123.70])
- by smtp.gmail.com with ESMTPSA id k9sm6079383pjo.19.2020.03.11.11.04.21
+ by smtp.gmail.com with ESMTPSA id k9sm6079383pjo.19.2020.03.11.11.04.22
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Mar 2020 11:04:21 -0700 (PDT)
+ Wed, 11 Mar 2020 11:04:23 -0700 (PDT)
 From: Richard Henderson <richard.henderson@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/6] arm64: uaccess: Use asm/ccset.h macros in __range_ok
-Date: Wed, 11 Mar 2020 11:04:14 -0700
-Message-Id: <20200311180416.6509-5-richard.henderson@linaro.org>
+Subject: [PATCH 5/6] arm64: archrandom: Use asm/ccset.h macros in __arm64_rndr
+Date: Wed, 11 Mar 2020 11:04:15 -0700
+Message-Id: <20200311180416.6509-6-richard.henderson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200311180416.6509-1-richard.henderson@linaro.org>
 References: <20200311180416.6509-1-richard.henderson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_110423_666994_6A3E8B3D 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20200311_110425_256328_7438D03F 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,39 +103,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Uses of __range_ok almost always feed a branch.
+Uses of __arm64_rndr always (indirectly) feed a branch.
 This allows the compiler to use flags directly.
 
 Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
 ---
- arch/arm64/include/asm/uaccess.h | 7 ++++---
+ arch/arm64/include/asm/archrandom.h | 7 ++++---
  1 file changed, 4 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index fe3dd70e901e..ca1acd7b95c3 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -22,6 +22,7 @@
- #include <asm/ptrace.h>
- #include <asm/memory.h>
- #include <asm/extable.h>
+diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
+index 3fe02da70004..f65df47283a6 100644
+--- a/arch/arm64/include/asm/archrandom.h
++++ b/arch/arm64/include/asm/archrandom.h
+@@ -6,6 +6,7 @@
+ 
+ #include <linux/random.h>
+ #include <asm/cpufeature.h>
 +#include <asm/ccset.h>
  
- #define get_fs()	(current_thread_info()->addr_limit)
- 
-@@ -86,10 +87,10 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
- 	//    comes from the carry in being clear. Otherwise, we are
- 	//    testing X' - C == 0, subject to the previous adjustments.
- 	"	sbcs	xzr, %[addr], %[limit]\n"
--	"       cset    %[addr], ls\n"
--	: [addr] "=&r" (ret), [limit] "+r" (limit)
-+		CC_SET(ls)
-+	: [addr] "=&r" (addr), [limit] "+r" (limit), CC_OUT(ls) (ret)
- 	: [size] "Ir" (size), [addr_in] "r" (addr)
+ static inline bool __arm64_rndr(unsigned long *v)
+ {
+@@ -17,10 +18,10 @@ static inline bool __arm64_rndr(unsigned long *v)
+ 	 */
+ 	asm volatile(
+ 		__mrs_s("%0", SYS_RNDR_EL0) "\n"
+-	"	cset %w1, ne\n"
+-	: "=r" (*v), "=r" (ok)
++		CC_SET(ne)
++	: "=r" (*v), CC_OUT(ne) (ok)
+ 	:
 -	: "cc");
 +	: CC_CLOBBER);
  
- 	return ret;
+ 	return ok;
  }
 -- 
 2.20.1
