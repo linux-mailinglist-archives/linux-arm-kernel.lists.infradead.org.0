@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9CB918205F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 19:06:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ADC8182061
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 19:06:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bC6Aa3tqYhsqQwzy21wEB3e6dDO5mER4Q48fCcuRCcc=; b=ZAbV+frYqQTFGE
-	gf6tPMGlFg9Y9njRfDwbxQErHTw8P6viIRAMrWcGzKTSJrwqO/ghUnK89Tt0/DGNpMKDaZOKiDMGU
-	z7ysKSY40yvcQmgrnchzQYaR7xSlnq7GInEq7JS/8Z8cCyexyjbmkX1vSpRiyettSPVAyzgSMv5BZ
-	XjulpcYOZshNHnCOh0ZiJuCodNeBHJAkvjL9sQs+QRWe7admd9F3pM+I9z9q9goU5XmNY/EJ1B1Li
-	ri35aKGJdDvdEbaDuUWikRnZcLtipEqZwpMCaQsIAK7SB8ian6XpQ7ZVLKN7BZFwk3pdU1Zs2xgun
-	KY10PTcGpmhR+1msaV4A==;
+	List-Owner; bh=zsKzqClCMWaMRsPNaBkCH9BqQAqjamD3g/M+2SE8GJU=; b=R0eXf4G02OCVVD
+	CQUPEL+0sTbcivVk4VNB9+cyxsZLG5Rl/eT9kixrC+3MuJF9AqD677eYUMmKzqaJx3qPuVOEyjDLL
+	fMM508DDEBMnpmv2YAyvMcC6y5TtT3tvdSOs/jK8mDH46V4QEtPl+XCGz5rPPWiof2qpotCj12MYe
+	rGAk8/AqWtD7OXomPCx7dzxUdRgk3QoYiwXaeE2plBDPwM4V8Ns0lCdOxnKqqCQC7T+XrGgbAC34h
+	FLRBPeCdr5JvzSAArFgrUOPJ/992q5frBx6ZQ2XEn3nsuZLteDKIvAhnO7lbNrleOmvU9hfaXMTf8
+	TkU2UKmnx4pvWnBs0IKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC5k9-0005DL-C5; Wed, 11 Mar 2020 18:06:09 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jC5kP-0005VX-MN; Wed, 11 Mar 2020 18:06:25 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC5iT-0002aX-5p
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 18:04:26 +0000
-Received: by mail-pf1-x442.google.com with SMTP id c19so1753663pfo.13
+ id 1jC5iU-0002c7-QU
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 18:04:28 +0000
+Received: by mail-pg1-x542.google.com with SMTP id c7so1623193pgw.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 11:04:25 -0700 (PDT)
+ Wed, 11 Mar 2020 11:04:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=fKXZLI6n3/AnumpioC86wuiyj2J9DLc+W/VvwUAj/TY=;
- b=NuyZoITgQq1QkCFuTDBFYHPoJ5E3mEM60W24VhWOeFt5uXWIL4eIFRMO0HNuugHwuS
- NIGzAvsPuFFe/nsLsQAv7ptVEZFnWNHwN8nduAPoxidMahtNC9MNTD+kY8pTn6AJl6Ed
- sGxY6FbXIr9SWrdF1cBxx/l6mkmrpqmdoeNEyDtp5is8ewTqRYxdPgF8ziPTMRj/otKn
- MJ3svc6WJLl16X2MsudRoy+kM0kdCw6YI3pfBqUZLXxhgAkJh4mi2FzzW18N2Q3FmlVP
- SOU1zE42Z6Zz1eg20qzrlrlh1may7GM6/GGuE+J77vSSo3Y1Jzs8MRTk+GYk7Xmim44g
- Gskw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=n2RB1acsyVrC96k4Nlhe94YQe83/BgfB1d2c7IOitdM=;
+ b=SMMeLc6ANqk7GgDpftln4a/j9mrB+eEv+CrHdyUxCMWbHiwsNM4Vu+Hv2Z81JSW1Rg
+ em0QwbcF9c3YPeaKC/frgcKaHLZZYNThqhBkYzEvl2mBJFZHmnpf9d4TLlpKl/zCawyO
+ 6O3A53muhGGWt7u1v7HkzyRVz+URX4Prc1e99nOdOWCOSDoyc+q8epZ/iGgdqzVn0VjA
+ rr5ytZQdieTJi44IEN7arqP3QT9YRuJ0FnfBjrTaMGNVwFnUZr6fwB8edh9CjVUFE7XL
+ qXG95gJGUfHuJ0NTAhIpH/E+tzwDRaqKvz76dvGOy9qXwKf9RmvTYpaCnlJV8yjR+9cm
+ kB+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=fKXZLI6n3/AnumpioC86wuiyj2J9DLc+W/VvwUAj/TY=;
- b=LGk7vWnhdCLEnHS/8jLnHEAvE5JksE01v3llDdiyJNnQAqTvQgkHLslImUsV7FsxDi
- VkFN238ZG8WgHWiRShEeLH7his7T7DZLnU3qCqmazIU1aBVJGg2eAcbcID1SPpWaBIHt
- 90eesa1nDtUYk1sMMglVQ8oPOMNP61AI2sJ39qrp0ksJza7++zhnWAa65UFqe5L4nqH1
- YBlznyWHbrdwNQZzkTGhCi8CI8TxthaB0/i+m/Q98qNw0eaaPs3ixL6oA96SGbfSEcTD
- 32Fb0Rx0WaWDp/yQDPKWrwNbDZLWfQQOSZrx2Aj0ny2mGuP5frET3gzZlTf+OC0umGzi
- 6MxA==
-X-Gm-Message-State: ANhLgQ11F10EVZ41csi9mqTZO0rzcZ9/zqtnocwekRXjC9ElKS7NNHGL
- Wc22OkWtCbH2c6Y89PUyKV59JiwVerU=
-X-Google-Smtp-Source: ADFU+vt4j3Xt2PzLd1LAdj3UyX6Biq+53MGD4NP9QVvfuiFLcxIQtHe+Ly2n4kvFUNJiEtbHA1JvHg==
-X-Received: by 2002:a63:8148:: with SMTP id t69mr3892026pgd.187.1583949864103; 
- Wed, 11 Mar 2020 11:04:24 -0700 (PDT)
+ bh=n2RB1acsyVrC96k4Nlhe94YQe83/BgfB1d2c7IOitdM=;
+ b=bdKyMHVRWTkXkr692ivHkvGGOc98UoKeoCzQ8eXCO5+BfI5O2BAtZ0mVXao5cooAB0
+ y0jxhBsSPWpg5/tc1k5c7kKcWDAT/sFH7oShv3PrqWfhCtXsa/5zMexOF6NDdMEi4/2y
+ N07LBkULI6rNK+JjYqfjO2FeMdoHRkG2vbgEjfq/4+oX/cQh141YklzKpINoJkBWKCA8
+ 5pkSjqHPVHRi/RjE2890Hfv3vcPEgFf5JX/yjV4J8hSKQpwM+mgJxszAixBl9tVKhDCl
+ LQweocuCN1lNfq/m2fPho4oeitZMDtHlUZY8ya7ncQaX71Siu7HmqH8X3zhbISf3giuC
+ +vBw==
+X-Gm-Message-State: ANhLgQ2Ij4bNwywbjDUdGYyPRkalYsCwi6jRCSJptclJc/fJLrRZVNK1
+ CweLSKm5cWKc6OnppBi3V14jxdPYaEU=
+X-Google-Smtp-Source: ADFU+vvOVuCXbzRqSVX9Y2YV9cGm0eGBymYiJ5EccXW7SSrleivtZMVvNI2byIpgu9oI3a4SkJNaag==
+X-Received: by 2002:a62:a515:: with SMTP id v21mr4033151pfm.128.1583949865335; 
+ Wed, 11 Mar 2020 11:04:25 -0700 (PDT)
 Received: from localhost.localdomain (97-126-123-70.tukw.qwest.net.
  [97.126.123.70])
- by smtp.gmail.com with ESMTPSA id k9sm6079383pjo.19.2020.03.11.11.04.22
- for <linux-arm-kernel@lists.infradead.org>
+ by smtp.gmail.com with ESMTPSA id k9sm6079383pjo.19.2020.03.11.11.04.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Mar 2020 11:04:23 -0700 (PDT)
+ Wed, 11 Mar 2020 11:04:24 -0700 (PDT)
 From: Richard Henderson <richard.henderson@linaro.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 5/6] arm64: archrandom: Use asm/ccset.h macros in __arm64_rndr
-Date: Wed, 11 Mar 2020 11:04:15 -0700
-Message-Id: <20200311180416.6509-6-richard.henderson@linaro.org>
+Subject: [PATCH 6/6] arm64: Hoist CONFIG option out of ALTERNATIVE in uaccess.h
+Date: Wed, 11 Mar 2020 11:04:16 -0700
+Message-Id: <20200311180416.6509-7-richard.henderson@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200311180416.6509-1-richard.henderson@linaro.org>
 References: <20200311180416.6509-1-richard.henderson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_110425_256328_7438D03F 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20200311_110426_935696_AE4D48F1 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,45 +97,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Uses of __arm64_rndr always (indirectly) feed a branch.
-This allows the compiler to use flags directly.
+From: Richard Henderson <rth@twiddle.net>
 
-Signed-off-by: Richard Henderson <richard.henderson@linaro.org>
+The placement of the CONFIG check, within the asm, is less than
+ideal within uaccess.h.  When we have
+
+	if (cond)
+		asm("something")
+
+and "something" turns out to be empty, the if cannot be removed
+by the compiler.
+
+Signed-off-by: Richard Henderson <rth@twiddle.net>
 ---
- arch/arm64/include/asm/archrandom.h | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ arch/arm64/include/asm/uaccess.h | 31 ++++++++++++++++---------------
+ 1 file changed, 16 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
-index 3fe02da70004..f65df47283a6 100644
---- a/arch/arm64/include/asm/archrandom.h
-+++ b/arch/arm64/include/asm/archrandom.h
-@@ -6,6 +6,7 @@
- 
- #include <linux/random.h>
- #include <asm/cpufeature.h>
-+#include <asm/ccset.h>
- 
- static inline bool __arm64_rndr(unsigned long *v)
- {
-@@ -17,10 +18,10 @@ static inline bool __arm64_rndr(unsigned long *v)
+diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+index ca1acd7b95c3..90be003101f4 100644
+--- a/arch/arm64/include/asm/uaccess.h
++++ b/arch/arm64/include/asm/uaccess.h
+@@ -43,11 +43,14 @@ static inline void set_fs(mm_segment_t fs)
+ 	 * Enable/disable UAO so that copy_to_user() etc can access
+ 	 * kernel memory with the unprivileged instructions.
  	 */
- 	asm volatile(
- 		__mrs_s("%0", SYS_RNDR_EL0) "\n"
--	"	cset %w1, ne\n"
--	: "=r" (*v), "=r" (ok)
-+		CC_SET(ne)
-+	: "=r" (*v), CC_OUT(ne) (ok)
- 	:
--	: "cc");
-+	: CC_CLOBBER);
- 
- 	return ok;
+-	if (IS_ENABLED(CONFIG_ARM64_UAO) && fs == KERNEL_DS)
+-		asm(ALTERNATIVE("nop", SET_PSTATE_UAO(1), ARM64_HAS_UAO));
+-	else
+-		asm(ALTERNATIVE("nop", SET_PSTATE_UAO(0), ARM64_HAS_UAO,
+-				CONFIG_ARM64_UAO));
++	if (IS_ENABLED(CONFIG_ARM64_UAO)) {
++		if (fs == KERNEL_DS)
++			asm(ALTERNATIVE("nop", SET_PSTATE_UAO(1),
++					ARM64_HAS_UAO));
++		else
++			asm(ALTERNATIVE("nop", SET_PSTATE_UAO(0),
++					ARM64_HAS_UAO));
++	}
  }
+ 
+ #define segment_eq(a, b)	((a) == (b))
+@@ -178,28 +181,26 @@ static inline bool uaccess_ttbr0_enable(void)
+ 
+ static inline void __uaccess_disable_hw_pan(void)
+ {
+-	asm(ALTERNATIVE("nop", SET_PSTATE_PAN(0), ARM64_HAS_PAN,
+-			CONFIG_ARM64_PAN));
++	if (IS_ENABLED(CONFIG_ARM64_PAN))
++		asm(ALTERNATIVE("nop", SET_PSTATE_PAN(0), ARM64_HAS_PAN));
+ }
+ 
+ static inline void __uaccess_enable_hw_pan(void)
+ {
+-	asm(ALTERNATIVE("nop", SET_PSTATE_PAN(1), ARM64_HAS_PAN,
+-			CONFIG_ARM64_PAN));
++	if (IS_ENABLED(CONFIG_ARM64_PAN))
++		asm(ALTERNATIVE("nop", SET_PSTATE_PAN(1), ARM64_HAS_PAN));
+ }
+ 
+ #define __uaccess_disable(alt)						\
+ do {									\
+-	if (!uaccess_ttbr0_disable())					\
+-		asm(ALTERNATIVE("nop", SET_PSTATE_PAN(1), alt,		\
+-				CONFIG_ARM64_PAN));			\
++	if (IS_ENABLED(CONFIG_ARM64_PAN) && !uaccess_ttbr0_disable())	\
++		asm(ALTERNATIVE("nop", SET_PSTATE_PAN(1), alt));	\
+ } while (0)
+ 
+ #define __uaccess_enable(alt)						\
+ do {									\
+-	if (!uaccess_ttbr0_enable())					\
+-		asm(ALTERNATIVE("nop", SET_PSTATE_PAN(0), alt,		\
+-				CONFIG_ARM64_PAN));			\
++	if (IS_ENABLED(CONFIG_ARM64_PAN) && !uaccess_ttbr0_enable())	\
++		asm(ALTERNATIVE("nop", SET_PSTATE_PAN(0), alt));	\
+ } while (0)
+ 
+ static inline void uaccess_disable(void)
 -- 
 2.20.1
 
