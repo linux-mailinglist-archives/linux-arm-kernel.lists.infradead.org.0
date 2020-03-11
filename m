@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEDA9181231
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:42:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 233DC181234
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:43:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JgSR29gNB0AzgHWfyv2NDfvR+/VddzKG8bSlxHQoD6s=; b=IRUJWbjZWqX56T
-	grmn7p0X71rLHCu+TFMBEp1JAr0CLvOf8DkXzvbUiK7Rfo4dCNHXddkPR5IbdhHOrD87FCYtbGJzn
-	DFAMPIWc1hPsSPtrjQV/1s54cbg1C2EKQ/KvXnRTUduc/UV2Vsluh0m72H2LjYMMMdKsBvX3C1cQW
-	gw3sbdHh6nSpsFtmfF42NZNeqAaLycNvRroLdQ7seR8y2EAXa9LwLzr7JCyf3POiQAH6D1uN7Soaf
-	drOlP7pMo3kFM7jQqmxMGaPtf+O6i3dHQjRQPvn7aI3FBNIXLSHepCvUNEdfuyMLeGr8lrC/bCRSh
-	GpvoB7LmCnREEWTrwOSg==;
+	List-Owner; bh=/sdEFVHpxLlKbStdSKId0+fUakvuAbRIeu96C0c830U=; b=mMSKRSGu1u2nfI
+	o+c5WdX2eERFP29WoMK0jJBwwcfAThv8OLqHH8pzU9JsL1i9nblDb31kcng13aE4GNX0QV2hXmAfL
+	H4VrzaaTy1c8odWN2BDrUl6PCBvo5Loi3JpoX9kVBnRpyx5XFOyhYpRVzJSihvrOvkNmtX+IeEX1g
+	WNbpdfgB5Brld0VNO4O09QyvsS46vlsiCApvdpQ/APvHKUM/MUaGxrFeVw11CIrQWuzecHxD0GLQ9
+	03Mb2KR/FUV62CT3ib+hB1+NMoOYHtIwHwmB7hC0rvWkPg5/vgvdReEQytZ1dBtQfv9n0AffGnoGH
+	4KSw2VIB/f6SEHPOifJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBw0q-0004Dk-2p; Wed, 11 Mar 2020 07:42:44 +0000
+	id 1jBw1g-0004mW-Gw; Wed, 11 Mar 2020 07:43:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBw0A-0003rb-Tv
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:42:05 +0000
+ id 1jBw1Q-0004iw-MQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:43:21 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E45AA20873;
- Wed, 11 Mar 2020 07:41:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 76BD520578;
+ Wed, 11 Mar 2020 07:43:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583912521;
- bh=COqoozSsvLM0upCkboyNtzrP69ZdYJhevzth35nWfQM=;
+ s=default; t=1583912600;
+ bh=eb6X39X/EDrlVTNIumxU0I8Ahmihb5TtN/ubR16x01U=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OoozWDfShz0FRSf3tuymOxLp49w7woDT1zRZG0VOKt08WA6r8mO+78gCGudLNOHNn
- oQGD43dfdJ+nhSKSLzoqN0ANgz8ib2Has3ZS2oBvuoI5L2eJ/Gnqmqb9OSTvKTUdw1
- f3zfzTbyGfr109QyCPCeWunYDxj0/jOe75CqSne4=
-Date: Wed, 11 Mar 2020 15:41:55 +0800
+ b=beALctgQujcAortLMexlUJW267GT3Z/xzHrgHX63e8Lk8Sm2TH8L2qD1dKeXqbAYe
+ TrDe8YzRPcF8KZKOYC4Zkf6l/LA9IXwM/6MT8ifEk538EI0sfqDC/zXjHgz0mvQmur
+ DNMraLsm0zoWhgZfXn4r/Tt62Zl0ughWyG3nV0Qc=
+Date: Wed, 11 Mar 2020 15:43:15 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH 2/2] ARM: dts: imx6: phycore-som: add da9062 gpio support
-Message-ID: <20200311074154.GR29269@dragon>
-References: <20200227110605.22144-1-m.felsch@pengutronix.de>
- <20200227110605.22144-2-m.felsch@pengutronix.de>
+To: Russell King <rmk+kernel@armlinux.org.uk>
+Subject: Re: [PATCH] arm64: dts: lx2160a-cex7: add support for ltc3882
+ regulator
+Message-ID: <20200311074314.GS29269@dragon>
+References: <E1j7Hvq-0004Vn-5w@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200227110605.22144-2-m.felsch@pengutronix.de>
+In-Reply-To: <E1j7Hvq-0004Vn-5w@rmk-PC.armlinux.org.uk>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_004203_046363_27432D58 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20200311_004320_762201_193B2791 
+X-CRM114-Status: GOOD (  10.55  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,55 +77,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s.riedmueller@phytec.de, chf.fritz@googlemail.com, robh+dt@kernel.org,
- kernel@pengutronix.de, c.hemp@phytec.de, contact@stefanchrist.eu,
- s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Li Yang <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 12:06:05PM +0100, Marco Felsch wrote:
-> The pmic is a mfd device and supports gpios. Those gpios are not routed
-> to the SoM baseboard pin header but they are connected to the i.MX6. We
-> need the GPIO's to configure the pmic to select between the
-> suspend/resume arm and soc voltages
+On Thu, Feb 27, 2020 at 12:06:22PM +0000, Russell King wrote:
+> Add support for the LTC3882 regulator so that the hardware monitoring
+> can be used with this device.  This regulator provides the 0.78V
+> supply for the LX2160A.
 > 
-> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> 
->  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 
-Not sure why this is here.  I removed it and applied the patch.
-
-Shawn
-
-> 
-> diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> index 8b71bf33ba30..41ebe4599e43 100644
-> --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> @@ -88,7 +88,7 @@
->  		reg = <0x50>;
->  	};
->  
-> -	pmic@58 {
-> +	pmic: pmic@58 {
->  		compatible = "dlg,da9062";
->  		pinctrl-names = "default";
->  		pinctrl-0 = <&pinctrl_pmic>;
-> @@ -96,6 +96,8 @@
->  		interrupt-parent = <&gpio1>;
->  		interrupts = <2 IRQ_TYPE_LEVEL_LOW>;
->  		interrupt-controller;
-> +		gpio-controller;
-> +		#gpio-cells = <2>;
->  
->  		da9062_rtc: rtc {
->  			compatible = "dlg,da9062-rtc";
-> -- 
-> 2.20.1
-> 
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
