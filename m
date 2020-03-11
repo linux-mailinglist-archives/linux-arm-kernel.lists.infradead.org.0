@@ -2,48 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C446518196C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:18:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34E57181997
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:23:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SQG/KJsFjctJSWfUFBg8/mbXl5MjHp8Cuhme1gOyvJU=; b=nLu9kmO+367fQd
-	lYunoU5/mv9C3wPGY0nBGDUv1GruhVXRANQXfjEDOXxTHRF7QbdK95oUtPtyHnpRKRoeAHTsKxOC6
-	J0xiOyMd27FVP66j5secmxbI3reU/Rou1IJtzSzadtnR6UPOdLqRaqz67wZqdizRzOZAc94aa7C4i
-	KwtHxlX23apajX3dbOMEHPfW5GiY8ZrC5zBDZAiIGgk7pVfUmsZj5j2urAjEwo8JM5JUfIStwK7g/
-	qLmH0nCC2LgguFveFiYJuYbQR5bdTQcWKRjWIx2CdETrIX7dH2hC/ShPrzAFLM8lWAroSj7gGtN/H
-	zdbQN5HEo8O2SNOtwbYw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mh/JA6CUnLCzcYM3VZxJOC2O6qqqrq/GSgeVAoK1xAM=; b=qkiqyL4qjj3/sa
+	hi6MQARYh3gY0SoDRrTOsOl1i1Slr3AE2vCCym8lnMq/xFE7FD+w//VAahu17hMhivuU7ysYojQ/g
+	u7f2KOt13V1pjZoihwjLxI8Mj6H8T9+TooqGlDaWCbFlbGakSRoFdrS2nNB7ODP7ZXQhZK3O/vKvC
+	KFd1H3UMd4Zq71gTNxXd3Atl39D2BPUvDtLu04LpAjvaibqOFfyuATHUk2Fuw0nYPKtZ+WMvHeUgA
+	9BHwVuHUkuNpCOkNI6Z1UVyLo+VWJ8OgEIvNg9IgXYsUc7TKI9o6Agf7/jK+bie3lP/OSroAG6exa
+	FOUKFa2bw4zC7EHicoVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC1FW-0000Ie-QE; Wed, 11 Mar 2020 13:18:14 +0000
-Received: from fw-tnat-cam5.arm.com ([217.140.106.53]
- helo=cam-smtp0.cambridge.arm.com)
+	id 1jC1Kb-0002Rf-QG; Wed, 11 Mar 2020 13:23:29 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC1FP-0000I1-7M
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 13:18:09 +0000
-Received: from e123370-lin.nice.Arm.com (e123370-lin.nice.arm.com
- [10.34.104.64])
- by cam-smtp0.cambridge.arm.com (8.13.8/8.13.8) with ESMTP id 02BDI2Xt004408;
- Wed, 11 Mar 2020 13:18:02 GMT
-From: Olivier Deprez <olivier.deprez@arm.com>
-To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [RFC PATCH] drivers: firmware: ARM debug filesystem
-Date: Wed, 11 Mar 2020 14:18:02 +0100
-Message-Id: <20200311131802.29921-1-olivier.deprez@arm.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jC1KJ-0002Qn-JZ; Wed, 11 Mar 2020 13:23:13 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 66BA9AFEC;
+ Wed, 11 Mar 2020 13:23:05 +0000 (UTC)
+Subject: Re: [PATCH v11 3/5] clk / soc: mediatek: Move mt8173 MMSYS to
+ platform driver
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
+ p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
+ sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
+ laurent.pinchart@ideasonboard.com
+References: <20200311115614.1425528-1-enric.balletbo@collabora.com>
+ <20200311115614.1425528-4-enric.balletbo@collabora.com>
+From: Matthias Brugger <mbrugger@suse.com>
+Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
+ 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
+ HxUCQ9Y1Y/Ct
+Message-ID: <7157b75b-0b9d-33d0-6548-ac2433ab9154@suse.com>
+Date: Wed, 11 Mar 2020 14:23:02 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+MIME-Version: 1.0
+In-Reply-To: <20200311115614.1425528-4-enric.balletbo@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_061807_682807_0E177D38 
-X-CRM114-Status: GOOD (  22.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200311_062311_940220_3E8ECAB0 
+X-CRM114-Status: GOOD (  26.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -55,524 +143,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>,
+ Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, wens@csie.org,
+ Allison Randal <allison@lohutok.net>, mtk01761 <wendell.lin@mediatek.com>,
+ Owen Chen <owen.chen@mediatek.com>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, frank-w@public-files.de,
+ Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, linux-mediatek@lists.infradead.org,
+ hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Fabien Parent <fparent@baylibre.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch implements the kernel driver part of a generic firmware
-debug interface. It requires a specific support in the Trusted Firmware
-to expose such interface. It consists in a set of 9p primitives invoked
-through SMC. This permits access to an internal firmware namespace
-using unix-like paths.
-
-Signed-off-by: Olivier Deprez <olivier.deprez@arm.com>
----
- drivers/firmware/Kconfig       |  10 +
- drivers/firmware/Makefile      |   2 +
- drivers/firmware/arm_debugfs.c | 411 +++++++++++++++++++++++++++++++++
- 3 files changed, 423 insertions(+)
- create mode 100644 drivers/firmware/arm_debugfs.c
 
 
-This kernel driver patch illustrates the concept of a generic firmware debug
-interface. The intent is for firmware to expose debug data by means of abstracted
-directories and files. The primitives are borrowed from 9p. At the user level,
-simple open/read/write/close function wrappers are provided. Those wrappers
-translate into calling the firmware through SMC eventually passing parameters
-through a shared buffer.
+On 11/03/2020 12:56, Enric Balletbo i Serra wrote:
+> From: Matthias Brugger <mbrugger@suse.com>
+> 
+> There is no strong reason for this to use CLK_OF_DECLARE instead of
+> being a platform driver. Plus, MMSYS provides clocks but also a shared
+> register space for the mediatek-drm and the mediatek-mdp
+> driver. So move the MMSYS clocks to a new platform driver and also
+> create a new MMSYS platform driver in drivers/soc/mediatek that
+> instantiates the clock driver.
+> 
+> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> ---
+> 
+> Changes in v11:
+> - Leave the clocks part in drivers/clk (clk-mt8173-mm)
+> - Instantiate the clock driver from the mtk-mmsys driver.
+> - Add default config option to not break anything.
+> - Removed the Reviewed-by CK tag as changed the organization.
+> 
+> Changes in v10:
+> - Renamed to be generic mtk-mmsys
+> - Add driver data support to be able to support diferent SoCs
+> 
+> Changes in v9:
+> - Move mmsys to drivers/soc/mediatek (CK)
+> 
+> Changes in v8:
+> - Be a builtin_platform_driver like other mediatek mmsys drivers.
+> 
+> Changes in v7:
+> - Free clk_data->clks as well
+> - Get rid of private data structure
+> 
+>  drivers/clk/mediatek/Kconfig         |   7 ++
+>  drivers/clk/mediatek/Makefile        |   1 +
+>  drivers/clk/mediatek/clk-mt8173-mm.c | 146 +++++++++++++++++++++++++++
+>  drivers/clk/mediatek/clk-mt8173.c    | 104 -------------------
 
-Following design proposal:
-https://lists.trustedfirmware.org/pipermail/tf-a/2019-November/000123.html
+I'm not sure we really need that. We can just convert the mmsys clock bits in
+clk-mt8173.c to a platform driver with no need put them in a seperate file.
+If you think a seperate file is worth doing, I think the approach is to put the
+driver in a seperate file first and in a following patch change it to a platform
+driver.
 
-The TF-A firmware side is merged and visible at:
-https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/lib/debugfs
+Anyway its Stephen to make the decision. If he thinks things are fine like this,
+I'm happy to take the patch through my tree.
 
-Documentation:
-https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/docs/components/debugfs-design.rst
-https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/docs/components/arm-sip-service.rst
+>  drivers/soc/mediatek/Kconfig         |   8 ++
+>  drivers/soc/mediatek/Makefile        |   1 +
+>  drivers/soc/mediatek/mtk-mmsys.c     |  50 +++++++++
+>  7 files changed, 213 insertions(+), 104 deletions(-)
+>  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
+>  create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
+> 
 
-The design is still open to evolve. Please provide comments on the general
-concept/acceptance.
+<snip>
 
-Example of exposed firmware data: fip image flash contents
+> diff --git a/drivers/soc/mediatek/Kconfig b/drivers/soc/mediatek/Kconfig
+> index 2114b563478c..e84513318725 100644
+> --- a/drivers/soc/mediatek/Kconfig
+> +++ b/drivers/soc/mediatek/Kconfig
+> @@ -44,4 +44,12 @@ config MTK_SCPSYS
+>  	  Say yes here to add support for the MediaTek SCPSYS power domain
+>  	  driver.
+>  
+> +config MTK_MMSYS
+> +	bool "MediaTek MMSYS Support"
+> +	depends on COMMON_CLK_MT8173_MMSYS
+> +	default COMMON_CLK_MT8173_MMSYS
 
-/ # find /sys/kernel/debug/tfa
-/sys/kernel/debug/tfa
-/sys/kernel/debug/tfa/fip
-/sys/kernel/debug/tfa/blobs
-/sys/kernel/debug/tfa/blobs/fip.bin
-/sys/kernel/debug/tfa/blobs/ctl
-/sys/kernel/debug/tfa/dev
+If we don't create a new file, we would need to depend on COMMON_CLK_MT8173 or
+maybe not even that. I suppose the system does not get anywhere without the
+clock driver.
 
-/ # xxd -l32 /sys/kernel/debug/tfa/blobs/fip.bin
-00000000: 0100 64aa 7856 3412 0000 0000 0000 0000  ..d.xV4.........
-00000010: 5ff9 ec0b 4d22 3e4d a544 c39d 81c7 3f0a  _...M">M.D....?.
-
-/ # cksum /sys/kernel/debug/tfa/blobs/fip.bin
-4222949163 1048576 /sys/kernel/debug/tfa/blobs/fip.bin
-
-
-
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index 86d2901ad87a..e5c5caecdd86 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -82,6 +82,16 @@ config ARM_SCPI_POWER_DOMAIN
- 	  This enables support for the SCPI power domains which can be
- 	  enabled or disabled via the SCP firmware
- 
-+config ARM_DEBUGFS
-+       bool "ARM TF-A debugfs"
-+       help
-+         Select Y to implement a firmware debug filesystem accessed
-+         through kernel debug sysfs.
-+
-+         This feature depends on a Trusted-Firmware-A build option
-+         (USE_DEBUGFS). It exposes an internal filesystem used to
-+         peek/poke firmware data through file abstractions.
-+
- config EDD
- 	tristate "BIOS Enhanced Disk Drive calls determine boot disk"
- 	depends on X86
-diff --git a/drivers/firmware/Makefile b/drivers/firmware/Makefile
-index 33dcc099e021..52159d8c94ca 100644
---- a/drivers/firmware/Makefile
-+++ b/drivers/firmware/Makefile
-@@ -2,10 +2,12 @@
- #
- # Makefile for the linux kernel.
- #
-+obj-$(CONFIG_ARM_DEBUGFS)	+= arm_debugfs.o
- obj-$(CONFIG_ARM_PSCI_FW)	+= psci.o
- obj-$(CONFIG_ARM_PSCI_CHECKER)	+= psci_checker.o
- obj-$(CONFIG_ARM_SCPI_PROTOCOL)	+= arm_scpi.o
- obj-$(CONFIG_ARM_SCPI_POWER_DOMAIN) += scpi_pm_domain.o
-+
- obj-$(CONFIG_DMI)		+= dmi_scan.o
- obj-$(CONFIG_DMI_SYSFS)		+= dmi-sysfs.o
- obj-$(CONFIG_EDD)		+= edd.o
-diff --git a/drivers/firmware/arm_debugfs.c b/drivers/firmware/arm_debugfs.c
-new file mode 100644
-index 000000000000..9e64228b9c05
---- /dev/null
-+++ b/drivers/firmware/arm_debugfs.c
-@@ -0,0 +1,411 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * This program is free software; you can redistribute it and/or modify
-+ * it under the terms of the GNU General Public License version 2 as
-+ * published by the Free Software Foundation.
-+ *
-+ * This program is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+ * GNU General Public License for more details.
-+ *
-+ * Copyright (C) 2020 ARM Limited
-+ */
-+
-+/* #define DEBUG */
-+
-+#include <linux/kernel.h>
-+#include <linux/module.h>
-+#include <linux/debugfs.h>
-+#include <linux/arm-smccc.h>
-+#include <linux/slab.h>
-+#include <linux/uaccess.h>
-+
-+#define VERSION_MAJOR		0
-+#define VERSION_MINOR		2
-+
-+#define ARM_SIP_SVC_DEBUGFS	(0xC2000030)
-+
-+#define SMC_OK			(0)
-+
-+#define ARM_DEBUGFS_MOUNT	0
-+#define ARM_DEBUGFS_CREATE	1
-+#define ARM_DEBUGFS_OPEN	2
-+#define ARM_DEBUGFS_CLOSE	3
-+#define ARM_DEBUGFS_READ	4
-+#define ARM_DEBUGFS_WRITE	5
-+#define ARM_DEBUGFS_SEEK	6
-+#define ARM_DEBUGFS_BIND	7
-+#define ARM_DEBUGFS_STAT	8
-+#define ARM_DEBUGFS_INIT	10
-+#define ARM_DEBUGFS_VERSION	11
-+
-+#define NAMELEN			13 /* Maximum length of a file name */
-+#define MAX_PATH_LEN		256
-+
-+#define QID_CHDIR		0x8000
-+
-+#define ARM_DEBUGFS_KSEEK_SET	(0)
-+
-+enum devflags {
-+	ARM_DEBUGFS_OREAD   = 1 << 0,
-+	ARM_DEBUGFS_OWRITE  = 1 << 1,
-+	ARM_DEBUGFS_ORDWR   = 1 << 2,
-+	ARM_DEBUGFS_OBIND   = 1 << 3,
-+	ARM_DEBUGFS_ODIR    = 1 << 4,
-+	ARM_DEBUGFS_OSTAT   = 1 << 5,
-+};
-+
-+struct dir {
-+	char name[NAMELEN];
-+	long length;
-+	unsigned char mode;
-+	unsigned char type;
-+	unsigned char dev;
-+	unsigned short qid;
-+};
-+
-+union debugfs_parms {
-+	struct {
-+		char fname[MAX_PATH_LEN];
-+	} open;
-+
-+	struct mount {
-+		char srv[MAX_PATH_LEN];
-+		char where[MAX_PATH_LEN];
-+		char spec[MAX_PATH_LEN];
-+	} mount;
-+
-+	struct {
-+		char path[MAX_PATH_LEN];
-+		struct dir dir;
-+	} stat;
-+
-+	struct {
-+		char oldpath[MAX_PATH_LEN];
-+		char newpath[MAX_PATH_LEN];
-+	} bind;
-+};
-+
-+static struct {
-+	void *shared_buffer;
-+	struct dentry *tfa_rootdir;
-+	void *read_buffer;
-+
-+	/* This mutex protects the shared buffer and forbids concurrent */
-+	/* entry into the debugfs internal firmware layers.             */
-+	struct mutex debugfs_lock;
-+} g;
-+
-+static int version(void)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_VERSION, &res);
-+
-+	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
-+}
-+
-+static int tfa_9p_init(void *shared_buffer)
-+{
-+	struct arm_smccc_res res;
-+	phys_addr_t buffer_phys;
-+
-+	buffer_phys = virt_to_phys(shared_buffer);
-+	if (!buffer_phys)
-+		return -ENOMEM;
-+
-+	pr_debug("shared buffer 0x%p (PA 0x%llx)\n",
-+		 shared_buffer, buffer_phys);
-+
-+	/* Pass the kernel allocated shared buffer PA */
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_INIT, buffer_phys,
-+			  &res);
-+
-+	return res.a0;
-+}
-+
-+static int open(const char *name, int flags)
-+{
-+	union debugfs_parms *parms = g.shared_buffer;
-+	struct arm_smccc_res res;
-+
-+	mutex_lock(&g.debugfs_lock);
-+	strlcpy(parms->open.fname, name, MAX_PATH_LEN);
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_OPEN, flags, &res);
-+	mutex_unlock(&g.debugfs_lock);
-+
-+	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
-+}
-+
-+static int read(int fd, void *buf, size_t size)
-+{
-+	struct arm_smccc_res res;
-+	int ret = -EIO;
-+
-+	mutex_lock(&g.debugfs_lock);
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_READ, fd, size,
-+			  &res);
-+
-+	if (res.a0 != SMC_OK)
-+		goto exit_unlock;
-+
-+	if (res.a1 > size) {
-+		ret = -EIO;
-+		goto exit_unlock;
-+	}
-+
-+	memcpy(buf, g.shared_buffer, size);
-+	ret = res.a1;
-+
-+exit_unlock:
-+	mutex_unlock(&g.debugfs_lock);
-+
-+	return ret;
-+}
-+
-+static int seek(int fd, long off, int whence)
-+{
-+	struct arm_smccc_res res;
-+
-+	mutex_lock(&g.debugfs_lock);
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_SEEK, fd, off,
-+			  whence, &res);
-+	mutex_unlock(&g.debugfs_lock);
-+
-+	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
-+}
-+
-+static int stat(const char *name, struct dir *entry)
-+{
-+	union debugfs_parms *parms = g.shared_buffer;
-+	struct arm_smccc_res res;
-+
-+	mutex_lock(&g.debugfs_lock);
-+	strlcpy(parms->stat.path, name, MAX_PATH_LEN);
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_STAT, &res);
-+	mutex_unlock(&g.debugfs_lock);
-+
-+	if (res.a0 == SMC_OK)
-+		memcpy(entry, &parms->stat.dir, sizeof(struct dir));
-+
-+	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
-+}
-+
-+static int close(int fd)
-+{
-+	struct arm_smccc_res res;
-+
-+	mutex_lock(&g.debugfs_lock);
-+	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_CLOSE, fd, &res);
-+	mutex_unlock(&g.debugfs_lock);
-+
-+	return (res.a0 == SMC_OK) ? 0 : -EIO;
-+}
-+
-+static void dir_print(struct dir *dir)
-+{
-+	pr_devel("%s name %s, len %ld, mode %d, type %d, dev %d, qid 0x%x\n",
-+		 __func__, dir->name, dir->length, dir->mode, dir->type,
-+		 dir->dev, dir->qid);
-+}
-+
-+ssize_t debugfs_read(struct file *file, char __user *user_buf, size_t length,
-+		     loff_t *offset)
-+{
-+	char *debugfs_path, *tfa_path, *buf = (char *)g.read_buffer;
-+	char pathname[MAX_PATH_LEN];
-+	int ret, fd, read_size = 0;
-+	struct dir dir_entry;
-+
-+	if (!offset || !user_buf || !length)
-+		return 0;
-+
-+	/* Convert path object to an ascii absolute path string */
-+	debugfs_path = d_path(&file->f_path, pathname, MAX_PATH_LEN);
-+	if (!debugfs_path || IS_ERR(debugfs_path))
-+		return 0;
-+
-+	/* Extrapolate the relative path in the firmware 9p hierarchy */
-+	tfa_path = strstr(debugfs_path, "/tfa/");
-+	if (!tfa_path)
-+		return 0;
-+
-+	/* Skip debugfs absolute directory path */
-+	tfa_path += 4;
-+
-+	/* Check file presence and get file size */
-+	ret = stat(tfa_path, &dir_entry);
-+	if (ret < 0) {
-+		pr_err("%s stat failed\n", __func__);
-+		return 0;
-+	}
-+
-+	/* Discard read operation if offset is out of bounds */
-+	if (*offset >= dir_entry.length)
-+		return 0;
-+
-+	fd = open(tfa_path, ARM_DEBUGFS_OREAD);
-+	if (fd < 0) {
-+		pr_err("%s open failed\n", __func__);
-+		return 0;
-+	}
-+
-+	if (*offset > 0) {
-+		ret = seek(fd, *offset, ARM_DEBUGFS_KSEEK_SET);
-+		if (ret < 0) {
-+			pr_err("%s seek failed ret=%d\n", __func__, ret);
-+			goto exit_close;
-+		}
-+	}
-+
-+	/* Restrict length to one page frame size maximum */
-+	if (length > PAGE_SIZE)
-+		length = PAGE_SIZE;
-+
-+	read_size = read(fd, buf, length);
-+	if (read_size <= 0) {
-+		pr_err("%s read failed ret=%d\n", __func__, read_size);
-+		goto exit_close;
-+	}
-+
-+	if (copy_to_user(user_buf, buf, read_size)) {
-+		pr_err("%s copy to user failed\n", __func__);
-+		goto exit_close;
-+	}
-+
-+	*offset += read_size;
-+
-+exit_close:
-+	ret = close(fd);
-+	if (ret < 0)
-+		pr_err("%s close failed\n", __func__);
-+
-+	return read_size;
-+}
-+
-+const struct file_operations debugfs_ops = {
-+	.read = debugfs_read
-+};
-+
-+static int arm_debugfs_walk_dir(struct dentry *parent_dir, const char *path)
-+{
-+	int ret, fd;
-+	struct dir dir;
-+	struct dentry *dent, *fent;
-+	char abs_path[MAX_PATH_LEN];
-+
-+	/* open root directory */
-+	fd = open(path, ARM_DEBUGFS_OREAD);
-+	if (fd < 0) {
-+		pr_err("open failed %d\n", fd);
-+		return -EIO;
-+	}
-+
-+	/* read directory entries */
-+	do {
-+		ret = read(fd, &dir, sizeof(dir));
-+		if (ret > 0) {
-+			dir_print(&dir);
-+			if (dir.qid & QID_CHDIR) {
-+				dent = debugfs_create_dir(dir.name, parent_dir);
-+				snprintf(abs_path, MAX_PATH_LEN, "%s%s/",
-+					 path, dir.name);
-+				(void)arm_debugfs_walk_dir(dent, abs_path);
-+			} else {
-+				fent = debugfs_create_file(dir.name, O_RDONLY,
-+							   parent_dir, NULL,
-+							   &debugfs_ops);
-+			}
-+		}
-+	} while (ret > 0);
-+
-+	/* close root directory handle */
-+	ret = close(fd);
-+	if (ret < 0) {
-+		pr_err("close failed %d\n", ret);
-+		return -EIO;
-+	}
-+
-+	return 0;
-+}
-+
-+static int __init arm_debugfs_init(void)
-+{
-+	int ret;
-+
-+	/* Requires debugfs framework */
-+	ret = debugfs_initialized();
-+	if (!ret)
-+		return ret;
-+
-+	/*
-+	 * Request ARM TF-A debugfs interface version also used as
-+	 * a means to detect such interface presence.
-+	 */
-+	ret = version();
-+	if (ret < 0) {
-+		pr_err("%s failed getting interface version.\n", __func__);
-+		return ret;
-+	}
-+
-+	pr_debug("%s interface version 0x%x\n", __func__, ret);
-+
-+	/* Create a top-level debugfs directory */
-+	g.tfa_rootdir = debugfs_create_dir("tfa", NULL);
-+	if (!g.tfa_rootdir)
-+		return -EIO;
-+
-+	/* Allocate a shared buffer page */
-+	g.shared_buffer = (void *)__get_free_page(GFP_KERNEL);
-+	if (!g.shared_buffer)
-+		goto exit_dir;
-+
-+	g.read_buffer = kzalloc(PAGE_SIZE, GFP_KERNEL);
-+	if (!g.read_buffer)
-+		goto exit_free_shared_buffer;
-+
-+	/* Initialize ARM firmware debugfs interface */
-+	ret = tfa_9p_init(g.shared_buffer);
-+	if (ret)
-+		goto exit_free_read_buffer;
-+
-+	mutex_init(&g.debugfs_lock);
-+
-+	ret = arm_debugfs_walk_dir(g.tfa_rootdir, "/");
-+	if (ret)
-+		goto exit_mutex_destroy;
-+
-+	pr_info("ARM TF-A debugfs v%u.%u interface initialized.\n",
-+		VERSION_MAJOR, VERSION_MINOR);
-+
-+	return 0;
-+
-+exit_mutex_destroy:
-+	mutex_destroy(&g.debugfs_lock);
-+
-+exit_free_read_buffer:
-+	kfree(g.read_buffer);
-+
-+exit_free_shared_buffer:
-+	free_page((uintptr_t)g.shared_buffer);
-+
-+exit_dir:
-+	debugfs_remove_recursive(g.tfa_rootdir);
-+
-+	return ret;
-+}
-+module_init(arm_debugfs_init);
-+
-+static void __exit arm_debugfs_exit(void)
-+{
-+	debugfs_remove_recursive(g.tfa_rootdir);
-+	mutex_destroy(&g.debugfs_lock);
-+	free_page((uintptr_t)g.shared_buffer);
-+	pr_info("ARM debugfs exited.\n");
-+}
-+module_exit(arm_debugfs_exit);
-+
-+MODULE_LICENSE("GPL");
-+MODULE_DESCRIPTION("ARM debugfs");
-+MODULE_VERSION("0.2");
--- 
-2.17.1
-
+Regards,
+Matthias
 
 _______________________________________________
 linux-arm-kernel mailing list
