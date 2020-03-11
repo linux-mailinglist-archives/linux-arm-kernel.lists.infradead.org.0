@@ -2,60 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEE021814D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 10:28:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6DA11814E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 10:33:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0UnOx5/2q5CwM5guEe41Bl2zSn+H2cVueNTngON6tpk=; b=MF6IUq1u0aGz6QcaGOGsD10NA
-	QJ/0K+CDQayKY8sx/W2muuhDnAqeuJRAsHpWcfbBoX7e4eTnMXV2TQ3rCS4WM4RzsFO/jSanE6yub
-	V4I6gHUr+gjyNI6T9sHWpPVJ5WibuhThaEejAlr78e6QS1TiaxT+suLTAkKfKU6E3XWgfpXYINh3p
-	hL23OVUVTgrzMTHkyrRLQFOjKWOFN3C2cqNWkE4uFRRs3o4+YwJdX3XWudvvXT2Ok15nUoVgl2dTL
-	n5pqzgymoC8zbmbrFjElejUFTTwHh2XVhYsD6hEwv15d19dCXpS0LI58Jo/fwIwnZq1zNgAXV8ssD
-	M9yjTxiaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c2QC59xwF7iwz3toWi59+Jory8aKpzSYjgF8gkY7V2Q=; b=vAWokAZd86wzWD
+	C7UVIIY9dItbYO80iimZMManV+WxZxPoewRkdLp15UdprYwpB2+Ctj5+5xdz6050+1D9vwZf6xUje
+	pAOb0WX/76VCPFSDayAFTLeiSGoijsqLg4B1Q82tF0coXfJWK3zJCsDT8HgIHr9HoRlSuBtZXqj1O
+	RhRG43SZngcRe2MeIlraV8nxHkANTS9oT7Cca1OvsDQyEWosHm0wNF+idvJChtnSqaSLbJSYYVCdj
+	FZ2oZGFsYTrbGIRNJed//sjtbzI4SaHFhA4kgDxQ/aIiMFEiPKGNOitELsOA6EC6+Dk3XQ+SEsItS
+	m+WMfGNx5+0GDZYpb6Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBxfV-00007I-0U; Wed, 11 Mar 2020 09:28:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBxf4-0008R4-Fi
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 09:28:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6A7231B;
- Wed, 11 Mar 2020 02:28:21 -0700 (PDT)
-Received: from [10.163.1.234] (unknown [10.163.1.234])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E49DC3F67D;
- Wed, 11 Mar 2020 02:28:17 -0700 (PDT)
-Subject: Re: [PATCH v6 06/18] arm64: ptrauth: Add bootup/runtime flags for
- __cpu_setup
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-7-git-send-email-amit.kachhap@arm.com>
- <e09af428-bd14-8755-6e16-bbf268040d17@arm.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <5e339fd0-8434-10bb-e6a0-417bc1c0dc09@arm.com>
-Date: Wed, 11 Mar 2020 14:58:18 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jBxjZ-00024U-Ho; Wed, 11 Mar 2020 09:33:01 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBxjR-00023v-1u; Wed, 11 Mar 2020 09:32:54 +0000
+Received: from p5b127c69.dip0.t-ipconnect.de ([91.18.124.105]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1jBxjP-0000hs-6C; Wed, 11 Mar 2020 10:32:51 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: add bus to rockchip amba nodenames
+Date: Wed, 11 Mar 2020 10:32:50 +0100
+Message-ID: <1741084.mhMtVdeNFd@phil>
+In-Reply-To: <20200302153047.17101-1-jbx6244@gmail.com>
+References: <20200302153047.17101-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <e09af428-bd14-8755-6e16-bbf268040d17@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_022822_607321_3290423C 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200311_023253_245793_600B63A7 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,51 +56,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Am Montag, 2. M=E4rz 2020, 16:30:46 CET schrieb Johan Jonker:
+> A test with the command below gives for example this error:
+> =
 
-On 3/10/20 5:44 PM, Vincenzo Frascino wrote:
-> Hi Amit,
-> 
-> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
->> This patch allows __cpu_setup to be invoked with one of these flags,
->> ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_SECONDARY or ARM64_CPU_RUNTIME.
->> This is required as some cpufeatures need different handling during
->> different scenarios.
->>
-> 
-> I could not find any explanation in this patch on what these flags stand for.
-> Could you please add it? Maybe near where you define them.
+> arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml: amba: $nodename:0:
+> 'amba' does not match '^(bus|soc|axi|ahb|apb)(@[0-9a-f]+)?$'
+> =
 
-I will add in my V7 version.
-> 
-> With this:
-> 
-> Reviewed-by: Vincenzo Frascino <Vincenzo.Frascino@arm.com>
+> AMBA is a open standard for the connection and
+> management of functional blocks in a SoC.
+> It's compatible with 'simple-bus', so fix this error
+> by adding 'bus' to all Rockchip 'amba' nodes.
+> =
 
-Thanks.
-> 
->> The input parameter in x0 is preserved till the end to be used inside
->> this function.
->>
->> There should be no functional change with this patch and is useful
->> for the subsequent ptrauth patch which utilizes it. Some upcoming
->> arm cpufeatures can also utilize these flags.
->>
->> Suggested-by: James Morse <james.morse@arm.com>
->> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> make ARCH=3Darm dtbs_check
+> DT_SCHEMA_FILES=3D~/.local/lib/python3.5/site-packages/dtschema/
+> schemas/simple-bus.yaml
+> =
+
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+
+applied both for 5.7
+
+Thanks
+Heiko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
