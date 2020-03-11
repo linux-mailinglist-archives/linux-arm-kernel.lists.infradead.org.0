@@ -2,87 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C5751811E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:28:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F249A1811FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:32:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zM2wxZT8vabBrzQ+UZ96T6DSAZnz/G45cVVVS5Mzl7g=; b=bA4zMV1J1qXqVwQIRO+77RptQ
-	FbP553JSLo8JuNI/lTBud0/V97VtTRKyRXEIphhVBfNpzvMzANVhAMv+puWmN9S2glLfBjEO0rtXY
-	XpSp7cnzn6ZIhAXE8h9suZnaf/Xj+xozsgaD9+xeWbUPggagUl25L72DDY+AhRfeSPre2cDMJI3xh
-	CGoeJqhmw2PMGfZfwNoSjw5GKQPjJz6sdvNjgoDuRYKNNiXCjoX71/MmXR3mjNHWU4lJPPYv1SXM3
-	qgkPXUd5KBJOk1xrLFD274gLpc3GqTED4dBdYfp6Ku6wnYwD+AYhSkWIxrqBYq8QgvzFFhzy7oER+
-	hlS7orT7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=v6VTSiCgJ8wbbizsp5ewQILOHkqCRR8xZpVJ5u7KOfE=; b=TWb
+	dBj3x1dlKKlfD4svSyt7L+Q26kWbHR02ArmZk2Irvn9K4P53NB4FDv35xZDH2NFmQvSZzWWamIkOa
+	9j/hciABJ3lk1Sd0q7/VvGvprnYFGlZlZrb9oJ+U6O6unVg3ebNd+oUPAPZaLO9A/UBCg9IDWrDiD
+	atFtAfqhPdPXjgahddQ7zWSSi597ic0pRmgziMweu2RXtu7XFpM4VjAyAswIXAVP60NV7tNcBfhRq
+	mFjS8j6c2Qin6uwlBCY7u0kjyyJ2oSUmfEpC0foUbG3xexBFaxQ6rjAdw3rfzWAoHnGykLQ5fRKZd
+	d3NLZ/mLZTKD03jH6omEF8xLriiN37Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBvn1-0004N4-FE; Wed, 11 Mar 2020 07:28:27 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1jBvqy-0007B0-L2; Wed, 11 Mar 2020 07:32:32 +0000
+Received: from m177134.mail.qiye.163.com ([123.58.177.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBvmr-0004M5-NO
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:28:19 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 0672923E74;
- Wed, 11 Mar 2020 08:28:02 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1583911689;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=JSw70fkISSLa6g6Yq0UJ8frDvfTka8uWBM+qhrV4Jkk=;
- b=WwepzPq2B5tgYsgHjvakBFxdsuP/fzodyQIhQ8Gs+QpFwplu4DHBt5cuDihxTWHict4N/Y
- CvnqF/qcVcGsd5oKHJ9cGt6w+bE00SP+p2pEXZ7RrEFKT0xVEP4UCCw6/ghUNsVCTCbsjC
- 7vHVlHoHedjfxIN3iGsRVnY1sPOuijI=
-MIME-Version: 1.0
-Date: Wed, 11 Mar 2020 08:28:02 +0100
-From: Michael Walle <michael@walle.cc>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH 1/3] arm64: dts: ls1028a: sl28: fix on-board EEPROMS
-In-Reply-To: <20200311071613.GL29269@dragon>
-References: <20200225175756.29508-1-michael@walle.cc>
- <20200225175756.29508-2-michael@walle.cc> <20200311071613.GL29269@dragon>
-Message-ID: <ad7bd5b3286f00be2d43b696b40aeaae@walle.cc>
-X-Sender: michael@walle.cc
-User-Agent: Roundcube Webmail/1.3.10
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: web
-X-Spam-Status: No, score=1.40
-X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: 0672923E74
-X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_SEVEN(0.00)[7];
- NEURAL_HAM(-0.00)[-0.310]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
+ id 1jBvqr-0007AV-8x
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:32:26 +0000
+Received: from ubuntu.localdomain (unknown [58.251.74.226])
+ by m17618.mail.qiye.163.com (Hmail) with ESMTPA id 4719C4E207F;
+ Wed, 11 Mar 2020 15:32:16 +0800 (CST)
+From: Li Tao <tao.li@vivo.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Matthias Brugger <mbrugger@suse.com>, Bhupesh Sharma <bhsharma@redhat.com>,
+ James Morse <james.morse@arm.com>,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] arm64: kexec_file: Fixed code style.
+Date: Wed, 11 Mar 2020 15:31:55 +0800
+Message-Id: <20200311073156.125251-1-tao.li@vivo.com>
+X-Mailer: git-send-email 2.17.1
+X-HM-Spam-Status: e1kfGhgUHx5ZQUlXWQgYFAkeWUFZQ1VKTklCQkNCSU9JTk5ITFlXWShZQU
+ hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
+X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Nio6FCo4EDgyODMNQxkQT0w4
+ Ah8aFD5VSlVKTkNIQkpKQkhCSUxOVTMWGhIXVQ8aFFUXEjsNEg0UVRgUFkVZV1kSC1lBWU5DVUlO
+ SlVMT1VJSU1ZV1kIAVlBSkNJSTcG
+X-HM-Tid: 0a70c88222989376kuws4719c4e207f
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_002817_922906_B9E37EDE 
-X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-CacheID: sfid-20200311_003225_568063_4DFAAABA 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [123.58.177.134 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [123.58.177.134 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,26 +69,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: wenhu.pku@gmail.com, Li Tao <tao.li@vivo.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-03-11 08:16, schrieb Shawn Guo:
-> On Tue, Feb 25, 2020 at 06:57:54PM +0100, Michael Walle wrote:
->> The module itself has another EEPROM at 50h on I2C4. The EEPROM on the
->> carriers is located at 57h on I2C3. Fix that in the device trees.
->> 
->> Signed-off-by: Michael Walle <michael@walle.cc>
-> 
-> Doesn't apply to my branch.
+Remove unnecessary blank.
 
-Oh, sorry. there was a patch missing. I'll send a v2 shortly.
+Signed-off-by: Li Tao <tao.li@vivo.com>
+---
+ arch/arm64/kernel/machine_kexec_file.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
--michael
+diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
+index dd3ae80..b40c3b0 100644
+--- a/arch/arm64/kernel/machine_kexec_file.c
++++ b/arch/arm64/kernel/machine_kexec_file.c
+@@ -121,7 +121,7 @@ static int setup_dtb(struct kimage *image,
+ 
+ 	/* add kaslr-seed */
+ 	ret = fdt_delprop(dtb, off, FDT_PROP_KASLR_SEED);
+-	if  (ret == -FDT_ERR_NOTFOUND)
++	if (ret == -FDT_ERR_NOTFOUND)
+ 		ret = 0;
+ 	else if (ret)
+ 		goto out;
+-- 
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
