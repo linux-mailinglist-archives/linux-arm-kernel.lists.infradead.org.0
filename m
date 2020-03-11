@@ -2,97 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFAF0181956
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:12:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C446518196C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:18:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2xLMyqXUJn/dWpFhRqNp9IxvHacFTdM6Ps00cn5ikUo=; b=gc+ZZHmYO77fkn
-	zAvcfBx9DDDLEIkGiRcheKIuy4OF3CcWlZKTvrkUWYNdaxmSLRH2e9dSVnVnPgTYpmmmUS5iM1uW3
-	z8JPPxfgFQTHhe0aq7KNuaS2jng/8dQa566LR3lhfRga0rhAJ3hRlDZFEeDSUKqDD9frLLejxLxH4
-	H86qCzrKMw5jQ2Osck1cJKCC0L1l/gkY9xT1SWgbBsey1PgmBVT+zmLfBaDp9N47wSOR5N9gMKHkX
-	Vqv0ooedaFvlJgCXAdimV0eWUC5DpbuikvMxfvOXquoTPFMJAlzuXsBu+/lN+fahcM6w5KqeUp2AS
-	tTBckijaEQBaHBR9Tk2Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=SQG/KJsFjctJSWfUFBg8/mbXl5MjHp8Cuhme1gOyvJU=; b=nLu9kmO+367fQd
+	lYunoU5/mv9C3wPGY0nBGDUv1GruhVXRANQXfjEDOXxTHRF7QbdK95oUtPtyHnpRKRoeAHTsKxOC6
+	J0xiOyMd27FVP66j5secmxbI3reU/Rou1IJtzSzadtnR6UPOdLqRaqz67wZqdizRzOZAc94aa7C4i
+	KwtHxlX23apajX3dbOMEHPfW5GiY8ZrC5zBDZAiIGgk7pVfUmsZj5j2urAjEwo8JM5JUfIStwK7g/
+	qLmH0nCC2LgguFveFiYJuYbQR5bdTQcWKRjWIx2CdETrIX7dH2hC/ShPrzAFLM8lWAroSj7gGtN/H
+	zdbQN5HEo8O2SNOtwbYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC19w-0006Zi-7M; Wed, 11 Mar 2020 13:12:28 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jC1FW-0000Ie-QE; Wed, 11 Mar 2020 13:18:14 +0000
+Received: from fw-tnat-cam5.arm.com ([217.140.106.53]
+ helo=cam-smtp0.cambridge.arm.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC19i-0006Yj-5U
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 13:12:18 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id y7so984262pjn.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 06:12:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=zGx3tC+j4wwScyOOZEgYfobl7ESHitp0X2fW0ePwPeA=;
- b=RnoMVBSIDlCbR9SMQjRYqG7XLNB0/Ja6aGtP5iwcyoaJXRujmvvX+3jTocNm45e2v+
- 4C1RdEWhPMyliJc5W+Uw56yhgkviMT75q9GVSXP4H+f+Kx9Jwn77SCMM8a+7TF6wIP28
- WWTs5P9rShs+72+0CyLIVOG2ircaFvOpHFJ4j1VdFqQw2CnbfLW9YjVc014yQD4PbcLh
- JZCuOKD4EgYpOtlMg+6cUb87ABjKRfZNDOarV1Q0yWwlphYktjzKTYDtfVbyKajul2o8
- DHJLq9ycFfmEIbQvmiFQR8IYVaqyvBJlmlIyGnwjU78oFyw7gYYFeF5hYscaFquv8Isq
- Hb0g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zGx3tC+j4wwScyOOZEgYfobl7ESHitp0X2fW0ePwPeA=;
- b=La8r0/K5RbtyRFP5/XTjxbvjqR34Qr83s+9hFU4hVsY1z8ETEmZmcUQEIZD5Ri6j4M
- hr4wUFYR1Qv0k5tfSyG4YdkCDWcgub+AOuu0zX96ObWCm6WSO9QcgWnWrSKvkaXv6bx9
- o4E+DKF/7dH416ATHfYMuGrAvO6SwUFjgHQtAuQ8IC2DtSVE1qz0hP+bHpJhWxJhEfgC
- p/lBVL6X8+s67KcVSYb4JhVCPDk1M+ou72emNVzrBUxxyr3QZpwR7eG25X2mxJJ9tXg3
- ydZ0hHJcEeFOBJPD92MLvcdYv7H0g/2xRxutea0qxcYMSPKkGyykNUhGMrsIR8ioHKcP
- jsnA==
-X-Gm-Message-State: ANhLgQ2Cpk1M61ntKO4SqpAJFi1kaKztI3l8ak9iQr/PkkCedOp7TRWX
- q0vzXTNgk6206b+dHvZbMVU=
-X-Google-Smtp-Source: ADFU+vvPbgKOfQqZTcP9HlWhJ6URPoi7WwdMADheIF4FdkOYjJwaFS/KlHZK8fAVlvDk5E9wKwbJQw==
-X-Received: by 2002:a17:90a:8005:: with SMTP id
- b5mr3272477pjn.37.1583932333369; 
- Wed, 11 Mar 2020 06:12:13 -0700 (PDT)
-Received: from localhost ([106.51.232.35])
- by smtp.gmail.com with ESMTPSA id w24sm5497734pjh.26.2020.03.11.06.12.12
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 11 Mar 2020 06:12:12 -0700 (PDT)
-Date: Wed, 11 Mar 2020 18:42:10 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Subject: Re: [PATCH v4] MIPS: Replace setup_irq() by request_irq()
-Message-ID: <20200311131210.GA5115@afzalpc>
-References: <20200304203144.GA4323@alpha.franken.de>
- <20200305115759.3186-1-afzal.mohd.ma@gmail.com>
- <20200311053126.GA48442@ubuntu-m2-xlarge-x86>
- <20200311090308.GA5060@afzalpc>
- <20200311104217.GA10615@alpha.franken.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200311104217.GA10615@alpha.franken.de>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+ id 1jC1FP-0000I1-7M
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 13:18:09 +0000
+Received: from e123370-lin.nice.Arm.com (e123370-lin.nice.arm.com
+ [10.34.104.64])
+ by cam-smtp0.cambridge.arm.com (8.13.8/8.13.8) with ESMTP id 02BDI2Xt004408;
+ Wed, 11 Mar 2020 13:18:02 GMT
+From: Olivier Deprez <olivier.deprez@arm.com>
+To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [RFC PATCH] drivers: firmware: ARM debug filesystem
+Date: Wed, 11 Mar 2020 14:18:02 +0100
+Message-Id: <20200311131802.29921-1-olivier.deprez@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_061216_995004_13E3DEC3 
-X-CRM114-Status: GOOD (  16.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_061807_682807_0E177D38 
+X-CRM114-Status: GOOD (  22.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,174 +55,524 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Paul Burton <paulburton@kernel.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, Jiaxun Yang <jiaxun.yang@flygoat.com>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
- Huacai Chen <chenhc@lemote.com>, Nathan Chancellor <natechancellor@gmail.com>,
- Keguang Zhang <keguang.zhang@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thomas,
+This patch implements the kernel driver part of a generic firmware
+debug interface. It requires a specific support in the Trusted Firmware
+to expose such interface. It consists in a set of 9p primitives invoked
+through SMC. This permits access to an internal firmware namespace
+using unix-like paths.
 
-On Wed, Mar 11, 2020 at 11:42:17AM +0100, Thomas Bogendoerfer wrote:
-> On Wed, Mar 11, 2020 at 02:33:08PM +0530, afzal mohammed wrote:
-
-> > diff --git a/arch/mips/kernel/cevt-r4k.c b/arch/mips/kernel/cevt-r4k.c
-
-> >  int r4k_clockevent_init(void)
-> >  {
-> > -	unsigned long flags = IRQF_PERCPU | IRQF_TIMER | IRQF_SHARED;
-> > +	unsigned long flags = IRQF_PERCPU | IRQF_TIMER;
-
-> I don't see why this should help. In my tree only sgi-ip30 removes
-> IRQF_SHARED from flags, but then it uses setup_percpu_irq().
-> What do I miss ?
-
-You did not miss anything. Though it works, i took a wrong route
-following the tags & arrived at that solution in a hurry.
-(struct irqaction used in sgi-ip30 was used here earlier w/ setup_irq).
-
-The problem is sanity checks in request_irq() [ rather in
-request_thread_iq() ]
+Signed-off-by: Olivier Deprez <olivier.deprez@arm.com>
+---
+ drivers/firmware/Kconfig       |  10 +
+ drivers/firmware/Makefile      |   2 +
+ drivers/firmware/arm_debugfs.c | 411 +++++++++++++++++++++++++++++++++
+ 3 files changed, 423 insertions(+)
+ create mode 100644 drivers/firmware/arm_debugfs.c
 
 
-	if (((irqflags & IRQF_SHARED) && !dev_id) ||
-	    (!(irqflags & IRQF_SHARED) && (irqflags & IRQF_COND_SUSPEND)) ||
-	    ((irqflags & IRQF_NO_SUSPEND) && (irqflags & IRQF_COND_SUSPEND)))
-		return -EINVAL;
+This kernel driver patch illustrates the concept of a generic firmware debug
+interface. The intent is for firmware to expose debug data by means of abstracted
+directories and files. The primitives are borrowed from 9p. At the user level,
+simple open/read/write/close function wrappers are provided. Those wrappers
+translate into calling the firmware through SMC eventually passing parameters
+through a shared buffer.
 
-If IRQF_SHARED is passed, it exepcts a non-NULL dev_id, here it is
-NULL, setup_irq() doesn't have any check like that.
+Following design proposal:
+https://lists.trustedfirmware.org/pipermail/tf-a/2019-November/000123.html
 
-So i think proper solution is to add a non NULL dev_id, as removing
-IRQF_SHARED might affect some platforms that might be using that
-interrupt line shared.
+The TF-A firmware side is merged and visible at:
+https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/lib/debugfs
 
-Patch with non-NULL dev_id below, it works w/ Nathan's test case.
+Documentation:
+https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/docs/components/debugfs-design.rst
+https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/docs/components/arm-sip-service.rst
 
-Would you prefer an incremental patch or a fixed up v5 patch ?
+The design is still open to evolve. Please provide comments on the general
+concept/acceptance.
 
-i will test build the other cases as well & sent the patch later today,
-though it is trivial, just being paranoid, since bitten by build error
-earlier.
+Example of exposed firmware data: fip image flash contents
 
-Also there was no meaningful pointer to pass as dev_id except in one
-case, so i have used name itself.
+/ # find /sys/kernel/debug/tfa
+/sys/kernel/debug/tfa
+/sys/kernel/debug/tfa/fip
+/sys/kernel/debug/tfa/blobs
+/sys/kernel/debug/tfa/blobs/fip.bin
+/sys/kernel/debug/tfa/blobs/ctl
+/sys/kernel/debug/tfa/dev
 
-Regards
-afzal
+/ # xxd -l32 /sys/kernel/debug/tfa/blobs/fip.bin
+00000000: 0100 64aa 7856 3412 0000 0000 0000 0000  ..d.xV4.........
+00000010: 5ff9 ec0b 4d22 3e4d a544 c39d 81c7 3f0a  _...M">M.D....?.
 
---->8---
+/ # cksum /sys/kernel/debug/tfa/blobs/fip.bin
+4222949163 1048576 /sys/kernel/debug/tfa/blobs/fip.bin
 
-diff --git a/arch/mips/dec/setup.c b/arch/mips/dec/setup.c
-index c8bbac0c5051..cbbb27fbab19 100644
---- a/arch/mips/dec/setup.c
-+++ b/arch/mips/dec/setup.c
-@@ -758,7 +758,7 @@ void __init arch_init_irq(void)
- 	/* Register the bus error interrupt. */
- 	if (dec_interrupt[DEC_IRQ_BUS] >= 0 && busirq_handler) {
- 		if (request_irq(dec_interrupt[DEC_IRQ_BUS], busirq_handler,
--				busirq_flags, "bus error", NULL))
-+				busirq_flags, "bus error", "bus error"))
- 			pr_err("Failed to register bus error interrupt\n");
- 	}
- 	/* Register the HALT interrupt. */
-diff --git a/arch/mips/kernel/cevt-r4k.c b/arch/mips/kernel/cevt-r4k.c
-index 64e917dfe6b2..4b19810c67d4 100644
---- a/arch/mips/kernel/cevt-r4k.c
-+++ b/arch/mips/kernel/cevt-r4k.c
-@@ -292,7 +292,7 @@ int r4k_clockevent_init(void)
+
+
+diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
+index 86d2901ad87a..e5c5caecdd86 100644
+--- a/drivers/firmware/Kconfig
++++ b/drivers/firmware/Kconfig
+@@ -82,6 +82,16 @@ config ARM_SCPI_POWER_DOMAIN
+ 	  This enables support for the SCPI power domains which can be
+ 	  enabled or disabled via the SCP firmware
  
- 	cp0_timer_irq_installed = 1;
- 
--	if (request_irq(irq, c0_compare_interrupt, flags, "timer", NULL))
-+	if (request_irq(irq, c0_compare_interrupt, flags, "timer", cd))
- 		pr_err("Failed to request irq %d (timer)\n", irq);
- 
- 	return 0;
-diff --git a/arch/mips/loongson2ef/lemote-2f/irq.c b/arch/mips/loongson2ef/lemote-2f/irq.c
-index 34e15e8b7a8f..1c99e83cabae 100644
---- a/arch/mips/loongson2ef/lemote-2f/irq.c
-+++ b/arch/mips/loongson2ef/lemote-2f/irq.c
-@@ -109,7 +109,7 @@ void __init mach_init_irq(void)
- 
- 	/* setup north bridge irq (bonito) */
- 	if (request_irq(LOONGSON_NORTH_BRIDGE_IRQ, ip6_action,
--			IRQF_SHARED | IRQF_NO_THREAD, "cascade", NULL))
-+			IRQF_SHARED | IRQF_NO_THREAD, "cascade", "cascade"))
- 		pr_err("Failed to register north bridge cascade interrupt\n");
- 	/* setup source bridge irq (i8259) */
- 	if (request_irq(LOONGSON_SOUTH_BRIDGE_IRQ, no_action,
-diff --git a/arch/mips/pmcs-msp71xx/msp_time.c b/arch/mips/pmcs-msp71xx/msp_time.c
-index baf0da8b4c98..0601a3f7f8f6 100644
---- a/arch/mips/pmcs-msp71xx/msp_time.c
-+++ b/arch/mips/pmcs-msp71xx/msp_time.c
-@@ -81,7 +81,7 @@ unsigned int get_c0_compare_int(void)
- 	/* MIPS_MT modes may want timer for second VPE */
- 	if ((get_current_vpe()) && !tim_installed) {
- 		if (request_irq(MSP_INT_VPE1_TIMER, c0_compare_interrupt, flags,
--				"timer", NULL))
-+				"timer", "timer"))
- 			pr_err("Failed to register timer interrupt\n");
- 		tim_installed++;
- 	}
-diff --git a/arch/mips/sni/a20r.c b/arch/mips/sni/a20r.c
-index ba966d62fb4b..1bfea4aae124 100644
---- a/arch/mips/sni/a20r.c
-+++ b/arch/mips/sni/a20r.c
-@@ -223,7 +223,7 @@ void __init sni_a20r_irq_init(void)
- 	sni_hwint = a20r_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ0);
- 	if (request_irq(SNI_A20R_IRQ_BASE + 3, sni_isa_irq_handler,
--			IRQF_SHARED, "ISA", NULL))
-+			IRQF_SHARED, "ISA", "ISA"))
- 		pr_err("Failed to register ISA interrupt\n");
- }
- 
-diff --git a/arch/mips/sni/pcit.c b/arch/mips/sni/pcit.c
-index 4a850ab03398..15080155cc9a 100644
---- a/arch/mips/sni/pcit.c
-+++ b/arch/mips/sni/pcit.c
-@@ -245,7 +245,7 @@ void __init sni_pcit_irq_init(void)
- 	sni_hwint = sni_pcit_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ1);
- 	if (request_irq(SNI_PCIT_INT_START + 6, sni_isa_irq_handler,
--			IRQF_SHARED, "ISA", NULL))
-+			IRQF_SHARED, "ISA", "ISA"))
- 		pr_err("Failed to register ISA interrupt\n");
- }
- 
-@@ -260,7 +260,7 @@ void __init sni_pcit_cplus_irq_init(void)
- 	sni_hwint = sni_pcit_hwint_cplus;
- 	change_c0_status(ST0_IM, IE_IRQ0);
- 	if (request_irq(MIPS_CPU_IRQ_BASE + 3, sni_isa_irq_handler,
--			IRQF_SHARED, "ISA", NULL))
-+			IRQF_SHARED, "ISA", "ISA"))
- 		pr_err("Failed to register ISA interrupt\n");
- }
- 
-diff --git a/arch/mips/sni/rm200.c b/arch/mips/sni/rm200.c
-index ba1f2fc6a43e..2b4a6448b428 100644
---- a/arch/mips/sni/rm200.c
-+++ b/arch/mips/sni/rm200.c
-@@ -473,10 +473,10 @@ void __init sni_rm200_irq_init(void)
- 	sni_hwint = sni_rm200_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ0);
- 	if (request_irq(SNI_RM200_INT_START + 0, sni_rm200_i8259A_irq_handler,
--			IRQF_SHARED, "onboard ISA", NULL))
-+			IRQF_SHARED, "onboard ISA", "onboard ISA"))
- 		pr_err("Failed to register onboard ISA interrupt\n");
- 	if (request_irq(SNI_RM200_INT_START + 1, sni_isa_irq_handler,
--			IRQF_SHARED, "ISA", NULL))
-+			IRQF_SHARED, "ISA", "ISA"))
- 		pr_err("Failed to register ISA interrupt\n");
- }
- 
++config ARM_DEBUGFS
++       bool "ARM TF-A debugfs"
++       help
++         Select Y to implement a firmware debug filesystem accessed
++         through kernel debug sysfs.
++
++         This feature depends on a Trusted-Firmware-A build option
++         (USE_DEBUGFS). It exposes an internal filesystem used to
++         peek/poke firmware data through file abstractions.
++
+ config EDD
+ 	tristate "BIOS Enhanced Disk Drive calls determine boot disk"
+ 	depends on X86
+diff --git a/drivers/firmware/Makefile b/drivers/firmware/Makefile
+index 33dcc099e021..52159d8c94ca 100644
+--- a/drivers/firmware/Makefile
++++ b/drivers/firmware/Makefile
+@@ -2,10 +2,12 @@
+ #
+ # Makefile for the linux kernel.
+ #
++obj-$(CONFIG_ARM_DEBUGFS)	+= arm_debugfs.o
+ obj-$(CONFIG_ARM_PSCI_FW)	+= psci.o
+ obj-$(CONFIG_ARM_PSCI_CHECKER)	+= psci_checker.o
+ obj-$(CONFIG_ARM_SCPI_PROTOCOL)	+= arm_scpi.o
+ obj-$(CONFIG_ARM_SCPI_POWER_DOMAIN) += scpi_pm_domain.o
++
+ obj-$(CONFIG_DMI)		+= dmi_scan.o
+ obj-$(CONFIG_DMI_SYSFS)		+= dmi-sysfs.o
+ obj-$(CONFIG_EDD)		+= edd.o
+diff --git a/drivers/firmware/arm_debugfs.c b/drivers/firmware/arm_debugfs.c
+new file mode 100644
+index 000000000000..9e64228b9c05
+--- /dev/null
++++ b/drivers/firmware/arm_debugfs.c
+@@ -0,0 +1,411 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * Copyright (C) 2020 ARM Limited
++ */
++
++/* #define DEBUG */
++
++#include <linux/kernel.h>
++#include <linux/module.h>
++#include <linux/debugfs.h>
++#include <linux/arm-smccc.h>
++#include <linux/slab.h>
++#include <linux/uaccess.h>
++
++#define VERSION_MAJOR		0
++#define VERSION_MINOR		2
++
++#define ARM_SIP_SVC_DEBUGFS	(0xC2000030)
++
++#define SMC_OK			(0)
++
++#define ARM_DEBUGFS_MOUNT	0
++#define ARM_DEBUGFS_CREATE	1
++#define ARM_DEBUGFS_OPEN	2
++#define ARM_DEBUGFS_CLOSE	3
++#define ARM_DEBUGFS_READ	4
++#define ARM_DEBUGFS_WRITE	5
++#define ARM_DEBUGFS_SEEK	6
++#define ARM_DEBUGFS_BIND	7
++#define ARM_DEBUGFS_STAT	8
++#define ARM_DEBUGFS_INIT	10
++#define ARM_DEBUGFS_VERSION	11
++
++#define NAMELEN			13 /* Maximum length of a file name */
++#define MAX_PATH_LEN		256
++
++#define QID_CHDIR		0x8000
++
++#define ARM_DEBUGFS_KSEEK_SET	(0)
++
++enum devflags {
++	ARM_DEBUGFS_OREAD   = 1 << 0,
++	ARM_DEBUGFS_OWRITE  = 1 << 1,
++	ARM_DEBUGFS_ORDWR   = 1 << 2,
++	ARM_DEBUGFS_OBIND   = 1 << 3,
++	ARM_DEBUGFS_ODIR    = 1 << 4,
++	ARM_DEBUGFS_OSTAT   = 1 << 5,
++};
++
++struct dir {
++	char name[NAMELEN];
++	long length;
++	unsigned char mode;
++	unsigned char type;
++	unsigned char dev;
++	unsigned short qid;
++};
++
++union debugfs_parms {
++	struct {
++		char fname[MAX_PATH_LEN];
++	} open;
++
++	struct mount {
++		char srv[MAX_PATH_LEN];
++		char where[MAX_PATH_LEN];
++		char spec[MAX_PATH_LEN];
++	} mount;
++
++	struct {
++		char path[MAX_PATH_LEN];
++		struct dir dir;
++	} stat;
++
++	struct {
++		char oldpath[MAX_PATH_LEN];
++		char newpath[MAX_PATH_LEN];
++	} bind;
++};
++
++static struct {
++	void *shared_buffer;
++	struct dentry *tfa_rootdir;
++	void *read_buffer;
++
++	/* This mutex protects the shared buffer and forbids concurrent */
++	/* entry into the debugfs internal firmware layers.             */
++	struct mutex debugfs_lock;
++} g;
++
++static int version(void)
++{
++	struct arm_smccc_res res;
++
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_VERSION, &res);
++
++	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
++}
++
++static int tfa_9p_init(void *shared_buffer)
++{
++	struct arm_smccc_res res;
++	phys_addr_t buffer_phys;
++
++	buffer_phys = virt_to_phys(shared_buffer);
++	if (!buffer_phys)
++		return -ENOMEM;
++
++	pr_debug("shared buffer 0x%p (PA 0x%llx)\n",
++		 shared_buffer, buffer_phys);
++
++	/* Pass the kernel allocated shared buffer PA */
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_INIT, buffer_phys,
++			  &res);
++
++	return res.a0;
++}
++
++static int open(const char *name, int flags)
++{
++	union debugfs_parms *parms = g.shared_buffer;
++	struct arm_smccc_res res;
++
++	mutex_lock(&g.debugfs_lock);
++	strlcpy(parms->open.fname, name, MAX_PATH_LEN);
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_OPEN, flags, &res);
++	mutex_unlock(&g.debugfs_lock);
++
++	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
++}
++
++static int read(int fd, void *buf, size_t size)
++{
++	struct arm_smccc_res res;
++	int ret = -EIO;
++
++	mutex_lock(&g.debugfs_lock);
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_READ, fd, size,
++			  &res);
++
++	if (res.a0 != SMC_OK)
++		goto exit_unlock;
++
++	if (res.a1 > size) {
++		ret = -EIO;
++		goto exit_unlock;
++	}
++
++	memcpy(buf, g.shared_buffer, size);
++	ret = res.a1;
++
++exit_unlock:
++	mutex_unlock(&g.debugfs_lock);
++
++	return ret;
++}
++
++static int seek(int fd, long off, int whence)
++{
++	struct arm_smccc_res res;
++
++	mutex_lock(&g.debugfs_lock);
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_SEEK, fd, off,
++			  whence, &res);
++	mutex_unlock(&g.debugfs_lock);
++
++	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
++}
++
++static int stat(const char *name, struct dir *entry)
++{
++	union debugfs_parms *parms = g.shared_buffer;
++	struct arm_smccc_res res;
++
++	mutex_lock(&g.debugfs_lock);
++	strlcpy(parms->stat.path, name, MAX_PATH_LEN);
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_STAT, &res);
++	mutex_unlock(&g.debugfs_lock);
++
++	if (res.a0 == SMC_OK)
++		memcpy(entry, &parms->stat.dir, sizeof(struct dir));
++
++	return (res.a0 == SMC_OK) ? res.a1 : -EIO;
++}
++
++static int close(int fd)
++{
++	struct arm_smccc_res res;
++
++	mutex_lock(&g.debugfs_lock);
++	arm_smccc_1_1_smc(ARM_SIP_SVC_DEBUGFS, ARM_DEBUGFS_CLOSE, fd, &res);
++	mutex_unlock(&g.debugfs_lock);
++
++	return (res.a0 == SMC_OK) ? 0 : -EIO;
++}
++
++static void dir_print(struct dir *dir)
++{
++	pr_devel("%s name %s, len %ld, mode %d, type %d, dev %d, qid 0x%x\n",
++		 __func__, dir->name, dir->length, dir->mode, dir->type,
++		 dir->dev, dir->qid);
++}
++
++ssize_t debugfs_read(struct file *file, char __user *user_buf, size_t length,
++		     loff_t *offset)
++{
++	char *debugfs_path, *tfa_path, *buf = (char *)g.read_buffer;
++	char pathname[MAX_PATH_LEN];
++	int ret, fd, read_size = 0;
++	struct dir dir_entry;
++
++	if (!offset || !user_buf || !length)
++		return 0;
++
++	/* Convert path object to an ascii absolute path string */
++	debugfs_path = d_path(&file->f_path, pathname, MAX_PATH_LEN);
++	if (!debugfs_path || IS_ERR(debugfs_path))
++		return 0;
++
++	/* Extrapolate the relative path in the firmware 9p hierarchy */
++	tfa_path = strstr(debugfs_path, "/tfa/");
++	if (!tfa_path)
++		return 0;
++
++	/* Skip debugfs absolute directory path */
++	tfa_path += 4;
++
++	/* Check file presence and get file size */
++	ret = stat(tfa_path, &dir_entry);
++	if (ret < 0) {
++		pr_err("%s stat failed\n", __func__);
++		return 0;
++	}
++
++	/* Discard read operation if offset is out of bounds */
++	if (*offset >= dir_entry.length)
++		return 0;
++
++	fd = open(tfa_path, ARM_DEBUGFS_OREAD);
++	if (fd < 0) {
++		pr_err("%s open failed\n", __func__);
++		return 0;
++	}
++
++	if (*offset > 0) {
++		ret = seek(fd, *offset, ARM_DEBUGFS_KSEEK_SET);
++		if (ret < 0) {
++			pr_err("%s seek failed ret=%d\n", __func__, ret);
++			goto exit_close;
++		}
++	}
++
++	/* Restrict length to one page frame size maximum */
++	if (length > PAGE_SIZE)
++		length = PAGE_SIZE;
++
++	read_size = read(fd, buf, length);
++	if (read_size <= 0) {
++		pr_err("%s read failed ret=%d\n", __func__, read_size);
++		goto exit_close;
++	}
++
++	if (copy_to_user(user_buf, buf, read_size)) {
++		pr_err("%s copy to user failed\n", __func__);
++		goto exit_close;
++	}
++
++	*offset += read_size;
++
++exit_close:
++	ret = close(fd);
++	if (ret < 0)
++		pr_err("%s close failed\n", __func__);
++
++	return read_size;
++}
++
++const struct file_operations debugfs_ops = {
++	.read = debugfs_read
++};
++
++static int arm_debugfs_walk_dir(struct dentry *parent_dir, const char *path)
++{
++	int ret, fd;
++	struct dir dir;
++	struct dentry *dent, *fent;
++	char abs_path[MAX_PATH_LEN];
++
++	/* open root directory */
++	fd = open(path, ARM_DEBUGFS_OREAD);
++	if (fd < 0) {
++		pr_err("open failed %d\n", fd);
++		return -EIO;
++	}
++
++	/* read directory entries */
++	do {
++		ret = read(fd, &dir, sizeof(dir));
++		if (ret > 0) {
++			dir_print(&dir);
++			if (dir.qid & QID_CHDIR) {
++				dent = debugfs_create_dir(dir.name, parent_dir);
++				snprintf(abs_path, MAX_PATH_LEN, "%s%s/",
++					 path, dir.name);
++				(void)arm_debugfs_walk_dir(dent, abs_path);
++			} else {
++				fent = debugfs_create_file(dir.name, O_RDONLY,
++							   parent_dir, NULL,
++							   &debugfs_ops);
++			}
++		}
++	} while (ret > 0);
++
++	/* close root directory handle */
++	ret = close(fd);
++	if (ret < 0) {
++		pr_err("close failed %d\n", ret);
++		return -EIO;
++	}
++
++	return 0;
++}
++
++static int __init arm_debugfs_init(void)
++{
++	int ret;
++
++	/* Requires debugfs framework */
++	ret = debugfs_initialized();
++	if (!ret)
++		return ret;
++
++	/*
++	 * Request ARM TF-A debugfs interface version also used as
++	 * a means to detect such interface presence.
++	 */
++	ret = version();
++	if (ret < 0) {
++		pr_err("%s failed getting interface version.\n", __func__);
++		return ret;
++	}
++
++	pr_debug("%s interface version 0x%x\n", __func__, ret);
++
++	/* Create a top-level debugfs directory */
++	g.tfa_rootdir = debugfs_create_dir("tfa", NULL);
++	if (!g.tfa_rootdir)
++		return -EIO;
++
++	/* Allocate a shared buffer page */
++	g.shared_buffer = (void *)__get_free_page(GFP_KERNEL);
++	if (!g.shared_buffer)
++		goto exit_dir;
++
++	g.read_buffer = kzalloc(PAGE_SIZE, GFP_KERNEL);
++	if (!g.read_buffer)
++		goto exit_free_shared_buffer;
++
++	/* Initialize ARM firmware debugfs interface */
++	ret = tfa_9p_init(g.shared_buffer);
++	if (ret)
++		goto exit_free_read_buffer;
++
++	mutex_init(&g.debugfs_lock);
++
++	ret = arm_debugfs_walk_dir(g.tfa_rootdir, "/");
++	if (ret)
++		goto exit_mutex_destroy;
++
++	pr_info("ARM TF-A debugfs v%u.%u interface initialized.\n",
++		VERSION_MAJOR, VERSION_MINOR);
++
++	return 0;
++
++exit_mutex_destroy:
++	mutex_destroy(&g.debugfs_lock);
++
++exit_free_read_buffer:
++	kfree(g.read_buffer);
++
++exit_free_shared_buffer:
++	free_page((uintptr_t)g.shared_buffer);
++
++exit_dir:
++	debugfs_remove_recursive(g.tfa_rootdir);
++
++	return ret;
++}
++module_init(arm_debugfs_init);
++
++static void __exit arm_debugfs_exit(void)
++{
++	debugfs_remove_recursive(g.tfa_rootdir);
++	mutex_destroy(&g.debugfs_lock);
++	free_page((uintptr_t)g.shared_buffer);
++	pr_info("ARM debugfs exited.\n");
++}
++module_exit(arm_debugfs_exit);
++
++MODULE_LICENSE("GPL");
++MODULE_DESCRIPTION("ARM debugfs");
++MODULE_VERSION("0.2");
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
