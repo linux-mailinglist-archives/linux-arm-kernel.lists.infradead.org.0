@@ -2,70 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F85A180F71
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 06:09:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27A9C180FA5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 06:16:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NC0RyQP7hYoi5oyFUIhRS4/0jyYc+IGvgbzNDN8VXTQ=; b=HjfRbJliJvlQhc
-	2YEUTaJ5tfgVqNrYe8wgVzDHdno7783gv85gmPs68iK10zgoQe/E+TdpeQY/UsDQcL9R+VvevBhMG
-	PIOMnnr44fTcGNWTfwOjeqUKo3l6lvl80YjspPFodbkQ71f3+98mdMuDtoRrVt8/il3gLmXPOYcyR
-	R1zl6+2ZoMiufiS+52TxBTaA8yRb7E3KfbjPoQ9EE26Bs7qOPf0LeNWsXVsD30OoS2HV983ooYhok
-	zFvEh20aRQtSnVYMqLhuHLcMXddlBP6aMuH3ntQ2waWYDWK9xre+AQX2WJ3GOaLTtXA1PhjaH8tNJ
-	r5aJh3PVRG+Z5vJreb3w==;
+	List-Owner; bh=lEQX7Lw6KTlDbqRv7iun5OV7LwFbffHDKgVLgHJXLRQ=; b=RJ8bGZvuiYyIjH
+	JbpxBCj1BO17hiR99cs7DMJiBXQyTY9dZUgbCYYiXJToQsqbZDD4/tzyT0wL6h1xR/0fpbpViLM1V
+	avfC6lTibbJh6UN/xbyApAsaAD8ip5r9Xdh8AbA1sdAHHo/qJjO8j2a2y5TlWO91IR0YgaAmhQwVc
+	N9TMvjodsnk035ongEdtbJm0mF+dB9vliPCq7a2iF2a7/H60Tv1a2oMlNDWgeZoQY+gI+gg5eU1RS
+	DRenTGQMhbjARMo58NSCx4XbcdWW9juoeTjyxXVK3L2aRUeiCF52t5DY+JwW+PpBXYh8x3I65ppvn
+	faB++/60xuTuZXK2H2uw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBtcN-0000l5-9i; Wed, 11 Mar 2020 05:09:19 +0000
-Received: from smtprelay0222.hostedemail.com ([216.40.44.222]
- helo=smtprelay.hostedemail.com)
+	id 1jBtiz-00045R-Gi; Wed, 11 Mar 2020 05:16:09 +0000
+Received: from conssluserg-04.nifty.com ([210.131.2.83])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBtaG-0007IH-9t
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 05:07:13 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay04.hostedemail.com (Postfix) with ESMTP id B96DA1802DA5B;
- Wed, 11 Mar 2020 05:07:06 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 50, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
- RULES_HIT:41:355:379:541:800:960:967:973:982:988:989:1260:1311:1314:1345:1359:1437:1515:1534:1541:1711:1730:1747:1777:1792:2194:2199:2393:2525:2560:2563:2682:2685:2859:2902:2933:2937:2939:2942:2945:2947:2951:2954:3022:3138:3139:3140:3141:3142:3352:3865:3866:3867:3934:3936:3938:3941:3944:3947:3950:3953:3956:3959:4321:5007:6261:9025:10004:10848:11026:11473:11658:11914:12043:12297:12438:12555:12679:12895:12986:13069:13311:13357:13894:14096:14181:14384:14394:14721:21080:21433:21627:21811:21939:21987:30054:30090,
- 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
- DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
- LFtime:1, LUA_SUMMARY:none
-X-HE-Tag: force30_20c217ad3c02e
-X-Filterd-Recvd-Size: 2686
-Received: from joe-laptop.perches.com (unknown [47.151.143.254])
- (Authenticated sender: joe@perches.com)
- by omf16.hostedemail.com (Postfix) with ESMTPA;
- Wed, 11 Mar 2020 05:07:04 +0000 (UTC)
-From: Joe Perches <joe@perches.com>
-To: Jun Nie <jun.nie@linaro.org>,
-	Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH -next 012/491] ARM/ZTE ARCHITECTURE: Use fallthrough;
-Date: Tue, 10 Mar 2020 21:51:26 -0700
-Message-Id: <cb3feec0548088c3c2485965194c6fb09e7c0e3d.1583896348.git.joe@perches.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <cover.1583896344.git.joe@perches.com>
-References: <cover.1583896344.git.joe@perches.com>
+ id 1jBtiq-000450-6M
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 05:16:02 +0000
+Received: from mail-vs1-f49.google.com (mail-vs1-f49.google.com
+ [209.85.217.49]) (authenticated)
+ by conssluserg-04.nifty.com with ESMTP id 02B5Fkuu017169
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 11 Mar 2020 14:15:47 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com 02B5Fkuu017169
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1583903747;
+ bh=AfcAhhaYncg48rG2V8lvHQMNiBncmFjUl9msHr0LZLM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=KvW0KXepxAE2RCGteQEv1YSqRNHr0J2XMAXuIYCj1s+nNf63JyYw/9OC9czBm81xE
+ clTtP0F838rdSrlae7fdZfuzjmaW0k88pzKs1nbAHtt3Uyh7o4zAnMyop6uGwQMinE
+ NUBaWFVGEx5beaInaYhJb4d+us0M18Nqvb1KiMlrWdMedpw91/J8E1PkpEXG7Ht7zT
+ rVUpsbRqkZkR22fGL28i63NHiw+bHariqNs76uyEyY8rldbzsX0Sk34pYYQb0u70Nz
+ ULCMR1b9jSK/sN8ZGBLFycql4/3VhoWvwXQ13Iufs7qQd+LmBIQEq4ymjyhFCl2QBq
+ HF1nFpJqD1/Zg==
+X-Nifty-SrcIP: [209.85.217.49]
+Received: by mail-vs1-f49.google.com with SMTP id z125so494018vsb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Mar 2020 22:15:47 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3so7oN2o1yBrxdwFK38/rqM/UFew/n0Txy5gGvlkW7++9n22qe
+ TCRwftJEe22M8aKahqRdSCK5+PeuWjwAAqWyJXI=
+X-Google-Smtp-Source: ADFU+vueM9zpX/w41+7KRQJKMve2nE9ggiD45SMOr/dEVd886cFoVN80tyg4r4qMFhRNb5dCuud4jNxETWUlZpLQMEc=
+X-Received: by 2002:a05:6102:8f:: with SMTP id
+ t15mr878244vsp.215.1583903745980; 
+ Tue, 10 Mar 2020 22:15:45 -0700 (PDT)
 MIME-Version: 1.0
+References: <cover.1583896344.git.joe@perches.com>
+ <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
+In-Reply-To: <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Wed, 11 Mar 2020 14:15:10 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
+Message-ID: <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
+Subject: Re: [PATCH -next 005/491] ARM/UNIPHIER ARCHITECTURE: Use fallthrough; 
+To: Joe Perches <joe@perches.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_220708_419783_AED8A2A1 
-X-CRM114-Status: UNSURE (   9.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200310_221600_781568_CA155CD1 
+X-CRM114-Status: GOOD (  15.67  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.222 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [216.40.44.222 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [210.131.2.83 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.83 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,64 +86,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel@lists.infradead.org
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the various uses of fallthrough comments to fallthrough;
+On Wed, Mar 11, 2020 at 2:07 PM Joe Perches <joe@perches.com> wrote:
+>
+> Convert the various uses of fallthrough comments to fallthrough;
+>
+> Done via script
+> Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
+>
+> Signed-off-by: Joe Perches <joe@perches.com>
 
-Done via script
-Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
 
-Signed-off-by: Joe Perches <joe@perches.com>
----
- sound/soc/zte/zx-i2s.c   | 4 ++--
- sound/soc/zte/zx-spdif.c | 2 +-
- 2 files changed, 3 insertions(+), 3 deletions(-)
+Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
 
-diff --git a/sound/soc/zte/zx-i2s.c b/sound/soc/zte/zx-i2s.c
-index 568cde6..1c1a44 100644
---- a/sound/soc/zte/zx-i2s.c
-+++ b/sound/soc/zte/zx-i2s.c
-@@ -294,7 +294,7 @@ static int zx_i2s_trigger(struct snd_pcm_substream *substream, int cmd,
- 			zx_i2s_rx_dma_en(zx_i2s->reg_base, true);
- 		else
- 			zx_i2s_tx_dma_en(zx_i2s->reg_base, true);
--	/* fall thru */
-+		fallthrough;
- 	case SNDRV_PCM_TRIGGER_RESUME:
- 	case SNDRV_PCM_TRIGGER_PAUSE_RELEASE:
- 		if (capture)
-@@ -308,7 +308,7 @@ static int zx_i2s_trigger(struct snd_pcm_substream *substream, int cmd,
- 			zx_i2s_rx_dma_en(zx_i2s->reg_base, false);
- 		else
- 			zx_i2s_tx_dma_en(zx_i2s->reg_base, false);
--	/* fall thru */
-+		fallthrough;
- 	case SNDRV_PCM_TRIGGER_SUSPEND:
- 	case SNDRV_PCM_TRIGGER_PAUSE_PUSH:
- 		if (capture)
-diff --git a/sound/soc/zte/zx-spdif.c b/sound/soc/zte/zx-spdif.c
-index a3a07c0..b4168bd 100644
---- a/sound/soc/zte/zx-spdif.c
-+++ b/sound/soc/zte/zx-spdif.c
-@@ -218,7 +218,7 @@ static int zx_spdif_trigger(struct snd_pcm_substream *substream, int cmd,
- 		val = readl_relaxed(zx_spdif->reg_base + ZX_FIFOCTRL);
- 		val |= ZX_FIFOCTRL_TX_FIFO_RST;
- 		writel_relaxed(val, zx_spdif->reg_base + ZX_FIFOCTRL);
--	/* fall thru */
-+		fallthrough;
- 	case SNDRV_PCM_TRIGGER_RESUME:
- 	case SNDRV_PCM_TRIGGER_PAUSE_RELEASE:
- 		zx_spdif_cfg_tx(zx_spdif->reg_base, true);
+
+But, I think the patch subject should be prefixed:
+"serial: 8250_uniphier:"
+
+
+
+> ---
+>  drivers/tty/serial/8250/8250_uniphier.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/tty/serial/8250/8250_uniphier.c b/drivers/tty/serial/8250/8250_uniphier.c
+> index e0b73a5..a2978ab 100644
+> --- a/drivers/tty/serial/8250/8250_uniphier.c
+> +++ b/drivers/tty/serial/8250/8250_uniphier.c
+> @@ -75,7 +75,7 @@ static unsigned int uniphier_serial_in(struct uart_port *p, int offset)
+>                 break;
+>         case UART_LCR:
+>                 valshift = 8;
+> -               /* fall through */
+> +               fallthrough;
+>         case UART_MCR:
+>                 offset = UNIPHIER_UART_LCR_MCR;
+>                 break;
+> @@ -101,7 +101,7 @@ static void uniphier_serial_out(struct uart_port *p, int offset, int value)
+>         case UART_SCR:
+>                 /* No SCR for this hardware.  Use CHAR as a scratch register */
+>                 valshift = 8;
+> -               /* fall through */
+> +               fallthrough;
+>         case UART_FCR:
+>                 offset = UNIPHIER_UART_CHAR_FCR;
+>                 break;
+> @@ -109,7 +109,7 @@ static void uniphier_serial_out(struct uart_port *p, int offset, int value)
+>                 valshift = 8;
+>                 /* Divisor latch access bit does not exist. */
+>                 value &= ~UART_LCR_DLAB;
+> -               /* fall through */
+> +               fallthrough;
+>         case UART_MCR:
+>                 offset = UNIPHIER_UART_LCR_MCR;
+>                 break;
+> --
+> 2.24.0
+>
+
+
 -- 
-2.24.0
-
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
