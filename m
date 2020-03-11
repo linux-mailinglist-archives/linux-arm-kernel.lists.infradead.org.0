@@ -2,62 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F249A1811FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:32:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 448C7181201
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:33:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=v6VTSiCgJ8wbbizsp5ewQILOHkqCRR8xZpVJ5u7KOfE=; b=TWb
-	dBj3x1dlKKlfD4svSyt7L+Q26kWbHR02ArmZk2Irvn9K4P53NB4FDv35xZDH2NFmQvSZzWWamIkOa
-	9j/hciABJ3lk1Sd0q7/VvGvprnYFGlZlZrb9oJ+U6O6unVg3ebNd+oUPAPZaLO9A/UBCg9IDWrDiD
-	atFtAfqhPdPXjgahddQ7zWSSi597ic0pRmgziMweu2RXtu7XFpM4VjAyAswIXAVP60NV7tNcBfhRq
-	mFjS8j6c2Qin6uwlBCY7u0kjyyJ2oSUmfEpC0foUbG3xexBFaxQ6rjAdw3rfzWAoHnGykLQ5fRKZd
-	d3NLZ/mLZTKD03jH6omEF8xLriiN37Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vAHEad5qmrz7lFs4VDzfU46WuINfcn7GXzcFRsMuq5Q=; b=f4iHZYSlvdZXhH
+	84S+tqEzvrvijHL+ElJATh5x6DuPvVbV7I52N3v05k6SkJyVQe6YPPmJ/q2ltINKsY59zchc8N4Te
+	ZT0ScOvvUmyQO8GJxV0sPMPJP9xVXG9yG/tvteIgHAcjKUlLuax/pdqm/7uKXEc4NIVgtMlYae8Nc
+	YNnd+mHLRuVKvJskcMeVzoCuD1YV29wrZKHbwMjK+p1v2r2MSIe7+Wm9K9HS8m++aWCi891+k+kpX
+	YNAN1M47g9oTKZHqhWgtAtvjMPofysldwratE9V7p2UybOBpA2k3WlKAE5wMUax3uFdyS43TCMZtz
+	9dZLR903CdXrYYCIWKDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBvqy-0007B0-L2; Wed, 11 Mar 2020 07:32:32 +0000
-Received: from m177134.mail.qiye.163.com ([123.58.177.134])
+	id 1jBvrl-0007RW-45; Wed, 11 Mar 2020 07:33:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBvqr-0007AV-8x
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:32:26 +0000
-Received: from ubuntu.localdomain (unknown [58.251.74.226])
- by m17618.mail.qiye.163.com (Hmail) with ESMTPA id 4719C4E207F;
- Wed, 11 Mar 2020 15:32:16 +0800 (CST)
-From: Li Tao <tao.li@vivo.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>, Bhupesh Sharma <bhsharma@redhat.com>,
- James Morse <james.morse@arm.com>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: kexec_file: Fixed code style.
-Date: Wed, 11 Mar 2020 15:31:55 +0800
-Message-Id: <20200311073156.125251-1-tao.li@vivo.com>
-X-Mailer: git-send-email 2.17.1
-X-HM-Spam-Status: e1kfGhgUHx5ZQUlXWQgYFAkeWUFZQ1VKTklCQkNCSU9JTk5ITFlXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Nio6FCo4EDgyODMNQxkQT0w4
- Ah8aFD5VSlVKTkNIQkpKQkhCSUxOVTMWGhIXVQ8aFFUXEjsNEg0UVRgUFkVZV1kSC1lBWU5DVUlO
- SlVMT1VJSU1ZV1kIAVlBSkNJSTcG
-X-HM-Tid: 0a70c88222989376kuws4719c4e207f
+ id 1jBvrd-0007RA-BS
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:33:14 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B50E6208C3;
+ Wed, 11 Mar 2020 07:33:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583911993;
+ bh=XKRGVQvoHyVOcSFufXQasytJRls1NO6yFTE1U7JxreQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=DHfg7EZ79oc555WDSXia8qXQruhTug08h9twnsFk9ssxk4UORqN0njx+WZePkLVZ7
+ IoBWScM2aW+vFv9Eh50uhCuVD32x768Js6PTkAFWf4pD3y6D9ieh2Pmi/wPQGAK6Bl
+ czUchC/e/8qAr/yfPq7TqdF61lv7hyDJsf6fUr4E=
+Date: Wed, 11 Mar 2020 15:33:03 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Marco Felsch <m.felsch@pengutronix.de>,
+ Stefan Riedmueller <s.riedmueller@phytec.de>
+Subject: Re: [PATCH v4] ARM: dts: imx6: phycore-som: fix arm and soc minimum
+ voltage
+Message-ID: <20200311073248.GP29269@dragon>
+References: <20200227110246.8624-1-m.felsch@pengutronix.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200227110246.8624-1-m.felsch@pengutronix.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_003225_568063_4DFAAABA 
-X-CRM114-Status: UNSURE (   8.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200311_003313_414137_4AD9DCC0 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [123.58.177.134 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [123.58.177.134 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,35 +78,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wenhu.pku@gmail.com, Li Tao <tao.li@vivo.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: chf.fritz@googlemail.com, robh+dt@kernel.org, kernel@pengutronix.de,
+ c.hemp@phytec.de, contact@stefanchrist.eu, s.christ@phytec.de,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove unnecessary blank.
+On Thu, Feb 27, 2020 at 12:02:46PM +0100, Marco Felsch wrote:
+> The current set minimum voltage of 730000=B5V seems to be wrong. I don't
+> know the document which specifies that but the imx6qdl datasheets says
+> that the minimum voltage should be 0.925V for VDD_ARM (LDO bypassed,
+> lowest opp) and 1.15V for VDD_SOC (LDO bypassed, lowest opp).
 
-Signed-off-by: Li Tao <tao.li@vivo.com>
----
- arch/arm64/kernel/machine_kexec_file.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Stefan,
 
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index dd3ae80..b40c3b0 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -121,7 +121,7 @@ static int setup_dtb(struct kimage *image,
- 
- 	/* add kaslr-seed */
- 	ret = fdt_delprop(dtb, off, FDT_PROP_KASLR_SEED);
--	if  (ret == -FDT_ERR_NOTFOUND)
-+	if (ret == -FDT_ERR_NOTFOUND)
- 		ret = 0;
- 	else if (ret)
- 		goto out;
--- 
-1.9.1
+Any comment on this change?
+
+Shawn
+
+> =
+
+> Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i.M=
+X 6 SOM")
+> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> ---
+> v4:
+> - rebased ontop of v5.6-rc1
+> v3:
+> - fix commit message
+> v2:
+> - use ldo bypassed values
+> =
+
+>  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> =
+
+> diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/arm=
+/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> index 4d18952658f8..77d871340eb7 100644
+> --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> @@ -112,7 +112,7 @@
+>  		regulators {
+>  			vdd_arm: buck1 {
+>  				regulator-name =3D "vdd_arm";
+> -				regulator-min-microvolt =3D <730000>;
+> +				regulator-min-microvolt =3D <925000>;
+>  				regulator-max-microvolt =3D <1380000>;
+>  				regulator-initial-mode =3D <DA9063_BUCK_MODE_SYNC>;
+>  				regulator-always-on;
+> @@ -120,7 +120,7 @@
+>  =
+
+>  			vdd_soc: buck2 {
+>  				regulator-name =3D "vdd_soc";
+> -				regulator-min-microvolt =3D <730000>;
+> +				regulator-min-microvolt =3D <1150000>;
+>  				regulator-max-microvolt =3D <1380000>;
+>  				regulator-initial-mode =3D <DA9063_BUCK_MODE_SYNC>;
+>  				regulator-always-on;
+> -- =
+
+> 2.20.1
+> =
 
 
 _______________________________________________
