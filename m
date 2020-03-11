@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A40C18255B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:57:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAA69182559
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:56:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kSSofkW/N80UlDzsJNzDtxFeJsRIjKDz1iqtc18asZ4=; b=r9oNi5VMO2Pf6t
-	k3soiiFgY2urQkE2MpGq9PyLJbGizYZcjVPE4IaYAKU7nCw0AZFYkSO7ZaP9FOy/BwrN2aWWn92Bv
-	rE2E61jGpbejKC6qQMRrdI/btjJeZKa73quo3pjsEEbCTcSi6t6y2JzzTDKts8EPPNQ3WgXXc9033
-	y4UFa7DyFOkOknXbkAyUvRD1X40jYzFE1XlExCI3QhkFIxZj/Zsd78qrkb9n2huljXgkqaqahzvSW
-	b4ygrWgLHBdpBVu9FHJNN9acdN3PDTVmQ/NTDeZY0LLHVsIMR4opslEzCP5R5tR7R23w8JMD/AC8i
-	ZPSndcVeOaacQIj1ig2g==;
+	List-Owner; bh=h7BxYkuIrEm4rU1TMSnRt0TquXcbnKTCvW5W3opZcFw=; b=XKPkZnGz43QApf
+	SZaxsDn/n8kJ9j8OE9t559l1BbSvaBgPPk9bz+BpwE3uKouddfX0VaLCy7FzTlAzIAUkEuAEIiCiT
+	WbUV7P1Qzc7rS/NNbodQMgqjhL4IUUvY2Ytad2+LKzszIHq1DnZVmm/iX6ZqoeQPgci0z7wpjNVBe
+	Krt2zroC//PIkMWshQuZVy/9Fb95grgaDcBFDPADsCUpygx40IC5LzowR9DLlbbRtiARKy88cshgl
+	9PGAaKfioiVItO93WHE6wFa091brlKB0ZBZK53URAdOU4/uLKlTu7T8YCYBp955qhgJSXva4+OD0P
+	UbLjYp1IxR1SeuoyBFWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCAHY-0000T6-QN; Wed, 11 Mar 2020 22:56:56 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jCAHK-0000Eu-JW; Wed, 11 Mar 2020 22:56:42 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCAEu-0004r5-6S
+ id 1jCAEs-0004pk-Lq
  for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:54:14 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 412A91A0CAF;
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 818BC2005A8;
  Wed, 11 Mar 2020 23:54:09 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0A7A71A0CAE;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4A9DA200BDA;
  Wed, 11 Mar 2020 23:54:09 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- 8EC4040A5F; Wed, 11 Mar 2020 15:54:08 -0700 (MST)
+ CED7440A63; Wed, 11 Mar 2020 15:54:08 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 08/15] arm64: defconfig: Enable ARM SBSA watchdog driver
-Date: Wed, 11 Mar 2020 17:53:10 -0500
-Message-Id: <20200311225317.11198-9-leoyang.li@nxp.com>
+Subject: [PATCH v2 09/15] arm64: defconfig: Enable QorIQ IFC NAND controller
+ driver
+Date: Wed, 11 Mar 2020 17:53:11 -0500
+Message-Id: <20200311225317.11198-10-leoyang.li@nxp.com>
 X-Mailer: git-send-email 2.25.1.377.g2d2118b
 In-Reply-To: <20200311225317.11198-1-leoyang.li@nxp.com>
 References: <20200311225317.11198-1-leoyang.li@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_155412_373598_312E5E51 
-X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-CacheID: sfid-20200311_155410_845155_9D7A3381 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -54,7 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,26 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables ARM generic SBSA compatible watchdog driver for NXP LX2160a SoC.
-Enabled as built-in for it is a core feature.
+Enables NXP/FSL QorIQ IFC flash controller driver for NAND.  Enabled as
+built-in to load RFS from nand flash without initramfs.
+
+Remove CONFIG_MEMORY as it is selected by CONFIG_MTD_NAND_FSL_IFC.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/configs/defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 996dc749ea5c..d2d5d470a6fc 100644
+index d2d5d470a6fc..a625e322fa27 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -480,6 +480,7 @@ CONFIG_QCOM_SPMI_TEMP_ALARM=m
- CONFIG_UNIPHIER_THERMAL=y
- CONFIG_WATCHDOG=y
- CONFIG_ARM_SP805_WATCHDOG=y
-+CONFIG_ARM_SBSA_WATCHDOG=y
- CONFIG_S3C2410_WATCHDOG=y
- CONFIG_DW_WATCHDOG=y
- CONFIG_SUNXI_WATCHDOG=m
+@@ -217,6 +217,7 @@ CONFIG_MTD_BLOCK=y
+ CONFIG_MTD_RAW_NAND=y
+ CONFIG_MTD_NAND_DENALI_DT=y
+ CONFIG_MTD_NAND_MARVELL=y
++CONFIG_MTD_NAND_FSL_IFC=y
+ CONFIG_MTD_NAND_QCOM=y
+ CONFIG_MTD_SPI_NOR=y
+ CONFIG_SPI_CADENCE_QUADSPI=y
+@@ -801,7 +802,6 @@ CONFIG_ARCH_K3_J721E_SOC=y
+ CONFIG_TI_SCI_PM_DOMAINS=y
+ CONFIG_EXTCON_USB_GPIO=y
+ CONFIG_EXTCON_USBC_CROS_EC=y
+-CONFIG_MEMORY=y
+ CONFIG_IIO=y
+ CONFIG_EXYNOS_ADC=y
+ CONFIG_QCOM_SPMI_ADC5=m
 -- 
 2.17.1
 
