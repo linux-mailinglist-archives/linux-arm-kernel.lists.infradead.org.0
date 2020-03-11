@@ -2,59 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B79C181BA3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 15:47:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EB0E181BA8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 15:47:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NWhZPzIdsJXeLSkaYAQFgiFTjoAo9sNJaiGYE1zCElU=; b=fIJR+7+vDMmTi6
-	JJbDjCY1WVqo/D28DAlkqU7z1EJmg/HYE/EHr2LGcUT5Re7PlUit+m67iIw7DXvZByMGDSDZuanO5
-	c6CEskBpWGXvKZCZZPWAZaMp17X8c6E/5uNmcn612Ouror9xVOHEzS2YLvgyRorZPvRxefbHWiYbA
-	QmC4UdxKd5gc4WKPgW+0M5wbkT16pJuHJ1dPZ778JRe7RHv73drtA3MCce1pnDNkiqgtYJ9+pYmmu
-	tI9vWWt7vGVTuOy4nSWtHHu0VhuOdhQiCjVwWtAtntCR4QVR4PIZS6IjhyAhdGuPB4uMTBSqGJDSM
-	euFgTMf6PAfnrGNe3MKg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YWNJXIoJBgzXRRBmM22KlDYUyjVcY4bSPpSjWewlzJQ=; b=GU/xmoJqchU6Hr
+	aIldNQDcOi8g7WvqhuWyrdkRPsYYOw1jnqS+wtk5WOIbls1zaXH2l/szP2YkAv59x2sAq5WavEXaK
+	YIABQSuRrUJAvypFYpD+zMbmlcIziPMwTKIVl592lP28I2TQfzCBMlm+TICpuN/wDiaGFWL5zZrpk
+	oxwZKt8oPOGQULMloTo3cfeIzcvn/hTonL8mTVBNPSgNs1rzqLB/LH2jQ943/laR54iwPf8bYyzoV
+	emRs5U9LHpcdLUARE/MdblQVV42qd+5BLVbwwaxid/ei/WyOzsKQt+Psd/dfiLNsIK40fzbWPxdVP
+	rqEFLcNZR7rWPSiRHKZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC2dI-0006bt-MX; Wed, 11 Mar 2020 14:46:52 +0000
-Received: from cmccmta3.chinamobile.com ([221.176.66.81])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC2d7-0006WW-22
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 14:46:43 +0000
-Received: from spf.mail.chinamobile.com (unknown[172.16.121.9]) by
- rmmx-syy-dmz-app09-12009 (RichMail) with SMTP id 2ee95e68f99e133-7ed59;
- Wed, 11 Mar 2020 22:45:50 +0800 (CST)
-X-RM-TRANSID: 2ee95e68f99e133-7ed59
-X-RM-TagInfo: emlType=0                                       
-X-RM-SPAM-FLAG: 00000000
-Received: from localhost.localdomain (unknown[223.104.148.111])
- by rmsmtp-syy-appsvr05-12005 (RichMail) with SMTP id 2ee55e68f999482-ecb2c;
- Wed, 11 Mar 2020 22:45:50 +0800 (CST)
-X-RM-TRANSID: 2ee55e68f999482-ecb2c
-From: tangbin <tangbin@cmss.chinamobile.com>
-To: broonie@kernel.org,
-	jun.nie@linaro.org,
-	shawnguo@kernel.org
-Subject: [PATCH] ASoC:zte:zx-tdm:remove redundant variables dev
-Date: Wed, 11 Mar 2020 22:46:46 +0800
-Message-Id: <20200311144646.11292-1-tangbin@cmss.chinamobile.com>
-X-Mailer: git-send-email 2.20.1.windows.1
+	id 1jC2df-0006st-L0; Wed, 11 Mar 2020 14:47:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jC2dR-0006qb-Pw
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 14:47:03 +0000
+Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com
+ [209.85.221.50])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02B71206B1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 14:46:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583938019;
+ bh=ruBwn5wDj74e/K+r4986L1gfq+eU0+k3w7VbVctWE10=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=NzjBVMdxDd+Kl49LOjGaBd3WYnkCvYkNm1wU4P9GhVG5t0/K9oS+4AIwW69cVpoMV
+ FPtGYDiYkuwXkUld5nRYYBRD3nWNrbrJGDY5/wC8JnVTMzsNRttYPblFKwfKsM7WD3
+ T0z2XFq1FUMLJpWJd+zpaTrZ9ieDU6xdTQqMWoJI=
+Received: by mail-wr1-f50.google.com with SMTP id v9so2964363wrf.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 07:47:00 -0700 (PDT)
+X-Gm-Message-State: ANhLgQ3CWRWL0c/b6OSsQtSi+nBEHVE8OXwJrsk8p+D6cSogtZwwUslP
+ 3/Pkx/Hc7miarTBwLuYoF9sqCBoQKbsUTnZ6o7E=
+X-Google-Smtp-Source: ADFU+vs8B8EgCnwrcFOwMq4EMagcV8OTKEEHRsPEaHmM1MNKm2z5pWXx/gJgkDDoe/YZ41fGgMvzQ6EnRqYtBNoKsaY=
+X-Received: by 2002:adf:97c1:: with SMTP id t1mr618684wrb.365.1583938018853;
+ Wed, 11 Mar 2020 07:46:58 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200310174709.24174-1-wens@kernel.org>
+ <20200310174709.24174-2-wens@kernel.org>
+ <20200311105937.040cd947@donnerap.cambridge.arm.com>
+In-Reply-To: <20200311105937.040cd947@donnerap.cambridge.arm.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Wed, 11 Mar 2020 22:46:49 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66dWGSJD0sS6BmbT6nb3J0xFex=3ATwm2s9Hot4ua4kcw@mail.gmail.com>
+Message-ID: <CAGb2v66dWGSJD0sS6BmbT6nb3J0xFex=3ATwm2s9Hot4ua4kcw@mail.gmail.com>
+Subject: Re: [PATCH 1/3] ARM: dts: sun8i: r40: Move AHCI device node based on
+ address order
+To: Andre Przywara <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_074641_607183_7C897304 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200311_074701_886164_AE9ACE13 
+X-CRM114-Status: GOOD (  19.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [221.176.66.81 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,50 +88,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, tangbin <tangbin@cmss.chinamobile.com>,
- tiwai@suse.com, linux-arm-kernel@lists.infradead.org, perex@perex.cz
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ devicetree <devicetree@vger.kernel.org>, Chen-Yu Tsai <wens@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In this function, the variable 'dev' is assigned to '&pdev->dev',
-but in the following code, all the assignments to 'struce device'
-are used '&pdev->dev' instead of 'dev',except 'zx_tdm->dev'.
-So,the variable 'dev' in this function is redundant and can be
-replaced by '&pdev->dev' as elsewhere.
+On Wed, Mar 11, 2020 at 6:59 PM Andre Przywara <andre.przywara@arm.com> wrote:
+>
+> On Wed, 11 Mar 2020 01:47:07 +0800
+> Chen-Yu Tsai <wens@kernel.org> wrote:
+>
+> > From: Chen-Yu Tsai <wens@csie.org>
+> >
+> > When the AHCI device node was added, it was added in the wrong location
+> > in the device tree file. The device nodes should be sorted by register
+> > address.
+> >
+> > Move the device node to before EHCI1, where it belongs.
+> >
+> > Fixes: 41c64d3318aa ("ARM: dts: sun8i: r40: add sata node")
+> > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> > ---
+> >  arch/arm/boot/dts/sun8i-r40.dtsi | 22 +++++++++++-----------
+> >  1 file changed, 11 insertions(+), 11 deletions(-)
+> >
+> > diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+> > index d5442b5b6fd2..b278686d0c22 100644
+> > --- a/arch/arm/boot/dts/sun8i-r40.dtsi
+> > +++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+> > @@ -307,6 +307,17 @@ crypto: crypto@1c15000 {
+> >                       resets = <&ccu RST_BUS_CE>;
+> >               };
+> >
+> > +             ahci: sata@1c18000 {
+> > +                     compatible = "allwinner,sun8i-r40-ahci";
+> > +                     reg = <0x01c18000 0x1000>;
+> > +                     interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+> > +                     clocks = <&ccu CLK_BUS_SATA>, <&ccu CLK_SATA>;
+> > +                     resets = <&ccu RST_BUS_SATA>;
+> > +                     reset-names = "ahci";
+> > +                     status = "disabled";
+> > +
+>
+> Did this empty line serve any particular purpose before? If not, you could remove it on the way.
 
-Signed-off-by: tangbin <tangbin@cmss.chinamobile.com>
----
- sound/soc/zte/zx-tdm.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+Can't say there is. Removed when applied.
 
-diff --git a/sound/soc/zte/zx-tdm.c b/sound/soc/zte/zx-tdm.c
-index 0e5a05b25..4f787185d 100644
---- a/sound/soc/zte/zx-tdm.c
-+++ b/sound/soc/zte/zx-tdm.c
-@@ -371,7 +371,6 @@ static struct snd_soc_dai_driver zx_tdm_dai = {
- 
- static int zx_tdm_probe(struct platform_device *pdev)
- {
--	struct device *dev = &pdev->dev;
- 	struct of_phandle_args out_args;
- 	unsigned int dma_reg_offset;
- 	struct zx_tdm_info *zx_tdm;
-@@ -384,7 +383,7 @@ static int zx_tdm_probe(struct platform_device *pdev)
- 	if (!zx_tdm)
- 		return -ENOMEM;
- 
--	zx_tdm->dev = dev;
-+	zx_tdm->dev = &pdev->dev;
- 
- 	zx_tdm->dai_wclk = devm_clk_get(&pdev->dev, "wclk");
- 	if (IS_ERR(zx_tdm->dai_wclk)) {
--- 
-2.20.1.windows.1
+> With that fixed:
+>
+> Reviewed-by: Andre Przywara <andre.przywara@arm.com>
+>
+> Thanks,
+> Andre.
 
+Thanks
+ChenYu
 
-
+> > +             };
+> > +
+> >               ehci1: usb@1c19000 {
+> >                       compatible = "allwinner,sun8i-r40-ehci", "generic-ehci";
+> >                       reg = <0x01c19000 0x100>;
+> > @@ -733,17 +744,6 @@ spi3: spi@1c0f000 {
+> >                       #size-cells = <0>;
+> >               };
+> >
+> > -             ahci: sata@1c18000 {
+> > -                     compatible = "allwinner,sun8i-r40-ahci";
+> > -                     reg = <0x01c18000 0x1000>;
+> > -                     interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+> > -                     clocks = <&ccu CLK_BUS_SATA>, <&ccu CLK_SATA>;
+> > -                     resets = <&ccu RST_BUS_SATA>;
+> > -                     reset-names = "ahci";
+> > -                     status = "disabled";
+> > -
+> > -             };
+> > -
+> >               gmac: ethernet@1c50000 {
+> >                       compatible = "allwinner,sun8i-r40-gmac";
+> >                       syscon = <&ccu>;
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
