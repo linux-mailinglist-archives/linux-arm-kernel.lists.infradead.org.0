@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EACF6181077
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 07:12:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E513B181078
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 07:13:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tT/bBrinWMdw5x0adNDW/yEEeTrwIdurzAjpXQdBCxU=; b=Vllh48y0Qfsj/g
-	fNhXmGmBMEeW+/OooJNNrUjdAcskia3MPunVhEfigux/nZBCrHQbmFmN3IuqZoLaj/+ntKvjOeNsQ
-	648MAQU+EqG1+mcoDYEYyduYoGZKGIV2cJzN27v0Kdw+RFbhqG8/+tqxWKgDe7hQDJkAfMxAY31CH
-	2Ud8Y+ukciV3DKGeWIhsmXGPN5u3NUFgei6ysY40aCYHoEnNzkIpa2uIBdrPP92PrT5YlzYNHw+sR
-	cCADuYjPJ4cCjUxLTmYZdEovAm6ATc1AdrPsdYfEMFmE06IF0uEf4pou4RYPVDJ7572tkPSHSuwPe
-	iKpWKcLa6ynV1B+4AwiA==;
+	List-Owner; bh=x2Z+nGNdnO0ealUqz/ZPh9cEiiji5PiJg8LWEOeT+Iw=; b=hJLfjbY5kw6OqK
+	l/+gu/yY8ZM83k+RmWu0BE7WciU4NWLide4UY4Ywd9d/2l6LNIIpCg6FEt/IZfSrgs8w7GBvgXhJn
+	CpKC7SA6Y0w/mWG46ferZM/rR5Ioo+G4imonJ6hGSZx0aCfkd240CpewO/XRQGwC5atAAyKoAhk9M
+	Z31QTUdMWqjoj4syF3AnKXfsAnmB8rKtmprNv23CvkKAr7/X9pUGvm1yKSzN5I3CJX5RmLsvKRyU9
+	/5RVGQj96OWY+7/0wXxBUsrrD+6RK9VUca8h2TYrFPKLRCHKq6LRsg4ErugtWgdaYjybpdoLpd1sU
+	QHKvoVun0+qzYWPCA6IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBubZ-0005zX-08; Wed, 11 Mar 2020 06:12:33 +0000
+	id 1jBucW-0006LL-EK; Wed, 11 Mar 2020 06:13:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBubR-0005zC-MM
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 06:12:27 +0000
+ id 1jBucP-0006L1-G4
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 06:13:26 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AA9CA208C4;
- Wed, 11 Mar 2020 06:12:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1F2CD20873;
+ Wed, 11 Mar 2020 06:13:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583907145;
- bh=vamP7d+KnGr3p/Y17yl3FP+noKI2Kol6BSNnY5Hhrdw=;
+ s=default; t=1583907205;
+ bh=jAVjS4LHx4J2YBJ/NlhABffxBXS41+Ke8Fes7SpT2QQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WSsAwIOZyHa/yhRXc4BWgxfY/x1VkRyVWZyUUjUoiDxRASFO77bfNYrekZ7ggUxzZ
- +8h2ItRnouwujq5NTCwhtxtfjjCto/ERQInWTzSF3vukyP5VbnXLSOAp3XlC8d1hyV
- FiWOcVGLr2te0d1TpV0LLJ1XwxqvMLcVj4fMUuAU=
-Date: Wed, 11 Mar 2020 14:12:21 +0800
+ b=hyM6r/7mblSrckwDB11uuLIzXTpxYRt669ca+pxZjWGnM3NBeFpQap1/F1QlN6iBi
+ uqPVRFwDvW7FU41/H/j7i+kM762DmQkZf8Br36WgAEAus24WHdVPwil+Ik6Syvhupw
+ dDrWQUm5n7jKVL1jjOVdhan5EyJYNSMy1tZkP10k=
+Date: Wed, 11 Mar 2020 14:13:21 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Li Yang <leoyang.li@nxp.com>
-Subject: Re: [PATCH 07/15] arm64: defconfig: Enable QorIQ cpufreq driver
-Message-ID: <20200311061220.GB29269@dragon>
+Subject: Re: [PATCH 09/15] arm64: defconfig: Enable QorIQ IFC NAND controller
+ driver
+Message-ID: <20200311061320.GC29269@dragon>
 References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
- <1582585690-463-8-git-send-email-leoyang.li@nxp.com>
+ <1582585690-463-10-git-send-email-leoyang.li@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582585690-463-8-git-send-email-leoyang.li@nxp.com>
+In-Reply-To: <1582585690-463-10-git-send-email-leoyang.li@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_231225_753266_2C595059 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20200310_231325_556775_4333A799 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,9 +84,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 05:08:02PM -0600, Li Yang wrote:
-> Enables the generic QorIQ cpufreq driver to support frequency scaling
-> for various QorIQ SoCs.  Enabled as built-in as it is a core feature.
+On Mon, Feb 24, 2020 at 05:08:04PM -0600, Li Yang wrote:
+> Enables NXP/FSL QorIQ IFC flash controller driver for NAND.  Enabled as
+> built-in to load RFS from nand flash without initramfs.
 > 
 > Signed-off-by: Li Yang <leoyang.li@nxp.com>
 > ---
@@ -93,38 +94,34 @@ On Mon, Feb 24, 2020 at 05:08:02PM -0600, Li Yang wrote:
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index e97ef8b944b8..996dc749ea5c 100644
+> index d2d5d470a6fc..a625e322fa27 100644
 > --- a/arch/arm64/configs/defconfig
 > +++ b/arch/arm64/configs/defconfig
-> @@ -90,6 +90,7 @@ CONFIG_ARM_QCOM_CPUFREQ_NVMEM=y
->  CONFIG_ARM_QCOM_CPUFREQ_HW=y
->  CONFIG_ARM_RASPBERRYPI_CPUFREQ=m
->  CONFIG_ARM_TEGRA186_CPUFREQ=y
-> +CONFIG_QORIQ_CPUFREQ=y
->  CONFIG_ARM_SCPI_PROTOCOL=y
->  CONFIG_RASPBERRYPI_FIRMWARE=y
->  CONFIG_INTEL_STRATIX10_SERVICE=y
-> @@ -722,7 +723,6 @@ CONFIG_COMMON_CLK_RK808=y
->  CONFIG_COMMON_CLK_SCPI=y
->  CONFIG_COMMON_CLK_CS2000_CP=y
->  CONFIG_COMMON_CLK_S2MPS11=y
-> -CONFIG_CLK_QORIQ=y
+> @@ -217,6 +217,7 @@ CONFIG_MTD_BLOCK=y
+>  CONFIG_MTD_RAW_NAND=y
+>  CONFIG_MTD_NAND_DENALI_DT=y
+>  CONFIG_MTD_NAND_MARVELL=y
+> +CONFIG_MTD_NAND_FSL_IFC=y
+>  CONFIG_MTD_NAND_QCOM=y
+>  CONFIG_MTD_SPI_NOR=y
+>  CONFIG_SPI_CADENCE_QUADSPI=y
+> @@ -801,7 +802,6 @@ CONFIG_ARCH_K3_J721E_SOC=y
+>  CONFIG_TI_SCI_PM_DOMAINS=y
+>  CONFIG_EXTCON_USB_GPIO=y
+>  CONFIG_EXTCON_USBC_CROS_EC=y
+> -CONFIG_MEMORY=y
 
-Why is this getting removed?
+Why is this getting removed?  Maybe worth a mentioning in the commit
+log?
 
 Shawn
 
->  CONFIG_COMMON_CLK_PWM=y
->  CONFIG_CLK_RASPBERRYPI=m
->  CONFIG_CLK_IMX8MM=y
+>  CONFIG_IIO=y
+>  CONFIG_EXYNOS_ADC=y
+>  CONFIG_QCOM_SPMI_ADC5=m
 > -- 
 > 2.17.1
 > 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
