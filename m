@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2197E18125F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:50:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2064B181260
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:51:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I0ngV2CKTvRIXi+Ch5u/lgPXhuE9MxE74ZNzAsGXYX4=; b=HfyjiAF2b9CzRf
-	CtrTrPdrf5wDUHKbmsdUZzAyme00E18j7AvftHS2H9FfKMqUJIkBxbmG9yMbtBsdwOB34nAsoPVbv
-	8R7LArBB7NMPsIvv9SWMIvLY48jjcO/34MKGkl5d3Po29jy07nSLekwRGJmrxuD65EwW4RpFTLVKN
-	2Xb3qtrYbMZBcCqdyVKq4U4uQ+dIXvckarcasu04ywV4ujwfiMwMabY+4h3X/BCVFB45bemQKfVDj
-	3sDWEIuWeivpfRSTqRoWCH4MACF/zTaPt56LFSMgtDxezJXt48/pJb5F9qqllGoJim8SQLwba3Kue
-	mwcuVnWsIVXttSzmfQYA==;
+	List-Owner; bh=veR8qgsH8BhBam95YnAHSyxyg4b6Ynub2YfVSRzI3yo=; b=ooNTfc4uKRFvay
+	r5FQbdBsqZTdClhfR7ElKJYYKfewrFk3OwYy3zPdAsP08Omkk8I2kswk4ZQIVyH5it5loc+8Mso5W
+	8h3FVAcDWS6+KbSjcIwuDavckng+izLiqoxnPEr/1NFl7yDwPnlZj6v2vkTInUhfGTmfu9cm2JMqb
+	8v9bVZjzH+kxG2Z4vQOdXW4fldg6nNv5tIZ+ZGbNuHMImauNquo9t346lfR/6XfG+PhcQZPMnU2Vc
+	OhC79ZW056bEOcgjhOglXZWZu7m84JkNHtzjNDfiCHhe/zVOZ6ifvrt0e/XSU69k6AAqPBiojIXsB
+	vqP9fkCDABoUdv4na3Iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBw8d-0001h9-Pc; Wed, 11 Mar 2020 07:50:47 +0000
+	id 1jBw8r-0001xE-VD; Wed, 11 Mar 2020 07:51:01 +0000
 Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBw7V-0008BE-3i
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:49:38 +0000
+ id 1jBw7V-0008BI-Eo
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:49:39 +0000
 Received: from mwalle01.sab.local. (unknown [213.135.10.150])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 5582723E7D;
+ by ssl.serverraum.org (Postfix) with ESMTPSA id BF7FF23E7E;
  Wed, 11 Mar 2020 08:49:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
  s=mail2016061301; t=1583912975;
@@ -35,17 +35,16 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=p8/7NKL09SHsuEl1uHYny7QPYQ0m0GW+NScMr4x+hvo=;
- b=ofXpGRZNLYW/b9NlkEARihxw62NCrPsE+3vsCCNUv7ujBGcmvbfnxWUW3yJgU5uHUnPegG
- RfaSCZfrGGUWQqmcv28BJlYF+kKqxyt2A84JOHs3D3OJUP5TghH9DYf6+0t8xM2UiIgoAr
- IoKucXLCmhhY2yPvD5bFFtlIVKrjrM0=
+ bh=I2MV/iTElRHbbr8/XhNglXhimfvX7WBgLIuSk6HZYZc=;
+ b=S36qdNcfVFKL2hpQU4vGZda4LT6O9K7TSbhFRut3l0omsNF+TK4sd7lAnZXojfCEQr+gvM
+ 2oR2AMKWTTMbLX3ImbpgOSdJ4XNRwcECWxna8IU5SBZU4jbiwBQPDqNzTIo35/U6iE4uNT
+ 95e+AtArCfCgq2UBSVddlajin7pKgkA=
 From: Michael Walle <michael@walle.cc>
 To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 3/4] arm64: dts: ls1028a: sl28: expose switch ports in KBox
- A-230-LS
-Date: Wed, 11 Mar 2020 08:49:28 +0100
-Message-Id: <20200311074929.19569-4-michael@walle.cc>
+Subject: [PATCH v2 4/4] arm64: dts: ls1028a: sl28: add support for variant 2
+Date: Wed, 11 Mar 2020 08:49:29 +0100
+Message-Id: <20200311074929.19569-5-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200311074929.19569-1-michael@walle.cc>
 References: <20200311074929.19569-1-michael@walle.cc>
@@ -55,13 +54,13 @@ X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 5582723E7D
+X-Rspamd-Queue-Id: BF7FF23E7E
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.809]; DKIM_SIGNED(0.00)[];
- DBL_PROHIBIT(0.00)[0.0.0.57:email,0.0.0.8:email,0.0.0.10:email,0.0.0.7:email,0.0.0.9:email];
+ NEURAL_SPAM(0.00)[0.811]; DKIM_SIGNED(0.00)[];
+ DBL_PROHIBIT(0.00)[0.0.0.5:email,0.0.0.4:email];
  RCPT_COUNT_SEVEN(0.00)[8]; MID_CONTAINS_FROM(1.00)[];
  RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
  MIME_TRACE(0.00)[0:+];
@@ -69,9 +68,8 @@ X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_004937_323778_CA9C32F5 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200311_004937_649322_67CD33A4 
+X-CRM114-Status: GOOD (  16.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -108,83 +106,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The KBox A-230-LS supports four external ports which are connected to
-the internal switch of the LS1028A via QSGMII. Now that the Felix switch
-is supported, add these ports in the device tree.
+Now that there is support for the Felix switch this variant can also be
+added. It features two external ports ethernet ports which are connected
+to the internal switch core. No direct connection to any of the enetc's
+is supported.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- .../fsl-ls1028a-kontron-kbox-a-230-ls.dts     | 60 +++++++++++++++++++
- 1 file changed, 60 insertions(+)
+ arch/arm64/boot/dts/freescale/Makefile        |  1 +
+ .../fsl-ls1028a-kontron-sl28-var2.dts         | 68 +++++++++++++++++++
+ 2 files changed, 69 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-index 32f6c80414bc..4e30558485b0 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-@@ -18,6 +18,29 @@
- 		     "kontron,sl28", "fsl,ls1028a";
- };
- 
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index a6d70b73d69b..a39f0a1723e0 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -6,6 +6,7 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-qds.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-rdb.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-kbox-a-230-ls.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28.dtb
++dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var2.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var3-ads2.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var4.dtb
+ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-qds.dtb
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
+new file mode 100644
+index 000000000000..0a34ff682027
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var2.dts
+@@ -0,0 +1,68 @@
++// SPDX-License-Identifier: GPL-2.0+
++/*
++ * Device Tree file for the Kontron SMARC-sAL28 board.
++ *
++ * This is for the network variant 2 which has two ethernet ports. These
++ * ports are connected to the internal switch.
++ *
++ * Copyright (C) 2020 Michael Walle <michael@walle.cc>
++ *
++ */
++
++/dts-v1/;
++#include "fsl-ls1028a-kontron-sl28.dts"
++
++/ {
++	model = "Kontron SMARC-sAL28 (TSN-on-module)";
++	compatible = "kontron,sl28-var2", "kontron,sl28", "fsl,ls1028a";
++};
++
 +&enetc_mdio_pf3 {
-+	/* BCM54140 QSGMII quad PHY */
-+	qsgmii_phy0: ethernet-phy@7 {
-+		reg = <7>;
++	phy0: ethernet-phy@5 {
++		reg = <0x5>;
++		eee-broken-1000t;
++		eee-broken-100tx;
 +	};
 +
-+	qsgmii_phy1: ethernet-phy@8 {
-+		reg = <8>;
++	phy1: ethernet-phy@4 {
++		reg = <0x4>;
++		eee-broken-1000t;
++		eee-broken-100tx;
 +	};
++};
 +
-+	qsgmii_phy2: ethernet-phy@9 {
-+		reg = <9>;
-+	};
-+
-+	qsgmii_phy3: ethernet-phy@10 {
-+		reg = <10>;
-+	};
++&enetc_port0 {
++	status = "disabled";
++	/*
++	 * In the base device tree the PHY was registered in the mdio
++	 * subnode as it is PHY for this port. On this module this PHY
++	 * is connected to a switch port instead and registered above.
++	 * Therefore, delete the mdio subnode as well as the phy-handle
++	 * property here.
++	 */
++	/delete-property/ phy-handle;
++	/delete-node/ mdio;
 +};
 +
 +&enetc_port2 {
 +	status = "okay";
 +};
 +
- &i2c3 {
- 	eeprom@57 {
- 		compatible = "atmel,24c32";
-@@ -25,3 +48,40 @@
- 		pagesize = <32>;
- 	};
- };
-+
 +&mscc_felix_port0 {
-+	label = "swp0";
-+	managed = "in-band-status";
-+	phy-handle = <&qsgmii_phy0>;
-+	phy-mode = "qsgmii";
++	label = "gbe0";
++	phy-handle = <&phy0>;
++	phy-mode = "sgmii";
 +	status = "okay";
 +};
 +
 +&mscc_felix_port1 {
-+	label = "swp1";
-+	managed = "in-band-status";
-+	phy-handle = <&qsgmii_phy1>;
-+	phy-mode = "qsgmii";
-+	status = "okay";
-+};
-+
-+&mscc_felix_port2 {
-+	label = "swp2";
-+	managed = "in-band-status";
-+	phy-handle = <&qsgmii_phy2>;
-+	phy-mode = "qsgmii";
-+	status = "okay";
-+};
-+
-+&mscc_felix_port3 {
-+	label = "swp3";
-+	managed = "in-band-status";
-+	phy-handle = <&qsgmii_phy3>;
-+	phy-mode = "qsgmii";
++	label = "gbe1";
++	phy-handle = <&phy1>;
++	phy-mode = "sgmii";
 +	status = "okay";
 +};
 +
