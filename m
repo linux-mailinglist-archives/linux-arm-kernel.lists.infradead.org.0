@@ -2,86 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2BB3182431
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 22:48:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7DCA18249A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:18:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BXoIihcJUfQBYGXZbs/rhNf/cFQTHs/jn/ekqUyJwB8=; b=jLsJ+T/hYP46HYZT171sP3Zyqg
-	9DTlvX70WeW70lQQ4+i38cEkupL8Sb02ioqrTTLQVdmfr1JJHtC94eBOgpzz1q+YEo+1n+vx5hJT3
-	RYuRQe60Z8t957u9JRs/Q2iMju7RpnjkHjePEtAh8iUPuBTZiZfeiqiX0WxbgsN9RXDx5XpDIOoHy
-	2ByxJ7F0TAnnNb8GqN7uwI2jgiJkiFR9k5Z9ZC62ObqoR0WAwYLUSHv1Gx36pKAbFUN8C6xN0fBEa
-	Bxq2rBjATR6xnojiORmBl7UrRaaVy7jfyWlmTk8tU6W9xglY37sst3wRR1oRCm1Qzz1+VGPzMWqSc
-	u3NuyqVA==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=O5ULOSBR6+KmatwXImdBNg/2hh3jbducq1DIw74NsVA=; b=oPbKg7Yzvt0rDB
+	599bJazHrXP7gqfR+WmbqhTBtdmD///2+xJYonJl6LddM5rMc08o15QpGD7QD3e+UCUIDRnvP9HoZ
+	vfxgElGMKYgYXKPxQnS20VsVuhJlNZpqo6n2UyBGF0Vd3rvtubIdW7oBemLPYQQEXT9hgrTtP7nsa
+	eP2Sc1Q4p+QDoPFPGOxSfMcpDbDvxTPdNruVjFZGakcuKPzKwlizUwNuzz6qkuhq/bzX8el56FcwI
+	AVdJr2Rz51W8X3WXs4uaNJnbH20LRNpurOcOHxcLBqGbvk3SB53OUyAYpJnj6SjRYFg+q4pHh5uYD
+	efsJwGLFgwun64ZupA+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC9D7-0008AG-BO; Wed, 11 Mar 2020 21:48:17 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jC9fy-0000sP-L9; Wed, 11 Mar 2020 22:18:06 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC9Cz-00089j-Sf
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 21:48:11 +0000
-Received: by mail-pg1-x541.google.com with SMTP id u12so1909601pgb.10
+ id 1jC9fr-0000rq-6H
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:18:00 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id y7so1655286pjn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 14:48:07 -0700 (PDT)
+ Wed, 11 Mar 2020 15:17:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=/4yzTeqL3PszmyK7W6UgnE4OAw4fNb5KxnvAnWLF9Vg=;
- b=M4AhPXr5MlKc8OYJsyrHI0gUkdxu/90oWkwA/c2qrAWNFS5TZ37SCfZlcsjzE1QNWS
- +tAyOIL8RNdksLHz5sUlhijjQyNHtJPOTpzRuGxqK/Y5idpxVo/qz3tn/pbSmt5xPBKY
- jESfGZmH5U3V+QfPZtjNwWGVGFN4mrnMpjgJIKr6U0j2XLQkDcntv9ahf+1zEtmxkXt6
- OhtonS04lzlxzKzgpLYyqOxXOWOJGDYGzm5va4sGH133VhuN4Dl9qwPuE0lnfgJ0JR8t
- jpjfVmM+WVfWfxEbrCi9M9ax3LVzMEV3aGXMX6CL1tsxwFhxyeoD2PX5pl8Koptn8y3W
- JC7A==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=nRYie0QyD+cdnhyddPb9ZD6MZri8AoRElYc1Lmc36hE=;
+ b=e+V1sIESfX0FctKsPmQvgrEDc4zbPfgdr9ALswG6YdboRPAAfcRvBQkR2Q4av0ZVpN
+ FYScNTZbenpdyA2htFDRlNsrMWF00GPDxFC1OCVkZfugBjd9PQWJq4TZP63Dqzci4+0Y
+ mAqrh4aG5ekBqBm0iPNRj3MD4lal8Rre/NPxJebAUNhTYsipARs7EcLXB0GMAQQ65GAN
+ fgDYmsLNIheUbFFGZsob4cz32SzBXbtShOntOwJNybjwA80gECzoNZDlN8YCt7bjrCsj
+ nOPPwUzYST3PRS/gHU4ILUz7X8foFzcoturMNV0gqr2bQiw6uBa3hTXpknxyW5zRbRkY
+ Okug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=/4yzTeqL3PszmyK7W6UgnE4OAw4fNb5KxnvAnWLF9Vg=;
- b=SStwNLhk51peqdQ05C2yEaxTNOLnk+kEqVDgqqd4Gf2gE4nrjJco7PFAhXQv38tDQl
- bxKnhoZe5UUF/zy9TX0u0ZoDkpDqD4oxcb8raXl3Ee3hqRQvyDT+HiQciMi/5b/uYRVb
- RulnTW7VlA78a5sdq/2h6MuNp1S0vUPHOqt+EtyKoF/RgRUKyX1S7/zrDU1/cmcFX//9
- G8/d3p+MXTE4HVkXSIN/CLTVSnZQ6fCKALuWyDjoYL6eIKeZjtg+oZdJWoouYYvGc0lf
- WbzGDrJPetE8Cdkm0+MEC4QP2s+sQi6QwTi+nsK/phatyb8/zDzCjt5Z755Y+I0ltwgl
- /mew==
-X-Gm-Message-State: ANhLgQ0BvYAZgzuYT+nO6hYwjOfEax0C7y0EubYxgNoJKl6dCrX2m2N8
- FZF7xfbeDpE6OTpYB6SU8pOoV1B3eug=
-X-Google-Smtp-Source: ADFU+vtB2oplAl/F0VyDcqCIxLTxr0NShErSKUVlTC7nMGz9jRQT/P97N/NvxGFfQHg32ojIN7qQVA==
-X-Received: by 2002:a62:4d87:: with SMTP id a129mr4720909pfb.116.1583963286798; 
- Wed, 11 Mar 2020 14:48:06 -0700 (PDT)
+ bh=nRYie0QyD+cdnhyddPb9ZD6MZri8AoRElYc1Lmc36hE=;
+ b=rjSLlO5OPe3iS9swZPwG9Bmu2aDqgBOaZ2JmoQi6Rer7+28fBN753SQpBLKzPKQfq7
+ IqBPTnypx6zHS/tx3BqfuuiwhYBDyKEhCbLOoqpyxdCc2CbLqjeXkKqXOfXfFqJsBLWM
+ 06+VJktgI8n2P2l101SfQLg+slg9IppT+8OX5P34KkfD5ScA5pRFaDF/TF0PvvQdbBT1
+ zHSuYf48RG5UtUlpcYLC/rLY5HOF9lpZTdEO5T4hLJeOwstW+OQssl96izoRxas/uIi0
+ 508x7Km3oTZSgbGWVwgF59Hu/PE0a9XHIAnY8igxo/mIwk69w/ixJnvgqthRMawg+JDd
+ waRg==
+X-Gm-Message-State: ANhLgQ1FePmjjIBxnBdqD/EkaFwLcOw2cQxwdSElGXBd4L9rIp7s7M0W
+ 2LS8pSRSy/Eazkr2yGlb4MTG7A==
+X-Google-Smtp-Source: ADFU+vuqclAJuGflnAIq8cnrsyrMIS5uLHU9vn4bhcJZpIKT78qUgs2mCU42WQim5LsEXlDajXLjmA==
+X-Received: by 2002:a17:902:9f86:: with SMTP id
+ g6mr4715169plq.299.1583965078277; 
+ Wed, 11 Mar 2020 15:17:58 -0700 (PDT)
 Received: from [192.168.1.11] (97-126-123-70.tukw.qwest.net. [97.126.123.70])
  by smtp.gmail.com with ESMTPSA id
- g14sm13465205pfb.131.2020.03.11.14.48.05
+ a3sm29439695pfi.161.2020.03.11.15.17.56
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Mar 2020 14:48:05 -0700 (PDT)
-Subject: Re: [PATCH 2/6] arm64: uaccess: Use named asm operands for __in_range
-To: Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20200311180416.6509-1-richard.henderson@linaro.org>
- <20200311180416.6509-3-richard.henderson@linaro.org>
- <2de143ee-ae9c-328c-a44d-2c84ea8f087b@arm.com>
+ Wed, 11 Mar 2020 15:17:57 -0700 (PDT)
+Subject: Re: [PATCH v2 19/19] arm64: mte: Add Memory Tagging Extension
+ documentation
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200226180526.3272848-1-catalin.marinas@arm.com>
+ <20200226180526.3272848-20-catalin.marinas@arm.com>
 From: Richard Henderson <richard.henderson@linaro.org>
-Message-ID: <d24cfd89-2ee4-38bd-d412-68a988e15831@linaro.org>
-Date: Wed, 11 Mar 2020 14:48:03 -0700
+Message-ID: <0857cca0-9f75-398d-e755-f645d2d8a594@linaro.org>
+Date: Wed, 11 Mar 2020 15:17:54 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <2de143ee-ae9c-328c-a44d-2c84ea8f087b@arm.com>
+In-Reply-To: <20200226180526.3272848-20-catalin.marinas@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_144809_925995_7908912C 
-X-CRM114-Status: GOOD (  14.47  )
+X-CRM114-CacheID: sfid-20200311_151759_288823_8FCC15E1 
+X-CRM114-Status: GOOD (  11.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,53 +104,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMy8xMS8yMCAxMjowOCBQTSwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDExLzAzLzIwMjAg
-NjowNCBwbSwgUmljaGFyZCBIZW5kZXJzb24gd3JvdGU6Cj4+IFdpdGggemVybyBjaGFuZ2Ugb2Yg
-YmVoYXZpb3IsIHVzZSAlW10gc3ludGF4IGZvciB0aGUgYXNtCj4+IG9wZXJhbmRzIGluc3RlYWQg
-b2YgbnVtYmVyZWQgb3BlcmFuZHMuCj4gCj4gRm9yIGFueSBwYXJ0aWN1bGFyIHJlYXNvbj8KCldo
-ZW4gd2UgZ2V0IHRvIHRoZSB0aGlyZCBwYXRjaCBhbmQgYWRkIENDX1NFVChsZSksIGFsbCBvZiB0
-aGUgb3BlcmFuZCBudW1iZXJzCndpbGwgY2hhbmdlLCBhbmQgSSBmb3VuZCB0aGF0IG1vcmUgY29u
-ZnVzaW5nIHRoYW4gbm90LgoKPiBJbgo+IHBhcnRpY3VsYXIsIHRoZSB2YWx1ZSByZXByZXNlbnRl
-ZCBieSAlMCAodGhlIGNvbmNlcHR1YWwgWCcpIG5ldmVyIGNvcnJlc3BvbmRzCj4gdG8gdGhlIHZh
-cmlhYmxlICJhZGRyIiwgc28gbmFtaW5nIGl0ICJhZGRyIiBwcm92aWRlcyB0aGUgb3Bwb3NpdGUg
-b2YgY2xhcml0eS4KCldvdWxkIHlvdSBzaW1wbHkgcHJlZmVyIGEgZGlmZmVyZW50IG5hbWUgZm9y
-IHRoZSBvcGVyYW5kPwoKCnJ+CgoKPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvaW5jbHVkZS9h
-c20vdWFjY2Vzcy5oIGIvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS91YWNjZXNzLmgKPj4gaW5kZXgg
-MzJmYzgwNjFhYTc2Li5jZWIxZDc5ZWFiMDkgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQvaW5j
-bHVkZS9hc20vdWFjY2Vzcy5oCj4+ICsrKyBiL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vdWFjY2Vz
-cy5oCj4+IEBAIC03NSwxOSArNzUsMjEgQEAgc3RhdGljIGlubGluZSB1bnNpZ25lZCBsb25nIF9f
-cmFuZ2Vfb2soY29uc3Qgdm9pZCBfX3VzZXIKPj4gKmFkZHIsIHVuc2lnbmVkIGxvbmcgc2kKPj4g
-wqDCoMKgwqDCoCBhc20gdm9sYXRpbGUoCj4+IMKgwqDCoMKgwqAgLy8gQSArIEIgPD0gQyArIDEg
-Zm9yIGFsbCBBLEIsQywgaW4gZm91ciBlYXN5IHN0ZXBzOgo+PiDCoMKgwqDCoMKgIC8vIDE6IFgg
-PSBBICsgQjsgWCcgPSBYICUgMl42NAo+PiAtwqDCoMKgICLCoMKgwqAgYWRkc8KgwqDCoCAlMCwg
-JTMsICUyXG4iCj4+ICvCoMKgwqAgIsKgwqDCoCBhZGRzwqDCoMKgICVbYWRkcl0sICVbYWRkcl0s
-ICVbc2l6ZV1cbiIKPj4gwqDCoMKgwqDCoCAvLyAyOiBTZXQgQyA9IDAgaWYgWCA+IDJeNjQsIHRv
-IGd1YXJhbnRlZSBYJyA+IEMgaW4gc3RlcCA0Cj4+IC3CoMKgwqAgIsKgwqDCoCBjc2VswqDCoMKg
-ICUxLCB4enIsICUxLCBoaVxuIgo+PiArwqDCoMKgICLCoMKgwqAgY3NlbMKgwqDCoCAlW2xpbWl0
-XSwgeHpyLCAlW2xpbWl0XSwgaGlcbiIKPj4gwqDCoMKgwqDCoCAvLyAzOiBTZXQgWCcgPSB+MCBp
-ZiBYID49IDJeNjQuIEZvciBYID09IDJeNjQsIHRoaXMgZGVjcmVtZW50cyBYJwo+PiDCoMKgwqDC
-oMKgIC8vwqDCoMKgIHRvIGNvbXBlbnNhdGUgZm9yIHRoZSBjYXJyeSBmbGFnIGJlaW5nIHNldCBp
-biBzdGVwIDQuIEZvcgo+PiDCoMKgwqDCoMKgIC8vwqDCoMKgIFggPiAyXjY0LCBYJyBtZXJlbHkg
-aGFzIHRvIHJlbWFpbiBub256ZXJvLCB3aGljaCBpdCBkb2VzLgo+PiAtwqDCoMKgICLCoMKgwqAg
-Y3NpbnbCoMKgwqAgJTAsICUwLCB4enIsIGNjXG4iCj4+ICvCoMKgwqAgIsKgwqDCoCBjc2ludsKg
-wqDCoCAlW2FkZHJdLCAlW2FkZHJdLCB4enIsIGNjXG4iCj4+IMKgwqDCoMKgwqAgLy8gNDogRm9y
-IFggPCAyXjY0LCB0aGlzIGdpdmVzIHVzIFgnIC0gQyAtIDEgPD0gMCwgd2hlcmUgdGhlIC0xCj4+
-IMKgwqDCoMKgwqAgLy/CoMKgwqAgY29tZXMgZnJvbSB0aGUgY2FycnkgaW4gYmVpbmcgY2xlYXIu
-IE90aGVyd2lzZSwgd2UgYXJlCj4+IMKgwqDCoMKgwqAgLy/CoMKgwqAgdGVzdGluZyBYJyAtIEMg
-PT0gMCwgc3ViamVjdCB0byB0aGUgcHJldmlvdXMgYWRqdXN0bWVudHMuCj4+IC3CoMKgwqAgIsKg
-wqDCoCBzYmNzwqDCoMKgIHh6ciwgJTAsICUxXG4iCj4+IC3CoMKgwqAgIsKgwqDCoCBjc2V0wqDC
-oMKgICUwLCBsc1xuIgo+PiAtwqDCoMKgIDogIj0mciIgKHJldCksICIrciIgKGxpbWl0KSA6ICJJ
-ciIgKHNpemUpLCAiMCIgKGFkZHIpIDogImNjIik7Cj4+ICvCoMKgwqAgIsKgwqDCoCBzYmNzwqDC
-oMKgIHh6ciwgJVthZGRyXSwgJVtsaW1pdF1cbiIKPj4gK8KgwqDCoCAiwqDCoMKgwqDCoMKgIGNz
-ZXTCoMKgwqAgJVthZGRyXSwgbHNcbiIKPj4gK8KgwqDCoCA6IFthZGRyXSAiPSZyIiAocmV0KSwg
-W2xpbWl0XSAiK3IiIChsaW1pdCkKPj4gK8KgwqDCoCA6IFtzaXplXSAiSXIiIChzaXplKSwgIjAi
-IChhZGRyKQo+PiArwqDCoMKgIDogImNjIik7Cj4+IMKgIMKgwqDCoMKgwqAgcmV0dXJuIHJldDsK
-Pj4gwqAgfQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+On 2/26/20 10:05 AM, Catalin Marinas wrote:
+> +    /*
+> +     * From include/uapi/linux/prctl.h
+> +     */
+> +    #define PR_SET_TAGGED_ADDR_CTRL 55
+> +    #define PR_GET_TAGGED_ADDR_CTRL 56
+> +    # define PR_TAGGED_ADDR_ENABLE  (1UL << 0)
+> +    # define PR_MTE_TCF_SHIFT       1
+> +    # define PR_MTE_TCF_NONE        (0UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TCF_SYNC        (1UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TCF_ASYNC       (2UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TCF_MASK        (3UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TAG_SHIFT       3
+> +    # define PR_MTE_TAG_MASK        (0xffffUL << PR_MTE_TAG_SHIFT)
+
+Is there a reason not to include TCMA into the set of bits that userland can
+control with this prcrl?
+
+I know that ordinarily TCR_ELx requires expensive syncing, but for this
+particular field there is a note about "software may change this control bit on
+a context switch".  Which I take to mean that the usual TLB-related syncing may
+be omitted.
+
+
+r~
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
