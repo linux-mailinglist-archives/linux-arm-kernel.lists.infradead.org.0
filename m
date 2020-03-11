@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A16018118D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:14:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C693181193
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:16:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mS7tCZoIzcSbGRXHtyeGOMEiIvS3XxNWxgQvoSIir5k=; b=IcNxHN+79wBUul
-	ikZFJU7TX75hRQOkgKMpC0g9AmmK3SFmWZ/plicIUxhyjhRO0mLmll43FwGNZHpS7EYRtCvuQdU2K
-	iBmToODo5MIS9wSAdqhSsKVni6kY9LMgiOJlwIlQru3uqJMXarT7NCH5ACJ2FI8ODmurN2ndQf5Ab
-	N282P4ME2anSny1zzJSiZNb3y29LalRggjBYyoMzaE6bv+CDA/+Gdr9hhCAb7hlXYFI66HC+T/CwP
-	dxh347uG64q4+LhUi+DdOsOKKjMfTecWL6a0EzQgPoddvGKlDFmtN3GY7mMseYhQaocBIDAp0VM+9
-	YMJJU/H/6atYjCpO9r9w==;
+	List-Owner; bh=o5pR2PuwtMUr8EBKMbygI1WIVqMpHhbx3chCPOupxaw=; b=bTC30B8vHEnYZs
+	sU31BU6iABNiCr9gQtz4WF1ol29Zg0UBNn8NV9caN7IFTD6D372hZIE8UOyJ/D2mU64UOJCaxJgN6
+	wa2KjZSg5z5KHllb2ZN68Reih4Hvy8BuaXXZgPw5dIZcColstEdig8/uK25QdB7iFDOMinWbI+3nq
+	d7Cd2Ygj8X/+vkD3JMFGcvBuBYlwWDhKP6rEl+B2rytU1KXOxh7kY94yU2OGTn0UyYsKkpIeZ9Fc8
+	yVwmjvGJil8H0ZSh5/2k/lTc0PBOEzIZXnDNV+g5fgMwrnnDB1LNV/cjqHqpKTsbQIzkU9k1iRedc
+	Bpd83lYmjiM9rcsJkHwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBvZq-00044G-Mq; Wed, 11 Mar 2020 07:14:50 +0000
+	id 1jBvbS-0005p9-SE; Wed, 11 Mar 2020 07:16:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBvZi-00043p-RL
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:14:44 +0000
+ id 1jBvbJ-0005om-Qa
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:16:23 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 03EDA21655;
- Wed, 11 Mar 2020 07:14:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CAF5A208C3;
+ Wed, 11 Mar 2020 07:16:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583910882;
- bh=iXz4q2qWQPcHO89hOxSWWFxi1Lqa7VY6OPTeHFNILqs=;
+ s=default; t=1583910981;
+ bh=OQIeb4oj8r6aT9zrf+ckOYy531/qz6nDOVCUb0TQuxU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u/KBCjFuijTc3Cdpw6UiQcYun3vjlUiGR+ejoZxaBVjoTMYTeIMD4zEYaxm+nH9DR
- BQUC1RgzZe28TJlhiBJEBHl6BvuE19pF7sTZXBJoVTnc5j1TvQWO42XYaS2iYQsPAo
- seiVA4zWvOHOWYZoHQhf61zJRzCdeVheTrLwHzi8=
-Date: Wed, 11 Mar 2020 15:14:36 +0800
+ b=PEWHmPatR+Metyz2pN2PIn+lc0oPlTzr34YQam5O/lpbq0OXTuRat4ADPVIE6H+p7
+ WEy6/dZbEiUkSX2sud5UK18LvNfmefUqhP97G9i/8xWe79LAHG+uahsKto1NyWUx/c
+ 8jVaoqxKmfsFh3F+CZptkLDyC6ncQrvsuEdm2c5w=
+Date: Wed, 11 Mar 2020 15:16:14 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: peng.fan@nxp.com
-Subject: Re: [PATCH] ARM64: dts: imx8m: fix aips dts node
-Message-ID: <20200311071435.GK29269@dragon>
-References: <1582602242-28577-1-git-send-email-peng.fan@nxp.com>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH 1/3] arm64: dts: ls1028a: sl28: fix on-board EEPROMS
+Message-ID: <20200311071613.GL29269@dragon>
+References: <20200225175756.29508-1-michael@walle.cc>
+ <20200225175756.29508-2-michael@walle.cc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1582602242-28577-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <20200225175756.29508-2-michael@walle.cc>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_001442_925974_085920C3 
-X-CRM114-Status: GOOD (  13.89  )
+X-CRM114-CacheID: sfid-20200311_001621_882862_4C8D7063 
+X-CRM114-Status: GOOD (  16.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,211 +77,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, Anson.Huang@nxp.com,
- daniel.baluta@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- leonard.crestez@nxp.com, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 25, 2020 at 11:44:02AM +0800, peng.fan@nxp.com wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On Tue, Feb 25, 2020 at 06:57:54PM +0100, Michael Walle wrote:
+> The module itself has another EEPROM at 50h on I2C4. The EEPROM on the
+> carriers is located at 57h on I2C3. Fix that in the device trees.
 > 
-> Per binding doc fsl,aips-bus.yaml, compatible and reg is
-> required. And for reg, the AIPS configuration space should be
-> used, not all the AIPS bus space.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mm.dtsi | 12 ++++++++----
->  arch/arm64/boot/dts/freescale/imx8mn.dtsi | 16 ++++++++--------
->  arch/arm64/boot/dts/freescale/imx8mp.dtsi | 12 ++++++------
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 12 ++++++++----
->  4 files changed, 30 insertions(+), 22 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> index b3d0b29d7007..a4356d2047cd 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-> @@ -227,7 +227,8 @@
->  		ranges = <0x0 0x0 0x0 0x3e000000>;
->  
->  		aips1: bus@30000000 {
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
+> Signed-off-by: Michael Walle <michael@walle.cc>
 
-The binding doc says "fsl,aips-bus", not "fsl,aips".
+Doesn't apply to my branch.
 
 Shawn
 
-> +			reg = <0x301f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x30000000 0x30000000 0x400000>;
-> @@ -496,7 +497,8 @@
->  		};
+> ---
+>  .../fsl-ls1028a-kontron-kbox-a-230-ls.dts          |  6 +++---
+>  .../fsl-ls1028a-kontron-sl28-var3-ads2.dts         | 14 ++++++++------
+>  .../dts/freescale/fsl-ls1028a-kontron-sl28.dts     |  6 ++++++
+>  3 files changed, 17 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+> index aaf3c04771c3..32f6c80414bc 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+> @@ -18,10 +18,10 @@
+>  		     "kontron,sl28", "fsl,ls1028a";
+>  };
 >  
->  		aips2: bus@30400000 {
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x305f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x30400000 0x30400000 0x400000>;
-> @@ -555,7 +557,8 @@
->  		};
+> -&i2c4 {
+> -	eeprom@50 {
+> +&i2c3 {
+> +	eeprom@57 {
+>  		compatible = "atmel,24c32";
+> -		reg = <0x50>;
+> +		reg = <0x57>;
+>  		pagesize = <32>;
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+> index 20fd86746f94..ff4a43986290 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+> @@ -80,6 +80,14 @@
+>  	};
+>  };
 >  
->  		aips3: bus@30800000 {
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x309f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x30800000 0x30800000 0x400000>;
-> @@ -800,7 +803,8 @@
->  		};
+> +&i2c3 {
+> +	eeprom@57 {
+> +		compatible = "atmel,24c64";
+> +		reg = <0x57>;
+> +		pagesize = <32>;
+> +	};
+> +};
+> +
+>  &i2c4 {
+>  	status = "okay";
 >  
->  		aips4: bus@32c00000 {
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x32df0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x32c00000 0x32c00000 0x400000>;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> index f2775724377f..4848ce82f083 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-> @@ -203,8 +203,8 @@
->  		ranges = <0x0 0x0 0x0 0x3e000000>;
+> @@ -92,12 +100,6 @@
+>  		assigned-clocks = <&mclk>;
+>  		assigned-clock-rates = <1250000>;
+>  	};
+> -
+> -	eeprom@50 {
+> -		compatible = "atmel,24c32";
+> -		reg = <0x50>;
+> -		pagesize = <32>;
+> -	};
+>  };
 >  
->  		aips1: bus@30000000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x30000000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x301f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> @@ -401,8 +401,8 @@
->  		};
+>  &sai5 {
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> index c60a444ad09d..4ba6aae45ef1 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> @@ -181,6 +181,12 @@
 >  
->  		aips2: bus@30400000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x30400000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x305f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> @@ -461,8 +461,8 @@
->  		};
+>  &i2c4 {
+>  	status = "okay";
+> +
+> +	eeprom@50 {
+> +		compatible = "atmel,24c32";
+> +		reg = <0x50>;
+> +		pagesize = <32>;
+> +	};
+>  };
 >  
->  		aips3: bus@30800000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x30800000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x309f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> @@ -707,8 +707,8 @@
->  		};
->  
->  		aips4: bus@32c00000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x32c00000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x32df0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> index 71b0c8f23693..eb67f56cdfe2 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-> @@ -144,8 +144,8 @@
->  		ranges = <0x0 0x0 0x0 0x3e000000>;
->  
->  		aips1: bus@30000000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x30000000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x301f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> @@ -309,8 +309,8 @@
->  		};
->  
->  		aips2: bus@30400000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x30400000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x305f0000 0x400000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> @@ -369,8 +369,8 @@
->  		};
->  
->  		aips3: bus@30800000 {
-> -			compatible = "simple-bus";
-> -			reg = <0x30800000 0x400000>;
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x309f0000 0x400000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges;
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> index 6a1e83922c71..07070464063d 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -290,7 +290,8 @@
->  		dma-ranges = <0x40000000 0x0 0x40000000 0xc0000000>;
->  
->  		bus@30000000 { /* AIPS1 */
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x301f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x30000000 0x30000000 0x400000>;
-> @@ -692,7 +693,8 @@
->  		};
->  
->  		bus@30400000 { /* AIPS2 */
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x305f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x30400000 0x30400000 0x400000>;
-> @@ -751,7 +753,8 @@
->  		};
->  
->  		bus@30800000 { /* AIPS3 */
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x309f0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x30800000 0x30800000 0x400000>,
-> @@ -1023,7 +1026,8 @@
->  		};
->  
->  		bus@32c00000 { /* AIPS4 */
-> -			compatible = "simple-bus";
-> +			compatible = "fsl,aips", "simple-bus";
-> +			reg = <0x32df0000 0x10000>;
->  			#address-cells = <1>;
->  			#size-cells = <1>;
->  			ranges = <0x32c00000 0x32c00000 0x400000>;
+>  &lpuart1 {
 > -- 
-> 2.16.4
+> 2.20.1
 > 
 
 _______________________________________________
