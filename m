@@ -2,93 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FFCE181E7E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:56:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16443181E85
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:58:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8gpu2/BvhLL96kJvB5dmMmROkByYmwWQleWpPu/fzj4=; b=CBs/QUax3/Z93B
-	KBhtC8eLdA0vJCYumXVGY6wP141VkEJOl09TMyT4/JiUmMdLplrCxiRwunfuQoPN6Yff+feft8rq+
-	syL7XQah/5wFCQ6fsIx3ntg1GOnO6UY7cVPYU5XhsK7NVnwjuVVGXAPuntiL7/cmXJY1Vthjf6Zdx
-	Ef2xuo1WzzlTfv+UMz49ni6W/GkqiLq48ou2X3tytCgZO2hvbJz3gXc98oSWfeD8fZ1OO0jWBfzLa
-	bLWL1szntNUiutxW7NLl8jvqqtbH5Y2mEh9U48SbHBBiXf1HZd4xyxpd4Rj6SkWswDiZro4iSFl4U
-	EqKU/pccOC+Eg5N0aIMQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5D5qnemtlTCc9L21x+I55QpEtqPFypXxWUDofJyz6Yo=; b=cjHqg6S7Vh8hLg
+	vS6rdlPcoeJWWB6os2MFs0Ylj6HlmHnXSa2PaLSguCXfawVRfr8njWO4MZpwtLj4PVVSks4J/KL4W
+	XNjc7Dxp8Cc93vg0dwI+Ct3UzHkVzZisdTRsyPPNNYpyKZfT22/UoEodFSn9MpIowGvhtCagvfGd6
+	OFJ6hn1DHxfSGh9obWyfBos8EZKyR1VvxBZwnHn0he+JPbvyCI+TEyIBBDo0BPUpH931pb0oSzeVE
+	s5+COQA33UNsSldWmK9A8IQMZdI4Z3cn9BOz1MQgXhmQ+QmmvXEzT8akfW2MUXNVpfX2jT4gENAlT
+	mEez4Gww0BmJhNu3fgPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4en-0007jp-3h; Wed, 11 Mar 2020 16:56:33 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jC4gb-0008Nu-3s; Wed, 11 Mar 2020 16:58:25 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4dP-0005hZ-CL
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:55:10 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id m15so619489pje.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 09:55:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=WNLbjKiHSceRgr6cQ58fNCACo44+Y3IkkPkET6P2K5I=;
- b=LO8S+ooAEzLm8EFwu7LhW+YG+Ys/a9yN7vQ6QBK+quHcxf3ygzoZOqjadBL4Pa46wL
- r2Aa7JsanMaPjeB4LyzhJlwvtKP4GlfyGHm+3wabLEMIzG5bCbQmrgBT3XMn704XieCv
- sJhA8osNJvA57u5iejioVqD0siIm0sJsf+DwJIb/Kx6G2d4PQ78CfU733aBf9aMjcywM
- XK7nfTUbGLz/urz39h9lQt9JdTbdmtC/QDJW6R2r17omg2Rjhy7TMDRczNjB10F6y2PE
- 9dOBuEYTw0yk1WfTzLyjC8UXIkBXr+OZ1VJrw5MnBQRmipiflmTutzHw3rGXQbs07twN
- cHUg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=WNLbjKiHSceRgr6cQ58fNCACo44+Y3IkkPkET6P2K5I=;
- b=YelodY15VhegpASE0zIb8n6vNcCK3Q1/qrAf2SfyYUcwDQuee0vOD1ZaaJk5PS62Qw
- dBSH8HSEUHgcBdPizgPtyFvgQ+YleBXWPscawAT272AZdegUOg1ZqAQrknAUN4hGuPzN
- npNVlodGem/rbNk0CXcq0OWmvxNsCZZMbVHsxm5MPIxez7/Xtc7uxQAHEZXoK24oscKv
- Yze1F/PcMTgrH4RP4W+iMlQ4NeOf23Xy+NoqD3HMxD5YW/Jxdnr7cCojOIjS8zmzY1Qk
- 5cHmuNp9P0FjGI2SfDLANIjF7ha0/R09hLg4/kjlRkBrBpS1RdqLRSkNsfvPekECIMaP
- MfxA==
-X-Gm-Message-State: ANhLgQ1Qfrb/LXEQUbGLpNy8BuQgSndRxmZHPgj814qLDFL6DaQkbGnw
- yBpDJGdeHGGue/fMhyVhhT5nrA==
-X-Google-Smtp-Source: ADFU+vtZy8bz+TL4oXAdmhLSo2whRQCy+AitraDoObkHe1Vy97p2kA4if9aIqs6KZtF2o6K8+1hnPA==
-X-Received: by 2002:a17:902:d915:: with SMTP id
- c21mr3904174plz.239.1583945702872; 
- Wed, 11 Mar 2020 09:55:02 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id w24sm5911609pjh.26.2020.03.11.09.55.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Mar 2020 09:55:02 -0700 (PDT)
-Date: Wed, 11 Mar 2020 10:55:00 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Ben Levinsky <ben.levinsky@xilinx.com>
-Subject: Re: [PATCH 4/5] dt-bindings: remoteproc: Add documentation for
- ZynqMP R5 rproc bindings
-Message-ID: <20200311165500.GB32395@xps15>
-References: <1582566751-13118-1-git-send-email-ben.levinsky@xilinx.com>
- <1582566751-13118-5-git-send-email-ben.levinsky@xilinx.com>
+ id 1jC4gP-0008NC-75; Wed, 11 Mar 2020 16:58:15 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id AEAD729385D
+Subject: Re: [PATCH v12 3/5] clk / soc: mediatek: Move mt8173 MMSYS to
+ platform driver
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
+ p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
+ sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
+ laurent.pinchart@ideasonboard.com
+References: <20200311165322.1594233-1-enric.balletbo@collabora.com>
+ <20200311165322.1594233-4-enric.balletbo@collabora.com>
+Message-ID: <4e8eca75-97b1-0f62-1982-cda131a5a9e8@collabora.com>
+Date: Wed, 11 Mar 2020 17:58:05 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1582566751-13118-5-git-send-email-ben.levinsky@xilinx.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200311165322.1594233-4-enric.balletbo@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_095507_860297_29CB1ECA 
-X-CRM114-Status: GOOD (  23.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_095813_527261_1C016D86 
+X-CRM114-Status: GOOD (  28.44  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,195 +65,479 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, mark.rutland@arm.com, rajan.vaja@xilinx.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-remoteproc@vger.kernel.org, michal.simek@xilinx.com,
- bjorn.andersson@linaro.org, jollys@xilinx.com, robh+dt@kernel.org,
- Jason Wu <j.wu@xilinx.com>, Wendy Liang <jliang@xilinx.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>,
+ Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, wens@csie.org,
+ Allison Randal <allison@lohutok.net>, mtk01761 <wendell.lin@mediatek.com>,
+ Owen Chen <owen.chen@mediatek.com>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, frank-w@public-files.de,
+ Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
+ Houlong Wei <houlong.wei@mediatek.com>, linux-mediatek@lists.infradead.org,
+ hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Matthias Brugger <mbrugger@suse.com>,
+ Fabien Parent <fparent@baylibre.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
+ linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ matthias.bgg@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 24, 2020 at 09:52:30AM -0800, Ben Levinsky wrote:
-> From: Jason Wu <j.wu@xilinx.com>
-> 
-> Add binding for ZynqMP R5 OpenAMP.
-> 
-> Represent the RPU domain resources in one device node. Each RPU
-> processor is a subnode of the top RPU domain node.
-> 
-> Signed-off-by: Jason Wu <j.wu@xilinx.com>
-> Signed-off-by: Wendy Liang <jliang@xilinx.com>
-> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 
-Other than the yaml format that you've already taken care of, I have the
-following comments:
 
+On 11/3/20 17:53, Enric Balletbo i Serra wrote:
+> From: Matthias Brugger <mbrugger@suse.com>
+> 
+> There is no strong reason for this to use CLK_OF_DECLARE instead of
+> being a platform driver. Plus, MMSYS provides clocks but also a shared
+> register space for the mediatek-drm and the mediatek-mdp
+> driver. So move the MMSYS clocks to a new platform driver and also
+> create a new MMSYS platform driver in drivers/soc/mediatek that
+> instantiates the clock driver.
+> 
+> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
 > ---
->  .../remoteproc/xilinx,zynqmp-r5-remoteproc.txt     | 135 +++++++++++++++++++++
->  1 file changed, 135 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/remoteproc/xilinx,zynqmp-r5-remoteproc.txt
 > 
-> diff --git a/Documentation/devicetree/bindings/remoteproc/xilinx,zynqmp-r5-remoteproc.txt b/Documentation/devicetree/bindings/remoteproc/xilinx,zynqmp-r5-remoteproc.txt
+> Changes in v12:
+> - Leave the clocks part in drivers/clk (clk-mt8173-mm)
+> - Instantiate the clock driver from the mtk-mmsys driver.
+> - Add default config option to not break anything.
+> - Removed the Reviewed-by CK tag as changed the organization.
+> 
+> Changes in v10:
+> - Renamed to be generic mtk-mmsys
+> - Add driver data support to be able to support diferent SoCs
+> 
+> Changes in v9:
+> - Move mmsys to drivers/soc/mediatek (CK)
+> 
+> Changes in v8:
+> - Be a builtin_platform_driver like other mediatek mmsys drivers.
+> 
+> Changes in v7:
+> - Free clk_data->clks as well
+> - Get rid of private data structure
+> 
+>  drivers/clk/mediatek/Kconfig         |   7 ++
+>  drivers/clk/mediatek/Makefile        |   1 +
+>  drivers/clk/mediatek/clk-mt8173-mm.c | 146 +++++++++++++++++++++++++++
+>  drivers/clk/mediatek/clk-mt8173.c    | 104 -------------------
+
+Quoting Matthias to continue the discussion here:
+
+"I'm not sure we really need that. We can just convert the mmsys clock bits in
+clk-mt8173.c to a platform driver with no need put them in a seperate file.
+If you think a seperate file is worth doing, I think the approach is to put the
+driver in a seperate file first and in a following patch change it to a platform
+driver."
+
+"Anyway its Stephen to make the decision. If he thinks things are fine like
+this, I'm happy to take the patch through my tree"
+
+
+>  drivers/soc/mediatek/Kconfig         |   8 ++
+>  drivers/soc/mediatek/Makefile        |   1 +
+>  drivers/soc/mediatek/mtk-mmsys.c     |  50 +++++++++
+>  7 files changed, 213 insertions(+), 104 deletions(-)
+>  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
+>  create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
+> 
+> diff --git a/drivers/clk/mediatek/Kconfig b/drivers/clk/mediatek/Kconfig
+> index ea3c70d1307e..9e28db8125cd 100644
+> --- a/drivers/clk/mediatek/Kconfig
+> +++ b/drivers/clk/mediatek/Kconfig
+> @@ -274,6 +274,13 @@ config COMMON_CLK_MT8173
+>  	---help---
+>  	  This driver supports MediaTek MT8173 clocks.
+>  
+> +config COMMON_CLK_MT8173_MMSYS
+> +	bool "Clock driver for MediaTek MT8173 mmsys"
+> +	depends on COMMON_CLK_MT8173
+> +	default COMMON_CLK_MT8173
+> +	help
+> +	  This driver supports MediaTek MT8173 mmsys clocks.
+> +
+>  config COMMON_CLK_MT8183
+>  	bool "Clock driver for MediaTek MT8183"
+>  	depends on (ARCH_MEDIATEK && ARM64) || COMPILE_TEST
+> diff --git a/drivers/clk/mediatek/Makefile b/drivers/clk/mediatek/Makefile
+> index 8cdb76a5cd71..bb0536942075 100644
+> --- a/drivers/clk/mediatek/Makefile
+> +++ b/drivers/clk/mediatek/Makefile
+> @@ -41,6 +41,7 @@ obj-$(CONFIG_COMMON_CLK_MT7629_ETHSYS) += clk-mt7629-eth.o
+>  obj-$(CONFIG_COMMON_CLK_MT7629_HIFSYS) += clk-mt7629-hif.o
+>  obj-$(CONFIG_COMMON_CLK_MT8135) += clk-mt8135.o
+>  obj-$(CONFIG_COMMON_CLK_MT8173) += clk-mt8173.o
+> +obj-$(CONFIG_COMMON_CLK_MT8173_MMSYS) += clk-mt8173-mm.o
+>  obj-$(CONFIG_COMMON_CLK_MT8183) += clk-mt8183.o
+>  obj-$(CONFIG_COMMON_CLK_MT8183_AUDIOSYS) += clk-mt8183-audio.o
+>  obj-$(CONFIG_COMMON_CLK_MT8183_CAMSYS) += clk-mt8183-cam.o
+> diff --git a/drivers/clk/mediatek/clk-mt8173-mm.c b/drivers/clk/mediatek/clk-mt8173-mm.c
 > new file mode 100644
-> index 0000000..ee7a515
+> index 000000000000..36fa20be77b6
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/remoteproc/xilinx,zynqmp-r5-remoteproc.txt
-> @@ -0,0 +1,135 @@
-> +Xilinx ARM Cortex A53-R5 remoteproc driver
-> +==========================================
+> +++ b/drivers/clk/mediatek/clk-mt8173-mm.c
+> @@ -0,0 +1,146 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (c) 2014 MediaTek Inc.
+> + * Author: James Liao <jamesjj.liao@mediatek.com>
+> + */
 > +
-> +ZynqMP family of devices use two Cortex R5 processors to help with various
-> +low power / real time tasks.
+> +#include <linux/clk-provider.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
 > +
-> +This driver requires specific ZynqMP hardware design.
+> +#include "clk-gate.h"
+> +#include "clk-mtk.h"
 > +
-> +ZynqMP R5 Device Node:
-> +=================================
-> +A ZynqMP R5 device node is used to represent RPU domain
-> +within ZynqMP SoC. This device node contains RPU processor
-> +subnodes.
+> +#include <dt-bindings/clock/mt8173-clk.h>
 > +
-> +Required Properties:
-> +--------------------
-> + - compatible : Should be "xlnx,zynqmp-r5-remoteproc-1.0"
-> + - core_conf : R5 core configuration (valid string - split or lock-step)
-
-Please describe "split" and "lock-step".  I am guessing that split means
-core run independently from one another while lock-step is an smp configuration.
-But event that is not clear from the implementation in patch 5.  I also assume
-the property has no relevance when there is only one core.
-
-> + - interrupts : Interrupt mapping for remoteproc IPI. It is required if the
-> +                user uses the remoteproc driver with the RPMsg kernel driver.
-> + - interrupt-parent : Phandle for the interrupt controller. It is required if
-> +                      the user uses the remoteproc driver with the RPMsg kernel
-> +                      kernel driver.
-
-I can't find the interrupts and interrupts-parent properties under the
-zynqmp-r5-remoteproc node.  But I do see them under the zynqmp_ipi node.  As
-such there is a discrepancy between the above and the example.
-
+> +static const struct mtk_gate_regs mm0_cg_regs = {
+> +	.set_ofs = 0x0104,
+> +	.clr_ofs = 0x0108,
+> +	.sta_ofs = 0x0100,
+> +};
 > +
-> +ZynqMP R5 Remoteproc Device Node:
-> +=================================
-> +A ZynqMP R5 Remoteproc device node is used to represent a RPU processor.
-> +It is a subnode to the ZynqMP R5 device node. It also contains tightly
-> +coupled memory subnodes.
+> +static const struct mtk_gate_regs mm1_cg_regs = {
+> +	.set_ofs = 0x0114,
+> +	.clr_ofs = 0x0118,
+> +	.sta_ofs = 0x0110,
+> +};
 > +
-> +Required Properties:
-> +--------------------
-> + - pnode-id:	ZynqMP R5 processor power domain ID which will be used by
-> +		ZynqMP power management unit to idetify the processor.
+> +#define GATE_MM0(_id, _name, _parent, _shift) {			\
+> +		.id = _id,					\
+> +		.name = _name,					\
+> +		.parent_name = _parent,				\
+> +		.regs = &mm0_cg_regs,				\
+> +		.shift = _shift,				\
+> +		.ops = &mtk_clk_gate_ops_setclr,		\
+> +	}
 > +
-> +Optional Properties:
-> +--------------------
-> + - memory-region: reserved memory which will be used by R5 processor
+> +#define GATE_MM1(_id, _name, _parent, _shift) {			\
+> +		.id = _id,					\
+> +		.name = _name,					\
+> +		.parent_name = _parent,				\
+> +		.regs = &mm1_cg_regs,				\
+> +		.shift = _shift,				\
+> +		.ops = &mtk_clk_gate_ops_setclr,		\
+> +	}
 > +
+> +static const struct mtk_gate mt8173_mm_clks[] = {
+> +	/* MM0 */
+> +	GATE_MM0(CLK_MM_SMI_COMMON, "mm_smi_common", "mm_sel", 0),
+> +	GATE_MM0(CLK_MM_SMI_LARB0, "mm_smi_larb0", "mm_sel", 1),
+> +	GATE_MM0(CLK_MM_CAM_MDP, "mm_cam_mdp", "mm_sel", 2),
+> +	GATE_MM0(CLK_MM_MDP_RDMA0, "mm_mdp_rdma0", "mm_sel", 3),
+> +	GATE_MM0(CLK_MM_MDP_RDMA1, "mm_mdp_rdma1", "mm_sel", 4),
+> +	GATE_MM0(CLK_MM_MDP_RSZ0, "mm_mdp_rsz0", "mm_sel", 5),
+> +	GATE_MM0(CLK_MM_MDP_RSZ1, "mm_mdp_rsz1", "mm_sel", 6),
+> +	GATE_MM0(CLK_MM_MDP_RSZ2, "mm_mdp_rsz2", "mm_sel", 7),
+> +	GATE_MM0(CLK_MM_MDP_TDSHP0, "mm_mdp_tdshp0", "mm_sel", 8),
+> +	GATE_MM0(CLK_MM_MDP_TDSHP1, "mm_mdp_tdshp1", "mm_sel", 9),
+> +	GATE_MM0(CLK_MM_MDP_WDMA, "mm_mdp_wdma", "mm_sel", 11),
+> +	GATE_MM0(CLK_MM_MDP_WROT0, "mm_mdp_wrot0", "mm_sel", 12),
+> +	GATE_MM0(CLK_MM_MDP_WROT1, "mm_mdp_wrot1", "mm_sel", 13),
+> +	GATE_MM0(CLK_MM_FAKE_ENG, "mm_fake_eng", "mm_sel", 14),
+> +	GATE_MM0(CLK_MM_MUTEX_32K, "mm_mutex_32k", "rtc_sel", 15),
+> +	GATE_MM0(CLK_MM_DISP_OVL0, "mm_disp_ovl0", "mm_sel", 16),
+> +	GATE_MM0(CLK_MM_DISP_OVL1, "mm_disp_ovl1", "mm_sel", 17),
+> +	GATE_MM0(CLK_MM_DISP_RDMA0, "mm_disp_rdma0", "mm_sel", 18),
+> +	GATE_MM0(CLK_MM_DISP_RDMA1, "mm_disp_rdma1", "mm_sel", 19),
+> +	GATE_MM0(CLK_MM_DISP_RDMA2, "mm_disp_rdma2", "mm_sel", 20),
+> +	GATE_MM0(CLK_MM_DISP_WDMA0, "mm_disp_wdma0", "mm_sel", 21),
+> +	GATE_MM0(CLK_MM_DISP_WDMA1, "mm_disp_wdma1", "mm_sel", 22),
+> +	GATE_MM0(CLK_MM_DISP_COLOR0, "mm_disp_color0", "mm_sel", 23),
+> +	GATE_MM0(CLK_MM_DISP_COLOR1, "mm_disp_color1", "mm_sel", 24),
+> +	GATE_MM0(CLK_MM_DISP_AAL, "mm_disp_aal", "mm_sel", 25),
+> +	GATE_MM0(CLK_MM_DISP_GAMMA, "mm_disp_gamma", "mm_sel", 26),
+> +	GATE_MM0(CLK_MM_DISP_UFOE, "mm_disp_ufoe", "mm_sel", 27),
+> +	GATE_MM0(CLK_MM_DISP_SPLIT0, "mm_disp_split0", "mm_sel", 28),
+> +	GATE_MM0(CLK_MM_DISP_SPLIT1, "mm_disp_split1", "mm_sel", 29),
+> +	GATE_MM0(CLK_MM_DISP_MERGE, "mm_disp_merge", "mm_sel", 30),
+> +	GATE_MM0(CLK_MM_DISP_OD, "mm_disp_od", "mm_sel", 31),
+> +	/* MM1 */
+> +	GATE_MM1(CLK_MM_DISP_PWM0MM, "mm_disp_pwm0mm", "mm_sel", 0),
+> +	GATE_MM1(CLK_MM_DISP_PWM026M, "mm_disp_pwm026m", "pwm_sel", 1),
+> +	GATE_MM1(CLK_MM_DISP_PWM1MM, "mm_disp_pwm1mm", "mm_sel", 2),
+> +	GATE_MM1(CLK_MM_DISP_PWM126M, "mm_disp_pwm126m", "pwm_sel", 3),
+> +	GATE_MM1(CLK_MM_DSI0_ENGINE, "mm_dsi0_engine", "mm_sel", 4),
+> +	GATE_MM1(CLK_MM_DSI0_DIGITAL, "mm_dsi0_digital", "dsi0_dig", 5),
+> +	GATE_MM1(CLK_MM_DSI1_ENGINE, "mm_dsi1_engine", "mm_sel", 6),
+> +	GATE_MM1(CLK_MM_DSI1_DIGITAL, "mm_dsi1_digital", "dsi1_dig", 7),
+> +	GATE_MM1(CLK_MM_DPI_PIXEL, "mm_dpi_pixel", "dpi0_sel", 8),
+> +	GATE_MM1(CLK_MM_DPI_ENGINE, "mm_dpi_engine", "mm_sel", 9),
+> +	GATE_MM1(CLK_MM_DPI1_PIXEL, "mm_dpi1_pixel", "lvds_pxl", 10),
+> +	GATE_MM1(CLK_MM_DPI1_ENGINE, "mm_dpi1_engine", "mm_sel", 11),
+> +	GATE_MM1(CLK_MM_HDMI_PIXEL, "mm_hdmi_pixel", "dpi0_sel", 12),
+> +	GATE_MM1(CLK_MM_HDMI_PLLCK, "mm_hdmi_pllck", "hdmi_sel", 13),
+> +	GATE_MM1(CLK_MM_HDMI_AUDIO, "mm_hdmi_audio", "apll1", 14),
+> +	GATE_MM1(CLK_MM_HDMI_SPDIF, "mm_hdmi_spdif", "apll2", 15),
+> +	GATE_MM1(CLK_MM_LVDS_PIXEL, "mm_lvds_pixel", "lvds_pxl", 16),
+> +	GATE_MM1(CLK_MM_LVDS_CTS, "mm_lvds_cts", "lvds_cts", 17),
+> +	GATE_MM1(CLK_MM_SMI_LARB4, "mm_smi_larb4", "mm_sel", 18),
+> +	GATE_MM1(CLK_MM_HDMI_HDCP, "mm_hdmi_hdcp", "hdcp_sel", 19),
+> +	GATE_MM1(CLK_MM_HDMI_HDCP24M, "mm_hdmi_hdcp24m", "hdcp_24m_sel", 20),
+> +};
 > +
-> +ZynqMP R5 Remoteproc Device Node:
-> +=================================
-> +A ZynqMP R5 Remoteproc device node is used to represent a RPU processor.
-> +It is a subnode to the ZynqMP R5 device node.
+> +struct clk_mt8173_mm_driver_data {
+> +	const struct mtk_gate *gates_clk;
+> +	int gates_num;
+> +};
 > +
-> +Required Properties:
-> +--------------------
-> + - pnode-id:	ZynqMP R5 processor power domain ID which will be used by
-> +		ZynqMP power management unit to idetify the processor.
+> +static const struct clk_mt8173_mm_driver_data mt8173_mmsys_driver_data = {
+> +	.gates_clk = mt8173_mm_clks,
+> +	.gates_num = ARRAY_SIZE(mt8173_mm_clks),
+> +};
 > +
-> +Optional Properties:
-> +--------------------
-> + - memory-region:	reserved memory which will be used by R5 processor
-> + - mboxes:		Specify tx and rx mailboxes
-> + - mbox-names:		List of identifier strings for tx/rx mailbox channel.
-
-This section is already laid out above, but this (other) one
-has mboxes and mbox-names.  Please reorganise. 
-
+> +static int clk_mt8173_mm_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *node = dev->parent->of_node;
+> +	const struct clk_mt8173_mm_driver_data *data;
+> +	struct clk_onecell_data *clk_data;
+> +	int ret;
 > +
-> +ZynqMP R5 TCM Device Node:
-> +=================================
-> +The ZynqMP R5 TCM device node is used to represent the TCM memory.
-> +It is a subnode to the ZynqMP R5 processor.
+> +	clk_data = mtk_alloc_clk_data(CLK_MM_NR_CLK);
+> +	if (!clk_data)
+> +		return -ENOMEM;
 > +
-> +Required Properties:
-> +--------------------
-> + - reg:		TCM address range
-> + - pnode-id:	TCM power domain ID
+> +	data = &mt8173_mmsys_driver_data;
 > +
+> +	ret = mtk_clk_register_gates(node, data->gates_clk, data->gates_num,
+> +				     clk_data);
+> +	if (ret)
+> +		return ret;
 > +
-> +Example:
-> +--------
-> +	reserved-memory {
-> +		#address-cells = <2>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +		/* R5 0 firmware memory in DDR */
-> +		rproc_0_fw_reserved: rproc@3ed000000 {
-> +			no-map;
-> +			reg = <0x0 0x3ed00000 0x0 0x40000>;
-> +		};
-> +		/* DMA shared memory between APU and RPU */
-> +		rpu0vdev0buffer: rpu0vdev0buffer@3ed400000 {
-> +			compatible = "shared-dma-pool";
-> +			no-map;
-> +			reg = <0x0 0x3ed40000 0x0 0x100000>;
-> +		};
-> +	};
+> +	ret = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
+> +	if (ret)
+> +		return ret;
 > +
-> +	zynqmp-r5-remoteproc@0 {
-> +		compatible = "xlnx,zynqmp-r5-remoteproc-1.0";
-> +		core_conf = "split";
-> +		#address-cells = <2>;
-> +		#size-cells = <2>;
-> +		ranges;
-> +		r5-0: r5@0 {
-> +			#address-cells = <2>;
-> +			#size-cells = <2>;
-> +			ranges;
-> +			memory-region = <&rproc_0_fw_reserved>,
-> +					<&rpu0vdev0buffer>;
-> +			pnode-id = <0x7>;
-> +			mboxes = <&ipi_mailbox_rpu0 0>, <&ipi_mailbox_rpu0 1>;
-> +			mbox-names = "tx", "rx";
-> +			tcm-a: tcm@0 {
-> +				reg = <0x0 0xFFE00000 0x0 0x10000>,
-> +				pnode-id = <0xf>;
-> +			};
-> +			tcm-b: tcm@1 {
-> +				reg = <0x0 0xFFE20000 0x0 0x10000>,
-> +				pnode-id = <0x10>;
-> +			};
-> +		};
-> +	} ;
+> +	return 0;
+> +}
 > +
-> +	zynqmp_ipi {
-> +		compatible = "xlnx,zynqmp-ipi-mailbox";
-> +		interrupt-parent = <&gic>;
-> +		interrupts = <0 29 4>;
-> +		xlnx,ipi-id = <7>;
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		ranges;
+> +static struct platform_driver clk_mt8173_mm_drv = {
+> +	.driver = {
+> +		.name = "clk-mt8173-mm",
+> +	},
+> +	.probe = clk_mt8173_mm_probe,
+> +};
 > +
-> +		/* APU<->RPU0 IPI mailbox controller */
-> +		ipi_mailbox_rpu0: mailbox@ff90600 {
-> +			reg = <0xff990600 0x20>,
-> +			      <0xff990620 0x20>,
-> +			      <0xff9900c0 0x20>,
-> +			      <0xff9900e0 0x20>;
-> +			reg-names = "local_request_region",
-> +				    "local_response_region",
-> +				    "remote_request_region",
-> +				    "remote_response_region";
-> +			#mbox-cells = <1>;
-> +			xlnx,ipi-id = <1>;
-> +		};
-> +	};
-> -- 
-> 2.7.4
+> +builtin_platform_driver(clk_mt8173_mm_drv);
+> diff --git a/drivers/clk/mediatek/clk-mt8173.c b/drivers/clk/mediatek/clk-mt8173.c
+> index 537a7f49b0f7..8f898ac476c0 100644
+> --- a/drivers/clk/mediatek/clk-mt8173.c
+> +++ b/drivers/clk/mediatek/clk-mt8173.c
+> @@ -753,93 +753,6 @@ static const struct mtk_gate img_clks[] __initconst = {
+>  	GATE_IMG(CLK_IMG_FD, "img_fd", "mm_sel", 11),
+>  };
+>  
+> -static const struct mtk_gate_regs mm0_cg_regs __initconst = {
+> -	.set_ofs = 0x0104,
+> -	.clr_ofs = 0x0108,
+> -	.sta_ofs = 0x0100,
+> -};
+> -
+> -static const struct mtk_gate_regs mm1_cg_regs __initconst = {
+> -	.set_ofs = 0x0114,
+> -	.clr_ofs = 0x0118,
+> -	.sta_ofs = 0x0110,
+> -};
+> -
+> -#define GATE_MM0(_id, _name, _parent, _shift) {			\
+> -		.id = _id,					\
+> -		.name = _name,					\
+> -		.parent_name = _parent,				\
+> -		.regs = &mm0_cg_regs,				\
+> -		.shift = _shift,				\
+> -		.ops = &mtk_clk_gate_ops_setclr,		\
+> -	}
+> -
+> -#define GATE_MM1(_id, _name, _parent, _shift) {			\
+> -		.id = _id,					\
+> -		.name = _name,					\
+> -		.parent_name = _parent,				\
+> -		.regs = &mm1_cg_regs,				\
+> -		.shift = _shift,				\
+> -		.ops = &mtk_clk_gate_ops_setclr,		\
+> -	}
+> -
+> -static const struct mtk_gate mm_clks[] __initconst = {
+> -	/* MM0 */
+> -	GATE_MM0(CLK_MM_SMI_COMMON, "mm_smi_common", "mm_sel", 0),
+> -	GATE_MM0(CLK_MM_SMI_LARB0, "mm_smi_larb0", "mm_sel", 1),
+> -	GATE_MM0(CLK_MM_CAM_MDP, "mm_cam_mdp", "mm_sel", 2),
+> -	GATE_MM0(CLK_MM_MDP_RDMA0, "mm_mdp_rdma0", "mm_sel", 3),
+> -	GATE_MM0(CLK_MM_MDP_RDMA1, "mm_mdp_rdma1", "mm_sel", 4),
+> -	GATE_MM0(CLK_MM_MDP_RSZ0, "mm_mdp_rsz0", "mm_sel", 5),
+> -	GATE_MM0(CLK_MM_MDP_RSZ1, "mm_mdp_rsz1", "mm_sel", 6),
+> -	GATE_MM0(CLK_MM_MDP_RSZ2, "mm_mdp_rsz2", "mm_sel", 7),
+> -	GATE_MM0(CLK_MM_MDP_TDSHP0, "mm_mdp_tdshp0", "mm_sel", 8),
+> -	GATE_MM0(CLK_MM_MDP_TDSHP1, "mm_mdp_tdshp1", "mm_sel", 9),
+> -	GATE_MM0(CLK_MM_MDP_WDMA, "mm_mdp_wdma", "mm_sel", 11),
+> -	GATE_MM0(CLK_MM_MDP_WROT0, "mm_mdp_wrot0", "mm_sel", 12),
+> -	GATE_MM0(CLK_MM_MDP_WROT1, "mm_mdp_wrot1", "mm_sel", 13),
+> -	GATE_MM0(CLK_MM_FAKE_ENG, "mm_fake_eng", "mm_sel", 14),
+> -	GATE_MM0(CLK_MM_MUTEX_32K, "mm_mutex_32k", "rtc_sel", 15),
+> -	GATE_MM0(CLK_MM_DISP_OVL0, "mm_disp_ovl0", "mm_sel", 16),
+> -	GATE_MM0(CLK_MM_DISP_OVL1, "mm_disp_ovl1", "mm_sel", 17),
+> -	GATE_MM0(CLK_MM_DISP_RDMA0, "mm_disp_rdma0", "mm_sel", 18),
+> -	GATE_MM0(CLK_MM_DISP_RDMA1, "mm_disp_rdma1", "mm_sel", 19),
+> -	GATE_MM0(CLK_MM_DISP_RDMA2, "mm_disp_rdma2", "mm_sel", 20),
+> -	GATE_MM0(CLK_MM_DISP_WDMA0, "mm_disp_wdma0", "mm_sel", 21),
+> -	GATE_MM0(CLK_MM_DISP_WDMA1, "mm_disp_wdma1", "mm_sel", 22),
+> -	GATE_MM0(CLK_MM_DISP_COLOR0, "mm_disp_color0", "mm_sel", 23),
+> -	GATE_MM0(CLK_MM_DISP_COLOR1, "mm_disp_color1", "mm_sel", 24),
+> -	GATE_MM0(CLK_MM_DISP_AAL, "mm_disp_aal", "mm_sel", 25),
+> -	GATE_MM0(CLK_MM_DISP_GAMMA, "mm_disp_gamma", "mm_sel", 26),
+> -	GATE_MM0(CLK_MM_DISP_UFOE, "mm_disp_ufoe", "mm_sel", 27),
+> -	GATE_MM0(CLK_MM_DISP_SPLIT0, "mm_disp_split0", "mm_sel", 28),
+> -	GATE_MM0(CLK_MM_DISP_SPLIT1, "mm_disp_split1", "mm_sel", 29),
+> -	GATE_MM0(CLK_MM_DISP_MERGE, "mm_disp_merge", "mm_sel", 30),
+> -	GATE_MM0(CLK_MM_DISP_OD, "mm_disp_od", "mm_sel", 31),
+> -	/* MM1 */
+> -	GATE_MM1(CLK_MM_DISP_PWM0MM, "mm_disp_pwm0mm", "mm_sel", 0),
+> -	GATE_MM1(CLK_MM_DISP_PWM026M, "mm_disp_pwm026m", "pwm_sel", 1),
+> -	GATE_MM1(CLK_MM_DISP_PWM1MM, "mm_disp_pwm1mm", "mm_sel", 2),
+> -	GATE_MM1(CLK_MM_DISP_PWM126M, "mm_disp_pwm126m", "pwm_sel", 3),
+> -	GATE_MM1(CLK_MM_DSI0_ENGINE, "mm_dsi0_engine", "mm_sel", 4),
+> -	GATE_MM1(CLK_MM_DSI0_DIGITAL, "mm_dsi0_digital", "dsi0_dig", 5),
+> -	GATE_MM1(CLK_MM_DSI1_ENGINE, "mm_dsi1_engine", "mm_sel", 6),
+> -	GATE_MM1(CLK_MM_DSI1_DIGITAL, "mm_dsi1_digital", "dsi1_dig", 7),
+> -	GATE_MM1(CLK_MM_DPI_PIXEL, "mm_dpi_pixel", "dpi0_sel", 8),
+> -	GATE_MM1(CLK_MM_DPI_ENGINE, "mm_dpi_engine", "mm_sel", 9),
+> -	GATE_MM1(CLK_MM_DPI1_PIXEL, "mm_dpi1_pixel", "lvds_pxl", 10),
+> -	GATE_MM1(CLK_MM_DPI1_ENGINE, "mm_dpi1_engine", "mm_sel", 11),
+> -	GATE_MM1(CLK_MM_HDMI_PIXEL, "mm_hdmi_pixel", "dpi0_sel", 12),
+> -	GATE_MM1(CLK_MM_HDMI_PLLCK, "mm_hdmi_pllck", "hdmi_sel", 13),
+> -	GATE_MM1(CLK_MM_HDMI_AUDIO, "mm_hdmi_audio", "apll1", 14),
+> -	GATE_MM1(CLK_MM_HDMI_SPDIF, "mm_hdmi_spdif", "apll2", 15),
+> -	GATE_MM1(CLK_MM_LVDS_PIXEL, "mm_lvds_pixel", "lvds_pxl", 16),
+> -	GATE_MM1(CLK_MM_LVDS_CTS, "mm_lvds_cts", "lvds_cts", 17),
+> -	GATE_MM1(CLK_MM_SMI_LARB4, "mm_smi_larb4", "mm_sel", 18),
+> -	GATE_MM1(CLK_MM_HDMI_HDCP, "mm_hdmi_hdcp", "hdcp_sel", 19),
+> -	GATE_MM1(CLK_MM_HDMI_HDCP24M, "mm_hdmi_hdcp24m", "hdcp_24m_sel", 20),
+> -};
+> -
+>  static const struct mtk_gate_regs vdec0_cg_regs __initconst = {
+>  	.set_ofs = 0x0000,
+>  	.clr_ofs = 0x0004,
+> @@ -1144,23 +1057,6 @@ static void __init mtk_imgsys_init(struct device_node *node)
+>  }
+>  CLK_OF_DECLARE(mtk_imgsys, "mediatek,mt8173-imgsys", mtk_imgsys_init);
+>  
+> -static void __init mtk_mmsys_init(struct device_node *node)
+> -{
+> -	struct clk_onecell_data *clk_data;
+> -	int r;
+> -
+> -	clk_data = mtk_alloc_clk_data(CLK_MM_NR_CLK);
+> -
+> -	mtk_clk_register_gates(node, mm_clks, ARRAY_SIZE(mm_clks),
+> -						clk_data);
+> -
+> -	r = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
+> -	if (r)
+> -		pr_err("%s(): could not register clock provider: %d\n",
+> -			__func__, r);
+> -}
+> -CLK_OF_DECLARE(mtk_mmsys, "mediatek,mt8173-mmsys", mtk_mmsys_init);
+> -
+>  static void __init mtk_vdecsys_init(struct device_node *node)
+>  {
+>  	struct clk_onecell_data *clk_data;
+> diff --git a/drivers/soc/mediatek/Kconfig b/drivers/soc/mediatek/Kconfig
+> index 2114b563478c..e84513318725 100644
+> --- a/drivers/soc/mediatek/Kconfig
+> +++ b/drivers/soc/mediatek/Kconfig
+> @@ -44,4 +44,12 @@ config MTK_SCPSYS
+>  	  Say yes here to add support for the MediaTek SCPSYS power domain
+>  	  driver.
+>  
+> +config MTK_MMSYS
+> +	bool "MediaTek MMSYS Support"
+> +	depends on COMMON_CLK_MT8173_MMSYS
+> +	default COMMON_CLK_MT8173_MMSYS
+> +	help
+> +	  Say yes here to add support for the MediaTek Multimedia
+> +	  Subsystem (MMSYS).
+> +
+>  endmenu
+> diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
+> index b01733074ad6..01f9f873634a 100644
+> --- a/drivers/soc/mediatek/Makefile
+> +++ b/drivers/soc/mediatek/Makefile
+> @@ -3,3 +3,4 @@ obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
+>  obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o
+>  obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
+>  obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
+> +obj-$(CONFIG_MTK_MMSYS) += mtk-mmsys.o
+> diff --git a/drivers/soc/mediatek/mtk-mmsys.c b/drivers/soc/mediatek/mtk-mmsys.c
+> new file mode 100644
+> index 000000000000..dbdfedd302fa
+> --- /dev/null
+> +++ b/drivers/soc/mediatek/mtk-mmsys.c
+> @@ -0,0 +1,50 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Copyright (c) 2014 MediaTek Inc.
+> + * Author: James Liao <jamesjj.liao@mediatek.com>
+> + */
+> +
+> +#include <linux/clk-provider.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+> +
+> +struct mtk_mmsys_driver_data {
+> +	const char *clk_driver;
+> +};
+> +
+> +static const struct mtk_mmsys_driver_data mt8173_mmsys_driver_data = {
+> +	.clk_driver = "clk-mt8173-mm",
+> +};
+> +
+> +static int mtk_mmsys_probe(struct platform_device *pdev)
+> +{
+> +	const struct mtk_mmsys_driver_data *data;
+> +	struct platform_device *clks;
+> +
+> +	data = of_device_get_match_data(&pdev->dev);
+> +
+> +	clks = platform_device_register_data(&pdev->dev, data->clk_driver,
+> +					     PLATFORM_DEVID_AUTO, NULL, 0);
+> +	if (IS_ERR(clks))
+> +		return PTR_ERR(clks);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id of_match_mtk_mmsys[] = {
+> +	{
+> +		.compatible = "mediatek,mt8173-mmsys",
+> +		.data = &mt8173_mmsys_driver_data,
+> +	},
+> +	{ }
+> +};
+> +
+> +static struct platform_driver mtk_mmsys_drv = {
+> +	.driver = {
+> +		.name = "mtk-mmsys",
+> +		.of_match_table = of_match_mtk_mmsys,
+> +	},
+> +	.probe = mtk_mmsys_probe,
+> +};
+> +
+> +builtin_platform_driver(mtk_mmsys_drv);
 > 
 
 _______________________________________________
