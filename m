@@ -2,61 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AC7F1811AE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:20:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE8D91811C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:21:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=etN7MvqsRrUvVEQTdORgf7BREHnZwdzmHkWej5kxqZE=; b=lIM0tz5+bAFRvF
-	0zvl2hYdL6+vmOSwnei+3VfEUciaIKDhb+89GUXu7SWggwKlOJ9Uj7xP7cvzxXyyVLcG7YvE+j2o0
-	Q8SqnQGRYSZNVNAPNY51yrp5c5qiiF98xfU/OLio0XS2jO+ZauwLkLK2HeBuyyU2jLxCl1SsDno6e
-	Z+MmQoudkM7Eiu0YbxjIjzTGVXdJZ2wAc8ZhjmaI8r0lH4volEXnv01t0mLTdovaq/b+GjI3kZLDZ
-	YKIDVMaBM/anB6md2gOqgyAYi/0FrIQ6aqQvd/3bebCcnS8fwhSO6V0UY657J7ixIHytdSciVm++C
-	iRYO+SbNzycN6g2tb4fw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UXzPzgNlhH1kghaKnMUsTX9FCLeud52+e8ID3N2bI0M=; b=OqYULzmEXH02KI
+	O7wekROU8ZH/HljbTrrBNg5KMhgCOs2CmTZxPRSKU5DNote147J5xtwYxqksPcXiJEHELb9DgkSPs
+	brQeF4llZQktFueYe8iCSy+xArEcydusPJh64hpSA81sM38F64qP56MuaHsSRJlhtlszEihwf/kqN
+	u57lRL0cjsONfrwU/xIhQb0av0/2d7Kvsxo/jFATJ4QuMCkUUekUGsajQWLSEM+6a4emVtWZ+rBnN
+	C0F9cTUVECKE33xfkLmhvaRIfRfzW5F26TVPSMiDYhLxATfFWtfnWd7rT2unIhclKfGLiJ91S9+WU
+	ROsCs+MnBr/fmK011tIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBvfI-0000R1-0n; Wed, 11 Mar 2020 07:20:28 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jBvgL-0000jT-1j; Wed, 11 Mar 2020 07:21:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBvf7-0000Me-Vh
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:20:20 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 1D0CEFE6F693335B3302;
- Wed, 11 Mar 2020 15:20:06 +0800 (CST)
-Received: from [127.0.0.1] (10.173.221.230) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.487.0;
- Wed, 11 Mar 2020 15:19:55 +0800
-Subject: Re: [RFC] KVM: arm64: support enabling dirty log graually in small
- chunks
-To: Marc Zyngier <maz@kernel.org>
-References: <20200309085727.1106-1-zhukeqian1@huawei.com>
- <4b85699ec1d354cc73f5302560231f86@misterjones.org>
- <64925c8b-af3d-beb5-bc9b-66ef1e47f92d@huawei.com>
- <a642a79ea9190542a9098e4c9dc5a9f2@kernel.org>
-From: zhukeqian <zhukeqian1@huawei.com>
-Message-ID: <9ddefc54-dd5b-0555-0aaa-00a3a23febcf@huawei.com>
-Date: Wed, 11 Mar 2020 15:19:54 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1jBvgD-0000j8-HE
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:21:26 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EEAB6208C3;
+ Wed, 11 Mar 2020 07:21:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583911285;
+ bh=HFgQsFafmI/OxfAYN6pkvSFzN+VE9N8cOj3/785AOAg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FT3dKhKLSCgP8BDii7OiNin+VH3UC4QGUezGxjeWOabg4EBr+wgq4z4uMPzY92LDO
+ hVLL3ewEjvgFg+1jSMGDtqwtqOIhPPh3Y5GwHpu68unYzh/d7vnknSPcwbT2V1xjLq
+ nxGkaJwLnDLyV3ko87yNa1F/JrrMH31Exg0hB124=
+Date: Wed, 11 Mar 2020 15:21:17 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/2] arm64: dts: imx8mq: Align iomuxc node name
+Message-ID: <20200311072117.GN29269@dragon>
+References: <1582695378-25461-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <a642a79ea9190542a9098e4c9dc5a9f2@kernel.org>
-X-Originating-IP: [10.173.221.230]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <1582695378-25461-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_002018_606792_01472B4A 
-X-CRM114-Status: GOOD (  13.88  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200311_002125_593227_366D081D 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,85 +77,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-kernel@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Jay
- Zhou <jianjay.zhou@huawei.com>, Paolo Bonzini <pbonzini@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, abel.vesa@nxp.com,
+ andrew.smirnov@gmail.com, s.hauer@pengutronix.de, angus@akkea.ca,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com, agx@sigxcpu.org,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 2020/3/10 21:16, Marc Zyngier wrote:
-> On 2020-03-10 08:26, zhukeqian wrote:
->> Hi Marc,
->>
->> On 2020/3/9 19:45, Marc Zyngier wrote:
->>> Kegian,
+On Wed, Feb 26, 2020 at 01:36:17PM +0800, Anson Huang wrote:
+> Node name should be generic, use "pinctrl" instead of "iomuxc"
+> for all i.MX8M SoCs.
 > 
-> [...]
-> 
->>> Is there a userspace counterpart to it?
->>>
->> As this KVM/x86 related changes have not been merged to mainline
->> kernel, some little modification is needed on mainline Qemu.
-> 
-> Could you please point me to these changes?
-I made some changes locally listed below.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-However, Qemu can choose to enable KVM_DIRTY_LOG_INITIALLY_SET or not.
-Here I made no judgement on dirty_log_manual_caps because I just want
-to verify the optimization of this patch.
-
-diff --git a/accel/kvm/kvm-all.c b/accel/kvm/kvm-all.c
-index 439a4efe52..1611f644a4 100644
---- a/accel/kvm/kvm-all.c
-+++ b/accel/kvm/kvm-all.c
-@@ -2007,14 +2007,16 @@ static int kvm_init(MachineState *ms)
-     s->coalesced_pio = s->coalesced_mmio &&
-                        kvm_check_extension(s, KVM_CAP_COALESCED_PIO);
-
--    s->manual_dirty_log_protect =
-+    uint64_t dirty_log_manual_caps =
-         kvm_check_extension(s, KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2);
--    if (s->manual_dirty_log_protect) {
--        ret = kvm_vm_enable_cap(s, KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2, 0, 1);
-+    if (dirty_log_manual_caps) {
-+        ret = kvm_vm_enable_cap(s, KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2, 0,
-+                                dirty_log_manual_caps);
-         if (ret) {
-             warn_report("Trying to enable KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 "
-                         "but failed.  Falling back to the legacy mode. ");
--            s->manual_dirty_log_protect = false;
-+        } else {
-+            s->manual_dirty_log_protect = true;
-         }
-     }
-
-> 
->> As I tested this patch on a 128GB RAM Linux VM with no huge pages, the
->> time of enabling dirty log will decrease obviously.
-> 
-> I'm not sure how realistic that is. Not having huge pages tends to lead
-> to pretty bad performance in general...
-Sure, this has no effect on guests which are all of huge pages.
-
-For my understanding, once a guest has normal pages (maybe are initialized
-at beginning or dissloved from huge pages), it can benefit from this patch.
-> 
-> Thanks,
-> 
->         M.
-Pretty thanks for your review.
-
-Thanks,
-Keqian
-
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
