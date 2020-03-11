@@ -2,69 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E9E6181389
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 09:46:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E281918138E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 09:47:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f5YBOWKurkFBA1hDEpo2xOWsf1EuvbSyWZMe0xlJvfg=; b=r4/ChiZvtNAn9o
-	iBJxEAphinNtwC1eP+PbAApN2C90KBDgDeN5U8jjm1bFQzbjXVGXsxRAq/vKFox2el1Hg8E1pkHfl
-	J9I6nJfKsBGE0uL5y82SldpUYa6PXg9zi53NFqagExuh9kyqaTkSNX8aYV0QjpnTC54Wls0979oKk
-	pkX0OqedF5sHpXJUB9gUJnqjy77+3eZhDjcLXCOBQrNI7y8nDpaPg4M9Tda5EUp2id+JxD15Apc+m
-	8jp02GMtDFqqv80/uZCxo8ttROUSSWb/bm6lMIjlCy5YknUEguBDHF1CcY5TqFzQPBOwhwpOK+AU9
-	uSB61eLqj+eMzH6Fr5lA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=COYATgFZyBO3/j6rsnsBsGvm2XbDlX0fu0W0FXCCJFE=; b=t8g9LDFgMIZMT3
+	8HCWfn3VLtWAlOHBkf4a58VY4is6NCOLFKrcVqfV404RF92tAD5EDrH/VrS6knQi3k06W1Ze9bNdZ
+	o4uTy6pF8C6CJZcewX1miU/XycusaTUbPJJrQrN4N7eI+jtyFpNIiCDh2DN6x19s+q9uYO/DvnpvD
+	zZovbpLgckoUwLZISeNSkXsWD3s90V+K7B3QnBLRJrqw36Jvt025WZNwgR38vLHjsZ661dBTm+z5q
+	rTDVi1MbhJHW2yWetvnqaK+uxUxryEuPV7+u7DKkXgJk+Y0lWQkCEJyEpFYHd2Mb868ZtxZ7Ipuzo
+	pipPkILjjQIoT35gkMFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBx09-0002za-SI; Wed, 11 Mar 2020 08:46:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jBx1A-0003O8-5I; Wed, 11 Mar 2020 08:47:08 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBwzy-0002z5-IK
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 08:45:55 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 98BB820637;
- Wed, 11 Mar 2020 08:45:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583916354;
- bh=Tx86wnCMyMjttXqHLNFN2Ue65Q0KtIi7r5++8isH6Jk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ob1Ww4y2ywlV+9yX+rvEdfOXe53hUhRBtuHwXZ0b9xBD7ff3XrmsqP7SWdLXusxAX
- quiXCdwZgcVMcOhHjOqgPu//MHoD9/5MokBLirBrZGKkdtieo0NHCkZuoEcNB9YdU9
- 2XtOny+8/I2kkg1EyaXIFL8qskh0gT3uWnZ6j4EA=
-Date: Wed, 11 Mar 2020 16:45:45 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: Re: [PATCH v1] ARM: dts: imx6dl-riotboard: properly define rgmii PHY
-Message-ID: <20200311084543.GF29269@dragon>
-References: <20200304065436.24917-1-o.rempel@pengutronix.de>
+ id 1jBx12-0003NX-Hd
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 08:47:02 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 2A97F20600;
+ Wed, 11 Mar 2020 09:46:58 +0100 (CET)
+Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 1A3772007D;
+ Wed, 11 Mar 2020 09:46:58 +0100 (CET)
+Subject: Re: [PATCH -next 011/491] ARM/QUALCOMM SUPPORT: Use fallthrough;
+To: Joe Perches <joe@perches.com>
+References: <cover.1583896344.git.joe@perches.com>
+ <2e6818291503f032e7662f1fa45fb64c7751a7ae.1583896348.git.joe@perches.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <c9ae6eed-6320-56c2-6248-b9c52e7d34d0@free.fr>
+Date: Wed, 11 Mar 2020 09:46:58 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200304065436.24917-1-o.rempel@pengutronix.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <2e6818291503f032e7662f1fa45fb64c7751a7ae.1583896348.git.joe@perches.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Wed Mar 11 09:46:58 2020 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_014554_627970_92CDA873 
-X-CRM114-Status: GOOD (  16.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200311_014700_732383_5B1924B4 
+X-CRM114-Status: UNSURE (   7.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.2 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [marc.w.gonzalez[at]free.fr]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 URI_HEX                URI: URI hostname has long hexadecimal sequence
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,72 +70,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Florian Fainelli <f.fainelli@gmail.com>, devicetree@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, netdev@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Mark Brown <broonie@kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 04, 2020 at 07:54:36AM +0100, Oleksij Rempel wrote:
-> The Atheros AR8035 PHY can be autodetected but can't use interrupt
-> support provided on this board. Define MDIO bus and the PHY node to make
-> it work properly.
-> 
-> Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
-> ---
->  arch/arm/boot/dts/imx6dl-riotboard.dts | 18 +++++++++++++++++-
->  1 file changed, 17 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/boot/dts/imx6dl-riotboard.dts b/arch/arm/boot/dts/imx6dl-riotboard.dts
-> index 829654e1835a..17c637b66387 100644
-> --- a/arch/arm/boot/dts/imx6dl-riotboard.dts
-> +++ b/arch/arm/boot/dts/imx6dl-riotboard.dts
-> @@ -89,11 +89,27 @@ &fec {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet>;
->  	phy-mode = "rgmii-id";
-> -	phy-reset-gpios = <&gpio3 31 GPIO_ACTIVE_LOW>;
-> +	phy-handle = <&rgmii_phy>;
->  	interrupts-extended = <&gpio1 6 IRQ_TYPE_LEVEL_HIGH>,
->  			      <&intc 0 119 IRQ_TYPE_LEVEL_HIGH>;
->  	fsl,err006687-workaround-present;
->  	status = "okay";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		/* Atheros AR8035 PHY */
-> +		rgmii_phy: ethernet-phy@4 {
-> +			reg = <4>;
-> +
-> +			interrupts-extended = <&gpio1 28 IRQ_TYPE_LEVEL_LOW>;
-> +
+[ Trimming recipients list ]
 
-Drop these unnecessary newlines.
+On 11/03/2020 05:51, Joe Perches wrote:
 
-Shawn
+> Convert the various uses of fallthrough comments to fallthrough;
 
-> +			reset-gpios = <&gpio3 31 GPIO_ACTIVE_LOW>;
-> +			reset-assert-us = <10000>;
-> +			reset-deassert-us = <1000>;
-> +		};
-> +	};
->  };
->  
->  &gpio1 {
-> -- 
-> 2.25.1
-> 
+What is the rationale for such a change?
+Portability to different tool-chains? Something else?
+
+> Done via script
+> Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
+
+Message-ID <b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com>
+not found
+
+1 partial match found:
+
+https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe@perches.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
