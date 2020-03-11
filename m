@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45A8D1817E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 13:22:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ED2E1817EB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 13:24:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=8IyVDzNfz8qmoHteulrpoARxZv3QlxdocOWacobcGng=; b=sCe5J9SnCspVpvOWbkcOxax83O
-	tY9s51FjKOcs1Bd9uJnDSgRmmjZI1/GOzp+caIdlSuyQdWCtd4YOZMY+Cp4DioBpxCxdQjZPHDliX
-	zmUhGH+jEHJqseOKC2YqeGTcgA6NLNwtIAk8Wt+lOYvaN4U2LCJYBAT8ng3SDT4RACFfiuhpSb+4Y
-	KHLbT18p1/K+4pVeASRw3nFeOsC9Q9IF9qDOKDHA5qKPXvY9KXsnbDYZ2fS1Sth7oS0im9zsUxiMQ
-	fX9rgx81HtR0+FEt2KD61poAeZeNxJ49psorHup55RW3FETvQjPlhNXmSti2bKJkdRH0MMYwtS5I7
-	PrUlDb8A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rr6r5sv5k1uTV0RBnaQDn2PMyWbOWzBMKKmeZnDLpCQ=; b=tFKUUHvl8a5aCs
+	iT0asG/WjWaa/STO724Ty1+fzhObCibh1SoaeBHaNAeBzhDP2ZRfB5vYCi6KdsROBDbLx2MCa8I6G
+	uV3E3puif1ivkgONCfD7+FWIc07xtQejIXKnm+z62YJVjiHZGwNaJawQ3JpWnfgNvLezD2t5aKmh8
+	EuHvvL6Y8lXoWg+XH7USC6xUvqitutCKi8MVmJDTi3XP5jsofquSmHUmYDS0SqkFf/FcRz2/rgdqP
+	rM+lrSUFnUDGFRPglbXTNIlqjRD4adG2geDOdIuBKGYBSvNGAAMW8fmlZgOU3T0ddaT4oVipqLKDC
+	Eh/OMunhKUcMJafOT0Rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC0N4-0005oz-JQ; Wed, 11 Mar 2020 12:21:58 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jC0PZ-0006PX-DC; Wed, 11 Mar 2020 12:24:33 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC0Me-0005cO-O3; Wed, 11 Mar 2020 12:21:34 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r15so2343272wrx.6;
- Wed, 11 Mar 2020 05:21:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=6tI8IqiFkVMvrJ+LF1HeAfS7yMDlsfMjzHjhhujiGLg=;
- b=Ipc4nGGldeGiRNuTzxX+94IZMSFEy/DelczRwhnFCF1XEVPCvXkXJQvAKilzWQi+P0
- 5SqbX0JaMU8nI6UCls0Rn/kSyD4/rQnGO9uNzBFf1QP+bQtpalqR93/fG5HZIMSzvD3l
- uTHUCJSpYWZvAohvLVDR9tXOCE40D+RwUQcY/9SSTWkQqZ3HP94wTsR8n7vPxfPnuuV8
- f5elSVSJ+xhyAqVB3K42JO6cZB8UPQqDDfWKYhNa3tR1weoJUqnsJ7MR/YWqOOxulCi5
- zZSLFA30j7+EV5Uat4AvX+qmia2mtfTiASsFkdEwIFLBz8CG3qIuzV5u7Rm8XtpYPYbg
- IePQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=6tI8IqiFkVMvrJ+LF1HeAfS7yMDlsfMjzHjhhujiGLg=;
- b=d8HUzt2nTLIho9MVRpYVt7srIg0lKfRwTXLRIBnLWdOgDNo/EoV+WJUOkJ/lyiSXHC
- hyaplj5MXXkgIOGOE0UYeDHy0yMRwUsKnVZQSAc0FRkTxDOt2iGiWZAUp6zFhmURX7ax
- UO9/rpGrLvulO+fCsFJcM5ImYnkrZ1Hrdhv8bzQNhOOP/E/uESMdFkkF8VNq2yxFo+qx
- OTydFpDC0nKgnucslhI5F2LqfecmoS4SeISSyFRXRkEPy4Z0dcaC8bjWh9Trt8N2iORh
- cXZYkpNMjC4id7ArmnQcRZIFd1rXcLIL0O4+6I66WF/wRuGyynTBMo7cLy4wXX0mNSLV
- hAwA==
-X-Gm-Message-State: ANhLgQ1fZ7xdap8WmrdNKK2PShOF8UuG93a7QrD9aVWpN8xidHMgDLdw
- aRi4YQ0VHslg8B/kvFnS10Aes5QJ
-X-Google-Smtp-Source: ADFU+vswhcbaVOoEw7phI5b6dKzfHaE+NTsrEgnTVYhOrh/989nyMb/sImno+ijXAmm6my+y9cFQYg==
-X-Received: by 2002:a05:6000:118c:: with SMTP id
- g12mr4282670wrx.341.1583929290177; 
- Wed, 11 Mar 2020 05:21:30 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id u25sm7998875wml.17.2020.03.11.05.21.29
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Mar 2020 05:21:29 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v2 2/2] dt-bindings: usb: dwc2: add compatible property for
- rk3368 usb
-Date: Wed, 11 Mar 2020 13:21:21 +0100
-Message-Id: <20200311122121.8912-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200311122121.8912-1-jbx6244@gmail.com>
-References: <20200311122121.8912-1-jbx6244@gmail.com>
+ id 1jC0PR-0006Ov-SI
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 12:24:27 +0000
+Received: from ip5f5bf7ec.dynamic.kabel-deutschland.de ([95.91.247.236]
+ helo=wittgenstein) by youngberry.canonical.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <christian.brauner@ubuntu.com>)
+ id 1jC0PJ-0001lN-7Q; Wed, 11 Mar 2020 12:24:17 +0000
+Date: Wed, 11 Mar 2020 13:24:16 +0100
+From: Christian Brauner <christian.brauner@ubuntu.com>
+To: Walter Wu <walter-zh.wu@mediatek.com>
+Subject: Re: [PATCH] pid: fix uninitialized var warnings
+Message-ID: <20200311122416.p4bz5twufd3kdzqs@wittgenstein>
+References: <20200311122049.11589-1-walter-zh.wu@mediatek.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200311122049.11589-1-walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_052132_781274_23FFE945 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200311_052426_049200_8BDEEEF7 
+X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [91.189.89.112 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,54 +64,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, Oleg Nesterov <oleg@redhat.com>,
+ linux-kernel@vger.kernel.org, Christian Brauner <christian@brauner.io>,
+ Andrew Morton <akpm@linux-foundation.org>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A test with the command below gives for example this error:
+On Wed, Mar 11, 2020 at 08:20:49PM +0800, Walter Wu wrote:
+> Compiling with gcc-9.2.1 points out below warnings. Fix it.
+> 
+> kernel/pid.c: In function 'alloc_pid':
+> kernel/pid.c:180:10: warning: 'retval' may be used uninitialized
+> in this function [-Wmaybe-uninitialized]
+> 
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Christian Brauner <christian@brauner.io>
+> Cc: Oleg Nesterov <oleg@redhat.com>
+> Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
 
-arch/arm64/boot/dts/rockchip/rk3368-evb-act8846.dt.yaml: usb@ff580000:
-compatible:
-['rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2']
-is not valid under any of the given schemas
+Thanks. A correct fix for this is already in my tree:
+https://git.kernel.org/pub/scm/linux/kernel/git/brauner/linux.git/commit/?h=fixes&id=10dab84caf400f2f5f8b010ebb0c7c4272ec5093
+(Background is 
+ https://git.kernel.org/pub/scm/linux/kernel/git/brauner/linux.git/commit/?h=fixes&id=b26ebfe12f34f372cf041c6f801fa49c3fb382c5
+ )
 
-The compatible property for rk3368 dwc2 usb was somehow never added to
-the documention. Fix this error by adding
-'rockchip,rk3368-usb', 'rockchip,rk3066-usb', 'snps,dwc2'
-to dwc2.yaml.
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/usb/dwc2.yaml
-
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
-Changes v2:
-  Combine compatible properties with enum.
----
- Documentation/devicetree/bindings/usb/dwc2.yaml | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
-index d8d3c7c22..4eda7f221 100644
---- a/Documentation/devicetree/bindings/usb/dwc2.yaml
-+++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
-@@ -25,6 +25,7 @@ properties:
-             - rockchip,rk3228-usb
-             - rockchip,rk3288-usb
-             - rockchip,rk3328-usb
-+            - rockchip,rk3368-usb
-             - rockchip,rv1108-usb
-           - const: rockchip,rk3066-usb
-           - const: snps,dwc2
--- 
-2.11.0
-
+ Christian
 
 _______________________________________________
 linux-arm-kernel mailing list
