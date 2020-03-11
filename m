@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E37B8181DD1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:28:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9BC6181DD5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:29:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l0WAcxKwXHL1u30Zl09XUxpR4dbrd27sUXfvg0BYw58=; b=rwFy4Cd3atKd/U/q0pU/G2Lls
-	nmi7NW+vH0ciPqcmJW/wZ44aJWn6Az9bRid3q1YhPKFTMgJBfSAPIroWId0YiAQeF/3MelVT45MFs
-	bnxjKE+ef/oM1VALMnbnQoaiEDZEA1N1LwuwgWAUaeABRBZUWtbJYZI9j6MepkDp/dwZmiecpCrWW
-	roC4nR0PrKHeuK5/n7RH7FZ6QGdhHnAufaDcilfLSaFI+PstmCr5B7lnUejTyYdqnuMxH+XztDb5g
-	MGeLZVqkRzTKtpX0IGD70S6rjnCUAI09geMaUkCDOuxSg8s5dj7t6646U4H/aq5qa+ri9FjTT/kSf
-	gek/ZixFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1AFUHSsaV60TUnXiyOSNOGp/Ap1+bMrT7uQFsktuNtc=; b=B3jvkt1z8P+w+A
+	5YocO7VS/9CivwxMVJOJ4xL0VaRq0SI/brsAMhsN6/zxs3e+FFG/I5oMpVtu6b4nrjixNXhbXdw19
+	GmZOFaVxnBv4LRAPmU8qhB6HG1tNzXXVB76gyuOLGesg4Mf+M5z9f6UHSh/S+WdgB55mq/XHj4gSF
+	BQXgodDifQGj8WR4+BOEdMq6W4e+VbJaZwz7ZzCEC174n0IuuX5b57TWB+K2d7/DU06828zYJozuM
+	hGM31oubka99os/cn1CCXNm0Gp9k4EAKjIWMg5DFhPDT5WnSttvQR51eVGZvthpmPzEmdBBrNLMrD
+	Abgu2YQPGU647I4Te+SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4Dr-0008Oy-Rh; Wed, 11 Mar 2020 16:28:43 +0000
+	id 1jC4EN-0000Da-EV; Wed, 11 Mar 2020 16:29:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4Dj-0008Nh-E4
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:28:36 +0000
+ id 1jC4EC-0000Cy-PO
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:29:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 74F8C31B;
- Wed, 11 Mar 2020 09:28:32 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EB3443F6CF;
- Wed, 11 Mar 2020 09:28:31 -0700 (PDT)
-Date: Wed, 11 Mar 2020 16:28:30 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Olivier MOYSAN <olivier.moysan@st.com>
-Subject: Re: [PATCH v3] ASoC: dt-bindings: stm32: convert spdfirx to
- json-schema
-Message-ID: <20200311162830.GG5411@sirena.org.uk>
-References: <20200117170352.16040-1-olivier.moysan@st.com>
- <d792a2b8-3b59-f04e-c24d-06185d60c734@st.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B8FD47FA;
+ Wed, 11 Mar 2020 09:29:03 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B93C63F6CF; Wed, 11 Mar 2020 09:29:00 -0700 (PDT)
+Date: Wed, 11 Mar 2020 16:28:58 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v8 00/11] arm64: Branch Target Identification support
+Message-ID: <20200311162858.GK3216816@arrakis.emea.arm.com>
+References: <20200227174417.23722-1-broonie@kernel.org>
+ <20200306102729.GC2503422@arrakis.emea.arm.com>
+ <20200309210505.GM4101@sirena.org.uk>
+ <20200310124226.GC4106@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <d792a2b8-3b59-f04e-c24d-06185d60c734@st.com>
-X-Cookie: I'm a Lisp variable -- bind me!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200310124226.GC4106@sirena.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_092835_515931_79972574 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200311_092904_861388_7B124F34 
+X-CRM114-Status: GOOD (  16.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,79 +64,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "robh@kernel.org" <robh@kernel.org>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tiwai@suse.com" <tiwai@suse.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "perex@perex.cz" <perex@perex.cz>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============2066939700472305178=="
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ "H . J . Lu " <hjl.tools@gmail.com>, Yu-cheng Yu <yu-cheng.yu@intel.com>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Mar 10, 2020 at 12:42:26PM +0000, Mark Brown wrote:
+> On Mon, Mar 09, 2020 at 09:05:05PM +0000, Mark Brown wrote:
+> > On Fri, Mar 06, 2020 at 10:27:29AM +0000, Catalin Marinas wrote:
+> 
+> > > Does this series affect uprobes in any way? I.e. can you probe a landing
+> > > pad?
+> 
+> > You can't probe a landing pad, uprobes on landing pads will be silently
+> > ignored so the program isn't disrupted, you just don't get the expected
+> > trace from those uprobes.  This isn't new with the BTI support since
+> > the landing pads are generally pointer auth instructions, these already
+> > can't be probed regardless of what's going on with this series.  It's
+> > already on the list to get sorted.
+> 
+> Sorry, I realized thanks to Amit's off-list prompting that I was testing
+> that I was verifying with the wrong kernel binary here (user error since
+> it took me a while to sort out uprobes) so this isn't quite right - you
+> can probe the landing pads with or without this series.
 
---===============2066939700472305178==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="w/VI3ydZO+RcZ3Ux"
-Content-Disposition: inline
+Can we not change aarch64_insn_is_nop() to actually return true only for
+NOP and ignore everything else in the hint space? We tend to re-use the
+hint instructions for new things in the architecture, so I'd rather
+white-list what we know we can safely probe than black-listing only some
+of the hint instructions.
 
+I haven't assessed the effort of doing the above (probably not a lot)
+but as a short-term workaround we could add the BTI and PAC hint
+instructions to the aarch64_insn_is_nop() (though my preferred option is
+the white-list one).
 
---w/VI3ydZO+RcZ3Ux
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Mar 11, 2020 at 03:37:01PM +0000, Olivier MOYSAN wrote:
-> Hi,
-> Kind reminder for this patch.
-
-Please don't send content free pings and please allow a reasonable time
-for review.  People get busy, go on holiday, attend conferences and so=20
-on so unless there is some reason for urgency (like critical bug fixes)
-please allow at least a couple of weeks for review.  If there have been
-review comments then people may be waiting for those to be addressed.
-
-Sending content free pings adds to the mail volume (if they are seen at
-all) which is often the problem and since they can't be reviewed
-directly if something has gone wrong you'll have to resend the patches
-anyway, so sending again is generally a better approach though there are
-some other maintainers who like them - if in doubt look at how patches
-for the subsystem are normally handled.
-
---w/VI3ydZO+RcZ3Ux
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5pEa0ACgkQJNaLcl1U
-h9DdKAf/RDfG02WXRCBnnFoaoVDDhiXfiLY3E3cosFMFo8a7Gmv/wb6FwPPevsyq
-MiA+WtsBBa8juOJ6PlmQ7IWC84GpUDFMpoeW7HkEMzGJ+CxF5su7kQCQfCG0XeR7
-xiTK0cF1l+zLaKcz2gkyO4P0pAu0eQbHF5MC9sEX7HsYd6qZd26GU4gpLOGqqZBN
-eMzdoSHCY8tJpZqbT0f9JnU5+el6wwfo8c3LPEmbzTBT6b6oCxc9fhXi8BIsTWsi
-64G1cgZIzc34qeX4JeAtb2lPBAKYd9Fm9bJOhGhf1XkIq8SOWlONePAb454reMOZ
-kiJO+xOE40GqCY82X5SD8I5A7DU4Og==
-=F+uO
------END PGP SIGNATURE-----
-
---w/VI3ydZO+RcZ3Ux--
-
-
---===============2066939700472305178==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2066939700472305178==--
-
