@@ -2,95 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86ECD1813E3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 10:03:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 027831813F7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 10:06:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BMGn1jjsWMXRGInrpa/rEjVSralnk6fe4Kv2j2jNxdU=; b=ELh7L70psoy5VZ
-	DrcMXgobz8WDgqHFspLDHHCUvndNpm9mFa8Xm37XR3O5NIfU7i9nJC6O/e/ltxN1sevGFa+h+83vZ
-	8tM5qNFvhszbRtXY1ARD64Fl/Wwr3lZ3KvaafgMeD7O8YO7z78llDLZsJVpU/pq7NfcuQ5ZQ4wztQ
-	lDT5NCJ8E7HeiLO9PQGDe2wtR/lCgzK5iLF65oKRXLH8ywO2vpZhYJrFNYuIABN69DmIDW4Vkl5ob
-	9NIuaAC3ebVpppyu8Xd1JKteSNWmbQSdyByBCV0GOEcFmkMbKsnNzodkAz7Z3NIzdKVONqcsb+eru
-	9G5d+u44iarU07qSuFbw==;
+	List-Owner; bh=ZwHdYMIPgWGXSYHONjYk50Ao6iQvdw+6p1fY6pPSn6Y=; b=GUH2HiZ+hiU70e
+	r+eUhtq8ul3Hy5ck/Vl1qXnH9djasaloA9KJOwJevQKaMZF/9faGpIBem4pAS4aOmHW+v+Xi2bWor
+	QjQQd4x2LTbsweWCtHZIVql68RHckU2i3g/3v9FoIeR81QiToBPJG6CcQ9xrsUDvkEtgOlsO9yuuH
+	D+4l6JUe91xAkV6WvM1WgNyIW6R4lTF5SgKGEwpW/6Md5HsVIJvfcghrotgTR/8FBEhb025DHSPP7
+	7xtyAZw1hltRNV4ywD0iB2tPV03JE3xmiGWE7QYEaFxlkOXDDeRNRCQzB7CaiG8NsSmkCYHL1reWe
+	N7kv3tqsgkTgzWFerKmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBxGt-0002Ft-Vl; Wed, 11 Mar 2020 09:03:23 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jBxJl-0004K8-L2; Wed, 11 Mar 2020 09:06:21 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBxGh-0002EY-Im
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 09:03:13 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id d8so677087pje.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 02:03:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=8bM/wCwSXrnJCqsSvi8wWOGSbVzcZwUzc890uChHZBM=;
- b=MREjE9QBCCArLm3xVHXuKh2eNZCJvpe+U6eHgBpAqgXckRvOTJXvl4rYPKvUsIuZft
- jSJc8Y9dEKJhD5RYe2r0DsZpdV9SzwzZeRyMzui9EsDm72JpbYGCzLRSNFsJ+iBi6iI+
- Rxhn6PWNk7akIN5WNAiF3YsIMwWOFHSnyBSVP64A2yUNuOD9jjCwCzq3Ze8QSEr7xZ0r
- CrX1ZjcHqj0shB7vUkzeN802e9xi7CVc2d1IV31kH5CEce+i3iNygy0t8ZUMlfSNop+1
- 4of2bEMFwEzqcuH/8QYIhAv5sbGJ2PThpb+CRC8AIhMywlqC1z0x95Vkt5bAki6IHgux
- dO0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=8bM/wCwSXrnJCqsSvi8wWOGSbVzcZwUzc890uChHZBM=;
- b=bW0X5zhmXoOPNXu47gBaHu3utLOpLBRoRT7ipvi4uXcvk+Wsj4buYe9KszwUO5aQii
- hIFmIOYVPkNqZpAUr8YDXZzTo03qUGqc4FQTiTr5J6k5I3/jyu8MTPU56uQo9GSEoG+0
- isyPRk62DNxEcRWN2QXXS1Z6m4EqA8B/BKXGlaw1PwGxeY15dGtbyijcLa8/74TzlSHU
- HmaDdpaINxbXhprYM12p4ye1AyaZUD3VTLTDpWjjFYvqVJJPXk6N60EPaOi9YVRbGgeV
- gpeKUtwHwFkt2j/sIBvb868proMZJtFErgOau7+hYqvBjYR28vOPuHESMpjhEiPB+EDA
- q39g==
-X-Gm-Message-State: ANhLgQ0tJBC5CrN4JoAvUj6j3Mzer6SNkyff2ihSvx0dG+fuD5ins4Bl
- +Sd01PookIMyMTarrhr4UpM=
-X-Google-Smtp-Source: ADFU+vuCDnh7w1xvfOVYsJQClMX8OE3C43uqARqIQzLzcdQQglFS7AAInUSwAo9xL8M4KffExDMNxA==
-X-Received: by 2002:a17:902:7248:: with SMTP id
- c8mr2219680pll.282.1583917391010; 
- Wed, 11 Mar 2020 02:03:11 -0700 (PDT)
-Received: from localhost ([106.51.232.35])
- by smtp.gmail.com with ESMTPSA id i6sm10456074pfe.62.2020.03.11.02.03.09
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 11 Mar 2020 02:03:10 -0700 (PDT)
-Date: Wed, 11 Mar 2020 14:33:08 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Nathan Chancellor <natechancellor@gmail.com>
-Subject: Re: [PATCH v4] MIPS: Replace setup_irq() by request_irq()
-Message-ID: <20200311090308.GA5060@afzalpc>
-References: <20200304203144.GA4323@alpha.franken.de>
- <20200305115759.3186-1-afzal.mohd.ma@gmail.com>
- <20200311053126.GA48442@ubuntu-m2-xlarge-x86>
+ id 1jBxJZ-0004GL-Bu; Wed, 11 Mar 2020 09:06:10 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 11 Mar 2020 02:05:52 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,540,1574150400"; d="scan'208";a="234652853"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga007.fm.intel.com with ESMTP; 11 Mar 2020 02:05:49 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jBxJG-008h6u-OT; Wed, 11 Mar 2020 11:05:50 +0200
+Date: Wed, 11 Mar 2020 11:05:50 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [v1 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200311090550.GB1922688@smile.fi.intel.com>
+References: <20200310134603.30260-1-robert.foss@linaro.org>
+ <20200310134603.30260-3-robert.foss@linaro.org>
+ <20200310142652.GK1922688@smile.fi.intel.com>
+ <CAG3jFyu5S1H=r6pV92tc_a2LoCUnhb0mDbOegP2BCO8a5C1nVg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200311053126.GA48442@ubuntu-m2-xlarge-x86>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <CAG3jFyu5S1H=r6pV92tc_a2LoCUnhb0mDbOegP2BCO8a5C1nVg@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_020311_641991_E33EFCD0 
-X-CRM114-Status: GOOD (  12.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_020609_416291_12E415F7 
+X-CRM114-Status: GOOD (  10.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,58 +71,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Paul Burton <paulburton@kernel.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
- Jiaxun Yang <jiaxun.yang@flygoat.com>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
- Huacai Chen <chenhc@lemote.com>, Keguang Zhang <keguang.zhang@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, ben.kao@intel.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Jonathan.Cameron@huawei.com, matthias.bgg@gmail.com, mchehab@kernel.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Mar 10, 2020 at 04:55:20PM +0100, Robert Foss wrote:
+> On Tue, 10 Mar 2020 at 15:26, Andy Shevchenko
+> <andriy.shevchenko@linux.intel.com> wrote:
+> > On Tue, Mar 10, 2020 at 02:46:02PM +0100, Robert Foss wrote:
 
-On Tue, Mar 10, 2020 at 10:31:26PM -0700, Nathan Chancellor wrote:
+...
 
-> This patch regresses booting malta_defconfig with both GCC and clang
-> with this rootfs and QEMU 4.2.0:
-
-On a quick debug, Diff at the end seems to fix the issue. i realize that
-all the execution sequences that can alter the earlier statically
-defined struct irqaction fields needs to be taken care carefully,let me
-recheck the resolution here as well as other instances where this kind
-of issue can happen. i will sent a proper patch later.
-
+> > > +     ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
+> > > +     if (IS_ERR(ov8856->xvclk)) {
+> > > +             dev_err(&client->dev, "failed to get xvclk\n");
+> > > +             return -EINVAL;
+> > > +     }
+> >
+> > Previously it worked without clock provider, now you make a dependency.
+> >
+> > This won't work.
 > 
-> https://github.com/ClangBuiltLinux/continuous-integration/blob/a85e3e44c2570847e22ad8f92f317c2b007c4517/images/mipsel/rootfs.cpio
-> 
-> $ timeout 2m qemu-system-mipsel -machine malta -cpu 24Kf -initrd rootfs.cpio -kernel vmlinux -m 512m -display none -serial mon:stdio
-> 
-> just hangs. I have not done further debugging past the initial bisect.
+> So the ideal behavior would be to only use the xclk if it is provided?
 
-Thanks for the reproducer.
+Yes, make it optional.
 
-Regards
-afzal
+-- 
+With Best Regards,
+Andy Shevchenko
 
 
-diff --git a/arch/mips/kernel/cevt-r4k.c b/arch/mips/kernel/cevt-r4k.c
-index 64e917dfe6b2..d24e4f2985c3 100644
---- a/arch/mips/kernel/cevt-r4k.c
-+++ b/arch/mips/kernel/cevt-r4k.c
-@@ -252,7 +252,7 @@ unsigned int __weak get_c0_compare_int(void)
- 
- int r4k_clockevent_init(void)
- {
--	unsigned long flags = IRQF_PERCPU | IRQF_TIMER | IRQF_SHARED;
-+	unsigned long flags = IRQF_PERCPU | IRQF_TIMER;
- 	unsigned int cpu = smp_processor_id();
- 	struct clock_event_device *cd;
- 	unsigned int irq, min_delta;
 
 _______________________________________________
 linux-arm-kernel mailing list
