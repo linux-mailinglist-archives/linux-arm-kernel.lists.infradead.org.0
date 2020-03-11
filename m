@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 484B51823C7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 22:23:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C71451823C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 22:23:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OP8uGx/B7n2qjpWEoeEXhC2itr3/Kch7a9nRphihX04=; b=Ov+zkLveaS2vo3
-	hhE4JxhJ2sR1oBAl2u1Qz+P4MFZjwBbocwPVyiodctKLHfS2vPZfAAJQIv+YI92jR1MOTAHv9uTr4
-	/CGs9DuJaFVTJ0Fljo7qkksl7R+fO9CuyTuFdnnaDS4Jr70fDPECjSwJUqzfXpeqdF3fNCNU8/XYn
-	/SKN1yrnQcFbMAiN69BaShu2vqmGEKdp38LTjKHQpCnLc/AnHAVAh66Zla2zshHPv2NPFH6xLe3Hi
-	MQdpuM2x528Lrhh5IO3fHbftjr50Z5FrRqbdLYnfpNSQVObYgyD9NzmCEem4Hm1iU5G5HQmIzM2dS
-	I5m6+odY/yQOhvj3YfoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zKywelIDhmEZlsfvzZp/lRf+034tJbPdPnEmpPV0Lbw=; b=RaJCWPGt0r+1fI8+Eb43lp02O
+	eKGmQx1O7avY+HoqkR1qi6OkCKp4V9uKuE4jYgF/ue7h8cWVNASn/i7i144wGaTxa5F/MCsuMD07e
+	jyCdIhG3C47A06CLop0rxm1o+y6l3eN04UsT0jwxwp5QCAgoBfn1mUuilBc5KleCZBrCVeCXmyNYQ
+	7HveIpiLMyBriQAQsMora1WegR8RbspvBKDm2WzNaHAb+QHIw9wCZ9e0uS7jFJwvWNXRIw4FbJgQ6
+	uhkfo8f0JMqdTCfXjRiIF8tV/tng5oPNmqm9bAiGRLgQfFEjikO8MoONhA1l/8bbb4aMcJ0EDCpwb
+	iGlij64sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC8or-0007O2-Ks; Wed, 11 Mar 2020 21:23:13 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1jC8pB-0007ew-HY; Wed, 11 Mar 2020 21:23:33 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC8oe-0007NX-Br; Wed, 11 Mar 2020 21:23:01 +0000
-Received: by mail-ed1-x543.google.com with SMTP id dc19so4685691edb.10;
- Wed, 11 Mar 2020 14:22:59 -0700 (PDT)
+ id 1jC8oz-0007dm-2K; Wed, 11 Mar 2020 21:23:22 +0000
+Received: by mail-ed1-x544.google.com with SMTP id n18so4694375edw.9;
+ Wed, 11 Mar 2020 14:23:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=YJC1ymdLgOCO/JayWr54x/IbbfrzntAjTx/VyJt/DB4=;
- b=YGhSCq+PBKaSeh7msUAACEq9NtaL7LlJgQgbBw+nGJWXn80PdkpUGWGNX005OSKCpu
- YGFsBXKe+UiOvOboSxnBWfvrKVHLRkZLfbAbcljSFNvJqc71Riaujqvq7CR1AdYokM8t
- jmxHBhXoWiF8GNZiVNlos/x6CUhBnDYjw33io2bL7I3KqoJi7uz5d02UJX8NsD/JPoP2
- a8sGhvO8Ov/3ZVtDOrGhnzi8ZdJwPzwCQElgigb/v+tSvrPUKWW6EChv7W89hY9MO9DW
- rD0Bt/4z3DuKPoyeI5VLN6pCG1jn9Pj1K7GgYyH5Sxunbq66fVMJ6tYBcc5YJ1kC8EO8
- 5GlA==
+ :mime-version:in-reply-to;
+ bh=x0vMnUWbA/pguPmLGYbrnPPB2rzwjNFeXGV8tDl8EHc=;
+ b=Fc2K0QU+I9cvFeaqMSKIwlPM7MTIB/2ZcQHTNH1MDPDKjaJq0LzVJ9DE7tST1QYC3J
+ WVtNPu6J/WRMUcOx0hy0eDMOGB+d/fGguiWGHSBc74XdVMK8hyBq5Vx7H9lWKPzL1SFw
+ +ALXVPGDjcsSNyg+DR3qJ/NWUxK+WfYzLphHccF0fSM4zDOXplV5XaUzqnMRhRReNlt1
+ lRNVdC2bIYwWraFEbLJA8b2UF8wr2LsXihqfUuNJjtcAvjVqRywoGqifEDh/WFlpV8Cb
+ TCWmnWDYAqgwGy/5pfCHFBwGBkfsNUMIF9ofYM2CYnwMkE4EbYFt+f7FombJmPlp39XS
+ IVqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=YJC1ymdLgOCO/JayWr54x/IbbfrzntAjTx/VyJt/DB4=;
- b=UZG2YeDHglKE8jZCZnM/Kp8UWmfZS1PymyFFFn6Tdb4EFQa4i/HvtHe0CNi+qU2vgF
- 7PpLoDps8SjXX/FuNHkslqciKgcMtf7KnLlTFJ9PXleA8kSbMhAHDnV1Y2wuXAQHaaaE
- m8/WNuBIXSTuDp+4bNaw23sh9k9Lt2DtMCa41zvgfLk4FmAVy7c4aYYZqnCtjSz+q1Va
- xRiRhms2uiHIGXvgUyV2R0TfIjBYadVhcSNkN31nJp8k1wTarTMyxIwkecNL32xJ19qn
- 1Lb/Wa39jlWOiAFC1TsYJ4Y0HIkquYU3VZoLwdZYlzeMAk22zkijI7ediHdN7ArofjtC
- /nMg==
-X-Gm-Message-State: ANhLgQ0O34FJ/ekkhjW+K7pAKILURPhaoJuuc30mGL0JC5TU/cN9JM/q
- teFBGa1+8nN71XYy5dFg8ZFW+BaB
-X-Google-Smtp-Source: ADFU+vvCMoBcisirULpq9AdcdvP2oFudxHn9wxvG9zoe+jKX/drzf01mudvXIup+vAzphD7EUU66Uw==
-X-Received: by 2002:a50:d7d3:: with SMTP id m19mr4716364edj.329.1583961774482; 
- Wed, 11 Mar 2020 14:22:54 -0700 (PDT)
+ :message-id:date:user-agent:mime-version:in-reply-to;
+ bh=x0vMnUWbA/pguPmLGYbrnPPB2rzwjNFeXGV8tDl8EHc=;
+ b=G+HmURUQKrcIYaDy4NkY7kfgXPgMzCnEYT7fE4lofcoFvSOTCMFlSCjZowuzx2e9No
+ idvqkC6goWqpDsx1ULhDtZWUL8Ey6/VgzZP3GcqbKHrb1c/kiCqp9OILCY0uS7sn6LQl
+ 6+xFUl+QHR/fxiw16ahwvXyClum/myF72OyIPIfIyyWoAVSG0iooh4c5jsIexxSQf25D
+ 6dThsv6y9phO8nrCaKflvk7YRsQ8tQTXBSmPBOPZaiIjTPfqACLkEcgLIYYRPFE2UfiX
+ /Bt+Olu1QNEJltLqhXWPK5FPOjFB3pVe6PwLhCV6L7nxuu2qRgsRuMFv2kw3jx1lrpBA
+ Q2JA==
+X-Gm-Message-State: ANhLgQ2fG25mOeEhDlCpQckl4xYBNwK1klNLfG4HunznaRG+cxkExnm1
+ yYZFzHaCX9j42tf3IKODpDLbChwM
+X-Google-Smtp-Source: ADFU+vuJwFXpnrBzv40dCBP3h+AX7zZ6Xl7yJkaBDJ7f6M6ixhK3UtiQ4A5ThmtGhgkApLre6QpR/g==
+X-Received: by 2002:a17:906:a3c8:: with SMTP id
+ ca8mr4167665ejb.370.1583961799405; 
+ Wed, 11 Mar 2020 14:23:19 -0700 (PDT)
 Received: from [10.67.48.239] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id s6sm255555edu.42.2020.03.11.14.22.51
+ by smtp.googlemail.com with ESMTPSA id n9sm3162981ejz.87.2020.03.11.14.23.17
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Mar 2020 14:22:53 -0700 (PDT)
-Subject: Re: [GIT PULL RESEND 1/2] bcm2835-dt-next-2020-03-09
+ Wed, 11 Mar 2020 14:23:18 -0700 (PDT)
+Subject: Re: [GIT PULL RESEND 2/2] bcm2835-defconfig-next-2020-03-09
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Florian Fainelli <f.fainelli@gmail.com>
 References: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
+ <5cff48d9bb0f774c3668811165435bf3d5ef1152.camel@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -114,23 +115,22 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <b9658df8-d929-cf6a-a2de-a5b08b5785b9@gmail.com>
-Date: Wed, 11 Mar 2020 14:22:46 -0700
+Message-ID: <31937f8d-191c-c84d-44ac-f80918aee7d0@gmail.com>
+Date: Wed, 11 Mar 2020 14:23:10 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
-Content-Language: en-US
+In-Reply-To: <5cff48d9bb0f774c3668811165435bf3d5ef1152.camel@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_142300_403595_1304A7D5 
-X-CRM114-Status: GOOD (  12.82  )
+X-CRM114-CacheID: sfid-20200311_142321_129114_EFFF1F33 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -157,36 +157,92 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
  linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7117286308614606679=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 3/10/20 5:27 AM, Nicolas Saenz Julienne wrote:
-> Hi Florian,
-> 
-> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-> 
-> Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-> 
-> are available in the Git repository at:
-> 
-> git://git.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags/bcm2835-dt-next-2020-03-09
-> 
-> for you to fetch changes up to 3d2cbb64483691c8f8cf88e17d7d581d9402ac4b:
-> 
-> ARM: dts: bcm2711: Move emmc2 into its own bus (2020-03-09 21:18:03 +0100)
-> 
-> ----------------------------------------------------------------
-> This tag adds GPIO labels to RPi4 and moves emmc2 to its own bus in
-> order for RPi4's firmware to correct its DMA constraints.
-> > ----------------------------------------------------------------
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============7117286308614606679==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="x7jeA01qgjUrUOZD6ALI15JNjSiGPwynv"
 
-Merged into devicetree/next, thanks Nicolas.
--- 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--x7jeA01qgjUrUOZD6ALI15JNjSiGPwynv
+Content-Type: multipart/mixed; boundary="3MlRvItvxhqPWB8ZmjhzPHiW3PG41BohJ"
+
+--3MlRvItvxhqPWB8ZmjhzPHiW3PG41BohJ
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+On 3/10/20 5:29 AM, Nicolas Saenz Julienne wrote:
+> Hi Florian,
+>=20
+> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea098=
+62b9:
+>=20
+> Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+>=20
+> are available in the Git repository at:
+>=20
+> git://git.kernel.org/pub/scm/linux/kernel/git/nsaenz/linux-rpi.git tags=
+/bcm2835- defconfig-next-2020-03-09
+>=20
+> for you to fetch changes up to 93d3ae352bb5cda928570cfa2247d9c529605bef=
+:
+>=20
+> ARM: bcm2835_defconfig: add support for Raspberry Pi4 (2020-03-09 20:36=
+:30 +0100)
+>=20
+> ----------------------------------------------------------------
+> This tag introduces configuration options in bcm2835_defconfig for basi=
+c RPi4 support.
+>=20
+> ----------------------------------------------------------------
+
+Merged into defconfig/next, thanks Nicolas!
+--=20
 Florian
+
+
+--3MlRvItvxhqPWB8ZmjhzPHiW3PG41BohJ--
+
+--x7jeA01qgjUrUOZD6ALI15JNjSiGPwynv
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEm+Rq3+YGJdiR9yuFh9CWnEQHBwQFAl5pVr8ACgkQh9CWnEQH
+BwS6VxAAif4Jo3QQq8ynwUrFyW5zmx0ZywTumC/T9a6DRAkGbmFar0AQYDxHJAvu
+CMxkEz5BuhQYnQ6rrh1jbs+U9bCFMO3H73zAGE+1itevsQYtvQQAxKkkInLT6QT8
+tu21zy7FgHrOnHWyghvfmH+j6ywKHYOudBbTE/s2AM2T1K8gftIpDUGwpn0jTuHA
+In9hCxlnr343B1FZ1VFhoX/COGF+TI2bBAv/P1gzekbAvNYDkbPilMoBKCeDkREV
+mPnt5Zlr8two1oDfrzojF4TAT17JNAPWxqnUxVzV8nMHLUWAIGenQoHc0IkmkURJ
+Gmh1nrg2zM14ruaLjUOAKj80DyfVDEaf6RRKo4+uFRrQP32yadPaZh19tLtlpRGu
+lEcKCsmhsoAQ+HPspRAhmfVE5JCFVJ+bdqo5If3LHwsIMz/GyN5oS2OW4qbHf2wj
+It94SK1dPic19ycfQsmFGmHbSJOeC00Jj2VbzznVIbeS+YosD0ELyifDE0A9MEsx
+u4mpc2bt/qTDcgA2HXoZpxalv9aHErIu2CL2Rq2DmOYO1r/BADn02gJWlU5m21Tl
+urUZ/1IvQN6gb5v2nzasF5jjAAZA+hSF2ZNDE0cR0kpBGiRz5HnOYa243YM+lyU6
+76es5k3iGpYMfqEMOsZWn/v7v4ZtPWmVg6uhQ+Wr9UJ2ERHlqqg=
+=/nvc
+-----END PGP SIGNATURE-----
+
+--x7jeA01qgjUrUOZD6ALI15JNjSiGPwynv--
+
+
+--===============7117286308614606679==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7117286308614606679==--
+
