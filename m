@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5600181DBD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:26:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21DD181DC1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:26:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=TKUihM2UKiIjNPkRfGwuwVODhI+wtiYip/nYKQLUEaA=; b=pbGasvJkvrDdDXtd4/SZNIfsia
-	mTQzINtvH7Pat+2fdHRKm5wLRqFqMtJhujgmvZN0oEXZ9jau4Mh0KXLb89AgriG40uIXd9ZlbjtYy
-	ZCcnGgJyPwSu1urmEO+URA7zcKUcR+U0gws5uKmefhAq2dY6xJBlSjphKO91WIbopkAMmCzohLtG0
-	1gBj7fhodksQ1SkKw2FDudaRufp15dWXQ05Gay6/PNV63lx+6LzMGkC+DgnDtagF2RHDPj5+yZCfY
-	ECbfvSxZ3A+rBdFPeMfnBvY8tlKciZRxTllOy4tpAqgHOQ6cndWbTx3dKmhDZE3UNgT+HmhRBBHQ/
-	FpA14Z4A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=grv1hTFN/ult5xVf1XsTC/0gpc67FRGiPUFRpiJ09Vg=; b=N9wl9vNFaj0ENB
+	Da+SlcBRoeVESGbqtpa7re+b1BfPF6ZycbWqlb7WBJvng9uEmeuxLMeEM9/dQZQgzvxoIm38wt9iY
+	EE+VFb2zsvaM2vdYU+FBi9PyBRpcHwnwrO3phTUAjrGQQsUeGFhiS+Yhd572d0a6bdX1zu7elcxcO
+	vJog2RX7+pAx3jfqZ2nMq0W3onzAV0NlodEw/N6nrd7I1Ppe5mtoBFQmQ6THvyDaHjfRcRGBF8YJF
+	mV1zLQuZ2oL07rx68E5jZRc7QYieIWEulYOQKQgWAJymrE1wpJL/BgDfS795nTEjDyaS7Xe1q6z1U
+	ulU1R65IVI1J9UUhusVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4BH-0006oH-TF; Wed, 11 Mar 2020 16:26:03 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jC4Bp-0007Od-CX; Wed, 11 Mar 2020 16:26:37 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4Ap-0006ac-Fa; Wed, 11 Mar 2020 16:25:36 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z15so3461108wrl.1;
- Wed, 11 Mar 2020 09:25:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=b5aBI0bpGlbj4fmQPyekc6UQv8Sa0uaFXtWHR+NmRKk=;
- b=EvmsL8ILi0NHgYAyZfmeO4DevhhIX473PCnA4urmWtc1h95Ilnd5Mx4DFY1OM3aLRO
- 8KtsayRDd+nOcl+R98AvLVZUeTY+2OjbEJy+jNWI8g6gt2Cq+7cxvJbwT9g7KfWIj84Q
- LlJFDUhu8gjnwaZ/nz6feBLfsbw0aHfw5kZX6kXoBJmhwcodrVgM07rhZ/YZpkrQ31fS
- w9qZngCpCkDyvrE2ZEIq5lObAOMWtzVN4pqPSyaablhRVW5yW5j5x+Zgl5YQxqOHJPLV
- uksf1t+kGSMGMeQDo8GujRpvUzUaTQq2biVoQxKRpU0qrQVsuHwUOdXbBfonUunXT9Pr
- oYYw==
+ id 1jC4Bg-0007Np-Cz
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:26:29 +0000
+Received: by mail-pl1-x643.google.com with SMTP id a23so1344454plm.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 09:26:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=sgEL1n9bMN/O1CVsdBOAUN7B6KuMrGBamPwvlUPomHs=;
+ b=N3LP2s05koqIsRBODtJJNqQ30YJXE8DrJbP/lZ+mhj7afZUw6P1NPsitJsx0cT4DKP
+ +tN7X4nGfwdAXkSGBD/RuWlFu5sQqTjG6Qelgue+1S1LMbvc13cX5hcIhQmfo+32npLq
+ NC6+ucUVyahgjS1qz0zA5oJjebrXCOqdexXdS3l7sLdpYAe/+7lmBYPScRG6/qr1Q0pT
+ gAhRLxaYzzSLLBoQH+O9FI55aGssTGOFViVBGn0UGmDVJYNBXhfdQHidqwaJUFjUkTVK
+ sZ7/Qa7FulIbLZN73FsLtVuWZ7F4Y6fyh+zcIg1mpfLStHHTsxWZC0NPm0wWu+DcAK2o
+ zzRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=b5aBI0bpGlbj4fmQPyekc6UQv8Sa0uaFXtWHR+NmRKk=;
- b=Oh5WruXL6HcKYwgudsfZNh5R3OKTHQlqNnRVXXEuhU40flhPUuJ1/8aEa4zYL7kAzc
- 3Viz94Gogxj0GPR+Dn21iPtLKWGp73hnKv0xCprg4lk2DR/3RCVsonGluq+FIKXn1kAL
- 0nNgKgnLNDyrrMBltCshgtU9Mj7RdGj/gpZomcLf12ohfrsO1G58nET22vEAykjh0+o1
- kSPjY27DRfcJDc8eC9EqY+QrenAaYvegEP3fwUL2vkucP2JysUU2wl2Su8Z0Oy+zXu7h
- NdDqAq21Ab52oumn31ZA0KhZQON2hwNUq7ecxd4IQPuSZog3wB6jeYQaOgnBfl1wRtKI
- Xdtg==
-X-Gm-Message-State: ANhLgQ2iIWQW5KluTVrDDxlsxLmYZjmWr3HKy6hEaBB8lgVmwP0yLLL6
- HEK92NEyqNOehYHT+LcnmaQ=
-X-Google-Smtp-Source: ADFU+vsC4pAqQ4jiDIDc+T+NrN/+UYkkE5neBBka34GX9ESC0bOwHgGOtUPDD+9haYRT3rQhyjl5JQ==
-X-Received: by 2002:a05:6000:1107:: with SMTP id
- z7mr5679978wrw.340.1583943933879; 
- Wed, 11 Mar 2020 09:25:33 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id i1sm53624688wrs.18.2020.03.11.09.25.32
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Mar 2020 09:25:33 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] ARM: dts: rockchip: remove #address-cells and #size-cells
- from i2s nodes
-Date: Wed, 11 Mar 2020 17:25:24 +0100
-Message-Id: <20200311162524.19748-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20200311162524.19748-1-jbx6244@gmail.com>
-References: <20200311162524.19748-1-jbx6244@gmail.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=sgEL1n9bMN/O1CVsdBOAUN7B6KuMrGBamPwvlUPomHs=;
+ b=H3XiNMbX4/SKUKMYcCsQzh2kM9diVnxeYDhT9+29qdAqrw10c+E7fxt0FGyHjfc3uO
+ TmyA2OiqS58ksTSKOCUNCTwIjW3cdXAaKIkDBzRkfE9p8xEt5E9zt3CI1qOiL1ris+RY
+ 8XJ+B6g/OAK2Q8wBGXmhh4aejyMCGxuovPT5QGqo71bLeg+EpQyBVXNgOE6SfcBYWKM4
+ rkEhjBN0a391OhRewhn7Ui2kH39eUg9kJlCZv+An8WF1dwcW0GjrbuEvWUmzAvCdVhwP
+ UoU4G9rRZeLVMFlUQkae6xo4GPTbtoqdmFacswc0tx63Zh3B7GMR/pcxpkgaUQ8FuX7n
+ pfzg==
+X-Gm-Message-State: ANhLgQ0HcdhSb4FD3MoW040zCYvmI6Uv7V0987I7QTpPla1zf77dUqt9
+ TJbLTLeAja281wv4xfMxre70Rw==
+X-Google-Smtp-Source: ADFU+vtYHkA1RwRTnEx/D17mP3PWcu1tYDU6Vt1EnLy/Moje/acIYiygvM0mMQ8rn5GlHvWSoajW8w==
+X-Received: by 2002:a17:90a:f0c1:: with SMTP id
+ fa1mr4170355pjb.180.1583943987427; 
+ Wed, 11 Mar 2020 09:26:27 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id u24sm50163508pgo.83.2020.03.11.09.26.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 09:26:26 -0700 (PDT)
+Date: Wed, 11 Mar 2020 10:26:24 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Ben Levinsky <ben.levinsky@xilinx.com>
+Subject: Re: [PATCH 3/5] firmware: xilinx: Add zynqmp_get_node_status API
+Message-ID: <20200311162624.GA32395@xps15>
+References: <1582566751-13118-1-git-send-email-ben.levinsky@xilinx.com>
+ <1582566751-13118-4-git-send-email-ben.levinsky@xilinx.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1582566751-13118-4-git-send-email-ben.levinsky@xilinx.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_092535_518973_32CE38FC 
-X-CRM114-Status: GOOD (  12.87  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200311_092628_469872_2FADBAE9 
+X-CRM114-Status: GOOD (  22.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,141 +99,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: ohad@wizery.com, mark.rutland@arm.com, rajan.vaja@xilinx.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, michal.simek@xilinx.com,
+ bjorn.andersson@linaro.org, jollys@xilinx.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An experimental test with the command below gives
-for example this error:
+Hi Ben,
 
-arch/arm/boot/dts/rk3036-evb.dt.yaml: i2s@10220000:
-'#address-cells', '#size-cells'
-do not match any of the regexes: 'pinctrl-[0-9]+'
+On Mon, Feb 24, 2020 at 09:52:29AM -0800, Ben Levinsky wrote:
+> This patch adds a new API to provide access to the
+> current power state of a sub-system on Zynqmp sub-system.
+> 
+> Signed-off-by: Ben Levinsky <ben.levinsky@xilinx.com>
 
-'#address-cells' and '#size-cells' are not a valid property
-for i2s nodes, so remove them.
+Patches 1 to 3 look good to me but they will need an R-b from Michal Simek
+before it is possible to move foward with them.
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
+Thanks,
+Mathieu
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm/boot/dts/rk3036.dtsi  | 2 --
- arch/arm/boot/dts/rk3066a.dtsi | 6 ------
- arch/arm/boot/dts/rk3188.dtsi  | 2 --
- arch/arm/boot/dts/rk322x.dtsi  | 6 ------
- arch/arm/boot/dts/rk3288.dtsi  | 2 --
- 5 files changed, 18 deletions(-)
-
-diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
-index 2226f0d70..781ac7583 100644
---- a/arch/arm/boot/dts/rk3036.dtsi
-+++ b/arch/arm/boot/dts/rk3036.dtsi
-@@ -281,8 +281,6 @@
- 		compatible = "rockchip,rk3036-i2s", "rockchip,rk3066-i2s";
- 		reg = <0x10220000 0x4000>;
- 		interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		clock-names = "i2s_clk", "i2s_hclk";
- 		clocks = <&cru SCLK_I2S>, <&cru HCLK_I2S>;
- 		dmas = <&pdma 0>, <&pdma 1>;
-diff --git a/arch/arm/boot/dts/rk3066a.dtsi b/arch/arm/boot/dts/rk3066a.dtsi
-index f3fc92e57..b599394d1 100644
---- a/arch/arm/boot/dts/rk3066a.dtsi
-+++ b/arch/arm/boot/dts/rk3066a.dtsi
-@@ -156,8 +156,6 @@
- 		compatible = "rockchip,rk3066-i2s";
- 		reg = <0x10118000 0x2000>;
- 		interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&i2s0_bus>;
- 		clocks = <&cru SCLK_I2S0>, <&cru HCLK_I2S0>;
-@@ -174,8 +172,6 @@
- 		compatible = "rockchip,rk3066-i2s";
- 		reg = <0x1011a000 0x2000>;
- 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&i2s1_bus>;
- 		clocks = <&cru SCLK_I2S1>, <&cru HCLK_I2S1>;
-@@ -192,8 +188,6 @@
- 		compatible = "rockchip,rk3066-i2s";
- 		reg = <0x1011c000 0x2000>;
- 		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&i2s2_bus>;
- 		clocks = <&cru SCLK_I2S2>, <&cru HCLK_I2S2>;
-diff --git a/arch/arm/boot/dts/rk3188.dtsi b/arch/arm/boot/dts/rk3188.dtsi
-index 651ea4e15..24abf214a 100644
---- a/arch/arm/boot/dts/rk3188.dtsi
-+++ b/arch/arm/boot/dts/rk3188.dtsi
-@@ -166,8 +166,6 @@
- 		compatible = "rockchip,rk3188-i2s", "rockchip,rk3066-i2s";
- 		reg = <0x1011a000 0x2000>;
- 		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&i2s0_bus>;
- 		clocks = <&cru SCLK_I2S0>, <&cru HCLK_I2S0>;
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index 8ad44213f..a0acf2ef8 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -152,8 +152,6 @@
- 		compatible = "rockchip,rk3228-i2s", "rockchip,rk3066-i2s";
- 		reg = <0x100b0000 0x4000>;
- 		interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		clock-names = "i2s_clk", "i2s_hclk";
- 		clocks = <&cru SCLK_I2S1>, <&cru HCLK_I2S1_8CH>;
- 		dmas = <&pdma 14>, <&pdma 15>;
-@@ -167,8 +165,6 @@
- 		compatible = "rockchip,rk3228-i2s", "rockchip,rk3066-i2s";
- 		reg = <0x100c0000 0x4000>;
- 		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		clock-names = "i2s_clk", "i2s_hclk";
- 		clocks = <&cru SCLK_I2S0>, <&cru HCLK_I2S0_8CH>;
- 		dmas = <&pdma 11>, <&pdma 12>;
-@@ -193,8 +189,6 @@
- 		compatible = "rockchip,rk3228-i2s", "rockchip,rk3066-i2s";
- 		reg = <0x100e0000 0x4000>;
- 		interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		clock-names = "i2s_clk", "i2s_hclk";
- 		clocks = <&cru SCLK_I2S2>, <&cru HCLK_I2S2_2CH>;
- 		dmas = <&pdma 0>, <&pdma 1>;
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index f68dcde6c..4745be518 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -962,8 +962,6 @@
- 		reg = <0x0 0xff890000 0x0 0x10000>;
- 		#sound-dai-cells = <0>;
- 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
--		#address-cells = <1>;
--		#size-cells = <0>;
- 		clocks = <&cru SCLK_I2S0>, <&cru HCLK_I2S0>;
- 		clock-names = "i2s_clk", "i2s_hclk";
- 		dmas = <&dmac_bus_s 0>, <&dmac_bus_s 1>;
--- 
-2.11.0
-
+> ---
+>  drivers/firmware/xilinx/zynqmp.c     | 42 ++++++++++++++++++++++++++++++++++++
+>  include/linux/firmware/xlnx-zynqmp.h |  3 +++
+>  2 files changed, 45 insertions(+)
+> 
+> diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+> index 486dcb1..98e35d4 100644
+> --- a/drivers/firmware/xilinx/zynqmp.c
+> +++ b/drivers/firmware/xilinx/zynqmp.c
+> @@ -725,6 +725,47 @@ static int zynqmp_pm_request_wakeup(const u32 node,
+>  }
+>  
+>  /**
+> + * zynqmp_pm_get_node_status - PM call to request a node's current power state
+> + * @node:		ID of the component or sub-system in question
+> + * @status:		Current operating state of the requested node
+> + * @requirements:	Current requirements asserted on the node,
+> + *			used for slave nodes only.
+> + * @usage:		Usage information, used for slave nodes only:
+> + *			PM_USAGE_NO_MASTER	- No master is currently using
+> + *						  the node
+> + *			PM_USAGE_CURRENT_MASTER	- Only requesting master is
+> + *						  currently using the node
+> + *			PM_USAGE_OTHER_MASTER	- Only other masters are
+> + *						  currently using the node
+> + *			PM_USAGE_BOTH_MASTERS	- Both the current and at least
+> + *						  one other master is currently
+> + *						  using the node
+> + *
+> + * Return:		Returns status, either success or error+reason
+> + */
+> +static int zynqmp_pm_get_node_status(const u32 node, u32 *const status,
+> +				     u32 *const requirements, u32 *const usage)
+> +{
+> +	u32 ret_payload[PAYLOAD_ARG_CNT];
+> +	int ret;
+> +
+> +	if (!status)
+> +		return -EINVAL;
+> +
+> +	ret = zynqmp_pm_invoke_fn(PM_GET_NODE_STATUS, node, 0, 0,
+> +				  0, ret_payload);
+> +	if (ret_payload[0] == XST_PM_SUCCESS) {
+> +		*status = ret_payload[1];
+> +		if (requirements)
+> +			*requirements = ret_payload[2];
+> +		if (usage)
+> +			*usage = ret_payload[3];
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +/**
+>   * zynqmp_pm_set_requirement() - PM call to set requirement for PM slaves
+>   * @node:		Node ID of the slave
+>   * @capabilities:	Requested capabilities of the slave
+> @@ -769,6 +810,7 @@ static const struct zynqmp_eemi_ops eemi_ops = {
+>  	.set_requirement = zynqmp_pm_set_requirement,
+>  	.fpga_load = zynqmp_pm_fpga_load,
+>  	.fpga_get_status = zynqmp_pm_fpga_get_status,
+> +	.get_node_status = zynqmp_pm_get_node_status,
+>  };
+>  
+>  /**
+> diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
+> index 0a68849..fb4efc9 100644
+> --- a/include/linux/firmware/xlnx-zynqmp.h
+> +++ b/include/linux/firmware/xlnx-zynqmp.h
+> @@ -62,6 +62,7 @@
+>  
+>  enum pm_api_id {
+>  	PM_GET_API_VERSION = 1,
+> +	PM_GET_NODE_STATUS = 3,
+>  	PM_REQUEST_NODE = 13,
+>  	PM_RELEASE_NODE,
+>  	PM_SET_REQUIREMENT,
+> @@ -309,6 +310,8 @@ struct zynqmp_pm_query_data {
+>  struct zynqmp_eemi_ops {
+>  	int (*get_api_version)(u32 *version);
+>  	int (*get_chipid)(u32 *idcode, u32 *version);
+> +	int (*get_node_status)(const u32 node, u32 *const status,
+> +			       u32 *const requirements, u32 *const usage);
+>  	int (*fpga_load)(const u64 address, const u32 size, const u32 flags);
+>  	int (*fpga_get_status)(u32 *value);
+>  	int (*query_data)(struct zynqmp_pm_query_data qdata, u32 *out);
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
