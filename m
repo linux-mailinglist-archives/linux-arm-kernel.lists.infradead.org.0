@@ -2,39 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34E57181997
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:23:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECCC41819A4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:25:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mh/JA6CUnLCzcYM3VZxJOC2O6qqqrq/GSgeVAoK1xAM=; b=qkiqyL4qjj3/sa
-	hi6MQARYh3gY0SoDRrTOsOl1i1Slr3AE2vCCym8lnMq/xFE7FD+w//VAahu17hMhivuU7ysYojQ/g
-	u7f2KOt13V1pjZoihwjLxI8Mj6H8T9+TooqGlDaWCbFlbGakSRoFdrS2nNB7ODP7ZXQhZK3O/vKvC
-	KFd1H3UMd4Zq71gTNxXd3Atl39D2BPUvDtLu04LpAjvaibqOFfyuATHUk2Fuw0nYPKtZ+WMvHeUgA
-	9BHwVuHUkuNpCOkNI6Z1UVyLo+VWJ8OgEIvNg9IgXYsUc7TKI9o6Agf7/jK+bie3lP/OSroAG6exa
-	FOUKFa2bw4zC7EHicoVw==;
+	List-Owner; bh=Du+KOTjMLMoZR2a1oipf6e/Ox7rEZeOTVaYxRO3ePGE=; b=PF0Sc81iMEjBZM
+	zRQqh8oWaLZU8TZZBdyUATyuySiUWynjapk4LwssxYX52g5+bKKE08wsdIyfp/zKdpOPMrl1kwIyL
+	9s/ruiMHMF9O7c2ICav2wOBGwJE3OZsp4KW5OJ3FmkjPZnQir8euhRTiSH55RU2m/uOHoQHGjqT7q
+	EbtNQw++7MMFWqqxC+bHbesM64Z57HJm9Q3pjENVDBWddWoKT88bUqWstmEM0S4sXclk9HZ2DzY50
+	ciccAsGRniNad+Xmy0P/1h22KEdi34ZS9AC9T1J1ahq8/mi1u1qeKpLg6ckk1D+v5g9PUdDRZ2k4j
+	tU8UpzRseOOtgixj9dCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC1Kb-0002Rf-QG; Wed, 11 Mar 2020 13:23:29 +0000
+	id 1jC1Mm-00043M-EO; Wed, 11 Mar 2020 13:25:44 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC1KJ-0002Qn-JZ; Wed, 11 Mar 2020 13:23:13 +0000
+ id 1jC1MY-00042k-Sb; Wed, 11 Mar 2020 13:25:32 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 66BA9AFEC;
- Wed, 11 Mar 2020 13:23:05 +0000 (UTC)
-Subject: Re: [PATCH v11 3/5] clk / soc: mediatek: Move mt8173 MMSYS to
- platform driver
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
- p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
- sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
- laurent.pinchart@ideasonboard.com
+ by mx2.suse.de (Postfix) with ESMTP id 416CAB2C4;
+ Wed, 11 Mar 2020 13:25:29 +0000 (UTC)
+Subject: Re: [PATCH v11 4/5] soc / drm: mediatek: Move routing control to
+ mmsys device
+To: CK Hu <ck.hu@mediatek.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>
 References: <20200311115614.1425528-1-enric.balletbo@collabora.com>
- <20200311115614.1425528-4-enric.balletbo@collabora.com>
+ <20200311115614.1425528-5-enric.balletbo@collabora.com>
+ <1583932064.29614.6.camel@mtksdaap41>
 From: Matthias Brugger <mbrugger@suse.com>
 Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -110,16 +108,16 @@ Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
  UHUEIsTwPWs2Q87k7vjYyrcyAOarX2X5pvMQvpAMADGf2Z3wrCsDdG25w2HztweUNd9QEprt
  JG8GNNzMOD4cQ82Ta7eGvPWPeXauWJDLVR9jHtWT9Ot3BQgmApLxACvwvD1a69jaFKov28SP
  HxUCQ9Y1Y/Ct
-Message-ID: <7157b75b-0b9d-33d0-6548-ac2433ab9154@suse.com>
-Date: Wed, 11 Mar 2020 14:23:02 +0100
+Message-ID: <db86a097-db98-1952-8afb-875ba7719719@suse.com>
+Date: Wed, 11 Mar 2020 14:25:26 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200311115614.1425528-4-enric.balletbo@collabora.com>
+In-Reply-To: <1583932064.29614.6.camel@mtksdaap41>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_062311_940220_3E8ECAB0 
-X-CRM114-Status: GOOD (  26.37  )
+X-CRM114-CacheID: sfid-20200311_062531_214727_1179D3DD 
+X-CRM114-Status: GOOD (  17.74  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -127,10 +125,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -143,22 +141,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>, dri-devel@lists.freedesktop.org,
- Richard Fontana <rfontana@redhat.com>,
- Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, Weiyi Lu <weiyi.lu@mediatek.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, wens@csie.org,
- Allison Randal <allison@lohutok.net>, mtk01761 <wendell.lin@mediatek.com>,
- Owen Chen <owen.chen@mediatek.com>, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, frank-w@public-files.de,
+Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
+ mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
+ ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ p.zabel@pengutronix.de, frank-w@public-files.de,
  Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
- Houlong Wei <houlong.wei@mediatek.com>, linux-mediatek@lists.infradead.org,
- hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Fabien Parent <fparent@baylibre.com>,
+ Allison Randal <allison@lohutok.net>, sboyd@kernel.org,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
  linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
  matthias.bgg@kernel.org
@@ -169,83 +168,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 11/03/2020 12:56, Enric Balletbo i Serra wrote:
-> From: Matthias Brugger <mbrugger@suse.com>
+On 11/03/2020 14:07, CK Hu wrote:
+> Hi, Enric:
 > 
-> There is no strong reason for this to use CLK_OF_DECLARE instead of
-> being a platform driver. Plus, MMSYS provides clocks but also a shared
-> register space for the mediatek-drm and the mediatek-mdp
-> driver. So move the MMSYS clocks to a new platform driver and also
-> create a new MMSYS platform driver in drivers/soc/mediatek that
-> instantiates the clock driver.
+> On Wed, 2020-03-11 at 12:56 +0100, Enric Balletbo i Serra wrote:
+>> Provide a mtk_mmsys_ddp_connect() and mtk_mmsys_disconnect() functions to
+>> replace mtk_ddp_add_comp_to_path() and mtk_ddp_remove_comp_from_path().
+>> Those functions will allow DRM driver and others to control the data
+>> path routing.
+>>
 > 
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> ---
-> 
-> Changes in v11:
-> - Leave the clocks part in drivers/clk (clk-mt8173-mm)
-> - Instantiate the clock driver from the mtk-mmsys driver.
-> - Add default config option to not break anything.
-> - Removed the Reviewed-by CK tag as changed the organization.
-> 
-> Changes in v10:
-> - Renamed to be generic mtk-mmsys
-> - Add driver data support to be able to support diferent SoCs
-> 
-> Changes in v9:
-> - Move mmsys to drivers/soc/mediatek (CK)
-> 
-> Changes in v8:
-> - Be a builtin_platform_driver like other mediatek mmsys drivers.
-> 
-> Changes in v7:
-> - Free clk_data->clks as well
-> - Get rid of private data structure
-> 
->  drivers/clk/mediatek/Kconfig         |   7 ++
->  drivers/clk/mediatek/Makefile        |   1 +
->  drivers/clk/mediatek/clk-mt8173-mm.c | 146 +++++++++++++++++++++++++++
->  drivers/clk/mediatek/clk-mt8173.c    | 104 -------------------
-
-I'm not sure we really need that. We can just convert the mmsys clock bits in
-clk-mt8173.c to a platform driver with no need put them in a seperate file.
-If you think a seperate file is worth doing, I think the approach is to put the
-driver in a seperate file first and in a following patch change it to a platform
-driver.
-
-Anyway its Stephen to make the decision. If he thinks things are fine like this,
-I'm happy to take the patch through my tree.
-
->  drivers/soc/mediatek/Kconfig         |   8 ++
->  drivers/soc/mediatek/Makefile        |   1 +
->  drivers/soc/mediatek/mtk-mmsys.c     |  50 +++++++++
->  7 files changed, 213 insertions(+), 104 deletions(-)
->  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
->  create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
 > 
 
-<snip>
+If I remember correctly you are OK me taking the patch through the SoC tree, right?
 
-> diff --git a/drivers/soc/mediatek/Kconfig b/drivers/soc/mediatek/Kconfig
-> index 2114b563478c..e84513318725 100644
-> --- a/drivers/soc/mediatek/Kconfig
-> +++ b/drivers/soc/mediatek/Kconfig
-> @@ -44,4 +44,12 @@ config MTK_SCPSYS
->  	  Say yes here to add support for the MediaTek SCPSYS power domain
->  	  driver.
->  
-> +config MTK_MMSYS
-> +	bool "MediaTek MMSYS Support"
-> +	depends on COMMON_CLK_MT8173_MMSYS
-> +	default COMMON_CLK_MT8173_MMSYS
-
-If we don't create a new file, we would need to depend on COMMON_CLK_MT8173 or
-maybe not even that. I suppose the system does not get anywhere without the
-clock driver.
+In this case I'd need a Acked-by tag. Not a big deal, just trying to remeber the
+tag policy in the linux kernel :)
 
 Regards,
 Matthias
+
+>> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+>> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+>> ---
+>>
+>> Changes in v11: None
+>> Changes in v10:
+>> - Select CONFIG_MTK_MMSYS (CK)
+>> - Pass device pointer of mmsys device instead of config regs (CK)
+>>
+>> Changes in v9:
+>> - Introduced a new patch to move routing control into mmsys driver.
+>> - Removed the patch to use regmap as is not needed anymore.
+>>
+>> Changes in v8: None
+>> Changes in v7: None
+>>
+>>  drivers/gpu/drm/mediatek/Kconfig        |   1 +
+>>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  19 +-
+>>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c  | 256 ----------------------
+>>  drivers/gpu/drm/mediatek/mtk_drm_ddp.h  |   7 -
+>>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  |  14 +-
+>>  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |   2 +-
+>>  drivers/soc/mediatek/mtk-mmsys.c        | 279 ++++++++++++++++++++++++
+>>  include/linux/soc/mediatek/mtk-mmsys.h  |  20 ++
+>>  8 files changed, 316 insertions(+), 282 deletions(-)
+>>  create mode 100644 include/linux/soc/mediatek/mtk-mmsys.h
+>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
