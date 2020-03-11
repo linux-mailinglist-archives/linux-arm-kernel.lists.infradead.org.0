@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 448C7181201
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:33:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A5A5181207
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:35:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vAHEad5qmrz7lFs4VDzfU46WuINfcn7GXzcFRsMuq5Q=; b=f4iHZYSlvdZXhH
-	84S+tqEzvrvijHL+ElJATh5x6DuPvVbV7I52N3v05k6SkJyVQe6YPPmJ/q2ltINKsY59zchc8N4Te
-	ZT0ScOvvUmyQO8GJxV0sPMPJP9xVXG9yG/tvteIgHAcjKUlLuax/pdqm/7uKXEc4NIVgtMlYae8Nc
-	YNnd+mHLRuVKvJskcMeVzoCuD1YV29wrZKHbwMjK+p1v2r2MSIe7+Wm9K9HS8m++aWCi891+k+kpX
-	YNAN1M47g9oTKZHqhWgtAtvjMPofysldwratE9V7p2UybOBpA2k3WlKAE5wMUax3uFdyS43TCMZtz
-	9dZLR903CdXrYYCIWKDg==;
+	List-Owner; bh=Mht/PIUIwwBrh/R2WaGXVWId94/6Rh1sEjPdTYiKC/Y=; b=Y4TWZLKA8tBQBi
+	onCFFqAgG74xU4se39HSKeoRHyb7Z5UtfRms6gNv8ImYnLRV75TxD+bOPy3XmyyTMF5Xn2j8/msl5
+	n6fpQ0tvcC1oR5QFM5rcv/1f2uqO4oxf3hhwPHELxcB0Cw7+ue11td7MHBxqjgIv3GO41v6ePeKhZ
+	42ERBhsZHwmdxoJFZnz5Q2Ejn4+aAYYTa6cwhXjckGoa67PIBrQjwQOD5f6rVhlpeBxjILNTyCkPx
+	e4Awxa3SAO3ecaI/FPUOCZ4EHgPwcQfopsjNCupKdaFFqKQNp733M+Oaxc+aoXx0ZuEYuHtSNHIFy
+	LtSaluV9HysQU3PmoRag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBvrl-0007RW-45; Wed, 11 Mar 2020 07:33:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jBvtu-0000iV-8v; Wed, 11 Mar 2020 07:35:34 +0000
+Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBvrd-0007RA-BS
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:33:14 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B50E6208C3;
- Wed, 11 Mar 2020 07:33:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583911993;
- bh=XKRGVQvoHyVOcSFufXQasytJRls1NO6yFTE1U7JxreQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=DHfg7EZ79oc555WDSXia8qXQruhTug08h9twnsFk9ssxk4UORqN0njx+WZePkLVZ7
- IoBWScM2aW+vFv9Eh50uhCuVD32x768Js6PTkAFWf4pD3y6D9ieh2Pmi/wPQGAK6Bl
- czUchC/e/8qAr/yfPq7TqdF61lv7hyDJsf6fUr4E=
-Date: Wed, 11 Mar 2020 15:33:03 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>,
- Stefan Riedmueller <s.riedmueller@phytec.de>
-Subject: Re: [PATCH v4] ARM: dts: imx6: phycore-som: fix arm and soc minimum
- voltage
-Message-ID: <20200311073248.GP29269@dragon>
-References: <20200227110246.8624-1-m.felsch@pengutronix.de>
+ id 1jBvth-0000Ws-79
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:35:23 +0000
+Received: from DGGEMM402-HUB.china.huawei.com (unknown [172.30.72.53])
+ by Forcepoint Email with ESMTP id 8A9A3905D61B99ACD7FD;
+ Wed, 11 Mar 2020 15:35:03 +0800 (CST)
+Received: from DGGEMM421-HUB.china.huawei.com (10.1.198.38) by
+ DGGEMM402-HUB.china.huawei.com (10.3.20.210) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Wed, 11 Mar 2020 15:35:02 +0800
+Received: from DGGEMM528-MBX.china.huawei.com ([169.254.8.90]) by
+ dggemm421-hub.china.huawei.com ([10.1.198.38]) with mapi id 14.03.0439.000;
+ Wed, 11 Mar 2020 15:34:56 +0800
+From: "Zhoujian (jay)" <jianjay.zhou@huawei.com>
+To: zhukeqian <zhukeqian1@huawei.com>, Marc Zyngier <maz@kernel.org>
+Subject: RE: [RFC] KVM: arm64: support enabling dirty log graually in small
+ chunks
+Thread-Topic: [RFC] KVM: arm64: support enabling dirty log graually in small
+ chunks
+Thread-Index: AQHV9fES7bnu3RiLvUOZvoLEbVPgkKg/noOAgAFalYCAAFE+gIABLpcAgACIxzA=
+Date: Wed, 11 Mar 2020 07:34:55 +0000
+Message-ID: <B2D15215269B544CADD246097EACE7474BB64495@DGGEMM528-MBX.china.huawei.com>
+References: <20200309085727.1106-1-zhukeqian1@huawei.com>
+ <4b85699ec1d354cc73f5302560231f86@misterjones.org>
+ <64925c8b-af3d-beb5-bc9b-66ef1e47f92d@huawei.com>
+ <a642a79ea9190542a9098e4c9dc5a9f2@kernel.org>
+ <9ddefc54-dd5b-0555-0aaa-00a3a23febcf@huawei.com>
+In-Reply-To: <9ddefc54-dd5b-0555-0aaa-00a3a23febcf@huawei.com>
+Accept-Language: zh-CN, en-US
+Content-Language: zh-CN
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.173.228.206]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200227110246.8624-1-m.felsch@pengutronix.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_003313_414137_4AD9DCC0 
-X-CRM114-Status: GOOD (  15.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200311_003521_449822_116FBD89 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.255 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,73 +77,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chf.fritz@googlemail.com, robh+dt@kernel.org, kernel@pengutronix.de,
- c.hemp@phytec.de, contact@stefanchrist.eu, s.christ@phytec.de,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: "Huangweidong \(C\)" <weidong.huang@huawei.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ "wangxin \(U\)" <wangxinxin.wang@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 12:02:46PM +0100, Marco Felsch wrote:
-> The current set minimum voltage of 730000=B5V seems to be wrong. I don't
-> know the document which specifies that but the imx6qdl datasheets says
-> that the minimum voltage should be 0.925V for VDD_ARM (LDO bypassed,
-> lowest opp) and 1.15V for VDD_SOC (LDO bypassed, lowest opp).
 
-Stefan,
 
-Any comment on this change?
+> -----Original Message-----
+> From: zhukeqian
+> Sent: Wednesday, March 11, 2020 3:20 PM
+> To: Marc Zyngier <maz@kernel.org>
+> Cc: kvmarm@lists.cs.columbia.edu; kvm@vger.kernel.org;
+> linux-kernel@vger.kernel.org; linux-arm-kernel@lists.infradead.org; Zhoujian (jay)
+> <jianjay.zhou@huawei.com>; Sean Christopherson
+> <sean.j.christopherson@intel.com>; Paolo Bonzini <pbonzini@redhat.com>;
+> James Morse <james.morse@arm.com>; Julien Thierry
+> <julien.thierry.kdev@gmail.com>; Suzuki K Poulose <suzuki.poulose@arm.com>
+> Subject: Re: [RFC] KVM: arm64: support enabling dirty log graually in small chunks
+> 
+> Hi Marc,
+> 
+> On 2020/3/10 21:16, Marc Zyngier wrote:
+> > On 2020-03-10 08:26, zhukeqian wrote:
+> >> Hi Marc,
+> >>
+> >> On 2020/3/9 19:45, Marc Zyngier wrote:
+> >>> Kegian,
+> >
+> > [...]
+> >
+> >>> Is there a userspace counterpart to it?
+> >>>
+> >> As this KVM/x86 related changes have not been merged to mainline
+> >> kernel, some little modification is needed on mainline Qemu.
+> >
+> > Could you please point me to these changes?
+> I made some changes locally listed below.
+> 
+> However, Qemu can choose to enable KVM_DIRTY_LOG_INITIALLY_SET or not.
+> Here I made no judgement on dirty_log_manual_caps because I just want to
+> verify the optimization of this patch.
+> 
+> diff --git a/accel/kvm/kvm-all.c b/accel/kvm/kvm-all.c index
+> 439a4efe52..1611f644a4 100644
+> --- a/accel/kvm/kvm-all.c
+> +++ b/accel/kvm/kvm-all.c
+> @@ -2007,14 +2007,16 @@ static int kvm_init(MachineState *ms)
+>      s->coalesced_pio = s->coalesced_mmio &&
+>                         kvm_check_extension(s,
+> KVM_CAP_COALESCED_PIO);
+> 
+> -    s->manual_dirty_log_protect =
+> +    uint64_t dirty_log_manual_caps =
+>          kvm_check_extension(s,
+> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2);
+> -    if (s->manual_dirty_log_protect) {
+> -        ret = kvm_vm_enable_cap(s,
+> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2, 0, 1);
+> +    if (dirty_log_manual_caps) {
+> +        ret = kvm_vm_enable_cap(s,
+> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2, 0,
+> +                                dirty_log_manual_caps);
+>          if (ret) {
+>              warn_report("Trying to enable
+> KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 "
+>                          "but failed.  Falling back to the legacy mode. ");
+> -            s->manual_dirty_log_protect = false;
+> +        } else {
+> +            s->manual_dirty_log_protect = true;
+>          }
+>      }
 
-Shawn
+FYI: I had submitted a patch to the Qemu community some days ago:
+https://patchwork.kernel.org/patch/11419191/
 
-> =
+> >
+> >> As I tested this patch on a 128GB RAM Linux VM with no huge pages,
+> >> the time of enabling dirty log will decrease obviously.
+> >
+> > I'm not sure how realistic that is. Not having huge pages tends to
+> > lead to pretty bad performance in general...
+> Sure, this has no effect on guests which are all of huge pages.
+> 
+> For my understanding, once a guest has normal pages (maybe are initialized at
+> beginning or dissloved from huge pages), it can benefit from this patch.
 
-> Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i.M=
-X 6 SOM")
-> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
-> ---
-> v4:
-> - rebased ontop of v5.6-rc1
-> v3:
-> - fix commit message
-> v2:
-> - use ldo bypassed values
-> =
+Yes, I agree.
 
->  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> =
 
-> diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/arm=
-/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> index 4d18952658f8..77d871340eb7 100644
-> --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> @@ -112,7 +112,7 @@
->  		regulators {
->  			vdd_arm: buck1 {
->  				regulator-name =3D "vdd_arm";
-> -				regulator-min-microvolt =3D <730000>;
-> +				regulator-min-microvolt =3D <925000>;
->  				regulator-max-microvolt =3D <1380000>;
->  				regulator-initial-mode =3D <DA9063_BUCK_MODE_SYNC>;
->  				regulator-always-on;
-> @@ -120,7 +120,7 @@
->  =
 
->  			vdd_soc: buck2 {
->  				regulator-name =3D "vdd_soc";
-> -				regulator-min-microvolt =3D <730000>;
-> +				regulator-min-microvolt =3D <1150000>;
->  				regulator-max-microvolt =3D <1380000>;
->  				regulator-initial-mode =3D <DA9063_BUCK_MODE_SYNC>;
->  				regulator-always-on;
-> -- =
-
-> 2.20.1
-> =
-
+Regards,
+Jay Zhou
 
 _______________________________________________
 linux-arm-kernel mailing list
