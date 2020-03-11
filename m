@@ -2,68 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 264BB18190B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:02:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8BB618191B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 14:05:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IBJqHsSsq/jONU5F8BGvz3JlfZuktgP5Pck1wz+9Kcw=; b=JgP9N5TzBEX97i
-	nlEuM7yeRbf6LOGexkaJrRKTm1rF3CuIs6EIpRvR8Cu9hml23Mlj1/bWnC6MnXO4gr2PL+eZU7hKM
-	cBz/pOPgcJNvsz4xp+j7uGIQYPrPvQgwCat8Bw4bYp+14S09i8Ys6OEXARl6HvqUNBquwFlgrXBxM
-	r4TWuRsEQFDnswtVMsxf9fDFeC04boqKA2DEAiK0uJfJ9kRmwXHYT1HUAjrGLr2zuKm/6MBQ4C0QX
-	bKQucE0fV+kB2+DpkTVlFnw3u/8ZFzdbaYq0RP06xPXPVdjyPbFjEdo9tnKeNSFJ3L8E5kkv576LJ
-	gGzIP1lsDCfS80NTF67Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ZmYLSONBOaFjmSfbrPndDa6+/jBb5aW5qb/a3SaRZNM=; b=KZJ
+	CJArXS8AuaPj3N/Pm1yRSUTBdRp0C7z1MfLaVC+pds6kp67r4rub/UNKBf7LJRR+CR+bAuF4/y27P
+	Qb7KxMDNkpnXMyxKV2g2GggCQ6tcoHg9o/K7a/f24n44KQQrRcD7IJasI8l8/04katv0UdMdQpYyL
+	f4L4SQiZ///NeiAqNPDudDkw45GQUiL4t96gzXhMKHGlpIr5cBqiS4HwjfO9B8qmX6aWXmXcV/8lM
+	pu/F4t7YBO4gi/+wv67l9MFyYtYg/x3e7QAqBIqWPjoTYcTdATTKT8DxSO4xfTNaxorNl6CdCkREU
+	hwq/fpq9iEUjXKuooaeRNyzqPNPaWPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC0zx-0001py-DN; Wed, 11 Mar 2020 13:02:09 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jC13R-0003TA-8i; Wed, 11 Mar 2020 13:05:45 +0000
+Received: from mail-wr1-x436.google.com ([2a00:1450:4864:20::436])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC0zo-0001ot-Tj; Wed, 11 Mar 2020 13:02:02 +0000
-X-UUID: 61252333c95a46239ac37484f25935c7-20200311
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=/WVVWBfJZWBTP9PrYKh6PTL6LhgD9CaRZwh9r2ttw8o=; 
- b=LAUn4Uh0H7o734PI0POzqTK1uQVf3TQw8nSTUHtesGLayffLGGeQ8boo7bFuQpBGgCdCx1Kye+ClPbLwUC2qlJ2893ij//baGLSmFsN/vTsS/gNq4hTsL3qvBjU7+nZUUBwd04zMwcrpiLFEZsY/+x9doSoHYE/6TnneP6LyQ4s=;
-X-UUID: 61252333c95a46239ac37484f25935c7-20200311
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1499125; Wed, 11 Mar 2020 05:01:49 -0800
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Mar 2020 06:02:19 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Mar 2020 21:01:45 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 11 Mar 2020 21:00:54 +0800
-Message-ID: <1583931705.29614.3.camel@mtksdaap41>
-Subject: Re: [PATCH v11 0/5] arm/arm64: mediatek: Fix mt8173 mmsys device
- probing
-From: CK Hu <ck.hu@mediatek.com>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Date: Wed, 11 Mar 2020 21:01:45 +0800
-In-Reply-To: <20200311115614.1425528-1-enric.balletbo@collabora.com>
-References: <20200311115614.1425528-1-enric.balletbo@collabora.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: D0C530029DFB3D1C48B2A2ED83E49AE8D5F42442F09CD39392B33A38427356E82000:8
-X-MTK: N
+ id 1jC13D-0003Sm-G6; Wed, 11 Mar 2020 13:05:33 +0000
+Received: by mail-wr1-x436.google.com with SMTP id a25so2536318wrd.0;
+ Wed, 11 Mar 2020 06:05:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=AhLkhUvdXLfO1SrTt7a8DDpSIYACsGN+xMVAxW5xB8M=;
+ b=mXF9HzEtB49zv112z2A8Vvho3B+cvcgVwObY0OKhMIIH0zMdzxIODt0Vg8N8IXQW+a
+ BYud6KydFWAaPuTpjxPwQn3MpdLCSItW9dq76Xu5t0IXhqV3lZXq9DQZBYhLFmkH9lut
+ mFotv9s4g3TkexMUQ2HGK9DsSDG1Kr77JWRepmuJZ5T+fa/cQqCfk2Za2nRkVJV2uJiv
+ NwFi5xgjYLx1yasq9tLUKKLTh8J0ZFmVEPU7lfbwJwBG9FP0uTiHy58OcXopIYsYHmU9
+ R2rCP964fW3UgdzIoht5/tTBOALSrdLQSTyh5dEXCIcTjw1L3oCmggFgVPRDx92R6Ska
+ OVYg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=AhLkhUvdXLfO1SrTt7a8DDpSIYACsGN+xMVAxW5xB8M=;
+ b=jh/r1KKoDw9gsQ53E4c/b1lSYBslQLf1NSpgVZQyKZYKfnpvHPpfML7PJqTZVQVpon
+ 0Ujs6EAFrZelF42FsCOtotaG3vbmpT1hXzluYtS+fzs/4c84f5sgGfeumyxl30gwyqdq
+ 4E0yVx9osP9QcRG8ngzRPV96R9WeJA0/Bj62EWg3qhL8hC9Fot5CM4PQd6wMNUEqsRN3
+ sgCuyxuCIjcDk7/lG+xY8+OaNOUtzm5vHZLzKsYrEHo7S4+0WvNEj19mpKz3zaZzREHx
+ 0UXkynIuGyjM/96qWcyZBJcEvCcRDFbrOUdJuuuQml9dmpy+yQt6ilxSoqsGJ9awKH8P
+ F8nA==
+X-Gm-Message-State: ANhLgQ1YDeJskn0bvaymV/qSz1RWcoI2/hwgZTuFDa1sZaDpIaxwWzCD
+ RPHXOLCWCvbRRCOcky+yEzw=
+X-Google-Smtp-Source: ADFU+vtmZ8OBwTwqf9IfppxfqWVwowjIoq/aKh+H9Xn5exxfAlSTYe0p2TQSbD+CzHz9OEbbKlBwtQ==
+X-Received: by 2002:a5d:6aca:: with SMTP id u10mr4223866wrw.99.1583931929923; 
+ Wed, 11 Mar 2020 06:05:29 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id p10sm69291517wrx.81.2020.03.11.06.05.28
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 11 Mar 2020 06:05:29 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH v2] dt-bindings: display: convert rockchip vop bindings to yaml
+Date: Wed, 11 Mar 2020 14:05:15 +0100
+Message-Id: <20200311130515.10663-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_060200_969411_99E36C8E 
-X-CRM114-Status: GOOD (  24.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_060531_565659_2D97DDC8 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:436 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -71,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,166 +93,246 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Kate Stewart <kstewart@linuxfoundation.org>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
- Andrew-CT Chen <andrew-ct.chen@mediatek.com>, airlied@linux.ie,
- mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
- Richard Fontana <rfontana@redhat.com>, laurent.pinchart@ideasonboard.com,
- ulrich.hecht+renesas@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
- linux-clk@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Weiyi Lu <weiyi.lu@mediatek.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- wens@csie.org, linux-arm-kernel@lists.infradead.org,
- mtk01761 <wendell.lin@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- p.zabel@pengutronix.de, frank-w@public-files.de,
- Seiya Wang <seiya.wang@mediatek.com>, sean.wang@mediatek.com,
- Houlong Wei <houlong.wei@mediatek.com>, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
- Fabien Parent <fparent@baylibre.com>, sboyd@kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, rdunlap@infradead.org,
- linux-kernel@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- matthias.bgg@kernel.org
+Cc: devicetree@vger.kernel.org, airlied@linux.ie, hjc@rock-chips.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, robh+dt@kernel.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Enric:
+Current dts files with 'vop' nodes are manually verified.
+In order to automate this process rockchip-vop.txt
+has to be converted to yaml.
 
-I'm confused this is v11 or v12.
-For v12, you've lost some 'Acked-by' and 'Reviewed-by' tag.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+Changes v2:
+  No new properties
+---
+ .../bindings/display/rockchip/rockchip-vop.txt     |  74 ------------
+ .../bindings/display/rockchip/rockchip-vop.yaml    | 126 +++++++++++++++++++++
+ 2 files changed, 126 insertions(+), 74 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+ create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
 
-Regards,
-CK
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
+deleted file mode 100644
+index 8b3a5f514..000000000
+--- a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.txt
++++ /dev/null
+@@ -1,74 +0,0 @@
+-device-tree bindings for rockchip soc display controller (vop)
+-
+-VOP (Visual Output Processor) is the Display Controller for the Rockchip
+-series of SoCs which transfers the image data from a video memory
+-buffer to an external LCD interface.
+-
+-Required properties:
+-- compatible: value should be one of the following
+-		"rockchip,rk3036-vop";
+-		"rockchip,rk3126-vop";
+-		"rockchip,px30-vop-lit";
+-		"rockchip,px30-vop-big";
+-		"rockchip,rk3066-vop";
+-		"rockchip,rk3188-vop";
+-		"rockchip,rk3288-vop";
+-		"rockchip,rk3368-vop";
+-		"rockchip,rk3366-vop";
+-		"rockchip,rk3399-vop-big";
+-		"rockchip,rk3399-vop-lit";
+-		"rockchip,rk3228-vop";
+-		"rockchip,rk3328-vop";
+-
+-- reg: Must contain one entry corresponding to the base address and length
+-	of the register space. Can optionally contain a second entry
+-	corresponding to the CRTC gamma LUT address.
+-
+-- interrupts: should contain a list of all VOP IP block interrupts in the
+-		 order: VSYNC, LCD_SYSTEM. The interrupt specifier
+-		 format depends on the interrupt controller used.
+-
+-- clocks: must include clock specifiers corresponding to entries in the
+-		clock-names property.
+-
+-- clock-names: Must contain
+-		aclk_vop: for ddr buffer transfer.
+-		hclk_vop: for ahb bus to R/W the phy regs.
+-		dclk_vop: pixel clock.
+-
+-- resets: Must contain an entry for each entry in reset-names.
+-  See ../reset/reset.txt for details.
+-- reset-names: Must include the following entries:
+-  - axi
+-  - ahb
+-  - dclk
+-
+-- iommus: required a iommu node
+-
+-- port: A port node with endpoint definitions as defined in
+-  Documentation/devicetree/bindings/media/video-interfaces.txt.
+-
+-Example:
+-SoC specific DT entry:
+-	vopb: vopb@ff930000 {
+-		compatible = "rockchip,rk3288-vop";
+-		reg = <0x0 0xff930000 0x0 0x19c>, <0x0 0xff931000 0x0 0x1000>;
+-		interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
+-		clocks = <&cru ACLK_VOP0>, <&cru DCLK_VOP0>, <&cru HCLK_VOP0>;
+-		clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
+-		resets = <&cru SRST_LCDC1_AXI>, <&cru SRST_LCDC1_AHB>, <&cru SRST_LCDC1_DCLK>;
+-		reset-names = "axi", "ahb", "dclk";
+-		iommus = <&vopb_mmu>;
+-		vopb_out: port {
+-			#address-cells = <1>;
+-			#size-cells = <0>;
+-			vopb_out_edp: endpoint@0 {
+-				reg = <0>;
+-				remote-endpoint=<&edp_in_vopb>;
+-			};
+-			vopb_out_hdmi: endpoint@1 {
+-				reg = <1>;
+-				remote-endpoint=<&hdmi_in_vopb>;
+-			};
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+new file mode 100644
+index 000000000..cb88849f2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-vop.yaml
+@@ -0,0 +1,126 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/rockchip/rockchip-vop.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Rockchip soc display controller (VOP)
++
++description:
++  VOP (Visual Output Processor) is the Display Controller for the Rockchip
++  series of SoCs which transfers the image data from a video memory
++  buffer to an external LCD interface.
++
++maintainers:
++  - Sandy Huang <hjc@rock-chips.com>
++  - Heiko Stuebner <heiko@sntech.de>
++
++properties:
++  compatible:
++    oneOf:
++      - const: rockchip,px30-vop-big
++      - const: rockchip,px30-vop-lit
++      - const: rockchip,rk3036-vop
++      - const: rockchip,rk3066-vop
++      - const: rockchip,rk3126-vop
++      - const: rockchip,rk3188-vop
++      - const: rockchip,rk3228-vop
++      - const: rockchip,rk3288-vop
++      - const: rockchip,rk3328-vop
++      - const: rockchip,rk3366-vop
++      - const: rockchip,rk3368-vop
++      - const: rockchip,rk3399-vop-big
++      - const: rockchip,rk3399-vop-lit
++
++  reg:
++    minItems: 1
++    items:
++      - description:
++          Must contain one entry corresponding to the base address and length
++          of the register space.
++      - description:
++          Can optionally contain a second entry corresponding to
++          the CRTC gamma LUT address.
++
++  interrupts:
++    maxItems: 1
++    description:
++      Should contain a list of all VOP IP block interrupts in the
++      order VSYNC, LCD_SYSTEM. The interrupt specifier
++      format depends on the interrupt controller used.
++
++  clocks:
++    items:
++      - description: Clock for ddr buffer transfer.
++      - description: Pixel clock.
++      - description: Clock for the ahb bus to R/W the phy regs.
++
++  clock-names:
++    items:
++      - const: aclk_vop
++      - const: dclk_vop
++      - const: hclk_vop
++
++  resets:
++    minItems: 3
++    maxItems: 3
++
++  reset-names:
++    items:
++      - const: axi
++      - const: ahb
++      - const: dclk
++
++  port:
++    type: object
++    description:
++      A port node with endpoint definitions as defined in
++      Documentation/devicetree/bindings/media/video-interfaces.txt.
++
++  iommus:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - reset-names
++  - port
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/rk3288-cru.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    vopb: vopb@ff930000 {
++      compatible = "rockchip,rk3288-vop";
++      reg = <0x0 0xff930000 0x0 0x19c>,
++            <0x0 0xff931000 0x0 0x1000>;
++      interrupts = <GIC_SPI 15 IRQ_TYPE_LEVEL_HIGH>;
++      clocks = <&cru ACLK_VOP0>,
++               <&cru DCLK_VOP0>,
++               <&cru HCLK_VOP0>;
++      clock-names = "aclk_vop", "dclk_vop", "hclk_vop";
++      resets = <&cru SRST_LCDC1_AXI>,
++               <&cru SRST_LCDC1_AHB>,
++               <&cru SRST_LCDC1_DCLK>;
++      reset-names = "axi", "ahb", "dclk";
++      iommus = <&vopb_mmu>;
++      vopb_out: port {
++        #address-cells = <1>;
++        #size-cells = <0>;
++        vopb_out_edp: endpoint@0 {
++          reg = <0>;
++          remote-endpoint=<&edp_in_vopb>;
++        };
++        vopb_out_hdmi: endpoint@1 {
++          reg = <1>;
++          remote-endpoint=<&hdmi_in_vopb>;
++        };
++      };
++    };
+-- 
+2.11.0
 
-On Wed, 2020-03-11 at 12:56 +0100, Enric Balletbo i Serra wrote:
-> Dear all,
-> 
-> These patches are intended to solve an old standing issue on some
-> Mediatek devices (mt8173, mt2701 and mt2712 are affected by this issue).
-> 
-> Up to now both drivers, clock and drm are probed with the same device tree
-> compatible. But only the first driver gets probed, which in effect breaks
-> graphics on those devices.
-> 
-> The MMSYS (Multimedia subsystem) in Mediatek SoCs has some registers to
-> control clock gates (which is used in the clk driver) and some registers
-> to set the routing and enable the differnet blocks of the display
-> and MDP (Media Data Path) subsystem. On this series the clk driver is
-> not a pure clock controller but a system controller that can provide
-> access to the shared registers between the different drivers that need
-> it (mediatek-drm and mediatek-mdp). Hence the MMSYS clk driver was moved
-> to drivers/soc/mediatek and is the entry point (parent) which will trigger
-> the probe of the corresponding mediatek-drm driver.
-> 
-> **IMPORTANT** This series only fixes the issue on mt8173 to make it
-> simple and as is the only platform I can test. Similar changes should be
-> applied for mt2701 and mt2712 to have display working.
-> 
-> These patches apply on top of linux-next.
-> 
-> For reference, here are the links to the old discussions:
-> * v10: https://patchwork.kernel.org/project/linux-mediatek/list/?series=248505
-> * v9: https://patchwork.kernel.org/project/linux-clk/list/?series=247591
-> * v8: https://patchwork.kernel.org/project/linux-mediatek/list/?series=244891
-> * v7: https://patchwork.kernel.org/project/linux-mediatek/list/?series=241217
-> * v6: https://patchwork.kernel.org/project/linux-mediatek/list/?series=213219
-> * v5: https://patchwork.kernel.org/project/linux-mediatek/list/?series=44063
-> * v4:
->   * https://patchwork.kernel.org/patch/10530871/
->   * https://patchwork.kernel.org/patch/10530883/
->   * https://patchwork.kernel.org/patch/10530885/
->   * https://patchwork.kernel.org/patch/10530911/
->   * https://patchwork.kernel.org/patch/10530913/
-> * v3:
->   * https://patchwork.kernel.org/patch/10367857/
->   * https://patchwork.kernel.org/patch/10367861/
->   * https://patchwork.kernel.org/patch/10367877/
->   * https://patchwork.kernel.org/patch/10367875/
->   * https://patchwork.kernel.org/patch/10367885/
->   * https://patchwork.kernel.org/patch/10367883/
->   * https://patchwork.kernel.org/patch/10367889/
->   * https://patchwork.kernel.org/patch/10367907/
->   * https://patchwork.kernel.org/patch/10367909/
->   * https://patchwork.kernel.org/patch/10367905/
-> * v2: No relevant discussion, see v3
-> * v1:
->   * https://patchwork.kernel.org/patch/10016497/
->   * https://patchwork.kernel.org/patch/10016499/
->   * https://patchwork.kernel.org/patch/10016505/
->   * https://patchwork.kernel.org/patch/10016507/
-> 
-> Best regards,
->  Enric
-> 
-> Changes in v11:
-> - Leave the clocks part in drivers/clk (clk-mt8173-mm)
-> - Instantiate the clock driver from the mtk-mmsys driver.
-> - Add default config option to not break anything.
-> - Removed the Reviewed-by CK tag as changed the organization.
-> 
-> Changes in v10:
-> - Update the binding documentation for the mmsys system controller.
-> - Renamed to be generic mtk-mmsys
-> - Add driver data support to be able to support diferent SoCs
-> - Select CONFIG_MTK_MMSYS (CK)
-> - Pass device pointer of mmsys device instead of config regs (CK)
-> - Match driver data to get display routing.
-> 
-> Changes in v9:
-> - Move mmsys to drivers/soc/mediatek (CK)
-> - Introduced a new patch to move routing control into mmsys driver.
-> - Removed the patch to use regmap as is not needed anymore.
-> - Do not move the display routing from the drm driver (CK)
-> 
-> Changes in v8:
-> - Be a builtin_platform_driver like other mediatek mmsys drivers.
-> - New patch introduced in this series.
-> 
-> Changes in v7:
-> - Free clk_data->clks as well
-> - Get rid of private data structure
-> 
-> Enric Balletbo i Serra (3):
->   dt-bindings: mediatek: Update mmsys binding to reflect it is a system
->     controller
->   soc / drm: mediatek: Move routing control to mmsys device
->   soc / drm: mediatek: Fix mediatek-drm device probing
-> 
-> Matthias Brugger (2):
->   drm/mediatek: Omit warning on probe defers
->   clk / soc: mediatek: Move mt8173 MMSYS to platform driver
-> 
->  .../bindings/arm/mediatek/mediatek,mmsys.txt  |   7 +-
->  drivers/clk/mediatek/Kconfig                  |   7 +
->  drivers/clk/mediatek/Makefile                 |   1 +
->  drivers/clk/mediatek/clk-mt8173-mm.c          | 146 ++++++++
->  drivers/clk/mediatek/clk-mt8173.c             | 104 ------
->  drivers/gpu/drm/mediatek/Kconfig              |   1 +
->  drivers/gpu/drm/mediatek/mtk_disp_color.c     |   5 +-
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c       |   5 +-
->  drivers/gpu/drm/mediatek/mtk_disp_rdma.c      |   5 +-
->  drivers/gpu/drm/mediatek/mtk_dpi.c            |  12 +-
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c       |  19 +-
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.c        | 259 +-------------
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.h        |   7 -
->  drivers/gpu/drm/mediatek/mtk_drm_drv.c        |  45 +--
->  drivers/gpu/drm/mediatek/mtk_drm_drv.h        |   2 +-
->  drivers/gpu/drm/mediatek/mtk_dsi.c            |   8 +-
->  drivers/gpu/drm/mediatek/mtk_hdmi.c           |   4 +-
->  drivers/soc/mediatek/Kconfig                  |   8 +
->  drivers/soc/mediatek/Makefile                 |   1 +
->  drivers/soc/mediatek/mtk-mmsys.c              | 335 ++++++++++++++++++
->  include/linux/soc/mediatek/mtk-mmsys.h        |  20 ++
->  21 files changed, 590 insertions(+), 411 deletions(-)
->  create mode 100644 drivers/clk/mediatek/clk-mt8173-mm.c
->  create mode 100644 drivers/soc/mediatek/mtk-mmsys.c
->  create mode 100644 include/linux/soc/mediatek/mtk-mmsys.h
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
