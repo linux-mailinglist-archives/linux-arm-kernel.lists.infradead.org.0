@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36E7C18123B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:44:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9D17181246
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 08:47:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bHdzEAt7y7LnOhsTReQ+UIif37Chi7M4VamlSe/4E5o=; b=e3ONL/h5G1EdxX
-	grpQA4J0PmPkwqEZF7DbuphbRvp3Xkr2SxJpbqh4rVjy4MNx5KL5TEspeegG6JlFbeZgRbQyRYSgw
-	2c13smr5xPhIGDsONFU/X1+tLS96kl8dyMy8+4BUmYu2wQYQia0bduWV3ujc/nQhVmTn9vS7mrqlY
-	vtQyCfJb05oyAardnfat9e0xtvZOuYhaOjtwmVLkOhHMdAXuZSqWW/aY787YPRZVfLdx0iMtuL6fC
-	2MHkLo74jqvpH3Psb7TxT4YzwIJ3AMEBdIFqi2SShEj2z36pt3SOtVGt5sAILUzo1BSuick+fffCm
-	EVQAzQ4tYoRpFIcwWLQg==;
+	List-Owner; bh=82eT/wa0v4IOMQRlvHhMsdBI+DIGfg6ryJYSnk1akAg=; b=edgPt2s4xucbaI
+	8dF1cs6Xa5TebT/Ts6TTHPwPXK7Zgqx7uKV7x1Fw8ZAx2brMfeKCqUM9BzhMSIzKykvAuaMu/0kmj
+	g/SeIV81ToqlZOyIvwUzOaCGJfW2xcboYR/xxUCw6rEahKd77z26Om+vvBCAuYjulEgLG18tvy01c
+	ktXEzVtMnQxS4UTHr6ltDN8Zw4xcacY/m/CfJdWD1zGYQqJYAvzMgKUQiJ4c7z4pQag/qwGV659XL
+	c1o0TjP+Gi1cvJfj8h+yGkHH8KZIyKtTN33BvKvHwn8VisdvKPP/YpSGUGMnS7GEVxaHlqKRnkUkd
+	7MSaxgTWzJlWhXLLOYNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBw2J-00056C-RT; Wed, 11 Mar 2020 07:44:15 +0000
+	id 1jBw4y-00077c-JX; Wed, 11 Mar 2020 07:47:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBw2D-00055I-0p
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:44:10 +0000
+ id 1jBw4R-0006zt-Cx
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 07:46:28 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EC15C20578;
- Wed, 11 Mar 2020 07:44:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B27B9206B7;
+ Wed, 11 Mar 2020 07:46:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1583912648;
- bh=+KyRlV2jiWd0oJcPNhfaoXeqN5z9XYcvHTTz8nuuRz0=;
+ s=default; t=1583912786;
+ bh=wPWavU0XnNFcX/SZ6TFjnJus+JRvVZy3+xSxDbg/boM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Dbuwx1Pe3m+xyRW7tFy+IMR3iWMXreENd3PhWBInTks5XsFBOIBiAiVFanqhmsj1c
- +ZDUT2IyLjt7OH/F5iof3Q0m6z8A4TU2Vfb6y2XhpCmSDzx41OvY4GeW44ogIqpH4O
- 2OdOckaivbA8AmpGQVDWYKUcVePloLF3IplZGzsU=
-Date: Wed, 11 Mar 2020 15:44:03 +0800
+ b=h+4oCQZiitlQdZsnfxzykvSh+zavohpJ0bhv88o/Z8aQdiDBJPrjQ6u9vn/ze5HZy
+ bcDa55DQjSL/qM6V0RtxfCMBcc4+qv7LE5FC34a2UYQppOJosBWSzFS6RyKS481isn
+ O9wTYS+JNCD+0gBBv9SFTHBEC3aAr6VR94ZM/XDk=
+Date: Wed, 11 Mar 2020 15:46:18 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Russell King <rmk+kernel@armlinux.org.uk>
-Subject: Re: [PATCH] arm64: dts: lx2160a-cex7: add on-module eeproms
-Message-ID: <20200311074402.GT29269@dragon>
-References: <E1j7Hvv-0004Vy-BO@rmk-PC.armlinux.org.uk>
+Subject: Re: [PATCH] ARM: dts: imx6qdl-sr-som-ti: indicate powering off wifi
+ is safe
+Message-ID: <20200311074617.GU29269@dragon>
+References: <E1j7I7v-0004dS-5u@rmk-PC.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <E1j7Hvv-0004Vy-BO@rmk-PC.armlinux.org.uk>
+In-Reply-To: <E1j7I7v-0004dS-5u@rmk-PC.armlinux.org.uk>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_004409_078498_72E6F2DE 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20200311_004627_467071_A9CCE0A0 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,23 +79,23 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Li Yang <leoyang.li@nxp.com>
+ Sascha Hauer <s.hauer@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 27, 2020 at 12:06:27PM +0000, Russell King wrote:
-> From: Rabeeh Khoury <rabeeh@solid-run.com>
+On Thu, Feb 27, 2020 at 12:18:51PM +0000, Russell King wrote:
+> We need to indicate that powering off the TI WiFi is safe, to avoid:
 > 
-> This patch adds 4 eeprom support on i2c mux channel #0 -
-> 1. Bootable 512Kbit eeprom at address 0x50.
-> 2. Memory SO-DIMMs SPD channels at 0x51 (upper SO-DIMM) and 0x53.
-> 3. 2Kb eeprom at 0x57 will be used by SolidRun to hold manufacturing
->    data.
+> wl18xx_driver wl18xx.2.auto: Unbalanced pm_runtime_enable!
+> wl1271_sdio mmc0:0001:2: wl12xx_sdio_power_on: failed to get_sync(-13)
 > 
-> Signed-off-by: Rabeeh Khoury <rabeeh@solid-run.com>
+> which prevents the WiFi being functional.
+> 
 > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 
 Applied, thanks.
