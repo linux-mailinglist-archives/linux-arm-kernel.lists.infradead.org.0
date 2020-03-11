@@ -2,112 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F2D5182155
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 19:55:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCE89182178
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 20:02:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LuD8AEyzrL6gQqXjTVP6hsdS99bzs4ENEY00Za6fbgA=; b=i+ZsTVK6QX6bO/
-	y18AdaW6yzszc9cVTli3dRMA+XY+Ytvd7GDkMqhOrVIK/VCgFn0MWBc1hq6rFbOH3YZYAoW/NF6mD
-	sAKM5bsWZzegO0QAWo6XB5BrO+i923cCs+Oz1fl87MQAnF81de9qI67R1XcqXGQDn8t3+wcy99334
-	i/G7Zh7PW1R6PdSAPggeFzcSdlsM9M7La9lT5ntfrmqUPDrnD4TFGDXE1nA/EfueZANurWSe+/FNO
-	td3dTPSRvCxxQJr4Fev+VXmvR1qeIpd6l8MceN0LOshjBRRRtR0UXFxopZr5QRe2kPU8m7xAchC6S
-	W1vglUhfeNX0SnAgdH8Q==;
+	List-Owner; bh=Z0XPgqiIAjt9Pha9XyO/tQWWVTAOESFeJ6e8NQnjnwU=; b=eAjii8idTcwcw6
+	e8mnILfGR7EnGOfDfgry3vfmuF/xxl89XJ4/ED3SiiJN8+BROoBGauo3LfYWrIP1uJAOyx40hxu3Q
+	afNtj3WNqqCOIXMrGtSA45KE+SJz6nH58UDE2qk7Lgpi+8hRtpGzWIiDwNPXWpKT5nGCvShryvzoA
+	t1XX8SK3DsioQSFQLhNkfkKBmerGuLfS8WwRuSn6WuuS5/g63ipaI9BDS5hsKAUDAUXe2ES44QJU1
+	OxRnbs6MhPIf07sGCGB+5c7GaGzLsdNAnERP9aff8CqDH5Sie/GT3CYRgkApWRVgFA5RAtMXL7KlF
+	wGhM9fq4e0+XPzuJs1nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC6W8-0003ZE-FL; Wed, 11 Mar 2020 18:55:44 +0000
-Received: from mail-db3eur04on0625.outbound.protection.outlook.com
- ([2a01:111:f400:fe0c::625]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1jC6ct-0006R5-M8; Wed, 11 Mar 2020 19:02:43 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC6Vv-0003Xb-54
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 18:55:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aVePM+UNoEan/fEwKPBPGHYS0O30zOBhLRaT6WBfMd0v6X4U9L/ZxW0S1O0OCVyOjKez23XXQi7zg8XWncwNJSDo67FIGUFa1Bw+WOJBQC5UvXD2U/0NxRj6OoV+pQ79bY6zgIYQsx+KTerhvSFjDSTUgFuACZQxL0bfAwlGVEA5VJn590H3+wsfJyXOf6Qscs8x3cfCIKgpL/pBefDEC4V/Nys8tcXlcWAZZEYqh7RA3YkzlVe8zxPzAwz+JQjN69VjflAgBk4q9NNEpm4kcplFkNEf5coxF9oNfoQX2JjHpKVatKEBgDkL2DBrIuQb5EfMa6bNruGpI73PIoQ64w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wGN4oWPWa4f0kXlOEg1lPEwwMZbwIuOUhWVutl2cUis=;
- b=Fxj9001yd7+4ClY40mrhbbHEt4jXyM/irHLXKyFP3iUImaAbPP/lNfrOHbyZH5VbRc0CZucxDH/bNcvC61HYbGk/Ts+q4RVZBB6TXh06Taua0polojFTKrCAAiOphXS/MnnfkEsErnC/LJIqTcEMfty0TD1q1zR6b3pv1FmoxkEmEms7SQ+xeJ/38FOKytRLjqL9Qsx7fiuioOX4SFvx8774vpBzuQzaAn0z+KgblMtgaMDxT/LUNl4mMq+8rCfBPKfSciwTu5TJM0BJnIlj3hw3cTMbz8eetxpqp0RRY/Yjhlo0YXp67+dC8qNj1Jjjr8Oj6cHqEcrAdVlgvGGJiQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wGN4oWPWa4f0kXlOEg1lPEwwMZbwIuOUhWVutl2cUis=;
- b=Iys05Zwn+8HGt318yAew4T/2zgKS3fu9hIhV27MtSMwEBg8zYdTI20Hd9Y7Hw4QtvBQ1D/2R5okUc6a2Rgu+ddp/RhMmIlPNDIkWskZqW76Qr3fUnsty7qSytBw1zbIdB5YwdT17ak8tA8W3mX5Vo1Dhn0rCvhTSiGNNTrjjyGM=
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
- VE1PR04MB6446.eurprd04.prod.outlook.com (20.179.233.157) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2793.16; Wed, 11 Mar 2020 18:55:26 +0000
-Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::b896:5bc0:c4dd:bd23]) by VE1PR04MB6687.eurprd04.prod.outlook.com
- ([fe80::b896:5bc0:c4dd:bd23%2]) with mapi id 15.20.2814.007; Wed, 11 Mar 2020
- 18:55:26 +0000
-From: Leo Li <leoyang.li@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH 09/15] arm64: defconfig: Enable QorIQ IFC NAND controller
- driver
-Thread-Topic: [PATCH 09/15] arm64: defconfig: Enable QorIQ IFC NAND controller
- driver
-Thread-Index: AQHV62dV7VfUl/+IG0+BeZ8SK7tyeahDAYWAgADUq2A=
-Date: Wed, 11 Mar 2020 18:55:26 +0000
-Message-ID: <VE1PR04MB6687970DAF2BFE5A620D53E58FFC0@VE1PR04MB6687.eurprd04.prod.outlook.com>
-References: <1582585690-463-1-git-send-email-leoyang.li@nxp.com>
- <1582585690-463-10-git-send-email-leoyang.li@nxp.com>
- <20200311061320.GC29269@dragon>
-In-Reply-To: <20200311061320.GC29269@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leoyang.li@nxp.com; 
-x-originating-ip: [136.49.234.194]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 2ed74c28-9bca-443c-d959-08d7c5edc335
-x-ms-traffictypediagnostic: VE1PR04MB6446:
-x-microsoft-antispam-prvs: <VE1PR04MB6446BC313D3EEF0B98C8F3588FFC0@VE1PR04MB6446.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:454;
-x-forefront-prvs: 0339F89554
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(366004)(39860400002)(396003)(376002)(346002)(199004)(81156014)(55016002)(8676002)(52536014)(81166006)(66556008)(64756008)(9686003)(66476007)(76116006)(66446008)(71200400001)(66946007)(5660300002)(8936002)(86362001)(26005)(33656002)(316002)(2906002)(54906003)(7696005)(4326008)(6916009)(186003)(53546011)(6506007)(478600001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6446;
- H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: vES6Hg3R+wT1csFXZaoUmzmcKMceigeyo5opzlObB6gdobf1Xqh6PqDFGNT7pW2MeJqMQtaFnDFWECa+znq0BNH9T7RghIKjwhIybo55CM82kVT/EW/ZTHv3gGJJbk+Q8ZZ39S0ec9bEQIInoyBtUR69lPJ8RpjgzLU8fU1955dSEiZnw0bHL4oO6PR7skL6XGrJRi1zFn+RfVB9gjrgPL3+1Ft3d/o8f/AwZN93i4XqCIn2q3AQZsNDiD+cj5lRqDD5McS+JQeA8cZ2EMfKAyYsLpXDOKuGJg8AtYErKsBnsrmKce3sXoC9b6ctkNwaC8HUT+EvcDa74fLlJFI8UK0gY1h4oq3W8yEXYV+Qm19MSUQy0QzzJJl/4RBKYZUUDQ9GTkSgetu+aUkneF+ldksqZ33Gxtkb2t0lM9FjXzxiptYYZ3i8WrrbdC1U97nw
-x-ms-exchange-antispam-messagedata: FsT3h64C+7tkUcTTxFgTpnUzLHAhgObptN16BeR2QFOlORiACXgEInd4iz8sD8cI9vSSuJV67yKlVpmFf1yJ0tmeaJ9Isx9oIsU/JYyUblBEM59hfHNnTxP2DDZQhNBm49rEO9bFmD2KPg05gcaTBg==
-x-ms-exchange-transport-forked: True
+ id 1jC6ch-0006Qf-OR
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 19:02:34 +0000
+Received: by mail-pl1-x641.google.com with SMTP id g6so1529147plt.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 12:02:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=KxbfSfMud1yoniFNSNDPHjvEdr8IQY+/lA6j8KGqYkE=;
+ b=rFnMjB8O/yaXQWJTv31iPzLHmOkngTSkvsoCyQZDh9v9zGj3e/5juupSZZeBSzcy6X
+ MeM2WQ1rQkbQmBnPdApv3lpAR3r6bgV+dwkiV+4hZnEQX+DmLYbOpcn3Lu2vhSnOm3Yv
+ Bvms2t5ZxOgdFRDWvhlEU65pRwEQQnvVbjfRpGOZ9E4oaL4enK35RIdiopafaF2tX+CY
+ hNAdcSl4kkimfAt8+xN5HKs1D8ae39ZVcO+FFIwZqhS93hFWLSbvEhoAHQX/jhjECYfe
+ x7wHNQmdES0rdYb3vqYbn+GbfaaMv1tHGBb+S/QAcnLo0BkbMfAoMnN8HcSPp69KXM2k
+ n74g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=KxbfSfMud1yoniFNSNDPHjvEdr8IQY+/lA6j8KGqYkE=;
+ b=ujufltMoSLUWsMcE/ulCZ5cdi6xhfBWmdAOTeU7Avhm7EJtVuCMMT9yxQkjKDptqP3
+ l31UeefVhp4NnWdkbAbiuhng4bRpXmQL8L6S9LRTktuZZq0uJ4/UnJnJqiPaOwflnujC
+ fzVz2AtiY4oVpyzgScl/roPm3KnzLb5KQ0CfKQCo7q9lm0p0u3ntbmy21J6v/qwV4qPY
+ yDyBQFfk2qp9puTFdJ0ZNCaP4WUhWViaySgECfLMgSUm3nKj++U2kx6Jiivm/viP0upM
+ kAuPJgV/eOXCaD/CEYNayRV1NlPOSq1MHXZSr/tFhw01PsKA9ZtWexT+UQ3/qGDsPMQZ
+ lDqA==
+X-Gm-Message-State: ANhLgQ1u3EIqeXyDEZNc9dzG5LuM/i+CR0ofFV3gk44CW7BaeuLW0iHE
+ K6PWyOAosITwGk8gmCRZx8X1kg==
+X-Google-Smtp-Source: ADFU+vsgLQojMXRBdCCbQnephx0OvnBV71tIYUrd48OJ59EPglDf+HLuvIU4CMAcvoCh1tbzjD92xA==
+X-Received: by 2002:a17:90a:1b2c:: with SMTP id
+ q41mr184860pjq.126.1583953350369; 
+ Wed, 11 Mar 2020 12:02:30 -0700 (PDT)
+Received: from minitux (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id i72sm24039102pgd.88.2020.03.11.12.02.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 12:02:29 -0700 (PDT)
+Date: Wed, 11 Mar 2020 12:02:26 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: David Miller <davem@davemloft.net>, Alex Elder <elder@linaro.org>
+Subject: Re: [PATCH v2 17/17] arm64: dts: sdm845: add IPA information
+Message-ID: <20200311190226.GY1214176@minitux>
+References: <20200306042831.17827-1-elder@linaro.org>
+ <20200306042831.17827-18-elder@linaro.org>
+ <ec9776b3-ac79-8f9d-8c4d-012d62dc8f72@nvidia.com>
+ <4decbc8a-b0a6-8f10-b439-ade9008a4cff@linaro.org>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2ed74c28-9bca-443c-d959-08d7c5edc335
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Mar 2020 18:55:26.7572 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: CoAft8d+zr0h2DC2SREtvPbRGZXnXuq7Urel7uBxdvREj0bIiH+LWTPbF1eKmwXmThiMlWO29/bqaNryua/nBQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6446
+Content-Disposition: inline
+In-Reply-To: <4decbc8a-b0a6-8f10-b439-ade9008a4cff@linaro.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_115531_620477_0B143CAF 
-X-CRM114-Status: GOOD (  14.62  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200311_120232_930574_844C7036 
+X-CRM114-Status: GOOD (  19.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0c:0:0:0:625 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -115,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,65 +102,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org, Dan Williams <dcbw@redhat.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Jon Hunter <jonathanh@nvidia.com>,
+ Andy Gross <agross@kernel.org>, Evan Green <evgreen@google.com>,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ Siddharth Gupta <sidgup@codeaurora.org>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed 11 Mar 07:39 PDT 2020, Alex Elder wrote:
 
+> On 3/11/20 5:49 AM, Jon Hunter wrote:
+> > 
+> > On 06/03/2020 04:28, Alex Elder wrote:
+> >> Add IPA-related nodes and definitions to "sdm845.dtsi".
+> >>
+> >> Signed-off-by: Alex Elder <elder@linaro.org>
+> >> ---
+> >>  arch/arm64/boot/dts/qcom/sdm845.dtsi | 51 ++++++++++++++++++++++++++++
+> >>  1 file changed, 51 insertions(+)
+> >>
+> >> diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> >> index d42302b8889b..58fd1c611849 100644
+> >> --- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> >> +++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> >> @@ -675,6 +675,17 @@
+> >>  			interrupt-controller;
+> >>  			#interrupt-cells = <2>;
+> >>  		};
+> >> +
+> >> +		ipa_smp2p_out: ipa-ap-to-modem {
+> >> +			qcom,entry-name = "ipa";
+> >> +			#qcom,smem-state-cells = <1>;
+> >> +		};
+> >> +
+> >> +		ipa_smp2p_in: ipa-modem-to-ap {
+> >> +			qcom,entry-name = "ipa";
+> >> +			interrupt-controller;
+> >> +			#interrupt-cells = <2>;
+> >> +		};
+> >>  	};
+> >>  
+> >>  	smp2p-slpi {
+> >> @@ -1435,6 +1446,46 @@
+> >>  			};
+> >>  		};
+> >>  
+> >> +		ipa@1e40000 {
+> >> +			compatible = "qcom,sdm845-ipa";
+> >> +
+> >> +			modem-init;
+> >> +			modem-remoteproc = <&mss_pil>;
+> >> +
+> >> +			reg = <0 0x1e40000 0 0x7000>,
+> >> +			      <0 0x1e47000 0 0x2000>,
+> >> +			      <0 0x1e04000 0 0x2c000>;
+> >> +			reg-names = "ipa-reg",
+> >> +				    "ipa-shared",
+> >> +				    "gsi";
+> >> +
+> >> +			interrupts-extended =
+> >> +					<&intc 0 311 IRQ_TYPE_EDGE_RISING>,
+> >> +					<&intc 0 432 IRQ_TYPE_LEVEL_HIGH>,
+> >> +					<&ipa_smp2p_in 0 IRQ_TYPE_EDGE_RISING>,
+> >> +					<&ipa_smp2p_in 1 IRQ_TYPE_EDGE_RISING>;
+> >> +			interrupt-names = "ipa",
+> >> +					  "gsi",
+> >> +					  "ipa-clock-query",
+> >> +					  "ipa-setup-ready";
+> >> +
+> >> +			clocks = <&rpmhcc RPMH_IPA_CLK>;
+> >> +			clock-names = "core";
+> >> +
+> >> +			interconnects =
+> >> +				<&rsc_hlos MASTER_IPA &rsc_hlos SLAVE_EBI1>,
+> >> +				<&rsc_hlos MASTER_IPA &rsc_hlos SLAVE_IMEM>,
+> >> +				<&rsc_hlos MASTER_APPSS_PROC &rsc_hlos SLAVE_IPA_CFG>;
+> >> +			interconnect-names = "memory",
+> >> +					     "imem",
+> >> +					     "config";
+> >> +
+> >> +			qcom,smem-states = <&ipa_smp2p_out 0>,
+> >> +					   <&ipa_smp2p_out 1>;
+> >> +			qcom,smem-state-names = "ipa-clock-enabled-valid",
+> >> +						"ipa-clock-enabled";
+> >> +		};
+> >> +
+> >>  		tcsr_mutex_regs: syscon@1f40000 {
+> >>  			compatible = "syscon";
+> >>  			reg = <0 0x01f40000 0 0x40000>;
+> >>
+> > 
+> > 
+> > This change is causing the following build error on today's -next ...
+> > 
+> >  DTC     arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dtb
+> >  arch/arm64/boot/dts/qcom/sdm845.dtsi:1710.15-1748.5: ERROR (phandle_references): /soc@0/ipa@1e40000: Reference to non-existent node or label "rsc_hlos"
+> 
+> This problem arises because a commit in the Qualcomm SoC tree affects
+> "arch/arm64/boot/dts/qcom/sdm845.dtsi", changing the interconnect provider
+> node(s) used by IPA:
+>   b303f9f0050b arm64: dts: sdm845: Redefine interconnect provider DT nodes
+> 
+> I will send out a patch today that updates the IPA node in "sdm845.dtsi"
+> to correct that.
+> 
+> In the mean time, David, perhaps you should revert this change in net-next:
+>   9cc5ae125f0e arm64: dts: sdm845: add IPA information
+> and let me work out fixing "sdm845.dtsi" with Andy and Bjorn in the
+> Qualcomm tree.
+> 
 
-> -----Original Message-----
-> From: Shawn Guo <shawnguo@kernel.org>
-> Sent: Wednesday, March 11, 2020 1:13 AM
-> To: Leo Li <leoyang.li@nxp.com>
-> Cc: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org
-> Subject: Re: [PATCH 09/15] arm64: defconfig: Enable QorIQ IFC NAND
-> controller driver
-> 
-> On Mon, Feb 24, 2020 at 05:08:04PM -0600, Li Yang wrote:
-> > Enables NXP/FSL QorIQ IFC flash controller driver for NAND.  Enabled as
-> > built-in to load RFS from nand flash without initramfs.
-> >
-> > Signed-off-by: Li Yang <leoyang.li@nxp.com>
-> > ---
-> >  arch/arm64/configs/defconfig | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> > index d2d5d470a6fc..a625e322fa27 100644
-> > --- a/arch/arm64/configs/defconfig
-> > +++ b/arch/arm64/configs/defconfig
-> > @@ -217,6 +217,7 @@ CONFIG_MTD_BLOCK=y
-> >  CONFIG_MTD_RAW_NAND=y
-> >  CONFIG_MTD_NAND_DENALI_DT=y
-> >  CONFIG_MTD_NAND_MARVELL=y
-> > +CONFIG_MTD_NAND_FSL_IFC=y
-> >  CONFIG_MTD_NAND_QCOM=y
-> >  CONFIG_MTD_SPI_NOR=y
-> >  CONFIG_SPI_CADENCE_QUADSPI=y
-> > @@ -801,7 +802,6 @@ CONFIG_ARCH_K3_J721E_SOC=y
-> >  CONFIG_TI_SCI_PM_DOMAINS=y
-> >  CONFIG_EXTCON_USB_GPIO=y
-> >  CONFIG_EXTCON_USBC_CROS_EC=y
-> > -CONFIG_MEMORY=y
-> 
-> Why is this getting removed?  Maybe worth a mentioning in the commit
-> log?
+Reverting this in net-next and applying it in our tree sounds like the
+easiest path forward, and avoids further conflicts down the road.
 
-MTD_NAND_FSL_IFC selects MEMORY.  I can add it in the commit message.
+David, are you onboard with this?
 
-> 
-> Shawn
-> 
-> >  CONFIG_IIO=y
-> >  CONFIG_EXYNOS_ADC=y
-> >  CONFIG_QCOM_SPMI_ADC5=m
-> > --
-> > 2.17.1
-> >
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
