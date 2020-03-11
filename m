@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 906DA1814CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 10:28:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEE021814D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 10:28:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fxSg6zADLbd9v7/ZDOpVgLpGBu2JEd5wXj/iXu0UxRg=; b=utSt5NKj9GgxOZ
-	H+EllzjR4/0ZOCgLurj3+t+PLdtMXlBdGcytd1Oah0ciE8CYwL6i+IMx1ovTmwkuoJqaN3SXNZcri
-	fET9DQjlgDmCenSrFO/guC+xpn/jf0Lz+i4bcbz1DO29VL7vhini4j7T/qR0hxYTNQZ9eOOLOhIvt
-	u3s9UraQwUBn3WEQFj1QBWyRwU0MW24IuXXH1IdTy0CVRlRl/W/8W6pNlq+o+/2UhLaAEPg20tkD8
-	FGfv8PY+/jiEDec8Zcml09wkEzFRO1Z/7Ol1J12xyD56qGKBUNcPnpN6UtwL+16JGhjdYS8r+GAGK
-	EajhheAfBl7wpGZ6fG4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0UnOx5/2q5CwM5guEe41Bl2zSn+H2cVueNTngON6tpk=; b=MF6IUq1u0aGz6QcaGOGsD10NA
+	QJ/0K+CDQayKY8sx/W2muuhDnAqeuJRAsHpWcfbBoX7e4eTnMXV2TQ3rCS4WM4RzsFO/jSanE6yub
+	V4I6gHUr+gjyNI6T9sHWpPVJ5WibuhThaEejAlr78e6QS1TiaxT+suLTAkKfKU6E3XWgfpXYINh3p
+	hL23OVUVTgrzMTHkyrRLQFOjKWOFN3C2cqNWkE4uFRRs3o4+YwJdX3XWudvvXT2Ok15nUoVgl2dTL
+	n5pqzgymoC8zbmbrFjElejUFTTwHh2XVhYsD6hEwv15d19dCXpS0LI58Jo/fwIwnZq1zNgAXV8ssD
+	M9yjTxiaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBxfA-0008NG-Qy; Wed, 11 Mar 2020 09:28:28 +0000
+	id 1jBxfV-00007I-0U; Wed, 11 Mar 2020 09:28:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBxex-0008MU-N1
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 09:28:16 +0000
+ id 1jBxf4-0008R4-Fi
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 09:28:24 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC5AE31B;
- Wed, 11 Mar 2020 02:28:14 -0700 (PDT)
-Received: from [172.16.1.159] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D1FCB3F67D;
- Wed, 11 Mar 2020 02:28:11 -0700 (PDT)
-Subject: Re: [PATCH v6 00/18] arm64: return address signing
-To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6A7231B;
+ Wed, 11 Mar 2020 02:28:21 -0700 (PDT)
+Received: from [10.163.1.234] (unknown [10.163.1.234])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E49DC3F67D;
+ Wed, 11 Mar 2020 02:28:17 -0700 (PDT)
+Subject: Re: [PATCH v6 06/18] arm64: ptrauth: Add bootup/runtime flags for
+ __cpu_setup
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
-From: James Morse <james.morse@arm.com>
-Openpgp: preference=signencrypt
-Message-ID: <ae8f900b-6173-5cbb-076e-457994fbe0fe@arm.com>
-Date: Wed, 11 Mar 2020 09:28:09 +0000
+ <1583476525-13505-7-git-send-email-amit.kachhap@arm.com>
+ <e09af428-bd14-8755-6e16-bbf268040d17@arm.com>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <5e339fd0-8434-10bb-e6a0-417bc1c0dc09@arm.com>
+Date: Wed, 11 Mar 2020 14:58:18 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
+In-Reply-To: <e09af428-bd14-8755-6e16-bbf268040d17@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_022815_794720_16ECC1AB 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20200311_022822_607321_3290423C 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,43 +67,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Marc Zyngier <maz@kernel.org>,
- Kees Cook <keescook@chromium.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Kristina Martsenko <kristina.martsenko@arm.com>,
  Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
  Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Amit,
+Hi,
 
-(CC: +Marc)
+On 3/10/20 5:44 PM, Vincenzo Frascino wrote:
+> Hi Amit,
+> 
+> On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
+>> This patch allows __cpu_setup to be invoked with one of these flags,
+>> ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_SECONDARY or ARM64_CPU_RUNTIME.
+>> This is required as some cpufeatures need different handling during
+>> different scenarios.
+>>
+> 
+> I could not find any explanation in this patch on what these flags stand for.
+> Could you please add it? Maybe near where you define them.
 
-On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
-> This series improves function return address protection for the arm64 kernel, by
-> compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
-> ptrauth hereafter). This should help protect the kernel against attacks using
-> return-oriented programming.
+I will add in my V7 version.
+> 
+> With this:
+> 
+> Reviewed-by: Vincenzo Frascino <Vincenzo.Frascino@arm.com>
 
-(as it looks like there may be another version of this:)
-
-Am I right in thinking that after your patch 10 changing
-cpu_switch_to(), only the A key is live during kernel execution?
-
-KVM is still save/restoring 4 extra keys around guest-entry/exit. As you
-restore all the keys on return to user-space, is this still necessary?
-
-(insert cross-tree headache here)
-
-
-Thanks,
-
-James
+Thanks.
+> 
+>> The input parameter in x0 is preserved till the end to be used inside
+>> this function.
+>>
+>> There should be no functional change with this patch and is useful
+>> for the subsequent ptrauth patch which utilizes it. Some upcoming
+>> arm cpufeatures can also utilize these flags.
+>>
+>> Suggested-by: James Morse <james.morse@arm.com>
+>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
