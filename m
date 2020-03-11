@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D75BA18255E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:57:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 404C718256D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:58:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BYlB6TFu/C6ti0QCISH7TEMLn+50mEDPGUB/+H1LOxI=; b=Zq7Ls/9o6YymG4
-	yyFBYD3PGpm9zWp3FIhxyLY/St2DlJTxMRwlx7EAMuyzN1p0TGblfKDI+5FyQ1003aI8PD5MItlSS
-	IxQoHXbo8bAoqF0pqQVnoG4YcG20vpVtIsFU0Y74iPsIPM6Mw0ci5KGIJreNqeJEcpQbfc6jTEp76
-	GkqoidVrHVvs00BH6ruUD5KYrzqXvGauB3TD6lwpdZSzmcus2W1m0OQ8Zfmv5laEyru3UQe/dQgNa
-	jQuNWKRLvDcOslYBEltJiLIde8Sb49M1CDzR2u9FXGq17hZ75bHY1Ie6W6g/nz5khWSd2TkJRGtNo
-	B4+6sNRoBBEsFNyFPjBQ==;
+	List-Owner; bh=36ShtzZYZ/ExqgH3k5XRKFsJPLrAwvv0WGOE3z+kg9A=; b=av8Qb+VzcHTCXD
+	ReKlnHjqb76zZaWYVZt2p8ngR8GIhS1oEYl0Y1KNKNujYXEZooI5IX7HY6TCF5Hkdnr0r9BAJG3/3
+	N2NbTjS0aov5lC3LrfuvY1m8rv8riPMhNNT0Npi/u/J3jqoIhys7mM58TMooNoMQeD7Ts5JK6tD4Q
+	pUzoVmUsxmJGSYfQlaUgPO2ijN/Vq4nLAng352/Fc6GvrM7WffIAArSKW9FQ0MTui+jEltULw+F8b
+	SccybHVk45aBRennRf+mQJ9H+zAPQyw0oX/058QS288RNmlyk5Ng43xUqK9Jf8AZwEteYKg/IVngI
+	JsLX1buiZsOhKKhd6siA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCAI0-0000wN-9I; Wed, 11 Mar 2020 22:57:24 +0000
+	id 1jCAIt-0001wp-VE; Wed, 11 Mar 2020 22:58:20 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCAEv-0004rw-PF
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:54:16 +0000
+ id 1jCAEv-0004rx-PH
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:54:15 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 91557200BF0;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id D1FFE200BF2;
  Wed, 11 Mar 2020 23:54:10 +0100 (CET)
 Received: from smtp.na-rdc02.nxp.com (usphx01srsp001v.us-phx01.nxp.com
  [134.27.49.11])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 59FD3200BF2;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9B0AB200BF8;
  Wed, 11 Mar 2020 23:54:10 +0100 (CET)
 Received: from right.am.freescale.net (right.am.freescale.net [10.81.116.70])
  by usphx01srsp001v.us-phx01.nxp.com (Postfix) with ESMTP id
- DDD6E40A85; Wed, 11 Mar 2020 15:54:09 -0700 (MST)
+ 2A43340A5F; Wed, 11 Mar 2020 15:54:10 -0700 (MST)
 From: Li Yang <leoyang.li@nxp.com>
 To: shawnguo@kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 13/15] arm64: defconfig: Enable RTC devices for QorIQ boards
-Date: Wed, 11 Mar 2020 17:53:15 -0500
-Message-Id: <20200311225317.11198-14-leoyang.li@nxp.com>
+Subject: [PATCH v2 14/15] arm64: defconfig: Enable PHY devices used on QorIQ
+ boards
+Date: Wed, 11 Mar 2020 17:53:16 -0500
+Message-Id: <20200311225317.11198-15-leoyang.li@nxp.com>
 X-Mailer: git-send-email 2.25.1.377.g2d2118b
 In-Reply-To: <20200311225317.11198-1-leoyang.li@nxp.com>
 References: <20200311225317.11198-1-leoyang.li@nxp.com>
 MIME-Version: 1.0
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_155414_005120_09920656 
-X-CRM114-Status: UNSURE (   6.98  )
+X-CRM114-CacheID: sfid-20200311_155413_978093_09B01414 
+X-CRM114-Status: UNSURE (   7.02  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,33 +75,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enables the RTC devices used on QorIQ reference boards supported in
-mainline kernel.
+Enables various PHY device drivers and PHY MUX drivers used on QorIQ
+reference boards supported in mainline kernel.
+
+Enabled as built-in to boot from network without an initramfs.
 
 Signed-off-by: Li Yang <leoyang.li@nxp.com>
 ---
- arch/arm64/configs/defconfig | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/configs/defconfig | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index f0d75bbaac80..b092adecf724 100644
+index b092adecf724..a6e9d046e65d 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -692,11 +692,14 @@ CONFIG_LEDS_TRIGGER_PANIC=y
- CONFIG_EDAC=y
- CONFIG_EDAC_GHES=y
- CONFIG_RTC_CLASS=y
-+CONFIG_RTC_DRV_DS1307=m
- CONFIG_RTC_DRV_MAX77686=y
- CONFIG_RTC_DRV_RK808=m
-+CONFIG_RTC_DRV_PCF85363=m
- CONFIG_RTC_DRV_RX8581=m
- CONFIG_RTC_DRV_S5M=y
- CONFIG_RTC_DRV_DS3232=y
-+CONFIG_RTC_DRV_PCF2127=m
- CONFIG_RTC_DRV_EFI=y
- CONFIG_RTC_DRV_CROS_EC=y
- CONFIG_RTC_DRV_S3C=y
+@@ -306,13 +306,17 @@ CONFIG_SNI_AVE=y
+ CONFIG_SNI_NETSEC=y
+ CONFIG_STMMAC_ETH=m
+ CONFIG_MDIO_BUS_MUX_MMIOREG=y
++CONFIG_MDIO_BUS_MUX_MULTIPLEXER=y
++CONFIG_AQUANTIA_PHY=y
+ CONFIG_MARVELL_PHY=m
+ CONFIG_MARVELL_10G_PHY=m
+ CONFIG_MESON_GXL_PHY=m
+ CONFIG_MICREL_PHY=y
++CONFIG_MICROSEMI_PHY=y
+ CONFIG_AT803X_PHY=y
+ CONFIG_REALTEK_PHY=m
+ CONFIG_ROCKCHIP_PHY=y
++CONFIG_VITESSE_PHY=y
+ CONFIG_USB_PEGASUS=m
+ CONFIG_USB_RTL8150=m
+ CONFIG_USB_RTL8152=m
+@@ -880,6 +884,7 @@ CONFIG_FPGA_REGION=m
+ CONFIG_OF_FPGA_REGION=m
+ CONFIG_TEE=y
+ CONFIG_OPTEE=y
++CONFIG_MUX_MMIO=y
+ CONFIG_EXT2_FS=y
+ CONFIG_EXT3_FS=y
+ CONFIG_EXT4_FS_POSIX_ACL=y
 -- 
 2.17.1
 
