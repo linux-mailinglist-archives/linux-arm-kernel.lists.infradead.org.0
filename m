@@ -2,79 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27A9C180FA5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 06:16:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E42FB181011
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 06:32:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lEQX7Lw6KTlDbqRv7iun5OV7LwFbffHDKgVLgHJXLRQ=; b=RJ8bGZvuiYyIjH
-	JbpxBCj1BO17hiR99cs7DMJiBXQyTY9dZUgbCYYiXJToQsqbZDD4/tzyT0wL6h1xR/0fpbpViLM1V
-	avfC6lTibbJh6UN/xbyApAsaAD8ip5r9Xdh8AbA1sdAHHo/qJjO8j2a2y5TlWO91IR0YgaAmhQwVc
-	N9TMvjodsnk035ongEdtbJm0mF+dB9vliPCq7a2iF2a7/H60Tv1a2oMlNDWgeZoQY+gI+gg5eU1RS
-	DRenTGQMhbjARMo58NSCx4XbcdWW9juoeTjyxXVK3L2aRUeiCF52t5DY+JwW+PpBXYh8x3I65ppvn
-	faB++/60xuTuZXK2H2uw==;
+	List-Owner; bh=GMJ10aikAlX5RAzWkP9fPRt8FAg2s/hTsR2GnIzxJWY=; b=fHl1j0Q9M9/Nhg
+	3drDFllLMQXWT1mu/PZb1CCQSURLZ5oMRdM/z5Adfzay1nNu1ajUquvaRhIgLSDV41/m/vowzKdUx
+	TTpbrhmaY5YK3JTdycXyMgLsVTC1s/uCtOWOVJ1vFvpIeFjNN2x7aSaHcWPCL7v3zQFl2J6YdaaTS
+	pobDxZfS3M37RGAR5MrUihKkNutVsJUg4stoNzLOJNM3Xnb8lkdeqZVKNTvEzvdKcXSGnirn0Erql
+	7axdArEmJjEgAgTJZaN1KaQWGNUdvTY2HtGz7Dmn5xunhyNHU6fHx5j/Fawg/ZtQVNWXBqDHZ3OVj
+	ISMZMKKQB5yE36Au8b8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBtiz-00045R-Gi; Wed, 11 Mar 2020 05:16:09 +0000
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
+	id 1jBtyB-0000Gc-Hp; Wed, 11 Mar 2020 05:31:52 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBtiq-000450-6M
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 05:16:02 +0000
-Received: from mail-vs1-f49.google.com (mail-vs1-f49.google.com
- [209.85.217.49]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id 02B5Fkuu017169
- for <linux-arm-kernel@lists.infradead.org>; Wed, 11 Mar 2020 14:15:47 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com 02B5Fkuu017169
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1583903747;
- bh=AfcAhhaYncg48rG2V8lvHQMNiBncmFjUl9msHr0LZLM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=KvW0KXepxAE2RCGteQEv1YSqRNHr0J2XMAXuIYCj1s+nNf63JyYw/9OC9czBm81xE
- clTtP0F838rdSrlae7fdZfuzjmaW0k88pzKs1nbAHtt3Uyh7o4zAnMyop6uGwQMinE
- NUBaWFVGEx5beaInaYhJb4d+us0M18Nqvb1KiMlrWdMedpw91/J8E1PkpEXG7Ht7zT
- rVUpsbRqkZkR22fGL28i63NHiw+bHariqNs76uyEyY8rldbzsX0Sk34pYYQb0u70Nz
- ULCMR1b9jSK/sN8ZGBLFycql4/3VhoWvwXQ13Iufs7qQd+LmBIQEq4ymjyhFCl2QBq
- HF1nFpJqD1/Zg==
-X-Nifty-SrcIP: [209.85.217.49]
-Received: by mail-vs1-f49.google.com with SMTP id z125so494018vsb.13
+ id 1jBtxr-0000GA-Sr
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 05:31:33 +0000
+Received: by mail-ot1-x344.google.com with SMTP id j16so721854otl.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Mar 2020 22:15:47 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ3so7oN2o1yBrxdwFK38/rqM/UFew/n0Txy5gGvlkW7++9n22qe
- TCRwftJEe22M8aKahqRdSCK5+PeuWjwAAqWyJXI=
-X-Google-Smtp-Source: ADFU+vueM9zpX/w41+7KRQJKMve2nE9ggiD45SMOr/dEVd886cFoVN80tyg4r4qMFhRNb5dCuud4jNxETWUlZpLQMEc=
-X-Received: by 2002:a05:6102:8f:: with SMTP id
- t15mr878244vsp.215.1583903745980; 
- Tue, 10 Mar 2020 22:15:45 -0700 (PDT)
+ Tue, 10 Mar 2020 22:31:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=mRaU0AqIThL9bVRbu+a3uE7ULIqF+zwOfxIVLuqdJ+E=;
+ b=NtE3RCy7mnABRhFQlxK7AY6bPEJM4+yH1iCZhlEN6AmfDHifT0veCYRVYxUES13rYk
+ LNMHvBu0rpvTqdPmZIPc2vPhfWyp1CdyjE6hLLjiT93fxCpf9ju6tv0c1/tdzWV7Xa8+
+ K/Xf56eBn1Nz9l9yepM3HJi+eRl51tpuAJhBoBOYp0zbVUQhmsNn02+9u28PEMVkE+Mv
+ wLDQnlX7k4zyzmjwD3yXLDdiVuaa5dd0WGsxzEv0ZWIduEc/CiOGGxxdLIOuxnZq+lqW
+ 2b8+afiBXLeWUuOIK4vqcKVoKNmKXy4CZFXImK+Tg/qnPtFquaKZnAFmbkE+6LPYit5u
+ yloQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=mRaU0AqIThL9bVRbu+a3uE7ULIqF+zwOfxIVLuqdJ+E=;
+ b=oRBMHMwug1h/TFkjlp/rbvdCr06XI/SpN0ws/JyS8U4Ncru9ACKiHdvo2c7MoWEb5E
+ QvGAl27nZlfGplwgGFdIMOe1hAYx0XtJgcGsaC6j7lF3u9x/zjReTEFL75Gzss75D9+r
+ L8dTqNEqiddPoYp/zaqw7ixVD8wTzTSihBNGPY2G/+6fRoVXVYFhpufN7qctwFtvnDWv
+ yV60vHO7mWj2qlb971qZfg/EzGMgs1oK4fQMDJdDphrabhWsm4SNl+0hiBwCMGjXzAr+
+ OS4ACa+0UGb/Hpvlt2HjMbssuPJfI07qT4ufp3bQ3P54pIMHrbW//2CNK0VuGbZ//Czp
+ wyGA==
+X-Gm-Message-State: ANhLgQ0VzkNu+5fyTaXzggHvwhQf1GYvqVk3sP3Q2ZTFcwUaJ4Q+qtIJ
+ 67wqiqrojbl6ftX6rZlHDtw=
+X-Google-Smtp-Source: ADFU+vvs2EpekK1XhQaOxK2H/diS+7ZScfO4M0urCZbqCYmSLIA7g/iGRL/1x2OE+pmtzyFhOSV3Ng==
+X-Received: by 2002:a9d:3b6:: with SMTP id f51mr1050716otf.255.1583904688182; 
+ Tue, 10 Mar 2020 22:31:28 -0700 (PDT)
+Received: from ubuntu-m2-xlarge-x86 ([2604:1380:4111:8b00::1])
+ by smtp.gmail.com with ESMTPSA id m124sm776958oib.46.2020.03.10.22.31.27
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 10 Mar 2020 22:31:27 -0700 (PDT)
+Date: Tue, 10 Mar 2020 22:31:26 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+Subject: Re: [PATCH v4] MIPS: Replace setup_irq() by request_irq()
+Message-ID: <20200311053126.GA48442@ubuntu-m2-xlarge-x86>
+References: <20200304203144.GA4323@alpha.franken.de>
+ <20200305115759.3186-1-afzal.mohd.ma@gmail.com>
 MIME-Version: 1.0
-References: <cover.1583896344.git.joe@perches.com>
- <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
-In-Reply-To: <dae0878058223a42c77d725b8d7c5845a7ef9dc0.1583896348.git.joe@perches.com>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Wed, 11 Mar 2020 14:15:10 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
-Message-ID: <CAK7LNAS7GAk9yXkPhbS3ByU+n9Gb-rk0PeLcXLCNwpW1B22aeg@mail.gmail.com>
-Subject: Re: [PATCH -next 005/491] ARM/UNIPHIER ARCHITECTURE: Use fallthrough; 
-To: Joe Perches <joe@perches.com>
+Content-Disposition: inline
+In-Reply-To: <20200305115759.3186-1-afzal.mohd.ma@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_221600_781568_CA155CD1 
-X-CRM114-Status: GOOD (  15.67  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200310_223131_961782_95F2AAC5 
+X-CRM114-Status: GOOD (  10.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.83 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [natechancellor[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,76 +100,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>
+Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Paul Burton <paulburton@kernel.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ Jiaxun Yang <jiaxun.yang@flygoat.com>,
+ "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
+ Huacai Chen <chenhc@lemote.com>, Keguang Zhang <keguang.zhang@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 2:07 PM Joe Perches <joe@perches.com> wrote:
->
-> Convert the various uses of fallthrough comments to fallthrough;
->
-> Done via script
-> Link: https://lore.kernel.org/lkml/b56602fcf79f849e733e7b521bb0e17895d390fa.1582230379.git.joe.com/
->
-> Signed-off-by: Joe Perches <joe@perches.com>
+On Thu, Mar 05, 2020 at 05:27:53PM +0530, afzal mohammed wrote:
+> request_irq() is preferred over setup_irq(). Invocations of setup_irq()
+> occur after memory allocators are ready.
+> 
+> Per tglx[1], setup_irq() existed in olden days when allocators were not
+> ready by the time early interrupts were initialized.
+> 
+> Hence replace setup_irq() by request_irq().
+> 
+> remove_irq() has been replaced by free_irq() as well.
+> 
+> There were build error's during previous version, couple of which was
+> reported by kbuild test robot <lkp@intel.com> of which one was reported
+> by Thomas Bogendoerfer <tsbogend@alpha.franken.de> as well. There were a
+> few more issues including build errors, those also have been fixed.
+> 
+> [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
+> 
+> Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
 
+This patch regresses booting malta_defconfig with both GCC and clang
+with this rootfs and QEMU 4.2.0:
 
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+https://github.com/ClangBuiltLinux/continuous-integration/blob/a85e3e44c2570847e22ad8f92f317c2b007c4517/images/mipsel/rootfs.cpio
 
+$ timeout 2m qemu-system-mipsel -machine malta -cpu 24Kf -initrd rootfs.cpio -kernel vmlinux -m 512m -display none -serial mon:stdio
 
-But, I think the patch subject should be prefixed:
-"serial: 8250_uniphier:"
+just hangs. I have not done further debugging past the initial bisect.
 
-
-
-> ---
->  drivers/tty/serial/8250/8250_uniphier.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/tty/serial/8250/8250_uniphier.c b/drivers/tty/serial/8250/8250_uniphier.c
-> index e0b73a5..a2978ab 100644
-> --- a/drivers/tty/serial/8250/8250_uniphier.c
-> +++ b/drivers/tty/serial/8250/8250_uniphier.c
-> @@ -75,7 +75,7 @@ static unsigned int uniphier_serial_in(struct uart_port *p, int offset)
->                 break;
->         case UART_LCR:
->                 valshift = 8;
-> -               /* fall through */
-> +               fallthrough;
->         case UART_MCR:
->                 offset = UNIPHIER_UART_LCR_MCR;
->                 break;
-> @@ -101,7 +101,7 @@ static void uniphier_serial_out(struct uart_port *p, int offset, int value)
->         case UART_SCR:
->                 /* No SCR for this hardware.  Use CHAR as a scratch register */
->                 valshift = 8;
-> -               /* fall through */
-> +               fallthrough;
->         case UART_FCR:
->                 offset = UNIPHIER_UART_CHAR_FCR;
->                 break;
-> @@ -109,7 +109,7 @@ static void uniphier_serial_out(struct uart_port *p, int offset, int value)
->                 valshift = 8;
->                 /* Divisor latch access bit does not exist. */
->                 value &= ~UART_LCR_DLAB;
-> -               /* fall through */
-> +               fallthrough;
->         case UART_MCR:
->                 offset = UNIPHIER_UART_LCR_MCR;
->                 break;
-> --
-> 2.24.0
->
-
-
--- 
-Best Regards
-Masahiro Yamada
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
