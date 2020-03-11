@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0C20181DF7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:34:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E905A181DFC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:34:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MBXVUlkQtVJd0NCxEWQEHxODWbYWmuQ8WYtQWGCW0IQ=; b=fI78Yfu7KFKFac
-	y7SMUbaoi6zi3uAJaTlKeNweBVh212YhHjtLpneP7ePcQWTqmKL1ACD5KJvlV2c+EyRMuaOm3Yt2h
-	3aELh1zHGuIz0drKvr+gkZAmrEBsqR20D31nV3E9gM1EvG8XfBOuaJS5M0LSk2BCpVEUBojmU5noe
-	c0k77D9XooyOYB/74/ILUrMC2IbNqXZKfp8Ds+rU4RoY6ZzzmUcgqTJMey8lgP8ibZMcV4U67uFtw
-	OpE4t6Aozgbg7RvvmGjrEA6+cXWbWdwqtLK4J5ySEhS3lbGLAPZZ76Ls2XBAmqvcDTrj3MD8nzMoD
-	xTIka6rlA0qXhM0fprhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/cQ949bybUBDuKom+CC7Il3xu56FF10MfRPJUK2bMSg=; b=gUQcd+bcfn0d86
+	G0Mmq/joO4gOZWa9gOGnoVa7cSTu37lmxFUG77pIpsFayp4mLjyyqdmgHirtbsOIsXQpdO2ltIe02
+	WgbTq0BcDcjjcPFcwCpP1P4QBU04lXSQJ1jdSAuP6BpLAio2wBTqSDV5UKpwZJ2Er+3ymAayHJXvK
+	icurpjHzPXBnVz4ZfZUC8lX8VqHKl91CIJU33GtrFn83hRe9z7uWSrbieMIQNQ/tOZlLCbS+K5wbb
+	iV+LAPpJn79/oEytXem8zCF6T9NHuKy/Py2FXVkB0j9esfmh7WkyDFD3t6qymA0HVTcMm9AgNmrgu
+	Qa0N1SAVPG7VQrcPU2Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4Iu-0003HV-Jq; Wed, 11 Mar 2020 16:33:56 +0000
+	id 1jC4JH-0003X6-28; Wed, 11 Mar 2020 16:34:19 +0000
 Received: from dodo.xh.is ([2001:19f0:8001:184d:5400:2ff:fe7b:e8bd])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4Ij-0003GR-69
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:33:46 +0000
+ id 1jC4Ip-0003GR-6b
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:33:52 +0000
 X-Spam: yes
 X-Spam-Score: 6.6 / 99999
-X-Spam-Symbols: MID_CONTAINS_FROM, FREEMAIL_TO, RCVD_NO_TLS_LAST,
- FROM_EQ_ENVFROM, SUSPICIOUS_RECIPS, RCVD_VIA_SMTP_AUTH,
- TO_DN_SOME, BROKEN_CONTENT_TYPE, R_MISSING_CHARSET,
- RCPT_COUNT_TWELVE, ASN, RCVD_COUNT_TWO, FROM_HAS_DN,
- FREEMAIL_ENVRCPT, TO_MATCH_ENVRCPT_SOME, ARC_NA, TAGGED_RCPT,
- MIME_TRACE
-Received: by dodo.xh.is (OpenSMTPD) with ESMTPSA id a0f7dd32
+X-Spam-Symbols: TAGGED_RCPT, BROKEN_CONTENT_TYPE, MID_CONTAINS_FROM,
+ RCVD_NO_TLS_LAST, ASN, SUSPICIOUS_RECIPS, FREEMAIL_ENVRCPT,
+ TO_MATCH_ENVRCPT_SOME, FROM_EQ_ENVFROM, MIME_TRACE,
+ RCVD_COUNT_TWO, RCVD_VIA_SMTP_AUTH, TO_DN_SOME,
+ R_MISSING_CHARSET, FREEMAIL_TO, ARC_NA, FROM_HAS_DN,
+ RCPT_COUNT_TWELVE
+Received: by dodo.xh.is (OpenSMTPD) with ESMTPSA id a7fe1285
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
- Wed, 11 Mar 2020 09:33:44 -0700 (PDT)
+ Wed, 11 Mar 2020 09:33:50 -0700 (PDT)
 Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
  icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id 951924BFAC;
- Wed, 11 Mar 2020 16:33:37 +0000 (UTC)
+ by hermes.aosc.io (Postfix) with ESMTPSA id 4DD2A4C335;
+ Wed, 11 Mar 2020 16:33:44 +0000 (UTC)
 From: Icenowy Zheng <icenowy@aosc.io>
 To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
  Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
  Chen-Yu Tsai <wens@csie.org>, Ondrej Jirman <megous@megous.com>
-Subject: [PATCH 0/5] Add support for PinePhone LCD panel
-Date: Thu, 12 Mar 2020 00:33:24 +0800
-Message-Id: <20200311163329.221840-1-icenowy@aosc.io>
+Subject: [PATCH 1/5] dt-bindings: vendor-prefixes: Add Xingbangda
+Date: Thu, 12 Mar 2020 00:33:25 +0800
+Message-Id: <20200311163329.221840-2-icenowy@aosc.io>
+In-Reply-To: <20200311163329.221840-1-icenowy@aosc.io>
+References: <20200311163329.221840-1-icenowy@aosc.io>
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aosc.io; s=dkim;
- t=1583944422;
- h=from:subject:date:message-id:to:cc:mime-version:content-transfer-encoding;
- bh=9aZ3S84mHw4qXcjY/Kp+GSG14l46FAM2R96fwhUnoLw=;
- b=M89YJFIsfv3TZ/gwLoaB/0Mmpaux2szLuy6/wGBcE0KvwJsUyq4OivuUzj7OVflX7zqjPC
- O+ZAmvqBL37TldMPGv7hCZUL3De0hTKB/wYZZ/t0xalJHpEXiJoJIdZpUzeu5pH2sT2sI5
- HR8LUFEPwhbZGQ//OtguR8BmVhgN6DI=
+ t=1583944428;
+ h=from:subject:date:message-id:to:cc:mime-version:content-transfer-encoding:in-reply-to:references;
+ bh=AfXGWxD0IIuyOwz/1L1dhkzs7UBLknMSUFpWsqJiTqw=;
+ b=Kbx6Pv20zwIKbLvVvzanZyPPAMGOwFSiOUEuJwmIiIGEY1xPeDlqFMFfMFg4cf91690Z9q
+ bkx44L/lsQ+wznNumkSScXaEfJQWbPXgnCdzk/AHM09TIssxpqW1tgdzM/pt0JgI8gvbN6
+ GQm/JRw9ST/jJXBSvMxQUrr1aDrqBzE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_093345_270272_A6DAC39B 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20200311_093351_295597_5360E719 
+X-CRM114-Status: GOOD (  10.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -92,32 +94,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for the LCD panel of PinePhone.
+Shenzhen Xingbangda Display Technology Co., Ltd is a company which
+produces LCD modules. It supplies the LCD panels of the PinePhone series
+(the developers' kit and the final phone).
 
-The first 3 patches are for the panel itself, and the last 2 patches are
-for enabling it on PinePhone.
+Add the vendor prefix of it.
 
-PATCH 4 is the fix of a bug in sun6i_mipi_dsi which will gets triggered
-on XBD599.
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+---
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Icenowy Zheng (5):
-  dt-bindings: vendor-prefixes: Add Xingbangda
-  dt-bindings: panel: add binding for Xingbangda XBD599 panel
-  drm: panel: add Xingbangda XBD599 panel
-  drm/sun4i: sun6i_mipi_dsi: fix horizontal timing calculation
-  arm64: allwinner: dts: a64: add LCD-related device nodes for PinePhone
-
- .../display/panel/xingbangda,xbd599.yaml      |  50 +++
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- .../dts/allwinner/sun50i-a64-pinephone.dtsi   |  37 ++
- drivers/gpu/drm/panel/Kconfig                 |   9 +
- drivers/gpu/drm/panel/Makefile                |   1 +
- .../gpu/drm/panel/panel-xingbangda-xbd599.c   | 367 ++++++++++++++++++
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c        |  10 +-
- 7 files changed, 471 insertions(+), 5 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/display/panel/xingbangda,xbd599.yaml
- create mode 100644 drivers/gpu/drm/panel/panel-xingbangda-xbd599.c
-
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index b8e9ef79cab9..038a2180d34b 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -1102,6 +1102,8 @@ patternProperties:
+     description: Xiaomi Technology Co., Ltd.
+   "^xillybus,.*":
+     description: Xillybus Ltd.
++  "^xingbangda,.*":
++    description: Shenzhen Xingbangda Display Technology Co., Ltd
+   "^xinpeng,.*":
+     description: Shenzhen Xinpeng Technology Co., Ltd
+   "^xlnx,.*":
 -- 
 2.24.1
 
