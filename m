@@ -2,76 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9B23181DDC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:30:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21CAB181DE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 17:31:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MBXVUlkQtVJd0NCxEWQEHxODWbYWmuQ8WYtQWGCW0IQ=; b=PogYEbVCbsnODN
-	tWLRyuVwQQG2IgNqGNE6ksdvt0E0h5A8KQQ6eZMxFbnmVrImfo7rLdh62FbEtq7KOMHjlaBl0bIPT
-	PcZDgQi3aNaDaf2aa9Hcv5ObPB3K/ANqMFRwMxqz0m1bDVDq5/LQ37gCuXnpCzuHwJmUpf38ml1S3
-	LpslY/c3vYvU+q9vOi6xOsGgb6HJBTA/3JkFVJZa85V+OCyUXM3vPfr4sHw0oHGHV3gUeJ8ldEjQW
-	BiG6LIFy9oPh2EBypn9OwE60bL5wAfnZJBoz6uA++3pwiRg9988zYR9lqn13ya+eCqOi6Xqcfc+Tf
-	WMSMz+pqh8ampLCkNrAA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gOkyqeHcckYIe1NG1l0dSH8XTOoaC1bDAUgZTcjt+YM=; b=T/qX+sfugsp60U
+	TEanQoQrciBoZ8N/MqDlhq/GEogsGUSSRzI57wNk8MhRNSCdqO0JbeBnYDyqSkuiM+E2D/MzOXlOT
+	Bj70KAkBi/Hwl8FyYcqXK7skvOckon5ecSkYNKw+niDFkue+bvPyOgeBp9SZNKJBzoX74DG1arNf+
+	jGi6ZRFkHQmT5EGzi/0C6y7QlCDpno8ViJQzK7qeenXge+mUAG4S1KT1H/DQYqbyjQqQcYRNFWpZ4
+	HV/BaWC2lfWvk1VS9xDRDUWGN7mWZsA2r33yjcaO57Gl0mf60LjYDkTqVVBoUEOUB++NJ5qmHO1bv
+	/DspVSvlE4/9H1kJHaFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC4FV-0002CT-Dj; Wed, 11 Mar 2020 16:30:25 +0000
-Received: from dodo.xh.is ([2001:19f0:8001:184d:5400:2ff:fe7b:e8bd])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC4FM-00021O-Ar
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:30:18 +0000
-X-Spam: yes
-X-Spam-Score: 6.6 / 99999
-X-Spam-Symbols: TAGGED_RCPT, BROKEN_CONTENT_TYPE, SUSPICIOUS_RECIPS,
- MID_CONTAINS_FROM, FROM_EQ_ENVFROM, ASN, ARC_NA, TO_DN_SOME,
- R_MISSING_CHARSET, MIME_TRACE, RCVD_VIA_SMTP_AUTH, FROM_HAS_DN,
- RCVD_NO_TLS_LAST, FREEMAIL_TO, RCVD_COUNT_TWO,
- FREEMAIL_ENVRCPT, TO_MATCH_ENVRCPT_SOME, RCPT_COUNT_TWELVE
-Received: by dodo.xh.is (OpenSMTPD) with ESMTPSA id 6de100bf
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256:NO); 
- Wed, 11 Mar 2020 09:29:56 -0700 (PDT)
-Received: from localhost (localhost [127.0.0.1]) (Authenticated sender:
- icenowy@aosc.io)
- by hermes.aosc.io (Postfix) with ESMTPSA id BC2B74C30D;
- Wed, 11 Mar 2020 16:29:47 +0000 (UTC)
-From: Icenowy Zheng <icenowy@aosc.io>
-To: Thierry Reding <thierry.reding@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Ondrej Jirman <megous@megous.com>
-Subject: [PATCH 0/5] Add support for PinePhone LCD panel
-Date: Thu, 12 Mar 2020 00:29:31 +0800
-Message-Id: <20200311162936.221613-1-icenowy@aosc.io>
+	id 1jC4GN-0002aD-OZ; Wed, 11 Mar 2020 16:31:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jC4GD-0002Xm-Jz
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 16:31:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E968E31B;
+ Wed, 11 Mar 2020 09:31:08 -0700 (PDT)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ D8A643F6CF; Wed, 11 Mar 2020 09:31:05 -0700 (PDT)
+Date: Wed, 11 Mar 2020 16:31:03 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v8 03/11] arm64: Basic Branch Target Identification support
+Message-ID: <20200311163103.GL3216816@arrakis.emea.arm.com>
+References: <20200227174417.23722-1-broonie@kernel.org>
+ <20200227174417.23722-4-broonie@kernel.org>
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aosc.io; s=dkim;
- t=1583944194;
- h=from:subject:date:message-id:to:cc:mime-version:content-transfer-encoding;
- bh=9aZ3S84mHw4qXcjY/Kp+GSG14l46FAM2R96fwhUnoLw=;
- b=CB0z2emeUteq4K+Vm+Fl3YW5AeDzN+fR9fgavG6U/oahKEFAAdnW8kuNmiSZ7oWpDQm9IV
- WxcSkkn8AlLXmy5KwmN3BH1rHXhyzPyBnIS0/fRTlxGEaAQhAwQe2WnYfS/EHTF0xhIF1d
- grHLKR2JssBVmHAnD79ImiHiNXFJZcQ=
+Content-Disposition: inline
+In-Reply-To: <20200227174417.23722-4-broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_093016_420560_E14B483B 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200311_093109_698558_6A190971 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:19f0:8001:184d:5400:2ff:fe7b:e8bd listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,43 +62,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-sunxi@googlegroups.com,
- linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for the LCD panel of PinePhone.
+On Thu, Feb 27, 2020 at 05:44:09PM +0000, Mark Brown wrote:
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 0b30e884e088..e37f4f07b990 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -1519,6 +1519,28 @@ endmenu
+>  
+>  menu "ARMv8.5 architectural features"
+>  
+> +config ARM64_BTI
+> +	bool "Branch Target Identification support"
+> +	default y
+> +	help
+> +	  Branch Target Identification (part of the ARMv8.5 Extensions)
+> +	  provides a mechanism to limit the set of locations to which computed
+> +	  branch instructions such as BR or BLR can jump.
+> +
+> +	  To make use of BTI on CPUs that support it, say Y.
+> +
+> +	  BTI is intended to provide complementary protection to other control
+> +	  flow integrity protection mechanisms, such as the Pointer
+> +	  authentication mechanism provided as part of the ARMv8.3 Extensions.
+> +	  For this reason, it does not make sense to enable this option without
+> +	  also enabling support for pointer authentication.  Thus, when
+> +	  enabling this option you should also select ARM64_PTR_AUTH=y.
+> +
+> +	  Userspace binaries must also be specifically compiled to make use of
+> +	  this mechanism.  If you say N here or the hardware does not support
+> +	  BTI, such binaries can still run, but you get no additional
+> +	  enforcement of branch destinations.
 
-The first 3 patches are for the panel itself, and the last 2 patches are
-for enabling it on PinePhone.
-
-PATCH 4 is the fix of a bug in sun6i_mipi_dsi which will gets triggered
-on XBD599.
-
-Icenowy Zheng (5):
-  dt-bindings: vendor-prefixes: Add Xingbangda
-  dt-bindings: panel: add binding for Xingbangda XBD599 panel
-  drm: panel: add Xingbangda XBD599 panel
-  drm/sun4i: sun6i_mipi_dsi: fix horizontal timing calculation
-  arm64: allwinner: dts: a64: add LCD-related device nodes for PinePhone
-
- .../display/panel/xingbangda,xbd599.yaml      |  50 +++
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- .../dts/allwinner/sun50i-a64-pinephone.dtsi   |  37 ++
- drivers/gpu/drm/panel/Kconfig                 |   9 +
- drivers/gpu/drm/panel/Makefile                |   1 +
- .../gpu/drm/panel/panel-xingbangda-xbd599.c   | 367 ++++++++++++++++++
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c        |  10 +-
- 7 files changed, 471 insertions(+), 5 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/display/panel/xingbangda,xbd599.yaml
- create mode 100644 drivers/gpu/drm/panel/panel-xingbangda-xbd599.c
+To keep the series bisectable, I'd move the Kconfig into a separate
+patch towards the end. It looks like the feature is only partially
+supported after patch 3, so let's not advertise it here.
 
 -- 
-2.24.1
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
