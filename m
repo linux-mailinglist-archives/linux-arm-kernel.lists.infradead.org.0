@@ -2,89 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ABA01824AF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:21:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C72351824CD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 23:25:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uGCdjTh/dk5wkoRH0vzlkxNQB0hvj/5Q0EcNw3oyNGA=; b=JhYVTZDz4iFOxL
-	aKBG9kc4zEFQo5qiKqXaOxFZbLvQQPp2Ax3LUTRIMYyUPnxb4SZMggon0OhUowkJ1uehbTdT2nrf0
-	7bul38v71H2byKpmw3ueCKc8eFelzBY0IRJlwgFCAxVCj9hYvmEPUZ27DI6U3boIsPLIC8VtrJ6hh
-	zpIl6UaXvtvSbbM6gV6rBcPrPshWNxroFBAg67b1NSuLUVSGEj1EoKGjI20jxZ6s25fFGSzmIl/Ie
-	7QPFoOj4oQyBVyi8PFqfa03v1LqxuVPmmEgC/88TTUI0Yqbz1iIiihtzPtBg4/p8BzNbLIYdFpzrp
-	KCDcizp3/qengwybccEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ng3zoI4u+tmGektb+YNm8sxU1j7NiLX41L3L2mepN4M=; b=WWFUURS7il2JGOZtAzQ1Gl1o6
+	+akWBcIBbkllTCc5KYy2D6TPk3ku4hkpSs9jVUpWOAzHNhzTLiXtPRLi7RMdX6SzE15ta88loaMZ0
+	mWOibcTQe/NDsNnJGAqBIdhqMsTE2mgBRc4KrgZaI5I6WByQKfjROqFQfpZ2N9hYmMqzrsn1SZChz
+	NO1q0IX3iiqzJdtAgLT1X2dlJUUONn4yDsBk4Vhy8XK8lVA/d7q5Cr45CLk2+BCgDN2Xee+NY1Saq
+	qMF0jN258a4Tc0GkrL5MbG8ScoPs7aTspfwnOhemryxg9lo64DTMn5D6R9sZMGIdivi2wRb0i+TPd
+	sCb+TT+SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC9jG-0002V9-G0; Wed, 11 Mar 2020 22:21:30 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jC9mr-0002yk-Pz; Wed, 11 Mar 2020 22:25:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC9j7-0002UR-8e
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 22:21:22 +0000
-Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MuDHR-1jSSDj3kHF-00uWs8 for <linux-arm-kernel@lists.infradead.org>; Wed,
- 11 Mar 2020 23:21:19 +0100
-Received: by mail-qk1-f182.google.com with SMTP id e11so3762282qkg.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 15:21:18 -0700 (PDT)
-X-Gm-Message-State: ANhLgQ2ncPssues7OSpGXwgkhMV5SUbxAoZTC0/DH6vXqgIoKOFQqqER
- wbiNhm+kPA9vObJYqkEjwKbxi4H/QGVGU/dKxUs=
-X-Google-Smtp-Source: ADFU+vtUX6596ckwbsQtKLPYKkjWdRNNv2OExbN7pWVykWRKgnRWddSMydtufZDaxYnGmzl5giJGitq9nSLOAiz/v+U=
-X-Received: by 2002:a37:8707:: with SMTP id j7mr2513764qkd.394.1583965277788; 
- Wed, 11 Mar 2020 15:21:17 -0700 (PDT)
+ id 1jC9mZ-0002yH-6e; Wed, 11 Mar 2020 22:24:56 +0000
+Received: from jupiter.universe (dyndsl-037-138-186-138.ewe-ip-backbone.de
+ [37.138.186.138])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4904820575;
+ Wed, 11 Mar 2020 22:24:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1583965494;
+ bh=UZudGW4ntWR2WDjFg7rUyYyM4uljMpWCzCsi4J+ORvk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=gfGX/r286WMLdJy5TKyVTTLMx6xyzdGvb1b0jKt8PBaYqHqLf+JvTFGPC9iB6rcxK
+ sLrugxbZURjcvYnT7DmgWKnw+/NSDwe+QkcNCSlHXH89QgTBay2LsWf1FCHihdRlhf
+ e5wgd8i82/7gEPDbFUU7lRaAnJx1O3gj8l8OlSEs=
+Received: by jupiter.universe (Postfix, from userid 1000)
+ id 8F7CB4800FC; Wed, 11 Mar 2020 23:24:52 +0100 (CET)
+Date: Wed, 11 Mar 2020 23:24:52 +0100
+From: Sebastian Reichel <sre@kernel.org>
+To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Subject: Re: [PATCH v10 4/5] rtc: mt6397: Add support for the MediaTek MT6358
+ RTC
+Message-ID: <20200311222452.nxeajmbbpidbwyal@jupiter.universe>
+References: <1583918223-22506-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1583918223-22506-5-git-send-email-hsin-hsiung.wang@mediatek.com>
 MIME-Version: 1.0
-References: <671b05bc-7237-7422-3ece-f1a4a3652c92@oracle.com>
- <CAK8P3a13jGdjVW1TzvCKjRBg-Yscs_WB2K1kw9AzRfn3G9a=-Q@mail.gmail.com>
- <7c4c1459-60d5-24c8-6eb9-da299ead99ea@oracle.com>
- <20200306203439.peytghdqragjfhdx@kahuna>
- <CAK8P3a0Gyqu7kzO1JF=j9=jJ0T5ut=hbKepvke-2bppuPNKTuQ@mail.gmail.com>
- <20200309155945.GA4124965@arrakis.emea.arm.com>
- <20200309160919.GM25745@shell.armlinux.org.uk>
- <CAK8P3a2yyJLmkifpSabMwtUiAvumMPwLEzT5RpsBA=LYn=ZXUw@mail.gmail.com>
- <20200311142905.GI3216816@arrakis.emea.arm.com>
- <CAK8P3a2RC+sg2Tz4M8mkQ_d78FTFdES+YsucUzDFx=UK+L8Oww@mail.gmail.com>
- <20200311172631.GN3216816@arrakis.emea.arm.com>
-In-Reply-To: <20200311172631.GN3216816@arrakis.emea.arm.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 11 Mar 2020 23:21:01 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a0QTKsqoxE7HS7aNrASSHOfFJHfp3+KZNTVoQ12wHi3VQ@mail.gmail.com>
-Message-ID: <CAK8P3a0QTKsqoxE7HS7aNrASSHOfFJHfp3+KZNTVoQ12wHi3VQ@mail.gmail.com>
-Subject: Re: [PATCH] vfs: keep inodes with page cache off the inode shrinker
- LRU
-To: Catalin Marinas <catalin.marinas@arm.com>
-X-Provags-ID: V03:K1:qKd8/YRt3ysap/A6UAIo8juxn3YF4vWmhlyQwULsOgJyKwVcVME
- yu3Hxi8gAHiN2neBd02Oe/QL5+m4nXnN4YPaV4saAezYNlNAdSuGsVSakcop7JNsoBbBCop
- EwPx6pX8swfk8kHLGl+i5vQJ2j6sA77zWUwtWCS3RUCSJDqIcWuuQYuAT+syx2KGWx7o+gE
- REUmjmo1UKL0qjCBszxrQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:W/QeN4t1laU=:JHPB5skF3/Ixl4gIqMMwGg
- HuUQDBCM2E8c7RwwNRo/iI3Zr9YFEsdL5qmEgVAB0G+2KXy4+uAXGZHgnbfT+slEOEqRAbWPv
- BJgLcokl5uw9bZAN6JpaWUIeLvYl9ti6jeK0PC1xe0KHtO8velFJxLm8csQNof84veakh1BVR
- +VkMDyHUTNkUDJ0quvI8Tg4lKlO9ycKNmZLC8j6OLiUxO6O41dHJBieNdMwWorQX6s7y89OS8
- aZ5bF7CMyeZgO65RQBLZg8h55i7gqnGalEc3Frirh1JB9fGtvwFfptkzMzBKsWeTakmAIDRtj
- yDQTY6CsNOH3eEe0pWIw6Uohs6N7naxg7ME9tul21E/7QWnOc6vLN/EitoG3TOmt8ei3QT1qY
- tS162KUg71tl0agB+9Txi/Wwy7+G/DvN4jfH69Hrv/Mh8zJjWLwSslrP/azZTTkjxH5vjvMgT
- oNs5/DwZAzvWHYGYQ55bDJkiBfgQvYApka1copGwehqJSKrMWv/QxVSxwb5iNKeX4grOcBlaB
- SSNZtWq8yNbs26VEWK1DSrxOfTu3kZxaqhC4kNN21NtDiDkc8mxlYQByY+DYm58761I2Ey9ea
- U9nbWc3djdfazw7TlQcExwzwqnA1WmVAb0y2BTafpr+KdE8i0s2IgluZ0/zXuPle8je4WeYiO
- 9l4AAnq4ZIA+Aza4Cbf+8aHWc8XpbKtO8cy7sEzH54gIlTfBikO2cmJPHWVDDif8NpxkLZAPe
- PozS3wKSYuUbxgZOhGkpEvLF3ZC90S2/4ib+7/AcXf5asbg89+yZOghRPoGwlMJrKQqV34P/Z
- T2J1JW2fXm2LFDNwRvhtpf8v87i965TmLZgCr/dBxj7oBFQnbs=
+In-Reply-To: <1583918223-22506-5-git-send-email-hsin-hsiung.wang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_152121_596861_EF744FA6 
-X-CRM114-Status: GOOD (  15.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200311_152455_282793_78D02D5E 
+X-CRM114-Status: GOOD (  21.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,54 +78,214 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Michal Hocko <mhocko@suse.com>,
- Johannes Weiner <hannes@cmpxchg.org>, Rik van Riel <riel@surriel.com>,
- Roman Gushchin <guro@fb.com>, Santosh Shilimkar <santosh.shilimkar@oracle.com>,
- Dave Chinner <david@fromorbit.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Linux-MM <linux-mm@kvack.org>,
- Yafang Shao <laoar.shao@gmail.com>, Al Viro <viro@zeniv.linux.org.uk>,
- Santosh Shilimkar <ssantosh@kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>, kernel-team@fb.com,
- Kishon Vijay Abraham I <kishon@ti.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Frank Wunderlich <frank-w@public-files.de>, Ran Bi <ran.bi@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, Josef Friedl <josef.friedl@speed.at>,
+ linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, linux-pm@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ linux-rtc@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============1937636271973347121=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 6:26 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> On Wed, Mar 11, 2020 at 05:59:53PM +0100, Arnd Bergmann wrote:
-> > On Wed, Mar 11, 2020 at 3:29 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> > Do you have an estimate of how long writing to TTBR0_64 takes on Cortex-A7
-> > and A15, respectively?
->
-> I don't have numbers but it's usually not cheap since you need an ISB to
-> synchronise the context after TTBR0 update (basically flushing the
-> pipeline).
 
-Ok.
+--===============1937636271973347121==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="h2zavgzncyp2cq5o"
+Content-Disposition: inline
 
-> > Another way might be to use a use a temporary buffer that is already
-> > mapped, and add a memcpy() through L1-cache to reduce the number
-> > of ttbr0 changes. The buffer would probably have to be on the stack,
-> > which limits the size, but for large copies get_user_pages()+memcpy()
-> > may end up being faster anyway.
->
-> IIRC, the x86 attempt from Ingo some years ago was using
-> get_user_pages() for uaccess. Depending on the size of the buffer, this
-> may be faster than copying twice.
 
-I guess the tradeoffs for that were rather different, as x86 back
-then had no ASIDs, so changing the page tables required a full
-TLB flush.
+--h2zavgzncyp2cq5o
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-         Arnd
+Hi,
+
+On Wed, Mar 11, 2020 at 05:17:02PM +0800, Hsin-Hsiung Wang wrote:
+> From: Ran Bi <ran.bi@mediatek.com>
+>=20
+> This add support for the MediaTek MT6358 RTC. Driver using
+> compatible data to store different RTC_WRTGR address offset.
+> This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
+> driver which only needed by armv7 CPU without ATF.
+>=20
+> Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> ---
+
+Should be fine to simply merge this through RTC:
+
+Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+-- Sebastian
+
+>  drivers/power/reset/mt6323-poweroff.c |  2 +-
+>  drivers/rtc/rtc-mt6397.c              | 32 ++++++++++++++++++++++++-----=
+---
+>  include/linux/mfd/mt6397/rtc.h        |  9 ++++++++-
+>  3 files changed, 33 insertions(+), 10 deletions(-)
+>=20
+> diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/=
+mt6323-poweroff.c
+> index 1caf43d..0532803 100644
+> --- a/drivers/power/reset/mt6323-poweroff.c
+> +++ b/drivers/power/reset/mt6323-poweroff.c
+> @@ -30,7 +30,7 @@ static void mt6323_do_pwroff(void)
+>  	int ret;
+> =20
+>  	regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
+> -	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
+> +	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR_MT6323, 1);
+> =20
+>  	ret =3D regmap_read_poll_timeout(pwrc->regmap,
+>  					pwrc->base + RTC_BBPU, val,
+> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+> index cda238d..7a5a9e2 100644
+> --- a/drivers/rtc/rtc-mt6397.c
+> +++ b/drivers/rtc/rtc-mt6397.c
+> @@ -9,18 +9,38 @@
+>  #include <linux/mfd/mt6397/core.h>
+>  #include <linux/module.h>
+>  #include <linux/mutex.h>
+> +#include <linux/of_device.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+>  #include <linux/rtc.h>
+>  #include <linux/mfd/mt6397/rtc.h>
+>  #include <linux/mod_devicetable.h>
+> =20
+> +static const struct mtk_rtc_data mt6358_rtc_data =3D {
+> +	.wrtgr =3D RTC_WRTGR_MT6358,
+> +};
+> +
+> +static const struct mtk_rtc_data mt6397_rtc_data =3D {
+> +	.wrtgr =3D RTC_WRTGR_MT6397,
+> +};
+> +
+> +static const struct of_device_id mt6397_rtc_of_match[] =3D {
+> +	{ .compatible =3D "mediatek,mt6323-rtc",
+> +		.data =3D (void *)&mt6397_rtc_data, },
+> +	{ .compatible =3D "mediatek,mt6358-rtc",
+> +		.data =3D (void *)&mt6358_rtc_data, },
+> +	{ .compatible =3D "mediatek,mt6397-rtc",
+> +		.data =3D (void *)&mt6397_rtc_data, },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, mt6397_rtc_of_match);
+> +
+>  static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
+>  {
+>  	int ret;
+>  	u32 data;
+> =20
+> -	ret =3D regmap_write(rtc->regmap, rtc->addr_base + RTC_WRTGR, 1);
+> +	ret =3D regmap_write(rtc->regmap, rtc->addr_base + rtc->data->wrtgr, 1);
+>  	if (ret < 0)
+>  		return ret;
+> =20
+> @@ -269,6 +289,9 @@ static int mtk_rtc_probe(struct platform_device *pdev)
+>  	res =3D platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	rtc->addr_base =3D res->start;
+> =20
+> +	rtc->data =3D (struct mtk_rtc_data *)
+> +			of_device_get_match_data(&pdev->dev);
+> +
+>  	rtc->irq =3D platform_get_irq(pdev, 0);
+>  	if (rtc->irq < 0)
+>  		return rtc->irq;
+> @@ -325,13 +348,6 @@ static int mt6397_rtc_resume(struct device *dev)
+>  static SIMPLE_DEV_PM_OPS(mt6397_pm_ops, mt6397_rtc_suspend,
+>  			mt6397_rtc_resume);
+> =20
+> -static const struct of_device_id mt6397_rtc_of_match[] =3D {
+> -	{ .compatible =3D "mediatek,mt6323-rtc", },
+> -	{ .compatible =3D "mediatek,mt6397-rtc", },
+> -	{ }
+> -};
+> -MODULE_DEVICE_TABLE(of, mt6397_rtc_of_match);
+> -
+>  static struct platform_driver mtk_rtc_driver =3D {
+>  	.driver =3D {
+>  		.name =3D "mt6397-rtc",
+> diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rt=
+c.h
+> index 7dfb63b..66534ed 100644
+> --- a/include/linux/mfd/mt6397/rtc.h
+> +++ b/include/linux/mfd/mt6397/rtc.h
+> @@ -18,7 +18,9 @@
+>  #define RTC_BBPU_CBUSY         BIT(6)
+>  #define RTC_BBPU_KEY            (0x43 << 8)
+> =20
+> -#define RTC_WRTGR              0x003c
+> +#define RTC_WRTGR_MT6358       0x3a
+> +#define RTC_WRTGR_MT6397       0x3c
+> +#define RTC_WRTGR_MT6323       RTC_WRTGR_MT6397
+> =20
+>  #define RTC_IRQ_STA            0x0002
+>  #define RTC_IRQ_STA_AL         BIT(0)
+> @@ -65,6 +67,10 @@
+>  #define MTK_RTC_POLL_DELAY_US  10
+>  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+> =20
+> +struct mtk_rtc_data {
+> +	u32			wrtgr;
+> +};
+> +
+>  struct mt6397_rtc {
+>  	struct device           *dev;
+>  	struct rtc_device       *rtc_dev;
+> @@ -74,6 +80,7 @@ struct mt6397_rtc {
+>  	struct regmap           *regmap;
+>  	int                     irq;
+>  	u32                     addr_base;
+> +	const struct mtk_rtc_data *data;
+>  };
+> =20
+>  #endif /* _LINUX_MFD_MT6397_RTC_H_ */
+> --=20
+> 2.6.4
+
+--h2zavgzncyp2cq5o
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl5pZTQACgkQ2O7X88g7
++pq9wQ/+KoirFKK4cM7Qw34TtpdNX2uGtfuzcUmBKNjfJl/5WCUE/qo5WgaKcplR
+VgE7uQWOzATqT3mQxG0iH2lzyXd2BVP2PJyEbswUyWTw/hZYLsrT2i+DKvQ4UKQa
+WDKOvNwWsZMJrVAYnyV35Xsp4pWr2yFER61UiAMLlaXhhRzOLQE+P8dd4dr0cFhu
+OgWclCmPjvLgVJsRbLvbyhQ2cLmTwnwBJICbHG+j8FQ0se2EgwzLyOl/45/6Oae+
+qIzjAlZwYAwTmSpwCUeTLSJBp8i4BRg/xETQYpGf6cfBrf7VzBnQFZMo7rdGfj5G
+gTJtq7yqAHlCXN1xQsYhy1Xx+SCl9y6Afjr7jyPW3iHnGvjrVeD1SR7tpDL3G9aT
+iRviJlgdfpp7SrT0PwQkQ+Nk2OS2CqUcdWoTjODOtUPxQeAVcE2Hj14qjlcvftVa
++TGsljzNgIu8rfjwyqnf4ppfSMzK+M5tWCyzPLmKxZSchgvHILQ5DFlpYYG8HV/E
+rUWRsEO9o1KZdlaOne98g90WZqbbqPRa3qpPUihmvj0yUlNsB7cPWBalFx8A8kAc
+dGXnDj36egCGIb4Y5R3GtStgE6J4aDctSQuQzlm6vfk2C7sebUuTLmuy44TWMxez
+L8QZ8aytJjFJ2dDAyUkHuTDJ47im2TyeIAbPfB/HkA7UYSM/Ars=
+=P8yi
+-----END PGP SIGNATURE-----
+
+--h2zavgzncyp2cq5o--
+
+
+--===============1937636271973347121==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1937636271973347121==--
+
