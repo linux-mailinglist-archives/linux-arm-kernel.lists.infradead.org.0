@@ -2,49 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ACD5181627
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 11:50:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2072F181631
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 11:52:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ICXq176Rsa3B6BD9xzL4/gHRci+MBPf5tBF7OgLBxgg=; b=AJJ+iGFXF8cHwd
-	AO4nj+Pbp7LMu1QDHu9L5ZiCQSPNRXeGRAKvxGgie1aOrCWcWJErxXnuhI2lICy/0r0ItMuwCGTGS
-	lSkHAqcCwSgjNonTeuXbZgWb8peddwZh9tAgbxEwY4jWz/qlm9wIIBbpSBNBlGqF887Y4D6sxTxxR
-	0zCVd88a/+ulq6N7NdhkmoLZXbzateH6du7YDdT0Gs47CVKdZkfdNnQoMdYh/F5TORCPUSVR+/NNn
-	C5hV80iVHSaiD94zufHH/FAzRILSX9PlRS+cGwnkfbylDFjOOglDV2Ce+5VeWpypdo86R+ofiAqt0
-	QmcJilqTKWkOqBZSH/bA==;
+	List-Owner; bh=LqwrV0NKmio5En3aaG5F9Q2+6WRL3MAjTMcWs0vu+X8=; b=SwGoNQ/5mITQe1
+	RCcNzqSJG1HuzBird5oRAKIam/994WGi79RZ6Oo4Heq6gpkBs+s0vEKqahCcSOZ12A+nE5kwFpzsd
+	sUtIJoJob8vBAOGZ248EjWoaEQQ1xm7JA1kGnE1cBhi9UoLKNtoShNKCIljmYrxnx9UHj61a3sgWI
+	l4R3za+XcGcqd3nZIHx0ATbUeibrq/SUnfR2jLD1RAkabmZ0PcxrMd+1ePTRA5SvitdeBi8Nlmmki
+	5nRyKbOpa0fMQP9QcdFBH6M98w3/FeQT2HOiVC3HVF++SQFDqaKYHdzWFYVYWptmb2Ze9s2qQjFaw
+	Aq3ECHjl/zSC+CWWA9fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBywd-00081m-VI; Wed, 11 Mar 2020 10:50:36 +0000
+	id 1jByyV-00008j-Mo; Wed, 11 Mar 2020 10:52:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBywU-00081O-G2
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 10:50:28 +0000
+ id 1jByyI-00007q-6r
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 10:52:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBB891FB;
- Wed, 11 Mar 2020 03:50:23 -0700 (PDT)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 2E9303F6CF; Wed, 11 Mar 2020 03:50:22 -0700 (PDT)
-Date: Wed, 11 Mar 2020 10:50:20 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v6 07/18] arm64: cpufeature: Move cpu capability helpers
- inside C file
-Message-ID: <20200311105020.GA3216816@arrakis.emea.arm.com>
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-8-git-send-email-amit.kachhap@arm.com>
- <eb3acde3-ba4c-162d-b1d2-54183ab4e921@arm.com>
- <e3749f3f-e314-c3b8-cf71-b1ea9d699f4e@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A2821FB;
+ Wed, 11 Mar 2020 03:52:17 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1E8453F6CF;
+ Wed, 11 Mar 2020 03:52:15 -0700 (PDT)
+Date: Wed, 11 Mar 2020 10:52:00 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH V5 0/5] Add support for PCIe endpoint mode in Tegra194
+Message-ID: <20200311105141.GA30083@e121166-lin.cambridge.arm.com>
+References: <20200303181052.16134-1-vidyas@nvidia.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e3749f3f-e314-c3b8-cf71-b1ea9d699f4e@arm.com>
+In-Reply-To: <20200303181052.16134-1-vidyas@nvidia.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_035026_580926_F57FE5C0 
-X-CRM114-Status: GOOD (  16.60  )
+X-CRM114-CacheID: sfid-20200311_035218_298310_078C9B7D 
+X-CRM114-Status: GOOD (  16.46  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,79 +63,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
+ linux-tegra@vger.kernel.org, robh+dt@kernel.org, thierry.reding@gmail.com,
+ linux-pci@vger.kernel.org, bhelgaas@google.com, andrew.murray@arm.com,
+ jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Mar 10, 2020 at 06:23:15PM +0530, Amit Kachhap wrote:
-> On 3/10/20 5:50 PM, Vincenzo Frascino wrote:
-> > On 3/6/20 6:35 AM, Amit Daniel Kachhap wrote:
-> > 
-> > [...]
-> > 
-> > > -static inline bool
-> > > -cpucap_late_cpu_optional(const struct arm64_cpu_capabilities *cap)
-> > > -{
-> > > -	return !!(cap->type & ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU);
-> > > -}
-> > > -
-> > > -static inline bool
-> > > -cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
-> > > -{
-> > > -	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
-> > > -}
-> > > -
-> > >   /*
-> > >    * Generic helper for handling capabilties with multiple (match,enable) pairs
-> > >    * of call backs, sharing the same capability bit.
-> > > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> > > index b12e386..865dce6 100644
-> > > --- a/arch/arm64/kernel/cpufeature.c
-> > > +++ b/arch/arm64/kernel/cpufeature.c
-> > > @@ -1363,6 +1363,19 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
-> > >   }
-> > >   #endif
-> > > +/* Internal helper functions to match cpu capability type */
-> > > +static bool
-> > > +cpucap_late_cpu_optional(const struct arm64_cpu_capabilities *cap)
-> > > +{
-> > > +	return !!(cap->type & ARM64_CPUCAP_OPTIONAL_FOR_LATE_CPU);
-> > > +}
-> > > +
-> > > +static bool
-> > > +cpucap_late_cpu_permitted(const struct arm64_cpu_capabilities *cap)
-> > > +{
-> > > +	return !!(cap->type & ARM64_CPUCAP_PERMITTED_FOR_LATE_CPU);
-> > > +}
-> > > +
-> > >   static const struct arm64_cpu_capabilities arm64_features[] = {
-> > >   	{
-> > >   		.desc = "GIC system register CPU interface",
-> > > 
-> > 
-> > Seems that the signature of the functions above is changed during the migration.
-> > In particular you dropped "inline". Is there any specific reason?
+On Tue, Mar 03, 2020 at 11:40:47PM +0530, Vidya Sagar wrote:
+> Tegra194 has three (C0, C4 & C5) dual mode PCIe controllers that can operate
+> either in root port mode or in end point mode but only in one mode at a time.
+> Platform P2972-0000 supports enabling endpoint mode for C5 controller. This
+> patch series adds support for PCIe endpoint mode in both the driver as well as
+> in DT.
+> This patch series depends on the changes made for Synopsys DesignWare endpoint
+> mode subsystem that are recently accepted.
+> @ https://patchwork.kernel.org/project/linux-pci/list/?series=202211
+> which in turn depends on the patch made by Kishon
+> @ https://patchwork.kernel.org/patch/10975123/
+> which is also under review.
 > 
-> Earlier Catalin pointed me here [1]. I guess its not a hot-path function.
+> V5:
+> * Rebased patch-2 on top of Lorenzo's pci/endpoint branch
+> * Removed unwanted header files inclusion in patch-5
+
+Applied patches 1,2,5 to pci/endpoint for v5.7, please let me know
+if something is missing.
+
+Thanks,
+Lorenzo
+
+> V4:
+> * Started using threaded irqs instead of kthreads
 > 
-> [1]: https://www.spinics.net/lists/arm-kernel/msg789696.html
-
-Indeed, it had to be static inline in a header but not anymore in a .c
-file. Also if it's really essential to be inlined and the compiler
-doesn't do this automatically, use __always_inline. But my preference is
-not to bother unless you back it up by numbers.
-
--- 
-Catalin
+> V3:
+> * Re-ordered patches in the series to make the driver change as the last patch
+> * Took care of Thierry's review comments
+> 
+> V2:
+> * Addressed Thierry & Bjorn's review comments
+> * Added EP mode specific binding documentation to already existing binding documentation file
+> * Removed patch that enables GPIO controller nodes explicitly as they are enabled already
+> 
+> Vidya Sagar (5):
+>   soc/tegra: bpmp: Update ABI header
+>   dt-bindings: PCI: tegra: Add DT support for PCIe EP nodes in Tegra194
+>   arm64: tegra: Add PCIe endpoint controllers nodes for Tegra194
+>   arm64: tegra: Add support for PCIe endpoint mode in P2972-0000
+>     platform
+>   PCI: tegra: Add support for PCIe endpoint mode in Tegra194
+> 
+>  .../bindings/pci/nvidia,tegra194-pcie.txt     | 125 +++-
+>  .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  18 +
+>  arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  99 +++
+>  drivers/pci/controller/dwc/Kconfig            |  30 +-
+>  drivers/pci/controller/dwc/pcie-tegra194.c    | 679 +++++++++++++++++-
+>  include/soc/tegra/bpmp-abi.h                  |  10 +-
+>  6 files changed, 916 insertions(+), 45 deletions(-)
+> 
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
