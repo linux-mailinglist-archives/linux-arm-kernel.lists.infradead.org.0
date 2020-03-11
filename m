@@ -2,59 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BDAA181673
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 12:01:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A7C418167B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 12:03:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X3DgWozmhkxcbvJmHZMKdlkCMcRrxT3tvcv9rT+mrP8=; b=WBYIAwnnrtAI1AE9OMUaOAvqH
-	Npv9nsl8WDPMhPu83CN6hYchrTf0vGg9T2j3kDk0hXBj19IGjs9w4qZihyMDsg/W4z7Q8SV6Hr3wy
-	n945K2eFCKVIMqukbVECZVxumyLixw9UxDL3M8lMY6BaRpQ7xralR8rzYPMUnyfypb/4ZBy13WChC
-	39oph9wvQ9K2B1elaZmJjRCn5KfYS32ly7y/lJOmK6orE3XnMHMb0HfJ0s4kRC+kXVH0dUv9XJjBc
-	DmeZV33YsQGvWM10FHnBxIGdi23kg2fUbpH4dLGz1IHtRb/W/eA2PA2zBeJhc0IZ9WcM+sdtj4V3x
-	+sEbbvBsg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LaS5mdYiAVaXlZfwisvME/0Oa9TY+eMHmmVAdQ04GoY=; b=Q6yzKDhtM+AZcC
+	GZC9Y/hFj8m489czGt4Wu0xbdVfYLIVu1qtf0sTcuV5UdLAZ/7e5NcaTR5wVwTNEui6ELfOR2o/j7
+	wHjIfqkIQ0YHjujUCVJDBh6NwDEjWNU7cSJdXoysP9gm1xsDBVFnPosG1hSyWKw/4SBDas4p4D4WL
+	G89hvT/yZZFzwMDhalLyzx0nsemnWnWwp20s8OQWhT8UW6O55OGbZZTN8DJyXH5KIGsLu0DR7vX2W
+	/e9UZ4nSfvOIzaHtXGRGYSnNWpdqfTpOiM5H0Fv5ZxmdkN89eHA+3eghRxdqqseYF39e67NWOZKCR
+	14hkeOSMjE0N64wTui/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBz7L-0005P2-B9; Wed, 11 Mar 2020 11:01:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBz7B-0005Od-QT
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 11:01:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD15F1FB;
- Wed, 11 Mar 2020 04:01:28 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 42FD33F6CF;
- Wed, 11 Mar 2020 04:01:28 -0700 (PDT)
-Date: Wed, 11 Mar 2020 11:01:26 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH] arm64: entry-ftrace.S: Fix missing argument for
- CONFIG_FUNCTION_GRAPH_TRACER=y
-Message-ID: <20200311110126.GA5411@sirena.org.uk>
-References: <1583894213-7633-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1jBz8x-0005p4-II; Wed, 11 Mar 2020 11:03:19 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jBz8i-0005nW-N8
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 11:03:05 +0000
+Received: by mail-ed1-x544.google.com with SMTP id a13so2351260edh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 04:03:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jb6YNfpy0i4p0prPq7fXurxyCpu3UioYP/wK0SXZz40=;
+ b=OzXiZdZxcla8lff01e5y1xu8R1or7O5akJh7vkF0kGDv+FIl4k+KI5dt7+u7bNa22f
+ pEgi1+VeIA0u2roWjwGSIIVN7DccoliwZNCmhlmVo4+QDcI5e0XEPbQld3FfpR1P8z8I
+ MP4yhJz3sMk7jvtXq8o0TB7XLMZod2m/M8uIQ=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jb6YNfpy0i4p0prPq7fXurxyCpu3UioYP/wK0SXZz40=;
+ b=cKq5PwO+MuJzAFLRVa3PJk/LKUKIkxeRIpb/F4rfiE7zrkMs7hRSwsQvBjiDRPRiKr
+ DC9oWKLYKjPKO1rdPSt6WKUGCc7UHFybTs0m8ZygV4yYLMu5/A5bAMvHi04OmEBDtPp8
+ K5Kkq+/o7rY+6f8Suuy14dty8dViol07kQZBEJjg/wBkWvPlftoNKS7rHkNunKQHmhOX
+ ti6ygER2FtglL7IkSN+GbhKU3BSCqBBTKnH5u3BZUOHmLCWXtpFrd4PMANvR7AKSDrMO
+ LPAHzTx51gJrVjx2476Bq8fVrM5sYuyzCa9idO7KXhs7Q65qOxU9DstXGbS5lgtHXS+l
+ ArIg==
+X-Gm-Message-State: ANhLgQ3XZFrwZmtCOP719EQP9sRUPt8cc+RQDHS48KzoAH0X1sdYUOSr
+ j23xLO5a+Pq60BgMiUaPAwj6rpXZOtx1gA==
+X-Google-Smtp-Source: ADFU+vuqXJU3k64rJ+GzLbgrkBlZB2b0khRmI9mx+7HU/PpYAWVgAYNagE1WqxPsG6YBSPjWsXzMwg==
+X-Received: by 2002:a17:906:a14:: with SMTP id
+ w20mr1830578ejf.274.1583924583184; 
+ Wed, 11 Mar 2020 04:03:03 -0700 (PDT)
+Received: from mail-wr1-f52.google.com (mail-wr1-f52.google.com.
+ [209.85.221.52])
+ by smtp.gmail.com with ESMTPSA id da23sm4150849edb.85.2020.03.11.04.03.00
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 11 Mar 2020 04:03:00 -0700 (PDT)
+Received: by mail-wr1-f52.google.com with SMTP id l18so1986985wru.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 04:03:00 -0700 (PDT)
+X-Received: by 2002:adf:f545:: with SMTP id j5mr3918965wrp.295.1583924580138; 
+ Wed, 11 Mar 2020 04:03:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1583894213-7633-1-git-send-email-hayashi.kunihiko@socionext.com>
-X-Cookie: I'm a Lisp variable -- bind me!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200303123446.20095-1-xia.jiang@mediatek.com>
+ <20200303123446.20095-4-xia.jiang@mediatek.com>
+In-Reply-To: <20200303123446.20095-4-xia.jiang@mediatek.com>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 11 Mar 2020 20:02:48 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5AA6NtLDsqL3Ph8cwv5=ZYoPOiu4Wa85ky037qOyMH1QQ@mail.gmail.com>
+Message-ID: <CAAFQd5AA6NtLDsqL3Ph8cwv5=ZYoPOiu4Wa85ky037qOyMH1QQ@mail.gmail.com>
+Subject: Re: [PATCH v7 03/11] media: platform: Improve s_selection flow for
+ bug fixing
+To: Xia Jiang <xia.jiang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_040129_902215_AC082647 
-X-CRM114-Status: UNSURE (   7.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200311_040304_751744_5DD447C7 
+X-CRM114-Status: GOOD (  17.28  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs [URI: r.top (top)]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,57 +104,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3618583028335248981=="
+Cc: linux-devicetree <devicetree@vger.kernel.org>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Rick Chang <rick.chang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Xia,
 
---===============3618583028335248981==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Qxx1br4bt0+wmkIi"
-Content-Disposition: inline
+On Tue, Mar 3, 2020 at 9:35 PM Xia Jiang <xia.jiang@mediatek.com> wrote:
+>
+> Get correct compose value in mtk_jpeg_s_selection function.
 
+It's a good practice to describe why the current code is wrong and new is good.
 
---Qxx1br4bt0+wmkIi
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+>
+> Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
+> ---
+>  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
 
-On Wed, Mar 11, 2020 at 11:36:53AM +0900, Kunihiko Hayashi wrote:
-> Missing argument of another SYM_INNER_LABEL() breaks build for
-> CONFIG_FUNCTION_GRAPH_TRACER=y.
+Thanks for the patch. Please see my comment inline.
 
-Acked-by: Mark Brown <broonie@kernel.org>
+> diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+> index da0dae4b0fc9..fb2c8d026580 100644
+> --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+> +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+> @@ -492,8 +492,8 @@ static int mtk_jpeg_s_selection(struct file *file, void *priv,
+>         case V4L2_SEL_TGT_COMPOSE:
+>                 s->r.left = 0;
+>                 s->r.top = 0;
+> -               s->r.width = ctx->out_q.w;
+> -               s->r.height = ctx->out_q.h;
+> +               ctx->out_q.w = s->r.width;
+> +               ctx->out_q.h = s->r.height;
+>                 break;
+>         default:
+>                 return -EINVAL;
 
---Qxx1br4bt0+wmkIi
-Content-Type: application/pgp-signature; name="signature.asc"
+The decoder compose target means the visible rectangle of the decoded
+image, which comes from the stream metadata. It's not something that
+can be set by the userspace.
 
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5oxQMACgkQJNaLcl1U
-h9CeWgf7Bzv1s2eTPsMd1oDrdWw4fbak3ACJ/ynsFM2lhEQI3DdhGMYCsAgoLlRX
-HS/K+7ydBUZEEyxDPnMLPCAEB3iOAWGEaSwhFlvxJzBOZzK1fLs2JrJCHvDGN6fY
-Ex7/OkteIo16ppA8UwzINYOAUX4x1zimrvWEyX8mmOQn+k+Na9SO1Zl7TUBINiir
-Gtk/gv3fcM4WV15B83bFE9N4o3JLw3t+PY8rtijIqYEHqcYHuzXi7d4A+GBZlHlZ
-VS0rq49bFboQ81SnbbpsLXEXXROWxD+hOfcTzxvN8W95g0+HNmNvZQlnn5SttzHl
-3Q3GptTWpuPLyNU9QjL0TOuJFRDggA==
-=R3/C
------END PGP SIGNATURE-----
-
---Qxx1br4bt0+wmkIi--
-
-
---===============3618583028335248981==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Best regards,
+Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3618583028335248981==--
-
