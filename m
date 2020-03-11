@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 972D31816B3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 12:21:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECFAE1816BE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 12:21:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2AfUOM9XiZkgPYxkx4JCz56qCKLBxlZPBIhUC6tBQEQ=; b=frTTACw4huhO8CK6g9QFIEFZV
-	Gi6Uxla8r2UdO9bjvjHeR9aeJGwGCPqftexgmYpDAytUCas0jIO9k1LiDxRaDndnoURYYlf+p7yFO
-	FBBR0A19EernXGecHyjXPjr2vxzlnx69HywQjln6J1qZcInznQI2KfKYhguKXkvjrOYkcUbghimwO
-	YMoHzer0kmjH0h/v8ZqHYKqxf2QnOqwQ9420rY8RSK6eYpWvFKub0RgKCuwbd8Lfpmhcgfbg7xcWB
-	8bdhCpwLkPOfvURxdyLsV09ZalBS7jc//5Dudy5l5iBC0WnPdxr/UJLr++R8YdnQyupQTtyDNOTsf
-	G3TQTw69g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LWYPT9owe2Opa8Mf4IO4KXdZKszrdRf53WS37MWYYUU=; b=k5mpMMh/qxxKXJ
+	bAWnlhdgu9/OOuTczgavpu0Hji2/ezyPgb6pJWXzAyjeB1xM1N2Ojg1xP991lzwnTvRr2T15P0Uho
+	NMeYh5+RQ5v8AM/RJEHzo3XXIkdlz9vNyQHjqkrKYtZa8qctt09ZTx3jvOESkmVaVybop+GwnTXjq
+	85FGnKDOh4yzvzs7CnYA864O+Y3y1VUPKZLHLxSoUhzCuc52tsg5im0+4uOwWAYSzQWSQQx63/3Ze
+	ANn7sJ1MLoSaQlK+N6iiyvVHG80eINCOYdVSONhY4unWGtShmz13DuPMwIBYYYnV8K24uvhEp7INM
+	2KkkbPfhfM9KInPDbdLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBzQI-0004pO-UG; Wed, 11 Mar 2020 11:21:14 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jBzQw-00058k-Rr; Wed, 11 Mar 2020 11:21:54 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBzQB-0004or-Ox; Wed, 11 Mar 2020 11:21:09 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 02195AEE2;
- Wed, 11 Mar 2020 11:21:05 +0000 (UTC)
-Message-ID: <f536c4c9b3c6e2a9517e508812053d8418c91f97.camel@suse.de>
-Subject: Re: [GIT PULL RESEND 1/2] bcm2835-dt-next-2020-03-09
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <stefan.wahren@i2se.com>, Florian Fainelli
- <f.fainelli@gmail.com>
-Date: Wed, 11 Mar 2020 12:21:04 +0100
-In-Reply-To: <24ed1b28-10a7-c46b-d3d5-3c41b882e5c5@i2se.com>
-References: <91044910d494a12d06e7098561fe1be86a61f033.camel@suse.de>
- <552efb02-f62e-c78c-419c-fe8aec4ce7c2@gmail.com>
- <f7f08a5df266ae6897065d3c66e30074951708e4.camel@suse.de>
- <24ed1b28-10a7-c46b-d3d5-3c41b882e5c5@i2se.com>
-User-Agent: Evolution 3.34.4 
+ id 1jBzQp-00058I-Pz
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 11:21:49 +0000
+Received: by mail-pg1-x542.google.com with SMTP id s2so1033929pgv.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Mar 2020 04:21:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZLOM3TZpFx1G0FHmz3svWf38OoZ6qU4SfqgmqviPrrA=;
+ b=nMyvOyKn06Eu05BjFvjKHdDoGwU5OqfzypV+TNaTCAA6ghis9R4087GZKFVCDp0rD5
+ /6PkMMMNG/CN2oWPce4JJBu/28jlkGMz/BkV8FjtsuA64I1YuO1hKihDe92A8NLIKNW8
+ a5lX05gGYB/LQX2RUU35tSazpeA9/dat72/c8m1jm40V3I/7I2+PjsOoLr2NLFLpE3mu
+ zOmCxoyWkZGEkPhvEXZtH0Fh8gURctH2Eh4AmwMOpUtcWCWhS5jTQQPPHb6uMPz5+Hqb
+ n/ccwUfzJU6MYBuzY0VqXvZS/7UG7lxWvm93eEcI+LZnCDrgLeh7kFTOnEZzad8vTZ4M
+ sS0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZLOM3TZpFx1G0FHmz3svWf38OoZ6qU4SfqgmqviPrrA=;
+ b=BqqzFO2aXQtGqAUzL/xxpFtdJYYTk9itgGXlJcjV3Lb1gbzYLjZc1FKYiaZUetUwm3
+ RP90BkLSrUn3PJPw+KbgB7TTNzrF5zanwkH62Hu4Dy4xVgFEqwD57Yy4EIACTiobKY/P
+ W0pJKeSLDwOQDgtoMkoa5qhLvPamh6XDiiPVvP4RIhsXb69UFx7eP7Il8uqJ47ONwOBk
+ Fz4KLgnt6+PSHbb6OrENJ3G2WKrwCj0AJDNIU8t+/zFq4b/Mum9Ed3ExGGL9D5CB8PEG
+ hvoElx4o0HApJN5Nw5MGo0RyABHAy7xil1OTRGm6xSlcsDTO9M6k5XsIYQxqeLVgDHdP
+ s15g==
+X-Gm-Message-State: ANhLgQ0TIL5EM8OQ9DyUX8LBpB77TKDXzhHVY9e8smTAzLJSIJtfaoKe
+ 3LghVPqvjlOOmoK1B/iLPRM=
+X-Google-Smtp-Source: ADFU+vv+UdmZRNokjNxVghhbKD3QdqV2SqqxUwK/IWZx3ccnP2eMqufHRoP5QNbhibLWisVn7B6jqA==
+X-Received: by 2002:a63:6d4e:: with SMTP id i75mr2319830pgc.443.1583925706451; 
+ Wed, 11 Mar 2020 04:21:46 -0700 (PDT)
+Received: from ubt.spreadtrum.com ([117.18.48.82])
+ by smtp.gmail.com with ESMTPSA id x16sm24277019pfq.40.2020.03.11.04.21.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Mar 2020 04:21:45 -0700 (PDT)
+From: Chunyan Zhang <zhang.lyra@gmail.com>
+To: soc@kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [RESEND PATCH] arm64: dts: specify console via command line
+Date: Wed, 11 Mar 2020 19:21:20 +0800
+Message-Id: <20200311112120.30890-1-zhang.lyra@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_042107_964750_B009CD9E 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200311_042147_865542_51743105 
+X-CRM114-Status: GOOD (  11.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zhang.lyra[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,71 +97,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- linux-rpi-kernel <linux-rpi-kernel@lists.infradead.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7570380256303125154=="
+Cc: devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Chunyan Zhang <zhang.lyra@gmail.com>, linux-kernel@vger.kernel.org,
+ Chunyan Zhang <chunyan.zhang@unisoc.com>, Baolin Wang <baolin.wang7@gmail.com>,
+ Orson Zhai <orsonzhai@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Chunyan Zhang <chunyan.zhang@unisoc.com>
 
---===============7570380256303125154==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-/6kJJYab0MZmjE4TER8K"
+The SPRD serial driver need to know which serial port would be used as
+console in an early period during initialization, otherwise console
+init would fail since we added this feature[1].
 
+So this patch add console to command line via devicetree.
 
---=-/6kJJYab0MZmjE4TER8K
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+[1] https://lore.kernel.org/lkml/20190826072929.7696-4-zhang.lyra@gmail.com/
 
-On Tue, 2020-03-10 at 20:01 +0100, Stefan Wahren wrote:
-> Hi Nicolas,
-> i was using this script:
->=20
-> https://github.com/lategoodbye/maintain-scripts
->=20
-> for the pull requests. It based on Stephen Warren work.
+Signed-off-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
+---
+I guess no comments on this, so resending this and add soc@kernel.org,
+hope Arnd or Olof can help to merge into arch_arm tree.
 
-Thanks!
+Thanks,
+Chunyan
+---
+ arch/arm64/boot/dts/sprd/sp9863a-1h10.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-I'll have a look at it :)
+diff --git a/arch/arm64/boot/dts/sprd/sp9863a-1h10.dts b/arch/arm64/boot/dts/sprd/sp9863a-1h10.dts
+index 2047f7a74265..510f65f4d8b8 100644
+--- a/arch/arm64/boot/dts/sprd/sp9863a-1h10.dts
++++ b/arch/arm64/boot/dts/sprd/sp9863a-1h10.dts
+@@ -28,7 +28,7 @@
+ 
+ 	chosen {
+ 		stdout-path = "serial1:115200n8";
+-		bootargs = "earlycon";
++		bootargs = "earlycon console=ttyS1";
+ 	};
+ };
+ 
+-- 
+2.20.1
 
-Regards,
-Nicolas
-
-
---=-/6kJJYab0MZmjE4TER8K
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5oyaAACgkQlfZmHno8
-x/4DFggAn2IXsu1Jv/xjqUFx7pUIImAzRvIBSptWz6OQdMv5dzd53JunMCGlv9tR
-2QVIRHSm28WnJLcoj9wcN5nj/DtjRiR7ZmQnMTQqEj3rIAiFRd3nuuc92gVwPQBZ
-K74lwXBjKYYEwZITEMhy00kNcfeUtxIR1c5FO1c82w8e13GQo390ctyViC+F/FnN
-69OnJ3QarplUJN2Qrfz7yG8FjtrfFn6vCXPNKzrC7gw9FQmUNmAI4wPY+HXhwfpF
-fkpBFw1AfmQb/RIiAaZa+G3jSxUTUGSG48+2ywGfgfkr4x7JDBsmmgE57Q/9CArE
-AX4qGiFNLGiUsbC7PDPPN0fxWq+Kcw==
-=t7wu
------END PGP SIGNATURE-----
-
---=-/6kJJYab0MZmjE4TER8K--
-
-
-
---===============7570380256303125154==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7570380256303125154==--
-
-
