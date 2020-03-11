@@ -2,61 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C77B818160F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 11:46:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C359181623
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 11:49:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kNPcETopAMPYa/tPsbtwECHIDaH/erh0tgLgzM3bh5U=; b=VfdGyUWVqeFhHP0/+ymP7tn8K
-	LV2/yhcTTMFE/yYL761X+ty2aYNEU8Q9YOV2weuTtTmUx5Eq5c3ocnlOa1VTNdJiF3UuTBRf+CoWf
-	irWnWHxIu5JQohq9mMl7sRuXbt2sGRzW1QZneid0CN0mIjDYVqftPNam3vOiyYahwo1lbvAEy/PiO
-	7C1WsdEU5FM6/RBmtxN7sGN2Ia4lU9yleaItENk6+G7WQo9EIFF+5+IEBKyc7cqyEkBBxVYa+vhaY
-	EMu2FAUzWj5+OsPi4wwH0otrv/BkAt1tcxBbcUQakebLmGOE7dT/bS/ifT+NQHKAZgXFkp7tkAPrY
-	9Ym1I5HIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/VmYth0MAb3kPu2NmerMz/FiaFYig74sxDMylCdjsaM=; b=fGIyUE83dR9wbT
+	14XcJU5eHFWwIaw1JAwnQn6KK6bQrWZjrpFOET+D2fDRHmiLQezJ7/XB+ZD15WutLHfNVJM6PXn9g
+	h0Mc5sUHdJPvERQzBlcjsQN+BIDr1szPBre099LzjWYgDytXwLeLUoS7tTQaP2ErMZy2yymwB05MD
+	RkvtAdlH8SzF6L9L7cajQneh0ClnMnx5g/eI8kpC7EBaBkCInjjr4AHZ1EZ81BTAaMOiKHsbUUpsB
+	vtFgRmDlxc1E7jSplIb7gCAwaDJcNjSKWwnFRaKKEqaogNwy8FXrFkUEbEW29jBZ+pqUCh5i8d8TB
+	9xcjMvsvY8jI9WFe5FOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBysn-0005fx-3G; Wed, 11 Mar 2020 10:46:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBysS-0005Uq-Oo
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 10:46:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D57331FB;
- Wed, 11 Mar 2020 03:46:15 -0700 (PDT)
-Received: from [10.163.1.234] (unknown [10.163.1.234])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28EEE3F6CF;
- Wed, 11 Mar 2020 03:46:11 -0700 (PDT)
-Subject: Re: [PATCH v6 09/18] arm64: enable ptrauth earlier
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <1583476525-13505-1-git-send-email-amit.kachhap@arm.com>
- <1583476525-13505-10-git-send-email-amit.kachhap@arm.com>
- <4000de90-6196-364d-dcad-5476d85e18e0@arm.com>
- <1ea33eee-186c-d073-8687-43302e00c807@arm.com>
- <92f04bd6-dced-a8c5-827d-0dfa5eabfb6a@arm.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <436a6d6a-d5c3-14db-0a5f-afdb62125eff@arm.com>
-Date: Wed, 11 Mar 2020 16:16:12 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jByvY-0006NG-CN; Wed, 11 Mar 2020 10:49:28 +0000
+Received: from hqnvemgate26.nvidia.com ([216.228.121.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jByvG-0006Gj-KB
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 10:49:12 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate26.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5e68c2170000>; Wed, 11 Mar 2020 03:48:55 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 11 Mar 2020 03:49:08 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 11 Mar 2020 03:49:08 -0700
+Received: from [10.26.11.218] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 11 Mar
+ 2020 10:49:04 +0000
+Subject: Re: [PATCH v2 17/17] arm64: dts: sdm845: add IPA information
+To: Alex Elder <elder@linaro.org>, Bjorn Andersson
+ <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>
+References: <20200306042831.17827-1-elder@linaro.org>
+ <20200306042831.17827-18-elder@linaro.org>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <ec9776b3-ac79-8f9d-8c4d-012d62dc8f72@nvidia.com>
+Date: Wed, 11 Mar 2020 10:49:02 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <92f04bd6-dced-a8c5-827d-0dfa5eabfb6a@arm.com>
+In-Reply-To: <20200306042831.17827-18-elder@linaro.org>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ HQMAIL107.nvidia.com (172.20.187.13)
 Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1583923735; bh=YDvGaWGcO9cfN0iV8m9ROH9v2HzFADkFgb34PsNqeGk=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=BhgHVnVRJaAzQXsK+Kgz5ryNRbeh+j5lEJKbdH4t7pCns1aoDEtuMhAPkXO/8/Uzd
+ yP1eeHZlT3wbs9iXwdc6J4N/6pIun3D7Pc9eOV56RKOhzTZ0RMUf6AgJlh1Dvu0a6K
+ NEoQ/vdOWcfIrPLVryAihPSsF37FCutQ/2r82cwuQr+LiV2E8AO8PWau90ULEjKk/Y
+ wxscUdfGgXKxGVCeLaourFX+D1TuTNAw6kdw302qM0b9oYS2xiq5YlPMpj5+PSpgLO
+ 8gPEqPByzMkSPSiU6NG1W3UeMvffEH8iBVlu4OjT9VuRnzuBKx/GC30ZPwO316xTpn
+ tGiTZc/m3Tg4w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_034616_846297_031C3C99 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200311_034910_701868_37FF1CE3 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,59 +93,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
- Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org, Dan Williams <dcbw@redhat.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Siddharth Gupta <sidgup@codeaurora.org>, Rob Herring <robh+dt@kernel.org>,
+ Evan Green <evgreen@google.com>, linux-arm-kernel@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVmluY2Vuem8sCgpPbiAzLzExLzIwIDM6NTYgUE0sIFZpbmNlbnpvIEZyYXNjaW5vIHdyb3Rl
-Ogo+IEhpIEFtaXQsCj4gCj4gT24gMy8xMS8yMCA2OjI2IEFNLCBBbWl0IEthY2hoYXAgd3JvdGU6
-Cj4gCj4gWy4uLl0KPiAKPj4+Cj4+PiBNeSBleHBlY3RhdGlvbiBpcyB0aGF0IHlvdSBzaG91bGQg
-Y2FsbCBlYXJseV9wYXJrX2NwdSB0byBkbyB0aGF0IGlmIHRoZQo+Pj4gc2Vjb25kYXJ5IGRvZXMg
-bm90IHN1cHBvcnQgUFRSQVVUSCBzaW1pbGFyIHRvIHdoYXQgeW91IGRpZCBpbiB2MiBvZiB0aGlz
-IHNlcmllczoKPj4+Cj4+PiBFTlRSWShfX2NwdV9zZWNvbmRhcnlfY2hlY2twdHJhdXRoKQo+Pj4g
-I2lmZGVmIENPTkZJR19BUk02NF9QVFJfQVVUSAo+Pj4gIMKgwqDCoMKgwqDCoMKgIC8qIENoZWNr
-IGlmIHRoZSBDUFUgc3VwcG9ydHMgcHRyYXV0aCAqLwo+Pj4gIMKgwqDCoMKgwqDCoMKgIG1yc8Kg
-wqDCoMKgIHgyLCBpZF9hYTY0aXNhcjFfZWwxCj4+PiAgwqDCoMKgwqDCoMKgwqAgdWJmeMKgwqDC
-oCB4MiwgeDIsICNJRF9BQTY0SVNBUjFfQVBBX1NISUZULCAjOAo+Pj4gIMKgwqDCoMKgwqDCoMKg
-IGNibnrCoMKgwqAgeDIsIDFmCj4+PiBhbHRlcm5hdGl2ZV9pZiBBUk02NF9IQVNfQUREUkVTU19B
-VVRICj4+PiAgwqDCoMKgwqDCoMKgwqAgbW92wqDCoMKgwqAgeDMsIDEKPj4+IGFsdGVybmF0aXZl
-X2Vsc2UKPj4+ICDCoMKgwqDCoMKgwqDCoCBtb3bCoMKgwqDCoCB4MywgMAo+Pj4gYWx0ZXJuYXRp
-dmVfZW5kaWYKPj4+ICDCoMKgwqDCoMKgwqDCoCBjYnrCoMKgwqDCoCB4MywgMWYKPj4+ICDCoMKg
-wqDCoMKgwqDCoCAvKiBQYXJrIHRoZSBtaXNtYXRjaGVkIHNlY29uZGFyeSBDUFUgKi8KPj4+ICDC
-oMKgwqDCoMKgwqDCoCBlYXJseV9wYXJrX2NwdSBDUFVfU1RVQ0tfUkVBU09OX05PX1BUUkFVVEgK
-Pj4+ICNlbmRpZgo+Pj4gMTrCoMKgwqDCoCByZXQKPj4+IEVORFBST0MoX19jcHVfc2Vjb25kYXJ5
-X2NoZWNrcHRyYXV0aCkKPj4+Cj4+PiBhbmQgdGhlbiBjaGVjayBpdCBkdXJpbmcgdGhlIHNlY29u
-ZGFyeV9zdGFydHVwLCBzaW1pbGFyIHRvIHdoYXQgaGFwcGVucyBmb3IKPj4+IDUyQklUX1ZBIGZv
-ciBleGFtcGxlLgo+Pj4KPj4+IEluIHRoaXMgd2F5ICJ1cGRhdGVfZWFybHlfY3B1X2Jvb3Rfc3Rh
-dHVzIiB3b3VsZCB1cGRhdGUgdGhlCj4+PiBDUFVfU1RVQ0tfUkVBU09OX05PX1BUUkFVVEggZmxh
-Zy4KPj4KPj4gVGhpcyB3YXkgaXQgd2FzIGltcGxlbWVudGVkIGVhcmxpZXIuIENhdGFsaW4gc3Vn
-Z2VzdGVkIHRoZSBwb2ludGVyIGF1dGgKPj4gdmFyaWF0aW9uIGluIGNwdXMgaXMgbm90IGNyaXRp
-Y2FsIGVub3VnaCBhbmQgY3B1ZmVhdHVyZSBmcmFtZXdvcmsgY2FuIHBhcmsgaXQKPj4gbGl0dGxl
-IGxhdGVyIFsxXS4KPj4KPj4gQWdyZWUgdGhhdCBJIHNob3VsZCBoYXZlIHJlbW92ZWQgYWxsIGRl
-ZmluaXRpb25zIG9mIENQVV9TVFVDS19SRUFTT05fTk9fUFRSQVVUSAo+PiBhbmQgcHJldmVudCB1
-bm5lY2Vzc2FyeSBjb25mdXNpb25zLgo+Pgo+PiBbMV0gOiBodHRwczovL3d3dy5zcGluaWNzLm5l
-dC9saXN0cy9hcm0ta2VybmVsL21zZzc4MDc2Ni5odG1sCj4gCj4gSXQgd2FzIGVpdGhlciBvciA6
-KSBTb3JyeSBJIGRpZCBub3Qgc2VlIENhdGFsaW4ncyBjb21tZW50LCBwbGVhc2UgZ28gYWhlYWQg
-YW5kCj4gcmVtb3ZlIHRoZSBkZWZpbml0aW9uIG9mIENQVV9TVFVDS19SRUFTT05fTk9fUFRSQVVU
-SCBhbmQgdGhlIGNvZGUgdGhhdCB1c2VzIGl0Cj4gaW4gdGhpcyBjYXNlLgoKb2sKCj4gCj4gTWF5
-YmUgeW91IHdhbnQgdG8gZXhwYW5kIGFzIHdlbGwgeW91ciBjb21taXQgbWVzc2FnZSAod2hpY2gg
-YWxyZWFkeSBzZWVtcwo+IGNvdmVyaW5nIHRoaXMgY2FzZSkgdG8gZXhwbGFpbiB3aHkgaXQgaXMg
-cG9zc2libGUgdG8gbGV0IHRoZSBjcHUgZnJhbWV3b3JrIGRlYWwKPiB3aXRoIHRoaXMgY2FzZS4g
-VGhpcyBzaG91bGQgbWFrZSB0aGluZ3MgY2xlYXIgYWNjb3JkaW5nIHRvIG1lLgoKc3VyZS4KCj4g
-Cj4gQW5vdGhlciBxdWVzdGlvbiB0aGF0IHN0aWxsIHJlbWFpbnMgaXM6IGRvIHdlIG5lZWQgdG8g
-aW50cm9kdWNlIGVhcmx5X3BhcmtfY3B1Cj4gYXMgcGFydCBvZiB0aGlzIHNlcmllcz8gU2luY2Ug
-aXQgZG9lcyBub3Qgc2VlbSB5b3UgYXJlIHVzaW5nIGl0IGFueXdoZXJlLgoKSSBzaG91bGQgcHJv
-YmFibHkgZHJvcCB0aGlzIGNsZWFudXAgcGF0Y2ggZnJvbSB0aGlzIHNlcmllcyBhbmQgbWF5IGJl
-CnNlbmQgaXQgc2VwYXJhdGVseS4KCj4gCj4+Pgo+Pj4gWy4uLl0KPj4+Cj4gCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+On 06/03/2020 04:28, Alex Elder wrote:
+> Add IPA-related nodes and definitions to "sdm845.dtsi".
+> 
+> Signed-off-by: Alex Elder <elder@linaro.org>
+> ---
+>  arch/arm64/boot/dts/qcom/sdm845.dtsi | 51 ++++++++++++++++++++++++++++
+>  1 file changed, 51 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> index d42302b8889b..58fd1c611849 100644
+> --- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
+> @@ -675,6 +675,17 @@
+>  			interrupt-controller;
+>  			#interrupt-cells = <2>;
+>  		};
+> +
+> +		ipa_smp2p_out: ipa-ap-to-modem {
+> +			qcom,entry-name = "ipa";
+> +			#qcom,smem-state-cells = <1>;
+> +		};
+> +
+> +		ipa_smp2p_in: ipa-modem-to-ap {
+> +			qcom,entry-name = "ipa";
+> +			interrupt-controller;
+> +			#interrupt-cells = <2>;
+> +		};
+>  	};
+>  
+>  	smp2p-slpi {
+> @@ -1435,6 +1446,46 @@
+>  			};
+>  		};
+>  
+> +		ipa@1e40000 {
+> +			compatible = "qcom,sdm845-ipa";
+> +
+> +			modem-init;
+> +			modem-remoteproc = <&mss_pil>;
+> +
+> +			reg = <0 0x1e40000 0 0x7000>,
+> +			      <0 0x1e47000 0 0x2000>,
+> +			      <0 0x1e04000 0 0x2c000>;
+> +			reg-names = "ipa-reg",
+> +				    "ipa-shared",
+> +				    "gsi";
+> +
+> +			interrupts-extended =
+> +					<&intc 0 311 IRQ_TYPE_EDGE_RISING>,
+> +					<&intc 0 432 IRQ_TYPE_LEVEL_HIGH>,
+> +					<&ipa_smp2p_in 0 IRQ_TYPE_EDGE_RISING>,
+> +					<&ipa_smp2p_in 1 IRQ_TYPE_EDGE_RISING>;
+> +			interrupt-names = "ipa",
+> +					  "gsi",
+> +					  "ipa-clock-query",
+> +					  "ipa-setup-ready";
+> +
+> +			clocks = <&rpmhcc RPMH_IPA_CLK>;
+> +			clock-names = "core";
+> +
+> +			interconnects =
+> +				<&rsc_hlos MASTER_IPA &rsc_hlos SLAVE_EBI1>,
+> +				<&rsc_hlos MASTER_IPA &rsc_hlos SLAVE_IMEM>,
+> +				<&rsc_hlos MASTER_APPSS_PROC &rsc_hlos SLAVE_IPA_CFG>;
+> +			interconnect-names = "memory",
+> +					     "imem",
+> +					     "config";
+> +
+> +			qcom,smem-states = <&ipa_smp2p_out 0>,
+> +					   <&ipa_smp2p_out 1>;
+> +			qcom,smem-state-names = "ipa-clock-enabled-valid",
+> +						"ipa-clock-enabled";
+> +		};
+> +
+>  		tcsr_mutex_regs: syscon@1f40000 {
+>  			compatible = "syscon";
+>  			reg = <0 0x01f40000 0 0x40000>;
+> 
+
+
+This change is causing the following build error on today's -next ...
+
+ DTC     arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dtb
+ arch/arm64/boot/dts/qcom/sdm845.dtsi:1710.15-1748.5: ERROR (phandle_references): /soc@0/ipa@1e40000: Reference to non-existent node or label "rsc_hlos"
+
+Cheers
+Jon
+
+-- 
+nvpublic
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
