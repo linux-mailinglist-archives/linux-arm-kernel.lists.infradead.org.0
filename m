@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 948F218182C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 13:36:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D74618182D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Mar 2020 13:36:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PWSfYOaegWJgxgqeW1wx6H0biDc+Il5nHHkGq0tObtw=; b=GsJ0pI8j5+YP5q
-	04chNz/0bANYXwszvxENNT/G0g4Z8NCXLBs73mkpxn2a6rb5zw/e8MNEA+/5e+BXMG8VdAZTD7vd+
-	Tlr/ENC9mOvavTnumwyMzAMo4v9cGOoWvy8wa8V61za+1NYm+v3ZAq2LsEXG/4+jCBn1nU6OIeOjr
-	efhh8c/l/YMcTNZaVZThGfoSFd9IFXS4SZ6tvSgervUb2azD+0C4+a7RzvxDUscK1z97atIm5tb8A
-	B+r7E+11m5kAI8eC0W8s/0d0eGLyAEK3MYbjplDw+bhiEmbPG7NjOxo8KBAq412xjFcHMsKEADLM0
-	VZ+YLudmYVy0ueyz8Oxg==;
+	List-Owner; bh=5CD6PyrIdFFjKzEyCRG4xpHKvNWXbePwZegIfN//1jI=; b=dJ/gM3K4OfjpHE
+	7UoD7+cL2y367F1jFlEh/Sn2LjB9lz1VIWfDtBuT/jipXEhfzyRS6pkWBjuVoDm1n+fsXT2lzr1kZ
+	50dAa0fRWdOsEYCcf3hHnOXFJEqwriv7/gq79VapPhwHTM7gqR+NENu82AkAAwauYWfPjfUou2q+G
+	NO+4U9KJJGrsjYjVXldSikASfrcJxwN6M0UXPaJ/g3rHXyrmmODwhsb0xfDix1W3Ahk3dcrA8mJ/M
+	VSqHQA7xp9rAjVbm0QtPN6hlp0Y5BH4202TN19fON750sCF+jhY2l09B4xcuuXjNl4V2UR7f/a2eN
+	HDvPYF3qvIAxXGykQEFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jC0ar-0003cS-1x; Wed, 11 Mar 2020 12:36:13 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jC0b5-0003qE-DA; Wed, 11 Mar 2020 12:36:27 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jC0Zr-0002tN-DI
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 12:35:13 +0000
-Received: by mail-wm1-x342.google.com with SMTP id e26so1915401wme.5
+ id 1jC0Zs-0002uC-Jr
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Mar 2020 12:35:14 +0000
+Received: by mail-wm1-x343.google.com with SMTP id x3so3079216wmj.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Mar 2020 05:35:11 -0700 (PDT)
+ Wed, 11 Mar 2020 05:35:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qtTX7EM1d6h/uC42my2sgJ8i9nRiLu7iFeIbg2tcgXs=;
- b=yu5/OhSa/aCJePUy90xslVuooEX+/2dj6XTUQ9x7U9JYlXGW+WfmKPxMCS+RWVjuvR
- 6kNhPVOzM20irZoWcPIXC5Sz6nFgJWXfHIIHVRNnOQ+CH2QjGYOxVwDqdMnemSdu8UWu
- SS3RnmzWsAfwCUmEQn1YG7/P8rH/Xcq/nM+rxlzrM9E5L5fIzCumYWqigHRV30BHW4wu
- oXqKF365o8dY95kRIy87qF6Jqa2obcnwRb1Rs14OigKZxHiqxsYCcNo61A/I2XNDJl40
- QDzt54WS9MeV0GKTgCOFB9RO5P2iRPr+RUbfDZ0R6g6pUn6mMcrUHSHxmM5H589w5PRC
- Xxtw==
+ bh=0S8YiKSlFY8C2wfSnfYCKEk3w9krt/5PEihft8xMBGs=;
+ b=iLwUXOrjXX1JgooKK4C1Ej7aG++N6vBTyANbdSesx4J5LANkA4rttAdfoN3Cl9OWKN
+ MK8FbGS80ejPexHaTTEhYRZed+ckS3C6aTIXTWQoEcjAesHoSKfGdtfNIVffBZmNij0t
+ +c2hNFirdEnegtp+oJcHVUXtcCiOFQ1TIXBLoKbywdKv2X4tr3zE+Jm0Jr6KfhgZ9Hdn
+ FQwJX8RDzIZLP0muodqY9eAC77ehypRz/hCnqognQa2LPPREWDxA1l8jr+KkOTWZORaS
+ +0M7U1ItFDSyfQdvkdvSylEi4p8LuqqNHh2RTBb26xVVV85ZQnPO8I3Gec63XEFl93md
+ 8W1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qtTX7EM1d6h/uC42my2sgJ8i9nRiLu7iFeIbg2tcgXs=;
- b=sub25mb1QFgkri9hK5SeCEsdI0DaKKhOWyZdKjMENc/c/+0k/pKO//iOS+LE8TpDbP
- BfMP1G/+V1EpKRPWw/l0TdUvSaaU5ijIfCT+e9YEUVDlRDd06c0ej8xnK6TCaw8KmF89
- SRUUxLTtTN5h9vJe1wgTNeLgYgXSHgnD+QTWeqRFUogx/UJx1VZPBHWE54KdfYSvpBwb
- yMTyF/apmA30ldf6Ry/FUclfCYHvZkhj2kP/4P5Q/SsXs54EB8E0N2IEsXJFEvBmDbFX
- Z5VYYJjjcbxX7QB/zDf/y3gif7FchEO13qkare7Cfb4pAIe62/lqM4wohKrnZJLoZAgh
- X2KA==
-X-Gm-Message-State: ANhLgQ0V23xQ1gDrdm/yjaxXy1L2JoewTIeKuG2Lev3nZqXr/xEI75sS
- 7xPS7AYnH0YmNlH6Kp1R+L5ikA==
-X-Google-Smtp-Source: ADFU+vtnvILyF3Zc67x9wUJYRN0XGPqBQlx8RvzSHeYOfi2xFeqCC0M6n6wEo9V7OBH9XYdtbFiQWw==
-X-Received: by 2002:a1c:3585:: with SMTP id c127mr3596215wma.124.1583930110019; 
- Wed, 11 Mar 2020 05:35:10 -0700 (PDT)
+ bh=0S8YiKSlFY8C2wfSnfYCKEk3w9krt/5PEihft8xMBGs=;
+ b=LhLVTbwmo6wAJwjmR5DHqWqubEaJgYHOUk5uNjS6SfRR64mROLnanB+rwvIUHgsm5W
+ isXYAzEPZBpzzjOJx/RCLTfAaWocXyahQo11+8QXJ+VjaL1Rcfh8yBeyIc+QdxfvVw84
+ 8+4QRKPKCWW7FqCa4CQqXsVtSKBuktuzPNzjEJDQz5zr7SVmKUjpnhzqitgJY6bj+Nx0
+ UsZ/HEDjBxHdLregzbxceMTLrPf0qpEsyvk5qlYAzoqA2UWuAjy6gQazP1w6ModAsEnv
+ Hvp5WaT8hoCO6ZR8uGvK9252kN6XCN8A1/7r1vweOHjNv3YujlQw6nNfy0w4D9cbE+JH
+ 9eEQ==
+X-Gm-Message-State: ANhLgQ3TcDROxT7+2hAu10r3SeiG3bz/tiPtYDg9dwJDrfvZgE0LxI/N
+ 1MFe41/TpsMavwjky4AvQsGCqQ==
+X-Google-Smtp-Source: ADFU+vtnJUfH6dtY/lJKtuEbOdGr7AEex8lhT/SZQ0KZ7Kab7Njaq1yaVX/R+8xktDk/P5+P/+x86w==
+X-Received: by 2002:a7b:c8d5:: with SMTP id f21mr3670765wml.60.1583930111399; 
+ Wed, 11 Mar 2020 05:35:11 -0700 (PDT)
 Received: from xps7590.local ([2a02:2450:102f:13b8:9087:3e80:4ebc:ae7b])
- by smtp.gmail.com with ESMTPSA id m25sm7822732wml.35.2020.03.11.05.35.08
+ by smtp.gmail.com with ESMTPSA id m25sm7822732wml.35.2020.03.11.05.35.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Mar 2020 05:35:09 -0700 (PDT)
+ Wed, 11 Mar 2020 05:35:10 -0700 (PDT)
 From: Robert Foss <robert.foss@linaro.org>
 To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
@@ -65,23 +65,24 @@ To: agross@kernel.org, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  Loic Poulain <loic.poulain@linaro.org>
-Subject: [v1 3/6] arm64: dts: sdm845: Add i2c-qcom-cci node
-Date: Wed, 11 Mar 2020 13:34:58 +0100
-Message-Id: <20200311123501.18202-4-robert.foss@linaro.org>
+Subject: [v1 4/6] arm64: dts: sdm845-db845c: Add pm_8998 gpio names
+Date: Wed, 11 Mar 2020 13:34:59 +0100
+Message-Id: <20200311123501.18202-5-robert.foss@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200311123501.18202-1-robert.foss@linaro.org>
 References: <20200311123501.18202-1-robert.foss@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_053511_486742_9AE8FDBE 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20200311_053512_685627_7815B7A7 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,169 +110,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The sdm845 SOC ships with a CCI controller, which
-has two CCI/I2C buses.
+Add pm_8998 GPIO trace names. These names are defined in
+the 96boards db845c mezzanine schematic.
 
 Signed-off-by: Robert Foss <robert.foss@linaro.org>
 ---
- arch/arm64/boot/dts/qcom/sdm845-db845c.dts |   4 +
- arch/arm64/boot/dts/qcom/sdm845.dtsi       | 110 +++++++++++++++++++++
- 2 files changed, 114 insertions(+)
+ arch/arm64/boot/dts/qcom/sdm845-db845c.dts | 30 ++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
-index eb77aaa6a819..a6b6837c3d68 100644
+index a6b6837c3d68..e8c056d02ace 100644
 --- a/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
 +++ b/arch/arm64/boot/dts/qcom/sdm845-db845c.dts
-@@ -583,3 +583,7 @@
- 		bias-pull-up;
+@@ -584,6 +584,36 @@
  	};
  };
-+
-+&cci {
-+	status = "ok";
+ 
++&pm8998_gpio {
++	gpio-line-names =
++		"NC",
++		"NC",
++		"WLAN_SW_CTRL",
++		"NC",
++		"PM_GPIO5_BLUE_BT_LED",
++		"VOL_UP_N",
++		"NC",
++		"ADC_IN1",
++		"PM_GPIO9_YEL_WIFI_LED",
++		"CAM0_AVDD_EN",
++		"NC",
++		"CAM0_DVDD_EN",
++		"PM_GPIO13_GREEN_U4_LED",
++		"DIV_CLK2",
++		"NC",
++		"NC",
++		"NC",
++		"SMB_STAT",
++		"NC",
++		"NC",
++		"ADC_IN2",
++		"OPTION1",
++		"WCSS_PWR_REQ",
++		"PM845_GPIO24",
++		"OPTION2",
++		"PM845_SLB";
 +};
-diff --git a/arch/arm64/boot/dts/qcom/sdm845.dtsi b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-index d42302b8889b..b7f5c0b0f6af 100644
---- a/arch/arm64/boot/dts/qcom/sdm845.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sdm845.dtsi
-@@ -5,6 +5,7 @@
-  * Copyright (c) 2018, The Linux Foundation. All rights reserved.
-  */
- 
-+#include <dt-bindings/clock/qcom,camcc-sdm845.h>
- #include <dt-bindings/clock/qcom,dispcc-sdm845.h>
- #include <dt-bindings/clock/qcom,gcc-sdm845.h>
- #include <dt-bindings/clock/qcom,gpucc-sdm845.h>
-@@ -717,6 +718,14 @@
- 			#power-domain-cells = <1>;
- 		};
- 
-+		clock_camcc: clock-controller@ad00000 {
-+			compatible = "qcom,sdm845-camcc";
-+			reg = <0 0xad00000 0 0x10000>;
-+			#clock-cells = <1>;
-+			#reset-cells = <1>;
-+			#power-domain-cells = <1>;
-+		};
 +
- 		qfprom@784000 {
- 			compatible = "qcom,qfprom";
- 			reg = <0 0x00784000 0 0x8ff>;
-@@ -1451,6 +1460,60 @@
- 			gpio-ranges = <&tlmm 0 0 150>;
- 			wakeup-parent = <&pdc_intc>;
- 
-+			cci0_default: cci0_default {
-+				/* SDA, SCL */
-+				pinmux {
-+					function = "cci_i2c";
-+					pins = "gpio17", "gpio18";
-+				};
-+				pinconf {
-+					pins = "gpio17", "gpio18";
-+					bias-pull-up;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+			};
-+
-+			cci0_sleep: cci0_sleep {
-+				/* SDA, SCL */
-+				mux {
-+					pins = "gpio17", "gpio18";
-+					function = "cci_i2c";
-+				};
-+
-+				config {
-+					pins = "gpio17", "gpio18";
-+					drive-strength = <2>; /* 2 mA */
-+					bias-pull-down;
-+				};
-+			};
-+
-+			cci1_default: cci1_default {
-+				/* SDA, SCL */
-+				pinmux {
-+					function = "cci_i2c";
-+					pins = "gpio19", "gpio20";
-+				};
-+				pinconf {
-+					pins = "gpio19", "gpio20";
-+					bias-pull-up;
-+					drive-strength = <2>; /* 2 mA */
-+				};
-+			};
-+
-+			cci1_sleep: cci1_sleep {
-+				/* SDA, SCL */
-+				mux {
-+					pins = "gpio19", "gpio20";
-+					function = "cci_i2c";
-+				};
-+
-+				config {
-+					pins = "gpio19", "gpio20";
-+					drive-strength = <2>; /* 2 mA */
-+					bias-pull-down;
-+				};
-+			};
-+
- 			qspi_clk: qspi-clk {
- 				pinmux {
- 					pins = "gpio95";
-@@ -2608,6 +2671,53 @@
- 			#reset-cells = <1>;
- 		};
- 
-+		cci: cci@ac4a000 {
-+			compatible = "qcom,sdm845-cci";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			reg = <0 0xac4a000 0 0x4000>;
-+			interrupts = <GIC_SPI 460 IRQ_TYPE_EDGE_RISING>;
-+			power-domains = <&clock_camcc TITAN_TOP_GDSC>;
-+
-+			clocks = <&clock_camcc CAM_CC_CAMNOC_AXI_CLK>,
-+				<&clock_camcc CAM_CC_SOC_AHB_CLK>,
-+				<&clock_camcc CAM_CC_SLOW_AHB_CLK_SRC>,
-+				<&clock_camcc CAM_CC_CPAS_AHB_CLK>,
-+				<&clock_camcc CAM_CC_CCI_CLK>,
-+				<&clock_camcc CAM_CC_CCI_CLK_SRC>;
-+			clock-names = "camnoc_axi_clk",
-+				"soc_ahb_clk",
-+				"slow_ahb_src_clk",
-+				"cpas_ahb_clk",
-+				"cci",
-+				"cci_clk_src";
-+
-+			assigned-clocks = <&clock_camcc CAM_CC_CAMNOC_AXI_CLK>,
-+				<&clock_camcc CAM_CC_CCI_CLK>;
-+			assigned-clock-rates = <80000000>, <37500000>;
-+
-+			pinctrl-names = "default", "sleep";
-+			pinctrl-0 = <&cci0_default &cci1_default>;
-+			pinctrl-1 = <&cci0_sleep &cci1_sleep>;
-+
-+			status = "disabled";
-+
-+			i2c-bus@0 {
-+				reg = <0>;
-+				clock-frequency = <1000000>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+			};
-+
-+			i2c-bus@1 {
-+				reg = <1>;
-+				clock-frequency = <1000000>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+			};
-+		};
-+
- 		mdss: mdss@ae00000 {
- 			compatible = "qcom,sdm845-mdss";
- 			reg = <0 0x0ae00000 0 0x1000>;
+ &cci {
+ 	status = "ok";
+ };
 -- 
 2.20.1
 
