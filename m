@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64751183AF5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 21:59:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B472183AFB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 22:02:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=+6YWP9NNmc+zIWNGa02a424uav6Mb4NmJHawe1Ch0YM=; b=IdXHCCU1LmLl7T
-	LIZmR7cUBgtjSdyisB2hShnXyjr+Z1XHCy7ElvuNx3LdDp0MbYBmw7HqyrrDTylhfrlm9FUvIYos8
-	qNsYeumIvXnU2REKawGGOG5Trb7xAAWUmjn5I9W622hI06zjJPlIHDbz1rbG28DgG3m3ThVJADkHr
-	WPhd9f2nJeBzzeMfb9ivtWVQ4S6AyGReSicbRoQ4BDLiMUbQnwF0OMX2BZrhylfNEZMWCr1tfF/GT
-	ccsom86co+5VR73M4RoJuUYEOnVoRWxprSjU6HbVXlLCGYFus6yWl/R8EZhWu9AOohohFyxqmgyku
-	QRwTRWE8anFtWA2Z3ctw==;
+	List-Owner; bh=tnL/BoPCZxcyZZeinZQ+qNch+AN3ZCTLnz6kAS71bfo=; b=Obx+wx3Zs6J/3Z
+	D310UTYEvFK4tBjphJEvQMaCKS8gVZkEnc10FIbaARAanDeZvtY3PULd/xlXsgvwJOEmWt5UESPYU
+	baPyR32lEU3JdqQLo7lDgghNS38lrD7vsTZZkK1F7m6x/dycrMlnZofm75wqeWpOb61vd/xPTC705
+	1/fe7a6zXqcBi72qdIFKb4uAGH8Skvm6X0QZP5hyFmrcdmdtuXBmVPH/Hbg+31+ehKkHDFiGsRyet
+	M7+InH0E4mz8uBeXYD/zzNxT4tA0AXZiaRuatn0H3XqTO8dol96TnBeFHEIgMzl+1EI7PAKUjq8wY
+	rEoV1l4GZaoSxosyycIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCUv6-00006Z-HE; Thu, 12 Mar 2020 20:59:08 +0000
+	id 1jCUxz-00022F-Bq; Thu, 12 Mar 2020 21:02:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCUuy-00005e-Jg
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 20:59:02 +0000
+ id 1jCUxr-00021g-U7
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 21:02:01 +0000
 Received: from localhost (mobile-166-175-186-165.mycingular.net
  [166.175.186.165])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CA66B206B7;
- Thu, 12 Mar 2020 20:58:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 158B320674;
+ Thu, 12 Mar 2020 21:01:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1584046740;
- bh=sZrxWzYm4Q2gQ/nKayUGqNHfr3nP8m8qZiAHKqaks08=;
+ s=default; t=1584046919;
+ bh=/e9LLeJ5dACgdtAw3HHaj6wtWKVc0kxLbLGS8/Q25qw=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=YoAaCQPJTwGmp7XWP86L78EAbP87WHaly0Mp6Ed8cwzHqWkTNzAekl0Vckbc5pcmt
- sHCTW0fPtyDVPWOuPF8zuumu2s9LhFTzzRroslWpC97D1efkVIlDqL6XyysJdOWTM/
- cfylvimv3zTN/vGEqEvIIqwZ9L3tXOyXL77JU+ks=
-Date: Thu, 12 Mar 2020 15:58:58 -0500
+ b=EdwLzcJvSjpI3Th7mp7lKFatB+Yn47XEfNY+YgjNT3ENbyGBE0r12eGlfupHp5IcO
+ TT8zsQMtI4TjFzhyJjyXL5LlLSL1a5GlHXoya30uKdsCtQVAkqrDLP566944IgMvPi
+ nkoB08xDowbPCi+qj0dPDSH9lPbxsLbhzikPdbJs=
+Date: Thu, 12 Mar 2020 16:01:57 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v2 04/11] ACPI/IORT: Check ATS capability in root complex
- node
-Message-ID: <20200312205858.GA178807@google.com>
+Subject: Re: [PATCH v2 05/11] PCI/ATS: Gather checks into pci_ats_supported()
+Message-ID: <20200312210157.GA180471@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200311124506.208376-5-jean-philippe@linaro.org>
+In-Reply-To: <20200311124506.208376-6-jean-philippe@linaro.org>
 User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_135900_690579_CCCFA862 
-X-CRM114-Status: GOOD (  18.87  )
+X-CRM114-CacheID: sfid-20200312_140159_996778_EACDA0E1 
+X-CRM114-Status: GOOD (  19.13  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,128 +88,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Mar 11, 2020 at 01:44:59PM +0100, Jean-Philippe Brucker wrote:
-> When initializing a PCI root bridge, copy its "ATS supported" attribute
-> into the root bridge.
+On Wed, Mar 11, 2020 at 01:45:00PM +0100, Jean-Philippe Brucker wrote:
+> IOMMU drivers need to perform several tests when checking if a device
+> supports ATS.  Move them all into a new function that returns true when
+> a device and its host bridge support ATS.
 > 
-> Acked-by: Hanjun Guo <guohanjun@huawei.com>
+> Since pci_enable_ats() now calls pci_ats_supported(), the following
+> new checks are now common:
+> * whether a device is trusted.  Devices plugged into external-facing
+>   ports such as thunderbolt are untrusted.
+> * whether the host bridge supports ATS, which defaults to true unless
+>   the firmware description states that ATS isn't supported by the host
+>   bridge.
+> 
 > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+
+Acked-by: Bjorn Helgaas <bhelgaas@google.com>
+
 > ---
->  drivers/acpi/arm64/iort.c | 27 +++++++++++++++++++++++++++
->  drivers/acpi/pci_root.c   |  3 +++
->  include/linux/acpi_iort.h |  8 ++++++++
->  3 files changed, 38 insertions(+)
+>  drivers/pci/ats.c       | 30 +++++++++++++++++++++++++++++-
+>  include/linux/pci-ats.h |  3 +++
+>  2 files changed, 32 insertions(+), 1 deletion(-)
 > 
-> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> index ed3d2d1a7ae9..d99d7f5b51e1 100644
-> --- a/drivers/acpi/arm64/iort.c
-> +++ b/drivers/acpi/arm64/iort.c
-> @@ -1633,6 +1633,33 @@ static void __init iort_enable_acs(struct acpi_iort_node *iort_node)
->  		}
->  	}
+> diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
+> index 390e92f2d8d1..bbfd0d42b8b9 100644
+> --- a/drivers/pci/ats.c
+> +++ b/drivers/pci/ats.c
+> @@ -30,6 +30,34 @@ void pci_ats_init(struct pci_dev *dev)
+>  	dev->ats_cap = pos;
 >  }
-> +
-> +static acpi_status iort_match_host_bridge_callback(struct acpi_iort_node *node,
-> +						   void *context)
+>  
+> +/**
+> + * pci_ats_supported - check if the device can use ATS
+> + * @dev: the PCI device
+> + *
+> + * Returns true if the device supports ATS and is allowed to use it, false
+> + * otherwise.
+> + */
+> +bool pci_ats_supported(struct pci_dev *dev)
 > +{
-> +	struct acpi_iort_root_complex *pci_rc;
-> +	struct pci_host_bridge *host_bridge = context;
+> +	struct pci_host_bridge *bridge;
 > +
-> +	pci_rc = (struct acpi_iort_root_complex *)node->node_data;
+> +	if (!dev->ats_cap)
+> +		return false;
 > +
-> +	return pci_domain_nr(host_bridge->bus) == pci_rc->pci_segment_number ?
-> +		AE_OK : AE_NOT_FOUND;
+> +	if (dev->untrusted)
+> +		return false;
+> +
+> +	bridge = pci_find_host_bridge(dev->bus);
+> +	if (!bridge)
+> +		return false;
+> +
+> +	if (!bridge->ats_supported)
+> +		return false;
+> +
+> +	return true;
+
+I assume this is the same as
+
+  return bridge->ats_supported;
+
+Only "assuming" because I'm not a C language lawyer, but I assume it
+does the obvious conversion from unsigned:1 to bool.
+
 > +}
-> +
-> +void iort_pci_host_bridge_setup(struct pci_host_bridge *host_bridge)
-> +{
-> +	struct acpi_iort_node *node;
-> +	struct acpi_iort_root_complex *pci_rc;
-> +
-> +	node = iort_scan_node(ACPI_IORT_NODE_PCI_ROOT_COMPLEX,
-> +			      iort_match_host_bridge_callback, host_bridge);
-> +	if (!node)
-> +		return;
-> +
-> +	pci_rc = (struct acpi_iort_root_complex *)node->node_data;
-> +	host_bridge->ats_supported = !!(pci_rc->ats_attribute &
-> +					ACPI_IORT_ATS_SUPPORTED);
-> +}
->  #else
->  static inline void iort_enable_acs(struct acpi_iort_node *iort_node) { }
->  #endif
-> diff --git a/drivers/acpi/pci_root.c b/drivers/acpi/pci_root.c
-> index d1e666ef3fcc..eb2fb8f17c0b 100644
-> --- a/drivers/acpi/pci_root.c
-> +++ b/drivers/acpi/pci_root.c
-> @@ -6,6 +6,7 @@
->   *  Copyright (C) 2001, 2002 Paul Diefenbaugh <paul.s.diefenbaugh@intel.com>
->   */
->  
-> +#include <linux/acpi_iort.h>
->  #include <linux/kernel.h>
->  #include <linux/module.h>
->  #include <linux/init.h>
-> @@ -917,6 +918,8 @@ struct pci_bus *acpi_pci_root_create(struct acpi_pci_root *root,
->  	if (!(root->osc_control_set & OSC_PCI_EXPRESS_LTR_CONTROL))
->  		host_bridge->native_ltr = 0;
->  
-> +	iort_pci_host_bridge_setup(host_bridge);
-
-Similar comment as on the OF side.
-
-You mentioned at [1] that "it's important that we only enable ATS if
-the host bridge supports it".  That should be captured in a commit log
-and comment somewhere here.
-
-That suggests to me that we should not set
-
-  bridge->ats_supported = 1;
-
-by default in pci_init_host_bridge(), but rather leave it zero as it
-is by default, and then do things like:
-
-  if (iort_pci_host_bridge_ats_supported(bridge))
-    bridge->ats_supported = 1;
-
-  if (of_pci_host_bridge_ats_supported(bridge))
-    bridge->ats_supported = 1;
-
-I don't know what you do about IVRS and DMAR, which don't appear in
-this series except in the comment.
-
-[1] https://lore.kernel.org/r/20200213165049.508908-1-jean-philippe@linaro.org
-
->  	/*
->  	 * Evaluate the "PCI Boot Configuration" _DSM Function.  If it
->  	 * exists and returns 0, we must preserve any PCI resource
-> diff --git a/include/linux/acpi_iort.h b/include/linux/acpi_iort.h
-> index 8e7e2ec37f1b..7b06871cc3aa 100644
-> --- a/include/linux/acpi_iort.h
-> +++ b/include/linux/acpi_iort.h
-> @@ -10,6 +10,7 @@
->  #include <linux/acpi.h>
->  #include <linux/fwnode.h>
->  #include <linux/irqdomain.h>
-> +#include <linux/pci.h>
->  
->  #define IORT_IRQ_MASK(irq)		(irq & 0xffffffffULL)
->  #define IORT_IRQ_TRIGGER_MASK(irq)	((irq >> 32) & 0xffffffffULL)
-> @@ -55,4 +56,11 @@ int iort_iommu_msi_get_resv_regions(struct device *dev, struct list_head *head)
->  { return 0; }
->  #endif
->  
-> +#if defined(CONFIG_ACPI_IORT) && defined(CONFIG_PCI)
-> +void iort_pci_host_bridge_setup(struct pci_host_bridge *host_bridge);
-> +#else
-> +static inline
-> +void iort_pci_host_bridge_setup(struct pci_host_bridge *host_bridge) { }
-> +#endif
-> +
->  #endif /* __ACPI_IORT_H__ */
-> -- 
-> 2.25.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
