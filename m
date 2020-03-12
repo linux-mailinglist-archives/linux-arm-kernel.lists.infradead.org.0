@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F00641831A6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:35:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6606A18317A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Mar 2020 14:32:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N5k/mpx+cw587CXz6Y9ZVK32Yav1iuOKGmkzj3FX66k=; b=gWRDgCRzCkIhki
-	sTL/6Mke0lDlipWk2s/MnMSmY9PFPGPyu+NwiJLnQzMJdvOOX1SF9RQFL7UumeaAbDOIRwfMIf3Dx
-	WDBjTU2ZHjgejIVKp5gNfedO9NbHJ+vmmOslpeT8JS542KIK6AB4yBkGt61pydfiNi/b92eMGK+PH
-	ICWDSVD269acMVWfwH4bqRtWJJSEtWwyuL2d4FdTKkuMIEGMh+v6l8cDZpkZ46VGsu3XZ4IXfRH9Q
-	OcjsGWVV5S+797IcKMTX+vmHErHTa4fd982DCcYUfvsQ8WMCmrF1r6BrFjIA0stwnG3UDoX4Ynq4S
-	HGXOWeBWYnq426SKpLFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=N70UiaaYpZB72SzLXJniblt+sfC4RGfBItkBu6FFKqo=; b=FFc1u43wvOfaVB
+	JJeGrSoFpFeFxOISlbA0P+4Dqsgm9UHn7BPkXTGfSJ2+4sJlM2WFdDldqQVeOI3YmNv4GVDLyQGSP
+	uXCi6y13Ui9aNxosobkPacfVYJ6u9vPs9oRb3FYiKtAk5PVQRLo7vyRt69mR2NiZHD/mHRg1BB051
+	7iojmJQRnOc4RtCOsdujliTnTSMaZq4MGf5hsOxBGvVpeuw/OPuPkQ1BQRNYL+AuhM359LydTzVM5
+	968sqRsGf/ZPvwEOCE9mMVEwv8oZ+d5NoVojYV5sIu4UgsaeynaipZqFKuXXKaixvHj4iWs0w8PME
+	T/emvDJAUV/kfKnFqj6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCNzG-0006fC-Iw; Thu, 12 Mar 2020 13:34:58 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jCNwN-0003W3-UW; Thu, 12 Mar 2020 13:31:59 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCNyW-00068k-Ft; Thu, 12 Mar 2020 13:34:14 +0000
-X-UUID: 35e2305d586549a8ac629e90b78f4014-20200312
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=TJOwfXCdxtKskhQqIq5Rx4gC5ikFILpJpMDFmmmJALg=; 
- b=Jh6a//8x1NoJLq+RiSEgiUaLsW2tYqhl+a9nJbxkxYOdtGhA/MraDQOeFjVhK0c1m9hSLadxi8D3GCAdL+YumjTEZL5aN/jyuj2J+IBfEH+N2IxUa4ePQiicV4csxvftQYj1Uk8yv+IbjY3n0j6u9fU2RVA5zGctXegmMe5VV70=;
-X-UUID: 35e2305d586549a8ac629e90b78f4014-20200312
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2105265368; Thu, 12 Mar 2020 05:34:08 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Mar 2020 06:24:39 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Mar 2020 21:21:03 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 12 Mar 2020 21:21:02 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v3 2/8] scsi: ufs: remove init_prefetch_data in struct ufs_hba
-Date: Thu, 12 Mar 2020 21:23:44 +0800
-Message-ID: <20200312132350.18061-3-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200312132350.18061-1-stanley.chu@mediatek.com>
-References: <20200312132350.18061-1-stanley.chu@mediatek.com>
+ id 1jCNw0-0003Rl-AY
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Mar 2020 13:31:38 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m3so6329011wmi.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Mar 2020 06:31:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=mKsXFRcK8AcNaumHFcbmSoneU4WCI5BNbLya6zWwdso=;
+ b=yGpVXdf/zvaZ2oK6Mt2+1GDAOyAcjE2YL1fV8629Sl0fjgJVBfCic1VwugB4VQba3I
+ 3QveKXHMnoAegaDY0ROjo174WbRvRCFA5sWlFur932L2a0dceZAXJDFyDaY5+5A+5YQI
+ gNC2vQqUjVLeasn5PxXhMAAa7j/16lkRClmD8g5CGiEYmRvidQtzxIKvij4ppKqbZRJ9
+ RkonPce8pXKdXw86YvlInePQdX8c1ic7TFrlbZy+1zYerMEU8IIr5GeiLhknxM4jhMEE
+ lugULtEYx7q1Bn7ALGTjrbKvlBzUa/kFM7fjsRe4EgyRj6vQWW02NEqOYJiEk3YcI7Oh
+ V+PQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=mKsXFRcK8AcNaumHFcbmSoneU4WCI5BNbLya6zWwdso=;
+ b=Ww6HlMHRsBgDt/SrPj4bPErG35HSyUFX1//uTHuqCz/QxacvhijmXbxkpk2NczYIX0
+ yxTlwTTx4B5bRYBx/ctstKOP/rKjyY56gT4MUEW+Hz70qhARqKGIgrPq06JBvjbtw4V0
+ X9Vm581Icg0niZHNlig+8TjZF9X5TuwMSH6sqW2PU+Ck8+Iq3aU+m1kcT1PhOuRwkqse
+ v/EvaHRci0E425ez9DxG6kfZ5XtJ7l48Bsv4REC0wmHlK0yZSM40wgFzkptc6vFrd5pC
+ EXz+9J1O1HLHJnUXg9aq/WDNuVJ+JxvlY8cvhqOikH38Z2aCe7cWM8/Sy5aY0K+I2BEj
+ IIew==
+X-Gm-Message-State: ANhLgQ0zCcUwTlOmXGVdNroDMnK4QZTq5aN/5yL2gTcjmMBQ/+TpPrQb
+ cmijuYHy6nvDL+90FeIN2BEDUA==
+X-Google-Smtp-Source: ADFU+vu4/CzgwwWNZw4DY6j6M6oytrcB21iZBNHToT/4H+n6Y97GqaxPnIoWB+xUtDlIT2K+uneEpQ==
+X-Received: by 2002:a1c:c5:: with SMTP id 188mr4903051wma.89.1584019894533;
+ Thu, 12 Mar 2020 06:31:34 -0700 (PDT)
+Received: from bender.baylibre.local
+ (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id m21sm12242885wmi.27.2020.03.12.06.31.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Mar 2020 06:31:33 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: broonie@kernel.org
+Subject: [PATCH 0/9] spi: meson-spicc: add support for AXG and G12A variants
+Date: Thu, 12 Mar 2020 14:31:22 +0100
+Message-Id: <20200312133131.26430-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5B748EC8B741F4CA0DA94897A506B5A45813883239713FCE4DF844E1C7F2E27E2000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200312_063412_561707_04CDE7C5 
-X-CRM114-Status: UNSURE (   8.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200312_063136_368244_3EA2584C 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,103 +92,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stanley Chu <stanley.chu@mediatek.com>, bvanassche@acm.org,
- andy.teng@mediatek.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, beanhuo@micron.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Cc: linux-amlogic@lists.infradead.org, linux-spi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Struct init_prefetch_data currently is used privately in
-ufshcd_init_icc_levels(), thus it can be removed from struct ufs_hba.
+The SPICC controller in Amlogic AXG & G12A is capable of driving the
+CLK/MOSI/SS signal lines through the idle state which avoid the signals
+floating in unexpected state, is capable of using linear clock divider
+to reach a much fine tuned range of clocks, while the old controller only
+uses a power of two clock divider, result at a more coarse clock range and
+finally is capable of running at 80M clock.
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufshcd.c | 15 ++++++---------
- drivers/scsi/ufs/ufshcd.h | 11 -----------
- 2 files changed, 6 insertions(+), 20 deletions(-)
+The SPICC controller in Amlogic G12A takes the source clock from a specific
+clock instead of the bus clock and has a different FIFO size and doesn't
+handle the RX Half interrupt the same way as GXL & AXG variants. Thus
+the burst management is simplified and takes in account a variable FIFO
+size.
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 314e808b0d4e..b4988b9ee36c 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -6501,6 +6501,7 @@ static void ufshcd_init_icc_levels(struct ufs_hba *hba)
- {
- 	int ret;
- 	int buff_len = hba->desc_size.pwr_desc;
-+	u32 icc_level;
- 	u8 *desc_buf;
- 
- 	desc_buf = kmalloc(buff_len, GFP_KERNEL);
-@@ -6516,21 +6517,17 @@ static void ufshcd_init_icc_levels(struct ufs_hba *hba)
- 		goto out;
- 	}
- 
--	hba->init_prefetch_data.icc_level =
--			ufshcd_find_max_sup_active_icc_level(hba,
--			desc_buf, buff_len);
--	dev_dbg(hba->dev, "%s: setting icc_level 0x%x",
--			__func__, hba->init_prefetch_data.icc_level);
-+	icc_level =
-+		ufshcd_find_max_sup_active_icc_level(hba, desc_buf, buff_len);
-+	dev_dbg(hba->dev, "%s: setting icc_level 0x%x",	__func__, icc_level);
- 
- 	ret = ufshcd_query_attr_retry(hba, UPIU_QUERY_OPCODE_WRITE_ATTR,
--		QUERY_ATTR_IDN_ACTIVE_ICC_LVL, 0, 0,
--		&hba->init_prefetch_data.icc_level);
-+		QUERY_ATTR_IDN_ACTIVE_ICC_LVL, 0, 0, &icc_level);
- 
- 	if (ret)
- 		dev_err(hba->dev,
- 			"%s: Failed configuring bActiveICCLevel = %d ret = %d",
--			__func__, hba->init_prefetch_data.icc_level , ret);
--
-+			__func__, icc_level, ret);
- out:
- 	kfree(desc_buf);
- }
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 5c10777154fc..5cf79d2319a6 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -402,15 +402,6 @@ struct ufs_clk_scaling {
- 	bool is_suspended;
- };
- 
--/**
-- * struct ufs_init_prefetch - contains data that is pre-fetched once during
-- * initialization
-- * @icc_level: icc level which was read during initialization
-- */
--struct ufs_init_prefetch {
--	u32 icc_level;
--};
--
- #define UFS_ERR_REG_HIST_LENGTH 8
- /**
-  * struct ufs_err_reg_hist - keeps history of errors
-@@ -541,7 +532,6 @@ enum ufshcd_quirks {
-  * @intr_mask: Interrupt Mask Bits
-  * @ee_ctrl_mask: Exception event control mask
-  * @is_powered: flag to check if HBA is powered
-- * @init_prefetch_data: data pre-fetched during initialization
-  * @eh_work: Worker to handle UFS errors that require s/w attention
-  * @eeh_work: Worker to handle exception events
-  * @errors: HBA errors
-@@ -627,7 +617,6 @@ struct ufs_hba {
- 	u32 intr_mask;
- 	u16 ee_ctrl_mask;
- 	bool is_powered;
--	struct ufs_init_prefetch init_prefetch_data;
- 
- 	/* Work Queues */
- 	struct work_struct eh_work;
+Now the controller can support frequencies higher than 30MHz, we need
+the setup the I/O line delays in regard of the SPI clock frequency.
+
+Neil Armstrong (7):
+  spi: meson-spicc: remove unused variables
+  spi: meson-spicc: support max 80MHz clock
+  spi: meson-spicc: add min sclk for each compatible
+  spi: meson-spicc: setup IO line delay
+  spi: meson-spicc: adapt burst handling for G12A support
+  dt-bindings: spi: amlogic,meson-gx-spicc: add Amlogic G12A compatible
+  spi: meson-spicc: add support for Amlogic G12A
+
+Sunny Luo (2):
+  spi: meson-spicc: enhance output enable feature
+  spi: meson-spicc: add a linear clock divider support
+
+ .../bindings/spi/amlogic,meson-gx-spicc.yaml  |  22 +
+ drivers/spi/Kconfig                           |   1 +
+ drivers/spi/spi-meson-spicc.c                 | 496 +++++++++++++-----
+ 3 files changed, 392 insertions(+), 127 deletions(-)
+
 -- 
-2.18.0
+2.22.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
